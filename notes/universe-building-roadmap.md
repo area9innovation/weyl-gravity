@@ -1982,9 +1982,20 @@ the five charge coordinates, and the global current replay gives
 `chi([Delta2])=mu_rel,pol`.  Hence the normalized quotient-coordinate factor
 is `I5` and `ker(D)=ker(M_pol)`, including all standard cross-block pairs.
 This is not a serialized all-mode PBW matrix and does not cover the stricter
-bounded or causal correction categories.  Bridge 1 now targets the
-support-local current-level lift of this factor map, or a normalized
-locality/cyclicity obstruction.
+bounded or causal correction categories.
+
+`EINSTEIN_WEYL_RELATIVE_SHIFTED_CURRENT_CONE_PREFLIGHT_V1` now fixes the
+support-local lift's derived grading.  The required map is degree zero,
+`A:K_P->C_W`, and the current complex must enter as `K_P[1]` inside the
+mapping cone before cotangent completion.  The resulting cyclic candidate
+`T*[1](Cone(iota) direct_sum K_P[1])` has 316 rows with degree profile
+`(5,25,56,72,72,56,25,5)` in degrees `-3,...,4`.  It is categorically
+distinct from the certified block-diagonal 316-row unary carrier with profile
+`(10,51,97,97,51,10)`, whose scoped q2 obstruction remains valid.  Bridge 1
+now targets the complete invariant top descent for `A^1,A^2`, followed by
+the fifteen-row incidence `Delta2-A^1 C=delta(f2)`, or a normalized
+locality/cyclicity obstruction.  No support-local lift or repaired relative
+q2 has yet been promoted.
 
 Until one of the four admissible Berger carrier alternatives passes, atlas
 row `classical.berger.crosswalk.retained36_to_einstein_extra` remains

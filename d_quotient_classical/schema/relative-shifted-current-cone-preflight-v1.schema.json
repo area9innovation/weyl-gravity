@@ -1,0 +1,243 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-shifted-current-cone-preflight-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_status",
+    "dependency_tags", "scope", "dependencies", "required_chain_map",
+    "shifted_cyclic_carrier", "comparison_with_existing_316",
+    "first_exact_solve", "classification", "next_gate", "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-shifted-current-cone-preflight-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_SHIFTED_CURRENT_CONE_PREFLIGHT_V1"},
+    "result_state": {"const": "SHIFTED_CURRENT_MAPPING_CONE_TYPED_TOP_DESCENT_COEFFICIENT_SOLVE_OPEN"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}],
+      "minItems": 1,
+      "maxItems": 1
+    },
+    "scope": {"$ref": "#/$defs/stringObject"},
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reduced_factorization", "current_carrier", "current_q2",
+        "cotangent_316", "block_q2_obstruction", "relative_cone",
+        "target_layout", "target_q1"
+      ],
+      "properties": {
+        "reduced_factorization": {"$ref": "#/$defs/artifact"},
+        "current_carrier": {"$ref": "#/$defs/artifact"},
+        "current_q2": {"$ref": "#/$defs/artifact"},
+        "cotangent_316": {"$ref": "#/$defs/artifact"},
+        "block_q2_obstruction": {"$ref": "#/$defs/artifact"},
+        "relative_cone": {"$ref": "#/$defs/artifact"},
+        "target_layout": {"$ref": "#/$defs/artifact"},
+        "target_q1": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "required_chain_map": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name", "degree", "domain", "codomain", "components",
+        "chain_identity", "field_pair_identity", "strict_first_attempt",
+        "top_descent"
+      ],
+      "properties": {
+        "name": {"const": "A:K_P->C_W"},
+        "degree": {"const": 0},
+        "domain": {"const": "K_P^r=Omega^(r+2)(M;g_stab^*) for r=-2,...,2"},
+        "codomain": {"const": "40-row Weyl-Maxwell minimal BV complex"},
+        "components": {
+          "type": "array",
+          "prefixItems": [
+            {"$ref": "#/$defs/componentMinus2"},
+            {"$ref": "#/$defs/componentMinus1"},
+            {"$ref": "#/$defs/component0"},
+            {"$ref": "#/$defs/component1"},
+            {"$ref": "#/$defs/component2"}
+          ],
+          "minItems": 5,
+          "maxItems": 5
+        },
+        "chain_identity": {"const": "q1_W A=A d_H in every degree"},
+        "field_pair_identity": {"const": "Delta2-A^1 C=q1_W f2+f2(q1_E,.)+f2(.,q1_E)"},
+        "strict_first_attempt": {"const": "f2=0, hence Delta2=A^1 C"},
+        "top_descent": {"const": "q1_W^(1->2) A^1=A^2 d_H^(3->4)"}
+      }
+    },
+    "shifted_cyclic_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "base", "base_degree_range", "base_degree_ranks", "base_rows",
+        "completion", "completed_degree_range", "completed_degree_ranks",
+        "completed_rows", "odd_pairing_nondegenerate_by_construction",
+        "factorized_unary", "square_zero_condition"
+      ],
+      "properties": {
+        "base": {"const": "B_158=Cone(iota) direct_sum K_P[1]"},
+        "base_degree_range": {"$ref": "#/$defs/minus3To2"},
+        "base_degree_ranks": {"$ref": "#/$defs/baseRanks"},
+        "base_rows": {"const": 158},
+        "completion": {"const": "C_316_shift=T*[1]B_158"},
+        "completed_degree_range": {"$ref": "#/$defs/minus3To4"},
+        "completed_degree_ranks": {"$ref": "#/$defs/completedRanks"},
+        "completed_rows": {"const": 316},
+        "odd_pairing_nondegenerate_by_construction": {"const": true},
+        "factorized_unary": {"const": "[[q_C,A],[0,-d_H]] direct_sum negative formal adjoint"},
+        "square_zero_condition": {"const": "q1_W A=A d_H together with the imported cone and de Rham squares"}
+      }
+    },
+    "comparison_with_existing_316": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "same_underlying_row_count", "existing_construction",
+        "existing_degree_range", "existing_degree_ranks",
+        "existing_grading_hosts_required_A", "reason",
+        "existing_unary_and_obstruction_certificates_retained"
+      ],
+      "properties": {
+        "same_underlying_row_count": {"const": true},
+        "existing_construction": {"const": "C_160,current direct_sum T*[1]Cone(iota)"},
+        "existing_degree_range": {"$ref": "#/$defs/minus2To3"},
+        "existing_degree_ranks": {"$ref": "#/$defs/existingRanks"},
+        "existing_grading_hosts_required_A": {"const": false},
+        "reason": {"type": "string", "minLength": 1},
+        "existing_unary_and_obstruction_certificates_retained": {"const": true}
+      }
+    },
+    "first_exact_solve": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unknowns", "principal_equation", "coefficient_equation",
+        "required_new_export", "augmented_rank_failure_output"
+      ],
+      "properties": {
+        "unknowns": {
+          "type": "array",
+          "prefixItems": [
+            {"const": "A^1:P_3->W^1"},
+            {"const": "A^2:P_4->W^2"},
+            {"const": "optional local f2 after strict failure"}
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "principal_equation": {"const": "sigma(q1_W^(1->2)) sigma(A^1)=sigma(A^2) sigma(d_3)"},
+        "coefficient_equation": {"const": "Delta2-A^1 C=delta(f2) on all 15 nonzero target defect rows"},
+        "required_new_export": {"type": "string", "minLength": 1},
+        "augmented_rank_failure_output": {"type": "string", "minLength": 1}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required_lift_typed", "shifted_mapping_cone_required",
+        "rank_316_cyclic_completion_available",
+        "existing_316_direct_sum_grading_sufficient",
+        "support_local_chain_map_A_constructed", "top_descent_solved",
+        "relative_q2_repaired", "causal_observable_particle_or_quantum_claim"
+      ],
+      "properties": {
+        "required_lift_typed": {"const": true},
+        "shifted_mapping_cone_required": {"const": true},
+        "rank_316_cyclic_completion_available": {"const": true},
+        "existing_316_direct_sum_grading_sufficient": {"const": false},
+        "support_local_chain_map_A_constructed": {"const": false},
+        "top_descent_solved": {"const": false},
+        "relative_q2_repaired": {"const": false},
+        "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "SOLVE_THE_COMPLETE_INVARIANT_TOP_DESCENT_FOR_A1_A2_THEN_THE_15_ROW_FIELD_PAIR_INCIDENCE_OR_RETURN_A_NORMALIZED_OBSTRUCTION"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"$ref": "#/$defs/stringObject"},
+        "verification_commands": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "stringObject": {
+      "type": "object",
+      "additionalProperties": {"type": "string"}
+    },
+    "componentBase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["degree", "source", "source_rank", "target_rank", "map"],
+      "properties": {
+        "degree": {"type": "integer"},
+        "source": {"type": "string"},
+        "source_rank": {"type": "integer", "minimum": 0},
+        "target_rank": {"type": "integer", "minimum": 0},
+        "map": {"type": "string"}
+      }
+    },
+    "componentMinus2": {
+      "allOf": [
+        {"$ref": "#/$defs/componentBase"},
+        {"type": "object", "properties": {"degree": {"const": -2}, "source": {"const": "P_0"}, "source_rank": {"const": 5}, "target_rank": {"const": 0}, "map": {"const": "A^-2=0"}}}
+      ]
+    },
+    "componentMinus1": {
+      "allOf": [
+        {"$ref": "#/$defs/componentBase"},
+        {"type": "object", "properties": {"degree": {"const": -1}, "source": {"const": "P_1"}, "source_rank": {"const": 20}, "target_rank": {"const": 6}, "map": {"const": "A^-1:P_1->W^-1"}}}
+      ]
+    },
+    "component0": {
+      "allOf": [
+        {"$ref": "#/$defs/componentBase"},
+        {"type": "object", "properties": {"degree": {"const": 0}, "source": {"const": "P_2"}, "source_rank": {"const": 30}, "target_rank": {"const": 14}, "map": {"const": "A^0:P_2->W^0"}}}
+      ]
+    },
+    "component1": {
+      "allOf": [
+        {"$ref": "#/$defs/componentBase"},
+        {"type": "object", "properties": {"degree": {"const": 1}, "source": {"const": "P_3"}, "source_rank": {"const": 20}, "target_rank": {"const": 14}, "map": {"const": "A^1:P_3->W^1"}}}
+      ]
+    },
+    "component2": {
+      "allOf": [
+        {"$ref": "#/$defs/componentBase"},
+        {"type": "object", "properties": {"degree": {"const": 2}, "source": {"const": "P_4"}, "source_rank": {"const": 5}, "target_rank": {"const": 6}, "map": {"const": "A^2:P_4->W^2"}}}
+      ]
+    },
+    "minus3To2": {"type": "array", "prefixItems": [{"const": -3}, {"const": 2}], "minItems": 2, "maxItems": 2},
+    "minus3To4": {"type": "array", "prefixItems": [{"const": -3}, {"const": 4}], "minItems": 2, "maxItems": 2},
+    "minus2To3": {"type": "array", "prefixItems": [{"const": -2}, {"const": 3}], "minItems": 2, "maxItems": 2},
+    "baseRanks": {"type": "array", "prefixItems": [{"const": 5}, {"const": 25}, {"const": 50}, {"const": 48}, {"const": 24}, {"const": 6}], "minItems": 6, "maxItems": 6},
+    "completedRanks": {"type": "array", "prefixItems": [{"const": 5}, {"const": 25}, {"const": 56}, {"const": 72}, {"const": 72}, {"const": 56}, {"const": 25}, {"const": 5}], "minItems": 8, "maxItems": 8},
+    "existingRanks": {"type": "array", "prefixItems": [{"const": 10}, {"const": 51}, {"const": 97}, {"const": 97}, {"const": 51}, {"const": 10}], "minItems": 6, "maxItems": 6}
+  }
+}

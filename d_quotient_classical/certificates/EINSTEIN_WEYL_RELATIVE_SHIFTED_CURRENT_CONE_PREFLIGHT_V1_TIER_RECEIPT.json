@@ -1,0 +1,77 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_SHIFTED_CURRENT_CONE_PREFLIGHT_V1_TIER_RECEIPT",
+  "claim_ids": [
+    "EINSTEIN_WEYL_RELATIVE_SHIFTED_CURRENT_CONE_PREFLIGHT_V1"
+  ],
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "artifacts": {
+    "certificate": {
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_SHIFTED_CURRENT_CONE_PREFLIGHT_V1.json",
+      "sha256": "f32c6686a77630aa798b81a997d6bf90900654290b144bf66586ad94ebb846f3"
+    },
+    "schema": {
+      "path": "d_quotient_classical/schema/relative-shifted-current-cone-preflight-v1.schema.json",
+      "sha256": "851618740750d3091f3f0134efc51e34dda788937b44b213f2a2383002b7303e"
+    },
+    "producer": {
+      "path": "d_quotient_classical/relative/einstein_weyl_relative_shifted_current_cone_preflight.py",
+      "sha256": "1bcc64913b1f1f0562e2f81085dc19b0ad60375718703d4d0901656156edf2c4"
+    },
+    "verifier": {
+      "path": "d_quotient_classical/relative/verify_einstein_weyl_relative_shifted_current_cone_preflight.py",
+      "sha256": "4d051d6c6fa5d653d77a8634cc245179a643ca38ba1ff4f6250ce6cf9093d375"
+    },
+    "tests": {
+      "path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_shifted_current_cone_preflight.py",
+      "sha256": "7f1eb849fe9fbbb0c8140057b4c492ea719cdc8342459291c67b5a5e3a1ba22a"
+    },
+    "report": {
+      "path": "d_quotient_classical/reports/einstein-weyl-relative-shifted-current-cone-preflight.md",
+      "sha256": "7fcd44eb1d4b844025a644b3e29fbdab36cc54b79f8899aeb8ca563fcd944f6d"
+    },
+    "atlas_fragment": {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "22370748bd7e940f811ef6646da0cbcce7e6c616d96322e7ea758c316674c72a"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "Python compilation",
+        "strict Draft 2020-12 schema",
+        "scoped diff check",
+        "content-hash replay"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 2.46,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_shifted_current_cone_preflight --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_shifted_current_cone_preflight",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_shifted_current_cone_preflight",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-shifted-current-cone-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_SHIFTED_CURRENT_CONE_PREFLIGHT_V1.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 0.7,
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --write",
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This typing preflight changes no shared operator, constructs no support-local lift and promotes no causal, paper-freeze or quantum claim."
+    }
+  },
+  "claim_boundary": "This receipt covers the cochain grading, row census and exact equations of the shifted current mapping-cone candidate T*[1](Cone(iota) direct_sum K_P[1]). It distinguishes that 316-row candidate from the existing block-diagonal 316-row carrier. It does not construct the degree-zero chain map A, solve its top descent, repair relative q2, compare action pairings or certify a causal, observable, particle or quantum result."
+}

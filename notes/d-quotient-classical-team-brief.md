@@ -2429,10 +2429,19 @@ quotient-coordinate matrix `I5`, and `ker(D)=ker(M_pol)`, including all
 cross-block pairs.  This is an abstract quotient-coordinate theorem, not a
 serialized all-mode PBW source-pair matrix; the stricter bounded category
 retains additional polynomial and resonant obstruction functionals.  The
-active gate is now to construct the support-local current-level lift of `A`,
-or return a normalized locality or cyclicity obstruction.  Modified endpoints
-and other backgrounds remain admissible; no causal or quantum consequence is
-inferred.
+support-local lift has now been typed by
+`EINSTEIN_WEYL_RELATIVE_SHIFTED_CURRENT_CONE_PREFLIGHT_V1` as a degree-zero
+chain map `A:K_P->C_W`.  The derived source must use `K_P[1]` inside the
+mapping cone before cyclic completion.  Thus the relevant candidate is
+`T*[1](Cone(iota) direct_sum K_P[1])`, still 316 rows but with degree ranks
+`(5,25,56,72,72,56,25,5)` in degrees `-3,...,4`; it is not the existing
+block-diagonal 316-row carrier.  No coefficient of `A` has been solved.  The
+active exact gate is the invariant top descent
+`q1_W^(1->2) A^1=A^2 d_H^(3->4)`, followed by
+`Delta2-A^1 C=delta(f2)` on the fifteen nonzero defect rows, beginning with
+`f2=0`.  A complete invariant Hom/order ansatz and portable current tables
+are the missing inputs.  Modified endpoints and other backgrounds remain
+admissible; no causal or quantum consequence is inferred.
 
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a

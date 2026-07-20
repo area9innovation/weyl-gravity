@@ -1,0 +1,201 @@
+{
+  "claim_boundary": "This preflight fixes the grading, bundle directions and exact identities of the support-local current-level lift. It proves that the derived-source current complex must be shifted inside the mapping cone before cotangent completion; the old and new carriers both have 316 rows but different degree profiles. It does not construct A, solve its top descent, export the complete invariant Hom ansatz, repair relative q2, compare action pairings, or establish causal, observable, particle or quantum claims. The existing block-diagonal 316 unary theorem and its scoped q2 obstruction remain valid for their declared carrier.",
+  "classification": {
+    "causal_observable_particle_or_quantum_claim": false,
+    "existing_316_direct_sum_grading_sufficient": false,
+    "rank_316_cyclic_completion_available": true,
+    "relative_q2_repaired": false,
+    "required_lift_typed": true,
+    "shifted_mapping_cone_required": true,
+    "support_local_chain_map_A_constructed": false,
+    "top_descent_solved": false
+  },
+  "comparison_with_existing_316": {
+    "existing_construction": "C_160,current direct_sum T*[1]Cone(iota)",
+    "existing_degree_range": [
+      -2,
+      3
+    ],
+    "existing_degree_ranks": [
+      10,
+      51,
+      97,
+      97,
+      51,
+      10
+    ],
+    "existing_grading_hosts_required_A": false,
+    "existing_unary_and_obstruction_certificates_retained": true,
+    "reason": "the derived source uses K_P[1] inside the mapping cone before cotangent completion; shifting after direct sum is not grading-equivalent",
+    "same_underlying_row_count": true
+  },
+  "dependencies": {
+    "block_q2_obstruction": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1.json",
+      "sha256": "42884f8a4c9216492158c6064bec530afbc788e281917d284a156e16158f5aa2"
+    },
+    "cotangent_316": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1.json",
+      "sha256": "d17a9249b6a385410ba8bd747259842c70bb811dfb0ce9aa74aa3d03c7fe6fad"
+    },
+    "current_carrier": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1.json",
+      "sha256": "44aded404db4128523362cab071b275b56db8de9bd3e77599f41a3d6ded3c883"
+    },
+    "current_q2": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1.json",
+      "sha256": "438d9d4035f655b0902bc328af18c8e526289b63085e1b49e1065501d8475cf6"
+    },
+    "reduced_factorization": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_REDUCED_TAUB_FACTORIZATION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_REDUCED_TAUB_FACTORIZATION_V1.json",
+      "sha256": "03fa69f3850c3962edbe892abf9caa4616a03ca7542e0d64ee433f6c8342c731"
+    },
+    "relative_cone": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_COMPONENTS_V1",
+      "path": "bridge/einstein_sector/generated/einstein_weyl_relative_linear_triangle_v1/components.json",
+      "sha256": "d3f10bd90c85f72bdc71ea72178bdda435fc9d4b892ec90634ee86f9e5d7c84f"
+    },
+    "target_layout": {
+      "artifact_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_ROW_LAYOUT",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/row_layout.json",
+      "sha256": "6236040676b7e699f5e48be6241143aa3bb5b7c9b4e07364826fc6f2b5ad24a2"
+    },
+    "target_q1": {
+      "artifact_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_Q1",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/q1.json",
+      "sha256": "43c00909830fde902cf1332eae804f6edd6ad263bef7ce61d08bdbd20449290b"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "first_exact_solve": {
+    "augmented_rank_failure_output": "canonical normalized top-descent or field-pair incidence obstruction",
+    "coefficient_equation": "Delta2-A^1 C=delta(f2) on all 15 nonzero target defect rows",
+    "principal_equation": "sigma(q1_W^(1->2)) sigma(A^1)=sigma(A^2) sigma(d_3)",
+    "required_new_export": "complete invariant Hom basis and order bounds for A^1,A^2,f2 plus portable full C_X coefficient tables",
+    "unknowns": [
+      "A^1:P_3->W^1",
+      "A^2:P_4->W^2",
+      "optional local f2 after strict failure"
+    ]
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "SOLVE_THE_COMPLETE_INVARIANT_TOP_DESCENT_FOR_A1_A2_THEN_THE_15_ROW_FIELD_PAIR_INCIDENCE_OR_RETURN_A_NORMALIZED_OBSTRUCTION",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_shifted_current_cone_preflight.py": "1bcc64913b1f1f0562e2f81085dc19b0ad60375718703d4d0901656156edf2c4",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_shifted_current_cone_preflight.py": "7f1eb849fe9fbbb0c8140057b4c492ea719cdc8342459291c67b5a5e3a1ba22a",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_shifted_current_cone_preflight.py": "4d051d6c6fa5d653d77a8634cc245179a643ca38ba1ff4f6250ce6cf9093d375",
+      "d_quotient_classical/schema/relative-shifted-current-cone-preflight-v1.schema.json": "851618740750d3091f3f0134efc51e34dda788937b44b213f2a2383002b7303e"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_shifted_current_cone_preflight --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_shifted_current_cone_preflight",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_shifted_current_cone_preflight"
+    ]
+  },
+  "required_chain_map": {
+    "chain_identity": "q1_W A=A d_H in every degree",
+    "codomain": "40-row Weyl-Maxwell minimal BV complex",
+    "components": [
+      {
+        "degree": -2,
+        "map": "A^-2=0",
+        "source": "P_0",
+        "source_rank": 5,
+        "target_rank": 0
+      },
+      {
+        "degree": -1,
+        "map": "A^-1:P_1->W^-1",
+        "source": "P_1",
+        "source_rank": 20,
+        "target_rank": 6
+      },
+      {
+        "degree": 0,
+        "map": "A^0:P_2->W^0",
+        "source": "P_2",
+        "source_rank": 30,
+        "target_rank": 14
+      },
+      {
+        "degree": 1,
+        "map": "A^1:P_3->W^1",
+        "source": "P_3",
+        "source_rank": 20,
+        "target_rank": 14
+      },
+      {
+        "degree": 2,
+        "map": "A^2:P_4->W^2",
+        "source": "P_4",
+        "source_rank": 5,
+        "target_rank": 6
+      }
+    ],
+    "degree": 0,
+    "domain": "K_P^r=Omega^(r+2)(M;g_stab^*) for r=-2,...,2",
+    "field_pair_identity": "Delta2-A^1 C=q1_W f2+f2(q1_E,.)+f2(.,q1_E)",
+    "name": "A:K_P->C_W",
+    "strict_first_attempt": "f2=0, hence Delta2=A^1 C",
+    "top_descent": "q1_W^(1->2) A^1=A^2 d_H^(3->4)"
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_SHIFTED_CURRENT_CONE_PREFLIGHT_V1",
+  "result_state": "SHIFTED_CURRENT_MAPPING_CONE_TYPED_TOP_DESCENT_COEFFICIENT_SOLVE_OPEN",
+  "schema": "pure-weyl-relative-shifted-current-cone-preflight-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "local coefficient jets on M=R x S1 x S2; no harmonic or Green reduction",
+    "carrier": "14 relative physical fields, their 14 Hessian equations, and the 160-row five-current de Rham/cotangent carrier",
+    "charge_sector": "H,P_x,J_1,J_2,J_3",
+    "degree": "physical field-equation interface plus carrier degrees -2 through 3",
+    "ell": "not harmonic-reduced",
+    "k": "not harmonic-reduced",
+    "m": "not harmonic-reduced",
+    "omega": "not harmonic-reduced",
+    "parity": "canonical cyclic odd pairing",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  },
+  "shifted_cyclic_carrier": {
+    "base": "B_158=Cone(iota) direct_sum K_P[1]",
+    "base_degree_range": [
+      -3,
+      2
+    ],
+    "base_degree_ranks": [
+      5,
+      25,
+      50,
+      48,
+      24,
+      6
+    ],
+    "base_rows": 158,
+    "completed_degree_range": [
+      -3,
+      4
+    ],
+    "completed_degree_ranks": [
+      5,
+      25,
+      56,
+      72,
+      72,
+      56,
+      25,
+      5
+    ],
+    "completed_rows": 316,
+    "completion": "C_316_shift=T*[1]B_158",
+    "factorized_unary": "[[q_C,A],[0,-d_H]] direct_sum negative formal adjoint",
+    "odd_pairing_nondegenerate_by_construction": true,
+    "square_zero_condition": "q1_W A=A d_H together with the imported cone and de Rham squares"
+  }
+}

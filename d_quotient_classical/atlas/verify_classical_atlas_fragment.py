@@ -103,6 +103,12 @@ def verify() -> None:
         raise AssertionError("abstract quotient-coordinate matrix was overpromoted")
     if "EINSTEIN_WEYL_RELATIVE_REDUCED_TAUB_FACTORIZATION_V1" not in {item["result_id"] for item in pullback["evidence"]}:
         raise AssertionError("reduced Taub factorization evidence missing")
+    if "EINSTEIN_WEYL_RELATIVE_SHIFTED_CURRENT_CONE_PREFLIGHT_V1" not in {item["result_id"] for item in pullback["evidence"]}:
+        raise AssertionError("shifted current-cone preflight evidence missing")
+    if "degree-zero chain map A:K_P->C_W" not in pullback["claim_boundary"]:
+        raise AssertionError("typed support-local lift missing from atlas")
+    if "not the existing block-diagonal 316 profile" not in pullback["claim_boundary"]:
+        raise AssertionError("distinct 316-row gradings were conflated")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]
     if set(berger_crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("Berger Bridge 1 overpromoted")

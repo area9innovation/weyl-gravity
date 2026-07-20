@@ -1326,7 +1326,7 @@
       }
     },
     {
-      "claim_boundary": "The relative moment map has zero constant and linear terms, so the derived Taub-zero condition does not restrict the unary tangent complex and does not require a nonzero unary cross-incidence. Its first local equation is d_H B_X+j_X(u,u)/2=0 at arity two. In the finite-harmonic smooth-secular target quotient, the complete five-dimensional cokernel theorem makes the normalized evaluation map an isomorphism and gives D=A M_pol with quotient-coordinate matrix I5 on Sym^2 H0, including cross-block pairs. This is not a serialized all-mode PBW matrix or a support-local lift. Until the current-level lift is constructed, the full relative q2, action-pairing transport, causal bridge and quantum transfer remain OPEN.",
+      "claim_boundary": "The relative moment map has zero constant and linear terms, so the derived Taub-zero condition does not restrict the unary tangent complex and does not require a nonzero unary cross-incidence. Its first local equation is d_H B_X+j_X(u,u)/2=0 at arity two. In the finite-harmonic smooth-secular target quotient, the complete five-dimensional cokernel theorem makes the normalized evaluation map an isomorphism and gives D=A M_pol with quotient-coordinate matrix I5 on Sym^2 H0, including cross-block pairs. This is not a serialized all-mode PBW matrix or a support-local lift. The current-level lift is now typed as a degree-zero chain map A:K_P->C_W. Because K_P[1] belongs inside the derived mapping cone before cotangent completion, its canonical cyclic candidate is a regraded 316-row carrier with degree profile (5,25,56,72,72,56,25,5), not the existing block-diagonal 316 profile. No A coefficients, top descent, repaired relative q2, action-pairing transport, causal bridge or quantum transfer are certified.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "OPEN",
@@ -1364,6 +1364,11 @@
           "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_REDUCED_TAUB_FACTORIZATION_V1.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_REDUCED_TAUB_FACTORIZATION_V1",
           "sha256": "03fa69f3850c3962edbe892abf9caa4616a03ca7542e0d64ee433f6c8342c731"
+        },
+        {
+          "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_SHIFTED_CURRENT_CONE_PREFLIGHT_V1.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_SHIFTED_CURRENT_CONE_PREFLIGHT_V1",
+          "sha256": "f32c6686a77630aa798b81a997d6bf90900654290b144bf66586ad94ebb846f3"
         }
       ],
       "id": "classical.crosswalk.compact_product_derived_taub_zero_pullback",
@@ -1396,16 +1401,16 @@
           }
         },
         "taub_maps": {
-          "statement": "The relative obstruction class factors exactly through the five Taub charges in normalized smooth finite-harmonic quotient coordinates; the support-local current-level lift remains open.",
+          "statement": "The relative obstruction class factors exactly through the five Taub charges in normalized smooth finite-harmonic quotient coordinates. The required support-local lift A:K_P->C_W and its shifted 316-row cyclic carrier are now typed, but the top descent and coefficients remain open.",
           "status": "OPEN"
         }
       },
       "scope": {
         "background": "compact magnetic Plebanski-Hacyan product",
         "boundaries": "support-local off-shell derived zero locus before harmonic or causal reduction",
-        "carrier": "full unary tangent complex with 160-row local current resolution, 188-row q1/q2 interface and 316-row cyclic unary ambient carrier",
+        "carrier": "full unary tangent complex with 160-row local current resolution, 188-row q1/q2 interface and shifted 316-row cyclic candidate T*[1](Cone(iota) direct_sum K_P[1])",
         "charge_sector": "quadratic zero locus of the H,P_x,J_1,J_2,J_3 relative moment map",
-        "degree": "unary tangent unchanged; first derived constraint at Taylor arity two",
+        "degree": "unary tangent unchanged; first derived constraint at Taylor arity two; shifted candidate ranks (5,25,56,72,72,56,25,5) in degrees -3,...,4",
         "ell": "not harmonic-reduced",
         "k": "not harmonic-reduced",
         "m": "not harmonic-reduced",
@@ -1416,7 +1421,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
-  "generated_by_sha256": "47bd4bdf5b90278d05dcfba0ee831c44435ee132e3493e66db3bd937ba166bcd",
+  "generated_by_sha256": "7f86c39d9bdc92c10bf4564458f826c79ff17f087e46bdc6037a3111c682c2d4",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
