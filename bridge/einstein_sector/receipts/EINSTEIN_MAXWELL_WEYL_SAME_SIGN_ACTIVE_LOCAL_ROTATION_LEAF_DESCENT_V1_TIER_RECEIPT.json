@@ -1,0 +1,55 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_LOCAL_ROTATION_LEAF_DESCENT_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Local commutation of the Lee--Wald radical-leaf quotient and lifted-SO(3) zero-level reduction on every smooth constant-corank fixed-occupation stratum of candidates 17, 18 and 20.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.json": "dffd93ef835738b181e5550dbf066c63137b7f4243632393c9ca1bf63362571f",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.py": "b5a75f29b07dd800ad83046ee2beab47028e751edcf0b74a786744460f08070f",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.py": "b5e52ff6e26ef5c4669aba31f9f5d46fff44b19e868531fb533ebf10c6ef2499",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.py": "f948651a147a10fc651a9774c7aaad009f644b316bb1f9b7c4c8f726f4c7b4ee",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.schema.json": "076629191b92460194d143a8886f5ca3241cdfc604b4543d5e8acb044d08fcc8",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-active-local-rotation-leaf-descent.md": "bebb92ed2305882d557ab47244cac3b4b502486f8c724363634e246061488da2"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on the producer, independent verifier and focused test",
+        "python3 -m json.tool on the certificate and schema",
+        "git diff --check on the scoped theorem paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": {
+        "producer_check": 0.09,
+        "independent_verifier": 0.36,
+        "focused_tests": 0.10
+      },
+      "tests_run": 5,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent"
+      ]
+    },
+    "independent_rail": {
+      "status": "PASS",
+      "method": "The verifier does not import the producer. It re-hashes every source, independently imports the phase-reduced candidate coverage, and checks the universal radical-annihilation identity on an exact rank-four presymplectic model."
+    },
+    "adversarial": {
+      "status": "PASS",
+      "mutation": "Promote global_rotation_zero_fibre_connected from false to true.",
+      "result": "The schema rejects the promotion; the focused test requires the rejection."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESSED_INPUT_REPLAY",
+      "reason": "The certificate pins the phase-reduced divisor theorem, the exact lifted stabilizer and the six exact rotation-zero witnesses. No mathematical input outside that content-addressed chain is promoted."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a local constant-corank proof-architecture gate, not a programme freeze, global quotient theorem or shared-core algebra change."
+    }
+  },
+  "claim_boundary": "CERTIFIED only on smooth constant-corank fixed-occupation strata after common node-phase reduction. Global connectedness, Hausdorff leaf topology, singular and occupation gluing, final residual descent, all-orders integration and causal, observational or quantum transport remain fail-closed."
+}

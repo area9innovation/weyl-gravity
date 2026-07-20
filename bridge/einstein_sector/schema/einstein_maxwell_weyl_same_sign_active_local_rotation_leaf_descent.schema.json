@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "scope",
+    "presymplectic_descent_theorem",
+    "candidate_application",
+    "classification",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-same-sign-active-local-rotation-leaf-descent-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_LOCAL_ROTATION_LEAF_DESCENT"
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "moment_map_basic_on_current_radical",
+        "local_zero_fibre_and_radical_reductions_commute",
+        "node_phases_identified_with_rotations",
+        "global_rotation_zero_fibre_connected",
+        "global_leaf_space_or_Hausdorff_quotient_classified",
+        "singular_locus_reduction_classified"
+      ],
+      "properties": {
+        "moment_map_basic_on_current_radical": {"const": true},
+        "local_zero_fibre_and_radical_reductions_commute": {"const": true},
+        "node_phases_identified_with_rotations": {"const": false},
+        "global_rotation_zero_fibre_connected": {"const": false},
+        "global_leaf_space_or_Hausdorff_quotient_classified": {"const": false},
+        "singular_locus_reduction_classified": {"const": false}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

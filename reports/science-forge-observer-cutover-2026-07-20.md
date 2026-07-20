@@ -54,4 +54,3 @@ The item explicitly forbids Conflux, fitted cancellation, and promotion to
 This receipt establishes stream-level task coordination. It does not establish
 the Ward identity, resolve the observer obstruction, validate Conflux on
 observer inputs, or authorize programme-wide Science Forge cutover.
-

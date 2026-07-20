@@ -1,0 +1,92 @@
+{
+  "candidate_application": {
+    "all_constant_corank_smooth_strata_covered": true,
+    "candidate18_positive_spectators_remain_present": true,
+    "candidates": [
+      17,
+      18,
+      20
+    ],
+    "certified_rotation_zero_points_nonempty": true,
+    "consequence": "the Lee-Wald radical cannot carry an additional independent rotational Taub condition; the three lifted rotational moment maps descend to the local symplectic leaf quotient",
+    "node_phase_reduction_precedes_this_theorem": true,
+    "nonempty_source": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_COLLISION_BOUNDED_WITNESSES",
+    "parity_channels_remain_coupled": true
+  },
+  "claim_boundary": "This theorem covers only smooth constant-corank fixed-occupation strata after the two common node phases. It does not construct a global leaf space, prove connectedness of a complete rotation-zero fibre, reduce singular strata, glue occupations or candidates, perform final residual descent, or establish all-orders, causal, observational or quantum claims.",
+  "classification": {
+    "all_orders_integrability": false,
+    "candidate17_local_rotation_leaf_descent_classified": true,
+    "candidate18_local_rotation_leaf_descent_classified": true,
+    "candidate20_local_rotation_leaf_descent_classified": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "final_residual_descent": false,
+    "global_leaf_space_or_Hausdorff_quotient_classified": false,
+    "global_rotation_zero_fibre_connected": false,
+    "local_zero_fibre_and_radical_reductions_commute": true,
+    "moment_map_basic_on_current_radical": true,
+    "node_phases_identified_with_rotations": false,
+    "occupation_strata_glued": false,
+    "singular_locus_reduction_classified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G3_ALL_SMOOTH_CONSTANT_CORANK_FIXED_OCCUPATION_STRATA_ON_CANDIDATES_17_18_20",
+  "interpretation": "On candidates 17, 18 and 20 the current radical and the lifted rotational constraint are compatible rather than competing reductions. The moment map is constant along radical leaves, so the rotational zero condition survives on each local symplectic leaf quotient. This is a local constant-corank theorem and gives neither connectedness nor a global quotient.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "classify the lifted-rotation zero fibres and singular/occupation gluing candidate by candidate; do not infer global topology from this local commutation theorem",
+  "presymplectic_descent_theorem": {
+    "basicness": "every component of mu is locally constant on connected radical leaves",
+    "data": "a smooth stratum U with closed reduced Lee-Wald form Omega_U of constant rank, radical distribution R=ker(Omega_U), and the lifted diagonal SO(3) action",
+    "descended_hamiltonian_identity": "d<mu_bar,xi>=i_{xi_bar_sharp}Omega_bar",
+    "hamiltonian_identity": "d<mu,xi>=i_{xi_sharp}Omega_U for every xi in so(3)",
+    "local_leaf_space": "on every simple saturated neighbourhood q:U_0->U_bar=U_0/R there are unique Omega_bar and mu_bar with q^*Omega_bar=Omega_U and q^*mu_bar=mu",
+    "radical_annihilation": "for r in R, d<mu,xi>(r)=Omega_U(xi_sharp,r)=0",
+    "radical_invariance": "the lifted SO(3) action preserves Omega_U and therefore preserves R",
+    "regular_two_stage_reduction": "where the residual lifted-SO(3) action has a regular local quotient, first removing R and then reducing at mu_bar=0 equals the local presymplectic reduction of U_0 at mu=0",
+    "zero_fibre_commutation": "(mu^{-1}(0) intersect U_0)/R is canonically mu_bar^{-1}(0)"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.py",
+    "generator_sha256": "b5a75f29b07dd800ad83046ee2beab47028e751edcf0b74a786744460f08070f",
+    "inputs": {
+      "bounded_witnesses": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_bounded_witnesses.json",
+        "sha256": "4a49e1fb59f0e7e11f75bce769b7959c07a39a99ec8c83363073c2926b8e2c6e"
+      },
+      "phase_reduced_divisors": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json",
+        "sha256": "74bfe7b00c1e7ebe856c54d0275661954ede15c23e3c62363b4928149c83b72b"
+      },
+      "stabilizer": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+        "sha256": "212d231aa60f390f4d785a95466156a7851e4c8a531fd2dbaf60c1c50f09d2cf"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_LOCAL_ROTATION_LEAF_DESCENT",
+  "result_state": "CANDIDATE17_18_20_LOCAL_RADICAL_AND_LIFTED_ROTATION_REDUCTIONS_COMMUTE",
+  "schema": "einstein-maxwell-weyl-same-sign-active-local-rotation-leaf-descent-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.schema.json",
+  "schema_sha256": "076629191b92460194d143a8886f5ca3241cdfc604b4543d5e8acb044d08fcc8",
+  "scope": {
+    "background": "three distinct compact Plebanski--Hacyan collision backgrounds, candidates 17, 18 and 20",
+    "boundaries": "closed S1_L times S2 before lifted-rotation or final residual quotient",
+    "carrier": "every smooth constant-current-corank stratum of the candidate-17, candidate-18 or candidate-20 fixed-active-occupation resonance variety after the two common node-phase quotients",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidate-specific allowed compact momenta, never identified across rho",
+    "m": "all m=-2,...,2",
+    "omega": "candidate-specific certified SUM or DIFFERENCE collision",
+    "parity": "both exact factorized parity channels, with their common node phases retained until this reduction",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent"
+  ]
+}
