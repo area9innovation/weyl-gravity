@@ -1,0 +1,20 @@
+{
+  "id": "sf:forge-request/science-forge-resident-await-and-wakeup",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "OPEN",
+    "objective": "Add a simple resident-worker await/wakeup protocol so a long-lived Codex- or Claude-like research stream that blocks or exhausts its queue can notice newly READY work without a human having to type into its terminal.",
+    "depends_on": [
+      "sf:forge-request/science-forge-coordinator-overview-dashboard"
+    ],
+    "stop_condition": "Land and document an initial operational primitive such as `s-f work await --stream S --agent A --timeout D` that watches the append-only programme state without busy polling, returns immediately when one pullable item exists, and emits a compact human line plus versioned byte-stable JSON containing the exact item ID, effective state, queue order, programme revision and reason it is pullable. The first version may stop before acquiring a lease, but it must compose safely with `s-f work pull`; an optional `--pull --expires T -o brief.md` mode may atomically acquire only after the item becomes pullable. Provide stable exit codes for READY, timeout, interrupted, malformed history and lease conflict; preserve terminal-title updates using the stream and agent identities; expose a file/socket notification suitable for a future TUI or resident supervisor; and document the recommended agent loop: report or block current work, release the lease, await, then pull exactly one successor. Include deterministic fixtures for ready-at-start, work arriving after an event append, unrelated-stream traffic, queue-order change, timeout, signal cancellation, malformed event, expired lease, another resident winning the race, and a stream that changes from all-BLOCKED to READY. Demonstrate bounded CPU and filesystem activity over a fifteen-minute idle interval.",
+    "forbid": "no attachment to, keystroke injection into or prompt scraping from arbitrary running AI processes; no automatic scientific work generation; no lease acquisition before a concrete item is pullable; no unbounded lease; no broad git mutation; no busy loop; no treating PROPOSED work with unmet dependencies as READY; no bypass of one-exclusive-lease discipline; no hidden wall-clock dependence in deterministic tests; no terminal title that collapses all workers to `s-f coordinator` or the repository name; no claim that process wakeup means scientific progress",
+    "notes": [
+      "Observed failure on 2026-07-20: Quantum correctly blocked two items and released both leases, the coordinator added a new READY matter-anomaly item, but the resident process remained idle because it had already ended its turn and had no queue-change notification.",
+      "The immediate need is deliberately smaller than persistent AI-session RPC: provide a safe await primitive and a documented resident loop first.",
+      "This should integrate with the queue-forecasting and fast-overview work later, but it is independently useful and should not wait for statistical forecasting."
+    ]
+  }
+}
