@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/observer-common-action-ward-orbit-REPORT-28d16983a5bd6936",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work report",
+  "source": {"path": "tools/science-forge/program/events/observer-common-action-ward-orbit-REPORT-28d16983a5bd6936.json", "span": null},
+  "body": {"event_kind": "WORK_REPORTED", "actor": "observer-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T06:47:10Z", "seq": 1, "payload": {"target": "sf:program/work/observer-common-action-ward-orbit", "agent": "observer-1", "record_type": "checkpoint", "base_commit": "3d0ed702a78db160ec8f80ab0efa53dd2dbe2d0b", "current_commit": "aacfe04a5c18f0ae1f652c70435874a112f94712", "changed_paths": "closed_universe_observers/{generator,verifier,tests,schemas,certificates,reports,receipt,atlas}; notes/closed-universe-observer-team-brief.md; reports/observer-common-action-ward-orbit-closeout-2026-07-20.md; planning/events/observer-common-action-ward-orbit-*", "disposition": "committed:aacfe04a5c18f0ae1f652c70435874a112f94712 pushed; OBSTRUCTED common-action carrier normalization", "tests": "producer --check PASS 25.27s; independent --full PASS 6.25s; 46 pytest PASS 21.31s; prior verifier PASS; atlas verifier/schema PASS; advisory shadow reported bridge drift and 1170-vs-976 corpus drift", "receipts": "BERGER_108_ROW_TEMPORAL_COMMON_ACTION_WARD_ORBIT_OBSTRUCTION; BERGER_108_ROW_TEMPORAL_COMMON_ACTION_WARD_ORBIT_OBSTRUCTION_TIER_RECEIPT; reports/observer-common-action-ward-orbit-closeout-2026-07-20.md", "deviations": "none", "dependency_needs": "", "next_recommendation": "typed carrier/action-normalization diagnosis, then regenerate q1/q2 from one pairing; no downstream promotion"}, "native": {"authored_by": "sfc work-report", "policy": "append-only (SPEC 4.5); one content-addressed report file per checkpoint; never rewritten."}},
+  "edges": [{"rel": "REPORTS", "to": "sf:program/work/observer-common-action-ward-orbit"}]
+}
