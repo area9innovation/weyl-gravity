@@ -1,0 +1,44 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-compensator-two-field-full-bv-causal-gate",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-compensator-two-field-full-bv-causal-gate",
+  "source": {
+    "path": "planning/work-items/classical-compensator-two-field-full-bv-causal-gate.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Promote a passing two-field compensator charge stratum, if one exists, into the complete action-derived BV, causal, pairing, charge and relational-clock test on the cylinder and Berger fixtures.",
+    "stop_condition": "Import the terminal two-field charge-matrix preflight.  If it selects no exact healthy action/representation locus, close as NOT_ACTIVATED and preserve the preflight's scope.  Otherwise choose only its certified minimal Smith-normal-form charge representatives and coupling components.  Derive the complete reducible Diff/Weyl/compact-U1 BV complex and action Hessian; verify Q^2=0, cyclicity and all Noether identities.  Reduce constraints exactly, classify physical scalar/vector inertia and characteristic/Jordan data, construct support-aware retarded/advanced Green homotopies, and compute raw D, K_Berger, total gauge and relative-phase charges.  Construct at least one explicit gauge-invariant relational phase observable and prove whether it evolves nontrivially while the total compact charge vanishes.  A pass requires elimination of the dressed-trace class, a healthy reduced physical pairing, a complete causal parent and a nontrivial relative clock; a stationary neutral configuration alone is insufficient.",
+    "current_gate": "two-field compensator physical BV and causal completion",
+    "forbid": "no activation on an empty preflight locus; no individual gauge-charged phase called observable; no total-charge cancellation assumed without the Gauss equation; no unreduced Hessian sign theorem; no formal inverse called causal; no nonlinear, QME, particle or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/classical-compensator-two-field-charge-matrix-preflight#ANY_TERMINAL"
+    ],
+    "activates": [
+      "nonlinear and quantum imports only on a full pass"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/compensator/",
+      "d_quotient_classical/causal/",
+      "d_quotient_classical/reports/",
+      "d_quotient_classical/receipts/",
+      "d_quotient_classical/schema/",
+      "notes/",
+      "paper/",
+      "reports/",
+      "residual_atlas/",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "CONDITIONAL FULL GATE.  Inspect the preflight disposition before constructing any large carrier.",
+    "notes": [
+      "The key new possibility is a gauge-invariant relative phase at zero total compact charge; it must be constructed rather than inferred from field count."
+    ],
+    "input_commit": "6c9ea2803",
+    "stream": "classical"
+  },
+  "edges": []
+}

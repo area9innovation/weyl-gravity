@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-closed-s3-gauged-clock-gauss-structure-theorem",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-closed-s3-gauged-clock-gauss-structure-theorem",
+  "source": {
+    "path": "planning/work-items/classical-closed-s3-gauged-clock-gauss-structure-theorem.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Extract the compact-Gauss mechanism into a structural theorem for finitely many smooth charged clock/modulus fields on closed S3, separating vanishing total gauge charge from the possible survival of gauge-invariant relative-phase clocks.",
+    "stop_condition": "Import the one-field separated scale/U1 theorem, the terminal two-field preflight and its conditional full-gate disposition.  If the two-field theory already passes the full physical gate, close this no-go/generalization task as NOT_ACTIVATED.  Otherwise formulate the most general finite set of smooth homogeneous complex scalars with integer compact-U1 charges, positive or declared-indefinite kinetic matrix, gauge-invariant potential and smooth Abelian connection on closed S3 within the declared two-derivative class.  Derive the integrated Gauss constraint and classify the charge-lattice kernel exactly by Smith normal form.  Prove necessary and sufficient algebraic conditions for nonzero individual phase velocities at zero total gauge charge, identify the dimension of the gauge-invariant relative-phase space, and derive its reduced kinetic form and raw-D/K_Berger moment map.  Determine whether positivity permits a nontrivial relative clock or whether an additional sign/source/boundary assumption is necessary.  Give explicit two-field witnesses or exact separators and state how boundaries or charged external sources change the theorem.",
+    "current_gate": "closed-universe compact-Gauss and relative-clock structure theorem",
+    "forbid": "no one-field Gauss no-go generalized to many fields without charge-lattice reduction; no total charge zero interpreted as all individual velocities zero; no indefinite cancellation called healthy; no boundary flux silently used on closed S3; no claim about nonhomogeneous or higher-derivative theories beyond the stated assumptions",
+    "depends_on": [
+      "sf:program/work/classical-compensator-two-field-full-bv-causal-gate#ANY_TERMINAL"
+    ],
+    "activates": [
+      "a justified charged-source/boundary-sector test or a surviving neutral relative-clock construction"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/compensator/",
+      "d_quotient_classical/reports/",
+      "d_quotient_classical/receipts/",
+      "d_quotient_classical/schema/",
+      "notes/",
+      "paper/",
+      "reports/",
+      "residual_atlas/",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "STRUCTURAL GENERALIZATION.  Use Forge SNF, exact linear algebra and semialgebraic sign stratification as independent rails; keep the theorem finite-field and two-derivative scoped.",
+    "notes": [
+      "This task prevents repeated one-model Gauss calculations and decides whether extra charged moduli are a credible mechanism before another large BV build."
+    ],
+    "input_commit": "6c9ea2803",
+    "stream": "classical"
+  },
+  "edges": []
+}
