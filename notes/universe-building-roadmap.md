@@ -123,6 +123,14 @@ than moving whole teams now.  The rank-46 cyclic graph carrier is exact and
 its physical-helicity quotient is identified, but the requested support-local
 branch projector has an exact subprincipal obstruction.  A later branch split
 therefore requires a noncontractible filtered or mixed-bundle enlargement.
+The proof-first nonlinear refinement identifies the invariant first-page class
+\(\beta_1=\pi_{\operatorname{coker}M}\sigma_2(V_2)I_{\rm phys}\), whose
+normalized evaluation is `(1,0)`.  It rules out every cyclic
+\(L_\infty\) split with the certified unary anchor on the retained carrier and
+its contractible rank-46 graph prolongation.  At the standard fibre its
+obstruction image has rank one, so exactly one noncontractible field direction
+and its cyclic dual are minimally page-sufficient; the global
+\(K_{\rm Berger}\)-equivariant closure and later pages remain open.
 This no-go does not block the unsplit cyclic-deformation test or the local
 anomaly/QME calculation.
 
