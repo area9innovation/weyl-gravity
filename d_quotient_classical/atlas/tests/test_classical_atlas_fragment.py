@@ -44,6 +44,28 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             entry["claim_boundary"],
         )
 
+    def test_sharp_green_transfer_crosswalk_has_no_mode_identification(self) -> None:
+        theorem_id = "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1"
+        for chirality in ("plus", "minus"):
+            entry = self.entries[
+                f"classical.vacuum_cylinder.deformation.w_{chirality}_squared"
+            ]
+            self.assertIn(
+                theorem_id,
+                {item["result_id"] for item in entry["evidence"]},
+            )
+        nariai = self.entries[
+            "classical.nariai.conformal_orbit.rank310_metric"
+        ]
+        self.assertIn(
+            theorem_id,
+            {item["result_id"] for item in nariai["evidence"]},
+        )
+        self.assertIn(
+            "does not identify it with the conformal-cylinder modes",
+            nariai["claim_boundary"],
+        )
+
     def test_correction_classes_are_separate(self) -> None:
         for entry in self.entries.values():
             second = entry["mode_data"]["second_order"]

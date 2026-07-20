@@ -1,0 +1,358 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/green-hyperbolic-cyclic-transfer-theorem-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "background_scope",
+    "dependency_refs",
+    "sharp_hypotheses",
+    "conclusions",
+    "proof_ledger",
+    "toy_fixture",
+    "necessity_counterexamples",
+    "consumer_replays",
+    "exact_checks",
+    "source_manifest",
+    "verification_commands",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-green-hyperbolic-cyclic-transfer-theorem-v1"
+    },
+    "result_id": {
+      "const": "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1"
+    },
+    "result_state": {
+      "const": "SHARP_ABSTRACT_THEOREM_WITH_TOY_CYLINDER_AND_CURVED_CONSUMERS"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "background_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "abstract",
+        "toy",
+        "conformal_cylinder",
+        "curved_consumer",
+        "cross_background_identification"
+      ],
+      "properties": {
+        "abstract": {"type": "string", "minLength": 40},
+        "toy": {"type": "string", "minLength": 20},
+        "conformal_cylinder": {"type": "string", "minLength": 30},
+        "curved_consumer": {"type": "string", "minLength": 30},
+        "cross_background_identification": {"const": false}
+      }
+    },
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 6,
+      "maxProperties": 6,
+      "additionalProperties": {"$ref": "#/$defs/ref"}
+    },
+    "sharp_hypotheses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "chain_lift",
+        "descent_and_quasi_isomorphism",
+        "support",
+        "cyclicity_and_pairing",
+        "normalizations_not_needed_for_one_step_chain_identity",
+        "replaceable_sufficient_conditions"
+      ],
+      "properties": {
+        "chain_lift": {
+          "type": "array",
+          "minItems": 3,
+          "items": {"type": "string"}
+        },
+        "descent_and_quasi_isomorphism": {
+          "type": "array",
+          "minItems": 3,
+          "items": {"type": "string"}
+        },
+        "support": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string"}
+        },
+        "cyclicity_and_pairing": {
+          "type": "array",
+          "minItems": 5,
+          "items": {"type": "string"}
+        },
+        "normalizations_not_needed_for_one_step_chain_identity": {
+          "const": ["h^2=0", "h i=0", "p h=0"]
+        },
+        "replaceable_sufficient_conditions": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "conclusions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lift",
+        "lifted_chain_identity",
+        "descent",
+        "descended_chain_identity",
+        "causal_difference",
+        "causal_quasi_isomorphism",
+        "support",
+        "adjoint_reversal",
+        "induced_pairing",
+        "current_pairing",
+        "direct_sum_and_shear"
+      ],
+      "properties": {
+        "lift": {"const": "Lambda_C,+/-=h+i Lambda_E,+/- p"},
+        "lifted_chain_identity": {"type": "string"},
+        "descent": {"const": "Lambda_E,+/-=p Lambda_C,+/- i"},
+        "descended_chain_identity": {"type": "string"},
+        "causal_difference": {
+          "const": "Delta_C=Lambda_C,+-Lambda_C,-=i Delta_E p"
+        },
+        "causal_quasi_isomorphism": {"type": "string", "minLength": 60},
+        "support": {"type": "string"},
+        "adjoint_reversal": {"type": "string"},
+        "induced_pairing": {
+          "const": "<f,Delta_C g>_C=<p f,Delta_E p g>_E"
+        },
+        "current_pairing": {"type": "string", "minLength": 50},
+        "direct_sum_and_shear": {"type": "string", "minLength": 50}
+      }
+    },
+    "proof_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "chain",
+        "descent",
+        "difference",
+        "quasi_isomorphism",
+        "support",
+        "cyclicity",
+        "pairing"
+      ],
+      "properties": {
+        "chain": {"type": "string", "minLength": 30},
+        "descent": {"type": "string", "minLength": 30},
+        "difference": {"type": "string", "minLength": 30},
+        "quasi_isomorphism": {"type": "string", "minLength": 30},
+        "support": {"type": "string", "minLength": 30},
+        "cyclicity": {"type": "string", "minLength": 30},
+        "pairing": {"type": "string", "minLength": 30}
+      }
+    },
+    "toy_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coefficient_field",
+        "generality",
+        "endpoint_dimension",
+        "full_dimension",
+        "contractible_dimension",
+        "causal_difference_rank",
+        "causal_difference_nonzero_entries",
+        "identity_defects",
+        "role"
+      ],
+      "properties": {
+        "coefficient_field": {"const": "Q"},
+        "generality": {"const": "G0_EXACT_FIXTURE"},
+        "endpoint_dimension": {"const": 4},
+        "full_dimension": {"const": 6},
+        "contractible_dimension": {"const": 2},
+        "causal_difference_rank": {"const": 2},
+        "causal_difference_nonzero_entries": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"$ref": "#/$defs/entry"}
+        },
+        "identity_defects": {
+          "type": "object",
+          "minProperties": 20,
+          "additionalProperties": {"const": 0}
+        },
+        "role": {"type": "string", "minLength": 70}
+      }
+    },
+    "necessity_counterexamples": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {"$ref": "#/$defs/counterexample"}
+    },
+    "consumer_replays": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["conformal_cylinder", "unit_nariai"],
+      "properties": {
+        "conformal_cylinder": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "generality",
+            "carrier",
+            "formula",
+            "cyclic_SDR",
+            "same_sided_support",
+            "adjoint_reversal",
+            "causal_quasi_isomorphism",
+            "Green_pairing_equals_current_pairing",
+            "producer_rerun"
+          ],
+          "properties": {
+            "generality": {"const": "G2_COMPLETE_LINEAR_COMPLEX_ON_ONE_BACKGROUND"},
+            "carrier": {"type": "string"},
+            "formula": {"type": "string"},
+            "cyclic_SDR": {"const": true},
+            "same_sided_support": {"const": true},
+            "adjoint_reversal": {"const": true},
+            "causal_quasi_isomorphism": {"const": true},
+            "Green_pairing_equals_current_pairing": {"const": true},
+            "producer_rerun": {"const": false}
+          }
+        },
+        "unit_nariai": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "generality",
+            "carrier",
+            "formula",
+            "cyclic_SDR",
+            "same_sided_support",
+            "adjoint_reversal",
+            "metric_descent",
+            "causal_difference_and_pairing_factorization",
+            "producer_rerun"
+          ],
+          "properties": {
+            "generality": {"const": "G2_COMPLETE_LINEAR_COMPLEX_ON_ONE_BACKGROUND"},
+            "carrier": {"type": "string"},
+            "formula": {"type": "string"},
+            "cyclic_SDR": {"const": true},
+            "same_sided_support": {"const": true},
+            "adjoint_reversal": {"const": true},
+            "metric_descent": {"const": true},
+            "causal_difference_and_pairing_factorization": {
+              "type": "string",
+              "minLength": 60
+            },
+            "producer_rerun": {"const": false}
+          }
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 14,
+      "additionalProperties": {"const": true}
+    },
+    "source_manifest": {
+      "type": "object",
+      "minProperties": 4,
+      "maxProperties": 4,
+      "additionalProperties": {"$ref": "#/$defs/source"}
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"type": "string"}
+    },
+    "claim_boundary": {"type": "string", "minLength": 1000}
+  },
+  "$defs": {
+    "ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "artifact_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "artifact_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["row", "column", "coefficient"],
+      "properties": {
+        "row": {"type": "integer", "minimum": 0},
+        "column": {"type": "integer", "minimum": 0},
+        "coefficient": {"type": "integer"}
+      }
+    },
+    "defect": {
+      "type": "object",
+      "required": ["rank", "nonzero_entries"],
+      "properties": {
+        "rank": {"type": "integer", "minimum": 0},
+        "nonzero_entries": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/entry"}
+        },
+        "adjoint_defect_rank": {"type": "integer", "minimum": 0},
+        "chain_defect_rank": {"type": "integer", "minimum": 0},
+        "sign_intertwiner_defect_rank": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "counterexample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "counterexample_id",
+        "dropped_hypothesis",
+        "preserved_statement",
+        "failed_conclusion",
+        "witness",
+        "defect"
+      ],
+      "properties": {
+        "counterexample_id": {
+          "enum": [
+            "CHAIN_MAPS_ARE_ESSENTIAL",
+            "DEFORMATION_IDENTITY_IS_ESSENTIAL",
+            "RETRACTION_IS_ESSENTIAL_FOR_DESCENT",
+            "SUPPORT_LOCALITY_IS_ESSENTIAL",
+            "PAIRING_ADJOINTNESS_IS_ESSENTIAL",
+            "ENDPOINT_ADJOINT_REVERSAL_IS_ESSENTIAL",
+            "SIGN_INTERTWINING_IS_ESSENTIAL_FOR_FIXED_SIGMA"
+          ]
+        },
+        "dropped_hypothesis": {"type": "string"},
+        "preserved_statement": {"type": "string"},
+        "failed_conclusion": {"type": "string"},
+        "witness": {"type": "string"},
+        "defect": {"$ref": "#/$defs/defect"}
+      }
+    }
+  }
+}

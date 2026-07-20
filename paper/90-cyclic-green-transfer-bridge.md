@@ -1,8 +1,9 @@
 # From Green-hyperbolic complexes to conformal detours
 
 *Bridge note for Lorentzian PDE, Green-hyperbolic-complex, and BGG/detour
-geometry researchers. Status: abstract transfer theorem certified with
-Berger, flat-Minkowski, and curved Nariai consumers, 18 July 2026.*
+geometry researchers. Status: sharp abstract transfer theorem certified with
+an exact toy, the full conformal-cylinder construction, and curved unit
+Nariai as direct consumers, 20 July 2026.*
 
 ## 1. Their object and the unresolved question
 
@@ -104,6 +105,40 @@ q_E\Lambda_{E,\pm}+\Lambda_{E,\pm}q_E
 \]
 This is the direction used by differential tractor/BGG compression.
 
+The sharp version also makes the causal-difference and pairing statements
+explicit.  Since the local contraction term is independent of the causal
+side,
+\[
+\Delta_C:=\Lambda_{C,+}-\Lambda_{C,-}
+=i(\Lambda_{E,+}-\Lambda_{E,-})p=i\Delta_Ep.
+\]
+On the compact-to-spacelike-compact support complexes this gives
+\[
+[\Delta_C]=[i_{\rm sc}]\,[\Delta_E]\,[p_{\rm c}].
+\]
+Thus the full causal map is a quasi-isomorphism whenever the endpoint map is.
+Moreover, \(i^\sharp=p\) yields the representative-level Green-pairing
+identity
+\[
+\langle f,\Delta_Cg\rangle_C
+=\langle pf,\Delta_Epg\rangle_E.
+\]
+An endpoint Green-current comparison therefore transfers on cohomology.
+
+These statements and their hypotheses are now sharp rather than merely
+sufficient.  Seven exact rational counterexamples separately show failure
+after dropping the chain maps, deformation identity, retraction, support
+locality, inclusion/projection adjointness, endpoint adjoint reversal, or
+fixed-sign intertwining.  The normalizations \(h^2=hi=ph=0\) are identified
+correctly as strong-retract side conditions, not ingredients of the one-step
+chain calculation.  Likewise global hyperbolicity, absence of timelike
+boundary, finite rank, and filtration nilpotence are stated with their precise
+replaceable alternatives.
+
+The machine-readable sharp theorem, independent replay, and counterexample
+ledger are recorded in the
+[sharp theorem certificate](../d_quotient_classical/certificates/GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1.json).
+
 The content-addressed first consumer is the Berger gravity--clock complex:
 
 ```text
@@ -123,10 +158,12 @@ which requires typed operator domains, boundary conditions, pairing-derived
 sign data, the exact cyclic SDR, causal-input Green data, and finite local inverses
 for all shears.  The accepted Berger adapter is
 [`BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER`](../d_quotient_classical/certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json).
-The theorem is background-uniform as a conditional statement. Three scoped
-`G2` consumers are now certified: the Berger lift above, a non-cylinder
-parent-to-endpoint descent on Minkowski, and a curved Nariai
-parent-detour-to-metric descent. The Minkowski consumer doubles the flat
+The theorem is background-uniform as a conditional statement. The prior
+portable-consumer rail certifies three scoped `G2` consumers: the Berger lift
+above, a non-cylinder parent-to-endpoint descent on Minkowski, and a curved
+Nariai parent-detour-to-metric descent. The sharp certificate additionally
+hash-consumes the original conformal-cylinder construction as a direct
+same-background consumer. The Minkowski consumer doubles the flat
 adjoint-tractor detour with opposite normalization, applies a cyclic triangular
 flavor shear, and descends the parent Hodge homotopy through the exact flat
 differential BGG retract. Its proof and portable adapter are
@@ -170,9 +207,11 @@ example:
 Its proof factors the construction into curvature prolongation, exact
 tractor-to-BGG contraction, filtered homological perturbation, finite local
 shears, and cyclic adjoint transport. Each factor has an explicit inverse or
-homotopy identity and a support ledger. Recasting the full curved-cylinder
-construction as a standalone content-addressed consumer remains separate from
-the flat Minkowski portability pilot.
+homotopy identity and a support ledger.  The sharp theorem certificate now
+hash-consumes the complete 386-row homotopy, causal quasi-isomorphism, and
+Green-current comparison without rerunning their producers.  This closes the
+standalone conformal-cylinder consumer while keeping it distinct from the
+flat Minkowski and curved Nariai carriers.
 
 ## 5. Consequence in their language
 
@@ -207,8 +246,8 @@ source papers: arXiv:2207.04069v2; arXiv:math/0606401v2
 project source: Paper 8 artifact-ready snapshot and current master
 verification: commands in section 3
 dependency tag: LORENTZIAN-CAUSAL
-generality level: ABSTRACT_CONDITIONAL_THEOREM; THREE_SCOPED_G2_CONSUMERS
-lifecycle state: ABSTRACT_THEOREM_AND_THREE_SCOPED_CONSUMERS_CERTIFIED
-claim flag: ABSTRACT_CAUSAL_TRANSFER_CERTIFIED
+generality level: ABSTRACT_CONDITIONAL_THEOREM; G0 EXACT FIXTURE; SCOPED G2 CONSUMERS
+lifecycle state: SHARP_ABSTRACT_THEOREM_WITH_TOY_CYLINDER_AND_CURVED_CONSUMERS
+claim flag: GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1
 open fields: G3 family; boundary version; Hadamard transfer
 ```

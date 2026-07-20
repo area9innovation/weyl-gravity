@@ -2677,6 +2677,48 @@ The full queue and
 morning handoff are authoritative in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 
+### Sharp cyclic Green-homotopy transfer theorem (2026-07-20)
+
+`GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1` closes the proof-first bridge
+gate without changing any background producer.  For a differential cyclic
+contraction `(i,p,h)`,
+
+\[
+\Lambda_{C,\pm}=h+i\Lambda_{E,\pm}p,\qquad
+\Delta_C=i\Delta_Ep.
+\]
+
+The second identity promotes the causal quasi-isomorphism only as the
+composition
+
+\[
+[\Delta_C]=[i_{\rm sc}][\Delta_E][p_{\rm c}]
+\]
+
+on the declared compact and spacelike-compact support complexes.  Pairing
+adjointness gives the exact representative identity
+
+\[
+\langle f,\Delta_Cg\rangle_C
+=\langle pf,\Delta_Epg\rangle_E.
+\]
+
+The certificate now distinguishes load-bearing hypotheses from convenient
+normalizations.  Seven exact rational counterexamples isolate failures of
+the chain maps, deformation identity, retraction, support locality,
+inclusion/projection adjointness, endpoint adjoint reversal and fixed-sign
+intertwining.  The side conditions \(h^2=hi=ph=0\) normalize a strong
+retract but are not used in the one-step lifted chain identity.
+
+Three independent rails are present: a six-dimensional exact toy, the
+content-addressed 386-row unit conformal-cylinder carrier, and the curved
+310-row unit-Nariai carrier with its 26-row metric endpoint.  The latter two
+are hash-consumed without rerunning their producers and are never identified
+across backgrounds.  The result is `LORENTZIAN-CAUSAL` only conditional on
+their imported endpoint data.  It does not transfer wavefront sets, construct
+a Hadamard two-point function, select a complex structure, prove positivity,
+or establish a particle or quantum claim.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

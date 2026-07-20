@@ -54,6 +54,18 @@ def verify() -> None:
         entry = by_id[f"classical.vacuum_cylinder.deformation.w_{chirality}_squared"]
         if "not a one-particle mode" not in entry["scope"]["carrier"]:
             raise AssertionError("W-square was promoted to particle")
+        if "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1" not in {
+            item["result_id"] for item in entry["evidence"]
+        }:
+            raise AssertionError("vacuum transfer-theorem crosswalk absent")
+    nariai = by_id["classical.nariai.conformal_orbit.rank310_metric"]
+    if (
+        "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1"
+        not in {item["result_id"] for item in nariai["evidence"]}
+        or "does not identify it with the conformal-cylinder modes"
+        not in nariai["claim_boundary"]
+    ):
+        raise AssertionError("Nariai transfer-theorem boundary drifted")
     wz = by_id["classical.vacuum_cylinder.local_bv.wz_tau_adic_d_cartan"]
     wz_ids = {item["result_id"] for item in wz["evidence"]}
     if (

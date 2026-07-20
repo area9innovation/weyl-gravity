@@ -28,6 +28,7 @@ LEGACY_VACUUM = {
 }
 CERTS = {
     "vacuum": VACUUM_EVIDENCE,
+    "green_transfer_theorem": ROOT / "d_quotient_classical/certificates/GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1.json",
     "vacuum_WZ_D_Cartan": ROOT / "d_quotient_classical/certificates/WESS_ZUMINO_D_CARTAN_CONTRACTION_V1.json",
     "Berger_green": ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
     "Berger_bikernel_support_gate": ROOT / "d_quotient_classical/certificates/BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1.json",
@@ -221,7 +222,7 @@ def entries() -> list[dict[str, Any]]:
             ("CERTIFIED", "The selected absolute residual CE complex has zero one-particle cohomology; this does not erase the causal solution family."),
             ("NOT_APPLICABLE", "No second-order resonance claim is needed for this linear carrier entry."),
             _second(("OPEN", "No all-mode bounded second-order classification."), ("OPEN", "No all-mode smooth-secular second-order classification."), ("OPEN", "No nonlinear retarded second-order classification.")),
-            _evidence("vacuum", "cone"),
+            _evidence("vacuum", "green_transfer_theorem", "cone"),
             "This is a classical causal one-particle mode family with an indefinite Krein sign, not a positive residual particle and not either W-square degree-four class.",
         ))
     for chirality in ("plus", "minus"):
@@ -235,7 +236,7 @@ def entries() -> list[dict[str, Any]]:
             ("CERTIFIED", "The covariant and residual H4 transports identify exactly these two classes."),
             ("NOT_APPLICABLE", "No propagation resonance is assigned to a deformation class."),
             _second(("NOT_APPLICABLE", "Not a first-order tangent mode."), ("NOT_APPLICABLE", "Not a first-order tangent mode."), ("NOT_APPLICABLE", "Not a first-order tangent mode.")),
-            _evidence("vacuum"),
+            _evidence("vacuum", "green_transfer_theorem"),
             "This is a vertex/deformation class. It must never be relabelled as a positive-norm graviton or one-particle state.",
         ))
     values.append(_entry(
@@ -294,8 +295,8 @@ def entries() -> list[dict[str, Any]]:
         ("OPEN", "No nonlinear Taub/tangent-cone classification on the conformal orbit."),
         ("OPEN", "No nonlinear resonance classification."),
         _second(("OPEN", "No bounded nonlinear cone."), ("OPEN", "No smooth-secular nonlinear cone."), ("OPEN", "Unary causal homotopy is certified; nonlinear causal correction is open.")),
-        _evidence("Nariai_conformal", "Nariai_single", "cone"),
-        "This is the metric theorem on the conformal Nariai orbit only; transverse Bach-flat directions and Hadamard/nonlinear/quantum claims remain open.",
+        _evidence("Nariai_conformal", "Nariai_single", "green_transfer_theorem", "cone"),
+        "This is the metric theorem on the conformal Nariai orbit only. The abstract transfer theorem consumes the unit-Nariai carrier independently and does not identify it with the conformal-cylinder modes. Transverse Bach-flat directions and Hadamard/nonlinear/quantum claims remain open.",
     ))
     values.append(_entry(
         "classical.nariai.crosswalk.normal_tractor_cylinder_to_metric",

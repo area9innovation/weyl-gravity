@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-20",
+  "work_item_input_commit": "fb5a2ea1d68ced5863177a029e87087a2c2a4684",
+  "integration_base_commit": "dcf3d09900c49969b8b5ef6b4b92e3df679c7c73",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "status": "CERTIFIED",
+  "artifacts": {
+    "certificate": {
+      "path": "d_quotient_classical/certificates/GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1.json",
+      "sha256": "98c57a89861ce198e8ad072bc43859f84b5c6d96df85d0013f729d24dd1d1df7"
+    },
+    "producer": {
+      "path": "d_quotient_classical/causal_transfer/green_hyperbolic_cyclic_transfer_theorem.py",
+      "sha256": "6518c9dd52998fc103638b728335fc27d8d77f25324b45f8216ed2834dee6e1d"
+    },
+    "independent_verifier": {
+      "path": "d_quotient_classical/causal_transfer/verify_green_hyperbolic_cyclic_transfer_theorem.py",
+      "sha256": "e3abceba1c24e82604efaf837a06600a4446c5f282240ea2df938675d8280929"
+    },
+    "tests": {
+      "path": "d_quotient_classical/causal_transfer/tests/test_green_hyperbolic_cyclic_transfer_theorem.py",
+      "sha256": "2784d262c6864696f558912d4ae1960e49eb4dd4bbd817afdce82926d90a9d21"
+    },
+    "schema": {
+      "path": "d_quotient_classical/schema/green-hyperbolic-cyclic-transfer-theorem-v1.schema.json",
+      "sha256": "c714382c15241ebad3e67ade33c9e1a12b45fb431733b982fbc724bd3a86d93b"
+    },
+    "report": {
+      "path": "d_quotient_classical/reports/green-hyperbolic-cyclic-transfer-theorem.md",
+      "sha256": "e9d28babe7fd6805d7662cf29a962b1fc6a83f8e74039b2b4cf1e61bc6acd2d8"
+    },
+    "atlas_generator": {
+      "path": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
+      "sha256": "b94fe022dc30e637b6e91d764e0c129c23b0a1b49f58cc3b7e068da891764b01"
+    },
+    "atlas_verifier": {
+      "path": "d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+      "sha256": "e0256a926a0c8824b50a356ada40466cac7c814adbb3ea713638d5518b1415b9"
+    },
+    "atlas_tests": {
+      "path": "d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py",
+      "sha256": "449244d434342b9a824730cb0928fce78bf5a299e56c3067ed22f4d361be767d"
+    },
+    "atlas_fragment": {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "f3b3d8f641f9da7eaa49d85bef1a7196eb8ce16bc9d1fab7a05dc1001397c8c7"
+    },
+    "bridge_paper_source": {
+      "path": "paper/90-cyclic-green-transfer-bridge.md",
+      "sha256": "8dbba39100e7a1c3a7068ba4d677373a44bd00a45f4dd24270fc896375f1264c"
+    },
+    "bridge_paper_pdf": {
+      "path": "paper/90-cyclic-green-transfer-bridge.pdf",
+      "sha256": "0bb21f0940aa755f461bb0763c213dd5fd506eae756a35113532febf89b05b61"
+    },
+    "team_brief": {
+      "path": "notes/d-quotient-classical-team-brief.md",
+      "sha256": "0f93347f01a78dd78e01a3e7c33d9d264aff8cdfb7fa6a139639c91ec37fc4bd"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.23,
+      "checks": [
+        "Python compilation",
+        "JSON parsing",
+        "scoped git diff whitespace check",
+        "exact report close-out sentinel",
+        "PDF metadata, text extraction and first-two-page visual inspection"
+      ],
+      "repair_history": "The first Tier-0 attempt exited 1 because an over-specific PDF text grep did not match across a line break. It was not counted as a pass. The text sentinel was widened to the stable phrase 'sharp abstract', and the complete Tier-0 rail then passed."
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m d_quotient_classical.causal_transfer.green_hyperbolic_cyclic_transfer_theorem --check --guards",
+          "elapsed_seconds": 0.65,
+          "result": "PASS"
+        },
+        {
+          "command": "python3 -m d_quotient_classical.causal_transfer.verify_green_hyperbolic_cyclic_transfer_theorem",
+          "elapsed_seconds": 0.43,
+          "result": "PASS_INDEPENDENT"
+        },
+        {
+          "command": "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_green_hyperbolic_cyclic_transfer_theorem",
+          "elapsed_seconds": 0.47,
+          "result": "PASS_8_TESTS"
+        },
+        {
+          "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/green-hyperbolic-cyclic-transfer-theorem-v1.schema.json -d d_quotient_classical/certificates/GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1.json",
+          "elapsed_seconds": 2.37,
+          "result": "PASS"
+        }
+      ],
+      "result": "The exact lift, descent, causal-difference, derived quasi-isomorphism, adjoint and induced-pairing identities hold. Seven exact counterexamples isolate the load-bearing hypothesis clusters, while SDR side conditions and replaceable analytic assumptions are not overclaimed."
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m d_quotient_classical.causal_transfer.verify_abstract_cyclic_causal_transfer",
+          "elapsed_seconds": 0.32,
+          "result": "PASS_INDEPENDENT"
+        },
+        {
+          "command": "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_repaired_310_all_row_green_transfer.py",
+          "elapsed_seconds": 0.69,
+          "result": "PASS_INDEPENDENT"
+        },
+        {
+          "command": "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+          "elapsed_seconds": 0.14,
+          "result": "PASS"
+        },
+        {
+          "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+          "elapsed_seconds": 0.14,
+          "result": "PASS"
+        },
+        {
+          "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+          "elapsed_seconds": 0.14,
+          "result": "PASS_INDEPENDENT"
+        },
+        {
+          "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment",
+          "elapsed_seconds": 0.04,
+          "result": "PASS_17_TESTS"
+        },
+        {
+          "command": "tail -n +3 paper/90-cyclic-green-transfer-bridge.md | pandoc --from=markdown+tex_math_single_backslash --standalone -o paper/90-cyclic-green-transfer-bridge.pdf --pdf-engine=xelatex --metadata title='From Green-hyperbolic Complexes to Conformal Detours' -V geometry:margin=0.6in",
+          "elapsed_seconds": 2.75,
+          "result": "PASS_4_PAGE_PDF"
+        }
+      ],
+      "consumer_policy": "The conformal-cylinder and unit-Nariai producer artifacts were not regenerated. The new independent verifier hash-consumed them and replayed the exact theorem-side conditions; the pre-existing unit-Nariai and abstract-theorem independent verifiers also passed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This closes an intermediate abstract bridge theorem and updates its paper. It does not freeze/tag a release, promote a quantum lifecycle state, alter shared core algebra, or establish Hadamard, QME or open-background uniformity."
+    }
+  },
+  "science_forge": {
+    "work_item": "sf:program/work/classical-green-hyperbolic-cyclic-transfer-theorem",
+    "agent": "classical-1",
+    "planned_disposition": "DONE",
+    "advisory_shadow": {
+      "command": "bash ci/science-forge-shadow.sh",
+      "timestamp_utc": "2026-07-20T10:07:35Z",
+      "elapsed_seconds": 5.17,
+      "exit_status": 0,
+      "evidence_status": "NOT_EVIDENCE",
+      "findings": [
+        "Forge binary/stdlib revision mismatch is informational.",
+        "Bridge certificate audit reported pre-existing drift.",
+        "Coverage census reported corpus growth from 976 to 1215 certificates."
+      ]
+    }
+  },
+  "pre_existing_shared_tree_changes_excluded": [
+    "notes/d-quotient-quantum-team-brief.md",
+    "notes/universe-building-roadmap.md",
+    "quantum-weyl/",
+    "bridge/einstein_sector/",
+    "closed_universe_observers/",
+    "planning/events/black-hole-*",
+    "planning/events/observer-*",
+    "sparseqr/"
+  ],
+  "claim_boundary": "This receipt certifies a sharp conditional cyclic Green-homotopy transfer theorem, an exact rational toy, exact counterexamples for the necessary hypothesis clusters, and read-only same-background consumer replays on the unit vacuum conformal cylinder and global unit Nariai. It certifies the causal-difference factorization, derived quasi-isomorphism and induced Green-pairing formula when the declared endpoint and cyclic-contraction hypotheses hold. It does not construct endpoint Green data, identify modes across backgrounds, promote an isolated-operator inverse, prove uniform open-background estimates, cover undeclared timelike-boundary domains, transfer wavefront sets, construct a Hadamard state or complex structure, prove positivity or particles, restore a QME, or establish a quantum theorem."
+}
