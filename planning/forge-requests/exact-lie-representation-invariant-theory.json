@@ -4,7 +4,7 @@
   "schema": "work-v0",
   "body": {
     "owner": "physics-programme",
-    "state": "REQUESTED",
+    "state": "ACCEPTED",
     "objective": "Add exact finite-dimensional Lie representation and invariant-theory machinery above tensor, wigner, harmonic, qext and Groebner. The immediate consumers are sf:program/work/observer-ward-cokernel-irrep-decomposition, sf:program/work/bridge-residual-atlas-branch-manifest and sf:program/work/quantum-parity-odd-third-curvature-carrier-manifest. Conflux can currently rediscover matrix blocks, ranks and incidences, but it cannot identify a block as an irreducible module, prove a tensor ansatz complete, or distinguish a selection-rule zero from an accidental coefficient cancellation outside the SU(2) coupling slice.",
     "depends_on": [
       "sf:program/work/observer-ward-cokernel-irrep-decomposition",
@@ -15,7 +15,8 @@
     "forbid": "no floating character matching as an exact irrep identification; no hard-coded physics branch labels; no finite list of guessed tensors called a complete invariant basis without a dimension/Hilbert-series witness; no SU(2)-only API presented as general reductive invariant theory; no source verdict imported into Conflux rules; no producer projector reused as the independent verifier",
     "notes": [
       "Priority A. This is the main missing semantic layer between exact matrices and meaningful representation-theoretic structure discovery.",
-      "A bounded first release covering sl2/SU2, so3, direct sums, declared stabilizer subalgebras and low-degree tensor invariants is sufficient if unsupported cases fail closed."
+      "A bounded first release covering sl2/SU2, so3, direct sums, declared stabilizer subalgebras and low-degree tensor invariants is sufficient if unsupported cases fail closed.",
+      "2026-07-21T01:00:00Z forge-coordinator: ACCEPTED \u2014 mirrored sf:program/work/M31-lie-representation-invariant (math). Exact/validated lib/math capability composing with existing layers; a certified obstruction is acceptable; independent verifier distinct from the producer; no source verdict imported (oracle wall); exact vs numeric distinct types."
     ]
   }
 }
