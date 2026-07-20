@@ -1311,7 +1311,7 @@ certified unary and source-labelled `q2/q3` tensors to an actual observer
 coderivation.  Its activation gate is exact vanishing of every first-bidegree
 `q1q2` coefficient.  Its fail-closed atlas row is
 `observer.berger.interaction.complete_arity_two_obstruction`, presently
-`OBSTRUCTED` by the typed Maxwell-emitter witness above.  This active bridge
+`OBSTRUCTED` by the relational temporal emitter-Diff witness above.  This active bridge
 does not activate physical Bridge 3.
 
 Within that inactive bridge, the numerical recoil input-contract audit is now
@@ -1496,19 +1496,23 @@ shift.  Exact conjugation leaves the certified unary unchanged, and its 192
 generated q2 keys remove the former `+e0 e1 R0_1` witness and all six
 rod/rod-cotangent defect rows.  The generic physical-emitter action Hessian
 now also retains multiplicity two when its two remaining slots coincide; the
-exact `3 h_hat_00 K0_01^2` fixture emits coefficient six, and the physical q3
-first-jet regression passes against that repaired q2.
-`BERGER_108_ROW_ARITY_TWO_OBSTRUCTION` finds 3,984 formal keys and 4,272
+exact `3 h_hat_00 K0_01^2` fixture has raw Hessian coefficient six.  Its
+raised metric output now carries the canonical stress weight
+`T=-2 delta S/dg`, while the three frozen spatial emitter Diff momentum-map
+rows carry the matching Hamiltonian weight.  The physical q3 first-jet
+regression passes against that repaired q2, and every same-background defect
+on rows 49--51 vanishes.
+`BERGER_108_ROW_ARITY_TWO_OBSTRUCTION` now finds 3,432 formal keys and 3,720
 monomials at bidegree `(0,0)`.  The exact emitter-switch quotient, with
-`e0 Theta_bar=3/4` and all spatial clock jets zero, reduces this to 2,772 keys
-and 2,820 monomials on 24 output rows.  The typed 64-row base remains an exact
-zero control.  The first genuine same-background witness is
-`c_spatial_1_star <- (e1 A_0,e1 K0_01)` with coefficient `-3 g0 h0`.
-It source-isolates to the typed Maxwell and physical-emitter q2 sources
-crossed with base/emitter unary sources.  The required repair is a common-
-action rederivation of this shared-field orbit after the now-fixed factorial
-convention, followed by the later memory/clock rows and the full first-
-bidegree replay.  Arity three, `K_Berger`, observer-morphism stability and
+`e0 Theta_bar=3/4` and all spatial clock jets zero, reduces this to 2,340 keys
+and 2,388 monomials on 21 output rows.  The typed 64-row base remains an exact
+zero control.  The first genuine same-background witness has moved to
+`tau_star <- (e0 e1 A_0,K0_01)` with coefficient `+g0 h0`.  It
+source-isolates entirely to the emitter Diff--BV q2 source crossed with the
+emitter unary source.  The required repair is a common-action conjugation of
+that temporal two-form cotangent orbit through the certified relational clock
+chart, followed by the later memory/clock rows and the full first-bidegree
+replay.  Arity three, `K_Berger`, observer-morphism stability and
 `O_detector|Z2^C` remain fail-closed.
 
 The C-G4 phase plane and the leading massive-emitter preparation map are

@@ -5,9 +5,12 @@ Maxwell--emitter metric/clock interaction for both selected emitters.  Its
 quadratic component action first reproduces the certified emitter `q1`
 overlay exactly.  The cubic metric and clock jets are then raised into all
 metric, clock, Maxwell and emitter cotangent rows from that same action.
-The Hessian exporter retains multiplicity two when the two remaining action
-slots coincide; the exact fixture `3 h_hat_00 K0_01^2` emits coefficient six
-and detects the former diagonal half-weight.
+Raw metric action derivatives are converted to the canonical stress rows by
+`T=-2 delta S/dg`.  The Hessian exporter retains multiplicity two when the
+two remaining action slots coincide: the exact fixture
+`3 h_hat_00 K0_01^2` has raw Hessian coefficient six and raised metric-output
+coefficient minus twelve, detecting both the former diagonal half-weight and
+the stress Hamiltonian bridge.
 
 The two-form Diff--BV orbit is deliberately separate and remains open, as do
 complete emitter `q2`, every `q3`, arity replay and the detector restriction

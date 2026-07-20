@@ -109,7 +109,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   attach the certified 188-row physical/current q2 interface to the 78-row relative mapping cofiber and solve or certify the remaining cross-incidence; causal Green data and the eighteen candidate-13 spectral receivers remain separate fail-closed gates
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; for Berger, use the certified temporal-cutoff Green family to prove cutoff microlocal propagation and its regular response morphism, then supply a global seed covariance, while separately requesting a corrected q26-compatible Cauchy lift instead of the exactly rejected canonical graph lift; in parallel analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows, add remaining BV rows to the partial-BV five-carrier representative, classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; corrected complete q2 (171,759 keys) and q3 (6,427,496 keys) explicitly include the separate gravity payloads, the action-derived dressed-rod correction removes the former rod witness, and the physical-emitter Hessian/permutation repair restores repeated-slot multiplicities, but the exact h_b(Theta_bar)-specialized 108-row arity-two replay remains OBSTRUCTED at bidegree (0,0) with 2,772 keys on a distinct typed Maxwell-emitter common-action orbit, which must be rederived before any arity-three, K_Berger, observer-morphism or Z2^C restriction
+Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; corrected complete q2 (171,759 keys) and q3 (6,427,496 keys) explicitly include the separate gravity payloads, the action-derived dressed-rod correction removes the former rod witness, and the physical-emitter Hessian/permutation plus stress/spatial-momentum Hamiltonian repairs close the same-background spatial Maxwell-emitter Ward rows, but the exact h_b(Theta_bar)-specialized 108-row arity-two replay remains OBSTRUCTED at bidegree (0,0) with 2,340 keys on the relational temporal emitter-Diff orbit, which must be conjugated through the clock chart before any arity-three, K_Berger, observer-morphism or Z2^C restriction
 Black hole:  BH-2C COMPLETE: claim repair; log-free Jordan gate both parities; composed metric LOG TAILS at infinity; finite-flux boundary class = EXACTLY the Einstein sector (axial fixture: E x E r^-2 integrable, extra-involving pairs divergent, shift-invariant) -- horizon nonselection + infinity norm-selection now both certified. Residual: symbolic frequency, polar flux table, summability, phase-space construction, general l; ringdown coordinator-gated
 ```
 
@@ -1166,15 +1166,20 @@ survive the first backreacted, normalized apparatus interaction?
    rod/rod-cotangent defect rows.  A separate action-Hessian repair restores
    multiplicity two when the two remaining physical-emitter slots coincide;
    its `3 h_hat_00 K0_01^2` fixture now emits coefficient six, and the q3
-   first-jet regression passes.  The remaining formal extension has 3,984
-   keys and 4,272 monomials.  The exact relational-switch quotient
-   `e0 Theta_bar=3/4`, `ei Theta_bar=0` reduces it to 2,772 keys and 2,820
-   monomials on 24 output rows.  Its first same-background witness is
-   `c_spatial_1_star <- (e1 A_0,e1 K0_01)` with coefficient `-3 g0 h0`.
-   Two-sided isolation assigns it to the typed Maxwell and physical-emitter
-   q2 sources crossed with the base and emitter unary sources.  The repair
-   gate remains a common-action rederivation of that shared-field orbit—not a
-   fitted sign flip—and must also dispose of the later memory/clock rows.
+   first-jet regression passes.  A common-action Hamiltonian bridge now
+   raises raw metric derivatives to the canonical stress rows with
+   `T=-2 delta S/dg` and applies the same weight to the three frozen spatial
+   emitter Diff momentum-map rows.  The former spatial Maxwell-emitter
+   witness and every same-background defect on rows 49--51 vanish exactly.
+   The remaining formal extension has 3,432 keys and 3,720 monomials.  The
+   exact relational-switch quotient `e0 Theta_bar=3/4`, `ei Theta_bar=0`
+   reduces it to 2,340 keys and 2,388 monomials on 21 output rows.  Its first
+   same-background witness is `tau_star <- (e0 e1 A_0,K0_01)` with
+   coefficient `+g0 h0`.  Two-sided isolation assigns it entirely to the
+   emitter Diff--BV q2 source crossed with the emitter unary source.  The
+   repair gate is therefore a common-action conjugation of the temporal
+   two-form Diff cotangent orbit through the certified relational clock chart,
+   followed by the later memory/clock rows—not a fitted coefficient flip.
    Arity three,
    `K_Berger`, the observer morphism and
    `O_detector|Z2^C` remain unavailable.

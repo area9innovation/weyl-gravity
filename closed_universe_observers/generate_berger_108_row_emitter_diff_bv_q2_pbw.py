@@ -67,6 +67,7 @@ FORM2 = form_basis(2)
 FORM3 = form_basis(3)
 FRAME_TO_GHOST = {0: 3, 1: 0, 2: 1, 3: 2}
 GHOST_TO_DUAL = {0: 49, 1: 50, 2: 51, 3: 52}
+SPATIAL_DIFF_DUAL_ROWS = (49, 50, 51)
 
 
 def sha256(path: Path) -> str:
@@ -369,7 +370,33 @@ def emitter_tensor() -> tuple[Tensor, dict[str, int]]:
             output[key] = add(output.get(key, {}), coefficient)
         counts[f"emitter_{emitter}_ordered_Lie_terms"] = len(ordered)
         counts[f"emitter_{emitter}_completed_q2_keys"] = len(block)
+    # The frozen spatial Diff momentum-map rows use the same Hamiltonian
+    # normalization as the metric stress rows: T=-2 delta S/dg.  Applying
+    # the weight to both sides of the spatial Ward orbit preserves the free
+    # emitter cancellation and is required when the Maxwell--emitter action
+    # is stitched to the canonical gravity carrier.  The relational temporal
+    # row 52 belongs to the separate clock/switch orbit and is not promoted by
+    # this spatial bridge.
+    for key, coefficient in list(output.items()):
+        if key[0] in SPATIAL_DIFF_DUAL_ROWS:
+            output[key] = scale(coefficient, rational(-2))
     return output, counts
+
+
+def spatial_momentum_map_hamiltonian_audit() -> dict[str, Any]:
+    tensor, _ = emitter_tensor()
+    key = 49, 84, (), 96, (1,)
+    expected = constant(rational(-2))
+    return {
+        "fixture": "q2(K0_01,K0_01_star with e1)->c_spatial_1_star",
+        "spatial_Diff_Hamiltonian_weight": "-2",
+        "relational_temporal_row_scaled": False,
+        "expected_coefficient": serialize(expected),
+        "actual_coefficient": serialize(tensor.get(key, {})),
+        "spatial_momentum_map_bridge_defect_count": int(
+            tensor.get(key, {}) != expected
+        ),
+    }
 
 
 def scalar_template_audit() -> dict[str, Any]:
@@ -494,14 +521,15 @@ def build(*, payload: dict[str, Any] | None = None, payload_sha256: str | None =
     payload = payload or payload_document()
     scalar_audit = scalar_template_audit()
     cartan = cartan_audit()
+    momentum_bridge = spatial_momentum_map_hamiltonian_audit()
     tensor, _ = emitter_tensor()
     symmetry = graded_symmetry_defects(tensor)
-    if scalar_audit["scalar_BV_template_recovery_defect_count"] or cartan["Cartan_formula_defect_count"] or symmetry:
+    if scalar_audit["scalar_BV_template_recovery_defect_count"] or cartan["Cartan_formula_defect_count"] or momentum_bridge["spatial_momentum_map_bridge_defect_count"] or symmetry:
         raise AssertionError("emitter Diff--BV q2 audit failed")
     mutated = json.loads(json.dumps(payload["rows"]))
     mutated[-1]["terms"].pop()
     boundary = (
-        "This exact LOCAL-ALGEBRAIC certificate exports the remaining two-form Diff--BV q2 cotangent orbit for both selected massive emitters on the canonical 108-row Berger carrier. It derives the non-holonomic component formula for L_c K using all four vector components, including the relational temporal ghost tau, and independently reproduces every term from Cartan's identity L_c K=i_c dK+d(i_c K) using the certified support-local Berger de Rham matrices. The three variational slots of the single lowered vertex integral <K_b_plus,L_c K_b> generate q2(c,K_b) to K_b, the density-cotangent action q2(c,K_b_plus) to K_b_plus, and the reciprocal q2(K_b,K_b_plus) to c_plus, with every formal-adjoint Leibniz term and Berger PBW reduction explicit. The same cotangent-completion engine exactly recovers the certified 24-term scalar BV template, fixing its signs and factorial normalization independently of the two-form calculation. The resulting tensor has exact graded input symmetry, and a payload-key deletion changes its canonical hash. Together with the separately certified physical emitter stress/switch block this completes the emitter q2 sector. It does not yet assemble the base, apparatus and emitter overlays into one canonical complete 108-row q2 payload; therefore complete scalar q2, every q3 block, coefficientwise q1q2 and q2q2+q1q3 replay, K_Berger equivariance, observer-morphism stability, restriction of detector response to Z2, nonlinear rank, physical Bridge 3, finite-parameter causal propagation and quantum claims remain unavailable. No compact-product mode is identified with a Berger row."
+        "This exact LOCAL-ALGEBRAIC certificate exports the two-form Diff--BV q2 cotangent orbit for both selected massive emitters on the canonical 108-row Berger carrier. It derives the non-holonomic component formula for L_c K using all four vector components, including the relational temporal ghost tau, and independently reproduces every term from Cartan's identity L_c K=i_c dK+d(i_c K) using the certified support-local Berger de Rham matrices. The three variational slots of the single lowered vertex integral <K_b_plus,L_c K_b> generate q2(c,K_b) to K_b, the density-cotangent action q2(c,K_b_plus) to K_b_plus, and the reciprocal q2(K_b,K_b_plus) to c_plus, with every formal-adjoint Leibniz term and Berger PBW reduction explicit. The three frozen spatial c_plus outputs carry the same minus-two Hamiltonian weight as the canonical metric stress rows; an exact K0_01/K0_01_star fixture pins that bridge. The relational temporal output remains unscaled because it belongs to the separate clock-chart conjugation gate. The same cotangent-completion engine exactly recovers the certified 24-term scalar BV template before this spatial raising, fixing its signs and factorial normalization independently of the two-form calculation. The resulting tensor has exact graded input symmetry, and a payload-key deletion changes its canonical hash. Together with the separately certified physical emitter stress/switch block this completes the source-labelled emitter q2 sector, but the complete arity-two replay remains obstructed on the temporal emitter-Diff orbit. Therefore q2q2+q1q3, K_Berger equivariance, observer-morphism stability, restriction of detector response to Z2, nonlinear rank, physical Bridge 3, finite-parameter causal propagation and quantum claims remain unavailable. No compact-product mode is identified with a Berger row."
     )
     payload_sha256 = payload_sha256 or sha256(PAYLOAD)
     return {
@@ -530,6 +558,7 @@ def build(*, payload: dict[str, Any] | None = None, payload_sha256: str | None =
         "action_and_cyclicity_audit": {
             "Cartan_replay": cartan,
             "scalar_BV_template_recovery": scalar_audit,
+            "spatial_momentum_map_Hamiltonian_bridge": momentum_bridge,
             "graded_symmetry_defect_count": symmetry,
             "cyclicity_generation": "all rows are the three exact variational slots of one K-plus L_c K vertex raised with the canonical odd pairing",
         },

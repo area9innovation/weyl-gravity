@@ -115,8 +115,8 @@ def replay_audit() -> dict[str, Any]:
     defect = arity.arity_two_degree((0, 0), q1, q2)
     formal_summary = arity.bilinear_summary(defect)
     expected_formal = {
-        "operator_key_count": 3984,
-        "serialized_term_count": 4272,
+        "operator_key_count": 3432,
+        "serialized_term_count": 3720,
         "nonzero_output_rows": [
             49, 50, 51, 52, 59, 60, 61, 62, 80, 81, 82, 83, 96, 97,
             98, 99, 100, 101, 102, 103, 104, 105, 106, 107,
@@ -129,9 +129,12 @@ def replay_audit() -> dict[str, Any]:
     specialized_defect = arity.specialize_bilinear_rows(defect)
     summary = arity.bilinear_summary(specialized_defect)
     expected = {
-        "operator_key_count": 2772,
-        "serialized_term_count": 2820,
-        "nonzero_output_rows": expected_formal["nonzero_output_rows"],
+        "operator_key_count": 2340,
+        "serialized_term_count": 2388,
+        "nonzero_output_rows": [
+            52, 59, 60, 61, 62, 80, 81, 82, 83, 96, 97, 98, 99,
+            100, 101, 102, 103, 104, 105, 106, 107,
+        ],
         "maximum_total_input_order": 3,
     }
     if summary != expected:
@@ -178,7 +181,7 @@ def replay_audit() -> dict[str, Any]:
         )
         if witness_key in row:
             source_values[source] = serialize(row[witness_key])
-    if set(source_values) != {"base_maxwell_typed", "emitter_physical"}:
+    if set(source_values) != {"emitter_Diff_BV"}:
         raise AssertionError(f"first-witness source isolation drifted: {source_values}")
 
     q1_source_values = {}
@@ -193,7 +196,7 @@ def replay_audit() -> dict[str, Any]:
         )
         if witness_key in row:
             q1_source_values[source] = serialize(row[witness_key])
-    if set(q1_source_values) != {"base_gravity_clock_maxwell", "emitter"}:
+    if set(q1_source_values) != {"emitter"}:
         raise AssertionError(f"first-witness q1 source isolation drifted: {q1_source_values}")
 
     return {
@@ -236,23 +239,26 @@ def build(*, audit: dict[str, Any] | None = None) -> dict[str, Any]:
         "witness and all six rod/rod-cotangent defect rows. The physical-emitter action "
         "exporter now also restores the multiplicity-two second derivative when its two "
         "remaining action slots coincide; this removes 244 further formal operator keys. "
-        "The exact h_b(Theta_bar) chain-rule quotient then kills every spatial switch jet "
+        "The metric action derivatives are now also raised to the canonical stress rows "
+        "with T=-2 delta S/dg, while the three frozen spatial Diff momentum-map rows carry "
+        "the matching -2 Hamiltonian weight. This common-action bridge removes the former "
+        "c_spatial_1_star witness and all same-background defects on rows 49--51 without "
+        "altering the relational temporal row. The exact h_b(Theta_bar) chain-rule quotient then kills every spatial switch jet "
         "and replaces e0^p h_b^(n) by (3/4)^p h_b^(n+p). Before that quotient the residual "
-        "has 3,984 keys and 4,272 monomials; after it the decisive same-background residual "
-        "has 2,772 keys and 2,820 monomials on 24 output rows. Its first lexicographic "
-        "witness is the shared typed Maxwell--emitter orbit: c_spatial_1_star on e1 A_0 "
-        "and e1 K0_01 has coefficient -3 g0 h0. It source-isolates to the typed Maxwell "
-        "and physical-emitter q2 sources crossed with the base/emitter q1 sources. Since "
+        "has 3,432 keys and 3,720 monomials; after it the decisive same-background residual "
+        "has 2,340 keys and 2,388 monomials on 21 output rows. Its first lexicographic "
+        "witness has moved to the relational temporal orbit: tau_star on e0 e1 A_0 "
+        "and undifferentiated K0_01 has coefficient +g0 h0. It source-isolates entirely "
+        "to the emitter Diff--BV q2 source crossed with the emitter q1 source. Since "
         "this witness is at bidegree "
         "(0,0), neither the epsilon_R_squared nonlinear-clock unary correction nor "
         "any q3 term can cancel it inside the declared arity-two identity. The "
         "remaining first-bidegree coefficients are deliberately not evaluated once "
         "this lowest-cost falsifier fires; they are recorded as skipped, not passed. "
         "Therefore the complete arity-two identity is OBSTRUCTED. This "
-        "certificate does not guess the remaining repair: the typed Maxwell-emitter "
-        "shared-field orbit must be rederived from the common action after the now-fixed "
-        "identical-slot factorial convention, and the later memory/clock orbit must also "
-        "be replayed. The two-sided "
+        "certificate does not guess the remaining repair: the temporal two-form Diff "
+        "cotangent orbit must be conjugated through the certified relational clock chart "
+        "and replayed together with the later memory/clock rows. The two-sided "
         "source isolation is diagnostic only: it identifies the q2 and q1 sources "
         "of the first key, not a proof that no other apparatus or emitter orbit is "
         "missing. The existing q2 and q3 payloads "
@@ -282,7 +288,7 @@ def build(*, audit: dict[str, Any] | None = None) -> dict[str, Any]:
         "arity_two_replay": audit,
         "repair_gate": {
             "status": "OPEN",
-            "required_object": "rederive the typed Maxwell-emitter shared-field q2 orbit from the common BV action in the suspended graded-symmetric factorial convention; do not flip or fit isolated coefficients",
+            "required_object": "derive the relationally clock-dressed temporal two-form Diff--BV q2 cotangent orbit from the common action and replay it with the later memory/clock rows; do not flip or fit isolated coefficients",
             "acceptance": "the complete (0,0) defect and then every first-bidegree q1q2 coefficient vanish exactly, with the typed 64-row base retained as a zero control",
         },
         "activation_disposition": {
@@ -302,7 +308,7 @@ def build(*, audit: dict[str, Any] | None = None) -> dict[str, Any]:
             "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "REDERIVE_TYPED_MAXWELL_EMITTER_COMMON_ACTION_ORBIT_AND_REPLAY_Q1Q2",
+        "next_gate": "CONJUGATE_TEMPORAL_EMITTER_DIFF_ORBIT_THROUGH_RELATIONAL_CLOCK_CHART_AND_REPLAY_Q1Q2",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",
@@ -331,9 +337,9 @@ def main() -> int:
         formal = audit["formal_differential_coefficient_defect_summary"]
         specialized = audit["complete_defect_summary"]
         witness = audit["first_lexicographic_defect"]
-        if (formal["operator_key_count"], formal["serialized_term_count"]) != (3984, 4272):
+        if (formal["operator_key_count"], formal["serialized_term_count"]) != (3432, 3720):
             raise SystemExit("stale formal arity-two audit")
-        if (specialized["operator_key_count"], specialized["serialized_term_count"]) != (2772, 2820):
+        if (specialized["operator_key_count"], specialized["serialized_term_count"]) != (2340, 2388):
             raise SystemExit("stale switch-specialized arity-two audit")
         if audit["typed_64_row_base_control_summary"]["operator_key_count"] != 0:
             raise SystemExit("stale typed-base arity-two control")
@@ -342,11 +348,11 @@ def main() -> int:
         if (
             witness["output_row"], witness["left_input_row"], witness["left_pbw_multiindex"],
             witness["right_input_row"], witness["right_pbw_multiindex"],
-        ) != (49, 55, [0, 1, 0, 0], 84, [0, 1, 0, 0]):
+        ) != (52, 55, [1, 1, 0, 0], 84, [0, 0, 0, 0]):
             raise SystemExit("stale same-background arity-two witness")
-        if set(audit["first_defect_q2_source_isolation"]) != {"base_maxwell_typed", "emitter_physical"}:
+        if set(audit["first_defect_q2_source_isolation"]) != {"emitter_Diff_BV"}:
             raise SystemExit("stale q2 source isolation")
-        if set(audit["first_defect_q1_source_isolation"]) != {"base_gravity_clock_maxwell", "emitter"}:
+        if set(audit["first_defect_q1_source_isolation"]) != {"emitter"}:
             raise SystemExit("stale q1 source isolation")
     value = build(audit=audit)
     schema = json.loads(SCHEMA.read_text())

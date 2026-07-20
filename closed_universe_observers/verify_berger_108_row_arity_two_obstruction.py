@@ -24,8 +24,8 @@ def main() -> int:
         assert value == build()
         assert value["arity_two_replay"] == replay_audit()
     else:
-        assert value["arity_two_replay"]["formal_differential_coefficient_defect_summary"]["operator_key_count"] == 3984
-        assert value["arity_two_replay"]["complete_defect_summary"]["operator_key_count"] == 2772
+        assert value["arity_two_replay"]["formal_differential_coefficient_defect_summary"]["operator_key_count"] == 3432
+        assert value["arity_two_replay"]["complete_defect_summary"]["operator_key_count"] == 2340
         assert value["arity_two_replay"]["typed_64_row_base_control_summary"]["operator_key_count"] == 0
     for name, reference in value["dependency_refs"].items():
         path = DEPENDENCIES[name]

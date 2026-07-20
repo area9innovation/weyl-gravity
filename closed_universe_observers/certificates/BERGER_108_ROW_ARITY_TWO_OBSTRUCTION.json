@@ -11,9 +11,6 @@
     "complete_defect_summary": {
       "maximum_total_input_order": 3,
       "nonzero_output_rows": [
-        49,
-        50,
-        51,
         52,
         59,
         60,
@@ -36,8 +33,8 @@
         106,
         107
       ],
-      "operator_key_count": 2772,
-      "serialized_term_count": 2820
+      "operator_key_count": 2340,
+      "serialized_term_count": 2388
     },
     "emitter_switch_specialization": {
       "chain_rule": "e0^p h_b^(n)(Theta_bar)=(3/4)^p h_b^(n+p)(Theta_bar); every spatial h_b jet vanishes",
@@ -45,50 +42,12 @@
       "spatial_clock_jets": "e1(Theta_bar)=e2(Theta_bar)=e3(Theta_bar)=0"
     },
     "first_defect_q1_source_isolation": {
-      "base_gravity_clock_maxwell": [
-        {
-          "coefficient": {
-            "rational": {
-              "denominator": 1,
-              "numerator": -1
-            },
-            "sqrt10": {
-              "denominator": 1,
-              "numerator": 0
-            }
-          },
-          "factors": [
-            {
-              "kind": "parameter",
-              "name": "g0",
-              "spacetime_multiindex": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "vertical_multiindex": []
-            },
-            {
-              "kind": "profile",
-              "name": "h0",
-              "spacetime_multiindex": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "vertical_multiindex": []
-            }
-          ]
-        }
-      ],
       "emitter": [
         {
           "coefficient": {
             "rational": {
               "denominator": 1,
-              "numerator": -2
+              "numerator": 1
             },
             "sqrt10": {
               "denominator": 1,
@@ -123,50 +82,12 @@
       ]
     },
     "first_defect_q2_source_isolation": {
-      "base_maxwell_typed": [
+      "emitter_Diff_BV": [
         {
           "coefficient": {
             "rational": {
               "denominator": 1,
-              "numerator": -2
-            },
-            "sqrt10": {
-              "denominator": 1,
-              "numerator": 0
-            }
-          },
-          "factors": [
-            {
-              "kind": "parameter",
-              "name": "g0",
-              "spacetime_multiindex": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "vertical_multiindex": []
-            },
-            {
-              "kind": "profile",
-              "name": "h0",
-              "spacetime_multiindex": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "vertical_multiindex": []
-            }
-          ]
-        }
-      ],
-      "emitter_physical": [
-        {
-          "coefficient": {
-            "rational": {
-              "denominator": 1,
-              "numerator": -1
+              "numerator": 1
             },
             "sqrt10": {
               "denominator": 1,
@@ -208,7 +129,7 @@
           "coefficient": {
             "rational": {
               "denominator": 1,
-              "numerator": -3
+              "numerator": 1
             },
             "sqrt10": {
               "denominator": 1,
@@ -244,18 +165,18 @@
       "left_input_row": 55,
       "left_input_row_id": "A_0",
       "left_pbw_multiindex": [
-        0,
+        1,
         1,
         0,
         0
       ],
-      "output_row": 49,
-      "output_row_id": "c_spatial_star_1",
+      "output_row": 52,
+      "output_row_id": "tau_star",
       "right_input_row": 84,
       "right_input_row_id": "K0_01",
       "right_pbw_multiindex": [
         0,
-        1,
+        0,
         0,
         0
       ]
@@ -288,8 +209,8 @@
         106,
         107
       ],
-      "operator_key_count": 3984,
-      "serialized_term_count": 4272
+      "operator_key_count": 3432,
+      "serialized_term_count": 3720
     },
     "higher_bidegrees_not_run": [
       [
@@ -318,18 +239,18 @@
     }
   },
   "atlas_status": "OBSTRUCTED",
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE obstruction replays the lowest (epsilon_R_squared,kappa)=(0,0) coefficient of q1 q2+q2(q1,-)+(-1)^|x|q2(-,q1) on the canonical 108-row Berger differential-coefficient PBW carrier. The typed 64-row gravity-clock-Maxwell base is an exact zero control. The action-derived dressed-rod clock correction removes the former +e0 e1 R0_1 witness and all six rod/rod-cotangent defect rows. The physical-emitter action exporter now also restores the multiplicity-two second derivative when its two remaining action slots coincide; this removes 244 further formal operator keys. The exact h_b(Theta_bar) chain-rule quotient then kills every spatial switch jet and replaces e0^p h_b^(n) by (3/4)^p h_b^(n+p). Before that quotient the residual has 3,984 keys and 4,272 monomials; after it the decisive same-background residual has 2,772 keys and 2,820 monomials on 24 output rows. Its first lexicographic witness is the shared typed Maxwell--emitter orbit: c_spatial_1_star on e1 A_0 and e1 K0_01 has coefficient -3 g0 h0. It source-isolates to the typed Maxwell and physical-emitter q2 sources crossed with the base/emitter q1 sources. Since this witness is at bidegree (0,0), neither the epsilon_R_squared nonlinear-clock unary correction nor any q3 term can cancel it inside the declared arity-two identity. The remaining first-bidegree coefficients are deliberately not evaluated once this lowest-cost falsifier fires; they are recorded as skipped, not passed. Therefore the complete arity-two identity is OBSTRUCTED. This certificate does not guess the remaining repair: the typed Maxwell-emitter shared-field orbit must be rederived from the common action after the now-fixed identical-slot factorial convention, and the later memory/clock orbit must also be replayed. The two-sided source isolation is diagnostic only: it identifies the q2 and q1 sources of the first key, not a proof that no other apparatus or emitter orbit is missing. The existing q2 and q3 payloads remain valid as source-labelled tensors, but their coexistence with the completed unary does not define a certified L-infinity coderivation. Because arity two already fails, the q2q2+q1q3 replay, K_Berger equivariance, observer-morphism stability, detector restriction to Z2, nonlinear response rank, physical Bridge 3, finite-parameter causal propagation and all quantum claims remain fail-closed. No compact-product mode is identified with a Berger row.",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE obstruction replays the lowest (epsilon_R_squared,kappa)=(0,0) coefficient of q1 q2+q2(q1,-)+(-1)^|x|q2(-,q1) on the canonical 108-row Berger differential-coefficient PBW carrier. The typed 64-row gravity-clock-Maxwell base is an exact zero control. The action-derived dressed-rod clock correction removes the former +e0 e1 R0_1 witness and all six rod/rod-cotangent defect rows. The physical-emitter action exporter now also restores the multiplicity-two second derivative when its two remaining action slots coincide; this removes 244 further formal operator keys. The metric action derivatives are now also raised to the canonical stress rows with T=-2 delta S/dg, while the three frozen spatial Diff momentum-map rows carry the matching -2 Hamiltonian weight. This common-action bridge removes the former c_spatial_1_star witness and all same-background defects on rows 49--51 without altering the relational temporal row. The exact h_b(Theta_bar) chain-rule quotient then kills every spatial switch jet and replaces e0^p h_b^(n) by (3/4)^p h_b^(n+p). Before that quotient the residual has 3,432 keys and 3,720 monomials; after it the decisive same-background residual has 2,340 keys and 2,388 monomials on 21 output rows. Its first lexicographic witness has moved to the relational temporal orbit: tau_star on e0 e1 A_0 and undifferentiated K0_01 has coefficient +g0 h0. It source-isolates entirely to the emitter Diff--BV q2 source crossed with the emitter q1 source. Since this witness is at bidegree (0,0), neither the epsilon_R_squared nonlinear-clock unary correction nor any q3 term can cancel it inside the declared arity-two identity. The remaining first-bidegree coefficients are deliberately not evaluated once this lowest-cost falsifier fires; they are recorded as skipped, not passed. Therefore the complete arity-two identity is OBSTRUCTED. This certificate does not guess the remaining repair: the temporal two-form Diff cotangent orbit must be conjugated through the certified relational clock chart and replayed together with the later memory/clock rows. The two-sided source isolation is diagnostic only: it identifies the q2 and q1 sources of the first key, not a proof that no other apparatus or emitter orbit is missing. The existing q2 and q3 payloads remain valid as source-labelled tensors, but their coexistence with the completed unary does not define a certified L-infinity coderivation. Because arity two already fails, the q2q2+q1q3 replay, K_Berger equivariance, observer-morphism stability, detector restriction to Z2, nonlinear response rank, physical Bridge 3, finite-parameter causal propagation and all quantum claims remain fail-closed. No compact-product mode is identified with a Berger row.",
   "claim_status": "OBSTRUCTED_COMPLETE_108_ROW_ARITY_TWO_IDENTITY",
   "dependency_refs": {
     "complete_q3": {
       "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPLETE_Q3_PBW.json",
       "result_id": "BERGER_108_ROW_COMPLETE_Q3_PBW",
-      "sha256": "71b4640dbc4e51853087be6557ad606ccf78e8567f9d33c5237ae07c88319e64"
+      "sha256": "9c574a78877ba14f197acf407a10d3b98c6b055608c2131442ab4d571f9a891f"
     },
     "complete_typed_q2": {
       "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPLETE_Q2_PBW.json",
       "result_id": "BERGER_108_ROW_COMPLETE_Q2_PBW",
-      "sha256": "5bb5e5de2261338997ebd1a97e0b8f6cd745bae4381742a33619d785385db7d7"
+      "sha256": "c87285276113391dc70dfb2bd4b66052d8bd78a1c94fc9a1e6a6adc724b4a605"
     },
     "completed_q1": {
       "path": "closed_universe_observers/certificates/BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET.json",
@@ -360,13 +281,13 @@
     "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,
     "TYPED_64_ROW_BASE_ARITY_TWO_CONTROL_ZERO": true
   },
-  "next_gate": "REDERIVE_TYPED_MAXWELL_EMITTER_COMMON_ACTION_ORBIT_AND_REPLAY_Q1Q2",
+  "next_gate": "CONJUGATE_TEMPORAL_EMITTER_DIFF_ORBIT_THROUGH_RELATIONAL_CLOCK_CHART_AND_REPLAY_Q1Q2",
   "provenance": {
     "source_commit": "WORKTREE",
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_108_row_arity_two_obstruction.py",
-        "sha256": "426128a4a45289826c21a8b0174536a812f7054f73e42c7d76f75cc4f08fea5b"
+        "sha256": "7cc7d5f486aa8fd761a20443887918ec320844e9ddc160061db419ae893c2552"
       },
       {
         "path": "closed_universe_observers/berger_108_row_arity_replay.py",
@@ -374,25 +295,25 @@
       },
       {
         "path": "closed_universe_observers/verify_berger_108_row_arity_two_obstruction.py",
-        "sha256": "0944aaaf1128754203c2ae79b46873b9ce291e52d37b88d456b2d7a610738c12"
+        "sha256": "e5bcdd80069a618b6507ec8b5bb6a63846dfd01db6db87db3e85f3f0f6437da3"
       },
       {
         "path": "closed_universe_observers/tests/test_berger_108_row_arity_two_obstruction.py",
-        "sha256": "153c28eb6a4d0135ee57a8d2fb701a82011a335ee0c3c32f44c861066c993d5e"
+        "sha256": "3b3f16a318a2a92ccf9430087c6883fc21195fef8260b7d15cff2ca2bbc22690"
       },
       {
         "path": "closed_universe_observers/schema/berger-108-row-arity-two-obstruction-v1.schema.json",
-        "sha256": "30564b5971c06299a9aa5a32dcbb8cbe05e0352f2aaf1062321e1d804f67d160"
+        "sha256": "78d5e69872b6683cdb09fd87012b7a66d32acdb0c2ff659ea41e8beb0bcca02d"
       },
       {
         "path": "closed_universe_observers/reports/berger-108-row-arity-two-obstruction.md",
-        "sha256": "01a4756d36ff1f8e216f32f56b0b63c6412c8e032c2df0222246cec1aeb57dbe"
+        "sha256": "a7db05c0ea27fb4629bed9972b8d0ef2af6be45865a5f45bed492f4a0fc7ebb5"
       }
     ]
   },
   "repair_gate": {
     "acceptance": "the complete (0,0) defect and then every first-bidegree q1q2 coefficient vanish exactly, with the typed 64-row base retained as a zero control",
-    "required_object": "rederive the typed Maxwell-emitter shared-field q2 orbit from the common BV action in the suspended graded-symmetric factorial convention; do not flip or fit isolated coefficients",
+    "required_object": "derive the relationally clock-dressed temporal two-form Diff--BV q2 cotangent orbit from the common action and replay it with the later memory/clock rows; do not flip or fit isolated coefficients",
     "status": "OPEN"
   },
   "result_id": "BERGER_108_ROW_ARITY_TWO_OBSTRUCTION",

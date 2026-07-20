@@ -5,6 +5,7 @@ from closed_universe_observers.generate_berger_108_row_emitter_diff_bv_q2_pbw im
     graded_symmetry_defects,
     payload_document,
     scalar_template_audit,
+    spatial_momentum_map_hamiltonian_audit,
 )
 
 
@@ -14,6 +15,10 @@ def test_two_form_lie_derivative_is_cartan_formula():
 
 def test_cotangent_engine_recovers_certified_scalar_template():
     assert scalar_template_audit()["scalar_BV_template_recovery_defect_count"] == 0
+
+
+def test_spatial_diff_momentum_map_uses_stress_hamiltonian_weight():
+    assert spatial_momentum_map_hamiltonian_audit()["spatial_momentum_map_bridge_defect_count"] == 0
 
 
 def test_emitter_diff_tensor_is_graded_symmetric():

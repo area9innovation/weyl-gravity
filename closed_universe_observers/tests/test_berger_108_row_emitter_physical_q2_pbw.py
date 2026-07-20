@@ -1,4 +1,4 @@
-from closed_universe_observers.generate_berger_108_row_emitter_physical_q2_pbw import build, identical_slot_hessian_audit, metric_jet_audit, payload_document, q1_hessian_recovery_audit
+from closed_universe_observers.generate_berger_108_row_emitter_physical_q2_pbw import build, identical_slot_hessian_audit, metric_jet_audit, metric_stress_hamiltonian_bridge_audit, payload_document, q1_hessian_recovery_audit
 
 
 def test_quadratic_action_recovers_certified_emitter_q1():
@@ -11,6 +11,10 @@ def test_metric_form_pairing_first_jets_are_direct():
 
 def test_identical_remaining_action_slots_keep_hessian_multiplicity_two():
     assert identical_slot_hessian_audit()["identical_slot_hessian_defect_count"] == 0
+
+
+def test_metric_action_derivative_is_raised_to_canonical_stress_row():
+    assert metric_stress_hamiltonian_bridge_audit()["metric_stress_bridge_defect_count"] == 0
 
 
 def test_payload_has_all_physical_source_families():

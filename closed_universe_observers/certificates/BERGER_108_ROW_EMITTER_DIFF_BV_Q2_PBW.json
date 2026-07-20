@@ -12,6 +12,42 @@
       "certified_template_term_count": 24,
       "rebuilt_term_count": 24,
       "scalar_BV_template_recovery_defect_count": 0
+    },
+    "spatial_momentum_map_Hamiltonian_bridge": {
+      "actual_coefficient": [
+        {
+          "coefficient": {
+            "rational": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "sqrt10": {
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "factors": []
+        }
+      ],
+      "expected_coefficient": [
+        {
+          "coefficient": {
+            "rational": {
+              "denominator": 1,
+              "numerator": -2
+            },
+            "sqrt10": {
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "factors": []
+        }
+      ],
+      "fixture": "q2(K0_01,K0_01_star with e1)->c_spatial_1_star",
+      "relational_temporal_row_scaled": false,
+      "spatial_Diff_Hamiltonian_weight": "-2",
+      "spatial_momentum_map_bridge_defect_count": 0
     }
   },
   "activation_disposition": {
@@ -24,7 +60,7 @@
     "scalar_q3_exported": false
   },
   "atlas_status": "CERTIFIED",
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC certificate exports the remaining two-form Diff--BV q2 cotangent orbit for both selected massive emitters on the canonical 108-row Berger carrier. It derives the non-holonomic component formula for L_c K using all four vector components, including the relational temporal ghost tau, and independently reproduces every term from Cartan's identity L_c K=i_c dK+d(i_c K) using the certified support-local Berger de Rham matrices. The three variational slots of the single lowered vertex integral <K_b_plus,L_c K_b> generate q2(c,K_b) to K_b, the density-cotangent action q2(c,K_b_plus) to K_b_plus, and the reciprocal q2(K_b,K_b_plus) to c_plus, with every formal-adjoint Leibniz term and Berger PBW reduction explicit. The same cotangent-completion engine exactly recovers the certified 24-term scalar BV template, fixing its signs and factorial normalization independently of the two-form calculation. The resulting tensor has exact graded input symmetry, and a payload-key deletion changes its canonical hash. Together with the separately certified physical emitter stress/switch block this completes the emitter q2 sector. It does not yet assemble the base, apparatus and emitter overlays into one canonical complete 108-row q2 payload; therefore complete scalar q2, every q3 block, coefficientwise q1q2 and q2q2+q1q3 replay, K_Berger equivariance, observer-morphism stability, restriction of detector response to Z2, nonlinear rank, physical Bridge 3, finite-parameter causal propagation and quantum claims remain unavailable. No compact-product mode is identified with a Berger row.",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC certificate exports the two-form Diff--BV q2 cotangent orbit for both selected massive emitters on the canonical 108-row Berger carrier. It derives the non-holonomic component formula for L_c K using all four vector components, including the relational temporal ghost tau, and independently reproduces every term from Cartan's identity L_c K=i_c dK+d(i_c K) using the certified support-local Berger de Rham matrices. The three variational slots of the single lowered vertex integral <K_b_plus,L_c K_b> generate q2(c,K_b) to K_b, the density-cotangent action q2(c,K_b_plus) to K_b_plus, and the reciprocal q2(K_b,K_b_plus) to c_plus, with every formal-adjoint Leibniz term and Berger PBW reduction explicit. The three frozen spatial c_plus outputs carry the same minus-two Hamiltonian weight as the canonical metric stress rows; an exact K0_01/K0_01_star fixture pins that bridge. The relational temporal output remains unscaled because it belongs to the separate clock-chart conjugation gate. The same cotangent-completion engine exactly recovers the certified 24-term scalar BV template before this spatial raising, fixing its signs and factorial normalization independently of the two-form calculation. The resulting tensor has exact graded input symmetry, and a payload-key deletion changes its canonical hash. Together with the separately certified physical emitter stress/switch block this completes the source-labelled emitter q2 sector, but the complete arity-two replay remains obstructed on the temporal emitter-Diff orbit. Therefore q2q2+q1q3, K_Berger equivariance, observer-morphism stability, restriction of detector response to Z2, nonlinear rank, physical Bridge 3, finite-parameter causal propagation and quantum claims remain unavailable. No compact-product mode is identified with a Berger row.",
   "claim_status": "CERTIFIED_COMPLETE_TWO_FORM_DIFF_BV_Q2_COTANGENT_ORBIT",
   "dependency_refs": {
     "combined_clock_chart": {
@@ -45,7 +81,7 @@
     "emitter_physical_q2": {
       "path": "closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_PHYSICAL_Q2_PBW.json",
       "result_id": "BERGER_108_ROW_EMITTER_PHYSICAL_Q2_PBW",
-      "sha256": "eaed93a3fc0e8384a19000e12aa729528a5b693dba8c3576c1c6b8fe15262892"
+      "sha256": "1adce4fe647af299c68382a9761020dc11aa9d746a6f4e897dd4a91089a862db"
     },
     "scalar_BV_template": {
       "path": "closed_universe_observers/certificates/BERGER_108_ROW_APPARATUS_SCALAR_BV_Q2_PBW.json",
@@ -76,7 +112,7 @@
   ],
   "next_gate": "ASSEMBLE_CANONICAL_COMPLETE_108_ROW_Q2_PAYLOAD",
   "payload_ref": {
-    "canonical_sha256": "056f675d5c57a11a56a0137fefe191db412fa06fab4e4d700d3d3b8052e7dc9a",
+    "canonical_sha256": "78f0530f128f5afe6daf3723662ab90b928fdc9ec7e05f3069a15c4bb2a22a23",
     "nonzero_output_rows": [
       49,
       50,
@@ -110,14 +146,14 @@
     "operator_key_count": 912,
     "path": "closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_DIFF_BV_Q2_PBW_PAYLOAD.json",
     "serialized_term_count": 912,
-    "sha256": "248344883ced8e6e10199892116641473ff0099559688e01217a36c434ac6df7"
+    "sha256": "b9045932a22559b81843e54274ad19f75b05d8904e0b459f3f60218be6d3ca66"
   },
   "provenance": {
     "source_commit": "WORKTREE",
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_108_row_emitter_diff_bv_q2_pbw.py",
-        "sha256": "a59ca25f8ba95601ad82975896d02ba3e7cbb7694b88bdde6146e425c53af2a9"
+        "sha256": "ff6318170c0c08f6bf7e5cf52ed2316a614bcc0d14cafe72c3c78cb0b95910ad"
       },
       {
         "path": "closed_universe_observers/verify_berger_108_row_emitter_diff_bv_q2_pbw.py",
@@ -125,7 +161,7 @@
       },
       {
         "path": "closed_universe_observers/tests/test_berger_108_row_emitter_diff_bv_q2_pbw.py",
-        "sha256": "f586dfccddee89c380abe3eaff9ea893d0ee180faf91162cbde31b0745a07bc1"
+        "sha256": "e0eef4349f9eea10af5a25a9134b30bab94e30c32f8127995e540a5100f25568"
       },
       {
         "path": "closed_universe_observers/schema/berger-108-row-emitter-diff-bv-q2-pbw-v1.schema.json",
@@ -137,7 +173,7 @@
       },
       {
         "path": "closed_universe_observers/reports/berger-108-row-emitter-diff-bv-q2-pbw.md",
-        "sha256": "afc0bcbf5a1dd5d51a392a17a7f2fe2bbf3d6694dd85f5c662a9ced6a3fbea8e"
+        "sha256": "693954e63db71f77cbd59261d7d19556593f5a50bfc706624fdd404ac784594e"
       }
     ]
   },

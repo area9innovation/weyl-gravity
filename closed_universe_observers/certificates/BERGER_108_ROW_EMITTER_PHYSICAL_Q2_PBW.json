@@ -1,6 +1,6 @@
 {
   "action_and_cyclicity_audit": {
-    "cyclicity_generation": "all physical emitter q2 rows are Euler derivatives of one component action and are raised with the canonical signed odd pairing",
+    "cyclicity_generation": "all physical emitter q2 rows are Euler derivatives of one component action and are raised with the canonical signed odd pairing, with metric derivatives converted to the canonical stress-tensor rows by T=-2 delta S/dg",
     "graded_symmetry_defect_count": 0,
     "identical_slot_hessian": {
       "actual_metric_output_coefficient": [
@@ -8,7 +8,7 @@
           "coefficient": {
             "rational": {
               "denominator": 1,
-              "numerator": 6
+              "numerator": -12
             },
             "sqrt10": {
               "denominator": 1,
@@ -23,7 +23,7 @@
           "coefficient": {
             "rational": {
               "denominator": 1,
-              "numerator": 6
+              "numerator": -12
             },
             "sqrt10": {
               "denominator": 1,
@@ -34,11 +34,110 @@
         }
       ],
       "fixture": "3 h_hat_00 K0_01 K0_01",
-      "identical_slot_hessian_defect_count": 0
+      "identical_slot_hessian_defect_count": 0,
+      "metric_Hamiltonian_weight": "-2",
+      "raw_identical_slot_action_Hessian_coefficient": [
+        {
+          "coefficient": {
+            "rational": {
+              "denominator": 1,
+              "numerator": 6
+            },
+            "sqrt10": {
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "factors": []
+        }
+      ]
     },
     "metric_first_jet": {
       "fixture_count": 4,
       "metric_bilinear_first_jet_defect_count": 0
+    },
+    "metric_stress_Hamiltonian_bridge": {
+      "actual_stress_output_coefficient": [
+        {
+          "coefficient": {
+            "rational": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "sqrt10": {
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "factors": [
+            {
+              "kind": "parameter",
+              "name": "g0",
+              "spacetime_multiindex": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "vertical_multiindex": []
+            },
+            {
+              "kind": "profile",
+              "name": "h0",
+              "spacetime_multiindex": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "vertical_multiindex": []
+            }
+          ]
+        }
+      ],
+      "dA_01_from_e1_A0": "-1",
+      "expected_stress_output_coefficient": [
+        {
+          "coefficient": {
+            "rational": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "sqrt10": {
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "factors": [
+            {
+              "kind": "parameter",
+              "name": "g0",
+              "spacetime_multiindex": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "vertical_multiindex": []
+            },
+            {
+              "kind": "profile",
+              "name": "h0",
+              "spacetime_multiindex": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "vertical_multiindex": []
+            }
+          ]
+        }
+      ],
+      "fixture": "q2(A_0 with e1,K0_01)->h_hat_11_star",
+      "metric_Hamiltonian_weight": "-2",
+      "metric_stress_bridge_defect_count": 0,
+      "raw_densitized_two_form_metric_jet": "1/2"
     },
     "q1_hessian_recovery": {
       "certified_operator_key_count": 198,
@@ -57,7 +156,7 @@
     "scalar_q3_exported": false
   },
   "atlas_status": "CERTIFIED",
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC certificate exports the complete physical-action contribution of both selected massive two-form emitters to q2 on the canonical 108-row Berger carrier. The component action is fixed by an exact Hessian recovery: its quadratic free and switched Maxwell--emitter terms reproduce every key of the previously certified scalar emitter q1 overlay with zero defect, including Lorentzian form weights and switch Leibniz jets. Exact first variation of the densitized two- and three-form pairings supplies the free kinetic and mass stress, the switched interaction stress, and the reciprocal clock-switch source. Raising every slot of the same cubic action through the signed odd pairing generates all metric-, clock-, Maxwell- and emitter-cotangent cyclic mates with noncommuting Berger-frame PBW integration by parts and exact graded input symmetry. The action Hessian now retains multiplicity two when the two remaining slots coincide; an independent 3 h_hat_00 K0_01^2 fixture detects the former half-weight diagonal emission. Independent symbolic fixtures verify the metric bilinear first jets, and deleting one payload term changes the canonical hash. This closes the physical emitter stress/switch q2 subblock only. The two-form Diff--BV q2 cotangent orbit remains to be scalarized before complete emitter or complete 108-row q2 can be claimed. Every q3 block, component q1q2 and q2q2+q1q3 replay, K_Berger equivariance, observer-morphism stability, detector response on Z2, nonlinear rank, physical Bridge 3, finite-parameter causal propagation and quantum claims remain unavailable. No compact-product mode is identified with a Berger row.",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC certificate exports the complete physical-action contribution of both selected massive two-form emitters to q2 on the canonical 108-row Berger carrier. The component action is fixed by an exact Hessian recovery: its quadratic free and switched Maxwell--emitter terms reproduce every key of the previously certified scalar emitter q1 overlay with zero defect, including Lorentzian form weights and switch Leibniz jets. Exact first variation of the densitized two- and three-form pairings supplies the free kinetic and mass stress, the switched interaction stress, and the reciprocal clock-switch source. Raw covariant-metric action derivatives are raised to the canonical stress rows with T=-2 delta S/dg; the exact q2(e1 A_0,K0_01)->h_hat_11_star fixture pins the resulting coefficient. Raising every other slot of the same cubic action through the signed odd pairing generates all clock-, Maxwell- and emitter-cotangent cyclic mates with noncommuting Berger-frame PBW integration by parts and exact graded input symmetry. The action Hessian retains multiplicity two when the two remaining slots coincide; an independent 3 h_hat_00 K0_01^2 fixture has raw Hessian coefficient six and raised stress-row coefficient minus twelve, detecting both the former half-weight diagonal emission and the Hamiltonian bridge. Independent symbolic fixtures verify the raw metric bilinear first jets, and deleting one payload term changes the canonical hash. This closes the physical emitter stress/switch q2 subblock only. The two-form Diff--BV q2 cotangent orbit is separately certified. Complete arity two remains obstructed on the relational temporal emitter-Diff orbit; every arity-three, K_Berger, observer-morphism, detector-cone, nonlinear-rank, physical-Bridge-3, finite-parameter causal and quantum claim remains unavailable. No compact-product mode is identified with a Berger row.",
   "claim_status": "CERTIFIED_COMPLETE_EMITTER_PHYSICAL_ACTION_Q2_PBW_SUBBLOCK",
   "dependency_refs": {
     "combined_clock_chart": {
@@ -110,7 +209,7 @@
   ],
   "next_gate": "EXPORT_TWO_FORM_DIFF_BV_Q2_PBW_BLOCK",
   "payload_ref": {
-    "canonical_sha256": "0fb726792633efe8b3664b52f8b64a8da9dac60fb410a3ad9acd9d9497998083",
+    "canonical_sha256": "09859d194dde2525a6ad623e01212cf761b93cd12a1f271b7eddacd238b15051",
     "nonzero_output_rows": [
       27,
       28,
@@ -144,14 +243,14 @@
     "path": "closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_PHYSICAL_Q2_PBW_PAYLOAD.json",
     "result_id": "BERGER_108_ROW_EMITTER_PHYSICAL_Q2_PBW_PAYLOAD",
     "serialized_term_count": 6340,
-    "sha256": "76773d67be4d213c90ea07fac6fb4e57cc9cd6c852a7633a54822f82ba16ea34"
+    "sha256": "5034f5bae6d59f1a9318d0f306f2114720ac4d50e3733f428afeeecf505b115d"
   },
   "provenance": {
     "source_commit": "WORKTREE",
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_108_row_emitter_physical_q2_pbw.py",
-        "sha256": "dbbff2b1ec3beb1a7b86303ed1cb98bdb0f0fbac9e9cdfaea7e04af686f6f3e3"
+        "sha256": "faee1b682b046bdc78bb1e50906c3c54ea7a034ed721ed9d068aac2032cd0d0a"
       },
       {
         "path": "closed_universe_observers/verify_berger_108_row_emitter_physical_q2_pbw.py",
@@ -159,7 +258,7 @@
       },
       {
         "path": "closed_universe_observers/tests/test_berger_108_row_emitter_physical_q2_pbw.py",
-        "sha256": "1982a1697c6c50e5ce442f75114394a3b5f5600b544ea620ce8c0dfe68c18c45"
+        "sha256": "8ae50f411b89d7657ce2b8579274543c812f6bc80dcfdaaaff19644ac066a748"
       },
       {
         "path": "closed_universe_observers/schema/berger-108-row-emitter-physical-q2-pbw-v1.schema.json",
@@ -171,7 +270,7 @@
       },
       {
         "path": "closed_universe_observers/reports/berger-108-row-emitter-physical-q2-pbw.md",
-        "sha256": "4d5b3fc3e124f060001edaba1624ae4108d6e10abe679fc938f569ba12e83726"
+        "sha256": "10a044972609a35c62ca20e8619fe164708319601c0674a0ebb1f4476545b204"
       }
     ]
   },

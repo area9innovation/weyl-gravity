@@ -6,6 +6,11 @@ two-form component formula agrees termwise with the independent Cartan
 construction `i_c dK_b+d(i_c K_b)`.  Exact formal adjunction supplies the
 emitter-cotangent and Diff-ghost-cotangent partners.
 
+The three frozen spatial Diff momentum-map outputs are raised with the same
+minus-two Hamiltonian weight as the metric stress rows.  The relational
+temporal output is deliberately left in its clock-chart normalization; its
+separate conjugation remains the next arity-two gate.
+
 The same completion engine recovers the certified scalar BV template, so
 the signs and factorial normalization are not inferred from the two-form
 result.  Together with the physical emitter block this completes emitter
