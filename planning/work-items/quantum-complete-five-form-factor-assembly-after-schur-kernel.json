@@ -1,0 +1,40 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-complete-five-form-factor-assembly-after-schur-kernel",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-complete-five-form-factor-assembly-after-schur-kernel",
+  "source": {
+    "path": "planning/work-items/quantum-complete-five-form-factor-assembly-after-schur-kernel.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum-qme",
+    "state": "PROPOSED",
+    "objective": "Complete or sharply reclassify the five parity-even one-loop form factors after the primed Schur finite-kernel disposition.",
+    "stop_condition": "Import the terminal generic primed Schur kernel result.  If it supplies the required finite rows, combine them with the frozen eleven-channel partial-BV quotient and all remaining complete BV factors, derive the five generic labelled-box functions, and independently verify every carrier relation, scale derivative, contact endpoint and holdout.  If it proves unavoidable global-data dependence, parameterize the maximal family of five functions over the certified global spectral datum and prove exactly which combinations remain universal.  Keep additive C^2 and dressed R^2 normalizations separate.  Export a complete coefficient table or the strongest exact parameterized nondefinition.",
+    "current_gate": "complete or globally parameterized parity-even five-form-factor table",
+    "forbid": "no obstructed dependency treated as a supplied kernel; no special-background interpolation; no local normalization absorbed into nonlocal functions; no QME, Lorentzian or particle promotion",
+    "depends_on": [
+      "sf:program/work/quantum-generic-primed-schur-finite-relative-trace-kernel"
+    ],
+    "activates": [
+      "an independently auditable parity-even third-curvature effective-action theorem"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/",
+      "reports/",
+      "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+      "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json",
+      "notes/d-quotient-quantum-team-brief.md",
+      "notes/universe-building-roadmap.md"
+    ],
+    "resource_hint": "QUANTUM ASSEMBLY RETRY.  Promote only what the kernel disposition actually defines.",
+    "notes": [
+      "A global-data-parameterized theorem is preferable to an unjustified universal finite constant."
+    ],
+    "input_commit": "61988be7d",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}

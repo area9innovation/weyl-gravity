@@ -1,0 +1,41 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-generic-primed-schur-finite-relative-trace-kernel",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-generic-primed-schur-finite-relative-trace-kernel",
+  "source": {
+    "path": "planning/work-items/quantum-generic-primed-schur-finite-relative-trace-kernel.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum-qme",
+    "state": "PROPOSED",
+    "objective": "Construct the generic primed Schur finite relative-trace kernel required to complete the parity-even one-loop five-form-factor functions, or prove the first exact analytic obstruction in a complete declared kernel class.",
+    "stop_condition": "Import PARITY_EVEN_THIRD_CURVATURE_FIVE_FORM_FACTOR_ASSEMBLY and its receiver contract by exact hash.  On the same compact scalar-flat Euclidean carrier, fix the full longitudinal Schur operator S_L(W)=2/3 I+1/3 delta(F+W)^{-1}d, its domain, primed zero-mode projector and common Mellin/proper-time subtraction.  Construct a content-addressed primed Green/resolvent kernel or an equivalent complete spectral measure sufficient to determine R_mu0(K), FP R_mu0(K^2) and the generic det_3(I+K) tail through third curvature order.  Derive their five-carrier variations with labelled-box dependence and prove compatibility with the known Wodzicki scale derivative.  Recover round-S4 and S2xS2 only as holdouts.  If no background-universal finite kernel is determined by the declared local operator data, prove nonuniqueness with two admissible kernels sharing symbol, residues, zero modes and subtraction but giving different finite rows, and state the additional global geometric datum needed to specialize the receiver.  Export exact or rigorously enclosed witnesses and a method-distinct verifier.",
+    "current_gate": "generic primed Schur finite kernel, or exact nonuniqueness and its minimal global input",
+    "forbid": "no special-background interpolation; no Wodzicki residue called a finite determinant; no unprimed zero-mode treatment; no arbitrary smoothing choice hidden in a normalization; no full-BV five-function promotion before all five variations are supplied; no QME, Lorentzian, particle or unitarity claim",
+    "depends_on": [],
+    "activates": [
+      "a renewed complete five-form-factor assembly",
+      "or a theorem that the generic finite functions require explicitly parameterized global spectral data"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/",
+      "reports/",
+      "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+      "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json",
+      "notes/d-quotient-quantum-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "QUANTUM ANALYTIC PRODUCER.  Resolve the exact smoothing ambiguity rather than fitting the two certified special backgrounds.",
+    "notes": [
+      "This task imports an OBSTRUCTED predecessor by certificate hash rather than treating its terminal state as a successful dependency.",
+      "An exact nonuniqueness theorem with the minimal missing global datum is a complete result."
+    ],
+    "input_commit": "61988be7d",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}
