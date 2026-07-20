@@ -113,7 +113,7 @@ The shortest independent paths are now:
 Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   attach the certified 188-row physical/current q2 interface to the 78-row relative mapping cofiber and solve or certify the remaining cross-incidence; causal Green data and the eighteen candidate-13 spectral receivers remain separate fail-closed gates
-Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; for Berger, compact-slab cutoff Volterra normal convergence, cutoff decomposability and the regular Cauchy morphisms' cone action are certified, and the global exact CCR-normalized Hadamard Krein covariance has been transported from the free to the cutoff and full indefinite rank-40 metric dilations, so construct a valid raw-companion or full graded-BV restriction and verify the BRST Ward identity and physical-cohomology positivity, while separately requesting a corrected q26-compatible Cauchy lift instead of the exactly rejected canonical graph lift; in parallel analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows, add remaining BV rows to the partial-BV five-carrier representative, classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
+Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; for Berger, the global exact CCR-normalized Hadamard Krein covariance on the full indefinite rank-40 metric dilation is certified, canonical summand restriction is obstructed, and the complete smooth support-local differential graph-intertwiner class bounded on the certified anisotropic Sobolev scale contains only zero, while the correctly typed source pullback certifies the 20-row metric/formal-adjoint endpoint Hadamard kernel with exact CCR; now construct the global ghost/identity Hadamard pair and smooth q26-compatible Ward completion, then apply the already-certified 26-to-54 lift and separately assess physical-cohomology positivity; in parallel analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows, add remaining BV rows to the partial-BV five-carrier representative, classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
 Observer:    the action-derived temporal normalization triangle has invariant holonomy H=2 and full rank on the frozen 108-row carrier; 109 rows are impossible and the complete bounded parity-even first-order 110-row conjugate-pair action class is now obstructed after its unique normalized class cancels the old tau_star witness but retains tau_star<-(e1 A_0,e2 K0_12)=-2 g0 h0, so declare a strictly larger or higher-order common-action ansatz and regenerate/substitute q1/q2 before any arity-three, K_Berger, observer-morphism, detector or Z2^C restriction; the typed Conflux consumer remains unlanded, and the recoil stream independently awaits a provenance-complete physical declaration under its certified v2 contract
 Black hole:  BH-2C COMPLETE: claim repair; log-free Jordan gate both parities; composed metric LOG TAILS at infinity; finite-flux boundary class = EXACTLY the Einstein sector (axial fixture: E x E r^-2 integrable, extra-involving pairs divergent, shift-invariant) -- horizon nonselection + infinity norm-selection now both certified. Residual: symbolic frequency, polar flux table, summability, phase-space construction, general l; ringdown coordinator-gated
 ```
@@ -2134,6 +2134,22 @@ an all-order theorem and does not obstruct order four, another endpoint or
 current incidence, or a larger carrier.  The active Classical Bridge-1 gate
 is now the general Spencer/filtered-cohomology disposition of this fixed
 family rather than another brute-force coefficient layer.
+
+The proof-first successor now decides the fixed endpoint family without
+another coefficient layer.
+`EINSTEIN_WEYL_RELATIVE_ALL_ORDER_ENDPOINT_PAIRING_OBSTRUCTION_V1` pairs the
+chain equation with exact target reducibilities.  For
+`A2(P_X^4)=X^mu c_mu_star`, formal adjunction would require every pointwise
+Gram entry `g(X,Y)` to be constant; `g(J_1,J_1)=sin(theta)^2` is an explicit
+contradiction.  Hence that diffeomorphism-only endpoint is obstructed at all
+finite differential orders.  The theorem simultaneously identifies the
+minimal changed incidence: the correlated fixed-bundle Maxwell compensators
+obey `d lambda_X+i_X F=0`, and adding
+`lambda_X lambda_cov_star` to the endpoint makes the five-stabilizer Gram
+matrix exactly `diag(-1,1,1,1,1)`.  This uses an existing target row and no
+new current label.  The next Classical Bridge-1 item is therefore a fresh
+chain-lift construction with this compensated endpoint, beginning at order
+zero; no corrected chain map or `f2` is yet promoted.
 
 Until one of the four admissible Berger carrier alternatives passes, atlas
 row `classical.berger.crosswalk.retained36_to_einstein_extra` remains
