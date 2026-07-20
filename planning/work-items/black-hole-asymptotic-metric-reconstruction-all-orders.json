@@ -1,0 +1,39 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/black-hole-asymptotic-metric-reconstruction-all-orders",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "black-hole-asymptotic-metric-reconstruction-all-orders",
+  "source": {
+    "path": "planning/work-items/black-hole-asymptotic-metric-reconstruction-all-orders.json",
+    "span": null
+  },
+  "body": {
+    "owner": "black-hole",
+    "state": "PROPOSED",
+    "objective": "Lift the certified symbolic-frequency Schwarzschild curvature indicial sectors to complete formal metric perturbations and decide exactly whether repeated fourth-order characteristics generate logarithmic or tortoise-polynomial metric partners.",
+    "stop_condition": "Import PURE_WEYL_BH2C_SYMBOLIC_INDICIAL from commit eb766b49e by exact hash. For axial and polar l=2 and real omega != 0, construct the exact order-by-order maps from the Ricci/curvature carriers to a declared metric gauge, including every compatibility equation, homogeneous Einstein ambiguity and residual-gauge quotient. Compute the complete Frobenius/Jordan recursion, prove existence or locate the first resonance obstruction, and print all logarithmic, r_* polynomial or generalized-eigenmode factors. State metric components in a regular tetrad and cross-check the leading orders against BH2C_METRIC_LEADING. Treat omega=0 separately through its certified carrier. Land exact sparse recursion data, an independent reconstruction verifier, decisive wrong-exponent and omitted-log mutations, and an atlas fragment. The result must either provide the all-orders formal metric reconstruction or the first exact obstruction in a complete declared reconstruction class.",
+    "current_gate": "all-orders axial and polar metric reconstruction maps at symbolic real nonzero frequency",
+    "forbid": "no curvature falloff called metric falloff; no characteristic polynomial alone called Jordan analysis; no finite truncation called an all-orders proof without a recurrence theorem; no gauge choice that silently removes a homogeneous Einstein or generalized solution; no formal asymptotic series called convergent, finite-flux, radiative, stable, QNM or physical",
+    "depends_on": [],
+    "activates": [
+      "sf:program/work/black-hole-symbolic-frequency-finite-flux-radiation-class",
+      "the metric-level input required by Paper 14 endpoint disposition"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/",
+      "paper/14-pure-weyl-black-hole-radiation.tex",
+      "paper/14-pure-weyl-black-hole-radiation-claim-map.json",
+      "notes/d-quotient-black-hole-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "FIRST SPLIT of the retired broad asymptotic-Jordan item. Prove the recurrence symbolically before extending coefficient depth. Conflux remains disabled; use exact rational-function/Laurent algebra and an independent reconstruction rail.",
+    "notes": [
+      "The symbolic indicial theorem establishes semisimple curvature sectors for real omega != 0 and the exceptional set {0}; it does not determine the reconstructed metric Jordan structure.",
+      "A nonzero reconstruction obstruction is a complete result if the declared gauge/lift class is exhaustive."
+    ],
+    "input_commit": "eb766b49e",
+    "stream": "black-hole"
+  },
+  "edges": []
+}
