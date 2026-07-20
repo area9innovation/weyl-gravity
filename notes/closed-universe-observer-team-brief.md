@@ -2114,3 +2114,33 @@ The team must leave:
 The team succeeds by locating the first exact bridge or the first exact
 obstruction.  It does not succeed by arguing that two closed universes sound
 similar.
+
+## Active bridge: repaired common action to nonlinear observer
+
+The active bridge is
+`sf:program/work/observer-common-action-nonlinear-promotion-gate`.  Its
+activation gate imports
+`BERGER_HIGHER_JET_INVARIANT_ACTION_MODULE_CLASSIFICATION` at committed input
+`8e2d56020` and exact certificate hash
+`417ce291b4b96834f74d3fb97e816673a7111f8453bc8a621ef397e0576a1931`.
+
+The complete integration-by-parts filtered scalar action family through total
+differential order three has 932 Berger-\(U(1)\) invariant lines per emitter.
+Together with all lower counterterms it supplies a 36-module,
+constant-unary, Maxwell-gauge-invariant action whose cyclic \(q_2\) exactly
+kills the certified 64-coordinate typed-source quotient.  This is the first
+actual common-action repair, rather than a projected Ward-column repair.
+
+The nonlinear bridge remains fail-closed.  The repaired cubic action has
+structural \(q_3=0\), but adding the invariant quartic term
+\(\lambda\chi^2 g_0h_0\langle K_0,dA\rangle\) leaves \(q_1,q_2\) unchanged at
+the auxiliary background and gives a nonzero \(q_3\).  Thus the current data
+do not select a unique same-action \(q_3\); complete arity-three,
+\(K_{\rm Berger}\), detector, memory, redshift and backreacted rank-two
+promotion remain unauthorized.
+
+The fail-closed atlas row is
+`observer.berger.interaction.order_three_common_action_promotion_gate`
+(`symplectic=CERTIFIED`, `nonlinear=OBSTRUCTED`,
+`observational=OBSTRUCTED`).  The next activation gate is
+`CLASSIFY_QUARTIC_COMPLETIONS_OF_REPAIRED_COMMON_ACTION`.

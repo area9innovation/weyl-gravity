@@ -660,3 +660,25 @@ def test_higher_jet_action_family_closes_carrier_but_not_source():
     assert "BERGER_HIGHER_JET_INVARIANT_ACTION_MODULE_CLASSIFICATION" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_order_three_action_repairs_source_but_q3_is_fail_closed():
+    row = next(
+        row
+        for row in build()["entries"]
+        if row["id"]
+        == "observer.berger.interaction.order_three_common_action_promotion_gate"
+    )
+    assert row["descriptions"]["symplectic"] == "CERTIFIED"
+    assert row["descriptions"]["nonlinear"] == "OBSTRUCTED"
+    assert row["descriptions"]["observational"] == "OBSTRUCTED"
+    assert row["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
+    assert "same q1/q2 and different q3" in row[
+        "observer_data"
+    ]["survives_gauge_reduction"]["statement"]
+    assert "64-coordinate typed-source quotient is killed" in row[
+        "observer_data"
+    ]["observer_source_channel"]["statement"]
+    assert "BERGER_ORDER_THREE_COMMON_ACTION_PROMOTION_GATE" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }

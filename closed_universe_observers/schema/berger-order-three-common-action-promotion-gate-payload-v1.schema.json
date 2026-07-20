@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "classification",
+    "integration_by_parts_normal_form",
+    "modules"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-order-three-common-action-promotion-gate-payload-v1"},
+    "result_id": {"const": "BERGER_ORDER_THREE_COMMON_ACTION_PROMOTION_GATE_PAYLOAD"},
+    "modules": {"type": "object", "minProperties": 1864, "maxProperties": 1864}
+  },
+  "additionalProperties": true
+}

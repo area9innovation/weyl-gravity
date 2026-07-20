@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "payload_ref",
+    "bounded_action_family",
+    "invariant_classification",
+    "exact_action_image",
+    "decisive_quotient",
+    "activation_disposition",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-order-three-common-action-promotion-gate-v1"},
+    "result_id": {"const": "BERGER_ORDER_THREE_COMMON_ACTION_PROMOTION_GATE"},
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "EUCLIDEAN-SPECTRAL", "LORENTZIAN-CAUSAL"]}
+    }
+  },
+  "additionalProperties": true
+}
