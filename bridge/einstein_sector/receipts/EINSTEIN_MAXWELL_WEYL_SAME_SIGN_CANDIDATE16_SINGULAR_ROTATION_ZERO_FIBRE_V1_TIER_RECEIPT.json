@@ -1,0 +1,49 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE16_SINGULAR_ROTATION_ZERO_FIBRE_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Complete singular-stratum and lifted-rotation-zero-fibre theorem for the fixed-positive-occupation candidate-16 active link.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_singular_rotation_zero_fibre.json": "c8373cdd722590a7ea43424554dec9c9db41edb811c149ce3c2ba9cdb817e10a",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate16_singular_rotation_zero_fibre.py": "d2cbe272516c3b0a9a1f78c82aa8d65c19f10dadf4a3c216b47333f60130fcc1",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate16_singular_rotation_zero_fibre.py": "b87daa419ec1b10d8ac01b4d46f9736b2d013f054079493eb946e8df158a7b4e",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate16_singular_rotation_zero_fibre.py": "e5c75936217a828f9fb0283c963bf47bbc80c5de95fa548b1ee4c3cabac4874c",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate16_singular_rotation_zero_fibre.schema.json": "5c08c2b7d621b8b701480baa0f1606953fa868981c6b822889c72a388c32be13",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-candidate16-singular-rotation-zero-fibre.md": "ec98b8148d0da385239251e18da318ad73d29ebde895621cf7fe31fb3d4f5110"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on the producer, independent verifier and focused test",
+        "python3 -m json.tool on the certificate and schema",
+        "git diff --check on the scoped theorem paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 5,
+      "producer_elapsed_seconds": 0.47,
+      "independent_verifier_elapsed_seconds": 0.61,
+      "unit_test_elapsed_seconds": 0.63,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate16_singular_rotation_zero_fibre --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate16_singular_rotation_zero_fibre",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate16_singular_rotation_zero_fibre"
+      ]
+    },
+    "adversarial": {
+      "status": "PASS_MUTATION_REJECTED",
+      "mutation": "replace the two CP4 endpoint strata by CP3 in a temporary certificate",
+      "result": "the independent verifier raised AssertionError"
+    },
+    "tier_2": {
+      "status": "PASS_BY_EXACT_RECOMPUTATION_AND_TOPOLOGICAL_PROOF",
+      "reason": "The independent verifier recomputes the rank-one and product Jacobian ranks and checks every resolution/connectedness boundary. The human report supplies the incidence-resolution and Kirwan-connectedness proof."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This closes one fixed-occupation singular-topology gate; occupation gluing and all higher lifecycles remain open."
+    }
+  },
+  "claim_boundary": "CERTIFIED for the complete candidate-16 fixed-positive-occupation link after node-phase quotient. Different scalar occupations, final residual descent, all-orders integration and causal, observational or quantum maps remain OPEN or NO_CERTIFIED_MAP."
+}

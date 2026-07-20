@@ -1,0 +1,123 @@
+{
+  "claim_boundary": "This classifies candidate 16 at each fixed positive active occupation after node-phase quotient. It does not construct a global orbifold, glue different occupation strata, perform final residual descent, prove all-orders integration, or supply causal, observational or quantum transport.",
+  "classification": {
+    "all_orders_integrability": false,
+    "candidate16_complete_singular_locus_classified": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "global_orbifold_claim": false,
+    "incidence_resolution_fibres_connected": true,
+    "lifted_rotation_zero_fibre_connected": true,
+    "lifted_rotation_zero_fibre_nonempty": true,
+    "occupation_strata_glued": false,
+    "positive_norm_incidence_resolution_compact_connected_kahler": true,
+    "two_endpoint_CP4_strata": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G3_COMPLETE_FIXED_OCCUPATION_CANDIDATE16_ACTIVE_LINK",
+  "incidence_resolution": {
+    "complex_dimension": 12,
+    "connected_fibres": true,
+    "equivariant_for_lifted_SO3": true,
+    "exceptional_fibre_over_one_vertex": "CP^4",
+    "node_norm_level": "positive weighted ellipsoids in (a1,a2) and (b1,b2) over CP^4 x CP^4",
+    "node_phase_action": "U(1)_A x U(1)_B, free because both physical node norms are positive",
+    "one_factor": "Tot(O_CP4(-1) direct_sum O_CP4(-1)) -> RankLeq1(5x2)",
+    "proper_after_positive_node_norm_reduction": true,
+    "reduced_resolution": "compact connected Kahler manifold of complex dimension 10",
+    "surjective": true,
+    "two_factor": "the product of the two one-factor incidence resolutions"
+  },
+  "interpretation": "Candidate 16's singularity is not a current degeneracy. It consists of two endpoint CP4 strata created when one transformed rank-one factor collapses. A smooth compact incidence resolution retains the lifted Hamiltonian SO(3) action; connectedness of its zero fibre descends through connected resolution fibres to the singular target. Thus the fixed-occupation rotation-zero link is connected without declaring the target an orbifold.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "glue candidate-16 across its scalar occupation cone, then combine with the phase-reduced candidate-17/18/20 divisors without identifying backgrounds",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate16_singular_rotation_zero_fibre.py",
+    "generator_sha256": "d2cbe272516c3b0a9a1f78c82aa8d65c19f10dadf4a3c216b47333f60130fcc1",
+    "inputs": {
+      "bounded_witnesses": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_bounded_witnesses.json",
+        "sha256": "4a49e1fb59f0e7e11f75bce769b7959c07a39a99ec8c83363073c2926b8e2c6e"
+      },
+      "candidate16_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current.json",
+        "sha256": "8c7098d65c4ccf00aba675cfedfd3e986958925cfc3f31396729458a88dd730d"
+      },
+      "stabilizer": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+        "sha256": "212d231aa60f390f4d785a95466156a7851e4c8a531fd2dbaf60c1c50f09d2cf"
+      },
+      "target_doublet": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_target_doublet_L3_zero_varieties.json",
+        "sha256": "1d66fbb93d452997c0ed47bd9e32cf6746d858d706d526c7df62d25f0c937f24"
+      }
+    }
+  },
+  "rank_one_product": {
+    "one_factor_ambient_complex_dimension": 10,
+    "one_factor_dimension": 6,
+    "one_factor_equations": [
+      "f0*g1 - f1*g0",
+      "f0*g2 - f2*g0",
+      "f0*g3 - f3*g0",
+      "f0*g4 - f4*g0",
+      "f1*g2 - f2*g1",
+      "f1*g3 - f3*g1",
+      "f1*g4 - f4*g1",
+      "f2*g3 - f3*g2",
+      "f2*g4 - f4*g2",
+      "f3*g4 - f4*g3"
+    ],
+    "one_factor_singular_locus": "the origin only",
+    "one_factor_smooth_rank": 4,
+    "one_factor_vertex_rank": 0,
+    "product_endpoint_J_rank": 4,
+    "product_endpoint_zariski_tangent_dimension": 16,
+    "product_smooth_J_rank": 8,
+    "product_smooth_dimension": 12
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE16_SINGULAR_ROTATION_ZERO_FIBRE",
+  "result_state": "CANDIDATE16_SINGULAR_STRATA_CLASSIFIED_AND_LIFTED_ROTATION_ZERO_FIBRE_CONNECTED",
+  "rotation_zero_fibre": {
+    "connectedness_input": "Kirwan connectedness for every fibre of the moment map on a compact connected Hamiltonian K-manifold",
+    "moment_map": "the lifted diagonal SO(3) moment map pulled back through the equivariant incidence resolution",
+    "nonempty_witness": "the imported all-m=0 bounded candidate-16 point",
+    "resolved_zero_fibre_connected": true,
+    "singular_target_treated_as_orbifold": false,
+    "target_zero_fibre_connected": true,
+    "target_zero_fibre_is_continuous_image": true
+  },
+  "schema": "einstein-maxwell-weyl-same-sign-candidate16-singular-rotation-zero-fibre-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate16_singular_rotation_zero_fibre.schema.json",
+  "schema_sha256": "5c08c2b7d621b8b701480baa0f1606953fa868981c6b822889c72a388c32be13",
+  "scope": {
+    "background": "candidate 16 only at rho=17*(79+51*sqrt(3))/132",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "the complete candidate-16 active fixed-positive-node-norm link, including both singular endpoint strata, after the two node-phase quotients",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidatewise signed n=(1,-2) or (1,2), never identified across rho",
+    "m": "all m=-2,...,2 through the spin-two incidence resolution",
+    "omega": "positive-frequency q-minus plus q-minus SUM collision into the L=3 p-extra target",
+    "parity": "complete axial and polar q-minus current spaces",
+    "theory": "Weyl-Maxwell target"
+  },
+  "singular_stratification": {
+    "ambient_projective_complex_dimension": 10,
+    "complete_singular_locus": "two disjoint CP^4 endpoint strata",
+    "endpoint_complex_dimension": 4,
+    "endpoint_intersection": "empty on the positive two-node-norm link",
+    "endpoint_projective_isomorphism_type": "CP^4 for each endpoint",
+    "first_endpoint": "the first rank-one factor is the vertex and the second has rank one",
+    "second_endpoint": "the second rank-one factor is the vertex and the first has rank one",
+    "smooth_open_stratum": "both rank-one factors have nonzero 5x2 matrix"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate16_singular_rotation_zero_fibre --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate16_singular_rotation_zero_fibre",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate16_singular_rotation_zero_fibre"
+  ]
+}

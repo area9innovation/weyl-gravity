@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_candidate16_singular_rotation_zero_fibre.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "scope",
+    "rank_one_product",
+    "singular_stratification",
+    "incidence_resolution",
+    "rotation_zero_fibre",
+    "classification",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-same-sign-candidate16-singular-rotation-zero-fibre-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE16_SINGULAR_ROTATION_ZERO_FIBRE"
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "candidate16_complete_singular_locus_classified",
+        "lifted_rotation_zero_fibre_nonempty",
+        "lifted_rotation_zero_fibre_connected",
+        "global_orbifold_claim",
+        "occupation_strata_glued"
+      ],
+      "properties": {
+        "candidate16_complete_singular_locus_classified": {"const": true},
+        "lifted_rotation_zero_fibre_nonempty": {"const": true},
+        "lifted_rotation_zero_fibre_connected": {"const": true},
+        "global_orbifold_claim": {"const": false},
+        "occupation_strata_glued": {"const": false}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
