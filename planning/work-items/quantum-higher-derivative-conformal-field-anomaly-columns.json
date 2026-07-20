@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-higher-derivative-conformal-field-anomaly-columns",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-higher-derivative-conformal-field-anomaly-columns",
+  "source": {
+    "path": "planning/work-items/quantum-higher-derivative-conformal-field-anomaly-columns.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum",
+    "state": "PROPOSED",
+    "objective": "Determine whether the first genuinely higher-derivative conformal matter systems add new one-loop anomaly rays capable of changing the strict pure-Weyl cancellation obstruction, while separately classifying their BV content and kinetic-sign price.",
+    "stop_condition": "When pulled, import the terminal standard-matter lattice and healthy gauge-representation projection obstruction from commits a2ca4f9f0 and 287a43a8c by exact hashes. Begin with the four-dimensional Paneitz scalar and then the simplest nontrivial conformal gauge field for which a complete off-shell BV complex and gauge-fixed elliptic operator can be declared without borrowing strict-Weyl ghosts. For each declared field, construct the minimal and nonminimal BV complexes, gauge fixing where applicable, operator domains, zero-mode policy and determinant powers. Compute the exact (c,-a,p,b_BoxR) column by two independent routes chosen from heat-kernel/Seeley-DeWitt reduction, factorized determinant/index reconstruction and a separately verified conformal-representation character formula. Reconcile schemes and chirality conventions, classify the quadratic action's classical/Krein sign rather than assuming nonnegative multiplicity means health, and append only verified columns to the anomaly lattice. Recompute the nonnegative and formal signed cancellation cones after every column using exact separating functionals and Smith/Hilbert-basis witnesses. Either exhibit a new cancellation ray with its full physical price, or prove that the complete declared higher-derivative family remains separated from the strict gravity vector. Land strict schemas, raw operator and coefficient payloads, independent coefficient verifiers, factorization/sign mutations, atlas updates and a Paper 12 lifecycle disposition.",
+    "current_gate": "first complete higher-derivative conformal matter anomaly columns and their effect on the strict pure-Weyl cancellation cone",
+    "forbid": "no literature coefficient copied without two independent certified derivations; no partial gauge determinant without ghosts and nonminimal cancellation; no Euclidean determinant sign called Lorentzian positivity; no nonnegative field multiplicity called healthy when the field action is higher derivative or Krein-indefinite; no factorized determinant used without multiplicative-anomaly and zero-mode policy; no bounded spin sample called the full conformal higher-spin tower; no compensator theory called strict pure Weyl; no anomaly cancellation called a GUT, Standard Model, particle spectrum, QME restoration, quantum gravity, phenomenology, unitarity or scattering theorem",
+    "depends_on": [],
+    "activates": [
+      "an enlarged exact anomaly lattice containing certified higher-derivative conformal matter columns",
+      "a quantified route or obstruction for changed-field-content anomaly cancellation",
+      "a later conformal-higher-spin generating-function and representation-selection programme"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/",
+      "reports/",
+      "residual_atlas/",
+      "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+      "paper/99-how-to-build-a-universe.md",
+      "notes/d-quotient-quantum-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "IMMEDIATE QUANTUM SUCCESSOR after the gauge-representation projection theorem. This is deliberately proof-first and multi-stage: certify one complete field column before extending the family, reuse exact heat-kernel and representation machinery, and checkpoint each independently verified column.",
+    "notes": [
+      "Ordinary healthy spin-0, spin-1/2 and spin-1 matter cannot cancel the strict C^2 coefficient; gauge representation dimensions only multiply those positive rays.",
+      "Higher-derivative conformal fields may introduce different anomaly signs, but that possibility is inseparable from their own classical and quantum sign problems.",
+      "The item is input-pinned rather than dependency-gated so the resident stream can pull it immediately after the terminal projection result."
+    ],
+    "input_commit": "287a43a8c",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}
