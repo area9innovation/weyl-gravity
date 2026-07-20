@@ -1,0 +1,19 @@
+{
+  "id": "sf:forge-request/bug-science-forge-cli-typo-diagnostics",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "OPEN",
+    "objective": "Complete the remaining SF7 CLI-discoverability acceptance requirement: unknown top-level verbs and work/request subverbs must identify the rejected token and suggest valid nearby commands instead of falling through to the opaque `sfc: unknown subcommand` message.",
+    "depends_on": [
+      "sf:forge-request/science-forge-cli-discoverability-work-show"
+    ],
+    "stop_condition": "Land deterministic launcher diagnostics such that: (1) `s-f wok` names `wok`, suggests `work`, and points to `s-f --help`; (2) `s-f work shwo` names `shwo`, suggests `show`, and points to `s-f work --help`; (3) unknown request subverbs receive the analogous request-specific message; (4) suggestions come from a fixed valid-command table with deterministic edit-distance and tie-breaking, not embeddings or an LLM; (5) aliases and two-word sugar continue to dispatch exactly as before; (6) known pass-through sfc verbs are not rejected by an over-eager launcher filter; (7) diagnostics go to stderr and preserve a nonzero usage exit; and (8) regression tests cover exact typo, distant unknown token with a short valid-command inventory, ambiguous equal-distance suggestions, a valid pass-through verb, `--help`, work show, and request commands.",
+    "forbid": "no fuzzy execution or automatic correction; no lease, lifecycle, request or git mutation caused by a typo; no embeddings, network or model call; no changing the successful SF7 help/show semantics; no hiding the original rejected token; no generic `unknown subcommand` when the launcher owns the relevant command namespace.",
+    "notes": [
+      "Post-landing audit against Forge commit c7e9ff44b: `s-f --help`, `s-f work --help`, `s-f help work`, and `s-f work show --item ...` pass. `s-f wok` and `s-f work shwo` both still print exactly `sfc: unknown subcommand` and exit 2.",
+      "This is the unfulfilled clause 6 of planning/forge-requests/science-forge-cli-discoverability-work-show.json, not a rejection of the rest of SF7."
+    ]
+  }
+}
