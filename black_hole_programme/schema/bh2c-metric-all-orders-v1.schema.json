@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh2c-metric-all-orders-v1",
+  "title": "All-orders formal metric reconstruction (Schwarzschild l=2, both parities, real omega != 0)",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_token",
+    "dependency_tags", "declaration", "companions", "master_ode", "exponents",
+    "recurrence", "positive_control", "polynomial_mode", "omega_zero",
+    "leading_matrix", "not_claimed", "verification_discipline", "claim_flags",
+    "missing_objects", "stage_seconds", "provenance", "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {"const": "pure-weyl-bh2c-metric-all-orders-v1"},
+    "schema_path": {"const": "black_hole_programme/schema/bh2c-metric-all-orders-v1.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "PURE_WEYL_BH2C_METRIC_ALL_ORDERS"},
+    "result_token": {"const": "BH2C_METRIC_ALL_ORDERS_ONE_POWER_POLYNOMIAL_LOG_FREE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "declaration": {
+      "type": "object",
+      "required": ["theory", "background_family", "conformal_frame",
+                   "generator", "phase_space", "horizon_condition",
+                   "infinity_condition", "lifecycle"],
+      "properties": {"lifecycle": {"const": "CLASSIFIED"}}
+    },
+    "companions": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["certificate", "certificate_sha256", "relation"],
+        "properties": {
+          "certificate": {"type": "string"},
+          "certificate_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "relation": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "master_ode": {
+      "type": "object",
+      "required": ["coefficients", "form", "unified_across_parities"],
+      "properties": {
+        "coefficients": {
+          "type": "array",
+          "items": {"type": "string"},
+          "minItems": 3, "maxItems": 3
+        },
+        "form": {"type": "string"},
+        "unified_across_parities": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "exponents": {
+      "type": "object",
+      "required": ["lam0_branch", "oscillatory_branch", "oscillatory_reading"],
+      "properties": {
+        "lam0_branch": {"const": "-3"},
+        "oscillatory_branch": {"const": "-4*I*omega + 1"},
+        "oscillatory_reading": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "recurrence": {
+      "type": "object",
+      "required": ["diagonal_coeff", "reading", "lam0_all_orders_determined",
+                   "lam0_series_head", "log_forced_omega_nonzero"],
+      "properties": {
+        "diagonal_coeff": {"const": "-2*I*omega*(k - 3)"},
+        "reading": {"type": "string"},
+        "lam0_all_orders_determined": {"const": true},
+        "lam0_series_head": {"type": "object"},
+        "log_forced_omega_nonzero": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "positive_control": {
+      "type": "object",
+      "required": ["oscillatory_exponent", "certified_sigma0", "match"],
+      "properties": {
+        "oscillatory_exponent": {"const": "-4*I*omega + 1"},
+        "certified_sigma0": {"const": "-4*I*omega + 1"},
+        "match": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "polynomial_mode": {
+      "type": "object",
+      "required": ["polar", "axial", "axial_leading_coefficient", "degree",
+                   "logarithm", "ramified", "reading"],
+      "properties": {
+        "polar": {"type": "string"},
+        "axial": {"type": "string"},
+        "axial_leading_coefficient": {"type": "string"},
+        "degree": {"const": 1},
+        "logarithm": {"const": false},
+        "ramified": {"const": false},
+        "reading": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "omega_zero": {
+      "type": "object",
+      "required": ["master_ode_omega0", "indicial", "exponents",
+                   "integer_separated", "one_power_bound", "reading"],
+      "properties": {
+        "master_ode_omega0": {"type": "array", "items": {"type": "string"}},
+        "indicial": {"const": "(s - 2)*(s + 3)"},
+        "exponents": {"type": "array", "items": {"type": "string"}},
+        "integer_separated": {"const": true},
+        "one_power_bound": {"type": "string"},
+        "reading": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "leading_matrix": {
+      "type": "object",
+      "required": ["polar_B0h", "axial_B0h"],
+      "properties": {
+        "polar_B0h": {"type": "array"},
+        "axial_B0h": {"type": "array"}
+      },
+      "additionalProperties": false
+    },
+    "not_claimed": {"type": "object"},
+    "verification_discipline": {
+      "type": "array", "items": {"type": "string"}, "minItems": 1
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["all_orders_reconstruction_certified",
+                   "one_power_polynomial_certified", "log_free_certified",
+                   "ramification_excluded_certified",
+                   "recurrence_theorem_certified", "omega_zero_excluded",
+                   "general_l_certified",
+                   "finite_flux_boundary_class_certified"],
+      "properties": {
+        "all_orders_reconstruction_certified": {"const": true},
+        "one_power_polynomial_certified": {"const": true},
+        "log_free_certified": {"const": true},
+        "ramification_excluded_certified": {"const": true},
+        "recurrence_theorem_certified": {"const": true},
+        "omega_zero_excluded": {"const": true},
+        "general_l_certified": {"const": false},
+        "finite_flux_boundary_class_certified": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "missing_objects": {"type": "array", "items": {"type": "string"}},
+    "stage_seconds": {"type": "object"},
+    "provenance": {
+      "type": "object",
+      "required": ["generator_path", "engine_path", "engine_sha256",
+                   "linearized_bach_path", "linearized_bach_sha256",
+                   "leading_certificate", "leading_certificate_sha256",
+                   "indicial_certificate", "indicial_certificate_sha256"],
+      "properties": {
+        "engine_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "linearized_bach_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "leading_certificate_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "indicial_certificate_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": true
+    },
+    "verification_command": {"type": "string"}
+  }
+}

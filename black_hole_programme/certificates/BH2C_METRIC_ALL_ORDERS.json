@@ -1,0 +1,181 @@
+{
+  "claim_flags": {
+    "all_orders_reconstruction_certified": true,
+    "finite_flux_boundary_class_certified": false,
+    "general_l_certified": false,
+    "log_free_certified": true,
+    "omega_zero_excluded": true,
+    "one_power_polynomial_certified": true,
+    "ramification_excluded_certified": true,
+    "recurrence_theorem_certified": true
+  },
+  "companions": [
+    {
+      "certificate": "black_hole_programme/certificates/BH2C_POLAR_METRIC_INDICIAL.json",
+      "certificate_sha256": "98c9505228e186a7b3d3c94a52be824aa977cb9b318b370365f0f764e894d23b",
+      "relation": "all-orders successor: resolves this certificate's missing_objects (mu=0 shearing, mu=0 metric exponents, all-orders reconstruction maps)"
+    },
+    {
+      "certificate": "black_hole_programme/certificates/BH2C_METRIC_LEADING.json",
+      "certificate_sha256": "7433b00e41362ab39b422a6efe074b8cc6d94ebc0f0151a298ce68c634b55086",
+      "relation": "extends the leading-order one-power bound to an exact all-orders degree-1 polynomial; shares the leading matrices B0h (both parities)"
+    }
+  ],
+  "declaration": {
+    "background_family": "Schwarzschild exterior, m = 1; symbolic omega",
+    "conformal_frame": "fixed representative g (certified atlas), ingoing EF chart",
+    "generator": "homogeneous l = 2 metric h-systems (axial and polar) at infinity, real omega != 0",
+    "horizon_condition": "not used (infinity endpoint)",
+    "infinity_condition": "all-orders formal solutions at r -> infinity",
+    "lifecycle": "CLASSIFIED",
+    "phase_space": "not constructed here (formal reconstruction only)",
+    "theory": "S = alpha * integral sqrt(-g) C_{abcd} C^{abcd}"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exponents": {
+    "lam0_branch": "-3",
+    "oscillatory_branch": "-4*I*omega + 1",
+    "oscillatory_reading": "F ~ exp(-2 I omega r) r^{-4 I omega + 1} (1 + O(1/r))"
+  },
+  "leading_matrix": {
+    "axial_B0h": [
+      [
+        "0",
+        "-I*omega",
+        "-1"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "-2*I*omega"
+      ]
+    ],
+    "polar_B0h": [
+      [
+        "0",
+        "I*omega/2",
+        "1/2",
+        "I*omega"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-2*I*omega",
+        "0"
+      ],
+      [
+        "0",
+        "I*omega",
+        "1/2",
+        "0"
+      ]
+    ]
+  },
+  "master_ode": {
+    "coefficients": [
+      "r**2 - 2*r",
+      "2*I*omega*r**2 + 2*r + 2",
+      "6*I*omega*r - 6"
+    ],
+    "form": "c2 F'' + c1 F' + c0 F = 0, F = Ch (polar) = H1' (axial)",
+    "unified_across_parities": true
+  },
+  "missing_objects": [
+    "general l reconstruction",
+    "convergence / Borel summability of the formal series",
+    "the symbolic-frequency finite-flux boundary class (BH2C successor)",
+    "the assembled endpoint-nonselection theorem"
+  ],
+  "not_claimed": {
+    "detail": "the sourced-composition log tails of BH2C_FLUX_CLASS are a distinct object; this is the homogeneous h-system",
+    "finite_flux_or_radiative": false,
+    "general_l": false,
+    "series_convergence": false,
+    "sourced_composition_reconstruction": false,
+    "spectral_or_dynamical_or_physical_selection": false
+  },
+  "omega_zero": {
+    "exponents": [
+      "-3",
+      "2"
+    ],
+    "indicial": "(s - 2)*(s + 3)",
+    "integer_separated": true,
+    "master_ode_omega0": [
+      "r**2 - 2*r",
+      "2*r + 2",
+      "-6"
+    ],
+    "one_power_bound": "BROKEN (r^{+2} growth); log resonance admissible",
+    "reading": "omega=0 is the certified exceptional carrier (BH2C_SYMBOLIC_INDICIAL exceptional set {0}); the physical reconstruction claim excludes it"
+  },
+  "polynomial_mode": {
+    "axial": "H1=const  =>  H0 = (-I*omega)*r + O(1)  (degree 1)",
+    "axial_leading_coefficient": "-I*omega",
+    "degree": 1,
+    "logarithm": false,
+    "polar": "Ch=0, Kh=kappa  =>  Ah = I*omega*kappa*r  (degree 1)",
+    "ramified": false,
+    "reading": "the resonant mu=0 sector saturates the leading-order one-power enhancement with a degree-1 polynomial; no log, no fractional power, at all orders"
+  },
+  "positive_control": {
+    "certified_sigma0": "-4*I*omega + 1",
+    "match": true,
+    "oscillatory_exponent": "-4*I*omega + 1"
+  },
+  "provenance": {
+    "engine_path": "black_hole_programme/weyl_geometry.py",
+    "engine_sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "generator_path": "black_hole_programme/bh2c_metric_all_orders.py",
+    "indicial_certificate": "black_hole_programme/certificates/BH2C_POLAR_METRIC_INDICIAL.json",
+    "indicial_certificate_sha256": "98c9505228e186a7b3d3c94a52be824aa977cb9b318b370365f0f764e894d23b",
+    "leading_certificate": "black_hole_programme/certificates/BH2C_METRIC_LEADING.json",
+    "leading_certificate_sha256": "7433b00e41362ab39b422a6efe074b8cc6d94ebc0f0151a298ce68c634b55086",
+    "linearized_bach_path": "black_hole_programme/linearized_bach.py",
+    "linearized_bach_sha256": "17af69d23396452fc1a60306787a38276b12ebcabec72dc397e69533486f120a"
+  },
+  "recurrence": {
+    "diagonal_coeff": "-2*I*omega*(k - 3)",
+    "lam0_all_orders_determined": true,
+    "lam0_series_head": {
+      "3": "1",
+      "4": "0",
+      "5": "15*I/(2*omega)",
+      "6": "35/(2*omega**2)"
+    },
+    "log_forced_omega_nonzero": false,
+    "reading": "diagonal coefficient -2 I omega (k - 3): nonzero for all integer k >= 4 when omega != 0; k=3 is the indicial root"
+  },
+  "result_id": "PURE_WEYL_BH2C_METRIC_ALL_ORDERS",
+  "result_token": "BH2C_METRIC_ALL_ORDERS_ONE_POWER_POLYNOMIAL_LOG_FREE",
+  "schema": "pure-weyl-bh2c-metric-all-orders-v1",
+  "schema_path": "black_hole_programme/schema/bh2c-metric-all-orders-v1.schema.json",
+  "schema_sha256": "db7cbead40f0002a8a1e7d308e6747852972440556e4c06aba7876cf5182837b",
+  "stage_seconds": {
+    "axial_build": 11.5,
+    "polar_build": 3.1,
+    "total": 15.1
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh2c_metric_all_orders.py",
+  "verification_discipline": [
+    "the master ODE is derived independently from the axial and the polar curvature rows and asserted identical (cross-parity rail)",
+    "exponents from explicit leading-balance, never from a charpoly eigenvalue read of a nilpotent leading matrix",
+    "the all-orders claim rests on a recurrence theorem (nonvanishing diagonal coefficient), not a finite truncation",
+    "positive control: the oscillatory exponent reproduces the certified sigma0 = -4 I omega + 1",
+    "no floating point; no nsimplify"
+  ]
+}
