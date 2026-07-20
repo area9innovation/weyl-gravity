@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "coefficient_field",
+    "quadratic_mapping_cone_action",
+    "carrier_completion",
+    "filtered_second_jet_class",
+    "emitter_audits",
+    "emitter_exchange",
+    "negative_controls",
+    "next_unexcluded_target"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-temporal-maxwell-cotangent-mapping-cone-construction-payload-v1"
+    },
+    "result_id": {
+      "const": "BERGER_TEMPORAL_MAXWELL_COTANGENT_MAPPING_CONE_CONSTRUCTION_PAYLOAD"
+    },
+    "quadratic_mapping_cone_action": {
+      "type": "object",
+      "required": [
+        "entries",
+        "canonical_sha256",
+        "derived_q1_key_count",
+        "derived_q1_equals_declared_extension"
+      ],
+      "properties": {
+        "derived_q1_key_count": {
+          "const": 8
+        },
+        "derived_q1_equals_declared_extension": {
+          "const": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "filtered_second_jet_class": {
+      "type": "object",
+      "required": [
+        "normal_form",
+        "action_count_per_emitter",
+        "complete_within_declared_class"
+      ],
+      "properties": {
+        "action_count_per_emitter": {
+          "const": 128
+        },
+        "complete_within_declared_class": {
+          "const": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "emitter_audits": {
+      "type": "object",
+      "required": [
+        "emitter_0",
+        "emitter_1"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "emitter_0": {
+          "$ref": "#/$defs/emitterAudit"
+        },
+        "emitter_1": {
+          "$ref": "#/$defs/emitterAudit"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "emitterAudit": {
+      "type": "object",
+      "required": [
+        "kernel_audit",
+        "old_action_image_rank",
+        "terminal_antifield_quotient_rank",
+        "terminal_full_action_image_rank",
+        "second_jet_action_count",
+        "second_jet_action_records_sha256",
+        "second_jet_action_records",
+        "second_jet_quotient_rank",
+        "full_action_image_rank",
+        "source_augmented_rank",
+        "source_outside_image",
+        "final_source_manifest",
+        "normalized_final_source_manifest",
+        "first_quotient_witness",
+        "mutations"
+      ],
+      "properties": {
+        "old_action_image_rank": {
+          "const": 934
+        },
+        "terminal_antifield_quotient_rank": {
+          "const": 1679
+        },
+        "terminal_full_action_image_rank": {
+          "const": 2613
+        },
+        "second_jet_action_count": {
+          "const": 128
+        },
+        "second_jet_quotient_rank": {
+          "const": 28
+        },
+        "full_action_image_rank": {
+          "const": 2641
+        },
+        "source_augmented_rank": {
+          "const": 2642
+        },
+        "source_outside_image": {
+          "const": true
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

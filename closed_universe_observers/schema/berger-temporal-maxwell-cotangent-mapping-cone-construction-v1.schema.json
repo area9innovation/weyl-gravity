@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "payload_ref",
+    "mapping_cone_action_gate",
+    "filtered_second_jet_theorem",
+    "minimality",
+    "next_unexcluded_target",
+    "downstream_disposition",
+    "assumption_ledger",
+    "missing_object_ledger",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-temporal-maxwell-cotangent-mapping-cone-construction-v1"
+    },
+    "result_id": {
+      "const": "BERGER_TEMPORAL_MAXWELL_COTANGENT_MAPPING_CONE_CONSTRUCTION"
+    },
+    "atlas_status": {
+      "const": "OBSTRUCTED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ]
+    },
+    "filtered_second_jet_theorem": {
+      "type": "object",
+      "required": [
+        "declared_class",
+        "per_emitter_audits",
+        "status",
+        "theorem",
+        "scope_warning"
+      ],
+      "properties": {
+        "status": {
+          "const": "OBSTRUCTED"
+        }
+      },
+      "additionalProperties": true
+    },
+    "next_unexcluded_target": {
+      "type": "object",
+      "required": [
+        "id",
+        "action_tier",
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "const": "OPEN"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

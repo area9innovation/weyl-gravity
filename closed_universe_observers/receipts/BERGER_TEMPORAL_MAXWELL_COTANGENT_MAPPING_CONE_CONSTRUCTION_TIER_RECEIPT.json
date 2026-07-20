@@ -1,0 +1,104 @@
+{
+  "schema": "pure-weyl-test-tier-receipt-v1",
+  "result_id": "BERGER_TEMPORAL_MAXWELL_COTANGENT_MAPPING_CONE_CONSTRUCTION_TIER_RECEIPT",
+  "science_forge_work_item": "sf:program/work/observer-temporal-maxwell-cotangent-mapping-cone-construction",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "claim_result_id": "BERGER_TEMPORAL_MAXWELL_COTANGENT_MAPPING_CONE_CONSTRUCTION",
+  "claim_certificate_sha256": "fcebf4a951cb319dee05a4cde3e6b0e4661050afac6fb8ef7bdafbd0b119b9f0",
+  "payload_sha256": "fed752e848959d73d24345707522e54a980441909b81fa1d4ce199e7fd604ad8",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile closed_universe_observers/generate_berger_temporal_maxwell_cotangent_mapping_cone_construction.py closed_universe_observers/verify_berger_temporal_maxwell_cotangent_mapping_cone_construction.py closed_universe_observers/tests/test_berger_temporal_maxwell_cotangent_mapping_cone_construction.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py closed_universe_observers/atlas/verify_observer_atlas_fragment.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+          "status": "PASS"
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=<temporary-directory> paper/09-relational-clocks-berger-d-cartan.tex",
+          "elapsed_seconds": 0.49,
+          "status": "PASS",
+          "summary": "Paper 09 compiled to a temporary directory; no repository PDF was changed."
+        },
+        {
+          "command": "git diff --check -- <scoped observer paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m closed_universe_observers.generate_berger_temporal_maxwell_cotangent_mapping_cone_construction --write",
+          "elapsed_seconds": 163.96,
+          "status": "PASS",
+          "summary": "Derived all eight new unary rows from one quadratic action, computed the 528-to-124 PBW-filtered kernel, serialized 128 cubic Hessians per emitter and certified both 2641<2642 obstructions."
+        },
+        {
+          "command": "python3 -m closed_universe_observers.verify_berger_temporal_maxwell_cotangent_mapping_cone_construction",
+          "elapsed_seconds": 144.60,
+          "status": "PASS",
+          "independent_rail": true,
+          "summary": "Independently rebuilt the quadratic unary action, PBW generator and kernel, inherited negative controls, all new Hessians, both exact ranks and the canonical -3 g_b h_b witnesses."
+        },
+        {
+          "command": "python3 -m closed_universe_observers.atlas.generate_observer_atlas_fragment && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && pytest -q closed_universe_observers/tests/test_berger_temporal_maxwell_cotangent_mapping_cone_construction.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+          "elapsed_seconds": 25.84,
+          "status": "PASS",
+          "summary": "Regenerated and independently verified the fail-closed atlas; 61 scoped tests passed."
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "The imported q1, q2, pairing, component contract, disposition theorem and terminal 2613<2614 obstruction are unchanged content-addressed inputs. The new action-derived unary, filtered kernel, cubic Hessians and all direct atlas and Paper 09 consumers were exercised at Tier 1."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, tag, release or shared-core algebra change was made. The result is a scoped filtered-second-jet obstruction and the third-jet target remains OPEN."
+    }
+  },
+  "failed_attempts": [
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_temporal_maxwell_cotangent_mapping_cone_construction",
+      "elapsed_seconds": 52.44,
+      "status": "FAIL",
+      "summary": "The independent rail stopped at an incorrectly routed canonical-hash helper before rank verification. The verifier import boundary was repaired, producer provenance regenerated and the complete independent rail rerun."
+    }
+  ],
+  "boundaries": {
+    "exact_arithmetic": true,
+    "numeric_evidence_used": false,
+    "carrier_shape": [
+      114,
+      114
+    ],
+    "quadratic_action_count": 1,
+    "action_derived_new_q1_key_count": 8,
+    "filtered_raw_dimension": 528,
+    "filtered_generator_nnz": 1360,
+    "filtered_generator_rank": 404,
+    "filtered_kernel_dimension": 124,
+    "order_zero_profile_jet_actions_per_emitter": 4,
+    "order_one_actions_per_emitter": 24,
+    "order_two_filtered_actions_per_emitter": 100,
+    "order_two_vectors_with_lower_PBW_corrections": 12,
+    "total_actions_per_emitter": 128,
+    "terminal_full_action_image_rank": 2613,
+    "new_second_jet_quotient_rank": 28,
+    "full_action_image_rank": 2641,
+    "source_augmented_rank": 2642,
+    "surviving_quotient_coordinate_count": 42,
+    "first_quotient_coefficient": "-3 g_b h_b",
+    "declared_second_jet_admissible_locus": "EMPTY",
+    "K_Berger_covariance_evaluated": false,
+    "raw_D_or_q3_replay_performed": false,
+    "detector_memory_redshift_or_recoil_replay_performed": false,
+    "tangent_cone_branch_or_quantum_claim": false
+  }
+}

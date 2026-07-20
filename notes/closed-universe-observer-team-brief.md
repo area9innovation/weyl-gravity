@@ -2115,53 +2115,50 @@ The team succeeds by locating the first exact bridge or the first exact
 obstruction.  It does not succeed by arguing that two closed universes sound
 similar.
 
-## Active bridge: post-temporal antifield-module disposition
+## Active bridge: temporal Maxwell-cotangent mapping cone
 
 The active item is
-`sf:program/work/observer-post-temporal-antifield-module-disposition`.  It
-imports the terminal 2,613-versus-2,614 existing-row obstruction, its
-payload, pairing, field inventory and independent verifier by exact hashes.
+`sf:program/work/observer-temporal-maxwell-cotangent-mapping-cone-construction`.
+It imports the terminal 2,613-versus-2,614 existing-row obstruction and the
+four-row disposition theorem by exact certificate and payload hashes.
 
-The smallest connected Berger-\(U(1)\) preimage of the missing Maxwell
-cotangent representation is the four-row curl doublet
+One serialized quadratic action
 \[
- q_1B_{01}=e_1A^+_0-e_0A^+_1,\qquad
- q_1B_{02}=e_2A^+_0-e_0A^+_2,
+ S_{\rm cone}^{(2)}
+ =B_{01}(e_1A_0-e_0A_1)+B_{02}(e_2A_0-e_0A_2)
 \]
-together with \(B^+_{01},B^+_{02}\) and the signed formal-adjoint rows on
-the Maxwell fields.  Every new \(q_1^2\) composition vanishes, the extended
-odd pairing is nondegenerate, and the unary cyclicity defect is exactly
-zero.
+generates all eight new \(q_1\) rows through the signed odd pairing.  The
+imported exact checks retain \(q_1^2=0\), unary cyclicity, nondegeneracy and
+the real structure.  The declared auxiliary \(B/B^+\) cone has no assigned
+gauge reducibility, so no additional nonminimal sector is inferred.
 
-The complete declared first-jet local action class consists of
-\(B^+\tau K_b\) actions in integration-by-parts normal form.  Exact
-Berger-\(U(1)\) kernels give four order-zero \(g_bh_b'\) directions and
-twenty-four order-one \(g_bh_b\) directions per emitter.  Their Hessians add
-only four quotient directions.  Thus the full ranks are
+The complete integration-by-parts/PBW filtered second-jet class starts from
+528 raw \(g_bh_b\) order-one/two \(B^+\tau K_b\) monomials.  Its exact
+Berger-\(U(1)\) generator has rank 404 and kernel dimension 124; twelve
+order-two invariants require lower-order PBW corrections.  Four independent
+\(g_bh_b'\) directions give 128 serialized cubic actions and exact Hessians
+per emitter.
+
+This module adds quotient rank 28.  The full ranks are therefore
 \[
- 2617<2618
+ 2641<2642
 \]
 for both source-isolated emitters, and the same 42-coordinate representative
 survives with first coefficient
 \[
  A^+_0\leftarrow(\tau,e_0e_1K_{b,01})=-3g_bh_b .
 \]
-Modulo the full image, each source-labelled obstruction is the trivial
-weight-zero \(U(1)\) representation.  The two representatives agree after
-the explicit same-background emitter row-and-label crosswalk.  Reflection is
-not part of the declared connected representation category and receives no
-irrep label.
-
-This is a completeness obstruction only for the declared four-row,
-total-order-zero/one class.  The smallest unexcluded target keeps the same
-mapping cone and adjoins its complete PBW/IBP order-two
-\(B^+\tau K_b\) action tier.
+Deleting any derivative tier leaves the source one rank outside the retained
+image.  The old 2,048-action module and the first-jet cone are exact negative
+controls.  This is a completeness obstruction only for the declared
+four-row filtered class through order two; the least unexcluded derivative
+enlargement is its filtered order-three action tier.
 
 The fail-closed atlas row is
-`observer.berger.interaction.post_temporal_antifield_module_disposition`
+`observer.berger.interaction.temporal_maxwell_cotangent_mapping_cone_construction`
 (`symplectic=CERTIFIED`, `nonlinear=OBSTRUCTED`,
-`observational=OBSTRUCTED`).  No \(q_3\), \(K_{\rm Berger}\), raw-\(D\)
-descent, detector, memory, redshift, recoil-corrected rank, tangent-cone
-restriction, branch or quantum result is promoted.  The next activation gate
-is
-`ENUMERATE_SECOND_JET_CURL_DOUBLET_ACTION_PROLONGATION_BEFORE_ANY_Q3_OR_OBSERVER_PROMOTION`.
+`observational=OBSTRUCTED`).  The arity-two obstruction is the stop point:
+\(K_{\rm Berger}\) covariance is not evaluated, and no raw-\(D\), \(q_3\),
+detector, memory, redshift, recoil-corrected rank, tangent-cone, branch or
+quantum result is promoted.  The next activation gate is
+`CLASSIFY_FILTERED_THIRD_JET_CURL_DOUBLET_BEFORE_K_BERGER_OR_OBSERVER_PROPAGATION`.
