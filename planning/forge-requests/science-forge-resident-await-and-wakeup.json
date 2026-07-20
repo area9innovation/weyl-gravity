@@ -14,7 +14,8 @@
     "notes": [
       "Observed failure on 2026-07-20: Quantum correctly blocked two items and released both leases, the coordinator added a new READY matter-anomaly item, but the resident process remained idle because it had already ended its turn and had no queue-change notification.",
       "The immediate need is deliberately smaller than persistent AI-session RPC: provide a safe await primitive and a documented resident loop first.",
-      "This should integrate with the queue-forecasting and fast-overview work later, but it is independently useful and should not wait for statistical forecasting."
+      "This should integrate with the queue-forecasting and fast-overview work later, but it is independently useful and should not wait for statistical forecasting.",
+      "Second live reproduction, 2026-07-20: Black Hole closed `black-hole-symplectic-extension-normal-form` at 14:23:56Z, explicitly stated that it would pull `black-hole-symbolic-cross-invariant` next, and then remained at an idle prompt for more than ten minutes while the authoritative queue contained three READY items. No lease conflict or missing dependency existed. This is exactly the report/release/await/pull gap the requested primitive should close without prompt scraping or keystroke injection."
     ]
   }
 }
