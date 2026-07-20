@@ -1,0 +1,57 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_THIRD_TRANSVECTANT_SINGULAR_LOCUS_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Complete complex singular-locus and incidence-resolution theorem for both third-transvectant parity factors on candidates 17 and 20.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_third_transvectant_singular_locus.json": "6b54d7672b9849998220716762f66a4ff81c4156dfd782c1b596c245862cb371",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_third_transvectant_singular_locus.py": "83be243964bcbf3c48209de105460f28b29c3b82084a0f4c1de9a21e102907ae",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_third_transvectant_singular_locus.py": "681a4ea1c66ad6d3612142e810bf5a7b0ac02e36cbdf4fb73367b2af77b86725",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_third_transvectant_singular_locus.py": "5020b97c3abcfa5f6d7bc0239e7fbd5183ca1da827499e8930154360610778f5",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_third_transvectant_singular_locus.schema.json": "7ec1be79fe30b816ada10696c34891382471d8ce51a97cb9efd8ab6d2142e977",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-third-transvectant-singular-locus.md": "211cd95304e8706329c7c5b9af1bb1941cc6478f020459cdd6ec38caf0249efb"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on producer, independent verifier and focused test",
+        "python3 -m json.tool on certificate and schema",
+        "git diff --check on scoped paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": {
+        "producer_check": 0.90,
+        "independent_verifier": 1.02,
+        "focused_tests": 1.06
+      },
+      "tests_run": 5,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_third_transvectant_singular_locus --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_third_transvectant_singular_locus",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_third_transvectant_singular_locus"
+      ]
+    },
+    "independent_rail": {
+      "status": "PASS_AFTER_EXPLICIT_SIMPLIFICATION",
+      "initial_failure": "The separately implemented verifier compared an algebraically zero unsimplified SymPy matrix directly and rejected it.",
+      "repair": "The verifier now simplifies the independently reconstructed B_lambda*v(lambda) product before exact zero comparison.",
+      "result": "Skewness, determinant zero, the kernel vector and three rank-four chart minors all pass independently."
+    },
+    "adversarial": {
+      "status": "PASS",
+      "mutation": "Promote lifted_rotation_singular_reduction_classified from false to true.",
+      "result": "The schema rejects the promotion."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESSED_INPUT_REPLAY",
+      "reason": "The input irreducibility and dimension theorem is hash-pinned; the new Jacobian-covariant rank computation is exact and independently reconstructed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This closes the complex singular carrier only; it does not freeze the real fixed-occupation or lifted-rotation quotient."
+    }
+  },
+  "claim_boundary": "CERTIFIED for the complete complex third-transvectant singular locus on candidates 17 and 20 before fixed norms and group reduction. Real Hermitian intersections, node phases, lifted rotations, global topology, occupation gluing and later physical maps remain fail-closed."
+}

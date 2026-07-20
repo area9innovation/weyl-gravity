@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_third_transvectant_singular_locus.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "scope", "covariant_rank_certificate", "one_factor_singular_locus", "two_parity_product", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-same-sign-third-transvectant-singular-locus-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_THIRD_TRANSVECTANT_SINGULAR_LOCUS"},
+    "classification": {
+      "type": "object",
+      "properties": {
+        "candidate17_complete_complex_singular_locus_classified": {"const": true},
+        "candidate20_complete_complex_singular_locus_classified": {"const": true},
+        "fixed_occupation_real_singular_strata_classified": {"const": false},
+        "lifted_rotation_singular_reduction_classified": {"const": false},
+        "global_zero_fibre_connected": {"const": false}
+      },
+      "required": ["candidate17_complete_complex_singular_locus_classified", "candidate20_complete_complex_singular_locus_classified", "fixed_occupation_real_singular_strata_classified", "lifted_rotation_singular_reduction_classified", "global_zero_fibre_connected"],
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
