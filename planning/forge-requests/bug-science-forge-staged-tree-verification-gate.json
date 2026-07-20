@@ -1,0 +1,19 @@
+{
+  "id": "sf:forge-request/bug-science-forge-staged-tree-verification-gate",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Add a fail-closed staged-tree verification gate to Science Forge commits. During sf:program/work/classical-green-hyperbolic-cyclic-transfer-theorem, eight focused tests passed in the dirty shared worktree, but the independent verifier rejected GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1 because verify_green_hyperbolic_cyclic_transfer_theorem.py changed after the certificate recorded its source manifest. A later manual replay caught this before commit. Science Forge should prove that the exact candidate commit tree—not a mutable shared worktree and not an earlier report-time snapshot—passes its declared Tier 0/1 commands and content-hash audit.",
+    "depends_on": [
+      "sf:program/work/classical-green-hyperbolic-cyclic-transfer-theorem"
+    ],
+    "stop_condition": "After computing report.changed_paths intersect allowed_paths in an isolated temporary index, materialize or execute against that exact prospective tree and run the report's declared required verification commands plus certlab source-manifest/hash audit. Refuse the commit if any command fails, any certificate dependency/source hash differs from the prospective tree, or a required command is absent. Record command, exit status, elapsed time, stdout/stderr digest, prospective tree hash, and skipped higher-tier rationale in the WORK_COMMITTED receipt. Add a deterministic regression where tests pass, a verifier source changes after certificate generation, and work commit rejects until the certificate is regenerated; include concurrent unrelated dirty files to prove the gate reads only the prospective tree.",
+    "forbid": "verifying the mutable shared worktree while calling it the committed tree; trusting report-time pass text without replay or an immutable matching tree hash; silently regenerating certificates; weakening source-manifest checks; running unrelated Tier 3 suites by default; touching another agent's dirty files or index; treating a timeout or skipped required verifier as a pass.",
+    "notes": [
+      "Minimal current reproduction before Classical repairs it: `python3 -m pytest -q d_quotient_classical/causal_transfer/tests/test_green_hyperbolic_cyclic_transfer_theorem.py` passes eight tests, while `python3 -m d_quotient_classical.causal_transfer.verify_green_hyperbolic_cyclic_transfer_theorem` raises `source hash mismatch` for its own verifier path.",
+      "This request composes with bug-science-forge-shared-index-cross-stream-commit: the same isolated prospective index/tree should solve both transaction ownership and exact-state verification."
+    ]
+  }
+}
