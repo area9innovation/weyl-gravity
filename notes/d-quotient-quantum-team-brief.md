@@ -1928,3 +1928,25 @@ Certificate and report:
 
 - [`RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION.json`](../quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION.json)
 - [`relative-einstein-weyl-qme-defect-nondefinition.md`](../quantum-weyl/reports/relative-einstein-weyl-qme-defect-nondefinition.md)
+
+### Cyclic-pushforward disposition
+
+The missing action-compatible pushforward is now obstructed, rather than
+merely absent, on every generic axial and polar physical fibre. The 38-row
+Einstein--Maxwell and 40-row Weyl--Maxwell carriers are individually
+cotangent-complete for their action pairings. The 316-row relative carrier is
+also unary cyclic, but for a newly adjoined full-cone cotangent pairing.
+
+An action-compatible map would induce an invertible congruence between the
+Einstein form of inertia \((2,0)\) and the Weyl \(q\)-primary form of inertia
+\((1,1)\). Product equivariance prevents mixing with the noncolliding extra
+\(p\) shell, and congruence preserves inertia. No chain homotopy, field
+redefinition or exact current improvement repairs this cohomology invariant.
+
+The 316 rows are minimal only within the declared full-cone cotangent class;
+absolute minimality among arbitrary mixed-bundle completions is not claimed.
+The noncyclic observable cone remains valid, but matched one-loop insertion
+subtraction on the standard action-pairing route is unauthorized.
+
+- [`RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json`](../quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json)
+- [`relative-einstein-weyl-cyclic-pushforward-obstruction.md`](../quantum-weyl/reports/relative-einstein-weyl-cyclic-pushforward-obstruction.md)

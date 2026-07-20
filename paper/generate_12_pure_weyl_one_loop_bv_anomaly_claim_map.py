@@ -36,6 +36,7 @@ INPUTS = {
     "wz_preflight": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json",
     "extended_cohomology": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
     "Q1_disposition": ROOT / "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
+    "relative_Einstein_Weyl_cyclic_pushforward": ROOT / "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json",
     "anomaly_induced_Gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "flat_TT_logarithmic_Gamma1": ROOT / "quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
     "curvature_squared_covariant_log_Gamma1": ROOT / "quantum-weyl/transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
@@ -117,6 +118,9 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     wz_preflight = values["wz_preflight"]
     extended = values["extended_cohomology"]
     q1 = values["Q1_disposition"]
+    relative_cyclic_pushforward = values[
+        "relative_Einstein_Weyl_cyclic_pushforward"
+    ]
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
@@ -252,6 +256,18 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         or q1.get("finite_counterterm_ambiguity", {}).get("bulk_response_rank") != 2
         or q1.get("decision", {}).get("complete_Q1") != "NO_CERTIFIED_OPERATOR"
         or q1.get("decision", {}).get("residual_transfer") != "FORBIDDEN"
+        or relative_cyclic_pushforward.get("verdict", {}).get(
+            "action_compatible_cyclic_pushforward_exists"
+        )
+        is not False
+        or relative_cyclic_pushforward.get("verdict", {}).get(
+            "canonical_316_unary_cyclic_carrier_exists"
+        )
+        is not True
+        or relative_cyclic_pushforward.get("verdict", {}).get(
+            "canonical_316_pairing_is_action_pairing"
+        )
+        is not False
         or gamma1.get("result_state")
         != "ANOMALY_INDUCED_EUCLIDEAN_GAMMA1_REPRESENTATIVE_CERTIFIED_WEYL_INVARIANT_REMAINDER_OPEN"
         or gamma1.get("exact_coefficient_solve", {}).get("rank") != 3
@@ -1130,6 +1146,9 @@ def build() -> dict[str, Any]:
             "extended_one_loop_local_Euclidean_QME_restored": True,
             "WZ_local_counterterm_Q1_contribution_fixed": True,
             "finite_counterterm_bulk_Q1_ambiguity_rank": 2,
+            "relative_Einstein_Weyl_action_cyclic_pushforward_obstructed": True,
+            "relative_Einstein_Weyl_316_unary_cotangent_carrier_retained": True,
+            "relative_Einstein_Weyl_316_pairing_is_distinct_from_action_pairings": True,
             "anomaly_induced_nonlocal_Gamma1_representative": True,
             "anomaly_induced_functional_coefficients": gamma1["exact_coefficient_solve"]["solution_vector"],
             "flat_TT_logarithmic_form_factor": True,

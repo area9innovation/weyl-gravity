@@ -83,6 +83,7 @@ def main() -> None:
         "Physical plus ghost-$n=3$ carrier assembly",
         "Exact vector-$n=1+n=2$ integration and partial-BV assembly",
         "Algebraic $H_2$ cancellation of the symmetric $M_{14}$ divergence is therefore refuted",
+        "action-compatible cyclic pushforward is exactly obstructed",
     ]
     for fragment in required_manuscript_fragments:
         assert fragment in normalized_manuscript, fragment
@@ -120,6 +121,15 @@ def main() -> None:
     assert claims["extended_H14_even_dimension"] == 0
     assert claims["extended_H14_odd_dimension"] == 0
     assert claims["finite_counterterm_bulk_Q1_ambiguity_rank"] == 2
+    assert claims[
+        "relative_Einstein_Weyl_action_cyclic_pushforward_obstructed"
+    ] is True
+    assert claims[
+        "relative_Einstein_Weyl_316_unary_cotangent_carrier_retained"
+    ] is True
+    assert claims[
+        "relative_Einstein_Weyl_316_pairing_is_distinct_from_action_pairings"
+    ] is True
     assert claims["anomaly_induced_nonlocal_Gamma1_representative"] is True
     assert claims["anomaly_induced_functional_coefficients"] == [
         {"numerator": 199, "denominator": 120},
@@ -493,7 +503,7 @@ def main() -> None:
     assert claims["physical_Hessian_triangle_integrated_channel_count"] == 11
     assert claims["physical_Hessian_triangle_corner_count"] == 33
     assert claims["physical_Hessian_triangle_structured_basis_coordinate_count"] == 77
-    assert len(payload["inputs"]) == 68
+    assert len(payload["inputs"]) == 69
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -509,6 +519,18 @@ def main() -> None:
     ]
     extended = dependencies["WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY"]
     q1 = dependencies["ONE_LOOP_SLAVNOV_Q1_DISPOSITION"]
+    relative_cyclic_pushforward = dependencies[
+        "RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION"
+    ]
+    assert relative_cyclic_pushforward["verdict"][
+        "action_compatible_cyclic_pushforward_exists"
+    ] is False
+    assert relative_cyclic_pushforward["verdict"][
+        "canonical_316_unary_cyclic_carrier_exists"
+    ] is True
+    assert relative_cyclic_pushforward["verdict"][
+        "canonical_316_pairing_is_action_pairing"
+    ] is False
     gamma1 = dependencies["ANOMALY_INDUCED_NONLOCAL_GAMMA1"]
     flat_tt_log = dependencies["FLAT_TT_LOGARITHMIC_GAMMA1"]
     curvature_squared_log = dependencies["CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1"]

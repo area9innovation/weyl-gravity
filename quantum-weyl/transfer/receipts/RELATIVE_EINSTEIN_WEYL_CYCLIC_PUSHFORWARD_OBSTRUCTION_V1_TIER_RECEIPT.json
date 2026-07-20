@@ -1,0 +1,163 @@
+{
+  "receipt_id": "RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION_V1_TIER_RECEIPT",
+  "work_item": "sf:program/work/quantum-relative-einstein-weyl-cyclic-pushforward-after-obstruction",
+  "recorded_at_utc": "2026-07-20T11:43:04Z",
+  "base_commit": "dfc324e77469000c1cb5eba63f84ba0445937e6b",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "artifacts": {
+    "certificate": {
+      "path": "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json",
+      "sha256": "f9e2f72214d947a2b8a3f4e4992e2a7e8ab1e6cdadd66ce82dffd8ee83e8698c"
+    },
+    "report": {
+      "path": "quantum-weyl/reports/relative-einstein-weyl-cyclic-pushforward-obstruction.md",
+      "sha256": "d8dd971657801df3c3a52a3805a3392487a2f4ddb0ce3f427d74ec90ed5c7c41"
+    },
+    "atlas_fragment": {
+      "path": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "sha256": "cc942d522f96ee649c69eb2de40ac6df079c62b32a7697eeb66b33b9fb401bed"
+    },
+    "paper_12_manuscript": {
+      "path": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+      "sha256": "09734bd1e8d73c2536ff400bfd7437f2cea0ce8b05fab8b9aa619df64899e49c"
+    },
+    "paper_12_pdf": {
+      "path": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
+      "sha256": "30211bb07b499c0ae7db02dfa8d1f4dfa40f0aa6206a4934ac297142f82a652d"
+    },
+    "paper_12_claim_map": {
+      "path": "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json",
+      "sha256": "73e22b10051dfafaaa195f41e73b6b28671ec8f65888d82281855304edae47df"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.05,
+      "commands": [
+        "python3 -m py_compile <scoped relative-pushforward, atlas and Paper 12 generators/verifiers>",
+        "python3 -m json.tool quantum-weyl/transfer/schema/relative-einstein-weyl-cyclic-pushforward-obstruction-v1.schema.json",
+        "python3 -m json.tool quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json",
+        "git diff --check -- <scoped relative-pushforward, atlas, Paper 12, report, receipt and quantum-brief paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "PYTHONPATH=.:quantum-weyl python3 -m transfer.relative_einstein_weyl_cyclic_pushforward_obstruction_certificate --check",
+          "elapsed_seconds": 0.44,
+          "result": "PASS"
+        },
+        {
+          "command": "PYTHONPATH=.:quantum-weyl python3 -m transfer.verify_relative_einstein_weyl_cyclic_pushforward_obstruction",
+          "elapsed_seconds": 0.45,
+          "result": "PASS_INDEPENDENT_REPLAY"
+        },
+        {
+          "command": "PYTHONPATH=.:quantum-weyl python3 -m unittest transfer.tests.test_relative_einstein_weyl_cyclic_pushforward_obstruction -v",
+          "elapsed_seconds": 0.52,
+          "result": "PASS_8_TESTS"
+        },
+        {
+          "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/relative-einstein-weyl-cyclic-pushforward-obstruction-v1.schema.json && npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/relative-einstein-weyl-cyclic-pushforward-obstruction-v1.schema.json -d quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json",
+          "elapsed_seconds": 2.51,
+          "result": "PASS_DRAFT_2020_12_STRICT"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_AFFECTED_CHAIN",
+      "commands": [
+        {
+          "command": "python3 d_quotient_classical/relative/verify_einstein_weyl_generic_cyclic_map_inertia_obstruction.py",
+          "elapsed_seconds": 0.57,
+          "result": "PASS_UPSTREAM_INDEPENDENT_INERTIA_REPLAY"
+        },
+        {
+          "command": "python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_316_row_cotangent_completion",
+          "elapsed_seconds": 0.03,
+          "result": "PASS_UPSTREAM_316_CARRIER_REPLAY"
+        },
+        {
+          "command": "python3 -m d_quotient_classical.relative.verify_relative_residual_observable_functor",
+          "elapsed_seconds": 0.11,
+          "result": "PASS_UPSTREAM_OBSERVABLE_REPLAY"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python3 -m unittest atlas.tests.test_quantum_atlas_fragment -v && python3 residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json",
+          "elapsed_seconds": 5.13,
+          "result": "PASS_8_TESTS_AND_3_ATLAS_VERIFIERS"
+        },
+        {
+          "command": "python3 paper/generate_12_pure_weyl_one_loop_bv_anomaly_claim_map.py --check && python3 paper/verify_12_pure_weyl_one_loop_bv_anomaly_claim_map.py",
+          "elapsed_seconds": 0.29,
+          "result": "PASS_PAPER_12_CLAIM_MAP"
+        },
+        {
+          "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 12-pure-weyl-one-loop-bv-anomaly.tex (two passes)",
+          "elapsed_seconds": 1.30,
+          "result": "PASS_37_PAGES_NO_WARNINGS_UNDEFINED_REFERENCES_OR_OVERFULL_BOXES"
+        }
+      ],
+      "criterion": "The new disposition changes the relative quantum lifecycle and Paper 12 scope. The exact generic inertia theorem, canonical 316-row completion, observable functor, generated atlas and paper claim map were replayed together."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a scoped exact obstruction with no QME, coefficient, residual transfer, Lorentzian certification, release, tag or theorem freeze."
+    }
+  },
+  "development_repairs": [
+    {
+      "failure": "Strict AJV rejected the first schema because allOf property refinements omitted an explicit object type and the input Git commit was incorrectly typed as a 64-character content hash.",
+      "repair": "Added the object types and a distinct 40-character commit definition, then regenerated the content-addressed certificate.",
+      "regression_status": "PASS_DRAFT_2020_12_STRICT"
+    },
+    {
+      "failure": "The Paper 12 verifier correctly rejected a negative boolean placed in certified_claims, whose booleans are required to be affirmative propositions.",
+      "repair": "Restated the claim affirmatively as the certified distinctness of the 316 pairing from the action pairings.",
+      "regression_status": "PASS_PAPER_12_CLAIM_MAP"
+    }
+  ],
+  "adversarial_controls": [
+    {
+      "mutation": "Promote the canonical 316-row cotangent pairing to the two action-derived pairings.",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "covered_by": "test_action_pairing_promotion_rejected"
+    },
+    {
+      "mutation": "Authorize matched one-loop coefficients after the pushforward obstruction.",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "covered_by": "test_coefficient_promotion_rejected"
+    }
+  ],
+  "independent_rail": {
+    "imports_producer": false,
+    "imports_certificate_emitter": false,
+    "replays": [
+      "38-row and 40-row action-BV cotangent dual involutions",
+      "316-row sector and degree census with scoped full-cone minimality",
+      "axial and polar exact determinant signs",
+      "det(S^T W S)=det(S)^2 det(W) on nonzero determinant fixtures",
+      "generic-shell equivariance and noncollision boundary",
+      "all dependency and source-manifest hashes"
+    ]
+  },
+  "science_forge_shadow": {
+    "status": "ADVISORY_EXIT_ZERO_WITH_FINDINGS",
+    "elapsed_seconds": 4.28,
+    "command": "bash ci/science-forge-shadow.sh",
+    "findings": [
+      "The local Forge binary is an unpinned dirty development build whose build revision differs from the current stdlib checkout.",
+      "The pre-existing bridge certificate audit reported drift while existence, edges, DAG and gates passed.",
+      "The read-only coverage census found 1236 certificates against the 2026-07-19 baseline of 976."
+    ],
+    "effect_on_claim": "The shadow rail is advisory. These external findings were reported and were not used to promote the scoped obstruction."
+  },
+  "claim_boundary": "This receipt certifies the generic physical-cohomology inertia obstruction to an action-compatible cyclic Einstein-Maxwell to Weyl-Maxwell pushforward. It retains the canonical 316-row unary cyclic carrier while proving that its adjoined cotangent pairing is not the two action-derived pairings. It does not prove absolute mixed-bundle row minimality, obstruct the noncyclic observable cone or an explicitly pairing-changed theory, classify exceptional/global maps, compute matched one-loop insertions or a relative coefficient, restore a QME, or establish Lorentzian causality, states, particles, positivity, scattering or unitarity."
+}

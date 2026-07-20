@@ -1,0 +1,263 @@
+{
+  "action_carriers": {
+    "Einstein_Maxwell": {
+      "action_odd_pairing_nondegenerate": true,
+      "degree_ranks": {
+        "-1": 5,
+        "0": 14,
+        "1": 14,
+        "2": 5
+      },
+      "dual_degree_rule": "degree(row)+degree(dual_row)=1",
+      "dual_involution_exact": true,
+      "row_count": 38
+    },
+    "Weyl_Maxwell": {
+      "action_odd_pairing_nondegenerate": true,
+      "degree_ranks": {
+        "-1": 6,
+        "0": 14,
+        "1": 14,
+        "2": 6
+      },
+      "dual_degree_rule": "degree(row)+degree(dual_row)=1",
+      "dual_involution_exact": true,
+      "row_count": 40
+    }
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE result obstructs an action-compatible cyclic Einstein-Maxwell to Weyl-Maxwell pushforward on every generic axial and polar physical fibre. The canonical 316-row carrier remains a valid unary cyclic complex for its adjoined cotangent pairing, but that pairing cannot be identified with both action-derived forms. The result does not obstruct the noncyclic observable cone or an explicitly pairing-changed theory, classify exceptional/global maps, compute matched insertions or a relative coefficient, restore a QME, or establish Lorentzian causality, states, particles, positivity, scattering or unitarity.",
+  "claim_flags": {
+    "ABSOLUTE_316_ROW_MINIMALITY_CLAIMED": false,
+    "ACTION_COMPATIBLE_CYCLIC_PUSHFORWARD_CONSTRUCTED": false,
+    "ACTION_COMPATIBLE_CYCLIC_PUSHFORWARD_OBSTRUCTED_GENERICALLY": true,
+    "CANONICAL_316_PAIRING_PROMOTED_TO_ACTION_PAIRING": false,
+    "CANONICAL_316_UNARY_CYCLIC_CARRIER_RETAINED": true,
+    "LORENTZIAN_CAUSAL_OR_PARTICLE_CLAIM": false,
+    "MATCHED_ONE_LOOP_COEFFICIENTS_COMPUTED": false,
+    "RELATIVE_QME_RESTORED": false
+  },
+  "coefficient_gate": {
+    "matched_one_loop_insertions_authorized": false,
+    "pure_Weyl_vector_reuse_authorized": false,
+    "reason": "the action-compatible pushforward required to compare the two insertions does not exist on the declared standard action pairings"
+  },
+  "dependency_refs": {
+    "Einstein_action_BV_layout": {
+      "path": "bridge/einstein_sector/generated/einstein_maxwell_product_linfinity_v1/row_layout.json",
+      "result_id": "EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_ROW_LAYOUT",
+      "sha256": "bf5fa0162c076d88e91d7461fe9f9c5efe982a66a34508091250da3aea22c016"
+    },
+    "Weyl_action_BV_layout": {
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/row_layout.json",
+      "result_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_ROW_LAYOUT",
+      "sha256": "6236040676b7e699f5e48be6241143aa3bb5b7c9b4e07364826fc6f2b5ad24a2"
+    },
+    "canonical_316_cotangent_completion": {
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1.json",
+      "result_id": "EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1",
+      "sha256": "d17a9249b6a385410ba8bd747259842c70bb811dfb0ce9aa74aa3d03c7fe6fad"
+    },
+    "canonical_316_layout": {
+      "path": "d_quotient_classical/generated/einstein_weyl_relative_316_row_cotangent_completion_v1/layout.json",
+      "result_id": "EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1_LAYOUT",
+      "sha256": "169402914efbe822f7b68194c3feffaf2985b05c01a469deafea327978e51257"
+    },
+    "generic_action_pairing_inertia": {
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
+      "result_id": "EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1",
+      "sha256": "affb12a8655671a06748a8fc6e2d38e8732478e4ef293b3cfea482597735bd9c"
+    },
+    "previous_relative_QME_nondefinition": {
+      "path": "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION.json",
+      "result_id": "RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION",
+      "sha256": "3cddce3166dccb2699e7150b4a1df8fc7464588e91e2c73ca13e2ced020b879e"
+    },
+    "relative_observable_functor": {
+      "path": "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1.json",
+      "result_id": "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1",
+      "sha256": "94f213e795d6ba08403e053863f6007c668d8ef068bf15cf54c56c8914c823ea"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "determinant_obstruction": {
+    "consequence": "no invertible real-structure-preserving S solves the cyclicity equation in either parity",
+    "homotopy_and_field_redefinition_scope": "chain homotopies and cohomologically exact current improvements preserve the induced nondegenerate cohomology form and therefore cannot change its inertia",
+    "identity": "det(S^T Omega_WM_q S)=det(S)^2 det(Omega_WM_q)",
+    "source_determinants_positive_for_lambda_ge_6": [
+      "2*lambda",
+      "2*(lambda-2)"
+    ],
+    "target_determinants_negative_for_lambda_ge_6": [
+      "-lambda*(9*lambda-2)",
+      "-(lambda-2)*(9*lambda-2)"
+    ]
+  },
+  "exact_checks": {
+    "316_is_full_cone_cotangent_minimal_in_declared_class": true,
+    "316_not_proven_row_minimal_among_all_mixed_bundle_completions": true,
+    "316_pairing_not_identified_with_two_action_pairings": true,
+    "Einstein_38_row_action_BV_carrier_is_cotangent_complete": true,
+    "H_product_and_time_translation_equivariance_imported": true,
+    "Weyl_40_row_action_BV_carrier_is_cotangent_complete": true,
+    "axial_action_form_inertia_mismatch_exact": true,
+    "canonical_316_row_unary_cotangent_carrier_imported": true,
+    "chain_homotopy_cannot_change_induced_cohomology_inertia": true,
+    "generic_q_and_extra_p_shells_do_not_collide": true,
+    "input_commit_and_certificate_hash_pinned": true,
+    "one_generic_fibre_obstructs_an_all_sector_pushforward": true,
+    "polar_action_form_inertia_mismatch_exact": true,
+    "zero_modes_cannot_repair_a_generic_fibre_obstruction": true
+  },
+  "exact_inertia_blocks": {
+    "axial": {
+      "Einstein_determinant": "2*lambda",
+      "Einstein_form": [
+        [
+          "lambda",
+          "0"
+        ],
+        [
+          "0",
+          "2"
+        ]
+      ],
+      "Einstein_inertia_lambda_ge_6": [
+        2,
+        0
+      ],
+      "Einstein_leading_minor": "lambda",
+      "restricted_Weyl_determinant": "-lambda*(9*lambda - 2)",
+      "restricted_Weyl_form": [
+        [
+          "lambda",
+          "3*lambda"
+        ],
+        [
+          "3*lambda",
+          "2"
+        ]
+      ],
+      "restricted_Weyl_inertia_lambda_ge_6": [
+        1,
+        1
+      ],
+      "restricted_Weyl_leading_minor": "lambda"
+    },
+    "polar": {
+      "Einstein_determinant": "2*(lambda - 2)",
+      "Einstein_form": [
+        [
+          "1",
+          "-2"
+        ],
+        [
+          "-2",
+          "2*lambda"
+        ]
+      ],
+      "Einstein_inertia_lambda_ge_6": [
+        2,
+        0
+      ],
+      "Einstein_leading_minor": "1",
+      "restricted_Weyl_determinant": "-(lambda - 2)*(9*lambda - 2)",
+      "restricted_Weyl_form": [
+        [
+          "4",
+          "-3*lambda - 2"
+        ],
+        [
+          "-3*lambda - 2",
+          "8*lambda"
+        ]
+      ],
+      "restricted_Weyl_inertia_lambda_ge_6": [
+        1,
+        1
+      ],
+      "restricted_Weyl_leading_minor": "4"
+    }
+  },
+  "input_pin": {
+    "certificate_path": "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION.json",
+    "certificate_sha256": "3cddce3166dccb2699e7150b4a1df8fc7464588e91e2c73ca13e2ced020b879e",
+    "commit": "91b720aca4e31997ad03145df9773dddb688ff15"
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "most_general_equivariant_cohomology_map": {
+    "adjoint_pushforward_formula_if_it_existed": "iota_push=Omega_WM^{-1} iota_star^sharp Omega_EM",
+    "cohomology_isomorphism_requirement": "det(S_parity) != 0",
+    "cyclicity_equation": "S_parity^sharp Omega_WM_q S_parity = Omega_EM",
+    "map": "S_parity(lambda,k,m,omega) on each labelled q-primary fibre",
+    "shell_constraint": "time translation, S1 translation, SO3 and parity preserve the labelled q shell; the extra p shell cannot mix because its frequency never collides",
+    "support_local_consequence": "after harmonic/Fourier restriction, a finite-order H_product-equivariant chain map acts fibrewise"
+  },
+  "next_gate": "RETAIN_THE_NONCYCLIC_RELATIVE_OBSERVABLE_CONE_OR_DECLARE_AN_EXPLICIT_PAIRING_CHANGED_THEORY_BEFORE_ANY_MATCHED_INSERTION_WORK",
+  "provenance": {
+    "proof_type": "EXACT_ACTION_BV_LAYOUT_AUDIT_AND_GENERIC_COHOMOLOGY_CONGRUENCE_INERTIA_OBSTRUCTION",
+    "source_manifest": {
+      "../reports/relative-einstein-weyl-cyclic-pushforward-obstruction.md": "d8dd971657801df3c3a52a3805a3392487a2f4ddb0ce3f427d74ec90ed5c7c41",
+      "relative_einstein_weyl_cyclic_pushforward_obstruction.py": "d6523822aedb88108c95725998347bf0d87a1ecdc5975597e4a66a4a23d52c99",
+      "relative_einstein_weyl_cyclic_pushforward_obstruction_certificate.py": "ed58ff7d4d60a20a0dffce1b783cd7fa1cca8b7e2152a99c23a9451aa22dd646",
+      "schema/relative-einstein-weyl-cyclic-pushforward-obstruction-v1.schema.json": "3b49140870b40e0156311f427cf2667eebfe2a6ab33790b471b4e440c07d7ce7",
+      "tests/test_relative_einstein_weyl_cyclic_pushforward_obstruction.py": "e02ed230af786eca21faada726402523e3db057c9e65c2fa6c110f2e06d09bbd",
+      "verify_relative_einstein_weyl_cyclic_pushforward_obstruction.py": "86c6309f0a1c68b109e5973409ffc8ed7f45c1ec8afe46171f2a6efb8f7d91a8"
+    }
+  },
+  "relative_cotangent_carrier": {
+    "absolute_mixed_bundle_minimality": "NOT_PROVED",
+    "action_pairing_transport": "NOT_IDENTIFIED",
+    "degree_ranks": [
+      10,
+      51,
+      97,
+      97,
+      51,
+      10
+    ],
+    "full_cone_cotangent_requires_equal_rank_dual": true,
+    "minimality_status": "MINIMAL_WITHIN_DECLARED_FULL_CONE_COTANGENT_CLASS_ONLY",
+    "rank_only_lower_bound": 28,
+    "row_count": 316,
+    "sector_ranks": {
+      "five_current_de_rham": 160,
+      "relative_cone": 78,
+      "relative_cone_cotangent": 78
+    },
+    "selected_added_rows": 78,
+    "selected_completion": "T_star_shift_1_of_entire_78_row_relative_cone",
+    "unary_cyclic_pairing": "CANONICAL_COTANGENT_PAIRING"
+  },
+  "result_id": "RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION",
+  "result_state": "ACTION_COMPATIBLE_CYCLIC_PUSHFORWARD_OBSTRUCTED_ON_GENERIC_PHYSICAL_COHOMOLOGY_DESPITE_CANONICAL_316_ROW_COTANGENT_PAIRING",
+  "schema": "quantum-weyl-relative-einstein-weyl-cyclic-pushforward-obstruction-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "closed S1_L x S2 Cauchy slice",
+    "carrier": "38-row and 40-row minimal action BV carriers plus the canonical 316-row full-cone cotangent completion",
+    "charge_sector": "fixed magnetic U1 bundle N=2 before final quotient",
+    "degree": "all BV degrees for carrier audit; generic solution cohomology for obstruction",
+    "ell": "ell>=2",
+    "k": "all compact momenta on noncolliding generic q shells",
+    "m": "all by SO3 equivariance",
+    "omega": "both noncolliding q-primary radiative shells",
+    "parity": "axial and polar separately",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  },
+  "verdict": {
+    "action_compatible_cyclic_pushforward_exists": false,
+    "canonical_316_pairing_is_action_pairing": false,
+    "canonical_316_unary_cyclic_carrier_exists": true,
+    "classification": "OBSTRUCTED",
+    "first_exact_obstruction": "GENERIC_PHYSICAL_COHOMOLOGY_ACTION_FORM_INERTIA_MISMATCH",
+    "relative_target_valued_QME_subtraction_defined": false
+  },
+  "zero_mode_ledger": {
+    "exceptional_and_global_zero_modes_classified_here": false,
+    "generic_obstruction_uses_zero_modes": false,
+    "reason_sufficient": "an all-sector action-compatible pushforward must restrict to every generic ell>=2 fibre, so one generic inertia mismatch is already decisive"
+  }
+}

@@ -1,0 +1,433 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.example/schema/relative-einstein-weyl-cyclic-pushforward-obstruction-v1.schema.json",
+  "title": "Relative Einstein-Weyl cyclic pushforward obstruction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "input_pin",
+    "scope",
+    "action_carriers",
+    "relative_cotangent_carrier",
+    "most_general_equivariant_cohomology_map",
+    "exact_inertia_blocks",
+    "determinant_obstruction",
+    "zero_mode_ledger",
+    "verdict",
+    "coefficient_gate",
+    "exact_checks",
+    "claim_flags",
+    "dependency_refs",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-relative-einstein-weyl-cyclic-pushforward-obstruction-v1"
+    },
+    "result_id": {
+      "const": "RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION"
+    },
+    "result_state": {
+      "const": "ACTION_COMPATIBLE_CYCLIC_PUSHFORWARD_OBSTRUCTED_ON_GENERIC_PHYSICAL_COHOMOLOGY_DESPITE_CANONICAL_316_ROW_COTANGENT_PAIRING"
+    },
+    "lifecycle_status": {
+      "const": "CLASSIFIED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ]
+    },
+    "input_pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "commit",
+        "certificate_path",
+        "certificate_sha256"
+      ],
+      "properties": {
+        "commit": {
+          "$ref": "#/$defs/commit"
+        },
+        "certificate_path": {
+          "const": "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION.json"
+        },
+        "certificate_sha256": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "theory",
+        "background",
+        "boundaries",
+        "charge_sector",
+        "carrier",
+        "degree",
+        "parity",
+        "ell",
+        "m",
+        "k",
+        "omega"
+      ],
+      "properties": {
+        "theory": {"type": "string", "minLength": 1},
+        "background": {"type": "string", "minLength": 1},
+        "boundaries": {"type": "string", "minLength": 1},
+        "charge_sector": {"type": "string", "minLength": 1},
+        "carrier": {"type": "string", "minLength": 1},
+        "degree": {"type": "string", "minLength": 1},
+        "parity": {"type": "string", "minLength": 1},
+        "ell": {"type": "string", "minLength": 1},
+        "m": {"type": "string", "minLength": 1},
+        "k": {"type": "string", "minLength": 1},
+        "omega": {"type": "string", "minLength": 1}
+      }
+    },
+    "action_carriers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Einstein_Maxwell",
+        "Weyl_Maxwell"
+      ],
+      "properties": {
+        "Einstein_Maxwell": {
+          "allOf": [
+            {"$ref": "#/$defs/actionCarrier"},
+            {
+              "type": "object",
+              "properties": {"row_count": {"const": 38}}
+            }
+          ]
+        },
+        "Weyl_Maxwell": {
+          "allOf": [
+            {"$ref": "#/$defs/actionCarrier"},
+            {
+              "type": "object",
+              "properties": {"row_count": {"const": 40}}
+            }
+          ]
+        }
+      }
+    },
+    "relative_cotangent_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "row_count",
+        "degree_ranks",
+        "sector_ranks",
+        "selected_completion",
+        "selected_added_rows",
+        "full_cone_cotangent_requires_equal_rank_dual",
+        "minimality_status",
+        "rank_only_lower_bound",
+        "absolute_mixed_bundle_minimality",
+        "unary_cyclic_pairing",
+        "action_pairing_transport"
+      ],
+      "properties": {
+        "row_count": {"const": 316},
+        "degree_ranks": {"const": [10, 51, 97, 97, 51, 10]},
+        "sector_ranks": {
+          "const": {
+            "five_current_de_rham": 160,
+            "relative_cone": 78,
+            "relative_cone_cotangent": 78
+          }
+        },
+        "selected_completion": {
+          "const": "T_star_shift_1_of_entire_78_row_relative_cone"
+        },
+        "selected_added_rows": {"const": 78},
+        "full_cone_cotangent_requires_equal_rank_dual": {"const": true},
+        "minimality_status": {
+          "const": "MINIMAL_WITHIN_DECLARED_FULL_CONE_COTANGENT_CLASS_ONLY"
+        },
+        "rank_only_lower_bound": {"const": 28},
+        "absolute_mixed_bundle_minimality": {"const": "NOT_PROVED"},
+        "unary_cyclic_pairing": {"const": "CANONICAL_COTANGENT_PAIRING"},
+        "action_pairing_transport": {"const": "NOT_IDENTIFIED"}
+      }
+    },
+    "most_general_equivariant_cohomology_map": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "map",
+        "support_local_consequence",
+        "shell_constraint",
+        "cohomology_isomorphism_requirement",
+        "cyclicity_equation",
+        "adjoint_pushforward_formula_if_it_existed"
+      ],
+      "properties": {
+        "map": {"type": "string", "minLength": 1},
+        "support_local_consequence": {"type": "string", "minLength": 1},
+        "shell_constraint": {"type": "string", "minLength": 1},
+        "cohomology_isomorphism_requirement": {"const": "det(S_parity) != 0"},
+        "cyclicity_equation": {
+          "const": "S_parity^sharp Omega_WM_q S_parity = Omega_EM"
+        },
+        "adjoint_pushforward_formula_if_it_existed": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "exact_inertia_blocks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["axial", "polar"],
+      "properties": {
+        "axial": {"$ref": "#/$defs/inertiaBlock"},
+        "polar": {"$ref": "#/$defs/inertiaBlock"}
+      }
+    },
+    "determinant_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identity",
+        "source_determinants_positive_for_lambda_ge_6",
+        "target_determinants_negative_for_lambda_ge_6",
+        "consequence",
+        "homotopy_and_field_redefinition_scope"
+      ],
+      "properties": {
+        "identity": {
+          "const": "det(S^T Omega_WM_q S)=det(S)^2 det(Omega_WM_q)"
+        },
+        "source_determinants_positive_for_lambda_ge_6": {
+          "const": ["2*lambda", "2*(lambda-2)"]
+        },
+        "target_determinants_negative_for_lambda_ge_6": {
+          "const": [
+            "-lambda*(9*lambda-2)",
+            "-(lambda-2)*(9*lambda-2)"
+          ]
+        },
+        "consequence": {"type": "string", "minLength": 1},
+        "homotopy_and_field_redefinition_scope": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "zero_mode_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generic_obstruction_uses_zero_modes",
+        "exceptional_and_global_zero_modes_classified_here",
+        "reason_sufficient"
+      ],
+      "properties": {
+        "generic_obstruction_uses_zero_modes": {"const": false},
+        "exceptional_and_global_zero_modes_classified_here": {"const": false},
+        "reason_sufficient": {"type": "string", "minLength": 1}
+      }
+    },
+    "verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_compatible_cyclic_pushforward_exists",
+        "canonical_316_unary_cyclic_carrier_exists",
+        "canonical_316_pairing_is_action_pairing",
+        "relative_target_valued_QME_subtraction_defined",
+        "classification",
+        "first_exact_obstruction"
+      ],
+      "properties": {
+        "action_compatible_cyclic_pushforward_exists": {"const": false},
+        "canonical_316_unary_cyclic_carrier_exists": {"const": true},
+        "canonical_316_pairing_is_action_pairing": {"const": false},
+        "relative_target_valued_QME_subtraction_defined": {"const": false},
+        "classification": {"const": "OBSTRUCTED"},
+        "first_exact_obstruction": {
+          "const": "GENERIC_PHYSICAL_COHOMOLOGY_ACTION_FORM_INERTIA_MISMATCH"
+        }
+      }
+    },
+    "coefficient_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "matched_one_loop_insertions_authorized",
+        "reason",
+        "pure_Weyl_vector_reuse_authorized"
+      ],
+      "properties": {
+        "matched_one_loop_insertions_authorized": {"const": false},
+        "reason": {"type": "string", "minLength": 1},
+        "pure_Weyl_vector_reuse_authorized": {"const": false}
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 13,
+      "additionalProperties": {"const": true}
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ACTION_COMPATIBLE_CYCLIC_PUSHFORWARD_CONSTRUCTED",
+        "ACTION_COMPATIBLE_CYCLIC_PUSHFORWARD_OBSTRUCTED_GENERICALLY",
+        "CANONICAL_316_UNARY_CYCLIC_CARRIER_RETAINED",
+        "CANONICAL_316_PAIRING_PROMOTED_TO_ACTION_PAIRING",
+        "ABSOLUTE_316_ROW_MINIMALITY_CLAIMED",
+        "MATCHED_ONE_LOOP_COEFFICIENTS_COMPUTED",
+        "RELATIVE_QME_RESTORED",
+        "LORENTZIAN_CAUSAL_OR_PARTICLE_CLAIM"
+      ],
+      "properties": {
+        "ACTION_COMPATIBLE_CYCLIC_PUSHFORWARD_CONSTRUCTED": {"const": false},
+        "ACTION_COMPATIBLE_CYCLIC_PUSHFORWARD_OBSTRUCTED_GENERICALLY": {
+          "const": true
+        },
+        "CANONICAL_316_UNARY_CYCLIC_CARRIER_RETAINED": {"const": true},
+        "CANONICAL_316_PAIRING_PROMOTED_TO_ACTION_PAIRING": {"const": false},
+        "ABSOLUTE_316_ROW_MINIMALITY_CLAIMED": {"const": false},
+        "MATCHED_ONE_LOOP_COEFFICIENTS_COMPUTED": {"const": false},
+        "RELATIVE_QME_RESTORED": {"const": false},
+        "LORENTZIAN_CAUSAL_OR_PARTICLE_CLAIM": {"const": false}
+      }
+    },
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "previous_relative_QME_nondefinition",
+        "generic_action_pairing_inertia",
+        "canonical_316_cotangent_completion",
+        "canonical_316_layout",
+        "Einstein_action_BV_layout",
+        "Weyl_action_BV_layout",
+        "relative_observable_functor"
+      ],
+      "properties": {
+        "previous_relative_QME_nondefinition": {"$ref": "#/$defs/ref"},
+        "generic_action_pairing_inertia": {"$ref": "#/$defs/ref"},
+        "canonical_316_cotangent_completion": {"$ref": "#/$defs/ref"},
+        "canonical_316_layout": {"$ref": "#/$defs/ref"},
+        "Einstein_action_BV_layout": {"$ref": "#/$defs/ref"},
+        "Weyl_action_BV_layout": {"$ref": "#/$defs/ref"},
+        "relative_observable_functor": {"$ref": "#/$defs/ref"}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 100},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proof_type", "source_manifest"],
+      "properties": {
+        "proof_type": {
+          "const": "EXACT_ACTION_BV_LAYOUT_AUDIT_AND_GENERIC_COHOMOLOGY_CONGRUENCE_INERTIA_OBSTRUCTION"
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "actionCarrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "row_count",
+        "degree_ranks",
+        "dual_involution_exact",
+        "dual_degree_rule",
+        "action_odd_pairing_nondegenerate"
+      ],
+      "properties": {
+        "row_count": {"type": "integer", "minimum": 1},
+        "degree_ranks": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "dual_involution_exact": {"const": true},
+        "dual_degree_rule": {
+          "const": "degree(row)+degree(dual_row)=1"
+        },
+        "action_odd_pairing_nondegenerate": {"const": true}
+      }
+    },
+    "inertiaBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Einstein_form",
+        "Einstein_leading_minor",
+        "Einstein_determinant",
+        "Einstein_inertia_lambda_ge_6",
+        "restricted_Weyl_form",
+        "restricted_Weyl_leading_minor",
+        "restricted_Weyl_determinant",
+        "restricted_Weyl_inertia_lambda_ge_6"
+      ],
+      "properties": {
+        "Einstein_form": {"$ref": "#/$defs/matrix2"},
+        "Einstein_leading_minor": {"type": "string", "minLength": 1},
+        "Einstein_determinant": {"type": "string", "minLength": 1},
+        "Einstein_inertia_lambda_ge_6": {"const": [2, 0]},
+        "restricted_Weyl_form": {"$ref": "#/$defs/matrix2"},
+        "restricted_Weyl_leading_minor": {"type": "string", "minLength": 1},
+        "restricted_Weyl_determinant": {"type": "string", "minLength": 1},
+        "restricted_Weyl_inertia_lambda_ge_6": {"const": [1, 1]}
+      }
+    },
+    "matrix2": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "items": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

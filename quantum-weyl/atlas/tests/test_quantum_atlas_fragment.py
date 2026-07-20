@@ -285,14 +285,17 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             == "quantum.crosswalk.relative_einstein_weyl_qme_defect_to_particle"
         )
         self.assertIn(
-            "relative class and coefficient are undefined",
+            "generic action-form inertia obstructs",
             relative["scope"]["carrier"],
         )
         self.assertEqual(
             {
                 evidence["result_id"] for evidence in relative["evidence"]
             },
-            {"RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION"},
+            {
+                "RELATIVE_EINSTEIN_WEYL_QME_DEFECT_NONDEFINITION",
+                "RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION",
+            },
         )
         round_s4 = next(
             entry for entry in guards
