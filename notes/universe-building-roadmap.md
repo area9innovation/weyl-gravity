@@ -113,7 +113,7 @@ The shortest independent paths are now:
 Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   attach the certified 188-row physical/current q2 interface to the 78-row relative mapping cofiber and solve or certify the remaining cross-incidence; causal Green data and the eighteen candidate-13 spectral receivers remain separate fail-closed gates
-Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; for Berger, compact-slab cutoff Volterra normal convergence, cutoff decomposability, the regular Cauchy morphisms' cone action and a global exact CCR-normalized Hadamard Krein covariance on the indefinite free rank-40 dilation are certified, so transport that covariance across both regular morphisms and verify the exact CCR, then restrict it to the full graded BV carrier with BRST Ward identities and physical-cohomology positivity, while separately requesting a corrected q26-compatible Cauchy lift instead of the exactly rejected canonical graph lift; in parallel analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows, add remaining BV rows to the partial-BV five-carrier representative, classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
+Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; for Berger, compact-slab cutoff Volterra normal convergence, cutoff decomposability and the regular Cauchy morphisms' cone action are certified, and the global exact CCR-normalized Hadamard Krein covariance has been transported from the free to the cutoff and full indefinite rank-40 metric dilations, so construct a valid raw-companion or full graded-BV restriction and verify the BRST Ward identity and physical-cohomology positivity, while separately requesting a corrected q26-compatible Cauchy lift instead of the exactly rejected canonical graph lift; in parallel analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows, add remaining BV rows to the partial-BV five-carrier representative, classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
 Observer:    the action-derived temporal normalization triangle has invariant holonomy H=2 and full rank on the frozen 108-row carrier; its complete one-edge/support-one bounded classification yields necessary-condition loci only, and a 109-row nondegenerate pairing is exactly impossible, so await the typed Conflux rediscovery consumer or declare a 110-row conjugate-pair action extension, then regenerate q1/q2 from one pairing and substitute into the original arity-two verifier before any arity-three, K_Berger, observer-morphism, detector or Z2^C restriction; independently await a provenance-complete physical declaration under the certified v2 recoil contract
 Black hole:  BH-2C COMPLETE: claim repair; log-free Jordan gate both parities; composed metric LOG TAILS at infinity; finite-flux boundary class = EXACTLY the Einstein sector (axial fixture: E x E r^-2 integrable, extra-involving pairs divergent, shift-invariant) -- horizon nonselection + infinity norm-selection now both certified. Residual: symbolic frequency, polar flux table, summability, phase-space construction, general l; ringdown coordinator-gated
 ```
@@ -2839,8 +2839,35 @@ contracts to the connected double-singular hub, proving connectedness of the
 complete fixed-occupation singular-union zero fibre.  Off balance it proves
 the same only when `mu_square=0`; the nonzero displayed residual obstructs
 this radial path but is not a nonradial no-go.  Candidate 17 and candidate 20
-off balance remain `OPEN`.  The next gate is a moving-square-direction
-contraction or an invariant separating a zero-fibre component from the hub.
+off balance therefore require a moving-square-direction test.
+
+The complete uniform-scaling/moving-square ansatz is now disposed.  The
+normalized Cartan-square moment map fills a closed ball with radial coordinate
+
+```text
+F(u)=3*u/(2+u^2),  F'(u)>0,  0<=u<=1.
+```
+
+Writing `alpha` for the receiving square allocation and `delta` for the total
+frequency-weighted coefficient, uniform kernel scaling `s=t^2` requires
+
+```text
+c(s)=s*alpha+(1-s)*delta,
+r(s)=s*alpha/c(s),
+dr/ds=alpha*delta/c(s)^2.
+```
+
+For `alpha*delta>0`, `r` runs from zero to one inside the Cartan moment ball,
+giving an exact moving-direction contraction to the hub.  This covers the
+complete candidate-17 `alpha<0` stratum and the candidate-20 off-balance
+same-sign stratum, in addition to all phase-real points and the square
+vertex.  For `alpha*delta<0`, `c(s)` has a unique interior zero at which a
+nonzero scaled kernel moment cannot be canceled by any square direction.
+The nonvertex `alpha=0`, non-phase-real boundary has a separate continuity
+obstruction.  These are complete obstructions only for the declared
+uniform-scaling ansatz, not general nonradial no-go theorems.  The next gate
+is independent kernel-node scaling or deformation inside `T3(f,g)=0` on the
+remaining `alpha*delta<=0` non-phase-real strata.
 All higher lifecycles remain fail-closed.  This is nonlinear input to
 same-background Bridge 1 with Classical,
 not a promotion of its certified linear relative triangle/cofiber.  The
