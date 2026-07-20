@@ -86,6 +86,9 @@ scheme equivalence, anomaly coefficients beyond their existing certificates,
 global-anomaly exclusion, Lorentzian QME, Hadamard state, positivity, particle
 interpretation, scattering, unitarity or residual quantum transfer.
 
+EVIDENCE: `paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json`;
+`paper/12-pure-weyl-one-loop-bv-anomaly-paper-coverage-report.json`
+
 CLOSE-OUT: DONE — Paper 12 and its generated publication evidence now state
 the exact regulator/measure obstruction sequence without promoting the
 conditional QAP hypothesis.
