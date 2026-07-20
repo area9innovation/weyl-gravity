@@ -8,11 +8,13 @@ scratch pipeline whose results were validated by the null control at
 1e-18 relative and by frequency robustness.
 """
 
-def run_pipeline(wnum, NORD=16, radii=None, return_exprs=False):
+def run_pipeline(wnum, NORD=16, radii=None, return_exprs=False, geo_cls=None):
     import time, pickle
     import sympy as sp
     t0 = time.time()
     import weyl_geometry as wg
+    if geo_cls is None:
+        geo_cls = wg.Geometry
     
     
     v, ph = sp.symbols("v phi")
@@ -28,7 +30,7 @@ def run_pipeline(wnum, NORD=16, radii=None, return_exprs=False):
     g0[0, 1] = g0[1, 0] = 1
     g0[2, 2] = r**2 / (1 - x**2)
     g0[3, 3] = r**2 * (1 - x**2)
-    geo0 = wg.Geometry(coords, g0)
+    geo0 = geo_cls(coords, g0)
     gi = geo0.ginv
     S = -3 * x * (1 - x**2)
     N = 4
@@ -206,10 +208,15 @@ def run_pipeline(wnum, NORD=16, radii=None, return_exprs=False):
     def ric_first_order(wval):
         """reduce the dRic system to Y' = M Y + N*source, Y = (H0, H1, H1')."""
         Rx_w = sp.expand(Rxf.subs(w, wval))
-        H0p_expr = sp.solve(sp.Eq(Rx_w, sp.Symbol("XSRC")), sp.Derivative(H0, r))[0]
+        XS, XSP = sp.Symbol("XSRC"), sp.Symbol("XSRCP")
+        H0p_expr = sp.solve(sp.Eq(Rx_w, XS), sp.Derivative(H0, r))[0]
         Rr_w = sp.expand(Rrf.subs(w, wval))
-        # substitute H0'' = d/dr(H0p_expr), H0' = H0p_expr into the rphi row
-        H0pp = sp.diff(H0p_expr, r).subs(sp.Derivative(H0, r), H0p_expr)
+        # substitute H0'' = d/dr(H0p_expr), H0' = H0p_expr into the rphi row.
+        # XSRC is a radial function: its derivative XSRCP must be kept (the
+        # original omission mis-sourced the sourced Rr row and left the
+        # composed particular off shell; homogeneous modes are unaffected).
+        H0pp = (sp.diff(H0p_expr, r).subs(sp.Derivative(H0, r), H0p_expr)
+                + sp.diff(H0p_expr, XS) * XSP)
         row = Rr_w.subs({sp.Derivative(H0, (r, 2)): H0pp, sp.Derivative(H0, r): H0p_expr}).doit()
         H1pp_expr = sp.solve(sp.Eq(sp.expand(row), sp.Symbol("TSRC")), sp.Derivative(H1, (r, 2)))[0]
         return H0p_expr, H1pp_expr
@@ -230,8 +237,9 @@ def run_pipeline(wnum, NORD=16, radii=None, return_exprs=False):
         M[1, 2] = 1
         e2 = sp.expand(H1pp_expr)
         M[2, 0] = e2.coeff(H0); M[2, 1] = e2.coeff(H1); M[2, 2] = e2.coeff(DH1)
-        Nvec = sp.Matrix([e0.coeff(XS), 0, e2.coeff(XS) * 0 + e2.coeff(TS)])
+        XSP = sp.Symbol("XSRCP")
         NvecX = sp.Matrix([e0.coeff(XS), 0, e2.coeff(XS)])
+        NvecXP = sp.Matrix([0, 0, e2.coeff(XSP)])
         NvecT = sp.Matrix([0, 0, e2.coeff(TS)])
         Mr = M.subs(r, 2 + rho)
         Res = sp.Matrix(3, 3, lambda i, j: sp.limit(rho * cancel(Mr[i, j]), rho, 0))
@@ -254,6 +262,8 @@ def run_pipeline(wnum, NORD=16, radii=None, return_exprs=False):
             return out
         # source enters as (1/rho)*(rho*vec)*poly to align with the M expansion
         SX = src_coeffs(NvecX, Xsrc)
+        SXP = src_coeffs(NvecXP,
+                         None if Xsrc is None else sp.expand(sp.diff(Xsrc, rho)))
         STt = src_coeffs(NvecT, Qsrc)
         def recur(Y0, with_src):
             Y = [Y0]
@@ -262,7 +272,7 @@ def run_pipeline(wnum, NORD=16, radii=None, return_exprs=False):
                 for k in range(n):
                     rhs += Mk[n - 1 - k] * Y[k]
                 if with_src:
-                    rhs += SX[n] + STt[n]
+                    rhs += SX[n] + SXP[n] + STt[n]
                 Mn = n * sp.eye(3) - Res
                 if Mn.det() != 0:
                     Y.append(Mn.solve(rhs))
@@ -277,7 +287,19 @@ def run_pipeline(wnum, NORD=16, radii=None, return_exprs=False):
             return Y
         if Qsrc is None and Xsrc is None:
             return [recur(sp.Matrix(vv), False) for vv in Res.nullspace()]
-        return recur(sp.zeros(3, 1), True)
+        # n = 0 balance: (0 I - Res) Y_0 = [N s]_{-1}; the source vectors
+        # carry a simple pole, so the particular's leading coefficient is
+        # NONZERO and determined here (solvability = cokernel projection of
+        # the pole vector vanishes; verified exactly at both fixture
+        # frequencies).  Starting from Y_0 = 0 without this solve produced
+        # an off-shell pseudo-particular (nonconstant pair flux).
+        s0 = SX[0] + SXP[0] + STt[0]
+        soln0, params0 = Res.gauss_jordan_solve(-s0)
+        Y0p = soln0.subs({pp: 0 for pp in params0})
+        chk0 = sp.simplify(Res * Y0p + s0)
+        if any(sp.simplify(cc) != 0 for cc in chk0):
+            raise RuntimeError("n = 0 source balance inconsistent (log)")
+        return recur(Y0p, True)
     
     
     print("starting mode construction", round(time.time() - t0, 1), flush=True)
@@ -389,7 +411,8 @@ def run_pipeline(wnum, NORD=16, radii=None, return_exprs=False):
         # certificate bh2_horizon_flux_exact
         out["exprs"] = {"control": ctrl, "cross": cross, "ee": ee, "r": r,
                         "rows_f": (Rtf, Rrf, Rxf), "mode_p": ex_p_Y,
-                        "carrier_p": (Pp_p, Qp_p, Xp_p), "rho": rho, "w": w}
+                        "carrier_p": (Pp_p, Qp_p, Xp_p), "rho": rho, "w": w,
+                        "reduction": ric_first_order(wnum), "H0": H0, "H1": H1}
     if radii is None:
         radii = [sp.Rational(65, 32), sp.Rational(33, 16)]
     for name, expr in [("control", ctrl), ("cross", cross), ("ee", ee)]:

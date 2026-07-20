@@ -82,3 +82,10 @@ python3 black_hole_programme/bh_cauchy_truncation.py           # producer (~2 mi
 python3 black_hole_programme/verify_bh_cauchy_truncation.py    # independent verifier (~2 min)
 python3 -m pytest black_hole_programme/tests/test_bh_cauchy_truncation.py -q
 ```
+
+## Close-out
+
+```text
+CLOSE-OUT: DONE — the complete stop condition is met
+EVIDENCE: black_hole_programme/certificates/BH_LOCAL_EINSTEIN_CAUCHY_TRUNCATION.json (commit 9ce24e16; independent verifier verify_bh_cauchy_truncation.py passed; Paper 14 integration commit 317742a5)
+```

@@ -1,0 +1,103 @@
+{
+  "claim_flags": {
+    "corrected_composition_certified": true,
+    "exact_constant_flux_certified": true,
+    "general_l_certified": false,
+    "invariant_sign_theory_certified": false,
+    "null_control_exact": true,
+    "polar_composed_repair_certified": false,
+    "rw_gauge_lift_exists": true,
+    "sign_flip_documented": true,
+    "supersedes_bh2a_cross_flux_values": true,
+    "symbolic_omega_certified": false
+  },
+  "declaration": {
+    "background_family": "Schwarzschild m = 1 fixtures",
+    "conformal_frame": "EF-chart carrier; t-chart Lee-Wald pairing with exact e^{i omega rstar} factors",
+    "generator": "none; bilinear pairings of ingoing-analytic modes",
+    "horizon_condition": "ingoing analyticity; flux values are the EXACT CONSTANTS of on-shell pairs (rho^1..rho^8 identically zero)",
+    "infinity_condition": "none; horizon-local statement",
+    "lifecycle": "CLASSIFIED",
+    "phase_space": "axial l = 2 conjugate mode pairs at omega in {3/5, 2/7}",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "fixtures": {
+    "2/7": {
+      "control": "0",
+      "cross": "-15606912/844025 + 1283712*I/120575",
+      "cross_float": "(-18.491054174955934+10.646585113019682j)",
+      "ee": "206883648*I/5908175",
+      "ee_float": "35.016506450716406j"
+    },
+    "3/5": {
+      "control": "0",
+      "cross": "-10893744/129625 + 780048*I/25925",
+      "cross_float": "(-84.04045515879989+30.08864030847326j)",
+      "ee": "284488128*I/648125",
+      "ee_float": "438.94021677970886j"
+    }
+  },
+  "missing_objects": [
+    "symbolic omega dependence of the corrected constants",
+    "general l, m; the polar composed-repair counterpart",
+    "outer-boundary counterparts of the corrected fixtures",
+    "a representative-invariant sign theory for the extra block",
+    "any stability statement"
+  ],
+  "provenance": {
+    "engine_path": "black_hole_programme/weyl_geometry.py",
+    "engine_sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "flux_matrix_certificate": "black_hole_programme/certificates/BH2A_FLUX_MATRIX.json",
+    "flux_matrix_certificate_sha256": "95ca6daeabb16bf93faa1bb721e3464fc5363899a344f0281d126f9a14204732",
+    "generator_path": "black_hole_programme/bh2a_composed_repair.py",
+    "pipeline_path": "black_hole_programme/axial_flux_modes.py",
+    "pipeline_sha256": "001318ceeacc1ee4638cf9b6e927ae888500421e111df35f9f9049a3e62447f1"
+  },
+  "result_id": "PURE_WEYL_BH2A_COMPOSED_REPAIR",
+  "result_token": "BH2A_COMPOSED_LIFT_CORRECTED_EXACT_CONSTANT_FLUX",
+  "schema": "pure-weyl-bh2a-composed-repair-v1",
+  "schema_path": "black_hole_programme/schema/bh2a-composed-repair-v1.schema.json",
+  "schema_sha256": "d382a37eb9ad0ae0b0e9757493187c31a9654d189f6f90613d2b2939087ece89",
+  "sign_finding": {
+    "conventions": "pinned by the certified BH2A_FLUX_MATRIX bilinear and slot order (mode(+w), conj mode(-w)); representative-invariant sign theory remains OPEN",
+    "statement": "the corrected extra-block constants are positive-imaginary at both fixtures (superseded values were negative-imaginary): under the superseded convention i F^r/(pi alpha) the corrected extra-block pairing is NEGATIVE at the horizon at both frequencies"
+  },
+  "stage_seconds": {
+    "carrier_2/7": 225.1,
+    "carrier_3/5": 228.7,
+    "cascades_2/7": 36.1,
+    "cascades_3/5": 44.3,
+    "flux_2/7": 63.9,
+    "flux_3/5": 73.4,
+    "modes_2/7": 2.4,
+    "modes_3/5": 3.0,
+    "row_receipt_2/7": 0.9,
+    "row_receipt_3/5": 0.8,
+    "rows": 0.6,
+    "total": 679.1
+  },
+  "structure": {
+    "content": "one second-order equation for (H0, H2) plus one function of gauge freedom; the lift exists in Regge-Wheeler gauge (H2 = 0); n = 0 cokernel exactly zero at both fixtures; particular log-free; all three delta-Ric rows exactly zero through the certified window",
+    "level_1": "K = e*Rt - a*Rr is algebraic in H1 (cascade)",
+    "level_2": "the remaining (H0'', H2'') block is exactly rank 1; its null combination K2 = L.b has zero net coefficient on every field and vanishes exactly on the Bianchi-constrained carrier: a pure source-compatibility identity"
+  },
+  "supersedes": {
+    "certificate": "black_hole_programme/certificates/BH2A_CROSS_FLUX.json",
+    "certificate_sha256": "8b5cea3acb71defe98e42af2aab496e405fa5ae5bf412810af6669b569f1c593",
+    "defects": [
+      "D1: sourced reduction differentiated through the radial source symbol as constant (dropped X' term)",
+      "D2: particular recursion omitted the n = 0 Frobenius balance (started at Y0 = 0)",
+      "D3: incomplete row system: the correct composition is the Bianchi-cascade constraint (algebraic H1) plus the (v,phi) row, which the original pipeline never imposed"
+    ],
+    "scope": "the composed-mode fixture values and the on-shell r-independence language of BH2A_CROSS_FLUX (kept as an append-only historical record)"
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh2a_composed_repair.py",
+  "verification_discipline": [
+    "series flux route validated order-by-order against the independent rational-function route on the superseded mode",
+    "structured Laurent receipts only; no global cancel of large substituted trees, no nsimplify on residuals, no bare .coeff extraction on expanded giant trees (each failure mode was observed and is documented in the report)"
+  ]
+}

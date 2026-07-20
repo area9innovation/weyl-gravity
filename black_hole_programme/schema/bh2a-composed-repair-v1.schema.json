@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh2a-composed-repair-v1",
+  "title": "Corrected axial composed lift and exact horizon-flux constants",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "supersedes",
+    "structure",
+    "fixtures",
+    "sign_finding",
+    "verification_discipline",
+    "claim_flags",
+    "missing_objects",
+    "stage_seconds",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-bh2a-composed-repair-v1"
+    },
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh2a-composed-repair-v1.schema.json"
+    },
+    "schema_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "result_id": {
+      "const": "PURE_WEYL_BH2A_COMPOSED_REPAIR"
+    },
+    "result_token": {
+      "const": "BH2A_COMPOSED_LIFT_CORRECTED_EXACT_CONSTANT_FLUX"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ]
+    },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background_family",
+        "conformal_frame",
+        "generator",
+        "phase_space",
+        "horizon_condition",
+        "infinity_condition",
+        "lifecycle"
+      ],
+      "properties": {
+        "lifecycle": {
+          "const": "CLASSIFIED"
+        }
+      }
+    },
+    "supersedes": {
+      "type": "object",
+      "required": [
+        "certificate",
+        "certificate_sha256",
+        "scope",
+        "defects"
+      ],
+      "properties": {
+        "certificate": {
+          "const": "black_hole_programme/certificates/BH2A_CROSS_FLUX.json"
+        },
+        "defects": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    "structure": {
+      "type": "object",
+      "required": [
+        "level_1",
+        "level_2",
+        "content"
+      ]
+    },
+    "fixtures": {
+      "type": "object",
+      "required": [
+        "3/5",
+        "2/7"
+      ],
+      "properties": {
+        "3/5": {
+          "type": "object",
+          "required": ["control", "cross", "ee", "cross_float", "ee_float"],
+          "properties": {
+            "control": {"const": "0"},
+            "cross": {"const": "-10893744/129625 + 780048*I/25925"},
+            "ee": {"const": "284488128*I/648125"}
+          }
+        },
+        "2/7": {
+          "type": "object",
+          "required": ["control", "cross", "ee", "cross_float", "ee_float"],
+          "properties": {
+            "control": {"const": "0"},
+            "cross": {"const": "-15606912/844025 + 1283712*I/120575"},
+            "ee": {"const": "206883648*I/5908175"}
+          }
+        }
+      }
+    },
+    "sign_finding": {
+      "type": "object",
+      "required": [
+        "statement",
+        "conventions"
+      ]
+    },
+    "verification_discipline": {
+      "type": "array",
+      "minItems": 2
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "corrected_composition_certified",
+        "rw_gauge_lift_exists",
+        "exact_constant_flux_certified",
+        "null_control_exact",
+        "sign_flip_documented",
+        "supersedes_bh2a_cross_flux_values",
+        "symbolic_omega_certified",
+        "general_l_certified",
+        "polar_composed_repair_certified",
+        "invariant_sign_theory_certified"
+      ],
+      "properties": {
+        "corrected_composition_certified": {"const": true},
+        "rw_gauge_lift_exists": {"const": true},
+        "exact_constant_flux_certified": {"const": true},
+        "null_control_exact": {"const": true},
+        "sign_flip_documented": {"const": true},
+        "supersedes_bh2a_cross_flux_values": {"const": true},
+        "symbolic_omega_certified": {"const": false},
+        "general_l_certified": {"const": false},
+        "polar_composed_repair_certified": {"const": false},
+        "invariant_sign_theory_certified": {"const": false}
+      }
+    },
+    "missing_objects": {
+      "type": "array",
+      "minItems": 5
+    },
+    "stage_seconds": {
+      "type": "object"
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator_path",
+        "engine_path",
+        "engine_sha256",
+        "pipeline_path",
+        "pipeline_sha256",
+        "flux_matrix_certificate",
+        "flux_matrix_certificate_sha256"
+      ]
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh2a_composed_repair.py"
+    }
+  }
+}
