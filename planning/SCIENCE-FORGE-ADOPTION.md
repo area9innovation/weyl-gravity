@@ -52,8 +52,9 @@ All six resident streams are authoritative from 20 July 2026. Every team must
 use one exclusive `s-f` lease at a time and must not create a parallel
 lifecycle history in a team brief or shared roadmap. This coordination
 cutover does **not** enable Conflux universally: the consumer-specific gates
-below remain mandatory, and the resident-physics adapter request is still
-`ACCEPTED`, not `LANDED`, at the time of cutover.
+below remain mandatory.  The resident-physics discovery pilots are `LANDED`;
+each stream still requires its declared importer, independent replay, and
+claim-specific activation gate before a Conflux candidate can affect physics.
 
 ### First proof-first pilot
 

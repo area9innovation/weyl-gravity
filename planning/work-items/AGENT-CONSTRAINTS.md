@@ -10,6 +10,13 @@
   their own coherent work by explicit pathspec and report the resulting commit
   through `s-f`. Do NOT edit generated views, IR graphs, gate/receipt files, or
   another team's certificates, snapshots, or history.
+- Research leases do not edit `notes/universe-building-roadmap.md` or maintain
+  lifecycle prose in a shared planning document.  The certificate, report,
+  atlas fragment, `s-f work report`, and append-only close-out event are the
+  complete team handoff; the coordinator integrates those committed handoffs
+  into the roadmap in a separate scoped pass.  A legacy `allowed_paths` entry
+  for the roadmap is not authorization to touch it unless the work item's
+  objective explicitly is roadmap integration.
 - Honor the work item's `stop_condition`, `current_gate`, and `forbid`
   LITERALLY. If the main construction fails, the exact first obstruction is the
   deliverable — do not spend the run polishing prose around an unclosed gate.
