@@ -1,18 +1,19 @@
 {
-  "id": "sf:forge-request/bug-science-forge-report-containment-argmax",
-  "kind": "work",
-  "schema": "work-v0",
-  "body": {
-    "owner": "physics-programme",
-    "state": "REQUESTED",
-    "objective": "Fix the Science Forge SF5 report/close containment gate for repositories whose committed tree exceeds ARG_MAX. The first blocked consumer is sf:program/work/bridge-asymptotic-bach-renormalized-edge-pair-phase-space. Its exact result is committed and pushed at fa8d5bb06e4e68d42896260a514c592a0ed756e9, but `s-f work report` refuses before authoring an event because sf_report_gate expands all 14,130 committed paths (1,204,966 characters) into the single `--committed` argument of work-verify-tree. A direct subprocess call fails with OSError errno 7 / Argument list too long; the launcher currently surfaces an unrelated `cbp index callers of MISSING` diagnostic. Minimal reproduction from physics/symplectic-reconstruction: `python3 -c \"import subprocess; r='/home/alstrup/area9/bp2transformer'; s='fa8d5bb06e4e68d42896260a514c592a0ed756e9'; x=subprocess.check_output(['git','-C',r,'ls-tree','-r','--name-only',s],text=True); subprocess.run(['/home/alstrup/tmp/sf-sfc-1000','work-verify-tree','--deliverables','physics/symplectic-reconstruction/bridge/certificates/ASYMPTOTIC_BACH_SCHOUTEN_CORNER_ZERO_MODE_OBSTRUCTION_V1.json','--committed',x],check=True)\"`.",
-    "depends_on": [
-      "sf:program/work/bridge-asymptotic-bach-renormalized-edge-pair-phase-space"
-    ],
-    "stop_condition": "The containment gate accepts the real bridge report when every deliverable is present in fa8d5bb06e4e68d42896260a514c592a0ed756e9 without placing the complete tree in argv, and still rejects a mutation naming one absent deliverable. The implementation uses a bounded file/stdin/stream protocol, preserves exact path and nested-worktree normalization, emits a direct MISSING diagnostic, has an ARG_MAX regression fixture larger than 1.3 MB, and records its Forge commit plus gate path here.",
-    "forbid": "Do not skip containment for large repositories; do not truncate the committed tree; do not weaken missing-path refusal; do not require a false imported-commit or unresolvable placeholder; do not patch or run the physics scientific verifier as the Forge-side proof; do not replace the exact set comparison with grep, prefix matching, or probabilistic indexing.",
-    "notes": [
-      "2026-07-20 bridge-1: REQUESTED after two fail-closed report attempts. Git independently confirms all eight reported deliverables are present in fa8d5bb06, and the scientific producer, independent verifier, unit tests, atlas validator and Tier-2 input chain all pass. Only the launcher containment transport is blocked."
-    ]
-  }
+ "id": "sf:forge-request/bug-science-forge-report-containment-argmax",
+ "kind": "work",
+ "schema": "work-v0",
+ "body": {
+  "owner": "physics-programme",
+  "state": "ACCEPTED",
+  "objective": "Fix the Science Forge SF5 report/close containment gate for repositories whose committed tree exceeds ARG_MAX. The first blocked consumer is sf:program/work/bridge-asymptotic-bach-renormalized-edge-pair-phase-space. Its exact result is committed and pushed at fa8d5bb06e4e68d42896260a514c592a0ed756e9, but `s-f work report` refuses before authoring an event because sf_report_gate expands all 14,130 committed paths (1,204,966 characters) into the single `--committed` argument of work-verify-tree. A direct subprocess call fails with OSError errno 7 / Argument list too long; the launcher currently surfaces an unrelated `cbp index callers of MISSING` diagnostic. Minimal reproduction from physics/symplectic-reconstruction: `python3 -c \"import subprocess; r='/home/alstrup/area9/bp2transformer'; s='fa8d5bb06e4e68d42896260a514c592a0ed756e9'; x=subprocess.check_output(['git','-C',r,'ls-tree','-r','--name-only',s],text=True); subprocess.run(['/home/alstrup/tmp/sf-sfc-1000','work-verify-tree','--deliverables','physics/symplectic-reconstruction/bridge/certificates/ASYMPTOTIC_BACH_SCHOUTEN_CORNER_ZERO_MODE_OBSTRUCTION_V1.json','--committed',x],check=True)\"`.",
+  "depends_on": [
+   "sf:program/work/bridge-asymptotic-bach-renormalized-edge-pair-phase-space"
+  ],
+  "stop_condition": "The containment gate accepts the real bridge report when every deliverable is present in fa8d5bb06e4e68d42896260a514c592a0ed756e9 without placing the complete tree in argv, and still rejects a mutation naming one absent deliverable. The implementation uses a bounded file/stdin/stream protocol, preserves exact path and nested-worktree normalization, emits a direct MISSING diagnostic, has an ARG_MAX regression fixture larger than 1.3 MB, and records its Forge commit plus gate path here.",
+  "forbid": "Do not skip containment for large repositories; do not truncate the committed tree; do not weaken missing-path refusal; do not require a false imported-commit or unresolvable placeholder; do not patch or run the physics scientific verifier as the Forge-side proof; do not replace the exact set comparison with grep, prefix matching, or probabilistic indexing.",
+  "notes": [
+   "2026-07-20 bridge-1: REQUESTED after two fail-closed report attempts. Git independently confirms all eight reported deliverables are present in fa8d5bb06, and the scientific producer, independent verifier, unit tests, atlas validator and Tier-2 input chain all pass. Only the launcher containment transport is blocked.",
+   "2026-07-20 forge-coordinator: ACCEPTED \u2014 folded into the SF5-git-hardening arc (it IS SF5's containment gate, being built now). Confirmed the failure mode: expanding the 14,130-path / 1.2 MB committed tree into a single argv arg blows ARG_MAX (errno 7). The SF5 agent has the constraint: the containment check uses a BOUNDED STREAM protocol \u2014 read the (large) commit tree via `git ls-tree -r --name-only <commit>` into a set and probe the (small) reported deliverable set, or feed paths via stdin/temp-file \u2014 never argv; exact-path + nested-worktree normalization preserved; a direct MISSING diagnostic (not the spurious cbp error); and an ARG_MAX regression fixture >1.3 MB of path text that ACCEPTS a valid huge-tree report and REJECTS a mutation naming one absent deliverable. Your bridge-asymptotic-bach commit fa8d5bb06 is the first consumer; it unblocks when SF5 lands."
+  ]
+ }
 }
