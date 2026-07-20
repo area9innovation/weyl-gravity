@@ -1,0 +1,42 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-berger-q26-104-row-free-adjoint-completion",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-berger-q26-104-row-free-adjoint-completion",
+  "source": {
+    "path": "planning/work-items/classical-berger-q26-104-row-free-adjoint-completion.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Determine whether the sharp 104-new-row free-PBW lower bound for the Berger q26 Cauchy BV problem is attainable by an exact support-local cyclic free-adjoint completion, or whether the first completion equations force a still larger or unbounded tower.",
+    "stop_condition": "Import BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1 and its 936-dimensional closure witness by exact hashes. Declare the complete Berger-equivariant support-local extension with exactly 104 new rows carrying the forced degree profile (12,40,40,12), including row representations, differential orders, action of A_ext, odd pairing partners, real involution and retained solution-map incidence. Solve simultaneously q_ext^2=0, [A_ext,q_ext]=0, graded adjointness, nondegenerate cyclic pairing, real compatibility and contraction to the retained q26 solution complex over the rational source algebra. Use modular primes only for discovery or independently certified rank bounds; export a rational or algebraic construction/cokernel witness and mutations reproducing the 157 square and 207 commutator defects when the extension decouples. If the 104-row system closes, prove minimality from the imported lower bound and supply the exact 208-row sparse carrier. If it fails, compute the new defect module and prove the smallest additional representation orbit it forces, iterating symbolically only far enough to establish a strictly growing invariant or the next exact finite lower bound. Land an independent verifier, content-addressed artifacts and a Classical-to-Quantum import disposition.",
+    "current_gate": "exact 104-new-row free-adjoint completion saturating the module-closure lower bound",
+    "forbid": "no finite-field construction presented as a rational extension; no assumption that the lower bound is sufficient; no projection hiding inherited or newly generated defects; no degenerate pairing called cyclic completion; no row duplication without representation and action origin; no nonlocal inverse; no sampled-mode result called an operator theorem; no Hadamard, positivity, QME, particle, scattering or unitarity promotion",
+    "depends_on": [],
+    "activates": [
+      "a minimal exact 208-row Berger Cauchy BV carrier",
+      "or a stronger finite/infinite closure obstruction",
+      "the corrected Classical-to-Quantum Cauchy import and retained Berger Hadamard gate"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "quantum-weyl/lorentzian/imports/",
+      "reports/",
+      "residual_atlas/",
+      "notes/d-quotient-classical-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "CLASSICAL IMMEDIATE SUCCESSOR AFTER THE 104-ROW LOWER BOUND. Start from the representation/module equations and adjoint closure, not a blind 208-by-208 coefficient solve. The lower bound is necessary, not sufficient.",
+    "notes": [
+      "The certified represented defect/free-dual closure has dimension 936=104x9, forcing at least 104 new free PBW rows with the full frozen degree profile.",
+      "This item tests attainability of that bound. Failure must export the next generated defect module rather than merely reporting that a large solve did not finish.",
+      "It is input-pinned rather than dependency-gated so an intermediate or OBSTRUCTED close-out of the active finite-row theorem cannot strand the resident Classical stream."
+    ],
+    "input_commit": "a4a591032",
+    "stream": "classical"
+  },
+  "edges": []
+}
