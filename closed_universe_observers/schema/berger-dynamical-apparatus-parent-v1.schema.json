@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "payload_ref",
+    "action_gate",
+    "observer_result",
+    "source_class_result",
+    "downstream_disposition",
+    "missing_object_ledger",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-dynamical-apparatus-parent-v1"
+    },
+    "result_id": {"const": "BERGER_DYNAMICAL_APPARATUS_PARENT"},
+    "claim_status": {
+      "const": "CERTIFIED_ACTION_DERIVED_DYNAMICAL_APPARATUS_PARENT_THROUGH_ARITY_TWO"
+    },
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]
+    },
+    "observer_result": {
+      "type": "object",
+      "properties": {
+        "rank": {"const": 2},
+        "status": {"const": "SURVIVES"}
+      },
+      "required": ["rank", "status"],
+      "additionalProperties": true
+    },
+    "source_class_result": {
+      "type": "object",
+      "properties": {
+        "intersection_rank": {"const": 0},
+        "source_status": {
+          "const": "UNCHANGED_AND_EXPLICITLY_UNRESOLVED_ALL_JET"
+        }
+      },
+      "required": ["intersection_rank", "source_status"],
+      "additionalProperties": true
+    },
+    "next_gate": {
+      "const": "RESTRICT_THE_ACTION_DERIVED_APPARATUS_RESPONSE_TO_Z2_AND_TEST_RELATIONAL_MEMORY_BEFORE_ANY_REDSHIFT_PROMOTION"
+    },
+    "claim_boundary": {"type": "string", "minLength": 1000}
+  },
+  "additionalProperties": true
+}

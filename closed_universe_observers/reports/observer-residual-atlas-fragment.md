@@ -157,6 +157,17 @@ typed Forge request
 cokernel, minimal excluded enlargement, detector response, redshift, recoil
 and cone restriction remain `NO_CERTIFIED_MAP`.
 
+The orthogonal dynamical-apparatus-parent row is `CERTIFIED` through arity
+two.  A single first-order action supplies transported rod-orientation,
+polarization and emitter-phase doublets, persistent memory pairs and all odd
+cotangents.  Exact action differentiation closes q1/q2, cyclicity, reality,
+simultaneous Berger-U(1) covariance and the causal transport symbols.  The
+identity background polarization selection preserves the imported
+triangular response and its rank two.  The new q2 support has zero
+intersection with the pure-old finite 42-coordinate source support, so the
+blocked all-jet question remains `NO_CERTIFIED_MAP`.  Tangent-cone
+restriction, nonlinear rank and relational redshift remain `OPEN`.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.

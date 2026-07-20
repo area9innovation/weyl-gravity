@@ -2180,3 +2180,38 @@ cokernel and the minimal excluded enlargement are all `NO_CERTIFIED_MAP`.
 No \(K_{\rm Berger}\), \(q_3\), detector, redshift, recoil or
 tangent-cone observable is promoted.  The activation gate is
 `WAIT_FOR_FORGE_DIFFERENTIAL_PBW_MODULE_MEMBERSHIP_ENGINE_THEN_REPLAY_THE_ALL_JET_SOURCE_CLASS`.
+
+## Active bridge: action-derived dynamical apparatus parent
+
+The temporal all-jet lane is blocked on its typed Forge dependency.  The
+orthogonal active item is
+`sf:program/work/observer-dynamical-apparatus-parent-after-pbw-shortfall`;
+it does not alter or approximate the unresolved all-jet source class.
+
+One real first-order local action adds two detector-indexed transported
+rod-orientation doublets, two transported polarization doublets, two
+persistent memory pairs and two transported emitter-phase doublets.  Its 28
+even physical rows have 28 canonical odd cotangents.  No ghost is required:
+Berger-\(U(1)\) is a rigid simultaneous family covariance here, not a gauged
+redundancy, and the nonzero-frequency transport symbol has no gauge kernel.
+
+The quadratic action derives \(q_1\); the detector cubic
+\(-\lambda_a p_a\cdot F_a\) derives twelve ordered \(q_2\) records per
+detector.  Nilpotency through arity two, unary and binary cyclicity, reality,
+simultaneous \(K_{\rm Berger}\) covariance and the first-order causal
+principal blocks are exact.
+
+On the zero-multiplier probe branch, the identity background polarization
+selection leaves the certified triangular response matrix unchanged.
+Consequently the leading response still has rank two and determinant
+\(\kappa_0\kappa_1\).  Every new cubic Hessian coordinate contains a new
+apparatus input, while the finite 42-coordinate temporal source support is
+purely old; their support intersection has rank zero.  This means the new
+rows leave that source class unchanged, not that they solve its all-jet
+membership problem.
+
+The fail-closed atlas row is
+`observer.berger.interaction.dynamical_apparatus_parent`
+(`causal=CERTIFIED`, `symplectic=CERTIFIED`, `nonlinear=CERTIFIED`,
+`observational=CERTIFIED`, `quantum=NO_CERTIFIED_MAP`).  The next gate is
+`RESTRICT_THE_ACTION_DERIVED_APPARATUS_RESPONSE_TO_Z2_AND_TEST_RELATIONAL_MEMORY_BEFORE_ANY_REDSHIFT_PROMOTION`.

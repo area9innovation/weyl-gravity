@@ -1,0 +1,204 @@
+{
+  "action_gate": {
+    "K_Berger_covariance": "CERTIFIED_SIMULTANEOUS_FAMILY",
+    "causal_principal_blocks": "CERTIFIED_FIRST_ORDER_CLOCK_TRANSPORT",
+    "complete_minimal_declared_ansatz": "CERTIFIED",
+    "ghost_and_cotangent_completion": "CERTIFIED",
+    "nilpotency_through_arity_two": "CERTIFIED",
+    "odd_cyclicity": "CERTIFIED",
+    "q1_and_q2_action_derived": "CERTIFIED",
+    "real_structure": "CERTIFIED"
+  },
+  "atlas_status": "CERTIFIED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE/LORENTZIAN-CAUSAL certificate constructs a 56-row odd-cotangent extension from one real first-order local action: two transported detector rod orientation doublets, two transported polarization doublets, two persistent memory pairs and two transported emitter-phase doublets. Berger-U(1) is a rigid simultaneous family covariance, not a new gauge redundancy, so no ghost row is required; every physical row has an odd cotangent. The quadratic action gives q1 and the detector cubic -lambda p dot F gives twelve ordered third-variation records per detector. Exact action identities give nilpotency and cyclicity through arity two, while the transport symbols have real clock characteristics. On the lambda=0 probe branch the induced record matrix is the imported triangular rank-two matrix and therefore survives. Every new q2 coordinate contains a new apparatus input, so its intersection with the imported pure-old 42-coordinate finite second-jet source class is zero; that class is unchanged, not solved. The blocked all-jet membership question remains NO_CERTIFIED_MAP. No q3, nonlinear rank, tangent-cone response, redshift, finite-parameter Green, branch, particle or quantum claim is made.",
+  "claim_status": "CERTIFIED_ACTION_DERIVED_DYNAMICAL_APPARATUS_PARENT_THROUGH_ARITY_TWO",
+  "dependency_refs": {
+    "affine_K": {
+      "path": "closed_universe_observers/certificates/BERGER_AFFINE_K_OBSERVER_MORPHISM.json",
+      "result_id": "BERGER_AFFINE_K_OBSERVER_MORPHISM",
+      "sha256": "b3dd4ec429fffab7a6a49d5495ce2ac1e8496cca16d83fbe9c8d41e0a75c07cc"
+    },
+    "all_jet_shortfall": {
+      "path": "closed_universe_observers/certificates/BERGER_TEMPORAL_CURL_ALL_JET_DISPOSITION_SHORTFALL.json",
+      "result_id": "BERGER_TEMPORAL_CURL_ALL_JET_DISPOSITION_SHORTFALL",
+      "sha256": "629243c7a33b95b43be8f69245fac5839e9642f1873430f0938f1ef2bff64f0c"
+    },
+    "global_rods": {
+      "path": "closed_universe_observers/certificates/BERGER_GLOBAL_DETECTOR_INDEXED_RODS.json",
+      "result_id": "BERGER_GLOBAL_DETECTOR_INDEXED_RODS",
+      "sha256": "38f3c390416fd2dca8f00d488e4ca25d3af1d9f037c6a7d264edfca169e7c439"
+    },
+    "linear_rank_two": {
+      "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO.json",
+      "result_id": "BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO",
+      "sha256": "ad84b7ba1de4d35affc4624415fe66ba4bb09927b71a77acc59257da924c9d78"
+    },
+    "record_algebra": {
+      "path": "closed_universe_observers/certificates/BERGER_CG4_TWO_RECORD_POISSON_ALGEBRA.json",
+      "result_id": "BERGER_CG4_TWO_RECORD_POISSON_ALGEBRA",
+      "sha256": "62469c93203920fbab4b97883db37c1b86fe093286ec509bd1e2d83eb30970d0"
+    },
+    "second_jet_predecessor": {
+      "path": "closed_universe_observers/certificates/BERGER_TEMPORAL_MAXWELL_COTANGENT_MAPPING_CONE_CONSTRUCTION.json",
+      "result_id": "BERGER_TEMPORAL_MAXWELL_COTANGENT_MAPPING_CONE_CONSTRUCTION",
+      "sha256": "fcebf4a951cb319dee05a4cde3e6b0e4661050afac6fb8ef7bdafbd0b119b9f0"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "downstream_disposition": {
+    "all_jet_temporal_source_membership": "NO_CERTIFIED_MAP",
+    "linear_rank_two": "CERTIFIED_SURVIVES",
+    "memory_promotion": "OPEN",
+    "nonlinear_response_rank": "OPEN",
+    "q3": "NO_CERTIFIED_MAP",
+    "quantum": "NO_CERTIFIED_MAP",
+    "relational_redshift": "NO_CERTIFIED_MAP"
+  },
+  "missing_object_ledger": [
+    "finite-parameter Green theorem for the enlarged apparatus",
+    "nonlinear detector response on the second-order tangent cone",
+    "same-action q3 and transported nonlinear memory",
+    "all-jet temporal source membership theorem",
+    "relational frequency comparison and redshift observable"
+  ],
+  "next_gate": "RESTRICT_THE_ACTION_DERIVED_APPARATUS_RESPONSE_TO_Z2_AND_TEST_RELATIONAL_MEMORY_BEFORE_ANY_REDSHIFT_PROMOTION",
+  "observer_result": {
+    "apparatus_selection_matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "determinant": "kappa_0*kappa_1",
+    "imported_matrix": [
+      [
+        "kappa_0",
+        "0"
+      ],
+      [
+        "mu",
+        "kappa_1"
+      ]
+    ],
+    "induced_matrix": [
+      [
+        "kappa_0",
+        "0"
+      ],
+      [
+        "mu",
+        "kappa_1"
+      ]
+    ],
+    "rank": 2,
+    "scope": "leading linear response on the probe branch lambda_0=lambda_1=0",
+    "status": "SURVIVES"
+  },
+  "payload_ref": {
+    "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_APPARATUS_PARENT_PAYLOAD.json",
+    "result_id": "BERGER_DYNAMICAL_APPARATUS_PARENT_PAYLOAD",
+    "sha256": "a9b673d1ff3d1f5035ef8a06e935fa793434ffe06acfcbeb5a7d19a573c42b6c"
+  },
+  "provenance": {
+    "generator_command": "python3 -m closed_universe_observers.generate_berger_dynamical_apparatus_parent --write",
+    "independent_verifier_command": "python3 -m closed_universe_observers.verify_berger_dynamical_apparatus_parent",
+    "source_sha256": "b22f134c88a61b71d5eac58f2e36cf2bed72ad693677c615af50d1f9666980d4"
+  },
+  "result_id": "BERGER_DYNAMICAL_APPARATUS_PARENT",
+  "schema": "closed-universe-berger-dynamical-apparatus-parent-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension",
+  "source_class_result": {
+    "imported_source_first_coordinates": [
+      {
+        "left_input": [
+          3,
+          []
+        ],
+        "output": 59,
+        "right_input": [
+          84,
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "left_input": [
+          3,
+          []
+        ],
+        "output": 59,
+        "right_input": [
+          90,
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    ],
+    "intersection_rank": 0,
+    "new_hessian_support_audit": [
+      {
+        "new_input_count": 1,
+        "output_sector": "new_apparatus"
+      },
+      {
+        "new_input_count": 1,
+        "output_sector": "new_apparatus"
+      },
+      {
+        "new_input_count": 1,
+        "output_sector": "new_apparatus"
+      },
+      {
+        "new_input_count": 1,
+        "output_sector": "new_apparatus"
+      },
+      {
+        "new_input_count": 1,
+        "output_sector": "new_apparatus"
+      },
+      {
+        "new_input_count": 1,
+        "output_sector": "new_apparatus"
+      },
+      {
+        "new_input_count": 1,
+        "output_sector": "new_apparatus"
+      },
+      {
+        "new_input_count": 1,
+        "output_sector": "new_apparatus"
+      },
+      {
+        "new_input_count": 2,
+        "output_sector": "old_Maxwell_cotangent"
+      },
+      {
+        "new_input_count": 2,
+        "output_sector": "old_Maxwell_cotangent"
+      },
+      {
+        "new_input_count": 2,
+        "output_sector": "old_Maxwell_cotangent"
+      },
+      {
+        "new_input_count": 2,
+        "output_sector": "old_Maxwell_cotangent"
+      }
+    ],
+    "pure_old_coordinate_count": 0,
+    "separator": "Every new cubic Hessian coordinate contains at least one new apparatus input; every imported 42-coordinate source coordinate has only old temporal/Maxwell/emitter inputs.",
+    "source_status": "UNCHANGED_AND_EXPLICITLY_UNRESOLVED_ALL_JET"
+  }
+}
