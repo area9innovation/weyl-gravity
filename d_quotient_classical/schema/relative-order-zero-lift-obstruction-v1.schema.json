@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/relative-order-zero-lift-obstruction-v1.schema.json",
+  "title": "Complete unrestricted order-zero relative-lift obstruction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_status",
+    "dependency_tags", "scope", "dependencies", "ansatz",
+    "exact_linear_system", "kernel_classification",
+    "strict_incidence_obstruction", "classification", "next_gate",
+    "provenance", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-order-zero-lift-obstruction-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1"},
+    "result_state": {"const": "COMPLETE_UNRESTRICTED_ORDER_ZERO_LIFT_OBSTRUCTED_POSITIVE_ORDER_OPEN"},
+    "lifecycle_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"$ref": "#/$defs/scope"},
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shifted_cone", "current_export", "current_payload", "current_layout", "target_q1", "relative_delta2"],
+      "properties": {
+        "shifted_cone": {"$ref": "#/$defs/artifact"},
+        "current_export": {"$ref": "#/$defs/artifact"},
+        "current_payload": {"$ref": "#/$defs/artifact"},
+        "current_layout": {"$ref": "#/$defs/artifact"},
+        "target_q1": {"$ref": "#/$defs/artifact"},
+        "relative_delta2": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "ansatz": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["A1_shape", "A2_shape", "A1_unknowns", "A2_unknowns", "total_unknowns", "differential_order", "invariance_restrictions_imposed", "top_descent"],
+      "properties": {
+        "A1_shape": {"const": [14, 20]},
+        "A2_shape": {"const": [6, 5]},
+        "A1_unknowns": {"const": 280},
+        "A2_unknowns": {"const": 30},
+        "total_unknowns": {"const": 310},
+        "differential_order": {"const": 0},
+        "invariance_restrictions_imposed": {"const": false},
+        "top_descent": {"const": "sigma_1(q1_W) A1 = A2 sigma_1(d_H)"}
+      }
+    },
+    "exact_linear_system": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["covector_axes", "equations", "unknowns", "nonzero_entries", "rank_over_Q", "nullity", "matrix_coo_sha256", "normalized_kernel_sparse"],
+      "properties": {
+        "covector_axes": {"const": ["t", "x", "theta", "phi"]},
+        "equations": {"const": 480},
+        "unknowns": {"const": 310},
+        "nonzero_entries": {"const": 520},
+        "rank_over_Q": {"const": 305},
+        "nullity": {"const": 5},
+        "matrix_coo_sha256": {"$ref": "#/$defs/sha256"},
+        "normalized_kernel_sparse": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": {
+            "type": "array", "minItems": 5, "maxItems": 5,
+            "items": {
+              "type": "array", "minItems": 2, "maxItems": 2,
+              "prefixItems": [{"type": "integer", "minimum": 0, "maximum": 309}, {"type": "integer"}], "items": false
+            }
+          }
+        }
+      }
+    },
+    "kernel_classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dimension", "basis", "description", "all_A1_metric_equation_coefficients_zero", "A1_metric_rows", "A1_Maxwell_rows"],
+      "properties": {
+        "dimension": {"const": 5},
+        "basis": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["generator", "terms"],
+            "properties": {
+              "generator": {"enum": ["H", "P_x", "J_1", "J_2", "J_3"]},
+              "terms": {
+                "type": "array", "minItems": 5, "maxItems": 5,
+                "items": {
+                  "type": "object", "additionalProperties": false,
+                  "required": ["map", "output", "input", "coefficient"],
+                  "properties": {
+                    "map": {"enum": ["A1", "A2"]},
+                    "output": {"type": "string", "minLength": 1},
+                    "input": {"type": "string", "minLength": 1},
+                    "coefficient": {"type": "integer"}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": {"const": "one Maxwell de Rham tail for each stabilizer generator"},
+        "all_A1_metric_equation_coefficients_zero": {"const": true},
+        "A1_metric_rows": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "string"}},
+        "A1_Maxwell_rows": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}}
+      }
+    },
+    "strict_incidence_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attempt", "required_identity", "current_maximum_input_derivative_order", "normalized_metric_witness", "metric_order_four_delta2_terms", "A1_C_metric_output", "conclusion"],
+      "properties": {
+        "attempt": {"const": "f2=0 and A1,A2 of differential order zero"},
+        "required_identity": {"const": "Delta2=A1 C on source field pairs"},
+        "current_maximum_input_derivative_order": {"const": 4},
+        "normalized_metric_witness": {"$ref": "#/$defs/term"},
+        "metric_order_four_delta2_terms": {"type": "integer", "minimum": 1},
+        "A1_C_metric_output": {"const": "zero for every solution of the order-zero top descent"},
+        "conclusion": {"const": "the normalized g_00_star fourth-order term of Delta2 cannot be produced by A1 C"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["complete_unrestricted_order_zero_top_descent_solved", "order_zero_top_descent_has_only_Maxwell_de_rham_tails", "strict_order_zero_f2_zero_lift_exists", "positive_order_lift_ruled_out", "nonzero_f2_ruled_out", "alternate_current_improvement_ruled_out", "relative_q2_repaired", "causal_observable_particle_or_quantum_claim"],
+      "properties": {
+        "complete_unrestricted_order_zero_top_descent_solved": {"const": true},
+        "order_zero_top_descent_has_only_Maxwell_de_rham_tails": {"const": true},
+        "strict_order_zero_f2_zero_lift_exists": {"const": false},
+        "positive_order_lift_ruled_out": {"const": false},
+        "nonzero_f2_ruled_out": {"const": false},
+        "alternate_current_improvement_ruled_out": {"const": false},
+        "relative_q2_repaired": {"const": false},
+        "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "FREEZE_ENDPOINT_NORMALIZATION_AND_SOLVE_THE_COMPLETE_ORDER_ONE_INVARIANT_TOP_DESCENT_WITH_SUFFICIENT_CURRENT_COEFFICIENT_JETS"},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "claim_boundary": {"type": "string", "minLength": 200}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"],
+      "properties": {
+        "theory": {"type": "string"}, "background": {"type": "string"},
+        "boundaries": {"type": "string"}, "charge_sector": {"type": "string"},
+        "carrier": {"type": "string"}, "degree": {"type": "string"},
+        "parity": {"type": "string"}, "ell": {"type": "string"},
+        "m": {"type": "string"}, "k": {"type": "string"}, "omega": {"type": "string"}
+      }
+    },
+    "term": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coefficient", "inputs", "output_row"],
+      "properties": {
+        "coefficient": {"const": "1/4"},
+        "inputs": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "prefixItems": [
+            {
+              "type": "object", "additionalProperties": false,
+              "required": ["row", "word"],
+              "properties": {"row": {"const": 5}, "word": {"const": []}}
+            },
+            {
+              "type": "object", "additionalProperties": false,
+              "required": ["row", "word"],
+              "properties": {"row": {"const": 5}, "word": {"const": [1, 1, 1, 1]}}
+            }
+          ],
+          "items": false
+        },
+        "output_row": {"const": 20}
+      }
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "additionalProperties": {"$ref": "#/$defs/sha256"}, "minProperties": 4},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+      }
+    }
+  }
+}

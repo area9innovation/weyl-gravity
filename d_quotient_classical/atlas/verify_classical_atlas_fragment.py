@@ -113,6 +113,10 @@ def verify() -> None:
         raise AssertionError("portable full-current evidence missing")
     if "30,494 canonical terms" not in pullback["claim_boundary"] or "coefficient jets stop at order one" not in pullback["claim_boundary"]:
         raise AssertionError("portable current scope or order boundary missing")
+    if "EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1" not in {item["result_id"] for item in pullback["evidence"]}:
+        raise AssertionError("order-zero lift obstruction evidence missing")
+    if "rank 305" not in pullback["claim_boundary"] or "positive-order lifts" not in pullback["claim_boundary"]:
+        raise AssertionError("order-zero obstruction scope missing")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]
     if set(berger_crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("Berger Bridge 1 overpromoted")

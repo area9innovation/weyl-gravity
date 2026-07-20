@@ -2441,13 +2441,18 @@ portable-current input is now closed by
 field-field currents are bound to the 14 source fields and 20 primal
 three-form rows in a strict exact payload with 30,494 canonical symmetric
 terms, 60,890 terms after expansion and 239 deduplicated coefficient
-profiles.  The coefficient jets are complete only through order one; this is
-enough for an algebraic `A^1`, but positive-order postcomposition requires a
-corresponding higher-jet regeneration.  The active exact gate is the invariant top descent
-`q1_W^(1->2) A^1=A^2 d_H^(3->4)`, followed by
-`Delta2-A^1 C=delta(f2)` on the fifteen nonzero defect rows, beginning with
-`f2=0`.  A complete invariant Hom/order ansatz is the remaining missing
-input.  Modified endpoints and other backgrounds remain
+profiles.  The coefficient jets are complete only through order one.
+`EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1` now exhausts the
+unrestricted algebraic ansatz: the 480-by-310 rational top-descent system has
+rank 305, and its five-dimensional kernel consists only of the Maxwell de
+Rham tails.  Hence every metric output of `A^1` vanishes, while `Delta2`
+contains a normalized fourth-order `g_00_star` witness; the strict incidence
+`Delta2=A^1 C` with `f2=0` has no order-zero solution.  This is not a global
+no-go.  Positive-order postcomposition first requires higher current
+coefficient jets and a frozen endpoint normalization.  The active exact gate
+is the complete order-one invariant top descent, followed by
+`Delta2-A^1 C=delta(f2)` on the fifteen nonzero defect rows.  Modified
+endpoints and other backgrounds remain
 admissible; no causal or quantum consequence is inferred.
 
 Escalate immediately if \(D\) is charged on the intended compact phase space,

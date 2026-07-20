@@ -183,6 +183,12 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         )
         self.assertIn("30,494 canonical terms", entry["claim_boundary"])
         self.assertIn("coefficient jets stop at order one", entry["claim_boundary"])
+        self.assertIn(
+            "EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn("rank 305", entry["claim_boundary"])
+        self.assertIn("positive-order lifts", entry["claim_boundary"])
 
     def test_transverse_exact_einstein_branch_is_slabwise_only(self) -> None:
         entry = self.entries["classical.nariai.transverse_kantowski_sachs_exact_branch"]

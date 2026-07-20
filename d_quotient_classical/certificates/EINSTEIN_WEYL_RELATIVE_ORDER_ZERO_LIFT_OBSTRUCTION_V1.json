@@ -1,0 +1,449 @@
+{
+  "ansatz": {
+    "A1_shape": [
+      14,
+      20
+    ],
+    "A1_unknowns": 280,
+    "A2_shape": [
+      6,
+      5
+    ],
+    "A2_unknowns": 30,
+    "differential_order": 0,
+    "invariance_restrictions_imposed": false,
+    "top_descent": "sigma_1(q1_W) A1 = A2 sigma_1(d_H)",
+    "total_unknowns": 310
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC obstruction exhausts every unrestricted pointwise order-zero pair A1:P3->W1 and A2:P4->W2. The top-descent kernel is five-dimensional and contains only the Maxwell de Rham tails, forcing every metric output of A1 to vanish; hence the displayed fourth-order metric term of Delta2 cannot equal A1 C when f2=0. The result does not rule out order-one or higher differential lifts, nonzero f2, another current improvement, a larger carrier, causal data, observables, particles or quantum claims.",
+  "classification": {
+    "alternate_current_improvement_ruled_out": false,
+    "causal_observable_particle_or_quantum_claim": false,
+    "complete_unrestricted_order_zero_top_descent_solved": true,
+    "nonzero_f2_ruled_out": false,
+    "order_zero_top_descent_has_only_Maxwell_de_rham_tails": true,
+    "positive_order_lift_ruled_out": false,
+    "relative_q2_repaired": false,
+    "strict_order_zero_f2_zero_lift_exists": false
+  },
+  "dependencies": {
+    "current_export": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_PBW_EXPORT_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_PBW_EXPORT_V1.json",
+      "sha256": "da8543a143d2c6a1aae419c712102b229c490fca8e7514088919d2f36ca5e3d5"
+    },
+    "current_layout": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_CARRIER_V1_LAYOUT",
+      "path": "d_quotient_classical/generated/einstein_weyl_relative_five_current_de_rham_carrier_v1/layout.json",
+      "sha256": "a9232ff409114a4c96c12e622c9f817be0541771993f07d079adcab1ce09b002"
+    },
+    "current_payload": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_PBW_EXPORT_V1_PAYLOAD",
+      "path": "d_quotient_classical/generated/einstein_weyl_relative_full_five_current_pbw_export_v1/current_q2.json",
+      "sha256": "a1a55c452c97b06050d630126d82d26660febba3d838cef6045c79dd2038d868"
+    },
+    "relative_delta2": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_ARITY_TWO_DEFECT_V1_PBW",
+      "path": "d_quotient_classical/generated/einstein_weyl_relative_arity_two_defect_v1/delta2.json",
+      "sha256": "48931f0dcb79de066bd398c33961a546a5cdb19a4ae77b30f4fb5d95df406455"
+    },
+    "shifted_cone": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_SHIFTED_CURRENT_CONE_PREFLIGHT_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_SHIFTED_CURRENT_CONE_PREFLIGHT_V1.json",
+      "sha256": "f32c6686a77630aa798b81a997d6bf90900654290b144bf66586ad94ebb846f3"
+    },
+    "target_q1": {
+      "artifact_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_Q1",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/q1.json",
+      "sha256": "43c00909830fde902cf1332eae804f6edd6ad263bef7ce61d08bdbd20449290b"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_linear_system": {
+    "covector_axes": [
+      "t",
+      "x",
+      "theta",
+      "phi"
+    ],
+    "equations": 480,
+    "matrix_coo_sha256": "4809dacf63505ae4aca4a366ef68ffe78e84160dcd38e690e15ee3c7df6855ad",
+    "nonzero_entries": 520,
+    "normalized_kernel_sparse": [
+      [
+        [
+          203,
+          1
+        ],
+        [
+          222,
+          -1
+        ],
+        [
+          241,
+          1
+        ],
+        [
+          260,
+          -1
+        ],
+        [
+          300,
+          1
+        ]
+      ],
+      [
+        [
+          207,
+          1
+        ],
+        [
+          226,
+          -1
+        ],
+        [
+          245,
+          1
+        ],
+        [
+          264,
+          -1
+        ],
+        [
+          301,
+          1
+        ]
+      ],
+      [
+        [
+          211,
+          1
+        ],
+        [
+          230,
+          -1
+        ],
+        [
+          249,
+          1
+        ],
+        [
+          268,
+          -1
+        ],
+        [
+          302,
+          1
+        ]
+      ],
+      [
+        [
+          215,
+          1
+        ],
+        [
+          234,
+          -1
+        ],
+        [
+          253,
+          1
+        ],
+        [
+          272,
+          -1
+        ],
+        [
+          303,
+          1
+        ]
+      ],
+      [
+        [
+          219,
+          1
+        ],
+        [
+          238,
+          -1
+        ],
+        [
+          257,
+          1
+        ],
+        [
+          276,
+          -1
+        ],
+        [
+          304,
+          1
+        ]
+      ]
+    ],
+    "nullity": 5,
+    "rank_over_Q": 305,
+    "unknowns": 310
+  },
+  "kernel_classification": {
+    "A1_Maxwell_rows": [
+      "A_0_star",
+      "A_1_star",
+      "A_2_star",
+      "A_3_star"
+    ],
+    "A1_metric_rows": [
+      "g_00_star",
+      "g_01_star",
+      "g_02_star",
+      "g_03_star",
+      "g_11_star",
+      "g_12_star",
+      "g_13_star",
+      "g_22_star",
+      "g_23_star",
+      "g_33_star"
+    ],
+    "all_A1_metric_equation_coefficients_zero": true,
+    "basis": [
+      {
+        "generator": "H",
+        "terms": [
+          {
+            "coefficient": 1,
+            "input": "P_H_3_x_theta_phi",
+            "map": "A1",
+            "output": "A_0_star"
+          },
+          {
+            "coefficient": -1,
+            "input": "P_H_3_t_theta_phi",
+            "map": "A1",
+            "output": "A_1_star"
+          },
+          {
+            "coefficient": 1,
+            "input": "P_H_3_t_x_phi",
+            "map": "A1",
+            "output": "A_2_star"
+          },
+          {
+            "coefficient": -1,
+            "input": "P_H_3_t_x_theta",
+            "map": "A1",
+            "output": "A_3_star"
+          },
+          {
+            "coefficient": 1,
+            "input": "P_H_4_t_x_theta_phi",
+            "map": "A2",
+            "output": "lambda_cov_star"
+          }
+        ]
+      },
+      {
+        "generator": "P_x",
+        "terms": [
+          {
+            "coefficient": 1,
+            "input": "P_P_x_3_x_theta_phi",
+            "map": "A1",
+            "output": "A_0_star"
+          },
+          {
+            "coefficient": -1,
+            "input": "P_P_x_3_t_theta_phi",
+            "map": "A1",
+            "output": "A_1_star"
+          },
+          {
+            "coefficient": 1,
+            "input": "P_P_x_3_t_x_phi",
+            "map": "A1",
+            "output": "A_2_star"
+          },
+          {
+            "coefficient": -1,
+            "input": "P_P_x_3_t_x_theta",
+            "map": "A1",
+            "output": "A_3_star"
+          },
+          {
+            "coefficient": 1,
+            "input": "P_P_x_4_t_x_theta_phi",
+            "map": "A2",
+            "output": "lambda_cov_star"
+          }
+        ]
+      },
+      {
+        "generator": "J_1",
+        "terms": [
+          {
+            "coefficient": 1,
+            "input": "P_J_1_3_x_theta_phi",
+            "map": "A1",
+            "output": "A_0_star"
+          },
+          {
+            "coefficient": -1,
+            "input": "P_J_1_3_t_theta_phi",
+            "map": "A1",
+            "output": "A_1_star"
+          },
+          {
+            "coefficient": 1,
+            "input": "P_J_1_3_t_x_phi",
+            "map": "A1",
+            "output": "A_2_star"
+          },
+          {
+            "coefficient": -1,
+            "input": "P_J_1_3_t_x_theta",
+            "map": "A1",
+            "output": "A_3_star"
+          },
+          {
+            "coefficient": 1,
+            "input": "P_J_1_4_t_x_theta_phi",
+            "map": "A2",
+            "output": "lambda_cov_star"
+          }
+        ]
+      },
+      {
+        "generator": "J_2",
+        "terms": [
+          {
+            "coefficient": 1,
+            "input": "P_J_2_3_x_theta_phi",
+            "map": "A1",
+            "output": "A_0_star"
+          },
+          {
+            "coefficient": -1,
+            "input": "P_J_2_3_t_theta_phi",
+            "map": "A1",
+            "output": "A_1_star"
+          },
+          {
+            "coefficient": 1,
+            "input": "P_J_2_3_t_x_phi",
+            "map": "A1",
+            "output": "A_2_star"
+          },
+          {
+            "coefficient": -1,
+            "input": "P_J_2_3_t_x_theta",
+            "map": "A1",
+            "output": "A_3_star"
+          },
+          {
+            "coefficient": 1,
+            "input": "P_J_2_4_t_x_theta_phi",
+            "map": "A2",
+            "output": "lambda_cov_star"
+          }
+        ]
+      },
+      {
+        "generator": "J_3",
+        "terms": [
+          {
+            "coefficient": 1,
+            "input": "P_J_3_3_x_theta_phi",
+            "map": "A1",
+            "output": "A_0_star"
+          },
+          {
+            "coefficient": -1,
+            "input": "P_J_3_3_t_theta_phi",
+            "map": "A1",
+            "output": "A_1_star"
+          },
+          {
+            "coefficient": 1,
+            "input": "P_J_3_3_t_x_phi",
+            "map": "A1",
+            "output": "A_2_star"
+          },
+          {
+            "coefficient": -1,
+            "input": "P_J_3_3_t_x_theta",
+            "map": "A1",
+            "output": "A_3_star"
+          },
+          {
+            "coefficient": 1,
+            "input": "P_J_3_4_t_x_theta_phi",
+            "map": "A2",
+            "output": "lambda_cov_star"
+          }
+        ]
+      }
+    ],
+    "description": "one Maxwell de Rham tail for each stabilizer generator",
+    "dimension": 5
+  },
+  "lifecycle_status": "OBSTRUCTED",
+  "next_gate": "FREEZE_ENDPOINT_NORMALIZATION_AND_SOLVE_THE_COMPLETE_ORDER_ONE_INVARIANT_TOP_DESCENT_WITH_SUFFICIENT_CURRENT_COEFFICIENT_JETS",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_order_zero_lift_obstruction.py": "c7b5543598b40707b768038a85844c2f1ab4f605ae243f7c78ba61cd49f01e93",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_order_zero_lift_obstruction.py": "ac5dda32bfdc5d259982074abf785dbd0fdf240dad89b4784544f746c61d0e4a",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_order_zero_lift_obstruction.py": "4883d909530c3dc97b50e75d7cff542d46c565b7c6645bd5ec8af42f5c09ad70",
+      "d_quotient_classical/schema/relative-order-zero-lift-obstruction-v1.schema.json": "6e2ed735efaab0dc8f88f6d38aa2843c97425693f602ccba1018956f11346a21"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_order_zero_lift_obstruction --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_order_zero_lift_obstruction",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_order_zero_lift_obstruction",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-order-zero-lift-obstruction-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1.json"
+    ]
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1",
+  "result_state": "COMPLETE_UNRESTRICTED_ORDER_ZERO_LIFT_OBSTRUCTED_POSITIVE_ORDER_OPEN",
+  "schema": "pure-weyl-relative-order-zero-lift-obstruction-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "pointwise principal-symbol problem at the homogeneous base point; no harmonic or causal reduction",
+    "carrier": "degree-zero chain map A:K_P->C_W with A1:P3(20)->W1(14), A2:P4(5)->W2(6)",
+    "charge_sector": "five connected stabilizer currents H,P_x,J_1,J_2,J_3",
+    "degree": "top descent in cochain degrees one and two; strict field-pair incidence with f2=0",
+    "ell": "not harmonic-reduced",
+    "k": "not harmonic-reduced",
+    "m": "not harmonic-reduced",
+    "omega": "not harmonic-reduced",
+    "parity": "complete unrestricted pointwise maps, hence stronger than an invariant order-zero ansatz",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  },
+  "strict_incidence_obstruction": {
+    "A1_C_metric_output": "zero for every solution of the order-zero top descent",
+    "attempt": "f2=0 and A1,A2 of differential order zero",
+    "conclusion": "the normalized g_00_star fourth-order term of Delta2 cannot be produced by A1 C",
+    "current_maximum_input_derivative_order": 4,
+    "metric_order_four_delta2_terms": 29628,
+    "normalized_metric_witness": {
+      "coefficient": "1/4",
+      "inputs": [
+        {
+          "row": 5,
+          "word": []
+        },
+        {
+          "row": 5,
+          "word": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "output_row": 20
+    },
+    "required_identity": "Delta2=A1 C on source field pairs"
+  }
+}

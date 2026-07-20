@@ -1998,12 +1998,17 @@ now has the complete portable current input:
 `EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_PBW_EXPORT_V1` binds 30,494
 canonical symmetric terms (60,890 after ordered expansion) and 239 exact
 coefficient profiles to the 14 source-field and 20 P3 rows.  Coefficient jets
-are exported through order one, so any positive-order `A^1` solve must first
-request the corresponding higher-jet current payload.  Bridge 1 targets the
-complete invariant top descent for `A^1,A^2`, followed by
-the fifteen-row incidence `Delta2-A^1 C=delta(f2)`, or a normalized
-locality/cyclicity obstruction.  No support-local lift or repaired relative
-q2 has yet been promoted.
+are exported through order one.  The complete unrestricted order-zero search
+is now closed by
+`EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1`: its 480-by-310 exact
+rational top-descent matrix has rank 305, and all five kernel generators are
+Maxwell de Rham tails.  They have zero metric output, so the normalized
+fourth-order metric term in `Delta2` cannot equal `A^1 C` with `f2=0`.  The
+obstruction is scoped to differential order zero.  Bridge 1 next freezes the
+endpoint normalization and requests sufficient higher current coefficient
+jets for the complete order-one invariant top descent, followed by the
+fifteen-row incidence `Delta2-A^1 C=delta(f2)`.  No support-local lift or
+repaired relative q2 has yet been promoted.
 
 Until one of the four admissible Berger carrier alternatives passes, atlas
 row `classical.berger.crosswalk.retained36_to_einstein_extra` remains

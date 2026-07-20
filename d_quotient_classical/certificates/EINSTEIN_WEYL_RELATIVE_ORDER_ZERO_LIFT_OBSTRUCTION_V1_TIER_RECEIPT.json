@@ -1,0 +1,76 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_ids": [
+    "EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1"
+  ],
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "artifacts": {
+    "certificate": {
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1.json",
+      "sha256": "bd33c26b1bdec9d9c6f3a9948da382966e878608e55bd88cceae64dfff3e720d"
+    },
+    "schema": {
+      "path": "d_quotient_classical/schema/relative-order-zero-lift-obstruction-v1.schema.json",
+      "sha256": "6e2ed735efaab0dc8f88f6d38aa2843c97425693f602ccba1018956f11346a21"
+    },
+    "producer": {
+      "path": "d_quotient_classical/relative/einstein_weyl_relative_order_zero_lift_obstruction.py",
+      "sha256": "c7b5543598b40707b768038a85844c2f1ab4f605ae243f7c78ba61cd49f01e93"
+    },
+    "verifier": {
+      "path": "d_quotient_classical/relative/verify_einstein_weyl_relative_order_zero_lift_obstruction.py",
+      "sha256": "4883d909530c3dc97b50e75d7cff542d46c565b7c6645bd5ec8af42f5c09ad70"
+    },
+    "tests": {
+      "path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_order_zero_lift_obstruction.py",
+      "sha256": "ac5dda32bfdc5d259982074abf785dbd0fdf240dad89b4784544f746c61d0e4a"
+    },
+    "report": {
+      "path": "d_quotient_classical/reports/einstein-weyl-relative-order-zero-lift-obstruction.md",
+      "sha256": "902de24baba82952adf4091fe23b52d6062bf10107c100485a7ee525b97ea540"
+    },
+    "atlas_fragment": {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "c39c23c2cdde38b8082874ab683dce31cb6542662ff7bc5b82a01aa0b16f5ff5"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "Python compilation",
+        "strict Draft 2020-12 schema",
+        "scoped diff check",
+        "content-hash replay"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 9.12,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_order_zero_lift_obstruction --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_order_zero_lift_obstruction",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_order_zero_lift_obstruction",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-order-zero-lift-obstruction-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 0.75,
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This scoped exact obstruction changes no shared operator and explicitly leaves positive-order lifts, nonzero f2, causal data and paper-freeze claims open."
+    }
+  },
+  "claim_boundary": "This receipt covers the complete 480-by-310 rational principal-symbol solve for unrestricted pointwise A1 and A2, its rank-305 five-dimensional Maxwell de Rham kernel, and the normalized fourth-order metric witness obstructing the strict f2=0 incidence at differential order zero. It does not obstruct positive differential order, nonzero f2, alternative current improvements, larger carriers, causal data, observables, particles or quantum claims."
+}
