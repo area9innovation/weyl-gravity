@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/quantum-tau-adic-full-bv-hadamard-feynman-kernel-LEASE-RELEASE-excl-28a9cbbfc1933177",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/quantum-tau-adic-full-bv-hadamard-feynman-kernel-LEASE-RELEASE-excl-28a9cbbfc1933177.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "quantum-qme-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T12:50:22Z", "seq": 2, "predecessor": "sf:program/event/quantum-tau-adic-full-bv-hadamard-feynman-kernel-LEASE-ACQUIRE-excl-4696b00138b998c3", "payload": {"target": "sf:program/work/quantum-tau-adic-full-bv-hadamard-feynman-kernel", "agent": "quantum-qme-1", "lease_type": "exclusive", "action": "RELEASE", "acquired": "2026-07-20T12:50:22Z", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/quantum-tau-adic-full-bv-hadamard-feynman-kernel"}]
+}

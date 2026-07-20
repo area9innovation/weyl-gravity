@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/quantum-tau-adic-full-bv-hadamard-feynman-kernel-REQUEST-3cb6bb8c61a5c374",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/quantum-tau-adic-full-bv-hadamard-feynman-kernel-REQUEST-3cb6bb8c61a5c374.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/quantum-tau-adic-full-bv-hadamard-feynman-kernel", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T12:50:22Z", "seq": 1, "payload": {"target": "sf:program/request/quantum-tau-adic-full-bv-hadamard-feynman-kernel-to-classical-3cb6bb8c61a5c374", "request_id": "sf:program/request/quantum-tau-adic-full-bv-hadamard-feynman-kernel-to-classical-3cb6bb8c61a5c374", "from_item": "sf:program/work/quantum-tau-adic-full-bv-hadamard-feynman-kernel", "to_stream": "classical", "need": "A same-background vacuum-cylinder tau-adic compensator-extended classical BV analytic export: complete minimal and nonminimal/gauge-fixed field-ghost-antifield inventory; exact gauge-fixed differential and kinetic/principal operator with declared domains; nondegenerate cyclic pairing and real structure; raw D action and Cartan identities; advanced/retarded support-local Green homotopies on every block with BRST and adjoint identities; zero-mode and residual ledgers; and an independent verifier. The export must identify how the formal tau-adic quartet sits in the causal carrier. Local jet cohomology, reduced E/A/L modes, Berger-specific kernels, or Euclidean operators are not substitutes.", "typed": "dependency-artifact"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "classical"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/quantum-tau-adic-full-bv-hadamard-feynman-kernel"}]
+}
