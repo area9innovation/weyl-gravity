@@ -1,0 +1,47 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_SINGULAR_INCIDENCE_INTEGRATION_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Fail-closed atlas, programme-note and Paper 13 integration of the candidate-17/20 positive-occupation singular-component incidence theorem.",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "evidence_commit": "2889e4f556a6732ad9d78311adfb40354a50241f",
+  "content_sha256": {
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "f7383e2ab61458c35ddcff805b65cda3c193683e3e7fa065929a23cc7a453a8b",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "349a17a2c048a61482d4d4da5cca25195dd8d8261b0942fcbdedda44e865bae1",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "6bbd7feaca8a6363e47b97e5916e566b03b49726ac755177fc8da02211706d6a",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "2304f71b920e5005a4abef7d8ef2479da1885a053c4174a3406ab67d807659b2",
+    "notes/d-quotient-einstein-team-brief.md": "9259216f5e48a5c7bc8ab344620ec141762efc6afdc565f5d4bf734c52e0d331",
+    "notes/universe-building-roadmap.md": "49087ebc734e5638c1f821323e43c81aa185a8d089e6f8e488c5de27c9f5fb4c",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone-claim-map.json": "aceb896c86688c7762f09cbdc7e969a15c444bb7ce0cc85401fb823d095632fd",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.pdf": "70308191a6db37b0d38151103837a183e53849db62eb2c074f8dd5672568edff",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex": "c8fea24c76073c36b708e9733c389cb051498ab8bfebf6ea609e9f8d65ab2443"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m json.tool on the Paper 13 claim map and this receipt",
+        "git diff --check on the explicitly scoped integration paths",
+        "three-pass pdflatex build of Paper 13 with no undefined references, overfull boxes or LaTeX warnings"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 117,
+      "commands": [
+        "candidate-17/20 singular-component incidence producer check, independent verifier and 5 focused tests",
+        "Einstein atlas generated-file check, independent verifier and 112 tests",
+        "python3 paper/verify_13_14_draft_source_maps.py"
+      ],
+      "result": "The theorem chain passes independently; the atlas remains fail-closed; Paper 13 pins 51 committed inputs."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The integration pins the committed theorem certificate by Git blob and does not regenerate its mathematical payload."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "Paper 13 remains DRAFT_ALLOWED and complete real singular connectedness remains open."
+    }
+  },
+  "claim_boundary": "The two candidate-17/20 singular-component images meet physically at every positive occupation. This does not prove either image or the complete singular rotation-zero quotient connected, glue occupations, perform final residual descent, or establish all-orders, causal, observational or quantum claims."
+}

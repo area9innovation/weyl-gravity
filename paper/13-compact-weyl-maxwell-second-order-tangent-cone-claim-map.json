@@ -2,7 +2,7 @@
   "schema": "paper-draft-source-map-v1",
   "paper_id": "PAPER_13_COMPACT_WEYL_MAXWELL_SECOND_ORDER_TANGENT_CONE",
   "lifecycle_state": "DRAFT_ALLOWED",
-  "source_baseline": "0f3a5abb31f79a7066b2f09bb5249205d47f1a84",
+  "source_baseline": "2889e4f556a6732ad9d78311adfb40354a50241f",
   "manuscript": "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
   "certified_scope": {
@@ -47,6 +47,7 @@
     "same_sign_candidate17_18_20_singular_rotation_zero_sections": "EXIST_AT_EVERY_POSITIVE_ACTIVE_OCCUPATION_WITH_FREE_NODE_PHASE_ACTIONS",
     "same_sign_candidate18_singular_rotation_zero_quotient_components": "AT_LEAST_TWO_AT_EVERY_POSITIVE_NEGATIVE_NODE_OCCUPATION",
     "same_sign_candidate18_singular_components_smooth_bridge": "ONE_CERTIFIED_POINT_IN_EACH_JOINED_AT_EVERY_POSITIVE_OCCUPATION",
+    "same_sign_candidate17_20_singular_component_images": "INTERSECT_AT_EVERY_POSITIVE_OCCUPATION_SO_LABELS_DO_NOT_SEPARATE_QUOTIENT",
     "same_sign_candidate17_18_20_smooth_presymplectic_divisors": "COMPLETE_CONORMAL_DETERMINANTAL_LOCI_AND_TANGENT_SPACE_QUOTIENTS_ON_EVERY_SMOOTH_ACTIVE_STRATUM",
     "same_sign_candidate17_18_20_fixed_occupation_node_phase_reduced_divisors": "COMPLETE_AUGMENTED_CONORMAL_DETERMINANTAL_LOCI_ON_EVERY_SMOOTH_REGULAR_FIXED_ACTIVE_OCCUPATION_STRATUM",
     "same_sign_candidate17_18_20_local_rotation_leaf_descent": "MOMENT_MAP_BASIC_ON_CONSTANT_CORANK_CURRENT_LEAVES_AND_LOCAL_ZERO_REDUCTION_COMMUTES",
@@ -254,6 +255,10 @@
       "git_blob": "b58a6f88f7be2a415d8705443d852c56f843b217"
     },
     {
+      "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence.json",
+      "git_blob": "b47a2c7f7742f39ebead312e6a350cb48c014561"
+    },
+    {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json",
       "git_blob": "ea7b1dbdcf6bf9f738c9d1cad84e82f4627a13b3"
     },
@@ -307,13 +312,14 @@
         "candidate-17/18/20 unavoidable singular rotation-zero-section verifier and 5 tests",
         "candidate-18 singular rotation-zero quotient component-separation verifier and 5 tests",
         "candidate-18 smooth singular-component bridge verifier and 5 tests",
+        "candidate-17/20 singular-component incidence verifier and 5 tests",
         "fixed-occupation node-phase-reduced presymplectic-divisor verifier and 5 tests",
         "local lifted-rotation/current-leaf descent verifier and 5 tests"
       ]
     },
     "tier_2": {
       "status": "PASS_BY_CONTENT_ADDRESS",
-      "criterion": "All 50 source blobs are pinned at baseline 0f3a5abb; the collision chain includes the classifier, 864-defect census, universal four-ray theorem, candidatewise audit, all 24 ray lifts, scalar-cone sections, exact bounded fibre products, complete complex resonance-face strata, connected automatic-face rotation links, the axisymmetric critical-locus theorem, its aligned and complete axial/polar Hessians, the candidate-16 stratumwise negative-Kahler current, singular rotation-zero-fibre and nonzero occupation-gluing theorems, the candidate-17/20 singular axisymmetric Zariski-tangent current theorem and complete complex third-transvectant singular carrier, the candidate-18 complete complex singular resolution with all ten spectators, unavoidable singular rotation-zero sections at every positive occupation on candidates 17/18/20, the candidate-18 singular-quotient two-component lower bound and explicit smooth bridge, the candidate-17/20 and candidate-18 smooth bounded projective-current radical theorems, the complete smooth affine divisor theorem, the fixed-occupation node-phase-reduced augmented divisor theorem, the local lifted-rotation/current-leaf descent theorem, and all six candidate-19/21 linear-sheet current and connected-link theorems."
+      "criterion": "All 51 source blobs are pinned at baseline 2889e4f5; the collision chain includes the classifier, 864-defect census, universal four-ray theorem, candidatewise audit, all 24 ray lifts, scalar-cone sections, exact bounded fibre products, complete complex resonance-face strata, connected automatic-face rotation links, the axisymmetric critical-locus theorem, its aligned and complete axial/polar Hessians, the candidate-16 stratumwise negative-Kahler current, singular rotation-zero-fibre and nonzero occupation-gluing theorems, the candidate-17/20 singular axisymmetric Zariski-tangent current theorem, complete complex third-transvectant singular carrier and physical singular-component incidence, the candidate-18 complete complex singular resolution with all ten spectators, unavoidable singular rotation-zero sections at every positive occupation on candidates 17/18/20, the candidate-18 singular-quotient two-component lower bound and explicit smooth bridge, the candidate-17/20 and candidate-18 smooth bounded projective-current radical theorems, the complete smooth affine divisor theorem, the fixed-occupation node-phase-reduced augmented divisor theorem, the local lifted-rotation/current-leaf descent theorem, and all six candidate-19/21 linear-sheet current and connected-link theorems."
     },
     "broader_atlas_audit": {
       "status": "PASSED_AFTER_CONCURRENT_ATLAS_UPDATE",
@@ -327,5 +333,5 @@
       "criterion": "Paper 13 remains DRAFT_ALLOWED and no mathematical lifecycle state is promoted."
     }
   },
-  "next_gate": "DECIDE_WHETHER_EVERY_CANDIDATE18_ZERO_COMPONENT_MEETS_THE_CENTRAL_BRIDGE_AND_CLASSIFY_CANDIDATE17_20_REAL_SINGULAR_QUOTIENTS"
+  "next_gate": "DECIDE_WHETHER_EVERY_CANDIDATE18_ZERO_COMPONENT_MEETS_THE_CENTRAL_BRIDGE_AND_CLASSIFY_CONNECTEDNESS_INSIDE_CANDIDATE17_20_SINGULAR_IMAGES"
 }

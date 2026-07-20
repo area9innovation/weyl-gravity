@@ -6547,6 +6547,85 @@
       }
     },
     {
+      "claim_boundary": "This proves physical incidence of the two algebraic singular-component images, so their labels give no quotient-separation lower bound. It does not prove either component or the complete singular rotation-zero quotient connected, glue occupations or perform later physical descent.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OPEN"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_SINGULAR_COMPONENT_INCIDENCE",
+          "sha256": "3446655064527e6bedf6fa6f10b8653679d7a53b73a9abfae459f34067d3e648"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_third_transvectant_singular_locus.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_THIRD_TRANSVECTANT_SINGULAR_LOCUS",
+          "sha256": "6b54d7672b9849998220716762f66a4ff81c4156dfd782c1b596c245862cb371"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_SINGULAR_ROTATION_ZERO_SECTIONS",
+          "sha256": "b4786c500f0dc52d3dd25d98224d37431f0869d2fc37fa1e9031bf72104be254"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_PHASE_REDUCED_PRESYMPLECTIC_DIVISORS",
+          "sha256": "74bfe7b00c1e7ebe856c54d0275661954ede15c23e3c62363b4928149c83b72b"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_singular_component_incidence",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Candidates 17 and 20 remain distinct; the theorem retains both labelled parity singular components on each background.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The Lee-Wald current and connectedness inside each complete real singular component remain unclassified.",
+          "status": "OPEN"
+        },
+        "resonance": {
+          "statement": "The complex components meet in S_plus x S_minus of dimension eight. Unlike candidate 18, positive occupations do not remove this intersection.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The exact intersection witness lies in the bounded real fibre product at every positive occupation.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific retarded Weyl-Maxwell correction complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The same finite witness lies in the smooth-secular correction class without an all-orders promotion.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "At every positive occupation, the two singular-component images meet on an explicit axisymmetric rotation-zero orbit with both node-phase actions free.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "candidates 17 and 20 separately",
+        "boundaries": "closed S1_L times S2 before final residual quotient",
+        "carrier": "the complete singular locus of both third-transvectant parity factors on every positive fixed-active-occupation level",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+        "degree": 2,
+        "ell": "input 2 x 2; output L=1",
+        "k": "candidate-specific signed compact momenta, never identified across candidates",
+        "m": "all m=-2,...,2; explicit intersection witness uses m=0",
+        "omega": "candidate-specific DIFFERENCE collision",
+        "parity": "both labelled factorized parity channels",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "This classifies the smooth regular fixed-active-occupation current after the two common node phases only. Lifted-rotation reduction, global/Hausdorff leaf-space topology, singular-locus reduction, occupation gluing, final residual descent, all-orders integration and causal, observational or quantum maps remain fail-closed.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -10267,7 +10346,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "069241ae456c17cb4447d0b550e4dcf74b9caae8f48c37913b71588568a9f5d8",
+  "generated_by_sha256": "349a17a2c048a61482d4d4da5cca25195dd8d8261b0942fcbdedda44e865bae1",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

@@ -674,6 +674,16 @@ def verify() -> None:
         raise AssertionError("candidate-18 smooth bridge correction scope changed")
     if "does not prove every zero-fibre component" not in candidate18_bridge["claim_boundary"] or "global connectedness" not in candidate18_bridge["claim_boundary"]:
         raise AssertionError("candidate-18 smooth bridge boundary disappeared")
+    candidate17_20_incidence = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_singular_component_incidence"]
+    candidate17_20_incidence_second = candidate17_20_incidence["mode_data"]["second_order"]
+    if candidate17_20_incidence["descriptions"]["symplectic"] != "OPEN" or candidate17_20_incidence["mode_data"]["taub_maps"]["status"] != "CERTIFIED":
+        raise AssertionError("candidate-17/20 singular incidence lifecycle changed")
+    if "images meet" not in candidate17_20_incidence["mode_data"]["taub_maps"]["statement"] or "S_plus x S_minus" not in candidate17_20_incidence["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("candidate-17/20 singular incidence was hidden")
+    if candidate17_20_incidence_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or candidate17_20_incidence_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-17/20 singular incidence correction scope changed")
+    if "no quotient-separation lower bound" not in candidate17_20_incidence["claim_boundary"] or "does not prove either component" not in candidate17_20_incidence["claim_boundary"]:
+        raise AssertionError("candidate-17/20 singular incidence boundary disappeared")
     local_rotation = by_id["einstein.ph.wm.interaction.ell2_same_sign_active_local_rotation_leaf_descent"]
     local_rotation_second = local_rotation["mode_data"]["second_order"]
     if local_rotation["mode_data"]["lee_wald"]["status"] != "CERTIFIED" or "local simple symplectic leaf quotient" not in local_rotation["mode_data"]["lee_wald"]["statement"]:

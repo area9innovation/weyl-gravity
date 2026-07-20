@@ -1700,6 +1700,36 @@ This is a complex-algebraic theorem before real norm levels, node phases,
 lifted rotations, or Lee--Wald reduction.
 \end{proof}
 
+\begin{corollary}[Candidate-(17)/(20) singular-component images intersect]
+\label{cor:candidate-17-20-singular-component-incidence}
+At every positive active-occupation pair on candidate \((17)\) or \((20)\),
+the two algebraic singular-component images meet in the node-phase and lifted
+rotation-zero quotient.  Consequently their component labels supply no
+quotient-separation lower bound.
+\end{corollary}
+
+\begin{proof}
+The components
+\[
+ \Sigma_+=S_+\times K_-,\qquad
+ \Sigma_-=K_+\times S_-
+\]
+meet in \(S_+\times S_-\).  Put
+\[
+ f=\sqrt{6N_-}\,e_0,\qquad
+ g=\sqrt{96N_+}\,e_0
+\]
+in one parity factor and set the other factor to zero.  The occupied pair is
+a common-square singular pair and the zero pair lies in the second singular
+cone, so this point is in the intersection.  The exact current weights give
+occupations \(N_-\) and \(N_+\).  Its real completion is axisymmetric, hence
+rotation-zero, and both total node norms are positive, so both node phases
+act freely.  The orbit of this point belongs to both quotient images.
+
+This proves incidence, not connectedness within either image or of their
+union.
+\end{proof}
+
 \begin{proposition}[Candidate-(18) complete complex singular resolution]
 \label{prop:candidate-18-complex-singular-resolution}
 Let \(R_\pm=\operatorname{Rank}_{\leq1}(5\times2)_\pm\).  The complete
@@ -2204,7 +2234,7 @@ does not establish nonlinear stability.
 
 The manuscript is an \textsc{outline-allowed}/\textsc{draft-allowed}
 integration of committed certificates.  Its current source baseline is
-repository commit \texttt{eae01bfc73331adac12e1c203d464f68abed8a48}.
+repository commit \texttt{2889e4f556a6732ad9d78311adfb40354a50241f}.
 
 \begingroup
 \small
@@ -2284,6 +2314,8 @@ Candidate-(18) singular quotient component lower bound &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation.json}\\
 Candidate-(18) smooth bridge between singular components &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge.json}\\
+Candidate-(17)/(20) physical singular-component incidence &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence.json}\\
 Fixed-occupation node-phase-reduced divisors and local quotients &
 \cert{bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json}\\
 Local lifted-rotation descent through current leaves &
@@ -2383,8 +2415,11 @@ Proposition~\ref{prop:smooth-presymplectic-divisors}.  For candidates
 classified by Proposition~\ref{prop:third-transvectant-singular-locus}: its
 two parity-product components are controlled by a common-square incidence
 resolution.  Its real fixed-occupation intersection and lifted-rotation
-reduction remain open.  The regular fixed-occupation node-phase reductions
-are classified by
+reduction remain open.  The two algebraic singular-component images already
+meet physically at every positive occupation by
+Corollary~\ref{cor:candidate-17-20-singular-component-incidence}; unlike
+candidate \((18)\), their labels cannot imply quotient separation.  The
+regular fixed-occupation node-phase reductions are classified by
 Proposition~\ref{prop:phase-reduced-presymplectic-divisors}.  The latter
 retains the common parity-node phases and candidate-(18) spectators rather
 than quotienting them factorwise.  On every smooth constant-corank

@@ -115,6 +115,7 @@ CERTIFICATES = {
     "same_sign_active_singular_rotation_zero_sections": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections.json",
     "same_sign_candidate18_singular_component_separation": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation.json",
     "same_sign_candidate18_singular_smooth_bridge": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge.json",
+    "same_sign_candidate17_20_singular_component_incidence": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence.json",
     "same_sign_active_phase_reduced_presymplectic_divisors": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json",
     "same_sign_active_local_rotation_leaf_descent": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
@@ -1167,6 +1168,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("CERTIFIED","The explicit path stays inside the exact bounded real fibre product at fixed occupations."),("CERTIFIED","The same finite path lies in the smooth-secular correction class without an all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_candidate18_singular_smooth_bridge","same_sign_candidate18_singular_component_separation","same_sign_active_phase_reduced_presymplectic_divisors","same_sign_candidate18_complex_singular_resolution"),
             "This joins one certified point in each candidate-18 singular component through the smooth rotation-zero carrier at every positive occupation. It does not prove every zero-fibre component meets this bridge, global connectedness, occupation gluing or later physical descent.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_singular_component_incidence",
+            _scope(theory="Weyl-Maxwell target", background="candidates 17 and 20 separately", boundaries="closed S1_L times S2 before final residual quotient", carrier="the complete singular locus of both third-transvectant parity factors on every positive fixed-active-occupation level", degree=2, parity="both labelled factorized parity channels", ell="input 2 x 2; output L=1", m="all m=-2,...,2; explicit intersection witness uses m=0", k="candidate-specific signed compact momenta, never identified across candidates", omega="candidate-specific DIFFERENCE collision", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"OPEN","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Candidates 17 and 20 remain distinct; the theorem retains both labelled parity singular components on each background."),
+            ("OPEN","The Lee-Wald current and connectedness inside each complete real singular component remain unclassified."),
+            ("CERTIFIED","At every positive occupation, the two singular-component images meet on an explicit axisymmetric rotation-zero orbit with both node-phase actions free."),
+            ("CERTIFIED","The complex components meet in S_plus x S_minus of dimension eight. Unlike candidate 18, positive occupations do not remove this intersection."),
+            _second_order(("CERTIFIED","The exact intersection witness lies in the bounded real fibre product at every positive occupation."),("CERTIFIED","The same finite witness lies in the smooth-secular correction class without an all-orders promotion."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_candidate17_20_singular_component_incidence","same_sign_third_transvectant_singular_locus","same_sign_active_singular_rotation_zero_sections","same_sign_active_phase_reduced_presymplectic_divisors"),
+            "This proves physical incidence of the two algebraic singular-component images, so their labels give no quotient-separation lower bound. It does not prove either component or the complete singular rotation-zero quotient connected, glue occupations or perform later physical descent.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_same_sign_active_phase_reduced_presymplectic_divisors",
@@ -2246,6 +2259,15 @@ def build() -> dict[str, object]:
         raise AssertionError("candidate-18 singular smooth bridge changed")
     if candidate18_bridge["all_singular_points_connected_to_bridge"] or candidate18_bridge["full_rotation_zero_fibre_connected"] or candidate18_bridge["global_leaf_space_classified"] or candidate18_bridge["occupation_strata_glued"] or candidate18_bridge["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("candidate-18 singular smooth bridge exceeded scope")
+    candidate17_20_incidence = records["same_sign_candidate17_20_singular_component_incidence"]["classification"]
+    if not (
+        candidate17_20_incidence["candidate17_positive_occupation_singular_component_images_intersect"]
+        and candidate17_20_incidence["candidate20_positive_occupation_singular_component_images_intersect"]
+        and not candidate17_20_incidence["candidate17_20_component_labels_prove_quotient_separation"]
+    ):
+        raise AssertionError("candidate-17/20 singular component incidence changed")
+    if candidate17_20_incidence["candidate17_20_each_singular_component_connected"] or candidate17_20_incidence["candidate17_20_complete_singular_rotation_zero_quotient_connected"] or candidate17_20_incidence["occupation_strata_glued"] or candidate17_20_incidence["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("candidate-17/20 singular component incidence exceeded scope")
     phase_reduced_divisors = records["same_sign_active_phase_reduced_presymplectic_divisors"]["classification"]
     if not (
         phase_reduced_divisors["candidate17_regular_fixed_occupation_phase_reduced_divisor_classified"]

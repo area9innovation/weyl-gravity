@@ -4172,6 +4172,14 @@ singular-component separation as a disconnection obstruction, but it still
 does not show that every rotation-zero component meets the bridge or that the
 full zero fibre is connected.
 
+Candidates 17 and 20 have the opposite singular-component incidence pattern.
+Their two algebraic components meet in `S_plus x S_minus`, and the explicit
+positive-occupation axisymmetric section lies in that intersection with both
+node phases free.  Therefore the two component images meet after node-phase
+and lifted-rotation zero reduction at every positive occupation.  Component
+labels cannot prove disconnection there.  Connectedness inside either image
+and of the complete singular quotient remains open.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 
