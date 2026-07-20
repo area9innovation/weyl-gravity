@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/observer-berger-global-rod-two-direction-extension-OBSTRUCTED-1d6b41988d97557a",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/observer-berger-global-rod-two-direction-extension-OBSTRUCTED-1d6b41988d97557a.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "observer-1", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-20T21:12:45+02:00", "seq": 2, "predecessor": "sf:program/event/observer-berger-global-rod-two-direction-extension-ACTIVE-e9d917371ded0fa9", "payload": {"target": "sf:program/work/observer-berger-global-rod-two-direction-extension", "to_state": "OBSTRUCTED", "note": "the action-derived four-row repair closes the background K orbit, but its mixed rod-gravity Hessian obstructs every local differential embedding of the certified 108-row complex", "evidence_basis": "`closed_universe_observers/certificates/BERGER_GLOBAL_ROD_TWO_DIRECTION_EXTENSION_OBSTRUCTION.json`"}, "native": {"authored_by": "sfc close-out", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/observer-berger-global-rod-two-direction-extension"}]
+}
