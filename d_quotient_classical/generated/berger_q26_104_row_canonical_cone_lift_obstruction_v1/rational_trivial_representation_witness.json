@@ -1,0 +1,125 @@
+{
+  "checks": {
+    "left_witness_Aq_nonzero": true,
+    "left_witness_annihilates_q": true,
+    "left_witness_output_matches": true,
+    "right_witness_in_kernel_q": true,
+    "right_witness_output_matches": true,
+    "right_witness_qA_nonzero": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "left_adjoint_lift_Aq_equals_qD": {
+    "cokernel_rank": 1,
+    "criterion": "col(A*q) subset col(q)",
+    "ell_transpose_A_q": [
+      [
+        6,
+        "108"
+      ],
+      [
+        10,
+        "-4"
+      ],
+      [
+        13,
+        "-4"
+      ],
+      [
+        15,
+        "28"
+      ],
+      [
+        20,
+        "-16"
+      ],
+      [
+        23,
+        "-16"
+      ],
+      [
+        25,
+        "-16"
+      ]
+    ],
+    "ell_transpose_q": [],
+    "status": "INCONSISTENT",
+    "witness_ell": [
+      [
+        92,
+        "-27"
+      ],
+      [
+        97,
+        "27"
+      ]
+    ]
+  },
+  "ranks": {
+    "rank_column_stack_q_Aq": 35,
+    "rank_q": 34,
+    "rank_row_stack_q_qA": 35
+  },
+  "representation": {
+    "coefficient_field": "QQ",
+    "derivative_generators": {
+      "e0": 0,
+      "e1": 0,
+      "e2": 0,
+      "e3": 0
+    },
+    "multiplicative": true,
+    "relation_check": "all Berger commutators and their right-hand sides map to 0",
+    "specialization": {
+      "alpha_B": 2,
+      "u": 1,
+      "v": 3
+    }
+  },
+  "result_id": "BERGER_Q26_CANONICAL_CONE_RATIONAL_TRIVIAL_REPRESENTATION_WITNESS_V1",
+  "right_lift_Dq_equals_qA": {
+    "cokernel_rank": 1,
+    "criterion": "ker(q) subset ker(q*A)",
+    "q_A_z": [
+      [
+        92,
+        "-1022"
+      ],
+      [
+        95,
+        "-1022"
+      ],
+      [
+        97,
+        "-1022"
+      ]
+    ],
+    "q_z": [],
+    "status": "INCONSISTENT",
+    "witness_z": [
+      [
+        6,
+        "-33"
+      ],
+      [
+        10,
+        "-111"
+      ],
+      [
+        15,
+        "144"
+      ],
+      [
+        16,
+        "-57"
+      ],
+      [
+        20,
+        "57"
+      ]
+    ]
+  },
+  "schema": "pure-weyl-berger-q26-canonical-cone-rational-witness-v1"
+}

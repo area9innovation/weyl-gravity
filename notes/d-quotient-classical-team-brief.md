@@ -2850,6 +2850,37 @@ contraction or no-finite-closure theorem has yet been supplied.  Non-free or
 projective module presentations are outside this bound unless explicitly
 admitted and independently classified.
 
+### Canonical 104-row doubled-cone obstruction (2026-07-20)
+
+`BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1` tests the first
+rank-saturating free-copy architecture rather than assuming the 104-row lower
+bound is sufficient.  The doubled cone
+
+\[
+Q_J=\begin{pmatrix}q&-q\\q&-q\end{pmatrix}
+\]
+
+has the forced copied degree profile, preserves the old-old \(q\) block and
+satisfies \(Q_J^2=0\) identically.  With old-old evolution fixed to
+\(A_{104}\), its complete upper-cone evolution ansatz reduces equivariance to
+\(Dq=qA\).
+
+The valid rational one-dimensional Berger representation
+\(e_0=e_1=e_2=e_3=0\), at \((\alpha_B,u,v)=(2,1,3)\), gives
+
+\[
+\operatorname{rank}q=34,\qquad
+\operatorname{rank}\binom q{qA}=35,\qquad
+\operatorname{rank}(q\;\;Aq)=35.
+\]
+
+Explicit normalized right- and left-null witnesses prove that neither the
+evolution lift nor its free-adjoint orientation exists over the rational PBW
+source algebra.  This obstruction is architecture-specific: non-cone
+off-diagonal 104-row factorizations remain open, and the global 104-row lower
+bound is not raised.  No accepted physical pairing, real structure, retained
+contraction, Hadamard or quantum result follows.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

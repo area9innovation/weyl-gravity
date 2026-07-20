@@ -242,7 +242,9 @@ def verify() -> None:
         not in berger_cauchy["claim_boundary"]
         or "at least 104 added rows"
         not in berger_cauchy["claim_boundary"]
-        or "A 104-row extension is not constructed or proved sufficient"
+        or "doubled-cone strictification is nilpotent"
+        not in berger_cauchy["claim_boundary"]
+        or "every non-cone 104-row factorization"
         not in berger_cauchy["claim_boundary"]
     ):
         raise AssertionError("Berger carrier-extension boundary missing")
@@ -261,6 +263,11 @@ def verify() -> None:
         not in berger_cauchy_ids
     ):
         raise AssertionError("Berger finite-row module closure evidence missing")
+    if (
+        "BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1"
+        not in berger_cauchy_ids
+    ):
+        raise AssertionError("Berger canonical 104-row cone evidence missing")
     transverse = by_id["classical.nariai.transverse_kantowski_sachs_tangent"]
 
     bach_open = by_id["classical.bach_flat.open_parent_detour"]

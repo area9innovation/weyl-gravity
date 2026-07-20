@@ -41,6 +41,7 @@ CERTS = {
     "Berger_q26_Cauchy_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1.json",
     "Berger_q26_six_row_cyclic_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_Q26_MINIMAL_SIX_ROW_CYCLIC_OBSTRUCTION_V1.json",
     "Berger_q26_module_closure_bound": ROOT / "d_quotient_classical/certificates/BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1.json",
+    "Berger_q26_canonical_104_cone_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1.json",
     "Nariai_conformal": ROOT / "d_quotient_classical/certificates/CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1.json",
     "Nariai_single": ROOT / "d_quotient_classical/certificates/NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1.json",
     "Nariai_bridge_disposition": ROOT / "d_quotient_classical/certificates/NARIAI_CURVATURE_METRIC_BRIDGE_DISPOSITION_V1.json",
@@ -312,8 +313,9 @@ def entries() -> list[dict[str, Any]]:
             "Berger_q26_Cauchy_obstruction",
             "Berger_q26_six_row_cyclic_obstruction",
             "Berger_q26_module_closure_bound",
+            "Berger_q26_canonical_104_cone_obstruction",
         ),
-        "The no-lift theorem is complete only for the frozen 104-row formal Cauchy graph with the normalized q52 solution-map identity. It holds at every finite PBW differential order because that identity fixes q_C uniquely. Factorization first requires five new degree-zero rows and one new degree-one row; cyclic rank completion raises this to ten. The exact defect/free-dual module closure then fills all 936 dimensions of the nine-dimensional rational spin-four representation, with two independent nonzero finite-field determinants. Therefore every free support-local carrier for that closure requires at least 104 added rows with degree profile (12,40,40,12). A 104-row extension is not constructed or proved sufficient. Changed companions, changed A104 data, non-free/projective presentations, and larger carriers remain open. No Cauchy/Krein pairing, real involution, Hadamard, positivity, QME, particle or quantum claim follows.",
+        "The no-lift theorem is complete only for the frozen 104-row formal Cauchy graph with the normalized q52 solution-map identity. It holds at every finite PBW differential order because that identity fixes q_C uniquely. Factorization first requires five new degree-zero rows and one new degree-one row; cyclic rank completion raises this to ten. The exact defect/free-dual module closure then fills all 936 dimensions of the nine-dimensional rational spin-four representation, with two independent nonzero finite-field determinants. Therefore every free support-local carrier for that closure requires at least 104 added rows with degree profile (12,40,40,12). The first rank-saturating doubled-cone strictification is nilpotent, but exact rational cokernel witnesses obstruct both its evolution lift Dq=qA and its free-adjoint orientation. This does not obstruct every non-cone 104-row factorization, so a 104-row physical extension is still neither constructed nor disproved. Changed companions, changed A104 data, non-free/projective presentations, and larger carriers remain open. No Cauchy/Krein pairing, real involution, Hadamard, positivity, QME, particle or quantum claim follows.",
     ))
     values.append(_entry(
         "classical.nariai.conformal_orbit.rank310_metric",

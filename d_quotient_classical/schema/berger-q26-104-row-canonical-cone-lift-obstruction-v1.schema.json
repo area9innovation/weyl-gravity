@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-q26-104-row-canonical-cone-lift-obstruction-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "scope",
+    "pinned_inputs",
+    "declared_completion_architecture",
+    "rational_obstruction",
+    "decoupled_mutation",
+    "classification",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-berger-q26-104-row-canonical-cone-lift-obstruction-v1"
+    },
+    "result_id": {
+      "const": "BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1"
+    },
+    "result_state": {
+      "const": "CANONICAL_104_ROW_DOUBLED_CONE_EVOLUTION_LIFT_AND_FREE_ADJOINT_ORIENTATION_EMPTY"
+    },
+    "lifecycle_status": {
+      "const": "CLASSIFIED"
+    },
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "LORENTZIAN-CAUSAL"}
+      ],
+      "items": false
+    },
+    "scope": {
+      "type": "object",
+      "minProperties": 10,
+      "additionalProperties": {"type": "string"}
+    },
+    "pinned_inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "module_lower_bound",
+        "module_closure_witness",
+        "q_Cauchy",
+        "A104"
+      ],
+      "properties": {
+        "module_lower_bound": {"$ref": "#/$defs/artifact"},
+        "module_closure_witness": {"$ref": "#/$defs/artifact"},
+        "q_Cauchy": {"$ref": "#/$defs/artifact"},
+        "A104": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "declared_completion_architecture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "row_origin",
+        "q_ext",
+        "q_ext_old_old",
+        "q_ext_squared_zero",
+        "evolution_ansatz",
+        "commutator_formula",
+        "equivariance_condition",
+        "free_adjoint_condition",
+        "differential_order",
+        "real_involution",
+        "retained_solution_map_incidence"
+      ],
+      "properties": {
+        "name": {"const": "RANK_SATURATING_CANONICAL_DOUBLED_CONE"},
+        "row_origin": {"type": "string"},
+        "q_ext": {"const": "Q_J=[[q,-q],[q,-q]]"},
+        "q_ext_old_old": {"const": "q"},
+        "q_ext_squared_zero": {"const": true},
+        "evolution_ansatz": {"type": "string"},
+        "commutator_formula": {"type": "string"},
+        "equivariance_condition": {"const": "Dq=qA"},
+        "free_adjoint_condition": {"type": "string"},
+        "differential_order": {"type": "string"},
+        "real_involution": {"type": "string"},
+        "retained_solution_map_incidence": {"type": "string"}
+      }
+    },
+    "rational_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["payload", "right_lift", "left_adjoint_lift", "proof"],
+      "properties": {
+        "payload": {"$ref": "#/$defs/artifact"},
+        "right_lift": {"$ref": "#/$defs/witness"},
+        "left_adjoint_lift": {"$ref": "#/$defs/witness"},
+        "proof": {"type": "string"}
+      }
+    },
+    "decoupled_mutation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "new_blocks",
+        "old_q_nonzero_entries",
+        "old_A_nonzero_entries",
+        "q_square_defects",
+        "A_q_commutator_defects",
+        "status"
+      ],
+      "properties": {
+        "new_blocks": {"const": "ZERO"},
+        "old_q_nonzero_entries": {"const": 1018},
+        "old_A_nonzero_entries": {"const": 470},
+        "q_square_defects": {"const": 157},
+        "A_q_commutator_defects": {"const": 207},
+        "status": {"const": "REPRODUCES_FROZEN_REJECTED_CONTROL"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_doubled_cone_q_nilpotent",
+        "canonical_doubled_cone_evolution_lift_exists",
+        "free_adjoint_cone_orientation_exists",
+        "all_104_row_completions_obstructed",
+        "minimum_208_row_physical_carrier_constructed",
+        "physical_Cauchy_pairing_constructed",
+        "real_involution_on_accepted_carrier_constructed",
+        "Hadamard_or_quantum_claim"
+      ],
+      "properties": {
+        "canonical_doubled_cone_q_nilpotent": {"const": true},
+        "canonical_doubled_cone_evolution_lift_exists": {"const": false},
+        "free_adjoint_cone_orientation_exists": {"const": false},
+        "all_104_row_completions_obstructed": {"const": false},
+        "minimum_208_row_physical_carrier_constructed": {"const": false},
+        "physical_Cauchy_pairing_constructed": {"const": false},
+        "real_involution_on_accepted_carrier_constructed": {"const": false},
+        "Hadamard_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {
+      "const": "SOLVE_NON_CONE_104_ROW_OFF_DIAGONAL_FACTORIZATIONS_OR_EXPORT_THEIR_NEXT_DEFECT_ORBIT"
+    },
+    "claim_boundary": {"type": "string", "minLength": 200},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 4,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "verification_commands": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string", "minLength": 10}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 2},
+        "path": {"type": "string", "minLength": 2},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "witness": {
+      "type": "object",
+      "required": ["status", "criterion", "cokernel_rank"],
+      "properties": {
+        "status": {"const": "INCONSISTENT"},
+        "criterion": {"type": "string"},
+        "cokernel_rank": {"const": 1}
+      },
+      "additionalProperties": true
+    }
+  }
+}

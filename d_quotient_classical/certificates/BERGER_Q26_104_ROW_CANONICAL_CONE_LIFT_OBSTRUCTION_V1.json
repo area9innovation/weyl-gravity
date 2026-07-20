@@ -1,0 +1,189 @@
+{
+  "claim_boundary": "This exact rational theorem obstructs the rank-saturating canonical doubled-cone strictification and its free-adjoint orientation while keeping the old q_Cauchy and A104 blocks. It is not a theorem about every 104-row off-diagonal factorization and does not raise the global 104-row lower bound. It constructs no accepted Cauchy/Krein pairing, retained contraction, Hadamard state, positivity, QME, particle, scattering or unitarity result.",
+  "classification": {
+    "Hadamard_or_quantum_claim": false,
+    "all_104_row_completions_obstructed": false,
+    "canonical_doubled_cone_evolution_lift_exists": false,
+    "canonical_doubled_cone_q_nilpotent": true,
+    "free_adjoint_cone_orientation_exists": false,
+    "minimum_208_row_physical_carrier_constructed": false,
+    "physical_Cauchy_pairing_constructed": false,
+    "real_involution_on_accepted_carrier_constructed": false
+  },
+  "declared_completion_architecture": {
+    "commutator_formula": "[A_D,Q_J]=[[Dq-qA,-Dq+qA],[Dq-qA,-Dq+qA]]",
+    "differential_order": "D is allowed arbitrary finite PBW order; evaluation of any such D would still solve the specialized matrix equation",
+    "equivariance_condition": "Dq=qA",
+    "evolution_ansatz": "A_D=[[A,D-A],[0,D]], with D degree zero and support-local",
+    "free_adjoint_condition": "the dual orientation additionally requires Aq=qD^vee",
+    "name": "RANK_SATURATING_CANONICAL_DOUBLED_CONE",
+    "q_ext": "Q_J=[[q,-q],[q,-q]]",
+    "q_ext_old_old": "q",
+    "q_ext_squared_zero": true,
+    "real_involution": "standard rational conjugation; not reached because the evolution lift equation is inconsistent",
+    "retained_solution_map_incidence": "old-old q and A blocks are fixed exactly; no projection or quotient removes their entries",
+    "row_origin": "one free copy of the full defect/free-dual module forced by the 104-row lower bound"
+  },
+  "decoupled_mutation": {
+    "A_q_commutator_defects": 207,
+    "new_blocks": "ZERO",
+    "old_A_nonzero_entries": 470,
+    "old_q_nonzero_entries": 1018,
+    "q_square_defects": 157,
+    "status": "REPRODUCES_FROZEN_REJECTED_CONTROL"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "SOLVE_NON_CONE_104_ROW_OFF_DIAGONAL_FACTORIZATIONS_OR_EXPORT_THEIR_NEXT_DEFECT_ORBIT",
+  "pinned_inputs": {
+    "A104": {
+      "artifact_id": "global_A104",
+      "path": "quantum-weyl/lorentzian/generated/berger_a104_endpoint_completion/global_A104.json",
+      "sha256": "37f0881c793f196175100e5e4784d18f6315e3654e3945c9972d9b212e662154"
+    },
+    "module_closure_witness": {
+      "artifact_id": "BERGER_Q26_SPIN4_MODULE_CLOSURE_WITNESS_V1",
+      "path": "d_quotient_classical/generated/berger_q26_finite_row_module_closure_v1/spin4_closure_witness.json",
+      "sha256": "ecd819590e8c18a7c38f2a70b3455c1018cbb370c05cf8a307df5970be320826"
+    },
+    "module_lower_bound": {
+      "artifact_id": "BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1",
+      "path": "d_quotient_classical/certificates/BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1.json",
+      "sha256": "6b59cdc0c54978ef5a9bb07ff8b17dcbc6d9771ce631206cecc8b85686f2fb78"
+    },
+    "q_Cauchy": {
+      "artifact_id": "rejected_candidate_q_Cauchy_104",
+      "path": "quantum-weyl/lorentzian/generated/berger_canonical_graph_q_cauchy_obstruction/rejected_candidate_q_Cauchy_104.json",
+      "sha256": "116ea6304aa27d30c881bfac092c6058cf9d4571aa407ca5f47f1366d993bf50"
+    }
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/causal_transfer/berger_q26_104_row_canonical_cone_lift_obstruction.py": "e75ae4d62b93d640f744af6f839a46617e4424b601673cdf34650d7ce86bf25f",
+      "d_quotient_classical/causal_transfer/tests/test_berger_q26_104_row_canonical_cone_lift_obstruction.py": "195af8abab44561ca9c8a5cdae4e474ee4191bce6baa9bff723dcac30ac885cb",
+      "d_quotient_classical/causal_transfer/verify_berger_q26_104_row_canonical_cone_lift_obstruction.py": "be3c3bb2f39b21467789246fb6cbd00d2d21f8a79a78d4302c31d6d03483665f",
+      "d_quotient_classical/schema/berger-q26-104-row-canonical-cone-lift-obstruction-v1.schema.json": "afdcd9e226a9d58fae43fd68d98580656d0cb322c2f01f9d8a873969c482b65a"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.berger_q26_104_row_canonical_cone_lift_obstruction --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.verify_berger_q26_104_row_canonical_cone_lift_obstruction",
+      "PYTHONPATH=. python3 -m unittest d_quotient_classical.causal_transfer.tests.test_berger_q26_104_row_canonical_cone_lift_obstruction",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-q26-104-row-canonical-cone-lift-obstruction-v1.schema.json -d d_quotient_classical/certificates/BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1.json"
+    ]
+  },
+  "rational_obstruction": {
+    "left_adjoint_lift": {
+      "cokernel_rank": 1,
+      "criterion": "col(A*q) subset col(q)",
+      "ell_transpose_A_q": [
+        [
+          6,
+          "108"
+        ],
+        [
+          10,
+          "-4"
+        ],
+        [
+          13,
+          "-4"
+        ],
+        [
+          15,
+          "28"
+        ],
+        [
+          20,
+          "-16"
+        ],
+        [
+          23,
+          "-16"
+        ],
+        [
+          25,
+          "-16"
+        ]
+      ],
+      "ell_transpose_q": [],
+      "status": "INCONSISTENT",
+      "witness_ell": [
+        [
+          92,
+          "-27"
+        ],
+        [
+          97,
+          "27"
+        ]
+      ]
+    },
+    "payload": {
+      "artifact_id": "BERGER_Q26_CANONICAL_CONE_RATIONAL_TRIVIAL_REPRESENTATION_WITNESS_V1",
+      "path": "d_quotient_classical/generated/berger_q26_104_row_canonical_cone_lift_obstruction_v1/rational_trivial_representation_witness.json",
+      "sha256": "992ac08884cb065857d00bf2616f29350e20b710b595ab1a01542567abdd1d58"
+    },
+    "proof": "A rational PBW solution evaluates under every multiplicative rational representation. In the trivial derivative representation, z lies in ker(q) but q*A*z is nonzero, so D*q=q*A is impossible. Independently ell^T*q=0 while ell^T*A*q is nonzero, obstructing the free-adjoint orientation.",
+    "right_lift": {
+      "cokernel_rank": 1,
+      "criterion": "ker(q) subset ker(q*A)",
+      "q_A_z": [
+        [
+          92,
+          "-1022"
+        ],
+        [
+          95,
+          "-1022"
+        ],
+        [
+          97,
+          "-1022"
+        ]
+      ],
+      "q_z": [],
+      "status": "INCONSISTENT",
+      "witness_z": [
+        [
+          6,
+          "-33"
+        ],
+        [
+          10,
+          "-111"
+        ],
+        [
+          15,
+          "144"
+        ],
+        [
+          16,
+          "-57"
+        ],
+        [
+          20,
+          "57"
+        ]
+      ]
+    }
+  },
+  "result_id": "BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1",
+  "result_state": "CANONICAL_104_ROW_DOUBLED_CONE_EVOLUTION_LIFT_AND_FREE_ADJOINT_ORIENTATION_EMPTY",
+  "schema": "pure-weyl-berger-q26-104-row-canonical-cone-lift-obstruction-v1",
+  "scope": {
+    "background": "fixed rational positive Berger clock",
+    "boundaries": "R_t x compact Berger S3; no spatial boundary",
+    "carrier": "frozen 104 rows plus its one-copy 104-row free cone",
+    "charge_sector": "unquotiented retained-26 formal companion/Cauchy carrier",
+    "degree": "old and new profiles both (-1:12,0:40,1:40,2:12)",
+    "ell": "not harmonic-reduced",
+    "k": "all finite-order Berger PBW derivatives",
+    "m": "not harmonic-reduced",
+    "omega": "stationary A104 formal evolution; no spectral split",
+    "parity": "inherited BV parity; free-adjoint orientation included",
+    "theory": "retained minimal pure-Weyl Berger BV complex"
+  }
+}

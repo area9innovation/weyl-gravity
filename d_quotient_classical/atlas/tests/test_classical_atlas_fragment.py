@@ -141,7 +141,11 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertEqual(entry["descriptions"]["quantum"], "NO_CERTIFIED_MAP")
         self.assertIn("at least 104 added rows", entry["claim_boundary"])
         self.assertIn(
-            "A 104-row extension is not constructed or proved sufficient",
+            "doubled-cone strictification is nilpotent",
+            entry["claim_boundary"],
+        )
+        self.assertIn(
+            "every non-cone 104-row factorization",
             entry["claim_boundary"],
         )
         self.assertIn("Changed companions", entry["claim_boundary"])
@@ -155,6 +159,10 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         )
         self.assertIn(
             "BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn(
+            "BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1",
             {item["result_id"] for item in entry["evidence"]},
         )
 

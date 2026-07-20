@@ -1,0 +1,97 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_id": "BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/certificates/BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1.json",
+      "sha256": "9471e07167aff1aaa8abd1d46f148fd40fee9da4033dac8010c1bbb1df4f6c21"
+    },
+    {
+      "path": "d_quotient_classical/generated/berger_q26_104_row_canonical_cone_lift_obstruction_v1/rational_trivial_representation_witness.json",
+      "sha256": "992ac08884cb065857d00bf2616f29350e20b710b595ab1a01542567abdd1d58"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "50ebf9c3a4cbc2210bea4523e99a6a77b9e11bd7be32103375a0969a134f8d94"
+    },
+    {
+      "path": "d_quotient_classical/reports/berger-q26-104-row-canonical-cone-lift-obstruction-v1.md",
+      "sha256": "46a4b8704cd8d796125421340b35a599e61f2ee841b3f0062630c82c221c9c1c"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile d_quotient_classical/causal_transfer/berger_q26_104_row_canonical_cone_lift_obstruction.py d_quotient_classical/causal_transfer/verify_berger_q26_104_row_canonical_cone_lift_obstruction.py d_quotient_classical/causal_transfer/tests/test_berger_q26_104_row_canonical_cone_lift_obstruction.py",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <scoped paths>",
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.berger_q26_104_row_canonical_cone_lift_obstruction --check --guards",
+        "elapsed_seconds": 1.27,
+        "status": "PASS"
+      },
+      {
+        "command": "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.verify_berger_q26_104_row_canonical_cone_lift_obstruction",
+        "elapsed_seconds": 1.09,
+        "status": "PASS",
+        "independent_backend": "direct sparse-record constant evaluation and independent exact SymPy rank/nullspace replay"
+      },
+      {
+        "command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.causal_transfer.tests.test_berger_q26_104_row_canonical_cone_lift_obstruction",
+        "elapsed_seconds": 1.73,
+        "status": "PASS",
+        "tests": 6
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-q26-104-row-canonical-cone-lift-obstruction-v1.schema.json -d d_quotient_classical/certificates/BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1.json",
+        "elapsed_seconds": 1.35,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/atlas/generate_classical_atlas_fragment.py --check",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment",
+        "status": "PASS",
+        "tests": 19
+      }
+    ],
+    "reason": "The architecture obstruction changes the fail-closed Berger classical-to-quantum atlas crosswalk while leaving the general 104-row gate open."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is a scoped obstruction to one rank-saturating completion architecture, not a terminal 104-row theorem, freeze, release, or shared-core algebra change."
+  },
+  "claim_boundary": "The canonical doubled cone is exactly nilpotent, but rational cokernel witnesses obstruct its evolution lift and free-adjoint orientation. This does not obstruct general non-cone 104-row factorizations, raise the global lower bound, construct a physical pairing or retained contraction, or establish Hadamard or quantum data."
+}
