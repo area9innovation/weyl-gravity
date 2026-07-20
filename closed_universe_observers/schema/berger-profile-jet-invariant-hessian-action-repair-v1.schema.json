@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Berger profile-jet invariant Hessian action repair certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "payload_ref",
+    "declared_action_ansatz",
+    "closure_disposition",
+    "action_and_cyclicity",
+    "profile_first_jet_repair",
+    "first_remaining_obstruction",
+    "proof_obligation_dag",
+    "activation_disposition",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-profile-jet-invariant-hessian-action-repair-v1"},
+    "result_id": {"const": "BERGER_PROFILE_JET_INVARIANT_HESSIAN_ACTION_REPAIR"},
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_refs": {"type": "object", "minProperties": 5},
+    "payload_ref": {"type": "object"},
+    "declared_action_ansatz": {"type": "object"},
+    "closure_disposition": {"type": "object"},
+    "action_and_cyclicity": {"type": "object"},
+    "profile_first_jet_repair": {"type": "object"},
+    "first_remaining_obstruction": {"type": "object"},
+    "proof_obligation_dag": {"type": "array", "minItems": 7},
+    "activation_disposition": {"type": "object"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": true
+}

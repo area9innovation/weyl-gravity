@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Berger profile-jet invariant Hessian action repair payload",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "closure_basis_ref",
+    "common_unary",
+    "modules",
+    "closure_preserving_module_ids",
+    "closure_escaping_module_ids"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-profile-jet-invariant-hessian-action-repair-payload-v1"},
+    "result_id": {"const": "BERGER_PROFILE_JET_INVARIANT_HESSIAN_ACTION_REPAIR_PAYLOAD"},
+    "modules": {"type": "object", "minProperties": 56, "maxProperties": 56},
+    "closure_preserving_module_ids": {"type": "array", "minItems": 24, "maxItems": 24},
+    "closure_escaping_module_ids": {"type": "array", "minItems": 32, "maxItems": 32}
+  },
+  "additionalProperties": true
+}

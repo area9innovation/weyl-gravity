@@ -1534,6 +1534,42 @@ atlas row is
 Physical Bridge 3 still awaits a same-background branch dictionary even after
 the common-action gate is repaired.
 
+`BERGER_PROFILE_JET_INVARIANT_HESSIAN_ACTION_REPAIR` now closes that active
+profile-jet realization gate, but not the complete common-action gate.  At
+coefficient grade `g_b h_b'`, the raw scalar Hessian space
+`K_b,ab e_c A_d` has dimension 96 per emitter.  Exact infinitesimal
+Berger-`U(1)` reduction gives a complete 28-dimensional invariant kernel,
+split into the `K03`, `K12`, `K0_perp` and `K3_perp` families with dimensions
+`(6,6,8,8)`.  Every basis member is stored as a local cubic action, and every
+unary/`q2` Ward column is regenerated through the signed odd pairing.
+
+The certified 900-coordinate Ward carrier admits exactly 12 of these
+invariant lines per emitter.  The other 16 per emitter produce coordinates
+outside that carrier and remain `NO_CERTIFIED_MAP`; they are not projected
+back.  Inside the closure, the electric action
+
+```text
+(3/2) sum_b chi g_b h_b'
+      K_b,0i (e_0 A_i - e_i A_0),  i=1,2,3
+```
+
+equals the full 24-coordinate profile-first-jet typed-source projection.
+Thus the previously required weight-zero line is now genuinely
+action-realized, rather than supplied as a fitted Ward column.  The
+closure-preserving action image grows from rank six to rank 30.
+
+The complete typed-Maxwell source nevertheless raises that image to rank 31.
+After the earlier epsilon normalization and the new profile-jet repair, an
+invariant 88-coordinate `g_b h_b` zero-profile-jet class remains.  Its
+projected current image has rank six and the source raises it to seven.
+Accordingly the active local bridge is now
+`CLASSIFY_ZERO_PROFILE_JET_INVARIANT_HESSIAN_MODULE_FOR_88_COORDINATE_RESIDUAL`.
+The fail-closed atlas row is
+`observer.berger.interaction.profile_jet_invariant_hessian_action_repair`.
+There is still no representation-complete common-action carrier, so `q3`,
+gauge descent, nonlinear detector/redshift/recoil replay, tangent-cone
+restriction, physical Bridge 3 and quantum promotion remain unauthorized.
+
 Within that inactive bridge, the numerical recoil input-contract audit is now
 complete.  The next activation gate requires a provenance-complete
 `EXPLICIT_EXTERNAL_VALUES` declaration for both mass domains, both nonzero

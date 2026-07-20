@@ -620,3 +620,24 @@ def test_common_action_observable_replay_preserves_scope_without_promotion():
     assert "BERGER_COMMON_ACTION_OBSERVABLE_REPLAY_DISPOSITION" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_profile_jet_action_line_is_repaired_without_full_promotion():
+    row = next(
+        row
+        for row in build()["entries"]
+        if row["id"]
+        == "observer.berger.interaction.profile_jet_invariant_hessian_action_repair"
+    )
+    assert row["descriptions"]["symplectic"] == "CERTIFIED"
+    assert row["descriptions"]["nonlinear"] == "OBSTRUCTED"
+    assert row["descriptions"]["observational"] == "OBSTRUCTED"
+    assert row["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "OBSTRUCTED"
+    assert "24-coordinate" in row["observer_data"]["survives_gauge_reduction"]["statement"]
+    assert "88-coordinate zero-profile-jet line" in row[
+        "observer_data"
+    ]["observer_source_channel"]["statement"]
+    assert "BERGER_PROFILE_JET_INVARIANT_HESSIAN_ACTION_REPAIR" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }
