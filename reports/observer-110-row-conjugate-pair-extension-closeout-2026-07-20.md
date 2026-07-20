@@ -52,3 +52,6 @@ Tier 0 and scoped Tier 1 passed.  The affected original source-pair chain was
 independently replayed as the Tier-2 rail.  Tier 3 was not required.  The
 advisory Science Forge shadow rail exited zero while reporting pre-existing
 bridge drift, an unpinned dirty Forge build, and corpus-count drift.
+
+CLOSE-OUT: OBSTRUCTED — the exact no-go or first obstruction is certified
+EVIDENCE: BERGER_110_ROW_CONJUGATE_PAIR_EXTENSION_NO_GO_TIER_RECEIPT
