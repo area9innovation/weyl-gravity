@@ -1,0 +1,46 @@
+{
+  "schema": "einstein-team-tier-receipt-v1",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ALL_M_MOMENT_INTERSECTION_V1_TIER_RECEIPT",
+  "claim_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ALL_M_MOMENT_INTERSECTION_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.21,
+      "commands": [
+        "python3 -m py_compile bridge/einstein_sector/einstein_maxwell_weyl_exceptional_all_m_moment_intersection.py bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_all_m_moment_intersection.py bridge/einstein_sector/tests/test_einstein_maxwell_weyl_exceptional_all_m_moment_intersection.py",
+        "python3 -m json.tool <scoped schema, certificate and atlas JSON>",
+        "git diff --check -- <eight scoped deliverable paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 3.46,
+      "commands": [
+        "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_all_m_moment_intersection --check",
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_all_m_moment_intersection.py",
+        "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_all_m_moment_intersection -v",
+        "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-exceptional-all-m-moment-intersection-fragment.json"
+      ],
+      "tests_run": 6,
+      "mutation_controls": [
+        "strict Hamiltonian sign mutation rejected",
+        "positive/negative travel-direction omission rejected",
+        "false real rank-one STF stratum rejected"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "The locked all-m incidence, complete obstruction join, moment-map/Taub bridge, harmonic sign theorem, exceptional self ideal, generic bounded zero block, nonzero-k exceptional current, polar Lee-Wald current and direct difference matrix are unchanged and pinned by exact SHA-256."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a scoped carrier classification, not a repository freeze, release, shared-core change, causal promotion or complete finite-harmonic theorem."
+    }
+  },
+  "claim_boundary": "The receipt covers the exact physical moment/resonance intersection on one locked absolute-momentum carrier only. It does not classify the opposite-direction resonance-only complex variety, larger multiple-|k| unions, causal corrections, all-orders solutions, final residual observables, particles or quantum states."
+}

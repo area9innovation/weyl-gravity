@@ -1,0 +1,92 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This exact result classifies the physical common zero only on one locked |k| exceptional/generic pure-extra carrier, with both travel directions retained when distinct. The strict Hamiltonian Taub row makes uncomputed opposite-direction resonance coefficients redundant for that physical intersection, but their resonance-only complex variety remains open. No unrelated momentum fibre, global tangent, Einstein q-primary, infinite completion, causal/retarded, all-orders, residual, observer, particle, positivity or quantum claim is made.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ALL_M_MOMENT_INTERSECTION_V1.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ALL_M_MOMENT_INTERSECTION_V1",
+          "sha256": "48e782b8f1b37f7b603efdb9cc6b60b71f249fd94c6da99c4eb477613e2683b3"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.exceptional_all_m_locked_moment_intersection",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The one-background k-by-2k locked dispersion and both travel directions are retained without circumference identification.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The transported exceptional and generic-extra current weights are positive and exact.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The co-propagating self and locked rows are exact; opposite-direction coefficients remain unnecessary for, and do not enlarge, the physical common zero.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Every nonzero physical tangent on this carrier fails mu_H; the zero tangent has v=0.",
+            "status": "OBSTRUCTED"
+          },
+          "causal_retarded": {
+            "statement": "No causal/retarded compact-product correction complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Secular terms do not remove the stabilizer/Taub condition.",
+            "status": "OBSTRUCTED"
+          }
+        },
+        "taub_maps": {
+          "statement": "All five maps are explicit; mu_H is strictly negative away from the origin.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compact magnetically supported Plebanski-Hacyan product",
+        "boundaries": "one fixed closed S1_L times S2 before final residual quotient",
+        "carrier": "exceptional axial/polar ell=1 extra modes at momentum s*k and the contributing transported polar-extra e2 ell=2 STF modes at s*2k, with s=+/- retained separately for |k|>0",
+        "charge_sector": "fixed N=2 magnetic bundle",
+        "degree": 2,
+        "ell": "1 and 2 inputs; all quadratically allowed output L",
+        "k": "one allowed |k| on one fixed circumference; k=0 is one fibre and |k|>0 retains independent positive-frequency +/- travelling fibres",
+        "m": "all m in Cartesian V1 and STF V2 coordinates",
+        "omega": "omega=sqrt(k^2+4/3) and 2*omega on the locked generic shell",
+        "parity": "both exceptional parities and the unique contributing generic polar-extra multiplicity; all certified zero branch-parity columns retained",
+        "theory": "Weyl-Maxwell target"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_all_m_moment_intersection.py",
+  "generated_by_sha256": "c751c76ff49c051bef12e98a3fb3dd33dd95f27a61a5adbedf23de13c3b2908b",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_boundary",
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_all_m_moment_intersection --check",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-exceptional-all-m-moment-intersection-fragment.json",
+    "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_all_m_moment_intersection.py"
+  ]
+}
