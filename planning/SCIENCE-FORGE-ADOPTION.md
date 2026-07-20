@@ -214,7 +214,6 @@ git fetch origin master
 
 command -v forge
 command -v s-f
-printf '%s\n' "$SF_PROGRAM"
 ```
 
 Expected tool paths:
@@ -224,11 +223,16 @@ Expected tool paths:
 /home/alstrup/.local/bin/s-f
 ```
 
-Expected programme:
+From this repository or any descendant directory, `s-f` automatically selects:
 
 ```text
 /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/planning/work-items
 ```
+
+Do not set `SF_PROGRAM` for the normal resident workflow. It remains available
+as an explicit one-command override when a coordinator intentionally targets a
+different programme. Non-interactive sessions also suppress terminal-title
+writes automatically; `SF_NO_TITLE=1` is only an optional interactive override.
 
 Record all pre-existing modified and untracked paths. They belong to other
 agents unless proven otherwise. Never reset, stash, overwrite, reformat, or
