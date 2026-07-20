@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/bridge-component-incidence-classification-LEASE-RELEASE-excl-209c8ed1fe26ce36",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/bridge-component-incidence-classification-LEASE-RELEASE-excl-209c8ed1fe26ce36.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "bridge-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T08:56:33Z", "seq": 2, "predecessor": "sf:program/event/bridge-component-incidence-classification-LEASE-ACQUIRE-excl-95a03ece4b8e7ac9", "payload": {"target": "sf:program/work/bridge-component-incidence-classification", "agent": "bridge-1", "lease_type": "exclusive", "action": "RELEASE", "acquired": "2026-07-20T08:56:33Z", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/bridge-component-incidence-classification"}]
+}
