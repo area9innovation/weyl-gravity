@@ -543,7 +543,16 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(flags["BERGER_DILATED_REGULAR_CAUCHY_MORPHISM_LEGS"])
         self.assertTrue(flags["BERGER_FINITE_VOLTERRA_TERMS_MICROLOCALLY_ORIENTED"])
         self.assertTrue(flags["BERGER_HORMANDER_VOLTERRA_CONVERGENCE_GATE_ISOLATED"])
-        self.assertFalse(flags["BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED"])
+        self.assertTrue(flags["BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED"])
+        self.assertTrue(
+            flags["BERGER_CUTOFF_VOLTERRA_TRANSPOSE_NORMAL_CONVERGENCE"]
+        )
+        self.assertTrue(
+            flags["BERGER_CUTOFF_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION"]
+        )
+        self.assertTrue(flags["BERGER_CUTOFF_COMPANION_NULL_CONE_DECOMPOSABLE"])
+        self.assertTrue(flags["BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING"])
+        self.assertFalse(flags["BERGER_FULL_DILATION_HADAMARD_KREIN_COVARIANCE"])
         self.assertTrue(
             flags["BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED"]
         )
@@ -552,7 +561,7 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(
             flags["BERGER_FREE_DILATION_TRANSPOSE_SYMMETRIC_FEYNMAN_PROPAGATOR"]
         )
-        self.assertFalse(flags["BERGER_REGULAR_GREENHYP_MORPHISM"])
+        self.assertTrue(flags["BERGER_REGULAR_GREENHYP_MORPHISM"])
         self.assertTrue(flags["TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED"])
         self.assertTrue(flags["STATIONARY_GENERATOR_IMPORT_CONSUMER_READY"])
         self.assertFalse(flags["HADAMARD_EXISTENCE_THEOREM_APPLIES"])
@@ -564,9 +573,13 @@ class ActiveFrontierTests(unittest.TestCase):
             "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED",
             row["status"],
         )
+        self.assertIn(
+            "CUTOFF_VOLTERRA_NORMAL_CONVERGENCE_DECOMPOSABILITY",
+            row["status"],
+        )
         self.assertEqual(
             row["next_gate"],
-            "PROVE_COMPACT_SLAB_VOLTERRA_CONVERGENCE_IN_DPRIME_GAMMA_NORMAL_TOPOLOGY_THEN_TRANSPORT_NORMALIZED_KREIN_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
+            "TRANSPORT_NORMALIZED_FREE_KREIN_COVARIANCE_ACROSS_THE_TWO_REGULAR_CAUCHY_MORPHISMS_AND_VERIFY_EXACT_CCR",
         )
         algebra_row = self.payload["active_rows"]["free_Lorentzian_algebra"]
         self.assertIn("PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED", algebra_row["status"])

@@ -178,9 +178,10 @@ cutoff causal difference now also has a Schwartz kernel, is a two-sided
 bisolution with no one-sided zero covectors, and is confined factorwise to the
 metric null cone.  The compact-slab map
 `S_chi,eta=[C_chi,eta]E_chi` is regular as a linear time-slice source map.  It
-is not yet the endpoint response morphism.  The next gate is same-orientation
-exclusion and the response-map cone action in the sense of Fewster Theorem
-5.16.  The object-level obstacle is now removed on an auxiliary metric-sector
+is not itself the endpoint response morphism. Compact-slab normal-topology
+convergence of the Volterra series and formal transposes now certifies
+same-orientation exclusion and the response-map cone action in the sense of
+Fewster Theorem 5.16. The object-level obstacle is removed on an auxiliary metric-sector
 carrier: `diag(C,C^dagger)` with the off-diagonal indefinite Hermitian fibre
 metric is RFHGHO, and the past/future agreement regions supply two regular
 Cauchy GreenHyp morphism legs.  A free seed covariance, restriction to the
@@ -190,14 +191,17 @@ separate.  See `BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY`,
 `BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT`, and
 `BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION`.
 
-The next reduction is
-`BERGER_CUTOFF_VOLTERRA_MICROLOCAL_ORIENTATION_REDUCTION`.  Every finite
-same-sided Volterra term stays in the oriented relation
-`Gamma_+/-=Delta union R_+/-`.  The infinite series is not promoted: the
-remaining sufficient gate is compact-slab convergence of the kernels and
-their formal transposes in the normal topology of the fixed
-`D'_Gamma_+/-` space.  The existing all-Sobolev factorial bound does not imply
-that stronger convergence.
+The finite-term reduction
+`BERGER_CUTOFF_VOLTERRA_MICROLOCAL_ORIENTATION_REDUCTION` shows that every
+same-sided Volterra term stays in
+`Gamma_+/-=Delta union R_+/-`. The successor
+`BERGER_CUTOFF_VOLTERRA_NORMAL_TOPOLOGY_CONVERGENCE` proves compact-slab
+convergence of the kernels and their formal transposes in the normal
+topologies of the fixed `D'_Gamma_+/-` spaces using an exact
+polynomial-times-factorial seminorm majorant. Cutoff null-cone
+decomposability and the regular morphisms' cone action are therefore
+certified. The next gate transports the normalized free Krein covariance
+across both morphisms and verifies the exact CCR.
 
 The receiving side of that route is now executable.  The stationary-generator
 import readiness result requires content-addressed exact PBW records for
@@ -337,10 +341,9 @@ Islam--Strohmaier Theorem 1.4 therefore supplies a global Feynman propagator
 and an exact formally self-adjoint Hadamard bisolution.  The form has
 signature \((20,20)\), and the companion Jordan incidence rules out a
 positive-definite symmetrizer on the same auxiliary carrier.  Thus this is a
-global Hadamard bisolution seed, not a positive state.  Transport through the
-cutoff/full regular morphisms still waits on convergence in the fixed
-\(\mathcal D'_{\Gamma_\pm}\) normal topology; Krein CCR normalization,
-graded-BV restriction, the BRST Ward identity and physical-cohomology
+global Hadamard bisolution seed, not a positive state. Normal-topology
+convergence and the morphism cone action are now certified; transport through
+the cutoff/full regular morphisms, graded-BV restriction, the BRST Ward identity and physical-cohomology
 positivity remain separate gates.  The receipt is
 [`berger-free-dilation-hadamard-bisolution-seed.md`](../reports/berger-free-dilation-hadamard-bisolution-seed.md).
 

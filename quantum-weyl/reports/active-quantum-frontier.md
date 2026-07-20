@@ -513,13 +513,17 @@ The direct-route microlocal audit closes the finite differential graph maps
 and local ghost-factor inclusion.  The generic typed Volterra theorem permits
 smooth time dependence, and its Berger specialization now certifies the full
 nonstationary temporal-cutoff companion Green family, both inverse identities,
-causal support and adjoint reversal.  The remaining analytic theorem is
-microlocal propagation through the compact transition slab and the resulting
-compact-support regular GreenHyp response morphism and cone map.  A global
-seed covariance with declared BV/Krein and physical-positivity policy remains
-independently open.  Thus the old six-item ledger has been reduced to one
-microlocal transport theorem plus one covariance choice, without promoting a
-Hadamard flag.
+causal support and adjoint reversal. Every finite same-sided Volterra kernel
+has the required oriented canonical relation. The compact-slab series and
+their formal transposes now converge in the fixed
+\(\mathcal D'_{\Gamma_\pm}\) normal topologies under an exact
+polynomial-times-factorial seminorm majorant. This certifies cutoff null-cone
+decomposability, Pauli--Jordan same-orientation exclusion and the regular
+Cauchy morphisms' cone action. A global exact CCR-normalized Hadamard Krein
+covariance is independently certified on the free rank-40 dilation. Its
+transport across both regular morphisms, restriction to the full graded BV
+carrier, BRST Ward identity and physical positivity remain open. No positive
+state or full-BV Hadamard flag is promoted.
 The generic typed biwave Volterra theorem is now independently imported as
 reusable causal infrastructure. It distinguishes solution- and source-space
 resolvents, proves both factorial bounds and inverse identities, reverses the

@@ -1519,7 +1519,9 @@ BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY [CERTIFIED]
   -> REGULAR_INTERNAL_TIMESLICE_SOURCE_MAP [CERTIFIED]
   -> METRIC_RFHGHO_DILATION + TWO_REGULAR_CAUCHY_MORPHISMS [CERTIFIED]
   -> FREE_DILATION_GLOBAL_HADAMARD_KREIN_CCR_COVARIANCE [CERTIFIED, INDEFINITE]
-  -> morphism cone mapping + same-orientation exclusion + covariance transport
+  -> CUTOFF_DPRIME_GAMMA_NORMAL_CONVERGENCE + DECOMPOSABILITY
+     + MORPHISM_CONE_MAPPING [CERTIFIED]
+  -> normalized Krein covariance transport + exact CCR
   -> restriction to full graded BV carrier + BRST Ward identity
   -> companion Hadamard two-point distribution
 ```
@@ -1545,9 +1547,13 @@ real structure also permits transpose symmetrization of the Feynman
 propagator. After the explicit source-to-project sign map, the resulting
 global distribution obeys the project CCR exactly and is now a normalized
 free Krein covariance. It remains non-positive. The
-active analytic gate is still the regular morphisms' cone action together
-with exclusion of the two same-orientation sectors, followed by transport
-of that covariance. Restriction from
+compact-slab Volterra series and their formal transposes now converge in the
+fixed \(\mathcal D'_{\Gamma_\pm}\) normal topologies by a
+polynomial-times-factorial seminorm majorant. This certifies cutoff
+null-cone decomposability, exclusion of the two same-orientation sectors and
+the regular morphisms' cone action. The active analytic gate is now transport
+of the normalized free Krein covariance across both regular Cauchy morphisms
+with exact CCR verification. Restriction from
 the doubled metric carrier to the full graded BV complex, the BRST Ward
 identity and the physical/Krein positivity policy remain independent gates.
 The fail-closed atlas row remains `OPEN`: no full companion covariance, BRST
@@ -1565,18 +1571,18 @@ The current microlocal boundary is recorded in
 [`berger-cutoff-companion-microlocal-response-preflight.md`](../quantum-weyl/reports/berger-cutoff-companion-microlocal-response-preflight.md).
 The auxiliary RFHGHO carrier and regular endpoint legs are recorded in
 [`berger-cutoff-companion-hermitian-dilation.md`](../quantum-weyl/reports/berger-cutoff-companion-hermitian-dilation.md).
-Every finite same-sided term in the cutoff Volterra series is now certified
-to remain in the oriented canonical relation
-\(\Gamma_\pm=\Delta\cup R_\pm\).  The infinite-series microlocal gate is no
-longer an undifferentiated propagation problem: it is enough to prove, on
-each compact time slab, convergence of the partial-sum kernels and their
-formal transposes in the normal topology of
-\(\mathcal D'_{\Gamma_\pm}\).  The imported factorial estimate gives
-all-Sobolev operator convergence but not this fixed-wavefront convergence.
-Until that stronger statement lands, cutoff decomposability, the regular
-morphism cone action and Hadamard transport remain open.  This reduction is
-recorded in
+Every finite same-sided term in the cutoff Volterra series remains in the
+oriented canonical relation \(\Gamma_\pm=\Delta\cup R_\pm\). The compact-slab
+series and their formal transposes now converge in the normal topology of
+\(\mathcal D'_{\Gamma_\pm}\): the exact seminorm majorant has polynomial
+growth times \(z^n/n!\), and its term ratio tends to zero. Consequently,
+cutoff decomposability and the regular morphism cone action are certified;
+only transport of the normalized covariance and its exact CCR remains at
+this stage. The finite-term reduction is recorded in
 [`berger-cutoff-volterra-microlocal-orientation-reduction.md`](../quantum-weyl/reports/berger-cutoff-volterra-microlocal-orientation-reduction.md).
+The completed normal-topology theorem and its fail-closed transport boundary
+are recorded in
+[`berger-cutoff-volterra-normal-topology-convergence.md`](../quantum-weyl/reports/berger-cutoff-volterra-normal-topology-convergence.md).
 The now-certified independent free global bisolution input and its
 indefinite/positive-state boundary are recorded in
 [`berger-free-dilation-hadamard-bisolution-seed.md`](../quantum-weyl/reports/berger-free-dilation-hadamard-bisolution-seed.md).

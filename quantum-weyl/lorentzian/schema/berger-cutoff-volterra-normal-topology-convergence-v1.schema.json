@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/quantum-weyl/berger-cutoff-volterra-normal-topology-convergence-v1.schema.json",
+  "title": "Berger cutoff Volterra normal-topology convergence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_layer",
+    "dependency_tags", "classical_commit", "setting_id", "dependency_refs",
+    "exact_input_checks", "normal_topology_theorem",
+    "microlocal_consequences", "negative_controls",
+    "literature_provenance", "claim_flags", "next_gate",
+    "provenance", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-cutoff-volterra-normal-topology-convergence-v1"},
+    "result_id": {"const": "BERGER_CUTOFF_VOLTERRA_NORMAL_TOPOLOGY_CONVERGENCE"},
+    "result_state": {"const": "CUTOFF_NORMAL_CONVERGENCE_DECOMPOSABILITY_AND_DILATED_CONE_MAPPING_CERTIFIED_COVARIANCE_TRANSPORT_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_MICROLOCAL_TRANSPORT"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [{"const": "LORENTZIAN-CAUSAL"}],
+      "items": false
+    },
+    "classical_commit": {"type": "string", "minLength": 7},
+    "setting_id": {"type": "string", "minLength": 1},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": {"$ref": "#/$defs/dependency"},
+      "required": [
+        "finite_orientation_reduction", "temporal_cutoff_Green_family",
+        "base_wave_microlocal_input", "finite_typed_Moller_reduction",
+        "Hermitian_dilation_and_regular_legs",
+        "free_Krein_CCR_covariance"
+      ]
+    },
+    "exact_input_checks": {
+      "type": "object",
+      "additionalProperties": {"const": true},
+      "minProperties": 9
+    },
+    "normal_topology_theorem": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "proof_type", "space", "series", "finite_reduction", "term_representation",
+        "seminorm_bound", "completion", "formal_transpose", "replay", "status"
+      ],
+      "properties": {
+        "proof_type": {"const": "ANALYTIC_THEOREM_INSTANTIATION_WITH_EXACT_COMBINATORIAL_MAJORANT_AND_CONTENT_ADDRESSED_OPERATOR_INPUTS"},
+        "status": {"const": "CERTIFIED"},
+        "replay": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": ["checks", "majorant", "negative_control_without_simplex_factor", "all_pass"],
+          "properties": {"all_pass": {"const": true}}
+        }
+      }
+    },
+    "microlocal_consequences": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "cutoff_Green_kernels", "cutoff_Pauli_Jordan",
+        "cutoff_decomposability", "Hermitian_dilation",
+        "regular_morphism_cone_action", "status"
+      ],
+      "properties": {
+        "cutoff_decomposability": {"const": "N_PLUS_MINUS_DECOMPOSABLE"},
+        "status": {"const": "CERTIFIED"}
+      }
+    },
+    "negative_controls": {"type": "object", "additionalProperties": true},
+    "literature_provenance": {
+      "type": "object",
+      "additionalProperties": {"type": "string"},
+      "minProperties": 4
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED",
+        "BERGER_CUTOFF_VOLTERRA_TRANSPOSE_NORMAL_CONVERGENCE",
+        "BERGER_CUTOFF_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION",
+        "BERGER_CUTOFF_COMPANION_NULL_CONE_DECOMPOSABLE",
+        "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING",
+        "BERGER_REGULAR_GREENHYP_MORPHISM",
+        "BERGER_FULL_DILATION_HADAMARD_KREIN_COVARIANCE",
+        "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION",
+        "BERGER_26_ROW_BRST_HADAMARD", "BERGER_54_ROW_BRST_HADAMARD",
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY", "BERGER_HADAMARD_DATA",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED": {"const": true},
+        "BERGER_CUTOFF_VOLTERRA_TRANSPOSE_NORMAL_CONVERGENCE": {"const": true},
+        "BERGER_CUTOFF_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION": {"const": true},
+        "BERGER_CUTOFF_COMPANION_NULL_CONE_DECOMPOSABLE": {"const": true},
+        "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING": {"const": true},
+        "BERGER_REGULAR_GREENHYP_MORPHISM": {"const": true},
+        "BERGER_FULL_DILATION_HADAMARD_KREIN_COVARIANCE": {"const": false},
+        "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": {"const": false},
+        "BERGER_26_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_54_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": {"const": false},
+        "BERGER_HADAMARD_DATA": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "TRANSPORT_NORMALIZED_FREE_KREIN_COVARIANCE_ACROSS_THE_TWO_REGULAR_CAUCHY_MORPHISMS_AND_VERIFY_EXACT_CCR"},
+    "provenance": {"type": "object", "additionalProperties": true},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

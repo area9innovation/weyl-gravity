@@ -1104,7 +1104,7 @@
       }
     },
     {
-      "claim_boundary": "The 26/54-row causal carrier and all 10,816 coefficients of A104 are imported. Finite graph wavefront safety, local ghost factors, the cutoff Green family, factorwise-null Pauli-Jordan control, a regular internal time-slice source map, a metric-sector RFHGHO dilation, two regular endpoint morphism legs and orientation of every finite same-sided Volterra term are certified. A global exact Hadamard bisolution exists on the free rank-40 dilation; transpose symmetrization and the explicit convention map normalize its antisymmetric part exactly to i times the project Pauli-Jordan operator. Its fibre form has signature (20,20), so this is a Krein covariance, not a positive state. The infinite-series step is reduced to convergence in a fixed D'_Gamma normal topology; that convergence, hence cone action and same-orientation exclusion, transport of the normalized covariance, and restriction to the full graded BV carrier remain absent. The tautological stationary q_Cauchy graph lift is independently rejected by 157 square and 207 evolution-commutator defects. No physical mode, complex structure, full-BV Hadamard state, or particle is inferred.",
+      "claim_boundary": "The 26/54-row causal carrier and all 10,816 coefficients of A104 are imported. Finite graph wavefront safety, local ghost factors, the cutoff Green family, factorwise-null Pauli-Jordan control, a regular internal time-slice source map, a metric-sector RFHGHO dilation, two regular endpoint morphism legs and orientation of every finite same-sided Volterra term are certified. The compact-slab Volterra series and its formal transpose converge in the fixed D'_Gamma normal topologies by an exact polynomial-times-factorial seminorm majorant. This certifies cutoff null-cone decomposability, Pauli-Jordan same-orientation exclusion and the regular morphisms' cone action. A global exact Hadamard bisolution exists on the free rank-40 dilation; transpose symmetrization and the explicit convention map normalize its antisymmetric part exactly to i times the project Pauli-Jordan operator. Its fibre form has signature (20,20), so this is a Krein covariance, not a positive state. Transport of the normalized covariance and exact CCR across the two regular Cauchy morphisms, followed by restriction to the full graded BV carrier, remain absent. The tautological stationary q_Cauchy graph lift is independently rejected by 157 square and 207 evolution-commutator defects. No physical mode, complex structure, full-BV Hadamard state, or particle is inferred.",
       "descriptions": {
         "causal": "CERTIFIED",
         "nonlinear": "OPEN",
@@ -1147,6 +1147,11 @@
           "path": "quantum-weyl/lorentzian/certificates/BERGER_CUTOFF_VOLTERRA_MICROLOCAL_ORIENTATION_REDUCTION.json",
           "result_id": "BERGER_CUTOFF_VOLTERRA_MICROLOCAL_ORIENTATION_REDUCTION",
           "sha256": "b155d51b5f0355446a427bc5ade9f1ce51b5efab15768acf72e57908088cbe70"
+        },
+        {
+          "path": "quantum-weyl/lorentzian/certificates/BERGER_CUTOFF_VOLTERRA_NORMAL_TOPOLOGY_CONVERGENCE.json",
+          "result_id": "BERGER_CUTOFF_VOLTERRA_NORMAL_TOPOLOGY_CONVERGENCE",
+          "sha256": "aed2b58a68215738986511cb4796ae75b37aa8b1f2d0373d7c15b08567d8aa3f"
         },
         {
           "path": "quantum-weyl/lorentzian/certificates/BERGER_FREE_DILATION_HADAMARD_BISOLUTION_SEED.json",
@@ -1223,7 +1228,7 @@
           "status": "NO_CERTIFIED_MAP"
         },
         "Hadamard_two_point_function": {
-          "statement": "finite graph wavefront safety, local ghost factors, the smooth cutoff Green family, its factorwise-null Pauli-Jordan kernel, a regular internal time-slice source map, a metric-sector RFHGHO dilation, two regular Cauchy morphism legs, orientation of every finite same-sided Volterra term and a globally Hadamard, exactly CCR-normalized free-dilation Krein covariance are certified; convergence in the fixed D'_Gamma normal topology, hence infinite-series same-orientation exclusion and morphism cone mapping, plus transport of that covariance, restriction to the full graded BV carrier and BRST Ward identities remain open",
+          "statement": "finite graph wavefront safety, local ghost factors, the smooth cutoff Green family, its factorwise-null Pauli-Jordan kernel, a regular internal time-slice source map, a metric-sector RFHGHO dilation, two regular Cauchy morphism legs, orientation of every finite same-sided Volterra term, compact-slab convergence of the Volterra kernels and formal transposes in the fixed D'_Gamma normal topology, cutoff null-cone decomposability, same-orientation exclusion, morphism cone mapping and a globally Hadamard, exactly CCR-normalized free-dilation Krein covariance are certified; transport of that covariance, restriction to the full graded BV carrier and BRST Ward identities remain open",
           "status": "OPEN"
         },
         "anomaly_QME_dependency": {
@@ -3520,7 +3525,7 @@
     }
   ],
   "generated_by": "quantum-weyl/atlas/generate_quantum_atlas_fragment.py",
-  "generated_by_sha256": "fb7e48b5a10283ba096cbb3f50d22fdae1db8cf66921418d1110c569e3afd4b2",
+  "generated_by_sha256": "54bb9c2dbdccaf318092b1a0aa23ef42475a64cb903b624ba06539bd5eaea727",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

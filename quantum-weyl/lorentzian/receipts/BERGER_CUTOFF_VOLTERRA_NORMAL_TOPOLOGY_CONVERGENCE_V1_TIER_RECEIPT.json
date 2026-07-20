@@ -1,0 +1,62 @@
+{
+  "schema": "quantum-weyl-test-tier-receipt-v1",
+  "result_id": "BERGER_CUTOFF_VOLTERRA_NORMAL_TOPOLOGY_CONVERGENCE_V1_TIER_RECEIPT",
+  "recorded_at_utc": "2026-07-20T07:11:00Z",
+  "base_commit": "c9372084",
+  "dependency_tags": ["LORENTZIAN-CAUSAL"],
+  "changed_claim": "After the exact typed triangular reduction absorbs the order-two incidence, the remaining order-zero cutoff Volterra kernels and formal transposes converge on compact slabs in the fixed normal wavefront topologies; cutoff null-cone decomposability, Pauli-Jordan same-orientation exclusion and regular-morphism cone mapping follow.",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 1.06,
+      "commands": [
+        "python -m py_compile quantum-weyl/active_frontier.py quantum-weyl/atlas/generate_quantum_atlas_fragment.py quantum-weyl/lorentzian/berger_cutoff_volterra_normal_topology_convergence.py quantum-weyl/lorentzian/berger_cutoff_volterra_normal_topology_convergence_certificate.py quantum-weyl/lorentzian/verify_berger_cutoff_volterra_normal_topology_convergence.py",
+        "python -m json.tool quantum-weyl/schema/active-frontier-v1.schema.json",
+        "git diff --check -- quantum-weyl notes/d-quotient-quantum-team-brief.md notes/universe-building-roadmap.md"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 7.55,
+      "tests_run": 24,
+      "commands": [
+        "PYTHONPATH=quantum-weyl python -m lorentzian.berger_cutoff_volterra_normal_topology_convergence_certificate --check",
+        "PYTHONPATH=quantum-weyl python -m lorentzian.verify_berger_cutoff_volterra_normal_topology_convergence",
+        "PYTHONPATH=quantum-weyl python quantum-weyl/verify_active_frontier.py",
+        "PYTHONPATH=quantum-weyl python -m atlas.verify_quantum_atlas_fragment",
+        "PYTHONPATH=quantum-weyl python -m unittest quantum-weyl/lorentzian/tests/test_berger_cutoff_volterra_normal_topology_convergence.py quantum-weyl/tests/test_active_frontier.py quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py -v"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The affected Volterra certificate, active-frontier ledger and generated quantum-atlas chain were regenerated and independently verified. Typed companion, cutoff Green, finite-orientation and free-covariance inputs remained content-addressed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No positive/full-BV state, lifecycle freeze, shared core-algebra change or release."
+    }
+  },
+  "diagnostic_attempts": [
+    {
+      "status": "EXPECTED_COMMAND_SHAPE_FAILURE",
+      "command": "PYTHONPATH=quantum-weyl python quantum-weyl/lorentzian/berger_cutoff_volterra_normal_topology_convergence_certificate.py --check",
+      "finding": "The package-relative import requires module invocation; the successful command is recorded in tier_1."
+    },
+    {
+      "status": "TEST_FAILURE_REPAIRED",
+      "finding": "The first affected-chain run exposed one stale atlas phrase assertion. The generated statement was restored to retain the finite-term provenance and the complete 24-test chain then passed."
+    }
+  ],
+  "science_forge_shadow": {
+    "status": "ADVISORY_EXIT_ZERO_WITH_FINDINGS",
+    "command": "./ci/science-forge-shadow.sh",
+    "elapsed_seconds": 6.89,
+    "findings": [
+      "bridge certificate audit drift=FAIL",
+      "coverage census drift: 1178 certificates versus baseline 976",
+      "forge checkout revision differs from the unpinned dirty development binary"
+    ],
+    "claim_use": "NOT_USED_FOR_PROMOTION"
+  },
+  "claim_boundary": "This is a compact-slab microlocal convergence and regular-morphism cone theorem on the cutoff Hermitian dilation. It does not transport the normalized free covariance, construct a cutoff/full covariance, prove positivity, restrict to the graded BV carrier, establish a BRST Ward identity, construct renormalized Lorentzian products or restore a Lorentzian QME."
+}

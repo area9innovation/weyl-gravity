@@ -36,6 +36,7 @@ DEPENDENCIES = {
     "Berger_cutoff_microlocal_response": QROOT / "lorentzian/certificates/BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT.json",
     "Berger_cutoff_Hermitian_dilation": QROOT / "lorentzian/certificates/BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION.json",
     "Berger_cutoff_Volterra_orientation_reduction": QROOT / "lorentzian/certificates/BERGER_CUTOFF_VOLTERRA_MICROLOCAL_ORIENTATION_REDUCTION.json",
+    "Berger_cutoff_Volterra_normal_convergence": QROOT / "lorentzian/certificates/BERGER_CUTOFF_VOLTERRA_NORMAL_TOPOLOGY_CONVERGENCE.json",
     "Berger_free_dilation_Hadamard_seed": QROOT / "lorentzian/certificates/BERGER_FREE_DILATION_HADAMARD_BISOLUTION_SEED.json",
     "Berger_free_dilation_Krein_covariance": QROOT / "lorentzian/certificates/BERGER_FREE_DILATION_KREIN_CCR_COVARIANCE.json",
     "Berger_A104_complete": QROOT / "lorentzian/certificates/BERGER_A104_ENDPOINT_COMPLETION.json",
@@ -212,6 +213,9 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     cutoff_dilation = values["Berger_cutoff_Hermitian_dilation"]
     cutoff_orientation_reduction = values[
         "Berger_cutoff_Volterra_orientation_reduction"
+    ]
+    cutoff_normal_convergence = values[
+        "Berger_cutoff_Volterra_normal_convergence"
     ]
     free_dilation_seed = values["Berger_free_dilation_Hadamard_seed"]
     free_dilation_covariance = values["Berger_free_dilation_Krein_covariance"]
@@ -414,6 +418,28 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         or free_dilation_covariance.get("claim_flags", {}).get(
             "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION"
         ) is not False
+        or cutoff_normal_convergence.get("result_state")
+        != "CUTOFF_NORMAL_CONVERGENCE_DECOMPOSABILITY_AND_DILATED_CONE_MAPPING_CERTIFIED_COVARIANCE_TRANSPORT_OPEN"
+        or cutoff_normal_convergence.get("claim_flags", {}).get(
+            "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED"
+        ) is not True
+        or cutoff_normal_convergence.get("claim_flags", {}).get(
+            "BERGER_CUTOFF_VOLTERRA_TRANSPOSE_NORMAL_CONVERGENCE"
+        ) is not True
+        or cutoff_normal_convergence.get("claim_flags", {}).get(
+            "BERGER_CUTOFF_COMPANION_NULL_CONE_DECOMPOSABLE"
+        ) is not True
+        or cutoff_normal_convergence.get("claim_flags", {}).get(
+            "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING"
+        ) is not True
+        or cutoff_normal_convergence.get("claim_flags", {}).get(
+            "BERGER_REGULAR_GREENHYP_MORPHISM"
+        ) is not True
+        or cutoff_normal_convergence.get("claim_flags", {}).get(
+            "BERGER_FULL_DILATION_HADAMARD_KREIN_COVARIANCE"
+        ) is not False
+        or cutoff_normal_convergence.get("next_gate")
+        != "TRANSPORT_NORMALIZED_FREE_KREIN_COVARIANCE_ACROSS_THE_TWO_REGULAR_CAUCHY_MORPHISMS_AND_VERIFY_EXACT_CCR"
         or berger_a104.get("claim_flags", {}).get("BERGER_FULL_A104_CAUCHY_OPERATOR")
         is not True
         or berger_a104.get("coverage", {}).get("known_coordinates") != 10816
@@ -1165,15 +1191,15 @@ def _berger_gap(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             exactness=("NO_CERTIFIED_MAP", "no per-mode cohomology ledger"),
             pairing=("NO_CERTIFIED_MAP", "carrier pairing has no modewise restriction"),
             complex_structure=("OPEN", "the canonical q_Cauchy graph lift is exactly rejected; corrected lift, Cauchy/Krein form, real structure and closed spectral splitting remain open"),
-            hadamard=("OPEN", "finite graph wavefront safety, local ghost factors, the smooth cutoff Green family, its factorwise-null Pauli-Jordan kernel, a regular internal time-slice source map, a metric-sector RFHGHO dilation, two regular Cauchy morphism legs, orientation of every finite same-sided Volterra term and a globally Hadamard, exactly CCR-normalized free-dilation Krein covariance are certified; convergence in the fixed D'_Gamma normal topology, hence infinite-series same-orientation exclusion and morphism cone mapping, plus transport of that covariance, restriction to the full graded BV carrier and BRST Ward identities remain open"),
+            hadamard=("OPEN", "finite graph wavefront safety, local ghost factors, the smooth cutoff Green family, its factorwise-null Pauli-Jordan kernel, a regular internal time-slice source map, a metric-sector RFHGHO dilation, two regular Cauchy morphism legs, orientation of every finite same-sided Volterra term, compact-slab convergence of the Volterra kernels and formal transposes in the fixed D'_Gamma normal topology, cutoff null-cone decomposability, same-orientation exclusion, morphism cone mapping and a globally Hadamard, exactly CCR-normalized free-dilation Krein covariance are certified; transport of that covariance, restriction to the full graded BV carrier and BRST Ward identities remain open"),
             state_space=("OPEN", "reduced Krein evidence does not define a Berger physical state space"),
             qme=("OBSTRUCTED", "strict fixed-field-content local Euclidean QME is obstructed"),
             lifecycle=("OBSTRUCTED", "classical causal import remains; strict interacting quantum lifecycle is blocked"),
             particle=("NO_CERTIFIED_MAP", "no mode basis or Hadamard state"),
             crosswalk=("NO_CERTIFIED_MAP", "retained 26 rows to stationary physical modes"),
         ),
-        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Berger_Hadamard_regular_morphism_boundary", "Berger_temporal_cutoff_Green_family", "Berger_cutoff_microlocal_response", "Berger_cutoff_Hermitian_dilation", "Berger_cutoff_Volterra_orientation_reduction", "Berger_free_dilation_Hadamard_seed", "Berger_free_dilation_Krein_covariance", "Berger_A104_complete", "Berger_graph_q_obstruction", "Slavnov_preflight", "regulated_Slavnov_breaking"),
-        "The 26/54-row causal carrier and all 10,816 coefficients of A104 are imported. Finite graph wavefront safety, local ghost factors, the cutoff Green family, factorwise-null Pauli-Jordan control, a regular internal time-slice source map, a metric-sector RFHGHO dilation, two regular endpoint morphism legs and orientation of every finite same-sided Volterra term are certified. A global exact Hadamard bisolution exists on the free rank-40 dilation; transpose symmetrization and the explicit convention map normalize its antisymmetric part exactly to i times the project Pauli-Jordan operator. Its fibre form has signature (20,20), so this is a Krein covariance, not a positive state. The infinite-series step is reduced to convergence in a fixed D'_Gamma normal topology; that convergence, hence cone action and same-orientation exclusion, transport of the normalized covariance, and restriction to the full graded BV carrier remain absent. The tautological stationary q_Cauchy graph lift is independently rejected by 157 square and 207 evolution-commutator defects. No physical mode, complex structure, full-BV Hadamard state, or particle is inferred.",
+        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Berger_Hadamard_regular_morphism_boundary", "Berger_temporal_cutoff_Green_family", "Berger_cutoff_microlocal_response", "Berger_cutoff_Hermitian_dilation", "Berger_cutoff_Volterra_orientation_reduction", "Berger_cutoff_Volterra_normal_convergence", "Berger_free_dilation_Hadamard_seed", "Berger_free_dilation_Krein_covariance", "Berger_A104_complete", "Berger_graph_q_obstruction", "Slavnov_preflight", "regulated_Slavnov_breaking"),
+        "The 26/54-row causal carrier and all 10,816 coefficients of A104 are imported. Finite graph wavefront safety, local ghost factors, the cutoff Green family, factorwise-null Pauli-Jordan control, a regular internal time-slice source map, a metric-sector RFHGHO dilation, two regular endpoint morphism legs and orientation of every finite same-sided Volterra term are certified. The compact-slab Volterra series and its formal transpose converge in the fixed D'_Gamma normal topologies by an exact polynomial-times-factorial seminorm majorant. This certifies cutoff null-cone decomposability, Pauli-Jordan same-orientation exclusion and the regular morphisms' cone action. A global exact Hadamard bisolution exists on the free rank-40 dilation; transpose symmetrization and the explicit convention map normalize its antisymmetric part exactly to i times the project Pauli-Jordan operator. Its fibre form has signature (20,20), so this is a Krein covariance, not a positive state. Transport of the normalized covariance and exact CCR across the two regular Cauchy morphisms, followed by restriction to the full graded BV carrier, remain absent. The tautological stationary q_Cauchy graph lift is independently rejected by 157 square and 207 evolution-commutator defects. No physical mode, complex structure, full-BV Hadamard state, or particle is inferred.",
     )
 
 

@@ -1,0 +1,1476 @@
+{
+  "claim_boundary": "Certifies compact-slab convergence of the cutoff companion Volterra kernels and their formal transposes in the fixed D'_Gamma normal topologies. Hence the cutoff Pauli--Jordan kernel is null-cone decomposable and the two regular dilated Cauchy morphism legs have the required cone action. It does not yet transport the free Krein covariance, restrict a covariance to the raw companion or full graded BV carrier, verify BRST Ward identities, establish positivity, define renormalized Lorentzian products, restore a Lorentzian QME or construct a quantum theory.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": false,
+    "BERGER_CUTOFF_COMPANION_NULL_CONE_DECOMPOSABLE": true,
+    "BERGER_CUTOFF_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION": true,
+    "BERGER_CUTOFF_VOLTERRA_TRANSPOSE_NORMAL_CONVERGENCE": true,
+    "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING": true,
+    "BERGER_FULL_DILATION_HADAMARD_KREIN_COVARIANCE": false,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED": true,
+    "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+    "BERGER_REGULAR_GREENHYP_MORPHISM": true,
+    "QUANTUM_CLAIM": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "dependency_refs": {
+    "Hermitian_dilation_and_regular_legs": {
+      "result_id": "BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION",
+      "sha256": "72a02a8335ac5d3010ddc7785a2e7dc6028bf139b282b61f7fbb4dc5340d64d9"
+    },
+    "base_wave_microlocal_input": {
+      "result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+      "sha256": "1a2bb5b124734a5aa63fdd8c1285d4847b8ff5ea02aed8d6b840db19dfe23fc1"
+    },
+    "finite_orientation_reduction": {
+      "result_id": "BERGER_CUTOFF_VOLTERRA_MICROLOCAL_ORIENTATION_REDUCTION",
+      "sha256": "b155d51b5f0355446a427bc5ade9f1ce51b5efab15768acf72e57908088cbe70"
+    },
+    "finite_typed_Moller_reduction": {
+      "result_id": "BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT",
+      "sha256": "9c4380d0b1c640b7b6ff44a564da0ca9194635fead9c8f2c2a7436869279c126"
+    },
+    "free_Krein_CCR_covariance": {
+      "result_id": "BERGER_FREE_DILATION_KREIN_CCR_COVARIANCE",
+      "sha256": "34ef69351b814f678fd63f646b41f2c260aee204256c81587cfeedf25c10b16c"
+    },
+    "temporal_cutoff_Green_family": {
+      "result_id": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY",
+      "sha256": "dbc451c1d16aec72d41f5e6f690cd898c74083bb8d28915575d4d7fe89b33961"
+    }
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_input_checks": {
+    "all_finite_same_sided_terms_oriented": true,
+    "base_wave_blocks_normally_hyperbolic": true,
+    "base_wave_positive_frequency_relation_certified": true,
+    "cutoff_factorization_has_order_zero_infinite_incidence": true,
+    "finite_order_two_triangular_reduction_exact": true,
+    "normal_convergence_was_previously_open": true,
+    "normalized_free_Krein_covariance_available": true,
+    "regular_dilated_Cauchy_legs_available": true,
+    "smooth_temporal_cutoff_family_Green_hyperbolic": true
+  },
+  "lifecycle_layer": "LORENTZIAN_MICROLOCAL_TRANSPORT",
+  "literature_provenance": {
+    "Hadamard_transport": "Fewster, Hadamard States for Decomposable Green-Hyperbolic Operators, arXiv:2503.12537, Lemmas 5.14--5.15 and Theorem 5.16",
+    "normal_operations": "Brouder--Dang--Helein, Continuity of the fundamental operations on distributions having a specified wave front set, arXiv:1409.7662, Theorems 19, 28, 31--33",
+    "normal_space": "Dabrowski--Brouder, Functional properties of H\u00f6rmander's space of distributions having a specified wavefront set, arXiv:1308.1061",
+    "wave_FIO_input": "standard compact-slab normally-hyperbolic Cauchy evolution as a smooth bounded family of Fourier integral operators"
+  },
+  "microlocal_consequences": {
+    "Hermitian_dilation": "direct sum with the formal-adjoint block preserves decomposability",
+    "cutoff_Green_kernels": "WF'(G_Cchi,sign) subset Delta union R_sign",
+    "cutoff_Pauli_Jordan": "WF(E_Cchi) subset (N_plus x N_minus) union (N_minus x N_plus)",
+    "cutoff_decomposability": "N_PLUS_MINUS_DECOMPOSABLE",
+    "regular_morphism_cone_action": "the local Cauchy commutators and oriented Green kernels satisfy the cone action in Fewster Theorem 5.16",
+    "status": "CERTIFIED"
+  },
+  "negative_controls": {
+    "drop_normal_space_completeness": {
+      "all_pass": false,
+      "checks": {
+        "Dprime_Gamma_normal_space_is_complete": false,
+        "compact_slab_wave_evolution_is_bounded_FIO_family": true,
+        "finite_chart_and_block_alphabet_has_exponential_growth": true,
+        "finite_triangular_Vchi_reduction_precedes_infinite_series": true,
+        "fixed_normal_seminorm_has_only_polynomial_Leibniz_growth": true,
+        "formal_transpose_reverses_to_opposite_oriented_family": true,
+        "infinite_incidence_is_constant_order_zero": true,
+        "normal_tensor_multiplication_and_proper_pushforward_control": true,
+        "ordered_time_simplex_supplies_inverse_factorial": true
+      },
+      "majorant": {
+        "absolute_summability": true,
+        "derivative_order_r": 4,
+        "eventually_below_one_in_sample": true,
+        "majorant": "A_p binomial(n+r_p,r_p)(B_p |I|)^n/n!",
+        "normalized_z": {
+          "denominator": 2,
+          "numerator": 5
+        },
+        "ratio_formula": "a_(n+1)/a_n=z(n+r+1)/(n+1)^2 -> 0",
+        "ratio_tends_to_zero": true,
+        "sample_ratios": [
+          {
+            "denominator": 2,
+            "numerator": 25
+          },
+          {
+            "denominator": 4,
+            "numerator": 15
+          },
+          {
+            "denominator": 18,
+            "numerator": 35
+          },
+          {
+            "denominator": 4,
+            "numerator": 5
+          },
+          {
+            "denominator": 10,
+            "numerator": 9
+          },
+          {
+            "denominator": 36,
+            "numerator": 25
+          },
+          {
+            "denominator": 98,
+            "numerator": 55
+          },
+          {
+            "denominator": 32,
+            "numerator": 15
+          },
+          {
+            "denominator": 162,
+            "numerator": 65
+          },
+          {
+            "denominator": 20,
+            "numerator": 7
+          },
+          {
+            "denominator": 242,
+            "numerator": 75
+          },
+          {
+            "denominator": 18,
+            "numerator": 5
+          },
+          {
+            "denominator": 338,
+            "numerator": 85
+          },
+          {
+            "denominator": 196,
+            "numerator": 45
+          },
+          {
+            "denominator": 90,
+            "numerator": 19
+          },
+          {
+            "denominator": 128,
+            "numerator": 25
+          },
+          {
+            "denominator": 578,
+            "numerator": 105
+          },
+          {
+            "denominator": 324,
+            "numerator": 55
+          }
+        ],
+        "sample_values": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 25
+          },
+          {
+            "denominator": 8,
+            "numerator": 375
+          },
+          {
+            "denominator": 48,
+            "numerator": 4375
+          },
+          {
+            "denominator": 192,
+            "numerator": 21875
+          },
+          {
+            "denominator": 128,
+            "numerator": 13125
+          },
+          {
+            "denominator": 1536,
+            "numerator": 109375
+          },
+          {
+            "denominator": 21504,
+            "numerator": 859375
+          },
+          {
+            "denominator": 229376,
+            "numerator": 4296875
+          },
+          {
+            "denominator": 37158912,
+            "numerator": 279296875
+          },
+          {
+            "denominator": 21233664,
+            "numerator": 55859375
+          },
+          {
+            "denominator": 155713536,
+            "numerator": 126953125
+          },
+          {
+            "denominator": 2802843648,
+            "numerator": 634765625
+          },
+          {
+            "denominator": 72873934848,
+            "numerator": 4150390625
+          },
+          {
+            "denominator": 1587032358912,
+            "numerator": 20751953125
+          },
+          {
+            "denominator": 28566582460416,
+            "numerator": 78857421875
+          },
+          {
+            "denominator": 3656522554933248,
+            "numerator": 1971435546875
+          },
+          {
+            "denominator": 5920084136558592,
+            "numerator": 579833984375
+          },
+          {
+            "denominator": 174373387294998528,
+            "numerator": 2899169921875
+          }
+        ]
+      },
+      "negative_control_without_simplex_factor": {
+        "absolute_summability": false,
+        "derivative_order_r": 4,
+        "eventually_below_one_in_sample": false,
+        "majorant": "A_p binomial(n+r_p,r_p)(B_p |I|)^n",
+        "normalized_z": {
+          "denominator": 2,
+          "numerator": 5
+        },
+        "ratio_formula": "a_(n+1)/a_n=z(n+r+1)/(n+1) -> z",
+        "ratio_tends_to_zero": false,
+        "sample_ratios": [
+          {
+            "denominator": 2,
+            "numerator": 25
+          },
+          {
+            "denominator": 2,
+            "numerator": 15
+          },
+          {
+            "denominator": 6,
+            "numerator": 35
+          },
+          {
+            "denominator": 1,
+            "numerator": 5
+          },
+          {
+            "denominator": 2,
+            "numerator": 9
+          },
+          {
+            "denominator": 6,
+            "numerator": 25
+          },
+          {
+            "denominator": 14,
+            "numerator": 55
+          },
+          {
+            "denominator": 4,
+            "numerator": 15
+          },
+          {
+            "denominator": 18,
+            "numerator": 65
+          },
+          {
+            "denominator": 2,
+            "numerator": 7
+          },
+          {
+            "denominator": 22,
+            "numerator": 75
+          },
+          {
+            "denominator": 3,
+            "numerator": 10
+          },
+          {
+            "denominator": 26,
+            "numerator": 85
+          },
+          {
+            "denominator": 14,
+            "numerator": 45
+          },
+          {
+            "denominator": 6,
+            "numerator": 19
+          },
+          {
+            "denominator": 8,
+            "numerator": 25
+          },
+          {
+            "denominator": 34,
+            "numerator": 105
+          },
+          {
+            "denominator": 18,
+            "numerator": 55
+          }
+        ],
+        "sample_values": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 25
+          },
+          {
+            "denominator": 4,
+            "numerator": 375
+          },
+          {
+            "denominator": 8,
+            "numerator": 4375
+          },
+          {
+            "denominator": 8,
+            "numerator": 21875
+          },
+          {
+            "denominator": 16,
+            "numerator": 196875
+          },
+          {
+            "denominator": 32,
+            "numerator": 1640625
+          },
+          {
+            "denominator": 64,
+            "numerator": 12890625
+          },
+          {
+            "denominator": 256,
+            "numerator": 193359375
+          },
+          {
+            "denominator": 512,
+            "numerator": 1396484375
+          },
+          {
+            "denominator": 1024,
+            "numerator": 9775390625
+          },
+          {
+            "denominator": 2048,
+            "numerator": 66650390625
+          },
+          {
+            "denominator": 1024,
+            "numerator": 111083984375
+          },
+          {
+            "denominator": 2048,
+            "numerator": 726318359375
+          },
+          {
+            "denominator": 4096,
+            "numerator": 4669189453125
+          },
+          {
+            "denominator": 8192,
+            "numerator": 29571533203125
+          },
+          {
+            "denominator": 65536,
+            "numerator": 739288330078125
+          },
+          {
+            "denominator": 131072,
+            "numerator": 4566192626953125
+          },
+          {
+            "denominator": 262144,
+            "numerator": 27904510498046875
+          }
+        ]
+      }
+    },
+    "drop_transpose_reversal": {
+      "all_pass": false,
+      "checks": {
+        "Dprime_Gamma_normal_space_is_complete": true,
+        "compact_slab_wave_evolution_is_bounded_FIO_family": true,
+        "finite_chart_and_block_alphabet_has_exponential_growth": true,
+        "finite_triangular_Vchi_reduction_precedes_infinite_series": true,
+        "fixed_normal_seminorm_has_only_polynomial_Leibniz_growth": true,
+        "formal_transpose_reverses_to_opposite_oriented_family": false,
+        "infinite_incidence_is_constant_order_zero": true,
+        "normal_tensor_multiplication_and_proper_pushforward_control": true,
+        "ordered_time_simplex_supplies_inverse_factorial": true
+      },
+      "majorant": {
+        "absolute_summability": true,
+        "derivative_order_r": 4,
+        "eventually_below_one_in_sample": true,
+        "majorant": "A_p binomial(n+r_p,r_p)(B_p |I|)^n/n!",
+        "normalized_z": {
+          "denominator": 2,
+          "numerator": 5
+        },
+        "ratio_formula": "a_(n+1)/a_n=z(n+r+1)/(n+1)^2 -> 0",
+        "ratio_tends_to_zero": true,
+        "sample_ratios": [
+          {
+            "denominator": 2,
+            "numerator": 25
+          },
+          {
+            "denominator": 4,
+            "numerator": 15
+          },
+          {
+            "denominator": 18,
+            "numerator": 35
+          },
+          {
+            "denominator": 4,
+            "numerator": 5
+          },
+          {
+            "denominator": 10,
+            "numerator": 9
+          },
+          {
+            "denominator": 36,
+            "numerator": 25
+          },
+          {
+            "denominator": 98,
+            "numerator": 55
+          },
+          {
+            "denominator": 32,
+            "numerator": 15
+          },
+          {
+            "denominator": 162,
+            "numerator": 65
+          },
+          {
+            "denominator": 20,
+            "numerator": 7
+          },
+          {
+            "denominator": 242,
+            "numerator": 75
+          },
+          {
+            "denominator": 18,
+            "numerator": 5
+          },
+          {
+            "denominator": 338,
+            "numerator": 85
+          },
+          {
+            "denominator": 196,
+            "numerator": 45
+          },
+          {
+            "denominator": 90,
+            "numerator": 19
+          },
+          {
+            "denominator": 128,
+            "numerator": 25
+          },
+          {
+            "denominator": 578,
+            "numerator": 105
+          },
+          {
+            "denominator": 324,
+            "numerator": 55
+          }
+        ],
+        "sample_values": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 25
+          },
+          {
+            "denominator": 8,
+            "numerator": 375
+          },
+          {
+            "denominator": 48,
+            "numerator": 4375
+          },
+          {
+            "denominator": 192,
+            "numerator": 21875
+          },
+          {
+            "denominator": 128,
+            "numerator": 13125
+          },
+          {
+            "denominator": 1536,
+            "numerator": 109375
+          },
+          {
+            "denominator": 21504,
+            "numerator": 859375
+          },
+          {
+            "denominator": 229376,
+            "numerator": 4296875
+          },
+          {
+            "denominator": 37158912,
+            "numerator": 279296875
+          },
+          {
+            "denominator": 21233664,
+            "numerator": 55859375
+          },
+          {
+            "denominator": 155713536,
+            "numerator": 126953125
+          },
+          {
+            "denominator": 2802843648,
+            "numerator": 634765625
+          },
+          {
+            "denominator": 72873934848,
+            "numerator": 4150390625
+          },
+          {
+            "denominator": 1587032358912,
+            "numerator": 20751953125
+          },
+          {
+            "denominator": 28566582460416,
+            "numerator": 78857421875
+          },
+          {
+            "denominator": 3656522554933248,
+            "numerator": 1971435546875
+          },
+          {
+            "denominator": 5920084136558592,
+            "numerator": 579833984375
+          },
+          {
+            "denominator": 174373387294998528,
+            "numerator": 2899169921875
+          }
+        ]
+      },
+      "negative_control_without_simplex_factor": {
+        "absolute_summability": false,
+        "derivative_order_r": 4,
+        "eventually_below_one_in_sample": false,
+        "majorant": "A_p binomial(n+r_p,r_p)(B_p |I|)^n",
+        "normalized_z": {
+          "denominator": 2,
+          "numerator": 5
+        },
+        "ratio_formula": "a_(n+1)/a_n=z(n+r+1)/(n+1) -> z",
+        "ratio_tends_to_zero": false,
+        "sample_ratios": [
+          {
+            "denominator": 2,
+            "numerator": 25
+          },
+          {
+            "denominator": 2,
+            "numerator": 15
+          },
+          {
+            "denominator": 6,
+            "numerator": 35
+          },
+          {
+            "denominator": 1,
+            "numerator": 5
+          },
+          {
+            "denominator": 2,
+            "numerator": 9
+          },
+          {
+            "denominator": 6,
+            "numerator": 25
+          },
+          {
+            "denominator": 14,
+            "numerator": 55
+          },
+          {
+            "denominator": 4,
+            "numerator": 15
+          },
+          {
+            "denominator": 18,
+            "numerator": 65
+          },
+          {
+            "denominator": 2,
+            "numerator": 7
+          },
+          {
+            "denominator": 22,
+            "numerator": 75
+          },
+          {
+            "denominator": 3,
+            "numerator": 10
+          },
+          {
+            "denominator": 26,
+            "numerator": 85
+          },
+          {
+            "denominator": 14,
+            "numerator": 45
+          },
+          {
+            "denominator": 6,
+            "numerator": 19
+          },
+          {
+            "denominator": 8,
+            "numerator": 25
+          },
+          {
+            "denominator": 34,
+            "numerator": 105
+          },
+          {
+            "denominator": 18,
+            "numerator": 55
+          }
+        ],
+        "sample_values": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 25
+          },
+          {
+            "denominator": 4,
+            "numerator": 375
+          },
+          {
+            "denominator": 8,
+            "numerator": 4375
+          },
+          {
+            "denominator": 8,
+            "numerator": 21875
+          },
+          {
+            "denominator": 16,
+            "numerator": 196875
+          },
+          {
+            "denominator": 32,
+            "numerator": 1640625
+          },
+          {
+            "denominator": 64,
+            "numerator": 12890625
+          },
+          {
+            "denominator": 256,
+            "numerator": 193359375
+          },
+          {
+            "denominator": 512,
+            "numerator": 1396484375
+          },
+          {
+            "denominator": 1024,
+            "numerator": 9775390625
+          },
+          {
+            "denominator": 2048,
+            "numerator": 66650390625
+          },
+          {
+            "denominator": 1024,
+            "numerator": 111083984375
+          },
+          {
+            "denominator": 2048,
+            "numerator": 726318359375
+          },
+          {
+            "denominator": 4096,
+            "numerator": 4669189453125
+          },
+          {
+            "denominator": 8192,
+            "numerator": 29571533203125
+          },
+          {
+            "denominator": 65536,
+            "numerator": 739288330078125
+          },
+          {
+            "denominator": 131072,
+            "numerator": 4566192626953125
+          },
+          {
+            "denominator": 262144,
+            "numerator": 27904510498046875
+          }
+        ]
+      }
+    },
+    "leave_order_two_operator_in_infinite_incidence": {
+      "all_pass": false,
+      "checks": {
+        "Dprime_Gamma_normal_space_is_complete": true,
+        "compact_slab_wave_evolution_is_bounded_FIO_family": true,
+        "finite_chart_and_block_alphabet_has_exponential_growth": true,
+        "finite_triangular_Vchi_reduction_precedes_infinite_series": true,
+        "fixed_normal_seminorm_has_only_polynomial_Leibniz_growth": true,
+        "formal_transpose_reverses_to_opposite_oriented_family": true,
+        "infinite_incidence_is_constant_order_zero": false,
+        "normal_tensor_multiplication_and_proper_pushforward_control": true,
+        "ordered_time_simplex_supplies_inverse_factorial": true
+      },
+      "majorant": {
+        "absolute_summability": true,
+        "derivative_order_r": 4,
+        "eventually_below_one_in_sample": true,
+        "majorant": "A_p binomial(n+r_p,r_p)(B_p |I|)^n/n!",
+        "normalized_z": {
+          "denominator": 2,
+          "numerator": 5
+        },
+        "ratio_formula": "a_(n+1)/a_n=z(n+r+1)/(n+1)^2 -> 0",
+        "ratio_tends_to_zero": true,
+        "sample_ratios": [
+          {
+            "denominator": 2,
+            "numerator": 25
+          },
+          {
+            "denominator": 4,
+            "numerator": 15
+          },
+          {
+            "denominator": 18,
+            "numerator": 35
+          },
+          {
+            "denominator": 4,
+            "numerator": 5
+          },
+          {
+            "denominator": 10,
+            "numerator": 9
+          },
+          {
+            "denominator": 36,
+            "numerator": 25
+          },
+          {
+            "denominator": 98,
+            "numerator": 55
+          },
+          {
+            "denominator": 32,
+            "numerator": 15
+          },
+          {
+            "denominator": 162,
+            "numerator": 65
+          },
+          {
+            "denominator": 20,
+            "numerator": 7
+          },
+          {
+            "denominator": 242,
+            "numerator": 75
+          },
+          {
+            "denominator": 18,
+            "numerator": 5
+          },
+          {
+            "denominator": 338,
+            "numerator": 85
+          },
+          {
+            "denominator": 196,
+            "numerator": 45
+          },
+          {
+            "denominator": 90,
+            "numerator": 19
+          },
+          {
+            "denominator": 128,
+            "numerator": 25
+          },
+          {
+            "denominator": 578,
+            "numerator": 105
+          },
+          {
+            "denominator": 324,
+            "numerator": 55
+          }
+        ],
+        "sample_values": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 25
+          },
+          {
+            "denominator": 8,
+            "numerator": 375
+          },
+          {
+            "denominator": 48,
+            "numerator": 4375
+          },
+          {
+            "denominator": 192,
+            "numerator": 21875
+          },
+          {
+            "denominator": 128,
+            "numerator": 13125
+          },
+          {
+            "denominator": 1536,
+            "numerator": 109375
+          },
+          {
+            "denominator": 21504,
+            "numerator": 859375
+          },
+          {
+            "denominator": 229376,
+            "numerator": 4296875
+          },
+          {
+            "denominator": 37158912,
+            "numerator": 279296875
+          },
+          {
+            "denominator": 21233664,
+            "numerator": 55859375
+          },
+          {
+            "denominator": 155713536,
+            "numerator": 126953125
+          },
+          {
+            "denominator": 2802843648,
+            "numerator": 634765625
+          },
+          {
+            "denominator": 72873934848,
+            "numerator": 4150390625
+          },
+          {
+            "denominator": 1587032358912,
+            "numerator": 20751953125
+          },
+          {
+            "denominator": 28566582460416,
+            "numerator": 78857421875
+          },
+          {
+            "denominator": 3656522554933248,
+            "numerator": 1971435546875
+          },
+          {
+            "denominator": 5920084136558592,
+            "numerator": 579833984375
+          },
+          {
+            "denominator": 174373387294998528,
+            "numerator": 2899169921875
+          }
+        ]
+      },
+      "negative_control_without_simplex_factor": {
+        "absolute_summability": false,
+        "derivative_order_r": 4,
+        "eventually_below_one_in_sample": false,
+        "majorant": "A_p binomial(n+r_p,r_p)(B_p |I|)^n",
+        "normalized_z": {
+          "denominator": 2,
+          "numerator": 5
+        },
+        "ratio_formula": "a_(n+1)/a_n=z(n+r+1)/(n+1) -> z",
+        "ratio_tends_to_zero": false,
+        "sample_ratios": [
+          {
+            "denominator": 2,
+            "numerator": 25
+          },
+          {
+            "denominator": 2,
+            "numerator": 15
+          },
+          {
+            "denominator": 6,
+            "numerator": 35
+          },
+          {
+            "denominator": 1,
+            "numerator": 5
+          },
+          {
+            "denominator": 2,
+            "numerator": 9
+          },
+          {
+            "denominator": 6,
+            "numerator": 25
+          },
+          {
+            "denominator": 14,
+            "numerator": 55
+          },
+          {
+            "denominator": 4,
+            "numerator": 15
+          },
+          {
+            "denominator": 18,
+            "numerator": 65
+          },
+          {
+            "denominator": 2,
+            "numerator": 7
+          },
+          {
+            "denominator": 22,
+            "numerator": 75
+          },
+          {
+            "denominator": 3,
+            "numerator": 10
+          },
+          {
+            "denominator": 26,
+            "numerator": 85
+          },
+          {
+            "denominator": 14,
+            "numerator": 45
+          },
+          {
+            "denominator": 6,
+            "numerator": 19
+          },
+          {
+            "denominator": 8,
+            "numerator": 25
+          },
+          {
+            "denominator": 34,
+            "numerator": 105
+          },
+          {
+            "denominator": 18,
+            "numerator": 55
+          }
+        ],
+        "sample_values": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 25
+          },
+          {
+            "denominator": 4,
+            "numerator": 375
+          },
+          {
+            "denominator": 8,
+            "numerator": 4375
+          },
+          {
+            "denominator": 8,
+            "numerator": 21875
+          },
+          {
+            "denominator": 16,
+            "numerator": 196875
+          },
+          {
+            "denominator": 32,
+            "numerator": 1640625
+          },
+          {
+            "denominator": 64,
+            "numerator": 12890625
+          },
+          {
+            "denominator": 256,
+            "numerator": 193359375
+          },
+          {
+            "denominator": 512,
+            "numerator": 1396484375
+          },
+          {
+            "denominator": 1024,
+            "numerator": 9775390625
+          },
+          {
+            "denominator": 2048,
+            "numerator": 66650390625
+          },
+          {
+            "denominator": 1024,
+            "numerator": 111083984375
+          },
+          {
+            "denominator": 2048,
+            "numerator": 726318359375
+          },
+          {
+            "denominator": 4096,
+            "numerator": 4669189453125
+          },
+          {
+            "denominator": 8192,
+            "numerator": 29571533203125
+          },
+          {
+            "denominator": 65536,
+            "numerator": 739288330078125
+          },
+          {
+            "denominator": 131072,
+            "numerator": 4566192626953125
+          },
+          {
+            "denominator": 262144,
+            "numerator": 27904510498046875
+          }
+        ]
+      }
+    }
+  },
+  "next_gate": "TRANSPORT_NORMALIZED_FREE_KREIN_COVARIANCE_ACROSS_THE_TWO_REGULAR_CAUCHY_MORPHISMS_AND_VERIFY_EXACT_CCR",
+  "normal_topology_theorem": {
+    "completion": "absolute convergence in every defining normal seminorm plus completeness of D'_Gamma gives a unique kernel limit",
+    "finite_reduction": "V_chi is absorbed by the square-zero finite triangular solution/source maps before the infinite series; N=[[0,-I10],[0,0]] is constant and order zero",
+    "formal_transpose": "factor reversal gives the same bound in D'_(Gamma_opposite)",
+    "proof_type": "ANALYTIC_THEOREM_INSTANTIATION_WITH_EXACT_COMBINATORIAL_MAJORANT_AND_CONTENT_ADDRESSED_OPERATOR_INPUTS",
+    "replay": {
+      "all_pass": true,
+      "checks": {
+        "Dprime_Gamma_normal_space_is_complete": true,
+        "compact_slab_wave_evolution_is_bounded_FIO_family": true,
+        "finite_chart_and_block_alphabet_has_exponential_growth": true,
+        "finite_triangular_Vchi_reduction_precedes_infinite_series": true,
+        "fixed_normal_seminorm_has_only_polynomial_Leibniz_growth": true,
+        "formal_transpose_reverses_to_opposite_oriented_family": true,
+        "infinite_incidence_is_constant_order_zero": true,
+        "normal_tensor_multiplication_and_proper_pushforward_control": true,
+        "ordered_time_simplex_supplies_inverse_factorial": true
+      },
+      "majorant": {
+        "absolute_summability": true,
+        "derivative_order_r": 4,
+        "eventually_below_one_in_sample": true,
+        "majorant": "A_p binomial(n+r_p,r_p)(B_p |I|)^n/n!",
+        "normalized_z": {
+          "denominator": 2,
+          "numerator": 5
+        },
+        "ratio_formula": "a_(n+1)/a_n=z(n+r+1)/(n+1)^2 -> 0",
+        "ratio_tends_to_zero": true,
+        "sample_ratios": [
+          {
+            "denominator": 2,
+            "numerator": 25
+          },
+          {
+            "denominator": 4,
+            "numerator": 15
+          },
+          {
+            "denominator": 18,
+            "numerator": 35
+          },
+          {
+            "denominator": 4,
+            "numerator": 5
+          },
+          {
+            "denominator": 10,
+            "numerator": 9
+          },
+          {
+            "denominator": 36,
+            "numerator": 25
+          },
+          {
+            "denominator": 98,
+            "numerator": 55
+          },
+          {
+            "denominator": 32,
+            "numerator": 15
+          },
+          {
+            "denominator": 162,
+            "numerator": 65
+          },
+          {
+            "denominator": 20,
+            "numerator": 7
+          },
+          {
+            "denominator": 242,
+            "numerator": 75
+          },
+          {
+            "denominator": 18,
+            "numerator": 5
+          },
+          {
+            "denominator": 338,
+            "numerator": 85
+          },
+          {
+            "denominator": 196,
+            "numerator": 45
+          },
+          {
+            "denominator": 90,
+            "numerator": 19
+          },
+          {
+            "denominator": 128,
+            "numerator": 25
+          },
+          {
+            "denominator": 578,
+            "numerator": 105
+          },
+          {
+            "denominator": 324,
+            "numerator": 55
+          }
+        ],
+        "sample_values": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 25
+          },
+          {
+            "denominator": 8,
+            "numerator": 375
+          },
+          {
+            "denominator": 48,
+            "numerator": 4375
+          },
+          {
+            "denominator": 192,
+            "numerator": 21875
+          },
+          {
+            "denominator": 128,
+            "numerator": 13125
+          },
+          {
+            "denominator": 1536,
+            "numerator": 109375
+          },
+          {
+            "denominator": 21504,
+            "numerator": 859375
+          },
+          {
+            "denominator": 229376,
+            "numerator": 4296875
+          },
+          {
+            "denominator": 37158912,
+            "numerator": 279296875
+          },
+          {
+            "denominator": 21233664,
+            "numerator": 55859375
+          },
+          {
+            "denominator": 155713536,
+            "numerator": 126953125
+          },
+          {
+            "denominator": 2802843648,
+            "numerator": 634765625
+          },
+          {
+            "denominator": 72873934848,
+            "numerator": 4150390625
+          },
+          {
+            "denominator": 1587032358912,
+            "numerator": 20751953125
+          },
+          {
+            "denominator": 28566582460416,
+            "numerator": 78857421875
+          },
+          {
+            "denominator": 3656522554933248,
+            "numerator": 1971435546875
+          },
+          {
+            "denominator": 5920084136558592,
+            "numerator": 579833984375
+          },
+          {
+            "denominator": 174373387294998528,
+            "numerator": 2899169921875
+          }
+        ]
+      },
+      "negative_control_without_simplex_factor": {
+        "absolute_summability": false,
+        "derivative_order_r": 4,
+        "eventually_below_one_in_sample": false,
+        "majorant": "A_p binomial(n+r_p,r_p)(B_p |I|)^n",
+        "normalized_z": {
+          "denominator": 2,
+          "numerator": 5
+        },
+        "ratio_formula": "a_(n+1)/a_n=z(n+r+1)/(n+1) -> z",
+        "ratio_tends_to_zero": false,
+        "sample_ratios": [
+          {
+            "denominator": 2,
+            "numerator": 25
+          },
+          {
+            "denominator": 2,
+            "numerator": 15
+          },
+          {
+            "denominator": 6,
+            "numerator": 35
+          },
+          {
+            "denominator": 1,
+            "numerator": 5
+          },
+          {
+            "denominator": 2,
+            "numerator": 9
+          },
+          {
+            "denominator": 6,
+            "numerator": 25
+          },
+          {
+            "denominator": 14,
+            "numerator": 55
+          },
+          {
+            "denominator": 4,
+            "numerator": 15
+          },
+          {
+            "denominator": 18,
+            "numerator": 65
+          },
+          {
+            "denominator": 2,
+            "numerator": 7
+          },
+          {
+            "denominator": 22,
+            "numerator": 75
+          },
+          {
+            "denominator": 3,
+            "numerator": 10
+          },
+          {
+            "denominator": 26,
+            "numerator": 85
+          },
+          {
+            "denominator": 14,
+            "numerator": 45
+          },
+          {
+            "denominator": 6,
+            "numerator": 19
+          },
+          {
+            "denominator": 8,
+            "numerator": 25
+          },
+          {
+            "denominator": 34,
+            "numerator": 105
+          },
+          {
+            "denominator": 18,
+            "numerator": 55
+          }
+        ],
+        "sample_values": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 25
+          },
+          {
+            "denominator": 4,
+            "numerator": 375
+          },
+          {
+            "denominator": 8,
+            "numerator": 4375
+          },
+          {
+            "denominator": 8,
+            "numerator": 21875
+          },
+          {
+            "denominator": 16,
+            "numerator": 196875
+          },
+          {
+            "denominator": 32,
+            "numerator": 1640625
+          },
+          {
+            "denominator": 64,
+            "numerator": 12890625
+          },
+          {
+            "denominator": 256,
+            "numerator": 193359375
+          },
+          {
+            "denominator": 512,
+            "numerator": 1396484375
+          },
+          {
+            "denominator": 1024,
+            "numerator": 9775390625
+          },
+          {
+            "denominator": 2048,
+            "numerator": 66650390625
+          },
+          {
+            "denominator": 1024,
+            "numerator": 111083984375
+          },
+          {
+            "denominator": 2048,
+            "numerator": 726318359375
+          },
+          {
+            "denominator": 4096,
+            "numerator": 4669189453125
+          },
+          {
+            "denominator": 8192,
+            "numerator": 29571533203125
+          },
+          {
+            "denominator": 65536,
+            "numerator": 739288330078125
+          },
+          {
+            "denominator": 131072,
+            "numerator": 4566192626953125
+          },
+          {
+            "denominator": 262144,
+            "numerator": 27904510498046875
+          }
+        ]
+      }
+    },
+    "seminorm_bound": "p(K_n)<=A_p binomial(n+r_p,r_p)(B_p |I|)^n/n!",
+    "series": "G_Cchi,sign=sum_(n>=0)(-1)^n(G0_chi,sign N)^n G0_chi,sign",
+    "space": "D'_Gamma_sign on each compact slab, Gamma_sign=Delta union R_sign",
+    "status": "CERTIFIED",
+    "term_representation": "finite sums of proper push-forwards over ordered time simplices of compact-parameter wave-FIO families and smooth local insertions"
+  },
+  "provenance": {
+    "cutoff_result_id": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY",
+    "dilation_result_id": "BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION",
+    "free_covariance_result_id": "BERGER_FREE_DILATION_KREIN_CCR_COVARIANCE",
+    "orientation_result_id": "BERGER_CUTOFF_VOLTERRA_MICROLOCAL_ORIENTATION_REDUCTION",
+    "source_manifest": {
+      "../reports/berger-cutoff-volterra-normal-topology-convergence.md": "3f489b000b5d85df3b4804ed0131e6896604c279889699b322fba3dec8552608",
+      "berger_cutoff_volterra_normal_topology_convergence.py": "4297746d5ad213c4fe222b4d4971f8191f6e6bd23170601687e35cbe94fd0bd5",
+      "berger_cutoff_volterra_normal_topology_convergence_certificate.py": "c1889635cc7d65e19b2ab3197927adc6637b266d8773d867de7a84dd8a64b59a",
+      "schema/berger-cutoff-volterra-normal-topology-convergence-v1.schema.json": "34b5d4962cb9b0cc4a0b8452797501fbd11cb245f839278d02d73d9579843500",
+      "tests/test_berger_cutoff_volterra_normal_topology_convergence.py": "ff1b0b353baaa7d398145bb41ba26a000883cd8eeb7e7521040a83a816ae7d5c",
+      "verify_berger_cutoff_volterra_normal_topology_convergence.py": "b3c97838bba5a8b1025953592c8e7128e9116c0868c05605f99318151e84b1ec"
+    },
+    "source_manifest_sha256": "1c96dd0ed4a6242739b5b890ef3213ef99b8af37c2ee97bc749fd0a483afd1bb",
+    "typed_Moller_result_id": "BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT"
+  },
+  "result_id": "BERGER_CUTOFF_VOLTERRA_NORMAL_TOPOLOGY_CONVERGENCE",
+  "result_state": "CUTOFF_NORMAL_CONVERGENCE_DECOMPOSABILITY_AND_DILATED_CONE_MAPPING_CERTIFIED_COVARIANCE_TRANSPORT_OPEN",
+  "schema": "quantum-weyl-berger-cutoff-volterra-normal-topology-convergence-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

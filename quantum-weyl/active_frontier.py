@@ -140,6 +140,7 @@ DEPENDENCIES = {
     "cutoff_companion_microlocal_response_preflight": HERE / "lorentzian/certificates/BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT.json",
     "cutoff_companion_Hermitian_dilation": HERE / "lorentzian/certificates/BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION.json",
     "cutoff_Volterra_microlocal_orientation_reduction": HERE / "lorentzian/certificates/BERGER_CUTOFF_VOLTERRA_MICROLOCAL_ORIENTATION_REDUCTION.json",
+    "cutoff_Volterra_normal_topology_convergence": HERE / "lorentzian/certificates/BERGER_CUTOFF_VOLTERRA_NORMAL_TOPOLOGY_CONVERGENCE.json",
     "free_dilation_Hadamard_bisolution_seed": HERE / "lorentzian/certificates/BERGER_FREE_DILATION_HADAMARD_BISOLUTION_SEED.json",
     "free_dilation_Krein_CCR_covariance": HERE / "lorentzian/certificates/BERGER_FREE_DILATION_KREIN_CCR_COVARIANCE.json",
     "typed_biwave_Volterra_theorem": HERE / "lorentzian/certificates/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORT.json",
@@ -207,6 +208,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "cutoff_companion_microlocal_response_preflight": "CUTOFF_FACTORWISE_NULL_KERNEL_AND_REGULAR_TIMESLICE_SOURCE_MAP_CERTIFIED_ORIENTATION_AND_GREENHYP_RESPONSE_OPEN",
         "cutoff_companion_Hermitian_dilation": "METRIC_COMPANION_RFHGHO_DILATION_AND_TWO_REGULAR_CAUCHY_MORPHISMS_CERTIFIED_CONE_ACTION_AND_STATE_OPEN",
         "cutoff_Volterra_microlocal_orientation_reduction": "FINITE_VOLTERRA_TERMS_ORIENTED_SINGLE_HORMANDER_CONVERGENCE_GATE_OPEN",
+        "cutoff_Volterra_normal_topology_convergence": "CUTOFF_NORMAL_CONVERGENCE_DECOMPOSABILITY_AND_DILATED_CONE_MAPPING_CERTIFIED_COVARIANCE_TRANSPORT_OPEN",
         "free_dilation_Hadamard_bisolution_seed": "GLOBAL_FREE_DILATION_HADAMARD_BISOLUTION_EXISTS_POSITIVE_STATE_AND_BV_RESTRICTION_OPEN",
         "free_dilation_Krein_CCR_covariance": "FREE_DILATION_GLOBAL_HADAMARD_KREIN_COVARIANCE_CCR_NORMALIZED_POSITIVE_STATE_AND_BV_TRANSPORT_OPEN",
         "typed_biwave_Volterra_theorem": "CONDITIONAL_TYPED_BIWAVE_GREEN_THEOREM_IMPORTED_HADAMARD_AND_PHYSICAL_NORMAL_FORM_OPEN",
@@ -2638,6 +2640,41 @@ def _load() -> dict[str, dict[str, Any]]:
         != "PROVE_DPRIME_GAMMA_VOLTERRA_CONVERGENCE_THEN_TRANSPORT_NORMALIZED_KREIN_COVARIANCE_TO_FULL_DILATION"
     ):
         raise ValueError("free-dilation Krein-CCR covariance frontier drifted")
+    normal_convergence = values["cutoff_Volterra_normal_topology_convergence"]
+    normal_convergence_flags = normal_convergence.get("claim_flags", {})
+    if (
+        normal_convergence.get("result_state")
+        != "CUTOFF_NORMAL_CONVERGENCE_DECOMPOSABILITY_AND_DILATED_CONE_MAPPING_CERTIFIED_COVARIANCE_TRANSPORT_OPEN"
+        or normal_convergence_flags.get(
+            "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED"
+        )
+        is not True
+        or normal_convergence_flags.get(
+            "BERGER_CUTOFF_VOLTERRA_TRANSPOSE_NORMAL_CONVERGENCE"
+        )
+        is not True
+        or normal_convergence_flags.get(
+            "BERGER_CUTOFF_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION"
+        )
+        is not True
+        or normal_convergence_flags.get(
+            "BERGER_CUTOFF_COMPANION_NULL_CONE_DECOMPOSABLE"
+        )
+        is not True
+        or normal_convergence_flags.get(
+            "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING"
+        )
+        is not True
+        or normal_convergence_flags.get("BERGER_REGULAR_GREENHYP_MORPHISM")
+        is not True
+        or normal_convergence_flags.get(
+            "BERGER_FULL_DILATION_HADAMARD_KREIN_COVARIANCE"
+        )
+        is not False
+        or normal_convergence.get("next_gate")
+        != "TRANSPORT_NORMALIZED_FREE_KREIN_COVARIANCE_ACROSS_THE_TWO_REGULAR_CAUCHY_MORPHISMS_AND_VERIFY_EXACT_CCR"
+    ):
+        raise ValueError("cutoff Volterra normal-topology frontier drifted")
     typed_biwave = values["typed_biwave_Volterra_theorem"]
     typed_flags = typed_biwave.get("claim_flags", {})
     if (
@@ -2763,8 +2800,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "CONSTRUCT_PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER_AND_SAME_BACKGROUND_BV_MEASURE_LEDGER",
             },
             "free_Lorentzian_state": {
-                "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_FREE_DILATION_GLOBAL_HADAMARD_KREIN_CCR_COVARIANCE_AND_FINITE_VOLTERRA_ORIENTATION_CERTIFIED_POSITIVE_STATE_TRANSPORT_AND_FULL_GRADED_BV_OPEN",
-                "next_gate": "PROVE_COMPACT_SLAB_VOLTERRA_CONVERGENCE_IN_DPRIME_GAMMA_NORMAL_TOPOLOGY_THEN_TRANSPORT_NORMALIZED_KREIN_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
+                "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_FREE_DILATION_GLOBAL_HADAMARD_KREIN_CCR_COVARIANCE_CUTOFF_VOLTERRA_NORMAL_CONVERGENCE_DECOMPOSABILITY_AND_REGULAR_MORPHISM_CONE_MAPPING_CERTIFIED_COVARIANCE_TRANSPORT_POSITIVE_STATE_AND_FULL_GRADED_BV_OPEN",
+                "next_gate": "TRANSPORT_NORMALIZED_FREE_KREIN_COVARIANCE_ACROSS_THE_TWO_REGULAR_CAUCHY_MORPHISMS_AND_VERIFY_EXACT_CCR",
             },
             "free_Lorentzian_algebra": {
                 "status": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED_AND_GAUGE_INVARIANT_OBSERVABLE_CAUSAL_PROPAGATOR_DEFINED_AUTONOMOUS_GREEN_AND_HADAMARD_STATE_OPEN",
@@ -2886,12 +2923,17 @@ def build() -> dict[str, Any]:
             "BERGER_DILATED_REGULAR_CAUCHY_MORPHISM_LEGS": True,
             "BERGER_FINITE_VOLTERRA_TERMS_MICROLOCALLY_ORIENTED": True,
             "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_GATE_ISOLATED": True,
-            "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED": False,
+            "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED": True,
+            "BERGER_CUTOFF_VOLTERRA_TRANSPOSE_NORMAL_CONVERGENCE": True,
+            "BERGER_CUTOFF_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION": True,
+            "BERGER_CUTOFF_COMPANION_NULL_CONE_DECOMPOSABLE": True,
+            "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING": True,
+            "BERGER_FULL_DILATION_HADAMARD_KREIN_COVARIANCE": False,
             "BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED": True,
             "BERGER_FREE_DILATION_POSITIVE_HADAMARD_STATE": False,
             "BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED": True,
             "BERGER_FREE_DILATION_TRANSPOSE_SYMMETRIC_FEYNMAN_PROPAGATOR": True,
-            "BERGER_REGULAR_GREENHYP_MORPHISM": False,
+            "BERGER_REGULAR_GREENHYP_MORPHISM": True,
             "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED": True,
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY": True,
             "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED": True,
@@ -3047,7 +3089,7 @@ def build() -> dict[str, Any]:
         "ordered_next_gates": [
             "CONSTRUCT_PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER_AND_SAME_BACKGROUND_BV_MEASURE_LEDGER",
             "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_REPOSITORY_FORM_FACTORS",
-            "PROVE_COMPACT_SLAB_VOLTERRA_CONVERGENCE_IN_DPRIME_GAMMA_NORMAL_TOPOLOGY_THEN_CONSTRUCT_FREE_SEED_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
+            "TRANSPORT_NORMALIZED_FREE_KREIN_COVARIANCE_ACROSS_THE_TWO_REGULAR_CAUCHY_MORPHISMS_AND_VERIFY_EXACT_CCR",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_REGULAR_GREENHYP_RESPONSE_MORPHISM_AND_GLOBAL_SEED_COVARIANCE",
@@ -3341,11 +3383,12 @@ def build() -> dict[str, Any]:
             "map. A canonical off-diagonal indefinite Hermitian dilation now turns the free, "
             "cutoff and full metric companions into RFHGHO objects, and the two endpoint "
             "agreement regions supply regular Cauchy GreenHyp morphism legs. Every finite "
-            "same-sided Volterra term now has the correct oriented canonical relation. The "
-            "remaining infinite-series theorem is convergence of those kernels and their "
-            "formal transposes in the fixed D'_Gamma normal topology; the existing all-Sobolev "
-            "factorial estimate does not imply it. That single sufficient gate would give "
-            "cutoff decomposability and the morphism cone action. Independently, the free "
+            "same-sided Volterra term has the correct oriented canonical relation, and the "
+            "compact-slab Volterra series and its formal transpose now converge in the fixed "
+            "D'_Gamma normal topologies by an exact polynomial-times-factorial seminorm "
+            "majorant. This certifies cutoff null-cone decomposability, Pauli--Jordan "
+            "same-orientation exclusion, and the two regular morphisms' cone action. "
+            "Independently, the free "
             "rank-40 Hermitian dilation now satisfies the hypotheses of the global "
             "normally-hyperbolic Feynman theorem, so an exact formally self-adjoint "
             "Hadamard bisolution seed exists. Transpose symmetrization and the explicit "
@@ -3353,7 +3396,8 @@ def build() -> dict[str, Any]:
             "the project Pauli--Jordan operator, giving a normalized free Krein covariance. "
             "Its fibre form has signature (20,20), and "
             "the companion Jordan incidence rules out a positive-definite symmetrizer on "
-            "that same auxiliary carrier. Transport, graded-BV "
+            "that same auxiliary carrier. Transport of the normalized covariance across "
+            "the regular Cauchy morphisms, graded-BV "
             "restriction, the BRST Ward identity and physical-cohomology positivity remain open. "
             "The exact stationary-carrier import consumer is ready, but no classical manifest "
             "has been supplied and finite PBW data do not decide spectral isolation of zero. "
@@ -3470,7 +3514,20 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("BERGER_HORMANDER_VOLTERRA_CONVERGENCE_GATE_ISOLATED")
         is not True
         or flags.get("BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED")
+        is not True
+        or flags.get("BERGER_CUTOFF_VOLTERRA_TRANSPOSE_NORMAL_CONVERGENCE")
+        is not True
+        or flags.get(
+            "BERGER_CUTOFF_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION"
+        )
+        is not True
+        or flags.get("BERGER_CUTOFF_COMPANION_NULL_CONE_DECOMPOSABLE")
+        is not True
+        or flags.get("BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING")
+        is not True
+        or flags.get("BERGER_FULL_DILATION_HADAMARD_KREIN_COVARIANCE")
         is not False
+        or flags.get("BERGER_REGULAR_GREENHYP_MORPHISM") is not True
         or flags.get("BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED")
         is not True
         or flags.get("BERGER_FREE_DILATION_POSITIVE_HADAMARD_STATE")
@@ -3773,6 +3830,12 @@ def validate(result: dict[str, Any]) -> None:
             "BERGER_DILATED_REGULAR_CAUCHY_MORPHISM_LEGS",
             "BERGER_FINITE_VOLTERRA_TERMS_MICROLOCALLY_ORIENTED",
             "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_GATE_ISOLATED",
+            "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED",
+            "BERGER_CUTOFF_VOLTERRA_TRANSPOSE_NORMAL_CONVERGENCE",
+            "BERGER_CUTOFF_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION",
+            "BERGER_CUTOFF_COMPANION_NULL_CONE_DECOMPOSABLE",
+            "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING",
+            "BERGER_REGULAR_GREENHYP_MORPHISM",
             "BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED",
             "BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED",
             "BERGER_FREE_DILATION_TRANSPOSE_SYMMETRIC_FEYNMAN_PROPAGATOR",
