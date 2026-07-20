@@ -15,7 +15,7 @@ COVERAGE = (
     / "paper/12-pure-weyl-one-loop-bv-anomaly-science-forge-paper-coverage.json"
 )
 EXPECTED_MANUSCRIPT_SHA256 = (
-    "05e3e844f765f797caa27c239abbe80fe4d5a393e1932822f57b3d6bf210dae3"
+    "d1a5fccfb25a6656bff1b9dea489e52cd23db2a36ed4301c5db087b3e95bf817"
 )
 ALL_LOOP_INPUT_SHA256 = (
     "3649925e44d99bea0020f3d1c20a16c54a44f6c9714a3c273c20a6e6d8f84dbc"
@@ -99,7 +99,9 @@ def main() -> None:
         "repository has not constructed an all-order regulator or subtraction scheme",
         "Regulator and measure status",
         "operatorname{Ber}_{\\rm BV}^{(N)}",
-        "Candidate~A's auxiliary-scalaron parent has",
+        "Candidate~A's auxiliary-scalaron parent is a scoped classical obstruction",
+        "Candidate~B's reducible three-form parent is also a scoped classical obstruction",
+        "do not prove a universal no-go for compensator repairs",
     ]
     for fragment in required_manuscript_fragments:
         assert fragment in normalized_manuscript, fragment
@@ -226,8 +228,30 @@ def main() -> None:
         "four_dimensional_receiver": "CLASSIFIED",
         "actual_four_dimensional_regulator": "NOT_CONSTRUCTED",
         "candidate_A_classical": "OBSTRUCTED",
-        "candidate_B_classical": "UNDER_TEST_NOT_IMPORTED",
+        "candidate_B_classical": "OBSTRUCTED",
+        "candidate_actions_selected": False,
+        "candidate_hessians_imported": False,
+        "candidate_pair_scope": "TWO_DECLARED_MINIMAL_REPAIRS_ONLY_NOT_UNIVERSAL_COMPENSATOR_NO_GO",
         "scheme_equivalence": "NO_CERTIFIED_SCHEME_EQUIVALENCE_MAP",
+    }
+    assert payload["classical_candidate_evidence"] == {
+        "candidate_A": {
+            "result_id": "COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1",
+            "result_commit": "5c642e2ad14d45f6074b1327c69707b7b9b08f5d",
+            "close_commit": "218cd5ad9",
+            "sha256": "889c3c2870bb2b28dfe2e4e510526f8644c0b7358884d07fcad351199ae747c6",
+            "lifecycle": "OBSTRUCTED",
+            "imported_hessian": False,
+        },
+        "candidate_B": {
+            "result_id": "COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1",
+            "result_commit": "cc0e0036c6acce2bc3d8ba81057031d90a71333a",
+            "close_commit": "c7af7b707",
+            "sha256": "e8a8aeb97398c3b8812b20118daa56850e32a516bf4e9db15c00b99cec7a8faa",
+            "lifecycle": "OBSTRUCTED",
+            "imported_hessian": False,
+        },
+        "universal_compensator_no_go": False,
     }
     claims = payload["certified_claims"]
     assert claims["strict_quotient_scope"] == "REGULAR_BACH_LOCUS"
@@ -645,7 +669,7 @@ def main() -> None:
     assert claims["physical_Hessian_triangle_integrated_channel_count"] == 11
     assert claims["physical_Hessian_triangle_corner_count"] == 33
     assert claims["physical_Hessian_triangle_structured_basis_coordinate_count"] == 77
-    assert len(payload["inputs"]) == 75
+    assert len(payload["inputs"]) == 76
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative

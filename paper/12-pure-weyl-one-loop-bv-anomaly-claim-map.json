@@ -535,8 +535,27 @@
     "universal_CPT_source_fixture_status": "COEFFICIENT_COMPUTED",
     "universal_CPT_third_curvature_kernels_imported": true
   },
+  "classical_candidate_evidence": {
+    "candidate_A": {
+      "close_commit": "218cd5ad9",
+      "imported_hessian": false,
+      "lifecycle": "OBSTRUCTED",
+      "result_commit": "5c642e2ad14d45f6074b1327c69707b7b9b08f5d",
+      "result_id": "COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1",
+      "sha256": "889c3c2870bb2b28dfe2e4e510526f8644c0b7358884d07fcad351199ae747c6"
+    },
+    "candidate_B": {
+      "close_commit": "c7af7b707",
+      "imported_hessian": false,
+      "lifecycle": "OBSTRUCTED",
+      "result_commit": "cc0e0036c6acce2bc3d8ba81057031d90a71333a",
+      "result_id": "COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1",
+      "sha256": "e8a8aeb97398c3b8812b20118daa56850e32a516bf4e9db15c00b99cec7a8faa"
+    },
+    "universal_compensator_no_go": false
+  },
   "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
-  "compiled_pdf_sha256": "3b7640c4c81963f98e5cbb5912eef1ef309b78bb228e277dda533572dcfcb67f",
+  "compiled_pdf_sha256": "93a2ba00eedf337b8a3c4d837bf7717b45ad58ff517ffad8d1e011ff5567e1b4",
   "conditional_all_loop_evidence": {
     "claim_boundary": "This LOCAL-ALGEBRAIC theorem proves an order-by-order formal local QME restoration induction for the changed tau-adic compensator theory, conditional on the explicitly declared quantum action principle and regular formal coupling chart. The complete H14 module is zero and the stable H04 module contains C(g_hat)^2, E4(g_hat), R(g_hat)^2 and the parity-odd Pontryagin direction, with total derivatives, canonical transformations and coupling redefinitions separated. It does not construct the required regulator, prove convergence, exclude global anomalies, repair strict pure-Weyl gravity, or establish Lorentzian products, a QME, residual transfer, states, positivity, particles, scattering or unitarity.",
     "dependency_tags": [
@@ -594,6 +613,10 @@
     "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1.json": {
       "result_id": "COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1",
       "sha256": "889c3c2870bb2b28dfe2e4e510526f8644c0b7358884d07fcad351199ae747c6"
+    },
+    "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1.json": {
+      "result_id": "COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1",
+      "sha256": "e8a8aeb97398c3b8812b20118daa56850e32a516bf4e9db15c00b99cec7a8faa"
     },
     "quantum-weyl/anomalies/certificates/DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT.json": {
       "result_id": "DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT",
@@ -895,7 +918,7 @@
   "latest_coefficient_update": "The longitudinal D_W towers are one Schur kernel. Its exact non-Einstein S2(k1)xS2(k2) spectrum and degeneracies are supplied, with six matched vector-zero/Schur-pole modes contributing 3^-6. On S2(1)xS2(2), the regular-complement det3 is rigorously enclosed with common prefix 0.3263039; weighted R(K), finite-part R(K2), arbitrary-background finite Schur rows and remaining BV rows stay open.",
   "lifecycle_state": "WRITING_STARTED",
   "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-  "manuscript_sha256": "05e3e844f765f797caa27c239abbe80fe4d5a393e1932822f57b3d6bf210dae3",
+  "manuscript_sha256": "d1a5fccfb25a6656bff1b9dea489e52cd23db2a36ed4301c5db087b3e95bf817",
   "next_gate": {
     "required_inputs": [
       "same-background compensator-inclusive classical contraction",
@@ -918,8 +941,8 @@
     "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "3e4cbdc3ca820c7d43c0375e7a29e8a16aa2a7d33b2d90a00493b5321f744d9a",
     "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "fb498bbe3b1ec1ff8d93885f37290f25181b2a73e19949ae52296d257cb171e6",
     "paper/12-pure-weyl-one-loop-bv-anomaly-paper-coverage-report.json": "8b6db5ce928c111f455c0fdc7afe2e0b54093f5d3089356e933e7011d80383d6",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "0e04defaaa3569a451839b0a089b3f3f3a0d897a56d1b4994e348af46b9c7e83",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-science-forge-paper-coverage.json": "e7fd180eaa3b668a924a60362e577482b3f0dd1a00ea0bfb4066100e927df063",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "521cdfe6f77808505f97acc9d1161b7160ebf6f559c75babbe99ad2f7e1e60ae",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-science-forge-paper-coverage.json": "525436d0556f539d9dc0979b7532544fb5946e12926197bf04fcad9d1bcfde91",
     "paper/generate_12_quantum_anomaly_tables.py": "53fa1f003c9cedd320d7e2d8c8e8b589fcd5fc200c7c0362955107b68e62e4db",
     "paper/generated/12-quantum-anomaly-certificate-tables.tex": "b7556226f31a06e73e9410c3e382c5eca6b77be3bce6004324ee1c0171b8e8c0",
     "paper/verify_12_quantum_anomaly_tables.py": "30370f348cc90cf9d8063cb9c47bb7a7576a4951869ba3e9bf63039be75ad258"
@@ -934,7 +957,10 @@
     "action_independent_continuum_Jacobian": "OBSTRUCTED",
     "actual_four_dimensional_regulator": "NOT_CONSTRUCTED",
     "candidate_A_classical": "OBSTRUCTED",
-    "candidate_B_classical": "UNDER_TEST_NOT_IMPORTED",
+    "candidate_B_classical": "OBSTRUCTED",
+    "candidate_actions_selected": false,
+    "candidate_hessians_imported": false,
+    "candidate_pair_scope": "TWO_DECLARED_MINIMAL_REPAIRS_ONLY_NOT_UNIVERSAL_COMPENSATOR_NO_GO",
     "common_d_dimensional_AFN0_premodule": "CLASSIFIED",
     "dr_ms_strict_four_dimensional_module": "DECLARED_DR_MS_ARCHITECTURE_OBSTRUCTED_AT_EVANESCENT_CLOSURE",
     "finite_carrier_BV_Berezinian": "exp(-40 tau)",

@@ -29,7 +29,7 @@ COVERAGE_REPORT = (
 )
 OUTPUT = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json"
 EXPECTED_MANUSCRIPT_SHA256 = (
-    "05e3e844f765f797caa27c239abbe80fe4d5a393e1932822f57b3d6bf210dae3"
+    "d1a5fccfb25a6656bff1b9dea489e52cd23db2a36ed4301c5db087b3e95bf817"
 )
 ALL_LOOP_INPUT_COMMIT = "7fabe987861f1e4facfc2282e7023274df2ddc72"
 ALL_LOOP_INPUT_SHA256 = (
@@ -56,6 +56,7 @@ INPUTS = {
     "dressed_evanescent_module_preflight": ROOT / "quantum-weyl/anomalies/certificates/DRESSED_EVANESCENT_GEOMETRIC_BV_MODULE_PREFLIGHT.json",
     "dressed_four_dimensional_regulator_preflight": ROOT / "quantum-weyl/anomalies/certificates/DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT.json",
     "candidate_A_classical_obstruction": ROOT / "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1.json",
+    "candidate_B_classical_obstruction": ROOT / "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1.json",
     "Q1_disposition": ROOT / "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
     "relative_Einstein_Weyl_cyclic_pushforward": ROOT / "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json",
     "anomaly_induced_Gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
@@ -144,6 +145,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     evanescent = values["dressed_evanescent_module_preflight"]
     four_d_regulator = values["dressed_four_dimensional_regulator_preflight"]
     candidate_a = values["candidate_A_classical_obstruction"]
+    candidate_b = values["candidate_B_classical_obstruction"]
     q1 = values["Q1_disposition"]
     relative_cyclic_pushforward = values[
         "relative_Einstein_Weyl_cyclic_pushforward"
@@ -265,6 +267,12 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         or four_d_regulator["ward_symbol"]["actual_breaking"]
         != "NOT_COMPUTED_WITHOUT_SELECTED_K"
         or candidate_a["result_state"] != "OBSTRUCTED"
+        or _sha256(INPUTS["candidate_A_classical_obstruction"])
+        != "889c3c2870bb2b28dfe2e4e510526f8644c0b7358884d07fcad351199ae747c6"
+        or candidate_b["result_state"] != "OBSTRUCTED"
+        or _sha256(INPUTS["candidate_B_classical_obstruction"])
+        != "e8a8aeb97398c3b8812b20118daa56850e32a516bf4e9db15c00b99cec7a8faa"
+        or candidate_b["claim_flags"]["ANOMALY_OR_QME"] is not False
     ):
         raise ValueError("Paper 12 conditional all-loop dependency drifted")
     if (
@@ -1058,6 +1066,7 @@ def build() -> dict[str, Any]:
     evanescent = values["dressed_evanescent_module_preflight"]
     four_d_regulator = values["dressed_four_dimensional_regulator_preflight"]
     candidate_a = values["candidate_A_classical_obstruction"]
+    candidate_b = values["candidate_B_classical_obstruction"]
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
@@ -1217,10 +1226,34 @@ def build() -> dict[str, Any]:
                 "actual_regulator"
             ],
             "candidate_A_classical": candidate_a["result_state"],
-            "candidate_B_classical": "UNDER_TEST_NOT_IMPORTED",
+            "candidate_B_classical": candidate_b["result_state"],
+            "candidate_actions_selected": False,
+            "candidate_hessians_imported": False,
+            "candidate_pair_scope": (
+                "TWO_DECLARED_MINIMAL_REPAIRS_ONLY_NOT_UNIVERSAL_COMPENSATOR_NO_GO"
+            ),
             "scheme_equivalence": four_d_regulator["scheme_comparison"][
                 "equivalence_status"
             ],
+        },
+        "classical_candidate_evidence": {
+            "candidate_A": {
+                "result_id": candidate_a["result_id"],
+                "result_commit": "5c642e2ad14d45f6074b1327c69707b7b9b08f5d",
+                "close_commit": "218cd5ad9",
+                "sha256": _sha256(INPUTS["candidate_A_classical_obstruction"]),
+                "lifecycle": candidate_a["result_state"],
+                "imported_hessian": False,
+            },
+            "candidate_B": {
+                "result_id": candidate_b["result_id"],
+                "result_commit": "cc0e0036c6acce2bc3d8ba81057031d90a71333a",
+                "close_commit": "c7af7b707",
+                "sha256": _sha256(INPUTS["candidate_B_classical_obstruction"]),
+                "lifecycle": candidate_b["result_state"],
+                "imported_hessian": False,
+            },
+            "universal_compensator_no_go": False,
         },
         "certified_claims": {
             "strict_quotient_scope": "REGULAR_BACH_LOCUS",
