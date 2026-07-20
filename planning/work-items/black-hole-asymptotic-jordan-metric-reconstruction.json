@@ -1,0 +1,23 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/black-hole-asymptotic-jordan-metric-reconstruction",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "black-hole-asymptotic-jordan-metric-reconstruction",
+  "source": {"path": "planning/work-items/black-hole-asymptotic-jordan-metric-reconstruction.json", "span": null},
+  "body": {
+    "owner": "black-hole",
+    "state": "PROPOSED",
+    "objective": "Close Paper 14's principal asymptotic blocker: compute the full repeated-characteristic Jordan structure at Schwarzschild infinity and reconstruct the additional curvature carriers into metric perturbations with precise tetrad falloff and Lee--Wald flux.",
+    "stop_condition": "Print the asymptotic first-order systems in both parities, eigenvalues, geometric multiplicities, Jordan chains, logarithmic or tortoise-polynomial factors, and exact reconstruction maps to metric variables. Classify which Einstein and additional modes satisfy a declared asymptotically flat finite-flux radiation class, including omega=0 and exceptional-frequency exclusions. Land a scoped endpoint-nonselection theorem or show exactly which asymptotic condition removes the additional branch.",
+    "current_gate": "metric-level Jordan and finite-flux asymptotics for the repeated fourth-order characteristic",
+    "forbid": "no characteristic polynomial alone treated as Jordan analysis; no curvature boundedness called metric falloff; no all-local-boundary-condition no-go; no QNM, ringdown, stability, particle, ghost, or unitarity promotion",
+    "depends_on": [],
+    "activates": ["theorem freeze decision for Paper 14", "asymptotically flat Bach phase-space construction", "later QNM and ringdown work"],
+    "allowed_paths": ["black_hole_programme/", "paper/14-pure-weyl-black-hole-radiation.tex", "paper/14-pure-weyl-black-hole-radiation-claim-map.json", "notes/d-quotient-black-hole-team-brief.md"],
+    "resource_hint": "HIGH-LEVERAGE BLACK-HOLE PAPER GATE. Conflux remains disabled; use exact asymptotic systems, certified interval methods where needed, and independent reconstruction/flux rails.",
+    "input_commit": "fb5a2ea1d68ced5863177a029e87087a2c2a4684",
+    "stream": "black-hole"
+  },
+  "edges": []
+}

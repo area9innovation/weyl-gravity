@@ -1,0 +1,23 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-compensated-endpoint-chain-map",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-compensated-endpoint-chain-map",
+  "source": {"path": "planning/work-items/classical-compensated-endpoint-chain-map.json", "span": null},
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Construct the complete relative Einstein--Weyl chain lift using the certified correlated fixed-bundle Maxwell compensators that make the endpoint Gram matrix constant, and decide whether compensation removes every remaining unary chain and pairing obstruction.",
+    "stop_condition": "Specify the compensated endpoint on all stabilizer generators, solve the full exact finite-order support-local chain-map and cyclic-pairing equations, and independently substitute the result into the original relative complex. Land a complete compensated unary lift with its minimality theorem, or the first new invariant obstruction and the smallest endpoint/current/carrier repair it requires.",
+    "current_gate": "turn the classified compensated endpoint into a complete relative unary chain map",
+    "forbid": "no independent constant U(1) current; no change of magnetic bundle; no extrapolation from constant Gram matrix to a chain map; no q2/f2 before unary success; no causal, observable, nonlinear, particle, or quantum promotion",
+    "depends_on": [],
+    "activates": ["relative q2/f2 construction", "a reusable fixed-bundle compensated endpoint theorem"],
+    "allowed_paths": ["d_quotient_classical/", "reports/", "notes/d-quotient-classical-team-brief.md", "planning/forge-requests/"],
+    "resource_hint": "CLASSICAL QUEUE HEAD after EINSTEIN_WEYL_RELATIVE_ALL_ORDER_ENDPOINT_PAIRING_OBSTRUCTION_V1. Preserve the fixed bundle and use the existing lambda_X rows.",
+    "input_commit": "fa414cb5",
+    "stream": "classical"
+  },
+  "edges": []
+}

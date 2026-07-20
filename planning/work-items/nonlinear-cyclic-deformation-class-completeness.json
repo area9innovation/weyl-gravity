@@ -1,0 +1,23 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/nonlinear-cyclic-deformation-class-completeness",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "nonlinear-cyclic-deformation-class-completeness",
+  "source": {"path": "planning/work-items/nonlinear-cyclic-deformation-class-completeness.json", "span": null},
+  "body": {
+    "owner": "nonlinear",
+    "state": "PROPOSED",
+    "objective": "Upgrade the retained 22-row mixed ell3 witness from nonremovability in the tested F2/F3 family to an invariant statement in a completely declared bounded cyclic deformation complex, or exhibit the first admissible cyclic L-infinity redefinition that removes it.",
+    "stop_condition": "Define the relevant cyclic deformation complex, its filtration, allowed support-local mixed-bundle cochains, coboundary operator, and equivalence relation. Prove that the retained ell3 class is nonzero with an exact cokernel/cohomology witness and decisive redefinition mutations, or construct and independently verify a complete trivializing cochain. State exactly how the answer changes under the minimal noncontractible branch repair if that repair has landed.",
+    "current_gate": "presentation-independent cyclic deformation class of the retained mixed ell3",
+    "forbid": "no inference from failure of one ansatz to full cohomological nontriviality; no branch label before a certified crosswalk; no physical amplitude, ghost, positivity, stability, scattering, or all-order nonlinear closure claim; no float rank",
+    "depends_on": [],
+    "activates": ["an invariant interaction theorem for Paper 11", "a certified target for later branch-resolved mixing"],
+    "allowed_paths": ["d_quotient_classical/", "reports/", "planning/forge-requests/", "notes/d-quotient-nonlinear-team-brief.md"],
+    "resource_hint": "SECOND NONLINEAR LANE. It is independent of whether the branch repair succeeds: classify the unsplit retained carrier first, then add a conditional repaired-carrier comparison.",
+    "input_commit": "09dcec1b",
+    "stream": "nonlinear"
+  },
+  "edges": []
+}

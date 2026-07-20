@@ -1,0 +1,23 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/bridge-component-incidence-classification",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "bridge-component-incidence-classification",
+  "source": {"path": "planning/work-items/bridge-component-incidence-classification.json", "span": null},
+  "body": {
+    "owner": "einstein",
+    "state": "PROPOSED",
+    "objective": "Complete the candidate-17/20 deformable-kernel theorem by classifying the path components of the admissible compact semialgebraic quotient and deciding exactly which components meet the zero-wall incidence set.",
+    "stop_condition": "Produce an exact component/stratum decomposition for each candidate separately, including zero occupations and nonfree stabilizers; prove path incidence or nonincidence for every component; and independently verify representative paths or separating invariants. Integrate the result into the Einstein atlas without promoting local contraction to global solvability.",
+    "current_gate": "replace the remaining component-incidence criterion by a complete candidate-specific disposition",
+    "forbid": "no candidate-17/20 identification; no numerical connectivity as proof; no omission of singular stabilizers or boundary nodes; no all mixed-cone, evolution, causal, observer, or quantum claim",
+    "depends_on": [],
+    "activates": ["complete same-sign contraction classification", "symplectic-reduction normal-form bridge"],
+    "allowed_paths": ["bridge/", "residual_atlas/", "reports/", "paper/13-compact-weyl-maxwell-second-order-tangent-cone-claim-map.json", "notes/d-quotient-einstein-team-brief.md", "planning/forge-requests/"],
+    "resource_hint": "EINSTEIN QUEUE HEAD after the deformable-kernel incidence normal form. Use exact semialgebraic and symplectic arguments, with Conflux only as bounded conjecture generation if its consumer gate passes.",
+    "input_commit": "47e2d298",
+    "stream": "bridge"
+  },
+  "edges": []
+}
