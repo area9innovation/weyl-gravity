@@ -1,0 +1,41 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-closed-s3-relative-phase-clock-hadamard-preflight",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-closed-s3-relative-phase-clock-hadamard-preflight",
+  "source": {
+    "path": "planning/work-items/quantum-closed-s3-relative-phase-clock-hadamard-preflight.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum-qme",
+    "state": "PROPOSED",
+    "objective": "Determine whether the first healthy causal closed-S3 relative-phase clock admits a positive free Hadamard/BRST state on its reduced matter carrier, while keeping this distinct from the anomalous or compensator-extended gravity theory.",
+    "stop_condition": "Import the terminal relative-phase causal preflight. If it supplies no passing action-derived hyperbolic carrier, close as NOT_ACTIVATED. Otherwise construct the compact-U1 BRST quartet and physical relative mode decomposition from the exact charge lattice, choose the real structure and positive-frequency complex structure compatible with the imported retarded/advanced propagators, and build a candidate two-point distribution with the declared Hadamard wavefront condition. Verify field equation, antisymmetric causal part, gauge descent, positivity on the reduced relative-clock algebra, zero-mode treatment and independence under unimodular charge-basis changes. Compare against an independently normalized oscillator/mode-sum rail. State explicitly whether this is only a free matter-clock state, whether it extends to the coupled gravity BV complex, and how the strict versus compensator quantum anomaly remains unaffected.",
+    "current_gate": "free reduced Hadamard and positivity disposition for the relative-phase clock",
+    "forbid": "no reduced matter mode called a full gravitational particle; no Euclidean determinant used as Lorentzian Hadamard evidence; no positivity before compact-gauge/zero-mode reduction; no formal mode sum accepted without wavefront/support disposition; no strict-Weyl anomaly cancellation inferred from a healthy clock; no interacting QME or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/classical-closed-s3-relative-phase-causal-parent-preflight#ANY_TERMINAL"
+    ],
+    "activates": [
+      "a scoped free quantum-clock row in Paper 12 and the claims ledger"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/",
+      "d_quotient_classical/compensator/",
+      "reports/",
+      "residual_atlas/",
+      "paper/09-relational-clocks-berger-d-cartan.tex",
+      "paper/12-quantum-cartan-anomaly.tex",
+      "notes/"
+    ],
+    "resource_hint": "CONDITIONAL LORENTZIAN-CAUSAL/REDUCED-MODE PREFLIGHT. Reuse the exact causal parent and keep full-BV gravity positivity out of scope.",
+    "notes": [
+      "A pass would establish a free quantum relational clock subsystem, not quantum Weyl gravity."
+    ],
+    "input_commit": "f809bd71f",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}
