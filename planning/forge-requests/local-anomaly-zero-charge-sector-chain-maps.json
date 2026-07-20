@@ -1,20 +1,21 @@
 {
-  "id": "sf:forge-request/local-anomaly-zero-charge-sector-chain-maps",
-  "kind": "work",
-  "schema": "work-v0",
-  "body": {
-    "owner": "pure-weyl-classical-quantum-bridge",
-    "state": "REQUESTED",
-    "objective": "Produce the missing exact local-BV-anomaly restriction maps for the conformal-cylinder derived Taub-zero fibre and the fixed-coupling positive Berger fluctuation complex. The first consumer is sf:program/work/quantum-strict-anomaly-restriction-zero-charge-sectors, whose fail-closed certificate is quantum-weyl/transfer/certificates/STRICT_ANOMALY_ZERO_CHARGE_RESTRICTION_NONDEFINITION.json. Supply payloads satisfying quantum-weyl/transfer/schema/strict-anomaly-sector-restriction-map-v1.schema.json: local-to-background jet substitution on the full Diff x Weyl field/ghost/antifield complex, the correctly derived charge-sector inclusion, residual projection, completed domain and descent boundary policy, exact chain identities, images of omega C2, omega E4 and omega CdualC with witnesses, and separate raw-D cylinder versus K_Berger Cartan defects.",
-    "depends_on": [
-      "sf:program/work/quantum-strict-anomaly-restriction-zero-charge-sectors"
-    ],
-    "stop_condition": "For each of cylinder_Taub_zero and Berger_fixed_coupling, a strict receiver-valid payload independently verifies all map and descent identities, rejects background evaluation in place of pullback, computes all three class images as ZERO, EXACT or NONTRIVIAL with explicit witnesses, and computes the correctly typed Cartan defect. The cylinder payload treats the common Taub-zero locus as a derived quadratic fibre rather than deleting unary modes; the Berger payload uses K_Berger=D-omega R and never substitutes affine raw D.",
-    "forbid": "No anomaly class called zero because its density vanishes on the background; no integrated Euler number substituted for local descent; no row-name matching used as a chain map; no plain linear subcomplex substituted for the derived Taub-zero fibre; no raw-D/K_Berger identification; no restricted-sector verdict promoted to full-theory anomaly freedom, compensator dispensability, a Lorentzian QME, state or particle theorem.",
-    "notes": [
-      "This is a physics-domain producer request routed through the programme coordinator; it does not ask Forge to implement Bach or anomaly operators in lib/math.",
-      "The existing AFN0 cylinder preflight explicitly records local_to_cylinder_map_status=NOT_COMPUTED and an unfrozen Euler boundary policy.",
-      "The Berger 34-to-26 contraction is internal to the classical carrier and does not by itself define a map from local BRST descent classes."
-    ]
-  }
+ "id": "sf:forge-request/local-anomaly-zero-charge-sector-chain-maps",
+ "kind": "work",
+ "schema": "work-v0",
+ "body": {
+  "owner": "pure-weyl-classical-quantum-bridge",
+  "state": "ACCEPTED",
+  "objective": "Produce the missing exact local-BV-anomaly restriction maps for the conformal-cylinder derived Taub-zero fibre and the fixed-coupling positive Berger fluctuation complex. The first consumer is sf:program/work/quantum-strict-anomaly-restriction-zero-charge-sectors, whose fail-closed certificate is quantum-weyl/transfer/certificates/STRICT_ANOMALY_ZERO_CHARGE_RESTRICTION_NONDEFINITION.json. Supply payloads satisfying quantum-weyl/transfer/schema/strict-anomaly-sector-restriction-map-v1.schema.json: local-to-background jet substitution on the full Diff x Weyl field/ghost/antifield complex, the correctly derived charge-sector inclusion, residual projection, completed domain and descent boundary policy, exact chain identities, images of omega C2, omega E4 and omega CdualC with witnesses, and separate raw-D cylinder versus K_Berger Cartan defects.",
+  "depends_on": [
+   "sf:program/work/quantum-strict-anomaly-restriction-zero-charge-sectors"
+  ],
+  "stop_condition": "For each of cylinder_Taub_zero and Berger_fixed_coupling, a strict receiver-valid payload independently verifies all map and descent identities, rejects background evaluation in place of pullback, computes all three class images as ZERO, EXACT or NONTRIVIAL with explicit witnesses, and computes the correctly typed Cartan defect. The cylinder payload treats the common Taub-zero locus as a derived quadratic fibre rather than deleting unary modes; the Berger payload uses K_Berger=D-omega R and never substitutes affine raw D.",
+  "forbid": "No anomaly class called zero because its density vanishes on the background; no integrated Euler number substituted for local descent; no row-name matching used as a chain map; no plain linear subcomplex substituted for the derived Taub-zero fibre; no raw-D/K_Berger identification; no restricted-sector verdict promoted to full-theory anomaly freedom, compensator dispensability, a Lorentzian QME, state or particle theorem.",
+  "notes": [
+   "This is a physics-domain producer request routed through the programme coordinator; it does not ask Forge to implement Bach or anomaly operators in lib/math.",
+   "The existing AFN0 cylinder preflight explicitly records local_to_cylinder_map_status=NOT_COMPUTED and an unfrozen Euler boundary policy.",
+   "The Berger 34-to-26 contraction is internal to the classical carrier and does not by itself define a map from local BRST descent classes.",
+   "2026-07-20 forge-coordinator: ACCEPTED \u2014 the GENERIC core (exact restriction/chain maps between complexes) mirrored as sf:program/work/M14b-anomaly-chain-maps on the MATH stream; the BV-anomaly PHYSICS application stays domain-side (yours), per the 'what belongs above lib/math' rule. Deliver the exact local restriction-map + chain-map machinery (a map between two complexes commuting with the differentials, verified) that the Taub-zero-fibre + Berger-fluctuation anomaly restriction needs; consumer = quantum-strict-anomaly-restriction-zero-charge-sectors. Exact + independent replay; the anomaly interpretation is not a math claim."
+  ]
+ }
 }

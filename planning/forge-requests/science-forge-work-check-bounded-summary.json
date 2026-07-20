@@ -1,17 +1,18 @@
 {
-  "id": "sf:forge-request/science-forge-work-check-bounded-summary",
-  "kind": "work",
-  "schema": "work-v0",
-  "body": {
-    "owner": "physics-programme",
-    "state": "REQUESTED",
-    "objective": "Make `s-f work check` fast and bounded enough to be the routine pre-commit command in a heavily concurrent scientific worktree. The first live nested-programme pilot was semantically correct, but scanning and printing hundreds of unrelated dirty paths took about 84 seconds and emitted roughly 8,600 output tokens. The worker needs exact assurance that other sessions' files are untouched, not an unbounded path dump on every checkpoint. The coordinator dashboard also needs the same compact transaction-readiness signal.",
-    "depends_on": [],
-    "stop_condition": "Provide a bounded default view that reports exact counts for would-stage, clean/absent reported paths, outside-allowlist refusals and not-in-report dirty paths; prints all refused and intended-stage paths; groups unrelated dirt by top-level programme/stream or ownership attribution; and shows only a small deterministic sample unless `--verbose` or an explicit output file requests the full list. Add elapsed time and a stable digest of the complete omitted path set so compact output remains auditable. Reuse a content-addressed or incremental dirty-tree census where safe so repeated checks in an unchanged tree are materially faster, while invalidating on index/worktree/HEAD changes. Surface `transaction-ready`, refusal count and prospective verification requirements in the coordinator dashboard. Demonstrate the behavior on a nested programme with at least 500 unrelated dirty paths, concurrent staged/unstaged/untracked files, and one outside-allowlist mutation; compact and verbose modes must reach the same exact disposition.",
-    "forbid": "no truncation of refused or would-stage paths; no approximate counts; no cache that can survive an index, worktree or HEAD change incorrectly; no hidden ignored mutation; no weakening of report∩allowed; no treating a compact view as the commit gate itself; no mutation from `work check`",
-    "notes": [
-      "Measured live pilot, 2026-07-20: `s-f work check --item bridge-kernel-direction-incidence-normal-form --agent bridge-1` correctly reported SUMMARY stage=14 refuse=0 and preserved the nested path frame, but required approximately 84 seconds and printed hundreds of `not-in-report-but-dirty` rows.",
-      "The complete path set remains useful for debugging and should be available through `--verbose` or `-o`; the routine worker and dashboard surfaces need a bounded proof summary."
-    ]
-  }
+ "id": "sf:forge-request/science-forge-work-check-bounded-summary",
+ "kind": "work",
+ "schema": "work-v0",
+ "body": {
+  "owner": "physics-programme",
+  "state": "ACCEPTED",
+  "objective": "Make `s-f work check` fast and bounded enough to be the routine pre-commit command in a heavily concurrent scientific worktree. The first live nested-programme pilot was semantically correct, but scanning and printing hundreds of unrelated dirty paths took about 84 seconds and emitted roughly 8,600 output tokens. The worker needs exact assurance that other sessions' files are untouched, not an unbounded path dump on every checkpoint. The coordinator dashboard also needs the same compact transaction-readiness signal.",
+  "depends_on": [],
+  "stop_condition": "Provide a bounded default view that reports exact counts for would-stage, clean/absent reported paths, outside-allowlist refusals and not-in-report dirty paths; prints all refused and intended-stage paths; groups unrelated dirt by top-level programme/stream or ownership attribution; and shows only a small deterministic sample unless `--verbose` or an explicit output file requests the full list. Add elapsed time and a stable digest of the complete omitted path set so compact output remains auditable. Reuse a content-addressed or incremental dirty-tree census where safe so repeated checks in an unchanged tree are materially faster, while invalidating on index/worktree/HEAD changes. Surface `transaction-ready`, refusal count and prospective verification requirements in the coordinator dashboard. Demonstrate the behavior on a nested programme with at least 500 unrelated dirty paths, concurrent staged/unstaged/untracked files, and one outside-allowlist mutation; compact and verbose modes must reach the same exact disposition.",
+  "forbid": "no truncation of refused or would-stage paths; no approximate counts; no cache that can survive an index, worktree or HEAD change incorrectly; no hidden ignored mutation; no weakening of report\u2229allowed; no treating a compact view as the commit gate itself; no mutation from `work check`",
+  "notes": [
+   "Measured live pilot, 2026-07-20: `s-f work check --item bridge-kernel-direction-incidence-normal-form --agent bridge-1` correctly reported SUMMARY stage=14 refuse=0 and preserved the nested path frame, but required approximately 84 seconds and printed hundreds of `not-in-report-but-dirty` rows.",
+   "The complete path set remains useful for debugging and should be available through `--verbose` or `-o`; the routine worker and dashboard surfaces need a bounded proof summary.",
+   "2026-07-20 forge-coordinator: ACCEPTED \u2014 an SF3/SF5 work-check performance follow-on. Confirmed: in a heavily-concurrent nested worktree, work check scanned + printed hundreds of unrelated dirty paths (~84s, ~8600 tokens). Mirrored as sf:program/work/SF11-workcheck-bounded. Fix: bound the output \u2014 the would-stage / refused sets are small (bounded by the report); the not-in-report-but-dirty set (others' files) gets SUMMARIZED (a count + a capped sample), not fully enumerated; and the dirty scan is scoped to allowed_paths where possible so it doesn't walk the whole tree. Deterministic + read-only preserved. Sequenced after PC1 clears s-f."
+  ]
+ }
 }
