@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-compensator-candidate-ab-neither-comparison-REQUEST-b6ba3205f57b7991",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/classical-compensator-candidate-ab-neither-comparison-REQUEST-b6ba3205f57b7991.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/classical-compensator-candidate-ab-neither-comparison", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T16:57:30Z", "seq": 1, "payload": {"target": "sf:program/request/classical-compensator-candidate-ab-neither-comparison-to-quantum-qme-b6ba3205f57b7991", "request_id": "sf:program/request/classical-compensator-candidate-ab-neither-comparison-to-quantum-qme-b6ba3205f57b7991", "from_item": "sf:program/work/classical-compensator-candidate-ab-neither-comparison", "to_stream": "quantum-qme", "need": "PAPER12_CANDIDATE_AB_TERMINAL_STATUS: Candidate A is OBSTRUCTED at result commit 5c642e2ad14d45f6074b1327c69707b7b9b08f5d / close 218cd5ad9; Candidate B is OBSTRUCTED at result commit cc0e0036c6acce2bc3d8ba81057031d90a71333a / close c7af7b707831a848e3e110f45bb746478473dbc6. Paper 12 must state that neither declared minimal action is selected, must not describe Candidate B as under test, and must not generalize the two scoped failures to every compensator repair.", "typed": "dependency-artifact"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "quantum-qme"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/classical-compensator-candidate-ab-neither-comparison"}]
+}
