@@ -1,0 +1,93 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This LOCAL-ALGEBRAIC full-tensor potential theorem excludes a nondegenerate fixed-boundary Einstein-radiative form obtained solely through local Lee-Wald/JKM ambiguities of the pure C^2 action. It does not exclude an enlarged p0/p1 source-response phase space, construct Bondi BV-BFV ghosts/antifields, classify Coulombic or logarithmic data, match I-/i0/I+, compute P0 or D_M charges, or establish causal, particle, scattering, stability, positivity, unitarity or quantum claims.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/ASYMPTOTIC_BACH_LOCAL_COUNTERTERM_COHOMOLOGY_OBSTRUCTION_V1.json",
+          "result_id": "ASYMPTOTIC_BACH_LOCAL_COUNTERTERM_COHOMOLOGY_OBSTRUCTION_V1",
+          "sha256": "6ccb79e0626ff81fa2ffbe79166f578e50436078eaab3787da5c826112434b7d"
+        }
+      ],
+      "id": "einstein.asymptotic.minkowski.weyl.local_counterterm_cohomology",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The theorem uses arbitrary compact-support retarded-time profiles, not a frequency-shell classification.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "Theta_C2^a=2*sqrt(-g)*(P^(abcd)*nabla_d(delta g_bc)-(nabla_d P^(abcd))*delta g_bc); No local counterterm/corner ambiguity built only from the existing metric jets can produce a finite nondegenerate fixed-boundary Einstein-radiative symplectic form in pure C^2 gravity.",
+          "status": "OBSTRUCTED"
+        },
+        "resonance": {
+          "statement": "No compact harmonic resonance functional is mapped to this asymptotic carrier.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The result is linear and uses compact-support retarded-time profiles.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "No retarded Bondi BV--BFV Green carrier is constructed.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No second-order source is evaluated.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "No compact-slice second-order Taub map is part of this linear null-boundary theorem.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "Minkowski space in one fixed conformal completion",
+        "boundaries": "local cuts of I+; compact-support-in-u radiative test subspace",
+        "carrier": "full metric tensor in the bulk, restricted for the no-go to flat Einstein Jacobi fields with Bondi shear C_AB/r",
+        "charge_sector": "zero Coulombic aspects; fixed leading unphysical boundary metric",
+        "degree": 1,
+        "ell": "all radiative tensor harmonics for which the Einstein Jacobi and compact-u-support conditions hold",
+        "k": "radial Bondi expansion, not compact momentum",
+        "m": "all; angular integration is local and the witness survives restriction to one component",
+        "omega": "arbitrary smooth compact-support retarded-time profiles",
+        "parity": "both tracefree sphere-tensor polarizations; one polarization supplies the nonexactness witness",
+        "theory": "linearized four-dimensional pure Weyl C^2 gravity"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/asymptotic_bach_local_counterterm_cohomology_obstruction.py",
+  "generated_by_sha256": "fbaaea10c3302cc2642952485be5bb92e2b9a886649d63b71f8e0bbc98cb84d0",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_boundary",
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.asymptotic_bach_local_counterterm_cohomology_obstruction --check",
+    "PYTHONPATH=. python3 bridge/einstein_sector/verify_asymptotic_bach_local_counterterm_cohomology_obstruction.py",
+    "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_asymptotic_bach_local_counterterm_cohomology_obstruction -v",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-asymptotic-bach-local-counterterm-cohomology-fragment-v1.json"
+  ]
+}

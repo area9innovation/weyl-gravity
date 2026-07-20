@@ -1,0 +1,69 @@
+{
+  "schema": "asymptotic-bach-local-counterterm-cohomology-obstruction-receipt-v1",
+  "result_id": "ASYMPTOTIC_BACH_LOCAL_COUNTERTERM_COHOMOLOGY_OBSTRUCTION_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.20,
+      "commands": [
+        "python3 -m py_compile <scoped producer, verifier and test>",
+        "python3 -m json.tool <scoped schema, certificate and atlas fragment>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.94,
+      "commands": [
+        "PYTHONPATH=. python3 -m bridge.einstein_sector.asymptotic_bach_local_counterterm_cohomology_obstruction --check",
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_asymptotic_bach_local_counterterm_cohomology_obstruction.py",
+        "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_asymptotic_bach_local_counterterm_cohomology_obstruction -v",
+        "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-asymptotic-bach-local-counterterm-cohomology-fragment-v1.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 3.04,
+      "commands": [
+        "PYTHONPATH=. python3 -m bridge.einstein_sector.asymptotic_bach_raw_flux_corner_obstruction --verify bridge/certificates/asymptotic_bach_raw_flux_corner_obstruction.json",
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_asymptotic_bach_raw_flux_corner_obstruction.py",
+        "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_weyl_maxwell_lee_wald_current_components -v"
+      ],
+      "reason": "The theorem imports the reduced raw obstruction by exact hash and the existing full tensor curvature-momentum convention; both direct consumers were replayed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The work item closes SHORTFALL and does not freeze a paper theorem, release, or shared-core algebra."
+    }
+  },
+  "source_manifest": {
+    "bridge/einstein_sector/asymptotic_bach_local_counterterm_cohomology_obstruction.py": "fbaaea10c3302cc2642952485be5bb92e2b9a886649d63b71f8e0bbc98cb84d0",
+    "bridge/einstein_sector/verify_asymptotic_bach_local_counterterm_cohomology_obstruction.py": "3717dde8a31a54d81a09c739534d26c4232023a4113b10e8f7345ab05fb10b3b",
+    "bridge/einstein_sector/tests/test_asymptotic_bach_local_counterterm_cohomology_obstruction.py": "bda5e8c34a6c6ff5669bb66acf314f2d8cbf4fdc1928d838350096ba1d9a5153",
+    "bridge/einstein_sector/schema/asymptotic-bach-local-counterterm-cohomology-obstruction-v1.schema.json": "dffffff622ad7a153376d4eb032b32867a1bdc8835dd01848eb0ec419bf05b01",
+    "bridge/einstein_sector/reports/asymptotic-bach-local-counterterm-cohomology-obstruction-v1.md": "ae2c443a2df649f3d6970afa287b062334188caa479efd3ff31b1193eb270739",
+    "bridge/certificates/ASYMPTOTIC_BACH_LOCAL_COUNTERTERM_COHOMOLOGY_OBSTRUCTION_V1.json": "6ccb79e0626ff81fa2ffbe79166f578e50436078eaab3787da5c826112434b7d",
+    "residual_atlas/einstein-asymptotic-bach-local-counterterm-cohomology-fragment-v1.json": "bdea4921a8b716b633bdf82a4d3ba900fe77dbc144ead7e84299773bef4b3c5b",
+    "bridge/certificates/asymptotic_bach_raw_flux_corner_obstruction.json": "1cef43665f6ff2917669d7e762e20c527b3b4b001f8c77a1581856d93c35e10c",
+    "bridge/certificates/weyl_maxwell_axial_lee_wald_fixture.json": "23d25b02045a695fc34313e84345f05699e2e65fed2a28a5ab50d594ea31d46b"
+  },
+  "independent_rail": {
+    "status": "PASS",
+    "method": "The verifier does not import the producer. It independently re-derives the four-dimensional curvature identity, curvature-momentum coefficient, Euler nonexactness witness, exact-sign mutation, input hashes and fail-closed atlas lifecycle."
+  },
+  "failed_attempts": [
+    {
+      "failure": "The first verifier compared a canonically equivalent SymPy polynomial through one fixed string ordering.",
+      "disposition": "Replaced the string comparison by exact symbolic subtraction and reran every scoped rail."
+    },
+    {
+      "failure": "The first atlas draft used descriptive mode-data keys outside the programme's fixed atlas schema.",
+      "disposition": "Mapped the result into the required dispersion/Lee-Wald/Taub/resonance/second-order cells without changing the scientific boundary, then reran the independent atlas validator."
+    }
+  ],
+  "claim_boundary": "This receipt covers the full tensor C^2 Lee-Wald potential, the complete local JKM ambiguity class without new independent boundary fields, and the exact fixed-boundary Einstein-radiative horizontal-cohomology obstruction. The enlarged p0/p1 Bondi BV-BFV phase space, ghosts, antifields, Coulombic and logarithmic data, corner matching, P0/D_M charges, causal propagation and all particle, scattering, stability, positivity, unitarity or quantum claims remain open or unmapped."
+}
