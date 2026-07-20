@@ -31,6 +31,17 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         )
         self.assertIn("computes no asymptotic charge", entry["claim_boundary"])
 
+    def test_harmonic_sign_resonance_join_separates_complete_map_from_solved_cone(self) -> None:
+        entry = self.entries["einstein.ph.wm.mixed.harmonic_sign_resonance_join"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertIn("{mu,P,R}", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertIn("full finite-carrier zero geometry remains OPEN", second["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second["smooth_secular"]["status"], "CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("NO_CERTIFIED_MAP between them", entry["claim_boundary"])
+
     def test_twist_exceptional_is_independence_witness(self) -> None:
         entry = self.entries["einstein.ph.wm.mixed.twist_exceptional_independence"]
         self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")

@@ -4502,6 +4502,63 @@ observational or quantum science.
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 
+## Harmonic sign--resonance join
+
+`EINSTEIN_MAXWELL_WEYL_HARMONIC_SIGN_RESONANCE_JOIN` now joins the complete
+all-harmonic Taub-sign ledger to the finite-output bounded obstruction map
+
+\[
+\mathcal O_{\rm bounded}
+=
+(\mu_H,\mu_{P_x},\mu_{J_1},\mu_{J_2},\mu_{J_3})
+\oplus\{P_{j,r}\}
+\oplus\{R_{j,a}\}.
+\]
+
+Here `P_(j,r)` is every positive temporal-degree coefficient in output block
+`j=(L,M,K,Omega,parity)`, and `R_(j,a)` is every exact reduced adjoint-shell
+projection.  Harmonic output labels, the zero-frequency stabilizer block and
+the nonzero characteristic shells are direct summands.  Thus
+`O_bounded=0` is necessary and sufficient for a bounded or finite
+quasiperiodic second-order correction on the complete certified finite
+carrier.  For smooth exponential-polynomial corrections, `P` and `R` have
+finite secular primitives, so the complete cone is exactly the five-moment
+zero locus.
+
+The sign join gives the exact pure-extra corollary: every nonzero real finite
+additional-Weyl sum has `mu_H<0`, so the pure-extra face of either cone is the
+origin.  Einstein `q_minus` modes provide the opposite sign and may enter
+mixed null directions; moment-map cancellation alone is nevertheless not
+bounded solvability.  The aligned polynomial witness has `mu=0,P!=0`, and
+the twist-balanced exceptional witness has `mu=0,R!=0`.
+
+The strongest fully classified mixed bounded carrier is:
+
+```text
+complete homogeneous/twist/Maxwell globals
++ arbitrary finite generic ell>=2, k=0 q_minus/q_plus/p_extra waves,
+all m and both parities.
+```
+
+Its common zero is the necessary-and-sufficient stratified union
+
+```text
+wave=0:
+    a=b=Q_e=B=0; c,d,W_x,A arbitrary;
+wave!=0:
+    a=b=d=Q_e=B=0; c,W_x,A arbitrary;
+    total mu_H=mu_J1=mu_J2=mu_J3=0.
+```
+
+The candidate-13 two-`|k|` cone (origin) and the tuned opposite-momentum cone
+(two nonzero mixed components) remain separate controls with
+`NO_CERTIFIED_MAP` between their different circumference/momentum carriers.
+The first unsolved union is exceptional `ell=1` oscillator data mixed with
+generic waves and globals at arbitrary momentum, followed by multiple
+`|k|` fibres.  Its coefficientwise `{mu,P,R}` formula is certified but its
+common-zero geometry is `OPEN`.  No infinite, causal, all-orders, final
+residual, observational or quantum claim is made.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Einstein-Maxwell/Weyl-Maxwell harmonic sign-resonance join",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "scope",
+    "provenance", "branch_labelled_obstruction_map", "sign_join",
+    "maximal_complete_mixed_subcarrier", "separate_nonzero_momentum_controls",
+    "independence_witnesses", "unclassified_remainder", "correction_classes",
+    "classification", "claim_boundary", "next_gate", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-harmonic-sign-resonance-join-v1"},
+    "schema_path": {"type": "string"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_HARMONIC_SIGN_RESONANCE_JOIN"},
+    "result_state": {"type": "string"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "generality_level": {"type": "string"},
+    "scope": {"type": "object"},
+    "provenance": {"type": "object"},
+    "branch_labelled_obstruction_map": {"type": "object"},
+    "sign_join": {"type": "object"},
+    "maximal_complete_mixed_subcarrier": {"type": "object"},
+    "separate_nonzero_momentum_controls": {"type": "object"},
+    "independence_witnesses": {"type": "object"},
+    "unclassified_remainder": {"type": "object"},
+    "correction_classes": {"type": "object"},
+    "classification": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "claim_boundary": {"type": "string"},
+    "next_gate": {"type": "string"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+  }
+}

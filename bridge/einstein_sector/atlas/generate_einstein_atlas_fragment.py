@@ -24,6 +24,7 @@ CERTIFICATES = {
     "polar_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
     "taub": ROOT / "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
     "harmonic_taub_sign": ROOT / "bridge/certificates/einstein_maxwell_weyl_harmonic_taub_sign_classification.json",
+    "harmonic_sign_resonance_join": ROOT / "bridge/certificates/einstein_maxwell_weyl_harmonic_sign_resonance_join.json",
     "stabilizer": ROOT / "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
     "moment_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_k0_moment_map_cone.json",
     "balanced": ROOT / "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",
@@ -373,6 +374,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("OPEN", "Pure-extra oscillator directions are obstructed, but the complete mixed bounded cone is not classified by the sign theorem."), ("OPEN", "The Taub sign theorem obstructs pure-extra directions even with secular corrections, while the full mixed smooth-secular cone remains open."), ("NO_CERTIFIED_MAP", "No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("harmonic_taub_sign", "taub", "exceptional_current", "exceptional_nonzero_k_cofiber", "radiative"),
             "Fixed magnetic bundle only. Uniform flux variation, complete resonance functionals, final residual descent, all-orders integration, causal propagation and quantum interpretation remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.mixed.harmonic_sign_resonance_join",
+            _scope(theory="Einstein-Maxwell image and additional-Weyl cofiber inside Weyl-Maxwell", carrier="joined complete finite obstruction map; classified subcarrier is all standard globals plus arbitrary finite generic ell>=2,k=0 q/p waves", degree=2, parity="axial and polar where present", ell="joined 0,1,>=2; classified subcarrier globals plus arbitrary finite generic ell>=2", m="all certified SO3 multiplicities", k="joined all certified momenta; classified subcarrier k=0", omega="all certified q/p shells and generalized-zero polynomial classes"),
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            ("CERTIFIED", "Every certified branch is retained in the joined coefficientwise obstruction map without identifying distinct momentum or circumference carriers."),
+            ("CERTIFIED", "Branch-diagonal Lee-Wald occupation weights supply the all-harmonic sign block; pure additional-Weyl finite sums have strictly negative mu_H and the Einstein q-minus block has the opposite sign."),
+            ("CERTIFIED", "The stabilizer block is (mu_H,mu_Px,mu_J1,mu_J2,mu_J3); its zero block is orthogonal to all positive-degree P_(j,r) and nonzero-shell R_(j,a) output summands."),
+            ("CERTIFIED", "The complete bounded map is {mu,P,R}; the polynomial and exceptional twist-resonance witnesses independently show that mu=0 is not bounded solvability."),
+            _second_order(("CERTIFIED", "On the maximal complete subcarrier—standard globals plus arbitrary finite generic ell>=2,k=0 waves—the exact bounded cone is the certified wave-free/wave-nonzero stratified union. The full finite-carrier zero geometry remains OPEN."), ("CERTIFIED", "On the complete certified finite carrier, smooth exponential-polynomial extension is equivalent to the five moment maps vanishing."), ("NO_CERTIFIED_MAP", "No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("harmonic_sign_resonance_join", "harmonic_taub_sign", "complete_global_twist_finite_harmonic_k0_bounded", "complete_finite_smooth"),
+            "The joined map is complete as a finite coefficientwise formula, but its full bounded common zero geometry is not classified. The exact solved subcarrier excludes exceptional oscillator inputs and nonzero momentum; candidate-13 and tuned opposite-momentum controls remain separate with NO_CERTIFIED_MAP between them. Infinite completion, final residual descent, all-orders, causal, observational and quantum claims remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.mixed.ell2_k0_balanced_jet",
@@ -1993,6 +2006,22 @@ def build() -> dict[str, object]:
         raise AssertionError("harmonic Taub-sign stratification changed")
     if harmonic_taub["full_mixed_second_order_cone_classified"] or harmonic_taub["causal_or_quantum_claim"]:
         raise AssertionError("harmonic Taub-sign stratification exceeded its scope")
+    harmonic_join = records["harmonic_sign_resonance_join"]["classification"]
+    if not (
+        harmonic_join["complete_branch_labelled_obstruction_map_joined"]
+        and harmonic_join["block_orthogonality_certified"]
+        and harmonic_join["bounded_necessity_and_sufficiency_formula_certified"]
+        and harmonic_join["smooth_finite_harmonic_cone_certified"]
+        and harmonic_join["pure_extra_face_is_origin"]
+        and harmonic_join["maximal_generic_k0_global_mixed_bounded_cone_classified"]
+    ):
+        raise AssertionError("harmonic sign-resonance join changed")
+    if (
+        harmonic_join["exceptional_generic_global_arbitrary_k_common_zero_classified"]
+        or harmonic_join["multiple_abs_momentum_full_cone_classified"]
+        or harmonic_join["all_orders_causal_residual_observational_or_quantum_claim"]
+    ):
+        raise AssertionError("harmonic sign-resonance join exceeded scope")
     if not records["balanced"]["classification"]["complete_second_order_extension_constructed"]:
         raise AssertionError("balanced second-order extension input changed")
     if not records["exceptional_resonance"]["classification"]["complete_all_m_exceptional_ell1_two_polarization_cone_second_order_obstructed"]:

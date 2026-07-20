@@ -522,6 +522,85 @@
       }
     },
     {
+      "claim_boundary": "The joined map is complete as a finite coefficientwise formula, but its full bounded common zero geometry is not classified. The exact solved subcarrier excludes exceptional oscillator inputs and nonzero momentum; candidate-13 and tuned opposite-momentum controls remain separate with NO_CERTIFIED_MAP between them. Infinite completion, final residual descent, all-orders, causal, observational and quantum claims remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_harmonic_sign_resonance_join.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_HARMONIC_SIGN_RESONANCE_JOIN",
+          "sha256": "63b605c2441e9cf9d38e8b542641f060cc1a240de0af377cee57ebb0c0b848fd"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_harmonic_taub_sign_classification.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_HARMONIC_TAUB_SIGN_CLASSIFICATION",
+          "sha256": "4a89b93798b46c3a841790dc4bcb7350c429ddd50caf85f2396fa02866b11104"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_complete_global_twist_finite_harmonic_k0_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_GLOBAL_TWIST_FINITE_HARMONIC_K0_BOUNDED_CONE",
+          "sha256": "9036f1d2010b153b7396b7ba4ca5fad485c0f081dc2b5af1cc7b8cceef0d1dce"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_FINITE_HARMONIC_SMOOTH_GLOBAL_SECOND_ORDER",
+          "sha256": "4230400a4d4ddfc5181749879b13df159c8d4de3a307a42fa3c916de2ec6c885"
+        }
+      ],
+      "id": "einstein.ph.wm.mixed.harmonic_sign_resonance_join",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Every certified branch is retained in the joined coefficientwise obstruction map without identifying distinct momentum or circumference carriers.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "Branch-diagonal Lee-Wald occupation weights supply the all-harmonic sign block; pure additional-Weyl finite sums have strictly negative mu_H and the Einstein q-minus block has the opposite sign.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The complete bounded map is {mu,P,R}; the polynomial and exceptional twist-resonance witnesses independently show that mu=0 is not bounded solvability.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "On the maximal complete subcarrier\u2014standard globals plus arbitrary finite generic ell>=2,k=0 waves\u2014the exact bounded cone is the certified wave-free/wave-nonzero stratified union. The full finite-carrier zero geometry remains OPEN.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific retarded Weyl-Maxwell correction complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "On the complete certified finite carrier, smooth exponential-polynomial extension is equivalent to the five moment maps vanishing.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The stabilizer block is (mu_H,mu_Px,mu_J1,mu_J2,mu_J3); its zero block is orthogonal to all positive-degree P_(j,r) and nonzero-shell R_(j,a) output summands.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "joined complete finite obstruction map; classified subcarrier is all standard globals plus arbitrary finite generic ell>=2,k=0 q/p waves",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed unless narrowed",
+        "degree": 2,
+        "ell": "joined 0,1,>=2; classified subcarrier globals plus arbitrary finite generic ell>=2",
+        "k": "joined all certified momenta; classified subcarrier k=0",
+        "m": "all certified SO3 multiplicities",
+        "omega": "all certified q/p shells and generalized-zero polynomial classes",
+        "parity": "axial and polar where present",
+        "theory": "Einstein-Maxwell image and additional-Weyl cofiber inside Weyl-Maxwell"
+      }
+    },
+    {
       "claim_boundary": "This is one explicit second-order jet, not the full mixed cone, an exact nonlinear family, or an all-orders closure theorem.",
       "descriptions": {
         "causal": "OPEN",
@@ -11171,7 +11250,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "33930436721ec0dfc3e08cf5605db1ee2aa053f74950cd54233bf7d12f3f9cc0",
+  "generated_by_sha256": "9833a340eb80c91697668e9d957058fa7508c82ad4e17e0bf2a7c00567edfe87",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

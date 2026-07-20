@@ -1,0 +1,153 @@
+{
+  "branch_labelled_obstruction_map": {
+    "block_orthogonality": {
+      "branch": "the stationary Lee-Wald form is branch-diagonal, so the Hamiltonian sign ledger is an orthogonal occupation sum before P/R are evaluated",
+      "harmonic": "distinct (L,M,K,Omega,parity) output blocks are direct summands",
+      "zero_vs_nonzero_frequency": "stabilizer covectors are excluded from P and R; R uses only nonzero characteristic shells"
+    },
+    "bounded_codomain": "stab* direct_sum polynomial_growth direct_sum characteristic_shell",
+    "bounded_necessity_and_sufficiency": "O_bounded(u)=0 iff a bounded or finite-quasiperiodic second-order correction exists on the complete certified finite carrier",
+    "characteristic_shell_block": "R_(j,a)=<zeta_(j,a),S_j(u,u)> for every exact reduced left-kernel basis vector a on a nonzero-frequency p/q target shell",
+    "equation": "L_WM v=-(1/2)D^2E_WM[u,u]",
+    "polynomial_growth_block": "P_(j,r), for every output j=(L,M,K,Omega,parity) and every certified positive temporal degree r",
+    "smooth_restriction": "O_smooth=(mu_H,mu_Px,mu_J1,mu_J2,mu_J3); P and R admit finite secular primitives",
+    "stabilizer_block": [
+      "mu_H",
+      "mu_Px",
+      "mu_J1",
+      "mu_J2",
+      "mu_J3"
+    ]
+  },
+  "claim_boundary": "This exact join is confined to the compact Plebanski-Hacyan reduced harmonic programme. The full finite bounded obstruction map is complete as a formula, while only the declared arbitrary-finite generic k=0 plus standard-global subcarrier has a classified mixed zero locus. Exceptional/global arbitrary-k unions, multiple |k| fibres, infinite completion, all-orders integration, final residual descent, causal propagation, observables, particles and quantum norms remain open.",
+  "classification": {
+    "all_orders_causal_residual_observational_or_quantum_claim": false,
+    "block_orthogonality_certified": true,
+    "bounded_necessity_and_sufficiency_formula_certified": true,
+    "candidate13_and_opposite_momentum_controls_kept_separate": true,
+    "complete_branch_labelled_obstruction_map_joined": true,
+    "exceptional_generic_global_arbitrary_k_common_zero_classified": false,
+    "infinite_harmonic_completion_classified": false,
+    "maximal_generic_k0_global_mixed_bounded_cone_classified": true,
+    "multiple_abs_momentum_full_cone_classified": false,
+    "pure_extra_face_is_origin": true,
+    "smooth_finite_harmonic_cone_certified": true
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "complete_map": "CERTIFIED",
+      "full_finite_carrier_zero_locus": "OPEN",
+      "maximal_k0_subcarrier_zero_locus": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "complete_zero_locus": "CERTIFIED: mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G4_FINITE_HARMONIC_JOIN_WITH_MAXIMAL_COMPLETE_K0_SUBCARRIER",
+  "independence_witnesses": {
+    "consequence": "moment-map cancellation is not bounded solvability on the complete finite carrier",
+    "polynomial": "the aligned global-extra tangent has all five moment maps zero but a nonzero positive-degree source coefficient P",
+    "resonant": "the twist-balanced exceptional tangent has all five moment maps zero but a nonzero characteristic-shell functional R"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "maximal_complete_mixed_subcarrier": {
+    "bounded_zero_locus": {
+      "intersection": "wave=0,d=0 with c,W_x,A arbitrary",
+      "wave_free": "wave=0: a=b=Q_e=B=0; c,d,W_x,A arbitrary",
+      "wave_nonzero": "wave!=0: a=b=d=Q_e=B=0; c,W_x,A arbitrary; total mu_H=mu_J1=mu_J2=mu_J3=0"
+    },
+    "domain": "complete standard homogeneous/twist/Maxwell globals plus an arbitrary finite sum of generic ell>=2,k=0 q-minus, q-plus and both p-extra multiplicities, all m and both parities",
+    "mu_Px": "automatic at k=0",
+    "necessity_and_sufficiency": true,
+    "why_complete": "all polynomial and shell columns on this carrier are either the displayed global eliminators, identically zero, or have certified bounded inverses; cross-ell outputs are off shell and finite blockwise corrections add"
+  },
+  "next_gate": "classify exceptional ell=1 wave cross columns with generic/global inputs at arbitrary k, then join multiple |k| fibres without identifying their phases or circumference backgrounds",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_harmonic_sign_resonance_join.py",
+    "generator_sha256": "2616f83a71ed8b82f9241d88195fb819b9955780275b1b8fa959e720fac10b6a",
+    "inputs": {
+      "candidate13": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_COMPLETE_MIXED_CONE",
+        "sha256": "02124af6a0411f4a7070506ea21f99b0414b17266fe27564037ac9e92a3a88ef"
+      },
+      "finite": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_FINITE_HARMONIC_SMOOTH_GLOBAL_SECOND_ORDER",
+        "sha256": "4230400a4d4ddfc5181749879b13df159c8d4de3a307a42fa3c916de2ec6c885"
+      },
+      "k0_complete": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_complete_global_twist_finite_harmonic_k0_bounded_cone.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_GLOBAL_TWIST_FINITE_HARMONIC_K0_BOUNDED_CONE",
+        "sha256": "9036f1d2010b153b7396b7ba4ca5fad485c0f081dc2b5af1cc7b8cceef0d1dce"
+      },
+      "opposite_momentum": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_all_primary_bounded_cone.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_ELL2_TUNED_ALL_PRIMARY_BOUNDED_CONE",
+        "sha256": "df4d5f8f902dfe3cd8afaba640b8c26430db484c5b021afbdc7cdd16adcce471"
+      },
+      "polynomial_witness": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_BOUNDED_CORRECTION_OBSTRUCTION",
+        "sha256": "0d38d8f23a62984ba946ffd50c0c441572b8f8b7744e2434ec3698c1b35cf389"
+      },
+      "resonance_witness": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_TWIST_RESONANCE",
+        "sha256": "e2c12e76f0ead8f1d96f5ee953ceca78e85e3d5a74cd37aad4dfe46a0aa047a8"
+      },
+      "sign": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_harmonic_taub_sign_classification.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_HARMONIC_TAUB_SIGN_CLASSIFICATION",
+        "sha256": "4a89b93798b46c3a841790dc4bcb7350c429ddd50caf85f2396fa02866b11104"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_HARMONIC_SIGN_RESONANCE_JOIN",
+  "result_state": "COMPLETE_JOIN_AND_MAXIMAL_CERTIFIED_K0_MIXED_BOUNDED_CONE",
+  "schema": "einstein-maxwell-weyl-harmonic-sign-resonance-join-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_harmonic_sign_resonance_join.schema.json",
+  "schema_sha256": "a17e864631e060285f3e39c217cbf90069e9994111a2cf44092c0b6153e74bd7",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "complete certified finite harmonic inventory for the joined map; maximal classified subcarrier is all standard globals plus arbitrary finite generic ell>=2,k=0 q/p waves",
+    "charge_sector": "fixed N=2 magnetic bundle; electric tangent retained until the obstruction map removes it",
+    "degree": 2,
+    "ell": "joined map: homogeneous 0, exceptional 1 and generic >=2; classified subcarrier: globals plus arbitrary finite generic ell>=2",
+    "k": "joined map: every certified compact momentum; classified subcarrier: k=0",
+    "m": "all certified SO3 multiplicities",
+    "omega": "all certified q/p shells and generalized-zero polynomial classes",
+    "parity": "axial and polar where present",
+    "theory": "Einstein-Maxwell image and additional-Weyl cofiber inside Weyl-Maxwell"
+  },
+  "separate_nonzero_momentum_controls": {
+    "candidate13": "complete bounded cone is the origin on its declared two-|k| all-m both-parity carrier",
+    "crosswalk": "NO_CERTIFIED_MAP between these distinct circumference/momentum carriers; they are controls, not pieces of one cone",
+    "tuned_opposite_momentum": "two nonzero mixed q-minus components survive on its distinct axisymmetric all-primary carrier"
+  },
+  "sign_join": {
+    "Einstein_q_minus": "has the opposite Hamiltonian sign in every generic ell>=2 parity and can balance additional-Weyl occupation",
+    "constant_twist": "constant twist position is an exact zero-energy global modulus and is controlled separately by P/R cross columns",
+    "global_blocks": "homogeneous and twist solution cofibers vanish; they are standard generalized-zero image data, not additional-Weyl exceptions",
+    "pure_additional_weyl_face": "mu_H<0 for every nonzero real finite pure-extra tangent, hence its common zero with P and R is the origin"
+  },
+  "unclassified_remainder": {
+    "common_zero_geometry": "OPEN",
+    "first_family": "exceptional ell=1 oscillator inputs mixed with generic waves and globals at arbitrary compact momentum, followed by unions of multiple |k| fibres",
+    "functional_map": "CERTIFIED as the coefficientwise {mu,P,R} zero-locus formula",
+    "reason": "the existing exact inputs do not classify simultaneous cancellations among every exceptional/global/opposite-momentum polynomial and shell row"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_harmonic_sign_resonance_join --verify bridge/certificates/einstein_maxwell_weyl_harmonic_sign_resonance_join.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_harmonic_sign_resonance_join.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_harmonic_sign_resonance_join"
+  ]
+}

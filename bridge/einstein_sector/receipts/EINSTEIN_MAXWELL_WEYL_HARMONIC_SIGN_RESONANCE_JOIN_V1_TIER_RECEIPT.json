@@ -1,0 +1,78 @@
+{
+  "schema": "verification-tier-receipt-v1",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_HARMONIC_SIGN_RESONANCE_JOIN",
+  "work_item": "sf:program/work/bridge-harmonic-sign-resonance-join",
+  "recorded_at": "2026-07-20T09:51:42Z",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "claim_boundary": "Compact Plebanski-Hacyan finite reduced harmonic carrier at fixed N=2 magnetic bundle. The complete bounded map is joined, the smooth cone and maximal arbitrary-finite generic k=0 plus global bounded cone are classified; exceptional/global arbitrary-k unions and multiple-|k| common-zero geometry remain open.",
+  "content_hashes": {
+    "bridge/certificates/einstein_maxwell_weyl_harmonic_sign_resonance_join.json": "63b605c2441e9cf9d38e8b542641f060cc1a240de0af377cee57ebb0c0b848fd",
+    "bridge/einstein_sector/einstein_maxwell_weyl_harmonic_sign_resonance_join.py": "2616f83a71ed8b82f9241d88195fb819b9955780275b1b8fa959e720fac10b6a",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_harmonic_sign_resonance_join.schema.json": "a17e864631e060285f3e39c217cbf90069e9994111a2cf44092c0b6153e74bd7",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_harmonic_sign_resonance_join.py": "44dc403fa74dba037371118886b5ef81a7bfae5ad287eb2efd1c2734376c560d",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_harmonic_sign_resonance_join.py": "9fd3b8296601d033c676a38796fc45a8b342b9b66a6ad259f8c4d58bc5fbdf84",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "9833a340eb80c91697668e9d957058fa7508c82ad4e17e0bf2a7c00567edfe87",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "af63123dd56393ce0438aa8568a4dbb178202cc0350d592172a6892a177d5b4b",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "e2675038fc3a9ad2c1fd30e4696bb0b31e74deea0395d643d76c315bfcdbf1ff",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "7f85415229b4931bc50abbe19f7a0c8ca20e1dc3b33d87f737907bc3312e6824",
+    "reports/einstein-maxwell-weyl-harmonic-sign-resonance-join.md": "d9efe1a1faae77e2ce8a69920bec5689c0929e4421cd24ba42932166a173e80e",
+    "notes/d-quotient-einstein-team-brief.md": "47238f00185c2f0dfad094bcda18119552c82585adfaeacf76a790664b37a3c6"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped join and atlas Python paths>",
+        "jsonschema Draft202012Validator.check_schema on the join schema",
+        "git diff --check -- <scoped join, atlas, report and note paths>"
+      ],
+      "elapsed_seconds": 0.51
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_harmonic_sign_resonance_join --verify bridge/certificates/einstein_maxwell_weyl_harmonic_sign_resonance_join.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_harmonic_sign_resonance_join.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_harmonic_sign_resonance_join"
+      ],
+      "tests": 4,
+      "elapsed_seconds": 0.59
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The generated Einstein atlas directly consumes the joined certificate and independently enforces the solved-subcarrier/open-full-carrier boundary.",
+      "commands": [
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ],
+      "tests": 122,
+      "elapsed_seconds": 2.49
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze/tag, release, shared core algebra change or causal lifecycle promotion was requested; imported exact inputs are content-addressed and unchanged."
+    }
+  },
+  "science_forge_shadow": {
+    "status": "FINDINGS_RECORDED_NOT_A_PASS",
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 6.90,
+    "findings": [
+      "bridge certificate audit existence=ok, drift=FAIL, edges=ok, dag=ok, gates=ok",
+      "coverage census drift: 1212 certificates versus baseline 976",
+      "unpinned dirty development Forge binary whose build revision differs from the stdlib checkout"
+    ],
+    "effect_on_claim": "The advisory rail exited zero by design; its findings are not verification and do not promote the claim."
+  },
+  "higher_lifecycle_exclusions": [
+    "exceptional ell=1 plus generic/global arbitrary-k common-zero classification",
+    "multiple absolute-momentum full cone",
+    "infinite harmonic completion",
+    "all-orders integration",
+    "final residual descent",
+    "LORENTZIAN-CAUSAL propagation",
+    "observational or quantum map"
+  ]
+}

@@ -62,6 +62,21 @@ def verify() -> None:
     if "computes no asymptotic charge" not in asymptotic_raw_flux["claim_boundary"]:
         raise AssertionError("asymptotic charge boundary disappeared")
 
+    harmonic_join = by_id["einstein.ph.wm.mixed.harmonic_sign_resonance_join"]
+    harmonic_join_second = harmonic_join["mode_data"]["second_order"]
+    if harmonic_join["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("harmonic sign-resonance join was not promoted")
+    if harmonic_join["mode_data"]["taub_maps"]["status"] != "CERTIFIED":
+        raise AssertionError("joined stabilizer block disappeared")
+    if "{mu,P,R}" not in harmonic_join["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("joined bounded obstruction map disappeared")
+    if harmonic_join_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("maximal complete k0 cone was lost")
+    if "full finite-carrier zero geometry remains OPEN" not in harmonic_join_second["bounded_or_finite_quasiperiodic"]["statement"]:
+        raise AssertionError("full bounded cone was over-promoted")
+    if harmonic_join_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("harmonic join borrowed a causal lifecycle")
+
     generic_extra = by_id["einstein.ph.wm.extra.generic_p_primary"]
     if generic_extra["descriptions"]["nonlinear"] != "OBSTRUCTED":
         raise AssertionError("generic pure-extra nonlinear status drifted")
