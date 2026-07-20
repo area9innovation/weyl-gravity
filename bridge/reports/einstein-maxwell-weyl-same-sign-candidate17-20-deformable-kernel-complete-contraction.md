@@ -140,8 +140,7 @@ construct a global Hausdorff quotient outside this carrier, perform final
 residual descent, prove an all-orders solution, or establish causal,
 observational or quantum claims.
 
-EVIDENCE:
-`bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction.json`
+EVIDENCE: bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction.json
 
 CLOSE-OUT: DONE — the complete stop condition is met
 EVIDENCE: bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_complete_contraction.json
