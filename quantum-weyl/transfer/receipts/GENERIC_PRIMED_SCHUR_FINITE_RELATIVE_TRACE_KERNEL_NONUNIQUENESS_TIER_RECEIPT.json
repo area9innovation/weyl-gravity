@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "GENERIC_PRIMED_SCHUR_FINITE_RELATIVE_TRACE_KERNEL_NONUNIQUENESS_TIER_RECEIPT",
+  "claim_id": "GENERIC_PRIMED_SCHUR_FINITE_RELATIVE_TRACE_KERNEL_NONUNIQUENESS",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "artifacts": [
+    {
+      "path": "quantum-weyl/spectral/euclidean/generic_primed_schur_finite_relative_trace_kernel_nonuniqueness.py",
+      "sha256": "c131245ead8cb538be02e2f158cf096024f4087b530b40a621cfe866274faf4a"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/verify_generic_primed_schur_finite_relative_trace_kernel_nonuniqueness.py",
+      "sha256": "62014046321dcaa2d67db4626988d77d833c396f3c93637e1a4d2152b4a6910b"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/tests/test_generic_primed_schur_finite_relative_trace_kernel_nonuniqueness.py",
+      "sha256": "ae8cf7d92404ded243068e0f085e4d6fb45aeb3e29d0329b22489200348ed476"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/schema/generic-primed-schur-finite-relative-trace-kernel-nonuniqueness-v1.schema.json",
+      "sha256": "4d88b356f690082af2a3964d0e2b16e68d881edde318652730604f83368df6a2"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_PRIMED_SCHUR_FINITE_RELATIVE_TRACE_KERNEL_NONUNIQUENESS.json",
+      "sha256": "dd114394a10d0669bcbdad88adbec31e789a37f264c39d314b2e672a4baae89c"
+    },
+    {
+      "path": "quantum-weyl/reports/generic-primed-schur-finite-relative-trace-kernel-nonuniqueness.md",
+      "sha256": "57bbee487a3d2fb37916838eaec02471f26ebdc077ee7055869100e00a851654"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <producer, independent verifier, tests>",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m json.tool <schema, certificate, receipt>",
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <explicit generic Schur nonuniqueness paths>",
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_primed_schur_finite_relative_trace_kernel_nonuniqueness --check",
+        "status": "PASS",
+        "elapsed_seconds": 0.10
+      },
+      {
+        "command": "PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_primed_schur_finite_relative_trace_kernel_nonuniqueness",
+        "status": "PASS",
+        "elapsed_seconds": 0.56,
+        "independent_rail": "does not import or call the producer; reconstructs the finite shifts on an exact two-component primed-plus-zero-mode matrix fixture and independently derives the cubic unit shift from a formal log-determinant series"
+      },
+      {
+        "command": "PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_primed_schur_finite_relative_trace_kernel_nonuniqueness -v",
+        "status": "PASS",
+        "elapsed_seconds": 0.47,
+        "tests": 6,
+        "mutation_controls": "finite trace sign, cubic response, zero-mode invariance, special-background interpolation and full-BV promotion are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/spectral/euclidean/schema/generic-primed-schur-finite-relative-trace-kernel-nonuniqueness-v1.schema.json -d quantum-weyl/spectral/euclidean/certificates/GENERIC_PRIMED_SCHUR_FINITE_RELATIVE_TRACE_KERNEL_NONUNIQUENESS.json",
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "NOT_RUN",
+    "reason": "The theorem imports one unchanged content-addressed predecessor and introduces no shared operator, schema interface or promoted downstream theorem."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is a scoped exact nonuniqueness theorem, not a freeze, release, tag or shared-core-algebra change."
+  },
+  "claim_boundary": "The receipt certifies exact nonuniqueness of a background-universal finite Schur relative-trace kernel from the declared local data and identifies the missing global spectral input. It does not compute a background-specific kernel, complete the full-BV five functions, supply Gamma1/Q1, decide a QME, or establish Lorentzian, Hadamard, particle, scattering or unitarity claims.",
+  "higher_tiers_not_run": [
+    {
+      "tier": 2,
+      "criterion": "No mathematical input, shared operator, schema consumer or promoted theorem changed."
+    },
+    {
+      "tier": 3,
+      "criterion": "No freeze, release, tag, shared-core algebra change or explicit full-suite request occurred."
+    }
+  ]
+}

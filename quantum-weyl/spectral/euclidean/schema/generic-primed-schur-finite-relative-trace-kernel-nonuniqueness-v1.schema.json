@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/quantum-weyl/generic-primed-schur-finite-relative-trace-kernel-nonuniqueness-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "classical_commit",
+    "scope",
+    "declared_complete_kernel_class",
+    "rank_one_finite_value_witness",
+    "third_curvature_row_witness",
+    "invariance_ledger",
+    "special_background_holdouts",
+    "minimal_additional_global_input",
+    "decision",
+    "dependency",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-generic-primed-schur-finite-relative-trace-kernel-nonuniqueness-v1"
+    },
+    "result_id": {
+      "const": "GENERIC_PRIMED_SCHUR_FINITE_RELATIVE_TRACE_KERNEL_NONUNIQUENESS"
+    },
+    "result_state": {
+      "const": "BACKGROUND_UNIVERSAL_FINITE_KERNEL_NONUNIQUE_MINIMAL_GLOBAL_SPECTRAL_INPUT_IDENTIFIED"
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]
+    },
+    "classical_commit": {"type": "string", "minLength": 7},
+    "scope": {"type": "object", "minProperties": 5},
+    "declared_complete_kernel_class": {
+      "type": "object",
+      "required": ["fixed_data", "allowed_completion_difference", "equivalence_question"],
+      "properties": {
+        "fixed_data": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+        "allowed_completion_difference": {"type": "string", "minLength": 1},
+        "equivalence_question": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "rank_one_finite_value_witness": {
+      "type": "object",
+      "required": [
+        "primed_unit_vector",
+        "base_action",
+        "smoothing_perturbation",
+        "zero_mode_action",
+        "invertibility",
+        "finite_trace_shifts",
+        "nonzero_proof"
+      ],
+      "properties": {
+        "primed_unit_vector": {"type": "string"},
+        "base_action": {"const": "K e=(1/2)e"},
+        "smoothing_perturbation": {"const": "T=(7/11)|e><e|"},
+        "zero_mode_action": {"type": "string"},
+        "invertibility": {
+          "type": "object",
+          "required": ["base_S_eigenvalue", "perturbed_S_eigenvalue", "status"],
+          "properties": {
+            "base_S_eigenvalue": {"const": {"numerator": 3, "denominator": 2}},
+            "perturbed_S_eigenvalue": {"const": {"numerator": 47, "denominator": 22}},
+            "status": {"const": "POSITIVE"}
+          },
+          "additionalProperties": false
+        },
+        "finite_trace_shifts": {
+          "type": "object",
+          "required": [
+            "Delta_R_mu0_K",
+            "Delta_FP_R_mu0_K2",
+            "Delta_log_det3",
+            "Delta_log_Det_3_R"
+          ],
+          "properties": {
+            "Delta_R_mu0_K": {"const": {"numerator": 7, "denominator": 11}},
+            "Delta_FP_R_mu0_K2": {"const": {"numerator": 126, "denominator": 121}},
+            "Delta_log_det3": {"const": "log(47/33)-14/121"},
+            "Delta_log_Det_3_R": {"const": "log(47/33)"}
+          },
+          "additionalProperties": false
+        },
+        "nonzero_proof": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "third_curvature_row_witness": {
+      "type": "object",
+      "required": ["family", "properties", "mixed_third_variation_shifts", "carrier_consequence"],
+      "properties": {
+        "family": {"const": "T(u1,u2,u3)=(3/2)u1*u2*u3 |e><e|"},
+        "properties": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+        "mixed_third_variation_shifts": {
+          "type": "object",
+          "required": [
+            "Delta_d123_R_mu0_K",
+            "Delta_d123_FP_R_mu0_K2",
+            "Delta_d123_log_det3",
+            "Delta_d123_log_Det_3_R"
+          ],
+          "properties": {
+            "Delta_d123_R_mu0_K": {"const": {"numerator": 3, "denominator": 2}},
+            "Delta_d123_FP_R_mu0_K2": {"const": {"numerator": 3, "denominator": 2}},
+            "Delta_d123_log_det3": {"const": {"numerator": 1, "denominator": 4}},
+            "Delta_d123_log_Det_3_R": {"const": {"numerator": 1, "denominator": 1}}
+          },
+          "additionalProperties": false
+        },
+        "carrier_consequence": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "invariance_ledger": {
+      "const": {
+        "complete_symbol": "UNCHANGED_SMOOTHING_HAS_SYMBOL_ZERO",
+        "Wodzicki_residues": "UNCHANGED_RESIDUE_VANISHES_ON_SMOOTHING",
+        "scale_derivative": "UNCHANGED",
+        "zero_mode_projector": "UNCHANGED_P_T_EQUALS_ZERO",
+        "subtraction_scheme": "UNCHANGED",
+        "reference_finite_rows": "CHANGED",
+        "third_curvature_finite_row": "CHANGED"
+      }
+    },
+    "special_background_holdouts": {
+      "type": "object",
+      "required": ["round_S4", "product_S2_S2", "consequence"],
+      "properties": {
+        "round_S4": {"const": "PINNED_BUT_NOT_INTERPOLATED"},
+        "product_S2_S2": {"const": "PINNED_BUT_NOT_INTERPOLATED"},
+        "consequence": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "minimal_additional_global_input": {
+      "type": "object",
+      "required": ["status", "data", "sufficiency", "not_supplied_by"],
+      "properties": {
+        "status": {"const": "REQUIRED"},
+        "data": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+        "sufficiency": {"type": "string", "minLength": 1},
+        "not_supplied_by": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "decision": {
+      "const": {
+        "background_universal_finite_kernel_from_declared_local_data": "NONUNIQUE",
+        "generic_reference_finite_rows": "PARAMETERIZED_BY_GLOBAL_SPECTRAL_DATA",
+        "complete_generic_BV_five_form_factors": "NOT_COMPUTED",
+        "predecessor_maximal_partial_BV_quotient": "UNCHANGED"
+      }
+    },
+    "dependency": {"$ref": "#/$defs/reference"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "EXACT_FINITE_KERNEL_NONUNIQUENESS_PROVED",
+        "EXACT_THIRD_CURVATURE_ROW_NONUNIQUENESS_PROVED",
+        "SYMBOL_RESIDUE_ZERO_MODE_AND_SUBTRACTION_PRESERVED",
+        "MINIMAL_GLOBAL_SPECTRAL_INPUT_IDENTIFIED",
+        "SPECIAL_BACKGROUND_INTERPOLATION_USED",
+        "BACKGROUND_UNIVERSAL_FINITE_KERNEL_CONSTRUCTED",
+        "COMPLETE_GENERIC_BV_FIVE_FORM_FACTORS_COMPUTED",
+        "QME_OR_LORENTZIAN_PROMOTED"
+      ],
+      "properties": {
+        "EXACT_FINITE_KERNEL_NONUNIQUENESS_PROVED": {"const": true},
+        "EXACT_THIRD_CURVATURE_ROW_NONUNIQUENESS_PROVED": {"const": true},
+        "SYMBOL_RESIDUE_ZERO_MODE_AND_SUBTRACTION_PRESERVED": {"const": true},
+        "MINIMAL_GLOBAL_SPECTRAL_INPUT_IDENTIFIED": {"const": true},
+        "SPECIAL_BACKGROUND_INTERPOLATION_USED": {"const": false},
+        "BACKGROUND_UNIVERSAL_FINITE_KERNEL_CONSTRUCTED": {"const": false},
+        "COMPLETE_GENERIC_BV_FIVE_FORM_FACTORS_COMPUTED": {"const": false},
+        "QME_OR_LORENTZIAN_PROMOTED": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

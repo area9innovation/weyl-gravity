@@ -1,0 +1,142 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/EUCLIDEAN-SPECTRAL theorem proves that the declared local Schur operator data, all residues, priming and subtraction scheme do not determine a background-universal finite relative-trace kernel. Exact rank-one smoothing witnesses change both the finite determinant and a selected cubic carrier row while preserving every declared local datum. The result identifies the minimal missing global spectral input. It does not compute a background-specific generic kernel, complete the full-BV five functions, supply Gamma1/Q1, decide a QME, or establish any Lorentzian, Hadamard, state, particle, scattering or unitarity claim.",
+  "claim_flags": {
+    "BACKGROUND_UNIVERSAL_FINITE_KERNEL_CONSTRUCTED": false,
+    "COMPLETE_GENERIC_BV_FIVE_FORM_FACTORS_COMPUTED": false,
+    "EXACT_FINITE_KERNEL_NONUNIQUENESS_PROVED": true,
+    "EXACT_THIRD_CURVATURE_ROW_NONUNIQUENESS_PROVED": true,
+    "MINIMAL_GLOBAL_SPECTRAL_INPUT_IDENTIFIED": true,
+    "QME_OR_LORENTZIAN_PROMOTED": false,
+    "SPECIAL_BACKGROUND_INTERPOLATION_USED": false,
+    "SYMBOL_RESIDUE_ZERO_MODE_AND_SUBTRACTION_PRESERVED": true
+  },
+  "classical_commit": "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+  "decision": {
+    "background_universal_finite_kernel_from_declared_local_data": "NONUNIQUE",
+    "complete_generic_BV_five_form_factors": "NOT_COMPUTED",
+    "generic_reference_finite_rows": "PARAMETERIZED_BY_GLOBAL_SPECTRAL_DATA",
+    "predecessor_maximal_partial_BV_quotient": "UNCHANGED"
+  },
+  "declared_complete_kernel_class": {
+    "allowed_completion_difference": "self-adjoint smoothing family supported entirely on the primed complement and small enough to preserve invertibility",
+    "equivalence_question": "whether the fixed local and subtraction data determine the reference finite trace rows modulo that completion class",
+    "fixed_data": [
+      "complete local polyhomogeneous symbol of S_L(W)",
+      "all Wodzicki residues and their local scale density",
+      "primed zero-mode projector Pi_0",
+      "positive elliptic weight Q_mu=(Delta_0+Pi_0)/mu^2",
+      "common Mellin/proper-time subtraction prescription"
+    ]
+  },
+  "dependency": {
+    "path": "quantum-weyl/spectral/euclidean/certificates/PARITY_EVEN_THIRD_CURVATURE_FIVE_FORM_FACTOR_ASSEMBLY.json",
+    "result_id": "PARITY_EVEN_THIRD_CURVATURE_FIVE_FORM_FACTOR_ASSEMBLY",
+    "sha256": "c474dedff8923233d94998e04e044c5931f03df69fcbf973c650d665f7246f06"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "invariance_ledger": {
+    "Wodzicki_residues": "UNCHANGED_RESIDUE_VANISHES_ON_SMOOTHING",
+    "complete_symbol": "UNCHANGED_SMOOTHING_HAS_SYMBOL_ZERO",
+    "reference_finite_rows": "CHANGED",
+    "scale_derivative": "UNCHANGED",
+    "subtraction_scheme": "UNCHANGED",
+    "third_curvature_finite_row": "CHANGED",
+    "zero_mode_projector": "UNCHANGED_P_T_EQUALS_ZERO"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "minimal_additional_global_input": {
+    "data": [
+      "content-addressed compact global scalar-flat metric and orientation",
+      "complete scalar and vector bundle domains and boundary conditions",
+      "primed zero-mode projectors with normalization",
+      "the global primed resolvent kernel of F+W and scalar weight Q",
+      "or an equivalent complete spectral measure with eigenprojectors",
+      "the reference scale mu_0 and common determinant phase/contour policy"
+    ],
+    "not_supplied_by": [
+      "local jets or complete symbols",
+      "Wodzicki residues or scale response",
+      "round-S4 and S2xS2 special-background values",
+      "the full-BV multiplicity ledger alone"
+    ],
+    "status": "REQUIRED",
+    "sufficiency": "these data select the unique global Green/resolvent and make R_mu0(K), FP R_mu0(K^2), det_3(I+K) and their metric variations well-defined for that background"
+  },
+  "next_gate": "choose one content-addressed global scalar-flat background and supply its primed resolvent or complete spectral measure before computing background-specific finite Schur variations",
+  "rank_one_finite_value_witness": {
+    "base_action": "K e=(1/2)e",
+    "finite_trace_shifts": {
+      "Delta_FP_R_mu0_K2": {
+        "denominator": 121,
+        "numerator": 126
+      },
+      "Delta_R_mu0_K": {
+        "denominator": 11,
+        "numerator": 7
+      },
+      "Delta_log_Det_3_R": "log(47/33)",
+      "Delta_log_det3": "log(47/33)-14/121"
+    },
+    "invertibility": {
+      "base_S_eigenvalue": {
+        "denominator": 2,
+        "numerator": 3
+      },
+      "perturbed_S_eigenvalue": {
+        "denominator": 22,
+        "numerator": 47
+      },
+      "status": "POSITIVE"
+    },
+    "nonzero_proof": "47/33>1, hence log(47/33)>0; moreover log(47/33)>14/47>14/121, so both determinant shifts are nonzero",
+    "primed_unit_vector": "e with Pi_0 e=0 and Qe=q e, q>0",
+    "smoothing_perturbation": "T=(7/11)|e><e|",
+    "zero_mode_action": "T vanishes on ker(Delta_0)"
+  },
+  "result_id": "GENERIC_PRIMED_SCHUR_FINITE_RELATIVE_TRACE_KERNEL_NONUNIQUENESS",
+  "result_state": "BACKGROUND_UNIVERSAL_FINITE_KERNEL_NONUNIQUE_MINIMAL_GLOBAL_SPECTRAL_INPUT_IDENTIFIED",
+  "schema": "quantum-weyl-generic-primed-schur-finite-relative-trace-kernel-nonuniqueness-v1",
+  "scope": {
+    "background_class": "closed scalar-flat metrics with a declared compact global completion and primed scalar/vector domains",
+    "dimension": 4,
+    "operator_class": "self-adjoint classical order-zero S=I+K with K of order -2, fixed complete polyhomogeneous symbol modulo smoothing",
+    "signature": "Euclidean",
+    "subtraction": "common resolved-boundary Mellin minimal subtraction with weighted proper-time Schur determinant at reference scale mu_0"
+  },
+  "special_background_holdouts": {
+    "consequence": "two isolated spectra do not select a generic smoothing completion or a background-universal finite kernel",
+    "product_S2_S2": "PINNED_BUT_NOT_INTERPOLATED",
+    "round_S4": "PINNED_BUT_NOT_INTERPOLATED"
+  },
+  "third_curvature_row_witness": {
+    "carrier_consequence": "multiplying the smoothing amplitude by any selected nonzero linear functional on the certified ten-dimensional labelled carrier quotient changes that finite third-curvature row without changing the imported local symbol, scale derivative, zero modes or subtraction data",
+    "family": "T(u1,u2,u3)=(3/2)u1*u2*u3 |e><e|",
+    "mixed_third_variation_shifts": {
+      "Delta_d123_FP_R_mu0_K2": {
+        "denominator": 2,
+        "numerator": 3
+      },
+      "Delta_d123_R_mu0_K": {
+        "denominator": 2,
+        "numerator": 3
+      },
+      "Delta_d123_log_Det_3_R": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "Delta_d123_log_det3": {
+        "denominator": 4,
+        "numerator": 1
+      }
+    },
+    "properties": [
+      "T and its first and second derivatives vanish at u=0",
+      "the complete symbol and every residue agree for all u",
+      "T acts only on the fixed primed complement",
+      "S+T remains invertible in a neighborhood of u=0"
+    ]
+  }
+}
