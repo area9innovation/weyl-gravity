@@ -1,0 +1,115 @@
+{
+  "schema": "pure-weyl-test-tier-receipt-v1",
+  "result_id": "BERGER_POST_TEMPORAL_ANTIFIELD_MODULE_DISPOSITION_TIER_RECEIPT",
+  "science_forge_work_item": "sf:program/work/observer-post-temporal-antifield-module-disposition",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "claim_result_id": "BERGER_POST_TEMPORAL_ANTIFIELD_MODULE_DISPOSITION",
+  "claim_certificate_sha256": "045778e2e6591d6dc92ce71f8dab5683ed2ff7b61dc5470709bd874e5384c6d1",
+  "payload_sha256": "660a7ae6d6ba320617e39a29b937de5b94ff261de2e419148bee0ec581d46158",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile closed_universe_observers/generate_berger_post_temporal_antifield_module_disposition.py closed_universe_observers/verify_berger_post_temporal_antifield_module_disposition.py closed_universe_observers/tests/test_berger_post_temporal_antifield_module_disposition.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py closed_universe_observers/atlas/verify_observer_atlas_fragment.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+          "status": "PASS"
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=<temporary-directory> paper/09-relational-clocks-berger-d-cartan.tex",
+          "elapsed_seconds": 0.69,
+          "status": "PASS",
+          "summary": "Paper 09 compiled to a temporary directory; no repository PDF was changed."
+        },
+        {
+          "command": "git diff --check -- <scoped observer paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m closed_universe_observers.generate_berger_post_temporal_antifield_module_disposition --write",
+          "elapsed_seconds": 144.65,
+          "status": "PASS",
+          "summary": "Constructed the exact four-row curl mapping cone, enumerated 28 first-jet invariant actions per emitter, and computed both 2617<2618 source-isolated obstructions."
+        },
+        {
+          "command": "python3 -m closed_universe_observers.verify_berger_post_temporal_antifield_module_disposition",
+          "elapsed_seconds": 155.95,
+          "status": "PASS",
+          "independent_rail": true,
+          "summary": "Independently rebuilt the 934- and 2048-action controls, the four-row unary and pairing, both invariant kernels, every new Hessian, both ranks and the canonical -3 g_b h_b witnesses."
+        },
+        {
+          "command": "pytest -q closed_universe_observers/tests/test_berger_post_temporal_antifield_module_disposition.py",
+          "elapsed_seconds": 0.80,
+          "status": "PASS",
+          "summary": "6 passed"
+        },
+        {
+          "command": "python3 -m closed_universe_observers.atlas.generate_observer_atlas_fragment && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && pytest -q closed_universe_observers/tests/test_observer_atlas_fragment.py",
+          "elapsed_seconds": 29.75,
+          "status": "PASS",
+          "summary": "Regenerated and independently verified the fail-closed atlas; 55 atlas tests passed."
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "The imported q1, q2, pairing, component contract and terminal 2613<2614 obstruction are unchanged content-addressed inputs. The new four-row carrier, exact finite action class and all direct atlas and Paper 09 consumers were exercised at Tier 1."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, tag, release or shared-core algebra change was made. The theorem is a scoped finite-class obstruction and the next higher-jet target remains OPEN."
+    }
+  },
+  "failed_attempts": [
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_post_temporal_antifield_module_disposition --write",
+      "elapsed_seconds": 152.12,
+      "status": "FAIL",
+      "summary": "The producer rejected an attempted reflection-even label because the canonical representative has mixed reflection-coordinate support. Reflection was removed from the declared connected representation category."
+    },
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_post_temporal_antifield_module_disposition --write",
+      "elapsed_seconds": 329.80,
+      "status": "FAIL",
+      "summary": "The provenance gate rejected missing independent-verifier and test paths before writing artifacts. Those files were added and the producer was rerun."
+    }
+  ],
+  "boundaries": {
+    "exact_arithmetic": true,
+    "numeric_evidence_used": false,
+    "old_carrier_rows": 110,
+    "new_carrier_rows": 4,
+    "mapping_cone_rows": [
+      "B_01",
+      "B_02",
+      "B_plus_01",
+      "B_plus_02"
+    ],
+    "new_q1_squared_defect_count": 0,
+    "unary_cyclicity_defect_count": 0,
+    "order_zero_invariant_actions_per_emitter": 4,
+    "order_one_invariant_actions_per_emitter": 24,
+    "terminal_full_action_image_rank": 2613,
+    "new_first_jet_quotient_rank": 4,
+    "full_action_image_rank": 2617,
+    "source_augmented_rank": 2618,
+    "surviving_quotient_coordinate_count": 42,
+    "first_quotient_coefficient": "-3 g_b h_b",
+    "surviving_Berger_U1_weight": 0,
+    "declared_first_jet_admissible_locus": "EMPTY",
+    "minimal_unexcluded_target": "complete PBW/IBP order-two curl-doublet action prolongation",
+    "quartic_q3_derived_or_promoted": false,
+    "K_Berger_or_raw_D_replay_performed": false,
+    "detector_memory_redshift_or_recoil_replay_performed": false,
+    "tangent_cone_branch_or_quantum_claim": false
+  }
+}

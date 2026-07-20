@@ -2115,42 +2115,53 @@ The team succeeds by locating the first exact bridge or the first exact
 obstruction.  It does not succeed by arguing that two closed universes sound
 similar.
 
-## Active bridge: temporal Maxwell/emitter antifield covariance
+## Active bridge: post-temporal antifield-module disposition
 
 The active item is
-`sf:program/work/observer-temporal-maxwell-emitter-antifield-covariance-module`.
-It imports the direct temporal covariance obstruction from commit
-`0e1e26d48` by exact certificate and payload hashes.  The declared bounded
-completion retains both forced cotangent sectors,
-\(A^+/\tau/K\) and \(K^+/\tau/A\), on the existing 110-row carrier.
+`sf:program/work/observer-post-temporal-antifield-module-disposition`.  It
+imports the terminal 2,613-versus-2,614 existing-row obstruction, its
+payload, pairing, field inventory and independent verifier by exact hashes.
 
-For each emitter it contains every Berger-\(U(1)\)-invariant action through
-derivative order two and both cotangent transforms of all 932 inherited
-IBP-closed order-three actions.  The resulting 2,048 action Hessians split
-equally between the two sectors and between leading-symbol reflection
-parities.  The unchanged \(q_1\), odd pairing and real structure remain
-certified.
+The smallest connected Berger-\(U(1)\) preimage of the missing Maxwell
+cotangent representation is the four-row curl doublet
+\[
+ q_1B_{01}=e_1A^+_0-e_0A^+_1,\qquad
+ q_1B_{02}=e_2A^+_0-e_0A^+_2,
+\]
+together with \(B^+_{01},B^+_{02}\) and the signed formal-adjoint rows on
+the Maxwell fields.  Every new \(q_1^2\) composition vanishes, the extended
+odd pairing is nondegenerate, and the unary cyclicity defect is exactly
+zero.
 
-This complete existing-row module is obstructed.  Its new image has rank
-1,679 modulo the predecessor rank-934 image, so the full action image has
-rank 2,613.  Adjoining the typed covariance source raises the rank to 2,614
-for both source-isolated emitters.  The 42-coordinate quotient persists and
-begins at
+The complete declared first-jet local action class consists of
+\(B^+\tau K_b\) actions in integration-by-parts normal form.  Exact
+Berger-\(U(1)\) kernels give four order-zero \(g_bh_b'\) directions and
+twenty-four order-one \(g_bh_b\) directions per emitter.  Their Hessians add
+only four quotient directions.  Thus the full ranks are
+\[
+ 2617<2618
+\]
+for both source-isolated emitters, and the same 42-coordinate representative
+survives with first coefficient
 \[
  A^+_0\leftarrow(\tau,e_0e_1K_{b,01})=-3g_bh_b .
 \]
-Removing either cotangent sector is independently rank-detectable.
+Modulo the full image, each source-labelled obstruction is the trivial
+weight-zero \(U(1)\) representation.  The two representatives agree after
+the explicit same-background emitter row-and-label crosswalk.  Reflection is
+not part of the declared connected representation category and receives no
+irrep label.
 
-The first unexcluded object is therefore not another action on an existing
-row.  It is a genuinely new degree-compatible \(q_1\)-preimage of the
-Maxwell cotangent row, completed through the Maxwell ghost-antifield
-differential and signed cotangent descendants required by nilpotency and
-cyclicity.
+This is a completeness obstruction only for the declared four-row,
+total-order-zero/one class.  The smallest unexcluded target keeps the same
+mapping cone and adjoins its complete PBW/IBP order-two
+\(B^+\tau K_b\) action tier.
 
 The fail-closed atlas row is
-`observer.berger.interaction.temporal_maxwell_emitter_antifield_covariance_module`
+`observer.berger.interaction.post_temporal_antifield_module_disposition`
 (`symplectic=CERTIFIED`, `nonlinear=OBSTRUCTED`,
-`observational=OBSTRUCTED`).  No \(q_3\), \(K_{\rm Berger}\), detector,
-memory, redshift, recoil-corrected rank, tangent-cone restriction, branch or
-quantum result is promoted.  The next activation gate is
-`CLASSIFY_NEW_MAXWELL_COTANGENT_Q1_PREIMAGE_MAPPING_CONE_BEFORE_ANY_Q3_OR_OBSERVER_PROPAGATION`.
+`observational=OBSTRUCTED`).  No \(q_3\), \(K_{\rm Berger}\), raw-\(D\)
+descent, detector, memory, redshift, recoil-corrected rank, tangent-cone
+restriction, branch or quantum result is promoted.  The next activation gate
+is
+`ENUMERATE_SECOND_JET_CURL_DOUBLET_ACTION_PROLONGATION_BEFORE_ANY_Q3_OR_OBSERVER_PROMOTION`.

@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "coefficient_field",
+    "mapping_cone",
+    "declared_first_jet_class",
+    "emitter_audits",
+    "emitter_exchange",
+    "minimal_unexcluded_target"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-post-temporal-antifield-module-disposition-payload-v1"
+    },
+    "result_id": {
+      "const": "BERGER_POST_TEMPORAL_ANTIFIELD_MODULE_DISPOSITION_PAYLOAD"
+    },
+    "mapping_cone": {
+      "type": "object",
+      "required": [
+        "old_rows",
+        "new_rows",
+        "shape",
+        "rows",
+        "q1_entries",
+        "q1_entries_sha256",
+        "new_q1_squared_key_counts",
+        "unary_cyclicity_defect_key_count",
+        "pairing"
+      ],
+      "properties": {
+        "old_rows": {
+          "const": 110
+        },
+        "new_rows": {
+          "const": 4
+        },
+        "shape": {
+          "const": [
+            114,
+            114
+          ]
+        },
+        "unary_cyclicity_defect_key_count": {
+          "const": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "declared_first_jet_class": {
+      "type": "object",
+      "required": [
+        "normal_form",
+        "Berger_U1_kernel_audits",
+        "action_count_per_emitter",
+        "complete_within_declared_class"
+      ],
+      "properties": {
+        "action_count_per_emitter": {
+          "const": 28
+        },
+        "complete_within_declared_class": {
+          "const": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "emitter_audits": {
+      "type": "object",
+      "required": [
+        "emitter_0",
+        "emitter_1"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "emitter_0": {
+          "$ref": "#/$defs/emitterAudit"
+        },
+        "emitter_1": {
+          "$ref": "#/$defs/emitterAudit"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "emitterAudit": {
+      "type": "object",
+      "required": [
+        "old_action_image_rank",
+        "terminal_antifield_quotient_rank",
+        "terminal_full_action_image_rank",
+        "first_jet_action_count",
+        "first_jet_action_records_sha256",
+        "first_jet_action_records",
+        "first_jet_quotient_rank",
+        "full_action_image_rank",
+        "source_augmented_rank",
+        "source_outside_image",
+        "final_source_manifest",
+        "normalized_final_source_manifest",
+        "first_quotient_witness",
+        "representation",
+        "mutations"
+      ],
+      "properties": {
+        "old_action_image_rank": {
+          "const": 934
+        },
+        "terminal_antifield_quotient_rank": {
+          "const": 1679
+        },
+        "terminal_full_action_image_rank": {
+          "const": 2613
+        },
+        "first_jet_action_count": {
+          "const": 28
+        },
+        "first_jet_quotient_rank": {
+          "const": 4
+        },
+        "full_action_image_rank": {
+          "const": 2617
+        },
+        "source_augmented_rank": {
+          "const": 2618
+        },
+        "source_outside_image": {
+          "const": true
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
