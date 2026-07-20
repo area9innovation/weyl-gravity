@@ -27,7 +27,7 @@ class ExceptionalArbitraryKLockedResonanceTests(unittest.TestCase):
         value = build_certificate()
         self.assertEqual(
             value["provenance"]["inputs"]["join"]["sha256"],
-            "63b605c2441e9cf9d38e8b542641f060cc1a240de0af377cee57ebb0c0b848fd",
+            "723083a24436059f19ae70f53287e6141c58f54b27eae50064896fd12eba7fbb",
         )
 
     def test_atlas_is_fail_closed(self) -> None:

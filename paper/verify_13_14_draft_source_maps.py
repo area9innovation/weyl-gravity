@@ -28,7 +28,12 @@ def main() -> None:
     for map_path in MAPS:
         payload = json.loads(map_path.read_text(encoding="utf-8"))
         assert payload["schema"] == "paper-draft-source-map-v1"
-        assert payload["lifecycle_state"] == "DRAFT_ALLOWED"
+        if payload["paper_id"] == "PAPER_13_COMPACT_WEYL_MAXWELL_SECOND_ORDER_TANGENT_CONE":
+            assert payload["lifecycle_state"] == "THEOREM_FROZEN"
+            assert payload["structural_theorem_lifecycle_state"] == "THEOREM_FROZEN"
+            assert payload["bounded_common_zero_lifecycle_state"] == "OPEN"
+        else:
+            assert payload["lifecycle_state"] == "DRAFT_ALLOWED"
         baseline = payload["source_baseline"]
         assert _git("cat-file", "-t", baseline) == "commit"
 

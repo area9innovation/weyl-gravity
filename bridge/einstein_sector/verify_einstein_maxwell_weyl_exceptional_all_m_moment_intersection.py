@@ -151,7 +151,7 @@ def verify_payload(payload: dict[str, Any]) -> None:
     helper = provenance["source_helper"]
     assert _sha256(ROOT / helper["path"]) == helper["sha256"]
     assert payload["input_gate"]["exact_hashes"]["all_m_incidence"] == (
-        "c10403b3211c1930ce69f43ddb6c8cab48777ba700f14f8d7e25e4dbc1cf0c45"
+        "b4eed34422acf0574ec9098d1893ac5c5c496bfdf223e8e77bd483ef6adc7ab4"
     )
     assert subprocess.run(
         ["git", "merge-base", "--is-ancestor", payload["input_gate"]["required_commit"], "HEAD"],

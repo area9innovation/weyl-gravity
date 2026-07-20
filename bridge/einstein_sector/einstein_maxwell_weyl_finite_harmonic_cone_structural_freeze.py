@@ -14,15 +14,15 @@ ATLAS = ROOT / "residual_atlas/einstein-finite-harmonic-cone-structural-freeze-f
 INPUTS = {
     "complete_finite": (
         "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
-        "4230400a4d4ddfc5181749879b13df159c8d4de3a307a42fa3c916de2ec6c885",
+        "d3770043041c94e52daa253c5dab1cf3730ea47f078e1b1553e42f00625496cd",
     ),
     "sign_resonance_join": (
         "bridge/certificates/einstein_maxwell_weyl_harmonic_sign_resonance_join.json",
-        "63b605c2441e9cf9d38e8b542641f060cc1a240de0af377cee57ebb0c0b848fd",
+        "723083a24436059f19ae70f53287e6141c58f54b27eae50064896fd12eba7fbb",
     ),
     "all_m_intersection": (
         "bridge/certificates/EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ALL_M_MOMENT_INTERSECTION_V1.json",
-        "48e782b8f1b37f7b603efdb9cc6b60b71f249fd94c6da99c4eb477613e2683b3",
+        "983bfc000f32975f55f8d8a9b8e1fc14138b2cbeccb070f2f13d2dc239d4a59e",
     ),
     "abstract_finite_block": (
         "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
@@ -74,18 +74,18 @@ def build_certificate() -> dict:
     return {
         "schema": "einstein-maxwell-weyl-finite-harmonic-cone-structural-freeze-v1",
         "result_id": "EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_CONE_STRUCTURAL_FREEZE_V1",
-        "lifecycle_state": "CLASSIFIED",
+        "lifecycle_state": "THEOREM_FROZEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "provenance": provenance,
         "declared_carrier": complete["domain"],
         "second_order_equation": "L_WM v=-(1/2)D^2E_WM[u,u]",
         "correction_classes": {
             "finite_exponential_polynomial": {
-                "status": "THEOREM_READY_TIER3_BLOCKED",
+                "status": "THEOREM_FROZEN",
                 "criterion": "mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0",
             },
             "bounded_or_finite_quasiperiodic": {
-                "status": "LEDGER_READY_TIER3_BLOCKED_ZERO_LOCUS_OPEN",
+                "status": "BLOCKWISE_LEDGER_THEOREM_FROZEN_ZERO_LOCUS_OPEN",
                 "criterion": "all mu_X, every positive polynomial coefficient P_(j,r), and every reduced characteristic-shell pairing R_(j,a) vanish",
             },
             "causal_retarded": {"status": "NO_CERTIFIED_MAP"},
@@ -125,23 +125,23 @@ def build_certificate() -> dict:
             "locked_all_m": "On the declared pure-extra k-to-2k face the physical common zero is the origin, while its complex resonance-only incidence is nontrivial.",
         },
         "freeze_disposition": {
-            "structural_theorem": "THEOREM_READY_TIER3_BLOCKED",
-            "paper_13_overall": "DRAFT_ALLOWED",
-            "reason": "The scoped theorem and independent mutations pass, but the required Einstein-package Tier-3 rail fails on a transitive stale-provenance chain rooted at the Lee-Wald component API extension; fail-closed policy blocks lifecycle promotion. The unrestricted real common zero of the bounded quadratic ledger is also not classified.",
+            "structural_theorem": "THEOREM_FROZEN",
+            "paper_13_overall": "THEOREM_FROZEN",
+            "reason": "The complete four-dialect provenance closure is re-locked with zero missing or stale references, the scoped theorem and independent mutations pass, and the required Einstein-package Tier-3 rail passes 1,255 tests with one declared skip. The unrestricted real common zero of the bounded quadratic ledger remains explicitly unclassified.",
             "literature_position": "The momentum-map normal form is classical (Brill-Deser, Fischer-Marsden, Moncrief, Arms-Marsden-Moncrief); the model-specific contribution is the exhaustive Weyl-Maxwell block/cokernel and bounded P/R ledger.",
         },
         "classification": {
             "finite_exponential_polynomial_cone_theorem_ready": True,
             "bounded_obstruction_ledger_theorem_ready": True,
-            "theorem_freeze_promoted": False,
-            "tier3_provenance_relock_complete": False,
+            "theorem_freeze_promoted": True,
+            "tier3_provenance_relock_complete": True,
             "bounded_common_zero_locus_solved": False,
             "all_declared_output_strata_present": True,
             "five_and_only_five_EP_cokernel_covectors": True,
             "infinite_harmonic_causal_all_orders_residual_particle_quantum_claim": False,
         },
-        "claim_boundary": "This audits the exact finite-support exponential-polynomial cone and complete blockwise bounded-obstruction ledger on the compact Plebański-Hacyan carrier, but does not promote a new theorem-freeze lifecycle because the required Tier-3 package rail has unresolved transitive provenance drift. It does not classify the unrestricted bounded common zero, prove an infinite-mode, Sobolev, retarded, all-orders or final-residual theorem, or make scattering, particle, positivity or quantum claims.",
-        "next_gate": "Complete the content-addressed re-lock cascade rooted at f92e7a5e9, obtain a clean Einstein-package Tier-3 run, and only then promote the structural freeze; the unrestricted bounded P/R common zero and causal/retarded classes remain separate open gates.",
+        "claim_boundary": "This theorem freezes the exact finite-support exponential-polynomial cone and complete blockwise bounded-obstruction ledger on the compact Plebański-Hacyan carrier after a clean 1,255-test Tier-3 rail. It does not classify the unrestricted bounded common zero, prove an infinite-mode, Sobolev, retarded, all-orders or final-residual theorem, or make scattering, particle, positivity or quantum claims.",
+        "next_gate": "Classify the unrestricted bounded P/R common zero and the causal/retarded correction classes as separate theorems; do not broaden this finite-support reduced-mode freeze.",
     }
 
 

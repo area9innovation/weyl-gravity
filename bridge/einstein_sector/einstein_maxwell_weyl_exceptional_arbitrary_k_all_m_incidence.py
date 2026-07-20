@@ -177,7 +177,7 @@ def _incidence_certificate() -> dict[str, Any]:
 def build_certificate() -> dict[str, Any]:
     locked = _load(INPUT)
     _require(
-        _sha256(INPUT) == "1d6e0de1021e13285508ce940b8d6a18f538025c0cba5eceed4999e05ffa1788",
+        _sha256(INPUT) == "28d59ff4ff14eeed10ef03b7cf10faed14ab815a7a72f3f265d0ce65870d42dc",
         "locked-resonance input hash changed",
     )
     _require(

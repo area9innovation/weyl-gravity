@@ -28,7 +28,8 @@ def main() -> None:
     assert value["exponential_polynomial_surjectivity"]["decisive_distinction"].startswith(
         "A root of a nonzero invariant factor"
     )
-    assert value["correction_classes"]["finite_exponential_polynomial"]["status"] == "THEOREM_READY_TIER3_BLOCKED"
+    assert value["lifecycle_state"] == "THEOREM_FROZEN"
+    assert value["correction_classes"]["finite_exponential_polynomial"]["status"] == "THEOREM_FROZEN"
     assert value["correction_classes"]["bounded_or_finite_quasiperiodic"]["status"].endswith("ZERO_LOCUS_OPEN")
     assert value["correction_classes"]["causal_retarded"]["status"] == "NO_CERTIFIED_MAP"
 
@@ -37,7 +38,8 @@ def main() -> None:
     assert sum(row["zero_factors"] for row in rows) != 6
     assert len(covectors[:-1]) != value["adjoint_cokernel"]["dimension"]
     assert value["classification"]["bounded_common_zero_locus_solved"] is False
-    assert value["classification"]["theorem_freeze_promoted"] is False
+    assert value["classification"]["theorem_freeze_promoted"] is True
+    assert value["classification"]["tier3_provenance_relock_complete"] is True
     print(f"{value['result_id']} independent verification: PASS")
 
 

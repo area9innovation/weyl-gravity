@@ -38,18 +38,18 @@ linearization-stability architecture.  The new model-specific content is the
 exhaustive Weyl--Maxwell output/cokernel ledger and its independent bounded
 polynomial/resonant refinement.
 
-The scoped theorem and mutation rails pass, but the required package-wide
-Tier-3 rail found a transitive stale-provenance cascade rooted at the
-backward-compatible Lee--Wald component API extension in commit
-`f92e7a5e9`.  The first run failed 17 of 1,255 tests.  A bounded first-layer
-re-pin changed only 13 provenance hashes and made all 53 affected scoped tests
-pass, but exposed 22 downstream stale certificates on the second full run.
-The partial re-pin was rolled back rather than landing an incomplete migration.
+The required package-wide Tier-3 rail originally exposed a transitive
+stale-provenance cascade rooted at the backward-compatible Lee--Wald component
+API extension in commit `f92e7a5e9`.  The final repair traced all four
+provenance dialects through an acyclic 204-artifact closure.  The terminal
+audit found 1,811 references, zero missing inputs, and zero stale hashes.
+The complete Einstein-package rail then passed all 1,255 tests, with one
+declared skip, in 495.702 seconds (476,816 KB maximum RSS).
 
-Paper 13 therefore remains `DRAFT_ALLOWED`, and its structural theorem is
-`THEOREM_READY_TIER3_BLOCKED`, not frozen.  Infinite-harmonic, Sobolev,
-retarded, all-orders, final-residual, scattering, particle, positivity, and
-quantum claims remain excluded.
+Paper 13 and the finite-harmonic structural theorem are therefore
+`THEOREM_FROZEN`.  The unrestricted bounded common zero remains `OPEN`.
+Infinite-harmonic, Sobolev, retarded, all-orders, final-residual, scattering,
+particle, positivity, and quantum claims remain excluded.
 
-CLOSE-OUT: OBSTRUCTED — the structural theorem and mutations pass, but theorem-freeze promotion is fail-closed on the unresolved Tier-3 provenance re-lock cascade
+CLOSE-OUT: THEOREM_FROZEN — exact finite-support structural theorem and blockwise bounded ledger only; unrestricted bounded zero locus remains open
 EVIDENCE: EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_CONE_STRUCTURAL_FREEZE_V1

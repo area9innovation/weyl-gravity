@@ -76,7 +76,7 @@ def _kinematics() -> dict[str, Any]:
 
 def build_certificate() -> dict[str, Any]:
     records = {name: _load(path) for name, path in INPUTS.items()}
-    _require(_sha256(INPUTS["join"]) == "63b605c2441e9cf9d38e8b542641f060cc1a240de0af377cee57ebb0c0b848fd", "authoritative join hash changed")
+    _require(_sha256(INPUTS["join"]) == "723083a24436059f19ae70f53287e6141c58f54b27eae50064896fd12eba7fbb", "authoritative join hash changed")
     _require(records["join"]["classification"]["complete_branch_labelled_obstruction_map_joined"], "join theorem changed")
     _require(not records["join"]["classification"]["exceptional_generic_global_arbitrary_k_common_zero_classified"], "upstream already classified this cone")
     _require(records["exceptional_nonzero_k"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"], "exceptional nonzero-k input changed")

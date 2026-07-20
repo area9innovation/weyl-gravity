@@ -34,15 +34,15 @@ INPUTS = {
     "difference_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix.json",
 }
 EXPECTED_HASHES = {
-    "all_m_incidence": "c10403b3211c1930ce69f43ddb6c8cab48777ba700f14f8d7e25e4dbc1cf0c45",
-    "joined_obstruction_map": "63b605c2441e9cf9d38e8b542641f060cc1a240de0af377cee57ebb0c0b848fd",
-    "moment_bridge": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26",
-    "sign_theorem": "4a89b93798b46c3a841790dc4bcb7350c429ddd50caf85f2396fa02866b11104",
-    "exceptional_self": "42248dd69e97cd5946331431fa02d631edf0f86b717869437640c5651e439ac9",
-    "generic_zero_block": "e535423a968a562d64d0354343bbf6b9aa99d37e4bf6be37c2a542b0da97cc08",
-    "exceptional_nonzero_k": "00fc3fa6da7273ca3ae8a5c51a973f5a91b898b58b49e4bf2d7d0c30711f994c",
-    "polar_current": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6",
-    "difference_matrix": "1cd89d2e5c1a9afd78663278e88686732e86bc171f644abcd3487a49ca091df6",
+    "all_m_incidence": "b4eed34422acf0574ec9098d1893ac5c5c496bfdf223e8e77bd483ef6adc7ab4",
+    "joined_obstruction_map": "723083a24436059f19ae70f53287e6141c58f54b27eae50064896fd12eba7fbb",
+    "moment_bridge": "047594a9019eb68a000ecce1799063789714db632c41e67e48d37bdf0fc3657a",
+    "sign_theorem": "26fae23935261735385d6a7796d5f10db3404f863d2bdf85c7b5d0869afd0006",
+    "exceptional_self": "17f28c0a6b71e2edd0f786367741e5e7221953aa98ed1583c6ae2a6f227f2e6a",
+    "generic_zero_block": "29e017cd35d0560eeb4b769c1a0d73570a9799fd877c566d0b4438e3d18313af",
+    "exceptional_nonzero_k": "4d3839689270af952808b14adef4f00fcbabeb69ef17efcf7e6d18b7747340a3",
+    "polar_current": "327cfacb304218b894b622f08a8ad0a2d8cb370a1cb041c69f58e343ac33ac76",
+    "difference_matrix": "172555aa986df0b888f805c488efa69543586ddff548bd1b8bf5cc15ffffce40",
 }
 
 

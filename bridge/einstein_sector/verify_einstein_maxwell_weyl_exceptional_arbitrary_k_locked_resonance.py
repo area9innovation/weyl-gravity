@@ -39,7 +39,7 @@ def verify_payload(cert: dict[str, Any]) -> None:
     assert _sha256(ROOT / cert["provenance"]["schema_path"]) == cert["provenance"]["schema_sha256"]
 
     join = _load(ROOT / cert["provenance"]["inputs"]["join"]["path"])
-    assert cert["provenance"]["inputs"]["join"]["sha256"] == "63b605c2441e9cf9d38e8b542641f060cc1a240de0af377cee57ebb0c0b848fd"
+    assert cert["provenance"]["inputs"]["join"]["sha256"] == "723083a24436059f19ae70f53287e6141c58f54b27eae50064896fd12eba7fbb"
     assert join["classification"]["complete_branch_labelled_obstruction_map_joined"]
     assert not join["classification"]["exceptional_generic_global_arbitrary_k_common_zero_classified"]
 

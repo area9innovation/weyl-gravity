@@ -1,0 +1,54 @@
+{
+  "certificate": {
+    "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_TIER3_PROVENANCE_RELOCK_V1.json",
+    "sha256": "44a652413d127e2cb46d7cb3f6313540d905cab1d391f47168609ac13b06df56"
+  },
+  "claim_boundary": "Receipt for the provenance relock and scoped theorem lifecycle promotion only.",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "higher_cost_opt_in": {
+    "reason": "Both hour-long opt-in replays timed out and are recorded as non-passes; neither belongs to the declared Tier-3 rail.",
+    "status": "NOT_CERTIFIED"
+  },
+  "post_promotion_tier_3": {
+    "elapsed_seconds": 788.975,
+    "max_rss_kb": 2620784,
+    "skipped": 1,
+    "status": "PASS",
+    "tests": 1258
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_TIER3_PROVENANCE_RELOCK_V1_TIER_RECEIPT",
+  "schema": "einstein-maxwell-weyl-finite-harmonic-tier3-provenance-relock-receipt-v1",
+  "tier_0": {
+    "commands": [
+      "Python/JSON parse",
+      "schema validation",
+      "git diff --check on scoped paths"
+    ],
+    "status": "PASS"
+  },
+  "tier_1": {
+    "commands": [
+      "producer --check",
+      "independent verifier",
+      "scoped unit test",
+      "structural-freeze producer/verifier/tests",
+      "Paper 10, Paper 91 and Paper 13 source-map verifiers"
+    ],
+    "status": "PASS"
+  },
+  "tier_2": {
+    "criterion": "Complete unified provenance graph replay with four hash-reference dialects, 204-artifact maximum closure, and zero final stale references.",
+    "status": "PASS"
+  },
+  "tier_3": {
+    "elapsed_seconds": 495.702,
+    "max_rss_kb": 476816,
+    "skipped": 1,
+    "status": "PASS",
+    "tests": 1255
+  }
+}

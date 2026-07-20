@@ -84,7 +84,7 @@ def verify_payload(payload: dict[str, Any]) -> None:
     locked_reference = provenance["inputs"]["locked_resonance"]
     locked_path = ROOT / locked_reference["path"]
     assert _sha256(locked_path) == locked_reference["sha256"]
-    assert locked_reference["sha256"] == "1d6e0de1021e13285508ce940b8d6a18f538025c0cba5eceed4999e05ffa1788"
+    assert locked_reference["sha256"] == "28d59ff4ff14eeed10ef03b7cf10faed14ab815a7a72f3f265d0ce65870d42dc"
     locked = _load(locked_path)
     assert locked["result_id"] == locked_reference["result_id"]
 

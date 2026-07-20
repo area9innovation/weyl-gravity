@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "lifecycle_state",
+    "dependency_tags",
+    "base_commit",
+    "artifact_manifest",
+    "artifact_count",
+    "provenance_graph",
+    "tier3_attempts",
+    "excluded_opt_in_replays",
+    "final_gate",
+    "post_promotion_validation",
+    "source_manifest",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-finite-harmonic-tier3-provenance-relock-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_TIER3_PROVENANCE_RELOCK_V1"
+    },
+    "lifecycle_state": {
+      "const": "CERTIFIED"
+    },
+    "artifact_manifest": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "old_sha256",
+          "new_sha256",
+          "semantic_delta",
+          "producer_command"
+        ]
+      }
+    },
+    "provenance_graph": {
+      "type": "object",
+      "required": [
+        "json_file_count",
+        "reference_count",
+        "dialect_counts",
+        "dependency_edge_count",
+        "missing_input_count",
+        "stale_reference_count",
+        "edges"
+      ]
+    },
+    "final_gate": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "PASS"
+        },
+        "tests": {
+          "const": 1255
+        }
+      },
+      "required": [
+        "status",
+        "tests",
+        "failures",
+        "errors",
+        "skipped",
+        "elapsed_seconds",
+        "max_rss_kb"
+      ]
+    },
+    "post_promotion_validation": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "PASS"
+        },
+        "tests": {
+          "const": 1258
+        }
+      },
+      "required": [
+        "status",
+        "tests",
+        "failures",
+        "errors",
+        "skipped",
+        "elapsed_seconds",
+        "max_rss_kb"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

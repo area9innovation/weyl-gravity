@@ -17,7 +17,8 @@ class FiniteHarmonicStructuralFreezeTests(unittest.TestCase):
         value = build_certificate()
         self.assertTrue(value["classification"]["finite_exponential_polynomial_cone_theorem_ready"])
         self.assertTrue(value["classification"]["bounded_obstruction_ledger_theorem_ready"])
-        self.assertFalse(value["classification"]["theorem_freeze_promoted"])
+        self.assertTrue(value["classification"]["theorem_freeze_promoted"])
+        self.assertTrue(value["classification"]["tier3_provenance_relock_complete"])
         self.assertFalse(value["classification"]["bounded_common_zero_locus_solved"])
 
     def test_zero_factor_mutations_rejected(self):
