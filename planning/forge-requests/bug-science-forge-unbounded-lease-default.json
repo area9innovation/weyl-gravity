@@ -1,0 +1,18 @@
+{
+  "id": "sf:forge-request/bug-science-forge-unbounded-lease-default",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "OPEN",
+    "objective": "Prevent `s-f work pull` and renewal flows from silently creating an unbounded exclusive lease when `--expires` is omitted or empty. A resident Quantum pull created a live lease displayed as `expires unbounded`, defeating stale-worker detection, one-lease recovery, queue forecasting and coordinator health checks.",
+    "depends_on": [],
+    "stop_condition": "Land a fail-closed bounded-lease policy across the launcher and sfc core: (1) every ACQUIRE and RENEW must serialize a valid explicit expiry strictly later than the supplied `--now`; (2) if `--expires` is omitted, use a documented programme-configured bounded TTL or reject the command with an actionable message—never serialize an empty, null, zero or unbounded expiry; (3) reject malformed timestamps, expiry<=now and expiry beyond an optional documented maximum TTL; (4) print the resolved expiry in pull/renew output and generated briefs; (5) make streams-view/overview flag every historical or current unbounded lease as a health defect, not a normal LIVE lease; (6) preserve existing append-only unbounded events and allow a later max-seq bounded RENEW to repair their effective state; (7) add deterministic tests for missing expiry, empty expiry, invalid timestamp, past expiry, configured default TTL, explicit valid expiry, renewal repair of a legacy unbounded lease, and byte-stable folding under explicit `--now`; and (8) ensure terminal-title support remains unchanged and stdout remains machine-clean.",
+    "forbid": "no rewriting or deleting existing lease events; no wall-clock fallback inside deterministic sfc; no infinite or process-lifetime lease; no treating an OS process, terminal title or agent session as a substitute for expiry; no automatic lease release, work transition, queue mutation or process kill; no silently converting an invalid expiry to a different timestamp; no weakening the one-active-exclusive-lease rule.",
+    "notes": [
+      "Observed reproduction: planning/events/quantum-berger-homogeneous-krein-covariance-classification-LEASE-ACQUIRE-excl-5e535533cdd21938.json was produced at 2026-07-20T11:45 with no bounded expiry, and streams-view rendered `expires unbounded`.",
+      "Coordinator repair: appended planning/events/quantum-berger-homogeneous-krein-covariance-classification-LEASE-RENEW-excl-48793b3982da6a5e.json with expiry 2026-07-20T23:47:50Z. The original acquisition remains immutable evidence.",
+      "This bug becomes more consequential once the queue-forecasting request lands, because an unbounded active interval makes drain and restock estimates undefined."
+    ]
+  }
+}
