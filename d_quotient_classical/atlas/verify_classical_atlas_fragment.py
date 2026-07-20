@@ -121,6 +121,10 @@ def verify() -> None:
         raise AssertionError("endpoint normalization evidence missing")
     if "A2(P_X^4)=X^mu c_mu_star" not in pullback["claim_boundary"]:
         raise AssertionError("endpoint normalization formula missing")
+    if "EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1" not in {item["result_id"] for item in pullback["evidence"]}:
+        raise AssertionError("order-one invariant ansatz evidence missing")
+    if "406 free coefficients" not in pullback["claim_boundary"] or "coefficient jets through order two" not in pullback["claim_boundary"]:
+        raise AssertionError("order-one solver contract missing")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]
     if set(berger_crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("Berger Bridge 1 overpromoted")

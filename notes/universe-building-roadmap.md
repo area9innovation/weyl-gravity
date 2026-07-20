@@ -2013,8 +2013,12 @@ endpoint normalization through
 `EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1`:
 `A^2(P_X^4)=X^mu c_mu_star`, with the positive orientation sign and no U(1)
 or Weyl-identity component.  It now requests sufficient higher current
-coefficient jets for the complete order-one invariant top descent, followed
-by the fifteen-row incidence `Delta2-A^1 C=delta(f2)`.  No support-local lift or
+coefficient jets.  The complete `SO(2)`-invariant order-one ansatz is frozen by
+`EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1`: it has 406 free
+coefficients after endpoint fixing, while the full incidence requires current
+coefficient jets through order two.  After that export, Bridge 1 solves the
+order-one chain system and then the fifteen-row incidence
+`Delta2-A^1 C=delta(f2)`.  No support-local lift or
 repaired relative q2 has yet been promoted.
 
 Until one of the four admissible Berger carrier alternatives passes, atlas

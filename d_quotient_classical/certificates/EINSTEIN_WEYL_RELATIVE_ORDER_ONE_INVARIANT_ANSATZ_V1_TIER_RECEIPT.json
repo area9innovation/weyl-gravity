@@ -1,0 +1,22 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1_TIER_RECEIPT",
+  "claim_ids": ["EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1"],
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "artifacts": {
+    "certificate": {"path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1.json", "sha256": "5abb1dd9ea6b2b2220944092eb3c18431852338757b77d7939c91a29b16eda62"},
+    "schema": {"path": "d_quotient_classical/schema/relative-order-one-invariant-ansatz-v1.schema.json", "sha256": "c39e1a0cc94faa8875836cd1ed908d80c25b4e9bc234651e8578ff71cc2e673f"},
+    "producer": {"path": "d_quotient_classical/relative/einstein_weyl_relative_order_one_invariant_ansatz.py", "sha256": "a8000b4b8b9f8ad41e7ba5f98dc7d6da6335d0fae7bb06dff63e152477e4079a"},
+    "verifier": {"path": "d_quotient_classical/relative/verify_einstein_weyl_relative_order_one_invariant_ansatz.py", "sha256": "06780c1521fe5d2d7e3c94279e8e25c97f29ef43d2dd0acfc5a9febe26804689"},
+    "tests": {"path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_order_one_invariant_ansatz.py", "sha256": "2e0d685a7d4b99189ae3c7a7583c49a05eddc630c84c6121e8d1ae11b4974449"},
+    "report": {"path": "d_quotient_classical/reports/einstein-weyl-relative-order-one-invariant-ansatz.md", "sha256": "cc55934f73eb3bd2a78bc4be87ea84d632571ad158881fed17ef5f51626fa860"},
+    "atlas_fragment": {"path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json", "sha256": "69dbadb2f322c71d23961bcdfe351f4544795b6cf3bb41ddc7e99d99d6bd963e"}
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "checks": ["Python compilation", "strict Draft 2020-12 schema", "scoped diff check", "content-hash replay"]},
+    "tier_1": {"status": "PASS", "elapsed_seconds": 2.40, "commands": ["PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_order_one_invariant_ansatz --check --guards", "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_order_one_invariant_ansatz", "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_order_one_invariant_ansatz", "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-order-one-invariant-ansatz-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1.json"]},
+    "tier_2": {"status": "PASS", "elapsed_seconds": 0.75, "commands": ["python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check", "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json", "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py", "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"]},
+    "tier_3": {"status": "NOT_RUN", "reason": "This scoped representation-theoretic preflight changes no shared operator and promotes no lift, relative-q2, causal or paper-freeze claim."}
+  },
+  "claim_boundary": "This receipt covers the complete SO(2)-invariant Hom-symbol census through order two and the 406-parameter endpoint-normalized order-one solver contract. It records that current coefficient jets through order two are required for the full incidence. It does not solve the chain equation, assert a positive-order lift or obstruction, repair relative q2, or establish causal, observable, particle or quantum claims."
+}

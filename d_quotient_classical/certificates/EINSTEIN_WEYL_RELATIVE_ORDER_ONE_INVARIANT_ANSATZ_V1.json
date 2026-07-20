@@ -1,0 +1,186 @@
+{
+  "bundle_decomposition": {
+    "P3": {
+      "complex_weights": {
+        "-1": 5,
+        "-2": 1,
+        "0": 8,
+        "1": 5,
+        "2": 1
+      },
+      "rank": 20,
+      "real": "8*1 + 5*V1 + V2"
+    },
+    "P4": {
+      "complex_weights": {
+        "-1": 1,
+        "0": 3,
+        "1": 1
+      },
+      "rank": 5,
+      "real": "3*1 + V1"
+    },
+    "W1": {
+      "complex_weights": {
+        "-1": 3,
+        "-2": 1,
+        "0": 6,
+        "1": 3,
+        "2": 1
+      },
+      "rank": 14,
+      "real": "6*1 + 3*V1 + V2"
+    },
+    "W2": {
+      "complex_weights": {
+        "-1": 1,
+        "0": 4,
+        "1": 1
+      },
+      "rank": 6,
+      "real": "4*1 + V1"
+    }
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC preflight classifies the complete homogeneous SO(2)-invariant symbol spaces for A1 and A2 through differential order two and freezes the 406 free coefficients of the endpoint-normalized order-one search. It does not solve the chain equation, assert existence or obstruction at positive order, export the required second current coefficient jets, repair relative q2 or establish causal, observable, particle or quantum claims.",
+  "classification": {
+    "causal_observable_particle_or_quantum_claim": false,
+    "complete_invariant_Hom_ansatz_through_order_one": true,
+    "endpoint_normalization_inserted": true,
+    "order_one_top_descent_solved": false,
+    "positive_order_lift_exists": false,
+    "positive_order_lift_obstructed": false,
+    "relative_q2_repaired": false
+  },
+  "dependencies": {
+    "current_export": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_PBW_EXPORT_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FULL_FIVE_CURRENT_PBW_EXPORT_V1.json",
+      "sha256": "da8543a143d2c6a1aae419c712102b229c490fca8e7514088919d2f36ca5e3d5"
+    },
+    "endpoint_normalization": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1.json",
+      "sha256": "85e42b7c6258bf1d31277a162aa3d664fd3d790255f891866de842fd26d5c55d"
+    },
+    "order_zero_obstruction": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_ZERO_LIFT_OBSTRUCTION_V1.json",
+      "sha256": "bd33c26b1bdec9d9c6f3a9948da382966e878608e55bd88cceae64dfff3e720d"
+    },
+    "shifted_cone": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_SHIFTED_CURRENT_CONE_PREFLIGHT_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_SHIFTED_CURRENT_CONE_PREFLIGHT_V1.json",
+      "sha256": "f32c6686a77630aa798b81a997d6bf90900654290b144bf66586ad94ebb846f3"
+    },
+    "target_q1": {
+      "artifact_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_Q1",
+      "path": "bridge/einstein_sector/generated/weyl_maxwell_product_linfinity_v1/q1.json",
+      "sha256": "43c00909830fde902cf1332eae804f6edd6ad263bef7ce61d08bdbd20449290b"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "homogeneous_symbol_dimensions": {
+    "A1_cumulative_through_0_1_2": [
+      80,
+      364,
+      990
+    ],
+    "A1_exact_order_0_1_2": [
+      80,
+      284,
+      626
+    ],
+    "A2_cumulative_through_0_1_2": [
+      14,
+      56,
+      142
+    ],
+    "A2_exact_order_0_1_2": [
+      14,
+      42,
+      86
+    ],
+    "symmetric_covector_weights": [
+      {
+        "order": 0,
+        "weights": {
+          "0": 1
+        }
+      },
+      {
+        "order": 1,
+        "weights": {
+          "-1": 1,
+          "0": 2,
+          "1": 1
+        }
+      },
+      {
+        "order": 2,
+        "weights": {
+          "-1": 2,
+          "-2": 1,
+          "0": 4,
+          "1": 2,
+          "2": 1
+        }
+      }
+    ]
+  },
+  "input_adequacy": {
+    "current_export_coefficient_jet_order": 1,
+    "current_payload_sufficient_for_full_order_one_incidence": false,
+    "required_current_coefficient_jet_order_for_order_one_A1_C": 2,
+    "target_q1_coefficient_jet_order": 4,
+    "top_descent_symbol_solve_can_start_without_current_regeneration": true
+  },
+  "isotropy": {
+    "derivation": "SO(2) fixes the t and x directions and rotates the theta-phi plane; so(3) restricts as 1+V1",
+    "group": "SO(2)",
+    "stabilizer_dual": "3*1 + V1",
+    "tangent_covector": "2*1 + V1"
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "EXPORT_CURRENT_COEFFICIENT_JETS_THROUGH_ORDER_TWO_AND_SOLVE_THE_406_PARAMETER_ORDER_ONE_CHAIN_SYSTEM",
+  "order_one_solver_contract": {
+    "A1_order_one_symbol_unknowns": 284,
+    "A1_order_zero_unknowns": 80,
+    "A2_order_one_symbol_unknowns": 42,
+    "A2_order_zero_part": "fixed exactly by EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1",
+    "coefficient_incidence_after_chain_solve": "Delta2-A1 C=delta(f2)",
+    "top_descent": "q1_W^(1->2) A1=A2 d_H^(3->4)",
+    "total_free_symbol_and_lower_coefficients": 406
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_order_one_invariant_ansatz.py": "a8000b4b8b9f8ad41e7ba5f98dc7d6da6335d0fae7bb06dff63e152477e4079a",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_order_one_invariant_ansatz.py": "2e0d685a7d4b99189ae3c7a7583c49a05eddc630c84c6121e8d1ae11b4974449",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_order_one_invariant_ansatz.py": "06780c1521fe5d2d7e3c94279e8e25c97f29ef43d2dd0acfc5a9febe26804689",
+      "d_quotient_classical/schema/relative-order-one-invariant-ansatz-v1.schema.json": "c39e1a0cc94faa8875836cd1ed908d80c25b4e9bc234651e8578ff71cc2e673f"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_order_one_invariant_ansatz --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_order_one_invariant_ansatz",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_order_one_invariant_ansatz",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-order-one-invariant-ansatz-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1.json"
+    ]
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1",
+  "result_state": "COMPLETE_ORDER_ONE_INVARIANT_ANSATZ_CLASSIFIED_COEFFICIENT_SOLVE_OPEN",
+  "schema": "pure-weyl-relative-order-one-invariant-ansatz-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "support-local homogeneous differential-operator ansatz before harmonic or causal reduction",
+    "carrier": "A1:P3(20)->W1(14), A2:P4(5)->W2(6)",
+    "charge_sector": "five connected spacetime stabilizer currents",
+    "degree": "one and two",
+    "ell": "not harmonic-reduced",
+    "k": "arbitrary local covector",
+    "m": "not harmonic-reduced",
+    "omega": "arbitrary local covector",
+    "parity": "even chain-map components",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  }
+}

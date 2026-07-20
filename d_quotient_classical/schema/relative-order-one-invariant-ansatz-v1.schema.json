@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/relative-order-one-invariant-ansatz-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "isotropy", "bundle_decomposition", "homogeneous_symbol_dimensions", "order_one_solver_contract", "input_adequacy", "classification", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-order-one-invariant-ansatz-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1"},
+    "result_state": {"const": "COMPLETE_ORDER_ONE_INVARIANT_ANSATZ_CLASSIFIED_COEFFICIENT_SOLVE_OPEN"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "object"},
+    "dependencies": {
+      "type": "object", "additionalProperties": false,
+      "required": ["shifted_cone", "order_zero_obstruction", "endpoint_normalization", "current_export", "target_q1"],
+      "properties": {
+        "shifted_cone": {"$ref": "#/$defs/artifact"}, "order_zero_obstruction": {"$ref": "#/$defs/artifact"},
+        "endpoint_normalization": {"$ref": "#/$defs/artifact"}, "current_export": {"$ref": "#/$defs/artifact"},
+        "target_q1": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "isotropy": {"type": "object"},
+    "bundle_decomposition": {"type": "object"},
+    "homogeneous_symbol_dimensions": {
+      "type": "object", "additionalProperties": false,
+      "required": ["symmetric_covector_weights", "A1_exact_order_0_1_2", "A2_exact_order_0_1_2", "A1_cumulative_through_0_1_2", "A2_cumulative_through_0_1_2"],
+      "properties": {
+        "symmetric_covector_weights": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object"}},
+        "A1_exact_order_0_1_2": {"const": [80, 284, 626]}, "A2_exact_order_0_1_2": {"const": [14, 42, 86]},
+        "A1_cumulative_through_0_1_2": {"const": [80, 364, 990]}, "A2_cumulative_through_0_1_2": {"const": [14, 56, 142]}
+      }
+    },
+    "order_one_solver_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["A1_order_zero_unknowns", "A1_order_one_symbol_unknowns", "A2_order_zero_part", "A2_order_one_symbol_unknowns", "total_free_symbol_and_lower_coefficients", "top_descent", "coefficient_incidence_after_chain_solve"],
+      "properties": {
+        "A1_order_zero_unknowns": {"const": 80}, "A1_order_one_symbol_unknowns": {"const": 284},
+        "A2_order_zero_part": {"const": "fixed exactly by EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1"},
+        "A2_order_one_symbol_unknowns": {"const": 42}, "total_free_symbol_and_lower_coefficients": {"const": 406},
+        "top_descent": {"type": "string"}, "coefficient_incidence_after_chain_solve": {"type": "string"}
+      }
+    },
+    "input_adequacy": {
+      "type": "object", "additionalProperties": false,
+      "required": ["target_q1_coefficient_jet_order", "current_export_coefficient_jet_order", "required_current_coefficient_jet_order_for_order_one_A1_C", "current_payload_sufficient_for_full_order_one_incidence", "top_descent_symbol_solve_can_start_without_current_regeneration"],
+      "properties": {
+        "target_q1_coefficient_jet_order": {"type": "integer", "minimum": 2}, "current_export_coefficient_jet_order": {"const": 1},
+        "required_current_coefficient_jet_order_for_order_one_A1_C": {"const": 2},
+        "current_payload_sufficient_for_full_order_one_incidence": {"const": false},
+        "top_descent_symbol_solve_can_start_without_current_regeneration": {"const": true}
+      }
+    },
+    "classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["complete_invariant_Hom_ansatz_through_order_one", "endpoint_normalization_inserted", "order_one_top_descent_solved", "positive_order_lift_exists", "positive_order_lift_obstructed", "relative_q2_repaired", "causal_observable_particle_or_quantum_claim"],
+      "properties": {
+        "complete_invariant_Hom_ansatz_through_order_one": {"const": true}, "endpoint_normalization_inserted": {"const": true},
+        "order_one_top_descent_solved": {"const": false}, "positive_order_lift_exists": {"const": false},
+        "positive_order_lift_obstructed": {"const": false}, "relative_q2_repaired": {"const": false},
+        "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "EXPORT_CURRENT_COEFFICIENT_JETS_THROUGH_ORDER_TWO_AND_SOLVE_THE_406_PARAMETER_ORDER_ONE_CHAIN_SYSTEM"},
+    "provenance": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 200}
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"],
+      "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    }
+  }
+}

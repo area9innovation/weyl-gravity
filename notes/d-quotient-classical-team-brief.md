@@ -2453,7 +2453,13 @@ coefficient jets.  The endpoint normalization is now frozen by
 `EINSTEIN_WEYL_RELATIVE_ENDPOINT_NORMALIZATION_V1`:
 `A^2(P_X^4)=X^mu c_mu_star`, with positive orientation sign and no U(1) or
 Weyl-identity component.  The active exact gate is the complete order-one
-invariant top descent with that endpoint fixed, followed by
+invariant top descent with that endpoint fixed.
+`EINSTEIN_WEYL_RELATIVE_ORDER_ONE_INVARIANT_ANSATZ_V1` classifies the complete
+`SO(2)` ansatz: 364 `A^1` coefficients through order one and 42 derivative
+coefficients for `A^2`, hence 406 free coefficients after endpoint fixing.
+The full coefficient incidence requires current coefficient jets through
+order two, so the next export extends the current payload before solving the
+chain system and then
 `Delta2-A^1 C=delta(f2)` on the fifteen nonzero defect rows.  Modified
 endpoints and other backgrounds remain
 admissible; no causal or quantum consequence is inferred.
