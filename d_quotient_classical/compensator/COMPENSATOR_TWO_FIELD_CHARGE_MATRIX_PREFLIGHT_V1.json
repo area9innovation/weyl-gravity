@@ -1,0 +1,551 @@
+{
+  "action_basis": {
+    "completeness": "This is the complete declared formal-polar parity-even two-derivative scalar bilinear and regular U(1)-invariant quartic potential, plus the Abelian curvature kinetic matrix. Higher derivatives and fitted nonpolynomial potentials are absent.",
+    "covariant_phase_one_forms": "B_i=d theta_i+Q_(i alpha) A^alpha; for the selected primitive case B_1=dtheta_1+A and B_2=dtheta_2",
+    "fields": [
+      "g_ab",
+      "Phi_i=rho_i exp(i theta_i), i=1,2, rho_i>0",
+      "one real Weyl-scale connection W_a",
+      "r compact U(1) connections A_a^alpha, r=0,1,2"
+    ],
+    "gauge_data": {
+      "candidate_phase_shift_vector": "s in R^2",
+      "integer_compact_charge_matrix": "Q in Mat_(2xr)(Z)",
+      "metric_scale_weights_(omega,eta)": [
+        "1",
+        "a"
+      ],
+      "radial_weights_field_1": [
+        "-1",
+        "-b1"
+      ],
+      "radial_weights_field_2": [
+        "-1",
+        "-b2"
+      ]
+    },
+    "minimal_density": "sqrt(-g){alpha_C C^2/8+alpha_R R_W^2-1/2 K^r_ij D rho_i.D rho_j-1/12 K^R_ij rho_i rho_j R_W-1/2 K^theta_ij rho_i rho_j B_i.B_j-V4(rho_1,rho_2)-1/4 Z_alpha_beta H^alpha.H^beta-1/2 chi_alpha F_W.H^alpha-zeta_W F_W^2/4}",
+    "potential": "V4=lambda40 rho1^4/4+lambda22 rho1^2 rho2^2/2+lambda04 rho2^4/4"
+  },
+  "charge_lattice": {
+    "canonical_cases": [
+      {
+        "case": "rank_zero",
+        "disposition": "NO_COMPACT_GAUGE_CHANGE",
+        "faithful": false,
+        "physical_phase_dimension": 2,
+        "representative": "2x0 zero matrix",
+        "snf": []
+      },
+      {
+        "case": "rank_one_primitive",
+        "disposition": "ONLY_MINIMAL_CASE_WITH_A_RELATIVE_PHASE_CLOCK",
+        "faithful": true,
+        "physical_phase_dimension": 1,
+        "representative": "[[1],[0]]",
+        "snf": [
+          1
+        ]
+      },
+      {
+        "case": "rank_one_nonprimitive",
+        "disposition": "NOT_MINIMAL_FAITHFUL",
+        "faithful": false,
+        "finite_kernel": "Z/d",
+        "physical_phase_dimension": 1,
+        "representative": "[[d],[0]], d>1",
+        "snf_fixture_d=2": [
+          2
+        ]
+      },
+      {
+        "case": "rank_two_unimodular",
+        "disposition": "NO_RELATIONAL_PHASE",
+        "faithful": true,
+        "physical_phase_dimension": 0,
+        "representative": "I_2",
+        "snf": [
+          1,
+          1
+        ]
+      },
+      {
+        "case": "rank_two_nonunimodular",
+        "disposition": "FINITE_KERNEL_AND_NO_RELATIONAL_PHASE",
+        "faithful": false,
+        "physical_phase_dimension": 0,
+        "representative": "diag(d1,d2)",
+        "snf_fixture_(2,4)": [
+          2,
+          4
+        ]
+      }
+    ],
+    "equivalence": "Q~UQV with U in GL(2,Z) acting on phase-torus coordinates and V in GL(r,Z) acting on compact gauge generators, together with field permutation and sign reversal",
+    "general_invariants": {
+      "rank_one": "SNF diag(d,0), d=gcd(all charges); faithful iff d=1",
+      "rank_two_2x2": "SNF diag(d1,d2), d1=gcd(entries), d1*d2=abs(det Q), d1 divides d2; faithful iff d1=d2=1"
+    },
+    "independent_rails": [
+      "SymPy exact ZZ smith_normal_form in the producer and verifier",
+      "Forge GMP-backed math/snf fixture in two_field_charge_matrix_snf_check.forge"
+    ],
+    "representation_cases": {
+      "real_plus_complex": "phase lattice Z; compact rank one gauges its only phase, while rank zero is the unchanged global-phase theory; hence no compact-gauged relational phase survives",
+      "real_plus_complex_scale_result": "the two radial kinetic matrix obeys the same diagonal Ward/positivity lemma, so the extra real modulus does not create an independent healthy dressed-trace scale column",
+      "two_complex": "phase lattice Z^2; primitive compact rank one leaves one continuous relative phase and is the only potentially viable minimal case"
+    },
+    "selected_preflight_case": {
+      "Q": [
+        [
+          "1"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "charged_phase": "theta_1",
+      "gauge_phase": "theta_1",
+      "reason": "It is the unique minimal faithful compact rank that leaves one continuous phase after quotient.",
+      "relative_physical_phase": "psi=theta_2",
+      "representation": "two_complex"
+    }
+  },
+  "claim_boundary": "This exact preflight classifies two formal-polar complex compensators, at most two compact U(1) generators with integer charge lattice up to GL(Z), two real scale columns, the complete declared minimal parity-even two-derivative scalar bilinears and regular quartic potential, and the certified cylinder/Berger homogeneous fixtures. Primitive compact rank one genuinely leaves a relative clock and evades the one-field Gauss obstruction. The good locus is nevertheless empty because positive active scalar kinetic, an independent dressed-trace scale direction and an ungauged relative clock cannot coexist in the declared representation. This does not exclude more fields, non-Riemannian or constrained target kinetics, higher derivatives, other potentials, boundaries, backgrounds or gauge representations. No selected action, full BV carrier, causal parent, nonlinear q2, Hadamard, anomaly/QME, particle, scattering, positivity or unitarity theorem follows.",
+  "claim_flags": {
+    "FULL_BV_OR_CAUSAL_PARENT": false,
+    "GENERAL_MULTIFIELD_THEORY_EXCLUDED": false,
+    "HADAMARD_OR_QUANTUM": false,
+    "NONLINEAR_Q2": false,
+    "SELECTED_ACTION": false
+  },
+  "constant_scale_Ward_system": {
+    "applies_to": [
+      "K^r",
+      "K^R",
+      "K^theta"
+    ],
+    "bilinear_Ward_equations": [
+      "(a-b1) K_11=0",
+      "(2a-b1-b2) K_12=0",
+      "(a-b2) K_22=0"
+    ],
+    "bilinear_weight_matrix": {
+      "column_count": 2,
+      "entries": [
+        {
+          "coefficient": "2*(a - b1)",
+          "column": 0,
+          "row": 0
+        },
+        {
+          "coefficient": "2*a - b1 - b2",
+          "column": 1,
+          "row": 0
+        },
+        {
+          "coefficient": "2*a - b1 - b2",
+          "column": 0,
+          "row": 1
+        },
+        {
+          "coefficient": "2*(a - b2)",
+          "column": 1,
+          "row": 1
+        }
+      ],
+      "row_count": 2,
+      "sha256": "b6e1fe6541d070c6c00fc58273bb0a436da3e2ffef84c100c282fab3fe098f66"
+    },
+    "constant_parameter_exhaustiveness": "A constant eta already imposes these weights; derivatives and integration by parts cannot cancel them.",
+    "quartic_weight_rule": "(4a-b_i-b_j-b_k-b_l) lambda_ijkl=0"
+  },
+  "content_hashes": {
+    "action_sha256": "026b256b40d0f2c9f0bd3da6729e35e2f8014622bc9f48cc33632e2d90cc65ef",
+    "charge_lattice_sha256": "2ba49fc201117b0759b9d55c24b2334c7588df77cbc7b09a64210dc8c372bf36",
+    "claim_boundary_sha256": "22e6797abaeee2649399f11855c2c6b7802bbf4ff5a9a135aefbf955e9771b4d",
+    "imports_sha256": "3e4aa9a57db462afd8ebee84397bacd780901303e1a1199d2c952a089ce3babc",
+    "positivity_rank_sha256": "71f77b01f74bc80d92fece0df08a31f6d9d3c5609a8209509a6c9ace1d56018c",
+    "stationarity_charge_sha256": "53679466206f4dcc6abd9e52b53f072e0d1611bebd3f5d6e3c5f593b69ea5ca8",
+    "verdict_sha256": "149ace8d6fb2790699a77e80db3346c1f20ba233f3869086aa63ffa13895076a",
+    "ward_sha256": "71d0beb6137784ae68ec4d7dfc256a9105e29e01386e17c2e952a03655ec33b2"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "imports": {
+    "conditional_full_gate": {
+      "path": "d_quotient_classical/compensator/COMPENSATOR_COMPLEX_SCALE_U1_FULL_BV_CAUSAL_GATE_V1.json",
+      "result_id": "COMPENSATOR_COMPLEX_SCALE_U1_FULL_BV_CAUSAL_GATE_V1",
+      "result_state": "NOT_ACTIVATED_EMPTY_PREDECESSOR_LOCUS",
+      "sha256": "66c09d849caa5ced489c0e9324a51f49d58e267f4bdffc5747eba025740d90ef",
+      "source_commit": "edbb6cb724f7e6922c7567eaec358cfef86ff8af"
+    },
+    "one_field_preflight": {
+      "path": "d_quotient_classical/compensator/COMPENSATOR_COMPLEX_SCALE_U1_CONNECTION_PREFLIGHT_V1.json",
+      "result_id": "COMPENSATOR_COMPLEX_SCALE_U1_CONNECTION_PREFLIGHT_V1",
+      "result_state": "SCOPED_SEPARATED_SCALE_U1_MINIMAL_GOOD_LOCUS_EMPTY",
+      "sha256": "3b7b1f86392f0d5daeec4b1adac99a0e16e472ff37b44253908a20c53aad1404",
+      "source_commit": "6cc041fadaaf6259142aa8f30a2f75879cf92dd3"
+    },
+    "positive_Berger_clock": {
+      "claim_status": "CERTIFIED_EXACT_BACKGROUND",
+      "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "result_id": "POSITIVE_BERGER_CLOCK_BACKGROUND",
+      "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687",
+      "source_commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db"
+    }
+  },
+  "positivity_and_gauge_rank": {
+    "canonical_primitive_gauge_symbol": {
+      "column_count": 3,
+      "entries": [
+        {
+          "coefficient": "1",
+          "column": 0,
+          "row": 0
+        },
+        {
+          "coefficient": "a",
+          "column": 1,
+          "row": 0
+        },
+        {
+          "coefficient": "-1",
+          "column": 0,
+          "row": 1
+        },
+        {
+          "coefficient": "-b1",
+          "column": 1,
+          "row": 1
+        },
+        {
+          "coefficient": "-1",
+          "column": 0,
+          "row": 2
+        },
+        {
+          "coefficient": "-b2",
+          "column": 1,
+          "row": 2
+        },
+        {
+          "coefficient": "s1",
+          "column": 1,
+          "row": 3
+        },
+        {
+          "coefficient": "1",
+          "column": 2,
+          "row": 3
+        },
+        {
+          "coefficient": "s2",
+          "column": 1,
+          "row": 4
+        },
+        {
+          "coefficient": "-1",
+          "column": 0,
+          "row": 5
+        },
+        {
+          "coefficient": "-a",
+          "column": 1,
+          "row": 5
+        },
+        {
+          "coefficient": "-s1",
+          "column": 1,
+          "row": 6
+        },
+        {
+          "coefficient": "-1",
+          "column": 2,
+          "row": 6
+        }
+      ],
+      "row_count": 7,
+      "sha256": "564db1e5bcd69820c39bc64759878244df7aab9cc4c05801919d81886382ff82"
+    },
+    "column_order": [
+      "omega",
+      "eta",
+      "gamma"
+    ],
+    "complete_healthy_strata": {
+      "b1=b2=a_and_s2_nonzero": "gauge rank is three only because eta shifts the surviving relative phase theta2; the relational clock is gauge",
+      "b1=b2=a_and_s2_zero": {
+        "disposition": "relative clock survives, but no new dressed-trace gauge direction exists",
+        "dressed_metrics": "g_hat_i=(rho_i/f_i)^2 g are eta invariant",
+        "identity": "G(-a,1,-s1)^T=0",
+        "rank": 2,
+        "reducibility_vector_(omega,eta,gamma)": [
+          "-a",
+          "1",
+          "-s1"
+        ]
+      },
+      "some_b_i_not_a": "candidate scale can be independent on radial/metric rows, but the corresponding scalar kinetic row is null; positive two-field inertia fails"
+    },
+    "first_incompatible_trichotomy": [
+      "independent by scale weights => null/indefinite scalar kinetic",
+      "independent by relative-phase shift => physical clock gauged",
+      "healthy scalar kinetic plus physical clock => candidate reducible"
+    ],
+    "independence_minors": {
+      "metric_rho1": "a-b1",
+      "metric_rho2": "a-b2",
+      "physical_relative_phase": "-s2"
+    },
+    "positive_kinetic_lemma": {
+      "Ward_consequence": "positive diagonal entries and the two diagonal Ward rows force b1=a and b2=a",
+      "generic_matrix": {
+        "column_count": 2,
+        "entries": [
+          {
+            "coefficient": "k11",
+            "column": 0,
+            "row": 0
+          },
+          {
+            "coefficient": "k12",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "k12",
+            "column": 0,
+            "row": 1
+          },
+          {
+            "coefficient": "k22",
+            "column": 1,
+            "row": 1
+          }
+        ],
+        "row_count": 2,
+        "sha256": "44e0df9dfbfb831d976483688ce753324ef42a15312d58c37899d8621f1755bb"
+      },
+      "principal_conditions": [
+        "k11>0",
+        "k22>0",
+        "k11*k22-k12^2>0"
+      ],
+      "semidefinite_boundary": "if K_ii=0 in a positive-semidefinite matrix, det K>=0 forces K_12=0; every weight-mismatched field is a null row/column rather than a healthy active mode"
+    },
+    "row_order": [
+      "log g",
+      "log rho1",
+      "log rho2",
+      "theta1",
+      "theta2",
+      "W_L",
+      "A_L"
+    ]
+  },
+  "result_id": "COMPENSATOR_TWO_FIELD_CHARGE_MATRIX_PREFLIGHT_V1",
+  "result_state": "SCOPED_TWO_FIELD_MINIMAL_CHARGE_MATRIX_GOOD_LOCUS_EMPTY",
+  "schema": "pure-weyl-compensator-two-field-charge-matrix-preflight-v1",
+  "stationarity_and_charges": {
+    "Euler_formulas": {
+      "compact_Gauss": "Q^T Z(f) beta=0 on a homogeneous closed-S3 slice",
+      "metric": "alpha_B B_ab+alpha_R(4R Ric_ab-R^2 g_ab)-K G_ab/6-T_ab=0",
+      "phase": "nabla_a[Z(f)_ij B_j^a]=0",
+      "radial_vector": "(R/6)K^R f-grad_f[beta^T Z(f) beta/2]+grad_f V4=0"
+    },
+    "aggregate_order": [
+      "alpha_B",
+      "alpha_R",
+      "K=f^T K^R f",
+      "C=beta^T Z(f) beta",
+      "U=4 V4(f)"
+    ],
+    "charge_split": {
+      "canonical_momenta": "p=Z(f) beta",
+      "gauge_constraint": "Q^T p=0",
+      "raw_D_phase_term": "beta2 delta p2 on the neutral clock branch",
+      "relative_charge": "for Q=(1,0)^T, p1=0 while Q_rel=p2 may be nonzero",
+      "scale_charge": "constraint on closed S3; it cannot be left physical to supply the missing dressed-trace contraction"
+    },
+    "frozen_Berger_metric_rows": {
+      "background": "a=1,q=9/40,R=151/80",
+      "compact_Gauss": "Q^T Z(f) beta=0",
+      "matrix": {
+        "column_count": 5,
+        "entries": [
+          {
+            "coefficient": "961/9600",
+            "column": 0,
+            "row": 0
+          },
+          {
+            "coefficient": "22801/6400",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "-151/960",
+            "column": 2,
+            "row": 0
+          },
+          {
+            "coefficient": "-1/2",
+            "column": 3,
+            "row": 0
+          },
+          {
+            "coefficient": "-1/4",
+            "column": 4,
+            "row": 0
+          },
+          {
+            "coefficient": "403/9600",
+            "column": 0,
+            "row": 1
+          },
+          {
+            "coefficient": "20083/6400",
+            "column": 1,
+            "row": 1
+          },
+          {
+            "coefficient": "3/320",
+            "column": 2,
+            "row": 1
+          },
+          {
+            "coefficient": "-1/2",
+            "column": 3,
+            "row": 1
+          },
+          {
+            "coefficient": "1/4",
+            "column": 4,
+            "row": 1
+          },
+          {
+            "coefficient": "31/1920",
+            "column": 0,
+            "row": 2
+          },
+          {
+            "coefficient": "-3473/1280",
+            "column": 1,
+            "row": 2
+          },
+          {
+            "coefficient": "133/960",
+            "column": 2,
+            "row": 2
+          },
+          {
+            "coefficient": "-1/2",
+            "column": 3,
+            "row": 2
+          },
+          {
+            "coefficient": "1/4",
+            "column": 4,
+            "row": 2
+          }
+        ],
+        "row_count": 3,
+        "sha256": "054562b8aff2712dc9917e95db9923440bafe1026e774f3623e1620e6066ab82"
+      },
+      "positive_neutral_clock_regression": {
+        "Gauss_row": "ZERO_EXACTLY",
+        "aggregate_vector": [
+          "5",
+          "0",
+          "1",
+          "9/16",
+          "119/480"
+        ],
+        "canonical_primitive_charge": "Q=(1,0)^T",
+        "interpretation": "The primitive rank-one lattice genuinely permits the old positive Berger clock in the neutral relative phase. The terminal failure is the scale/trace trichotomy, not stationarity or compact Gauss.",
+        "metric_rows": "ZERO_EXACTLY",
+        "relative_charge": "p2 nonzero when Z_22>0",
+        "velocity": [
+          "beta1=0",
+          "beta2=3/4"
+        ]
+      },
+      "radial_rows": "(151/480)K^R f-grad_f[beta^T Z(f) beta/2]+grad_f V4=0",
+      "row_order": [
+        "E_00",
+        "E_horizontal",
+        "E_vertical"
+      ]
+    },
+    "stationarity_disposition": "A nonzero relative-clock stationary sector exists, so neither background stationarity nor compact Gauss is the no-go. It does not intersect a healthy independent dressed-trace scale gauge.",
+    "unit_cylinder_metric_rows": {
+      "background": "R=6, beta=0",
+      "clock": "ABSENT_ON_THE_CONSTANT_PHASE_FIXTURE",
+      "matrix": {
+        "column_count": 5,
+        "entries": [
+          {
+            "coefficient": "36",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "-1/2",
+            "column": 2,
+            "row": 0
+          },
+          {
+            "coefficient": "-1/2",
+            "column": 3,
+            "row": 0
+          },
+          {
+            "coefficient": "-1/4",
+            "column": 4,
+            "row": 0
+          },
+          {
+            "coefficient": "12",
+            "column": 1,
+            "row": 1
+          },
+          {
+            "coefficient": "1/6",
+            "column": 2,
+            "row": 1
+          },
+          {
+            "coefficient": "-1/2",
+            "column": 3,
+            "row": 1
+          },
+          {
+            "coefficient": "1/4",
+            "column": 4,
+            "row": 1
+          }
+        ],
+        "row_count": 2,
+        "sha256": "eab64d1636dbc728b9d69735ac316424265cd8ec2072c4c213c9e51b219a0da5"
+      },
+      "radial_rows": "K^R f+grad_f V4=0; two exact polynomial rows",
+      "row_order": [
+        "E_00",
+        "E_horizontal"
+      ]
+    }
+  },
+  "terminal_verdict": {
+    "compact_charge_lattice_result": "primitive rank one leaves one legitimate relative phase and passes the compact-Gauss clock separator",
+    "first_obstruction": "positive two-field scalar kinetic forces b1=b2=a; the candidate scale is then reducible if the relative clock survives, while making it independent by s2!=0 gauges that clock",
+    "full_BV_or_causal_completion_activated": false,
+    "healthy_locus": "EMPTY",
+    "next_gate": "No automatic minimal successor. A new item must change the kinetic representation (for example non-Riemannian target constraints), add a distinct scale modulus/generator pair, or relax the dressed-trace/relative-clock requirements explicitly.",
+    "nonlinear_or_quantum_promotion": false,
+    "result": "SCOPED_TWO_FIELD_MINIMAL_CHARGE_MATRIX_GOOD_LOCUS_EMPTY",
+    "selected_action": false
+  }
+}

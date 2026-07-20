@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "COMPENSATOR_TWO_FIELD_CHARGE_MATRIX_PREFLIGHT_V1_TIER_RECEIPT",
+  "claim_id": "COMPENSATOR_TWO_FIELD_CHARGE_MATRIX_PREFLIGHT_V1",
+  "date": "2026-07-21",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/compensator/two_field_charge_matrix_preflight.py",
+      "sha256": "8dc1de3ed84ed29cfa9307f8d19570dc6a8107c133bc8ae5d009e251dde3fab1"
+    },
+    {
+      "path": "d_quotient_classical/compensator/COMPENSATOR_TWO_FIELD_CHARGE_MATRIX_PREFLIGHT_V1.json",
+      "sha256": "e597c687ae064ac6809b674c056aa08d0167a9184b6addb95b5b7330c33dcc62"
+    },
+    {
+      "path": "d_quotient_classical/compensator/two_field_charge_matrix_snf_check.forge",
+      "sha256": "2cfa37331fe109404bf8c38fdf1529bd996ea6eeded4675aa076d1ee619db0d6"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_two_field_charge_matrix_preflight.py",
+      "sha256": "e42390910391cbdd0cd36bac6088c72dcf15134e0336ebf08710bc47c6d9e792"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_two_field_charge_matrix_preflight.py",
+      "sha256": "3bcf354e582a1bc18775c9bce4d212f1b33ce0009ee981f93bd428fed83c58e8"
+    },
+    {
+      "path": "d_quotient_classical/schema/compensator-two-field-charge-matrix-preflight-v1.schema.json",
+      "sha256": "a26fe7af1fc56a75489708abd9e852bb925f75db3de095719c9cdea1f658ef70"
+    },
+    {
+      "path": "d_quotient_classical/reports/compensator-two-field-charge-matrix-preflight-v1.md",
+      "sha256": "eb720b8589f903c32228b8aecb31c8a02db3b08d6403dd638d1b985fafd32440"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <two-field producer, independent verifier and mutation tests>; python3 -m json.tool <result and schema>; git diff --check -- <seven explicit paths>",
+        "elapsed_seconds": 0.18,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/two_field_charge_matrix_preflight.py --check",
+        "elapsed_seconds": 0.68,
+        "status": "PASS",
+        "method": "exact imported-hash replay, integral compact-charge classification, Smith invariants, scalar Ward matrix, positivity separator, gauge-rank stratification, reducibility vector, Berger stationary/Gauss fixture and fail-closed causal disposition"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_two_field_charge_matrix_preflight.py",
+        "elapsed_seconds": 0.62,
+        "status": "PASS",
+        "independent_rail": "imports no producer module; independently checks source hashes, Smith data, real-plus-complex exclusion, Ward and positivity identities, exact gauge minors and reducibility, the neutral-clock Gauss row, Berger fixture, and terminal trichotomy"
+      },
+      {
+        "command": "python3 -m unittest -v d_quotient_classical.compensator.tests.test_two_field_charge_matrix_preflight",
+        "elapsed_seconds": 0.8,
+        "status": "PASS",
+        "tests": 8,
+        "mutation_controls": "import drift, noncanonical charge selection, reducibility promotion, clock-gauging removal, selected-action promotion and quantum promotion are rejected"
+      },
+      {
+        "command": "/tmp/forge-current-20260721 -run d_quotient_classical/compensator/two_field_charge_matrix_snf_check.forge",
+        "elapsed_seconds": 0.65,
+        "status": "PASS",
+        "independent_rail": "current-source GMP-backed math/snf replay of primitive and nonprimitive rank-one plus unimodular and finite-kernel rank-two fixtures"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/compensator-two-field-charge-matrix-preflight-v1.schema.json -d d_quotient_classical/compensator/COMPENSATOR_TWO_FIELD_CHARGE_MATRIX_PREFLIGHT_V1.json",
+        "elapsed_seconds": 3.86,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "bash ci/science-forge-shadow.sh",
+        "elapsed_seconds": 7.33,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "the read-only rail reported pre-existing bridge certificate drift, corpus baseline growth from 976 to 1330 certificates, and an unpinned stale Forge development binary; it exited zero and preserved diagnostics under /tmp/sf-shadow.mthQv1"
+      }
+    ]
+  },
+  "tier_3": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m unittest discover -v",
+        "elapsed_seconds": 1.4,
+        "status": "PASS",
+        "tests": 148,
+        "scope": "repository-wide Python unittest discovery from physics/symplectic-reconstruction"
+      }
+    ],
+    "reason": "The item freezes the terminal disposition of the minimal two-field integral compact-charge escape and therefore meets the AGENTS.md theorem-freeze Tier-3 criterion."
+  },
+  "claim_boundary": "This receipt certifies the declared two-complex formal-polar and real-plus-complex representation classes, integer compact charge matrices up to the stated GL(Z), exact Smith fixtures, the complete declared parity-even two-derivative scalar bilinear and regular quartic ansatz, constant scale Ward identities, positive-definite and positive-semidefinite scalar-kinetic separators, primitive rank-one gauge-symbol stratification, the displayed closed-S3 Berger stationary/Gauss fixture, and the terminal scale/trace trichotomy. It establishes that primitive compact rank one can leave a neutral relative-phase clock and that the displayed Berger metric and Gauss rows can pass; the empty healthy locus comes instead from the incompatibility among an independent dressed-trace scale direction, healthy scalar kinetics and a physical clock. Non-formal-polar interactions, nonpolynomial or higher-derivative terms, more fields, nonstationary sectors, boundaries, charged matter, full BV completion, a causal parent, Hadamard data, anomaly/QME conclusions, particles, scattering, positivity and unitarity are outside scope.",
+  "higher_tiers_not_run": []
+}

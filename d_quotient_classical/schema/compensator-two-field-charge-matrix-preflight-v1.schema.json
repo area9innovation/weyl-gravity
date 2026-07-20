@@ -1,0 +1,563 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/compensator-two-field-charge-matrix-preflight-v1.schema.json",
+  "title": "Two-compensator charge-lattice and health preflight",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "imports",
+    "charge_lattice",
+    "action_basis",
+    "constant_scale_Ward_system",
+    "positivity_and_gauge_rank",
+    "stationarity_and_charges",
+    "terminal_verdict",
+    "claim_flags",
+    "claim_boundary",
+    "content_hashes"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-compensator-two-field-charge-matrix-preflight-v1"
+    },
+    "result_id": {
+      "const": "COMPENSATOR_TWO_FIELD_CHARGE_MATRIX_PREFLIGHT_V1"
+    },
+    "result_state": {
+      "const": "SCOPED_TWO_FIELD_MINIMAL_CHARGE_MATRIX_GOOD_LOCUS_EMPTY"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "imports": {
+      "type": "object",
+      "minProperties": 3,
+      "maxProperties": 3,
+      "additionalProperties": {
+        "$ref": "#/$defs/import"
+      }
+    },
+    "charge_lattice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "representation_cases",
+        "equivalence",
+        "general_invariants",
+        "canonical_cases",
+        "selected_preflight_case",
+        "independent_rails"
+      ],
+      "properties": {
+        "representation_cases": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "equivalence": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "general_invariants": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "canonical_cases": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "$ref": "#/$defs/nonempty-object"
+          }
+        },
+        "selected_preflight_case": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "representation",
+            "Q",
+            "charged_phase",
+            "relative_physical_phase",
+            "gauge_phase",
+            "reason"
+          ],
+          "properties": {
+            "representation": {
+              "const": "two_complex"
+            },
+            "Q": {
+              "const": [
+                [
+                  "1"
+                ],
+                [
+                  "0"
+                ]
+              ]
+            },
+            "charged_phase": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "relative_physical_phase": {
+              "const": "psi=theta_2"
+            },
+            "gauge_phase": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "reason": {
+              "$ref": "#/$defs/nonempty"
+            }
+          }
+        },
+        "independent_rails": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "$ref": "#/$defs/nonempty"
+          }
+        }
+      }
+    },
+    "action_basis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fields",
+        "gauge_data",
+        "minimal_density",
+        "covariant_phase_one_forms",
+        "potential",
+        "completeness"
+      ],
+      "properties": {
+        "fields": {
+          "$ref": "#/$defs/nonempty-array"
+        },
+        "gauge_data": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "minimal_density": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "covariant_phase_one_forms": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "potential": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "completeness": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "constant_scale_Ward_system": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bilinear_weight_matrix",
+        "bilinear_Ward_equations",
+        "applies_to",
+        "quartic_weight_rule",
+        "constant_parameter_exhaustiveness"
+      ],
+      "properties": {
+        "bilinear_weight_matrix": {
+          "$ref": "#/$defs/matrix"
+        },
+        "bilinear_Ward_equations": {
+          "const": [
+            "(a-b1) K_11=0",
+            "(2a-b1-b2) K_12=0",
+            "(a-b2) K_22=0"
+          ]
+        },
+        "applies_to": {
+          "const": [
+            "K^r",
+            "K^R",
+            "K^theta"
+          ]
+        },
+        "quartic_weight_rule": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "constant_parameter_exhaustiveness": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "positivity_and_gauge_rank": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_primitive_gauge_symbol",
+        "row_order",
+        "column_order",
+        "independence_minors",
+        "positive_kinetic_lemma",
+        "complete_healthy_strata",
+        "first_incompatible_trichotomy"
+      ],
+      "properties": {
+        "canonical_primitive_gauge_symbol": {
+          "$ref": "#/$defs/matrix"
+        },
+        "row_order": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "items": {
+            "$ref": "#/$defs/nonempty"
+          }
+        },
+        "column_order": {
+          "const": [
+            "omega",
+            "eta",
+            "gamma"
+          ]
+        },
+        "independence_minors": {
+          "type": "object",
+          "required": [
+            "metric_rho1",
+            "metric_rho2",
+            "physical_relative_phase"
+          ],
+          "properties": {
+            "metric_rho1": {
+              "const": "a-b1"
+            },
+            "metric_rho2": {
+              "const": "a-b2"
+            },
+            "physical_relative_phase": {
+              "const": "-s2"
+            }
+          }
+        },
+        "positive_kinetic_lemma": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "complete_healthy_strata": {
+          "type": "object",
+          "required": [
+            "some_b_i_not_a",
+            "b1=b2=a_and_s2_nonzero",
+            "b1=b2=a_and_s2_zero"
+          ],
+          "properties": {
+            "some_b_i_not_a": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "b1=b2=a_and_s2_nonzero": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "b1=b2=a_and_s2_zero": {
+              "type": "object",
+              "required": [
+                "rank",
+                "reducibility_vector_(omega,eta,gamma)",
+                "identity",
+                "dressed_metrics",
+                "disposition"
+              ],
+              "properties": {
+                "rank": {
+                  "const": 2
+                },
+                "reducibility_vector_(omega,eta,gamma)": {
+                  "const": [
+                    "-a",
+                    "1",
+                    "-s1"
+                  ]
+                },
+                "identity": {
+                  "$ref": "#/$defs/nonempty"
+                },
+                "dressed_metrics": {
+                  "$ref": "#/$defs/nonempty"
+                },
+                "disposition": {
+                  "$ref": "#/$defs/nonempty"
+                }
+              }
+            }
+          }
+        },
+        "first_incompatible_trichotomy": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/nonempty"
+          }
+        }
+      }
+    },
+    "stationarity_and_charges": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "aggregate_order",
+        "Euler_formulas",
+        "unit_cylinder_metric_rows",
+        "frozen_Berger_metric_rows",
+        "charge_split",
+        "stationarity_disposition"
+      ],
+      "properties": {
+        "aggregate_order": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "$ref": "#/$defs/nonempty"
+          }
+        },
+        "Euler_formulas": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "unit_cylinder_metric_rows": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "frozen_Berger_metric_rows": {
+          "type": "object",
+          "required": [
+            "background",
+            "row_order",
+            "matrix",
+            "radial_rows",
+            "compact_Gauss",
+            "positive_neutral_clock_regression"
+          ],
+          "properties": {
+            "background": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "row_order": {
+              "$ref": "#/$defs/nonempty-array"
+            },
+            "matrix": {
+              "$ref": "#/$defs/matrix"
+            },
+            "radial_rows": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "compact_Gauss": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "positive_neutral_clock_regression": {
+              "type": "object",
+              "required": [
+                "aggregate_vector",
+                "metric_rows",
+                "canonical_primitive_charge",
+                "velocity",
+                "Gauss_row",
+                "relative_charge",
+                "interpretation"
+              ],
+              "properties": {
+                "aggregate_vector": {
+                  "const": [
+                    "5",
+                    "0",
+                    "1",
+                    "9/16",
+                    "119/480"
+                  ]
+                },
+                "metric_rows": {
+                  "const": "ZERO_EXACTLY"
+                },
+                "canonical_primitive_charge": {
+                  "const": "Q=(1,0)^T"
+                },
+                "velocity": {
+                  "const": [
+                    "beta1=0",
+                    "beta2=3/4"
+                  ]
+                },
+                "Gauss_row": {
+                  "const": "ZERO_EXACTLY"
+                },
+                "relative_charge": {
+                  "$ref": "#/$defs/nonempty"
+                },
+                "interpretation": {
+                  "$ref": "#/$defs/nonempty"
+                }
+              }
+            }
+          }
+        },
+        "charge_split": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "stationarity_disposition": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "terminal_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result",
+        "selected_action",
+        "healthy_locus",
+        "compact_charge_lattice_result",
+        "first_obstruction",
+        "full_BV_or_causal_completion_activated",
+        "nonlinear_or_quantum_promotion",
+        "next_gate"
+      ],
+      "properties": {
+        "result": {
+          "const": "SCOPED_TWO_FIELD_MINIMAL_CHARGE_MATRIX_GOOD_LOCUS_EMPTY"
+        },
+        "selected_action": {
+          "const": false
+        },
+        "healthy_locus": {
+          "const": "EMPTY"
+        },
+        "compact_charge_lattice_result": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "first_obstruction": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "full_BV_or_causal_completion_activated": {
+          "const": false
+        },
+        "nonlinear_or_quantum_promotion": {
+          "const": false
+        },
+        "next_gate": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {
+        "const": false
+      }
+    },
+    "claim_boundary": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "content_hashes": {
+      "type": "object",
+      "minProperties": 8,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    }
+  },
+  "$defs": {
+    "nonempty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nonempty-array": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/nonempty"
+      }
+    },
+    "nonempty-object": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "import": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256",
+        "source_commit",
+        "result_id"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "source_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "result_id": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "result_state": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "claim_status": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "matrix": {
+      "type": "object",
+      "required": [
+        "row_count",
+        "column_count",
+        "entries",
+        "sha256"
+      ],
+      "properties": {
+        "row_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "column_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "row",
+              "column",
+              "coefficient"
+            ],
+            "properties": {
+              "row": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "column": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "coefficient": {
+                "$ref": "#/$defs/nonempty"
+              }
+            }
+          }
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    }
+  }
+}
