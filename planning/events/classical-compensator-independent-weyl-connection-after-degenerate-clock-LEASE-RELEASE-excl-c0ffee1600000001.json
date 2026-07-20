@@ -1,0 +1,37 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-compensator-independent-weyl-connection-after-degenerate-clock-LEASE-RELEASE-excl-c0ffee1600000001",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {
+    "path": "planning/events/classical-compensator-independent-weyl-connection-after-degenerate-clock-LEASE-RELEASE-excl-c0ffee1600000001.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "LEASE",
+    "actor": "coordinator",
+    "base_revision": "science-forge-ir-v0",
+    "when": "2026-07-20T23:20:00+02:00",
+    "seq": 2,
+    "predecessor": "sf:program/event/classical-compensator-independent-weyl-connection-after-degenerate-clock-LEASE-ACQUIRE-excl-a14fa6256e2153a9",
+    "payload": {
+      "target": "sf:program/work/classical-compensator-independent-weyl-connection-after-degenerate-clock",
+      "agent": "classical-1",
+      "lease_type": "exclusive",
+      "action": "RELEASE",
+      "acquired": "2026-07-20T21:13:59Z",
+      "expires": ""
+    },
+    "native": {
+      "authored_by": "coordinator",
+      "policy": "append-only lease repair after a newly certified convention boundary changed the correct escalation order"
+    }
+  },
+  "edges": [
+    {
+      "rel": "LEASES",
+      "to": "sf:program/work/classical-compensator-independent-weyl-connection-after-degenerate-clock"
+    }
+  ]
+}

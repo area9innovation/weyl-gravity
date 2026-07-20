@@ -1,0 +1,36 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-compensator-independent-weyl-connection-after-degenerate-clock-RETIRED-c0ffee1600000002",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {
+    "path": "planning/events/classical-compensator-independent-weyl-connection-after-degenerate-clock-RETIRED-c0ffee1600000002.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "coordinator",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [
+      "sf:program/event/classical-compensator-independent-weyl-connection-after-degenerate-clock-ACTIVE-53c57d1b739f64ae"
+    ],
+    "when": "2026-07-20T23:20:01+02:00",
+    "seq": 2,
+    "payload": {
+      "target": "sf:program/work/classical-compensator-independent-weyl-connection-after-degenerate-clock",
+      "to_state": "RETIRED",
+      "note": "Prematurely activated from the literal +F_X Level-3 no-go.  That certificate explicitly leaves the convention-correct -2F_X Horndeski family open.  Superseded by a Level-3b corrected-family gate and a new conditional Level-4 successor."
+    },
+    "native": {
+      "authored_by": "coordinator",
+      "policy": "append-only; the item is retired rather than rewritten after its prerequisite theorem exposed a material convention boundary"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/classical-compensator-independent-weyl-connection-after-degenerate-clock"
+    }
+  ]
+}

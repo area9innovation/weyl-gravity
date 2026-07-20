@@ -1,0 +1,44 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-compensator-convention-correct-horndeski-level3b",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-compensator-convention-correct-horndeski-level3b",
+  "source": {
+    "path": "planning/work-items/classical-compensator-convention-correct-horndeski-level3b.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Classify the convention-correct minimal shift-symmetric quartic-Horndeski dressed-metric family that remained explicitly open after the literal Level-3 coefficient no-go.",
+    "stop_condition": "Import COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1 and its convention-control block by hash.  With the project convention X=g_hat^{ab}partial_a(theta)partial_b(theta), declare exactly S=S_P2+integral sqrt(-g_hat){F(X)R_hat-2F_X[(Box_hat theta)^2-(nabla_hat_a nabla_hat_b theta)^2]}, F=f0+f1X, with Level-2 braiding zero.  Re-derive the homogeneous ADM velocity Hessian and prove the Horndeski degeneracy rather than importing it as an assumption.  Then compute the complete common cylinder/Berger stationary coefficient locus, both background Euler systems, the full action-origin unary gauge/constraint rows needed for scalar reduction, principal symbols, Dirac constraint ranks, reduced kinetic/gradient inertia, characteristic and Jordan disposition, raw-D/K_Berger and internal clock charges, dressed-trace cohomology and relational-clock health inequalities.  Use exact elimination to classify every coefficient/rank stratum.  Export a selected action only if all seven gates and the support-local causal-parent preflight pass; otherwise freeze the first complete invariant no-go.  On the constant-clock cylinder, independently test the certified control that the f1 slope contributes a clock Hessian but no metric-clock or pure-metric trace/lapse repair.",
+    "current_gate": "convention-correct quartic-Horndeski common-background seven-gate locus",
+    "forbid": "no reuse of the literal +F_X determinant as this family's verdict; no standard X_standard=-X/2 formula copied without conversion; no velocity-Hessian degeneracy called a complete physical reduction; no background sample called a complete locus; no higher G4, G5, DHOST, independent connection or new gauge field mixed into Level-3b; no q2, Hadamard, anomaly/QME, particle or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/classical-compensator-degenerate-curvature-coupling-locus"
+    ],
+    "activates": [
+      "a selected convention-correct Horndeski action for causal/nonlinear testing",
+      "or escalation to the independently gauged Weyl-connection Level 4 only after a complete scoped no-go"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "reports/",
+      "residual_atlas/",
+      "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+      "notes/d-quotient-classical-team-brief.md",
+      "notes/d-quotient-quantum-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "CONVENTION REPAIR / LEVEL-3b.  Start from the exact boundary identity already exported by the literal theorem; use M19/M22/M26 when landed, but do not wait if the small homogeneous and background elimination can be certified independently now.",
+    "notes": [
+      "The literal theorem is valid and remains published at its exact scope; this item asks the physically intended convention-correct question rather than revising that evidence.",
+      "A quick cylinder trace/lapse separator may terminate the family before the full Berger elimination, but it must be derived from the corrected action."
+    ],
+    "input_commit": "e77ee4444",
+    "stream": "classical"
+  },
+  "edges": []
+}

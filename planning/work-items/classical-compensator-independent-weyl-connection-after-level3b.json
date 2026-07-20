@@ -1,0 +1,42 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-compensator-independent-weyl-connection-after-level3b",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-compensator-independent-weyl-connection-after-level3b",
+  "source": {
+    "path": "planning/work-items/classical-compensator-independent-weyl-connection-after-level3b.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Test the smallest action-derived independent Weyl connection only after the convention-correct degenerate clock-curvature family terminates without a selected action.",
+    "stop_condition": "Import the terminal Level-3b theorem and proceed only if no selected action was exported.  Declare a complete minimal local parity-even ansatz for one independent Weyl connection, its curvature, the complex compensator and dressed metric at the lowest derivative order capable of changing the trace complex.  Derive gauge transformations, reducibility, ghosts, antifields, cotangent lift, real structure and cyclic pairing from the action.  Compute both background equations and the full scalar/longitudinal principal complex, cohomology, velocity inertia, charge generators and support-local Green parent.  Classify the exact coefficient locus and prove either one passing component with a contraction of the former dressed-trace class or a scoped Level-4 rank/sign/charge obstruction.",
+    "current_gate": "minimal independently gauged Weyl-connection changed theory after corrected Horndeski",
+    "forbid": "no activation when Level-3b exports a selected action; no connection introduced only at equation level; no hidden torsion/nonmetricity sector outside the declared ansatz; no gauge direction called contractible without full BV cotangent data; no q2, anomaly/QME, particle or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/classical-compensator-convention-correct-horndeski-level3b"
+    ],
+    "activates": [
+      "a first independently gauged geometric-variable repair or a scoped Level-4 no-go"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/",
+      "reports/",
+      "residual_atlas/",
+      "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+      "notes/d-quotient-classical-team-brief.md",
+      "notes/d-quotient-quantum-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "LEVEL-4 ESCALATION.  This is intentionally larger and must remain behind the convention-correct Level-3b disposition.",
+    "notes": [
+      "This supersedes the prematurely activated independent-Weyl-connection item whose prerequisite covered only the literal +F_X convention."
+    ],
+    "input_commit": "e77ee4444",
+    "stream": "classical"
+  },
+  "edges": []
+}
