@@ -146,7 +146,7 @@ Machine-readable evidence:
 - `quantum-weyl/lorentzian/certificates/BERGER_HOMOGENEOUS_KREIN_COVARIANCE_CLASSIFICATION.json`
 - `quantum-weyl/lorentzian/generated/berger_homogeneous_krein_covariance_classification/classification_summary.json`
 
-CLOSE-OUT: CERTIFIED — the complete parity-forgotten homogeneous stationary
+CLOSE-OUT: DONE — the complete parity-forgotten homogeneous stationary
 CCR affine class has 128 parameters and no positive member; the canonical
 Krein representative has inertia \((40,40)\), while positive pure
 finite-dimensional covariances require explicit time dependence.
