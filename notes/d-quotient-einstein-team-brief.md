@@ -4559,6 +4559,41 @@ generic waves and globals at arbitrary momentum, followed by multiple
 common-zero geometry is `OPEN`.  No infinite, causal, all-orders, final
 residual, observational or quantum claim is made.
 
+## Active Bridge 1 residual layer
+
+`EINSTEIN_WEYL_RELATIVE_RESIDUAL_ACTION_DESCENT_V1` is the active bridge
+owned with the Classical team.  Its activation gate was the frozen
+same-background support-local relative triangle plus the branch dictionary
+and pinned residual manifest.
+
+The inclusion, mapping cofiber and branch representatives descend
+equivariantly under the connected product stabilizer
+
+```text
+R_t x U(1)_x x SO(3) x U(1)_constant
+```
+
+and the large-`U(1)` winding lattice maps identically from source to target.
+The relative endpoint cohomology is therefore zero.  At solution degree the
+generic axial and polar cofibers are separately
+`(K[omega]/(p))^2 tensor V_ell`; the exceptional `ell=1` cofibers contain
+one axial and one polar extra class tensored with `V_1`.  These blocks are
+nonradical.  Homogeneous, twist, electric and Wilson solution cofibers are
+zero.
+
+The three action-derived forms remain distinct: Einstein source,
+pulled-back Weyl on the Einstein image, and direct Weyl on the cofiber.
+Equivariance does not create a standard-pairing cyclic map.
+
+The fail-closed atlas row is
+`residual_atlas/einstein-weyl-relative-residual-action-overlay-v1.json`.
+It records `CERTIFIED` residual representation, mapping-cone cohomology and
+pairing descent, but `NO_CERTIFIED_MAP` for the global orbit/symplectic
+quotient, support-local physical projection and causal Green descent.  Here
+“relative residual cohomology” means mapping-cone cohomology retained as a
+stabilizer representation; it is not invariant-state cohomology and not a
+particle space.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

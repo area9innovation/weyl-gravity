@@ -1,0 +1,52 @@
+{
+  "schema": "einstein-weyl-relative-residual-action-descent-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_RESIDUAL_ACTION_DESCENT_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.11,
+      "commands": [
+        "python3 -m py_compile bridge/einstein_sector/einstein_weyl_relative_residual_action_descent.py bridge/einstein_sector/verify_einstein_weyl_relative_residual_action_descent.py bridge/einstein_sector/tests/test_einstein_weyl_relative_residual_action_descent.py",
+        "python3 -m json.tool <scoped schema, certificate and atlas overlay>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.42,
+      "commands": [
+        "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_weyl_relative_residual_action_descent --check",
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_weyl_relative_residual_action_descent.py",
+        "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_relative_residual_action_descent -v"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 0.70,
+      "commands": [
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_weyl_relative_linear_triangle_v1.py",
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_weyl_relative_branch_dictionary.py",
+        "PYTHONPATH=. python3 residual_atlas/verify_branch_manifest.py"
+      ],
+      "reason": "The descent consumes the frozen triangle, branch dictionary and pinned manifest; their independent consumers were rerun."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a scoped residual-action consumer and atlas overlay, not a paper freeze, release, or shared-core algebra change."
+    }
+  },
+  "source_manifest": {
+    "bridge/certificates/EINSTEIN_WEYL_RELATIVE_RESIDUAL_ACTION_DESCENT_V1.json": "4cc7040f3ad38758245a711314e359796b290abf52825c4843dd786bc507d867",
+    "bridge/einstein_sector/einstein_weyl_relative_residual_action_descent.py": "925334a1f1b07e6298178c6e3076ec1a567f329faae414c1a7e0f16eb5d0f708",
+    "bridge/einstein_sector/verify_einstein_weyl_relative_residual_action_descent.py": "f700777300f165f4864790bd815b786b9d933244bc588ab006ca5900cecdd6d7",
+    "bridge/einstein_sector/tests/test_einstein_weyl_relative_residual_action_descent.py": "ae4fb58bb75e42131b9d159a979e6411cde0a9d87330369c9f0987b648018fb3",
+    "bridge/einstein_sector/schema/einstein-weyl-relative-residual-action-descent-v1.schema.json": "47d8fcaa64f4619736a206ec38e4d4448a7348ac59e0161105d8903d43a3e772",
+    "bridge/einstein_sector/reports/einstein-weyl-relative-residual-action-descent-v1.md": "4c6e82516eddf187c1ce44741682c128324ea477f995c0ec1cf79b6864f7c7d1",
+    "residual_atlas/einstein-weyl-relative-residual-action-overlay-v1.json": "83e6d0b686fe76c8ac7a58ded359fecb1b5eeedd2aad8640068a4128778a0656",
+    "notes/d-quotient-einstein-team-brief.md": "9d5a5d2402107948df7638da1f95299d61636c7f2c83bf7b7b1a73007e937259"
+  },
+  "failed_attempts": [],
+  "coordination_incident": "The earlier activation commit included pre-existing observer files already present in the shared index. Published history was not rewritten; this result uses explicit-path staging and an exact staged-diff audit.",
+  "claim_boundary": "This receipt covers the same-background equivariant mapping-cone descent, endpoint and branch cohomology representations, exact global-block pairing invariance and fail-closed atlas overlay. It does not certify a global orbit/symplectic quotient, invariant-state cohomology, support-local physical projection, causal Green carrier, particle, observable, nonlinear or quantum map."
+}

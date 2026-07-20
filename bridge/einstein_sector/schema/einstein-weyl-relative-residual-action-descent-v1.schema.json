@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Einstein--Weyl relative residual-action descent v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "lifecycle_status",
+    "result_state",
+    "dependency_tags",
+    "scope",
+    "definitions",
+    "classification",
+    "branches",
+    "provenance",
+    "verification_commands",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-weyl-relative-residual-action-descent-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_RESIDUAL_ACTION_DESCENT_V1"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "result_state": {"type": "string"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "scope": {"type": "object"},
+    "definitions": {"type": "object"},
+    "classification": {
+      "type": "object",
+      "required": [
+        "chain_equivariance",
+        "endpoint_relative_cohomology",
+        "solution_relative_cohomology",
+        "three_action_derived_forms_distinct",
+        "standard_pairing_cyclic_map_exists",
+        "global_orbit_or_symplectic_quotient",
+        "support_local_physical_branch_projection",
+        "causal_green_descent",
+        "particle_observer_nonlinear_quantum_claim"
+      ]
+    },
+    "branches": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "required": [
+          "branch_id",
+          "manifest_branch_ids",
+          "residual_action",
+          "relative_mapping_cone_cohomology",
+          "pairing_blocks",
+          "global_orbit_quotient",
+          "support_local_physical_projection",
+          "causal_green_descent"
+        ]
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["inputs", "producer_path", "producer_sha256", "schema_path", "schema_sha256"]
+    },
+    "verification_commands": {"type": "array", "minItems": 3},
+    "claim_boundary": {"type": "string"}
+  },
+  "additionalProperties": true
+}
