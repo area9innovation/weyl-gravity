@@ -1,0 +1,386 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.example/schemas/berger-homogeneous-stationary-hadamard-normalization-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "setting",
+    "declared_normalized_class",
+    "homogeneous_spectral_data",
+    "obstruction",
+    "claim_flags",
+    "exact_checks",
+    "dependency_refs",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-berger-homogeneous-stationary-hadamard-normalization-obstruction-v1"
+    },
+    "result_id": {
+      "const": "BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION"
+    },
+    "result_state": {
+      "const": "FULL_RETAINED_STATIONARY_COMPLEX_STRUCTURE_CLASS_OBSTRUCTED_ON_POSITIVE_HOMOGENEOUS_FIXTURE"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ]
+    },
+    "setting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "background",
+        "fixture",
+        "mode",
+        "carrier"
+      ],
+      "properties": {
+        "background": {
+          "const": "compact positive Berger clock"
+        },
+        "fixture": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "alpha_B",
+            "u",
+            "v",
+            "rho_squared"
+          ],
+          "properties": {
+            "alpha_B": {
+              "$ref": "#/$defs/rational"
+            },
+            "u": {
+              "$ref": "#/$defs/rational"
+            },
+            "v": {
+              "$ref": "#/$defs/rational"
+            },
+            "rho_squared": {
+              "$ref": "#/$defs/rational"
+            }
+          }
+        },
+        "mode": {
+          "type": "string"
+        },
+        "carrier": {
+          "type": "string"
+        }
+      }
+    },
+    "declared_normalized_class": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "class_id",
+        "requirements",
+        "completeness_scope"
+      ],
+      "properties": {
+        "class_id": {
+          "const": "REAL_D_INVARIANT_COMPATIBLE_COMPLEX_STRUCTURE_POSITIVE_FREQUENCY_NORMALIZATION"
+        },
+        "requirements": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "string"
+          }
+        },
+        "completeness_scope": {
+          "type": "string"
+        }
+      }
+    },
+    "homogeneous_spectral_data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "blocks",
+        "instability_polynomial_in_x",
+        "instability_polynomial_coefficients_descending",
+        "exact_signs",
+        "positive_root_intervals",
+        "conclusion"
+      ],
+      "properties": {
+        "blocks": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/block"
+          }
+        },
+        "instability_polynomial_in_x": {
+          "type": "string"
+        },
+        "instability_polynomial_coefficients_descending": {
+          "const": [
+            9,
+            39,
+            -116,
+            900,
+            -3160,
+            -300,
+            4800
+          ]
+        },
+        "exact_signs": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "p_3_over_2",
+            "p_2",
+            "p_5_over_2",
+            "p_3"
+          ],
+          "properties": {
+            "p_3_over_2": {
+              "$ref": "#/$defs/rational"
+            },
+            "p_2": {
+              "$ref": "#/$defs/rational"
+            },
+            "p_5_over_2": {
+              "$ref": "#/$defs/rational"
+            },
+            "p_3": {
+              "$ref": "#/$defs/rational"
+            }
+          }
+        },
+        "positive_root_intervals": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "$ref": "#/$defs/rational"
+            }
+          }
+        },
+        "conclusion": {
+          "type": "string"
+        }
+      }
+    },
+    "obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proof",
+        "classification",
+        "obstructed_object",
+        "smallest_open_enlargement"
+      ],
+      "properties": {
+        "proof": {
+          "type": "string"
+        },
+        "classification": {
+          "const": "OBSTRUCTED"
+        },
+        "obstructed_object": {
+          "type": "string"
+        },
+        "smallest_open_enlargement": {
+          "const": "NONSTATIONARY_KREIN_HADAMARD_REPRESENTATIVE_WITH_CONTENT_ADDRESSED_CAUCHY_TIME_NORMALIZATION"
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "HOMOGENEOUS_REAL_GROWTH_EIGENLINES_CERTIFIED",
+        "STATIONARY_FULL_CARRIER_COMPLEX_STRUCTURE_EXISTS",
+        "NONSTATIONARY_HADAMARD_REPRESENTATIVE_RULED_OUT",
+        "KREIN_COVARIANCE_WITHOUT_COMPLEX_STRUCTURE_RULED_OUT",
+        "PHYSICAL_BRST_QUOTIENT_INSTABILITY_CERTIFIED",
+        "C26_SERIALIZED",
+        "RETAINED_BRST_HADAMARD_CERTIFIED",
+        "PHYSICAL_POSITIVITY_CERTIFIED",
+        "LORENTZIAN_QME_CERTIFIED"
+      ],
+      "properties": {
+        "HOMOGENEOUS_REAL_GROWTH_EIGENLINES_CERTIFIED": {
+          "const": true
+        },
+        "STATIONARY_FULL_CARRIER_COMPLEX_STRUCTURE_EXISTS": {
+          "const": false
+        },
+        "NONSTATIONARY_HADAMARD_REPRESENTATIVE_RULED_OUT": {
+          "const": false
+        },
+        "KREIN_COVARIANCE_WITHOUT_COMPLEX_STRUCTURE_RULED_OUT": {
+          "const": false
+        },
+        "PHYSICAL_BRST_QUOTIENT_INSTABILITY_CERTIFIED": {
+          "const": false
+        },
+        "C26_SERIALIZED": {
+          "const": false
+        },
+        "RETAINED_BRST_HADAMARD_CERTIFIED": {
+          "const": false
+        },
+        "PHYSICAL_POSITIVITY_CERTIFIED": {
+          "const": false
+        },
+        "LORENTZIAN_QME_CERTIFIED": {
+          "const": false
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 10,
+      "additionalProperties": {
+        "const": true
+      }
+    },
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 4,
+      "additionalProperties": {
+        "$ref": "#/$defs/reference"
+      }
+    },
+    "next_gate": {
+      "const": "IMPORT_CORRECTED_Q_CAUCHY_AND_SELECT_A_NONSTATIONARY_CONTENT_ADDRESSED_KREIN_CAUCHY_COVARIANCE"
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 100
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proof_type",
+        "source_manifest"
+      ],
+      "properties": {
+        "proof_type": {
+          "const": "EXACT_CHARPOLY_IVT_AND_SIMPLE_EIGENLINE_OBSTRUCTION"
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "properties": {
+        "numerator": {
+          "type": "integer"
+        },
+        "denominator": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "result_id",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "result_id": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "block": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "block_id",
+        "rank",
+        "indices",
+        "nonzero_entries",
+        "characteristic_polynomial",
+        "zero_nullities"
+      ],
+      "properties": {
+        "block_id": {
+          "enum": [
+            "ghost",
+            "metric",
+            "metric_antifield",
+            "identity"
+          ]
+        },
+        "rank": {
+          "enum": [
+            12,
+            40
+          ]
+        },
+        "indices": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 103
+          }
+        },
+        "nonzero_entries": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "characteristic_polynomial": {
+          "type": "string"
+        },
+        "zero_nullities": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  }
+}

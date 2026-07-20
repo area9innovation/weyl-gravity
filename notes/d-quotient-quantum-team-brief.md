@@ -1830,3 +1830,32 @@ Certificate and report:
 
 This is `LORENTZIAN-CAUSAL` and does not promote retained BRST Hadamard data,
 positivity, particles, renormalized products or a Lorentzian QME.
+
+## Homogeneous stationary normalization obstruction (2026-07-20)
+
+The complete exact \(A_{104}\) Cauchy operator now gives a sharp fallback
+theorem for the stationary positive-frequency route. At the positive
+Berger-clock fixture
+
+\[
+(\alpha_B,u,v)=(1,1,5),\qquad \rho^2=2,
+\]
+
+its left-invariant homogeneous metric and metric-antifield blocks contain the
+same square-free degree-six factor \(p(\lambda^2)\). Exact rational signs show
+two positive simple roots of \(p(x)\), hence simple real evolution
+eigenvalues in both blocks. Any real \(J\) commuting with \(A_{104}\) preserves
+each one-dimensional real eigenline, where \(J^2=-1\) is impossible.
+
+Thus the complete class of real stationary full-carrier compatible complex
+structures commuting with this exact homogeneous evolution is obstructed.
+This is a `LOCAL-ALGEBRAIC` and `REDUCED-MODE` theorem, not a Hadamard
+nonexistence theorem. A nonstationary Krein Hadamard representative remains
+open, as does the possibility that the growth directions disappear after a
+corrected \(q_{\rm Cauchy}\) quotient. No \(C_{26}\) kernel, physical
+positivity, renormalized product or Lorentzian QME is inferred.
+
+Certificate and report:
+
+- [`BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION.json`](../quantum-weyl/lorentzian/certificates/BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION.json)
+- [`berger-homogeneous-stationary-hadamard-normalization-obstruction.md`](../quantum-weyl/reports/berger-homogeneous-stationary-hadamard-normalization-obstruction.md)

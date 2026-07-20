@@ -175,6 +175,14 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(
             berger["quantum_data"]["pairing_status"]["status"], "OPEN"
         )
+        self.assertEqual(
+            berger["quantum_data"]["compatible_complex_structure"]["status"],
+            "OBSTRUCTED",
+        )
+        self.assertIn(
+            "simple real A104 eigenlines",
+            berger["quantum_data"]["compatible_complex_structure"]["statement"],
+        )
         self.assertIn(
             "not yet certified to descend to BRST cohomology",
             berger["quantum_data"]["pairing_status"]["statement"],
@@ -242,6 +250,10 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         )
         self.assertIn(
             "BERGER_PHYSICAL_COHOMOLOGY_POSITIVITY_DISPOSITION",
+            {evidence["result_id"] for evidence in berger["evidence"]},
+        )
+        self.assertIn(
+            "BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION",
             {evidence["result_id"] for evidence in berger["evidence"]},
         )
         self.assertIn(

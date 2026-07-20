@@ -1,0 +1,66 @@
+{
+  "receipt_id": "BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION_V1_TIER_RECEIPT",
+  "result_id": "BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION",
+  "recorded_at": "2026-07-20",
+  "base_commit": "fcda9deb4256fa68e0ed6e4b7440a5c7f2fe4ce6",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "input_hashes": {
+    "A104_certificate": "9461f484e51ba7ef27cf0924d532d262b7b4c1fd846fd35dec093204508f9e1c",
+    "A104_payload": "37f0881c793f196175100e5e4784d18f6315e3654e3945c9972d9b212e662154",
+    "C26_nondefinition": "b3a4058c83f5fc2dc77dc1e50a6b1f3624eebbbe049c43de0ce45d62d768184a",
+    "canonical_q_Cauchy_obstruction": "2ee25f93c1e8cab4c6053c4cc76f7efeafc99e266b718fcb8d3dad4f07a231df"
+  },
+  "output_hash": "016844933f79cdb275cb6d21d2de79f24fbbcdb549b09a0c8eba6715be302010",
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile quantum-weyl/lorentzian/berger_homogeneous_stationary_hadamard_normalization_obstruction.py quantum-weyl/lorentzian/berger_homogeneous_stationary_hadamard_normalization_obstruction_certificate.py quantum-weyl/lorentzian/verify_berger_homogeneous_stationary_hadamard_normalization_obstruction.py quantum-weyl/lorentzian/tests/test_berger_homogeneous_stationary_hadamard_normalization_obstruction.py",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_homogeneous_stationary_hadamard_normalization_obstruction_certificate --check",
+      "elapsed_seconds": 0.76,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 quantum-weyl/lorentzian/verify_berger_homogeneous_stationary_hadamard_normalization_obstruction.py",
+      "status": "PASS_INDEPENDENT_EXACT_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest lorentzian.tests.test_berger_homogeneous_stationary_hadamard_normalization_obstruction -v",
+      "elapsed_seconds": 1.87,
+      "status": "PASS_6_TESTS"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s quantum-weyl/lorentzian/schema/berger-homogeneous-stationary-hadamard-normalization-obstruction-v1.schema.json && npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/lorentzian/schema/berger-homogeneous-stationary-hadamard-normalization-obstruction-v1.schema.json -d quantum-weyl/lorentzian/certificates/BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION.json",
+      "elapsed_seconds": 3.2,
+      "status": "PASS_DRAFT_2020_12_STRICT"
+    },
+    {
+      "tier": 2,
+      "command": "PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python3 -m unittest atlas.tests.test_quantum_atlas_fragment -v && python3 residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "elapsed_seconds": 4.9,
+      "status": "PASS_8_TESTS_AND_3_VERIFIERS"
+    }
+  ],
+  "development_repairs": [
+    {
+      "failure": "the first producer replay attempted to parse a characteristic-polynomial string containing the reserved Python token lambda",
+      "repair": "retain the exact SymPy expression internally and serialize only after all polynomial divisions",
+      "regression_status": "PASS"
+    },
+    {
+      "failure": "mere divisibility would not prove that the instability roots are simple eigenvalues",
+      "repair": "independently verify that the instability factor is square-free and coprime to the exact characteristic quotient",
+      "regression_status": "PASS"
+    }
+  ],
+  "tier_3_not_run": "No full-BV Hadamard, positivity, renormalized-product, QME, theorem-freeze, release or tag lifecycle is promoted. The exact reduced-mode obstruction and its atlas consumer are covered by tiers 0-2."
+}
