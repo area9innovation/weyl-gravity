@@ -99,6 +99,16 @@ overfull or underfull diagnostic.
 Tier 3 was not run because this is a publication lifecycle correction, not a
 freeze, release, tag or shared-core-algebra change.
 
+## Coordination deviation
+
+The work item's stop condition explicitly required the Science Forge coverage
+graph, coverage report, referee response, and claim-map generator/verifier,
+but its `allowed_paths` list omitted those five existing publication-evidence
+files.  They were necessary to meet the stop condition and to keep the
+generated claim map reproducible.  The manual explicit-path commit contains
+only the ten listed Paper 12, team-brief and receipt files; the shared staged
+and dirty work of other teams was not included.
+
 ## Nonclaims
 
 This correction changes no strict anomaly or conditional extended-QME
@@ -110,4 +120,6 @@ result.
 EVIDENCE: `paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json`;
 `paper/12-pure-weyl-one-loop-bv-anomaly-paper-coverage-report.json`
 
-CLOSE-OUT: DONE
+CLOSE-OUT: DONE — Paper 12 and its generated evidence now carry the
+independently frozen scoped quadratic active-clock no-go without selecting an
+action-specific quantum consumer.
