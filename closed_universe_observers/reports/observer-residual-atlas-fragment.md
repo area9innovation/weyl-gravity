@@ -202,6 +202,22 @@ cyclic cotangents, followed by recomputation of the 112-row base.  The
 prospective repaired identified union has 160 rows; it is not yet a
 certified complex.
 
+The minimal four-row global-rod repair is `OBSTRUCTED` at its first later
+interface.  The normalized sine-phase partners of \(R_{0,1}\) and
+\(R_{1,1}\), together with their cyclic cotangents, raise the centered
+background closure rank from six to eight.  Their scalar wave equations,
+signed pairing and real structure are exact.  The recomputed eight-rod
+stress is Noether closed in both harmonic blocks, and exact sparse
+\(\Phi_2^{(8)}\) primitives solve the retained background equation.
+However, the action-derived mixed metric-to-new-rod-cotangent Hessian gives
+two nonzero chain defects for the canonical inclusion of the old 108 rows.
+Any local differential correction would require
+\(-s^2P(s)=cs\) with \(c\ne0\), whose only formal solution
+\(P=-c/s\) has order minus one.  Thus no complete 112-row unary,
+cohomology, detector response, memory, redshift or cone restriction is
+promoted.  The result does not exclude a replacement 112-row theory or a
+separately certified nonlocal comparison.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "payload_ref",
+    "certified_partial_construction",
+    "first_later_incompatibility",
+    "downstream_disposition",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-global-rod-two-direction-extension-obstruction-v1"
+    },
+    "result_id": {
+      "const": "BERGER_GLOBAL_ROD_TWO_DIRECTION_EXTENSION_OBSTRUCTION"
+    },
+    "claim_status": {
+      "const": "OBSTRUCTED_LOCAL_108_TO_112_CHAIN_EMBEDDING_AFTER_ACTION_DERIVED_ROD_REPAIR"
+    },
+    "atlas_status": {
+      "const": "OBSTRUCTED"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "next_gate": {
+      "const": "CHOOSE_REPLACEMENT_112_ROW_THEORY_OR_SUPPLY_A_NONLOCAL_SUPPORT_CONTROLLED_COMPARISON_MAP_DO_NOT_CALL_IT_AN_EXTENSION"
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 1600
+    }
+  },
+  "additionalProperties": true
+}

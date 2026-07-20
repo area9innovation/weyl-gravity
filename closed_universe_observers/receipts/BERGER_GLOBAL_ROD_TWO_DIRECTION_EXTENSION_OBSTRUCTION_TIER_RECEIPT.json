@@ -1,0 +1,109 @@
+{
+  "schema": "pure-weyl-test-tier-receipt-v1",
+  "result_id": "BERGER_GLOBAL_ROD_TWO_DIRECTION_EXTENSION_OBSTRUCTION_TIER_RECEIPT",
+  "science_forge_work_item": "sf:program/work/observer-berger-global-rod-two-direction-extension",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "claim_result_id": "BERGER_GLOBAL_ROD_TWO_DIRECTION_EXTENSION_OBSTRUCTION",
+  "claim_certificate_sha256": "c3e4e228a21043bab3492879d91287c65693b3eda3762418d78dd8545b7ad73a",
+  "payload_sha256": "387bf58cdde1d67aedfa47c8d7b03af2c93c19b9bf2d3441e390c4eb1227ea84",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile closed_universe_observers/generate_berger_global_rod_two_direction_extension_obstruction.py closed_universe_observers/verify_berger_global_rod_two_direction_extension_obstruction.py closed_universe_observers/tests/test_berger_global_rod_two_direction_extension_obstruction.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py closed_universe_observers/atlas/verify_observer_atlas_fragment.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+          "status": "PASS"
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=<temporary-directory> paper/09-relational-clocks-berger-d-cartan.tex (two passes)",
+          "elapsed_seconds": 3.66,
+          "status": "PASS",
+          "summary": "Paper 09 compiled twice to a temporary directory; no repository PDF was changed."
+        },
+        {
+          "command": "git diff --check -- <scoped observer paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m closed_universe_observers.generate_berger_global_rod_two_direction_extension_obstruction --write",
+          "elapsed_seconds": 31.62,
+          "status": "PASS",
+          "summary": "Constructed the forced two sine-phase rods and cotangents, exact rank-eight K closure, eight-rod stress and sparse Phi2 primitives, then exported the local chain-embedding obstruction."
+        },
+        {
+          "command": "python3 -m closed_universe_observers.verify_berger_global_rod_two_direction_extension_obstruction",
+          "elapsed_seconds": 3.86,
+          "status": "PASS",
+          "independent_rail": true,
+          "summary": "Independently checked the wave solutions, closure ranks, stress-source equations, Noether identities and polynomial-divisibility no-go."
+        },
+        {
+          "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_global_rod_two_direction_extension_obstruction.py",
+          "elapsed_seconds": 0.75,
+          "status": "PASS",
+          "summary": "5 passed"
+        },
+        {
+          "command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json",
+          "elapsed_seconds": 0.59,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment",
+          "elapsed_seconds": 1.57,
+          "status": "PASS",
+          "independent_rail": true
+        },
+        {
+          "command": "python3 -m pytest -q closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_berger_global_rod_two_direction_extension_obstruction.py",
+          "elapsed_seconds": 27.18,
+          "status": "PASS",
+          "summary": "60 passed"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "All imported operators and certificates are unchanged content-addressed inputs. The new exact four-row construction, independent verifier, atlas consumer and Paper 09 consumer were exercised at Tier 1."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, tag, release or shared-core algebra change was made. This is a scoped local-extension obstruction with every downstream claim left fail-closed."
+    }
+  },
+  "failed_attempts": [
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_global_rod_two_direction_extension_obstruction --write",
+      "elapsed_seconds": 0.53,
+      "status": "FAIL",
+      "summary": "The producer initially parsed rod profiles into distinct same-named SymPy symbols, so the frame derivative did not recognize them and the wave-equation assertion failed. Reusing the authoritative Berger coordinate symbols repaired the implementation; the successful producer and independent verifier both check the wave equations."
+    }
+  ],
+  "boundaries": {
+    "exact_arithmetic": true,
+    "numeric_evidence_used": false,
+    "old_carrier_rows": 108,
+    "new_rows": 4,
+    "prospective_carrier_rows": 112,
+    "six_rod_coefficient_rank": 6,
+    "one_rod_completion_rank": 7,
+    "two_rod_completion_rank": 8,
+    "eight_rod_Noether_defect_count": 0,
+    "eight_rod_Phi2_residual_count": 0,
+    "canonical_inclusion_chain_defect_count": 2,
+    "local_differential_embedding": "OBSTRUCTED",
+    "formal_nonlocal_solution": "P(s)=-c/s",
+    "complete_112_row_q1_promoted": false,
+    "detector_memory_redshift_recoil_or_tangent_cone_claim": false,
+    "quantum_claim": false
+  }
+}

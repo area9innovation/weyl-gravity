@@ -2300,3 +2300,37 @@ The fail-closed atlas row is
 (`symplectic=OBSTRUCTED`, `observational=NO_CERTIFIED_MAP`).  This does not
 retract the affine family action or the leading parent rank two, and it makes
 no cohomology, \(\mathcal Z_2\), memory or redshift claim.
+
+## Active bridge: minimal global-rod extension obstruction
+
+The successor
+`sf:program/work/observer-berger-global-rod-two-direction-extension`
+constructs the unique minimal background completion before testing its
+required unary interface.  The two normalized sine-phase partners of
+\(R_{0,1}\) and \(R_{1,1}\), with their two signed cyclic cotangents, raise
+the centered global-rod coefficient rank from six to eight.  Each new rod
+solves the Berger scalar wave equation and comes from the same scalar action
+as the old rods.
+
+The eight-rod stress is Noether closed in its zero- and positive-frequency
+blocks.  Exact sparse primitives solve
+\(H_{\rm retained}\Phi_2^{(8)}=-q_0^{(8)}\), and their nonzero deltas from
+the six-rod primitives certify that the background was genuinely
+recomputed.
+
+The first later incompatibility is the required local chain embedding of
+the old 108-row unary complex.  The new action produces a nonzero
+metric-to-new-rod-cotangent principal coefficient \(cs\) at both detector
+events.  Correcting the canonical inclusion against the scalar-wave block
+would require \(-s^2P(s)=cs\).  No nonnegative-order differential polynomial
+\(P\) exists; the formal answer \(-c/s\) is nonlocal.  Therefore the
+complete 112-row \(q_1\), its nilpotency/cyclicity/\(K\)-commutator,
+cohomology and the prospective 160-row apparatus union remain
+`NO_CERTIFIED_MAP`.
+
+The fail-closed atlas row is
+`observer.berger.interaction.global_rod_two_direction_extension_obstruction`
+(`symplectic=OBSTRUCTED`, `observational=NO_CERTIFIED_MAP`).  The activation
+gate is now a replacement 112-row theory or an independently certified
+support-controlled nonlocal comparison.  No detector, \(\mathcal Z_2\),
+memory, recoil or redshift result is promoted.

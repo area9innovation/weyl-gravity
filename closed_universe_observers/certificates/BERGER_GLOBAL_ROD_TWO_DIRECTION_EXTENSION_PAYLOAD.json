@@ -1,0 +1,763 @@
+{
+  "action": {
+    "formula": "S_R^(8)=-1/2 sum_(old six plus R0_4,R1_4) integral dvol_g g^{-1}(dR,dR)",
+    "odd_cotangents": "canonical cotangent lift of the two new Euler rows",
+    "origin": "same positive massless scalar-rod action as the six-row sector"
+  },
+  "background_completion": {
+    "K_closure_defect_count": 0,
+    "centered_background_K_matrix_over_nu": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "sin(sqrt(58)/12) + cos(sqrt(58)/12)/tan(sqrt(58)/24)",
+        "0",
+        "0",
+        "-cos(sqrt(10)/12)/sin(sqrt(58)/24)",
+        "sin(sqrt(10)/12)/sin(sqrt(58)/24)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "sin(sqrt(58)/12) + cos(sqrt(58)/12)/tan(sqrt(58)/24)",
+        "0",
+        "-sin(sqrt(10)/12)/sin(sqrt(58)/24)",
+        "-cos(sqrt(10)/12)/sin(sqrt(58)/24)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "cos(sqrt(10)/12)/sin(sqrt(58)/24)",
+        "sin(sqrt(10)/12)/sin(sqrt(58)/24)",
+        "0",
+        "-cos(sqrt(58)/12)/tan(sqrt(58)/24) - sin(sqrt(58)/12)",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-sin(sqrt(10)/12)/sin(sqrt(58)/24)",
+        "cos(sqrt(10)/12)/sin(sqrt(58)/24)",
+        "0",
+        "0",
+        "-cos(sqrt(58)/12)/tan(sqrt(58)/24) - sin(sqrt(58)/12)",
+        "0",
+        "0"
+      ],
+      [
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "coefficient_space_dimension": 8,
+    "completed_rank": 8,
+    "current_rank": 6,
+    "new_cotangent_rows": [
+      "R0_4_plus",
+      "R1_4_plus"
+    ],
+    "new_rows": [
+      {
+        "detector_id": "D0",
+        "field": "3*sqrt(10)*(-x0*sin(sqrt(10)/12) + x3*cos(sqrt(10)/12))*sin(sqrt(58)*(t - 1/4)/6)/10",
+        "row_id": "R0_4",
+        "spatial_profile": "3*sqrt(10)*(-x0*sin(sqrt(10)/12) + x3*cos(sqrt(10)/12))/10",
+        "wave_residual": "0"
+      },
+      {
+        "detector_id": "D1",
+        "field": "3*sqrt(10)*(-x0*sin(sqrt(10)/6) + x3*cos(sqrt(10)/6))*sin(sqrt(58)*(t - 1/2)/6)/10",
+        "row_id": "R1_4",
+        "spatial_profile": "3*sqrt(10)*(-x0*sin(sqrt(10)/6) + x3*cos(sqrt(10)/6))/10",
+        "wave_residual": "0"
+      }
+    ],
+    "old_row_labels": [
+      "R0_1",
+      "R0_2",
+      "R0_3",
+      "R1_1",
+      "R1_2",
+      "R1_3"
+    ],
+    "selected_derivative_directions": [
+      "e0(R0_1)/nu",
+      "e0(R1_1)/nu"
+    ]
+  },
+  "background_equation": {
+    "Noether_closed": true,
+    "canonical_primitive_exported": true,
+    "cokernel_projection": "ZERO",
+    "equation": "H_retained Phi2^(8)=-q0^(eight rods)",
+    "exact_blocks": {
+      "positive": {
+        "Noether_defect_nonzero_count": 0,
+        "canonical_primitives_sparse": [
+          [
+            [
+              0,
+              "-5989908/4585549"
+            ],
+            [
+              1,
+              "2851404/435743"
+            ],
+            [
+              2,
+              "-2851404/435743"
+            ],
+            [
+              3,
+              "-2851404/435743"
+            ],
+            [
+              14,
+              "37725416*sqrt(58)*I/40524099"
+            ],
+            [
+              19,
+              "37725416*sqrt(58)*I/40524099"
+            ],
+            [
+              25,
+              "1039169*sqrt(58)*I/1307229"
+            ],
+            [
+              28,
+              "-1039169*sqrt(58)*I/1307229"
+            ],
+            [
+              36,
+              "55219*sqrt(145)*I/311245"
+            ],
+            [
+              37,
+              "-55219*sqrt(145)*I/311245"
+            ],
+            [
+              40,
+              "2002537/4585549"
+            ],
+            [
+              41,
+              "787311/1929719"
+            ],
+            [
+              42,
+              "-787311/1929719"
+            ],
+            [
+              43,
+              "-787311/1929719"
+            ],
+            [
+              65,
+              "8362293*sqrt(10)/38594380"
+            ],
+            [
+              68,
+              "-28903761*sqrt(10)/38594380"
+            ],
+            [
+              70,
+              "2002537/4585549"
+            ],
+            [
+              90,
+              "1984834/4585549"
+            ],
+            [
+              92,
+              "220876/62249"
+            ]
+          ],
+          [
+            [
+              0,
+              "-5989908/4585549"
+            ],
+            [
+              1,
+              "2851404/435743"
+            ],
+            [
+              2,
+              "-2851404/435743"
+            ],
+            [
+              3,
+              "-2851404/435743"
+            ],
+            [
+              14,
+              "37725416*sqrt(58)*I/40524099"
+            ],
+            [
+              19,
+              "37725416*sqrt(58)*I/40524099"
+            ],
+            [
+              25,
+              "1039169*sqrt(58)*I/1307229"
+            ],
+            [
+              28,
+              "-1039169*sqrt(58)*I/1307229"
+            ],
+            [
+              36,
+              "55219*sqrt(145)*I/311245"
+            ],
+            [
+              37,
+              "-55219*sqrt(145)*I/311245"
+            ],
+            [
+              40,
+              "2002537/4585549"
+            ],
+            [
+              41,
+              "787311/1929719"
+            ],
+            [
+              42,
+              "-787311/1929719"
+            ],
+            [
+              43,
+              "-787311/1929719"
+            ],
+            [
+              65,
+              "8362293*sqrt(10)/38594380"
+            ],
+            [
+              68,
+              "-28903761*sqrt(10)/38594380"
+            ],
+            [
+              70,
+              "2002537/4585549"
+            ],
+            [
+              90,
+              "1984834/4585549"
+            ],
+            [
+              92,
+              "220876/62249"
+            ]
+          ],
+          []
+        ],
+        "frequency": "sqrt(58)/3",
+        "old_to_new_primitive_delta_first_witness": [
+          [
+            0,
+            "13477293/91710980"
+          ],
+          [
+            0,
+            "13477293/91710980"
+          ],
+          [
+            6,
+            "454/2175"
+          ]
+        ],
+        "old_to_new_primitive_delta_nonzero_counts": [
+          22,
+          22,
+          13
+        ],
+        "old_to_new_source_delta_nonzero_counts": [
+          19,
+          19,
+          17
+        ],
+        "operator_pivot_columns": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          31,
+          32,
+          34,
+          35,
+          36,
+          37,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          61,
+          62,
+          64,
+          65,
+          66,
+          68,
+          70,
+          71,
+          74,
+          76,
+          90,
+          92,
+          94,
+          95
+        ],
+        "operator_rank": 68,
+        "primitive_residual_nonzero_count": 0,
+        "source_nonzero_counts": [
+          20,
+          20,
+          0
+        ]
+      },
+      "zero": {
+        "Noether_defect_nonzero_count": 0,
+        "canonical_primitives_sparse": [
+          [
+            [
+              0,
+              "749/810"
+            ],
+            [
+              1,
+              "21062257336991/31502033577216"
+            ],
+            [
+              2,
+              "-5239/11520"
+            ],
+            [
+              3,
+              "-5239/11520"
+            ],
+            [
+              40,
+              "-203/120"
+            ],
+            [
+              41,
+              "-388021849592591/1010237628510720"
+            ],
+            [
+              42,
+              "5447765673870259/29296891226810880"
+            ],
+            [
+              43,
+              "3708360545481139/29296891226810880"
+            ],
+            [
+              56,
+              "25165004751/847710972998"
+            ],
+            [
+              57,
+              "25165004751/847710972998"
+            ],
+            [
+              65,
+              "-11362573278660401*sqrt(10)/56703660438988800"
+            ],
+            [
+              68,
+              "9607909352757317*sqrt(10)/56703660438988800"
+            ],
+            [
+              70,
+              "-203/120"
+            ],
+            [
+              71,
+              "-5418223533/27345515258"
+            ],
+            [
+              90,
+              "-21/20"
+            ],
+            [
+              92,
+              "31/17280"
+            ]
+          ],
+          [
+            [
+              0,
+              "749/810"
+            ],
+            [
+              1,
+              "37951867751707/157510167886080"
+            ],
+            [
+              2,
+              "-5239/11520"
+            ],
+            [
+              3,
+              "-5239/11520"
+            ],
+            [
+              40,
+              "-203/120"
+            ],
+            [
+              41,
+              "72293359270129/1010237628510720"
+            ],
+            [
+              42,
+              "3708360545481139/29296891226810880"
+            ],
+            [
+              43,
+              "5447765673870259/29296891226810880"
+            ],
+            [
+              56,
+              "-25165004751/847710972998"
+            ],
+            [
+              57,
+              "-25165004751/847710972998"
+            ],
+            [
+              65,
+              "-9623168150271281*sqrt(10)/56703660438988800"
+            ],
+            [
+              68,
+              "11347314481146437*sqrt(10)/56703660438988800"
+            ],
+            [
+              70,
+              "-203/120"
+            ],
+            [
+              71,
+              "5418223533/27345515258"
+            ],
+            [
+              90,
+              "-21/20"
+            ],
+            [
+              92,
+              "31/17280"
+            ]
+          ],
+          [
+            [
+              6,
+              "58471717824/68363788145"
+            ],
+            [
+              46,
+              "-13319305812/14615706431"
+            ],
+            [
+              47,
+              "50330009502/423855486499"
+            ],
+            [
+              51,
+              "-1283415242301/30093739541429"
+            ],
+            [
+              52,
+              "-503300095020/30093739541429"
+            ],
+            [
+              53,
+              "1283415242301/30093739541429"
+            ],
+            [
+              64,
+              "8388334917*sqrt(10)/136727576290"
+            ],
+            [
+              76,
+              "-10836447066/13672757629"
+            ]
+          ]
+        ],
+        "frequency": "0",
+        "old_to_new_primitive_delta_first_witness": [
+          [
+            0,
+            "107/1260"
+          ],
+          [
+            0,
+            "107/1260"
+          ],
+          [
+            6,
+            "29235858912/68363788145"
+          ]
+        ],
+        "old_to_new_primitive_delta_nonzero_counts": [
+          16,
+          16,
+          8
+        ],
+        "old_to_new_source_delta_nonzero_counts": [
+          19,
+          19,
+          12
+        ],
+        "operator_pivot_columns": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          31,
+          32,
+          34,
+          35,
+          36,
+          37,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          61,
+          62,
+          64,
+          65,
+          66,
+          68,
+          70,
+          71,
+          74,
+          76,
+          90,
+          92,
+          94,
+          95
+        ],
+        "operator_rank": 70,
+        "primitive_residual_nonzero_count": 0,
+        "source_nonzero_counts": [
+          21,
+          21,
+          12
+        ]
+      }
+    },
+    "old_Phi2_is_unchanged": false
+  },
+  "coefficient_field": "exact real trigonometric-algebraic field generated by sqrt(10),sqrt(58),sqrt(145) and the pinned phases",
+  "disposition": {
+    "K_commutator_on_complete_q1": "NO_CERTIFIED_MAP",
+    "cohomology_Z2_memory_and_redshift": "NO_CERTIFIED_MAP",
+    "complete_112_row_q1": "NO_CERTIFIED_MAP",
+    "eight_rod_Phi2_source_sector_solvability": "CERTIFIED",
+    "four_rows_action_pairing_background_and_K_closure": "CERTIFIED",
+    "original_108_row_local_chain_embedding": "OBSTRUCTED",
+    "q1_squared": "NO_CERTIFIED_MAP",
+    "unary_cyclicity": "NO_CERTIFIED_MAP"
+  },
+  "first_later_incompatibility": {
+    "canonical_inclusion_chain_defect_count": 2,
+    "canonical_row_inclusion": "i(x)=(x,0,0,0)",
+    "local_embedding_status": "OBSTRUCTED",
+    "mixed_metric_to_new_rod_cotangent_witnesses": [
+      {
+        "K_Rh_temporal_principal_coefficient": "sqrt(145)*sin(sqrt(10)/12)/20",
+        "background_time_gradient": "-sqrt(145)*sin(sqrt(10)/12)/10",
+        "new_row": "R0_4",
+        "nonzero": true,
+        "point": "t=1/4, (x0,x1,x2,x3)=(1,0,0,0)"
+      },
+      {
+        "K_Rh_temporal_principal_coefficient": "sqrt(145)*sin(sqrt(10)/6)/20",
+        "background_time_gradient": "-sqrt(145)*sin(sqrt(10)/6)/10",
+        "new_row": "R1_4",
+        "nonzero": true,
+        "point": "t=1/2, (x0,x1,x2,x3)=(1,0,0,0)"
+      }
+    ],
+    "only_formal_solution": "P(s)=-c/s, a nonlocal order-minus-one map",
+    "polynomial_divisibility": "no P in the nonnegative-order local differential polynomial ring exists because s^2 does not divide c s",
+    "principal_equation_for_a_corrected_local_embedding": "-s^2 P(s)=c s with c nonzero",
+    "required_interface": "local differential chain embedding i:Q108->Q112"
+  },
+  "minimality": {
+    "material_rod_substitution": "rejected by the imported exact 24-of-24 principal separator",
+    "one_rod_completion_rank": 7,
+    "required_closure_rank": 8,
+    "six_rod_rank": 6,
+    "two_rod_completion_rank": 8,
+    "wrong_degree_repair": "a cotangent without its degree-zero scalar does not enlarge the background function span"
+  },
+  "result_id": "BERGER_GLOBAL_ROD_TWO_DIRECTION_EXTENSION_PAYLOAD",
+  "row_extension": {
+    "degrees": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "new_degree_one_rows": [
+      "R0_4_plus",
+      "R1_4_plus"
+    ],
+    "new_degree_zero_rows": [
+      "R0_4",
+      "R1_4"
+    ],
+    "old_row_count": 108,
+    "pairing_entries": [
+      [
+        108,
+        110,
+        "1"
+      ],
+      [
+        109,
+        111,
+        "1"
+      ],
+      [
+        110,
+        108,
+        "-1"
+      ],
+      [
+        111,
+        109,
+        "-1"
+      ]
+    ],
+    "pairing_rank_added": 4,
+    "prospective_row_count": 112,
+    "real_involution": "identity on all four new real rows"
+  },
+  "schema": "closed-universe-berger-global-rod-two-direction-extension-payload-v1"
+}
