@@ -110,7 +110,7 @@ word cylinder, wave, or Einstein.
 The shortest independent paths are now:
 
 ```text
-Einstein:    extend the quadratic-source test across the classified mixed cones
+Einstein:    candidate-17/20 fixed-positive-occupation singular rotation-zero topology is now complete by convex one-node deletion plus time-reversal moment damping; decide whether the final residual quotient requires distinct total-occupation gluing, then export the contraction through same-background Bridge 1 without inferring absent charge, boundary, causal or quantum maps
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   attach the certified 188-row physical/current q2 interface to the 78-row relative mapping cofiber and solve or certify the remaining cross-incidence; causal Green data and the eighteen candidate-13 spectral receivers remain separate fail-closed gates
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; for Berger, the global exact CCR-normalized Hadamard Krein covariance on the full indefinite rank-40 metric dilation is certified, canonical summand restriction is obstructed, and the complete smooth support-local differential graph-intertwiner class bounded on the certified anisotropic Sobolev scale contains only zero, while the correctly typed source pullback certifies the 20-row metric/formal-adjoint endpoint Hadamard kernel with exact CCR; now construct the global ghost/identity Hadamard pair and smooth q26-compatible Ward completion, then apply the already-certified 26-to-54 lift and separately assess physical-cohomology positivity; in parallel analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows, add remaining BV rows to the partial-BV five-carrier representative, classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
@@ -2953,6 +2953,43 @@ explicit.  Hence generic fixed directions are obstructed, but the
 positive-collinear incidence locus contracts.  The next gate is deformation
 of the kernel directions inside `T3(f,g)=0`; no complete off-balance
 connectedness or disconnection is inferred.
+
+That final direction gate is now closed.  In the normalized spin-two basis,
+the antiunitary
+
+```text
+Theta(f)=anti_diag(1,-1,1,-1,1)*conjugate(f)
+```
+
+reverses all three angular moments and has zero cross moment.  After a phase
+choice with `sigma=<f,Theta f>` real and nonnegative,
+
+```text
+f_theta=(cos(theta)f+sin(theta)Theta f)
+        /sqrt(1+sigma*sin(2theta)),
+m(f_theta)=cos(2theta)/(1+sigma*sin(2theta))*m(f),
+```
+
+so the moment decreases monotonically to zero.  On `delta<0<alpha`, first
+delete the positive kernel node.  Both its coefficient and kernel moment are
+affine; initial admissibility, the spin-two unit moment bound and norm
+convexity prove `||M(t)||<=c(t)` through the zero-node boundary.  There
+`T3(F,0)=0` releases the surviving direction, which is made phase-real before
+scaling through `||F||^2=-delta/a`.  On `alpha<0<delta`, delete the negative
+node and cross at `||G||^2=delta/b`.  Deleting the wrong node in either
+chamber forces an early coefficient wall and is an exact mutation control.
+
+Together with the already certified same-sign, `alpha=0` and candidate-20
+balance paths, this proves that both complete candidate-17/20 singular
+rotation-zero unions contract to the connected hub at every fixed positive
+active occupation.  Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_deformable_kernel_complete_contraction`
+is bounded and smooth-secular `CERTIFIED`.  The candidates remain distinct;
+distinct total-occupation gluing, a global Hausdorff leaf space beyond this
+carrier, final residual descent, all-orders integration and causal,
+observational or quantum maps remain fail-closed.  The active same-background
+Bridge-1 gate is now precisely that occupation/final-residual handoff, not
+another kernel-direction ansatz.
 All higher lifecycles remain fail-closed.  This is nonlinear input to
 same-background Bridge 1 with Classical,
 not a promotion of its certified linear relative triangle/cofiber.  The
