@@ -774,3 +774,27 @@ def test_direct_temporal_ak_is_repairable_but_full_covariance_is_obstructed():
     assert "BERGER_DIRECT_TEMPORAL_AK_DIFF_COVARIANCE_REPAIR" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_quartic_calibration_and_redshift_have_an_empty_action_domain():
+    row = next(
+        row
+        for row in build()["entries"]
+        if row["id"]
+        == "observer.berger.interaction.quartic_calibration_relational_redshift_disposition"
+    )
+    assert row["descriptions"]["symplectic"] == "CERTIFIED"
+    assert row["descriptions"]["nonlinear"] == "OBSTRUCTED"
+    assert row["descriptions"]["observational"] == "OBSTRUCTED"
+    assert row["observer_data"]["detector_response"]["status"] == (
+        "NO_CERTIFIED_MAP"
+    )
+    assert "NOT_APPLICABLE_EMPTY_DOMAIN, not zero" in row[
+        "observer_data"
+    ]["response_rank"]["statement"]
+    assert "temporal Maxwell/emitter antifield" in row[
+        "observer_data"
+    ]["observer_source_channel"]["statement"]
+    assert "BERGER_QUARTIC_CALIBRATION_RELATIONAL_REDSHIFT_DISPOSITION" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }

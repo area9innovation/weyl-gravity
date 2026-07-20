@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "result_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "imported_quartic_family", "master_identity_precedence", "calibration_map_disposition", "relational_redshift_disposition", "standalone_observable_survival_ledger", "nonpromotion_theorem", "smallest_additional_action_representation", "mutation_controls", "assumption_ledger", "missing_object_ledger", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-quartic-calibration-relational-redshift-disposition-v1"},
+    "result_id": {"const": "BERGER_QUARTIC_CALIBRATION_RELATIONAL_REDSHIFT_DISPOSITION"},
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"type": "array", "contains": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "EUCLIDEAN-SPECTRAL", "LORENTZIAN-CAUSAL"]}}
+  },
+  "additionalProperties": true
+}

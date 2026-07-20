@@ -1,0 +1,94 @@
+{
+  "schema": "pure-weyl-test-tier-receipt-v1",
+  "result_id": "BERGER_QUARTIC_CALIBRATION_RELATIONAL_REDSHIFT_DISPOSITION_TIER_RECEIPT",
+  "science_forge_work_item": "sf:program/work/observer-quartic-calibration-relational-redshift-disposition",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "claim_result_id": "BERGER_QUARTIC_CALIBRATION_RELATIONAL_REDSHIFT_DISPOSITION",
+  "claim_certificate_sha256": "5aeb9d795916e05c5dba6fbc5650682e5c741fd83162181bdbcb413a55a54d13",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile closed_universe_observers/generate_berger_quartic_calibration_relational_redshift_disposition.py closed_universe_observers/verify_berger_quartic_calibration_relational_redshift_disposition.py closed_universe_observers/tests/test_berger_quartic_calibration_relational_redshift_disposition.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py closed_universe_observers/atlas/verify_observer_atlas_fragment.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+          "elapsed_seconds": 0.12,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 -m closed_universe_observers.generate_berger_quartic_calibration_relational_redshift_disposition --check",
+          "elapsed_seconds": 0.12,
+          "status": "PASS"
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=<temporary-directory> paper/09-relational-clocks-berger-d-cartan.tex",
+          "elapsed_seconds": 1.37,
+          "status": "PASS",
+          "summary": "Paper 09 lifecycle boundary compiled in an isolated temporary output directory."
+        },
+        {
+          "command": "git diff --check -- <scoped observer paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m closed_universe_observers.generate_berger_quartic_calibration_relational_redshift_disposition --emit",
+          "elapsed_seconds": 0.13,
+          "status": "PASS",
+          "summary": "Generated the exact empty-domain calibration/redshift disposition and human report from six content-addressed dependencies."
+        },
+        {
+          "command": "python3 -m closed_universe_observers.verify_berger_quartic_calibration_relational_redshift_disposition",
+          "elapsed_seconds": 0.13,
+          "status": "PASS",
+          "independent_rail": true
+        },
+        {
+          "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_quartic_calibration_relational_redshift_disposition.py",
+          "elapsed_seconds": 0.48,
+          "status": "PASS",
+          "summary": "7 passed, including explicit moduli-zero-map and causal-support-promotion rejection mutations"
+        },
+        {
+          "command": "python3 -m closed_universe_observers.atlas.generate_observer_atlas_fragment && python3 -m pytest -q closed_universe_observers/tests/test_observer_atlas_fragment.py",
+          "elapsed_seconds": 57.69,
+          "status": "PASS",
+          "summary": "54 passed"
+        },
+        {
+          "command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment",
+          "elapsed_seconds": 3.26,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "The six imported certificates and payloads are unchanged content-addressed inputs; the disposition is a scoped logical consumer and all direct atlas consumers passed at Tier 1."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, tag, release, shared-core algebra change or theorem promotion was made; the result is a fail-closed lifecycle disposition."
+    }
+  },
+  "boundaries": {
+    "exact_arithmetic_imported": true,
+    "numeric_evidence_used": false,
+    "ambient_quartic_parameter_dimension": 12,
+    "ambient_q3_parameter_rank": 12,
+    "admissible_nonlinear_theory_domain": "EMPTY",
+    "moduli_to_detector_map": "NOT_APPLICABLE_EMPTY_DOMAIN",
+    "zero_detector_map_claim": false,
+    "completion_independent_nonlinear_redshift": "NO_CERTIFIED_MAP",
+    "standalone_observer_results_invalidated": false,
+    "standalone_observer_results_promoted": false,
+    "causal_K_Berger_tangent_cone_or_quantum_claim": false
+  }
+}

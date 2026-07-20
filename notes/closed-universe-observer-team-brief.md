@@ -2115,52 +2115,41 @@ The team succeeds by locating the first exact bridge or the first exact
 obstruction.  It does not succeed by arguing that two closed universes sound
 similar.
 
-## Active bridge: temporal and quartic Diff--BV covariance descendants
+## Active bridge: quartic calibration and relational-redshift disposition
 
 The active item is
-`sf:program/work/observer-direct-temporal-ak-hessian-diff-covariance-repair`.
-It imports the terminal scalar-orbit repair from commit `fbc422cfa` by exact
-content hash and tests the complete 932-dimensional order-three action module
-per emitter, both reflection parities and all differentiated
-\(\chi/K/A\) placements.  Two clock-normal profile-jet scalar densities,
-electric and magnetic, complete a 934-column ambient action module per
-emitter.  This deliberately overcomplete module contains the bounded
-support-local Diff/Weyl/Maxwell/Berger-\(U(1)\) scalar-density ansatz, so an
-obstruction in its image is also an obstruction for the constrained family.
+`sf:program/work/observer-quartic-calibration-relational-redshift-disposition`.
+It imports by exact hash the twelve-dimensional Maxwell/Berger-\(U(1)\)
+quartic family, its rank-twelve \(q_3\) parameter map, the terminal empty
+arity-three locus, the five-entry standalone-observer survival ledger, and
+the newer complete temporal scalar-density action obstruction.
 
-The direct temporal projection is repairable:
+The twelve quartic directions are an ambient action family, not twelve
+admissible nonlinear theories.  The older arity-three gate is empty, and the
+newer gate already fails at arity two with ranks \(934<935\) per emitter and
+first quotient coefficient
 \[
- \operatorname{rank}(\operatorname{im}q_2)=
- \operatorname{rank}(\operatorname{im}q_2+\mathcal S)=934
+ A^+_0\leftarrow(\tau,e_0e_1K_{0,01})=-3g_0h_0 .
 \]
-for each source-isolated emitter on the
-\(\tau^*\leftarrow(e_0e_1A_0,K_{b,01})\) rows.  Thus the previous
-\(+g_bh_b\) coordinate is not itself a no-go once the missing temporal
-\(A\)--\(K\) profile lines are present.
+Therefore no theory point survives on which to derive a same-action detector
+tensor.
 
-Full covariance supplies the decisive falsifier.  On the joint
-\(\tau^*,A^+_0\) projection the action image has rank 934 while adjoining the
-typed source raises it to 935, leaving 42 quotient coordinates per emitter.
-The first exact class is
-\[
- A^+_0\leftarrow(\tau,e_0e_1K_{0,01})
- \quad\hbox{with coefficient}\quad -3g_0h_0 ,
-\]
-with the emitter-1 analogue.  Freeing the inherited emitter Diff--BV
-normalization gives ranks \(935<936\), so the class is not a normalization
-artifact.  Removing either profile line is also detected by the verifier.
+The moduli-to-detector polynomial, its rank, kernel, stabilizer orbits, blind
+directions and minimal calibration-observable count are all
+`NOT_APPLICABLE_EMPTY_DOMAIN`.  This is not the zero map and is not evidence
+for a completion-independent response.  Likewise no two-event dynamical
+clock/phase/rod construction, causal support theorem, \(K_{\rm Berger}\)
+covariance, backreacted rank or tangent-cone restriction is promoted.
 
-The next missing representation is a temporal Maxwell/emitter-antifield
-covariance module beginning with \(A^+/\tau/K\) and cyclic
-\(K^+/\tau/A\) descendants.  Because no \(q_1\)-closed arity-two action locus
-survives, no common-action quartic \(q_3\) is promoted.  Five physical metric
-\(q_1\) routes to the spatial ghost-antifield row are retained fail-closed;
-the imported \(-4g_0h_0\) arity-three coefficient is diagnostic only.
+The five imported observer results survive without promotion in their
+original linear, source-free or formal-order scopes.  The next missing
+representation remains the temporal Maxwell/emitter-antifield covariance
+module with \(A^+/\tau/K\) and cyclic \(K^+/\tau/A\) descendants.
 
 The fail-closed atlas row is
-`observer.berger.interaction.direct_temporal_ak_diff_covariance_repair`
+`observer.berger.interaction.quartic_calibration_relational_redshift_disposition`
 (`symplectic=CERTIFIED`, `nonlinear=OBSTRUCTED`,
 `observational=OBSTRUCTED`).  No \(K_{\rm Berger}\), detector, memory,
 redshift, recoil-corrected rank or tangent-cone restriction is promoted.  The
 next activation gate is
-`ADJOIN_TEMPORAL_MAXWELL_EMITTER_ANTIFIELD_COVARIANCE_MODULE_AND_REPLAY_ARITY_TWO_BEFORE_ANY_Q3_OR_OBSERVER_PROPAGATION`.
+`ADJOIN_TEMPORAL_MAXWELL_EMITTER_ANTIFIELD_COVARIANCE_MODULE_AND_REPLAY_ARITY_TWO_BEFORE_QUARTIC_CALIBRATION`.
