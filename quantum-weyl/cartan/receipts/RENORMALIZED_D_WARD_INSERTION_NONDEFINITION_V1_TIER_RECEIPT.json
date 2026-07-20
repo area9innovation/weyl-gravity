@@ -1,0 +1,125 @@
+{
+  "receipt_id": "RENORMALIZED_D_WARD_INSERTION_NONDEFINITION_V1_TIER_RECEIPT",
+  "work_item": "sf:program/work/quantum-complete-renormalized-d-ward-insertion",
+  "recorded_at_utc": "2026-07-20T10:07:53Z",
+  "base_commit": "65fd16091",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "artifacts": {
+    "certificate": {
+      "path": "quantum-weyl/cartan/certificates/RENORMALIZED_D_WARD_INSERTION_NONDEFINITION.json",
+      "sha256": "9bb5566fb01603db19762b145ce693f5f7ba7a4dbd37ae99a0ff656e8b377c82"
+    },
+    "report": {
+      "path": "quantum-weyl/reports/renormalized-d-ward-insertion-nondefinition.md",
+      "sha256": "042d9beeeda9333cb889b35174b9cd2f2081d0d18789a314f4574c332bf589e9"
+    },
+    "atlas_fragment": {
+      "path": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "sha256": "1bae8ba2dd5857a3627240b799641b19e4fc7978e85bfe9f29b17e24efd1be6e"
+    },
+    "classical_import": {
+      "path": "d_quotient_classical/certificates/WESS_ZUMINO_D_CARTAN_CONTRACTION_V1.json",
+      "sha256": "7d55dd68a6d5460fc5abb8d0d338e56b3890de2209aa72b4a7838ac31d9b3507"
+    },
+    "next_producer_request": {
+      "path": "planning/events/quantum-complete-renormalized-d-ward-insertion-REQUEST-1190fa5df53e8659.json",
+      "sha256": "f146a88c3c8fbdc9a96c3ad6e0246d74c589102330c7a5cdc37d7d91a51fa1bf"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile quantum-weyl/cartan/renormalized_d_ward_insertion_nondefinition.py quantum-weyl/cartan/renormalized_d_ward_insertion_nondefinition_certificate.py quantum-weyl/cartan/verify_renormalized_d_ward_insertion_nondefinition.py quantum-weyl/cartan/tests/test_renormalized_d_ward_insertion_nondefinition.py",
+        "python3 -m json.tool quantum-weyl/cartan/schema/renormalized-d-ward-insertion-nondefinition-v1.schema.json",
+        "python3 -m json.tool quantum-weyl/cartan/certificates/RENORMALIZED_D_WARD_INSERTION_NONDEFINITION.json",
+        "git diff --check -- scoped paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m cartan.renormalized_d_ward_insertion_nondefinition_certificate --check",
+          "elapsed_seconds": 0.06,
+          "result": "PASS"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m cartan.verify_renormalized_d_ward_insertion_nondefinition",
+          "elapsed_seconds": 0.29,
+          "result": "PASS_INDEPENDENT_REPLAY"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/cartan/tests/test_renormalized_d_ward_insertion_nondefinition.py -v",
+          "elapsed_seconds": 0.27,
+          "result": "PASS_9_TESTS"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/cartan/tests -p 'test_*.py' -q",
+          "elapsed_seconds": 1.74,
+          "result": "PASS_69_TESTS"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python3 -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py -v && python3 residual_atlas/validate_fragment.py quantum-weyl/atlas/quantum-atlas-fragment.json",
+          "elapsed_seconds": 5.88,
+          "result": "PASS_ATLAS_GENERATOR_INDEPENDENT_VERIFIER_8_TESTS_COMMON_SCHEMA"
+        },
+        {
+          "command": "python3 d_quotient_classical/compensator/verify_wess_zumino_d_cartan_contraction.py",
+          "elapsed_seconds": 0.10,
+          "result": "PASS_INDEPENDENT_CLASSICAL_IMPORT"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_AFFECTED_CHAIN",
+      "criterion": "The new classical same-background contraction changed the active quantum input boundary. Its independent verifier, the complete Cartan package, the generated quantum atlas, its independent verifier, and the common atlas validator all passed. Other content-addressed local and Euclidean dependencies were checked by hash and direct semantic assertions rather than rebuilt."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "The result is a fail-closed analytic non-definition theorem and does not promote a QME, Cartan class, residual transfer, freeze, release, or shared-core algebra."
+    }
+  },
+  "adversarial_controls": [
+    {
+      "mutation": "Promote the declared reference finite normalization to canonical.",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "covered_by": "test_canonical_normalization_promotion_is_rejected"
+    },
+    {
+      "mutation": "Promote the undefined Cartan defect to ZERO.",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "covered_by": "test_cartan_classification_promotion_is_rejected"
+    }
+  ],
+  "independent_rail": {
+    "imports_producer": false,
+    "imports_certificate_emitter": false,
+    "replays": [
+      "same-background classical D_compact contraction and generator boundary",
+      "rank-two finite C2/Rhat2 response with determinant nine",
+      "conditional Euclidean generalized-inverse boundary",
+      "absence of complete Gamma1 and Q1 in pinned producers",
+      "first same-background T2 extension domain M^2 minus Diag_2",
+      "fail-closed order-one D-operator and Cartan ledgers",
+      "all dependency and source-manifest hashes"
+    ]
+  },
+  "science_forge_shadow": {
+    "status": "ADVISORY_FINDINGS",
+    "elapsed_seconds": 4.0,
+    "command": "bash ci/science-forge-shadow.sh",
+    "findings": [
+      "The local Forge binary is an unpinned dirty development build whose build revision differs from the current stdlib checkout.",
+      "The pre-existing bridge certificate audit reported drift while existence, edges, DAG and gates passed.",
+      "The read-only coverage census found 1217 certificates against the 2026-07-19 baseline of 976."
+    ],
+    "effect_on_claim": "The shadow rail is advisory. These external findings were reported and were not used to promote the scoped non-definition theorem."
+  },
+  "claim_boundary": "This receipt imports the exact same-background vacuum-cylinder Wess-Zumino D_compact contraction, records the non-canonical reference conditions z_C(mu_star)=z_Rhat2(mu_star)=0, and certifies a precise non-definition theorem for the missing tau-adic BV T2 extension across Diag_2. It does not construct or rule out that extension, supply a renormalized BV Laplacian, complete Gamma1 or Q1, classify the quantum Cartan defect, authorize residual transfer, or establish a Lorentzian QME, Hadamard state, positivity, particles, scattering or unitarity."
+}

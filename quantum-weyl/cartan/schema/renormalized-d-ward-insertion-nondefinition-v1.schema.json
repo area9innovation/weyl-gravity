@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-renormalized-d-ward-insertion-nondefinition-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "setting",
+    "classical_import",
+    "finite_normalization",
+    "analytic_branches",
+    "operator_ledger",
+    "defect_target",
+    "scheme_invariance_disposition",
+    "dependency_refs",
+    "producer_request",
+    "exact_checks",
+    "claim_flags",
+    "next_gate",
+    "science_forge",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-renormalized-d-ward-insertion-nondefinition-v1"
+    },
+    "result_id": {
+      "const": "RENORMALIZED_D_WARD_INSERTION_NONDEFINITION"
+    },
+    "result_state": {
+      "const": "REFERENCE_FINITE_NORMALIZATION_DECLARED_CLASSICAL_CARTAN_IMPORTED_FIRST_ANALYTIC_OPERATOR_UNDEFINED"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]
+    },
+    "setting": {"type": "object"},
+    "classical_import": {
+      "type": "object",
+      "required": ["status", "available_operators", "operator_sha256", "formal_algebra_sha256"],
+      "properties": {
+        "status": {"const": "CERTIFIED"},
+        "available_operators": {"type": "array", "minItems": 7, "uniqueItems": true},
+        "operator_sha256": {"$ref": "#/$defs/hash"},
+        "formal_algebra_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "finite_normalization": {
+      "type": "object",
+      "required": ["scheme_id", "reference_scale", "conditions", "status", "scheme_change"],
+      "properties": {
+        "scheme_id": {"const": "DECLARED_REFERENCE_ZERO_FINITE_BULK_SCHEME"},
+        "reference_scale": {"const": "mu_star>0"},
+        "conditions": {"const": ["z_C(mu_star)=0", "z_Rhat2(mu_star)=0"]},
+        "status": {"const": "DECLARED_CONVENTION_NOT_CANONICAL_PHYSICAL_NORMALIZATION"},
+        "scheme_change": {
+          "type": "object",
+          "required": ["bulk_response_matrix", "rank"],
+          "properties": {
+            "bulk_response_matrix": {
+              "const": [
+                [
+                  {"numerator": 1, "denominator": 1},
+                  {"numerator": 0, "denominator": 1}
+                ],
+                [
+                  {"numerator": 0, "denominator": 1},
+                  {"numerator": 9, "denominator": 1}
+                ]
+              ]
+            },
+            "rank": {"const": 2}
+          }
+        }
+      }
+    },
+    "analytic_branches": {
+      "type": "object",
+      "required": ["same_background_lorentzian", "euclidean_coefficient_route"],
+      "properties": {
+        "same_background_lorentzian": {
+          "type": "object",
+          "required": ["status", "first_missing_operator", "off_diagonal_domain", "required_extension", "missing_prerequisites"],
+          "properties": {
+            "status": {"const": "FIRST_DISTRIBUTION_EXTENSION_UNDEFINED"},
+            "first_missing_operator": {"const": "T2_ren_tau_adic_BV"},
+            "off_diagonal_domain": {"const": "M^2 minus Diag_2"},
+            "required_extension": {"type": "string", "minLength": 1},
+            "missing_prerequisites": {
+              "type": "array",
+              "minItems": 4,
+              "uniqueItems": true
+            }
+          }
+        },
+        "euclidean_coefficient_route": {
+          "type": "object",
+          "required": ["status", "first_missing_domain", "additional_missing_functional_data", "signature_bridge_status"],
+          "properties": {
+            "status": {"const": "CONDITIONAL_REPRESENTATIVES_NOT_COMPLETE_GAMMA1"},
+            "signature_bridge_status": {"const": "NO_CERTIFIED_EUCLIDEAN_TO_LORENTZIAN_WARD_OPERATOR_MAP"}
+          }
+        }
+      }
+    },
+    "operator_ledger": {
+      "type": "object",
+      "required": ["Q0", "iota_D0", "L_D0", "Gamma1_complete", "T2_ren", "Delta_ren", "Q1_complete", "iota_D1", "L_D1", "local_to_Cartan_map", "A_D1"],
+      "properties": {
+        "Q0": {"const": "CERTIFIED"},
+        "iota_D0": {"const": "CERTIFIED"},
+        "L_D0": {"const": "CERTIFIED"},
+        "Gamma1_complete": {"const": "NOT_DEFINED"},
+        "T2_ren": {"const": "NOT_DEFINED"},
+        "Delta_ren": {"const": "NOT_DEFINED"},
+        "Q1_complete": {"const": "NOT_DEFINED"},
+        "iota_D1": {"const": "NOT_DEFINED"},
+        "L_D1": {"const": "NOT_DEFINED"},
+        "local_to_Cartan_map": {"const": "NOT_CONSTRUCTED"},
+        "A_D1": {"const": "UNDEFINED_ANALYTICALLY"}
+      }
+    },
+    "defect_target": {
+      "type": "object",
+      "required": ["formula", "sourced_identity", "classification", "reason"],
+      "properties": {
+        "classification": {"const": "UNDEFINED_ANALYTICALLY"}
+      }
+    },
+    "scheme_invariance_disposition": {"type": "object"},
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 8,
+      "additionalProperties": {"$ref": "#/$defs/artifact"}
+    },
+    "producer_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["request_id", "to_stream", "typed", "need_id", "status", "event_path", "event_sha256"],
+      "properties": {
+        "request_id": {"type": "string", "minLength": 1},
+        "to_stream": {"const": "quantum-qme"},
+        "typed": {"const": "coefficient-bearing-operator"},
+        "need_id": {"const": "FULL_TAU_ADIC_BV_HADAMARD_FEYNMAN_KERNEL_AND_RENORMALIZED_T2_EXTENSION_ON_VACUUM_CYLINDER"},
+        "status": {"const": "FILED_APPEND_ONLY"},
+        "event_path": {"type": "string", "minLength": 1},
+        "event_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 14,
+      "additionalProperties": {"const": true}
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": {"type": "boolean"}
+    },
+    "next_gate": {
+      "const": "FULL_TAU_ADIC_BV_HADAMARD_FEYNMAN_KERNEL_AND_RENORMALIZED_T2_EXTENSION_ON_VACUUM_CYLINDER"
+    },
+    "science_forge": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "required": ["proof_type", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "proof_type": {"const": "EXACT_PINNED_BOUNDARY_NONDEFINITION_WITH_INDEPENDENT_REPLAY"},
+        "source_manifest": {"type": "object", "minProperties": 6},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

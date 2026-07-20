@@ -1760,3 +1760,43 @@ The certificate and readable receipt are
 [`QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION.json`](../quantum-weyl/cartan/certificates/QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION.json)
 and
 [`quantum-cartan-d-one-loop-disposition.md`](../quantum-weyl/reports/quantum-cartan-d-one-loop-disposition.md).
+
+## Complete renormalized \(D\)-Ward insertion gate (2026-07-20)
+
+The classical producer request is now satisfied on the unit vacuum cylinder:
+the formal Wess--Zumino \(\tau\)-adic complex supplies exact \(Q_0\),
+\(\iota_{D,0}\), \(\mathcal L_{D,0}\), inclusion, projection, homotopy and
+pairing for raw \(D_{\rm compact}=\partial_t\). This is neither the Berger
+clock nor \(K_{\rm Berger}\).
+
+The quantum work item
+`sf:program/work/quantum-complete-renormalized-d-ward-insertion` declares the
+explicit reference convention
+
+\[
+z_C(\mu_\star)=z_{\widehat R^2}(\mu_\star)=0.
+\]
+
+It is a non-canonical scheme choice. Exact shifts retain the rank-two bulk
+response matrix \(\operatorname{diag}(1,9)\).
+
+The fallback stop condition is reached by a precise non-definition theorem.
+On the same Lorentzian cylinder, the first missing analytic operator is the
+renormalized tau-adic BV two-point time-ordered product. The required
+distributional contraction is defined only off the total diagonal
+\(M^2\setminus{\rm Diag}_2\); no full BRST-compatible tau-adic
+Hadamard/Feynman kernel or extension across \({\rm Diag}_2\) with causal
+factorization, scaling-degree, cyclicity and Ward control has been supplied.
+Thus \(\Delta_{\rm ren}\), complete \(Q_1\), \(\iota_{D,1}\),
+\(\mathcal L_{D,1}\), the local-to-Cartan map and
+\(\mathcal A_D^{(1)}\) remain undefined.
+
+The conditional Euclidean Paneitz/Riegert and \(C\log\Delta_C C\)
+representatives do not fill this Lorentzian operator domain. Their global
+elliptic boundary/kernel policies and complete Weyl-invariant remainder also
+remain open.
+
+Certificate and report:
+
+- [`RENORMALIZED_D_WARD_INSERTION_NONDEFINITION.json`](../quantum-weyl/cartan/certificates/RENORMALIZED_D_WARD_INSERTION_NONDEFINITION.json)
+- [`renormalized-d-ward-insertion-nondefinition.md`](../quantum-weyl/reports/renormalized-d-ward-insertion-nondefinition.md)

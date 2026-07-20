@@ -127,7 +127,15 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             {evidence["result_id"] for evidence in local_guard["evidence"]},
         )
         self.assertIn(
-            "all five declared first D/K Cartan rows remain UNDEFINED_ANALYTICALLY",
+            "RENORMALIZED_D_WARD_INSERTION_NONDEFINITION",
+            {evidence["result_id"] for evidence in local_guard["evidence"]},
+        )
+        self.assertIn(
+            "classical D_compact contraction is now imported",
+            local_guard["quantum_data"]["anomaly_QME_dependency"]["statement"],
+        )
+        self.assertIn(
+            "T2 extension across Diag_2",
             local_guard["quantum_data"]["anomaly_QME_dependency"]["statement"],
         )
         self.assertTrue(

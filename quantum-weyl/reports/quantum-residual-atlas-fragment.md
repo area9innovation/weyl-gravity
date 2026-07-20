@@ -165,9 +165,16 @@ The additive
 finite `C2` normalization, absolute dressed `R(g_hat)^2` normalization,
 derivative-decorated cubic-and-higher Weyl completion, global Green/kernel
 data, and renormalized BV
-Laplacian or time-ordered product have not been supplied. The extended
-classical residual contraction is absent as well. Residual transfer therefore
-remains forbidden.
+Laplacian or time-ordered product have not been supplied. The same-background
+vacuum-cylinder Wess--Zumino \(D_{\rm compact}\) contraction is now imported,
+but it does not supply the missing quantum insertion. After declaring the
+non-canonical reference conditions
+`z_C(mu_star)=z_Rhat2(mu_star)=0`, the first same-background analytic gap is
+the full tau-adic BV `T2_ren` extension from
+`M^2 minus Diag_2` across `Diag_2`, together with its BRST-compatible
+Hadamard/Feynman kernel and coincident renormalized BV contraction.
+Complete `Q1`, the order-one \(D\) operators, and the local-to-Cartan map
+therefore remain undefined. Residual transfer remains forbidden.
 
 The local `BoxR` rail is narrower and now closed: exact replay gives the raw
 coefficient `(7/2)log(3/2)-159/80`, and the strict-metric shift
@@ -186,8 +193,9 @@ BRST cohomology, a nonzero loop interaction, a quantum constraint, or a
 BRST-exact Taub insertion. Those conclusions require an explicit
 classical-to-quantum insertion, an exactness or nonmembership certificate,
 and a restored QME—or a normalized QME obstruction.
-The restored local QME is a necessary gate, not a substitute for the missing
-complete `Q1` and same-background classical carrier map.
+The restored local QME and imported classical \(D_{\rm compact}\) contraction
+are necessary gates, not substitutes for the missing renormalized product,
+complete `Q1`, order-one \(D\) operators, and local-to-Cartan insertion map.
 
 ## Verification
 

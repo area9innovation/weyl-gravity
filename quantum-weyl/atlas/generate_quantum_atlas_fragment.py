@@ -53,6 +53,7 @@ DEPENDENCIES = {
     "regulated_Slavnov_breaking": QROOT / "anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
     "local_anomaly_completion_audit": QROOT / "local_bv/certificates/LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT.json",
     "quantum_Cartan_D_disposition": QROOT / "cartan/certificates/QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION.json",
+    "renormalized_D_Ward_nondefinition": QROOT / "cartan/certificates/RENORMALIZED_D_WARD_INSERTION_NONDEFINITION.json",
     "unitary_matter_no_go": QROOT / "anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json",
     "WZ_compensator_preflight": QROOT / "anomalies/certificates/WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json",
     "WZ_cotangent_lift": QROOT / "anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
@@ -245,6 +246,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     breaking = values["regulated_Slavnov_breaking"]
     local_anomaly_audit = values["local_anomaly_completion_audit"]
     cartan_disposition = values["quantum_Cartan_D_disposition"]
+    ward_nondefinition = values["renormalized_D_Ward_nondefinition"]
     matter_no_go = values["unitary_matter_no_go"]
     wz_preflight = values["WZ_compensator_preflight"]
     wz_lift = values["WZ_cotangent_lift"]
@@ -635,6 +637,24 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         )
         is not False
         or cartan_disposition.get("claim_flags", {}).get(
+            "RESIDUAL_TRANSFER_AUTHORIZED"
+        )
+        is not False
+        or ward_nondefinition.get("result_state")
+        != "REFERENCE_FINITE_NORMALIZATION_DECLARED_CLASSICAL_CARTAN_IMPORTED_FIRST_ANALYTIC_OPERATOR_UNDEFINED"
+        or ward_nondefinition.get("classical_import", {}).get("status")
+        != "CERTIFIED"
+        or ward_nondefinition.get("analytic_branches", {})
+        .get("same_background_lorentzian", {})
+        .get("first_missing_operator")
+        != "T2_ren_tau_adic_BV"
+        or ward_nondefinition.get("defect_target", {}).get("classification")
+        != "UNDEFINED_ANALYTICALLY"
+        or ward_nondefinition.get("claim_flags", {}).get(
+            "COMPLETE_RENORMALIZED_Q1_SUPPLIED"
+        )
+        is not False
+        or ward_nondefinition.get("claim_flags", {}).get(
             "RESIDUAL_TRANSFER_AUTHORIZED"
         )
         is not False
@@ -1410,7 +1430,7 @@ def _tangent_crosswalk(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
 
 def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     specs = [
-        ("local_anomaly_class", "local ghost-number-one anomaly class such as omega C2 or omega E4; its first D/K Cartan image is explicitly UNDEFINED_ANALYTICALLY on all five declared theory-setting rows", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "regulated_Slavnov_breaking", "local_anomaly_completion_audit", "quantum_Cartan_D_disposition", "unitary_matter_no_go", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1")),
+        ("local_anomaly_class", "local ghost-number-one anomaly class such as omega C2 or omega E4; the same-background tau-adic classical D_compact contraction is imported, while the first Lorentzian analytic Ward operator T2_ren remains undefined and the Cartan image is UNDEFINED_ANALYTICALLY", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "regulated_Slavnov_breaking", "local_anomaly_completion_audit", "quantum_Cartan_D_disposition", "renormalized_D_Ward_nondefinition", "unitary_matter_no_go", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1")),
         ("euclidean_determinant_factor", "round-S4 TT or ghost determinant factor", ["EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "Euclidean_elliptic_complex", "nonconformal_coefficient_match")),
         ("flat_tt_log_form_factor", "nonzero-momentum flat-TT logarithmic effective-action form factor", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("regulated_Slavnov_breaking", "one_loop_Q1_disposition", "flat_TT_log_Gamma1")),
         ("curvature_squared_covariant_log_form_factor", "covariant C log(Delta_C/mu^2) C effective-action form factor through curvature order two", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("regulated_Slavnov_breaking", "one_loop_Q1_disposition", "flat_TT_log_Gamma1", "curvature_squared_log_Gamma1")),
@@ -1464,7 +1484,7 @@ def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
                     complex_structure=("NO_CERTIFIED_MAP", "no particle complex structure crosswalk"),
                     hadamard=("NO_CERTIFIED_MAP", "no particle Hadamard crosswalk"),
                     state_space=("NO_CERTIFIED_MAP", "no particle state-space crosswalk"),
-                    qme=(("CERTIFIED", "strict local Euclidean QME is obstructed; the tau-adic compensator-extended local Euclidean QME is restored at one loop, and this carrier's coefficient is bound to that disposition; for the local anomaly carrier specifically, all five declared first D/K Cartan rows remain UNDEFINED_ANALYTICALLY and residual transfer is forbidden") if key in {"local_anomaly_class", "flat_tt_log_form_factor", "curvature_squared_covariant_log_form_factor", "fv_conformized_c2_log_form_factor"} else ("OPEN", "carrier retains its own anomaly/QME dependency")),
+                    qme=(("CERTIFIED", "strict local Euclidean QME is obstructed; the tau-adic compensator-extended local Euclidean QME is restored at one loop, and this carrier's coefficient is bound to that disposition; the same-background classical D_compact contraction is now imported, but the renormalized tau-adic BV T2 extension across Diag_2, complete Q1 and the local-to-Cartan map remain undefined, so no Cartan class or residual transfer is promoted") if key in {"local_anomaly_class", "flat_tt_log_form_factor", "curvature_squared_covariant_log_form_factor", "fv_conformized_c2_log_form_factor"} else ("OPEN", "carrier retains its own anomaly/QME dependency")),
                     lifecycle=("NO_CERTIFIED_MAP", "not a particle lifecycle entry"),
                     particle=("NO_CERTIFIED_MAP", "forbidden without an explicit physical residual-mode crosswalk"),
                     crosswalk=("NO_CERTIFIED_MAP", "non-mode carrier to particle"),

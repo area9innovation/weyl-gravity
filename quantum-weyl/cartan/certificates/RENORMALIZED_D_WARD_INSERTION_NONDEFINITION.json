@@ -1,0 +1,231 @@
+{
+  "analytic_branches": {
+    "euclidean_coefficient_route": {
+      "additional_missing_functional_data": [
+        "WEYL_INVARIANT_NONLOCAL_REMAINDER",
+        "INDEPENDENT_NONLOCAL_RHAT2_FORM_FACTOR",
+        "INDEPENDENT_CUBIC_AND_HIGHER_WEYL_FORM_FACTORS"
+      ],
+      "first_missing_domain": "self-adjoint Paneitz/Delta_C boundary domain with kernel projector and source-compatibility policy on a declared Euclidean background",
+      "signature_bridge_status": "NO_CERTIFIED_EUCLIDEAN_TO_LORENTZIAN_WARD_OPERATOR_MAP",
+      "status": "CONDITIONAL_REPRESENTATIVES_NOT_COMPLETE_GAMMA1"
+    },
+    "same_background_lorentzian": {
+      "consequence": "the same-background renormalized BV Laplacian/time-ordered product and hence complete Q1 are not defined",
+      "domain": "F_loc(E_ext) tensor F_loc(E_ext) on M=R_t x S3, E_ext=tau-adic minimal BV bundle",
+      "first_missing_operator": "T2_ren_tau_adic_BV",
+      "missing_prerequisites": [
+        "FULL_TAU_ADIC_BV_BRST_COMPATIBLE_HADAMARD_FEYNMAN_KERNEL",
+        "EPSTEIN_GLASER_T2_EXTENSION_ACROSS_DIAG2",
+        "RENORMALIZED_COINCIDENT_BV_CONTRACTION_DELTA_REN",
+        "COMMON_OPERATOR_DOMAIN_AND_ZERO_MODE_POLICY"
+      ],
+      "off_diagonal_domain": "M^2 minus Diag_2",
+      "required_extension": "extend the graded time-ordered contraction kernels from M^2\\Diag_2 across Diag_2 with local covariance, causal factorization, scaling-degree bounds, cyclicity, and the Q0 Ward identity",
+      "status": "FIRST_DISTRIBUTION_EXTENSION_UNDEFINED"
+    }
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL certificate imports the exact same-background vacuum-cylinder Wess-Zumino compensator D_compact contraction, declares the non-canonical reference conditions z_C(mu_star)=z_Rhat2(mu_star)=0, and proves from pinned producer boundaries that the first same-background analytic Ward operator remains undefined: no BRST-compatible full tau-adic BV Hadamard/Feynman kernel and no renormalized T2 extension across Diag_2 have been supplied. Conditional Euclidean anomaly-induced and curvature-squared representatives do not define that Lorentzian operator and do not supply complete Gamma1. Consequently complete Q1, iota_D1, L_D1, the local-to-Cartan map, A_D^(1), and residual transfer remain undefined. This is not a nonexistence theorem for such extensions, a Lorentzian QME, a Hadamard state, positivity, particle, scattering, or unitarity result.",
+  "claim_flags": {
+    "CLASSICAL_SAME_BACKGROUND_D_CARTAN_IMPORTED": true,
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "FINITE_C2_NORMALIZATION_DECLARED": true,
+    "FINITE_NORMALIZATION_CANONICAL": false,
+    "FINITE_RHAT2_NORMALIZATION_DECLARED": true,
+    "IOTA_D1_SUPPLIED": false,
+    "LOCAL_TO_CARTAN_MAP_SUPPLIED": false,
+    "LORENTZIAN_QME_CERTIFIED": false,
+    "L_D1_SUPPLIED": false,
+    "QUANTUM_CARTAN_CLASS_CLASSIFIED": false,
+    "RENORMALIZED_BV_LAPLACIAN_SUPPLIED": false,
+    "RENORMALIZED_T2_EXTENSION_SUPPLIED": false,
+    "RESIDUAL_TRANSFER_AUTHORIZED": false
+  },
+  "classical_import": {
+    "available_operators": [
+      "Q0",
+      "iota_D0",
+      "L_D0",
+      "inclusion",
+      "projection",
+      "homotopy",
+      "pairing"
+    ],
+    "cartan_identity": "[Q0,iota_D0]_+=L_D0",
+    "formal_algebra_sha256": "cdac0d2803a1c2e9e56e192533d26e69f1c138725c9a9793d35012d9383c2e97",
+    "operator_sha256": "1aff0fc5c1baa0286b9aefd96615a29396333b9c6407f4f45b666231bdc8232b",
+    "sdr_identity": "Q0 S+S Q0=1-inclusion projection",
+    "status": "CERTIFIED"
+  },
+  "defect_target": {
+    "classification": "UNDEFINED_ANALYTICALLY",
+    "formula": "A_D^(1)=[Q0,iota_D1]+[Q1,iota_D0]-L_D1",
+    "reason": "three order-one operators and their local-to-Cartan map do not exist on one common admissible observable complex",
+    "sourced_identity": "[Q0,A_D^(1)]=[[Q0,Q1],iota_D0]-([Q0,L_D1]+[Q1,L_D0])"
+  },
+  "dependency_refs": {
+    "anomaly_induced_gamma1": {
+      "path": "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
+      "result_id": "ANOMALY_INDUCED_NONLOCAL_GAMMA1",
+      "sha256": "9531ef49d0d930fc4c2081b292662a1bd4892abab36eee582298ae3839e16810"
+    },
+    "cartan_disposition": {
+      "path": "quantum-weyl/cartan/certificates/QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION.json",
+      "result_id": "QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION",
+      "sha256": "e5ef8ef2122d93ed40a74d62c1bd118b56d136ab0d34838eeec5fafb8386c2d9"
+    },
+    "classical_wz_d_cartan": {
+      "path": "d_quotient_classical/certificates/WESS_ZUMINO_D_CARTAN_CONTRACTION_V1.json",
+      "result_id": "WESS_ZUMINO_D_CARTAN_CONTRACTION_V1",
+      "sha256": "7d55dd68a6d5460fc5abb8d0d338e56b3890de2209aa72b4a7838ac31d9b3507"
+    },
+    "curvature_squared_gamma1": {
+      "path": "quantum-weyl/transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
+      "result_id": "CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1",
+      "sha256": "a67a475da6352ad163a907c2fc6ad0bcb1bf804662bc645eca1487685bccde87"
+    },
+    "fv_conformized_gamma1": {
+      "path": "quantum-weyl/transfer/certificates/FV_CONFORMIZED_C2_LOG_GAMMA1.json",
+      "result_id": "FV_CONFORMIZED_C2_LOG_GAMMA1",
+      "sha256": "7a4e55efa7284d303a7e929b4a0a0fd284b4508695958f575bcbb6a8a44f90c7"
+    },
+    "local_anomaly_audit": {
+      "path": "quantum-weyl/local_bv/certificates/LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT.json",
+      "result_id": "LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT",
+      "sha256": "07bf332cf1bece92f8a041002f3c787fe7e85e798871e4878fbbc3cd7b20bd3b"
+    },
+    "q1_disposition": {
+      "path": "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
+      "result_id": "ONE_LOOP_SLAVNOV_Q1_DISPOSITION",
+      "sha256": "c5c14192154ff2894633a8e7f35a2209a4b62400085bfc133c2ddbc4044989aa"
+    },
+    "ward_contract": {
+      "path": "quantum-weyl/cartan/certificates/RENORMALIZED_D_WARD_INSERTION_CONTRACT.json",
+      "result_id": "RENORMALIZED_D_WARD_INSERTION_CONTRACT",
+      "sha256": "0d7ac0bfb866341bd5b61f8c92f112de76b67261bd2378b954fd58e8aa70c191"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "exact_checks": {
+    "Cartan_class_not_promoted": true,
+    "Lorentzian_QME_remains_open": true,
+    "WZ_tau_not_Berger_clock": true,
+    "complete_Q1_absent": true,
+    "conditional_Euclidean_domains_retained": true,
+    "extended_local_euclidean_QME_restored": true,
+    "finite_bulk_scheme_rank_two": true,
+    "local_to_Cartan_map_absent": true,
+    "order_one_D_operators_absent": true,
+    "raw_D_compact_not_K_Berger": true,
+    "reference_finite_scheme_declared": true,
+    "reference_scheme_not_called_canonical": true,
+    "residual_transfer_forbidden": true,
+    "same_background_T2_extension_absent": true,
+    "same_background_classical_contraction_imported": true
+  },
+  "finite_normalization": {
+    "conditions": [
+      "z_C(mu_star)=0",
+      "z_Rhat2(mu_star)=0"
+    ],
+    "reason": "the anomaly fixes scale response but no external finite renormalization observable selects the additive constants",
+    "reference_scale": "mu_star>0",
+    "scheme_change": {
+      "bulk_response_basis": [
+        "TT",
+        "CONFORMAL"
+      ],
+      "bulk_response_matrix": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 9
+          }
+        ]
+      ],
+      "delta_Gamma1": "alpha_C integral C(g_hat)^2+alpha_R integral R(g_hat)^2",
+      "delta_Q1": "(delta_Gamma1,-)_BV",
+      "parameters": [
+        "alpha_C",
+        "alpha_R"
+      ],
+      "rank": 2
+    },
+    "scheme_id": "DECLARED_REFERENCE_ZERO_FINITE_BULK_SCHEME",
+    "status": "DECLARED_CONVENTION_NOT_CANONICAL_PHYSICAL_NORMALIZATION"
+  },
+  "next_gate": "FULL_TAU_ADIC_BV_HADAMARD_FEYNMAN_KERNEL_AND_RENORMALIZED_T2_EXTENSION_ON_VACUUM_CYLINDER",
+  "operator_ledger": {
+    "A_D1": "UNDEFINED_ANALYTICALLY",
+    "Delta_ren": "NOT_DEFINED",
+    "Gamma1_anomaly_induced": "CONDITIONAL_EUCLIDEAN_REPRESENTATIVE",
+    "Gamma1_complete": "NOT_DEFINED",
+    "L_D0": "CERTIFIED",
+    "L_D1": "NOT_DEFINED",
+    "Q0": "CERTIFIED",
+    "Q1_complete": "NOT_DEFINED",
+    "T2_ren": "NOT_DEFINED",
+    "iota_D0": "CERTIFIED",
+    "iota_D1": "NOT_DEFINED",
+    "local_to_Cartan_map": "NOT_CONSTRUCTED"
+  },
+  "producer_request": {
+    "event_path": "planning/events/quantum-complete-renormalized-d-ward-insertion-REQUEST-1190fa5df53e8659.json",
+    "event_sha256": "f146a88c3c8fbdc9a96c3ad6e0246d74c589102330c7a5cdc37d7d91a51fa1bf",
+    "need_id": "FULL_TAU_ADIC_BV_HADAMARD_FEYNMAN_KERNEL_AND_RENORMALIZED_T2_EXTENSION_ON_VACUUM_CYLINDER",
+    "request_id": "sf:program/request/quantum-complete-renormalized-d-ward-insertion-to-quantum-qme-1190fa5df53e8659",
+    "status": "FILED_APPEND_ONLY",
+    "to_stream": "quantum-qme",
+    "typed": "coefficient-bearing-operator"
+  },
+  "provenance": {
+    "proof_type": "EXACT_PINNED_BOUNDARY_NONDEFINITION_WITH_INDEPENDENT_REPLAY",
+    "source_manifest": {
+      "../reports/renormalized-d-ward-insertion-nondefinition.md": "042d9beeeda9333cb889b35174b9cd2f2081d0d18789a314f4574c332bf589e9",
+      "renormalized_d_ward_insertion_nondefinition.py": "984c3d509026ae6af95f9b02e9a8d3d10ee83fcca297159ad0c19ee9e3419a23",
+      "renormalized_d_ward_insertion_nondefinition_certificate.py": "20507a97e7c9b8a8ca37d7c9f22c518bba930053820e8dd934efb6cfd9d7823e",
+      "schema/renormalized-d-ward-insertion-nondefinition-v1.schema.json": "07e05571d20bdb5de6d1da957cfc1bb1155a79c29761c149780d6d1113fc4031",
+      "tests/test_renormalized_d_ward_insertion_nondefinition.py": "7b1b84821960957a10f13de5a629d95518dec7a00dd5570f6ec315c07322822c",
+      "verify_renormalized_d_ward_insertion_nondefinition.py": "5643910edb6b71ef100f1a167eba62b712ac05ac0ff2e3b78e6818a134f62d37"
+    },
+    "source_manifest_sha256": "8bd0cd6b2bd573b6e1a15584750ed8af46b39b11e54ef8a9595aef25b821a97a"
+  },
+  "result_id": "RENORMALIZED_D_WARD_INSERTION_NONDEFINITION",
+  "result_state": "REFERENCE_FINITE_NORMALIZATION_DECLARED_CLASSICAL_CARTAN_IMPORTED_FIRST_ANALYTIC_OPERATOR_UNDEFINED",
+  "schema": "quantum-weyl-renormalized-d-ward-insertion-nondefinition-v1",
+  "scheme_invariance_disposition": {
+    "not_verified": "the Cartan class cannot be compared across schemes before T2_ren, Q1, iota_D1, L_D1, and the map are defined",
+    "verified": "all finite local scheme shifts lie in the exact rank-two Hamiltonian family displayed above"
+  },
+  "science_forge": {
+    "stop_condition_disposition": "PRECISE_NONDEFINITION_THEOREM_FIRST_DISTRIBUTION_EXTENSION_AND_OPERATOR_DOMAIN_NAMED",
+    "work_item": "sf:program/work/quantum-complete-renormalized-d-ward-insertion"
+  },
+  "setting": {
+    "background_id": "vacuum_cylinder_regular_Bach_chart",
+    "boundaries": "closed compact Cauchy surface S3; no spatial boundary",
+    "generator_id": "D_compact",
+    "metric": "g_bar=-dt^2+dOmega_3^2",
+    "phase_space_id": "P_der",
+    "signature_target": "LORENTZIAN_SAME_BACKGROUND",
+    "theory_id": "TAU_ADIC_WESS_ZUMINO_EXTENDED_WEYL"
+  }
+}
