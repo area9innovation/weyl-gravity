@@ -1,0 +1,100 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1_TIER_RECEIPT",
+  "claim_id": "BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/certificates/BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1.json",
+      "sha256": "6b59cdc0c54978ef5a9bb07ff8b17dcbc6d9771ce631206cecc8b85686f2fb78"
+    },
+    {
+      "path": "d_quotient_classical/generated/berger_q26_finite_row_module_closure_v1/spin4_closure_witness.json",
+      "sha256": "ecd819590e8c18a7c38f2a70b3455c1018cbb370c05cf8a307df5970be320826"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "0a00cdedae4ca13910267488b344cfbd26857ecc67f89530911b6ce2630a8982"
+    },
+    {
+      "path": "d_quotient_classical/reports/berger-q26-finite-row-module-closure-lower-bound-v1.md",
+      "sha256": "2a9aa9fbfc7853bbe26d63c032b200069ad26dfc0d73d5dc03e08e8a8d847579"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile d_quotient_classical/causal_transfer/berger_q26_finite_row_module_closure.py d_quotient_classical/causal_transfer/verify_berger_q26_finite_row_module_closure.py d_quotient_classical/causal_transfer/tests/test_berger_q26_finite_row_module_closure.py",
+        "elapsed_seconds": 0.06,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <scoped paths>",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "PYTHONPATH=quantum-weyl:. python3 -m d_quotient_classical.causal_transfer.berger_q26_finite_row_module_closure --check --guards",
+        "elapsed_seconds": 14.37,
+        "status": "PASS"
+      },
+      {
+        "command": "PYTHONPATH=quantum-weyl:. python3 -m d_quotient_classical.causal_transfer.verify_berger_q26_finite_row_module_closure",
+        "elapsed_seconds": 13.56,
+        "status": "PASS",
+        "independent_backend": "Sym^4 quotient by invariant quadratic ideal",
+        "independent_full_determinant_mod_1009": 929
+      },
+      {
+        "command": "PYTHONPATH=quantum-weyl:. python3 -m unittest d_quotient_classical.causal_transfer.tests.test_berger_q26_finite_row_module_closure",
+        "elapsed_seconds": 13.21,
+        "status": "PASS",
+        "tests": 7
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-q26-finite-row-module-closure-lower-bound-v1.schema.json -d d_quotient_classical/certificates/BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1.json",
+        "elapsed_seconds": 1.39,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "PYTHONPATH=. python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "elapsed_seconds": 0.13,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment",
+        "status": "PASS",
+        "tests": 19
+      }
+    ],
+    "reason": "The 104-row lower bound changes the authoritative Berger classical-to-quantum atlas crosswalk."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is a scoped necessary lower bound and checkpoint toward the active finite-row theorem, not a terminal carrier construction, freeze, release, or shared-core algebra change."
+  },
+  "claim_boundary": "The exact defect/free-algebraic-dual module closure is full in the rational spin-four representation and forces at least 104 added free PBW rows. This does not construct or prove sufficiency of a 104-row extension, classify non-free/projective presentations, construct a Cauchy/Krein pairing or real involution, prove no finite closure, or establish Hadamard or quantum data."
+}

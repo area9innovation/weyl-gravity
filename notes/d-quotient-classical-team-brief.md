@@ -2820,6 +2820,36 @@ entries, 470 \(A_{104}\) entries, 157 square defects and 207 commutator
 defects.  Noncyclic or presymplectic six-row operators, larger carriers,
 Cauchy/Krein data, Hadamard states and quantum conclusions remain open.
 
+### Berger defect/free-dual module closure (2026-07-20)
+
+`BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1` strengthens the cyclic
+rank count by closing the actual square and evolution-commutator images under
+\(q_C\), \(A_{104}\), and their free algebraic dual actions.  Scalar symbols
+are not used.  The producer realizes the specialized Berger algebra in its
+exact nine-dimensional rational spin-four harmonic-polynomial
+representation over \(\mathbf F_{1009}\).  The independent verifier uses the
+quotient of \(\operatorname{Sym}^4\) by the invariant quadratic ideal instead.
+
+The producer's certified column counts are
+
+\[
+139\longrightarrow522\longrightarrow936,
+\]
+
+and its final determinant is \(384\pmod{1009}\).  The independent quotient
+rail obtains a separate nonzero full determinant \(929\pmod{1009}\).  Since
+the ambient dimension is \(104\cdot9=936\), the defect/free-dual closure is
+the full represented carrier.  One free PBW row contributes at most nine
+represented dimensions, so any free extension through which this closure
+factors requires at least 104 new rows.  Its lower-bound degree profile is
+the full frozen profile \((12,40,40,12)\).
+
+This is necessary, not sufficient.  No 104-row simultaneous solution,
+physical Cauchy/Krein pairing, real involution, retained solution-map
+contraction or no-finite-closure theorem has yet been supplied.  Non-free or
+projective module presentations are outside this bound unless explicitly
+admitted and independently classified.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

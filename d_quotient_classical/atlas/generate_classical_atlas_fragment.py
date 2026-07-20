@@ -40,6 +40,7 @@ CERTS = {
     "Berger_bridge1_disposition": ROOT / "d_quotient_classical/certificates/BERGER_BRIDGE1_ADMISSIBLE_CARRIER_DISPOSITION_V1.json",
     "Berger_q26_Cauchy_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1.json",
     "Berger_q26_six_row_cyclic_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_Q26_MINIMAL_SIX_ROW_CYCLIC_OBSTRUCTION_V1.json",
+    "Berger_q26_module_closure_bound": ROOT / "d_quotient_classical/certificates/BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1.json",
     "Nariai_conformal": ROOT / "d_quotient_classical/certificates/CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1.json",
     "Nariai_single": ROOT / "d_quotient_classical/certificates/NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1.json",
     "Nariai_bridge_disposition": ROOT / "d_quotient_classical/certificates/NARIAI_CURVATURE_METRIC_BRIDGE_DISPOSITION_V1.json",
@@ -310,8 +311,9 @@ def entries() -> list[dict[str, Any]]:
         _evidence(
             "Berger_q26_Cauchy_obstruction",
             "Berger_q26_six_row_cyclic_obstruction",
+            "Berger_q26_module_closure_bound",
         ),
-        "The no-lift theorem is complete only for the frozen 104-row formal Cauchy graph with the normalized q52 solution-map identity. It holds at every finite PBW differential order because that identity fixes q_C uniquely. Factorization requires at least five new degree-zero rows and one new degree-one row. The resulting unique exactly-six-row profile has degree ranks (12,45,41,12), so every degree-one odd pairing has a radical of dimension at least four. Hence the complete cyclic six-row class is empty and cyclic rank completion requires at least ten added rows with profile (0,5,5,0). Ten-row sufficiency is not proved. Changed companions, changed A104 data, noncyclic or presymplectic six-row operators and larger carriers remain open. No Hadamard, positivity, QME, particle or quantum claim follows.",
+        "The no-lift theorem is complete only for the frozen 104-row formal Cauchy graph with the normalized q52 solution-map identity. It holds at every finite PBW differential order because that identity fixes q_C uniquely. Factorization first requires five new degree-zero rows and one new degree-one row; cyclic rank completion raises this to ten. The exact defect/free-dual module closure then fills all 936 dimensions of the nine-dimensional rational spin-four representation, with two independent nonzero finite-field determinants. Therefore every free support-local carrier for that closure requires at least 104 added rows with degree profile (12,40,40,12). A 104-row extension is not constructed or proved sufficient. Changed companions, changed A104 data, non-free/projective presentations, and larger carriers remain open. No Cauchy/Krein pairing, real involution, Hadamard, positivity, QME, particle or quantum claim follows.",
     ))
     values.append(_entry(
         "classical.nariai.conformal_orbit.rank310_metric",

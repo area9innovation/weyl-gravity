@@ -1,0 +1,228 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.invalid/schema/berger-q26-finite-row-module-closure-lower-bound-v1.schema.json",
+  "title": "Berger q26 finite-row module closure lower bound v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "scope",
+    "pinned_inputs",
+    "representation_module_closure",
+    "proof",
+    "exact_payload",
+    "classification",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-berger-q26-finite-row-module-closure-lower-bound-v1"
+    },
+    "result_id": {
+      "const": "BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1"
+    },
+    "result_state": {
+      "const": "DEFECT_AND_FREE_DUAL_MODULE_CLOSURE_FORCES_AT_LEAST_104_ADDED_ROWS"
+    },
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "LORENTZIAN-CAUSAL"}
+      ],
+      "items": false
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "theory", "background", "boundaries", "charge_sector", "carrier",
+        "degree", "parity", "ell", "m", "k", "omega"
+      ],
+      "properties": {
+        "theory": {"type": "string", "minLength": 1},
+        "background": {"type": "string", "minLength": 1},
+        "boundaries": {"type": "string", "minLength": 1},
+        "charge_sector": {"type": "string", "minLength": 1},
+        "carrier": {"type": "string", "minLength": 1},
+        "degree": {"type": "string", "minLength": 1},
+        "parity": {"type": "string", "minLength": 1},
+        "ell": {"type": "string", "minLength": 1},
+        "m": {"type": "string", "minLength": 1},
+        "k": {"type": "string", "minLength": 1},
+        "omega": {"type": "string", "minLength": 1}
+      }
+    },
+    "pinned_inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "original_obstruction", "six_row_terminal", "q_Cauchy", "A104"
+      ],
+      "properties": {
+        "original_obstruction": {"$ref": "#/$defs/pinnedGit"},
+        "six_row_terminal": {"$ref": "#/$defs/artifactRef"},
+        "q_Cauchy": {"$ref": "#/$defs/pathRef"},
+        "A104": {"$ref": "#/$defs/pathRef"}
+      }
+    },
+    "representation_module_closure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coefficient_field", "rational_specialization", "representation",
+        "multiplicative", "Berger_relations_verified", "closure_generators",
+        "closure_actions", "compression_role", "level_independent_columns",
+        "ambient_dimension", "full_closure",
+        "final_minor_determinant_mod_1009", "row_generator_bound",
+        "added_rows_at_least", "forced_free_row_degree_profile_at_least"
+      ],
+      "properties": {
+        "coefficient_field": {"const": "GF(1009)"},
+        "rational_specialization": {
+          "const": {"alpha_B": 2, "u": 1, "v": 3}
+        },
+        "representation": {
+          "const": "9-dimensional rational spin-4 harmonic-polynomial representation"
+        },
+        "multiplicative": {"const": true},
+        "Berger_relations_verified": {"const": true},
+        "closure_generators": {
+          "const": ["Im(q_C^2)", "Im([A104,q_C])"]
+        },
+        "closure_actions": {
+          "const": ["q_C", "A104", "q_C^vee", "A104^vee"]
+        },
+        "compression_role": {"type": "string", "minLength": 20},
+        "level_independent_columns": {"const": [139, 522, 936]},
+        "ambient_dimension": {"const": 936},
+        "full_closure": {"const": true},
+        "final_minor_determinant_mod_1009": {"const": 384},
+        "row_generator_bound": {"const": "9*n_new >= 936"},
+        "added_rows_at_least": {"const": 104},
+        "forced_free_row_degree_profile_at_least": {
+          "const": {
+            "degree_minus1": 12,
+            "degree_0": 40,
+            "degree_plus1": 40,
+            "degree_plus2": 12
+          }
+        }
+      }
+    },
+    "proof": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finite_field_lift", "row_bound", "field_redefinition_invariance",
+        "strict_improvement"
+      ],
+      "properties": {
+        "finite_field_lift": {"type": "string", "minLength": 30},
+        "row_bound": {"type": "string", "minLength": 30},
+        "field_redefinition_invariance": {"type": "string", "minLength": 30},
+        "strict_improvement": {"type": "string", "minLength": 30}
+      }
+    },
+    "exact_payload": {"$ref": "#/$defs/payloadRef"},
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "defect_and_free_dual_closure_full_on_spin4",
+        "minimum_added_free_rows_at_least",
+        "one_hundred_four_row_extension_sufficient",
+        "smallest_finite_extension_constructed",
+        "no_finite_closure_theorem",
+        "physical_Cauchy_pairing_constructed",
+        "real_involution_constructed",
+        "Hadamard_or_quantum_claim"
+      ],
+      "properties": {
+        "defect_and_free_dual_closure_full_on_spin4": {"const": true},
+        "minimum_added_free_rows_at_least": {"const": 104},
+        "one_hundred_four_row_extension_sufficient": {"const": false},
+        "smallest_finite_extension_constructed": {"const": false},
+        "no_finite_closure_theorem": {"const": false},
+        "physical_Cauchy_pairing_constructed": {"const": false},
+        "real_involution_constructed": {"const": false},
+        "Hadamard_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {
+      "const": "SOLVE_OR_OBSTRUCT_THE_104_ROW_FREE_ADJOINT_COMPLETION_WITH_RETAINED_SOLUTION_MAP_AND_PHYSICAL_PAIRING"
+    },
+    "claim_boundary": {"type": "string", "minLength": 250},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 4,
+          "additionalProperties": {"$ref": "#/$defs/sha"}
+        },
+        "verification_commands": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "pathRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha"}
+      }
+    },
+    "artifactRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "path", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha"}
+      }
+    },
+    "payloadRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha"}
+      }
+    },
+    "pinnedGit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commit", "path", "sha256"],
+      "properties": {
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha"}
+      }
+    }
+  }
+}

@@ -236,13 +236,13 @@ def verify() -> None:
     if berger_cauchy["descriptions"]["quantum"] != "NO_CERTIFIED_MAP":
         raise AssertionError("rejected Berger Cauchy carrier was promoted")
     if (
-        "at least five new degree-zero rows and one new degree-one row"
+        "five new degree-zero rows and one new degree-one row"
         not in berger_cauchy["claim_boundary"]
-        or "complete cyclic six-row class is empty"
+        or "cyclic rank completion raises this to ten"
         not in berger_cauchy["claim_boundary"]
-        or "at least ten added rows"
+        or "at least 104 added rows"
         not in berger_cauchy["claim_boundary"]
-        or "Ten-row sufficiency is not proved"
+        or "A 104-row extension is not constructed or proved sufficient"
         not in berger_cauchy["claim_boundary"]
     ):
         raise AssertionError("Berger carrier-extension boundary missing")
@@ -256,6 +256,11 @@ def verify() -> None:
         not in berger_cauchy_ids
     ):
         raise AssertionError("Berger minimal six-row cyclic evidence missing")
+    if (
+        "BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1"
+        not in berger_cauchy_ids
+    ):
+        raise AssertionError("Berger finite-row module closure evidence missing")
     transverse = by_id["classical.nariai.transverse_kantowski_sachs_tangent"]
 
     bach_open = by_id["classical.bach_flat.open_parent_detour"]
