@@ -190,6 +190,15 @@ separate.  See `BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY`,
 `BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT`, and
 `BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION`.
 
+The next reduction is
+`BERGER_CUTOFF_VOLTERRA_MICROLOCAL_ORIENTATION_REDUCTION`.  Every finite
+same-sided Volterra term stays in the oriented relation
+`Gamma_+/-=Delta union R_+/-`.  The infinite series is not promoted: the
+remaining sufficient gate is compact-slab convergence of the kernels and
+their formal transposes in the normal topology of the fixed
+`D'_Gamma_+/-` space.  The existing all-Sobolev factorial bound does not imply
+that stronger convergence.
+
 The receiving side of that route is now executable.  The stationary-generator
 import readiness result requires content-addressed exact PBW records for
 `A104`, `q_Cauchy_104`, `G_Cauchy_104` and `real_structure_104`, all in the

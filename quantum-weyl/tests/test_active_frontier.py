@@ -541,6 +541,9 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(flags["BERGER_CUTOFF_TIMESLICE_SOURCE_MAP_REGULAR"])
         self.assertTrue(flags["BERGER_METRIC_COMPANION_RFHGHO_DILATION"])
         self.assertTrue(flags["BERGER_DILATED_REGULAR_CAUCHY_MORPHISM_LEGS"])
+        self.assertTrue(flags["BERGER_FINITE_VOLTERRA_TERMS_MICROLOCALLY_ORIENTED"])
+        self.assertTrue(flags["BERGER_HORMANDER_VOLTERRA_CONVERGENCE_GATE_ISOLATED"])
+        self.assertFalse(flags["BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED"])
         self.assertFalse(flags["BERGER_REGULAR_GREENHYP_MORPHISM"])
         self.assertTrue(flags["TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED"])
         self.assertTrue(flags["STATIONARY_GENERATOR_IMPORT_CONSUMER_READY"])
@@ -555,7 +558,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             row["next_gate"],
-            "BERGER_DILATED_MORPHISM_CONE_MAPPING_AND_CUTOFF_ORIENTATION_EXCLUSION_THEN_FREE_SEED_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
+            "PROVE_COMPACT_SLAB_VOLTERRA_CONVERGENCE_IN_DPRIME_GAMMA_NORMAL_TOPOLOGY_THEN_CONSTRUCT_FREE_SEED_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
         )
         algebra_row = self.payload["active_rows"]["free_Lorentzian_algebra"]
         self.assertIn("PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED", algebra_row["status"])

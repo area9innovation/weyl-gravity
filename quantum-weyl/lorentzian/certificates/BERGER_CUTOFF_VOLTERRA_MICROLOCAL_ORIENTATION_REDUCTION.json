@@ -1,0 +1,397 @@
+{
+  "claim_boundary": "Certifies the oriented wavefront relation of every finite same-sided Volterra term and reduces the infinite cutoff orientation and regular-morphism cone action to one sufficient compact-slab convergence statement in a fixed H\u00f6rmander distribution space. The required convergence is not proved by the existing all-Sobolev factorial estimate. This result does not certify the infinite-series orientation, cutoff decomposability, cone mapping, a free seed covariance, restriction to the full graded BV carrier, BRST Ward identities, a Hadamard state, positivity, a Lorentzian QME, or a quantum theory.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": false,
+    "BERGER_CUTOFF_COMPANION_NULL_CONE_DECOMPOSABLE": false,
+    "BERGER_CUTOFF_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION": false,
+    "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING": false,
+    "BERGER_FINITE_VOLTERRA_TERMS_MICROLOCALLY_ORIENTED": true,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED": false,
+    "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_GATE_ISOLATED": true,
+    "QUANTUM_CLAIM": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "conditional_transport_chain": [
+    "Dprime_Gamma convergence -> WF'(G_chi,+/-) subset Delta union R_+/-",
+    "oriented G_chi,+/- -> E_chi is N_plus/N_minus decomposable",
+    "direct-sum adjoint dilation preserves decomposability",
+    "finite differential time-slice commutators preserve cone orientation",
+    "the two regular Cauchy GreenHyp morphisms satisfy the Fewster 5.16 cone action",
+    "a separately supplied free Hadamard covariance can then be transported"
+  ],
+  "dependency_refs": {
+    "base_wave_parametrix": {
+      "result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+      "sha256": "1a2bb5b124734a5aa63fdd8c1285d4847b8ff5ea02aed8d6b840db19dfe23fc1"
+    },
+    "cutoff_Green_family": {
+      "result_id": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY",
+      "sha256": "dbc451c1d16aec72d41f5e6f690cd898c74083bb8d28915575d4d7fe89b33961"
+    },
+    "cutoff_Hermitian_dilation": {
+      "result_id": "BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION",
+      "sha256": "72a02a8335ac5d3010ddc7785a2e7dc6028bf139b282b61f7fbb4dc5340d64d9"
+    },
+    "cutoff_microlocal_preflight": {
+      "result_id": "BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT",
+      "sha256": "ed6434496a4b810388befd9379f2a600a4e3476855ac656b8b2ab712cf9384da"
+    },
+    "stationary_full_companion_decomposability": {
+      "result_id": "BERGER_COMPANION_STATIONARY_DECOMPOSABILITY",
+      "sha256": "a8fb9c9c5dc6718d35a42aa90fae3517e58a02f23611ed0da892bfb9a940a84c"
+    },
+    "typed_Volterra_import": {
+      "result_id": "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORT",
+      "sha256": "3214437cb49b294b4bce92003830bdf02d776df5e00c320ac1c5e7f74361f365"
+    }
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_input_checks": {
+    "base_factor_normally_hyperbolic": true,
+    "cutoff_factorwise_null_bound": true,
+    "cutoff_orientation_not_previously_certified": true,
+    "cutoff_two_sided_causal_Green_family": true,
+    "regular_dilated_Cauchy_legs": true,
+    "stationary_full_companion_decomposable": true,
+    "typed_Volterra_factorial_convergence_imported": true
+  },
+  "finite_term_orientation": {
+    "advanced_or_retarded_convention": "The labels PLUS/MINUS denote the two same-sided Green families; the certificate does not rename the repository advanced/retarded convention.",
+    "local_differential_relation": "WF'(K_D) subset Delta for D in {V_chi,N}",
+    "minus": {
+      "Gamma": [
+        "DELTA",
+        "R_MINUS"
+      ],
+      "arbitrary_order_conclusion": true,
+      "base_block_relations": {
+        "G1": [
+          "DELTA",
+          "R_MINUS"
+        ],
+        "G2": [
+          "DELTA",
+          "R_MINUS"
+        ],
+        "G2_V_G1": [
+          "DELTA",
+          "R_MINUS"
+        ],
+        "N": [
+          "DELTA"
+        ]
+      },
+      "induction": {
+        "Gamma_comp_Delta_comp_Gamma_in_Gamma": true,
+        "all_sampled_terms_in_Gamma": true,
+        "base_G0_in_Gamma": true,
+        "local_N_in_Delta": true
+      },
+      "sampled_terms": [
+        {
+          "contained_in_Gamma": true,
+          "order": 0,
+          "relation": [
+            "DELTA",
+            "R_MINUS"
+          ],
+          "term": "(-1)^0(G0_MINUS N)^0G0_MINUS"
+        },
+        {
+          "contained_in_Gamma": true,
+          "order": 1,
+          "relation": [
+            "DELTA",
+            "R_MINUS"
+          ],
+          "term": "(-1)^1(G0_MINUS N)^1G0_MINUS"
+        },
+        {
+          "contained_in_Gamma": true,
+          "order": 2,
+          "relation": [
+            "DELTA",
+            "R_MINUS"
+          ],
+          "term": "(-1)^2(G0_MINUS N)^2G0_MINUS"
+        },
+        {
+          "contained_in_Gamma": true,
+          "order": 3,
+          "relation": [
+            "DELTA",
+            "R_MINUS"
+          ],
+          "term": "(-1)^3(G0_MINUS N)^3G0_MINUS"
+        },
+        {
+          "contained_in_Gamma": true,
+          "order": 4,
+          "relation": [
+            "DELTA",
+            "R_MINUS"
+          ],
+          "term": "(-1)^4(G0_MINUS N)^4G0_MINUS"
+        },
+        {
+          "contained_in_Gamma": true,
+          "order": 5,
+          "relation": [
+            "DELTA",
+            "R_MINUS"
+          ],
+          "term": "(-1)^5(G0_MINUS N)^5G0_MINUS"
+        },
+        {
+          "contained_in_Gamma": true,
+          "order": 6,
+          "relation": [
+            "DELTA",
+            "R_MINUS"
+          ],
+          "term": "(-1)^6(G0_MINUS N)^6G0_MINUS"
+        },
+        {
+          "contained_in_Gamma": true,
+          "order": 7,
+          "relation": [
+            "DELTA",
+            "R_MINUS"
+          ],
+          "term": "(-1)^7(G0_MINUS N)^7G0_MINUS"
+        },
+        {
+          "contained_in_Gamma": true,
+          "order": 8,
+          "relation": [
+            "DELTA",
+            "R_MINUS"
+          ],
+          "term": "(-1)^8(G0_MINUS N)^8G0_MINUS"
+        }
+      ],
+      "series_formula": "G_C,MINUS=sum_(n>=0)(-1)^n(G0_MINUSN)^nG0_MINUS",
+      "sign": "MINUS"
+    },
+    "normally_hyperbolic_relation": "WF'(G_P,sign) subset Gamma_sign=Delta union R_sign",
+    "plus": {
+      "Gamma": [
+        "DELTA",
+        "R_PLUS"
+      ],
+      "arbitrary_order_conclusion": true,
+      "base_block_relations": {
+        "G1": [
+          "DELTA",
+          "R_PLUS"
+        ],
+        "G2": [
+          "DELTA",
+          "R_PLUS"
+        ],
+        "G2_V_G1": [
+          "DELTA",
+          "R_PLUS"
+        ],
+        "N": [
+          "DELTA"
+        ]
+      },
+      "induction": {
+        "Gamma_comp_Delta_comp_Gamma_in_Gamma": true,
+        "all_sampled_terms_in_Gamma": true,
+        "base_G0_in_Gamma": true,
+        "local_N_in_Delta": true
+      },
+      "sampled_terms": [
+        {
+          "contained_in_Gamma": true,
+          "order": 0,
+          "relation": [
+            "DELTA",
+            "R_PLUS"
+          ],
+          "term": "(-1)^0(G0_PLUS N)^0G0_PLUS"
+        },
+        {
+          "contained_in_Gamma": true,
+          "order": 1,
+          "relation": [
+            "DELTA",
+            "R_PLUS"
+          ],
+          "term": "(-1)^1(G0_PLUS N)^1G0_PLUS"
+        },
+        {
+          "contained_in_Gamma": true,
+          "order": 2,
+          "relation": [
+            "DELTA",
+            "R_PLUS"
+          ],
+          "term": "(-1)^2(G0_PLUS N)^2G0_PLUS"
+        },
+        {
+          "contained_in_Gamma": true,
+          "order": 3,
+          "relation": [
+            "DELTA",
+            "R_PLUS"
+          ],
+          "term": "(-1)^3(G0_PLUS N)^3G0_PLUS"
+        },
+        {
+          "contained_in_Gamma": true,
+          "order": 4,
+          "relation": [
+            "DELTA",
+            "R_PLUS"
+          ],
+          "term": "(-1)^4(G0_PLUS N)^4G0_PLUS"
+        },
+        {
+          "contained_in_Gamma": true,
+          "order": 5,
+          "relation": [
+            "DELTA",
+            "R_PLUS"
+          ],
+          "term": "(-1)^5(G0_PLUS N)^5G0_PLUS"
+        },
+        {
+          "contained_in_Gamma": true,
+          "order": 6,
+          "relation": [
+            "DELTA",
+            "R_PLUS"
+          ],
+          "term": "(-1)^6(G0_PLUS N)^6G0_PLUS"
+        },
+        {
+          "contained_in_Gamma": true,
+          "order": 7,
+          "relation": [
+            "DELTA",
+            "R_PLUS"
+          ],
+          "term": "(-1)^7(G0_PLUS N)^7G0_PLUS"
+        },
+        {
+          "contained_in_Gamma": true,
+          "order": 8,
+          "relation": [
+            "DELTA",
+            "R_PLUS"
+          ],
+          "term": "(-1)^8(G0_PLUS N)^8G0_PLUS"
+        }
+      ],
+      "series_formula": "G_C,PLUS=sum_(n>=0)(-1)^n(G0_PLUSN)^nG0_PLUS",
+      "sign": "PLUS"
+    },
+    "proper_support": "All compositions are restricted to a compact time slab; causal support and the local differential insertions give the properness required for kernel composition.",
+    "status": "ALL_FINITE_SAME_SIDED_VOLTERRA_TERMS_ORIENTED"
+  },
+  "infinite_series_gate": {
+    "conditional_conclusions": {
+      "cutoff_Pauli_Jordan_decomposable": false,
+      "dilated_cutoff_RFHGHO_decomposable": false,
+      "infinite_Green_kernels_oriented": false,
+      "regular_Cauchy_morphism_cone_action": false
+    },
+    "conditional_replay": {
+      "conditional_conclusions": {
+        "cutoff_Pauli_Jordan_decomposable": true,
+        "dilated_cutoff_RFHGHO_decomposable": true,
+        "infinite_Green_kernels_oriented": true,
+        "regular_Cauchy_morphism_cone_action": true
+      },
+      "conditions": {
+        "finite_partial_sums_have_uniform_declared_wavefront_cone": true,
+        "formal_transpose_series_has_same_opposite_side_control": true,
+        "partial_sums_converge_in_Dprime_Gamma_normal_topology": true
+      },
+      "existing_convergence": {
+        "finite_slab_all_Sobolev_operator_norm": true,
+        "implies_Hormander_normal_convergence": false
+      },
+      "gate_passes": true,
+      "required_sufficient_statement": "On every compact time slab and for each advanced/retarded sign, the Volterra partial-sum kernels and their formal transposes converge in the normal topology of D'_Gamma, with Gamma=Delta union R_sign."
+    },
+    "conditions": {
+      "finite_partial_sums_have_uniform_declared_wavefront_cone": true,
+      "formal_transpose_series_has_same_opposite_side_control": false,
+      "partial_sums_converge_in_Dprime_Gamma_normal_topology": false
+    },
+    "existing_convergence": {
+      "finite_slab_all_Sobolev_operator_norm": true,
+      "implies_Hormander_normal_convergence": false
+    },
+    "gate_passes": false,
+    "missing_Sobolev_control_replay": {
+      "conditional_conclusions": {
+        "cutoff_Pauli_Jordan_decomposable": false,
+        "dilated_cutoff_RFHGHO_decomposable": false,
+        "infinite_Green_kernels_oriented": false,
+        "regular_Cauchy_morphism_cone_action": false
+      },
+      "conditions": {
+        "finite_partial_sums_have_uniform_declared_wavefront_cone": true,
+        "formal_transpose_series_has_same_opposite_side_control": false,
+        "partial_sums_converge_in_Dprime_Gamma_normal_topology": false
+      },
+      "existing_convergence": {
+        "finite_slab_all_Sobolev_operator_norm": false,
+        "implies_Hormander_normal_convergence": false
+      },
+      "gate_passes": false,
+      "required_sufficient_statement": "On every compact time slab and for each advanced/retarded sign, the Volterra partial-sum kernels and their formal transposes converge in the normal topology of D'_Gamma, with Gamma=Delta union R_sign."
+    },
+    "required_sufficient_statement": "On every compact time slab and for each advanced/retarded sign, the Volterra partial-sum kernels and their formal transposes converge in the normal topology of D'_Gamma, with Gamma=Delta union R_sign.",
+    "status": "OPEN_NOT_SUPPLIED_BY_ALL_SOBOLEV_FACTORIAL_BOUNDS"
+  },
+  "lifecycle_layer": "LORENTZIAN_MICROLOCAL_REDUCTION",
+  "literature_provenance": {
+    "decomposability_definition": "Definition 5.2",
+    "distribution_topology": "H\u00f6rmander spaces D'_Gamma with their normal topology; this strengthens the currently certified Sobolev operator convergence.",
+    "normally_hyperbolic_wavefront_relation": "Equation (5.7) and Theorem 5.3",
+    "regular_morphism_transport": "Theorem 5.16",
+    "source": "Christopher J. Fewster, Hadamard States for Decomposable Green-Hyperbolic Operators, arXiv:2503.12537"
+  },
+  "negative_control": {
+    "composition": "Gamma_PLUS composed with Gamma_MINUS",
+    "contained_in_one_oriented_Gamma": false,
+    "contains_mixed_direction": true,
+    "relation": [
+      "DELTA",
+      "MIXED_DIRECTION",
+      "R_MINUS",
+      "R_PLUS"
+    ]
+  },
+  "next_gate": "PROVE_COMPACT_SLAB_VOLTERRA_CONVERGENCE_IN_DPRIME_GAMMA_NORMAL_TOPOLOGY_THEN_CONSTRUCT_FREE_SEED_COVARIANCE",
+  "provenance": {
+    "cutoff_result_id": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY",
+    "dilation_result_id": "BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION",
+    "microlocal_result_id": "BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT",
+    "source_manifest": {
+      "../reports/berger-cutoff-volterra-microlocal-orientation-reduction.md": "c6f719948c02b588d9ae02adeb072f2b0945e3bc319659a1e1c43d43aec2cbfd",
+      "berger_cutoff_volterra_microlocal_orientation_reduction.py": "87505d0d806bb5059b9099c016692051d41e12169ed25d02950f66e4d1ddcb09",
+      "berger_cutoff_volterra_microlocal_orientation_reduction_certificate.py": "c98201ba52e01cb7bb99e4aa8909fefb2c7aa0999de3ae0e924c095b7e3423ab",
+      "schema/berger-cutoff-volterra-microlocal-orientation-reduction-v1.schema.json": "b0cafb9e184bb2f7ac2a8290622e517a12e95261e0586b989c3944fc3bb3fbac",
+      "tests/test_berger_cutoff_volterra_microlocal_orientation_reduction.py": "2ff28a7777242d9d03ed6c1f57ecb0bcaa1082483db75acaeb0351f787786862",
+      "verify_berger_cutoff_volterra_microlocal_orientation_reduction.py": "d6626e70bd422e47659767721e304d5c9b0038eb7a527dcdf165c2d6969bf703"
+    },
+    "source_manifest_sha256": "9a4326e4d2083766abbca0bf4fa4ddc5943e9f4bac427858be42a542590978b7",
+    "typed_result_id": "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORT"
+  },
+  "result_id": "BERGER_CUTOFF_VOLTERRA_MICROLOCAL_ORIENTATION_REDUCTION",
+  "result_state": "FINITE_VOLTERRA_TERMS_ORIENTED_SINGLE_HORMANDER_CONVERGENCE_GATE_OPEN",
+  "schema": "quantum-weyl-berger-cutoff-volterra-microlocal-orientation-reduction-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

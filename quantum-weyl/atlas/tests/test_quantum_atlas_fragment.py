@@ -166,6 +166,12 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             "BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION",
             {evidence["result_id"] for evidence in berger["evidence"]},
         )
+        self.assertIn("finite same-sided Volterra term", hadamard["statement"])
+        self.assertIn("D'_Gamma normal topology", hadamard["statement"])
+        self.assertIn(
+            "BERGER_CUTOFF_VOLTERRA_MICROLOCAL_ORIENTATION_REDUCTION",
+            {evidence["result_id"] for evidence in berger["evidence"]},
+        )
 
     def test_non_mode_carriers_are_not_particles(self) -> None:
         guards = [

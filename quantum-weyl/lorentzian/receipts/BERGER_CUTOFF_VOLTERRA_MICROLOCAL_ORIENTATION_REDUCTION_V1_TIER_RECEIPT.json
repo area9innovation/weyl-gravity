@@ -1,0 +1,54 @@
+{
+  "receipt_id": "BERGER_CUTOFF_VOLTERRA_MICROLOCAL_ORIENTATION_REDUCTION_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Finite-term oriented wavefront induction for the cutoff companion Volterra series, isolation of the sufficient fixed-cone Hormander convergence gate, and fail-closed Hadamard frontier/atlas refresh.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python -m py_compile <changed Python modules>",
+        "python -m json.tool <changed schemas and generated certificates>",
+        "git diff --check -- <scoped paths>"
+      ],
+      "elapsed_seconds": 0.22
+    },
+    "tier_1": {
+      "status": "PASS",
+      "runs": [
+        {
+          "command": "PYTHONPATH=quantum-weyl python -m lorentzian.berger_cutoff_volterra_microlocal_orientation_reduction_certificate --check && PYTHONPATH=quantum-weyl python -m lorentzian.verify_berger_cutoff_volterra_microlocal_orientation_reduction && PYTHONPATH=quantum-weyl python -m unittest quantum-weyl/lorentzian/tests/test_berger_cutoff_volterra_microlocal_orientation_reduction.py -v",
+          "elapsed_seconds": 0.68,
+          "result": "PASS: independent verifier and eight tests; both same-sided finite Volterra towers remain in Delta union R_sign, mixed-side composition is rejected, Sobolev convergence does not close the gate, and an infinite-series orientation promotion is rejected."
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python -m active_frontier_certificate --check && PYTHONPATH=quantum-weyl python -m verify_active_frontier && PYTHONPATH=quantum-weyl python -m unittest quantum-weyl/tests/test_active_frontier.py quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py -v",
+          "elapsed_seconds": 6.27,
+          "result": "PASS: generated atlas and active frontier reproduce and sixteen affected tests expose the fixed D'_Gamma convergence gate while keeping infinite-series orientation, cone mapping, seed covariance and full-BV BRST Hadamard status open."
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The affected Volterra, cutoff Green, microlocal, Hermitian-dilation, generated atlas and active-frontier chain was replayed. Content-addressed unchanged classical and base-wave inputs were hash-checked rather than rebuilt."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, shared-core algebra change, Hadamard-state promotion, QME promotion or quantum-theory lifecycle promotion occurred."
+    }
+  },
+  "advisory_shadow": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 3.31,
+    "status": "ADVISORY_EXIT_ZERO_WITH_EXISTING_DRIFT_FINDINGS",
+    "findings": [
+      "bridge certificate audit drift=FAIL",
+      "corpus coverage 1164 certificates versus baseline 976",
+      "forge dev binary revision differs from checked-out stdlib revision"
+    ],
+    "claim_promotion": "NONE"
+  },
+  "claim_boundary": "Certifies the oriented canonical relation of every finite same-sided cutoff Volterra term and isolates one sufficient compact-slab D'_Gamma normal-topology convergence gate. It does not prove that convergence, infinite-series orientation, cutoff decomposability, regular-morphism cone mapping, a seed covariance, full graded restriction, BRST Ward identities, positivity, a Lorentzian QME or a quantum theory."
+}

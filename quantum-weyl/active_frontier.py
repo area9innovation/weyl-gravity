@@ -139,6 +139,7 @@ DEPENDENCIES = {
     "temporal_cutoff_companion_Green_family": HERE / "lorentzian/certificates/BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY.json",
     "cutoff_companion_microlocal_response_preflight": HERE / "lorentzian/certificates/BERGER_CUTOFF_COMPANION_MICROLOCAL_RESPONSE_PREFLIGHT.json",
     "cutoff_companion_Hermitian_dilation": HERE / "lorentzian/certificates/BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION.json",
+    "cutoff_Volterra_microlocal_orientation_reduction": HERE / "lorentzian/certificates/BERGER_CUTOFF_VOLTERRA_MICROLOCAL_ORIENTATION_REDUCTION.json",
     "typed_biwave_Volterra_theorem": HERE / "lorentzian/certificates/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORT.json",
     "stationary_generator_import_readiness": HERE / "lorentzian/certificates/BERGER_RETAINED_26_STATIONARY_GENERATOR_IMPORT_READINESS.json",
     "curvature_image_CCR": HERE / "lorentzian/certificates/CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA.json",
@@ -203,6 +204,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "temporal_cutoff_companion_Green_family": "NONSTATIONARY_CUTOFF_GREEN_FAMILY_CERTIFIED_MICROLOCAL_PROPAGATION_AND_SEED_COVARIANCE_OPEN",
         "cutoff_companion_microlocal_response_preflight": "CUTOFF_FACTORWISE_NULL_KERNEL_AND_REGULAR_TIMESLICE_SOURCE_MAP_CERTIFIED_ORIENTATION_AND_GREENHYP_RESPONSE_OPEN",
         "cutoff_companion_Hermitian_dilation": "METRIC_COMPANION_RFHGHO_DILATION_AND_TWO_REGULAR_CAUCHY_MORPHISMS_CERTIFIED_CONE_ACTION_AND_STATE_OPEN",
+        "cutoff_Volterra_microlocal_orientation_reduction": "FINITE_VOLTERRA_TERMS_ORIENTED_SINGLE_HORMANDER_CONVERGENCE_GATE_OPEN",
         "typed_biwave_Volterra_theorem": "CONDITIONAL_TYPED_BIWAVE_GREEN_THEOREM_IMPORTED_HADAMARD_AND_PHYSICAL_NORMAL_FORM_OPEN",
         "stationary_generator_import_readiness": "CONSUMER_READY_STATIONARY_CARRIER_INPUT_NOT_SUPPLIED",
         "curvature_image_CCR": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_CERTIFIED_DIRECT_KERNEL_AND_STATE_OPEN",
@@ -2547,6 +2549,39 @@ def _load() -> dict[str, dict[str, Any]]:
         != "BERGER_DILATED_MORPHISM_CONE_MAPPING_AND_CUTOFF_ORIENTATION_EXCLUSION_THEN_FREE_SEED_COVARIANCE"
     ):
         raise ValueError("cutoff companion Hermitian-dilation frontier drifted")
+    orientation_reduction = values[
+        "cutoff_Volterra_microlocal_orientation_reduction"
+    ]
+    orientation_flags = orientation_reduction.get("claim_flags", {})
+    if (
+        orientation_flags.get(
+            "BERGER_FINITE_VOLTERRA_TERMS_MICROLOCALLY_ORIENTED"
+        )
+        is not True
+        or orientation_flags.get(
+            "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_GATE_ISOLATED"
+        )
+        is not True
+        or orientation_flags.get(
+            "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED"
+        )
+        is not False
+        or orientation_flags.get(
+            "BERGER_CUTOFF_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION"
+        )
+        is not False
+        or orientation_flags.get(
+            "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING"
+        )
+        is not False
+        or orientation_flags.get(
+            "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION"
+        )
+        is not False
+        or orientation_reduction.get("next_gate")
+        != "PROVE_COMPACT_SLAB_VOLTERRA_CONVERGENCE_IN_DPRIME_GAMMA_NORMAL_TOPOLOGY_THEN_CONSTRUCT_FREE_SEED_COVARIANCE"
+    ):
+        raise ValueError("cutoff Volterra microlocal orientation reduction drifted")
     typed_biwave = values["typed_biwave_Volterra_theorem"]
     typed_flags = typed_biwave.get("claim_flags", {})
     if (
@@ -2672,8 +2707,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "CONSTRUCT_PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER_AND_SAME_BACKGROUND_BV_MEASURE_LEDGER",
             },
             "free_Lorentzian_state": {
-                "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_METRIC_RFHGHO_DILATION_AND_TWO_REGULAR_CAUCHY_MORPHISMS_CERTIFIED_CONE_ACTION_SEED_AND_FULL_GRADED_BV_OPEN",
-                "next_gate": "BERGER_DILATED_MORPHISM_CONE_MAPPING_AND_CUTOFF_ORIENTATION_EXCLUSION_THEN_FREE_SEED_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
+                "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_FINITE_VOLTERRA_TERMS_ORIENTED_SINGLE_HORMANDER_CONVERGENCE_SEED_AND_FULL_GRADED_BV_OPEN",
+                "next_gate": "PROVE_COMPACT_SLAB_VOLTERRA_CONVERGENCE_IN_DPRIME_GAMMA_NORMAL_TOPOLOGY_THEN_CONSTRUCT_FREE_SEED_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
             },
             "free_Lorentzian_algebra": {
                 "status": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED_AND_GAUGE_INVARIANT_OBSERVABLE_CAUSAL_PROPAGATOR_DEFINED_AUTONOMOUS_GREEN_AND_HADAMARD_STATE_OPEN",
@@ -2793,6 +2828,9 @@ def build() -> dict[str, Any]:
             "BERGER_CUTOFF_TIMESLICE_SOURCE_MAP_REGULAR": True,
             "BERGER_METRIC_COMPANION_RFHGHO_DILATION": True,
             "BERGER_DILATED_REGULAR_CAUCHY_MORPHISM_LEGS": True,
+            "BERGER_FINITE_VOLTERRA_TERMS_MICROLOCALLY_ORIENTED": True,
+            "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_GATE_ISOLATED": True,
+            "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED": False,
             "BERGER_REGULAR_GREENHYP_MORPHISM": False,
             "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED": True,
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY": True,
@@ -2949,7 +2987,7 @@ def build() -> dict[str, Any]:
         "ordered_next_gates": [
             "CONSTRUCT_PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER_AND_SAME_BACKGROUND_BV_MEASURE_LEDGER",
             "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_REPOSITORY_FORM_FACTORS",
-            "BERGER_DILATED_MORPHISM_CONE_MAPPING_AND_CUTOFF_ORIENTATION_EXCLUSION_THEN_FREE_SEED_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
+            "PROVE_COMPACT_SLAB_VOLTERRA_CONVERGENCE_IN_DPRIME_GAMMA_NORMAL_TOPOLOGY_THEN_CONSTRUCT_FREE_SEED_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_REGULAR_GREENHYP_RESPONSE_MORPHISM_AND_GLOBAL_SEED_COVARIANCE",
@@ -3242,9 +3280,12 @@ def build() -> dict[str, Any]:
             "bound. Its compact-slab time-slice source representative is regular as a linear "
             "map. A canonical off-diagonal indefinite Hermitian dilation now turns the free, "
             "cutoff and full metric companions into RFHGHO objects, and the two endpoint "
-            "agreement regions supply regular Cauchy GreenHyp morphism legs. The remaining "
-            "direct-route analytic theorem is their cone action together with exclusion of "
-            "the two same-orientation sectors; "
+            "agreement regions supply regular Cauchy GreenHyp morphism legs. Every finite "
+            "same-sided Volterra term now has the correct oriented canonical relation. The "
+            "remaining infinite-series theorem is convergence of those kernels and their "
+            "formal transposes in the fixed D'_Gamma normal topology; the existing all-Sobolev "
+            "factorial estimate does not imply it. That single sufficient gate would give "
+            "cutoff decomposability and the morphism cone action; "
             "a global seed covariance remains an independent input. "
             "The exact stationary-carrier import consumer is ready, but no classical manifest "
             "has been supplied and finite PBW data do not decide spectral isolation of zero. "
@@ -3356,6 +3397,12 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("BERGER_CUTOFF_TIMESLICE_SOURCE_MAP_REGULAR") is not True
         or flags.get("BERGER_METRIC_COMPANION_RFHGHO_DILATION") is not True
         or flags.get("BERGER_DILATED_REGULAR_CAUCHY_MORPHISM_LEGS") is not True
+        or flags.get("BERGER_FINITE_VOLTERRA_TERMS_MICROLOCALLY_ORIENTED")
+        is not True
+        or flags.get("BERGER_HORMANDER_VOLTERRA_CONVERGENCE_GATE_ISOLATED")
+        is not True
+        or flags.get("BERGER_HORMANDER_VOLTERRA_CONVERGENCE_CERTIFIED")
+        is not False
         or flags.get("VACUUM_CYLINDER_REDUCED_BRIDGE4_ACTIVATED") is not True
         or flags.get("REDUCED_COMPATIBLE_COMPLEX_STRUCTURE_CERTIFIED") is not True
         or flags.get("REDUCED_KREIN_HADAMARD_TWO_POINT_CERTIFIED") is not True
@@ -3646,6 +3693,8 @@ def validate(result: dict[str, Any]) -> None:
             "BERGER_CUTOFF_TIMESLICE_SOURCE_MAP_REGULAR",
             "BERGER_METRIC_COMPANION_RFHGHO_DILATION",
             "BERGER_DILATED_REGULAR_CAUCHY_MORPHISM_LEGS",
+            "BERGER_FINITE_VOLTERRA_TERMS_MICROLOCALLY_ORIENTED",
+            "BERGER_HORMANDER_VOLTERRA_CONVERGENCE_GATE_ISOLATED",
             "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED",
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY",
             "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED",

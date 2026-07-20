@@ -1554,3 +1554,15 @@ The current microlocal boundary is recorded in
 [`berger-cutoff-companion-microlocal-response-preflight.md`](../quantum-weyl/reports/berger-cutoff-companion-microlocal-response-preflight.md).
 The auxiliary RFHGHO carrier and regular endpoint legs are recorded in
 [`berger-cutoff-companion-hermitian-dilation.md`](../quantum-weyl/reports/berger-cutoff-companion-hermitian-dilation.md).
+Every finite same-sided term in the cutoff Volterra series is now certified
+to remain in the oriented canonical relation
+\(\Gamma_\pm=\Delta\cup R_\pm\).  The infinite-series microlocal gate is no
+longer an undifferentiated propagation problem: it is enough to prove, on
+each compact time slab, convergence of the partial-sum kernels and their
+formal transposes in the normal topology of
+\(\mathcal D'_{\Gamma_\pm}\).  The imported factorial estimate gives
+all-Sobolev operator convergence but not this fixed-wavefront convergence.
+Until that stronger statement lands, cutoff decomposability, the regular
+morphism cone action and Hadamard transport remain open.  This reduction is
+recorded in
+[`berger-cutoff-volterra-microlocal-orientation-reduction.md`](../quantum-weyl/reports/berger-cutoff-volterra-microlocal-orientation-reduction.md).
