@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh2c-symbolic-indicial-v1",
+  "title": "Symbolic-frequency indicial structure at Schwarzschild infinity",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "extends",
+    "polar",
+    "axial",
+    "resonance",
+    "exceptional_set",
+    "cross_validation",
+    "mutations",
+    "verification_discipline",
+    "claim_flags",
+    "missing_objects",
+    "stage_seconds",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {"const": "pure-weyl-bh2c-symbolic-indicial-v1"},
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh2c-symbolic-indicial-v1.schema.json"
+    },
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "PURE_WEYL_BH2C_SYMBOLIC_INDICIAL"},
+    "result_token": {
+      "const": "BH2C_SYMBOLIC_INDICIAL_EXCEPTIONAL_SET_IS_OMEGA_ZERO"
+    },
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory", "background_family", "conformal_frame", "generator",
+        "phase_space", "horizon_condition", "infinity_condition", "lifecycle"
+      ],
+      "properties": {"lifecycle": {"const": "CLASSIFIED"}}
+    },
+    "extends": {
+      "type": "object",
+      "required": ["certificate", "certificate_sha256", "scope"],
+      "properties": {
+        "certificate": {
+          "const": "black_hole_programme/certificates/BH2C_ASYMPTOTIC_JORDAN.json"
+        }
+      }
+    },
+    "polar": {
+      "type": "object",
+      "required": ["charpoly", "sectors", "omega_zero_mutation"],
+      "properties": {
+        "charpoly": {"const": "lam**3*(lam + 2*I*omega)**3"},
+        "sectors": {
+          "type": "object",
+          "required": ["0", "-2*I*omega"],
+          "additionalProperties": {
+            "type": "array", "minItems": 3, "maxItems": 3
+          }
+        },
+        "omega_zero_mutation": {
+          "type": "object",
+          "required": ["charpoly", "geometric_multiplicity",
+                       "algebraic_multiplicity"],
+          "properties": {
+            "charpoly": {"const": "lam**6"},
+            "algebraic_multiplicity": {"const": 6},
+            "geometric_multiplicity": {"type": "integer", "maximum": 5}
+          }
+        }
+      }
+    },
+    "axial": {
+      "type": "object",
+      "required": ["rw_charpoly", "rw_row", "cascade_series",
+                   "level2_determinant", "rw_sectors"],
+      "properties": {
+        "rw_charpoly": {"const": "lam*(lam + 2*I*omega)"},
+        "level2_determinant": {"const": "identically zero (rank 1)"}
+      }
+    },
+    "resonance": {
+      "type": "object",
+      "required": [
+        "within_sector_differences",
+        "within_sector_omega_dependent",
+        "cross_sector_differences",
+        "cross_sector_integral_only_for_imaginary_omega",
+        "real_parts_by_sector",
+        "real_parts_omega_independent"
+      ],
+      "properties": {
+        "within_sector_omega_dependent": {"const": false},
+        "cross_sector_integral_only_for_imaginary_omega": {"const": true},
+        "real_parts_omega_independent": {"const": true}
+      }
+    },
+    "exceptional_set": {
+      "type": "object",
+      "required": ["real_frequencies", "mechanisms", "omega_zero_handled_by"],
+      "properties": {
+        "real_frequencies": {"const": ["0"]},
+        "mechanisms": {"type": "array", "minItems": 2}
+      }
+    },
+    "cross_validation": {
+      "type": "object",
+      "required": ["leading_sigma0_matches_certified_producer_inputs", "detail"],
+      "properties": {
+        "leading_sigma0_matches_certified_producer_inputs": {"const": true}
+      }
+    },
+    "mutations": {
+      "type": "object",
+      "required": ["M1_omega_zero_jordan", "M2_cascade"]
+    },
+    "verification_discipline": {"type": "array", "minItems": 3},
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "polar_symbolic_exponents_certified",
+        "polar_mu2w_symbolic_certified",
+        "axial_symbolic_exponents_certified",
+        "semisimplicity_certified",
+        "exceptional_set_certified",
+        "resonance_omega_independence_certified",
+        "metric_reconstruction_all_orders_certified",
+        "symbolic_flux_table_certified",
+        "endpoint_nonselection_theorem_certified",
+        "general_l_certified"
+      ],
+      "properties": {
+        "polar_symbolic_exponents_certified": {"const": true},
+        "polar_mu2w_symbolic_certified": {"const": true},
+        "axial_symbolic_exponents_certified": {"const": true},
+        "semisimplicity_certified": {"const": true},
+        "exceptional_set_certified": {"const": true},
+        "resonance_omega_independence_certified": {"const": true},
+        "metric_reconstruction_all_orders_certified": {"const": false},
+        "symbolic_flux_table_certified": {"const": false},
+        "endpoint_nonselection_theorem_certified": {"const": false},
+        "general_l_certified": {"const": false}
+      }
+    },
+    "missing_objects": {"type": "array", "minItems": 4},
+    "stage_seconds": {"type": "object"},
+    "provenance": {
+      "type": "object",
+      "required": ["generator_path", "reach_path", "reach_sha256"]
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh2c_symbolic_indicial.py"
+    }
+  }
+}

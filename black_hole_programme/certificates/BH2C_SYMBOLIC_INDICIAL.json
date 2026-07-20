@@ -1,0 +1,143 @@
+{
+  "axial": {
+    "cascade_series": {
+      "0": "omega**2/4",
+      "2": "-1",
+      "3": "2"
+    },
+    "level2_determinant": "identically zero (rank 1)",
+    "rw_charpoly": "lam*(lam + 2*I*omega)",
+    "rw_row": "Rx",
+    "rw_sectors": {
+      "-2*I*omega": "-4*I*omega + 1",
+      "0": "1"
+    }
+  },
+  "claim_flags": {
+    "axial_symbolic_exponents_certified": true,
+    "endpoint_nonselection_theorem_certified": false,
+    "exceptional_set_certified": true,
+    "general_l_certified": false,
+    "metric_reconstruction_all_orders_certified": false,
+    "polar_mu2w_symbolic_certified": true,
+    "polar_symbolic_exponents_certified": true,
+    "resonance_omega_independence_certified": true,
+    "semisimplicity_certified": true,
+    "symbolic_flux_table_certified": false
+  },
+  "cross_validation": {
+    "detail": "the leading exponents -1 (mu = 0) and -4 I omega - 1 (mu = -2 omega) are exactly the sigma0 values the certified BH2C producers feed to column_jets at the fixture",
+    "leading_sigma0_matches_certified_producer_inputs": true
+  },
+  "declaration": {
+    "background_family": "Schwarzschild exterior, m = 1",
+    "conformal_frame": "fixed representative g (certified atlas)",
+    "generator": "l = 2 asymptotic formal systems, both parities",
+    "horizon_condition": "not used (this is the infinity endpoint)",
+    "infinity_condition": "regular singular point at r = infinity after the oscillatory split",
+    "lifecycle": "CLASSIFIED",
+    "phase_space": "not constructed here (indicial layer only)",
+    "theory": "S = alpha * integral sqrt(-g) C_{abcd} C^{abcd}"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exceptional_set": {
+    "mechanisms": [
+      "oscillatory eigenvalue collision: 0 = -2 I omega only at omega = 0",
+      "axial cascade leading coefficient omega^2/4 vanishes only at omega = 0"
+    ],
+    "omega_zero_handled_by": "BH2_OMEGA_ZERO",
+    "real_frequencies": [
+      "0"
+    ]
+  },
+  "extends": {
+    "certificate": "black_hole_programme/certificates/BH2C_ASYMPTOTIC_JORDAN.json",
+    "certificate_sha256": "9ed3c744f2916042acee118ce380f469fdcad69bd2010e2deaae78486b97468e",
+    "scope": "lifts the polar mu = -2 omega sector from fixture-only to symbolic frequency (that certificate records polar_mu2w_symbolic_certified = false) and adds the exceptional-frequency determination; supersedes nothing"
+  },
+  "missing_objects": [
+    "all-orders metric reconstruction maps (successor split)",
+    "symbolic-frequency finite-flux power table (successor split); the omega-independence of Re(sigma) makes a frequency-independent Einstein selection plausible but it is NOT computed or claimed here",
+    "the assembled endpoint-nonselection theorem (successor split)",
+    "general l",
+    "Borel/analytic summability of the formal series"
+  ],
+  "mutations": {
+    "M1_omega_zero_jordan": "at omega = 0 the polar leading charpoly collapses to lam^6 with geometric multiplicity 3 < 6 -- a genuine Jordan degeneration",
+    "M2_cascade": "the axial cascade leading coefficient omega^2/4 vanishes exactly at omega = 0 and nowhere else"
+  },
+  "polar": {
+    "charpoly": "lam**3*(lam + 2*I*omega)**3",
+    "omega_zero_mutation": {
+      "algebraic_multiplicity": 6,
+      "charpoly": "lam**6",
+      "geometric_multiplicity": 3
+    },
+    "sectors": {
+      "-2*I*omega": [
+        "-4*I*omega - 1",
+        "-4*I*omega - 2",
+        "-4*I*omega - 3"
+      ],
+      "0": [
+        "-1",
+        "-2",
+        "-3"
+      ]
+    }
+  },
+  "provenance": {
+    "generator_path": "black_hole_programme/bh2c_symbolic_indicial.py",
+    "reach_path": "black_hole_programme/bh2b_polar_reach.py",
+    "reach_sha256": "53314667714c6624e90f204a46d166ae2d7561bdd8e97b5011c235c939121c46"
+  },
+  "resonance": {
+    "cross_sector_differences": [
+      "4*I*omega",
+      "4*I*omega + 1",
+      "4*I*omega + 2",
+      "4*I*omega - 1",
+      "4*I*omega - 2"
+    ],
+    "cross_sector_integral_only_for_imaginary_omega": true,
+    "real_parts_by_sector": {
+      "-2*I*omega": [
+        -3,
+        -2,
+        -1
+      ],
+      "0": [
+        -3,
+        -2,
+        -1
+      ]
+    },
+    "real_parts_omega_independent": true,
+    "within_sector_differences": [
+      -2,
+      -1,
+      1,
+      2
+    ],
+    "within_sector_omega_dependent": false
+  },
+  "result_id": "PURE_WEYL_BH2C_SYMBOLIC_INDICIAL",
+  "result_token": "BH2C_SYMBOLIC_INDICIAL_EXCEPTIONAL_SET_IS_OMEGA_ZERO",
+  "schema": "pure-weyl-bh2c-symbolic-indicial-v1",
+  "schema_path": "black_hole_programme/schema/bh2c-symbolic-indicial-v1.schema.json",
+  "schema_sha256": "f0d5189e6cd6507f95c9a40f59e9a6bc2df1c86247812b6b6c61581274a308b1",
+  "stage_seconds": {
+    "axial": 3.0,
+    "polar": 51.9
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh2c_symbolic_indicial.py",
+  "verification_discipline": [
+    "closed-form symbolic reduction HANGS at symbolic omega; all reductions use exact truncated Laurent series in u = 1/r",
+    "no floating point and no nsimplify anywhere",
+    "semisimplicity checked by explicit nullspace dimension, never inferred from the characteristic polynomial alone",
+    "exponents cross-validated against the sigma0 inputs of the certified fixture producers"
+  ]
+}
