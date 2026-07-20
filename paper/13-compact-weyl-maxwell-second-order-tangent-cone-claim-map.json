@@ -2,7 +2,7 @@
   "schema": "paper-draft-source-map-v1",
   "paper_id": "PAPER_13_COMPACT_WEYL_MAXWELL_SECOND_ORDER_TANGENT_CONE",
   "lifecycle_state": "DRAFT_ALLOWED",
-  "source_baseline": "78bc8577fa078d9384b454745bef8b2336f90620",
+  "source_baseline": "f15964fb6f7642ee63217aa2c0d15968a9439c49",
   "manuscript": "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
   "certified_scope": {
@@ -33,6 +33,9 @@
     "same_sign_axisymmetric_rotation_jacobian_rank": "RANK_2_AWAY_FROM_ORIGIN_RANK_0_AT_ORIGIN",
     "same_sign_automatic_face_aligned_rotation_inertia": "(4N-2,4N-2,2)",
     "same_sign_automatic_face_exact_nonaxisymmetric_arcs": "5_OF_5",
+    "same_sign_automatic_face_full_internal_phase_reduced_inertia": "(4D-2,4D-2,2D-2N+2)",
+    "same_sign_automatic_face_full_fixed_norm_unquotiented_inertia": "(4D-2,4D-2,2D-N+2)",
+    "same_sign_automatic_face_full_support_strata": "15_OF_15",
     "same_sign_complete_phase_parity_fibres_classified": false,
     "same_sign_real_hermitian_components_classified": false,
     "same_sign_candidates_16_through_21_complete_real_cones": false,
@@ -174,6 +177,14 @@
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form.json",
       "git_blob": "cafd0fa3c54a29a69f52e69d9fc33d19b46016eb"
+    },
+    {
+      "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_internal_rotation_normal_form.json",
+      "git_blob": "e2975dffe5153f00bf5c1f5acdebdf83a365ba75"
+    },
+    {
+      "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form.json",
+      "git_blob": "b86ed1c1e67d43847e136d515c5283314533294f"
     }
   ],
   "verification_receipt": {
@@ -189,7 +200,7 @@
     },
     "tier_1": {
       "status": "PASSED",
-      "elapsed_seconds": 28.0,
+      "elapsed_seconds": 37.1,
       "checks": [
         "independent tuned all-primary cone verifier",
         "3 targeted tuned all-primary unit tests",
@@ -205,17 +216,19 @@
         "resonance face-fibre verifier and 3 tests",
         "automatic-face rotation-link verifier and 3 tests",
         "axisymmetric rotation-singularity verifier and 3 tests",
-        "automatic-face aligned rotation-normal-form verifier and 3 tests"
+        "automatic-face aligned rotation-normal-form verifier and 3 tests",
+        "complete phase-reduced internal rotation-normal-form verifier and 3 tests",
+        "complete unquotiented/phase-quotiented fixed-norm rotation-Hessian verifier and 3 tests"
       ]
     },
     "tier_2": {
       "status": "PASS_BY_CONTENT_ADDRESS",
-      "criterion": "All 33 source blobs are pinned at baseline 78bc8577; the collision chain includes the classifier, 864-defect census, universal four-ray theorem, candidatewise audit, all 24 ray lifts, scalar-cone sections, exact bounded fibre products, complete complex resonance-face strata, connected automatic-face rotation links, the axisymmetric critical-locus theorem and its aligned hyperbolic normal form."
+      "criterion": "All 35 source blobs are pinned at baseline f15964fb; the collision chain includes the classifier, 864-defect census, universal four-ray theorem, candidatewise audit, all 24 ray lifts, scalar-cone sections, exact bounded fibre products, complete complex resonance-face strata, connected automatic-face rotation links, the axisymmetric critical-locus theorem, its aligned hyperbolic normal form, and the complete fixed-node-norm axial/polar Hessian before and after node-phase quotient."
     },
     "broader_atlas_audit": {
       "status": "PASSED_AFTER_CONCURRENT_ATLAS_UPDATE",
       "checks": [
-        "94 atlas tests",
+        "96 atlas tests",
         "independent Einstein compact-product atlas verifier"
       ]
     },
@@ -224,5 +237,5 @@
       "criterion": "Paper 13 remains DRAFT_ALLOWED and no mathematical lifecycle state is promoted."
     }
   },
-  "next_gate": "INTERNAL_CURRENT_ORTHOGONAL_NORMAL_FORM_AND_ACTIVE_RESTRICTED_CURRENT_GATE"
+  "next_gate": "ACTIVE_RESONANCE_RESTRICTED_CURRENT_NONDEGENERACY_AND_AUTOMATIC_FACE_RADICAL_RESOLUTION"
 }
