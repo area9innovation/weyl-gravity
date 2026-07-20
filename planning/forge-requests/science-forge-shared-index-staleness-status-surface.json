@@ -1,0 +1,20 @@
+{
+  "id": "sf:forge-request/science-forge-shared-index-staleness-status-surface",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Make the documented stale-shared-index artifact of isolated Science Forge commits safe and intelligible. After an isolated-index commit advances HEAD without touching the process-global index, raw `git status` can display a newly committed path simultaneously as a staged deletion and an untracked addition. This is technically expected but operationally dangerous: resident agents may attempt reset/restore cleanup or a manual commit may absorb misleading index state.",
+    "depends_on": [
+      "sf:forge-request/bug-science-forge-shared-index-cross-stream-commit"
+    ],
+    "stop_condition": "Add a read-only `s-f git status` or equivalent coordinator/worker surface that computes HEAD-to-worktree truth independently of a stale shared index, reports the shared-index base/digest and whether it is stale, distinguishes real staged intent from post-isolated-commit artifacts, and prints exact safe next actions. Add a bounded reconciliation command only if it can prove by compare-and-swap that no concurrent staged intent is lost: preserve every genuine staged blob and stage/unstage bit, rebase it onto current HEAD or refuse with a typed conflict, and never touch unstaged/untracked files. Integrate the health finding into `s-f overview`, `work check`, `work commit` and generated AGENTS/CLAUDE guidance. Add deterministic two-agent regressions for: clean index plus isolated commit; concurrent genuine staged edits; the same path committed through the isolated index while present in the old shared index; HEAD advancing twice; and a manual raw-git attempt that receives a loud warning. The safe status must remain fast on the current large repository.",
+    "forbid": "no `git reset`, `git read-tree HEAD` or index replacement that can discard another agent's staged intent; no broad add/commit; no rewriting commits; no treating staged entries as owned merely because they are under one work item's allowlist; no hiding true conflicts; no requirement that all agents serialize behind one global lock; no mutation from the read-only status command",
+    "notes": [
+      "Live recurrence on 2026-07-20: after atomic isolated-index planning commits, raw status showed `D  planning/work-items/quantum-dressed-canonical-berezinian-locality-preflight.json` and `??` for the same existing file because HEAD advanced while the shared index remained at its old tree.",
+      "The SF5 guarantee that isolated commits read/write the shared index zero times is correct and must be preserved; this request addresses the user-facing consequence rather than weakening isolation.",
+      "A per-agent persistent index or virtual status layer is acceptable if raw-Git escape hatches are documented and guarded."
+    ]
+  }
+}
