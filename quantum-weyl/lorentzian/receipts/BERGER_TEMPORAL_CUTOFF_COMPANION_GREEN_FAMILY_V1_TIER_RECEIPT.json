@@ -1,0 +1,50 @@
+{
+  "receipt_id": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Exact specialization of the pinned nonstationary typed biwave Volterra theorem to the Berger temporal-cutoff companion family, plus fail-closed atlas, active-frontier and planning refresh.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python -m py_compile <changed Python modules>",
+        "python -m json.tool quantum-weyl/lorentzian/schema/berger-temporal-cutoff-companion-green-family-v1.schema.json",
+        "python -m json.tool quantum-weyl/lorentzian/certificates/BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY.json",
+        "git diff --check -- <scoped paths>"
+      ],
+      "elapsed_seconds": 0.5
+    },
+    "tier_1": {
+      "status": "PASS",
+      "runs": [
+        {
+          "command": "PYTHONPATH=quantum-weyl python -m lorentzian.berger_temporal_cutoff_companion_green_family_certificate --check && PYTHONPATH=quantum-weyl python -m lorentzian.verify_berger_temporal_cutoff_companion_green_family && PYTHONPATH=quantum-weyl python -m unittest quantum-weyl/lorentzian/tests/test_berger_temporal_cutoff_companion_green_family.py",
+          "elapsed_seconds": 1.2,
+          "result": "PASS: independent verifier and seven tests; the smooth cutoff family has global advanced/retarded Green maps, two-sided inverses, causal support and adjoint reversal; microlocal and Hadamard flags remain false."
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python -m atlas.generate_quantum_atlas_fragment --check && PYTHONPATH=quantum-weyl python -m atlas.verify_quantum_atlas_fragment && PYTHONPATH=quantum-weyl python -m active_frontier_certificate --check && PYTHONPATH=quantum-weyl python -m verify_active_frontier",
+          "elapsed_seconds": 5.2,
+          "result": "PASS: generated atlas and active frontier reproduce and independently verify with the cutoff-family gate certified but Hadamard lifecycle open."
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl python -m unittest quantum-weyl/tests/test_active_frontier.py quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py",
+          "elapsed_seconds": 6.3,
+          "result": "PASS: sixteen affected consumer tests."
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The affected cutoff-family certificate, quantum atlas and canonical active-frontier consumer chain were replayed. Pinned content-addressed classical Volterra and Berger normal-form inputs were hash-checked rather than rebuilt."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, shared-core algebra change, Hadamard-state promotion, QME promotion or quantum-theory lifecycle promotion occurred."
+    }
+  },
+  "claim_boundary": "Certifies the nonstationary temporal-cutoff companion Green family, two-sided inverse identities, causal support and formal-adjoint reversal. It does not certify cutoff-kernel wavefront propagation, null-cone decomposability of the cutoff operator, a regular response morphism, a global seed covariance, a companion or BRST Hadamard state, physical positivity, renormalized Lorentzian products, a restored QME or a quantum theory."
+}

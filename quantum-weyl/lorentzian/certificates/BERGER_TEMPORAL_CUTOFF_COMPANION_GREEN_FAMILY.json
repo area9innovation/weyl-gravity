@@ -1,0 +1,137 @@
+{
+  "Green_family_theorem": {
+    "advanced_retarded_biwave": "G_Achi,+/-=p G_Cchi,+/- i",
+    "advanced_retarded_companion": "G_Cchi,+/-:Y_s(I)->X_s(I)",
+    "both_inverse_identities": "CERTIFIED",
+    "causal_support": "CERTIFIED",
+    "family": "all smooth cutoffs satisfying cutoff_policy",
+    "formal_adjoint_reversal": "(G_Achi,+)^sharp=G_(Achi^sharp),- and conversely",
+    "nested_slab_globalization": "CERTIFIED",
+    "stationarity_required": false,
+    "status": "CERTIFIED_CONDITIONAL_ON_THE_ALREADY_VERIFIED_BERGER_GRAPH_DOMAIN_HYPOTHESES"
+  },
+  "Hadamard_route": {
+    "BRST_Ward_identity": "OPEN",
+    "cutoff_Green_hyperbolicity": "CERTIFIED",
+    "cutoff_kernel_wavefront_bound": "OPEN",
+    "cutoff_null_cone_decomposability": "OPEN",
+    "future_target_operator": "C_full=[[Box_2,-I10],[V_2,Box_2]]",
+    "global_seed_covariance_with_Krein_policy": "OPEN",
+    "past_seed_operator": "C_free=[[Box_2,-I10],[0,Box_2]], normally hyperbolic principal symbol",
+    "regular_response_morphism": "OPEN"
+  },
+  "claim_boundary": "Specializes the pinned generic typed Volterra theorem to the smooth nonstationary family V_chi=chi(t)V_2. It certifies global advanced and retarded Green operators, both inverse identities, causal support and formal-adjoint reversal for every declared cutoff. It does not control the wavefront set of the cutoff Green kernel, prove cutoff companion decomposability or regular response-map transport, choose a global seed covariance, verify BRST Ward identities or construct a Hadamard state, positivity, QME or quantum theory.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": false,
+    "BERGER_CUTOFF_COMPANION_ADJOINT_REVERSAL": true,
+    "BERGER_CUTOFF_COMPANION_BOTH_INVERSE_IDENTITIES": true,
+    "BERGER_CUTOFF_COMPANION_CAUSAL_SUPPORT": true,
+    "BERGER_CUTOFF_COMPANION_NULL_CONE_DECOMPOSABLE": false,
+    "BERGER_CUTOFF_COMPANION_WAVEFRONT_THEOREM": false,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+    "BERGER_REGULAR_GREENHYP_MORPHISM": false,
+    "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY": true,
+    "QUANTUM_CLAIM": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "cutoff_policy": {
+    "chi": "smooth real function of Berger time t",
+    "future": "chi=1 on and after a future Cauchy neighborhood",
+    "multiplication_side": "V_chi=chi V_2",
+    "past": "chi=0 on and before a past Cauchy neighborhood",
+    "transition": "supp(d chi) lies in a compact time slab"
+  },
+  "dependency_refs": {
+    "Berger_companion": {
+      "result_id": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT",
+      "sha256": "9fad67f1b4e159051774e7b1d93d4a6373487f65334039b5e30dda98ff451575"
+    },
+    "Berger_stationary_volterra": {
+      "result_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_V2_IMPORT",
+      "sha256": "b6f01563b642ba50ef329acfebb8c2fba582859ecef5d3832250f27519214abc"
+    },
+    "base_wave_parametrix": {
+      "result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+      "sha256": "1a2bb5b124734a5aa63fdd8c1285d4847b8ff5ea02aed8d6b840db19dfe23fc1"
+    },
+    "generic_typed_volterra_import": {
+      "result_id": "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORT",
+      "sha256": "3214437cb49b294b4bce92003830bdf02d776df5e00c320ac1c5e7f74361f365"
+    },
+    "pinned_generic_classical_theorem": {
+      "result_id": "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1",
+      "sha256": "52c74ce7e725ff61d49644721bb3329ad385a903c477ed5654fca00d763be8f9"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_input_checks": {
+    "Berger_normal_form_is_lower_order_biwave": true,
+    "Berger_stationary_consumer_already_satisfies_energy_hypotheses": true,
+    "base_tensor_wave_is_normally_hyperbolic": true,
+    "generic_theorem_accepts_order_two_graph_bounded_remainder": true,
+    "generic_theorem_allows_time_dependence": true,
+    "generic_theorem_imported": true,
+    "generic_theorem_supplies_Green_family_properties": true,
+    "working_classical_theorem_matches_pinned_hash": true
+  },
+  "lifecycle_layer": "LORENTZIAN_CAUSAL_CUTOFF_FAMILY",
+  "negative_control": {
+    "all_pass": false,
+    "failed_check": "generic_theorem_accepts_cutoff_time_dependence",
+    "mutation": "forbid smooth time dependence in the generic theorem"
+  },
+  "next_gate": "BERGER_CUTOFF_COMPANION_MICROLOCAL_PROPAGATION_AND_REGULAR_RESPONSE_MORPHISM",
+  "provenance": {
+    "Berger_companion_result_id": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT",
+    "generic_import_result_id": "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORT",
+    "generic_theorem_result_id": "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1",
+    "source_manifest": {
+      "../reports/berger-temporal-cutoff-companion-green-family.md": "f32d4a5b525da5d670fc4cfaf096190a242243942b45540386d00d0d0bb882c2",
+      "berger_temporal_cutoff_companion_green_family.py": "a9bb20c9c34614d0ed7daf4bd915eb02fffe3e8981b9cd3ed460d7d11f9e2aed",
+      "berger_temporal_cutoff_companion_green_family_certificate.py": "fe477c91c84f6951a52de068160692d9d4484b5a05a08fab80cec8155fbdb36e",
+      "schema/berger-temporal-cutoff-companion-green-family-v1.schema.json": "ed5e628e1eed1f060aa16d949efd8e79a2a325616e2f5557c004540e03f7f75f",
+      "tests/test_berger_temporal_cutoff_companion_green_family.py": "6247e7c73f8068c417a66a550dd0184dbdf7ace71728a28840ce5b4ab7447d67",
+      "verify_berger_temporal_cutoff_companion_green_family.py": "188238017ab235630e240669317ddc76cb60244c067d9b5a23e62cc67e95cc43"
+    },
+    "source_manifest_sha256": "0bebc76b5d294686e97d40bf231b008fa1e9486355cb3d248ac800f69a306bea"
+  },
+  "result_id": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY",
+  "result_state": "NONSTATIONARY_CUTOFF_GREEN_FAMILY_CERTIFIED_MICROLOCAL_PROPAGATION_AND_SEED_COVARIANCE_OPEN",
+  "schema": "quantum-weyl-berger-temporal-cutoff-companion-green-family-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "specialization_replay": {
+    "all_pass": true,
+    "assumptions": {
+      "V2_graph_bounded_order_at_most_two": true,
+      "chi_one_on_future_Cauchy_neighborhood": true,
+      "chi_smooth": true,
+      "chi_zero_on_past_Cauchy_neighborhood": true,
+      "d_chi_temporally_compact": true,
+      "generic_theorem_allows_smooth_time_dependence": true,
+      "smooth_multiplication_bounded_on_each_slab_Sobolev_space": true
+    },
+    "checks": {
+      "cutoff_coefficients_are_smoothly_time_dependent": true,
+      "cutoff_remainder_has_order_at_most_two": true,
+      "cutoff_remainder_preserves_graph_domain_bound": true,
+      "future_operator_is_full_Berger_companion": true,
+      "generic_theorem_accepts_cutoff_time_dependence": true,
+      "past_operator_is_free_companion": true,
+      "transition_is_temporally_compact": true
+    },
+    "operators": {
+      "cutoff_biwave": "A_chi=Box_2^2+chi(t)V_2",
+      "cutoff_companion": "C_chi=[[Box_2,-I10],[chi(t)V_2,Box_2]]",
+      "free_biwave": "A_free=Box_2^2",
+      "free_companion": "C_free=[[Box_2,-I10],[0,Box_2]]",
+      "full_biwave": "A_full=Box_2^2+V_2=A10",
+      "full_companion": "C_full=[[Box_2,-I10],[V_2,Box_2]]"
+    }
+  }
+}

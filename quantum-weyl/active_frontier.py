@@ -136,6 +136,7 @@ DEPENDENCIES = {
     "A104_partial": HERE / "lorentzian/certificates/BERGER_A104_GLOBAL_PARTIAL_ASSEMBLY.json",
     "Hadamard_existence_audit": HERE / "lorentzian/certificates/BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT.json",
     "Hadamard_regular_morphism_boundary": HERE / "lorentzian/certificates/BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY.json",
+    "temporal_cutoff_companion_Green_family": HERE / "lorentzian/certificates/BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY.json",
     "typed_biwave_Volterra_theorem": HERE / "lorentzian/certificates/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORT.json",
     "stationary_generator_import_readiness": HERE / "lorentzian/certificates/BERGER_RETAINED_26_STATIONARY_GENERATOR_IMPORT_READINESS.json",
     "curvature_image_CCR": HERE / "lorentzian/certificates/CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA.json",
@@ -197,6 +198,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "A104_partial": "GLOBAL_A104_104_BY_104_KNOWN_MASK_EXACT_TWO_A12_SLOTS_OPEN",
         "Hadamard_existence_audit": "DECOMPOSABILITY_CERTIFIED_DIRECT_CAUSAL_AND_STATIONARY_COMPLETIONS_OPEN",
         "Hadamard_regular_morphism_boundary": "FINITE_WAVEFRONT_MAPS_CERTIFIED_CUTOFF_REGULAR_MORPHISM_AND_SEED_COVARIANCE_OPEN",
+        "temporal_cutoff_companion_Green_family": "NONSTATIONARY_CUTOFF_GREEN_FAMILY_CERTIFIED_MICROLOCAL_PROPAGATION_AND_SEED_COVARIANCE_OPEN",
         "typed_biwave_Volterra_theorem": "CONDITIONAL_TYPED_BIWAVE_GREEN_THEOREM_IMPORTED_HADAMARD_AND_PHYSICAL_NORMAL_FORM_OPEN",
         "stationary_generator_import_readiness": "CONSUMER_READY_STATIONARY_CARRIER_INPUT_NOT_SUPPLIED",
         "curvature_image_CCR": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_CERTIFIED_DIRECT_KERNEL_AND_STATE_OPEN",
@@ -2475,6 +2477,25 @@ def _load() -> dict[str, dict[str, Any]]:
         != "NOT_SUPPLIED"
     ):
         raise ValueError("Hadamard regular-morphism frontier drifted")
+    cutoff_family = values["temporal_cutoff_companion_Green_family"]
+    cutoff_flags = cutoff_family.get("claim_flags", {})
+    if (
+        cutoff_flags.get("BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY")
+        is not True
+        or cutoff_flags.get("BERGER_CUTOFF_COMPANION_BOTH_INVERSE_IDENTITIES")
+        is not True
+        or cutoff_flags.get("BERGER_CUTOFF_COMPANION_CAUSAL_SUPPORT") is not True
+        or cutoff_flags.get("BERGER_CUTOFF_COMPANION_ADJOINT_REVERSAL")
+        is not True
+        or cutoff_flags.get("BERGER_CUTOFF_COMPANION_WAVEFRONT_THEOREM")
+        is not False
+        or cutoff_flags.get("BERGER_REGULAR_GREENHYP_MORPHISM") is not False
+        or cutoff_flags.get("BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION")
+        is not False
+        or cutoff_family.get("next_gate")
+        != "BERGER_CUTOFF_COMPANION_MICROLOCAL_PROPAGATION_AND_REGULAR_RESPONSE_MORPHISM"
+    ):
+        raise ValueError("temporal-cutoff companion Green-family frontier drifted")
     typed_biwave = values["typed_biwave_Volterra_theorem"]
     typed_flags = typed_biwave.get("claim_flags", {})
     if (
@@ -2600,8 +2621,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "CONSTRUCT_PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER_AND_SAME_BACKGROUND_BV_MEASURE_LEDGER",
             },
             "free_Lorentzian_state": {
-                "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
-                "next_gate": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY_REGULAR_RESPONSE_MORPHISM_AND_GLOBAL_SEED_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
+                "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_TEMPORAL_CUTOFF_GREEN_FAMILY_CERTIFIED_MICROLOCAL_RESPONSE_AND_FULL_BV_OPEN",
+                "next_gate": "BERGER_CUTOFF_COMPANION_MICROLOCAL_PROPAGATION_REGULAR_RESPONSE_MORPHISM_AND_GLOBAL_SEED_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
             },
             "free_Lorentzian_algebra": {
                 "status": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED_AND_GAUGE_INVARIANT_OBSERVABLE_CAUSAL_PROPAGATOR_DEFINED_AUTONOMOUS_GREEN_AND_HADAMARD_STATE_OPEN",
@@ -2716,7 +2737,7 @@ def build() -> dict[str, Any]:
             "COMPANION_DECOMPOSABILITY_CERTIFIED": True,
             "BERGER_FINITE_GRAPH_WAVEFRONT_SAFETY": True,
             "BERGER_LOCAL_GHOST_HADAMARD_FACTORS_INCLUDED": True,
-            "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY": False,
+            "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY": True,
             "BERGER_REGULAR_GREENHYP_MORPHISM": False,
             "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED": True,
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY": True,
@@ -2873,7 +2894,7 @@ def build() -> dict[str, Any]:
         "ordered_next_gates": [
             "CONSTRUCT_PRODUCT_S2_S2_GAUGE_FIXED_METRIC_HESSIAN_SPECTRAL_CARRIER_AND_SAME_BACKGROUND_BV_MEASURE_LEDGER",
             "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_REPOSITORY_FORM_FACTORS",
-            "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY_REGULAR_RESPONSE_MORPHISM_AND_GLOBAL_SEED_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
+            "BERGER_CUTOFF_COMPANION_MICROLOCAL_PROPAGATION_REGULAR_RESPONSE_MORPHISM_AND_GLOBAL_SEED_COVARIANCE_OR_CORRECTED_STATIONARY_BRST_LIFT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_REGULAR_GREENHYP_RESPONSE_MORPHISM_AND_GLOBAL_SEED_COVARIANCE",
@@ -3158,9 +3179,12 @@ def build() -> dict[str, Any]:
             "failure and the later full-BV "
             "BRST/Krein and physical-positivity gate are recorded separately. The finite "
             "companion graph maps are wavefront-safe and the ghost local parametrices are "
-            "included, but the stationary slab Volterra maps are not yet a compact-support "
-            "regular GreenHyp morphism. A nonstationary temporal-cutoff Green family and a "
-            "global seed covariance are the two direct-route inputs still missing. "
+            "included. The pinned typed Volterra theorem permits smooth time dependence, "
+            "so its Berger specialization now certifies the full nonstationary temporal-cutoff "
+            "Green family, two-sided inverse identities, causal support and adjoint reversal. "
+            "The remaining direct-route analytic theorem is microlocal propagation through "
+            "the compact transition slab and the resulting regular GreenHyp response morphism; "
+            "a global seed covariance remains an independent input. "
             "The exact stationary-carrier import consumer is ready, but no classical manifest "
             "has been supplied and finite PBW data do not decide spectral isolation of zero. "
             "The relative Einstein-Weyl rail imports the final all-row support-local "
@@ -3551,6 +3575,7 @@ def validate(result: dict[str, Any]) -> None:
             "COMPANION_DECOMPOSABILITY_CERTIFIED",
             "BERGER_FINITE_GRAPH_WAVEFRONT_SAFETY",
             "BERGER_LOCAL_GHOST_HADAMARD_FACTORS_INCLUDED",
+            "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY",
             "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED",
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY",
             "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED",

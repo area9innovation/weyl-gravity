@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-temporal-cutoff-companion-green-family-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_layer",
+    "dependency_tags",
+    "classical_commit",
+    "setting_id",
+    "dependency_refs",
+    "exact_input_checks",
+    "cutoff_policy",
+    "specialization_replay",
+    "negative_control",
+    "Green_family_theorem",
+    "Hadamard_route",
+    "claim_flags",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-temporal-cutoff-companion-green-family-v1"},
+    "result_id": {"const": "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY"},
+    "result_state": {"const": "NONSTATIONARY_CUTOFF_GREEN_FAMILY_CERTIFIED_MICROLOCAL_PROPAGATION_AND_SEED_COVARIANCE_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_CAUSAL_CUTOFF_FAMILY"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generic_typed_volterra_import",
+        "pinned_generic_classical_theorem",
+        "Berger_companion",
+        "Berger_stationary_volterra",
+        "base_wave_parametrix"
+      ],
+      "properties": {
+        "generic_typed_volterra_import": {"$ref": "#/$defs/dependency"},
+        "pinned_generic_classical_theorem": {"$ref": "#/$defs/dependency"},
+        "Berger_companion": {"$ref": "#/$defs/dependency"},
+        "Berger_stationary_volterra": {"$ref": "#/$defs/dependency"},
+        "base_wave_parametrix": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "exact_input_checks": {
+      "type": "object",
+      "minProperties": 8,
+      "additionalProperties": {"const": true}
+    },
+    "cutoff_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chi", "past", "future", "transition", "multiplication_side"],
+      "properties": {
+        "chi": {"type": "string", "minLength": 1},
+        "past": {"type": "string", "minLength": 1},
+        "future": {"type": "string", "minLength": 1},
+        "transition": {"type": "string", "minLength": 1},
+        "multiplication_side": {"const": "V_chi=chi V_2"}
+      }
+    },
+    "specialization_replay": {"$ref": "#/$defs/replay"},
+    "negative_control": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mutation", "all_pass", "failed_check"],
+      "properties": {
+        "mutation": {"type": "string", "minLength": 1},
+        "all_pass": {"const": false},
+        "failed_check": {"const": "generic_theorem_accepts_cutoff_time_dependence"}
+      }
+    },
+    "Green_family_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family",
+        "advanced_retarded_companion",
+        "advanced_retarded_biwave",
+        "both_inverse_identities",
+        "causal_support",
+        "nested_slab_globalization",
+        "formal_adjoint_reversal",
+        "stationarity_required",
+        "status"
+      ],
+      "properties": {
+        "family": {"type": "string", "minLength": 1},
+        "advanced_retarded_companion": {"type": "string", "minLength": 1},
+        "advanced_retarded_biwave": {"type": "string", "minLength": 1},
+        "both_inverse_identities": {"const": "CERTIFIED"},
+        "causal_support": {"const": "CERTIFIED"},
+        "nested_slab_globalization": {"const": "CERTIFIED"},
+        "formal_adjoint_reversal": {"type": "string", "minLength": 1},
+        "stationarity_required": {"const": false},
+        "status": {"const": "CERTIFIED_CONDITIONAL_ON_THE_ALREADY_VERIFIED_BERGER_GRAPH_DOMAIN_HYPOTHESES"}
+      }
+    },
+    "Hadamard_route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "past_seed_operator",
+        "future_target_operator",
+        "cutoff_Green_hyperbolicity",
+        "cutoff_kernel_wavefront_bound",
+        "cutoff_null_cone_decomposability",
+        "regular_response_morphism",
+        "global_seed_covariance_with_Krein_policy",
+        "BRST_Ward_identity"
+      ],
+      "properties": {
+        "past_seed_operator": {"type": "string", "minLength": 1},
+        "future_target_operator": {"type": "string", "minLength": 1},
+        "cutoff_Green_hyperbolicity": {"const": "CERTIFIED"},
+        "cutoff_kernel_wavefront_bound": {"const": "OPEN"},
+        "cutoff_null_cone_decomposability": {"const": "OPEN"},
+        "regular_response_morphism": {"const": "OPEN"},
+        "global_seed_covariance_with_Krein_policy": {"const": "OPEN"},
+        "BRST_Ward_identity": {"const": "OPEN"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY",
+        "BERGER_CUTOFF_COMPANION_BOTH_INVERSE_IDENTITIES",
+        "BERGER_CUTOFF_COMPANION_CAUSAL_SUPPORT",
+        "BERGER_CUTOFF_COMPANION_ADJOINT_REVERSAL",
+        "BERGER_CUTOFF_COMPANION_WAVEFRONT_THEOREM",
+        "BERGER_CUTOFF_COMPANION_NULL_CONE_DECOMPOSABLE",
+        "BERGER_REGULAR_GREENHYP_MORPHISM",
+        "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION",
+        "BERGER_26_ROW_BRST_HADAMARD",
+        "BERGER_54_ROW_BRST_HADAMARD",
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY",
+        "BERGER_HADAMARD_DATA",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY": {"const": true},
+        "BERGER_CUTOFF_COMPANION_BOTH_INVERSE_IDENTITIES": {"const": true},
+        "BERGER_CUTOFF_COMPANION_CAUSAL_SUPPORT": {"const": true},
+        "BERGER_CUTOFF_COMPANION_ADJOINT_REVERSAL": {"const": true},
+        "BERGER_CUTOFF_COMPANION_WAVEFRONT_THEOREM": {"const": false},
+        "BERGER_CUTOFF_COMPANION_NULL_CONE_DECOMPOSABLE": {"const": false},
+        "BERGER_REGULAR_GREENHYP_MORPHISM": {"const": false},
+        "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": {"const": false},
+        "BERGER_26_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_54_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": {"const": false},
+        "BERGER_HADAMARD_DATA": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_CUTOFF_COMPANION_MICROLOCAL_PROPAGATION_AND_REGULAR_RESPONSE_MORPHISM"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generic_theorem_result_id",
+        "generic_import_result_id",
+        "Berger_companion_result_id",
+        "source_manifest",
+        "source_manifest_sha256"
+      ],
+      "properties": {
+        "generic_theorem_result_id": {"type": "string", "minLength": 1},
+        "generic_import_result_id": {"type": "string", "minLength": 1},
+        "Berger_companion_result_id": {"type": "string", "minLength": 1},
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        },
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["assumptions", "checks", "all_pass", "operators"],
+      "properties": {
+        "assumptions": {
+          "type": "object",
+          "minProperties": 7,
+          "additionalProperties": {"type": "boolean"}
+        },
+        "checks": {
+          "type": "object",
+          "minProperties": 7,
+          "additionalProperties": {"const": true}
+        },
+        "all_pass": {"const": true},
+        "operators": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["free_biwave", "cutoff_biwave", "full_biwave", "free_companion", "cutoff_companion", "full_companion"],
+          "properties": {
+            "free_biwave": {"type": "string", "minLength": 1},
+            "cutoff_biwave": {"type": "string", "minLength": 1},
+            "full_biwave": {"type": "string", "minLength": 1},
+            "free_companion": {"type": "string", "minLength": 1},
+            "cutoff_companion": {"type": "string", "minLength": 1},
+            "full_companion": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    }
+  }
+}

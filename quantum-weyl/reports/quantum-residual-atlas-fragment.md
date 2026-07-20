@@ -34,6 +34,11 @@ ledger remain open. Its per-mode fields therefore remain `NO_CERTIFIED_MAP`
 or `OPEN`. Their strict interacting
 quantum lifecycle is separately `OBSTRUCTED` by the local Euclidean QME
 result; this does not alter the accepted classical causal carrier.
+The smooth nonstationary temporal-cutoff companion Green family is now also
+certified, including two-sided inverse identities, causal support and
+formal-adjoint reversal. This does not promote the Berger row: cutoff-kernel
+microlocal propagation, a regular response morphism, a global seed covariance
+and the BRST Ward identities remain open.
 
 The classes `W_+^2` and `W_-^2` remain explicitly identified as classical
 deformation/vertex classes. Their Gram matrix and free-BV cohomology status

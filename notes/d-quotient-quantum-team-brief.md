@@ -1511,17 +1511,21 @@ not six independent mysteries. The present stationary slab Volterra maps are
 not compact-to-compact regular GreenHyp morphisms, and their all-Sobolev
 factorial bounds do not supply a distribution-kernel wavefront estimate.
 
-The active direct bridge is therefore
+The active direct bridge has advanced to
 
 ```text
-BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY
-  -> regular compact-support response morphism
+BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY [CERTIFIED]
+  -> cutoff microlocal propagation and regular compact-support response morphism
   -> companion Hadamard two-point distribution
 ```
 
-Its activation gate is a smooth nonstationary cutoff family with typed Green
-operators, causal support and adjoint reversal, followed independently by a
-global seed covariance with declared BV/Krein and physical-positivity policy.
+The pinned typed Volterra theorem explicitly permits smooth time-dependent
+coefficients. Its specialization to `V_chi=chi(t)V_2` now certifies global
+advanced/retarded operators, both inverse identities, causal support and
+adjoint reversal for every declared smooth cutoff. The active analytic gate is
+the wavefront theorem through the compact transition slab and the resulting
+regular response morphism, followed independently by a global seed covariance
+with declared BV/Krein and physical-positivity policy.
 The fail-closed atlas row remains `OPEN`: no full companion covariance, BRST
 Ward identity or physical state-space sign has been certified.
 
@@ -1530,4 +1534,6 @@ Receipt:
 [`BERGER_A104_ENDPOINT_COMPLETION_V1_TIER_RECEIPT.json`](../quantum-weyl/lorentzian/receipts/BERGER_A104_ENDPOINT_COMPLETION_V1_TIER_RECEIPT.json), plus
 [`berger-canonical-graph-q-cauchy-obstruction.md`](../quantum-weyl/reports/berger-canonical-graph-q-cauchy-obstruction.md).
 The narrowed direct-route boundary is recorded in
-[`berger-hadamard-regular-morphism-boundary.md`](../quantum-weyl/reports/berger-hadamard-regular-morphism-boundary.md).
+[`berger-hadamard-regular-morphism-boundary.md`](../quantum-weyl/reports/berger-hadamard-regular-morphism-boundary.md),
+and the closed cutoff-family gate in
+[`berger-temporal-cutoff-companion-green-family.md`](../quantum-weyl/reports/berger-temporal-cutoff-companion-green-family.md).

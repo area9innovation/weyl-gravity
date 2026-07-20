@@ -510,19 +510,23 @@ nonzero nilpotent order-two principal block.  Separately, any full graded BV
 lift must satisfy BRST/Krein compatibility and positivity on physical
 cohomology.  These analytic and graded-physical gates are not conflated.
 The direct-route microlocal audit closes the finite differential graph maps
-and local ghost-factor inclusion.  Its smallest missing analytic carrier is
-now explicit: a nonstationary temporal-cutoff companion Green family from
-which a compact-support regular GreenHyp response morphism and cone map can
-be proved.  A global seed covariance with declared BV/Krein and physical-
-positivity policy remains independently open.  Thus the old six-item ledger
-has been reduced to one transport theorem plus one covariance choice, without
-promoting a Hadamard flag.
+and local ghost-factor inclusion.  The generic typed Volterra theorem permits
+smooth time dependence, and its Berger specialization now certifies the full
+nonstationary temporal-cutoff companion Green family, both inverse identities,
+causal support and adjoint reversal.  The remaining analytic theorem is
+microlocal propagation through the compact transition slab and the resulting
+compact-support regular GreenHyp response morphism and cone map.  A global
+seed covariance with declared BV/Krein and physical-positivity policy remains
+independently open.  Thus the old six-item ledger has been reduced to one
+microlocal transport theorem plus one covariance choice, without promoting a
+Hadamard flag.
 The generic typed biwave Volterra theorem is now independently imported as
 reusable causal infrastructure. It distinguishes solution- and source-space
 resolvents, proves both factorial bounds and inverse identities, reverses the
 adjoint factor order correctly, and covers the committed Berger and Nariai
-consumers. It remains conditional on an exact physical normal form and its
-finite-slab energy hypotheses and supplies no Hadamard state.
+consumers. Its cutoff specialization remains conditional on the already
+verified Berger graph-domain hypotheses and supplies no wavefront theorem or
+Hadamard state.
 
 The quantum column of the programme residual atlas is now generated at
 `quantum-weyl/atlas/quantum-atlas-fragment.json`. Its fifteen common-envelope

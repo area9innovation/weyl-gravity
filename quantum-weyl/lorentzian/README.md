@@ -167,16 +167,18 @@ identity.  The machine receipts are
 `BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT` and
 `BERGER_CANONICAL_GRAPH_Q_CAUCHY_OBSTRUCTION`.
 
-The direct causal route has now been reduced to a theorem-sized import.  The
+The direct causal route has now passed that theorem-sized import.  The
 finite `A10 <-> C20` graph maps are differential of order at most two and are
 wavefront-safe on any distribution already defined; the ghost local
-parametrices are separate direct-sum factors.  The stationary slab Volterra
-maps, however, are not compact-to-compact regular GreenHyp morphisms.  The
-next gate is a nonstationary temporal-cutoff companion Green family, followed
-by a regular response-map and cone-mapping proof in the sense of Fewster
-Theorem 5.16.  A global seed covariance with explicit BV/Krein and physical
-positivity policy remains separate.  See
-`BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY`.
+parametrices are separate direct-sum factors.  Because the pinned typed
+Volterra theorem allows smooth time-dependent coefficients, its specialization
+to `chi(t)V_2` certifies the nonstationary temporal-cutoff companion Green
+family, both inverse identities, causal support and adjoint reversal.  The
+next gate is a wavefront theorem through the compact transition slab and the
+resulting regular response-map cone action in the sense of Fewster Theorem
+5.16.  A global seed covariance with explicit BV/Krein and physical positivity
+policy remains separate.  See `BERGER_HADAMARD_REGULAR_MORPHISM_BOUNDARY` and
+`BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY`.
 
 The receiving side of that route is now executable.  The stationary-generator
 import readiness result requires content-addressed exact PBW records for
