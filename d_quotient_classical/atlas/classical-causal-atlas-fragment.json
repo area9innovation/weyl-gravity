@@ -1083,6 +1083,75 @@
       }
     },
     {
+      "claim_boundary": "With the project convention X=(nabla theta)^2, the exact generalized ADM determinant is -36 X^2(2F_X+B)^2. The declared literal coefficient B=F_X intersects the true degeneracy surface B=-2F_X only at F_X=B=0. The nonzero-slope stratum therefore fails the first invariant gate; the zero-slope stratum is only a constant Einstein-Hilbert shift and collapses to the imported P2 family with empty good locus. The convention-correct minus-2F_X density is retained solely as a control and receives no full Berger coefficient-locus promotion. No selected action, full BV unary, background system, causal parent, nonlinear q2, Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result is exported. This is not a general Horndeski/DHOST no-go.",
+      "descriptions": {
+        "causal": "OBSTRUCTED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "OPEN",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/COMPENSATOR_KINETIC_BRAIDING_LEVEL2_NO_GO_V1.json",
+          "result_id": "COMPENSATOR_KINETIC_BRAIDING_LEVEL2_NO_GO_V1",
+          "sha256": "833d7e0266fc81df2d73e9b822db29e451d8df7f0ae9e0cbe06aa391d8dcf584"
+        },
+        {
+          "path": "d_quotient_classical/certificates/COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1.json",
+          "result_id": "COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1",
+          "sha256": "2e687331b6985b3a84c54a0f05b210bee5e3ac06d5659b5603ac9bc25f61dfed"
+        }
+      ],
+      "id": "classical.complex_compensator.active_clock.degenerate_curvature_level3_literal_good_locus",
+      "mode_data": {
+        "dispersion": {
+          "statement": "For X nonzero the literal plus-F_X coupling has exact velocity determinant -324 X^2 F_X^2; every novel slope is nondegenerate in the lapse-acceleration block.",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "The action fails before a reduced constraint surface or pairing is formed; the convention-correct minus-2F_X expression is only a separate control.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "The homogeneous ADM separator is not an observational mode, particle, charge or background crosswalk.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No selected action exists for a bounded tangent cone.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "The novel literal family fails before a causal unary parent can be selected.",
+            "status": "OBSTRUCTED"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No selected action exists for a smooth-secular tangent cone.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "No selected Level-3 action exists, so no nonlinear q2 is constructed.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "local active-clock homogeneous ADM degeneracy fixture; imported common unit-cylinder and frozen-Berger P2 locus only on the collapsed f1=0 stratum",
+        "boundaries": "closed compact Cauchy surface S3; no spatial boundary",
+        "carrier": "two-velocity homogeneous ADM block (h,A) testing the lapse-acceleration degeneracy of the literal coupling; not a mode or particle carrier",
+        "charge_sector": "unreduced local action-degeneracy gate; no selected-action or fixed-charge quotient",
+        "degree": "classical action and exact quadratic velocity Hessian only",
+        "ell": "homogeneous degeneracy fixture; no harmonic mode identification",
+        "k": "local temporal principal direction only",
+        "m": "NOT_APPLICABLE",
+        "omega": "raw homogeneous velocity symbols h and A; no positive-frequency splitting",
+        "parity": "real parity-even shift-symmetric scalar-curvature sector",
+        "theory": "quadratic P(X) family plus F(X)R_hat+F_X[(Box_hat theta)^2-(nabla_hat nabla_hat theta)^2], F=f0+f1X, with Level-2 braiding zero"
+      }
+    },
+    {
       "claim_boundary": "Causality is unary and the cyclic Cartan theorem stops at arity three. The retained-26 homotopy extends to one-sided past/future/time-compact smooth bikernel LF classes with cyclic adjoint control, but the certified factorization has a cutoff-escape continuity obstruction on the full smooth Frechet class. The imported smooth Ward kernel has no one-sided support profile, so no Ward or Hadamard promotion follows. Raw affine D, arity four, Hadamard/QME, and a branch-resolved physical projector remain false.",
       "descriptions": {
         "causal": "CERTIFIED",
@@ -2458,7 +2527,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
-  "generated_by_sha256": "76b63b4c2986ca3c35ed941fb952e70a4afc022cdbd76fd898354d964745cab9",
+  "generated_by_sha256": "217d46b9a2d34af69ff7ac49c2387d1e3d5b07be75ad3ffc1529960ee9bc8bcc",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

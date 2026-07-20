@@ -319,6 +319,29 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertIn("nonlinear q2 is not constructed", entry["claim_boundary"])
         self.assertIn("No causal parent", entry["claim_boundary"])
 
+    def test_level3_literal_curvature_coupling_fails_degeneracy(self) -> None:
+        entry = self.entries[
+            "classical.complex_compensator.active_clock."
+            "degenerate_curvature_level3_literal_good_locus"
+        ]
+        self.assertEqual(entry["descriptions"]["causal"], "OBSTRUCTED")
+        self.assertEqual(
+            entry["descriptions"]["symplectic"], "NO_CERTIFIED_MAP"
+        )
+        self.assertEqual(entry["descriptions"]["nonlinear"], "NOT_APPLICABLE")
+        self.assertEqual(
+            entry["descriptions"]["observational"], "NO_CERTIFIED_MAP"
+        )
+        self.assertEqual(entry["descriptions"]["quantum"], "OPEN")
+        self.assertIn(
+            "COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn("-36 X^2(2F_X+B)^2", entry["claim_boundary"])
+        self.assertIn("only at F_X=B=0", entry["claim_boundary"])
+        self.assertIn("No selected action", entry["claim_boundary"])
+        self.assertIn("not a general Horndeski/DHOST no-go", entry["claim_boundary"])
+
     def test_sharp_green_transfer_crosswalk_has_no_mode_identification(self) -> None:
         theorem_id = "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1"
         for chirality in ("plus", "minus"):

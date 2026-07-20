@@ -1,0 +1,308 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/compensator-degenerate-curvature-level3-no-go-v1.schema.json",
+  "title": "Exact Level-3 no-go for the literal minimal curvature coupling",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "imports",
+    "conventions",
+    "complete_declared_action",
+    "exact_adm_degeneracy",
+    "complete_literal_locus",
+    "convention_correct_control",
+    "gate_disposition",
+    "terminal_verdict",
+    "exact_checks",
+    "claim_flags",
+    "claim_boundary",
+    "next_gate",
+    "content_hashes"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-compensator-degenerate-curvature-level3-no-go-v1"
+    },
+    "result_id": {
+      "const": "COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1"
+    },
+    "result_state": {
+      "const": "SCOPED_LEVEL3_LITERAL_CURVATURE_COUPLING_GOOD_LOCUS_EMPTY"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "imports": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level2_no_go"
+      ],
+      "properties": {
+        "level2_no_go": {
+          "$ref": "#/$defs/import"
+        }
+      }
+    },
+    "conventions": {
+      "$ref": "#/$defs/nonempty-object"
+    },
+    "complete_declared_action": {
+      "$ref": "#/$defs/nonempty-object"
+    },
+    "exact_adm_degeneracy": {
+      "$ref": "#/$defs/nonempty-object"
+    },
+    "complete_literal_locus": {
+      "type": "object",
+      "minProperties": 8,
+      "required": [
+        "declared_function",
+        "literal_second_derivative_coefficient",
+        "exact_elimination_order",
+        "input_ideal_generators",
+        "groebner_basis",
+        "complete_active_clock_strata",
+        "good_locus",
+        "completeness"
+      ],
+      "properties": {
+        "declared_function": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "literal_second_derivative_coefficient": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "exact_elimination_order": {
+          "type": "array",
+          "minItems": 2
+        },
+        "input_ideal_generators": {
+          "type": "array",
+          "minItems": 2
+        },
+        "groebner_basis": {
+          "type": "array",
+          "minItems": 2
+        },
+        "complete_active_clock_strata": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "good_locus": {
+          "const": "EMPTY"
+        },
+        "completeness": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "convention_correct_control": {
+      "type": "object",
+      "minProperties": 7,
+      "required": [
+        "status",
+        "project_convention",
+        "standard_Horndeski_conversion",
+        "corrected_density",
+        "boundary_identity_for_linear_F",
+        "constant_clock_cylinder",
+        "does_not_establish"
+      ],
+      "properties": {
+        "status": {
+          "const": "CONTROL_NOT_PART_OF_LITERAL_WORK_ITEM_FAMILY"
+        },
+        "project_convention": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "standard_Horndeski_conversion": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "corrected_density": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "boundary_identity_for_linear_F": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "constant_clock_cylinder": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "does_not_establish": {
+          "type": "array",
+          "minItems": 3
+        }
+      }
+    },
+    "gate_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "seven_gates",
+        "action_origin_symmetry_rows",
+        "selected_action",
+        "full_BV_unary_export",
+        "nonlinear_q2"
+      ],
+      "properties": {
+        "seven_gates": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7
+        },
+        "action_origin_symmetry_rows": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "selected_action": {
+          "const": false
+        },
+        "full_BV_unary_export": {
+          "const": false
+        },
+        "nonlinear_q2": {
+          "const": false
+        }
+      }
+    },
+    "terminal_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "complete_literal_minimal_family_checked",
+        "novel_active_clock_degenerate_stratum_exists",
+        "collapsed_stratum_imported_P2_good_locus",
+        "selected_level3_action",
+        "first_invariant_separator",
+        "result"
+      ],
+      "properties": {
+        "complete_literal_minimal_family_checked": {
+          "const": true
+        },
+        "novel_active_clock_degenerate_stratum_exists": {
+          "const": false
+        },
+        "collapsed_stratum_imported_P2_good_locus": {
+          "const": "EMPTY"
+        },
+        "selected_level3_action": {
+          "const": false
+        },
+        "first_invariant_separator": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "result": {
+          "const": "SCOPED_LEVEL3_LITERAL_CURVATURE_COUPLING_GOOD_LOCUS_EMPTY"
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 11,
+      "additionalProperties": {
+        "const": true
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "minProperties": 8,
+      "additionalProperties": {
+        "const": false
+      }
+    },
+    "claim_boundary": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "next_gate": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "imports_sha256",
+        "degeneracy_sha256",
+        "locus_sha256",
+        "control_sha256",
+        "gates_sha256",
+        "verdict_sha256"
+      ],
+      "properties": {
+        "imports_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "degeneracy_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "locus_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "control_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "gates_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "verdict_sha256": {
+          "$ref": "#/$defs/sha"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "nonempty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nonempty-object": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "result_id",
+        "result_state",
+        "sha256",
+        "source_commit",
+        "selected_action"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "result_id": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "result_state": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "source_commit": {
+          "$ref": "#/$defs/commit"
+        },
+        "selected_action": {
+          "const": false
+        }
+      }
+    }
+  }
+}

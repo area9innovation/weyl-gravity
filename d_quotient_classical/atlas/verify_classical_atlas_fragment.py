@@ -308,6 +308,25 @@ def verify() -> None:
         or "No causal parent" not in level2["claim_boundary"]
     ):
         raise AssertionError("Level-2 kinetic-braiding atlas boundary drifted")
+    level3 = by_id[
+        "classical.complex_compensator.active_clock."
+        "degenerate_curvature_level3_literal_good_locus"
+    ]
+    if (
+        level3["descriptions"]["causal"] != "OBSTRUCTED"
+        or level3["descriptions"]["symplectic"] != "NO_CERTIFIED_MAP"
+        or level3["descriptions"]["nonlinear"] != "NOT_APPLICABLE"
+        or level3["descriptions"]["observational"] != "NO_CERTIFIED_MAP"
+        or level3["descriptions"]["quantum"] != "OPEN"
+        or "COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1"
+        not in {item["result_id"] for item in level3["evidence"]}
+        or "-36 X^2(2F_X+B)^2" not in level3["claim_boundary"]
+        or "only at F_X=B=0" not in level3["claim_boundary"]
+        or "No selected action" not in level3["claim_boundary"]
+        or "not a general Horndeski/DHOST no-go"
+        not in level3["claim_boundary"]
+    ):
+        raise AssertionError("Level-3 curvature-coupling atlas boundary drifted")
     stability = by_id["classical.crosswalk.weak_background_causal_vs_residual_d"]
     if (
         stability["descriptions"]["causal"] != "CERTIFIED"

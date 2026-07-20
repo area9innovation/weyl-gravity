@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1_TIER_RECEIPT",
+  "claim_id": "COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/compensator/degenerate_curvature_coupling_level3_no_go.py",
+      "sha256": "3c6ec1c59ae74770959d55a09228a30498d9861cca07feadd9446c0e3591f135"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_degenerate_curvature_coupling_level3_no_go.py",
+      "sha256": "1f1100ad999d679cd096aee35e4dc73f23e2d5cfddeb27eec74073a958edd6de"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_degenerate_curvature_coupling_level3_no_go.py",
+      "sha256": "7a97312e4505c7429bc5163676818517cb0f9b253dc9584a5810a7cec9651553"
+    },
+    {
+      "path": "d_quotient_classical/certificates/COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1.json",
+      "sha256": "2e687331b6985b3a84c54a0f05b210bee5e3ac06d5659b5603ac9bc25f61dfed"
+    },
+    {
+      "path": "d_quotient_classical/schema/compensator-degenerate-curvature-level3-no-go-v1.schema.json",
+      "sha256": "468d8966184d7b3c57455b59f71ca802e42367de5de31e80b5205e1bd08c762a"
+    },
+    {
+      "path": "d_quotient_classical/reports/compensator-degenerate-curvature-coupling-level3-no-go-v1.md",
+      "sha256": "5893d73b16c72bd7ce53b0c14371b6c064119656b7dc411b9ba8e8122c86c5cb"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "c33b363b7f22e275a1720a87903c4aa49b28e34f463a266e135ea0c2d474463c"
+    },
+    {
+      "path": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
+      "sha256": "217d46b9a2d34af69ff7ac49c2387d1e3d5b07be75ad3ffc1529960ee9bc8bcc"
+    },
+    {
+      "path": "d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+      "sha256": "86cceb584b73b7e7a73e18254fff089bbe207b1c0b898cdccb6b248abc9e3e9d"
+    },
+    {
+      "path": "d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py",
+      "sha256": "33f996ce4eb5755f82cce0e24b7f648718f759e32e4b99bc1de906d93f06d01d"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <producer, independent verifier and mutation tests>; python3 -m json.tool <certificate, schema and receipt>",
+        "elapsed_seconds": 0.04,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff HEAD --check -- <explicit Level-3 and atlas paths>",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/degenerate_curvature_coupling_level3_no_go.py --check",
+        "elapsed_seconds": 0.39,
+        "status": "PASS",
+        "method": "exact raw-FLRW identities, boundary reduction, velocity Hessian, determinant, rank stratification and characteristic-zero Groebner elimination"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_degenerate_curvature_coupling_level3_no_go.py",
+        "elapsed_seconds": 0.34,
+        "status": "PASS",
+        "independent_rail": "imports no producer module; reconstructs the Ricci scalar and clock-Hessian square difference from orthonormal FLRW components, independently performs the boundary reduction and elimination, and checks the convention control"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.compensator.tests.test_degenerate_curvature_coupling_level3_no_go -v",
+        "elapsed_seconds": 0.47,
+        "status": "PASS",
+        "tests": 8,
+        "mutation_controls": "literal Hessian, intersection basis, good locus, selected action, full unary promotion, convention-control promotion, general Horndeski/DHOST promotion and quantum promotion are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/compensator-degenerate-curvature-level3-no-go-v1.schema.json -d d_quotient_classical/certificates/COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1.json",
+        "elapsed_seconds": 1.01,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/atlas/generate_classical_atlas_fragment.py --check; python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py; python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment -v; python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "elapsed_seconds": 0.42,
+        "status": "PASS",
+        "tests": 30
+      },
+      {
+        "command": "ci/science-forge-shadow.sh",
+        "elapsed_seconds": 4.25,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "pre-existing bridge certificate drift, corpus baseline growth from 976 to 1316 certificates, and an unpinned dirty Forge development binary; the advisory rail exited zero"
+      }
+    ]
+  },
+  "tier_3": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m unittest discover -v",
+        "elapsed_seconds": 1.32,
+        "status": "PASS",
+        "tests": 148,
+        "scope": "repository-wide Python unittest discovery from physics/symplectic-reconstruction; the eight scoped Level-3 tests were also run explicitly because this discovery pattern does not collect that package"
+      }
+    ],
+    "reason": "The item freezes a scoped Level-3 no-go theorem and therefore triggers the AGENTS.md theorem-level Tier-3 criterion."
+  },
+  "coordination_receipt": {
+    "s_f_overview": "INTERRUPTED_AFTER_45_SECONDS_WITH_NO_OUTPUT",
+    "lease": "exclusive classical-1 lease remained active and the immutable pulled work package was used",
+    "interpretation": "the overview timeout was not counted as a pass and did not alter the authoritative active work item"
+  },
+  "claim_boundary": "The receipt certifies only the literal Level-3 action with X=(nabla theta)^2, linear F(X), coefficient +F_X on the Hessian-square difference, quadratic P(X), zero braiding and an active Lorentzian clock. Every novel nonzero-slope stratum fails the exact degeneracy gate; the zero-slope stratum collapses to the imported P2 no-go. The convention-correct -2F_X expression is a control only. No selected action, full BV unary, background theorem, support-local causal parent, nonlinear q2, Hadamard state, anomaly/QME result, particle space, scattering, positivity or unitarity theorem follows, and this is not a general Horndeski/DHOST no-go.",
+  "higher_tiers_not_run": []
+}

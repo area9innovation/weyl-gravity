@@ -43,6 +43,7 @@ CERTS = {
     "complex_compensator_active_clock_background_stability": ROOT / "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1.json",
     "complex_compensator_kinetic_braiding_visibility": ROOT / "d_quotient_classical/certificates/COMPENSATOR_KINETIC_BRAIDING_QUADRATIC_VISIBILITY_V1.json",
     "complex_compensator_kinetic_braiding_level2_no_go": ROOT / "d_quotient_classical/certificates/COMPENSATOR_KINETIC_BRAIDING_LEVEL2_NO_GO_V1.json",
+    "complex_compensator_degenerate_curvature_level3_no_go": ROOT / "d_quotient_classical/certificates/COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1.json",
     "Berger_green": ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
     "Berger_bikernel_support_gate": ROOT / "d_quotient_classical/certificates/BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1.json",
     "Berger_Cartan": ROOT / "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json",
@@ -495,6 +496,44 @@ def entries() -> list[dict[str, Any]]:
         _second(("NOT_APPLICABLE", "No selected Level-2 action exists for a bounded tangent cone."), ("NOT_APPLICABLE", "No selected Level-2 action exists for a smooth-secular tangent cone."), ("OBSTRUCTED", "The complete declared Level-2 family fails before a common support-local causal parent can be selected.")),
         _evidence("complex_compensator_active_clock_px2_freeze_audit", "complex_compensator_kinetic_braiding_visibility", "complex_compensator_kinetic_braiding_level2_no_go"),
         "The exact common stationary matrix has rank five and a two-dimensional kernel t(81/20,27/3290,-324/1645,486/1645,18/25,1,0)+beta(0,0,0,0,0,0,1). Independent full-field order counting proves the braiding density starts at cubic perturbative order on the constant-clock cylinder. Thus t=0 has zero cylinder quadratic rank for every beta, while t nonzero retains the beta-independent split gravity-auxiliary velocity form and raw-D witnesses +3,-3. Berger's separate rank-two scalar braiding block cannot repair the required cylinder. The Level-2 good locus is EMPTY, no selected action is exported, and nonlinear q2 is not constructed. Higher G(X), Horndeski/DHOST curvature couplings, other backgrounds, new fields and enlarged gauge groups remain outside scope. No causal parent, Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result follows.",
+    ))
+    values.append(_entry(
+        "classical.complex_compensator.active_clock."
+        "degenerate_curvature_level3_literal_good_locus",
+        _scope(
+            VACUUM,
+            theory="quadratic P(X) family plus F(X)R_hat+F_X[(Box_hat theta)^2-(nabla_hat nabla_hat theta)^2], F=f0+f1X, with Level-2 braiding zero",
+            background="local active-clock homogeneous ADM degeneracy fixture; imported common unit-cylinder and frozen-Berger P2 locus only on the collapsed f1=0 stratum",
+            charge_sector="unreduced local action-degeneracy gate; no selected-action or fixed-charge quotient",
+            carrier="two-velocity homogeneous ADM block (h,A) testing the lapse-acceleration degeneracy of the literal coupling; not a mode or particle carrier",
+            degree="classical action and exact quadratic velocity Hessian only",
+            parity="real parity-even shift-symmetric scalar-curvature sector",
+            ell="homogeneous degeneracy fixture; no harmonic mode identification",
+            m="NOT_APPLICABLE",
+            k="local temporal principal direction only",
+            omega="raw homogeneous velocity symbols h and A; no positive-frequency splitting",
+        ),
+        {
+            "causal": "OBSTRUCTED",
+            "symplectic": "NO_CERTIFIED_MAP",
+            "nonlinear": "NOT_APPLICABLE",
+            "observational": "NO_CERTIFIED_MAP",
+            "quantum": "OPEN",
+        },
+        ("OBSTRUCTED", "For X nonzero the literal plus-F_X coupling has exact velocity determinant -324 X^2 F_X^2; every novel slope is nondegenerate in the lapse-acceleration block."),
+        ("NO_CERTIFIED_MAP", "The action fails before a reduced constraint surface or pairing is formed; the convention-correct minus-2F_X expression is only a separate control."),
+        ("NOT_APPLICABLE", "No selected Level-3 action exists, so no nonlinear q2 is constructed."),
+        ("NO_CERTIFIED_MAP", "The homogeneous ADM separator is not an observational mode, particle, charge or background crosswalk."),
+        _second(
+            ("NOT_APPLICABLE", "No selected action exists for a bounded tangent cone."),
+            ("NOT_APPLICABLE", "No selected action exists for a smooth-secular tangent cone."),
+            ("OBSTRUCTED", "The novel literal family fails before a causal unary parent can be selected."),
+        ),
+        _evidence(
+            "complex_compensator_kinetic_braiding_level2_no_go",
+            "complex_compensator_degenerate_curvature_level3_no_go",
+        ),
+        "With the project convention X=(nabla theta)^2, the exact generalized ADM determinant is -36 X^2(2F_X+B)^2. The declared literal coefficient B=F_X intersects the true degeneracy surface B=-2F_X only at F_X=B=0. The nonzero-slope stratum therefore fails the first invariant gate; the zero-slope stratum is only a constant Einstein-Hilbert shift and collapses to the imported P2 family with empty good locus. The convention-correct minus-2F_X density is retained solely as a control and receives no full Berger coefficient-locus promotion. No selected action, full BV unary, background system, causal parent, nonlinear q2, Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result is exported. This is not a general Horndeski/DHOST no-go.",
     ))
     values.append(_entry(
         "classical.berger.retained_gravity_clock_maxwell",
