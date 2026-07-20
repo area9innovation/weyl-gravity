@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "payload_ref", "disposition", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-replacement-112-executable-unary-variational-input-shortfall-v1"},
+    "result_id": {"const": "BERGER_REPLACEMENT_112_EXECUTABLE_UNARY_VARIATIONAL_INPUT_SHORTFALL"},
+    "claim_status": {"const": "SHORTFALL_MISSING_POSITIVE_MIXED_PHI2_COMPONENT_JET_EVALUATION"},
+    "atlas_status": {"const": "NO_CERTIFIED_MAP"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {"type": "object", "minProperties": 6},
+    "payload_ref": {"type": "object", "required": ["path", "result_id", "sha256", "canonical_sha256"]},
+    "disposition": {"type": "object", "minProperties": 4},
+    "next_gate": {"const": "EXPORT_POSITIVE_MIXED_PHI2_RETAINED_TO_COMPONENT_JET_MAP_AND_EVALUATED_D3S"},
+    "claim_boundary": {"type": "string", "minLength": 1800}
+  },
+  "additionalProperties": true
+}

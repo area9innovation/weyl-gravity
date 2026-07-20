@@ -223,6 +223,18 @@ def test_executable_160_export_stops_at_base_producer_coefficients():
     }
 
 
+def test_replacement_executable_producer_stops_at_phi2_jet_evaluation():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.interaction.replacement_112_executable_unary_variational_input_shortfall"
+    )
+    assert row["descriptions"]["symplectic"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["clock_and_rod_dependence"]["status"] == "NO_CERTIFIED_MAP"
+    assert "BERGER_REPLACEMENT_112_EXECUTABLE_UNARY_VARIATIONAL_INPUT_SHORTFALL" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }
+
+
 def test_recoil_internal_readiness_is_certified_while_physical_activation_is_open():
     rows = {row["id"]: row for row in build()["entries"]}
     readiness = rows["observer.berger.detector_profile.recoil_stream_executable_readiness"]

@@ -2466,3 +2466,20 @@ replacement-112 unary, and the complete material-parent-56 unary and pairing,
 each with coefficient ring, row degrees, support/zero-mode blocks and real/
 (K_{m Berger}) actions.  Only then may the consumer reconstruct the
 rank-eight quotient and proceed to physical reduction.
+
+## Active bridge: replacement-112 local Phi2-jet producer contract
+
+The two-producer repair stops at the first replacement-base derivative.  The
+old executable 108-row correction is universally parameterized by named
+local component jets such as `Phi2_00`, but the positive-mixed producer gives
+its new Φ₂ only as four retained harmonic coefficients.  No machine-readable
+map evaluates those coefficients into the named local jets and derivatives.
+Therefore the non-rod correction
+(D^3S_{108}[Phi_0](Phi_2^{m mixed},cdot,cdot)) is
+`NO_CERTIFIED_MAP`.
+
+The fail-closed atlas row is
+`observer.berger.interaction.replacement_112_executable_unary_variational_input_shortfall`.
+The material-parent-56 producer is deliberately not reached.  Activation
+requires the retained-basis-to-component-jet crosswalk, every required local
+jet, normalized evaluated non-rod entries and an independent action replay.

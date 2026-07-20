@@ -284,6 +284,14 @@ therefore required before a method-distinct consumer can reconstruct and
 compare the 160-row pushout.  Physical reduction and every downstream
 observer result remain `NO_CERTIFIED_MAP`.
 
+The released base-producer package stops at an even smaller replacement-112
+interface.  The old universal executable correction contains named local
+`Phi2_*` component-jet factors, whereas the positive-mixed producer exports
+only four retained-basis coefficients for its new Φ₂.  With no crosswalk to
+local component jets, the evaluated non-rod third variation is undefined.
+The material-parent-56 producer is not reached, and no executable replacement
+or combined matrix is promoted.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.
