@@ -22,6 +22,24 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertTrue(any("nariai" in value for value in ids))
         self.assertIn("classical.bach_flat.open_parent_detour", ids)
 
+    def test_berger_apparatus_z2_receiver_is_fail_closed(self) -> None:
+        entry = self.entries[
+            "classical.berger.apparatus.z2_integrability_receiver"
+        ]
+        self.assertEqual(set(entry["descriptions"].values()), {"NO_CERTIFIED_MAP"})
+        self.assertIn(
+            "BERGER_APPARATUS_Z2_INTEGRABILITY_RECEIVER_DISPOSITION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn(
+            "first blocked object is the combined background-preserving",
+            entry["claim_boundary"],
+        )
+        self.assertIn("global-rod closure rank 8", entry["claim_boundary"])
+        self.assertIn("112-row base", entry["claim_boundary"])
+        self.assertIn("three symmetric source pairs", entry["claim_boundary"])
+        self.assertIn("imports no compact-product modes", entry["claim_boundary"])
+
     def test_W_squares_are_not_particles(self) -> None:
         for name in ("plus", "minus"):
             carrier = self.entries[f"classical.vacuum_cylinder.deformation.w_{name}_squared"]["scope"]["carrier"]

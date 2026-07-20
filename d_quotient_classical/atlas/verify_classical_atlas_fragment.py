@@ -46,6 +46,23 @@ def verify() -> None:
         or "no one-sided support profile" not in berger["claim_boundary"]
     ):
         raise AssertionError("Berger bikernel support gate missing or overpromoted")
+    apparatus_z2 = by_id["classical.berger.apparatus.z2_integrability_receiver"]
+    if (
+        set(apparatus_z2["descriptions"].values()) != {"NO_CERTIFIED_MAP"}
+        or "BERGER_APPARATUS_Z2_INTEGRABILITY_RECEIVER_DISPOSITION_V1"
+        not in {item["result_id"] for item in apparatus_z2["evidence"]}
+        or "first blocked object is the combined background-preserving"
+        not in apparatus_z2["claim_boundary"]
+        or "global-rod closure rank 8" not in apparatus_z2["claim_boundary"]
+        or "112-row base" not in apparatus_z2["claim_boundary"]
+        or "certified arity-two obstruction"
+        not in apparatus_z2["claim_boundary"]
+        or "three symmetric source pairs"
+        not in apparatus_z2["claim_boundary"]
+        or "imports no compact-product modes"
+        not in apparatus_z2["claim_boundary"]
+    ):
+        raise AssertionError("Berger apparatus Z2 receiver atlas boundary drifted")
     for family in "eal":
         entry = by_id[f"classical.vacuum_cylinder.one_particle.{family}"]
         if entry["descriptions"]["causal"] != "CERTIFIED" or "not a positive residual particle" not in entry["claim_boundary"]:

@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "BERGER_APPARATUS_Z2_INTEGRABILITY_RECEIVER_DISPOSITION_V1_TIER_RECEIPT",
+  "claim_id": "BERGER_APPARATUS_Z2_INTEGRABILITY_RECEIVER_DISPOSITION_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/backreacted_clock/berger_apparatus_z2_integrability_receiver_disposition.py",
+      "sha256": "828ef1f6be852adb55a8b5e5787ac928699ffa440b2b5001522654a2d1e85149"
+    },
+    {
+      "path": "d_quotient_classical/backreacted_clock/verify_berger_apparatus_z2_integrability_receiver_disposition.py",
+      "sha256": "8542083f569041e41ed34dc335bfde41edcf233a7606fffbc624a8ef2d0bb775"
+    },
+    {
+      "path": "d_quotient_classical/backreacted_clock/tests/test_berger_apparatus_z2_integrability_receiver_disposition.py",
+      "sha256": "a2e04f7806afbe67ba1b3502c6ffe93245d695f40021317b4a588122e9b1a0fe"
+    },
+    {
+      "path": "d_quotient_classical/schema/berger-apparatus-z2-integrability-receiver-disposition-v1.schema.json",
+      "sha256": "6dd64e2a18abb91bbaf9b581754c526a7ae04c7c3c1434c5bfe9d726140436b2"
+    },
+    {
+      "path": "d_quotient_classical/certificates/BERGER_APPARATUS_Z2_INTEGRABILITY_RECEIVER_DISPOSITION_V1.json",
+      "sha256": "6b56e3052c210bc53a1c5f3c5368cc67dafae333f5c6adb734406c4afa32909e"
+    },
+    {
+      "path": "d_quotient_classical/reports/berger-apparatus-z2-integrability-receiver-disposition-v1.md",
+      "sha256": "36209ed9d00bc3b84681dfc106b75dd4a57eacf4460f3b97dff3d6c88234b4c1"
+    },
+    {
+      "path": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
+      "sha256": "c3f8474f14da927dc79b802cde13af5bd919a5eadad204e710dd92cd46bb92b0"
+    },
+    {
+      "path": "d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+      "sha256": "865f694643b7a7a1a1753ef7689e68bbccdb4a371730bab7d3b8de1cfd6691c3"
+    },
+    {
+      "path": "d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py",
+      "sha256": "74cbac35eb67b128d0e09b29fad846a38dd9e9450e0048be0e2c9c843b55ab1d"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "ffdf77e8ef7be9d10e35ab4239326cf65fa62b14e1a39d58cd9895186b72d1a0"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <Z2 disposition producer, independent verifier, mutation tests and atlas producer/verifier/tests>",
+        "elapsed_seconds": 0.05,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m json.tool <Z2 disposition certificate, schema and receipt>",
+        "elapsed_seconds": 0.08,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <explicit Z2 disposition, atlas, report and receipt paths>",
+        "elapsed_seconds": 0.0,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "PYTHONPATH=. python3 -m d_quotient_classical.backreacted_clock.berger_apparatus_z2_integrability_receiver_disposition --check --guards",
+        "elapsed_seconds": 0.82,
+        "status": "PASS"
+      },
+      {
+        "command": "PYTHONPATH=. python3 -m d_quotient_classical.backreacted_clock.verify_berger_apparatus_z2_integrability_receiver_disposition",
+        "elapsed_seconds": 0.64,
+        "status": "PASS",
+        "independent_rail": "reads the frozen certificate and eleven imported artifacts directly; recomputes the gate vector, rank-6 versus rank-8 closure and zero-mixing obstruction from lifecycle flags and exact fields without importing the producer"
+      },
+      {
+        "command": "python3 -m unittest -v d_quotient_classical.backreacted_clock.tests.test_berger_apparatus_z2_integrability_receiver_disposition",
+        "elapsed_seconds": 0.79,
+        "status": "PASS",
+        "tests": 10,
+        "mutation_controls": "omitted charge gate, falsely completed resonance gate, changed background, deleted mixed pair and promoted obstructed q2 are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-apparatus-z2-integrability-receiver-disposition-v1.schema.json -d d_quotient_classical/certificates/BERGER_APPARATUS_Z2_INTEGRABILITY_RECEIVER_DISPOSITION_V1.json",
+        "elapsed_seconds": 1.38,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/atlas/generate_classical_atlas_fragment.py --check",
+        "elapsed_seconds": 0.21,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "elapsed_seconds": 0.21,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest -v d_quotient_classical.atlas.tests.test_classical_atlas_fragment",
+        "elapsed_seconds": 0.07,
+        "status": "PASS",
+        "tests": 27
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "elapsed_seconds": 0.17,
+        "status": "PASS"
+      },
+      {
+        "command": "bash ci/science-forge-shadow.sh",
+        "elapsed_seconds": 4.89,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "bridge certificate drift, corpus baseline growth from 976 to 1298 certificates and an unpinned dirty Forge development binary; the advisory rail exited zero"
+      }
+    ]
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This result is a fail-closed missing-input disposition and strict receiver contract. It promotes no theorem, freeze, tag or release, so AGENTS.md does not trigger the full suite."
+  },
+  "diagnostic_notes": [
+    "An initial atlas validator invocation used the nonexistent path residual_atlas/validate_residual_atlas.py and exited 2 before loading any artifact. The corrected authoritative command residual_atlas/validate_fragment.py passed and is recorded above."
+  ],
+  "claim_boundary": "This receipt covers the exact content-addressed disposition of the same-background Berger apparatus Z2 receiver at the committed input snapshot. It certifies that the first blocked operator is the combined q1/pairing/real/K_Berger carrier in the declared constant typed linear-K identification class, imports the exact rank-6 versus rank-8 closure and zero-mixing obstruction, and keeps every receiver output at NO_CERTIFIED_MAP. It does not prove nonexistence of a repaired or affine carrier outside that class, compute the quadratic Euler source or adjoint cokernel, classify a preparation, import compact-product modes, or establish q3, memory, redshift, particle, stability or quantum claims.",
+  "higher_tiers_not_run": [
+    "Tier 3 full repository verification: not triggered because no theorem, freeze, tag or release is promoted."
+  ]
+}

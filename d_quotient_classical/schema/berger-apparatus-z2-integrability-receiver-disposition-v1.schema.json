@@ -1,0 +1,329 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/berger-apparatus-z2-integrability-receiver-disposition-v1.schema.json",
+  "title": "Berger apparatus Z2 integrability receiver disposition",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "available_same_background_inputs",
+    "ordered_gate_disposition",
+    "first_missing_operator",
+    "combined_q1_crosswalk_obstruction",
+    "independent_interaction_blocker",
+    "strict_receiver_contract",
+    "mutation_results",
+    "downstream_disposition",
+    "flags",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-berger-apparatus-z2-integrability-receiver-disposition-v1"
+    },
+    "result_id": {
+      "const": "BERGER_APPARATUS_Z2_INTEGRABILITY_RECEIVER_DISPOSITION_V1"
+    },
+    "result_state": {
+      "const": "STRICT_RECEIVER_CONTRACT_EXPORTED_COMBINED_LINEAR_K_CROSSWALK_OBSTRUCTED"
+    },
+    "atlas_status": {"const": "NO_CERTIFIED_MAP"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]
+    },
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 11,
+      "maxProperties": 11,
+      "additionalProperties": {"$ref": "#/$defs/dependency"}
+    },
+    "available_same_background_inputs": {
+      "type": "object",
+      "required": [
+        "action_derived_56_row_apparatus_parent",
+        "detector_selected_preparation_u0",
+        "detector_selected_preparation_u1",
+        "leading_two_record_response_rank",
+        "108_row_component_basis_and_odd_pairing",
+        "108_row_unary_first_bidegree_candidate",
+        "108_row_q2_tensor",
+        "84_row_affine_K_through_arity_two"
+      ],
+      "properties": {
+        "action_derived_56_row_apparatus_parent": {"const": "CERTIFIED"},
+        "detector_selected_preparation_u0": {"const": "CERTIFIED"},
+        "detector_selected_preparation_u1": {"const": "CERTIFIED"},
+        "leading_two_record_response_rank": {"const": 2},
+        "108_row_component_basis_and_odd_pairing": {"const": "CERTIFIED"},
+        "108_row_unary_first_bidegree_candidate": {
+          "const": "CERTIFIED_IN_ITS_DECLARED_BACKGROUND_QUOTIENT"
+        },
+        "108_row_q2_tensor": {
+          "const": "EXPORTED_BUT_NOT_AN_ARITY_TWO_CODERIVATION"
+        },
+        "84_row_affine_K_through_arity_two": {
+          "const": "CERTIFIED_IN_ITS_DECLARED_SCOPE"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ordered_gate_disposition": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "prefixItems": [
+        {"$ref": "#/$defs/gate1"},
+        {"$ref": "#/$defs/gate2"},
+        {"$ref": "#/$defs/gate3"},
+        {"$ref": "#/$defs/gate4"}
+      ],
+      "items": false
+    },
+    "first_missing_operator": {
+      "type": "object",
+      "required": [
+        "name",
+        "kind",
+        "status",
+        "required_rows",
+        "required_identities",
+        "why_first"
+      ],
+      "properties": {
+        "name": {"const": "combined_q1_pairing_real_K_carrier"},
+        "kind": {"type": "string", "minLength": 1},
+        "status": {"const": "OBSTRUCTED_IN_DECLARED_LINEAR_K_IDENTIFICATION_CLASS"},
+        "required_rows": {"type": "string", "minLength": 1},
+        "required_identities": {
+          "type": "array",
+          "minItems": 5,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "why_first": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "combined_q1_crosswalk_obstruction": {
+      "type": "object",
+      "required": [
+        "status",
+        "scope",
+        "current_global_rod_span_rank",
+        "time_translation_closure_rank",
+        "minimal_additional_global_rod_directions",
+        "material_to_global_constant_mixing_nullity",
+        "prospective_repaired_base_rows",
+        "prospective_identified_union_rows",
+        "minimal_repair",
+        "global_no_go"
+      ],
+      "properties": {
+        "status": {"const": "OBSTRUCTED"},
+        "scope": {"type": "string", "minLength": 1},
+        "current_global_rod_span_rank": {"const": 6},
+        "time_translation_closure_rank": {"const": 8},
+        "minimal_additional_global_rod_directions": {"const": 2},
+        "material_to_global_constant_mixing_nullity": {"const": 0},
+        "prospective_repaired_base_rows": {"const": 112},
+        "prospective_identified_union_rows": {"const": 160},
+        "minimal_repair": {"type": "string", "minLength": 1},
+        "global_no_go": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "independent_interaction_blocker": {
+      "type": "object",
+      "required": ["status", "artifact_id", "identity", "first_witness", "consequence"],
+      "properties": {
+        "status": {"const": "OBSTRUCTED"},
+        "artifact_id": {"const": "BERGER_108_ROW_ARITY_TWO_OBSTRUCTION"},
+        "identity": {"type": "string", "minLength": 1},
+        "first_witness": {"type": "string", "minLength": 1},
+        "consequence": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "strict_receiver_contract": {
+      "type": "object",
+      "required": [
+        "background",
+        "input_ring",
+        "general_preparation",
+        "quadratic_pairs",
+        "required_objects",
+        "correction_classes",
+        "required_outputs",
+        "forbidden_substitutions"
+      ],
+      "properties": {
+        "background": {
+          "const": "the same pinned positive Berger gravity-clock-Maxwell-apparatus background"
+        },
+        "input_ring": {"type": "string", "minLength": 1},
+        "general_preparation": {"const": "u=a_0*u_0+a_1*u_1"},
+        "quadratic_pairs": {
+          "const": ["(u_0,u_0)", "(u_0,u_1)", "(u_1,u_1)"]
+        },
+        "required_objects": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 10,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "correction_classes": {
+          "type": "object",
+          "required": [
+            "bounded_or_quasiperiodic",
+            "smooth_secular",
+            "causal_or_retarded"
+          ],
+          "properties": {
+            "bounded_or_quasiperiodic": {"const": "NO_CERTIFIED_MAP"},
+            "smooth_secular": {"const": "NO_CERTIFIED_MAP"},
+            "causal_or_retarded": {"const": "NO_CERTIFIED_MAP"}
+          },
+          "additionalProperties": false
+        },
+        "required_outputs": {
+          "type": "object",
+          "minProperties": 8,
+          "maxProperties": 8,
+          "additionalProperties": {"const": "NO_CERTIFIED_MAP"}
+        },
+        "forbidden_substitutions": {
+          "type": "array",
+          "minItems": 5,
+          "items": {"type": "string", "minLength": 1}
+        }
+      },
+      "additionalProperties": false
+    },
+    "mutation_results": {
+      "type": "object",
+      "minProperties": 5,
+      "maxProperties": 5,
+      "additionalProperties": {"const": "REJECTED"}
+    },
+    "downstream_disposition": {
+      "type": "object",
+      "minProperties": 7,
+      "maxProperties": 7,
+      "additionalProperties": {"const": "NO_CERTIFIED_MAP"}
+    },
+    "flags": {
+      "type": "object",
+      "required": [
+        "STRICT_RECEIVER_CONTRACT_EXPORTED",
+        "DECLARED_COMBINED_LINEAR_K_CROSSWALK_OBSTRUCTED",
+        "COMBINED_Q1_CARRIER_CERTIFIED",
+        "QUADRATIC_SOURCE_CERTIFIED",
+        "COMPLETE_ADJOINT_COKERNEL_CERTIFIED",
+        "Z2_BERGER_CERTIFIED",
+        "NONLINEAR_RANK_TWO_CERTIFIED",
+        "COMPACT_PRODUCT_MODE_IMPORTED",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "STRICT_RECEIVER_CONTRACT_EXPORTED": {"const": true},
+        "DECLARED_COMBINED_LINEAR_K_CROSSWALK_OBSTRUCTED": {"const": true},
+        "COMBINED_Q1_CARRIER_CERTIFIED": {"const": false},
+        "QUADRATIC_SOURCE_CERTIFIED": {"const": false},
+        "COMPLETE_ADJOINT_COKERNEL_CERTIFIED": {"const": false},
+        "Z2_BERGER_CERTIFIED": {"const": false},
+        "NONLINEAR_RANK_TWO_CERTIFIED": {"const": false},
+        "COMPACT_PRODUCT_MODE_IMPORTED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {
+      "const": "ADD_TWO_GLOBAL_RODS_AND_TWO_COTANGENTS_RECOMPUTE_THE_112_ROW_BASE_THEN_RETRY_THE_160_ROW_IDENTIFIED_UNION"
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 4,
+          "maxProperties": 4,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "verification_commands": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string", "minLength": 1}
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {"type": "string", "minLength": 500}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "gate1": {
+      "type": "object",
+      "required": ["gate", "object", "status", "reason"],
+      "properties": {
+        "gate": {"const": 1},
+        "object": {"const": "combined_q1_pairing_real_K_carrier"},
+        "status": {"const": "OBSTRUCTED"},
+        "reason": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "gate2": {
+      "type": "object",
+      "required": ["gate", "object", "status", "reason"],
+      "properties": {
+        "gate": {"const": 2},
+        "object": {"const": "combined_action_quadratic_euler_source"},
+        "status": {"const": "MISSING"},
+        "reason": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "gate3": {
+      "type": "object",
+      "required": ["gate", "object", "status", "reason"],
+      "properties": {
+        "gate": {"const": 3},
+        "object": {"const": "complete_stabilizer_and_resonant_adjoint_cokernel"},
+        "status": {"const": "MISSING"},
+        "reason": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "gate4": {
+      "type": "object",
+      "required": ["gate", "object", "status", "reason"],
+      "properties": {
+        "gate": {"const": 4},
+        "object": {"const": "Z2_Berger_equations_and_response_restriction"},
+        "status": {"const": "NO_CERTIFIED_MAP"},
+        "reason": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    }
+  }
+}
