@@ -2569,6 +2569,33 @@ Only this symbol-level repair is classified.  Its cyclic dual completion and
 full chain map remain absent, so relative `q2/f2` is still inactive and no
 causal, observable, nonlinear, particle or quantum promotion follows.
 
+The accepted retained-26 bikernel request is now at a typed support gate.
+`BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1` extends
+\(\Lambda_{26,+}\) and \(\Lambda_{26,-}\) continuously in one kernel
+variable to the standard past-compact, future-compact and time-compact smooth
+LF classes.  The \(q_{26}\)-homotopy identity, same-sided support,
+smoothness and graded cyclic adjoint reversal persist there.
+
+There is no continuous extension of the certified factorization
+\(\Lambda_{26,\pm}=W_{26}G_{26,\pm}\) to the full smooth compact-open
+Fréchet space.  Moving a temporal cutoff on a nonzero homogeneous solution
+to past or future infinity gives compact sources tending locally to zero
+whose Green images tend locally to the nonzero solution.
+
+The imported Ward artifact exports only that
+\(C_{26}=[H_{26,+},q_{26}]\) is smooth.  It provides no one-sided support
+profile, harmonic support or serialized smooth remainder.  Therefore
+\(C_{26}\) is known to lie only in the full smooth class, where the
+factorized extension is obstructed; its membership in every positive
+one-sided domain remains undecided.  The active typed need is:
+
+```text
+C26_BIKERNEL_SUPPORT_PROFILE_OR_SERIALIZED_SMOOTH_REMAINDER
+```
+
+No Ward correction, BRST Hadamard covariance, positivity or quantum claim is
+made by this support theorem.
+
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a
 negative-norm one-particle class.  A counterexample is a successful result, not

@@ -1,0 +1,476 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/pure-weyl/berger-26-row-smooth-bikernel-homotopy-support-gate-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "setting_id",
+    "dependencies",
+    "exact_input_checks",
+    "support_classes",
+    "kernel_actions",
+    "positive_fixture",
+    "negative_fixture",
+    "C26_import_boundary",
+    "classification",
+    "science_forge",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-berger-26-row-smooth-bikernel-homotopy-support-gate-v1"
+    },
+    "result_id": {
+      "const": "BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1"
+    },
+    "result_state": {
+      "const": "ONE_SIDED_BIKERNEL_EXTENSIONS_CERTIFIED_FULL_SMOOTH_FACTORIZATION_OBSTRUCTED_C26_SUPPORT_PROFILE_REQUIRED"
+    },
+    "lifecycle_status": {
+      "const": "BLOCKED_ON_TYPED_C26_SUPPORT_PROFILE"
+    },
+    "dependency_tags": {
+      "const": [
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "setting_id": {
+      "const": "compact_positive_berger_clock_fixed_coupling_linearized"
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classical_homotopy",
+        "classical_proof",
+        "quantum_Ward_reduction"
+      ],
+      "properties": {
+        "classical_homotopy": {
+          "$ref": "#/$defs/artifact"
+        },
+        "classical_proof": {
+          "$ref": "#/$defs/artifact"
+        },
+        "quantum_Ward_reduction": {
+          "$ref": "#/$defs/artifact"
+        }
+      }
+    },
+    "exact_input_checks": {
+      "type": "object",
+      "additionalProperties": {
+        "const": true
+      },
+      "minProperties": 8
+    },
+    "support_classes": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/positiveSupportClass"
+        },
+        {
+          "$ref": "#/$defs/positiveSupportClass"
+        },
+        {
+          "$ref": "#/$defs/positiveSupportClass"
+        },
+        {
+          "$ref": "#/$defs/negativeSupportClass"
+        }
+      ],
+      "items": false
+    },
+    "kernel_actions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "first_variable",
+        "second_variable",
+        "cyclic_adjoint",
+        "wavefront"
+      ],
+      "properties": {
+        "first_variable": {
+          "type": "string",
+          "minLength": 1
+        },
+        "second_variable": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cyclic_adjoint": {
+          "type": "string",
+          "minLength": 1
+        },
+        "wavefront": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "positive_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kernel",
+        "membership",
+        "homotopy_identity",
+        "adjoint_pairing"
+      ],
+      "properties": {
+        "kernel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "membership": {
+          "const": [
+            "K_PC_X",
+            "K_FC_X",
+            "K_TC_X"
+          ]
+        },
+        "homotopy_identity": {
+          "const": "VERIFIED_BY_COMPACT_SOURCE_THEOREM"
+        },
+        "adjoint_pairing": {
+          "const": "VERIFIED_BY_COMPACT_SUPPORT_AND_CYCLICITY"
+        }
+      }
+    },
+    "negative_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "background_property",
+        "homogeneous_row",
+        "retarded_sequence",
+        "advanced_sequence",
+        "scope"
+      ],
+      "properties": {
+        "background_property": {
+          "const": "compact spatial Cauchy surface"
+        },
+        "homogeneous_row": {
+          "type": "string",
+          "minLength": 1
+        },
+        "retarded_sequence": {
+          "$ref": "#/$defs/escapeSequence"
+        },
+        "advanced_sequence": {
+          "$ref": "#/$defs/escapeSequence"
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "C26_import_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exported",
+        "not_exported",
+        "current_membership_decision",
+        "typed_need"
+      ],
+      "properties": {
+        "exported": {
+          "const": [
+            "smoothness",
+            "empty wavefront set"
+          ]
+        },
+        "not_exported": {
+          "type": "array",
+          "minItems": 6,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "current_membership_decision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "typed_need": {
+          "const": "C26_BIKERNEL_SUPPORT_PROFILE_OR_SERIALIZED_SMOOTH_REMAINDER"
+        }
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "past_compact_extension_certified",
+        "future_compact_extension_certified",
+        "time_compact_extension_certified",
+        "cyclic_adjoint_control_certified",
+        "full_smooth_factorized_extension_certified",
+        "full_smooth_factorized_extension_obstructed",
+        "C26_in_positive_extension_domain_certified",
+        "smooth_Ward_correction_constructed",
+        "retained_BRST_Hadamard_promoted",
+        "positivity_or_quantum_claim"
+      ],
+      "properties": {
+        "past_compact_extension_certified": {
+          "const": true
+        },
+        "future_compact_extension_certified": {
+          "const": true
+        },
+        "time_compact_extension_certified": {
+          "const": true
+        },
+        "cyclic_adjoint_control_certified": {
+          "const": true
+        },
+        "full_smooth_factorized_extension_certified": {
+          "const": false
+        },
+        "full_smooth_factorized_extension_obstructed": {
+          "const": true
+        },
+        "C26_in_positive_extension_domain_certified": {
+          "const": false
+        },
+        "smooth_Ward_correction_constructed": {
+          "const": false
+        },
+        "retained_BRST_Hadamard_promoted": {
+          "const": false
+        },
+        "positivity_or_quantum_claim": {
+          "const": false
+        }
+      }
+    },
+    "science_forge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "work_item",
+        "current_gate_status"
+      ],
+      "properties": {
+        "work_item": {
+          "const": "sf:program/work/classical-bikernel-homotopy-extension-for-q26"
+        },
+        "current_gate_status": {
+          "const": "BLOCKED_ON_QUANTUM_SUPPORT_EXPORT"
+        }
+      }
+    },
+    "next_gate": {
+      "const": "IMPORT_C26_SUPPORT_PROFILE_THEN_APPLY_ONE_SIDED_EXTENSION_OR_CERTIFY_C26_SPECIFIC_SMOOTH_HOMOTOPY_OBSTRUCTION"
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 100
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_manifest",
+        "verification_commands"
+      ],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 4,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "verification_commands": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result_id",
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "result_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "supportClassBase": {
+      "type": "object",
+      "required": [
+        "background",
+        "kernel_regularness",
+        "wavefront_set",
+        "topology",
+        "class_id",
+        "support_condition",
+        "operator",
+        "continuous_extension",
+        "homotopy_identity",
+        "causal_support",
+        "C26_membership"
+      ],
+      "properties": {
+        "background": {
+          "const": "M=R_t x Sigma_B with Sigma_B compact"
+        },
+        "kernel_regularness": {
+          "const": "C-infinity(M_x x M_y; Hom(E_y,E_x))"
+        },
+        "wavefront_set": {
+          "const": "EMPTY"
+        },
+        "topology": {
+          "type": "string",
+          "minLength": 1
+        },
+        "class_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "support_condition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "operator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "continuous_extension": {
+          "type": "boolean"
+        },
+        "homotopy_identity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "causal_support": {
+          "type": "string",
+          "minLength": 1
+        },
+        "C26_membership": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "positiveSupportClass": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {
+          "$ref": "#/$defs/supportClassBase"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "continuous_extension": {
+              "const": true
+            },
+            "C26_membership": {
+              "const": "NOT_EXPORTED"
+            }
+          }
+        }
+      ]
+    },
+    "negativeSupportClass": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {
+          "$ref": "#/$defs/supportClassBase"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "class_id": {
+              "const": "K_SC_X_EQUALS_ALL_SMOOTH"
+            },
+            "continuous_extension": {
+              "const": false
+            },
+            "C26_membership": {
+              "const": "YES_BY_SMOOTHNESS_ONLY"
+            }
+          }
+        }
+      ]
+    },
+    "escapeSequence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cutoff",
+        "source",
+        "source_limit",
+        "green_image",
+        "image_limit",
+        "conclusion"
+      ],
+      "properties": {
+        "cutoff": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_limit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "green_image": {
+          "type": "string",
+          "minLength": 1
+        },
+        "image_limit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "conclusion": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

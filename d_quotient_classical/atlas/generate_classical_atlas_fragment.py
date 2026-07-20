@@ -29,6 +29,7 @@ LEGACY_VACUUM = {
 CERTS = {
     "vacuum": VACUUM_EVIDENCE,
     "Berger_green": ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+    "Berger_bikernel_support_gate": ROOT / "d_quotient_classical/certificates/BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1.json",
     "Berger_Cartan": ROOT / "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json",
     "Berger_charge": ROOT / "d_quotient_classical/certificates/BERGER_FIXED_COUPLING_DELTA_CHARGE.json",
     "Berger_redshift": ROOT / "d_quotient_classical/certificates/BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE.json",
@@ -245,8 +246,8 @@ def entries() -> list[dict[str, Any]]:
         ("CERTIFIED", "The clock momentum is nonzero but its variation vanishes on the declared fixed-coupling tangent; K_Berger, not raw affine D, is the stationary unary generator."),
         ("OPEN", "No complete Berger second-order resonance catalogue exists."),
         _second(("OPEN", "No finite-harmonic bounded Berger tangent cone."), ("OPEN", "No smooth-secular Berger tangent cone."), ("OPEN", "The unary retarded complex is certified, but the nonlinear causal second-order tangent cone is open.")),
-        _evidence("Berger_green", "Berger_Cartan", "Berger_charge", "Berger_redshift", "cone"),
-        "Causality is unary and the cyclic Cartan theorem stops at arity three. Raw affine D, arity four, Hadamard/QME, and a branch-resolved physical projector remain false.",
+        _evidence("Berger_green", "Berger_bikernel_support_gate", "Berger_Cartan", "Berger_charge", "Berger_redshift", "cone"),
+        "Causality is unary and the cyclic Cartan theorem stops at arity three. The retained-26 homotopy extends to one-sided past/future/time-compact smooth bikernel LF classes with cyclic adjoint control, but the certified factorization has a cutoff-escape continuity obstruction on the full smooth Frechet class. The imported smooth Ward kernel has no one-sided support profile, so no Ward or Hadamard promotion follows. Raw affine D, arity four, Hadamard/QME, and a branch-resolved physical projector remain false.",
     ))
     values.append(_entry(
         "classical.berger.crosswalk.retained36_to_einstein_extra",

@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-20",
+  "work_item_input_commit": "6054d49d",
+  "integration_base_commit": "d7c637fa30932175f673feaa2b53fab0c319e27b",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "status": "BLOCKED_ON_TYPED_C26_SUPPORT_PROFILE",
+  "artifacts": {
+    "certificate": {
+      "path": "d_quotient_classical/certificates/BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1.json",
+      "sha256": "c1641afda62662377492f821d1875b7cfcef5f7d98dee4590fa68794fb733d55"
+    },
+    "producer": {
+      "path": "d_quotient_classical/causal_transfer/berger_26_row_smooth_bikernel_homotopy_support_gate.py",
+      "sha256": "fbc9392df298cc7a42d0e225b6ccd88e87f3db2a955651cfce8d727b9e622fd0"
+    },
+    "verifier": {
+      "path": "d_quotient_classical/causal_transfer/verify_berger_26_row_smooth_bikernel_homotopy_support_gate.py",
+      "sha256": "66a746cd1b066e164afe7d67b559d4db83d5beff4c36608d9ae901c334c56682"
+    },
+    "tests": {
+      "path": "d_quotient_classical/causal_transfer/tests/test_berger_26_row_smooth_bikernel_homotopy_support_gate.py",
+      "sha256": "fe062078fe7d2872e61531c2b48ea63190c67826a427f35342dd8b0c4e9e767a"
+    },
+    "schema": {
+      "path": "d_quotient_classical/schema/berger-26-row-smooth-bikernel-homotopy-support-gate-v1.schema.json",
+      "sha256": "16e840f856c80fb38d25331fd07e035747d161d02dfb80826c6bcf6dcee885c7"
+    },
+    "report": {
+      "path": "d_quotient_classical/reports/berger-26-row-smooth-bikernel-homotopy-support-gate.md",
+      "sha256": "19e4ed6d156f3de781e10e07e31dbc374e5cb4314fa414e439677a8cc0a61a6e"
+    },
+    "atlas_fragment": {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "eedaa3ddcad09ec02a401ddfadd33ba03faa58c4e51de405df96bc83478f4a2d"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 1.29,
+      "checks": [
+        "Python compilation",
+        "JSON parsing",
+        "scoped diff check"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.berger_26_row_smooth_bikernel_homotopy_support_gate --check --guards",
+          "elapsed_seconds": 0.20,
+          "result": "PASS"
+        },
+        {
+          "command": "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.verify_berger_26_row_smooth_bikernel_homotopy_support_gate",
+          "elapsed_seconds": 0.10,
+          "result": "PASS"
+        },
+        {
+          "command": "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_berger_26_row_smooth_bikernel_homotopy_support_gate",
+          "elapsed_seconds": 0.21,
+          "result": "PASS_5_TESTS"
+        },
+        {
+          "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-26-row-smooth-bikernel-homotopy-support-gate-v1.schema.json -d d_quotient_classical/certificates/BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1.json",
+          "elapsed_seconds": 1.13,
+          "result": "PASS"
+        }
+      ],
+      "result": "Past-, future- and time-compact smooth bikernel LF extensions are certified with homotopy, support and adjoint control. A cutoff-escape sequence obstructs continuity of the certified same-sided Green factorization on the full smooth compact-open Frechet class. The imported C26 artifact has no positive-domain support profile."
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+          "elapsed_seconds": 0.12,
+          "result": "PASS"
+        },
+        {
+          "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+          "elapsed_seconds": 0.12,
+          "result": "PASS"
+        },
+        {
+          "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment",
+          "elapsed_seconds": 0.04,
+          "result": "PASS_15_TESTS"
+        },
+        {
+          "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+          "elapsed_seconds": 0.11,
+          "result": "PASS"
+        }
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is an intermediate typed support gate. It neither completes the C26-specific extension nor promotes a paper theorem, freeze, release, Hadamard state or shared core algebra."
+    }
+  },
+  "adversarial_control": {
+    "mutations": [
+      "full_smooth_factorized_extension_certified=true",
+      "C26_in_positive_extension_domain_certified=true",
+      "smooth_Ward_correction_constructed=true",
+      "retained_BRST_Hadamard_promoted=true",
+      "positivity_or_quantum_claim=true"
+    ],
+    "expected": "REJECT_ALL",
+    "observed": "REJECT_ALL"
+  },
+  "science_forge": {
+    "work_item": "sf:program/work/classical-bikernel-homotopy-extension-for-q26",
+    "agent": "classical-1",
+    "planned_disposition": "BLOCKED",
+    "typed_need": "C26_BIKERNEL_SUPPORT_PROFILE_OR_SERIALIZED_SMOOTH_REMAINDER",
+    "advisory_shadow": {
+      "command": "bash ci/science-forge-shadow.sh",
+      "timestamp_utc": "2026-07-20T09:23:49Z",
+      "elapsed_seconds": 3.97,
+      "exit_status": 0,
+      "evidence_status": "NOT_EVIDENCE",
+      "findings": [
+        "Forge binary/stdlib revision mismatch is informational.",
+        "Bridge certificate audit reported pre-existing drift.",
+        "Coverage census reported corpus growth from 976 to 1206 certificates."
+      ]
+    }
+  },
+  "claim_boundary": "This receipt certifies the one-sided smooth bikernel homotopy extensions and the cutoff-escape continuity obstruction for the certified W26 G26 same-sided factorization on the full smooth class. It does not decide whether C26 belongs to a positive one-sided domain because the imported artifact exports no such support profile. It does not construct a Ward correction, BRST Hadamard covariance, positivity, particles, a Lorentzian QME, scattering, unitarity or a quantum theorem."
+}

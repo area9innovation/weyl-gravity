@@ -78,6 +78,24 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             {item["result_id"] for item in entry["evidence"]},
         )
 
+    def test_berger_bikernel_support_gate_is_fail_closed(self) -> None:
+        entry = self.entries[
+            "classical.berger.retained_gravity_clock_maxwell"
+        ]
+        self.assertIn(
+            "BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn(
+            "cutoff-escape continuity obstruction",
+            entry["claim_boundary"],
+        )
+        self.assertIn(
+            "no one-sided support profile",
+            entry["claim_boundary"],
+        )
+        self.assertEqual(entry["descriptions"]["quantum"], "OPEN")
+
     def test_nariai_incidence_cylinder_is_not_the_metric_bridge(self) -> None:
         entry = self.entries["classical.nariai.crosswalk.normal_tractor_cylinder_to_metric"]
         self.assertEqual(set(entry["descriptions"].values()), {"NO_CERTIFIED_MAP"})

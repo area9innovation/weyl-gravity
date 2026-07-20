@@ -36,6 +36,16 @@ def verify() -> None:
             payload = json.loads(path.read_text())
             if _sha(path) != evidence["sha256"] or payload["result_id"] != evidence["result_id"]:
                 raise AssertionError(f"evidence drift: {entry['id']}")
+    berger = by_id["classical.berger.retained_gravity_clock_maxwell"]
+    berger_evidence = {item["result_id"] for item in berger["evidence"]}
+    if (
+        "BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1"
+        not in berger_evidence
+        or "cutoff-escape continuity obstruction"
+        not in berger["claim_boundary"]
+        or "no one-sided support profile" not in berger["claim_boundary"]
+    ):
+        raise AssertionError("Berger bikernel support gate missing or overpromoted")
     for family in "eal":
         entry = by_id[f"classical.vacuum_cylinder.one_particle.{family}"]
         if entry["descriptions"]["causal"] != "CERTIFIED" or "not a positive residual particle" not in entry["claim_boundary"]:
