@@ -1,0 +1,58 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_INDEPENDENT_NODE_SCALING_CONTRACTION_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Complete exact classification of fixed-K-direction independent node scaling with occupation transfer and an arbitrary receiving square direction on the remaining strict opposite-sign candidate-17/20 strata.",
+  "input_baseline": "b7912e21cd7edaefef094fa93b030adfa5bec73a",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction.json": "5801e5050e063e51dd116e5756f59bf11a53f64db5061e6ac0a8a9a7d1549b02",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction.py": "70b63f94e1a34baccc0ed69b2ec31102fcbea050cdb27e5abc0b5864ae156bea",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction.schema.json": "ce3864648fcc8ffa96176106f594197bef161fd5507313d6ab40ad29214eaf3e",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction.py": "72639ee328766f3bd260e92f9aead0371aca71beae94b32aebe522283a2dc00b",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction.py": "d492569a3c0aa02128a0a53b3c2d5fdd5524f81c190a6ef17ec9ae1a9b221d7e",
+    "bridge/reports/einstein-maxwell-weyl-same-sign-candidate17-20-independent-node-scaling-contraction.md": "bc413582020287186ce0865ce101be5d145d248e22b447170ff58efe5de5f68f"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on producer, independent verifier and focused tests",
+        "python3 -m json.tool on certificate, schema and this receipt",
+        "git diff --check on the seven scoped paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 8,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction"
+      ]
+    },
+    "independent_rail": {
+      "status": "PASS",
+      "method": "The verifier independently reconstructs c(x,y), all positive-collinear and one-zero incidence formulae, and both affine outer segments of the three-stage contraction without importing producer functions."
+    },
+    "adversarial": {
+      "status": "PASS",
+      "mutations": [
+        "Promote the fixed-direction result to classified K-direction deformation.",
+        "Promote candidate-17 complete singular connectedness."
+      ],
+      "result": "Both mutations are rejected by fail-closed schema tests."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "The repaired moving-square certificate, third-transvectant carrier and connected hub are committed and hash-pinned inputs. No upstream operator or shared schema changes."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "K-direction deformation inside T3(f,g)=0, complete off-balance connectedness, occupation gluing and higher lifecycles remain open."
+    }
+  },
+  "claim_boundary": "CERTIFIED only for fixed K-node directions with independent nonnegative squared node scales, exact occupation transfer and arbitrary receiving-square motion. The iff incidence criterion is not a no-go for K-direction deformation or general nonradial paths and establishes no complete off-balance connectedness, occupation gluing, final residual, causal, observational, quantum or all-orders claim."
+}
