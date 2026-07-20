@@ -2771,8 +2771,25 @@ Candidates 17/20 have a different incidence pattern: their two algebraic
 singular components meet in `S_plus x S_minus`, and an explicit
 positive-occupation rotation-zero orbit with free node phases lies in this
 intersection.  Thus their quotient images meet and their algebraic component
-labels give no disconnection lower bound.  Complete connectedness remains
-open.
+labels give no disconnection lower bound.  Their complete double-singular
+intersection is stronger still: the fixed-positive-occupation, two-phase
+reduced incidence resolution is a compact connected Kähler sixfold over
+`P2_plus x P2_minus`.  It is lifted-`SO(3)` equivariant, its moment-map zero
+fibre is nonempty and connected by Kirwan, and connected resolution fibres
+pass this connectedness to the target hub.  Thus the candidate-17 and
+candidate-20 double-singular rotation-zero hubs are connected at every
+positive occupation.  Whether every component of either larger singular
+image meets this hub, and hence complete singular connectedness, remains
+open.  On the one-parity common-square endpoint, the missing distinction is
+now exact.  Its frequency-weighted rotational coefficient is
+`delta=omega_plus*N_plus-omega_minus*N_minus`.  Candidate 17 has `delta<0`
+throughout the complete nonzero active cone and hence a one-point
+`RP2/SO(3)` quotient.  Candidate 20 changes sign between `R2` and `R4`, so an
+exact positive ray combination reaches `delta=0`; there the full `CP2`
+survives and its `SO(3)` quotient is a closed interval.  Off that divisor it
+is again one point.  Thus the unweighted occupation gap is not a sufficient
+rotation-imbalance test, and the larger two-parity singular components must
+retain the candidate-20 balance divisor explicitly.
 All higher lifecycles remain fail-closed.  This is nonlinear input to
 same-background Bridge 1 with Classical,
 not a promotion of its certified linear relative triangle/cofiber.  The
