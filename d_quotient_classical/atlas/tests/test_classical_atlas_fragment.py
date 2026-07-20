@@ -44,6 +44,24 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             entry["claim_boundary"],
         )
 
+    def test_wess_zumino_causal_trace_obstruction_is_fail_closed(self) -> None:
+        entry = self.entries[
+            "classical.vacuum_cylinder.local_bv."
+            "wz_tau_adic_causal_trace_obstruction"
+        ]
+        self.assertEqual(entry["descriptions"]["causal"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["quantum"], "OPEN")
+        self.assertIn("not a mode or particle carrier", entry["scope"]["carrier"])
+        self.assertIn(
+            "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn("not a finite zero mode", entry["claim_boundary"])
+        self.assertIn(
+            "No full tau-adic Hadamard kernel", entry["claim_boundary"]
+        )
+
     def test_sharp_green_transfer_crosswalk_has_no_mode_identification(self) -> None:
         theorem_id = "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1"
         for chirality in ("plus", "minus"):

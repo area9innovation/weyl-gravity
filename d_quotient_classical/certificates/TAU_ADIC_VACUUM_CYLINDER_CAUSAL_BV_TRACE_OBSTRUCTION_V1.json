@@ -1,0 +1,513 @@
+{
+  "background": {
+    "boundaries": "closed S3 Cauchy surfaces; no timelike boundary",
+    "linearization_point": "tau_bar=0",
+    "metric": "g_bar=-dt^2+dOmega_3^2",
+    "setting_id": "vacuum_cylinder_regular_Bach_chart",
+    "spacetime": "R_t x S3"
+  },
+  "carrier_classification": {
+    "finite_auxiliary_cyclic_extension": "OBSTRUCTED",
+    "finite_rank_zero_mode_removal": "NOT_APPLICABLE",
+    "future_compact_complete_carrier": "OBSTRUCTED",
+    "minimal_extension": "OBSTRUCTED",
+    "nonminimal_gauge_fixed_extension": "OBSTRUCTED",
+    "past_compact_complete_carrier": "OBSTRUCTED",
+    "reason": "the obstruction already has arbitrary compact support and nonzero homology before any wavefront or boundary issue",
+    "time_slice_complete_carrier": "OBSTRUCTED"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL obstruction hash-imports the complete strict 386-row vacuum-cylinder causal BV complex and the formal Wess--Zumino cotangent/Cartan data. Their convention-correct scalar integration isolates the compactly supported dressed conformal trace u=phi_trace-2tau as a nonzero unary homology class. The cotangent trace is recorded only in the zeroth-order scalar subquotient because the full Diff companion acts on it. Therefore no advanced or retarded chain homotopy can satisfy q0 Lambda+Lambda q0=1 on the complete tau-adic carrier in the declared class. This is not a no-go for theories with an added gauge generator or a classical dressed-trace kinetic term, and it does not establish a Hadamard state, positivity, a Lorentzian QME, particles, scattering or unitarity.",
+  "claim_flags": {
+    "COMPLETE_DECLARED_FINITE_DIFFERENTIAL_CLASS_OBSTRUCTED": true,
+    "FULL_TAU_ADIC_BRST_HADAMARD_KERNEL": false,
+    "FULL_TAU_ADIC_CLASSICAL_CAUSAL_BV_CARRIER": false,
+    "LORENTZIAN_QME_RESTORED": false,
+    "PARTICLE_INTERPRETATION_AUTHORIZED": false,
+    "PHYSICAL_POSITIVITY_CERTIFIED": false,
+    "STRICT_386_ROW_CAUSAL_COMPLEX_IMPORTED": true,
+    "TAU_ADIC_CANONICAL_SCALAR_EXTENSION_ASSEMBLED": true
+  },
+  "content_hashes": {
+    "dependency_manifest_sha256": "ffce4287a775eac86fa8bb328e26e82b9e10a85b9dabd46436838488e46a8232",
+    "scalar_fixture_sha256": "627c473329f325e1b15b408e1061efc2292f32e8cdeac6d309e73d4c12ccc5df"
+  },
+  "declared_extension_class": {
+    "completeness_reason": "Every allowed operation is a chain isomorphism, addition of an acyclic summand, or a deformation retract, hence preserves the displayed scalar homology. Any repair must change one of the explicitly excluded gauge/action/domain data.",
+    "excludes": [
+      "a second independent Weyl gauge generator",
+      "an order-zero R(g_hat)^2 or compensator kinetic term",
+      "an hbar^-1 or Laurent-series propagator",
+      "a quotient deleting arbitrary compactly supported dressed traces",
+      "nonlocal harmonic or Fourier projectors"
+    ],
+    "fixed_data": [
+      "the classical Weyl action and its trace-free Bach Hessian",
+      "the single diagonal Weyl ghost sigma=2omega",
+      "the frozen strict q0 outside the mandated compensator rows",
+      "the nondegenerate canonical odd pairing and real structure"
+    ],
+    "includes": [
+      "the two required tau and tau_hat_star scalar rows",
+      "the exact formal tau-adic canonical dressed change linearized at tau_bar=0",
+      "finite-order support-local cyclic chain isomorphisms",
+      "pointwise contractible nonminimal and generalized-auxiliary pairs",
+      "finite differential cyclic SDR lifts and gauge-fermion canonical transforms"
+    ],
+    "name": "CANONICAL_TAU_ADIC_FINITE_DIFFERENTIAL_CAUSAL_BV_EXTENSIONS"
+  },
+  "dependencies": {
+    "WZ_D_Cartan_contraction": {
+      "artifact_id": "WESS_ZUMINO_D_CARTAN_CONTRACTION_V1",
+      "path": "d_quotient_classical/certificates/WESS_ZUMINO_D_CARTAN_CONTRACTION_V1.json",
+      "sha256": "7d55dd68a6d5460fc5abb8d0d338e56b3890de2209aa72b4a7838ac31d9b3507",
+      "source_commit": "e15ec011688def11effb9c0b5ca3dc88fc28318b"
+    },
+    "WZ_minimal_cotangent_lift": {
+      "artifact_id": "WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT",
+      "path": "quantum-weyl/anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
+      "sha256": "b265dc9d86938ed7bee0f57a1394e26e762e99841a89b1310b950542e0c2e2b1",
+      "source_commit": "69f01998d255455aebe3bbcb0872ae82cc698621"
+    },
+    "global_CKV_guard": {
+      "artifact_id": "pure-weyl-auxiliary-symbol-green-witness-v3",
+      "path": "covariant_completion/certificates/auxiliary_full_bv_green_witness.json",
+      "sha256": "7ca2067e65c35a3e8aa3c1dc213a811bdf94d64dc11ad22983b9d5954516724c",
+      "source_commit": "c6e1319ab3d24cddf61bf69ad0f1deeeeedb2d9a"
+    },
+    "independent_causal_transfer_audit": {
+      "artifact_id": "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1",
+      "path": "d_quotient_classical/certificates/GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1.json",
+      "sha256": "98c57a89861ce198e8ad072bc43859f84b5c6d96df85d0013f729d24dd1d1df7",
+      "source_commit": "59ef411a0d6cbdd079853333c224f57385cbe98f"
+    },
+    "strict_30_endpoint": {
+      "artifact_id": "pure-weyl-prolonged-metric-endpoint-complex-v1",
+      "path": "covariant_completion/certificates/curved_prolonged_metric_endpoint_complex.json",
+      "sha256": "870621ae6750b1e66e3f3316c5a2680d1244c7fca3be4d6aeaabbfdc2178fd79",
+      "source_commit": "6ebd72043d61dd3ca9a8cd571321424408762cd5"
+    },
+    "strict_386_Green_homotopy": {
+      "artifact_id": "pure-weyl-full-prolonged-green-homotopy-assembly-v1",
+      "path": "covariant_completion/certificates/curved_full_prolonged_green_homotopy_assembly.json",
+      "sha256": "1f8aae727a06fb82c70732f7207499d427894247d09fea22f677a0f9b38be0ee",
+      "source_commit": "c5f811e120bc05198baa35a9b5491d8a46ae1295"
+    },
+    "strict_action_and_gauge_normalization": {
+      "artifact_id": "pure-weyl-covariant-auxiliary-action-definition-v1",
+      "path": "covariant_completion/certificates/curved_auxiliary_action_definition.json",
+      "sha256": "6acb586df9784c925fc994701ae910cc243e6898d635626513f4a1adfbdab4db",
+      "source_commit": "2803f3d6ba93c2922a912f276d5c890198045291"
+    },
+    "strict_full_BV_inventory": {
+      "artifact_id": "pure-weyl-curved-deformation-retract-status-v1",
+      "path": "covariant_completion/certificates/curved_deformation_retract_status.json",
+      "sha256": "4e09bec901e2863d430e0a158a893c95442e3ef387b6235f10cad34b1fa8c15d",
+      "source_commit": "f4ff0e9c686de9e103155b995a8424231c40b424"
+    },
+    "strict_minimal_BV": {
+      "artifact_id": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
+      "path": "d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2.json",
+      "sha256": "3fa276bd04fce3b0142e910e907cab3ad3e4d39bbd60b966de90fa11860c03dc",
+      "source_commit": "0ebe60ff873bca387d6317ce8354f26bd03cc811"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "imported_strict_carrier": {
+    "advanced_retarded_homotopies_certified": true,
+    "cyclic_adjoint_reversal_certified": true,
+    "endpoint_block_ranks": [
+      5,
+      10,
+      10,
+      5
+    ],
+    "endpoint_rank": 30,
+    "full_rank": 386,
+    "locally_contracted_rank": 356,
+    "minimal_and_nonminimal_inventory_complete": true,
+    "minimal_rank": 66,
+    "support_domains": [
+      "Gamma_c",
+      "Gamma_sc",
+      "standard advanced/retarded Green domains"
+    ]
+  },
+  "next_gate": "Choose explicitly whether to enlarge the gauge algebra by the missing conformal symmetry or change the classical action by a dressed-trace kinetic term; then construct and certify the new causal BV complex before any full tau-adic Hadamard attempt.",
+  "normalization_bridge": {
+    "causal_endpoint": "delta g=g sigma",
+    "compensator": "Q tau=L_xi tau+omega",
+    "derived_compensator_arrow": "sigma -> tau/2",
+    "derived_identification": "sigma=2 omega",
+    "dressed_trace": "u=phi_trace-2 tau",
+    "strict_local_BV": "Q g=L_xi g+2 omega g"
+  },
+  "raw_D_and_pairing": {
+    "Cartan_identity_imported": true,
+    "D_commutes_with_scalar_change": true,
+    "Weyl_component": 0,
+    "effect_on_obstruction": "raw-D compatibility and nondegenerate pairing do not remove the two scalar homology classes",
+    "odd_pairing_non_degenerate": true,
+    "pairing_on_obstruction": "<u,u_star>=1",
+    "raw_generator": "D_compact=partial_t",
+    "real_structure": "componentwise real conjugation; every scalar matrix is rational"
+  },
+  "repair_boundary": {
+    "both_change_theory": true,
+    "hbar_adic_inverse_warning": "an order-hbar trace Hessian has no inverse over Q[[hbar]] when its order-zero coefficient vanishes",
+    "one_loop_WZ_term_is_not_Q0_kinetic_data": true,
+    "smallest_algebraic_repairs": [
+      "add the missing independent conformal gauge generator and its BV cotangent completion",
+      "add a classical dressed-trace kinetic term such as a nonzero R(g_hat)^2 direction"
+    ]
+  },
+  "result_id": "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1",
+  "result_state": "OBSTRUCTED",
+  "scalar_trace_obstruction": {
+    "Q_dressed": {
+      "column_count": 6,
+      "entries": [
+        {
+          "coefficient": 1,
+          "column": 0,
+          "row": 2
+        },
+        {
+          "coefficient": -1,
+          "column": 4,
+          "row": 5
+        }
+      ],
+      "row_count": 6,
+      "sha256": "8d20bd04dafd68d3ff2458006b6d2c16a6af29c588c960275272989dc61b17ef"
+    },
+    "Q_original": {
+      "column_count": 6,
+      "entries": [
+        {
+          "coefficient": 1,
+          "column": 0,
+          "row": 1
+        },
+        {
+          "coefficient": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "column": 0,
+          "row": 2
+        },
+        {
+          "coefficient": -1,
+          "column": 3,
+          "row": 5
+        },
+        {
+          "coefficient": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "column": 4,
+          "row": 5
+        }
+      ],
+      "row_count": 6,
+      "sha256": "3f6cc9b44b54b497beeed2de953e58507efa7774413ec339b968b4fb5935e5d0"
+    },
+    "canonical_change_inverse": {
+      "column_count": 6,
+      "entries": [
+        {
+          "coefficient": 1,
+          "column": 0,
+          "row": 0
+        },
+        {
+          "coefficient": 1,
+          "column": 1,
+          "row": 1
+        },
+        {
+          "coefficient": -2,
+          "column": 2,
+          "row": 1
+        },
+        {
+          "coefficient": 1,
+          "column": 1,
+          "row": 2
+        },
+        {
+          "coefficient": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "column": 4,
+          "row": 3
+        },
+        {
+          "coefficient": 1,
+          "column": 3,
+          "row": 4
+        },
+        {
+          "coefficient": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "column": 4,
+          "row": 4
+        },
+        {
+          "coefficient": 1,
+          "column": 5,
+          "row": 5
+        }
+      ],
+      "row_count": 6,
+      "sha256": "7bd706f043346fb8223486a4a42eecfc2ad012d694f11f695a73cc5d7097630a"
+    },
+    "canonical_change_old_from_dressed": {
+      "column_count": 6,
+      "entries": [
+        {
+          "coefficient": 1,
+          "column": 0,
+          "row": 0
+        },
+        {
+          "coefficient": 1,
+          "column": 2,
+          "row": 1
+        },
+        {
+          "coefficient": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "column": 1,
+          "row": 2
+        },
+        {
+          "coefficient": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "column": 2,
+          "row": 2
+        },
+        {
+          "coefficient": 1,
+          "column": 3,
+          "row": 3
+        },
+        {
+          "coefficient": 1,
+          "column": 4,
+          "row": 3
+        },
+        {
+          "coefficient": -2,
+          "column": 3,
+          "row": 4
+        },
+        {
+          "coefficient": 1,
+          "column": 5,
+          "row": 5
+        }
+      ],
+      "row_count": 6,
+      "sha256": "73e7e5fd2a0bd1e03e613e55ef96c0e122566db3e6d7dd9f68e94d65d5e3122e"
+    },
+    "compact_support_witness": {
+      "Weyl_boundary_identity": "lambda_u(g_bar sigma, sigma/2)=0",
+      "consequence": "q0 Lambda f u+Lambda q0 f u=f u is impossible for advanced, retarded or time-slice Lambda because Lambda f u would be a forbidden smooth primitive",
+      "cycle_identity": "q0(f u)=Bach_linearized(f g_bar)=0",
+      "cycle_reason": "exact conformal invariance of the classical Weyl action",
+      "diffeomorphism_boundary_identity": "lambda_u(L_xi g_bar)=2 integral div(xi) vol=0 for compactly supported xi",
+      "dual_functional": "lambda_u(h,tau,aux)=integral tr_gbar(h-2tau g_bar) vol after the certified endpoint projection kills contractible auxiliaries",
+      "dual_functional_scope": "independently excludes compactly supported primitives; the global CKV argument below excludes the one-sided noncompact primitives relevant to Green homotopies",
+      "global_CKV_nonmembership": "If q0 a=f u for any smooth primitive a, the tracefree metric equation forces K_TF xi=0. The imported global kernel has exactly fifteen CKV modes, so the trace equation forces f into their finite conformal-factor span, contrary to the declared choice of f.",
+      "lift_to_386": "compose lambda_u with the certified support-local endpoint projection p_end",
+      "nonboundary_identity": "f u is outside q0 of every smooth degree-minus-one source; lambda_u additionally gives value one and annihilates every compactly supported boundary",
+      "source": "f u with f in C_c^infinity(R x S3) and integral(4f vol)=1, chosen outside the finite fifteen-dimensional global CKV conformal-factor span",
+      "support": "supp(f u)=supp(f), compact"
+    },
+    "degrees": [
+      -1,
+      0,
+      0,
+      1,
+      1,
+      2
+    ],
+    "dressed_basis": [
+      "sigma",
+      "u=phi_trace-2tau",
+      "v=phi_trace",
+      "u_star",
+      "v_star",
+      "sigma_star"
+    ],
+    "fixture_scope": "ZEROTH_ORDER_WEYL_TRACE_SUBQUOTIENT",
+    "normalized_nonboundary_witnesses": [
+      {
+        "Q_cycle": "0",
+        "class_id": "DRESSED_CONFORMAL_TRACE_FIELD",
+        "cycle": {
+          "column_count": 1,
+          "entries": [
+            {
+              "coefficient": 1,
+              "column": 0,
+              "row": 1
+            }
+          ],
+          "row_count": 6,
+          "sha256": "65753a4a05aa49d9d639bbe54c306d742d7922cbc156730e07de0718e37ae1ce"
+        },
+        "dual": {
+          "column_count": 6,
+          "entries": [
+            {
+              "coefficient": 1,
+              "column": 1,
+              "row": 0
+            }
+          ],
+          "row_count": 1,
+          "sha256": "87620e8f460a542f84fe43ef9d40a8f957e538a4f8a49da0957ef52dec1bd715"
+        },
+        "dual_Q": "0",
+        "dual_cycle": 1,
+        "full_carrier_status": "PROMOTED_BY_COMPACT_SUPPORT_STOKES_WITNESS"
+      },
+      {
+        "Q_cycle": "0",
+        "class_id": "DRESSED_CONFORMAL_TRACE_COTANGENT",
+        "cycle": {
+          "column_count": 1,
+          "entries": [
+            {
+              "coefficient": 1,
+              "column": 0,
+              "row": 3
+            }
+          ],
+          "row_count": 6,
+          "sha256": "199b00f1838ec5d053255ede1b8aeb9c2b77fed1aa97d06d4d6f2c791fbff078"
+        },
+        "dual": {
+          "column_count": 6,
+          "entries": [
+            {
+              "coefficient": 1,
+              "column": 3,
+              "row": 0
+            }
+          ],
+          "row_count": 1,
+          "sha256": "b57ad4bf58b1e5e6546566be189bbe3151e27c9f5081dc7063862ce56c53d499"
+        },
+        "dual_Q": "0",
+        "dual_cycle": 1,
+        "full_carrier_status": "SUBQUOTIENT_ONLY_DIFF_COMPANION_NOT_REMOVED"
+      }
+    ],
+    "odd_pairing_dressed": {
+      "column_count": 6,
+      "entries": [
+        {
+          "coefficient": 1,
+          "column": 5,
+          "row": 0
+        },
+        {
+          "coefficient": 1,
+          "column": 3,
+          "row": 1
+        },
+        {
+          "coefficient": 1,
+          "column": 4,
+          "row": 2
+        },
+        {
+          "coefficient": -1,
+          "column": 1,
+          "row": 3
+        },
+        {
+          "coefficient": -1,
+          "column": 2,
+          "row": 4
+        },
+        {
+          "coefficient": -1,
+          "column": 0,
+          "row": 5
+        }
+      ],
+      "row_count": 6,
+      "sha256": "8423912a40fabf6e975ed8114cdc8b303d6639f99127aa2b9409f96dd78ae091"
+    },
+    "odd_pairing_original": {
+      "column_count": 6,
+      "entries": [
+        {
+          "coefficient": 1,
+          "column": 5,
+          "row": 0
+        },
+        {
+          "coefficient": 1,
+          "column": 3,
+          "row": 1
+        },
+        {
+          "coefficient": 1,
+          "column": 4,
+          "row": 2
+        },
+        {
+          "coefficient": -1,
+          "column": 1,
+          "row": 3
+        },
+        {
+          "coefficient": -1,
+          "column": 2,
+          "row": 4
+        },
+        {
+          "coefficient": -1,
+          "column": 0,
+          "row": 5
+        }
+      ],
+      "row_count": 6,
+      "sha256": "8423912a40fabf6e975ed8114cdc8b303d6639f99127aa2b9409f96dd78ae091"
+    },
+    "original_basis": [
+      "sigma",
+      "phi_trace",
+      "tau",
+      "phi_trace_star",
+      "tau_hat_star",
+      "sigma_star"
+    ],
+    "principal_symbol": {
+      "Green_inverse_exists": false,
+      "defect_family": "C_c^infinity(R x S3), hence infinite-dimensional and support-local",
+      "defect_is_finite_zero_mode": false,
+      "dressed_trace_Hessian": "0 for every nonzero covector",
+      "reason": "the classical Weyl action is conformally invariant and the Bach Hessian has identically zero trace row/column"
+    },
+    "rank_Q": 2,
+    "subquotient_homology_dimension": 2
+  },
+  "schema": "pure-weyl-tau-adic-vacuum-cylinder-causal-bv-trace-obstruction-v1"
+}

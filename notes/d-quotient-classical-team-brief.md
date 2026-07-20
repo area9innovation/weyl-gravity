@@ -2980,6 +2980,58 @@ another 104-new-row non-cone differential constructed simultaneously with
 the \(A_{104}\) equations, and it does not raise the global lower bound.
 Cyclicity, reality, retained SDR, Hadamard and quantum claims remain open.
 
+### Tau-adic vacuum-cylinder causal BV trace obstruction (2026-07-20)
+
+`TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1` disposes the
+requested same-background causal integration negatively in the complete
+declared finite differential class.
+
+The normalization bridge is forced by the imported certificates:
+
+\[
+\delta g=2\omega g=\sigma g,\qquad
+\delta\tau=\omega=\frac{\sigma}{2}.
+\]
+
+After adding \(\tau,\widehat\tau^*\), the exact canonical dressed change
+isolates
+
+\[
+u=\phi_{\rm tr}-2\tau .
+\]
+
+The classical Weyl action has identically zero Bach Hessian on this dressed
+trace.  Choose compactly supported \(f\), normalized by
+\(\int 4f\,{\rm vol}=1\), outside the finite fifteen-dimensional span of
+global conformal-Killing factors.  Then \(fu\) is closed.  The functional
+
+\[
+\lambda_u(h,\tau)
+=\int {\rm tr}_{\bar g}(h-2\tau\bar g)\,{\rm vol}
+\]
+
+annihilates compactly supported diffeomorphism boundaries by Stokes and
+annihilates the convention-correct Weyl boundary pointwise, while
+\(\lambda_u(fu)=1\).  For the one-sided noncompact primitives relevant to a
+Green homotopy, the tracefree metric equation would force the primitive ghost
+to be a global conformal Killing field, hence force \(f\) back into that
+fifteen-dimensional span.  This contradicts its choice.  Composing with the
+certified endpoint projection lifts the obstruction from the 30-row endpoint
+to the complete strict 386-row carrier.  Therefore
+\(q_0\Lambda_\pm+\Lambda_\pm q_0=1\) is impossible on the complete tau-adic
+carrier.
+
+The no-go is stable under finite-order support-local cyclic changes,
+contractible nonminimal/auxiliary additions, gauge-fermion transforms and
+finite differential cyclic SDR lifts.  The obstruction is an arbitrary
+compact-support family, not a removable finite zero mode.  A second
+independent conformal gauge generator or an order-zero dressed-trace kinetic
+term can evade it only by changing the theory.  The order-\(\hbar\)
+Wess--Zumino term is not classical \(Q_0\) kinetic data and has no inverse
+over the formal \(\hbar\)-adic ring when the leading trace Hessian vanishes.
+No full tau-adic Hadamard kernel, positivity, Lorentzian QME or particle
+claim follows.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

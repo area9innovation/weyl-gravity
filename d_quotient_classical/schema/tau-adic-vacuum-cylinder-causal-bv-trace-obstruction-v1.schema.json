@@ -1,0 +1,715 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/pure-weyl-tau-adic-vacuum-cylinder-causal-bv-trace-obstruction-v1.schema.json",
+  "title": "Tau-adic vacuum-cylinder causal BV trace obstruction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "background",
+    "normalization_bridge",
+    "imported_strict_carrier",
+    "declared_extension_class",
+    "scalar_trace_obstruction",
+    "carrier_classification",
+    "raw_D_and_pairing",
+    "repair_boundary",
+    "dependencies",
+    "content_hashes",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-tau-adic-vacuum-cylinder-causal-bv-trace-obstruction-v1"
+    },
+    "result_id": {
+      "const": "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1"
+    },
+    "result_state": {
+      "const": "OBSTRUCTED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "background": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "setting_id",
+        "spacetime",
+        "metric",
+        "boundaries",
+        "linearization_point"
+      ],
+      "properties": {
+        "setting_id": {
+          "const": "vacuum_cylinder_regular_Bach_chart"
+        },
+        "spacetime": {
+          "const": "R_t x S3"
+        },
+        "metric": {
+          "const": "g_bar=-dt^2+dOmega_3^2"
+        },
+        "boundaries": {
+          "type": "string",
+          "minLength": 30
+        },
+        "linearization_point": {
+          "const": "tau_bar=0"
+        }
+      }
+    },
+    "normalization_bridge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strict_local_BV",
+        "causal_endpoint",
+        "compensator",
+        "derived_identification",
+        "derived_compensator_arrow",
+        "dressed_trace"
+      ],
+      "properties": {
+        "strict_local_BV": {
+          "const": "Q g=L_xi g+2 omega g"
+        },
+        "causal_endpoint": {
+          "const": "delta g=g sigma"
+        },
+        "compensator": {
+          "const": "Q tau=L_xi tau+omega"
+        },
+        "derived_identification": {
+          "const": "sigma=2 omega"
+        },
+        "derived_compensator_arrow": {
+          "const": "sigma -> tau/2"
+        },
+        "dressed_trace": {
+          "const": "u=phi_trace-2 tau"
+        }
+      }
+    },
+    "imported_strict_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "full_rank",
+        "locally_contracted_rank",
+        "endpoint_rank",
+        "endpoint_block_ranks",
+        "minimal_rank",
+        "minimal_and_nonminimal_inventory_complete",
+        "advanced_retarded_homotopies_certified",
+        "cyclic_adjoint_reversal_certified",
+        "support_domains"
+      ],
+      "properties": {
+        "full_rank": {
+          "const": 386
+        },
+        "locally_contracted_rank": {
+          "const": 356
+        },
+        "endpoint_rank": {
+          "const": 30
+        },
+        "endpoint_block_ranks": {
+          "const": [
+            5,
+            10,
+            10,
+            5
+          ]
+        },
+        "minimal_rank": {
+          "const": 66
+        },
+        "minimal_and_nonminimal_inventory_complete": {
+          "const": true
+        },
+        "advanced_retarded_homotopies_certified": {
+          "const": true
+        },
+        "cyclic_adjoint_reversal_certified": {
+          "const": true
+        },
+        "support_domains": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "declared_extension_class": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "includes",
+        "fixed_data",
+        "excludes",
+        "completeness_reason"
+      ],
+      "properties": {
+        "name": {
+          "const": "CANONICAL_TAU_ADIC_FINITE_DIFFERENTIAL_CAUSAL_BV_EXTENSIONS"
+        },
+        "includes": {
+          "$ref": "#/$defs/nonemptyStrings"
+        },
+        "fixed_data": {
+          "$ref": "#/$defs/nonemptyStrings"
+        },
+        "excludes": {
+          "$ref": "#/$defs/nonemptyStrings"
+        },
+        "completeness_reason": {
+          "type": "string",
+          "minLength": 100
+        }
+      }
+    },
+    "scalar_trace_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixture_scope",
+        "original_basis",
+        "dressed_basis",
+        "degrees",
+        "Q_original",
+        "odd_pairing_original",
+        "canonical_change_old_from_dressed",
+        "canonical_change_inverse",
+        "Q_dressed",
+        "odd_pairing_dressed",
+        "rank_Q",
+        "subquotient_homology_dimension",
+        "normalized_nonboundary_witnesses",
+        "compact_support_witness",
+        "principal_symbol"
+      ],
+      "properties": {
+        "fixture_scope": {
+          "const": "ZEROTH_ORDER_WEYL_TRACE_SUBQUOTIENT"
+        },
+        "original_basis": {
+          "const": [
+            "sigma",
+            "phi_trace",
+            "tau",
+            "phi_trace_star",
+            "tau_hat_star",
+            "sigma_star"
+          ]
+        },
+        "dressed_basis": {
+          "const": [
+            "sigma",
+            "u=phi_trace-2tau",
+            "v=phi_trace",
+            "u_star",
+            "v_star",
+            "sigma_star"
+          ]
+        },
+        "degrees": {
+          "const": [
+            -1,
+            0,
+            0,
+            1,
+            1,
+            2
+          ]
+        },
+        "Q_original": {
+          "$ref": "#/$defs/sparseMatrix"
+        },
+        "odd_pairing_original": {
+          "$ref": "#/$defs/sparseMatrix"
+        },
+        "canonical_change_old_from_dressed": {
+          "$ref": "#/$defs/sparseMatrix"
+        },
+        "canonical_change_inverse": {
+          "$ref": "#/$defs/sparseMatrix"
+        },
+        "Q_dressed": {
+          "$ref": "#/$defs/sparseMatrix"
+        },
+        "odd_pairing_dressed": {
+          "$ref": "#/$defs/sparseMatrix"
+        },
+        "rank_Q": {
+          "const": 2
+        },
+        "subquotient_homology_dimension": {
+          "const": 2
+        },
+        "normalized_nonboundary_witnesses": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "$ref": "#/$defs/nonboundaryWitness"
+          }
+        },
+        "compact_support_witness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source",
+            "support",
+            "cycle_identity",
+            "cycle_reason",
+            "dual_functional",
+            "dual_functional_scope",
+            "diffeomorphism_boundary_identity",
+            "Weyl_boundary_identity",
+            "lift_to_386",
+            "global_CKV_nonmembership",
+            "nonboundary_identity",
+            "consequence"
+          ],
+          "properties": {
+            "source": {
+              "type": "string",
+              "minLength": 30
+            },
+            "support": {
+              "type": "string",
+              "minLength": 20
+            },
+            "cycle_identity": {
+              "const": "q0(f u)=Bach_linearized(f g_bar)=0"
+            },
+            "cycle_reason": {
+              "type": "string",
+              "minLength": 40
+            },
+            "dual_functional": {
+              "type": "string",
+              "minLength": 60
+            },
+            "dual_functional_scope": {
+              "type": "string",
+              "minLength": 100
+            },
+            "diffeomorphism_boundary_identity": {
+              "type": "string",
+              "minLength": 70
+            },
+            "Weyl_boundary_identity": {
+              "type": "string",
+              "minLength": 30
+            },
+            "lift_to_386": {
+              "type": "string",
+              "minLength": 60
+            },
+            "global_CKV_nonmembership": {
+              "type": "string",
+              "minLength": 180
+            },
+            "nonboundary_identity": {
+              "type": "string",
+              "minLength": 30
+            },
+            "consequence": {
+              "type": "string",
+              "minLength": 50
+            }
+          }
+        },
+        "principal_symbol": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "dressed_trace_Hessian",
+            "reason",
+            "Green_inverse_exists",
+            "defect_is_finite_zero_mode",
+            "defect_family"
+          ],
+          "properties": {
+            "dressed_trace_Hessian": {
+              "const": "0 for every nonzero covector"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 60
+            },
+            "Green_inverse_exists": {
+              "const": false
+            },
+            "defect_is_finite_zero_mode": {
+              "const": false
+            },
+            "defect_family": {
+              "type": "string",
+              "minLength": 50
+            }
+          }
+        }
+      }
+    },
+    "carrier_classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "minimal_extension",
+        "nonminimal_gauge_fixed_extension",
+        "finite_auxiliary_cyclic_extension",
+        "past_compact_complete_carrier",
+        "future_compact_complete_carrier",
+        "time_slice_complete_carrier",
+        "finite_rank_zero_mode_removal",
+        "reason"
+      ],
+      "properties": {
+        "minimal_extension": {
+          "const": "OBSTRUCTED"
+        },
+        "nonminimal_gauge_fixed_extension": {
+          "const": "OBSTRUCTED"
+        },
+        "finite_auxiliary_cyclic_extension": {
+          "const": "OBSTRUCTED"
+        },
+        "past_compact_complete_carrier": {
+          "const": "OBSTRUCTED"
+        },
+        "future_compact_complete_carrier": {
+          "const": "OBSTRUCTED"
+        },
+        "time_slice_complete_carrier": {
+          "const": "OBSTRUCTED"
+        },
+        "finite_rank_zero_mode_removal": {
+          "const": "NOT_APPLICABLE"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 60
+        }
+      }
+    },
+    "raw_D_and_pairing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_generator",
+        "Weyl_component",
+        "D_commutes_with_scalar_change",
+        "Cartan_identity_imported",
+        "odd_pairing_non_degenerate",
+        "real_structure",
+        "pairing_on_obstruction",
+        "effect_on_obstruction"
+      ],
+      "properties": {
+        "raw_generator": {
+          "const": "D_compact=partial_t"
+        },
+        "Weyl_component": {
+          "const": 0
+        },
+        "D_commutes_with_scalar_change": {
+          "const": true
+        },
+        "Cartan_identity_imported": {
+          "const": true
+        },
+        "odd_pairing_non_degenerate": {
+          "const": true
+        },
+        "real_structure": {
+          "type": "string",
+          "minLength": 40
+        },
+        "pairing_on_obstruction": {
+          "const": "<u,u_star>=1"
+        },
+        "effect_on_obstruction": {
+          "type": "string",
+          "minLength": 60
+        }
+      }
+    },
+    "repair_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "smallest_algebraic_repairs",
+        "both_change_theory",
+        "one_loop_WZ_term_is_not_Q0_kinetic_data",
+        "hbar_adic_inverse_warning"
+      ],
+      "properties": {
+        "smallest_algebraic_repairs": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 40
+          }
+        },
+        "both_change_theory": {
+          "const": true
+        },
+        "one_loop_WZ_term_is_not_Q0_kinetic_data": {
+          "const": true
+        },
+        "hbar_adic_inverse_warning": {
+          "type": "string",
+          "minLength": 60
+        }
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/dependency"
+      },
+      "minProperties": 9,
+      "maxProperties": 9
+    },
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scalar_fixture_sha256",
+        "dependency_manifest_sha256"
+      ],
+      "properties": {
+        "scalar_fixture_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "dependency_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "STRICT_386_ROW_CAUSAL_COMPLEX_IMPORTED",
+        "TAU_ADIC_CANONICAL_SCALAR_EXTENSION_ASSEMBLED",
+        "COMPLETE_DECLARED_FINITE_DIFFERENTIAL_CLASS_OBSTRUCTED",
+        "FULL_TAU_ADIC_CLASSICAL_CAUSAL_BV_CARRIER",
+        "FULL_TAU_ADIC_BRST_HADAMARD_KERNEL",
+        "LORENTZIAN_QME_RESTORED",
+        "PHYSICAL_POSITIVITY_CERTIFIED",
+        "PARTICLE_INTERPRETATION_AUTHORIZED"
+      ],
+      "properties": {
+        "STRICT_386_ROW_CAUSAL_COMPLEX_IMPORTED": {
+          "const": true
+        },
+        "TAU_ADIC_CANONICAL_SCALAR_EXTENSION_ASSEMBLED": {
+          "const": true
+        },
+        "COMPLETE_DECLARED_FINITE_DIFFERENTIAL_CLASS_OBSTRUCTED": {
+          "const": true
+        },
+        "FULL_TAU_ADIC_CLASSICAL_CAUSAL_BV_CARRIER": {
+          "const": false
+        },
+        "FULL_TAU_ADIC_BRST_HADAMARD_KERNEL": {
+          "const": false
+        },
+        "LORENTZIAN_QME_RESTORED": {
+          "const": false
+        },
+        "PHYSICAL_POSITIVITY_CERTIFIED": {
+          "const": false
+        },
+        "PARTICLE_INTERPRETATION_AUTHORIZED": {
+          "const": false
+        }
+      }
+    },
+    "next_gate": {
+      "type": "string",
+      "minLength": 120
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 300
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "nonemptyStrings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 15
+      }
+    },
+    "fraction": {
+      "oneOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "numerator",
+            "denominator"
+          ],
+          "properties": {
+            "numerator": {
+              "type": "integer"
+            },
+            "denominator": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        }
+      ]
+    },
+    "sparseEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "row",
+        "column",
+        "coefficient"
+      ],
+      "properties": {
+        "row": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "column": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "coefficient": {
+          "$ref": "#/$defs/fraction"
+        }
+      }
+    },
+    "sparseMatrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "row_count",
+        "column_count",
+        "entries",
+        "sha256"
+      ],
+      "properties": {
+        "row_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "column_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sparseEntry"
+          }
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "nonboundaryWitness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "class_id",
+        "cycle",
+        "dual",
+        "Q_cycle",
+        "dual_Q",
+        "dual_cycle",
+        "full_carrier_status"
+      ],
+      "properties": {
+        "class_id": {
+          "enum": [
+            "DRESSED_CONFORMAL_TRACE_FIELD",
+            "DRESSED_CONFORMAL_TRACE_COTANGENT"
+          ]
+        },
+        "cycle": {
+          "$ref": "#/$defs/sparseMatrix"
+        },
+        "dual": {
+          "$ref": "#/$defs/sparseMatrix"
+        },
+        "Q_cycle": {
+          "const": "0"
+        },
+        "dual_Q": {
+          "const": "0"
+        },
+        "dual_cycle": {
+          "const": 1
+        },
+        "full_carrier_status": {
+          "enum": [
+            "PROMOTED_BY_COMPACT_SUPPORT_STOKES_WITNESS",
+            "SUBQUOTIENT_ONLY_DIFF_COMPANION_NOT_REMOVED"
+          ]
+        }
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "path",
+        "sha256",
+        "source_commit"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "minLength": 10
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "source_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_id": "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/certificates/TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1.json",
+      "sha256": "db1f998a0920adb94cf4fcbffb1b9eb2ea6537876aff9513aac4e4d9ec2b51b9"
+    },
+    {
+      "path": "d_quotient_classical/reports/tau-adic-vacuum-cylinder-causal-bv-trace-obstruction.md",
+      "sha256": "70547a6a8b6dd52e31b8a9a2b52f925253d1f121c4be4307d9fccf2f1d295f66"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "a6053c27584db9728de7cc70aba844f5e717b803c9290102ca9b770e7bd0fb67"
+    },
+    {
+      "path": "d_quotient_classical/schema/tau-adic-vacuum-cylinder-causal-bv-trace-obstruction-v1.schema.json",
+      "sha256": "1f97d962f8e6e8536420d61be4ab2103efd87b09e3c9a5a43b55dda514cc4629"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tau_adic_vacuum_cylinder_causal_bv_trace_obstruction.py",
+      "sha256": "f330ed7fd6abdd81eb4b97ecd94360dc4ca7b33ff3ccf672f47d17f8b7f92f7f"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_tau_adic_vacuum_cylinder_causal_bv_trace_obstruction.py",
+      "sha256": "736683727a3600a77d9b046f7d0eed7bb06ab4b6ad36c72b4e4534213ae3bf15"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile d_quotient_classical/compensator/tau_adic_vacuum_cylinder_causal_bv_trace_obstruction.py d_quotient_classical/compensator/verify_tau_adic_vacuum_cylinder_causal_bv_trace_obstruction.py d_quotient_classical/compensator/tests/test_tau_adic_vacuum_cylinder_causal_bv_trace_obstruction.py d_quotient_classical/atlas/generate_classical_atlas_fragment.py d_quotient_classical/atlas/verify_classical_atlas_fragment.py d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py",
+        "elapsed_seconds": 0.09,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- d_quotient_classical notes/d-quotient-classical-team-brief.md",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/tau_adic_vacuum_cylinder_causal_bv_trace_obstruction.py --check",
+        "elapsed_seconds": 0.24,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_tau_adic_vacuum_cylinder_causal_bv_trace_obstruction.py",
+        "elapsed_seconds": 0.20,
+        "status": "PASS",
+        "independent_rail": "reconstructs the convention-sensitive scalar complex, canonical change, exact ranks, full compact-support/global-CKV nonmembership argument and dependency hashes without importing the producer"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.compensator.tests.test_tau_adic_vacuum_cylinder_causal_bv_trace_obstruction",
+        "elapsed_seconds": 0.30,
+        "status": "PASS",
+        "tests": 7,
+        "mutation_controls": "rehashed trace-Hessian and compensator-normalization mutations, global-CKV completeness mutation, finite-zero-mode promotion and Hadamard promotion are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/tau-adic-vacuum-cylinder-causal-bv-trace-obstruction-v1.schema.json -d d_quotient_classical/certificates/TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1.json",
+        "elapsed_seconds": 2.33,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "elapsed_seconds": 0.32,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "elapsed_seconds": 0.42,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "elapsed_seconds": 0.40,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment",
+        "elapsed_seconds": 0.12,
+        "status": "PASS",
+        "tests": 20
+      },
+      {
+        "command": "ci/science-forge-shadow.sh",
+        "elapsed_seconds": 11.45,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "pre-existing bridge certificate drift and corpus baseline growth; no fatal result because this rail is advisory"
+      }
+    ],
+    "reason": "The theorem imports and disposes the complete strict causal carrier and changes its fail-closed vacuum-cylinder tau-adic atlas row."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "The item closes one scoped causal extension class but does not freeze or tag a paper theorem, prepare a release, or change shared core algebra; the affected certificate and atlas chain is the sufficient falsification rail."
+  },
+  "claim_boundary": "The exact convention bridge, canonical scalar normal form, compact-support Stokes check and complete global conformal-Killing nonmembership argument obstruct advanced, retarded and time-slice q0-chain homotopies for the tau-adic extension of the complete strict vacuum-cylinder carrier in the declared finite differential class. A second conformal gauge generator or an order-zero dressed-trace kinetic term changes the theory and is outside the theorem. No Hadamard, positivity, Lorentzian QME, particle, scattering or unitarity claim is established."
+}

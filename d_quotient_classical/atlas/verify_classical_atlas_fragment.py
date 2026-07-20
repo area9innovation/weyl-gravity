@@ -78,6 +78,20 @@ def verify() -> None:
         not in wz["claim_boundary"]
     ):
         raise AssertionError("Wess-Zumino D-Cartan atlas boundary drifted")
+    wz_causal = by_id[
+        "classical.vacuum_cylinder.local_bv."
+        "wz_tau_adic_causal_trace_obstruction"
+    ]
+    if (
+        wz_causal["descriptions"]["causal"] != "OBSTRUCTED"
+        or wz_causal["descriptions"]["symplectic"] != "CERTIFIED"
+        or wz_causal["descriptions"]["quantum"] != "OPEN"
+        or "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1"
+        not in {item["result_id"] for item in wz_causal["evidence"]}
+        or "not a finite zero mode" not in wz_causal["claim_boundary"]
+        or "No full tau-adic Hadamard kernel" not in wz_causal["claim_boundary"]
+    ):
+        raise AssertionError("Wess-Zumino causal trace obstruction drifted")
     stability = by_id["classical.crosswalk.weak_background_causal_vs_residual_d"]
     if (
         stability["descriptions"]["causal"] != "CERTIFIED"
