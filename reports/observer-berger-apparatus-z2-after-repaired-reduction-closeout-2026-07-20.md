@@ -38,3 +38,7 @@ Tier 2 was unnecessary because no shared mathematical input or interface was
 changed.  Tier 3 was unnecessary because no freeze, theorem promotion or
 release was performed.  The exact explicit staged paths and final commit are
 also recorded in the terminal Science Forge report event.
+
+CLOSE-OUT: OBSTRUCTED — physical reduction is `NO_CERTIFIED_MAP`; the Berger
+Z2 and detector-memory restriction are undefined until the executable 160-row
+q1 and exact contraction exist.
