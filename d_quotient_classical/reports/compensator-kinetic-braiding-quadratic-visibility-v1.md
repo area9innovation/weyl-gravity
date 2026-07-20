@@ -309,3 +309,7 @@ d_quotient_classical/compensator/
 d_quotient_classical/schema/
   compensator-kinetic-braiding-quadratic-visibility-v1.schema.json
 ```
+
+CLOSE-OUT: DONE — the complete degree-one kinetic-braiding visibility gate is
+certified; the cylinder Hessian is identically zero and the separate Berger
+scalar block has exact rank two.
