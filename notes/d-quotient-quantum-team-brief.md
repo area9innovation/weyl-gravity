@@ -2431,3 +2431,39 @@ Lorentzian, Hadamard, state or particle result.
 
 - [`PARAMETERIZED_PARITY_EVEN_FIVE_FORM_FACTOR_FAMILY_INDEPENDENT_AUDIT.json`](../quantum-weyl/spectral/euclidean/certificates/PARAMETERIZED_PARITY_EVEN_FIVE_FORM_FACTOR_FAMILY_INDEPENDENT_AUDIT.json)
 - [`parameterized-five-form-factor-independent-audit.md`](../quantum-weyl/reports/parameterized-five-form-factor-independent-audit.md)
+
+## First background-specific spectral retry (2026-07-20)
+
+The global-spectral lane now selects an exact compact scalar-flat datum
+instead of interpolating the round and product holdouts:
+
+\[
+S^1\times SU(2),\qquad
+g=d\theta^2+\sigma_1^2+\sigma_2^2+4\sigma_3^2.
+\]
+
+Its exact Euclidean curvature is
+
+\[
+\operatorname{Ric}=\operatorname{diag}(0,-1,-1,2),\quad
+R=0,\quad |\operatorname{Ric}|^2=6,\quad |C|^2=12.
+\]
+
+Thus the selected Berger product is compact, non-Einstein,
+non-conformally-flat and has nonzero Schur-sensitive curvature. The local
+residue and scale densities are exact. It is not yet a coefficient-bearing
+background-specific theorem: the complete primed Fourier-\(n\)/\(SU(2)\)
+Schur resolvent, zero-mode projectors, insertion eigenprojectors and
+certified finite-trace continuation are absent.
+
+Because the independently frozen finite ambiguity has rank ten and zero
+universal kernel, that missing spectral object cannot be bypassed by local
+asymptotics or the round-\(S^4\)/\(S^2\times S^2\) holdouts. A typed
+external-analysis request now states the exact receiver.
+
+This result is `LOCAL-ALGEBRAIC`/`EUCLIDEAN-SPECTRAL`. It computes no finite
+five-function values, universal table, \(\Gamma_1\), \(Q_1\), QME,
+Lorentzian, Hadamard, state or particle result.
+
+- [`BACKGROUND_SPECIFIC_FIVE_FORM_FACTOR_SPECTRAL_REALIZATION_SHORTFALL.json`](../quantum-weyl/spectral/euclidean/certificates/BACKGROUND_SPECIFIC_FIVE_FORM_FACTOR_SPECTRAL_REALIZATION_SHORTFALL.json)
+- [`background-specific-five-form-factor-spectral-shortfall.md`](../quantum-weyl/reports/background-specific-five-form-factor-spectral-shortfall.md)

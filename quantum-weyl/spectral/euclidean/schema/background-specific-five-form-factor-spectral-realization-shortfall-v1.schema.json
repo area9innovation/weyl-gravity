@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/quantum-weyl/background-specific-five-form-factor-spectral-realization-shortfall-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema",
+    "result_id",
+    "source_commit",
+    "dependency_tags",
+    "imports",
+    "candidate_background",
+    "local_scale_rows",
+    "candidate_inventory",
+    "receiver_audit",
+    "first_missing_spectral_theorem",
+    "shortfall_theorem",
+    "claim_flags",
+    "claim_boundary"
+  ],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schema": {"const": "quantum-weyl-background-specific-five-form-factor-spectral-realization-shortfall-v1"},
+    "result_id": {"const": "BACKGROUND_SPECIFIC_FIVE_FORM_FACTOR_SPECTRAL_REALIZATION_SHORTFALL"},
+    "source_commit": {"type": "string", "minLength": 7},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]
+    },
+    "imports": {"type": "object", "minProperties": 7},
+    "candidate_background": {
+      "type": "object",
+      "required": [
+        "background_id",
+        "metric",
+        "compact",
+        "scalar_curvature",
+        "ricci_squared",
+        "weyl_squared",
+        "non_Einstein",
+        "non_conformally_flat"
+      ]
+    },
+    "local_scale_rows": {"type": "object"},
+    "candidate_inventory": {"type": "array", "minItems": 4},
+    "receiver_audit": {
+      "type": "object",
+      "required": [
+        "complete_primed_resolvent_or_spectral_measure",
+        "five_background_specific_functions_evaluated",
+        "special_background_interpolation_used"
+      ]
+    },
+    "first_missing_spectral_theorem": {
+      "type": "object",
+      "required": ["result_id", "expected_path", "present", "required_blocks", "why_first"]
+    },
+    "shortfall_theorem": {
+      "type": "object",
+      "required": [
+        "status",
+        "universal_kernel_dimension",
+        "expected_resolvent_absent",
+        "background_specific_evaluation_authorized",
+        "minimal_external_request"
+      ]
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "EXACT_SCALAR_FLAT_NONTRIVIAL_COMPACT_CANDIDATE_SELECTED",
+        "FIRST_MISSING_GLOBAL_SPECTRAL_OBJECT_IDENTIFIED",
+        "BACKGROUND_SPECIFIC_FIVE_FUNCTION_VALUES_COMPUTED",
+        "SPECIAL_BACKGROUND_INTERPOLATION_USED",
+        "UNIVERSAL_TABLE_PROMOTED",
+        "QME_OR_LORENTZIAN_PROMOTED"
+      ],
+      "properties": {
+        "EXACT_SCALAR_FLAT_NONTRIVIAL_COMPACT_CANDIDATE_SELECTED": {"const": true},
+        "FIRST_MISSING_GLOBAL_SPECTRAL_OBJECT_IDENTIFIED": {"const": true},
+        "BACKGROUND_SPECIFIC_FIVE_FUNCTION_VALUES_COMPUTED": {"const": false},
+        "SPECIAL_BACKGROUND_INTERPOLATION_USED": {"const": false},
+        "UNIVERSAL_TABLE_PROMOTED": {"const": false},
+        "QME_OR_LORENTZIAN_PROMOTED": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 200}
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "BACKGROUND_SPECIFIC_FIVE_FORM_FACTOR_SPECTRAL_REALIZATION_SHORTFALL_TIER_RECEIPT",
+  "claim_id": "BACKGROUND_SPECIFIC_FIVE_FORM_FACTOR_SPECTRAL_REALIZATION_SHORTFALL",
+  "date": "2026-07-20",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+  "artifacts": [
+    {
+      "path": "quantum-weyl/spectral/euclidean/background_specific_five_form_factor_spectral_shortfall.py",
+      "sha256": "8a6c8083064c2bd6fcd9e384c20b6598b67f27d779b6c1041b4d39c97c747c65"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/verify_background_specific_five_form_factor_spectral_shortfall.py",
+      "sha256": "f474ca6017fecd4203ba0ab573b4d7e3bedeaa11eeab5d054757fbd44853e22a"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/tests/test_background_specific_five_form_factor_spectral_shortfall.py",
+      "sha256": "2500e5178d0e657d34008028342d948f047a5c289525db1efe46e3979c68c5f0"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/schema/background-specific-five-form-factor-spectral-realization-shortfall-v1.schema.json",
+      "sha256": "fd5b07934fbaaa96c7ec0d450485b6a0d08ee93150ff8060e1d1f45d54336dcb"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/certificates/BACKGROUND_SPECIFIC_FIVE_FORM_FACTOR_SPECTRAL_REALIZATION_SHORTFALL.json",
+      "sha256": "45c0debd97f904f80d4454d69582515761a97eafb83e9babc69af91eadcab890"
+    },
+    {
+      "path": "quantum-weyl/reports/background-specific-five-form-factor-spectral-shortfall.md",
+      "sha256": "101c66e4b18fcf209bd71eb09828a32144bda50f514f95ca00ee7a37afb294ca"
+    },
+    {
+      "path": "planning/forge-requests/scalar-flat-berger-spectral-measure.json",
+      "sha256": "967aa1f98a8bb22c5443666a1d2950ec2667701c8dfe0e71b4bb51dd4aa4fb19"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <producer, independent verifier, tests>",
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m json.tool <schema, certificate, request, receipt>",
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <explicit background-specific shortfall paths>",
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 quantum-weyl/spectral/euclidean/background_specific_five_form_factor_spectral_shortfall.py --check",
+        "status": "PASS",
+        "elapsed_seconds": 0.09
+      },
+      {
+        "command": "python3 quantum-weyl/spectral/euclidean/verify_background_specific_five_form_factor_spectral_shortfall.py",
+        "status": "PASS",
+        "elapsed_seconds": 0.08,
+        "independent_rail": "derives the Euclidean Berger Ricci and Weyl invariants directly from the orthonormal SU(2) Lie brackets, replays the local rows, checks the candidate inventory and proves the strict receiver artifact is absent"
+      },
+      {
+        "command": "python3 -m unittest quantum-weyl.spectral.euclidean.tests.test_background_specific_five_form_factor_spectral_shortfall -v",
+        "status": "PASS",
+        "elapsed_seconds": 0.14,
+        "tests": 6,
+        "mutation_controls": "scalar-flatness, resolvent/five-function completion, special-background interpolation and QME/Lorentzian promotion mutations are rejected"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "NOT_RUN",
+    "reason": "All imported mathematical inputs are unchanged and content-addressed; the new result is a scoped receiver shortfall and does not alter a shared operator or downstream theorem."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "No theorem lifecycle promotion, release, tag or shared-core-algebra change occurred."
+  },
+  "claim_boundary": "The receipt certifies selection and exact geometry of a compact scalar-flat Schur-sensitive Berger datum and identifies the absent complete primed Schur resolvent with insertion eigenprojectors as the first missing analytic object. It computes local residue and scale densities only, not finite five-function values, a universal table, Gamma1/Q1, a QME, or any Lorentzian, Hadamard, state, particle, scattering or unitarity result.",
+  "higher_tiers_not_run": [
+    {
+      "tier": 2,
+      "criterion": "No imported input, shared operator, schema consumer or promoted downstream theorem changed."
+    },
+    {
+      "tier": 3,
+      "criterion": "No release, tag, shared-core algebra change or explicit full-suite request occurred."
+    }
+  ]
+}
