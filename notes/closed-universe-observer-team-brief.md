@@ -2215,3 +2215,27 @@ The fail-closed atlas row is
 (`causal=CERTIFIED`, `symplectic=CERTIFIED`, `nonlinear=CERTIFIED`,
 `observational=CERTIFIED`, `quantum=NO_CERTIFIED_MAP`).  The next gate is
 `RESTRICT_THE_ACTION_DERIVED_APPARATUS_RESPONSE_TO_Z2_AND_TEST_RELATIONAL_MEMORY_BEFORE_ANY_REDSHIFT_PROMOTION`.
+
+## Active bridge: apparatus reduced-cohomology crosswalk
+
+The physical-reduction item
+`sf:program/work/observer-berger-apparatus-reduced-cohomology-pairing`
+found that the parent does not yet export a combined row-level \(q_1\) with
+the Berger gravity--clock--Maxwell carrier.  It provides an action formula,
+field and parity lists, pairing rank and principal symbols, but not the
+combined carrier choice/embedding, sparse \(q_1\), row-level pairing,
+cohomological degrees, real/\(K_{\rm Berger}\) matrices,
+smearing-to-Maxwell chain map or zero-mode category.
+
+The gap cannot be repaired by concatenating names: the existing 108-row
+carrier already includes rods, memories and emitters, so that operation would
+double count semantic roles.  The exact prerequisite is now
+`BERGER_DYNAMICAL_APPARATUS_COMBINED_Q1_CROSSWALK_CONTRACT`.  It specifies
+the ten-column row table, exact operator maps, support sectors, cohomology and
+contraction outputs, and decisive mutations required for the reduction.
+
+The atlas row
+`observer.berger.interaction.dynamical_apparatus_reduced_cohomology_preflight`
+is fail-closed: physical classes, descended pairing, memory representatives
+and reduced rank two are `NO_CERTIFIED_MAP`.  The parent action and its
+coordinate-level leading rank are retained in their original scope.

@@ -1,0 +1,75 @@
+{
+  "acceptance_outputs": [
+    "machine-readable combined carrier and q1",
+    "canonical cohomology representatives",
+    "pairing radical/sign table",
+    "K_Berger and real-structure descent",
+    "detector-memory class crosswalk",
+    "independent verifier not reusing the producer reduction"
+  ],
+  "background": "same pinned positive Berger gravity-clock-Maxwell background",
+  "base_carrier_choice": {
+    "candidates": [
+      "108-row completed unary carrier (already contains rods, memories and emitters)",
+      "minimal gravity-clock-Maxwell subcarrier with a new disjoint apparatus extension"
+    ],
+    "required_decision": "Choose one carrier and give an explicit same-background chain map; semantic row names do not identify duplicate rod/memory rows.",
+    "status": "UNRESOLVED"
+  },
+  "coefficient_field": "Q(sqrt(10)) with declared differential-symbol localization",
+  "current_absence_audit": {
+    "cohomological_degrees": true,
+    "combined_carrier_embedding": true,
+    "real_structure_matrix": true,
+    "row_level_K_action": true,
+    "row_level_pairing_entries": true,
+    "row_level_q1_entries": true,
+    "smearing_to_Maxwell_chain_map": true,
+    "zero_mode_support_category": true
+  },
+  "forbid": [
+    "isolated 56-row cohomology called the combined physical reduction",
+    "principal-symbol invertibility called zero-mode cohomology",
+    "rigid Berger-U1 direction quotiented as a gauge ghost",
+    "pairing rank substituted for row-level pairing descent",
+    "raw detector functional identified with a Maxwell carrier row"
+  ],
+  "required_exact_objects": {
+    "K_Berger": "row-level rigid-family generator commuting with q1",
+    "combined_q1": "sparse exact entries with differential/PBW monomials",
+    "detector_chain_map": "explicit map from local Maxwell carrier rows to both F_a smearings and memory equations",
+    "inclusion_apparatus": "chain map from all 56 parent rows",
+    "inclusion_base": "chain map from the selected imported base",
+    "odd_pairing": "all row-level entries and signs, not rank alone",
+    "projection_base": "declared retraction or explicit NO_MAP witness",
+    "real_structure": "row-level antilinear involution",
+    "support_category": "generic nonzero clock covector and every retained s=0 memory/rigid-family sector typed separately"
+  },
+  "required_row_table_columns": [
+    "global_row",
+    "source_carrier",
+    "source_row",
+    "field_name",
+    "cohomological_degree",
+    "Grassmann_parity",
+    "odd_partner_row",
+    "real_conjugate_row",
+    "Berger_U1_weight",
+    "boundary_or_zero_mode_sector"
+  ],
+  "required_verification": [
+    "q1 squared equals zero",
+    "combined odd cyclicity",
+    "real-structure commutation",
+    "K_Berger commutator equals zero",
+    "exact kernels/images/cohomology by declared degree and support sector",
+    "radical and signature of the descended pairing",
+    "canonical inclusion/projection/contraction where it exists",
+    "both detector memories represented by nonzero reduced classes",
+    "rank-two response descends under the detector chain map",
+    "row-deletion, sign and duplicate-row mutations are rejected"
+  ],
+  "result_id": "BERGER_DYNAMICAL_APPARATUS_COMBINED_Q1_CROSSWALK_CONTRACT",
+  "schema": "closed-universe-berger-dynamical-apparatus-combined-q1-crosswalk-contract-v1",
+  "status": "REQUIRED_NOT_YET_INSTANTIATED"
+}

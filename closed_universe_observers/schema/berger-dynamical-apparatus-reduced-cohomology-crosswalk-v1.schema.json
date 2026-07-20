@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "contract_ref",
+    "capability_audit",
+    "downstream_disposition",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-dynamical-apparatus-reduced-cohomology-crosswalk-v1"
+    },
+    "result_id": {
+      "const": "BERGER_DYNAMICAL_APPARATUS_REDUCED_COHOMOLOGY_CROSSWALK"
+    },
+    "claim_status": {
+      "const": "SHORTFALL_MISSING_COMPLETE_COMBINED_Q1_CROSSWALK"
+    },
+    "atlas_status": {"const": "OPEN"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "next_gate": {
+      "const": "INSTANTIATE_AND_VERIFY_BERGER_DYNAMICAL_APPARATUS_COMBINED_Q1_CROSSWALK"
+    },
+    "claim_boundary": {"type": "string", "minLength": 900}
+  },
+  "additionalProperties": true
+}

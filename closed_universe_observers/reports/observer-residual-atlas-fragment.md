@@ -168,6 +168,14 @@ intersection with the pure-old finite 42-coordinate source support, so the
 blocked all-jet question remains `NO_CERTIFIED_MAP`.  Tangent-cone
 restriction, nonlinear rank and relational redshift remain `OPEN`.
 
+The apparatus reduced-cohomology crosswalk row is separately `OPEN`.  The
+action parent lacks the combined row-level q1, grading, pairing, real/K
+actions, detector chain map and zero-mode category needed for exact
+kernels/images.  A machine-readable contract now fixes those required
+interfaces.  No isolated 56-row calculation is called physical reduction;
+memory representatives and reduced response rank remain
+`NO_CERTIFIED_MAP`.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.
