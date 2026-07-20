@@ -273,6 +273,31 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         )
         self.assertIn("no Hadamard", entry["claim_boundary"])
 
+    def test_minimal_kinetic_braiding_is_cylinder_invisible(self) -> None:
+        entry = self.entries[
+            "classical.complex_compensator.cylinder_berger."
+            "kinetic_braiding_quadratic_visibility"
+        ]
+        self.assertEqual(entry["descriptions"]["causal"], "OBSTRUCTED")
+        self.assertEqual(
+            entry["descriptions"]["symplectic"], "NO_CERTIFIED_MAP"
+        )
+        self.assertEqual(entry["descriptions"]["nonlinear"], "NOT_APPLICABLE")
+        self.assertEqual(
+            entry["descriptions"]["observational"], "NO_CERTIFIED_MAP"
+        )
+        self.assertEqual(entry["descriptions"]["quantum"], "OPEN")
+        evidence = {item["result_id"] for item in entry["evidence"]}
+        self.assertIn(
+            "COMPENSATOR_KINETIC_BRAIDING_QUADRATIC_VISIBILITY_V1",
+            evidence,
+        )
+        self.assertIn("11-by-11 zero Hessian", entry["claim_boundary"])
+        self.assertIn("rank two", entry["claim_boundary"])
+        self.assertIn("does not repair the cylinder", entry["claim_boundary"])
+        self.assertIn("No selected action", entry["claim_boundary"])
+        self.assertIn("Hadamard", entry["claim_boundary"])
+
     def test_sharp_green_transfer_crosswalk_has_no_mode_identification(self) -> None:
         theorem_id = "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1"
         for chirality in ("plus", "minus"):

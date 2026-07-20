@@ -1,0 +1,307 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/compensator-kinetic-braiding-quadratic-visibility-v1.schema.json",
+  "title": "Exact quadratic visibility of minimal shift-symmetric kinetic braiding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "imports",
+    "minimal_braiding_action",
+    "covariant_complete_second_variation",
+    "unit_cylinder",
+    "stationary_Berger",
+    "terminal_verdict",
+    "exact_checks",
+    "claim_flags",
+    "claim_boundary",
+    "next_gate",
+    "content_hashes"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-compensator-kinetic-braiding-quadratic-visibility-v1"
+    },
+    "result_id": {
+      "const": "COMPENSATOR_KINETIC_BRAIDING_QUADRATIC_VISIBILITY_V1"
+    },
+    "result_state": {
+      "const": "SCOPED_LEVEL2_BRAIDING_CYLINDER_QUADRATIC_INVISIBLE"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "imports": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "quadratic_active_clock_freeze",
+        "background_stability"
+      ],
+      "properties": {
+        "quadratic_active_clock_freeze": {
+          "$ref": "#/$defs/import"
+        },
+        "background_stability": {
+          "$ref": "#/$defs/import"
+        }
+      }
+    },
+    "minimal_braiding_action": {
+      "$ref": "#/$defs/nonempty-object"
+    },
+    "covariant_complete_second_variation": {
+      "$ref": "#/$defs/nonempty-object"
+    },
+    "unit_cylinder": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "background",
+        "full_field_order",
+        "first_variations",
+        "complete_quadratic_Hessian",
+        "rank",
+        "principal_symbol",
+        "boundary_reduction",
+        "consequence"
+      ],
+      "properties": {
+        "background": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "full_field_order": {
+          "type": "array",
+          "minItems": 11,
+          "maxItems": 11,
+          "items": {
+            "$ref": "#/$defs/nonempty"
+          }
+        },
+        "first_variations": {
+          "$ref": "#/$defs/nonempty-object"
+        },
+        "complete_quadratic_Hessian": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/matrix"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "row_count": {
+                  "const": 11
+                },
+                "column_count": {
+                  "const": 11
+                },
+                "entries": {
+                  "const": []
+                }
+              }
+            }
+          ]
+        },
+        "rank": {
+          "const": 0
+        },
+        "principal_symbol": {
+          "const": "IDENTICALLY_ZERO_AT_EVERY_COVECTOR"
+        },
+        "boundary_reduction": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "consequence": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "stationary_Berger": {
+      "$ref": "#/$defs/nonempty-object"
+    },
+    "terminal_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "complete_degree_one_braiding_family_checked",
+        "cylinder_quadratic_visibility",
+        "Berger_quadratic_visibility",
+        "level_2_cylinder_repair_possible",
+        "selected_action_exported",
+        "first_invariant_separator"
+      ],
+      "properties": {
+        "complete_degree_one_braiding_family_checked": {
+          "const": true
+        },
+        "cylinder_quadratic_visibility": {
+          "const": "IDENTICALLY_ZERO"
+        },
+        "Berger_quadratic_visibility": {
+          "const": "NONZERO_SCALAR_RANK_TWO"
+        },
+        "level_2_cylinder_repair_possible": {
+          "const": false
+        },
+        "selected_action_exported": {
+          "const": false
+        },
+        "first_invariant_separator": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 10,
+      "additionalProperties": {
+        "const": true
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "minProperties": 7,
+      "additionalProperties": {
+        "const": false
+      }
+    },
+    "claim_boundary": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "next_gate": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "imports_sha256",
+        "action_sha256",
+        "hessian_sha256",
+        "cylinder_sha256",
+        "Berger_sha256",
+        "verdict_sha256"
+      ],
+      "properties": {
+        "imports_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "action_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "hessian_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "cylinder_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "Berger_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "verdict_sha256": {
+          "$ref": "#/$defs/sha"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "nonempty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nonempty-object": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "result_id",
+        "result_state",
+        "sha256",
+        "source_commit"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "result_id": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "result_state": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "source_commit": {
+          "$ref": "#/$defs/commit"
+        }
+      }
+    },
+    "matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "row_count",
+        "column_count",
+        "entries",
+        "sha256"
+      ],
+      "properties": {
+        "row_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "column_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "row",
+              "column",
+              "coefficient"
+            ],
+            "properties": {
+              "row": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "column": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "coefficient": {
+                "$ref": "#/$defs/nonempty"
+              }
+            }
+          }
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha"
+        }
+      }
+    }
+  }
+}

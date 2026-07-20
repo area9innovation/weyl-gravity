@@ -1,0 +1,330 @@
+{
+  "claim_boundary": "This exact theorem covers the complete polynomial G(X)=g0+beta X at the first degree for which integral sqrt(-g_hat)G(X)Box_hat(theta) is not horizontally exact. It uses the full metric-clock Hessian on the required constant-clock unit cylinder and stationary-gradient Berger fixture. The cylinder Hessian vanishes identically, while Berger has a separate rank-two scalar block. Therefore this minimal braiding mechanism cannot alter the imported cylinder dressed-trace, split-pair or raw-D obstruction. It is not a no-go for X^2 or higher G, Horndeski/DHOST curvature couplings, other backgrounds, new fields or enlarged gauge groups. It establishes no reduced ADM health, selected action, causal Green parent, nonlinear q2, Hadamard state, anomaly/QME result, particle space, scattering, positivity or unitarity.",
+  "claim_flags": {
+    "COMPLETE_REDUCED_ADM_HEALTH": false,
+    "COMPLETE_SUPPORT_LOCAL_CAUSAL_PARENT": false,
+    "HADAMARD_ANOMALY_QME_OR_QUANTUM": false,
+    "LEVEL2_BRAIDING_REPAIRS_CYLINDER": false,
+    "NONLINEAR_Q2": false,
+    "PARTICLE_SCATTERING_UNITARITY": false,
+    "SELECTED_LEVEL2_ACTION": false
+  },
+  "content_hashes": {
+    "Berger_sha256": "efb648826abcfb88ca5131cd21883ea151de45ac5a9785fed11df3668c316e08",
+    "action_sha256": "0744bf9e0f44d20cf67bdbdcceaa84ca9da45c5b1c35d1010a402d049c303c0f",
+    "cylinder_sha256": "f68c125d31fa52d48b1e9e787cc81ffd5ae74035b001f5dfcf83e8a1b4868534",
+    "hessian_sha256": "392c0d42d4129a169dff39346510c1450d45e50f8b3912b0ca9488281d2bb9dd",
+    "imports_sha256": "35e0f75c108d3529f58c51f565efc9f33621411c72074591b10547b87e8b30b9",
+    "verdict_sha256": "1539ce96711e037bb7b6af99e12b53d20b5eb642cc43ee27519b4e1a61006af9"
+  },
+  "covariant_complete_second_variation": {
+    "action_first_variation": "ZERO on both declared backgrounds because X_bar is constant and nabla_a nabla_b theta_bar=0",
+    "background_hypotheses": [
+      "v_a=nabla_a theta_bar is covariantly constant",
+      "X_bar=v^a v_a is constant",
+      "H_bar_ab=nabla_a nabla_b theta_bar=0",
+      "Box_hat theta_bar=0"
+    ],
+    "complete_bilinear_second_variation": "delta^2 S3[(h,phi),(j,psi)]=beta integral sqrt(-g_hat)[x(h,phi)b(j,psi)+x(j,psi)b(h,phi)] modulo compact-support/closed-slice boundary terms",
+    "derivation": "Subtract the numerical background constant X_bar: X_bar integral sqrt(-g_hat) Box_hat theta is an exact boundary functional for every perturbed field. Since X-X_bar and Box theta both vanish at the background, only their first-variation product survives in the Hessian. This accounts simultaneously for measure, inverse-metric, connection and second-variation terms.",
+    "first_variation_Box": "b(h,phi)=Box_hat phi-(nabla_a h^{ab}-(1/2)nabla^b h)v_b",
+    "first_variation_X": "x(h,phi)=-h^{ab}v_a v_b+2 v^a nabla_a phi",
+    "included_variations": [
+      "metric inverse",
+      "volume density",
+      "lapse",
+      "shift",
+      "spatial trace and tracefree metric",
+      "clock",
+      "Levi-Civita connection",
+      "compact-support or closed-slice boundary terms"
+    ],
+    "perturbation": "(h_ab,phi)=(delta g_hat_ab,delta theta), h=g_hat^{ab}h_ab"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "Berger_boundary_terms_explicit": true,
+    "Berger_rank_two_at_every_nonzero_scalar_covector": true,
+    "Berger_symbol_formally_self_adjoint": true,
+    "Berger_two_gauge_null_vectors_exact": true,
+    "constant_G_removed_only_as_exact_boundary": true,
+    "cylinder_and_Berger_dispositions_separated": true,
+    "cylinder_full_Hessian_zero": true,
+    "dependency_hashes_and_semantics_pinned": true,
+    "first_nonexact_G_term_has_nonzero_Euler_witness": true,
+    "measure_inverse_metric_connection_and_clock_variations_included": true
+  },
+  "imports": {
+    "background_stability": {
+      "path": "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1.json",
+      "result_id": "COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1",
+      "result_state": "SCOPED_ACTION_SPACE_NO_GO_BACKGROUND_STABLE_WITH_FIRST_BIFURCATION",
+      "sha256": "8a3afc04d72427313fe8770936b03d4f4301277c9783a92e8df6d329e8c0ccba",
+      "source_commit": "b0ee2bea23af4af809bc0a50956c3e37d944e72f"
+    },
+    "quadratic_active_clock_freeze": {
+      "path": "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json",
+      "result_id": "COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1",
+      "result_state": "SCOPED_QUADRATIC_ACTIVE_CLOCK_NO_GO_INDEPENDENTLY_FROZEN",
+      "sha256": "9bda4b758616427bdbf401a499ffd2b7cd9dd69a87223f05fcdf636bb31cd533",
+      "source_commit": "f64be4a5793764ebf8871d5f1a83bd736aed7fc1"
+    }
+  },
+  "minimal_braiding_action": {
+    "complete_family": "G(X)=g0+beta X",
+    "constant_term": {
+      "action": "g0 integral sqrt(-g_hat) Box_hat(theta)",
+      "horizontal_reduction": "g0 integral d(*_hat d theta)",
+      "status": "HORIZONTALLY_EXACT"
+    },
+    "declared_polynomial_degree": 1,
+    "first_nonexact_term": {
+      "action": "S3=beta integral sqrt(-g_hat) X Box_hat(theta), X=g_hat^{ab} nabla_a theta nabla_b theta",
+      "flat_scalar_Euler": "2 beta[(nabla_a nabla_b theta)(nabla^a nabla^b theta)-(Box theta)^2]",
+      "nonboundary_jet_witness": {
+        "Box_theta": "0",
+        "Euler_over_beta": "4",
+        "H00": "1",
+        "H11": "1"
+      },
+      "status": "NOT_HORIZONTALLY_EXACT"
+    },
+    "normalization": "beta is retained exactly; beta=0 is the exact boundary-only stratum and beta!=0 is the unique degree-one mechanism up to scale"
+  },
+  "next_gate": "Close the complete declared Level-2 P(X)+linear-G(X) family by importing this cylinder-zero theorem; do not construct a nonlinear q2. Then activate the isolated minimal degenerate-curvature-coupling Level-3 gate.",
+  "result_id": "COMPENSATOR_KINETIC_BRAIDING_QUADRATIC_VISIBILITY_V1",
+  "result_state": "SCOPED_LEVEL2_BRAIDING_CYLINDER_QUADRATIC_INVISIBLE",
+  "schema": "pure-weyl-compensator-kinetic-braiding-quadratic-visibility-v1",
+  "stationary_Berger": {
+    "ADM_variables": {
+      "clock_velocity": "chi=D phi-nu n",
+      "extrinsic_trace": "K=(1/2)(D k-2r)",
+      "h00": "-2n",
+      "shift_divergence": "r=nabla_bar^i s_i",
+      "spatial_trace": "k=gamma_bar^{ij}h_ij"
+    },
+    "background": "static Berger product a=1, q=9/40, theta_bar=nu t with nu=3/4; formulas hold for every constant nu",
+    "boundary_terms_removed": [
+      "beta nu integral D(chi^2)",
+      "-beta nu integral D[(nabla_i phi)(nabla^i phi)]"
+    ],
+    "field_support": {
+      "nonzero": [
+        "clock phi",
+        "lapse n",
+        "spatial trace k",
+        "shift divergence r"
+      ],
+      "zero": [
+        "transverse shift",
+        "spatial transverse-tracefree metric",
+        "all tensor components orthogonal to the scalar trace/divergence block"
+      ]
+    },
+    "formal_symbol": {
+      "adjoints": {
+        "D": "-D",
+        "Delta": "Delta"
+      },
+      "all_three_by_three_minors_zero": true,
+      "common_factor": "beta nu^2",
+      "field_order": [
+        "phi",
+        "n",
+        "k",
+        "r"
+      ],
+      "formal_self_adjoint": true,
+      "frozen_nu_3_over_4": {
+        "column_count": 4,
+        "entries": [
+          {
+            "coefficient": "2*Delta",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "-D**2",
+            "column": 2,
+            "row": 0
+          },
+          {
+            "coefficient": "2*D",
+            "column": 3,
+            "row": 0
+          },
+          {
+            "coefficient": "2*Delta",
+            "column": 0,
+            "row": 1
+          },
+          {
+            "coefficient": "-3*D/4",
+            "column": 2,
+            "row": 1
+          },
+          {
+            "coefficient": "3/2",
+            "column": 3,
+            "row": 1
+          },
+          {
+            "coefficient": "-D**2",
+            "column": 0,
+            "row": 2
+          },
+          {
+            "coefficient": "3*D/4",
+            "column": 1,
+            "row": 2
+          },
+          {
+            "coefficient": "-2*D",
+            "column": 0,
+            "row": 3
+          },
+          {
+            "coefficient": "3/2",
+            "column": 1,
+            "row": 3
+          }
+        ],
+        "row_count": 4,
+        "sha256": "d3d441515c143a802921c623d01a7f5866c5bba78945e1ef9fa1716fd562949e"
+      },
+      "gauge_null_vectors": [
+        {
+          "coordinates": [
+            "nu",
+            "D",
+            "0",
+            "-Delta"
+          ],
+          "generator": "time diffeomorphism T"
+        },
+        {
+          "coordinates": [
+            "0",
+            "0",
+            "2*Delta",
+            "D*Delta"
+          ],
+          "generator": "longitudinal spatial diffeomorphism L"
+        }
+      ],
+      "matrix": {
+        "column_count": 4,
+        "entries": [
+          {
+            "coefficient": "2*Delta",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "-D**2",
+            "column": 2,
+            "row": 0
+          },
+          {
+            "coefficient": "2*D",
+            "column": 3,
+            "row": 0
+          },
+          {
+            "coefficient": "2*Delta",
+            "column": 0,
+            "row": 1
+          },
+          {
+            "coefficient": "-D*nu",
+            "column": 2,
+            "row": 1
+          },
+          {
+            "coefficient": "2*nu",
+            "column": 3,
+            "row": 1
+          },
+          {
+            "coefficient": "-D**2",
+            "column": 0,
+            "row": 2
+          },
+          {
+            "coefficient": "D*nu",
+            "column": 1,
+            "row": 2
+          },
+          {
+            "coefficient": "-2*D",
+            "column": 0,
+            "row": 3
+          },
+          {
+            "coefficient": "2*nu",
+            "column": 1,
+            "row": 3
+          }
+        ],
+        "row_count": 4,
+        "sha256": "01663d0ce0c115aeeb493f19c421db544ef337a90dbdb3a63c7db70cd083c3d3"
+      },
+      "rank": {
+        "D_nonzero_witness": "-D**4",
+        "Delta_nonzero_witness": "-4*Delta**2",
+        "every_nonzero_scalar_covector": 2,
+        "zero_covector": 0
+      }
+    },
+    "quadratic_action_after_boundary_reduction": "S3^(2)=2 beta nu^2 integral sqrt(gamma) [chi K+n Delta phi]",
+    "quadratic_action_before_boundary_reduction": "S3^(2)=2 beta nu integral sqrt(gamma) chi(D chi-Delta phi+nu K)",
+    "scope_warning": "Berger visibility is not a cylinder repair and does not authorize an ADM health, causal-parent or selected-action promotion.",
+    "spatial_operators": "Delta=Delta_Berger is the self-adjoint scalar Laplacian and r=nabla^i s_i is the divergence of the shift perturbation",
+    "specialized_first_variations": {
+      "b": "-D chi+Delta phi-nu K",
+      "x": "-2 nu chi"
+    },
+    "visibility": "NONZERO_RANK_TWO_SCALAR_BLOCK_MODULO_DECLARED_BOUNDARIES"
+  },
+  "terminal_verdict": {
+    "Berger_quadratic_visibility": "NONZERO_SCALAR_RANK_TWO",
+    "complete_degree_one_braiding_family_checked": true,
+    "cylinder_quadratic_visibility": "IDENTICALLY_ZERO",
+    "first_invariant_separator": "v_a=0 on the required constant-clock cylinder forces delta X=0 and therefore delta^2 S3=0 on the complete metric-clock carrier",
+    "level_2_cylinder_repair_possible": false,
+    "selected_action_exported": false
+  },
+  "unit_cylinder": {
+    "background": "g_hat=-dt^2+dOmega3^2 with theta_bar constant, hence v_a=0",
+    "boundary_reduction": "No nonzero quadratic density remains before or after integration by parts; S3 begins at cubic perturbative order",
+    "complete_quadratic_Hessian": {
+      "column_count": 11,
+      "entries": [],
+      "row_count": 11,
+      "sha256": "254ee27ac791ab5e706cbb8fb0fbf80d968b4d22bac4372be4cd23859e466ef7"
+    },
+    "consequence": "The complete degree-one P(X)+G(X)Box(theta) family has exactly the same cylinder quadratic operator, dressed-trace row, split gravity-auxiliary pair and raw-D witnesses as the imported P(X) family.",
+    "first_variations": {
+      "b": "Box_hat phi; all connection terms are multiplied by v_b=0",
+      "x": "0 for every (h_ab,phi)"
+    },
+    "full_field_order": [
+      "phi",
+      "h00",
+      "h01",
+      "h02",
+      "h03",
+      "h11",
+      "h22",
+      "h33",
+      "h12",
+      "h13",
+      "h23"
+    ],
+    "principal_symbol": "IDENTICALLY_ZERO_AT_EVERY_COVECTOR",
+    "rank": 0
+  }
+}

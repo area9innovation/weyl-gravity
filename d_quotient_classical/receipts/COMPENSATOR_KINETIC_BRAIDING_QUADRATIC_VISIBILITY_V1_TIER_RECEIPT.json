@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "COMPENSATOR_KINETIC_BRAIDING_QUADRATIC_VISIBILITY_V1_TIER_RECEIPT",
+  "claim_id": "COMPENSATOR_KINETIC_BRAIDING_QUADRATIC_VISIBILITY_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/compensator/kinetic_braiding_quadratic_visibility.py",
+      "sha256": "3a48f93cfbe8f4c61994668b129a4b4e1ce6e46cc9ed4710c7a2a56a63576fa5"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_kinetic_braiding_quadratic_visibility.py",
+      "sha256": "604dcfffb5cc6787e906c903d0d54ed4d6f88770abdddd427bf00bd204bb10b8"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_kinetic_braiding_quadratic_visibility.py",
+      "sha256": "dbbc05ea619026ebb064b69ee2e2956fd6b497a69a5fc74e6ee02b4f5f5dfb05"
+    },
+    {
+      "path": "d_quotient_classical/certificates/COMPENSATOR_KINETIC_BRAIDING_QUADRATIC_VISIBILITY_V1.json",
+      "sha256": "bfce9fd2897511d43802c504ce10f9342b85f2e3d89ce9c4cb3e66b788905e10"
+    },
+    {
+      "path": "d_quotient_classical/schema/compensator-kinetic-braiding-quadratic-visibility-v1.schema.json",
+      "sha256": "21bb3d64dcfcf3bd15eabddb4945ef7aadf19f1e637153cd7d4433a883d1beaf"
+    },
+    {
+      "path": "d_quotient_classical/reports/compensator-kinetic-braiding-quadratic-visibility-v1.md",
+      "sha256": "f69828fcb4e692529b08973895ffd7fd5e11c893bbe8a17c65a56bf75474b7db"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "77b851a9662df76d4dde4c23a784a5f4479f397dc10067bf2ce9c22532cf9576"
+    },
+    {
+      "path": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
+      "sha256": "e9550841ce9319635d877b8c2acddd0f74e79ddbf62a0764ae0eae5db45a11bd"
+    },
+    {
+      "path": "d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+      "sha256": "56b29ecac5d243e78271c5ec672aa1b6f4ce4331907b795651efdc9570aebca7"
+    },
+    {
+      "path": "d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py",
+      "sha256": "9e404f418b7cb0242429c442a4918e14290e9bd60410d1fc8a1d66cbbf22acd6"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <producer, indexed verifier and mutation tests>; python3 -m json.tool <certificate and schema>",
+        "elapsed_seconds": 0.03,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <explicit kinetic-braiding and atlas paths>",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/kinetic_braiding_quadratic_visibility.py --check",
+        "elapsed_seconds": 0.29,
+        "status": "PASS",
+        "method": "exact covariant first-variation factorization, full 11-component cylinder zero Hessian, Berger formal-adjoint scalar symbol, all 3-by-3 minors and complementary rank-two witnesses"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_kinetic_braiding_quadratic_visibility.py",
+        "elapsed_seconds": 0.37,
+        "status": "PASS",
+        "independent_rail": "imports no producer module; reconstructs delta X and delta Box from four-dimensional indexed metric and connection jets, specializes independently to ADM scalar variables, and replays gauge nullity and rank"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.compensator.tests.test_kinetic_braiding_quadratic_visibility -v",
+        "elapsed_seconds": 0.54,
+        "status": "PASS",
+        "tests": 8,
+        "mutation_controls": "nonzero cylinder entry, Berger sign, false rank, retained boundary term, cylinder/Berger conflation, selected-action promotion, causal promotion and quantum promotion are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/compensator-kinetic-braiding-quadratic-visibility-v1.schema.json -d d_quotient_classical/certificates/COMPENSATOR_KINETIC_BRAIDING_QUADRATIC_VISIBILITY_V1.json",
+        "elapsed_seconds": 1.01,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/atlas/generate_classical_atlas_fragment.py --check; python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py; python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment -v; python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "elapsed_seconds": 0.42,
+        "status": "PASS",
+        "tests": 28
+      },
+      {
+        "command": "ci/science-forge-shadow.sh",
+        "elapsed_seconds": 4.88,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "pre-existing bridge certificate drift, corpus baseline growth from 976 to 1309 certificates, and an unpinned dirty Forge development binary; the advisory rail exited zero"
+      }
+    ]
+  },
+  "tier_3": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m unittest discover -v",
+        "elapsed_seconds": 1.55,
+        "status": "PASS",
+        "tests": 148,
+        "scope": "repository-wide Python unittest discovery from physics/symplectic-reconstruction; standalone publication scripts, numeric scans, Lean builds and TeX builds are not unittest-discoverable"
+      }
+    ],
+    "reason": "The work item promotes a scoped exact quadratic-visibility theorem and therefore triggers the AGENTS.md theorem-level Tier-3 criterion."
+  },
+  "claim_boundary": "The receipt certifies only the complete first nonexact polynomial kinetic-braiding family G(X)=g0+beta X on the declared constant-clock unit cylinder and stationary-gradient Berger fixture. The full cylinder metric-clock Hessian is identically zero; the separate Berger scalar block has exact rank two. This selects no action and establishes no reduced ADM health, support-local causal parent, nonlinear q2, Hadamard state, anomaly/QME result, particle space, scattering, positivity or unitarity theorem. Higher G(X), Horndeski/DHOST curvature couplings, other backgrounds, new fields and enlarged gauge groups remain outside scope.",
+  "higher_tiers_not_run": []
+}

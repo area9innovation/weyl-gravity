@@ -270,6 +270,26 @@ def verify() -> None:
         or "no Hadamard" not in active_clock["claim_boundary"]
     ):
         raise AssertionError("quadratic active-clock atlas boundary drifted")
+    braiding = by_id[
+        "classical.complex_compensator.cylinder_berger."
+        "kinetic_braiding_quadratic_visibility"
+    ]
+    braiding_ids = {item["result_id"] for item in braiding["evidence"]}
+    if (
+        braiding["descriptions"]["causal"] != "OBSTRUCTED"
+        or braiding["descriptions"]["symplectic"] != "NO_CERTIFIED_MAP"
+        or braiding["descriptions"]["nonlinear"] != "NOT_APPLICABLE"
+        or braiding["descriptions"]["observational"] != "NO_CERTIFIED_MAP"
+        or braiding["descriptions"]["quantum"] != "OPEN"
+        or "COMPENSATOR_KINETIC_BRAIDING_QUADRATIC_VISIBILITY_V1"
+        not in braiding_ids
+        or "11-by-11 zero Hessian" not in braiding["claim_boundary"]
+        or "rank two" not in braiding["claim_boundary"]
+        or "does not repair the cylinder" not in braiding["claim_boundary"]
+        or "No selected action" not in braiding["claim_boundary"]
+        or "Hadamard" not in braiding["claim_boundary"]
+    ):
+        raise AssertionError("kinetic-braiding visibility atlas boundary drifted")
     stability = by_id["classical.crosswalk.weak_background_causal_vs_residual_d"]
     if (
         stability["descriptions"]["causal"] != "CERTIFIED"

@@ -41,6 +41,7 @@ CERTS = {
     "complex_compensator_active_clock_px2_no_go": ROOT / "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1.json",
     "complex_compensator_active_clock_px2_freeze_audit": ROOT / "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json",
     "complex_compensator_active_clock_background_stability": ROOT / "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1.json",
+    "complex_compensator_kinetic_braiding_visibility": ROOT / "d_quotient_classical/certificates/COMPENSATOR_KINETIC_BRAIDING_QUADRATIC_VISIBILITY_V1.json",
     "Berger_green": ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
     "Berger_bikernel_support_gate": ROOT / "d_quotient_classical/certificates/BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1.json",
     "Berger_Cartan": ROOT / "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json",
@@ -445,6 +446,30 @@ def entries() -> list[dict[str, Any]]:
         _second(("NOT_APPLICABLE", "No selected active-clock action exists for a bounded tangent cone."), ("NOT_APPLICABLE", "No selected active-clock action exists for a smooth-secular tangent cone."), ("OBSTRUCTED", "The quadratic active-clock seven-gate locus is empty before a complete causal parent can be selected.")),
         _evidence("complex_compensator_minimal_action_no_go", "complex_compensator_active_clock_px2_no_go", "complex_compensator_active_clock_px2_freeze_audit", "complex_compensator_active_clock_background_stability"),
         "The theorem-frozen point has exact rank five and kernel t(81/20,27/3290,-324/1645,486/1645,18/25,1), independently reconstructed from integer maximal cofactors, with sound speed squared 9/59. The background-stability theorem promotes inverse squared cylinder radius kappa, Berger squashing q and clock gradient nu to exact parameters. On the rational open box 15/16<kappa<17/16, 1/5<q<1/4, 2/3<nu<5/6, one signed maximal cofactor is everywhere nonzero and the full stationary action-space locus is the parameter-dependent ray lambda K(kappa,q,nu). Couplings vary with the background; this is not a fixed-action stability claim. Every nonzero ray retains the exact split (+3,-3) gravity-auxiliary velocity pair and raw-D witnesses +3,-3. The cylinder and Berger clock-health half-lines are opposite throughout the box, while the Berger sound speed is exactly -q/(32qkappa-3q-8kappa) in (0,1). The common good locus is EMPTY at every box point. Along kappa=1, nu=3/4, lambda=1, q=1/4 is the first clock/principal bifurcation: q=9/40 has incompatible clock signs while q=21/80 makes both clocks standard-sign, but the full verdict remains empty because the split gravity-auxiliary and raw-D defects persist. Stationary rank changes separately, including the q=1/4 intersection kappa=5/16, and no Candidate C_active is selected. This is not a universal k-essence or compensator no-go, nor a fixed-action or generic-background theorem. It constructs no complete causal parent and establishes no Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result.",
+    ))
+    values.append(_entry(
+        "classical.complex_compensator.cylinder_berger.kinetic_braiding_quadratic_visibility",
+        _scope(
+            VACUUM,
+            theory="the imported quadratic active-clock family enlarged only by the complete first nonexact shift-symmetric braiding polynomial G(X)=g0+beta X",
+            background="constant-clock unit cylinder and the separate stationary-gradient Berger fixture a=1, q=9/40, theta=3t/4",
+            charge_sector="unreduced local metric-clock carrier; no selected-action or fixed-charge quotient",
+            carrier="full 11-component cylinder metric-clock Hessian and the derived Berger scalar lapse/shift-divergence/trace/clock block; not a mode or particle carrier",
+            degree="classical quadratic action only",
+            parity="real parity-even scalar braiding sector",
+            ell="all cylinder metric-clock perturbations; all Berger scalar harmonics",
+            m="all",
+            k="all local cylinder covectors and Berger scalar covectors",
+            omega="formal D symbol; no positive-frequency splitting",
+        ),
+        {"causal": "OBSTRUCTED", "symplectic": "NO_CERTIFIED_MAP", "nonlinear": "NOT_APPLICABLE", "observational": "NO_CERTIFIED_MAP", "quantum": "OPEN"},
+        ("OBSTRUCTED", "The full minimal-braiding cylinder Hessian and symbol vanish identically, so this mechanism cannot alter the failed cylinder quadratic carrier."),
+        ("NO_CERTIFIED_MAP", "The Berger scalar Hessian has exact rank two and the two scalar-diffeomorphism null vectors, but no reduced ADM pairing or health theorem is selected."),
+        ("NOT_APPLICABLE", "The cylinder-zero fast gate forbids a nonlinear q2 build for this Level-2 mechanism."),
+        ("NO_CERTIFIED_MAP", "Berger visibility is not a same-carrier cylinder repair and exports no observational or particle mode."),
+        _second(("NOT_APPLICABLE", "No selected Level-2 action exists for a bounded tangent cone."), ("NOT_APPLICABLE", "No selected Level-2 action exists for a smooth-secular tangent cone."), ("OBSTRUCTED", "The minimal braiding term cannot change the required cylinder unary operator at quadratic order.")),
+        _evidence("complex_compensator_active_clock_px2_freeze_audit", "complex_compensator_active_clock_background_stability", "complex_compensator_kinetic_braiding_visibility"),
+        "The constant g0 term is an exact boundary functional. For S3=beta integral sqrt(-g_hat) X Box_hat(theta), the complete bilinear Hessian factorizes as beta[x(h,phi)b(j,psi)+x(j,psi)b(h,phi)]. On the constant-clock cylinder v_a=0 forces x=0 for all ten metric components and the clock, giving an exact 11-by-11 zero Hessian at every covector. On Berger the separate scalar block is nonzero of rank two at every nonzero scalar covector, with the time and longitudinal spatial diffeomorphisms as exact null vectors; this does not repair the cylinder. No selected action, reduced ADM health, support-local causal parent, nonlinear q2, Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result is exported. Higher G(X), Horndeski/DHOST curvature couplings, other backgrounds, new fields and enlarged gauge groups remain outside scope.",
     ))
     values.append(_entry(
         "classical.berger.retained_gravity_clock_maxwell",
