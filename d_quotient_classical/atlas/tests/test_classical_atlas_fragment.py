@@ -342,6 +342,37 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertIn("No selected action", entry["claim_boundary"])
         self.assertIn("not a general Horndeski/DHOST no-go", entry["claim_boundary"])
 
+    def test_level3b_correct_horndeski_has_empty_cylinder_good_locus(self) -> None:
+        entry = self.entries[
+            "classical.complex_compensator.active_clock."
+            "convention_correct_horndeski_level3b_good_locus"
+        ]
+        self.assertEqual(entry["descriptions"]["causal"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "NOT_APPLICABLE")
+        self.assertEqual(
+            entry["descriptions"]["observational"], "NO_CERTIFIED_MAP"
+        )
+        self.assertEqual(entry["descriptions"]["quantum"], "OPEN")
+        self.assertIn(
+            "COMPENSATOR_CONVENTION_CORRECT_HORNDESKI_LEVEL3B_NO_GO_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn("lapse null vector (0,1)", entry["claim_boundary"])
+        self.assertIn(
+            "M_P_squared_effective=-24alpha_R", entry["claim_boundary"]
+        )
+        self.assertIn("congruent to diag(-6,6)", entry["claim_boundary"])
+        self.assertIn(
+            "compact-support dressed-trace class survives",
+            entry["claim_boundary"],
+        )
+        self.assertIn(
+            "without computing a Berger stationary system",
+            entry["claim_boundary"],
+        )
+        self.assertIn("Higher F, G5, DHOST", entry["claim_boundary"])
+
     def test_level4_real_weyl_connection_has_empty_rank_charge_locus(self) -> None:
         entry = self.entries[
             "classical.complex_compensator.real_weyl_connection."

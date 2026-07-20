@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "COMPENSATOR_CONVENTION_CORRECT_HORNDESKI_LEVEL3B_NO_GO_V1_TIER_RECEIPT",
+  "claim_id": "COMPENSATOR_CONVENTION_CORRECT_HORNDESKI_LEVEL3B_NO_GO_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/compensator/convention_correct_horndeski_level3b_no_go.py",
+      "sha256": "2c61ceec87d10b19dc9d33bae27d112ef59847cbea825714b80e9c854c50e0fa"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_convention_correct_horndeski_level3b_no_go.py",
+      "sha256": "909092b91b7070a145327feb0179c2b63428ab8c9dcd7213a04cdaa26621e453"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_convention_correct_horndeski_level3b_no_go.py",
+      "sha256": "7de40753f08bdb4977f2a08f4f0dd94aa8ba7dac2c067bcf2db4954ca323eaad"
+    },
+    {
+      "path": "d_quotient_classical/certificates/COMPENSATOR_CONVENTION_CORRECT_HORNDESKI_LEVEL3B_NO_GO_V1.json",
+      "sha256": "78258a1a76c81183699e8fe6923c8eccb79c030ec8174c7fe8716a97a923713c"
+    },
+    {
+      "path": "d_quotient_classical/schema/compensator-convention-correct-horndeski-level3b-no-go-v1.schema.json",
+      "sha256": "daca657acf19c66e09d189a9a35e51a8612e670be469d03f17a69d36cfec3d28"
+    },
+    {
+      "path": "d_quotient_classical/reports/compensator-convention-correct-horndeski-level3b-no-go-v1.md",
+      "sha256": "4a0974c5f0ca8919bdee5bb3f66f5b76a5b69c8d36cc9841fb0a8def7570f16b"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "0b6c67c0dfe28aa566c634774399179bd2a22755d340ee3bf1abcfa82b0dd8b0"
+    },
+    {
+      "path": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
+      "sha256": "db7c44c2498d396a6c02a9a264a2669c14e3a542f6198fd68a17e9b6c58bd791"
+    },
+    {
+      "path": "d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+      "sha256": "2e78c2f33f0d26270a83b75b1eb54a3418a64415f2cbd7720fbf604443c6a2ab"
+    },
+    {
+      "path": "d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py",
+      "sha256": "9584d067a20477f5619e1ae08464c3bc6018af5c4a50ad0d44359f6dbb94bcae"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <Level-3b producer, independent verifier, mutation tests and affected atlas Python paths>",
+        "elapsed_seconds": 0.09,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m json.tool <Level-3b certificate and schema>",
+        "elapsed_seconds": 0.12,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff HEAD --check -- <explicit Level-3b and atlas paths>",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/convention_correct_horndeski_level3b_no_go.py --check",
+        "elapsed_seconds": 0.78,
+        "status": "PASS",
+        "method": "exact raw homogeneous ADM cancellation, rank-two cylinder Euler matrix, complete five-dimensional stationary kernel, boundary-equivalent Einstein-tensor clock symbol and exhaustive alpha_R stratification"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_convention_correct_horndeski_level3b_no_go.py",
+        "elapsed_seconds": 0.95,
+        "status": "PASS",
+        "independent_rail": "imports no producer module; reconstructs the raw ADM Hessian-square identity and corrected Horndeski cancellation, solves the cylinder stationary equations independently, and replays the clock symbol and rational split-inertia congruence"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.compensator.tests.test_convention_correct_horndeski_level3b_no_go -v",
+        "elapsed_seconds": 1.31,
+        "status": "PASS",
+        "tests": 8,
+        "mutation_controls": "ADM Hessian, slope background column, clock symbol, common-locus verdict, selected action, Berger computation, nonlinear q2 and quantum promotions are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/compensator-convention-correct-horndeski-level3b-no-go-v1.schema.json -d d_quotient_classical/certificates/COMPENSATOR_CONVENTION_CORRECT_HORNDESKI_LEVEL3B_NO_GO_V1.json",
+        "elapsed_seconds": 3.97,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/atlas/generate_classical_atlas_fragment.py --check; python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py; python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment -v; python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "elapsed_seconds": 0.98,
+        "status": "PASS",
+        "tests": 32
+      },
+      {
+        "command": "ci/science-forge-shadow.sh",
+        "elapsed_seconds": 9.28,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "pre-existing bridge certificate drift, corpus baseline growth from 976 to 1324 certificates, and an unpinned dirty Forge development binary; the advisory rail exited zero"
+      }
+    ]
+  },
+  "tier_3": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m unittest discover -v",
+        "elapsed_seconds": 2.15,
+        "status": "PASS",
+        "tests": 148,
+        "scope": "repository-wide Python unittest discovery from physics/symplectic-reconstruction; the eight scoped Level-3b tests were also run explicitly because discovery does not collect that package"
+      }
+    ],
+    "reason": "The item freezes the first complete invariant no-go for the scoped convention-correct Level-3b family and therefore triggers the AGENTS.md theorem-freeze Tier-3 criterion."
+  },
+  "claim_boundary": "The receipt certifies only the complete convention-correct linear-F quartic-Horndeski family F=f0+f1X with coefficient -2F_X, quadratic P(X), zero braiding, and the constant-clock unit-cylinder gate. Exact Horndeski degeneracy is rederived. The complete cylinder stationary locus splits into alpha_R nonzero with immutable split R2 auxiliary inertia and alpha_R zero with surviving arbitrary compact-support dressed-trace homology; therefore its intersection with every Berger stationary locus has empty seven-gate good locus without computing a Berger sample. No selected action, complete causal parent, nonlinear q2, Hadamard state, anomaly/QME result, particle space, scattering, positivity or unitarity theorem follows. Higher F, G5, DHOST, independent connections, extra fields and other backgrounds remain outside scope.",
+  "higher_tiers_not_run": []
+}

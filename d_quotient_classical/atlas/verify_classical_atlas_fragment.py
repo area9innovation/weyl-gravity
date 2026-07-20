@@ -327,6 +327,31 @@ def verify() -> None:
         not in level3["claim_boundary"]
     ):
         raise AssertionError("Level-3 curvature-coupling atlas boundary drifted")
+    level3b = by_id[
+        "classical.complex_compensator.active_clock."
+        "convention_correct_horndeski_level3b_good_locus"
+    ]
+    if (
+        level3b["descriptions"]["causal"] != "OBSTRUCTED"
+        or level3b["descriptions"]["symplectic"] != "OBSTRUCTED"
+        or level3b["descriptions"]["nonlinear"] != "NOT_APPLICABLE"
+        or level3b["descriptions"]["observational"] != "NO_CERTIFIED_MAP"
+        or level3b["descriptions"]["quantum"] != "OPEN"
+        or "COMPENSATOR_CONVENTION_CORRECT_HORNDESKI_LEVEL3B_NO_GO_V1"
+        not in {item["result_id"] for item in level3b["evidence"]}
+        or "lapse null vector (0,1)" not in level3b["claim_boundary"]
+        or "M_P_squared_effective=-24alpha_R"
+        not in level3b["claim_boundary"]
+        or "congruent to diag(-6,6)" not in level3b["claim_boundary"]
+        or "compact-support dressed-trace class survives"
+        not in level3b["claim_boundary"]
+        or "without computing a Berger stationary system"
+        not in level3b["claim_boundary"]
+        or "Higher F, G5, DHOST" not in level3b["claim_boundary"]
+    ):
+        raise AssertionError(
+            "convention-correct Level-3b Horndeski atlas boundary drifted"
+        )
     level4 = by_id[
         "classical.complex_compensator.real_weyl_connection."
         "level4_rank_charge_good_locus"

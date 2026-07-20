@@ -1,0 +1,339 @@
+{
+  "claim_boundary": "This exact theorem covers the complete convention-correct F=f0+f1X quartic-Horndeski family with coefficient -2F_X, quadratic P(X), zero braiding, the unit-cylinder constant-clock gate and the requirement of a common cylinder/Berger passing action. Horndeski degeneracy is rederived. The complete cylinder stationary locus is partitioned by alpha_R: its nonzero branch retains the split R2 auxiliary pair, and its zero branch retains the compact-support dressed-trace homology because the corrected slope is clock-only. Hence the common good locus is empty without computing or sampling a Berger locus. No selected action, full causal parent, nonlinear q2, Hadamard, anomaly/QME, particle, scattering, positivity or unitarity result follows. Higher F, G5, DHOST, independent connections, new fields and other backgrounds remain outside scope.",
+  "claim_flags": {
+    "BERGER_STATIONARY_LOCUS_COMPUTED": false,
+    "COMPLETE_SUPPORT_LOCAL_CAUSAL_PARENT": false,
+    "HADAMARD_ANOMALY_QME_OR_QUANTUM": false,
+    "HIGHER_HORNDESKI_G5_OR_DHOST_NO_GO": false,
+    "NONLINEAR_Q2": false,
+    "PARTICLE_SCATTERING_UNITARITY": false,
+    "SELECTED_LEVEL3B_ACTION": false
+  },
+  "complete_cylinder_stationary_locus": {
+    "Euler_row_order": [
+      "spatial_metric",
+      "temporal_metric"
+    ],
+    "coefficient_order": [
+      "alpha_B",
+      "alpha_R",
+      "M_P_squared_effective",
+      "p0",
+      "p1",
+      "p2",
+      "f1"
+    ],
+    "common_background_locus_relation": "every common cylinder/Berger stationary coefficient vector is a subset of this complete cylinder stationary locus",
+    "complete_solution": {
+      "M_P_squared_effective": "-24 alpha_R",
+      "free": [
+        "alpha_B",
+        "alpha_R",
+        "p1",
+        "p2",
+        "f1"
+      ],
+      "p0": "36 alpha_R"
+    },
+    "f0_absorption": "M_P_squared_effective=M_P_squared+2f0",
+    "kernel_dimension": 5,
+    "rank": 2,
+    "slope_first_variation": "ZERO because d theta_bar=0",
+    "stationary_matrix": {
+      "column_count": 7,
+      "entries": [
+        {
+          "coefficient": "36",
+          "column": 1,
+          "row": 0
+        },
+        {
+          "coefficient": "3",
+          "column": 2,
+          "row": 0
+        },
+        {
+          "coefficient": "1",
+          "column": 3,
+          "row": 0
+        },
+        {
+          "coefficient": "12",
+          "column": 1,
+          "row": 1
+        },
+        {
+          "coefficient": "-1",
+          "column": 2,
+          "row": 1
+        },
+        {
+          "coefficient": "-1",
+          "column": 3,
+          "row": 1
+        }
+      ],
+      "row_count": 2,
+      "sha256": "57b726804115320b8bab27816c36bbdc6da984e9d44c291c6de8fe463cbe79c4"
+    }
+  },
+  "complete_declared_action": "S_P2+integral sqrt(-g_hat){F(X)R_hat-2F_X[(Box_hat theta)^2-(nabla_hat nabla_hat theta)^2]}",
+  "content_hashes": {
+    "adm_sha256": "37c2a9042a5c129416d23175ee5437ecef79b3ff2ce2456af0d0fc7de7e97248",
+    "hessian_sha256": "6f62c37daaff086a0a03e209d0cae18f9fb767d679731796f27da6d2cc9c6cf7",
+    "imports_sha256": "c5e5318d04f33f37bd0d2329ccf85b88f8191b0d0cdd5b9d53482811443898a2",
+    "stationary_sha256": "b2b16d4b7acb6f4586f609cf97401f1b52e5c7743865a4e3bb7e4235c57481b6",
+    "strata_sha256": "c2878a69dff48147c0ea81e2fd45c8e04bbe78156fe7424b4971823e4a824480",
+    "unary_sha256": "60a3b6137ae8346e068b17b12fdf1b80b55701c634645a7c7a79e7cd80ac302f",
+    "verdict_sha256": "46d77e0cf5c1eafbd3e6898fde5cf8aa87becf00f45c9958e8a667db2b1f883e"
+  },
+  "conventions": {
+    "F": "f0+f1X",
+    "X": "g_hat^{ab}partial_a(theta)partial_b(theta)",
+    "arithmetic": "exact characteristic-zero rational polynomial algebra",
+    "corrected_coefficient": "-2F_X",
+    "level2_braiding": "ZERO",
+    "signature": "(-,+,+,+)"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_adm_degeneracy": {
+    "conclusion": "HORNDESKI_DEGENERACY_EXACTLY_REDERIVED",
+    "corrected_kinetic_density_over_Na3": "-6*h**2*(F - 2*F_X*X)",
+    "determinant": "0",
+    "fixture": "ds^2=-N^2dt^2+a^2 delta_ij dx^i dx^j, theta=nu t, h=dot(a)/(aN), A=dot(N)/N^2, X=-nu^2/N^2",
+    "lapse_velocity_null_vector": [
+      "0",
+      "1"
+    ],
+    "linear_F_rank_change_surface": "f0-f1X=0",
+    "rank_strata": {
+      "F-2X_F_X_nonzero": 1,
+      "F-2X_F_X_zero": 0
+    },
+    "raw_identities": {
+      "F_R_after_boundary_reduction": "-6Fh^2+12X F_X A h",
+      "Hessian_square_difference": "-6Xh^2+6XAh"
+    },
+    "velocity_Hessian": {
+      "column_count": 2,
+      "entries": [
+        {
+          "coefficient": "-12*(F - 2*F_X*X)",
+          "column": 0,
+          "row": 0
+        }
+      ],
+      "row_count": 2,
+      "sha256": "b6a47d0a3e6e5bcb3ca8d04c1b5653d47acb3406d9330561663bf0c67e124b94"
+    },
+    "velocity_order": [
+      "h",
+      "A"
+    ]
+  },
+  "exact_checks": {
+    "Horndeski_ADM_cancellation_rederived": true,
+    "alpha_R_nonzero_split_congruence_exact": true,
+    "alpha_R_zero_trace_homology_direct_sum_exact": true,
+    "clock_symbol_exact": true,
+    "common_good_locus_empty_without_Berger_sampling": true,
+    "corrected_action_declared_without_braiding": true,
+    "cylinder_stationary_matrix_and_RREF_exact": true,
+    "downstream_claims_fail_closed": true,
+    "f1_background_column_zero": true,
+    "lapse_velocity_null_vector_exact": true,
+    "literal_control_hash_and_semantics_pinned": true,
+    "pure_metric_and_mixed_f1_blocks_zero": true
+  },
+  "full_cylinder_quadratic_separator": {
+    "R2_auxiliary_velocity_block": {
+      "column_count": 2,
+      "entries": [
+        {
+          "coefficient": "-3",
+          "column": 1,
+          "row": 0
+        },
+        {
+          "coefficient": "-3",
+          "column": 0,
+          "row": 1
+        }
+      ],
+      "row_count": 2,
+      "sha256": "c0912c166020700bbe5b24d8b771d1e226603bf168712537316c09ca5a708736"
+    },
+    "R2_congruent_diagonal": {
+      "column_count": 2,
+      "entries": [
+        {
+          "coefficient": "-6",
+          "column": 0,
+          "row": 0
+        },
+        {
+          "coefficient": "6",
+          "column": 1,
+          "row": 1
+        }
+      ],
+      "row_count": 2,
+      "sha256": "0ee9cb68b601b1ac1b8e9b560fe6a0bd082c0a2c4ad721001ede1aad40804218"
+    },
+    "R2_inertia_for_alpha_R_nonzero": [
+      1,
+      1,
+      0
+    ],
+    "R2_rational_congruence": {
+      "column_count": 2,
+      "entries": [
+        {
+          "coefficient": "1",
+          "column": 0,
+          "row": 0
+        },
+        {
+          "coefficient": "1",
+          "column": 1,
+          "row": 0
+        },
+        {
+          "coefficient": "1",
+          "column": 0,
+          "row": 1
+        },
+        {
+          "coefficient": "-1",
+          "column": 1,
+          "row": 1
+        }
+      ],
+      "row_count": 2,
+      "sha256": "17b5297091faaa6c175b580d44bc5dff29ab6281f94c0ff01207a4c8fd38a43a"
+    },
+    "block_structure": {
+      "f1_clock_clock": "-4f1 G_bar^{ab}k_a k_b",
+      "f1_metric_clock_mixed": "ZERO",
+      "f1_pure_metric": "ZERO",
+      "p2_quadratic": "ZERO"
+    },
+    "boundary_identity": "f1[X R-2((Box theta)^2-(nabla nabla theta)^2)]=-2f1 G_ab nabla^a theta nabla^b theta mod d_h",
+    "clock_hyperbolicity_condition": "(p1+6f1)(p1+2f1)>0 away from either rank surface",
+    "clock_rank_surfaces": [
+      "p1+6f1=0 (time coefficient)",
+      "p1+2f1=0 (spatial coefficient)"
+    ],
+    "clock_symbol": "2*(2*f1*k_squared - 6*f1*omega_squared + k_squared*p1 - omega_squared*p1)",
+    "slope_effect_on_R2_block": "NONE",
+    "unit_cylinder_Einstein_tensor": {
+      "G^00": "3",
+      "G^ij": "-gamma^ij"
+    }
+  },
+  "imports": {
+    "P2_freeze": {
+      "path": "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json",
+      "result_id": "COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1",
+      "result_state": "SCOPED_QUADRATIC_ACTIVE_CLOCK_NO_GO_INDEPENDENTLY_FROZEN",
+      "sha256": "9bda4b758616427bdbf401a499ffd2b7cd9dd69a87223f05fcdf636bb31cd533",
+      "source_commit": "f64be4a5793764ebf8871d5f1a83bd736aed7fc1"
+    },
+    "literal_level3": {
+      "path": "d_quotient_classical/certificates/COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1.json",
+      "result_id": "COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1",
+      "result_state": "SCOPED_LEVEL3_LITERAL_CURVATURE_COUPLING_GOOD_LOCUS_EMPTY",
+      "sha256": "2e687331b6985b3a84c54a0f05b210bee5e3ac06d5659b5603ac9bc25f61dfed",
+      "source_commit": "e77ee444450890dd1df720f70c5ef5ab202fe8cc"
+    },
+    "trace_obstruction": {
+      "path": "d_quotient_classical/certificates/TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1.json",
+      "result_id": "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1",
+      "result_state": "OBSTRUCTED",
+      "sha256": "db1f998a0920adb94cf4fcbffb1b9eb2ea6537876aff9513aac4e4d9ec2b51b9",
+      "source_commit": "2b834dc751d6948366fd5c3d99174c268fa50d21"
+    }
+  },
+  "next_gate": "The convention-correct Level-3b family is terminal at the cylinder gate. The independently gauged Weyl-connection Level 4 may now be activated under a fresh authoritative work item.",
+  "result_id": "COMPENSATOR_CONVENTION_CORRECT_HORNDESKI_LEVEL3B_NO_GO_V1",
+  "result_state": "SCOPED_LEVEL3B_CORRECT_HORNDESKI_GOOD_LOCUS_EMPTY",
+  "schema": "pure-weyl-compensator-correct-horndeski-level3b-no-go-v1",
+  "stratified_no_go": {
+    "alpha_R_nonzero": {
+      "clock_sector": "the corrected slope changes only the separate clock diagonal",
+      "cylinder_stationarity": "M_P_squared_effective=-24alpha_R and p0=36alpha_R",
+      "invariant_failure": "SPLIT_GRAVITY_AUXILIARY_INERTIA_PERSISTS",
+      "raw_D_witnesses": [
+        "+3",
+        "-3"
+      ],
+      "trace_sector": "the auxiliary R2 velocity block is congruent to diag(-6,6)"
+    },
+    "alpha_R_zero": {
+      "compact_support_witness": "the imported arbitrary compact-support u class and its dual functional survive by direct-sum extension",
+      "cylinder_stationarity": "M_P_squared_effective=0 and p0=0",
+      "dressed_trace": "u=phi_trace-2tau",
+      "invariant_failure": "DRESSED_TRACE_HOMOLOGY_PERSISTS",
+      "metric_action": "alpha_B C^2 is trace-free; p1,p2 and f1 are clock-only at quadratic order"
+    },
+    "common_seven_gate_good_locus": "EMPTY",
+    "exhaustiveness": "alpha_R=0 or alpha_R!=0 partitions the complete cylinder stationary locus. Every common-background solution lies in one branch, and both fail before Berger equations can rescue them."
+  },
+  "terminal_verdict": {
+    "Horndeski_degeneracy_verified": true,
+    "common_cylinder_Berger_good_locus": "EMPTY",
+    "complete_convention_correct_linear_F_family_checked": true,
+    "complete_cylinder_stationary_locus_classified": true,
+    "first_complete_invariant_separator": "on the complete cylinder stationary locus, alpha_R nonzero retains the slope-independent split R2 auxiliary pair, while alpha_R zero forces M_P_squared_effective=p0=0 and retains the compact-support dressed-trace homology",
+    "result": "SCOPED_LEVEL3B_CORRECT_HORNDESKI_GOOD_LOCUS_EMPTY",
+    "selected_level3b_action": false
+  },
+  "unary_constraint_charge_and_gates": {
+    "Berger_system": "NOT_COMPUTED: the complete cylinder stationary locus already has empty physical good locus, so its intersection with any Berger stationary locus is empty",
+    "action_origin_unary": {
+      "Horndeski_primary_constraint": "the lapse-velocity null vector (0,1) in the homogeneous (h,A) Hessian",
+      "Q_g_hat": "Lie_xi(g_hat)",
+      "Q_theta": "Lie_xi(theta)",
+      "Q_xi": "xi^nu partial_nu xi",
+      "cylinder_scalar_reduction": "the metric/constraint rows are exactly the P2 rows; f1 appends only the clock-clock principal entry",
+      "new_gauge_generator": false
+    },
+    "nonlinear_q2": false,
+    "selected_action": false,
+    "seven_gates": [
+      {
+        "gate": 1,
+        "status": "PASS_ACTION_AND_HORNDESKI_DEGENERACY"
+      },
+      {
+        "gate": 2,
+        "status": "PASS_COMPLETE_CYLINDER_STATIONARY_LOCUS"
+      },
+      {
+        "gate": 3,
+        "status": "FAIL_SPLIT_OR_TRACE_HOMOLOGY"
+      },
+      {
+        "gate": 4,
+        "status": "FAIL_SPLIT_OR_DEGENERATE_TRACE_PAIRING"
+      },
+      {
+        "gate": 5,
+        "status": "FAIL_SPLIT_OR_NONZERO_TRACE_COHOMOLOGY"
+      },
+      {
+        "gate": 6,
+        "status": "FAIL_RAW_D_OR_NO_TRACE_GENERATOR"
+      },
+      {
+        "gate": 7,
+        "status": "NOT_REACHED_AFTER_CYLINDER_SEPARATOR"
+      }
+    ],
+    "shift_current": "j^a=2P_X nabla^a theta-4f1 G^{ab}nabla_b theta",
+    "support_local_causal_parent": false
+  }
+}
