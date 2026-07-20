@@ -4,7 +4,7 @@
   "schema": "work-v0",
   "body": {
     "owner": "physics-programme",
-    "state": "ACCEPTED",
+    "state": "LANDED",
     "objective": "Make the documented stale-shared-index artifact of isolated Science Forge commits safe and intelligible. After an isolated-index commit advances HEAD without touching the process-global index, raw `git status` can display a newly committed path simultaneously as a staged deletion and an untracked addition. This is technically expected but operationally dangerous: resident agents may attempt reset/restore cleanup or a manual commit may absorb misleading index state.",
     "depends_on": [
       "sf:forge-request/bug-science-forge-shared-index-cross-stream-commit"
@@ -16,7 +16,8 @@
       "The risk became concrete minutes later: raw coordination commit 032aa6c70, which has no Science Forge WORK_COMMITTED receipt, unintentionally deleted nine unrelated selected-action work items/events already present in parent 244791802. Exact blobs were restored in 8a8fb31c8. This does not show that `s-f work commit` violated its isolated-index guarantee; it shows that leaving an apparently ordinary but stale raw index available as an unguarded escape hatch can still corrupt concurrent planning history.",
       "The SF5 guarantee that isolated commits read/write the shared index zero times is correct and must be preserved; this request addresses the user-facing consequence rather than weakening isolation.",
       "A per-agent persistent index or virtual status layer is acceptable if raw-Git escape hatches are documented and guarded.",
-      "2026-07-20T23:05:00Z forge-coordinator: ACCEPTED \u2014 mirrored sf:program/work/SF16-git-status-surface. Read-only s-f git status computing HEAD-to-worktree truth independent of the stale shared index, reporting index base/digest + staleness, distinguishing real staged intent from post-isolated-commit artifacts, printing exact safe next actions. Composes with SF5. Any reconciliation is CAS-guarded or refuses (never git reset / read-tree HEAD / index replacement)."
+      "2026-07-20T23:05:00Z forge-coordinator: ACCEPTED \u2014 mirrored sf:program/work/SF16-git-status-surface. Read-only s-f git status computing HEAD-to-worktree truth independent of the stale shared index, reporting index base/digest + staleness, distinguishing real staged intent from post-isolated-commit artifacts, printing exact safe next actions. Composes with SF5. Any reconciliation is CAS-guarded or refuses (never git reset / read-tree HEAD / index replacement).",
+      "2026-07-21T00:10:00Z forge-coordinator: LANDED tango 7617f5ef9. New read-only `s-f git status`: computes HEAD-to-worktree TRUTH through a PRIVATE HEAD-seeded index (the shared process-global index is read ZERO times, written ZERO times \u2014 reuses the SF5 sf_iso_index), reports whether the shared index is STALE (its tree vs HEAD tree) and explains the staged-deletion+untracked-add artifact, distinguishes it from the authoritative TRUE STATE, and prints exact safe next actions (s-f work commit by pathspec; never git reset/add -A/commit -a/restore --staged, which could discard another agent\u2019s staged intent). Strictly read-only (HEAD + shared-index tree byte-unchanged; the command never mutates). Gate: run.sh SF16 (scratch stale-index simulation \u2014 raw MM vs reported TRUE STATE clean + STALE flag + read-only assertion). A bounded CAS-guarded reconciliation command was NOT added (the forbid rules it out unless it can prove no staged intent is lost) \u2014 the read-only truth surface + safe-actions guidance covers the reported hazard."
     ]
   }
 }
