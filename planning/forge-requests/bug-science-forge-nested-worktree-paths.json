@@ -1,0 +1,19 @@
+{
+  "id": "sf:forge-request/bug-science-forge-nested-worktree-paths",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Repair the Science Forge git-transaction launcher for a programme rooted below the enclosing Git worktree. In physics/symplectic-reconstruction, item allowed_paths and report.changed_paths are programme-root-relative (for example bridge/...), but sf_base_dir resolves to the parent bp2transformer Git toplevel and git status --porcelain emits physics/symplectic-reconstruction/bridge/.... Consequently s-f work check reports every intended file as CLEAN/absent and cannot stage or commit an otherwise valid report. The first blocked consumer is sf:program/work/bridge-kernel-direction-incidence-normal-form.",
+    "depends_on": [
+      "sf:program/work/bridge-kernel-direction-incidence-normal-form"
+    ],
+    "stop_condition": "From /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction with SF_PROGRAM pointing to planning/work-items, s-f work check must map programme-relative changed paths to the enclosing Git worktree paths, list the thirteen declared bridge/notes files under would-stage, leave unrelated dirty paths under not-in-report, and s-f work commit must commit exactly that intersection. Add a deterministic nested-worktree fixture covering default discovery and an explicit SF_GITBASE override.",
+    "forbid": "changing physics work-item allowlists to parent-repository paths; broad staging; stripping arbitrary path prefixes without proving the programme-to-git-root relation; touching unreported dirty files; weakening report-and-allowlist intersection; treating CLEAN/absent as staged; requiring the physics programme to become a separate Git repository.",
+    "notes": [
+      "Minimal reproduction: SF_PROGRAM=$PWD/planning/work-items SF_NO_TITLE=1 s-f work check --item sf:program/work/bridge-kernel-direction-incidence-normal-form --agent bridge-1. The report has thirteen programme-relative paths and the dry-run returns SUMMARY stage=13 refuse=0 but labels all thirteen CLEAN/absent; the same dirty files appear under not-in-report with the prefix physics/symplectic-reconstruction/.",
+      "Setting SF_GITBASE=$PWD does not repair the issue because git status --porcelain still emits paths relative to the enclosing Git toplevel on this repository. The physics team is using the documented shared-master fallback: explicit-path manual commit plus an append-only work report recording this deviation."
+    ]
+  }
+}

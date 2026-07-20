@@ -514,6 +514,21 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("not a no-go for deformation", entry["claim_boundary"])
 
+    def test_candidate17_20_deformable_kernel_has_component_criterion_without_connectedness_promotion(self) -> None:
+        entry = self.entries[
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_deformable_kernel_incidence_normal_form"
+        ]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertIn("||M_K||<=|c|", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("I={c=0=M_K}", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("connected fibres", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("one-zero-node", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("not declared connected", entry["claim_boundary"])
+        self.assertIn("Nonemptiness of I does not imply", entry["claim_boundary"])
+
     def test_same_sign_local_rotation_descent_is_basic_not_global(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_active_local_rotation_leaf_descent"]
         second = entry["mode_data"]["second_order"]

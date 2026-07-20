@@ -1,0 +1,80 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_DEFORMABLE_KERNEL_INCIDENCE_NORMAL_FORM_V1_TIER_RECEIPT",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_DEFORMABLE_KERNEL_INCIDENCE_NORMAL_FORM",
+  "date": "2026-07-20",
+  "scope": "Invariant necessary-and-sufficient component-incidence normal form for arbitrary T3-kernel direction deformation on the strict opposite-sign candidate-17/20 fixed-total-occupation strata, including zero-node boundaries and nonfree compact stabilizers.",
+  "input_baseline": "c1010ecc",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form.json": "e1854d1dec455a89c59c563c5a7e5fcc33158f058fc6df671f47cab9b60cd060",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form.py": "84155b9440866a5cab59262b8e28194f27d9840257b50225b99db0213f6c30be",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form.schema.json": "d56b8bfc8a32e9329fa0c642d4ee79e8e77f4087375163143d56eb049c30e9db",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form.py": "dbc0cb223bb47657871ac74c98a22126904f6d8cc01830363f13b71f5def86aa",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form.py": "64fd1f44e4e2b3a4300620b1384894599830a16958de22a8250e81c5225208e3",
+    "bridge/reports/einstein-maxwell-weyl-same-sign-candidate17-20-deformable-kernel-incidence-normal-form.md": "34b184e7e931e59c12ac79a697eb02806b3212eab5b39fccbf9d7e17febe37e6"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on the producer, independent verifier, focused tests and atlas consumers",
+        "python3 -m json.tool on the theorem certificate and schema",
+        "git diff --check on the scoped theorem, atlas, report, brief and Paper 13 paths",
+        "three-pass pdflatex Paper 13 build followed by warning and PDF-text audits"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 6.21,
+      "tests_run": {
+        "theorem": 9,
+        "atlas": 118
+      },
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 -m residual_atlas.validate_fragment bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 -m bridge.einstein_sector.atlas.verify_einstein_atlas_fragment",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "independent_rail": {
+      "status": "PASS",
+      "method": "The verifier reconstructs the odd third transvectant, both one-zero-node incidence formulas, the incidence-to-hub coefficient homotopy and the Cartan moment-radius inverse without importing the producer."
+    },
+    "adversarial": {
+      "status": "PASS",
+      "mutations": [
+        "Promote nonempty boundary incidence to every admissible component meeting incidence.",
+        "Promote the component criterion to global zero-fibre connectedness."
+      ],
+      "result": "Both mutations are rejected by fail-closed schema tests."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "The fixed-direction incidence theorem, complete Cartan-square moment ball and complete complex T3 singular-locus theorem are hash-pinned inputs. The new producer derives the compactified orbit-space criterion and the independent verifier reconstructs its exact algebraic identities."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "The result certifies an invariant finite-carrier component criterion but deliberately leaves component enumeration, complete off-balance connectedness, final residual descent and all higher lifecycles open; no freeze, release or shared-core algebra promotion occurred."
+    }
+  },
+  "attempt_log": [
+    {
+      "status": "FAIL",
+      "command": "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment",
+      "reason": "The atlas generator requires an explicit --write or --check mode. The stale-output verifier and new-row test then failed as intended."
+    },
+    {
+      "status": "PASS",
+      "command": "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --write followed by the complete scoped atlas chain",
+      "reason": "The regenerated claims ledger passed schema, independent verification and all 118 tests."
+    }
+  ],
+  "claim_boundary": "CERTIFIED for the exact statement that a strict-opposite-sign point contracts precisely when its path component in the compact semialgebraic admissible orbit space meets c=M_K=0, with square-moment and compact-orbit path lifting and both sign-boundary incidences included. Whether every admissible component meets incidence, complete candidate-17/20 off-balance connectedness, occupation gluing, final residual, all-orders, causal, observational and quantum claims remain open or fail-closed."
+}

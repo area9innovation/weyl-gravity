@@ -4319,6 +4319,44 @@ kernel directions inside `T3(f,g)=0`: determine whether off-incidence points
 can reach the positive-collinear locus or exhibit an invariant preventing
 that deformation.
 
+The deformable-direction gate now has an invariant normal form.  Use the
+actual amplitudes `(F,G)` so zero-node boundaries require no artificial
+direction, quotient the compact carrier
+
+```text
+Kbar={(F,G):T3(F,G)=0, ||F||_W<=1, ||G||_W<=1}
+```
+
+by the two node phases and lifted `SO(3)`, and define
+
+```text
+c=delta+a*||F||_W^2-b*||G||_W^2,
+M_K=-a*m(F)+b*m(G),
+A={||M_K||<=|c|},
+I={c=0=M_K}.
+```
+
+On every strict `alpha*delta<0` stratum, a rotation-zero point contracts to
+the connected hub if and only if its path component in `A` meets `I`.
+Necessity is the coefficient sign crossing.  Sufficiency uses compact-group
+slice lifting, the explicit connected-fibre Cartan-square moment normal form,
+a free square pre-rotation at `I`, and the radial identity
+`c_s=(1-s)*delta`, `M_K(s)=0`.  Both sign chambers have exact one-zero-node
+phase-real incidence witnesses: `||F||^2=-delta/a,G=0` when `delta<0`, and
+`F=0,||G||^2=delta/b` when `delta>0`.
+
+Atlas row
+`einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_deformable_kernel_incidence_normal_form`
+is fail-closed: the component criterion is `CERTIFIED`, while the bounded
+verdict for an arbitrary initial component remains `OPEN`.  Candidate 17 and
+the two candidate-20 sign chambers retain separate scopes.  The active
+Science Forge bridge is still
+`bridge-kernel-direction-incidence-normal-form`; its next gate is the exact
+component enumeration of `A`, not another fixed-direction ansatz.  The bridge
+activates the existing same-background relative programme only after such a
+component meets `I`; missing global, charge, boundary and final residual maps
+remain `OPEN` or `NO_CERTIFIED_MAP`.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

@@ -1,0 +1,173 @@
+{
+  "boundary_incidence": {
+    "consequence": "I is nonempty in each strict opposite-sign chamber, but nonemptiness alone does not prove that every component of A meets I",
+    "delta_negative_alpha_positive": {
+      "inequality": "alpha=delta+a-b>0 implies 0<-delta/a<1",
+      "witness": "choose G=0 and phase-real F with ||F||_W^2=-delta/a; then c=M_K=0"
+    },
+    "delta_positive_alpha_negative": {
+      "inequality": "alpha=delta+a-b<0 implies 0<delta/b<1",
+      "witness": "choose F=0 and phase-real G with ||G||_W^2=delta/b; then c=M_K=0"
+    }
+  },
+  "candidate_disposition": {
+    "candidate17": "on alpha>0, delta<0, contraction is equivalent to the candidate-17 admissible component meeting its nonempty y=0 boundary incidence",
+    "candidate20_negative_delta": "on alpha>0, delta<0, contraction is equivalent to the candidate-20 admissible component meeting its nonempty y=0 boundary incidence",
+    "candidate20_positive_delta": "on alpha<0, delta>0, contraction is equivalent to the candidate-20 admissible component meeting its nonempty x=0 boundary incidence",
+    "separation": "the candidates share the normal-form proof but retain distinct backgrounds, coefficients, scalar-cone strata and atlas identifiers"
+  },
+  "claim_boundary": "This is an exact finite-carrier necessary-and-sufficient component criterion with all occupation boundaries and compact stabilizer strata retained. It does not assert that every admissible component meets incidence, prove complete candidate-17 or candidate-20 connectedness, identify the two candidates, glue total-occupation strata, perform final residual descent, or establish all-orders, causal, observational or quantum claims.",
+  "classification": {
+    "both_strict_sign_boundary_incidence_sets_nonempty": true,
+    "candidate17_complete_singular_rotation_zero_fibre_connected": false,
+    "candidate17_deformable_kernel_component_criterion_certified": true,
+    "candidate20_deformable_kernel_component_criterion_certified": true,
+    "candidate20_off_balance_complete_singular_rotation_zero_fibre_connected": false,
+    "causal_residual_observational_or_quantum_claim": false,
+    "compactified_T3_kernel_moduli_defined": true,
+    "every_admissible_component_meets_incidence": false,
+    "final_residual_descent": false,
+    "fixed_direction_theorem_recovered_as_fibrewise_corollary": true,
+    "global_zero_fibre_connected": false,
+    "node_phase_and_lifted_rotation_quotient_defined": true,
+    "occupation_strata_glued": false,
+    "singular_stabilizers_and_boundary_occupations_retained": true,
+    "square_moment_path_lifting_certified": true,
+    "strict_opposite_sign_component_incidence_necessary": true,
+    "strict_opposite_sign_component_incidence_sufficient": true
+  },
+  "compactified_moduli": {
+    "algebraic_singular_stratum": "rank J(f,g)<3 iff there is [lambda] in P^2 with B_lambda f=B_lambda g=0",
+    "component_path_property": "compact real-algebraic group invariant theory makes M semialgebraic; every connected component is semialgebraically path connected, and the compact-group slice theorem lifts an orbit-space path locally across all orbit types",
+    "group": "U(1)_F x U(1)_G x SO(3)_lifted",
+    "interior": "x*y>0 gives the projective T3 direction carrier modulo the lifted rotations",
+    "occupation_coordinates": "x=||F||_W^2 and y=||G||_W^2; no direction is introduced at a zero node",
+    "one_node_boundaries": "x=0 or y=0 retain the full stabilizer of the vanished node and make T3=0 automatic",
+    "orbit_space": "M=Kbar/(U(1)_F x U(1)_G x SO(3)_lifted)",
+    "orbit_type_statement": "M is used as a compact stratified semialgebraic orbit space; no freeness, smoothness or division by x or y is assumed",
+    "origin": "x=y=0 has both node phases in its stabilizer and is the kernel vertex of the double-singular hub",
+    "prequotient": "Kbar={(F,G) in C^5 x C^5:T3(F,G)=0, ||F||_W<=1, ||G||_W<=1}",
+    "weighted_norm": "W=diag(1,1/4,1/6,1/4,1) on each spin-two node"
+  },
+  "component_incidence_theorem": {
+    "equivalence": "a strict-opposite-sign rotation-zero point contracts to the double-singular hub if and only if its path component in A meets I",
+    "fixed_direction_corollary": "on a fixed pair of projective T3 directions, A intersects I exactly under the previously certified positive-collinearity or one-zero-moment formulas",
+    "hypothesis": "alpha=c(F_0,G_0) and delta=c(0,0) have strict opposite signs",
+    "necessity": "the projection of every rotation-zero contraction from the initial point to the hub is a path in A; c changes from alpha to delta, so at some point c=0 and the rotation equation forces M_K=0, hence the initial component of A meets I",
+    "sufficiency_stage_1": "a component meeting I is semialgebraically path connected; lift a path from the initial base point to I through the Cartan-square moment map",
+    "sufficiency_stage_2": "at c=M_K=0 the square direction is free, so move it within CP2 to a phase-real zero-moment direction",
+    "sufficiency_stage_3": "scale (F_*,G_*) to (0,0); T3 remains zero, M_K remains zero and c=(1-s)delta, so the phase-real square direction completes the path to the connected hub"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_algebra": {
+    "cartan_square_path_lift": {
+      "canonical_radius": "r(u)=3*u/(2+u^2), 0<=u<=1",
+      "connected_fibres": "for 0<r<=1 the inverse branch fixes the unordered norm ratio and the fibre is the connected rotation orbit about the moment axis; at r=0 the fibre is the connected phase-real RP2",
+      "endpoint_values": {
+        "r(0)": "0",
+        "r(1)": "1"
+      },
+      "inverse_branch": "u(r)=(3-sqrt(9-8*r^2))/(2*r), with u(0)=0",
+      "inverse_polynomial": "r*u**2 + 2*r - 3*u",
+      "moment_direction": "for nonzero moment the direction is the oriented normal x cross y",
+      "path_lifting": "on each interval with r>0, trivialize the oriented-frame bundle over the path interval and use u(r); at an isolated zero choose a common limiting real axis and use the connected r=0 fibre; prepend a path in the connected initial fibre",
+      "real_normal_form": "write z=x+i*y, use projective phase to impose x dot y=0, normalize |x|^2+|y|^2=1, and rotate the oriented orthogonal frame (x,y)"
+    },
+    "coefficient": {
+      "formula": "c(F,G)=delta+a*||F||_W^2-b*||G||_W^2",
+      "hub_value": "c(0,0)=delta",
+      "incidence_to_hub": "F_s=sqrt(s)F_*, G_s=sqrt(s)G_* gives c_s=(1-s)delta and M_s=0",
+      "initial_value": "c(f,g)=alpha=delta+a-b for unit node directions",
+      "negative_delta_boundary": "||F||_W^2=-delta/a, G=0",
+      "positive_delta_boundary": "F=0, ||G||_W^2=delta/b"
+    },
+    "third_transvectant": {
+      "diagonal": "T3(f,f)=0",
+      "homogeneity": "T3(sqrt(x)*f,sqrt(y)*g)=sqrt(x*y)*T3(f,g)",
+      "matrix_A_f": [
+        [
+          "-f3",
+          "3*f2",
+          "-3*f1",
+          "f0",
+          "0"
+        ],
+        [
+          "-f4",
+          "2*f3",
+          "0",
+          "-2*f1",
+          "f0"
+        ],
+        [
+          "0",
+          "-f4",
+          "3*f3",
+          "-3*f2",
+          "f1"
+        ]
+      ],
+      "odd_symmetry": "T3(f,g)=-T3(g,f)"
+    }
+  },
+  "generality_level": "G4_COMPLETE_COMPACTIFIED_T3_KERNEL_DIRECTIONS_WITH_OCCUPATION_BOUNDARIES",
+  "interpretation": "Allowing the T3-kernel directions to move replaces the fixed positive-collinearity test by an invariant component-incidence problem. The zero wall is unavoidable, and the full square factor removes every obstruction except failure of the initial admissible component to reach M_K=c=0. Boundary incidence points always exist in both sign chambers, but a global connectedness claim now requires an exact classification of the components of A rather than irreducibility of the complex T3 variety alone.",
+  "lifecycle_state": "CLASSIFIED",
+  "moment_map_and_admissible_base": {
+    "admissible_orbit_space": "A=A_tilde/(U(1)_F x U(1)_G x SO(3)_lifted)",
+    "admissible_prequotient": "A_tilde={(F,G) in Kbar:||M_K(F,G)||<=|c(F,G)|}",
+    "kernel_moment": "M_K(F,G)=-a*m(F)+b*m(G), with a=omega_minus*B_minus>0 and b=omega_plus*B_plus>0 after unit-direction normalization",
+    "rotation_zero_equation": "M_K+c*mu_square=0",
+    "semialgebraic_path_lifting": "lift the orbit-space path through compact-group slices; along the lifted path, -M_K/c is a semialgebraic path in the closed square-moment ball away from I; the explicit Cartan normal form and connected fibres lift it from the declared initial square direction, while at I the square direction is unconstrained",
+    "square_coefficient": "c(F,G)=delta+a*x-b*y",
+    "square_image": "mu_square(CP2) is the complete closed unit ball in so(3)^*",
+    "unnormalized_node_moment": "m(F)_a=F^dagger*W*J_a*F and m(G)_a=G^dagger*W*J_a*G in the common normalization",
+    "zero_wall_incidence": "I={[F,G] in A:c(F,G)=0 and M_K(F,G)=0}"
+  },
+  "next_gate": "classify the path components of the compact semialgebraic admissible orbit space A and decide, separately for candidate 17 and the two candidate-20 strict-sign chambers, whether each component meets I; an exact component missing I is the requested counterexample",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form.py",
+    "generator_sha256": "84155b9440866a5cab59262b8e28194f27d9840257b50225b99db0213f6c30be",
+    "inputs": {
+      "independent_node_scaling": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction.json",
+        "sha256": "0c8120ee3e79cb91929fe555ccc8352a51bd7b3756351ee53f5cd318e36345dc"
+      },
+      "moving_square": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.json",
+        "sha256": "4463e4218892d8527bfde308ce0237887c2c3ff0ac814e204bc5a87ddf0cbb68"
+      },
+      "singular_locus": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_third_transvectant_singular_locus.json",
+        "sha256": "6b54d7672b9849998220716762f66a4ff81c4156dfd782c1b596c245862cb371"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_DEFORMABLE_KERNEL_INCIDENCE_NORMAL_FORM",
+  "result_state": "STRICT_OPPOSITE_SIGN_DEFORMABLE_KERNEL_CONTRACTION_REDUCED_TO_ADMISSIBLE_COMPONENT_INCIDENCE",
+  "schema": "einstein-maxwell-weyl-same-sign-candidate17-20-deformable-kernel-incidence-normal-form-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form.schema.json",
+  "schema_sha256": "d56b8bfc8a32e9329fa0c642d4ee79e8e77f4087375163143d56eb049c30e9db",
+  "scope": {
+    "background": "candidates 17 and 20 separately on their strict alpha*delta<0 fixed-total-occupation strata",
+    "boundaries": "closed S1_L times S2 before node-phase, lifted-rotation or final residual quotient",
+    "carrier": "the complete compactified T3(F,G)=0 kernel-amplitude carrier, including arbitrary direction deformation, zero-node boundaries, the common-square singular locus and all compact stabilizer orbit types",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "correction_class": "bounded or finite-quasiperiodic second-order tangent cone",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidate-specific signed compact momenta, never identified across candidates",
+    "m": "all m=-2,...,2 in the binary-quartic carrier",
+    "omega": "candidate-specific difference collision into L=1 extra output",
+    "parity": "two exact factorized parity eigenchannels",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form"
+  ]
+}

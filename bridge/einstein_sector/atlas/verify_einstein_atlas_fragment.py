@@ -738,6 +738,18 @@ def verify() -> None:
         raise AssertionError("candidate-17/20 independent-node correction scope changed")
     if "not a no-go for deformation" not in independent_scaling["claim_boundary"] or "T3(f,g)=0" not in independent_scaling["claim_boundary"]:
         raise AssertionError("candidate-17/20 independent-node fail-closed boundary disappeared")
+    deformable = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_deformable_kernel_incidence_normal_form"]
+    deformable_second = deformable["mode_data"]["second_order"]
+    if deformable["descriptions"]["nonlinear"] != "CERTIFIED" or "||M_K||<=|c|" not in deformable["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("deformable-kernel admissible base was hidden")
+    if deformable["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "I={c=0=M_K}" not in deformable["mode_data"]["taub_maps"]["statement"] or "connected fibres" not in deformable["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("deformable-kernel component criterion changed")
+    if "one-zero-node" not in deformable["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("deformable-kernel boundary incidence disappeared")
+    if deformable_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or deformable_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("deformable-kernel component enumeration was overpromoted")
+    if "not declared connected" not in deformable["claim_boundary"] or "Nonemptiness of I does not imply" not in deformable["claim_boundary"]:
+        raise AssertionError("deformable-kernel fail-closed boundary disappeared")
     independent_scaling = by_id["einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_independent_node_scaling_contraction"]
     independent_second = independent_scaling["mode_data"]["second_order"]
     if independent_scaling["descriptions"]["nonlinear"] != "CERTIFIED" or "I={(x,y)" not in independent_scaling["mode_data"]["taub_maps"]["statement"] or "positive collinearity" not in independent_scaling["mode_data"]["taub_maps"]["statement"]:

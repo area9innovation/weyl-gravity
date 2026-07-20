@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "scope",
+    "compactified_moduli",
+    "moment_map_and_admissible_base",
+    "component_incidence_theorem",
+    "boundary_incidence",
+    "candidate_disposition",
+    "classification",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-same-sign-candidate17-20-deformable-kernel-incidence-normal-form-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE17_20_DEFORMABLE_KERNEL_INCIDENCE_NORMAL_FORM"
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "compactified_T3_kernel_moduli_defined": {"const": true},
+        "node_phase_and_lifted_rotation_quotient_defined": {"const": true},
+        "singular_stabilizers_and_boundary_occupations_retained": {"const": true},
+        "square_moment_path_lifting_certified": {"const": true},
+        "strict_opposite_sign_component_incidence_necessary": {"const": true},
+        "strict_opposite_sign_component_incidence_sufficient": {"const": true},
+        "candidate17_deformable_kernel_component_criterion_certified": {"const": true},
+        "candidate20_deformable_kernel_component_criterion_certified": {"const": true},
+        "both_strict_sign_boundary_incidence_sets_nonempty": {"const": true},
+        "fixed_direction_theorem_recovered_as_fibrewise_corollary": {"const": true},
+        "every_admissible_component_meets_incidence": {"const": false},
+        "candidate17_complete_singular_rotation_zero_fibre_connected": {"const": false},
+        "candidate20_off_balance_complete_singular_rotation_zero_fibre_connected": {"const": false},
+        "global_zero_fibre_connected": {"const": false},
+        "occupation_strata_glued": {"const": false},
+        "final_residual_descent": {"const": false},
+        "causal_residual_observational_or_quantum_claim": {"const": false}
+      },
+      "required": [
+        "compactified_T3_kernel_moduli_defined",
+        "node_phase_and_lifted_rotation_quotient_defined",
+        "singular_stabilizers_and_boundary_occupations_retained",
+        "square_moment_path_lifting_certified",
+        "strict_opposite_sign_component_incidence_necessary",
+        "strict_opposite_sign_component_incidence_sufficient",
+        "candidate17_deformable_kernel_component_criterion_certified",
+        "candidate20_deformable_kernel_component_criterion_certified",
+        "both_strict_sign_boundary_incidence_sets_nonempty",
+        "fixed_direction_theorem_recovered_as_fibrewise_corollary",
+        "every_admissible_component_meets_incidence",
+        "candidate17_complete_singular_rotation_zero_fibre_connected",
+        "candidate20_off_balance_complete_singular_rotation_zero_fibre_connected",
+        "global_zero_fibre_connected",
+        "occupation_strata_glued",
+        "final_residual_descent",
+        "causal_residual_observational_or_quantum_claim"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

@@ -122,6 +122,7 @@ CERTIFICATES = {
     "same_sign_candidate17_20_singular_radial_contraction": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.json",
     "same_sign_candidate17_20_moving_square_contraction": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.json",
     "same_sign_candidate17_20_independent_node_scaling_contraction": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction.json",
+    "same_sign_candidate17_20_deformable_kernel_incidence_normal_form": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form.json",
     "same_sign_active_phase_reduced_presymplectic_divisors": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json",
     "same_sign_active_local_rotation_leaf_descent": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.json",
     "ell2_two_abs_momentum_parity_workload": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_parity_workload.json",
@@ -1246,6 +1247,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("CERTIFIED","The fixed-direction independent-node-scaling ansatz is completely classified: incidence points contract, while off-incidence strict opposite-sign points are obstructed within this ansatz."),("CERTIFIED","The same finite carrier paths are smooth exponential-polynomial paths; no all-orders promotion is made."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
             _evidence("same_sign_candidate17_20_independent_node_scaling_contraction","same_sign_candidate17_20_moving_square_contraction","same_sign_candidate17_20_double_singular_rotation_zero_fibre","same_sign_third_transvectant_singular_locus"),
             "This is not a no-go for deformation of the K-node directions inside T3(f,g)=0 or for general nonradial paths. Complete candidate-17 and candidate-20 off-balance connectedness or disconnection, occupation gluing, final residual descent and causal, observational or quantum maps remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.ell2_same_sign_candidate17_20_deformable_kernel_incidence_normal_form",
+            _scope(theory="Weyl-Maxwell target", background="candidates 17 and 20 separately on their strict alpha*delta<0 fixed-total-occupation strata", boundaries="closed S1_L times S2 after compactifying both K-node occupations, quotienting their phases and the lifted SO(3), and before final residual quotient", carrier="the complete compactified T3(F,G)=0 kernel-amplitude carrier, including arbitrary direction deformation, zero-node boundaries, common-square singular points and all compact stabilizer orbit types", degree=2, parity="both labelled factorized parity channels", ell="input 2 x 2; output L=1", m="all m=-2,...,2 in the compact spin-two kernel carrier", k="candidate-specific signed compact momenta, never identified across candidates", omega="candidate-specific DIFFERENCE collision with strict alpha*delta<0", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","Candidates 17 and 20 retain distinct coefficient chambers and atlas scopes. The common proof supplies no mode identification across their backgrounds."),
+            ("CERTIFIED","The compactified admissible base is A={T3(F,G)=0, ||F||_W,||G||_W<=1, ||M_K||<=|c|} modulo both node phases and lifted SO(3). Zero-node stabilizers and the algebraic singular locus are retained rather than divided away."),
+            ("CERTIFIED","For strict opposite signs, contraction to the hub is equivalent to the initial path component of A meeting I={c=0=M_K}. The Cartan-square moment map has connected fibres and the explicit radial normal form supplies the required path lift."),
+            ("CERTIFIED","T3 is odd and bilinear, so the compactified carrier and incidence-to-hub scaling preserve resonance. Both sign chambers have explicit one-zero-node phase-real incidence points."),
+            _second_order(("OPEN","The exact component-incidence criterion is certified, but whether every admissible candidate-17 or candidate-20 strict-sign component meets I remains open."),("OPEN","The finite semialgebraic criterion embeds in the smooth exponential-polynomial class, but its component enumeration remains open and no all-orders promotion is made."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("same_sign_candidate17_20_deformable_kernel_incidence_normal_form","same_sign_candidate17_20_independent_node_scaling_contraction","same_sign_candidate17_20_moving_square_contraction","same_sign_candidate17_20_double_singular_rotation_zero_fibre","same_sign_third_transvectant_singular_locus"),
+            "The deformable-direction problem is reduced exactly to compact semialgebraic component incidence, not declared connected. Nonemptiness of I does not imply every component reaches it. Complete candidate-17 and candidate-20 off-balance connectedness, occupation gluing, final residual descent and causal, observational or quantum maps remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_same_sign_active_phase_reduced_presymplectic_divisors",
@@ -2394,6 +2407,21 @@ def build() -> dict[str, object]:
         raise AssertionError("candidate-17/20 independent-node scaling changed")
     if independent_scaling["candidate17_complete_singular_rotation_zero_fibre_connected"] or independent_scaling["candidate20_off_balance_complete_singular_rotation_zero_fibre_connected"] or independent_scaling["general_nonradial_no_go"] or independent_scaling["K_direction_deformation_classified"] or independent_scaling["occupation_strata_glued"] or independent_scaling["final_residual_descent"] or independent_scaling["causal_residual_observational_or_quantum_claim"]:
         raise AssertionError("candidate-17/20 independent-node scaling exceeded scope")
+    deformable_incidence = records["same_sign_candidate17_20_deformable_kernel_incidence_normal_form"]["classification"]
+    if not (
+        deformable_incidence["compactified_T3_kernel_moduli_defined"]
+        and deformable_incidence["node_phase_and_lifted_rotation_quotient_defined"]
+        and deformable_incidence["singular_stabilizers_and_boundary_occupations_retained"]
+        and deformable_incidence["square_moment_path_lifting_certified"]
+        and deformable_incidence["strict_opposite_sign_component_incidence_necessary"]
+        and deformable_incidence["strict_opposite_sign_component_incidence_sufficient"]
+        and deformable_incidence["candidate17_deformable_kernel_component_criterion_certified"]
+        and deformable_incidence["candidate20_deformable_kernel_component_criterion_certified"]
+        and deformable_incidence["both_strict_sign_boundary_incidence_sets_nonempty"]
+    ):
+        raise AssertionError("candidate-17/20 deformable-kernel incidence theorem changed")
+    if deformable_incidence["every_admissible_component_meets_incidence"] or deformable_incidence["candidate17_complete_singular_rotation_zero_fibre_connected"] or deformable_incidence["candidate20_off_balance_complete_singular_rotation_zero_fibre_connected"] or deformable_incidence["global_zero_fibre_connected"] or deformable_incidence["occupation_strata_glued"] or deformable_incidence["final_residual_descent"] or deformable_incidence["causal_residual_observational_or_quantum_claim"]:
+        raise AssertionError("candidate-17/20 deformable-kernel incidence theorem exceeded scope")
     phase_reduced_divisors = records["same_sign_active_phase_reduced_presymplectic_divisors"]["classification"]
     if not (
         phase_reduced_divisors["candidate17_regular_fixed_occupation_phase_reduced_divisor_classified"]
