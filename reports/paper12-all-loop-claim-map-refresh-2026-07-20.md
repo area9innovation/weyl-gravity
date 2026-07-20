@@ -101,3 +101,7 @@ This refresh does not construct the assumed all-order regulator, prove
 convergence, repair strict pure Weyl gravity, exclude global anomalies, or
 establish Lorentzian products/QME, a Hadamard state, residual transfer,
 particles, scattering, positivity or unitarity.
+
+CLOSE-OUT: DONE — The generated claim map, publication hashes, two-pass PDF,
+independent verifier and bidirectional Paper 12 coverage edge are current and
+preserve every conditional-QAP and open analytic boundary.
