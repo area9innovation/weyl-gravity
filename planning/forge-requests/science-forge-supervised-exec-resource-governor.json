@@ -1,0 +1,21 @@
+{
+  "id": "sf:forge-request/science-forge-supervised-exec-resource-governor",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Implement the Science Forge SPEC's first production supervised-execution and resource-governor slice so resident research commands cannot disappear while an unbounded log watcher waits forever. Live reproduction on 2026-07-21: a black-hole Bach classification log stopped after `build 11.5s` and `rows 11.9s`; no producer process remained, but several shell watchers continued for more than three hours because they waited only for `companion solve|TOTAL|Traceback|Error`. In parallel, the bridge full-test rail was genuinely alive at approximately one CPU core. The substrate must distinguish those cases through a receipted process attempt rather than coordinator process-name heuristics.",
+    "depends_on": [
+      "sf:program/work/black-hole-symbolic-cross-invariant",
+      "sf:program/work/bridge-finite-harmonic-tier3-provenance-relock"
+    ],
+    "stop_condition": "Land documented `s-f resources doctor`, `s-f resources plan --work <id> [--tier <name>]`, `s-f resources status`, and `s-f exec --work <id> [--tier <name>] -- <command...>` primitives for a bounded Linux first release. `s-f exec` must create an immutable attempt ID; record the exact argv/cwd/environment-lock inputs, work item, tier, start/end, exit status, process-group identity, stdout/stderr artifacts, CPU time, wall time, peak RSS, disk and inode deltas, enforcement class and checkpoint metadata; supervise the entire process tree; and emit typed SUCCESS, COMMAND_FAILED, INTERRUPTED, PRODUCER_DISAPPEARED, RESOURCE_EXHAUSTED_TIME, RESOURCE_EXHAUSTED_MEMORY and RESOURCE_EXHAUSTED_DISK outcomes. A watcher attaches to an attempt ID and terminates when the producer exits even if no expected log marker appears. Support declared soft limits everywhere and hard limits through an available cgroup/systemd/container mechanism, naming the actual class rather than overstating it. Preserve valid resumable checkpoints, quarantine partial outputs, and refuse new work before declared host-headroom watermarks. Demonstrate: (1) the dead-producer Bach reproduction becomes PRODUCER_DISAPPEARED promptly with its partial log retained; (2) a live CPU-bound bridge-test control remains RUNNING and reports a heartbeat; (3) wall-time, memory and disk fixtures terminate the complete process group with distinct typed receipts; (4) two concurrent reservations that exceed aggregate headroom refuse the second launch; (5) signal cancellation and a checkpoint-capable fixture preserve only validated resumable state; and (6) the dashboard consumes the execution receipt as an explicitly operational heartbeat without promoting it to scientific evidence. Gates must be deterministic where time is injected, exercise both Forge backends where applicable, and include an OS-level independent process-tree/resource audit.",
+    "forbid": "no process-name/pgrep heuristic used as authoritative liveness; no log growth called producer health; no child process left behind after a terminal attempt; no soft monitor described as hard OOM protection; no timeout or resource exhaustion called a failed scientific claim; no deletion of dirty worktree files, unique evidence or the last valid checkpoint; no automatic cleanup outside Science Forge-owned scratch/cache; no mutable latest-log path used as provenance; no wall-clock-dependent unit fixture without an injected/deterministic control; no requirement that every platform support the same hard-limit mechanism",
+    "notes": [
+      "Priority 1 adoption safety. This is the executable first slice of SPEC resource-management sections 12 and 18, not a new design request.",
+      "The existing dashboard LIVE_PROCESS_HEARTBEAT overlay should consume these receipts when available; it must remain operational/advisory rather than part of claim lifecycle.",
+      "A later cache implementation may reuse attempt hashes, but cache eviction is not required to close this first supervised-execution gate."
+    ]
+  }
+}
