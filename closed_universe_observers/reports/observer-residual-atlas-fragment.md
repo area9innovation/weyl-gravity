@@ -218,6 +218,19 @@ cohomology, detector response, memory, redshift or cone restriction is
 promoted.  The result does not exclude a replacement 112-row theory or a
 separately certified nonlocal comparison.
 
+The diagonal-action replacement 112-row theory is itself `OBSTRUCTED` at
+the next exact unary identity.  In the rank-eight centered rod basis the
+forced background generator \(A\) has symmetric part of exact rank four,
+with diagonal entries \(\pm2\cot(\sqrt{58}/24)\).  Since the canonical
+cotangent lift is \(-A^T\), the identity-kinetic scalar-wave block has
+normalized principal commutator \(-(A^T+A)\), also of rank four.  Deleting
+either new pair drops background closure to rank seven, while skew-projecting
+\(A\) produces a rank-four closure defect.  The positive non-diagonal
+candidate \(H=B^{-T}B^{-1}\) is explicitly unexcluded but changes the
+action, so its stress, \(\Phi_2\), unary and quotient remain
+`NO_CERTIFIED_MAP`.  No detector response, memory, redshift, recoil or
+tangent-cone observable is promoted.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.

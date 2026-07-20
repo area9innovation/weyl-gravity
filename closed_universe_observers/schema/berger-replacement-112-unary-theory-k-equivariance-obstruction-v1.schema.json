@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "payload_ref",
+    "first_obstruction",
+    "minimality_and_next_enlargement",
+    "downstream_disposition",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "closed-universe-berger-replacement-112-unary-k-equivariance-obstruction-v1"
+    },
+    "result_id": {
+      "const": "BERGER_REPLACEMENT_112_UNARY_THEORY_K_EQUIVARIANCE_OBSTRUCTION"
+    },
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "dependency_refs": {"type": "object", "minProperties": 6},
+    "payload_ref": {
+      "type": "object",
+      "required": ["path", "result_id", "sha256", "canonical_sha256"]
+    },
+    "first_obstruction": {
+      "type": "object",
+      "required": [
+        "identity",
+        "principal_commutator_rank",
+        "action_invariance_status"
+      ],
+      "properties": {
+        "principal_commutator_rank": {"const": 4},
+        "action_invariance_status": {"const": "OBSTRUCTED"}
+      }
+    },
+    "minimality_and_next_enlargement": {"type": "object"},
+    "downstream_disposition": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 1200},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": true
+}

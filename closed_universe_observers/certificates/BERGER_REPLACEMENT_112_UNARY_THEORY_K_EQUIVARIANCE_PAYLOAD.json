@@ -1,0 +1,1045 @@
+{
+  "background": {
+    "basis_determinant": "324*sa^2*su^2/25",
+    "basis_determinant_before_unit_circle_reduction": "324*sa**2*su**2*(ca**2 + sa**2)**5*(cu**2 + su**2)**5/25",
+    "basis_rank": 8,
+    "closure_defect_count": 0,
+    "eight_rod_stress_and_Phi2_status": "CERTIFIED",
+    "generator_matrix_over_nu": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "sin(sqrt(58)/12) + cos(sqrt(58)/12)/tan(sqrt(58)/24)",
+        "0",
+        "0",
+        "-cos(sqrt(10)/12)/sin(sqrt(58)/24)",
+        "sin(sqrt(10)/12)/sin(sqrt(58)/24)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "sin(sqrt(58)/12) + cos(sqrt(58)/12)/tan(sqrt(58)/24)",
+        "0",
+        "-sin(sqrt(10)/12)/sin(sqrt(58)/24)",
+        "-cos(sqrt(10)/12)/sin(sqrt(58)/24)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "cos(sqrt(10)/12)/sin(sqrt(58)/24)",
+        "sin(sqrt(10)/12)/sin(sqrt(58)/24)",
+        "0",
+        "-cos(sqrt(58)/12)/tan(sqrt(58)/24) - sin(sqrt(58)/12)",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-sin(sqrt(10)/12)/sin(sqrt(58)/24)",
+        "cos(sqrt(10)/12)/sin(sqrt(58)/24)",
+        "0",
+        "0",
+        "-cos(sqrt(58)/12)/tan(sqrt(58)/24) - sin(sqrt(58)/12)",
+        "0",
+        "0"
+      ],
+      [
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "generator_symmetric_defect_over_nu": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "2*cu/su",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "2*cu/su",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-2*cu/su",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "-2*cu/su",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "generator_symmetric_defect_rank": 4,
+    "nonzero_proof": "0<sqrt(10)/12<1 and 0<sqrt(58)/24<1 imply sa,su,cu are nonzero, so det(B)>0 and 2*cu/su>0",
+    "skew_projection_background_closure_defect_rank": 4,
+    "symbolic_variables": {
+      "ca": "cos(sqrt(10)/12)",
+      "cu": "cos(sqrt(58)/24)",
+      "relations": [
+        "sa^2+ca^2=1",
+        "su^2+cu^2=1"
+      ],
+      "sa": "sin(sqrt(10)/12)",
+      "su": "sin(sqrt(58)/24)"
+    }
+  },
+  "disposition": {
+    "background_quotient_closure": "NO_CERTIFIED_MAP",
+    "cohomology_apparatus_memory_redshift": "NO_CERTIFIED_MAP",
+    "complete_112_row_q1": "NO_CERTIFIED_MAP",
+    "eight_rod_background_K_closure": "CERTIFIED",
+    "identity_kinetic_K_equivariance": "OBSTRUCTED",
+    "q1_squared": "NO_CERTIFIED_MAP",
+    "replacement_row_table_pairing_and_real_structure": "CERTIFIED",
+    "unary_cyclicity": "NO_CERTIFIED_MAP"
+  },
+  "first_obstruction": {
+    "action_invariance_equation": "A^T I_8+I_8 A=0",
+    "action_invariance_status": "OBSTRUCTED",
+    "cotangent_generator_over_nu": "-A^T",
+    "field_generator_over_nu": "A",
+    "identity": "[K_Berger,q1]=0",
+    "nonzero_diagonal_coefficients": [
+      "-2*cot(sqrt(58)/24)",
+      "-2*cot(sqrt(58)/24)",
+      "2*cot(sqrt(58)/24)",
+      "2*cot(sqrt(58)/24)"
+    ],
+    "nonzero_diagonal_rows": [
+      1,
+      2,
+      4,
+      5
+    ],
+    "normalized_principal_commutator": "-(A^T+A), after dividing by epsilon_R_squared*nu*Box_principal",
+    "normalized_principal_commutator_matrix": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-2*cu/su",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-2*cu/su",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "2*cu/su",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "2*cu/su",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "principal_commutator_rank": 4,
+    "sector": "eight scalar-rod wave Hessian and its cotangent lift",
+    "wave_hessian": "epsilon_R_squared*(-e0^2+e1^2+e2^2+e3^2)*I_8"
+  },
+  "minimality_and_next_enlargement": {
+    "both_pairs_background_rank": 8,
+    "candidate_changes_certified_action": true,
+    "candidate_invariance_proof": "A=B J B^(-1), J^T=-J, hence A^T H+H A=B^(-T)(J^T+J)B^(-1)=0",
+    "candidate_positive_definite_proof": "v^T H v=||B^(-1)v||^2>0 because det(B)>0",
+    "candidate_stress_Phi2_and_unary_status": "NO_CERTIFIED_MAP",
+    "canonical_candidate": "H=B^(-T) B^(-1)",
+    "positive_diagonal_kinetic_repair": "OBSTRUCTED_BY_NONZERO_A_DIAGONAL",
+    "remove_R0_4_pair_background_rank": 7,
+    "remove_R1_4_pair_background_rank": 7,
+    "replace_A_by_skew_part_background_defect_rank": 4,
+    "smallest_unexcluded_repair": "replace I_8 by a non-diagonal positive kinetic matrix H, then recompute stress, Phi2 and every changed-action unary row"
+  },
+  "replacement_contract": {
+    "interpretation": "replacement action/carrier; no local 108-to-112 chain map",
+    "new_pairing_entries": [
+      [
+        108,
+        110,
+        "1"
+      ],
+      [
+        109,
+        111,
+        "1"
+      ],
+      [
+        110,
+        108,
+        "-1"
+      ],
+      [
+        111,
+        109,
+        "-1"
+      ]
+    ],
+    "new_rows": [
+      {
+        "degree": 0,
+        "index": 108,
+        "row_id": "R0_4",
+        "sector": "apparatus:rod"
+      },
+      {
+        "degree": 0,
+        "index": 109,
+        "row_id": "R1_4",
+        "sector": "apparatus:rod"
+      },
+      {
+        "degree": 1,
+        "index": 110,
+        "row_id": "R0_4_plus",
+        "sector": "apparatus:rod_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 111,
+        "row_id": "R1_4_plus",
+        "sector": "apparatus:rod_antifield_density"
+      }
+    ],
+    "real_involution": "identity on the four new real rows",
+    "rod_action": "S_R^(8)=-1/2 sum_i=1^8 integral dvol_g g^{-1}(dR_i,dR_i)",
+    "rod_kinetic_matrix": "I_8",
+    "row_count": 112,
+    "rows": [
+      {
+        "degree": -1,
+        "index": 0,
+        "row_id": "c_spatial_1",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": -1,
+        "index": 1,
+        "row_id": "c_spatial_2",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": -1,
+        "index": 2,
+        "row_id": "c_spatial_3",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": -1,
+        "index": 3,
+        "row_id": "tau",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": -1,
+        "index": 4,
+        "row_id": "sigma",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 5,
+        "row_id": "h_hat_00",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 6,
+        "row_id": "h_hat_01",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 7,
+        "row_id": "h_hat_02",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 8,
+        "row_id": "h_hat_03",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 9,
+        "row_id": "h_hat_11",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 10,
+        "row_id": "h_hat_12",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 11,
+        "row_id": "h_hat_13",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 12,
+        "row_id": "h_hat_22",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 13,
+        "row_id": "h_hat_23",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 14,
+        "row_id": "h_hat_33",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 15,
+        "row_id": "R",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 16,
+        "row_id": "Theta",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 17,
+        "row_id": "b_diff_1",
+        "sector": "gravity_clock:nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 18,
+        "row_id": "b_diff_2",
+        "sector": "gravity_clock:nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 19,
+        "row_id": "b_diff_3",
+        "sector": "gravity_clock:nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 20,
+        "row_id": "b_tau",
+        "sector": "gravity_clock:nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 21,
+        "row_id": "b_sigma",
+        "sector": "gravity_clock:nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 22,
+        "row_id": "bar_c_star_diff_1",
+        "sector": "gravity_clock:nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 23,
+        "row_id": "bar_c_star_diff_2",
+        "sector": "gravity_clock:nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 24,
+        "row_id": "bar_c_star_diff_3",
+        "sector": "gravity_clock:nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 25,
+        "row_id": "bar_c_star_tau",
+        "sector": "gravity_clock:nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 26,
+        "row_id": "bar_c_star_sigma",
+        "sector": "gravity_clock:nonminimal_antighost_dual"
+      },
+      {
+        "degree": 1,
+        "index": 27,
+        "row_id": "h_hat_star_00",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 28,
+        "row_id": "h_hat_star_01",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 29,
+        "row_id": "h_hat_star_02",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 30,
+        "row_id": "h_hat_star_03",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 31,
+        "row_id": "h_hat_star_11",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 32,
+        "row_id": "h_hat_star_12",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 33,
+        "row_id": "h_hat_star_13",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 34,
+        "row_id": "h_hat_star_22",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 35,
+        "row_id": "h_hat_star_23",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 36,
+        "row_id": "h_hat_star_33",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 37,
+        "row_id": "R_star",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 38,
+        "row_id": "Theta_star",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 39,
+        "row_id": "b_star_diff_1",
+        "sector": "gravity_clock:nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 40,
+        "row_id": "b_star_diff_2",
+        "sector": "gravity_clock:nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 41,
+        "row_id": "b_star_diff_3",
+        "sector": "gravity_clock:nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 42,
+        "row_id": "b_star_tau",
+        "sector": "gravity_clock:nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 43,
+        "row_id": "b_star_sigma",
+        "sector": "gravity_clock:nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 44,
+        "row_id": "bar_c_diff_1",
+        "sector": "gravity_clock:nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 45,
+        "row_id": "bar_c_diff_2",
+        "sector": "gravity_clock:nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 46,
+        "row_id": "bar_c_diff_3",
+        "sector": "gravity_clock:nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 47,
+        "row_id": "bar_c_tau",
+        "sector": "gravity_clock:nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 48,
+        "row_id": "bar_c_sigma",
+        "sector": "gravity_clock:nonminimal_antighost"
+      },
+      {
+        "degree": 2,
+        "index": 49,
+        "row_id": "c_spatial_star_1",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 2,
+        "index": 50,
+        "row_id": "c_spatial_star_2",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 2,
+        "index": 51,
+        "row_id": "c_spatial_star_3",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 2,
+        "index": 52,
+        "row_id": "tau_star",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 2,
+        "index": 53,
+        "row_id": "sigma_star",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": -1,
+        "index": 54,
+        "row_id": "c_M",
+        "sector": "maxwell:ghost"
+      },
+      {
+        "degree": 0,
+        "index": 55,
+        "row_id": "A_0",
+        "sector": "maxwell:potential"
+      },
+      {
+        "degree": 0,
+        "index": 56,
+        "row_id": "A_1",
+        "sector": "maxwell:potential"
+      },
+      {
+        "degree": 0,
+        "index": 57,
+        "row_id": "A_2",
+        "sector": "maxwell:potential"
+      },
+      {
+        "degree": 0,
+        "index": 58,
+        "row_id": "A_3",
+        "sector": "maxwell:potential"
+      },
+      {
+        "degree": 1,
+        "index": 59,
+        "row_id": "A_plus_0",
+        "sector": "maxwell:antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 60,
+        "row_id": "A_plus_1",
+        "sector": "maxwell:antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 61,
+        "row_id": "A_plus_2",
+        "sector": "maxwell:antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 62,
+        "row_id": "A_plus_3",
+        "sector": "maxwell:antifield_density"
+      },
+      {
+        "degree": 2,
+        "index": 63,
+        "row_id": "c_M_plus",
+        "sector": "maxwell:ghost_antifield_density"
+      },
+      {
+        "degree": 0,
+        "index": 64,
+        "row_id": "R0_1",
+        "sector": "apparatus:rod"
+      },
+      {
+        "degree": 0,
+        "index": 65,
+        "row_id": "R0_2",
+        "sector": "apparatus:rod"
+      },
+      {
+        "degree": 0,
+        "index": 66,
+        "row_id": "R0_3",
+        "sector": "apparatus:rod"
+      },
+      {
+        "degree": 0,
+        "index": 67,
+        "row_id": "R1_1",
+        "sector": "apparatus:rod"
+      },
+      {
+        "degree": 0,
+        "index": 68,
+        "row_id": "R1_2",
+        "sector": "apparatus:rod"
+      },
+      {
+        "degree": 0,
+        "index": 69,
+        "row_id": "R1_3",
+        "sector": "apparatus:rod"
+      },
+      {
+        "degree": 0,
+        "index": 70,
+        "row_id": "m0",
+        "sector": "apparatus:memory"
+      },
+      {
+        "degree": 0,
+        "index": 71,
+        "row_id": "m1",
+        "sector": "apparatus:memory"
+      },
+      {
+        "degree": 0,
+        "index": 72,
+        "row_id": "p0",
+        "sector": "apparatus:memory"
+      },
+      {
+        "degree": 0,
+        "index": 73,
+        "row_id": "p1",
+        "sector": "apparatus:memory"
+      },
+      {
+        "degree": 1,
+        "index": 74,
+        "row_id": "R0_1_plus",
+        "sector": "apparatus:rod_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 75,
+        "row_id": "R0_2_plus",
+        "sector": "apparatus:rod_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 76,
+        "row_id": "R0_3_plus",
+        "sector": "apparatus:rod_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 77,
+        "row_id": "R1_1_plus",
+        "sector": "apparatus:rod_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 78,
+        "row_id": "R1_2_plus",
+        "sector": "apparatus:rod_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 79,
+        "row_id": "R1_3_plus",
+        "sector": "apparatus:rod_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 80,
+        "row_id": "m0_plus",
+        "sector": "apparatus:memory_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 81,
+        "row_id": "m1_plus",
+        "sector": "apparatus:memory_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 82,
+        "row_id": "p0_plus",
+        "sector": "apparatus:memory_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 83,
+        "row_id": "p1_plus",
+        "sector": "apparatus:memory_antifield_density"
+      },
+      {
+        "degree": 0,
+        "index": 84,
+        "row_id": "K0_01",
+        "sector": "emitter:0"
+      },
+      {
+        "degree": 0,
+        "index": 85,
+        "row_id": "K0_02",
+        "sector": "emitter:0"
+      },
+      {
+        "degree": 0,
+        "index": 86,
+        "row_id": "K0_03",
+        "sector": "emitter:0"
+      },
+      {
+        "degree": 0,
+        "index": 87,
+        "row_id": "K0_12",
+        "sector": "emitter:0"
+      },
+      {
+        "degree": 0,
+        "index": 88,
+        "row_id": "K0_13",
+        "sector": "emitter:0"
+      },
+      {
+        "degree": 0,
+        "index": 89,
+        "row_id": "K0_23",
+        "sector": "emitter:0"
+      },
+      {
+        "degree": 0,
+        "index": 90,
+        "row_id": "K1_01",
+        "sector": "emitter:1"
+      },
+      {
+        "degree": 0,
+        "index": 91,
+        "row_id": "K1_02",
+        "sector": "emitter:1"
+      },
+      {
+        "degree": 0,
+        "index": 92,
+        "row_id": "K1_03",
+        "sector": "emitter:1"
+      },
+      {
+        "degree": 0,
+        "index": 93,
+        "row_id": "K1_12",
+        "sector": "emitter:1"
+      },
+      {
+        "degree": 0,
+        "index": 94,
+        "row_id": "K1_13",
+        "sector": "emitter:1"
+      },
+      {
+        "degree": 0,
+        "index": 95,
+        "row_id": "K1_23",
+        "sector": "emitter:1"
+      },
+      {
+        "degree": 1,
+        "index": 96,
+        "row_id": "K0_plus_01",
+        "sector": "emitter:0_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 97,
+        "row_id": "K0_plus_02",
+        "sector": "emitter:0_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 98,
+        "row_id": "K0_plus_03",
+        "sector": "emitter:0_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 99,
+        "row_id": "K0_plus_12",
+        "sector": "emitter:0_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 100,
+        "row_id": "K0_plus_13",
+        "sector": "emitter:0_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 101,
+        "row_id": "K0_plus_23",
+        "sector": "emitter:0_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 102,
+        "row_id": "K1_plus_01",
+        "sector": "emitter:1_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 103,
+        "row_id": "K1_plus_02",
+        "sector": "emitter:1_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 104,
+        "row_id": "K1_plus_03",
+        "sector": "emitter:1_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 105,
+        "row_id": "K1_plus_12",
+        "sector": "emitter:1_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 106,
+        "row_id": "K1_plus_13",
+        "sector": "emitter:1_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 107,
+        "row_id": "K1_plus_23",
+        "sector": "emitter:1_antifield_density"
+      },
+      {
+        "degree": 0,
+        "index": 108,
+        "row_id": "R0_4",
+        "sector": "apparatus:rod"
+      },
+      {
+        "degree": 0,
+        "index": 109,
+        "row_id": "R1_4",
+        "sector": "apparatus:rod"
+      },
+      {
+        "degree": 1,
+        "index": 110,
+        "row_id": "R0_4_plus",
+        "sector": "apparatus:rod_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 111,
+        "row_id": "R1_4_plus",
+        "sector": "apparatus:rod_antifield_density"
+      }
+    ]
+  },
+  "result_id": "BERGER_REPLACEMENT_112_UNARY_THEORY_K_EQUIVARIANCE_PAYLOAD",
+  "schema": "closed-universe-berger-replacement-112-unary-k-obstruction-payload-v1"
+}

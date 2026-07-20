@@ -2334,3 +2334,31 @@ The fail-closed atlas row is
 gate is now a replacement 112-row theory or an independently certified
 support-controlled nonlocal comparison.  No detector, \(\mathcal Z_2\),
 memory, recoil or redshift result is promoted.
+
+## Active bridge: replacement 112-row unary obstruction
+
+The successor
+`sf:program/work/observer-berger-replacement-112-unary-theory` treats the
+eight-rod construction as a replacement action, without asserting the
+obstructed local inclusion of the old 108-row complex.  Its first exact
+action identity already fails.  In the rank-eight centered background basis
+the forced generator \(A\) has symmetric part of rank four, with diagonal
+entries \(\pm2\cot(\sqrt{58}/24)\).  The canonical cotangent lift is
+\(-A^T\), so the identity-kinetic rod-wave Hessian has normalized
+\(K_{\rm Berger}\)-commutator \(-(A^T+A)\), again of rank four.
+
+The result is minimal in the declared diagonal-action class: deleting either
+new rod/cotangent pair leaves background rank seven, replacing \(A\) by its
+skew part loses closure at rank four, and positive diagonal rescaling cannot
+remove a nonzero diagonal of \(A\).  The smallest unexcluded bridge keeps the
+112 rows but changes the rod action to the positive non-diagonal kinetic
+matrix \(H=B^{-T}B^{-1}\); its stress, \(\Phi_2\), full unary and quotient
+must be recomputed.
+
+The fail-closed atlas row is
+`observer.berger.interaction.replacement_112_unary_k_obstruction`
+(`symplectic=OBSTRUCTED`, `observational=NO_CERTIFIED_MAP`).  Its activation
+gate is an action-derived invariant positive kinetic mixing with independently
+recomputed stress, background correction and complete unary.  The apparatus
+union, gauge reduction, \(\mathcal Z_2\), detector response, recoil, memory
+and relational redshift remain inactive.
