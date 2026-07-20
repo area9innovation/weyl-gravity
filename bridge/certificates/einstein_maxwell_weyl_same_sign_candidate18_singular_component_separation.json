@@ -1,0 +1,81 @@
+{
+  "claim_boundary": "This proves a two-component lower bound only for the singular rotation-zero quotient. It does not prove either component connected, disconnect the full smooth-plus-singular zero fibre, glue occupations, perform final residual descent, or establish all-orders, causal, observational or quantum claims.",
+  "classification": {
+    "candidate18_both_singular_components_rotation_zero_nonempty": true,
+    "candidate18_each_component_connected": false,
+    "candidate18_full_rotation_zero_fibre_disconnected": false,
+    "candidate18_positive_occupation_singular_components_separated": true,
+    "candidate18_singular_rotation_zero_quotient_at_least_two_components": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "final_residual_descent": false,
+    "occupation_strata_glued": false,
+    "smooth_strata_connect_components_classified": false
+  },
+  "contrast": {
+    "candidate17_20": "their product singular components meet in S_plus x S_minus at positive occupations, so this separation proof does not apply",
+    "cross_background_identification": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G3_EVERY_STRICTLY_POSITIVE_NEGATIVE_NODE_OCCUPATION_ON_CANDIDATE18",
+  "group_descent": {
+    "no_orbit_identification": "neither connected group action exchanges the labelled parity factors; an orbit cannot meet both components without meeting their empty positive-occupation intersection",
+    "node_phase_invariance": "both vanishing-factor conditions are invariant under the two common node phases",
+    "rotation_invariance": "both are invariant under lifted diagonal SO(3)",
+    "rotation_zero_nonempty_in_each_component": true,
+    "singular_rotation_zero_quotient_component_lower_bound": 2
+  },
+  "interpretation": "Candidate 18's singular quotient is intrinsically componentwise: positive negative-node occupation removes the intersection of its two determinantal singular components, and the physical connected symmetries do not exchange them. The full rotation-zero fibre may still be connected through smooth strata; that question remains open.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "determine whether smooth fixed-occupation rotation-zero paths connect the two singular quotient components, while tracking the Lee-Wald radical and all ten spectators",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation.py",
+    "generator_sha256": "6dc68533f66357ce4fb7bbfd6ae41333293caadb75c9c86ef01016a88b8fa8a1",
+    "inputs": {
+      "sections": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections.json",
+        "sha256": "b4786c500f0dc52d3dd25d98224d37431f0869d2fc37fa1e9031bf72104be254"
+      },
+      "singular_resolution": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution.json",
+        "sha256": "ce8d59ac4208ef226c4858849af1f26093fb44fb1dfea27e210425820983c480"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE18_SINGULAR_COMPONENT_SEPARATION",
+  "result_state": "CANDIDATE18_POSITIVE_OCCUPATION_SINGULAR_ROTATION_QUOTIENT_HAS_AT_LEAST_TWO_COMPONENTS",
+  "schema": "einstein-maxwell-weyl-same-sign-candidate18-singular-component-separation-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation.schema.json",
+  "schema_sha256": "2a258127ca47fab67df9433e89b0d8f11cd3bd34b4fbdffbbe679c233e714c9e",
+  "scope": {
+    "background": "candidate 18 only",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "the candidate-18 singular locus on every fixed level with strictly positive negative-current active-node occupation, before final residual descent",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidate-specific allowed compact momenta, never identified across rho",
+    "m": "all m=-2,...,2",
+    "omega": "candidate-specific certified SUM or DIFFERENCE collision",
+    "parity": "both exact factorized parity channels",
+    "theory": "Weyl-Maxwell target"
+  },
+  "separation_theorem": {
+    "intersection": "C^10 x {0} x {0}",
+    "intersection_excluded": "on Sigma_plus intersect Sigma_minus both g columns vanish, so N_minus=0; hence the intersection misses every N_minus>0 level",
+    "negative_node_support": "the negative-current active-node norm is carried only by the g columns of R_plus and R_minus; the ten spectators are positive-current directions",
+    "nonempty_witnesses": "occupy the minus factor or, symmetrically, the plus factor with the certified central m=0 rank-one section",
+    "relative_topology": "the singular fixed-positive-occupation locus is the disjoint union of two nonempty clopen subsets",
+    "singular_components": [
+      "Sigma_plus=C^10 x {0} x R_minus",
+      "Sigma_minus=C^10 x R_plus x {0}"
+    ]
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation"
+  ]
+}

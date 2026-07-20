@@ -1,0 +1,44 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE18_SINGULAR_COMPONENT_SEPARATION_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Separation and two-component lower bound for candidate 18's singular rotation-zero quotient at every positive negative-node occupation.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation.json": "d5d320e7e6cd7c43c6b433529cf78d361323fbdb1ff69619605a77fc353889a9",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation.py": "6dc68533f66357ce4fb7bbfd6ae41333293caadb75c9c86ef01016a88b8fa8a1",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation.py": "d2476fa1e74bfa9502be2311df8ed80fdbae080fc383a336271a70e5e04ceb50",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation.py": "93ac3e848b66293e00c5de89cc7befc631fce5035513bbd6a97c4a7a7c7aaf27",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation.schema.json": "2a258127ca47fab67df9433e89b0d8f11cd3bd34b4fbdffbbe679c233e714c9e",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-candidate18-singular-component-separation.md": "2b314e5e97aa219e172491ffb19c4d41d1da9cc48251057156a236f238198955"
+  },
+  "verification": {
+    "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile", "python3 -m json.tool", "git diff --check on scoped paths"]},
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": {"producer_check": 0.10, "independent_verifier": 0.09, "focused_tests": 0.10},
+      "tests_run": 5,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation"
+      ]
+    },
+    "independent_rail": {
+      "status": "PASS",
+      "method": "The verifier imports only the singular-resolution payload, checks the exact component intersection and separately enforces the two-component lower bound and fail-closed full-fibre flags."
+    },
+    "adversarial": {
+      "status": "PASS",
+      "mutation": "Promote full rotation-zero-fibre disconnection from false to true.",
+      "result": "The schema rejects the promotion."
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESSED_INPUT_REPLAY",
+      "reason": "The two singular components and their all-occupation axisymmetric witnesses are hash-pinned; no connectedness of either component or the full fibre is inferred."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a singular-subquotient topology obstruction, not the complete mixed-cone disposition or a programme freeze."
+    }
+  },
+  "claim_boundary": "CERTIFIED only for the singular subquotient. The full smooth-plus-singular zero fibre may still connect through regular strata."
+}

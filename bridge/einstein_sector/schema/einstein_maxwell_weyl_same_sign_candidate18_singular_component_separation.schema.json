@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "scope", "separation_theorem", "group_descent", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-same-sign-candidate18-singular-component-separation-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE18_SINGULAR_COMPONENT_SEPARATION"},
+    "classification": {
+      "type": "object",
+      "properties": {
+        "candidate18_singular_rotation_zero_quotient_at_least_two_components": {"const": true},
+        "candidate18_each_component_connected": {"const": false},
+        "candidate18_full_rotation_zero_fibre_disconnected": {"const": false}
+      },
+      "required": ["candidate18_singular_rotation_zero_quotient_at_least_two_components", "candidate18_each_component_connected", "candidate18_full_rotation_zero_fibre_disconnected"],
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
