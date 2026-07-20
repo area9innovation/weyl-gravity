@@ -27,6 +27,11 @@ def main() -> int:
         assert value["arity_two_replay"]["formal_differential_coefficient_defect_summary"]["operator_key_count"] == 3432
         assert value["arity_two_replay"]["complete_defect_summary"]["operator_key_count"] == 2340
         assert value["arity_two_replay"]["typed_64_row_base_control_summary"]["operator_key_count"] == 0
+        assert value["form_clock_chart_gate"]["quadratic_chart_summaries"]["complete"]["operator_key_count"] == 248
+        assert all(
+            summary["operator_key_count"] == 0
+            for summary in value["form_clock_chart_gate"]["correction_arity_two_residuals"].values()
+        )
     for name, reference in value["dependency_refs"].items():
         path = DEPENDENCIES[name]
         assert reference["path"] == str(path.relative_to(ROOT))

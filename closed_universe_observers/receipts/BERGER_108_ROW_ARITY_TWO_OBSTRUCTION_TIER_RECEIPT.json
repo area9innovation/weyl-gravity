@@ -3,8 +3,32 @@
   "result_id": "BERGER_108_ROW_ARITY_TWO_OBSTRUCTION_TIER_RECEIPT",
   "certificate_result_id": "BERGER_108_ROW_ARITY_TWO_OBSTRUCTION",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
-  "result_boundary": "The physical-emitter action Hessian retains repeated-slot multiplicity and now raises raw metric derivatives to the canonical stress rows with T=-2 delta S/dg; the three frozen spatial emitter Diff momentum-map rows carry the matching Hamiltonian weight. The physical q3 first-jet regression passes, and every same-background arity defect on rows 49--51 vanishes. The complete typed 108-row q1q2 replay remains obstructed at bidegree (0,0): 3,432 formal keys/3,720 monomials reduce under the exact h_b(Theta_bar) chain-rule quotient to 2,340 same-background keys/2,388 monomials on 21 rows. The typed 64-row base is an exact zero control. The first witness is +g0 h0 on tau_star <- (e0 e1 A_0,K0_01), isolated entirely to emitter Diff--BV q2 crossed with emitter q1. The temporal orbit must be conjugated through the relational clock chart. Higher first-bidegrees, arity three, K_Berger, observer-morphism, tangent-cone, Bridge 3, causal and quantum claims are not promoted.",
+  "result_boundary": "The complete typed 108-row q1q2 replay remains obstructed at bidegree (0,0): 3,432 formal keys/3,720 monomials reduce under the exact h_b(Theta_bar) chain-rule quotient to 2,340 same-background keys/2,388 monomials on 21 rows, with first witness +g0 h0 on tau_star <- (e0 e1 A_0,K0_01). The canonical Maxwell/emitter relational form chart is now derived independently: 76 field and 172 signed-cotangent F2 keys induce q2 coordinate corrections with 3,108, 1,968, 212 and 440 keys in the four retained bidegrees. Every correction has exact zero q1q2 residual, so chart conjugation changes the existing obstruction by zero. The next gate is a coefficientwise raw temporal gravity-clock-Maxwell-emitter common-action Ward export including later memory/clock rows, not a fitted coefficient flip. Original higher first-bidegrees, arity three, K_Berger, observer-morphism, tangent-cone, Bridge 3, causal and quantum claims are not promoted.",
   "commands": [
+    {
+      "tier": 0,
+      "command": "py_compile changed Python; json.tool changed structured data; arity generator --check --reuse-audit; git diff --check",
+      "elapsed_seconds": 27.47,
+      "peak_rss_mb": 176.57,
+      "status": "PASS",
+      "scope": "form-clock chart implementation, obstruction generator/schema/certificate, generated atlas, receipt, work item and documentation hygiene"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_108_row_arity_two_obstruction.py closed_universe_observers/tests/test_observer_atlas_fragment.py; fast arity verifier; observer atlas verifier; residual fragment validator",
+      "elapsed_seconds": 29.91,
+      "peak_rss_mb": 90.02,
+      "status": "PASS",
+      "scope": "45 chart-gate, fail-closed obstruction, generated-atlas, evidence-hash and lifecycle tests plus independent fast verification"
+    },
+    {
+      "tier": 2,
+      "command": "python3 -m closed_universe_observers.verify_berger_108_row_arity_two_obstruction --full",
+      "elapsed_seconds": 205.0,
+      "peak_rss_mb": 628.93,
+      "status": "PASS",
+      "scope": "complete 108-row degree-zero differential-coefficient replay and all-bidegree exact form-clock q1-cocycle audit"
+    },
     {
       "tier": 0,
       "command": "py_compile; json.tool; reuse-payload/reuse-audit generator checks; atlas generation; git diff --check",
@@ -47,21 +71,25 @@
     }
   ],
   "higher_tiers_not_run": {
-    "remaining_first_bidegrees": "Not run because the exact (0,0) coefficient already falsifies the complete arity-two identity.",
+    "remaining_first_bidegrees": "The chart correction alone was replayed and is zero in all four retained bidegrees; the original complete interaction beyond (0,0) was not run because its lowest coefficient already falsifies arity two.",
     "arity_three_and_downstream": "Not authorized after the arity-two stop condition fired.",
     "tier_3": "Scoped obstruction certificate; no theorem freeze or release promotion."
   },
   "source_manifest": [
     {"path": "closed_universe_observers/berger_108_row_arity_replay.py", "sha256": "5175976b4b5579eb06e9ec171fbe2a895fdab534077dac70ce0f1da3c9bdb764"},
-    {"path": "closed_universe_observers/generate_berger_108_row_arity_two_obstruction.py", "sha256": "7cc7d5f486aa8fd761a20443887918ec320844e9ddc160061db419ae893c2552"},
-    {"path": "closed_universe_observers/verify_berger_108_row_arity_two_obstruction.py", "sha256": "e5bcdd80069a618b6507ec8b5bb6a63846dfd01db6db87db3e85f3f0f6437da3"},
-    {"path": "closed_universe_observers/tests/test_berger_108_row_arity_two_obstruction.py", "sha256": "3b3f16a318a2a92ccf9430087c6883fc21195fef8260b7d15cff2ca2bbc22690"},
-    {"path": "closed_universe_observers/schema/berger-108-row-arity-two-obstruction-v1.schema.json", "sha256": "78d5e69872b6683cdb09fd87012b7a66d32acdb0c2ff659ea41e8beb0bcca02d"},
-    {"path": "closed_universe_observers/reports/berger-108-row-arity-two-obstruction.md", "sha256": "a7db05c0ea27fb4629bed9972b8d0ef2af6be45865a5f45bed492f4a0fc7ebb5"},
-    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_ARITY_TWO_OBSTRUCTION.json", "sha256": "de0b75ed7b6e69d3f88d65f64c04594e4ad949149aa4de84db177d37f8555907"},
-    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "df244713dd6f5d4ad9e994b98461e0664c6862a25750f3da783db03e9463ac88"},
-    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "d53b556d879c1652a774f9a2fb17a80e01bd72d5fddff6af951c1ee4d97df983"},
-    {"path": "planning/work-items/berger-108-row-apparatus-q2-q3-extension.json", "sha256": "418c68951420a9aa215b24db5cf728e0b07e227a9b7c94dd4384b901de45cd65"},
+    {"path": "closed_universe_observers/berger_108_row_form_clock_chart.py", "sha256": "23c03b5afd18b20b5b418ac068605a0fce30b59a89e7712b43348b8785e3a810"},
+    {"path": "closed_universe_observers/generate_berger_108_row_arity_two_obstruction.py", "sha256": "c3ce092b4963c1c613aa201bd15ff7519019548c4a411835d9ef56c0b6e6559b"},
+    {"path": "closed_universe_observers/verify_berger_108_row_arity_two_obstruction.py", "sha256": "bc2663880e387861ddbb11fcfd793687cb768d0f3892bf39e3d0b5eab3a94fe5"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_arity_two_obstruction.py", "sha256": "76d401e36398d83399a2edcf7fc62b1ba1910b7ac930fc27e3a15d567634e037"},
+    {"path": "closed_universe_observers/tests/test_observer_atlas_fragment.py", "sha256": "b64fce82f6273c56e3a3e3414485faba77eac9c8a35c0893172cc945e35fa83e"},
+    {"path": "closed_universe_observers/schema/berger-108-row-arity-two-obstruction-v1.schema.json", "sha256": "1cabf0477ca9b2e51c6db62137e3b7b4a978b0448c4f1856d3eba7cbf6aa4a0e"},
+    {"path": "closed_universe_observers/reports/berger-108-row-arity-two-obstruction.md", "sha256": "5d44fc92d4bf5fc5f4827d96ae310adbcd60f5cfe1c15bfa1de9eda06e49df25"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_ARITY_TWO_OBSTRUCTION.json", "sha256": "5976a3b4162ceafa2b2b132f394846c19b8c709cba7c0a560d615cfe47bf502a"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "2c447d41e8624c482181fd4564dbb57db8076b2004caa9c95fab3e65d6ab54b3"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "eb722e773daa4cb27507d5a53978e37c58ea605181625f70879e633ee955cab3"},
+    {"path": "planning/work-items/berger-108-row-apparatus-q2-q3-extension.json", "sha256": "5d4179f19f25e67e35ce9a81d9db08bf9ea2a6b5520d40737474775a96fb9bc3"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "3d43bbf9f27035a7fec8d8951bbd03a497b0ea7cc2c22085e33b3f3372ffc420"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "a509ea9b2fdf3a6d0249b3cf38fdcb16c89509b6042c13218c6708582f52188c"},
     {"path": "closed_universe_observers/generate_berger_108_row_emitter_physical_q2_pbw.py", "sha256": "faee1b682b046bdc78bb1e50906c3c54ea7a034ed721ed9d068aac2032cd0d0a"},
     {"path": "closed_universe_observers/tests/test_berger_108_row_emitter_physical_q2_pbw.py", "sha256": "8ae50f411b89d7657ce2b8579274543c812f6bc80dcfdaaaff19644ac066a748"},
     {"path": "closed_universe_observers/generate_berger_108_row_emitter_diff_bv_q2_pbw.py", "sha256": "ff6318170c0c08f6bf7e5cf52ed2316a614bcc0d14cafe72c3c78cb0b95910ad"},
@@ -72,6 +100,8 @@
   ],
   "flags": {
     "TYPED_64_ROW_BASE_ARITY_TWO_CONTROL_ZERO": true,
+    "FORM_CLOCK_CHART_CORRECTION_Q1_COCYCLE_CERTIFIED": true,
+    "FORM_CLOCK_CHART_CHANGES_EXISTING_OBSTRUCTION_BY_ZERO": true,
     "COMPLETE_108_ROW_ARITY_TWO_OBSTRUCTED": true,
     "COMPONENT_ARITY_IDENTITIES_CERTIFIED": false,
     "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,

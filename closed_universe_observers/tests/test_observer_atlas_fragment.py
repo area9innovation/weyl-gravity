@@ -107,6 +107,7 @@ def test_complete_arity_two_obstruction_stops_interaction_consumers():
     assert row["observer_data"]["clock_and_rod_dependence"]["status"] == "OBSTRUCTED"
     assert row["observer_data"]["survives_gauge_reduction"]["status"] == "OBSTRUCTED"
     assert row["observer_data"]["detector_restriction_to_second_order_cone"]["status"] == "NO_CERTIFIED_MAP"
+    assert "change the residual by zero" in row["observer_data"]["clock_and_rod_dependence"]["statement"]
     assert "BERGER_108_ROW_ARITY_TWO_OBSTRUCTION" in {evidence["result_id"] for evidence in row["evidence"]}
 
 

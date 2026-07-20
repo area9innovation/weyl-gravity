@@ -14,6 +14,7 @@ from jsonschema import Draft202012Validator
 import sympy as sp
 
 from closed_universe_observers import berger_108_row_arity_replay as arity
+from closed_universe_observers import berger_108_row_form_clock_chart as form_clock
 from closed_universe_observers import berger_108_row_q1_pbw_replay as replay
 from closed_universe_observers.berger_108_row_component_jet_contract import (
     _multiindex_from_word,
@@ -36,11 +37,99 @@ DEPENDENCIES = {
 SOURCE_FILES = [
     Path(__file__),
     P / "berger_108_row_arity_replay.py",
+    P / "berger_108_row_form_clock_chart.py",
     P / "verify_berger_108_row_arity_two_obstruction.py",
     P / "tests/test_berger_108_row_arity_two_obstruction.py",
     SCHEMA,
     REPORT,
 ]
+
+
+@lru_cache(maxsize=1)
+def form_clock_chart_audit() -> dict[str, Any]:
+    """Prove that the form pullback is a canonical q1-coboundary, not a repair."""
+
+    f2 = form_clock.f2_rows()
+    field = form_clock.field_f2_rows()
+    cotangent = form_clock.cotangent_f2_rows()
+    expected = {
+        "field": {
+            "operator_key_count": 76,
+            "serialized_term_count": 76,
+            "nonzero_output_rows": list(range(55, 59)) + list(range(84, 96)),
+            "maximum_total_input_order": 1,
+        },
+        "cotangent": {
+            "operator_key_count": 172,
+            "serialized_term_count": 172,
+            "nonzero_output_rows": [38] + list(range(59, 63)) + list(range(96, 108)),
+            "maximum_total_input_order": 1,
+        },
+        "complete": {
+            "operator_key_count": 248,
+            "serialized_term_count": 248,
+            "nonzero_output_rows": [38] + list(range(55, 63)) + list(range(84, 108)),
+            "maximum_total_input_order": 1,
+        },
+    }
+    summaries = {
+        "field": arity.bilinear_summary(field),
+        "cotangent": arity.bilinear_summary(cotangent),
+        "complete": arity.bilinear_summary(f2),
+    }
+    if summaries != expected:
+        raise AssertionError(f"form-clock F2 support drifted: {summaries}")
+
+    # These two fixtures distinguish the Maxwell pairing sign -1 from the
+    # emitter pairing sign +1 in the Theta-star cotangent component.
+    theta_star = cotangent[38]
+    maxwell_fixture = (55, (), 59, (0,))
+    emitter_fixture = (84, (), 96, (0,))
+    if theta_star[maxwell_fixture] != form_clock.constant(1):
+        raise AssertionError("Maxwell form-clock cotangent sign drifted")
+    if theta_star[emitter_fixture] != form_clock.constant(-1):
+        raise AssertionError("emitter form-clock cotangent sign drifted")
+
+    q1 = replay.load_q1()
+    correction = form_clock.conjugation_correction(q1)
+    correction_summaries = {
+        f"{degree[0]},{degree[1]}": arity.bilinear_summary(correction[degree])
+        for degree in arity.SUPPORTED_BIDEGREES
+    }
+    expected_counts = {
+        "0,0": (3108, 3156),
+        "1,0": (1968, 5292),
+        "0,1": (212, 768),
+        "1,1": (440, 7288),
+    }
+    for degree, (keys, terms) in expected_counts.items():
+        if (
+            correction_summaries[degree]["operator_key_count"],
+            correction_summaries[degree]["serialized_term_count"],
+        ) != (keys, terms):
+            raise AssertionError(f"form-clock conjugation correction drifted at {degree}")
+
+    residuals = {
+        f"{degree[0]},{degree[1]}": arity.bilinear_summary(
+            arity.arity_two_degree(degree, q1, correction)
+        )
+        for degree in arity.SUPPORTED_BIDEGREES
+    }
+    if any(summary["operator_key_count"] for summary in residuals.values()):
+        raise AssertionError("form-clock coordinate correction ceased to be a q1 cocycle")
+    return {
+        "geometric_field_map": "A_dressed=A_raw-L_(Theta e0)A_raw+O(3); K_b_dressed=K_b_raw-L_(Theta e0)K_b_raw+O(3)",
+        "cotangent_map": "signed formal-adjoint lift -S^{-1}(D C2)^dagger S on Theta_star, A_plus and K_b_plus",
+        "quadratic_chart_summaries": summaries,
+        "pairing_sign_fixtures": {
+            "Theta_star_from_A0_A0_plus": "+1",
+            "Theta_star_from_K0_01_K0_01_plus": "-1",
+        },
+        "conjugation_correction_summaries": correction_summaries,
+        "correction_arity_two_residuals": residuals,
+        "existing_obstruction_change_summary": residuals["0,0"],
+        "disposition": "CERTIFIED_CANONICAL_CHART_CHANGE_DOES_NOT_REPAIR_RAW_WARD_DEFECT",
+    }
 
 
 def sha256(path: Path) -> str:
@@ -256,9 +345,16 @@ def build(*, audit: dict[str, Any] | None = None) -> dict[str, Any]:
         "remaining first-bidegree coefficients are deliberately not evaluated once "
         "this lowest-cost falsifier fires; they are recorded as skipped, not passed. "
         "Therefore the complete arity-two identity is OBSTRUCTED. This "
-        "certificate does not guess the remaining repair: the temporal two-form Diff "
-        "cotangent orbit must be conjugated through the certified relational clock chart "
-        "and replayed together with the later memory/clock rows. The two-sided "
+        "canonical form-clock gate now removes one possible ambiguity without fitting the residual. "
+        "The quadratic pullback A_dressed=A_raw-L_(Theta e0)A_raw and its two-form analog, "
+        "together with the signed formal-adjoint BV cotangent lift, give 248 exact F2 keys. "
+        "Their induced q2 coordinate correction is a q1 cocycle in all four retained "
+        "bidegrees, so it changes the displayed obstruction by exactly zero. A consistent "
+        "relational clock conjugation can relocate the residual but cannot repair it. The "
+        "remaining gate is therefore a fresh component export of the raw temporal "
+        "gravity-clock-Maxwell-emitter Ward orbit from one common action, including the later "
+        "memory/clock rows; the earlier covariant row-coverage theorem did not certify this "
+        "coefficientwise PBW identity. The two-sided "
         "source isolation is diagnostic only: it identifies the q2 and q1 sources "
         "of the first key, not a proof that no other apparatus or emitter orbit is "
         "missing. The existing q2 and q3 payloads "
@@ -286,9 +382,10 @@ def build(*, audit: dict[str, Any] | None = None) -> dict[str, Any]:
             for name, path in DEPENDENCIES.items()
         },
         "arity_two_replay": audit,
+        "form_clock_chart_gate": form_clock_chart_audit(),
         "repair_gate": {
             "status": "OPEN",
-            "required_object": "derive the relationally clock-dressed temporal two-form Diff--BV q2 cotangent orbit from the common action and replay it with the later memory/clock rows; do not flip or fit isolated coefficients",
+            "required_object": "re-export the raw temporal gravity-clock-Maxwell-emitter Ward orbit coefficientwise from one common action, include the later memory/clock rows, then transport the complete zero identity through the certified form clock chart; do not flip or fit isolated coefficients",
             "acceptance": "the complete (0,0) defect and then every first-bidegree q1q2 coefficient vanish exactly, with the typed 64-row base retained as a zero control",
         },
         "activation_disposition": {
@@ -308,7 +405,7 @@ def build(*, audit: dict[str, Any] | None = None) -> dict[str, Any]:
             "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "CONJUGATE_TEMPORAL_EMITTER_DIFF_ORBIT_THROUGH_RELATIONAL_CLOCK_CHART_AND_REPLAY_Q1Q2",
+        "next_gate": "REEXPORT_RAW_TEMPORAL_COMMON_ACTION_WARD_ORBIT_AND_REPLAY_Q1Q2",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

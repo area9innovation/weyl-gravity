@@ -18,9 +18,20 @@ The first remaining lexicographic witness has output `tau_star`, inputs
 Two-sided source isolation assigns it entirely to the temporal emitter
 Diff--BV `q2` orbit crossed with the emitter unary source.
 
-The fail-closed repair gate is to conjugate that temporal two-form Diff
-cotangent orbit through the certified relational clock chart, then dispose
-of the later memory/clock rows and replay all first-bidegree coefficients.
+The relational form-clock gate is now resolved independently.  The exact
+quadratic pullback `A_dressed=A_raw-L_(Theta e0)A_raw` and its two-form
+analog, with the signed formal-adjoint BV cotangent lift, contain 248 `F2`
+keys.  They induce 3,108 lowest-bidegree `q2` correction keys.  That correction
+has zero arity-two residual in every retained bidegree, so it changes the
+existing obstruction by exactly zero: a canonical chart conjugation can move
+the defect but cannot repair it.
+
+The fail-closed repair gate is therefore a coefficientwise re-export of the
+raw temporal gravity-clock-Maxwell-emitter Ward orbit from one common action,
+including the later memory/clock rows, followed by transport of that complete
+zero identity through the clock chart.  The earlier covariant row-coverage
+theorem did not certify this component PBW identity.  Isolated coefficient
+flips remain forbidden.
 Arity three,
 `K_Berger`, observer-morphism stability, `O_detector|Z2`, nonlinear rank and
 physical Bridge 3 are not authorized.

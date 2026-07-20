@@ -35,3 +35,15 @@ def test_obstruction_keeps_every_downstream_gate_closed():
     assert value["activation_disposition"]["arity_three_replay_authorized"] is False
     assert value["activation_disposition"]["detector_response_on_second_order_cone_authorized"] is False
     assert value["flags"]["COMPONENT_ARITY_IDENTITIES_CERTIFIED"] is False
+
+
+def test_form_clock_chart_is_canonical_but_cannot_repair_the_raw_defect():
+    gate = document()["form_clock_chart_gate"]
+    assert gate["quadratic_chart_summaries"]["complete"]["operator_key_count"] == 248
+    assert gate["conjugation_correction_summaries"]["0,0"]["operator_key_count"] == 3108
+    assert all(
+        summary["operator_key_count"] == 0
+        for summary in gate["correction_arity_two_residuals"].values()
+    )
+    assert gate["existing_obstruction_change_summary"]["operator_key_count"] == 0
+    assert gate["disposition"] == "CERTIFIED_CANONICAL_CHART_CHANGE_DOES_NOT_REPAIR_RAW_WARD_DEFECT"
