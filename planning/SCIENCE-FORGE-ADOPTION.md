@@ -39,19 +39,16 @@ introduced by stream:
 | Stream | Team | Current mode |
 | --- | --- | --- |
 | `black-hole` | black-hole | **AUTHORITATIVE:** use `s-f` for pull, lease, report, block, request, and close-out |
+| `observer` | observer/clock | **AUTHORITATIVE:** use `s-f` for pull, lease, report, block, request, and close-out |
 | `bridge` | Einstein/bridge | **SHADOW:** inspect generated state and use the reporting format; continue the current assignment until the all-stream cutover |
 | `classical` | classical | **SHADOW:** inspect generated state and use the reporting format; continue the current assignment until the all-stream cutover |
 | `nonlinear` | nonlinear | **SHADOW:** inspect generated state and use the reporting format; continue the current assignment until the all-stream cutover |
 | `quantum-qme` | quantum | **SHADOW:** inspect generated state and use the reporting format; continue the current assignment until the all-stream cutover |
 
-Observer/clock work remains shadow work unless the coordinator assigns it to a
-configured stream or explicitly creates an observer stream. Do not invent a
-stream name locally.
-
 The four shadow streams become authoritative only after the coordinator records
-a successful all-five acceptance run. Until then, only the black-hole team
-should acquire leases or close work through `s-f`. Shadow teams must not create
-parallel lifecycle histories.
+a successful programme-wide acceptance run. Until then, only the black-hole
+and observer teams should acquire leases or close work through `s-f`. Shadow
+teams must not create parallel lifecycle histories.
 
 ## 3. Tool and capability boundary
 
@@ -128,7 +125,7 @@ Any team may use these read-only commands:
 NOW="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
 s-f streams-view \
-  --streams "black-hole;bridge;classical;nonlinear;quantum-qme" \
+  --streams "observer;black-hole;bridge;classical;nonlinear;quantum-qme" \
   --now "$NOW" \
   -o /tmp/science-forge-board.md
 
@@ -164,6 +161,7 @@ Recommended stable agent IDs are:
 
 ```text
 black-hole-1
+observer-1
 bridge-1
 classical-1
 nonlinear-1
