@@ -43,4 +43,6 @@ global nonexistence theorem for a repaired or affine combined carrier.  No
 compact-product mode is imported and no nonlinear response,
 memory, redshift, q3, particle, stability or quantum claim follows.
 
+CLOSE-OUT: OBSTRUCTED — the declared combined linear-K carrier is obstructed before a same-background quadratic source or adjoint cokernel can be formed
+
 EVIDENCE: `d_quotient_classical/certificates/BERGER_APPARATUS_Z2_INTEGRABILITY_RECEIVER_DISPOSITION_V1.json`
