@@ -1290,9 +1290,10 @@ The historical
 coefficientwise scope, and the complete scalar 108-row `(1,1)` square
 coefficient also vanishes.  The nonlinear clock successor removes the
 `epsilon_R_squared` defect in the certified same-background quotient without
-changing that free mixed zero, so a new 108-row apparatus `q2,q3`,
-`K_Berger`-equivariance, and observer-morphism-stability extension is now
-authorized but not yet certified.  Finite-`r`, fixed-background linear-`K`,
+changing that free mixed zero, so the 108-row apparatus `q2,q3` extension is
+authorized and now assembled, while its arity-two replay is obstructed before
+`K_Berger`-equivariance or observer-morphism stability can be attempted.
+Finite-`r`, fixed-background linear-`K`,
 full-`q4`, and all-orders stability remain unavailable.
 
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
@@ -1471,23 +1472,28 @@ remaining zero sources are now explicit rather
 than omitted: `BERGER_108_ROW_Q3_STRUCTURAL_ZERO_LEDGER` lowers all 240
 scalar-BV and 912 emitter-Diff--BV q2 terms through the certified pairing and
 proves their authoritative actions have constant coefficients and field
-degree three, so both fourth derivatives vanish.  The assembly gate now also
-passes: `BERGER_108_ROW_COMPLETE_Q3_PBW` zero-extends the certified typed base
-and combines all five nonzero sources plus the zero ledger into 43 hashed row
-chunks.  It contains 616,738 operator keys and 1,439,238 exact monomials with
-zero cross-source key collisions.  This completes q3, but it does not prove
+degree three, so both fourth derivatives vanish.  The corrected assembly gate
+now also passes: `BERGER_108_ROW_COMPLETE_Q3_PBW` separately zero-extends the
+5,812,130-term gravity-clock payload and 59,598-term typed Maxwell overlay,
+then combines the four nonzero apparatus/emitter sources plus the zero ledger
+into 43 hashed row chunks.  It contains 6,427,496 operator keys and 7,251,368
+exact monomials; 32,928 gravity/rod shared keys retain both source blocks and
+add without overwrite.  The corrected complete `q2` analog contains 171,567
+keys and 186,743 monomials from eight sources, with 160 explicit gravity/rod
+overlaps.  This completes q2 and q3, but it does not prove
 the extended identities.  The first identity replay is now decisive:
-`BERGER_108_ROW_ARITY_TWO_OBSTRUCTION` finds 4,768 nonzero operator keys and
-5,128 exact coefficient monomials already at bidegree `(0,0)`, on 30 output
+`BERGER_108_ROW_ARITY_TWO_OBSTRUCTION` finds 4,408 nonzero operator keys and
+4,732 exact coefficient monomials already at bidegree `(0,0)`, on 30 output
 rows.  The typed 64-row base is an exact zero control.  The first
 lexicographic witness is
-`c_spatial_1_star <- (c_spatial_1,R0_1_plus)` with coefficient
-`-e1^2 R0_1`; it is isolated to the apparatus scalar-BV source and its two
-time modes remain nonzero in the certified background quotient.  A trial
-four-ghost row clone does not repair this chart-dependent defect and is not
-part of the certified payload.  The required repair is a common-action
-derivation of the background-compatible apparatus BV/chart contribution, or
-a corrected unary/binary crosswalk, followed by the full first-bidegree
+`c_spatial_1_star <- (tau,R0_1_plus)` with coefficient `+e0 e1 R0_1`;
+two-sided isolation assigns its binary side to gravity `q2` and its unary side
+to the local-rod overlay, and its two time modes remain nonzero in the
+certified background quotient.  A trial four-ghost row clone does not repair
+this mixed defect and is not part of the certified payload.  The required
+repair is a common-action derivation of the background-compatible mixed
+gravity-rod binary/chart contribution, or a corrected unary/binary crosswalk,
+followed by the full first-bidegree
 replay.  Arity three, `K_Berger`, observer-morphism stability and
 `O_detector|Z2^C` remain fail-closed.
 

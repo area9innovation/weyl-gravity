@@ -1,0 +1,77 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_GRAVITY_OVERLAY_COMPOSITION_REPAIR_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_ARITY_TWO_OBSTRUCTION",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "result_boundary": "The complete observer q2 and q3 assemblers now add the separate gravity-clock payloads to the typed Maxwell overlays instead of treating either overlay as a materialized coupled tensor. The corrected q2 has 171,567 operator keys, 186,743 coefficient monomials and 160 explicit additive gravity/rod overlaps. The corrected q3 has 6,427,496 keys, 7,251,368 monomials and 32,928 explicit additive gravity/rod overlaps. The repaired arity-two replay remains OBSTRUCTED at bidegree (0,0), with 4,408 keys and 4,732 monomials; its first exact witness crosses gravity q2 with the local-rod q1 overlay. Arity three, K_Berger equivariance, observer-morphism stability, detector restriction to the second-order cone, physical Bridge 3 and quantum claims remain unavailable.",
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile on changed Python; JSON/schema validation through generators and verifiers; residual-atlas validation; git diff --check on explicit observer paths",
+      "elapsed_seconds": "under 10 excluding deterministic artifact generation",
+      "status": "PASS",
+      "scope": "q2/q3 assemblers, arity obstruction, schemas, generated claims ledger, comparison ledger, work item and canonical observer notes"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m pytest -q complete-q2 complete-q3 arity-two observer-atlas comparison-ledger suites; observer atlas and comparison-ledger verifiers",
+      "elapsed_seconds": 40.50,
+      "peak_rss_mb": 655.27,
+      "status": "PASS",
+      "scope": "51 fast assembly, lifecycle, fail-closed status, evidence-hash and generated-atlas invariants"
+    },
+    {
+      "tier": 2,
+      "command": "independent exact q2 rebuild; independent row-streamed exact q3 rebuild; independent exact degree-zero q1q2 replay",
+      "elapsed_seconds": {
+        "q2_generator": 11.29,
+        "q2_verifier": 8.44,
+        "q3_generator": 448.82,
+        "q3_verifier": 566.56,
+        "arity_generator": 179.68,
+        "arity_verifier": 205.89
+      },
+      "peak_rss_mb": {
+        "q2": 876.47,
+        "q3": 3421.84,
+        "arity": 609.94
+      },
+      "status": "PASS",
+      "scope": "byte-identical q2/q3 payload reconstruction, source/dependency hashes, explicit additive-overlap counts, 43 deterministic q3 row chunks, typed 64-row zero control, complete obstruction census, two-sided q1/q2 source isolation and background-quotient witness"
+    }
+  ],
+  "higher_tiers_not_run": {
+    "remaining_first_bidegrees": "Not run because the exact (0,0) coefficient already falsifies the complete arity-two identity.",
+    "arity_three_and_downstream": "Not authorized after the corrected arity-two stop condition fired.",
+    "tier_3": "Scoped source-composition repair and obstruction correction; no theorem freeze, shared core-algebra promotion or release."
+  },
+  "source_manifest": [
+    {"path": "closed_universe_observers/generate_berger_108_row_complete_q2_pbw.py", "sha256": "6ab14e080f072134a010ec4f3390058d73060941844d49040e39468f903d3dec"},
+    {"path": "closed_universe_observers/generate_berger_108_row_complete_q3_pbw.py", "sha256": "a2e0941bf64f47e38833e7d115e3295091a9ac7a64be9fd0efe2bd09176bbfd0"},
+    {"path": "closed_universe_observers/generate_berger_108_row_arity_two_obstruction.py", "sha256": "f407aca26dc237902be45fef9827ffea1a2a196845d7090c3686d70fd52afdb8"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPLETE_Q2_PBW.json", "sha256": "e99b05fa81661b299c461af9ccce901b8bb412601d321e8da9f9b864f3a7e613"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPLETE_Q2_PBW_PAYLOAD.json", "sha256": "3a7c9d5c8fc9bcd98a14c34e6426a5e5cdf53f652142bb6ce37bd0c5f16ff7fe"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPLETE_Q3_PBW.json", "sha256": "fe874500a4d70bfb81758503cad9b47f96f3d926bcc3c7bbef4b3657ddd4eb53"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPLETE_Q3_PBW_PAYLOAD.json", "sha256": "bdec0a1a9091e84f94de7804e9e4a1164827596c34102834d26996f2d5df509a"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_ARITY_TWO_OBSTRUCTION.json", "sha256": "3a54f18db706ae782f35ee15eb2e5adae40106d39c0d951c675d676b197d884f"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "f08bd321ba1511a650344bf371285c8741625037590ba3aac13023def5057538"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "c53551bbaf4dbfcf9bfd1226d4c389b1962b96fca6f76ce531f7ec775c920337"},
+    {"path": "planning/work-items/berger-108-row-apparatus-q2-q3-extension.json", "sha256": "68da6e7a1432da96e1a17f0933dbd25f3c39879d44ff53ea81969f1d32f80ff6"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "ab324574410fc86396e47e9f462bd5ea60e553b36cfae2bb50439d0aa325c760"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "03e043609924d43444a133f13c5ea7cb5550cf2fd0d85257bfc1284dd2ae4d64"}
+  ],
+  "flags": {
+    "COMPLETE_SCALAR_108_ROW_Q2_EXPORTED": true,
+    "COMPLETE_SCALAR_108_ROW_Q3_EXPORTED": true,
+    "Q2_ADDITIVE_OVERLAPS_EXPLICIT": true,
+    "Q3_ADDITIVE_OVERLAPS_EXPLICIT": true,
+    "TYPED_64_ROW_BASE_ARITY_TWO_CONTROL_ZERO": true,
+    "COMPLETE_108_ROW_ARITY_TWO_OBSTRUCTED": true,
+    "COMPONENT_ARITY_IDENTITIES_CERTIFIED": false,
+    "K_BERGER_EQUIVARIANCE_ON_COMPLETE_INTERACTION_CERTIFIED": false,
+    "OBSERVER_MORPHISM_STABILITY_CERTIFIED": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,
+    "PHYSICAL_BRANCH_BRIDGE_ACTIVATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

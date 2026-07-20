@@ -52,6 +52,27 @@ def _base_q1() -> replay.GradedOperator:
     return value
 
 
+def _q1_source_parts() -> dict[str, replay.GradedOperator]:
+    parts: dict[str, replay.GradedOperator] = {}
+    value: replay.GradedOperator = {}
+    replay.load_base(value)
+    parts["base_gravity_clock_maxwell"] = value
+    for name, path, root_key in (
+        ("emitter", replay.EMITTER, "emitter_overlay"),
+        ("memory", replay.MEMORY, None),
+        ("local_rod", replay.LOCAL_ROD, None),
+    ):
+        value = {}
+        document = json.loads(path.read_text())
+        blocks = document[root_key]["blocks"] if root_key else document["blocks"]
+        replay.load_generic_blocks(value, blocks)
+        parts[name] = value
+    value = {}
+    replay.load_shifted(value)
+    parts["shifted_nonlinear_clock"] = value
+    return parts
+
+
 def _witness_record(
     target: int,
     key: arity.BilinearKey,
@@ -86,8 +107,8 @@ def replay_audit() -> dict[str, Any]:
     defect = arity.arity_two_degree((0, 0), q1, q2)
     summary = arity.bilinear_summary(defect)
     expected = {
-        "operator_key_count": 4768,
-        "serialized_term_count": 5128,
+        "operator_key_count": 4408,
+        "serialized_term_count": 4732,
         "nonzero_output_rows": [
             49, 50, 51, 52, 59, 60, 61, 62, 64, 65, 66, 67, 68, 69,
             80, 81, 82, 83, 96, 97, 98, 99, 100, 101, 102, 103, 104,
@@ -108,7 +129,7 @@ def replay_audit() -> dict[str, Any]:
         raise AssertionError("first arity-two witness vanished in the background quotient")
 
     base_defect = arity.arity_two_degree(
-        (0, 0), _base_q1(), arity.load_q2(sources={"base_gravity_clock_maxwell"})
+        (0, 0), _base_q1(), arity.load_q2(sources={"base_gravity_clock", "base_maxwell_typed"})
     )
     if base_defect:
         raise AssertionError("typed 64-row base control ceased to satisfy arity two")
@@ -122,7 +143,7 @@ def replay_audit() -> dict[str, Any]:
         arity.replay.word(witness["right_pbw_multiindex"]),
     )
     for source in (
-        "base_gravity_clock_maxwell", "apparatus_scalar_BV", "rod_metric",
+        "base_gravity_clock", "base_maxwell_typed", "apparatus_scalar_BV", "rod_metric",
         "memory_transport", "normalized_readout", "emitter_physical",
         "emitter_Diff_BV",
     ):
@@ -132,14 +153,27 @@ def replay_audit() -> dict[str, Any]:
         )
         if witness_key in row:
             source_values[source] = serialize(row[witness_key])
-    if set(source_values) != {"apparatus_scalar_BV"}:
+    if set(source_values) != {"base_gravity_clock"}:
         raise AssertionError(f"first-witness source isolation drifted: {source_values}")
+
+    q1_source_values = {}
+    base_gravity_q2 = arity.load_q2(sources={"base_gravity_clock"})
+    for source, source_q1 in _q1_source_parts().items():
+        row = arity.arity_two_row(
+            witness["output_row"], (0, 0), source_q1, base_gravity_q2,
+            parity,
+        )
+        if witness_key in row:
+            q1_source_values[source] = serialize(row[witness_key])
+    if set(q1_source_values) != {"local_rod"}:
+        raise AssertionError(f"first-witness q1 source isolation drifted: {q1_source_values}")
 
     return {
         "tested_bidegree": [0, 0],
         "complete_defect_summary": summary,
         "first_lexicographic_defect": witness,
-        "first_defect_source_isolation": source_values,
+        "first_defect_q2_source_isolation": source_values,
+        "first_defect_q1_source_isolation": q1_source_values,
         "typed_64_row_base_control_summary": arity.bilinear_summary(base_defect),
         "higher_bidegrees_not_run": [[1, 0], [0, 1], [1, 1]],
         "stop_reason": "the lowest bidegree already has a nonzero exact defect",
@@ -163,23 +197,25 @@ def build() -> dict[str, Any]:
         "(epsilon_R_squared,kappa)=(0,0) coefficient of q1 q2+q2(q1,-)+(-1)^|x|q2(-,q1) "
         "on the canonical 108-row Berger differential-coefficient PBW carrier. The "
         "typed 64-row gravity-clock-Maxwell base is an exact zero control, but the "
-        "complete source-labelled extension has 4,768 nonzero operator keys and "
-        "5,128 exact coefficient monomials on 30 output rows. The first lexicographic "
-        "witness is isolated to the apparatus scalar-BV source and remains nonzero "
+        "complete source-labelled extension has 4,408 nonzero operator keys and "
+        "4,732 exact coefficient monomials on 30 output rows. The first lexicographic "
+        "witness is the cross-composition of the gravity q2 source with the local-rod "
+        "unary overlay and remains nonzero "
         "after evaluation in the certified six-rod/Phi2 background differential "
-        "quotient. Concretely, its c_spatial_1_star output with c_spatial_1 and "
-        "R0_1_plus inputs has coefficient -e1^2 R0_1 and two nonvanishing time "
+        "quotient. Concretely, its c_spatial_1_star output with tau and "
+        "R0_1_plus inputs has coefficient +e0 e1 R0_1 and nonvanishing time "
         "modes in exact sphere normal form. Since this witness is at bidegree "
         "(0,0), neither the epsilon_R_squared nonlinear-clock unary correction nor "
         "any q3 term can cancel it inside the declared arity-two identity. The "
         "remaining first-bidegree coefficients are deliberately not evaluated once "
         "this lowest-cost falsifier fires; they are recorded as skipped, not passed. "
         "Therefore the complete arity-two identity is OBSTRUCTED. This "
-        "certificate does not guess a repair: a background-compatible apparatus "
-        "BV/chart contribution or a revised unary/binary crosswalk must be derived "
-        "from the common action and then replayed. Source isolation is diagnostic "
-        "only: it identifies the source of the first key, not a proof that no other "
-        "apparatus or emitter orbit is missing. The existing q2 and q3 payloads "
+        "certificate does not guess a repair: a background-compatible mixed "
+        "gravity-rod binary/chart contribution or a revised unary/binary crosswalk "
+        "must be derived from the common action and then replayed. The two-sided "
+        "source isolation is diagnostic only: it identifies the q2 and q1 sources "
+        "of the first key, not a proof that no other apparatus or emitter orbit is "
+        "missing. The existing q2 and q3 payloads "
         "remain valid as source-labelled tensors, but their coexistence with the "
         "completed unary does not define a certified L-infinity coderivation. "
         "Because arity two already fails, "
@@ -206,7 +242,7 @@ def build() -> dict[str, Any]:
         "arity_two_replay": audit,
         "repair_gate": {
             "status": "OPEN",
-            "required_object": "derive a background-compatible apparatus scalar-BV/chart contribution or revise the unary/binary crosswalk from the common action; do not fit coefficients to the defect",
+            "required_object": "derive the background-compatible mixed gravity-rod binary/chart contribution or revise the unary/binary crosswalk from the common action; do not fit coefficients to the defect",
             "acceptance": "the complete (0,0) defect and then every first-bidegree q1q2 coefficient vanish exactly, with the typed 64-row base retained as a zero control",
         },
         "activation_disposition": {
@@ -226,7 +262,7 @@ def build() -> dict[str, Any]:
             "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "DERIVE_BACKGROUND_COMPATIBLE_APPARATUS_BV_CHART_CONTRIBUTION_AND_REPLAY_Q1Q2",
+        "next_gate": "DERIVE_MIXED_GRAVITY_ROD_BINARY_CHART_CONTRIBUTION_AND_REPLAY_Q1Q2",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

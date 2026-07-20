@@ -7,40 +7,45 @@
     "scalar_q3_exported": false
   },
   "assembly_audit": {
-    "cross_source_operator_key_collision_count": 0,
+    "cross_source_operator_key_collision_count": 160,
     "source_deletion_mutations": {
       "apparatus_scalar_BV": {
         "detected": true,
-        "remaining_term_count": 36198
+        "remaining_term_count": 186503
       },
-      "base_gravity_clock_maxwell": {
+      "base_gravity_clock": {
         "detected": true,
-        "remaining_term_count": 34548
+        "remaining_term_count": 36438
+      },
+      "base_maxwell_typed": {
+        "detected": true,
+        "remaining_term_count": 184853
       },
       "emitter_Diff_BV": {
         "detected": true,
-        "remaining_term_count": 35526
+        "remaining_term_count": 185831
       },
       "emitter_physical": {
         "detected": true,
-        "remaining_term_count": 30098
+        "remaining_term_count": 180403
       },
       "memory_transport": {
         "detected": true,
-        "remaining_term_count": 36246
+        "remaining_term_count": 186551
       },
       "normalized_readout": {
         "detected": true,
-        "remaining_term_count": 25426
+        "remaining_term_count": 175731
       },
       "rod_metric": {
         "detected": true,
-        "remaining_term_count": 20586
+        "remaining_term_count": 170891
       }
     },
     "source_term_counts": {
       "apparatus_scalar_BV": 240,
-      "base_gravity_clock_maxwell": 1890,
+      "base_gravity_clock": 150305,
+      "base_maxwell_typed": 1890,
       "emitter_Diff_BV": 912,
       "emitter_physical": 6340,
       "memory_transport": 192,
@@ -49,7 +54,7 @@
     }
   },
   "atlas_status": "CERTIFIED",
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC certificate assembles the complete scalar q2 tensor on the canonical 108-row Berger carrier. It zero-extends and adds seven independently certified, content-addressed sources: the typed 64-row gravity-clock-Maxwell coderivation payload, the universal apparatus scalar-BV orbit, six-rod metric interaction, memory transport, normalized two-detector readout, physical massive-emitter stress/switch interaction, and the massive-two-form Diff--BV cotangent orbit. The typed base presentation is required for nonlinear coderivation composition; it has the same lowered cubic action as the legacy output-normalized tensor but is not identified with it as an operator. Every source is normalized into one differential coefficient-jet PBW grammar with an explicit source label. The assembly contains 21,422 operator keys and 36,438 exact coefficient monomials. No operator key is shared by two source tensors, so the result is a disjoint additive assembly rather than an order-dependent overwrite; deleting any source changes the exact term count. All 108 rows share the same signed odd pairing and suspended graded-symmetric factorial convention through their certified dependencies. This certificate exports scalar q2 only; complete q3 is a separate certificate. It does not replay q1q2 or q2q2+q1q3 coefficientwise, prove K_Berger equivariance or observer-morphism stability, restrict detector response to Z2, promote nonlinear rank, activate physical Bridge 3, establish finite-parameter causal propagation or make a quantum claim. No compact-product mode is identified with a Berger row.",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC certificate assembles the complete scalar q2 tensor on the canonical 108-row Berger carrier. It zero-extends and adds eight independently certified, content-addressed sources: the 64-row gravity-clock q2 payload, its separate typed Maxwell overlay, the universal apparatus scalar-BV orbit, six-rod metric interaction, memory transport, normalized two-detector readout, physical massive-emitter stress/switch interaction, and the massive-two-form Diff--BV cotangent orbit. The Maxwell file is an additive overlay and is never treated as a materialized replacement for the gravity payload. The typed base presentation is required for nonlinear coderivation composition; it has the same lowered cubic action as the legacy output-normalized tensor but is not identified with it as an operator. Every source is normalized into one differential coefficient-jet PBW grammar with an explicit source label. The exact assembly counts and overlap audit are recorded in the payload. Shared operator keys are retained as separate source-labelled coefficient monomials and therefore add in coderivation evaluation; no contribution is overwritten. Deleting any source changes the exact term count. All 108 rows share the same signed odd pairing and suspended graded-symmetric factorial convention through their certified dependencies. This certificate exports scalar q2 only; complete q3 is a separate certificate. It does not replay q1q2 or q2q2+q1q3 coefficientwise, prove K_Berger equivariance or observer-morphism stability, restrict detector response to Z2, promote nonlinear rank, activate physical Bridge 3, establish finite-parameter causal propagation or make a quantum claim. No compact-product mode is identified with a Berger row.",
   "claim_status": "CERTIFIED_COMPLETE_SCALAR_108_ROW_Q2_PBW_PAYLOAD",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC"
@@ -58,12 +63,18 @@
     "COMPLETE_SCALAR_108_ROW_Q2_EXPORTED": true,
     "COMPLETE_SCALAR_108_ROW_Q3_EXPORTED": false,
     "COMPONENT_ARITY_IDENTITIES_CERTIFIED": false,
-    "Q2_CROSS_SOURCE_OPERATOR_KEYS_DISJOINT": true,
+    "Q2_ADDITIVE_OVERLAPS_EXPLICIT": true,
+    "Q2_CROSS_SOURCE_OPERATOR_KEYS_DISJOINT": false,
     "Q2_SOURCE_PROVENANCE_COMPLETE": true,
     "QUANTUM_CLAIM": false,
     "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false
   },
   "gate_refs": {
+    "base_gravity_q2": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_Q2",
+      "sha256": "aae2fe3d6902765dd9cd7281d6c704b001ecaf4590d29c507cd469d37a4b5874"
+    },
     "base_typed_q2_q3": {
       "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3.json",
       "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3",
@@ -87,10 +98,3713 @@
   },
   "next_gate": "REPLAY_COMPLETE_TYPED_108_ROW_Q1Q2_AND_Q2Q2_PLUS_Q1Q3",
   "payload_ref": {
-    "canonical_sha256": "d94337ae813cf012146f09dad896e1f9bec414c4ae71712cad482036aa338656",
-    "cross_source_operator_key_collision_count": 0,
-    "cross_source_operator_key_collisions": [],
+    "canonical_sha256": "d84635f68d0fea73429b4d8092af4b54c1290d93ed4034a1087977b786973496",
+    "cross_source_operator_key_collision_count": 160,
+    "cross_source_operator_key_collisions": [
+      {
+        "operator_key": [
+          27,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          27,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          28,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          28,
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          28,
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          28,
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          28,
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          28,
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          28,
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          28,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          28,
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          28,
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          28,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          28,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          29,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          29,
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          29,
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          29,
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          29,
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          29,
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          29,
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          29,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          29,
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          29,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          29,
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          29,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          30,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          30,
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          30,
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          30,
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          30,
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          30,
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          30,
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          30,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          30,
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          30,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          30,
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          30,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          31,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          32,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          32,
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          32,
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          32,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          32,
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          32,
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          32,
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          32,
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          32,
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          32,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          32,
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          32,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          33,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          33,
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          33,
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          33,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          33,
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          33,
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          33,
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          33,
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          33,
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          33,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          33,
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          33,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          34,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          35,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          35,
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          35,
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          35,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          35,
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          35,
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          35,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          35,
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          35,
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          35,
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          35,
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          35,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          6,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          7,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          8,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          10,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          11,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          13,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          5,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          9,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          12,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      },
+      {
+        "operator_key": [
+          36,
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          14,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "sources": [
+          "base_gravity_clock",
+          "rod_metric"
+        ]
+      }
+    ],
     "nonzero_output_rows": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      22,
+      23,
+      24,
+      25,
+      26,
       27,
       28,
       29,
@@ -101,11 +3815,13 @@
       34,
       35,
       36,
+      37,
       38,
       49,
       50,
       51,
       52,
+      53,
       55,
       56,
       57,
@@ -159,37 +3875,37 @@
       106,
       107
     ],
-    "operator_key_count": 21422,
+    "operator_key_count": 171567,
     "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPLETE_Q2_PBW_PAYLOAD.json",
-    "serialized_term_count": 36438,
-    "sha256": "f4073c06d867528f09169400b86842454f25e2b4c7a8a07de6455b56dd1d8ccf"
+    "serialized_term_count": 186743,
+    "sha256": "3a7c9d5c8fc9bcd98a14c34e6426a5e5cdf53f652142bb6ce37bd0c5f16ff7fe"
   },
   "provenance": {
     "source_commit": "WORKTREE",
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_108_row_complete_q2_pbw.py",
-        "sha256": "cb18c44ec536aa5ea507ef0711c2be6baa2644b8ea201d92ee2f61a4e7c46e2b"
+        "sha256": "6ab14e080f072134a010ec4f3390058d73060941844d49040e39468f903d3dec"
       },
       {
         "path": "closed_universe_observers/verify_berger_108_row_complete_q2_pbw.py",
-        "sha256": "803b754e3f4d866095b3dc5dc3e6a7a5d59471698894f63d2474ec1ca5794d52"
+        "sha256": "c329470690bcb4a03e5cdee63a87299d4199b191ed0178336aab56769fc2eba8"
       },
       {
         "path": "closed_universe_observers/tests/test_berger_108_row_complete_q2_pbw.py",
-        "sha256": "2b81bf8e766aaf1b3538b7c3cbbfbd7a7f344ef2928b93005085520776c3d9e0"
+        "sha256": "a731a5060076e8fdfcef0b2eb1089b9f44f52dc599867645346107300d51d6f6"
       },
       {
         "path": "closed_universe_observers/schema/berger-108-row-complete-q2-pbw-v1.schema.json",
-        "sha256": "7fbde5c0cb315c2021fe2cfdc26478f6d075d5e96c4abff47d40b479c262a506"
+        "sha256": "a349b01d2f1e4be200852706b171ed53471252449976ce5bb12afc1127a5746f"
       },
       {
         "path": "closed_universe_observers/schema/berger-108-row-complete-q2-pbw-payload-v1.schema.json",
-        "sha256": "e606d8ce20a97ec5d64db56a322cfe2fe298262d9ebb07e89de7c51c2d04583b"
+        "sha256": "0be0f6cd5d8256320473cb99506a2b32d4aa363eb1f2ce232e8c86b53ca549cd"
       },
       {
         "path": "closed_universe_observers/reports/berger-108-row-complete-q2-pbw.md",
-        "sha256": "d2f51716c29bf1f907505449af66b478f91f5c3d7d3f49ceb9a1542ad9042dae"
+        "sha256": "7c78248ce92ae818bc72ded413e8353562b7961379b1df88f5ab67d953cb32fc"
       }
     ]
   },

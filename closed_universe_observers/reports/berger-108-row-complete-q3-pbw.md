@@ -2,18 +2,20 @@
 
 `BERGER_108_ROW_COMPLETE_Q3_PBW` is the source-labelled additive assembly of
 all certified trilinear interactions on the canonical Berger carrier.  It
-contains the typed 64-row gravity–clock–Maxwell base, rod-metric,
-memory-transport, normalized detector readout and physical-emitter tensors.
+contains the separate 64-row gravity-clock payload and typed Maxwell overlay,
+followed by the rod-metric, memory-transport, normalized detector readout and
+physical-emitter tensors.  The overlay is not a replacement for gravity.
 The scalar-BV and emitter-Diff-BV sources enter through their explicit
 structural-zero ledger.
 
 The row-streamed assembler normalizes every source to the same
-`Q(sqrt(10))` differential coefficient-jet grammar.  The five nonzero sources
-contribute 1,439,238 coefficient monomials on 616,738 distinct operator keys
-and 43 output rows.  No operator key occurs in two source families, so no
-contribution is overwritten and source order is immaterial.  The complete
+`Q(sqrt(10))` differential coefficient-jet grammar.  The six nonzero sources
+contribute 7,251,368 coefficient monomials on 6,427,496 distinct operator keys
+and 43 output rows.  The 32,928 shared gravity/rod-metric operator keys retain
+both source blocks, so their coefficients add and no contribution is
+overwritten.  The complete
 payload is stored in 43 deterministic gzip row chunks, each retaining its
-source blocks and hashes.  Deleting any of the six source references,
+source blocks and hashes.  Deleting any of the seven source references,
 including the zero ledger, changes the composition hash.
 
 This `LOCAL-ALGEBRAIC` certificate exports q3 but does not promote any

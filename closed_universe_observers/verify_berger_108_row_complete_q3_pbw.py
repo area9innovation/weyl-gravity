@@ -51,6 +51,8 @@ def main() -> int:
     assert operator_total == payload["operator_key_count"]
     assert serialized_total == payload["serialized_term_count"]
     assert value["flags"]["COMPLETE_SCALAR_108_ROW_Q3_EXPORTED"] is True
+    assert value["flags"]["Q3_ADDITIVE_OVERLAPS_EXPLICIT"] is True
+    assert value["flags"]["Q3_CROSS_SOURCE_OPERATOR_KEYS_DISJOINT"] is False
     assert value["flags"]["COMPONENT_ARITY_IDENTITIES_CERTIFIED"] is False
     assert value["flags"]["TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED"] is False
     print("BERGER_108_ROW_COMPLETE_Q3_PBW independent verification: PASS")

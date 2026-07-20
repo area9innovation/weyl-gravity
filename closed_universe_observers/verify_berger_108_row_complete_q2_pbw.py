@@ -26,7 +26,8 @@ def main() -> int:
     rows, counts, audit = assemble()
     assert payload["rows"] == rows and payload["source_term_counts"] == counts and payload["assembly_audit"] == audit
     assert payload["canonical_sha256"] == canonical_sha256(rows) and value["payload_ref"]["sha256"] == sha256(PAYLOAD)
-    assert audit["cross_source_operator_key_collision_count"] == 0
+    assert audit["cross_source_operator_key_collision_count"] == 160
+    assert value["flags"]["Q2_ADDITIVE_OVERLAPS_EXPLICIT"] is True
     print("BERGER_108_ROW_COMPLETE_Q2_PBW independent verification: PASS"); return 0
 
 

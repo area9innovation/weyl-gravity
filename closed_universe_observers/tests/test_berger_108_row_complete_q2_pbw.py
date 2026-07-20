@@ -1,16 +1,17 @@
 from closed_universe_observers.generate_berger_108_row_complete_q2_pbw import (
     SOURCES,
-    assemble,
     build,
     payload_document,
 )
 
 
-def test_complete_q2_source_counts_and_disjoint_keys():
+def test_complete_q2_source_counts_and_explicit_additive_overlaps():
     value = payload_document()
-    assert SOURCES["base_gravity_clock_maxwell"].name == "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_TYPED_PAYLOAD.json"
+    assert SOURCES["base_gravity_clock"].name == "BERGER_SUPPORT_LOCAL_Q2_PAYLOAD.json"
+    assert SOURCES["base_maxwell_typed"].name == "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_TYPED_PAYLOAD.json"
     assert value["source_term_counts"] == {
-        "base_gravity_clock_maxwell": 1890,
+        "base_gravity_clock": 150305,
+        "base_maxwell_typed": 1890,
         "apparatus_scalar_BV": 240,
         "rod_metric": 15852,
         "memory_transport": 192,
@@ -18,14 +19,16 @@ def test_complete_q2_source_counts_and_disjoint_keys():
         "emitter_physical": 6340,
         "emitter_Diff_BV": 912,
     }
-    assert value["assembly_audit"]["operator_key_count"] == 21422
-    assert value["assembly_audit"]["serialized_term_count"] == 36438
-    assert value["assembly_audit"]["cross_source_operator_key_collision_count"] == 0
+    assert value["assembly_audit"]["operator_key_count"] == 171567
+    assert value["assembly_audit"]["serialized_term_count"] == 186743
+    assert value["assembly_audit"]["cross_source_operator_key_collision_count"] == 160
+    assert {tuple(item["sources"]) for item in value["assembly_audit"]["cross_source_operator_key_collisions"]} == {("base_gravity_clock", "rod_metric")}
 
 
 def test_every_source_deletion_changes_assembly():
-    total = payload_document()["assembly_audit"]["serialized_term_count"]
-    assert all(assemble(omit_source=source)[2]["serialized_term_count"] < total for source in SOURCES)
+    audits = build()["assembly_audit"]["source_deletion_mutations"]
+    assert set(audits) == set(SOURCES)
+    assert all(item["detected"] for item in audits.values())
 
 
 def test_complete_q2_does_not_promote_q3_or_cone():
@@ -37,4 +40,7 @@ def test_complete_q2_does_not_promote_q3_or_cone():
 
 def test_complete_q2_requires_typed_base_coderivation_gate():
     value = build()
+    assert "base_gravity_q2" in value["gate_refs"]
     assert "base_typed_q2_q3" in value["gate_refs"]
+    assert value["flags"]["Q2_ADDITIVE_OVERLAPS_EXPLICIT"] is True
+    assert value["flags"]["Q2_CROSS_SOURCE_OPERATOR_KEYS_DISJOINT"] is False

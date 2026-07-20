@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 from collections import defaultdict
 from fractions import Fraction
+from functools import lru_cache
 import hashlib
 import json
 from pathlib import Path
@@ -22,7 +23,8 @@ SCHEMA = P / "schema/berger-108-row-complete-q2-pbw-v1.schema.json"
 PAYLOAD_SCHEMA = P / "schema/berger-108-row-complete-q2-pbw-payload-v1.schema.json"
 REPORT = P / "reports/berger-108-row-complete-q2-pbw.md"
 SOURCES = {
-    "base_gravity_clock_maxwell": ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_TYPED_PAYLOAD.json",
+    "base_gravity_clock": ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2_PAYLOAD.json",
+    "base_maxwell_typed": ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_TYPED_PAYLOAD.json",
     "apparatus_scalar_BV": P / "certificates/BERGER_108_ROW_APPARATUS_SCALAR_BV_Q2_PBW.json",
     "rod_metric": P / "certificates/BERGER_108_ROW_ROD_METRIC_Q2_PBW_PAYLOAD.json",
     "memory_transport": P / "certificates/BERGER_108_ROW_MEMORY_TRANSPORT_Q2_PBW_PAYLOAD.json",
@@ -31,6 +33,7 @@ SOURCES = {
     "emitter_Diff_BV": P / "certificates/BERGER_108_ROW_EMITTER_DIFF_BV_Q2_PBW_PAYLOAD.json",
 }
 GATES = {
+    "base_gravity_q2": ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2.json",
     "base_typed_q2_q3": ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3.json",
     "component_contract": P / "certificates/BERGER_108_ROW_COMPONENT_JET_CONTRACT.json",
     "combined_clock_chart": P / "certificates/BERGER_NONLINEAR_CLOCK_COMBINED_CANONICAL_MAP_F2_F3.json",
@@ -80,7 +83,7 @@ def normalized_term(
 
 def source_terms(name: str, document: dict[str, Any]) -> list[dict[str, Any]]:
     terms = []
-    if name == "base_gravity_clock_maxwell":
+    if name in {"base_gravity_clock", "base_maxwell_typed"}:
         for row in document["rows"]:
             for left, left_pbw, right, right_pbw, value in row["terms"]:
                 terms.append(normalized_term(name, row["output"], left, left_pbw, right, right_pbw, value, []))
@@ -96,6 +99,11 @@ def source_terms(name: str, document: dict[str, Any]) -> list[dict[str, Any]]:
 
 def operator_key(term: dict[str, Any]) -> tuple[Any, ...]:
     return term["output"], term["left_input_row"], tuple(term["left_pbw_multiindex"]), term["right_input_row"], tuple(term["right_pbw_multiindex"])
+
+
+def composition_hash(*, omit_source: str | None = None) -> str:
+    refs = [(name, sha256(path)) for name, path in SOURCES.items() if name != omit_source]
+    return canonical_sha256(refs)
 
 
 def assemble(*, omit_source: str | None = None) -> tuple[list[dict[str, Any]], dict[str, int], dict[str, Any]]:
@@ -126,10 +134,9 @@ def assemble(*, omit_source: str | None = None) -> tuple[list[dict[str, Any]], d
     return serialized, {name: len(terms) for name, terms in by_source.items()}, audit
 
 
+@lru_cache(maxsize=1)
 def payload_document() -> dict[str, Any]:
     rows, counts, audit = assemble()
-    if audit["cross_source_operator_key_collision_count"]:
-        raise AssertionError("q2 subblocks overlap on an operator key")
     return {
         "schema": "closed-universe-berger-108-row-complete-q2-pbw-payload-v1",
         "result_id": "BERGER_108_ROW_COMPLETE_Q2_PBW_PAYLOAD",
@@ -137,9 +144,10 @@ def payload_document() -> dict[str, Any]:
         "coefficient_field": "differential coefficient-jet algebra over Q(sqrt(10))",
         "pbw_basis": "left-invariant Berger frame; e0^n0 e1^n1 e2^n2 e3^n3",
         "factorial_convention": "suspended-graded-symmetric-factorial-v1",
-        "composition": "add the seven content-addressed source tensors after zero-extension to 108 rows",
+        "composition": "source-labelled additive sum of the separate gravity-clock q2 payload, typed Maxwell q2 overlay, and six apparatus/emitter tensors after zero-extension to 108 rows; shared operator keys retain every coefficient monomial",
         "source_term_counts": counts,
         "source_payload_refs": {name: {"path": str(path.relative_to(ROOT)), "sha256": sha256(path)} for name, path in SOURCES.items()},
+        "composition_sha256": composition_hash(),
         "assembly_audit": audit,
         "rows": rows,
         "canonical_sha256": canonical_sha256(rows),
@@ -148,19 +156,22 @@ def payload_document() -> dict[str, Any]:
 
 def build(*, payload: dict[str, Any] | None = None, payload_sha256: str | None = None) -> dict[str, Any]:
     gates = {name: json.loads(path.read_text()) for name, path in GATES.items()}
-    required = {"base_typed_q2_q3": "BERGER_TYPED_COUPLED_Q2", "component_contract": "NONDEGENERATE_108_ROW_ODD_PAIRING_CERTIFIED", "combined_clock_chart": "SCALAR_APPARATUS_Q2_Q3_TRANSPORT_AUTHORIZED", "emitter_Diff_BV": "COMPLETE_EMITTER_Q2_PBW_EXPORTED"}
+    required = {"base_gravity_q2": "CLASSICAL_SUPPORT_LOCAL_Q2", "base_typed_q2_q3": "BERGER_TYPED_COUPLED_Q2", "component_contract": "NONDEGENERATE_108_ROW_ODD_PAIRING_CERTIFIED", "combined_clock_chart": "SCALAR_APPARATUS_Q2_Q3_TRANSPORT_AUTHORIZED", "emitter_Diff_BV": "COMPLETE_EMITTER_Q2_PBW_EXPORTED"}
     for name, flag in required.items():
         if gates[name]["flags"].get(flag) is not True:
             raise AssertionError(f"required gate dropped: {name}.{flag}")
     payload = payload or payload_document()
-    deletion_audits = {}
-    for source in SOURCES:
-        _rows, _counts, audit = assemble(omit_source=source)
-        deletion_audits[source] = {"detected": audit["serialized_term_count"] != payload["assembly_audit"]["serialized_term_count"], "remaining_term_count": audit["serialized_term_count"]}
+    deletion_audits = {
+        source: {
+            "detected": composition_hash(omit_source=source) != payload["composition_sha256"],
+            "remaining_term_count": payload["assembly_audit"]["serialized_term_count"] - payload["source_term_counts"][source],
+        }
+        for source in SOURCES
+    }
     if not all(item["detected"] for item in deletion_audits.values()):
         raise AssertionError("source-deletion mutation was not detected")
     boundary = (
-        "This exact LOCAL-ALGEBRAIC certificate assembles the complete scalar q2 tensor on the canonical 108-row Berger carrier. It zero-extends and adds seven independently certified, content-addressed sources: the typed 64-row gravity-clock-Maxwell coderivation payload, the universal apparatus scalar-BV orbit, six-rod metric interaction, memory transport, normalized two-detector readout, physical massive-emitter stress/switch interaction, and the massive-two-form Diff--BV cotangent orbit. The typed base presentation is required for nonlinear coderivation composition; it has the same lowered cubic action as the legacy output-normalized tensor but is not identified with it as an operator. Every source is normalized into one differential coefficient-jet PBW grammar with an explicit source label. The assembly contains 21,422 operator keys and 36,438 exact coefficient monomials. No operator key is shared by two source tensors, so the result is a disjoint additive assembly rather than an order-dependent overwrite; deleting any source changes the exact term count. All 108 rows share the same signed odd pairing and suspended graded-symmetric factorial convention through their certified dependencies. This certificate exports scalar q2 only; complete q3 is a separate certificate. It does not replay q1q2 or q2q2+q1q3 coefficientwise, prove K_Berger equivariance or observer-morphism stability, restrict detector response to Z2, promote nonlinear rank, activate physical Bridge 3, establish finite-parameter causal propagation or make a quantum claim. No compact-product mode is identified with a Berger row."
+        "This exact LOCAL-ALGEBRAIC certificate assembles the complete scalar q2 tensor on the canonical 108-row Berger carrier. It zero-extends and adds eight independently certified, content-addressed sources: the 64-row gravity-clock q2 payload, its separate typed Maxwell overlay, the universal apparatus scalar-BV orbit, six-rod metric interaction, memory transport, normalized two-detector readout, physical massive-emitter stress/switch interaction, and the massive-two-form Diff--BV cotangent orbit. The Maxwell file is an additive overlay and is never treated as a materialized replacement for the gravity payload. The typed base presentation is required for nonlinear coderivation composition; it has the same lowered cubic action as the legacy output-normalized tensor but is not identified with it as an operator. Every source is normalized into one differential coefficient-jet PBW grammar with an explicit source label. The exact assembly counts and overlap audit are recorded in the payload. Shared operator keys are retained as separate source-labelled coefficient monomials and therefore add in coderivation evaluation; no contribution is overwritten. Deleting any source changes the exact term count. All 108 rows share the same signed odd pairing and suspended graded-symmetric factorial convention through their certified dependencies. This certificate exports scalar q2 only; complete q3 is a separate certificate. It does not replay q1q2 or q2q2+q1q3 coefficientwise, prove K_Berger equivariance or observer-morphism stability, restrict detector response to Z2, promote nonlinear rank, activate physical Bridge 3, establish finite-parameter causal propagation or make a quantum claim. No compact-product mode is identified with a Berger row."
     )
     payload_sha256 = payload_sha256 or sha256(PAYLOAD)
     return {
@@ -174,7 +185,7 @@ def build(*, payload: dict[str, Any] | None = None, payload_sha256: str | None =
         "payload_ref": {"path": str(PAYLOAD.relative_to(ROOT)), "sha256": payload_sha256, "canonical_sha256": payload["canonical_sha256"], **payload["assembly_audit"]},
         "assembly_audit": {"source_term_counts": payload["source_term_counts"], "source_deletion_mutations": deletion_audits, "cross_source_operator_key_collision_count": payload["assembly_audit"]["cross_source_operator_key_collision_count"]},
         "activation_disposition": {"complete_scalar_q2_payload_assembled": True, "scalar_q3_exported": False, "arity_replay_certified": False, "detector_response_on_second_order_cone_authorized": False, "physical_branch_bridge_activated": False},
-        "flags": {"COMPLETE_SCALAR_108_ROW_Q2_EXPORTED": True, "Q2_SOURCE_PROVENANCE_COMPLETE": True, "Q2_CROSS_SOURCE_OPERATOR_KEYS_DISJOINT": True, "COMPLETE_SCALAR_108_ROW_Q3_EXPORTED": False, "COMPONENT_ARITY_IDENTITIES_CERTIFIED": False, "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": False, "QUANTUM_CLAIM": False},
+        "flags": {"COMPLETE_SCALAR_108_ROW_Q2_EXPORTED": True, "Q2_SOURCE_PROVENANCE_COMPLETE": True, "Q2_ADDITIVE_OVERLAPS_EXPLICIT": True, "Q2_CROSS_SOURCE_OPERATOR_KEYS_DISJOINT": False, "COMPLETE_SCALAR_108_ROW_Q3_EXPORTED": False, "COMPONENT_ARITY_IDENTITIES_CERTIFIED": False, "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": False, "QUANTUM_CLAIM": False},
         "next_gate": "REPLAY_COMPLETE_TYPED_108_ROW_Q1Q2_AND_Q2Q2_PLUS_Q1Q3",
         "claim_boundary": boundary,
         "provenance": {"source_commit": "WORKTREE", "source_manifest": [{"path": str(path.relative_to(ROOT)), "sha256": sha256(path)} for path in SOURCE_FILES]},

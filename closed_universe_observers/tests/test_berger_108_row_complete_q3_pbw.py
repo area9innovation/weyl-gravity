@@ -7,21 +7,24 @@ def documents():
     return json.loads(CERTIFICATE.read_text()), json.loads(PAYLOAD.read_text())
 
 
-def test_complete_q3_has_all_sources_without_key_collisions():
+def test_complete_q3_has_all_sources_with_explicit_additive_overlaps():
     certificate, payload = documents()
     assert payload["source_term_counts"] == {
-        "base_gravity_clock_maxwell": 59598,
+        "base_gravity_clock": 5812130,
+        "base_maxwell_typed": 59598,
         "rod_metric": 181344,
         "memory_transport": 5196,
         "normalized_readout": 1085112,
         "emitter_physical": 107988,
         "structural_zeros": 0,
     }
-    assert payload["operator_key_count"] == 616738
-    assert payload["serialized_term_count"] == 1439238
-    assert payload["cross_source_operator_key_collision_count"] == 0
+    assert payload["operator_key_count"] == 6427496
+    assert payload["serialized_term_count"] == 7251368
+    assert payload["cross_source_operator_key_collision_count"] == 32928
     assert len(payload["chunks"]) == 43
     assert all(item["detected"] for item in certificate["assembly_audit"]["source_deletion_mutations"].values())
+    assert certificate["flags"]["Q3_ADDITIVE_OVERLAPS_EXPLICIT"] is True
+    assert certificate["flags"]["Q3_CROSS_SOURCE_OPERATOR_KEYS_DISJOINT"] is False
 
 
 def test_complete_q3_exports_only_the_payload_gate():

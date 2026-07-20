@@ -42,16 +42,16 @@
         106,
         107
       ],
-      "operator_key_count": 4768,
-      "serialized_term_count": 5128
+      "operator_key_count": 4408,
+      "serialized_term_count": 4732
     },
-    "first_defect_source_isolation": {
-      "apparatus_scalar_BV": [
+    "first_defect_q1_source_isolation": {
+      "local_rod": [
         {
           "coefficient": {
             "rational": {
               "denominator": 1,
-              "numerator": -1
+              "numerator": 1
             },
             "sqrt10": {
               "denominator": 1,
@@ -63,8 +63,37 @@
               "kind": "background",
               "name": "R0_1",
               "spacetime_multiindex": [
+                1,
+                1,
                 0,
-                2,
+                0
+              ],
+              "vertical_multiindex": []
+            }
+          ]
+        }
+      ]
+    },
+    "first_defect_q2_source_isolation": {
+      "base_gravity_clock": [
+        {
+          "coefficient": {
+            "rational": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "sqrt10": {
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "factors": [
+            {
+              "kind": "background",
+              "name": "R0_1",
+              "spacetime_multiindex": [
+                1,
+                1,
                 0,
                 0
               ],
@@ -77,11 +106,11 @@
     "first_lexicographic_defect": {
       "background_quotient_nonzero_modes": [
         {
-          "normal_form": "3*sqrt(10)*detector_phase_cosine*detector_time_phase*x3/80 - 3*sqrt(10)*detector_phase_sine*detector_time_phase*x0/80",
+          "normal_form": "sqrt(145)*I*detector_phase_cosine*detector_time_phase*x2/40 - sqrt(145)*I*detector_phase_sine*detector_time_phase*x1/40",
           "time_mode": -1
         },
         {
-          "normal_form": "3*sqrt(10)*detector_phase_cosine*x3/(80*detector_time_phase) - 3*sqrt(10)*detector_phase_sine*x0/(80*detector_time_phase)",
+          "normal_form": "-sqrt(145)*I*detector_phase_cosine*x2/(40*detector_time_phase) + sqrt(145)*I*detector_phase_sine*x1/(40*detector_time_phase)",
           "time_mode": 1
         }
       ],
@@ -90,7 +119,7 @@
           "coefficient": {
             "rational": {
               "denominator": 1,
-              "numerator": -1
+              "numerator": 1
             },
             "sqrt10": {
               "denominator": 1,
@@ -102,8 +131,8 @@
               "kind": "background",
               "name": "R0_1",
               "spacetime_multiindex": [
-                0,
-                2,
+                1,
+                1,
                 0,
                 0
               ],
@@ -112,8 +141,8 @@
           ]
         }
       ],
-      "left_input_row": 0,
-      "left_input_row_id": "c_spatial_1",
+      "left_input_row": 3,
+      "left_input_row_id": "tau",
       "left_pbw_multiindex": [
         0,
         0,
@@ -158,18 +187,18 @@
     }
   },
   "atlas_status": "OBSTRUCTED",
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE obstruction replays the lowest (epsilon_R_squared,kappa)=(0,0) coefficient of q1 q2+q2(q1,-)+(-1)^|x|q2(-,q1) on the canonical 108-row Berger differential-coefficient PBW carrier. The typed 64-row gravity-clock-Maxwell base is an exact zero control, but the complete source-labelled extension has 4,768 nonzero operator keys and 5,128 exact coefficient monomials on 30 output rows. The first lexicographic witness is isolated to the apparatus scalar-BV source and remains nonzero after evaluation in the certified six-rod/Phi2 background differential quotient. Concretely, its c_spatial_1_star output with c_spatial_1 and R0_1_plus inputs has coefficient -e1^2 R0_1 and two nonvanishing time modes in exact sphere normal form. Since this witness is at bidegree (0,0), neither the epsilon_R_squared nonlinear-clock unary correction nor any q3 term can cancel it inside the declared arity-two identity. The remaining first-bidegree coefficients are deliberately not evaluated once this lowest-cost falsifier fires; they are recorded as skipped, not passed. Therefore the complete arity-two identity is OBSTRUCTED. This certificate does not guess a repair: a background-compatible apparatus BV/chart contribution or a revised unary/binary crosswalk must be derived from the common action and then replayed. Source isolation is diagnostic only: it identifies the source of the first key, not a proof that no other apparatus or emitter orbit is missing. The existing q2 and q3 payloads remain valid as source-labelled tensors, but their coexistence with the completed unary does not define a certified L-infinity coderivation. Because arity two already fails, the q2q2+q1q3 replay, K_Berger equivariance, observer-morphism stability, detector restriction to Z2, nonlinear response rank, physical Bridge 3, finite-parameter causal propagation and all quantum claims remain fail-closed. No compact-product mode is identified with a Berger row.",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE obstruction replays the lowest (epsilon_R_squared,kappa)=(0,0) coefficient of q1 q2+q2(q1,-)+(-1)^|x|q2(-,q1) on the canonical 108-row Berger differential-coefficient PBW carrier. The typed 64-row gravity-clock-Maxwell base is an exact zero control, but the complete source-labelled extension has 4,408 nonzero operator keys and 4,732 exact coefficient monomials on 30 output rows. The first lexicographic witness is the cross-composition of the gravity q2 source with the local-rod unary overlay and remains nonzero after evaluation in the certified six-rod/Phi2 background differential quotient. Concretely, its c_spatial_1_star output with tau and R0_1_plus inputs has coefficient +e0 e1 R0_1 and nonvanishing time modes in exact sphere normal form. Since this witness is at bidegree (0,0), neither the epsilon_R_squared nonlinear-clock unary correction nor any q3 term can cancel it inside the declared arity-two identity. The remaining first-bidegree coefficients are deliberately not evaluated once this lowest-cost falsifier fires; they are recorded as skipped, not passed. Therefore the complete arity-two identity is OBSTRUCTED. This certificate does not guess a repair: a background-compatible mixed gravity-rod binary/chart contribution or a revised unary/binary crosswalk must be derived from the common action and then replayed. The two-sided source isolation is diagnostic only: it identifies the q2 and q1 sources of the first key, not a proof that no other apparatus or emitter orbit is missing. The existing q2 and q3 payloads remain valid as source-labelled tensors, but their coexistence with the completed unary does not define a certified L-infinity coderivation. Because arity two already fails, the q2q2+q1q3 replay, K_Berger equivariance, observer-morphism stability, detector restriction to Z2, nonlinear response rank, physical Bridge 3, finite-parameter causal propagation and all quantum claims remain fail-closed. No compact-product mode is identified with a Berger row.",
   "claim_status": "OBSTRUCTED_COMPLETE_108_ROW_ARITY_TWO_IDENTITY",
   "dependency_refs": {
     "complete_q3": {
       "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPLETE_Q3_PBW.json",
       "result_id": "BERGER_108_ROW_COMPLETE_Q3_PBW",
-      "sha256": "c0025d0410a0bcfef0335e4aba0a444cd682e556f7b2ac26eea6c2a0745de72f"
+      "sha256": "fe874500a4d70bfb81758503cad9b47f96f3d926bcc3c7bbef4b3657ddd4eb53"
     },
     "complete_typed_q2": {
       "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPLETE_Q2_PBW.json",
       "result_id": "BERGER_108_ROW_COMPLETE_Q2_PBW",
-      "sha256": "29d6c42e583d5d08d4d3f9e782a320b191f82b1781a7500991366ec270b59619"
+      "sha256": "e99b05fa81661b299c461af9ccce901b8bb412601d321e8da9f9b864f3a7e613"
     },
     "completed_q1": {
       "path": "closed_universe_observers/certificates/BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET.json",
@@ -195,13 +224,13 @@
     "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,
     "TYPED_64_ROW_BASE_ARITY_TWO_CONTROL_ZERO": true
   },
-  "next_gate": "DERIVE_BACKGROUND_COMPATIBLE_APPARATUS_BV_CHART_CONTRIBUTION_AND_REPLAY_Q1Q2",
+  "next_gate": "DERIVE_MIXED_GRAVITY_ROD_BINARY_CHART_CONTRIBUTION_AND_REPLAY_Q1Q2",
   "provenance": {
     "source_commit": "WORKTREE",
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_108_row_arity_two_obstruction.py",
-        "sha256": "ed1a198d1f942d2228de60997b88cd693c09563bdc195edc4752b153b9deed0c"
+        "sha256": "f407aca26dc237902be45fef9827ffea1a2a196845d7090c3686d70fd52afdb8"
       },
       {
         "path": "closed_universe_observers/berger_108_row_arity_replay.py",
@@ -213,21 +242,21 @@
       },
       {
         "path": "closed_universe_observers/tests/test_berger_108_row_arity_two_obstruction.py",
-        "sha256": "5f4f11168036927caf168b29992e2d3f22b24f20e05bc81be21c01fe83d4f12d"
+        "sha256": "829e05869bb55fbe38d8a4ac9503c3839594e3d4552f8797dd8a6ce621bb75c5"
       },
       {
         "path": "closed_universe_observers/schema/berger-108-row-arity-two-obstruction-v1.schema.json",
-        "sha256": "ac937c7ac1940e3632574b57cdcb49e86929ae7cf9a90b59e0903cac86602c4f"
+        "sha256": "43f442f41cb42ea2bbcced8bae6a90db40019b230bcbee6c53c4e3a77fc85a58"
       },
       {
         "path": "closed_universe_observers/reports/berger-108-row-arity-two-obstruction.md",
-        "sha256": "f190bd2baee1d5789c5462b52adc1af4a5a2febd108e11b02fed4549503c38d5"
+        "sha256": "ceac4eabd1bbfcb41dd297d7351d0a9f91eaa4bf041ea4604721007655a3a4f9"
       }
     ]
   },
   "repair_gate": {
     "acceptance": "the complete (0,0) defect and then every first-bidegree q1q2 coefficient vanish exactly, with the typed 64-row base retained as a zero control",
-    "required_object": "derive a background-compatible apparatus scalar-BV/chart contribution or revise the unary/binary crosswalk from the common action; do not fit coefficients to the defect",
+    "required_object": "derive the background-compatible mixed gravity-rod binary/chart contribution or revise the unary/binary crosswalk from the common action; do not fit coefficients to the defect",
     "status": "OPEN"
   },
   "result_id": "BERGER_108_ROW_ARITY_TWO_OBSTRUCTION",
