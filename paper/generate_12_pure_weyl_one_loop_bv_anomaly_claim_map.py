@@ -29,7 +29,7 @@ COVERAGE_REPORT = (
 )
 OUTPUT = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json"
 EXPECTED_MANUSCRIPT_SHA256 = (
-    "372e7bbc73534e7a39593f07b032f7ffbf74acad80895342643c20e3fa706a9b"
+    "896d66e405c110964bb3355bf1ccc3540c739cba483291f0487494a299050928"
 )
 ALL_LOOP_INPUT_COMMIT = "7fabe987861f1e4facfc2282e7023274df2ddc72"
 ALL_LOOP_INPUT_SHA256 = (
@@ -59,6 +59,8 @@ INPUTS = {
     "candidate_B_classical_obstruction": ROOT / "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1.json",
     "minimal_compensator_action_classification": ROOT / "d_quotient_classical/certificates/COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1.json",
     "minimal_compensator_action_classification_receipt": ROOT / "d_quotient_classical/receipts/COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1_TIER_RECEIPT.json",
+    "quadratic_active_clock_locus": ROOT / "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1.json",
+    "quadratic_active_clock_independent_audit": ROOT / "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json",
     "Q1_disposition": ROOT / "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
     "relative_Einstein_Weyl_cyclic_pushforward": ROOT / "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json",
     "anomaly_induced_Gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
@@ -152,6 +154,8 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     minimal_family_receipt = values[
         "minimal_compensator_action_classification_receipt"
     ]
+    active_clock = values["quadratic_active_clock_locus"]
+    active_clock_audit = values["quadratic_active_clock_independent_audit"]
     q1 = values["Q1_disposition"]
     relative_cyclic_pushforward = values[
         "relative_Einstein_Weyl_cyclic_pushforward"
@@ -290,6 +294,32 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         or minimal_family["claim_flags"]["UNIVERSAL_COMPENSATOR_NO_GO"] is not False
         or minimal_family["selection"]["candidate_C_selected"] is not False
         or minimal_family_receipt["tier_1"]["status"] != "PASS"
+        or _sha256(INPUTS["quadratic_active_clock_locus"])
+        != "9ad148d6b632e215cd75636f5fd5b431fa85cf1698a63f725d8b3c9dfe61de89"
+        or _sha256(INPUTS["quadratic_active_clock_independent_audit"])
+        != "9bda4b758616427bdbf401a499ffd2b7cd9dd69a87223f05fcdf636bb31cd533"
+        or active_clock["result_state"]
+        != "SCOPED_QUADRATIC_ACTIVE_CLOCK_GOOD_LOCUS_EMPTY"
+        or active_clock["seven_gate_classification"]["all_seven_gate_good_locus"]
+        != "EMPTY"
+        or active_clock["selection"]["candidate_C_active_selected"] is not False
+        or active_clock["selection"]["candidate_C_active_action_hash"] is not None
+        or active_clock["claim_flags"]["SCOPED_QUADRATIC_ACTIVE_CLOCK_NO_GO"]
+        is not True
+        or active_clock["claim_flags"]["UNIVERSAL_K_ESSENCE_OR_COMPENSATOR_NO_GO"]
+        is not False
+        or active_clock_audit["result_state"]
+        != "SCOPED_QUADRATIC_ACTIVE_CLOCK_NO_GO_INDEPENDENTLY_FROZEN"
+        or active_clock_audit["freeze_verdict"][
+            "scoped_quadratic_active_clock_no_go_theorem_frozen"
+        ]
+        is not True
+        or active_clock_audit["freeze_verdict"]["candidate_C_active_selected"]
+        is not False
+        or active_clock_audit["claim_flags"][
+            "UNIVERSAL_SCALAR_TENSOR_OR_K_ESSENCE_NO_GO"
+        ]
+        is not False
     ):
         raise ValueError("Paper 12 conditional all-loop dependency drifted")
     if (
@@ -1085,6 +1115,8 @@ def build() -> dict[str, Any]:
     candidate_a = values["candidate_A_classical_obstruction"]
     candidate_b = values["candidate_B_classical_obstruction"]
     minimal_family = values["minimal_compensator_action_classification"]
+    active_clock = values["quadratic_active_clock_locus"]
+    active_clock_audit = values["quadratic_active_clock_independent_audit"]
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
@@ -1302,6 +1334,53 @@ def build() -> dict[str, Any]:
             "universal_compensator_no_go": minimal_family["claim_flags"][
                 "UNIVERSAL_COMPENSATOR_NO_GO"
             ],
+        },
+        "quadratic_active_clock_status": {
+            "result_id": active_clock["result_id"],
+            "independent_audit_result_id": active_clock_audit["result_id"],
+            "result_state": active_clock_audit["result_state"],
+            "source_commit": "f64be4a57",
+            "certificate_sha256": _sha256(
+                INPUTS["quadratic_active_clock_locus"]
+            ),
+            "independent_audit_sha256": _sha256(
+                INPUTS["quadratic_active_clock_independent_audit"]
+            ),
+            "declared_scope": active_clock["action_family"]["declared_scope"],
+            "coefficient_basis": active_clock["action_family"][
+                "coefficient_basis_mod_topology"
+            ],
+            "stationary_locus": active_clock["seven_gate_classification"][
+                "stationary_locus"
+            ],
+            "stationary_locus_dimension": active_clock[
+                "stationary_background_equations"
+            ]["common_system"]["kernel_dimension"],
+            "seven_gate_good_locus": active_clock[
+                "seven_gate_classification"
+            ]["all_seven_gate_good_locus"],
+            "independent_separators": active_clock_audit["freeze_verdict"][
+                "decisive_independent_separators"
+            ],
+            "excluded_enlarged_classes": active_clock["action_family"][
+                "excluded"
+            ],
+            "candidate_C_active_selected": active_clock["selection"][
+                "candidate_C_active_selected"
+            ],
+            "candidate_C_active_action_hash": active_clock["selection"][
+                "candidate_C_active_action_hash"
+            ],
+            "downstream_selected_action_work_authorized": active_clock[
+                "selection"
+            ]["downstream_selected_action_work_authorized"],
+            "scoped_quadratic_active_clock_no_go": active_clock[
+                "claim_flags"
+            ]["SCOPED_QUADRATIC_ACTIVE_CLOCK_NO_GO"],
+            "universal_k_essence_or_compensator_no_go": active_clock[
+                "claim_flags"
+            ]["UNIVERSAL_K_ESSENCE_OR_COMPENSATOR_NO_GO"],
+            "regulator_QAP_status": "ACTION_DEPENDENT_NOT_ACTIVATED",
         },
         "certified_claims": {
             "strict_quotient_scope": "REGULAR_BACH_LOCUS",

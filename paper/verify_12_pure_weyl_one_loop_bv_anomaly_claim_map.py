@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import copy
 import hashlib
 import json
 from pathlib import Path
@@ -15,7 +16,7 @@ COVERAGE = (
     / "paper/12-pure-weyl-one-loop-bv-anomaly-science-forge-paper-coverage.json"
 )
 EXPECTED_MANUSCRIPT_SHA256 = (
-    "372e7bbc73534e7a39593f07b032f7ffbf74acad80895342643c20e3fa706a9b"
+    "896d66e405c110964bb3355bf1ccc3540c739cba483291f0487494a299050928"
 )
 ALL_LOOP_INPUT_SHA256 = (
     "3649925e44d99bea0020f3d1c20a16c54a44f6c9714a3c273c20a6e6d8f84dbc"
@@ -24,6 +25,27 @@ ALL_LOOP_INPUT_SHA256 = (
 
 def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _verify_active_clock_claim_boundary(status: dict) -> None:
+    assert status["candidate_C_active_selected"] is False
+    assert status["candidate_C_active_action_hash"] is None
+    assert status["downstream_selected_action_work_authorized"] is False
+    assert status["scoped_quadratic_active_clock_no_go"] is True
+    assert status["universal_k_essence_or_compensator_no_go"] is False
+    assert status["regulator_QAP_status"] == "ACTION_DEPENDENT_NOT_ACTIVATED"
+
+
+def _assert_active_clock_mutation_rejected(
+    status: dict, key: str, value: object
+) -> None:
+    mutated = copy.deepcopy(status)
+    mutated[key] = value
+    try:
+        _verify_active_clock_claim_boundary(mutated)
+    except AssertionError:
+        return
+    raise AssertionError(f"active-clock claim mutation was accepted: {key}")
 
 
 def main() -> None:
@@ -104,6 +126,11 @@ def main() -> None:
         "seven-gate good locus is empty",
         "not a universal compensator no-go",
         "No Candidate~C action or action hash is selected",
+        "complete shift-symmetric quadratic $P(X)$ active-clock extension",
+        "one-dimensional common stationary locus",
+        "\\operatorname{diag}(-6,6,-36t/25)",
+        "cylinder clock requires $t<0$ whereas the Berger clock requires $t>0$",
+        "No Candidate~C$_{\\rm active}$ action hash is exported",
     ]
     for fragment in required_manuscript_fragments:
         assert fragment in normalized_manuscript, fragment
@@ -243,6 +270,49 @@ def main() -> None:
     assert len(family_edges) == 1
     assert family_edges[0]["body"]["claim"] == family_claim
     assert family_edges[0]["body"]["stale"] is False
+    active_result = (
+        "sf:d_quotient_classical/result/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1"
+    )
+    active_audit_result = (
+        "sf:d_quotient_classical/result/"
+        "COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1"
+    )
+    active_claim = (
+        f"{paper_id}/claim/quadratic-active-clock-selection-frontier"
+    )
+    assert nodes[active_result]["body"]["certificate_sha256"] == (
+        "9ad148d6b632e215cd75636f5fd5b431fa85cf1698a63f725d8b3c9dfe61de89"
+    )
+    assert nodes[active_audit_result]["body"]["certificate_sha256"] == (
+        "9bda4b758616427bdbf401a499ffd2b7cd9dd69a87223f05fcdf636bb31cd533"
+    )
+    assert nodes[active_result]["body"]["stale"] is False
+    assert nodes[active_audit_result]["body"]["stale"] is False
+    assert nodes[active_claim]["body"]["cites"] == [
+        active_result,
+        active_audit_result,
+    ]
+    active_materiality = [
+        node for node in coverage["nodes"]
+        if node["kind"] == "materiality"
+        and node["body"]["result_id"] in {active_result, active_audit_result}
+    ]
+    assert len(active_materiality) == 2
+    assert all(
+        node["body"]["materiality"] == "TECHNICAL"
+        for node in active_materiality
+    )
+    active_edges = [
+        node for node in coverage["nodes"]
+        if node["kind"] == "result_paper_edge"
+        and node["body"]["from"] in {active_result, active_audit_result}
+    ]
+    assert len(active_edges) == 2
+    assert all(
+        node["body"]["claim"] == active_claim
+        and node["body"]["stale"] is False
+        for node in active_edges
+    )
 
     dispositions = payload["theory_dispositions"]
     assert dispositions == {
@@ -321,6 +391,73 @@ def main() -> None:
         "candidate_C_selected": False,
         "selected_action_receiver": False,
         "universal_compensator_no_go": False,
+    }
+    active_clock = payload["quadratic_active_clock_status"]
+    _verify_active_clock_claim_boundary(active_clock)
+    _assert_active_clock_mutation_rejected(
+        active_clock, "candidate_C_active_selected", True
+    )
+    _assert_active_clock_mutation_rejected(
+        active_clock, "universal_k_essence_or_compensator_no_go", True
+    )
+    assert active_clock == {
+        "result_id": "COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1",
+        "independent_audit_result_id": (
+            "COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1"
+        ),
+        "result_state": (
+            "SCOPED_QUADRATIC_ACTIVE_CLOCK_NO_GO_INDEPENDENTLY_FROZEN"
+        ),
+        "source_commit": "f64be4a57",
+        "certificate_sha256": (
+            "9ad148d6b632e215cd75636f5fd5b431fa85cf1698a63f725d8b3c9dfe61de89"
+        ),
+        "independent_audit_sha256": (
+            "9bda4b758616427bdbf401a499ffd2b7cd9dd69a87223f05fcdf636bb31cd533"
+        ),
+        "declared_scope": (
+            "formal rho!=0 polar complex-compensator theory on the same "
+            "dressed metric, parity even, four metric derivatives and the "
+            "complete quadratic shift-symmetric phase polynomial P(X)"
+        ),
+        "coefficient_basis": [
+            "alpha_B",
+            "alpha_R",
+            "M_P_squared",
+            "p0",
+            "p1",
+            "p2",
+        ],
+        "stationary_locus": (
+            "t(81/20,27/3290,-324/1645,486/1645,18/25,1), t in R"
+        ),
+        "stationary_locus_dimension": 1,
+        "seven_gate_good_locus": "EMPTY",
+        "independent_separators": [
+            (
+                "rational congruence diagonal (-6,6,-36t/25) is split for "
+                "every t!=0"
+            ),
+            (
+                "cylinder standard sign requires t<0 while Berger "
+                "longitudinal sound and standard sign require t>0"
+            ),
+            "t=0 is the zero action and has no pairing or dynamics",
+        ],
+        "excluded_enlarged_classes": [
+            "Henneaux-Teitelboim or any multiplier sector",
+            "new fields or a changed global gauge quotient",
+            "theta-dependent coefficients or a theta potential",
+            "operators beyond quadratic P(X)",
+            "higher derivatives of theta",
+            "an independent conformal gauge connection",
+        ],
+        "candidate_C_active_selected": False,
+        "candidate_C_active_action_hash": None,
+        "downstream_selected_action_work_authorized": False,
+        "scoped_quadratic_active_clock_no_go": True,
+        "universal_k_essence_or_compensator_no_go": False,
+        "regulator_QAP_status": "ACTION_DEPENDENT_NOT_ACTIVATED",
     }
     claims = payload["certified_claims"]
     assert claims["strict_quotient_scope"] == "REGULAR_BACH_LOCUS"
@@ -738,7 +875,7 @@ def main() -> None:
     assert claims["physical_Hessian_triangle_integrated_channel_count"] == 11
     assert claims["physical_Hessian_triangle_corner_count"] == 33
     assert claims["physical_Hessian_triangle_structured_basis_coordinate_count"] == 77
-    assert len(payload["inputs"]) == 78
+    assert len(payload["inputs"]) == 80
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative

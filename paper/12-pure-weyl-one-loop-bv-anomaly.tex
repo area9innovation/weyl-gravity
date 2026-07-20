@@ -832,13 +832,44 @@ Candidate~C action or action hash is selected, so every regulator, Jacobian,
 mixing and QAP implementation gate remains action dependent and no candidate
 Hessian enters the conditional quantum theorem.
 
+The independently frozen successor closes one previously excluded direction:
+the complete shift-symmetric quadratic $P(X)$ active-clock extension, with
+\[
+ X=\widehat g^{ab}\partial_a\theta\,\partial_b\theta,
+ \qquad P(X)=p_0+p_1X+p_2X^2,
+\]
+and no Henneaux--Teitelboim sector or new fields.  On the common unit-cylinder
+and frozen Berger fixtures its stationary equations have the one-dimensional
+common stationary locus
+\[
+ (\alpha_B,\alpha_R,M_P^2,p_0,p_1,p_2)
+ =t\left(\frac{81}{20},\frac{27}{3290},-\frac{324}{1645},
+          \frac{486}{1645},\frac{18}{25},1\right).
+\]
+The seven-gate good locus is nevertheless empty for two independently replayed
+reasons.  For every $t\ne0$, a rational congruence puts the coupled
+gravity--auxiliary velocity form into
+\[
+ \operatorname{diag}(-6,6,-36t/25),
+\]
+so its gravity--auxiliary pair remains split.  Independently, the standard-sign
+cylinder clock requires $t<0$ whereas the Berger clock requires $t>0$; at
+$t=0$ the action vanishes and supplies neither pairing nor dynamics.  This is
+a scoped no-go for the declared quadratic active-clock family, not a universal
+$k$-essence or compensator no-go.  It excludes neither higher $P(X)$ nor
+higher phase derivatives, nearby backgrounds, fixed-charge sectors, new
+fields, or enlarged gauge groups.  No Candidate~C$_{\rm active}$ action hash
+is exported, so regulator and QAP consumers remain action dependent.
+
 The four machine receipts are
 \path{TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION},
 \path{DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT},
 \path{DRESSED_EVANESCENT_GEOMETRIC_BV_MODULE_PREFLIGHT}, and
 \path{DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT}.
-The selection frontier is fixed by
-\path{COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1}.
+The selection frontier is fixed jointly by
+\path{COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1},
+\path{COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1}, and
+\path{COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1}.
 They do not establish a QAP, an unconditional all-loop QME, or any
 Lorentzian or state result.
 

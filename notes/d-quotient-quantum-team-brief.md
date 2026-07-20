@@ -2379,3 +2379,25 @@ precise non-definition result, not global anomaly freedom.
 
 - [`COMPLEX_COMPENSATOR_GLOBAL_ANOMALY_CARRIER_NONDEFINITION.json`](../quantum-weyl/anomalies/certificates/COMPLEX_COMPENSATOR_GLOBAL_ANOMALY_CARRIER_NONDEFINITION.json)
 - [`complex-compensator-global-anomaly-carrier-preflight.md`](../quantum-weyl/reports/complex-compensator-global-anomaly-carrier-preflight.md)
+
+## Quadratic active-clock selection frontier (2026-07-20)
+
+Paper 12 now imports the independently frozen classification of the complete
+declared shift-symmetric quadratic \(P(X)\) active-clock extension.  Its common
+unit-cylinder/Berger stationary locus is one-dimensional, but its seven-gate
+good locus is empty.  Every nonzero point retains a split
+gravity--auxiliary pair, and the standard-sign cylinder and Berger clock
+conditions require respectively \(t<0\) and \(t>0\).  The zero point has no
+action, pairing or dynamics.
+
+This is a scoped result for quadratic \(P(X)\), the two frozen backgrounds,
+and the declared field/gauge content.  Higher \(P(X)\), higher derivatives,
+nearby backgrounds, fixed-charge sectors, new fields and enlarged gauge
+groups remain outside it.  No `Candidate C_active` action hash was exported,
+so no selected Hessian, regulator or QAP consumer is activated.
+
+This result is `LOCAL-ALGEBRAIC`/`LORENTZIAN-CAUSAL`.
+
+- [`COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1.json`](../d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1.json)
+- [`COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json`](../d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json)
+- [`quantum-paper12-active-clock-px2-no-go-status-correction-2026-07-20.md`](../reports/quantum-paper12-active-clock-px2-no-go-status-correction-2026-07-20.md)

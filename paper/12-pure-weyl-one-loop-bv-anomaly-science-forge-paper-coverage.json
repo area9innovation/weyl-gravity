@@ -7,7 +7,7 @@
       "body": {
         "paper_class": "technical",
         "path": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-        "manuscript_sha256": "372e7bbc73534e7a39593f07b032f7ffbf74acad80895342643c20e3fa706a9b"
+        "manuscript_sha256": "896d66e405c110964bb3355bf1ccc3540c739cba483291f0487494a299050928"
       }
     },
     {
@@ -277,6 +277,103 @@
         "from": "sf:d_quotient_classical/result/COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1",
         "to": "sf:paper/12-pure-weyl-one-loop-bv-anomaly",
         "claim": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/minimal-compensator-family-selection-frontier",
+        "edge_kind": "PRIMARY_THEOREM",
+        "stale": false,
+        "version": 1,
+        "stamp": "2026-07-20",
+        "native": {"source_schema": "result-paper-edge-v0"}
+      }
+    },
+    {
+      "kind": "result",
+      "id": "sf:d_quotient_classical/result/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1",
+      "body": {
+        "lifecycle": "CERTIFIED",
+        "boundary": "declared-quadratic-shift-symmetric-active-clock-family-on-unit-cylinder-and-frozen-Berger-fixtures",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+        "certificate": "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1.json",
+        "certificate_sha256": "9ad148d6b632e215cd75636f5fd5b431fa85cf1698a63f725d8b3c9dfe61de89",
+        "source_commit": "f64be4a57",
+        "stale": false,
+        "superseded": false
+      }
+    },
+    {
+      "kind": "result",
+      "id": "sf:d_quotient_classical/result/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1",
+      "body": {
+        "lifecycle": "CERTIFIED",
+        "boundary": "declared-quadratic-shift-symmetric-active-clock-family-on-unit-cylinder-and-frozen-Berger-fixtures",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+        "certificate": "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json",
+        "certificate_sha256": "9bda4b758616427bdbf401a499ffd2b7cd9dd69a87223f05fcdf636bb31cd533",
+        "source_commit": "f64be4a57",
+        "stale": false,
+        "superseded": false
+      }
+    },
+    {
+      "kind": "materiality",
+      "id": "sf:materiality/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1/v1",
+      "body": {
+        "result_id": "sf:d_quotient_classical/result/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1",
+        "materiality": "TECHNICAL",
+        "version": 1,
+        "by": "quantum-qme-team",
+        "stamp": "2026-07-20",
+        "rationale": "The exact locus and separator close the declared quadratic active-clock escape without selecting an action-specific quantum receiver.",
+        "native": {"source_schema": "materiality-v0"}
+      }
+    },
+    {
+      "kind": "materiality",
+      "id": "sf:materiality/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1/v1",
+      "body": {
+        "result_id": "sf:d_quotient_classical/result/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1",
+        "materiality": "TECHNICAL",
+        "version": 1,
+        "by": "quantum-qme-team",
+        "stamp": "2026-07-20",
+        "rationale": "The method-distinct audit is the freeze evidence that permits Paper 12 to cite the scoped no-go.",
+        "native": {"source_schema": "materiality-v0"}
+      }
+    },
+    {
+      "kind": "paper_claim",
+      "id": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/quadratic-active-clock-selection-frontier",
+      "body": {
+        "paper": "sf:paper/12-pure-weyl-one-loop-bv-anomaly",
+        "material": true,
+        "asserts_lifecycle": "CERTIFIED",
+        "boundary": "declared-quadratic-shift-symmetric-active-clock-family-on-unit-cylinder-and-frozen-Berger-fixtures",
+        "cites": [
+          "sf:d_quotient_classical/result/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1",
+          "sf:d_quotient_classical/result/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1"
+        ],
+        "statement": "The complete declared quadratic P(X) active-clock family has a one-dimensional stationary locus but an empty seven-gate good locus; the result is independently frozen, scoped to the declared action and two backgrounds, and exports no Candidate C_active action hash."
+      }
+    },
+    {
+      "kind": "result_paper_edge",
+      "id": "sf:result-paper-edge/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1/P12/v1",
+      "body": {
+        "from": "sf:d_quotient_classical/result/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1",
+        "to": "sf:paper/12-pure-weyl-one-loop-bv-anomaly",
+        "claim": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/quadratic-active-clock-selection-frontier",
+        "edge_kind": "PRIMARY_THEOREM",
+        "stale": false,
+        "version": 1,
+        "stamp": "2026-07-20",
+        "native": {"source_schema": "result-paper-edge-v0"}
+      }
+    },
+    {
+      "kind": "result_paper_edge",
+      "id": "sf:result-paper-edge/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1/P12/v1",
+      "body": {
+        "from": "sf:d_quotient_classical/result/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1",
+        "to": "sf:paper/12-pure-weyl-one-loop-bv-anomaly",
+        "claim": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/quadratic-active-clock-selection-frontier",
         "edge_kind": "PRIMARY_THEOREM",
         "stale": false,
         "version": 1,
