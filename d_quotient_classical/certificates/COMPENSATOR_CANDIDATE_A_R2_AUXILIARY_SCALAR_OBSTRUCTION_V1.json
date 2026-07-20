@@ -1,0 +1,598 @@
+{
+  "action_identity": {
+    "action_sha256": "2fa3f7ff15b95fcebed9c8bfbdf33a33942ef79a66d23d33f00a3f63d0213e11",
+    "identities": {
+      "auxiliary_elimination": "chi=2 beta R",
+      "background": "R0=6, chi0=-1/12, psi0=0",
+      "critical_metric_density": "R/12-R^2/144-1/4=-(R-6)^2/144",
+      "shifted_identity": "chi R-chi^2/(4 beta)+R/12-1/4=psi(R-6)+36 psi^2"
+    },
+    "manifest": {
+      "M_P_squared": "1/6",
+      "V0": "1/4",
+      "beta": "-1/144",
+      "chi_background": "-1/12",
+      "density": "alpha_B C(g_hat)^2/8 + chi R(g_hat) - chi^2/(4 beta) + M_P^2 R(g_hat)/2 - V0 - (nabla theta)^2/2",
+      "global_internal_symmetry": "U(1) shift of theta",
+      "metric_gauge_group_after_dressing": "Diff only",
+      "original_Weyl_sector": "pointwise contractible (tau,omega,omega_star,tau_hat_star) quartet",
+      "psi_definition": "psi=chi+1/12",
+      "shifted_scalar_tensor_density": "psi(R-6)+36 psi^2"
+    }
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL theorem obstructs Candidate A on the frozen unit-cylinder action. The auxiliary rewrite derives the complete h-psi mixed Hessian and a consistent spatially homogeneous sector satisfying both metric and auxiliary equations. Its reduced Lee-Wald kinetic form has inertia (1,1), raw-D evolution has real repeated roots +/-sqrt(2), and the D Hamiltonian has both signs. Candidate A therefore fails the mandatory physical-sign and D gates. The theorem also proves that the frozen positive Berger fixture is not a solution of this changed action. It supersedes the prior complete-direct-sum rank-390 promotion while retaining the rational trace Schur-complement and reduced Green identities. It does not obstruct other R^2 couplings, a separately retuned changed-action Berger family, Candidate B, or larger theories, and establishes no Hadamard, anomaly, QME, particle, scattering or unitarity claim.",
+  "claim_flags": {
+    "CANDIDATE_A_OBSTRUCTED": true,
+    "CANDIDATE_A_SELECTED": false,
+    "COMPLETE_SECOND_ORDER_CAUSAL_PARENT": false,
+    "FROZEN_BERGER_COMPATIBLE": false,
+    "HADAMARD_STATE": false,
+    "HEALTHY_SCALAR": false,
+    "PARTICLE_OR_UNITARITY": false,
+    "PHYSICAL_SIGN_INDEFINITE": true,
+    "QUANTUM_MASTER_EQUATION": false,
+    "RAW_D_GAUGE_PRESERVED": false,
+    "REDUCED_SCALAR_GREEN_BLOCK": true
+  },
+  "comparison_disposition": {
+    "Berger_compatibility": {
+      "Berger_scalar_curvature": "151/80",
+      "Delta_F_at_fixture": "93839/921600",
+      "Delta_F_prime_at_fixture": "809/5760",
+      "action_mismatches": [
+        "Berger kappa_r=+1 versus Candidate-A kappa_r=-1",
+        "Berger lambda=119/480 versus Candidate-A lambda=1",
+        "Berger has no beta R^2 term versus Candidate-A beta=-1/144",
+        "the effective Einstein coefficient changes sign"
+      ],
+      "difference_density": "Delta F=R/6-R^2/144-(1-119/480)/4",
+      "does_not_obstruct": "a separately retuned Berger family for the changed action",
+      "fixture": "a=1, q=9/40, alpha_B=5, rho^2=1, omega=3/4",
+      "orthonormal_metric_Euler_residual": [
+        "93839/1843200",
+        "135917/1843200",
+        "135917/1843200",
+        "-12943/368640"
+      ],
+      "status": "FAIL_FROZEN_BERGER_BACKGROUND_NOT_A_SOLUTION"
+    },
+    "Einstein_control": {
+      "M_P_squared": "1/6",
+      "beta": "-1/144",
+      "formula": "m0^2=M_P^2/(12 beta)",
+      "m0_squared": "-2",
+      "role": "cross-check only; the cylinder verdict comes from the full non-Einstein Hessian"
+    },
+    "overall": "CANDIDATE_A_OBSTRUCTED_BY_PHYSICAL_SCALAR_SIGN",
+    "seven_gate_disposition": [
+      {
+        "gate": 1,
+        "name": "complete_action_BV_CME_Q2",
+        "reason": "the auxiliary action, Diff cotangent lift, nonminimal doublets and original Weyl quartet are explicit",
+        "status": "PASS"
+      },
+      {
+        "gate": 2,
+        "name": "compact_support_u_disposition",
+        "reason": "arbitrary compact-support u is no longer closed, but it is replaced by the displayed scalar Jordan solution sector",
+        "status": "PASS_WITH_PHYSICAL_REPLACEMENT"
+      },
+      {
+        "gate": 3,
+        "name": "complete_support_local_causal_parent",
+        "reason": "the reduced auxiliary scalar block has exact Green inverses; the complete mixed metric parent is not promoted after the terminal physical-sign failure",
+        "status": "NOT_REACHED_AFTER_GATE_5_FAILURE"
+      },
+      {
+        "gate": 4,
+        "name": "cyclicity_and_reduced_pairing",
+        "reason": "the action-derived scalar Lee-Wald form is exact and nondegenerate, but it has split signature",
+        "status": "REDUCED_BLOCK_PASS_COMPLETE_PARENT_NOT_REACHED"
+      },
+      {
+        "gate": 5,
+        "name": "no_negative_or_uncontrolled_direction",
+        "reason": "the homogeneous full-Hessian sector has velocity inertia (1,1), real D roots and an indefinite Hamiltonian",
+        "status": "FAIL"
+      },
+      {
+        "gate": 6,
+        "name": "zero_charge_D_sector",
+        "reason": "i_D Omega=dH_D is nonzero and H_D has both signs; only a proper quadratic cone has zero charge",
+        "status": "FAIL"
+      },
+      {
+        "gate": 7,
+        "name": "healthy_Berger_clock_compatibility",
+        "reason": "the frozen positive Berger fixture is a different action and the exact changed-action Euler residual is nonzero in all independent rows",
+        "status": "FAIL"
+      }
+    ]
+  },
+  "content_hashes": {
+    "action_sha256": "2fa3f7ff15b95fcebed9c8bfbdf33a33942ef79a66d23d33f00a3f63d0213e11",
+    "certificate_core_sha256": "2a48dd38efef0ce30043eb557170655b65b042ac0fd6dec576dcc38c281cd19a",
+    "comparison_sha256": "e50506601b24e3ca0eb0329a44ee254de4a414302a5e002a882726590eb7c896",
+    "homogeneous_sector_sha256": "2e3a9dd9cb42da2caa6649a86ffc79eb9cb308f61b3a90efda40e1ea081d4c35",
+    "mixed_Hessian_sha256": "8a8532b96a73c4608cf23c4bac2c264c3ec7e0d019f148a883408b6e4f8a914d"
+  },
+  "dependencies": {
+    "action_preflight": {
+      "path": "d_quotient_classical/certificates/COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1.json",
+      "result_id": "COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1",
+      "sha256": "a537e31bf667520443903551b5bf2596dff9a1c35fade88d2ffc1e89c1e0b836",
+      "source_commit": "306ff78a2001f23124d412e9a2f41531bec74f78"
+    },
+    "positive_Berger_clock": {
+      "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "result_id": "POSITIVE_BERGER_CLOCK_BACKGROUND",
+      "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687",
+      "source_commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db"
+    },
+    "strict_metric_endpoint": {
+      "path": "covariant_completion/certificates/curved_prolonged_metric_endpoint_complex.json",
+      "result_id": "pure-weyl-prolonged-metric-endpoint-complex-v1",
+      "sha256": "870621ae6750b1e66e3f3316c5a2680d1244c7fca3be4d6aeaabbfdc2178fd79",
+      "source_commit": "6ebd72043d61dd3ca9a8cd571321424408762cd5"
+    },
+    "strict_tau_obstruction": {
+      "path": "d_quotient_classical/certificates/TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1.json",
+      "result_id": "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1",
+      "sha256": "db1f998a0920adb94cf4fcbffb1b9eb2ea6537876aff9513aac4e4d9ec2b51b9",
+      "source_commit": "2b834dc751d6948366fd5c3d99174c268fa50d21"
+    },
+    "superseded_direct_sum_parent": {
+      "path": "d_quotient_classical/certificates/COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1.json",
+      "result_id": "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1",
+      "sha256": "be7847102b7c219fd09865b68c4982c84e280e09c73364c509dcb9aaca91d6c4",
+      "source_commit": "08ce0b87301b60a3ff717dfe7d285184a20c3820"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "Berger_residual_nonzero": true,
+    "D_Hamiltonian_identity": true,
+    "D_symplectic": true,
+    "Einstein_mass_crosscheck": true,
+    "Lee_Wald_nondegenerate": true,
+    "Lee_Wald_split_inertia": true,
+    "auxiliary_elimination": true,
+    "both_full_Hessian_equations_on_homogeneous_sector": true,
+    "dependency_hashes": true,
+    "full_mixed_Hessian_formal_adjoint": true,
+    "real_Jordan_roots": true,
+    "scalar_Green_inverse": true,
+    "shifted_action_identity": true
+  },
+  "full_non_Einstein_Hessian_and_BV": {
+    "BV_rows": {
+      "CME": "PASS_BY_ACTION_INVARIANCE_AND_CANONICAL_COTANGENT_LIFT",
+      "Q_antifields": "minus the action Euler rows plus the canonical Diff/Weyl cotangent lift",
+      "Q_chi": "L_xi chi",
+      "Q_g_hat": "L_xi g_hat",
+      "Q_omega": "L_xi omega",
+      "Q_squared_zero": "PASS",
+      "Q_tau": "L_xi tau+omega",
+      "Q_theta": "L_xi theta",
+      "Q_xi": "xi^nu partial_nu xi",
+      "Weyl_quartet": "UNCHANGED_EXACT_CONTRACTION",
+      "important_reclassification": "the dressed metric has Diff gauge only; the original Weyl ghost acts in the tau quartet and is not a conformal gauge generator of g_hat",
+      "minimal_fields": [
+        "g_hat",
+        "chi",
+        "theta",
+        "xi",
+        "tau",
+        "omega",
+        "and canonical antifields"
+      ],
+      "new_chi_Euler_row": "R(g_hat)-chi/(2 beta)",
+      "nonminimal_rows": "the Diff and Weyl antighost/multiplier cotangent doublets imported from the action preflight",
+      "real_structure": "componentwise real"
+    },
+    "full_action_hessian": {
+      "block_formula": "[[B_C2, L], [delta_R,72]], L_ab=nabla_a nabla_b-g_ab Box-Ric_ab",
+      "covector_symbols": [
+        "z0",
+        "z1",
+        "z2",
+        "z3"
+      ],
+      "delta_R": "nabla_a nabla_b h^ab-Box tr(h)-Ric_ab h^ab",
+      "field_basis": [
+        "h_00",
+        "h_01",
+        "h_02",
+        "h_03",
+        "h_11",
+        "h_12",
+        "h_13",
+        "h_22",
+        "h_23",
+        "h_33",
+        "psi"
+      ],
+      "formal_adjoint_defect": 0,
+      "mixed_block_polynomial": {
+        "column_count": 11,
+        "entries": [
+          {
+            "coefficient": "z1**2 + z2**2 + z3**2",
+            "column": 10,
+            "row": 0
+          },
+          {
+            "coefficient": "-2*z0*z1",
+            "column": 10,
+            "row": 1
+          },
+          {
+            "coefficient": "-2*z0*z2",
+            "column": 10,
+            "row": 2
+          },
+          {
+            "coefficient": "-2*z0*z3",
+            "column": 10,
+            "row": 3
+          },
+          {
+            "coefficient": "z0**2 - z2**2 - z3**2 - 2",
+            "column": 10,
+            "row": 4
+          },
+          {
+            "coefficient": "2*z1*z2",
+            "column": 10,
+            "row": 5
+          },
+          {
+            "coefficient": "2*z1*z3",
+            "column": 10,
+            "row": 6
+          },
+          {
+            "coefficient": "z0**2 - z1**2 - z3**2 - 2",
+            "column": 10,
+            "row": 7
+          },
+          {
+            "coefficient": "2*z2*z3",
+            "column": 10,
+            "row": 8
+          },
+          {
+            "coefficient": "z0**2 - z1**2 - z2**2 - 2",
+            "column": 10,
+            "row": 9
+          },
+          {
+            "coefficient": "z1**2 + z2**2 + z3**2",
+            "column": 0,
+            "row": 10
+          },
+          {
+            "coefficient": "-2*z0*z1",
+            "column": 1,
+            "row": 10
+          },
+          {
+            "coefficient": "-2*z0*z2",
+            "column": 2,
+            "row": 10
+          },
+          {
+            "coefficient": "-2*z0*z3",
+            "column": 3,
+            "row": 10
+          },
+          {
+            "coefficient": "z0**2 - z2**2 - z3**2 - 2",
+            "column": 4,
+            "row": 10
+          },
+          {
+            "coefficient": "2*z1*z2",
+            "column": 5,
+            "row": 10
+          },
+          {
+            "coefficient": "2*z1*z3",
+            "column": 6,
+            "row": 10
+          },
+          {
+            "coefficient": "z0**2 - z1**2 - z3**2 - 2",
+            "column": 7,
+            "row": 10
+          },
+          {
+            "coefficient": "2*z2*z3",
+            "column": 8,
+            "row": 10
+          },
+          {
+            "coefficient": "z0**2 - z1**2 - z2**2 - 2",
+            "column": 9,
+            "row": 10
+          },
+          {
+            "coefficient": "72",
+            "column": 10,
+            "row": 10
+          }
+        ],
+        "row_count": 11,
+        "sha256": "30b88788dcf9a926840e092084b4af62615efac3e2d18adda17dbdd3bd443bfb"
+      },
+      "old_direct_sum_statement_valid": false,
+      "strict_complement_change": "NONZERO: L psi has tracefree components on the non-Einstein cylinder",
+      "trace_restriction": "delta_R(u g_bar)=-3(Box+2)u"
+    },
+    "normal_frame": {
+      "Ricci_covariant": [
+        "0",
+        "2",
+        "2",
+        "2"
+      ],
+      "metric": [
+        "-1",
+        "1",
+        "1",
+        "1"
+      ],
+      "parallel_Ricci": true,
+      "scalar_curvature": "6"
+    }
+  },
+  "homogeneous_scalar_full_Hessian_sector": {
+    "D_evolution_and_charge": {
+      "Cartan_identity": "i_D Omega=d H_D",
+      "D_matrix": {
+        "column_count": 4,
+        "entries": [
+          {
+            "coefficient": "1",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "2",
+            "column": 0,
+            "row": 1
+          },
+          {
+            "coefficient": "-24",
+            "column": 2,
+            "row": 1
+          },
+          {
+            "coefficient": "1",
+            "column": 3,
+            "row": 2
+          },
+          {
+            "coefficient": "2",
+            "column": 2,
+            "row": 3
+          }
+        ],
+        "row_count": 4,
+        "sha256": "2cc11e3d4398220feee14710ea577326e515544e8e2ce33a5f67b290d0d75686"
+      },
+      "D_presymplectic_degeneracy": false,
+      "Hamiltonian": "H_D=-3 dot(u) dot(psi)+6 psi u-36 psi^2",
+      "Hamiltonian_Hessian": {
+        "column_count": 4,
+        "entries": [
+          {
+            "coefficient": "6",
+            "column": 2,
+            "row": 0
+          },
+          {
+            "coefficient": "-3",
+            "column": 3,
+            "row": 1
+          },
+          {
+            "coefficient": "6",
+            "column": 0,
+            "row": 2
+          },
+          {
+            "coefficient": "-72",
+            "column": 2,
+            "row": 2
+          },
+          {
+            "coefficient": "-3",
+            "column": 1,
+            "row": 3
+          }
+        ],
+        "row_count": 4,
+        "sha256": "8f0be4755489f842035ef1a80e38517814817bb8465db62003ad0b56784ac704"
+      },
+      "Jordan_block_size": 2,
+      "characteristic_polynomial": "(lambda^2-2)^2",
+      "minimal_polynomial": "(lambda^2-2)^2",
+      "negative_witness": "(u,dot_u,psi,dot_psi)=(0,1,0,1) gives H_D=-3",
+      "positive_witness": "(u,dot_u,psi,dot_psi)=(0,1,0,-1) gives H_D=3",
+      "real_roots": [
+        "-sqrt(2)",
+        "sqrt(2)"
+      ],
+      "state_basis": [
+        "u",
+        "dot_u",
+        "psi",
+        "dot_psi"
+      ],
+      "zero_charge_sector": "proper quadratic cone H_D=0, not the complete scalar solution space"
+    },
+    "Lee_Wald_and_sign": {
+      "Cauchy_determinant": "81",
+      "Cauchy_rank": 4,
+      "Cauchy_symplectic_matrix": {
+        "column_count": 4,
+        "entries": [
+          {
+            "coefficient": "-3",
+            "column": 3,
+            "row": 0
+          },
+          {
+            "coefficient": "3",
+            "column": 2,
+            "row": 1
+          },
+          {
+            "coefficient": "-3",
+            "column": 1,
+            "row": 2
+          },
+          {
+            "coefficient": "3",
+            "column": 0,
+            "row": 3
+          }
+        ],
+        "row_count": 4,
+        "sha256": "f6568aacb94439fc61fa566838dbe0fe32b9c6f39385b9ba1acdc454a5f9652c"
+      },
+      "current": "omega^0=-3[delta u wedge delta dot(psi)+delta psi wedge delta dot(u)]",
+      "physical_sign": "INDEFINITE",
+      "quadratic_density_after_spatial_integration": "L_hom=-3 dot(psi) dot(u)-6 psi u+36 psi^2",
+      "velocity_Hessian": {
+        "column_count": 2,
+        "entries": [
+          {
+            "coefficient": "-3",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "-3",
+            "column": 0,
+            "row": 1
+          }
+        ],
+        "row_count": 2,
+        "sha256": "c0912c166020700bbe5b24d8b771d1e226603bf168712537316c09ca5a708736"
+      },
+      "velocity_Hessian_eigenvalues": [
+        "-3",
+        "3"
+      ],
+      "velocity_Hessian_inertia": [
+        1,
+        1,
+        0
+      ]
+    },
+    "all_scalar_mode_ledger": {
+      "Diff_nonmembership": "every psi!=0 mode has delta_R=-72 psi !=0 whereas delta_R(L_xi g_bar)=L_xi R_bar=0",
+      "S3_scalar_harmonics": "Delta Y_lm=-l(l+2)Y_lm, l=0,1,...",
+      "compact_support_kernel": "ZERO on the standard scalar Cauchy domain",
+      "frequency_squared": "Omega_l^2=l(l+2)-2",
+      "generalized_root": "P_2 psi=0, P_2 u=24 psi",
+      "l0": "Omega_0^2=-2: exp(+/-sqrt(2)t) ordinary and Jordan partners",
+      "l1": "Omega_1^2=1; the eight real proper-CKV conformal factors lie only in the psi=0 ordinary-root subspace",
+      "l_ge_2": "oscillatory repeated-root/Jordan pairs",
+      "multiplicity": "one ordinary and one generalized root per harmonic/polarity",
+      "ordinary_root": "psi=0, P_2 u=0",
+      "time_independent_kernel": "ZERO because l(l+2)=2 has no nonnegative integer solution"
+    },
+    "consistent_full_Hessian_restriction": {
+      "B_C2_on_trace": "0 by exact conformal invariance",
+      "Schur_equation": "P_2^2 u=0",
+      "ansatz": "h_ab=u(t) g_bar_ab and psi=psi(t), spatially homogeneous",
+      "auxiliary_row": "delta_R+72 psi=-3 P_2 u+72 psi",
+      "complete_equations": [
+        "P_2 psi=0",
+        "P_2 u=24 psi"
+      ],
+      "mixed_metric_rows": "L_00 psi=0; L_ij psi=-(P_2 psi) g_ij",
+      "why_not_metric_only": "both the metric L psi row and the chi/psi Euler row are imposed"
+    },
+    "second_order_scalar_parent": {
+      "H(P_2)": {
+        "column_count": 2,
+        "entries": [
+          {
+            "coefficient": "-3*P",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "-3*P",
+            "column": 0,
+            "row": 1
+          },
+          {
+            "coefficient": "72",
+            "column": 1,
+            "row": 1
+          }
+        ],
+        "row_count": 2,
+        "sha256": "055119d98835d446bc5400d0e020b115840688df3bb133781ca9e16e90493d16"
+      },
+      "complete_metric_parent_status": "NOT_PROMOTED_AFTER_TERMINAL_PHYSICAL_SIGN_FAILURE",
+      "field_basis": [
+        "u",
+        "psi"
+      ],
+      "formal_inverse": {
+        "column_count": 2,
+        "entries": [
+          {
+            "coefficient": "-8/P**2",
+            "column": 0,
+            "row": 0
+          },
+          {
+            "coefficient": "-1/(3*P)",
+            "column": 1,
+            "row": 0
+          },
+          {
+            "coefficient": "-1/(3*P)",
+            "column": 0,
+            "row": 1
+          }
+        ],
+        "row_count": 2,
+        "sha256": "5a8d6f9d9164fd72fdf39157ded8d2c9ea6dd3e6f96f1e4e917422a638c6b8ad"
+      },
+      "operator_dictionary": {
+        "P_2": "Box+2",
+        "P_2_inverse_pm": "G_2_pm",
+        "psi_psi_inverse_pm": "0",
+        "u_psi_inverse_pm": "-G_2_pm/3",
+        "u_u_inverse_pm": "-8 G_2_pm G_2_pm"
+      },
+      "support": "the reduced block has support-local advanced/retarded inverses on the standard scalar Green domains"
+    }
+  },
+  "next_gate": "Candidate B unimodular/three-form causal, global-mode and clock preflight; Candidate A enters the A/B comparison as FAIL",
+  "result_id": "COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1",
+  "result_state": "OBSTRUCTED",
+  "schema": "pure-weyl-compensator-candidate-a-r2-auxiliary-scalar-obstruction-v1",
+  "supersession": {
+    "reason": "the auxiliary action exposes nonzero h-psi rows L_ab psi=(nabla_a nabla_b-g_ab Box-Ric_ab)psi on the non-Einstein cylinder; these rows were absent from the direct sum",
+    "retained_subclaims": [
+      "the rational double-root action tuning",
+      "the trace Schur complement H_u=-(Box+2)^2/8",
+      "the iterated scalar Green inverse on the reduced block",
+      "the independent phase wave block"
+    ],
+    "superseded_claim": "complete rank-390 direct-sum causal BV parent and zero strict-complement change",
+    "supersedes_result_id": "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1"
+  }
+}

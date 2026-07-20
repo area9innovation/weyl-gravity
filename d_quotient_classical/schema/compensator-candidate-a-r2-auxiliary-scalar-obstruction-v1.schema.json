@@ -1,0 +1,541 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-compensator-candidate-a-r2-auxiliary-scalar-obstruction-v1.json",
+  "title": "Candidate-A R2 auxiliary-scalaron obstruction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "dependencies",
+    "action_identity",
+    "full_non_Einstein_Hessian_and_BV",
+    "homogeneous_scalar_full_Hessian_sector",
+    "comparison_disposition",
+    "supersession",
+    "exact_checks",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary",
+    "content_hashes"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-compensator-candidate-a-r2-auxiliary-scalar-obstruction-v1"
+    },
+    "result_id": {
+      "const": "COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1"
+    },
+    "result_state": {
+      "const": "OBSTRUCTED"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_preflight",
+        "strict_tau_obstruction",
+        "superseded_direct_sum_parent",
+        "strict_metric_endpoint",
+        "positive_Berger_clock"
+      ],
+      "properties": {
+        "action_preflight": {"$ref": "#/$defs/dependency"},
+        "strict_tau_obstruction": {"$ref": "#/$defs/dependency"},
+        "superseded_direct_sum_parent": {"$ref": "#/$defs/dependency"},
+        "strict_metric_endpoint": {"$ref": "#/$defs/dependency"},
+        "positive_Berger_clock": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "action_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["manifest", "action_sha256", "identities"],
+      "properties": {
+        "manifest": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "density",
+            "beta",
+            "M_P_squared",
+            "V0",
+            "chi_background",
+            "psi_definition",
+            "shifted_scalar_tensor_density",
+            "metric_gauge_group_after_dressing",
+            "original_Weyl_sector",
+            "global_internal_symmetry"
+          ],
+          "properties": {
+            "density": {"type": "string"},
+            "beta": {"const": "-1/144"},
+            "M_P_squared": {"const": "1/6"},
+            "V0": {"const": "1/4"},
+            "chi_background": {"const": "-1/12"},
+            "psi_definition": {"const": "psi=chi+1/12"},
+            "shifted_scalar_tensor_density": {"const": "psi(R-6)+36 psi^2"},
+            "metric_gauge_group_after_dressing": {"const": "Diff only"},
+            "original_Weyl_sector": {"type": "string"},
+            "global_internal_symmetry": {"const": "U(1) shift of theta"}
+          }
+        },
+        "action_sha256": {"$ref": "#/$defs/sha256"},
+        "identities": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "critical_metric_density",
+            "auxiliary_elimination",
+            "shifted_identity",
+            "background"
+          ],
+          "properties": {
+            "critical_metric_density": {"type": "string"},
+            "auxiliary_elimination": {"type": "string"},
+            "shifted_identity": {"type": "string"},
+            "background": {"type": "string"}
+          }
+        }
+      }
+    },
+    "full_non_Einstein_Hessian_and_BV": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["normal_frame", "full_action_hessian", "BV_rows"],
+      "properties": {
+        "normal_frame": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "metric",
+            "Ricci_covariant",
+            "scalar_curvature",
+            "parallel_Ricci"
+          ],
+          "properties": {
+            "metric": {"const": ["-1", "1", "1", "1"]},
+            "Ricci_covariant": {"const": ["0", "2", "2", "2"]},
+            "scalar_curvature": {"const": "6"},
+            "parallel_Ricci": {"const": true}
+          }
+        },
+        "full_action_hessian": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "field_basis",
+            "block_formula",
+            "delta_R",
+            "mixed_block_polynomial",
+            "covector_symbols",
+            "formal_adjoint_defect",
+            "trace_restriction",
+            "strict_complement_change",
+            "old_direct_sum_statement_valid"
+          ],
+          "properties": {
+            "field_basis": {
+              "type": "array",
+              "minItems": 11,
+              "maxItems": 11,
+              "items": {"type": "string"}
+            },
+            "block_formula": {"type": "string"},
+            "delta_R": {"type": "string"},
+            "mixed_block_polynomial": {"$ref": "#/$defs/matrix"},
+            "covector_symbols": {"const": ["z0", "z1", "z2", "z3"]},
+            "formal_adjoint_defect": {"const": 0},
+            "trace_restriction": {"type": "string"},
+            "strict_complement_change": {"type": "string"},
+            "old_direct_sum_statement_valid": {"const": false}
+          }
+        },
+        "BV_rows": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "minimal_fields",
+            "Q_g_hat",
+            "Q_chi",
+            "Q_theta",
+            "Q_xi",
+            "Q_tau",
+            "Q_omega",
+            "Q_antifields",
+            "new_chi_Euler_row",
+            "nonminimal_rows",
+            "CME",
+            "Q_squared_zero",
+            "real_structure",
+            "Weyl_quartet",
+            "important_reclassification"
+          ],
+          "properties": {
+            "minimal_fields": {"type": "array", "minItems": 7, "items": {"type": "string"}},
+            "Q_g_hat": {"type": "string"},
+            "Q_chi": {"type": "string"},
+            "Q_theta": {"type": "string"},
+            "Q_xi": {"type": "string"},
+            "Q_tau": {"type": "string"},
+            "Q_omega": {"type": "string"},
+            "Q_antifields": {"type": "string"},
+            "new_chi_Euler_row": {"type": "string"},
+            "nonminimal_rows": {"type": "string"},
+            "CME": {"const": "PASS_BY_ACTION_INVARIANCE_AND_CANONICAL_COTANGENT_LIFT"},
+            "Q_squared_zero": {"const": "PASS"},
+            "real_structure": {"const": "componentwise real"},
+            "Weyl_quartet": {"const": "UNCHANGED_EXACT_CONTRACTION"},
+            "important_reclassification": {"type": "string"}
+          }
+        }
+      }
+    },
+    "homogeneous_scalar_full_Hessian_sector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "consistent_full_Hessian_restriction",
+        "second_order_scalar_parent",
+        "Lee_Wald_and_sign",
+        "D_evolution_and_charge",
+        "all_scalar_mode_ledger"
+      ],
+      "properties": {
+        "consistent_full_Hessian_restriction": {
+          "type": "object",
+          "required": [
+            "ansatz",
+            "B_C2_on_trace",
+            "mixed_metric_rows",
+            "auxiliary_row",
+            "complete_equations",
+            "Schur_equation",
+            "why_not_metric_only"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "ansatz": {"type": "string"},
+            "B_C2_on_trace": {"type": "string"},
+            "mixed_metric_rows": {"type": "string"},
+            "auxiliary_row": {"type": "string"},
+            "complete_equations": {"const": ["P_2 psi=0", "P_2 u=24 psi"]},
+            "Schur_equation": {"const": "P_2^2 u=0"},
+            "why_not_metric_only": {"type": "string"}
+          }
+        },
+        "second_order_scalar_parent": {
+          "type": "object",
+          "required": [
+            "field_basis",
+            "H(P_2)",
+            "formal_inverse",
+            "operator_dictionary",
+            "support",
+            "complete_metric_parent_status"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "field_basis": {"const": ["u", "psi"]},
+            "H(P_2)": {"$ref": "#/$defs/matrix"},
+            "formal_inverse": {"$ref": "#/$defs/matrix"},
+            "operator_dictionary": {
+              "type": "object",
+              "minProperties": 5,
+              "additionalProperties": {"type": "string"}
+            },
+            "support": {"type": "string"},
+            "complete_metric_parent_status": {
+              "const": "NOT_PROMOTED_AFTER_TERMINAL_PHYSICAL_SIGN_FAILURE"
+            }
+          }
+        },
+        "Lee_Wald_and_sign": {
+          "type": "object",
+          "required": [
+            "quadratic_density_after_spatial_integration",
+            "velocity_Hessian",
+            "velocity_Hessian_eigenvalues",
+            "velocity_Hessian_inertia",
+            "current",
+            "Cauchy_symplectic_matrix",
+            "Cauchy_rank",
+            "Cauchy_determinant",
+            "physical_sign"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "quadratic_density_after_spatial_integration": {"type": "string"},
+            "velocity_Hessian": {"$ref": "#/$defs/matrix"},
+            "velocity_Hessian_eigenvalues": {"const": ["-3", "3"]},
+            "velocity_Hessian_inertia": {"const": [1, 1, 0]},
+            "current": {"type": "string"},
+            "Cauchy_symplectic_matrix": {"$ref": "#/$defs/matrix"},
+            "Cauchy_rank": {"const": 4},
+            "Cauchy_determinant": {"const": "81"},
+            "physical_sign": {"const": "INDEFINITE"}
+          }
+        },
+        "D_evolution_and_charge": {
+          "type": "object",
+          "required": [
+            "state_basis",
+            "D_matrix",
+            "characteristic_polynomial",
+            "minimal_polynomial",
+            "real_roots",
+            "Jordan_block_size",
+            "Hamiltonian",
+            "Hamiltonian_Hessian",
+            "positive_witness",
+            "negative_witness",
+            "Cartan_identity",
+            "D_presymplectic_degeneracy",
+            "zero_charge_sector"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "state_basis": {"const": ["u", "dot_u", "psi", "dot_psi"]},
+            "D_matrix": {"$ref": "#/$defs/matrix"},
+            "characteristic_polynomial": {"const": "(lambda^2-2)^2"},
+            "minimal_polynomial": {"const": "(lambda^2-2)^2"},
+            "real_roots": {"const": ["-sqrt(2)", "sqrt(2)"]},
+            "Jordan_block_size": {"const": 2},
+            "Hamiltonian": {"type": "string"},
+            "Hamiltonian_Hessian": {"$ref": "#/$defs/matrix"},
+            "positive_witness": {"type": "string"},
+            "negative_witness": {"type": "string"},
+            "Cartan_identity": {"const": "i_D Omega=d H_D"},
+            "D_presymplectic_degeneracy": {"const": false},
+            "zero_charge_sector": {"type": "string"}
+          }
+        },
+        "all_scalar_mode_ledger": {
+          "type": "object",
+          "required": [
+            "S3_scalar_harmonics",
+            "frequency_squared",
+            "ordinary_root",
+            "generalized_root",
+            "multiplicity",
+            "l0",
+            "l1",
+            "l_ge_2",
+            "Diff_nonmembership",
+            "compact_support_kernel",
+            "time_independent_kernel"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "S3_scalar_harmonics": {"type": "string"},
+            "frequency_squared": {"type": "string"},
+            "ordinary_root": {"type": "string"},
+            "generalized_root": {"type": "string"},
+            "multiplicity": {"type": "string"},
+            "l0": {"type": "string"},
+            "l1": {"type": "string"},
+            "l_ge_2": {"type": "string"},
+            "Diff_nonmembership": {"type": "string"},
+            "compact_support_kernel": {"type": "string"},
+            "time_independent_kernel": {"type": "string"}
+          }
+        }
+      }
+    },
+    "comparison_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Einstein_control",
+        "Berger_compatibility",
+        "seven_gate_disposition",
+        "overall"
+      ],
+      "properties": {
+        "Einstein_control": {
+          "type": "object",
+          "required": ["formula", "M_P_squared", "beta", "m0_squared", "role"],
+          "additionalProperties": false,
+          "properties": {
+            "formula": {"const": "m0^2=M_P^2/(12 beta)"},
+            "M_P_squared": {"const": "1/6"},
+            "beta": {"const": "-1/144"},
+            "m0_squared": {"const": "-2"},
+            "role": {"type": "string"}
+          }
+        },
+        "Berger_compatibility": {
+          "type": "object",
+          "required": [
+            "fixture",
+            "Berger_scalar_curvature",
+            "action_mismatches",
+            "difference_density",
+            "Delta_F_at_fixture",
+            "Delta_F_prime_at_fixture",
+            "orthonormal_metric_Euler_residual",
+            "status",
+            "does_not_obstruct"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "fixture": {"type": "string"},
+            "Berger_scalar_curvature": {"const": "151/80"},
+            "action_mismatches": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+            "difference_density": {"type": "string"},
+            "Delta_F_at_fixture": {"const": "93839/921600"},
+            "Delta_F_prime_at_fixture": {"const": "809/5760"},
+            "orthonormal_metric_Euler_residual": {
+              "const": [
+                "93839/1843200",
+                "135917/1843200",
+                "135917/1843200",
+                "-12943/368640"
+              ]
+            },
+            "status": {"const": "FAIL_FROZEN_BERGER_BACKGROUND_NOT_A_SOLUTION"},
+            "does_not_obstruct": {"type": "string"}
+          }
+        },
+        "seven_gate_disposition": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["gate", "name", "status", "reason"],
+            "properties": {
+              "gate": {"type": "integer", "minimum": 1, "maximum": 7},
+              "name": {"type": "string"},
+              "status": {"type": "string"},
+              "reason": {"type": "string"}
+            }
+          }
+        },
+        "overall": {"const": "CANDIDATE_A_OBSTRUCTED_BY_PHYSICAL_SCALAR_SIGN"}
+      }
+    },
+    "supersession": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "supersedes_result_id",
+        "superseded_claim",
+        "retained_subclaims",
+        "reason"
+      ],
+      "properties": {
+        "supersedes_result_id": {
+          "const": "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1"
+        },
+        "superseded_claim": {"type": "string"},
+        "retained_subclaims": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+        "reason": {"type": "string"}
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 12,
+      "additionalProperties": {"const": true}
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "CANDIDATE_A_SELECTED",
+        "CANDIDATE_A_OBSTRUCTED",
+        "COMPLETE_SECOND_ORDER_CAUSAL_PARENT",
+        "REDUCED_SCALAR_GREEN_BLOCK",
+        "HEALTHY_SCALAR",
+        "PHYSICAL_SIGN_INDEFINITE",
+        "RAW_D_GAUGE_PRESERVED",
+        "FROZEN_BERGER_COMPATIBLE",
+        "HADAMARD_STATE",
+        "QUANTUM_MASTER_EQUATION",
+        "PARTICLE_OR_UNITARITY"
+      ],
+      "properties": {
+        "CANDIDATE_A_SELECTED": {"const": false},
+        "CANDIDATE_A_OBSTRUCTED": {"const": true},
+        "COMPLETE_SECOND_ORDER_CAUSAL_PARENT": {"const": false},
+        "REDUCED_SCALAR_GREEN_BLOCK": {"const": true},
+        "HEALTHY_SCALAR": {"const": false},
+        "PHYSICAL_SIGN_INDEFINITE": {"const": true},
+        "RAW_D_GAUGE_PRESERVED": {"const": false},
+        "FROZEN_BERGER_COMPATIBLE": {"const": false},
+        "HADAMARD_STATE": {"const": false},
+        "QUANTUM_MASTER_EQUATION": {"const": false},
+        "PARTICLE_OR_UNITARITY": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 40},
+    "claim_boundary": {"type": "string", "minLength": 500},
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_sha256",
+        "mixed_Hessian_sha256",
+        "homogeneous_sector_sha256",
+        "comparison_sha256",
+        "certificate_core_sha256"
+      ],
+      "properties": {
+        "action_sha256": {"$ref": "#/$defs/sha256"},
+        "mixed_Hessian_sha256": {"$ref": "#/$defs/sha256"},
+        "homogeneous_sector_sha256": {"$ref": "#/$defs/sha256"},
+        "comparison_sha256": {"$ref": "#/$defs/sha256"},
+        "certificate_core_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "source_commit", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 10},
+        "result_id": {"type": "string", "minLength": 5},
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["row_count", "column_count", "entries", "sha256"],
+      "properties": {
+        "row_count": {"type": "integer", "minimum": 1},
+        "column_count": {"type": "integer", "minimum": 1},
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["row", "column", "coefficient"],
+            "properties": {
+              "row": {"type": "integer", "minimum": 0},
+              "column": {"type": "integer", "minimum": 0},
+              "coefficient": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}

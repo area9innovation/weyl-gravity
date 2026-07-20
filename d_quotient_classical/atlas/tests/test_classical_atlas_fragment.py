@@ -90,20 +90,20 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             entry["claim_boundary"],
         )
 
-    def test_changed_action_compensator_causal_parent_is_scoped(self) -> None:
+    def test_changed_action_compensator_candidate_a_is_superseded_and_obstructed(self) -> None:
         entry = self.entries[
             "classical.complex_compensator.vacuum_cylinder."
             "changed_action_causal_parent"
         ]
-        self.assertEqual(entry["descriptions"]["causal"], "CERTIFIED")
-        self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
-        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["descriptions"]["causal"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "NOT_APPLICABLE")
         self.assertEqual(
             entry["descriptions"]["observational"], "NO_CERTIFIED_MAP"
         )
         self.assertEqual(entry["descriptions"]["quantum"], "OPEN")
         self.assertIn(
-            "not a mode or particle identification",
+            "not a particle identification",
             entry["scope"]["carrier"],
         )
         evidence = {item["result_id"] for item in entry["evidence"]}
@@ -115,13 +115,16 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1",
             evidence,
         )
-        self.assertIn("changes the classical theory", entry["claim_boundary"])
         self.assertIn(
-            "not certified stable or positive", entry["claim_boundary"]
+            "COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1",
+            evidence,
         )
         self.assertIn(
-            "No residual-mode crosswalk", entry["claim_boundary"]
+            "supersedes the earlier complete-direct-sum rank-390 promotion",
+            entry["claim_boundary"],
         )
+        self.assertIn("split Lee-Wald kinetic inertia", entry["claim_boundary"])
+        self.assertIn("Candidate A is therefore OBSTRUCTED", entry["claim_boundary"])
         self.assertIn("Hadamard/Feynman state", entry["claim_boundary"])
 
     def test_sharp_green_transfer_crosswalk_has_no_mode_identification(self) -> None:

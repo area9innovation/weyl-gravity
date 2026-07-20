@@ -1,0 +1,126 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_id": "COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1",
+  "date": "2026-07-20",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/compensator/candidate_a_r2_auxiliary_scalar_obstruction.py",
+      "sha256": "e4a64e550b4a530dfdd9edf9bb2c228e5bf41a47b87d110644d2168838e84828"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_candidate_a_r2_auxiliary_scalar_obstruction.py",
+      "sha256": "6b21d4f335031ad20524b8873d829273ccca822469dc1cc81871d02b5060f71e"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_candidate_a_r2_auxiliary_scalar_obstruction.py",
+      "sha256": "8d5deaf566f529885dc3b1660877a13b704b3a3af5dbf59715597e45710a9b3c"
+    },
+    {
+      "path": "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1.json",
+      "sha256": "889c3c2870bb2b28dfe2e4e510526f8644c0b7358884d07fcad351199ae747c6"
+    },
+    {
+      "path": "d_quotient_classical/schema/compensator-candidate-a-r2-auxiliary-scalar-obstruction-v1.schema.json",
+      "sha256": "ff5adae53b70cb116907652a049a7711ec6bedd2054ca437c70992b3ae30001f"
+    },
+    {
+      "path": "d_quotient_classical/reports/compensator-candidate-a-r2-auxiliary-scalar-obstruction-v1.md",
+      "sha256": "4d1bc465da1e5143fbfa8b142c95c1d0c8a0dfff671ff44466ac7a39805678df"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "6424585c80f26336d97895c0594247e376204084bebe02a342af4f0e5c12f8ed"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile d_quotient_classical/compensator/candidate_a_r2_auxiliary_scalar_obstruction.py d_quotient_classical/compensator/verify_candidate_a_r2_auxiliary_scalar_obstruction.py d_quotient_classical/compensator/tests/test_candidate_a_r2_auxiliary_scalar_obstruction.py d_quotient_classical/atlas/generate_classical_atlas_fragment.py d_quotient_classical/atlas/verify_classical_atlas_fragment.py d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py",
+        "elapsed_seconds": 0.1,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m json.tool d_quotient_classical/schema/compensator-candidate-a-r2-auxiliary-scalar-obstruction-v1.schema.json",
+        "elapsed_seconds": 0.06,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check -- <explicit Candidate-A certificate, atlas and classical-brief paths>",
+        "elapsed_seconds": 0.02,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/candidate_a_r2_auxiliary_scalar_obstruction.py --check",
+        "elapsed_seconds": 0.91,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_candidate_a_r2_auxiliary_scalar_obstruction.py",
+        "elapsed_seconds": 0.86,
+        "status": "PASS",
+        "independent_rail": "does not import the producer; reconstructs the auxiliary action, mixed cylinder Hessian, full-equation homogeneous sector, scalar Green inverse, Lee-Wald form, D Hamiltonian/Jordan structure, Einstein mass control and Berger Euler residual"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.compensator.tests.test_candidate_a_r2_auxiliary_scalar_obstruction -v",
+        "elapsed_seconds": 1.07,
+        "status": "PASS",
+        "tests": 9,
+        "mutation_controls": "wrong inertia, removed mixed row, altered D polynomial, Berger promotion and Hadamard promotion are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/compensator-candidate-a-r2-auxiliary-scalar-obstruction-v1.schema.json -d d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1.json",
+        "elapsed_seconds": 3.84,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "elapsed_seconds": 0.41,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "elapsed_seconds": 0.37,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "elapsed_seconds": 0.3,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment -v",
+        "elapsed_seconds": 0.09,
+        "status": "PASS",
+        "tests": 22
+      },
+      {
+        "command": "ci/science-forge-shadow.sh",
+        "elapsed_seconds": 8.9,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "pre-existing bridge certificate drift, corpus baseline growth from 976 to 1274 certificates, and an unpinned dirty Forge development binary; the advisory rail exited zero"
+      }
+    ],
+    "reason": "The new obstruction changes the lifecycle of the generated classical atlas row and supersedes a prior causal-parent promotion. The exact affected atlas chain was therefore replayed."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is a scoped terminal Candidate-A obstruction and correction, not a paper freeze, release, tag or change to shared core algebra. The exact producer, independent action/current replay, nine mutations, strict schema and affected atlas chain are the proportionate falsification rail."
+  },
+  "claim_boundary": "This receipt covers the exact Candidate-A auxiliary action identity, full non-Einstein h-psi mixed Hessian, consistent homogeneous full-equation sector, reduced support-local scalar Green inverse, split Lee-Wald inertia, real repeated raw-D roots, indefinite D Hamiltonian, scalar mode ledger, Einstein-control mass and frozen-Berger incompatibility. It supersedes only the prior complete-direct-sum rank-390 promotion; the rational double-root, trace Schur complement and reduced Green identities remain valid. No complete mixed-metric parent, Hadamard, anomaly, QME, particle, scattering or unitarity theorem is certified."
+}

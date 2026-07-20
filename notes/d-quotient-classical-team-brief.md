@@ -3201,6 +3201,63 @@ is not certified stable or positive.  Changed residual cohomology, raw
 Hadamard/Feynman states, anomaly/QME, particles, scattering and unitarity
 remain open.
 
+### Candidate-A correction and terminal obstruction (2026-07-20)
+
+`COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1` supersedes the
+preceding section's **complete rank-390 direct-sum** promotion.  It retains the
+rational double-root tuning, the trace Schur complement
+\(H_u=-(\Box+2)^2/8\), its reduced iterated Green inverse, and the independent
+phase wave.  The correction is required because the mandatory auxiliary
+rewrite exposes nonzero mixed metric rows on the non-Einstein cylinder.
+
+With \(\beta=-1/144\), \(\chi_0=-1/12\), and
+\(\psi=\chi+1/12\),
+
+\[
+\chi R-\frac{\chi^2}{4\beta}+\frac{R}{12}-\frac14
+=\psi(R-6)+36\psi^2.
+\]
+
+The full action Hessian is
+
+\[
+\begin{pmatrix}
+B_{C^2}&L\\
+\delta R&72
+\end{pmatrix},
+\qquad
+(L\psi)_{\mu\nu}
+=\nabla_\mu\nabla_\nu\psi-g_{\mu\nu}\Box\psi-R_{\mu\nu}\psi .
+\]
+
+Thus the strict complement is not unchanged.  On the consistent homogeneous
+sector \(h_{\mu\nu}=u(t)\bar g_{\mu\nu}\), both the metric and auxiliary
+equations reduce exactly to
+
+\[
+(\Box+2)\psi=0,\qquad(\Box+2)u=24\psi.
+\]
+
+The action-derived homogeneous density is
+
+\[
+L_{\rm hom}=-3\dot\psi\dot u-6\psi u+36\psi^2.
+\]
+
+Its velocity Hessian has inertia \((1,1)\).  Raw \(D=\partial_t\) has minimal
+polynomial \((\lambda^2-2)^2\), real roots \(\pm\sqrt2\), size-two Jordan
+blocks, and the both-sign Hamiltonian
+
+\[
+H_D=-3\dot u\dot\psi+6\psi u-36\psi^2.
+\]
+
+Therefore Candidate A fails the physical-sign and zero-charge-\(D\) gates.
+The frozen healthy Berger fixture also fails the changed-action metric
+equations with four explicit nonzero rational residuals.  Candidate A now
+enters the common A/B comparison as `OBSTRUCTED`; Candidate B is the next
+classical gate.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

@@ -118,9 +118,9 @@ def verify() -> None:
         item["result_id"] for item in causal_compensator["evidence"]
     }
     if (
-        causal_compensator["descriptions"]["causal"] != "CERTIFIED"
-        or causal_compensator["descriptions"]["symplectic"] != "CERTIFIED"
-        or causal_compensator["descriptions"]["nonlinear"] != "OPEN"
+        causal_compensator["descriptions"]["causal"] != "OBSTRUCTED"
+        or causal_compensator["descriptions"]["symplectic"] != "OBSTRUCTED"
+        or causal_compensator["descriptions"]["nonlinear"] != "NOT_APPLICABLE"
         or causal_compensator["descriptions"]["observational"]
         != "NO_CERTIFIED_MAP"
         or causal_compensator["descriptions"]["quantum"] != "OPEN"
@@ -128,13 +128,15 @@ def verify() -> None:
         not in causal_ids
         or "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1"
         not in causal_ids
-        or "not a mode or particle identification"
+        or "COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1"
+        not in causal_ids
+        or "not a particle identification"
         not in causal_compensator["scope"]["carrier"]
-        or "changes the classical theory"
+        or "supersedes the earlier complete-direct-sum rank-390 promotion"
         not in causal_compensator["claim_boundary"]
-        or "not certified stable or positive"
+        or "split Lee-Wald kinetic inertia"
         not in causal_compensator["claim_boundary"]
-        or "No residual-mode crosswalk"
+        or "Candidate A is therefore OBSTRUCTED"
         not in causal_compensator["claim_boundary"]
         or "Hadamard/Feynman state"
         not in causal_compensator["claim_boundary"]

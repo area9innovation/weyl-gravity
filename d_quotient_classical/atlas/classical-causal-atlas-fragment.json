@@ -560,13 +560,13 @@
       }
     },
     {
-      "claim_boundary": "The exact rational fixture kappa_r=-1, kappa_theta=1, f=1, alpha_R=-1/144 and V0=1/4 makes the unit cylinder a double root F(6)=F'(6)=0. The resulting trace Hessian kills the former arbitrary compact-support dressed-trace homology without deleting a finite zero mode. This changes the classical theory by adding the independent R(g_hat)^2 and vacuum couplings; it does not repair strict pure-Weyl gravity or the naive strict tau extension. The negative alpha_R and scalar sector are not certified stable or positive. No residual-mode crosswalk, raw-D or Berger specialization, compatible complex structure, Hadamard/Feynman state, anomaly/QME, particle, scattering or unitarity conclusion follows.",
+      "claim_boundary": "COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1 supersedes the earlier complete-direct-sum rank-390 promotion. The rational double-root tuning, trace Schur complement H_u=-(Box+2)^2/8, reduced iterated Green identity and phase wave remain exact subclaims. The auxiliary action exposes L_ab psi=(nabla_a nabla_b-g_ab Box-Ric_ab)psi, which changes the strict complement on the non-Einstein cylinder. A consistent sector satisfying both metric and auxiliary equations has split Lee-Wald kinetic inertia, real repeated D roots and an indefinite D Hamiltonian. The frozen positive Berger fixture also has a nonzero changed-action Euler residual. Candidate A is therefore OBSTRUCTED; no compatible complex structure, Hadamard/Feynman state, anomaly/QME, particle, scattering or unitarity conclusion follows.",
       "descriptions": {
-        "causal": "CERTIFIED",
-        "nonlinear": "OPEN",
+        "causal": "OBSTRUCTED",
+        "nonlinear": "NOT_APPLICABLE",
         "observational": "NO_CERTIFIED_MAP",
         "quantum": "OPEN",
-        "symplectic": "CERTIFIED"
+        "symplectic": "OBSTRUCTED"
       },
       "evidence": [
         {
@@ -585,56 +585,56 @@
           "sha256": "be7847102b7c219fd09865b68c4982c84e280e09c73364c509dcb9aaca91d6c4"
         },
         {
-          "path": "d_quotient_classical/certificates/GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1.json",
-          "result_id": "GREEN_HYPERBOLIC_CYCLIC_TRANSFER_THEOREM_V1",
-          "sha256": "98c57a89861ce198e8ad072bc43859f84b5c6d96df85d0013f729d24dd1d1df7"
+          "path": "d_quotient_classical/certificates/COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1.json",
+          "result_id": "COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1",
+          "sha256": "889c3c2870bb2b28dfe2e4e510526f8644c0b7358884d07fcad351199ae747c6"
         }
       ],
       "id": "classical.complex_compensator.vacuum_cylinder.changed_action_causal_parent",
       "mode_data": {
         "dispersion": {
-          "statement": "The dressed trace has H_u=-(Box+2)^2/8 with iterated advanced/retarded inverse, and the global-U(1) phase has the scalar wave inverse.",
-          "status": "CERTIFIED"
+          "statement": "The reduced scalar block has exact Green inverses, but the complete rank-390 direct-sum promotion omitted nonzero h-psi rows and is superseded.",
+          "status": "OBSTRUCTED"
         },
         "lee_wald": {
-          "statement": "The eight-row endpoint odd pairing is nondegenerate and cyclic; the full rank-390 lift obeys advanced/retarded adjoint reversal.",
-          "status": "CERTIFIED"
+          "statement": "The action-derived homogeneous Lee-Wald form is nondegenerate with velocity inertia (1,1), so Candidate A fails the required physical-sign gate.",
+          "status": "OBSTRUCTED"
         },
         "resonance": {
-          "statement": "No positive-frequency, complex-structure, Hadamard or nonlinear resonance selection has been made on the changed carrier.",
-          "status": "OPEN"
+          "statement": "The full-Hessian scalar restriction has repeated real ell=0 roots +/-sqrt(2) with size-two Jordan blocks.",
+          "status": "CERTIFIED"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "No bounded nonlinear tangent cone for the changed action.",
-            "status": "OPEN"
+            "statement": "Candidate A terminates at the unary physical-sign gate.",
+            "status": "NOT_APPLICABLE"
           },
           "causal_retarded": {
-            "statement": "The unary causal parent is certified; the nonlinear retarded second-order problem is open.",
-            "status": "OPEN"
+            "statement": "No complete mixed-metric causal parent is promoted after the terminal physical-sign failure.",
+            "status": "OBSTRUCTED"
           },
           "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
           "smooth_secular": {
-            "statement": "No smooth-secular nonlinear tangent cone for the changed action.",
-            "status": "OPEN"
+            "statement": "Candidate A terminates at the unary physical-sign gate.",
+            "status": "NOT_APPLICABLE"
           }
         },
         "taub_maps": {
-          "statement": "No residual charge, Taub map or raw-D Cartan action is imported for the changed theory.",
-          "status": "NOT_APPLICABLE"
+          "statement": "Raw D is Hamiltonian with a both-sign nonconstant charge; its zero-charge set is only a proper quadratic cone.",
+          "status": "OBSTRUCTED"
         }
       },
       "scope": {
         "background": "unit conformal cylinder R_t x S3",
         "boundaries": "closed compact Cauchy surface S3; no spatial boundary",
-        "carrier": "complete 390-row changed-action causal BV parent with a 34-row endpoint and eight-row dressed scalar/phase block; not a mode or particle identification",
-        "charge_sector": "unreduced Diff semidirect Weyl BV carrier with global U(1); no residual D or quantum quotient",
-        "degree": "endpoint ranks (5,12,12,5) across degrees -1,0,1,2; full BV carrier rank 390",
-        "ell": "all smooth cylinder modes; no harmonic truncation",
+        "carrier": "superseded rank-390 direct-sum proposal plus the exact action-derived auxiliary h/psi Hessian and its consistent homogeneous scalar restriction; not a particle identification",
+        "charge_sector": "unreduced Diff semidirect Weyl BV action with global U(1); raw-D scalar charge recomputed before any residual or quantum quotient",
+        "degree": "local BV action in all degrees; physical-sign obstruction in the degree-zero (u,psi) block",
+        "ell": "all scalar harmonics, with a decisive homogeneous ell=0 full-Hessian sector",
         "k": "all local covectors",
         "m": "all",
-        "omega": "P2=Box+2 trace biwave and P0=Box phase-wave solution families; no positive-frequency selection",
-        "parity": "real radial Weyl quartet and real global-U(1) phase; strict metric parities imported without a new mode crosswalk",
+        "omega": "repeated P2=Box+2 roots; ell=0 has real D roots +/-sqrt(2) and size-two Jordan blocks",
+        "parity": "real even scalar auxiliary/Jordan sector",
         "theory": "changed formal rho!=0 unequal-kinetic polar complex-compensator gravity; not strict pure-Weyl gravity"
       }
     },
@@ -1950,7 +1950,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
-  "generated_by_sha256": "8f490acb84a732ddd9e8b1f73a5ce72ba98a85a4e9524dc2bacb37054ff07139",
+  "generated_by_sha256": "128da8f1de4874fd8d35f351ce26f61811dcf98a20da50a03c4df182692b13a3",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
