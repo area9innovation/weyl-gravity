@@ -1,0 +1,721 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/closed-s3-gauged-clock-gauss-structure-theorem-v1.schema.json",
+  "title": "Closed-S3 compact-Gauss and relative-clock structure theorem",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "imports",
+    "scope",
+    "charge_lattice",
+    "integrated_gauss",
+    "clock_criterion",
+    "reduced_mechanics",
+    "moment_maps",
+    "exact_fixtures",
+    "exact_sigma_model_projector_fixture",
+    "proof_obligations",
+    "terminal_verdict",
+    "claim_flags",
+    "claim_boundary",
+    "content_hashes"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-closed-s3-gauged-clock-gauss-structure-v1"
+    },
+    "result_id": {
+      "const": "CLOSED_S3_GAUGED_CLOCK_GAUSS_STRUCTURE_THEOREM_V1"
+    },
+    "result_state": {
+      "const": "CERTIFIED_FINITE_HOMOGENEOUS_GAUSS_RELATIVE_CLOCK_STRUCTURE_THEOREM"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "imports": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256",
+          "source_commit",
+          "result_id",
+          "result_state",
+          "actual_sha256"
+        ],
+        "properties": {
+          "path": {
+            "$ref": "#/$defs/nonempty"
+          },
+          "sha256": {
+            "$ref": "#/$defs/hash"
+          },
+          "source_commit": {
+            "$ref": "#/$defs/commit"
+          },
+          "result_id": {
+            "$ref": "#/$defs/nonempty"
+          },
+          "result_state": {
+            "$ref": "#/$defs/nonempty"
+          },
+          "actual_sha256": {
+            "$ref": "#/$defs/hash"
+          }
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "spatial_manifold",
+        "field_count",
+        "compact_gauge_count",
+        "charge_domain",
+        "carrier",
+        "derivative_order",
+        "kinetic_branches",
+        "external_sources",
+        "boundary"
+      ],
+      "properties": {
+        "spatial_manifold": {
+          "const": "closed smooth S3"
+        },
+        "field_count": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "compact_gauge_count": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "charge_domain": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "carrier": {
+          "const": "smooth homogeneous phase/modulus mechanics"
+        },
+        "derivative_order": {
+          "const": 2
+        },
+        "kinetic_branches": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonempty"
+          }
+        },
+        "external_sources": {
+          "const": false
+        },
+        "boundary": {
+          "const": false
+        }
+      }
+    },
+    "charge_lattice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "data",
+        "smith_normal_form",
+        "continuous_gauge_rank",
+        "continuous_gauge_reducibility",
+        "finite_kernel_order_when_k_equals_r",
+        "faithful_effective_action_condition",
+        "relative_character_lattice",
+        "relative_character_lattice_rank",
+        "relative_phase_torus_dimension",
+        "nonprimitive_effect",
+        "scope_of_snf_equivalence"
+      ],
+      "properties": {
+        "data": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "smith_normal_form": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "continuous_gauge_rank": {
+          "const": "k"
+        },
+        "continuous_gauge_reducibility": {
+          "const": "r-k"
+        },
+        "finite_kernel_order_when_k_equals_r": {
+          "const": "product_i d_i"
+        },
+        "faithful_effective_action_condition": {
+          "const": "k=r and every d_i=1"
+        },
+        "relative_character_lattice": {
+          "const": "L=ker_Z(Q^T)"
+        },
+        "relative_character_lattice_rank": {
+          "const": "rank_Z(L)=n-k"
+        },
+        "relative_phase_torus_dimension": {
+          "const": "n-k"
+        },
+        "nonprimitive_effect": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "scope_of_snf_equivalence": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "integrated_gauss": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "general_two_derivative_homogeneous_phase_lagrangian",
+        "phase_momentum",
+        "local_constraint",
+        "integrated_source_free_closed_S3_constraint",
+        "proof",
+        "does_not_imply",
+        "with_sources_or_boundary_convention"
+      ],
+      "properties": {
+        "general_two_derivative_homogeneous_phase_lagrangian": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "phase_momentum": {
+          "const": "p=M v+C^T dotrho"
+        },
+        "local_constraint": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "integrated_source_free_closed_S3_constraint": {
+          "const": "Q^T p=0"
+        },
+        "proof": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "does_not_imply": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "with_sources_or_boundary_convention": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "clock_criterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixed_moduli_definitions",
+        "moving_moduli_affine_solution",
+        "given_velocity_necessary_and_sufficient",
+        "positive_inertia_theorem",
+        "all_selected_velocity_components_nonzero",
+        "all_selected_momentum_components_nonzero",
+        "component_criterion_proof",
+        "one_field_corollary",
+        "many_field_correction"
+      ],
+      "properties": {
+        "fixed_moduli_definitions": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "moving_moduli_affine_solution": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "given_velocity_necessary_and_sufficient": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "zero_total_gauge_charge",
+            "physically_nontrivial_relative_motion",
+            "equivalent_nonvertical_condition"
+          ],
+          "properties": {
+            "zero_total_gauge_charge": {
+              "const": "Q^T M v=0"
+            },
+            "physically_nontrivial_relative_motion": {
+              "const": "N^T v != 0"
+            },
+            "equivalent_nonvertical_condition": {
+              "const": "v not in im_R(Q)"
+            }
+          }
+        },
+        "positive_inertia_theorem": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "all_selected_velocity_components_nonzero": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "all_selected_momentum_components_nonzero": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "component_criterion_proof": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "one_field_corollary": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "many_field_correction": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "reduced_mechanics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gauss_solution",
+        "relative_velocity",
+        "A",
+        "reduced_phase_metric",
+        "reduced_lagrangian",
+        "reduced_hamiltonian",
+        "positive_inertia_proof",
+        "declared_indefinite_case",
+        "general_sigma_model_extension",
+        "potential_condition"
+      ],
+      "properties": {
+        "gauss_solution": {
+          "const": "p=N Pi"
+        },
+        "relative_velocity": {
+          "const": "dotpsi=N^T M^{-1} N Pi=A Pi"
+        },
+        "A": {
+          "const": "A=N^T M^{-1} N"
+        },
+        "reduced_phase_metric": {
+          "const": "G_rel=A^{-1}"
+        },
+        "reduced_lagrangian": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "reduced_hamiltonian": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "positive_inertia_proof": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "declared_indefinite_case": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "general_sigma_model_extension": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "potential_condition": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "moment_maps": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "phase_symplectic_potential",
+        "compact_gauge_moment_map",
+        "stationary_raw_D_variation",
+        "stationary_raw_D_hamiltonian",
+        "K_Berger_phase_stabilizer",
+        "gauge_invariance",
+        "claim_scope"
+      ],
+      "properties": {
+        "phase_symplectic_potential": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "compact_gauge_moment_map": {
+          "const": "mu_gamma=Vol(S3) gamma^T Q^T p=0"
+        },
+        "stationary_raw_D_variation": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "stationary_raw_D_hamiltonian": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "K_Berger_phase_stabilizer": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "gauge_invariance": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "claim_scope": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "exact_fixtures": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "$ref": "#/$defs/fixture"
+      }
+    },
+    "exact_sigma_model_projector_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "field_coordinates",
+        "full_positive_kinetic_G",
+        "gauge_K",
+        "vertical_Gram_KT_G_K",
+        "horizontal_projector_P_G",
+        "horizontal_basis_H",
+        "reduced_metric_HT_G_H",
+        "identities"
+      ],
+      "properties": {
+        "field_coordinates": {
+          "const": [
+            "rho",
+            "theta1",
+            "theta2"
+          ]
+        },
+        "full_positive_kinetic_G": {
+          "$ref": "#/$defs/rational_matrix"
+        },
+        "gauge_K": {
+          "$ref": "#/$defs/rational_vector"
+        },
+        "vertical_Gram_KT_G_K": {
+          "$ref": "#/$defs/rational"
+        },
+        "horizontal_projector_P_G": {
+          "$ref": "#/$defs/rational_matrix"
+        },
+        "horizontal_basis_H": {
+          "$ref": "#/$defs/rational_matrix"
+        },
+        "reduced_metric_HT_G_H": {
+          "$ref": "#/$defs/rational_matrix"
+        },
+        "identities": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "P_squared_equals_P",
+            "P_K_equals_zero",
+            "KT_G_P_equals_zero",
+            "G_P_equals_PT_G",
+            "full_G_positive",
+            "reduced_metric_positive"
+          ],
+          "properties": {
+            "P_squared_equals_P": {
+              "const": true
+            },
+            "P_K_equals_zero": {
+              "const": true
+            },
+            "KT_G_P_equals_zero": {
+              "const": true
+            },
+            "G_P_equals_PT_G": {
+              "const": true
+            },
+            "full_G_positive": {
+              "const": true
+            },
+            "reduced_metric_positive": {
+              "const": true
+            }
+          }
+        }
+      }
+    },
+    "proof_obligations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "three_import_hashes",
+        "smith_rank_and_relative_dimension",
+        "gauss_constraint",
+        "positive_quotient_metric",
+        "two_field_counterflow_witness",
+        "charged_plus_neutral_witness",
+        "three_field_two_gauge_witness",
+        "raw_D_reduction",
+        "full_sigma_model_projector",
+        "source_and_boundary_split"
+      ],
+      "properties": {
+        "three_import_hashes": {
+          "const": "PASS"
+        },
+        "smith_rank_and_relative_dimension": {
+          "const": "PASS"
+        },
+        "gauss_constraint": {
+          "const": "PASS"
+        },
+        "positive_quotient_metric": {
+          "const": "PASS"
+        },
+        "two_field_counterflow_witness": {
+          "const": "PASS"
+        },
+        "charged_plus_neutral_witness": {
+          "const": "PASS"
+        },
+        "three_field_two_gauge_witness": {
+          "const": "PASS"
+        },
+        "raw_D_reduction": {
+          "const": "PASS"
+        },
+        "full_sigma_model_projector": {
+          "const": "PASS"
+        },
+        "source_and_boundary_split": {
+          "const": "PASS"
+        }
+      }
+    },
+    "terminal_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result",
+        "total_compact_gauge_charge_on_closed_S3",
+        "individual_phase_momenta_forced_zero",
+        "relative_clock_exists_with_positive_inertia_iff",
+        "boundary_or_external_source_needed_for_relative_clock",
+        "boundary_or_external_source_needed_for_nonzero_total_gauge_charge",
+        "full_BV_or_causal_successor_activated",
+        "next_gate"
+      ],
+      "properties": {
+        "result": {
+          "const": "POSITIVE_RELATIVE_CLOCKS_SURVIVE_ZERO_TOTAL_GAUGE_CHARGE"
+        },
+        "total_compact_gauge_charge_on_closed_S3": {
+          "const": "ZERO"
+        },
+        "individual_phase_momenta_forced_zero": {
+          "const": false
+        },
+        "relative_clock_exists_with_positive_inertia_iff": {
+          "const": "n-rank(Q)>0"
+        },
+        "boundary_or_external_source_needed_for_relative_clock": {
+          "const": false
+        },
+        "boundary_or_external_source_needed_for_nonzero_total_gauge_charge": {
+          "const": true
+        },
+        "full_BV_or_causal_successor_activated": {
+          "const": false
+        },
+        "next_gate": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "FINITE_HOMOGENEOUS_STRUCTURE_THEOREM": true,
+        "POSITIVE_NEUTRAL_RELATIVE_CLOCK_ALLOWED": true,
+        "NONZERO_TOTAL_GAUGE_CHARGE_ON_CLOSED_SOURCE_FREE_S3": false,
+        "MODEL_SPECIFIC_ACTION_SELECTED": false,
+        "FULL_BV_OR_CAUSAL_PARENT": false,
+        "HADAMARD_OR_QUANTUM": false
+      }
+    },
+    "claim_boundary": {
+      "$ref": "#/$defs/nonempty"
+    },
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "imports_sha256",
+        "charge_lattice_sha256",
+        "gauss_sha256",
+        "clock_criterion_sha256",
+        "reduced_mechanics_sha256",
+        "moment_maps_sha256",
+        "fixtures_sha256",
+        "sigma_projector_sha256",
+        "terminal_verdict_sha256",
+        "claim_boundary_sha256"
+      ],
+      "properties": {
+        "imports_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "charge_lattice_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "gauss_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "clock_criterion_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "reduced_mechanics_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "moment_maps_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "fixtures_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "sigma_projector_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "terminal_verdict_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "claim_boundary_sha256": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "nonempty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "rational": {
+      "type": "string",
+      "pattern": "^-?[0-9]+(/[1-9][0-9]*)?$"
+    },
+    "rational_vector": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/rational"
+      }
+    },
+    "rational_matrix": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "#/$defs/rational"
+        }
+      }
+    },
+    "integer_matrix": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        }
+      }
+    },
+    "fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixture_id",
+        "Q",
+        "rank",
+        "smith_invariant_factors",
+        "relative_dimension",
+        "integer_relative_character_basis_N",
+        "phase_inertia_M",
+        "reduced_inverse_metric_A_equals_NT_Minv_N",
+        "reduced_metric_Grel_equals_Ainv",
+        "relative_momentum_Pi",
+        "phase_momentum_p_equals_N_Pi",
+        "horizontal_velocity_v_equals_Minv_p",
+        "relative_velocity_psidot_equals_NT_v",
+        "gauss_QT_p",
+        "kinetic_energy",
+        "reduced_kinetic_energy",
+        "raw_D_phase_moment_map",
+        "positive_reduced_metric"
+      ],
+      "properties": {
+        "fixture_id": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "Q": {
+          "$ref": "#/$defs/integer_matrix"
+        },
+        "rank": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "smith_invariant_factors": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "relative_dimension": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "integer_relative_character_basis_N": {
+          "$ref": "#/$defs/integer_matrix"
+        },
+        "phase_inertia_M": {
+          "$ref": "#/$defs/rational_matrix"
+        },
+        "reduced_inverse_metric_A_equals_NT_Minv_N": {
+          "$ref": "#/$defs/rational_matrix"
+        },
+        "reduced_metric_Grel_equals_Ainv": {
+          "$ref": "#/$defs/rational_matrix"
+        },
+        "relative_momentum_Pi": {
+          "$ref": "#/$defs/rational_vector"
+        },
+        "phase_momentum_p_equals_N_Pi": {
+          "$ref": "#/$defs/rational_vector"
+        },
+        "horizontal_velocity_v_equals_Minv_p": {
+          "$ref": "#/$defs/rational_vector"
+        },
+        "relative_velocity_psidot_equals_NT_v": {
+          "$ref": "#/$defs/rational_vector"
+        },
+        "gauss_QT_p": {
+          "$ref": "#/$defs/rational_vector"
+        },
+        "kinetic_energy": {
+          "$ref": "#/$defs/rational"
+        },
+        "reduced_kinetic_energy": {
+          "$ref": "#/$defs/rational"
+        },
+        "raw_D_phase_moment_map": {
+          "$ref": "#/$defs/rational"
+        },
+        "positive_reduced_metric": {
+          "const": true
+        }
+      }
+    }
+  }
+}

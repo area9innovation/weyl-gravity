@@ -1,0 +1,484 @@
+{
+  "charge_lattice": {
+    "continuous_gauge_rank": "k",
+    "continuous_gauge_reducibility": "r-k",
+    "data": "Q is an n by r integer matrix defining the torus homomorphism gamma -> Q gamma on phase angles; k=rank_Q(Q).",
+    "faithful_effective_action_condition": "k=r and every d_i=1",
+    "finite_kernel_order_when_k_equals_r": "product_i d_i",
+    "nonprimitive_effect": "d_i>1 changes finite isotropy/kernel data but not the continuous relative-phase dimension.",
+    "relative_character_lattice": "L=ker_Z(Q^T)",
+    "relative_character_lattice_rank": "rank_Z(L)=n-k",
+    "relative_phase_torus_dimension": "n-k",
+    "scope_of_snf_equivalence": "SNF classifies the compact gauge homomorphism. It does not identify kinetic matrices or potentials that are not carried through the same integral field-basis transformation.",
+    "smith_normal_form": "There exist U in GL(n,Z) and V in GL(r,Z) with U Q V=diag(d1,...,dk,0), 0<d1|...|dk."
+  },
+  "claim_boundary": "This theorem covers finitely many smooth homogeneous complex scalars with integer compact-Abelian charge matrix, a smooth Abelian connection, gauge-invariant two-derivative sigma-model kinetic and potential terms, and fixed-modulus phase reduction on closed S3. It proves an integrated Gauss and finite-dimensional quotient theorem, not a nonhomogeneous PDE, global monotonic-clock, full BV, causal, Hadamard, anomaly/QME, particle, scattering, positivity-of-gravity or unitarity result. Uniform helical solutions require the stated potential symmetry. Boundaries, sources, higher derivatives and singular kinetic matrices obey different gates explicitly recorded above.",
+  "claim_flags": {
+    "FINITE_HOMOGENEOUS_STRUCTURE_THEOREM": true,
+    "FULL_BV_OR_CAUSAL_PARENT": false,
+    "HADAMARD_OR_QUANTUM": false,
+    "MODEL_SPECIFIC_ACTION_SELECTED": false,
+    "NONZERO_TOTAL_GAUGE_CHARGE_ON_CLOSED_SOURCE_FREE_S3": false,
+    "POSITIVE_NEUTRAL_RELATIVE_CLOCK_ALLOWED": true
+  },
+  "clock_criterion": {
+    "all_selected_momentum_components_nonzero": "One p in ker_R(Q^T) with p_i!=0 for every i in S exists iff e_i is not in im_R(Q) for every i in S.",
+    "all_selected_velocity_components_nonzero": "For S subset {1,...,n}, one v in H_M with v_i!=0 for every i in S exists iff e_i is not in im_R(M Q) for every i in S.",
+    "component_criterion_proof": "Each forbidden zero component is a proper hyperplane in the constraint kernel exactly when its coordinate functional is nonzero there. A finite union of proper real hyperplanes cannot cover a vector space.",
+    "fixed_moduli_definitions": "M is the nonsingular symmetric phase inertia; H_M=ker_R(Q^T M); N is a primitive integer basis matrix for ker_Z(Q^T); psi=N^T theta.",
+    "given_velocity_necessary_and_sufficient": {
+      "equivalent_nonvertical_condition": "v not in im_R(Q)",
+      "physically_nontrivial_relative_motion": "N^T v != 0",
+      "zero_total_gauge_charge": "Q^T M v=0"
+    },
+    "many_field_correction": "Zero total compact charge does not kill relative clocks. If n-rank(Q)>0, positivity itself permits them without an indefinite cancellation, boundary flux or external source.",
+    "moving_moduli_affine_solution": "For p=M v+C^T dotrho, v0=-M^{-1}C^T dotrho gives p=0; every Gauss solution is v=v0+h with h in H_M. Thus moving moduli shift the affine origin but do not change the n-rank(Q) homogeneous relative-clock directions.",
+    "one_field_corollary": "For n=rank(Q)=1 and M>0, H_M=0; the one-field charged phase velocity vanishes.",
+    "positive_inertia_theorem": "If M>0 then H_M is the M-orthogonal complement of im(Q), H_M intersects im(Q) only at zero, and a nonzero physical relative clock exists iff n-rank(Q)>0."
+  },
+  "content_hashes": {
+    "charge_lattice_sha256": "f545cc6698bc5740b462a60f28a73dd0c803c4744725fceaf07502c18364de30",
+    "claim_boundary_sha256": "e34ac88460b1069f65d7c657948b39aaaac9f9391617cf1359babdfd610c5f7e",
+    "clock_criterion_sha256": "a2b06e8b96e6da4f8ca902371908b7889876c9975854d6e7b79308202b8ee587",
+    "fixtures_sha256": "592840128caaa3bb143b8bf530dc80e8d3be45d86678c59783d95c039ad32891",
+    "gauss_sha256": "f1a0272573127bd3adfc787c557d3e625905bb37459201729086d744dbd1018e",
+    "imports_sha256": "f954b27965412bf4bae63c70cbe6891ef77d249c64afed5bd284435a8984117e",
+    "moment_maps_sha256": "17e452de64cb2154d8bb8226ba021f21feb8d33001307298fd796b15257860bd",
+    "reduced_mechanics_sha256": "4dfa5bd7ef5d7e062f9b462c434e71b5dc2941b719efde549d73f65e1895eec8",
+    "sigma_projector_sha256": "48beb9e91ec7cb3a3cd07766e10b15695713bf9f4e8423c949a88dd2351780cc",
+    "terminal_verdict_sha256": "d0a473a45b355a4cdda90a45b91cdeae438df64b8b2a019738690259723975ef"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_fixtures": [
+    {
+      "Q": [
+        [
+          1
+        ]
+      ],
+      "fixture_id": "one_charged_phase_no_relative_clock",
+      "gauss_QT_p": [
+        "0"
+      ],
+      "horizontal_velocity_v_equals_Minv_p": [
+        "0"
+      ],
+      "integer_relative_character_basis_N": [
+        []
+      ],
+      "kinetic_energy": "0",
+      "phase_inertia_M": [
+        [
+          "2"
+        ]
+      ],
+      "phase_momentum_p_equals_N_Pi": [
+        "0"
+      ],
+      "positive_reduced_metric": true,
+      "rank": 1,
+      "raw_D_phase_moment_map": "0",
+      "reduced_inverse_metric_A_equals_NT_Minv_N": [],
+      "reduced_kinetic_energy": "0",
+      "reduced_metric_Grel_equals_Ainv": [],
+      "relative_dimension": 0,
+      "relative_momentum_Pi": [],
+      "relative_velocity_psidot_equals_NT_v": [],
+      "smith_invariant_factors": [
+        1
+      ]
+    },
+    {
+      "Q": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "fixture_id": "two_equal_charges_counterflow_clock",
+      "gauss_QT_p": [
+        "0"
+      ],
+      "horizontal_velocity_v_equals_Minv_p": [
+        "1/2",
+        "-1/3"
+      ],
+      "integer_relative_character_basis_N": [
+        [
+          1
+        ],
+        [
+          -1
+        ]
+      ],
+      "kinetic_energy": "5/12",
+      "phase_inertia_M": [
+        [
+          "2",
+          "0"
+        ],
+        [
+          "0",
+          "3"
+        ]
+      ],
+      "phase_momentum_p_equals_N_Pi": [
+        "1",
+        "-1"
+      ],
+      "positive_reduced_metric": true,
+      "rank": 1,
+      "raw_D_phase_moment_map": "5/6",
+      "reduced_inverse_metric_A_equals_NT_Minv_N": [
+        [
+          "5/6"
+        ]
+      ],
+      "reduced_kinetic_energy": "5/12",
+      "reduced_metric_Grel_equals_Ainv": [
+        [
+          "6/5"
+        ]
+      ],
+      "relative_dimension": 1,
+      "relative_momentum_Pi": [
+        "1"
+      ],
+      "relative_velocity_psidot_equals_NT_v": [
+        "5/6"
+      ],
+      "smith_invariant_factors": [
+        1
+      ]
+    },
+    {
+      "Q": [
+        [
+          1
+        ],
+        [
+          0
+        ]
+      ],
+      "fixture_id": "one_charged_plus_one_neutral_clock",
+      "gauss_QT_p": [
+        "0"
+      ],
+      "horizontal_velocity_v_equals_Minv_p": [
+        "0",
+        "1/3"
+      ],
+      "integer_relative_character_basis_N": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "kinetic_energy": "1/6",
+      "phase_inertia_M": [
+        [
+          "2",
+          "0"
+        ],
+        [
+          "0",
+          "3"
+        ]
+      ],
+      "phase_momentum_p_equals_N_Pi": [
+        "0",
+        "1"
+      ],
+      "positive_reduced_metric": true,
+      "rank": 1,
+      "raw_D_phase_moment_map": "1/3",
+      "reduced_inverse_metric_A_equals_NT_Minv_N": [
+        [
+          "1/3"
+        ]
+      ],
+      "reduced_kinetic_energy": "1/6",
+      "reduced_metric_Grel_equals_Ainv": [
+        [
+          "3"
+        ]
+      ],
+      "relative_dimension": 1,
+      "relative_momentum_Pi": [
+        "1"
+      ],
+      "relative_velocity_psidot_equals_NT_v": [
+        "1/3"
+      ],
+      "smith_invariant_factors": [
+        1
+      ]
+    },
+    {
+      "Q": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "fixture_id": "three_phases_two_gauges",
+      "gauss_QT_p": [
+        "0",
+        "0"
+      ],
+      "horizontal_velocity_v_equals_Minv_p": [
+        "-1/2",
+        "-1/3",
+        "1/5"
+      ],
+      "integer_relative_character_basis_N": [
+        [
+          -1
+        ],
+        [
+          -1
+        ],
+        [
+          1
+        ]
+      ],
+      "kinetic_energy": "31/60",
+      "phase_inertia_M": [
+        [
+          "2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "3",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "5"
+        ]
+      ],
+      "phase_momentum_p_equals_N_Pi": [
+        "-1",
+        "-1",
+        "1"
+      ],
+      "positive_reduced_metric": true,
+      "rank": 2,
+      "raw_D_phase_moment_map": "31/30",
+      "reduced_inverse_metric_A_equals_NT_Minv_N": [
+        [
+          "31/30"
+        ]
+      ],
+      "reduced_kinetic_energy": "31/60",
+      "reduced_metric_Grel_equals_Ainv": [
+        [
+          "30/31"
+        ]
+      ],
+      "relative_dimension": 1,
+      "relative_momentum_Pi": [
+        "1"
+      ],
+      "relative_velocity_psidot_equals_NT_v": [
+        "31/30"
+      ],
+      "smith_invariant_factors": [
+        1,
+        1
+      ]
+    }
+  ],
+  "exact_sigma_model_projector_fixture": {
+    "field_coordinates": [
+      "rho",
+      "theta1",
+      "theta2"
+    ],
+    "full_positive_kinetic_G": [
+      [
+        "2",
+        "1/2",
+        "0"
+      ],
+      [
+        "1/2",
+        "3",
+        "1/3"
+      ],
+      [
+        "0",
+        "1/3",
+        "4"
+      ]
+    ],
+    "gauge_K": [
+      "0",
+      "1",
+      "1"
+    ],
+    "horizontal_basis_H": [
+      [
+        "-20",
+        "-26"
+      ],
+      [
+        "3",
+        "0"
+      ],
+      [
+        "0",
+        "3"
+      ]
+    ],
+    "horizontal_projector_P_G": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "-3/46",
+        "13/23",
+        "-13/23"
+      ],
+      [
+        "-3/46",
+        "-10/23",
+        "10/23"
+      ]
+    ],
+    "identities": {
+      "G_P_equals_PT_G": true,
+      "KT_G_P_equals_zero": true,
+      "P_K_equals_zero": true,
+      "P_squared_equals_P": true,
+      "full_G_positive": true,
+      "reduced_metric_positive": true
+    },
+    "reduced_metric_HT_G_H": [
+      [
+        "767",
+        "1004"
+      ],
+      [
+        "1004",
+        "1388"
+      ]
+    ],
+    "vertical_Gram_KT_G_K": "23/3"
+  },
+  "imports": [
+    {
+      "actual_sha256": "3b7b1f86392f0d5daeec4b1adac99a0e16e472ff37b44253908a20c53aad1404",
+      "path": "d_quotient_classical/compensator/COMPENSATOR_COMPLEX_SCALE_U1_CONNECTION_PREFLIGHT_V1.json",
+      "result_id": "COMPENSATOR_COMPLEX_SCALE_U1_CONNECTION_PREFLIGHT_V1",
+      "result_state": "SCOPED_SEPARATED_SCALE_U1_MINIMAL_GOOD_LOCUS_EMPTY",
+      "sha256": "3b7b1f86392f0d5daeec4b1adac99a0e16e472ff37b44253908a20c53aad1404",
+      "source_commit": "6cc041fadaaf6259142aa8f30a2f75879cf92dd3"
+    },
+    {
+      "actual_sha256": "e597c687ae064ac6809b674c056aa08d0167a9184b6addb95b5b7330c33dcc62",
+      "path": "d_quotient_classical/compensator/COMPENSATOR_TWO_FIELD_CHARGE_MATRIX_PREFLIGHT_V1.json",
+      "result_id": "COMPENSATOR_TWO_FIELD_CHARGE_MATRIX_PREFLIGHT_V1",
+      "result_state": "SCOPED_TWO_FIELD_MINIMAL_CHARGE_MATRIX_GOOD_LOCUS_EMPTY",
+      "sha256": "e597c687ae064ac6809b674c056aa08d0167a9184b6addb95b5b7330c33dcc62",
+      "source_commit": "2b1609cedc77e85dd71967fb46e49a4595c75763"
+    },
+    {
+      "actual_sha256": "f1c859640f8e03c8ce5a9cc171635701eea880dc0a790282facba15c7cd9a9b8",
+      "path": "d_quotient_classical/compensator/COMPENSATOR_TWO_FIELD_FULL_BV_CAUSAL_GATE_V1.json",
+      "result_id": "COMPENSATOR_TWO_FIELD_FULL_BV_CAUSAL_GATE_V1",
+      "result_state": "NOT_ACTIVATED_EMPTY_PREDECESSOR_LOCUS",
+      "sha256": "f1c859640f8e03c8ce5a9cc171635701eea880dc0a790282facba15c7cd9a9b8",
+      "source_commit": "4812910c60b2fc641d79e93144bb23c684c90fb5"
+    }
+  ],
+  "integrated_gauss": {
+    "does_not_imply": "p_i=0 or v_i=0 separately when n-k>0",
+    "general_two_derivative_homogeneous_phase_lagrangian": "L_phase=Vol(S3)[1/2 v^T M(rho,psi) v+dotrho^T C(rho,psi) v-V(rho,psi)], v=dottheta+Q A0",
+    "integrated_source_free_closed_S3_constraint": "Q^T p=0",
+    "local_constraint": "d_spatial star E_alpha+(Q^T j_phase)_alpha=(j_external)_alpha",
+    "phase_momentum": "p=M v+C^T dotrho",
+    "proof": "A0 is a Lagrange multiplier and the spatial divergence integrates to zero because boundary(S3)=empty. Smooth U(1) bundles over S3 are topologically trivial because H^2(S3,Z)=0.",
+    "with_sources_or_boundary_convention": "Q^T P_phase+q_external=Phi_boundary; on closed S3 Phi_boundary=0, so an external charge permits scalar charge only through exact total cancellation."
+  },
+  "moment_maps": {
+    "K_Berger_phase_stabilizer": "If dotpsi_bar=w generates a continuous symmetry R_w of V, K_Berger=D-R_w and delta H_K_Berger^phase=0.",
+    "claim_scope": "These are the exact phase-sector contributions. A full gravitational K_Berger moment map, pairing or causal carrier is not inferred.",
+    "compact_gauge_moment_map": "mu_gamma=Vol(S3) gamma^T Q^T p=0",
+    "gauge_invariance": "v_bar -> v_bar+Q lambda changes v_bar^T p by lambda^T Q^T p=0.",
+    "phase_symplectic_potential": "Theta_phase=Vol(S3) p^T delta theta=Vol(S3) Pi^T delta psi on Q^T p=0",
+    "stationary_raw_D_hamiltonian": "H_D^phase=Vol(S3) dotpsi_bar^T Pi, up to a background constant",
+    "stationary_raw_D_variation": "delta H_D^phase=Vol(S3) v_bar^T delta p=Vol(S3) dotpsi_bar^T delta Pi"
+  },
+  "proof_obligations": {
+    "charged_plus_neutral_witness": "PASS",
+    "full_sigma_model_projector": "PASS",
+    "gauss_constraint": "PASS",
+    "positive_quotient_metric": "PASS",
+    "raw_D_reduction": "PASS",
+    "smith_rank_and_relative_dimension": "PASS",
+    "source_and_boundary_split": "PASS",
+    "three_field_two_gauge_witness": "PASS",
+    "three_import_hashes": "PASS",
+    "two_field_counterflow_witness": "PASS"
+  },
+  "reduced_mechanics": {
+    "A": "A=N^T M^{-1} N",
+    "declared_indefinite_case": "If M is nonsingular indefinite, the same formulas apply when A is nonsingular. The relative sector is healthy exactly when A>0 (equivalently G_rel>0); an indefinite charge cancellation alone is not a healthy clock. If A is singular, a further Dirac reduction is required and no health claim is emitted.",
+    "gauss_solution": "p=N Pi",
+    "general_sigma_model_extension": "For full field-space kinetic G and gauge Killing matrix K=(0,Q), the horizontal projector is P_G=I-K(K^T G K)^{-1}K^T G whenever the vertical Gram matrix is invertible. A positive G induces a positive quotient metric.",
+    "positive_inertia_proof": "For z!=0, z^T A z=(N z)^T M^{-1}(N z)>0; hence A and G_rel are positive definite.",
+    "potential_condition": "Gauge invariance allows phase Fourier characters only from L=ker_Z(Q^T). Arbitrary nonzero reduced initial velocity gives local evolving solutions. Uniform helical motion additionally requires a continuous relative symmetry direction of V and a transverse critical point; a phase-independent V supplies it.",
+    "reduced_hamiltonian": "H_rel=Vol(S3)[1/2 Pi^T A Pi+V_rel]",
+    "reduced_lagrangian": "L_rel=Vol(S3)[1/2 dotpsi^T G_rel dotpsi-V_rel]",
+    "reduced_phase_metric": "G_rel=A^{-1}",
+    "relative_velocity": "dotpsi=N^T M^{-1} N Pi=A Pi"
+  },
+  "result_id": "CLOSED_S3_GAUGED_CLOCK_GAUSS_STRUCTURE_THEOREM_V1",
+  "result_state": "CERTIFIED_FINITE_HOMOGENEOUS_GAUSS_RELATIVE_CLOCK_STRUCTURE_THEOREM",
+  "schema": "pure-weyl-closed-s3-gauged-clock-gauss-structure-v1",
+  "scope": {
+    "boundary": false,
+    "carrier": "smooth homogeneous phase/modulus mechanics",
+    "charge_domain": "integer Q in Mat_{n by r}(Z)",
+    "compact_gauge_count": "finite r>=0",
+    "derivative_order": 2,
+    "external_sources": false,
+    "field_count": "finite n>=1",
+    "kinetic_branches": [
+      "positive definite",
+      "nonsingular declared indefinite"
+    ],
+    "spatial_manifold": "closed smooth S3"
+  },
+  "terminal_verdict": {
+    "boundary_or_external_source_needed_for_nonzero_total_gauge_charge": true,
+    "boundary_or_external_source_needed_for_relative_clock": false,
+    "full_BV_or_causal_successor_activated": false,
+    "individual_phase_momenta_forced_zero": false,
+    "next_gate": "A model-specific successor may import this theorem only after it selects an action whose scale/trace gate passes. Compact Gauss alone is no longer a valid reason to reject a many-field neutral relative clock.",
+    "relative_clock_exists_with_positive_inertia_iff": "n-rank(Q)>0",
+    "result": "POSITIVE_RELATIVE_CLOCKS_SURVIVE_ZERO_TOTAL_GAUGE_CHARGE",
+    "total_compact_gauge_charge_on_closed_S3": "ZERO"
+  }
+}

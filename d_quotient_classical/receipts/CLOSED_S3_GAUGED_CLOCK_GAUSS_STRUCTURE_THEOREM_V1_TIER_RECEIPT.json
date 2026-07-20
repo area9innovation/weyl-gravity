@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "CLOSED_S3_GAUGED_CLOCK_GAUSS_STRUCTURE_THEOREM_V1_TIER_RECEIPT",
+  "claim_id": "CLOSED_S3_GAUGED_CLOCK_GAUSS_STRUCTURE_THEOREM_V1",
+  "date": "2026-07-21",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/compensator/closed_s3_gauged_clock_gauss_structure_theorem.py",
+      "sha256": "6dd313cc562fad4ae163ab78d562a1217483d96b4508ed5bd60b80993b6699d1"
+    },
+    {
+      "path": "d_quotient_classical/compensator/CLOSED_S3_GAUGED_CLOCK_GAUSS_STRUCTURE_THEOREM_V1.json",
+      "sha256": "c88b41a26262c2e79f2e7dbcccf66c50e19cfc179ed96dad8a847fc81f4e2433"
+    },
+    {
+      "path": "d_quotient_classical/compensator/closed_s3_gauged_clock_gauss_snf_check.forge",
+      "sha256": "f85c6fbbc9c67b7cd2baf6d955ee173f03f0668703f461c7185d750948f627d2"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_closed_s3_gauged_clock_gauss_structure_theorem.py",
+      "sha256": "182095763faab1b8cc9d3a5a8e39526aa512f3b97aef8b0cb5f43c713be79d68"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_closed_s3_gauged_clock_gauss_structure_theorem.py",
+      "sha256": "9c469dd50c3d0eaf11b87abc8e33310d4d55292ceeb258572841c9fad1e6eccc"
+    },
+    {
+      "path": "d_quotient_classical/schema/closed-s3-gauged-clock-gauss-structure-theorem-v1.schema.json",
+      "sha256": "5f9f7445fc9a041312a6f50f25f7004810b88e142252084e7ac2a8688bf5fd0b"
+    },
+    {
+      "path": "d_quotient_classical/reports/closed-s3-gauged-clock-gauss-structure-theorem-v1.md",
+      "sha256": "05267063e3e1e8ecf3be6cc07d6d1a0104682c340a11de957187bb1c5afd20e6"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <producer, independent verifier and mutation tests>; python3 -m json.tool <result and schema>; git diff --check -- <seven explicit paths>",
+        "elapsed_seconds": 0.08,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/closed_s3_gauged_clock_gauss_structure_theorem.py --check",
+        "elapsed_seconds": 0.33,
+        "status": "PASS",
+        "method": "three hash-pinned imports; exact Smith rank and relative-character dimensions; positive and declared-indefinite quotient criteria; exact one-, two- and three-field fixtures; mixed sigma-model projector; integrated Gauss; raw-D and K_Berger phase-sector formulas"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_closed_s3_gauged_clock_gauss_structure_theorem.py",
+        "elapsed_seconds": 0.33,
+        "status": "PASS",
+        "independent_rail": "imports no producer module; independently replays source hashes, every rational fixture, a complete small two-field charge census, the integer kernel, the mixed radial-phase projector and all fail-closed terminal flags"
+      },
+      {
+        "command": "python3 -m unittest -v d_quotient_classical.compensator.tests.test_closed_s3_gauged_clock_gauss_structure_theorem",
+        "elapsed_seconds": 0.45,
+        "status": "PASS",
+        "tests": 10,
+        "mutation_controls": "import drift, nonzero-total-charge promotion, all-momenta no-go, source requirement, counterflow corruption, reduced-sign corruption, projector corruption and causal promotion are rejected"
+      },
+      {
+        "command": "/home/alstrup/.local/share/mise/installs/go/1.25.8/bin/go build -o /tmp/forge-current-20260721 ./cmd/forge; /tmp/forge-current-20260721 -run <closed-S3 SNF rail>",
+        "elapsed_seconds": 2.47,
+        "status": "PASS",
+        "independent_rail": "current-source GMP-backed math/snf replay of equal-charge, nonprimitive, full-rank, three-field/two-gauge and redundant-column charge matrices"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/closed-s3-gauged-clock-gauss-structure-theorem-v1.schema.json -d d_quotient_classical/compensator/CLOSED_S3_GAUGED_CLOCK_GAUSS_STRUCTURE_THEOREM_V1.json",
+        "elapsed_seconds": 1.41,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "bash ci/science-forge-shadow.sh",
+        "elapsed_seconds": 5.29,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "the read-only rail reported pre-existing bridge certificate drift, corpus baseline growth from 976 to 1332 certificates, and an unpinned stale installed Forge development binary; it exited zero and preserved diagnostics under /tmp/sf-shadow.8y4wMg"
+      }
+    ]
+  },
+  "tier_3": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m unittest discover -v",
+        "elapsed_seconds": 1.51,
+        "status": "PASS",
+        "tests": 148,
+        "scope": "repository-wide Python unittest discovery from physics/symplectic-reconstruction"
+      }
+    ],
+    "reason": "The item freezes a general finite-field closed-S3 compact-Gauss and positive relative-clock structure theorem and therefore meets the AGENTS.md theorem-freeze Tier-3 criterion."
+  },
+  "claim_boundary": "This receipt certifies the integrated compact-Abelian Gauss law, integer charge-lattice Smith classification, necessary and sufficient fixed-modulus relative-clock criteria, exact component-support criteria, positive reduced phase metric, declared-indefinite sign gate, moving-modulus affine extension, mixed positive sigma-model quotient fixture, exact finite witnesses, and stationary raw-D/K_Berger phase-sector moment maps for finitely many smooth homogeneous complex scalars in the declared two-derivative class on closed S3. It establishes that total compact gauge charge vanishes source-free while healthy neutral relative clocks survive exactly when n-rank(Q)>0. It does not select a model-specific action or establish a nonhomogeneous PDE, globally monotone clock, full BV complex, causal parent, Hadamard state, anomaly/QME, particle, scattering, gravity-positivity or unitarity result.",
+  "higher_tiers_not_run": []
+}

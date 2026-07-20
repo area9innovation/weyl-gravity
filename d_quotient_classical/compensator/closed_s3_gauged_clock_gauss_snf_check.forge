@@ -1,0 +1,71 @@
+import prelude;
+import testing;
+import math/rational;
+import math/qmat;
+import math/snf;
+import math/bigint;
+import ds/vec;
+
+fn e(r: i64, c: i64, n: i64) -> QEnt {
+  return new QEnt(r, c, rat(n, 1));
+}
+
+fn matrix(r: i64, c: i64, entries: Vec<QEnt>) -> QMat {
+  return qm_from_triplets(r, c, entries);
+}
+
+fn main() -> i64 {
+  let equal_rows: Vec<QEnt> = vec_new<QEnt>(system_allocator(), 2);
+  vec_push(equal_rows, e(0, 0, 1));
+  vec_push(equal_rows, e(1, 0, 1));
+  let q_equal: QMat = matrix(2, 1, equal_rows);
+  let f_equal: Vec<Big> = snf_invariant_factors(q_equal);
+  assert(snf_rank(q_equal) == 1);
+  assert(usize_to_i64(len(f_equal)) == 1);
+  assert(vec_get_ref(f_equal, (0:usize)) == big_from_i64(1));
+
+  let nonprimitive_rows: Vec<QEnt> = vec_new<QEnt>(system_allocator(), 2);
+  vec_push(nonprimitive_rows, e(0, 0, 2));
+  vec_push(nonprimitive_rows, e(1, 0, 4));
+  let q_nonprimitive: QMat = matrix(2, 1, nonprimitive_rows);
+  let f_nonprimitive: Vec<Big> = snf_invariant_factors(q_nonprimitive);
+  assert(snf_rank(q_nonprimitive) == 1);
+  assert(vec_get_ref(f_nonprimitive, (0:usize)) == big_from_i64(2));
+
+  let full_rows: Vec<QEnt> = vec_new<QEnt>(system_allocator(), 4);
+  vec_push(full_rows, e(0, 0, 1)); vec_push(full_rows, e(0, 1, 0));
+  vec_push(full_rows, e(1, 0, 0)); vec_push(full_rows, e(1, 1, 1));
+  let q_full: QMat = matrix(2, 2, full_rows);
+  let f_full: Vec<Big> = snf_invariant_factors(q_full);
+  assert(snf_rank(q_full) == 2);
+  assert(usize_to_i64(len(f_full)) == 2);
+  assert(vec_get_ref(f_full, (0:usize)) == big_from_i64(1));
+  assert(vec_get_ref(f_full, (1:usize)) == big_from_i64(1));
+
+  let three_rows: Vec<QEnt> = vec_new<QEnt>(system_allocator(), 4);
+  vec_push(three_rows, e(0, 0, 1)); vec_push(three_rows, e(1, 1, 1));
+  vec_push(three_rows, e(2, 0, 1)); vec_push(three_rows, e(2, 1, 1));
+  let q_three: QMat = matrix(3, 2, three_rows);
+  let f_three: Vec<Big> = snf_invariant_factors(q_three);
+  assert(snf_rank(q_three) == 2);
+  assert(usize_to_i64(len(f_three)) == 2);
+  assert(vec_get_ref(f_three, (0:usize)) == big_from_i64(1));
+  assert(vec_get_ref(f_three, (1:usize)) == big_from_i64(1));
+
+  let redundant_rows: Vec<QEnt> = vec_new<QEnt>(system_allocator(), 2);
+  vec_push(redundant_rows, e(0, 0, 1));
+  vec_push(redundant_rows, e(0, 1, 2));
+  let q_redundant: QMat = matrix(2, 2, redundant_rows);
+  let f_redundant: Vec<Big> = snf_invariant_factors(q_redundant);
+  assert(snf_rank(q_redundant) == 1);
+  assert(usize_to_i64(len(f_redundant)) == 1);
+  assert(vec_get_ref(f_redundant, (0:usize)) == big_from_i64(1));
+
+  println("closed-S3 compact Gauss charge-lattice SNF: PASS");
+  drop(f_redundant); drop(q_redundant);
+  drop(f_three); drop(q_three);
+  drop(f_full); drop(q_full);
+  drop(f_nonprimitive); drop(q_nonprimitive);
+  drop(f_equal); drop(q_equal);
+  return 0;
+}
