@@ -1,0 +1,12 @@
+{
+ "$schema":"https://json-schema.org/draft/2020-12/schema","type":"object",
+ "required":["schema","result_id","setting_id","claim_status","atlas_status","dependency_tags","dependency_refs","payload_ref","gate_results","next_gate","claim_boundary","provenance"],
+ "properties":{
+  "schema":{"const":"closed-universe-berger-material-parent56-background-readout-interface-v1"},
+  "result_id":{"const":"BERGER_MATERIAL_PARENT56_BACKGROUND_READOUT_INTERFACE"},
+  "claim_status":{"const":"CERTIFIED_ROW_INDEXED_BACKGROUND_READOUT_AND_MIXED_LAMBDA_F_HESSIAN"},
+  "atlas_status":{"const":"CERTIFIED"},"dependency_tags":{"const":["LOCAL-ALGEBRAIC","REDUCED-MODE"]},
+  "dependency_refs":{"type":"object","minProperties":7},"payload_ref":{"type":"object","required":["path","result_id","sha256","canonical_sha256"]},
+  "next_gate":{"const":"ASSEMBLE_AND_VERIFY_COMPLETE_EXECUTABLE_MATERIAL_PARENT56_Q1"},"claim_boundary":{"type":"string","minLength":1800}
+ },"additionalProperties":true
+}

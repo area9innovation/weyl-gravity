@@ -265,6 +265,14 @@ def test_replacement112_post_phi2_stops_at_mixed_metric_rod_hessian():
     assert "BERGER_REPLACEMENT112_EXECUTABLE_UNARY_AFTER_PHI2_MAP_SHORTFALL" in {e["result_id"] for e in row["evidence"]}
 
 
+def test_material_background_readout_interface_is_certified_without_reduction():
+    row = next(row for row in build()["entries"] if row["id"] == "observer.berger.interaction.material_parent56_background_readout_interface")
+    assert row["descriptions"]["symplectic"] == "CERTIFIED"
+    assert row["observer_data"]["detector_response"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    assert "BERGER_MATERIAL_PARENT56_BACKGROUND_READOUT_INTERFACE" in {e["result_id"] for e in row["evidence"]}
+
+
 def test_recoil_internal_readiness_is_certified_while_physical_activation_is_open():
     rows = {row["id"]: row for row in build()["entries"]}
     readiness = rows["observer.berger.detector_profile.recoil_stream_executable_readiness"]

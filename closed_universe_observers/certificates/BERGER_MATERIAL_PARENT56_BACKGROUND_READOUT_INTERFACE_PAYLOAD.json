@@ -1,0 +1,262 @@
+{
+  "action_hessian_coefficients": [
+    "-1",
+    "-1",
+    "-1",
+    "-1"
+  ],
+  "action_hessian_entry_count": 4,
+  "adjoint_and_pairing": {
+    "adjoint_blocks": 2,
+    "formal_adjoint_defect_count": 0,
+    "forward_blocks": 2,
+    "pairing": "imported signed Maxwell/memory odd pairing"
+  },
+  "chain_and_support_audit": {
+    "adjoint_identity": "delta(delta Btilde_a^sharp)=0",
+    "coarea_detector_density_control": "-Phi2_00/2",
+    "compact_support_chain_defect_count": 0,
+    "generic_support_chain_defect_count": 0,
+    "identity": "delta Btilde_a d=0 because d^2=0",
+    "maxwell_gauge_path": "c_M --d--> A --delta Btilde_a--> p_a_plus",
+    "mixed_cyclicity_defect_count": 0,
+    "mixed_nilpotency_defect_count": 0,
+    "spatial_zero_mode_chain_defect_count": 0
+  },
+  "disposition": {
+    "F_a_base_row_and_profile_interface": "CERTIFIED",
+    "complete_material_parent56_q1": "NOT_REACHED",
+    "four_mixed_lambda_F_action_hessian_entries": "CERTIFIED",
+    "physical_reduction_and_downstream": "NOT_REACHED",
+    "support_and_zero_mode_chain_map": "CERTIFIED"
+  },
+  "mutations": [
+    {
+      "detected": true,
+      "name": "clone_D1_profile_from_D0"
+    },
+    {
+      "defect_count": 4,
+      "detected": true,
+      "name": "flip_mixed_action_sign"
+    },
+    {
+      "defect": "advanced/retarded adjoint source ceases to be certified compact",
+      "detected": true,
+      "name": "drop_compact_support_domain"
+    },
+    {
+      "defect": "violates F_a(A)=Q_a[dA]",
+      "detected": true,
+      "name": "map_constant_Maxwell_mode_nontrivially"
+    }
+  ],
+  "profile_maps": [
+    {
+      "K_Berger_weight": "0 on the coefficientwise simultaneous K family; fixed-background linear K descent is not claimed",
+      "clock_profile": "f_0(Theta)=B((Theta-(3/16))/(1/64))/((1/64) C_B)",
+      "clock_support": [
+        "11/64",
+        "13/64"
+      ],
+      "density": "chi_0=f_0(Theta) rho_0(R_0) J_0",
+      "detector": "D0",
+      "functional": "F_0(A)=Q_0[dA]=integral chi_0<P_0,dA>_gHat dvol_gHat",
+      "physical_time_support": [
+        "11/48",
+        "13/48"
+      ],
+      "polarization": "dTheta_wedge_dR0_1",
+      "real_weight": "real identity",
+      "rod_center": [
+        "1/4",
+        "0",
+        "0"
+      ],
+      "rod_chart_radius_bound": "0<epsilon_0<r_chart_0<=1/64",
+      "source_carrier": {
+        "degree": 0,
+        "row_ids": [
+          "A_0",
+          "A_1",
+          "A_2",
+          "A_3"
+        ],
+        "rows": [
+          55,
+          56,
+          57,
+          58
+        ]
+      },
+      "spatial_profile": "rho_0(R)=B3((R-c_0)/epsilon_0)/(epsilon_0^3 C_B3)",
+      "support_category": "C_c^infinity compact spacetime detector slab inside the certified rod chart",
+      "target_carrier": {
+        "cotangent": 82,
+        "cotangent_id": "p0_plus",
+        "degrees": [
+          0,
+          1
+        ],
+        "memory_multiplier": 72,
+        "memory_multiplier_id": "p0"
+      },
+      "zero_mode_restriction": "zero on the constant Maxwell gauge-potential mode because F_a(A)=Q_a[dA]"
+    },
+    {
+      "K_Berger_weight": "0 on the coefficientwise simultaneous K family; fixed-background linear K descent is not claimed",
+      "clock_profile": "f_1(Theta)=B((Theta-(3/8))/(1/64))/((1/64) C_B)",
+      "clock_support": [
+        "23/64",
+        "25/64"
+      ],
+      "density": "chi_1=f_1(Theta) rho_1(R_1) J_1",
+      "detector": "D1",
+      "functional": "F_1(A)=Q_1[dA]=integral chi_1<P_1,dA>_gHat dvol_gHat",
+      "physical_time_support": [
+        "23/48",
+        "25/48"
+      ],
+      "polarization": "dTheta_wedge_dR1_2",
+      "real_weight": "real identity",
+      "rod_center": [
+        "1/2",
+        "0",
+        "0"
+      ],
+      "rod_chart_radius_bound": "0<epsilon_1<r_chart_1<=1/64",
+      "source_carrier": {
+        "degree": 0,
+        "row_ids": [
+          "A_0",
+          "A_1",
+          "A_2",
+          "A_3"
+        ],
+        "rows": [
+          55,
+          56,
+          57,
+          58
+        ]
+      },
+      "spatial_profile": "rho_1(R)=B3((R-c_1)/epsilon_1)/(epsilon_1^3 C_B3)",
+      "support_category": "C_c^infinity compact spacetime detector slab inside the certified rod chart",
+      "target_carrier": {
+        "cotangent": 83,
+        "cotangent_id": "p1_plus",
+        "degrees": [
+          0,
+          1
+        ],
+        "memory_multiplier": 73,
+        "memory_multiplier_id": "p1"
+      },
+      "zero_mode_restriction": "zero on the constant Maxwell gauge-potential mode because F_a(A)=Q_a[dA]"
+    }
+  ],
+  "result_id": "BERGER_MATERIAL_PARENT56_BACKGROUND_READOUT_INTERFACE_PAYLOAD",
+  "row_indexed_mixed_unary_blocks": [
+    {
+      "action_hessian_coefficient": "-1",
+      "action_variables": [
+        "memory_multiplier_0",
+        "F_0_0"
+      ],
+      "base_source_ids": [
+        "A_0",
+        "A_1",
+        "A_2",
+        "A_3"
+      ],
+      "base_source_rows": [
+        55,
+        56,
+        57,
+        58
+      ],
+      "base_target_id": "p0_plus",
+      "base_target_row": 82,
+      "detector": "D0",
+      "operator": "-delta_gHat(Btilde_0)"
+    },
+    {
+      "action_hessian_coefficient": "-1",
+      "action_variables": [
+        "F_0_0",
+        "memory_multiplier_0"
+      ],
+      "base_source_ids": [
+        "p0"
+      ],
+      "base_source_rows": [
+        72
+      ],
+      "base_target_id": [
+        "A_plus_0",
+        "A_plus_1",
+        "A_plus_2",
+        "A_plus_3"
+      ],
+      "base_target_row": [
+        59,
+        60,
+        61,
+        62
+      ],
+      "detector": "D0",
+      "operator": "+(delta_gHat(Btilde_0))^sharp"
+    },
+    {
+      "action_hessian_coefficient": "-1",
+      "action_variables": [
+        "memory_multiplier_1",
+        "F_1_1"
+      ],
+      "base_source_ids": [
+        "A_0",
+        "A_1",
+        "A_2",
+        "A_3"
+      ],
+      "base_source_rows": [
+        55,
+        56,
+        57,
+        58
+      ],
+      "base_target_id": "p1_plus",
+      "base_target_row": 83,
+      "detector": "D1",
+      "operator": "-delta_gHat(Btilde_1)"
+    },
+    {
+      "action_hessian_coefficient": "-1",
+      "action_variables": [
+        "F_1_1",
+        "memory_multiplier_1"
+      ],
+      "base_source_ids": [
+        "p1"
+      ],
+      "base_source_rows": [
+        73
+      ],
+      "base_target_id": [
+        "A_plus_0",
+        "A_plus_1",
+        "A_plus_2",
+        "A_plus_3"
+      ],
+      "base_target_row": [
+        59,
+        60,
+        61,
+        62
+      ],
+      "detector": "D1",
+      "operator": "+(delta_gHat(Btilde_1))^sharp"
+    }
+  ],
+  "schema": "closed-universe-berger-material-parent56-background-readout-interface-payload-v1"
+}

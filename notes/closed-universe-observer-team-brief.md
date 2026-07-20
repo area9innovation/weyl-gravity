@@ -2391,6 +2391,27 @@ this base with the dynamical apparatus parent.  Apparatus \(q_2,q_3\),
 \(\mathcal Z_2\), reduced memory, redshift, recoil and quantum promotion
 remain inactive.
 
+## Active bridge: material background-readout interface
+
+The missing \(F_a\) interface is now certified.  For each detector,
+\(F_a(A)=Q_a[dA]\) is an explicit compactly supported functional on Maxwell
+rows 55--58, with the exact normalized clock and rod profile,
+polarization, source/target rows and signed adjoint.  The two forward blocks
+land in \(p_0^+,p_1^+\); the two adjoints run from \(p_0,p_1\) to the four
+Maxwell antifield rows.  Direct differentiation of
+\(-\lambda_a\bar P_a\cdot F_a\) gives four ordered coefficients \(-1\).
+
+Gauge-chain compatibility follows from \(d^2=0\), compact support is
+preserved, and the constant Maxwell potential zero mode is annihilated.
+The coarea density control remains
+\(d_1+\sigma_a=-\Phi_{2,00}/2\).  K weight zero is certified only on the
+simultaneous coefficientwise family, not at one fixed background.
+
+The fail-closed atlas row is
+observer.berger.interaction.material_parent56_background_readout_interface.
+The complete material-parent-56 unary is the next gate; no reduction or
+nonlinear observer result is inferred here.
+
 ## Active bridge: combined 160-row apparatus unary
 
 The typed pushout of the positive-mixed 112-row base and 56-row material
