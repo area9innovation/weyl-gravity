@@ -1,0 +1,52 @@
+{
+  "schema": "einstein-maxwell-weyl-exceptional-arbitrary-k-locked-resonance-receipt-v1",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ARBITRARY_K_LOCKED_RESONANCE_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.16,
+      "commands": [
+        "python3 -m py_compile <scoped producer, independent verifier and test>",
+        "python3 -m json.tool <scoped certificate, schema and atlas fragment>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 2.05,
+      "commands": [
+        "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_arbitrary_k_locked_resonance --check",
+        "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-exceptional-arbitrary-k-locked-resonance-fragment.json",
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_arbitrary_k_locked_resonance.py",
+        "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_arbitrary_k_locked_resonance -v"
+      ],
+      "mutation_control": "Changing the axial coefficient to zero is rejected by the independent verifier."
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 0.84,
+      "commands": [
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_harmonic_sign_resonance_join.py",
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_weyl_exceptional_ell1_nonzero_k_solution_cofiber.py",
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_ell2_extra_difference_matrix.py"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The enlarged arbitrary-k cone remains a declared shortfall; this does not freeze Paper 13 or change shared core algebra."
+    }
+  },
+  "source_manifest": {
+    "bridge/certificates/EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ARBITRARY_K_LOCKED_RESONANCE_V1.json": "1d6e0de1021e13285508ce940b8d6a18f538025c0cba5eceed4999e05ffa1788",
+    "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_arbitrary_k_locked_resonance.py": "c9380a2db52f14d82f8c57db174fe61a96d2b7d3d74c4f0d6d4a006203bb2263",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_arbitrary_k_locked_resonance.py": "2e009c439e6810ebdf43fe2974a397574f3a3d479e81d9b0f4098bbbd989cf01",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_exceptional_arbitrary_k_locked_resonance.py": "e4cabc8aeac8eff7c3dbceeeefbd24a704c9a48946c1b8f747aa1b6a39e324c1",
+    "bridge/einstein_sector/schema/einstein-maxwell-weyl-exceptional-arbitrary-k-locked-resonance-v1.schema.json": "666e52d9833e66006ca3eae5315ee020383e242c66b0b909122dfc4db40f969e",
+    "residual_atlas/einstein-exceptional-arbitrary-k-locked-resonance-fragment.json": "cb420a8bfb1554c85e0209588f868d606c5f2a627b6884032cb687aae418adc2",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-exceptional-arbitrary-k-locked-resonance-v1.md": "9d299340e1775ee349d13e0e4e8ee35c1c9c4042cd449931d07e098dd3c1fbab"
+  },
+  "disposition": "SHORTFALL",
+  "remaining_stop_condition": "Arbitrary-k a/d and twist columns, all other exceptional-by-generic pairs, all-m tensor assembly, five-moment intersection and the multiple-|k| common zero geometry remain open.",
+  "claim_boundary": "This receipt certifies one same-background arbitrary-k locked exceptional/generic cross-fibre resonance family and its exact nonzero axisymmetric functionals. It does not certify the complete exceptional cross-column matrix, enlarged bounded cone, infinite completion, causal, all-orders, residual, observer, particle, positivity or quantum claims."
+}

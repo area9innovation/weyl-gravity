@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "scope",
+    "kinematics",
+    "covariant_transport_lemma",
+    "locked_difference_matrix",
+    "cross_fibre_functional",
+    "coverage_ledger",
+    "classification",
+    "provenance",
+    "verification_commands",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-exceptional-arbitrary-k-locked-resonance-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ARBITRARY_K_LOCKED_RESONANCE_V1"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "scope": {"type": "object"},
+    "kinematics": {"type": "object"},
+    "covariant_transport_lemma": {"type": "object"},
+    "locked_difference_matrix": {"type": "object"},
+    "cross_fibre_functional": {"type": "object"},
+    "coverage_ledger": {"type": "object"},
+    "classification": {"type": "object"},
+    "provenance": {"type": "object"},
+    "verification_commands": {"type": "array", "minItems": 3},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,92 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This is the first exact same-background arbitrary-k exceptional/generic cross-fibre R-functional. It is not the complete exceptional cross-column matrix or bounded cone. It does not identify circumference backgrounds or imply an infinite-harmonic, causal, all-orders, residual, observer, particle, positivity or quantum statement.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ARBITRARY_K_LOCKED_RESONANCE_V1.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ARBITRARY_K_LOCKED_RESONANCE_V1",
+          "sha256": "1d6e0de1021e13285508ce940b8d6a18f538025c0cba5eceed4999e05ffa1788"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.exceptional_arbitrary_k_locked_resonance",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The same-background lattice relation (omega_2,2k)=2(omega_e,k) is exact for every allowed k.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "Nonradical exceptional and generic-extra blocks support the transported adjoint projection.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Two locked exceptional-by-ell2-extra difference columns are nonzero for every allowed k; six are zero in the transported axisymmetric basis.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The first exact cross-fibre R row is exported, but its enlarged all-m cancellation geometry is unclassified.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No causal/retarded compact-product Green carrier is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The imported complete finite-harmonic smooth-secular theorem supplies a finite secular primitive after the stabilizer moments vanish.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The five moment maps have not been intersected with the complete arbitrary-k cross-column ideal.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compact magnetically supported Plebanski-Hacyan product",
+        "boundaries": "one fixed closed S1_L times S2; no circumference identification",
+        "carrier": "one exceptional ell=1 extra mode at allowed k crossed with the Lorentz-transported ell=2 polar-extra multiplicity at 2k",
+        "charge_sector": "fixed N=2 magnetic bundle",
+        "degree": 2,
+        "ell": "1 x 2 -> L=1 difference and L=2 positive-positive blocks",
+        "k": "every allowed k=2*pi*n/L with its distinct locked 2k fibre",
+        "m": "axisymmetric coefficient matrix; all-m tensor cancellation remains open",
+        "omega": "omega_e(k), 2*omega_e(k), and their exact difference omega_e(k)",
+        "parity": "all four exceptional/generic parity pairs and both transported ell2 extra multiplicities",
+        "theory": "Weyl-Maxwell target"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_arbitrary_k_locked_resonance.py",
+  "generated_by_sha256": "c9380a2db52f14d82f8c57db174fe61a96d2b7d3d74c4f0d6d4a006203bb2263",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_boundary",
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_arbitrary_k_locked_resonance --check",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-exceptional-arbitrary-k-locked-resonance-fragment.json",
+    "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_arbitrary_k_locked_resonance.py"
+  ]
+}
