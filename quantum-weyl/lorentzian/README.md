@@ -329,3 +329,17 @@ PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_a104_cauchy_operator_prefli
 PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_a104_cauchy_operator_preflight
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_a104_cauchy_operator_preflight.py -v
 ```
+
+The independent free-seed gate is now closed at the bisolution level.  The
+rank-40 adjoint dilation of the free companion is normally hyperbolic and
+formally self-adjoint for its nondegenerate off-diagonal Hermitian form.
+Islam--Strohmaier Theorem 1.4 therefore supplies a global Feynman propagator
+and an exact formally self-adjoint Hadamard bisolution.  The form has
+signature \((20,20)\), and the companion Jordan incidence rules out a
+positive-definite symmetrizer on the same auxiliary carrier.  Thus this is a
+global Hadamard bisolution seed, not a positive state.  Transport through the
+cutoff/full regular morphisms still waits on convergence in the fixed
+\(\mathcal D'_{\Gamma_\pm}\) normal topology; Krein CCR normalization,
+graded-BV restriction, the BRST Ward identity and physical-cohomology
+positivity remain separate gates.  The receipt is
+[`berger-free-dilation-hadamard-bisolution-seed.md`](../reports/berger-free-dilation-hadamard-bisolution-seed.md).

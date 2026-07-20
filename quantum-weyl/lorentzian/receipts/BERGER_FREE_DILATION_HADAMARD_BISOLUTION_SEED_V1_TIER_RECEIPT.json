@@ -1,0 +1,56 @@
+{
+  "schema": "quantum-weyl-test-tier-receipt-v1",
+  "result_id": "BERGER_FREE_DILATION_HADAMARD_BISOLUTION_SEED_V1_TIER_RECEIPT",
+  "recorded_at_utc": "2026-07-20T06:41:10Z",
+  "base_commit": "2889e4f556a6732ad9d78311adfb40354a50241f",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "changed_claim": "The normally hyperbolic, formally H-self-adjoint free rank-40 Berger dilation admits a global exact formally self-adjoint Hadamard bisolution seed; its indefinite fibre form does not supply a positive state.",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.21,
+      "commands": [
+        "python -m py_compile quantum-weyl/lorentzian/berger_free_dilation_hadamard_bisolution_seed.py quantum-weyl/lorentzian/berger_free_dilation_hadamard_bisolution_seed_certificate.py quantum-weyl/lorentzian/verify_berger_free_dilation_hadamard_bisolution_seed.py quantum-weyl/active_frontier.py quantum-weyl/atlas/generate_quantum_atlas_fragment.py",
+        "python -m json.tool quantum-weyl/lorentzian/schema/berger-free-dilation-hadamard-bisolution-seed-v1.schema.json",
+        "python -m json.tool quantum-weyl/lorentzian/certificates/BERGER_FREE_DILATION_HADAMARD_BISOLUTION_SEED.json",
+        "python -m json.tool quantum-weyl/certificates/QUANTUM_WEYL_ACTIVE_FRONTIER.json",
+        "python -m json.tool quantum-weyl/atlas/quantum-atlas-fragment.json",
+        "git diff --check -- quantum-weyl notes/d-quotient-quantum-team-brief.md notes/universe-building-roadmap.md"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 5.69,
+      "commands": [
+        "PYTHONPATH=quantum-weyl python -m lorentzian.berger_free_dilation_hadamard_bisolution_seed_certificate --check",
+        "PYTHONPATH=quantum-weyl python -m lorentzian.verify_berger_free_dilation_hadamard_bisolution_seed",
+        "PYTHONPATH=quantum-weyl python -m unittest lorentzian.tests.test_berger_free_dilation_hadamard_bisolution_seed tests.test_active_frontier atlas.tests.test_quantum_atlas_fragment",
+        "PYTHONPATH=quantum-weyl python -m verify_active_frontier",
+        "PYTHONPATH=quantum-weyl python -m atlas.verify_quantum_atlas_fragment"
+      ],
+      "tests_run": 24
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The affected generated frontier and residual-atlas consumer chain was regenerated and independently verified in Tier 1; pinned dilation, graded-state and base-parametrix inputs were unchanged and content-addressed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, lifecycle promotion to a full-BV Hadamard state, shared core-algebra change, release or explicit full-suite request."
+    }
+  },
+  "science_forge_shadow": {
+    "status": "ADVISORY_EXIT_ZERO_WITH_FINDINGS",
+    "command": "./ci/science-forge-shadow.sh",
+    "elapsed_seconds": 4.19,
+    "findings": [
+      "bridge certificate audit drift=FAIL",
+      "coverage census drift: 1170 certificates versus baseline 976",
+      "toolchain is an unpinned dirty development build"
+    ],
+    "claim_use": "NOT_USED_FOR_PROMOTION"
+  },
+  "claim_boundary": "This receipt certifies the free auxiliary dilation bisolution only. It does not certify a positive state, normalized Krein covariance, cutoff/full transport, raw-companion or graded-BV restriction, BRST Ward identity, physical positivity, renormalized Lorentzian products, a Lorentzian QME or quantum theory."
+}

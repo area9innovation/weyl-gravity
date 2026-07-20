@@ -172,6 +172,12 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             "BERGER_CUTOFF_VOLTERRA_MICROLOCAL_ORIENTATION_REDUCTION",
             {evidence["result_id"] for evidence in berger["evidence"]},
         )
+        self.assertIn("global free-dilation Hadamard bisolution seed", hadamard["statement"])
+        self.assertIn("Krein CCR normalization", hadamard["statement"])
+        self.assertIn(
+            "BERGER_FREE_DILATION_HADAMARD_BISOLUTION_SEED",
+            {evidence["result_id"] for evidence in berger["evidence"]},
+        )
 
     def test_non_mode_carriers_are_not_particles(self) -> None:
         guards = [

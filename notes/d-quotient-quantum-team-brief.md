@@ -1518,7 +1518,8 @@ BERGER_TEMPORAL_CUTOFF_COMPANION_GREEN_FAMILY [CERTIFIED]
   -> CUTOFF_FACTORWISE_NULL_KERNEL [CERTIFIED]
   -> REGULAR_INTERNAL_TIMESLICE_SOURCE_MAP [CERTIFIED]
   -> METRIC_RFHGHO_DILATION + TWO_REGULAR_CAUCHY_MORPHISMS [CERTIFIED]
-  -> morphism cone mapping + same-orientation exclusion + free seed covariance
+  -> FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED [CERTIFIED, INDEFINITE]
+  -> morphism cone mapping + same-orientation exclusion + seed transport/Krein normalization
   -> restriction to full graded BV carrier + BRST Ward identity
   -> companion Hadamard two-point distribution
 ```
@@ -1535,8 +1536,14 @@ an internal time-slice representative, not yet the free-to-full response
 morphism. A canonical off-diagonal indefinite Hermitian dilation now turns
 the free, cutoff and full metric companions into RFHGHO objects. The past and
 future agreement regions give two regular Cauchy GreenHyp morphism legs. The
-active analytic gate is their cone action together with exclusion of the two
-same-orientation sectors, followed by a free seed covariance. Restriction from
+free rank-40 dilation now has a global exact formally self-adjoint Hadamard
+bisolution by the normally-hyperbolic Feynman existence theorem. Its
+certified fibre form has signature \((20,20)\), and the companion Jordan
+incidence precludes a positive-definite symmetrizer on that same auxiliary
+carrier. This is therefore a bisolution seed, not a positive state. The
+active analytic gate is still the regular morphisms' cone action together
+with exclusion of the two same-orientation sectors, followed by transport
+and Krein CCR normalization of that seed. Restriction from
 the doubled metric carrier to the full graded BV complex, the BRST Ward
 identity and the physical/Krein positivity policy remain independent gates.
 The fail-closed atlas row remains `OPEN`: no full companion covariance, BRST
@@ -1566,3 +1573,6 @@ Until that stronger statement lands, cutoff decomposability, the regular
 morphism cone action and Hadamard transport remain open.  This reduction is
 recorded in
 [`berger-cutoff-volterra-microlocal-orientation-reduction.md`](../quantum-weyl/reports/berger-cutoff-volterra-microlocal-orientation-reduction.md).
+The now-certified independent free global bisolution input and its
+indefinite/positive-state boundary are recorded in
+[`berger-free-dilation-hadamard-bisolution-seed.md`](../quantum-weyl/reports/berger-free-dilation-hadamard-bisolution-seed.md).

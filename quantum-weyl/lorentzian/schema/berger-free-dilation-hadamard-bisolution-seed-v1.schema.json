@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/quantum-weyl/berger-free-dilation-hadamard-bisolution-seed-v1.schema.json",
+  "title": "Berger free dilation Hadamard bisolution seed",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_layer",
+    "dependency_tags",
+    "classical_commit",
+    "setting_id",
+    "dependency_refs",
+    "exact_input_checks",
+    "free_operator",
+    "theorem_instantiation",
+    "positive_metric_obstruction",
+    "negative_controls",
+    "analytic_boundary",
+    "claim_flags",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-free-dilation-hadamard-bisolution-seed-v1"},
+    "result_id": {"const": "BERGER_FREE_DILATION_HADAMARD_BISOLUTION_SEED"},
+    "result_state": {"const": "GLOBAL_FREE_DILATION_HADAMARD_BISOLUTION_EXISTS_POSITIVE_STATE_AND_BV_RESTRICTION_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_FREE_HADAMARD_SEED"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [{"const": "LORENTZIAN-CAUSAL"}],
+      "items": false
+    },
+    "classical_commit": {"type": "string", "minLength": 7},
+    "setting_id": {"type": "string", "minLength": 1},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": {"$ref": "#/$defs/dependency"},
+      "required": ["Hermitian_dilation", "graded_state_space_contract", "base_wave_parametrix"]
+    },
+    "exact_input_checks": {
+      "type": "object",
+      "additionalProperties": {"const": true},
+      "minProperties": 6
+    },
+    "free_operator": {"type": "object", "additionalProperties": true},
+    "theorem_instantiation": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["hypotheses", "theorem_applies", "conclusions", "source", "selected_objects", "status"],
+      "properties": {
+        "theorem_applies": {"const": true},
+        "status": {"const": "GLOBAL_EXISTENTIAL_HADAMARD_BISOLUTION_SEED_CERTIFIED"}
+      }
+    },
+    "positive_metric_obstruction": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["signature", "checks", "positive_state_follows", "all_pass"],
+      "properties": {
+        "signature": {
+          "type": "array",
+          "prefixItems": [{"const": 20}, {"const": 20}],
+          "items": false
+        },
+        "positive_state_follows": {"const": false},
+        "all_pass": {"const": true}
+      }
+    },
+    "negative_controls": {"type": "object", "additionalProperties": true},
+    "analytic_boundary": {"type": "object", "additionalProperties": {"type": "string"}},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "BERGER_FREE_DILATION_NORMALLY_HYPERBOLIC",
+        "BERGER_FREE_DILATION_GLOBAL_FEYNMAN_PROPAGATOR_EXISTS",
+        "BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED",
+        "BERGER_FREE_DILATION_POSITIVE_HADAMARD_STATE",
+        "BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED",
+        "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING",
+        "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION",
+        "BERGER_26_ROW_BRST_HADAMARD",
+        "BERGER_54_ROW_BRST_HADAMARD",
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY",
+        "BERGER_HADAMARD_DATA",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "BERGER_FREE_DILATION_NORMALLY_HYPERBOLIC": {"const": true},
+        "BERGER_FREE_DILATION_GLOBAL_FEYNMAN_PROPAGATOR_EXISTS": {"const": true},
+        "BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED": {"const": true},
+        "BERGER_FREE_DILATION_POSITIVE_HADAMARD_STATE": {"const": false},
+        "BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED": {"const": false},
+        "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING": {"const": false},
+        "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": {"const": false},
+        "BERGER_26_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_54_ROW_BRST_HADAMARD": {"const": false},
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": {"const": false},
+        "BERGER_HADAMARD_DATA": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "PROVE_DPRIME_GAMMA_VOLTERRA_CONVERGENCE_THEN_TRANSPORT_FREE_BISOLUTION_AND_NORMALIZE_KREIN_CCR"},
+    "provenance": {"type": "object", "additionalProperties": true},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "analytic_boundary": {
+    "BRST_Ward_identity": "NOT_VERIFIED",
+    "Krein_covariance": "NOT_YET_NORMALIZED_AGAINST_THE_GRADED_CCR",
+    "cutoff_full_transport": "OPEN_UNTIL_DPRIME_GAMMA_NORMAL_TOPOLOGY_CONVERGENCE_PROVES THE_REGULAR_MORPHISM_CONE_ACTION",
+    "full_graded_BV_restriction": "NOT_CONSTRUCTED",
+    "physical_cohomology_positivity": "NOT_VERIFIED",
+    "positive_state": "NOT_CERTIFIED_ON_INDEFINITE_DILATION",
+    "raw_companion_restriction": "NOT_CONSTRUCTED"
+  },
+  "claim_boundary": "The Islam--Strohmaier global existence theorem applies to the normally hyperbolic, formally H-self-adjoint free rank-40 Berger dilation. It supplies an exact global Feynman propagator and a formally self-adjoint Hadamard bisolution seed. This closes the free global bisolution gate, not the interacting companion or full-BV Hadamard gate. The certified form H has signature (20,20), and the nonzero Jordan incidence rules out a positive-definite symmetrizer on the same auxiliary carrier. No positive state, Krein CCR normalization, cutoff/full transport, raw-companion or graded-BV restriction, BRST Ward identity, physical-cohomology positivity, renormalized product, Lorentzian QME or quantum theory is claimed.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": false,
+    "BERGER_DILATED_RESPONSE_MORPHISM_CONE_MAPPING": false,
+    "BERGER_FREE_DILATION_GLOBAL_FEYNMAN_PROPAGATOR_EXISTS": true,
+    "BERGER_FREE_DILATION_GLOBAL_HADAMARD_BISOLUTION_SEED": true,
+    "BERGER_FREE_DILATION_KREIN_COVARIANCE_NORMALIZED": false,
+    "BERGER_FREE_DILATION_NORMALLY_HYPERBOLIC": true,
+    "BERGER_FREE_DILATION_POSITIVE_HADAMARD_STATE": false,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+    "QUANTUM_CLAIM": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "dependency_refs": {
+    "Hermitian_dilation": {
+      "result_id": "BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION",
+      "sha256": "72a02a8335ac5d3010ddc7785a2e7dc6028bf139b282b61f7fbb4dc5340d64d9"
+    },
+    "base_wave_parametrix": {
+      "result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+      "sha256": "1a2bb5b124734a5aa63fdd8c1285d4847b8ff5ea02aed8d6b840db19dfe23fc1"
+    },
+    "graded_state_space_contract": {
+      "result_id": "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT",
+      "sha256": "99768cf1e444ef3525f19621702ee64a68aea83f83349a1c5d6223d9c959ca35"
+    }
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_input_checks": {
+    "base_wave_Hadamard_orientation_fixed": true,
+    "dilation_form_nondegenerate_indefinite": true,
+    "dilation_formally_Hermitian": true,
+    "free_dilation_RFHGHO": true,
+    "free_dilation_named": true,
+    "real_structure_available": true
+  },
+  "free_operator": {
+    "background": "R x S3_Berger with compact Cauchy surface",
+    "bundle": "complexification of B20 direct_sum B20, rank 40",
+    "companion": "C_free=[[Box_2,-I10],[0,Box_2]]",
+    "dilation": "D_free=diag(C_free,C_free^dagger)",
+    "fibre_form": "H=[[0,I20],[I20,0]]",
+    "fibre_form_signature": [
+      20,
+      20
+    ],
+    "principal_symbol": "sigma_2(D_free)=q I40"
+  },
+  "lifecycle_layer": "LORENTZIAN_FREE_HADAMARD_SEED",
+  "negative_controls": {
+    "degenerate_fibre_form": {
+      "conclusions": {
+        "global_Feynman_propagator_exists": false,
+        "omega_has_Hadamard_wavefront_relation": false,
+        "omega_is_formally_selfadjoint": false,
+        "omega_minus_i_GF_minus_Gadv_is_exact_bisolution": false
+      },
+      "hypotheses": {
+        "formal_selfadjointness_for_that_form": true,
+        "globally_hyperbolic_spacetime": true,
+        "nondegenerate_sesquilinear_form": false,
+        "normally_hyperbolic_operator": true,
+        "smooth_finite_rank_complex_bundle": true
+      },
+      "theorem_applies": false
+    },
+    "missing_formal_selfadjointness": {
+      "conclusions": {
+        "global_Feynman_propagator_exists": false,
+        "omega_has_Hadamard_wavefront_relation": false,
+        "omega_is_formally_selfadjoint": false,
+        "omega_minus_i_GF_minus_Gadv_is_exact_bisolution": false
+      },
+      "hypotheses": {
+        "formal_selfadjointness_for_that_form": false,
+        "globally_hyperbolic_spacetime": true,
+        "nondegenerate_sesquilinear_form": true,
+        "normally_hyperbolic_operator": true,
+        "smooth_finite_rank_complex_bundle": true
+      },
+      "theorem_applies": false
+    },
+    "nonscalar_principal_symbol": {
+      "conclusions": {
+        "global_Feynman_propagator_exists": false,
+        "omega_has_Hadamard_wavefront_relation": false,
+        "omega_is_formally_selfadjoint": false,
+        "omega_minus_i_GF_minus_Gadv_is_exact_bisolution": false
+      },
+      "hypotheses": {
+        "formal_selfadjointness_for_that_form": true,
+        "globally_hyperbolic_spacetime": true,
+        "nondegenerate_sesquilinear_form": true,
+        "normally_hyperbolic_operator": false,
+        "smooth_finite_rank_complex_bundle": true
+      },
+      "theorem_applies": false
+    },
+    "remove_Jordan_incidence": {
+      "all_pass": false,
+      "certified_fibre_form": "H=[[0,I20],[I20,0]]",
+      "checks": {
+        "certified_off_diagonal_form_has_signature_20_20": true,
+        "free_companion_has_Jordan_incidence_minus_I": false,
+        "modewise_internal_block_is_nondiagonalizable": false,
+        "positive_definite_symmetrizer_on_same_carrier_is_impossible": false,
+        "positive_metric_selfadjoint_operator_would_be_diagonalizable": true
+      },
+      "modewise_block": "[[lambda,-1],[0,lambda]]",
+      "positive_state_follows": false,
+      "signature": [
+        20,
+        20
+      ]
+    }
+  },
+  "next_gate": "PROVE_DPRIME_GAMMA_VOLTERRA_CONVERGENCE_THEN_TRANSPORT_FREE_BISOLUTION_AND_NORMALIZE_KREIN_CCR",
+  "positive_metric_obstruction": {
+    "all_pass": true,
+    "certified_fibre_form": "H=[[0,I20],[I20,0]]",
+    "checks": {
+      "certified_off_diagonal_form_has_signature_20_20": true,
+      "free_companion_has_Jordan_incidence_minus_I": true,
+      "modewise_internal_block_is_nondiagonalizable": true,
+      "positive_definite_symmetrizer_on_same_carrier_is_impossible": true,
+      "positive_metric_selfadjoint_operator_would_be_diagonalizable": true
+    },
+    "modewise_block": "[[lambda,-1],[0,lambda]]",
+    "positive_state_follows": false,
+    "signature": [
+      20,
+      20
+    ]
+  },
+  "provenance": {
+    "base_parametrix_result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+    "dilation_result_id": "BERGER_CUTOFF_COMPANION_HERMITIAN_DILATION",
+    "graded_contract_result_id": "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT",
+    "source_manifest": {
+      "../reports/berger-free-dilation-hadamard-bisolution-seed.md": "430bb211341c6c7999b41cb65620bedb883df46cdf97cf026129d8e542684d13",
+      "berger_free_dilation_hadamard_bisolution_seed.py": "02fdec1a15a6e906d25b2ccb69d6c7e4186e4a4844ef399ce9218ecac6d6025d",
+      "berger_free_dilation_hadamard_bisolution_seed_certificate.py": "e649632f6b02d5344f90c1dd523c2a48e363a709f9ca47fc67dee1ad04bd677c",
+      "schema/berger-free-dilation-hadamard-bisolution-seed-v1.schema.json": "84f0c343b400de6fe32a0506664fd1b3d048ba4b6de949a5a890b0bc6a497fe5",
+      "tests/test_berger_free_dilation_hadamard_bisolution_seed.py": "7440fae666c456d49d62c1569e666bb3ca3f18a3ee0008b718c733c05f9608f4",
+      "verify_berger_free_dilation_hadamard_bisolution_seed.py": "9e994de0dcd930a7b0c000dc124c92a7da426d1895f8ea82037efb9bb3353af2"
+    },
+    "source_manifest_sha256": "e56df9d5f6178a042e70a8c1f76dfa0c76205a8be5ffffb284df7ddb0955e559"
+  },
+  "result_id": "BERGER_FREE_DILATION_HADAMARD_BISOLUTION_SEED",
+  "result_state": "GLOBAL_FREE_DILATION_HADAMARD_BISOLUTION_EXISTS_POSITIVE_STATE_AND_BV_RESTRICTION_OPEN",
+  "schema": "quantum-weyl-berger-free-dilation-hadamard-bisolution-seed-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "theorem_instantiation": {
+    "conclusions": {
+      "global_Feynman_propagator_exists": true,
+      "omega_has_Hadamard_wavefront_relation": true,
+      "omega_is_formally_selfadjoint": true,
+      "omega_minus_i_GF_minus_Gadv_is_exact_bisolution": true
+    },
+    "hypotheses": {
+      "formal_selfadjointness_for_that_form": true,
+      "globally_hyperbolic_spacetime": true,
+      "nondegenerate_sesquilinear_form": true,
+      "normally_hyperbolic_operator": true,
+      "smooth_finite_rank_complex_bundle": true
+    },
+    "selected_objects": {
+      "Feynman_propagator": "G_F,Dfree",
+      "Hadamard_bisolution": "omega_Dfree=-i(G_F,Dfree-G_adv,Dfree)",
+      "advanced_Green_operator": "G_adv,Dfree"
+    },
+    "source": {
+      "arxiv": "2012.09767v4",
+      "authors": "Onirban Islam and Alexander Strohmaier",
+      "doi": "10.4310/CAG.241204020919",
+      "theorem": "Theorem 1.4 (Existence of Hadamard bisolutions)",
+      "title": "On microlocalisation and the construction of Feynman Propagators for normally hyperbolic operators"
+    },
+    "status": "GLOBAL_EXISTENTIAL_HADAMARD_BISOLUTION_SEED_CERTIFIED",
+    "theorem_applies": true,
+    "wavefront_convention": "the source Feynman relation is mapped to the already frozen project positive-frequency convention; no transport to the interacting cutoff/full companion is asserted here"
+  }
+}
