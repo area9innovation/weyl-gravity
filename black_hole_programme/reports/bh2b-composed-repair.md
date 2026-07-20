@@ -22,7 +22,7 @@ expanded as an exact Laurent window in ρ = r − 2. The structure is sharp:
 |---|---|
 | all 9 conformal-gauge pairs (`G|*`, `*|G`) | identically zero at every window key |
 | `E|E` | identically zero at every window key |
-| 16 physical pairs (`E|Xj`, `Xi|Xj`) | exactly one nonzero key, ρ⁰ |
+| 15 physical pairs (`E|Xj`, `Xi|Xj`) | exactly one nonzero key, ρ⁰ |
 
 Keys ρ¹…ρ⁷ vanish identically for every pair — **true on-shell
 constancy**, not a tolerance. (Key ρ⁸ is the truncation edge of the
@@ -133,4 +133,11 @@ applied prospectively.
 python3 black_hole_programme/bh2b_composed_repair.py          # producer
 python3 black_hole_programme/verify_bh2b_composed_repair.py   # independent verifier (VbGeo)
 python3 -m pytest black_hole_programme/tests/test_bh2b_composed_repair.py -q
+```
+
+## Close-out
+
+```text
+CLOSE-OUT: DONE — the complete stop condition is met: a polar composed-repair certificate with an independent verifier, decisive mutations for each repaired source/row term, and this human report; it states that all analytic carrier modes lift, prints the exact mixed and extra pairings at both declared fixtures, classifies which entries are invariant under Einstein/conformal lift shifts, and supersedes the affected older fixture values (BH2B_POLAR_CROSS_FLUX values; BH2C mu0 Einstein row) append-only with content hashes and explicit scope statements.
+EVIDENCE: black_hole_programme/certificates/BH2B_COMPOSED_REPAIR.json (commit d7c637fa; producer 3002.7 s, fast rail 5/5, independent VbGeo verifier 2522.8 s all checks passed)
 ```

@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/black-hole-polar-composed-repair-REPORT-873acecc71fc8e2b",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work report",
+  "source": {"path": "tools/science-forge/program/events/black-hole-polar-composed-repair-REPORT-873acecc71fc8e2b.json", "span": null},
+  "body": {"event_kind": "WORK_REPORTED", "actor": "black-hole-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-20T07:04:11Z", "seq": 1, "payload": {"target": "sf:program/work/black-hole-polar-composed-repair", "agent": "black-hole-1", "record_type": "checkpoint", "base_commit": "d9409649fbbe72c1b8a650a55815c854a515aab5", "current_commit": "c9372084436ee9d679159968b1bd35478f223a31", "changed_paths": "black_hole_programme/bh2b_composed_repair.py,black_hole_programme/verify_bh2b_composed_repair.py,black_hole_programme/schema/bh2b-composed-repair-v1.schema.json,black_hole_programme/tests/test_bh2b_composed_repair.py,black_hole_programme/reports/bh2b-composed-repair.md", "disposition": "PROGRESS", "tests": "exploratory: exact rho-window omega=3/5 (10 control pairs identically zero, 16 physical pairs constant at rho^0, keys 1..7 zero); vv/vr audit with imposed-row positive controls; Einstein-combination uniqueness (nullspace dim 1); recomputed table classes. Certificate chain (producer + fast rail + VbGeo verifier) NOT yet run - no pass claimed.", "receipts": "black_hole_programme/reports/bh2b-composed-repair.md", "deviations": "none", "dependency_needs": "", "next_recommendation": "Complete omega=2/7 window, run producer + fast rail + independent VbGeo verifier, then scoped commit and s-f work close. Successor item: representative-invariant null-quotient sign theory (the extra block is representative-dependent; cross constants are invariant)."}, "native": {"authored_by": "sfc work-report", "policy": "append-only (SPEC 4.5); one content-addressed report file per checkpoint; never rewritten."}},
+  "edges": [{"rel": "REPORTS", "to": "sf:program/work/black-hole-polar-composed-repair"}]
+}
