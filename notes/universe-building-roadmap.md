@@ -1820,6 +1820,21 @@ Einstein--Maxwell `q1/q2/q3` payload is now imported, so the active classical
 relative gate is the same-background Weyl--Maxwell export. Compact-product
 causal Green data remain an independent open rail.
 
+The separate changed-action dependency from Quantum is now disposed at its
+declared four-derivative bound.  The Einstein team has classified the complete
+real parity-even metric-plus-`U(1)` local action quotient as
+`{1,R,F2,RiemFF,F2sq,P2}` and independently replayed every generic axial and
+polar q-primary response.  Two exact cokernel functionals separate the
+requested negative source-action shifts from the unrestricted response image.
+The full q-to-p cross-response constraint matrix has rank six, so the only
+deformation in this quotient that preserves the declared p-shell separation
+is zero.  Atlas row
+`einstein.ph.bridge.four_derivative_action_lift_no_go` is therefore
+`OBSTRUCTED` at the action-derived symplectic lift and remains
+`NO_CERTIFIED_MAP` for causal, observational and quantum layers.  This closes
+only the bounded four-derivative local-action route; six-derivative, nonlocal
+and new-physical-auxiliary theories stay explicit open alternatives.
+
 The compact-product current receiver has now advanced through its local
 representative gate.  The complete densitized relative Hessian has an exact
 Green current; all five connected stabilizers have zero-defect local

@@ -1,0 +1,780 @@
+{
+  "background_incidence": {
+    "baseline_control": "(-1/2,1/2,-1/4,0,0,0) satisfies both rows",
+    "coefficient_order": [
+      "c0",
+      "cR",
+      "cF",
+      "cRFF",
+      "cF4",
+      "cP4"
+    ],
+    "derivation": "On ds2=a2*(-dt2+dx2)+b2*dOmega2 with fixed magnetic flux, the reduced density is a2*(c0*b2+2*cR+2*cF/b2+4*cRFF/b4+4*cF4/b6); P vanishes. Variation in a2 and b gives the two rows.",
+    "same_background_linear_constraints": [
+      "c0 + 2*cR + 2*cF + 4*cRFF + 4*cF4 = 0",
+      "2*c0 - 4*cF - 16*cRFF - 24*cF4 = 0"
+    ]
+  },
+  "basis_reduction": {
+    "algebraic_four_form_identity": "tr(F^4)=1/2*(F2)^2+1/4*P2, P=F_ab (*F)^ab",
+    "bounded_field_redefinitions": [
+      "A_b -> A_b + c_A nabla^a F_ab",
+      "g^(ab) -> g^(ab) + c_1 Ricci^(ab) + c_2 R g^(ab) + c_3 F^a_c F^(bc) + c_4 F2 g^(ab)"
+    ],
+    "complete_action_basis": [
+      "1",
+      "R",
+      "F2",
+      "RiemFF",
+      "F2sq",
+      "P2"
+    ],
+    "external_completeness_anchor": {
+      "comparison": "Their parity-even four-derivative quotient is X^2, Y^2 and R_abcd (*F)^ab (*F)^cd modulo topological terms and field redefinitions. The last representative differs from RiemFF by the displayed Ricci/RF2 redefinition span, so it is the same three-dimensional quotient, not an extra direction.",
+      "reference": "I. Davies and H. S. Reall, Well-posed formulation of Einstein-Maxwell effective field theory, arXiv:2112.05603, eqs. (1)-(4)"
+    },
+    "lower_derivative_completion": [
+      "1",
+      "R",
+      "F2"
+    ],
+    "quotient_dimension": 3,
+    "quotient_representatives": [
+      "RiemFF",
+      "F2sq",
+      "P2"
+    ],
+    "rank": 7,
+    "raw_four_derivative_order": [
+      "Riem2",
+      "Ricci2",
+      "R2",
+      "nablaF2",
+      "divF2",
+      "RF2",
+      "RicciFF",
+      "RiemFF",
+      "F2sq",
+      "P2"
+    ],
+    "relation_matrix": [
+      [
+        "1",
+        "-4",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "-2",
+        "0",
+        "2",
+        "-1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1/2",
+        "-1/4",
+        "0",
+        "0",
+        "1/8",
+        "-1/2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-1/2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1/4",
+        "1/2",
+        "0",
+        "-1/8",
+        "-1/8"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1/2",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "relation_order": [
+      "Euler_density",
+      "integrated_Maxwell_Weitzenboeck",
+      "A_field_redefinition_divF",
+      "metric_redefinition_Ricci_ab",
+      "metric_redefinition_R_g_ab",
+      "metric_redefinition_Fa_c_Fbc",
+      "metric_redefinition_F2_g_ab"
+    ]
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE result proves that the requested reduced source-action shifts are outside the complete four-derivative covariant Einstein-Maxwell action-response image. The individual p-primary cross-response ledger and the canonical 38-row Noether completion are included. It proves no anomaly, QME, positivity, particle, scattering, causal, or unitarity claim.",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_cokernel": {
+    "logic": "The first witness already separates the requested q-primary target from the unrestricted complete action-response image. Adding the same-background and zero-p-cross equations can only shrink that image. Independently, the certified zero-cross response matrix has full column rank, so its kernel is already the zero deformation.",
+    "requested_source_action_shift": {
+      "axial": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-9*lambda"
+        ]
+      ],
+      "polar": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-3*(lambda - 2)*(3*lambda + 2)/4"
+        ]
+      ],
+      "sign_note": "These are the negative source-action shifts requested by Quantum. The terminal reduced certificate separately displays the dual positive target-pairing repairs."
+    },
+    "same_background_restricted_system_has_solution": false,
+    "unrestricted_q_primary_coefficient_system_has_solution": false,
+    "verdict": "EXACT_LOCAL_ACTION_NO_LIFT_THROUGH_FOUR_DERIVATIVES",
+    "witnesses": [
+      {
+        "functional": "coefficient of lambda in the axial (2,2) entry",
+        "id": "AXIAL_22_LAMBDA_COEFFICIENT",
+        "on_every_action_basis_response": "0",
+        "on_requested_target": "-9"
+      },
+      {
+        "functional": "coefficient of lambda^2 in the polar (2,2) entry",
+        "id": "POLAR_22_LAMBDA_SQUARED_COEFFICIENT",
+        "on_every_action_basis_response": "0",
+        "on_requested_target": "-9/4"
+      }
+    ],
+    "zero_p_shell_cross_response_restricted_system_has_solution": false
+  },
+  "input_pins": {
+    "originating_request": {
+      "path": "planning/events/quantum-relative-offshell-changed-action-bv-lift-REQUEST-6b1a0674d4360c4f.json",
+      "sha256": "a6ecadffa97b3764f52e7604be48c7e56e6cd864bd42813bb86816c548c26ca3"
+    },
+    "terminal_reduced_target": {
+      "path": "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_PAIRING_DEFORMATION_CLASSIFICATION.json",
+      "result_id": "RELATIVE_EINSTEIN_WEYL_PAIRING_DEFORMATION_CLASSIFICATION",
+      "sha256": "00b2e7a66fd81c0f2c1d6af3b4f37a0a7d10215a4405b0e1ac50c39dc41e8cf5"
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "independent tensor-variation replay, mutations, atlas/Paper 10 update, and delivery to the originating Quantum request",
+  "noether_completion": {
+    "action_origin": true,
+    "finite_carrier": {
+      "activation_condition": "the two displayed same-background incidence rows",
+      "exported": true,
+      "gauge_rows": "the frozen Diff x U1 generator G",
+      "identity_rows": "-G^dagger on the 14 Euler rows",
+      "nilpotency_equations": [
+        "H_c G=0",
+        "G^dagger H_c=0"
+      ],
+      "physical_rows": "the mixed second variation H_c of the displayed covariant action density",
+      "row_layout": "5 ghosts + 14 fields + 14 Euler rows + 5 identities"
+    },
+    "full_finite_carrier_rows_exported": true,
+    "gauge_group": "Diff x U(1)",
+    "individual_density_tadpole_rule": "For an individual density away from its own stationary point, the differentiated Noether identity includes its displayed background Euler tadpole; it is not falsely recorded as H*G=0.",
+    "statement": "Each density is a natural scalar density. Its Euler operator therefore has the canonical Diff x U1 Noether rows. On a background-preserving coefficient vector the linearized Hessian annihilates the five frozen gauge generators and its formal adjoint supplies the five identity rows.",
+    "why_formula_is_complete": "The unchanged frozen G and its formal adjoint fix all ten gauge/identity rows. The covariant mixed Hessian H_c fixes the fourteen physical rows; no independent completion coefficient remains after the background incidence equations."
+  },
+  "p_shell_cross_response": {
+    "all_momenta_argument": "Each scalar density is locally O(1,1)-natural on the flat product factor. The invariant Fourier dependence is through mu=omega^2-k^2; evaluating the polynomial representatives in their rest frame fixes the response on every allowed compact k fibre without asserting a global boost of the cylinder.",
+    "definition": "N_lm^(-1) times the polarized covariant quadratic-action Hessian between the frozen q-source embedding and each certified p-primary representative, evaluated at common Fourier label and then reduced by p=omega^2-k^2-lambda+2/3=0",
+    "first_p_representative_column_zero_for_each_individual_invariant": true,
+    "p_column_orders": {
+      "axial": [
+        "(-lambda,0,lambda,0)",
+        "(0,-2/3,0,lambda)"
+      ],
+      "polar": [
+        "(0,1,0,0)",
+        "(-8,0,-12lambda,3(3lambda-2))"
+      ]
+    },
+    "per_invariant": {
+      "1": {
+        "axial": [
+          [
+            "0",
+            "2*lambda/3"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "polar": [
+          [
+            "0",
+            "-12*lambda"
+          ],
+          [
+            "0",
+            "4*(3*lambda + 2)"
+          ]
+        ]
+      },
+      "F2": {
+        "axial": [
+          [
+            "0",
+            "4*lambda*(3*lambda - 1)/3"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "polar": [
+          [
+            "0",
+            "-4*(9*lambda**2 - 6*lambda + 4)"
+          ],
+          [
+            "0",
+            "8*(3*lambda + 2)"
+          ]
+        ]
+      },
+      "F2sq": {
+        "axial": [
+          [
+            "0",
+            "8*lambda*(2*lambda - 1)"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "polar": [
+          [
+            "0",
+            "-16*(3*lambda - 1)*(9*lambda - 4)"
+          ],
+          [
+            "0",
+            "16*(18*lambda**3 - 12*lambda**2 + 3*lambda + 2)"
+          ]
+        ]
+      },
+      "P2": {
+        "axial": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "32*lambda*(3*lambda - 2)/3"
+          ]
+        ],
+        "polar": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ]
+      },
+      "R": {
+        "axial": [
+          [
+            "0",
+            "4*lambda/9"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "polar": [
+          [
+            "0",
+            "-4*(5*lambda + 2)"
+          ],
+          [
+            "0",
+            "4*(lambda + 2)*(3*lambda + 2)"
+          ]
+        ]
+      },
+      "RiemFF": {
+        "axial": [
+          [
+            "0",
+            "4*lambda*(7*lambda - 4)/3"
+          ],
+          [
+            "0",
+            "-32*lambda/9"
+          ]
+        ],
+        "polar": [
+          [
+            "0",
+            "-4*(33*lambda**2 - 28*lambda + 12)"
+          ],
+          [
+            "0",
+            "8*(9*lambda**3 - 12*lambda**2 + 10*lambda + 4)"
+          ]
+        ]
+      }
+    },
+    "q_row_orders": {
+      "axial": [
+        "h_x",
+        "q_x"
+      ],
+      "polar": [
+        "K",
+        "U"
+      ]
+    },
+    "status": "CERTIFIED",
+    "zero_cross_constraint_matrix": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "2/3",
+        "4/9",
+        "-4/3",
+        "-16/3",
+        "-8",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "4",
+        "28/3",
+        "16",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-32/9",
+        "0",
+        "-64/3"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "32"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-8",
+        "-16",
+        "-48",
+        "-64",
+        "0"
+      ],
+      [
+        "-12",
+        "-20",
+        "24",
+        "112",
+        "336",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-36",
+        "-132",
+        "-432",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "8",
+        "16",
+        "16",
+        "32",
+        "32",
+        "0"
+      ],
+      [
+        "12",
+        "32",
+        "24",
+        "80",
+        "48",
+        "0"
+      ],
+      [
+        "0",
+        "12",
+        "0",
+        "-96",
+        "-192",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "72",
+        "288",
+        "0"
+      ]
+    ],
+    "zero_cross_constraint_rank": 6,
+    "zero_cross_kernel_dimension": 0,
+    "zero_cross_verdict": "Within the complete six-direction action quotient, the only deformation with identically zero q-to-p Hessian response is zero."
+  },
+  "provenance": {
+    "independent_verifier_path": "bridge/einstein_sector/verify_einstein_maxwell_four_derivative_action_response.py",
+    "independent_verifier_sha256": "3b021a844094e3b91cddc813988ed6b4196afbe4a647634c0b1362e8c91fb7ff",
+    "producer_path": "bridge/einstein_sector/einstein_maxwell_four_derivative_action_response.py",
+    "producer_sha256": "ccb9a778f5ccfdb07b1ba65bdd64f09af485e8c25e09224cc1df9a1dd7ad623e",
+    "receipt_path": "bridge/einstein_sector/receipts/EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1_TIER_RECEIPT.json",
+    "receipt_sha256": "a0d9ff08721120166023def1d8a4e9f96dae21f26a08526eb80f170acb1825e7",
+    "report_path": "bridge/einstein_sector/reports/einstein-maxwell-four-derivative-action-response-v1.md",
+    "report_sha256": "341a857c7ad2d415e1cdb0be95d42a8e63859fa2834313f0949b38fb94d0de43",
+    "schema_path": "bridge/einstein_sector/schema/einstein-maxwell-four-derivative-action-response-v1.schema.json",
+    "schema_sha256": "2f45b57e8390a763d0076266980121f00f05418a818de48deab9cf40f93afdd7",
+    "test_path": "bridge/einstein_sector/tests/test_einstein_maxwell_four_derivative_action_response.py",
+    "test_sha256": "1bccc344f5c63bbcd5766c5b0c5fe408edbd006a3eb4905fd8817742efead5dd"
+  },
+  "q_primary_response": {
+    "axial_source_coordinates": [
+      "h_x",
+      "q_x"
+    ],
+    "basis_order": [
+      "1",
+      "R",
+      "F2",
+      "RiemFF",
+      "F2sq",
+      "P2"
+    ],
+    "coefficient_order": [
+      "c0",
+      "cR",
+      "cF",
+      "cRFF",
+      "cF4",
+      "cP4"
+    ],
+    "einstein_normalization_control": {
+      "axial": [
+        [
+          "lambda",
+          "0"
+        ],
+        [
+          "0",
+          "2"
+        ]
+      ],
+      "density": "(1/2)R-(1/4)F2; the cosmological density has zero Cauchy-Hessian response",
+      "polar": [
+        [
+          "1",
+          "-2"
+        ],
+        [
+          "-2",
+          "2*lambda"
+        ]
+      ]
+    },
+    "general_axial": [
+      [
+        "2*cR*lambda",
+        "8*cRFF*lambda"
+      ],
+      [
+        "8*cRFF*lambda",
+        "-8*(cF + 4*cF4 - 8*cP4)"
+      ]
+    ],
+    "general_polar": [
+      [
+        "2*(cR + 2*cRFF)",
+        "-4*(cR + 2*cRFF*lambda)"
+      ],
+      [
+        "-4*(cR + 2*cRFF*lambda)",
+        "-8*lambda*(cF + 4*cF4)"
+      ]
+    ],
+    "generality": "Natural 1+1 covariance makes the rest-frame response a function only of lambda on every allowed compact momentum fibre; SO(3) equivariance makes it independent of m.",
+    "normalization": "For a quadratic Fourier kernel K with left frequency +omega and right frequency -omega, G=(omega*N_lm)^(-1) partial_omega K. The frozen Einstein-Maxwell density (R-1)/2-F2/4 gives exactly E_A,E_P.",
+    "per_invariant": {
+      "1": {
+        "axial": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "polar": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ]
+      },
+      "F2": {
+        "axial": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-8"
+          ]
+        ],
+        "polar": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-8*lambda"
+          ]
+        ]
+      },
+      "F2sq": {
+        "axial": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-32"
+          ]
+        ],
+        "polar": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-32*lambda"
+          ]
+        ]
+      },
+      "P2": {
+        "axial": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "64"
+          ]
+        ],
+        "polar": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ]
+      },
+      "R": {
+        "axial": [
+          [
+            "2*lambda",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "polar": [
+          [
+            "2",
+            "-4"
+          ],
+          [
+            "-4",
+            "0"
+          ]
+        ]
+      },
+      "RiemFF": {
+        "axial": [
+          [
+            "0",
+            "8*lambda"
+          ],
+          [
+            "8*lambda",
+            "0"
+          ]
+        ],
+        "polar": [
+          [
+            "4",
+            "-8*lambda"
+          ],
+          [
+            "-8*lambda",
+            "0"
+          ]
+        ]
+      }
+    },
+    "polar_source_coordinates": [
+      "K",
+      "U"
+    ]
+  },
+  "result_id": "EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1",
+  "result_state": "COMPLETE_FOUR_DERIVATIVE_ACTION_RESPONSE_EXACT_NO_LIFT",
+  "schema": "einstein-maxwell-four-derivative-action-response-v1",
+  "scope": {
+    "background": "compactified magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L x S2 Cauchy slice",
+    "carrier": "metric plus fixed-bundle U1 connection",
+    "charge_sector": "fixed magnetic bundle N=2",
+    "degree": "quadratic action/Cauchy-Hessian response",
+    "derivative_bound": "at most four covariant derivatives with F counted as one derivative and curvature as two",
+    "ell": "generic ell>=2",
+    "k": "every allowed compact momentum by local 1+1 covariance",
+    "m": "all by SO3 equivariance",
+    "omega": "q-primary source response and p-primary cross response",
+    "parity": "parity even",
+    "theory": "real Diff x U(1) local Einstein-Maxwell actions"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_four_derivative_action_response --verify bridge/certificates/EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1.json",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_four_derivative_action_response",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_four_derivative_action_response"
+  ]
+}

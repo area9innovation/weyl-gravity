@@ -183,6 +183,7 @@ CERTIFICATES = {
     "exceptional_offshell": ROOT / "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
     "covariant_chain_map": ROOT / "bridge/certificates/EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1.json",
     "relative_linear_triangle": ROOT / "bridge/certificates/EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1.json",
+    "four_derivative_action_response": ROOT / "bridge/certificates/EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1.json",
     "relative_candidate13_derived_source_crosswalk": ROOT / "bridge/certificates/EINSTEIN_WEYL_RELATIVE_CANDIDATE13_DERIVED_SOURCE_CROSSWALK_V1.json",
     "relative_current_cofiber_receiver": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CURRENT_COFIBER_ASSEMBLY_V1.json",
     "relative_full_domain_f2_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json",
@@ -269,6 +270,49 @@ def _entry(
 def entries() -> list[dict[str, object]]:
     open_causal = ("OPEN", "No compact-product causal/retarded Green theorem has been certified.")
     result = [
+        _entry(
+            "einstein.ph.bridge.four_derivative_action_lift_no_go",
+            _scope(
+                theory="real parity-even local Einstein-Maxwell action deformations relative to the reduced Einstein-Weyl cyclic repair target",
+                carrier="metric plus fixed-bundle U1 connection; complete action quotient through four derivatives",
+                degree=2,
+                parity="axial and polar kept separate",
+                ell="generic ell>=2",
+                m="all by SO3 equivariance",
+                k="all allowed compact momenta by local 1+1 covariance",
+                omega="q-primary source response and p-primary cross response",
+            ),
+            {
+                "causal": "NO_CERTIFIED_MAP",
+                "symplectic": "OBSTRUCTED",
+                "nonlinear": "NOT_APPLICABLE",
+                "observational": "NO_CERTIFIED_MAP",
+                "quantum": "NO_CERTIFIED_MAP",
+            },
+            (
+                "CERTIFIED",
+                "The complete real parity-even Diff x U1 action quotient through four derivatives has basis {1,R,F2,RiemFF,F2sq,P2} after the declared identities and bounded field redefinitions.",
+            ),
+            (
+                "OBSTRUCTED",
+                "Two exact cokernel functionals separate the requested axial and polar q-primary source-action shifts from the unrestricted covariant action-response image.",
+            ),
+            (
+                "NOT_APPLICABLE",
+                "This is a quadratic action-lift theorem, not a Taub or second-order solution-extension test.",
+            ),
+            (
+                "CERTIFIED",
+                "Every individual q-to-p Hessian cross block is explicit; their coefficientwise zero-cross system has rank six and hence only the zero deformation preserves the declared p-shell separation.",
+            ),
+            _second_order(
+                ("NOT_APPLICABLE", "No nonlinear correction class is asserted by this quadratic action-response theorem."),
+                ("NOT_APPLICABLE", "No smooth-secular nonlinear correction class is asserted."),
+                ("NO_CERTIFIED_MAP", "No causal/retarded changed-action carrier is constructed."),
+            ),
+            _evidence("four_derivative_action_response"),
+            "This LOCAL-ALGEBRAIC/REDUCED-MODE row is an exact no-lift theorem only within the declared four-derivative, parity-even, metric-plus-U1 local action class. It does not rule out six-derivative or nonlocal actions, new physical auxiliaries, or pairing-only changes; it authorizes no anomaly, QME, determinant, positivity, particle, scattering or unitarity conclusion.",
+        ),
         _entry(
             "einstein.ph.bridge.relative_branch_dictionary_v1",
             _scope(carrier="same-background Einstein-Maxwell/Weyl-Maxwell inclusion, solution cofibers and branch dictionary", degree=1, parity="axial, polar, exceptional and global sectors kept separate", ell="generic >=2 plus explicitly listed exceptional/global gaps", m="all where certified", k="all compact momenta where certified", omega="q-primary, p-primary and generalized-zero branches without cross-background identification"),
@@ -3411,6 +3455,14 @@ def build() -> dict[str, object]:
     triangle = records["relative_linear_triangle"]
     if triangle["result_id"] != "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1" or not all(triangle["acceptance_flags"].values()):
         raise AssertionError("full relative linear triangle input changed")
+    action_response = records["four_derivative_action_response"]
+    if (
+        action_response["exact_cokernel"]["verdict"]
+        != "EXACT_LOCAL_ACTION_NO_LIFT_THROUGH_FOUR_DERIVATIVES"
+        or action_response["p_shell_cross_response"]["zero_cross_constraint_rank"] != 6
+        or action_response["p_shell_cross_response"]["zero_cross_kernel_dimension"] != 0
+    ):
+        raise AssertionError("four-derivative action-response no-lift theorem changed")
     relative_candidate13 = records["relative_candidate13_derived_source_crosswalk"]["classification"]
     if not (
         relative_candidate13["same_background_relative_branch_crosswalk_certified"]

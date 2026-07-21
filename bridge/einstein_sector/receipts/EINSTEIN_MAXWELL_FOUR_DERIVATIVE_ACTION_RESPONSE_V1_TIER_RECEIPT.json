@@ -1,0 +1,71 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1_TIER_RECEIPT",
+  "subject_result_id": "EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1",
+  "recorded_at": "2026-07-21T00:35:49Z",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "tiers": [
+    {
+      "tier": 0,
+      "status": "PASS",
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_four_derivative_action_response --write",
+        "python3 -m bridge.einstein_sector.einstein_maxwell_four_derivative_action_response --verify bridge/certificates/EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1.json",
+        "git diff --check -- <scoped paths>"
+      ],
+      "elapsed_seconds": 1.9196,
+      "scope": "producer, strict schema, exact certificate and scoped edit checks"
+    },
+    {
+      "tier": 1,
+      "status": "PASS",
+      "commands": [
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_four_derivative_action_response",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_four_derivative_action_response",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 bridge/einstein_sector/verify_compact_linear_paper_claim_map.py",
+        "pdflatex -interaction=nonstopmode -halt-on-error -output-directory /tmp paper/10-compact-einstein-maxwell-weyl-phase-space.tex (two passes)"
+      ],
+      "elapsed_seconds": 204.41,
+      "max_rss_kib_independent_variation_rail": 183756,
+      "scope": "independent covariant-density variation, four physical fibres, basis-removal and target mutations, atlas, claim map and manuscript"
+    },
+    {
+      "tier": 2,
+      "status": "NOT_RUN",
+      "reason": "No shared operator or upstream mathematical input changed; the new action-response consumer is isolated and all direct consumers were run."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "reason": "This is a scoped CLASSIFIED obstruction package, not a repository freeze, tag or release."
+    }
+  ],
+  "independent_rail": {
+    "producer_payload_imported": false,
+    "method": "direct construction of all six scalar densities in the exact compact-product Taylor-jet algebra, independent polarization, harmonic substitution and exact z=cos(theta) integration",
+    "physical_fibres": [
+      6,
+      12,
+      20,
+      30
+    ],
+    "elapsed_seconds": 197.88,
+    "max_rss_kib": 183756,
+    "status": "PASS"
+  },
+  "failed_attempts": [
+    {
+      "status": "NOT_A_PASS",
+      "description": "The initial generic SymPy trigonometric integration rail was interrupted after exact ell=2 and partial ell=3 output because heuristic antiderivative search did not terminate promptly.",
+      "repair": "Replace it with an exact oriented z=cos(theta) polynomial integrator; no numerical data were used."
+    }
+  ],
+  "higher_tiers_not_inferred": true
+}

@@ -31,7 +31,10 @@
     "connected_background_stabilizer_dimension": 5,
     "full_SO42_is_background_stabilizer": false,
     "generic_primary_modules_and_Lee_Wald_form_stabilizer_invariant": true,
-    "stabilizer_generators_universally_presymplectically_null": false
+    "stabilizer_generators_universally_presymplectically_null": false,
+    "complete_parity_even_four_derivative_action_response_classified": true,
+    "minimal_reduced_source_action_repair_four_derivative_lift_exists": false,
+    "nonzero_four_derivative_deformation_with_zero_q_to_p_cross_response_exists": false
   },
   "explicit_nonclaims": {
     "polar_extra_branch_classified": false,
@@ -62,7 +65,8 @@
     "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json": "e3d59018c9ae4a1d65b2ca531f24534d553dc7da1e6386c1d4afb577effd05f8",
     "bridge/certificates/einstein_maxwell_weyl_axial_reduced_action_hessian.json": "75c51862317a7bb7c7f72cdf11cdfbe529fb88ddf0d1e9cdcca59eb3dff0f900",
     "bridge/certificates/einstein_maxwell_weyl_axial_extra_detector.json": "dc8133d0a97c3bdf1e6fa6eb03768b3785f6415ad536ab4605bdbb52303ca17b",
-    "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json": "7d2840bc88b3fb157345badb7ae2683adceb7401b611ba5b90dca4b8868993b8"
+    "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json": "7d2840bc88b3fb157345badb7ae2683adceb7401b611ba5b90dca4b8868993b8",
+    "bridge/certificates/EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1.json": "cb47110872bdf976f7fda661f722041f034936d8ec1087781d90615ce3b922fe"
   },
   "verification_commands": [
     "python3 bridge/einstein_sector/verify_compact_linear_paper_claim_map.py",
@@ -70,5 +74,5 @@
     "pdflatex -interaction=nonstopmode -halt-on-error -output-directory paper paper/10-compact-einstein-maxwell-weyl-phase-space.tex",
     "pdflatex -interaction=nonstopmode -halt-on-error -output-directory paper paper/10-compact-einstein-maxwell-weyl-phase-space.tex"
   ],
-  "claim_boundary": "This manuscript assembles exact LOCAL-ALGEBRAIC/REDUCED-MODE compact linear results. The complete standard Einstein-Maxwell image is parity-complete, while the complementary Weyl-Maxwell classification is generic axial only. The actual five-generator product-background stabilizer and its generic primary-module action are certified, but no moment-map-zero quotient, nonlinear, causal scattering, one-particle Hilbert, or quantum theorem is promoted."
+  "claim_boundary": "This manuscript assembles exact LOCAL-ALGEBRAIC/REDUCED-MODE compact linear results. The complete standard Einstein-Maxwell image is parity-complete, while the complementary Weyl-Maxwell classification is generic axial only. The actual five-generator product-background stabilizer and its generic primary-module action are certified. A post-freeze complete parity-even four-derivative action-response calculation gives a scoped no-lift theorem for the minimal reduced source-action repair, including a full-rank q-to-p zero-cross obstruction; it does not exclude higher-derivative, nonlocal or auxiliary-field repairs. No moment-map-zero quotient, nonlinear, causal scattering, one-particle Hilbert, QME, determinant, or quantum theorem is promoted."
 }

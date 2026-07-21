@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "scope",
+    "input_pins",
+    "basis_reduction",
+    "background_incidence",
+    "q_primary_response",
+    "exact_cokernel",
+    "noether_completion",
+    "p_shell_cross_response",
+    "provenance",
+    "claim_boundary",
+    "next_gate",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-four-derivative-action-response-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1"},
+    "result_state": {"type": "string"},
+    "lifecycle_state": {"enum": ["CLASSIFIED"]},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "scope": {"type": "object"},
+    "input_pins": {"type": "object"},
+    "basis_reduction": {
+      "type": "object",
+      "required": [
+        "raw_four_derivative_order",
+        "relation_matrix",
+        "rank",
+        "quotient_dimension",
+        "quotient_representatives",
+        "complete_action_basis"
+      ],
+      "properties": {
+        "rank": {"const": 7},
+        "quotient_dimension": {"const": 3},
+        "quotient_representatives": {
+          "const": ["RiemFF", "F2sq", "P2"]
+        },
+        "complete_action_basis": {
+          "const": ["1", "R", "F2", "RiemFF", "F2sq", "P2"]
+        }
+      }
+    },
+    "background_incidence": {"type": "object"},
+    "q_primary_response": {"type": "object"},
+    "exact_cokernel": {
+      "type": "object",
+      "required": [
+        "witnesses",
+        "unrestricted_q_primary_coefficient_system_has_solution",
+        "verdict"
+      ],
+      "properties": {
+        "unrestricted_q_primary_coefficient_system_has_solution": {"const": false},
+        "same_background_restricted_system_has_solution": {"const": false},
+        "zero_p_shell_cross_response_restricted_system_has_solution": {"const": false},
+        "verdict": {"const": "EXACT_LOCAL_ACTION_NO_LIFT_THROUGH_FOUR_DERIVATIVES"}
+      }
+    },
+    "noether_completion": {"type": "object"},
+    "p_shell_cross_response": {
+      "type": "object",
+      "properties": {
+        "status": {"const": "CERTIFIED"},
+        "zero_cross_constraint_rank": {"const": 6},
+        "zero_cross_kernel_dimension": {"const": 0}
+      },
+      "required": [
+        "status",
+        "zero_cross_constraint_rank",
+        "zero_cross_kernel_dimension",
+        "per_invariant"
+      ]
+    },
+    "provenance": {"type": "object"},
+    "claim_boundary": {"type": "string"},
+    "next_gate": {"type": "string"},
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string"}
+    }
+  },
+  "additionalProperties": false
+}

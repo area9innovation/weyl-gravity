@@ -36,6 +36,9 @@ def main() -> None:
     assert claims["full_SO42_is_background_stabilizer"] is False
     assert claims["generic_primary_modules_and_Lee_Wald_form_stabilizer_invariant"] is True
     assert claims["stabilizer_generators_universally_presymplectically_null"] is False
+    assert claims["complete_parity_even_four_derivative_action_response_classified"] is True
+    assert claims["minimal_reduced_source_action_repair_four_derivative_lift_exists"] is False
+    assert claims["nonzero_four_derivative_deformation_with_zero_q_to_p_cross_response_exists"] is False
 
     nonclaims = payload["explicit_nonclaims"]
     assert nonclaims
@@ -73,6 +76,8 @@ def main() -> None:
         r"\mathbb R H\oplus\mathbb R P_x\oplus\mathfrak{so}(3)",
         "not, by itself, a quantum ghost or unitarity theorem",
         "The polar extra branch and any background-stabilizer/moment-map descent remain open",
+        "Changed-action cyclic repair",
+        "the full $q$--$p$ cross-response system has rank six",
     ]
     for marker in required:
         assert marker in normalized, marker

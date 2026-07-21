@@ -4594,6 +4594,45 @@ quotient, support-local physical projection and causal Green descent.  Here
 stabilizer representation; it is not invariant-state cohomology and not a
 particle space.
 
+## Active changed-action bridge to Quantum
+
+The active Science Forge work item is
+`bridge-action-basis-hessian-response-for-relative-quantum`.  Its activation
+gate was the exact import of the originating Quantum request and terminal
+reduced pairing-deformation certificate.  Those inputs are pinned by
+SHA-256 in
+`EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1`.
+
+The complete real parity-even local Einstein--Maxwell action quotient through
+four derivatives is
+
+```text
+1, R, F2, RiemFF, F2sq, P2.
+```
+
+Exact axial and polar density variations give the full generic q-primary
+response.  The requested source-action repair is outside that image:
+
+```text
+coefficient_lambda(axial[2,2]):
+    action image = 0, target = -9;
+coefficient_lambda^2(polar[2,2]):
+    action image = 0, target = -9/4.
+```
+
+The independently replayed q-to-p Hessian ledger is stronger: its
+coefficientwise zero-cross matrix has rank six, so its kernel on the complete
+action quotient is zero.  The same-background incidence restriction can only
+shrink the already empty target preimage.
+
+The fail-closed atlas row is
+`einstein.ph.bridge.four_derivative_action_lift_no_go`.  It is
+`OBSTRUCTED` at the action-derived symplectic lift, `NO_CERTIFIED_MAP` for
+causal, observational and quantum descriptions, and `NOT_APPLICABLE` to the
+second-order tangent-cone correction classes.  It does not identify modes
+across backgrounds and does not rule out six-derivative, nonlocal or
+new-auxiliary actions.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

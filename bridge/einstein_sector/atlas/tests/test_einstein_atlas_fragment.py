@@ -69,6 +69,21 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["descriptions"]["observational"], "NO_CERTIFIED_MAP")
         self.assertEqual(entry["descriptions"]["quantum"], "NO_CERTIFIED_MAP")
 
+    def test_four_derivative_changed_action_lift_is_fail_closed(self) -> None:
+        entry = self.entries["einstein.ph.bridge.four_derivative_action_lift_no_go"]
+        self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["quantum"], "NO_CERTIFIED_MAP")
+        self.assertEqual(entry["mode_data"]["lee_wald"]["status"], "OBSTRUCTED")
+        self.assertIn(
+            "rank six",
+            entry["mode_data"]["resonance"]["statement"],
+        )
+        self.assertEqual(
+            entry["mode_data"]["second_order"]["causal_retarded"]["status"],
+            "NO_CERTIFIED_MAP",
+        )
+        self.assertIn("six-derivative", entry["claim_boundary"])
+
     def test_candidate13_derived_source_crosswalk_preserves_full_f2_obstruction(self) -> None:
         entry = self.entries["einstein.ph.bridge.relative_candidate13_derived_source_crosswalk"]
         second = entry["mode_data"]["second_order"]

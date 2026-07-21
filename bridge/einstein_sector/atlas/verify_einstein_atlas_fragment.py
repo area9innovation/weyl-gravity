@@ -122,6 +122,15 @@ def verify() -> None:
         raise AssertionError("downstream compact-product gates were over-promoted")
     if bridge["descriptions"]["observational"] != "NO_CERTIFIED_MAP" or bridge["descriptions"]["quantum"] != "NO_CERTIFIED_MAP":
         raise AssertionError("downstream bridges borrowed the linear lifecycle")
+    action_lift = by_id["einstein.ph.bridge.four_derivative_action_lift_no_go"]
+    if action_lift["descriptions"]["symplectic"] != "OBSTRUCTED":
+        raise AssertionError("four-derivative action no-lift was hidden")
+    if action_lift["mode_data"]["lee_wald"]["status"] != "OBSTRUCTED":
+        raise AssertionError("q-primary cokernel witness disappeared")
+    if "rank six" not in action_lift["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("p-primary zero-cross rank disappeared")
+    if action_lift["descriptions"]["quantum"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("action no-lift was promoted to a quantum result")
     relative_candidate13 = by_id["einstein.ph.bridge.relative_candidate13_derived_source_crosswalk"]
     relative_candidate13_second = relative_candidate13["mode_data"]["second_order"]
     if relative_candidate13["descriptions"]["nonlinear"] != "CERTIFIED" or "same candidate-13" not in relative_candidate13["mode_data"]["dispersion"]["statement"]:

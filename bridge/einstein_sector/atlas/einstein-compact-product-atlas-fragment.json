@@ -8,6 +8,70 @@
   ],
   "entries": [
     {
+      "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE row is an exact no-lift theorem only within the declared four-derivative, parity-even, metric-plus-U1 local action class. It does not rule out six-derivative or nonlocal actions, new physical auxiliaries, or pairing-only changes; it authorizes no anomaly, QME, determinant, positivity, particle, scattering or unitarity conclusion.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1.json",
+          "result_id": "EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1",
+          "sha256": "cb47110872bdf976f7fda661f722041f034936d8ec1087781d90615ce3b922fe"
+        }
+      ],
+      "id": "einstein.ph.bridge.four_derivative_action_lift_no_go",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The complete real parity-even Diff x U1 action quotient through four derivatives has basis {1,R,F2,RiemFF,F2sq,P2} after the declared identities and bounded field redefinitions.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "Two exact cokernel functionals separate the requested axial and polar q-primary source-action shifts from the unrestricted covariant action-response image.",
+          "status": "OBSTRUCTED"
+        },
+        "resonance": {
+          "statement": "Every individual q-to-p Hessian cross block is explicit; their coefficientwise zero-cross system has rank six and hence only the zero deformation preserves the declared p-shell separation.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No nonlinear correction class is asserted by this quadratic action-response theorem.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "No causal/retarded changed-action carrier is constructed.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No smooth-secular nonlinear correction class is asserted.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "This is a quadratic action-lift theorem, not a Taub or second-order solution-extension test.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "metric plus fixed-bundle U1 connection; complete action quotient through four derivatives",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed unless narrowed",
+        "degree": 2,
+        "ell": "generic ell>=2",
+        "k": "all allowed compact momenta by local 1+1 covariance",
+        "m": "all by SO3 equivariance",
+        "omega": "q-primary source response and p-primary cross response",
+        "parity": "axial and polar kept separate",
+        "theory": "real parity-even local Einstein-Maxwell action deformations relative to the reduced Einstein-Weyl cyclic repair target"
+      }
+    },
+    {
       "claim_boundary": "Global map lifecycle is NONCYCLIC_THREE_FORM_LINEAR_TRIANGLE_CERTIFIED and compact-product Bridge 1 is active only at the linear algebraic/cofiber level. One natural support-local minimal chain map globalizes the complete harmonic coefficient algebra without harmonic selection; the three action forms and declared fixed-N=2 residual endpoints are explicit. Every standard-pairing cyclic correction is obstructed. Compact-product causal Green data and q2/q3 relative compatibility remain open. No similarly named mode on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds is identified by this row.",
       "descriptions": {
         "causal": "OPEN",
@@ -11250,7 +11314,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "9833a340eb80c91697668e9d957058fa7508c82ad4e17e0bf2a7c00567edfe87",
+  "generated_by_sha256": "05006726e63232bfee819bf770add8362bcc6595d188412d508eef5dabc2ecca",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
