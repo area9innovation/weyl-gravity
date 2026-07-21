@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/programme-global-paper-coverage-baseline-REQUEST-a7f3b6931a199620",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/programme-global-paper-coverage-baseline-REQUEST-a7f3b6931a199620.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/programme-global-paper-coverage-baseline", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T08:45:00Z", "seq": 1, "payload": {"target": "sf:program/request/programme-global-paper-coverage-baseline-to-unassigned-a7f3b6931a199620", "request_id": "sf:program/request/programme-global-paper-coverage-baseline-to-unassigned-a7f3b6931a199620", "from_item": "sf:program/work/programme-global-paper-coverage-baseline", "to_stream": "unassigned", "need": "BLOCKED_ON sf:forge-request/bug-paper-coverage-shadow-import-vacuous-pass: shadow-import-all produced 1,359 certificate and 1,022 claim nodes but no result/paper/paper-claim nodes, so paper-coverage returned a vacuous zero-item advisory pass. Need typed discovery adapter plus incompatible-nonempty-graph guard and nonempty human-review queue; do not infer materiality.", "typed": "CAPABILITY"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "unassigned"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/programme-global-paper-coverage-baseline"}]
+}

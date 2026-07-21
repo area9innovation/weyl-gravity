@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/programme-global-paper-coverage-baseline-BLOCKED-195ffc4c3bd5bbb5",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/programme-global-paper-coverage-baseline-BLOCKED-195ffc4c3bd5bbb5.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "coordinator", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-21T08:45:00Z", "seq": 2, "predecessor": "sf:program/event/programme-global-paper-coverage-baseline-ACTIVE-78c9b6affc7cdfc6", "payload": {"target": "sf:program/work/programme-global-paper-coverage-baseline", "to_state": "BLOCKED", "note": "BLOCKED: needs BLOCKED_ON sf:forge-request/bug-paper-coverage-shadow-import-vacuous-pass: shadow-import-all produced 1,359 certificate and 1,022 claim nodes but no result/paper/paper-claim nodes, so paper-coverage returned a vacuous zero-item advisory pass. Need typed discovery adapter plus incompatible-nonempty-graph guard and nonempty human-review queue; do not infer materiality."}, "native": {"authored_by": "sfc work-block", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/programme-global-paper-coverage-baseline"}]
+}

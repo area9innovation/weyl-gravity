@@ -1,0 +1,78 @@
+{
+  "schema": "physics-paper-coverage-census-v0",
+  "stamp": "2026-07-21T08:42:00Z",
+  "mode": "ADVISORY_FAIL_CLOSED",
+  "source": {
+    "command": "s-f shadow-import-all <physics-root> <forge-root> evidence.json import-ledger.json",
+    "evidence_sha256": "211b70806a72f38f8aecb42d12a804ac45a4a0888cbeb3100f78bdd291e5c387",
+    "import_ledger_sha256": "41596ebb6db3797e254ae7b3165bce54763225ae7a324e5d9e48dbdd136e14bf"
+  },
+  "shadow_import": {
+    "families": 24,
+    "certificates": 1359,
+    "claims": 1022,
+    "depends_on_edges": 2310,
+    "refs_total": 2436,
+    "resolved_same_family": 1864,
+    "resolved_cross_family": 451,
+    "unresolved_before_global": 572,
+    "unresolved_after_global": 121,
+    "node_kinds": {
+      "certificate": 1359,
+      "claim": 1022,
+      "result": 0,
+      "paper": 0,
+      "paper_claim": 0
+    }
+  },
+  "paper_source_inventory": [
+    "paper/00-ghosts-geometry-reality.tex",
+    "paper/01-symplectic-diagonalization.tex",
+    "paper/02-variational-fock.tex",
+    "paper/03-fourth-order-vacuum.tex",
+    "paper/04-fourth-order-gravity.tex",
+    "paper/05-interaction-obstructions.tex",
+    "paper/06-einstein-weyl-interaction-obstructions.tex",
+    "paper/07-08-conformal-residual-cohomology-archive.tex",
+    "paper/07-08-conformal-residual-cohomology-computational-supplement.tex",
+    "paper/07-conformal-residual-cohomology-krein.tex",
+    "paper/08-conformal-covariant-causal-transport.tex",
+    "paper/09-relational-clocks-berger-d-cartan.tex",
+    "paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex",
+    "paper/10-compact-einstein-maxwell-weyl-phase-space.tex",
+    "paper/11-gravity-light-cyclic-causal-ell3.tex",
+    "paper/11-gravity-light-ell3-witness-inclusion-columns.tex",
+    "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
+    "paper/14-pure-weyl-black-hole-radiation.tex",
+    "paper/90-cyclic-green-transfer-bridge.md",
+    "paper/91-charge-fibre-taub-bridge.md",
+    "paper/92-extra-axial-lee-wald-bridge.md",
+    "paper/98-physicist-executive-summary.md",
+    "paper/99-how-to-build-a-universe.md"
+  ],
+  "paper_coverage_audit": {
+    "command": "s-f paper-coverage evidence.json --mode advisory --stamp 2026-07-21T08:42:00Z -o report.json",
+    "report_sha256": "81057b512479cf94fa59ba4e906fb25b74f5ed82ccc5d3abe3becd98b3a63f40",
+    "reported_results": 0,
+    "reported_papers": 0,
+    "reported_paper_claims": 0,
+    "reported_review_queue": 0,
+    "disposition": "INCOMPATIBLE_NONEMPTY_GRAPH",
+    "reason": "The shadow graph is nonempty but its certificate and claim node kinds are not translated into the result/paper vocabulary consumed by paper-coverage. The zero-flag output is vacuous and is not a publication-coverage pass."
+  },
+  "human_materiality_annotations": {
+    "reviewed": 0,
+    "unclassified": 1359,
+    "status": "NOT_STARTED_PENDING_TYPED_DISCOVERY_ADAPTER"
+  },
+  "does_not_establish": [
+    "that every certificate is publication-relevant",
+    "that any paper is current or fully evidenced",
+    "that zero paper-coverage flags constitute a pass",
+    "a release or Phase 1 publication freeze"
+  ],
+  "blocking_request": "sf:forge-request/bug-paper-coverage-shadow-import-vacuous-pass"
+}

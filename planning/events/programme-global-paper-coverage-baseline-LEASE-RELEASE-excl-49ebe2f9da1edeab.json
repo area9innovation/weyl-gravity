@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/programme-global-paper-coverage-baseline-LEASE-RELEASE-excl-49ebe2f9da1edeab",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/programme-global-paper-coverage-baseline-LEASE-RELEASE-excl-49ebe2f9da1edeab.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "coordinator", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T08:45:00Z", "seq": 2, "predecessor": "sf:program/event/programme-global-paper-coverage-baseline-LEASE-ACQUIRE-excl-8d6a7643d127476c", "payload": {"target": "sf:program/work/programme-global-paper-coverage-baseline", "agent": "coordinator", "lease_type": "exclusive", "action": "RELEASE", "acquired": "2026-07-21T08:45:00Z", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/programme-global-paper-coverage-baseline"}]
+}
