@@ -1,0 +1,93 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "Certifies exact conditional algebraic-current laws for charged-clock comparison records on declared causal paths: primitive-basis covariance, origin independence, scoped reciprocity, matched-chain composition, loop holonomy defects, separate D/R_i/K_i actions, and the precise laws preserved by finite-resolution smearing. No nonzero receiver, physical redshift, transitivity across unmatched fibres, advanced signal, nonlinear, particle, phenomenology or quantum claim follows.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "CERTIFIED",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/CHARGED_TIME_EMITTER_RECEIVER_COMPOSITION_THEOREM_V1.json",
+          "result_id": "CHARGED_TIME_EMITTER_RECEIVER_COMPOSITION_THEOREM_V1",
+          "sha256": "5b61353daebc3984c15c03e55230a812d375cf0d95fc44687bb696b7fbd7533b"
+        }
+      ],
+      "id": "observer.general.charged_time_emitter_receiver_composition",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Exact comparison, orientation, charge and path-composition algebra is certified; no wave dispersion is inferred.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "A theory-specific nonradical receiver pairing is required before physical instantiation.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "The comparison algebra does not decide background-specific resonance.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Requires a theory-specific correction class.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "Path algebra is scoped to declared retarded edges; no background-specific Green image is supplied.",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No nonlinear secular source is supplied.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "No second-order source or nonlinear receiver is part of the theorem.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "declared causal path groupoid satisfying the conditional event-current contract",
+        "boundaries": "compact receiver supports and retarded edges; algebraic reverse is not a physical advanced edge",
+        "carrier": "conditional nonzero sampled event-current periods and transported phase records",
+        "charge_sector": "separately labelled unrestricted Q_i fibres with explicit edge and vertex crosswalks",
+        "degree": 0,
+        "ell": "all receiver modes satisfying the contract",
+        "k": "all/NOT_APPLICABLE according to background",
+        "m": "all",
+        "omega": "sampled nonzero clock slopes on each declared edge",
+        "parity": "primitive orientation lines eta_i; edge factor eta_i/eta_j",
+        "theory": "Hamiltonian/BV theories with two or three surviving physical action-angle clocks"
+      }
+    }
+  ],
+  "generated_by": "closed_universe_observers/atlas/generate_charged_time_emitter_receiver_composition_theorem_atlas.py",
+  "generated_by_sha256": "3bfc28bc799f9c4b26aacae4d44637eac08313357a0590bf07928d7f06e08e08",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "observer",
+  "verification_commands": [
+    "python3 closed_universe_observers/generate_charged_time_emitter_receiver_composition_theorem.py --check",
+    "python3 closed_universe_observers/verify_charged_time_emitter_receiver_composition_theorem.py",
+    "python3 -m pytest -q closed_universe_observers/tests/test_charged_time_emitter_receiver_composition_theorem.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/charged-time-emitter-receiver-composition-theorem-fragment-v1.json"
+  ]
+}
