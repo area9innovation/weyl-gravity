@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/bridge-local-anomaly-zero-charge-sector-chain-maps-LEASE-RELEASE-excl-e2cf0e6bf517d963",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/bridge-local-anomaly-zero-charge-sector-chain-maps-LEASE-RELEASE-excl-e2cf0e6bf517d963.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "bridge-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T01:34:20Z", "seq": 2, "predecessor": "sf:program/event/bridge-local-anomaly-zero-charge-sector-chain-maps-LEASE-ACQUIRE-excl-1c2233132a10442d", "payload": {"target": "sf:program/work/bridge-local-anomaly-zero-charge-sector-chain-maps", "agent": "bridge-1", "lease_type": "exclusive", "action": "RELEASE", "acquired": "2026-07-21T01:34:20Z", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/bridge-local-anomaly-zero-charge-sector-chain-maps"}]
+}
