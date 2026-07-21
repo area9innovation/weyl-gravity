@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/nonlinear-phase1-interaction-disposition-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "imports", "representative_ledger", "cyclic_redefinition_ledger", "invariant_class_ledger", "branch_and_cohomology", "counterflow_nonactivation", "adversarial_mutations", "terminal_summary", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nonlinear-phase1-interaction-disposition-v1"},
+    "result_id": {"const": "NONLINEAR_PHASE1_INTERACTION_DISPOSITION_V1"},
+    "result_state": {"const": "REPRESENTATIVES_CERTIFIED_COMPLETE_CYCLIC_CLASS_OPEN_COUNTERFLOW_NOT_ACTIVATED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "imports": {"type": "object", "minProperties": 14, "additionalProperties": {"$ref": "#/$defs/import"}},
+    "representative_ledger": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/representative"}},
+    "cyclic_redefinition_ledger": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/redefinition"}},
+    "invariant_class_ledger": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/invariant"}},
+    "branch_and_cohomology": {"type": "object", "minProperties": 5},
+    "counterflow_nonactivation": {"type": "object", "required": ["theory_action", "background", "charge_sector", "requested_calculation", "status", "missing_pass", "source", "reason", "does_not_establish"]},
+    "adversarial_mutations": {"type": "object", "minProperties": 5, "maxProperties": 5},
+    "terminal_summary": {"type": "object", "minProperties": 8, "maxProperties": 8},
+    "claim_boundary": {"type": "object", "required": ["establishes", "does_not_establish"]}
+  },
+  "$defs": {
+    "import": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "result_state", "sha256", "oracle_fields_consumed"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1}, "result_id": {"type": "string", "minLength": 1},
+        "result_state": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "oracle_fields_consumed": {"type": "array", "maxItems": 0}
+      }
+    },
+    "representative": {
+      "type": "object", "additionalProperties": false,
+      "required": ["stage_id", "source", "theory_action", "background", "carrier", "operation", "lifecycle", "interpretation"],
+      "properties": {
+        "stage_id": {"type": "string"}, "source": {"type": "string"}, "theory_action": {"type": "string"},
+        "background": {"type": "string"}, "carrier": {"type": "string"}, "operation": {"type": "string"},
+        "lifecycle": {"const": "CERTIFIED"}, "interpretation": {"type": "string"}
+      }
+    },
+    "redefinition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scope_id", "source", "carrier", "maximum_input_jet_order", "field_content", "status"],
+      "properties": {
+        "scope_id": {"type": "string"}, "source": {"type": "string"}, "carrier": {"type": "string"},
+        "maximum_input_jet_order": {"type": "integer", "minimum": 0, "maximum": 2},
+        "field_content": {"enum": ["PHYSICAL_ACTION", "FULL_BV"]}, "status": {"enum": ["TRIVIALIZED", "OPEN"]}
+      }
+    },
+    "invariant": {
+      "type": "object", "additionalProperties": false,
+      "required": ["class_id", "complex", "status", "source", "statement"],
+      "properties": {
+        "class_id": {"type": "string"}, "complex": {"type": "string"}, "status": {"enum": ["OPEN", "OBSTRUCTED"]},
+        "source": {"type": "string"}, "statement": {"type": "string"}
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "schema": "science-forge-test-tier-receipt-v1",
+  "result_id": "NONLINEAR_PHASE1_INTERACTION_DISPOSITION_FREEZE_2026_07_21",
+  "work_item": "nonlinear-phase1-interaction-disposition-freeze",
+  "status": "PASS",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "claim_boundary": "The exact retained Berger gravity-Maxwell q2/q3/ell3 representatives and full retained BV cyclicity are certified. Physical-action removal is certified through summed input order two and the zero-PBW full-BV page is exact, while the complete bounded cyclic class, cohomology survival and branch-resolved mixing remain open or unmapped. Counterflow q2/charge is NOT_ACTIVATED after the terminal classical health obstruction.",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "PYTHONPYCACHEPREFIX=/tmp/nonlinear-phase1-pyc python3 -m py_compile nonlinear/phase1/generate_nonlinear_phase1_interaction_disposition.py nonlinear/phase1/verify_nonlinear_phase1_interaction_disposition.py nonlinear/phase1/generate_nonlinear_phase1_paper_materiality.py nonlinear/phase1/generate_nonlinear_phase1_interaction_atlas.py nonlinear/phase1/tests/test_nonlinear_phase1_interaction_disposition.py",
+        "JSON parsing of the lifecycle manifest, reverse-materiality record and atlas fragment",
+        "scoped git diff --check"
+      ],
+      "elapsed_seconds": 0.8
+    },
+    "tier_1": {
+      "status": "PASS",
+      "checks": [
+        "python3 nonlinear/phase1/generate_nonlinear_phase1_interaction_disposition.py --check",
+        "python3 nonlinear/phase1/verify_nonlinear_phase1_interaction_disposition.py",
+        "python3 nonlinear/phase1/generate_nonlinear_phase1_paper_materiality.py --check",
+        "python3 nonlinear/phase1/generate_nonlinear_phase1_interaction_atlas.py --check",
+        "python3 -m pytest -q nonlinear/phase1/tests/test_nonlinear_phase1_interaction_disposition.py",
+        "python3 residual_atlas/validate_fragment.py residual_atlas/nonlinear-phase1-interaction-disposition-fragment-v1.json"
+      ],
+      "elapsed_seconds": 2.9
+    },
+    "tier_2": {
+      "status": "PASS",
+      "checks": [
+        "independent action-derived coupled-Maxwell q2 replay",
+        "independent action-derived coupled-Maxwell q3 replay",
+        "retained mixed ell3 transfer and independent acceptance replay",
+        "full retained BV cyclicity replay",
+        "constant, first-jet, zero-PBW full-BV and physical second-jet redefinition replays",
+        "second-jet witness-disposition replay",
+        "unary branch-extension obstruction replay",
+        "two-phase counterflow Phase 1 viability-classification replay",
+        "Classical Phase 1 counterflow claim-map replay",
+        "Paper 11 current-interaction claim-map replay"
+      ],
+      "elapsed_seconds": 44.6
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This item freezes a lifecycle synthesis over unchanged content-addressed mathematical inputs; it changes no classical operator, action tensor, shared algebra or theorem certificate. The complete affected certificate chain was replayed at Tier 2. The repository-wide Science Forge shadow rail was run separately in advisory mode and reported pre-existing global bridge drift and corpus-baseline drift, neither caused by nor silently treated as a pass for this scoped result."
+    }
+  },
+  "science_forge_shadow": {
+    "status": "ADVISORY_FINDINGS",
+    "elapsed_seconds": 6.4,
+    "findings": [
+      "bridge certificate audit: drift FAIL in the global read-only corpus audit",
+      "coverage census: 1409 certificates versus baseline 976",
+      "toolchain build revision differs from the checked-out Forge stdlib"
+    ],
+    "scope_effect": "Reported without promoting or invalidating the independently hash-bound nonlinear Phase 1 synthesis."
+  },
+  "non_evidence_attempts": [
+    {
+      "command": "python3 -m unittest nonlinear.phase1.tests.test_nonlinear_phase1_interaction_disposition",
+      "result": "NO TESTS RAN",
+      "disposition": "Not counted as a pass; replaced by the successful explicit pytest invocation."
+    },
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_transfer.py",
+      "result": "ModuleNotFoundError because the repository root was absent from PYTHONPATH",
+      "disposition": "Not counted as evidence; the affected chain was rerun successfully with PYTHONPATH=. declared."
+    }
+  ],
+  "evidence_sha256": {
+    "nonlinear/phase1/generate_nonlinear_phase1_interaction_disposition.py": "0fb9e978a123b1976d1dbed5d44e2f63bf5f1181c26d3b1e731eaac80d2809b0",
+    "nonlinear/phase1/verify_nonlinear_phase1_interaction_disposition.py": "3bf2c6918e7d3deb42bfe082b038faa2bdbb7aa429456e6257a589dab0917b41",
+    "nonlinear/phase1/schema/nonlinear-phase1-interaction-disposition-v1.schema.json": "3c2beccc606ffcd82c3dc2677585e9ad21d294171345fe7047285d4d55deee4a",
+    "nonlinear/phase1/tests/test_nonlinear_phase1_interaction_disposition.py": "c6310489480d70841a835eea69d5ef8c2fe6684b011f98191a666f155924a14a",
+    "nonlinear/phase1/NONLINEAR_PHASE1_INTERACTION_DISPOSITION_V1.json": "27eb51544b1db4b6a33d551076f65ac857122f3d0037812fe4e0848c484f73d4",
+    "nonlinear/phase1/generate_nonlinear_phase1_paper_materiality.py": "0320bef9af2f0037203bcc0baf1a2178ec83cc13c5ad9e1f77af861503bef1b7",
+    "planning/paper-coverage/nonlinear-phase1-interaction-materiality-2026-07-21.json": "a60b746de92b68d2f4720c2b757f044fefce064a1f843572723587847bb8f8b5",
+    "nonlinear/phase1/generate_nonlinear_phase1_interaction_atlas.py": "7b9ff4adb6f0dc78586f4419a9db4dd2f1c5d2cea57d2f5d93f74745d6297315",
+    "residual_atlas/nonlinear-phase1-interaction-disposition-fragment-v1.json": "7150608f8fb55cfd578a615e9f72023336c5fad28128e5961fb32107fcfadbc5",
+    "notes/d-quotient-nonlinear-team-brief.md": "0c19765a74e190acc8a915da5566fe9037e3b14dde31ddf0767e178da1c4d044",
+    "reports/nonlinear-phase1-interaction-disposition-freeze-closeout-2026-07-21.md": "b36c201ccc76e363ec9250685a4eb99c0634c300b3b13903e54b13064c35e98f"
+  },
+  "missing_gates": [
+    "complete coupled full-BV zero/first/second-jet solve or replacement complete-cokernel witness",
+    "certified retained operation on ell1 cohomology",
+    "certified branch carrier and Einstein-like/additional-Weyl/Maxwell mixing table",
+    "a new classically healthy counterflow candidate before action-specific q2 and charge activation"
+  ]
+}

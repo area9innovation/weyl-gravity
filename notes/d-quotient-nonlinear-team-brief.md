@@ -1066,6 +1066,47 @@ Escalate immediately if the cubic defect is nontrivial, if cyclicity fails, or
 if a negative physical channel survives transfer.  A no-go certificate is a
 successful result.
 
+### Phase 1 interaction disposition freeze
+
+`NONLINEAR_PHASE1_INTERACTION_DISPOSITION_V1` is the authoritative nonlinear
+Phase 1 synthesis for the retained Berger gravity--Maxwell interaction and the
+failed two-phase counterflow candidate.  It imports the current action-derived
+`q2` and `q3`, retained `ell3`, independent acceptance and full retained BV
+cyclicity by exact content hash.  These are certified representatives on their
+pinned carriers; they are not thereby a nontrivial deformation class or a
+cohomology operation.
+
+The cyclic-redefinition lifecycle is now explicit.  The physical action is
+trivialized at constant, first-jet and summed-input second-jet scope.  The
+zero-PBW full-BV page is trivialized by the three certified Maxwell ghost
+shears.  The complete bounded full-BV cyclic class through input order two is
+`OPEN`: the former witness fails on an admissible second-jet column, and neither
+a complete primitive nor a replacement full-cokernel witness exists in the
+certified ledger.  The distinct unary `beta_1` class is `OBSTRUCTED`, but no
+Einstein-like/additional-Weyl/Maxwell branch crosswalk or mixing table is
+certified.  Survival on `ell1` cohomology is therefore `NO_CERTIFIED_MAP`.
+
+The counterflow action-specific `q2` and charge calculation is
+`NOT_ACTIVATED`, not a missing pass.  Its selected same-field stationary clock
+family already fails the terminal classical health gate through the certified
+familywide Hamiltonian--Hopf obstruction.  This says nothing about changed
+field content, derivative order or action architecture, and the atlas keeps
+the counterflow scope separate from the Berger gravity--Maxwell carrier.
+
+The independent verifier rejects stale-q2, representative-equals-class,
+physical-only-as-full-BV, counterflow-healthy and undefined-branch mutations.
+Reverse materiality is `NOT_APPLICABLE_DISTINCT_MODEL` for Papers 05 and 06
+and `CURRENT_RECONCILED` for Paper 11; no paper correction request is needed.
+The generated fail-closed atlas fragment contains distinct Berger and
+counterflow rows and authorizes no cross-background or cross-carrier mode
+identification.
+
+Evidence is recorded in
+`nonlinear/phase1/NONLINEAR_PHASE1_INTERACTION_DISPOSITION_V1.json`,
+`residual_atlas/nonlinear-phase1-interaction-disposition-fragment-v1.json`,
+and
+`planning/paper-coverage/nonlinear-phase1-interaction-materiality-2026-07-21.json`.
+
 ## Required handoff
 
 Deliver one human-readable report and machine-readable certificates containing:
