@@ -104,3 +104,32 @@ out any higher-degree alternative.
 
 - generic-`l` structural extension (the axial rational structure is the seed);
 - BH-3 readiness inputs (the exact nondegeneracy `a != 0` on `R \ {0}`).
+- **polar l=2 cross covector `(E|X0, E|X1, E|X2)(omega)`** — the tower-limited
+  remainder, recommended as a dedicated coordinator-created successor work-item
+  (needs a low-order/structural method beating the `bh2b` composition tower, or
+  a documented exact obstruction).
+
+CLOSE-OUT: DONE — the candidate theorem is established for the cross scalar
+a(omega) the normal form BH2_SYMPLECTIC_NORMAL_FORM left as the single open
+invariant: an EXACT rational function on nonzero real frequency,
+a(omega) = i * (-96 omega(omega-2i)(4omega-i)^2) / (5(omega-i)(2omega-i)), with a
+finite exceptional set that is EMPTY on the real axis (poles i, i/2 off-axis;
+the only real zero omega=0 is the certified, excluded exceptional carrier), so
+a != 0 for every real omega != 0 and the normal-form hyperbolic-plane branch is
+realized at all nonzero real frequencies. Presentation/lift invariance is
+inherited from the normal-form theorem (a is the lift-invariant cross class);
+the conjugate-frequency law a(-omega) = -conj(a(omega)) is an exact identity;
+frequency (shifted-pole), conjugation (wrong-sign), and normalization (rescale)
+mutations are each rejected; both repaired rational-frequency fixtures are
+recovered. Independent verification is a structurally-distinct VbGeo curvature
+rail (13/13) plus a sub-second fast rail (10/10). The polar l=2 cross covector
+is a distinct multi-component object, compute-tower limited, and is split off as
+a scoped successor (coordinator-created); it does not gate the cross-scalar
+theorem certified here.
+EVIDENCE: black_hole_programme/certificates/BH2_SYMBOLIC_CROSS_INVARIANT.json
+(commit 7eaf03d97; producer verified the closed form on 16 exact frequencies
+with 7 held out + both certified fixtures; independent VbGeo rail
+verify_bh2_symbolic_cross_invariant.py 13/13; fast rail
+tests/test_bh2_symbolic_cross_invariant.py 10/10 incl. mutations and BH-3
+vocabulary lock; residual-atlas fragment PASS). Dependency tags LOCAL-ALGEBRAIC
++ REDUCED-MODE; lifecycle CLASSIFIED.
