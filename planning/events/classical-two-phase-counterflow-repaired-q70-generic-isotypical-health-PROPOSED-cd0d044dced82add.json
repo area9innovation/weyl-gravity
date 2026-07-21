@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-two-phase-counterflow-repaired-q70-generic-isotypical-health-PROPOSED-cd0d044dced82add",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/classical-two-phase-counterflow-repaired-q70-generic-isotypical-health-PROPOSED-cd0d044dced82add.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "coordinator", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-21T08:00:30Z", "seq": 2, "predecessor": "sf:program/event/classical-two-phase-counterflow-repaired-q70-generic-isotypical-health-ACTIVE-0a41c7951860fa28", "payload": {"target": "sf:program/work/classical-two-phase-counterflow-repaired-q70-generic-isotypical-health", "to_state": "PROPOSED", "note": "Coordinator release of an unstarted accidental pull confirmed by the resident: classical-1 created the lease but produced no checkpoint. Return to the pullable proof queue without changing the scientific objective."}, "native": {"authored_by": "sfc work-event", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/classical-two-phase-counterflow-repaired-q70-generic-isotypical-health"}]
+}

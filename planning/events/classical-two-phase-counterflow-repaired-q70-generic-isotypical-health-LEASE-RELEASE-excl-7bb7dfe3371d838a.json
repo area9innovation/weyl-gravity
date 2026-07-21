@@ -1,0 +1,37 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-two-phase-counterflow-repaired-q70-generic-isotypical-health-LEASE-RELEASE-excl-7bb7dfe3371d838a",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {
+    "path": "tools/science-forge/program/events/classical-two-phase-counterflow-repaired-q70-generic-isotypical-health-LEASE-RELEASE-excl-7bb7dfe3371d838a.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "LEASE",
+    "actor": "coordinator",
+    "base_revision": "science-forge-ir-v0",
+    "when": "2026-07-21T08:00:30Z",
+    "seq": 2,
+    "payload": {
+      "target": "sf:program/work/classical-two-phase-counterflow-repaired-q70-generic-isotypical-health",
+      "agent": "classical-1",
+      "lease_type": "exclusive",
+      "action": "RELEASE",
+      "acquired": "2026-07-21T08:00:30Z",
+      "expires": "",
+      "reason": "coordinator release of resident-confirmed unstarted accidental pull; no checkpoint exists"
+    },
+    "native": {
+      "authored_by": "coordinator explicit release pending landed revoke CLI",
+      "policy": "append-only lease release; the prior acquire remains immutable; no resident identity is impersonated"
+    }
+  },
+  "edges": [
+    {
+      "rel": "LEASES",
+      "to": "sf:program/work/classical-two-phase-counterflow-repaired-q70-generic-isotypical-health"
+    }
+  ]
+}
