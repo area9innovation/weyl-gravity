@@ -1,0 +1,44 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/nonlinear-branch-repair-residual-orbit-obstruction-freeze",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "nonlinear-branch-repair-residual-orbit-obstruction-freeze",
+  "source": {
+    "path": "planning/work-items/nonlinear-branch-repair-residual-orbit-obstruction-freeze.json",
+    "span": null
+  },
+  "body": {
+    "owner": "nonlinear-1",
+    "state": "PROPOSED",
+    "stream": "nonlinear",
+    "priority": 0,
+    "objective": "Freeze the exact residual-orbit obstruction already computed during the parked minimal hyperbolic branch-repair attempt, without continuing the Phase 2 enlargement programme or delaying Phase 1 closure.",
+    "stop_condition": "Import BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1 and the parked branch-repair chronology by exact hashes. Complete only the already materialized BERGER_MINIMAL_HYPERBOLIC_BRANCH_REPAIR_RESIDUAL_ORBIT_OBSTRUCTION_V1 producer, strict schema, independent verifier, mutation tests, atlas fragment, tier receipt and concise report. Prove exactly whether the proposed two-row noncontractible repair fails residual-orbit closure and state the smallest additional representation orbit forced by the certified equations. Verify all exact matrices and ranks by independent substitution. If the current artifacts do not prove that statement, close SHORTFALL at the first missing identity. Do not construct the forced enlargement, solve later pages, or activate a branch-resolved interaction table. Record this as a Phase 2 companion result outside the Phase 1 critical path.",
+    "current_gate": "freeze the already-computed residual-orbit obstruction without scope expansion",
+    "forbid": "no further branch-carrier enlargement; no new action architecture; no later-page solve beyond the first certified obstruction; no retained representative called an invariant interaction class; no branch mixing table; no change to the Phase 1 interaction synthesis; no physical sign, particle, scattering or stability promotion",
+    "depends_on": [
+      "sf:program/work/nonlinear-branch-repair-minimal-hyperbolic#ANY_TERMINAL"
+    ],
+    "activates": [
+      "a scoped Phase 2 starting theorem after the Phase 1 freeze"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/backreacted_clock/berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py",
+      "d_quotient_classical/backreacted_clock/verify_berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py",
+      "d_quotient_classical/backreacted_clock/tests/test_berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py",
+      "d_quotient_classical/schema/berger-minimal-hyperbolic-branch-repair-residual-orbit-obstruction-v1.schema.json",
+      "d_quotient_classical/certificates/BERGER_MINIMAL_HYPERBOLIC_BRANCH_REPAIR_RESIDUAL_ORBIT_OBSTRUCTION_V1.json",
+      "d_quotient_classical/reports/berger-minimal-hyperbolic-branch-repair-residual-orbit-obstruction-v1.md",
+      "d_quotient_classical/receipts/",
+      "residual_atlas/berger-minimal-hyperbolic-branch-repair-residual-orbit-obstruction-fragment-v1.json",
+      "reports/",
+      "planning/events/",
+      "planning/forge-requests/",
+      "notes/d-quotient-nonlinear-team-brief.md"
+    ],
+    "resource_hint": "FREEZE ONLY. The producer, verifier, test, certificate, report and atlas already exist in the worktree. Audit and package that exact obstruction; do not continue the repair search.",
+    "input_commit": "aa5ca7814798dfbcc92ee52e462d25af74806515"
+  },
+  "edges": []
+}
