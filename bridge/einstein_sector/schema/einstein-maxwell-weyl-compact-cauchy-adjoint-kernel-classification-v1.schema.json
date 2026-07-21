@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-compact-cauchy-adjoint-kernel-classification-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "provenance", "declared_problem", "formal_adjoint_bridge", "global_stabilizer_solution", "harmonic_decomposition", "exact_block_checks", "exceptional_parameter_ledger", "mutation_controls", "classification", "next_gate", "scope", "claim_boundary", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-compact-cauchy-adjoint-kernel-classification-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein-maxwell-weyl-compact-cauchy-adjoint-kernel-classification-v1.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_ADJOINT_KERNEL_CLASSIFICATION_V1"},
+    "result_state": {"const": "EXACTLY_FIVE_LIFTED_STABILIZERS_SPAN_COMPACT_CAUCHY_ADJOINT_KERNEL"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_commit", "producer", "producer_sha256", "imported_artifacts"],
+      "properties": {
+        "input_commit": {"const": "4ce8494d05ee09b6cb6f01254d4f251900ee88c5"},
+        "producer": {"type": "string", "minLength": 1},
+        "producer_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "imported_artifacts": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "additionalProperties": false, "required": ["name", "path", "sha256", "result_id"], "properties": {"name": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "result_id": {"type": "string"}}}}
+      }
+    },
+    "declared_problem": {"type": "object", "additionalProperties": false, "required": ["slice", "bundle", "charge_and_gauge", "constraint_map", "adjoint_multipliers", "sobolev_scope"], "properties": {"slice": {"type": "string"}, "bundle": {"type": "string"}, "charge_and_gauge": {"type": "string"}, "constraint_map": {"type": "string"}, "adjoint_multipliers": {"type": "string"}, "sobolev_scope": {"type": "string"}}},
+    "formal_adjoint_bridge": {"type": "object", "additionalProperties": false, "required": ["identity", "measure", "consequence", "interpretation", "not_used"], "properties": {"identity": {"type": "string"}, "measure": {"type": "string"}, "consequence": {"type": "string"}, "interpretation": {"type": "string"}, "not_used": {"type": "string"}}},
+    "global_stabilizer_solution": {"type": "object", "additionalProperties": false, "required": ["geometric_reduction", "basis", "dimension", "weyl_initial_jets", "constant_U1"], "properties": {"geometric_reduction": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string"}}, "basis": {"const": ["H", "P_x", "J_1", "J_2", "J_3"]}, "dimension": {"const": 5}, "weyl_initial_jets": {"type": "string"}, "constant_U1": {"type": "string"}}},
+    "harmonic_decomposition": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "items": {"type": "object", "additionalProperties": false, "required": ["stratum", "obstruction_factors", "kernel_basis", "complex_dimension", "real_dimension"], "properties": {"stratum": {"type": "string"}, "obstruction_factors": {"type": "array", "minItems": 1, "items": {"type": "string"}}, "kernel_basis": {"type": "array", "items": {"type": "string"}}, "complex_dimension": {"type": "integer", "minimum": 0}, "real_dimension": {"type": "integer", "minimum": 0}}}
+    },
+    "exact_block_checks": {"type": "object", "additionalProperties": false, "required": ["generic_circle_translation_block", "sphere_exact_obstruction", "sphere_coexact_obstruction", "rotation_bundle_lift_block", "rotation_bundle_lift_null_vector", "fixture_substitution", "real_structure"], "properties": {"generic_circle_translation_block": {"type": "array"}, "sphere_exact_obstruction": {"type": "string"}, "sphere_coexact_obstruction": {"type": "string"}, "rotation_bundle_lift_block": {"type": "array"}, "rotation_bundle_lift_null_vector": {"type": "array"}, "fixture_substitution": {"type": "object"}, "real_structure": {"type": "string"}}},
+    "exceptional_parameter_ledger": {"type": "object", "additionalProperties": false, "required": ["finite_positive_radius", "magnetic_amplitude_nonzero", "magnetic_amplitude_zero", "constant_maxwell_unbased", "conformally_flat_product_k1_plus_k2_zero", "decompactified_circle"], "properties": {"finite_positive_radius": {"type": "string"}, "magnetic_amplitude_nonzero": {"type": "string"}, "magnetic_amplitude_zero": {"type": "string"}, "constant_maxwell_unbased": {"type": "string"}, "conformally_flat_product_k1_plus_k2_zero": {"type": "string"}, "decompactified_circle": {"type": "string"}}},
+    "mutation_controls": {"type": "object", "additionalProperties": false, "required": ["delete_H", "delete_one_rotation", "bare_rotation_without_bundle_lift", "restore_constant_U1", "insert_ell2_coexact"], "properties": {"delete_H": {"type": "object"}, "delete_one_rotation": {"type": "object"}, "bare_rotation_without_bundle_lift": {"type": "object"}, "restore_constant_U1": {"type": "object"}, "insert_ell2_coexact": {"type": "object"}}},
+    "classification": {"type": "object", "additionalProperties": false, "required": ["right_elliptic_constraint_map_preserved", "two_sided_fredholm_claim", "global_adjoint_kernel_complete", "adjoint_kernel_dimension", "exactly_five_lifted_stabilizers", "constant_U1_is_sixth_taub_charge", "all_k_ell_parity_strata_classified", "nonlinear_slice_theorem", "lorentzian_causal_claim", "quantum_claim"], "properties": {"right_elliptic_constraint_map_preserved": {"const": true}, "two_sided_fredholm_claim": {"const": false}, "global_adjoint_kernel_complete": {"const": true}, "adjoint_kernel_dimension": {"const": 5}, "exactly_five_lifted_stabilizers": {"const": true}, "constant_U1_is_sixth_taub_charge": {"const": false}, "all_k_ell_parity_strata_classified": {"const": true}, "nonlinear_slice_theorem": {"const": false}, "lorentzian_causal_claim": {"const": false}, "quantum_claim": {"const": false}}},
+    "next_gate": {"type": "object"},
+    "scope": {"type": "object", "additionalProperties": false, "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"], "properties": {"theory": {"type": "string"}, "background": {"type": "string"}, "boundaries": {"type": "string"}, "charge_sector": {"type": "string"}, "carrier": {"type": "string"}, "degree": {"type": "string"}, "parity": {"type": "string"}, "ell": {"type": "string"}, "m": {"type": "string"}, "k": {"type": "string"}, "omega": {"type": "string"}}},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+  }
+}

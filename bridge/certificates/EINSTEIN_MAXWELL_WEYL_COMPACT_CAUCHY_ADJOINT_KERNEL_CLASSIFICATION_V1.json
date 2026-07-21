@@ -1,0 +1,234 @@
+{
+  "claim_boundary": "This exact compact-Cauchy theorem identifies the full Sobolev adjoint kernel of the right-elliptic canonical constraint map with the five lifted H, P_x and J_i stabilizers. It does not make the constraint-plus-gauge operator Fredholm, prove the nonlinear AMM slice, classify bounded spacetime resonances, construct causal evolution, or make a quantum claim.",
+  "classification": {
+    "adjoint_kernel_dimension": 5,
+    "all_k_ell_parity_strata_classified": true,
+    "constant_U1_is_sixth_taub_charge": false,
+    "exactly_five_lifted_stabilizers": true,
+    "global_adjoint_kernel_complete": true,
+    "lorentzian_causal_claim": false,
+    "nonlinear_slice_theorem": false,
+    "quantum_claim": false,
+    "right_elliptic_constraint_map_preserved": true,
+    "two_sided_fredholm_claim": false
+  },
+  "declared_problem": {
+    "adjoint_multipliers": "eta=(N,X^i,rho,sigma,chi) smearing (H_perp,H_i,P_trace,Q_scale,Gauss)",
+    "bundle": "fixed magnetic bundle P_N with N=2 and P=1 at the rational fixture",
+    "charge_and_gauge": "fixed harmonic electric Q_e and based/zero-mean Maxwell gauge; Gauss target is mean-zero",
+    "constraint_map": "the seven-row action-derived Weyl-Maxwell canonical constraint map C from the imported compact-Cauchy gate",
+    "slice": "Sigma=S1_L x S2_r, compact and boundaryless; certified fixture r=1",
+    "sobolev_scope": "the weighted Sobolev spaces of the imported right-elliptic gate, integer s>=4"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_block_checks": {
+    "fixture_substitution": {
+      "lambda_ell1": 2,
+      "lambda_ell2": 6,
+      "magnetic_amplitude": 1,
+      "radius_squared": 1
+    },
+    "generic_circle_translation_block": [
+      [
+        "k",
+        "0"
+      ],
+      [
+        "0",
+        "k"
+      ]
+    ],
+    "real_structure": "conjugation maps m to -m in the ell=1 complex harmonic basis; its fixed locus is the three-dimensional real so(3) span",
+    "rotation_bundle_lift_block": [
+      [
+        "P",
+        "1"
+      ]
+    ],
+    "rotation_bundle_lift_null_vector": [
+      "-1/P",
+      "1"
+    ],
+    "sphere_coexact_obstruction": "(lambda-2)/r^2; zero exactly at ell=1",
+    "sphere_exact_obstruction": "lambda/r^2; nonzero for every ell>=1 and finite r>0"
+  },
+  "exceptional_parameter_ledger": {
+    "conformally_flat_product_k1_plus_k2_zero": "OUT_OF_SCOPE_DEGENERATION: the Weyl eigensplitting proof fails and the nonzero-flux common-incidence equation has no such branch",
+    "constant_maxwell_unbased": "one extra formal reducibility appears only if the mean-zero convention is removed; it has zero canonical action and is not a Taub charge",
+    "decompactified_circle": "OUT_OF_SCOPE: the boost and continuous momenta require a different boundary problem",
+    "finite_positive_radius": "NO_JUMP: factors scale by r^-2 and their zero sets remain ell=1 coexact only",
+    "magnetic_amplitude_nonzero": "NO_JUMP: P changes only the compensating chi=-P*n_J",
+    "magnetic_amplitude_zero": "dimension remains five in based gauge, with chi=0, but this leaves the declared N=2 fixed-bundle incidence component"
+  },
+  "formal_adjoint_bridge": {
+    "consequence": "nondegeneracy of the canonical symplectic form gives ker((D C_z)^*)={eta:X_{C[eta]}(z)=0}",
+    "identity": "<D C_z(delta z),eta>_Sigma = Omega_z(delta z, X_{C[eta]}(z)) = <delta z,(D C_z)^* eta>",
+    "interpretation": "the adjoint kernel is exactly the infinitesimal stabilizer algebra of the canonical initial data, including both Weyl initial jets and the bundle-covariant Maxwell lift; the full KID equations X_{C[eta]}(z)=0 have a unique gauge-parameter development on the static analytic product, so restriction and development give inverse maps between canonical stabilizers and spacetime stabilizers",
+    "measure": "all pairings use the background density dSigma; density-valued canonical constraints are paired without a second implicit volume factor",
+    "not_used": "no two-sided Fredholm claim, finite-mode sampling, or density argument from the exponential-polynomial carrier"
+  },
+  "global_stabilizer_solution": {
+    "basis": [
+      "H",
+      "P_x",
+      "J_1",
+      "J_2",
+      "J_3"
+    ],
+    "constant_U1": "not in the declared multiplier space because the Gauss target is mean-zero; if constants are restored it is one reducibility direction with identically zero Hamiltonian vector field, not a sixth nontrivial Taub charge",
+    "dimension": 5,
+    "geometric_reduction": [
+      "The nonzero product Weyl endomorphism has distinct Lorentzian and spherical factor-plane eigenspaces, so every connected conformal stabilizer preserves the product splitting.",
+      "The common factor homothety is constant; integration of the S2 divergence forces it to zero, hence both factor fields are Killing and rho=sigma=0.",
+      "The flat-cylinder Killing equations give time translation, space translation, and a local boost; S1 periodicity excludes the boost.",
+      "The sphere Killing equation gives exactly the ell=1 coexact vector harmonics, a real so(3) triplet.",
+      "For each rotation the global connection lift is uniquely fixed in based gauge by i_J F+d chi=0, namely chi=-P*n_J; H and P_x have chi=0."
+    ],
+    "weyl_initial_jets": "rho=sigma=0 for all five basis elements"
+  },
+  "harmonic_decomposition": [
+    {
+      "complex_dimension": 2,
+      "kernel_basis": [
+        "H=(N=1,X=0,rho=sigma=chi=0)",
+        "P_x=(N=0,X=partial_x,rho=sigma=chi=0)"
+      ],
+      "obstruction_factors": [
+        "k",
+        "lambda"
+      ],
+      "real_dimension": 2,
+      "stratum": "k=0, ell=0 scalar/product"
+    },
+    {
+      "complex_dimension": 3,
+      "kernel_basis": [
+        "J_m=(N=0,X=J_m,rho=sigma=0,chi=-P*n_m), m=-1,0,1"
+      ],
+      "obstruction_factors": [
+        "lambda-2"
+      ],
+      "real_dimension": 3,
+      "stratum": "k=0, ell=1 sphere coexact"
+    },
+    {
+      "complex_dimension": 0,
+      "kernel_basis": [],
+      "obstruction_factors": [
+        "lambda",
+        "lambda-2 with nonzero divergence"
+      ],
+      "real_dimension": 0,
+      "stratum": "k=0, ell=1 sphere exact"
+    },
+    {
+      "complex_dimension": 0,
+      "kernel_basis": [],
+      "obstruction_factors": [
+        "lambda",
+        "lambda-2"
+      ],
+      "real_dimension": 0,
+      "stratum": "k=0, ell>=2 all parities"
+    },
+    {
+      "complex_dimension": 0,
+      "kernel_basis": [],
+      "obstruction_factors": [
+        "k"
+      ],
+      "real_dimension": 0,
+      "stratum": "k!=0, every ell and parity"
+    }
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "mutation_controls": {
+    "bare_rotation_without_bundle_lift": {
+      "detected": true,
+      "residual": "i_J F !=0"
+    },
+    "delete_H": {
+      "detected": true,
+      "expected_dimension": 4
+    },
+    "delete_one_rotation": {
+      "detected": true,
+      "expected_dimension": 4
+    },
+    "insert_ell2_coexact": {
+      "detected": true,
+      "obstruction": "lambda-2=4"
+    },
+    "restore_constant_U1": {
+      "detected": true,
+      "formal_dimension": 6,
+      "nontrivial_charge_dimension": 5
+    }
+  },
+  "next_gate": {
+    "name": "COMPACT_CAUCHY_AMM_SEMIFREDHOLM_SLICE",
+    "required": [
+      "construct a split complement for the closed range of D C without removing the sixteen physical symbol directions",
+      "establish the tame/smooth local gauge slice in the declared Sobolev scale",
+      "derive the Arms-Marsden-Moncrief momentum-map quadratic normal form with these exactly five adjoint covectors"
+    ]
+  },
+  "provenance": {
+    "imported_artifacts": [
+      {
+        "name": "compact_cauchy_constraint_gate",
+        "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_CONSTRAINT_FREDHOLM_GATE_V1.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_CONSTRAINT_FREDHOLM_GATE_V1",
+        "sha256": "261c77431cca2afb5facf65d33be7388f291757290cbc4129fc05e69c1a6c303"
+      },
+      {
+        "name": "complete_background_stabilizer",
+        "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_PLEBANSKI_HACYAN_STABILIZER_DESCENT",
+        "sha256": "7d2840bc88b3fb157345badb7ae2683adceb7401b611ba5b90dca4b8868993b8"
+      },
+      {
+        "name": "product_incidence",
+        "path": "bridge/certificates/einstein_maxwell_product_incidence.json",
+        "result_id": "EINSTEIN_MAXWELL_PRODUCT_INCIDENCE",
+        "sha256": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+      },
+      {
+        "name": "canonical_operator_producer",
+        "path": "bridge/einstein_sector/einstein_maxwell_weyl_compact_cauchy_constraint_fredholm_gate.py",
+        "result_id": "SOURCE_OPERATOR",
+        "sha256": "90bb779e7ec2d54c66472744d7fc3fd2799c2aea26478b859df692ad5233a278"
+      }
+    ],
+    "input_commit": "4ce8494d05ee09b6cb6f01254d4f251900ee88c5",
+    "producer": "bridge/einstein_sector/einstein_maxwell_weyl_compact_cauchy_adjoint_kernel_classification.py",
+    "producer_sha256": "605377aa3239b111bdba68a6996ddddb3f560f1a4439e0801f2aea5b958542f5"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_ADJOINT_KERNEL_CLASSIFICATION_V1",
+  "result_state": "EXACTLY_FIVE_LIFTED_STABILIZERS_SPAN_COMPACT_CAUCHY_ADJOINT_KERNEL",
+  "schema": "einstein-maxwell-weyl-compact-cauchy-adjoint-kernel-classification-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein-maxwell-weyl-compact-cauchy-adjoint-kernel-classification-v1.schema.json",
+  "schema_sha256": "d016b7cf2149e854afaa685c5ab9cb81e7a4563317b3269c0bc7e914e0709f84",
+  "scope": {
+    "background": "compactified magnetically supported Plebanski-Hacyan rational fixture",
+    "boundaries": "compact boundaryless Cauchy slice S1_L x S2",
+    "carrier": "weighted Sobolev canonical initial data and multiplier spaces",
+    "charge_sector": "fixed P_N,N=2 and fixed harmonic Q_e; based Maxwell gauge",
+    "degree": "linearized constraint adjoint",
+    "ell": "all ell>=0",
+    "k": "all allowed 2*pi*n/L",
+    "m": "all -ell<=m<=ell with real structure imposed",
+    "omega": "NOT_APPLICABLE on a Cauchy-slice constraint map",
+    "parity": "scalar, exact-vector and coexact-vector sectors kept distinct",
+    "theory": "pure Weyl-Maxwell with Einstein-Maxwell comparison"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_compact_cauchy_adjoint_kernel_classification --verify bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_ADJOINT_KERNEL_CLASSIFICATION_V1.json",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_compact_cauchy_adjoint_kernel_classification",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_compact_cauchy_adjoint_kernel_classification",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-weyl-compact-cauchy-adjoint-kernel-fragment-v1.json"
+  ]
+}

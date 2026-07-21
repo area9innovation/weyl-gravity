@@ -1,0 +1,93 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This exact compact-Cauchy theorem identifies the full Sobolev adjoint kernel of the right-elliptic canonical constraint map with the five lifted H, P_x and J_i stabilizers. It does not make the constraint-plus-gauge operator Fredholm, prove the nonlinear AMM slice, classify bounded spacetime resonances, construct causal evolution, or make a quantum claim.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_ADJOINT_KERNEL_CLASSIFICATION_V1.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_ADJOINT_KERNEL_CLASSIFICATION_V1",
+          "sha256": "b0012a5ff0f1653523b90076e88a94212d16660a390128022b59598e20cc8ce0"
+        }
+      ],
+      "id": "einstein.ph.wm.compact_cauchy.constraint_adjoint.all_harmonics",
+      "mode_data": {
+        "dispersion": {
+          "statement": "This is a spatial Cauchy adjoint theorem, not a frequency-shell theorem.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "The canonical Hamiltonian transpose identity identifies the adjoint kernel with the stabilizer of the background phase-space point.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Temporal resonance functionals belong to a different correction carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Exact stabilizer necessity is certified, but bounded spacetime resonance sufficiency is a separate theorem.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No retarded evolution map is analyzed.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The compact-Cauchy adjoint theorem does not construct a secular correction.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "Exactly five independent Taub covectors occur: H, P_x and the three globally lifted J_i.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan rational fixture",
+        "boundaries": "compact boundaryless Cauchy slice S1_L x S2",
+        "carrier": "weighted Sobolev canonical initial data and multiplier spaces",
+        "charge_sector": "fixed P_N,N=2 and fixed harmonic Q_e; based Maxwell gauge",
+        "degree": "linearized constraint adjoint",
+        "ell": "all ell>=0",
+        "k": "all allowed 2*pi*n/L",
+        "m": "all -ell<=m<=ell with real structure imposed",
+        "omega": "NOT_APPLICABLE on a Cauchy-slice constraint map",
+        "parity": "scalar, exact-vector and coexact-vector sectors kept distinct",
+        "theory": "pure Weyl-Maxwell with Einstein-Maxwell comparison"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/einstein_maxwell_weyl_compact_cauchy_adjoint_kernel_classification.py",
+  "generated_by_sha256": "605377aa3239b111bdba68a6996ddddb3f560f1a4439e0801f2aea5b958542f5",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_nonlinear",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_compact_cauchy_adjoint_kernel_classification --verify bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_ADJOINT_KERNEL_CLASSIFICATION_V1.json",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_compact_cauchy_adjoint_kernel_classification",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_compact_cauchy_adjoint_kernel_classification",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-weyl-compact-cauchy-adjoint-kernel-fragment-v1.json"
+  ]
+}

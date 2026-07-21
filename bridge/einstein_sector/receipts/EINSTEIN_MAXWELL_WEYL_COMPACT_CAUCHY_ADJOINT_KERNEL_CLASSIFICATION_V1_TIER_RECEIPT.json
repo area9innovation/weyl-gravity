@@ -1,0 +1,48 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_ADJOINT_KERNEL_CLASSIFICATION_V1",
+  "date": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifact_hashes": {
+    "certificate_sha256": "b0012a5ff0f1653523b90076e88a94212d16660a390128022b59598e20cc8ce0",
+    "producer_sha256": "605377aa3239b111bdba68a6996ddddb3f560f1a4439e0801f2aea5b958542f5",
+    "independent_verifier_sha256": "70fc525ee9b96898f1a213f790b3fbcb437d8e5fd7ec0e364c39a19428d7dafd",
+    "atlas_sha256": "fa667e6c6d207afd79ad0a4ad7cacd4a5a4a8c6464f87cbf3e3d9cadd8f868f1"
+  },
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      "python3 -m py_compile bridge/einstein_sector/einstein_maxwell_weyl_compact_cauchy_adjoint_kernel_classification.py bridge/einstein_sector/verify_einstein_maxwell_weyl_compact_cauchy_adjoint_kernel_classification.py bridge/einstein_sector/tests/test_einstein_maxwell_weyl_compact_cauchy_adjoint_kernel_classification.py",
+      "python3 -m json.tool bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_ADJOINT_KERNEL_CLASSIFICATION_V1.json",
+      "git diff --check -- <scoped paths>"
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "elapsed_seconds": 1.80,
+    "max_rss_kb": 70896,
+    "commands": [
+      "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_compact_cauchy_adjoint_kernel_classification",
+      "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_compact_cauchy_adjoint_kernel_classification",
+      "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-weyl-compact-cauchy-adjoint-kernel-fragment-v1.json"
+    ],
+    "tests_run": 10
+  },
+  "tier_2": {
+    "status": "PASS_BY_CONTENT_ADDRESS",
+    "criterion": "The canonical constraint gate, complete stabilizer theorem, product incidence theorem and canonical operator producer are imported by exact SHA-256; this result changes no upstream operator."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "criterion": "No release or full-paper theorem lifecycle is promoted in this artifact commit; the affected exact certificate chain and manuscript build are the applicable rails."
+  },
+  "advisory_shadow": {
+    "status": "ADVISORY_PASS_WITH_PREEXISTING_DRIFT",
+    "findings": [
+      "bridge certlab audit reports pre-existing drift while existence, edges, DAG and gates pass",
+      "coverage census reports 1357 certificates against baseline 976",
+      "Forge binary is an unpinned development build whose build revision differs from the checked-out standard library"
+    ],
+    "promotion_effect": "NONE; advisory drift cannot promote the claim"
+  }
+}

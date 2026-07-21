@@ -4683,6 +4683,41 @@ Every material result must carry at least one exact dependency tag:
 `LORENTZIAN-CAUSAL`.  Only an explicit `LORENTZIAN-CAUSAL` certificate may
 support causal propagation or scattering claims.
 
+## Compact-Cauchy adjoint-kernel bridge completed
+
+The active bridge `bridge-compact-cauchy-adjoint-kernel-classification` closes
+the `exactly five?` question left by the right-elliptic compact constraint
+gate.  The activation input is the exact action-derived seven-row canonical
+constraint map on the fixed \(N=2\) magnetic bundle with fixed harmonic
+electric charge and mean-zero Maxwell Gauss codomain.
+
+The Hamiltonian transpose identity identifies the formal Sobolev adjoint
+kernel with the canonical KID/stabilizer equations.  Their complete Fourier
+and spherical-harmonic solution is
+
+```text
+k=0, ell=0:          H, P_x                       (real dimension 2)
+k=0, ell=1 coexact:  lifted J_1, J_2, J_3        (real dimension 3)
+every other stratum: no adjoint kernel
+```
+
+Thus the global adjoint kernel is exactly five-dimensional.  Each rotation
+includes the unique based bundle compensator `chi_J=-P*n_J`.  Constant
+`U(1)` is excluded reducibility and is not a sixth Taub charge.  The result
+does not turn the rank-30 to rank-14 operator into a Fredholm operator and
+does not remove the sixteen physical symbol directions.
+
+The fail-closed atlas row is
+`einstein.ph.wm.compact_cauchy.constraint_adjoint.all_harmonics`.  Its Taub
+map and canonical symplectic-adjoint descriptions are `CERTIFIED`; bounded
+and smooth-secular second-order sufficiency remain `OPEN`, while causal,
+observational and quantum maps remain `NO_CERTIFIED_MAP`.
+
+The next active bridge is the compact-Cauchy AMM semi-Fredholm slice: build a
+split complement and nonlinear Sobolev slice, then derive the five-component
+momentum-map quadratic normal form without imposing a fake gauge condition on
+physical TT data.
+
 ## Cross-team contribution contract
 
 Submit new results through the generator and phase-space registries in
