@@ -4,7 +4,7 @@
   "schema": "work-v0",
   "body": {
     "owner": "physics-programme",
-    "state": "PROPOSED",
+    "state": "ACCEPTED",
     "objective": "Add a proof-carrying contraction and factorization planner for large sparse tensors, jets and multilinear maps. Forge now has tensor primitives, but adoption on q2/q3, Lee-Wald and observer Hessians will stall if a correct high-level expression expands into hundreds of thousands of terms before symmetry, sparsity and common factors are used. The planner must make performance transformations independently checkable so Conflux can search at the structural level without changing the mathematics.",
     "depends_on": [
       "sf:program/work/nonlinear-conflux-branch-mixing-discovery",
@@ -16,7 +16,8 @@
     "notes": [
       "Priority A for practical adoption: this turns the new tensor and AD layers into scalable consumers.",
       "Compose with tensor, multivariate-jet AD DAG, graph/hypergraph symmetry, typed dimension grading and supervised resource receipts.",
-      "Record both algebraic complexity and measured CPU/RSS/disk effects; keep them separately typed."
+      "Record both algebraic complexity and measured CPU/RSS/disk effects; keep them separately typed.",
+      "2026-07-21T10:00:00Z forge-coordinator: ACCEPTED \u2014 mirrored sf:program/work/MX-symmetric-tensor-contraction-plann (math). NOTE: this request was filed with state 'PROPOSED' (invalid for a forge-request; conform requires REQUESTED/ACCEPTED/LANDED/DECLINED/OPEN) \u2014 corrected to ACCEPTED on triage. Was missed by the REQUESTED-only sweep; the coordinator sweep now also scans PROPOSED-state requests."
     ]
   }
 }
