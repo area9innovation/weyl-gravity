@@ -1,0 +1,17 @@
+{
+  "id": "sf:forge-request/bug-science-forge-ready-hides-held-lease",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Prevent resident agents from interpreting `s-f work ready --stream S` returning zero as an empty queue when that agent already holds a live exclusive assignment in the same stream.",
+    "depends_on": [],
+    "stop_condition": "Add an agent-aware readiness surface, either `s-f work ready --stream S --agent A` or equivalent use of the declared SF_AGENT identity. If A holds a live exclusive lease, print that item first with state, lease epoch, checkpoint status, expiry and the exact `work-package`/`work show` command, then list additional pullable work separately. A zero pullable count must say `0 additional pullable; current assignment: I`, never merely `0 ready`. `work pull --agent A` must likewise refuse a second item while naming the held lease and recovery command. Preserve stream-only coordinator semantics when no agent is supplied. Add deterministic fixtures for: one held lease plus zero additional ready; one held lease plus another ready item; LEASED-UNSTARTED; checkpointed current lease; expired/released lease; same item after yield; and two streams using the same human-readable title but distinct stable agent IDs. Reproduce the 2026-07-21 Classical and Quantum cases where overview showed valid live leases while the resident windows concluded `no new work item is currently ready to pull` and stopped.",
+    "forbid": "no automatic lease release or task switch; no second exclusive acquisition; no inference of agent identity from terminal title alone; no conflation of active assignment with READY queue depth; no treating absent heartbeat as scientific idleness; no physics-specific item names in implementation",
+    "notes": [
+      "Current recovery requires a manually authored inbox request telling the agent not to pull again and to render its already-held package. The launcher should make this the normal first-class path.",
+      "This composes with science-forge-resident-await-and-wakeup and the programme-level one-live-exclusive-per-agent CAS request; it is specifically the misleading read-only UX that leaves valid leases unconsumed."
+    ]
+  }
+}
