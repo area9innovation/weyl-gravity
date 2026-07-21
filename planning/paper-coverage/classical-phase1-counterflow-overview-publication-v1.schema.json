@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "classical-phase1-counterflow-overview-publication-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema", "result_id", "result_state", "dependency_tags", "imports", "publication_refs", "claims_propagated", "paper_dispositions", "mutation_expectations", "claim_boundary", "provenance"],
+  "properties": {
+    "$schema": {"const": "classical-phase1-counterflow-overview-publication-v1.schema.json"},
+    "schema": {"const": "classical-phase1-counterflow-overview-publication-v1"},
+    "result_id": {"const": "CLASSICAL_PHASE1_COUNTERFLOW_OVERVIEW_PUBLICATION_UPDATE_V1"},
+    "result_state": {"const": "PUBLICATION_CURRENT_TERMINAL_PHASE1_COUNTERFLOW_DISPOSITION"},
+    "dependency_tags": {"type": "array", "minItems": 3, "uniqueItems": true, "items": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}},
+    "imports": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/source"}},
+    "publication_refs": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/publication"}},
+    "claims_propagated": {"type": "object", "minProperties": 9, "additionalProperties": {"type": "boolean"}},
+    "paper_dispositions": {"type": "object", "minProperties": 3, "additionalProperties": {"type": "string"}},
+    "mutation_expectations": {"type": "object", "minProperties": 7, "additionalProperties": {"const": "REJECT"}},
+    "claim_boundary": {"type": "object", "required": ["establishes", "does_not_establish"]},
+    "provenance": {"type": "object", "required": ["generator", "generator_sha256", "independent_verifier"]}
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "result_state", "sha256"],
+      "properties": {
+        "path": {"type": "string"}, "result_id": {"type": "string"}, "result_state": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "publication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_path", "source_sha256", "pdf_path", "pdf_sha256", "publication_edit"],
+      "properties": {
+        "source_path": {"type": "string"}, "pdf_path": {"type": "string"},
+        "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "pdf_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "publication_edit": {"const": "PERFORMED_AND_VERIFIED"}
+      }
+    }
+  }
+}

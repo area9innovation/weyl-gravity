@@ -1,0 +1,53 @@
+{
+  "schema": "classical-publication-tier-receipt-v1",
+  "result_id": "CLASSICAL_PHASE1_COUNTERFLOW_OVERVIEW_PUBLICATION_UPDATE_V1_TIER_RECEIPT",
+  "subject_result_id": "CLASSICAL_PHASE1_COUNTERFLOW_OVERVIEW_PUBLICATION_UPDATE_V1",
+  "recorded_at": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "source_pins": {
+    "claim_map": "38ca82a0e07ead8b4d315304367008ce93b59a6de7ead3a93da922c1398c3624",
+    "selected_causal_parent_v1": "7d969e7e630f793dfe12fe07b0e98a67b2543f9aa85fa03277e491fb00296db7",
+    "phase1_viability": "6eae712f8bdc1a06db64c606e47792391c1fa16cd70beaee594943dc77a05e7d"
+  },
+  "output_hashes": {
+    "generator": "6595e44fc9a9297762578994f8a479e494705e348fd55cfc4c8407d4cc3a2569",
+    "verifier": "58d618c72002678e1794fd2ca2cfcbb2f7d9d1197606d03e36c1b7a09ae5bd98",
+    "schema": "f6cf6a86875189deddc1fdee481ea96914f5102daf9bb9aea97a5c911cbc65cf",
+    "tests": "71e857b707a7b8ed5ceed772ba67a477400fd5dc3cb4385d7285e04fd229de9c",
+    "coverage_record": "88953fc24f1689f3465c4f309a8ca0e80e812e49cdb75b6eab12111dd62d020d",
+    "paper00_source": "7ab51eec6ad71020d6d5ae5a7746274de656de9d64f3234fdce3f919aac3d68e",
+    "paper00_pdf": "f946b7c19bd9fb04aa4c8fbc5577abc3410781a73c9fc6eac56f3a82e1fae5f2",
+    "paper98_source": "1ddfe694c5c32b629f56f3a4af9b4b7432da5da008aa647b1ac66a0312d1d780",
+    "paper98_pdf": "f795a6851fffa70f50cc56a8788db3c705791269d542d179cacd46c3b85ed717",
+    "paper99_source": "fb690b1858f524d2eb8f02f4bc8e8b05fa5d7be24bac80460bd7970742f932ad",
+    "paper99_pdf": "32b3c055926c6ce7ac60b472c0cbfd7816ea9b85d17a27e53e3b463b5ff1afab",
+    "report": "93879b5ce0ee839d3b8fc30ffdbecb77fcbea8a6dac8c3b002742156ffd01780",
+    "closeout": "3b0c26bc864565e123045b48d1ec4614f3d99eedc25fab0ca36f0ca6e961fc02",
+    "team_brief": "7ff2e0e04c9133aae124ef0084ff5a6f284e23ddafbd1a6dfb43524859447cc9"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "status": "PASS",
+      "elapsed_seconds": 0.2,
+      "commands": ["python3 -m py_compile on the generator, verifier and scoped test", "python3 -m json.tool on the schema, record and receipt", "git diff --check on the explicit manifest"]
+    },
+    {
+      "tier": 1,
+      "status": "PASS",
+      "elapsed_seconds": 7.4,
+      "commands": ["coverage generator --check", "independent verifier with six contradiction mutations", "three scoped pytest cases", "two warning-free pdflatex passes", "fixed-epoch Pandoc plus deterministic Ghostscript normalization replay for Papers 98 and 99", "PDF text-witness checks"]
+    },
+    {
+      "tier": 2,
+      "status": "NOT_RUN",
+      "reason": "All mathematical source certificates are unchanged and content-addressed; this work only propagates their terminal wording to declared publications."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "reason": "No scientific theorem, release tag or classical/quantum lifecycle state is promoted."
+    }
+  ],
+  "claim_boundary": "This receipt certifies publication-current wording in Papers 00, 98 and 99. It changes no classical certificate and establishes no familywide Green homotopy, complete higher-isotype spectrum, universal changed-theory no-go, nonlinear, observer, quantum, particle, scattering, positivity or unitarity result."
+}
