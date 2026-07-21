@@ -1,0 +1,63 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "PAPER09_PROMOTION_AFTER_GIT_ATTACHED_TIER3_V3_TIER_RECEIPT",
+  "claim_result_id": "PAPER09_PROMOTION_AFTER_GIT_ATTACHED_TIER3_V3_NO_PROMOTION",
+  "decision": "NO_PROMOTION",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifact_hashes": {
+    "closed_universe_observers/receipts/PAPER09_PROMOTION_AFTER_GIT_ATTACHED_TIER3_V3_NO_PROMOTION.json": "ce0698d39e838057dd84e390bfc9996e259d444f7ea77bf377a00b4ad64eac99",
+    "closed_universe_observers/verify_paper09_promotion_after_git_attached_tier3_v3.py": "105527a488c03833b17b50a1dcd3b08ba9f5d9a178c8b53b4a8b9eb2ceecb835",
+    "closed_universe_observers/tests/test_paper09_promotion_after_git_attached_tier3_v3.py": "19f482b4343d7332a7c136d6a4231d3507cb96d053a45788f77d327e92a3770b"
+  },
+  "gate_results": {
+    "git_attached_materialization": "PASS",
+    "observer_stream_tier3_green": false,
+    "first_failure": "STALE_COMPARISON_LEDGER_BRIDGE_ARTIFACT_PIN_WITH_CLAIM_BOUNDARY_DRIFT",
+    "paper09_status": "DRAFT_ALLOWED",
+    "paper09_theorem_frozen": false,
+    "scientific_claim_change": false
+  },
+  "tests": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile closed_universe_observers/verify_paper09_promotion_after_git_attached_tier3_v3.py closed_universe_observers/tests/test_paper09_promotion_after_git_attached_tier3_v3.py && python3 -m json.tool closed_universe_observers/receipts/PAPER09_PROMOTION_AFTER_GIT_ATTACHED_TIER3_V3_NO_PROMOTION.json >/dev/null",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 closed_universe_observers/verify_paper09_promotion_after_git_attached_tier3_v3.py",
+      "result": "Exact terminal imports, preserved publication hashes, receiver census, nonactivation and no-promotion gate passed",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. pytest -q closed_universe_observers/tests/test_paper09_promotion_after_git_attached_tier3_v3.py",
+      "elapsed_seconds": 0.13,
+      "result": "17 passed",
+      "status": "PASS"
+    },
+    {
+      "tier": 2,
+      "command": "claim-map regeneration and bidirectional paper-coverage replay",
+      "result": "Not executed: the work package makes regeneration conditional on OBSERVER_STREAM_TIER3_GREEN, which is false; the existing map and coverage artifacts are instead preserved and independently hash-checked",
+      "status": "NOT_APPLICABLE_NO_PROMOTION_BRANCH"
+    },
+    {
+      "tier": 3,
+      "command": "PYTHONPATH=. pytest -q -x closed_universe_observers/tests",
+      "result": "Imported exact terminal evidence from the single Git-attached run: 826 passed, then one stale comparison-ledger semantic-pin failure; no rerun is owned by this publication-lifecycle item",
+      "status": "IMPORTED_OBSTRUCTED_NO_RERUN"
+    },
+    {
+      "tier": 3,
+      "command": "build both Paper 9 PDFs twice without warnings",
+      "result": "Not executed: PDF regeneration is conditional on a green complete Observer Tier-3 receipt; both existing PDFs are preserved and hash-checked",
+      "status": "NOT_APPLICABLE_NO_PROMOTION_BRANCH"
+    }
+  ],
+  "claim_boundary": "This lifecycle receipt imports the terminal Paper 9 v2 and Git-attached Observer Tier-3 packages by exact hash. The Git-attached materialization gate is repaired, but the one authoritative full suite remains non-green at a stale comparison-ledger hash and materially stale claim boundary. Therefore Paper 9 is not promoted, remains DRAFT_ALLOWED, and every publication artifact and scientific disposition is preserved. No observer, redshift, nonlinear, particle or quantum claim is changed."
+}
