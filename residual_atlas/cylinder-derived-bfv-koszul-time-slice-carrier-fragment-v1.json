@@ -1,0 +1,93 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This certificate assembles the already certified intrinsic fifteen-generator residual BFV/Koszul carrier and normalized algebraic endpoint suspension on the selected D-finite Einstein-cylinder model. It identifies the precise remaining obstruction: arbitrary-support local q2, ghost/antifield completion, and portable local contraction data are absent, so no full local-BV-to-time-slice chain map or anomaly image exists. It makes no anomaly cohomology, Cartan-defect, QME, causal, state, particle, positivity or unitarity claim.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/CYLINDER_DERIVED_BFV_KOSZUL_TIME_SLICE_CARRIER_V1.json",
+          "result_id": "CYLINDER_DERIVED_BFV_KOSZUL_TIME_SLICE_CARRIER_V1",
+          "sha256": "31d47b21a63e03261c109568e1f852155412169fc7260500baba8a972da6a02c"
+        }
+      ],
+      "id": "pure_weyl.cylinder.derived_bfv_koszul.time_slice_carrier",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The imported D-finite E/A/L residual window is unchanged.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The action-scaled residual symplectic matrix and ghost cotangent orientation are imported exactly.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "This entry concerns the derived moment-map fibre, not the compact-product resonance ledger.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Cylinder residual derived carrier; no compact-product correction class is imported.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "No retarded local-to-time-slice complex is constructed.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No source inversion theorem is asserted.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "All fifteen mu_A are the ghost-free Q_BFV images of eta_A=b_A.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "conformally flat vacuum Einstein cylinder R x S3",
+        "boundaries": "closed Cauchy S3; selected algebraic time-slice polarization; no spatial boundary",
+        "carrier": "D-finite E/A/L residual matter plus 15 CE ghosts and 15 Koszul/BFV ghost momenta",
+        "charge_sector": "derived common zero fibre of all fifteen SO(4,2) moment maps",
+        "degree": "unary residual action plus quadratic moment-map/BFV block; local anomaly metric orders recorded separately",
+        "ell": "D-finite cylinder harmonics in the imported selected finite regression window",
+        "k": "NOT_APPLICABLE on S3",
+        "m": "complete imported magnetic basis in that window",
+        "omega": "integer cylinder D weights in the imported E/A/L window",
+        "parity": "both residual chiralities; even and odd local anomaly representatives kept distinct",
+        "theory": "pure Weyl gravity minimal/local BV and selected residual BFV"
+      }
+    }
+  ],
+  "generated_by": "bridge/anomaly_restriction/cylinder_derived_bfv_koszul_time_slice_carrier.py",
+  "generated_by_sha256": "9f2c7ac12bf6368838705d24414192f858d05a456b40bce95e7fa4412a302180",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_nonlinear",
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.anomaly_restriction.cylinder_derived_bfv_koszul_time_slice_carrier --check",
+    "PYTHONPATH=. python3 -m bridge.anomaly_restriction.verify_cylinder_derived_bfv_koszul_time_slice_carrier",
+    "PYTHONPATH=. python3 -m unittest bridge.anomaly_restriction.tests.test_cylinder_derived_bfv_koszul_time_slice_carrier",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/cylinder-derived-bfv-koszul-time-slice-carrier-fragment-v1.json"
+  ]
+}

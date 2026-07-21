@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "cylinder-derived-bfv-koszul-time-slice-carrier-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "provenance",
+    "scope",
+    "derived_carrier",
+    "chain_map_ledger",
+    "anomaly_perturbative_orders",
+    "receiver_contract_for_quantum",
+    "classification",
+    "claim_boundary",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "cylinder-derived-bfv-koszul-time-slice-carrier-v1"},
+    "schema_path": {"const": "bridge/anomaly_restriction/schema/cylinder-derived-bfv-koszul-time-slice-carrier-v1.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "CYLINDER_DERIVED_BFV_KOSZUL_TIME_SLICE_CARRIER_V1"},
+    "result_state": {"const": "INTRINSIC_DERIVED_CARRIER_CERTIFIED_SUPPORT_LOCAL_ANOMALY_MAP_OBSTRUCTED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["input_commit", "producer", "producer_sha256", "imported_artifacts"],
+      "properties": {
+        "input_commit": {"const": "a9be01eab"},
+        "producer": {"type": "string", "minLength": 1},
+        "producer_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "imported_artifacts": {
+          "type": "array",
+          "minItems": 13,
+          "maxItems": 13,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "path", "sha256", "result_id"],
+            "properties": {
+              "name": {"type": "string", "minLength": 1},
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+              "result_id": {"type": "string", "minLength": 1}
+            }
+          }
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"],
+      "properties": {
+        "theory": {"type": "string"}, "background": {"type": "string"}, "boundaries": {"type": "string"},
+        "charge_sector": {"type": "string"}, "carrier": {"type": "string"}, "degree": {"type": "string"},
+        "parity": {"type": "string"}, "ell": {"type": "string"}, "m": {"type": "string"},
+        "k": {"type": "string"}, "omega": {"type": "string"}
+      }
+    },
+    "derived_carrier": {"type": "object"},
+    "chain_map_ledger": {
+      "type": "object",
+      "required": [
+        "bulk_minimal_BV_to_raw_polynomial",
+        "raw_polynomial_to_residual_CE",
+        "quadratic_endpoint_to_moment_map",
+        "endpoint_to_BFV_ghost_momentum",
+        "boundary_BFV_differential",
+        "raw_D_action",
+        "support_local_full_BV_bulk_to_slice"
+      ]
+    },
+    "anomaly_perturbative_orders": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["class_id", "background_value", "first_metric_order", "reason", "derived_receiver_map", "cohomology_verdict_on_receiver"],
+        "properties": {
+          "class_id": {"enum": ["ANOM_OMEGA_C2", "ANOM_OMEGA_E4", "ANOM_OMEGA_C_DUAL_C"]},
+          "background_value": {"type": "string"},
+          "first_metric_order": {"type": "integer", "minimum": 1, "maximum": 2},
+          "reason": {"type": "string"},
+          "derived_receiver_map": {"const": "NO_CERTIFIED_MAP"},
+          "cohomology_verdict_on_receiver": {"const": "NOT_ASSIGNED"}
+        }
+      }
+    },
+    "receiver_contract_for_quantum": {"type": "object"},
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fifteen_generator_intrinsic_derived_carrier_certified",
+        "eta_A_identified_with_BFV_ghost_momenta",
+        "selected_algebraic_time_slice_transgression_certified",
+        "selected_finite_BFV_nilpotency_certified",
+        "raw_D_preserves_intrinsic_derived_carrier",
+        "support_local_full_BV_time_slice_chain_map_certified",
+        "local_anomaly_representatives_mapped_to_carrier",
+        "local_anomaly_receiver_cohomology_verdict_assigned",
+        "full_higher_syzygy_resolution_certified",
+        "lorentzian_causal_claim",
+        "quantum_claim"
+      ],
+      "properties": {
+        "fifteen_generator_intrinsic_derived_carrier_certified": {"const": true},
+        "eta_A_identified_with_BFV_ghost_momenta": {"const": true},
+        "selected_algebraic_time_slice_transgression_certified": {"const": true},
+        "selected_finite_BFV_nilpotency_certified": {"const": true},
+        "raw_D_preserves_intrinsic_derived_carrier": {"const": true},
+        "support_local_full_BV_time_slice_chain_map_certified": {"const": false},
+        "local_anomaly_representatives_mapped_to_carrier": {"const": false},
+        "local_anomaly_receiver_cohomology_verdict_assigned": {"const": false},
+        "full_higher_syzygy_resolution_certified": {"const": false},
+        "lorentzian_causal_claim": {"const": false},
+        "quantum_claim": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  }
+}

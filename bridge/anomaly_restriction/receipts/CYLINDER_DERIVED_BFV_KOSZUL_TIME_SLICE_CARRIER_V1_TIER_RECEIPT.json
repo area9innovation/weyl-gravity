@@ -1,0 +1,77 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "CYLINDER_DERIVED_BFV_KOSZUL_TIME_SLICE_CARRIER_V1",
+  "date_utc": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "input_commit": "a9be01eab",
+  "tests": [
+    {
+      "tier": 0,
+      "command": "PYTHONPATH=. python3 -m bridge.anomaly_restriction.cylinder_derived_bfv_koszul_time_slice_carrier --check",
+      "elapsed_seconds": 0.14,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m bridge.anomaly_restriction.verify_cylinder_derived_bfv_koszul_time_slice_carrier",
+      "elapsed_seconds": 0.33,
+      "status": "PASS",
+      "independence": "does not import the producer; reconstructs the real fifteen-generator conformal bracket, checks all Jacobi triples, and recomputes the cylinder curvature invariants"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m unittest bridge.anomaly_restriction.tests.test_cylinder_derived_bfv_koszul_time_slice_carrier",
+      "elapsed_seconds": 0.52,
+      "status": "PASS",
+      "tests_run": 9
+    },
+    {
+      "tier": 1,
+      "command": "python3 residual_atlas/validate_fragment.py residual_atlas/cylinder-derived-bfv-koszul-time-slice-carrier-fragment-v1.json",
+      "elapsed_seconds": 0.29,
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "python3 -m json.tool bridge/anomaly_restriction/schema/cylinder-derived-bfv-koszul-time-slice-carrier-v1.schema.json",
+      "elapsed_seconds": 0.10,
+      "status": "PASS"
+    }
+  ],
+  "mutations": [
+    {
+      "name": "conformal_cross_bracket_normalization",
+      "mutation": "replace the diagonal D coefficient in [K+_a,K-_a] from 2 to 1 while retaining the rotation coefficient",
+      "expected": "Jacobi failure",
+      "status": "REJECTED"
+    },
+    {
+      "name": "support_local_false_promotion",
+      "mutation": "support_local_full_BV_time_slice_chain_map_certified=true",
+      "expected": "strict schema rejection",
+      "status": "REJECTED"
+    }
+  ],
+  "higher_tiers": {
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "All thirteen inputs are unchanged and content-addressed; this assembly adds no shared operator and independently checks their decisive interface identities."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The local-to-time-slice gate remains obstructed; no theorem freeze or release promotion is made."
+    }
+  },
+  "advisory_shadow": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 9.72,
+    "process_status": "PASS_ADVISORY",
+    "findings": [
+      "bridge certificate audit reported pre-existing corpus drift",
+      "coverage census reported 1351 certificates versus baseline 976",
+      "Forge binary revision differs from the current stdlib checkout"
+    ],
+    "promotion_effect": "NONE"
+  },
+  "claim_boundary": "The receipt certifies the intrinsic selected residual BFV/Koszul carrier and its algebraic endpoint suspension, not a support-local full-BV anomaly restriction map or any quantum/cohomological verdict."
+}

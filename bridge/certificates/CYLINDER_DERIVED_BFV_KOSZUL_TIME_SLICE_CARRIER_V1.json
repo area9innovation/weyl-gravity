@@ -1,0 +1,302 @@
+{
+  "anomaly_perturbative_orders": [
+    {
+      "background_value": "0 because the cylinder is conformally flat",
+      "class_id": "ANOM_OMEGA_C2",
+      "cohomology_verdict_on_receiver": "NOT_ASSIGNED",
+      "derived_receiver_map": "NO_CERTIFIED_MAP",
+      "first_metric_order": 2,
+      "reason": "C(gbar)=0, so sqrt(g) C^2 has no constant or linear metric term"
+    },
+    {
+      "background_value": "0 on R x S3",
+      "class_id": "ANOM_OMEGA_E4",
+      "cohomology_verdict_on_receiver": "NOT_ASSIGNED",
+      "derived_receiver_map": "NO_CERTIFIED_MAP",
+      "first_metric_order": 1,
+      "reason": "delta E4=d Theta_E is a nonzero local transgression; omega delta E4 leaves the certified d omega wedge Theta_E residual after the naive integration-by-parts step"
+    },
+    {
+      "background_value": "0 because the cylinder Weyl tensor vanishes",
+      "class_id": "ANOM_OMEGA_C_DUAL_C",
+      "cohomology_verdict_on_receiver": "NOT_ASSIGNED",
+      "derived_receiver_map": "NO_CERTIFIED_MAP",
+      "first_metric_order": 2,
+      "reason": "both Weyl factors vanish at the background"
+    }
+  ],
+  "chain_map_ledger": {
+    "boundary_BFV_differential": {
+      "identity": "VERIFIED_Q_BFV_b_EQUALS_MU",
+      "master_equation": "VERIFIED_EXACT_CUBIC_MASTER_EQUATION",
+      "status": "CERTIFIED_SELECTED_FINITE_MODEL"
+    },
+    "bulk_minimal_BV_to_raw_polynomial": {
+      "scope": "exact finite energy-buffer chain isomorphism; nonlinear master-action terms excluded from q1",
+      "source": {
+        "path": "field_bv_identification/certificates/minimal_bv_chain.json",
+        "sha256": "3f9d04dd729c911fbe07768158d96ae411634b7a91bf70a139e8c7cf1dcd8c64",
+        "source_commit": "9732ec1be74afd674bc50d8c1dfb37cfb1ed5dce"
+      },
+      "status": "CERTIFIED_UNARY_D_FINITE"
+    },
+    "endpoint_to_BFV_ghost_momentum": {
+      "map": "tau=suspension o Theta",
+      "normalization": "1",
+      "orientation": "1",
+      "status": "CERTIFIED_SELECTED_ALGEBRAIC_TIME_SLICE"
+    },
+    "quadratic_endpoint_to_moment_map": {
+      "identity": "Theta([B^(2)(h,h)])(z)=T_z(h)=mu_z(h)",
+      "representative_independence": "CERTIFIED_MODULO_K_SHARP_EXACT_ENDPOINT_SOURCES",
+      "status": "CERTIFIED_SELECTED_RESIDUAL_MODEL"
+    },
+    "raw_D_action": {
+      "cartan_on_local_anomalies": "NO_CERTIFIED_MAP",
+      "generator": "D",
+      "preservation": true,
+      "status": "CERTIFIED_ON_INTRINSIC_DERIVED_CARRIER",
+      "verdict": "D_GAUGE"
+    },
+    "raw_polynomial_to_residual_CE": {
+      "all_fifteen_maps": true,
+      "identity": "Q_H=p Delta j=d_CE on the centered physical coefficient row",
+      "status": "CERTIFIED_CENTERED_FINITE_WINDOW"
+    },
+    "support_local_full_BV_bulk_to_slice": {
+      "consequence": "The intrinsic residual carrier cannot yet receive arbitrary-support local BV anomaly cocycles as a chain map.",
+      "missing": [
+        "arbitrary-input bilinear Bach tensor B^(2)_{mu nu}[h1,h2] in a portable local basis",
+        "Diff and Weyl ghost-metric q2 rows",
+        "antifield q2 rows fixed by the classical master equation",
+        "portable local q1 and contraction maps pi_cl, iota_cl, s_cl",
+        "exact arity-two chain identity and full projection comparison"
+      ],
+      "status": "OBSTRUCTED",
+      "witnesses": {
+        "antifield_completion": "NOT_COMPUTED",
+        "full_support_local_q2": "NOT_COMPUTED",
+        "ghost_completion": "NOT_COMPUTED",
+        "local_q1_q2_chain_identity": "NOT_COMPUTED_MISSING_ARBITRARY_INPUT_Q2_AND_COMPLETIONS"
+      }
+    }
+  },
+  "claim_boundary": "This certificate assembles the already certified intrinsic fifteen-generator residual BFV/Koszul carrier and normalized algebraic endpoint suspension on the selected D-finite Einstein-cylinder model. It identifies the precise remaining obstruction: arbitrary-support local q2, ghost/antifield completion, and portable local contraction data are absent, so no full local-BV-to-time-slice chain map or anomaly image exists. It makes no anomaly cohomology, Cartan-defect, QME, causal, state, particle, positivity or unitarity claim.",
+  "classification": {
+    "eta_A_identified_with_BFV_ghost_momenta": true,
+    "fifteen_generator_intrinsic_derived_carrier_certified": true,
+    "full_higher_syzygy_resolution_certified": false,
+    "local_anomaly_receiver_cohomology_verdict_assigned": false,
+    "local_anomaly_representatives_mapped_to_carrier": false,
+    "lorentzian_causal_claim": false,
+    "quantum_claim": false,
+    "raw_D_preserves_intrinsic_derived_carrier": true,
+    "selected_algebraic_time_slice_transgression_certified": true,
+    "selected_finite_BFV_nilpotency_certified": true,
+    "support_local_full_BV_time_slice_chain_map_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "derived_carrier": {
+    "basis_crosswalk_status": "VERIFIED_ENTRYWISE_BOTH_CHIRALITIES",
+    "bfv_charge": "Omega_res=c^A mu_A-(1/2) f^A_BC c^B c^C b_A",
+    "category": "selected finite algebraic closed-cylinder derived BFV model",
+    "constraint_count": 15,
+    "derived_zero_fibre": "[P_lin x^R_{so(4,2)^*} {0} /^R SO(4,2)]",
+    "generators": {
+      "c_A": {
+        "count": 15,
+        "differential": "Q c^A=-(1/2) f^A_BC c^B c^C",
+        "role": "odd residual CE ghosts"
+      },
+      "eta_A_equals_b_A": {
+        "count": 15,
+        "full_differential": "Q_BFV b_A=mu_A plus the coadjoint ghost-b term fixed by f^A_BC",
+        "ghost_free_differential": "d_K eta_A=mu_A",
+        "koszul_degree": -1,
+        "role": "odd Koszul generators / BFV ghost momenta"
+      },
+      "matter": {
+        "differential": "Q Phi=c^A K_A Phi",
+        "dimension": 132,
+        "role": "selected E/A/L residual phase-space coordinates"
+      }
+    },
+    "magnetic_generator_basis": [
+      "D",
+      "Lx",
+      "Ly",
+      "Lz",
+      "Rx",
+      "Ry",
+      "Rz",
+      "K-_1/2_1/2",
+      "K-_1/2_-1/2",
+      "K-_-1/2_1/2",
+      "K-_-1/2_-1/2",
+      "K+_1/2_1/2",
+      "K+_1/2_-1/2",
+      "K+_-1/2_1/2",
+      "K+_-1/2_-1/2"
+    ],
+    "moment_map_formula": "M_A=-(1/2) J K_A",
+    "nilpotency": {
+      "full_bfv": "VERIFIED_EXACT_CUBIC_MASTER_EQUATION",
+      "jacobi_defects": 0,
+      "koszul_slice": "d_K^2=0 because d_K acts trivially on the commuting moment-map coefficients",
+      "moment_map_equivariance_defects": 0,
+      "representation_defects": 0
+    },
+    "real_generator_basis": [
+      "D",
+      "R01",
+      "R02",
+      "R03",
+      "R12",
+      "R13",
+      "R23",
+      "K+_0",
+      "K+_1",
+      "K+_2",
+      "K+_3",
+      "K-_0",
+      "K-_1",
+      "K-_2",
+      "K-_3"
+    ],
+    "relations_needed_for_nilpotency": [
+      "Jacobi: f^E_[AB f^D_C]E=0",
+      "representation: [K_A,K_B]=f^C_AB K_C",
+      "equivariance: rho_A(mu_B)=f^C_AB mu_C",
+      "Hamiltonian normalization: M_A=-(1/2) J K_A"
+    ],
+    "syzygy_boundary": "No claim that the fifteen quadrics form a regular sequence or that their complete higher syzygy module has been resolved; those properties are not needed for the displayed BFV master equation."
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "provenance": {
+    "imported_artifacts": [
+      {
+        "name": "predecessor_obstruction",
+        "path": "bridge/certificates/STRICT_ANOMALY_SECTOR_RESTRICTION_CHAIN_MAP_OBSTRUCTION_V1.json",
+        "result_id": "STRICT_ANOMALY_SECTOR_RESTRICTION_CHAIN_MAP_OBSTRUCTION_V1",
+        "sha256": "4863e00186e719e933e20fe58f2bc0429b1cb0a13db8481b6f8152680b3255fb"
+      },
+      {
+        "name": "residual_bfv",
+        "path": "bridge/certificates/residual_bfv.json",
+        "result_id": "pure-weyl-residual-bfv-v1",
+        "sha256": "f7c73355ec9712283e30693ca6f4b53a67ed0638ae366bee76c0c10e632a81ac"
+      },
+      {
+        "name": "closed_universe_bfv",
+        "path": "bridge/certificates/closed_universe_bfv.json",
+        "result_id": "pure-weyl-closed-universe-bfv-choice-v1",
+        "sha256": "37eda8319d7fbe69e6b0838677b3d7fd4aecddd8b6274c281fefc2cf3f612ceb"
+      },
+      {
+        "name": "full_hpl_transfer",
+        "path": "bridge/certificates/full_hpl_transfer.json",
+        "result_id": "pure-weyl-full-hpl-transfer-v1",
+        "sha256": "18acc197a45ba9256e0979e7b04c0cd5e7ca36de94b7540aa2038fc1f9e3511a"
+      },
+      {
+        "name": "metric_to_residual",
+        "path": "bridge/certificates/metric_to_residual.json",
+        "result_id": "pure-weyl-metric-to-residual-integration-v1",
+        "sha256": "25bd2b6c3ac31139bda9bcee6ad18f2df69a73cea3ec102b66ff310b1644f8c3"
+      },
+      {
+        "name": "taub_moment_map",
+        "path": "bridge/certificates/taub_moment_map.json",
+        "result_id": "pure-weyl-taub-moment-map-all-energy-v1",
+        "sha256": "84fb8d94043f89fcd70e8fdd2940b266ea6f9006c3ff94cb55884b1b4ceb46e1"
+      },
+      {
+        "name": "endpoint_taub_map",
+        "path": "field_bv_identification/zero_modes/certificates/taub_obstruction_map.json",
+        "result_id": "pure-weyl-endpoint-taub-moment-map-v1",
+        "sha256": "72ac747c0b15c85c75f7a86d983960f305e486c96ab594c056f9b3377cfbf540"
+      },
+      {
+        "name": "zero_mode_transgression",
+        "path": "field_bv_identification/polarized_state/certificates/zero_mode_transgression.json",
+        "result_id": "pure-weyl-algebraic-zero-mode-transgression-v1",
+        "sha256": "dfe70f8bf6ad6820178e67247a06b1c27fefba3c5b7396ba42fd14e96db82b53"
+      },
+      {
+        "name": "residual_cubic_bfv",
+        "path": "quantum-weyl/transfer/certificates/HT1_RESIDUAL_CUBIC_BLOCK.json",
+        "result_id": "HT1_RESIDUAL_CUBIC_BLOCK",
+        "sha256": "802ea86e1bb807476c7e1bbbe25f33435fa1a79ba433c1b0943b19c4986eefc4"
+      },
+      {
+        "name": "local_bach_seed_lift",
+        "path": "quantum-weyl/transfer/certificates/HT1B_LOCAL_BACH_SEED_LIFT.json",
+        "result_id": "HT1B_LOCAL_BACH_SEED_LIFT",
+        "sha256": "f08976200d4e07dc4fb349fa785c960ab4aa8a0d685fc82fe1a2cb30c5ff26c5"
+      },
+      {
+        "name": "euler_transgression",
+        "path": "quantum-weyl/local_bv/certificates/EULER_TRANSGRESSION_CERTIFICATE.json",
+        "result_id": "EULER_TRANSGRESSION_CERTIFICATE",
+        "sha256": "2c03b184f27d6f0054ed12029b052834ef08aa8bf4f2c42663f84617f0e63063"
+      },
+      {
+        "name": "local_anomaly_cohomology",
+        "path": "quantum-weyl/local_bv/cohomology/H14_GAUGE_FIXED_BV_RESULT.json",
+        "result_id": "H14_GAUGE_FIXED_BV_RESULT",
+        "sha256": "a7730a34b21d2068cc73e46c563ce929195a3d9a7c7626d3843788b54e0592b3"
+      },
+      {
+        "name": "raw_d_charge_audit",
+        "path": "d_quotient_classical/certificates/compact_cylinder_d_charge_audit.json",
+        "result_id": "pure-weyl-compact-cylinder-d-charge-audit-v1",
+        "sha256": "6e609dd850049fb7b85867033dbdce0b2b214f2d5196665015f8e2b552d493e4"
+      }
+    ],
+    "input_commit": "a9be01eab",
+    "producer": "bridge/anomaly_restriction/cylinder_derived_bfv_koszul_time_slice_carrier.py",
+    "producer_sha256": "9f2c7ac12bf6368838705d24414192f858d05a456b40bce95e7fa4412a302180"
+  },
+  "receiver_contract_for_quantum": {
+    "activation_gate": "Supply arbitrary-input support-local q2 with Diff/Weyl ghost and antifield completion, portable local q1 and contraction maps, and verify the arity-two chain square before restricting anomaly descent classes.",
+    "may_import": [
+      "the 15-generator intrinsic BFV charge and ghost-momentum Koszul identification",
+      "the normalized algebraic endpoint suspension tau=suspension o Theta",
+      "the selected finite-window nilpotency and raw-D preservation identities",
+      "the kinematic first metric orders of the three local representatives"
+    ],
+    "must_not_import": [
+      "a support-local full-BV local-to-time-slice chain map",
+      "any image, zero, exactness or nontriviality verdict for the three anomaly classes in the derived carrier",
+      "a raw-D Cartan defect on local anomaly representatives",
+      "QME, Hadamard, causal, particle, positivity or unitarity conclusions"
+    ]
+  },
+  "result_id": "CYLINDER_DERIVED_BFV_KOSZUL_TIME_SLICE_CARRIER_V1",
+  "result_state": "INTRINSIC_DERIVED_CARRIER_CERTIFIED_SUPPORT_LOCAL_ANOMALY_MAP_OBSTRUCTED",
+  "schema": "cylinder-derived-bfv-koszul-time-slice-carrier-v1",
+  "schema_path": "bridge/anomaly_restriction/schema/cylinder-derived-bfv-koszul-time-slice-carrier-v1.schema.json",
+  "schema_sha256": "c2867d75f478359d7c47776aa838121cb43089f7de9431c2e2f54a13f3371a2c",
+  "scope": {
+    "background": "conformally flat vacuum Einstein cylinder R x S3",
+    "boundaries": "closed Cauchy S3; selected algebraic time-slice polarization; no spatial boundary",
+    "carrier": "D-finite E/A/L residual matter plus 15 CE ghosts and 15 Koszul/BFV ghost momenta",
+    "charge_sector": "derived common zero fibre of all fifteen SO(4,2) moment maps",
+    "degree": "unary residual action plus quadratic moment-map/BFV block; local anomaly metric orders recorded separately",
+    "ell": "D-finite cylinder harmonics in the imported selected finite regression window",
+    "k": "NOT_APPLICABLE on S3",
+    "m": "complete imported magnetic basis in that window",
+    "omega": "integer cylinder D weights in the imported E/A/L window",
+    "parity": "both residual chiralities; even and odd local anomaly representatives kept distinct",
+    "theory": "pure Weyl gravity minimal/local BV and selected residual BFV"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.anomaly_restriction.cylinder_derived_bfv_koszul_time_slice_carrier --check",
+    "PYTHONPATH=. python3 -m bridge.anomaly_restriction.verify_cylinder_derived_bfv_koszul_time_slice_carrier",
+    "PYTHONPATH=. python3 -m unittest bridge.anomaly_restriction.tests.test_cylinder_derived_bfv_koszul_time_slice_carrier",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/cylinder-derived-bfv-koszul-time-slice-carrier-fragment-v1.json"
+  ]
+}
