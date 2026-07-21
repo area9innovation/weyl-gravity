@@ -11,7 +11,8 @@
     "forbid": "no global acceptance of DECLINED/REQUESTED/LANDED as ordinary work-item lifecycle states; no directory-wide validation skip; no rewriting request history; no treating a malformed request as advisory-only; no special case keyed to one filename",
     "notes": [
       "Live reproduction 2026-07-21: `s-f conform planning` reports exactly two request-state nonconformances. `planning/forge-requests/bug-science-forge-large-programme-readonly-latency.json` is honestly DECLINED under the channel protocol but is rejected as `invalid state 'DECLINED'`. `planning/forge-requests/science-forge-residual-atlas-fragment-registration-coverage.json` incorrectly used PROPOSED and has been repaired locally to REQUESTED; this mutation is a useful negative fixture.",
-      "The authoritative channel protocol is planning/forge-requests/README.md: REQUESTED -> ACCEPTED -> LANDED | DECLINED."
+      "The authoritative channel protocol is planning/forge-requests/README.md: REQUESTED -> ACCEPTED -> LANDED | DECLINED.",
+      "Additional live fixture 2026-07-21: Forge-side responses updated a duplicate top-level `state` while leaving `body.state` unchanged. `bug-science-forge-large-programme-readonly-latency.json` now has top-level ACCEPTED with body.state DECLINED, and `science-forge-shortfall-work-splitting-and-join.json` has top-level LANDED with body.state REQUESTED. Conformance must reject contradictory duplicate state fields or provide one explicit migration/canonicalization rule; the request channel and coordinator dashboard must read the documented body.state consistently. A response must not look landed to one consumer and pending to another."
     ]
   }
 }
