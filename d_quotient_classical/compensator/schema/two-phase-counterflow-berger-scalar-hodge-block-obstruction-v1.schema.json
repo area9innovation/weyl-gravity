@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "imports",
+    "payload_ref",
+    "first_obstruction",
+    "exceptional_statuses",
+    "terminal_verdict",
+    "next_gate",
+    "claim_boundary",
+    "content_hashes"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-berger-scalar-hodge-block-obstruction-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_BERGER_SCALAR_HODGE_BLOCK_OBSTRUCTION_V1"},
+    "result_state": {"const": "EXACT_GENERIC_SCALAR_HODGE_SUBCOMPLEX_OBSTRUCTION"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "imports": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["all_hodge_shortfall", "causal_parent", "gauge_fixed_q54", "peter_weyl_engine", "volume_seed"],
+      "properties": {
+        "all_hodge_shortfall": {"$ref": "#/$defs/import"},
+        "causal_parent": {"$ref": "#/$defs/import"},
+        "gauge_fixed_q54": {"$ref": "#/$defs/import"},
+        "peter_weyl_engine": {"$ref": "#/$defs/import"},
+        "volume_seed": {"$ref": "#/$defs/import"}
+      }
+    },
+    "payload_ref": {"$ref": "#/$defs/payload_ref"},
+    "first_obstruction": {"$ref": "#/$defs/obstruction"},
+    "exceptional_statuses": {
+      "type": "object",
+      "minProperties": 3,
+      "additionalProperties": {"type": "string"}
+    },
+    "terminal_verdict": {"$ref": "#/$defs/terminal"},
+    "next_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["preferred", "alternative", "must_retain"],
+      "properties": {
+        "preferred": {"type": "string"},
+        "alternative": {"type": "string"},
+        "must_retain": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      }
+    },
+    "claim_boundary": {"$ref": "#/$defs/boundary"},
+    "content_hashes": {
+      "type": "object",
+      "minProperties": 7,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    }
+  },
+  "$defs": {
+    "import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "result_id", "source_commit", "oracle_fields_consumed"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "result_id": {"type": "string"},
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "oracle_fields_consumed": {"const": []}
+      }
+    },
+    "payload_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "content_sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_rows",
+        "target_rows",
+        "operator",
+        "meaning",
+        "two_form_row_order",
+        "PBW_rows",
+        "common_round_factor",
+        "target_values",
+        "leading_temporal_PBW_term",
+        "leading_mode_coefficient",
+        "generic_verdict"
+      ],
+      "properties": {
+        "source_rows": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "target_rows": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "operator": {"const": "C_scalar=d_1 q54[bar_c_star_diff,c_spatial] d_0"},
+        "meaning": {"type": "string"},
+        "two_form_row_order": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "PBW_rows": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "array",
+            "minItems": 5,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["word", "coefficient"],
+              "properties": {"word": {"type": "string"}, "coefficient": {"type": "string"}}
+            }
+          }
+        },
+        "common_round_factor": {"const": "u-v"},
+        "target_values": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["u", "v", "u_minus_v"],
+          "properties": {
+            "u": {"type": "string"},
+            "v": {"type": "string"},
+            "u_minus_v": {"type": "string"}
+          }
+        },
+        "leading_temporal_PBW_term": {"type": "string"},
+        "leading_mode_coefficient": {"const": "93*I*k/40"},
+        "generic_verdict": {"const": "NONZERO_FOR_EVERY_k_NOT_EQUAL_0"}
+      }
+    },
+    "terminal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result_state",
+        "normalized_scalar_modes_defined",
+        "exact_one_form_iota_pi_defined_for_j_positive",
+        "generic_nonzero_k_scalar_subcomplex_closed",
+        "axisymmetric_k0_full_scalar_block_status",
+        "restricted_unary_status",
+        "physical_quotient_status",
+        "pairing_characteristic_gradient_status",
+        "q70_parent_nilpotency_and_causality_preserved",
+        "physical_instability_found",
+        "all_hodge_health_established",
+        "downstream_vector_tensor_export_activated"
+      ],
+      "properties": {
+        "result_state": {"const": "EXACT_GENERIC_SCALAR_HODGE_SUBCOMPLEX_OBSTRUCTION"},
+        "normalized_scalar_modes_defined": {"const": true},
+        "exact_one_form_iota_pi_defined_for_j_positive": {"const": true},
+        "generic_nonzero_k_scalar_subcomplex_closed": {"const": false},
+        "axisymmetric_k0_full_scalar_block_status": {"const": "NOT_COMPUTED_AFTER_FIRST_EXACT_OBSTRUCTION"},
+        "restricted_unary_status": {"const": "NOT_DEFINED_ON_PROPOSED_GENERIC_SCALAR_HODGE_CARRIER"},
+        "physical_quotient_status": {"const": "NOT_DEFINED_NONCLOSED_SUBCOMPLEX"},
+        "pairing_characteristic_gradient_status": {"const": "NOT_REACHED"},
+        "q70_parent_nilpotency_and_causality_preserved": {"const": true},
+        "physical_instability_found": {"const": false},
+        "all_hodge_health_established": {"const": false},
+        "downstream_vector_tensor_export_activated": {"const": false}
+      }
+    },
+    "boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["establishes", "does_not_establish"],
+      "properties": {
+        "establishes": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+        "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}}
+      }
+    }
+  }
+}

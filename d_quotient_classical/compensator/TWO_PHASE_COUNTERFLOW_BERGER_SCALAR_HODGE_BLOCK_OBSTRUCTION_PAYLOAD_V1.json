@@ -1,0 +1,252 @@
+{
+  "claim_boundary": {
+    "does_not_establish": [
+      "failure of the complete 70-row BV complex or its causal homotopy",
+      "a full verdict for the right-neutral k=0 exceptional blocks",
+      "a vector, tensor or all-Hodge health theorem",
+      "a negative-energy, gradient or exponential instability",
+      "an observer, Hadamard, particle, QME, positivity or unitarity theorem"
+    ],
+    "establishes": [
+      "normalized scalar Wigner modes and exact conjugation on the selected Berger sphere",
+      "the exact nonzero PBW curl of the gauge-fixed Diff endpoint on scalar exact one-forms",
+      "a generic obstruction for every nonzero right weight k and a fail-closed exceptional ledger",
+      "the first representation-theoretic reason the requested scalar physical quotient cannot be assembled"
+    ]
+  },
+  "content_sha256": "ac2101b4ee7efd37e3470b8480a1504e62ccfb83f2d73c335bf6f55b2dc033c8",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_one_form_maps": {
+    "constant_exception": "j=0 has d_h Y_000=0, so the spatial exact-one-form inclusion has rank zero",
+    "domain": "j>0",
+    "identity": "pi_exact iota_exact=1",
+    "inclusion": "iota_exact(a)=a*d_h Y_jmk in the spatial Diff ghost triplet",
+    "projection": "pi_exact(alpha)=lambda_jk^(-1)*<d_h Y_jmk,alpha>_L2"
+  },
+  "exceptional_ledger": [
+    {
+      "labels": "j=0,m=0,k=0",
+      "reason": "dY=0; the exact spatial Diff scalar carrier is absent and the global homogeneous sector is handled separately",
+      "status": "EXCEPTIONAL_ZERO_GRADIENT"
+    },
+    {
+      "labels": "integer j>=1, arbitrary m, k=0",
+      "reason": "every PBW word in C_scalar ends in e3, but vanishing of this first defect is not a full closure or quotient proof",
+      "status": "FIRST_DEFECT_VANISHES_FULL_SCALAR_BLOCK_NOT_COMPUTED"
+    },
+    {
+      "labels": "j>=1/2, arbitrary m, k!=0",
+      "reason": "the e0^2 theta12 coefficient is 93*I*k/40 and is nonzero",
+      "status": "EXACT_SCALAR_HODGE_SUBCOMPLEX_OBSTRUCTION"
+    }
+  ],
+  "first_closure_test": {
+    "PBW_rows": [
+      [
+        {
+          "coefficient": "3*u**2*(u - v)",
+          "word": "e0e0e3"
+        },
+        {
+          "coefficient": "-17*u**2*(u - v)/3",
+          "word": "e1e1e3"
+        },
+        {
+          "coefficient": "-17*u**2*(u - v)/3",
+          "word": "e2e2e3"
+        },
+        {
+          "coefficient": "2*u**3*(u - v)**2",
+          "word": "e3"
+        },
+        {
+          "coefficient": "-11*u**2*(u - v)/3",
+          "word": "e3e3e3"
+        }
+      ],
+      [
+        {
+          "coefficient": "-3*u*(u - v)",
+          "word": "e0e0e1e3"
+        },
+        {
+          "coefficient": "11*u*(u - v)/3",
+          "word": "e1e1e1e3"
+        },
+        {
+          "coefficient": "11*u*(u - v)/3",
+          "word": "e1e2e2e3"
+        },
+        {
+          "coefficient": "-2*u**2*(u - v)**2",
+          "word": "e1e3"
+        },
+        {
+          "coefficient": "11*u*(u - v)/3",
+          "word": "e1e3e3e3"
+        },
+        {
+          "coefficient": "-2*u**2*(u - v)",
+          "word": "e2e3e3"
+        }
+      ],
+      [
+        {
+          "coefficient": "-3*u*(u - v)",
+          "word": "e0e0e2e3"
+        },
+        {
+          "coefficient": "11*u*(u - v)/3",
+          "word": "e1e1e2e3"
+        },
+        {
+          "coefficient": "-16*u**2*(u - v)/3",
+          "word": "e1e3e3"
+        },
+        {
+          "coefficient": "11*u*(u - v)/3",
+          "word": "e2e2e2e3"
+        },
+        {
+          "coefficient": "-u**2*(u - v)*(6*u + 5*v)/3",
+          "word": "e2e3"
+        },
+        {
+          "coefficient": "11*u*(u - v)/3",
+          "word": "e2e3e3e3"
+        }
+      ]
+    ],
+    "common_round_factor": "u-v",
+    "generic_verdict": "NONZERO_FOR_EVERY_k_NOT_EQUAL_0",
+    "leading_mode_coefficient": "93*I*k/40",
+    "leading_temporal_PBW_term": "3*u^2*(u-v)*e0^2*e3 in theta1_wedge_theta2",
+    "meaning": "the proposed exact-one-form scalar carrier is closed only if C_scalar=0",
+    "operator": "C_scalar=d_1 q54[bar_c_star_diff,c_spatial] d_0",
+    "source_rows": [
+      "c_spatial_1",
+      "c_spatial_2",
+      "c_spatial_3"
+    ],
+    "target_rows": [
+      "bar_c_star_diff_1",
+      "bar_c_star_diff_2",
+      "bar_c_star_diff_3"
+    ],
+    "target_values": {
+      "u": "3*sqrt(10)/20",
+      "u_minus_v": "-31*sqrt(10)/60",
+      "v": "2*sqrt(10)/3"
+    },
+    "two_form_row_order": [
+      "theta1_wedge_theta2",
+      "theta1_wedge_theta3",
+      "theta2_wedge_theta3"
+    ]
+  },
+  "imports": {
+    "all_hodge_shortfall": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_UNRESTRICTED_ALL_HODGE_HEALTH_SHORTFALL_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_UNRESTRICTED_ALL_HODGE_HEALTH_SHORTFALL_V1",
+      "sha256": "9d9859aaf7a5b7f717d2b81ab1db0d7878ae249681f5859814272b5322af4875",
+      "source_commit": "014f10b9477d762222c724b9eb61ce0d1c46128d"
+    },
+    "causal_parent": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1",
+      "sha256": "7d969e7e630f793dfe12fe07b0e98a67b2543f9aa85fa03277e491fb00296db7",
+      "source_commit": "951e88307abbea0996513773a33e66b37555272b"
+    },
+    "gauge_fixed_q54": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0",
+      "source_commit": "445e26663d06764bc858ff0a004ba6178acce75f"
+    },
+    "peter_weyl_engine": {
+      "oracle_fields_consumed": [],
+      "path": "closed_universe_observers/certificates/BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE.json",
+      "result_id": "BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE",
+      "sha256": "e24c860b338188254c4388a7ca660ac454ba7b70c13659ffc36a98bf39250120",
+      "source_commit": "0b8fe045411de64008f55bb551ab3799aa85e77a"
+    },
+    "volume_seed": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_CLOCK_REDUCED_CHARGE_SEED.json",
+      "result_id": "BERGER_CLOCK_REDUCED_CHARGE_SEED",
+      "sha256": "573381287998b6645b37fcbad0273c23c0e5cff58450cbcf7a2dc1152a8dfcd9",
+      "source_commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db"
+    }
+  },
+  "mutation_ledger": [
+    {
+      "detected": true,
+      "effect": "all PBW defect coefficients vanish; this is not the target background",
+      "id": "ROUND_LIMIT_u_EQUALS_v"
+    },
+    {
+      "detected": true,
+      "effect": "the leading generic witness vanishes and the label is retained as exceptional/open",
+      "id": "RIGHT_NEUTRAL_k_EQUALS_0"
+    },
+    {
+      "detected": true,
+      "effect": "pi_exact iota_exact becomes Vol_Berger/(2*j+1), not one",
+      "id": "DROP_HAAR_NORMALIZATION"
+    },
+    {
+      "detected": true,
+      "effect": "fails at j=1/2,m=1/2,k=-1/2 where (-1)^(m-k)=-1",
+      "id": "DROP_WIGNER_CONJUGATION_PHASE"
+    },
+    {
+      "detected": true,
+      "effect": "hides rather than repairs C_scalar and changes the certified q54",
+      "id": "DELETE_GAUGE_FIXED_ANTIGHOST_DUAL_ROW"
+    }
+  ],
+  "next_gate": {
+    "alternative": "construct and certify a same-background gauge fixing whose ghost endpoint preserves exact/coexact Hodge summands",
+    "must_retain": [
+      "unrestricted Q_rel",
+      "physical D",
+      "physical R_rel",
+      "full q70 row content"
+    ],
+    "preferred": "replace round-style scalar/vector/tensor splitting by complete SU(2)_L x U(1)_R isotypical Berger blocks and quotient the full closed block"
+  },
+  "normalized_scalar_modes": {
+    "conjugation": "conjugate(Y_jmk)=(-1)^(m-k) Y_j,-m,-k",
+    "geometry": "biaxial Berger S3 with a=1, c=3*sqrt(10)/20 and q=c^2=9/40",
+    "label_domain": "two_j in Z_>=0; j=two_j/2; m,k=-j,-j+1,...,j",
+    "mode": "Y_jmk=sqrt((2*j+1)/Vol_Berger)*D^j_mk",
+    "orthonormality": "integral conjugate(Y_jmk) Y_j'm'k' = delta_jj' delta_mm' delta_kk'",
+    "reality": "real fields obey a_jmk_bar=(-1)^(m-k) a_j,-m,-k",
+    "right_fibre_derivative": "e3 Y_jmk=-I*(2*sqrt(10)/3)*k Y_jmk",
+    "scalar_laplacian_eigenvalue": "lambda_jk=j*(j+1)+(31/9)*k^2",
+    "volume": "12*sqrt(10)*pi**2/5"
+  },
+  "oracle_fields_consumed": [],
+  "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_SCALAR_HODGE_BLOCK_OBSTRUCTION_PAYLOAD_V1",
+  "schema": "pure-weyl-two-phase-counterflow-berger-scalar-hodge-block-obstruction-payload-v1",
+  "terminal_verdict": {
+    "all_hodge_health_established": false,
+    "axisymmetric_k0_full_scalar_block_status": "NOT_COMPUTED_AFTER_FIRST_EXACT_OBSTRUCTION",
+    "downstream_vector_tensor_export_activated": false,
+    "exact_one_form_iota_pi_defined_for_j_positive": true,
+    "generic_nonzero_k_scalar_subcomplex_closed": false,
+    "normalized_scalar_modes_defined": true,
+    "pairing_characteristic_gradient_status": "NOT_REACHED",
+    "physical_instability_found": false,
+    "physical_quotient_status": "NOT_DEFINED_NONCLOSED_SUBCOMPLEX",
+    "q70_parent_nilpotency_and_causality_preserved": true,
+    "restricted_unary_status": "NOT_DEFINED_ON_PROPOSED_GENERIC_SCALAR_HODGE_CARRIER",
+    "result_state": "EXACT_GENERIC_SCALAR_HODGE_SUBCOMPLEX_OBSTRUCTION"
+  }
+}

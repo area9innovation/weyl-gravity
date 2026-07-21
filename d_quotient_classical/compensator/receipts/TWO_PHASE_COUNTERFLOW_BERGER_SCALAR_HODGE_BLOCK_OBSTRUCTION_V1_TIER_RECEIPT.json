@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_SCALAR_HODGE_BLOCK_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_id": "TWO_PHASE_COUNTERFLOW_BERGER_SCALAR_HODGE_BLOCK_OBSTRUCTION_V1",
+  "date": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": [
+    {"path": "d_quotient_classical/compensator/two_phase_counterflow_berger_scalar_hodge_block_obstruction.py", "sha256": "d5f67327c797277492e3e740d478479f3df146b07e618a0ef8c79a8037782270"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_SCALAR_HODGE_BLOCK_OBSTRUCTION_V1.json", "sha256": "0d462cab26aead0409b8da64c13770b6eae61cdd4d5cfc6cf6efdf538f1d535e"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_SCALAR_HODGE_BLOCK_OBSTRUCTION_PAYLOAD_V1.json", "sha256": "4006e83f77f9f3274b271183c6aa8dcf2f4f5d55a094942468780c43b003fc5c"},
+    {"path": "d_quotient_classical/compensator/verify_two_phase_counterflow_berger_scalar_hodge_block_obstruction.py", "sha256": "a195ecfb505f4b3793a28d593591f9c9f6358d12fb8545ce9cfcb3477eee7b95"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_berger_scalar_hodge_block_obstruction.py", "sha256": "846bb9a848a00b5b75e320fe56fce1b8f7aa95d7c96948474ff18be8688f93f2"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_berger_scalar_hodge_block_obstruction_atlas.py", "sha256": "90915cc19cb991c09a1e4c054c788ffb572ad7c183bc81a128320a65532f3473"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-berger-scalar-hodge-block-obstruction-v1.schema.json", "sha256": "9bebaf4c8c529f3426f3a785ee6b7c749de0ecdfcfb979ee0ffccaff44598ea6"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-berger-scalar-hodge-block-obstruction-payload-v1.schema.json", "sha256": "58cdedd794d278c767d45a292763171f47416228a3e748711bc4705f54596732"},
+    {"path": "d_quotient_classical/atlas/generate_two_phase_counterflow_berger_scalar_hodge_block_obstruction_atlas_fragment.py", "sha256": "b0962eb6a4d2f5fc213e561cfc3e96c9ce5ec9de48bd2b99519f873dd776e7cd"},
+    {"path": "d_quotient_classical/atlas/verify_two_phase_counterflow_berger_scalar_hodge_block_obstruction_atlas_fragment.py", "sha256": "65430a5e80e3555cf179ccb719d06a0d4463d878bba3a5febe4e3b4743f0213e"},
+    {"path": "residual_atlas/two-phase-counterflow-berger-scalar-hodge-block-obstruction-fragment-v1.json", "sha256": "48e8b4b44daa5f7fc2fe3bb958683da9e1028efd9632db55fe84cb457792c4cb"},
+    {"path": "d_quotient_classical/compensator/reports/two-phase-counterflow-berger-scalar-hodge-block-obstruction-v1.md", "sha256": "88a0402dad3a752e23b3fc8206bdce0aea4f2aaf84ccfe40b964d739ec31e536"}
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m py_compile on six changed Python modules; python3 -m json.tool on certificate, payload, atlas fragment and receipt; explicit-path git diff --check", "elapsed_seconds": 0.04, "status": "PASS"}
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 d_quotient_classical/compensator/two_phase_counterflow_berger_scalar_hodge_block_obstruction.py --check", "elapsed_seconds": 1.42, "status": "PASS", "method": "exact PBW closure reduction, normalized Wigner carrier, exceptional-label ledger and five negative-control mutations"},
+      {"command": "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_berger_scalar_hodge_block_obstruction.py", "elapsed_seconds": 1.84, "status": "PASS", "independent_rail": "finite exact Wigner matrices, direct leading-block rank/kernel replay and independent import/hash checks"},
+      {"command": "python3 -m unittest -v d_quotient_classical.compensator.tests.test_two_phase_counterflow_berger_scalar_hodge_block_obstruction d_quotient_classical.compensator.tests.test_two_phase_counterflow_berger_scalar_hodge_block_obstruction_atlas", "elapsed_seconds": 1.36, "status": "PASS", "tests": 6},
+      {"command": "atlas generator --check, independent atlas verifier and residual_atlas validator", "elapsed_seconds": 0.12, "status": "PASS"},
+      {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true on result and payload schemas", "elapsed_seconds": 2.21, "status": "PASS"}
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {"command": "five direct predecessor/operator/harmonic/volume imports content-hashed and semantic preconditions checked", "status": "PASS"},
+      {"command": "bash ci/science-forge-shadow.sh", "elapsed_seconds": 3.38, "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS", "findings": "bridge certificate drift, corpus 1365 vs baseline 976, and unpinned stale Forge binary; diagnostics /tmp/sf-shadow.MaYwep"}
+    ]
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "criterion": "No freeze, release, lifecycle promotion beyond CLASSIFIED, or shared core algebra change; exact scoped producer, independent finite-representation replay, consumer atlas chain and affected import hashes are sufficient under the repository test-tier policy."
+  },
+  "claim_boundary": "The result certifies normalized scalar Wigner modes, exact j-positive one-form inclusion/projection, and a generic nonzero-k PBW obstruction to the proposed round-style scalar Hodge subcomplex. It leaves the k=0 exceptional blocks open and does not establish failure of the complete q70 complex, a physical instability, vector/tensor or all-Hodge health, or observer/Hadamard/QME/particle/positivity/unitarity claims.",
+  "deviations": [
+    "The requested scalar quotient was not assembled because its proposed carrier fails the first closure identity; the exact obstruction is the work-package-authorized terminal deliverable.",
+    "Strict external AJV preflight initially exposed required-key/property omissions in both new schemas; the schemas were repaired and both strict validations then passed."
+  ],
+  "higher_tiers_not_run": ["Tier 3 full repository suite; criterion recorded above"]
+}

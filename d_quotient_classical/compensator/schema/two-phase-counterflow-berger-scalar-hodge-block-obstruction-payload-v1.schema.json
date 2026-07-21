@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "imports",
+    "oracle_fields_consumed",
+    "normalized_scalar_modes",
+    "exact_one_form_maps",
+    "first_closure_test",
+    "exceptional_ledger",
+    "mutation_ledger",
+    "terminal_verdict",
+    "next_gate",
+    "claim_boundary",
+    "content_sha256"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-berger-scalar-hodge-block-obstruction-payload-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_BERGER_SCALAR_HODGE_BLOCK_OBSTRUCTION_PAYLOAD_V1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "imports": {"type": "object", "minProperties": 5},
+    "oracle_fields_consumed": {"const": []},
+    "normalized_scalar_modes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["geometry", "volume", "label_domain", "mode", "orthonormality", "conjugation", "reality", "scalar_laplacian_eigenvalue", "right_fibre_derivative"],
+      "properties": {
+        "geometry": {"type": "string"},
+        "volume": {"const": "12*sqrt(10)*pi**2/5"},
+        "label_domain": {"type": "string"},
+        "mode": {"type": "string"},
+        "orthonormality": {"type": "string"},
+        "conjugation": {"type": "string"},
+        "reality": {"type": "string"},
+        "scalar_laplacian_eigenvalue": {"const": "lambda_jk=j*(j+1)+(31/9)*k^2"},
+        "right_fibre_derivative": {"type": "string"}
+      }
+    },
+    "exact_one_form_maps": {"type": "object", "minProperties": 5},
+    "first_closure_test": {"type": "object", "minProperties": 11},
+    "exceptional_ledger": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["labels", "status", "reason"],
+        "properties": {"labels": {"type": "string"}, "status": {"type": "string"}, "reason": {"type": "string"}}
+      }
+    },
+    "mutation_ledger": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "detected", "effect"],
+        "properties": {"id": {"type": "string"}, "detected": {"const": true}, "effect": {"type": "string"}}
+      }
+    },
+    "terminal_verdict": {"type": "object", "minProperties": 12},
+    "next_gate": {"type": "object", "minProperties": 3},
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["establishes", "does_not_establish"],
+      "properties": {
+        "establishes": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+        "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}}
+      }
+    },
+    "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

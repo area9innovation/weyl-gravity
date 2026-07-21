@@ -1,0 +1,209 @@
+{
+  "claim_boundary": {
+    "does_not_establish": [
+      "failure of the complete 70-row BV complex or its causal homotopy",
+      "a full verdict for the right-neutral k=0 exceptional blocks",
+      "a vector, tensor or all-Hodge health theorem",
+      "a negative-energy, gradient or exponential instability",
+      "an observer, Hadamard, particle, QME, positivity or unitarity theorem"
+    ],
+    "establishes": [
+      "normalized scalar Wigner modes and exact conjugation on the selected Berger sphere",
+      "the exact nonzero PBW curl of the gauge-fixed Diff endpoint on scalar exact one-forms",
+      "a generic obstruction for every nonzero right weight k and a fail-closed exceptional ledger",
+      "the first representation-theoretic reason the requested scalar physical quotient cannot be assembled"
+    ]
+  },
+  "content_hashes": {
+    "boundary_sha256": "3dcafac547424c2630d05c05271d25ce6516372246b62dc4bec501d104a497ac",
+    "exceptions_sha256": "1d317a58fa3a429fa6ec7a9c53f0d8cef4b14d1526b631285ae47769e5207bf1",
+    "mutations_sha256": "df75141798f4bd4204b6be6770a735780ba390a4cb10d846c9e5553951f23902",
+    "normalized_modes_sha256": "6074c8c81c6e7e0979ae9a2d0bb598991c188d834f9ddf22f75666b79c9d76d8",
+    "obstruction_sha256": "74eff15792bce52b262601f378ce1ef028b457aa353694f5181792d7fbc24204",
+    "one_form_maps_sha256": "7557531ba6cb58a414a89380d6d67bf3b224028e493703a8c9669fb7a420ce7b",
+    "terminal_sha256": "836cd69ff813f3e4dd86705d170a8b775b6bcce75f01af36ea65dd6cfb02524d"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exceptional_statuses": {
+    "integer j>=1, arbitrary m, k=0": "FIRST_DEFECT_VANISHES_FULL_SCALAR_BLOCK_NOT_COMPUTED",
+    "j=0,m=0,k=0": "EXCEPTIONAL_ZERO_GRADIENT",
+    "j>=1/2, arbitrary m, k!=0": "EXACT_SCALAR_HODGE_SUBCOMPLEX_OBSTRUCTION"
+  },
+  "first_obstruction": {
+    "PBW_rows": [
+      [
+        {
+          "coefficient": "3*u**2*(u - v)",
+          "word": "e0e0e3"
+        },
+        {
+          "coefficient": "-17*u**2*(u - v)/3",
+          "word": "e1e1e3"
+        },
+        {
+          "coefficient": "-17*u**2*(u - v)/3",
+          "word": "e2e2e3"
+        },
+        {
+          "coefficient": "2*u**3*(u - v)**2",
+          "word": "e3"
+        },
+        {
+          "coefficient": "-11*u**2*(u - v)/3",
+          "word": "e3e3e3"
+        }
+      ],
+      [
+        {
+          "coefficient": "-3*u*(u - v)",
+          "word": "e0e0e1e3"
+        },
+        {
+          "coefficient": "11*u*(u - v)/3",
+          "word": "e1e1e1e3"
+        },
+        {
+          "coefficient": "11*u*(u - v)/3",
+          "word": "e1e2e2e3"
+        },
+        {
+          "coefficient": "-2*u**2*(u - v)**2",
+          "word": "e1e3"
+        },
+        {
+          "coefficient": "11*u*(u - v)/3",
+          "word": "e1e3e3e3"
+        },
+        {
+          "coefficient": "-2*u**2*(u - v)",
+          "word": "e2e3e3"
+        }
+      ],
+      [
+        {
+          "coefficient": "-3*u*(u - v)",
+          "word": "e0e0e2e3"
+        },
+        {
+          "coefficient": "11*u*(u - v)/3",
+          "word": "e1e1e2e3"
+        },
+        {
+          "coefficient": "-16*u**2*(u - v)/3",
+          "word": "e1e3e3"
+        },
+        {
+          "coefficient": "11*u*(u - v)/3",
+          "word": "e2e2e2e3"
+        },
+        {
+          "coefficient": "-u**2*(u - v)*(6*u + 5*v)/3",
+          "word": "e2e3"
+        },
+        {
+          "coefficient": "11*u*(u - v)/3",
+          "word": "e2e3e3e3"
+        }
+      ]
+    ],
+    "common_round_factor": "u-v",
+    "generic_verdict": "NONZERO_FOR_EVERY_k_NOT_EQUAL_0",
+    "leading_mode_coefficient": "93*I*k/40",
+    "leading_temporal_PBW_term": "3*u^2*(u-v)*e0^2*e3 in theta1_wedge_theta2",
+    "meaning": "the proposed exact-one-form scalar carrier is closed only if C_scalar=0",
+    "operator": "C_scalar=d_1 q54[bar_c_star_diff,c_spatial] d_0",
+    "source_rows": [
+      "c_spatial_1",
+      "c_spatial_2",
+      "c_spatial_3"
+    ],
+    "target_rows": [
+      "bar_c_star_diff_1",
+      "bar_c_star_diff_2",
+      "bar_c_star_diff_3"
+    ],
+    "target_values": {
+      "u": "3*sqrt(10)/20",
+      "u_minus_v": "-31*sqrt(10)/60",
+      "v": "2*sqrt(10)/3"
+    },
+    "two_form_row_order": [
+      "theta1_wedge_theta2",
+      "theta1_wedge_theta3",
+      "theta2_wedge_theta3"
+    ]
+  },
+  "imports": {
+    "all_hodge_shortfall": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_UNRESTRICTED_ALL_HODGE_HEALTH_SHORTFALL_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_UNRESTRICTED_ALL_HODGE_HEALTH_SHORTFALL_V1",
+      "sha256": "9d9859aaf7a5b7f717d2b81ab1db0d7878ae249681f5859814272b5322af4875",
+      "source_commit": "014f10b9477d762222c724b9eb61ce0d1c46128d"
+    },
+    "causal_parent": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1",
+      "sha256": "7d969e7e630f793dfe12fe07b0e98a67b2543f9aa85fa03277e491fb00296db7",
+      "source_commit": "951e88307abbea0996513773a33e66b37555272b"
+    },
+    "gauge_fixed_q54": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0",
+      "source_commit": "445e26663d06764bc858ff0a004ba6178acce75f"
+    },
+    "peter_weyl_engine": {
+      "oracle_fields_consumed": [],
+      "path": "closed_universe_observers/certificates/BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE.json",
+      "result_id": "BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE",
+      "sha256": "e24c860b338188254c4388a7ca660ac454ba7b70c13659ffc36a98bf39250120",
+      "source_commit": "0b8fe045411de64008f55bb551ab3799aa85e77a"
+    },
+    "volume_seed": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_CLOCK_REDUCED_CHARGE_SEED.json",
+      "result_id": "BERGER_CLOCK_REDUCED_CHARGE_SEED",
+      "sha256": "573381287998b6645b37fcbad0273c23c0e5cff58450cbcf7a2dc1152a8dfcd9",
+      "source_commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db"
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": {
+    "alternative": "construct and certify a same-background gauge fixing whose ghost endpoint preserves exact/coexact Hodge summands",
+    "must_retain": [
+      "unrestricted Q_rel",
+      "physical D",
+      "physical R_rel",
+      "full q70 row content"
+    ],
+    "preferred": "replace round-style scalar/vector/tensor splitting by complete SU(2)_L x U(1)_R isotypical Berger blocks and quotient the full closed block"
+  },
+  "payload_ref": {
+    "content_sha256": "ac2101b4ee7efd37e3470b8480a1504e62ccfb83f2d73c335bf6f55b2dc033c8",
+    "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_SCALAR_HODGE_BLOCK_OBSTRUCTION_PAYLOAD_V1.json",
+    "sha256": "4006e83f77f9f3274b271183c6aa8dcf2f4f5d55a094942468780c43b003fc5c"
+  },
+  "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_SCALAR_HODGE_BLOCK_OBSTRUCTION_V1",
+  "result_state": "EXACT_GENERIC_SCALAR_HODGE_SUBCOMPLEX_OBSTRUCTION",
+  "schema": "pure-weyl-two-phase-counterflow-berger-scalar-hodge-block-obstruction-v1",
+  "terminal_verdict": {
+    "all_hodge_health_established": false,
+    "axisymmetric_k0_full_scalar_block_status": "NOT_COMPUTED_AFTER_FIRST_EXACT_OBSTRUCTION",
+    "downstream_vector_tensor_export_activated": false,
+    "exact_one_form_iota_pi_defined_for_j_positive": true,
+    "generic_nonzero_k_scalar_subcomplex_closed": false,
+    "normalized_scalar_modes_defined": true,
+    "pairing_characteristic_gradient_status": "NOT_REACHED",
+    "physical_instability_found": false,
+    "physical_quotient_status": "NOT_DEFINED_NONCLOSED_SUBCOMPLEX",
+    "q70_parent_nilpotency_and_causality_preserved": true,
+    "restricted_unary_status": "NOT_DEFINED_ON_PROPOSED_GENERIC_SCALAR_HODGE_CARRIER",
+    "result_state": "EXACT_GENERIC_SCALAR_HODGE_SUBCOMPLEX_OBSTRUCTION"
+  }
+}

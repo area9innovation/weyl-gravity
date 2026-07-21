@@ -3445,3 +3445,39 @@ M39 symplectic-reduction capability have not landed.  The current activation
 gate for the causal-parent preflight is therefore the completed physics atlas
 plus a separately certified Conflux consumer; neither this bridge nor a
 healthy relative phase repairs the independently failed scale-gauge sector.
+
+### Berger scalar Hodge-block obstruction (2026-07-21)
+
+`TWO_PHASE_COUNTERFLOW_BERGER_SCALAR_HODGE_BLOCK_OBSTRUCTION_V1` closes the
+first same-background harmonic gate with an exact obstruction rather than a
+physical scalar quotient.  On the selected (q=9/40) Berger sphere the
+normalized scalar Wigner modes and the (j>0) exact-one-form maps
+
+\[
+  \iota_{\rm ex}(a)=a\,dY_{jmk},\qquad
+  \pi_{\rm ex}(\alpha)=\lambda_{jk}^{-1}
+    \langle dY_{jmk},\alpha\rangle,
+  \qquad \pi_{\rm ex}\iota_{\rm ex}=1
+\]
+
+are certified.  However, the first closure operator
+
+\[
+ C_{\rm scalar}
+ =d_1q_{54}[\bar c^*_{\rm diff},c_{\rm spatial}]d_0
+\]
+
+has a PBW term (3u^2(u-v)e_0^2e_3).  On (Y_{jmk}) its exact coefficient
+is (93ik/40), so the proposed round-style exact-one-form scalar Hodge
+carrier is not a subcomplex for every (k\ne0).  A method-distinct finite
+Wigner replay through (2j=6) reproduces the generic rank and the precise
+(k=0) kernel.  The complete defect vanishes in the round mutation (u=v).
+
+The right-neutral integer-(j), (k=0) family remains open, and no physical
+quotient, descended pairing, characteristic or gradient result is defined on
+the nonclosed proposed carrier.  This does not damage the full support-local,
+cyclic and causal 70-row parent and establishes no instability.  The next
+classical carrier gate should replace the round scalar/vector/tensor split by
+complete (SU(2)_L\times U(1)_R) isotypical Berger blocks, or construct a
+same-background gauge fixing proven to preserve exact/coexact Hodge summands.
+The old vector/tensor successor is not activated by this terminal result.
