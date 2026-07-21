@@ -1,0 +1,27 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/observer-repaired112-physical-reduction-and-detector-rank-RETIRED-2eeacf04a4c5d1b9",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/observer-repaired112-physical-reduction-and-detector-rank-RETIRED-2eeacf04a4c5d1b9.json", "span": null},
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "coordinator",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-07-21T04:00:30Z",
+    "seq": 3,
+    "predecessor": "sf:program/event/observer-repaired112-physical-reduction-and-detector-rank-READY-16f6bf1e8cfbf23a",
+    "payload": {
+      "target": "sf:program/work/observer-repaired112-physical-reduction-and-detector-rank",
+      "to_state": "RETIRED",
+      "note": "NOT_ACTIVATED: the terminal repaired112 apparatus-pushout dependency is OBSTRUCTED and exports no executable unary on which physical cohomology, pairing descent, or detector rank can be defined. The duplicate lease was released; the authoritative constructive observer route is observer-two-phase-counterflow-relational-observable on TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1. No obstruction calculation is replayed."
+    },
+    "native": {
+      "authored_by": "coordinator append-only disposition",
+      "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."
+    }
+  },
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/observer-repaired112-physical-reduction-and-detector-rank"}]
+}

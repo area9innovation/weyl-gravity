@@ -1,0 +1,25 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/nonlinear-two-phase-counterflow-q3-branch-mixing",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "nonlinear-two-phase-counterflow-q3-branch-mixing",
+  "source": {"path": "planning/work-items/nonlinear-two-phase-counterflow-q3-branch-mixing.json", "span": null},
+  "body": {
+    "owner": "nonlinear",
+    "state": "PROPOSED",
+    "objective": "Derive the first transferred q3 operation of the physically reduced two-phase counterflow theory and give it an invariant Einstein/additional-Weyl/relative-clock branch interpretation.",
+    "stop_condition": "Import the terminal action-derived counterflow q2, the fixed-charge physical contraction and their exact cyclic pairings by hashes. Differentiate the selected action independently to obtain the required cubic source, transfer it through the certified contraction, and verify the complete arity-three L-infinity identity, cyclicity, reality and K_Berger equivariance. Compute the residual branch manifest M^a_bcd in exact Einstein-image, additional-Weyl, relative-clock and diagonal-gauge coordinates, including the resonant C_lambda tensor C_-lambda to C_0 channel. Determine which coefficients survive on cohomology or in the cyclic deformation complex and which are removable by an admissible cyclic redefinition. Land an exact sparse mixing table, one nontrivial invariant operation or a complete trivialization/obstruction certificate, independent action and transfer rails, mutations, schema, receipt and atlas/paper update.",
+    "current_gate": "invariant branch meaning of the first counterflow interaction beyond q2",
+    "forbid": "no retained coefficient called physical before cohomology/redefinition audit; no zero-weight fixture called interaction stability; no q3 on an unreduced or unhealthy carrier; no K_Berger called raw D; no amplitude, scattering, particle or all-order closure claim",
+    "depends_on": [
+      "sf:program/work/nonlinear-two-phase-counterflow-q2-stability",
+      "sf:program/work/classical-two-phase-counterflow-fixed-charge-reduced-health"
+    ],
+    "activates": ["counterflow branch-level L-infinity extension", "nonlinear observer and Einstein closure comparisons"],
+    "allowed_paths": ["nonlinear_closure/", "d_quotient_classical/", "bridge/", "closed_universe_observers/", "residual_atlas/", "reports/", "paper/", "planning/forge-requests/"],
+    "resource_hint": "PROOF-FIRST TRANSFER. Keep producer differentiation and transfer verification independent. Use Science Forge split/join when available if the branch manifest exceeds one bounded package.",
+    "stream": "nonlinear"
+  },
+  "edges": []
+}
