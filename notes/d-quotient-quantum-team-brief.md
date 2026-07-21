@@ -2772,3 +2772,34 @@ strict-theory anomaly coefficient, tau-adic local cohomology, restored
 one-loop local QME or conditional formal all-loop theorem.  Its dependency
 tags are `LOCAL-ALGEBRAIC` and `LORENTZIAN-CAUSAL`; it establishes no
 Hadamard, Lorentzian QME, particle, positivity or unitarity claim.
+
+## Phase 1 quantum disposition freeze (2026-07-21)
+
+The terminal synthesis now keeps five logically distinct rows. Strict
+fixed-field-content pure Weyl gravity remains locally obstructed at one loop,
+with the complete regular-Bach-locus quotient and coefficients imported from
+the reproducible Paper 12 v3 chain. The formal tau-adic compensator extension
+makes that anomaly vector exact and restores the declared local Euclidean
+one-loop QME, but it is a changed formal theory: the passive dressed-trace
+carrier remains obstructed and the actual four-dimensional regulator,
+unconditional QAP, global anomaly classification, Lorentzian products and
+full-BV Hadamard state remain absent.
+
+All nine separately declared minimal repair families terminate without a
+selected action. The two-phase counterflow theory has a support-local causal
+parent on its selected Berger fixture, but the familywide (j=1/2)
+Hamiltonian--Hopf quartet prevents selection of a robust stationary same-field
+clock. Its anomaly, determinant, QME and Hadamard branches are therefore
+`NOT_ACTIVATED`; no changed-action coefficient calculation is missing from
+the Phase 1 decision.
+
+The scalar-flat Berger Schur results remain a separate
+`EUCLIDEAN-SPECTRAL` method row. Exact low blocks and local residue rows do not
+supply the obstructed ordinary (B_1) trace, finite global functions,
+priming/subtraction data, a determinant or a QME. The relative changed-action
+orbit remains obstructed before a master action is selected, so its
+coefficients and QME are respectively `NOT_COMPUTED` and `UNDEFINED`.
+
+- [`PHASE1_QUANTUM_DISPOSITION_SYNTHESIS_V1.json`](../quantum-weyl/phase1/certificates/PHASE1_QUANTUM_DISPOSITION_SYNTHESIS_V1.json)
+- [`phase1-quantum-disposition-synthesis-fragment-v1.json`](../residual_atlas/phase1-quantum-disposition-synthesis-fragment-v1.json)
+- [`quantum-phase1-dispositions-2026-07-21.json`](../planning/paper-coverage/quantum-phase1-dispositions-2026-07-21.json)

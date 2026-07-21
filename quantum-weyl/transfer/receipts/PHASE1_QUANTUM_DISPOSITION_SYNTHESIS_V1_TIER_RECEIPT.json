@@ -1,0 +1,82 @@
+{
+  "schema": "quantum-publication-tier-receipt-v1",
+  "result_id": "PHASE1_QUANTUM_DISPOSITION_SYNTHESIS_V1_TIER_RECEIPT",
+  "subject_result_id": "PHASE1_QUANTUM_DISPOSITION_SYNTHESIS_V1",
+  "recorded_at": "2026-07-21",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "source_pins": {
+    "paper12_claim_map": "915b7ecd66b15f03a3f63468bf88aa821a41267286a041b8a2c7efa8284852dd",
+    "paper12_v3_receipt": "1292582d48039517b4911d092849d0622db43e7b0cbc8310849a28cdc331adac",
+    "minimal_ladder": "a942ff6a15af0c8a79978dc22ff2cc128a238c3abd6feb2685197d48deaeaf37",
+    "minimal_ladder_receipt": "fb52c36f2f23bb19a003cca53ef7ba46085ba17c9d7d261422a2dc047e24f4f8",
+    "counterflow_viability": "6eae712f8bdc1a06db64c606e47792391c1fa16cd70beaee594943dc77a05e7d",
+    "counterflow_viability_receipt": "ffd8faafb224ff23b22f51e08dbe67a9c30b364641808738b22b21e2b5d00da5",
+    "berger_spectral_receiver": "c1e108d20c107b3b74e39e707b661166b2ec1c942a1e84d83efddcbb6ddd79c7",
+    "berger_spectral_receiver_receipt": "b36e276c29abe745a7c023940b58792088ddd739d402956b7f990125e65350c4",
+    "paper12_v1_blocked_event": "b95c2714964a5259f893829095be98f43b76382e57a0ca5d463c0817c162e61f",
+    "paper12_v2_blocked_event": "c48e0e2b3065843c46116df724e1edf28a03fd31fb66d34a5a86b77f2c465492"
+  },
+  "output_hashes": {
+    "certificate": "5045aa780cc203cc6f86a2d1b837268812dedbe0584ca4059bcda555c0e15239",
+    "atlas": "3b776409db1bc6d2cc16427cff934dec9a9a99f6c21e551cd581b3605244a687",
+    "paper_materiality": "9dd0f431dfac13c9e101f3d33a5ed147d7390848925cdef260d8f28c0766d3a2",
+    "scientific_report": "961706bdf1e73873f9634c58a73d6c91a0b401668c3f9a10417e67e22fddc517",
+    "generator": "c5f5a68b49a267fb7d3139649a28b8621df227c2dca75b63dca3fc5f0c91c058",
+    "independent_verifier": "b82f5f302391098e4ddcc3af8b4f4929df9d685b691ba9d2f0e82fa2728bb6f6",
+    "schema": "6fd5bbe846992c86d34b46abc7f528dd12bf98ceb243af53a1e43c7eae9d20e9",
+    "tests": "b2db8c3d49baa5e4ddb334da39257df3c06f88e5bf25a67afc6d873ed3c40c6f",
+    "team_brief": "103ac10bfae9e6b08a19c4b7099436a579ef75aeafc164e3f7ef11aa8ca95b2d",
+    "closeout": "fc14abc9b22fef38ea14ce614c76e19f3780ca60e67e8c9be4211b320f366d3f"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <generator> <independent verifier>",
+        "python3 -m json.tool <certificate, atlas, materiality, schema and receipt>",
+        "git diff --check -- <explicit eleven-path manifest>"
+      ]
+    },
+    {
+      "tier": 1,
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/phase1/generate_phase1_quantum_disposition_synthesis.py --check",
+        "python3 quantum-weyl/phase1/verify_phase1_quantum_disposition_synthesis.py",
+        "python3 -m pytest -q quantum-weyl/phase1/tests/test_phase1_quantum_disposition_synthesis.py",
+        "python3 residual_atlas/validate_fragment.py residual_atlas/phase1-quantum-disposition-synthesis-fragment-v1.json"
+      ],
+      "contradiction_mutations_rejected": 8,
+      "scoped_tests_passed": 3
+    },
+    {
+      "tier": 2,
+      "status": "NOT_RUN",
+      "reason": "All imported mathematical artifacts are unchanged and content-addressed; the synthesis producer, independent hash/lifecycle verifier, atlas consumer and scoped tests replay the affected chain."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "reason": "This is a Phase 1 classification handoff, not a theorem-freeze tag, release, shared core-algebra change or complete quantum-gravity lifecycle promotion."
+    }
+  ],
+  "failed_pre_runs": [
+    {
+      "status": "FAIL_REPAIRED",
+      "stage": "independent contradiction replay",
+      "reason": "The verifier initially failed to classify schema-level contradiction rejection as an expected mutation failure; ValidationError was added explicitly."
+    },
+    {
+      "status": "FAIL_REPAIRED",
+      "stage": "residual atlas validation",
+      "reason": "The first atlas draft used quantum-specific free-form mode_data keys. It was replaced by the canonical dispersion, Lee-Wald, Taub, resonance and correction-class claims required by the shared atlas schema."
+    }
+  ],
+  "claim_boundary": "This receipt certifies a typed Phase 1 quantum lifecycle synthesis. It does not compute a new anomaly coefficient, identify strict and compensator theories, select a changed action, activate counterflow quantum work, restore an unconditional or Lorentzian QME, or establish a full-BV Hadamard state, particles, positivity, scattering or unitarity."
+}

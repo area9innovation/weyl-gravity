@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase1-quantum-disposition-synthesis-v1.schema.json",
+  "title": "Phase 1 quantum disposition synthesis",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "source_refs",
+    "theory_rows",
+    "minimal_repair_families",
+    "phase1_decision",
+    "mutation_expectations",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "$schema": {"const": "../schema/phase1-quantum-disposition-synthesis-v1.schema.json"},
+    "schema": {"const": "phase1-quantum-disposition-synthesis-v1"},
+    "result_id": {"const": "PHASE1_QUANTUM_DISPOSITION_SYNTHESIS_V1"},
+    "result_state": {"const": "PHASE1_QUANTUM_CLASSIFICATION_FROZEN_NO_SUCCESSOR_SELECTED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 4,
+      "uniqueItems": true,
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}
+    },
+    "source_refs": {
+      "type": "object",
+      "minProperties": 10,
+      "additionalProperties": {"$ref": "#/$defs/sourceRef"}
+    },
+    "theory_rows": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {"$ref": "#/$defs/theoryRow"}
+    },
+    "minimal_repair_families": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {
+        "type": "object",
+        "required": ["family_id", "terminal_verdict", "action_scope", "background_scope", "selected_action", "quantum_promotions", "dependency_tags"],
+        "properties": {
+          "family_id": {"type": "string", "minLength": 1},
+          "terminal_verdict": {"type": "string", "minLength": 1},
+          "action_scope": {"type": "string", "minLength": 1},
+          "background_scope": {"type": "string", "minLength": 1},
+          "selected_action": {"const": false},
+          "quantum_promotions": {"type": "object"},
+          "dependency_tags": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "phase1_decision": {"type": "object"},
+    "mutation_expectations": {"type": "object", "minProperties": 8},
+    "provenance": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 80}
+  },
+  "$defs": {
+    "sourceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"],
+      "properties": {
+        "theory": {"type": "string"}, "background": {"type": "string"}, "boundaries": {"type": "string"},
+        "charge_sector": {"type": "string"}, "carrier": {"type": "string"}, "degree": {"type": "string"},
+        "parity": {"type": "string"}, "ell": {"type": "string"}, "m": {"type": "string"},
+        "k": {"type": "string"}, "omega": {"type": "string"}
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "dependency_tags", "coefficient_status", "qme_status", "hadamard_status", "selected_action"],
+      "properties": {
+        "state": {"type": "string"},
+        "dependency_tags": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "coefficient_status": {"type": "string"},
+        "qme_status": {"type": "string"},
+        "hadamard_status": {"type": "string"},
+        "selected_action": {"type": "boolean"}
+      }
+    },
+    "theoryRow": {
+      "type": "object",
+      "required": ["id", "scope", "classical_imported", "brst_cocycle", "brst_exactness", "pairing_status", "complex_structure", "state_space", "lifecycle", "does_not_establish"],
+      "properties": {
+        "id": {"type": "string"},
+        "scope": {"$ref": "#/$defs/scope"},
+        "classical_imported": {"type": "boolean"},
+        "brst_cocycle": {"type": "string"},
+        "brst_exactness": {"type": "string"},
+        "pairing_status": {"type": "string"},
+        "complex_structure": {"type": "string"},
+        "state_space": {"type": "string"},
+        "lifecycle": {"$ref": "#/$defs/lifecycle"},
+        "does_not_establish": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    }
+  }
+}

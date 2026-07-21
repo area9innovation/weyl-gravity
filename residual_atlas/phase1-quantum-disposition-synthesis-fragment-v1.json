@@ -1,0 +1,358 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "Does not establish: Lorentzian QME; Hadamard state; particle Hilbert space; unitarity",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OBSTRUCTED",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "evidence": [
+        {
+          "path": "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json",
+          "result_id": "PAPER_12_PURE_WEYL_ONE_LOOP_BV_ANOMALY_DRAFT",
+          "sha256": "915b7ecd66b15f03a3f63468bf88aa821a41267286a041b8a2c7efa8284852dd"
+        }
+      ],
+      "id": "quantum.phase1.strict_weyl.local_anomaly_obstruction",
+      "mode_data": {
+        "dispersion": {
+          "statement": "A local anomaly class is not a dispersion or particle mode.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "The local anomaly quotient does not carry a Lee-Wald particle pairing.",
+          "status": "NOT_APPLICABLE"
+        },
+        "resonance": {
+          "statement": "No resonance claim is made.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No state-space evolution is defined by the local obstruction theorem.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "causal_retarded": {
+            "statement": "No Lorentzian products or QME are constructed.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No nonlinear state-space evolution is defined.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "No tangent-cone-to-interacting-BRST map is used in this theorem.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "regular Bach-locus local chart; Euclidean coefficient carrier",
+        "boundaries": "declared local chart or compact Cauchy slices exactly as stated by the cited source",
+        "carrier": "full gauge-fixed local BV quotient; not a particle carrier",
+        "charge_sector": "not a charge-sector statement",
+        "degree": "ghost number 1, form degree 4 unless explicitly marked classical or spectral",
+        "ell": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "k": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "m": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "omega": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "parity": "even and odd tracked separately",
+        "theory": "strict fixed-field-content Diff x Weyl pure gravity"
+      }
+    },
+    {
+      "claim_boundary": "Does not establish: equivalence to strict Weyl gravity; unconditional all-loop QME; Lorentzian state; unitarity",
+      "descriptions": {
+        "causal": "OBSTRUCTED",
+        "nonlinear": "OPEN",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "CERTIFIED",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json",
+          "result_id": "PAPER_12_PURE_WEYL_ONE_LOOP_BV_ANOMALY_DRAFT",
+          "sha256": "915b7ecd66b15f03a3f63468bf88aa821a41267286a041b8a2c7efa8284852dd"
+        },
+        {
+          "path": "d_quotient_classical/compensator/COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1.json",
+          "result_id": "COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1",
+          "sha256": "a942ff6a15af0c8a79978dc22ff2cc128a238c3abd6feb2685197d48deaeaf37"
+        }
+      ],
+      "id": "quantum.phase1.tau_adic.formal_local_restoration",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Formal local Wess-Zumino restoration is not a dispersion relation.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "No complete tau-adic causal pairing is imported.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "No resonance claim is made.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No state-space realization of the formal quartet is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "causal_retarded": {
+            "statement": "The passive dressed-trace carrier has no complete causal parent.",
+            "status": "OBSTRUCTED"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The formal all-loop induction remains conditional on a declared QAP.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "No classical obstruction is mapped into interacting BRST.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "formal local BV algebra and declared Euclidean one-loop slice",
+        "boundaries": "declared local chart or compact Cauchy slices exactly as stated by the cited source",
+        "carrier": "dressed local BV/Wess-Zumino algebra; not the strict quotient",
+        "charge_sector": "not a charge-sector statement",
+        "degree": "ghost number 1, form degree 4 unless explicitly marked classical or spectral",
+        "ell": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "k": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "m": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "omega": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "parity": "even and odd tracked separately",
+        "theory": "formal tau-adic compensator extension of the strict action"
+      }
+    },
+    {
+      "claim_boundary": "Does not establish: changed master action; relative anomaly coefficient; relative QME; Hadamard state",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json",
+          "result_id": "PAPER_12_PURE_WEYL_ONE_LOOP_BV_ANOMALY_DRAFT",
+          "sha256": "915b7ecd66b15f03a3f63468bf88aa821a41267286a041b8a2c7efa8284852dd"
+        },
+        {
+          "path": "quantum-weyl/relative/receipts/PAPER12_RELATIVE_OFFSHELL_ACTION_OBSTRUCTION_UPDATE_V3_TIER_RECEIPT.json",
+          "result_id": "PAPER12_RELATIVE_OFFSHELL_ACTION_OBSTRUCTION_UPDATE_V3_TIER_RECEIPT",
+          "sha256": "1292582d48039517b4911d092849d0622db43e7b0cbc8310849a28cdc331adac"
+        }
+      ],
+      "id": "quantum.phase1.relative.changed_action_orbit_obstruction",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The theorem is a local action-response cokernel.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "Pairing-deformation orbits were not included.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "No resonance claim is made.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No changed action was selected.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "causal_retarded": {
+            "statement": "No changed causal carrier was activated.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No changed master action was activated.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "No relative tangent-cone map is defined.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "declared compact magnetic product",
+        "boundaries": "declared local chart or compact Cauchy slices exactly as stated by the cited source",
+        "carrier": "complete real parity-even Diff x U(1) local action quotient through four derivatives",
+        "charge_sector": "fixed-flux reduced carrier",
+        "degree": "ghost number 1, form degree 4 unless explicitly marked classical or spectral",
+        "ell": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "k": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "m": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "omega": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "parity": "even and odd tracked separately",
+        "theory": "action-changed Einstein-Q primary reduced theory"
+      }
+    },
+    {
+      "claim_boundary": "Does not establish: a no-go for changed field content, derivative order or action architecture; a familywide Green homotopy away from the selected causal fixture; a complete higher-isotype spectrum, nonlinear instability or finite-time blow-up; Hadamard, anomaly, QME, particle, positivity, unitarity or observer claims",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_PHASE1_VIABILITY_CLASSIFICATION_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_PHASE1_VIABILITY_CLASSIFICATION_V1",
+          "sha256": "6eae712f8bdc1a06db64c606e47792391c1fa16cd70beaee594943dc77a05e7d"
+        }
+      ],
+      "id": "quantum.phase1.counterflow.successor_nonactivation",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The j=1/2 Hamiltonian-Hopf quartet persists throughout the trace-healthy family.",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "The unstable multiplicity-two residue sector is nonradical on the classical physical quotient.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Stable-sector collisions do not remove the persistent quartet.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No robust bounded quasiperiodic same-field clock survives.",
+            "status": "OBSTRUCTED"
+          },
+          "causal_retarded": {
+            "statement": "A causal parent is certified only on the selected fixture, not familywide.",
+            "status": "CERTIFIED"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No candidate-specific q2 source was evaluated.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "Candidate-specific nonlinear and quantum branches were not activated.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "selected Berger causal fixture and connected trace-healthy same-field stationary family",
+        "boundaries": "declared local chart or compact Cauchy slices exactly as stated by the cited source",
+        "carrier": "selected-fixture repaired q70 causal parent plus familywide j=1/2 physical quotient",
+        "charge_sector": "unrestricted and fixed Q_rel kept distinct",
+        "degree": "ghost number 1, form degree 4 unless explicitly marked classical or spectral",
+        "ell": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "k": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "m": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "omega": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "parity": "even and odd tracked separately",
+        "theory": "same-field two-phase polar-clock Weyl action"
+      }
+    },
+    {
+      "claim_boundary": "Does not establish: determinant; anomaly coefficient; QME; Lorentzian Hadamard state",
+      "descriptions": {
+        "causal": "NOT_APPLICABLE",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "quantum-weyl/spectral/euclidean/certificates/BERGER_SCHUR_SPECTRAL_RECEIVER_NONDEFINITION_V1.json",
+          "result_id": "BERGER_SCHUR_SPECTRAL_RECEIVER_NONDEFINITION_V1",
+          "sha256": "c1e108d20c107b3b74e39e707b661166b2ec1c942a1e84d83efddcbb6ddd79c7"
+        }
+      ],
+      "id": "quantum.phase1.berger.schur_partial_spectral_method",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Exact low blocks are known but the global primed spectrum and finite receiver are incomplete.",
+          "status": "OPEN"
+        },
+        "lee_wald": {
+          "statement": "The partial Euclidean receiver has no Lorentzian symplectic crosswalk.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "Exceptional continuation and global crossings remain uncertified.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No Lorentzian state-space mode is claimed.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "The carrier is Euclidean spectral.",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No nonlinear evolution is claimed.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "This is a spectral-method result, not a tangent-cone calculation.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "EUCLIDEAN_SCALAR_FLAT_BERGER_S1_S3_A1_C2",
+        "boundaries": "declared local chart or compact Cauchy slices exactly as stated by the cited source",
+        "carrier": "scalar-flat Berger Schur low blocks and partial-BV receiver",
+        "charge_sector": "primed scalar and one-form sectors only as explicitly exported",
+        "degree": "ghost number 1, form degree 4 unless explicitly marked classical or spectral",
+        "ell": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "k": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "m": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "omega": "NOT_APPLICABLE_OR_NOT_EXPORTED",
+        "parity": "even and odd tracked separately",
+        "theory": "strict pure-Weyl Euclidean spectral method fixture"
+      }
+    }
+  ],
+  "generated_by": "quantum-weyl/phase1/generate_phase1_quantum_disposition_synthesis.py",
+  "generated_by_sha256": "c5f5a68b49a267fb7d3139649a28b8621df227c2dca75b63dca3fc5f0c91c058",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "quantum",
+  "verification_commands": [
+    "python3 quantum-weyl/phase1/generate_phase1_quantum_disposition_synthesis.py --check",
+    "python3 quantum-weyl/phase1/verify_phase1_quantum_disposition_synthesis.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/phase1-quantum-disposition-synthesis-fragment-v1.json"
+  ]
+}
