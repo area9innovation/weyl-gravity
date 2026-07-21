@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/observer-charged-time-finite-resolution-sampling-theorem-LEASE-ACQUIRE-excl-a785283ab7db1ef7",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/observer-charged-time-finite-resolution-sampling-theorem-LEASE-ACQUIRE-excl-a785283ab7db1ef7.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "observer-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T05:47:39Z", "seq": 1, "payload": {"target": "sf:program/work/observer-charged-time-finite-resolution-sampling-theorem", "agent": "observer-1", "lease_type": "exclusive", "action": "ACQUIRE", "acquired": "2026-07-21T05:47:39Z", "expires": "2026-07-21T13:47:39Z"}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/observer-charged-time-finite-resolution-sampling-theorem"}]
+}
