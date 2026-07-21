@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/black-hole-complex-frequency-analytic-continuation-gate-INTENT-7f3d21c1e6c056d8",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work intent",
+  "source": {"path": "tools/science-forge/program/events/black-hole-complex-frequency-analytic-continuation-gate-INTENT-7f3d21c1e6c056d8.json", "span": null},
+  "body": {"event_kind": "WORK_INTENT", "actor": "black-hole-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T14:10:49Z", "seq": 1, "payload": {"target": "sf:program/work/black-hole-complex-frequency-analytic-continuation-gate", "agent": "black-hole-1", "lease": "exclusive", "base_commit": "50c29b3c7", "transaction_id": "09a17636afb2ac65", "allowlist_verdict": "within-allowlist", "intended_paths": ["black_hole_programme/bh3_analytic_continuation_gate.py", "black_hole_programme/verify_bh3_analytic_continuation_gate.py", "black_hole_programme/schema/bh3-analytic-continuation-gate-v1.schema.json", "black_hole_programme/certificates/BH3_ANALYTIC_CONTINUATION_GATE.json", "black_hole_programme/tests/test_bh3_analytic_continuation_gate.py", "black_hole_programme/reports/bh3-analytic-continuation-gate.md"], "verify_commands": ["python3 black_hole_programme/verify_bh3_analytic_continuation_gate.py", "pytest black_hole_programme/tests/test_bh3_analytic_continuation_gate.py -q"]}, "native": {"authored_by": "sfc work-intent", "policy": "append-only (SPEC 4.5); an uncommitted delivery manifest — NO current_commit, NO test-success. Superseded by a later intent; sealed by WORK_COMMITTED."}},
+  "edges": [{"rel": "INTENDS", "to": "sf:program/work/black-hole-complex-frequency-analytic-continuation-gate"}]
+}
