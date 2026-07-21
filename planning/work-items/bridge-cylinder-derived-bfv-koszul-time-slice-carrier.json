@@ -1,0 +1,47 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/bridge-cylinder-derived-bfv-koszul-time-slice-carrier",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "bridge-cylinder-derived-bfv-koszul-time-slice-carrier",
+  "source": {
+    "path": "planning/work-items/bridge-cylinder-derived-bfv-koszul-time-slice-carrier.json",
+    "span": null
+  },
+  "body": {
+    "owner": "einstein",
+    "state": "PROPOSED",
+    "objective": "Construct the missing exact fifteen-generator derived BFV/Koszul time-slice carrier for the conformal-cylinder Taub-zero sector, so local anomaly classes and residual Cartan data can be restricted without illegally deleting charged unary modes.",
+    "stop_condition": "Import STRICT_ANOMALY_SECTOR_RESTRICTION_CHAIN_MAP_OBSTRUCTION_V1 and the frozen cylinder BV-BFV/residual data by exact hashes. Identify the fifteen SO(4,2) moment maps mu_A and construct the derived zero fibre with Koszul generators eta_A and differential d eta_A=mu_A, including all reducibility or syzygy relations needed for nilpotency. Build the bulk-to-Cauchy-time-slice transgression, boundary/BFV differential, residual projection and raw-D action as explicit chain maps; prove nilpotency, commuting squares, support compatibility and independence of representative exactly. Determine the first perturbative order at which the local representatives omega C^2, omega E4 and omega CdualC define maps into the derived carrier, but do not assign their quantum cohomology verdict unless the full imported local complex is present. Emit a versioned carrier, exact certificates, independent small verifiers, decisive mutations and a receiver contract for Quantum. A complete declared-class obstruction to such a time-slice carrier is an acceptable terminal result if accompanied by a cocycle/cokernel or transgression witness.",
+    "current_gate": "exact derived Taub-zero BFV/Koszul time-slice carrier and local-to-time-slice chain maps",
+    "forbid": "no deletion of charged unary modes; no ordinary set-theoretic mu=0 locus substituted for the derived fibre; no five-charge compact-product carrier substituted for the cylinder's fifteen residual generators; no background vanishing of anomaly densities called a pullback; no AFN0 map called a full BV chain map; no unproved bulk-to-slice transgression; no raw-D anomaly verdict, QME, Hadamard, positivity, particle or unitarity claim",
+    "depends_on": [
+      "sf:program/work/bridge-local-anomaly-zero-charge-sector-chain-maps#ANY_TERMINAL"
+    ],
+    "activates": [
+      "quantum-strict-anomaly-restriction-zero-charge-sectors",
+      "quantum-restricted-d-cartan-anomaly-disposition",
+      "a cylinder sector-specific compensator-necessity verdict"
+    ],
+    "allowed_paths": [
+      "bridge/anomaly_restriction/",
+      "bridge/certificates/",
+      "d_quotient_classical/",
+      "quantum-weyl/transfer/",
+      "reports/",
+      "residual_atlas/",
+      "notes/d-quotient-einstein-team-brief.md",
+      "notes/d-quotient-quantum-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "BRIDGE PROOF-FIRST. Build the finite derived carrier and transgression before asking Quantum to rerun any anomaly restriction. Prefer the landed chainmap, bicomplex, syzygy, equivariant and SDR math layers where their declared domains apply.",
+    "notes": [
+      "The predecessor proved that the unary tangent of a quadratic Taub-zero constraint remains the full linear complex; the repair must therefore be derived rather than a subspace deletion.",
+      "Keep the cylinder SO(4,2) carrier separate from the compact-product five-moment-map tangent cone."
+    ],
+    "input_commit": "a9be01eab",
+    "stream": "bridge"
+  },
+  "edges": []
+}

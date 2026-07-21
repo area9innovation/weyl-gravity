@@ -1,0 +1,48 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-berger-matter-coupled-local-anomaly-complex",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-berger-matter-coupled-local-anomaly-complex",
+  "source": {
+    "path": "planning/work-items/quantum-berger-matter-coupled-local-anomaly-complex.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum-qme",
+    "state": "PROPOSED",
+    "objective": "Construct the actual local BV anomaly complex for the declared gravity-clock(-Maxwell) Berger action, or prove that no admissible BV action morphism relates it to the pure-Weyl local anomaly complex. This replaces the now-obstructed identity-jet restriction by the matter-coupled theory the Berger sector really uses.",
+    "stop_condition": "Import STRICT_ANOMALY_SECTOR_RESTRICTION_CHAIN_MAP_OBSTRUCTION_V1, including the exact antifield-row defect 961/1920, and the complete action-derived Berger gravity-clock(-Maxwell) BV rows by content hash. Classify the local ghost-number-one, form-degree-four anomaly candidates in the declared derivative/dimension/antifield bounds; compute the full BRST differential including matter equations and antifields; and either construct a chain morphism from a parent local complex whose defect cancels exactly or exhibit a basis-independent obstruction/nonexistence witness in a complete declared morphism class. Reduce cocycles modulo local counterterms and total derivatives, separating raw D, K_Berger=D-omega R, local Weyl and diffeomorphism dispositions. Produce exact certificates, independent verifiers, a candidate/completeness ledger and a receiver payload for the sector-restriction and Cartan tasks. A result may be ZERO, EXACT, NONTRIVIAL or NONDEFINED, but every verdict requires its corresponding primitive, separator or missing-carrier witness.",
+    "current_gate": "full matter-coupled Berger local-BV anomaly cohomology or exact action-morphism obstruction",
+    "forbid": "no reuse of the pure-Weyl metric-antifield row as the matter-coupled target; no AFN0 classification promoted to full BV cohomology; no subtraction of 961/1920 by hand; no background evaluation substituted for cochain restriction; no raw D used where only K_Berger is a symmetry; no local Euclidean result promoted to Lorentzian QME, Hadamard, positivity, particles or unitarity; no compensator theory conflated with the strict field-content theory",
+    "depends_on": [
+      "sf:program/work/bridge-local-anomaly-zero-charge-sector-chain-maps#ANY_TERMINAL"
+    ],
+    "activates": [
+      "quantum-strict-anomaly-restriction-zero-charge-sectors",
+      "quantum-restricted-d-cartan-anomaly-disposition",
+      "a Berger sector-specific compensator-necessity verdict"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/",
+      "bridge/anomaly_restriction/",
+      "d_quotient_classical/",
+      "closed_universe_observers/",
+      "reports/",
+      "residual_atlas/",
+      "paper/12-quantum-weyl-one-loop-qme.tex",
+      "paper/12-quantum-weyl-one-loop-qme-claim-map.json",
+      "notes/d-quotient-quantum-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "QUANTUM LOCAL-ALGEBRAIC. Reuse the landed anomaly, chain-map, variational and exact quotient layers where valid; do not start determinants or Lorentzian state work from this item.",
+    "notes": [
+      "The predecessor's 961/1920 result is an obstruction to the naive identity-jet map, not a verdict on the actual matter-coupled anomaly cohomology.",
+      "If the required Berger action rows are incomplete, emit one precise cross-stream request rather than reconstructing a competing classical action."
+    ],
+    "input_commit": "a9be01eab",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}
