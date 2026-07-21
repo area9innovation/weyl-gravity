@@ -1,0 +1,37 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/observer-positive-berger-local-receiver-action-preflight-LEASE-RELEASE-excl-868c1872958976cb",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {
+    "path": "tools/science-forge/program/events/observer-positive-berger-local-receiver-action-preflight-LEASE-RELEASE-excl-868c1872958976cb.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "LEASE",
+    "actor": "coordinator",
+    "base_revision": "science-forge-ir-v0",
+    "when": "2026-07-21T08:28:05Z",
+    "seq": 2,
+    "payload": {
+      "target": "sf:program/work/observer-positive-berger-local-receiver-action-preflight",
+      "agent": "observer-1",
+      "lease_type": "exclusive",
+      "action": "RELEASE",
+      "acquired": "2026-07-21T08:28:05Z",
+      "expires": "",
+      "reason": "terminal delivery is committed, reported and closed DONE; release the completed lease before assigning its integration successor"
+    },
+    "native": {
+      "authored_by": "coordinator explicit terminal release",
+      "policy": "append-only lease release; terminal work and its reports remain immutable"
+    }
+  },
+  "edges": [
+    {
+      "rel": "LEASES",
+      "to": "sf:program/work/observer-positive-berger-local-receiver-action-preflight"
+    }
+  ]
+}
