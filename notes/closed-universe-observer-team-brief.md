@@ -2270,6 +2270,31 @@ Individual preparation membership, balanced combinations, nonlinear rank,
 gauge survival on \(\mathcal Z_2\), persistent memory, recoil and redshift
 remain `NO_CERTIFIED_MAP`.
 
+## Active bridge: receiver20/q70 grading obstruction
+
+The standalone receiver and repaired q70 inputs each pass their own action,
+degree-one unary, cyclic-pairing and causal-support gates at exact hashes.
+Their action pushout nevertheless fails before any mixed Hessian can be
+typed.  Receiver20 assigns degree \(-1\) to its ten odd cotangents and has a
+homogeneous degree-\(-1\) pairing.  Repaired q70 uses
+`compact_degree=-ghost_number`: it has only six degree-\(-1\) rows, and all
+70 canonical pairing entries have total degree \(+1\).  The canonical
+receiver pair \((m,m^+)\) has degrees \((0,-1)\), while the q70 pair
+\((B_0,A^+_0)\) has degrees \((0,1)\).
+
+Consequently no degree-zero pairing-preserving inclusion or homogeneous
+graded odd-symplectic pushout exists for the pinned contracts.  Direct sum
+would make the pairing inhomogeneous; flipping the receiver grading changes
+its carrier, unary, pairing, cocycle and symmetry hashes and therefore needs
+a new action-derived certificate.
+
+The fail-closed atlas row is
+`positive-berger-receiver-bv-cocycle-integration-grading-obstruction-fragment-v1`.
+Its activation gate is a reissued receiver action sector in the q70 compact
+degree and degree-\(+1\) pairing convention, including a freshly derived
+local descent.  Mixed rows, receiver inclusion, quotient input, period,
+denominator and redshift remain `NO_CERTIFIED_MAP` or not reached.
+
 ## Active bridge: combined-q1 linear-K obstruction
 
 The queue successor
