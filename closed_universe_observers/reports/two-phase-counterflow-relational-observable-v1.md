@@ -42,3 +42,5 @@ The next admissible gate is a changed charge reduction or action architecture
 in which a nonzero relative-clock cohomology class and pairing survive.  Only
 then may emitter, receiver, rod, polarization and memory rows be derived from
 one apparatus action.
+
+CLOSE-OUT: OBSTRUCTED — fixed-Q_rel reduction removes the relative clock before the physical observer gate
