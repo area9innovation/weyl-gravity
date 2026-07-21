@@ -1,0 +1,144 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem obstructs only the selected quadratic-action repair orbit within the complete real parity-even Diff x U(1) metric-plus-connection local action quotient through four derivatives on the declared compact magnetic product. It does not rule out higher-derivative, nonlocal, changed-pairing, or new-physical-auxiliary theories. Because no requested action preimage exists, the changed master action, BV differential, cyclic lift, common regulator and relative anomaly/QME are not activated. No anomaly, Lorentzian causal, Hadamard, positivity, particle, scattering or unitarity conclusion follows.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "quantum-weyl/relative/certificates/RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1.json",
+          "result_id": "RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1",
+          "sha256": "2eac0980d5ee9e906003807f732faa6a7da4fb9f57ee6e526843ea1db42f3688"
+        }
+      ],
+      "id": "quantum.relative.einstein_weyl.changed_action.four_derivative_bv_lift_gate",
+      "mode_data": {
+        "dispersion": {
+          "statement": "This is an action-lift gate, not a mode dispersion relation.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "No requested changed action exists in the declared ansatz, so no changed Lee--Wald current is defined.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "No resonance or tangent-cone claim is made.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No second-order solution class is selected.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "No second-order solution class is selected.",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No second-order solution class is selected.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "No Taub map is computed by this action-lift obstruction.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "quantum_data": {
+        "BRST_cocycle": {
+          "statement": "The requested changed BRST differential is not activated because its action has no preimage.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "BRST_exactness": {
+          "statement": "No changed-theory cocycle exists to test for exactness.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "Hadamard_two_point_function": {
+          "statement": "No causal Green carrier or changed off-shell BV theory is supplied.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "anomaly_QME_dependency": {
+          "statement": "Relative anomaly coefficients and QME remain undefined because the changed action and common regulator do not activate.",
+          "status": "OPEN"
+        },
+        "carrier_crosswalk": {
+          "statement": "The reduced rank-one shift has no 4D local action/BV carrier crosswalk in the declared ansatz.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "classical_mode_imported": {
+          "statement": "The imported object is a bounded covariant action-response classification, not a residual mode.",
+          "status": "NOT_APPLICABLE"
+        },
+        "compatible_complex_structure": {
+          "statement": "No one-particle carrier is constructed.",
+          "status": "NOT_APPLICABLE"
+        },
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "entry_kind": "NON_MODE_PARTICLE_GUARD",
+        "lifecycle_state": {
+          "statement": "The four-derivative parity-even local changed-action route is exactly obstructed.",
+          "status": "OBSTRUCTED"
+        },
+        "pairing_status": {
+          "statement": "The selected action orbit has no local action preimage; pairing-only repair is a distinct, unselected orbit.",
+          "status": "OBSTRUCTED"
+        },
+        "particle_interpretation": {
+          "statement": "An action-response cokernel witness is not a particle state.",
+          "status": "NOT_APPLICABLE"
+        },
+        "state_space_status": {
+          "statement": "No state space follows from a reduced action-response obstruction.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan product",
+        "boundaries": "closed S1_L x S2 Cauchy slice",
+        "carrier": "metric plus fixed-bundle U1 connection",
+        "charge_sector": "fixed magnetic bundle N=2",
+        "degree": "quadratic action/Cauchy-Hessian response",
+        "ell": "generic ell>=2",
+        "k": "every allowed compact momentum by local 1+1 covariance",
+        "m": "all by SO3 equivariance",
+        "omega": "q-primary source response and p-primary cross response",
+        "parity": "parity even",
+        "theory": "real Diff x U(1) local Einstein-Maxwell actions"
+      }
+    }
+  ],
+  "generated_by": "quantum-weyl/relative/relative_offshell_changed_action_bv_lift_obstruction.py",
+  "generated_by_sha256": "1f3022f7ae19f76df90b450900d8a007e5115389c5d3c3d59622bb19f9bf0820",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "quantum",
+  "verification_commands": [
+    "PYTHONPATH=quantum-weyl python3 -m relative.relative_offshell_changed_action_bv_lift_obstruction --check",
+    "PYTHONPATH=quantum-weyl python3 -m relative.verify_relative_offshell_changed_action_bv_lift_obstruction",
+    "PYTHONPATH=quantum-weyl python3 -m unittest relative.tests.test_relative_offshell_changed_action_bv_lift_obstruction",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/relative-offshell-changed-action-bv-lift-obstruction-fragment-v1.json"
+  ]
+}

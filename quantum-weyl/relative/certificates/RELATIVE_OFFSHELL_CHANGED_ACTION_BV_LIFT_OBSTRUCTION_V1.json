@@ -1,0 +1,282 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem obstructs only the selected quadratic-action repair orbit within the complete real parity-even Diff x U(1) metric-plus-connection local action quotient through four derivatives on the declared compact magnetic product. It does not rule out higher-derivative, nonlocal, changed-pairing, or new-physical-auxiliary theories. Because no requested action preimage exists, the changed master action, BV differential, cyclic lift, common regulator and relative anomaly/QME are not activated. No anomaly, Lorentzian causal, Hadamard, positivity, particle, scattering or unitarity conclusion follows.",
+  "claim_flags": {
+    "COMPLETE_FOUR_DERIVATIVE_PARITY_EVEN_ACTION_ANSATZ_IMPORTED": true,
+    "FULL_OFFSHELL_CHANGED_BV_LIFT_CONSTRUCTED": false,
+    "LORENTZIAN_CAUSAL_CLAIM": false,
+    "QUADRATIC_ACTION_ORBIT_SELECTED_EXCLUSIVELY": true,
+    "RELATIVE_ANOMALY_COEFFICIENT_COMPUTED": false,
+    "RELATIVE_QME_DEFINED": false,
+    "REQUESTED_REDUCED_REPAIR_HAS_LOCAL_ACTION_PREIMAGE": false
+  },
+  "complete_action_ansatz": {
+    "bounded_field_redefinitions": [
+      "A_b -> A_b + c_A nabla^a F_ab",
+      "g^(ab) -> g^(ab) + c_1 Ricci^(ab) + c_2 R g^(ab) + c_3 F^a_c F^(bc) + c_4 F2 g^(ab)"
+    ],
+    "complete_action_basis": [
+      "1",
+      "R",
+      "F2",
+      "RiemFF",
+      "F2sq",
+      "P2"
+    ],
+    "derivative_bound": "at most four covariant derivatives; F counts one and curvature two",
+    "exact_relation_order": [
+      "Euler_density",
+      "integrated_Maxwell_Weitzenboeck",
+      "A_field_redefinition_divF",
+      "metric_redefinition_Ricci_ab",
+      "metric_redefinition_R_g_ab",
+      "metric_redefinition_Fa_c_Fbc",
+      "metric_redefinition_F2_g_ab"
+    ],
+    "external_completeness_anchor": {
+      "comparison": "Their parity-even four-derivative quotient is X^2, Y^2 and R_abcd (*F)^ab (*F)^cd modulo topological terms and field redefinitions. The last representative differs from RiemFF by the displayed Ricci/RF2 redefinition span, so it is the same three-dimensional quotient, not an extra direction.",
+      "reference": "I. Davies and H. S. Reall, Well-posed formulation of Einstein-Maxwell effective field theory, arXiv:2112.05603, eqs. (1)-(4)"
+    },
+    "field_content": "metric plus fixed-bundle U1 connection",
+    "four_derivative_quotient_representatives": [
+      "RiemFF",
+      "F2sq",
+      "P2"
+    ],
+    "lower_derivative_completion": [
+      "1",
+      "R",
+      "F2"
+    ],
+    "raw_four_derivative_generators": [
+      "Riem2",
+      "Ricci2",
+      "R2",
+      "nablaF2",
+      "divF2",
+      "RF2",
+      "RicciFF",
+      "RiemFF",
+      "F2sq",
+      "P2"
+    ],
+    "relation_rank": 7,
+    "same_background_incidence": [
+      "c0 + 2*cR + 2*cF + 4*cRFF + 4*cF4 = 0",
+      "2*c0 - 4*cF - 16*cRFF - 24*cF4 = 0"
+    ],
+    "symmetry": "real parity-even Diff x U(1)"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_obstruction": {
+    "first_invariant_obstruction": "AXIAL_22_LAMBDA_COEFFICIENT",
+    "logic": "The first witness already separates the requested q-primary target from the unrestricted complete action-response image. Adding the same-background and zero-p-cross equations can only shrink that image. Independently, the certified zero-cross response matrix has full column rank, so its kernel is already the zero deformation.",
+    "p_shell_separation_preserving_preimage_exists": false,
+    "same_background_preimage_exists": false,
+    "unrestricted_q_primary_preimage_exists": false,
+    "witnesses": [
+      {
+        "functional": "coefficient of lambda in the axial (2,2) entry",
+        "id": "AXIAL_22_LAMBDA_COEFFICIENT",
+        "on_every_action_basis_response": "0",
+        "on_requested_target": "-9"
+      },
+      {
+        "functional": "coefficient of lambda^2 in the polar (2,2) entry",
+        "id": "POLAR_22_LAMBDA_SQUARED_COEFFICIENT",
+        "on_every_action_basis_response": "0",
+        "on_requested_target": "-9/4"
+      }
+    ]
+  },
+  "exact_replay": {
+    "axial_witness": {
+      "functional": "coefficient_of_lambda_in_axial_22",
+      "on_action_response_image": "0",
+      "on_requested_shift": "-9"
+    },
+    "coefficient_field": "Q",
+    "complete_action_basis_dimension": 6,
+    "four_derivative_quotient_dimension": 3,
+    "p_shell_cross_response_kernel_dimension": 0,
+    "p_shell_cross_response_rank": 6,
+    "p_shell_cross_response_shape": [
+      17,
+      6
+    ],
+    "polar_witness": {
+      "functional": "coefficient_of_lambda_squared_in_polar_22",
+      "on_action_response_image": "0",
+      "on_requested_shift": "-9/4"
+    },
+    "relation_matrix_shape": [
+      7,
+      10
+    ],
+    "relation_rank": 7
+  },
+  "general_action_response": {
+    "axial": [
+      [
+        "2*cR*lambda",
+        "8*cRFF*lambda"
+      ],
+      [
+        "8*cRFF*lambda",
+        "-8*(cF + 4*cF4 - 8*cP4)"
+      ]
+    ],
+    "coefficient_order": [
+      "c0",
+      "cR",
+      "cF",
+      "cRFF",
+      "cF4",
+      "cP4"
+    ],
+    "polar": [
+      [
+        "2*(cR + 2*cRFF)",
+        "-4*(cR + 2*cRFF*lambda)"
+      ],
+      [
+        "-4*(cR + 2*cRFF*lambda)",
+        "-8*lambda*(cF + 4*cF4)"
+      ]
+    ]
+  },
+  "independent_rails": {
+    "quantum_integration": "independent exact extraction of both cokernel functionals, relation rank, and 17x6 p-shell rank from pinned artifacts",
+    "upstream_action_variation": {
+      "elapsed_seconds": 197.88,
+      "imports_producer_matrices": false,
+      "method": "direct construction of all six scalar densities in the exact compact-product Taylor-jet algebra, independent polarization, harmonic substitution and exact z=cos(theta) integration",
+      "status": "PASS"
+    }
+  },
+  "input_pins": {
+    "complete_action_response": {
+      "artifact_id": "EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1",
+      "path": "bridge/certificates/EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1.json",
+      "sha256": "cb47110872bdf976f7fda661f722041f034936d8ec1087781d90615ce3b922fe"
+    },
+    "complete_action_response_receipt": {
+      "artifact_id": "EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1_TIER_RECEIPT",
+      "path": "bridge/einstein_sector/receipts/EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1_TIER_RECEIPT.json",
+      "sha256": "a0d9ff08721120166023def1d8a4e9f96dae21f26a08526eb80f170acb1825e7"
+    },
+    "terminal_changed_theory_qme_nondefinition": {
+      "artifact_id": "RELATIVE_CHANGED_THEORY_QME_NONDEFINITION",
+      "path": "quantum-weyl/transfer/certificates/RELATIVE_CHANGED_THEORY_QME_NONDEFINITION.json",
+      "sha256": "ca32c897bffb94b68687dc4e162676ca9bab69cf4d9f8dddcd36bc1622ff0474"
+    },
+    "terminal_changed_theory_qme_receipt": {
+      "artifact_id": "RELATIVE_CHANGED_THEORY_QME_NONDEFINITION",
+      "path": "quantum-weyl/transfer/receipts/RELATIVE_CHANGED_THEORY_QME_NONDEFINITION_V1_TIER_RECEIPT.json",
+      "sha256": "8d5b9c9811415d320ed090064d9d04a9060ad044ecd2e99c3746281f140eb613"
+    },
+    "terminal_pairing_deformation_classification": {
+      "artifact_id": "RELATIVE_EINSTEIN_WEYL_PAIRING_DEFORMATION_CLASSIFICATION",
+      "path": "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_PAIRING_DEFORMATION_CLASSIFICATION.json",
+      "sha256": "00b2e7a66fd81c0f2c1d6af3b4f37a0a7d10215a4405b0e1ac50c39dc41e8cf5"
+    },
+    "terminal_pairing_deformation_receipt": {
+      "artifact_id": "RELATIVE_EINSTEIN_WEYL_PAIRING_DEFORMATION_CLASSIFICATION",
+      "path": "quantum-weyl/transfer/receipts/RELATIVE_EINSTEIN_WEYL_PAIRING_DEFORMATION_CLASSIFICATION_V1_TIER_RECEIPT.json",
+      "sha256": "09e775c9cef392e7741e4efda7b0afa640b8efe52d4ffe8a515a4198c58613a8"
+    }
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "noether_and_bv_disposition": {
+    "common_density_measure_domain_regulator": "NOT_ACTIVATED",
+    "conditional_action_density_noether_completion": "CERTIFIED_FOR_EACH_ACTION_ANSATZ_MEMBER",
+    "conditional_finite_carrier_rows": 38,
+    "requested_changed_BV_differential": "NOT_ACTIVATED",
+    "requested_changed_gauge_fixed_operator": "NOT_ACTIVATED",
+    "requested_changed_local_action": "OBSTRUCTED",
+    "requested_changed_master_action": "NOT_ACTIVATED",
+    "requested_changed_nonminimal_sector": "NOT_ACTIVATED",
+    "requested_changed_odd_pairing": "NOT_ACTIVATED",
+    "requested_full_40_to_38_cyclic_chain_lift": "NOT_ACTIVATED",
+    "unchanged_gauge_group": "Diff x U(1)"
+  },
+  "open_routes": [
+    "six_or_more_derivative_local_actions",
+    "nonlocal_actions",
+    "pairing_deformation_orbit",
+    "new_physical_auxiliary_orbit"
+  ],
+  "p_shell_control": {
+    "constraint_matrix_shape": [
+      17,
+      6
+    ],
+    "kernel_dimension": 0,
+    "rank": 6,
+    "verdict": "Within the complete six-direction action quotient, the only deformation with identically zero q-to-p Hessian response is zero."
+  },
+  "relative_quantum_disposition": {
+    "changed_theory_local_cohomology": "UNDEFINED",
+    "paper12_lifecycle": "SCOPED_FOUR_DERIVATIVE_CHANGED_ACTION_ROUTE_OBSTRUCTED_RELATIVE_QME_REMAINS_UNDEFINED",
+    "relative_anomaly_coefficients": "NOT_COMPUTED",
+    "relative_one_loop_QME": "UNDEFINED",
+    "strict_pure_Weyl_coefficients_imported_as_relative": false
+  },
+  "requested_reduced_action_shift": {
+    "axial": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-9*lambda"
+      ]
+    ],
+    "polar": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-3*(lambda - 2)*(3*lambda + 2)/4"
+      ]
+    ],
+    "sign_note": "These are the negative source-action shifts requested by Quantum. The terminal reduced certificate separately displays the dual positive target-pairing repairs."
+  },
+  "result_id": "RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1",
+  "result_state": "OBSTRUCTED_COMPLETE_PARITY_EVEN_FOUR_DERIVATIVE_LOCAL_ACTION_ANSATZ",
+  "schema": "relative-offshell-changed-action-bv-lift-obstruction-v1",
+  "scope": {
+    "background": "compactified magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L x S2 Cauchy slice",
+    "carrier": "metric plus fixed-bundle U1 connection",
+    "charge_sector": "fixed magnetic bundle N=2",
+    "degree": "quadratic action/Cauchy-Hessian response",
+    "derivative_bound": "at most four covariant derivatives with F counted as one derivative and curvature as two",
+    "ell": "generic ell>=2",
+    "k": "every allowed compact momentum by local 1+1 covariance",
+    "m": "all by SO3 equivariance",
+    "omega": "q-primary source response and p-primary cross response",
+    "parity": "parity even",
+    "theory": "real Diff x U(1) local Einstein-Maxwell actions"
+  },
+  "selected_repair_orbit": {
+    "axial_and_polar_treated_together": true,
+    "orbit": "quadratic_action_deformation",
+    "pairing_deformation_mixed_in": false,
+    "physical_auxiliary_extension_mixed_in": false,
+    "reason": "one real parity-even covariant action must reproduce both parity-sector Hessian responses",
+    "selection": "QUADRATIC_ACTION_DEFORMATION_ONLY",
+    "theory_label": "ACTION_CHANGED_EINSTEIN_Q_PRIMARY_REDUCED_THEORY"
+  },
+  "verification_commands": [
+    "PYTHONPATH=quantum-weyl python3 -m relative.relative_offshell_changed_action_bv_lift_obstruction --check",
+    "PYTHONPATH=quantum-weyl python3 -m relative.verify_relative_offshell_changed_action_bv_lift_obstruction",
+    "PYTHONPATH=quantum-weyl python3 -m unittest relative.tests.test_relative_offshell_changed_action_bv_lift_obstruction",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/relative-offshell-changed-action-bv-lift-obstruction-fragment-v1.json"
+  ]
+}

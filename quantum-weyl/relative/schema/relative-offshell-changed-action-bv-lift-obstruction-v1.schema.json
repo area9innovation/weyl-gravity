@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "relative-offshell-changed-action-bv-lift-obstruction-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "scope",
+    "selected_repair_orbit",
+    "input_pins",
+    "complete_action_ansatz",
+    "requested_reduced_action_shift",
+    "general_action_response",
+    "exact_obstruction",
+    "exact_replay",
+    "p_shell_control",
+    "noether_and_bv_disposition",
+    "relative_quantum_disposition",
+    "independent_rails",
+    "open_routes",
+    "claim_flags",
+    "verification_commands",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "relative-offshell-changed-action-bv-lift-obstruction-v1"},
+    "result_id": {"const": "RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1"},
+    "result_state": {"const": "OBSTRUCTED_COMPLETE_PARITY_EVEN_FOUR_DERIVATIVE_LOCAL_ACTION_ANSATZ"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega", "derivative_bound"],
+      "properties": {
+        "theory": {"const": "real Diff x U(1) local Einstein-Maxwell actions"},
+        "background": {"const": "compactified magnetically supported Plebanski-Hacyan product"},
+        "boundaries": {"const": "closed S1_L x S2 Cauchy slice"},
+        "charge_sector": {"const": "fixed magnetic bundle N=2"},
+        "carrier": {"const": "metric plus fixed-bundle U1 connection"},
+        "degree": {"const": "quadratic action/Cauchy-Hessian response"},
+        "parity": {"const": "parity even"},
+        "ell": {"const": "generic ell>=2"},
+        "m": {"const": "all by SO3 equivariance"},
+        "k": {"const": "every allowed compact momentum by local 1+1 covariance"},
+        "omega": {"const": "q-primary source response and p-primary cross response"},
+        "derivative_bound": {"const": "at most four covariant derivatives with F counted as one derivative and curvature as two"}
+      }
+    },
+    "selected_repair_orbit": {
+      "const": {
+        "orbit": "quadratic_action_deformation",
+        "selection": "QUADRATIC_ACTION_DEFORMATION_ONLY",
+        "theory_label": "ACTION_CHANGED_EINSTEIN_Q_PRIMARY_REDUCED_THEORY",
+        "axial_and_polar_treated_together": true,
+        "reason": "one real parity-even covariant action must reproduce both parity-sector Hessian responses",
+        "pairing_deformation_mixed_in": false,
+        "physical_auxiliary_extension_mixed_in": false
+      }
+    },
+    "input_pins": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["terminal_pairing_deformation_classification", "terminal_pairing_deformation_receipt", "terminal_changed_theory_qme_nondefinition", "terminal_changed_theory_qme_receipt", "complete_action_response", "complete_action_response_receipt"],
+      "properties": {
+        "terminal_pairing_deformation_classification": {"$ref": "#/$defs/ref"},
+        "terminal_pairing_deformation_receipt": {"$ref": "#/$defs/ref"},
+        "terminal_changed_theory_qme_nondefinition": {"$ref": "#/$defs/ref"},
+        "terminal_changed_theory_qme_receipt": {"$ref": "#/$defs/ref"},
+        "complete_action_response": {"$ref": "#/$defs/ref"},
+        "complete_action_response_receipt": {"$ref": "#/$defs/ref"}
+      }
+    },
+    "complete_action_ansatz": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["field_content", "symmetry", "derivative_bound", "raw_four_derivative_generators", "exact_relation_order", "relation_rank", "four_derivative_quotient_representatives", "lower_derivative_completion", "complete_action_basis", "bounded_field_redefinitions", "external_completeness_anchor", "same_background_incidence"],
+      "properties": {
+        "field_content": {"const": "metric plus fixed-bundle U1 connection"},
+        "symmetry": {"const": "real parity-even Diff x U(1)"},
+        "derivative_bound": {"const": "at most four covariant derivatives; F counts one and curvature two"},
+        "raw_four_derivative_generators": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "string"}},
+        "exact_relation_order": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "string"}},
+        "relation_rank": {"const": 7},
+        "four_derivative_quotient_representatives": {"const": ["RiemFF", "F2sq", "P2"]},
+        "lower_derivative_completion": {"const": ["1", "R", "F2"]},
+        "complete_action_basis": {"const": ["1", "R", "F2", "RiemFF", "F2sq", "P2"]},
+        "bounded_field_redefinitions": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+        "external_completeness_anchor": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["reference", "comparison"],
+          "properties": {"reference": {"type": "string", "minLength": 20}, "comparison": {"type": "string", "minLength": 40}}
+        },
+        "same_background_incidence": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}}
+      }
+    },
+    "requested_reduced_action_shift": {"type": "object", "required": ["axial", "polar", "sign_note"], "additionalProperties": false, "properties": {"axial": {"$ref": "#/$defs/matrix"}, "polar": {"$ref": "#/$defs/matrix"}, "sign_note": {"type": "string", "minLength": 40}}},
+    "general_action_response": {"type": "object", "required": ["coefficient_order", "axial", "polar"], "additionalProperties": false, "properties": {"coefficient_order": {"const": ["c0", "cR", "cF", "cRFF", "cF4", "cP4"]}, "axial": {"$ref": "#/$defs/matrix"}, "polar": {"$ref": "#/$defs/matrix"}}},
+    "exact_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["first_invariant_obstruction", "witnesses", "unrestricted_q_primary_preimage_exists", "same_background_preimage_exists", "p_shell_separation_preserving_preimage_exists", "logic"],
+      "properties": {
+        "first_invariant_obstruction": {"const": "AXIAL_22_LAMBDA_COEFFICIENT"},
+        "witnesses": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object"}},
+        "unrestricted_q_primary_preimage_exists": {"const": false},
+        "same_background_preimage_exists": {"const": false},
+        "p_shell_separation_preserving_preimage_exists": {"const": false},
+        "logic": {"type": "string", "minLength": 100}
+      }
+    },
+    "exact_replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coefficient_field", "relation_matrix_shape", "relation_rank", "four_derivative_quotient_dimension", "complete_action_basis_dimension", "axial_witness", "polar_witness", "p_shell_cross_response_shape", "p_shell_cross_response_rank", "p_shell_cross_response_kernel_dimension"],
+      "properties": {
+        "coefficient_field": {"const": "Q"},
+        "relation_matrix_shape": {"const": [7, 10]},
+        "relation_rank": {"const": 7},
+        "four_derivative_quotient_dimension": {"const": 3},
+        "complete_action_basis_dimension": {"const": 6},
+        "axial_witness": {"const": {"functional": "coefficient_of_lambda_in_axial_22", "on_action_response_image": "0", "on_requested_shift": "-9"}},
+        "polar_witness": {"const": {"functional": "coefficient_of_lambda_squared_in_polar_22", "on_action_response_image": "0", "on_requested_shift": "-9/4"}},
+        "p_shell_cross_response_shape": {"const": [17, 6]},
+        "p_shell_cross_response_rank": {"const": 6},
+        "p_shell_cross_response_kernel_dimension": {"const": 0}
+      }
+    },
+    "p_shell_control": {"const": {"constraint_matrix_shape": [17, 6], "rank": 6, "kernel_dimension": 0, "verdict": "Within the complete six-direction action quotient, the only deformation with identically zero q-to-p Hessian response is zero."}},
+    "noether_and_bv_disposition": {
+      "const": {
+        "unchanged_gauge_group": "Diff x U(1)",
+        "conditional_action_density_noether_completion": "CERTIFIED_FOR_EACH_ACTION_ANSATZ_MEMBER",
+        "conditional_finite_carrier_rows": 38,
+        "requested_changed_local_action": "OBSTRUCTED",
+        "requested_changed_master_action": "NOT_ACTIVATED",
+        "requested_changed_BV_differential": "NOT_ACTIVATED",
+        "requested_changed_odd_pairing": "NOT_ACTIVATED",
+        "requested_changed_nonminimal_sector": "NOT_ACTIVATED",
+        "requested_changed_gauge_fixed_operator": "NOT_ACTIVATED",
+        "requested_full_40_to_38_cyclic_chain_lift": "NOT_ACTIVATED",
+        "common_density_measure_domain_regulator": "NOT_ACTIVATED"
+      }
+    },
+    "relative_quantum_disposition": {
+      "const": {
+        "changed_theory_local_cohomology": "UNDEFINED",
+        "relative_anomaly_coefficients": "NOT_COMPUTED",
+        "relative_one_loop_QME": "UNDEFINED",
+        "strict_pure_Weyl_coefficients_imported_as_relative": false,
+        "paper12_lifecycle": "SCOPED_FOUR_DERIVATIVE_CHANGED_ACTION_ROUTE_OBSTRUCTED_RELATIVE_QME_REMAINS_UNDEFINED"
+      }
+    },
+    "independent_rails": {"type": "object", "required": ["upstream_action_variation", "quantum_integration"], "additionalProperties": false, "properties": {"upstream_action_variation": {"type": "object"}, "quantum_integration": {"type": "string", "minLength": 40}}},
+    "open_routes": {"const": ["six_or_more_derivative_local_actions", "nonlocal_actions", "pairing_deformation_orbit", "new_physical_auxiliary_orbit"]},
+    "claim_flags": {
+      "const": {
+        "COMPLETE_FOUR_DERIVATIVE_PARITY_EVEN_ACTION_ANSATZ_IMPORTED": true,
+        "QUADRATIC_ACTION_ORBIT_SELECTED_EXCLUSIVELY": true,
+        "REQUESTED_REDUCED_REPAIR_HAS_LOCAL_ACTION_PREIMAGE": false,
+        "FULL_OFFSHELL_CHANGED_BV_LIFT_CONSTRUCTED": false,
+        "RELATIVE_ANOMALY_COEFFICIENT_COMPUTED": false,
+        "RELATIVE_QME_DEFINED": false,
+        "LORENTZIAN_CAUSAL_CLAIM": false
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+    "claim_boundary": {"type": "string", "minLength": 300}
+  },
+  "$defs": {
+    "ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "matrix": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}}}
+  }
+}

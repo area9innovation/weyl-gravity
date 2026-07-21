@@ -1,0 +1,85 @@
+{
+  "schema": "quantum-tier-receipt-v1",
+  "result_id": "RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1_TIER_RECEIPT",
+  "subject_result_id": "RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1",
+  "recorded_at": "2026-07-21",
+  "base_commit": "238fdaec6",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "selected_repair_orbit": "QUADRATIC_ACTION_DEFORMATION_ONLY",
+  "input_hashes": {
+    "terminal_pairing_deformation_classification": "00b2e7a66fd81c0f2c1d6af3b4f37a0a7d10215a4405b0e1ac50c39dc41e8cf5",
+    "terminal_pairing_deformation_receipt": "09e775c9cef392e7741e4efda7b0afa640b8efe52d4ffe8a515a4198c58613a8",
+    "terminal_changed_theory_qme_nondefinition": "ca32c897bffb94b68687dc4e162676ca9bab69cf4d9f8dddcd36bc1622ff0474",
+    "terminal_changed_theory_qme_receipt": "8d5b9c9811415d320ed090064d9d04a9060ad044ecd2e99c3746281f140eb613",
+    "complete_action_response": "cb47110872bdf976f7fda661f722041f034936d8ec1087781d90615ce3b922fe",
+    "complete_action_response_receipt": "a0d9ff08721120166023def1d8a4e9f96dae21f26a08526eb80f170acb1825e7"
+  },
+  "output_hashes": {
+    "producer": "1f3022f7ae19f76df90b450900d8a007e5115389c5d3c3d59622bb19f9bf0820",
+    "independent_verifier": "dfa999e3607e19df3c9b332afb30a6ed897f73e41ce429ae4f111f83582a4885",
+    "tests": "ddd80fa69cf7213b0dc0017e46812af7f0fe1ddbe367923de406e2498e560951",
+    "schema": "c7ab8b66d047fab6eb86518566383a88381653cbeb70594a66fcd218b9f5e5d9",
+    "certificate": "2eac0980d5ee9e906003807f732faa6a7da4fb9f57ee6e526843ea1db42f3688",
+    "report": "1704fda5e36bfd1b7fe188afbf1ad581bc1a92a3e030cc718e6432aa2d87df87",
+    "atlas_fragment": "f36af5855a33a839b328ac25384d81c7828ce1f7d9271405bb1b4f794e938620"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile <three scoped modules> && python3 -m json.tool <certificate and schema> && git diff --check -- <scoped paths>",
+      "elapsed_seconds": 0.2,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m relative.relative_offshell_changed_action_bv_lift_obstruction --check",
+      "elapsed_seconds": 0.42,
+      "max_rss_kib": 66340,
+      "status": "PASS_EXACT_PRODUCER_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m relative.verify_relative_offshell_changed_action_bv_lift_obstruction",
+      "elapsed_seconds": 0.42,
+      "max_rss_kib": 66416,
+      "status": "PASS_INDEPENDENT_INPUT_HASH_RELATION_RANK_COKERNEL_AND_P_SHELL_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest relative.tests.test_relative_offshell_changed_action_bv_lift_obstruction",
+      "elapsed_seconds": 0.54,
+      "max_rss_kib": 67600,
+      "status": "PASS_9_TESTS_WITH_ORBIT_RANK_ONE_WALL_BV_AND_QME_MUTATIONS"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/relative/schema/relative-offshell-changed-action-bv-lift-obstruction-v1.schema.json -d quantum-weyl/relative/certificates/RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1.json",
+      "elapsed_seconds": 1.86,
+      "max_rss_kib": 197672,
+      "status": "PASS_DRAFT_2020_12_STRICT"
+    },
+    {
+      "tier": 1,
+      "command": "python3 residual_atlas/validate_fragment.py residual_atlas/relative-offshell-changed-action-bv-lift-obstruction-fragment-v1.json",
+      "elapsed_seconds": 0.11,
+      "max_rss_kib": 24332,
+      "status": "PASS_FAIL_CLOSED_ATLAS_FRAGMENT"
+    }
+  ],
+  "upstream_independent_action_variation_rail": {
+    "status": "PASS",
+    "producer_payload_imported": false,
+    "method": "direct six-density compact-product Taylor-jet construction, independent Hessian polarization, harmonic substitution and exact z integration at four physical fibres",
+    "elapsed_seconds": 197.88,
+    "max_rss_kib": 183756,
+    "rerun_policy": "not rerun because its content-addressed input and receipt are unchanged; the quantum verifier independently checks the imported finite obstruction"
+  },
+  "higher_tiers_not_run": {
+    "tier_2": "No shared mathematical input changed. The affected certificate chain is imported by exact hashes and the upstream independent action-variation receipt remains unchanged.",
+    "tier_3": "No theorem freeze, release, tag, relative coefficient, QME restoration or Lorentzian causal lifecycle is promoted."
+  },
+  "paper12_lifecycle_disposition": "SCOPED_FOUR_DERIVATIVE_CHANGED_ACTION_ROUTE_OBSTRUCTED_RELATIVE_QME_REMAINS_UNDEFINED; manuscript source and its generated claim ledger are not mutated in this scoped package"
+}
