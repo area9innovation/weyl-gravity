@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/observer-paper09-counterflow-health-nonactivation-freeze-REQUEST-30197973faffcf68",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/observer-paper09-counterflow-health-nonactivation-freeze-REQUEST-30197973faffcf68.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/observer-paper09-counterflow-health-nonactivation-freeze", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T11:58:08Z", "seq": 1, "payload": {"target": "sf:program/request/observer-paper09-counterflow-health-nonactivation-freeze-to-observer-30197973faffcf68", "request_id": "sf:program/request/observer-paper09-counterflow-health-nonactivation-freeze-to-observer-30197973faffcf68", "from_item": "sf:program/work/observer-paper09-counterflow-health-nonactivation-freeze", "to_stream": "observer", "need": "Append a typed BLOCKED transition to observer-paper09-counterflow-health-nonactivation-freeze: its DRAFT_ALLOWED report is scientifically terminal but publication freeze awaits LEGACY_TEN_CLAIM_SOURCE_BINDING_SUPERSESSION and OBSERVER_STREAM_TIER3_GREEN. Do not reopen science. Then pull observer-berger84-apparatus-handoff-provenance-relock; reproduce and repair only the stale 84-row apparatus handoff provenance chain, run affected tests and uninterrupted Observer Tier 3, and report the next exact unrelated drift if one remains. The final Paper 9 freeze successor becomes eligible only after this Observer repair and classical-paper09-legacy-claim-binding-supersession reach terminal evidence dispositions.", "typed": "COORDINATION_DRAFT_ALLOWED_GATE_SPLIT"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "observer"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/observer-paper09-counterflow-health-nonactivation-freeze"}]
+}
