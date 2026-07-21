@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-paper09-legacy-claim-binding-supersession-REQUEST-35ce90a18c486fac",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/classical-paper09-legacy-claim-binding-supersession-REQUEST-35ce90a18c486fac.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/classical-paper09-legacy-claim-binding-supersession", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T12:21:21Z", "seq": 1, "payload": {"target": "sf:program/request/classical-paper09-legacy-claim-binding-supersession-to-classical-35ce90a18c486fac", "request_id": "sf:program/request/classical-paper09-legacy-claim-binding-supersession-to-classical-35ce90a18c486fac", "from_item": "sf:program/work/classical-paper09-legacy-claim-binding-supersession", "to_stream": "classical", "need": "You already hold the live exclusive lease for classical-paper09-legacy-claim-binding-supersession. Do not call work pull again. Run: s-f work-package sf:program/work/classical-paper09-legacy-claim-binding-supersession -o /tmp/classical-current-brief.md . Read that package and continue the Paper 9 source-binding supersession. The package was independently generated successfully by the coordinator. If a subsequent command refuses, create a typed request containing the exact command and refusal.", "typed": "ASSIGNED_LEASE_PACKAGE_RECOVERY"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "classical"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/classical-paper09-legacy-claim-binding-supersession"}]
+}

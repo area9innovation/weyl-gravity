@@ -213,7 +213,7 @@ need to be restarted for every task.
 source /home/alstrup/.bashrc
 cd /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction
 
-git status --short --branch
+s-f git status
 git fetch origin master
 
 command -v forge
@@ -363,9 +363,11 @@ Whether mechanized or manual, the invariant rules remain:
 6. Fetch again before pushing and integrate safely without rewriting published
    history.
 
-Because the isolated index intentionally leaves the shared index untouched, a
-just-committed file may appear as `MM` in `git status`. That is expected. Do
-not “repair” it with `git reset` or broad staging.
+Because the isolated index intentionally leaves the shared index untouched,
+raw `git status` may show large staged-deletion, `MM`, or deleted-plus-untracked
+artifacts after concurrent commits.  `s-f git status` is the authoritative
+HEAD-to-worktree view.  Do not “repair” the shared index with `git reset`,
+`git restore --staged`, `git add -A`, `git commit -a`, or broad staging.
 
 ## 8. Checkpoint and renew
 

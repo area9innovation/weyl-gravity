@@ -23,9 +23,11 @@ teams.  Both teams work directly on `master`.
 
 ## Shared-master discipline
 
-1. Begin every work session with `git status --short --branch`, then
-   `git fetch origin master`.  Record pre-existing edits and do not discard,
-   reset, overwrite, or silently reformat them.
+1. Begin every work session with `s-f git status`, then `git fetch origin
+   master`.  The Science Forge status is the authoritative HEAD-to-worktree
+   view because isolated concurrent commits intentionally leave the shared
+   Git index stale.  Record pre-existing edits and do not discard, reset,
+   overwrite, silently reformat, or attempt to repair the shared index.
 2. Keep the shared tree current with `origin/master`.  Pull/rebase only when
    it is safe for all visible work.  If unrelated dirty files prevent it,
    preserve them and integrate after a scoped commit instead of stashing or
