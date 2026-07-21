@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/bridge-compact-cauchy-adjoint-kernel-classification",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "bridge-compact-cauchy-adjoint-kernel-classification",
+  "source": {
+    "path": "planning/work-items/bridge-compact-cauchy-adjoint-kernel-classification.json",
+    "span": null
+  },
+  "body": {
+    "owner": "bridge",
+    "state": "PROPOSED",
+    "objective": "Compute the complete global adjoint kernel of the certified right-elliptic Weyl--Maxwell constraint map on the fixed magnetic bundle over S1_L x S2, and prove or refute that its cokernel is exactly the five lifted H, P_x and J_i stabilizers.",
+    "stop_condition": "Import EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_CONSTRAINT_FREDHOLM_GATE_V1 and the complete canonical constraint/gauge operator by exact hashes. Derive the formal Sobolev adjoint with the declared mean-zero Maxwell Gauss codomain and fixed Chern/charge fibre, decompose every adjoint variable into Fourier x spherical harmonics including k=0, l=0,1 and all generic strata, and solve the adjoint kernel exactly. Prove completeness by blockwise invariant factors, elliptic estimates or a global representation-theoretic argument rather than sampled modes. Identify the five lifted stabilizers explicitly, test constant Maxwell reducibility separately, and either prove they span the full kernel or exhibit every extra adjoint mode with its topology, regularity and charge origin. Verify dimension jumps at every exceptional radius/flux parameter, real structure and bundle patching. Land exact artifacts, a method-distinct verifier, mutations deleting or adding one stabilizer, strict schema, hashes, receipt, Paper 13 correction and atlas fragment.",
+    "current_gate": "global cokernel of the compact right-elliptic constraint map",
+    "forbid": "no false two-sided Fredholm claim; no physical TT kernel direction removed by a gauge condition; no finite harmonic sample called complete; no constant Maxwell reducibility called a sixth Taub charge; no unweighted full-time Sobolev result imported; no nonlinear slice, bounded evolution, causality, scattering, particles or quantum promotion",
+    "depends_on": [
+      "sf:program/work/bridge-compact-cauchy-weyl-maxwell-constraint-fredholm-gate#ANY_TERMINAL"
+    ],
+    "activates": [
+      "sf:program/work/bridge-compact-cauchy-amm-semifredholm-slice",
+      "an exact five-covector completeness theorem or its first global correction"
+    ],
+    "allowed_paths": [
+      "bridge/",
+      "residual_atlas/",
+      "reports/",
+      "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
+      "paper/13-compact-weyl-maxwell-second-order-tangent-cone-claim-map.json",
+      "notes/d-quotient-einstein-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "FUNCTIONAL-ANALYTIC/EXACT HARMONIC. Preserve the underdetermined right-elliptic operator and classify its finite adjoint kernel; do not try to make the physical kernel finite by adding non-gauge rows.",
+    "notes": [
+      "The landed symbol theorem already proves closed range and finite cokernel. The only open linearization-stability datum is the global adjoint kernel, not another principal-symbol rank calculation.",
+      "Equality with the five stabilizers would provide the analytic completeness bridge underlying the finite exponential-polynomial cone theorem; extra modes would precisely delimit that theorem's Sobolev generalization."
+    ],
+    "input_commit": "4ce8494d05ee09b6cb6f01254d4f251900ee88c5",
+    "stream": "bridge"
+  },
+  "edges": []
+}

@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/bridge-compact-cauchy-amm-semifredholm-slice",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "bridge-compact-cauchy-amm-semifredholm-slice",
+  "source": {
+    "path": "planning/work-items/bridge-compact-cauchy-amm-semifredholm-slice.json",
+    "span": null
+  },
+  "body": {
+    "owner": "bridge",
+    "state": "PROPOSED",
+    "objective": "Construct the nonlinear Sobolev gauge slice and Arms--Marsden--Moncrief momentum-map normal form for compact Weyl--Maxwell data using the certified split right-semi-Fredholm constraint map, without assuming a false Fredholm gauge-fixed operator.",
+    "stop_condition": "Import the terminal global adjoint-kernel classification, the right-elliptic symbol/estimate certificate and the action-derived nonlinear constraint map by exact hashes. State the Banach/Sobolev manifolds, fixed magnetic and electric charge fibres, gauge group and stabilizer action; prove smooth tame or Banach differentiability to the required order; construct a closed complemented splitting of the derivative into physical kernel, gauge orbit, range and finite adjoint cokernel; and apply or carefully reprove the relevant AMM normal-form hypotheses in this underdetermined elliptic setting. Derive the quadratic momentum map from the action and show exactly whether the local second-order tangent cone is the zero set of the complete adjoint-kernel charges. Match its restriction to the certified finite-harmonic exponential-polynomial cone, including exceptional/global modes, or print the first failed analytic hypothesis and a separator. Land theorem artifacts, independent hypothesis audit, counterexamples to false Fredholm and omitted-charge variants, schema, receipt, Paper 13/atlas updates and a literature-positioning note.",
+    "current_gate": "nonlinear momentum-map normal form from a split right-semi-Fredholm constraint map",
+    "forbid": "no invocation of AMM without checking every functional-analytic hypothesis; no finite-harmonic theorem called a full Sobolev theorem; no secular formal correction called bounded stability; no physical kernel quotiented away as gauge; no fixed-charge and variable-charge fibres conflated; no causal evolution, scattering, particle or quantum promotion",
+    "depends_on": [
+      "sf:program/work/bridge-compact-cauchy-adjoint-kernel-classification"
+    ],
+    "activates": [
+      "a Sobolev-level nonlinear tangent-cone theorem",
+      "a structural bridge note to classical linearization-stability theory"
+    ],
+    "allowed_paths": [
+      "bridge/",
+      "residual_atlas/",
+      "reports/",
+      "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
+      "paper/13-compact-weyl-maxwell-second-order-tangent-cone-claim-map.json",
+      "notes/d-quotient-einstein-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "THEOREM EXTRACTION. The target is a correct semi-Fredholm AMM bridge, not a repaired two-sided Fredholm operator. Treat the finite-harmonic theorem as a control and restriction, never as the proof of the Sobolev statement.",
+    "notes": [
+      "A negative result remains valuable if it isolates the first AMM hypothesis that fourth-order Weyl--Maxwell data violate.",
+      "The classic momentum-map cone is prior art; novelty lies in the complete fourth-order fixed-bundle realization and its relation to the formal-versus-bounded obstruction hierarchy."
+    ],
+    "input_commit": "4ce8494d05ee09b6cb6f01254d4f251900ee88c5",
+    "stream": "bridge"
+  },
+  "edges": []
+}
