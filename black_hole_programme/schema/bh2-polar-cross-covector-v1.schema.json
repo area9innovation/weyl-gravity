@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "pure-weyl-bh2-polar-cross-covector-v1",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "result_token", "dependency_tags", "lifecycle",
+    "parity", "provenance", "definition", "invariant_theorem",
+    "S_values_a_Kinv_aH", "extra_block_signatures", "detK_values",
+    "a_records", "over_determination_points", "EX1_native_frame_rational",
+    "components_non_rational_in_native_frame", "real_exceptional_frequencies",
+    "omega_zero_excluded", "mutation_nonnull_rejected", "fixtures_recovered",
+    "claim_flags", "not_claimed", "stage_seconds"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-bh2-polar-cross-covector-v1"},
+    "result_id": {"type": "string"},
+    "result_token": {"type": "string"},
+    "dependency_tags": {
+      "type": "array",
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL",
+                         "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}
+    },
+    "lifecycle": {"enum": ["CLASSIFIED", "COEFFICIENT_COMPUTED",
+                           "QME_RESTORED", "RESIDUAL_TRANSFERRED",
+                           "LORENTZIAN_CERTIFIED"]},
+    "parity": {"type": "string"},
+    "setting": {"type": "string"},
+    "provenance": {
+      "type": "object",
+      "required": ["normal_form_certificate", "normal_form_sha256",
+                   "polar_fixture_certificate", "polar_fixture_sha256",
+                   "lean_pipeline", "series_order_NORD"],
+      "properties": {
+        "normal_form_certificate": {"type": "string"},
+        "normal_form_sha256": {"type": "string"},
+        "axial_invariant_certificate": {"type": "string"},
+        "axial_invariant_sha256": {"type": "string"},
+        "polar_fixture_certificate": {"type": "string"},
+        "polar_fixture_sha256": {"type": "string"},
+        "lean_pipeline": {"type": "string"},
+        "series_order_NORD": {"type": "integer"}
+      }
+    },
+    "definition": {"type": "string"},
+    "invariant_theorem": {
+      "type": "object",
+      "required": ["cross_covector_nonzero", "extra_block_hermitian",
+                   "extra_block_signature", "extra_block_nondegenerate",
+                   "cross_covector_K_null", "schur_complement_vanishes",
+                   "einstein_line_isotropic_in_full_span"],
+      "properties": {
+        "cross_covector_nonzero": {"const": true},
+        "extra_block_hermitian": {"const": true},
+        "extra_block_signature": {"type": "array"},
+        "extra_block_nondegenerate": {"const": true},
+        "cross_covector_K_null": {"type": "string"},
+        "schur_complement_vanishes": {"const": true},
+        "einstein_line_isotropic_in_full_span": {"const": true}
+      }
+    },
+    "S_values_a_Kinv_aH": {"type": "object"},
+    "extra_block_signatures": {"type": "object"},
+    "detK_values": {"type": "object"},
+    "a_records": {"type": "object"},
+    "over_determination_points": {"type": "integer", "minimum": 3},
+    "additional_scratch_confirmations": {"type": "string"},
+    "EX1_native_frame_rational": {"type": "string"},
+    "components_non_rational_in_native_frame": {"type": "array"},
+    "real_exceptional_frequencies": {"type": "array"},
+    "omega_zero_excluded": {"type": "string"},
+    "conjugate_frequency_note": {"type": "string"},
+    "mutation_nonnull_rejected": {"const": true},
+    "fixtures_recovered": {"type": "object"},
+    "claim_flags": {"type": "object"},
+    "not_claimed": {"type": "object"},
+    "schema_path": {"type": "string"},
+    "schema_sha256": {"type": ["string", "null"]},
+    "stage_seconds": {"type": "object"}
+  }
+}

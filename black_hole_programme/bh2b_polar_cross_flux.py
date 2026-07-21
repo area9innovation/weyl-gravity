@@ -100,7 +100,8 @@ def _cancel(e):
     return sp.cancel(sp.together(e))
 
 
-def run_pipeline(geo_cls, wnum, radii, return_exprs=False):
+def run_pipeline(geo_cls, wnum, radii, return_exprs=False, lean=False,
+                 Frb_cache=None):
     """Full polar cross-flux pipeline at frequency fixture wnum (m = 1)."""
     t0_all = time.time()
     out: dict = {"stage_seconds": {}}
@@ -646,17 +647,30 @@ def run_pipeline(geo_cls, wnum, radii, return_exprs=False):
 
     hFa, fnsA = polar_h_flux("a")
     hFb, fnsB = polar_h_flux("b")
-    w_ab = lt.omega(hFa, hFb)
-    _require(w_ab[3] == 0, "phi flux component nonzero")
-    Frb = _cancel(sp.integrate(sp.integrate(w_ab[1] * r**2, (x, -1, 1)),
-                               (ph, 0, 2 * sp.pi)))
-    stage("ef_bilinear", t0)
+    if Frb_cache is not None:
+        # the sphere-integrated EF radial bilinear is built from abstract h
+        # functions and is INDEPENDENT of omega -- reuse it across frequencies.
+        Frb = Frb_cache
+        stage("ef_bilinear_cached", t0)
+    else:
+        w_ab = lt.omega(hFa, hFb)
+        _require(w_ab[3] == 0, "phi flux component nonzero")
+        Frb = _cancel(sp.integrate(sp.integrate(w_ab[1] * r**2, (x, -1, 1)),
+                                   (ph, 0, 2 * sp.pi)))
+        stage("ef_bilinear", t0)
 
     t0 = time.time()
     fam_p = {"E": Ein_p, "G": Gau_p, "X0": comp_p[0], "X1": comp_p[1], "X2": comp_p[2]}
     fam_m = {"E": Ein_m, "G": Gau_m, "X0": comp_m[0], "X1": comp_m[1], "X2": comp_m[2]}
     atoms = list(Frb.atoms(sp.Derivative)) + [f for f in fnsA + fnsB if Frb.has(f)]
     names = {"FA": 0, "FB": 1, "FC": 2, "FK": 3}
+    if lean:
+        # fast path for the symbolic cross-covector: return the composed mode
+        # families and the omega-independent bilinear; skip the fixture flux
+        # matrix and its asserts (recomputed downstream only for E|Xj, Xi|Xj).
+        return {"fam_p": fam_p, "fam_m": fam_m, "Frb": Frb, "atoms": atoms,
+                "names": names, "rho": rho, "r": r, "v": v, "wnum": wnum,
+                "alpha": alpha, "stage_seconds": out["stage_seconds"]}
 
     def flux_value(na, nb, rho0):
         sub = {}
