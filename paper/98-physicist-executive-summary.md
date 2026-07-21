@@ -1,9 +1,9 @@
 # Pure-Weyl gravity programme: executive summary for physicists
 
 **Last substantive update: 21 July 2026 — certified two-phase counterflow
-causal BV parent and fixed-charge clock obstruction, exact five-dimensional
-compact-Cauchy adjoint kernel, action-derived observer repair no-go, and
-symbolic-frequency black-hole pairing programme.**
+causal BV parent, exact charge--clock complementarity and action--angle
+orbital-stability theorem, exact five-dimensional compact-Cauchy adjoint
+kernel, and the symbolic-frequency black-hole pairing programme.**
 
 > **Research context.** Asger Alstrup Palm directs the programme and is the
 > accountable human contact. AI systems perform substantial derivation,
@@ -65,7 +65,28 @@ performed in the relative global sector: fixing $Q_{\rm rel}$ and quotienting
 its shift removes the entire relative-clock Darboux pair. Thus the branch on
 which $D$ becomes null contains no physical relative clock. The alternative
 unrestricted branch retains the clock pair, but raw $D$ is then a charged
-physical symmetry. Its full health audit remains open.
+physical symmetry. Its charge curvature is positive and it has no real
+exponentially growing root. Its exact size-two zero Jordan block is now
+identified as the tangent to an integrable action--angle family: changing the
+relative charge changes the clock rate and therefore produces a phase drift
+linear in time. The augmented energy has one positive transverse direction,
+no negative direction, and the physical phase orbit as its zero direction.
+Fixed-charge orbital stability and shifted-frequency modulated stability
+pass, although absolute stability of a lifted or compact phase fails when
+different clock rates are compared. This reduced family is not a nearby
+family of complete coupled Berger backgrounds: at the selected geometry the
+full constraints force the charge variation to vanish. The all-Hodge
+physical-health audit is therefore still open.
+
+Two further promotions have now failed cleanly at their first maps. The
+selected Berger counterflow background is not a solution of conventional
+Einstein gravity coupled to the same matter for any constants
+$(\Lambda,\kappa)$, so there is no same-base-point Einstein tangent inclusion
+or additional-mode cofiber to construct there. Separately, the background's
+five-dimensional stabilizer algebra is exact, but the 70-row parent does not
+yet export the four spatial symmetry actions and moment maps needed for a
+residual BFV receiver. These are scoped incidence and carrier obstructions,
+not failures of the causal parent or universal no-go theorems.
 
 At one Euclidean loop order, strict fixed-field-content pure Weyl gravity has
 a nonzero local BV anomaly. A tau-adic compensator extension makes that local
@@ -90,7 +111,7 @@ quotients remain open.
 | Complete causal free complexes on several declared backgrounds | Relational clocks, causal redshift, and localized detector preparations | Invariant branch-resolved interactions |
 | Explicit Einstein-image and additional fourth-order classical summands | Bounded nonlinear continuation on selected finite mode spaces | Complete bounded finite-support cone |
 | Nonzero Lee--Wald pairings for selected additional directions | Schwarzschild horizon admissibility plus two-parity finite-norm Einstein selection at one fixture | Asymptotic Bach phase space and scattering |
-| Exact nonlinear balance conditions and a strict local Euclidean one-loop anomaly | A two-phase counterflow changed theory with a certified causal BV parent but an exact fixed-charge clock obstruction; compensator restoration and reduced Hadamard/Krein two-point functions on other carriers | Health of the unrestricted charged-time counterflow branch, a full-BV state, Lorentzian QME, particles, and unitarity |
+| Exact nonlinear balance conditions and a strict local Euclidean one-loop anomaly | A two-phase counterflow changed theory with a certified causal BV parent, exact charge--clock complementarity, and an integrable action--angle charged-clock block with positive transverse energy; compensator restoration and reduced Hadamard/Krein two-point functions on other carriers | All-Hodge health of the unrestricted charged-time counterflow branch, a full-BV state, Lorentzian QME, particles, and unitarity |
 
 The [public construction map](../certificate_graph/universe-building-dag.svg)
 shows the dependency structure; the
@@ -180,10 +201,17 @@ an isolated point and supplies no stationary route to the round cylinder.
 Raw $D$ remains charged on the unrestricted parent. On the derived
 fixed-$Q_{\rm rel}$ fibre, quotienting the relative shift makes $D$ null but
 also contracts the complete relative-clock Darboux pair: the physical clock
-dimension is zero. The next Classical gate is therefore the distinct
-unrestricted branch, where the clock survives but time translation is a
-charged physical symmetry. Positivity of the homogeneous trace block alone
-is not a full health theorem for that branch.
+dimension is zero. On the distinct unrestricted branch the clock survives
+and time translation is a charged physical symmetry. Its exact homogeneous
+charge block has positive curvature and no exponential root. The size-two
+zero Jordan chain is exactly the tangent to an integrable action--angle
+family with charge-dependent clock rate, not a negative-energy mode. It is
+fixed-charge orbitally stable and shifted-frequency modulated stable, while
+absolute comparison of clocks with different rates accumulates phase. The
+complete coupled background is nevertheless locally isolated and does not
+inherit that nearby reduced family. The next Classical gate is the all-Hodge
+pairing, gradient, characteristic and radical census; the homogeneous normal
+form is not a full health theorem.
 
 > **Immediate limitation.** This is not a universal removal of radiative
 > gravitons, an open viable phase for generic backgrounds, or an
@@ -337,8 +365,10 @@ the covariant causal complex; a healthy clock can coexist with total
 zero-charge $D$ at linear fixed coupling; the compact additional axial
 space is nonradical; exact nonlinear balance and resonance obstructions exist;
 and the strict/extended quantum alternatives are computationally separated.
-The two-phase counterflow construction now supplies one changed-theory causal
-parent worth consuming before another classical architecture is introduced.
+The two-phase counterflow construction supplies one changed-theory causal
+parent with an exact charge--clock tradeoff and homogeneous action--angle
+stability theorem. Its charged-time branch is now undergoing the all-Hodge
+health audit before another classical architecture is introduced.
 
 ## Authoritative result ledger
 
@@ -349,7 +379,7 @@ milestones are excluded.
 |---|---|---|---|
 | Free causal complex and residual cohomology | Complete cylinder causal complex; selected zero-charge residual vacuum and one-particle cohomology acyclic; $H^4\cong\mathbb C^2$ contains deformation classes | **Certified on their distinct carriers** | The finite residual receiver is not an arbitrary-support all-energy retract; the latter has a rank-64 unary obstruction and requires completion; [Papers 7--8](07-08-conformal-residual-cohomology-computational-supplement.pdf) |
 | Is $D$ gauge? | Charged on the unrestricted compact phase space; gauge on the Taub-zero derived sector | **Certified, sector-dependent** | Must be recomputed with boundaries and matter; [status ledger](../d_quotient_programme/reports/consolidated-status.md) |
-| Clocks and redshift | Healthy original Berger clock and retarded Maxwell redshift fixture; the old apparatus repair is obstructed; the two-phase theory has a causal parent, but its fixed-charge quotient removes the relative clock | **Original observable certified / changed fixed-charge clock obstructed** | The unrestricted charged-$D$ branch and a new action-derived observable remain open; [Paper 9](09-relational-clocks-berger-d-cartan.pdf) |
+| Clocks and redshift | Healthy original Berger clock and retarded Maxwell redshift fixture; the old apparatus repair is obstructed; the two-phase theory has a causal parent, but its fixed-charge quotient removes the relative clock; its unrestricted clock is an exact positive action--angle system with charge-dependent rate | **Original observable certified / changed-theory charge--clock and orbital theorem certified** | All-Hodge health and a nonzero action-derived observable on the charged-$D$ branch remain open; [Paper 9](09-relational-clocks-berger-d-cartan.pdf) |
 | Einstein image and additional branches | Linear inclusion, axial additional nonradical block, and polar primary decomposition certified | **Certified classically** | Polar current, residual descent, causal boundaries, and quantization open; [Paper 92](92-extra-axial-lee-wald-bridge.pdf) |
 | Nonlinear tangent cone and resonances | Formal finite exponential-polynomial cone equals five-charge zero set; tuned standard bounded cone is classified for every $\ell\ge2$; all 164 two-momentum basis coefficients are closed | **Formal cone and all-$\ell$ standard subcone certified; larger cone partial** | Arbitrary-amplitude two-momentum zero variety, causal, infinite-mode, and all-order problems open; [Paper 13](13-compact-weyl-maxwell-second-order-tangent-cone.pdf) |
 | Interaction and branch mixing | Retained mixed tensor is exact/cyclic; fuller ghost structure removes it through first jet | **Representative certified; invariant class open** | Second-jet image and branch-resolved operation not certified; [Paper 11](11-gravity-light-cyclic-causal-ell3.pdf) |
@@ -414,14 +444,15 @@ element is nontrivial relational evolution with total presymplectic
 degeneracy. The next gate is one localized, backreacting emitter--receiver
 experiment with recoil and an apparatus bracket.
 
-The two-phase counterflow route has a different split.  Its fixed-charge
-quotient removes the entire relative-clock Darboux pair.  On the unrestricted
-branch that pair survives, but raw $D$ is a charged physical symmetry.  A
-theorem-level preflight now constructs a local-gauge-closed clock-slice event
-map and proves covariance, rather than quotient invariance, under the charged
-$R_{\rm rel}$ and $D$ flows.  Physical instantiation remains open because the
-unrestricted all-Hodge cohomology, descended receiver pairing and a nontrivial
-receiver class have not landed.  No formal phase ratio is called redshift.
+The changed two-phase route has a different and now exact charge--clock
+geometry. Fixing and reducing the relative charge makes $D$ null but removes
+the clock; retaining the clock makes $D$ charged. On the unrestricted branch
+the homogeneous clock is an integrable action--angle system with positive
+transverse energy and charge-dependent rate. A certified event-map preflight
+constructs a local-gauge-closed clock-slice observable and proves covariance,
+rather than quotient invariance, under the charged $R_{\rm rel}$ and $D$
+flows. Its physical nonzero receiver and redshift remain conditional on the
+unrestricted all-Hodge cohomology and descended pairing.
 
 ## What would materially change the verdict
 
@@ -464,7 +495,7 @@ to its derivation and verifier.
 | [Cyclic causal Green transfer](90-cyclic-green-transfer-bridge.md) | Abstract conditional theorem with Berger, flat, and Nariai consumers; one Nariai formal tangent | Extend to a finite background family or second detour theory. |
 | [Charge-fibre obstruction](91-charge-fibre-taub-bridge.md) | Formal cone, all-$\ell$ tuned standard cone, and all 164 two-momentum basis coefficients certified | Classify the common amplitude zero variety. |
 | [Additional axial/polar current](92-extra-axial-lee-wald-bridge.md) | Axial direct current and polar equation module certified | Compute the polar current, ungauged lift, residual descent, and physical boundary disposition. |
-| Relational clock and light | Original global retarded redshift certified; the old apparatus completion is obstructed; the two-phase causal parent loses its clock on the fixed-charge quotient | Audit the unrestricted charged-$D$ branch, then build an action-derived observable only if its clock survives the full reduction. |
+| Relational clock and light | Original global retarded redshift certified; the old apparatus completion is obstructed; the two-phase causal parent loses its clock on the fixed-charge quotient, while its unrestricted clock is a positive action--angle system with charge-dependent rate and a certified covariant event-map contract | Complete the all-Hodge charged-$D$ health and receiver-pairing audit, then instantiate a nonzero action-derived observable. |
 | Black-hole radiation | Static theorem and horizon reach in both parities; finite norm at infinity selects Einstein in both parities at one fixture | Generalize in frequency and $\ell$, then construct the asymptotic phase space. |
 | Einstein--Weyl relative theory | Matching action-derived tensors through $q_3$; strict $f_1$ has a nonzero arity-two defect; global five-charge receiver and Hessian Green-current cone certified | Precompose all stabilizers, add cyclic duals, compare with Lee--Wald, and determine the correct relative nonlinear extension. |
 | Residual branch mixing | Retained cyclic representative and rank-46 carrier exist; physical interaction class not certified | Finish the second-jet image test and obtain an admissible branch resolution. |

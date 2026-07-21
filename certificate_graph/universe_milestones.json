@@ -54,6 +54,20 @@
       ]
     },
     {
+      "id": "counterflow_clock",
+      "tier": "core",
+      "label": "Can a repaired universe keep its clock?",
+      "detail": "a changed gravity-clock theory propagates causally, but making time redundant removes its clock; keeping the clock makes time charged, with positive action-angle motion and a rate-dependent phase drift",
+      "next": "test the pairing, gradients and characteristic behavior of every nonhomogeneous wave sector, then instantiate a nonzero relational receiver",
+      "status": "partial",
+      "evidence": [
+        "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1",
+        "TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_V1",
+        "TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_V1",
+        "TWO_PHASE_COUNTERFLOW_SECULAR_CLOCK_ORBITAL_STABILITY_V1"
+      ]
+    },
+    {
       "id": "interactions",
       "tier": "classical_physics",
       "label": "Gravity and light interact",
@@ -143,8 +157,8 @@
       "id": "gravity_waves",
       "tier": "classical_physics",
       "label": "Gravitational waves",
-      "detail": "familiar and extra waves both carry currents; at a Schwarzschild horizon the extra wave has nonzero mixed and self flux and survives local causal boundary tests",
-      "next": "extend the black-hole test to polar and complex-frequency waves, then test stability and detectors",
+      "detail": "familiar and extra waves both carry currents; extra waves reach a Schwarzschild horizon, but finite symplectic size at infinity selects the familiar sector in both parities at one exact fixture",
+      "next": "generalize the infinity test in frequency and angular momentum, then build the scattering phase space and detectors",
       "status": "partial",
       "evidence": [
         "EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION",
@@ -282,8 +296,8 @@
       "id": "black_holes",
       "tier": "future_physics",
       "label": "Black holes with waves",
-      "detail": "the first extra axial wave is regular, bounded and luminal with nonzero mixed and self horizon flux; ordinary local causal boundary rules do not remove it",
-      "next": "test polar and complex-frequency waves, then build full exterior evolution, ringdown and stability",
+      "detail": "additional axial and polar waves are regular at the horizon, but at one exact frequency their reconstructed fields have infinite symplectic size at infinity, leaving only the Einstein-like waves in the finite-size class",
+      "next": "prove the boundary classification for symbolic frequency and general angular momentum, then build exterior evolution, ringdown and stability",
       "status": "partial",
       "evidence": [
         "PURE_WEYL_BH2A_AXIAL_OPERATOR",
@@ -291,7 +305,10 @@
         "PURE_WEYL_BH2A_FLUX_MATRIX",
         "PURE_WEYL_BH2A_CROSS_FLUX",
         "PURE_WEYL_BH2A_CAUSAL_DISPOSITION",
-        "PURE_WEYL_BH2B_POLAR_SPLIT"
+        "PURE_WEYL_BH2B_POLAR_SPLIT",
+        "PURE_WEYL_BH2C_FLUX_CLASS",
+        "PURE_WEYL_BH2C_POLAR_FLUX_CLASS",
+        "PURE_WEYL_BH2C_METRIC_ALL_ORDERS"
       ]
     },
     {
@@ -317,6 +334,9 @@
     {"from": "gauge_complex", "to": "causality", "label": "makes propagation testable"},
     {"from": "gauge_complex", "to": "residual", "label": "identifies equivalent descriptions"},
     {"from": "gauge_complex", "to": "clock", "label": "allows matter clocks"},
+    {"from": "gauge_complex", "to": "counterflow_clock", "label": "supports a changed clock theory"},
+    {"from": "causality", "to": "counterflow_clock", "label": "certifies its propagation rules"},
+    {"from": "counterflow_clock", "to": "redshift", "label": "may supply a future charged-time reading"},
     {"from": "gauge_complex", "to": "light", "label": "supports electromagnetic fields"},
     {"from": "gauge_complex", "to": "gravity_waves", "label": "supports gravitational waves"},
     {"from": "gauge_complex", "to": "einstein_weyl_relative", "label": "allows comparison with ordinary relativity"},

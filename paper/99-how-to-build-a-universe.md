@@ -206,6 +206,18 @@ version is otherwise healthy. That alternative is closer to ordinary physics,
 where time translations generate energy, but it is a different answer to the
 project's original question.
 
+The first part of that health test is now exact. The clock's energy bends in
+the positive direction, and there is no exponentially growing solution in
+its homogeneous block. A small change in the clock's conserved momentum
+changes its rate, so its phase gradually drifts away from the original clock.
+The exact equations now show that this is the ordinary action--angle behavior
+of healthy clocks with slightly different rates, not a negative-energy mode.
+After allowing for the changed rate, the motion is orbitally stable. There is
+an important qualification: the complete gravity--clock background is an
+isolated solution, so the nearby family of clock rates exists in the reduced
+clock system rather than as a certified family of complete universes. Every
+nonhomogeneous wave sector must still pass its own health test.
+
 The original Berger laboratory adds something more tangible: a matter field acts as a
 clock, and an electromagnetic signal is emitted during a bounded time
 interval. Its response is retarded, and the frequency measured relative to
@@ -374,7 +386,7 @@ tested.
 
 | Demonstrated in a model | Partly demonstrated | Open |
 |---|---|---|
-| Complete classical causal propagation on several controlled backgrounds, including a changed two-phase counterflow parent | A causal clock-defined redshift signal; the new counterflow model is causal but loses its clock when time is made gauge-like | Electrons, mass generation and Standard Model matter |
+| Complete classical causal propagation on several controlled backgrounds, including a changed two-phase counterflow parent | A causal clock-defined redshift signal; the new counterflow model loses its clock when time is made gauge-like, while the surviving charged clock is a healthy action--angle system in its homogeneous sector but still awaits the all-wave audit | Electrons, mass generation and Standard Model matter |
 | Gauge reduction and exact classical comparison rules | Additional compact and black-hole wave families, with their final physical status unresolved | A positive interacting quantum state and physical particles |
 | Global nonlinear balance conditions and explicit resonance obstructions | Static black-hole thermodynamics; additional waves reach the horizon but are excluded by finite size at infinity in both parities at one fixture | Full black-hole scattering, stability, ringdown and Hawking radiation |
 | A one-loop anomaly calculation and a compensator-based local repair in a changed theory | Candidate reduced quantum two-point functions with both positive and negative signs | Gravitational lensing, realistic cosmology, dark matter and dark energy |
