@@ -48,3 +48,5 @@ python3 d_quotient_classical/compensator/two_phase_counterflow_hamiltonian_hopf_
 python3 d_quotient_classical/compensator/verify_two_phase_counterflow_hamiltonian_hopf_retuning_locus.py
 python3 d_quotient_classical/compensator/two_phase_counterflow_hamiltonian_hopf_retuning_locus.py --full-residue --check
 ```
+
+CLOSE-OUT: OBSTRUCTED — no stable same-field `j=1/2` retuning exists on the connected trace-healthy family; certificate and exact payload are recorded above.
