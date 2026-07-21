@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/observer-legacy-receiver-historical-base-binding-repair-v1-REQUEST-87d7ed727e906568",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/observer-legacy-receiver-historical-base-binding-repair-v1-REQUEST-87d7ed727e906568.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/observer-legacy-receiver-historical-base-binding-repair-v1", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T18:20:02Z", "seq": 1, "payload": {"target": "sf:program/request/observer-legacy-receiver-historical-base-binding-repair-v1-to-observer-87d7ed727e906568", "request_id": "sf:program/request/observer-legacy-receiver-historical-base-binding-repair-v1-to-observer-87d7ed727e906568", "from_item": "sf:program/work/observer-legacy-receiver-historical-base-binding-repair-v1", "to_stream": "observer", "need": "You hold the exclusive lease for observer-legacy-receiver-historical-base-binding-repair-v1. Do not pull another item. Run: s-f work-package sf:program/work/observer-legacy-receiver-historical-base-binding-repair-v1 -o /tmp/observer-historical-base-repair-brief.md . Repair only the immutable five-row historical-base binding and its declared direct consumers, preserve both legacy NO_CERTIFIED_MAP dispositions, and close or report the first exact additional stale pin. After terminal disposition, the separately queued full Tier-3 successor owns the uninterrupted suite; do not run or patch that successor inside this item.", "typed": "ASSIGNED_LEASE_PACKAGE_RECOVERY"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "observer"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/observer-legacy-receiver-historical-base-binding-repair-v1"}]
+}
