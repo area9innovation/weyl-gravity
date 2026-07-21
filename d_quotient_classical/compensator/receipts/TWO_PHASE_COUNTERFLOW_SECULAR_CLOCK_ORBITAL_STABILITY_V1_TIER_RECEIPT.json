@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "TWO_PHASE_COUNTERFLOW_SECULAR_CLOCK_ORBITAL_STABILITY_V1_TIER_RECEIPT",
+  "claim_id": "TWO_PHASE_COUNTERFLOW_SECULAR_CLOCK_ORBITAL_STABILITY_V1",
+  "date": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "artifacts": [
+    {"path": "d_quotient_classical/compensator/two_phase_counterflow_secular_clock_orbital_stability.py", "sha256": "e193caf32bc79acab1d56f7f2c1b17873d59041e9026bf5182a7dd22abad20b7"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_SECULAR_CLOCK_ORBITAL_STABILITY_V1.json", "sha256": "679c0b889da5ed9042414dac29bef5608b60490869d1d198c5570ab332af3bde"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_SECULAR_CLOCK_ORBITAL_STABILITY_PAYLOAD_V1.json", "sha256": "f4b002b87f1e966c3f9a3f8bcf2030023e9de076854a0471bddf6a662c7b5d67"},
+    {"path": "d_quotient_classical/compensator/verify_two_phase_counterflow_secular_clock_orbital_stability.py", "sha256": "87b05a0c67718bf480e329485c0ed7eb20e83053abf07715b45452f1f40700fa"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_secular_clock_orbital_stability.py", "sha256": "3dbc3273fe392bbd52ebcc620d2e2efb788eb5c4aa30c7b2eefeffcc91be6c20"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_secular_clock_orbital_stability_atlas.py", "sha256": "9ed5040232e57f3604ede1652ba93d97ad6a7e96ff2d8c607120e807dc712d04"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-secular-clock-orbital-stability-v1.schema.json", "sha256": "23e5f9e1026d257ae76d8591cd65c8e0b2326a61e7b44870d6578cd16d95f064"},
+    {"path": "d_quotient_classical/atlas/generate_two_phase_counterflow_secular_clock_orbital_stability_atlas_fragment.py", "sha256": "f8eb735395f58e2adfe70ed1d066a0a8bcca4f5b6870d673cf503f899a1baedc"},
+    {"path": "d_quotient_classical/atlas/verify_two_phase_counterflow_secular_clock_orbital_stability_atlas_fragment.py", "sha256": "eee1686e2d71d072425008bb33deb5638c1e8b2e43a5d41ec4e9e2edc8487ca3"},
+    {"path": "residual_atlas/two-phase-counterflow-secular-clock-orbital-stability-fragment-v1.json", "sha256": "65b0e47ac1dfab4de220b8306198ca5265c7acddc76cd14524d7f8aebe6f6314"},
+    {"path": "d_quotient_classical/compensator/reports/two-phase-counterflow-secular-clock-orbital-stability-v1.md", "sha256": "b515a200dd58944d7946d358121549e41ea31f28896c1efa76bcd77c39674c72"}
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m py_compile on six scoped Python files; python3 -m json.tool on four structured artifacts", "status": "PASS"},
+      {"command": "git diff --check on the explicit work-item paths", "status": "PASS"}
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 d_quotient_classical/compensator/two_phase_counterflow_secular_clock_orbital_stability.py --check", "elapsed_seconds": 0.58, "status": "PASS", "method": "exact action-angle flow, family derivative, augmented Hessian and coupled stationary separator"},
+      {"command": "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_secular_clock_orbital_stability.py", "elapsed_seconds": 0.54, "status": "PASS", "independent_rail": "independent exact Hamiltonian/Jordan reconstruction, family differentiation, coupled-root solve and mutation checks"},
+      {"command": "python3 -m unittest -v d_quotient_classical.compensator.tests.test_two_phase_counterflow_secular_clock_orbital_stability d_quotient_classical.compensator.tests.test_two_phase_counterflow_secular_clock_orbital_stability_atlas", "elapsed_seconds": 0.71, "status": "PASS", "tests": 6},
+      {"command": "atlas generator check, independent atlas verifier and residual_atlas validator", "elapsed_seconds": 0.21, "status": "PASS"},
+      {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/compensator/schema/two-phase-counterflow-secular-clock-orbital-stability-v1.schema.json -d d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_SECULAR_CLOCK_ORBITAL_STABILITY_V1.json", "elapsed_seconds": 1.60, "status": "PASS"}
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {"command": "six direct certificate/payload imports content-hashed and semantic preconditions checked", "status": "PASS"},
+      {"command": "bash ci/science-forge-shadow.sh", "elapsed_seconds": 4.98, "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS", "findings": "bridge certificate drift, corpus 1362 vs baseline 976, and an unpinned stale Forge binary; diagnostics /tmp/sf-shadow.7V9CoQ"}
+    ]
+  },
+  "tier_3": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m unittest discover -v", "elapsed_seconds": 1.32, "status": "PASS", "tests": 149}
+    ]
+  },
+  "claim_boundary": "The exact homogeneous reduced clock is a positive action-angle system whose zero Jordan shear is a physical family tangent. Absolute lifted and compact-clock trajectory stability fail by dephasing, while fixed-charge and unrestricted orbital stability and shifted-frequency modulated stability pass without making R_rel or D gauge. The complete fixed-action Berger stationary carrier remains isolated. No all-Hodge, nonlinear, observer, Hadamard, QME, particle, scattering, positivity or unitarity theorem follows.",
+  "higher_tiers_not_run": []
+}

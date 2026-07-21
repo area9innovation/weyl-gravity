@@ -1,0 +1,156 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "Orbital comparison uses the charged global R_rel action without declaring it gauge. No all-Hodge, observer or quantum promotion follows.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_SECULAR_CLOCK_ORBITAL_STABILITY_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_SECULAR_CLOCK_ORBITAL_STABILITY_V1",
+          "sha256": "679c0b889da5ed9042414dac29bef5608b60490869d1d198c5570ab332af3bde"
+        }
+      ],
+      "id": "classical.counterflow.unrestricted_clock.action_angle_orbital_stability",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The exact homogeneous Hamiltonian has a size-two zero Jordan block and no exponential root.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The unrestricted global pair has canonical two-form dQ_rel wedge dpsi and positive transverse augmented-energy curvature 1/I.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The secular linear solution is exactly the Q_rel derivative of the physical relative-equilibrium family, not a gauge direction.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Lifted boundedness and absolute compact-clock Lyapunov stability fail by physical dephasing.",
+            "status": "OBSTRUCTED"
+          },
+          "causal_retarded": {
+            "statement": "The imported unary causal carrier does not turn this finite-dimensional stability result into nonlinear causal response.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Phi_t(psi,Q)=(psi+t Q/I,Q) and d_Q Phi_t=(t/I,1): the shear is an exact action-angle family tangent; fixed-charge orbital and shifted-frequency modulated stability pass.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "No second-order Taub map is inferred from the homogeneous action-angle normal form.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "stationary Berger R x S3, a=1, c_squared=9/40",
+        "boundaries": "none; closed S3 Cauchy slices",
+        "carrier": "global Darboux pair (psi mod 2*pi,Q_rel) imported from the 70-row causal parent",
+        "charge_sector": "unrestricted variable-Q_rel reduced homogeneous phase-charge subsystem",
+        "degree": 0,
+        "ell": 0,
+        "k": "NOT_APPLICABLE",
+        "m": 0,
+        "omega": "background relative frequency 3/4; linearized characteristic root 0",
+        "parity": "scalar homogeneous zero mode",
+        "theory": "selected fixed-action two-phase counterflow theory"
+      }
+    },
+    {
+      "claim_boundary": "The exact reduced helical family and the isolated complete coupled stationary locus are distinct carriers. Name matching does not identify them.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_SECULAR_CLOCK_ORBITAL_STABILITY_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_SECULAR_CLOCK_ORBITAL_STABILITY_V1",
+          "sha256": "679c0b889da5ed9042414dac29bef5608b60490869d1d198c5570ab332af3bde"
+        }
+      ],
+      "id": "classical.counterflow.coupled_berger.charge_family_separator",
+      "mode_data": {
+        "dispersion": {
+          "statement": "This row is a stationary-locus separator, not a propagating mode.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "The charge direction exists on the unrestricted parent but is transverse to the full coupled stationary locus.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "At fixed geometry all three stationary rows equal -(16*(Q/I)^2-9)/32, with only isolated roots +/-Q0.",
+          "status": "OBSTRUCTED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The separator decides existence of nearby coupled backgrounds, not time stability.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "Causal transport away from the isolated selected background is not certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The stationary separator is -(5*Q_rel^2-162*pi^4)/(576*pi^4): the reduced family tangent does not lift to a nearby complete fixed-action Berger family, and the full linearized constraint requires delta Q_rel=0.",
+            "status": "OBSTRUCTED"
+          }
+        },
+        "taub_maps": {
+          "statement": "No tangent-cone or Taub identification is made.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "stationary Berger R x S3, a=1, c_squared=9/40",
+        "boundaries": "none; closed S3 Cauchy slices",
+        "carrier": "complete fixed-action homogeneous Berger stationarity equations, not merely the relative phase subsystem",
+        "charge_sector": "positive-frequency local component near Q_rel=9*pi^2*sqrt(10)/5",
+        "degree": 0,
+        "ell": 0,
+        "k": "NOT_APPLICABLE",
+        "m": 0,
+        "omega": "background relative frequency 3/4; linearized characteristic root 0",
+        "parity": "scalar homogeneous zero mode",
+        "theory": "selected fixed-action two-phase counterflow theory"
+      }
+    }
+  ],
+  "generated_by": "d_quotient_classical/atlas/generate_two_phase_counterflow_secular_clock_orbital_stability_atlas_fragment.py",
+  "generated_by_sha256": "f8eb735395f58e2adfe70ed1d066a0a8bcca4f5b6870d673cf503f899a1baedc",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "classical",
+  "verification_commands": [
+    "python3 d_quotient_classical/compensator/two_phase_counterflow_secular_clock_orbital_stability.py --check",
+    "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_secular_clock_orbital_stability.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-secular-clock-orbital-stability-fragment-v1.json"
+  ]
+}

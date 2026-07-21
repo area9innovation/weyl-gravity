@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "imports",
+    "payload_ref",
+    "terminal_verdict",
+    "stability_statuses",
+    "next_gate",
+    "claim_boundary",
+    "content_hashes"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-secular-clock-orbital-stability-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_SECULAR_CLOCK_ORBITAL_STABILITY_V1"},
+    "result_state": {"const": "CERTIFIED_REDUCED_ACTION_ANGLE_TANGENT_WITH_ABSOLUTE_DEPHASING_AND_ISOLATED_COUPLED_BACKGROUND"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true,
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}
+    },
+    "imports": {"type": "object", "minProperties": 3},
+    "payload_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "content_sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "terminal_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result_state",
+        "Jordan_direction_is_reduced_family_tangent",
+        "nearby_full_coupled_background_family",
+        "genuine_negative_energy_or_exponential_instability",
+        "absolute_compact_clock_stability",
+        "fixed_charge_orbital_stability",
+        "frequency_modulated_stability",
+        "all_Hodge_gate_activated"
+      ],
+      "properties": {
+        "result_state": {"const": "CERTIFIED_REDUCED_ACTION_ANGLE_TANGENT_WITH_ABSOLUTE_DEPHASING_AND_ISOLATED_COUPLED_BACKGROUND"},
+        "Jordan_direction_is_reduced_family_tangent": {"const": true},
+        "nearby_full_coupled_background_family": {"const": false},
+        "genuine_negative_energy_or_exponential_instability": {"const": false},
+        "absolute_compact_clock_stability": {"const": false},
+        "fixed_charge_orbital_stability": {"const": true},
+        "frequency_modulated_stability": {"const": true},
+        "all_Hodge_gate_activated": {"const": true}
+      }
+    },
+    "stability_statuses": {
+      "type": "object",
+      "additionalProperties": {"enum": ["PASS", "FAIL"]},
+      "minProperties": 6
+    },
+    "next_gate": {"type": "object"},
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["establishes", "does_not_establish"],
+      "properties": {
+        "establishes": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+        "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}}
+      }
+    },
+    "content_hashes": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    }
+  }
+}
