@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/observer-berger84-apparatus-handoff-provenance-relock-REQUEST-e8e82c6ee0bd65b1",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/observer-berger84-apparatus-handoff-provenance-relock-REQUEST-e8e82c6ee0bd65b1.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/observer-berger84-apparatus-handoff-provenance-relock", "base_revision": "science-forge-ir-v0", "when": null, "seq": 1, "payload": {"target": "sf:program/request/observer-berger84-apparatus-handoff-provenance-relock-to-observer-e8e82c6ee0bd65b1", "request_id": "sf:program/request/observer-berger84-apparatus-handoff-provenance-relock-to-observer-e8e82c6ee0bd65b1", "from_item": "sf:program/work/observer-berger84-apparatus-handoff-provenance-relock", "to_stream": "observer", "need": "You already hold the live exclusive lease for observer-berger84-apparatus-handoff-provenance-relock. Do not call work pull again. Run: s-f work-package sf:program/work/observer-berger84-apparatus-handoff-provenance-relock -o /tmp/observer-current-brief.md . Read that package and continue the provenance relock. The coordinator has already safely materialized the 160 absent committed Observer files; a fresh drift-audit now reports 0 MISSING_COMMITTED and preserves 6 MODIFIED paths. Re-audit, record those counts, repair the declared stale chain, then run the uninterrupted full Observer Tier 3 rail. If a command refuses, create a typed request with the exact refusal.", "typed": "ASSIGNED_LEASE_PACKAGE_RECOVERY"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "observer"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/observer-berger84-apparatus-handoff-provenance-relock"}]
+}
