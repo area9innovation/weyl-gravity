@@ -31,8 +31,7 @@ observer dispositions passed, together with 16 fail-closed mutations (17
 tests total). No observer science was reopened and no scientific claim was
 changed.
 
-EVIDENCE:
-`closed_universe_observers/receipts/PAPER09_PROMOTION_AFTER_GIT_ATTACHED_TIER3_V3_NO_PROMOTION.json`;
+EVIDENCE: `closed_universe_observers/receipts/PAPER09_PROMOTION_AFTER_GIT_ATTACHED_TIER3_V3_NO_PROMOTION.json`;
 `closed_universe_observers/receipts/PAPER09_PROMOTION_AFTER_GIT_ATTACHED_TIER3_V3_TIER_RECEIPT.json`;
 `closed_universe_observers/receipts/OBSERVER_TIER3_GIT_ATTACHED_EXACT_MATERIALIZATION_RERUN_V1_OBSTRUCTION.json`.
 
