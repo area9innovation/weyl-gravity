@@ -3758,19 +3758,3 @@ part of the physical definition of a result.  The job of each next rail is to
 show whether that sector is dynamically selected, operationally observable,
 or too narrow to describe the intended universe.
 
-## Bridge lifecycle update: cylinder full-BV anomaly receiver
-
-The arbitrary-support cylinder chain-map bridge is `OBSTRUCTED` for the
-selected finite derived receiver.  The complete 386-row causal contraction to
-the all-energy 30-row minimal endpoint remains certified; the subsequent
-`SO(4,2)`-equivariant SDR to weights `2,3,4` fails already at unary order.
-The two-chirality `E_5` cohomology block has dimension 64, whereas the target
-weight-five block is zero.  Thus the scoped arity-two transfer and all three
-anomaly images remain undefined.
-
-The activation gate for a successor is an all-energy rapid-decay time-slice
-carrier containing every `E_n`, `A_n`, and `L_n` branch with the same fifteen
-CE/BFV generators.  It must carry portable `q1`, `pi_cl`, `iota_cl`, and
-`s_cl`; after that, the action-defined six-role `q2` can be serialized and
-tested.  No finite-window repair or name-based mode identification is
-admissible.
