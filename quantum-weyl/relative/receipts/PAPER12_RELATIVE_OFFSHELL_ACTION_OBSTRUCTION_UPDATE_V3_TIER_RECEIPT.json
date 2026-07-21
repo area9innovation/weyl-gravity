@@ -1,0 +1,116 @@
+{
+  "schema": "quantum-publication-tier-receipt-v1",
+  "result_id": "PAPER12_RELATIVE_OFFSHELL_ACTION_OBSTRUCTION_UPDATE_V3_TIER_RECEIPT",
+  "subject_result_id": "PAPER_12_PURE_WEYL_ONE_LOOP_BV_ANOMALY_DRAFT",
+  "recorded_at": "2026-07-21",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "source_pins": {
+    "relative_changed_action_obstruction": "2eac0980d5ee9e906003807f732faa6a7da4fb9f57ee6e526843ea1db42f3688",
+    "relative_changed_action_receipt": "6eeb969aa2519b721acab299e3baf30edd7f296f63699d5edbd67874415255a5",
+    "six_density_action_response": "cb47110872bdf976f7fda661f722041f034936d8ec1087781d90615ce3b922fe",
+    "six_density_action_response_receipt": "a0d9ff08721120166023def1d8a4e9f96dae21f26a08526eb80f170acb1825e7",
+    "minimal_ladder_synthesis": "a942ff6a15af0c8a79978dc22ff2cc128a238c3abd6feb2685197d48deaeaf37",
+    "minimal_ladder_synthesis_receipt": "fb52c36f2f23bb19a003cca53ef7ba46085ba17c9d7d261422a2dc047e24f4f8"
+  },
+  "output_hashes": {
+    "manuscript": "777c87b06bb41824063021b587578f9af7460735b169737dd31f9a398efe9c45",
+    "pdf": "4284e12ded178a4cf570850dc62ebb4641e022390c6e352e755ea3da9a875dc5",
+    "claim_map": "915b7ecd66b15f03a3f63468bf88aa821a41267286a041b8a2c7efa8284852dd",
+    "coverage_graph": "aee79942a3a93f911480c6b4ca85e45009e6e8b3edb38bd94f6172136167bc18",
+    "coverage_report": "75ef2b271717af99acc13a076d73136d1499110a6df0d83c0c5392ff6f8a7f28",
+    "claim_map_generator": "eef994db5613083feaca392bc914c6d88ce09eaa4df2f46004e35286b08f3684",
+    "independent_claim_map_verifier": "da9aa5a014f0729760a06a592cca4f61de595a9c7d57963b0a856be1f0b27178",
+    "report": "e481ed82a948c06a0434cb97cd79820b6ec916983e6282258abd65c86ab03dd3",
+    "closeout": "b2d9a625f75209f884af4562b25b1f8fd3289ff56e6b1c5a7aa4888e2c98a71e"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile paper/generate_12_pure_weyl_one_loop_bv_anomaly_claim_map.py paper/verify_12_pure_weyl_one_loop_bv_anomaly_claim_map.py",
+          "elapsed_seconds": 0.04
+        },
+        {
+          "command": "python3 -m json.tool <claim map, coverage graph, coverage report and receipt>",
+          "elapsed_seconds": 0.08
+        },
+        {
+          "command": "git diff --check -- <explicit ten-path publication manifest>",
+          "elapsed_seconds": 0.0
+        }
+      ]
+    },
+    {
+      "tier": 1,
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 paper/generate_12_pure_weyl_one_loop_bv_anomaly_claim_map.py --check",
+          "elapsed_seconds": 0.15,
+          "scope": "deterministic claim-map reproduction with exact source pins"
+        },
+        {
+          "command": "python3 paper/verify_12_pure_weyl_one_loop_bv_anomaly_claim_map.py",
+          "elapsed_seconds": 0.14,
+          "scope": "independent source-hash, manuscript, publication-artifact, lifecycle-boundary and coverage replay",
+          "changed_action_mutation_count": 4
+        },
+        {
+          "command": "python3 paper/generate_12_quantum_anomaly_tables.py --check && python3 paper/verify_12_quantum_anomaly_tables.py",
+          "elapsed_seconds": 0.09,
+          "scope": "generated coefficient ledger and independent table replay"
+        },
+        {
+          "command": "s-f paper-coverage <Paper 12 graph> --mode release --stamp 2026-07-21T00:00:00Z -o <coverage report>",
+          "elapsed_seconds": 0.02,
+          "scope": "bidirectional release audit: 11 classified results, 9 material claims, zero flags"
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error 12-pure-weyl-one-loop-bv-anomaly.tex (pass 1)",
+          "elapsed_seconds": 0.64
+        },
+        {
+          "command": "pdflatex -interaction=nonstopmode -halt-on-error 12-pure-weyl-one-loop-bv-anomaly.tex (pass 2)",
+          "elapsed_seconds": 0.62
+        },
+        {
+          "command": "scan TeX log for Warning, Undefined, Overfull and Underfull; extract PDF text and locate proposition",
+          "elapsed_seconds": 0.03,
+          "warning_count": 0
+        }
+      ]
+    },
+    {
+      "tier": 2,
+      "status": "NOT_RUN",
+      "reason": "All mathematical inputs are unchanged and content-addressed. The complete affected publication chain—producer, independent verifier, generated table ledger, PDF and bidirectional coverage—was run at Tier 1."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "reason": "The paper lifecycle remains WRITING_STARTED with theorem_freeze_authorized=false; this scoped publication update is not a freeze, tag or release of the scientific programme."
+    }
+  ],
+  "failed_pre_runs": [
+    {
+      "status": "FAIL_REPAIRED",
+      "stage": "independent claim-map replay",
+      "reason": "The coverage paper node retained the pre-revision manuscript hash. The verifier rejected it before any pass; the node was updated and release coverage rerun."
+    },
+    {
+      "status": "FAIL_REPAIRED",
+      "stage": "independent claim-map replay",
+      "reason": "The verifier still expected 83 input records after four exact imports were added. The exhaustive cardinality assertion was updated to 87 and replayed successfully."
+    }
+  ],
+  "coordination_deviations": [
+    "The first v3 intent proposed the generic transfer receipt directory, which containment rejected. The receipt was moved into the authorized quantum-weyl/relative/receipts directory before any build.",
+    "A queue pull briefly acquired a different ready quantum item because v3 already had the quantum-qme-1 lease. That unintended lease was immediately yielded without edits or a checkpoint."
+  ],
+  "claim_boundary": "This receipt certifies only the reproducible Paper 12 publication integration of the selected four-derivative changed-action obstruction. It does not compute a relative anomaly coefficient, activate a changed master action or regulator, restore a relative QME, or establish Lorentzian, Hadamard, positivity, particle or unitarity claims."
+}

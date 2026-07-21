@@ -7,7 +7,7 @@
       "body": {
         "paper_class": "technical",
         "path": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-        "manuscript_sha256": "82c33a046ef891372beac7748fa4ba04bfcb9bc75074c5b0382311c7f34bebdd"
+        "manuscript_sha256": "777c87b06bb41824063021b587578f9af7460735b169737dd31f9a398efe9c45"
       }
     },
     {
@@ -469,6 +469,61 @@
         "from": "sf:d_quotient_classical/result/COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1",
         "to": "sf:paper/12-pure-weyl-one-loop-bv-anomaly",
         "claim": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/minimal-compensator-ladder-synthesis-frontier",
+        "edge_kind": "PRIMARY_THEOREM",
+        "stale": false,
+        "version": 1,
+        "stamp": "2026-07-21",
+        "native": {"source_schema": "result-paper-edge-v0"}
+      }
+    },
+    {
+      "kind": "result",
+      "id": "sf:quantum-weyl.relative/result/RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1",
+      "body": {
+        "lifecycle": "CERTIFIED",
+        "boundary": "selected-real-parity-even-diff-u1-four-derivative-changed-action-orbit",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+        "certificate": "quantum-weyl/relative/certificates/RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1.json",
+        "certificate_sha256": "2eac0980d5ee9e906003807f732faa6a7da4fb9f57ee6e526843ea1db42f3688",
+        "source_commit": "ea36d7c75ff0d555491e743a760d710b09fd297c",
+        "stale": false,
+        "superseded": false
+      }
+    },
+    {
+      "kind": "materiality",
+      "id": "sf:materiality/RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1/v1",
+      "body": {
+        "result_id": "sf:quantum-weyl.relative/result/RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1",
+        "materiality": "TECHNICAL",
+        "version": 1,
+        "by": "quantum-qme-team",
+        "stamp": "2026-07-21",
+        "rationale": "The exact two-witness cokernel theorem closes the selected four-derivative changed-action orbit while keeping the master action, relative coefficients and relative QME unactivated.",
+        "native": {"source_schema": "materiality-v0"}
+      }
+    },
+    {
+      "kind": "paper_claim",
+      "id": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/relative-offshell-changed-action-obstruction",
+      "body": {
+        "paper": "sf:paper/12-pure-weyl-one-loop-bv-anomaly",
+        "material": true,
+        "asserts_lifecycle": "CERTIFIED",
+        "boundary": "selected-real-parity-even-diff-u1-four-derivative-changed-action-orbit",
+        "cites": [
+          "sf:quantum-weyl.relative/result/RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1"
+        ],
+        "statement": "The complete declared real parity-even local Diff x U(1) metric-plus-connection action quotient through four derivatives has no preimage for the selected rank-one source-action repair: the axial lambda and polar lambda-squared cokernel functionals vanish on the action-response image but evaluate to -9 and -9/4 on the requested shift. This obstructs only that changed-action orbit; no changed master action, relative anomaly coefficient or relative QME is activated."
+      }
+    },
+    {
+      "kind": "result_paper_edge",
+      "id": "sf:result-paper-edge/RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1/P12/v1",
+      "body": {
+        "from": "sf:quantum-weyl.relative/result/RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1",
+        "to": "sf:paper/12-pure-weyl-one-loop-bv-anomaly",
+        "claim": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/relative-offshell-changed-action-obstruction",
         "edge_kind": "PRIMARY_THEOREM",
         "stale": false,
         "version": 1,

@@ -29,7 +29,7 @@ COVERAGE_REPORT = (
 )
 OUTPUT = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json"
 EXPECTED_MANUSCRIPT_SHA256 = (
-    "82c33a046ef891372beac7748fa4ba04bfcb9bc75074c5b0382311c7f34bebdd"
+    "777c87b06bb41824063021b587578f9af7460735b169737dd31f9a398efe9c45"
 )
 ALL_LOOP_INPUT_COMMIT = "7fabe987861f1e4facfc2282e7023274df2ddc72"
 ALL_LOOP_INPUT_SHA256 = (
@@ -41,6 +41,21 @@ LADDER_SYNTHESIS_SHA256 = (
 )
 LADDER_SYNTHESIS_RECEIPT_SHA256 = (
     "fb52c36f2f23bb19a003cca53ef7ba46085ba17c9d7d261422a2dc047e24f4f8"
+)
+RELATIVE_CHANGED_ACTION_SOURCE_COMMIT = (
+    "ea36d7c75ff0d555491e743a760d710b09fd297c"
+)
+RELATIVE_CHANGED_ACTION_SHA256 = (
+    "2eac0980d5ee9e906003807f732faa6a7da4fb9f57ee6e526843ea1db42f3688"
+)
+RELATIVE_CHANGED_ACTION_RECEIPT_SHA256 = (
+    "6eeb969aa2519b721acab299e3baf30edd7f296f63699d5edbd67874415255a5"
+)
+SIX_DENSITY_ACTION_RESPONSE_SHA256 = (
+    "cb47110872bdf976f7fda661f722041f034936d8ec1087781d90615ce3b922fe"
+)
+SIX_DENSITY_ACTION_RESPONSE_RECEIPT_SHA256 = (
+    "a0d9ff08721120166023def1d8a4e9f96dae21f26a08526eb80f170acb1825e7"
 )
 INPUTS = {
     "strict_AFN0_even": ROOT / "quantum-weyl/local_bv/certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json",
@@ -71,6 +86,10 @@ INPUTS = {
     "quadratic_active_clock_background_stability": ROOT / "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1.json",
     "minimal_compensator_ladder_synthesis": ROOT / "d_quotient_classical/compensator/COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1.json",
     "minimal_compensator_ladder_synthesis_receipt": ROOT / "d_quotient_classical/receipts/COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1_TIER_RECEIPT.json",
+    "relative_offshell_changed_action_obstruction": ROOT / "quantum-weyl/relative/certificates/RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1.json",
+    "relative_offshell_changed_action_obstruction_receipt": ROOT / "quantum-weyl/relative/receipts/RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1_TIER_RECEIPT.json",
+    "six_density_action_response": ROOT / "bridge/certificates/EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1.json",
+    "six_density_action_response_receipt": ROOT / "bridge/einstein_sector/receipts/EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1_TIER_RECEIPT.json",
     "Q1_disposition": ROOT / "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
     "relative_Einstein_Weyl_cyclic_pushforward": ROOT / "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json",
     "anomaly_induced_Gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
@@ -199,6 +218,16 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         "minimal_compensator_ladder_synthesis_receipt"
     ]
     verified_ladder_imports = _verify_ladder_imports(ladder_synthesis)
+    relative_changed_action = values[
+        "relative_offshell_changed_action_obstruction"
+    ]
+    relative_changed_action_receipt = values[
+        "relative_offshell_changed_action_obstruction_receipt"
+    ]
+    six_density_action_response = values["six_density_action_response"]
+    six_density_action_response_receipt = values[
+        "six_density_action_response_receipt"
+    ]
     q1 = values["Q1_disposition"]
     relative_cyclic_pushforward = values[
         "relative_Einstein_Weyl_cyclic_pushforward"
@@ -452,6 +481,84 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         or ladder_synthesis_receipt["tier_1"]["status"] != "PASS"
     ):
         raise ValueError("Paper 12 conditional all-loop dependency drifted")
+    if (
+        _sha256(INPUTS["relative_offshell_changed_action_obstruction"])
+        != RELATIVE_CHANGED_ACTION_SHA256
+        or _sha256(INPUTS["relative_offshell_changed_action_obstruction_receipt"])
+        != RELATIVE_CHANGED_ACTION_RECEIPT_SHA256
+        or _sha256(INPUTS["six_density_action_response"])
+        != SIX_DENSITY_ACTION_RESPONSE_SHA256
+        or _sha256(INPUTS["six_density_action_response_receipt"])
+        != SIX_DENSITY_ACTION_RESPONSE_RECEIPT_SHA256
+        or relative_changed_action["result_state"]
+        != "OBSTRUCTED_COMPLETE_PARITY_EVEN_FOUR_DERIVATIVE_LOCAL_ACTION_ANSATZ"
+        or relative_changed_action["lifecycle_status"] != "CLASSIFIED"
+        or relative_changed_action["dependency_tags"]
+        != ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+        or relative_changed_action["selected_repair_orbit"]["selection"]
+        != "QUADRATIC_ACTION_DEFORMATION_ONLY"
+        or relative_changed_action["selected_repair_orbit"]
+        ["axial_and_polar_treated_together"]
+        is not True
+        or relative_changed_action["exact_obstruction"]["witnesses"]
+        != [
+            {
+                "functional": "coefficient of lambda in the axial (2,2) entry",
+                "id": "AXIAL_22_LAMBDA_COEFFICIENT",
+                "on_every_action_basis_response": "0",
+                "on_requested_target": "-9",
+            },
+            {
+                "functional": "coefficient of lambda^2 in the polar (2,2) entry",
+                "id": "POLAR_22_LAMBDA_SQUARED_COEFFICIENT",
+                "on_every_action_basis_response": "0",
+                "on_requested_target": "-9/4",
+            },
+        ]
+        or relative_changed_action["exact_replay"]["complete_action_basis_dimension"]
+        != 6
+        or relative_changed_action["exact_replay"]["four_derivative_quotient_dimension"]
+        != 3
+        or relative_changed_action["exact_replay"]["p_shell_cross_response_rank"]
+        != 6
+        or relative_changed_action["exact_replay"]
+        ["p_shell_cross_response_kernel_dimension"]
+        != 0
+        or relative_changed_action["relative_quantum_disposition"]
+        ["paper12_lifecycle"]
+        != "SCOPED_FOUR_DERIVATIVE_CHANGED_ACTION_ROUTE_OBSTRUCTED_RELATIVE_QME_REMAINS_UNDEFINED"
+        or relative_changed_action["relative_quantum_disposition"]
+        ["strict_pure_Weyl_coefficients_imported_as_relative"]
+        is not False
+        or relative_changed_action["claim_flags"]
+        ["REQUESTED_REDUCED_REPAIR_HAS_LOCAL_ACTION_PREIMAGE"]
+        is not False
+        or relative_changed_action["claim_flags"]["RELATIVE_QME_DEFINED"]
+        is not False
+        or relative_changed_action_receipt["input_hashes"]
+        ["complete_action_response"]
+        != SIX_DENSITY_ACTION_RESPONSE_SHA256
+        or relative_changed_action_receipt["input_hashes"]
+        ["complete_action_response_receipt"]
+        != SIX_DENSITY_ACTION_RESPONSE_RECEIPT_SHA256
+        or relative_changed_action_receipt["upstream_independent_action_variation_rail"]
+        ["status"]
+        != "PASS"
+        or six_density_action_response["result_state"]
+        != "COMPLETE_FOUR_DERIVATIVE_ACTION_RESPONSE_EXACT_NO_LIFT"
+        or len(six_density_action_response["basis_reduction"]["complete_action_basis"])
+        != 6
+        or six_density_action_response["basis_reduction"]["quotient_dimension"]
+        != 3
+        or six_density_action_response["exact_cokernel"]["witnesses"]
+        != relative_changed_action["exact_obstruction"]["witnesses"]
+        or six_density_action_response_receipt["independent_rail"]["status"]
+        != "PASS"
+        or six_density_action_response_receipt["independent_rail"]
+        ["producer_payload_imported"]
+        is not False
+    ):
+        raise ValueError("Paper 12 relative changed-action dependency drifted")
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
         or even.get("smallest_relative_sector", {}).get("closure_rank") != 6
@@ -1252,6 +1359,16 @@ def build() -> dict[str, Any]:
     ]
     ladder_synthesis = values["minimal_compensator_ladder_synthesis"]
     ladder_imports = _verify_ladder_imports(ladder_synthesis)
+    relative_changed_action = values[
+        "relative_offshell_changed_action_obstruction"
+    ]
+    relative_changed_action_receipt = values[
+        "relative_offshell_changed_action_obstruction_receipt"
+    ]
+    six_density_action_response = values["six_density_action_response"]
+    six_density_action_response_receipt = values[
+        "six_density_action_response_receipt"
+    ]
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
@@ -1501,6 +1618,63 @@ def build() -> dict[str, Any]:
                 "first_genuinely_untested_mechanisms"
             ],
             "claim_boundary": ladder_synthesis["claim_boundary"],
+        },
+        "relative_offshell_changed_action_status": {
+            "result_id": relative_changed_action["result_id"],
+            "result_state": relative_changed_action["result_state"],
+            "lifecycle_status": relative_changed_action["lifecycle_status"],
+            "source_commit": RELATIVE_CHANGED_ACTION_SOURCE_COMMIT,
+            "certificate_sha256": RELATIVE_CHANGED_ACTION_SHA256,
+            "independent_receipt_sha256": (
+                RELATIVE_CHANGED_ACTION_RECEIPT_SHA256
+            ),
+            "six_density_action_response_result_id": (
+                six_density_action_response["result_id"]
+            ),
+            "six_density_action_response_sha256": (
+                SIX_DENSITY_ACTION_RESPONSE_SHA256
+            ),
+            "six_density_action_response_receipt_sha256": (
+                SIX_DENSITY_ACTION_RESPONSE_RECEIPT_SHA256
+            ),
+            "six_density_independent_rail": (
+                six_density_action_response_receipt["independent_rail"]
+            ),
+            "dependency_tags": relative_changed_action["dependency_tags"],
+            "selected_repair_orbit": relative_changed_action[
+                "selected_repair_orbit"
+            ],
+            "complete_action_basis": relative_changed_action[
+                "complete_action_ansatz"
+            ]["complete_action_basis"],
+            "complete_action_basis_dimension": relative_changed_action[
+                "exact_replay"
+            ]["complete_action_basis_dimension"],
+            "four_derivative_quotient_dimension": relative_changed_action[
+                "exact_replay"
+            ]["four_derivative_quotient_dimension"],
+            "cokernel_witnesses": relative_changed_action[
+                "exact_obstruction"
+            ]["witnesses"],
+            "requested_local_action": relative_changed_action[
+                "noether_and_bv_disposition"
+            ]["requested_changed_local_action"],
+            "requested_master_action": relative_changed_action[
+                "noether_and_bv_disposition"
+            ]["requested_changed_master_action"],
+            "relative_anomaly_coefficients": relative_changed_action[
+                "relative_quantum_disposition"
+            ]["relative_anomaly_coefficients"],
+            "relative_one_loop_QME": relative_changed_action[
+                "relative_quantum_disposition"
+            ]["relative_one_loop_QME"],
+            "strict_coefficients_imported_as_relative": relative_changed_action[
+                "relative_quantum_disposition"
+            ]["strict_pure_Weyl_coefficients_imported_as_relative"],
+            "paper12_lifecycle": relative_changed_action[
+                "relative_quantum_disposition"
+            ]["paper12_lifecycle"],
+            "claim_boundary": relative_changed_action["claim_boundary"],
         },
         "quadratic_active_clock_status": {
             "result_id": active_clock_stability["result_id"],

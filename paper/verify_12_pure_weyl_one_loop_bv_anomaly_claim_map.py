@@ -16,7 +16,7 @@ COVERAGE = (
     / "paper/12-pure-weyl-one-loop-bv-anomaly-science-forge-paper-coverage.json"
 )
 EXPECTED_MANUSCRIPT_SHA256 = (
-    "82c33a046ef891372beac7748fa4ba04bfcb9bc75074c5b0382311c7f34bebdd"
+    "777c87b06bb41824063021b587578f9af7460735b169737dd31f9a398efe9c45"
 )
 ALL_LOOP_INPUT_SHA256 = (
     "3649925e44d99bea0020f3d1c20a16c54a44f6c9714a3c273c20a6e6d8f84dbc"
@@ -26,6 +26,18 @@ LADDER_SYNTHESIS_SHA256 = (
 )
 LADDER_SYNTHESIS_RECEIPT_SHA256 = (
     "fb52c36f2f23bb19a003cca53ef7ba46085ba17c9d7d261422a2dc047e24f4f8"
+)
+RELATIVE_CHANGED_ACTION_SHA256 = (
+    "2eac0980d5ee9e906003807f732faa6a7da4fb9f57ee6e526843ea1db42f3688"
+)
+RELATIVE_CHANGED_ACTION_RECEIPT_SHA256 = (
+    "6eeb969aa2519b721acab299e3baf30edd7f296f63699d5edbd67874415255a5"
+)
+SIX_DENSITY_ACTION_RESPONSE_SHA256 = (
+    "cb47110872bdf976f7fda661f722041f034936d8ec1087781d90615ce3b922fe"
+)
+SIX_DENSITY_ACTION_RESPONSE_RECEIPT_SHA256 = (
+    "a0d9ff08721120166023def1d8a4e9f96dae21f26a08526eb80f170acb1825e7"
 )
 
 
@@ -110,6 +122,86 @@ def _assert_ladder_mutation_rejected(status: dict, key: str, value: object) -> N
     raise AssertionError(f"minimal-ladder claim mutation was accepted: {key}")
 
 
+def _verify_relative_changed_action_status(status: dict) -> None:
+    assert status["result_id"] == (
+        "RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1"
+    )
+    assert status["result_state"] == (
+        "OBSTRUCTED_COMPLETE_PARITY_EVEN_FOUR_DERIVATIVE_LOCAL_ACTION_ANSATZ"
+    )
+    assert status["lifecycle_status"] == "CLASSIFIED"
+    assert status["source_commit"] == (
+        "ea36d7c75ff0d555491e743a760d710b09fd297c"
+    )
+    assert status["certificate_sha256"] == RELATIVE_CHANGED_ACTION_SHA256
+    assert status["independent_receipt_sha256"] == (
+        RELATIVE_CHANGED_ACTION_RECEIPT_SHA256
+    )
+    assert status["six_density_action_response_result_id"] == (
+        "EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1"
+    )
+    assert status["six_density_action_response_sha256"] == (
+        SIX_DENSITY_ACTION_RESPONSE_SHA256
+    )
+    assert status["six_density_action_response_receipt_sha256"] == (
+        SIX_DENSITY_ACTION_RESPONSE_RECEIPT_SHA256
+    )
+    assert status["six_density_independent_rail"]["status"] == "PASS"
+    assert status["six_density_independent_rail"][
+        "producer_payload_imported"
+    ] is False
+    assert status["dependency_tags"] == ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    assert status["selected_repair_orbit"]["selection"] == (
+        "QUADRATIC_ACTION_DEFORMATION_ONLY"
+    )
+    assert status["selected_repair_orbit"][
+        "axial_and_polar_treated_together"
+    ] is True
+    assert status["complete_action_basis"] == [
+        "1", "R", "F2", "RiemFF", "F2sq", "P2"
+    ]
+    assert status["complete_action_basis_dimension"] == 6
+    assert status["four_derivative_quotient_dimension"] == 3
+    assert status["cokernel_witnesses"] == [
+        {
+            "functional": "coefficient of lambda in the axial (2,2) entry",
+            "id": "AXIAL_22_LAMBDA_COEFFICIENT",
+            "on_every_action_basis_response": "0",
+            "on_requested_target": "-9",
+        },
+        {
+            "functional": "coefficient of lambda^2 in the polar (2,2) entry",
+            "id": "POLAR_22_LAMBDA_SQUARED_COEFFICIENT",
+            "on_every_action_basis_response": "0",
+            "on_requested_target": "-9/4",
+        },
+    ]
+    assert status["requested_local_action"] == "OBSTRUCTED"
+    assert status["requested_master_action"] == "NOT_ACTIVATED"
+    assert status["relative_anomaly_coefficients"] == "NOT_COMPUTED"
+    assert status["relative_one_loop_QME"] == "UNDEFINED"
+    assert status["strict_coefficients_imported_as_relative"] is False
+    assert status["paper12_lifecycle"] == (
+        "SCOPED_FOUR_DERIVATIVE_CHANGED_ACTION_ROUTE_OBSTRUCTED_"
+        "RELATIVE_QME_REMAINS_UNDEFINED"
+    )
+    assert "obstructs only the selected quadratic-action repair orbit" in (
+        status["claim_boundary"]
+    )
+
+
+def _assert_relative_changed_action_mutation_rejected(
+    status: dict, key: str, value: object
+) -> None:
+    mutated = copy.deepcopy(status)
+    mutated[key] = value
+    try:
+        _verify_relative_changed_action_status(mutated)
+    except AssertionError:
+        return
+    raise AssertionError(f"relative changed-action mutation was accepted: {key}")
+
+
 def main() -> None:
     payload = json.loads(CLAIM_MAP.read_text())
     assert payload["schema"] == "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1"
@@ -179,6 +271,10 @@ def main() -> None:
         "Exact vector-$n=1+n=2$ integration and partial-BV assembly",
         "Algebraic $H_2$ cancellation of the symmetric $M_{14}$ divergence is therefore refuted",
         "action-compatible cyclic pushforward is exactly obstructed",
+        "Complete four-derivative changed-action orbit obstruction",
+        "coefficient of $\\lambda$ in the axial $(2,2)$ entry",
+        "coefficient of $\\lambda^2$ in the polar $(2,2)$ entry",
+        "does not import the strict pure-Weyl anomaly coefficients",
         "Conditional all-order formal local restoration",
         "repository has not constructed an all-order regulator or subtraction scheme",
         "Regulator and measure status",
@@ -436,6 +532,51 @@ def main() -> None:
     assert ladder_edges[0]["body"]["claim"] == ladder_claim
     assert ladder_edges[0]["body"]["stale"] is False
 
+    changed_action_result = (
+        "sf:quantum-weyl.relative/result/"
+        "RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1"
+    )
+    changed_action_claim = (
+        f"{paper_id}/claim/relative-offshell-changed-action-obstruction"
+    )
+    assert nodes[changed_action_result]["body"] == {
+        "lifecycle": "CERTIFIED",
+        "boundary": (
+            "selected-real-parity-even-diff-u1-four-derivative-"
+            "changed-action-orbit"
+        ),
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+        "certificate": (
+            "quantum-weyl/relative/certificates/"
+            "RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1.json"
+        ),
+        "certificate_sha256": RELATIVE_CHANGED_ACTION_SHA256,
+        "source_commit": "ea36d7c75ff0d555491e743a760d710b09fd297c",
+        "stale": False,
+        "superseded": False,
+    }
+    assert nodes[changed_action_claim]["body"]["cites"] == [
+        changed_action_result
+    ]
+    assert nodes[changed_action_claim]["body"]["asserts_lifecycle"] == (
+        "CERTIFIED"
+    )
+    changed_action_materiality = [
+        node for node in coverage["nodes"]
+        if node["kind"] == "materiality"
+        and node["body"]["result_id"] == changed_action_result
+    ]
+    assert len(changed_action_materiality) == 1
+    assert changed_action_materiality[0]["body"]["materiality"] == "TECHNICAL"
+    changed_action_edges = [
+        node for node in coverage["nodes"]
+        if node["kind"] == "result_paper_edge"
+        and node["body"]["from"] == changed_action_result
+    ]
+    assert len(changed_action_edges) == 1
+    assert changed_action_edges[0]["body"]["claim"] == changed_action_claim
+    assert changed_action_edges[0]["body"]["stale"] is False
+
     dispositions = payload["theory_dispositions"]
     assert dispositions == {
         "strict_fixed_field_content": "OBSTRUCTED",
@@ -542,6 +683,36 @@ def main() -> None:
         "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1",
         "COMPENSATOR_INDEPENDENT_WEYL_CONNECTION_LEVEL4_NO_GO_V1",
     }
+    changed_action_status = payload["relative_offshell_changed_action_status"]
+    _verify_relative_changed_action_status(changed_action_status)
+    assert _sha256(
+        ROOT / "quantum-weyl/relative/certificates/"
+        "RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1.json"
+    ) == RELATIVE_CHANGED_ACTION_SHA256
+    assert _sha256(
+        ROOT / "quantum-weyl/relative/receipts/"
+        "RELATIVE_OFFSHELL_CHANGED_ACTION_BV_LIFT_OBSTRUCTION_V1_TIER_RECEIPT.json"
+    ) == RELATIVE_CHANGED_ACTION_RECEIPT_SHA256
+    assert _sha256(
+        ROOT / "bridge/certificates/"
+        "EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1.json"
+    ) == SIX_DENSITY_ACTION_RESPONSE_SHA256
+    assert _sha256(
+        ROOT / "bridge/einstein_sector/receipts/"
+        "EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1_TIER_RECEIPT.json"
+    ) == SIX_DENSITY_ACTION_RESPONSE_RECEIPT_SHA256
+    _assert_relative_changed_action_mutation_rejected(
+        changed_action_status, "certificate_sha256", "0" * 64
+    )
+    _assert_relative_changed_action_mutation_rejected(
+        changed_action_status, "paper12_lifecycle", "QME_RESTORED"
+    )
+    _assert_relative_changed_action_mutation_rejected(
+        changed_action_status, "strict_coefficients_imported_as_relative", True
+    )
+    _assert_relative_changed_action_mutation_rejected(
+        changed_action_status, "relative_one_loop_QME", "QME_RESTORED"
+    )
     active_clock = payload["quadratic_active_clock_status"]
     _verify_active_clock_claim_boundary(active_clock)
     _assert_active_clock_mutation_rejected(
@@ -1073,7 +1244,7 @@ def main() -> None:
     assert claims["physical_Hessian_triangle_integrated_channel_count"] == 11
     assert claims["physical_Hessian_triangle_corner_count"] == 33
     assert claims["physical_Hessian_triangle_structured_basis_coordinate_count"] == 77
-    assert len(payload["inputs"]) == 83
+    assert len(payload["inputs"]) == 87
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
