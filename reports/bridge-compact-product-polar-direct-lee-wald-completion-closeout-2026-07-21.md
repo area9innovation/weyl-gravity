@@ -96,3 +96,5 @@ The exhaustive, independent coordinate replay passed all three interpolation
 nodes: `ell=2` in 99.874 s, `ell=3` in 114.845 s, and `ell=4` in 191.541 s;
 total 406.260 s. This long rail is Tier 2. The ordinary generator, independent
 verifier and five mutation/scoped tests remain on the fast rail.
+
+CLOSE-OUT: DONE — generic polar direct four-dimensional Lee--Wald completion certified.
