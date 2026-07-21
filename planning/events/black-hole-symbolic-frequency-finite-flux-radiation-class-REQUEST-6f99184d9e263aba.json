@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/black-hole-symbolic-frequency-finite-flux-radiation-class-REQUEST-6f99184d9e263aba",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/black-hole-symbolic-frequency-finite-flux-radiation-class-REQUEST-6f99184d9e263aba.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/black-hole-symbolic-frequency-finite-flux-radiation-class", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T13:26:28Z", "seq": 1, "payload": {"target": "sf:program/request/black-hole-symbolic-frequency-finite-flux-radiation-class-to-black-hole-6f99184d9e263aba", "request_id": "sf:program/request/black-hole-symbolic-frequency-finite-flux-radiation-class-to-black-hole-6f99184d9e263aba", "from_item": "sf:program/work/black-hole-symbolic-frequency-finite-flux-radiation-class", "to_stream": "black-hole", "need": "Commit 544a98a96 has landed the BH2C symbolic-frequency finite-flux radiation-class certificate, but the current lease still has no report/terminal transition. Adopt that exact commit, run the Science Forge report/close lifecycle without recomputing the heavy symbolic rail, then pull black-hole-paper14-finite-flux-status-freeze before endpoint assembly or BH3 work. The publication freeze must replace the older endpoint-nonselection wording with the scoped result: horizon regularity admits the extra branch, while the declared finite-Lee-Wald-flux infinity class selects exactly Einstein for real omega != 0; this is phase-space normalization, not a universal local causal truncation.", "typed": "LANDED_RESULT_LIFECYCLE_AND_PUBLICATION_PRIORITY"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "black-hole"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/black-hole-symbolic-frequency-finite-flux-radiation-class"}]
+}
