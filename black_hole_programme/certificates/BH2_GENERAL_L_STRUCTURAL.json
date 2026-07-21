@@ -1,0 +1,107 @@
+{
+  "claim_flags": {
+    "axial_extra_branch_residue_l_independent_certified": true,
+    "axial_rw_horizon_indicial_l_independent_certified": true,
+    "axial_rw_potential_symbolic_l_certified": true,
+    "exceptional_set_0_1_certified": true,
+    "generic_l_cross_pairing_certified": false,
+    "polar_detailed_reduction_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": "AXIAL_SYMBOLIC_L_PROVEN + PAIRING_NOT_ACTIVATED",
+  "lifecycle": "CLASSIFIED",
+  "not_claimed": {
+    "complex_omega_stability_qnm_ringdown_scattering_positivity_particle_nonlinear": "none asserted",
+    "generic_l_cross_pairing": "NOT_ACTIVATED (see pairing_not_activated)",
+    "l_0_and_l_1": "excluded as isolated exceptional representations",
+    "polar_detailed_symbolic_lambda_reduction": "the polar Zerilli potential and polar extra-branch residue with symbolic Lambda are NOT computed here; the same Legendre method applies and is the immediate parallel step"
+  },
+  "pairing_not_activated": {
+    "activation_condition": "a symbolic-omega polar identity -- BH2_POLAR_QUANTIFIER_REPAIR route B: Z = E - (K^{-1} a^H).X symplectically null for all real omega (gauge-radical, even-parity twin of the axial RW-null theorem)",
+    "no_extrapolation_from_samples": true,
+    "reason": "the terminal polar universal-quantifier repair closed fixture-only (no symbolic-omega polar pairing identity)",
+    "statement": "the generic-l invariant cross pairing / cross-scalar theorem (both parities) is NOT_ACTIVATED"
+  },
+  "proven_axial_generic_l": {
+    "einstein_rw_branch": {
+      "horizon_exponents": [
+        "-2*I*m*omega",
+        "2*I*m*omega"
+      ],
+      "horizon_exponents_lambda_independent": true,
+      "horizon_indicial_polynomial": "omega**2 + s**2/(4*m**2)",
+      "master_proportionality_factor": "-r**6",
+      "rw_ingoing_dimension": 1,
+      "rw_master_potential": "B*(Lambda/r**2 - 6*m/r**3)",
+      "rw_potential_at_l2": "(12*m**2 - 18*m*r + 6*r**2)/r**4"
+    },
+    "exceptional_set": {
+      "controls": {
+        "0": {
+          "H2_l": "0",
+          "H2_vanishes": true,
+          "S_l": "0",
+          "S_vanishes": true
+        },
+        "1": {
+          "H2_l": "0",
+          "H2_vanishes": true,
+          "S_l": "x**2 - 1",
+          "S_vanishes": false
+        },
+        "2": {
+          "H2_l": "3*x**2 - 3",
+          "H2_vanishes": false,
+          "S_l": "3*x**3 - 3*x",
+          "S_vanishes": false
+        },
+        "3": {
+          "H2_l": "15*x**3 - 15*x",
+          "H2_vanishes": false,
+          "S_l": "15*x**4/2 - 9*x**2 + 3/2",
+          "S_vanishes": false
+        }
+      },
+      "criterion": "axial vector harmonic S_l = -(1-x^2)P_l' vanishes at l=0; extra-branch harmonic H2_l = Lambda P_l - 2x P_l' vanishes at l=1 (Lambda=2, P_1=x); l>=2 nonzero and independent",
+      "exceptional_l": [
+        0,
+        1
+      ]
+    },
+    "extra_branch": {
+      "extra_branch_ingoing_structure": "l-independent for all l >= 2",
+      "extra_branch_residue_spectrum": [
+        "0 (x2)",
+        "-4*I*m*omega",
+        "-2 - 4*I*m*omega"
+      ],
+      "residue_lambda_independent": true
+    },
+    "operator_composition_l_generic": "split identity delta B = (1/2)Box dRic + C.dRic is background-tensorial (BH2B stage 1, general); l enters only through Lambda = l(l+1)",
+    "positive_control_l2": "Lambda=6 reproduces the certified BH2A l=2 RW potential and the certified BH2A stage-2 residue spectrum exactly"
+  },
+  "provenance": {
+    "axial_l2_certificate": "black_hole_programme/certificates/BH2A_AXIAL_OPERATOR.json",
+    "axial_l2_sha256": "58eead1536d9c14696dd3b21592aa22523681cad7b42f8179b322c5872391c2a",
+    "extra_l2_certificate": "black_hole_programme/certificates/BH2A_HORIZON_REACH.json",
+    "extra_l2_sha256": "dcab47cf90e5a0120308b2031444539604d902c9cc5b788ce510f366f0d26d7f",
+    "polar_repair_certificate": "black_hole_programme/certificates/BH2_POLAR_QUANTIFIER_REPAIR.json",
+    "polar_repair_sha256": "77658bfa250edbc493a9fd1b9f0f3a55da5078ecf36167b48ebbd4afc3207021",
+    "split_l2_certificate": "black_hole_programme/certificates/BH2B_POLAR_SPLIT.json",
+    "split_l2_sha256": "1c84cd014d31e1f97b6489ef083d5e81bcf83ba08eb9aa749c19931e60d5b8d5"
+  },
+  "result_id": "PURE_WEYL_BH2_GENERAL_L_STRUCTURAL",
+  "result_token": "BH2_GENERAL_L_AXIAL_EXACT_SEQUENCE_SYMBOLIC_L_PAIRING_NOT_ACTIVATED",
+  "schema": "pure-weyl-bh2-general-l-structural-v1",
+  "schema_path": "black_hole_programme/schema/bh2-general-l-structural-v1.schema.json",
+  "schema_sha256": "1f36927b94823df9b0167000884769599b5e5d3d27dcfbfb954e32db306631f2",
+  "setting": "Schwarzschild symbolic m, axial l>=2, real frequency omega; Lambda = l(l+1); Legendre identity (1-x^2)P'' = 2x P' - Lambda P",
+  "stage_seconds": {
+    "axial_extra_branch": 2.2,
+    "axial_rw_branch": 15.8
+  },
+  "stop_condition_branch": "fixture-only: BH2_POLAR_QUANTIFIER_REPAIR closed the polar universal quantifier fixture-only, so the generic-l cross pairing is NOT_ACTIVATED; no pairing extrapolated from l=2 samples"
+}

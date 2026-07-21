@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "pure-weyl-bh2-general-l-structural-v1",
+  "title": "BH-2 general-l structural extension (axial exact sequence, symbolic l)",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "result_token", "dependency_tags", "lifecycle",
+    "disposition", "stop_condition_branch", "provenance",
+    "proven_axial_generic_l", "pairing_not_activated", "claim_flags",
+    "not_claimed"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-bh2-general-l-structural-v1"},
+    "result_id": {"const": "PURE_WEYL_BH2_GENERAL_L_STRUCTURAL"},
+    "result_token": {
+      "const": "BH2_GENERAL_L_AXIAL_EXACT_SEQUENCE_SYMBOLIC_L_PAIRING_NOT_ACTIVATED"
+    },
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL",
+                          "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}
+    },
+    "lifecycle": {"enum": ["CLASSIFIED", "COEFFICIENT_COMPUTED", "QME_RESTORED",
+                           "RESIDUAL_TRANSFERRED", "LORENTZIAN_CERTIFIED"]},
+    "disposition": {"const": "AXIAL_SYMBOLIC_L_PROVEN + PAIRING_NOT_ACTIVATED"},
+    "stop_condition_branch": {"type": "string"},
+    "provenance": {
+      "type": "object",
+      "required": ["polar_repair_certificate", "polar_repair_sha256"],
+      "properties": {
+        "polar_repair_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "proven_axial_generic_l": {
+      "type": "object",
+      "required": ["operator_composition_l_generic", "einstein_rw_branch",
+                   "extra_branch", "exceptional_set", "positive_control_l2"],
+      "properties": {
+        "einstein_rw_branch": {
+          "type": "object",
+          "required": ["rw_master_potential", "master_proportionality_factor",
+                       "horizon_exponents", "horizon_exponents_lambda_independent",
+                       "rw_ingoing_dimension"],
+          "properties": {
+            "rw_master_potential": {"const": "B*(Lambda/r**2 - 6*m/r**3)"},
+            "master_proportionality_factor": {"const": "-r**6"},
+            "horizon_exponents_lambda_independent": {"const": true},
+            "rw_ingoing_dimension": {"const": 1}
+          }
+        },
+        "extra_branch": {
+          "type": "object",
+          "required": ["extra_branch_residue_spectrum",
+                       "residue_lambda_independent"],
+          "properties": {
+            "residue_lambda_independent": {"const": true}
+          }
+        },
+        "exceptional_set": {
+          "type": "object",
+          "required": ["exceptional_l", "criterion", "controls"],
+          "properties": {
+            "exceptional_l": {"type": "array", "items": {"type": "integer"}}
+          }
+        }
+      }
+    },
+    "pairing_not_activated": {
+      "type": "object",
+      "required": ["statement", "reason", "activation_condition",
+                   "no_extrapolation_from_samples"],
+      "properties": {
+        "no_extrapolation_from_samples": {"const": true}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["axial_rw_potential_symbolic_l_certified",
+                   "axial_rw_horizon_indicial_l_independent_certified",
+                   "axial_extra_branch_residue_l_independent_certified",
+                   "exceptional_set_0_1_certified",
+                   "polar_detailed_reduction_certified",
+                   "generic_l_cross_pairing_certified"],
+      "properties": {
+        "axial_rw_potential_symbolic_l_certified": {"const": true},
+        "axial_rw_horizon_indicial_l_independent_certified": {"const": true},
+        "axial_extra_branch_residue_l_independent_certified": {"const": true},
+        "exceptional_set_0_1_certified": {"const": true},
+        "polar_detailed_reduction_certified": {"const": false},
+        "generic_l_cross_pairing_certified": {"const": false}
+      }
+    },
+    "not_claimed": {"type": "object"}
+  }
+}
