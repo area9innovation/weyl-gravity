@@ -613,6 +613,10 @@ ghost.  Its quantum Cartan disposition remains open.  Maxwell, global
 scattering, and unitarity are outside this certificate.
 
 Proof digest: `{result['proof_hashes']['quartet_and_candidate_partition_sha256']}`.
+
+CLOSE-OUT: DONE — the actual positive-Berger complex-clock local anomaly
+complex is classified on the declared regular formal polar chart; the strict
+action-complex map remains obstructed by the exact `961/1920` separator.
 """
 
 
