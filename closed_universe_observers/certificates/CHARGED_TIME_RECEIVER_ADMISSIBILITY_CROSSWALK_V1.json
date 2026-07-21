@@ -1,6 +1,14 @@
 {
   "atlas_census_dependencies": [
     {
+      "path": "residual_atlas/berger-legacy-receiver-admissibility-replay-fragment-v1.json",
+      "sha256": "3a12c02fab3f7378de8bb5049e33588215a5d0f06b8940d9bd77324e494b4e1c"
+    },
+    {
+      "path": "residual_atlas/berger-legacy-receiver-operational-frequency-ratio-nonactivation-fragment-v1.json",
+      "sha256": "40c3f469f2795d4448ec49aaf5a93e189db7f2c822382d3eac4fa7c9362bf214"
+    },
+    {
       "path": "residual_atlas/charged-physical-time-relational-event-map-theorem-fragment-v1.json",
       "sha256": "bb276c4bb525d3235fa513cd07243308c6fa0c6798339daf7f2e000b5ff2925b"
     },
@@ -22,12 +30,12 @@
     }
   ],
   "census_completeness": {
-    "classified_count": 5,
+    "classified_count": 7,
     "complete": true,
-    "discovered_count": 5,
+    "discovered_count": 7,
     "unclassified_ids": []
   },
-  "claim_boundary": "Certifies the necessary-and-sufficient data contract for an action-derived charged-time receiver and charge-fibre crosswalk, exact failure dispositions, and a complete fail-closed census of the five current observer atlas carriers. No current row supplies a fully admissible action-derived nonzero receiver. This does not prove nonexistence and makes no detector, redshift, advanced-signal, nonlinear, particle, phenomenology or quantum claim.",
+  "claim_boundary": "Certifies the necessary-and-sufficient data contract for an action-derived charged-time receiver and charge-fibre crosswalk, exact failure dispositions, and a complete fail-closed census of the seven current observer atlas carriers. Both legacy Berger aggregate rows remain NO_CERTIFIED_MAP from their own receiver and frequency-ratio nonactivation certificates. No current row supplies a fully admissible action-derived nonzero receiver. This does not prove nonexistence and makes no detector, redshift, advanced-signal, nonlinear, particle, phenomenology or quantum claim.",
   "claim_status": "CERTIFIED_GENERAL_RECEIVER_AND_CHARGE_FIBRE_ADMISSIBILITY_CONTRACT",
   "crosswalk_theorem": {
     "admissible_iff": "primitive symplectic charge/orientation map, receiver-class map, endpoint-record equality, retarded path and D/R/K intertwining all commute",
@@ -49,6 +57,11 @@
       "path": "closed_universe_observers/certificates/CHARGED_TIME_FINITE_RESOLUTION_SAMPLING_THEOREM_V1.json",
       "result_id": "CHARGED_TIME_FINITE_RESOLUTION_SAMPLING_THEOREM_V1",
       "sha256": "0cdd47f4f506c0d666f7e26dc7113cee0eed57aef5911296baec38699601097a"
+    },
+    "tier3_shortfall": {
+      "path": "closed_universe_observers/receipts/OBSERVER_TIER3_PROVENANCE_FIXED_POINT_RELOCK_AFTER_BERGER84_HANDOFF_V1_MANIFEST.json",
+      "result_id": "OBSERVER_TIER3_PROVENANCE_FIXED_POINT_RELOCK_AFTER_BERGER84_HANDOFF_V1",
+      "sha256": "309ccbf7db83e66b375d194e2c46cef330d441ab56e5896c4ec5b30d538d7d86"
     }
   },
   "dependency_tags": [
@@ -110,6 +123,36 @@
       "detected": true,
       "name": "resurrect_fixed_charge_clock",
       "witness": "CLOCK_REMOVED_OBSTRUCTED"
+    },
+    {
+      "detected": true,
+      "name": "delete_legacy_replay_row",
+      "witness": "observer.berger.legacy_receiver_admissibility_replay"
+    },
+    {
+      "detected": true,
+      "name": "delete_legacy_ratio_row",
+      "witness": "observer.berger.legacy_receiver_operational_frequency_ratio_nonactivation"
+    },
+    {
+      "detected": true,
+      "name": "promote_legacy_row_to_certified_admissible",
+      "witness": "both source-derived legacy aggregate rows remain NO_CERTIFIED_MAP"
+    },
+    {
+      "detected": true,
+      "name": "promote_coordinate_ratio_to_redshift",
+      "witness": "exact ratio one is coordinate-only"
+    },
+    {
+      "detected": true,
+      "name": "alter_original_five_dispositions",
+      "witness": "all original five dispositions are byte-for-byte semantically unchanged"
+    },
+    {
+      "detected": true,
+      "name": "accept_stale_legacy_dependency_hash",
+      "witness": "historical legacy sources and Tier-3 frontier are content-addressed without a recursive current-contract edge"
     }
   ],
   "necessary_and_sufficient_conditions": {
@@ -121,6 +164,22 @@
   },
   "next_gate": "POPULATE_INTERFACE_FROM_REPLACEMENT_FULL_ISOTYPICAL_HEALTH_ASSEMBLY_THEN_REAUDIT_CENSUS",
   "observer_carrier_census": [
+    {
+      "admissibility_status": "NO_CERTIFIED_MAP",
+      "atlas_id": "observer.berger.legacy_receiver_admissibility_replay",
+      "atlas_observational_status": "NO_CERTIFIED_MAP",
+      "atlas_path": "residual_atlas/berger-legacy-receiver-admissibility-replay-fragment-v1.json",
+      "first_missing_condition": "action-derived receiver BV class, residual quotient, descended nonradical period and separately typed D/R/K receiver actions are absent",
+      "physical_receiver_promoted": false
+    },
+    {
+      "admissibility_status": "NO_CERTIFIED_MAP",
+      "atlas_id": "observer.berger.legacy_receiver_operational_frequency_ratio_nonactivation",
+      "atlas_observational_status": "NO_CERTIFIED_MAP",
+      "atlas_path": "residual_atlas/berger-legacy-receiver-operational-frequency-ratio-nonactivation-fragment-v1.json",
+      "first_missing_condition": "operational frequency-ratio domain is empty without a physical receiver and positive sampled denominator margin; coordinate ratio one is not redshift",
+      "physical_receiver_promoted": false
+    },
     {
       "admissibility_status": "CONDITIONAL_INTERFACE_ONLY",
       "atlas_id": "observer.general.charged_physical_time_relational_event_map",
@@ -164,11 +223,25 @@
   ],
   "provenance": {
     "higher_tiers_not_run": {
-      "tier_2": "all imported results unchanged by hash",
-      "tier_3": "no freeze, release or shared core change"
+      "tier_2": "historical base and extension sources checked by exact hashes and semantic projection",
+      "tier_3": "owned by the dedicated post-extension fixed-point successor"
     },
-    "independent_method": "exact pairing-radical and labelled-morphism reconstruction",
-    "producer_method": "typed predicate classification over content-addressed theorem and atlas imports"
+    "historical_base_contract_sha256": "e2c9aad23b667ec16bbb124b72066d803f3607fc4bd89acd459b53f672a43918",
+    "historical_import_boundary": "The two legacy certificates are exact extension sources certified against the five-row base-contract blob. They are not recursive current dependency_refs of this seven-row extension.",
+    "independent_method": "exact pairing-radical, labelled-morphism, historical-base-contract and source-certificate reconstruction",
+    "legacy_extension_sources": [
+      {
+        "name": "legacy_ratio",
+        "path": "closed_universe_observers/certificates/BERGER_LEGACY_RECEIVER_OPERATIONAL_FREQUENCY_RATIO_NONACTIVATION_V1.json",
+        "sha256": "7d758b01ed37bb695a30b8364ea4a0b1d425faaa307b990be2cefaa42aa29d4e"
+      },
+      {
+        "name": "legacy_replay",
+        "path": "closed_universe_observers/certificates/BERGER_LEGACY_RECEIVER_ADMISSIBILITY_REPLAY_V1.json",
+        "sha256": "8510cc0f00ae1e223fcb97614d51f3708e3f31455bdb789bb79aeb77acd8c50f"
+      }
+    ],
+    "producer_method": "typed predicate classification over content-addressed theorem, historical legacy-source and atlas imports"
   },
   "receiver_theorem": {
     "admissible_iff": "[A] is nonzero and nonradical, Per is nonzero on a regular clock band, rho_ret is a support-preserving chain map, b>0, and D/R/K actions are separately intertwined",

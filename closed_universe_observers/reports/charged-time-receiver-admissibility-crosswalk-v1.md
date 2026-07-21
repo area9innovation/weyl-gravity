@@ -7,10 +7,14 @@ regular monotone clock band, a positive sampled denominator margin, and
 separately intertwined D, R and K actions.  Charge-fibre comparison requires
 explicit primitive orientation, class, endpoint-record and retarded-path maps.
 
-The generated census covers all five current observer atlas rows.  The three
+The generated census covers all seven current observer atlas rows.  The three
 general theorems are conditional interfaces, the unrestricted counterflow row
 has `NO_CERTIFIED_MAP`, and the fixed-charge row is obstructed because its
-clock is removed.  No action-derived nonzero receiver is promoted.
+clock is removed.  Both later legacy Berger aggregate rows remain
+`NO_CERTIFIED_MAP` from their own source certificates: no action-derived
+receiver quotient/pairing/actions exist, and the operational frequency-ratio
+domain is empty.  The exact coordinate ratio one is not redshift.  No
+action-derived nonzero receiver is promoted.
 
 EVIDENCE: closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json and closed_universe_observers/receipts/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1_TIER_RECEIPT.json
 CLOSE-OUT: DONE — the receiver/crosswalk interface and complete fail-closed carrier census are certified
