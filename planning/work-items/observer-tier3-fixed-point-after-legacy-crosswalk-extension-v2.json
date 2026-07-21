@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/observer-tier3-fixed-point-after-legacy-crosswalk-extension-v2",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "observer-tier3-fixed-point-after-legacy-crosswalk-extension-v2",
+  "source": {
+    "path": "planning/work-items/observer-tier3-fixed-point-after-legacy-crosswalk-extension-v2.json",
+    "span": null
+  },
+  "body": {
+    "owner": "observer-1",
+    "state": "PROPOSED",
+    "stream": "observer",
+    "priority": 0,
+    "objective": "Establish the uninterrupted complete Observer Tier-3 fixed point after the source-derived seven-row charged-time crosswalk census is certified, consuming the 22 provenance relocks without widening any scientific claim.",
+    "stop_condition": "Import by exact hashes OBSERVER_TIER3_PROVENANCE_FIXED_POINT_RELOCK_SHORTFALL_V1, its 22-entry relock manifest and the terminal seven-row charged-time crosswalk extension. Confirm that the committed Observer source, certificate, atlas and test corpus is completely materialized and that no concurrent modified path would be overwritten. Run PYTHONPATH=. pytest -q -x closed_universe_observers/tests from the beginning with fail-fast semantics. If it passes uninterrupted, emit a deterministic fixed-point manifest listing the 22 relocks, the iteration-13 808-pass semantic frontier, the seven-row extension, exact final pass count, elapsed time and zero remaining stale or unclassified consumers; independently verify the manifest and close with OBSERVER_STREAM_TIER3_GREEN. If any new stale hash, semantic mismatch, unsupported producer, ownership conflict, skipped test or non-provenance failure appears, stop at the first exact frontier and report a typed OBSTRUCTED result. A partial run is never green.",
+    "current_gate": "uninterrupted full Observer Tier 3 after the exact seven-row semantic census repair",
+    "forbid": "no producer replay called independent verification; no partial, skipped, timed-out or interrupted suite called green; no scientific value changed under provenance repair; no new observer, action, receiver, detector, memory or redshift architecture; no Paper 9 edit; no overwrite of concurrent modified files; no coordinate ratio promoted to an operational observable; no nonlinear, quantum, particle, phenomenology or unitarity claim",
+    "depends_on": [
+      "sf:program/work/observer-tier3-provenance-fixed-point-relock-after-berger84-handoff#ANY_TERMINAL",
+      "sf:program/work/observer-charged-time-crosswalk-legacy-row-extension-v2"
+    ],
+    "activates": [
+      "terminalization of the original observer-berger84-apparatus-handoff-provenance-relock umbrella from the verified successor evidence",
+      "sf:program/work/observer-paper09-final-freeze-after-evidence-gates"
+    ],
+    "allowed_paths": [
+      "closed_universe_observers/",
+      "reports/",
+      "planning/paper-coverage/",
+      "planning/events/",
+      "notes/closed-universe-observer-team-brief.md"
+    ],
+    "resource_hint": "FULL RELEASE RAIL. Run only after the seven-row crosswalk task is terminal. A green result must be uninterrupted and independently manifested; any new frontier is an exact obstruction.",
+    "notes": [
+      "The first full-suite successor was retired before assignment because its dependency model was briefly based on the resumable-shortfall state. This v2 consumes the now-terminal OBSTRUCTED provenance-only result and the separate semantic repair.",
+      "On a green result, the coordinator may terminalize observer-berger84-apparatus-handoff-provenance-relock by append-only integration event so the existing Paper 9 final-freeze gate becomes pullable."
+    ],
+    "input_commit": "2c6130bc3883591e7715523f8f5e879e9c79fc25"
+  },
+  "edges": []
+}
