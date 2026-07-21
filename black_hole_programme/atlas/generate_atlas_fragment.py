@@ -67,6 +67,11 @@ CERTS = {
     "BH2XC": PKG / "certificates" / "BH2_POLAR_CROSS_COVECTOR.json",
     "BH2QR": PKG / "certificates" / "BH2_POLAR_QUANTIFIER_REPAIR.json",
     "BH2GL": PKG / "certificates" / "BH2_GENERAL_L_STRUCTURAL.json",
+    "BH2SF": PKG / "certificates" / "BH2C_SYMBOLIC_FLUX_RADIATION_CLASS.json",
+    "BHEN": PKG / "certificates" / "BH_ENDPOINT_NONSELECTION_ASSEMBLY.json",
+    "BH3AC": PKG / "certificates" / "BH3_ANALYTIC_CONTINUATION_GATE.json",
+    "BH3BVP": PKG / "certificates" / "BH3_EXTERIOR_BVP_WELLPOSEDNESS_GATE.json",
+    "BH3NVP": PKG / "certificates" / "BH3_NUMERICAL_VALIDATION_PROTOCOL.json",
 }
 
 
@@ -288,14 +293,15 @@ def entries():
                 "operator pending certificate", "BH2A"),
             "lee_wald": _gated(
                 "CERTIFIED",
-                "controlled horizon fixtures at omega in {3/5, 2/7}, with verifier gate 1/2, exhibit nonzero Einstein x additional and additional x additional pairing for a chosen metric lift; RW block is exactly null; symbolic omega-dependence, rigorous error bounds, lift-invariant additional self-sign, and outer-boundary flux remain OPEN",
+                "controlled horizon fixtures at omega in {3/5, 2/7}, with verifier gate 1/2, exhibit nonzero Einstein x additional and additional x additional pairing for a chosen metric lift; RW block is exactly null. At infinity the axial Einstein finite side is now symbolic (F^v ~ r^-2, omega-independent, all real omega != 0), and the Einstein x extra pairing carries a representative-INDEPENDENT invariant of rank 2, signature (1,1) (det G = -|a|^2 < 0). The lift-invariant additional self-SIGN, the symbolic divergent-class table, rigorous horizon-fixture error bounds, and outer-boundary flux remain OPEN",
                 "extra-block and cross-block flux values and signs remain open", "BH2AC"),
             "taub_maps": _claim("NO_CERTIFIED_MAP", "must not be identified with the compact-cylinder extra branch without an explicit crosswalk"),
             "resonance": _claim("OPEN", "no exterior cokernel object"),
             "second_order": SECOND_ORDER_OPEN,
         },
-        "evidence": _evidence("BH2A", "BH2AR", "BH2AC", "BH2AD"),
-        "claim_boundary": "Schwarzschild axial l=2, nonzero real frequency: the Ricci carrier has a two-dimensional analytic ingoing horizon family; controlled fixtures have nonzero mixed/additional horizon pairing; the repeated leading outer characteristic does not by itself select the Einstein kernel. The asymptotic Jordan form, metric reconstruction, finite-flux falloff, general local boundary classification, complex frequencies, general l/m, stability and ringdown remain OPEN"
+        "evidence": _evidence("BH2A", "BH2AR", "BH2AC", "BH2AD", "BH2SF",
+                              "BHEN", "BH3AC", "BH3BVP", "BH3NVP"),
+        "claim_boundary": "Schwarzschild axial l=2, nonzero real frequency: the Ricci carrier has a two-dimensional analytic ingoing horizon family; controlled fixtures have nonzero mixed/additional horizon pairing; the repeated leading outer characteristic does not by itself select the Einstein kernel. Assembled one-ended endpoint disposition: horizon analyticity does NOT select Einstein, but infinity finite-slice-norm finiteness DOES (axial Einstein finite side symbolic); the additional solution is excluded at infinity by norm, not by a local boundary condition. Complex frequency is opened only as an exact meromorphic continuation (singular set {i, i/2}; polar not activated) with the Einstein BVP well-posed modulo the discrete connection-Wronskian zeros and the additional-branch outgoing condition log-tail-obstructed. The symbolic divergent-class table, regular-tetrad falloff, phase-space construction, the confluent-Heun connection map, general l/m, stability and ringdown remain OPEN"
                           if all(CERTS[key].exists() for key in ("BH2AR", "BH2AC", "BH2AD")) else "operator-level identification only (Schwarzschild, l=2): horizon reach, domains, flux, and endpoint disposition all OPEN",
     })
 

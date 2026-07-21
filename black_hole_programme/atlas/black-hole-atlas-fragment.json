@@ -358,7 +358,7 @@
       }
     },
     {
-      "claim_boundary": "Schwarzschild axial l=2, nonzero real frequency: the Ricci carrier has a two-dimensional analytic ingoing horizon family; controlled fixtures have nonzero mixed/additional horizon pairing; the repeated leading outer characteristic does not by itself select the Einstein kernel. The asymptotic Jordan form, metric reconstruction, finite-flux falloff, general local boundary classification, complex frequencies, general l/m, stability and ringdown remain OPEN",
+      "claim_boundary": "Schwarzschild axial l=2, nonzero real frequency: the Ricci carrier has a two-dimensional analytic ingoing horizon family; controlled fixtures have nonzero mixed/additional horizon pairing; the repeated leading outer characteristic does not by itself select the Einstein kernel. Assembled one-ended endpoint disposition: horizon analyticity does NOT select Einstein, but infinity finite-slice-norm finiteness DOES (axial Einstein finite side symbolic); the additional solution is excluded at infinity by norm, not by a local boundary condition. Complex frequency is opened only as an exact meromorphic continuation (singular set {i, i/2}; polar not activated) with the Einstein BVP well-posed modulo the discrete connection-Wronskian zeros and the additional-branch outgoing condition log-tail-obstructed. The symbolic divergent-class table, regular-tetrad falloff, phase-space construction, the confluent-Heun connection map, general l/m, stability and ringdown remain OPEN",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "OPEN",
@@ -386,6 +386,31 @@
           "path": "black_hole_programme/certificates/BH2A_CAUSAL_DISPOSITION.json",
           "result_id": "PURE_WEYL_BH2A_CAUSAL_DISPOSITION",
           "sha256": "a81f491dcc35a191472b10331ea836a05aec43e7b463caa6cf0cc6181b94c3ed"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH2C_SYMBOLIC_FLUX_RADIATION_CLASS.json",
+          "result_id": "PURE_WEYL_BH2C_SYMBOLIC_FLUX_RADIATION_CLASS",
+          "sha256": "8cbcfa2d762d1274f05a41d6200856c6d6f406d181543c44d56748bbc20f55ae"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH_ENDPOINT_NONSELECTION_ASSEMBLY.json",
+          "result_id": "PURE_WEYL_BH_ENDPOINT_NONSELECTION_ASSEMBLY",
+          "sha256": "01ddadcfe4354bb20b57df838b013e9fc5d39f728dcb0be8a70c45ad3c92177a"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH3_ANALYTIC_CONTINUATION_GATE.json",
+          "result_id": "PURE_WEYL_BH3_ANALYTIC_CONTINUATION_GATE",
+          "sha256": "75e18d9a91d6827ad2fae645a05b0fe1cc9a50459f9b03dca280c884f917aca3"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH3_EXTERIOR_BVP_WELLPOSEDNESS_GATE.json",
+          "result_id": "PURE_WEYL_BH3_EXTERIOR_BVP_WELLPOSEDNESS_GATE",
+          "sha256": "8c47b6747ad6a7329c7cc6da0726ce6a2f5afee5173514b5ff2721e1847fb406"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH3_NUMERICAL_VALIDATION_PROTOCOL.json",
+          "result_id": "PURE_WEYL_BH3_NUMERICAL_VALIDATION_PROTOCOL",
+          "sha256": "167188a4aeba349c0c6dfeb5241e888a2d5ecccde8906a64359ad5661f5678f9"
         }
       ],
       "id": "bh.mode.axial.extra-fourth-order-branch",
@@ -395,7 +420,7 @@
           "status": "CERTIFIED"
         },
         "lee_wald": {
-          "statement": "controlled horizon fixtures at omega in {3/5, 2/7}, with verifier gate 1/2, exhibit nonzero Einstein x additional and additional x additional pairing for a chosen metric lift; RW block is exactly null; symbolic omega-dependence, rigorous error bounds, lift-invariant additional self-sign, and outer-boundary flux remain OPEN",
+          "statement": "controlled horizon fixtures at omega in {3/5, 2/7}, with verifier gate 1/2, exhibit nonzero Einstein x additional and additional x additional pairing for a chosen metric lift; RW block is exactly null. At infinity the axial Einstein finite side is now symbolic (F^v ~ r^-2, omega-independent, all real omega != 0), and the Einstein x extra pairing carries a representative-INDEPENDENT invariant of rank 2, signature (1,1) (det G = -|a|^2 < 0). The lift-invariant additional self-SIGN, the symbolic divergent-class table, rigorous horizon-fixture error bounds, and outer-boundary flux remain OPEN",
           "status": "CERTIFIED"
         },
         "resonance": {
@@ -787,7 +812,7 @@
     }
   ],
   "generated_by": "black_hole_programme/atlas/generate_atlas_fragment.py",
-  "generated_by_sha256": "67bc6238908304f51e27c438169cbb71fcf218f72777bdbb9420d252fdeec849",
+  "generated_by_sha256": "43d608fcdf7972d92e847173e04e020106905d67c88967e7256c66ff1130c257",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

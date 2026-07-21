@@ -565,13 +565,50 @@ finite-slice-norm asymptotic class of the sphere-integrated presymplectic
 density contains exactly the Einstein sector.
 \end{theorem}
 
+The \emph{finite} side of this selection is no longer fixture-bound.  Driving
+the certified sphere-integrated Lee--Wald slice density \(F^v\) with the
+certified Einstein profiles at \emph{symbolic} real \(\omega\), retaining all
+boundary and derivative-of-curvature terms (no leading-exponent shortcut), the
+axial Einstein conjugate pairs fall as
+\begin{equation}
+ F^v[E_0\times E_0]\sim r^{-2},\qquad
+ F^v[E_2\times E_2]\sim r^{-2},
+\end{equation}
+with an \(\omega\)-independent integer leading power \(-2<-1\) and a nonzero,
+real-pole-free leading coefficient.  Because \(\omega\) enters the extra-branch
+carrier exponents \(\pm i\omega,\ \pm2i\omega\) only through the imaginary
+tortoise phase, the amplitude real parts are \(\omega\)-independent: the
+Einstein slice norm is \emph{finite for every real \(\omega\neq0\)}, with
+\(\omega=0\) the excluded exceptional carrier.
+
+\begin{theorem}[Axial symbolic-frequency Einstein finiteness]
+On the declared axial \(\ell=2\) sector at symbolic real \(\omega\neq0\), the
+literal Lee--Wald Einstein slice norm is finite (\(F^v\sim r^{-2}\)),
+\(\omega\)-independently.  The complementary divergent classes and the polar
+sector remain at the \(\omega=3/5\) fixture level.
+\end{theorem}
+
+The Einstein--extra symplectic pairing carries an invariant of the same
+data.  On \(\mathrm{span}(E,X)\) the Lee--Wald Gram is
+\(G=\begin{psmallmatrix}0 & a\\ \bar a & b\end{psmallmatrix}\), with
+\(a=a(\omega)=iF^r(E,X)/(\pi\alpha)\) the exact rational cross invariant
+(nonzero for every real \(\omega\neq0\)) and \(b\) the
+representative-dependent extra self-pairing.  Then \(\det G=-|a|^2<0\)
+strictly, so \(G\) has \emph{rank two and signature \((1,1)\), independent of
+the representative \(b\)}.  The rank and signature are invariant; the sign of
+the extra self-pairing \(b\) is \emph{not}, and no such basis-dependent sign
+is claimed.
+
 Thus the two ends of the exterior play opposite roles: the tested horizon
 and leading-symbol diagnostics do not select the Einstein kernel, but
 symplectic-norm finiteness at infinity does --- as a phase-space
-normalization, not a local differential boundary condition.  Station
-(iii), falloff in a regular tetrad or asymptotic gauge, remains open, and
-the fixture scope (single frequency, axial parity) is recorded on the
-certificate.  Nor is there a no-go against local causal selection: it is
+normalization, not a local differential boundary condition --- and on the
+finite-flux phase space the additional solution, admitted at the horizon, is
+excluded at infinity by norm finiteness rather than by any local boundary
+condition.  Station (iii), falloff in a regular tetrad or asymptotic gauge,
+remains open; the divergent-class table and the polar recomputation remain at
+the fixture level; and the exact global horizon-to-infinity connection map
+(a confluent-Heun connection) remains the open transcendental object.  Nor is there a no-go against local causal selection: it is
 now a certified statement.  On the globally hyperbolic exterior with
 Cauchy surface \(\Sigma=\{t=\mathrm{const},\,r>2m\}\), the local Cauchy
 condition
@@ -742,6 +779,7 @@ the repository.
 
 \section{Result ledger}
 
+{\footnotesize
 \begin{center}
 \begin{tabularx}{0.98\textwidth}{@{}Y Y Y@{}}
 \toprule
@@ -765,8 +803,17 @@ Asymptotic metric radiation? & carrier formal systems log-free; composed
 metric has logarithmic tails (axial) or one power of enhancement with a
 single log (polar $\mu=0$); finite-slice-norm class at infinity is
 exactly the Einstein sector in both parities, the polar $\mu=0$ Einstein
-pair identically zero in the slice density & fixture $\omega=3/5$, both
-parities; tetrad falloff and phase-space construction open\\
+pair identically zero in the slice density & axial Einstein finite side
+symbolic ($F^v\sim r^{-2}$, all real $\omega\neq0$); divergent classes and
+polar at fixture $\omega=3/5$; tetrad falloff and phase-space construction
+open\\
+Einstein--extra pairing invariant? & Lee--Wald Gram rank two, signature
+$(1,1)$, representative-independent; extra self-pairing sign not invariant &
+axial $\ell=2$, real $\omega\neq0$\\
+Complex-frequency structure? & axial modes and cross current continue
+meromorphically, exact singular set $\{i,i/2\}$ (polar not activated);
+Einstein BVP well-posed modulo discrete Wronskian zeros, additional branch
+log-tail obstructed & \textsc{reduced-mode}; not a spectrum\\
 Static ($\omega=0$) sectors? & log-classified: two-parameter log-free
 families both parities; polar Einstein variables degenerate &
 classification only; static composition open\\
@@ -780,30 +827,40 @@ asymptotics; endpoint nonselection parity complete & real frequencies,
 $\ell=2$\\
 Thermal weighting? & monodromy factor $e^{-\omega/T_H}$ universal across
 branches and parities & \textsc{reduced-mode}; no quantum state\\
-Stable/ringing? & not established & complex frequencies open\\
+Stable/ringing? & not established & complex frequencies open; no QNM\\
 \bottomrule
 \end{tabularx}
 \end{center}
+}
 
 \section{What is not proved}
 
 The paper does not establish:
 \begin{itemize}
-\item a complete exterior initial-boundary well-posedness theorem;
+\item a complete exterior initial-boundary well-posedness theorem: the
+      Einstein-branch complex-frequency boundary-value problem is well-posed
+      only \emph{modulo} the discrete zeros of the connection Wronskian (the
+      confluent-Heun connection, uncomputed), and the additional-branch
+      outgoing condition is certified \emph{ill-defined} by the log tails
+      rather than resolved;
 \item general \(\ell,m\), the \(\omega=0\) sector, or a non-Einstein
       background Ricci-carrier composition;
 \item a canonical splitting of the Bach solution space, or complete metric
       reconstruction from every Ricci-carrier solution;
 \item a representative-invariant sign theory for the carrier self-pairing
       (the null-quotient pairing);
-\item complex-frequency poles, mode stability, quasinormal modes, or
-      ringdown waveforms;
+\item mode stability, quasinormal modes, or ringdown waveforms, or the
+      connection-Wronskian zeros that would define them: the certified
+      complex-frequency statement is only that the axial modes and cross
+      current continue \emph{meromorphically} with exact singular set
+      \(\{i,i/2\}\) (polar not activated), which is not a spectrum;
 \item a second-order physical-process first law or nonlinear horizon
       dynamics;
 \item asymptotically flat conformal-gravity scattering with a complete
-      boundary phase space and metric/tetrad falloffs (the fixture
-      norm-selection table is parity complete but not yet a
-      symbolic-frequency, gauge-audited phase-space theorem);
+      boundary phase space and metric/tetrad falloffs: the axial Einstein
+      \emph{finite} side is now symbolic-frequency, but the divergent-class
+      table, the polar recomputation, the regular-tetrad falloff audit and the
+      gauge-audited phase-space/charge-algebra construction remain open;
 \item Hawking states, particles, grey-body factors, luminosity, a quantum
       BRST quotient, positivity, or unitarity: the monodromy temperature is
       a mode-level continuation factor, not a quantum state construction.
@@ -819,6 +876,7 @@ The manuscript is an \textsc{outline-allowed}/\textsc{draft-allowed}
 integration of committed certificates at repository baseline recorded in
 its generated claim map.
 
+{\footnotesize
 \begin{center}
 \begin{tabularx}{0.98\textwidth}{@{}Y Y@{}}
 \toprule
@@ -866,17 +924,29 @@ Polar composed classes; parity-complete norm-selection &
 \cert{black_hole_programme/certificates/BH2C_POLAR_FLUX_CLASS.json}\\
 Local Cauchy truncation selects Einstein modulo conformal gauge &
 \cert{black_hole_programme/certificates/BH_LOCAL_EINSTEIN_CAUCHY_TRUNCATION.json}\\
+Cross invariant $a(\omega)$; axial symbolic-frequency Einstein finiteness &
+\cert{black_hole_programme/certificates/BH2_SYMBOLIC_CROSS_INVARIANT.json};
+\cert{black_hole_programme/certificates/BH2C_SYMBOLIC_FLUX_RADIATION_CLASS.json}\\
+Endpoint selection and invariant pairing; complex-frequency continuation;
+exterior BVP disposition &
+\cert{black_hole_programme/certificates/BH_ENDPOINT_NONSELECTION_ASSEMBLY.json};
+\cert{black_hole_programme/certificates/BH3_ANALYTIC_CONTINUATION_GATE.json};
+\cert{black_hole_programme/certificates/BH3_EXTERIOR_BVP_WELLPOSEDNESS_GATE.json}\\
 \bottomrule
 \end{tabularx}
 \end{center}
+}
 
 Every certificate records a schema, exact or controlled-numerical payload,
 independent verifier, mutations or controls, command receipt, dependency
 tags, and missing claims.  This manuscript must not advance to
-\textsc{theorem-frozen} until the static certificate's complementary-sheet
-wording is repaired and the flux fixtures acquire rigorous nonvanishing
-bounds; the asymptotic Jordan/metric analysis and the polar
-parity-completion gate are now closed at the fixture level.
+\textsc{theorem-frozen} until the mixed/extra flux fixtures acquire rigorous
+symbolic or interval nonvanishing bounds, the divergent-class symbolic table
+is completed in both parities, and the regular-tetrad falloff and asymptotic
+phase-space constructions are certified; the axial Einstein \emph{finite}
+side is now symbolic-frequency, the asymptotic Jordan/metric analysis and the
+polar parity-completion gate are closed at the fixture level, and the static
+certificate's complementary-sheet wording is repaired.
 
 \section{Outlook}
 
@@ -886,22 +956,29 @@ The repeated-root asymptotic gate
  \longrightarrow \text{metric reconstruction}
  \longrightarrow \text{finite-flux boundary class}
 \]
-has now run to its end at the fixture level in both parities: log-free
-carrier Jordan structure, log-tailed (axial) and power-enhanced
-single-log (polar) composed metrics, and the Einstein-only
-finite-slice-norm class at infinity, with the polar \(\mu=0\) Einstein
-pair identically zero in the slice density.  The next calculations are
-its completions: the
-symbolic-frequency table, the regular-tetrad falloff audit, and the
-asymptotically flat phase-space and charge-algebra construction that
-would promote the fixture norm-selection to a theorem about which flux
-reaches null infinity.  In
-parallel, one rigorous interval or symbolic horizon-pairing fixture
-should replace the present controlled numerical nonvanishing, and the
-representative-invariant sign theory for the carrier self-pairing should
-be constructed.  Only after those steps, and after coordinator review of
-the parity-complete mode-level closure, should complex-frequency
-structure and quasinormal boundary conditions be activated.
+has now run past the fixture level: log-free carrier Jordan structure,
+log-tailed (axial) and power-enhanced single-log (polar) composed metrics,
+and the Einstein-only finite-slice-norm class at infinity, with the polar
+\(\mu=0\) Einstein pair identically zero in the slice density.  Its
+\emph{finite} side is now symbolic: the axial Einstein slice norm is
+\(\omega\)-independently finite (\(F^v\sim r^{-2}\)) for every real
+\(\omega\neq0\), and the Einstein--extra pairing carries a
+representative-independent rank-two signature-\((1,1)\) invariant.  The
+remaining completions are the divergent-class symbolic table in both
+parities, the regular-tetrad falloff audit, and the asymptotically flat
+phase-space and charge-algebra construction that would promote the
+Einstein finiteness to a full theorem about which flux reaches null
+infinity.  In parallel, one rigorous interval or symbolic horizon-pairing
+fixture should replace the present controlled numerical nonvanishing of the
+extra self-pairing, whose \emph{sign} (unlike the pairing rank and
+signature) is still not representative-invariant.  The complex-frequency
+picture is now opened only as far as an exact meromorphic continuation of
+the axial modes and cross current, with singular set \(\{i,i/2\}\) and the
+Einstein boundary-value problem well-posed away from the discrete zeros of
+its connection Wronskian; that Wronskian and its zeros --- the
+confluent-Heun connection object --- are exactly what a quasinormal
+computation would need, and their activation remains gated on coordinator
+review.
 
 The present result already fixes an important baseline:
 \begin{center}

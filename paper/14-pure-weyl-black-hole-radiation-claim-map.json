@@ -2,7 +2,7 @@
  "schema": "paper-draft-source-map-v1",
  "paper_id": "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION",
  "lifecycle_state": "DRAFT_ALLOWED",
- "source_baseline": "4cf26e0c338a66568a68743de5f14ed7558da828",
+ "source_baseline": "39c8fd92c5fa9403098d2ba6333e7d62cd45cfc9",
  "manuscript": "paper/14-pure-weyl-black-hole-radiation.tex",
  "dependency_tags": [
   "LOCAL-ALGEBRAIC",
@@ -19,7 +19,7 @@
   "full_metric_quotient_horizon_dimension": false,
   "axial_einstein_self_pairing_exactly_null": true,
   "axial_mixed_and_additional_pairing_controlled_fixtures": true,
-  "axial_mixed_pairing_symbolic_or_interval_certified": false,
+  "axial_mixed_pairing_symbolic_or_interval_certified": true,
   "axial_tested_endpoint_nonselection": true,
   "axial_local_causal_truncation_no_go": false,
   "asymptotic_jordan_and_metric_falloff": false,
@@ -48,7 +48,15 @@
   "polar_composed_lift_power_enhanced_single_log": true,
   "polar_norm_selection_fixture_einstein_selected": true,
   "local_cauchy_truncation_selects_einstein_axial": true,
-  "local_cauchy_truncation_polar_modulo_conformal_gauge": true
+  "local_cauchy_truncation_polar_modulo_conformal_gauge": true,
+  "axial_symbolic_frequency_finite_flux_einstein_selected": true,
+  "invariant_einstein_extra_pairing_rank_signature": true,
+  "one_ended_endpoint_selection_assembled": true,
+  "axial_complex_frequency_meromorphic_continuation_exact_singular_set": true,
+  "polar_complex_frequency_continuation_activated": false,
+  "axial_exterior_bvp_einstein_wellposed_modulo_discrete": true,
+  "additional_branch_outgoing_condition_logtail_obstructed": true,
+  "numerical_validation_protocol_specified": true
  },
  "known_source_scope_corrections": [
   {
@@ -148,7 +156,39 @@
   {
    "path": "black_hole_programme/certificates/BH_LOCAL_EINSTEIN_CAUCHY_TRUNCATION.json",
    "git_blob": "b1ef4af347791bbb4ce62bc17b6d39b81e366ff9"
+  },
+  {
+   "path": "black_hole_programme/certificates/BH2_SYMBOLIC_CROSS_INVARIANT.json",
+   "git_blob": "fd75c059bf329f2ce751bafbde3f8efc5f4ab0ef"
+  },
+  {
+   "path": "black_hole_programme/certificates/BH2_GENERAL_L_STRUCTURAL.json",
+   "git_blob": "45acd4fbe624f9647dec6b6a5c171b8d819b7579"
+  },
+  {
+   "path": "black_hole_programme/certificates/BH2C_METRIC_ALL_ORDERS.json",
+   "git_blob": "27533b5a06471d3b5aa7997afe884e532e3ff18e"
+  },
+  {
+   "path": "black_hole_programme/certificates/BH2C_SYMBOLIC_FLUX_RADIATION_CLASS.json",
+   "git_blob": "38aff1e38380764bb3b2c3efa4dfea5877c7b2fd"
+  },
+  {
+   "path": "black_hole_programme/certificates/BH_ENDPOINT_NONSELECTION_ASSEMBLY.json",
+   "git_blob": "7054ff53fabc3ee58775b2adbe29a43b0a7f5ee7"
+  },
+  {
+   "path": "black_hole_programme/certificates/BH3_ANALYTIC_CONTINUATION_GATE.json",
+   "git_blob": "cde84616d5badaeb5fc9bf070c01c76b438b7784"
+  },
+  {
+   "path": "black_hole_programme/certificates/BH3_EXTERIOR_BVP_WELLPOSEDNESS_GATE.json",
+   "git_blob": "42d682ffbf34240e172077117e11e6025a920b1b"
+  },
+  {
+   "path": "black_hole_programme/certificates/BH3_NUMERICAL_VALIDATION_PROTOCOL.json",
+   "git_blob": "801434e39284fdf7c0dec8dac81e6e7f2096b5d0"
   }
  ],
- "next_gate": "BH2C_SYMBOLIC_NORM_SELECTION_TABLE_AND_ASYMPTOTIC_PHASE_SPACE_CONSTRUCTION"
+ "next_gate": "BH2C_SYMBOLIC_DIVERGENT_TABLE_BOTH_PARITIES_AND_TETRAD_FALLOFF_AND_ASYMPTOTIC_PHASE_SPACE_AND_HEUN_CONNECTION_MAP"
 }
