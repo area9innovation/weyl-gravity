@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-berger-q26-104-row-free-adjoint-completion-BLOCKED-18e783b3facac266",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/classical-berger-q26-104-row-free-adjoint-completion-BLOCKED-18e783b3facac266.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "classical-1", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-21T08:53:10Z", "seq": 9, "predecessor": "sf:program/event/classical-berger-q26-104-row-free-adjoint-completion-ACTIVE-ff748fc79b901bb0", "payload": {"target": "sf:program/work/classical-berger-q26-104-row-free-adjoint-completion", "to_state": "BLOCKED", "note": "SHORTFALL (precondition not met): one exact simultaneous rational architecture is obstructed, but the complete non-cone 104-row class remains beyond the landed one-free-differential solver — needs sf:forge-request/exact-sparse-chain-complex-extension-sdr-solver must land the two-free-differential bilinear/rank-stratum, cyclic and full-SDR residue, with characteristic-zero reconstruction and independent replay", "evidence_basis": "d_quotient_classical/certificates/BERGER_Q26_104_ROW_MIXED_EVOLUTION_CORRECTION_ENDPOINT_OBSTRUCTION_V1.json", "missing_dependency": "sf:forge-request/exact-sparse-chain-complex-extension-sdr-solver must land the two-free-differential bilinear/rank-stratum, cyclic and full-SDR residue, with characteristic-zero reconstruction and independent replay"}, "native": {"authored_by": "sfc close-out", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/classical-berger-q26-104-row-free-adjoint-completion"}]
+}
