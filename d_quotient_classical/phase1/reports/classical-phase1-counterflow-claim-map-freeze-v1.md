@@ -21,4 +21,6 @@ Reverse materiality records were emitted for Papers 00, 09, 11, 12, 98 and
 99.  The live publications were deliberately not edited because other teams
 own the overlapping Paper 9 and Paper 12 changes.
 
+EVIDENCE: d_quotient_classical/phase1/CLASSICAL_PHASE1_COUNTERFLOW_CLAIM_MAP_V1.json and d_quotient_classical/phase1/receipts/CLASSICAL_PHASE1_COUNTERFLOW_CLAIM_MAP_V1_TIER_RECEIPT.json
+
 CLOSE-OUT: DONE — the Classical Phase-1 counterflow evidence slice is frozen with exact source hashes, graph edges, independent verification, fail-closed atlas scope and publication materiality records.
