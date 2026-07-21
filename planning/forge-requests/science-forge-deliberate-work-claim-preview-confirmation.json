@@ -1,0 +1,40 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:forge-request/science-forge-deliberate-work-claim-preview-confirmation",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "science-forge-deliberate-work-claim-preview-confirmation",
+  "source": {
+    "path": "planning/forge-requests/science-forge-deliberate-work-claim-preview-confirmation.json",
+    "span": null
+  },
+  "body": {
+    "owner": "science-forge",
+    "state": "REQUESTED",
+    "stream": "forge-requests",
+    "objective": "Make acquisition of a scientific work lease unmistakably deliberate, while preserving an efficient noninteractive resident loop and providing an idempotent recovery path for an incumbent lease.",
+    "stop_condition": "Add a deterministic read-only preview such as `s-f work next --stream S --agent A --now T` that prints the exact next item, dependency reason, current gate, expected package path and a content-addressed claim token without appending an event or lease. Make the mutating claim require an explicit acknowledgement of that preview, such as `work pull --accept-item I --claim-token H`, or an equivalently conspicuous automation flag; a bare query-shaped invocation must not acquire work. The accepted claim must atomically acquire exactly the previewed item or refuse if queue order, dependency fold, item head, agent lease state or token changed. Require or automatically emit a complete work package on every successful claim. If the same agent already holds the live lease, return an idempotent RESUME result and re-emit the package without appending another ACTIVE or ACQUIRE event. Add a safe resident `work unclaim`/yield path for a lease with no WORK_REPORTED checkpoint, with an explicit confirmation and append-only release/READY events; never infer release from elapsed time. Extend overview/agent-status with a distinct `LEASED_UNSTARTED` disposition when a live lease has no checkpoint by its holder, and do not attach an older agent's report as the current holder's checkpoint. Provide deterministic both-backend fixtures for preview-only no-mutation, accepted claim, stale token, queue-order race, already-held resume, accidental repeated pull, unstarted unclaim, long-running proof with no automatic release, and checkpoint attribution by holder.",
+    "current_gate": "deliberate lease acquisition and honest incumbent-start diagnostics",
+    "forbid": "no automatic lease release based only on time or missing checkpoints; no interactive prompt required in headless automation; no weakening atomic/CAS pull semantics; no hidden `--yes` default; no second state fold; no checkpoint attributed across agent identities; no physics-specific stream or item special case",
+    "depends_on": [
+      "sf:forge-request/bug-science-forge-pull-transition-cas-race",
+      "sf:forge-request/science-forge-agent-status-stream-diagnostics"
+    ],
+    "activates": [
+      "safe unattended resident startup and reliable queue monitoring"
+    ],
+    "allowed_paths": [
+      "forge/tools/science-forge/",
+      "forge/tools/science-forge-cli/",
+      "forge/tools/science-forge/fixtures/",
+      "forge/tools/science-forge/GUIDE.md"
+    ],
+    "resource_hint": "RESIDENT SAFETY PAPER CUT. Reuse the authoritative queue preview, CAS guard and agent-to-live-lease index; this is a deliberate-claim protocol, not a new scheduler.",
+    "notes": [
+      "Exact physics reproduction 2026-07-21: classical-2 invoked sfc work-pull at 06:47:24Z and acquired classical-berger-q26-104-row-free-adjoint-completion through 14:47:24Z, but later reported that it had not undertaken the item. No WORK_REPORTED checkpoint by classical-2 exists; work-show misleadingly displayed an older classical-1 checkpoint.",
+      "Exact physics reproduction 2026-07-21: classical-1 invoked sfc work-pull at 07:44:40Z and acquired classical-two-phase-counterflow-repaired-q70-generic-isotypical-health through 11:44:40Z, but later reported that it had not undertaken the item. No checkpoint exists. The append-only events prove explicit pull invocations, so this is not a phantom lease; it is an overly easy query-to-mutation transition.",
+      "Immediate recovery is resident-authored `s-f work yield --item I --agent A --now T`. The coordinator must not impersonate the resident while the coordinator revoke/reassign protocol remains unlanded."
+    ]
+  },
+  "edges": []
+}
