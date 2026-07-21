@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "claim_status", "dependency_tags", "dependency_refs",
+    "receiver_interface_required_fields", "carrier_compatibility_theorem",
+    "legacy_receiver_census", "independent_replay_targets", "mutation_results",
+    "census_completeness", "flags", "next_gate", "claim_boundary", "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-legacy-receiver-admissibility-replay-v1"},
+    "result_id": {"const": "BERGER_LEGACY_RECEIVER_ADMISSIBILITY_REPLAY_V1"},
+    "claim_status": {"const": "CERTIFIED_COMPLETE_FAIL_CLOSED_LEGACY_BERGER_RECEIVER_CENSUS"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 9,
+      "maxProperties": 9,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["path", "result_id", "sha256"]
+      }
+    },
+    "receiver_interface_required_fields": {"type": "array", "minItems": 13, "uniqueItems": true},
+    "carrier_compatibility_theorem": {
+      "type": "object",
+      "required": ["ordering", "result", "name_matching_forbidden", "advanced_signal_forbidden"]
+    },
+    "legacy_receiver_census": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "legacy_key", "result_id", "claim_status_imported", "source_ref", "carrier_gate",
+          "receiver_fields", "operational_inventory", "admissibility_status", "physical_receiver_promoted"
+        ],
+        "properties": {
+          "legacy_key": {"type": "string"},
+          "result_id": {"type": "string"},
+          "claim_status_imported": {"type": "string"},
+          "source_ref": {"type": "object"},
+          "carrier_gate": {
+            "type": "object",
+            "required": [
+              "declared_setting_id", "candidate_role", "same_action_derived_unary_theory",
+              "same_background", "same_charge_fibre", "same_residual_quotient",
+              "first_missing_condition", "first_missing_witness"
+            ]
+          },
+          "receiver_fields": {
+            "type": "object",
+            "minProperties": 13,
+            "maxProperties": 13,
+            "additionalProperties": {
+              "type": "object",
+              "required": ["status", "witness"],
+              "properties": {
+                "status": {"enum": ["CERTIFIED", "OBSTRUCTED", "OPEN", "NOT_APPLICABLE", "NO_CERTIFIED_MAP"]},
+                "witness": {"type": "string"}
+              }
+            }
+          },
+          "operational_inventory": {
+            "type": "object",
+            "required": [
+              "detector_response", "response_rank", "emitter_preparation", "clock_and_rod_dependence",
+              "relational_redshift", "recoil_backreaction_order", "survives_gauge_reduction",
+              "profile_dependency", "green_dependency", "boundary_dependence"
+            ]
+          },
+          "admissibility_status": {"const": "NO_CERTIFIED_MAP"},
+          "physical_receiver_promoted": {"const": false}
+        }
+      }
+    },
+    "independent_replay_targets": {"type": "object"},
+    "mutation_results": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["name", "detected", "classification"],
+        "properties": {"detected": {"const": true}}
+      }
+    },
+    "census_completeness": {
+      "type": "object",
+      "required": ["expected_count", "discovered_count", "classified_count", "unclassified_result_ids", "complete"],
+      "properties": {
+        "expected_count": {"const": 7},
+        "discovered_count": {"const": 7},
+        "classified_count": {"const": 7},
+        "unclassified_result_ids": {"maxItems": 0},
+        "complete": {"const": true}
+      }
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "LEGACY_CENSUS_COMPLETE", "THREE_PREQUOTIENT_RANK_TWO_RESPONSES_REPLAYED",
+        "ACTION_DERIVED_PHYSICAL_RECEIVER_CERTIFIED", "DESCENDED_RECEIVER_PAIRING_CERTIFIED",
+        "POSITIVE_DENOMINATOR_MARGIN_CERTIFIED", "ADVANCED_MAP_PROMOTED_AS_SIGNAL",
+        "PHYSICAL_REDSHIFT_CERTIFIED", "NONLINEAR_CLAIM", "PARTICLE_CLAIM", "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "LEGACY_CENSUS_COMPLETE": {"const": true},
+        "THREE_PREQUOTIENT_RANK_TWO_RESPONSES_REPLAYED": {"const": true},
+        "ACTION_DERIVED_PHYSICAL_RECEIVER_CERTIFIED": {"const": false},
+        "DESCENDED_RECEIVER_PAIRING_CERTIFIED": {"const": false},
+        "POSITIVE_DENOMINATOR_MARGIN_CERTIFIED": {"const": false},
+        "ADVANCED_MAP_PROMOTED_AS_SIGNAL": {"const": false},
+        "PHYSICAL_REDSHIFT_CERTIFIED": {"const": false},
+        "NONLINEAR_CLAIM": {"const": false},
+        "PARTICLE_CLAIM": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

@@ -2700,3 +2700,26 @@ Its activation gate is a genuinely nilpotent same-background combined unary,
 serialized and independently verified.  Until then no Berger \(q_2/\mathcal
 Z_2\) receiver, memory, redshift, recoil, positivity, particle or quantum
 claim is activated.
+
+## Active bridge: legacy Berger physical-receiver replay
+
+The seven legacy emitter, detector, retarded-transfer and quartic-redshift
+certificates have now been populated against the charged-time physical-receiver
+interface without identifying their three `setting_id` carriers by name.  Exact
+independent replay retains rank two for the dynamical-emitter, localized-current
+and homogeneous-Maxwell source-to-probe matrices.  The identity matrix in the
+localized detector preflight remains only rank-two probe independence, not a
+response matrix.
+
+No legacy row exports an action-derived local detector BV class and cocycle,
+receiver representative quotient, descended nonradical pairing and period,
+sampled denominator margin, and separately typed D, R and K actions on one
+carrier.  The advanced detector covector remains an adjoint emitter-preparation
+map, and the quartic common-action redshift domain remains empty.  Consequently
+the active fail-closed atlas row is
+`observer.berger.legacy_receiver_admissibility_replay` with
+`observational=NO_CERTIFIED_MAP`; no physical receiver or redshift is promoted.
+The activation gate is an exact same-background action-derived receiver unary
+export carrying the BV class, quotient, pairing, retarded support and D/R/K
+actions required by
+`CHARGED_TIME_PHYSICAL_RECEIVER_CROSSWALK_INTERFACE_V1`.
