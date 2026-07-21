@@ -1,0 +1,226 @@
+{
+  "carrier": {
+    "U1_cohomology_dimension": 0,
+    "U1_component_dimension": 32,
+    "all_70_rows_present": true,
+    "all_k_closure": true,
+    "basis": "e_row tensor Y_(1/2,m,k), row=0,...,69 and both k weights",
+    "degree_ranks_per_fixed_m": [
+      12,
+      58,
+      58,
+      12
+    ],
+    "labels": {
+      "j": "1/2",
+      "k_internal": [
+        "-1/2",
+        "+1/2"
+      ],
+      "m": [
+        "-1/2",
+        "+1/2"
+      ],
+      "two_j": 1
+    },
+    "normalized_inclusion": "iota_jm(e_row tensor e_k)=e_row*sqrt((2j+1)/Vol_Berger)*D^j_mk",
+    "normalized_projection": "pi_jm is the normalized L2 Peter-Weyl coefficient extraction",
+    "per_fixed_m_dimension": 140,
+    "pi_iota_identity": true,
+    "q54_to_q26_contracted_component_dimension": 56,
+    "retained_q26_component_dimension": 52
+  },
+  "charge_actions": {
+    "D": "multiplication by z on every dressed coefficient",
+    "K": "D-(3/4)R_rel=D on this j=1/2 block",
+    "R_rel": "zero tangent action in every j>0 isotype; the charged group-orbit tangent is the separate j=0 constant phase",
+    "action_angle_tangent": "NOT_PRESENT; the size-two zero Jordan family tangent belongs to j=0",
+    "diagonal_U1": "rank-32 contractible summand on this all-k block",
+    "fixed_charge_comparison": "identical to unrestricted on this nonhomogeneous block; no charged orbit is quotiented here",
+    "local_Diff_gauge": "rank-six image of K_spatial, divided out explicitly",
+    "unrestricted_Q_rel": "delta Q_rel=0 because every j=1/2 harmonic has zero spatial integral"
+  },
+  "claim_boundary": {
+    "does_not_establish": [
+      "the spectra of every higher-j or low-j stabilizer block",
+      "nonlinear instability or a finite-time blow-up theorem",
+      "Hadamard, anomaly, QME, particle, positivity or unitarity claims"
+    ],
+    "establishes": [
+      "complete fixed-m all-k 140-dimensional repaired q70 j=1/2 carrier",
+      "explicit normalized gauge quotient to a 14-by-14 physical Hessian",
+      "exact characteristic divisor and root/geometric/Jordan census",
+      "nondegenerate descended residue/BV pairing",
+      "a genuine non-gauge non-charge non-action-angle complex-frequency physical sector with split energy inertia"
+    ]
+  },
+  "content_hashes": {
+    "boundary_sha256": "202fd692aaa17e6d476d9c764be529ea82c1c9166a9ad46f1f56c67553b6e662",
+    "carrier_sha256": "371e81428b33d896014eb2607d6009f5fd0f9c9ca590d203781c3fce8c1d408c",
+    "charges_sha256": "a0923fb69d42b7f1d24ed833c8dc00058fc62823e0cc3462ee096d384b1fbbd1",
+    "quotient_sha256": "e53e6d6660f31adf1dd299ab5479b18451a35943d78338f37f6ef4b10d3d80cb",
+    "terminal_sha256": "e0c3ee2215652a24e866b9ebf3580fe3edb86c5684827f850617373da5d9adc8",
+    "unstable_sha256": "9c2cb71467ce29abd6ca9b932fba6ee2f0b60cb5b88c05c075667de772a42aae"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "imports": {
+    "D_action": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json",
+      "result_id": "BERGER_54_ROW_LOCAL_D_ACTION",
+      "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49"
+    },
+    "all_k_closure": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_V1",
+      "sha256": "a4e3ce0462344c05bb8ad1fa6d5c367bf2453b923916ba1aa34b58b8bee4a85c"
+    },
+    "all_k_closure_payload": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_PAYLOAD_V1",
+      "sha256": "3e3bc451c7d3fec892634c9428cbda50bd274bd6dff3fbef2fa0fbc7e5407834"
+    },
+    "charge_clock": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_V1",
+      "sha256": "cd1fe1bf22604d17c65b941032c6b31c404bfd5cc01bd7f8399642840da01ed4"
+    },
+    "peter_weyl": {
+      "oracle_fields_consumed": [],
+      "path": "closed_universe_observers/certificates/BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE.json",
+      "result_id": "BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE",
+      "sha256": "e24c860b338188254c4388a7ca660ac454ba7b70c13659ffc36a98bf39250120"
+    },
+    "repaired_parent": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2",
+      "sha256": "3f41cb5258f0883b217c9343e037074faf841728f29e03c306f101487411d2cf"
+    },
+    "repaired_payload": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V2.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V2",
+      "sha256": "c59b1a74aced082155db3446c40aa1b14e3982e66670a3c097539b25d5d5c938"
+    },
+    "retained_layout": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json",
+      "result_id": "BERGER_RETAINED_MINIMAL_LAYOUT",
+      "sha256": "3eccbcc1076eaf29ab1dc540440f8f2d3ffd5c9aa5be9265443db2997f68b1ba"
+    },
+    "retained_operator": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json",
+      "result_id": "BERGER_RETAINED_MINIMAL_OPERATOR",
+      "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "payload_ref": {
+    "content_sha256": "c6b0db9ad411fa633767007dbb543cd631d32f295bcd1dd549ccd90e96eed47e",
+    "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_PAYLOAD_V1.json",
+    "sha256": "1b7da33be5a5bcb330dc4d11e7046e1b34422f84c2c9bf587d2ebb0609919953"
+  },
+  "physical_quotient_summary": {
+    "characteristic_determinant_monic": "(z**2 + 13)**2*(40*z**4 + 773*z**2 + 3748)**2*(3240*z**4 + 168093*z**2 + 2172895)**2*(933120*z**6 + 10517040*z**4 + 34117578*z**2 + 24373901)**2/14624633760251904000000",
+    "cohomology_pairing_radical_dimension": 0,
+    "dimension": 14
+  },
+  "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_V1",
+  "result_state": "OBSTRUCTED_FIRST_NONSTABILIZER_ISOTYPE_HAS_GENUINE_COMPLEX_FREQUENCY_PHYSICAL_MODES",
+  "schema": "pure-weyl-two-phase-counterflow-repaired-q70-first-generic-isotypical-health-obstruction-v1",
+  "terminal_verdict": {
+    "complex_frequency_factor": "40*z^4+773*z^2+3748",
+    "energy_inertia_on_real_eight_dimensional_unstable_sector": [
+      4,
+      4,
+      0
+    ],
+    "first_failed_health_block": "j=1/2 complete all-k physical quotient",
+    "generic_all_j_health_theorem": "OBSTRUCTED_BY_EXPLICIT_GENERIC_BLOCK_COUNTEREXAMPLE",
+    "low_j_stabilizer_census": "SEPARATE_NEXT_GATE",
+    "pairing_radical": 0,
+    "physical_multiplicity_per_root": 2,
+    "result_state": "OBSTRUCTED_FIRST_NONSTABILIZER_ISOTYPE_HAS_GENUINE_COMPLEX_FREQUENCY_PHYSICAL_MODES"
+  },
+  "unstable_sector": {
+    "Ostrogradsky_Hessian_per_copy": [
+      [
+        "-3748",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "773",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1/40"
+      ]
+    ],
+    "Ostrogradsky_basis_per_copy": [
+      "q",
+      "Dq",
+      "P0",
+      "P1"
+    ],
+    "classification": "GENUINE_HAMILTONIAN_HOPF_EXPONENTIAL_OSCILLATORY_DIRECTION",
+    "fixed_isotype_spatial_potential_matrix": [
+      [
+        3748,
+        0
+      ],
+      [
+        0,
+        3748
+      ]
+    ],
+    "local_Smith_sector": "two copies of 40*D^4+773*D^2+3748",
+    "not_a_pure_gradient_sign_claim": true,
+    "principal_time_order_four_matrix": [
+      [
+        40,
+        0
+      ],
+      [
+        0,
+        40
+      ]
+    ],
+    "time_order_two_matrix": [
+      [
+        773,
+        0
+      ],
+      [
+        0,
+        773
+      ]
+    ],
+    "two_copy_inertia_positive_negative_zero": [
+      4,
+      4,
+      0
+    ]
+  }
+}

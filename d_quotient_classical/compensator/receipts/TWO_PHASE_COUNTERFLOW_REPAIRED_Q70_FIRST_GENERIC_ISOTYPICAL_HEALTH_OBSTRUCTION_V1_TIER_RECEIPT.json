@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_V1",
+  "date": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "artifacts": [
+    {"path": "d_quotient_classical/compensator/two_phase_counterflow_repaired_q70_generic_isotypical_health.py", "sha256": "f29df36631f9410daf291d53d7aeadea9a7d882f1a90a2a9ef9dfba6a5ee42f9"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_V1.json", "sha256": "4308067dacc55721c5b07b625c7a36c98a2d76a534998be235fd22ed643b1380"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_PAYLOAD_V1.json", "sha256": "1b7da33be5a5bcb330dc4d11e7046e1b34422f84c2c9bf587d2ebb0609919953"},
+    {"path": "d_quotient_classical/compensator/verify_two_phase_counterflow_repaired_q70_generic_isotypical_health.py", "sha256": "543e4b3ee56c024638e16cb7c24a8dbf31f74d6c17533095b85644c004b5cab4"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_repaired_q70_generic_isotypical_health.py", "sha256": "30b21d4e287215241d3ddd75e16e65e8929036e651abf15badba66871876c28e"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_repaired_q70_generic_isotypical_health_atlas.py", "sha256": "5d6467d1fc9402a1f3112709a5c82cfc818612ec20c585ca571ee606bcda9762"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-repaired-q70-first-generic-isotypical-health-obstruction-v1.schema.json", "sha256": "8c2220d3b46bc9112013c2654803214e132668bae2f43120e7343d411bca05f0"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-repaired-q70-first-generic-isotypical-health-obstruction-payload-v1.schema.json", "sha256": "f65c269c2f91819b4c57f1940f4cfc1f8de8c23479429c8d17491acc2debe09c"},
+    {"path": "d_quotient_classical/atlas/generate_two_phase_counterflow_repaired_q70_generic_isotypical_health_atlas_fragment.py", "sha256": "1d4a34f49cbbede37da154b162c885fe1b57d90bc9fb044840732767cc79c387"},
+    {"path": "residual_atlas/two-phase-counterflow-repaired-q70-first-generic-isotypical-health-obstruction-fragment-v1.json", "sha256": "140ed59f4d8a7dbbc25f40ab2cdb56f48a5ab2e61416259c9c5395f1695dfeab"},
+    {"path": "d_quotient_classical/compensator/reports/two-phase-counterflow-repaired-q70-first-generic-isotypical-health-obstruction-v1.md", "sha256": "0c9677ef7e79cd0da44d245cf7b562b65bd73198def0a167869381b4bc04e4d3"}
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m py_compile on producer, verifier, atlas generator and tests; JSON parse; explicit-path git diff --check", "status": "PASS"}
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 d_quotient_classical/compensator/two_phase_counterflow_repaired_q70_generic_isotypical_health.py --check", "elapsed_seconds": 19.34, "status": "PASS", "method": "exact PBW reduction, normalized gauge/equation quotient, factor-field cohomology and residue pairing"},
+      {"command": "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_repaired_q70_generic_isotypical_health.py", "elapsed_seconds": 21.9, "status": "PASS", "independent_rail": "manual spin-half Wigner matrices, full finite q70 square/grading, independent physical determinant and quotient-field ranks, exact growth and inertia checks, and orientation/weight/truncation mutations"},
+      {"command": "python3 -m pytest -q on generic isotypical result and atlas tests", "elapsed_seconds": 0.60, "status": "PASS", "tests": 4},
+      {"command": "atlas generator check and residual_atlas/validate_fragment.py", "elapsed_seconds": 0.30, "status": "PASS"},
+      {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true on certificate and payload", "elapsed_seconds": 3.50, "status": "PASS"}
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {"command": "nine repaired-parent/all-k/PBW/D/charge imports content-hashed and semantic preconditions checked", "status": "PASS"},
+      {"command": "bash ci/science-forge-shadow.sh", "elapsed_seconds": 4.20, "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS", "findings": "existing bridge audit drift; corpus 1372 versus baseline 976; Forge binary is an unpinned dirty development build; diagnostics /tmp/sf-shadow.QRD7ml"}
+    ]
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "criterion": "No freeze, release or global theorem promotion; the result is a scoped first-isotype obstruction with a complete affected chain and independent exact finite-Wigner/PBW replay."
+  },
+  "claim_boundary": "The exact complete j=1/2 all-k repaired q70 quotient contains a nondegenerate multiplicity-two physical factor 40*z^4+773*z^2+3748 with a complex-frequency quartet and split real energy inertia (4,4,0). These modes are not local gauge, diagonal-U1, R_rel orbit, the j=0 action-angle tangent or a pairing radical. This obstructs full linear health but does not classify every higher-j or low-j stabilizer block, prove nonlinear blow-up, or establish Hadamard, anomaly, QME, particle, positivity or unitarity claims.",
+  "higher_tiers_not_run": ["Tier 3 full repository suite; criterion recorded above"]
+}

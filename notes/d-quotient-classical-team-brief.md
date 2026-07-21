@@ -3553,3 +3553,37 @@ This is a unary graded-cyclic causal repair, not a physical-health theorem.
 Mode cohomology, pairing inertia, characteristics, stability, observers,
 Hadamard data, anomalies, QME, particles, positivity and unitarity remain
 open or unmapped.
+
+### First repaired-q70 physical isotype (2026-07-21)
+
+`TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_V1`
+uses the V2 parent to compute the first actual all-k physical quotient.  At
+(j=1/2), fixed (m), the 140-component q70 block contracts and quotients to
+an explicit 14-by-14 physical Hessian.  Six local Diff directions and the
+32-component diagonal-U1 summand are removed by exact inclusion/projection
+maps; neither right weight is deleted.
+
+The characteristic divisor is computed exactly.  One multiplicity-two
+physical factor is
+
+\[
+40z^4+773z^2+3748.
+\]
+
+Its polynomial in (y=z^2) has discriminant (-2151), hence a genuine
+complex-frequency quartet with positive growth rate
+
+\[
+\sqrt{(8\sqrt{9370}-773)/160}.
+\]
+
+The factor-field cohomology has dimension two in degrees zero and one, its
+residue pairing is nondegenerate, and the roots are semisimple.  The real
+eight-dimensional two-polarization sector has action-energy inertia
+((4,4,0)).  Thus the modes are not local gauge, pairing radical, charged
+(R_{\rm rel}) orbit or the homogeneous action-angle tangent.  Fixed-charge
+and unrestricted carriers coincide on this nonhomogeneous isotype.
+
+This is a linear Hamiltonian-Hopf health obstruction, not a nonlinear
+blow-up theorem.  Higher-j and low-j stabilizer censuses, q2, observers,
+Hadamard data, QME, particle, positivity and unitarity claims remain separate.

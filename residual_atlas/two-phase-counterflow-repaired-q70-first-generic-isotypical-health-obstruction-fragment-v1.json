@@ -1,0 +1,97 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This is a same-background, all-k, first non-stabilizer physical quotient. The unstable directions are not local gauge, diagonal-U1, R_rel orbit, the j=0 action-angle tangent or a pairing radical. It obstructs full linear health but is not a nonlinear blow-up, Hadamard, QME, particle, positivity or unitarity theorem, and it does not classify every higher-j or low-j stabilizer block.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_V1",
+          "sha256": "4308067dacc55721c5b07b625c7a36c98a2d76a534998be235fd22ed643b1380"
+        },
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_PAYLOAD_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_PAYLOAD_V1",
+          "sha256": "1b7da33be5a5bcb330dc4d11e7046e1b34422f84c2c9bf587d2ebb0609919953"
+        }
+      ],
+      "id": "classical.counterflow.berger.repaired_q70.j_half_physical_instability",
+      "mode_data": {
+        "dispersion": {
+          "statement": "A physical multiplicity-two factor 40*z^4+773*z^2+3748 has y=z^2 discriminant -2151, hence a complex-frequency quartet with nonzero growth rate.",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "The residue pairing is nondegenerate and the real eight-dimensional unstable sector has exact energy inertia (4,4,0).",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Every root of the unstable factor is semisimple with geometric multiplicity two; there is no polynomial-time Jordan partner.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The linear physical carrier already contains exponentially growing oscillatory solutions.",
+            "status": "OBSTRUCTED"
+          },
+          "causal_retarded": {
+            "statement": "The parent remains Green-hyperbolic; causal solvability does not remove the physical complex-frequency block.",
+            "status": "CERTIFIED"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The nonlinear source and correction class have not been computed on this quotient.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "No q2 result has been replayed against this V2 physical quotient.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "stationary biaxial Berger R x S3, a=1, c_squared=9/40",
+        "boundaries": "none; closed S3 Cauchy slices",
+        "carrier": "complete repaired 70-row Peter-Weyl isotype, 140 components per fixed m, reduced to the exact 14-row physical Hessian",
+        "charge_sector": "unrestricted and fixed-Q_rel coincide on this nonhomogeneous block; R_rel orbit is absent rather than quotiented",
+        "degree": "physical H0/H1 at the characteristic divisor; local gauge and contractible rows removed by explicit maps",
+        "ell": "NOT_APPLICABLE: Berger Peter-Weyl spin j=1/2, not a round-S3 Hodge label",
+        "k": "both internal weights -1/2,+1/2 retained; neither is a subcomplex",
+        "m": "-1/2 and +1/2 paired by reality",
+        "omega": "z quartet from 40*z^4+773*z^2+3748; growth rate sqrt((8*sqrt(9370)-773)/160)",
+        "parity": "complex m=+/-1/2 reality pair; two physical polarizations per characteristic root",
+        "theory": "selected fixed-action two-phase counterflow theory with repaired diagonal-U1 chain"
+      }
+    }
+  ],
+  "generated_by": "d_quotient_classical/atlas/generate_two_phase_counterflow_repaired_q70_generic_isotypical_health_atlas_fragment.py",
+  "generated_by_sha256": "1d4a34f49cbbede37da154b162c885fe1b57d90bc9fb044840732767cc79c387",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "classical",
+  "verification_commands": [
+    "python3 d_quotient_classical/compensator/two_phase_counterflow_repaired_q70_generic_isotypical_health.py --check",
+    "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_repaired_q70_generic_isotypical_health.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-repaired-q70-first-generic-isotypical-health-obstruction-fragment-v1.json"
+  ]
+}

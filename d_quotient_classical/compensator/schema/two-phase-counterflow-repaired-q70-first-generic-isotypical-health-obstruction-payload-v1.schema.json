@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/two-phase-counterflow-repaired-q70-first-generic-isotypical-health-obstruction-payload-v1.schema.json",
+  "title": "Repaired q70 first generic isotypical health obstruction payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "dependency_tags", "imports", "oracle_fields_consumed", "carrier", "physical_quotient", "unstable_sector", "charge_actions", "mutations", "terminal_verdict", "claim_boundary", "content_sha256"],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-repaired-q70-first-generic-isotypical-health-obstruction-payload-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_PAYLOAD_V1"},
+    "dependency_tags": {"type": "array", "minItems": 1, "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}},
+    "imports": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "object"}},
+    "oracle_fields_consumed": {"type": "array", "maxItems": 0},
+    "carrier": {"type": "object"},
+    "physical_quotient": {"type": "object"},
+    "unstable_sector": {"type": "object"},
+    "charge_actions": {"type": "object"},
+    "mutations": {"type": "object"},
+    "terminal_verdict": {"type": "object"},
+    "claim_boundary": {"type": "object"},
+    "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

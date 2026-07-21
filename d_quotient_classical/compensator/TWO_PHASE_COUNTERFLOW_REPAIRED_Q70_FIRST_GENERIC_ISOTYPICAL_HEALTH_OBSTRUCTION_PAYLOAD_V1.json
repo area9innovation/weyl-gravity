@@ -1,0 +1,1483 @@
+{
+  "carrier": {
+    "U1_cohomology_dimension": 0,
+    "U1_component_dimension": 32,
+    "all_70_rows_present": true,
+    "all_k_closure": true,
+    "basis": "e_row tensor Y_(1/2,m,k), row=0,...,69 and both k weights",
+    "degree_ranks_per_fixed_m": [
+      12,
+      58,
+      58,
+      12
+    ],
+    "labels": {
+      "j": "1/2",
+      "k_internal": [
+        "-1/2",
+        "+1/2"
+      ],
+      "m": [
+        "-1/2",
+        "+1/2"
+      ],
+      "two_j": 1
+    },
+    "normalized_inclusion": "iota_jm(e_row tensor e_k)=e_row*sqrt((2j+1)/Vol_Berger)*D^j_mk",
+    "normalized_projection": "pi_jm is the normalized L2 Peter-Weyl coefficient extraction",
+    "per_fixed_m_dimension": 140,
+    "pi_iota_identity": true,
+    "q54_to_q26_contracted_component_dimension": 56,
+    "retained_q26_component_dimension": 52
+  },
+  "charge_actions": {
+    "D": "multiplication by z on every dressed coefficient",
+    "K": "D-(3/4)R_rel=D on this j=1/2 block",
+    "R_rel": "zero tangent action in every j>0 isotype; the charged group-orbit tangent is the separate j=0 constant phase",
+    "action_angle_tangent": "NOT_PRESENT; the size-two zero Jordan family tangent belongs to j=0",
+    "diagonal_U1": "rank-32 contractible summand on this all-k block",
+    "fixed_charge_comparison": "identical to unrestricted on this nonhomogeneous block; no charged orbit is quotiented here",
+    "local_Diff_gauge": "rank-six image of K_spatial, divided out explicitly",
+    "unrestricted_Q_rel": "delta Q_rel=0 because every j=1/2 harmonic has zero spatial integral"
+  },
+  "claim_boundary": {
+    "does_not_establish": [
+      "the spectra of every higher-j or low-j stabilizer block",
+      "nonlinear instability or a finite-time blow-up theorem",
+      "Hadamard, anomaly, QME, particle, positivity or unitarity claims"
+    ],
+    "establishes": [
+      "complete fixed-m all-k 140-dimensional repaired q70 j=1/2 carrier",
+      "explicit normalized gauge quotient to a 14-by-14 physical Hessian",
+      "exact characteristic divisor and root/geometric/Jordan census",
+      "nondegenerate descended residue/BV pairing",
+      "a genuine non-gauge non-charge non-action-angle complex-frequency physical sector with split energy inertia"
+    ]
+  },
+  "content_sha256": "c6b0db9ad411fa633767007dbb543cd631d32f295bcd1dd549ccd90e96eed47e",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "imports": {
+    "D_action": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json",
+      "result_id": "BERGER_54_ROW_LOCAL_D_ACTION",
+      "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49"
+    },
+    "all_k_closure": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_V1",
+      "sha256": "a4e3ce0462344c05bb8ad1fa6d5c367bf2453b923916ba1aa34b58b8bee4a85c"
+    },
+    "all_k_closure_payload": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_PAYLOAD_V1",
+      "sha256": "3e3bc451c7d3fec892634c9428cbda50bd274bd6dff3fbef2fa0fbc7e5407834"
+    },
+    "charge_clock": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_V1",
+      "sha256": "cd1fe1bf22604d17c65b941032c6b31c404bfd5cc01bd7f8399642840da01ed4"
+    },
+    "peter_weyl": {
+      "oracle_fields_consumed": [],
+      "path": "closed_universe_observers/certificates/BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE.json",
+      "result_id": "BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE",
+      "sha256": "e24c860b338188254c4388a7ca660ac454ba7b70c13659ffc36a98bf39250120"
+    },
+    "repaired_parent": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2",
+      "sha256": "3f41cb5258f0883b217c9343e037074faf841728f29e03c306f101487411d2cf"
+    },
+    "repaired_payload": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V2.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V2",
+      "sha256": "c59b1a74aced082155db3446c40aa1b14e3982e66670a3c097539b25d5d5c938"
+    },
+    "retained_layout": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json",
+      "result_id": "BERGER_RETAINED_MINIMAL_LAYOUT",
+      "sha256": "3eccbcc1076eaf29ab1dc540440f8f2d3ffd5c9aa5be9265443db2997f68b1ba"
+    },
+    "retained_operator": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json",
+      "result_id": "BERGER_RETAINED_MINIMAL_OPERATOR",
+      "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+    }
+  },
+  "mutations": {
+    "old_U1_orientation": {
+      "degree_shift_histogram": {
+        "+1": 618,
+        "-1": 16
+      },
+      "status": "REJECTED"
+    },
+    "omitted_weight": {
+      "status": "REJECTED",
+      "witness": "e1/e2 has a nonzero edge between k=-1/2 and k=+1/2"
+    },
+    "proper_k_truncation": {
+      "status": "REJECTED",
+      "witness_count": 4
+    },
+    "round_or_changed_anisotropy": {
+      "reason": "changing u=v or the e3 scale changes the selected Berger PBW relations and does not retain the pinned q=9/40 stationary action",
+      "status": "OUTSIDE_SAME_BACKGROUND_GATE"
+    }
+  },
+  "oracle_fields_consumed": [],
+  "physical_quotient": {
+    "characteristic_determinant_monic": "(z**2 + 13)**2*(40*z**4 + 773*z**2 + 3748)**2*(3240*z**4 + 168093*z**2 + 2172895)**2*(933120*z**6 + 10517040*z**4 + 34117578*z**2 + 24373901)**2/14624633760251904000000",
+    "checks": {
+      "H_field_inclusion_equals_equation_inclusion_Hphysical": true,
+      "equation_projection_times_inclusion_identity": true,
+      "field_projection_times_gauge_zero": true,
+      "field_projection_times_inclusion_identity": true,
+      "gauge_pivot_determinant": "1/16",
+      "gauge_rank": 6,
+      "identity_pivot_determinant": "1/16",
+      "identity_rank": 6,
+      "identity_times_equation_inclusion_zero": true
+    },
+    "cohomology_pairing_radical_dimension": 0,
+    "cross_m_BV_pairing": "the nondegenerate cyclic q70 form pairs (m,z) with (-m,-z) and descends perfectly between H0 and H1",
+    "degree_dimensions_before_on_shell_specialization": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "equation_free_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "factor_audits": [
+      {
+        "H0_dimension": 2,
+        "H1_dimension": 2,
+        "H2_dimension": 0,
+        "Hminus1_dimension": 0,
+        "Jordan_status": "SEMISIMPLE_NO_POLYNOMIAL_TIME_PARTNER",
+        "algebraic_multiplicity_per_root": 2,
+        "factor": "z**2 + 13",
+        "geometric_multiplicity_per_root": 2,
+        "physical_matrix_rank_over_factor_field": 12,
+        "residue_determinant": "-221847093/1790982400",
+        "residue_nondegenerate": true,
+        "residue_pairing": [
+          [
+            "-4131*z/42320",
+            "0"
+          ],
+          [
+            "0",
+            "-4131*z/42320"
+          ]
+        ],
+        "root_class": "PURELY_IMAGINARY",
+        "root_count": 2,
+        "root_description": "z=+/-i*sqrt(13)"
+      },
+      {
+        "H0_dimension": 2,
+        "H1_dimension": 2,
+        "H2_dimension": 0,
+        "Hminus1_dimension": 0,
+        "Jordan_status": "SEMISIMPLE_NO_POLYNOMIAL_TIME_PARTNER",
+        "algebraic_multiplicity_per_root": 2,
+        "factor": "40*z**4 + 773*z**2 + 3748",
+        "geometric_multiplicity_per_root": 2,
+        "oscillation_rate": "sqrt((8*sqrt(9370)+773)/160)",
+        "physical_matrix_rank_over_factor_field": 12,
+        "positive_growth_rate": "sqrt((8*sqrt(9370)-773)/160)",
+        "residue_determinant": "-522693*(3484936*z**2 + 28350697)/354442926899200",
+        "residue_nondegenerate": true,
+        "residue_pairing": [
+          [
+            "27*z*(2143720*z**2 + 20903341)/1152584960",
+            "0"
+          ],
+          [
+            "0",
+            "27*z*(2143720*z**2 + 20903341)/1152584960"
+          ]
+        ],
+        "root_class": "COMPLEX_FREQUENCY_QUARTET_WITH_NONZERO_REAL_PART",
+        "root_count": 4,
+        "y_discriminant": "-2151",
+        "y_equals_z_squared_roots": [
+          "(-773+3*i*sqrt(239))/80",
+          "(-773-3*i*sqrt(239))/80"
+        ]
+      },
+      {
+        "H0_dimension": 2,
+        "H1_dimension": 2,
+        "H2_dimension": 0,
+        "Hminus1_dimension": 0,
+        "Jordan_status": "SEMISIMPLE_NO_POLYNOMIAL_TIME_PARTNER",
+        "algebraic_multiplicity_per_root": 2,
+        "factor": "3240*z**4 + 168093*z**2 + 2172895",
+        "geometric_multiplicity_per_root": 2,
+        "physical_matrix_rank_over_factor_field": 12,
+        "residue_determinant": "94537449*z**2/181748742400",
+        "residue_nondegenerate": true,
+        "residue_pairing": [
+          [
+            "9*z*(720*z**2 + 18677)/426320",
+            "0"
+          ],
+          [
+            "0",
+            "9*z*(720*z**2 + 18677)/426320"
+          ]
+        ],
+        "root_class": "FOUR_PURELY_IMAGINARY_ROOTS",
+        "root_count": 4,
+        "y_equals_z_squared_roots": [
+          "-18677/720-3*sqrt(1601)/80",
+          "-18677/720+3*sqrt(1601)/80"
+        ]
+      },
+      {
+        "H0_dimension": 2,
+        "H1_dimension": 2,
+        "H2_dimension": 0,
+        "Hminus1_dimension": 0,
+        "Jordan_status": "SEMISIMPLE_NO_POLYNOMIAL_TIME_PARTNER",
+        "algebraic_multiplicity_per_root": 2,
+        "factor": "933120*z**6 + 10517040*z**4 + 34117578*z**2 + 24373901",
+        "geometric_multiplicity_per_root": 2,
+        "physical_matrix_rank_over_factor_field": 12,
+        "residue_determinant": "(1904258952449506515411738720*z**4 + 12049774606331129970209364750*z**2 + 10062831615807959929699148843)/84893809419878400000000",
+        "residue_nondegenerate": true,
+        "residue_pairing": [
+          [
+            "z*(465048015599520*z**4 + 2942598133307250*z**2 + 2456597014572613)/8626858560000",
+            "0"
+          ],
+          [
+            "0",
+            "z*(465048015599520*z**4 + 2942598133307250*z**2 + 2456597014572613)/8626858560000"
+          ]
+        ],
+        "root_class": "SIX_PURELY_IMAGINARY_ROOTS",
+        "root_count": 6,
+        "y_equals_z_squared_root_isolating_intervals": [
+          "(-6,-5)",
+          "(-5,-4)",
+          "(-1,0)"
+        ]
+      }
+    ],
+    "field_dimension": 20,
+    "field_free_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "gauge_rank": 6,
+    "generic_z_statement": "H0=H1=0 away from the characteristic divisor; Hminus1=H2=0 because K is injective and Ksharp is surjective",
+    "maps": {
+      "equation_inclusion_E": {
+        "entries": [
+          [
+            0,
+            0,
+            "1"
+          ],
+          [
+            1,
+            1,
+            "1"
+          ],
+          [
+            2,
+            2,
+            "1"
+          ],
+          [
+            3,
+            3,
+            "1"
+          ],
+          [
+            4,
+            4,
+            "1"
+          ],
+          [
+            5,
+            5,
+            "1"
+          ],
+          [
+            6,
+            6,
+            "1"
+          ],
+          [
+            7,
+            7,
+            "1"
+          ],
+          [
+            8,
+            3,
+            "-I*z"
+          ],
+          [
+            8,
+            5,
+            "z"
+          ],
+          [
+            8,
+            6,
+            "-11*sqrt(10)*I*z/30"
+          ],
+          [
+            8,
+            8,
+            "-1"
+          ],
+          [
+            8,
+            12,
+            "22/9"
+          ],
+          [
+            9,
+            2,
+            "-I*z"
+          ],
+          [
+            9,
+            4,
+            "-z"
+          ],
+          [
+            9,
+            7,
+            "11*sqrt(10)*I*z/30"
+          ],
+          [
+            9,
+            9,
+            "-1"
+          ],
+          [
+            9,
+            13,
+            "22/9"
+          ],
+          [
+            10,
+            5,
+            "-2*I*z"
+          ],
+          [
+            10,
+            6,
+            "-31*sqrt(10)*z/15"
+          ],
+          [
+            10,
+            8,
+            "2*I"
+          ],
+          [
+            10,
+            11,
+            "-17*sqrt(10)/10"
+          ],
+          [
+            10,
+            12,
+            "-124*I/9"
+          ],
+          [
+            11,
+            4,
+            "-2*I*z"
+          ],
+          [
+            11,
+            7,
+            "-31*sqrt(10)*z/15"
+          ],
+          [
+            11,
+            9,
+            "-2*I"
+          ],
+          [
+            11,
+            10,
+            "17*sqrt(10)/10"
+          ],
+          [
+            11,
+            13,
+            "124*I/9"
+          ],
+          [
+            12,
+            7,
+            "-2*I*z"
+          ],
+          [
+            12,
+            10,
+            "I"
+          ],
+          [
+            12,
+            13,
+            "-4*sqrt(10)/3"
+          ],
+          [
+            13,
+            6,
+            "-2*I*z"
+          ],
+          [
+            13,
+            11,
+            "-I"
+          ],
+          [
+            13,
+            12,
+            "4*sqrt(10)/3"
+          ],
+          [
+            14,
+            8,
+            "1"
+          ],
+          [
+            15,
+            9,
+            "1"
+          ],
+          [
+            16,
+            10,
+            "1"
+          ],
+          [
+            17,
+            11,
+            "1"
+          ],
+          [
+            18,
+            12,
+            "1"
+          ],
+          [
+            19,
+            13,
+            "1"
+          ]
+        ],
+        "sha256": "682110d8a24a1015ddfc32f68c7b1e293aa524715c5e1cc005e770a6838f5ec3",
+        "shape": [
+          20,
+          14
+        ]
+      },
+      "equation_projection_R": {
+        "entries": [
+          [
+            0,
+            0,
+            "1"
+          ],
+          [
+            1,
+            1,
+            "1"
+          ],
+          [
+            2,
+            2,
+            "1"
+          ],
+          [
+            3,
+            3,
+            "1"
+          ],
+          [
+            4,
+            4,
+            "1"
+          ],
+          [
+            5,
+            5,
+            "1"
+          ],
+          [
+            6,
+            6,
+            "1"
+          ],
+          [
+            7,
+            7,
+            "1"
+          ],
+          [
+            8,
+            14,
+            "1"
+          ],
+          [
+            9,
+            15,
+            "1"
+          ],
+          [
+            10,
+            16,
+            "1"
+          ],
+          [
+            11,
+            17,
+            "1"
+          ],
+          [
+            12,
+            18,
+            "1"
+          ],
+          [
+            13,
+            19,
+            "1"
+          ]
+        ],
+        "sha256": "a7477382d85992d659c69b37f1166dc75900200f8c8726d8d56eb4fef4358ea0",
+        "shape": [
+          14,
+          20
+        ]
+      },
+      "field_inclusion_B": {
+        "entries": [
+          [
+            0,
+            0,
+            "1"
+          ],
+          [
+            1,
+            1,
+            "1"
+          ],
+          [
+            2,
+            2,
+            "1"
+          ],
+          [
+            3,
+            3,
+            "1"
+          ],
+          [
+            4,
+            4,
+            "1"
+          ],
+          [
+            5,
+            5,
+            "1"
+          ],
+          [
+            6,
+            6,
+            "1"
+          ],
+          [
+            7,
+            7,
+            "1"
+          ],
+          [
+            14,
+            8,
+            "1"
+          ],
+          [
+            15,
+            9,
+            "1"
+          ],
+          [
+            16,
+            10,
+            "1"
+          ],
+          [
+            17,
+            11,
+            "1"
+          ],
+          [
+            18,
+            12,
+            "1"
+          ],
+          [
+            19,
+            13,
+            "1"
+          ]
+        ],
+        "sha256": "481f28810d79ee24d66e6ae16893d4a2df8a9816089ec28d9589a02e3bd22615",
+        "shape": [
+          20,
+          14
+        ]
+      },
+      "field_projection_P": {
+        "entries": [
+          [
+            0,
+            0,
+            "1"
+          ],
+          [
+            1,
+            1,
+            "1"
+          ],
+          [
+            2,
+            2,
+            "1"
+          ],
+          [
+            2,
+            9,
+            "-I*z"
+          ],
+          [
+            3,
+            3,
+            "1"
+          ],
+          [
+            3,
+            8,
+            "-I*z"
+          ],
+          [
+            4,
+            4,
+            "1"
+          ],
+          [
+            4,
+            9,
+            "z"
+          ],
+          [
+            4,
+            11,
+            "-2*I*z"
+          ],
+          [
+            5,
+            5,
+            "1"
+          ],
+          [
+            5,
+            8,
+            "-z"
+          ],
+          [
+            5,
+            10,
+            "-2*I*z"
+          ],
+          [
+            6,
+            6,
+            "1"
+          ],
+          [
+            6,
+            8,
+            "-11*sqrt(10)*I*z/30"
+          ],
+          [
+            6,
+            10,
+            "31*sqrt(10)*z/15"
+          ],
+          [
+            6,
+            13,
+            "-2*I*z"
+          ],
+          [
+            7,
+            7,
+            "1"
+          ],
+          [
+            7,
+            9,
+            "11*sqrt(10)*I*z/30"
+          ],
+          [
+            7,
+            11,
+            "31*sqrt(10)*z/15"
+          ],
+          [
+            7,
+            12,
+            "-2*I*z"
+          ],
+          [
+            8,
+            8,
+            "-1"
+          ],
+          [
+            8,
+            10,
+            "-2*I"
+          ],
+          [
+            8,
+            14,
+            "1"
+          ],
+          [
+            9,
+            9,
+            "-1"
+          ],
+          [
+            9,
+            11,
+            "2*I"
+          ],
+          [
+            9,
+            15,
+            "1"
+          ],
+          [
+            10,
+            11,
+            "17*sqrt(10)/10"
+          ],
+          [
+            10,
+            12,
+            "-I"
+          ],
+          [
+            10,
+            16,
+            "1"
+          ],
+          [
+            11,
+            10,
+            "-17*sqrt(10)/10"
+          ],
+          [
+            11,
+            13,
+            "I"
+          ],
+          [
+            11,
+            17,
+            "1"
+          ],
+          [
+            12,
+            8,
+            "22/9"
+          ],
+          [
+            12,
+            10,
+            "124*I/9"
+          ],
+          [
+            12,
+            13,
+            "4*sqrt(10)/3"
+          ],
+          [
+            12,
+            18,
+            "1"
+          ],
+          [
+            13,
+            9,
+            "22/9"
+          ],
+          [
+            13,
+            11,
+            "-124*I/9"
+          ],
+          [
+            13,
+            12,
+            "-4*sqrt(10)/3"
+          ],
+          [
+            13,
+            19,
+            "1"
+          ]
+        ],
+        "sha256": "a116eef881cc7c685ab575a4e4fdc5f21d6bb521db7fa0e094116f348f2083b4",
+        "shape": [
+          14,
+          20
+        ]
+      },
+      "physical_H": {
+        "entries": [
+          [
+            0,
+            0,
+            "10783/31104"
+          ],
+          [
+            0,
+            3,
+            "-403*I*z/8640"
+          ],
+          [
+            0,
+            5,
+            "403*z/8640"
+          ],
+          [
+            0,
+            6,
+            "2077*sqrt(10)*I*z/12960"
+          ],
+          [
+            0,
+            8,
+            "31*(360*z**2 + 913)/155520"
+          ],
+          [
+            0,
+            11,
+            "31*sqrt(10)*I*(54*z**2 + 83)/25920"
+          ],
+          [
+            0,
+            12,
+            "-31*(80*z**2 - 83)/17280"
+          ],
+          [
+            1,
+            1,
+            "10783/31104"
+          ],
+          [
+            1,
+            2,
+            "-403*I*z/8640"
+          ],
+          [
+            1,
+            4,
+            "-403*z/8640"
+          ],
+          [
+            1,
+            7,
+            "-2077*sqrt(10)*I*z/12960"
+          ],
+          [
+            1,
+            9,
+            "31*(360*z**2 + 913)/155520"
+          ],
+          [
+            1,
+            10,
+            "31*sqrt(10)*I*(54*z**2 + 83)/25920"
+          ],
+          [
+            1,
+            13,
+            "-31*(80*z**2 - 83)/17280"
+          ],
+          [
+            2,
+            1,
+            "-403*I*z/8640"
+          ],
+          [
+            2,
+            2,
+            "-(14139*z**2 + 155603)/6480"
+          ],
+          [
+            2,
+            4,
+            "-I*(2502*z**2 + 29597)/1296"
+          ],
+          [
+            2,
+            7,
+            "7*sqrt(10)*(3*z**2 + 44)/2160"
+          ],
+          [
+            2,
+            9,
+            "-I*z*(720*z**2 + 8429)/8640"
+          ],
+          [
+            2,
+            10,
+            "31*sqrt(10)*z*(36*z**2 + 373)/4320"
+          ],
+          [
+            2,
+            13,
+            "-I*z*(240*z**2 + 1487)/2880"
+          ],
+          [
+            3,
+            0,
+            "-403*I*z/8640"
+          ],
+          [
+            3,
+            3,
+            "-(14139*z**2 + 155603)/6480"
+          ],
+          [
+            3,
+            5,
+            "I*(2502*z**2 + 29597)/1296"
+          ],
+          [
+            3,
+            6,
+            "-7*sqrt(10)*(3*z**2 + 44)/2160"
+          ],
+          [
+            3,
+            8,
+            "-I*z*(720*z**2 + 8429)/8640"
+          ],
+          [
+            3,
+            11,
+            "31*sqrt(10)*z*(36*z**2 + 373)/4320"
+          ],
+          [
+            3,
+            12,
+            "-I*z*(240*z**2 + 1487)/2880"
+          ],
+          [
+            4,
+            1,
+            "403*z/8640"
+          ],
+          [
+            4,
+            2,
+            "I*(2502*z**2 + 29597)/1296"
+          ],
+          [
+            4,
+            4,
+            "-(14139*z**2 + 155603)/6480"
+          ],
+          [
+            4,
+            7,
+            "7*sqrt(10)*I*(3*z**2 + 44)/2160"
+          ],
+          [
+            4,
+            9,
+            "-z*(1440*z**2 + 12199)/8640"
+          ],
+          [
+            4,
+            10,
+            "-sqrt(10)*I*z*(720*z**2 + 9821)/4320"
+          ],
+          [
+            4,
+            13,
+            "z*(240*z**2 + 1487)/2880"
+          ],
+          [
+            5,
+            0,
+            "-403*z/8640"
+          ],
+          [
+            5,
+            3,
+            "-I*(2502*z**2 + 29597)/1296"
+          ],
+          [
+            5,
+            5,
+            "-(14139*z**2 + 155603)/6480"
+          ],
+          [
+            5,
+            6,
+            "7*sqrt(10)*I*(3*z**2 + 44)/2160"
+          ],
+          [
+            5,
+            8,
+            "z*(1440*z**2 + 12199)/8640"
+          ],
+          [
+            5,
+            11,
+            "sqrt(10)*I*z*(720*z**2 + 9821)/4320"
+          ],
+          [
+            5,
+            12,
+            "-z*(240*z**2 + 1487)/2880"
+          ],
+          [
+            6,
+            0,
+            "2077*sqrt(10)*I*z/12960"
+          ],
+          [
+            6,
+            3,
+            "-7*sqrt(10)*(3*z**2 + 44)/2160"
+          ],
+          [
+            6,
+            5,
+            "-7*sqrt(10)*I*(3*z**2 + 44)/2160"
+          ],
+          [
+            6,
+            6,
+            "-(214*z**2 + 141)/216"
+          ],
+          [
+            6,
+            8,
+            "sqrt(10)*I*z*(360*z**2 + 913)/6480"
+          ],
+          [
+            6,
+            11,
+            "-z*(27*z**2 - 1)/108"
+          ],
+          [
+            6,
+            12,
+            "-sqrt(10)*I*z*(160*z**2 + 143)/1440"
+          ],
+          [
+            7,
+            1,
+            "-2077*sqrt(10)*I*z/12960"
+          ],
+          [
+            7,
+            2,
+            "7*sqrt(10)*(3*z**2 + 44)/2160"
+          ],
+          [
+            7,
+            4,
+            "-7*sqrt(10)*I*(3*z**2 + 44)/2160"
+          ],
+          [
+            7,
+            7,
+            "-(214*z**2 + 141)/216"
+          ],
+          [
+            7,
+            9,
+            "-sqrt(10)*I*z*(360*z**2 + 913)/6480"
+          ],
+          [
+            7,
+            10,
+            "z*(27*z**2 - 1)/108"
+          ],
+          [
+            7,
+            13,
+            "sqrt(10)*I*z*(160*z**2 + 143)/1440"
+          ],
+          [
+            8,
+            0,
+            "31*(360*z**2 + 913)/155520"
+          ],
+          [
+            8,
+            3,
+            "-I*z*(720*z**2 + 8429)/8640"
+          ],
+          [
+            8,
+            5,
+            "-z*(1440*z**2 + 12199)/8640"
+          ],
+          [
+            8,
+            6,
+            "sqrt(10)*I*z*(360*z**2 + 913)/6480"
+          ],
+          [
+            8,
+            8,
+            "(129600*z**4 + 3578760*z**2 + 37204039)/777600"
+          ],
+          [
+            8,
+            11,
+            "-sqrt(10)*I*(23310*z**2 + 174841)/129600"
+          ],
+          [
+            8,
+            12,
+            "-(7200*z**4 + 22940*z**2 - 4169)/86400"
+          ],
+          [
+            9,
+            1,
+            "31*(360*z**2 + 913)/155520"
+          ],
+          [
+            9,
+            2,
+            "-I*z*(720*z**2 + 8429)/8640"
+          ],
+          [
+            9,
+            4,
+            "z*(1440*z**2 + 12199)/8640"
+          ],
+          [
+            9,
+            7,
+            "-sqrt(10)*I*z*(360*z**2 + 913)/6480"
+          ],
+          [
+            9,
+            9,
+            "(129600*z**4 + 3578760*z**2 + 37204039)/777600"
+          ],
+          [
+            9,
+            10,
+            "-sqrt(10)*I*(23310*z**2 + 174841)/129600"
+          ],
+          [
+            9,
+            13,
+            "-(7200*z**4 + 22940*z**2 - 4169)/86400"
+          ],
+          [
+            10,
+            1,
+            "-31*sqrt(10)*I*(54*z**2 + 83)/25920"
+          ],
+          [
+            10,
+            2,
+            "-31*sqrt(10)*z*(36*z**2 + 373)/4320"
+          ],
+          [
+            10,
+            4,
+            "-sqrt(10)*I*z*(720*z**2 + 9821)/4320"
+          ],
+          [
+            10,
+            7,
+            "-z*(27*z**2 - 1)/108"
+          ],
+          [
+            10,
+            9,
+            "sqrt(10)*I*(23310*z**2 + 174841)/129600"
+          ],
+          [
+            10,
+            10,
+            "(1080*z**4 + 8970*z**2 + 7399)/2160"
+          ],
+          [
+            10,
+            13,
+            "-sqrt(10)*I*(1970*z**2 + 379)/14400"
+          ],
+          [
+            11,
+            0,
+            "-31*sqrt(10)*I*(54*z**2 + 83)/25920"
+          ],
+          [
+            11,
+            3,
+            "-31*sqrt(10)*z*(36*z**2 + 373)/4320"
+          ],
+          [
+            11,
+            5,
+            "sqrt(10)*I*z*(720*z**2 + 9821)/4320"
+          ],
+          [
+            11,
+            6,
+            "z*(27*z**2 - 1)/108"
+          ],
+          [
+            11,
+            8,
+            "sqrt(10)*I*(23310*z**2 + 174841)/129600"
+          ],
+          [
+            11,
+            11,
+            "(1080*z**4 + 8970*z**2 + 7399)/2160"
+          ],
+          [
+            11,
+            12,
+            "-sqrt(10)*I*(1970*z**2 + 379)/14400"
+          ],
+          [
+            12,
+            0,
+            "-31*(80*z**2 - 83)/17280"
+          ],
+          [
+            12,
+            3,
+            "-I*z*(240*z**2 + 1487)/2880"
+          ],
+          [
+            12,
+            5,
+            "z*(240*z**2 + 1487)/2880"
+          ],
+          [
+            12,
+            6,
+            "-sqrt(10)*I*z*(160*z**2 + 143)/1440"
+          ],
+          [
+            12,
+            8,
+            "-(7200*z**4 + 22940*z**2 - 4169)/86400"
+          ],
+          [
+            12,
+            11,
+            "sqrt(10)*I*(1970*z**2 + 379)/14400"
+          ],
+          [
+            12,
+            12,
+            "(1600*z**4 + 3400*z**2 + 379)/9600"
+          ],
+          [
+            13,
+            1,
+            "-31*(80*z**2 - 83)/17280"
+          ],
+          [
+            13,
+            2,
+            "-I*z*(240*z**2 + 1487)/2880"
+          ],
+          [
+            13,
+            4,
+            "-z*(240*z**2 + 1487)/2880"
+          ],
+          [
+            13,
+            7,
+            "sqrt(10)*I*z*(160*z**2 + 143)/1440"
+          ],
+          [
+            13,
+            9,
+            "-(7200*z**4 + 22940*z**2 - 4169)/86400"
+          ],
+          [
+            13,
+            10,
+            "sqrt(10)*I*(1970*z**2 + 379)/14400"
+          ],
+          [
+            13,
+            13,
+            "(1600*z**4 + 3400*z**2 + 379)/9600"
+          ]
+        ],
+        "sha256": "9bf1c1eb5e51d8698518f4b4d9a64f9ea27718b54d0c057f5f6ecfe78327bcc5",
+        "shape": [
+          14,
+          14
+        ]
+      }
+    },
+    "physical_field_quotient_dimension": 14
+  },
+  "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_PAYLOAD_V1",
+  "schema": "pure-weyl-two-phase-counterflow-repaired-q70-first-generic-isotypical-health-obstruction-payload-v1",
+  "terminal_verdict": {
+    "complex_frequency_factor": "40*z^4+773*z^2+3748",
+    "energy_inertia_on_real_eight_dimensional_unstable_sector": [
+      4,
+      4,
+      0
+    ],
+    "first_failed_health_block": "j=1/2 complete all-k physical quotient",
+    "generic_all_j_health_theorem": "OBSTRUCTED_BY_EXPLICIT_GENERIC_BLOCK_COUNTEREXAMPLE",
+    "low_j_stabilizer_census": "SEPARATE_NEXT_GATE",
+    "pairing_radical": 0,
+    "physical_multiplicity_per_root": 2,
+    "result_state": "OBSTRUCTED_FIRST_NONSTABILIZER_ISOTYPE_HAS_GENUINE_COMPLEX_FREQUENCY_PHYSICAL_MODES"
+  },
+  "unstable_sector": {
+    "Ostrogradsky_Hessian_per_copy": [
+      [
+        "-3748",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "773",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1/40"
+      ]
+    ],
+    "Ostrogradsky_basis_per_copy": [
+      "q",
+      "Dq",
+      "P0",
+      "P1"
+    ],
+    "classification": "GENUINE_HAMILTONIAN_HOPF_EXPONENTIAL_OSCILLATORY_DIRECTION",
+    "fixed_isotype_spatial_potential_matrix": [
+      [
+        3748,
+        0
+      ],
+      [
+        0,
+        3748
+      ]
+    ],
+    "local_Smith_sector": "two copies of 40*D^4+773*D^2+3748",
+    "not_a_pure_gradient_sign_claim": true,
+    "principal_time_order_four_matrix": [
+      [
+        40,
+        0
+      ],
+      [
+        0,
+        40
+      ]
+    ],
+    "time_order_two_matrix": [
+      [
+        773,
+        0
+      ],
+      [
+        0,
+        773
+      ]
+    ],
+    "two_copy_inertia_positive_negative_zero": [
+      4,
+      4,
+      0
+    ]
+  }
+}
