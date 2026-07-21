@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "SCALAR_FLAT_BERGER_VECTOR_SCHUR_HIGH_MODE_TRACE_MAJORANT_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_id": "SCALAR_FLAT_BERGER_VECTOR_SCHUR_HIGH_MODE_TRACE_MAJORANT_OBSTRUCTION_V1",
+  "date": "2026-07-21",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "artifacts": [
+    {
+      "path": "quantum-weyl/spectral/euclidean/scalar_flat_berger_vector_schur_high_mode_trace_obstruction.py",
+      "sha256": "c679010e1e04fe75590445fb0e1f4599f6ffe161991f751a41210c87910f67b7"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/verify_scalar_flat_berger_vector_schur_high_mode_trace_obstruction.py",
+      "sha256": "46df602efa11295a5af34aef0f1516cf9efdee27e90b6dbb8dbeb756db5cd4df"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/tests/test_scalar_flat_berger_vector_schur_high_mode_trace_obstruction.py",
+      "sha256": "0d7906abffb1a1773310cc174f56b75b9eca57b8fcc37daffae69e779c51b1c4"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/schema/scalar-flat-berger-vector-schur-high-mode-trace-majorant-obstruction-v1.schema.json",
+      "sha256": "60d9069522c4e036f3ca6925b6fac3e4afd2d9b4d34bde09897cbe295e0f35c3"
+    },
+    {
+      "path": "quantum-weyl/spectral/euclidean/certificates/SCALAR_FLAT_BERGER_VECTOR_SCHUR_HIGH_MODE_TRACE_MAJORANT_OBSTRUCTION_V1.json",
+      "sha256": "73b4ec7e13df4ca55477d13f2bbfd4d2bf398eee6f8a313fb74d28a246cd7157"
+    },
+    {
+      "path": "quantum-weyl/reports/scalar-flat-berger-vector-schur-high-mode-trace-majorant-obstruction-v1.md",
+      "sha256": "71de04d8b5f1a880c49ab46a200cc54c4ceb02479e21ad246a7e5ecc2e31f996"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <producer, independent verifier, tests>",
+        "status": "PASS",
+        "elapsed_seconds": 0.04
+      },
+      {
+        "command": "python Draft202012Validator.check_schema + validate",
+        "status": "PASS",
+        "elapsed_seconds": 0.12
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s <schema> -d <certificate>",
+        "status": "PASS",
+        "elapsed_seconds": 4.53
+      },
+      {
+        "command": "git diff --check -- <explicit high-mode obstruction paths>",
+        "status": "PASS",
+        "elapsed_seconds": 0.0
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 quantum-weyl/spectral/euclidean/scalar_flat_berger_vector_schur_high_mode_trace_obstruction.py --check",
+        "status": "PASS",
+        "elapsed_seconds": 0.33
+      },
+      {
+        "command": "python3 quantum-weyl/spectral/euclidean/verify_scalar_flat_berger_vector_schur_high_mode_trace_obstruction.py",
+        "status": "PASS",
+        "elapsed_seconds": 14.32,
+        "independent_rail": "reconstructs the coupled vector pencil from SU(2) generators and hard-coded covector connection matrices, differentiates the exact normalized Schur inverse, and separately proves the all-spin central-band inequality and modulo-four weight count"
+      },
+      {
+        "command": "python3 -m unittest quantum-weyl/spectral/euclidean/tests/test_scalar_flat_berger_vector_schur_high_mode_trace_obstruction.py -v",
+        "status": "PASS",
+        "elapsed_seconds": 19.2,
+        "tests": 5,
+        "mutation_controls": "wrong insertion coefficient, false shell bound, QME promotion and Lorentzian/Hadamard promotion are rejected"
+      }
+    ]
+  },
+  "superseded_failed_runs": [
+    {
+      "rail": "independent verifier",
+      "status": "FAIL",
+      "reason": "the first modulo-four implementation passed a symbolic numerator to SymPy Rational; repaired by exact division through Integer(4), then the full verifier passed"
+    },
+    {
+      "rail": "strict AJV schema",
+      "status": "FAIL",
+      "reason": "the dependency-tag tuple omitted explicit minItems/maxItems under AJV strict mode; repaired with cardinality two, then both Python and AJV schema rails passed"
+    }
+  ],
+  "tier_2": {
+    "status": "NOT_RUN",
+    "reason": "All imported low-block and normalized-variation inputs are content-addressed and unchanged. This result is a new obstruction leaf and modifies no shared operator or downstream coefficient theorem."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "No freeze, release, tag, lifecycle promotion or shared-core-algebra change occurred."
+  },
+  "claim_boundary": "The receipt certifies the exact n=0 central-weight non-trace-class witness for the first normalized scalar-flat Berger vector-Schur insertion. It does not certify complete A(t) high-mode coercivity, the finite exceptional block set, regulated first or second insertion traces, a determinant, anomaly coefficient, QME, Lorentzian causal object, Hadamard state, particle, positivity, scattering or unitarity theorem.",
+  "higher_tiers_not_run": [
+    {
+      "tier": 2,
+      "criterion": "No mathematical input or promoted downstream receiver changed."
+    },
+    {
+      "tier": 3,
+      "criterion": "No freeze, release, tag or explicit full-suite request."
+    }
+  ]
+}

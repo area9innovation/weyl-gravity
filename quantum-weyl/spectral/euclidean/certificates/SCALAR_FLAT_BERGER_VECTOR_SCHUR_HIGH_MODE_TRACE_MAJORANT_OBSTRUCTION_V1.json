@@ -1,0 +1,291 @@
+{
+  "$schema": "../schema/scalar-flat-berger-vector-schur-high-mode-trace-majorant-obstruction-v1.schema.json",
+  "claim_boundary": "This LOCAL-ALGEBRAIC/EUCLIDEAN-SPECTRAL certificate imports the unique normalized scalar-flat Berger vector Schur pencil and proves an exact high-mode obstruction to the requested ordinary summable majorant for the first metric insertion. The n=0 central-weight family alone has a uniform positive absolute shell contribution, so B1 is not trace class and cannot be assigned an ordinary absolutely convergent trace. This is the first exact failure of the requested three-majorant preflight. It does not disprove high-mode invertibility of A(t), classify the finite exceptional blocks, compute a regulated B1 value or finite B2 part, construct a global determinant, determine an anomaly coefficient or QME, or establish Lorentzian, Hadamard, state, particle, positivity, scattering or unitarity claims.",
+  "claim_flags": {
+    "ANOMALY_COEFFICIENT_OR_QME_COMPUTED": false,
+    "COMPLETE_HIGH_MODE_COERCIVITY_PREFLIGHT_COMPUTED": false,
+    "FINITE_EXCEPTIONAL_BLOCK_SET_CLASSIFIED": false,
+    "FIRST_INSERTION_EXACT_MODE_FORMULA_VERIFIED": true,
+    "FIRST_INSERTION_SUMMABLE_MAJORANT_OBSTRUCTED": true,
+    "GLOBAL_DETERMINANT_OR_FINITE_TRACE_COMPUTED": false,
+    "LORENTZIAN_OR_HADAMARD_PROMOTED": false,
+    "LOW_BLOCK_PENCIL_AND_NORMALIZATION_IMPORTED": true
+  },
+  "dependencies": {
+    "low_blocks": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/SCALAR_FLAT_BERGER_VECTOR_SCHUR_LOW_BLOCKS.json",
+      "result_id": "SCALAR_FLAT_BERGER_VECTOR_SCHUR_LOW_BLOCKS",
+      "sha256": "58d8646e3aedc1a897a8e6d05d6128f0e0eb4f885225443b9133f1c1968914f0"
+    },
+    "low_oracle": {
+      "path": "quantum-weyl/spectral/euclidean/generated/scalar_flat_berger_vector_schur_low_blocks_v1/blocks.json",
+      "result_id": "SCALAR_FLAT_BERGER_VECTOR_SCHUR_LOW_BLOCK_ORACLE",
+      "sha256": "2c81c166ae2c16ed4c97244b26bd134e24381779f2a6e7921a2daca4f29021b3"
+    },
+    "variation": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/NORMALIZED_SCHUR_PSEUDODIFFERENTIAL_VARIATION.json",
+      "result_id": "NORMALIZED_SCHUR_PSEUDODIFFERENTIAL_VARIATION",
+      "sha256": "5e437f7feed2044fd4ab7254388556536e41bf74a874398ece47f1d8b88f4a95"
+    },
+    "variation_manifest": {
+      "path": "quantum-weyl/spectral/euclidean/generated/normalized_schur_pseudodifferential_variation_v1/operator_words.json",
+      "result_id": "NORMALIZED_SCHUR_PSEUDODIFFERENTIAL_OPERATOR_WORDS",
+      "sha256": "837da72d4d358109cdcd5ecfeddbcc974ca6aa9ad04796cc6ef629870b8388d6"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "exact_lower_bound_proof": {
+    "central_weight_count_bound": "#{m:abs(m)<=j/2}>=j/2",
+    "central_weight_count_formula": "for N=2j: floor(3N/4)-ceil(N/4)+1>=N/4, checked by N mod 4",
+    "denominator_decomposition": "2j^2-q_jm=j*(j-1)+(3/4)m^2>=0",
+    "left_multiplicity_bound": "2*j+1>=2*j",
+    "numerator_decomposition": "p_jm-(5/4)j^2=2j+3*(j^2/4-m^2)>=0",
+    "per_weight_bound": "abs(b1_jm)>=5/(48*j^2)",
+    "range": "j>=1 and abs(m)<=j/2",
+    "scalar_positivity": "q_jm>=j^2/4+j>0",
+    "series_conclusion": "sum_{j>=1}(2*j+1)*sum_m abs(b1_jm) diverges by comparison with sum_{j>=1} 5/48",
+    "uniform_shell_lower_bound": "(2*j+1)*sum_central abs(b1_jm)>=5/48"
+  },
+  "exact_shell_witnesses": [
+    {
+      "absolute_shell_contribution": "1",
+      "central_weight_count": 1,
+      "central_weights": [
+        "0"
+      ],
+      "j": "1",
+      "minus_uniform_lower_bound": "43/48",
+      "twice_j": 2
+    },
+    {
+      "absolute_shell_contribution": "512/361",
+      "central_weight_count": 2,
+      "central_weights": [
+        "1/2",
+        "-1/2"
+      ],
+      "j": "3/2",
+      "minus_uniform_lower_bound": "22771/17328",
+      "twice_j": 3
+    },
+    {
+      "absolute_shell_contribution": "725/441",
+      "central_weight_count": 3,
+      "central_weights": [
+        "1",
+        "0",
+        "-1"
+      ],
+      "j": "2",
+      "minus_uniform_lower_bound": "10865/7056",
+      "twice_j": 4
+    },
+    {
+      "absolute_shell_contribution": "17152/18769",
+      "central_weight_count": 2,
+      "central_weights": [
+        "1/2",
+        "-1/2"
+      ],
+      "j": "5/2",
+      "minus_uniform_lower_bound": "729451/900912",
+      "twice_j": 5
+    },
+    {
+      "absolute_shell_contribution": "4711/4050",
+      "central_weight_count": 3,
+      "central_weights": [
+        "1",
+        "0",
+        "-1"
+      ],
+      "j": "3",
+      "minus_uniform_lower_bound": "34313/32400",
+      "twice_j": 6
+    },
+    {
+      "absolute_shell_contribution": "156317696/116251875",
+      "central_weight_count": 4,
+      "central_weights": [
+        "3/2",
+        "1/2",
+        "-1/2",
+        "-3/2"
+      ],
+      "j": "7/2",
+      "minus_uniform_lower_bound": "2307330011/1860030000",
+      "twice_j": 7
+    },
+    {
+      "absolute_shell_contribution": "25366443/17134810",
+      "central_weight_count": 5,
+      "central_weights": [
+        "2",
+        "1",
+        "0",
+        "-1",
+        "-2"
+      ],
+      "j": "4",
+      "minus_uniform_lower_bound": "565957607/411235440",
+      "twice_j": 8
+    },
+    {
+      "absolute_shell_contribution": "836933120/778886307",
+      "central_weight_count": 4,
+      "central_weights": [
+        "3/2",
+        "1/2",
+        "-1/2",
+        "-3/2"
+      ],
+      "j": "9/2",
+      "minus_uniform_lower_bound": "12092786075/12462180912",
+      "twice_j": 9
+    },
+    {
+      "absolute_shell_contribution": "748979/616005",
+      "central_weight_count": 5,
+      "central_weights": [
+        "2",
+        "1",
+        "0",
+        "-1",
+        "-2"
+      ],
+      "j": "5",
+      "minus_uniform_lower_bound": "10956989/9856080",
+      "twice_j": 10
+    },
+    {
+      "absolute_shell_contribution": "31624528186286592/23753647909174225",
+      "central_weight_count": 6,
+      "central_weights": [
+        "5/2",
+        "3/2",
+        "1/2",
+        "-1/2",
+        "-3/2",
+        "-5/2"
+      ],
+      "j": "11/2",
+      "minus_uniform_lower_bound": "1399209113395885291/1140175099640362800",
+      "twice_j": 11
+    },
+    {
+      "absolute_shell_contribution": "2602714211/1824247425",
+      "central_weight_count": 7,
+      "central_weights": [
+        "3",
+        "2",
+        "1",
+        "0",
+        "-1",
+        "-2",
+        "-3"
+      ],
+      "j": "6",
+      "minus_uniform_lower_bound": "12867671667/9729319600",
+      "twice_j": 12
+    },
+    {
+      "absolute_shell_contribution": "68649927309056/60014633843115",
+      "central_weight_count": 6,
+      "central_weights": [
+        "5/2",
+        "3/2",
+        "1/2",
+        "-1/2",
+        "-3/2",
+        "-5/2"
+      ],
+      "j": "13/2",
+      "minus_uniform_lower_bound": "998374447206371/960234141489840",
+      "twice_j": 13
+    },
+    {
+      "absolute_shell_contribution": "185172618741725/149082535462588",
+      "central_weight_count": 7,
+      "central_weights": [
+        "3",
+        "2",
+        "1",
+        "0",
+        "-1",
+        "-2",
+        "-3"
+      ],
+      "j": "7",
+      "minus_uniform_lower_bound": "2035718255572465/1788990425551056",
+      "twice_j": 14
+    },
+    {
+      "absolute_shell_contribution": "3119089449970573312/2350985527966108005",
+      "central_weight_count": 8,
+      "central_weights": [
+        "7/2",
+        "5/2",
+        "3/2",
+        "1/2",
+        "-1/2",
+        "-3/2",
+        "-5/2",
+        "-7/2"
+      ],
+      "j": "15/2",
+      "minus_uniform_lower_bound": "45987121986252326317/37615768447457728080",
+      "twice_j": 15
+    },
+    {
+      "absolute_shell_contribution": "202373061971/144544436100",
+      "central_weight_count": 9,
+      "central_weights": [
+        "4",
+        "3",
+        "2",
+        "1",
+        "0",
+        "-1",
+        "-2",
+        "-3",
+        "-4"
+      ],
+      "j": "8",
+      "minus_uniform_lower_bound": "749265399509/578177744400",
+      "twice_j": 16
+    }
+  ],
+  "first_insertion": {
+    "central_band": "abs(m)<=j/2",
+    "delta_W_d_eigenvalue": "p_jm=2*j*(j+1)-3*m^2",
+    "first_insertion_eigenvalue": "b1_jm=-p_jm/(3*q_jm^2)",
+    "left_multiplicity": "2*j+1",
+    "mode_family": "n=0; j in (1/2)Z with j>=1; m=-j,-j+1,...,j",
+    "operator": "B1=-(1/3) Delta0^-1 delta W d Delta0^-1",
+    "scalar_laplacian_eigenvalue": "q_jm=j*(j+1)-(3/4)*m^2"
+  },
+  "import_gate": {
+    "normalization": "orthonormal coframe (dtheta,sigma1,sigma2,2sigma3), normalized product Haar measure, delta=d^dagger",
+    "status": "PASS",
+    "unique_pencil": "A(t)=F+tW with F=nabla^*nabla+Ric and W=-2 Ric"
+  },
+  "input_commit": "0200fc87b",
+  "lifecycle_state": "EXACT_TAIL_OBSTRUCTION_COMPLETE_COERCIVITY_PREFLIGHT_NOT_ACTIVATED",
+  "next_gate": "RESTATE_THE_GLOBAL_TAIL_GATE_AS_REGULATED_B1_PLUS_FINITE_PART_B2_PLUS_TRACE_CLASS_B3_TAIL_BEFORE_REQUESTING_A_COMPLETE_COERCIVITY_PREFLIGHT",
+  "result_id": "SCALAR_FLAT_BERGER_VECTOR_SCHUR_HIGH_MODE_TRACE_MAJORANT_OBSTRUCTION_V1",
+  "result_state": "FIRST_INSERTION_ABSOLUTE_TRACE_MAJORANT_OBSTRUCTED",
+  "schema": "quantum-weyl-scalar-flat-berger-vector-schur-high-mode-trace-majorant-obstruction-v1",
+  "trace_ideal_disposition": {
+    "first_insertion_absolute_trace_majorant": "DOES_NOT_EXIST",
+    "first_insertion_order": -2,
+    "requested_three_summable_majorants": "OBSTRUCTED_AT_FIRST_INSERTION",
+    "required_repair": "retain a declared regulator/subtraction for B1 and the finite part of B2; only the trace-class tail may use an ordinary absolute trace",
+    "second_insertion_absolute_trace_majorant": "NOT_DECIDED_HERE",
+    "second_insertion_order": -4,
+    "third_insertion_absolute_trace_majorant": "NOT_DECIDED_HERE",
+    "third_insertion_order": -6
+  }
+}
