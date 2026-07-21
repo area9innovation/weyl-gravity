@@ -217,11 +217,12 @@ an important qualification: the complete gravity--clock background is an
 isolated solution, so the nearby family of clock rates exists in the reduced
 clock system rather than as a certified family of complete universes. Every
 nonhomogeneous wave sector must still pass its own health test. The first
-attempt to run that larger test found a precise missing dictionary rather
-than a bad wave: the causal equations do not yet include the maps that sort
-the squashed universe's fields into all their scalar, vector, tensor and
-exceptional wave families. The project is now building those maps before
-judging the remaining waves.
+attempt to run that larger test found that the obvious dictionary is actually
+wrong rather than merely absent. Squashing the sphere mixes wave families
+that separate cleanly on a round sphere, so the simplest scalar/vector/tensor
+sorting is not preserved by the full gauge equations. This is not a bad wave
+or a failure of causality. The project is now building larger mixed blocks
+that the equations genuinely preserve before judging their health.
 
 The original Berger laboratory adds something more tangible: a matter field acts as a
 clock, and an electromagnetic signal is emitted during a bounded time
@@ -238,6 +239,23 @@ certified linear redshift experiment. It rules out that particular nonlinear
 apparatus completion and redirects the observer programme to the new
 two-phase counterflow parent, where the relative clock and detector must be
 constructed afresh from the changed action.
+
+The changed clock now also has a finite-resolution theorem. A real clock
+cannot select an infinitely sharp instant, so the construction replaces the
+ideal slice by a narrow sampling window. The observable remains causal and
+its error decreases quadratically with the window width, provided a physical
+receiver survives the pending wave reduction. That condition has not yet
+been met, so this is a tested measurement rule rather than a new redshift
+result.
+
+The comparison rules also work for chains of clocks. Two successive frequency
+ratios multiply to the direct ratio only when both comparisons use the same
+middle clock record and the same physical charge sector. Around a loop, any
+remaining factor records how the clock conventions or charge sectors were
+matched. If no such matching exists, the comparison is undefined rather than
+a mysterious physical effect. This is an exact consistency test for a future
+clock network, still conditional on finding a nonzero physical receiver in
+the changed theory.
 
 ### 2. Nonlinear balance removes some waves—and resonance adds another test
 
@@ -402,7 +420,7 @@ tested.
 
 | Demonstrated in a model | Partly demonstrated | Open |
 |---|---|---|
-| Complete classical causal propagation on several controlled backgrounds, including a changed two-phase counterflow parent | A causal clock-defined redshift signal; the new counterflow model loses its clock when time is made gauge-like, while the surviving charged clock is healthy in its homogeneous sector but still lacks the complete wave-family dictionary required for the all-wave audit | Electrons, mass generation and Standard Model matter |
+| Complete classical causal propagation on several controlled backgrounds, including a changed two-phase counterflow parent | A causal clock-defined redshift signal; the changed model has a charged homogeneous clock and a finite-resolution measurement rule, but its obvious round-sphere wave sorting fails on the squashed background and must be replaced | Electrons, mass generation and Standard Model matter |
 | Gauge reduction and exact classical comparison rules | Additional compact and black-hole wave families, with their final physical status unresolved | A positive interacting quantum state and physical particles |
 | Global nonlinear balance conditions and explicit resonance obstructions | Static black-hole thermodynamics; additional waves reach the horizon but are excluded by finite size at infinity in both parities at one fixture | Full black-hole scattering, stability, ringdown and Hawking radiation |
 | A one-loop anomaly calculation and a compensator-based local repair in a changed theory | Candidate reduced quantum two-point functions with both positive and negative signs | Gravitational lensing, realistic cosmology, dark matter and dark energy |

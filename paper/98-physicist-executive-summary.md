@@ -1,9 +1,9 @@
 # Pure-Weyl gravity programme: executive summary for physicists
 
 **Last substantive update: 21 July 2026 — certified counterflow action--angle
-clock theorem and exact all-Hodge carrier shortfall, parity-complete direct
-compact-product Lee--Wald currents, and the symbolic-frequency black-hole
-pairing programme.**
+clock, finite-resolution and conditional comparison theorems, exact Berger
+scalar-carrier nonclosure, the invariant compact-product symplectic-extension
+obstruction, and the symbolic-frequency black-hole pairing programme.**
 
 > **Research context.** Asger Alstrup Palm directs the programme and is the
 > accountable human contact. AI systems perform substantial derivation,
@@ -75,13 +75,15 @@ Fixed-charge orbital stability and shifted-frequency modulated stability
 pass, although absolute stability of a lifted or compact phase fails when
 different clock rates are compared. This reduced family is not a nearby
 family of complete coupled Berger backgrounds: at the selected geometry the
-full constraints force the charge variation to vanish. The all-Hodge
-physical-health audit has now reached its first exact shortfall: the causal
-parent does not export the same-background Berger Peter--Weyl inclusions and
-projections needed to define even the scalar physical block. This is missing
-carrier data, not a negative spectrum. Scalar, vector/tensor and
-exceptional-stabilizer exports are now being built before the health verdict
-is resumed.
+full constraints force the charge variation to vanish. The first attempted
+all-Hodge carrier now fails by an exact representation-theoretic mechanism:
+on the squashed Berger sphere, the round-style scalar exact-one-form sector
+is not closed under the gauge-fixed differential. Its leading defect is
+$93ik/40$ and is nonzero for every right weight $k\ne0$; the round-space
+mutation removes it. This is a failure of that decomposition, not a negative
+spectrum or a defect of the causal 70-row parent. The replacement now closes
+complete $SU(2)_L\times U(1)_R$ isotypical blocks under every mixed row before
+forming a physical quotient.
 
 Two further promotions have now failed cleanly at their first maps. The
 selected Berger counterflow background is not a solution of conventional
@@ -214,9 +216,10 @@ family with charge-dependent clock rate, not a negative-energy mode. It is
 fixed-charge orbitally stable and shifted-frequency modulated stable, while
 absolute comparison of clocks with different rates accumulates phase. The
 complete coupled background is nevertheless locally isolated and does not
-inherit that nearby reduced family. The next Classical gate is the all-Hodge
-pairing, gradient, characteristic and radical census; the homogeneous normal
-form is not a full health theorem.
+inherit that nearby reduced family. The round-style scalar Hodge carrier is
+now exactly obstructed for $k\ne0$; the next Classical gate is a full closed
+Berger isotypical carrier before any pairing, gradient, characteristic or
+radical census. The homogeneous normal form is not a full health theorem.
 
 > **Immediate limitation.** This is not a universal removal of radiative
 > gravitons, an open viable phase for generic backgrounds, or an
@@ -248,22 +251,26 @@ inertia $(1,1)$ and the complete polar target $(3,1)$. The axial and polar
 blocks therefore have the same inertias without identifying their
 representatives across parity.
 
-The corresponding ungauged equation/Noether chain map exists, but the
-simplest physical promotion now fails exactly. With the frozen identity
-field inclusion and the standard action-derived pairings, the polar cyclic
-defect has rank two on every generic physical fibre. Therefore this map
-cannot be a strict cyclic BV morphism. Corrected nonidentity maps and cyclic
-maps up to homotopy remain open, as does the common moment-map-zero derived
-carrier required for a final residual quotient. What does survive is a
-parity-complete short exact sequence on solution cohomology before that
-global reduction: generic fibres have dimensions $4\to8\to4$, zero radicals,
-and a noncyclic mapping-cofiber triangle at all-row level.
+The corresponding ungauged equation/Noether chain map exists, but its cyclic
+promotion now has a stronger invariant obstruction. With the frozen identity
+field inclusion, the polar cyclic defect has rank two on every generic
+physical fibre. Changing the extra lift can change raw cross terms and even a
+chosen lifted-extra sign, but it cannot change the Schur-complement quotient
+form. More generally, the Einstein--Maxwell source form has inertia $(2,0)$
+while the Weyl--Maxwell restriction to its Einstein image has inertia $(1,1)$
+in both generic parities. No time-translation- and shell-preserving
+complex-linear correction can identify them cyclically. What survives is a
+canonical target-internal orthogonal complement and a parity-complete short
+exact sequence on solution cohomology before global reduction: generic
+fibres have dimensions $4\to8\to4$, zero radicals, and a noncyclic
+mapping-cofiber triangle at all-row level.
 
-> **Immediate limitation.** The strict fixed-identity cyclic lift is
-> obstructed, but corrected maps and homotopies have not been classified.
-> Final residual descent also requires a declared common charge-zero derived
-> sector; causal boundaries and positive-frequency quantization remain open.
-> A nonzero classical pairing is not a particle norm.
+> **Immediate limitation.** Every strict cyclic split in the declared
+> parity-complete, time-translation-preserving class is obstructed. A
+> non-strict cyclic homotopy can only be posed after constructing the missing
+> common moment-map-zero derived carrier. Final residual descent, causal
+> boundaries and positive-frequency quantization remain open. A nonzero
+> classical pairing is not a particle norm.
 
 ### C. Nonlinear continuation, interactions, and resonance
 
@@ -389,9 +396,9 @@ space is nonradical; exact nonlinear balance and resonance obstructions exist;
 and the strict/extended quantum alternatives are computationally separated.
 The two-phase counterflow construction supplies one changed-theory causal
 parent with an exact charge--clock tradeoff and homogeneous action--angle
-stability theorem. Its all-Hodge health audit is paused at an exact missing
-Berger harmonic-carrier export, now split into scalar, vector/tensor,
-exceptional-stabilizer and assembly gates.
+stability theorem. Its first round-style scalar Hodge carrier is exactly not
+a subcomplex on the anisotropic Berger background. A full isotypical closure
+replaces that invalid split before the health audit can resume.
 
 ## Authoritative result ledger
 
@@ -402,8 +409,8 @@ milestones are excluded.
 |---|---|---|---|
 | Free causal complex and residual cohomology | Complete cylinder causal complex; selected zero-charge residual vacuum and one-particle cohomology acyclic; $H^4\cong\mathbb C^2$ contains deformation classes | **Certified on their distinct carriers** | The finite residual receiver is not an arbitrary-support all-energy retract; the latter has a rank-64 unary obstruction and requires completion; [Papers 7--8](07-08-conformal-residual-cohomology-computational-supplement.pdf) |
 | Is $D$ gauge? | Charged on the unrestricted compact phase space; gauge on the Taub-zero derived sector | **Certified, sector-dependent** | Must be recomputed with boundaries and matter; [status ledger](../d_quotient_programme/reports/consolidated-status.md) |
-| Clocks and redshift | Healthy original Berger clock and retarded Maxwell redshift fixture; the old apparatus repair is obstructed; the two-phase theory has a causal parent, but its fixed-charge quotient removes the relative clock; its unrestricted clock is an exact positive action--angle system with charge-dependent rate | **Original observable certified / changed-theory charge--clock and orbital theorem certified** | The all-Hodge audit is blocked on same-background Berger harmonic inclusions/projections; a nonzero charged-$D$ receiver remains open; [Paper 9](09-relational-clocks-berger-d-cartan.pdf) |
-| Einstein image and additional branches | Linear inclusion, parity-complete pre-residual $H^0$ exact sequence and action-derived nonradical currents certified; the fixed-identity strict cyclic BV lift is obstructed | **Pre-residual exact sequence / direct currents / fixed-map cyclic obstruction certified** | Corrected maps or homotopies, a common charge-zero residual carrier, causal boundaries, and quantization remain open; [Paper 92](92-extra-axial-lee-wald-bridge.pdf) |
+| Clocks and redshift | Healthy original Berger clock and retarded Maxwell redshift fixture; the changed theory has a charged action--angle clock plus exact distributional and finite-resolution conditional event maps | **Original observable / changed-theory clock and conditional sampling theorems certified** | The round-style Berger scalar carrier is not closed; a replacement isotypical quotient and nonzero charged-$D$ receiver remain open; [Paper 9](09-relational-clocks-berger-d-cartan.pdf) |
+| Einstein image and additional branches | Linear inclusion, parity-complete pre-residual $H^0$ exact sequence and nonradical currents certified; lift-shear invariants give a canonical target-orthogonal split but obstruct every declared parity-complete strict cyclic split | **Pre-residual exact sequence / direct currents / invariant strict-cyclic obstruction certified** | A common charge-zero derived carrier, any admissible non-strict homotopy, causal boundaries, and quantization remain open; [Paper 92](92-extra-axial-lee-wald-bridge.pdf) |
 | Nonlinear tangent cone and resonances | Formal finite exponential-polynomial cone equals five-charge zero set; tuned standard bounded cone is classified for every $\ell\ge2$; all 164 two-momentum basis coefficients are closed | **Formal cone and all-$\ell$ standard subcone certified; larger cone partial** | Arbitrary-amplitude two-momentum zero variety, causal, infinite-mode, and all-order problems open; [Paper 13](13-compact-weyl-maxwell-second-order-tangent-cone.pdf) |
 | Interaction and branch mixing | Retained mixed tensor is exact/cyclic; fuller ghost structure removes it through first jet | **Representative certified; invariant class open** | Second-jet image and branch-resolved operation not certified; [Paper 11](11-gravity-light-cyclic-causal-ell3.pdf) |
 | Free quantum observables and reduced states | Curvature CCR algebra exact; separate reduced E/A/L Hadamard carrier has signs $(+,-,-)$ | **Certified on distinct free carriers** | No full-BV positive state, particles, or interacting products; [state report](../quantum-weyl/reports/vacuum-cylinder-reduced-bridge4-hadamard.md) |
@@ -483,6 +490,17 @@ distributional event map, its local BV descent, primitive clock-basis
 composition and phase-origin covariance, while separating lifted-phase
 boundedness from compact orbital and modulated stability. Nontriviality is
 explicitly conditional on a surviving receiver cohomology class and pairing.
+An exact finite-resolution version replaces the sharp clock slice by an even
+compact sampling profile. It preserves local BV closure and causal support,
+converges distributionally, and gives a quadratic clock-width error bound
+$\epsilon^2\mu_2\sup|P''|/2$. Smoothing does not create the still-missing
+receiver class, so this is not yet a counterflow redshift measurement.
+Conditional nonzero sampled records also obey exact reciprocity and
+composition laws: adjacent ratios compose only when the intermediate charge
+fibre and sampled record are identified, while a closed comparison loop
+measures the product of its fibre/orientation transitions. An algebraic
+inverse is not an advanced physical signal, and unmatched fibres give no map
+rather than an anomalous measurement.
 
 ## What would materially change the verdict
 
@@ -524,8 +542,8 @@ to its derivation and verifier.
 |---|---|---|
 | [Cyclic causal Green transfer](90-cyclic-green-transfer-bridge.md) | Abstract conditional theorem with Berger, flat, and Nariai consumers; one Nariai formal tangent | Extend to a finite background family or second detour theory. |
 | [Charge-fibre obstruction](91-charge-fibre-taub-bridge.md) | Formal cone, all-$\ell$ tuned standard cone, and all 164 two-momentum basis coefficients certified | Classify the common amplitude zero variety. |
-| [Additional axial/polar current](92-extra-axial-lee-wald-bridge.md) | Direct currents and the maximal pre-residual $H^0$ exact sequence are parity complete; the fixed-identity strict cyclic BV lift has a rank-two generic obstruction | Classify corrected maps or cyclic homotopies, construct the common moment-map-zero residual carrier, and then test physical boundaries. |
-| Relational clock and light | Original global retarded redshift certified; the old apparatus completion is obstructed; the two-phase causal parent loses its clock on the fixed-charge quotient, while its unrestricted clock is a positive action--angle system with charge-dependent rate and a certified covariant event-map contract | Build the missing Berger scalar/vector/tensor/exceptional carrier maps, assemble all-Hodge health, then instantiate a nonzero receiver. |
+| [Additional axial/polar current](92-extra-axial-lee-wald-bridge.md) | Direct currents and the maximal pre-residual $H^0$ exact sequence are parity complete; the invariant source/image inertia mismatch obstructs every declared strict cyclic split | Construct the common constraint-algebroid/Kuranishi moment-map-zero carrier, then ask whether a non-strict homotopy and physical boundaries exist. |
+| Relational clock and light | Original global retarded redshift certified; the changed theory has a charged action--angle clock plus exact sharp, finite-resolution, reciprocity, composition and loop-holonomy laws, but no physical receiver yet | Complete the receiver/crosswalk contract and Berger isotypical health assembly, then instantiate a nonzero receiver. |
 | Black-hole radiation | Static theorem and horizon reach in both parities; finite norm at infinity selects Einstein in both parities at one fixture | Generalize in frequency and $\ell$, then construct the asymptotic phase space. |
 | Einstein--Weyl relative theory | Matching action-derived tensors through $q_3$; strict $f_1$ has a nonzero arity-two defect; global five-charge receiver and Hessian Green-current cone certified | Precompose all stabilizers, add cyclic duals, compare with Lee--Wald, and determine the correct relative nonlinear extension. |
 | Residual branch mixing | Retained cyclic representative and rank-46 carrier exist; physical interaction class not certified | Finish the second-jet image test and obtain an admissible branch resolution. |
