@@ -74,11 +74,11 @@ with component rank 12.  The nonminimal rows
 have component rank 4.  In original variables the unary differential is
 
 \[
-Q\chi=c,qquad QA=dc,qquad Qc=0,
+Q\chi=c,\qquad QA=dc,\qquad Qc=0,
 \]
 
 \[
-QA^*=-4(A-d\chi),qquad
+QA^*=-4(A-d\chi),\qquad
 Q\chi^*=4\delta(A-d\chi),
 \]
 
@@ -89,14 +89,14 @@ Qc^*=\chi^*+\delta A^*,
 and
 
 \[
-Q\bar c=b,qquad Qb=0,qquad
-Qb^*=-\bar c^*,qquad Q\bar c^*=0.
+Q\bar c=b,\qquad Qb=0,\qquad
+Qb^*=-\bar c^*,\qquad Q\bar c^*=0.
 \]
 
 The action rows obey
 
 \[
-E_A=-4B,qquad E_\chi=4\delta B,qquad
+E_A=-4B,\qquad E_\chi=4\delta B,\qquad
 E_\chi+\delta E_A=0,
 \]
 
@@ -105,30 +105,30 @@ so these are the action-derived Euler and Noether rows.
 Set
 
 \[
-B=A-d\chi,qquad H=\chi^*+\delta A^*.
+B=A-d\chi,\qquad H=\chi^*+\delta A^*.
 \]
 
 The complex splits into the five contractible pairs
 
 \[
-\chi\xrightarrow{Q}c,quad
-A^*\xrightarrow{Q}-4B,quad
-c^*\xrightarrow{Q}H,quad
-\bar c\xrightarrow{Q}b,quad
+\chi\xrightarrow{Q}c,\quad
+A^*\xrightarrow{Q}-4B,\quad
+c^*\xrightarrow{Q}H,\quad
+\bar c\xrightarrow{Q}b,\quad
 b^*\xrightarrow{Q}-\bar c^*.
 \]
 
 The exact homotopy is
 
 \[
-S(c)=\chi,quad S(B)=-\frac14A^*,quad S(H)=c^*,
-\quad S(b)=\bar c,quad S(\bar c^*)=-b^*.
+S(c)=\chi,\quad S(B)=-\frac14A^*,\quad S(H)=c^*,
+\quad S(b)=\bar c,\quad S(\bar c^*)=-b^*.
 \]
 
 The producer and independent verifier establish
 
 \[
-Q^2=0,qquad QS+SQ=1
+Q^2=0,\qquad QS+SQ=1
 \]
 
 on every extension row.  The gauge fermion
