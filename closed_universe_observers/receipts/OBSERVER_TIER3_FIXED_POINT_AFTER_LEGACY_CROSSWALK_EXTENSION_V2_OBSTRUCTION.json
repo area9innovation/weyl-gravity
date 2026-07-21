@@ -1,0 +1,78 @@
+{
+  "schema": "closed-universe-observer-tier3-fixed-point-after-legacy-crosswalk-extension-v2-obstruction-v1",
+  "result_id": "OBSERVER_TIER3_FIXED_POINT_AFTER_LEGACY_CROSSWALK_EXTENSION_V2_OBSTRUCTION",
+  "science_forge_work_item": "sf:program/work/observer-tier3-fixed-point-after-legacy-crosswalk-extension-v2",
+  "recorded_at": "2026-07-21T17:35:55Z",
+  "disposition": "OBSTRUCTED",
+  "input_commit": "d33c8e33371f0a073a59beeb54238ceafdcab9da",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "input_refs": {
+    "prior_relock_manifest": {
+      "path": "closed_universe_observers/receipts/OBSERVER_TIER3_PROVENANCE_FIXED_POINT_RELOCK_AFTER_BERGER84_HANDOFF_V1_MANIFEST.json",
+      "sha256": "309ccbf7db83e66b375d194e2c46cef330d441ab56e5896c4ec5b30d538d7d86",
+      "relock_count": 22,
+      "iteration_13_passed_before_fail": 808
+    },
+    "seven_row_crosswalk": {
+      "path": "closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json",
+      "sha256": "ec6ad91547f00c2f5e19789ff441a971c35558924789691d7ab7fc2f0522e833",
+      "discovered_count": 7,
+      "classified_count": 7,
+      "unclassified_count": 0
+    },
+    "legacy_replay_certificate": {
+      "path": "closed_universe_observers/certificates/BERGER_LEGACY_RECEIVER_ADMISSIBILITY_REPLAY_V1.json",
+      "sha256": "8510cc0f00ae1e223fcb97614d51f3708e3f31455bdb789bb79aeb77acd8c50f"
+    },
+    "legacy_replay_producer": {
+      "path": "closed_universe_observers/generate_berger_legacy_receiver_admissibility_replay.py",
+      "sha256": "d6216636264ce4cfd03cff1d0b34af2302830760bdf165ba709445bd89a212ec"
+    },
+    "legacy_replay_test": {
+      "path": "closed_universe_observers/tests/test_berger_legacy_receiver_admissibility_replay.py",
+      "sha256": "9dbf93b368dd949fddde47a87f032949426af61e3a52e15ffa0d43ca4a670f63"
+    }
+  },
+  "committed_corpus_materialization": {
+    "scope": "physics/symplectic-reconstruction",
+    "expected_blob_count": 11184,
+    "materialized_blob_count": 11184,
+    "hash_mismatch_count": 0,
+    "method": "Compare every regular-file or symlink Git blob object ID in input_commit with the detached worktree bytes; the shared resident worktree is not used."
+  },
+  "tier_3_run": {
+    "command": "PYTHONPATH=. pytest -q -x closed_universe_observers/tests",
+    "uninterrupted": true,
+    "fail_fast": true,
+    "result": "1 failed, 398 passed",
+    "passed_before_fail": 398,
+    "failed": 1,
+    "skipped": 0,
+    "pytest_elapsed_seconds": 591.93,
+    "process_wall_seconds": 599.52
+  },
+  "terminal_frontier": {
+    "test": "closed_universe_observers/tests/test_berger_legacy_receiver_admissibility_replay.py::test_census_is_complete_and_fail_closed",
+    "producer": "closed_universe_observers/generate_berger_legacy_receiver_admissibility_replay.py",
+    "dependency_name": "receiver_contract",
+    "expected_historical_base_sha256": "e2c9aad23b667ec16bbb124b72066d803f3607fc4bd89acd459b53f672a43918",
+    "actual_current_crosswalk_sha256": "ec6ad91547f00c2f5e19789ff441a971c35558924789691d7ab7fc2f0522e833",
+    "exception": "AssertionError: dependency drift: receiver_contract: ec6ad91547f00c2f5e19789ff441a971c35558924789691d7ab7fc2f0522e833",
+    "classification": "HISTORICAL_BASE_CURRENT_PATH_BINDING_CONFLICT",
+    "cycle_boundary": "The seven-row crosswalk intentionally imports the legacy replay certificate as a historical extension source certified against the five-row base blob. Rebinding that legacy certificate directly to the current crosswalk would change the legacy certificate hash, then the crosswalk hash, creating a recursive content-address cycle.",
+    "minimum_successor_action": "Make the unchanged legacy replay and operational-frequency-ratio producer/verifier rails resolve and verify the exact historical five-row base blob by commit plus hash instead of assuming that blob remains at the mutable current crosswalk path; preserve both legacy scientific dispositions, audit the two consumers, then rerun Tier 3 from the beginning."
+  },
+  "flags": {
+    "TWENTY_TWO_RELOCKS_IMPORTED": true,
+    "SEVEN_ROW_CROSSWALK_IMPORTED": true,
+    "COMMITTED_CORPUS_COMPLETELY_MATERIALIZED": true,
+    "ZERO_REMAINING_STALE_OR_UNCLASSIFIED_CONSUMERS": false,
+    "OBSERVER_STREAM_TIER3_GREEN": false,
+    "PAPER_9_FREEZE_GATE_ACTIVATED": false
+  },
+  "claim_boundary": "Certifies the exact first failure of one uninterrupted Observer Tier-3 traversal after importing the 22 relocks and terminal seven-row crosswalk. It does not certify a green fixed point, change either legacy NO_CERTIFIED_MAP disposition, add an observer apparatus, or activate the Paper 9 freeze gate."
+}

@@ -1,0 +1,74 @@
+{
+  "result_id": "OBSERVER_TIER3_FIXED_POINT_AFTER_LEGACY_CROSSWALK_EXTENSION_V2_OBSTRUCTION",
+  "science_forge_work_item": "sf:program/work/observer-tier3-fixed-point-after-legacy-crosswalk-extension-v2",
+  "recorded_at": "2026-07-21T17:35:55Z",
+  "disposition": "OBSTRUCTED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifact_hashes": [
+    {
+      "path": "closed_universe_observers/receipts/OBSERVER_TIER3_FIXED_POINT_AFTER_LEGACY_CROSSWALK_EXTENSION_V2_OBSTRUCTION.json",
+      "sha256": "e4a78132adaa1ffe28649189ae13a9635706ebd309edcc0245dbafba20dfd21a"
+    },
+    {
+      "path": "closed_universe_observers/verify_observer_tier3_fixed_point_after_legacy_crosswalk_extension_v2.py",
+      "sha256": "cc66430eba321a051daf19ca997d3c78e0629e6294f9c605a185956e74098f4a"
+    },
+    {
+      "path": "closed_universe_observers/tests/test_observer_tier3_fixed_point_after_legacy_crosswalk_extension_v2.py",
+      "sha256": "d2d3a34515804c8aeccc297de590c721606abd45522034f8bbd8247ebf0eb811"
+    },
+    {
+      "path": "reports/observer-tier3-fixed-point-after-legacy-crosswalk-extension-v2-closeout-2026-07-21.md",
+      "sha256": "e3064a5adeacf185d43e2865093feb160df6c323b362895a7df8ff3f911932df"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      "python3 -m py_compile closed_universe_observers/verify_observer_tier3_fixed_point_after_legacy_crosswalk_extension_v2.py closed_universe_observers/tests/test_observer_tier3_fixed_point_after_legacy_crosswalk_extension_v2.py",
+      "python3 -m json.tool <obstruction and tier receipt>",
+      "git diff --check -- <explicit delivery paths>"
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "PYTHONPATH=. python3 -m closed_universe_observers.verify_observer_tier3_fixed_point_after_legacy_crosswalk_extension_v2",
+        "result": "PASS"
+      },
+      {
+        "command": "PYTHONPATH=. pytest -q closed_universe_observers/tests/test_observer_tier3_fixed_point_after_legacy_crosswalk_extension_v2.py",
+        "elapsed_seconds": 0.13,
+        "result": "4 passed"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_FOR_EXACT_INPUT_AUDIT_ONLY",
+    "criterion": "The independent verifier checks exact hashes for the 22-relock manifest, seven-row crosswalk, legacy replay certificate, producer and failing test; it reconstructs the producer's CROSSWALK literal and the legacy certificate's historical receiver-contract pin. No producer replay is called independent verification."
+  },
+  "tier_3": {
+    "status": "OBSTRUCTED",
+    "command": "PYTHONPATH=. pytest -q -x closed_universe_observers/tests",
+    "result": "1 failed, 398 passed",
+    "pytest_elapsed_seconds": 591.93,
+    "process_wall_seconds": 599.52,
+    "first_failure": "closed_universe_observers/tests/test_berger_legacy_receiver_admissibility_replay.py::test_census_is_complete_and_fail_closed",
+    "classification": "HISTORICAL_BASE_CURRENT_PATH_BINDING_CONFLICT",
+    "does_not_establish": [
+      "ZERO_REMAINING_STALE_OR_UNCLASSIFIED_CONSUMERS",
+      "OBSERVER_STREAM_TIER3_GREEN",
+      "PAPER_9_FREEZE_GATE_ACTIVATED"
+    ]
+  },
+  "materialization_receipt": {
+    "command": "compare every git ls-tree blob OID for input commit d33c8e33371f0a073a59beeb54238ceafdcab9da with the detached worktree regular-file or symlink bytes",
+    "result": "11184 materialized blobs, 0 mismatches"
+  },
+  "boundary": "Records the first exact fail-fast frontier after the seven-row crosswalk extension. No legacy disposition or producer is changed, the Observer stream is not Tier-3 green, and the Paper 9 freeze gate remains inactive."
+}
