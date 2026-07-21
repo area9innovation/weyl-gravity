@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Einstein-Weyl alpha_B=3 Ostrogradsky canonical crosswalk v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "provenance",
+    "normalization",
+    "background",
+    "linear_polar_crosswalk",
+    "inverse_map",
+    "symplectic_and_equation_checks",
+    "signed_channel_crosswalk",
+    "channel_coverage",
+    "classification",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-weyl-alpha-b3-ostrogradsky-canonical-crosswalk-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_ALPHA_B3_OSTROGRADSKY_CANONICAL_CROSSWALK_V1"},
+    "result_state": {"const": "ACTION_NORMALIZED_CANONICAL_CROSSWALK_CERTIFIED"},
+    "dependency_tags": {"contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "signed_channel_crosswalk": {"type": "array", "minItems": 27, "maxItems": 27},
+    "classification": {
+      "type": "object",
+      "required": ["complete_canonical_transformation_and_inverse", "K3_evaluation_authorized"],
+      "properties": {
+        "complete_canonical_transformation_and_inverse": {"const": true},
+        "K3_evaluation_authorized": {"const": true}
+      }
+    }
+  }
+}

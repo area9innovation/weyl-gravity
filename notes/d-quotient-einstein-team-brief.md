@@ -5094,3 +5094,35 @@ Evidence is
 `bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_CUBIC_CONSTRAINT_TENSOR_EXPORT_OBSTRUCTION_V1.json`;
 the fail-closed atlas row is
 `einstein.ph.wm.compact_cauchy.cubic_constraint_tensor_export_gate`.
+
+## Alpha_B=3 Ostrogradsky canonical crosswalk
+
+The representation obstruction immediately above is now repaired in one
+fixed action convention.  Relative to the standard `-C^2/4` Hamiltonian
+normalization, the selected `+3C^2/8` action has exact scale `-3/2`.  With no
+time integration by parts,
+
+```text
+P^ij=-3 sqrt(h) C^(i n j n),
+P0^ij=sqrt(h) diag(1,-1/2,-1/2),
+H_perp contains +P_ij P^ij/(3 sqrt(h)).
+```
+
+Consequently the earlier one-slot cubic witness is fixed at `-s^2/48`.
+The complete linear canonical map and inverse are certified on the stored
+homogeneous and polar correction representatives.  `delta pi` is reconstructed
+from the selected Hamilton equation with the magnetic-Weyl variational term,
+and both conformal primary constraints vanish identically.  All four
+nonzero-frequency pairs and the real zero channel are substituted in each of
+the ell=0,2,4 blocks, giving 27 signed rows with explicit reality and harmonic
+normalization.
+
+The active bridge is now the success-gated cubic tensor regeneration and
+third-order Kuranishi evaluation.  Its activation gate is this canonical
+crosswalk.  The fail-closed atlas row is
+`einstein.ph.wm.alpha_b3.ostrogradsky_canonical_crosswalk`: symplectic
+canonical lift `CERTIFIED`, third-order nonlinear verdict `OPEN`, causal,
+observational and quantum maps `NO_CERTIFIED_MAP`.
+
+Evidence is
+`bridge/certificates/EINSTEIN_WEYL_ALPHA_B3_OSTROGRADSKY_CANONICAL_CROSSWALK_V1.json`.

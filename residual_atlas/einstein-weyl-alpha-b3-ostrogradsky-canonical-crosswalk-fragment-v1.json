@@ -1,0 +1,91 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This exact gate fixes the alpha_B=3 canonical scale, background momentum, selected Hamiltonian coefficient and complete linear canonical lift of every stored ell=0,2,4 correction channel and conjugate.  It does not itself evaluate D3C, K3, boundedness, causality, particles, positivity, unitarity or quantum theory.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/EINSTEIN_WEYL_ALPHA_B3_OSTROGRADSKY_CANONICAL_CROSSWALK_V1.json",
+          "result_id": "EINSTEIN_WEYL_ALPHA_B3_OSTROGRADSKY_CANONICAL_CROSSWALK_V1",
+          "sha256": "99ae4e6397afa7e2b27169f544229287ddb7f6034fcdb76d0096b771c10d330b"
+        }
+      ],
+      "id": "einstein.ph.wm.alpha_b3.ostrogradsky_canonical_crosswalk",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Every stored correction frequency and conjugate is enumerated in 27 exact rows.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The declared Legendre convention gives the exact Poincare-Cartan form on the stored carrier; no new quantum norm claim is made.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Third-order resonant source coefficients remain to be regenerated in this convention.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The previously certified balanced correction has a complete action-normalized canonical lift.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No retarded compact-product complex is supplied.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The same finite correction rows lift canonically.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The crosswalk enables, but does not evaluate, the cubic Kuranishi projection.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan product",
+        "boundaries": "compact boundaryless Cauchy slice S1_L x S2",
+        "carrier": "stored balanced ell=2,m=0,k=0 tangent and complete ell=0,2,4 second-order correction representatives",
+        "charge_sector": "fixed magnetic P_N,N=2 and fixed Q_e; based Maxwell gauge",
+        "degree": "action-normalized linear canonical lift of the second-order correction",
+        "ell": "0,2,4",
+        "k": "0",
+        "m": "0",
+        "omega": "all 27 actual signed correction rows, including real zero-frequency rows",
+        "parity": "homogeneous and polar correction channels",
+        "theory": "Weyl-Maxwell from S=int sqrt(-g)[3 C^2/8-F^2/4]"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/generate_alpha_b3_ostrogradsky_canonical_crosswalk_atlas.py",
+  "generated_by_sha256": "00de20d2d8b60eaece50c61604e4861f4409129210249acface5a35414ffb465",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_nonlinear",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.generate_alpha_b3_ostrogradsky_canonical_crosswalk_atlas --check",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-weyl-alpha-b3-ostrogradsky-canonical-crosswalk-fragment-v1.json"
+  ]
+}

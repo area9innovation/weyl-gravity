@@ -1,0 +1,2899 @@
+{
+  "background": {
+    "K0": "0",
+    "P0_coordinate_density": [
+      [
+        "sin(theta)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-sin(theta)/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-1/(2*sin(theta))"
+      ]
+    ],
+    "magnetic_F": "sin(theta) dtheta wedge dphi",
+    "metric": "-dt^2+dx^2+dtheta^2+sin(theta)^2 dphi^2",
+    "pi0": "0"
+  },
+  "channel_coverage": {
+    "actual_signed_channel_rows": 27,
+    "ell2": [
+      "Einstein_self_sum",
+      "Einstein_zero",
+      "combined_zero",
+      "cross_difference",
+      "cross_sum",
+      "extra_self_sum",
+      "extra_zero"
+    ],
+    "ell4": [
+      "Einstein_self_sum",
+      "Einstein_zero",
+      "combined_zero",
+      "cross_difference",
+      "cross_sum",
+      "extra_self_sum",
+      "extra_zero"
+    ],
+    "fully_mapped_components": [
+      "delta_h",
+      "delta_K",
+      "delta_pi",
+      "delta_P",
+      "delta_a",
+      "delta_E"
+    ],
+    "homogeneous": [
+      "Einstein_self_sum",
+      "Einstein_zero",
+      "combined_zero",
+      "cross_difference",
+      "cross_sum",
+      "extra_self_sum",
+      "extra_zero"
+    ],
+    "signed_frequency_rule": "the conjugate channel is obtained by Omega->-Omega and complex conjugation; zero channels are real"
+  },
+  "claim_boundary": "This exact gate fixes the alpha_B=3 canonical scale, background momentum, selected Hamiltonian coefficient and complete linear canonical lift of every stored ell=0,2,4 correction channel and conjugate.  It does not itself evaluate D3C, K3, boundedness, causality, particles, positivity, unitarity or quantum theory.",
+  "classification": {
+    "K3_evaluation_authorized": true,
+    "all_stored_channels_canonical_map_defined": true,
+    "background_P_magnitude_fixed": true,
+    "boundary_convention_fixed": true,
+    "complete_canonical_transformation_and_inverse": true,
+    "complete_delta_pi_map": true,
+    "exact_action_scale_fixed": true,
+    "first_H_perp_cubic_ambiguity_removed": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "inverse_map": {
+    "gauge_scope": "inverse on the stored k=0 polar representatives; lapse and shift are retained as A_t and B, not quotient-forgotten",
+    "generic_A": "if p_x is the Y_ell coefficient of delta P^xx/sin(theta), A_t=(4*p_x+2*(Omega^2+lambda/2+1)*C_t)/lambda",
+    "generic_B": "B=-2<dY_ell,delta K_xtheta>/<dY_ell,dY_ell>",
+    "generic_C": "C_t=<Y_ell,delta h_xx>/<Y_ell,Y_ell>",
+    "generic_U": "U=<X_ell,delta a_phi>/<X_ell,X_ell>",
+    "homogeneous": "C and K are the Y_0 coefficients of delta h_xx and delta h_thetatheta; U is the Y_0 coefficient of delta a_x",
+    "physical_fibres": "lambda=6 or 20 and every stored Omega; all inverse denominators are nonzero"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "linear_polar_crosswalk": {
+    "0": {
+      "axial_one_form_phi": "0",
+      "coefficient_order": [
+        "C",
+        "K",
+        "U"
+      ],
+      "delta_E_over_phase": [
+        "-I*Omega*U*sin(theta)",
+        "0",
+        "0"
+      ],
+      "delta_K_over_phase": [
+        [
+          "-I*C*Omega/2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-I*K*Omega/2",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-I*K*Omega*sin(theta)**2/2"
+        ]
+      ],
+      "delta_P_over_phase": [
+        [
+          "-(C*Omega**2 + C - K*Omega**2)*sin(theta)/2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "(C*Omega**2 - C - K*Omega**2 + 2*K)*sin(theta)/4",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "(C*Omega**2 - C - K*Omega**2 + 2*K)/(4*sin(theta))"
+        ]
+      ],
+      "delta_a_over_phase": [
+        "U",
+        "0",
+        "0"
+      ],
+      "delta_h_over_phase": [
+        [
+          "C",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "K",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "K*sin(theta)**2"
+        ]
+      ],
+      "delta_pi_over_phase": [
+        [
+          "-I*Omega*(C*Omega**2 - C - K*Omega**2 - K)*sin(theta)/4",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "I*Omega*(C*Omega**2 - K*Omega**2 - 2*K)*sin(theta)/8",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "I*Omega*(C*Omega**2 - K*Omega**2 - 2*K)/(8*sin(theta))"
+        ]
+      ],
+      "frequency": "Omega",
+      "harmonic": "1",
+      "lambda": 0,
+      "primary_constraint_residuals": {
+        "linear_P_trace_residual": "0",
+        "linear_Q_scale_residual": "0"
+      }
+    },
+    "2": {
+      "axial_one_form_phi": "3*sin(theta)**2*cos(theta)",
+      "coefficient_order": [
+        "A_t",
+        "B",
+        "C_t",
+        "U"
+      ],
+      "delta_E_over_phase": [
+        "0",
+        "0",
+        "-3*I*Omega*U*sin(2*theta)/2"
+      ],
+      "delta_K_over_phase": [
+        [
+          "-I*C_t*Omega*(3*cos(theta)**2 - 1)/4",
+          "3*B*sin(2*theta)/4",
+          "0"
+        ],
+        [
+          "3*B*sin(2*theta)/4",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "delta_P_over_phase": [
+        [
+          "-(3*sin(theta)**2 - 2)*(3*A_t - C_t*Omega**2 - 4*C_t)*sin(theta)/4",
+          "-9*I*B*Omega*sin(theta)**2*cos(theta)/4",
+          "0"
+        ],
+        [
+          "-9*I*B*Omega*sin(theta)**2*cos(theta)/4",
+          "-(18*A_t*cos(theta)**2 - 12*A_t - 3*C_t*Omega**2*cos(theta)**2 + C_t*Omega**2 + 3*C_t*cos(theta)**2 - 7*C_t)*sin(theta)/8",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-(6*A_t - 3*C_t*Omega**2*cos(theta)**2 + C_t*Omega**2 - 15*C_t*cos(theta)**2 + 11*C_t)/(8*sin(theta))"
+        ]
+      ],
+      "delta_a_over_phase": [
+        "0",
+        "0",
+        "3*U*sin(theta)**2*cos(theta)"
+      ],
+      "delta_h_over_phase": [
+        [
+          "C_t*(3*cos(theta)**2 - 1)/2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "delta_pi_over_phase": [
+        [
+          "-I*Omega*(3*sin(theta)**2 - 2)*(3*A_t - C_t*Omega**2 + 16*C_t)*sin(theta)/8",
+          "9*B*(Omega - 2)*(Omega + 2)*sin(theta)**2*cos(theta)/8",
+          "0"
+        ],
+        [
+          "9*B*(Omega - 2)*(Omega + 2)*sin(theta)**2*cos(theta)/8",
+          "-I*Omega*(18*A_t*cos(theta)**2 - 12*A_t - 3*C_t*Omega**2*cos(theta)**2 + C_t*Omega**2 + 36*C_t*cos(theta)**2 - 6*C_t)*sin(theta)/16",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-I*Omega*(6*A_t - 3*C_t*Omega**2*cos(theta)**2 + C_t*Omega**2 + 54*C_t*cos(theta)**2 - 24*C_t)/(16*sin(theta))"
+        ]
+      ],
+      "frequency": "Omega",
+      "harmonic": "3*cos(theta)**2/2 - 1/2",
+      "lambda": 6,
+      "primary_constraint_residuals": {
+        "linear_P_trace_residual": "0",
+        "linear_Q_scale_residual": "0"
+      }
+    },
+    "4": {
+      "axial_one_form_phi": "-(-35*sin(theta)*cos(theta)**3/2 + 15*sin(theta)*cos(theta)/2)*sin(theta)",
+      "coefficient_order": [
+        "A_t",
+        "B",
+        "C_t",
+        "U"
+      ],
+      "delta_E_over_phase": [
+        "0",
+        "0",
+        "-5*I*Omega*U*(2*sin(2*theta) + 7*sin(4*theta))/16"
+      ],
+      "delta_K_over_phase": [
+        [
+          "-I*C_t*Omega*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)/16",
+          "5*B*(2*sin(2*theta) + 7*sin(4*theta))/32",
+          "0"
+        ],
+        [
+          "5*B*(2*sin(2*theta) + 7*sin(4*theta))/32",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "delta_P_over_phase": [
+        [
+          "(10*A_t - C_t*Omega**2 - 11*C_t)*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*sin(theta)/16",
+          "-15*I*B*Omega*(2*sin(2*theta) + 7*sin(4*theta))*sin(theta)/64",
+          "0"
+        ],
+        [
+          "-15*I*B*Omega*(2*sin(2*theta) + 7*sin(4*theta))*sin(theta)/64",
+          "-(980*A_t*sin(theta)**4 - 940*A_t*sin(theta)**2 + 80*A_t - 35*C_t*Omega**2*sin(theta)**4 + 40*C_t*Omega**2*sin(theta)**2 - 8*C_t*Omega**2 + 315*C_t*sin(theta)**4 - 180*C_t*sin(theta)**2 - 72*C_t)*sin(theta)/32",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "(280*A_t*sin(theta)**4 - 140*A_t*sin(theta)**2 - 80*A_t + 35*C_t*Omega**2*sin(theta)**4 - 40*C_t*Omega**2*sin(theta)**2 + 8*C_t*Omega**2 + 945*C_t*sin(theta)**4 - 900*C_t*sin(theta)**2 + 72*C_t)/(32*sin(theta))"
+        ]
+      ],
+      "delta_a_over_phase": [
+        "0",
+        "0",
+        "5*U*(2*sin(2*theta) + 7*sin(4*theta))*sin(theta)/16"
+      ],
+      "delta_h_over_phase": [
+        [
+          "C_t*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)/8",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "delta_pi_over_phase": [
+        [
+          "I*Omega*(10*A_t - C_t*Omega**2 + 51*C_t)*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*sin(theta)/32",
+          "-15*B*(Omega**2 - 18)*(cos(theta) - 1)*(cos(theta) + 1)*(7*cos(theta)**2 - 3)*cos(theta)/16",
+          "0"
+        ],
+        [
+          "-15*B*(Omega**2 - 18)*(cos(theta) - 1)*(cos(theta) + 1)*(7*cos(theta)**2 - 3)*cos(theta)/16",
+          "-I*Omega*(980*A_t*sin(theta)**4 - 940*A_t*sin(theta)**2 + 80*A_t - 35*C_t*Omega**2*sin(theta)**4 + 40*C_t*Omega**2*sin(theta)**2 - 8*C_t*Omega**2 + 1120*C_t*sin(theta)**4 - 1460*C_t*sin(theta)**2 + 400*C_t)*sin(theta)/64",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "I*Omega*(280*A_t*sin(theta)**4 - 140*A_t*sin(theta)**2 - 80*A_t + 35*C_t*Omega**2*sin(theta)**4 - 40*C_t*Omega**2*sin(theta)**2 + 8*C_t*Omega**2 - 2380*C_t*sin(theta)**4 + 2540*C_t*sin(theta)**2 - 400*C_t)/(64*sin(theta))"
+        ]
+      ],
+      "frequency": "Omega",
+      "harmonic": "35*cos(theta)**4/8 - 15*cos(theta)**2/4 + 3/8",
+      "lambda": 20,
+      "primary_constraint_residuals": {
+        "linear_P_trace_residual": "0",
+        "linear_Q_scale_residual": "0"
+      }
+    }
+  },
+  "next_gate": "regenerate the complete D3C and mixed D2C tensors in this canonical convention, then evaluate the correction-independent third-order Kuranishi quotient",
+  "normalization": {
+    "P_definition": "P^ij=-3*sqrt(h)*C^(i n j n)",
+    "ambiguity_removed": true,
+    "background_P_orthonormal_density": [
+      "1",
+      "-1/2",
+      "-1/2"
+    ],
+    "boundary_convention": "adjoin K_ij with L_n h_ij=2K_ij and perform no integration by parts in time; discard only spatial divergences on closed Sigma",
+    "canonical_pairs": [
+      "(h_ij,pi^ij)",
+      "(K_ij,P^ij)",
+      "(a_i,E^i)"
+    ],
+    "exact_action_scale_selected_over_reference": "-3/2",
+    "old_rank_only_one_slot_cubic": "s**2/32",
+    "primary_constraints": [
+      "P_trace=h_ij P^ij=0",
+      "Q_scale=2h_ij pi^ij+K_ijP^ij=0"
+    ],
+    "reference_action": "S_ref=-(1/4) integral sqrt(-g) C_abcd C^abcd",
+    "selected_H_perp_gravity": "2*pi^ij*K_ij + P_ij*P^ij/(3*sqrt(h)) + P^ij*R_ij + P^ij*K_ij*K + D_iD_jP^ij + (3/2)*sqrt(h)*C_ijkn*C^(ijk)_n",
+    "selected_action": "S_grav=(3/8) integral sqrt(-g) C_abcd C^abcd",
+    "selected_one_slot_cubic": "-s**2/48"
+  },
+  "provenance": {
+    "inputs": {
+      "bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_CUBIC_CONSTRAINT_TENSOR_EXPORT_OBSTRUCTION_V1.json": "590a73db70dc193ecbbd6c3c41e06162797ec11808f6070eb4312476a129660b",
+      "bridge/certificates/einstein_maxwell_product_incidence.json": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8",
+      "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json": "13fc90b0ef18c6bf6a8f4f1a397c86aa235ed87fa86a3c3bf5ad031bc2304cfe"
+    },
+    "producer": "bridge/einstein_sector/einstein_weyl_alpha_b3_ostrogradsky_canonical_crosswalk.py",
+    "producer_sha256": "0cf4d12f1b36e730f0f14cf6b2dbbc3d4fca95b54132c4c28109f77334f38254"
+  },
+  "result_id": "EINSTEIN_WEYL_ALPHA_B3_OSTROGRADSKY_CANONICAL_CROSSWALK_V1",
+  "result_state": "ACTION_NORMALIZED_CANONICAL_CROSSWALK_CERTIFIED",
+  "schema": "einstein-weyl-alpha-b3-ostrogradsky-canonical-crosswalk-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein-weyl-alpha-b3-ostrogradsky-canonical-crosswalk-v1.schema.json",
+  "schema_sha256": "919c1a8f50868e544ec6a007c51e2be4a80e275154d194f22bf72039016a6943",
+  "signed_channel_crosswalk": [
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_K": [
+          [
+            "-3*I*sqrt(3 - sqrt(3))*(-17*sqrt(6) + 36*sqrt(2))/(20*(-3 + sqrt(3))**2)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "3*(-1308 + 713*sqrt(3))*sin(theta)/(40*(-3 + sqrt(3))**2)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-3*(-1236 + 679*sqrt(3))*sin(theta)/(80*(-3 + sqrt(3))**2)",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-3*(-1236 + 679*sqrt(3))/(80*(-3 + sqrt(3))**2*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_h": [
+          [
+            "-3*(-36 + 17*sqrt(3))/(20*(-3 + sqrt(3))**2)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "-3*I*sqrt(3 - sqrt(3))*(-679*sqrt(6) + 1236*sqrt(2))*sin(theta)/(40*(-3 + sqrt(3))**2)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3*I*(3 - sqrt(3))**(3/2)*(-17*sqrt(6) + 36*sqrt(2))*sin(theta)/(10*(-3 + sqrt(3))**2)",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "3*I*(3 - sqrt(3))**(3/2)*(-17*sqrt(6) + 36*sqrt(2))/(10*(-3 + sqrt(3))**2*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "Einstein_self_sum",
+      "covariant_coefficients": [
+        "-3*(-36 + 17*sqrt(3))/(20*(-3 + sqrt(3))**2)",
+        "0",
+        "0"
+      ],
+      "ell": 0,
+      "frequency_sign": "+",
+      "omega": "2*sqrt(2)*sqrt(3 - sqrt(3))"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_K": [
+          [
+            "3*I*sqrt(3 - sqrt(3))*(-17*sqrt(6) + 36*sqrt(2))/(20*(-3 + sqrt(3))**2)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "3*(-1308 + 713*sqrt(3))*sin(theta)/(40*(-3 + sqrt(3))**2)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-3*(-1236 + 679*sqrt(3))*sin(theta)/(80*(-3 + sqrt(3))**2)",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-3*(-1236 + 679*sqrt(3))/(80*(-3 + sqrt(3))**2*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_h": [
+          [
+            "-3*(-36 + 17*sqrt(3))/(20*(-3 + sqrt(3))**2)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "3*I*sqrt(3 - sqrt(3))*(-679*sqrt(6) + 1236*sqrt(2))*sin(theta)/(40*(-3 + sqrt(3))**2)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-3*I*(3 - sqrt(3))**(3/2)*(-17*sqrt(6) + 36*sqrt(2))*sin(theta)/(10*(-3 + sqrt(3))**2)",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-3*I*(3 - sqrt(3))**(3/2)*(-17*sqrt(6) + 36*sqrt(2))/(10*(-3 + sqrt(3))**2*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "Einstein_self_sum",
+      "covariant_coefficients": [
+        "-3*(-36 + 17*sqrt(3))/(20*(-3 + sqrt(3))**2)",
+        "0",
+        "0"
+      ],
+      "ell": 0,
+      "frequency_sign": "-",
+      "omega": "-2*sqrt(2)*sqrt(3 - sqrt(3))"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_K": [
+          [
+            "-108*I*sqrt(-6 + 5*sqrt(3))*(-924*sqrt(39) - 489*sqrt(78)*sqrt(3 - sqrt(3)) + 423*sqrt(26)*sqrt(3 - sqrt(3)) + 2284*sqrt(13))/(65*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))**4)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "36*sqrt(-6 + 5*sqrt(3))*(-21271*sqrt(39) - 4572*sqrt(78)*sqrt(3 - sqrt(3)) + 13224*sqrt(26)*sqrt(3 - sqrt(3)) + 28341*sqrt(13))*sin(theta)/(65*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))**4)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-18*sqrt(-6 + 5*sqrt(3))*(-19681*sqrt(39) - 4356*sqrt(78)*sqrt(3 - sqrt(3)) + 12216*sqrt(26)*sqrt(3 - sqrt(3)) + 26667*sqrt(13))*sin(theta)/(65*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))**4)",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-18*sqrt(-6 + 5*sqrt(3))*(-19681*sqrt(39) - 4356*sqrt(78)*sqrt(3 - sqrt(3)) + 12216*sqrt(26)*sqrt(3 - sqrt(3)) + 26667*sqrt(13))/(65*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))**4*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_h": [
+          [
+            "-216*sqrt(-6 + 5*sqrt(3))*(-265*sqrt(39) - 36*sqrt(78)*sqrt(3 - sqrt(3)) + 168*sqrt(26)*sqrt(3 - sqrt(3)) + 279*sqrt(13))/(65*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))**4)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "-18*I*sqrt(-6 + 5*sqrt(3))*(-86124*sqrt(39) - 35969*sqrt(78)*sqrt(3 - sqrt(3)) + 44091*sqrt(26)*sqrt(3 - sqrt(3)) + 178156*sqrt(13))*sin(theta)/(65*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))**4)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "I*sqrt(-6 + 5*sqrt(3))*(-265*sqrt(39) - 36*sqrt(78)*sqrt(3 - sqrt(3)) + 168*sqrt(26)*sqrt(3 - sqrt(3)) + 279*sqrt(13))*sin(theta)/(65*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3))))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "I*sqrt(-6 + 5*sqrt(3))*(-265*sqrt(39) - 36*sqrt(78)*sqrt(3 - sqrt(3)) + 168*sqrt(26)*sqrt(3 - sqrt(3)) + 279*sqrt(13))/(65*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "cross_difference",
+      "covariant_coefficients": [
+        "-216*sqrt(-6 + 5*sqrt(3))*(-265*sqrt(39) - 36*sqrt(78)*sqrt(3 - sqrt(3)) + 168*sqrt(26)*sqrt(3 - sqrt(3)) + 279*sqrt(13))/(65*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))**4)",
+        "0",
+        "0"
+      ],
+      "ell": 0,
+      "frequency_sign": "+",
+      "omega": "-(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))/3"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_K": [
+          [
+            "108*I*sqrt(-6 + 5*sqrt(3))*(-924*sqrt(39) - 489*sqrt(78)*sqrt(3 - sqrt(3)) + 423*sqrt(26)*sqrt(3 - sqrt(3)) + 2284*sqrt(13))/(65*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))**4)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "36*sqrt(-6 + 5*sqrt(3))*(-21271*sqrt(39) - 4572*sqrt(78)*sqrt(3 - sqrt(3)) + 13224*sqrt(26)*sqrt(3 - sqrt(3)) + 28341*sqrt(13))*sin(theta)/(65*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))**4)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-18*sqrt(-6 + 5*sqrt(3))*(-19681*sqrt(39) - 4356*sqrt(78)*sqrt(3 - sqrt(3)) + 12216*sqrt(26)*sqrt(3 - sqrt(3)) + 26667*sqrt(13))*sin(theta)/(65*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))**4)",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-18*sqrt(-6 + 5*sqrt(3))*(-19681*sqrt(39) - 4356*sqrt(78)*sqrt(3 - sqrt(3)) + 12216*sqrt(26)*sqrt(3 - sqrt(3)) + 26667*sqrt(13))/(65*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))**4*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_h": [
+          [
+            "-216*sqrt(-6 + 5*sqrt(3))*(-265*sqrt(39) - 36*sqrt(78)*sqrt(3 - sqrt(3)) + 168*sqrt(26)*sqrt(3 - sqrt(3)) + 279*sqrt(13))/(65*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))**4)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "18*I*sqrt(-6 + 5*sqrt(3))*(-86124*sqrt(39) - 35969*sqrt(78)*sqrt(3 - sqrt(3)) + 44091*sqrt(26)*sqrt(3 - sqrt(3)) + 178156*sqrt(13))*sin(theta)/(65*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))**4)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-I*sqrt(-6 + 5*sqrt(3))*(-265*sqrt(39) - 36*sqrt(78)*sqrt(3 - sqrt(3)) + 168*sqrt(26)*sqrt(3 - sqrt(3)) + 279*sqrt(13))*sin(theta)/(65*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3))))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-I*sqrt(-6 + 5*sqrt(3))*(-265*sqrt(39) - 36*sqrt(78)*sqrt(3 - sqrt(3)) + 168*sqrt(26)*sqrt(3 - sqrt(3)) + 279*sqrt(13))/(65*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "cross_difference",
+      "covariant_coefficients": [
+        "-216*sqrt(-6 + 5*sqrt(3))*(-265*sqrt(39) - 36*sqrt(78)*sqrt(3 - sqrt(3)) + 168*sqrt(26)*sqrt(3 - sqrt(3)) + 279*sqrt(13))/(65*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))**4)",
+        "0",
+        "0"
+      ],
+      "ell": 0,
+      "frequency_sign": "-",
+      "omega": "(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))/3"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_K": [
+          [
+            "-108*I*sqrt(-6 + 5*sqrt(3))*(-924*sqrt(39) - 423*sqrt(26)*sqrt(3 - sqrt(3)) + 489*sqrt(78)*sqrt(3 - sqrt(3)) + 2284*sqrt(13))/(65*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))**4)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "36*sqrt(-6 + 5*sqrt(3))*(-21271*sqrt(39) - 13224*sqrt(26)*sqrt(3 - sqrt(3)) + 4572*sqrt(78)*sqrt(3 - sqrt(3)) + 28341*sqrt(13))*sin(theta)/(65*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))**4)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-18*sqrt(-6 + 5*sqrt(3))*(-19681*sqrt(39) - 12216*sqrt(26)*sqrt(3 - sqrt(3)) + 4356*sqrt(78)*sqrt(3 - sqrt(3)) + 26667*sqrt(13))*sin(theta)/(65*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))**4)",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-18*sqrt(-6 + 5*sqrt(3))*(-19681*sqrt(39) - 12216*sqrt(26)*sqrt(3 - sqrt(3)) + 4356*sqrt(78)*sqrt(3 - sqrt(3)) + 26667*sqrt(13))/(65*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))**4*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_h": [
+          [
+            "-216*sqrt(-6 + 5*sqrt(3))*(-265*sqrt(39) - 168*sqrt(26)*sqrt(3 - sqrt(3)) + 36*sqrt(78)*sqrt(3 - sqrt(3)) + 279*sqrt(13))/(65*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))**4)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "-18*I*sqrt(-6 + 5*sqrt(3))*(-86124*sqrt(39) - 44091*sqrt(26)*sqrt(3 - sqrt(3)) + 35969*sqrt(78)*sqrt(3 - sqrt(3)) + 178156*sqrt(13))*sin(theta)/(65*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))**4)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-I*sqrt(-6 + 5*sqrt(3))*(-265*sqrt(39) - 168*sqrt(26)*sqrt(3 - sqrt(3)) + 36*sqrt(78)*sqrt(3 - sqrt(3)) + 279*sqrt(13))*sin(theta)/(65*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3)))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-I*sqrt(-6 + 5*sqrt(3))*(-265*sqrt(39) - 168*sqrt(26)*sqrt(3 - sqrt(3)) + 36*sqrt(78)*sqrt(3 - sqrt(3)) + 279*sqrt(13))/(65*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "cross_sum",
+      "covariant_coefficients": [
+        "-216*sqrt(-6 + 5*sqrt(3))*(-265*sqrt(39) - 168*sqrt(26)*sqrt(3 - sqrt(3)) + 36*sqrt(78)*sqrt(3 - sqrt(3)) + 279*sqrt(13))/(65*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))**4)",
+        "0",
+        "0"
+      ],
+      "ell": 0,
+      "frequency_sign": "+",
+      "omega": "(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))/3"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_K": [
+          [
+            "108*I*sqrt(-6 + 5*sqrt(3))*(-924*sqrt(39) - 423*sqrt(26)*sqrt(3 - sqrt(3)) + 489*sqrt(78)*sqrt(3 - sqrt(3)) + 2284*sqrt(13))/(65*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))**4)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "36*sqrt(-6 + 5*sqrt(3))*(-21271*sqrt(39) - 13224*sqrt(26)*sqrt(3 - sqrt(3)) + 4572*sqrt(78)*sqrt(3 - sqrt(3)) + 28341*sqrt(13))*sin(theta)/(65*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))**4)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-18*sqrt(-6 + 5*sqrt(3))*(-19681*sqrt(39) - 12216*sqrt(26)*sqrt(3 - sqrt(3)) + 4356*sqrt(78)*sqrt(3 - sqrt(3)) + 26667*sqrt(13))*sin(theta)/(65*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))**4)",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-18*sqrt(-6 + 5*sqrt(3))*(-19681*sqrt(39) - 12216*sqrt(26)*sqrt(3 - sqrt(3)) + 4356*sqrt(78)*sqrt(3 - sqrt(3)) + 26667*sqrt(13))/(65*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))**4*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_h": [
+          [
+            "-216*sqrt(-6 + 5*sqrt(3))*(-265*sqrt(39) - 168*sqrt(26)*sqrt(3 - sqrt(3)) + 36*sqrt(78)*sqrt(3 - sqrt(3)) + 279*sqrt(13))/(65*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))**4)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "18*I*sqrt(-6 + 5*sqrt(3))*(-86124*sqrt(39) - 44091*sqrt(26)*sqrt(3 - sqrt(3)) + 35969*sqrt(78)*sqrt(3 - sqrt(3)) + 178156*sqrt(13))*sin(theta)/(65*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))**4)",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "I*sqrt(-6 + 5*sqrt(3))*(-265*sqrt(39) - 168*sqrt(26)*sqrt(3 - sqrt(3)) + 36*sqrt(78)*sqrt(3 - sqrt(3)) + 279*sqrt(13))*sin(theta)/(65*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3)))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "I*sqrt(-6 + 5*sqrt(3))*(-265*sqrt(39) - 168*sqrt(26)*sqrt(3 - sqrt(3)) + 36*sqrt(78)*sqrt(3 - sqrt(3)) + 279*sqrt(13))/(65*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "cross_sum",
+      "covariant_coefficients": [
+        "-216*sqrt(-6 + 5*sqrt(3))*(-265*sqrt(39) - 168*sqrt(26)*sqrt(3 - sqrt(3)) + 36*sqrt(78)*sqrt(3 - sqrt(3)) + 279*sqrt(13))/(65*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))**4)",
+        "0",
+        "0"
+      ],
+      "ell": 0,
+      "frequency_sign": "-",
+      "omega": "-(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))/3"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_K": [
+          [
+            "9*I*(-5 + 2*sqrt(3))/320",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "-201*(-6 + 5*sqrt(3))*sin(theta)/2560",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "183*(-6 + 5*sqrt(3))*sin(theta)/5120",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "183*(-6 + 5*sqrt(3))/(5120*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_h": [
+          [
+            "9*(-6 + 5*sqrt(3))/1280",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "183*I*(-5 + 2*sqrt(3))*sin(theta)/640",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-3*I*(-5 + 2*sqrt(3))*sin(theta)/20",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-3*I*(-5 + 2*sqrt(3))/(20*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "extra_self_sum",
+      "covariant_coefficients": [
+        "9*(-6 + 5*sqrt(3))/1280",
+        "0",
+        "0"
+      ],
+      "ell": 0,
+      "frequency_sign": "+",
+      "omega": "8*sqrt(3)/3"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_K": [
+          [
+            "-9*I*(-5 + 2*sqrt(3))/320",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "-201*(-6 + 5*sqrt(3))*sin(theta)/2560",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "183*(-6 + 5*sqrt(3))*sin(theta)/5120",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "183*(-6 + 5*sqrt(3))/(5120*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_h": [
+          [
+            "9*(-6 + 5*sqrt(3))/1280",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "-183*I*(-5 + 2*sqrt(3))*sin(theta)/640",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3*I*(-5 + 2*sqrt(3))*sin(theta)/20",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "3*I*(-5 + 2*sqrt(3))/(20*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "extra_self_sum",
+      "covariant_coefficients": [
+        "9*(-6 + 5*sqrt(3))/1280",
+        "0",
+        "0"
+      ],
+      "ell": 0,
+      "frequency_sign": "-",
+      "omega": "-8*sqrt(3)/3"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_K": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_h": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ]
+      },
+      "channel": "combined_zero",
+      "covariant_coefficients": [
+        "0",
+        "0",
+        "0"
+      ],
+      "ell": 0,
+      "frequency_sign": "+",
+      "omega": "0"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "I*sqrt(3 - sqrt(3))*(-65*sqrt(6) + 111*sqrt(2))*sin(2*theta)/(7*(-85 + 49*sqrt(3)))"
+        ],
+        "delta_K": [
+          [
+            "I*sqrt(3 - sqrt(3))*(-230753*sqrt(6) + 399681*sqrt(2))*(3*cos(theta)**2 - 1)/(84*(-5482 + 3165*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "(-9175305 + 5297333*sqrt(3))*(3*sin(theta)**2 - 2)*sin(theta)/(168*(-5482 + 3165*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "(-1130805*sin(theta)**2 + 652893*sqrt(3)*sin(theta)**2 - 16751886 + 9671654*sqrt(3))*sin(theta)/(336*(-5482 + 3165*sqrt(3)))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-(-51386463*sin(theta)**2 + 29667855*sqrt(3)*sin(theta)**2 - 9671654*sqrt(3) + 16751886)/(336*(-5482 + 3165*sqrt(3))*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "(-111 + 65*sqrt(3))*sin(theta)**2*cos(theta)/(7*(-85 + 49*sqrt(3)))"
+        ],
+        "delta_h": [
+          [
+            "(-399681 + 230753*sqrt(3))*(3*cos(theta)**2 - 1)/(84*(-5482 + 3165*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "-I*sqrt(3 - sqrt(3))*(-682273*sqrt(6) + 1181685*sqrt(2))*(3*sin(theta)**2 - 2)*sin(theta)/(168*(-5482 + 3165*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-I*sqrt(3 - sqrt(3))*(-1377957*sqrt(6)*sin(theta)**2 + 2386713*sqrt(2)*sin(theta)**2 - 304342*sqrt(6) + 527122*sqrt(2))*sin(theta)/(56*(-5482 + 3165*sqrt(3)))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "I*sqrt(3 - sqrt(3))*(-2290983*sqrt(6)*sin(theta)**2 + 3968079*sqrt(2)*sin(theta)**2 - 527122*sqrt(2) + 304342*sqrt(6))/(56*(-5482 + 3165*sqrt(3))*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "Einstein_self_sum",
+      "covariant_coefficients": [
+        "(-2517945 + 1453733*sqrt(3))/(42*(-5482 + 3165*sqrt(3)))",
+        "0",
+        "(-399681 + 230753*sqrt(3))/(42*(-5482 + 3165*sqrt(3)))",
+        "(-111 + 65*sqrt(3))/(21*(-85 + 49*sqrt(3)))"
+      ],
+      "ell": 2,
+      "frequency_sign": "+",
+      "omega": "2*sqrt(2)*sqrt(3 - sqrt(3))"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "-I*sqrt(3 - sqrt(3))*(-65*sqrt(6) + 111*sqrt(2))*sin(2*theta)/(7*(-85 + 49*sqrt(3)))"
+        ],
+        "delta_K": [
+          [
+            "-I*sqrt(3 - sqrt(3))*(-230753*sqrt(6) + 399681*sqrt(2))*(3*cos(theta)**2 - 1)/(84*(-5482 + 3165*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "(-9175305 + 5297333*sqrt(3))*(3*sin(theta)**2 - 2)*sin(theta)/(168*(-5482 + 3165*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "(-1130805*sin(theta)**2 + 652893*sqrt(3)*sin(theta)**2 - 16751886 + 9671654*sqrt(3))*sin(theta)/(336*(-5482 + 3165*sqrt(3)))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-(-51386463*sin(theta)**2 + 29667855*sqrt(3)*sin(theta)**2 - 9671654*sqrt(3) + 16751886)/(336*(-5482 + 3165*sqrt(3))*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "(-111 + 65*sqrt(3))*sin(theta)**2*cos(theta)/(7*(-85 + 49*sqrt(3)))"
+        ],
+        "delta_h": [
+          [
+            "(-399681 + 230753*sqrt(3))*(3*cos(theta)**2 - 1)/(84*(-5482 + 3165*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "I*sqrt(3 - sqrt(3))*(-682273*sqrt(6) + 1181685*sqrt(2))*(3*sin(theta)**2 - 2)*sin(theta)/(168*(-5482 + 3165*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "I*sqrt(3 - sqrt(3))*(-1377957*sqrt(6)*sin(theta)**2 + 2386713*sqrt(2)*sin(theta)**2 - 304342*sqrt(6) + 527122*sqrt(2))*sin(theta)/(56*(-5482 + 3165*sqrt(3)))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-I*sqrt(3 - sqrt(3))*(-2290983*sqrt(6)*sin(theta)**2 + 3968079*sqrt(2)*sin(theta)**2 - 527122*sqrt(2) + 304342*sqrt(6))/(56*(-5482 + 3165*sqrt(3))*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "Einstein_self_sum",
+      "covariant_coefficients": [
+        "(-2517945 + 1453733*sqrt(3))/(42*(-5482 + 3165*sqrt(3)))",
+        "0",
+        "(-399681 + 230753*sqrt(3))/(42*(-5482 + 3165*sqrt(3)))",
+        "(-111 + 65*sqrt(3))/(21*(-85 + 49*sqrt(3)))"
+      ],
+      "ell": 2,
+      "frequency_sign": "-",
+      "omega": "-2*sqrt(2)*sqrt(3 - sqrt(3))"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_K": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "-3*(41*sqrt(3) + 320)*(3*sin(theta)**2 - 2)*sin(theta)/56",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-3*(-732*sin(theta)**2 + 51*sqrt(3)*sin(theta)**2 + 38*sqrt(3) + 464)*sin(theta)/112",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-3*(165*sqrt(3)*cos(theta)**2 + 660*cos(theta)**2 - 127*sqrt(3) - 196)/(112*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "6*(30 + 53*sqrt(3))*sin(theta)**2*cos(theta)/91"
+        ],
+        "delta_h": [
+          [
+            "-33*(sqrt(3) + 4)*(3*cos(theta)**2 - 1)/28",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ]
+      },
+      "channel": "combined_zero",
+      "covariant_coefficients": [
+        "-3*(-48 + sqrt(3))/14",
+        "0",
+        "-33*(sqrt(3) + 4)/14",
+        "2*(30 + 53*sqrt(3))/91"
+      ],
+      "ell": 2,
+      "frequency_sign": "+",
+      "omega": "0"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "9*I*sqrt(-6 + 5*sqrt(3))*(-14778*sqrt(39) - 6529*sqrt(78)*sqrt(3 - sqrt(3)) + 7479*sqrt(26)*sqrt(3 - sqrt(3)) + 32034*sqrt(13))*sin(2*theta)/(364*(-702*sqrt(3) - 275*sqrt(6)*sqrt(3 - sqrt(3)) + 369*sqrt(2)*sqrt(3 - sqrt(3)) + 1350))"
+        ],
+        "delta_K": [
+          [
+            "-3*I*sqrt(-6 + 5*sqrt(3))*(3*cos(theta)**2 - 1)*(-40064580*sqrt(39) - 13345609*sqrt(78)*sqrt(3 - sqrt(3)) + 22383108*sqrt(26)*sqrt(3 - sqrt(3)) + 70570782*sqrt(13))/(364*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "-3*sqrt(-6 + 5*sqrt(3))*(3*sin(theta)**2 - 2)*(-313506210*sqrt(39) - 99697905*sqrt(78)*sqrt(3 - sqrt(3)) + 177653813*sqrt(26)*sqrt(3 - sqrt(3)) + 534889812*sqrt(13))*sin(theta)/(728*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3*sqrt(-6 + 5*sqrt(3))*(-157458222*sqrt(39)*sin(theta)**2 - 49930749*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 89186577*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 + 268084656*sqrt(13)*sin(theta)**2 - 967043256*sqrt(13) - 320786590*sqrt(26)*sqrt(3 - sqrt(3)) + 180313686*sqrt(78)*sqrt(3 - sqrt(3)) + 566275596*sqrt(39))*sin(theta)/(1456*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-3*sqrt(-6 + 5*sqrt(3))*(-1541368566*sqrt(39)*cos(theta)**2 - 491010309*sqrt(78)*sqrt(3 - sqrt(3))*cos(theta)**2 + 873173193*sqrt(26)*sqrt(3 - sqrt(3))*cos(theta)**2 + 2633045112*sqrt(13)*cos(theta)**2 - 1666001856*sqrt(13) - 552386603*sqrt(26)*sqrt(3 - sqrt(3)) + 310696623*sqrt(78)*sqrt(3 - sqrt(3)) + 975092970*sqrt(39))/(1456*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754)*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "27*sqrt(-6 + 5*sqrt(3))*(-1219*sqrt(39) - 249*sqrt(78)*sqrt(3 - sqrt(3)) + 718*sqrt(26)*sqrt(3 - sqrt(3)) + 1497*sqrt(13))*sin(theta)**2*cos(theta)/(182*(-702*sqrt(3) - 275*sqrt(6)*sqrt(3 - sqrt(3)) + 369*sqrt(2)*sqrt(3 - sqrt(3)) + 1350))"
+        ],
+        "delta_h": [
+          [
+            "-9*sqrt(-6 + 5*sqrt(3))*(3*cos(theta)**2 - 1)*(-5061402*sqrt(39) - 1590177*sqrt(78)*sqrt(3 - sqrt(3)) + 2876753*sqrt(26)*sqrt(3 - sqrt(3)) + 8561364*sqrt(13))/(364*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "I*sqrt(-6 + 5*sqrt(3))*(3*sin(theta)**2 - 2)*(-96147408*sqrt(39) - 24830401*sqrt(78)*sqrt(3 - sqrt(3)) + 57535668*sqrt(26)*sqrt(3 - sqrt(3)) + 142955802*sqrt(13))*sin(theta)/(728*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "I*sqrt(-6 + 5*sqrt(3))*(-1356643818*sqrt(39)*sin(theta)**2 - 453327402*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 757108107*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 + 2394851076*sqrt(13)*sin(theta)**2 - 216341148*sqrt(39) - 64867228*sqrt(78)*sqrt(3 - sqrt(3)) + 124684992*sqrt(26)*sqrt(3 - sqrt(3)) + 354668148*sqrt(13))*sin(theta)/(728*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-I*sqrt(-6 + 5*sqrt(3))*(-2005667262*sqrt(39)*sin(theta)**2 - 647929086*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 1131163083*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 + 3458855520*sqrt(13)*sin(theta)**2 - 354668148*sqrt(13) - 124684992*sqrt(26)*sqrt(3 - sqrt(3)) + 64867228*sqrt(78)*sqrt(3 - sqrt(3)) + 216341148*sqrt(39))/(728*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754)*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "cross_difference",
+      "covariant_coefficients": [
+        "-3*sqrt(-6 + 5*sqrt(3))*(-61699702*sqrt(39) - 19733889*sqrt(78)*sqrt(3 - sqrt(3)) + 34924553*sqrt(26)*sqrt(3 - sqrt(3)) + 105702600*sqrt(13))/(182*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754))",
+        "0",
+        "-9*sqrt(-6 + 5*sqrt(3))*(-5061402*sqrt(39) - 1590177*sqrt(78)*sqrt(3 - sqrt(3)) + 2876753*sqrt(26)*sqrt(3 - sqrt(3)) + 8561364*sqrt(13))/(182*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754))",
+        "9*sqrt(-6 + 5*sqrt(3))*(-1219*sqrt(39) - 249*sqrt(78)*sqrt(3 - sqrt(3)) + 718*sqrt(26)*sqrt(3 - sqrt(3)) + 1497*sqrt(13))/(182*(-702*sqrt(3) - 275*sqrt(6)*sqrt(3 - sqrt(3)) + 369*sqrt(2)*sqrt(3 - sqrt(3)) + 1350))"
+      ],
+      "ell": 2,
+      "frequency_sign": "+",
+      "omega": "-(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))/3"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "-9*I*sqrt(-6 + 5*sqrt(3))*(-14778*sqrt(39) - 6529*sqrt(78)*sqrt(3 - sqrt(3)) + 7479*sqrt(26)*sqrt(3 - sqrt(3)) + 32034*sqrt(13))*sin(2*theta)/(364*(-702*sqrt(3) - 275*sqrt(6)*sqrt(3 - sqrt(3)) + 369*sqrt(2)*sqrt(3 - sqrt(3)) + 1350))"
+        ],
+        "delta_K": [
+          [
+            "3*I*sqrt(-6 + 5*sqrt(3))*(3*cos(theta)**2 - 1)*(-40064580*sqrt(39) - 13345609*sqrt(78)*sqrt(3 - sqrt(3)) + 22383108*sqrt(26)*sqrt(3 - sqrt(3)) + 70570782*sqrt(13))/(364*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "-3*sqrt(-6 + 5*sqrt(3))*(3*sin(theta)**2 - 2)*(-313506210*sqrt(39) - 99697905*sqrt(78)*sqrt(3 - sqrt(3)) + 177653813*sqrt(26)*sqrt(3 - sqrt(3)) + 534889812*sqrt(13))*sin(theta)/(728*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3*sqrt(-6 + 5*sqrt(3))*(-157458222*sqrt(39)*sin(theta)**2 - 49930749*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 89186577*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 + 268084656*sqrt(13)*sin(theta)**2 - 967043256*sqrt(13) - 320786590*sqrt(26)*sqrt(3 - sqrt(3)) + 180313686*sqrt(78)*sqrt(3 - sqrt(3)) + 566275596*sqrt(39))*sin(theta)/(1456*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-3*sqrt(-6 + 5*sqrt(3))*(-1541368566*sqrt(39)*cos(theta)**2 - 491010309*sqrt(78)*sqrt(3 - sqrt(3))*cos(theta)**2 + 873173193*sqrt(26)*sqrt(3 - sqrt(3))*cos(theta)**2 + 2633045112*sqrt(13)*cos(theta)**2 - 1666001856*sqrt(13) - 552386603*sqrt(26)*sqrt(3 - sqrt(3)) + 310696623*sqrt(78)*sqrt(3 - sqrt(3)) + 975092970*sqrt(39))/(1456*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754)*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "27*sqrt(-6 + 5*sqrt(3))*(-1219*sqrt(39) - 249*sqrt(78)*sqrt(3 - sqrt(3)) + 718*sqrt(26)*sqrt(3 - sqrt(3)) + 1497*sqrt(13))*sin(theta)**2*cos(theta)/(182*(-702*sqrt(3) - 275*sqrt(6)*sqrt(3 - sqrt(3)) + 369*sqrt(2)*sqrt(3 - sqrt(3)) + 1350))"
+        ],
+        "delta_h": [
+          [
+            "-9*sqrt(-6 + 5*sqrt(3))*(3*cos(theta)**2 - 1)*(-5061402*sqrt(39) - 1590177*sqrt(78)*sqrt(3 - sqrt(3)) + 2876753*sqrt(26)*sqrt(3 - sqrt(3)) + 8561364*sqrt(13))/(364*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "-I*sqrt(-6 + 5*sqrt(3))*(3*sin(theta)**2 - 2)*(-96147408*sqrt(39) - 24830401*sqrt(78)*sqrt(3 - sqrt(3)) + 57535668*sqrt(26)*sqrt(3 - sqrt(3)) + 142955802*sqrt(13))*sin(theta)/(728*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-I*sqrt(-6 + 5*sqrt(3))*(-1356643818*sqrt(39)*sin(theta)**2 - 453327402*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 757108107*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 + 2394851076*sqrt(13)*sin(theta)**2 - 216341148*sqrt(39) - 64867228*sqrt(78)*sqrt(3 - sqrt(3)) + 124684992*sqrt(26)*sqrt(3 - sqrt(3)) + 354668148*sqrt(13))*sin(theta)/(728*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "I*sqrt(-6 + 5*sqrt(3))*(-2005667262*sqrt(39)*sin(theta)**2 - 647929086*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 1131163083*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 + 3458855520*sqrt(13)*sin(theta)**2 - 354668148*sqrt(13) - 124684992*sqrt(26)*sqrt(3 - sqrt(3)) + 64867228*sqrt(78)*sqrt(3 - sqrt(3)) + 216341148*sqrt(39))/(728*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754)*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "cross_difference",
+      "covariant_coefficients": [
+        "-3*sqrt(-6 + 5*sqrt(3))*(-61699702*sqrt(39) - 19733889*sqrt(78)*sqrt(3 - sqrt(3)) + 34924553*sqrt(26)*sqrt(3 - sqrt(3)) + 105702600*sqrt(13))/(182*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754))",
+        "0",
+        "-9*sqrt(-6 + 5*sqrt(3))*(-5061402*sqrt(39) - 1590177*sqrt(78)*sqrt(3 - sqrt(3)) + 2876753*sqrt(26)*sqrt(3 - sqrt(3)) + 8561364*sqrt(13))/(182*(-895260*sqrt(3) - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 1577754))",
+        "9*sqrt(-6 + 5*sqrt(3))*(-1219*sqrt(39) - 249*sqrt(78)*sqrt(3 - sqrt(3)) + 718*sqrt(26)*sqrt(3 - sqrt(3)) + 1497*sqrt(13))/(182*(-702*sqrt(3) - 275*sqrt(6)*sqrt(3 - sqrt(3)) + 369*sqrt(2)*sqrt(3 - sqrt(3)) + 1350))"
+      ],
+      "ell": 2,
+      "frequency_sign": "-",
+      "omega": "(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))/3"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "-9*I*sqrt(-6 + 5*sqrt(3))*(-14778*sqrt(39) - 7479*sqrt(26)*sqrt(3 - sqrt(3)) + 6529*sqrt(78)*sqrt(3 - sqrt(3)) + 32034*sqrt(13))*sin(2*theta)/(364*(-1350 - 275*sqrt(6)*sqrt(3 - sqrt(3)) + 369*sqrt(2)*sqrt(3 - sqrt(3)) + 702*sqrt(3)))"
+        ],
+        "delta_K": [
+          [
+            "3*I*sqrt(-6 + 5*sqrt(3))*(3*cos(theta)**2 - 1)*(-40064580*sqrt(39) - 22383108*sqrt(26)*sqrt(3 - sqrt(3)) + 13345609*sqrt(78)*sqrt(3 - sqrt(3)) + 70570782*sqrt(13))/(364*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "3*sqrt(-6 + 5*sqrt(3))*(3*sin(theta)**2 - 2)*(-313506210*sqrt(39) - 177653813*sqrt(26)*sqrt(3 - sqrt(3)) + 99697905*sqrt(78)*sqrt(3 - sqrt(3)) + 534889812*sqrt(13))*sin(theta)/(728*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-3*sqrt(-6 + 5*sqrt(3))*(-157458222*sqrt(39)*sin(theta)**2 - 89186577*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 + 49930749*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 268084656*sqrt(13)*sin(theta)**2 - 967043256*sqrt(13) - 180313686*sqrt(78)*sqrt(3 - sqrt(3)) + 320786590*sqrt(26)*sqrt(3 - sqrt(3)) + 566275596*sqrt(39))*sin(theta)/(1456*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3)))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "3*sqrt(-6 + 5*sqrt(3))*(-1541368566*sqrt(39)*cos(theta)**2 - 873173193*sqrt(26)*sqrt(3 - sqrt(3))*cos(theta)**2 + 491010309*sqrt(78)*sqrt(3 - sqrt(3))*cos(theta)**2 + 2633045112*sqrt(13)*cos(theta)**2 - 1666001856*sqrt(13) - 310696623*sqrt(78)*sqrt(3 - sqrt(3)) + 552386603*sqrt(26)*sqrt(3 - sqrt(3)) + 975092970*sqrt(39))/(1456*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3))*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "-27*sqrt(-6 + 5*sqrt(3))*(-1219*sqrt(39) - 718*sqrt(26)*sqrt(3 - sqrt(3)) + 249*sqrt(78)*sqrt(3 - sqrt(3)) + 1497*sqrt(13))*sin(theta)**2*cos(theta)/(182*(-1350 - 275*sqrt(6)*sqrt(3 - sqrt(3)) + 369*sqrt(2)*sqrt(3 - sqrt(3)) + 702*sqrt(3)))"
+        ],
+        "delta_h": [
+          [
+            "9*sqrt(-6 + 5*sqrt(3))*(3*cos(theta)**2 - 1)*(-5061402*sqrt(39) - 2876753*sqrt(26)*sqrt(3 - sqrt(3)) + 1590177*sqrt(78)*sqrt(3 - sqrt(3)) + 8561364*sqrt(13))/(364*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "-I*sqrt(-6 + 5*sqrt(3))*(3*sin(theta)**2 - 2)*(-96147408*sqrt(39) - 57535668*sqrt(26)*sqrt(3 - sqrt(3)) + 24830401*sqrt(78)*sqrt(3 - sqrt(3)) + 142955802*sqrt(13))*sin(theta)/(728*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-I*sqrt(-6 + 5*sqrt(3))*(-1356643818*sqrt(39)*sin(theta)**2 - 757108107*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 + 453327402*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 2394851076*sqrt(13)*sin(theta)**2 - 216341148*sqrt(39) - 124684992*sqrt(26)*sqrt(3 - sqrt(3)) + 64867228*sqrt(78)*sqrt(3 - sqrt(3)) + 354668148*sqrt(13))*sin(theta)/(728*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3)))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "I*sqrt(-6 + 5*sqrt(3))*(-2005667262*sqrt(39)*sin(theta)**2 - 1131163083*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 + 647929086*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 3458855520*sqrt(13)*sin(theta)**2 - 354668148*sqrt(13) - 64867228*sqrt(78)*sqrt(3 - sqrt(3)) + 124684992*sqrt(26)*sqrt(3 - sqrt(3)) + 216341148*sqrt(39))/(728*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3))*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "cross_sum",
+      "covariant_coefficients": [
+        "3*sqrt(-6 + 5*sqrt(3))*(-61699702*sqrt(39) - 34924553*sqrt(26)*sqrt(3 - sqrt(3)) + 19733889*sqrt(78)*sqrt(3 - sqrt(3)) + 105702600*sqrt(13))/(182*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3)))",
+        "0",
+        "9*sqrt(-6 + 5*sqrt(3))*(-5061402*sqrt(39) - 2876753*sqrt(26)*sqrt(3 - sqrt(3)) + 1590177*sqrt(78)*sqrt(3 - sqrt(3)) + 8561364*sqrt(13))/(182*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3)))",
+        "-9*sqrt(-6 + 5*sqrt(3))*(-1219*sqrt(39) - 718*sqrt(26)*sqrt(3 - sqrt(3)) + 249*sqrt(78)*sqrt(3 - sqrt(3)) + 1497*sqrt(13))/(182*(-1350 - 275*sqrt(6)*sqrt(3 - sqrt(3)) + 369*sqrt(2)*sqrt(3 - sqrt(3)) + 702*sqrt(3)))"
+      ],
+      "ell": 2,
+      "frequency_sign": "+",
+      "omega": "(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))/3"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "9*I*sqrt(-6 + 5*sqrt(3))*(-14778*sqrt(39) - 7479*sqrt(26)*sqrt(3 - sqrt(3)) + 6529*sqrt(78)*sqrt(3 - sqrt(3)) + 32034*sqrt(13))*sin(2*theta)/(364*(-1350 - 275*sqrt(6)*sqrt(3 - sqrt(3)) + 369*sqrt(2)*sqrt(3 - sqrt(3)) + 702*sqrt(3)))"
+        ],
+        "delta_K": [
+          [
+            "-3*I*sqrt(-6 + 5*sqrt(3))*(3*cos(theta)**2 - 1)*(-40064580*sqrt(39) - 22383108*sqrt(26)*sqrt(3 - sqrt(3)) + 13345609*sqrt(78)*sqrt(3 - sqrt(3)) + 70570782*sqrt(13))/(364*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "3*sqrt(-6 + 5*sqrt(3))*(3*sin(theta)**2 - 2)*(-313506210*sqrt(39) - 177653813*sqrt(26)*sqrt(3 - sqrt(3)) + 99697905*sqrt(78)*sqrt(3 - sqrt(3)) + 534889812*sqrt(13))*sin(theta)/(728*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-3*sqrt(-6 + 5*sqrt(3))*(-157458222*sqrt(39)*sin(theta)**2 - 89186577*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 + 49930749*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 268084656*sqrt(13)*sin(theta)**2 - 967043256*sqrt(13) - 180313686*sqrt(78)*sqrt(3 - sqrt(3)) + 320786590*sqrt(26)*sqrt(3 - sqrt(3)) + 566275596*sqrt(39))*sin(theta)/(1456*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3)))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "3*sqrt(-6 + 5*sqrt(3))*(-1541368566*sqrt(39)*cos(theta)**2 - 873173193*sqrt(26)*sqrt(3 - sqrt(3))*cos(theta)**2 + 491010309*sqrt(78)*sqrt(3 - sqrt(3))*cos(theta)**2 + 2633045112*sqrt(13)*cos(theta)**2 - 1666001856*sqrt(13) - 310696623*sqrt(78)*sqrt(3 - sqrt(3)) + 552386603*sqrt(26)*sqrt(3 - sqrt(3)) + 975092970*sqrt(39))/(1456*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3))*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "-27*sqrt(-6 + 5*sqrt(3))*(-1219*sqrt(39) - 718*sqrt(26)*sqrt(3 - sqrt(3)) + 249*sqrt(78)*sqrt(3 - sqrt(3)) + 1497*sqrt(13))*sin(theta)**2*cos(theta)/(182*(-1350 - 275*sqrt(6)*sqrt(3 - sqrt(3)) + 369*sqrt(2)*sqrt(3 - sqrt(3)) + 702*sqrt(3)))"
+        ],
+        "delta_h": [
+          [
+            "9*sqrt(-6 + 5*sqrt(3))*(3*cos(theta)**2 - 1)*(-5061402*sqrt(39) - 2876753*sqrt(26)*sqrt(3 - sqrt(3)) + 1590177*sqrt(78)*sqrt(3 - sqrt(3)) + 8561364*sqrt(13))/(364*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "I*sqrt(-6 + 5*sqrt(3))*(3*sin(theta)**2 - 2)*(-96147408*sqrt(39) - 57535668*sqrt(26)*sqrt(3 - sqrt(3)) + 24830401*sqrt(78)*sqrt(3 - sqrt(3)) + 142955802*sqrt(13))*sin(theta)/(728*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "I*sqrt(-6 + 5*sqrt(3))*(-1356643818*sqrt(39)*sin(theta)**2 - 757108107*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 + 453327402*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 2394851076*sqrt(13)*sin(theta)**2 - 216341148*sqrt(39) - 124684992*sqrt(26)*sqrt(3 - sqrt(3)) + 64867228*sqrt(78)*sqrt(3 - sqrt(3)) + 354668148*sqrt(13))*sin(theta)/(728*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3)))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-I*sqrt(-6 + 5*sqrt(3))*(-2005667262*sqrt(39)*sin(theta)**2 - 1131163083*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 + 647929086*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 3458855520*sqrt(13)*sin(theta)**2 - 354668148*sqrt(13) - 64867228*sqrt(78)*sqrt(3 - sqrt(3)) + 124684992*sqrt(26)*sqrt(3 - sqrt(3)) + 216341148*sqrt(39))/(728*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3))*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "cross_sum",
+      "covariant_coefficients": [
+        "3*sqrt(-6 + 5*sqrt(3))*(-61699702*sqrt(39) - 34924553*sqrt(26)*sqrt(3 - sqrt(3)) + 19733889*sqrt(78)*sqrt(3 - sqrt(3)) + 105702600*sqrt(13))/(182*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3)))",
+        "0",
+        "9*sqrt(-6 + 5*sqrt(3))*(-5061402*sqrt(39) - 2876753*sqrt(26)*sqrt(3 - sqrt(3)) + 1590177*sqrt(78)*sqrt(3 - sqrt(3)) + 8561364*sqrt(13))/(182*(-1577754 - 298703*sqrt(6)*sqrt(3 - sqrt(3)) + 499788*sqrt(2)*sqrt(3 - sqrt(3)) + 895260*sqrt(3)))",
+        "-9*sqrt(-6 + 5*sqrt(3))*(-1219*sqrt(39) - 718*sqrt(26)*sqrt(3 - sqrt(3)) + 249*sqrt(78)*sqrt(3 - sqrt(3)) + 1497*sqrt(13))/(182*(-1350 - 275*sqrt(6)*sqrt(3 - sqrt(3)) + 369*sqrt(2)*sqrt(3 - sqrt(3)) + 702*sqrt(3)))"
+      ],
+      "ell": 2,
+      "frequency_sign": "-",
+      "omega": "-(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))/3"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "-25164*I*(-5 + 2*sqrt(3))*sin(2*theta)/22841"
+        ],
+        "delta_K": [
+          [
+            "9873*I*(-5 + 2*sqrt(3))*(3*cos(theta)**2 - 1)/45682",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "112947*(-6 + 5*sqrt(3))*(3*sin(theta)**2 - 2)*sin(theta)/365456",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3*(-6 + 5*sqrt(3))*(73587*sin(theta)**2 + 62134)*sin(theta)/730912",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "3*(-6 + 5*sqrt(3))*(259989*cos(theta)**2 - 197855)/(730912*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "-6291*(-6 + 5*sqrt(3))*sin(theta)**2*cos(theta)/22841"
+        ],
+        "delta_h": [
+          [
+            "9873*(-6 + 5*sqrt(3))*(3*cos(theta)**2 - 1)/182728",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "6501*I*(-5 + 2*sqrt(3))*(3*sin(theta)**2 - 2)*sin(theta)/7028",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-15*I*(-5 + 2*sqrt(3))*(18219*sin(theta)**2 - 4976)*sin(theta)/91364",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "15*I*(-5 + 2*sqrt(3))*(3291*sin(theta)**2 + 4976)/(91364*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "extra_self_sum",
+      "covariant_coefficients": [
+        "45723*(-6 + 5*sqrt(3))/91364",
+        "0",
+        "9873*(-6 + 5*sqrt(3))/91364",
+        "-2097*(-6 + 5*sqrt(3))/22841"
+      ],
+      "ell": 2,
+      "frequency_sign": "+",
+      "omega": "8*sqrt(3)/3"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "25164*I*(-5 + 2*sqrt(3))*sin(2*theta)/22841"
+        ],
+        "delta_K": [
+          [
+            "-9873*I*(-5 + 2*sqrt(3))*(3*cos(theta)**2 - 1)/45682",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "112947*(-6 + 5*sqrt(3))*(3*sin(theta)**2 - 2)*sin(theta)/365456",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3*(-6 + 5*sqrt(3))*(73587*sin(theta)**2 + 62134)*sin(theta)/730912",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "3*(-6 + 5*sqrt(3))*(259989*cos(theta)**2 - 197855)/(730912*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "-6291*(-6 + 5*sqrt(3))*sin(theta)**2*cos(theta)/22841"
+        ],
+        "delta_h": [
+          [
+            "9873*(-6 + 5*sqrt(3))*(3*cos(theta)**2 - 1)/182728",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "-6501*I*(-5 + 2*sqrt(3))*(3*sin(theta)**2 - 2)*sin(theta)/7028",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "15*I*(-5 + 2*sqrt(3))*(18219*sin(theta)**2 - 4976)*sin(theta)/91364",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-15*I*(-5 + 2*sqrt(3))*(3291*sin(theta)**2 + 4976)/(91364*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "extra_self_sum",
+      "covariant_coefficients": [
+        "45723*(-6 + 5*sqrt(3))/91364",
+        "0",
+        "9873*(-6 + 5*sqrt(3))/91364",
+        "-2097*(-6 + 5*sqrt(3))/22841"
+      ],
+      "ell": 2,
+      "frequency_sign": "-",
+      "omega": "-8*sqrt(3)/3"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "9*I*sqrt(3 - sqrt(3))*(-489*sqrt(6) + 683*sqrt(2))*(2*sin(2*theta) + 7*sin(4*theta))/(112*(-435 + 308*sqrt(3)))"
+        ],
+        "delta_K": [
+          [
+            "9*I*sqrt(3 - sqrt(3))*(-134937*sqrt(6) + 249377*sqrt(2))*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)/(70*(-116721 + 69709*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "-81*(-1008577 + 559149*sqrt(3))*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*sin(theta)/(140*(-116721 + 69709*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-9*(-38900015*sin(theta)**4 + 24508575*sqrt(3)*sin(theta)**4 - 52441520*sin(theta)**2 + 26617320*sqrt(3)*sin(theta)**2 - 38099736*sqrt(3) + 68627512)*sin(theta)/(280*(-116721 + 69709*sqrt(3)))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "9*(-639390745*sin(theta)**4 + 357881265*sqrt(3)*sin(theta)**4 - 354380040*sqrt(3)*sin(theta)**2 + 633833600*sin(theta)**2 - 68627512 + 38099736*sqrt(3))/(280*(-116721 + 69709*sqrt(3))*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "9*(-683 + 489*sqrt(3))*(2*sin(2*theta) + 7*sin(4*theta))*sin(theta)/(224*(-435 + 308*sqrt(3)))"
+        ],
+        "delta_h": [
+          [
+            "9*(-249377 + 134937*sqrt(3))*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)/(70*(-116721 + 69709*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "-9*I*sqrt(3 - sqrt(3))*(-3333753*sqrt(6) + 6384181*sqrt(2))*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*sin(theta)/(140*(-116721 + 69709*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "9*I*sqrt(3 - sqrt(3))*(-33283215*sqrt(6)*sin(theta)**4 + 59912125*sqrt(2)*sin(theta)**4 - 66690260*sqrt(2)*sin(theta)**2 + 36525510*sqrt(6)*sin(theta)**2 - 6397632*sqrt(6) + 12269608*sqrt(2))*sin(theta)/(70*(-116721 + 69709*sqrt(3)))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "9*I*sqrt(3 - sqrt(3))*(-22696065*sqrt(6)*sin(theta)**4 + 47446945*sqrt(2)*sin(theta)**4 - 56005820*sqrt(2)*sin(theta)**2 + 27450810*sqrt(6)*sin(theta)**2 - 6397632*sqrt(6) + 12269608*sqrt(2))/(70*(-116721 + 69709*sqrt(3))*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "Einstein_self_sum",
+      "covariant_coefficients": [
+        "36*(-288949 + 168547*sqrt(3))/(35*(-116721 + 69709*sqrt(3)))",
+        "0",
+        "36*(-249377 + 134937*sqrt(3))/(35*(-116721 + 69709*sqrt(3)))",
+        "9*(-683 + 489*sqrt(3))/(70*(-435 + 308*sqrt(3)))"
+      ],
+      "ell": 4,
+      "frequency_sign": "+",
+      "omega": "2*sqrt(2)*sqrt(3 - sqrt(3))"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "-9*I*sqrt(3 - sqrt(3))*(-489*sqrt(6) + 683*sqrt(2))*(2*sin(2*theta) + 7*sin(4*theta))/(112*(-435 + 308*sqrt(3)))"
+        ],
+        "delta_K": [
+          [
+            "-9*I*sqrt(3 - sqrt(3))*(-134937*sqrt(6) + 249377*sqrt(2))*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)/(70*(-116721 + 69709*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "-81*(-1008577 + 559149*sqrt(3))*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*sin(theta)/(140*(-116721 + 69709*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-9*(-38900015*sin(theta)**4 + 24508575*sqrt(3)*sin(theta)**4 - 52441520*sin(theta)**2 + 26617320*sqrt(3)*sin(theta)**2 - 38099736*sqrt(3) + 68627512)*sin(theta)/(280*(-116721 + 69709*sqrt(3)))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "9*(-639390745*sin(theta)**4 + 357881265*sqrt(3)*sin(theta)**4 - 354380040*sqrt(3)*sin(theta)**2 + 633833600*sin(theta)**2 - 68627512 + 38099736*sqrt(3))/(280*(-116721 + 69709*sqrt(3))*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "9*(-683 + 489*sqrt(3))*(2*sin(2*theta) + 7*sin(4*theta))*sin(theta)/(224*(-435 + 308*sqrt(3)))"
+        ],
+        "delta_h": [
+          [
+            "9*(-249377 + 134937*sqrt(3))*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)/(70*(-116721 + 69709*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "9*I*sqrt(3 - sqrt(3))*(-3333753*sqrt(6) + 6384181*sqrt(2))*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*sin(theta)/(140*(-116721 + 69709*sqrt(3)))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-9*I*sqrt(3 - sqrt(3))*(-33283215*sqrt(6)*sin(theta)**4 + 59912125*sqrt(2)*sin(theta)**4 - 66690260*sqrt(2)*sin(theta)**2 + 36525510*sqrt(6)*sin(theta)**2 - 6397632*sqrt(6) + 12269608*sqrt(2))*sin(theta)/(70*(-116721 + 69709*sqrt(3)))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-9*I*sqrt(3 - sqrt(3))*(-22696065*sqrt(6)*sin(theta)**4 + 47446945*sqrt(2)*sin(theta)**4 - 56005820*sqrt(2)*sin(theta)**2 + 27450810*sqrt(6)*sin(theta)**2 - 6397632*sqrt(6) + 12269608*sqrt(2))/(70*(-116721 + 69709*sqrt(3))*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "Einstein_self_sum",
+      "covariant_coefficients": [
+        "36*(-288949 + 168547*sqrt(3))/(35*(-116721 + 69709*sqrt(3)))",
+        "0",
+        "36*(-249377 + 134937*sqrt(3))/(35*(-116721 + 69709*sqrt(3)))",
+        "9*(-683 + 489*sqrt(3))/(70*(-435 + 308*sqrt(3)))"
+      ],
+      "ell": 4,
+      "frequency_sign": "-",
+      "omega": "-2*sqrt(2)*sqrt(3 - sqrt(3))"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "0"
+        ],
+        "delta_K": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "-(-13674 + 77513*sqrt(3))*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*sin(theta)/105560",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "(33732930*sin(theta)**4 + 19614175*sqrt(3)*sin(theta)**4 - 19091960*sqrt(3)*sin(theta)**2 - 29045760*sin(theta)**2 + 105456 + 1823848*sqrt(3))*sin(theta)/633360",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-(3655505*sqrt(3)*sin(theta)**4 + 32810190*sin(theta)**4 - 27991200*sin(theta)**2 - 853480*sqrt(3)*sin(theta)**2 - 1823848*sqrt(3) - 105456)/(633360*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "-(-969 + 1009*sqrt(3))*(2*sin(2*theta) + 7*sin(4*theta))*sin(theta)/4368"
+        ],
+        "delta_h": [
+          [
+            "(-27102 + 2279*sqrt(3))*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)/158340",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ]
+      },
+      "channel": "combined_zero",
+      "covariant_coefficients": [
+        "-2*(25710 + 20747*sqrt(3))/39585",
+        "0",
+        "2*(-27102 + 2279*sqrt(3))/39585",
+        "-(-969 + 1009*sqrt(3))/1365"
+      ],
+      "ell": 4,
+      "frequency_sign": "+",
+      "omega": "0"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "-3*I*sqrt(-6 + 5*sqrt(3))*(2*sin(2*theta) + 7*sin(4*theta))*(-23916*sqrt(39) - 16515*sqrt(26)*sqrt(3 - sqrt(3)) - 3625*sqrt(78)*sqrt(3 - sqrt(3)) + 6672*sqrt(13))/(1456*(99*sqrt(3) + 792*sqrt(2)*sqrt(3 - sqrt(3)) + 1520*sqrt(6)*sqrt(3 - sqrt(3)) + 5163))"
+        ],
+        "delta_K": [
+          [
+            "3*I*sqrt(-6 + 5*sqrt(3))*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)*(-1848491*sqrt(78)*sqrt(3 - sqrt(3)) + 3220116*sqrt(13) + 13386948*sqrt(39) + 21291723*sqrt(26)*sqrt(3 - sqrt(3)))/(1820*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "-9*sqrt(-6 + 5*sqrt(3))*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*(29878224*sqrt(78)*sqrt(3 - sqrt(3)) + 94125489*sqrt(13) + 111306593*sqrt(39) + 124865060*sqrt(26)*sqrt(3 - sqrt(3)))*sin(theta)/(1820*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "9*sqrt(-6 + 5*sqrt(3))*(681395925*sqrt(13)*sin(theta)**4 + 4026787800*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**4 + 21974080940*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**4 + 26263955235*sqrt(39)*sin(theta)**4 - 23828022300*sqrt(39)*sin(theta)**2 - 20226580720*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 - 3761566320*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 - 1428370440*sqrt(13)*sin(theta)**2 + 675453432*sqrt(13) + 248027136*sqrt(78)*sqrt(3 - sqrt(3)) + 1113323360*sqrt(26)*sqrt(3 - sqrt(3)) + 1052848536*sqrt(39))*sin(theta)/(3640*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "9*sqrt(-6 + 5*sqrt(3))*(-17051530545*sqrt(39)*sin(theta)**4 - 12232501540*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**4 - 1856550360*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**4 + 5228821605*sqrt(13)*sin(theta)**4 - 5326163880*sqrt(13)*sin(theta)**2 + 1281294960*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 9093347120*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 + 13299536940*sqrt(39)*sin(theta)**2 + 675453432*sqrt(13) + 248027136*sqrt(78)*sqrt(3 - sqrt(3)) + 1113323360*sqrt(26)*sqrt(3 - sqrt(3)) + 1052848536*sqrt(39))/(3640*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599)*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "9*sqrt(-6 + 5*sqrt(3))*(2*sin(2*theta) + 7*sin(4*theta))*(-9593*sqrt(39) - 8101*sqrt(26)*sqrt(3 - sqrt(3)) - 1335*sqrt(78)*sqrt(3 - sqrt(3)) + 165*sqrt(13))*sin(theta)/(1456*(99*sqrt(3) + 792*sqrt(2)*sqrt(3 - sqrt(3)) + 1520*sqrt(6)*sqrt(3 - sqrt(3)) + 5163))"
+        ],
+        "delta_h": [
+          [
+            "9*sqrt(-6 + 5*sqrt(3))*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)*(-10149737*sqrt(39) - 7150180*sqrt(26)*sqrt(3 - sqrt(3)) - 562584*sqrt(78)*sqrt(3 - sqrt(3)) + 4846905*sqrt(13))/(910*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "3*I*sqrt(-6 + 5*sqrt(3))*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*(-1417875060*sqrt(39) - 1396249047*sqrt(26)*sqrt(3 - sqrt(3)) - 50934019*sqrt(78)*sqrt(3 - sqrt(3)) + 174436740*sqrt(13))*sin(theta)/(3640*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-9*I*sqrt(-6 + 5*sqrt(3))*(-6072031840*sqrt(39)*sin(theta)**4 - 5284758570*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**4 - 634701900*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**4 + 440968360*sqrt(13)*sin(theta)**4 - 526020260*sqrt(13)*sin(theta)**2 + 588015625*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 5675590830*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 + 6375005480*sqrt(39)*sin(theta)**2 - 936325408*sqrt(39) - 916638216*sqrt(26)*sqrt(3 - sqrt(3)) - 35188340*sqrt(78)*sqrt(3 - sqrt(3)) + 118437904*sqrt(13))*sin(theta)/(1820*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-9*I*sqrt(-6 + 5*sqrt(3))*(-2735825820*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**4 - 2120815480*sqrt(39)*sin(theta)**4 + 595363300*sqrt(13)*sin(theta)**4 + 326803925*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**4 - 658358780*sqrt(13)*sin(theta)**2 - 236132225*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 2988248600*sqrt(39)*sin(theta)**2 + 3490791330*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 - 936325408*sqrt(39) - 916638216*sqrt(26)*sqrt(3 - sqrt(3)) - 35188340*sqrt(78)*sqrt(3 - sqrt(3)) + 118437904*sqrt(13))/(1820*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599)*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "cross_difference",
+      "covariant_coefficients": [
+        "-12*sqrt(-6 + 5*sqrt(3))*(3713511*sqrt(13) + 12320196*sqrt(78)*sqrt(3 - sqrt(3)) + 59993704*sqrt(26)*sqrt(3 - sqrt(3)) + 72682898*sqrt(39))/(455*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599))",
+        "0",
+        "36*sqrt(-6 + 5*sqrt(3))*(-10149737*sqrt(39) - 7150180*sqrt(26)*sqrt(3 - sqrt(3)) - 562584*sqrt(78)*sqrt(3 - sqrt(3)) + 4846905*sqrt(13))/(455*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599))",
+        "9*sqrt(-6 + 5*sqrt(3))*(-9593*sqrt(39) - 8101*sqrt(26)*sqrt(3 - sqrt(3)) - 1335*sqrt(78)*sqrt(3 - sqrt(3)) + 165*sqrt(13))/(455*(99*sqrt(3) + 792*sqrt(2)*sqrt(3 - sqrt(3)) + 1520*sqrt(6)*sqrt(3 - sqrt(3)) + 5163))"
+      ],
+      "ell": 4,
+      "frequency_sign": "+",
+      "omega": "-(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))/3"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "3*I*sqrt(-6 + 5*sqrt(3))*(2*sin(2*theta) + 7*sin(4*theta))*(-23916*sqrt(39) - 16515*sqrt(26)*sqrt(3 - sqrt(3)) - 3625*sqrt(78)*sqrt(3 - sqrt(3)) + 6672*sqrt(13))/(1456*(99*sqrt(3) + 792*sqrt(2)*sqrt(3 - sqrt(3)) + 1520*sqrt(6)*sqrt(3 - sqrt(3)) + 5163))"
+        ],
+        "delta_K": [
+          [
+            "-3*I*sqrt(-6 + 5*sqrt(3))*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)*(-1848491*sqrt(78)*sqrt(3 - sqrt(3)) + 3220116*sqrt(13) + 13386948*sqrt(39) + 21291723*sqrt(26)*sqrt(3 - sqrt(3)))/(1820*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "-9*sqrt(-6 + 5*sqrt(3))*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*(29878224*sqrt(78)*sqrt(3 - sqrt(3)) + 94125489*sqrt(13) + 111306593*sqrt(39) + 124865060*sqrt(26)*sqrt(3 - sqrt(3)))*sin(theta)/(1820*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "9*sqrt(-6 + 5*sqrt(3))*(681395925*sqrt(13)*sin(theta)**4 + 4026787800*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**4 + 21974080940*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**4 + 26263955235*sqrt(39)*sin(theta)**4 - 23828022300*sqrt(39)*sin(theta)**2 - 20226580720*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 - 3761566320*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 - 1428370440*sqrt(13)*sin(theta)**2 + 675453432*sqrt(13) + 248027136*sqrt(78)*sqrt(3 - sqrt(3)) + 1113323360*sqrt(26)*sqrt(3 - sqrt(3)) + 1052848536*sqrt(39))*sin(theta)/(3640*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "9*sqrt(-6 + 5*sqrt(3))*(-17051530545*sqrt(39)*sin(theta)**4 - 12232501540*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**4 - 1856550360*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**4 + 5228821605*sqrt(13)*sin(theta)**4 - 5326163880*sqrt(13)*sin(theta)**2 + 1281294960*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 9093347120*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 + 13299536940*sqrt(39)*sin(theta)**2 + 675453432*sqrt(13) + 248027136*sqrt(78)*sqrt(3 - sqrt(3)) + 1113323360*sqrt(26)*sqrt(3 - sqrt(3)) + 1052848536*sqrt(39))/(3640*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599)*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "9*sqrt(-6 + 5*sqrt(3))*(2*sin(2*theta) + 7*sin(4*theta))*(-9593*sqrt(39) - 8101*sqrt(26)*sqrt(3 - sqrt(3)) - 1335*sqrt(78)*sqrt(3 - sqrt(3)) + 165*sqrt(13))*sin(theta)/(1456*(99*sqrt(3) + 792*sqrt(2)*sqrt(3 - sqrt(3)) + 1520*sqrt(6)*sqrt(3 - sqrt(3)) + 5163))"
+        ],
+        "delta_h": [
+          [
+            "9*sqrt(-6 + 5*sqrt(3))*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)*(-10149737*sqrt(39) - 7150180*sqrt(26)*sqrt(3 - sqrt(3)) - 562584*sqrt(78)*sqrt(3 - sqrt(3)) + 4846905*sqrt(13))/(910*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "-3*I*sqrt(-6 + 5*sqrt(3))*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*(-1417875060*sqrt(39) - 1396249047*sqrt(26)*sqrt(3 - sqrt(3)) - 50934019*sqrt(78)*sqrt(3 - sqrt(3)) + 174436740*sqrt(13))*sin(theta)/(3640*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "9*I*sqrt(-6 + 5*sqrt(3))*(-6072031840*sqrt(39)*sin(theta)**4 - 5284758570*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**4 - 634701900*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**4 + 440968360*sqrt(13)*sin(theta)**4 - 526020260*sqrt(13)*sin(theta)**2 + 588015625*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 5675590830*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 + 6375005480*sqrt(39)*sin(theta)**2 - 936325408*sqrt(39) - 916638216*sqrt(26)*sqrt(3 - sqrt(3)) - 35188340*sqrt(78)*sqrt(3 - sqrt(3)) + 118437904*sqrt(13))*sin(theta)/(1820*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "9*I*sqrt(-6 + 5*sqrt(3))*(-2735825820*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**4 - 2120815480*sqrt(39)*sin(theta)**4 + 595363300*sqrt(13)*sin(theta)**4 + 326803925*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**4 - 658358780*sqrt(13)*sin(theta)**2 - 236132225*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 2988248600*sqrt(39)*sin(theta)**2 + 3490791330*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 - 936325408*sqrt(39) - 916638216*sqrt(26)*sqrt(3 - sqrt(3)) - 35188340*sqrt(78)*sqrt(3 - sqrt(3)) + 118437904*sqrt(13))/(1820*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599)*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "cross_difference",
+      "covariant_coefficients": [
+        "-12*sqrt(-6 + 5*sqrt(3))*(3713511*sqrt(13) + 12320196*sqrt(78)*sqrt(3 - sqrt(3)) + 59993704*sqrt(26)*sqrt(3 - sqrt(3)) + 72682898*sqrt(39))/(455*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599))",
+        "0",
+        "36*sqrt(-6 + 5*sqrt(3))*(-10149737*sqrt(39) - 7150180*sqrt(26)*sqrt(3 - sqrt(3)) - 562584*sqrt(78)*sqrt(3 - sqrt(3)) + 4846905*sqrt(13))/(455*(156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)) + 17425599))",
+        "9*sqrt(-6 + 5*sqrt(3))*(-9593*sqrt(39) - 8101*sqrt(26)*sqrt(3 - sqrt(3)) - 1335*sqrt(78)*sqrt(3 - sqrt(3)) + 165*sqrt(13))/(455*(99*sqrt(3) + 792*sqrt(2)*sqrt(3 - sqrt(3)) + 1520*sqrt(6)*sqrt(3 - sqrt(3)) + 5163))"
+      ],
+      "ell": 4,
+      "frequency_sign": "-",
+      "omega": "(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))/3"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "3*I*sqrt(-6 + 5*sqrt(3))*(2*sin(2*theta) + 7*sin(4*theta))*(-23916*sqrt(39) + 6672*sqrt(13) + 3625*sqrt(78)*sqrt(3 - sqrt(3)) + 16515*sqrt(26)*sqrt(3 - sqrt(3)))/(1456*(-5163 - 99*sqrt(3) + 792*sqrt(2)*sqrt(3 - sqrt(3)) + 1520*sqrt(6)*sqrt(3 - sqrt(3))))"
+        ],
+        "delta_K": [
+          [
+            "-3*I*sqrt(-6 + 5*sqrt(3))*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)*(-21291723*sqrt(26)*sqrt(3 - sqrt(3)) + 3220116*sqrt(13) + 1848491*sqrt(78)*sqrt(3 - sqrt(3)) + 13386948*sqrt(39))/(1820*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3))))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "9*sqrt(-6 + 5*sqrt(3))*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*(-124865060*sqrt(26)*sqrt(3 - sqrt(3)) - 29878224*sqrt(78)*sqrt(3 - sqrt(3)) + 94125489*sqrt(13) + 111306593*sqrt(39))*sin(theta)/(1820*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3))))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-9*sqrt(-6 + 5*sqrt(3))*(-21974080940*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**4 - 4026787800*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**4 + 681395925*sqrt(13)*sin(theta)**4 + 26263955235*sqrt(39)*sin(theta)**4 - 23828022300*sqrt(39)*sin(theta)**2 - 1428370440*sqrt(13)*sin(theta)**2 + 3761566320*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 20226580720*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 - 1113323360*sqrt(26)*sqrt(3 - sqrt(3)) - 248027136*sqrt(78)*sqrt(3 - sqrt(3)) + 675453432*sqrt(13) + 1052848536*sqrt(39))*sin(theta)/(3640*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3))))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-9*sqrt(-6 + 5*sqrt(3))*(-17051530545*sqrt(39)*sin(theta)**4 + 1856550360*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**4 + 5228821605*sqrt(13)*sin(theta)**4 + 12232501540*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**4 - 9093347120*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 - 5326163880*sqrt(13)*sin(theta)**2 - 1281294960*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 13299536940*sqrt(39)*sin(theta)**2 - 1113323360*sqrt(26)*sqrt(3 - sqrt(3)) - 248027136*sqrt(78)*sqrt(3 - sqrt(3)) + 675453432*sqrt(13) + 1052848536*sqrt(39))/(3640*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)))*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "-9*sqrt(-6 + 5*sqrt(3))*(2*sin(2*theta) + 7*sin(4*theta))*(-9593*sqrt(39) + 165*sqrt(13) + 1335*sqrt(78)*sqrt(3 - sqrt(3)) + 8101*sqrt(26)*sqrt(3 - sqrt(3)))*sin(theta)/(1456*(-5163 - 99*sqrt(3) + 792*sqrt(2)*sqrt(3 - sqrt(3)) + 1520*sqrt(6)*sqrt(3 - sqrt(3))))"
+        ],
+        "delta_h": [
+          [
+            "-9*sqrt(-6 + 5*sqrt(3))*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)*(-10149737*sqrt(39) + 562584*sqrt(78)*sqrt(3 - sqrt(3)) + 4846905*sqrt(13) + 7150180*sqrt(26)*sqrt(3 - sqrt(3)))/(910*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3))))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "-3*I*sqrt(-6 + 5*sqrt(3))*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*(-1417875060*sqrt(39) + 50934019*sqrt(78)*sqrt(3 - sqrt(3)) + 174436740*sqrt(13) + 1396249047*sqrt(26)*sqrt(3 - sqrt(3)))*sin(theta)/(3640*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3))))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "9*I*sqrt(-6 + 5*sqrt(3))*(-6072031840*sqrt(39)*sin(theta)**4 + 440968360*sqrt(13)*sin(theta)**4 + 634701900*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**4 + 5284758570*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**4 - 5675590830*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 - 588015625*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 - 526020260*sqrt(13)*sin(theta)**2 + 6375005480*sqrt(39)*sin(theta)**2 - 936325408*sqrt(39) + 35188340*sqrt(78)*sqrt(3 - sqrt(3)) + 118437904*sqrt(13) + 916638216*sqrt(26)*sqrt(3 - sqrt(3)))*sin(theta)/(1820*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3))))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "9*I*sqrt(-6 + 5*sqrt(3))*(-2120815480*sqrt(39)*sin(theta)**4 - 326803925*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**4 + 595363300*sqrt(13)*sin(theta)**4 + 2735825820*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**4 - 3490791330*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 - 658358780*sqrt(13)*sin(theta)**2 + 236132225*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 2988248600*sqrt(39)*sin(theta)**2 - 936325408*sqrt(39) + 35188340*sqrt(78)*sqrt(3 - sqrt(3)) + 118437904*sqrt(13) + 916638216*sqrt(26)*sqrt(3 - sqrt(3)))/(1820*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)))*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "cross_sum",
+      "covariant_coefficients": [
+        "12*sqrt(-6 + 5*sqrt(3))*(-59993704*sqrt(26)*sqrt(3 - sqrt(3)) - 12320196*sqrt(78)*sqrt(3 - sqrt(3)) + 3713511*sqrt(13) + 72682898*sqrt(39))/(455*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3))))",
+        "0",
+        "-36*sqrt(-6 + 5*sqrt(3))*(-10149737*sqrt(39) + 562584*sqrt(78)*sqrt(3 - sqrt(3)) + 4846905*sqrt(13) + 7150180*sqrt(26)*sqrt(3 - sqrt(3)))/(455*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3))))",
+        "-9*sqrt(-6 + 5*sqrt(3))*(-9593*sqrt(39) + 165*sqrt(13) + 1335*sqrt(78)*sqrt(3 - sqrt(3)) + 8101*sqrt(26)*sqrt(3 - sqrt(3)))/(455*(-5163 - 99*sqrt(3) + 792*sqrt(2)*sqrt(3 - sqrt(3)) + 1520*sqrt(6)*sqrt(3 - sqrt(3))))"
+      ],
+      "ell": 4,
+      "frequency_sign": "+",
+      "omega": "(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))/3"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "-3*I*sqrt(-6 + 5*sqrt(3))*(2*sin(2*theta) + 7*sin(4*theta))*(-23916*sqrt(39) + 6672*sqrt(13) + 3625*sqrt(78)*sqrt(3 - sqrt(3)) + 16515*sqrt(26)*sqrt(3 - sqrt(3)))/(1456*(-5163 - 99*sqrt(3) + 792*sqrt(2)*sqrt(3 - sqrt(3)) + 1520*sqrt(6)*sqrt(3 - sqrt(3))))"
+        ],
+        "delta_K": [
+          [
+            "3*I*sqrt(-6 + 5*sqrt(3))*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)*(-21291723*sqrt(26)*sqrt(3 - sqrt(3)) + 3220116*sqrt(13) + 1848491*sqrt(78)*sqrt(3 - sqrt(3)) + 13386948*sqrt(39))/(1820*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3))))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "9*sqrt(-6 + 5*sqrt(3))*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*(-124865060*sqrt(26)*sqrt(3 - sqrt(3)) - 29878224*sqrt(78)*sqrt(3 - sqrt(3)) + 94125489*sqrt(13) + 111306593*sqrt(39))*sin(theta)/(1820*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3))))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-9*sqrt(-6 + 5*sqrt(3))*(-21974080940*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**4 - 4026787800*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**4 + 681395925*sqrt(13)*sin(theta)**4 + 26263955235*sqrt(39)*sin(theta)**4 - 23828022300*sqrt(39)*sin(theta)**2 - 1428370440*sqrt(13)*sin(theta)**2 + 3761566320*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 20226580720*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 - 1113323360*sqrt(26)*sqrt(3 - sqrt(3)) - 248027136*sqrt(78)*sqrt(3 - sqrt(3)) + 675453432*sqrt(13) + 1052848536*sqrt(39))*sin(theta)/(3640*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3))))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-9*sqrt(-6 + 5*sqrt(3))*(-17051530545*sqrt(39)*sin(theta)**4 + 1856550360*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**4 + 5228821605*sqrt(13)*sin(theta)**4 + 12232501540*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**4 - 9093347120*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 - 5326163880*sqrt(13)*sin(theta)**2 - 1281294960*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 13299536940*sqrt(39)*sin(theta)**2 - 1113323360*sqrt(26)*sqrt(3 - sqrt(3)) - 248027136*sqrt(78)*sqrt(3 - sqrt(3)) + 675453432*sqrt(13) + 1052848536*sqrt(39))/(3640*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)))*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "-9*sqrt(-6 + 5*sqrt(3))*(2*sin(2*theta) + 7*sin(4*theta))*(-9593*sqrt(39) + 165*sqrt(13) + 1335*sqrt(78)*sqrt(3 - sqrt(3)) + 8101*sqrt(26)*sqrt(3 - sqrt(3)))*sin(theta)/(1456*(-5163 - 99*sqrt(3) + 792*sqrt(2)*sqrt(3 - sqrt(3)) + 1520*sqrt(6)*sqrt(3 - sqrt(3))))"
+        ],
+        "delta_h": [
+          [
+            "-9*sqrt(-6 + 5*sqrt(3))*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)*(-10149737*sqrt(39) + 562584*sqrt(78)*sqrt(3 - sqrt(3)) + 4846905*sqrt(13) + 7150180*sqrt(26)*sqrt(3 - sqrt(3)))/(910*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3))))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "3*I*sqrt(-6 + 5*sqrt(3))*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*(-1417875060*sqrt(39) + 50934019*sqrt(78)*sqrt(3 - sqrt(3)) + 174436740*sqrt(13) + 1396249047*sqrt(26)*sqrt(3 - sqrt(3)))*sin(theta)/(3640*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3))))",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-9*I*sqrt(-6 + 5*sqrt(3))*(-6072031840*sqrt(39)*sin(theta)**4 + 440968360*sqrt(13)*sin(theta)**4 + 634701900*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**4 + 5284758570*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**4 - 5675590830*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 - 588015625*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 - 526020260*sqrt(13)*sin(theta)**2 + 6375005480*sqrt(39)*sin(theta)**2 - 936325408*sqrt(39) + 35188340*sqrt(78)*sqrt(3 - sqrt(3)) + 118437904*sqrt(13) + 916638216*sqrt(26)*sqrt(3 - sqrt(3)))*sin(theta)/(1820*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3))))",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-9*I*sqrt(-6 + 5*sqrt(3))*(-2120815480*sqrt(39)*sin(theta)**4 - 326803925*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**4 + 595363300*sqrt(13)*sin(theta)**4 + 2735825820*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**4 - 3490791330*sqrt(26)*sqrt(3 - sqrt(3))*sin(theta)**2 - 658358780*sqrt(13)*sin(theta)**2 + 236132225*sqrt(78)*sqrt(3 - sqrt(3))*sin(theta)**2 + 2988248600*sqrt(39)*sin(theta)**2 - 936325408*sqrt(39) + 35188340*sqrt(78)*sqrt(3 - sqrt(3)) + 118437904*sqrt(13) + 916638216*sqrt(26)*sqrt(3 - sqrt(3)))/(1820*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3)))*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "cross_sum",
+      "covariant_coefficients": [
+        "12*sqrt(-6 + 5*sqrt(3))*(-59993704*sqrt(26)*sqrt(3 - sqrt(3)) - 12320196*sqrt(78)*sqrt(3 - sqrt(3)) + 3713511*sqrt(13) + 72682898*sqrt(39))/(455*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3))))",
+        "0",
+        "-36*sqrt(-6 + 5*sqrt(3))*(-10149737*sqrt(39) + 562584*sqrt(78)*sqrt(3 - sqrt(3)) + 4846905*sqrt(13) + 7150180*sqrt(26)*sqrt(3 - sqrt(3)))/(455*(-17425599 - 156759*sqrt(3) + 2708964*sqrt(2)*sqrt(3 - sqrt(3)) + 4842428*sqrt(6)*sqrt(3 - sqrt(3))))",
+        "-9*sqrt(-6 + 5*sqrt(3))*(-9593*sqrt(39) + 165*sqrt(13) + 1335*sqrt(78)*sqrt(3 - sqrt(3)) + 8101*sqrt(26)*sqrt(3 - sqrt(3)))/(455*(-5163 - 99*sqrt(3) + 792*sqrt(2)*sqrt(3 - sqrt(3)) + 1520*sqrt(6)*sqrt(3 - sqrt(3))))"
+      ],
+      "ell": 4,
+      "frequency_sign": "-",
+      "omega": "-(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))/3"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "-351*I*(-5 + 2*sqrt(3))*(2*sin(2*theta) + 7*sin(4*theta))/602"
+        ],
+        "delta_K": [
+          [
+            "6183*I*(-5 + 2*sqrt(3))*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)/39130",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "-178947*(-6 + 5*sqrt(3))*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*sin(theta)/313040",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "9*(-6 + 5*sqrt(3))*(68215*sin(theta)**4 - 243560*sin(theta)**2 + 148072)*sin(theta)/626080",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "9*(-6 + 5*sqrt(3))*(1227415*sin(theta)**4 - 1237160*sin(theta)**2 + 148072)/(626080*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "-351*(-6 + 5*sqrt(3))*(2*sin(2*theta) + 7*sin(4*theta))*sin(theta)/4816"
+        ],
+        "delta_h": [
+          [
+            "6183*(-6 + 5*sqrt(3))*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)/156520",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "-15723*I*(-5 + 2*sqrt(3))*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*sin(theta)/6020",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "9*I*(-5 + 2*sqrt(3))*(121205*sin(theta)**4 - 158950*sin(theta)**2 + 44048)*sin(theta)/39130",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "9*I*(-5 + 2*sqrt(3))*(264215*sin(theta)**4 - 281530*sin(theta)**2 + 44048)/(39130*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "extra_self_sum",
+      "covariant_coefficients": [
+        "2097*(-6 + 5*sqrt(3))/19565",
+        "0",
+        "6183*(-6 + 5*sqrt(3))/19565",
+        "-351*(-6 + 5*sqrt(3))/1505"
+      ],
+      "ell": 4,
+      "frequency_sign": "+",
+      "omega": "8*sqrt(3)/3"
+    },
+    {
+      "canonical": {
+        "delta_E": [
+          "0",
+          "0",
+          "351*I*(-5 + 2*sqrt(3))*(2*sin(2*theta) + 7*sin(4*theta))/602"
+        ],
+        "delta_K": [
+          [
+            "-6183*I*(-5 + 2*sqrt(3))*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)/39130",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_P": [
+          [
+            "-178947*(-6 + 5*sqrt(3))*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*sin(theta)/313040",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "9*(-6 + 5*sqrt(3))*(68215*sin(theta)**4 - 243560*sin(theta)**2 + 148072)*sin(theta)/626080",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "9*(-6 + 5*sqrt(3))*(1227415*sin(theta)**4 - 1237160*sin(theta)**2 + 148072)/(626080*sin(theta))"
+          ]
+        ],
+        "delta_a": [
+          "0",
+          "0",
+          "-351*(-6 + 5*sqrt(3))*(2*sin(2*theta) + 7*sin(4*theta))*sin(theta)/4816"
+        ],
+        "delta_h": [
+          [
+            "6183*(-6 + 5*sqrt(3))*(35*cos(theta)**4 - 30*cos(theta)**2 + 3)/156520",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "delta_pi": [
+          [
+            "15723*I*(-5 + 2*sqrt(3))*(35*sin(theta)**4 - 40*sin(theta)**2 + 8)*sin(theta)/6020",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-9*I*(-5 + 2*sqrt(3))*(121205*sin(theta)**4 - 158950*sin(theta)**2 + 44048)*sin(theta)/39130",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-9*I*(-5 + 2*sqrt(3))*(264215*sin(theta)**4 - 281530*sin(theta)**2 + 44048)/(39130*sin(theta))"
+          ]
+        ]
+      },
+      "channel": "extra_self_sum",
+      "covariant_coefficients": [
+        "2097*(-6 + 5*sqrt(3))/19565",
+        "0",
+        "6183*(-6 + 5*sqrt(3))/19565",
+        "-351*(-6 + 5*sqrt(3))/1505"
+      ],
+      "ell": 4,
+      "frequency_sign": "-",
+      "omega": "-8*sqrt(3)/3"
+    }
+  ],
+  "symplectic_and_equation_checks": {
+    "Euler_compatibility": true,
+    "alpha_B3_Euler_compatibility": "P=-3 sqrt(h) C^(i n j n) is the Legendre equation of the same selected action; the Hamilton equation used for pi is its K Euler equation",
+    "constraint_pullback": true,
+    "pi_reconstruction": "the displayed delta_pi is the exact linearization of this equation at N=1, shift=0, K=pi=0 and P=P0",
+    "poincare_cartan_identity": "Theta_selected|Sigma=integral_Sigma(pi^ij delta h_ij+P^ij delta K_ij+E^i delta a_i); it follows before imposing equations from the declared no-time-integration-by-parts Legendre transform",
+    "primary_constraint_pullback": "P_trace and Q_scale residuals vanish identically in every ell=0,2,4 template",
+    "selected_P_hamilton_equation": "(partial_t-L_shift)P^ij=-2N*pi^ij-N*(P^ij*K+h^ij*P^ab*K_ab)-delta_K[(3/2)N sqrt(h) C_abc n C^(abc)n]",
+    "symplecticity": true
+  }
+}

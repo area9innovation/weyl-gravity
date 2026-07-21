@@ -1,0 +1,38 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_ALPHA_B3_OSTROGRADSKY_CANONICAL_CROSSWALK_V1",
+  "date": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": {
+    "producer": {"path": "bridge/einstein_sector/einstein_weyl_alpha_b3_ostrogradsky_canonical_crosswalk.py", "sha256": "0cf4d12f1b36e730f0f14cf6b2dbbc3d4fca95b54132c4c28109f77334f38254"},
+    "certificate": {"path": "bridge/certificates/EINSTEIN_WEYL_ALPHA_B3_OSTROGRADSKY_CANONICAL_CROSSWALK_V1.json", "sha256": "99ae4e6397afa7e2b27169f544229287ddb7f6034fcdb76d0096b771c10d330b"},
+    "independent_verifier": {"path": "bridge/einstein_sector/verify_einstein_weyl_alpha_b3_ostrogradsky_canonical_crosswalk.py", "sha256": "827f7a5d7f17889dee3d8ff19ad97eb7f25a02fbdf824a14988c1693e6666567"},
+    "schema": {"path": "bridge/einstein_sector/schema/einstein-weyl-alpha-b3-ostrogradsky-canonical-crosswalk-v1.schema.json", "sha256": "919c1a8f50868e544ec6a007c51e2be4a80e275154d194f22bf72039016a6943"},
+    "atlas": {"path": "residual_atlas/einstein-weyl-alpha-b3-ostrogradsky-canonical-crosswalk-fragment-v1.json", "sha256": "9984d2b9982e96852505493a5582ebfb4b1b00fa40ed309488fc95fa41534861"}
+  },
+  "inputs": {
+    "balanced_correction": {"path": "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json", "sha256": "13fc90b0ef18c6bf6a8f4f1a397c86aa235ed87fa86a3c3bf5ad031bc2304cfe"},
+    "cubic_export_obstruction": {"path": "bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_CUBIC_CONSTRAINT_TENSOR_EXPORT_OBSTRUCTION_V1.json", "sha256": "590a73db70dc193ecbbd6c3c41e06162797ec11808f6070eb4312476a129660b"},
+    "selected_action": {"path": "bridge/certificates/einstein_maxwell_product_incidence.json", "sha256": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"}
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile bridge/einstein_sector/einstein_weyl_alpha_b3_ostrogradsky_canonical_crosswalk.py bridge/einstein_sector/verify_einstein_weyl_alpha_b3_ostrogradsky_canonical_crosswalk.py",
+        "python3 -m json.tool bridge/certificates/EINSTEIN_WEYL_ALPHA_B3_OSTROGRADSKY_CANONICAL_CROSSWALK_V1.json",
+        "python3 -m json.tool bridge/einstein_sector/schema/einstein-weyl-alpha-b3-ostrogradsky-canonical-crosswalk-v1.schema.json"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "producer_replay": {"command": "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_weyl_alpha_b3_ostrogradsky_canonical_crosswalk --verify bridge/certificates/EINSTEIN_WEYL_ALPHA_B3_OSTROGRADSKY_CANONICAL_CROSSWALK_V1.json", "elapsed_seconds": 120.85, "max_rss_kb": 112068},
+      "independent_rail": {"command": "PYTHONPATH=. python3 -m bridge.einstein_sector.verify_einstein_weyl_alpha_b3_ostrogradsky_canonical_crosswalk", "status": "PASS"},
+      "tests": {"command": "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_alpha_b3_ostrogradsky_canonical_crosswalk", "tests_run": 8, "elapsed_seconds": 1.627, "status": "PASS"},
+      "mutations_rejected": ["rescaled background P", "zeroed pi", "omitted signed channel", "nonzero omitted shift", "boundary-term change", "competing action scale"]
+    },
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "the selected action, balanced correction and prior obstruction are immutable exact inputs and their hashes match"},
+    "tier_3": {"status": "NOT_RUN", "reason": "this closes a scoped canonical bridge; it does not freeze the downstream D3C or K3 theorem"}
+  },
+  "claim_boundary": "Certifies the selected alpha_B=3 canonical convention and the complete signed ell=0,2,4 lift. It does not evaluate the third-order Kuranishi class or make causal or quantum claims."
+}
