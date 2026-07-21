@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-two-phase-counterflow-fixed-charge-reduced-health-to-bridge-81c2e90f3124bd14-RANSWER-DELIVER-3feb676d15cca6ae",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request answer",
+  "source": {"path": "tools/science-forge/program/events/classical-two-phase-counterflow-fixed-charge-reduced-health-to-bridge-81c2e90f3124bd14-RANSWER-DELIVER-3feb676d15cca6ae.json", "span": null},
+  "body": {"event_kind": "REQUEST_ANSWER", "actor": "bridge-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T05:09:30Z", "seq": 2, "predecessor": "sf:program/event/classical-two-phase-counterflow-fixed-charge-reduced-health-to-bridge-81c2e90f3124bd14-RANSWER-ACCEPT-34840ca303f77310", "payload": {"target": "sf:program/request/classical-two-phase-counterflow-fixed-charge-reduced-health-to-bridge-81c2e90f3124bd14", "request_id": "sf:program/request/classical-two-phase-counterflow-fixed-charge-reduced-health-to-bridge-81c2e90f3124bd14", "action": "DELIVER", "by": "bridge-1", "reason": "", "delivered_ids": "TWO_PHASE_COUNTERFLOW_EINSTEIN_SOURCE_CONDITION_OBSTRUCTION_V1"}, "native": {"authored_by": "sfc request-accept/reject/deliver/verify", "policy": "append-only (SPEC 4.5); one content-addressed answer file; the request status is the max-seq fold of these answers, fail-closed on an ambiguous tie."}},
+  "edges": [{"rel": "ANSWERS", "to": "sf:program/request/classical-two-phase-counterflow-fixed-charge-reduced-health-to-bridge-81c2e90f3124bd14"}]
+}

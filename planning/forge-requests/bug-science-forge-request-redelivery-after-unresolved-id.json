@@ -1,0 +1,38 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:forge-request/bug-science-forge-request-redelivery-after-unresolved-id",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "bug-science-forge-request-redelivery-after-unresolved-id",
+  "source": {
+    "path": "planning/forge-requests/bug-science-forge-request-redelivery-after-unresolved-id.json",
+    "span": null
+  },
+  "body": {
+    "owner": "science-forge",
+    "state": "REQUESTED",
+    "objective": "Add an append-only repair path for a cross-stream request whose DELIVER event names an unresolved artifact id. Today request-verify correctly refuses the unresolved id, but request-deliver also refuses a corrected receipt path because the request is already DELIVERED. The request is then permanently stuck despite a valid landed receipt.",
+    "stop_condition": "Permit a corrected DELIVER event only while a request is DELIVERED and has no successful VERIFY event. The repair must append a higher-sequence DELIVER carrying the corrected stable receipt or graph-node ids, preserve the earlier bad DELIVER and predecessor chain, and leave the request DELIVERED until an independent request-verify resolves the newest delivery. `request_answer_field(..., DELIVER, delivered_ids)` must select the higher-sequence repair. Add deterministic native/C fixtures covering: ACCEPT -> bad DELIVER -> refused VERIFY -> corrected DELIVER -> independent VERIFY; refusal after VERIFIED; a concurrent same-sequence conflicting repair failing AMBIGUOUS; byte-idempotent replay; and no transition of an already terminal originating work item. Document the command as either safe redelivery through request-deliver or an explicit request-redeliver verb.",
+    "current_gate": "append-only correction of a fail-closed unresolved delivery",
+    "forbid": "no editing or deleting the original DELIVER event; no producer self-verification; no treating an unresolved id as success; no reopening a VERIFIED request; no hash-order winner for concurrent conflicting repairs; no automatic lifecycle promotion of the originating physics item; no repository-specific artifact-name special case",
+    "depends_on": [],
+    "activates": [
+      "independently verifiable repair of the two counterflow scope-correction request deliveries",
+      "general recovery from a mistyped stable artifact or receipt id without violating append-only history"
+    ],
+    "allowed_paths": [
+      "forge/tools/science-forge/sfc.forge",
+      "forge/tools/science-forge/run.sh",
+      "forge/tools/science-forge/GUIDE.md",
+      "forge/tools/science-forge/WORKER-GUIDE.md",
+      "forge/tools/science-forge/pilot/"
+    ],
+    "resource_hint": "Small state-machine repair. The existing fold already selects the maximum-sequence DELIVER field; the missing capability is a guarded append path after a failed independent resolution.",
+    "notes": [
+      "Minimal live reproduction from 2026-07-21: `s-f request accept --request RID --by bridge-1 --reason imported`; `s-f request deliver --request RID --by bridge-1 --ids TWO_PHASE_COUNTERFLOW_EINSTEIN_SOURCE_CONDITION_OBSTRUCTION_V1`; `s-f request verify --request RID --by bridge-1 --root .` correctly reports UNRESOLVED; a second `s-f request deliver --request RID --by bridge-1 --ids bridge/einstein_sector/receipts/TWO_PHASE_COUNTERFLOW_EINSTEIN_SOURCE_CONDITION_OBSTRUCTION_V1_TIER_RECEIPT.json` is then refused because the request is DELIVERED.",
+      "Affected request ids are sf:program/request/classical-two-phase-counterflow-charge-clock-complementarity-and-unrestricted-health-to-bridge-4d928ff39499c538 and sf:program/request/classical-two-phase-counterflow-fixed-charge-reduced-health-to-bridge-81c2e90f3124bd14. Their physics consumer is already terminally OBSTRUCTED at commits c1011a0d2 and 791203422; this bug concerns coordination provenance only."
+    ],
+    "stream": "forge-requests"
+  },
+  "edges": []
+}
