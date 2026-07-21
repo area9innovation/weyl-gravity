@@ -31,4 +31,5 @@ validation, independent exact reconstruction and three focused tests.  Tier
 Tier 3 was not run because this is not a freeze, tag, release or paper-theorem
 promotion.
 
+EVIDENCE: closed_universe_observers/certificates/POSITIVE_BERGER_LOCAL_RECEIVER_ACTION_PREFLIGHT_V1.json; closed_universe_observers/receipts/POSITIVE_BERGER_LOCAL_RECEIVER_ACTION_PREFLIGHT_V1_TIER_RECEIPT.json
 CLOSE-OUT: DONE — standalone local receiver BV cocycle and fail-closed integration contract certified
