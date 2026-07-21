@@ -1,0 +1,17 @@
+{
+  "id": "sf:forge-request/bug-work-close-footer-and-terminal-disposition-lag",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Prevent a committed terminal scientific result from falling back to READY merely because its report omitted the literal EVIDENCE/CLOSE-OUT footer or because the agent used report-plus-yield instead of report-plus-close, while preserving fail-closed explicit lifecycle transitions.",
+    "depends_on": [],
+    "stop_condition": "Reproduce the 2026-07-21 black-hole-symbolic-frequency-finite-flux-radiation-class case: a real result commit and WORK_REPORTED checkpoint existed, but a subsequent yield folded the item to READY; close-out then refused first for a missing `CLOSE-OUT:` line and next for a missing `EVIDENCE:` line. Improve the generated work package and close/report guidance so every assignment includes an exact copyable footer template containing both required markers. Add a coordinator/overview finding such as TERMINAL_DISPOSITION_NONTERMINAL_STATE when the latest current-epoch report declares DONE/OBSTRUCTED/SHORTFALL (or cites a terminal closeout report) but the folded item remains ACTIVE/READY with no terminal transition. The finding must name the safe `work close` or report-repair command and must not auto-promote. Add deterministic fixtures for: valid DONE close; missing CLOSE-OUT; missing EVIDENCE; checkpoint-only report; report then yield; and intentional nonterminal READY. If `work submit --close` can preflight these markers before creating the commit, make the failure atomic and resumable rather than discovering it after push.",
+    "forbid": "no automatic DONE/OBSTRUCTED inference from prose; no silent report rewriting; no auto-close after yield; no treating a checkpoint disposition as terminal; no weakening the literal evidence requirement; no deletion or rewriting of existing append-only events; no physics-specific result IDs in the implementation",
+    "notes": [
+      "Observed path: result commit 544a98a96; lifecycle commit c9efe5a56 reported then yielded the item to READY; coordinator close attempts correctly refused on the two missing literal markers before a scoped report-only repair closed it.",
+      "The desired improvement is earlier, more actionable guidance and a typed lag signal, not permissive close-out behavior."
+    ]
+  }
+}
