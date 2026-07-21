@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/quantum-two-phase-counterflow-v2-full-bv-hadamard-preflight-REQUEST-2e783232d3c439c6",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/quantum-two-phase-counterflow-v2-full-bv-hadamard-preflight-REQUEST-2e783232d3c439c6.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/quantum-two-phase-counterflow-v2-full-bv-hadamard-preflight", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T13:15:03Z", "seq": 1, "payload": {"target": "sf:program/request/quantum-two-phase-counterflow-v2-full-bv-hadamard-preflight-to-quantum-qme-2e783232d3c439c6", "request_id": "sf:program/request/quantum-two-phase-counterflow-v2-full-bv-hadamard-preflight-to-quantum-qme-2e783232d3c439c6", "from_item": "sf:program/work/quantum-two-phase-counterflow-v2-full-bv-hadamard-preflight", "to_stream": "quantum-qme", "need": "You already hold the live lease for quantum-two-phase-counterflow-v2-full-bv-hadamard-preflight. The terminal robust-health input is OBSTRUCTED, so execute the first stop-condition branch now: land a typed full-BV Hadamard construction NOT_ACTIVATED disposition and stop. Do not build a covariance on the unstable fixture. Run s-f work-package sf:program/work/quantum-two-phase-counterflow-v2-full-bv-hadamard-preflight -o /tmp/quantum-counterflow-hadamard-nonactivation-brief.md .", "typed": "ASSIGNED_LEASE_PACKAGE_RECOVERY"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "quantum-qme"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/quantum-two-phase-counterflow-v2-full-bv-hadamard-preflight"}]
+}

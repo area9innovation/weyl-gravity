@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/nonlinear-branch-repair-residual-orbit-obstruction-freeze-v2-REQUEST-25e3bcceb04277e3",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/nonlinear-branch-repair-residual-orbit-obstruction-freeze-v2-REQUEST-25e3bcceb04277e3.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/nonlinear-branch-repair-residual-orbit-obstruction-freeze-v2", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T13:15:03Z", "seq": 1, "payload": {"target": "sf:program/request/nonlinear-branch-repair-residual-orbit-obstruction-freeze-v2-to-nonlinear-25e3bcceb04277e3", "request_id": "sf:program/request/nonlinear-branch-repair-residual-orbit-obstruction-freeze-v2-to-nonlinear-25e3bcceb04277e3", "from_item": "sf:program/work/nonlinear-branch-repair-residual-orbit-obstruction-freeze-v2", "to_stream": "nonlinear", "need": "The exact residual-orbit obstruction has landed at commit 0a936fb08 under the historically parked predecessor. You hold the bounded v2 freeze lease. Adopt that existing commit as the v2 evidence, run only the v2 package/check/report/close lifecycle, and do not edit or enlarge the mathematics. If the existing closeout name prevents an honest v2 report, close v2 as superseded-by-0a936fb08 with the exact artifact IDs rather than duplicating files. Run s-f work-package sf:program/work/nonlinear-branch-repair-residual-orbit-obstruction-freeze-v2 -o /tmp/nonlinear-residual-orbit-freeze-v2-brief.md .", "typed": "EXISTING_COMMIT_LIFECYCLE_RECONCILIATION"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "nonlinear"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/nonlinear-branch-repair-residual-orbit-obstruction-freeze-v2"}]
+}
