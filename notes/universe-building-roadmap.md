@@ -3757,4 +3757,3 @@ adding assumptions until a preferred answer appears.  A sector restriction is
 part of the physical definition of a result.  The job of each next rail is to
 show whether that sector is dynamically selected, operationally observable,
 or too narrow to describe the intended universe.
-
