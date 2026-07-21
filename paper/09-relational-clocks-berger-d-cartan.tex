@@ -1348,6 +1348,34 @@ input shortfall, not a negative spectral result, and no detector or redshift
 value is inferred.  The machine-readable theorem is
 \texttt{CHARGED\_PHYSICAL\_TIME\_RELATIONAL\_EVENT\_MAP\_THEOREM\_V1}.
 
+Finite clock resolution can be introduced without changing that claim
+boundary.  For an even normalized profile $\kappa\in C_c^\infty(\mathbb R)$,
+set $\kappa_\epsilon(x)=\epsilon^{-1}\kappa(x/\epsilon)$ and
+\begin{equation}
+ \mathcal O_A^\epsilon(\tau)
+ =\int_M\kappa_\epsilon(\psi-\tau)\,d\psi\wedge A .
+\end{equation}
+This is a test-function superposition of the distributional event currents,
+so BV closure, representative independence and the charged $Q$, $H$ and $K$
+brackets descend unchanged.  It remains inside the causal support of $A$ and
+the clock band $|\psi-\tau|\leq\epsilon r_\kappa$; a profile tail may not be
+used to claim support preservation.  As $\epsilon\to0^+$ the family converges
+in the declared de Rham-current test class.  If the receiver period $P$ is
+twice differentiable, then
+\begin{equation}
+ |S_\epsilon P(\tau)-P(\tau)|
+ \leq \frac{\epsilon^2\mu_2(\kappa)}2
+       \sup_{|t-\tau|\leq\epsilon r_\kappa}|P''(t)|.
+\end{equation}
+Profile second moments and support radii add under convolution.  Two sampled
+phase transports with individual errors $E_1,E_2$ and outer Lipschitz
+constant $L_2$ obey the exact composition bound $E_2+L_2E_1$.  Periodizing
+the profile gives compact-phase sampling, not a globally monotone real clock;
+nor does smoothing restore the clock removed by fixed-charge reduction.  The
+counterflow receiver therefore remains \texttt{NO\_CERTIFIED\_MAP}.  These
+statements are recorded in
+\texttt{CHARGED\_TIME\_FINITE\_RESOLUTION\_SAMPLING\_THEOREM\_V1}.
+
 \begin{thebibliography}{99}
 
 \bibitem{Bach}
