@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/quantum-two-phase-counterflow-v2-physical-state-positivity-REQUEST-20189efcd2faa267",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/quantum-two-phase-counterflow-v2-physical-state-positivity-REQUEST-20189efcd2faa267.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/quantum-two-phase-counterflow-v2-physical-state-positivity", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T13:58:17Z", "seq": 1, "payload": {"target": "sf:program/request/quantum-two-phase-counterflow-v2-physical-state-positivity-to-quantum-qme-20189efcd2faa267", "request_id": "sf:program/request/quantum-two-phase-counterflow-v2-physical-state-positivity-to-quantum-qme-20189efcd2faa267", "from_item": "sf:program/work/quantum-two-phase-counterflow-v2-physical-state-positivity", "to_stream": "quantum-qme", "need": "The predecessor is DONE only as TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1: no covariance, wavefront set, Ward identity, zero-mode domain or robust physical clock quotient was constructed. Follow this item's own refusal branch now. Do not compute or infer positivity. Land a typed PHYSICAL_STATE_POSITIVITY_NOT_ACTIVATED disposition importing the exact nonactivation and terminal Classical health hashes, then report/close and stop the counterflow quantum branch for Phase 1.", "typed": "SCIENTIFIC_STOP_CONDITION_ACTIVATION_REPAIR"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "quantum-qme"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/quantum-two-phase-counterflow-v2-physical-state-positivity"}]
+}
