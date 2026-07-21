@@ -1,6 +1,6 @@
 # Bridge Taub-energy structural-background close-out
 
-`CLOSE-OUT: SHORTFALL / FIRST EXACT OBSTRUCTION`
+Disposition: first exact obstruction.
 
 The fixed-Chern product-background chambers are now classified exactly.  The
 compact Plebański--Hacyan Taub-sign fixture is the flat double-root wall of the
@@ -35,3 +35,6 @@ Not delivered:
 Disposition recommendation: `OBSTRUCTED` on the missing parameterized
 lower-order tangent/symplectic carrier.  A successor should build that carrier
 on the low-curvature dS branch before addressing the AdS branch.
+
+CLOSE-OUT: OBSTRUCTED — the exact background chambers are classified, but the off-wall curvature/flux Hessian and Lee--Wald carrier required to define the requested Taub signs do not exist
+EVIDENCE: bridge/certificates/EINSTEIN_MAXWELL_WEYL_FIXED_CHERN_PRODUCT_TAUB_SIGN_PREFLIGHT_V1.json
