@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/bridge-two-phase-counterflow-einstein-source-condition-LEASE-RELEASE-excl-92a482e1bf942258",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/bridge-two-phase-counterflow-einstein-source-condition-LEASE-RELEASE-excl-92a482e1bf942258.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "bridge-1", "base_revision": "science-forge-ir-v0", "when": null, "seq": 2, "predecessor": "sf:program/event/bridge-two-phase-counterflow-einstein-source-condition-LEASE-ACQUIRE-excl-d4165be3539a7eea", "payload": {"target": "sf:program/work/bridge-two-phase-counterflow-einstein-source-condition", "agent": "bridge-1", "lease_type": "exclusive", "action": "RELEASE", "acquired": "", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/bridge-two-phase-counterflow-einstein-source-condition"}]
+}

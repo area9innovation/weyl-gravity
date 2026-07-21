@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/bridge-two-phase-counterflow-einstein-source-condition-READY-be45b25e2bcf8070",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/bridge-two-phase-counterflow-einstein-source-condition-READY-be45b25e2bcf8070.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "bridge-1", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": null, "seq": 2, "predecessor": "sf:program/event/bridge-two-phase-counterflow-einstein-source-condition-ACTIVE-5a384ae6df8d0907", "payload": {"target": "sf:program/work/bridge-two-phase-counterflow-einstein-source-condition", "to_state": "READY", "note": "aborted by bridge-1 (attempt closed; work PRESERVED; item ready again)"}, "native": {"authored_by": "sfc work-abort", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/bridge-two-phase-counterflow-einstein-source-condition"}]
+}

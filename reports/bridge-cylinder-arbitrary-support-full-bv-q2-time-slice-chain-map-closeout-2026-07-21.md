@@ -133,3 +133,5 @@ the finite receiver rather than being hard-coded as a generic failure.
 Tier 3 was not run: this closeout obstructs a bridge and does not promote a
 freeze, release, shared core algebra, quantum coefficient, or Lorentzian state
 claim.
+
+CLOSE-OUT: OBSTRUCTED — the selected finite receiver has an exact rank-64 unary cohomology defect; the all-energy completed time-slice carrier is the smallest repair.
