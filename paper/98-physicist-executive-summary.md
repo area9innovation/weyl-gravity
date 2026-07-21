@@ -409,7 +409,7 @@ milestones are excluded.
 |---|---|---|---|
 | Free causal complex and residual cohomology | Complete cylinder causal complex; selected zero-charge residual vacuum and one-particle cohomology acyclic; $H^4\cong\mathbb C^2$ contains deformation classes | **Certified on their distinct carriers** | The finite residual receiver is not an arbitrary-support all-energy retract; the latter has a rank-64 unary obstruction and requires completion; [Papers 7--8](07-08-conformal-residual-cohomology-computational-supplement.pdf) |
 | Is $D$ gauge? | Charged on the unrestricted compact phase space; gauge on the Taub-zero derived sector | **Certified, sector-dependent** | Must be recomputed with boundaries and matter; [status ledger](../d_quotient_programme/reports/consolidated-status.md) |
-| Clocks and redshift | Healthy original Berger clock and a spatially global retarded $G_0$ probe fixture with $1+z=2$ on its declared carrier; the changed theory has a charged action--angle clock plus exact distributional and finite-resolution conditional event maps | **Probe-mode fixture / changed-theory clock and conditional sampling theorems certified; operational apparatus ratio not activated** | The standalone local receiver cocycle cannot be included by a degree-zero map into repaired $q_{70}$; no residual nonradical receiver or localized operational redshift is certified; [Paper 9](09-relational-clocks-berger-d-cartan.pdf) |
+| Clocks and redshift | Healthy original Berger clock and retarded Maxwell redshift fixture; the changed theory has a charged action--angle clock plus exact distributional and finite-resolution conditional event maps | **Original observable / changed-theory clock and conditional sampling theorems certified** | The round-style Berger scalar carrier is not closed; a replacement isotypical quotient and nonzero charged-$D$ receiver remain open; [Paper 9](09-relational-clocks-berger-d-cartan.pdf) |
 | Einstein image and additional branches | Linear inclusion, parity-complete pre-residual $H^0$ exact sequence and nonradical currents certified; lift-shear invariants give a canonical target-orthogonal split but obstruct every declared parity-complete strict cyclic split | **Pre-residual exact sequence / direct currents / invariant strict-cyclic obstruction certified** | A common charge-zero derived carrier, any admissible non-strict homotopy, causal boundaries, and quantization remain open; [Paper 92](92-extra-axial-lee-wald-bridge.pdf) |
 | Nonlinear tangent cone and resonances | Formal finite exponential-polynomial cone equals five-charge zero set; tuned standard bounded cone is classified for every $\ell\ge2$; all 164 two-momentum basis coefficients are closed | **Formal cone and all-$\ell$ standard subcone certified; larger cone partial** | Arbitrary-amplitude two-momentum zero variety, causal, infinite-mode, and all-order problems open; [Paper 13](13-compact-weyl-maxwell-second-order-tangent-cone.pdf) |
 | Interaction and branch mixing | Retained mixed tensor is exact/cyclic; fuller ghost structure removes it through first jet | **Representative certified; invariant class open** | Second-jet image and branch-resolved operation not certified; [Paper 11](11-gravity-light-cyclic-causal-ell3.pdf) |
@@ -469,12 +469,10 @@ complete Schwarzschild exterior phase space.
 
 A healthy Berger matter clock coexists with zero total $D$ charge in one
 linear fixed-coupling sector, and a retarded Maxwell signal defines a
-gauge-invariant spatially global clock-slice $G_0$ probe observable with
-$1+z=2$ on that declared carrier.  The complete receiver audit preserves this
-probe theorem but does not promote it to a localized action-derived physical
-receiver or operational apparatus redshift.  The standalone local receiver
-cocycle exists; its degree-zero chain/cochain inclusion into repaired
-$q_{70}$ is the exact Phase~1 obstruction.
+gauge-invariant clock-slice redshift observable. A potentially distinctive
+element is nontrivial relational evolution with total presymplectic
+degeneracy. The next gate is one localized, backreacting emitter--receiver
+experiment with recoil and an apparatus bracket.
 
 The changed two-phase route has a different and now exact charge--clock
 geometry. Fixing and reducing the relative charge makes $D$ null but removes
@@ -545,7 +543,7 @@ to its derivation and verifier.
 | [Cyclic causal Green transfer](90-cyclic-green-transfer-bridge.md) | Abstract conditional theorem with Berger, flat, and Nariai consumers; one Nariai formal tangent | Extend to a finite background family or second detour theory. |
 | [Charge-fibre obstruction](91-charge-fibre-taub-bridge.md) | Formal cone, all-$\ell$ tuned standard cone, and all 164 two-momentum basis coefficients certified | Classify the common amplitude zero variety. |
 | [Additional axial/polar current](92-extra-axial-lee-wald-bridge.md) | Direct currents and the maximal pre-residual $H^0$ exact sequence are parity complete; the invariant source/image inertia mismatch obstructs every declared strict cyclic split | Construct the common constraint-algebroid/Kuranishi moment-map-zero carrier, then ask whether a non-strict homotopy and physical boundaries exist. |
-| Relational clock and light | Original spatially global retarded $G_0$ probe fixture certified on its declared carrier; the changed theory has a charged action--angle clock plus exact sharp, finite-resolution, reciprocity, composition and loop-holonomy laws, but no physical receiver | Phase~1 closes at the degree-zero local-cochain-to-$q_{70}$-chain obstruction; any new bridge or receiver architecture requires explicit Phase~2 authorization. |
+| Relational clock and light | Original global retarded redshift certified; the changed theory has a charged action--angle clock plus exact sharp, finite-resolution, reciprocity, composition and loop-holonomy laws, but no physical receiver yet | Complete the receiver/crosswalk contract and Berger isotypical health assembly, then instantiate a nonzero receiver. |
 | Black-hole radiation | Static theorem and horizon reach in both parities; finite norm at infinity selects Einstein in both parities at one fixture | Generalize in frequency and $\ell$, then construct the asymptotic phase space. |
 | Einstein--Weyl relative theory | Matching action-derived tensors through $q_3$; strict $f_1$ has a nonzero arity-two defect; global five-charge receiver and Hessian Green-current cone certified | Precompose all stabilizers, add cyclic duals, compare with Lee--Wald, and determine the correct relative nonlinear extension. |
 | Residual branch mixing | Retained cyclic representative and rank-46 carrier exist; physical interaction class not certified | Finish the second-jet image test and obtain an admissible branch resolution. |
@@ -624,7 +622,7 @@ symbolic laboratory rather than a collection of unchecked AI prose.
 
 ### Clocks and observers
 
-- [Retarded spatially global Maxwell probe observable](../d_quotient_classical/reports/berger-retarded-relational-maxwell-observable.md)
+- [Retarded relational Maxwell observable](../d_quotient_classical/reports/berger-retarded-relational-maxwell-observable.md)
 - [Localized emitter rank-two response](../closed_universe_observers/reports/berger-dynamical-emitter-cauchy-rank-two.md)
 - [Mass-uniform leading response](../closed_universe_observers/reports/berger-recoil-partitioned-leading-response-rank-two.md)
 - [First retarded emitter channel](../closed_universe_observers/reports/berger-recoil-free-emitter-first-retarded-maxwell-channel.md)
@@ -666,11 +664,6 @@ symbolic laboratory rather than a collection of unchecked AI prose.
 <details>
 <summary><strong>Detailed changelog</strong></summary>
 
-- **21 July 2026:** preserved the spatially global retarded $G_0$ probe
-  observable on its declared carrier, removed its unsupported promotion to a
-  localized operational apparatus redshift, and recorded the exact
-  degree-zero receiver chain/cochain inclusion obstruction as the Phase~1
-  endpoint.
 - **19 July 2026:** revised Paper 13 terminology to finite
   exponential-polynomial continuation; added the complete global plus
   $(\ell=2,k=0)$ bounded subcone and retained the open full bounded cone.

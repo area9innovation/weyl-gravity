@@ -1,0 +1,16 @@
+{
+  "id": "sf:forge-request/science-forge-coordinator-lease-revoke-reassign",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Add an honest coordinator operation for releasing or transferring another resident's live lease when a newly landed theorem invalidates the active work item. Today a coordinator may append a BLOCKED/RETIRED transition, but `work yield`/`abort` require the holder identity and append READY, while `work block` likewise records the holder as actor. The stale live lease then prevents that resident from pulling safe replacement work even though the dashboard no longer lists it as active.",
+    "depends_on": [],
+    "stop_condition": "Provide `s-f work revoke --item I --agent A --by coordinator --reason R --now T` (exact spelling optional) that compare-and-swap verifies A holds the current lease, appends a lease RELEASE event with coordinator authority and explicit on-behalf-of holder/reason metadata, and preserves the item's current effective state without appending READY. Provide an atomic `work reassign` or documented revoke-plus-assign transaction that releases the invalid item and acquires one declared replacement for the same stable agent without an unleased double-pull window. `overview` and `work show` must surface BLOCKED_WITH_LIVE_LEASE and TERMINAL_WITH_LIVE_LEASE uniformly. Add concurrent moved-head, wrong-holder, expired-lease, already-released, BLOCKED-preservation, RETIRED-preservation and replacement-scope fixtures; append-only events only, both backends, no worker impersonation.",
+    "forbid": "no rewriting or deleting the original lease; no coordinator event authored as the worker; no automatic READY transition from a blocked/retired item; no silent lease release from an advisory heartbeat; no acquisition without the normal scope-overlap and one-lease-per-agent gates; no global stream serialization",
+    "notes": [
+      "Live reproduction 2026-07-21: coordinator appended BLOCKED to nonlinear-two-phase-counterflow-q2-stability after the q70 grading obstruction invalidated its unary parent. The effective item is BLOCKED and disappears from the active row, but nonlinear-1 still holds its exclusive lease until 11:57Z and cannot honestly pull the repair-independent branch item. Existing abort/yield would append READY and undo the scientific block; work-block would impersonate nonlinear-1."
+    ]
+  }
+}

@@ -20,6 +20,15 @@ def build() -> dict:
     cert = json.loads(CERT.read_text())
     base_scope = dict(cert["scope"])
     evidence = [{"path": str(CERT.relative_to(ROOT)), "result_id": cert["result_id"], "sha256": sha(CERT)}]
+    claim_boundary = (
+        "This exact LOCAL-ALGEBRAIC/REDUCED-MODE result proves that the intrinsic global K3 class "
+        "vanishes in the complete homogeneous-correction quotient for one balanced fixture. For the "
+        "certified no-homogeneous-addition second-order representative, every occupied original shell "
+        "has a nonzero bounded adjoint functional, while a finite exponential-polynomial third-order "
+        "preimage exists with secular terms. The bounded shell quotient over arbitrary second-order "
+        "homogeneous additions, causal inversion, all-orders integration, particles, positivity, "
+        "unitarity and quantum theory remain open."
+    )
     common = {
         "causal": "NO_CERTIFIED_MAP",
         "symplectic": "CERTIFIED",
@@ -32,7 +41,7 @@ def build() -> dict:
         "second_order": {
             "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
             "bounded_or_finite_quasiperiodic": {"status": "CERTIFIED", "statement": "The declared balanced tangent has the imported finite second-order correction."},
-            "smooth_secular": {"status": "CERTIFIED", "statement": "The same second-order correction is smooth and finite quasiperiodic."},
+            "smooth_secular": {"status": "CERTIFIED", "statement": "The same second-order correction belongs to the finite exponential-polynomial module and is in fact finite quasiperiodic."},
             "causal_retarded": {"status": "NO_CERTIFIED_MAP", "statement": "No retarded compact-product correction complex is supplied."},
         },
     }
@@ -47,7 +56,7 @@ def build() -> dict:
                 "resonance": {"status": "NOT_APPLICABLE", "statement": "Local-in-time shell resonance is a separate cokernel and correction-class question."},
             },
             "evidence": evidence,
-            "claim_boundary": cert["claim_boundary"],
+            "claim_boundary": claim_boundary,
         },
         {
             "id": "einstein.ph.wm.balanced_ell2.third_order.bounded_shells",
@@ -56,22 +65,22 @@ def build() -> dict:
             "mode_data": {
                 **inherited,
                 "taub_maps": {"status": "CERTIFIED", "statement": "All five global stabilizer components vanish."},
-                "resonance": {"status": "OBSTRUCTED", "statement": "Each of the four original ell=2 shells has a nonzero exact adjoint functional."},
+                "resonance": {"status": "OBSTRUCTED", "statement": "For the certified no-homogeneous-addition second-order representative, each of the four original ell=2 shells has a nonzero exact adjoint functional; the quotient over all second-order corrections is open."},
             },
             "evidence": evidence,
-            "claim_boundary": cert["claim_boundary"],
+            "claim_boundary": claim_boundary,
         },
         {
             "id": "einstein.ph.wm.balanced_ell2.third_order.smooth_secular",
-            "scope": {**base_scope, "boundaries": "closed S1_L x S2; smooth finite exponential-polynomial correction class allowing secular terms", "degree": "third-order smooth secular equation"},
+            "scope": {**base_scope, "boundaries": "closed S1_L x S2; finite exponential-polynomial correction class allowing secular terms", "degree": "third-order finite exponential-polynomial equation"},
             "descriptions": {**common, "nonlinear": "CERTIFIED"},
             "mode_data": {
                 **inherited,
                 "taub_maps": {"status": "CERTIFIED", "statement": "The compact stabilizer Kuranishi class vanishes."},
-                "resonance": {"status": "CERTIFIED", "statement": "Adjugate reduction of the nonzero-determinant axial pencil gives a smooth secular preimage; this is not boundedness."},
+                "resonance": {"status": "CERTIFIED", "statement": "Adjugate reduction of the nonzero-determinant axial pencil gives a finite exponential-polynomial secular preimage; this is not boundedness."},
             },
             "evidence": evidence,
-            "claim_boundary": cert["claim_boundary"],
+            "claim_boundary": claim_boundary,
         },
     ]
     return {

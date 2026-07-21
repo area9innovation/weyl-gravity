@@ -1,0 +1,36 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/bridge-compact-product-polar-direct-lee-wald-completion",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "bridge-compact-product-polar-direct-lee-wald-completion",
+  "source": {
+    "path": "planning/work-items/bridge-compact-product-polar-direct-lee-wald-completion.json",
+    "span": null
+  },
+  "body": {
+    "owner": "bridge-1",
+    "state": "PROPOSED",
+    "objective": "Complete the direct four-dimensional Lee--Wald current of the generic polar additional Weyl--Maxwell branches on the compact product, closing the principal parity gap in the Einstein/extra bridge.",
+    "stop_condition": "Import EINSTEIN_MAXWELL_WEYL_POLAR_FULL_TENSOR, EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION, EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE and the axial direct Lee--Wald completion by exact hashes. Starting independently from the four-dimensional Weyl--Maxwell action and its curvature-momentum Lee--Wald potential, retain the complete delta(nabla C) contribution and derive the polar current for generic physical ell>=2 and compact momentum. Pull it to the exact q-primary Einstein image and both p-primary additional summands, compute every same-shell Gram and cross block, inertia, radical, normalization and exceptional collision locus, and compare the result with the existing reduced polar-current gate without using that gate as the producer. State whether the additional polar block is nonradical and how its invariant current data compare with the axial block; do not call a classical sign a quantum norm. Supply an independent Green-identity or covariant-variation verifier, Einstein--Maxwell and flat controls, sign/normalization/omitted-delta(nabla C) mutations, strict schema, receipt, report, Paper 92 update and atlas fragment.",
+    "current_gate": "direct action-derived polar current and parity-complete classical Einstein/extra pairing",
+    "forbid": "no reduced polar gate reused as the independent derivation; no axial-to-polar inference by parity alone; no omitted delta(nabla C) term; no fixture-only ell=2 theorem called generic; no final residual, causal boundary, particle, positivity or unitarity promotion",
+    "depends_on": [],
+    "activates": [
+      "the ungauged polar BV lift and residual descent",
+      "a parity-complete Paper 92 bridge result",
+      "branch-labelled polar inputs for nonlinear and quantum consumers"
+    ],
+    "allowed_paths": [
+      "bridge/",
+      "residual_atlas/",
+      "paper/92-extra-axial-lee-wald-bridge.md",
+      "paper/",
+      "reports/",
+      "notes/d-quotient-einstein-team-brief.md"
+    ],
+    "resource_hint": "PROOF-FIRST DIRECT CURRENT. Reuse harmonic tensors and action conventions, but derive the current independently before comparing to the reduced gate. Split generic derivation from fixture controls if needed.",
+    "stream": "bridge"
+  },
+  "edges": []
+}

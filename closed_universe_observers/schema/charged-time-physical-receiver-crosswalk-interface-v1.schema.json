@@ -1,9 +1,0 @@
-{
-  "$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","additionalProperties":false,
-  "required":["schema","interface_id","status_vocabulary","receiver_required_fields","crosswalk_required_fields","acceptance_conditions","failure_classification","population_template","claim_boundary"],
-  "properties":{
-    "schema":{"const":"closed-universe-charged-time-physical-receiver-crosswalk-interface-v1"},"interface_id":{"const":"CHARGED_TIME_PHYSICAL_RECEIVER_CROSSWALK_INTERFACE_V1"},
-    "status_vocabulary":{"const":["CERTIFIED_ADMISSIBLE","CONDITIONAL_INTERFACE_ONLY","ZERO_RESPONSE","RADICAL_UNDEFINED_RESPONSE","UNDEFINED_ZERO_DENOMINATOR","NO_CERTIFIED_MAP","CAUSAL_INTERPRETATION_LOST","CLOCK_REMOVED_OBSTRUCTED"]},
-    "receiver_required_fields":{"type":"array","minItems":10,"uniqueItems":true},"crosswalk_required_fields":{"type":"array","minItems":8,"uniqueItems":true},"acceptance_conditions":{"type":"object"},"failure_classification":{"type":"object"},"population_template":{"type":"object"},"claim_boundary":{"type":"string"}
-  }
-}

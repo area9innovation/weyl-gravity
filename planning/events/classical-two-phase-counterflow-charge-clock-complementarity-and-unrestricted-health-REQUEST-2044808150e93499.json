@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-two-phase-counterflow-charge-clock-complementarity-and-unrestricted-health-REQUEST-2044808150e93499",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/classical-two-phase-counterflow-charge-clock-complementarity-and-unrestricted-health-REQUEST-2044808150e93499.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/classical-two-phase-counterflow-charge-clock-complementarity-and-unrestricted-health", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T04:55:39Z", "seq": 1, "payload": {"target": "sf:program/request/classical-two-phase-counterflow-charge-clock-complementarity-and-unrestricted-health-to-quantum-qme-2044808150e93499", "request_id": "sf:program/request/classical-two-phase-counterflow-charge-clock-complementarity-and-unrestricted-health-to-quantum-qme-2044808150e93499", "from_item": "sf:program/work/classical-two-phase-counterflow-charge-clock-complementarity-and-unrestricted-health", "to_stream": "quantum-qme", "need": "Import TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_V1. Local anomaly classification and a full-parent BRST/Hadamard preflight remain meaningful, but neither counterflow branch is presently a certified healthy clock sector: fixed Q_rel removes the clock, while variable Q_rel retains a charged clock with a size-two zero Jordan block. Keep zero-mode treatment explicit and do not infer a stationary positive physical state, particle space or quantum viability before the Classical orbital-stability and all-Hodge verdicts.", "typed": "SCIENTIFIC_SCOPE_CORRECTION"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "quantum-qme"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/classical-two-phase-counterflow-charge-clock-complementarity-and-unrestricted-health"}]
+}

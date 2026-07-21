@@ -1,0 +1,39 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-two-phase-counterflow-secular-clock-orbital-stability",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-two-phase-counterflow-secular-clock-orbital-stability",
+  "source": {
+    "path": "planning/work-items/classical-two-phase-counterflow-secular-clock-orbital-stability.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical-1",
+    "state": "PROPOSED",
+    "objective": "Decide whether the exact size-two zero Jordan block of the unrestricted counterflow clock is a genuine physical instability or the linear tangent to an exact stable action-angle family with shifted relative charge and clock rate.",
+    "stop_condition": "Import TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_V1 and its causal-parent/background dependencies by exact hashes. Derive the exact reduced homogeneous Hamiltonian and symplectic flow in the relative phase/charge sector, including the nearby family of stationary or helical counterflow solutions and the charge dependence of the clock rate. Prove or disprove that delta psi(t)=psi_1+t q_1/I is precisely the parameter derivative of that exact family. State and separately decide bounded linear stability in a lifted phase coordinate, stability of the compact S1-valued clock, fixed-charge orbital stability, and modulated stability under a shifted frequency; do not quotient the charged R_rel or D actions as gauge. Compute the constrained energy Hessian and any canonical normal form needed to distinguish a healthy integrable clock from a negative-energy, exponentially growing or genuinely secular physical instability. Export the exact first verdict, independent symbolic verifier, charge/frequency and sign mutations, schema, receipt, report and atlas fragment. If the Jordan direction is an integrable family tangent, identify the precise all-Hodge health gate that remains; if it is a genuine instability, give the invariant separator and stop without extending the action family.",
+    "current_gate": "physical meaning of the charged clock's zero-frequency Jordan partner",
+    "forbid": "no zero Jordan block called a ghost or fatal instability without an invariant stability definition; no compact phase treated as an unbounded real observable without declaring the lift; no frequency/charge modulation silently quotiented as gauge; no fixed-Q_rel clock resurrected; no all-Hodge, observer, particle or unitarity promotion from a homogeneous normal form",
+    "depends_on": [
+      "sf:program/work/classical-two-phase-counterflow-charge-clock-complementarity-and-unrestricted-health#ANY_TERMINAL"
+    ],
+    "activates": [
+      "the unrestricted all-Hodge physical health audit",
+      "a defensible charged-time observer interpretation",
+      "the final classical disposition of the two-phase counterflow successor"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/compensator/",
+      "d_quotient_classical/atlas/",
+      "residual_atlas/",
+      "reports/",
+      "notes/d-quotient-classical-team-brief.md",
+      "notes/universe-building-roadmap.md",
+      "paper/"
+    ],
+    "resource_hint": "PROOF-FIRST FINITE-DIMENSIONAL NORMAL FORM. Resolve the action-angle versus instability ambiguity exactly before spending resources on the all-Hodge carrier or another action family.",
+    "stream": "classical"
+  },
+  "edges": []
+}

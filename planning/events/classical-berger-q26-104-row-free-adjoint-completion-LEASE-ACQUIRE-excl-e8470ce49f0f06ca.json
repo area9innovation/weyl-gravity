@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-berger-q26-104-row-free-adjoint-completion-LEASE-ACQUIRE-excl-e8470ce49f0f06ca",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/classical-berger-q26-104-row-free-adjoint-completion-LEASE-ACQUIRE-excl-e8470ce49f0f06ca.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "classical-2", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T06:47:24Z", "seq": 3, "predecessor": "sf:program/event/classical-berger-q26-104-row-free-adjoint-completion-LEASE-RELEASE-excl-f6e106f67896e452", "payload": {"target": "sf:program/work/classical-berger-q26-104-row-free-adjoint-completion", "agent": "classical-2", "lease_type": "exclusive", "action": "ACQUIRE", "acquired": "2026-07-21T06:47:24Z", "expires": "2026-07-21T14:47:24Z"}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/classical-berger-q26-104-row-free-adjoint-completion"}]
+}
