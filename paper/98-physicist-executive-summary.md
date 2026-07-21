@@ -75,8 +75,11 @@ Fixed-charge orbital stability and shifted-frequency modulated stability
 pass, although absolute stability of a lifted or compact phase fails when
 different clock rates are compared. This reduced family is not a nearby
 family of complete coupled Berger backgrounds: at the selected geometry the
-full constraints force the charge variation to vanish. The all-Hodge
-physical-health audit is therefore still open.
+full constraints force the charge variation to vanish. The completed
+all-Hodge physical-health audit retains this homogeneous action--angle block,
+but cannot form the first nonhomogeneous physical block because the
+same-background Berger harmonic inclusions and projections are not exported.
+This is an input shortfall, not a negative spectral result.
 
 Two further promotions have now failed cleanly at their first maps. The
 selected Berger counterflow background is not a solution of conventional
@@ -451,8 +454,18 @@ the homogeneous clock is an integrable action--angle system with positive
 transverse energy and charge-dependent rate. A certified event-map preflight
 constructs a local-gauge-closed clock-slice observable and proves covariance,
 rather than quotient invariance, under the charged $R_{\rm rel}$ and $D$
-flows. Its physical nonzero receiver and redshift remain conditional on the
-unrestricted all-Hodge cohomology and descended pairing.
+flows. Physical instantiation remains open because the completed all-Hodge
+audit cannot form the unrestricted all-Hodge cohomology, descended receiver
+pairing or a nontrivial receiver class without the same-background harmonic
+carrier maps. This is an input shortfall, not an instability. No formal phase
+ratio is called redshift.
+
+This preflight has also been promoted to a general exact theorem for any
+physical action--angle clock with charged time translation.  It proves the
+distributional event map, its local BV descent, primitive clock-basis
+composition and phase-origin covariance, while separating lifted-phase
+boundedness from compact orbital and modulated stability.  Nontriviality is
+explicitly conditional on a surviving receiver cohomology class and pairing.
 
 ## What would materially change the verdict
 
