@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "imports",
+    "payload_ref",
+    "terminal_verdict",
+    "block_statuses",
+    "required_export",
+    "claim_boundary",
+    "content_hashes"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-unrestricted-all-hodge-health-shortfall-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_UNRESTRICTED_ALL_HODGE_HEALTH_SHORTFALL_V1"},
+    "result_state": {"const": "FIRST_EXACT_SHORTFALL_BERGER_HARMONIC_PHYSICAL_CARRIERS_NOT_EXPORTED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true,
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}
+    },
+    "imports": {"type": "object", "minProperties": 11},
+    "payload_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "content_sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "terminal_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result_state",
+        "complete_all_Hodge_health_verdict",
+        "first_undefined_block",
+        "first_undefined_operation",
+        "homogeneous_action_angle_result_retained",
+        "causal_parent_retained",
+        "physical_instability_found",
+        "positive_physical_carrier_certified",
+        "downstream_observer_and_Hadamard_consumers_activated"
+      ],
+      "properties": {
+        "result_state": {"const": "FIRST_EXACT_SHORTFALL_BERGER_HARMONIC_PHYSICAL_CARRIERS_NOT_EXPORTED"},
+        "complete_all_Hodge_health_verdict": {"const": "NOT_COMPUTABLE"},
+        "first_undefined_block": {"const": "retained_gravity_scalar"},
+        "first_undefined_operation": {"type": "string"},
+        "homogeneous_action_angle_result_retained": {"const": true},
+        "causal_parent_retained": {"const": true},
+        "physical_instability_found": {"const": false},
+        "positive_physical_carrier_certified": {"const": false},
+        "downstream_observer_and_Hadamard_consumers_activated": {"const": false}
+      }
+    },
+    "block_statuses": {"type": "object", "minProperties": 7, "additionalProperties": {"type": "string"}},
+    "required_export": {
+      "type": "object",
+      "required": ["result_id", "must_supply", "first_acceptance_identity"],
+      "properties": {
+        "result_id": {"const": "BERGER_COUNTERFLOW_70_ROW_ALL_HODGE_PHYSICAL_BLOCK_EXPORT_V1"},
+        "background": {"type": "string"},
+        "charge_sector": {"type": "string"},
+        "must_supply": {"type": "array", "minItems": 8, "items": {"type": "string"}},
+        "first_acceptance_identity": {"type": "string"},
+        "does_not_require": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["establishes", "does_not_establish"],
+      "properties": {
+        "establishes": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+        "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}}
+      }
+    },
+    "content_hashes": {"type": "object", "minProperties": 6, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+  }
+}

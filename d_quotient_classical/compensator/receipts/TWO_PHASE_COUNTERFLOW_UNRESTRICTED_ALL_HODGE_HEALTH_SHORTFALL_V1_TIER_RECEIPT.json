@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "TWO_PHASE_COUNTERFLOW_UNRESTRICTED_ALL_HODGE_HEALTH_SHORTFALL_V1_TIER_RECEIPT",
+  "claim_id": "TWO_PHASE_COUNTERFLOW_UNRESTRICTED_ALL_HODGE_HEALTH_SHORTFALL_V1",
+  "date": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "artifacts": [
+    {"path": "d_quotient_classical/compensator/two_phase_counterflow_unrestricted_all_hodge_health_shortfall.py", "sha256": "eca1b28a5e5aaf134c788656d152292d2e9727f18ee8ad9ac487951eae27e944"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_UNRESTRICTED_ALL_HODGE_HEALTH_SHORTFALL_V1.json", "sha256": "9d9859aaf7a5b7f717d2b81ab1db0d7878ae249681f5859814272b5322af4875"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_UNRESTRICTED_ALL_HODGE_HEALTH_SHORTFALL_PAYLOAD_V1.json", "sha256": "bf84eb3e6d890f81f4e767bbbfe81b3ce50c77d90cac345b345d193f13c583e4"},
+    {"path": "d_quotient_classical/compensator/verify_two_phase_counterflow_unrestricted_all_hodge_health_shortfall.py", "sha256": "b6becca9c0ad8f258b97a4093f6d198ee019bf3a3f115862a4ac688800fbdc58"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_unrestricted_all_hodge_health_shortfall.py", "sha256": "3f486b2017e2292c49de22dd823bc1404c240f6a6797ae0f28090c1c7f9907b3"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_unrestricted_all_hodge_health_shortfall_atlas.py", "sha256": "622d5ef335a4da5b58e3d195e4a6be31389f80ff3e8e0e1b405627526b75987e"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-unrestricted-all-hodge-health-shortfall-v1.schema.json", "sha256": "3638c99f5457bbd3a8b629f4e5c91adfb5df9bd5101373521696a1ed85998a3e"},
+    {"path": "d_quotient_classical/atlas/generate_two_phase_counterflow_unrestricted_all_hodge_health_shortfall_atlas_fragment.py", "sha256": "a18bf46205224e6b4217b6bf0b949985c6c205a252f23aa29ca46823058ba622"},
+    {"path": "d_quotient_classical/atlas/verify_two_phase_counterflow_unrestricted_all_hodge_health_shortfall_atlas_fragment.py", "sha256": "0dbe84fbc3cf5ac9c34e84349210212bf6780eb85f2060de9b0adcb34f3edf38"},
+    {"path": "residual_atlas/two-phase-counterflow-unrestricted-all-hodge-health-shortfall-fragment-v1.json", "sha256": "e498e7175ce1d9f2ef428569ab8c42f75b4a4b236ed5485cb837c6280b508965"},
+    {"path": "d_quotient_classical/compensator/reports/two-phase-counterflow-unrestricted-all-hodge-health-shortfall-v1.md", "sha256": "93bc9ce96d93f71535b7602a0c6623b1190498aecca5e3f6639329b0b0c0eab1"}
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {"command": "py_compile, json.tool and explicit-path git diff --check", "status": "PASS"}
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 d_quotient_classical/compensator/two_phase_counterflow_unrestricted_all_hodge_health_shortfall.py --check", "elapsed_seconds": 0.05, "status": "PASS", "method": "content-addressed input-surface audit, background discriminator, complete block-status ledger and negative-control mutations"},
+      {"command": "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_unrestricted_all_hodge_health_shortfall.py", "elapsed_seconds": 0.03, "status": "PASS", "independent_rail": "independent import hash replay, round/Berger scope rejection and fail-closed block checks"},
+      {"command": "python3 -m unittest -v d_quotient_classical.compensator.tests.test_two_phase_counterflow_unrestricted_all_hodge_health_shortfall d_quotient_classical.compensator.tests.test_two_phase_counterflow_unrestricted_all_hodge_health_shortfall_atlas", "elapsed_seconds": 0.09, "status": "PASS", "tests": 6},
+      {"command": "atlas generator check, independent atlas verifier and residual_atlas validator", "elapsed_seconds": 0.22, "status": "PASS"},
+      {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/compensator/schema/two-phase-counterflow-unrestricted-all-hodge-health-shortfall-v1.schema.json -d d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_UNRESTRICTED_ALL_HODGE_HEALTH_SHORTFALL_V1.json", "elapsed_seconds": 1.38, "status": "PASS"}
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {"command": "eleven direct predecessor/operator/layout imports content-hashed and semantic preconditions checked", "status": "PASS"},
+      {"command": "bash ci/science-forge-shadow.sh", "elapsed_seconds": 4.49, "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS", "findings": "bridge certificate drift, corpus 1363 vs baseline 976, and an unpinned stale Forge binary; diagnostics /tmp/sf-shadow.T2pN2L"}
+    ]
+  },
+  "tier_3": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m unittest discover -v", "elapsed_seconds": 1.60, "status": "PASS", "tests": 149}
+    ]
+  },
+  "claim_boundary": "The audit identifies the first undefined same-background Berger harmonic restriction and supplies a complete fail-closed block ledger plus the exact required export. It preserves the contractible diagonal-U1 and homogeneous action-angle results. It does not classify the unresolved physical spectrum, prove an instability or positive carrier, make D or R_rel gauge, or activate observer/Hadamard/QME/particle consumers.",
+  "higher_tiers_not_run": []
+}
