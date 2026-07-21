@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Fail-closed verification of the scoped Paper 11 theorem-freeze claim map."""
+"""Fail-closed verification of the current Paper 11 representative theorem."""
 
 from __future__ import annotations
 
+import copy
 import hashlib
 import gzip
 import json
@@ -19,13 +20,46 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _assert_current_deformation_disposition(payload: dict) -> None:
+    """Reject the three stale Paper 11 order-two promotions explicitly."""
+    crosswalk = {row["claim_id"]: row for row in payload["claim_crosswalk"]}
+    claims = payload["certified_claims"]
+    assert crosswalk["P11-C5"]["status"] == "SUPERSEDED"
+    assert crosswalk["P11-C6"]["status"] == "OPEN"
+    assert claims["full_BV_order_two_filtered_removal_obstructed"] is False
+    assert claims["full_BV_unremovable_within_declared_filtered_cyclic_class"] is False
+    assert claims["complete_bounded_cyclic_class_decided"] is False
+
+
+def _assert_stale_claim_mutations_rejected(payload: dict) -> None:
+    mutations = (
+        lambda mutant: mutant["certified_claims"].__setitem__(
+            "full_BV_order_two_filtered_removal_obstructed", True
+        ),
+        lambda mutant: next(
+            row for row in mutant["claim_crosswalk"] if row["claim_id"] == "P11-C5"
+        ).__setitem__("status", "CURRENT"),
+        lambda mutant: next(
+            row for row in mutant["claim_crosswalk"] if row["claim_id"] == "P11-C6"
+        ).__setitem__("status", "CURRENT"),
+    )
+    for mutate in mutations:
+        mutant = copy.deepcopy(payload)
+        mutate(mutant)
+        try:
+            _assert_current_deformation_disposition(mutant)
+        except AssertionError:
+            continue
+        raise AssertionError("stale Paper 11 deformation claim mutation was accepted")
+
+
 def main() -> None:
     payload = json.loads(CLAIM_MAP.read_text(encoding="utf-8"))
     assert payload["schema"] == "paper-11-gravity-light-cyclic-causal-ell3-claim-map-v1"
-    assert payload["result_id"] == "PAPER_11_GRAVITY_LIGHT_CYCLIC_CAUSAL_ELL3_THEOREM_FROZEN"
+    assert payload["result_id"] == "PAPER_11_GRAVITY_LIGHT_CYCLIC_CAUSAL_ELL3_REPRESENTATIVE_THEOREM_FROZEN"
     assert (
         payload["result_state"]
-        == "SCOPED_FROZEN_SDR_AND_FILTERED_CYCLIC_OBSTRUCTION_THEOREM_FROZEN_EXTERNAL_REVIEW_PENDING"
+        == "FROZEN_SDR_REPRESENTATIVE_THEOREM_FROZEN_BOUNDED_CYCLIC_CLASS_OPEN"
     )
     assert payload["lifecycle_state"] == "THEOREM_FROZEN"
     assert payload["freeze_disposition"]["mathematical_claims"] == "THEOREM_FROZEN"
@@ -36,6 +70,25 @@ def main() -> None:
         payload["paper_scope"]["deformation_coefficient_field"]
         == "Q(sqrt(2),sqrt(10))"
     )
+    crosswalk = {row["claim_id"]: row for row in payload["claim_crosswalk"]}
+    assert set(crosswalk) == {f"P11-C{index}" for index in range(1, 11)}
+    assert crosswalk["P11-C1"]["status"] == "CURRENT"
+    assert crosswalk["P11-C5"]["status"] == "SUPERSEDED"
+    assert crosswalk["P11-C6"]["status"] == "OPEN"
+    assert crosswalk["P11-C8"]["status"] == "CURRENT"
+    assert crosswalk["P11-C9"]["status"] == "OPEN"
+    assert crosswalk["P11-C10"]["status"] == "ABSENT_FROM_PAPER"
+    allowed_statuses = {"CURRENT", "NARROWED", "SUPERSEDED", "OPEN", "ABSENT_FROM_PAPER"}
+    assert all(row["status"] in allowed_statuses for row in crosswalk.values())
+    assert payload["coverage"]["human_materiality_review"] == "COMPLETE"
+    assert payload["coverage"]["all_material_imports_have_result_to_paper_edges"] is True
+    assert payload["coverage"]["uncovered_material_results"] == []
+    edges = payload["result_to_paper_edges"]
+    assert len(edges) == 6
+    assert {edge["materiality"] for edge in edges} <= {"HEADLINE", "TECHNICAL", "NEGATIVE_RESULT"}
+    assert {claim for edge in edges for claim in edge["claim_ids"]} >= {
+        "P11-C3", "P11-C4", "P11-C5", "P11-C6", "P11-C7", "P11-C8", "P11-C9", "P11-C10"
+    }
 
     claims = payload["certified_claims"]
     required_true = {
@@ -72,9 +125,11 @@ def main() -> None:
         "retained_46_subprincipal_verdict_landed",
         "constant_field_physical_cyclic_redefinition_screen_computed",
         "first_jet_physical_cyclic_redefinition_screen_computed",
-        "full_BV_filtered_cyclic_redefinition_obstruction_computed",
-        "full_BV_order_two_filtered_removal_obstructed",
-        "full_BV_unremovable_within_declared_filtered_cyclic_class",
+        "full_BV_zero_first_jet_dual_screen_computed",
+        "zero_jet_full_BV_ghost_shear_trivialization_computed",
+        "physical_action_order_two_trivialization_computed",
+        "second_jet_witness_invalidation_computed",
+        "cyclic_branch_extension_obstruction_certified",
     }
     assert all(claims[name] is True for name in required_true)
     assert claims["retained_mixed_ell2_coefficient_count"] == 1_474
@@ -118,6 +173,16 @@ def main() -> None:
     assert claims["full_BV_zero_page_columns_checked"] == 5_984
     assert claims["full_BV_first_page_columns_checked_per_axis"] == 14_998
     assert claims["full_BV_first_page_defects_per_axis"] == [0, 0, 0, 0]
+    assert claims["physical_action_order_two_primitive_coefficient_count"] == 4_276
+    assert claims["second_jet_counterexample_cotangent_component_count"] == 5
+    assert claims["second_jet_counterexample_page_one_term_count"] == 252
+    assert claims["second_jet_counterexample_pairing"] == "755/9"
+    assert claims["cyclic_branch_extension_normalized_evaluation"] == ["1", "0"]
+    assert claims["full_BV_order_two_filtered_removal_obstructed"] is False
+    assert claims["full_BV_unremovable_within_declared_filtered_cyclic_class"] is False
+    assert claims["complete_bounded_cyclic_class_decided"] is False
+    _assert_current_deformation_disposition(payload)
+    _assert_stale_claim_mutations_rejected(payload)
 
     witnesses = payload["explicit_nonzero_witnesses"]
     assert witnesses["gravity_equation_output"] == {
@@ -172,10 +237,13 @@ def main() -> None:
     )
     assert (
         payload["next_gate"]["deformation_required_input"]
-        == "UNRESTRICTED_CYCLIC_DEFORMATION_COMPLEX_OR_RESIDUAL_COHOMOLOGY_DESCENT"
+        == "COMPLETE_COUPLED_FULL_BV_ZERO_FIRST_SECOND_JET_SOLVE_OR_REPLACEMENT_COKERNEL"
     )
-    assert payload["next_gate"]["filtered_deformation_status"] == "FULL_BV_FILTERED_REMOVAL_OBSTRUCTED_THROUGH_TOTAL_PBW_ORDER_TWO"
-    assert payload["next_gate"]["filtered_obstruction"] == "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1"
+    assert payload["next_gate"]["filtered_deformation_status"] == "COMPLETE_BOUNDED_CYCLIC_CLASS_OPEN_AFTER_SECOND_JET_WITNESS_INVALIDATION"
+    assert payload["next_gate"]["historical_filtered_screen"] == "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1"
+    assert payload["next_gate"]["filtered_disposition"] == "BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1"
+    assert payload["next_gate"]["physical_order_two_primitive"] == "BERGER_RETAINED_MIXED_ELL3_SECOND_JET_EXACT_PRIMITIVE_V1"
+    assert payload["next_gate"]["branch_extension_obstruction"] == "BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1"
     assert payload["next_gate"]["first_jet_redefinition"] == "BERGER_RETAINED_MIXED_ELL3_FIRST_JET_REDEFINITION_V1"
     assert (
         payload["next_gate"]["required_input"]
@@ -452,6 +520,67 @@ def main() -> None:
     assert filtered_obstruction["claim_flags"]["SDR_INDEPENDENT_DEFORMATION_CLASS"] is False
     assert filtered_obstruction["claim_flags"]["RESIDUAL_COHOMOLOGY_OPERATION_NONZERO"] is False
 
+    disposition = json.loads(
+        (
+            ROOT
+            / "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert disposition["result_state"] == "ORDER_TWO_OBSTRUCTION_WITHDRAWN_COMPLETE_BOUNDED_CYCLIC_CLASS_OPEN"
+    assert disposition["exact_counterexample"]["cotangent_component_count"] == 5
+    assert disposition["exact_counterexample"]["native_page_one_term_count"] == 252
+    assert disposition["exact_counterexample"]["old_witness_pairing"] == "755/9"
+    assert disposition["claim_flags"]["ORDER_TWO_FILTERED_REMOVAL_OBSTRUCTED"] is False
+    assert disposition["claim_flags"]["COMPLETE_ORDER_TWO_TRIVIALIZATION_EXISTS"] is False
+    assert disposition["claim_flags"]["COMPLETE_ORDER_TWO_CLASS_NONZERO"] is False
+
+    ghost_shear = json.loads(
+        (
+            ROOT
+            / "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_ZERO_JET_GHOST_SHEAR_COMPLETION_V1.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert ghost_shear["claim_flags"]["ZERO_JET_FULL_BV_TRIVIALIZATION_EXISTS"] is True
+    assert ghost_shear["primitive_replay"]["primitive_nonzero_coefficients"] == 67
+
+    physical_order_two = json.loads(
+        (
+            ROOT
+            / "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_EXACT_PRIMITIVE_V1.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert physical_order_two["status"] == "PHYSICAL_ACTION_ORDER_TWO_TRIVIALIZED"
+    assert physical_order_two["claim_flags"]["PHYSICAL_ACTION_ORDER_TWO_TRIVIALIZATION_COMPUTED"] is True
+    assert physical_order_two["claim_flags"]["FULL_BV_POSITIVE_JET_REDEFINITION_MATCHED"] is False
+
+    branch_extension = json.loads(
+        (
+            ROOT
+            / "d_quotient_classical/certificates/BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert branch_extension["claim_flags"]["FIRST_EXTENSION_OBSTRUCTION_CLASS_CERTIFIED"] is True
+    assert branch_extension["claim_flags"]["CYCLIC_L_INFINITY_BRANCH_SPLIT_EXISTS"] is False
+    assert branch_extension["claim_flags"]["MODE_PAIR_SOURCE_TABLE_AUTHORIZED"] is False
+    assert branch_extension["first_obstruction_class"]["normalized_evaluation"] == [["1", "0"]]
+
+    observer_gate = json.loads(
+        (
+            ROOT
+            / "closed_universe_observers/certificates/BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert observer_gate["flags"]["INTERACTING_OBSERVER_DEFORMATION_CONSTRUCTED"] is False
+    assert observer_gate["flags"]["EXTENDED_RETARDED_GREEN_CERTIFIED"] is False
+
+    common_action = json.loads(
+        (
+            ROOT
+            / "closed_universe_observers/certificates/BERGER_COMMON_ACTION_OBSERVABLE_REPLAY_DISPOSITION.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert "No such carrier exists" in common_action["claim_boundary"]
+
     from generate_11_witness_inclusion_columns import (
         OUTPUT as WITNESS_COLUMNS,
         build as build_witness_columns,
@@ -491,7 +620,7 @@ def main() -> None:
         r"\begin{theorem}[Nonzero retained mixed bracket for the frozen cyclic SDR]",
         r"\begin{proposition}[Constant-field cyclic-redefinition screen]",
         r"\begin{proposition}[First positive-jet cyclic-redefinition screen]",
-        r"\begin{theorem}[Scoped filtered cyclic obstruction]",
+        r"\begin{proposition}[Second-jet disposition of the former obstruction]",
         r"\begin{proposition}[Independent degree-zero lowered cyclicity]",
         r"\begin{proposition}[Independent full-BV quartic cyclicity]",
         r"\begin{theorem}[Cyclic causal Cartan compatibility]",
@@ -522,6 +651,11 @@ def main() -> None:
         r"\epsilon s(1)=\epsilon",
         r"\left(1,0\right)",
         r"$71/40$",
+        r"BERGER_RETAINED_MIXED_ELL3_SECOND_JET_EXACT_PRIMITIVE_V1",
+        r"BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1",
+        r"\frac{755}{9}",
+        r"$4{,}276$-coefficient homogeneous correction",
+        r"$1{,}380$ exact page-zero full-BV residual coefficients",
     ]
     for marker in required_markers:
         assert marker in normalized, marker
@@ -539,6 +673,10 @@ def main() -> None:
         "the canonical local Einstein/extra-Weyl split is available on the 36-row carrier",
         "That carrier has not yet been constructed",
         "Equation~\\eqref{eq:mixing} is now authorized",
+        r"\begin{theorem}[Scoped filtered cyclic obstruction]",
+        "Consequently no admissible nonnegative filtered cyclic",
+        "The obstruction lives on the first associated-graded page",
+        "full-BV nonremovability in its declared filtered cyclic class",
     ]
     for marker in forbidden_markers:
         assert marker not in text, marker

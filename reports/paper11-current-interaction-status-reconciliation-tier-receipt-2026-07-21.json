@@ -1,0 +1,64 @@
+{
+  "schema": "science-forge-test-tier-receipt-v1",
+  "result_id": "PAPER11_CURRENT_INTERACTION_STATUS_RECONCILIATION_2026_07_21",
+  "work_item": "nonlinear-paper11-current-interaction-status-reconciliation",
+  "status": "PASS",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "claim_boundary": "Paper 11 retains its frozen-SDR mixed ell3 representative and cyclicity theorem. The physical action is exact through summed input-jet order two; the former full-BV order-two witness is superseded; the complete bounded cyclic deformation class, branch-resolved cohomology operation and interacting observer promotion remain open.",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "Python byte compilation of the independent claim-map verifier",
+        "JSON parsing of the claim map and Science Forge coverage artifacts",
+        "two final pdflatex passes with no warnings, undefined references, overfull boxes or underfull boxes",
+        "scoped git diff --check"
+      ],
+      "elapsed_seconds": 3.8
+    },
+    "tier_1": {
+      "status": "PASS",
+      "checks": [
+        "paper/generate_11_witness_inclusion_columns.py --check",
+        "paper/verify_11_gravity_light_claim_map.py including three adversarial stale-claim mutations",
+        "Science Forge advisory bidirectional paper-coverage audit"
+      ],
+      "elapsed_seconds": 3.0
+    },
+    "tier_2": {
+      "status": "PASS",
+      "checks": [
+        "independent zero-PBW full-BV ghost-shear completion replay",
+        "independent physical second-jet exact-primitive replay",
+        "independent second-jet witness-disposition replay",
+        "independent unary branch-extension obstruction replay",
+        "independent retained mixed ell3 acceptance replay",
+        "independent full-BV cyclicity replay",
+        "independent observer common-action disposition replay"
+      ],
+      "elapsed_seconds": 29.4
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No classical operator, shared schema, generated tensor or theorem lifecycle was changed. The existing Paper 11 representative theorem remains frozen; this work reconciles its publication claims against unchanged content-addressed inputs. The affected certificate chain and publication gates were run at tiers 1 and 2."
+    }
+  },
+  "evidence_sha256": {
+    "paper/11-gravity-light-cyclic-causal-ell3.tex": "728ad380dc770592dcae9526dd974cc98aa31f1943fadb04dddeacc9540edf34",
+    "paper/11-gravity-light-cyclic-causal-ell3.pdf": "439e1c5e6c671f7d942eb3a3b797858cf55c17505e790bc4a6b9a205e0de68dc",
+    "paper/11-gravity-light-cyclic-causal-ell3-claim-map.json": "32191d0e53309ad271c43bfe9dc8c62104e107898b9396b65dd2a0ad2aa5ff30",
+    "paper/verify_11_gravity_light_claim_map.py": "d60b18ba10c71e3792698f8ef082eab65333348cfc7cdeb1f2eac34fb9fc54fb",
+    "paper/11-gravity-light-ell3-witness-inclusion-columns.tex": "31c0aca8e69ff9180517298e2ce6890bd20d9ac9746d0d14662e4136fa681ffe",
+    "reports/paper11-current-interaction-status-coverage-2026-07-21.json": "3efc2dfb6cb5f025dd0d5e7cafa803a18ec17f8a50dfbc3b3c6fd3c4b7b6f6a8",
+    "reports/paper11-current-interaction-status-coverage-report-2026-07-21.json": "a3850fa5b269d961f06e9fb96973de9fd345303ae19ca6d9f11432a17a528a76",
+    "notes/d-quotient-nonlinear-team-brief.md": "49bc8ecd55c7e44c3bf5df004a870629b4ec21a4ba077fbb4419ac6742881c55"
+  },
+  "missing_gates": [
+    "complete coupled full-BV zero/first/second-jet solve or replacement complete cokernel witness",
+    "branch-resolved cohomology operation after a certified branch carrier or declared unsplit observable",
+    "extended apparatus q1, cyclic retarded complex and representation-complete common-action carrier"
+  ]
+}

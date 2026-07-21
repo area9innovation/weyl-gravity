@@ -1,0 +1,230 @@
+{
+  "ir": "science-forge-ir-v0",
+  "nodes": [
+    {
+      "kind": "paper",
+      "id": "sf:paper/11-gravity-light-cyclic-causal-ell3",
+      "body": {
+        "paper_class": "technical",
+        "path": "paper/11-gravity-light-cyclic-causal-ell3.tex",
+        "manuscript_sha256": "728ad380dc770592dcae9526dd974cc98aa31f1943fadb04dddeacc9540edf34"
+      }
+    },
+    {
+      "kind": "result",
+      "id": "sf:d_quotient_classical/result/BERGER_RETAINED_MIXED_ELL3_ZERO_JET_GHOST_SHEAR_COMPLETION_V1",
+      "body": {
+        "lifecycle": "CERTIFIED",
+        "boundary": "zero-PBW full-BV mixed ell3 page after three Maxwell covariant-ghost shears",
+        "dependency_tags": ["LOCAL-ALGEBRAIC"],
+        "certificate": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_ZERO_JET_GHOST_SHEAR_COMPLETION_V1.json",
+        "certificate_sha256": "e76c9d7e50cb73fb8b71e6ee54d426997131f7cc4eb5452271309d44c41362ff",
+        "source_commit": "2ca8cc2e7e820fb8f050d11887c294cbb65281d3",
+        "stale": false,
+        "superseded": false
+      }
+    },
+    {
+      "kind": "result",
+      "id": "sf:d_quotient_classical/result/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_EXACT_PRIMITIVE_V1",
+      "body": {
+        "lifecycle": "CERTIFIED",
+        "boundary": "degree-zero physical-action mixed ell3 through summed input-jet order two",
+        "dependency_tags": ["LOCAL-ALGEBRAIC"],
+        "certificate": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_EXACT_PRIMITIVE_V1.json",
+        "certificate_sha256": "45fbd2f4031953752e0bfba37c3222552dc26b0303da055b270f8fc0be1a1bc5",
+        "source_commit": "00c9da5c3fc3049960270ae83d54f2efd76f54f9",
+        "stale": false,
+        "superseded": false
+      }
+    },
+    {
+      "kind": "result",
+      "id": "sf:d_quotient_classical/result/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1",
+      "body": {
+        "lifecycle": "CERTIFIED",
+        "boundary": "former 22-row witness on the complete declared second-input-jet cyclic column set",
+        "dependency_tags": ["LOCAL-ALGEBRAIC"],
+        "certificate": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1.json",
+        "certificate_sha256": "0abafddf65bd44a07671ac89b0133f4909df619a5f0ddc7b87a84b101fd33036",
+        "source_commit": "e876905e035a9a12e9e788eb877baed800138b1a",
+        "stale": false,
+        "superseded": false
+      }
+    },
+    {
+      "kind": "result",
+      "id": "sf:d_quotient_classical/result/BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1",
+      "body": {
+        "lifecycle": "CERTIFIED",
+        "boundary": "unary filtered cyclic branch-extension class on the retained and contractible rank-46 carriers",
+        "dependency_tags": ["LOCAL-ALGEBRAIC"],
+        "certificate": "d_quotient_classical/certificates/BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1.json",
+        "certificate_sha256": "66fff0566ceccb887c1e5138984fe079203deedd5a6538ef1b55976918545a0e",
+        "source_commit": "09dcec1b100c884053b237a30cad595c741a1f8a",
+        "stale": false,
+        "superseded": false
+      }
+    },
+    {
+      "kind": "result",
+      "id": "sf:closed_universe_observers/result/BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE",
+      "body": {
+        "lifecycle": "CERTIFIED",
+        "boundary": "observer apparatus interaction import gate before extended apparatus q1 and retarded Green certification",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+        "certificate": "closed_universe_observers/certificates/BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE.json",
+        "certificate_sha256": "17cc190abb57658382da790118343bc85549d6ee889e1d10a55c5046b3252028",
+        "source_commit": "f62e7d43627f35c73baba97cf23fcb6f8ca24e5c",
+        "stale": false,
+        "superseded": false
+      }
+    },
+    {
+      "kind": "result",
+      "id": "sf:closed_universe_observers/result/BERGER_COMMON_ACTION_OBSERVABLE_REPLAY_DISPOSITION",
+      "body": {
+        "lifecycle": "CERTIFIED",
+        "boundary": "representation-complete common-action carrier required for interacting observer promotion",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+        "certificate": "closed_universe_observers/certificates/BERGER_COMMON_ACTION_OBSERVABLE_REPLAY_DISPOSITION.json",
+        "certificate_sha256": "56a7cd42f2db3b39b215ce8df2102ff9014f7b932938e404de93a65406a5b575",
+        "source_commit": "135cfff6c00fa2acdd5eae54a1dff966749a35cc",
+        "stale": false,
+        "superseded": false
+      }
+    },
+    {
+      "kind": "paper_claim",
+      "id": "sf:paper/11-gravity-light-cyclic-causal-ell3/claim/zero-PBW-full-BV-repair",
+      "body": {
+        "paper": "sf:paper/11-gravity-light-cyclic-causal-ell3",
+        "material": true,
+        "asserts_lifecycle": "CERTIFIED",
+        "boundary": "zero-PBW full-BV mixed ell3 page after three Maxwell covariant-ghost shears",
+        "cites": ["sf:d_quotient_classical/result/BERGER_RETAINED_MIXED_ELL3_ZERO_JET_GHOST_SHEAR_COMPLETION_V1"],
+        "statement": "The zero-PBW full-BV page is exact after the three certified Maxwell covariant-ghost shears."
+      }
+    },
+    {
+      "kind": "paper_claim",
+      "id": "sf:paper/11-gravity-light-cyclic-causal-ell3/claim/physical-order-two-primitive",
+      "body": {
+        "paper": "sf:paper/11-gravity-light-cyclic-causal-ell3",
+        "material": true,
+        "asserts_lifecycle": "CERTIFIED",
+        "boundary": "degree-zero physical-action mixed ell3 through summed input-jet order two",
+        "cites": ["sf:d_quotient_classical/result/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_EXACT_PRIMITIVE_V1"],
+        "statement": "The degree-zero physical action through summed input-jet order two has an exact 4,276-coefficient primitive."
+      }
+    },
+    {
+      "kind": "paper_claim",
+      "id": "sf:paper/11-gravity-light-cyclic-causal-ell3/claim/former-order-two-witness-invalidated",
+      "body": {
+        "paper": "sf:paper/11-gravity-light-cyclic-causal-ell3",
+        "material": true,
+        "asserts_lifecycle": "CERTIFIED",
+        "boundary": "former 22-row witness on the complete declared second-input-jet cyclic column set",
+        "cites": ["sf:d_quotient_classical/result/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1"],
+        "statement": "An admissible five-component second-jet cotangent column pairs 755/9 with the old witness, so the former order-two nonremovability claim is superseded and the complete bounded cyclic class remains open."
+      }
+    },
+    {
+      "kind": "paper_claim",
+      "id": "sf:paper/11-gravity-light-cyclic-causal-ell3/claim/unary-branch-extension-obstruction",
+      "body": {
+        "paper": "sf:paper/11-gravity-light-cyclic-causal-ell3",
+        "material": true,
+        "asserts_lifecycle": "CERTIFIED",
+        "boundary": "unary filtered cyclic branch-extension class on the retained and contractible rank-46 carriers",
+        "cites": ["sf:d_quotient_classical/result/BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1"],
+        "statement": "The invariant unary beta_1 class obstructs the declared principal branch split; no branch-resolved mixing table follows."
+      }
+    },
+    {
+      "kind": "paper_claim",
+      "id": "sf:paper/11-gravity-light-cyclic-causal-ell3/claim/observer-apparatus-gate",
+      "body": {
+        "paper": "sf:paper/11-gravity-light-cyclic-causal-ell3",
+        "material": true,
+        "asserts_lifecycle": "CERTIFIED",
+        "boundary": "observer apparatus interaction import gate before extended apparatus q1 and retarded Green certification",
+        "cites": ["sf:closed_universe_observers/result/BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE"],
+        "statement": "The observer apparatus lacks a certified extended apparatus q1, cyclicity, retarded Green operator and interacting observer morphism."
+      }
+    },
+    {
+      "kind": "paper_claim",
+      "id": "sf:paper/11-gravity-light-cyclic-causal-ell3/claim/common-action-carrier-gate",
+      "body": {
+        "paper": "sf:paper/11-gravity-light-cyclic-causal-ell3",
+        "material": true,
+        "asserts_lifecycle": "CERTIFIED",
+        "boundary": "representation-complete common-action carrier required for interacting observer promotion",
+        "cites": ["sf:closed_universe_observers/result/BERGER_COMMON_ACTION_OBSERVABLE_REPLAY_DISPOSITION"],
+        "statement": "The representation-complete common-action carrier needed for interacting relational-observer promotion is obstructed."
+      }
+    },
+    {
+      "kind": "materiality",
+      "id": "sf:materiality/BERGER_RETAINED_MIXED_ELL3_ZERO_JET_GHOST_SHEAR_COMPLETION_V1/v1",
+      "body": {"result_id": "sf:d_quotient_classical/result/BERGER_RETAINED_MIXED_ELL3_ZERO_JET_GHOST_SHEAR_COMPLETION_V1", "materiality": "TECHNICAL", "version": 1, "by": "programme-director", "stamp": "2026-07-21", "rationale": "This exact repair narrows the paper's former zero-jet interaction-class interpretation.", "native": {"source_schema": "materiality-v0"}}
+    },
+    {
+      "kind": "materiality",
+      "id": "sf:materiality/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_EXACT_PRIMITIVE_V1/v1",
+      "body": {"result_id": "sf:d_quotient_classical/result/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_EXACT_PRIMITIVE_V1", "materiality": "TECHNICAL", "version": 1, "by": "programme-director", "stamp": "2026-07-21", "rationale": "This is the strongest certified physical-action removability result now stated in Paper 11.", "native": {"source_schema": "materiality-v0"}}
+    },
+    {
+      "kind": "materiality",
+      "id": "sf:materiality/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1/v1",
+      "body": {"result_id": "sf:d_quotient_classical/result/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1", "materiality": "NEGATIVE_RESULT", "version": 1, "by": "programme-director", "stamp": "2026-07-21", "rationale": "This result withdraws the paper's former order-two nonremovability theorem and reopens the bounded cyclic class.", "native": {"source_schema": "materiality-v0"}}
+    },
+    {
+      "kind": "materiality",
+      "id": "sf:materiality/BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1/v1",
+      "body": {"result_id": "sf:d_quotient_classical/result/BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1", "materiality": "NEGATIVE_RESULT", "version": 1, "by": "programme-director", "stamp": "2026-07-21", "rationale": "This is the strongest certified branch-level invariant and prevents an unauthorized mixing table.", "native": {"source_schema": "materiality-v0"}}
+    },
+    {
+      "kind": "materiality",
+      "id": "sf:materiality/BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE/v1",
+      "body": {"result_id": "sf:closed_universe_observers/result/BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE", "materiality": "NEGATIVE_RESULT", "version": 1, "by": "programme-director", "stamp": "2026-07-21", "rationale": "This gate blocks promotion of the retained representative to an interacting observer theorem.", "native": {"source_schema": "materiality-v0"}}
+    },
+    {
+      "kind": "materiality",
+      "id": "sf:materiality/BERGER_COMMON_ACTION_OBSERVABLE_REPLAY_DISPOSITION/v1",
+      "body": {"result_id": "sf:closed_universe_observers/result/BERGER_COMMON_ACTION_OBSERVABLE_REPLAY_DISPOSITION", "materiality": "NEGATIVE_RESULT", "version": 1, "by": "programme-director", "stamp": "2026-07-21", "rationale": "This establishes the missing common-action carrier boundary for relational promotion.", "native": {"source_schema": "materiality-v0"}}
+    },
+    {
+      "kind": "result_paper_edge",
+      "id": "sf:result-paper-edge/BERGER_RETAINED_MIXED_ELL3_ZERO_JET_GHOST_SHEAR_COMPLETION_V1/P11/v1",
+      "body": {"from": "sf:d_quotient_classical/result/BERGER_RETAINED_MIXED_ELL3_ZERO_JET_GHOST_SHEAR_COMPLETION_V1", "to": "sf:paper/11-gravity-light-cyclic-causal-ell3", "claim": "sf:paper/11-gravity-light-cyclic-causal-ell3/claim/zero-PBW-full-BV-repair", "edge_kind": "SUPPORTING_EVIDENCE", "stale": false, "version": 1, "stamp": "2026-07-21", "native": {"source_schema": "result-paper-edge-v0"}}
+    },
+    {
+      "kind": "result_paper_edge",
+      "id": "sf:result-paper-edge/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_EXACT_PRIMITIVE_V1/P11/v1",
+      "body": {"from": "sf:d_quotient_classical/result/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_EXACT_PRIMITIVE_V1", "to": "sf:paper/11-gravity-light-cyclic-causal-ell3", "claim": "sf:paper/11-gravity-light-cyclic-causal-ell3/claim/physical-order-two-primitive", "edge_kind": "SUPPORTING_EVIDENCE", "stale": false, "version": 1, "stamp": "2026-07-21", "native": {"source_schema": "result-paper-edge-v0"}}
+    },
+    {
+      "kind": "result_paper_edge",
+      "id": "sf:result-paper-edge/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1/P11/v1",
+      "body": {"from": "sf:d_quotient_classical/result/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1", "to": "sf:paper/11-gravity-light-cyclic-causal-ell3", "claim": "sf:paper/11-gravity-light-cyclic-causal-ell3/claim/former-order-two-witness-invalidated", "edge_kind": "NEGATIVE_RESULT", "stale": false, "version": 1, "stamp": "2026-07-21", "native": {"source_schema": "result-paper-edge-v0"}}
+    },
+    {
+      "kind": "result_paper_edge",
+      "id": "sf:result-paper-edge/BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1/P11/v1",
+      "body": {"from": "sf:d_quotient_classical/result/BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1", "to": "sf:paper/11-gravity-light-cyclic-causal-ell3", "claim": "sf:paper/11-gravity-light-cyclic-causal-ell3/claim/unary-branch-extension-obstruction", "edge_kind": "NEGATIVE_RESULT", "stale": false, "version": 1, "stamp": "2026-07-21", "native": {"source_schema": "result-paper-edge-v0"}}
+    },
+    {
+      "kind": "result_paper_edge",
+      "id": "sf:result-paper-edge/BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE/P11/v1",
+      "body": {"from": "sf:closed_universe_observers/result/BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE", "to": "sf:paper/11-gravity-light-cyclic-causal-ell3", "claim": "sf:paper/11-gravity-light-cyclic-causal-ell3/claim/observer-apparatus-gate", "edge_kind": "LIMITATION", "stale": false, "version": 1, "stamp": "2026-07-21", "native": {"source_schema": "result-paper-edge-v0"}}
+    },
+    {
+      "kind": "result_paper_edge",
+      "id": "sf:result-paper-edge/BERGER_COMMON_ACTION_OBSERVABLE_REPLAY_DISPOSITION/P11/v1",
+      "body": {"from": "sf:closed_universe_observers/result/BERGER_COMMON_ACTION_OBSERVABLE_REPLAY_DISPOSITION", "to": "sf:paper/11-gravity-light-cyclic-causal-ell3", "claim": "sf:paper/11-gravity-light-cyclic-causal-ell3/claim/common-action-carrier-gate", "edge_kind": "LIMITATION", "stale": false, "version": 1, "stamp": "2026-07-21", "native": {"source_schema": "result-paper-edge-v0"}}
+    }
+  ]
+}

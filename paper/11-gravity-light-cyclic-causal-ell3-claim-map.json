@@ -1,7 +1,7 @@
 {
   "schema": "paper-11-gravity-light-cyclic-causal-ell3-claim-map-v1",
-  "result_id": "PAPER_11_GRAVITY_LIGHT_CYCLIC_CAUSAL_ELL3_THEOREM_FROZEN",
-  "result_state": "SCOPED_FROZEN_SDR_AND_FILTERED_CYCLIC_OBSTRUCTION_THEOREM_FROZEN_EXTERNAL_REVIEW_PENDING",
+  "result_id": "PAPER_11_GRAVITY_LIGHT_CYCLIC_CAUSAL_ELL3_REPRESENTATIVE_THEOREM_FROZEN",
+  "result_state": "FROZEN_SDR_REPRESENTATIVE_THEOREM_FROZEN_BOUNDED_CYCLIC_CLASS_OPEN",
   "lifecycle_state": "THEOREM_FROZEN",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -9,7 +9,7 @@
   ],
   "headline": "The retained mixed gravity-Maxwell bracket survives this cyclic homological reduction through ell3.",
   "manuscript": "paper/11-gravity-light-cyclic-causal-ell3.tex",
-  "manuscript_sha256": "52c7c2386420c6b752b32798e374b9d52fc861b7b76c00581c23a397859ca83d",
+  "manuscript_sha256": "728ad380dc770592dcae9526dd974cc98aa31f1943fadb04dddeacc9540edf34",
   "paper_scope": {
     "background": "frozen positive rational Berger-clock gravity-clock-Maxwell fixture",
     "full_carrier_rows": 64,
@@ -24,11 +24,36 @@
   },
   "freeze_disposition": {
     "mathematical_claims": "THEOREM_FROZEN",
-    "frozen_scope": "one specified cyclic 64-to-36 SDR plus nonremovability through total PBW order two in the declared nonnegative filtered derivative-aware cyclic F2/F3 class",
-    "next_review": "external specialist review of cyclic transfer conventions, the exact sparse implementation, and the filtered obstruction quotient",
-    "human_accountability": "final human verification of the manuscript, deterministic certificates, citations, and authorship disclosure remains required before submission",
+    "frozen_scope": "one specified cyclic 64-to-36 SDR, its exact retained mixed ell3 representative, full retained cyclicity, unary causal compatibility, and the separate unary branch-extension obstruction",
+    "next_review": "external specialist review of cyclic transfer conventions and the exact sparse representative implementation; the complete bounded cyclic deformation class remains an explicit open problem",
+    "human_accountability": "final human scope review of the manuscript, deterministic certificates, citations, and AI-authorship disclosure remains required before public release",
     "additional_internal_major_calculation_required_before_circulation": false
   },
+  "claim_crosswalk": [
+    {"claim_id": "P11-C1", "claim": "typed cyclic 64-to-36 contraction and exact retained mixed ell3 representative", "status": "CURRENT", "materiality": "HEADLINE", "paper_anchor": "Theorem 4.1 and Equation (1.1)"},
+    {"claim_id": "P11-C2", "claim": "full retained BV cyclicity and arity-three identity for the frozen SDR", "status": "CURRENT", "materiality": "HEADLINE", "paper_anchor": "Sections 4 and 5"},
+    {"claim_id": "P11-C3", "claim": "zero-derivative coefficients witness a nontrivial deformation class", "status": "SUPERSEDED", "materiality": "TECHNICAL", "paper_anchor": "constant-field redefinition discussion"},
+    {"claim_id": "P11-C4", "claim": "physical mixed action is removable through summed input-jet order two", "status": "CURRENT", "materiality": "TECHNICAL", "paper_anchor": "Section 4 physical-action filtration"},
+    {"claim_id": "P11-C5", "claim": "22-row functional proves full-BV nonremovability through total PBW order two", "status": "SUPERSEDED", "materiality": "NEGATIVE_RESULT", "paper_anchor": "Section 9 second-jet disposition"},
+    {"claim_id": "P11-C6", "claim": "complete bounded cyclic deformation class of the retained mixed ell3", "status": "OPEN", "materiality": "HEADLINE", "paper_anchor": "Section 9"},
+    {"claim_id": "P11-C7", "claim": "canonical local branch split on the retained or contractible rank-46 carrier", "status": "SUPERSEDED", "materiality": "NEGATIVE_RESULT", "paper_anchor": "Section 8"},
+    {"claim_id": "P11-C8", "claim": "unary filtered cyclic branch-extension obstruction beta_1 and minimal page repair", "status": "CURRENT", "materiality": "NEGATIVE_RESULT", "paper_anchor": "Section 8"},
+    {"claim_id": "P11-C9", "claim": "Einstein-like/extra-Weyl/Maxwell branch mixing table", "status": "OPEN", "materiality": "HEADLINE", "paper_anchor": "Interpretation and outlook"},
+    {"claim_id": "P11-C10", "claim": "interacting relational-observer promotion on a common-action carrier", "status": "ABSENT_FROM_PAPER", "materiality": "NEGATIVE_RESULT", "paper_anchor": "explicit nonclaims"}
+  ],
+  "coverage": {
+    "human_materiality_review": "COMPLETE",
+    "all_material_imports_have_result_to_paper_edges": true,
+    "uncovered_material_results": []
+  },
+  "result_to_paper_edges": [
+    {"result_id": "BERGER_RETAINED_MIXED_ELL3_ZERO_JET_GHOST_SHEAR_COMPLETION_V1", "edge_type": "NARROWS", "claim_ids": ["P11-C3", "P11-C4"], "materiality": "TECHNICAL"},
+    {"result_id": "BERGER_RETAINED_MIXED_ELL3_SECOND_JET_EXACT_PRIMITIVE_V1", "edge_type": "SUPPORTS", "claim_ids": ["P11-C4"], "materiality": "TECHNICAL"},
+    {"result_id": "BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1", "edge_type": "SUPERSEDES", "claim_ids": ["P11-C5", "P11-C6"], "materiality": "NEGATIVE_RESULT"},
+    {"result_id": "BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1", "edge_type": "SUPPORTS", "claim_ids": ["P11-C7", "P11-C8", "P11-C9"], "materiality": "NEGATIVE_RESULT"},
+    {"result_id": "BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE", "edge_type": "LIMITS", "claim_ids": ["P11-C10"], "materiality": "NEGATIVE_RESULT"},
+    {"result_id": "BERGER_COMMON_ACTION_OBSERVABLE_REPLAY_DISPOSITION", "edge_type": "LIMITS", "claim_ids": ["P11-C10"], "materiality": "NEGATIVE_RESULT"}
+  ],
   "certified_claims": {
     "theorem_frozen_at_declared_scope": true,
     "typed_cyclic_64_to_36_contraction": true,
@@ -101,14 +126,24 @@
     "first_jet_positive_map_cokernel_dimension": 3,
     "first_jet_Schur_rank": 557,
     "first_jet_positive_primitive_counts": [43, 94, 95, 108],
-    "full_BV_filtered_cyclic_redefinition_obstruction_computed": true,
+    "full_BV_zero_first_jet_dual_screen_computed": true,
     "full_BV_filtered_obstruction_page": 1,
     "full_BV_filtered_obstruction_support_count": 22,
     "full_BV_zero_page_columns_checked": 5984,
     "full_BV_first_page_columns_checked_per_axis": 14998,
     "full_BV_first_page_defects_per_axis": [0, 0, 0, 0],
-    "full_BV_order_two_filtered_removal_obstructed": true,
-    "full_BV_unremovable_within_declared_filtered_cyclic_class": true
+    "zero_jet_full_BV_ghost_shear_trivialization_computed": true,
+    "physical_action_order_two_trivialization_computed": true,
+    "physical_action_order_two_primitive_coefficient_count": 4276,
+    "second_jet_witness_invalidation_computed": true,
+    "second_jet_counterexample_cotangent_component_count": 5,
+    "second_jet_counterexample_page_one_term_count": 252,
+    "second_jet_counterexample_pairing": "755/9",
+    "full_BV_order_two_filtered_removal_obstructed": false,
+    "full_BV_unremovable_within_declared_filtered_cyclic_class": false,
+    "complete_bounded_cyclic_class_decided": false,
+    "cyclic_branch_extension_obstruction_certified": true,
+    "cyclic_branch_extension_normalized_evaluation": ["1", "0"]
   },
   "explicit_nonzero_witnesses": {
     "gravity_equation_output": {
@@ -150,6 +185,9 @@
     "mixed_ell3_invariant_under_change_of_cyclic_SDR": false,
     "mixed_ell3_nonremovable_by_cyclic_Linfinity_field_redefinition": false,
     "mixed_ell3_survives_further_minimal_transfer": false,
+    "complete_bounded_cyclic_deformation_class_decided": false,
+    "complete_full_BV_order_two_trivializing_cochain_constructed": false,
+    "interacting_observer_common_action_carrier_constructed": false,
     "Hadamard_state_constructed": false,
     "renormalized_Lorentzian_products_constructed": false,
     "QME_restored": false,
@@ -167,9 +205,12 @@
     "subprincipal_obstruction": "BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1",
     "constant_field_redefinition": "BERGER_RETAINED_MIXED_ELL3_CONSTANT_FIELD_REDEFINITION_V1",
     "first_jet_redefinition": "BERGER_RETAINED_MIXED_ELL3_FIRST_JET_REDEFINITION_V1",
-    "filtered_deformation_status": "FULL_BV_FILTERED_REMOVAL_OBSTRUCTED_THROUGH_TOTAL_PBW_ORDER_TWO",
-    "filtered_obstruction": "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1",
-    "deformation_required_input": "UNRESTRICTED_CYCLIC_DEFORMATION_COMPLEX_OR_RESIDUAL_COHOMOLOGY_DESCENT",
+    "filtered_deformation_status": "COMPLETE_BOUNDED_CYCLIC_CLASS_OPEN_AFTER_SECOND_JET_WITNESS_INVALIDATION",
+    "historical_filtered_screen": "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1",
+    "filtered_disposition": "BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1",
+    "physical_order_two_primitive": "BERGER_RETAINED_MIXED_ELL3_SECOND_JET_EXACT_PRIMITIVE_V1",
+    "branch_extension_obstruction": "BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1",
+    "deformation_required_input": "COMPLETE_COUPLED_FULL_BV_ZERO_FIRST_SECOND_JET_SOLVE_OR_REPLACEMENT_COKERNEL",
     "required_input": "UNSPLIT_RETAINED_COMPLEX_OR_NONCONTRACTIBLE_FILTERED_ENLARGEMENT",
     "required_output": "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_AND_MIXING_TABLE",
     "dynamical_branch_ids": [
@@ -196,15 +237,22 @@
     "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_CONSTANT_FIELD_REDEFINITION_V1.json": "00c5823b6348662c136985244cfca23af288a965358b7477645fcadf4224b104",
     "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_FIRST_JET_REDEFINITION_V1.json": "b191c57d2fa17846746f5020a1f4aae70df0dfec64d8d81d8351cf886ab240cd",
     "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1.json": "4051d27dd45fb5a8781348bccb4e21859cf736124cca026182978177ced62e44",
+    "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_ZERO_JET_GHOST_SHEAR_COMPLETION_V1.json": "e76c9d7e50cb73fb8b71e6ee54d426997131f7cc4eb5452271309d44c41362ff",
+    "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_EXACT_PRIMITIVE_V1.json": "45fbd2f4031953752e0bfba37c3222552dc26b0303da055b270f8fc0be1a1bc5",
+    "d_quotient_classical/certificates/BERGER_POSITIVE_JET_SUPER_COTANGENT_REDEFINITION_CONVENTION_V1.json": "b2fe5277a45ebd2404a8a0ae74a0d6cc65203a237cf57bd24c503f8af564d6d2",
+    "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1.json": "0abafddf65bd44a07671ac89b0133f4909df619a5f0ddc7b87a84b101fd33036",
+    "d_quotient_classical/certificates/BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1.json": "66fff0566ceccb887c1e5138984fe079203deedd5a6538ef1b55976918545a0e",
+    "closed_universe_observers/certificates/BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE.json": "17cc190abb57658382da790118343bc85549d6ee889e1d10a55c5046b3252028",
+    "closed_universe_observers/certificates/BERGER_COMMON_ACTION_OBSERVABLE_REPLAY_DISPOSITION.json": "56a7cd42f2db3b39b215ce8df2102ff9014f7b932938e404de93a65406a5b575",
     "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json": "104ff269ddf10ed80ff796c090a2de90a40c62adb0194954e4509b200304184e",
     "d_quotient_classical/certificates/PAPER_09_NONLINEAR_FROZEN_K_GENERATOR_SIGNOFF.json": "c4d89da3e3b68ae73b41eefc39132d124ae526cd3238b4c0a31636894a92b02a",
-    "quantum-weyl/transfer/certificates/BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE.json": "2c4592665084dd47958aa2c63f10a7f54d3bd9ff8d52f661d1a2fa78da877027",
+    "quantum-weyl/transfer/certificates/BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE.json": "cea77a9149ec60b300211f2553f1beaed80ac31b847c13d8d116b0ea85b4d374",
     "quantum-weyl/transfer/certificates/BERGER_RETAINED_MIXED_ELL3_PHYSICAL_CYCLICITY.json": "4f9479466ddfcce957ba6b15f0c33f74b470d74e2424d0e04bc60dbacbd9a2e1",
     "quantum-weyl/transfer/certificates/BERGER_RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY.json": "fc9b3581d2a3b849d5074e7526a8b8a3de6d849eeadc857387c28874bfc8b24e",
-    "quantum-weyl/transfer/certificates/BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS_V2.json": "a9927fa7d4d0a267ca188c6ea1e746c60f7f27ca880393e936c65807c75d6088",
+    "quantum-weyl/transfer/certificates/BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS_V2.json": "52fb6d90ffa87728a87ec2f6283560e1a30a5a2cdc89f9d9235296092871f604",
     "paper/generate_11_witness_inclusion_columns.py": "2658a9081dba389f0405d82be9f5528a9f85e87170177cfc6e1e37ef9beaa4a7",
     "paper/11-gravity-light-ell3-witness-inclusion-columns.tex": "31c0aca8e69ff9180517298e2ce6890bd20d9ac9746d0d14662e4136fa681ffe",
-    "paper/verify_11_gravity_light_claim_map.py": "f8b0352567dced3c330f7693a5587658da828ff33751f9977b8c8d484f7b0f8a"
+    "paper/verify_11_gravity_light_claim_map.py": "d60b18ba10c71e3792698f8ef082eab65333348cfc7cdeb1f2eac34fb9fc54fb"
   },
   "verification_commands": [
     "python3 paper/generate_11_witness_inclusion_columns.py --check",
@@ -227,6 +275,11 @@
     "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_positive_jet_full_bv_obstruction.py",
     "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_positive_jet_full_bv_obstruction_exhaustive.py --workers 8",
     "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_mixed_ell3_positive_jet_full_bv_obstruction -v",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_zero_jet_ghost_shear_completion.py",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_second_jet_exact_primitive.py",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_second_jet_witness_disposition.py",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_filtered_cyclic_branch_extension_obstruction.py",
+    "PYTHONPATH=. python3 closed_universe_observers/verify_berger_common_action_observable_replay_disposition.py",
     "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_retained_46_stf2_principal_branch_anchor.py --check --guards",
     "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_46_stf2_principal_branch_anchor.py",
     "python3 paper/verify_11_gravity_light_claim_map.py",
@@ -234,9 +287,9 @@
   ],
   "test_tier_receipt": {
     "tier_0": "JSON and Python parse, Draft 2020-12 schema validation, three-pass TeX compilation with resolved references, scoped diff check and exact dependency hashes",
-    "tier_1": "constant-field, first-jet and full-BV filtered-obstruction exact verifiers and mutation tests; Paper 11 claim-map verification; strict structured-data checks",
-    "tier_2": "affected constant/first-jet/full-BV filtered deformation chain replayed from content-addressed ell1/ell2/ell3 inputs; branch-obstruction inputs were unchanged and checked by hash",
-    "tier_3": "Paper 11 scoped theorem-freeze chain replayed, including exhaustive transpose verification, three-pass TeX compilation and resolved-reference audit"
+    "tier_1": "constant-field, first-jet, physical order-two, second-jet witness-disposition, branch-extension and observer-boundary verifiers; Paper 11 claim-map mutation verification; strict structured-data checks",
+    "tier_2": "affected zero/first/second-jet deformation chain replayed from content-addressed ell1/ell2/ell3 inputs, including exact 755/9 native coderivation replay and atlas disposition",
+    "tier_3": "Paper 11 representative-theorem freeze chain replayed, including three-pass TeX compilation, resolved-reference audit, exact source hashes and advisory bidirectional coverage"
   },
-  "claim_boundary": "For one explicitly specified cyclic 64-to-36 SDR, the retained mixed gravity-Maxwell ell3 representative is nonzero by two exact zero-derivative witnesses, every mixed exchange channel contributing to the declared ell3 vanishes by projection support on the contractible Theta_star row, and the exact sparse implementation realizes the formal cyclic homotopy-transfer identities. The convention-specific cyclic adjoint identities and 106 exact inclusion-column coefficients for the dressed witness coordinates are displayed. The separately certified LORENTZIAN-CAUSAL unary Green and K_Berger Cartan theorem is connected by explicit full-to-retained formulas but is not the propagator used in the algebraic ell3 transfer. At constant field the complete 550-dimensional physical mixed quartic is removable, and the coupled first-jet physical page is likewise exact. The decisive full-BV filtered calculation gives the opposite scoped invariant verdict: a normalized 22-row functional annihilates all 5,984 zero-page cyclic directions and all 14,998 first-page directions on each derivative axis, has zero transpose defects and pairs to one with the first associated-graded residual. Therefore no admissible nonnegative filtered derivative-aware cyclic F2/F3 transformation removes the mixed ell3 through total PBW order two. This proves a nonzero class only in that declared filtered cyclic quotient; it does not prove a class in the unrestricted all-jet cyclic deformation complex, invariance under changing SDR, or a nonzero operation on ell1 cohomology. A separate LOCAL-ALGEBRAIC certificate obstructs the canonical same-bundle Einstein-like/extra-Weyl projector on rank 36. The rank-46 spatial-STF2 graph carrier is exact and cyclic, but its principal wave module is nonsplit and the plus-polarization V2 filtered lift has normalized obstruction one; the cross polarization lifts with coefficient 71/40. This is not a global no-go for every carrier: an unsplit observable, noncontractible or mixed-bundle enlargement, or explicitly REDUCED-MODE nonlocal split remains open. No accepted branch lift, branch mixing table, particle amplitude, QME restoration, or quantum theorem is claimed, and q4 is not used. The stated frozen-SDR representative theorem and scoped filtered-cyclic nonremovability theorem are THEOREM_FROZEN; external specialist and final human release review remain pending."
+  "claim_boundary": "For one explicitly specified cyclic 64-to-36 SDR, the retained mixed gravity-Maxwell ell3 representative is nonzero, its exchange contribution vanishes by exact projection support, and the sparse implementation realizes the formal cyclic homotopy-transfer and full retained BV cyclicity identities. The separately certified LORENTZIAN-CAUSAL unary Green and K_Berger Cartan theorem is compatible but is not the homotopy used in the algebraic transfer. The zero-PBW full-BV page is trivial after the three certified Maxwell ghost shears, and the complete degree-zero physical action through summed input-jet order two has an exact 4,276-coefficient primitive. The historical 22-row functional remains exact only on its tested zero/first-jet subcomplex: an admissible five-component second-jet cotangent column has exact native page-one pairing 755/9, so the former order-two nonremovability theorem is superseded. Neither a complete full-BV primitive nor a replacement full-cokernel witness is currently certified, and the complete bounded cyclic class is OPEN. A separate invariant unary beta_1 class obstructs the certified principal branch split on the retained and contractible rank-46 carriers, but no branch-resolved mixing table follows. The observer apparatus lacks an extended q1, cyclic retarded complex and common-action carrier. No residual cohomology operation, interacting observable, particle amplitude, QME restoration, quantum theorem, q4 result or all-orders closure is claimed. Only the frozen-SDR representative, cyclicity and unary compatibility theorems remain THEOREM_FROZEN; external specialist and final human release review remain pending."
 }

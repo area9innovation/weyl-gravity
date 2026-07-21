@@ -1022,6 +1022,46 @@ valid computation is the simultaneous bounded cyclic coboundary/cokernel
 problem through input order two, preferably on a proof-producing sparse exact
 linear-algebra rail.
 
+### Paper 11 current-interaction reconciliation
+
+Paper 11 now separates three objects that the earlier draft conflated.  The
+exact retained mixed `ell3` on the frozen cyclic 64-to-36 SDR remains a
+theorem-frozen representative with independently replayed full-BV cyclicity.
+The degree-zero physical action is exact through summed input-jet order two,
+with a 4,276-coefficient primitive.  The complete bounded cyclic deformation
+class is `OPEN`: the old 22-row functional is superseded as an order-two
+witness by the exact `755/9` admissible second-jet pairing, while no complete
+full-BV primitive or replacement full-cokernel witness is certified.
+
+The strongest current branch statement is the separate unary filtered class
+`beta_1`, with normalized evaluation `(1,0)`.  It obstructs the declared
+principal branch split on the retained and contractible rank-46 carriers but
+does not authorize a branch-resolved interaction table.  The observer import
+also remains fail-closed: neither the extended apparatus complex nor the
+representation-complete common-action carrier needed for interacting
+relational promotion is certified.
+
+The Paper 11 claim map now classifies every revised claim as `CURRENT`,
+`NARROWED`, `SUPERSEDED`, `OPEN`, or `ABSENT_FROM_PAPER`, binds the current
+certificates by content hash, and rejects stale obstruction promotions by
+mutation.  Its Science Forge coverage fragment contains six human-materiality
+annotations and six typed result-to-paper edges.  The advisory bidirectional
+audit reports zero flags.
+
+The three explicit missing gates are:
+
+1. a coupled full-BV zero/first/second-jet solve or replacement complete
+   cokernel witness for the bounded cyclic deformation class;
+2. a certified branch-resolved cohomology operation after a valid residual
+   branch carrier or an explicitly declared unsplit observable;
+3. an extended apparatus `q1`, cyclic retarded complex and common-action
+   carrier before any interacting observer promotion.
+
+Evidence is recorded in
+`paper/11-gravity-light-cyclic-causal-ell3-claim-map.json`,
+`reports/paper11-current-interaction-status-coverage-2026-07-21.json`, and
+`reports/paper11-current-interaction-status-coverage-report-2026-07-21.json`.
+
 Escalate immediately if the cubic defect is nontrivial, if cyclicity fails, or
 if a negative physical channel survives transfer.  A no-go certificate is a
 successful result.
