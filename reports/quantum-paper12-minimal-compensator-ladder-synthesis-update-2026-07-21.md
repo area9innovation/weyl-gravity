@@ -131,9 +131,7 @@ programme's canonical quantum brief is
 satisfy the common team-brief handoff requirement. No roadmap or another
 team's certificates were edited.
 
-## Disposition
-
-`DONE`: Paper 12, its generated claim ledger, its independent verifier, the
-referee response and the Science Forge paper edge now use the exact exhausted
-minimal-ladder union and preserve every noncoverage and no-selected-action
-boundary.
+CLOSE-OUT: DONE — Paper 12, its generated claim ledger, its independent
+verifier, the referee response and the Science Forge paper edge now use the
+exact exhausted minimal-ladder union and preserve every noncoverage and
+no-selected-action boundary.
