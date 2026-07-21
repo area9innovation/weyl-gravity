@@ -1,0 +1,93 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "Certifies the necessary-and-sufficient data contract for an action-derived charged-time receiver and charge-fibre crosswalk, exact failure dispositions, and a complete fail-closed census of the five current observer atlas carriers. No current row supplies a fully admissible action-derived nonzero receiver. This does not prove nonexistence and makes no detector, redshift, advanced-signal, nonlinear, particle, phenomenology or quantum claim.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "CERTIFIED",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json",
+          "result_id": "CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1",
+          "sha256": "e2c9aad23b667ec16bbb124b72066d803f3607fc4bd89acd459b53f672a43918"
+        }
+      ],
+      "id": "observer.general.charged_time_receiver_admissibility_crosswalk",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The interface classifies receiver admissibility and does not infer dispersion.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "Each populated receiver must export a descended nonradical pairing and nonzero period.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "No background-specific resonance is decided.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Requires a populated theory-specific correction class.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "The interface requires a retarded support map but does not populate one for a background.",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No nonlinear secular source is supplied.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "No second-order source is supplied.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "any explicitly scoped same-background carrier; no name-based cross-background identification",
+        "boundaries": "compact receiver support, retarded path maps and regular monotone clock bands",
+        "carrier": "machine-readable receiver object and charge-fibre crosswalk interface",
+        "charge_sector": "explicit unrestricted charge fibres with separately typed D, R and K actions",
+        "degree": 0,
+        "ell": "all modes individually populated through the interface",
+        "k": "all/NOT_APPLICABLE according to background",
+        "m": "all",
+        "omega": "nonzero sampled denominator margin on each populated clock band",
+        "parity": "primitive orientation eta and receiver coorientation explicitly mapped",
+        "theory": "Hamiltonian/BV theories with action-derived physical receiver candidates"
+      }
+    }
+  ],
+  "generated_by": "closed_universe_observers/atlas/generate_charged_time_receiver_admissibility_crosswalk_atlas.py",
+  "generated_by_sha256": "62b26ebd671e91c42415ad6e1f9d5771593228c354fd79dbf96a1d8bf8f24e0b",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "observer",
+  "verification_commands": [
+    "python3 closed_universe_observers/generate_charged_time_receiver_admissibility_crosswalk.py --check",
+    "python3 closed_universe_observers/verify_charged_time_receiver_admissibility_crosswalk.py",
+    "python3 -m pytest -q closed_universe_observers/tests/test_charged_time_receiver_admissibility_crosswalk.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/charged-time-receiver-admissibility-crosswalk-fragment-v1.json"
+  ]
+}
