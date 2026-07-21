@@ -1,7 +1,7 @@
 # Compact-product polar direct Lee--Wald completion
 
-Date: 2026-07-21  
-Team: Einstein/nonlinear bridge  
+Date: 2026-07-21
+Team: Einstein/nonlinear bridge
 Science Forge item: `bridge-compact-product-polar-direct-lee-wald-completion`
 
 ## Outcome
