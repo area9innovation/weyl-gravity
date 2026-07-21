@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "normalized-schur-pseudodifferential-variation-v1.schema.json",
+  "title": "Normalized Schur pseudodifferential variation certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "input_commit", "manifest", "results", "claim_flags", "dependencies", "next_gate", "claim_boundary"],
+  "properties": {
+    "$schema": {"const": "../schema/normalized-schur-pseudodifferential-variation-v1.schema.json"},
+    "schema": {"const": "quantum-weyl-normalized-schur-pseudodifferential-variation-v1"},
+    "result_id": {"const": "NORMALIZED_SCHUR_PSEUDODIFFERENTIAL_VARIATION"},
+    "result_state": {"const": "FIXED_DOMAIN_VARIATIONS_THROUGH_T3_AND_PROJECTOR_BOUNDARY_CERTIFIED"},
+    "lifecycle_state": {"const": "LOCAL_OPERATOR_VARIATION_CERTIFIED_GLOBAL_TRACE_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "input_commit": {"type": "string", "minLength": 7},
+    "manifest": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string"}, "result_id": {"const": "NORMALIZED_SCHUR_PSEUDODIFFERENTIAL_OPERATOR_WORDS"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "results": {"type": "object", "required": ["variation_orders", "first_variation", "second_variation", "third_variation", "berger_first_variation", "one_inverse_surrogate", "projector_disposition", "local_global_split"]},
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["RESOLVENT_AND_SCHUR_VARIATIONS_THROUGH_T3_COMPUTED", "FIRST_CORRECTION_ORDER_MINUS_TWO_PROVED", "PROJECTOR_DERIVATIVE_BOUNDARY_EXPLICIT", "BERGER_MINUS_64_OVER_81_REPRODUCED", "GLOBAL_FINITE_DETERMINANT_COMPUTED", "HEAT_KERNEL_COEFFICIENT_COMPUTED", "QME_OR_LORENTZIAN_PROMOTED"],
+      "properties": {
+        "RESOLVENT_AND_SCHUR_VARIATIONS_THROUGH_T3_COMPUTED": {"const": true},
+        "FIRST_CORRECTION_ORDER_MINUS_TWO_PROVED": {"const": true},
+        "PROJECTOR_DERIVATIVE_BOUNDARY_EXPLICIT": {"const": true},
+        "BERGER_MINUS_64_OVER_81_REPRODUCED": {"const": true},
+        "GLOBAL_FINITE_DETERMINANT_COMPUTED": {"const": false},
+        "HEAT_KERNEL_COEFFICIENT_COMPUTED": {"const": false},
+        "QME_OR_LORENTZIAN_PROMOTED": {"const": false}
+      }
+    },
+    "dependencies": {"type": "object", "required": ["normalized_schur", "surrogate_obstruction", "berger_low_blocks", "berger_low_oracle"]},
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

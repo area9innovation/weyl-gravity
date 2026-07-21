@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "normalized-schur-pseudodifferential-operator-words-v1.schema.json",
+  "title": "Normalized Schur pseudodifferential operator-word manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema", "schema", "result_id", "dependency_tags", "parameter_family",
+    "fixed_data", "resolvent_expansion", "schur_variations", "symbol_calculus",
+    "projector_and_domain", "exact_noncommuting_fixture",
+    "berger_low_block_control", "moving_projector_control", "mutation_controls"
+  ],
+  "properties": {
+    "$schema": {"const": "../../schema/normalized-schur-pseudodifferential-operator-words-v1.schema.json"},
+    "schema": {"const": "quantum-weyl-normalized-schur-pseudodifferential-operator-words-v1"},
+    "result_id": {"const": "NORMALIZED_SCHUR_PSEUDODIFFERENTIAL_OPERATOR_WORDS"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "parameter_family": {"type": "string", "minLength": 1},
+    "fixed_data": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "resolvent_expansion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["G", "through_t3"],
+      "properties": {
+        "G": {"type": "string"},
+        "through_t3": {"type": "array", "minItems": 4, "maxItems": 4}
+      }
+    },
+    "schur_variations": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["t_power", "taylor_coefficient", "derivative_at_zero_coefficient", "operator_word", "ward_reduced_word", "operator_order", "principal_symbol_order", "subprincipal_symbol_order", "principal_symbol"],
+        "properties": {
+          "t_power": {"type": "integer", "minimum": 1, "maximum": 3},
+          "taylor_coefficient": {"type": "string"},
+          "derivative_at_zero_coefficient": {"type": "string"},
+          "operator_word": {"type": "array", "items": {"type": "string"}},
+          "ward_reduced_word": {"type": "array", "items": {"type": "string"}},
+          "operator_order": {"type": "integer"},
+          "principal_symbol_order": {"type": "integer"},
+          "subprincipal_symbol_order": {"type": "integer"},
+          "principal_symbol": {"type": "string"}
+        }
+      }
+    },
+    "symbol_calculus": {"type": "object", "required": ["composition_convention", "elliptic_inverse", "first_correction_order", "subprincipal_dependencies", "local_data_only", "does_not_supply"]},
+    "projector_and_domain": {"type": "object", "required": ["fixed_common_complement_hypothesis", "fixed_formula", "moving_formula", "smooth_self_adjoint_constant_rank_formula", "rank_change_status", "berger_at_t0"]},
+    "exact_noncommuting_fixture": {"type": "object", "required": ["F", "W", "d", "delta", "Delta0", "taylor_coefficients", "derivatives_at_zero", "reordered_first_coefficient", "reordered_word_rejected"]},
+    "berger_low_block_control": {"type": "object", "required": ["block_id", "Delta0", "delta_W_d", "correct_first_variation", "oracle_matrix", "one_inverse_surrogate", "values_distinct"]},
+    "moving_projector_control": {"type": "object", "required": ["A0", "A_prime0", "P0", "P_prime0", "R_prime0", "naive_fixed_projector_term", "full_projector_formula", "naive_formula_rejected"]},
+    "mutation_controls": {"type": "object", "required": ["wrong_sign", "commuting_reorder", "one_inverse_surrogate", "frozen_moving_projector"]}
+  }
+}

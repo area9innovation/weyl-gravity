@@ -2601,3 +2601,33 @@ Lorentzian, Hadamard, state and particle results remain open.
 
 - [`SCALAR_FLAT_BERGER_VECTOR_SCHUR_LOW_BLOCKS.json`](../quantum-weyl/spectral/euclidean/certificates/SCALAR_FLAT_BERGER_VECTOR_SCHUR_LOW_BLOCKS.json)
 - [`scalar-flat-berger-vector-schur-low-blocks.md`](../quantum-weyl/reports/scalar-flat-berger-vector-schur-low-blocks.md)
+
+## Normalized-Schur local variation theorem (2026-07-21)
+
+The correctly normalized scalar Schur factor now has an exact
+noncommutative expansion through cubic parameter order on a declared fixed
+primed complement:
+
+\[
+S_L'(0)=-\frac13\delta GWGd,\qquad
+S_L''(0)=\frac23\delta GWGWGd,\qquad
+S_L'''(0)=-2\delta GWGWGWGd.
+\]
+
+The three coefficients have pseudodifferential orders (-2,-4,-6), with
+subprincipal orders (-3,-5,-7). The operator-word manifest keeps the local
+polyhomogeneous symbols separate from smoothing traces and finite global
+determinants.
+
+Priming is now fail-closed. The ordinary resolvent derivative applies only
+for a fixed common complement. For a moving kernel projector the exact
+(-P'R-RP') terms are retained, and a rank-changing crossing is reported as
+non-differentiable until a stratum or contour choice is supplied. A rotating
+projector fixture rejects silently freezing this data.
+
+The independent Berger control reproduces (-64/81) and rejects the (4/9)
+one-inverse surrogate. This is `LOCAL-ALGEBRAIC`/`EUCLIDEAN-SPECTRAL`; no heat
+coefficient, global determinant, QME, Lorentzian or Hadamard claim is made.
+
+- [`NORMALIZED_SCHUR_PSEUDODIFFERENTIAL_VARIATION.json`](../quantum-weyl/spectral/euclidean/certificates/NORMALIZED_SCHUR_PSEUDODIFFERENTIAL_VARIATION.json)
+- [`normalized-schur-pseudodifferential-variation.md`](../quantum-weyl/reports/normalized-schur-pseudodifferential-variation.md)

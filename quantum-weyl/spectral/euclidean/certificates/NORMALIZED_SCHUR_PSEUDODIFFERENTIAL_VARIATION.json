@@ -1,0 +1,64 @@
+{
+  "$schema": "../schema/normalized-schur-pseudodifferential-variation-v1.schema.json",
+  "claim_boundary": "This LOCAL-ALGEBRAIC/EUCLIDEAN-SPECTRAL certificate derives the exact noncommutative resolvent and normalized-Schur variations through cubic parameter order on a declared fixed common primed domain. It proves the successive local pseudodifferential orders -2, -4 and -6, records subprincipal orders and required geometric inputs, independently anchors the first Berger block at -64/81, and exposes the mandatory moving-projector terms and rank-change nondefinition. It does not compute a Seeley-DeWitt coefficient, Wodzicki residue, smoothing trace, global finite determinant, spectral tail, anomaly coefficient, QME restoration, Lorentzian causal object, Hadamard state, particle space or unitarity statement.",
+  "claim_flags": {
+    "BERGER_MINUS_64_OVER_81_REPRODUCED": true,
+    "FIRST_CORRECTION_ORDER_MINUS_TWO_PROVED": true,
+    "GLOBAL_FINITE_DETERMINANT_COMPUTED": false,
+    "HEAT_KERNEL_COEFFICIENT_COMPUTED": false,
+    "PROJECTOR_DERIVATIVE_BOUNDARY_EXPLICIT": true,
+    "QME_OR_LORENTZIAN_PROMOTED": false,
+    "RESOLVENT_AND_SCHUR_VARIATIONS_THROUGH_T3_COMPUTED": true
+  },
+  "dependencies": {
+    "berger_low_blocks": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/SCALAR_FLAT_BERGER_VECTOR_SCHUR_LOW_BLOCKS.json",
+      "result_id": "SCALAR_FLAT_BERGER_VECTOR_SCHUR_LOW_BLOCKS",
+      "sha256": "58d8646e3aedc1a897a8e6d05d6128f0e0eb4f885225443b9133f1c1968914f0"
+    },
+    "berger_low_oracle": {
+      "path": "quantum-weyl/spectral/euclidean/generated/scalar_flat_berger_vector_schur_low_blocks_v1/blocks.json",
+      "result_id": "SCALAR_FLAT_BERGER_VECTOR_SCHUR_LOW_BLOCK_ORACLE",
+      "sha256": "2c81c166ae2c16ed4c97244b26bd134e24381779f2a6e7921a2daca4f29021b3"
+    },
+    "normalized_schur": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION.json",
+      "result_id": "GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION",
+      "sha256": "b40ec3a8bd3a21d8e0ece7c98f98e1776e8c47d557b8c8b5427e422b60c65a78"
+    },
+    "surrogate_obstruction": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION.json",
+      "result_id": "SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION",
+      "sha256": "687aa26ec62e34dfa9adde53f4d1793741a97b9829c7dee55b71f11f6d54f2d5"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "input_commit": "0200fc87b",
+  "lifecycle_state": "LOCAL_OPERATOR_VARIATION_CERTIFIED_GLOBAL_TRACE_OPEN",
+  "manifest": {
+    "path": "quantum-weyl/spectral/euclidean/generated/normalized_schur_pseudodifferential_variation_v1/operator_words.json",
+    "result_id": "NORMALIZED_SCHUR_PSEUDODIFFERENTIAL_OPERATOR_WORDS",
+    "sha256": "837da72d4d358109cdcd5ecfeddbcc974ca6aa9ad04796cc6ef629870b8388d6"
+  },
+  "next_gate": "CONSUME_THE_OPERATOR_WORD_MANIFEST_IN_THE_INDEPENDENT_PSEUDODIFFERENTIAL_HEAT_KERNEL_LAYER_AND_PROVE_HIGH_MODE_DOMAIN_CONTROL",
+  "result_id": "NORMALIZED_SCHUR_PSEUDODIFFERENTIAL_VARIATION",
+  "result_state": "FIXED_DOMAIN_VARIATIONS_THROUGH_T3_AND_PROJECTOR_BOUNDARY_CERTIFIED",
+  "results": {
+    "berger_first_variation": "-64/81",
+    "first_variation": "-(1/3)delta G W G d=-(1/3)Delta0^-1 delta W d Delta0^-1",
+    "local_global_split": "POLYHOMOGENEOUS_SYMBOL_VARIATIONS_LOCAL; SMOOTHING_TRACE_AND_FINITE_DETERMINANT_GLOBAL",
+    "one_inverse_surrogate": "4/9",
+    "projector_disposition": "FIXED_COMPLEMENT_CERTIFIED; MOVING_PROJECTOR_TERMS_EXPLICIT; RANK_CHANGE_FAILS_CLOSED",
+    "second_variation": "+(2/3)delta G W G W G d",
+    "third_variation": "-2 delta G W G W G W G d",
+    "variation_orders": [
+      -2,
+      -4,
+      -6
+    ]
+  },
+  "schema": "quantum-weyl-normalized-schur-pseudodifferential-variation-v1"
+}

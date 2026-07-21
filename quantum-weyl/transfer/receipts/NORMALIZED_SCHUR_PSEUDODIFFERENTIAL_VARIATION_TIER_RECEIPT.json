@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "NORMALIZED_SCHUR_PSEUDODIFFERENTIAL_VARIATION_TIER_RECEIPT",
+  "claim_id": "NORMALIZED_SCHUR_PSEUDODIFFERENTIAL_VARIATION",
+  "date": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+  "artifacts": [
+    {"path": "quantum-weyl/spectral/euclidean/normalized_schur_pseudodifferential_variation.py", "sha256": "0c54604834d84547afd5a5239f44e4c8cba815058957abb62d00de10c10b865b"},
+    {"path": "quantum-weyl/spectral/euclidean/verify_normalized_schur_pseudodifferential_variation.py", "sha256": "0b576cf4ab8ae9b55faea1be1f25ea1a52b3ca2bc3d3c098e73e91d6b1386510"},
+    {"path": "quantum-weyl/spectral/euclidean/tests/test_normalized_schur_pseudodifferential_variation.py", "sha256": "7ea28d74d1cf0379e29e330e13633ecb9a04f018da49bb8e6d22850b9cc48a85"},
+    {"path": "quantum-weyl/spectral/euclidean/schema/normalized-schur-pseudodifferential-operator-words-v1.schema.json", "sha256": "1889d3407aa51cb4092acc00b3b090a9a968840fe223386c6db9eedb0debd170"},
+    {"path": "quantum-weyl/spectral/euclidean/schema/normalized-schur-pseudodifferential-variation-v1.schema.json", "sha256": "f4c60915c951d5315a4826619c795c97567561080dcbd6d9e51cf312882f4f4c"},
+    {"path": "quantum-weyl/spectral/euclidean/generated/normalized_schur_pseudodifferential_variation_v1/operator_words.json", "sha256": "837da72d4d358109cdcd5ecfeddbcc974ca6aa9ad04796cc6ef629870b8388d6"},
+    {"path": "quantum-weyl/spectral/euclidean/certificates/NORMALIZED_SCHUR_PSEUDODIFFERENTIAL_VARIATION.json", "sha256": "5e437f7feed2044fd4ab7254388556536e41bf74a874398ece47f1d8b88f4a95"},
+    {"path": "quantum-weyl/reports/normalized-schur-pseudodifferential-variation.md", "sha256": "63dd52eb9c0f092906d6f158b3d2daf4271aa6de3c2b57fe94a26833deea8f6e"}
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m py_compile <producer, independent verifier, tests>", "status": "PASS"},
+      {"command": "python3 -m json.tool <schemas, manifest, certificate, receipt>", "status": "PASS"},
+      {"command": "git diff --check -- <explicit normalized-Schur paths>", "status": "PASS"}
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 quantum-weyl/spectral/euclidean/normalized_schur_pseudodifferential_variation.py --check", "status": "PASS", "elapsed_seconds": 1.32},
+      {"command": "python3 quantum-weyl/spectral/euclidean/verify_normalized_schur_pseudodifferential_variation.py", "status": "PASS", "elapsed_seconds": 1.15, "independent_rail": "direct rational Taylor differentiation of a hard-coded noncommuting matrix pencil, independent word/order arithmetic, Berger scalar replay and rotating-projector identity"},
+      {"command": "python3 -m unittest quantum-weyl/spectral/euclidean/tests/test_normalized_schur_pseudodifferential_variation.py -v", "status": "PASS", "elapsed_seconds": 1.17, "tests": 8, "mutation_controls": "wrong sign, illegal reorder, one-inverse order-zero surrogate, frozen moving projector, Berger value and global/QME promotions are rejected"}
+    ]
+  },
+  "tier_2": {
+    "status": "NOT_RUN",
+    "reason": "The frozen Schur input certificates are imported by hash; this bounded local variation theorem does not change a shared operator or global spectral receiver."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "No freeze, release, tag, paper-theorem promotion or shared-core-algebra change occurred."
+  },
+  "claim_boundary": "This receipt certifies exact fixed-common-domain resolvent and normalized-Schur variations through t^3, their local pseudodifferential orders, explicit moving-projector correction, rank-change boundary, Berger -64/81 replay and mutation controls. It does not certify a heat coefficient, residue, smoothing trace, global determinant, spectral tail, anomaly coefficient, QME, Lorentzian causal object, Hadamard state, particle space or unitarity.",
+  "higher_tiers_not_run": [
+    {"tier": 2, "criterion": "All shared mathematical inputs are unchanged and content-addressed."},
+    {"tier": 3, "criterion": "No freeze, release, tag or explicit full-suite request."}
+  ]
+}
