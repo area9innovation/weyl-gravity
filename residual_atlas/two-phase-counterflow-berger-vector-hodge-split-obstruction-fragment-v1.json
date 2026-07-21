@@ -1,0 +1,92 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "Exact two-way obstruction to the longitudinal/coexact split, not to the full q70 parent. A complete coupled SU(2)_L x U(1)_R isotypical carrier remains open; no physical, stability, observer, Hadamard or quantum claim follows.",
+      "descriptions": {
+        "causal": "OBSTRUCTED",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_VECTOR_HODGE_SPLIT_OBSTRUCTION_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_VECTOR_HODGE_SPLIT_OBSTRUCTION_V1",
+          "sha256": "d149b85e22ac676b3ca393217be304b10f9376a99d6a55791dc15ffd24f260e5"
+        }
+      ],
+      "id": "classical.counterflow.berger.vector_hodge_split_obstruction",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The longitudinal/coexact split is not invariant: both cross blocks of the e0-squared Diff endpoint are nonzero.",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "No pairing descends before the full coupled isotypical quotient exists.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "Characteristic and Jordan data are undefined on the nonclosed split.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Unary carrier closure fails first.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "causal_retarded": {
+            "statement": "The full q70 parent remains causal, but its Green homotopy is not restricted to this split.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Unary carrier closure fails first.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "No physical vector/tensor class is exported.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "stationary biaxial Berger R x S3, a=1, c_squared=9/40",
+        "boundaries": "none; closed S3 Cauchy slices",
+        "carrier": "proposed longitudinal/coexact one-form split inside the complete gauge-fixed 70-row parent",
+        "charge_sector": "unrestricted Q_rel with physical D and R_rel retained",
+        "degree": "spatial Diff ghost degree -1 to antighost-dual degree 0 at the e0-squared endpoint",
+        "ell": "j=two_j/2, two_j in Z_>=1",
+        "k": "all right weights; exact generic obstruction for k!=0 and k=0 retained exceptional",
+        "m": "-j,...,j (passive SU(2)_L multiplicity)",
+        "omega": "arbitrary; obstruction occurs in the omega-squared coefficient",
+        "parity": "longitudinal and coexact one-form sectors coupled by Berger anisotropy",
+        "theory": "selected fixed-action two-phase counterflow theory"
+      }
+    }
+  ],
+  "generated_by": "d_quotient_classical/atlas/generate_two_phase_counterflow_berger_vector_hodge_split_obstruction_atlas_fragment.py",
+  "generated_by_sha256": "ba564c29971e6d684c0885b9ed070effea105cf47bb51da0c6d3866d6eb54a6b",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "classical",
+  "verification_commands": [
+    "python3 d_quotient_classical/compensator/two_phase_counterflow_berger_vector_hodge_split_obstruction.py --check",
+    "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_berger_vector_hodge_split_obstruction.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-berger-vector-hodge-split-obstruction-fragment-v1.json"
+  ]
+}

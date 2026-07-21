@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_VECTOR_HODGE_SPLIT_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_id": "TWO_PHASE_COUNTERFLOW_BERGER_VECTOR_HODGE_SPLIT_OBSTRUCTION_V1",
+  "date": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": [
+    {"path": "d_quotient_classical/compensator/two_phase_counterflow_berger_vector_hodge_split_obstruction.py", "sha256": "ffcba2a7d86d353c42daf4e8f995657ef93c5d4aca2de702166048b742ffe19f"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_VECTOR_HODGE_SPLIT_OBSTRUCTION_V1.json", "sha256": "d149b85e22ac676b3ca393217be304b10f9376a99d6a55791dc15ffd24f260e5"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_VECTOR_HODGE_SPLIT_OBSTRUCTION_PAYLOAD_V1.json", "sha256": "df7d4bfc999461399ad810dd4e8e10b1f626ff9797106af26e091c43f8af59ac"},
+    {"path": "d_quotient_classical/compensator/verify_two_phase_counterflow_berger_vector_hodge_split_obstruction.py", "sha256": "8622d34e386727a65fc595c026376963eb8e31962a15a5d7ce44c140dc9953bb"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_berger_vector_hodge_split_obstruction.py", "sha256": "1fbdfe58b0bfe36fafe09d0c2e6409baf442b33a08997aab87018d8e42b4de23"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_berger_vector_hodge_split_obstruction_atlas.py", "sha256": "aad484c1ed10dca63db2c1e09a820784ffca0f7d1145efbcffc4033bf8f6d528"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-berger-vector-hodge-split-obstruction-v1.schema.json", "sha256": "b8a13de78880bc1e9206a9ad7fb15ab531f2e41dba143afe266dff2d34191fd0"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-berger-vector-hodge-split-obstruction-payload-v1.schema.json", "sha256": "ce56b35d01ef4bef534afc8e2d132b176f2525663b0a312e130d9d34caeb5e7d"},
+    {"path": "d_quotient_classical/atlas/generate_two_phase_counterflow_berger_vector_hodge_split_obstruction_atlas_fragment.py", "sha256": "ba564c29971e6d684c0885b9ed070effea105cf47bb51da0c6d3866d6eb54a6b"},
+    {"path": "d_quotient_classical/atlas/verify_two_phase_counterflow_berger_vector_hodge_split_obstruction_atlas_fragment.py", "sha256": "b83ec7627b17e6eba11b11ee0c5d2a50e5f5804af9215413cd9273c7ac0c6c76"},
+    {"path": "residual_atlas/two-phase-counterflow-berger-vector-hodge-split-obstruction-fragment-v1.json", "sha256": "9d4644b2e6adc2a2189dd6fb59b5cf01097b3544c44595a1ea9a28ab2f96b5b5"},
+    {"path": "d_quotient_classical/compensator/reports/two-phase-counterflow-berger-vector-hodge-split-obstruction-v1.md", "sha256": "615c99277547c9d51cb3c24d8062c04d0e33564024425f73da53ae5d64b4e426"}
+  ],
+  "tier_0": {"status": "PASS", "commands": [{"command": "py_compile on six Python files, json.tool on structured artifacts, explicit-path git diff --check", "elapsed_seconds": 0.02, "status": "PASS"}]},
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 d_quotient_classical/compensator/two_phase_counterflow_berger_vector_hodge_split_obstruction.py --check", "elapsed_seconds": 3.84, "status": "PASS", "method": "abstract PBW formal-adjoint proof plus exact target/round projector audits through two_j=6"},
+      {"command": "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_berger_vector_hodge_split_obstruction.py", "elapsed_seconds": 5.90, "status": "PASS", "independent_rail": "direct finite endpoint matrices and orthogonal-projector ranks through two_j=8, including independent round controls"},
+      {"command": "python3 -m unittest -v on vector-Hodge result and atlas tests", "elapsed_seconds": 0.03, "status": "PASS", "tests": 6},
+      {"command": "atlas generator check, independent atlas verifier and residual_atlas validator", "elapsed_seconds": 0.13, "status": "PASS"},
+      {"command": "strict Draft 2020-12 AJV validation of result and payload", "elapsed_seconds": 2.10, "status": "PASS"}
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {"command": "four scalar-terminal/parent/operator/harmonic imports content-hashed and semantic preconditions checked", "status": "PASS"},
+      {"command": "bash ci/science-forge-shadow.sh", "elapsed_seconds": 3.24, "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS", "findings": "bridge certificate drift, corpus 1366 vs baseline 976, and unpinned stale Forge binary; diagnostics /tmp/sf-shadow.qOV9su"}
+    ]
+  },
+  "tier_3": {"status": "NOT_RUN", "criterion": "No freeze, release, global theorem promotion or shared core-algebra change; the exact scoped and two independent representation rails cover the changed claim."},
+  "claim_boundary": "The result proves two-way longitudinal/coexact mixing in the e0-squared Diff endpoint and names the full coupled isotypical carrier required next. It does not construct that q70 restriction or quotient, classify symmetric tensors or exceptional blocks, revoke the full causal parent, or establish stability, observer, Hadamard, QME, particle, positivity or unitarity claims.",
+  "higher_tiers_not_run": ["Tier 3 full repository suite; criterion recorded above"]
+}

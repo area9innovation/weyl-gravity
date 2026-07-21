@@ -1,0 +1,138 @@
+{
+  "claim_boundary": {
+    "does_not_establish": [
+      "a complete full-isotypical q70 restriction or quotient",
+      "a symmetric-tensor harmonic classification",
+      "a verdict for right-neutral or global exceptional blocks",
+      "failure of the complete q70 BV complex or its causal homotopy",
+      "a stability, observer, Hadamard, QME, particle, positivity or unitarity theorem"
+    ],
+    "establishes": [
+      "formal self-adjointness of the e0-squared Diff ghost endpoint",
+      "two-way non-invariance of the longitudinal/coexact one-form split",
+      "exact finite Wigner mixing ranks through two_j=6",
+      "the minimal coupled-carrier requirement before a physical quotient"
+    ]
+  },
+  "content_hashes": {
+    "boundary_sha256": "7e48e2e9e200013a9086c1aa1209bfbe036bf80248d43339a544721c07fa43d8",
+    "endpoint_sha256": "b44f2b239ee72dfca647573b8c1172fa8630db5b58e02db8ab72226a788c85e2",
+    "finite_audits_sha256": "b22f0c77c22c1744136340e3f0c9974877bd2886451ebef83e77a3086e5c971a",
+    "generic_argument_sha256": "46032d687d27325c4325d659a08cc8680b3f93c1dddd9905db2009340e925e6e",
+    "terminal_sha256": "1ae7ee008e5cfc573fd8f90bdb17b0483de7acc38301fcfd80e7b2852459fb44"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "finite_rank_ledger": [
+    {
+      "coexact_dimension": 4,
+      "coexact_to_exact_rank": 2,
+      "exact_dimension": 2,
+      "exact_to_coexact_rank": 2,
+      "expected_cross_rank": 2,
+      "two_j": 1
+    },
+    {
+      "coexact_dimension": 6,
+      "coexact_to_exact_rank": 2,
+      "exact_dimension": 3,
+      "exact_to_coexact_rank": 2,
+      "expected_cross_rank": 2,
+      "two_j": 2
+    },
+    {
+      "coexact_dimension": 8,
+      "coexact_to_exact_rank": 4,
+      "exact_dimension": 4,
+      "exact_to_coexact_rank": 4,
+      "expected_cross_rank": 4,
+      "two_j": 3
+    },
+    {
+      "coexact_dimension": 10,
+      "coexact_to_exact_rank": 4,
+      "exact_dimension": 5,
+      "exact_to_coexact_rank": 4,
+      "expected_cross_rank": 4,
+      "two_j": 4
+    },
+    {
+      "coexact_dimension": 12,
+      "coexact_to_exact_rank": 6,
+      "exact_dimension": 6,
+      "exact_to_coexact_rank": 6,
+      "expected_cross_rank": 6,
+      "two_j": 5
+    },
+    {
+      "coexact_dimension": 14,
+      "coexact_to_exact_rank": 6,
+      "exact_dimension": 7,
+      "exact_to_coexact_rank": 6,
+      "expected_cross_rank": 6,
+      "two_j": 6
+    }
+  ],
+  "generic_argument": {
+    "adjoint_identity": "(P_co A2 P_ex)^dagger=P_ex A2 P_co",
+    "conclusion": "both longitudinal-to-coexact and coexact-to-longitudinal blocks are nonzero; neither summand is invariant",
+    "imported_domain": "every scalar exact mode with k!=0",
+    "imported_exact_to_coexact_witness": "93*I*k/40",
+    "minimal_closed_carrier": "the full one-form SU(2)_L x U(1)_R isotypical block, coupled to every q70 row reached by the unary",
+    "orthogonal_split": "Omega1=im(d0) direct_sum ker(d0^dagger)"
+  },
+  "imports": {
+    "causal_parent": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1",
+      "sha256": "7d969e7e630f793dfe12fe07b0e98a67b2543f9aa85fa03277e491fb00296db7",
+      "source_commit": "951e88307abbea0996513773a33e66b37555272b"
+    },
+    "gauge_fixed_q54": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0",
+      "source_commit": "445e26663d06764bc858ff0a004ba6178acce75f"
+    },
+    "peter_weyl_engine": {
+      "oracle_fields_consumed": [],
+      "path": "closed_universe_observers/certificates/BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE.json",
+      "result_id": "BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE",
+      "sha256": "e24c860b338188254c4388a7ca660ac454ba7b70c13659ffc36a98bf39250120",
+      "source_commit": "0b8fe045411de64008f55bb551ab3799aa85e77a"
+    },
+    "scalar_terminal": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_SCALAR_HODGE_BLOCK_OBSTRUCTION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_SCALAR_HODGE_BLOCK_OBSTRUCTION_V1",
+      "sha256": "0d462cab26aead0409b8da64c13770b6eae61cdd4d5cfc6cf6efdf538f1d535e",
+      "source_commit": "1fcfca7c599781721ce8256ddf41b8d5cc692885"
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": {
+    "first_acceptance_identity": "pi_iso iota_iso=1 and q70 iota_iso=iota_iso q_iso",
+    "forbidden_shortcut": "no separate longitudinal/coexact or scalar/vector quotient before the full coupled block closes",
+    "required_carrier": "complete fixed-j SU(2)_L x U(1)_R isotypical q70 block with exact/coexact and scalar/vector/tensor rows coupled"
+  },
+  "payload_ref": {
+    "content_sha256": "e569b2b4344515bc47f95a0dd4768300879ba0e045a97a8060b416edb8865ca7",
+    "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_VECTOR_HODGE_SPLIT_OBSTRUCTION_PAYLOAD_V1.json",
+    "sha256": "df7d4bfc999461399ad810dd4e8e10b1f626ff9797106af26e091c43f8af59ac"
+  },
+  "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_VECTOR_HODGE_SPLIT_OBSTRUCTION_V1",
+  "result_state": "EXACT_TWO_WAY_VECTOR_HODGE_SPLIT_OBSTRUCTION",
+  "schema": "pure-weyl-two-phase-counterflow-berger-vector-hodge-split-obstruction-v1",
+  "terminal_verdict": {
+    "complete_vector_tensor_quotient_status": "NOT_DEFINED_BEFORE_FULL_ISOTYPICAL_ENLARGEMENT",
+    "downstream_exceptional_export_activated": false,
+    "q70_parent_preserved": true,
+    "requested_longitudinal_coexact_split_closed": false,
+    "result_state": "EXACT_TWO_WAY_VECTOR_HODGE_SPLIT_OBSTRUCTION",
+    "symmetric_tensor_stage_status": "NOT_STARTED_AFTER_FIRST_VECTOR_CLOSURE_OBSTRUCTION"
+  }
+}

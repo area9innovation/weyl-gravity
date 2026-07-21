@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "dependency_tags", "imports", "oracle_fields_consumed", "endpoint", "generic_argument", "finite_wigner_audits", "round_mutation_audits", "exceptional_ledger", "mutations", "terminal", "next_gate", "claim_boundary", "content_sha256"],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-berger-vector-hodge-split-obstruction-payload-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_BERGER_VECTOR_HODGE_SPLIT_OBSTRUCTION_PAYLOAD_V1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "imports": {"type": "object", "minProperties": 4},
+    "oracle_fields_consumed": {"const": []},
+    "endpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_rows", "target_rows", "operator", "PBW_manifest", "PBW_term_count", "formal_adjoint_convention", "formal_self_adjoint", "formal_adjoint_defects"],
+      "properties": {
+        "source_rows": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "target_rows": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "operator": {"type": "string"},
+        "PBW_manifest": {"type": "array", "minItems": 1},
+        "PBW_term_count": {"const": 18},
+        "formal_adjoint_convention": {"type": "string"},
+        "formal_self_adjoint": {"const": true},
+        "formal_adjoint_defects": {"const": []}
+      }
+    },
+    "generic_argument": {"type": "object", "minProperties": 6},
+    "finite_wigner_audits": {"type": "array", "minItems": 6, "maxItems": 6},
+    "round_mutation_audits": {"type": "array", "minItems": 3, "maxItems": 3},
+    "exceptional_ledger": {"type": "array", "minItems": 4, "maxItems": 4},
+    "mutations": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "detected", "effect"],
+        "properties": {"id": {"type": "string"}, "detected": {"const": true}, "effect": {"type": "string"}}
+      }
+    },
+    "terminal": {"type": "object", "minProperties": 6},
+    "next_gate": {"type": "object", "minProperties": 3},
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["establishes", "does_not_establish"],
+      "properties": {
+        "establishes": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+        "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}}
+      }
+    },
+    "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

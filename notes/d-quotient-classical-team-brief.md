@@ -3481,3 +3481,22 @@ classical carrier gate should replace the round scalar/vector/tensor split by
 complete (SU(2)_L\times U(1)_R) isotypical Berger blocks, or construct a
 same-background gauge fixing proven to preserve exact/coexact Hodge summands.
 The old vector/tensor successor is not activated by this terminal result.
+
+### Berger vector Hodge-split obstruction (2026-07-21)
+
+`TWO_PHASE_COUNTERFLOW_BERGER_VECTOR_HODGE_SPLIT_OBSTRUCTION_V1` proves that
+the nonround obstruction is two-way.  The (e_0^2) spatial-Diff endpoint
+(A_2) is formally self-adjoint in the exact PBW algebra.  Since the scalar
+gate established (P_{\rm co}A_2P_{\rm ex}\ne0) for (k\ne0), adjointness
+forces (P_{\rm ex}A_2P_{\rm co}\ne0) as well.  Neither the longitudinal nor
+the coexact one-form summand is invariant.
+
+Exact Wigner replay through (2j=6), independently extended through
+(2j=8), gives equal cross ranks (2j+1) for half-integer (j) and (2j)
+for integer (j); the remaining (k=0) direction stays exceptional.  The
+full round mutation (c=u=v=1) removes both cross blocks.  Consequently no
+separate scalar/vector/tensor quotient or descended health data are defined
+on this split.  The next valid carrier is the complete fixed-(j)
+(SU(2)_L\times U(1)_R) isotypical (q_{70}) block with all reached tensor
+rows coupled.  The full causal parent remains certified and the
+exceptional/global successor is not activated by this obstruction.

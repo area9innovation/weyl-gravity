@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "imports", "payload_ref", "generic_argument", "finite_rank_ledger", "terminal_verdict", "next_gate", "claim_boundary", "content_hashes"],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-berger-vector-hodge-split-obstruction-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_BERGER_VECTOR_HODGE_SPLIT_OBSTRUCTION_V1"},
+    "result_state": {"const": "EXACT_TWO_WAY_VECTOR_HODGE_SPLIT_OBSTRUCTION"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "imports": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scalar_terminal", "causal_parent", "gauge_fixed_q54", "peter_weyl_engine"],
+      "properties": {
+        "scalar_terminal": {"$ref": "#/$defs/import"},
+        "causal_parent": {"$ref": "#/$defs/import"},
+        "gauge_fixed_q54": {"$ref": "#/$defs/import"},
+        "peter_weyl_engine": {"$ref": "#/$defs/import"}
+      }
+    },
+    "payload_ref": {"$ref": "#/$defs/payload_ref"},
+    "generic_argument": {"type": "object", "minProperties": 6},
+    "finite_rank_ledger": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {"$ref": "#/$defs/rank"}
+    },
+    "terminal_verdict": {"$ref": "#/$defs/terminal"},
+    "next_gate": {"type": "object", "minProperties": 3},
+    "claim_boundary": {"$ref": "#/$defs/boundary"},
+    "content_hashes": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    }
+  },
+  "$defs": {
+    "import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "result_id", "source_commit", "oracle_fields_consumed"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "result_id": {"type": "string"},
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "oracle_fields_consumed": {"const": []}
+      }
+    },
+    "payload_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "content_sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "rank": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["two_j", "exact_dimension", "coexact_dimension", "exact_to_coexact_rank", "coexact_to_exact_rank", "expected_cross_rank"],
+      "properties": {
+        "two_j": {"type": "integer", "minimum": 1},
+        "exact_dimension": {"type": "integer", "minimum": 1},
+        "coexact_dimension": {"type": "integer", "minimum": 2},
+        "exact_to_coexact_rank": {"type": "integer", "minimum": 1},
+        "coexact_to_exact_rank": {"type": "integer", "minimum": 1},
+        "expected_cross_rank": {"type": "integer", "minimum": 1}
+      }
+    },
+    "terminal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_state", "requested_longitudinal_coexact_split_closed", "complete_vector_tensor_quotient_status", "symmetric_tensor_stage_status", "q70_parent_preserved", "downstream_exceptional_export_activated"],
+      "properties": {
+        "result_state": {"const": "EXACT_TWO_WAY_VECTOR_HODGE_SPLIT_OBSTRUCTION"},
+        "requested_longitudinal_coexact_split_closed": {"const": false},
+        "complete_vector_tensor_quotient_status": {"const": "NOT_DEFINED_BEFORE_FULL_ISOTYPICAL_ENLARGEMENT"},
+        "symmetric_tensor_stage_status": {"const": "NOT_STARTED_AFTER_FIRST_VECTOR_CLOSURE_OBSTRUCTION"},
+        "q70_parent_preserved": {"const": true},
+        "downstream_exceptional_export_activated": {"const": false}
+      }
+    },
+    "boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["establishes", "does_not_establish"],
+      "properties": {
+        "establishes": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+        "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}}
+      }
+    }
+  }
+}
