@@ -1,0 +1,93 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This exact functional-analytic result proves dense nonclosed range for one real-characteristic p-primary block in every unweighted full-time Sobolev realization H^(s+2)(R)->H^s(R), hence obstructs Fredholm and implicit-function promotion of the finite exponential-polynomial theorem in that category. It does not analyze weighted/radiation spaces, finite time slabs, a compact-Cauchy elliptic constraint map, causal/retarded solutions, nonlinear existence, stability, observables, particles, scattering, positivity or quantum theory.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_SOBOLEV_LINEARIZATION_STABILITY_GATE_V1.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_SOBOLEV_LINEARIZATION_STABILITY_GATE_V1",
+          "sha256": "4768cfaef309b27300bac7ac4fc3c8eee9d850d97c49dd5527494b3569918b78"
+        }
+      ],
+      "id": "einstein.ph.wm.sobolev.full_time.closed_range_gate",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The witness uses the exact p shell omega^2=16/3.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "No continuous Sobolev completion of the Lee-Wald form is certified here.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "The real characteristic zero creates the normalized approximate kernel.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Unweighted spacetime Sobolev closed range fails before a bounded inverse can be defined.",
+            "status": "OBSTRUCTED"
+          },
+          "causal_retarded": {
+            "statement": "No weighted or retarded realization is analyzed.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The finite exponential-polynomial theorem remains separate and certified.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "Finite EP Taub covectors remain certified; their compact-Cauchy Sobolev adjoint realization is open.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan product",
+        "boundaries": "closed S1_L x S2 spatial slice, unweighted R time",
+        "carrier": "one complemented generic ell=2,k=0 p-primary master block inside the candidate Sobolev completion",
+        "charge_sector": "fixed magnetic U(1) bundle P_N, N=2",
+        "degree": "linear closed-range gate; quadratic consequences only as failed prerequisites",
+        "ell": 2,
+        "k": 0,
+        "m": "any fixed certified m",
+        "omega": "real shell omega^2=16/3",
+        "parity": "either certified generic parity; one block suffices",
+        "theory": "Weyl-Maxwell target with Einstein-Maxwell image"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/einstein_maxwell_weyl_sobolev_linearization_stability_gate.py",
+  "generated_by_sha256": "a0d2970560a3429fa761df88dd21541da0098d05265be9baad615caa42371907",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_nonlinear",
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_sobolev_linearization_stability_gate --check",
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_sobolev_linearization_stability_gate",
+    "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_sobolev_linearization_stability_gate",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-weyl-sobolev-linearization-stability-gate-fragment-v1.json"
+  ]
+}

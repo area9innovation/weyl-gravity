@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-sobolev-linearization-stability-gate-v1",
+  "title": "Unweighted full-time Sobolev linearization-stability completion gate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "provenance",
+    "declared_completion",
+    "closed_range_obstruction",
+    "functional_analytic_consequences",
+    "surviving_finite_harmonic_statements",
+    "cauchy_constraint_gate",
+    "scope",
+    "classification",
+    "claim_boundary",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-sobolev-linearization-stability-gate-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein-maxwell-weyl-sobolev-linearization-stability-gate-v1.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SOBOLEV_LINEARIZATION_STABILITY_GATE_V1"},
+    "result_state": {"const": "UNWEIGHTED_SPACETIME_SOBOLEV_CLOSED_RANGE_OBSTRUCTED_CAUCHY_CONSTRAINT_GATE_OPEN"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["input_commit", "producer", "producer_sha256", "imported_artifacts"],
+      "properties": {
+        "input_commit": {"const": "414853ed8"},
+        "producer": {"type": "string", "minLength": 1},
+        "producer_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "imported_artifacts": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "path", "result_id", "sha256"],
+            "properties": {
+              "name": {"type": "string", "minLength": 1},
+              "path": {"type": "string", "minLength": 1},
+              "result_id": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "declared_completion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["spacetime", "boundaries", "charge_sector", "gauge_slice", "correction_category", "regularity"],
+      "properties": {
+        "spacetime": {"type": "string", "minLength": 1},
+        "boundaries": {"type": "string", "minLength": 1},
+        "charge_sector": {"type": "string", "minLength": 1},
+        "gauge_slice": {"type": "string", "minLength": 1},
+        "correction_category": {"type": "string", "minLength": 1},
+        "regularity": {"type": "string", "minLength": 1}
+      }
+    },
+    "closed_range_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["spatial_fixture", "frequency_squared", "scalar_operator", "sobolev_map", "unitary_conjugate", "fourier_multiplier", "approximate_kernel", "kernel", "range_closure", "range", "proof", "mutation_control"],
+      "properties": {
+        "spatial_fixture": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ell", "lambda", "k", "parity", "extra_p_polarization"],
+          "properties": {
+            "ell": {"const": 2},
+            "lambda": {"const": 6},
+            "k": {"const": 0},
+            "parity": {"const": "either"},
+            "extra_p_polarization": {"type": "string", "minLength": 1}
+          }
+        },
+        "frequency_squared": {"const": "16/3"},
+        "scalar_operator": {"const": "P_e=partial_t^2+16/3"},
+        "sobolev_map": {"type": "string", "minLength": 1},
+        "unitary_conjugate": {"type": "string", "minLength": 1},
+        "fourier_multiplier": {"type": "string", "minLength": 1},
+        "approximate_kernel": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["fourier_support", "normalization", "upper_bound", "limit"],
+          "properties": {
+            "fourier_support": {"type": "string", "minLength": 1},
+            "normalization": {"const": "u_n has L2 norm 1"},
+            "upper_bound": {"type": "string", "minLength": 1},
+            "limit": {"const": "0"}
+          }
+        },
+        "kernel": {"type": "string", "minLength": 1},
+        "range_closure": {"type": "string", "minLength": 1},
+        "range": {"const": "DENSE_NOT_CLOSED"},
+        "proof": {"type": "string", "minLength": 1},
+        "mutation_control": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mutated_multiplier", "value_at_original_shell", "original_approximate_kernel_rejected"],
+          "properties": {
+            "mutated_multiplier": {"type": "string", "minLength": 1},
+            "value_at_original_shell": {"const": "3/19"},
+            "original_approximate_kernel_rejected": {"const": true}
+          }
+        }
+      }
+    },
+    "functional_analytic_consequences": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["closed_range", "fredholm", "bounded_generalized_inverse", "implicit_function_or_momentum_map_normal_form_hypothesis", "full_operator_consequence", "hilbert_adjoint_cokernel", "five_taub_covector_comparison"],
+      "properties": {
+        "closed_range": {"const": false},
+        "fredholm": {"const": false},
+        "bounded_generalized_inverse": {"const": false},
+        "implicit_function_or_momentum_map_normal_form_hypothesis": {"const": "FAILED_BEFORE_NONLINEAR_STEP"},
+        "full_operator_consequence": {"type": "string", "minLength": 1},
+        "hilbert_adjoint_cokernel": {"type": "string", "minLength": 1},
+        "five_taub_covector_comparison": {"type": "string", "minLength": 1}
+      }
+    },
+    "surviving_finite_harmonic_statements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["finite_exponential_polynomial_surjectivity", "five_EP_zero_factors", "finite_support_taub_necessity", "density_implies_sobolev_surjectivity", "EP_secular_inverse_is_bounded_sobolev_inverse", "sobolev_sufficiency"],
+      "properties": {
+        "finite_exponential_polynomial_surjectivity": {"const": "CERTIFIED_UNCHANGED"},
+        "five_EP_zero_factors": {"const": "CERTIFIED_UNCHANGED"},
+        "finite_support_taub_necessity": {"const": "CERTIFIED_UNCHANGED_IN_ITS_DECLARED_CATEGORY"},
+        "density_implies_sobolev_surjectivity": {"const": false},
+        "EP_secular_inverse_is_bounded_sobolev_inverse": {"const": false},
+        "sobolev_sufficiency": {"const": false}
+      }
+    },
+    "cauchy_constraint_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "reason", "missing_objects", "not_refuted"],
+      "properties": {
+        "status": {"const": "OPEN_SEPARATE_PROBLEM"},
+        "reason": {"type": "string", "minLength": 1},
+        "missing_objects": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}},
+        "not_refuted": {"type": "string", "minLength": 1}
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"],
+      "properties": {
+        "theory": {"type": "string", "minLength": 1},
+        "background": {"type": "string", "minLength": 1},
+        "boundaries": {"type": "string", "minLength": 1},
+        "charge_sector": {"type": "string", "minLength": 1},
+        "carrier": {"type": "string", "minLength": 1},
+        "degree": {"type": "string", "minLength": 1},
+        "parity": {"type": "string", "minLength": 1},
+        "ell": {"const": 2},
+        "m": {"type": "string", "minLength": 1},
+        "k": {"const": 0},
+        "omega": {"const": "real shell omega^2=16/3"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["finite_harmonic_structural_theorem_imported", "explicit_sobolev_realization_declared", "closed_range_certified", "fredholm_certified", "five_dimensional_sobolev_adjoint_cokernel_certified", "sobolev_linearization_stability_promoted", "first_failed_hypothesis_certified", "compact_cauchy_constraint_problem_closed", "global_nonlinear_or_stability_claim", "lorentzian_causal_claim", "quantum_claim"],
+      "properties": {
+        "finite_harmonic_structural_theorem_imported": {"const": true},
+        "explicit_sobolev_realization_declared": {"const": true},
+        "closed_range_certified": {"const": false},
+        "fredholm_certified": {"const": false},
+        "five_dimensional_sobolev_adjoint_cokernel_certified": {"const": false},
+        "sobolev_linearization_stability_promoted": {"const": false},
+        "first_failed_hypothesis_certified": {"const": true},
+        "compact_cauchy_constraint_problem_closed": {"const": false},
+        "global_nonlinear_or_stability_claim": {"const": false},
+        "lorentzian_causal_claim": {"const": false},
+        "quantum_claim": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  }
+}

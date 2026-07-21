@@ -1,0 +1,92 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SOBOLEV_LINEARIZATION_STABILITY_GATE_V1",
+  "date_utc": "2026-07-21",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "input_commit": "414853ed8",
+  "tests": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile bridge/einstein_sector/einstein_maxwell_weyl_sobolev_linearization_stability_gate.py bridge/einstein_sector/verify_einstein_maxwell_weyl_sobolev_linearization_stability_gate.py bridge/einstein_sector/tests/test_einstein_maxwell_weyl_sobolev_linearization_stability_gate.py",
+      "elapsed_seconds": 0.03,
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_sobolev_linearization_stability_gate --check",
+      "elapsed_seconds": 0.51,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_sobolev_linearization_stability_gate",
+      "elapsed_seconds": 0.59,
+      "status": "PASS",
+      "independence": "does not import the producer; independently specializes the p-primary dispersion, derives the Bessel-conjugated Fourier multiplier, proves the normalized approximate-kernel bound, and checks the shell-lifting mutation"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_sobolev_linearization_stability_gate",
+      "elapsed_seconds": 0.63,
+      "status": "PASS",
+      "tests_run": 11
+    },
+    {
+      "tier": 1,
+      "command": "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-weyl-sobolev-linearization-stability-gate-fragment-v1.json",
+      "elapsed_seconds": 0.13,
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "python3 -m json.tool bridge/einstein_sector/schema/einstein-maxwell-weyl-sobolev-linearization-stability-gate-v1.schema.json",
+      "elapsed_seconds": 0.03,
+      "status": "PASS"
+    }
+  ],
+  "mutations": [
+    {
+      "name": "lift_characteristic_zero",
+      "mutation": "replace omega_e^2-xi^2 by omega_e^2+1-xi^2 in the normalized multiplier",
+      "expected": "the original shell value changes from zero to 3/19 and the original approximate-kernel witness is rejected",
+      "status": "DETECTED"
+    },
+    {
+      "name": "false_sobolev_promotion",
+      "mutation": "sobolev_linearization_stability_promoted=true",
+      "expected": "strict schema rejection",
+      "status": "REJECTED"
+    },
+    {
+      "name": "atlas_evidence_hash",
+      "mutation": "replace certificate sha256 by a zero hash",
+      "expected": "independent verifier rejection",
+      "status": "REJECTED"
+    }
+  ],
+  "higher_tiers": {
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "All five scientific inputs are unchanged content-addressed artifacts and are rechecked by exact hashes; the new theorem is an isolated functional-analytic gate and changes no shared operator or schema consumer."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The result records a first failed hypothesis and does not promote the finite theorem, freeze a new Sobolev theorem, or prepare a release."
+    }
+  },
+  "advisory_shadow": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 4.99,
+    "process_status": "PASS_ADVISORY",
+    "findings": [
+      "bridge certificate audit reported pre-existing corpus drift",
+      "coverage census reported 1353 certificates versus the 2026-07-19 baseline of 976",
+      "Forge binary is an unpinned development build whose revision differs from the stdlib checkout"
+    ],
+    "promotion_effect": "NONE; advisory findings are recorded and are not treated as a strict pass"
+  },
+  "claim_boundary": "The receipt covers dense nonclosed range for one complemented p-primary block in the unweighted full-time Sobolev realization and the resulting failure of Fredholm and bounded-inverse hypotheses. It does not identify the cokernel of a compact-Cauchy constraint map, certify a Sobolev momentum-map normal form, or make a causal, nonlinear-existence, stability, observable, scattering, particle or quantum claim."
+}
