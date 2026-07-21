@@ -1,0 +1,40 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "PAPER_09_LEGACY_CLAIM_BINDING_REPIN_V1_TIER_RECEIPT",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "disposition": "REPIN_CURRENT_PUBLICATION_SOURCES",
+  "tier0": {
+    "status": "PASS",
+    "commands": [
+      "python3 -m py_compile d_quotient_classical/backreacted_clock/paper_09_claim_table.py d_quotient_classical/backreacted_clock/verify_paper_09_claim_table.py d_quotient_classical/backreacted_clock/tests/test_paper_09_claim_table.py",
+      "python3 -m json.tool d_quotient_classical/certificates/PAPER_09_BERGER_CLAIM_TABLE.json",
+      "python3 -m json.tool d_quotient_classical/schema/paper-09-berger-claim-table-v1.schema.json",
+      "git diff --check -- <explicit manifest>"
+    ]
+  },
+  "tier1": {
+    "status": "PASS",
+    "commands": [
+      "python3 d_quotient_classical/backreacted_clock/paper_09_claim_table.py --check --guards",
+      "python3 d_quotient_classical/backreacted_clock/verify_paper_09_claim_table.py",
+      "python3 -m pytest -q d_quotient_classical/backreacted_clock/tests/test_paper_09_claim_table.py"
+    ],
+    "elapsed_seconds": 1.14,
+    "tests_passed": 4
+  },
+  "affected_downstream": {
+    "status": "EXPECTED_REGENERATION_REQUIRED_NOT_A_PASS",
+    "command": "python3 paper/verify_09_relational_clocks_claim_map.py",
+    "observed_first_failure": "import hash drift: d_quotient_classical/certificates/PAPER_09_BERGER_CLAIM_TABLE.json",
+    "reason": "The publication-current 22-claim DRAFT_ALLOWED map intentionally pins the pre-repin legacy certificate. Its owner must regenerate that import after this gate lands; Paper 9 files are forbidden in this lease."
+  },
+  "tier2": {
+    "status": "NOT_RUN",
+    "reason": "No mathematical certificate or scientific claim changed. The only affected out-of-scope publication consumer was executed and its expected exact-hash regeneration need is recorded separately, not called a pass."
+  },
+  "tier3": {
+    "status": "NOT_RUN",
+    "reason": "The final Paper 9 freeze retains a separate observer-suite evidence gate and belongs to its publication owner."
+  },
+  "claim_promotion": "SOURCE_BINDING_REPINNED_NO_SCIENTIFIC_CHANGE"
+}

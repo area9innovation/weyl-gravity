@@ -5,7 +5,7 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "schema", "result_id", "paper_state", "theorem_frozen", "paper_sources",
+    "schema", "result_id", "paper_state", "theorem_frozen", "paper_sources", "source_binding_disposition",
     "setting", "claims", "claim_ids_complete", "independent_cross_checks", "signoff_evidence", "required_signoffs",
     "forbidden_promotions", "main_theorem_exclusions", "next_gate", "claim_boundary"
   ],
@@ -28,6 +28,24 @@
         "paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex": {
           "$ref": "#/$defs/sha256"
         }
+      }
+    },
+    "source_binding_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selected_disposition", "scientific_claim_change", "legacy_certificate_retained", "legacy_claim_count", "publication_superset_claim_count", "legacy_claim_ids_preserved_in_superset", "pre_repin_paper_sources", "publication_claim_map", "draft_allowed_report", "health_freeze_receipt", "superset_followup"],
+      "properties": {
+        "selected_disposition": {"const": "REPIN_CURRENT_PUBLICATION_SOURCES"},
+        "scientific_claim_change": {"const": false},
+        "legacy_certificate_retained": {"const": true},
+        "legacy_claim_count": {"const": 10},
+        "publication_superset_claim_count": {"const": 22},
+        "legacy_claim_ids_preserved_in_superset": {"$ref": "#/$defs/claimIds"},
+        "pre_repin_paper_sources": {"type": "object"},
+        "publication_claim_map": {"$ref": "#/$defs/sourceRef"},
+        "draft_allowed_report": {"$ref": "#/$defs/sourceRef"},
+        "health_freeze_receipt": {"$ref": "#/$defs/sourceRef"},
+        "superset_followup": {"type": "string", "minLength": 1}
       }
     },
     "setting": {"type": "string", "minLength": 1},
@@ -88,6 +106,19 @@
   },
   "$defs": {
     "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "claimIds": {"const": ["P09-C1", "P09-C2", "P09-C3", "P09-C4", "P09-C5", "P09-C6", "P09-C7", "P09-C8", "P09-C9", "P09-C10"]},
+    "sourceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "result_id": {"type": "string"},
+        "freeze_decision": {"type": "string"},
+        "decision": {"type": "string"}
+      }
+    },
     "crosscheck": {
       "type": "object",
       "additionalProperties": false,

@@ -20,6 +20,13 @@ Q3_CROSSCHECK = CERTIFICATE_DIR / "BERGER_Q3_ACTION_SECTOR_CROSSCHECK.json"
 GENERATOR_AUDIT = CERTIFICATE_DIR / "BERGER_GENERATOR_CONJUGATION_AUDIT.json"
 NONLINEAR_SIGNOFF = CERTIFICATE_DIR / "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF.json"
 QUANTUM_SIGNOFF = ROOT / "quantum-weyl/cartan/certificates/PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF.json"
+PUBLICATION_CLAIM_MAP = ROOT / "paper/09-relational-clocks-berger-d-cartan-claim-map.json"
+DRAFT_ALLOWED_REPORT = ROOT / "reports/observer-paper09-counterflow-health-nonactivation-freeze-closeout-2026-07-21.md"
+HEALTH_FREEZE_RECEIPT = ROOT / "closed_universe_observers/receipts/PAPER09_COUNTERFLOW_HEALTH_NONACTIVATION_FREEZE_V1_TIER_RECEIPT.json"
+PRE_REPIN_PAPER_SOURCES = {
+    "paper/09-relational-clocks-berger-d-cartan.tex": "817771965e1f32120743214a87124cc3e70ea2f46cc136a6caeada21e333f919",
+    "paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex": "c18235ff2e41372949e2d63a7f3ec30a7ae0df497b92e4eb9a540656e7b997ce",
+}
 
 
 CLAIMS = (
@@ -273,6 +280,20 @@ def build() -> dict[str, object]:
             raise AssertionError(f"quantum signoff forbidden promotion detected: {dotted}")
     if quantum_signoff.get("claim_status") != "SIGNED_OFF_CLASSICAL_K_ONLY_QUANTUM_BLOCKED":
         raise AssertionError("quantum signoff verdict drifted")
+    publication_map = _read(PUBLICATION_CLAIM_MAP)
+    if publication_map.get("result_id") != "PAPER09_COUNTERFLOW_HEALTH_NONACTIVATION_FREEZE_V1":
+        raise AssertionError("publication-current Paper 9 claim map identity drifted")
+    if publication_map.get("freeze_decision") != "DRAFT_ALLOWED":
+        raise AssertionError("publication-current Paper 9 decision is not DRAFT_ALLOWED")
+    publication_claim_ids = [entry.get("claim_id") for entry in publication_map.get("claims", [])]
+    if len(publication_claim_ids) != 22 or publication_claim_ids[:10] != [spec["claim_id"] for spec in CLAIMS]:
+        raise AssertionError("22-claim superset no longer preserves the ten legacy claim identities")
+    health_receipt = _read(HEALTH_FREEZE_RECEIPT)
+    if health_receipt.get("result_id") != "PAPER09_COUNTERFLOW_HEALTH_NONACTIVATION_FREEZE_V1_TIER_RECEIPT":
+        raise AssertionError("Paper 9 health-freeze receipt identity drifted")
+    draft_report = DRAFT_ALLOWED_REPORT.read_text()
+    if "Decision: `DRAFT_ALLOWED`" not in draft_report or "LEGACY_TEN_CLAIM_SOURCE_BINDING_SUPERSESSION" not in draft_report:
+        raise AssertionError("DRAFT_ALLOWED report no longer records this source-binding gate")
     return {
         "schema": "pure-weyl-paper-09-berger-claim-table-v1",
         "result_id": "PAPER_09_BERGER_CLAIM_TABLE",
@@ -281,6 +302,32 @@ def build() -> dict[str, object]:
         "paper_sources": {
             str(MAIN_PAPER.relative_to(ROOT)): _sha256(MAIN_PAPER),
             str(SUPPLEMENT.relative_to(ROOT)): _sha256(SUPPLEMENT),
+        },
+        "source_binding_disposition": {
+            "selected_disposition": "REPIN_CURRENT_PUBLICATION_SOURCES",
+            "scientific_claim_change": False,
+            "legacy_certificate_retained": True,
+            "legacy_claim_count": 10,
+            "publication_superset_claim_count": 22,
+            "legacy_claim_ids_preserved_in_superset": [spec["claim_id"] for spec in CLAIMS],
+            "pre_repin_paper_sources": PRE_REPIN_PAPER_SOURCES,
+            "publication_claim_map": {
+                "path": str(PUBLICATION_CLAIM_MAP.relative_to(ROOT)),
+                "sha256": _sha256(PUBLICATION_CLAIM_MAP),
+                "result_id": publication_map["result_id"],
+                "freeze_decision": publication_map["freeze_decision"],
+            },
+            "draft_allowed_report": {
+                "path": str(DRAFT_ALLOWED_REPORT.relative_to(ROOT)),
+                "sha256": _sha256(DRAFT_ALLOWED_REPORT),
+                "decision": "DRAFT_ALLOWED",
+            },
+            "health_freeze_receipt": {
+                "path": str(HEALTH_FREEZE_RECEIPT.relative_to(ROOT)),
+                "sha256": _sha256(HEALTH_FREEZE_RECEIPT),
+                "result_id": health_receipt["result_id"],
+            },
+            "superset_followup": "The publication claim-map owner must regenerate its exact import of PAPER_09_BERGER_CLAIM_TABLE after this repin; no observer claim is imported into the ten-claim table.",
         },
         "setting": "one-parameter compact positive Berger S1 clock incidence family across the scalar coupling for fixed-coupling momentum rigidity and linear D nullity; exact rational q=9/40 representative for the 54-row classical K-Cartan result through arity three",
         "claims": claims,
@@ -363,6 +410,26 @@ def verify(payload: dict[str, object]) -> None:
         raise AssertionError("claim-id ledger is incomplete or reordered")
     if [entry["claim_id"] for entry in payload["claims"]] != expected:
         raise AssertionError("claim entries are incomplete or reordered")
+    for entry, spec in zip(payload["claims"], CLAIMS):
+        for key in ("claim_id", "paper_sections", "claim", "certificate", "required_true", "required_false"):
+            if entry[key] != spec[key]:
+                raise AssertionError(f"legacy claim scope drifted: {spec['claim_id']} {key}")
+    for relative, expected_hash in payload["paper_sources"].items():
+        if _sha256(ROOT / relative) != expected_hash:
+            raise AssertionError(f"paper source hash drifted: {relative}")
+    binding = payload["source_binding_disposition"]
+    if binding["selected_disposition"] != "REPIN_CURRENT_PUBLICATION_SOURCES":
+        raise AssertionError("source-binding disposition is not REPIN")
+    if binding["scientific_claim_change"] is not False or binding["legacy_certificate_retained"] is not True:
+        raise AssertionError("repin changed science or retired the legacy certificate")
+    if binding["legacy_claim_count"] != 10 or binding["publication_superset_claim_count"] != 22:
+        raise AssertionError("legacy/superset claim counts drifted")
+    if binding["legacy_claim_ids_preserved_in_superset"] != expected:
+        raise AssertionError("legacy claim identities are not preserved in the superset")
+    for key in ("publication_claim_map", "draft_allowed_report", "health_freeze_receipt"):
+        ref = binding[key]
+        if _sha256(ROOT / ref["path"]) != ref["sha256"]:
+            raise AssertionError(f"source-binding import hash drifted: {key}")
     main = MAIN_PAPER.read_text()
     supplement = SUPPLEMENT.read_text()
     for claim_id in expected:
@@ -449,7 +516,10 @@ def main() -> int:
             ("overpromote nonlinear signoff", ("required_signoffs", "nonlinear_team"), "APPROVED_UNSCOPED"),
             ("overpromote quantum signoff", ("required_signoffs", "quantum_team"), "QUANTUM_THEOREM_APPROVED"),
             ("drop signoff evidence", ("signoff_evidence",), payload["signoff_evidence"][:-1]),
-            ("drop claim", ("claim_ids_complete",), payload["claim_ids_complete"][:-1]),
+            ("stale old paper hash", ("paper_sources", "paper/09-relational-clocks-berger-d-cartan.tex"), PRE_REPIN_PAPER_SOURCES["paper/09-relational-clocks-berger-d-cartan.tex"]),
+            ("dropped legacy claim", ("claims",), payload["claims"][:-1]),
+            ("scope widening", ("claims", 0, "claim"), payload["claims"][0]["claim"] + " This holds for every background."),
+            ("silent certificate deletion", ("claims", 0, "certificate_sha256"), "0" * 64),
         )
         for name, path, value in mutants:
             mutant = deepcopy(payload)

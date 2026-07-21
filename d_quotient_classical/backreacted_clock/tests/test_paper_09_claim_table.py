@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import subprocess
+import sys
 
 import jsonschema
 
@@ -25,6 +27,12 @@ def test_paper_09_claim_table_is_complete_and_fail_closed() -> None:
     assert all("MAXWELL" not in entry["certificate_result_id"] for entry in payload["claims"])
     assert payload["independent_cross_checks"][0]["supports_claim"] == "P09-C8"
     assert payload["independent_cross_checks"][1]["certificate_result_id"] == "BERGER_GENERATOR_CONJUGATION_AUDIT"
+    binding = payload["source_binding_disposition"]
+    assert binding["selected_disposition"] == "REPIN_CURRENT_PUBLICATION_SOURCES"
+    assert binding["scientific_claim_change"] is False
+    assert binding["legacy_certificate_retained"] is True
+    assert binding["legacy_claim_count"] == 10
+    assert binding["publication_superset_claim_count"] == 22
 
 
 def test_paper_09_claim_table_schema_and_persisted_output() -> None:
@@ -37,3 +45,11 @@ def test_paper_09_claim_table_schema_and_persisted_output() -> None:
 
 def test_paper_09_independent_consumer() -> None:
     assert independent_verify() == 0
+
+
+def test_paper_09_required_repin_mutation_guards() -> None:
+    subprocess.run(
+        [sys.executable, "d_quotient_classical/backreacted_clock/paper_09_claim_table.py", "--guards"],
+        cwd=theorem.ROOT,
+        check=True,
+    )
