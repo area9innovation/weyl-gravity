@@ -1,0 +1,21 @@
+{
+  "id": "sf:forge-request/science-forge-resident-session-instance-identity",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Bind each resident terminal/conversation instance to one stable Science Forge agent identity so two live sessions cannot silently operate as the same agent, renew each other's lease, overwrite team titles, or leave the coordinator unable to identify the actual writer.",
+    "depends_on": [
+      "sf:forge-request/science-forge-agent-status-stream-diagnostics",
+      "sf:forge-request/bug-science-forge-pull-transition-cas-race"
+    ],
+    "stop_condition": "Land a documented resident-session identity layer in which: (1) a resident start/adopt command creates or imports an opaque session-instance ID distinct from the stable agent ID and scientific stream; (2) every lease acquire/renew/resume/report/close records or checks that session instance; (3) a second live session presenting the same agent ID cannot renew, report, close, or acquire work while the first session owns the lease, even on the same item; (4) a coordinator can inspect a deterministic `agent sessions` view containing session instance, stable agent ID, stream, current item, lease expiry, display label, and last append-only action; (5) an explicit coordinator `work transfer-session` operation atomically releases the old session binding and acquires the new one under one transfer ID without rewriting history or changing the stable agent identity; (6) a crashed/lost session can be recovered only through that explicit transfer or expiry, never by an implicit UI rename; (7) Konsole/TUI titles are derived from the folded binding and show both the scientific label and stable machine ID, while read-only coordinator commands never stamp the coordinator as a worker; and (8) AGENTS/CLAUDE adoption guidance tells a resident to inspect its binding before pulling or resuming work. Add deterministic two-session fixtures for same-agent/same-item renewal refusal, same-agent/different-item refusal, explicit transfer, expiry recovery, coordinator-title pollution, UI rename with no authority change, and one resident legitimately keeping the same stable identity across successive work items.",
+    "forbid": "no PID, TTY number, Konsole title, UI team name, cwd, or model conversation label as the sole authority; no rewriting lease events; no silent transfer on renew/resume; no global serialization of unrelated agents; no second scientific state fold; no session token embedded in scientific certificates or used to alter mathematical provenance; no preventing independent-reproduction leases that are explicitly typed and use different stable agent identities.",
+    "notes": [
+      "Live reproduction on 2026-07-21: Konsole Sessions/2 and /5 both operated as `classical-1` on `classical-closed-s3-relative-phase-nonhomogeneous-hodge-preflight`. Session/5 was the actual producer/verifier/certificate writer from the original lease; Session/2 resumed and renewed the same lease after a UI team rename. Science Forge could not distinguish them because both supplied the same stable agent ID.",
+      "The coordinator had to introspect Konsole D-Bus scrollback and active file production to designate Session/5 as canonical Classical, reassign Session/2 to Quantum, reset six terminal titles, and return phantom `quantum-anomaly-1` and orphaned `nonlinear-1` leases to READY. This runtime evidence must become a normal fail-closed status/transfer path rather than an ad hoc desktop audit.",
+      "Stable mapping after the audit: coordinator=root; Sessions/2=Quantum/quantum-qme-1; Sessions/3=Einstein-Bridge/bridge-1; Sessions/4=Observer/observer-1; Sessions/5=Classical/classical-1; Sessions/6=Black-hole/black-hole-1. Session paths are illustrative runtime values, not durable identities."
+    ]
+  }
+}

@@ -4,7 +4,7 @@
   "schema": "work-v0",
   "body": {
     "owner": "physics-programme",
-    "state": "LANDED",
+    "state": "ACCEPTED",
     "objective": "Make the documented stale-shared-index artifact of isolated Science Forge commits safe and intelligible. After an isolated-index commit advances HEAD without touching the process-global index, raw `git status` can display a newly committed path simultaneously as a staged deletion and an untracked addition. This is technically expected but operationally dangerous: resident agents may attempt reset/restore cleanup or a manual commit may absorb misleading index state.",
     "depends_on": [
       "sf:forge-request/bug-science-forge-shared-index-cross-stream-commit"
@@ -18,6 +18,7 @@
       "A per-agent persistent index or virtual status layer is acceptable if raw-Git escape hatches are documented and guarded.",
       "2026-07-20T23:05:00Z forge-coordinator: ACCEPTED \u2014 mirrored sf:program/work/SF16-git-status-surface. Read-only s-f git status computing HEAD-to-worktree truth independent of the stale shared index, reporting index base/digest + staleness, distinguishing real staged intent from post-isolated-commit artifacts, printing exact safe next actions. Composes with SF5. Any reconciliation is CAS-guarded or refuses (never git reset / read-tree HEAD / index replacement).",
       "2026-07-21T00:10:00Z forge-coordinator: LANDED tango 7617f5ef9. New read-only `s-f git status`: computes HEAD-to-worktree TRUTH through a PRIVATE HEAD-seeded index (the shared process-global index is read ZERO times, written ZERO times \u2014 reuses the SF5 sf_iso_index), reports whether the shared index is STALE (its tree vs HEAD tree) and explains the staged-deletion+untracked-add artifact, distinguishes it from the authoritative TRUE STATE, and prints exact safe next actions (s-f work commit by pathspec; never git reset/add -A/commit -a/restore --staged, which could discard another agent\u2019s staged intent). Strictly read-only (HEAD + shared-index tree byte-unchanged; the command never mutates). Gate: run.sh SF16 (scratch stale-index simulation \u2014 raw MM vs reported TRUE STATE clean + STALE flag + read-only assertion). A bounded CAS-guarded reconciliation command was NOT added (the forbid rules it out unless it can prove no staged intent is lost) \u2014 the read-only truth surface + safe-actions guidance covers the reported hazard."
+      ,"2026-07-21T02:15:00Z physics-coordinator: REOPENED to ACCEPTED because the stop condition explicitly requires the safe status to remain fast on the current large repository. The installed `s-f git status` printed its repo/HEAD header and then emitted nothing further for more than 60 seconds while scanning the enclosing monorepo; it was terminated. A private HEAD-seeded status restricted to `physics/symplectic-reconstruction` completed in approximately 2.5 seconds and found the expected live team edits. Preserve the landed semantics, but scope the expensive worktree/untracked scan to the resolved programme root by default (or an equally safe explicit mode) and add a large-unrelated-monorepo latency fixture before returning this request to LANDED."
     ]
   }
 }
