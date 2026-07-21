@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh-endpoint-nonselection-assembly-v1",
+  "title": "BH endpoint-selection assembly -- infinity Einstein selection, horizon non-selection",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_token",
+               "dependency_tags", "lifecycle", "declaration", "invariant_pairing",
+               "horizon_nonselection", "infinity_selection", "endpoint_disposition",
+               "separation_from_cauchy_truncation", "counterexample_mutations_rejected",
+               "missing_analytic_object", "claim_flags", "missing_objects",
+               "does_not_establish", "provenance", "verification_command"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh-endpoint-nonselection-assembly-v1" },
+    "schema_path": { "const": "black_hole_programme/schema/bh-endpoint-nonselection-assembly-v1.schema.json" },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH_ENDPOINT_NONSELECTION_ASSEMBLY" },
+    "result_token": { "const": "BH_ONE_ENDED_ENDPOINT_SELECTION_INFINITY_EINSTEIN_HORIZON_NONSELECTION" },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "lifecycle": { "const": "CLASSIFIED" },
+    "declaration": {
+      "type": "object",
+      "required": ["theory", "setting", "statement_kind"]
+    },
+    "invariant_pairing": {
+      "type": "object",
+      "required": ["gram", "det", "det_strictly_negative_real_omega_nonzero",
+                   "rank", "signature", "representative_independent",
+                   "einstein_self_pairing", "cross_nonzero_all_real_omega"],
+      "properties": {
+        "det_strictly_negative_real_omega_nonzero": { "const": true },
+        "rank": { "const": 2 },
+        "signature": { "const": "(1, 1)" },
+        "cross_nonzero_all_real_omega": { "const": true }
+      }
+    },
+    "horizon_nonselection": {
+      "type": "object",
+      "required": ["einstein_rw_ingoing_dimension", "extra_family", "conclusion",
+                   "source"],
+      "properties": {
+        "einstein_rw_ingoing_dimension": { "const": 1 }
+      }
+    },
+    "infinity_selection": {
+      "type": "object",
+      "required": ["conclusion", "axial", "polar"]
+    },
+    "endpoint_disposition": {
+      "type": "object",
+      "required": ["verdict", "additional_solution_admitted_at_horizon",
+                   "einstein_forced_on_finite_flux_phase_space",
+                   "exclusion_mechanism", "exceptional_set"],
+      "properties": {
+        "additional_solution_admitted_at_horizon": { "const": true },
+        "einstein_forced_on_finite_flux_phase_space": { "const": true }
+      }
+    },
+    "separation_from_cauchy_truncation": {
+      "type": "object",
+      "required": ["local_cauchy", "endpoint", "distinct"]
+    },
+    "counterexample_mutations_rejected": {
+      "type": "array", "items": { "type": "string" }, "minItems": 1
+    },
+    "missing_analytic_object": {
+      "type": "object",
+      "required": ["object", "nature", "consequence"]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["invariant_pairing_rank_signature_certified",
+                   "horizon_nonselection_certified", "infinity_selection_certified",
+                   "endpoint_disposition_certified", "cauchy_separation_certified",
+                   "polar_fixture_only_preserved", "global_connection_map_constructed",
+                   "two_ended_scattering_map_certified",
+                   "polar_theorem_beyond_fixture_certified",
+                   "qnm_stability_scattering_claimed", "parity_complete_claim"],
+      "properties": {
+        "invariant_pairing_rank_signature_certified": { "const": true },
+        "horizon_nonselection_certified": { "const": true },
+        "infinity_selection_certified": { "const": true },
+        "endpoint_disposition_certified": { "const": true },
+        "cauchy_separation_certified": { "const": true },
+        "polar_fixture_only_preserved": { "const": true },
+        "global_connection_map_constructed": { "const": false },
+        "two_ended_scattering_map_certified": { "const": false },
+        "polar_theorem_beyond_fixture_certified": { "const": false },
+        "qnm_stability_scattering_claimed": { "const": false },
+        "parity_complete_claim": { "const": false }
+      }
+    },
+    "missing_objects": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "does_not_establish": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "provenance": {
+      "type": "object",
+      "required": ["generator_path",
+                   "horizon_reach_certificate", "horizon_reach_sha256",
+                   "causal_disposition_certificate", "causal_disposition_sha256",
+                   "flux_matrix_certificate", "flux_matrix_sha256",
+                   "cross_invariant_certificate", "cross_invariant_sha256",
+                   "analytic_continuation_certificate", "analytic_continuation_sha256",
+                   "flux_class_certificate", "flux_class_sha256",
+                   "symbolic_flux_certificate", "symbolic_flux_sha256",
+                   "cauchy_truncation_certificate", "cauchy_truncation_sha256",
+                   "polar_quantifier_certificate", "polar_quantifier_sha256"]
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh_endpoint_nonselection_assembly.py"
+    }
+  }
+}

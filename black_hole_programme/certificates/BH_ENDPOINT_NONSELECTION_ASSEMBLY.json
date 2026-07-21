@@ -1,0 +1,108 @@
+{
+  "claim_flags": {
+    "cauchy_separation_certified": true,
+    "endpoint_disposition_certified": true,
+    "global_connection_map_constructed": false,
+    "horizon_nonselection_certified": true,
+    "infinity_selection_certified": true,
+    "invariant_pairing_rank_signature_certified": true,
+    "parity_complete_claim": false,
+    "polar_fixture_only_preserved": true,
+    "polar_theorem_beyond_fixture_certified": false,
+    "qnm_stability_scattering_claimed": false,
+    "two_ended_scattering_map_certified": false
+  },
+  "counterexample_mutations_rejected": [
+    "imposing a LOCAL horizon boundary condition that drops the extra ingoing family and calling it endpoint selection -- REJECTED: horizon analyticity provably admits the two-parameter extra family (BH2A_HORIZON_REACH), so no local horizon condition removes it",
+    "calling the infinity finite-norm selection a LOCAL boundary condition -- REJECTED: it is a phase-space normalization, not a pointwise boundary datum (BH2C finite-flux headline)",
+    "asserting the Einstein-extra pairing is degenerate at some real omega != 0 -- REJECTED: det G = -|a|^2 < 0 strictly for all real omega != 0 (rank 2, signature (1,1))"
+  ],
+  "declaration": {
+    "setting": "Schwarzschild exterior, axial l = 2, real omega != 0; polar fixture-only",
+    "statement_kind": "one-ended endpoint-condition selection/nonselection (NOT a universal no-local-causal-truncation theorem)",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a two-ended scattering matrix or the global connection map",
+    "any polar endpoint theorem beyond the preserved fixture",
+    "any QNM, stability, ringdown, scattering, particle, or ghost claim; no additional classical branch is a particle or ghost",
+    "any claim that every local differential boundary or initial condition fails (only the tested endpoint prescriptions are decided)",
+    "a parity-complete claim (polar is fixture-only)"
+  ],
+  "endpoint_disposition": {
+    "additional_solution_admitted_at_horizon": true,
+    "einstein_forced_on_finite_flux_phase_space": true,
+    "exceptional_set": "omega = 0 only (excluded exceptional carrier); no other real exceptional frequency",
+    "exclusion_mechanism": "phase-space normalization (infinity norm), not a local boundary/initial condition",
+    "verdict": "horizon analyticity + the certified infinity finite-flux class force delta R_ab = 0 ON THE FINITE-FLUX PHASE SPACE; the additional solution EXISTS (horizon-regular) but is excluded at infinity by symplectic-norm finiteness, NOT by a local boundary or initial condition"
+  },
+  "horizon_nonselection": {
+    "conclusion": "future-horizon analyticity admits BOTH branches; it does NOT force delta R_ab = 0",
+    "einstein_rw_ingoing_dimension": 1,
+    "extra_family": "two-parameter ingoing-regular family at every frequency (indicial {0 (x2), -4 i m omega, -2 - 4 i m omega})",
+    "source": "BH2A_HORIZON_REACH + BH2A_CAUSAL_DISPOSITION"
+  },
+  "infinity_selection": {
+    "axial": "literal symbolic omega (BH2C_SYMBOLIC_FLUX_RADIATION_CLASS: E x E ~ r^-2 finite, omega-independent) + omega = 3/5 fixture (BH2C_FLUX_CLASS)",
+    "conclusion": "the finite-Lee-Wald-flux asymptotic phase space at infinity contains EXACTLY the Einstein sector; the extra slice-norm diverges",
+    "polar": "fixture-only (BH2C_POLAR_FLUX_CLASS via BH2C_FLUX_CLASS chain); preserved as fixture-only"
+  },
+  "invariant_pairing": {
+    "cross_nonzero_all_real_omega": true,
+    "det": "det G = -|a|^2 = -9216*omega**2*(omega**2 + 4)*(16*omega**2 + 1)**2/(25*(omega**2 + 1)*(4*omega**2 + 1))",
+    "det_strictly_negative_real_omega_nonzero": true,
+    "einstein_self_pairing": "null (BH2A_FLUX_MATRIX RW-null theorem)",
+    "gram": "G = [[0, a], [conj a, b]] on span(Einstein, extra); a = a(omega) = i F^r/(pi alpha); b = extra self-pairing (representative-dependent)",
+    "rank": 2,
+    "representative_independent": "rank and signature are independent of b (det = -|a|^2 < 0 for all real omega != 0)",
+    "signature": "(1, 1)"
+  },
+  "lifecycle": "CLASSIFIED",
+  "missing_analytic_object": {
+    "consequence": "the full two-ended scattering map is NOT constructed; only the one-ended endpoint disposition and the exact invariant pairing are certified",
+    "nature": "confluent-Heun connection; transcendental -- the connection coefficients are not elementary",
+    "object": "the EXACT global linear map from ingoing horizon data to the infinity radiation data (the master-ODE connection problem)"
+  },
+  "missing_objects": [
+    "the exact global horizon-to-infinity connection map (confluent-Heun connection; transcendental)",
+    "a two-ended scattering matrix",
+    "a polar endpoint theorem beyond the fixture level (needs the polar route-B symbolic identity)",
+    "general l; the exact extra self-pairing invariant b (representative-dependent; only rank/signature are invariant)"
+  ],
+  "provenance": {
+    "analytic_continuation_certificate": "black_hole_programme/certificates/BH3_ANALYTIC_CONTINUATION_GATE.json",
+    "analytic_continuation_sha256": "75e18d9a91d6827ad2fae645a05b0fe1cc9a50459f9b03dca280c884f917aca3",
+    "cauchy_truncation_certificate": "black_hole_programme/certificates/BH_LOCAL_EINSTEIN_CAUCHY_TRUNCATION.json",
+    "cauchy_truncation_sha256": "8160b46caec5f8245deb04caf815e10a8ddb07a286ef44fa46600170c1e19c6d",
+    "causal_disposition_certificate": "black_hole_programme/certificates/BH2A_CAUSAL_DISPOSITION.json",
+    "causal_disposition_sha256": "a81f491dcc35a191472b10331ea836a05aec43e7b463caa6cf0cc6181b94c3ed",
+    "cross_invariant_certificate": "black_hole_programme/certificates/BH2_SYMBOLIC_CROSS_INVARIANT.json",
+    "cross_invariant_sha256": "9095fe6739ec9bc908508f5c531965d75bfb127f5cd0d06ff224ce63e985d512",
+    "flux_class_certificate": "black_hole_programme/certificates/BH2C_FLUX_CLASS.json",
+    "flux_class_sha256": "cf6ea556ebb2c42d3db0f3efc11c18d32a39f6c2acdd70a34de586725a972c01",
+    "flux_matrix_certificate": "black_hole_programme/certificates/BH2A_FLUX_MATRIX.json",
+    "flux_matrix_sha256": "95ca6daeabb16bf93faa1bb721e3464fc5363899a344f0281d126f9a14204732",
+    "generator_path": "black_hole_programme/bh_endpoint_nonselection_assembly.py",
+    "horizon_reach_certificate": "black_hole_programme/certificates/BH2A_HORIZON_REACH.json",
+    "horizon_reach_sha256": "dcab47cf90e5a0120308b2031444539604d902c9cc5b788ce510f366f0d26d7f",
+    "polar_quantifier_certificate": "black_hole_programme/certificates/BH2_POLAR_QUANTIFIER_REPAIR.json",
+    "polar_quantifier_sha256": "77658bfa250edbc493a9fd1b9f0f3a55da5078ecf36167b48ebbd4afc3207021",
+    "symbolic_flux_certificate": "black_hole_programme/certificates/BH2C_SYMBOLIC_FLUX_RADIATION_CLASS.json",
+    "symbolic_flux_sha256": "8cbcfa2d762d1274f05a41d6200856c6d6f406d181543c44d56748bbc20f55ae"
+  },
+  "result_id": "PURE_WEYL_BH_ENDPOINT_NONSELECTION_ASSEMBLY",
+  "result_token": "BH_ONE_ENDED_ENDPOINT_SELECTION_INFINITY_EINSTEIN_HORIZON_NONSELECTION",
+  "schema": "pure-weyl-bh-endpoint-nonselection-assembly-v1",
+  "schema_path": "black_hole_programme/schema/bh-endpoint-nonselection-assembly-v1.schema.json",
+  "schema_sha256": "fb9b4770c2c37cc105899940caad1d61749c910cac2ed8f4098fedde6e716462",
+  "separation_from_cauchy_truncation": {
+    "distinct": "distinct objects; neither implies the other",
+    "endpoint": "the endpoint selection here is a GLOBAL two-ended boundary statement",
+    "local_cauchy": "BH_LOCAL_EINSTEIN_CAUCHY_TRUNCATION: delta R|Sigma = nabla_n delta R|Sigma = 0 => delta R = 0 modulo conformal gauge -- a Cauchy-slice uniqueness statement"
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh_endpoint_nonselection_assembly.py"
+}
