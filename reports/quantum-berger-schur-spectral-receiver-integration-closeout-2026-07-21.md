@@ -7,3 +7,5 @@ The decisive new input is the exact obstruction to an ordinary summable \(B_1\) 
 Paper 12 was not changed because no coefficient lifecycle changed.
 
 Evidence is the generated certificate and its independent exact verifier under `quantum-weyl/spectral/euclidean/`; test timings and skipped-tier rationale are recorded in the associated tier receipt.
+
+CLOSE-OUT: DONE — the allowed parameterized-nondefinition branch is complete, with the exact ten-coordinate ledger certified at `quantum-weyl/spectral/euclidean/certificates/BERGER_SCHUR_SPECTRAL_RECEIVER_NONDEFINITION_V1.json`.
