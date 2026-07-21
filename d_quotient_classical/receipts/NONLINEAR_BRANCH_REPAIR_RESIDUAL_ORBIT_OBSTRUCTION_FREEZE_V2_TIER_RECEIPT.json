@@ -1,0 +1,76 @@
+{
+  "schema": "science-forge-test-tier-receipt-v1",
+  "result_id": "NONLINEAR_BRANCH_REPAIR_RESIDUAL_ORBIT_OBSTRUCTION_FREEZE_V2_TIER_RECEIPT",
+  "work_item": "nonlinear-branch-repair-residual-orbit-obstruction-freeze-v2",
+  "status": "SCOPED_PASS_TIER3_RECORDED_FAIL",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "claim_boundary": "This lifecycle receipt adopts the exact obstruction package committed at 0a936fb08c2f2a07edbfc97b70f5f4c1d525ddc5. It freezes only the two-row real residual-orbit obstruction and the four-row fibrewise or ten-row global finite-free STF2 lower bound. It does not construct that enlargement, solve later filtered pages, activate branch mixing, or establish a repository-wide release pass.",
+  "adopted_result": {
+    "commit": "0a936fb08c2f2a07edbfc97b70f5f4c1d525ddc5",
+    "certificate": {
+      "path": "d_quotient_classical/certificates/BERGER_MINIMAL_HYPERBOLIC_BRANCH_REPAIR_RESIDUAL_ORBIT_OBSTRUCTION_V1.json",
+      "result_id": "BERGER_MINIMAL_HYPERBOLIC_BRANCH_REPAIR_RESIDUAL_ORBIT_OBSTRUCTION_V1",
+      "sha256": "ada801a3f53e56ef32ae4772631fcc3d63ff428124d7748bd52a591a3b59848f"
+    },
+    "atlas_fragment": {
+      "path": "residual_atlas/berger-minimal-hyperbolic-branch-repair-residual-orbit-obstruction-fragment-v1.json",
+      "sha256": "2cff62902c3e20ff66cfb3ceb8880e7a6bcdbc0f779d822dfb0eab9aabd8c898"
+    },
+    "original_tier_receipt": {
+      "path": "d_quotient_classical/receipts/BERGER_MINIMAL_HYPERBOLIC_BRANCH_REPAIR_RESIDUAL_ORBIT_OBSTRUCTION_V1_TIER_RECEIPT.json",
+      "sha256": "775cf1bcba6f5a49768c6dde1e8eff4b183a980209dd728136b6aa3b037c6c4d"
+    }
+  },
+  "pinned_inputs": {
+    "filtered_cyclic_branch_obstruction": {
+      "path": "d_quotient_classical/certificates/BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1.json",
+      "sha256": "66fff0566ceccb887c1e5138984fe079203deedd5a6538ef1b55976918545a0e"
+    },
+    "phase1_interaction_disposition": {
+      "path": "nonlinear/phase1/NONLINEAR_PHASE1_INTERACTION_DISPOSITION_V1.json",
+      "sha256": "27eb51544b1db4b6a33d551076f65ac857122f3d0037812fe4e0848c484f73d4"
+    },
+    "parked_item_chronology": {
+      "path": "planning/events/nonlinear-branch-repair-minimal-hyperbolic-BLOCKED-6a83179587c1f7b7.json",
+      "sha256": "9dba85e125e5b82e618784434b63675b3eb6249eda46d7709abe74d3e634461a"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "Python compilation of producer, independent verifier and focused test",
+        "JSON parsing of the v2 lifecycle receipt",
+        "scoped git diff --check"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "checks": [
+        "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py --check (1.94 s)",
+        "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py (0.39 s)",
+        "PYTHONPATH=. python3 -m pytest -q d_quotient_classical/backreacted_clock/tests/test_berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py (3 passed; 2.00 s)",
+        "python3 residual_atlas/validate_fragment.py residual_atlas/berger-minimal-hyperbolic-branch-repair-residual-orbit-obstruction-fragment-v1.json (0.09 s)",
+        "Draft202012Validator strict certificate validation (0.06 s)"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "checks": [
+        "Independent verifier reconstructed the residual representation, orbit rank, scalar commutant and five mutation rejections without importing producer matrices",
+        "All content-addressed dependency hashes matched the certificate"
+      ]
+    },
+    "tier_3": {
+      "status": "FAIL",
+      "source_receipt": "d_quotient_classical/receipts/BERGER_MINIMAL_HYPERBOLIC_BRANCH_REPAIR_RESIDUAL_ORBIT_OBSTRUCTION_V1_TIER_RECEIPT.json",
+      "reason_not_repeated": "No mathematical input changed; the exact existing Tier-3 result is adopted rather than mislabeling reproduction as independent verification.",
+      "failure": "Collection stopped on four pre-existing quantum-weyl package import collisions.",
+      "scope_effect": "No repository-release pass or broad freeze is claimed."
+    }
+  },
+  "disposition": "DONE_BY_ADOPTION_OF_EXISTING_EXACT_OBSTRUCTION",
+  "next_gate": "After the programme Phase-1 terminal disposition, construct and test a noncontractible STF2 or equivalent mixed-bundle carrier under a separate leased item."
+}
