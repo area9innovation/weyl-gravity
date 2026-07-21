@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/observer-berger84-apparatus-handoff-provenance-relock-REQUEST-4be912d627c270d1",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/observer-berger84-apparatus-handoff-provenance-relock-REQUEST-4be912d627c270d1.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/observer-berger84-apparatus-handoff-provenance-relock", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T12:37:15Z", "seq": 1, "payload": {"target": "sf:program/request/observer-berger84-apparatus-handoff-provenance-relock-to-observer-4be912d627c270d1", "request_id": "sf:program/request/observer-berger84-apparatus-handoff-provenance-relock-to-observer-4be912d627c270d1", "from_item": "sf:program/work/observer-berger84-apparatus-handoff-provenance-relock", "to_stream": "observer", "need": "Regenerate BERGER_84_ROW_MIXED_R_KAPPA_UNARY_GATE through its declared producer against current BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF sha256 dca09a7b... and BERGER_84_ROW_ROD_GRAVITY_UNARY sha256 d3a48225.... The first post-relock Tier 3 failure occurs in test_berger_84_row_mixed_r_kappa_unary_gate.py after 151 passes: dependency_refs drift, and q10_memory_transport canonical_sha256 plus zero/positive/negative frequency sectors change. Preserve all scientific flags and mutation boundaries unless a separately certified source proves a change; run producer check, independent verifier, mutations, then restart the uninterrupted full observer suite.", "typed": "CERTIFICATE_PROVENANCE_RELOCK"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "observer"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/observer-berger84-apparatus-handoff-provenance-relock"}]
+}

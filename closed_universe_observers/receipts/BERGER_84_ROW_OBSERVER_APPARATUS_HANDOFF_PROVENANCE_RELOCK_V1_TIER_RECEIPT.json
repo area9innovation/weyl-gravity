@@ -1,0 +1,108 @@
+{
+  "decision": "SHORTFALL",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_repair": {
+    "certificate_path": "closed_universe_observers/certificates/BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF.json",
+    "certificate_sha256_after": "dca09a7bd4e9536c5b4f65d8a65f24d441c65131ae782bf2951902e282dda887",
+    "certificate_sha256_before": "4e3202b7397b9b9fa0a5ce2ccfc243d3e9bda5f69d6339d329caaa3bfe9324ab",
+    "changed_fields": [
+      "dependency_refs.global_rods.sha256",
+      "dependency_refs.rod_q1_solvability.sha256"
+    ],
+    "other_top_level_fields_equal_to_current_producer": true,
+    "scientific_flag_changes": 0
+  },
+  "independence": {
+    "producer": "rebuilds the 84-row carrier, pairing, physical Phi2 synthesis, dependency refs and fail-closed flags from the declared fixture",
+    "verifier": "independently reconstructs row order, odd pairing rank/sign, physical Phi2 coefficients, dependency hashes, all seven input mutations and forbidden scientific promotions",
+    "status": "METHOD_DISTINCT"
+  },
+  "next_exact_obstruction": {
+    "certificate": "closed_universe_observers/certificates/BERGER_84_ROW_MIXED_R_KAPPA_UNARY_GATE.json",
+    "failing_test": "closed_universe_observers/tests/test_berger_84_row_mixed_r_kappa_unary_gate.py::test_fail_closed_boundary_and_independent_verifier",
+    "observed_changes": [
+      "dependency_refs.authoritative_handoff.sha256",
+      "dependency_refs.rod_gravity_unary.sha256",
+      "q10_memory_transport.canonical_sha256",
+      "q10_memory_transport.frequency_sectors.zero",
+      "q10_memory_transport.frequency_sectors.positive",
+      "q10_memory_transport.frequency_sectors.negative"
+    ],
+    "request_id": "sf:program/request/observer-berger84-apparatus-handoff-provenance-relock-to-observer-4be912d627c270d1",
+    "status": "CERTIFICATE_PROVENANCE_RELOCK_REQUIRED"
+  },
+  "required_commands": [
+    {
+      "cmd": "cd physics/symplectic-reconstruction && python3 -m py_compile closed_universe_observers/generate_berger_84_row_apparatus_handoff.py closed_universe_observers/verify_berger_84_row_apparatus_handoff.py closed_universe_observers/tests/test_berger_84_row_apparatus_handoff.py",
+      "tier": 0
+    },
+    {
+      "cmd": "cd physics/symplectic-reconstruction && env PYTHONPATH=. python3 -m closed_universe_observers.generate_berger_84_row_apparatus_handoff --check",
+      "tier": 1
+    },
+    {
+      "cmd": "cd physics/symplectic-reconstruction && env PYTHONPATH=. python3 -m closed_universe_observers.verify_berger_84_row_apparatus_handoff",
+      "tier": 1
+    },
+    {
+      "cmd": "cd physics/symplectic-reconstruction && env PYTHONPATH=. pytest -q closed_universe_observers/tests/test_berger_84_row_apparatus_handoff.py",
+      "tier": 1
+    }
+  ],
+  "result_id": "BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF_PROVENANCE_RELOCK_V1_TIER_RECEIPT",
+  "schema": "science-forge-tier-receipt-v1",
+  "source_hashes": {
+    "closed_universe_observers/fixtures/berger_84_row_apparatus_handoff_input.json": "1b78f3953effedeb923f7dfafcd953d959e54ffbcca68e19decc920408e1516f",
+    "closed_universe_observers/generate_berger_84_row_apparatus_handoff.py": "85fbcb1781753e245b9295fc23924cfe5db66cec319fe24ce9e2195a5f07f0cf",
+    "closed_universe_observers/reports/berger-84-row-observer-apparatus-handoff.md": "b494183b0194eb9f07b918164d016ada5fdad028df5aaf1354e2139ab43e7ee9",
+    "closed_universe_observers/schema/berger-84-row-apparatus-handoff-input-v1.schema.json": "da9b643e36443cfea8161116c78726df952ed2c3fade1a47809164070bd83112",
+    "closed_universe_observers/schema/berger-84-row-apparatus-handoff-v1.schema.json": "5e997c45f445e1e0f44bc066add93942b4748c9f0d4471d3d8398f032e24fa0a",
+    "closed_universe_observers/tests/test_berger_84_row_apparatus_handoff.py": "6169cc7faec9fa02097eacd767f20a446f008f103b4f3a674755a645c60d5fd3",
+    "closed_universe_observers/verify_berger_84_row_apparatus_handoff.py": "089d5c3a000bc0f7437da34e444157b07be57ea580bd40a8077aab836b824236"
+  },
+  "tests": [
+    {
+      "command": "PYTHONPATH=. pytest -vv closed_universe_observers/tests/test_berger_84_row_apparatus_handoff.py::test_persisted_certificate_and_independent_replay",
+      "elapsed_seconds": "12.67",
+      "result": "1 failed: persisted certificate differed from producer",
+      "status": "EXPECTED_REPRODUCTION_FAIL",
+      "tier": 1
+    },
+    {
+      "command": "PYTHONPATH=. python3 -m closed_universe_observers.generate_berger_84_row_apparatus_handoff",
+      "elapsed_seconds": "12.38",
+      "status": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "PYTHONPATH=. python3 -m closed_universe_observers.generate_berger_84_row_apparatus_handoff --check",
+      "elapsed_seconds": "12.15",
+      "status": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "PYTHONPATH=. python3 -m closed_universe_observers.verify_berger_84_row_apparatus_handoff",
+      "elapsed_seconds": "2.38",
+      "status": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "PYTHONPATH=. pytest -q closed_universe_observers/tests/test_berger_84_row_apparatus_handoff.py",
+      "elapsed_seconds": "41.37",
+      "result": "5 passed in 39.72s",
+      "status": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "PYTHONPATH=. pytest -q -x closed_universe_observers/tests",
+      "elapsed_seconds": "473.57",
+      "result": "1 failed, 151 passed in 466.49s; stopped at the first unrelated persisted-certificate drift",
+      "status": "FAIL",
+      "tier": 3
+    }
+  ]
+}
