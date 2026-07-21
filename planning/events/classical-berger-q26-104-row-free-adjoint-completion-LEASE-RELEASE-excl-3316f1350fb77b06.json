@@ -1,0 +1,37 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-berger-q26-104-row-free-adjoint-completion-LEASE-RELEASE-excl-3316f1350fb77b06",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {
+    "path": "tools/science-forge/program/events/classical-berger-q26-104-row-free-adjoint-completion-LEASE-RELEASE-excl-3316f1350fb77b06.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "LEASE",
+    "actor": "coordinator",
+    "base_revision": "science-forge-ir-v0",
+    "when": "2026-07-21T08:21:55Z",
+    "seq": 6,
+    "payload": {
+      "target": "sf:program/work/classical-berger-q26-104-row-free-adjoint-completion",
+      "agent": "classical-1",
+      "lease_type": "exclusive",
+      "action": "RELEASE",
+      "acquired": "2026-07-21T08:21:55Z",
+      "expires": "",
+      "reason": "coordinator release of a noncanonical automatic re-pull after the user confirmed classical-3 as the sole current Classical owner; no checkpoint follows this acquire"
+    },
+    "native": {
+      "authored_by": "coordinator explicit release pending landed revoke CLI",
+      "policy": "append-only lease release; the prior acquire remains immutable; no resident identity is impersonated"
+    }
+  },
+  "edges": [
+    {
+      "rel": "LEASES",
+      "to": "sf:program/work/classical-berger-q26-104-row-free-adjoint-completion"
+    }
+  ]
+}
