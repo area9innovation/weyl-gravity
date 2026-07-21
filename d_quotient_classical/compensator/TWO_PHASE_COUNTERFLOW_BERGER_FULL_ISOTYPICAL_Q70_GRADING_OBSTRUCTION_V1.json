@@ -1,0 +1,116 @@
+{
+  "claim_boundary": {
+    "does_not_establish": [
+      "a repaired 70-row parent or receiver",
+      "q70 cohomology, physical modes, pairing inertia, characteristics or stability",
+      "an obstruction to the separately certified q54 causal complex",
+      "Hadamard, observer, nonlinear, anomaly, QME, particle or unitarity claims"
+    ],
+    "establishes": [
+      "finite complete fixed-j all-k 70-row ungraded isotypical closure",
+      "exact q54 plus-one versus serialized U1 minus-one grading mismatch",
+      "convention-derived transpose repair candidate",
+      "first exact obstruction to the requested graded q70 quotient"
+    ]
+  },
+  "content_hashes": {
+    "boundary_sha256": "e1b69440220a17bf8ea023071ebda6e1c1b45f1889a25412fa83d613d8e3e3dc",
+    "carrier_sha256": "119cce627b288a62d4612814cb3ec2b78b86d3d958ea0d86655600f0d40aee8a",
+    "obstruction_sha256": "0b972ba8738eeea4facac5cfe2619e69b4487badf47f76d1cbcf10ac9cad0e3d",
+    "repair_sha256": "ecf948ffa9189effcccebad4b0944c67d596ba1c46b6f85c775cd4a466138098",
+    "terminal_sha256": "1d8273e6a53c41c403cfeb5c019e9bb6e841b131f1201f53c40472eb83f0341e"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "full_isotypical_carrier": {
+    "closure_proof": "every q54 coefficient is a finite PBW polynomial in e0,e1,e2,e3; e1,e2,e3 preserve the irreducible fixed-j Peter-Weyl space, e0 preserves it, and the U1 block is algebraic",
+    "complex_dimension": "70*(2*j+1)",
+    "conjugation": "conjugate(Y_jmk)=(-1)^(m-k)Y_j,-m,-k; reality pairs the m and -m blocks",
+    "graded_BV_subcomplex_status": "OBSTRUCTED_BY_IMPORTED_U1_ORIENTATION",
+    "group": "SU(2)_L x U(1)_R on the biaxial Berger sphere",
+    "inclusion": "iota_jm(e_row tensor e_k)=e_row Y_jmk",
+    "label_domain": "two_j in Z_>=0, j=two_j/2, fixed m in {-j,...,j}; k is an internal weight, not a block label",
+    "minimal_weight_closure": "for j>0 the e1/e2 ladder graph on k=-j,...,j is connected, so no nonempty proper k truncation is invariant",
+    "normalized_scalar_basis": "Y_jmk=sqrt((2*j+1)/Vol_Berger)*D^j_mk",
+    "pi_iota": "I_(70*(2*j+1))",
+    "projection": "pi_jm extracts the Y_jmk coefficient by the normalized L2 pairing",
+    "right_neutral_warning": "for integer j>0, k=0 is an internal weight coupled to k=+/-1; it is not a standalone q70 subcomplex",
+    "row_basis": "e_row tensor Y_jmk for row=0,...,69 and k=-j,...,j",
+    "ungraded_closure_status": "FINITE_COMPLETE"
+  },
+  "grading_obstruction": {
+    "degree_shift_histogram": {
+      "+1": 309,
+      "-1": 8
+    },
+    "equation": "q70_serialized=q54 direct_sum qU1_serialized",
+    "first_failed_gate": "graded q70 import before cohomology, descended pairing, characteristics or Jordan data",
+    "nilpotency_is_not_sufficient": "q70_serialized^2=0 only defines an ungraded/Z2 complex; it does not supply the declared Z-graded BV chain or H^degree quotient",
+    "single_homogeneous_BV_degree_exists": false
+  },
+  "imports": {
+    "causal_parent": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1",
+      "sha256": "7d969e7e630f793dfe12fe07b0e98a67b2543f9aa85fa03277e491fb00296db7",
+      "source_commit": "951e88307abbea0996513773a33e66b37555272b"
+    },
+    "causal_parent_payload": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V1",
+      "sha256": "7c73705cc07062baf652c9cc0cb0977beda2a96d5b642fa186d6bfaeae01db57",
+      "source_commit": "951e88307abbea0996513773a33e66b37555272b"
+    },
+    "gauge_fixed_q54": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0",
+      "source_commit": "445e26663d06764bc858ff0a004ba6178acce75f"
+    },
+    "peter_weyl_engine": {
+      "oracle_fields_consumed": [],
+      "path": "closed_universe_observers/certificates/BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE.json",
+      "result_id": "BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE",
+      "sha256": "e24c860b338188254c4388a7ca660ac454ba7b70c13659ffc36a98bf39250120",
+      "source_commit": "0b8fe045411de64008f55bb551ab3799aa85e77a"
+    },
+    "scalar_obstruction": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_SCALAR_HODGE_BLOCK_OBSTRUCTION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_SCALAR_HODGE_BLOCK_OBSTRUCTION_V1",
+      "sha256": "0d462cab26aead0409b8da64c13770b6eae61cdd4d5cfc6cf6efdf538f1d535e",
+      "source_commit": "1fcfca7c599781721ce8256ddf41b8d5cc692885"
+    }
+  },
+  "payload_ref": {
+    "content_sha256": "945ea85212bceb68fa5ff9d935ea346f9a121550481ac8e1ac3680d76ca1290e",
+    "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_PAYLOAD_V1.json",
+    "sha256": "3e3bc451c7d3fec892634c9428cbda50bd274bd6dff3fbef2fa0fbc7e5407834"
+  },
+  "repair_candidate": {
+    "algebraic_identities": [
+      "qU1_repaired^2=0",
+      "qU1_repaired SU1_repaired+SU1_repaired qU1_repaired=I16"
+    ],
+    "degree_shift": "+1 on all 8 expanded component arrows",
+    "formula": "qU1_repaired=(qU1_serialized)^T; SU1_repaired=(SU1_serialized)^T",
+    "promotion_status": "NOT_APPLIED_TO_PINNED_PARENT",
+    "required_follow_up": "regenerate the 70-row parent, explicit 16-row cyclic pairing, causal direct sum, receiver hashes and independent consumer from the corrected chain convention",
+    "support": "algebraic and support-local"
+  },
+  "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_V1",
+  "result_state": "OBSTRUCTED_IMPORTED_Q70_GRADING_CONVENTION_REPAIR_REQUIRED",
+  "schema": "pure-weyl-two-phase-counterflow-berger-full-isotypical-q70-grading-obstruction-v1",
+  "terminal_verdict": {
+    "first_failed_gate": "graded q70 import before cohomology, descended pairing, characteristics or Jordan data",
+    "graded_q70_import": "OBSTRUCTED",
+    "next_gate": "REPAIR_AND_REISSUE_DIAGONAL_U1_CHAIN_ORIENTATION_AND_CYCLIC_PAIRING",
+    "result_state": "OBSTRUCTED_IMPORTED_Q70_GRADING_CONVENTION_REPAIR_REQUIRED",
+    "ungraded_isotypical_closure": "CERTIFIED_FINITE_COMPLETE"
+  }
+}

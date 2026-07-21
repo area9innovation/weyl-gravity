@@ -1,0 +1,92 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "The fixed-j all-k 70-row carrier is finite and ungraded-closed. The pinned U1 table is oppositely oriented to q54, so the declared Z-graded BV direct sum and its quotient are obstructed until a transpose-based parent repair is independently reissued. This does not revoke q54 causality or establish instability, Hadamard, observer, nonlinear, anomaly, QME, particle or unitarity claims.",
+      "descriptions": {
+        "causal": "OBSTRUCTED",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_V1",
+          "sha256": "a4e3ce0462344c05bb8ad1fa6d5c367bf2453b923916ba1aa34b58b8bee4a85c"
+        }
+      ],
+      "id": "classical.counterflow.berger.full_isotypical_q70_grading_obstruction",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The full all-k carrier closes ungraded, but a degreewise characteristic quotient is not defined on the mixed-orientation q70 import.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "lee_wald": {
+          "statement": "The imported U1 table and its prose pairing do not provide a homogeneous graded cyclic direct sum with q54; no descended physical Gram matrix is authorized.",
+          "status": "OBSTRUCTED"
+        },
+        "resonance": {
+          "statement": "Characteristic roots and Jordan chains wait for the convention-correct graded q70 parent.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The obstruction occurs at the unary import boundary.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "causal_retarded": {
+            "statement": "The separate q54 causal result remains certified, but its claimed graded 70-row direct sum requires a reissued U1 chain.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No new nonlinear or secular conclusion follows.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "No graded physical class is exported on which a Taub or moment-map obstruction could be evaluated.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "stationary biaxial Berger R x S3, a=1, c_squared=9/40",
+        "boundaries": "none; closed S3 Cauchy slices",
+        "carrier": "fixed-(j,m), all-k, 70-row Peter-Weyl carrier imported from q54 plus the serialized diagonal-U1 table",
+        "charge_sector": "unrestricted carrier; no quotient by charged D or R_rel",
+        "degree": "declared Z-graded BV chain; q54 shifts +1 while serialized U1 shifts -1",
+        "ell": "j=two_j/2; finite dimension 70*(2*j+1); j=0 exceptional",
+        "k": "all weights -j,...,j; no proper nonempty weight truncation is invariant for j>0",
+        "m": "fixed SU(2)_L label with the conjugate -m block retained by reality",
+        "omega": "arbitrary time frequency; obstruction is an algebraic grading mismatch before characteristic analysis",
+        "parity": "full real BV carrier; conjugation pairs m with -m and k with -k",
+        "theory": "selected fixed-action two-phase counterflow theory"
+      }
+    }
+  ],
+  "generated_by": "d_quotient_classical/atlas/generate_two_phase_counterflow_berger_full_isotypical_q70_grading_obstruction_atlas_fragment.py",
+  "generated_by_sha256": "eced55bbe91d60ee4c6ea1fb7a6daa32de446189d592639baf98058f0b753b4e",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "classical",
+  "verification_commands": [
+    "python3 d_quotient_classical/compensator/two_phase_counterflow_berger_full_isotypical_q70_grading_obstruction.py --check",
+    "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_berger_full_isotypical_q70_grading_obstruction.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-berger-full-isotypical-q70-grading-obstruction-fragment-v1.json"
+  ]
+}

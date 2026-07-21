@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-two-phase-counterflow-berger-full-isotypical-q70-grading-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "imports",
+    "payload_ref",
+    "full_isotypical_carrier",
+    "grading_obstruction",
+    "repair_candidate",
+    "terminal_verdict",
+    "claim_boundary",
+    "content_hashes"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-berger-full-isotypical-q70-grading-obstruction-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_V1"},
+    "result_state": {"const": "OBSTRUCTED_IMPORTED_Q70_GRADING_CONVENTION_REPAIR_REQUIRED"},
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "REDUCED-MODE"}],
+      "items": false
+    },
+    "imports": {"$ref": "#/$defs/imports"},
+    "payload_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "content_sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "content_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "full_isotypical_carrier": {"type": "object", "minProperties": 12},
+    "grading_obstruction": {
+      "type": "object",
+      "required": ["equation", "degree_shift_histogram", "single_homogeneous_BV_degree_exists", "nilpotency_is_not_sufficient", "first_failed_gate"],
+      "properties": {
+        "equation": {"type": "string"},
+        "degree_shift_histogram": {"type": "object"},
+        "single_homogeneous_BV_degree_exists": {"const": false},
+        "nilpotency_is_not_sufficient": {"type": "string"},
+        "first_failed_gate": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "repair_candidate": {
+      "type": "object",
+      "required": ["formula", "degree_shift", "algebraic_identities", "support", "promotion_status", "required_follow_up"],
+      "properties": {
+        "formula": {"type": "string"},
+        "degree_shift": {"type": "string"},
+        "algebraic_identities": {"type": "array", "items": {"type": "string"}},
+        "support": {"type": "string"},
+        "promotion_status": {"const": "NOT_APPLIED_TO_PINNED_PARENT"},
+        "required_follow_up": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "terminal_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_state", "ungraded_isotypical_closure", "graded_q70_import", "first_failed_gate", "next_gate"],
+      "properties": {
+        "result_state": {"const": "OBSTRUCTED_IMPORTED_Q70_GRADING_CONVENTION_REPAIR_REQUIRED"},
+        "ungraded_isotypical_closure": {"const": "CERTIFIED_FINITE_COMPLETE"},
+        "graded_q70_import": {"const": "OBSTRUCTED"},
+        "first_failed_gate": {"type": "string"},
+        "next_gate": {"type": "string"}
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["establishes", "does_not_establish"],
+      "properties": {
+        "establishes": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+        "does_not_establish": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      }
+    },
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["carrier_sha256", "obstruction_sha256", "repair_sha256", "terminal_sha256", "boundary_sha256"],
+      "properties": {
+        "carrier_sha256": {"$ref": "#/$defs/hash"},
+        "obstruction_sha256": {"$ref": "#/$defs/hash"},
+        "repair_sha256": {"$ref": "#/$defs/hash"},
+        "terminal_sha256": {"$ref": "#/$defs/hash"},
+        "boundary_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "imports": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256", "result_id", "source_commit", "oracle_fields_consumed"],
+        "properties": {
+          "path": {"type": "string"},
+          "sha256": {"$ref": "#/$defs/hash"},
+          "result_id": {"type": "string"},
+          "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "oracle_fields_consumed": {"type": "array", "maxItems": 0}
+        }
+      }
+    }
+  }
+}

@@ -3500,3 +3500,29 @@ on this split.  The next valid carrier is the complete fixed-(j)
 (SU(2)_L\times U(1)_R) isotypical (q_{70}) block with all reached tensor
 rows coupled.  The full causal parent remains certified and the
 exceptional/global successor is not activated by this obstruction.
+
+### Full-isotypical q70 grading obstruction (2026-07-21)
+
+`TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_V1`
+certifies that the complete fixed-\((j,m)\), all-\(k\) carrier is finite and
+ungraded-closed, with dimension \(70(2j+1)\).  The \(e_1/e_2\) weight graph
+is connected for every \(j>0\), so no proper nonempty \(k\)-truncation is
+invariant; in particular, an integer-\(j\) `k=0` row is internal to the full
+isotypical block rather than a standalone subcomplex.
+
+The pinned 70-row parent cannot yet be promoted to the requested graded BV
+block.  Every one of the 309 nonzero q54 operator blocks shifts compact
+degree by \(+1\), whereas all eight expanded arrows in the serialized
+diagonal-U1 table shift it by \(-1\).  Hence the claimed direct sum is
+nilpotent only as an ungraded/\(\mathbb Z_2\) matrix and does not define the
+declared degreewise BV quotient.  The exact convention repair is to transpose
+both U1 `Q_changed_basis` and `S_changed_basis`; this restores degree \(+1\),
+nilpotency, contraction and a nondegenerate cyclic canonical pairing.  It is
+not applied silently: the 70-row parent, explicit U1 pairing, causal direct
+sum and receiver hashes must be reissued and independently replayed first.
+
+Therefore cohomology, descended pairing/inertia, characteristics/Jordan data
+and spatial gradient matrices remain `NOT_DEFINED` at this gate.  The
+separate q54 causal theorem and the algebraic contractibility of the U1 table
+remain valid; no Hadamard, observer, nonlinear, QME, particle, stability or
+unitarity conclusion follows.

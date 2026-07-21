@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_id": "TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_V1",
+  "date": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": [
+    {"path": "d_quotient_classical/compensator/two_phase_counterflow_berger_full_isotypical_q70_grading_obstruction.py", "sha256": "ab3397863d2b3c986a2ab81a03b4c8e9c85c27e2f4fa3391e43f787aef5545a1"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_V1.json", "sha256": "a4e3ce0462344c05bb8ad1fa6d5c367bf2453b923916ba1aa34b58b8bee4a85c"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_PAYLOAD_V1.json", "sha256": "3e3bc451c7d3fec892634c9428cbda50bd274bd6dff3fbef2fa0fbc7e5407834"},
+    {"path": "d_quotient_classical/compensator/verify_two_phase_counterflow_berger_full_isotypical_q70_grading_obstruction.py", "sha256": "3cc030ba28774d93e79ba8ffc17fd7df14e67583425ea45983ea95588a334c2b"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_berger_full_isotypical_q70_grading_obstruction.py", "sha256": "6017d913369d99ec21369a8f651ef12078ca8cd7deb2f7ed8919e30ca52e8824"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_berger_full_isotypical_q70_grading_obstruction_atlas.py", "sha256": "17d764b11e4a876cfe6050806c6a82641320be370b2434e3fb83ce41319ce50d"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-berger-full-isotypical-q70-grading-obstruction-v1.schema.json", "sha256": "0c1b3218d7d682ebedce539d9b2b326055d117a2b6977328200fa57e2c3f4f93"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-berger-full-isotypical-q70-grading-obstruction-payload-v1.schema.json", "sha256": "e222687c718c00b8ca80c7e4c0e12ddef38cb1d61a53630b7abab1754f4a5516"},
+    {"path": "d_quotient_classical/atlas/generate_two_phase_counterflow_berger_full_isotypical_q70_grading_obstruction_atlas_fragment.py", "sha256": "eced55bbe91d60ee4c6ea1fb7a6daa32de446189d592639baf98058f0b753b4e"},
+    {"path": "residual_atlas/two-phase-counterflow-berger-full-isotypical-q70-grading-obstruction-fragment-v1.json", "sha256": "1216f12a4282b4df29f84773fae61601648fcbe3c8f8dbbf5a563c69946cf35f"},
+    {"path": "d_quotient_classical/compensator/reports/two-phase-counterflow-berger-full-isotypical-q70-grading-obstruction-v1.md", "sha256": "04b13723449e9028f1b717e117166787dd940eb9040c68b6afe356edfec22ee5"}
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m py_compile on producer, verifier, atlas generator and tests; json.tool/schema parse; explicit-path git diff --check", "elapsed_seconds": 0.20, "status": "PASS"}
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 d_quotient_classical/compensator/two_phase_counterflow_berger_full_isotypical_q70_grading_obstruction.py --check", "elapsed_seconds": 0.30, "status": "PASS", "method": "complete q54/U1 grading census, generic PBW closure proof and fail-closed repair ledger"},
+      {"command": "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_berger_full_isotypical_q70_grading_obstruction.py", "elapsed_seconds": 6.90, "status": "PASS", "independent_rail": "reconstructs the degree tables, transpose contraction and cyclic pairing, all proper weight-truncation mutations through two_j=6, and the exact two_j=1 Wigner q54 nilpotency/cyclicity identities without importing the producer"},
+      {"command": "python3 -m pytest -q on result and atlas tests", "elapsed_seconds": 8.35, "status": "PASS", "tests": 3},
+      {"command": "atlas generator check and residual_atlas validator", "elapsed_seconds": 0.40, "status": "PASS"},
+      {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true on result and payload", "elapsed_seconds": 4.00, "status": "PASS"}
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {"command": "five scalar-parent/operator/harmonic imports content-hashed and semantic preconditions checked", "status": "PASS"},
+      {"command": "bash ci/science-forge-shadow.sh", "elapsed_seconds": 2.80, "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS", "findings": "bridge audit stopped on an external Forge mutable-borrow diagnostic; corpus 1368 versus baseline 976; unpinned dirty Forge binary; diagnostics /tmp/sf-shadow.aduogM"}
+    ]
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "criterion": "No freeze, release, global theorem promotion or shared core-algebra mutation; the scoped exact producer and method-distinct finite representation rail cover the obstruction claim."
+  },
+  "claim_boundary": "The complete fixed-j all-k 70-row carrier is finite and ungraded-closed, but the imported q54 and diagonal-U1 tables have opposite compact-degree orientations, so the pinned parent does not define the requested Z-graded q70 BV quotient. The transpose repair is certified only as a candidate and is not applied to the parent. This does not revoke q54 causality or establish cohomology, stability, Hadamard, observer, nonlinear, QME, particle, positivity or unitarity claims.",
+  "higher_tiers_not_run": ["Tier 3 full repository suite; criterion recorded above"]
+}

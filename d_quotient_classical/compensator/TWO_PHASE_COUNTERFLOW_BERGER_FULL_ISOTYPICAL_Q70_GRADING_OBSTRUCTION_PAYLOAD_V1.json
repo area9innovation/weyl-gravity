@@ -1,0 +1,233 @@
+{
+  "content_sha256": "945ea85212bceb68fa5ff9d935ea346f9a121550481ac8e1ac3680d76ca1290e",
+  "cyclic_pairing_interface": {
+    "canonical_nonminimal_pairs_required_by_row_names": [
+      "bar_c-bar_c_star",
+      "b-b_star"
+    ],
+    "parent_text_nonminimal_pairs": [
+      "bar_c-b_star",
+      "b-bar_c_star"
+    ],
+    "parent_u1_text": "canonical odd BV pairing A-A_star, chi-chi_star, c_U1-c_U1_star, bar_c-b_star, b-bar_c_star",
+    "q54_pairing": "explicit 54x54 cyclic pairing imported and homogeneous",
+    "status": "PAIRING_TEXT_ROW_MISMATCH_REQUIRES_REPAIR_EXPORT"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "direct_sum_obstruction": {
+    "degree_shift_histogram": {
+      "+1": 309,
+      "-1": 8
+    },
+    "equation": "q70_serialized=q54 direct_sum qU1_serialized",
+    "first_failed_gate": "graded q70 import before cohomology, descended pairing, characteristics or Jordan data",
+    "nilpotency_is_not_sufficient": "q70_serialized^2=0 only defines an ungraded/Z2 complex; it does not supply the declared Z-graded BV chain or H^degree quotient",
+    "single_homogeneous_BV_degree_exists": false
+  },
+  "downstream_disposition": {
+    "causal_parent_revoked": false,
+    "characteristics_and_Jordan": "NOT_DEFINED_BEFORE_GRADED_CYCLIC_REPAIR",
+    "cohomology_quotient": "NOT_DEFINED_ON_SERIALIZED_Z_GRADED_PARENT",
+    "descended_pairing_radical_inertia": "NOT_DEFINED_BEFORE_GRADED_CYCLIC_REPAIR",
+    "scope": "the 54-row causal theorem and the algebraic contractibility of the U1 table remain valid separately; only their claimed graded q70 direct-sum interface is obstructed",
+    "spatial_principal_and_gradient": "NOT_DEFINED_BEFORE_GRADED_CYCLIC_REPAIR"
+  },
+  "full_isotypical_carrier": {
+    "closure_proof": "every q54 coefficient is a finite PBW polynomial in e0,e1,e2,e3; e1,e2,e3 preserve the irreducible fixed-j Peter-Weyl space, e0 preserves it, and the U1 block is algebraic",
+    "complex_dimension": "70*(2*j+1)",
+    "conjugation": "conjugate(Y_jmk)=(-1)^(m-k)Y_j,-m,-k; reality pairs the m and -m blocks",
+    "graded_BV_subcomplex_status": "OBSTRUCTED_BY_IMPORTED_U1_ORIENTATION",
+    "group": "SU(2)_L x U(1)_R on the biaxial Berger sphere",
+    "inclusion": "iota_jm(e_row tensor e_k)=e_row Y_jmk",
+    "label_domain": "two_j in Z_>=0, j=two_j/2, fixed m in {-j,...,j}; k is an internal weight, not a block label",
+    "minimal_weight_closure": "for j>0 the e1/e2 ladder graph on k=-j,...,j is connected, so no nonempty proper k truncation is invariant",
+    "normalized_scalar_basis": "Y_jmk=sqrt((2*j+1)/Vol_Berger)*D^j_mk",
+    "pi_iota": "I_(70*(2*j+1))",
+    "projection": "pi_jm extracts the Y_jmk coefficient by the normalized L2 pairing",
+    "right_neutral_warning": "for integer j>0, k=0 is an internal weight coupled to k=+/-1; it is not a standalone q70 subcomplex",
+    "row_basis": "e_row tensor Y_jmk for row=0,...,69 and k=-j,...,j",
+    "ungraded_closure_status": "FINITE_COMPLETE"
+  },
+  "imports": {
+    "causal_parent": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1",
+      "sha256": "7d969e7e630f793dfe12fe07b0e98a67b2543f9aa85fa03277e491fb00296db7",
+      "source_commit": "951e88307abbea0996513773a33e66b37555272b"
+    },
+    "causal_parent_payload": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V1",
+      "sha256": "7c73705cc07062baf652c9cc0cb0977beda2a96d5b642fa186d6bfaeae01db57",
+      "source_commit": "951e88307abbea0996513773a33e66b37555272b"
+    },
+    "gauge_fixed_q54": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0",
+      "source_commit": "445e26663d06764bc858ff0a004ba6178acce75f"
+    },
+    "peter_weyl_engine": {
+      "oracle_fields_consumed": [],
+      "path": "closed_universe_observers/certificates/BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE.json",
+      "result_id": "BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE",
+      "sha256": "e24c860b338188254c4388a7ca660ac454ba7b70c13659ffc36a98bf39250120",
+      "source_commit": "0b8fe045411de64008f55bb551ab3799aa85e77a"
+    },
+    "scalar_obstruction": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_SCALAR_HODGE_BLOCK_OBSTRUCTION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_SCALAR_HODGE_BLOCK_OBSTRUCTION_V1",
+      "sha256": "0d462cab26aead0409b8da64c13770b6eae61cdd4d5cfc6cf6efdf538f1d535e",
+      "source_commit": "1fcfca7c599781721ce8256ddf41b8d5cc692885"
+    }
+  },
+  "mutation_ledger": {
+    "anisotropy": "the imported nonzero scalar Hodge defect remains; the grading obstruction is geometry-independent",
+    "omitted_row": "54+16=70 is required; deleting a row fails the complete parent inventory",
+    "round_limit": "u=v removes Hodge mixing but does not change the U1 degree shift",
+    "transpose": "the transpose mutation changes every U1 component shift from -1 to +1 and is therefore the unique table-orientation repair",
+    "truncation_boundary": "deleting any k weight from a j>0 irrep leaves a nonzero e1/e2 boundary coupling"
+  },
+  "oracle_fields_consumed": [],
+  "q54_grading_audit": {
+    "component_degree_ranks": [
+      5,
+      22,
+      22,
+      5
+    ],
+    "degree_convention": "compact_degree=-ghost_number on the linear BV chain",
+    "degree_shift_histogram": {
+      "+1": 309
+    },
+    "homogeneous_degree_plus_one": true,
+    "nonzero_operator_blocks": 309
+  },
+  "repair_candidate": {
+    "algebraic_identities": [
+      "qU1_repaired^2=0",
+      "qU1_repaired SU1_repaired+SU1_repaired qU1_repaired=I16"
+    ],
+    "degree_shift": "+1 on all 8 expanded component arrows",
+    "formula": "qU1_repaired=(qU1_serialized)^T; SU1_repaired=(SU1_serialized)^T",
+    "promotion_status": "NOT_APPLIED_TO_PINNED_PARENT",
+    "required_follow_up": "regenerate the 70-row parent, explicit 16-row cyclic pairing, causal direct sum, receiver hashes and independent consumer from the corrected chain convention",
+    "support": "algebraic and support-local"
+  },
+  "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_PAYLOAD_V1",
+  "schema": "pure-weyl-two-phase-counterflow-berger-full-isotypical-q70-grading-obstruction-payload-v1",
+  "u1_grading_audit": {
+    "arrow_ledger": [
+      {
+        "compact_degree_shift": -1,
+        "component_multiplicity": 1,
+        "serialized_arrow": "chi -> c_U1",
+        "source_ghost_number": 0,
+        "target_ghost_number": 1,
+        "transpose_repair_arrow": "c_U1 -> chi",
+        "transpose_repair_shift": 1
+      },
+      {
+        "compact_degree_shift": -1,
+        "component_multiplicity": 4,
+        "serialized_arrow": "A_star -> B=A-dchi",
+        "source_ghost_number": -1,
+        "target_ghost_number": 0,
+        "transpose_repair_arrow": "B=A-dchi -> A_star",
+        "transpose_repair_shift": 1
+      },
+      {
+        "compact_degree_shift": -1,
+        "component_multiplicity": 1,
+        "serialized_arrow": "c_U1_star -> H=chi_star+delta_A_star",
+        "source_ghost_number": -2,
+        "target_ghost_number": -1,
+        "transpose_repair_arrow": "H=chi_star+delta_A_star -> c_U1_star",
+        "transpose_repair_shift": 1
+      },
+      {
+        "compact_degree_shift": -1,
+        "component_multiplicity": 1,
+        "serialized_arrow": "bar_c -> b",
+        "source_ghost_number": -1,
+        "target_ghost_number": 0,
+        "transpose_repair_arrow": "b -> bar_c",
+        "transpose_repair_shift": 1
+      },
+      {
+        "compact_degree_shift": -1,
+        "component_multiplicity": 1,
+        "serialized_arrow": "b_star -> bar_c_star",
+        "source_ghost_number": -1,
+        "target_ghost_number": 0,
+        "transpose_repair_arrow": "bar_c_star -> b_star",
+        "transpose_repair_shift": 1
+      }
+    ],
+    "changed_basis_order": [
+      "chi",
+      "c_U1",
+      "A_star",
+      "B=A-dchi",
+      "c_U1_star",
+      "H=chi_star+delta_A_star",
+      "bar_c",
+      "b",
+      "b_star",
+      "bar_c_star"
+    ],
+    "compact_degrees": [
+      0,
+      -1,
+      1,
+      0,
+      2,
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    "component_ranks": [
+      1,
+      1,
+      4,
+      4,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "exact_repair_candidate": "transpose Q_changed_basis and S_changed_basis before direct sum with q54",
+    "ghost_numbers": [
+      0,
+      1,
+      -1,
+      0,
+      -2,
+      -1,
+      -1,
+      0,
+      -1,
+      0
+    ],
+    "homogeneous_degree_plus_one": false,
+    "serialized_component_arrows": 8,
+    "serialized_degree_shift_histogram": {
+      "-1": 8
+    },
+    "serialized_multiplet_arrows": 5,
+    "transpose_repair_degree_shift_histogram": {
+      "+1": 8
+    }
+  }
+}

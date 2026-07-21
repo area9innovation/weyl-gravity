@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-two-phase-counterflow-berger-full-isotypical-q70-grading-obstruction-payload-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "imports",
+    "oracle_fields_consumed",
+    "full_isotypical_carrier",
+    "q54_grading_audit",
+    "u1_grading_audit",
+    "direct_sum_obstruction",
+    "cyclic_pairing_interface",
+    "repair_candidate",
+    "mutation_ledger",
+    "downstream_disposition",
+    "content_sha256"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-berger-full-isotypical-q70-grading-obstruction-payload-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_PAYLOAD_V1"},
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "REDUCED-MODE"}],
+      "items": false
+    },
+    "imports": {"type": "object", "minProperties": 5},
+    "oracle_fields_consumed": {"type": "array", "maxItems": 0},
+    "full_isotypical_carrier": {"type": "object", "minProperties": 12},
+    "q54_grading_audit": {
+      "type": "object",
+      "required": ["degree_convention", "component_degree_ranks", "nonzero_operator_blocks", "degree_shift_histogram", "homogeneous_degree_plus_one"],
+      "properties": {
+        "degree_convention": {"type": "string"},
+        "component_degree_ranks": {"const": [5, 22, 22, 5]},
+        "nonzero_operator_blocks": {"const": 309},
+        "degree_shift_histogram": {"const": {"+1": 309}},
+        "homogeneous_degree_plus_one": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "u1_grading_audit": {"type": "object", "minProperties": 11},
+    "direct_sum_obstruction": {"type": "object", "minProperties": 5},
+    "cyclic_pairing_interface": {"type": "object", "minProperties": 5},
+    "repair_candidate": {"type": "object", "minProperties": 6},
+    "mutation_ledger": {"type": "object", "minProperties": 5},
+    "downstream_disposition": {"type": "object", "minProperties": 6},
+    "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
