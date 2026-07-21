@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-weyl-compact-cauchy-third-order-kuranishi-evaluation-v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "scope",
+    "provenance",
+    "global_constraint_projection",
+    "resonant_shells",
+    "correction_classes",
+    "classification",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-weyl-compact-cauchy-third-order-kuranishi-evaluation-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_EVALUATION_V1"},
+    "result_state": {"const": "GLOBAL_KURANISHI_CLASS_ZERO_BUT_FOUR_ORIGINAL_SHELLS_BOUNDED_OBSTRUCTED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "global_constraint_projection": {
+      "type": "object",
+      "required": ["K3_representative", "l2_rank", "quotient_basis", "intrinsic_global_K3_class"],
+      "properties": {
+        "K3_representative": {"const": ["0", "0", "0", "0", "0"]},
+        "l2_rank": {"const": 3},
+        "quotient_basis": {"const": ["P_x", "J_3"]},
+        "intrinsic_global_K3_class": {"const": "0"}
+      }
+    },
+    "resonant_shells": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "global_K3_class_zero",
+        "all_four_original_shells_evaluated",
+        "bounded_third_order_extension",
+        "smooth_secular_third_order_extension",
+        "causal_retarded_third_order_extension"
+      ],
+      "properties": {
+        "global_K3_class_zero": {"const": true},
+        "all_four_original_shells_evaluated": {"const": true},
+        "bounded_third_order_extension": {"const": false},
+        "smooth_secular_third_order_extension": {"const": true},
+        "causal_retarded_third_order_extension": {"const": false}
+      }
+    }
+  }
+}

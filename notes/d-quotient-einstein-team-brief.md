@@ -5126,3 +5126,55 @@ observational and quantum maps `NO_CERTIFIED_MAP`.
 
 Evidence is
 `bridge/certificates/EINSTEIN_WEYL_ALPHA_B3_OSTROGRADSKY_CANONICAL_CROSSWALK_V1.json`.
+
+## Balanced third-order Kuranishi evaluation after the canonical crosswalk
+
+The success-gated evaluation is now exact. The selected action-derived
+`q2=D2E` and `q3=D3E` checkpoints were restricted to the balanced carrier,
+all 27 signed `ell=0,2,4` correction rows were substituted, and the four
+original resonant `ell=2` shells were projected. The axial-vector projection
+requires equatorial coefficient derivative order five to distinguish the
+`ell=2,4,6` closure; that derivative was regenerated from the authoritative
+order-ten checkpoint and committed in a 1,411-term rational slice. Deleting
+the fifth derivative is a rejecting mutation.
+
+The compact stabilizer result and the bounded shell result are different:
+
+```text
+P_O(D2C[u,v]+D3C[u,u,u]/6)=0,
+im l2(u,-)=span{H,J1,J2},
+[K3]=0 in O/im l2, with quotient basis {P_x,J3};
+
+R_minus(+omega_minus) = -2323.7892958977... != 0,
+R_extra(+omega_extra) = (0,-723.3976090292...) != (0,0).
+```
+
+The negative-frequency rows are the exact reality conjugates. The nonzero
+statements use exact algebraic expressions and minimal polynomials, not the
+displayed decimals. Hence the balanced second-order jet has no third-order
+bounded or finite-quasiperiodic correction for the certified
+no-homogeneous-addition representative, even though its global cubic
+Kuranishi class vanishes. If smooth exponential-polynomial corrections with
+secular terms are allowed, the nonzero-determinant axial pencil is surjective
+by adjugate reduction, giving a third-order preimage (degree at most one on
+the q shell and at most two on the p shell). Causal/retarded inversion remains
+`NO_CERTIFIED_MAP`.
+
+The earlier rank-one statement applied only to the two-real-amplitude slice.
+The complete same-frequency spin-two ambiguity adds the `J1,J2` columns and
+has rank three. Correction changes alter the global representative only by
+this image; the arity-three action-derived `Q^2` identity and the absence of a
+Cauchy boundary supply nonlinear-gauge and boundary-representative
+independence for the global quotient. The shell coefficients remain scoped
+to the declared second-order representative.
+
+The active bridge has therefore moved from input repair to the next
+correction-freedom/all-orders question. The fail-closed atlas now uses three
+separate rows: global third-order quotient `CERTIFIED`, bounded shells
+`OBSTRUCTED`, and smooth secular third order `CERTIFIED`; causal,
+observational and quantum maps remain `NO_CERTIFIED_MAP`.
+
+Evidence is
+`bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_EVALUATION_V1.json`;
+the restricted exact tensor is
+`bridge/einstein_sector/generated/einstein_weyl_compact_cauchy_balanced_q2_q3_resonant_slice_v1.json`.

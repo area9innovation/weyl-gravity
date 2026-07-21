@@ -1,0 +1,73 @@
+{
+  "result_id": "EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_EVALUATION_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": {
+    "bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_EVALUATION_V1.json": "fcd47578b0409c2196ed07e83a8e400e7d8c45540abd899f0ce663e6fa74a87c",
+    "bridge/einstein_sector/generated/einstein_weyl_compact_cauchy_balanced_q2_q3_resonant_slice_v1.json": "0a94ffea6d872c0cd2d2d8c45ccd93d89c048c5650be775398db9394016900de",
+    "residual_atlas/einstein-weyl-compact-cauchy-third-order-kuranishi-evaluation-fragment-v1.json": "7fff245f5ee7337f28c81f711d7af4d12ba1691859584ff36898b4bfc5702065"
+  },
+  "source_manifest": {
+    "bridge/einstein_sector/einstein_weyl_compact_cauchy_third_order_kuranishi_evaluation.py": "965c876b0e984acb1214fcccaf8ff8a9f70b7a1cfad10d629e25e9cf6ccb7170",
+    "bridge/einstein_sector/verify_einstein_weyl_compact_cauchy_third_order_kuranishi_evaluation.py": "40bbbc40b7eeb9cf26d634cedf4ed885b378ec05ae1ba062c1f64ad86818b9b0",
+    "bridge/einstein_sector/schema/einstein-weyl-compact-cauchy-third-order-kuranishi-evaluation-v1.schema.json": "7f77a3950bee0d7e3fe941339bcfae2733134e2dc49a3fe148c3348760d81758",
+    "bridge/einstein_sector/tests/test_einstein_weyl_compact_cauchy_third_order_kuranishi_evaluation.py": "b60be75a4f36dfc36774f8d6e45f771e98f0f0c2865faf2783b060521862b5ec",
+    "bridge/einstein_sector/generate_third_order_kuranishi_evaluation_atlas.py": "1ae0531d4880bf6542c94b21d7b7d0c95ce8147441e39d7d76c9110e0ed3162b",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex": "325bda2ff4ec41956463881cb756957f4505aace7962aa5c72a4c406bc27cda0",
+    "reports/bridge-compact-cauchy-third-order-kuranishi-evaluation-after-canonical-crosswalk-closeout-2026-07-21.md": "9bbf9c6e489f3887d0eeff23b55d62cacd52d1d04f098a084c72c1e314e0f0e8"
+  },
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      "python3 -m py_compile <scoped producer/verifier/test/generator paths>",
+      "python3 -m json.tool <scoped JSON paths>",
+      "git diff --check -- <scoped paths>"
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_compact_cauchy_third_order_kuranishi_evaluation -v",
+        "result": "5 tests passed, including four status mutations"
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-weyl-compact-cauchy-third-order-kuranishi-evaluation-fragment-v1.json",
+        "result": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m bridge.einstein_sector.einstein_weyl_compact_cauchy_third_order_kuranishi_evaluation --write",
+        "elapsed_seconds": 70.61,
+        "max_rss_kib": 351656,
+        "result": "exact action-checkpoint producer PASS"
+      },
+      {
+        "command": "python3 bridge/einstein_sector/verify_einstein_weyl_compact_cauchy_third_order_kuranishi_evaluation.py",
+        "elapsed_seconds": 279.09,
+        "max_rss_kib": 103220,
+        "result": "method-distinct committed-slice replay PASS; fifth-jet deletion mutation rejected"
+      },
+      {
+        "command": "independent q2 ell=4 specialization against the direct calibrated axial-polar fixture",
+        "elapsed_seconds": 7.8,
+        "result": "exact four-row remainder zero"
+      },
+      {
+        "command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=/tmp/paper13-build paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
+        "elapsed_seconds": 0.9,
+        "max_rss_kib": 52476,
+        "result": "PASS"
+      }
+    ]
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "Scoped third-order fixture and paper theorem; no shared core algebra, programme release or full freeze tag changed."
+  },
+  "claim_boundary": "Certifies one balanced third-order global quotient and its bounded/smooth-secular shell split. It does not certify arbitrary second-order homogeneous additions, the full mixed cone, causality, all-orders integration, particles, positivity, unitarity or quantum theory."
+}

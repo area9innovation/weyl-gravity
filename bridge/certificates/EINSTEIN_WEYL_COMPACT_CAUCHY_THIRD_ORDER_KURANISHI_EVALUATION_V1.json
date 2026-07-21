@@ -1,0 +1,435 @@
+{
+  "action_and_Noether_replay": {
+    "arity_three_identity": "the four relevant full-BV output rows have exact zero Q^2 defect in the source-matched action-derived checkpoint",
+    "relevant_row_defect_counts": {
+      "23": 0,
+      "26": 0,
+      "30": 0,
+      "31": 0
+    },
+    "second_action_jet": "all 27 signed ell=0,2,4 correction representatives are imported through the exact alpha_B=3 Ostrogradsky crosswalk, including lapse, shift, canonical P and pi and the no-time-integration-by-parts boundary convention"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE result separates a vanishing compact stabilizer Kuranishi class from nonzero bounded resonant shell obstructions at third order for one balanced fixture. It certifies a smooth secular third-order preimage abstractly, not a bounded, causal, all-orders, particle, positivity, unitarity or quantum result.",
+  "classification": {
+    "D3_tensor_regenerated_on_balanced_carrier": true,
+    "all_four_original_shells_evaluated": true,
+    "all_orders_or_quantum_claim": false,
+    "bounded_third_order_extension": false,
+    "causal_retarded_third_order_extension": false,
+    "five_stabilizer_projections_zero": true,
+    "global_K3_class_zero": true,
+    "l2_image_rank_three": true,
+    "mixed_D2_u_v_regenerated_on_all_27_signed_correction_rows": true,
+    "smooth_secular_third_order_extension": true
+  },
+  "correction_classes": {
+    "bounded_or_finite_quasiperiodic": "OBSTRUCTED: every occupied original branch has a nonzero adjoint-shell functional",
+    "causal_retarded": "NO_CERTIFIED_MAP",
+    "smooth_exponential_polynomial": "CERTIFIED_SOLVABLE_WITH_SECULAR_TERMS: the square axial constant-coefficient pencil has nonzero determinant p^2 q; adjugate reduction and scalar polynomial-exponential surjectivity give a smooth secular preimage (degree at most one on q and at most two on p)"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "equation": {
+    "projected_global_class": "[P_O(D^2C[u,v]+D^3C[u,u,u]/6)] in O/im(l2(u,-))",
+    "second_order": "L v=-(1/2)D^2E[u,u]",
+    "third_order": "L w=-D^2E[u,v]-(1/6)D^3E[u,u,u]"
+  },
+  "global_constraint_projection": {
+    "D2C_u_v": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "D3C_u_u_u_over_6": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "K3_representative": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "intrinsic_global_K3_class": "0",
+    "l2_image": "span{H,J_1,J_2}",
+    "l2_image_normalized_basis_columns": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "l2_rank": 3,
+    "obstruction_basis": [
+      "H",
+      "P_x",
+      "J_1",
+      "J_2",
+      "J_3"
+    ],
+    "quotient_basis": [
+      "P_x",
+      "J_3"
+    ],
+    "quotient_dimension": 2,
+    "selection_certificate": "every third-order source is axial with even ell=2,4,6 and k=m=0; H and P_x are scalar ell=0, while lifted rotations are axial ell=1, so all closed-slice pairings vanish exactly",
+    "spin_two_rotation_derivatives": [
+      "sqrt(6)",
+      "-sqrt(6)",
+      "0"
+    ]
+  },
+  "independence": {
+    "boundary_representative": "the Cauchy slice is closed, so exact current/action improvements integrate to zero",
+    "bounded_resonance_scope": "the shell numbers are for the certified no-homogeneous-solution second-order representative; the global quotient statement is correction-independent",
+    "correction_choice": "v->v+z changes the global representative by l2(u,z); the displayed zero class in O/im(l2) is unchanged",
+    "nonlinear_gauge": "the imported action-derived arity-three Q^2/Noether identity sends a second-jet gauge change into the same l2 image plus an exact closed-slice term"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "provenance": {
+    "arity_three_Noether_checkpoint_rows": {
+      "23": {
+        "defect_count": 0,
+        "sha256": "c28521f06b9a0e1b55dad2fafde0c581080bb07b78d5b6e3013820ee2fb28ace"
+      },
+      "26": {
+        "defect_count": 0,
+        "sha256": "374d5fad0664c89e49f66eec75841982ba945b0e49728cd3b3ab75cb8df0c615"
+      },
+      "30": {
+        "defect_count": 0,
+        "sha256": "71eae42c265f07015d968654beec91c00d2d675bdf4f4a34b195175fb238a597"
+      },
+      "31": {
+        "defect_count": 0,
+        "sha256": "218a5a2c1a5defdb45dab9aa52b0e9bc4558a2daaa4be48e54d8dc7023227a26"
+      }
+    },
+    "checkpoint_manifest_sha256": "cab9334a1c0d66d889073683d97fa44c62ea253e1a8308b5ebac10de91309230",
+    "producer": "bridge/einstein_sector/einstein_weyl_compact_cauchy_third_order_kuranishi_evaluation.py",
+    "required_inputs": {
+      "arity_three_parent": {
+        "path": "bridge/certificates/WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
+        "sha256": "f78828e64525ecda924f34a75a1fe4ad8593b3fbf67cb2900ac221b98c454596"
+      },
+      "canonical_crosswalk": {
+        "path": "bridge/certificates/EINSTEIN_WEYL_ALPHA_B3_OSTROGRADSKY_CANONICAL_CROSSWALK_V1.json",
+        "sha256": "99ae4e6397afa7e2b27169f544229287ddb7f6034fcdb76d0096b771c10d330b"
+      },
+      "mixed_charge_correspondence": {
+        "path": "bridge/certificates/EINSTEIN_WEYL_MIXED_CHARGE_DERIVED_CORRESPONDENCE_V1.json",
+        "sha256": "a0280458c2cd704f96b33e9a21d796074c85bdd305a445ad60690d3dcd4367c4"
+      },
+      "repaired_cubic_export_obstruction": {
+        "path": "bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_CUBIC_CONSTRAINT_TENSOR_EXPORT_OBSTRUCTION_V1.json",
+        "sha256": "590a73db70dc193ecbbd6c3c41e06162797ec11808f6070eb4312476a129660b"
+      },
+      "two_jet_kuranishi_carrier": {
+        "path": "bridge/certificates/EINSTEIN_WEYL_CONSTRAINT_ALGEBROID_KURANISHI_CARRIER_V1.json",
+        "sha256": "fa764024805f3c2ce67e63d9a15afed94861e1374e32ecda8124efc3849aea24"
+      }
+    },
+    "restricted_tensor_slice": {
+      "path": "bridge/einstein_sector/generated/einstein_weyl_compact_cauchy_balanced_q2_q3_resonant_slice_v1.json",
+      "sha256": "0a94ffea6d872c0cd2d2d8c45ccd93d89c048c5650be775398db9394016900de"
+    },
+    "row_layout_sha256": "6236040676b7e699f5e48be6241143aa3bb5b7c9b4e07364826fc6f2b5ad24a2",
+    "selected_action_sha256": "647ff2fe89c167b00f480ce421e089646d5c6459534d90e74a99d40b7a75d4bd"
+  },
+  "resonant_shells": [
+    {
+      "adjoints": [
+        [
+          "0",
+          "2",
+          "0",
+          "-2*sqrt(3)"
+        ]
+      ],
+      "counts": {
+        "q2_mode_assignments": 9152,
+        "q2_terms": 832,
+        "q3_mode_assignments": 5211,
+        "q3_terms": 579
+      },
+      "frequency": "-sqrt(6 - 2*sqrt(3))",
+      "pairing_witnesses": [
+        {
+          "exact_zero": false,
+          "minimal_polynomial": "9100853857223374211390425*z**2 + 22259723182838911537033005600*z - 100871487182844159583805693455611",
+          "minimal_polynomial_constant_coefficient": "-100871487182844159583805693455611",
+          "numeric_40_digits": "2323.789295897767515221968587886156291336"
+        }
+      ],
+      "pairings": [
+        "(-10965380878245769230065520 + 18360494160065705283547559*sqrt(3))/8966358480023028779695"
+      ],
+      "source_action_row_order": [
+        "3*g_03_star_ell2",
+        "3*g_13_star_ell2",
+        "A_0_star_ell2/2",
+        "A_1_star_ell2/2"
+      ],
+      "source_components": {
+        "cubic_q3_over_6": [
+          "0",
+          "-3*(13395 + 26024*sqrt(3))/182",
+          "0",
+          "-3*(-1855 + 1717*sqrt(3))/182"
+        ],
+        "mixed_q2": [
+          "0",
+          "(-18760083725144276925915031 + 56545919269527185291205953*sqrt(3))/35865433920092115118780",
+          "0",
+          "-(-10029562681570661004375315 + 1703079725310530724672271*sqrt(3))/107596301760276345356340"
+        ],
+        "total": [
+          "0",
+          "(-26679053297006373882223681 + 41160830494750088524429073*sqrt(3))/35865433920092115118780",
+          "0",
+          "-(-13319526523856033872001865 + 4748291540514835422092641*sqrt(3))/107596301760276345356340"
+        ]
+      },
+      "target": [
+        -1,
+        0
+      ]
+    },
+    {
+      "adjoints": [
+        [
+          "-6",
+          "0",
+          "6",
+          "0"
+        ],
+        [
+          "0",
+          "2/3",
+          "0",
+          "-6"
+        ]
+      ],
+      "counts": {
+        "q2_mode_assignments": 9152,
+        "q2_terms": 832,
+        "q3_mode_assignments": 5211,
+        "q3_terms": 579
+      },
+      "frequency": "-4*sqrt(3)/3",
+      "pairing_witnesses": [
+        {
+          "exact_zero": true,
+          "minimal_polynomial": "z"
+        },
+        {
+          "exact_zero": false,
+          "minimal_polynomial": "23306174734836866930967286775805175984115021195343360000*z**4 + 149540869059720450516669237444572172237127811206771776381638400*z**2 - 84637680279640458853305337262753233270786562137490330541123068610601",
+          "minimal_polynomial_constant_coefficient": "-84637680279640458853305337262753233270786562137490330541123068610601",
+          "numeric_40_digits": "723.3976090292099712205777206421135865218"
+        }
+      ],
+      "pairings": [
+        "0",
+        "-sqrt(-6 + 5*sqrt(3))*(-31165678734191345949950*sqrt(39) + 11663679120517585237971*sqrt(13))/344008834868519282280"
+      ],
+      "source_action_row_order": [
+        "3*g_03_star_ell2",
+        "3*g_13_star_ell2",
+        "A_0_star_ell2/2",
+        "A_1_star_ell2/2"
+      ],
+      "source_components": {
+        "cubic_q3_over_6": [
+          "0",
+          "sqrt(-6 + 5*sqrt(3))*(-784682*sqrt(39) + 277893*sqrt(13))/9464",
+          "0",
+          "-3*sqrt(-6 + 5*sqrt(3))*(58*sqrt(39) + 1233*sqrt(13))/1183"
+        ],
+        "mixed_q2": [
+          "0",
+          "-sqrt(-6 + 5*sqrt(3))*(-63995202470056915225526*sqrt(39) + 21960124176268909049703*sqrt(13))/458678446491359043040",
+          "0",
+          "3*sqrt(-6 + 5*sqrt(3))*(-1324409724477333211882*sqrt(39) + 1027527104727942956937*sqrt(13))/458678446491359043040"
+        ],
+        "total": [
+          "0",
+          "-sqrt(-6 + 5*sqrt(3))*(-25965117859983732997006*sqrt(39) + 8491872957880992888723*sqrt(13))/458678446491359043040",
+          "0",
+          "3*sqrt(-6 + 5*sqrt(3))*(-1346897763274035514922*sqrt(39) + 549462417894599169897*sqrt(13))/458678446491359043040"
+        ]
+      },
+      "target": [
+        0,
+        -1
+      ]
+    },
+    {
+      "adjoints": [
+        [
+          "-6",
+          "0",
+          "6",
+          "0"
+        ],
+        [
+          "0",
+          "-2/3",
+          "0",
+          "6"
+        ]
+      ],
+      "counts": {
+        "q2_mode_assignments": 9152,
+        "q2_terms": 832,
+        "q3_mode_assignments": 5211,
+        "q3_terms": 579
+      },
+      "frequency": "4*sqrt(3)/3",
+      "pairing_witnesses": [
+        {
+          "exact_zero": true,
+          "minimal_polynomial": "z"
+        },
+        {
+          "exact_zero": false,
+          "minimal_polynomial": "23306174734836866930967286775805175984115021195343360000*z**4 + 149540869059720450516669237444572172237127811206771776381638400*z**2 - 84637680279640458853305337262753233270786562137490330541123068610601",
+          "minimal_polynomial_constant_coefficient": "-84637680279640458853305337262753233270786562137490330541123068610601",
+          "numeric_40_digits": "-723.3976090292099712205777206421135865218"
+        }
+      ],
+      "pairings": [
+        "0",
+        "sqrt(-6 + 5*sqrt(3))*(-31165678734191345949950*sqrt(39) + 11663679120517585237971*sqrt(13))/344008834868519282280"
+      ],
+      "source_action_row_order": [
+        "3*g_03_star_ell2",
+        "3*g_13_star_ell2",
+        "A_0_star_ell2/2",
+        "A_1_star_ell2/2"
+      ],
+      "source_components": {
+        "cubic_q3_over_6": [
+          "0",
+          "sqrt(-6 + 5*sqrt(3))*(-784682*sqrt(39) + 277893*sqrt(13))/9464",
+          "0",
+          "-3*sqrt(-6 + 5*sqrt(3))*(58*sqrt(39) + 1233*sqrt(13))/1183"
+        ],
+        "mixed_q2": [
+          "0",
+          "-sqrt(-6 + 5*sqrt(3))*(-63995202470056915225526*sqrt(39) + 21960124176268909049703*sqrt(13))/458678446491359043040",
+          "0",
+          "3*sqrt(-6 + 5*sqrt(3))*(-1324409724477333211882*sqrt(39) + 1027527104727942956937*sqrt(13))/458678446491359043040"
+        ],
+        "total": [
+          "0",
+          "-sqrt(-6 + 5*sqrt(3))*(-25965117859983732997006*sqrt(39) + 8491872957880992888723*sqrt(13))/458678446491359043040",
+          "0",
+          "3*sqrt(-6 + 5*sqrt(3))*(-1346897763274035514922*sqrt(39) + 549462417894599169897*sqrt(13))/458678446491359043040"
+        ]
+      },
+      "target": [
+        0,
+        1
+      ]
+    },
+    {
+      "adjoints": [
+        [
+          "0",
+          "-2",
+          "0",
+          "2*sqrt(3)"
+        ]
+      ],
+      "counts": {
+        "q2_mode_assignments": 9152,
+        "q2_terms": 832,
+        "q3_mode_assignments": 5211,
+        "q3_terms": 579
+      },
+      "frequency": "sqrt(6 - 2*sqrt(3))",
+      "pairing_witnesses": [
+        {
+          "exact_zero": false,
+          "minimal_polynomial": "9100853857223374211390425*z**2 - 22259723182838911537033005600*z - 100871487182844159583805693455611",
+          "minimal_polynomial_constant_coefficient": "-100871487182844159583805693455611",
+          "numeric_40_digits": "-2323.789295897767515221968587886156291336"
+        }
+      ],
+      "pairings": [
+        "-(-10965380878245769230065520 + 18360494160065705283547559*sqrt(3))/8966358480023028779695"
+      ],
+      "source_action_row_order": [
+        "3*g_03_star_ell2",
+        "3*g_13_star_ell2",
+        "A_0_star_ell2/2",
+        "A_1_star_ell2/2"
+      ],
+      "source_components": {
+        "cubic_q3_over_6": [
+          "0",
+          "-3*(13395 + 26024*sqrt(3))/182",
+          "0",
+          "-3*(-1855 + 1717*sqrt(3))/182"
+        ],
+        "mixed_q2": [
+          "0",
+          "(-18760083725144276925915031 + 56545919269527185291205953*sqrt(3))/35865433920092115118780",
+          "0",
+          "-(-10029562681570661004375315 + 1703079725310530724672271*sqrt(3))/107596301760276345356340"
+        ],
+        "total": [
+          "0",
+          "(-26679053297006373882223681 + 41160830494750088524429073*sqrt(3))/35865433920092115118780",
+          "0",
+          "-(-13319526523856033872001865 + 4748291540514835422092641*sqrt(3))/107596301760276345356340"
+        ]
+      },
+      "target": [
+        1,
+        0
+      ]
+    }
+  ],
+  "result_id": "EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_EVALUATION_V1",
+  "result_state": "GLOBAL_KURANISHI_CLASS_ZERO_BUT_FOUR_ORIGINAL_SHELLS_BOUNDED_OBSTRUCTED",
+  "schema": "einstein-weyl-compact-cauchy-third-order-kuranishi-evaluation-v1",
+  "scope": {
+    "background": "compactified magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L x S2; bounded/finite-quasiperiodic versus smooth exponential-polynomial correction classes",
+    "carrier": "balanced real axial Einstein-minus plus second extra-primary ell=2 tangent with its certified polar second-order correction",
+    "charge_sector": "fixed magnetic bundle N=2 and fixed electric charge; no homogeneous Wilson-line shift",
+    "degree": 3,
+    "ell": "third-order closure ell=2,4,6; projected original ell=2 shells",
+    "k": 0,
+    "m": 0,
+    "omega": "four original shells +/-omega_minus and +/-omega_extra",
+    "parity": "axial",
+    "theory": "Weyl-Maxwell"
+  }
+}

@@ -2860,6 +2860,8 @@ Two-momentum nonaxisymmetric \(L=1,3\) completion &
 \cert{bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L1_L3_matrix.json}\\
 Moment-map/Taub bridge &
 \cert{bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json}\\
+Balanced third-order global quotient and four-shell bounded obstruction &
+\cert{bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_EVALUATION_V1.json}\\
 \end{longtable}
 \endgroup
 
@@ -3224,11 +3226,16 @@ The correction-independent object is therefore the class
  [K_3(u;v)]\in
  \mathfrak o/\operatorname{im}\ell_2(u,-).
 \]
-On the declared balanced two-amplitude slice the map
-$\ell_2(u,-)$ has rank one, so this formal quotient has dimension four.
-Independence under nonlinear gauge representatives would require, in
-addition, the second jet of the bundle-covariant algebroid action and its
-arity-three Noether identity.
+The earlier two-amplitude preflight saw only the Hamiltonian column of this
+map and hence rank one.  On the complete same-frequency spin-two correction
+space, the $m=\pm1$ directions add the $J_1$ and $J_2$ columns.  The exact
+spin-two matrices give
+\[
+ \operatorname{im}\ell_2(u,-)=\operatorname{span}\{H,J_1,J_2\},
+ \qquad \operatorname{rank}\ell_2(u,-)=3,
+\]
+while $P_x$ and $J_3$ vanish by $k=m=0$.  Thus the intrinsic global quotient
+has basis $\{P_x,J_3\}$ and dimension two.
 
 The smallest finite third-order closure can be fixed before its coefficients
 are known.  Its axial angular outputs are $\ell=2,4,6$.  Writing
@@ -3244,16 +3251,78 @@ frequency, its sixteen signed frequencies are
 An exact shell comparison shows that the only coincidences are the original
 $\ell=2$ shells: $(n_-,n_e)=(\pm1,0)$ on the Einstein-minus branch and
 $(0,\pm1)$ on the additional branch.  Thus no new kinematic shell type
-appears, but the coefficients of the potentially resonant original-shell
-sources remain load bearing.
+appears.  The action-normalized coefficients can now also be evaluated.
 
-The imported quadratic certificate supplies $D^2E$ on two first-order axial
-inputs and a complete chosen second-order correction.  It does not supply the
-action-normalized tensor $D^3C[u,u,u]$, the mixed tensor $D^2C[u,v]$ for the
-stored polar correction channels, or the arity-three gauge/Noether data.
-Consequently $K_3$ cannot yet be evaluated even on the balanced fixture.
-Neither third-order integrability nor sufficiency of the five quadratic Taub
-charges is claimed.  The missing object is now content-addressed and scoped;
-reconstructing a different nonlinear action would not close this gate.
+\begin{theorem}[Global cubic class versus bounded shell obstruction]
+\label{thm:balanced-third-order}
+Let $u$ be the real balanced Einstein-minus/additional-primary tangent and
+let $v$ be its certified no-homogeneous-addition second-order correction from
+the companion construction.  Then:
+\begin{enumerate}
+\item the compact stabilizer representative vanishes componentwise,
+\[
+ P_{\mathfrak o}\left(D^2C[u,v]+{1\over6}D^3C[u,u,u]\right)=0,
+\]
+and hence $[K_3(u;v)]=0$ in
+$\mathfrak o/\operatorname{im}\ell_2(u,-)$;
+\item in the bounded or finite-quasiperiodic correction class, each occupied
+original branch has a nonzero adjoint-shell functional.  Numerically, in the
+declared action-row normalization, the positive-frequency values are
+\[
+ \begin{aligned}
+ R_-(u;v)&=-2323.7892958977675\ldots,\\
+ (R_{e,1}(u;v),R_{e,2}(u;v))
+   &=(0,-723.39760902920997\ldots).
+ \end{aligned}
+\]
+The negative-frequency values are their reality conjugates.  All nonzero
+claims are exact: the certificate records their algebraic expressions and
+minimal polynomials with nonzero constant coefficient;
+\item a smooth finite exponential-polynomial third-order correction exists
+if secular terms are allowed.  The bounded obstruction is therefore not a
+global compact-stabilizer Kuranishi obstruction.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The selected action
+$\int\sqrt{-g}(3C^2/8-F^2/4)$ supplies exact action-derived $q_2=D^2E$ and
+$q_3=D^3E$.  Substitution of all 27 signed $\ell=0,2,4$ correction rows gives
+the mixed term $D^2E[u,v]$; the four signed first-order modes give
+$D^3E[u,u,u]/6$.  Their axial output has only even
+$\ell=2,4,6$.  Resolving its $\ell=2$ dual-vector density requires the
+equatorial derivatives of orders $1,3,5$; the scalar rows use orders
+$0,2,4$.  The fifth derivative is retained from the content-addressed
+order-ten checkpoint rather than inferred from the order-four public PBW
+payload.  Deleting it changes the certified source and is a rejecting
+mutation.
+
+The global projections vanish before any numerical simplification: $H$ and
+$P_x$ are scalar $\ell=0$ covectors, whereas the lifted rotations are axial
+$\ell=1$ covectors, so all pairings with the even-$\ell$ axial source vanish
+on the closed slice.  The standard spin-two matrices then give the displayed
+rank-three image of $\ell_2(u,-)$.  The action-derived arity-three $Q^2$
+identity has zero defect on all four relevant Euler rows; a nonlinear gauge
+change therefore changes the representative only by the same $\ell_2$ image
+and a closed-slice exact term.
+
+Projection onto the four original shells gives the exact nonzero functionals
+recorded in
+\cert{bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_EVALUATION_V1.json}.
+Thus the Fredholm alternative forbids a bounded quasiperiodic primitive.
+For the smooth secular class, the square axial constant-coefficient pencil
+has nonzero determinant proportional to $p^2q$.  Its adjugate reduces the
+system to scalar constant-coefficient equations, which are surjective on
+finite exponential-polynomials after polynomial factors in $t$ are allowed.
+The required secular degree is at most one on the $q$ shell and at most two
+on the $p$ shell.  This proves the three distinct assertions.
+\end{proof}
+
+The theorem is deliberately not an all-orders result.  It says that the
+quadratic charge balance survives the global cubic quotient, while uniform
+boundedness fails for the chosen second-order representative because of a
+different, local-in-time resonant cokernel.  Causal/retarded inversion and
+the effect of allowing arbitrary homogeneous second-order additions on the
+shell representatives remain separate gates.
 
 \end{document}
