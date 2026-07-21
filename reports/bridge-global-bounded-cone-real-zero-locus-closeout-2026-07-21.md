@@ -25,3 +25,5 @@ Evidence:
 Tier 0 and scoped Tier 1 commands are recorded in the certificate and receipt.
 Tier 2 was not run because no mathematical input or shared operator changed.
 Tier 3 was not run because no theorem or lifecycle state was promoted.
+
+CLOSE-OUT: OBSTRUCTED — the unrestricted real common zero is not classified; the exact candidate-18 fixed-occupation real/orbit gate is exported.
