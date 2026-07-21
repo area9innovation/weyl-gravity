@@ -1,0 +1,58 @@
+{
+  "schema": "pure-weyl-test-tier-receipt-v1",
+  "result_id": "BERGER_Q26_104_ROW_MIXED_EVOLUTION_CORRECTION_ENDPOINT_OBSTRUCTION_V1",
+  "recorded_at": "2026-07-21T08:45:00Z",
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      "python3 -m py_compile d_quotient_classical/causal_transfer/berger_q26_104_row_mixed_evolution_endpoint_obstruction.py d_quotient_classical/causal_transfer/verify_berger_q26_104_row_mixed_evolution_endpoint_obstruction.py d_quotient_classical/causal_transfer/tests/test_berger_q26_104_row_mixed_evolution_endpoint_obstruction.py",
+      "git diff --check -- <scoped paths>"
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.berger_q26_104_row_mixed_evolution_endpoint_obstruction --check --guards",
+        "elapsed_seconds": 1.71,
+        "status": "PASS"
+      },
+      {
+        "command": "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.verify_berger_q26_104_row_mixed_evolution_endpoint_obstruction",
+        "elapsed_seconds": 1.00,
+        "status": "PASS"
+      },
+      {
+        "command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.causal_transfer.tests.test_berger_q26_104_row_mixed_evolution_endpoint_obstruction",
+        "elapsed_seconds": 1.86,
+        "status": "PASS",
+        "tests": 4
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-q26-104-row-mixed-evolution-endpoint-obstruction-v1.schema.json -d d_quotient_classical/certificates/BERGER_Q26_104_ROW_MIXED_EVOLUTION_CORRECTION_ENDPOINT_OBSTRUCTION_V1.json",
+        "elapsed_seconds": 3.0,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "NOT_RUN",
+    "reason": "No shared mathematical input or existing certificate chain was changed; every pinned input is content-addressed and unchanged."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "This is an architecture-scoped obstruction checkpoint, not a classical freeze, theorem promotion, release or shared-core change."
+  },
+  "artifacts": [
+    "d_quotient_classical/causal_transfer/berger_q26_104_row_mixed_evolution_endpoint_obstruction.py",
+    "d_quotient_classical/causal_transfer/verify_berger_q26_104_row_mixed_evolution_endpoint_obstruction.py",
+    "d_quotient_classical/causal_transfer/tests/test_berger_q26_104_row_mixed_evolution_endpoint_obstruction.py",
+    "d_quotient_classical/schema/berger-q26-104-row-mixed-evolution-endpoint-obstruction-v1.schema.json",
+    "d_quotient_classical/certificates/BERGER_Q26_104_ROW_MIXED_EVOLUTION_CORRECTION_ENDPOINT_OBSTRUCTION_V1.json",
+    "d_quotient_classical/generated/berger_q26_104_row_mixed_evolution_endpoint_obstruction_v1/rational_endpoint_witness.json",
+    "d_quotient_classical/reports/berger-q26-104-row-mixed-evolution-endpoint-obstruction-v1.md",
+    "residual_atlas/berger-q26-104-row-mixed-evolution-endpoint-obstruction-fragment-v1.json",
+    "notes/d-quotient-classical-team-brief.md"
+  ],
+  "claim_boundary": "The receipt covers the exact rational endpoint obstruction in the declared fully-mixed correction ansatz only."
+}

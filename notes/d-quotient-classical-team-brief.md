@@ -3587,3 +3587,31 @@ and unrestricted carriers coincide on this nonhomogeneous isotype.
 This is a linear Hamiltonian-Hopf health obstruction, not a nonlinear
 blow-up theorem.  Higher-j and low-j stabilizer censuses, q2, observers,
 Hadamard data, QME, particle, positivity and unitarity claims remain separate.
+
+### q26 104-row mixed-evolution endpoint obstruction (2026-07-21)
+
+`BERGER_Q26_104_ROW_MIXED_EVOLUTION_CORRECTION_ENDPOINT_OBSTRUCTION_V1`
+applies the landed one-free-differential idea to the first exact simultaneous
+slice, without pretending that the missing two-free-differential solver has
+landed.  For
+
+\[
+A_{\rm ext}=N\otimes A,\qquad
+q_{\rm ext}=N\otimes q+(I-N)\otimes s,
+\qquad N=\begin{pmatrix}1&-1\\1&-1\end{pmatrix},
+\]
+
+the frozen old-old blocks are retained and evolution equivariance reduces to
+the exact intertwiner equation $A_0s=sA_{-1}$.  The rational intertwiner
+space has dimension $20$, but the required total left-endpoint rank $23$
+is absent.  A rank-$11$ correction has a one-dimensional rational invariant
+kernel; the source characteristic polynomial has no rational root except
+zero, so this kernel is the unique line \(\ker A_{-1}\).  The frozen old
+differential kills the same line, forcing total rank $22$.  Rank-$12$
+corrections give rank $24$, and rank at most $10$ cannot exceed $22$.
+
+This is a characteristic-zero obstruction to the declared fully-mixed
+correction ansatz only.  It is not the general 104-row no-go and does not
+raise the 104-row lower bound.  The general non-cone gate still needs the
+accepted but not-yet-landed two-free-differential/rank-stratum solver,
+followed by cyclicity, real structure and the retained SDR.

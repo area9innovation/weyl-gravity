@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.invalid/schema/berger-q26-104-row-mixed-evolution-endpoint-obstruction-v1.schema.json",
+  "title": "Berger q26 104-row mixed-evolution endpoint obstruction",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "scope",
+    "pinned_inputs",
+    "exact_obstruction",
+    "classification",
+    "partial_solver_disposition",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-q26-104-row-mixed-evolution-endpoint-obstruction-v1"},
+    "result_id": {"const": "BERGER_Q26_104_ROW_MIXED_EVOLUTION_CORRECTION_ENDPOINT_OBSTRUCTION_V1"},
+    "result_state": {"const": "RATIONAL_FULLY_MIXED_CORRECTION_ANSATZ_MISSES_REQUIRED_LEFT_ENDPOINT_RANK"},
+    "lifecycle_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}
+    },
+    "scope": {"type": "object"},
+    "pinned_inputs": {"type": "object"},
+    "exact_obstruction": {
+      "type": "object",
+      "required": ["artifact_id", "path", "sha256", "required_left_endpoint_rank", "attainable_neighbor_ranks", "proof"],
+      "properties": {
+        "artifact_id": {"type": "string"},
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "required_left_endpoint_rank": {"const": 23},
+        "attainable_neighbor_ranks": {"const": [22, 24]},
+        "proof": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "declared_mixed_correction_ansatz_closes",
+        "all_rational_104_row_completions_obstructed",
+        "global_104_row_lower_bound_raised",
+        "PBW_operator_completion_constructed",
+        "cyclic_pairing_constructed",
+        "real_involution_constructed",
+        "retained_SDR_constructed",
+        "Hadamard_or_quantum_claim"
+      ],
+      "properties": {
+        "declared_mixed_correction_ansatz_closes": {"type": "boolean"},
+        "all_rational_104_row_completions_obstructed": {"type": "boolean"},
+        "global_104_row_lower_bound_raised": {"type": "boolean"},
+        "PBW_operator_completion_constructed": {"type": "boolean"},
+        "cyclic_pairing_constructed": {"type": "boolean"},
+        "real_involution_constructed": {"type": "boolean"},
+        "retained_SDR_constructed": {"type": "boolean"},
+        "Hadamard_or_quantum_claim": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "partial_solver_disposition": {"type": "object"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": false
+}
