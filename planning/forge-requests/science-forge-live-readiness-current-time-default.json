@@ -1,0 +1,21 @@
+{
+  "id": "sf:forge-request/science-forge-live-readiness-current-time-default",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Prevent resident agents from receiving a false empty-queue result because user-facing live readiness and status commands silently evaluate leases at `now=unbounded` when `--now` is omitted.",
+    "depends_on": [
+      "sf:forge-request/bug-science-forge-unbounded-lease-default",
+      "sf:forge-request/bug-science-forge-future-dated-event-diagnostics"
+    ],
+    "stop_condition": "Define two explicit time modes and make them impossible to confuse. For the user-facing `s-f` launcher, live coordination commands including `work ready`, `work pull`, `work show`, `overview`, `agent status`, `await` and lease mutation must, when `--now` is omitted, inject the canonical UTC value produced by `s-f now`, print that resolved snapshot, and apply bounded-lease expiry normally. Deterministic core/replay callers must continue to require an explicit timestamp, or opt into a visibly named `--timeless`/`--now-unbounded` mode whose output is labeled NON_LIVE_REPLAY and which is refused for mutation. Do not make the native `sfc` backend depend on the host clock. Ensure that the launcher-generated timestamp is passed once through the normalized RFC3339 comparator and recorded on every mutation. Add both-backend and launcher fixtures for a lease that expired five minutes ago: bare interactive `s-f work ready --stream S` must return the item READY, bare interactive overview must label the lease EXPIRED, explicit historical `--now` must reproduce the earlier LIVE state, explicit timeless replay must preserve the old fold with a prominent non-live label, and no mutating command may create or renew an unbounded lease. Cover agent-aware current-assignment recovery and prove byte stability for fixed explicit timestamps.",
+    "forbid": "no hidden host-clock lookup inside deterministic sfc; no silent change to explicit `--now`; no timeless mutation; no lexical timestamp comparison; no treating a future expiry as a future-dated event; no auto-release or lifecycle rewrite; no physics-specific stream exception; no output that merely says zero ready without stating the resolved time mode.",
+    "notes": [
+      "Live reproduction 2026-07-21 17:09 Europe/Berlin: `nonlinear-1` ran bare `s-f work ready --stream nonlinear`, received `0 ready ... at now=unbounded`, and stopped. Its exclusive lease actually expired at 2026-07-21T14:56:59Z. At explicit `--now 2026-07-21T15:07:28Z`, the same command correctly returned `nonlinear-branch-repair-residual-orbit-obstruction-freeze-v2` READY. The false timeless default left a Phase-1 closure item idle until coordinator inspection.",
+      "The Black Hole resident likewise reported an empty queue while holding an unstarted Paper 14 freeze and using the resident polling convention without an explicit current snapshot. Existing agent-aware lease recovery and stale-inbox requests are complementary; neither fixes the time-mode ambiguity.",
+      "The desired split preserves Science Forge's reproducibility principle: explicit-time and explicitly timeless core evaluations stay deterministic. Only the interactive launcher resolves omitted time, exactly as `s-f now` already provides canonical UTC for safe commands."
+    ]
+  }
+}
