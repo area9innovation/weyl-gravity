@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "scalar-flat-berger-vector-schur-high-mode-trace-majorant-obstruction-v1",
+  "title": "Scalar-flat Berger vector Schur high-mode trace-majorant obstruction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "input_commit",
+    "dependencies",
+    "import_gate",
+    "first_insertion",
+    "exact_lower_bound_proof",
+    "exact_shell_witnesses",
+    "trace_ideal_disposition",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schema": {"const": "quantum-weyl-scalar-flat-berger-vector-schur-high-mode-trace-majorant-obstruction-v1"},
+    "result_id": {"const": "SCALAR_FLAT_BERGER_VECTOR_SCHUR_HIGH_MODE_TRACE_MAJORANT_OBSTRUCTION_V1"},
+    "result_state": {"const": "FIRST_INSERTION_ABSOLUTE_TRACE_MAJORANT_OBSTRUCTED"},
+    "lifecycle_state": {"const": "EXACT_TAIL_OBSTRUCTION_COMPLETE_COERCIVITY_PREFLIGHT_NOT_ACTIVATED"},
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "EUCLIDEAN-SPECTRAL"}],
+      "items": false
+    },
+    "input_commit": {"type": "string", "minLength": 7},
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["low_blocks", "low_oracle", "variation", "variation_manifest"],
+      "properties": {
+        "low_blocks": {"$ref": "#/$defs/reference"},
+        "low_oracle": {"$ref": "#/$defs/reference"},
+        "variation": {"$ref": "#/$defs/reference"},
+        "variation_manifest": {"$ref": "#/$defs/reference"}
+      }
+    },
+    "import_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unique_pencil", "normalization", "status"],
+      "properties": {
+        "unique_pencil": {"type": "string"},
+        "normalization": {"type": "string"},
+        "status": {"const": "PASS"}
+      }
+    },
+    "first_insertion": {"$ref": "#/$defs/stringMap"},
+    "exact_lower_bound_proof": {"$ref": "#/$defs/stringMap"},
+    "exact_shell_witnesses": {
+      "type": "array",
+      "minItems": 15,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["twice_j", "j", "central_weight_count", "central_weights", "absolute_shell_contribution", "minus_uniform_lower_bound"],
+        "properties": {
+          "twice_j": {"type": "integer", "minimum": 2},
+          "j": {"type": "string"},
+          "central_weight_count": {"type": "integer", "minimum": 1},
+          "central_weights": {"type": "array", "items": {"type": "string"}},
+          "absolute_shell_contribution": {"type": "string"},
+          "minus_uniform_lower_bound": {"type": "string"}
+        }
+      }
+    },
+    "trace_ideal_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["first_insertion_order", "first_insertion_absolute_trace_majorant", "second_insertion_order", "second_insertion_absolute_trace_majorant", "third_insertion_order", "third_insertion_absolute_trace_majorant", "requested_three_summable_majorants", "required_repair"],
+      "properties": {
+        "first_insertion_order": {"const": -2},
+        "first_insertion_absolute_trace_majorant": {"const": "DOES_NOT_EXIST"},
+        "second_insertion_order": {"const": -4},
+        "second_insertion_absolute_trace_majorant": {"const": "NOT_DECIDED_HERE"},
+        "third_insertion_order": {"const": -6},
+        "third_insertion_absolute_trace_majorant": {"const": "NOT_DECIDED_HERE"},
+        "requested_three_summable_majorants": {"const": "OBSTRUCTED_AT_FIRST_INSERTION"},
+        "required_repair": {"type": "string"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["LOW_BLOCK_PENCIL_AND_NORMALIZATION_IMPORTED", "FIRST_INSERTION_EXACT_MODE_FORMULA_VERIFIED", "FIRST_INSERTION_SUMMABLE_MAJORANT_OBSTRUCTED", "COMPLETE_HIGH_MODE_COERCIVITY_PREFLIGHT_COMPUTED", "FINITE_EXCEPTIONAL_BLOCK_SET_CLASSIFIED", "GLOBAL_DETERMINANT_OR_FINITE_TRACE_COMPUTED", "ANOMALY_COEFFICIENT_OR_QME_COMPUTED", "LORENTZIAN_OR_HADAMARD_PROMOTED"],
+      "properties": {
+        "LOW_BLOCK_PENCIL_AND_NORMALIZATION_IMPORTED": {"const": true},
+        "FIRST_INSERTION_EXACT_MODE_FORMULA_VERIFIED": {"const": true},
+        "FIRST_INSERTION_SUMMABLE_MAJORANT_OBSTRUCTED": {"const": true},
+        "COMPLETE_HIGH_MODE_COERCIVITY_PREFLIGHT_COMPUTED": {"const": false},
+        "FINITE_EXCEPTIONAL_BLOCK_SET_CLASSIFIED": {"const": false},
+        "GLOBAL_DETERMINANT_OR_FINITE_TRACE_COMPUTED": {"const": false},
+        "ANOMALY_COEFFICIENT_OR_QME_COMPUTED": {"const": false},
+        "LORENTZIAN_OR_HADAMARD_PROMOTED": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"}
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "stringMap": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"type": "string"}
+    }
+  }
+}
