@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/observer-berger-apparatus-z2-memory-response-RETIRED-efb3767ce32a027e",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/observer-berger-apparatus-z2-memory-response-RETIRED-efb3767ce32a027e.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "coordinator", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-21T03:40:03Z", "seq": 3, "predecessor": "sf:program/event/observer-berger-apparatus-z2-memory-response-BLOCKED-fe103e9876401e22", "payload": {"target": "sf:program/work/observer-berger-apparatus-z2-memory-response", "to_state": "RETIRED", "note": "Superseded: Z2 memory descent cannot be defined on the obstructed legacy apparatus complex. Future memory work must depend on a certified changed-action observer complex."}, "native": {"authored_by": "sfc work-event", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/observer-berger-apparatus-z2-memory-response"}]
+}

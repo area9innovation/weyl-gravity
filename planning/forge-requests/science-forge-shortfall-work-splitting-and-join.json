@@ -1,0 +1,47 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:forge-request/science-forge-shortfall-work-splitting-and-join",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "science-forge-shortfall-work-splitting-and-join",
+  "source": {
+    "path": "planning/forge-requests/science-forge-shortfall-work-splitting-and-join.json",
+    "span": null
+  },
+  "body": {
+    "owner": "science-forge",
+    "state": "REQUESTED",
+    "objective": "Add a first-class append-only decomposition workflow for work items whose honest result is a material SHORTFALL because the original package is too large or contains independently executable proof obligations. Preserve the work already established, split only the unmet clauses into pullable children, and fold the children back into one auditable parent disposition.",
+    "stop_condition": "Introduce a typed non-pullable parent disposition such as PARTIAL/DECOMPOSED, distinct from BLOCKED and from a resumable ACTIVE shortfall. Give every stop-condition obligation a stable clause ID and record clause-level outcomes as SATISFIED, OBSTRUCTED, WAIVED or SPLIT. Add an atomic coordinator command such as `s-f work split --item <parent> --child <id>:<clause-ids> ...` which (1) refolds the parent under compare-and-swap, (2) preserves every existing report, certificate, receipt and landed clause, (3) appends the parent decomposition event, (4) creates content-addressed child work items carrying `SPLIT_FROM` and `IMPLEMENTS_CLAUSE` edges, exact allowed paths, ownership/resource hints and inherited scientific forbids, (5) releases any live parent lease, and (6) refuses duplicate, overlapping, empty, cyclic or scope-widening splits. Support nested child splits and an explicit join/assembly item when integration is itself work. Parent completion must fold only when every mandatory clause is terminally satisfied or explicitly waived by the coordinator with a reason; an obstructed child must remain visible in the aggregate verdict and may never be converted into success by the join. Add `s-f work show --item <parent>` clause/child drill-down and compact overview rendering such as `DECOMPOSED: 4 children (1 active, 2 ready, 1 done)` rather than one repeated alarm per child. Add deterministic fixtures for: a math exact-algebra task that exhausts resources after proving two of five clauses; a physics task that lands a producer but lacks an independent verifier; a SHORTFALL with a true external prerequisite that must remain BLOCKED rather than split; two concurrent split attempts; a nested split; a child obstruction; a join with stale evidence; and a fully completed fold. Demonstrate append-only byte-idempotent native/C agreement and bounded O(items+events+split-edges) overview folding on the live-size programme.",
+    "current_gate": "honest work decomposition without losing partial mathematical results or re-pulling an oversized parent unchanged",
+    "forbid": "no rewriting the parent item or its historical stop condition; no automatic semantic splitting from prose without a coordinator-authored clause mapping; no narrowing, waiving or silently dropping a mandatory claim; no child that overlaps another child's clause or allowed-path ownership without an explicit shared-input declaration; no parent DONE while a mandatory child is READY, ACTIVE, BLOCKED, OBSTRUCTED or stale; no hiding children or aggregate failures from drill-down; no treating a missing external prerequisite as evidence that a task is merely too large; no lease mutation outside the atomic split transaction",
+    "depends_on": [
+      "sf:forge-request/bug-science-forge-pull-transition-cas-race",
+      "sf:forge-request/science-forge-blocker-frontier-parking-and-drilldown"
+    ],
+    "activates": [
+      "resource-bounded exact-math work packages that can make monotone progress",
+      "proof-obligation-level scheduling across resident and come-and-go agents",
+      "accurate queue forecasting from child-sized work rather than oversized parent averages",
+      "one-line parent summaries with complete child-level auditability"
+    ],
+    "allowed_paths": [
+      "forge/tools/science-forge/",
+      "forge/tools/science-forge-cli/",
+      "forge/tools/science-forge/fixtures/",
+      "forge/tools/science-forge/GUIDE.md",
+      "forge/tools/science-forge/WORKER-GUIDE.md"
+    ],
+    "resource_hint": "HIGH LEVERAGE FOR MATH/DISCOVERY. The live programme has already produced useful SHORTFALL certificates when exact algebra, free differential completion, PBW membership and large symbolic carriers exceeded one work package. The split must preserve monotone evidence: completed clauses are immutable inputs, not work to redo. Resource limits and estimated clause sizes should be inherited into children so OOM/time shortfall becomes a scheduling signal rather than an undifferentiated failure.",
+    "notes": [
+      "BLOCKED answers `what prerequisite is absent?`; DECOMPOSED answers `which independently checkable obligations remain after partial success?`. They must not share one lifecycle label.",
+      "A bare resumable SHORTFALL may remain ACTIVE when the same owner can continue within the same bounded package. Repeated SHORTFALL, resource exhaustion, or multiple independent unmet clauses should make `split recommended` visible, but the substrate must not invent the scientific split.",
+      "Suggested relation vocabulary: `SPLIT_FROM(parent)`, `IMPLEMENTS_CLAUSE(parent#clause)`, `ASSEMBLES(children...)`, plus stable clause result events. These relations should participate in provenance, paper/result coverage and queue forecasting.",
+      "The default coordinator view should show the decomposed parent once; `work show` exposes every child, clause, owner, evidence receipt and join condition. This is compression by explicit structure, not by fuzzy grouping.",
+      "2026-07-21 forge-coordinator ACCEPTED + mirrored sf:program/work/science-forge-work-split-join. Review: the design is sound and honors all five laws (append-only parent preservation, fail-closed join, honest DECOMPOSED-vs-BLOCKED boundary, audit-complete drill-down). Strong calls endorsed: (1) DECOMPOSED is a DISTINCT non-ready lifecycle label, never conflated with BLOCKED; (2) the clause->child mapping is COORDINATOR-AUTHORED, never auto-split from prose (same fail-closed principle as the blocker-frontier finding \u2014 the substrate detects the SIGNAL, never invents the scientific split); (3) ASSEMBLES gates parent-DONE on every mandatory child terminal-DONE. IMPLEMENTATION PLAN (phased, each byte-stable + C==native + fixture-gated): P1 = the DECOMPOSED state + an ATOMIC `work-split <parent> --clause <unmet#>:<child-spec> ...` transaction: parent -> DECOMPOSED (SPLIT event carrying the clause map), N children PROPOSED with SPLIT_FROM(parent)+IMPLEMENTS_CLAUSE(parent#clause) edges, inheriting stream/forbid, with NON-OVERLAPPING allowed-paths enforced (overlap without an explicit shared-input decl = refuse), no lease mutation outside the transaction. P2 = the JOIN: `work-assemble <parent>` folds DECOMPOSED -> DONE iff every mandatory child is terminal-DONE (fail-closed; a non-terminal or stale child refuses), emitting the ASSEMBLES event with each child's clause-result receipt; wire the parent-DONE gate into the readiness/terminal logic. P3 = `split recommended` detection surfaced in overview NEEDS ACTION on repeated SHORTFALL / resource-exhaustion / multiple-independent-unmet-clauses \u2014 the visible signal only. Drill-down: overview shows the DECOMPOSED parent ONCE; `work-show`/`work-package` expose every child/clause/owner/receipt/join-condition. Recommend building P1 first behind the existing close-out protocol (an agent reports SHORTFALL + 'split recommended'; the coordinator authors the split)."
+    ],
+    "stream": "forge-requests"
+  },
+  "edges": [],
+  "state": "ACCEPTED"
+}
