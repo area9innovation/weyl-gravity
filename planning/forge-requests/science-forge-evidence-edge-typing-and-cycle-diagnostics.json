@@ -1,0 +1,18 @@
+{
+  "id": "sf:forge-request/science-forge-evidence-edge-typing-and-cycle-diagnostics",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Make Science Forge's evidence graph distinguish ordering dependencies from nonordering provenance, receipt, fixture and verification cross-links, and report cycle-causing source fields precisely. The current physics certificate audit on 2026-07-21 found three apparent dependency cycles: TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1 <-> TWO_PHASE_COUNTERFLOW_CAUSAL_BV_RECEIVER_CONTRACT_V1; EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1 <-> its tier receipt; and DRESSED_CANONICAL_BEREZINIAN_LOCALITY_PREFLIGHT <-> its selected-hessian fixture. At least the certificate/receipt and certificate/fixture pairs are likely typed provenance links rather than scientific prerequisite cycles. The current graph also reports 89 duplicate result IDs and 94 hash mismatches, so a coordinator needs field-level diagnostics before deciding whether the data or extractor is wrong.",
+    "depends_on": [],
+    "stop_condition": "Land a versioned evidence-edge taxonomy and deterministic extractor/audit that: (1) emits ordering `depends_on/imports/consumes` edges separately from nonordering `verifies/receipt_for/fixture_for/cites/crosswalk` edges; (2) runs acyclicity only on the declared ordering subgraph; (3) prints, for every cycle edge, the source path, JSON pointer or parsed field, target path/result ID, edge kind and extraction rule; (4) reports duplicate result IDs with all defining paths and distinguishes byte-identical mirrors from conflicting definitions without silently choosing one; (5) reports hash mismatches with consumer field, expected hash, observed object/path and producer commit when known; (6) preserves all nonordering links in the graph rather than dropping them; and (7) proves on the three named live pairs whether each is a true prerequisite cycle or a mis-typed cross-link. Integrate this typing with `s-f paper-coverage` and provide byte-stable JSON plus a compact human report. A clean run must either remove false cycles by correct typing or leave an exact actionable data-repair ledger for genuine cycles.",
+    "forbid": "no edge dropped merely to make a DAG; no filename-only assumption that every receipt or fixture link is nonordering; no automatic rewrite of physics certificates, hashes or result IDs; no duplicate collapsed unless byte identity and mirror policy are both proved; no public-milestone success used to hide full-graph integrity failures; no scientific dependency inferred from arbitrary string references without a typed rule",
+    "notes": [
+      "First consumer: physics/symplectic-reconstruction/certificate_graph/build_certificate_dag.py and the landed `s-f paper-coverage` command.",
+      "Reproduction: from physics/symplectic-reconstruction run `python3 certificate_graph/build_certificate_dag.py --tree-ish HEAD --check`; the current receipt reports dependency_cycles=3, duplicate_result_ids=89, hash_mismatches=94, public_missing_evidence=0.",
+      "The curated public graph is presently evidence-complete, but the full graph correctly fails closed. This request is for typed diagnosis, not suppression."
+    ]
+  }
+}
