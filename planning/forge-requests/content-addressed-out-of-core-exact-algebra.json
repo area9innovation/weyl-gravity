@@ -4,7 +4,7 @@
   "schema": "work-v0",
   "body": {
     "owner": "physics-programme",
-    "state": "REQUESTED",
+    "state": "ACCEPTED",
     "objective": "Add a deterministic out-of-core execution and cache layer for large exact expression DAGs, sparse matrices, tensor contractions and modular batches. The programme has already suffered OOMs, and the new generic kernels will not be adopted broadly if every resident must materialize hundred-thousand-term q2/q3 expressions or large certificate closures in memory. This is mathematical execution infrastructure: cached objects must preserve coefficient domain, assumptions, truncation order, basis and proof provenance so Conflux can reuse structure without confusing a cached scout with a verified theorem. The first consumers are sf:program/work/nonlinear-cyclic-deformation-class-completeness, sf:program/work/observer-higher-jet-invariant-action-module-classification and sf:program/work/quantum-parameterized-five-form-factor-independent-audit.",
     "depends_on": [
       "sf:program/work/nonlinear-cyclic-deformation-class-completeness",
@@ -15,7 +15,8 @@
     "forbid": "no pickle or process-specific hash as a scientific identifier; no cache hit across coefficient domains, assumptions, bases or truncation orders; no partial checkpoint treated as a completed object; no nondeterministic parallel reduction that changes exact serialization; no unbounded cache growth; no deletion of another live worker's referenced chunks; no numeric compression of exact coefficients; no performance result without a cold reference and correctness replay",
     "notes": [
       "This complements the Science Forge process resource governor: the governor enforces limits, while this layer lets exact algebra make progress within them and resume safely.",
-      "A first slice can target expression DAGs plus modular sparse batches, then generalize the same object protocol to tensors and polynomial ideals."
+      "A first slice can target expression DAGs plus modular sparse batches, then generalize the same object protocol to tensors and polynomial ideals.",
+      "2026-07-21T11:00:00Z forge-coordinator: ACCEPTED \u2014 mirrored sf:program/work/MY-out-of-core-exact-algebra (math). Exact/validated lib/math capability; certified obstruction acceptable; independent verifier != producer; oracle wall; exact vs numeric distinct."
     ]
   }
 }

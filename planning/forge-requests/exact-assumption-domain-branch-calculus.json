@@ -4,7 +4,7 @@
   "schema": "work-v0",
   "body": {
     "owner": "physics-programme",
-    "state": "REQUESTED",
+    "state": "ACCEPTED",
     "objective": "Add a first-class exact calculus of assumptions, domains and branches shared by forge/lib/math and Conflux. The current kernels can compute exact ranks, Groebner bases, spectra, series and symbolic expressions, but a consumer still has to carry conditions such as q != 1/4, det A != 0, a selected real embedding, a logarithm sheet, or a nonzero harmonic label in prose. This is an adoption blocker: Conflux must not merge a generic identity with an exceptional stratum, and an exact kernel must not silently divide, cancel, choose a root or cross a branch wall without recording the condition that made the operation valid. The first consumers are sf:program/work/classical-compensator-kinetic-braiding-locus, sf:program/work/quantum-normalized-schur-pseudodifferential-variation and sf:program/work/black-hole-symbolic-frequency-finite-flux-radiation-class.",
     "depends_on": [
       "sf:program/work/classical-compensator-kinetic-braiding-locus",
@@ -15,7 +15,8 @@
     "forbid": "no generic pivot without a recorded nonvanishing condition; no cancellation across a possible zero divisor; no principal root/logarithm branch silently selected; no sampled parameter point used to discharge a symbolic assumption; no contradictory assumption set treated as a vacuous theorem without being marked EMPTY; no solver timeout treated as implication; no Conflux merge across incomparable domains; no physics-specific parameter names built into the generic layer",
     "notes": [
       "This request complements parametric-semialgebraic-rank-sign-stratification and certified-complex-analysis-analytic-continuation: those compute strata or analytic data, while this layer is the common condition/provenance type carried by all exact and discovery operations.",
-      "Suggested first slice: ConditionSet plus guarded RatFunc/QMat operations and Conflux condition-aware candidate keys."
+      "Suggested first slice: ConditionSet plus guarded RatFunc/QMat operations and Conflux condition-aware candidate keys.",
+      "2026-07-21T11:00:00Z forge-coordinator: ACCEPTED \u2014 mirrored sf:program/work/MY-assumption-domain-branch (math). Exact/validated lib/math capability; certified obstruction acceptable; independent verifier != producer; oracle wall; exact vs numeric distinct."
     ]
   }
 }
