@@ -1,0 +1,34 @@
+{
+  "schema": "quantum-local-algebraic-tier-receipt-v1",
+  "result_id": "TWO_PHASE_COUNTERFLOW_LOCAL_ANOMALY_NONACTIVATION_V1_TIER_RECEIPT",
+  "subject_result_id": "TWO_PHASE_COUNTERFLOW_LOCAL_ANOMALY_NONACTIVATION_V1",
+  "recorded_at": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "source_pins": {
+    "q70_v2": "3f41cb5258f0883b217c9343e037074faf841728f29e03c306f101487411d2cf",
+    "q70_v2_receipt": "d19773886c23f9543c259c2586c07f0be8d4f2a74b3745681011272cba9a7ced",
+    "phase1_viability": "6eae712f8bdc1a06db64c606e47792391c1fa16cd70beaee594943dc77a05e7d",
+    "phase1_viability_receipt": "ffd8faafb224ff23b22f51e08dbe67a9c30b364641808738b22b21e2b5d00da5",
+    "quantum_phase1_synthesis": "5045aa780cc203cc6f86a2d1b837268812dedbe0584ca4059bcda555c0e15239",
+    "quantum_phase1_synthesis_receipt": "a012880465884683ec4b5dc4a2d989503a75a18c8a25adefef5b572739cc11c5"
+  },
+  "output_hashes": {
+    "generator": "8f9287ceb9a2acfb5d0a26efc3a956f182caf88d53fd1d3a58eddce6cd0b647a",
+    "verifier": "0732829cb7f3d2a5a4a14cd5d139f4f71a39492da791be675ed83456232fe787",
+    "schema": "831e6a2ece04ec4c6b84e6554008aa6e8fea69b682bb04d42cba680880df4d97",
+    "certificate": "02bd10ee2e056287a804ca1be743f1fef790fb4df1e077140ac0aa521a9feb56",
+    "tests": "e83f07367422d048781d5b38348f20887e690a1c100f723bd97ad87597bbe33f",
+    "report": "bc46cd29ab7031fe22af3f75bbc160bbdd83f33c68a84111ad5b53354d4a0695",
+    "atlas": "11642525dde83a408328d3714c2692a0fe8dd1435fcf1f4e7cf335581c2f298b",
+    "paper_materiality": "c98818608cd86374d15465694f2351dc7425d9de6fc5c7e803093313870643ed",
+    "team_brief": "65b7776023a3d08dede4fe2eb90532542683737c9ea4795e82ee16a5c76ad6b0",
+    "closeout": "48ded7783703e561bd92dd8a5e0bbabfa97ea19f3eb1d9b42b5653e88db07de9"
+  },
+  "test_tiers": [
+    {"tier": 0, "status": "PASS", "commands": ["py_compile", "json.tool", "explicit-manifest whitespace and hash replay"]},
+    {"tier": 1, "status": "PASS", "commands": ["deterministic generator --check", "independent source/lifecycle verifier with seven contradiction mutations", "3 scoped pytest tests", "shared residual-atlas validator"]},
+    {"tier": 2, "status": "NOT_RUN", "reason": "All imported mathematical sources are unchanged and content-addressed; this result evaluates the stop-condition branch without modifying them."},
+    {"tier": 3, "status": "NOT_RUN", "reason": "No theorem freeze, release, shared core algebra or quantum lifecycle promotion occurs."}
+  ],
+  "claim_boundary": "This receipt certifies a NOT_ACTIVATED disposition after the terminal classical selection gate. It does not compute or classify the counterflow local anomaly quotient, coefficients, regulator, QAP, QME or Hadamard state, and it does not import strict-Weyl results into the changed theory."
+}

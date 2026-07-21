@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "two-phase-counterflow-local-anomaly-nonactivation-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "source_refs", "gate_evaluation", "local_anomaly_disposition", "strict_weyl_import", "rejected_inputs", "phase1_crosscheck", "mutation_expectations", "claim_boundary", "provenance"],
+  "properties": {
+    "$schema": {"const": "../schema/two-phase-counterflow-local-anomaly-nonactivation-v1.schema.json"},
+    "schema": {"const": "two-phase-counterflow-local-anomaly-nonactivation-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_LOCAL_ANOMALY_NONACTIVATION_V1"},
+    "result_state": {"const": "NOT_ACTIVATED_NO_ROBUST_STATIONARY_SAME_FIELD_CLOCK"},
+    "lifecycle_state": {"const": "NOT_ACTIVATED"},
+    "dependency_tags": {"type": "array", "uniqueItems": true, "items": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}},
+    "source_refs": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/source"}},
+    "gate_evaluation": {"type": "object"},
+    "local_anomaly_disposition": {"type": "object"},
+    "strict_weyl_import": {"type": "object"},
+    "rejected_inputs": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+    "phase1_crosscheck": {"type": "object"},
+    "mutation_expectations": {"type": "object", "minProperties": 7},
+    "claim_boundary": {"type": "string", "minLength": 120},
+    "provenance": {"type": "object"}
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

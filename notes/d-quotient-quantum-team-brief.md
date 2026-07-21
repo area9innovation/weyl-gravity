@@ -2803,3 +2803,23 @@ coefficients and QME are respectively `NOT_COMPUTED` and `UNDEFINED`.
 - [`PHASE1_QUANTUM_DISPOSITION_SYNTHESIS_V1.json`](../quantum-weyl/phase1/certificates/PHASE1_QUANTUM_DISPOSITION_SYNTHESIS_V1.json)
 - [`phase1-quantum-disposition-synthesis-fragment-v1.json`](../residual_atlas/phase1-quantum-disposition-synthesis-fragment-v1.json)
 - [`quantum-phase1-dispositions-2026-07-21.json`](../planning/paper-coverage/quantum-phase1-dispositions-2026-07-21.json)
+
+## Two-phase counterflow anomaly nonactivation (2026-07-21)
+
+The action-specific anomaly work package terminates at its declared first
+branch. The repaired q70 V2 complex is imported as an exact graded-cyclic
+classical causal parent on the selected Berger fixture, with stale V1 rejected.
+The prior Phase 1 health theorem nevertheless finds no robust stationary
+same-field clock: the (j=1/2) Hamiltonian--Hopf quartet persists throughout
+the connected trace-healthy family, and candidate-specific quantum activation
+is false.
+
+Consequently no counterflow jet algebra or (H^{1,4}(s\mid d)) quotient is
+declared. Diff, diagonal-`U(1)`, Weyl/compensator and mixed sectors and their
+coefficients remain `NOT_COMPUTED`; regulator, QAP, QME and Hadamard rows are
+`NOT_ACTIVATED`. Strict-Weyl coefficients are not copied across the changed
+theory boundary. This is not anomaly cancellation and does not weaken the
+selected-fixture classical causal theorem.
+
+- [`TWO_PHASE_COUNTERFLOW_LOCAL_ANOMALY_NONACTIVATION_V1.json`](../quantum-weyl/anomalies/certificates/TWO_PHASE_COUNTERFLOW_LOCAL_ANOMALY_NONACTIVATION_V1.json)
+- [`two-phase-counterflow-local-anomaly-nonactivation-fragment-v1.json`](../residual_atlas/two-phase-counterflow-local-anomaly-nonactivation-fragment-v1.json)
