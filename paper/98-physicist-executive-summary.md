@@ -414,6 +414,15 @@ element is nontrivial relational evolution with total presymplectic
 degeneracy. The next gate is one localized, backreacting emitter--receiver
 experiment with recoil and an apparatus bracket.
 
+The two-phase counterflow route has a different split.  Its fixed-charge
+quotient removes the entire relative-clock Darboux pair.  On the unrestricted
+branch that pair survives, but raw $D$ is a charged physical symmetry.  A
+theorem-level preflight now constructs a local-gauge-closed clock-slice event
+map and proves covariance, rather than quotient invariance, under the charged
+$R_{\rm rel}$ and $D$ flows.  Physical instantiation remains open because the
+unrestricted all-Hodge cohomology, descended receiver pairing and a nontrivial
+receiver class have not landed.  No formal phase ratio is called redshift.
+
 ## What would materially change the verdict
 
 A major positive shift would be produced by any one of: a nondegenerate
