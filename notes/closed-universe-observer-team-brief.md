@@ -2723,3 +2723,24 @@ The activation gate is an exact same-background action-derived receiver unary
 export carrying the BV class, quotient, pairing, retarded support and D/R/K
 actions required by
 `CHARGED_TIME_PHYSICAL_RECEIVER_CROSSWALK_INTERFACE_V1`.
+
+## Active bridge: operational frequency-ratio nonactivation
+
+The terminal legacy census leaves exactly three maximal nonempty linear
+source-to-probe chains: the dynamical massive-two-form emitter chain, the
+localized external-Maxwell-current chain and the homogeneous Maxwell chain.
+An independent replay retains rank two and retarded dependence for each only
+before receiver quotient descent.  Their common first missing datum is an
+action-derived local detector BV cocycle embedded in an executable
+positive-Berger receiver unary complex; the localized-current branch also
+retains an external, nondynamical emitter.
+
+Consequently the charged-time event, finite-resolution sampling and comparison
+maps cannot be instantiated.  The homogeneous coordinate frequencies are both
+`2*sqrt(10)/3`, so their exact coordinate ratio is one, but this is not an
+operational redshift.  The fail-closed atlas row is
+`observer.berger.legacy_receiver_operational_frequency_ratio_nonactivation`
+with `observational=NO_CERTIFIED_MAP`.  Exactly one minimal producer request,
+`sf:forge-request/positive-berger-action-derived-local-receiver-bv-cocycle`,
+has been issued.  Quotient, nonradical pairing, period, denominator and ratio
+calculations remain separate gates after that unary export lands.
