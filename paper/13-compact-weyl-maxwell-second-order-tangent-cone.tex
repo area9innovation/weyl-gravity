@@ -219,14 +219,26 @@ appended, however, the symbol still maps a rank~30 phase-space bundle to
 rank~14 and has an exact rank~16 physical kernel, including two
 transverse-traceless Ostrogradsky-momentum directions.  Thus this
 constraint-plus-gauge operator is right semi-Fredholm, not Fredholm.
-Identifying the global adjoint kernel with exactly the five lifted
-stabilizers and proving the nonlinear slice theorem remain open; the
-constant Maxwell reducibility is removed by using the mean-zero Gauss
-codomain.
+The global adjoint kernel can nevertheless be determined exactly.  For the
+canonical constraint generator, the Hamiltonian transpose identity identifies
+\(\ker(D\mathcal C_{\bar z})^*\) with the infinitesimal stabilizer algebra of
+the background canonical data.  The complete Fourier--spherical decomposition
+leaves only \(H,P_x\) in the \((k,\ell)=(0,0)\) block and the three coexact
+\(\ell=1\) rotations in the \(k=0\) block.  Each rotation includes its unique
+based bundle lift \(\iota_J\bar F+d\chi_J=0\).  Hence
+\[
+ \ker(D\mathcal C_{\bar z})^*
+ =\operatorname{span}_{\mathbb R}\{H,P_x,J_1,J_2,J_3\}.
+\]
+The constant Maxwell reducibility is removed by the mean-zero Gauss codomain
+and is not a sixth Taub covector.  This closes the compact-Cauchy adjoint
+classification, but proving the nonlinear semi-Fredholm slice and the local
+momentum-map normal form remains open.
 
 The classical normal-form theorems use Sobolev-completed initial-data
 manifolds, a split constraint map, gauge slices, and control of the full
-adjoint kernel.  Here we instead prove an
+adjoint kernel.  The compact audit now supplies the last of these inputs, but
+not yet the split nonlinear slice.  Here we instead prove an
 algebraic surjectivity and cokernel theorem on a complete \emph{declared
 finite harmonic module} of the fourth-order Weyl--Maxwell equations.  We do
 not establish the hypotheses needed to promote it to an infinite-mode

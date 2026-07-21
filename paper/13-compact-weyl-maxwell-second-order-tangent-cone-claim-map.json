@@ -4,9 +4,12 @@
   "lifecycle_state": "THEOREM_FROZEN",
   "structural_theorem_lifecycle_state": "THEOREM_FROZEN",
   "bounded_common_zero_lifecycle_state": "OPEN",
-  "source_baseline": "47e2d298",
+  "source_baseline": "d28de74777a8a2f002d8c10fa607b703f4304b78",
   "manuscript": "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
-  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
   "certified_scope": {
     "complete_finite_support_exponential_polynomial_cone": true,
     "complete_finite_support_bounded_obstruction_ledger": true,
@@ -30,7 +33,14 @@
     "same_sign_bounded_projection_onto_scalar_cone_surjective": true,
     "same_sign_exact_bounded_fibre_product_formulas": "6_OF_6",
     "same_sign_resonance_face_stratifications": "6_OF_6",
-    "same_sign_active_complex_component_counts": [1, 1, 1, 4, 1, 2],
+    "same_sign_active_complex_component_counts": [
+      1,
+      1,
+      1,
+      4,
+      1,
+      2
+    ],
     "same_sign_automatic_face_fixed_occupation_rotation_links_connected": "5_OF_5",
     "same_sign_axisymmetric_rotation_jacobian_rank": "RANK_2_AWAY_FROM_ORIGIN_RANK_0_AT_ORIGIN",
     "same_sign_automatic_face_aligned_rotation_inertia": "(4N-2,4N-2,2)",
@@ -67,16 +77,18 @@
     "complete_finite_support_bounded_cone": false,
     "causal_second_order_map": false,
     "all_orders_solution": false,
-    "quantum_claim": false
+    "quantum_claim": false,
+    "compact_cauchy_right_elliptic_constraint_map": true,
+    "compact_cauchy_global_adjoint_kernel": "EXACTLY_FIVE_LIFTED_STABILIZERS"
   },
   "sources": [
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
-      "git_blob": "64a9011230ab08a35c2cc128cb8ffe41c78b5e76"
+      "git_blob": "4e236d8135804ba0ad8e4939ef9a5958f97ae429"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
-      "git_blob": "909327b916fa1a5ed34269675c83d16724f2237e"
+      "git_blob": "c6ac4a9d8b98de9fc55d867d6b4420d70f36126d"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_exceptional_global_symplectic.json",
@@ -84,223 +96,227 @@
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
-      "git_blob": "7791d24ecf0e4d6ddf2767c825f63cecbd66e913"
+      "git_blob": "1ecbebf26a6f0a6d532acd22642a90cc9fd13668"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
-      "git_blob": "d4f5c6957eb17f64cb03457fcb24c13f05bafe90"
+      "git_blob": "33a25de0634db5524019db92bcd4e915a0def485"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
-      "git_blob": "73cd7a67ac0342280b1cb4f3ff068bb9482234ab"
+      "git_blob": "38c8b0774a2b831ba195056f6b68196ec3f12dfc"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json",
-      "git_blob": "b4300e40c78ab01282754ddf88144c241b52eb07"
+      "git_blob": "389eff576ee854181f60e4ebbc6a847e5121a698"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial.json",
-      "git_blob": "983989533fa36b9fc1fa5f0b0fffa4dc1711a168"
+      "git_blob": "2227ee0159f0111393c7e63f65a1412ec43982ad"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_ad_ell2_extra_polynomial_zero_locus.json",
-      "git_blob": "12396ffffab6afa6033047ae2ac6c66adc8154b7"
+      "git_blob": "85f37cc3e401e375d89ac774862dcef0985c10b2"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_complete_global_ell2_extra_bounded_cone.json",
-      "git_blob": "f3acf286dfe4ed0615994cfa20d3c5cd6b17e746"
+      "git_blob": "4eed10e9147da4347aa28a79091edc632708230e"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance.json",
-      "git_blob": "380950d6d9f7f1d92aea34be742a0ac3b020e442"
+      "git_blob": "aadd4c734b19d61195d127dc2abea32ed578e5af"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json",
-      "git_blob": "2b5b0005f9d51953248aaea6e9461d8f71cbbc42"
+      "git_blob": "c6977b470f38a2a3859b7acccc88839732cce33e"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_all_primary_bounded_cone.json",
-      "git_blob": "a4f2d548c11f557353e092d73f2e69d3f28bd11f"
+      "git_blob": "55ae45c1f7a8c5c5c12c62a54e7d540e2c6fffbe"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_tuned_axisymmetric_bounded_cone.json",
-      "git_blob": "285b8bec2202b3ad1039bde9a05caf111be98212"
+      "git_blob": "45ccec492f1045de8cd3046f51c604d03b56759e"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_axial_L4_matrix.json",
-      "git_blob": "776d5593a965bb7a58944bf4e3627ea58cec9a56"
+      "git_blob": "58169bec30f7f97c253f9364a0e424f9c0c9c952"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_axial_polar_L4_matrix.json",
-      "git_blob": "cdc365ec8eb40481decd61e5b2d93827f400fec5"
+      "git_blob": "beb4660b33d47dfb23f78b48e2b84a673f78fa86"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_polar_axial_L4_matrix.json",
-      "git_blob": "9297b8f811db320a54cc58fd670c0e7a749da6c7"
+      "git_blob": "8d66139e057f368a5924b6efdbc6250353e919fb"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_polar_polar_L4_matrix.json",
-      "git_blob": "403dd76915814577662a0d244e9c94adebd2822c"
+      "git_blob": "0d403d530358e591e8b2b79fb0c18c5f85f84307"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L3_matrix.json",
-      "git_blob": "646ed1c3be4003dc05974cada6e85b06bf942be8"
+      "git_blob": "377badc485883f5e89f83a79e1af58701f05fd5f"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L1_L3_matrix.json",
-      "git_blob": "b6023a6326cb9e6c6195e64266fd3c90e3e4564e"
+      "git_blob": "716c444a234401f4a8e3cbb19b8ec370d8657a70"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
-      "git_blob": "dcc938c76586aafdacbb6f5ba7ffa9f2c0195533"
+      "git_blob": "c8d8c1f99561d7741faa4d0a5c6f7ed860e3037c"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_collision_scalar_separation_classification.json",
-      "git_blob": "ffc891bd77e49ac12245d248bd10f54b920b222f"
+      "git_blob": "84090562b756b6a271dd8b5d1007dc2d23ad7f59"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_same_fibre_census.json",
-      "git_blob": "25dee3dbd2343ca30cc37f3640432083da562e5f"
+      "git_blob": "b4e77df6cab91d445b3f57737965be993009c327"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_bounded_witnesses.json",
-      "git_blob": "a95cbb184e5b065a23193c248289d9d45ff3eb6a"
+      "git_blob": "7335c48486f4af4fceb8505ba6ff21e39fb7677f"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_extreme_rays.json",
-      "git_blob": "f96cb9b0fbccddb398ad62beee060a5ee3b5fb80"
+      "git_blob": "475d6b8ebccd96d5b6569bf3014742af28c07870"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_extreme_ray_lifts.json",
-      "git_blob": "a21d8b759c3e7647dbaa42c97a1c00eaf650f2e4"
+      "git_blob": "67f1d7e6d94c35c8101d2dc333b2e495de368da0"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_scalar_occupation_cones.json",
-      "git_blob": "ae2c7d7ce53abedd148858cd570c3197cbc521eb"
+      "git_blob": "1f591c2047a069fce324074cc803f64f6de919ed"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_scalar_cone_sections.json",
-      "git_blob": "16f2d96570f2dcc2c10ea39ecd796ad4e61baf59"
+      "git_blob": "c9ec73e1b3dd70a28749e504b617a56138545a37"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_phase_parity_fibre_product.json",
-      "git_blob": "18ec75cec6c38788862d36a5dde5424e7032f5b8"
+      "git_blob": "3de9c25c956a127c82170335723bbb068bfb8cbb"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_resonance_face_fibres.json",
-      "git_blob": "09c19cc996a39eb84ab004c37780a95da40c0933"
+      "git_blob": "0d5b7ee346a7b9edde2eb328cc686c05b420f8a0"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_links.json",
-      "git_blob": "afb984a68a470a668001406a9a0c9d8e4c2a1802"
+      "git_blob": "f30006b381d10a0524ab4839163756d1ce77358c"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_axisymmetric_rotation_singularity.json",
-      "git_blob": "a30acd8e6f4f7bff43ab7e7c990771d15dbf08c8"
+      "git_blob": "721ef92a984186faaf76a277aa8bf0546754c6c6"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_rotation_normal_form.json",
-      "git_blob": "cafd0fa3c54a29a69f52e69d9fc33d19b46016eb"
+      "git_blob": "65f4bc096e81dc29aa966258c2c24f2a7007c270"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_internal_rotation_normal_form.json",
-      "git_blob": "e2975dffe5153f00bf5c1f5acdebdf83a365ba75"
+      "git_blob": "b9eea4a49487bae56b548a14f9e0fe51d9416d02"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_automatic_face_full_rotation_normal_form.json",
-      "git_blob": "b86ed1c1e67d43847e136d515c5283314533294f"
+      "git_blob": "0b01df3bca4598be6141911d1c7aa97593ac344e"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_active_restricted_current.json",
-      "git_blob": "b3ea2dfc081ffedda1ed8bfd894e8319f2e7914c"
+      "git_blob": "d140cf84aa31bf4ecbe040f197143fd115e93962"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_singular_rotation_zero_fibre.json",
-      "git_blob": "2d94ce82db3a420e93646b9df8a2d5ca021d1daf"
+      "git_blob": "a8a6647dd2f810d8a12be7bb9b575ae149195935"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate16_occupation_gluing.json",
-      "git_blob": "30cf79a04cf7ec809eb195c834d0bd8b15f23a45"
+      "git_blob": "c1f93a86776d7142916a66d537b89156f3523a28"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links.json",
-      "git_blob": "c65a2a74ffe3545871cbe1a232388b5d2c686327"
+      "git_blob": "9778ad71ed0ac771fc2d12b28425663a4a0d945b"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_axisymmetric_restricted_current.json",
-      "git_blob": "4d7d5dd258d4fe7cc03c9b46e9007b162de0569b"
+      "git_blob": "7017e9605df91f6c3d7544367d54cf644d3e51c3"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_L1_active_restricted_current_degeneracy.json",
-      "git_blob": "a2f3f753703c0fa8a3f4b8df48701ed508f80d09"
+      "git_blob": "8d3eb4a34bda6205706d80fe30c89ebe2fb69890"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.json",
-      "git_blob": "33878a74aabc732d2d09669a8c1f8b5eef8b3903"
+      "git_blob": "11f20a1a99f8a77b257a782361e999ae2111ca15"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_active_presymplectic_divisors.json",
-      "git_blob": "279c3aee63839c7ef36a83108ac2a84d666494b0"
+      "git_blob": "67c37c73762b411844af94d1129db3f0b59f54fd"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_third_transvectant_singular_locus.json",
-      "git_blob": "43391751ec8dd36dff03d7b238c61eeb36153ad3"
+      "git_blob": "06df783ad1cc749efe62ebd22e6188ea958f442e"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution.json",
-      "git_blob": "d09acc65ecc82ce2385f7e01d33a4d4000e8fcbb"
+      "git_blob": "cbafd135222f1f447652c57901cccd0ec071b24e"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_active_singular_rotation_zero_sections.json",
-      "git_blob": "8cc0e7996b7f37092a74bde01c691b0977455a4b"
+      "git_blob": "6326bd5a6a66f907d0dc0e2d63d8f8ae152b0181"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_singular_component_separation.json",
-      "git_blob": "464646761ed3f02041763226e7ee32108132d383"
+      "git_blob": "84448b887b147c038ba898750a3b74395f7d3947"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge.json",
-      "git_blob": "b58a6f88f7be2a415d8705443d852c56f843b217"
+      "git_blob": "896d8a9e3e8bc70bc2aa5eed792ed5bbe1bf065e"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_component_incidence.json",
-      "git_blob": "b47a2c7f7742f39ebead312e6a350cb48c014561"
+      "git_blob": "9455ae92775efc5d873cf9d1e279a0e7cfbd301e"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_double_singular_rotation_zero_fibre.json",
-      "git_blob": "91279fcf60f5ce280f0a4e98a8bdca3a6f838552"
+      "git_blob": "09aee51c783f7ed02376b962d5a5f36197cde537"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_common_square_rotation_quotient.json",
-      "git_blob": "310b0804ce6ca8438bbb8ec1bb09a606854c7fa5"
+      "git_blob": "50e80ef0d53b0acf54d60e90264b05f37651e072"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_singular_radial_contraction.json",
-      "git_blob": "1eba1595ad0fb83d27b3d7cca424bf67b807b6ef"
+      "git_blob": "2feb15b5047a050e07eadb691afd08c1987ada03"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_moving_square_contraction.json",
-      "git_blob": "03a02b846dd69e88005b401a4b8ef1cbd65b498a"
+      "git_blob": "2090af930d215d89885818f336172119f472dd5c"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_independent_node_scaling_contraction.json",
-      "git_blob": "f661d934a50250490bfdc4366d5a45d48362f77a"
+      "git_blob": "61532c557b25b1e4a9557f6a09b05e05da331fc7"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate17_20_deformable_kernel_incidence_normal_form.json",
-      "git_blob": "1399be15d354b051d0e74ea6a2ce3b696368a4d9"
+      "git_blob": "e31e401700332ba8a85cd29f7205064551becdd2"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json",
-      "git_blob": "ea7b1dbdcf6bf9f738c9d1cad84e82f4627a13b3"
+      "git_blob": "71e6635660b71fb693030f6f5b8a006f2ffff7b3"
     },
     {
       "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_active_local_rotation_leaf_descent.json",
-      "git_blob": "4b2b122f8d5d8cea4ff8c48f1333f76d7f28220f"
+      "git_blob": "1a5a264f2c4e0cadf50bc137e20604604330f03f"
+    },
+    {
+      "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_ADJOINT_KERNEL_CLASSIFICATION_V1.json",
+      "git_blob": "a1c3d412174d2acf6375c5335480fea9abc39c80"
     }
   ],
   "verification_receipt": {
-    "date": "2026-07-20",
+    "date": "2026-07-21",
     "tier_0": {
       "status": "PASSED",
       "checks": [
@@ -312,7 +328,7 @@
     },
     "tier_1": {
       "status": "PASSED",
-      "elapsed_seconds": 90.71,
+      "elapsed_seconds": 92.51,
       "checks": [
         "independent tuned all-primary cone verifier",
         "3 targeted tuned all-primary unit tests",
@@ -351,12 +367,13 @@
         "candidate-17/20 moving-square ansatz verifier and 8 tests",
         "candidate-17/20 fixed-direction independent-node-scaling verifier and 8 tests",
         "fixed-occupation node-phase-reduced presymplectic-divisor verifier and 5 tests",
-        "local lifted-rotation/current-leaf descent verifier and 5 tests"
+        "local lifted-rotation/current-leaf descent verifier and 5 tests",
+        "compact-Cauchy global adjoint-kernel independent verifier and 10 tests"
       ]
     },
     "tier_2": {
       "status": "PASS_BY_CONTENT_ADDRESS",
-      "criterion": "All 57 source blobs are pinned at integration baseline 47e2d298; the collision chain includes the classifier, 864-defect census, universal four-ray theorem, candidatewise audit, all 24 ray lifts, scalar-cone sections, exact bounded fibre products, complete complex resonance-face strata, connected automatic-face rotation links, the axisymmetric critical-locus theorem, its aligned and complete axial/polar Hessians, the candidate-16 stratumwise negative-Kahler current, singular rotation-zero-fibre and nonzero occupation-gluing theorems, the candidate-17/20 singular axisymmetric Zariski-tangent current theorem, complete complex third-transvectant singular carrier, physical singular-component incidence, connected double-singular rotation-zero hub, frequency-weighted one-parity common-square quotient, balanced complete-singular radial contraction including vertex strata, the repaired complete uniform-scaling/moving-square ansatz with its alpha=0 two-stage contraction and scoped opposite-sign obstruction, the complete fixed-direction independent-node iff-incidence theorem with its three-stage contraction, and the deformable-kernel compact admissible component-incidence normal form with zero-node stabilizers retained, the candidate-18 complete complex singular resolution with all ten spectators, unavoidable singular rotation-zero sections at every positive occupation on candidates 17/18/20, the candidate-18 singular-quotient two-component lower bound and explicit smooth bridge, the candidate-17/20 and candidate-18 smooth bounded projective-current radical theorems, the complete smooth affine divisor theorem, the fixed-occupation node-phase-reduced augmented divisor theorem, the local lifted-rotation/current-leaf descent theorem, and all six candidate-19/21 linear-sheet current and connected-link theorems."
+      "criterion": "All 58 source blobs are pinned at integration baseline d28de7477; the collision chain includes the classifier, 864-defect census, universal four-ray theorem, candidatewise audit, all 24 ray lifts, scalar-cone sections, exact bounded fibre products, complete complex resonance-face strata, connected automatic-face rotation links, the axisymmetric critical-locus theorem, its aligned and complete axial/polar Hessians, the candidate-16 stratumwise negative-Kahler current, singular rotation-zero-fibre and nonzero occupation-gluing theorems, the candidate-17/20 singular axisymmetric Zariski-tangent current theorem, complete complex third-transvectant singular carrier, physical singular-component incidence, connected double-singular rotation-zero hub, frequency-weighted one-parity common-square quotient, balanced complete-singular radial contraction including vertex strata, the repaired complete uniform-scaling/moving-square ansatz with its alpha=0 two-stage contraction and scoped opposite-sign obstruction, the complete fixed-direction independent-node iff-incidence theorem with its three-stage contraction, the deformable-kernel compact admissible component-incidence normal form with zero-node stabilizers retained, the candidate-18 complete complex singular resolution with all ten spectators, unavoidable singular rotation-zero sections at every positive occupation on candidates 17/18/20, the candidate-18 singular-quotient two-component lower bound and explicit smooth bridge, the candidate-17/20 and candidate-18 smooth bounded projective-current radical theorems, the complete smooth affine divisor theorem, the fixed-occupation node-phase-reduced augmented divisor theorem, the local lifted-rotation/current-leaf descent theorem, all six candidate-19/21 linear-sheet current and connected-link theorems, and the complete compact-Cauchy five-dimensional adjoint-kernel theorem."
     },
     "broader_atlas_audit": {
       "status": "PASSED",
