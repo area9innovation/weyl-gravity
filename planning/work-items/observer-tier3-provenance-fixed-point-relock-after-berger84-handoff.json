@@ -1,0 +1,37 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/observer-tier3-provenance-fixed-point-relock-after-berger84-handoff",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "observer-tier3-provenance-fixed-point-relock-after-berger84-handoff",
+  "source": {
+    "path": "planning/work-items/observer-tier3-provenance-fixed-point-relock-after-berger84-handoff.json",
+    "span": null
+  },
+  "body": {
+    "owner": "observer-1",
+    "state": "PROPOSED",
+    "stream": "observer",
+    "priority": 0,
+    "objective": "Drive the Observer certificate corpus to a provenance fixed point after the scoped Berger84 apparatus-handoff relock, then establish the uninterrupted complete Observer Tier 3 verdict needed by Paper 9.",
+    "stop_condition": "Import the committed BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF relock and its SHORTFALL report by exact hashes. Start from the certified first downstream failure BERGER_84_ROW_MIXED_R_KAPPA_UNARY_GATE. For each stale generated consumer encountered: identify the exact changed dependency/content hashes; replay its declared producer; require the independent verifier and every declared mutation gate to pass; compare all scientific flags, dimensions, sectors and claim fields against the pre-relock artifact; and accept the relock only when changes are exhausted by content-addressed provenance or deterministically regenerated payloads already implied by current certified inputs. Restart the complete Observer suite from the beginning with fail-fast semantics after each coherent relock batch and iterate until it passes uninterrupted. If a semantic value, scientific flag, schema meaning, unsupported producer, ownership conflict or non-provenance test failure appears, stop at that first exact frontier with a typed request and SHORTFALL; never wave it through. Emit a deterministic fixed-point manifest listing every old/new hash, producer, independent verifier, mutations, suite iteration, elapsed time and final pass/fail count, plus an independent verifier, tier receipt and closeout. A DONE result must certify zero remaining stale provenance pins and OBSERVER_STREAM_TIER3_GREEN; otherwise the exact remaining frontier is the result.",
+    "current_gate": "Observer generated-certificate provenance fixed point and uninterrupted Tier 3",
+    "forbid": "no new observer, apparatus, receiver, detector, memory, redshift, counterflow or action architecture; no scientific value silently changed under a provenance relock; no broad blind regeneration; no producer replay called independent verification; no partial, skipped or interrupted suite called green; no Paper 9 edit in this item; no overwrite of concurrent modified files without first attributing them to this resident",
+    "depends_on": [],
+    "activates": [
+      "final DONE closure of observer-berger84-apparatus-handoff-provenance-relock",
+      "observer-paper09-final-freeze-after-evidence-gates"
+    ],
+    "allowed_paths": [
+      "closed_universe_observers/",
+      "reports/",
+      "planning/paper-coverage/",
+      "planning/events/",
+      "planning/forge-requests/",
+      "notes/closed-universe-observer-team-brief.md"
+    ],
+    "resource_hint": "PROVENANCE FIXED POINT, NOT NEW SCIENCE. Work consumer-by-consumer from the exact first Tier-3 failure, independently verify every replay, and rerun the complete suite until green or the first semantic obstruction.",
+    "input_commit": "f63c54234ba62509be0b0059858193e63f7abca0"
+  },
+  "edges": []
+}
