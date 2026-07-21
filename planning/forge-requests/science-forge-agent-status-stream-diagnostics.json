@@ -15,7 +15,10 @@
     "stop_condition": "Land a deterministic read-only `s-f agent status --agent A [--stream S] --now T` (or a documented equivalent) that prints every live/expired lease held by A, the exact resumable item and command, READY depth and next pull in the resolved stream, open requests addressed to that stream, and any programme-health defect. Make `s-f work ready --stream S` distinguish an unknown stream from a known empty stream and suggest close stream names such as `quantum-qme` for `quantum`. Add an optional programme-owned, versioned display-name/alias map whose labels are presentation-only and never alter stream identity, ownership, readiness or routing; use it consistently in overview, streams-view, agent status, generated briefs and Konsole titles while retaining the canonical ID beside it, for example `Einstein/Bridge [bridge]`. Make `work pull` and `work assign` refuse a second live exclusive lease for the same agent across different items with an actionable list of the existing lease and `work show/yield/abort/close` commands. Surface historical multiple-live-lease states as a health finding in overview rather than silently presenting both as ordinary work. Add deterministic fixtures for typo/alias suggestion, ambiguous aliases that fail closed, scientific display names round-tripping to canonical IDs, truly empty known stream, one active lease plus ready successors, stale/expired lease, two cross-item live leases, independent-reproduction exemption, and the current physics reproductions in which `quantum-qme-1` appears to have no work while two active leases and three ready items exist and a user cannot tell that `bridge` is the Einstein/Plebanski-Hacyan team. Preserve explicit timestamps, append-only events and one-lease semantics.",
     "current_gate": "resident agent status and stream/lease diagnostics",
     "forbid": "no implicit lease release; no automatic stream alias that can route work without confirmation; no treating an expired lease as live; no hiding invalid historical overlap; no mutation from status/help commands; no weakening independent-reproduction typing; no special case for the quantum stream",
-    "depends_on": [],
+    "depends_on": [
+      "sf:forge-request/bug-science-forge-cli-typo-diagnostics",
+      "sf:forge-request/bug-science-forge-pull-transition-cas-race"
+    ],
     "activates": [
       "reliable resident self-service work resumption across all physics streams"
     ],
@@ -25,11 +28,12 @@
       "forge/tools/science-forge/fixtures/",
       "forge/tools/science-forge/GUIDE.md"
     ],
-    "resource_hint": "SCIENCE FORGE CLI ROBUSTNESS. Reuse the folded agent-to-live-lease index requested by the cross-item CAS fix and the landed work-show/overview paths; do not introduce a second state fold.",
+    "resource_hint": "SCIENCE FORGE CLI ROBUSTNESS. Reuse the folded agent-to-live-lease index requested by the cross-item CAS fix, the existing deterministic typo-diagnostic command table, and the landed work-show/overview paths; do not introduce a second state fold or a second fuzzy-command engine. Compose with the resident await/wakeup ticket when it lands, but do not block the read-only status surface on process notification.",
     "notes": [
       "Live physics reproduction on 2026-07-21: the Quantum resident reported no work. The authoritative programme had stream `quantum-qme`, three READY items, and two simultaneous ACTIVE exclusive leases for `quantum-qme-1`; one active item also had uncommitted scientific artifacts. The current CLI makes these three causes look like an empty queue to the resident.",
       "Second live reproduction on 2026-07-21: the human coordinator could not tell whether the Classical or Einstein team owned the compactified Plebanski-Hacyan programme because the resident/dashboard name is `bridge`. The canonical stream should remain `bridge`, but all human-facing views should permit the stable scientific label `Einstein/Bridge` and show both names.",
-      "This request complements, rather than replaces, bug-science-forge-pull-transition-cas-race. The acquisition guard prevents new overlap; this status surface explains and safely repairs existing or historical overlap."
+      "This request complements, rather than replaces, bug-science-forge-pull-transition-cas-race. The acquisition guard prevents new overlap; this status surface explains and safely repairs existing or historical overlap.",
+      "Coordination audit: deterministic typo suggestions remain owned by bug-science-forge-cli-typo-diagnostics, and process notification remains owned by science-forge-resident-await-and-wakeup. This ticket consumes those interfaces and owns only the unified agent/stream status and presentation surface."
     ],
     "stream": "forge-requests"
   },
