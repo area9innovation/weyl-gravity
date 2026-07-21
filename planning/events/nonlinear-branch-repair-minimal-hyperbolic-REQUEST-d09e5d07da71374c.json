@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/nonlinear-branch-repair-minimal-hyperbolic-REQUEST-d09e5d07da71374c",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/nonlinear-branch-repair-minimal-hyperbolic-REQUEST-d09e5d07da71374c.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/nonlinear-branch-repair-minimal-hyperbolic", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T12:48:16Z", "seq": 1, "payload": {"target": "sf:program/request/nonlinear-branch-repair-minimal-hyperbolic-to-nonlinear-d09e5d07da71374c", "request_id": "sf:program/request/nonlinear-branch-repair-minimal-hyperbolic-to-nonlinear-d09e5d07da71374c", "from_item": "sf:program/work/nonlinear-branch-repair-minimal-hyperbolic", "to_stream": "nonlinear", "need": "Phase 1 closure takes precedence. This minimal noncontractible branch-carrier repair is a Phase 2 structural extension and must not delay the outcome-independent viability freeze. Resume only after sf:program/work/programme-phase1-viability-classification-freeze-v3 reaches a terminal disposition or the coordinator explicitly reactivates it. Preserve any read-only reconnaissance as unpromoted notes; do not open a new action architecture or claim branch-resolved mixing.", "typed": "PHASE2_PARKED_PENDING_PHASE1_FREEZE"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "nonlinear"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/nonlinear-branch-repair-minimal-hyperbolic"}]
+}

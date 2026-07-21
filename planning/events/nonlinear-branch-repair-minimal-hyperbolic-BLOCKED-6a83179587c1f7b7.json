@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/nonlinear-branch-repair-minimal-hyperbolic-BLOCKED-6a83179587c1f7b7",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/nonlinear-branch-repair-minimal-hyperbolic-BLOCKED-6a83179587c1f7b7.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "nonlinear-1", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-21T12:48:16Z", "seq": 8, "predecessor": "sf:program/event/nonlinear-branch-repair-minimal-hyperbolic-ACTIVE-1d42d75fd44711f5", "payload": {"target": "sf:program/work/nonlinear-branch-repair-minimal-hyperbolic", "to_state": "BLOCKED", "note": "BLOCKED: needs Phase 1 closure takes precedence. This minimal noncontractible branch-carrier repair is a Phase 2 structural extension and must not delay the outcome-independent viability freeze. Resume only after sf:program/work/programme-phase1-viability-classification-freeze-v3 reaches a terminal disposition or the coordinator explicitly reactivates it. Preserve any read-only reconnaissance as unpromoted notes; do not open a new action architecture or claim branch-resolved mixing."}, "native": {"authored_by": "sfc work-block", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/nonlinear-branch-repair-minimal-hyperbolic"}]
+}
