@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-berger-complex-clock-local-anomaly-receiver-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "producer_result_id",
+    "theory",
+    "background",
+    "strict_action_complex_map",
+    "strict_map_separator",
+    "matter_coupled_H14",
+    "standard_candidate_disposition",
+    "symmetry_disposition",
+    "coefficient_status",
+    "QME_status",
+    "downstream"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-complex-clock-local-anomaly-receiver-v1"},
+    "result_id": {"const": "BERGER_COMPLEX_CLOCK_LOCAL_ANOMALY_COMPLEX_V1_PAYLOAD"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "producer_result_id": {"const": "BERGER_COMPLEX_CLOCK_LOCAL_ANOMALY_COMPLEX_V1"},
+    "theory": {"type": "string"},
+    "background": {"type": "string"},
+    "strict_action_complex_map": {"const": "NONEXISTENT_IN_DECLARED_COMPLETE_MORPHISM_CLASS"},
+    "strict_map_separator": {"type": "object"},
+    "matter_coupled_H14": {
+      "type": "object",
+      "required": ["even_dimension", "odd_dimension", "status"],
+      "properties": {
+        "even_dimension": {"const": 0},
+        "odd_dimension": {"const": 0},
+        "status": {"const": "COMPLETE_ZERO_ON_DECLARED_REGULAR_FORMAL_POLAR_CHART"}
+      }
+    },
+    "standard_candidate_disposition": {"type": "array", "minItems": 4, "maxItems": 4},
+    "symmetry_disposition": {"type": "object"},
+    "coefficient_status": {"const": "NOT_COMPUTED_FOR_GRAVITY_CLOCK_THEORY"},
+    "QME_status": {"const": "NOT_RESTORED_FOR_GRAVITY_CLOCK_THEORY"},
+    "downstream": {
+      "type": "object",
+      "required": ["strict_sector_restriction", "matter_coupled_coefficient_gate", "K_Berger_Cartan_gate"],
+      "properties": {
+        "strict_sector_restriction": {"const": "NO_CERTIFIED_MAP_CHANGED_THEORY"},
+        "matter_coupled_coefficient_gate": {"const": "READY"},
+        "K_Berger_Cartan_gate": {"const": "OPEN"}
+      }
+    }
+  }
+}

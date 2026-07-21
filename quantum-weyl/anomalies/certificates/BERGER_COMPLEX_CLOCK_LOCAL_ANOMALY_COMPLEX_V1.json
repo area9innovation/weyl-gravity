@@ -1,0 +1,640 @@
+{
+  "H14": {
+    "Weyl_and_mixed_quotient_dimension": 0,
+    "even_quotient_dimension": 0,
+    "matter_family": {
+      "candidate": "omega I_hat for every dimension-four Diff-invariant local density I_hat(g_hat,theta)",
+      "identity": "s(tau I_hat)=omega I_hat modulo d_h",
+      "primitive": "tau I_hat with its universal Diff completion",
+      "status": "EXACT_FAMILY"
+    },
+    "odd_quotient_dimension": 0,
+    "positive_antifield_quotient_dimension": 0,
+    "pure_Diff_quotient_dimension": 0,
+    "standard_candidate_basis": [
+      "ANOM_OMEGA_C2",
+      "ANOM_OMEGA_E4",
+      "ANOM_OMEGA_C_DUAL_C",
+      "ANOM_OMEGA_BOX_R"
+    ],
+    "standard_candidate_boundary_matrix": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ]
+    ],
+    "standard_candidate_boundary_rank": 4,
+    "standard_candidate_primitives": [
+      {
+        "class_id": "ANOM_OMEGA_C2",
+        "parity": "even",
+        "primitive": "B_C=int sqrt(g) tau C2",
+        "status": "EXACT"
+      },
+      {
+        "class_id": "ANOM_OMEGA_E4",
+        "parity": "even",
+        "primitive": "B_E=int sqrt(g)[tau E4+4 G^munu d_mu tau d_nu tau-4(Box tau)(d tau)^2+2(d tau)^4]",
+        "status": "EXACT"
+      },
+      {
+        "class_id": "ANOM_OMEGA_C_DUAL_C",
+        "parity": "odd",
+        "primitive": "B_P=int sqrt(g) tau CdualC",
+        "status": "EXACT"
+      },
+      {
+        "class_id": "ANOM_OMEGA_BOX_R",
+        "parity": "even",
+        "primitive": "B_BOX=-(1/12)int sqrt(g) R2 plus horizontal current",
+        "status": "EXACT"
+      }
+    ],
+    "status": "COMPLETE_ZERO_ON_DECLARED_REGULAR_FORMAL_POLAR_CHART"
+  },
+  "candidate_completeness": {
+    "bounds": {
+      "antifield_number": "all values allowed by the minimal/nonminimal BV inventory",
+      "derivative_order_max": 4,
+      "engineering_dimension": 4,
+      "form_degree": 4,
+      "ghost_number": 1,
+      "locality": "finite jets coefficientwise in the formal tau-adic completion",
+      "spacetime_dimension": 4
+    },
+    "does_not_require_raw_graph_expansion": true,
+    "exhaustiveness_status": "COMPLETE_STRUCTURAL_PARTITION_ON_DECLARED_REGULAR_CHART",
+    "ledger": [
+      {
+        "coverage": "EVERY_MONOMIAL_WITH_POSITIVE_TAU_OMEGA_JET_NUMBER",
+        "proof": "prolong Q_W tau_I=omega_I and h_W=sum_I tau_I partial/partial omega_I; (Q_W h_W+h_W Q_W)=N_quartet",
+        "sector": "WEYL_FIELD_AND_ALL_WEYL_JETS",
+        "status": "EXACT"
+      },
+      {
+        "coverage": "EVERY_MONOMIAL_WITH_OMEGA_STAR_OR_TAU_HAT_STAR",
+        "proof": "Q_W omega_star=tau_hat_star and the cotangent half of the same quartet homotopy",
+        "sector": "WEYL_COTANGENT",
+        "status": "EXACT"
+      },
+      {
+        "coverage": "ALL_4_PLUS_1_COVARIANT_NONMINIMAL_PAIRS_AND_JETS",
+        "proof": "pointwise covariant doublet contraction imported with the action-derived nonminimal BV rows",
+        "sector": "NONMINIMAL_DIFF_WEYL",
+        "status": "EXACT"
+      },
+      {
+        "coverage": "DRESSED_G_HAT_THETA_XI_AND_COTANGENT_JETS",
+        "proof": "four-dimensional Diff anomaly comparison; cubic invariant-polynomial space of so(3,1)_C=sl2+sl2 is zero",
+        "sector": "QUARTET_NUMBER_ZERO_PURE_DIFF",
+        "status": "ZERO"
+      },
+      {
+        "coverage": "RHO_NOT_ZERO_REGULAR_EULER_LAGRANGE_CHART",
+        "proof": "regular Koszul-Tate pairs remove ordinary matter Euler jets; the surviving global-U(1) phase-current characteristic class would require a pure-ghost-number-two lift, but exact CE ranks (6,9) give H2(so(3,1)_C,Q)=0",
+        "sector": "POSITIVE_ANTIFIELD_MATTER",
+        "status": "ZERO"
+      }
+    ],
+    "partition": "every monomial has either positive quartet number or quartet number zero; the latter is the dressed Diff BV complex",
+    "positive_antifield_characteristic_current": {
+      "CE_control": {
+        "C1_dimension": 6,
+        "C2_dimension": 15,
+        "C3_dimension": 20,
+        "H2_dimension": 0,
+        "coefficient_module": "TRIVIAL_SCALAR_PHASE_SHIFT_CURRENT",
+        "comparison_dependency": "AFN0_DIFF_MIXED_MINIMAL_BV_H14",
+        "d1_matrix_sha256": "37672179747503f83a62ac42f5f9cc73791de4d50b1ed1fc2f44db408e251a83",
+        "d1_rank": 6,
+        "d2_matrix_sha256": "c3eb059a5a7823219f9ce24d859241c03bb91427008c9011c1c870237512c389",
+        "d2_rank": 9,
+        "generator_basis": [
+          "M_01",
+          "M_02",
+          "M_03",
+          "M_12",
+          "M_13",
+          "M_23"
+        ],
+        "interpretation": "the sole global-U(1) AFN1 characteristic current has no pure-ghost-number-two lift into H^{1,4}(s|d)",
+        "stora_reduction": "translation ghosts and symmetric Diff-ghost jets are contractible modulo d_h; only the Lorentz small algebra remains",
+        "structure_algebra": "so(3,1)_C_ISOMORPHIC_TO_so(4,C)"
+      },
+      "delta_mod_d_generator": "global U(1) phase-shift Noether current J_theta with AFN1 representative theta_star",
+      "higher_antifield_status": "ZERO_BY_IRREDUCIBILITY_ON_LOCAL_COVARIANT_REGULAR_CHART",
+      "lift_status": "ZERO",
+      "ordinary_Euler_jet_pairs": "CONTRACTED_IN_REGULAR_KOSZUL_TATE_ADAPTED_COORDINATES",
+      "required_lift": "pure ghost number two scalar CE cocycle"
+    }
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC theorem classifies H^{1,4}(s|d) for the actual positive-Berger two-scalar clock theory in the formal rho!=0 polar local-analytic algebra on a regular matter-coupled Euler-Lagrange chart. The action-derived minimal and nonminimal BV rows make the Weyl field/ghost/cotangent sector an exact quartet; the remaining four-dimensional Diff complex with the nonchiral phase scalar has zero ghost-one anomaly quotient. Separately, the constant-term functional proves that no unit-preserving regular local-analytic BV action morphism can identify the strict pure-Weyl expansion at this non-Bach-flat metric with the on-shell coupled expansion: the exact separation is 961/1920. Thus the matter-coupled zero quotient is a changed-theory result, not a repaired strict pullback. No anomaly coefficient or QME restoration for the gravity-clock theory is computed.",
+  "classical_import": {
+    "Q_squared_zero": "VERIFIED",
+    "action_manifest_hash": "7bfa8df0bff9eefa1c76ffbcc6f7712f9716dd3ce0398e7017e4d5ff738f2572",
+    "bv_manifest_hash": "34041d0e738f859d823db630763e101346fdf6a411b193ff51aa2db6bc407c4f",
+    "cme": "VERIFIED",
+    "field_inventory_hash": "75cea24c9c791fefa5a893c37f5cb965865fdb834c542eba4c182cdb5b6351c7",
+    "positive_background_on_shell": "VERIFIED_ALL_SCALAR_AND_THREE_INDEPENDENT_METRIC_EQUATIONS",
+    "status": "COMPLETE_ACTION_DERIVED_MINIMAL_AND_NONMINIMAL_BV"
+  },
+  "coefficient_and_qme_status": {
+    "QME_status": "NOT_RESTORED_FOR_GRAVITY_CLOCK_THEORY",
+    "coefficient_status": "NOT_COMPUTED_FOR_GRAVITY_CLOCK_THEORY",
+    "cohomological_disposition": "EVERY_CONSISTENT_LOCAL_GHOST_ONE_BREAKING_IS_REMOVABLE_ON_DECLARED_CHART",
+    "required_next_gate": "compute the actual matter-coupled regulated breaking and its primitive coefficients"
+  },
+  "dependencies": {
+    "berger_coupled_q2": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2",
+      "sha256": "f518eb8a13ee34021edfd8f1809bf7a0ee139a9a1863d837d83858e34bf461f5",
+      "source_commit": "e4f5c46fd7a04088e78e0374853b1f122ea223b1"
+    },
+    "berger_coupled_q3": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3",
+      "sha256": "90a7a7703e30fc9fe2e97e1b4e3327bb1dc9b078c16b51c1cc2afd163b0842a6",
+      "source_commit": "41c58d2086d77158ab442841d00588d7b560cbd8"
+    },
+    "complex_clock_master_action": {
+      "path": "d_quotient_classical/certificates/COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1.json",
+      "result_id": "COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1",
+      "sha256": "a537e31bf667520443903551b5bf2596dff9a1c35fade88d2ffc1e89c1e0b836",
+      "source_commit": "306ff78a2001f23124d412e9a2f41531bec74f78"
+    },
+    "diff_anomaly_zero": {
+      "path": "quantum-weyl/local_bv/certificates/AFN0_DIFF_MIXED_MINIMAL_BV_H14.json",
+      "result_id": "AFN0_DIFF_MIXED_MINIMAL_BV_H14",
+      "sha256": "f2624bad4840e33682b1dc3971c09e466f530c90e4404edd19c65613187dc81b",
+      "source_commit": "8f875f1262c18dff2a914d2fe8131cce5d4c4cd9"
+    },
+    "extended_local_bv_cohomology": {
+      "path": "quantum-weyl/anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
+      "result_id": "WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY",
+      "sha256": "fa21fc6071ae52277d9953b68c47773686117f1426cc50899fdf8c124d2ba616",
+      "source_commit": "69f01998d255455aebe3bbcb0872ae82cc698621"
+    },
+    "positive_berger_clock": {
+      "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "result_id": "POSITIVE_BERGER_CLOCK_BACKGROUND",
+      "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687",
+      "source_commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db"
+    },
+    "strict_restriction_obstruction": {
+      "path": "bridge/certificates/STRICT_ANOMALY_SECTOR_RESTRICTION_CHAIN_MAP_OBSTRUCTION_V1.json",
+      "result_id": "STRICT_ANOMALY_SECTOR_RESTRICTION_CHAIN_MAP_OBSTRUCTION_V1",
+      "sha256": "4863e00186e719e933e20fe58f2bc0429b1cb0a13db8481b6f8152680b3255fb",
+      "source_commit": "a9be01eab2867b221f281f11e6e637e0a6aea548"
+    },
+    "wess_zumino_primitives": {
+      "path": "quantum-weyl/anomalies/certificates/WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json",
+      "result_id": "WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT",
+      "sha256": "10dbd0b0a1e9190ddd2268a98c2d899808da07fc215d388167743a8bd01df5e9",
+      "source_commit": "CONTENT_HASH_ONLY"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "a strict pure-Weyl anomaly pullback to Berger",
+    "anomaly coefficients for the gravity-clock theory",
+    "a restored gravity-clock QME",
+    "a raw-D or K_Berger quantum Cartan identity",
+    "a Maxwell extension",
+    "global validity through rho=0 or singular Euler-Lagrange strata",
+    "a Lorentzian QME, Hadamard state, positivity, particles, scattering or unitarity"
+  ],
+  "proof_hashes": {
+    "action_morphism_separator_sha256": "fb93ac01078cf514107ee3d6c7aa0ef3c55d4dba3256b094b2e72a72e4924f55",
+    "candidate_ledger_sha256": "0ac9d6135dd02b40354b449b2f487dd0e08725569e15a768c02844cc92b20dae",
+    "quartet_and_candidate_partition_sha256": "51c0607f6c9f5e596b2d5b46b92da9a073530e14e06100ac4511067a89464353"
+  },
+  "quartet_reduction": {
+    "Q_W": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ]
+    ],
+    "Q_W_squared": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ]
+    ],
+    "Qh_plus_hQ": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ]
+    ],
+    "h_W": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ]
+    ],
+    "jet_prolongation": "Q_W tau_I=omega_I; Q_W omega_I=0 for every finite multi-index I",
+    "ordered_basis": [
+      "tau",
+      "omega",
+      "omega_star",
+      "tau_hat_star"
+    ],
+    "remaining_complex": "Diff BV complex of g_hat=(rho/f)^2 g and theta",
+    "status": "EXACT_ON_FORMAL_RHO_NONZERO_CHART"
+  },
+  "receiver_payload": {
+    "Cartan_bridge": "NOT_REACHED_REQUIRES_RENORMALIZED_QME_AND_LOCAL_TO_CARTAN_MAP",
+    "matter_coupled_local_classes": "ZERO_QUOTIENT",
+    "sector_restriction_next_action": "replace strict-pullback question by matter-coupled coefficient computation if a regulator is selected",
+    "standard_formula_representatives": "EXACT_WITH_DISPLAYED_PRIMITIVES",
+    "strict_pullback": "NO_CERTIFIED_MAP_CHANGED_THEORY_MORPHISM_OBSTRUCTED"
+  },
+  "receiver_payload_sha256": "f11d374c1f05398bebd07ff6a19e139f62fe10a396d6aeea3a295319937c85f3",
+  "result_id": "BERGER_COMPLEX_CLOCK_LOCAL_ANOMALY_COMPLEX_V1",
+  "result_state": "CLASSIFIED",
+  "schema": "quantum-weyl-berger-complex-clock-local-anomaly-complex-v1",
+  "strict_to_coupled_action_morphism": {
+    "declared_complete_class": "unit-preserving local-analytic background-jet morphisms regular at zero fluctuation, allowing arbitrary field/antifield mixing but no negative field degree",
+    "not_a_repair": "the coupled cohomology is a changed source theory; no 961/1920 term is subtracted or cancelled by hand",
+    "reason": "the target has no arity-zero Euler row on any antifield, whereas the strict metric-antifield row has the nonzero unit coefficient 961/1920; a unital morphism preserves that coefficient",
+    "relation_to_old_obstruction": "strengthens the identity-jet witness to arbitrary regular local-analytic mixing by the constant-term functional",
+    "separator": {
+      "epsilon_0_Q_target": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "epsilon_0_j_Q_source_gstar00": {
+        "denominator": 1920,
+        "numerator": 961
+      },
+      "functional": "epsilon_0=constant term at the zero-fluctuation Berger jet",
+      "separation": {
+        "denominator": 1920,
+        "numerator": 961
+      }
+    },
+    "source": "strict pure-Weyl BV expansion evaluated at the positive Berger metric",
+    "target": "on-shell gravity-clock BV expansion at the positive Berger solution",
+    "verdict": "NONEXISTENT_IN_DECLARED_COMPLETE_MORPHISM_CLASS"
+  },
+  "symmetry_disposition": {
+    "K_Berger": "RIGID_BACKGROUND_SYMMETRY_NOT_A_LOCAL_GAUGE_GHOST; Q1_Q2_Q3_EQUIVARIANCE IS A SEPARATE CARTAN INPUT",
+    "local_Diff": "H14_ZERO_IN_FOUR_DIMENSIONS_ON_DECLARED_REGULAR_CHART",
+    "local_Weyl": "H14_ZERO_BY_QUARTET_CONTRACTION",
+    "mixed_Diff_Weyl": "H14_ZERO_BY_TOTAL_COMPLEX_AND_QUARTET_CONTRACTION",
+    "raw_D": "NOT_A_LINEAR_SYMMETRY_OF_THE_FIXED_POSITIVE_CLOCK_BACKGROUND; AFFINE ARITY_ZERO PART PRESENT"
+  },
+  "theory": {
+    "action_specialization": "alpha_R=alpha_E=alpha_P=0; kappa_r=kappa_theta=1 in COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1",
+    "background": "a=1, q=9/40, alpha_B=5, rho^2=1, omega_clock=3/4, lambda=119/480",
+    "gauge_symmetry": "Diff x Weyl",
+    "global_symmetry": "U(1) phase shift of theta; no U(1) gauge ghost",
+    "local_algebra": "formal rho!=0 polar local-analytic jet algebra with tau=-log(rho/f)",
+    "name": "positive Berger gravity plus two-real-scalar complex clock",
+    "regularity_scope": "regular matter-coupled Euler-Lagrange chart; singular and rho=0 strata excluded"
+  }
+}

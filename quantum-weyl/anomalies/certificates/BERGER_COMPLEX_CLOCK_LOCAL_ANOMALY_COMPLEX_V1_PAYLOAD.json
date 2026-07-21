@@ -1,0 +1,67 @@
+{
+  "QME_status": "NOT_RESTORED_FOR_GRAVITY_CLOCK_THEORY",
+  "background": "a=1, q=9/40, alpha_B=5, rho^2=1, omega_clock=3/4, lambda=119/480",
+  "coefficient_status": "NOT_COMPUTED_FOR_GRAVITY_CLOCK_THEORY",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "downstream": {
+    "K_Berger_Cartan_gate": "OPEN",
+    "matter_coupled_coefficient_gate": "READY",
+    "strict_sector_restriction": "NO_CERTIFIED_MAP_CHANGED_THEORY"
+  },
+  "matter_coupled_H14": {
+    "even_dimension": 0,
+    "odd_dimension": 0,
+    "status": "COMPLETE_ZERO_ON_DECLARED_REGULAR_FORMAL_POLAR_CHART"
+  },
+  "producer_result_id": "BERGER_COMPLEX_CLOCK_LOCAL_ANOMALY_COMPLEX_V1",
+  "result_id": "BERGER_COMPLEX_CLOCK_LOCAL_ANOMALY_COMPLEX_V1_PAYLOAD",
+  "schema": "quantum-weyl-berger-complex-clock-local-anomaly-receiver-v1",
+  "standard_candidate_disposition": [
+    {
+      "class_id": "ANOM_OMEGA_C2",
+      "primitive": "B_C=int sqrt(g) tau C2",
+      "status": "EXACT"
+    },
+    {
+      "class_id": "ANOM_OMEGA_E4",
+      "primitive": "B_E=int sqrt(g)[tau E4+4 G^munu d_mu tau d_nu tau-4(Box tau)(d tau)^2+2(d tau)^4]",
+      "status": "EXACT"
+    },
+    {
+      "class_id": "ANOM_OMEGA_C_DUAL_C",
+      "primitive": "B_P=int sqrt(g) tau CdualC",
+      "status": "EXACT"
+    },
+    {
+      "class_id": "ANOM_OMEGA_BOX_R",
+      "primitive": "B_BOX=-(1/12)int sqrt(g) R2 plus horizontal current",
+      "status": "EXACT"
+    }
+  ],
+  "strict_action_complex_map": "NONEXISTENT_IN_DECLARED_COMPLETE_MORPHISM_CLASS",
+  "strict_map_separator": {
+    "epsilon_0_Q_target": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "epsilon_0_j_Q_source_gstar00": {
+      "denominator": 1920,
+      "numerator": 961
+    },
+    "functional": "epsilon_0=constant term at the zero-fluctuation Berger jet",
+    "separation": {
+      "denominator": 1920,
+      "numerator": 961
+    }
+  },
+  "symmetry_disposition": {
+    "K_Berger": "RIGID_BACKGROUND_SYMMETRY_NOT_A_LOCAL_GAUGE_GHOST; Q1_Q2_Q3_EQUIVARIANCE IS A SEPARATE CARTAN INPUT",
+    "local_Diff": "H14_ZERO_IN_FOUR_DIMENSIONS_ON_DECLARED_REGULAR_CHART",
+    "local_Weyl": "H14_ZERO_BY_QUARTET_CONTRACTION",
+    "mixed_Diff_Weyl": "H14_ZERO_BY_TOTAL_COMPLEX_AND_QUARTET_CONTRACTION",
+    "raw_D": "NOT_A_LINEAR_SYMMETRY_OF_THE_FIXED_POSITIVE_CLOCK_BACKGROUND; AFFINE ARITY_ZERO PART PRESENT"
+  },
+  "theory": "positive Berger gravity plus two-real-scalar complex clock"
+}

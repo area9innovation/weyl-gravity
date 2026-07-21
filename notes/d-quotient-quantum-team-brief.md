@@ -2631,3 +2631,43 @@ coefficient, global determinant, QME, Lorentzian or Hadamard claim is made.
 
 - [`NORMALIZED_SCHUR_PSEUDODIFFERENTIAL_VARIATION.json`](../quantum-weyl/spectral/euclidean/certificates/NORMALIZED_SCHUR_PSEUDODIFFERENTIAL_VARIATION.json)
 - [`normalized-schur-pseudodifferential-variation.md`](../quantum-weyl/reports/normalized-schur-pseudodifferential-variation.md)
+
+## Positive-Berger complex-clock anomaly complex (2026-07-21)
+
+The action-derived covariant minimal/nonminimal BV export for the actual
+two-scalar clock theory closes the local anomaly-classification gate on the
+regular formal polar chart `rho != 0`.  With
+
+\[
+\tau=-\log(\rho/f),\qquad \widehat g=(\rho/f)^2g,
+\]
+
+the Weyl field, ghost and cotangent generators form an exact quartet,
+including every finite jet.  The remaining complex is the four-dimensional
+Diff BV theory of \(\widehat g\) and the nonchiral phase scalar \(\theta\).
+The exact small-algebra comparison gives no Diff anomaly, while the sole
+phase-current antifield class has no ghost-number-two lift: the independent
+Chevalley--Eilenberg control has ranks \(6\) and \(9\) in a
+15-dimensional two-cochain space, hence \(H^2=0\).  Therefore, on the
+declared regular chart,
+
+\[
+H^{1,4}_{\rm even}(s\mid d)=H^{1,4}_{\rm odd}(s\mid d)=0.
+\]
+
+This is a changed-theory result, not a repaired restriction of strict pure
+Weyl gravity.  The constant-term functional strengthens the predecessor's
+identity-jet obstruction: every unit-preserving regular local-analytic BV
+action morphism is separated by the exact coefficient \(961/1920\).  The
+strict pullback remains undefined, while the same familiar Weyl formulas in
+the matter-coupled theory are exact with the displayed Wess--Zumino
+primitives.
+
+This result is `LOCAL-ALGEBRAIC` and lifecycle `CLASSIFIED`.  It computes no
+gravity-clock anomaly coefficient and does not restore its QME.  Raw `D` is
+affine on the fixed clock background; `K_Berger` is a rigid background
+symmetry rather than a local gauge ghost, so its quantum Cartan bridge remains
+open.
+
+- [`BERGER_COMPLEX_CLOCK_LOCAL_ANOMALY_COMPLEX_V1.json`](../quantum-weyl/anomalies/certificates/BERGER_COMPLEX_CLOCK_LOCAL_ANOMALY_COMPLEX_V1.json)
+- [`berger-complex-clock-local-anomaly-complex-v1.md`](../quantum-weyl/reports/berger-complex-clock-local-anomaly-complex-v1.md)

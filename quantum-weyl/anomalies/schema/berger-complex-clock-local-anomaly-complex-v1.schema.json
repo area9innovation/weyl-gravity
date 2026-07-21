@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-berger-complex-clock-local-anomaly-complex-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "theory",
+    "classical_import",
+    "quartet_reduction",
+    "candidate_completeness",
+    "H14",
+    "strict_to_coupled_action_morphism",
+    "symmetry_disposition",
+    "receiver_payload",
+    "coefficient_and_qme_status",
+    "proof_hashes",
+    "dependencies",
+    "does_not_establish",
+    "claim_boundary",
+    "receiver_payload_sha256"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-complex-clock-local-anomaly-complex-v1"},
+    "result_id": {"const": "BERGER_COMPLEX_CLOCK_LOCAL_ANOMALY_COMPLEX_V1"},
+    "result_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "theory": {
+      "type": "object",
+      "required": ["name", "action_specialization", "background", "local_algebra", "gauge_symmetry", "global_symmetry", "regularity_scope"],
+      "properties": {
+        "name": {"const": "positive Berger gravity plus two-real-scalar complex clock"},
+        "action_specialization": {"type": "string"},
+        "background": {"type": "string"},
+        "gauge_symmetry": {"const": "Diff x Weyl"},
+        "global_symmetry": {"type": "string"},
+        "local_algebra": {"const": "formal rho!=0 polar local-analytic jet algebra with tau=-log(rho/f)"},
+        "regularity_scope": {"type": "string"}
+      }
+    },
+    "classical_import": {
+      "type": "object",
+      "required": ["status", "field_inventory_hash", "action_manifest_hash", "bv_manifest_hash", "cme", "Q_squared_zero", "positive_background_on_shell"],
+      "properties": {
+        "status": {"const": "COMPLETE_ACTION_DERIVED_MINIMAL_AND_NONMINIMAL_BV"},
+        "cme": {"const": "VERIFIED"},
+        "Q_squared_zero": {"const": "VERIFIED"},
+        "positive_background_on_shell": {"type": "string"},
+        "field_inventory_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "action_manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "bv_manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "quartet_reduction": {
+      "type": "object",
+      "required": ["ordered_basis", "Q_W", "h_W", "Q_W_squared", "Qh_plus_hQ", "jet_prolongation", "remaining_complex", "status"],
+      "properties": {
+        "ordered_basis": {"const": ["tau", "omega", "omega_star", "tau_hat_star"]},
+        "Q_W": {"type": "array"},
+        "h_W": {"type": "array"},
+        "Q_W_squared": {"type": "array"},
+        "Qh_plus_hQ": {"type": "array"},
+        "jet_prolongation": {"type": "string"},
+        "remaining_complex": {"type": "string"},
+        "status": {"const": "EXACT_ON_FORMAL_RHO_NONZERO_CHART"}
+      }
+    },
+    "candidate_completeness": {
+      "type": "object",
+      "required": ["bounds", "partition", "ledger", "exhaustiveness_status", "does_not_require_raw_graph_expansion"],
+      "properties": {
+        "bounds": {"type": "object"},
+        "partition": {"type": "string"},
+        "exhaustiveness_status": {"const": "COMPLETE_STRUCTURAL_PARTITION_ON_DECLARED_REGULAR_CHART"},
+        "does_not_require_raw_graph_expansion": {"const": true},
+        "ledger": {"type": "array", "minItems": 5, "maxItems": 5}
+      }
+    },
+    "H14": {
+      "type": "object",
+      "required": ["even_quotient_dimension", "odd_quotient_dimension", "pure_Diff_quotient_dimension", "Weyl_and_mixed_quotient_dimension", "positive_antifield_quotient_dimension", "standard_candidate_basis", "standard_candidate_boundary_matrix", "standard_candidate_boundary_rank", "standard_candidate_primitives", "matter_family", "status"],
+      "properties": {
+        "standard_candidate_basis": {"type": "array", "minItems": 4, "maxItems": 4},
+        "standard_candidate_boundary_matrix": {"type": "array"},
+        "standard_candidate_primitives": {"type": "array", "minItems": 4, "maxItems": 4},
+        "matter_family": {"type": "object"},
+        "even_quotient_dimension": {"const": 0},
+        "odd_quotient_dimension": {"const": 0},
+        "pure_Diff_quotient_dimension": {"const": 0},
+        "Weyl_and_mixed_quotient_dimension": {"const": 0},
+        "positive_antifield_quotient_dimension": {"const": 0},
+        "standard_candidate_boundary_rank": {"const": 4},
+        "status": {"const": "COMPLETE_ZERO_ON_DECLARED_REGULAR_FORMAL_POLAR_CHART"}
+      }
+    },
+    "strict_to_coupled_action_morphism": {
+      "type": "object",
+      "required": ["declared_complete_class", "source", "target", "separator", "reason", "verdict", "relation_to_old_obstruction", "not_a_repair"],
+      "properties": {
+        "verdict": {"const": "NONEXISTENT_IN_DECLARED_COMPLETE_MORPHISM_CLASS"},
+        "declared_complete_class": {"type": "string"},
+        "source": {"type": "string"},
+        "target": {"type": "string"},
+        "reason": {"type": "string"},
+        "relation_to_old_obstruction": {"type": "string"},
+        "not_a_repair": {"type": "string"},
+        "separator": {
+          "type": "object",
+          "required": ["functional", "epsilon_0_Q_target", "epsilon_0_j_Q_source_gstar00", "separation"],
+          "properties": {
+            "functional": {"type": "string"},
+            "epsilon_0_Q_target": {"type": "object"},
+            "epsilon_0_j_Q_source_gstar00": {"type": "object"},
+            "separation": {"type": "object"}
+          }
+        }
+      }
+    },
+    "symmetry_disposition": {
+      "type": "object",
+      "required": ["local_Weyl", "local_Diff", "mixed_Diff_Weyl", "raw_D", "K_Berger"],
+      "properties": {
+        "local_Weyl": {"type": "string"},
+        "local_Diff": {"type": "string"},
+        "mixed_Diff_Weyl": {"type": "string"},
+        "raw_D": {"type": "string"},
+        "K_Berger": {"type": "string"}
+      }
+    },
+    "receiver_payload": {
+      "type": "object",
+      "required": ["strict_pullback", "matter_coupled_local_classes", "standard_formula_representatives", "Cartan_bridge", "sector_restriction_next_action"],
+      "properties": {
+        "strict_pullback": {"type": "string"},
+        "matter_coupled_local_classes": {"type": "string"},
+        "standard_formula_representatives": {"type": "string"},
+        "Cartan_bridge": {"type": "string"},
+        "sector_restriction_next_action": {"type": "string"}
+      }
+    },
+    "coefficient_and_qme_status": {
+      "type": "object",
+      "required": ["coefficient_status", "cohomological_disposition", "QME_status", "required_next_gate"],
+      "properties": {
+        "coefficient_status": {"const": "NOT_COMPUTED_FOR_GRAVITY_CLOCK_THEORY"},
+        "cohomological_disposition": {"type": "string"},
+        "QME_status": {"const": "NOT_RESTORED_FOR_GRAVITY_CLOCK_THEORY"},
+        "required_next_gate": {"type": "string"}
+      }
+    },
+    "proof_hashes": {
+      "type": "object",
+      "required": ["quartet_and_candidate_partition_sha256", "candidate_ledger_sha256", "action_morphism_separator_sha256"],
+      "properties": {
+        "quartet_and_candidate_partition_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "candidate_ledger_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "action_morphism_separator_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "dependencies": {"type": "object", "minProperties": 8, "maxProperties": 8},
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string"}},
+    "claim_boundary": {"type": "string", "minLength": 700},
+    "receiver_payload_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

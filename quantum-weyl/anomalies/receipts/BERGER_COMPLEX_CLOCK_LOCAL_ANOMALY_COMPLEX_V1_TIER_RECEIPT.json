@@ -1,0 +1,58 @@
+{
+  "receipt_id": "BERGER_COMPLEX_CLOCK_LOCAL_ANOMALY_COMPLEX_V1_TIER_RECEIPT",
+  "result_id": "BERGER_COMPLEX_CLOCK_LOCAL_ANOMALY_COMPLEX_V1",
+  "recorded_at": "2026-07-21",
+  "base_commit": "d53b7d173",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "input_hashes": {
+    "STRICT_ANOMALY_SECTOR_RESTRICTION_CHAIN_MAP_OBSTRUCTION_V1": "4863e00186e719e933e20fe58f2bc0429b1cb0a13db8481b6f8152680b3255fb",
+    "POSITIVE_BERGER_CLOCK_BACKGROUND": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687",
+    "COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1": "a537e31bf667520443903551b5bf2596dff9a1c35fade88d2ffc1e89c1e0b836",
+    "WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY": "fa21fc6071ae52277d9953b68c47773686117f1426cc50899fdf8c124d2ba616",
+    "WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT": "10dbd0b0a1e9190ddd2268a98c2d899808da07fc215d388167743a8bd01df5e9",
+    "AFN0_DIFF_MIXED_MINIMAL_BV_H14": "f2624bad4840e33682b1dc3971c09e466f530c90e4404edd19c65613187dc81b",
+    "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2": "f518eb8a13ee34021edfd8f1809bf7a0ee139a9a1863d837d83858e34bf461f5",
+    "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3": "90a7a7703e30fc9fe2e97e1b4e3327bb1dc9b078c16b51c1cc2afd163b0842a6"
+  },
+  "output_hashes": {
+    "certificate": "edfec590245e6e9c5156ae2ae72a8a8e18548a2e628012d7b44ded034df933ac",
+    "receiver_payload": "2a25fc355c484d2130c545dd98bb3aaa0e15f00e3736e62a0c5053c715cf8906",
+    "report": "0e12f37bad6f138535aad2d3f8953abbfcc6efe433e81b7d2366acc68e68c8cf"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile quantum-weyl/anomalies/berger_complex_clock_local_anomaly_complex.py quantum-weyl/anomalies/verify_berger_complex_clock_local_anomaly_complex.py quantum-weyl/anomalies/tests/test_berger_complex_clock_local_anomaly_complex.py",
+      "elapsed_seconds": 0.07,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 quantum-weyl/anomalies/berger_complex_clock_local_anomaly_complex.py --check",
+      "elapsed_seconds": 0.29,
+      "status": "PASS_EXACT_PRODUCER_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 quantum-weyl/anomalies/verify_berger_complex_clock_local_anomaly_complex.py",
+      "elapsed_seconds": 0.23,
+      "status": "PASS_METHOD_DISTINCT_HASH_MATRIX_CE_AND_SEPARATOR_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/anomalies/tests/test_berger_complex_clock_local_anomaly_complex.py -v",
+      "elapsed_seconds": 0.75,
+      "status": "PASS_3_TESTS_9_FAIL_CLOSED_MUTATIONS"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 compile/validate --spec=draft2020 --strict=true for certificate and receiver schemas",
+      "elapsed_seconds": 7.28,
+      "status": "PASS_DRAFT_2020_12_STRICT_BOTH_ARTIFACTS"
+    }
+  ],
+  "tier_2_not_run": "All imported mathematical inputs are immutable and content-addressed; this work adds a new local adapter theorem and receiver without changing any shared operator, schema or upstream certificate chain.",
+  "tier_3_not_run": "No freeze, release, anomaly coefficient, QME restoration, Lorentzian theorem or lifecycle promotion beyond CLASSIFIED is made."
+}
