@@ -28,11 +28,11 @@ PRODUCER_PATH = ROOT / "bridge/einstein_sector/einstein_maxwell_weyl_compact_cau
 INPUTS = {
     "full_time_sobolev_gate": (
         "bridge/certificates/EINSTEIN_MAXWELL_WEYL_SOBOLEV_LINEARIZATION_STABILITY_GATE_V1.json",
-        "4768cfaef309b27300bac7ac4fc3c8eee9d850d97c49dd5527494b3569918b78",
+        "020cf4bcfa8299a9be7a67078dae4ae8c85f184816000da48df8a537487f7aac",
     ),
     "finite_harmonic_structural_freeze": (
         "bridge/certificates/EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_CONE_STRUCTURAL_FREEZE_V1.json",
-        "935a3c264858c4f425025f2f1adf50886739bb84cdc86331120058c9ce7bd545",
+        "43b212dafc623909ce76ff31bcb1b3fab7054a9fa7a2ff1b757e630f26cf1740",
     ),
     "product_incidence": (
         "bridge/certificates/einstein_maxwell_product_incidence.json",

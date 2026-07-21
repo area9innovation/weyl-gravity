@@ -30,7 +30,7 @@ INPUTS = {
     "candidate19_21_links": ROOT / "bridge/certificates/einstein_maxwell_weyl_same_sign_active_linear_sheet_rotation_links.json",
 }
 EXPECTED_HASHES = {
-    "structural_freeze": "935a3c264858c4f425025f2f1adf50886739bb84cdc86331120058c9ce7bd545",
+    "structural_freeze": "43b212dafc623909ce76ff31bcb1b3fab7054a9fa7a2ff1b757e630f26cf1740",
     "fibre_product": "c6b3b928351ad42570fcba0e45ce3ee9df2a377066f6d44d9f0450c12dcd88da",
     "candidate18_complex": "16390b76191d608e3fd6b81db10c0fd9bd34817866033aa9ca26ae8c6d10b971",
     "candidate18_separation": "8a772c453a0c58ec5cb134617d1c93cb844fd889550c5c4a04c5be5741edcb9f",

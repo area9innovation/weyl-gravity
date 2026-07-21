@@ -26,7 +26,7 @@ PRODUCER_PATH = Path(__file__).resolve()
 INPUTS = {
     "compact_cauchy_constraint_gate": (
         "bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_CONSTRAINT_FREDHOLM_GATE_V1.json",
-        "261c77431cca2afb5facf65d33be7388f291757290cbc4129fc05e69c1a6c303",
+        "1a2986f246d156d70f640337368d29d62c60a8ec464153579bf08af4a40ebce2",
     ),
     "complete_background_stabilizer": (
         "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
@@ -38,7 +38,7 @@ INPUTS = {
     ),
     "canonical_operator_producer": (
         "bridge/einstein_sector/einstein_maxwell_weyl_compact_cauchy_constraint_fredholm_gate.py",
-        "90bb779e7ec2d54c66472744d7fc3fd2799c2aea26478b859df692ad5233a278",
+        "f1dbc61e0bb89b6bbbd52d7b74911e64e96ba7ec239e26862a2287dc4fe1170c",
     ),
 }
 

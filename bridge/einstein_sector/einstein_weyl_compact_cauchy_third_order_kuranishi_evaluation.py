@@ -33,19 +33,19 @@ OUTPUT = ROOT / "bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KU
 INPUTS = {
     "canonical_crosswalk": (
         "bridge/certificates/EINSTEIN_WEYL_ALPHA_B3_OSTROGRADSKY_CANONICAL_CROSSWALK_V1.json",
-        "99ae4e6397afa7e2b27169f544229287ddb7f6034fcdb76d0096b771c10d330b",
+        "1b6164c332cb18722529b1cdd979b24f49a12a9e81dfdc233817ad7302c3139f",
     ),
     "repaired_cubic_export_obstruction": (
         "bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_CUBIC_CONSTRAINT_TENSOR_EXPORT_OBSTRUCTION_V1.json",
-        "590a73db70dc193ecbbd6c3c41e06162797ec11808f6070eb4312476a129660b",
+        "0767475f509a93a145af9944d133bd352326da8e9e4708f06e3a74adcfad42ae",
     ),
     "two_jet_kuranishi_carrier": (
         "bridge/certificates/EINSTEIN_WEYL_CONSTRAINT_ALGEBROID_KURANISHI_CARRIER_V1.json",
-        "fa764024805f3c2ce67e63d9a15afed94861e1374e32ecda8124efc3849aea24",
+        "7803297a7f65cf7ddb6e3eb24e4ae6d9fdd3c36bb1deb8290bb5e91f5c8dd921",
     ),
     "mixed_charge_correspondence": (
         "bridge/certificates/EINSTEIN_WEYL_MIXED_CHARGE_DERIVED_CORRESPONDENCE_V1.json",
-        "a0280458c2cd704f96b33e9a21d796074c85bdd305a445ad60690d3dcd4367c4",
+        "9853e39d52d931e54384fcfecb7c8c6f8bb8b47ab2e4f93da31ad32e7dbb04d7",
     ),
     "arity_three_parent": (
         "bridge/certificates/WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",

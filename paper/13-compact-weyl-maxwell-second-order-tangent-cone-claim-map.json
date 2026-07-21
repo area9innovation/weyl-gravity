@@ -4,7 +4,7 @@
   "lifecycle_state": "THEOREM_FROZEN",
   "structural_theorem_lifecycle_state": "THEOREM_FROZEN",
   "bounded_common_zero_lifecycle_state": "OPEN",
-  "source_baseline": "7da94b1021b2c9175610256be381cd2fbd58f3bf",
+  "source_baseline": "aa7f7ff984e930f71e208538deac6e22b9cc22cf",
   "manuscript": "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -81,7 +81,13 @@
     "compact_cauchy_right_elliptic_constraint_map": true,
     "compact_cauchy_global_adjoint_kernel": "EXACTLY_FIVE_LIFTED_STABILIZERS",
     "compact_cauchy_sobolev_second_order_cone": "COMMON_ZERO_OF_FIVE_TAUB_MAPS",
-    "compact_cauchy_fixed_group_AMM_normal_form": "OBSTRUCTED_BY_HYPERSURFACE_DEFORMATION_STRUCTURE_FUNCTION"
+    "compact_cauchy_fixed_group_AMM_normal_form": "OBSTRUCTED_BY_HYPERSURFACE_DEFORMATION_STRUCTURE_FUNCTION",
+    "balanced_third_order_global_K3_class": "ZERO_IN_CORRECTION_INDEPENDENT_TWO_DIMENSIONAL_QUOTIENT",
+    "balanced_third_order_l2_image": "SPAN_H_J1_J2_RANK_3",
+    "balanced_third_order_bounded_shells_for_certified_v": "OBSTRUCTED_ON_ALL_FOUR_OCCUPIED_ORIGINAL_SHELLS",
+    "balanced_third_order_finite_exponential_polynomial_for_certified_v": "CERTIFIED_WITH_SECULAR_DEGREE_Q_LE_1_P_LE_2",
+    "balanced_third_order_bounded_shell_quotient_over_all_v": "OPEN",
+    "balanced_third_order_causal_retarded": "NO_CERTIFIED_MAP"
   },
   "sources": [
     {
@@ -319,8 +325,19 @@
     {
       "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_AMM_SEMIFREDHOLM_SLICE_V1.json",
       "git_blob": "7f7beb6812a1e87fefea9d57e5a6e0d78a5bfad5"
+    },
+    {
+      "path": "bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_EVALUATION_V1.json",
+      "git_blob": "b882901fa80fd4f94b8a026124db8911f917a592"
     }
   ],
+  "third_order_disposition": {
+    "lifecycle_state": "THEOREM_FROZEN",
+    "fixture_scope": "balanced real axial Einstein-minus plus second extra-primary ell=2 tangent at k=m=0 with the certified no-homogeneous-addition second-order correction",
+    "correction_independent_claim": "The correction-independent intrinsic global class [K3] vanishes in O/im(l2), where im(l2)=span{H,J1,J2} and the quotient basis is {P_x,J3}.",
+    "representative_scoped_claim": "For the certified second-order representative, all four occupied original shells have a nonzero exact adjoint functional, while a finite exponential-polynomial third-order preimage exists with secular terms.",
+    "open_boundary": "The bounded shell quotient by arbitrary admissible homogeneous second-order additions, arbitrary finite-harmonic third-order classification, causal/retarded inversion, all-orders integration and quantum interpretation remain open."
+  },
   "verification_receipt": {
     "date": "2026-07-21",
     "tier_0": {
@@ -401,5 +418,5 @@
       "criterion": "The complete four-dialect provenance closure is current and the required Einstein-package rail passed; the finite-support structural theorem is promoted without promoting the unrestricted bounded common zero."
     }
   },
-  "next_gate": "CANDIDATE17_AND_CANDIDATE20_OFF_BALANCE_DEFORM_KERNEL_DIRECTIONS_INSIDE_T3_AND_TEST_REACHABILITY_OF_THE_POSITIVE_COLLINEAR_INCIDENCE_LOCUS"
+  "next_gate": "BALANCED_THIRD_ORDER_BOUNDED_SHELL_QUOTIENT_BY_COMPLETE_HOMOGENEOUS_SECOND_ORDER_CORRECTION_FREEDOM"
 }

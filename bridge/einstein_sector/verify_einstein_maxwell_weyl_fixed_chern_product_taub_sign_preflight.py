@@ -25,7 +25,7 @@ EXPECTED_INPUTS = {
     "bridge/certificates/einstein_maxwell_product_tangent_preflight.json": "cbae5417348975b9ceee8b04be7b6214c7ca8bf5f2c3778b4527de461569512b",
     "bridge/certificates/einstein_maxwell_weyl_harmonic_taub_sign_classification.json": "26fae23935261735385d6a7796d5f10db3404f863d2bdf85c7b5d0869afd0006",
     "bridge/certificates/EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ALL_M_MOMENT_INTERSECTION_V1.json": "983bfc000f32975f55f8d8a9b8e1fc14138b2cbeccb070f2f13d2dc239d4a59e",
-    "bridge/certificates/EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_CONE_STRUCTURAL_FREEZE_V1.json": "935a3c264858c4f425025f2f1adf50886739bb84cdc86331120058c9ce7bd545",
+    "bridge/certificates/EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_CONE_STRUCTURAL_FREEZE_V1.json": "43b212dafc623909ce76ff31bcb1b3fab7054a9fa7a2ff1b757e630f26cf1740",
     "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json": "047594a9019eb68a000ecce1799063789714db632c41e67e48d37bdf0fc3657a",
 }
 

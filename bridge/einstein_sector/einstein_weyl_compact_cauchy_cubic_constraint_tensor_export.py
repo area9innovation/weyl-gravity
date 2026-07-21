@@ -16,7 +16,7 @@ INPUTS = {
     "third_order_gate": (
         "bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_INPUT_OBSTRUCTION_V1.json",
         "EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_INPUT_OBSTRUCTION_V1",
-        "e2a80e947b4ea640ffd0a9aadcfffeaca602dfa4610a3387aefd934515c394fc",
+        "8893ddc02d47101d9ffc718c25455f17af81b55e5cfd83d04830d7be8c6beb3b",
     ),
     "selected_action": (
         "bridge/certificates/einstein_maxwell_product_incidence.json",
@@ -26,7 +26,7 @@ INPUTS = {
     "canonical_constraint_ledger": (
         "bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_CONSTRAINT_FREDHOLM_GATE_V1.json",
         "EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_CONSTRAINT_FREDHOLM_GATE_V1",
-        "261c77431cca2afb5facf65d33be7388f291757290cbc4129fc05e69c1a6c303",
+        "1a2986f246d156d70f640337368d29d62c60a8ec464153579bf08af4a40ebce2",
     ),
     "balanced_correction": (
         "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",

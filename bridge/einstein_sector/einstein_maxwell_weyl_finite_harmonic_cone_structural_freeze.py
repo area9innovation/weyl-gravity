@@ -30,7 +30,7 @@ INPUTS = {
     ),
     "paper_13": (
         "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
-        "745b6c106f6e9153c12932d67bfd76292b1380a428d28e9950b277c5c6ce4e8b",
+        "2c0c060eb6ae5a892d4ded14a0f7f2608619b219c0faa9711c00e17c843eaafc",
     ),
 }
 

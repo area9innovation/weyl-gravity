@@ -1,0 +1,92 @@
+{
+  "schema": "paper13-third-order-kuranishi-disposition-receipt-v1",
+  "result_id": "PAPER13_THIRD_ORDER_KURANISHI_DISPOSITION_V1_TIER_RECEIPT",
+  "date": "2026-07-21",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_state": "THEOREM_FROZEN",
+  "disposition": {
+    "correction_independent_global_claim": "CERTIFIED: [K3]=0 in O/im(l2), im(l2)=span{H,J1,J2}, quotient basis {P_x,J3}.",
+    "representative_scoped_bounded_claim": "OBSTRUCTED: for the certified no-homogeneous-addition second-order representative, all four occupied original shells have a nonzero exact adjoint functional.",
+    "representative_scoped_finite_exponential_polynomial_claim": "CERTIFIED: a secular third-order preimage exists with degree at most one on q and at most two on p.",
+    "complete_bounded_shell_quotient_over_all_second_order_corrections": "OPEN",
+    "causal_retarded": "NO_CERTIFIED_MAP"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "Python compilation of the disposition verifier, atlas generator and unit test",
+        "JSON parse of the claim map, certificates, atlases and this receipt",
+        "three-pass pdflatex build with no errors, undefined references or overfull boxes",
+        "git diff --check on the exact scoped paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "checks": [
+        "independent Paper 13 disposition verifier with three rejecting lifecycle mutations",
+        "six targeted disposition/evaluation tests",
+        "Paper 13/14 source-map verifier with 60 Paper 13 blobs pinned",
+        "strict third-order atlas generation and validation",
+        "structural-freeze producer, independent verifier and four tests",
+        "transitive provenance-relock producer, independent verifier and three tests"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The action-normalized evaluation and every affected transitive consumer were regenerated after the manuscript hash changed; the unified graph contains 1,986 exact hash edges and zero stale references.",
+      "producer_replays": {
+        "alpha_B3_canonical_crosswalk": {
+          "status": "PASS",
+          "elapsed_seconds": 145.34,
+          "max_rss_kb": 111492
+        },
+        "third_order_kuranishi_evaluation_final_relock": {
+          "status": "PASS",
+          "elapsed_seconds": 63.21,
+          "max_rss_kb": 351204
+        }
+      }
+    },
+    "tier_3": {
+      "status": "PASS",
+      "command": "PYTHONPYCACHEPREFIX=/tmp/paper13-tier3-final-pycache python3 -m unittest discover -s bridge/einstein_sector/tests -p 'test_*.py'",
+      "tests": 1391,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "unittest_elapsed_seconds": 576.709,
+      "wall_elapsed_seconds": 580.90,
+      "max_rss_kb": 2633036
+    },
+    "failed_diagnostic_run": {
+      "status": "FAIL_NOT_PROMOTED",
+      "tests": 1391,
+      "failures": 5,
+      "errors": 2,
+      "skipped": 1,
+      "elapsed_seconds": 501.22,
+      "first_cause": "The Paper 13 edit changed the structural-freeze manuscript input and exposed an already-current but unrelocked transitive provenance manifest. No failure was waived; the full dependency closure was regenerated and the final Tier-3 rail rerun."
+    }
+  },
+  "build_artifacts": {
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.pdf": {
+      "sha256": "10cd94ca6123ae5f0fe5af58859c1101686914fcb6abbbd577b594c713385846",
+      "committed": false,
+      "reason": "The work-item manifest authorizes the TeX source and claim map but not the generated PDF."
+    }
+  },
+  "source_manifest": {
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex": "2c0c060eb6ae5a892d4ded14a0f7f2608619b219c0faa9711c00e17c843eaafc",
+    "paper/13-compact-weyl-maxwell-second-order-tangent-cone-claim-map.json": "3cad624e2ae72c3eb5442cce8a262bfddeefc32c0e5877f2dd15af546e508586",
+    "bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_EVALUATION_V1.json": "618ebac9ede0bc79a9cf26f3e47f0fff4da56a60fc39d17d04e4465b769b228f",
+    "residual_atlas/einstein-weyl-compact-cauchy-third-order-kuranishi-evaluation-fragment-v1.json": "57ca401d7cd5102bc4ed314bcecdf72369f9d12b0c7b1360a1a9655b7e601b4a",
+    "bridge/einstein_sector/verify_paper13_third_order_kuranishi_disposition.py": "ee04441698360932181831221d64c3594a24f9bf21d238f83eea8f05f38510d3",
+    "bridge/einstein_sector/tests/test_paper13_third_order_kuranishi_disposition.py": "071864edf9976a810287e58478d36ceb17c60d1448deef9edfc19a65243996bf",
+    "bridge/certificates/EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_TIER3_PROVENANCE_RELOCK_V1.json": "b52a61b39cb4d87076d803c063fd2e45d1778bae502c9240aa068219d343f5bc"
+  },
+  "claim_boundary": "Paper 13 is theorem-frozen for the complete finite-support second-order structural theorem and the one-fixture correction-independent global K3 statement. The third-order bounded and finite exponential-polynomial shell verdicts retain the certified second-order representative. The full shell quotient over arbitrary homogeneous second-order additions, arbitrary finite-harmonic third order, causal propagation, all-orders integration, final residual descent, particles and quantum theory remain open."
+}

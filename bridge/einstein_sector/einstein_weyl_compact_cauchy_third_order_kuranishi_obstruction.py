@@ -16,12 +16,12 @@ INPUTS = {
     "mixed_correspondence": (
         "bridge/certificates/EINSTEIN_WEYL_MIXED_CHARGE_DERIVED_CORRESPONDENCE_V1.json",
         "EINSTEIN_WEYL_MIXED_CHARGE_DERIVED_CORRESPONDENCE_V1",
-        "a0280458c2cd704f96b33e9a21d796074c85bdd305a445ad60690d3dcd4367c4",
+        "9853e39d52d931e54384fcfecb7c8c6f8bb8b47ab2e4f93da31ad32e7dbb04d7",
     ),
     "two_jet_kuranishi": (
         "bridge/certificates/EINSTEIN_WEYL_CONSTRAINT_ALGEBROID_KURANISHI_CARRIER_V1.json",
         "EINSTEIN_WEYL_CONSTRAINT_ALGEBROID_KURANISHI_CARRIER_V1",
-        "fa764024805f3c2ce67e63d9a15afed94861e1374e32ecda8124efc3849aea24",
+        "7803297a7f65cf7ddb6e3eb24e4ae6d9fdd3c36bb1deb8290bb5e91f5c8dd921",
     ),
     "quadratic_source_and_correction": (
         "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",

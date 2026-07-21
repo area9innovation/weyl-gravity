@@ -14,9 +14,9 @@ SCHEMA_PATH = ROOT / "bridge/einstein_sector/schema/einstein-maxwell-weyl-compac
 PRODUCER_PATH = Path(__file__).resolve()
 
 INPUTS = {
- "adjoint_kernel": ("bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_ADJOINT_KERNEL_CLASSIFICATION_V1.json", "b0012a5ff0f1653523b90076e88a94212d16660a390128022b59598e20cc8ce0"),
- "right_elliptic_gate": ("bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_CONSTRAINT_FREDHOLM_GATE_V1.json", "261c77431cca2afb5facf65d33be7388f291757290cbc4129fc05e69c1a6c303"),
- "canonical_operator": ("bridge/einstein_sector/einstein_maxwell_weyl_compact_cauchy_constraint_fredholm_gate.py", "90bb779e7ec2d54c66472744d7fc3fd2799c2aea26478b859df692ad5233a278"),
+ "adjoint_kernel": ("bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_ADJOINT_KERNEL_CLASSIFICATION_V1.json", "2865efe7cfc9242980341c9dfa3e8d0a6614f378b1ed9cb1b7164e99db1bef75"),
+ "right_elliptic_gate": ("bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_CONSTRAINT_FREDHOLM_GATE_V1.json", "1a2986f246d156d70f640337368d29d62c60a8ec464153579bf08af4a40ebce2"),
+ "canonical_operator": ("bridge/einstein_sector/einstein_maxwell_weyl_compact_cauchy_constraint_fredholm_gate.py", "f1dbc61e0bb89b6bbbd52d7b74911e64e96ba7ec239e26862a2287dc4fe1170c"),
  "finite_harmonic_second_order": ("bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json", "d3770043041c94e52daa253c5dab1cf3730ea47f078e1b1553e42f00625496cd"),
  "moment_map_taub_bridge": ("bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json", "047594a9019eb68a000ecce1799063789714db632c41e67e48d37bdf0fc3657a"),
 }

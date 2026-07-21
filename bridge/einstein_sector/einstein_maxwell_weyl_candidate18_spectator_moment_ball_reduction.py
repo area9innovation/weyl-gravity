@@ -27,7 +27,7 @@ INPUTS = {
     "stabilizer": ROOT / "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
 }
 EXPECTED_HASHES = {
-    "parent_gate": "52b075bd090246410741d46d83e2c814c05dae6daf94f38038c7294557011c24",
+    "parent_gate": "8a6565668d1add5214d11eaf6c5ef0f2645f596953b1c9aed3af6ad4fa5b1b37",
     "active_current": "af541fe8332dd1769bf23dfc12c207c9b3df46670d6f60bd7e02bcf8cc24bedc",
     "phase_reduction": "d4e6091c079a75a82f16db01e3478d6e6b971df020c48557ffd471137fb80786",
     "complex_carrier": "16390b76191d608e3fd6b81db10c0fd9bd34817866033aa9ca26ae8c6d10b971",

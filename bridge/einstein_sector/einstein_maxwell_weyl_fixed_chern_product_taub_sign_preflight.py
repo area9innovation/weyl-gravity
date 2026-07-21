@@ -48,7 +48,7 @@ INPUTS = {
     ),
     "finite_harmonic_structural": (
         ROOT / "bridge/certificates/EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_CONE_STRUCTURAL_FREEZE_V1.json",
-        "935a3c264858c4f425025f2f1adf50886739bb84cdc86331120058c9ce7bd545",
+        "43b212dafc623909ce76ff31bcb1b3fab7054a9fa7a2ff1b757e630f26cf1740",
         "EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_CONE_STRUCTURAL_FREEZE_V1",
     ),
     "moment_map_taub": (

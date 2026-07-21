@@ -16,7 +16,7 @@ INPUTS = {
     "kuranishi": (
         "bridge/certificates/EINSTEIN_WEYL_CONSTRAINT_ALGEBROID_KURANISHI_CARRIER_V1.json",
         "EINSTEIN_WEYL_CONSTRAINT_ALGEBROID_KURANISHI_CARRIER_V1",
-        "fa764024805f3c2ce67e63d9a15afed94861e1374e32ecda8124efc3849aea24",
+        "7803297a7f65cf7ddb6e3eb24e4ae6d9fdd3c36bb1deb8290bb5e91f5c8dd921",
     ),
     "symplectic_extension": (
         "bridge/certificates/EINSTEIN_WEYL_SYMPLECTIC_EXTENSION_CLASSIFICATION_V1.json",

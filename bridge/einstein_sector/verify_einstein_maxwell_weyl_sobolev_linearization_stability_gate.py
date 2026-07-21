@@ -22,7 +22,7 @@ ATLAS = ROOT / "residual_atlas/einstein-weyl-sobolev-linearization-stability-gat
 SCHEMA = ROOT / "bridge/einstein_sector/schema/einstein-maxwell-weyl-sobolev-linearization-stability-gate-v1.schema.json"
 
 EXPECTED_INPUTS = {
-    "bridge/certificates/EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_CONE_STRUCTURAL_FREEZE_V1.json": "935a3c264858c4f425025f2f1adf50886739bb84cdc86331120058c9ce7bd545",
+    "bridge/certificates/EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_CONE_STRUCTURAL_FREEZE_V1.json": "43b212dafc623909ce76ff31bcb1b3fab7054a9fa7a2ff1b757e630f26cf1740",
     "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065",
     "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json": "d3770043041c94e52daa253c5dab1cf3730ea47f078e1b1553e42f00625496cd",
     "bridge/certificates/einstein_maxwell_weyl_harmonic_sign_resonance_join.json": "723083a24436059f19ae70f53287e6141c58f54b27eae50064896fd12eba7fbb",

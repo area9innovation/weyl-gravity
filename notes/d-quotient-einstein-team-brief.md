@@ -5154,7 +5154,7 @@ statements use exact algebraic expressions and minimal polynomials, not the
 displayed decimals. Hence the balanced second-order jet has no third-order
 bounded or finite-quasiperiodic correction for the certified
 no-homogeneous-addition representative, even though its global cubic
-Kuranishi class vanishes. If smooth exponential-polynomial corrections with
+Kuranishi class vanishes. If finite exponential-polynomial corrections with
 secular terms are allowed, the nonzero-determinant axial pencil is surjective
 by adjugate reduction, giving a third-order preimage (degree at most one on
 the q shell and at most two on the p shell). Causal/retarded inversion remains
@@ -5171,10 +5171,29 @@ to the declared second-order representative.
 The active bridge has therefore moved from input repair to the next
 correction-freedom/all-orders question. The fail-closed atlas now uses three
 separate rows: global third-order quotient `CERTIFIED`, bounded shells
-`OBSTRUCTED`, and smooth secular third order `CERTIFIED`; causal,
+`OBSTRUCTED`, and finite exponential-polynomial secular third order
+`CERTIFIED`; causal,
 observational and quantum maps remain `NO_CERTIFIED_MAP`.
 
 Evidence is
 `bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_EVALUATION_V1.json`;
 the restricted exact tensor is
 `bridge/einstein_sector/generated/einstein_weyl_compact_cauchy_balanced_q2_q3_resonant_slice_v1.json`.
+
+## Paper 13 third-order publication disposition
+
+Paper 13 is now `THEOREM_FROZEN` for external specialist review.  Its frozen
+third-order claim is deliberately split: `[K3]=0` is invariant under the
+complete homogeneous second-order correction freedom, whereas the nonzero
+four-shell bounded obstruction and the secular finite
+exponential-polynomial preimage retain the certified
+no-homogeneous-addition representative.  The bounded shell quotient over all
+admissible second-order corrections remains `OPEN`; causal, observational
+and quantum maps remain `NO_CERTIFIED_MAP`.
+
+The publication gate passed a three-pass TeX build, 60-source claim pinning,
+the independent disposition verifier and rejecting mutations, strict atlas
+validation, a zero-stale 1,986-edge provenance graph, and the complete
+Einstein package rail: 1,391 tests, zero failures or errors, one declared
+skip.  Evidence is
+`bridge/einstein_sector/receipts/PAPER13_THIRD_ORDER_KURANISHI_DISPOSITION_V1_TIER_RECEIPT.json`.
