@@ -1,0 +1,55 @@
+{
+  "result_id": "BERGER_REPLACEMENT112_EXECUTABLE_UNARY_MIXED_NILPOTENCY_OBSTRUCTION",
+  "recorded_at": "2026-07-21T01:50:51Z",
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      "python3 -m py_compile closed_universe_observers/berger_replacement112_executable_unary_engine.py closed_universe_observers/generate_berger_replacement112_executable_unary_mixed_nilpotency_obstruction.py closed_universe_observers/verify_berger_replacement112_executable_unary_mixed_nilpotency_obstruction.py",
+      "python3 -m json.tool closed_universe_observers/schema/berger-replacement112-executable-unary-mixed-nilpotency-obstruction-v1.schema.json",
+      "git diff --check -- <explicit observer package paths>"
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m closed_universe_observers.generate_berger_replacement112_executable_unary_mixed_nilpotency_obstruction --write",
+        "elapsed_seconds": 86.02,
+        "result": "PASS"
+      },
+      {
+        "command": "python3 -m closed_universe_observers.verify_berger_replacement112_executable_unary_mixed_nilpotency_obstruction",
+        "elapsed_seconds": 0.57,
+        "result": "PASS"
+      },
+      {
+        "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_replacement112_executable_unary_mixed_nilpotency_obstruction.py",
+        "elapsed_seconds": 79.51,
+        "result": "5 passed"
+      },
+      {
+        "command": "python3 -m closed_universe_observers.atlas.generate_observer_atlas_fragment && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment",
+        "elapsed_seconds": 5.4,
+        "result": "PASS"
+      },
+      {
+        "command": "python3 -m pytest -q closed_universe_observers/tests/test_observer_atlas_fragment.py",
+        "elapsed_seconds": 54.07,
+        "result": "62 passed"
+      },
+      {
+        "command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=<temporary-directory> paper/09-relational-clocks-berger-d-cartan.tex (two passes)",
+        "elapsed_seconds": 0.94,
+        "result": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "NOT_RUN",
+    "criterion": "No shared mathematical input, operator schema or upstream certificate changed; all dependencies are content-addressed imports and the affected observer atlas consumer was checked directly."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "criterion": "This is a fail-closed obstruction package, not a freeze, theorem promotion, release or shared-core algebra change."
+  }
+}

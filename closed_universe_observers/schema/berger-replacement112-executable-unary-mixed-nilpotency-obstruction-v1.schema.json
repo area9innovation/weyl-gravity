@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "atlas_status",
+    "dependency_tags",
+    "dependency_refs",
+    "payload_ref",
+    "gate_results",
+    "first_obstruction",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-replacement112-executable-unary-mixed-nilpotency-obstruction-v1"},
+    "result_id": {"const": "BERGER_REPLACEMENT112_EXECUTABLE_UNARY_MIXED_NILPOTENCY_OBSTRUCTION"},
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "dependency_refs": {"type": "object", "minProperties": 8},
+    "payload_ref": {
+      "type": "object",
+      "required": ["path", "result_id", "sha256", "canonical_sha256"]
+    },
+    "gate_results": {"type": "object"},
+    "first_obstruction": {
+      "type": "object",
+      "required": ["output_index", "output_row_id", "input_index", "input_row_id", "input_pbw_word", "time_mode", "coefficient"]
+    },
+    "claim_boundary": {"type": "string", "minLength": 500},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": true
+}

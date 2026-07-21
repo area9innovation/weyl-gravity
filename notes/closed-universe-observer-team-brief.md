@@ -2588,3 +2588,17 @@ complete executable replacement-112 unary from the unchanged nonrod base,
 the evaluated positive-mixed \(\Phi_2\) correction and this action delta.
 Replacement cohomology and the 160-row consumer remain inactive until that
 replay passes.
+
+The complete diagnostic replay does not pass.  At the exact nondegenerate
+fixture ((s_a,c_a)=(3/5,4/5)), ((s_u,c_u)=(5/13,12/13)), the mixed
+coefficient (q_{10}q_{00}+q_{00}q_{10}) retains 132 nonzero Fourier-mode
+entries in 28 matrix positions after imposing (R=B\psi), the sphere
+relation and the algebraic coefficient relations.  All eight rod wave
+equations vanish.  The canonical first witness is
+(h^{\star}_{00}\leftarrow\sigma), with empty input word and time mode
+(-2), and it remains nonzero at the exact sphere point
+((3/5,4/5,0,0)).  Thus the current active bridge is fail-closed at
+`observer.berger.interaction.replacement112_executable_unary_mixed_nilpotency_obstruction`.
+Its activation gate is reconciliation of that mixed Weyl-Noether row before
+any executable-112 export.  The 160-row consumer, physical reduction,
+second-order detector restriction, memory and redshift remain inactive.

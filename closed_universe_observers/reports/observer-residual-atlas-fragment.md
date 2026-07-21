@@ -292,6 +292,17 @@ local component jets, the evaluated non-rod third variation is undefined.
 The material-parent-56 producer is not reached, and no executable replacement
 or combined matrix is promoted.
 
+The action-derived mixed Hessian closes that serialization shortfall but not
+the unary-complex gate.  A complete 112-row diagnostic assembly at the exact
+nondegenerate fixture `(sa,ca)=(3/5,4/5)`, `(su,cu)=(5/13,12/13)` leaves 132
+nonzero mixed-square Fourier entries in 28 matrix positions after the
+declared Berger background quotient.  All eight rod wave equations vanish;
+the canonical first witness is `h_hat_star_00 <- sigma`, empty input word,
+time mode `-2`.  The fail-closed atlas row is
+`observer.berger.interaction.replacement112_executable_unary_mixed_nilpotency_obstruction`.
+No executable-112, combined-160, gauge-reduced, detector, memory or redshift
+map is certified.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.
