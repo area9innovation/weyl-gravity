@@ -4819,6 +4819,13 @@ solves nor refutes it.  The two fail-closed atlas rows are
 `bridge.two_phase_counterflow.einstein_source_condition.unrestricted` and
 `bridge.two_phase_counterflow.einstein_source_condition.fixed_q_rel`.
 
+The terminal residual-BFV crosswalk keeps one further boundary explicit.  The
+`K/R_rel/D/U(1)` Cartan ledger and abstract five-generator CE algebra are
+certified, but the full receiver remains obstructed by missing spatial row
+actions, moment maps, causal contractions and bulk-to-time-slice maps on the
+70-row carrier.  Thus the statement about `K_Berger` is not a claim of a
+completed residual quotient or descended pairing.
+
 ## Cross-team contribution contract
 
 Submit new results through the generator and phase-space registries in

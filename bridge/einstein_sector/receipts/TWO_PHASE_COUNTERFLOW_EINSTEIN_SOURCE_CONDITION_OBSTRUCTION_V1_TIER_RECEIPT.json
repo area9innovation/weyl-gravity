@@ -9,13 +9,13 @@
     "REDUCED-MODE"
   ],
   "artifacts": [
-    {"path": "bridge/einstein_sector/two_phase_counterflow_einstein_source_condition.py", "sha256": "7775c1bb7e083956b60103badf040c0abeafe4287d01e23a361065e19ca7cc35"},
-    {"path": "bridge/certificates/TWO_PHASE_COUNTERFLOW_EINSTEIN_SOURCE_CONDITION_OBSTRUCTION_V1.json", "sha256": "c3a4d41cb58d2e56fb6c81b772692277358fe2918dbdeb78414f9add74bd4a98"},
-    {"path": "bridge/einstein_sector/verify_two_phase_counterflow_einstein_source_condition.py", "sha256": "99e52afcdfe482b099b0a066c254a3b71259093054841b0809930094185b36f2"},
-    {"path": "bridge/einstein_sector/tests/test_two_phase_counterflow_einstein_source_condition.py", "sha256": "bfa917ab986f1c7a14b438615b8089547ec09593421a21500dc853f434205bea"},
+    {"path": "bridge/einstein_sector/two_phase_counterflow_einstein_source_condition.py", "sha256": "db6be9d0472ef608c29fa47794e3ec0551a575a544d96b1ebdad914562e8a63e"},
+    {"path": "bridge/certificates/TWO_PHASE_COUNTERFLOW_EINSTEIN_SOURCE_CONDITION_OBSTRUCTION_V1.json", "sha256": "bd1dd549bc1ac38498eee711e4667abc52636411c2c6491d7b32ad425b1a407b"},
+    {"path": "bridge/einstein_sector/verify_two_phase_counterflow_einstein_source_condition.py", "sha256": "fea79c61613c5007fd2b469b3db89c7b222f21c002daffaab06d9b8c77f6a914"},
+    {"path": "bridge/einstein_sector/tests/test_two_phase_counterflow_einstein_source_condition.py", "sha256": "7d926f0ea35452338480503a4019c5c5a1aa2680b10b6ec0519dbfdb6880fc23"},
     {"path": "bridge/einstein_sector/schema/two-phase-counterflow-einstein-source-condition-obstruction-v1.schema.json", "sha256": "a67efcd0a9fe2e5b0179201232e330e528ff4c56aea90d055fedc4d461c5f069"},
-    {"path": "residual_atlas/two-phase-counterflow-einstein-source-condition-obstruction-fragment-v1.json", "sha256": "902324017c10cbfa618edfaad0e241d98ed3606caab542e5eba93c494c61d371"},
-    {"path": "reports/bridge-two-phase-counterflow-einstein-source-condition-closeout-2026-07-21.md", "sha256": "707ad61b63a433b0334dee4c59f3f60313d2975c6c28076a79f5ba6d91d7ee8d"}
+    {"path": "residual_atlas/two-phase-counterflow-einstein-source-condition-obstruction-fragment-v1.json", "sha256": "fe37873f4ab6ec7c92efb7341fcee2451a620886ae2affb3fd2af3a60f227357"},
+    {"path": "reports/bridge-two-phase-counterflow-einstein-source-condition-closeout-2026-07-21.md", "sha256": "c89e4bb0afab30ce90c1625d3bab2434d00afb848c2895c193e9dae8b0d6df68"}
   ],
   "tier_0": {
     "status": "PASS",
@@ -45,8 +45,8 @@
         "command": "python3 -m unittest -v bridge.einstein_sector.tests.test_two_phase_counterflow_einstein_source_condition",
         "elapsed_seconds": 0.32,
         "status": "PASS",
-        "tests": 6,
-        "mutation_controls": "a forged same-background linear inclusion is rejected; cross-background map, charge-sector merge and neutrality-to-source promotion are tested fail-closed"
+        "tests": 7,
+        "mutation_controls": "a forged same-background linear inclusion is rejected; cross-background map, charge-sector merge, neutrality-to-source promotion and K-ledger-to-full-receiver promotion are tested fail-closed"
       },
       {
         "command": "python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-einstein-source-condition-obstruction-fragment-v1.json",
@@ -81,7 +81,7 @@
     "status": "NOT_RUN",
     "reason": "the work item terminates at a background-incidence obstruction and promotes no freeze, release, shared core algebra, Lorentzian state or quantum claim"
   },
-  "claim_boundary": "The selected counterflow gravity/relative-clock action transports exactly to the positive Berger clock stress, but the same fixture fails conventional same-source Einstein incidence by the nonzero rational minor -279/2560. Therefore no same-background Einstein-clock Jacobi complex, inclusion, cofiber, pairing pullback or Einstein-clock Taub map is defined. Unrestricted and fixed-Q_rel sectors are kept separate, including the terminal unrestricted secular zero-Jordan obstruction. The flat compensated Q(T) operator is not transplanted to Berger. No Weyl-target q2, residual BFV, causal scattering, observer, particle, positivity, unitarity or quantum result is established.",
+  "claim_boundary": "The selected counterflow gravity/relative-clock action transports exactly to the positive Berger clock stress, but the same fixture fails conventional same-source Einstein incidence by the nonzero rational minor -279/2560. Therefore no same-background Einstein-clock Jacobi complex, inclusion, cofiber, pairing pullback or Einstein-clock Taub map is defined. Unrestricted and fixed-Q_rel sectors are kept separate, including the terminal unrestricted secular zero-Jordan obstruction. The K/R_rel/D/U1 Cartan ledger and abstract five-generator CE algebra are imported without promoting the obstructed full residual receiver or descended pairing. The flat compensated Q(T) operator is not transplanted to Berger. No Weyl-target q2, causal scattering, observer, particle, positivity, unitarity or quantum result is established.",
   "higher_tiers_not_run": [
     "Tier 3: obstruction closeout does not satisfy any full-suite trigger"
   ]

@@ -161,6 +161,18 @@
       "sha256": "812f6a3c2308eaeef09bee25ec8c79c8f7c86de7a51383141f8cae46c2f9cae5",
       "source_commit": "a1ec93fe5d73d0c93341019c4e93a00d23ab95d6"
     },
+    "residual_bfv_receiver": {
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBSTRUCTION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBSTRUCTION_V1",
+      "sha256": "461474f7b9e35b75d862566f075d2cf3c6dc09c5333a5afada707304d15cbaea",
+      "source_commit": "51207639e7dc6c47ecc33bdf8ce8e121cff2219f"
+    },
+    "residual_bfv_receiver_payload": {
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBSTRUCTION_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBSTRUCTION_PAYLOAD_V1",
+      "sha256": "e6835e1ebb199c9e7753fc19666fd7dba3fc997e5ac0115da124a4a6c14560c7",
+      "source_commit": "51207639e7dc6c47ecc33bdf8ce8e121cff2219f"
+    },
     "trace_charge_preflight": {
       "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_V1.json",
       "result_id": "TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_V1",
@@ -172,8 +184,11 @@
   "pairing_and_residual_action": {
     "Einstein_pairing": "NO_CERTIFIED_MAP at this background",
     "K_Berger_Einstein_restriction": "NO_CERTIFIED_MAP",
-    "K_Berger_target_action": "CERTIFIED on the Weyl--matter parent at the abstract/background-stabilizer level",
+    "K_Berger_target_action": "CERTIFIED in the K/R_rel/D/U1 Cartan ledger on the Weyl--matter parent",
+    "abstract_stabilizer_CE": "CERTIFIED for su(2)_L direct_sum u(1)_R3 direct_sum R_K",
+    "descended_residual_pairing": "NO_CERTIFIED_MAP",
     "direct_target_pairing": "CERTIFIED on the 70-component Weyl--matter parent",
+    "full_five_generator_residual_receiver": "OBSTRUCTED: the four spatial row actions, Hamiltonian moment maps, causal contractions and bulk-to-time-slice map are missing on the ordered 70-row carrier",
     "pulled_back_Weyl_pairing": "NO_CERTIFIED_MAP because inclusion_i does not exist",
     "relative_pairing": "NO_CERTIFIED_MAP because the cofiber is undefined"
   },

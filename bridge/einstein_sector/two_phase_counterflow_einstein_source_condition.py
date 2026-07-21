@@ -62,6 +62,18 @@ IMPORTS = {
         "2e25c28e06ab54256c8a4af4b6793f241801bdfa84eab3eb218a1ab53eb873c0",
         "59764067a16a55d695fbe583724d7fb27c808b2e",
     ),
+    "residual_bfv_receiver": (
+        ROOT / "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBSTRUCTION_V1.json",
+        "TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBSTRUCTION_V1",
+        "461474f7b9e35b75d862566f075d2cf3c6dc09c5333a5afada707304d15cbaea",
+        "51207639e7dc6c47ecc33bdf8ce8e121cff2219f",
+    ),
+    "residual_bfv_receiver_payload": (
+        ROOT / "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBSTRUCTION_PAYLOAD_V1.json",
+        "TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBSTRUCTION_PAYLOAD_V1",
+        "e6835e1ebb199c9e7753fc19666fd7dba3fc997e5ac0115da124a4a6c14560c7",
+        "51207639e7dc6c47ecc33bdf8ce8e121cff2219f",
+    ),
     "berger_incidence": (
         ROOT / "bridge/certificates/berger_einstein_incidence.json",
         "BERGER_EINSTEIN_INCIDENCE",
@@ -167,6 +179,8 @@ def build_certificate() -> dict[str, Any]:
     fixed = payloads["fixed_charge_reduction"]
     complementarity = payloads["charge_clock_complementarity"]
     complementarity_payload = payloads["charge_clock_complementarity_payload"]
+    residual_receiver = payloads["residual_bfv_receiver"]
+    residual_receiver_payload = payloads["residual_bfv_receiver_payload"]
     incidence = payloads["berger_incidence"]
     product_map = payloads["compact_product_chain_map"]
 
@@ -176,6 +190,8 @@ def build_certificate() -> dict[str, Any]:
     _require(fixed["claim_flags"]["POSITIVE_RELATIVE_CLOCK_SURVIVES"] is False, "fixed-charge clock disposition changed")
     _require(complementarity["result_state"] == "UNRESTRICTED_CHARGED_CLOCK_HAS_EXACT_SECULAR_ZERO_JORDAN_OBSTRUCTION", "unrestricted charge-clock theorem changed")
     _require(complementarity_payload["branch_dichotomy"]["unrestricted_Q_rel"]["pairing_rank"] == 2, "unrestricted charge pairing changed")
+    _require(residual_receiver["result_state"] == "OBSTRUCTED_MISSING_SPATIAL_STABILIZER_LIFT_AND_MOMENT_MAPS", "residual receiver disposition changed")
+    _require(residual_receiver_payload["available_receiver_data"]["K_Rrel_D_U1_Cartan_ledger"] == "CERTIFIED", "K Cartan ledger changed")
     _require(incidence["classification"]["same_base_point_linearized_einstein_clock_complex_exists"] is False, "Berger incidence gate changed")
     _require(product_map["scope"]["background"].startswith("compact magnetic Plebanski-Hacyan"), "comparison-map background changed")
 
@@ -263,8 +279,11 @@ def build_certificate() -> dict[str, Any]:
             "Einstein_pairing": "NO_CERTIFIED_MAP at this background",
             "pulled_back_Weyl_pairing": "NO_CERTIFIED_MAP because inclusion_i does not exist",
             "relative_pairing": "NO_CERTIFIED_MAP because the cofiber is undefined",
-            "K_Berger_target_action": "CERTIFIED on the Weyl--matter parent at the abstract/background-stabilizer level",
+            "abstract_stabilizer_CE": "CERTIFIED for su(2)_L direct_sum u(1)_R3 direct_sum R_K",
+            "K_Berger_target_action": "CERTIFIED in the K/R_rel/D/U1 Cartan ledger on the Weyl--matter parent",
             "K_Berger_Einstein_restriction": "NO_CERTIFIED_MAP",
+            "full_five_generator_residual_receiver": "OBSTRUCTED: the four spatial row actions, Hamiltonian moment maps, causal contractions and bulk-to-time-slice map are missing on the ordered 70-row carrier",
+            "descended_residual_pairing": "NO_CERTIFIED_MAP",
         },
         "second_order_disposition": {
             "equation": "L v=-(1/2)D^2E(u,u)",

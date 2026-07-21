@@ -84,6 +84,13 @@ The charge strata remain distinct:
 
 The background-incidence obstruction applies independently to both strata.
 
+The terminal residual-BFV input sharpens the `K_Berger` wording.  The
+`K/R_rel/D/U(1)` Cartan ledger and the abstract
+`su(2)_L + u(1)_R3 + R_K` CE algebra are certified.  A full five-generator
+receiver is not: the four spatial row actions, their Hamiltonian moment maps,
+causal contractions and bulk-to-time-slice map are missing on the ordered
+70-row carrier.  Hence no descended residual pairing is inferred.
+
 ## Nonlinear boundary
 
 The Einstein-clock second-order equation is `NOT_APPLICABLE` because no

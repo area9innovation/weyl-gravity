@@ -76,6 +76,8 @@ def verify() -> None:
     assert data["charge_sector_split"]["fixed_Q_rel"]["clock"].startswith("OBSTRUCTED")
     assert data["relative_triangle"]["inclusion_i"] == "NO_CERTIFIED_MAP"
     assert data["relative_triangle"]["additional_Weyl_quotient"] == "NO_CERTIFIED_MAP"
+    assert data["pairing_and_residual_action"]["full_five_generator_residual_receiver"].startswith("OBSTRUCTED")
+    assert data["pairing_and_residual_action"]["descended_residual_pairing"] == "NO_CERTIFIED_MAP"
     assert data["second_order_disposition"]["Einstein_clock_Taub_source_test"].startswith("NOT_APPLICABLE")
 
     atlas = json.loads(ATLAS.read_text(encoding="utf-8"))

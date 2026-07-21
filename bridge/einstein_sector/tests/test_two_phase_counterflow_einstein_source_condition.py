@@ -41,6 +41,12 @@ class CounterflowEinsteinSourceTests(unittest.TestCase):
         self.assertEqual(comparison["status"], "NOT_APPLICABLE")
         self.assertIn("Plebanski--Hacyan", comparison["reason"])
 
+    def test_residual_K_ledger_is_not_promoted_to_full_receiver(self) -> None:
+        residual = self.certificate["pairing_and_residual_action"]
+        self.assertIn("CERTIFIED", residual["K_Berger_target_action"])
+        self.assertTrue(residual["full_five_generator_residual_receiver"].startswith("OBSTRUCTED"))
+        self.assertEqual(residual["descended_residual_pairing"], "NO_CERTIFIED_MAP")
+
     def test_decisive_mutation_is_detected(self) -> None:
         forged = copy.deepcopy(self.certificate)
         forged["claim_flags"]["same_background_linear_inclusion"] = True
