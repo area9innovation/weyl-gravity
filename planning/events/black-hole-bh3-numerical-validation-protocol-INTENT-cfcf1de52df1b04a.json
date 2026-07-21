@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/black-hole-bh3-numerical-validation-protocol-INTENT-cfcf1de52df1b04a",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work intent",
+  "source": {"path": "tools/science-forge/program/events/black-hole-bh3-numerical-validation-protocol-INTENT-cfcf1de52df1b04a.json", "span": null},
+  "body": {"event_kind": "WORK_INTENT", "actor": "black-hole-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T13:56:55Z", "seq": 1, "payload": {"target": "sf:program/work/black-hole-bh3-numerical-validation-protocol", "agent": "black-hole-1", "lease": "exclusive", "base_commit": "0966eebe5", "transaction_id": "46fff985245f5066", "allowlist_verdict": "within-allowlist", "intended_paths": ["black_hole_programme/bh3_numerical_validation_protocol.py", "black_hole_programme/verify_bh3_numerical_validation_protocol.py", "black_hole_programme/schema/bh3-numerical-validation-protocol-v1.schema.json", "black_hole_programme/certificates/BH3_NUMERICAL_VALIDATION_PROTOCOL.json", "black_hole_programme/tests/test_bh3_numerical_validation_protocol.py", "black_hole_programme/reports/bh3-numerical-validation-protocol.md"], "verify_commands": ["python3 black_hole_programme/verify_bh3_numerical_validation_protocol.py", "pytest black_hole_programme/tests/test_bh3_numerical_validation_protocol.py -q"]}, "native": {"authored_by": "sfc work-intent", "policy": "append-only (SPEC 4.5); an uncommitted delivery manifest — NO current_commit, NO test-success. Superseded by a later intent; sealed by WORK_COMMITTED."}},
+  "edges": [{"rel": "INTENDS", "to": "sf:program/work/black-hole-bh3-numerical-validation-protocol"}]
+}

@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/black-hole-bh3-numerical-validation-protocol-REPORT-b483cc1a64da770b",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work report",
+  "source": {"path": "tools/science-forge/program/events/black-hole-bh3-numerical-validation-protocol-REPORT-b483cc1a64da770b.json", "span": null},
+  "body": {"event_kind": "WORK_REPORTED", "actor": "black-hole-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T13:58:47Z", "seq": 1, "payload": {"target": "sf:program/work/black-hole-bh3-numerical-validation-protocol", "agent": "black-hole-1", "record_type": "checkpoint", "base_commit": "0966eebe5", "current_commit": "a3a707544", "changed_paths": "black_hole_programme/bh3_numerical_validation_protocol.py;black_hole_programme/verify_bh3_numerical_validation_protocol.py;black_hole_programme/schema/bh3-numerical-validation-protocol-v1.schema.json;black_hole_programme/certificates/BH3_NUMERICAL_VALIDATION_PROTOCOL.json;black_hole_programme/tests/test_bh3_numerical_validation_protocol.py;black_hole_programme/reports/bh3-numerical-validation-protocol.md", "disposition": "DONE", "tests": "verify_bh3_numerical_validation_protocol.py PASS (no numerics); pytest 5/5", "receipts": "certificates/BH3_NUMERICAL_VALIDATION_PROTOCOL.json; reports/bh3-numerical-validation-protocol.md", "deviations": "none", "dependency_needs": "", "next_recommendation": "Downstream: black-hole-complex-frequency-analytic-continuation-gate (certifies/obstructs the continuation this protocol validates a rail against); a future item may IMPLEMENT the two independent numerical rails and run the real-axis validation."}, "native": {"authored_by": "sfc work-report", "policy": "append-only (SPEC 4.5); one content-addressed report file per checkpoint; never rewritten."}},
+  "edges": [{"rel": "REPORTS", "to": "sf:program/work/black-hole-bh3-numerical-validation-protocol"}]
+}

@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/black-hole-bh3-numerical-validation-protocol-LEASE-RELEASE-excl-56d71fb027c7876c",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/black-hole-bh3-numerical-validation-protocol-LEASE-RELEASE-excl-56d71fb027c7876c.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "black-hole-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T13:58:49Z", "seq": 2, "predecessor": "sf:program/event/black-hole-bh3-numerical-validation-protocol-LEASE-ACQUIRE-excl-b4af27c37d2cb32f", "payload": {"target": "sf:program/work/black-hole-bh3-numerical-validation-protocol", "agent": "black-hole-1", "lease_type": "exclusive", "action": "RELEASE", "acquired": "2026-07-21T13:58:49Z", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/black-hole-bh3-numerical-validation-protocol"}]
+}
