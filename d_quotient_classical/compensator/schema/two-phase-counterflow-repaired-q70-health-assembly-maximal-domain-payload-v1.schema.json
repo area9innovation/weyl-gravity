@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/two-phase-counterflow-repaired-q70-health-assembly-maximal-domain-payload-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "dependency_tags", "imports",
+    "oracle_fields_consumed", "certified_block_ledger",
+    "cross_isotype_partition", "certified_domain_summary",
+    "remaining_carrier", "symmetry_and_charge_ledger", "branch_verdicts",
+    "terminal_verdict", "claim_boundary", "content_sha256"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-repaired-q70-health-assembly-maximal-domain-payload-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_PAYLOAD_V1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "imports": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repaired_parent", "repaired_payload", "generic_health", "generic_payload", "low_j_health", "low_j_payload"],
+      "properties": {
+        "repaired_parent": {"$ref": "#/$defs/import"},
+        "repaired_payload": {"$ref": "#/$defs/import"},
+        "generic_health": {"$ref": "#/$defs/import"},
+        "generic_payload": {"$ref": "#/$defs/import"},
+        "low_j_health": {"$ref": "#/$defs/import"},
+        "low_j_payload": {"$ref": "#/$defs/import"}
+      }
+    },
+    "oracle_fields_consumed": {"const": []},
+    "certified_block_ledger": {
+      "type": "array",
+      "prefixItems": [
+        {"$ref": "#/$defs/block"},
+        {"$ref": "#/$defs/block"},
+        {"$ref": "#/$defs/block"}
+      ],
+      "items": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "cross_isotype_partition": {"$ref": "#/$defs/partition"},
+    "certified_domain_summary": {"$ref": "#/$defs/domain_summary"},
+    "remaining_carrier": {"$ref": "#/$defs/remaining"},
+    "symmetry_and_charge_ledger": {"type": "object"},
+    "branch_verdicts": {"$ref": "#/$defs/branch_verdicts"},
+    "terminal_verdict": {"$ref": "#/$defs/terminal"},
+    "claim_boundary": {"$ref": "#/$defs/claim_boundary"},
+    "content_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "result_id", "oracle_fields_consumed"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "result_id": {"type": "string", "minLength": 1},
+        "oracle_fields_consumed": {"const": []}
+      }
+    },
+    "block": {
+      "type": "object",
+      "required": [
+        "j", "two_j", "source_role", "m_values", "k_values", "all_m", "all_k",
+        "q70_dimension_per_fixed_m", "q70_total_dimension",
+        "retained_dimension_per_fixed_m", "retained_total_dimension",
+        "physical_dimension_per_fixed_m", "physical_total_dimension",
+        "zero_frequency_cohomology_dimensions", "pairing_radical_dimension",
+        "unstable_factors", "instability_class", "energy_inertias",
+        "unrestricted_status", "fixed_Q_rel_status"
+      ],
+      "properties": {
+        "j": {"enum": ["0", "1/2", "1"]},
+        "two_j": {"type": "integer", "minimum": 0, "maximum": 2},
+        "source_role": {"enum": ["low_j_health", "generic_health"]},
+        "m_values": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "k_values": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "all_m": {"const": true},
+        "all_k": {"const": true},
+        "q70_dimension_per_fixed_m": {"type": "integer", "minimum": 70},
+        "q70_total_dimension": {"type": "integer", "minimum": 70},
+        "retained_dimension_per_fixed_m": {"type": "integer", "minimum": 26},
+        "retained_total_dimension": {"type": "integer", "minimum": 26},
+        "physical_dimension_per_fixed_m": {"type": "integer", "minimum": 7},
+        "physical_total_dimension": {"type": "integer", "minimum": 7},
+        "zero_frequency_cohomology_dimensions": {
+          "type": "array", "items": {"type": "integer", "minimum": 0}, "minItems": 4, "maxItems": 4
+        },
+        "pairing_radical_dimension": {"const": 0},
+        "unstable_factors": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1},
+        "instability_class": {"type": "string", "minLength": 1},
+        "energy_inertias": {
+          "type": "array", "minItems": 1,
+          "items": {"type": "array", "items": {"type": "integer", "minimum": 0}, "minItems": 3, "maxItems": 3}
+        },
+        "unrestricted_status": {"type": "string", "pattern": "^OBSTRUCTED_"},
+        "fixed_Q_rel_status": {"type": "string", "pattern": "^OBSTRUCTED_"},
+        "physical_factor_count": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "partition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label_space", "certified_two_j", "certified_j", "remaining_predicate", "disjoint", "union_is_all_declared_isotypes", "proof", "stabilizer_exceptional_two_j", "first_nonstabilizer_counterexample_two_j"],
+      "properties": {
+        "label_space": {"const": "two_j in Z_{>=0}"},
+        "certified_two_j": {"const": [0, 1, 2]},
+        "certified_j": {"const": ["0", "1/2", "1"]},
+        "remaining_predicate": {"const": "two_j >= 3 (equivalently j >= 3/2)"},
+        "disjoint": {"const": true},
+        "union_is_all_declared_isotypes": {"const": true},
+        "proof": {"type": "string", "minLength": 20},
+        "stabilizer_exceptional_two_j": {"const": [0, 2]},
+        "first_nonstabilizer_counterexample_two_j": {"const": 1}
+      }
+    },
+    "domain_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["domain_kind", "q70_total_dimension_all_m_k", "retained_total_dimension_all_m_k", "physical_total_dimension_all_m_k", "all_70_rows_present_in_each_block", "all_m_and_k_present_in_each_block", "all_certified_characteristic_pairings_nondegenerate", "every_certified_isotype_has_a_physical_instability"],
+      "properties": {
+        "domain_kind": {"const": "MAXIMAL_UNION_OF_IMPORTED_CERTIFIED_PHYSICAL_HEALTH_BLOCKS"},
+        "q70_total_dimension_all_m_k": {"const": 980},
+        "retained_total_dimension_all_m_k": {"const": 364},
+        "physical_total_dimension_all_m_k": {"const": 98},
+        "all_70_rows_present_in_each_block": {"const": true},
+        "all_m_and_k_present_in_each_block": {"const": true},
+        "all_certified_characteristic_pairings_nondegenerate": {"const": true},
+        "every_certified_isotype_has_a_physical_instability": {"const": true}
+      }
+    },
+    "remaining": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["two_j_domain", "j_domain", "m_domain", "k_domain", "q70_rows_per_Peter_Weyl_coefficient", "q70_dimension_per_fixed_m_formula", "q70_total_dimension_per_isotype_formula", "retained_dimension_per_fixed_m_formula", "physical_quotient_status", "characteristic_spectrum_status", "pairing_inertia_status", "causal_parent_status", "why_remaining"],
+      "properties": {
+        "two_j_domain": {"const": "all integers two_j >= 3"},
+        "j_domain": {"const": "all half-integers j >= 3/2"},
+        "m_domain": {"const": "all m=-j,...,+j"},
+        "k_domain": {"const": "all k=-j,...,+j"},
+        "q70_rows_per_Peter_Weyl_coefficient": {"const": 70},
+        "q70_dimension_per_fixed_m_formula": {"const": "70*(two_j+1)"},
+        "q70_total_dimension_per_isotype_formula": {"const": "70*(two_j+1)^2"},
+        "retained_dimension_per_fixed_m_formula": {"const": "26*(two_j+1)"},
+        "physical_quotient_status": {"const": "NO_CERTIFIED_MAP"},
+        "characteristic_spectrum_status": {"const": "NO_CERTIFIED_MAP"},
+        "pairing_inertia_status": {"const": "NO_CERTIFIED_MAP"},
+        "causal_parent_status": {"const": "CERTIFIED_IMPORTED"},
+        "why_remaining": {"type": "string", "minLength": 20}
+      }
+    },
+    "branch_verdicts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unrestricted", "fixed_Q_rel", "complete_all_isotype_mode_census"],
+      "properties": {
+        "unrestricted": {"type": "object"},
+        "fixed_Q_rel": {"type": "object"},
+        "complete_all_isotype_mode_census": {"const": "OPEN_ON_J_GE_3_OVER_2"}
+      }
+    },
+    "terminal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_state", "health_obstruction_complete", "all_isotype_spectral_census_complete", "maximal_certified_domain", "remaining_carrier"],
+      "properties": {
+        "result_state": {"const": "OBSTRUCTED_LINEAR_PHYSICAL_HEALTH_WITH_TYPED_HIGHER_J_CENSUS_SHORTFALL"},
+        "health_obstruction_complete": {"const": true},
+        "all_isotype_spectral_census_complete": {"const": false},
+        "maximal_certified_domain": {"type": "string", "minLength": 1},
+        "remaining_carrier": {"type": "string", "minLength": 1}
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["establishes", "does_not_establish"],
+      "properties": {
+        "establishes": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 4},
+        "does_not_establish": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 4}
+      }
+    }
+  }
+}

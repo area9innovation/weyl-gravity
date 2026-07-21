@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_V1_TIER_RECEIPT",
+  "claim_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_V1",
+  "date": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "artifacts": [
+    {"path": "d_quotient_classical/compensator/two_phase_counterflow_repaired_q70_health_assembly.py", "sha256": "b2b7f301f9b794f525dd76b3532a8c53500c64c0cc89008accef7a79978280dd"},
+    {"path": "d_quotient_classical/compensator/verify_two_phase_counterflow_repaired_q70_health_assembly.py", "sha256": "e3638ab6591bdaa5bc819273d8924ce8b42180c5d496cd02e3e8456f4170bf21"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_repaired_q70_health_assembly.py", "sha256": "18765c5639e25ea21eb34b4cf1f0af283890b2fcd0efbadea652b42a1f5be077"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-repaired-q70-health-assembly-maximal-domain-v1.schema.json", "sha256": "7997f562eae5ee04dd7e8148b4329f2b7658f386f22d6961ca63ccca0613e9e6"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-repaired-q70-health-assembly-maximal-domain-payload-v1.schema.json", "sha256": "d236583b354607f8eeca88e9cabad7756b4f44ea568ebfa2c4e7a7ee7525fefc"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_V1.json", "sha256": "cc3bb0ff507cfdd0721b5f2c203c8836e2e1860d8b4ba8dc3e4f12a257904b77"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_PAYLOAD_V1.json", "sha256": "a350c0c7e5f00bf2606d4327a4c44c7908124c002f22f47add74145c6bdc4a4b"},
+    {"path": "d_quotient_classical/atlas/generate_two_phase_counterflow_repaired_q70_health_assembly_atlas_fragment.py", "sha256": "27c5c4260d818c6cee375d30ba000892177d198bca7522f404de7139fa9f85d0"},
+    {"path": "residual_atlas/two-phase-counterflow-repaired-q70-health-assembly-maximal-domain-fragment-v1.json", "sha256": "c73ac730e025307807a8c82011534efd119291e7faabb581d5c6288b4587005b"},
+    {"path": "d_quotient_classical/compensator/reports/two-phase-counterflow-repaired-q70-health-assembly-maximal-domain-v1.md", "sha256": "65d52f59328e1111128c23b4c56433b3a11b0fda5a0c77bd1e8fb5b9eedcbf1f"},
+    {"path": "notes/d-quotient-classical-team-brief.md", "sha256": "3ccbe9c820a2437a127705490d02934a13f1c2d817cd2e3e5b44165b1ba99516"},
+    {"path": "paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex", "sha256": "a5d4f1e85db9db21592914c2f9cd4a61f2f817bbcc0fa7420c45ac517658f2e9"}
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m py_compile on producer, independent verifier, atlas generator and scoped test; python3 -m json.tool on generated JSON and receipt; explicit-path git diff --check", "elapsed_seconds": 0.15, "status": "PASS"}
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 d_quotient_classical/compensator/two_phase_counterflow_repaired_q70_health_assembly.py --check", "elapsed_seconds": 0.12, "peak_rss_kb": 25988, "status": "PASS", "method": "hash-pinned deterministic assembly of the three certified isotypes and typed remaining carrier"},
+      {"command": "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_repaired_q70_health_assembly.py", "elapsed_seconds": 0.12, "peak_rss_kb": 25432, "status": "PASS", "independent_rail": "producer-free import replay, block-ledger reconstruction, exact dimension sums, infinite isotype partition proof, fixed/unrestricted branch checks and content hashes"},
+      {"command": "python3 -m pytest -q d_quotient_classical/compensator/tests/test_two_phase_counterflow_repaired_q70_health_assembly.py", "elapsed_seconds": 0.88, "peak_rss_kb": 41324, "status": "PASS", "tests": 7},
+      {"command": "atlas generator --check and residual_atlas/validate_fragment.py", "elapsed_seconds": 0.13, "peak_rss_kb": 24236, "status": "PASS"},
+      {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true on result and payload", "elapsed_seconds": 3.21, "peak_rss_kb": 202344, "status": "PASS"},
+      {"command": "pdflatex -interaction=nonstopmode -halt-on-error, three passes, paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex", "elapsed_seconds": 1.01, "peak_rss_kb": 50212, "status": "PASS", "notes": "output written under /tmp; no generated paper artifact entered the worktree"}
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {"command": "six repaired-parent/generic/low-j certificate and payload imports content-hashed and semantic preconditions checked by both rails", "status": "PASS"},
+      {"command": "bash ci/science-forge-shadow.sh", "elapsed_seconds": 3.87, "peak_rss_kb": 241992, "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS", "findings": "bridge certificate drift; corpus 1376 versus baseline 976; unpinned dirty Forge development binary; diagnostics /tmp/sf-shadow.rmqnb4"}
+    ]
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "criterion": "No freeze, release, shared core-algebra mutation or promotion beyond the scoped initial CLASSIFIED result. The work item explicitly requests assembly of immutable ledgers; producer, method-distinct verifier, affected imports, atlas and paper consumer cover that claim."
+  },
+  "claim_boundary": "The imported repaired-q70 ledgers certify all m,k and all 70 rows for j=0,1/2,1. Each physical quotient contains a nonradical exponential or Hamiltonian-Hopf direction, so linear physical health is obstructed on unrestricted and fixed-Q_rel branches. The remaining j>=3/2 carrier has an imported causal parent but NO_CERTIFIED_MAP for its physical quotient, spectrum and pairing inertia. This is not a nonlinear, observer, Hadamard, anomaly, QME, particle, positivity, unitarity or all-isotype spectral theorem.",
+  "higher_tiers_not_run": ["Tier 3 full repository suite; criterion recorded above"]
+}

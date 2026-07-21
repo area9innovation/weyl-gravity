@@ -1,0 +1,147 @@
+{
+  "branch_verdicts": {
+    "complete_all_isotype_mode_census": "OPEN_ON_J_GE_3_OVER_2",
+    "fixed_Q_rel": {
+      "global_relative_clock": "removed by the derived level-set and R_rel quotient",
+      "linear_physical_health": "OBSTRUCTED",
+      "witnesses": [
+        "all three certified nonzero-frequency instability sectors survive"
+      ]
+    },
+    "unrestricted": {
+      "global_relative_clock": "two-dimensional charged Darboux carrier with a size-two zero Jordan chain",
+      "linear_physical_health": "OBSTRUCTED",
+      "witnesses": [
+        "j=0 real exponential",
+        "j=1/2 Hamiltonian-Hopf",
+        "j=1 complex-frequency"
+      ]
+    }
+  },
+  "certified_domain_summary": {
+    "all_70_rows_present_in_each_block": true,
+    "all_certified_characteristic_pairings_nondegenerate": true,
+    "all_m_and_k_present_in_each_block": true,
+    "domain_kind": "MAXIMAL_UNION_OF_IMPORTED_CERTIFIED_PHYSICAL_HEALTH_BLOCKS",
+    "every_certified_isotype_has_a_physical_instability": true,
+    "physical_total_dimension_all_m_k": 98,
+    "q70_total_dimension_all_m_k": 980,
+    "retained_total_dimension_all_m_k": 364
+  },
+  "claim_boundary": {
+    "does_not_establish": [
+      "a physical quotient, spectrum, pairing inertia or health classification for j>=3/2",
+      "nonlinear instability or finite-time blow-up",
+      "observer, Hadamard, anomaly, QME, particle, positivity or unitarity claims",
+      "an R_rel or K action matrix on the j=0 and j=1 nonzero-frequency quotient bases"
+    ],
+    "establishes": [
+      "the exact union and disjoint remaining carrier of the imported repaired-q70 health ledgers",
+      "complete all-m/all-k q70, retained and physical dimensions for j=0,1/2,1",
+      "linear physical-health obstruction on unrestricted and fixed-Q_rel branches",
+      "separation of the charged global action-angle carrier, local spatial stabilizers and contractible diagonal-U1 sector"
+    ]
+  },
+  "content_hashes": {
+    "certified_block_ledger": "f2c777c9601ab174af6368fa24ab7d272b7231a3c7cac8c20eb66e4e99a71f64",
+    "cross_isotype_partition": "9047c5cf297f4487c3c859d1fa3c0bf09ccb609e11045cdd7d42f728a92727bf",
+    "symmetry_and_charge_ledger": "a44f9b1eddb62d703d9cfcfff63e0f8ef73363fc61b9bc3dfef827ee46a67f31"
+  },
+  "cross_isotype_partition": {
+    "certified_j": [
+      "0",
+      "1/2",
+      "1"
+    ],
+    "certified_two_j": [
+      0,
+      1,
+      2
+    ],
+    "disjoint": true,
+    "first_nonstabilizer_counterexample_two_j": 1,
+    "label_space": "two_j in Z_{>=0}",
+    "proof": "For every nonnegative integer n=two_j, exactly one of n<=2 or n>=3 holds; the certified sources cover n=0,1,2 without overlap.",
+    "remaining_predicate": "two_j >= 3 (equivalently j >= 3/2)",
+    "stabilizer_exceptional_two_j": [
+      0,
+      2
+    ],
+    "union_is_all_declared_isotypes": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "imports": {
+    "generic_health": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_V1",
+      "sha256": "d78fa16e9772924ded1b8262f33e3989a9e94acd01891257309bc07f7f7f282c"
+    },
+    "generic_payload": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_PAYLOAD_V1",
+      "sha256": "43595d6e974dd3ff852db658014fb34dcd1521f050a752e5732fb0c3b5f27797"
+    },
+    "low_j_health": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_V1",
+      "sha256": "fa0d158301a1bf2076d7d7622866f4545d6a15370ec576ddcbe120837224d364"
+    },
+    "low_j_payload": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_PAYLOAD_V1",
+      "sha256": "291071bab2494a4b4bdb21702be1bf28d672a2a6157b588003743aec5d0b5b5e"
+    },
+    "repaired_parent": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2",
+      "sha256": "3f41cb5258f0883b217c9343e037074faf841728f29e03c306f101487411d2cf"
+    },
+    "repaired_payload": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V2.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V2",
+      "sha256": "c59b1a74aced082155db3446c40aa1b14e3982e66670a3c097539b25d5d5c938"
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "payload_ref": {
+    "content_sha256": "2f02a6d284662f2538d0a93a1337b91638ba9f9035e4610d6b12c8647f537250",
+    "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_PAYLOAD_V1.json",
+    "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_PAYLOAD_V1",
+    "sha256": "a350c0c7e5f00bf2606d4327a4c44c7908124c002f22f47add74145c6bdc4a4b"
+  },
+  "remaining_carrier": {
+    "causal_parent_status": "CERTIFIED_IMPORTED",
+    "characteristic_spectrum_status": "NO_CERTIFIED_MAP",
+    "j_domain": "all half-integers j >= 3/2",
+    "k_domain": "all k=-j,...,+j",
+    "m_domain": "all m=-j,...,+j",
+    "pairing_inertia_status": "NO_CERTIFIED_MAP",
+    "physical_quotient_status": "NO_CERTIFIED_MAP",
+    "q70_dimension_per_fixed_m_formula": "70*(two_j+1)",
+    "q70_rows_per_Peter_Weyl_coefficient": 70,
+    "q70_total_dimension_per_isotype_formula": "70*(two_j+1)^2",
+    "retained_dimension_per_fixed_m_formula": "26*(two_j+1)",
+    "two_j_domain": "all integers two_j >= 3",
+    "why_remaining": "the generic prerequisite stopped after the first explicit nonstabilizer counterexample and expressly did not establish every higher-j spectrum"
+  },
+  "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_V1",
+  "result_state": "OBSTRUCTED_LINEAR_PHYSICAL_HEALTH_WITH_TYPED_HIGHER_J_CENSUS_SHORTFALL",
+  "schema": "pure-weyl-two-phase-counterflow-repaired-q70-health-assembly-maximal-domain-v1",
+  "terminal_verdict": {
+    "all_isotype_spectral_census_complete": false,
+    "health_obstruction_complete": true,
+    "maximal_certified_domain": "j=0,1/2,1 with every m,k and all q70 rows",
+    "remaining_carrier": "j>=3/2 physical quotient and spectrum",
+    "result_state": "OBSTRUCTED_LINEAR_PHYSICAL_HEALTH_WITH_TYPED_HIGHER_J_CENSUS_SHORTFALL"
+  }
+}

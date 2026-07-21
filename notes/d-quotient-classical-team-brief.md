@@ -3647,3 +3647,46 @@ action-angle pair but leaves the nonzero-frequency instabilities unchanged.
 This closes the low-\(j\) gate and activates the repaired-q70 health assembly;
 nonlinear, observer, Hadamard, anomaly, QME, particle, positivity and
 unitarity conclusions remain open or unmapped.
+
+### Repaired-q70 health assembly: maximal certified domain (2026-07-21)
+
+`TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_V1`
+imports the V2 parent, first generic block and low-\(j\) census by exact
+content hash.  Their maximal certified union is
+
+\[
+  j\in\{0,\tfrac12,1\},
+\]
+
+with every \(m,k\) and all 70 rows retained in each isotype.  Across the full
+degeneracy orbits this is 980 q70 coordinates, 364 coordinates after the
+26-row contraction, and 98 nonzero-frequency physical quotient coordinates.
+The three blocks have dimensions \(7(2j+1)\) per fixed \(m\), zero pairing
+radical on every displayed characteristic sector, and respectively contain
+a real exponential direction, a Hamiltonian--Hopf quartet, and two
+complex-frequency sectors.
+
+The unrestricted and fixed-\(Q_{\rm rel}\) theories are therefore both
+linearly physically unhealthy on the selected Berger background.  Fixing
+the charge removes the separate two-dimensional global action--angle pair,
+but it removes none of the certified nonzero-frequency witnesses.  The
+assembly keeps the charged global \(R_{\rm rel}\) orbit, the four spatial
+Killing stabilizers, and the zero-charge contractible diagonal-\(U(1)\)
+sector distinct.  It also refuses to infer separate \(R_{\rm rel}\) or \(K\)
+action matrices on the \(j=0,1\) nonzero-frequency quotient bases, because
+the prerequisites export fixed-charge survival rather than those matrices.
+
+The remaining carrier is exactly
+
+\[
+  2j\ge3\qquad(j\ge\tfrac32),
+\]
+
+with all \(m,k\), 70 rows per Peter--Weyl coefficient and dimension
+\(70(2j+1)^2\) per isotype before contraction.  Its causal parent is
+certified, but its physical quotient, characteristic spectrum and pairing
+inertia are `NO_CERTIFIED_MAP`: the generic prerequisite deliberately
+stopped at the first counterexample.  Thus the health obstruction is
+complete while the all-isotype mode census is not.  No higher-\(j\)
+extrapolation, nonlinear blow-up, observer, Hadamard, anomaly, QME, particle,
+positivity or unitarity claim is made.
