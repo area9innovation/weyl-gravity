@@ -1,0 +1,35 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:forge-request/science-forge-coordinator-safe-lifecycle-transition",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "science-forge-coordinator-safe-lifecycle-transition",
+  "source": {
+    "path": "planning/forge-requests/science-forge-coordinator-safe-lifecycle-transition.json",
+    "span": null
+  },
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Provide one CAS-safe append-only coordinator command for invalidating, parking, retiring or reactivating a work item without impersonating a resident agent or hand-authoring event JSON.",
+    "stop_condition": "Add a documented operation such as `s-f work transition --item I --to BLOCKED|RETIRED|READY --by coordinator --reason R --typed K --now T` (spelling optional). It must capture and compare the authoritative item event head, dependency fold and current lease before writing; author a coordinator-attributed transition with the exact predecessor and typed reason; refuse stale-head, illegal-state, missing-reason and ambiguous-history attempts; and be byte-idempotent for an identical already-landed transition. For a READY or PROPOSED item with no live lease it must transition directly without acquiring or impersonating a worker lease. For an ACTIVE item with a live lease it must either atomically compose with the accepted coordinator revoke/reassign protocol or refuse with the exact required command; it must never leave a BLOCKED/RETIRED item with an unexplained live lease. READY reactivation must require a typed dependency-satisfied or coordinator-review reason and must not erase the prior obstruction. Add deterministic fixtures for a READY item invalidated by a newly landed theorem, an ACTIVE item with a lease, a concurrent resident pull, an already terminal item, stale predecessor/CAS retry and exact event replay. Use the same fold and lock as work pull/assign/report/close rather than a second transition engine.",
+    "current_gate": "coordinator-safe theorem-driven queue repair without worker impersonation",
+    "forbid": "no hand-edited mutable state; no rewriting prior events; no coordinator event authored as the resident; no implicit READY on lease release; no silent lease revocation; no transition inferred from prose; no global repository lock; no weakening of one-exclusive-lease or report-containment rules",
+    "depends_on": [
+      "sf:forge-request/bug-science-forge-pull-transition-cas-race",
+      "sf:forge-request/science-forge-coordinator-lease-revoke-reassign"
+    ],
+    "allowed_paths": [
+      "forge/tools/science-forge/",
+      "forge/tools/science-forge-cli/",
+      "forge/tools/science-forge/fixtures/",
+      "forge/tools/science-forge/GUIDE.md"
+    ],
+    "resource_hint": "COORDINATOR PAPER CUT. Reuse the existing transition fold, CAS guard and lease-revoke design; this is a safe CLI surface, not a new lifecycle model.",
+    "notes": [
+      "Live reproduction 2026-07-21: TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_V1 invalidated the READY quantum-two-phase-counterflow-anomaly-hadamard-preflight. `s-f work block --agent forge-coordinator` refused because the coordinator held no lease. Acquiring the item merely to block it would fabricate scientific ownership, so the coordinator had to append the correctly attributed BLOCKED event by hand."
+    ],
+    "stream": "forge-requests"
+  },
+  "edges": []
+}
