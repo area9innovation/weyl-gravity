@@ -983,6 +983,45 @@ The closed unary Green assignment does not replace the invariant interaction
 gate.  The handback and later physical activation gates are in
 [`universe-building-roadmap.md`](universe-building-roadmap.md).
 
+### Science Forge correction: second-jet invalidation of the ell3 witness
+
+`BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1` supersedes
+the N-G4 order-two interpretation above.  It preserves the exhaustive exact
+statement that the normalized 22-row functional annihilates all 5,984
+zero-page labels and all 14,998 first-jet labels on each axis.  It withdraws
+the inference that no second- or higher-jet profile can enter the first PBW
+page.
+
+The derivative-aware cyclic cotangent convention is not strict for the
+pre-reduction input-order filtration: formal adjoints followed by Berger PBW
+reduction have lower-order commutator tails.  The admissible column
+
+```text
+F2 output 4; (field 27, PBW word (1,1)); (field 28, empty word)
+```
+
+has five cyclic cotangent components and 252 native page-one terms.  Its
+exact pairing with the old functional is `755/9`.  Thus the functional is not
+in the cokernel dual of the complete declared order-two cyclic complex, and
+the former `ORDER_TWO_FILTERED_REMOVAL_OBSTRUCTED` flag is false.
+
+This is a witness disposition, not a trivialization theorem.  The certified
+physical Euler primitive does not automatically lift: the direct composite
+with the three known ghost shears leaves 1,380 exact full-BV page-zero
+residual coefficients.  The complete bounded cyclic class is therefore
+`OPEN`, pending either a coupled zero/first/second-jet full-BV primitive or a
+replacement full-cokernel witness.  The atlas row
+`nonlinear.berger.retained_mixed_ell3.filtered_cyclic_obstruction` is reopened
+accordingly.  No branch repair has landed that crosswalks this PBW column, so
+branch labels remain `NO_CERTIFIED_MAP`.
+
+Operationally, replace items 2 and 6 above by the following fail-closed rule:
+do not cite the 22-row functional as an order-two obstruction, do not promote
+the counterexample to complete removability, and do not open `q4`.  The next
+valid computation is the simultaneous bounded cyclic coboundary/cokernel
+problem through input order two, preferably on a proof-producing sparse exact
+linear-algebra rail.
+
 Escalate immediately if the cubic defect is nontrivial, if cyclicity fails, or
 if a negative physical channel survives transfer.  A no-go certificate is a
 successful result.

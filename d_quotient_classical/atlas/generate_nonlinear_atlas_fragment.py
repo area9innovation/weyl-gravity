@@ -20,6 +20,7 @@ STATUSES = ["CERTIFIED", "OBSTRUCTED", "OPEN", "NOT_APPLICABLE", "NO_CERTIFIED_M
 AXES = ["causal", "symplectic", "nonlinear", "observational", "quantum"]
 CERTS = {
     "mixed_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1.json",
+    "mixed_witness_disposition": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1.json",
     "cyclic_branch_extension": ROOT / "d_quotient_classical/certificates/BERGER_FILTERED_CYCLIC_BRANCH_EXTENSION_OBSTRUCTION_V1.json",
     "dictionary": ROOT / "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
     "cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
@@ -193,9 +194,9 @@ def bridge2_entry(importer: dict[str, Any], fallback_scope: dict[str, Any]) -> d
                 dispersion=("NO_CERTIFIED_MAP", "Branch-labelled Berger dispersion requires bridge 1."),
                 pairing=("NO_CERTIFIED_MAP", "Branch pairing transport is an acceptance condition of bridge 1."),
                 taub=("NO_CERTIFIED_MAP", "The landed D^2E-q2 dictionary cannot be evaluated branchwise before bridge 1."),
-                resonance=("NO_CERTIFIED_MAP", "The filtered-cyclic ell3 obstruction is certified only on the unsplit retained carrier."),
+                resonance=("NO_CERTIFIED_MAP", "The bounded cyclic ell3 class is open on the unsplit retained carrier and has no branch projection."),
             ),
-            "evidence": _evidence("branch_importer", "mixed_obstruction", "dictionary"),
+            "evidence": _evidence("branch_importer", "mixed_obstruction", "mixed_witness_disposition", "dictionary"),
             "claim_boundary": "Bridge 2 is INPUT_BLOCKED. It activates only after an admissible same-background mixed-bundle, noncontractible-cofiber, or explicitly REDUCED-MODE branch map passes the importer. The importer requires the complete atlas mode scope and typed, schema-validated, content-addressed crosswalk, chain, inclusion/projection/cofiber, pairing, gauge/nondynamical, K_Berger-equivariance, cohomology and independent-verifier evidence. The compact-product mode-pair row is not a Berger crosswalk. Projected cohomology, cyclic deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP, and q4 is not authorized.",
         }
 
@@ -228,9 +229,9 @@ def bridge2_entry(importer: dict[str, Any], fallback_scope: dict[str, Any]) -> d
             dispersion=("OPEN", "The certified branch carrier is available, but branchwise nonlinear harmonic selection has not been computed."),
             pairing=("CERTIFIED", "Pairing transport and the induced cohomology map passed the Bridge-1 importer."),
             taub=("OPEN", "Apply the landed D^2E-q2 dictionary on the imported carrier to decide adjoint-cokernel reach."),
-            resonance=("OPEN", "The unsplit filtered-cyclic ell3 obstruction is preserved; its projected cohomology/deformation disposition remains open."),
+            resonance=("OPEN", "The old 22-row witness is invalid on admissible second-jet columns; both the unsplit and projected complete cyclic classes remain open."),
         ),
-        "evidence": _evidence("branch_importer", "mixed_obstruction", "dictionary"),
+        "evidence": _evidence("branch_importer", "mixed_obstruction", "mixed_witness_disposition", "dictionary"),
         "claim_boundary": "Bridge 1 has activated Bridge 2 on the explicitly imported same-background carrier. This certifies carrier, chain/cohomology and pairing readiness only. The projected ell2/ell3 operation, cohomology survival, cyclic deformation class and admissible-removal verdict remain OPEN; q4 is not authorized.",
     }
 
@@ -431,13 +432,13 @@ def entries() -> list[dict[str, Any]]:
                 taub=("NOT_APPLICABLE", "beta_1 is an arity-one extension class, not a quadratic Taub moment map."),
                 resonance=("OBSTRUCTED", "The normalized first-page cokernel witness evaluates on the physical columns as (1,0)."),
             ),
-            "evidence": _evidence("cyclic_branch_extension", "mixed_obstruction"),
-            "claim_boundary": "The associated-principal Einstein/additional-Weyl sequence is exact, but its certified physical anchor does not lift to an admissible filtered cyclic branch split: beta_1 is nonzero. One noncontractible field direction and its cyclic dual are minimally page-sufficient at the standard fibre; global K_Berger-equivariant closure and later filtered pages remain open. The independent retained ell3 obstruction stays on the unsplit carrier, and branch labels, mode-pair sources, causal realization, observables and quantum states remain NO_CERTIFIED_MAP.",
+            "evidence": _evidence("cyclic_branch_extension", "mixed_obstruction", "mixed_witness_disposition"),
+            "claim_boundary": "The associated-principal Einstein/additional-Weyl sequence is exact, but its certified physical anchor does not lift to an admissible filtered cyclic branch split: beta_1 is nonzero. One noncontractible field direction and its cyclic dual are minimally page-sufficient at the standard fibre; global K_Berger-equivariant closure and later filtered pages remain open. The separate retained ell3 22-row witness has been invalidated by an admissible second-jet cyclic column, so its complete bounded class is OPEN. Branch labels, mode-pair sources, causal realization, observables and quantum states remain NO_CERTIFIED_MAP.",
         },
         {
             "id": "nonlinear.berger.retained_mixed_ell3.filtered_cyclic_obstruction",
             "scope": obstruction_scope,
-            "descriptions": {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OBSTRUCTED", "observational": "NO_CERTIFIED_MAP", "quantum": "OPEN"},
+            "descriptions": {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "OPEN"},
             "mode_data": _mode_data(
                 _second(
                     ("NO_CERTIFIED_MAP", "The local PBW ell3 carrier has no bounded harmonic crosswalk."),
@@ -447,10 +448,10 @@ def entries() -> list[dict[str, Any]]:
                 dispersion=("NOT_APPLICABLE", "A quartic retained deformation representative has no one-particle dispersion relation."),
                 pairing=("OPEN", "Cyclicity is certified, but no branch-resolved Lee-Wald norm is assigned."),
                 taub=("NOT_APPLICABLE", "This ell3 deformation obstruction is not the quadratic q2 tangent-cone obstruction."),
-                resonance=("OBSTRUCTED", "The first associated-graded cyclic redefinition equation has a normalized exact dual obstruction."),
+                resonance=("OPEN", "An admissible second-jet cyclic cotangent column pairs as 755/9 with the former normalized dual witness; no replacement full cokernel or complete primitive is certified."),
             ),
-            "evidence": _evidence("mixed_obstruction", "dictionary"),
-            "claim_boundary": "The mixed ell3 representative is unremovable only within the declared nonnegative filtered derivative-aware cyclic F2/F3 class. Its branch, cohomology, particle, causal and quantum images remain open or lack a certified map.",
+            "evidence": _evidence("mixed_obstruction", "mixed_witness_disposition", "dictionary"),
+            "claim_boundary": "The former 22-row functional remains an exact obstruction only on the exhaustively checked zero/first-jet subcomplex. Its order-two promotion is withdrawn because an admissible five-component second-jet cyclic cotangent column has exact native page-one pairing 755/9. The complete bounded cyclic class is OPEN: neither a replacement full cokernel witness nor a complete trivializing cochain is certified. Branch, cohomology, particle, causal and quantum images remain open or lack a certified map.",
         },
         {
             "id": "nonlinear.berger.crosswalk.retained36_to_residual_branches",
@@ -467,7 +468,7 @@ def entries() -> list[dict[str, Any]]:
                 taub=("NO_CERTIFIED_MAP", "No branch-resolved quadratic-source/cokernel table."),
                 resonance=("OBSTRUCTED", "The requested support-local same-bundle rank-36 branch projector is obstructed."),
             ),
-            "evidence": _evidence("branch_projector", "cyclic_branch_extension", "mixed_obstruction"),
+            "evidence": _evidence("branch_projector", "cyclic_branch_extension", "mixed_obstruction", "mixed_witness_disposition"),
             "claim_boundary": "Do not identify retained rows with Einstein-like, extra-Weyl, topological or Maxwell residual modes. The nonzero beta_1 class now rules out the certified physical anchor on both the retained 36-row carrier and its contractible rank-46 STF2 graph prolongation. A noncontractible or mixed-bundle enlargement must cover the obstruction image; an explicitly REDUCED-MODE nonlocal split remains a different theorem.",
         },
         {
@@ -683,7 +684,7 @@ def entries() -> list[dict[str, Any]]:
                     else "Delta2, the arity-three morphism defect and their cohomology images have not been computed.",
                 ),
             ),
-            "evidence": _evidence("relative_linfinity_preflight", "einstein_product_taylor", "weyl_product_taylor", "relative_arity_two_defect", "relative_f2_taub_obstruction", "relative_charge_koszul_preflight", "covariant_chain_map", "relative_branch_dictionary", "generic_cyclic_map_inertia_obstruction", "dictionary", "mixed_obstruction"),
+            "evidence": _evidence("relative_linfinity_preflight", "einstein_product_taylor", "weyl_product_taylor", "relative_arity_two_defect", "relative_f2_taub_obstruction", "relative_charge_koszul_preflight", "covariant_chain_map", "relative_branch_dictionary", "generic_cyclic_map_inertia_obstruction", "dictionary", "mixed_obstruction", "mixed_witness_disposition"),
             "claim_boundary": (
                 "Compact-product NONCYCLIC_THREE_FORM linear Bridge 1 and both complete same-background q1/q2/q3 payloads are imported, but the frozen direct full-domain morphism is obstructed at arity two. The certified ell=2 plus cocycle has relative constant-lapse pairing -54*(1+sqrt(3))/5, while every q1_W-exact smooth periodic fixed-bundle correction pairs to zero; hence no f2 extends the frozen f1 on that carrier and arity three is not authorized. The post-obstruction REDUCED-MODE architecture is now selected: retain the unary mapping cofiber and encode the five stabilizer charges by a Koszul derived Taub-zero-locus receiver; its complete off-shell local lift remains OPEN or NO_CERTIFIED_MAP according to category. The standard-pairing cyclic route remains separately obstructed, all Berger tensors remain ineligible substitutes, and q4 is not authorized."
                 if relative_f2_obstructed
@@ -694,7 +695,7 @@ def entries() -> list[dict[str, Any]]:
                 if all_relative_inputs_imported
                 else "Compact-product NONCYCLIC_THREE_FORM linear Bridge 1 and the complete executable same-background Einstein-Maxwell q1/q2/q3 payload are imported. Bridge 2 remains INPUT_BLOCKED only on the Weyl-Maxwell payload. The standard-pairing cyclic route is obstructed; all Berger tensors remain ineligible substitutes. Delta2, the arity-three defect, cohomology survival and admissible removal remain OPEN or NO_CERTIFIED_MAP, and q4 is not authorized."
                 if linear_triangle_imported
-                else "Compact-product Bridge 2 remains INPUT_BLOCKED after certification of the natural support-local minimal q1 map: Bridge 1 must still supply the V2 noncyclic three-form EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 with finite endpoints, and complete same-background Einstein-Maxwell and Weyl-Maxwell q2/q3 payloads remain absent. A standard-pairing cyclic triangle is obstructed. Sectoral cofibers, on-shell maps, selected D^2E sources and all Berger tensors are ineligible substitutes. Cohomology survival, deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP. The Berger filtered-cyclic ell3 obstruction is preserved, and q4 is not authorized."
+                else "Compact-product Bridge 2 remains INPUT_BLOCKED after certification of the natural support-local minimal q1 map: Bridge 1 must still supply the V2 noncyclic three-form EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 with finite endpoints, and complete same-background Einstein-Maxwell and Weyl-Maxwell q2/q3 payloads remain absent. A standard-pairing cyclic triangle is obstructed. Sectoral cofibers, on-shell maps, selected D^2E sources and all Berger tensors are ineligible substitutes. Cohomology survival, deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP. The Berger bounded cyclic ell3 class is OPEN after exact second-jet invalidation of its former witness, and q4 is not authorized."
             ),
         },
         {

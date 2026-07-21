@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/berger-retained-mixed-ell3-second-jet-witness-disposition-v1.schema.json",
+  "title": "Berger retained mixed ell3 second-jet witness disposition",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "generality_level", "mode_scope", "declared_complex", "superseded_result", "exact_counterexample", "full_class_disposition", "branch_repair_disposition", "claim_flags", "source_manifest", "sha256_manifest", "verification_commands", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-retained-mixed-ell3-second-jet-witness-disposition-v1"},
+    "result_id": {"const": "BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1"},
+    "result_state": {"const": "ORDER_TWO_OBSTRUCTION_WITHDRAWN_COMPLETE_BOUNDED_CYCLIC_CLASS_OPEN"},
+    "lifecycle_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "generality_level": {"const": "G0"},
+    "mode_scope": {"$ref": "#/$defs/stringObject"},
+    "declared_complex": {"$ref": "#/$defs/stringObject"},
+    "superseded_result": {
+      "type": "object",
+      "required": ["result_id", "path", "sha256", "retained_subclaim", "withdrawn_claim", "reason"],
+      "properties": {
+        "result_id": {"const": "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1"},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "retained_subclaim": {"type": "string", "minLength": 1},
+        "withdrawn_claim": {"type": "string", "minLength": 1},
+        "reason": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "exact_counterexample": {
+      "type": "object",
+      "required": ["kind", "base_output", "base_atoms", "cotangent_components", "cotangent_component_count", "native_page_one_term_count", "old_witness_pairing", "normalized_witness_cancellation_coefficient", "control_mutation"],
+      "properties": {
+        "kind": {"const": "F2"},
+        "base_output": {"const": 4},
+        "base_atoms": {"type": "array", "minItems": 2, "maxItems": 2},
+        "cotangent_components": {"type": "array", "minItems": 5, "maxItems": 5},
+        "cotangent_component_count": {"const": 5},
+        "native_page_one_term_count": {"const": 252},
+        "old_witness_pairing": {"const": "755/9"},
+        "normalized_witness_cancellation_coefficient": {"const": "-9/755"},
+        "control_mutation": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "full_class_disposition": {"$ref": "#/$defs/stringObject"},
+    "branch_repair_disposition": {
+      "type": "object",
+      "required": ["status", "reason"],
+      "properties": {"status": {"const": "NO_CERTIFIED_MAP"}, "reason": {"type": "string", "minLength": 1}},
+      "additionalProperties": false
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["SECOND_JET_COLUMN_ADMISSIBLE", "OLD_WITNESS_ANNIHILATES_COMPLETE_ORDER_TWO_COMPLEX", "ORDER_TWO_FILTERED_REMOVAL_OBSTRUCTED", "COMPLETE_ORDER_TWO_TRIVIALIZATION_EXISTS", "COMPLETE_ORDER_TWO_CLASS_NONZERO", "BRANCH_PROJECTION_DECIDED", "RESIDUAL_COHOMOLOGY_OPERATION_NONZERO", "QUANTUM_CLAIM"],
+      "properties": {
+        "SECOND_JET_COLUMN_ADMISSIBLE": {"const": true},
+        "OLD_WITNESS_ANNIHILATES_COMPLETE_ORDER_TWO_COMPLEX": {"const": false},
+        "ORDER_TWO_FILTERED_REMOVAL_OBSTRUCTED": {"const": false},
+        "COMPLETE_ORDER_TWO_TRIVIALIZATION_EXISTS": {"const": false},
+        "COMPLETE_ORDER_TWO_CLASS_NONZERO": {"const": false},
+        "BRANCH_PROJECTION_DECIDED": {"const": false},
+        "RESIDUAL_COHOMOLOGY_OPERATION_NONZERO": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "source_manifest": {"type": "object", "minProperties": 5, "propertyNames": {"pattern": "^physics/symplectic-reconstruction/"}, "additionalProperties": {"$ref": "#/$defs/gitBlob"}},
+    "sha256_manifest": {"type": "object", "minProperties": 5, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}},
+    "claim_boundary": {"type": "string", "minLength": 400}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "gitBlob": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "stringObject": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "minLength": 1}}
+  }
+}

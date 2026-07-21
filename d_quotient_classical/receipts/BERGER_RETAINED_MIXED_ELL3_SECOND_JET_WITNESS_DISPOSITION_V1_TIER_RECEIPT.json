@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-21",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "status": "PASS",
+  "science_forge_item": "sf:program/work/nonlinear-cyclic-deformation-class-completeness",
+  "source_manifest": {
+    "physics/symplectic-reconstruction/d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_bounded_cyclic_scan.py": "d06a82dcfc73ca72022b5ed94a5443d0835948c5",
+    "physics/symplectic-reconstruction/d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_second_jet_witness_disposition.py": "09b02c5c85387d089c27d972bf6886edfd4fd218",
+    "physics/symplectic-reconstruction/d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_second_jet_witness_disposition.py": "bf4169e5460e51ac702b27b14d24ae876ff676e5",
+    "physics/symplectic-reconstruction/d_quotient_classical/backreacted_clock/tests/test_berger_retained_mixed_ell3_second_jet_witness_disposition.py": "7de4e9826105e1f820ed3697b2e9ff0eb813ae30",
+    "physics/symplectic-reconstruction/d_quotient_classical/schema/berger-retained-mixed-ell3-second-jet-witness-disposition-v1.schema.json": "cecf57ce0ef327336d760e6a0ae145ccc13d820f",
+    "physics/symplectic-reconstruction/d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1.json": "106e1d3732014a4b579b885a2605f97c272376e1",
+    "physics/symplectic-reconstruction/d_quotient_classical/reports/berger-retained-mixed-ell3-second-jet-witness-disposition-v1.md": "6ab4c340823dac1c8e5ccb01a7a8a47682c5a6fa",
+    "physics/symplectic-reconstruction/d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py": "f47db771cdc7f77b035eba09cdf5a93f10dc7933",
+    "physics/symplectic-reconstruction/d_quotient_classical/atlas/verify_nonlinear_atlas_fragment.py": "93e755a05bc7bcbb5d46c66fe11d1ae95844a880",
+    "physics/symplectic-reconstruction/d_quotient_classical/atlas/tests/test_nonlinear_atlas_fragment.py": "791f5409c7f3118119a3ca88255f60668729a6eb",
+    "physics/symplectic-reconstruction/d_quotient_classical/atlas/nonlinear-atlas-fragment.json": "000be4c15e734cf1c08bb8056da102d8042d6cb9",
+    "physics/symplectic-reconstruction/notes/d-quotient-nonlinear-team-brief.md": "3224997cdd1f75b12d12d312469625ec5c141c16"
+  },
+  "sha256_manifest": {
+    "d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_bounded_cyclic_scan.py": "0f594ec907d382fa9f236c684d5345dfe495791fc236c0549bd7bb12fd00a5b9",
+    "d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_second_jet_witness_disposition.py": "25be703e3f4e454323ad211b67e383ba251911371b6fbeefb8269f237d49cf95",
+    "d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_second_jet_witness_disposition.py": "f771ce8cebdf8b28dcfaa91f3954f0a2b841c1699ce6a3dcea406d0bf3fd97e9",
+    "d_quotient_classical/backreacted_clock/tests/test_berger_retained_mixed_ell3_second_jet_witness_disposition.py": "d65b6b6ba0a21d23060356f962a3aeeaa7a044e7261d374b6e1be43c090db91b",
+    "d_quotient_classical/schema/berger-retained-mixed-ell3-second-jet-witness-disposition-v1.schema.json": "9532ddd06ca1290e07b917a744a8058ec96dab629035d131b935423a3f7dea88",
+    "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1.json": "0abafddf65bd44a07671ac89b0133f4909df619a5f0ddc7b87a84b101fd33036",
+    "d_quotient_classical/reports/berger-retained-mixed-ell3-second-jet-witness-disposition-v1.md": "4231dde583e36a458415119f18a21e4c61eef2b41e0dc21215fd10c554f598a0",
+    "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py": "5f8b4d61727f1811eb90f7bf54915ae46c43f3d4ab0b80ae03e2b8bf9ca3ae09",
+    "d_quotient_classical/atlas/verify_nonlinear_atlas_fragment.py": "57333f45d337396736edbaa7ac119eae42b6d97b31475e3fba592822e5e3a970",
+    "d_quotient_classical/atlas/tests/test_nonlinear_atlas_fragment.py": "d7dcf28aa6f66cb30ffd712ac7b3e5211e240a3f00e63f4b300276529003a9fa",
+    "d_quotient_classical/atlas/nonlinear-atlas-fragment.json": "9a10e9a63f37d2c132fd7fcc5348fdfef46a2c791f2ad0df40df5835ab61fa9e",
+    "notes/d-quotient-nonlinear-team-brief.md": "60156a292c4b7b6239d7c52cbfa88fec8af18e94efe4bbb8fbb1b0c4a7c3d009"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "PYTHONPYCACHEPREFIX=/tmp/<fresh> python3 -m py_compile <producer, independent verifier and scoped tests>",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-retained-mixed-ell3-second-jet-witness-disposition-v1.schema.json -d d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1.json",
+        "git diff --check -- <explicit Science Forge manifest>"
+      ],
+      "result": "Changed Python parsed, the strict certificate schema passed, generated JSON parsed, and the scoped diff is checked before submission."
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "PYTHONPYCACHEPREFIX=/tmp/berger-ell3-disposition-check PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_second_jet_witness_disposition.py --check --guards",
+        "PYTHONPYCACHEPREFIX=/tmp/berger-ell3-disposition-verify PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_second_jet_witness_disposition.py",
+        "PYTHONPYCACHEPREFIX=/tmp/berger-ell3-disposition-test PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_mixed_ell3_second_jet_witness_disposition",
+        "PYTHONPYCACHEPREFIX=/tmp/nonlinear-atlas-check PYTHONPATH=. python3 d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py --check",
+        "PYTHONPYCACHEPREFIX=/tmp/nonlinear-atlas-verify PYTHONPATH=. python3 d_quotient_classical/atlas/verify_nonlinear_atlas_fragment.py",
+        "PYTHONPYCACHEPREFIX=/tmp/nonlinear-atlas-test PYTHONPATH=. python3 -m unittest d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment",
+        "PYTHONPYCACHEPREFIX=/tmp/nonlinear-cyclic-candidate-page0 PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_bounded_cyclic_scan.py --candidate-residual --max-page 0"
+      ],
+      "elapsed_seconds": {
+        "producer_and_mutation_guards": 6.10,
+        "independent_native_coderivation_replay": 7.58,
+        "four_scoped_disposition_tests": 10.98,
+        "strict_schema": 4.00,
+        "atlas_producer": 0.43,
+        "atlas_independent_verifier": 0.38,
+        "twenty_six_atlas_tests": 1.62,
+        "page_zero_full_bv_candidate_replay": 265.80
+      },
+      "result": "The independent rail reconstructed the five-component cyclic cotangent column, streamed the native page-one coderivation, reproduced 252 terms and the exact 755/9 pairing, and killed the pairing under the (0,0) control mutation. The normally completed page-zero full-BV candidate replay found 828 target, 1,452 reconstructed and 1,380 residual coefficients. Four disposition tests and twenty-six atlas tests passed."
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        "PYTHONPYCACHEPREFIX=/tmp/berger-old-obstruction-verify PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_positive_jet_full_bv_obstruction.py",
+        "PYTHONPYCACHEPREFIX=/tmp/berger-old-obstruction-test PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_mixed_ell3_positive_jet_full_bv_obstruction",
+        "PYTHONPYCACHEPREFIX=/tmp/berger-ell3-classical-status PYTHONPATH=. python3 d_quotient_classical/verify_classical_status.py"
+      ],
+      "elapsed_seconds": {
+        "historical_obstruction_verifier": 13.57,
+        "three_historical_obstruction_tests": 12.86,
+        "classical_status": 0.14
+      },
+      "result": "The historical producer remains internally exact on its declared zero/first-jet ledger, while the new independently verified second-jet column supersedes only its invalid order-two promotion. The classical status rail passed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a fail-closed theorem demotion and atlas correction, not a paper freeze, release, shared-core algebra change, or promotion of a causal, observational or quantum claim. Paper 11 and roadmap reconciliation are assigned to their separately authorized Science Forge work item."
+    }
+  },
+  "claim_boundary": "This receipt certifies the exact invalidation of the former 22-row witness on one admissible second-input-jet cyclic cotangent column and the fail-closed reopening of the complete bounded cyclic class. It does not certify a complete trivializing cochain, a replacement full-cokernel witness, a residual/cohomological operation, a branch crosswalk, causal propagation, observations, particles, stability, scattering, all-orders closure or a quantum claim."
+}

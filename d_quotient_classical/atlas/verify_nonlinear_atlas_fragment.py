@@ -19,6 +19,12 @@ CERT = (
 )
 ENTRY_ID = "nonlinear.berger.filtered_cyclic_branch_extension.beta1_obstruction"
 CROSSWALK_ID = "nonlinear.berger.crosswalk.retained36_to_residual_branches"
+MIXED_ID = "nonlinear.berger.retained_mixed_ell3.filtered_cyclic_obstruction"
+MIXED_DISPOSITION = (
+    ROOT
+    / "d_quotient_classical/certificates/"
+    "BERGER_RETAINED_MIXED_ELL3_SECOND_JET_WITNESS_DISPOSITION_V1.json"
+)
 
 
 def _sha256(path: Path) -> str:
@@ -84,6 +90,27 @@ def verify() -> dict:
         raise ValueError("crosswalk does not cite the unary obstruction")
     if certificate["claim_flags"]["ELL3_BRANCH_PROJECTION_AUTHORIZED"] is not False:
         raise ValueError("source certificate authorized ell3 projection")
+
+    disposition = json.loads(MIXED_DISPOSITION.read_text())
+    mixed = _entry(value, MIXED_ID)
+    if mixed["descriptions"]["nonlinear"] != "OPEN":
+        raise ValueError("superseded ell3 obstruction was not reopened")
+    if mixed["mode_data"]["resonance"]["status"] != "OPEN":
+        raise ValueError("second-jet witness disposition was not ledgered")
+    if "755/9" not in mixed["mode_data"]["resonance"]["statement"]:
+        raise ValueError("exact second-jet pairing absent from atlas")
+    disposition_evidence = (
+        disposition["result_id"],
+        str(MIXED_DISPOSITION.relative_to(ROOT)),
+        _sha256(MIXED_DISPOSITION),
+    )
+    if disposition_evidence not in {
+        (record["result_id"], record["path"], record["sha256"])
+        for record in mixed["evidence"]
+    }:
+        raise ValueError("second-jet disposition evidence is absent or stale")
+    if disposition["claim_flags"]["ORDER_TWO_FILTERED_REMOVAL_OBSTRUCTED"] is not False:
+        raise ValueError("disposition retained the withdrawn obstruction")
 
     print("NONLINEAR_RESIDUAL_ATLAS_FRAGMENT_V1 independent verification: PASS")
     return value

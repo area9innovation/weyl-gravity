@@ -24,6 +24,10 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
     def test_obstruction_is_not_particle_claim(self):
         entry = next(item for item in atlas.build()["entries"] if "filtered_cyclic_obstruction" in item["id"])
         self.assertEqual(entry["mode_data"]["dispersion"]["status"], "NOT_APPLICABLE")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")
+        self.assertIn("755/9", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("zero/first-jet subcomplex", entry["claim_boundary"])
         self.assertEqual(entry["descriptions"]["quantum"], "OPEN")
 
     def test_unary_branch_extension_obstruction_is_fail_closed(self):
