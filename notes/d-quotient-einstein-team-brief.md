@@ -4964,3 +4964,15 @@ Evidence is
 `bridge/certificates/EINSTEIN_WEYL_SYMPLECTIC_EXTENSION_CLASSIFICATION_V1.json`;
 the fail-closed atlas row is
 `einstein.ph.wm.parity_complete.symplectic_extension`.
+
+## Constraint-algebroid Kuranishi carrier
+
+The failed fixed-group AMM gate is replaced at two-jet order by the genuine
+phase-space-dependent lapse--shift algebroid and the five-generator Koszul
+carrier `d eta_A=kappa_2,A`. Its finite-harmonic restriction equals the
+certified moment maps. The ambient linear cofiber projection does not descend:
+the exact balanced Einstein-minus/extra fixture is total-charge zero while its
+two projections have nonzero opposite `mu_H`. Therefore the common derived
+sector is intrinsically mixed and must be described by a correspondence or
+fibre product, not by an Einstein/extra quotient sequence. Evidence is
+`bridge/certificates/EINSTEIN_WEYL_CONSTRAINT_ALGEBROID_KURANISHI_CARRIER_V1.json`.

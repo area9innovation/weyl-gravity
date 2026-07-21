@@ -351,3 +351,15 @@ commands are in section 3. Tags: `LOCAL-ALGEBRAIC` and `REDUCED-MODE`.
 Open: asymptotic Jordan form, metric reconstruction, rigorous flux bounds,
 non-strict cyclic homotopies, moment-map-zero residual descent, full causal boundary phase spaces,
 stability, and quantum state.
+
+## Derived-charge disposition
+
+The common five-charge carrier now exists to quadratic order as a Koszul
+Kuranishi fibre for the phase-space-dependent constraint algebroid. It does
+not restore the linear cofiber sequence after charge reduction. The balanced
+Einstein-minus/extra fixture has zero total moment map but nonzero opposite
+charges on its two primary projections, so the extra projection does not map
+the common zero fibre to the extra zero fibre. The Schur-complement form stays
+defined in the ambient target and along chosen inclusions, but there is no
+quotient pairing without that map. The correct next object is a derived
+correspondence retaining mixed charge cancellation.

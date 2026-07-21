@@ -1,0 +1,23 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"einstein-weyl-constraint-algebroid-kuranishi-carrier-v1",
+  "type":"object",
+  "required":["schema","schema_path","schema_sha256","result_id","result_state","lifecycle_state","dependency_tags","provenance","scope","constraint_algebroid_two_jet","kuranishi_derived_carrier","finite_harmonic_crosswalk","functorial_pullback_obstruction","mutations","classification","claim_boundary","next_gate","verification_commands"],
+  "properties":{
+    "schema":{"const":"einstein-weyl-constraint-algebroid-kuranishi-carrier-v1"},
+    "schema_path":{"const":"bridge/einstein_sector/schema/einstein-weyl-constraint-algebroid-kuranishi-carrier-v1.schema.json"},
+    "schema_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "result_id":{"const":"EINSTEIN_WEYL_CONSTRAINT_ALGEBROID_KURANISHI_CARRIER_V1"},
+    "result_state":{"const":"TWO_JET_DERIVED_FIVE_CHARGE_CARRIER_CERTIFIED_LINEAR_COFIBER_PULLBACK_OBSTRUCTED"},
+    "lifecycle_state":{"const":"CLASSIFIED"},
+    "dependency_tags":{"const":["LOCAL-ALGEBRAIC","REDUCED-MODE"]},
+    "provenance":{"type":"object"},"scope":{"type":"object"},
+    "constraint_algebroid_two_jet":{"type":"object"},
+    "kuranishi_derived_carrier":{"type":"object"},
+    "finite_harmonic_crosswalk":{"type":"object"},
+    "functorial_pullback_obstruction":{"type":"object"},
+    "mutations":{"type":"object"},
+    "classification":{"type":"object","additionalProperties":false,"required":["phase_dependent_bracket_retained","two_jet_anchor_closure","two_jet_koszul_nilpotency","five_charge_kuranishi_carrier","finite_harmonic_moment_map_match","plain_linear_zero_subspace_substituted","fixed_group_AMM_retried","linear_cofiber_projects_derived_zero_fibre","sobolev_Einstein_Weyl_derived_exact_sequence","strict_cyclic_split","causal_or_quantum_claim"],"properties":{"phase_dependent_bracket_retained":{"const":true},"two_jet_anchor_closure":{"const":true},"two_jet_koszul_nilpotency":{"const":true},"five_charge_kuranishi_carrier":{"const":true},"finite_harmonic_moment_map_match":{"const":true},"plain_linear_zero_subspace_substituted":{"const":false},"fixed_group_AMM_retried":{"const":false},"linear_cofiber_projects_derived_zero_fibre":{"const":false},"sobolev_Einstein_Weyl_derived_exact_sequence":{"const":false},"strict_cyclic_split":{"const":false},"causal_or_quantum_claim":{"const":false}}},
+    "claim_boundary":{"type":"string"},"next_gate":{"type":"string"},"verification_commands":{"type":"array","minItems":3}
+  },"additionalProperties":false
+}

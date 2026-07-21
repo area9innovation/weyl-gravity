@@ -1,0 +1,91 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "Certifies the smallest two-jet five-charge derived Kuranishi carrier and the first exact obstruction to pulling the ambient linear Einstein--Weyl cofiber sequence through it. It does not classify higher Kuranishi brackets, construct an all-orders groupoid slice, identify the common zero fibre with a linear subspace, or establish bounded, causal, particle, positivity or quantum claims.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/EINSTEIN_WEYL_CONSTRAINT_ALGEBROID_KURANISHI_CARRIER_V1.json",
+          "result_id": "EINSTEIN_WEYL_CONSTRAINT_ALGEBROID_KURANISHI_CARRIER_V1",
+          "sha256": "fa764024805f3c2ce67e63d9a15afed94861e1374e32ecda8124efc3849aea24"
+        }
+      ],
+      "id": "einstein.ph.wm.constraint_algebroid.kuranishi_two_jet",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Cauchy constraint carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "Ambient Schur form restricts along inclusions but does not descend through the obstructed extra projection.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Carrier-dependent spacetime resonances remain separate.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Cauchy version is DC v=-(1/2)D^2C[u,u]; no bounded promotion.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No retarded carrier.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Not promoted.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "The two-jet Koszul carrier has five generators H,P_x,J_i and restricts to the finite-harmonic moment maps.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan",
+        "boundaries": "compact boundaryless Cauchy slice S1_L x S2",
+        "carrier": "H^s weighted Sobolev canonical slice, s>=4, and its finite-harmonic restriction",
+        "charge_sector": "fixed P_N,N=2 and fixed Q_e; based Maxwell gauge; W_x retained",
+        "degree": "constraint algebroid and Kuranishi two-jet",
+        "ell": "all",
+        "k": "all allowed",
+        "m": "all",
+        "omega": "not applicable to Cauchy constraints",
+        "parity": "all",
+        "theory": "Weyl-Maxwell constraint carrier with Einstein/extra linear comparison"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/generate_constraint_algebroid_kuranishi_atlas.py",
+  "generated_by_sha256": "89816b5313767ae8cd019ec76f14fb1df1ffa151e944e16b8d6d4bcdb2f623cb",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_nonlinear",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.generate_constraint_algebroid_kuranishi_atlas --check",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-weyl-constraint-algebroid-kuranishi-fragment-v1.json"
+  ]
+}
