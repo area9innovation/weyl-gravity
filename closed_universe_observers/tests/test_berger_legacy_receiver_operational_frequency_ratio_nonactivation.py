@@ -1,7 +1,10 @@
 from closed_universe_observers.generate_berger_legacy_receiver_operational_frequency_ratio_nonactivation import (
+    HISTORICAL_CROSSWALK,
     build,
+    historical_contract,
     request_value,
 )
+import pytest
 
 
 def test_all_maximal_candidates_are_nonactivated():
@@ -26,3 +29,19 @@ def test_coordinate_control_is_not_promoted():
     assert result["coordinate_control"]["status"] == "COORDINATE_CONTROL_ONLY_NOT_OPERATIONAL_REDSHIFT"
     assert not result["flags"]["OPERATIONAL_FREQUENCY_RATIO_DEFINED"]
     assert not result["flags"]["COORDINATE_RATIO_PROMOTED_AS_REDSHIFT"]
+
+
+@pytest.mark.parametrize(
+    "mutation",
+    [
+        {"source_commit": "0" * 40},
+        {"repository_path": HISTORICAL_CROSSWALK["repository_path"] + ".missing"},
+        {"sha256": "0" * 64},
+        {"source_commit": "HEAD"},
+    ],
+)
+def test_historical_source_mutations_fail_closed(mutation):
+    ref = dict(HISTORICAL_CROSSWALK)
+    ref.update(mutation)
+    with pytest.raises(Exception):
+        historical_contract(ref)

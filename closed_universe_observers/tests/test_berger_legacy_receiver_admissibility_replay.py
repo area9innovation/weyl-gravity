@@ -1,7 +1,10 @@
 from closed_universe_observers.generate_berger_legacy_receiver_admissibility_replay import (
+    HISTORICAL_CROSSWALK,
     build,
     classify_receiver,
+    historical_contract,
 )
+import pytest
 
 
 def test_receiver_failures_are_typed():
@@ -29,3 +32,19 @@ def test_prequotient_rank_is_not_receiver_descent():
     for row in result["legacy_receiver_census"]:
         assert row["receiver_fields"]["descended_pairing"]["status"] != "CERTIFIED"
         assert row["receiver_fields"]["sampled_denominator_margin"]["status"] != "CERTIFIED"
+
+
+@pytest.mark.parametrize(
+    "mutation",
+    [
+        {"source_commit": "0" * 40},
+        {"repository_path": HISTORICAL_CROSSWALK["repository_path"] + ".missing"},
+        {"sha256": "0" * 64},
+        {"source_commit": "HEAD"},
+    ],
+)
+def test_historical_source_mutations_fail_closed(mutation):
+    ref = dict(HISTORICAL_CROSSWALK)
+    ref.update(mutation)
+    with pytest.raises(Exception):
+        historical_contract(ref)

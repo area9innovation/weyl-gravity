@@ -46,9 +46,13 @@
       "sha256": "5aeb9d795916e05c5dba6fbc5650682e5c741fd83162181bdbcb413a55a54d13"
     },
     "receiver_contract": {
+      "object_type": "blob",
       "path": "closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json",
+      "repository_path": "physics/symplectic-reconstruction/closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json",
+      "resolution": "IMMUTABLE_GIT_BLOB",
       "result_id": "CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1",
-      "sha256": "e2c9aad23b667ec16bbb124b72066d803f3607fc4bd89acd459b53f672a43918"
+      "sha256": "e2c9aad23b667ec16bbb124b72066d803f3607fc4bd89acd459b53f672a43918",
+      "source_commit": "aa5ca7814798dfbcc92ee52e462d25af74806515"
     },
     "receiver_interface": {
       "path": "closed_universe_observers/generated/CHARGED_TIME_PHYSICAL_RECEIVER_CROSSWALK_INTERFACE_V1.json",
@@ -732,16 +736,36 @@
       "classification": "NO_CERTIFIED_MAP",
       "detected": true,
       "name": "rank_two_without_receiver_class"
+    },
+    {
+      "classification": "IMMUTABLE_HISTORICAL_BLOB_REJECTED",
+      "detected": true,
+      "name": "wrong_historical_commit"
+    },
+    {
+      "classification": "IMMUTABLE_HISTORICAL_BLOB_REJECTED",
+      "detected": true,
+      "name": "wrong_historical_path"
+    },
+    {
+      "classification": "IMMUTABLE_HISTORICAL_BLOB_REJECTED",
+      "detected": true,
+      "name": "wrong_historical_blob_hash"
+    },
+    {
+      "classification": "MUTABLE_CURRENT_PATH_FORBIDDEN",
+      "detected": true,
+      "name": "mutable_current_path_substitution"
     }
   ],
   "next_gate": "EXPORT_ACTION_DERIVED_BERGER_RECEIVER_BV_CLASS_QUOTIENT_PAIRING_AND_SEPARATE_D_R_K_ACTIONS",
   "provenance": {
     "higher_tiers_not_run": {
-      "tier_2": "all imported mathematical inputs are unchanged and pinned by exact hash",
-      "tier_3": "no freeze, lifecycle promotion, release or shared-core algebra change"
+      "tier_2": "the historical five-row contract is resolved by exact commit, repository path, blob type and SHA-256; all other inputs are current-path exact hashes",
+      "tier_3": "owned by the dedicated post-repair fixed-point successor"
     },
     "independent_method": "symbolic matrix-rank reconstruction plus structural pairing, support and denominator replay",
-    "producer_method": "typed audit over ten content-addressed receiver-interface and legacy-certificate inputs"
+    "producer_method": "typed audit over one immutable historical Git blob, the current receiver interface and seven legacy certificates"
   },
   "receiver_interface_required_fields": [
     "mode_scope",

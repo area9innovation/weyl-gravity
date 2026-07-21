@@ -1,0 +1,100 @@
+{
+  "schema": "closed-universe-observer-legacy-receiver-historical-base-binding-repair-manifest-v1",
+  "result_id": "OBSERVER_LEGACY_RECEIVER_HISTORICAL_BASE_BINDING_REPAIR_V1",
+  "science_forge_work_item": "sf:program/work/observer-legacy-receiver-historical-base-binding-repair-v1",
+  "recorded_at": "2026-07-21T19:30:10Z",
+  "input_commit": "d33c8e33371f0a073a59beeb54238ceafdcab9da",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "input_refs": {
+    "tier3_obstruction": {
+      "path": "closed_universe_observers/receipts/OBSERVER_TIER3_FIXED_POINT_AFTER_LEGACY_CROSSWALK_EXTENSION_V2_OBSTRUCTION.json",
+      "sha256": "e4a78132adaa1ffe28649189ae13a9635706ebd309edcc0245dbafba20dfd21a"
+    },
+    "terminal_seven_row_crosswalk": {
+      "source_commit": "d33c8e33371f0a073a59beeb54238ceafdcab9da",
+      "repository_path": "physics/symplectic-reconstruction/closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json",
+      "sha256": "ec6ad91547f00c2f5e19789ff441a971c35558924789691d7ab7fc2f0522e833"
+    },
+    "historical_five_row_contract": {
+      "source_commit": "aa5ca7814798dfbcc92ee52e462d25af74806515",
+      "repository_path": "physics/symplectic-reconstruction/closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json",
+      "object_type": "blob",
+      "sha256": "e2c9aad23b667ec16bbb124b72066d803f3607fc4bd89acd459b53f672a43918",
+      "disposition_count": 5
+    }
+  },
+  "output_refs": {
+    "legacy_receiver_replay": {
+      "path": "closed_universe_observers/certificates/BERGER_LEGACY_RECEIVER_ADMISSIBILITY_REPLAY_V1.json",
+      "sha256": "3851a46dc9ab2b2f1ca092a67ffd17c7ecdb21b18b8a238f72c8de091835fde5",
+      "receipt_sha256": "5dde1ae5907dd43be19a75bc4b2b78666d22239a84701bb9af92a88d7636fd00"
+    },
+    "legacy_frequency_ratio": {
+      "path": "closed_universe_observers/certificates/BERGER_LEGACY_RECEIVER_OPERATIONAL_FREQUENCY_RATIO_NONACTIVATION_V1.json",
+      "sha256": "e0deee0fdfadd1d3ea61ce11718c302ba7954756745974e126c457982a26637c",
+      "receipt_sha256": "a46cd33a0e88ae2653e68586f62a9b41ebfe0645b43ae7277775f8be90619134"
+    },
+    "seven_row_crosswalk": {
+      "path": "closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json",
+      "sha256": "78cdd1853698a82866b8e7891a9817c3fae6279d9afbab6bb2c0f4dc84252fde",
+      "receipt_sha256": "58cfe3720118faae6aadac3f5f59f9a25ce022b5f4fc4b3cb7bcff0375fd16a2"
+    }
+  },
+  "scientific_disposition": {
+    "legacy_receiver_replay": "NO_CERTIFIED_MAP",
+    "legacy_frequency_ratio": "NO_CERTIFIED_MAP",
+    "operational_frequency_ratio_domain": "EMPTY",
+    "coordinate_ratio_one": "COORDINATE_CONTROL_ONLY_NOT_OPERATIONAL_REDSHIFT",
+    "original_five_dispositions_unchanged": true,
+    "physical_receiver_promoted": false,
+    "physical_redshift_promoted": false
+  },
+  "dependency_cycle_audit": {
+    "legacy_to_current_crosswalk_edge": false,
+    "legacy_to_historical_blob_edge": true,
+    "current_crosswalk_to_regenerated_legacy_certificates": true,
+    "cycle_present": false
+  },
+  "mutation_coverage": [
+    "wrong_historical_commit",
+    "wrong_historical_path",
+    "wrong_historical_blob_hash",
+    "mutable_current_path_substitution",
+    "delete_legacy_replay_row",
+    "delete_legacy_ratio_row",
+    "promote_coordinate_ratio_to_redshift"
+  ],
+  "direct_consumer_audit": {
+    "status": "STOPPED_AT_FIRST_ADDITIONAL_STALE_PIN",
+    "search_hashes": [
+      "8510cc0f00ae1e223fcb97614d51f3708e3f31455bdb789bb79aeb77acd8c50f",
+      "7d758b01ed37bb695a30b8364ea4a0b1d425faaa307b990be2cefaa42aa29d4e",
+      "ec6ad91547f00c2f5e19789ff441a971c35558924789691d7ab7fc2f0522e833"
+    ],
+    "first_additional_stale_pin": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+    "ownership_boundary": "The shared generator, verifier, aggregate and test already carry another session's resident edits.",
+    "action": "NOT_RELOCKED_CONCURRENT_RESIDENT_EDITS_PRESERVED",
+    "next_owner": "sf:program/work/observer-tier3-fixed-point-after-historical-base-binding-repair-v1"
+  },
+  "verification": {
+    "tier_0": "PASS",
+    "tier_1": "PASS_25_TESTS_AND_THREE_METHOD_DISTINCT_VERIFIERS",
+    "tier_2": "PASS_DIRECT_REPAIRED_CERTIFICATE_CROSSWALK_AND_ATLAS_CHAIN",
+    "tier_3": "NOT_RUN_OWNED_BY_DEDICATED_SUCCESSOR"
+  },
+  "flags": {
+    "HISTORICAL_BASE_BINDING_REPAIRED": true,
+    "SEVEN_ROW_CROSSWALK_REGENERATED": true,
+    "NO_RECURSIVE_CONTENT_ADDRESS_DEPENDENCY": true,
+    "DIRECT_CONSUMER_AUDIT_STOPPED_FAIL_CLOSED": true,
+    "PAPER9_CHANGED": false,
+    "NONLINEAR_CLAIM": false,
+    "PARTICLE_CLAIM": false,
+    "QUANTUM_CLAIM": false
+  },
+  "claim_boundary": "Repairs only the immutable historical-base binding of the two legacy Observer rails and regenerates the seven-row crosswalk from their new hashes. All seven scientific dispositions are unchanged. The aggregate Observer atlas is the first additional stale pin and is recorded without overwriting concurrent resident edits; no physical receiver, redshift, nonlinear, particle or quantum claim is promoted."
+}

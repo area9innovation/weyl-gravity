@@ -3,6 +3,7 @@
 
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 
 import sympy as sp
@@ -10,8 +11,22 @@ from jsonschema import Draft202012Validator
 
 
 ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = ROOT.parents[1]
 CERT = ROOT / "closed_universe_observers/certificates/BERGER_LEGACY_RECEIVER_ADMISSIBILITY_REPLAY_V1.json"
 SCHEMA = ROOT / "closed_universe_observers/schema/berger-legacy-receiver-admissibility-replay-v1.schema.json"
+HISTORICAL_COMMIT = "aa5ca7814798dfbcc92ee52e462d25af74806515"
+HISTORICAL_PATH = (
+    "physics/symplectic-reconstruction/closed_universe_observers/certificates/"
+    "CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json"
+)
+HISTORICAL_SHA256 = "e2c9aad23b667ec16bbb124b72066d803f3607fc4bd89acd459b53f672a43918"
+HISTORICAL_DISPOSITIONS = {
+    "observer.general.charged_physical_time_relational_event_map": "CONDITIONAL_INTERFACE_ONLY",
+    "observer.general.charged_time_finite_resolution_sampling": "CONDITIONAL_INTERFACE_ONLY",
+    "observer.general.charged_time_emitter_receiver_composition": "CONDITIONAL_INTERFACE_ONLY",
+    "observer.two_phase_counterflow.unrestricted_charged_time_event_map_contract": "NO_CERTIFIED_MAP",
+    "observer.two_phase_counterflow.fixed_charge_relational_observable_obstruction": "CLOCK_REMOVED_OBSTRUCTED",
+}
 
 
 def sha256(path: Path) -> str:
@@ -28,14 +43,59 @@ def all_keys(value):
             yield from all_keys(child)
 
 
+def resolve_historical_ref(ref: dict) -> dict:
+    assert ref["source_commit"] == HISTORICAL_COMMIT
+    assert ref["repository_path"] == HISTORICAL_PATH
+    assert ref["sha256"] == HISTORICAL_SHA256
+    assert ref["object_type"] == "blob"
+    assert ref["resolution"] == "IMMUTABLE_GIT_BLOB"
+    resolved = subprocess.run(
+        ["git", "rev-parse", "--verify", f"{ref['source_commit']}^{{commit}}"],
+        cwd=REPO_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    assert resolved == HISTORICAL_COMMIT
+    object_spec = f"{resolved}:{ref['repository_path']}"
+    object_type = subprocess.run(
+        ["git", "cat-file", "-t", object_spec],
+        cwd=REPO_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    assert object_type == "blob"
+    payload = subprocess.run(
+        ["git", "show", object_spec],
+        cwd=REPO_ROOT,
+        check=True,
+        capture_output=True,
+    ).stdout
+    assert hashlib.sha256(payload).hexdigest() == HISTORICAL_SHA256
+    document = json.loads(payload)
+    dispositions = {
+        row["atlas_id"]: row["admissibility_status"]
+        for row in document["observer_carrier_census"]
+    }
+    assert dispositions == HISTORICAL_DISPOSITIONS
+    assert document["census_completeness"]["discovered_count"] == 5
+    return document
+
+
 def verify() -> dict:
     result = json.loads(CERT.read_text())
     Draft202012Validator(json.loads(SCHEMA.read_text())).validate(result)
     imported = {}
     for name, ref in result["dependency_refs"].items():
-        path = ROOT / ref["path"]
-        assert sha256(path) == ref["sha256"]
-        imported[name] = json.loads(path.read_text())
+        if name == "receiver_contract":
+            imported[name] = resolve_historical_ref(ref)
+        else:
+            path = ROOT / ref["path"]
+            assert sha256(path) == ref["sha256"]
+            imported[name] = json.loads(path.read_text())
+    current_crosswalk = ROOT / "closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json"
+    assert sha256(current_crosswalk) != result["dependency_refs"]["receiver_contract"]["sha256"]
 
     k0, k1 = sp.symbols("k0 k1", nonzero=True)
     mu = sp.symbols("mu")
@@ -83,6 +143,12 @@ def verify() -> dict:
     assert all(row["admissibility_status"] == "NO_CERTIFIED_MAP" for row in rows)
     assert len({row["result_id"] for row in rows}) == 7
     assert all(mutation["detected"] for mutation in result["mutation_results"])
+    assert {
+        "wrong_historical_commit",
+        "wrong_historical_path",
+        "wrong_historical_blob_hash",
+        "mutable_current_path_substitution",
+    }.issubset({mutation["name"] for mutation in result["mutation_results"]})
     return result
 
 
