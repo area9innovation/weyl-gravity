@@ -1,0 +1,36 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:forge-request/science-forge-agent-status-stream-diagnostics",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "science-forge-agent-status-stream-diagnostics",
+  "source": {
+    "path": "planning/forge-requests/science-forge-agent-status-stream-diagnostics.json",
+    "span": null
+  },
+  "body": {
+    "owner": "science-forge",
+    "state": "REQUESTED",
+    "objective": "Make the resident-agent next-work path self-diagnosing when an agent reports an empty queue because it used the wrong stream name, already holds a lease, or the programme contains an invalid second live exclusive lease for the same agent.",
+    "stop_condition": "Land a deterministic read-only `s-f agent status --agent A [--stream S] --now T` (or a documented equivalent) that prints every live/expired lease held by A, the exact resumable item and command, READY depth and next pull in the resolved stream, open requests addressed to that stream, and any programme-health defect. Make `s-f work ready --stream S` distinguish an unknown stream from a known empty stream and suggest close stream names such as `quantum-qme` for `quantum`. Make `work pull` and `work assign` refuse a second live exclusive lease for the same agent across different items with an actionable list of the existing lease and `work show/yield/abort/close` commands. Surface historical multiple-live-lease states as a health finding in overview rather than silently presenting both as ordinary work. Add deterministic fixtures for typo/alias suggestion, truly empty known stream, one active lease plus ready successors, stale/expired lease, two cross-item live leases, independent-reproduction exemption, and the current physics reproduction in which `quantum-qme-1` appears to have no work while two active leases and three ready items exist. Preserve explicit timestamps, append-only events and one-lease semantics.",
+    "current_gate": "resident agent status and stream/lease diagnostics",
+    "forbid": "no implicit lease release; no automatic stream alias that can route work without confirmation; no treating an expired lease as live; no hiding invalid historical overlap; no mutation from status/help commands; no weakening independent-reproduction typing; no special case for the quantum stream",
+    "depends_on": [],
+    "activates": [
+      "reliable resident self-service work resumption across all physics streams"
+    ],
+    "allowed_paths": [
+      "forge/tools/science-forge/",
+      "forge/tools/science-forge-cli/",
+      "forge/tools/science-forge/fixtures/",
+      "forge/tools/science-forge/GUIDE.md"
+    ],
+    "resource_hint": "SCIENCE FORGE CLI ROBUSTNESS. Reuse the folded agent-to-live-lease index requested by the cross-item CAS fix and the landed work-show/overview paths; do not introduce a second state fold.",
+    "notes": [
+      "Live physics reproduction on 2026-07-21: the Quantum resident reported no work. The authoritative programme had stream `quantum-qme`, three READY items, and two simultaneous ACTIVE exclusive leases for `quantum-qme-1`; one active item also had uncommitted scientific artifacts. The current CLI makes these three causes look like an empty queue to the resident.",
+      "This request complements, rather than replaces, bug-science-forge-pull-transition-cas-race. The acquisition guard prevents new overlap; this status surface explains and safely repairs existing or historical overlap."
+    ],
+    "stream": "forge-requests"
+  },
+  "edges": []
+}

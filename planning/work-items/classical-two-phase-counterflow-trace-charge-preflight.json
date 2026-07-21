@@ -1,0 +1,46 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-two-phase-counterflow-trace-charge-preflight",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-two-phase-counterflow-trace-charge-preflight",
+  "source": {
+    "path": "planning/work-items/classical-two-phase-counterflow-trace-charge-preflight.json",
+    "span": null
+  },
+  "body": {
+    "owner": "classical",
+    "state": "PROPOSED",
+    "objective": "Test the smallest concrete successor to the exhausted one-field compensator ladder: two positive phase fields with one auxiliary diagonal compact U(1), a healthy neutral relative counterflow, and a separate tau/scale sector, asking whether the active relative clock actually removes the dressed-trace class without creating a split scalar pair or a charged time generator.",
+    "stop_condition": "Import the closed-S3 compact-Gauss theorem and the terminal nonhomogeneous Hodge preflight by exact hashes. Start from S_phase=-1/2 integral sqrt(-g_hat)[f1^2(d theta1-A)^2+f2^2(d theta2-A)^2], g_hat=exp(-2 tau)g, with f1^2,f2^2 positive and initially no Maxwell term. Derive exactly chi=(f1^2 theta1+f2^2 theta2)/(f1^2+f2^2), psi=theta1-theta2 and mu^2=f1^2 f2^2/(f1^2+f2^2), and independently verify the diagonal-gauge plus positive-relative decomposition rather than importing it as the verdict. Classify the complete smallest constant-potential/scale-sector coefficient locus supporting (a) the same metric cylinder with homogeneous neutral counterflow and (b), separately, the frozen Berger or the nearest action-derived stationary closed background; never identify the backgrounds without a map. On every stationary stratum derive the full homogeneous action Hessian in the dressed trace u, delta psi, delta chi, A0, lapse/shift and every scale auxiliary. Perform the complete Dirac/Gauss reduction, then compute the reduced inertia, gradient/principal polynomial, real characteristic roots and Jordan structure. Decide whether the active X_psi,C gives an order-zero u-u Hessian, removes every arbitrary compactly supported u class, preserves one positive relative-clock direction and avoids a split gravitational scalar pair. Compute four distinct Hamiltonian generators: diagonal U(1), relative shift R_rel, D, and K=D-Omega R_rel; classify degeneracy on the unrestricted phase space and on every explicitly fixed relative-charge leaf. Emit exact passing/separating witnesses, an independent raw-action verifier, mutations, strict schema and an atlas disposition. Select no action unless all stationary, trace-touch, health and charge gates pass.",
+    "current_gate": "two-phase auxiliary-U1 counterflow constrained dressed-trace Hessian and four-generator charge audit",
+    "forbid": "no Maxwell term in the first preflight; no total compact gauge neutrality called D-gauge; no positive raw phase Hessian used before eliminating chi,A0,lapse and constraints; no nonzero determinant substituted for inertia and characteristic classification; no old vacuum SO(4,2) residual theorem inherited after the active clock changes the background; no constant-clock cylinder assumption; no same-metric cylinder silently imposed if the stress requires backreaction; no causal homotopy, q2, Einstein closure, anomaly, Hadamard, particle, redshift, positivity or unitarity claim",
+    "depends_on": [
+      "sf:program/work/classical-closed-s3-relative-phase-nonhomogeneous-hodge-preflight#ANY_TERMINAL",
+      "sf:program/work/classical-closed-s3-gauged-clock-gauss-structure-theorem#ANY_TERMINAL"
+    ],
+    "activates": [
+      "classical-two-phase-counterflow-causal-bv-parent"
+    ],
+    "allowed_paths": [
+      "d_quotient_classical/compensator/",
+      "d_quotient_classical/reports/",
+      "d_quotient_classical/receipts/",
+      "d_quotient_classical/schema/",
+      "d_quotient_classical/atlas/",
+      "reports/",
+      "residual_atlas/",
+      "notes/",
+      "paper/",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "CLASSICAL FAST EXACT PREFLIGHT. Use the auxiliary A0 constraint to remove the diagonal phase, retain psi as the physical coordinate, and compute the u-psi Schur/Dirac form from the action. Keep the WZ/scale and relative-clock roles as distinct fields and distinct claims.",
+    "notes": [
+      "The mechanism is new relative to the failed G3 lane: neutral counterflow has X_psi,C nonzero and is quadratically visible in the dressed-trace direction while total diagonal U(1) charge remains zero.",
+      "A complete no-go is terminally valuable only for the printed two-phase auxiliary-U1 family; adding a Maxwell term, more phases, other potentials or enlarged geometry remains a genuinely different next architecture."
+    ],
+    "input_commit": "c075529ac",
+    "stream": "classical"
+  },
+  "edges": []
+}
