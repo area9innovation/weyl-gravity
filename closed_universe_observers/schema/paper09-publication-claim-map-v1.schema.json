@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper09-publication-claim-map-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "freeze_decision", "draft_allowed_gates", "source_hashes", "exact_hash_imports", "claims", "classification_counts", "operational_observable_disposition", "health_disposition", "generator_semantics", "coverage", "mutation_guards", "does_not_establish"],
+  "properties": {
+    "schema": {"const": "paper09-publication-claim-map-v1"},
+    "result_id": {"const": "PAPER09_COUNTERFLOW_HEALTH_NONACTIVATION_FREEZE_V1"},
+    "freeze_decision": {"enum": ["THEOREM_FROZEN", "DRAFT_ALLOWED"]},
+    "draft_allowed_gates": {"type": "array", "minItems": 2, "maxItems": 2},
+    "source_hashes": {"type": "array", "minItems": 2},
+    "exact_hash_imports": {"type": "array", "minItems": 20},
+    "claims": {
+      "type": "array",
+      "minItems": 22,
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "statement", "classification", "status", "paper_anchors", "evidence_result_ids", "materiality", "does_not_establish"],
+        "properties": {
+          "classification": {"enum": ["CONDITIONAL_THEOREM", "KINEMATIC_FIXTURE", "LOCAL_BV_CLASS", "ACTION_INTEGRATION", "PHYSICAL_DESCENT", "OPERATIONAL_OBSERVABLE", "NOT_ACTIVATED", "OPEN"]}
+        }
+      }
+    }
+  }
+}

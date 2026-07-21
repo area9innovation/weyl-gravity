@@ -1,0 +1,96 @@
+{
+  "claim_map": {
+    "path": "paper/09-relational-clocks-berger-d-cartan-claim-map.json",
+    "sha256": "9955ba33884ae6d18dcd1682a2f8af42dc2db06aa5f8e2eae9ee635465add66b"
+  },
+  "decision": "DRAFT_ALLOWED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_open_gates": [
+    "LEGACY_TEN_CLAIM_SOURCE_BINDING_SUPERSESSION",
+    "OBSERVER_STREAM_TIER3_GREEN"
+  ],
+  "independence": {
+    "producer": "assembles the typed publication claim map and exact result-to-paper imports",
+    "verifier": "independently checks the schema, all hashes, legacy certificate flags, lifecycle triplets, classification boundaries, material coverage and three adversarial mutations",
+    "status": "METHOD_DISTINCT"
+  },
+  "paper_coverage": {
+    "claims": 22,
+    "exact_imports": 33,
+    "operational_observable_claims": 0,
+    "path": "planning/paper-coverage/observer-phase1-relational-observable-dispositions-2026-07-21.json",
+    "sha256": "ef924d194218bcef31a6b6136248a89344bdabea71723f872def3bc9b0067f93",
+    "status": "NONVACUOUS_PASS",
+    "uncovered_material_results": []
+  },
+  "pdf_builds": [
+    {
+      "passes": [4, 5],
+      "path": "paper/09-relational-clocks-berger-d-cartan.pdf",
+      "sha256": "6af59dad2755f3da1ce22627270766c0f6830c1e9493f8860a3929e33a963572",
+      "status": "TWO_CONSECUTIVE_WARNING_FREE_BUILDS"
+    },
+    {
+      "passes": [4, 5],
+      "path": "paper/09-relational-clocks-berger-d-cartan-computational-supplement.pdf",
+      "sha256": "b0cc057353f0ba2dc472959a643b4570fd54729c917cf3fd8b0b667e316b4375",
+      "status": "TWO_CONSECUTIVE_WARNING_FREE_BUILDS"
+    }
+  ],
+  "result_id": "PAPER09_COUNTERFLOW_HEALTH_NONACTIVATION_FREEZE_V1_TIER_RECEIPT",
+  "schema": "science-forge-tier-receipt-v1",
+  "source_hashes": {
+    "paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex": "ec2533c734b15a9d650679793388a9f791aa7dd78d8e6c5f34db241a0e19c6dd",
+    "paper/09-relational-clocks-berger-d-cartan.tex": "5124f7b093cae6b0b84be981e621fc231c6d37427997af92d0c108f9751dcf8b"
+  },
+  "tests": [
+    {
+      "command": "python3 -m py_compile closed_universe_observers/generate_paper09_counterflow_health_freeze.py paper/verify_09_relational_clocks_claim_map.py closed_universe_observers/tests/test_paper09_counterflow_health_freeze.py",
+      "elapsed_seconds": "0.03",
+      "status": "PASS",
+      "tier": 0
+    },
+    {
+      "command": "python3 paper/verify_09_relational_clocks_claim_map.py --write-coverage",
+      "elapsed_seconds": "0.08",
+      "status": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "PYTHONPATH=. pytest -q closed_universe_observers/tests/test_paper09_counterflow_health_freeze.py closed_universe_observers/tests/test_counterflow_charged_time_physical_instantiation_after_repaired_q70_health_nonactivation.py",
+      "elapsed_seconds": "0.17",
+      "result": "9 passed",
+      "status": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "python3 closed_universe_observers/verify_phase1_relational_observable_disposition_synthesis.py && python3 closed_universe_observers/verify_counterflow_charged_time_physical_instantiation_after_repaired_q70_health_nonactivation.py",
+      "elapsed_seconds": "0.16",
+      "status": "PASS",
+      "tier": 2
+    },
+    {
+      "command": "pdflatex -interaction=nonstopmode -halt-on-error (five passes each for the main paper and supplement; passes 4 and 5 checked for LaTeX, package, undefined-control-sequence, overfull and underfull diagnostics)",
+      "elapsed_seconds": "5.10",
+      "status": "PASS",
+      "tier": 3
+    },
+    {
+      "command": "PYTHONPATH=. pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "374.83",
+      "result": "1 failed, 150 passed; interrupted after first reported failure; persisted BERGER_84_ROW_APPARATUS_HANDOFF dependency_refs differ from producer output",
+      "status": "FAIL",
+      "tier": 3
+    },
+    {
+      "command": "PYTHONPATH=. pytest -q d_quotient_classical/backreacted_clock/tests/test_paper_09_claim_table.py",
+      "result": "legacy ledger rejects publication-current TeX source hashes; isolated worktree also lacks its quantum signoff path",
+      "status": "FAIL",
+      "tier": 3
+    }
+  ]
+}

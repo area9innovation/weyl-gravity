@@ -25,9 +25,10 @@ inventory, replay commands and release gates for
 \path{09-relational-clocks-berger-d-cartan.tex}.  It separates mathematical
 arguments from machine receipts and keeps the paper fail-closed: a certificate
 supports only the claim inside its declared phase space and boundary.  The
-manuscript is marked \texttt{THEOREM\_FROZEN} only for the ten classical
-gravity--clock claims below.  Maxwell and observer-apparatus results are not
-main-theorem dependencies.
+manuscript is marked \texttt{THEOREM\_FROZEN} for the ten classical
+gravity--clock claims below.  Maxwell and observer results are not
+main-theorem dependencies; a separate publication-current ledger now types
+their conditional, carrier-scoped and nonactivation dispositions.
 \end{abstract}
 
 The authorship line describes the research archive.  Venue-specific human
@@ -38,7 +39,10 @@ not silently treated as completed by this supplement.
 
 The authoritative machine-readable ledger is
 \path{../d_quotient_classical/certificates/PAPER_09_BERGER_CLAIM_TABLE.json}.
-The table below is its human-readable projection.
+The table below is its human-readable projection.  The publication-current
+superset, including the observer dispositions, is
+\path{09-relational-clocks-berger-d-cartan-claim-map.json}; it imports this
+ten-claim ledger without replacing it.
 
 \begin{center}
 \footnotesize
@@ -96,6 +100,45 @@ $D$-Cartan theorem.  The strategic producer-boundary check is
 \path{BERGER_Q3_ACTION_SECTOR_CROSSCHECK.json}; it supports the
 action-to-payload provenance of \texttt{P09-C8} in two exact sectors but does
 not replace the complete \path{BERGER_SUPPORT_LOCAL_Q3.json} certificate.
+
+\section{Observer publication disposition}
+
+The observer column is deliberately fail-closed.  The following entries are
+material Paper~9 statements, but none is promoted into the ten classical main
+theorems.
+
+\begin{center}
+\footnotesize
+\begin{tabularx}{\textwidth}{
+  >{\raggedright\arraybackslash}p{0.09\textwidth}
+  >{\raggedright\arraybackslash}p{0.22\textwidth}
+  >{\raggedright\arraybackslash}X}
+\toprule
+Claim & Type & Publication disposition \\
+\midrule
+\texttt{P09-O1} & \texttt{CONDITIONAL\_THEOREM} & Charged-time event current; nonzero evaluation still requires a descended receiver period. \\
+\texttt{P09-O2} & \texttt{CONDITIONAL\_THEOREM} & Finite-resolution sampling and its profile-error bound preserve that condition. \\
+\texttt{P09-O3} & \texttt{CONDITIONAL\_THEOREM} & Reciprocity, composition and loop laws require retarded paths and explicit fibre crosswalks. \\
+\texttt{P09-O4} & \texttt{CONDITIONAL\_THEOREM} & Receiver admissibility is a certified interface, not a populated receiver. \\
+\texttt{P09-O5} & \texttt{KINEMATIC\_FIXTURE} & The legacy $G0$ value $1+z=2$ survives only as a spatially global retarded probe-mode result; it is not operational redshift. \\
+\texttt{P09-O6} & \texttt{KINEMATIC\_FIXTURE} & Three distinct pre-quotient source-to-probe maps retain exact rank two on their own carriers. \\
+\texttt{P09-O7} & \texttt{NOT\_ACTIVATED} & The legacy frequency-ratio domain is absent; its coordinate ratio one is not relational redshift. \\
+\texttt{P09-O8} & \texttt{LOCAL\_BV\_CLASS} & The standalone $D0$ memory-shift receiver has a local BV descent only. \\
+\texttt{P09-O9} & \texttt{ACTION\_INTEGRATION} & A degree-zero local-cochain-to-repaired-$q_{70}$-chain map is exactly obstructed. \\
+\texttt{P09-O10} & \texttt{PHYSICAL\_DESCENT} & Phase~1 ends with no residual nonradical receiver period and no operational frequency-ratio map. \\
+\texttt{P09-O11} & \texttt{OPEN} & For $j\geq\frac32$ the quotient, divisor and pairing have \texttt{NO\_CERTIFIED\_MAP}. \\
+\texttt{P09-O12} & \texttt{NOT\_ACTIVATED} & All certified $j=0,\frac12,1$ repaired-$q_{70}$ blocks are unstable; fixed $Q_{\rm rel}$ removes the clock, so the thirteen-field operational ratio domain is empty. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The machine ledger consequently records zero entries of type
+\texttt{OPERATIONAL\_OBSERVABLE}.  This zero is a checked disposition, not an
+omission.  Each imported result, payload, receipt, terminal lifecycle event
+and transitive health input has an exact hash, a materiality annotation and a
+result-to-paper edge.  The independent verifier rejects a stale healthy
+carrier, a coordinate ratio relabelled as redshift, or an identification
+$K=D$.
 
 \section{Invariant complex and component realization}
 
@@ -385,10 +428,16 @@ fixed-coupling, compact-Berger and arity-three limitations;
 checkout.
 \end{enumerate}
 
-The machine-readable replay and environment manifest is
+The original machine-readable replay and environment manifest is
 \path{../d_quotient_classical/certificates/PAPER_09_THEOREM_FREEZE.json}.
-The state is \texttt{THEOREM\_FROZEN}.  This lifecycle promotion freezes the
-scoped theorem and its evidence; it does not promote Maxwell, observer,
-Hadamard, QME or all-orders claims.
+The publication-current observer audit is
+\path{09-relational-clocks-berger-d-cartan-claim-map.json}, independently
+checked by \path{verify_09_relational_clocks_claim_map.py}.  The original ten
+scientific claims retain their frozen scope, but this publication-current
+edition is \texttt{DRAFT\_ALLOWED}: the legacy ledger's TeX source binding
+must be formally superseded or repinned, and the pre-existing 84-row apparatus
+certificate drift must be repaired before an uninterrupted full observer
+suite can pass.  This disposition records the observer nonactivation; it does
+not promote Maxwell apparatus, Hadamard, QME or all-orders claims.
 
 \end{document}
