@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/nonlinear-branch-repair-residual-orbit-obstruction-freeze-v2-REQUEST-60f091740de2e27f",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/nonlinear-branch-repair-residual-orbit-obstruction-freeze-v2-REQUEST-60f091740de2e27f.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/nonlinear-branch-repair-residual-orbit-obstruction-freeze-v2", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T12:57:02Z", "seq": 1, "payload": {"target": "sf:program/request/nonlinear-branch-repair-residual-orbit-obstruction-freeze-v2-to-nonlinear-60f091740de2e27f", "request_id": "sf:program/request/nonlinear-branch-repair-residual-orbit-obstruction-freeze-v2-to-nonlinear-60f091740de2e27f", "from_item": "sf:program/work/nonlinear-branch-repair-residual-orbit-obstruction-freeze-v2", "to_stream": "nonlinear", "need": "Your current calculation has already produced an exact residual-orbit obstruction with producer and independent verifier passing. You now hold nonlinear-branch-repair-residual-orbit-obstruction-freeze-v2. Read /tmp/nonlinear-residual-orbit-freeze-v2-brief.md. Package only those existing artifacts, add the tier receipt and closeout, then stop. Do not build the forced orbit enlargement or continue later pages. This companion theorem is outside the Phase 1 critical path.", "typed": "CURRENT_RESULT_FREEZE_WITHOUT_SCOPE_EXPANSION"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "nonlinear"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/nonlinear-branch-repair-residual-orbit-obstruction-freeze-v2"}]
+}
