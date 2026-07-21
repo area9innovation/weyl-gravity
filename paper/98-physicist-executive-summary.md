@@ -54,9 +54,11 @@ action is exactly equivalent to the previously certified positive Berger
 clock system plus a contractible gauge summand. This gives a complete real
 cyclic 70-component BV parent with support-local advanced and retarded chain
 homotopies. It is the first compensator-successor model to pass the complete
-classical causal-parent gate. Its full fixed-charge physical cohomology,
-reduced inertia, interactions, observables and quantization are still being
-audited. An exact homogeneous stationary classification has also shown that
+classical causal-parent gate. The subsequent fixed-charge reduction is now
+known to remove the complete relative-clock Darboux pair: the phase tangent is
+the relative-rotation radical, so its physical quotient is zero.  The causal
+parent survives, but the proposed physical relative-clock observer does not.
+Interactions and quantization remain unaudited. An exact homogeneous stationary classification has also shown that
 the passing fixed-action point is isolated rather than an open phase, and that
 the same action has no stationary path to the round cylinder. The homogeneous
 trace block is positive and oscillatory there; this does not replace the full
@@ -329,8 +331,9 @@ the covariant causal complex; a healthy clock can coexist with total
 zero-charge $D$ at linear fixed coupling; the compact additional axial
 space is nonradical; exact nonlinear balance and resonance obstructions exist;
 and the strict/extended quantum alternatives are computationally separated.
-The two-phase counterflow construction now supplies one changed-theory causal
-parent worth consuming before another classical architecture is introduced.
+The two-phase counterflow construction supplies one changed-theory causal
+parent, but its derived fixed-charge quotient removes the relative clock and
+blocks the planned observer architecture.
 
 ## Authoritative result ledger
 
@@ -405,6 +408,16 @@ gauge-invariant clock-slice redshift observable. A potentially distinctive
 element is nontrivial relational evolution with total presymplectic
 degeneracy. The next gate is one localized, backreacting emitter--receiver
 experiment with recoil and an apparatus bracket.
+
+The separate two-phase counterflow route now stops earlier.  On the derived
+fixed-$Q_{\rm rel}$ fibre, $\delta\psi_0$ is precisely the
+$R_{\rm rel}$ radical, and
+$\ker(dQ_{\rm rel})/\operatorname{im}(L_{R_{\rm rel}})=0$.  Thus the
+relative-clock dimension and descended pairing rank are both zero.  A formal
+prequotient rank-two phase response and phase ratio $5/2$ are diagnostics
+only, not a physical detector or redshift result.  The next admissible step is
+a changed charge reduction or clock architecture, not more detector rows on
+this quotient.
 
 ## What would materially change the verdict
 

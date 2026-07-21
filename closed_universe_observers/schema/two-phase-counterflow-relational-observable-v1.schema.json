@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/two-phase-counterflow-relational-observable-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "first_failed_property", "fixed_charge_reduction", "candidate_apparatus_disposition", "relational_observable_disposition", "prequotient_diagnostic", "retarded_response_disposition", "relational_frequency_disposition", "gravitational_branch_response", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-two-phase-counterflow-relational-observable-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_RELATIONAL_OBSERVABLE_V1"},
+    "setting_id": {"const": "two_phase_counterflow_stationary_berger_a1_c2_9_over_40"},
+    "claim_status": {"const": "OBSTRUCTED_FIXED_CHARGE_QUOTIENT_REMOVES_RELATIVE_CLOCK_BEFORE_OBSERVER"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 5, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "first_failed_property": {
+      "type": "object", "additionalProperties": false,
+      "required": ["required", "actual", "status", "later_gates"],
+      "properties": {"required": {"type": "string"}, "actual": {"type": "string"}, "status": {"const": "OBSTRUCTED"}, "later_gates": {"const": "NOT_REACHED_AFTER_FIRST_EXACT_FAILURE"}}
+    },
+    "fixed_charge_reduction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["basis", "differential", "contracting_homotopy", "d_squared_zero", "dS_plus_Sd_identity", "cohomology_dimensions", "level_tangent_basis", "level_pairing", "radical_basis", "quotient_formula", "relative_clock_dimension", "pairing_rank", "positive_relative_clock_survives"],
+      "properties": {
+        "basis": {"type": "array", "minItems": 4}, "differential": {"type": "array"}, "contracting_homotopy": {"type": "array"},
+        "d_squared_zero": {"const": true}, "dS_plus_Sd_identity": {"const": true}, "cohomology_dimensions": {"const": [0, 0, 0]},
+        "level_tangent_basis": {"const": ["delta_psi_0"]}, "level_pairing": {"const": [["0"]]},
+        "radical_basis": {"const": ["delta_psi_0=L_R_rel background"]}, "quotient_formula": {"type": "string"},
+        "relative_clock_dimension": {"const": 0}, "pairing_rank": {"const": 0}, "positive_relative_clock_survives": {"const": false}
+      }
+    },
+    "candidate_apparatus_disposition": {"type": "object", "required": ["status", "rows_that_would_require_one_action_derived_extension", "reason"], "properties": {"status": {"const": "NOT_REACHED_AFTER_FIRST_EXACT_FAILURE"}, "rows_that_would_require_one_action_derived_extension": {"type": "array", "minItems": 5}, "reason": {"type": "string"}}},
+    "relational_observable_disposition": {"type": "object", "required": ["requested_definition", "BV_closure", "representative_independence", "diagonal_U1", "K_Berger", "raw_D", "pairing_descent"], "properties": {"requested_definition": {"type": "string"}, "BV_closure": {"const": "NO_CERTIFIED_MAP"}, "representative_independence": {"const": "NO_CERTIFIED_MAP"}, "diagonal_U1": {"type": "string"}, "K_Berger": {"type": "string"}, "raw_D": {"type": "string"}, "pairing_descent": {"type": "string"}}},
+    "prequotient_diagnostic": {"type": "object", "required": ["status", "matrix", "rank", "formal_ratio", "why_not_promoted"], "properties": {"status": {"const": "PREQUOTIENT_DIAGNOSTIC_NOT_A_PHYSICAL_OBSERVER_CLAIM"}, "matrix": {"const": [["1", "0"], ["0", "1"]]}, "rank": {"const": 2}, "relative_frequency_emit": {"type": "string"}, "relative_frequency_receive": {"type": "string"}, "formal_ratio": {"const": "5/2"}, "retarded_past_zero": {"const": true}, "advanced_contamination": {"const": false}, "why_not_promoted": {"type": "string"}}},
+    "retarded_response_disposition": {"type": "object", "required": ["status", "rank"], "properties": {"status": {"const": "NO_CERTIFIED_MAP"}, "emitter_preparation": {"const": "NOT_REACHED"}, "detector_profiles": {"const": "NOT_REACHED"}, "green_images": {"const": "NOT_REACHED"}, "boundary_dependencies": {"type": "string"}, "rank": {"type": "null"}}},
+    "relational_frequency_disposition": {"type": "object", "required": ["status", "reason", "one_plus_z_rel"], "properties": {"status": {"const": "NO_CERTIFIED_MAP"}, "reason": {"type": "string"}, "one_plus_z_rel": {"type": "null"}}},
+    "gravitational_branch_response": {"type": "object", "required": ["Einstein_branch", "additional_branch", "no_name_matching"], "properties": {"Einstein_branch": {"$ref": "#/$defs/branch"}, "additional_branch": {"$ref": "#/$defs/branch"}, "no_name_matching": {"const": true}}},
+    "mutation_results": {"type": "array", "minItems": 4},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["FIXED_CHARGE_RELATIVE_CLOCK_OBSTRUCTED", "PREQUOTIENT_PHASE_DIAGNOSTIC_COMPUTED", "PHYSICAL_RELATIVE_PHASE_OBSERVABLE_CERTIFIED", "ACTION_DERIVED_LINEAR_APPARATUS_CERTIFIED", "LINEAR_RETARDED_DETECTOR_RANK_CERTIFIED", "TRANSPORTED_RELATIONAL_REDSHIFT_CERTIFIED", "RAW_D_GAUGE_QUOTIENT_WITH_CLOCK_CERTIFIED", "EINSTEIN_BRANCH_DETECTOR_RANK_CERTIFIED", "ADDITIONAL_BRANCH_DETECTOR_RANK_CERTIFIED", "NONLINEAR_OBSERVER_RESPONSE_CERTIFIED", "RECOIL_OR_BACKREACTION_CERTIFIED", "PARTICLE_OR_PHENOMENOLOGY_CLAIM", "QUANTUM_CLAIM"],
+      "properties": {
+        "FIXED_CHARGE_RELATIVE_CLOCK_OBSTRUCTED": {"const": true}, "PREQUOTIENT_PHASE_DIAGNOSTIC_COMPUTED": {"const": true},
+        "PHYSICAL_RELATIVE_PHASE_OBSERVABLE_CERTIFIED": {"const": false}, "ACTION_DERIVED_LINEAR_APPARATUS_CERTIFIED": {"const": false},
+        "LINEAR_RETARDED_DETECTOR_RANK_CERTIFIED": {"const": false}, "TRANSPORTED_RELATIONAL_REDSHIFT_CERTIFIED": {"const": false},
+        "RAW_D_GAUGE_QUOTIENT_WITH_CLOCK_CERTIFIED": {"const": false}, "EINSTEIN_BRANCH_DETECTOR_RANK_CERTIFIED": {"const": false},
+        "ADDITIONAL_BRANCH_DETECTOR_RANK_CERTIFIED": {"const": false}, "NONLINEAR_OBSERVER_RESPONSE_CERTIFIED": {"const": false},
+        "RECOIL_OR_BACKREACTION_CERTIFIED": {"const": false}, "PARTICLE_OR_PHENOMENOLOGY_CLAIM": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string"}, "claim_boundary": {"type": "string"}, "provenance": {"type": "object"}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string"}, "result_id": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "branch": {"type": "object", "additionalProperties": false, "required": ["status", "rank", "first_missing_map"], "properties": {"status": {"const": "NO_CERTIFIED_MAP"}, "rank": {"type": "null"}, "first_missing_map": {"type": "string"}}}
+  }
+}
