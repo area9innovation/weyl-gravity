@@ -2343,6 +2343,27 @@ first-order receiver action ansatz without new fields.  Its activation gate
 is an explicit action-derived degree-reversing chain/cochain suspension
 bridge.  Mixed rows, physical descent and redshift remain not reached.
 
+## Active bridge: final regraded physical-descent nonactivation
+
+The charged-time ladder now consumes the terminal regraded integration
+result.  The fresh action chain and local BV cochain remain certified, but
+their degree-zero inclusion is obstructed and no quotient input exists.
+Therefore the local descent is not a physical receiver, and the operational
+frequency-ratio partial function has empty domain.
+
+The current Classical dispositions are recorded separately: fixed
+\(Q_{\rm rel}\) removes the relative clock and its phase pairing, the
+unrestricted charged clock has a size-two secular zero Jordan block, and the
+first generic \(j=1/2\) physical block has complex-frequency modes.  These
+secondary failures do not replace or weaken the earlier receiver inclusion
+obstruction.
+
+The fail-closed atlas row is
+`positive-berger-regraded-receiver-physical-descent-frequency-ratio-not-activated-fragment-v1`.
+No Paper 9 claim is activated.  A certified degree-reversing chain/cochain
+suspension bridge remains the first gate before any new integration or
+physical-descent attempt.
+
 ## Active bridge: combined-q1 linear-K obstruction
 
 The queue successor
