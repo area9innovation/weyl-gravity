@@ -86,6 +86,19 @@ complex is not a loop operator.  Thus the zero quotient proves only that a
 future consistent local breaking would be removable; it does not set its
 coefficients to zero or restore a QME.
 
+Cylinder finite-receiver obstruction (2026-07-21): the selected
+`W2+W3+W4` residual carrier cannot be the arbitrary-support time-slice target
+of the all-energy causal BV complex.  The source Einstein branch contains a
+two-chirality `E5` cohomology block of dimension 64, while the selected target
+has no weight-five block.  `D`-equivariance therefore forces the induced map
+to vanish there, giving a minimum unary SDR defect rank 64 before `q2` or any
+anomaly representative is evaluated.  The cylinder causal theorem and the
+finite selected residual calculation remain intact, but the arbitrary-support
+anomaly images and raw-`D` Cartan defect are `NO_CERTIFIED_MAP`.  The smallest
+repair is an all-energy rapid-decay Frechet/Sobolev time-slice completion with
+both chiralities and conjugate Cauchy data, followed by continuity of harmonic
+convolution; no finite-receiver patch is queued as though it were sufficient.
+
 Quantum coefficient update (2026-07-19): the equal-box physical
 triangle/bubble carrier has a largest-barycentric/half-interval common Mellin
 minimal subtraction with exact `log(mu^2)` scale coefficient `15707/216`
@@ -3757,3 +3770,20 @@ adding assumptions until a preferred answer appears.  A sector restriction is
 part of the physical definition of a result.  The job of each next rail is to
 show whether that sector is dynamically selected, operationally observable,
 or too narrow to describe the intended universe.
+
+## Bridge lifecycle update: cylinder full-BV anomaly receiver
+
+The arbitrary-support cylinder chain-map bridge is `OBSTRUCTED` for the
+selected finite derived receiver.  The complete 386-row causal contraction to
+the all-energy 30-row minimal endpoint remains certified; the subsequent
+`SO(4,2)`-equivariant SDR to weights `2,3,4` fails already at unary order.
+The two-chirality `E_5` cohomology block has dimension 64, whereas the target
+weight-five block is zero.  Thus the scoped arity-two transfer and all three
+anomaly images remain undefined.
+
+The activation gate for a successor is an all-energy rapid-decay time-slice
+carrier containing every `E_n`, `A_n`, and `L_n` branch with the same fifteen
+CE/BFV generators.  It must carry portable `q1`, `pi_cl`, `iota_cl`, and
+`s_cl`; after that, the action-defined six-role `q2` can be serialized and
+tested.  No finite-window repair or name-based mode identification is
+admissible.

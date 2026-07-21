@@ -54,11 +54,9 @@ action is exactly equivalent to the previously certified positive Berger
 clock system plus a contractible gauge summand. This gives a complete real
 cyclic 70-component BV parent with support-local advanced and retarded chain
 homotopies. It is the first compensator-successor model to pass the complete
-classical causal-parent gate. The subsequent fixed-charge reduction is now
-known to remove the complete relative-clock Darboux pair: the phase tangent is
-the relative-rotation radical, so its physical quotient is zero.  The causal
-parent survives, but the proposed physical relative-clock observer does not.
-Interactions and quantization remain unaudited. An exact homogeneous stationary classification has also shown that
+classical causal-parent gate. Its full fixed-charge physical cohomology,
+reduced inertia, interactions, observables and quantization are still being
+audited. An exact homogeneous stationary classification has also shown that
 the passing fixed-action point is isolated rather than an open phase, and that
 the same action has no stationary path to the round cylinder. The homogeneous
 trace block is positive and oscillatory there; this does not replace the full
@@ -158,6 +156,14 @@ qualification is essential: $D$ is charged on the unrestricted compact
 phase space and becomes gauge only on the Taub-zero derived sector. A Taub
 obstruction is a second-order global integrability obstruction; its moment-map
 form is a quadratic charge-balance condition.
+
+The finite residual mode window is not an arbitrary-support replacement for
+the all-energy causal theory. An exact weight-five test finds 64 Einstein
+cohomology directions in the source and none in the selected target, so a
+$D$-equivariant unary deformation retract to that finite receiver cannot
+exist. This leaves the finite residual theorem intact, but blocks the proposed
+arbitrary-support transfer of the nonlinear operation and anomaly classes
+until an all-energy completed time-slice carrier is constructed.
 
 The causal-transfer theorem also has Berger, flat-Minkowski, and curved
 Nariai consumers. On Nariai the complete repaired system retracts to the
@@ -331,9 +337,8 @@ the covariant causal complex; a healthy clock can coexist with total
 zero-charge $D$ at linear fixed coupling; the compact additional axial
 space is nonradical; exact nonlinear balance and resonance obstructions exist;
 and the strict/extended quantum alternatives are computationally separated.
-The two-phase counterflow construction supplies one changed-theory causal
-parent, but its derived fixed-charge quotient removes the relative clock and
-blocks the planned observer architecture.
+The two-phase counterflow construction now supplies one changed-theory causal
+parent worth consuming before another classical architecture is introduced.
 
 ## Authoritative result ledger
 
@@ -342,7 +347,7 @@ milestones are excluded.
 
 | Scientific question | Current result | Lifecycle | Principal limitation / route |
 |---|---|---|---|
-| Free causal complex and residual cohomology | Complete cylinder causal complex; selected zero-charge residual vacuum and one-particle cohomology acyclic; $H^4\cong\mathbb C^2$ contains deformation classes | **Certified** | Closed free sector, not particles; [Papers 7--8](07-08-conformal-residual-cohomology-computational-supplement.pdf) |
+| Free causal complex and residual cohomology | Complete cylinder causal complex; selected zero-charge residual vacuum and one-particle cohomology acyclic; $H^4\cong\mathbb C^2$ contains deformation classes | **Certified on their distinct carriers** | The finite residual receiver is not an arbitrary-support all-energy retract; the latter has a rank-64 unary obstruction and requires completion; [Papers 7--8](07-08-conformal-residual-cohomology-computational-supplement.pdf) |
 | Is $D$ gauge? | Charged on the unrestricted compact phase space; gauge on the Taub-zero derived sector | **Certified, sector-dependent** | Must be recomputed with boundaries and matter; [status ledger](../d_quotient_programme/reports/consolidated-status.md) |
 | Clocks and redshift | Healthy original Berger clock and retarded Maxwell redshift fixture; the old apparatus repair is obstructed; the two-phase theory has a causal parent, but its fixed-charge quotient removes the relative clock | **Original observable certified / changed fixed-charge clock obstructed** | The unrestricted charged-$D$ branch and a new action-derived observable remain open; [Paper 9](09-relational-clocks-berger-d-cartan.pdf) |
 | Einstein image and additional branches | Linear inclusion, axial additional nonradical block, and polar primary decomposition certified | **Certified classically** | Polar current, residual descent, causal boundaries, and quantization open; [Paper 92](92-extra-axial-lee-wald-bridge.pdf) |
@@ -408,16 +413,6 @@ gauge-invariant clock-slice redshift observable. A potentially distinctive
 element is nontrivial relational evolution with total presymplectic
 degeneracy. The next gate is one localized, backreacting emitter--receiver
 experiment with recoil and an apparatus bracket.
-
-The separate two-phase counterflow route now stops earlier.  On the derived
-fixed-$Q_{\rm rel}$ fibre, $\delta\psi_0$ is precisely the
-$R_{\rm rel}$ radical, and
-$\ker(dQ_{\rm rel})/\operatorname{im}(L_{R_{\rm rel}})=0$.  Thus the
-relative-clock dimension and descended pairing rank are both zero.  A formal
-prequotient rank-two phase response and phase ratio $5/2$ are diagnostics
-only, not a physical detector or redshift result.  The next admissible step is
-a changed charge reduction or clock architecture, not more detector rows on
-this quotient.
 
 ## What would materially change the verdict
 
