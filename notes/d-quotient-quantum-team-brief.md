@@ -2563,3 +2563,41 @@ state or particle data.
 
 - [`SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION.json`](../quantum-weyl/spectral/euclidean/certificates/SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION.json)
 - [`scalar-flat-berger-schur-surrogate-obstruction.md`](../quantum-weyl/reports/scalar-flat-berger-schur-surrogate-obstruction.md)
+
+## True Berger vector-Schur low blocks (2026-07-21)
+
+The corrected coupled construction now supplies all nine exact blocks with
+(2j\le2) and (|n|\le1).  The convention-explicit operator is
+
+\[
+F=\nabla^*\nabla+\operatorname{Ric},\qquad
+A(t)=F-2t\operatorname{Ric},\qquad
+S_L(t)=\frac23+\frac13\delta A(t)^{-1}d.
+\]
+
+The generated oracle stores (d), (delta), (Delta_0), (F), (W),
+(A(t)), (S_L(t)), determinant factors and exact orthogonal kernel
+projectors for every block.  It verifies
+
+\[
+Fd=d\Delta_0
+\]
+
+and self-adjointness in all nine cases.  Independent Pauli and spin-one
+matrices replay the (j=1/2) and (j=1) blocks, including the
+(-64/81) normalized-Schur derivative.
+
+The physical (A(1)) kernel has dimension five after left multiplicities:
+the five Killing one-forms.  Every such zero is coclosed, so it is removed by
+vector priming and is not paired with a Schur pole.  Away from (t=1), all
+stored Schur denominator loci cancel exactly against the corresponding
+vector determinant factors.  In particular, the (j=1/2,n=0) block has an
+exact crossing inside (0<t<1); the coupled factor remains finite.
+
+This `LOCAL-ALGEBRAIC`/`EUCLIDEAN-SPECTRAL` oracle is a low-mode holdout, not
+an all-representation theorem. Uniform high-mode coercivity, global
+(\det_3)/weighted traces, five finite functions, (Gamma_1), (Q_1), QME,
+Lorentzian, Hadamard, state and particle results remain open.
+
+- [`SCALAR_FLAT_BERGER_VECTOR_SCHUR_LOW_BLOCKS.json`](../quantum-weyl/spectral/euclidean/certificates/SCALAR_FLAT_BERGER_VECTOR_SCHUR_LOW_BLOCKS.json)
+- [`scalar-flat-berger-vector-schur-low-blocks.md`](../quantum-weyl/reports/scalar-flat-berger-vector-schur-low-blocks.md)

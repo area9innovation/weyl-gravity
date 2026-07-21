@@ -1,0 +1,124 @@
+{
+  "$schema": "../schema/scalar-flat-berger-vector-schur-low-blocks-v1.schema.json",
+  "claim_boundary": "This LOCAL-ALGEBRAIC/EUCLIDEAN-SPECTRAL certificate supplies the correctly normalized exact vector and longitudinal Schur blocks for 2j<=2 and |n|<=1 on the selected scalar-flat Berger product. It fixes the frame, coframe, Haar measure, adjoint, connection, F/W convention and primed projectors; verifies Fd=dDelta_0 and self-adjointness; records every rational/algebraic t denominator; proves the low-block matched zero-pole cancellations; and independently exposes the five-dimensional A(1) Killing kernel as coclosed. It does not extrapolate to all representations, prove a uniform high-mode estimate, compute an infinite determinant or weighted trace, evaluate five finite functions, supply Gamma1/Q1 or a QME, or establish Lorentzian, Hadamard, state, particle, positivity, scattering or unitarity claims.",
+  "claim_flags": {
+    "ALL_REPRESENTATION_BLOCKS_COMPUTED": false,
+    "FIVE_BACKGROUND_SPECIFIC_FUNCTIONS_COMPUTED": false,
+    "GLOBAL_DET3_OR_WEIGHTED_TRACES_COMPUTED": false,
+    "HODGE_WARD_AND_SELF_ADJOINTNESS_VERIFIED": true,
+    "LOW_MODE_PRIMING_AND_ZERO_POLE_POLICY_COMPUTED": true,
+    "LOW_VECTOR_SCHUR_BLOCKS_COMPUTED": true,
+    "QME_OR_LORENTZIAN_PROMOTED": false,
+    "UNIFORM_HIGH_MODE_ESTIMATE_COMPUTED": false
+  },
+  "dependencies": {
+    "normalized_Schur_operator": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION.json",
+      "result_id": "GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION",
+      "sha256": "b40ec3a8bd3a21d8e0ece7c98f98e1776e8c47d557b8c8b5427e422b60c65a78"
+    },
+    "surrogate_obstruction": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION.json",
+      "result_id": "SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION",
+      "sha256": "687aa26ec62e34dfa9adde53f4d1793741a97b9829c7dee55b71f11f6d54f2d5"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "exceptional_denominator_loci": [
+    {
+      "block_id": "n=-1;twice_j=1",
+      "denominator": "25*(2048*t**2 - 736*t - 2425)",
+      "paired_relative_factor": "(32*t + 25)**2*(45056*t**2 - 12192*t - 60625)**2/2297119140625",
+      "roots": [
+        "-(-23 + sqrt(19929))/128",
+        "(23 + sqrt(19929))/128"
+      ]
+    },
+    {
+      "block_id": "n=0;twice_j=1",
+      "denominator": "3*(2048*t**2 - 1248*t - 729)",
+      "paired_relative_factor": "(32*t + 9)**2*(4096*t**2 - 2016*t - 2187)**2/387420489",
+      "roots": [
+        "-3*(-13 + sqrt(817))/128",
+        "3*(13 + sqrt(817))/128"
+      ]
+    },
+    {
+      "block_id": "n=1;twice_j=1",
+      "denominator": "25*(2048*t**2 - 736*t - 2425)",
+      "paired_relative_factor": "(32*t + 25)**2*(45056*t**2 - 12192*t - 60625)**2/2297119140625",
+      "roots": [
+        "-(-23 + sqrt(19929))/128",
+        "(23 + sqrt(19929))/128"
+      ]
+    },
+    {
+      "block_id": "n=-1;twice_j=2",
+      "denominator": "27*(2*t + 3)*(128*t**2 + 8*t - 261)",
+      "paired_relative_factor": "-(t + 1)**2*(14*t + 27)*(8*t**2 - 2*t - 13)*(2816*t**2 + 680*t - 7047)**2/17430733359",
+      "roots": [
+        "-3/2",
+        "(-1 + sqrt(2089))/32",
+        "-(1 + sqrt(2089))/32"
+      ]
+    },
+    {
+      "block_id": "n=0;twice_j=2",
+      "denominator": "3*(t + 1)*(128*t**2 - 24*t - 125)",
+      "paired_relative_factor": "-(t - 1)*(2*t + 1)**3*(2*t + 3)*(256*t**2 + 8*t - 375)**2/421875",
+      "roots": [
+        "-1",
+        "-(-3 + sqrt(1009))/32",
+        "(3 + sqrt(1009))/32"
+      ]
+    },
+    {
+      "block_id": "n=1;twice_j=2",
+      "denominator": "27*(2*t + 3)*(128*t**2 + 8*t - 261)",
+      "paired_relative_factor": "-(t + 1)**2*(14*t + 27)*(8*t**2 - 2*t - 13)*(2816*t**2 + 680*t - 7047)**2/17430733359",
+      "roots": [
+        "-3/2",
+        "(-1 + sqrt(2089))/32",
+        "-(1 + sqrt(2089))/32"
+      ]
+    }
+  ],
+  "input_commit": "0200fc87b",
+  "lifecycle_state": "EXACT_LOW_MODE_ORACLE_HIGH_MODE_AND_GLOBAL_SUM_OPEN",
+  "matched_zero_pole_statement": "Every stored Schur denominator divides det A(t) with sufficient multiplicity and cancels exactly in the stored paired relative factor. The A(1) Killing zeros are instead coclosed and require vector priming without a Schur pole.",
+  "next_gate": "PROVE_ALL_J_N_BLOCK_FORMULA_AND_UNIFORM_HIGH_MODE_COERCIVITY_WITH_THE_LOW_MODE_ORACLE_AS_HOLDOUT",
+  "normalization_crosswalk": {
+    "Schur": "S_L(t)=(2/3)I+(1/3)delta A(t)^(-1)d",
+    "adjoint": "T_a^dagger=-T_a; delta=d^dagger",
+    "basis": "component-major orthonormal one-form basis theta^a tensor |j,m>; m descends from j to -j",
+    "measure": "normalized product Haar measure with positive dtheta wedge sigma1 wedge sigma2 wedge 2sigma3 orientation",
+    "operators": "F=nabla^*nabla+Ric, W=-2Ric, A(t)=F+tW",
+    "rough_laplacian": "nabla^*nabla=-sum_a nabla_a^2",
+    "scalar_generators": "T_theta=i n, T_1=-iJ_1, T_2=-iJ_2, T_3=-(i/2)J_3"
+  },
+  "operator_checks": {
+    "Hodge_Ward_identity": "F d=d Delta_0 in all nine exact blocks",
+    "scalar_surrogate_derivative_rejected": "diag(4/9,4/9)",
+    "self_adjointness": "F=F^dagger and A(t)=A(t)^dagger for real t in all blocks",
+    "spin_half_first_derivative": "diag(-64/81,-64/81) at n=0"
+  },
+  "oracle": {
+    "block_count": 9,
+    "path": "quantum-weyl/spectral/euclidean/generated/scalar_flat_berger_vector_schur_low_blocks_v1/blocks.json",
+    "sha256": "2c81c166ae2c16ed4c97244b26bd134e24381779f2a6e7921a2daca4f29021b3"
+  },
+  "priming": {
+    "A_at_one_zero_dimension_with_left_multiplicity": 5,
+    "A_at_one_zero_interpretation": "five Killing one-forms: two in n=0,j=0 and three from the one-dimensional kernel in n=0,j=1 with left multiplicity three",
+    "F_zero": "the n=0,j=0 dtheta one-form is the sole F harmonic mode in the oracle",
+    "common_fixed_domain": "for comparisons through t=1, remove the orthogonal union of the stored F and A(1) kernel projectors; retain separately listed finite zero-mode measure factors",
+    "coupling": "every A(1) zero in the oracle is coclosed and orthogonal to im(d), so no Schur pole is paired with these physical-t zeros",
+    "scalar_zero": "remove the n=0,j=0 constant before Delta_0^-1"
+  },
+  "result_id": "SCALAR_FLAT_BERGER_VECTOR_SCHUR_LOW_BLOCKS",
+  "result_state": "TRUE_NORMALIZED_VECTOR_SCHUR_BLOCKS_COMPUTED_FOR_TWICE_J_LE_2_AND_ABS_N_LE_1",
+  "schema": "quantum-weyl-scalar-flat-berger-vector-schur-low-blocks-v1"
+}

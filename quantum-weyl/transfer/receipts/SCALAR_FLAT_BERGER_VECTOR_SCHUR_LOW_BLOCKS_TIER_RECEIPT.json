@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "SCALAR_FLAT_BERGER_VECTOR_SCHUR_LOW_BLOCKS_TIER_RECEIPT",
+  "claim_id": "SCALAR_FLAT_BERGER_VECTOR_SCHUR_LOW_BLOCKS",
+  "date": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+  "artifacts": [
+    {"path": "quantum-weyl/spectral/euclidean/scalar_flat_berger_vector_schur_low_blocks.py", "sha256": "8602b64fc0b40c5e96be4a98b598523abe29dac9307dd5a63a111b087702e056"},
+    {"path": "quantum-weyl/spectral/euclidean/verify_scalar_flat_berger_vector_schur_low_blocks.py", "sha256": "d3008cd24333360daa1cfe4c625680b78cb6e088c0742a12f73a518e445e3bc7"},
+    {"path": "quantum-weyl/spectral/euclidean/tests/test_scalar_flat_berger_vector_schur_low_blocks.py", "sha256": "f969f2ce4e6bdfad4724bff7e5559820b9178483b194a1b8ca84b39a017bb380"},
+    {"path": "quantum-weyl/spectral/euclidean/schema/scalar-flat-berger-vector-schur-low-block-oracle-v1.schema.json", "sha256": "c3ae0fcfb000eca70002a3e79827f7c40bbdd1e0d1db0bae284ccf9e48f829a3"},
+    {"path": "quantum-weyl/spectral/euclidean/schema/scalar-flat-berger-vector-schur-low-blocks-v1.schema.json", "sha256": "271c4341d41c526f25d7bfb5d88bb9b9769b2d36c6a58e6b408122c9260a142d"},
+    {"path": "quantum-weyl/spectral/euclidean/generated/scalar_flat_berger_vector_schur_low_blocks_v1/blocks.json", "sha256": "2c81c166ae2c16ed4c97244b26bd134e24381779f2a6e7921a2daca4f29021b3"},
+    {"path": "quantum-weyl/spectral/euclidean/certificates/SCALAR_FLAT_BERGER_VECTOR_SCHUR_LOW_BLOCKS.json", "sha256": "58d8646e3aedc1a897a8e6d05d6128f0e0eb4f885225443b9133f1c1968914f0"},
+    {"path": "quantum-weyl/reports/scalar-flat-berger-vector-schur-low-blocks.md", "sha256": "585d71b01a19e3c72df7c8244cde038c0dafb0dadedcdb1f18bedd154dde3522"}
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m py_compile <producer, independent verifier, tests>", "status": "PASS"},
+      {"command": "python3 -m json.tool <schemas, oracle, certificate, receipt>", "status": "PASS"},
+      {"command": "git diff --check -- <explicit low-block paths>", "status": "PASS"}
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 quantum-weyl/spectral/euclidean/scalar_flat_berger_vector_schur_low_blocks.py --check", "status": "PASS", "elapsed_seconds": 11.29},
+      {"command": "python3 quantum-weyl/spectral/euclidean/verify_scalar_flat_berger_vector_schur_low_blocks.py", "status": "PASS", "elapsed_seconds": 13.31, "independent_rail": "explicit Pauli and separately written spin-one matrices plus hard-coded covector connection; reconstructs all j=1/2 and j=1 blocks without importing producer code"},
+      {"command": "python3 -m unittest quantum-weyl/spectral/euclidean/tests/test_scalar_flat_berger_vector_schur_low_blocks.py -v", "status": "PASS", "elapsed_seconds": 14.28, "tests": 6, "mutation_controls": "block entries, Ward identity, Killing kernel, high-mode and QME/Lorentzian promotions are rejected"}
+    ]
+  },
+  "tier_2": {
+    "status": "NOT_RUN",
+    "reason": "This is a new finite low-mode oracle and does not change the frozen generic Schur operator or promote a global spectral receiver."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "No freeze, release, tag or shared-core-algebra change occurred."
+  },
+  "claim_boundary": "This receipt certifies the exact true vector and normalized Schur blocks for 2j<=2 and |n|<=1, their Hodge Ward identities, self-adjointness, primed projectors and low-block zero-pole cancellations. It does not certify all representations, a uniform high-mode estimate, complete resolvent, global det3 or weighted trace, five finite functions, Gamma1/Q1, QME, Lorentzian, Hadamard, state, particle, positivity, scattering or unitarity claims.",
+  "higher_tiers_not_run": [
+    {"tier": 2, "criterion": "No shared input or promoted global receiver changed."},
+    {"tier": 3, "criterion": "No lifecycle freeze, release, tag or explicit full-suite request."}
+  ]
+}

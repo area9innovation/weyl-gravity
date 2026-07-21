@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "scalar-flat-berger-vector-schur-low-block-oracle-v1.schema.json",
+  "title": "Scalar-flat Berger vector Schur low-block oracle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "background",
+    "normalization",
+    "connection",
+    "range",
+    "blocks",
+    "priming",
+    "claim_boundary"
+  ],
+  "properties": {
+    "$schema": {"const": "../../schema/scalar-flat-berger-vector-schur-low-block-oracle-v1.schema.json"},
+    "schema": {"const": "quantum-weyl-scalar-flat-berger-vector-schur-low-block-oracle-v1"},
+    "result_id": {"const": "SCALAR_FLAT_BERGER_VECTOR_SCHUR_LOW_BLOCK_ORACLE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "background": {"type": "object", "required": ["manifold", "metric", "orthonormal_coframe", "Ricci", "W_equals_minus_2_Ricci"]},
+    "normalization": {"type": "object", "required": ["basis", "measure", "scalar_generators", "adjoint", "rough_laplacian", "operators", "Schur"]},
+    "connection": {"type": "object", "required": ["frame_order", "nonzero_brackets", "covector_connection_matrices", "diagonal_acceleration"]},
+    "range": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["twice_j", "n", "block_count"],
+      "properties": {
+        "twice_j": {"const": [0, 1, 2]},
+        "n": {"const": [-1, 0, 1]},
+        "block_count": {"const": 9}
+      }
+    },
+    "blocks": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {
+        "type": "object",
+        "required": [
+          "block_id", "n", "twice_j", "weights_m", "left_multiplicity",
+          "scalar_dimension", "one_form_dimension", "scalar_primed_in_block",
+          "derivative_matrices", "d_matrix", "delta_matrix", "Delta_0_matrix",
+          "F_matrix", "W_matrix", "A_t_matrix", "Hodge_Ward_residual",
+          "det_A_t", "S_L_t_matrix", "det_S_L_t", "paired_relative_factor",
+          "Schur_denominators", "S_L_first_derivative_at_zero", "F_kernel",
+          "A_at_one_kernel", "A_at_one_kernel_is_coclosed"
+        ]
+      }
+    },
+    "priming": {"type": "object", "required": ["scalar_zero", "F_zero", "A_at_one_zero_dimension_with_left_multiplicity", "A_at_one_zero_interpretation", "coupling", "common_fixed_domain"]},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

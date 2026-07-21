@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "scalar-flat-berger-vector-schur-low-blocks-v1.schema.json",
+  "title": "Scalar-flat Berger vector Schur low blocks",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema", "schema", "result_id", "result_state", "lifecycle_state",
+    "dependency_tags", "input_commit", "oracle", "normalization_crosswalk",
+    "operator_checks", "priming", "exceptional_denominator_loci",
+    "matched_zero_pole_statement", "claim_flags", "dependencies", "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "$schema": {"const": "../schema/scalar-flat-berger-vector-schur-low-blocks-v1.schema.json"},
+    "schema": {"const": "quantum-weyl-scalar-flat-berger-vector-schur-low-blocks-v1"},
+    "result_id": {"const": "SCALAR_FLAT_BERGER_VECTOR_SCHUR_LOW_BLOCKS"},
+    "result_state": {"const": "TRUE_NORMALIZED_VECTOR_SCHUR_BLOCKS_COMPUTED_FOR_TWICE_J_LE_2_AND_ABS_N_LE_1"},
+    "lifecycle_state": {"const": "EXACT_LOW_MODE_ORACLE_HIGH_MODE_AND_GLOBAL_SUM_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "input_commit": {"const": "0200fc87b"},
+    "oracle": {"type": "object", "required": ["path", "sha256", "block_count"]},
+    "normalization_crosswalk": {"type": "object"},
+    "operator_checks": {"type": "object"},
+    "priming": {"type": "object"},
+    "exceptional_denominator_loci": {"type": "array"},
+    "matched_zero_pole_statement": {"type": "string", "minLength": 1},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "LOW_VECTOR_SCHUR_BLOCKS_COMPUTED",
+        "HODGE_WARD_AND_SELF_ADJOINTNESS_VERIFIED",
+        "LOW_MODE_PRIMING_AND_ZERO_POLE_POLICY_COMPUTED",
+        "ALL_REPRESENTATION_BLOCKS_COMPUTED",
+        "UNIFORM_HIGH_MODE_ESTIMATE_COMPUTED",
+        "GLOBAL_DET3_OR_WEIGHTED_TRACES_COMPUTED",
+        "FIVE_BACKGROUND_SPECIFIC_FUNCTIONS_COMPUTED",
+        "QME_OR_LORENTZIAN_PROMOTED"
+      ],
+      "properties": {
+        "LOW_VECTOR_SCHUR_BLOCKS_COMPUTED": {"const": true},
+        "HODGE_WARD_AND_SELF_ADJOINTNESS_VERIFIED": {"const": true},
+        "LOW_MODE_PRIMING_AND_ZERO_POLE_POLICY_COMPUTED": {"const": true},
+        "ALL_REPRESENTATION_BLOCKS_COMPUTED": {"const": false},
+        "UNIFORM_HIGH_MODE_ESTIMATE_COMPUTED": {"const": false},
+        "GLOBAL_DET3_OR_WEIGHTED_TRACES_COMPUTED": {"const": false},
+        "FIVE_BACKGROUND_SPECIFIC_FUNCTIONS_COMPUTED": {"const": false},
+        "QME_OR_LORENTZIAN_PROMOTED": {"const": false}
+      }
+    },
+    "dependencies": {"type": "object", "required": ["surrogate_obstruction", "normalized_Schur_operator"]},
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}
