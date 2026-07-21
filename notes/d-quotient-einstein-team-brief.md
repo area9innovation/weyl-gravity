@@ -4594,7 +4594,7 @@ quotient, support-local physical projection and causal Green descent.  Here
 stabilizer representation; it is not invariant-state cohomology and not a
 particle space.
 
-## Active changed-action bridge to Quantum
+## Completed changed-action bridge to Quantum
 
 The active Science Forge work item is
 `bridge-action-basis-hessian-response-for-relative-quantum`.  Its activation
@@ -4632,6 +4632,32 @@ causal, observational and quantum descriptions, and `NOT_APPLICABLE` to the
 second-order tangent-cone correction classes.  It does not identify modes
 across backgrounds and does not rule out six-derivative, nonlocal or
 new-auxiliary actions.
+
+## Active strict-anomaly restriction bridge
+
+The active Science Forge bridge
+`bridge-local-anomaly-zero-charge-sector-chain-maps` terminates at a split
+carrier obstruction rather than a common restriction map.
+
+On the positive Berger clock fixture, strict pure-Weyl gravity and the
+matter-coupled target are not the same background BV theory.  The exact
+metric-antifield chain defect is
+
+```text
+alpha_B B_00 = 961/1920.
+```
+
+Thus no unit-preserving identity-jet full-BV map exists in the declared
+class.  On the conformal cylinder the background expansion is not obstructed
+by this argument, but the all-fifteen-charge Taub-zero sector is a derived
+quadratic fibre.  Its faithful target requires fifteen Koszul/BFV generators
+and the still-missing bulk-to-time-slice transgression; deleting charged unary
+modes is not an admissible substitute.
+
+The two fail-closed atlas rows are generated in
+`residual_atlas/strict-anomaly-sector-restriction-obstruction-fragment-v1.json`.
+Berger is `OBSTRUCTED`; the cylinder is `NO_CERTIFIED_MAP`.  All six anomaly
+images and both raw-\(D\)/\(K_{\rm Berger}\) Cartan defects remain undefined.
 
 Deliver one human-readable report and machine-readable certificates containing:
 

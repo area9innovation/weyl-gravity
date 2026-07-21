@@ -1,0 +1,195 @@
+{
+  "claim_flags": {
+    "ANY_CARTAN_DEFECT_COMPUTED": false,
+    "ANY_CLASS_IMAGE_ZERO_OR_EXACT": false,
+    "BERGER_FULL_BV_IDENTITY_JET_MAP_OBSTRUCTED": true,
+    "BERGER_RESTRICTED_ANOMALY_FREE": false,
+    "CYLINDER_DERIVED_BFV_KOSZUL_CARRIER_CERTIFIED": false,
+    "CYLINDER_RESTRICTED_ANOMALY_FREE": false,
+    "LORENTZIAN_CLAIM": false,
+    "QME_RESTORED": false
+  },
+  "declared_map_class": {
+    "background_rule": "unit-preserving Taylor jet substitution, identity on the metric and Diff x Weyl ghost jets, zero fluctuation sent to the declared background",
+    "filtration": "antifield-number preserving at leading order",
+    "receiver": "quantum-weyl-strict-anomaly-sector-restriction-map-v1",
+    "receiver_payload_produced": false,
+    "source": "strict pure-Weyl full local Diff x Weyl BV jet complex, including fields, ghosts and antifields"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "anomaly freedom or anomaly nontriviality on either restricted sector",
+    "nonexistence of an enlarged cylinder derived BV-BFV/Koszul construction",
+    "the local anomaly cohomology of the matter-coupled Berger theory",
+    "a compensator verdict",
+    "a Lorentzian QME, Hadamard state, positivity, particles, scattering or unitarity"
+  ],
+  "input_pins": {
+    "berger_background": {
+      "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687",
+      "source_commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db"
+    },
+    "berger_contraction": {
+      "path": "d_quotient_classical/certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json",
+      "sha256": "f69d8664fb139860fb3bcb89bdf82ee1659e158f6f925535b17e2de364060db4",
+      "source_commit": "9278ba7dffa2e8d85292c2a8cc25b03f0ca47847"
+    },
+    "berger_fixed_coupling_charge": {
+      "path": "d_quotient_classical/certificates/BERGER_FIXED_COUPLING_DELTA_CHARGE.json",
+      "sha256": "0ae894432b065f9f4ba116e6e2d42e69d1d60cd37dbf6ef21a14d7073c75b786",
+      "source_commit": "cc5df8d547f7d2119282590a824ce92cd1d76d17"
+    },
+    "berger_k_cartan": {
+      "path": "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json",
+      "sha256": "104ff269ddf10ed80ff796c090a2de90a40c62adb0194954e4509b200304184e",
+      "source_commit": "b167d2bfaee02a541642fbdb360888eca31b6bf9"
+    },
+    "cylinder_charge_audit": {
+      "path": "d_quotient_classical/certificates/compact_cylinder_d_charge_audit.json",
+      "sha256": "6e609dd850049fb7b85867033dbdce0b2b214f2d5196665015f8e2b552d493e4",
+      "source_commit": "4a2e94986b849bfc1b9efca5c9fae825289eb55a"
+    },
+    "cylinder_minimal_bv_chain": {
+      "path": "field_bv_identification/certificates/minimal_bv_chain.json",
+      "sha256": "3f9d04dd729c911fbe07768158d96ae411634b7a91bf70a139e8c7cf1dcd8c64",
+      "source_commit": "9732ec1be74afd674bc50d8c1dfb37cfb1ed5dce"
+    },
+    "cylinder_taub_map": {
+      "path": "field_bv_identification/zero_modes/certificates/taub_obstruction_map.json",
+      "sha256": "72ac747c0b15c85c75f7a86d983960f305e486c96ab594c056f9b3377cfbf540",
+      "source_commit": "9732ec1be74afd674bc50d8c1dfb37cfb1ed5dce"
+    },
+    "local_anomaly_audit": {
+      "path": "quantum-weyl/local_bv/certificates/LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT.json",
+      "sha256": "07bf332cf1bece92f8a041002f3c787fe7e85e798871e4878fbbc3cd7b20bd3b",
+      "source_commit": "c6d1c0bad4d7e609fccb8dc5581fab107a819d33"
+    },
+    "receiver_schema": {
+      "path": "quantum-weyl/transfer/schema/strict-anomaly-sector-restriction-map-v1.schema.json",
+      "sha256": "02204ce211813e5491b60d44d8159141b011fd15da974c857a7d4c1bd90cb427",
+      "source_commit": "29140f5c6717fe98e84d2e06b783753fff8de523"
+    },
+    "terminal_nondefinition": {
+      "path": "quantum-weyl/transfer/certificates/STRICT_ANOMALY_ZERO_CHARGE_RESTRICTION_NONDEFINITION.json",
+      "sha256": "d3eb2d00f6b91c2204c9d68418d4280e6da706671d630e4df50926e6b42ee30b",
+      "source_commit": "29140f5c6717fe98e84d2e06b783753fff8de523"
+    }
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "Do not rerun the six pullbacks on the old receiver. Build the cylinder derived BFV/Koszul time-slice carrier; treat Berger only after changing the source to its actual matter-coupled BV theory or proving an explicit BV action morphism.",
+  "receiver_contract_verdict": {
+    "K_Berger_Cartan_defect_computed": false,
+    "background_evaluation_used_as_pullback": false,
+    "berger_receiver_valid_payload_possible_in_declared_map_class": false,
+    "cylinder_receiver_valid_payload_possible_from_pinned_inputs": false,
+    "raw_D_cylinder_Cartan_defect_computed": false,
+    "raw_D_substituted_for_K_Berger": false,
+    "six_pullbacks_computed": false
+  },
+  "repair_gates": [
+    {
+      "need": "construct the 15-generator derived Koszul/BFV carrier, bulk-to-time-slice transgression, and residual projection before restricting anomaly descent classes",
+      "sector_id": "cylinder_Taub_zero"
+    },
+    {
+      "need": "compute the local anomaly cohomology of the actual gravity-clock(-Maxwell) BV theory, or provide a proved action/BV morphism that cancels the displayed antifield defect",
+      "sector_id": "Berger_fixed_coupling"
+    }
+  ],
+  "result_id": "STRICT_ANOMALY_SECTOR_RESTRICTION_CHAIN_MAP_OBSTRUCTION_V1",
+  "result_state": "SPLIT_OBSTRUCTION_BERGER_HARD_CYLINDER_DERIVED_CARRIER_MISSING",
+  "schema": "pure-weyl-strict-anomaly-sector-restriction-chain-map-obstruction-v1",
+  "sector_dispositions": [
+    {
+      "Cartan_defect": "UNDEFINED_CARRIER_OBSTRUCTION",
+      "Cartan_generator": "raw_D",
+      "background_jet_map": "NOT_OBSTRUCTED_HERE",
+      "charge_sector_inclusion": "NO_CERTIFIED_MAP",
+      "class_images": [
+        {
+          "class_id": "ANOM_OMEGA_C2",
+          "exact_claimed": false,
+          "nontrivial_claimed": false,
+          "status": "UNDEFINED_CARRIER_OBSTRUCTION",
+          "zero_claimed": false
+        },
+        {
+          "class_id": "ANOM_OMEGA_E4",
+          "exact_claimed": false,
+          "nontrivial_claimed": false,
+          "status": "UNDEFINED_CARRIER_OBSTRUCTION",
+          "zero_claimed": false
+        },
+        {
+          "class_id": "ANOM_OMEGA_C_DUAL_C",
+          "exact_claimed": false,
+          "nontrivial_claimed": false,
+          "status": "UNDEFINED_CARRIER_OBSTRUCTION",
+          "zero_claimed": false
+        }
+      ],
+      "exact_witness": {
+        "missing_identity": "bulk-to-BFV time-slice transgression tau carrying the local current to the fifteen endpoint moment maps",
+        "moment_map_components": 15,
+        "moment_map_taylor_order": 2,
+        "pinned_source_statement": "bulk-endpoint-to-BFV time-slice transgression is explicitly in minimal_bv_chain.not_proved",
+        "required_new_generators": "eta_A, A=1,...,15, with d eta_A=mu_A",
+        "unary_tangent_complex_changed": false
+      },
+      "obstruction_kind": "MISSING_DERIVED_BFV_KOSZUL_CARRIER",
+      "residual_projection": "NO_CERTIFIED_MAP",
+      "scope": "This is a no-certified-map result for the pinned carrier, not a proof that no enlarged derived BV-BFV construction exists.",
+      "sector_id": "cylinder_Taub_zero",
+      "theorem": "A plain unary subcomplex or deletion of charged modes cannot represent the requested derived quadratic fibre. The current receiver cannot be populated honestly until a derived Koszul/BFV carrier and its time-slice map are supplied."
+    },
+    {
+      "Cartan_defect": "UNDEFINED_SOURCE_THEORY_MISMATCH",
+      "Cartan_generator": "K_Berger=D-omega R",
+      "background_jet_map": "OBSTRUCTED",
+      "charge_sector_inclusion": "NOT_REACHED",
+      "class_images": [
+        {
+          "class_id": "ANOM_OMEGA_C2",
+          "exact_claimed": false,
+          "nontrivial_claimed": false,
+          "status": "UNDEFINED_CARRIER_OBSTRUCTION",
+          "zero_claimed": false
+        },
+        {
+          "class_id": "ANOM_OMEGA_E4",
+          "exact_claimed": false,
+          "nontrivial_claimed": false,
+          "status": "UNDEFINED_CARRIER_OBSTRUCTION",
+          "zero_claimed": false
+        },
+        {
+          "class_id": "ANOM_OMEGA_C_DUAL_C",
+          "exact_claimed": false,
+          "nontrivial_claimed": false,
+          "status": "UNDEFINED_CARRIER_OBSTRUCTION",
+          "zero_claimed": false
+        }
+      ],
+      "exact_witness": {
+        "chain_defect": "961/1920",
+        "failed_identity": "j s_PW(gstar_00)=Q_Berger j(gstar_00) at zero fluctuation",
+        "fixture": {
+          "alpha_B": "5",
+          "q": "9/40"
+        },
+        "pure_weyl_B00": "961/9600",
+        "source_metric_antifield_constant_alphaB_B00": "961/1920",
+        "target_coupled_metric_antifield_constant": "0"
+      },
+      "obstruction_kind": "FULL_BV_ANTIFIELD_CHAIN_DEFECT",
+      "residual_projection": "NOT_REACHED",
+      "scope": "An AFN0 gauge substitution or evaluation of gravitational densities is not promoted to a full BV pullback. A new matter-coupled anomaly complex would be a changed source theory.",
+      "sector_id": "Berger_fixed_coupling",
+      "theorem": "The positive Berger clock background is on shell only for the matter-coupled action. It is not Bach-flat, so strict pure-Weyl expansion there is curved. No unit-preserving identity-jet full-BV chain map into the uncurved coupled Berger complex exists in the declared class."
+    }
+  ]
+}

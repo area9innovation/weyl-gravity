@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-anomaly-sector-restriction-chain-map-obstruction-v1.schema.json",
+  "title": "Strict anomaly sector restriction chain-map obstruction",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "input_pins",
+    "declared_map_class",
+    "sector_dispositions",
+    "receiver_contract_verdict",
+    "repair_gates",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-strict-anomaly-sector-restriction-chain-map-obstruction-v1"
+    },
+    "result_id": {
+      "const": "STRICT_ANOMALY_SECTOR_RESTRICTION_CHAIN_MAP_OBSTRUCTION_V1"
+    },
+    "lifecycle_status": {
+      "const": "CLASSIFIED"
+    },
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "input_pins": {
+      "type": "object",
+      "minProperties": 10,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["path", "sha256", "source_commit"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+        }
+      }
+    },
+    "sector_dispositions": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "sector_id",
+          "background_jet_map",
+          "charge_sector_inclusion",
+          "residual_projection",
+          "obstruction_kind",
+          "exact_witness",
+          "theorem",
+          "scope",
+          "class_images",
+          "Cartan_generator",
+          "Cartan_defect"
+        ],
+        "properties": {
+          "sector_id": {
+            "enum": ["cylinder_Taub_zero", "Berger_fixed_coupling"]
+          },
+          "class_images": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "required": [
+                "class_id",
+                "status",
+                "zero_claimed",
+                "exact_claimed",
+                "nontrivial_claimed"
+              ],
+              "properties": {
+                "status": {"const": "UNDEFINED_CARRIER_OBSTRUCTION"},
+                "zero_claimed": {"const": false},
+                "exact_claimed": {"const": false},
+                "nontrivial_claimed": {"const": false}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "The 15-charge Taub-zero sector is a derived quadratic fibre. The pinned carrier lacks its Koszul/BFV generators and bulk-to-time-slice transgression. No anomaly image, Cartan defect, QME, state, particle or causal claim follows.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/STRICT_ANOMALY_SECTOR_RESTRICTION_CHAIN_MAP_OBSTRUCTION_V1.json",
+          "result_id": "STRICT_ANOMALY_SECTOR_RESTRICTION_CHAIN_MAP_OBSTRUCTION_V1",
+          "sha256": "4863e00186e719e933e20fe58f2bc0429b1cb0a13db8481b6f8152680b3255fb"
+        }
+      ],
+      "id": "bridge.anomaly.cylinder_taub_zero_restriction_carrier_gap",
+      "mode_data": {
+        "dispersion": {
+          "statement": "No harmonic dispersion claim is made by this carrier-map obstruction.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "No new Lee-Wald pairing claim is made.",
+          "status": "NOT_APPLICABLE"
+        },
+        "resonance": {
+          "statement": "No resonance calculation is part of this restriction-map gate.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "This entry classifies an anomaly restriction chain map, not a second-order field-equation correction.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "This entry classifies an anomaly restriction chain map, not a second-order field-equation correction.",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "This entry classifies an anomaly restriction chain map, not a second-order field-equation correction.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "All fifteen endpoint moment maps and their quadratic Taub interpretation are pinned; their local time-slice lift is not.",
+          "status": "CERTIFIED"
+        }
+      },
+      "quantum_data": {
+        "BRST_cocycle": {
+          "statement": "The three strict local anomaly source classes are certified on the regular Bach locus.",
+          "status": "CERTIFIED"
+        },
+        "BRST_exactness": {
+          "statement": "No restricted exactness verdict exists without the missing full chain map.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "Hadamard_two_point_function": {
+          "statement": "No Hadamard carrier is supplied.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "anomaly_QME_dependency": {
+          "statement": "The 15-charge Taub-zero sector is a derived quadratic fibre. The pinned carrier lacks its Koszul/BFV generators and bulk-to-time-slice transgression.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "carrier_crosswalk": {
+          "statement": "The 15-charge Taub-zero sector is a derived quadratic fibre. The pinned carrier lacks its Koszul/BFV generators and bulk-to-time-slice transgression.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "classical_mode_imported": {
+          "statement": "The declared classical sector artifacts are imported by exact hash.",
+          "status": "CERTIFIED"
+        },
+        "compatible_complex_structure": {
+          "statement": "No quantum complex structure is selected.",
+          "status": "NOT_APPLICABLE"
+        },
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "entry_kind": "CARRIER_IMPORT_GAP",
+        "lifecycle_state": {
+          "statement": "The carrier obstruction itself is exactly classified.",
+          "status": "CERTIFIED"
+        },
+        "pairing_status": {
+          "statement": "This gate does not compare quantum pairings.",
+          "status": "NOT_APPLICABLE"
+        },
+        "particle_interpretation": {
+          "statement": "Local anomaly classes are not one-particle states.",
+          "status": "NOT_APPLICABLE"
+        },
+        "state_space_status": {
+          "statement": "No state-space transfer follows from local anomaly data.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "unit conformal cylinder R x S3",
+        "boundaries": "closed oriented S3; temporal/support descent policy not supplied",
+        "carrier": "full local Diff x Weyl BV jets to a missing 15-generator BFV/Koszul receiver",
+        "charge_sector": "derived common zero fibre of all fifteen SO(4,2) Taub moment maps",
+        "degree": "full field/ghost/antifield complex",
+        "ell": "not harmonic-reduced",
+        "k": "not applicable on S3",
+        "m": "not harmonic-reduced",
+        "omega": "not frequency-reduced",
+        "parity": "even and odd anomaly classes kept distinct",
+        "theory": "strict pure-Weyl local BV source to pure-Weyl compact-cylinder derived sector"
+      }
+    },
+    {
+      "claim_boundary": "The strict pure-Weyl identity-jet full-BV map is obstructed on the matter-supported Berger background by the exact metric-antifield defect 961/1920. An AFN0 density evaluation is not a full BV pullback; the actual coupled anomaly complex remains open.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "OBSTRUCTED",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/STRICT_ANOMALY_SECTOR_RESTRICTION_CHAIN_MAP_OBSTRUCTION_V1.json",
+          "result_id": "STRICT_ANOMALY_SECTOR_RESTRICTION_CHAIN_MAP_OBSTRUCTION_V1",
+          "sha256": "4863e00186e719e933e20fe58f2bc0429b1cb0a13db8481b6f8152680b3255fb"
+        }
+      ],
+      "id": "bridge.anomaly.berger_strict_pure_weyl_full_bv_map_obstruction",
+      "mode_data": {
+        "dispersion": {
+          "statement": "No harmonic dispersion claim is made by this carrier-map obstruction.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "No new Lee-Wald pairing claim is made.",
+          "status": "NOT_APPLICABLE"
+        },
+        "resonance": {
+          "statement": "No resonance calculation is part of this restriction-map gate.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "This entry classifies an anomaly restriction chain map, not a second-order field-equation correction.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "This entry classifies an anomaly restriction chain map, not a second-order field-equation correction.",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "This entry classifies an anomaly restriction chain map, not a second-order field-equation correction.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "The obstruction occurs before a restricted Taub or resonance calculation.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "quantum_data": {
+        "BRST_cocycle": {
+          "statement": "The three strict local anomaly source classes are certified on the regular Bach locus.",
+          "status": "CERTIFIED"
+        },
+        "BRST_exactness": {
+          "statement": "No restricted exactness verdict exists without the missing full chain map.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "Hadamard_two_point_function": {
+          "statement": "No Hadamard carrier is supplied.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "anomaly_QME_dependency": {
+          "statement": "The strict pure-Weyl identity-jet full-BV map is obstructed on the matter-supported Berger background by the exact metric-antifield defect 961/1920.",
+          "status": "OBSTRUCTED"
+        },
+        "carrier_crosswalk": {
+          "statement": "The strict pure-Weyl identity-jet full-BV map is obstructed on the matter-supported Berger background by the exact metric-antifield defect 961/1920.",
+          "status": "OBSTRUCTED"
+        },
+        "classical_mode_imported": {
+          "statement": "The declared classical sector artifacts are imported by exact hash.",
+          "status": "CERTIFIED"
+        },
+        "compatible_complex_structure": {
+          "statement": "No quantum complex structure is selected.",
+          "status": "NOT_APPLICABLE"
+        },
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "entry_kind": "CARRIER_IMPORT_GAP",
+        "lifecycle_state": {
+          "statement": "The carrier obstruction itself is exactly classified.",
+          "status": "CERTIFIED"
+        },
+        "pairing_status": {
+          "statement": "This gate does not compare quantum pairings.",
+          "status": "NOT_APPLICABLE"
+        },
+        "particle_interpretation": {
+          "statement": "Local anomaly classes are not one-particle states.",
+          "status": "NOT_APPLICABLE"
+        },
+        "state_space_status": {
+          "statement": "No state-space transfer follows from local anomaly data.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "positive rotating-scalar Berger fixture q=9/40, alpha_B=5",
+        "boundaries": "closed Berger S3; temporal/support descent policy not reached",
+        "carrier": "identity-jet full Diff x Weyl field/ghost/antifield map into the coupled 64-row BV complex",
+        "charge_sector": "fixed alpha_B and lambda with delta Q_R=0",
+        "degree": "full field/ghost/antifield complex",
+        "ell": "not harmonic-reduced",
+        "k": "not applicable on S3",
+        "m": "not harmonic-reduced",
+        "omega": "not frequency-reduced",
+        "parity": "even and odd anomaly classes kept distinct",
+        "theory": "strict pure-Weyl local BV source versus matter-coupled Weyl-clock(-Maxwell) target"
+      }
+    }
+  ],
+  "generated_by": "bridge/anomaly_restriction/generate_strict_anomaly_restriction_atlas_fragment.py",
+  "generated_by_sha256": "e1ec5f44889a89932b2cc3bedbff51a62c2d7459a50bed2db8878536dc6a2fdf",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "Einstein/nonlinear bridge",
+  "verification_commands": [
+    "python3 -m bridge.anomaly_restriction.generate_strict_anomaly_restriction_atlas_fragment --check",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/strict-anomaly-sector-restriction-obstruction-fragment-v1.json",
+    "python3 -m bridge.anomaly_restriction.verify_strict_anomaly_sector_restriction_chain_map_obstruction"
+  ]
+}

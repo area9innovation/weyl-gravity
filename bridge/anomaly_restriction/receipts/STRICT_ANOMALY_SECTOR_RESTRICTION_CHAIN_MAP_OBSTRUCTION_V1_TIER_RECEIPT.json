@@ -1,0 +1,63 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "STRICT_ANOMALY_SECTOR_RESTRICTION_CHAIN_MAP_OBSTRUCTION_V1_TIER_RECEIPT",
+  "subject_result_id": "STRICT_ANOMALY_SECTOR_RESTRICTION_CHAIN_MAP_OBSTRUCTION_V1",
+  "recorded_at": "2026-07-21T01:24:00Z",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "tiers": [
+    {
+      "tier": 0,
+      "status": "PASS",
+      "commands": [
+        "python3 -m bridge.anomaly_restriction.strict_anomaly_sector_restriction_chain_map_obstruction --write",
+        "python3 -m bridge.anomaly_restriction.strict_anomaly_sector_restriction_chain_map_obstruction --check",
+        "python3 -m json.tool <changed JSON files>",
+        "git diff --check -- <scoped paths>"
+      ],
+      "scope": "exact pinned producer, canonical JSON, schemas, atlas and edit checks"
+    },
+    {
+      "tier": 1,
+      "status": "PASS",
+      "commands": [
+        "python3 -m bridge.anomaly_restriction.verify_strict_anomaly_sector_restriction_chain_map_obstruction",
+        "python3 -m unittest bridge.anomaly_restriction.tests.test_strict_anomaly_sector_restriction_chain_map_obstruction -v",
+        "python3 -m bridge.anomaly_restriction.generate_strict_anomaly_restriction_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py residual_atlas/strict-anomaly-sector-restriction-obstruction-fragment-v1.json",
+        "python3 -m unittest bridge.anomaly_restriction.tests.test_strict_anomaly_restriction_atlas_fragment -v",
+        "Draft202012Validator.check_schema and validate"
+      ],
+      "scope": "method-distinct Berger curvature witness, independent pinned-carrier audit, decisive mutations and fail-closed atlas"
+    },
+    {
+      "tier": 2,
+      "status": "NOT_RUN",
+      "reason": "No shared operator, imported classical artifact or upstream quantum certificate was changed; all direct consumers of the new obstruction package were run."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "reason": "This is a scoped CLASSIFIED obstruction and carrier-gap result, not a theorem freeze, tag, release or lifecycle promotion."
+    }
+  ],
+  "failed_attempts": [
+    {
+      "status": "NOT_A_PASS",
+      "description": "The first independent verifier run required the literal word quadratic in a pinned formula string and failed.",
+      "repair": "The verifier now checks the exact displayed identity H_D=mu_D=...=zbar M_D z rather than prose vocabulary; no producer data or scientific disposition changed."
+    }
+  ],
+  "artifact_hashes": {
+    "certificate": "4863e00186e719e933e20fe58f2bc0429b1cb0a13db8481b6f8152680b3255fb",
+    "producer": "7cbd6b7550542f347b85a2e66b2ba7c373ef239e676d4921a9764fd1bc937019",
+    "independent_verifier": "3db579c50130128c57aa8570c16a0283ad838f46b1cb7a38890298f137a4869d",
+    "schema": "53308c659e6d28a5e322ba27e7584a635acdee8f8034dc9f86f7d9e804fa8f53",
+    "report": "04095ddfe6c7e7ff6b9d948d27561dd5ce69695a31eb41fbd08e34a6155d49b3",
+    "atlas_fragment": "1a9057a91188b603abb9f287b61aba90a6b6d84121ea8fa3751584a10f21c7fb",
+    "atlas_generator": "e1ec5f44889a89932b2cc3bedbff51a62c2d7459a50bed2db8878536dc6a2fdf"
+  },
+  "higher_tiers_not_inferred": true
+}
