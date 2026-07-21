@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-weyl-symplectic-extension-classification-v1",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "provenance", "scope", "lift_shear_theorem", "generic_parity_blocks", "endpoint_table", "extension_classification", "mutations", "classification", "claim_boundary", "next_gate", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-weyl-symplectic-extension-classification-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein-weyl-symplectic-extension-classification-v1.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_WEYL_SYMPLECTIC_EXTENSION_CLASSIFICATION_V1"},
+    "result_state": {"const": "ORTHOGONAL_TARGET_SPLIT_CERTIFIED_PARITY_COMPLETE_ADMISSIBLE_CYCLIC_SPLIT_OBSTRUCTED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "provenance": {"type": "object"},
+    "scope": {"type": "object"},
+    "lift_shear_theorem": {"type": "object"},
+    "generic_parity_blocks": {"type": "object", "required": ["axial", "polar"]},
+    "endpoint_table": {"type": "array", "minItems": 5, "maxItems": 5},
+    "extension_classification": {"type": "object"},
+    "mutations": {"type": "object"},
+    "classification": {
+      "type": "object",
+      "required": ["algebraic_primary_split", "target_internal_orthogonal_split", "orthogonal_lift_unique", "raw_lift_XX_sign_invariant", "schur_complement_invariant", "fixed_identity_cyclic_split", "admissible_corrected_parity_complete_cyclic_split", "strict_chain_cyclic_split", "after_residual_split", "causal_particle_or_quantum_claim"],
+      "properties": {
+        "algebraic_primary_split": {"const": true},
+        "target_internal_orthogonal_split": {"const": true},
+        "orthogonal_lift_unique": {"const": true},
+        "raw_lift_XX_sign_invariant": {"const": false},
+        "schur_complement_invariant": {"const": true},
+        "fixed_identity_cyclic_split": {"const": false},
+        "admissible_corrected_parity_complete_cyclic_split": {"const": false},
+        "strict_chain_cyclic_split": {"const": false},
+        "after_residual_split": {"const": false},
+        "causal_particle_or_quantum_claim": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {"type": "string"},
+    "next_gate": {"type": "string"},
+    "verification_commands": {"type": "array", "minItems": 4}
+  },
+  "additionalProperties": false
+}

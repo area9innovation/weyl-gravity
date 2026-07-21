@@ -1,0 +1,61 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_SYMPLECTIC_EXTENSION_CLASSIFICATION_V1",
+  "date": "2026-07-21",
+  "base_commit": "044ca48a4970c3a8f6876537c37679f6aef6f8f2",
+  "artifacts": [
+    {"path": "bridge/einstein_sector/einstein_weyl_symplectic_extension_classification.py", "sha256": "8be62d4268164974d2926d32de68a39aa115ce22725b6c71668f45144e785805"},
+    {"path": "bridge/certificates/EINSTEIN_WEYL_SYMPLECTIC_EXTENSION_CLASSIFICATION_V1.json", "sha256": "d316e61807112c31fcbf2733e4d93bb3ce2d3bcebe3389922d6baa463415cbd3"},
+    {"path": "bridge/einstein_sector/verify_einstein_weyl_symplectic_extension_classification.py", "sha256": "481b1fede3074a2ce439ee068eff1c883ba4e8e8db01d7bf39e65302e1fe24a5"},
+    {"path": "bridge/einstein_sector/tests/test_einstein_weyl_symplectic_extension_classification.py", "sha256": "23898b5bd59f52e411aaf8dae2c0ffe59dfa25fe65a6ad353b1227fdac7a5db5"},
+    {"path": "bridge/einstein_sector/schema/einstein-weyl-symplectic-extension-classification-v1.schema.json", "sha256": "529e0632c3eab74b4db160869e28a7d946f0d777d0276f35ba094268403a0e02"},
+    {"path": "bridge/einstein_sector/generate_symplectic_extension_classification_atlas.py", "sha256": "8fbf5d176f58cd21356a0e44d8a34194b68e3ec3a7f5269ed8694a566635f138"},
+    {"path": "residual_atlas/einstein-weyl-symplectic-extension-classification-fragment-v1.json", "sha256": "0a4aef96ef9ad7f8cf396195432f2a05dae327ec52aa29655feada6ceb947457"},
+    {"path": "reports/bridge-compact-product-symplectic-extension-classification-closeout-2026-07-21.md", "sha256": "9efaecd385cabb8aedc251ff570b3845958eb144598f24a6761842e0580d66f3"},
+    {"path": "paper/92-extra-axial-lee-wald-bridge.md", "sha256": "ac41c706474e65c4bc6920f2660062052b677b59873a88578796b850062d24ed"},
+    {"path": "notes/d-quotient-einstein-team-brief.md", "sha256": "b597961d9e40885c98abe430732ac34eb18027a77eaa8c2cefcf85a49c838276"}
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <four scoped Python paths>",
+        "python3 -m json.tool <certificate, schema and atlas fragment>",
+        "git diff --check -- <eleven scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_weyl_symplectic_extension_classification --verify bridge/certificates/EINSTEIN_WEYL_SYMPLECTIC_EXTENSION_CLASSIFICATION_V1.json",
+        "python3 bridge/einstein_sector/verify_einstein_weyl_symplectic_extension_classification.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_symplectic_extension_classification",
+        "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-weyl-symplectic-extension-classification-fragment-v1.json"
+      ],
+      "elapsed_seconds": {"producer_verify": 0.40, "independent_verify": 0.44, "five_unit_tests": 0.44, "atlas_validation": 0.08}
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "All eight mathematical predecessors are unchanged, hash-pinned certificate inputs. The new theorem independently recomputes the lift-shear identity, both parity inertia obstructions and both exact sign-flip mutations."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No repository-wide freeze or release is promoted; this item terminates with a scoped strict-cyclic obstruction and preserves the final residual gate as NO_CERTIFIED_MAP."
+    },
+    "science_forge_shadow": {
+      "status": "ADVISORY_FINDINGS_RECORDED",
+      "command": "SF_SHADOW_OUT=/tmp/sf-shadow.hqHzWL ci/science-forge-shadow.sh",
+      "elapsed_seconds": 3.40,
+      "artifacts": "/tmp/sf-shadow.hqHzWL",
+      "findings": ["unpinned development Forge binary/stdlib revision mismatch", "pre-existing bridge lock drift", "coverage census 1366 certificates versus baseline 976"],
+      "claim_effect": "none; the advisory rail is not a substitute for the passing claim-specific producer and independent verifier"
+    }
+  },
+  "mutations": {
+    "axial_lift_sign": "PASS: lambda=6,k=0 shear changes first raw extra diagonal from 1296 to -76 while Schur complement remains diag(1296,208/3)",
+    "polar_lift_sign": "PASS: lambda=6,k=0 shear changes first raw extra diagonal from 22464 to -768 while Schur complement remains diag(22464,12288)",
+    "false_cyclic_promotion": "PASS: strict schema rejects admissible_corrected_parity_complete_cyclic_split=true",
+    "false_residual_promotion": "PASS: strict schema rejects after_residual_split=true"
+  },
+  "claim_boundary": "Certifies the pre-residual target-internal orthogonal primary split, the lift-invariant Schur-complement quotient form, and the parity-complete obstruction to a strict cyclic split in the declared category. It does not certify a final residual quotient, non-strict cyclic homotopy, causal carrier, particle interpretation or quantum result."
+}

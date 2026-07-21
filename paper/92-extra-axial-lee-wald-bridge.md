@@ -194,6 +194,52 @@ an after-residual sequence, because no authorized common moment-map-zero
 quotient functor exists. Exactness, splitting, cyclicity and residual descent
 are therefore four distinct assertions.
 
+The subsequent extension audit resolves the remaining ambiguity in the word
+``split.''  The coprime primary decomposition gives an algebraic split, and
+inside the Weyl--Maxwell target the nondegenerate Einstein image has a unique
+Lee--Wald-orthogonal complement.  These facts do not make the relative
+Einstein--Weyl triangle cyclic.  If an extra lift is changed by
+$s_A(x)=s(x)+\iota(Ax)$, its blocks transform as
+
+$$
+C_A=C+G_EA,
+\qquad
+G_{X,A}=G_X+A^\dagger G_EA+A^\dagger C+C^\dagger A.
+$$
+
+Thus a chosen extra--extra coefficient or sign is not invariant.  The
+invariant quotient form is the Schur complement
+
+$$
+S_X=G_X-C^\dagger G_E^{-1}C,
+$$
+
+which is unchanged by every lift shear.  At $\ell=2,k=0$, explicit axial and
+polar shears make a raw lifted-extra diagonal negative while leaving the
+positive Schur complement exactly unchanged.  In the certified primary lift
+$C=0$, so the orthogonal lift is unique and $S_X$ is the already computed
+direct extra Gram matrix.
+
+There is nevertheless no parity-complete admissible cyclic direct sum.  In
+each generic parity block the Einstein--Maxwell positive-frequency
+coefficient form has inertia $(2,0)$, whereas its Weyl--Maxwell restriction
+has inertia $(1,1)$.  A complex-linear map preserving time translations and
+the two physical shells cannot change this inertia.  Hence neither an extra
+lift nor a shell-preserving correction of the Einstein representative can
+repair the relative cyclic defect.  The exceptional $\ell=1$ oscillator by
+itself admits the solution-level source-to-target rescaling $B=I/2$, and the
+homogeneous block has its previously certified solution-level normalizer, but
+these endpoint repairs do not overcome the generic obstruction.  The twist
+block supplies a second exceptional obstruction: its Jordan-flow centralizer
+has nonnegative determinant, while matching
+$\Omega_{WM}=-2\Omega_{EM}$ would require a negative determinant.
+
+This is a cohomology obstruction to every strict cyclic chain splitting in
+the declared local, harmonic, time-translation, gauge and charge category.
+It does not classify non-strict cyclic homotopies, and there is still no
+after-residual split because the common moment-map-zero quotient carrier is
+absent.
+
 ## 5. Independent Schwarzschild boundary test
 
 The black-hole programme supplies a second laboratory in which boundary
@@ -295,6 +341,7 @@ arXiv:2109.12743v1, arXiv:2202.08298v2. Certificates:
 `EINSTEIN_MAXWELL_WEYL_POLAR_DIRECT_LEE_WALD_COMPLETION_V1`,
 `EINSTEIN_MAXWELL_WEYL_POLAR_UNGAUGED_BV_RESIDUAL_DESCENT_OBSTRUCTION_V1`,
 `EINSTEIN_WEYL_PARITY_COMPLETE_RESIDUAL_EXACT_SEQUENCE_MAXIMAL_V1`,
+`EINSTEIN_WEYL_SYMPLECTIC_EXTENSION_CLASSIFICATION_V1`,
 `BH2A_CROSS_BLOCK_NONZERO_HORIZON_FLUX_FIXTURES`, and
 the symbol/exponent payload of
 `BH2A_AXIAL_CAUSAL_DISPOSITION_EXTRA_BRANCH_UNAVOIDABLE`, narrowed by the
@@ -302,5 +349,5 @@ Paper 14 claim map; the polar horizon input is
 `BH2B_POLAR_EXTRA_BRANCH_REACHES_HORIZON_LINEAR_MODE_LEVEL`. Verification
 commands are in section 3. Tags: `LOCAL-ALGEBRAIC` and `REDUCED-MODE`.
 Open: asymptotic Jordan form, metric reconstruction, rigorous flux bounds,
-polar cyclic-lift repair, moment-map-zero residual descent, full causal boundary phase spaces,
+non-strict cyclic homotopies, moment-map-zero residual descent, full causal boundary phase spaces,
 stability, and quantum state.

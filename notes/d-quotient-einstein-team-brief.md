@@ -4928,3 +4928,39 @@ equation/identity maps are not degreewise injective. After residual reduction
 there is `NO_CERTIFIED_MAP`, because the common moment-map-zero quotient
 carrier is absent. The fail-closed atlas row is
 `einstein.ph.wm.parity_complete.maximal_exact_sequence`.
+
+## Symplectic extension classification
+
+The active bridge now distinguishes the three meanings of a split. The
+generic and exceptional primary modules split algebraically by CRT. Inside
+the Weyl--Maxwell target, the nondegenerate Einstein image also has a unique
+Lee--Wald-orthogonal complement. But the relative Einstein--Weyl sequence
+does not split cyclically with the declared source form.
+
+For a lift shear `s_A=s+iota*A`, the cross block and raw extra block change,
+while
+
+```text
+S_X = G_X - C^dagger G_E^{-1} C
+```
+
+is exactly invariant. Exact `ell=2,k=0` axial and polar mutations flip the
+first raw lifted-extra sign but leave `S_X` equal to the positive direct extra
+Gram. Accordingly the invariant branch datum is the Schur-complement form,
+not a sign attached to an arbitrary representative.
+
+The parity-complete cyclic obstruction is stronger. On each generic parity
+fibre the source positive-frequency form has inertia `(2,0)`, while the
+target restriction to the Einstein image has inertia `(1,1)`. No
+time-translation- and shell-preserving complex-linear correction can identify
+them. The exceptional `ell=1` and homogeneous blocks admit solution-level
+normalizers, but the twist Jordan centralizer cannot supply the required
+negative determinant. Hence a strict cyclic chain split is obstructed in the
+declared category. Non-strict cyclic homotopies remain open, and final
+residual splitting remains `NO_CERTIFIED_MAP` until a common moment-map-zero
+derived quotient carrier exists.
+
+Evidence is
+`bridge/certificates/EINSTEIN_WEYL_SYMPLECTIC_EXTENSION_CLASSIFICATION_V1.json`;
+the fail-closed atlas row is
+`einstein.ph.wm.parity_complete.symplectic_extension`.

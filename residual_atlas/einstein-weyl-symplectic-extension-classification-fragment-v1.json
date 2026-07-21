@@ -1,0 +1,91 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This certificate classifies the pre-residual finite-harmonic lift-shear invariants and supplies a cohomology-level obstruction to every declared admissible strict cyclic chain split. It distinguishes the canonical target-internal orthogonal complement from a cyclic identification with the Einstein-Maxwell source form. It does not construct the missing global moment-map-zero quotient functor, a cyclic chain homotopy outside the declared strict category, a causal Green carrier, particles, positivity, unitarity or a quantum state space.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/EINSTEIN_WEYL_SYMPLECTIC_EXTENSION_CLASSIFICATION_V1.json",
+          "result_id": "EINSTEIN_WEYL_SYMPLECTIC_EXTENSION_CLASSIFICATION_V1",
+          "sha256": "d316e61807112c31fcbf2733e4d93bb3ce2d3bcebe3389922d6baa463415cbd3"
+        }
+      ],
+      "id": "einstein.ph.wm.parity_complete.symplectic_extension",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Coprime generic and exceptional primary shells give algebraic CRT splittings before residual reduction.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The target-internal orthogonal split is unique; its quotient form is the lift-invariant Schur complement. Raw lift XX signs are not invariant.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Linear extension classification only.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Not promoted.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No causal carrier.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Not promoted.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "No common moment-map-zero quotient carrier has been constructed.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan",
+        "boundaries": "closed S1_L times S2 before global stabilizer reduction",
+        "carrier": "finite harmonic H0 exact sequence plus the necessary cohomology obstruction to cyclic chain splitting",
+        "charge_sector": "fixed magnetic bundle; Q_e, W_x and twist holonomies retained",
+        "degree": 1,
+        "ell": "generic >=2, exceptional 1, homogeneous 0",
+        "k": "all allowed compact momenta",
+        "m": "all certified labels",
+        "omega": "q-primary, p-primary, exceptional and generalized-zero branches",
+        "parity": "axial and polar separately",
+        "theory": "Einstein-Maxwell source, Weyl-Maxwell target and extra cofiber"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/generate_symplectic_extension_classification_atlas.py",
+  "generated_by_sha256": "8fbf5d176f58cd21356a0e44d8a34194b68e3ec3a7f5269ed8694a566635f138",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_nonlinear",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.generate_symplectic_extension_classification_atlas --check",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-weyl-symplectic-extension-classification-fragment-v1.json"
+  ]
+}
