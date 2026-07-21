@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/black-hole-endpoint-nonselection-assembly-REQUEST-6b0ffaf0f1823839",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/black-hole-endpoint-nonselection-assembly-REQUEST-6b0ffaf0f1823839.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/black-hole-endpoint-nonselection-assembly", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T14:15:22Z", "seq": 1, "payload": {"target": "sf:program/request/black-hole-endpoint-nonselection-assembly-to-black-hole-6b0ffaf0f1823839", "request_id": "sf:program/request/black-hole-endpoint-nonselection-assembly-to-black-hole-6b0ffaf0f1823839", "from_item": "sf:program/work/black-hole-endpoint-nonselection-assembly", "to_stream": "black-hole", "need": "Duplicate exclusive lease: black-hole-1 already holds the higher-priority black-hole-paper14-finite-flux-status-freeze lease. If no substantive endpoint-assembly checkpoint exists, run sfc work-yield: sf:program/work/black-hole-endpoint-nonselection-assembly exclusive lease released by black-hole-1; item back to READY immediately, then resume the Paper 14 package. If edits have already begun, stop before further work and report that exact fact so the coordinator can preserve the bounded draft. Do not work both items or pull exterior well-posedness. Paper 14 is the canonical current Phase 1 item.", "typed": "DUPLICATE_EXCLUSIVE_LEASE_PHASE1_PRIORITY_REPAIR"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "black-hole"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/black-hole-endpoint-nonselection-assembly"}]
+}

@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/black-hole-endpoint-nonselection-assembly-REQUEST-600cda8d5e35985a",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/black-hole-endpoint-nonselection-assembly-REQUEST-600cda8d5e35985a.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/black-hole-endpoint-nonselection-assembly", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T14:15:40Z", "seq": 1, "payload": {"target": "sf:program/request/black-hole-endpoint-nonselection-assembly-to-black-hole-600cda8d5e35985a", "request_id": "sf:program/request/black-hole-endpoint-nonselection-assembly-to-black-hole-600cda8d5e35985a", "from_item": "sf:program/work/black-hole-endpoint-nonselection-assembly", "to_stream": "black-hole", "need": "PROVENANCE CORRECTION: the immediately preceding LEASE RELEASE for black-hole-endpoint-nonselection-assembly was emitted from the coordinator shell because command-substitution backticks inside a request-new --need argument executed before the request was written. It was not a resident black-hole-1 acknowledgement. Preserve the release event append-only, treat the item as intentionally returned to READY by coordinator recovery, and keep black-hole-paper14-finite-flux-status-freeze as the sole canonical current lease. Do not infer worker action from the actor field of that release.", "typed": "COORDINATOR_COMMAND_SUBSTITUTION_PROVENANCE_CORRECTION"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "black-hole"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/black-hole-endpoint-nonselection-assembly"}]
+}
