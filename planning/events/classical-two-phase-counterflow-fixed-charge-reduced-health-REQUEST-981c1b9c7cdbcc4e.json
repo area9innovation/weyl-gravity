@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-two-phase-counterflow-fixed-charge-reduced-health-REQUEST-981c1b9c7cdbcc4e",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/classical-two-phase-counterflow-fixed-charge-reduced-health-REQUEST-981c1b9c7cdbcc4e.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/classical-two-phase-counterflow-fixed-charge-reduced-health", "base_revision": "science-forge-ir-v0", "when": null, "seq": 1, "payload": {"target": "sf:program/request/classical-two-phase-counterflow-fixed-charge-reduced-health-to-observer-981c1b9c7cdbcc4e", "request_id": "sf:program/request/classical-two-phase-counterflow-fixed-charge-reduced-health-to-observer-981c1b9c7cdbcc4e", "from_item": "sf:program/work/classical-two-phase-counterflow-fixed-charge-reduced-health", "to_stream": "observer", "need": "Import TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_V1. The fixed-Q_rel derived quotient has zero relative-clock cohomology, so no fixed-charge relational observable or redshift may be promoted. Recast the active calculation as a two-branch disposition: certify NONDEFINED on the fixed quotient, and construct an observable only on the unrestricted variable-Q_rel carrier with R_rel and D explicitly global/charged and K the helical stabilizer.", "typed": "SCIENTIFIC_SCOPE_CORRECTION"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "observer"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/classical-two-phase-counterflow-fixed-charge-reduced-health"}]
+}

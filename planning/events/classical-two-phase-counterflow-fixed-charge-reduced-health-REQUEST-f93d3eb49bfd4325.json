@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-two-phase-counterflow-fixed-charge-reduced-health-REQUEST-f93d3eb49bfd4325",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/classical-two-phase-counterflow-fixed-charge-reduced-health-REQUEST-f93d3eb49bfd4325.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/classical-two-phase-counterflow-fixed-charge-reduced-health", "base_revision": "science-forge-ir-v0", "when": null, "seq": 1, "payload": {"target": "sf:program/request/classical-two-phase-counterflow-fixed-charge-reduced-health-to-quantum-qme-f93d3eb49bfd4325", "request_id": "sf:program/request/classical-two-phase-counterflow-fixed-charge-reduced-health-to-quantum-qme-f93d3eb49bfd4325", "from_item": "sf:program/work/classical-two-phase-counterflow-fixed-charge-reduced-health", "to_stream": "quantum-qme", "need": "Import TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_V1. The action-specific local anomaly classification may continue, and a full-parent Hadamard preflight remains meaningful, but the descended fixed-Q_rel physical clock carrier is zero. Type separately the unrestricted charged Darboux pair and fixed-charge quotient; no positive relative-clock state exists on the latter.", "typed": "SCIENTIFIC_SCOPE_CORRECTION"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "quantum-qme"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/classical-two-phase-counterflow-fixed-charge-reduced-health"}]
+}
