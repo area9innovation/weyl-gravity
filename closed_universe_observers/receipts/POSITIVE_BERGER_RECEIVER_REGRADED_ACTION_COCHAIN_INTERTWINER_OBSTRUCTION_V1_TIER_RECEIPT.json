@@ -1,0 +1,18 @@
+{
+  "claim_result_id": "POSITIVE_BERGER_RECEIVER_REGRADED_ACTION_COCHAIN_INTERTWINER_OBSTRUCTION_V1",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "higher_tiers": {
+    "tier_2": {"criterion": "All imported operators and certificates are unchanged content-addressed inputs.", "status": "NOT_RUN"},
+    "tier_3": {"criterion": "This scoped obstruction is not a freeze, tag, release or paper theorem.", "status": "NOT_RUN"}
+  },
+  "independence": {"producer": "derives and serializes separate action-Hessian chain and local BV cochain rails", "verifier": "reconstructs the formal Hessian, pairing, cyclicity and two-degree separation independently", "status": "METHOD_DISTINCT"},
+  "result_id": "POSITIVE_BERGER_RECEIVER_REGRADED_ACTION_COCHAIN_INTERTWINER_OBSTRUCTION_V1_TIER_RECEIPT",
+  "schema": "science-forge-tier-receipt-v1",
+  "tests": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_positive_berger_receiver_regraded_action_integration_obstruction.py closed_universe_observers/verify_positive_berger_receiver_regraded_action_integration_obstruction.py closed_universe_observers/atlas/generate_positive_berger_receiver_regraded_action_integration_obstruction_atlas.py", "elapsed_seconds": "0.03", "status": "PASS", "tier": 0},
+    {"command": "python3 -m closed_universe_observers.generate_positive_berger_receiver_regraded_action_integration_obstruction --write", "elapsed_seconds": "0.04", "status": "PASS", "tier": 1},
+    {"command": "python3 -m closed_universe_observers.atlas.generate_positive_berger_receiver_regraded_action_integration_obstruction_atlas --write", "elapsed_seconds": "0.03", "status": "PASS", "tier": 1},
+    {"command": "python3 -m closed_universe_observers.verify_positive_berger_receiver_regraded_action_integration_obstruction", "elapsed_seconds": "0.41", "status": "PASS", "tier": 1},
+    {"command": "pytest -q closed_universe_observers/tests/test_positive_berger_receiver_regraded_action_integration_obstruction.py closed_universe_observers/tests/test_positive_berger_receiver_regraded_action_integration_obstruction_atlas.py", "elapsed_seconds": "0.89", "result": "3 passed in 0.42s", "status": "PASS", "tier": 1}
+  ]
+}

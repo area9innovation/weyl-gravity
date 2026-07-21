@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "claim_boundary": {"type": "string"},
+    "claim_status": {"const": "OBSTRUCTED_AT_DEGREE_ZERO_LOCAL_COCHAIN_TO_Q70_CHAIN_INTERTWINER"},
+    "dependency_refs": {"additionalProperties": {"$ref": "#/$defs/ref"}, "minProperties": 6, "type": "object"},
+    "dependency_tags": {"contains": {"const": "LOCAL-ALGEBRAIC"}, "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}, "type": "array", "uniqueItems": true},
+    "downstream_disposition": {"type": "object"},
+    "first_obstruction": {"type": "object"},
+    "next_gate": {"type": "string"},
+    "payload_ref": {"$ref": "#/$defs/ref"},
+    "provenance": {"additionalProperties": false, "properties": {"generator_command": {"type": "string"}, "independent_verifier_command": {"type": "string"}, "source_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}}, "required": ["generator_command", "independent_verifier_command", "source_sha256"], "type": "object"},
+    "result_id": {"const": "POSITIVE_BERGER_RECEIVER_REGRADED_ACTION_COCHAIN_INTERTWINER_OBSTRUCTION_V1"},
+    "schema": {"const": "positive-berger-receiver-regraded-action-cochain-intertwiner-obstruction-v1"},
+    "setting_id": {"type": "string"},
+    "standalone_gate": {"type": "object"}
+  },
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "payload_ref", "standalone_gate", "first_obstruction", "downstream_disposition", "next_gate", "claim_boundary", "provenance"],
+  "type": "object",
+  "$defs": {"ref": {"additionalProperties": false, "properties": {"path": {"type": "string"}, "result_id": {"type": "string"}, "sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}}, "required": ["path", "result_id", "sha256"], "type": "object"}}
+}

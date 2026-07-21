@@ -2315,6 +2315,34 @@ Its activation gate is unchanged: reissue receiver20 in the q70 compact
 degree convention, rederive the local descent from that action, and pass the
 full mixed-action pushout before retrying physical descent.
 
+## Active bridge: regraded receiver chain/cochain obstruction
+
+The receiver action has now been rederived, rather than relabelled, in the
+q70 compact convention.  Its ten physical rows have compact degree zero,
+its ten canonical odd cotangents have degree one, and the action Hessian
+defines a nilpotent cyclic degree-one chain with a homogeneous rank-20
+degree-one pairing.  Reality, first-order causal support and the separate
+\(D/R/K\) actions pass.
+
+The same master action also exposes the decisive distinction: the genuine
+local BV derivation has ghost number one and therefore compact degree
+\(-1\).  It carries the rederived descent
+\[
+ s(m^+)+d\bigl(\lambda\rho_0(R)d^3R\bigr)=0.
+\]
+Thus the local receiver is a cochain for \(s\), while repaired q70 is the
+transposed degree-one chain.  A degree-zero map cannot satisfy
+\(q_{70}i=is\): the two sides shift degree by \(+1\) and \(-1\), so
+homogeneity forces both to vanish, contradicting injectivity on the nonzero
+memory-shift descent.
+
+The fail-closed atlas row is
+`positive-berger-receiver-regraded-action-cochain-intertwiner-obstruction-fragment-v1`.
+The obstruction is coefficient-independent over the complete declared
+first-order receiver action ansatz without new fields.  Its activation gate
+is an explicit action-derived degree-reversing chain/cochain suspension
+bridge.  Mixed rows, physical descent and redshift remain not reached.
+
 ## Active bridge: combined-q1 linear-K obstruction
 
 The queue successor
