@@ -210,6 +210,21 @@ def test_repaired_apparatus_z2_stops_at_physical_reduction():
     }
 
 
+def test_replacement112_complete_local_repair_ansatz_fails_closed():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.interaction.replacement112_132_defect_minimal_nilpotent_repair_no_go"
+    )
+    assert row["descriptions"]["symplectic"] == "OBSTRUCTED"
+    assert row["descriptions"]["observational"] == "OBSTRUCTED"
+    assert row["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["clock_and_rod_dependence"]["status"] == "OBSTRUCTED"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "OBSTRUCTED"
+    assert "BERGER_REPLACEMENT112_132_DEFECT_MINIMAL_NILPOTENT_REPAIR_NO_GO" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }
+
+
 def test_executable_160_export_stops_at_base_producer_coefficients():
     row = next(
         row for row in build()["entries"]

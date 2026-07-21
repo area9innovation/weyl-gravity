@@ -1,0 +1,49 @@
+{
+  "result_id": "BERGER_REPLACEMENT112_132_DEFECT_MINIMAL_NILPOTENT_REPAIR_NO_GO",
+  "science_forge_work_item": "sf:program/work/observer-replacement112-132-defect-minimal-nilpotent-repair",
+  "recorded_at": "2026-07-21T03:07:56Z",
+  "result_boundary": "The complete declared finite local epsilon_R_squared action-Hessian correction class has four raw block amplitudes, rank-three integrability constraints, one common real and K_Berger-invariant action orbit, and background-preserving dimension zero. Its exact 4542-equation Berger-quotient nilpotency system has coefficient rank one and augmented rank two, so no repaired replacement-112 unary exists in this class. This does not exclude a genuinely changed action/background architecture and does not construct the 160-row pushout, reduction, detector response, memory, redshift, recoil, q2, q3 or quantum observables.",
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_replacement112_132_defect_minimal_nilpotent_repair.py", "sha256": "355e41e474193272be90140c6a06515d9cb58dc85040ad19021b172813a34d66"},
+    {"path": "closed_universe_observers/verify_berger_replacement112_132_defect_minimal_nilpotent_repair.py", "sha256": "3f2373dcb0c2446fde87deaad0881c4ac15bf7e60c9fae745a2b4fae8d6b9fa1"},
+    {"path": "closed_universe_observers/certificates/BERGER_REPLACEMENT112_132_DEFECT_MINIMAL_NILPOTENT_REPAIR_NO_GO.json", "sha256": "7b6016400609c701c62e81672e3e69d871fec39fff8e6c8e1f3ecae745bcfcf7"},
+    {"path": "closed_universe_observers/certificates/BERGER_REPLACEMENT112_132_DEFECT_MINIMAL_NILPOTENT_REPAIR_NO_GO_PAYLOAD.json", "sha256": "749ebd7c34a2040f6c6e5539f3054001555856333182037adda4b826db6942e3"},
+    {"path": "closed_universe_observers/schema/berger-replacement112-132-defect-minimal-nilpotent-repair-no-go-v1.schema.json", "sha256": "cb1263e79036b7d30fa4846f8e63ef0710701efb67edad0fb830c42385d6f013"},
+    {"path": "closed_universe_observers/tests/test_berger_replacement112_132_defect_minimal_nilpotent_repair.py", "sha256": "45d4aadb4af7437768f6b60148d0a8072d86331759ea4c8041509760e5553bf1"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "b114446e842aa6053c3183a0d2e58b56015cd457419be618a70be1c875dc7b5b"}
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      "python3 -m py_compile closed_universe_observers/generate_berger_replacement112_132_defect_minimal_nilpotent_repair.py closed_universe_observers/verify_berger_replacement112_132_defect_minimal_nilpotent_repair.py closed_universe_observers/tests/test_berger_replacement112_132_defect_minimal_nilpotent_repair.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py closed_universe_observers/atlas/verify_observer_atlas_fragment.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+      "python3 -m json.tool closed_universe_observers/schema/berger-replacement112-132-defect-minimal-nilpotent-repair-no-go-v1.schema.json",
+      "python3 -m json.tool closed_universe_observers/certificates/BERGER_REPLACEMENT112_132_DEFECT_MINIMAL_NILPOTENT_REPAIR_NO_GO.json",
+      "python3 -m json.tool closed_universe_observers/certificates/BERGER_REPLACEMENT112_132_DEFECT_MINIMAL_NILPOTENT_REPAIR_NO_GO_PAYLOAD.json",
+      "git diff --check -- <explicit observer package paths>"
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m closed_universe_observers.generate_berger_replacement112_132_defect_minimal_nilpotent_repair --write", "elapsed_seconds": 117.16, "result": "PASS"},
+      {"command": "python3 -m closed_universe_observers.verify_berger_replacement112_132_defect_minimal_nilpotent_repair", "elapsed_seconds": 0.72, "result": "PASS"},
+      {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_replacement112_132_defect_minimal_nilpotent_repair.py", "elapsed_seconds": 109.05, "result": "9 passed"},
+      {"command": "python3 -m closed_universe_observers.atlas.generate_observer_atlas_fragment", "elapsed_seconds": 0.80, "result": "PASS"},
+      {"command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json", "elapsed_seconds": 0.75, "result": "PASS"},
+      {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment", "elapsed_seconds": 1.66, "result": "PASS"},
+      {"command": "python3 -m pytest -q closed_universe_observers/tests/test_observer_atlas_fragment.py", "elapsed_seconds": 40.87, "result": "63 passed"}
+    ]
+  },
+  "tier_2": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m closed_universe_observers.verify_berger_replacement112_mixed_metric_rod_hessian_interface", "elapsed_seconds": 53.53, "result": "PASS"},
+      {"command": "python3 -m closed_universe_observers.verify_berger_material_parent56_executable_unary_after_readout_interface", "elapsed_seconds": 0.67, "result": "PASS"}
+    ],
+    "criterion": "The no-go consumes both interfaces directly, so their independent verifiers were replayed; no upstream artifact or shared operator was changed."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "criterion": "This is a scoped fail-closed no-go in one declared local correction class, not a classical/quantum freeze, release, paper-theorem promotion or shared-core algebra change."
+  }
+}

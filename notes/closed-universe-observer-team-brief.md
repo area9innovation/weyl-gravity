@@ -2615,3 +2615,36 @@ equations vanish.  The canonical first witness is
 Its activation gate is reconciliation of that mixed Weyl-Noether row before
 any executable-112 export.  The 160-row consumer, physical reduction,
 second-order detector restriction, memory and redshift remain inactive.
+
+## Active bridge: complete local repair ansatz no-go
+
+The 132-defect successor has now classified the complete declared finite
+local action-Hessian correction sector.  The \(\epsilon_R^2\) degree filter
+keeps \(\Gamma_R\) and \(\Gamma_R^\sharp\) fixed as healthy degree-zero
+gauge/control maps and generates four repair amplitudes:
+\(K_{RR},K_{Rh},K_{hR},\Delta K_{hh}^{\rm rod}\).  Equality of mixed
+partials, the signed pairing adjoints and derivation from the single scalar
+\(S_{R,H}-S_{R,I_6}\) give a rank-three exact constraint matrix, leaving one
+common action orbit.  Its real defect and the exact
+\(A^T H+H A\) \(K_{\rm Berger}\) defect both vanish.
+
+That orbit cannot cancel the inherited square.  Exact reduction of all 4,542
+Berger-background/sphere coefficient equations gives coefficient rank one
+but augmented rank two.  Canonically, the orbit creates a nonzero
+\(h^\star_{00}\leftarrow c_1\) coefficient where the target is zero, while
+its coefficient on the inherited \(j x_0^2\) component of
+\(h^\star_{00}\leftarrow\sigma\) is exactly zero.  The latter right-hand
+side is \(-14090097/71402500\).  Independently, the nonzero first-variation
+anchor \(-125/81\) forces the permitted background-preserving correction
+space to dimension zero.
+
+The active bridge is therefore fail-closed at
+`observer.berger.interaction.replacement112_132_defect_minimal_nilpotent_repair_no_go`
+(`symplectic=OBSTRUCTED`, `observational=OBSTRUCTED`).  Its activation gate is
+a genuinely changed action or background architecture under a new certified
+work item; no row deletion, sampled-momentum fit or direct compact-product
+identification is admissible.  The material-parent-56 unary and its rank-two
+coordinate detector remain separately certified, but the 160-row pushout is
+still nondefined.  Physical reduction, \(\mathcal O_{\rm detector}|_{\mathcal
+Z_2}\), memory, redshift, recoil, \(q_2,q_3\) and quantum promotion remain
+`NO_CERTIFIED_MAP` or not reached.
