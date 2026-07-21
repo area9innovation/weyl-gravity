@@ -178,22 +178,36 @@ redundancies—not necessarily one isolated fourth-order equation.
 This is a classical result. It does not yet provide a complete interacting
 quantum theory, and it has not been proved for every curved spacetime.
 
-The Berger laboratory adds something more tangible: a matter field acts as a
+A new changed-theory candidate has now passed the same kind of complete
+causal bookkeeping. It uses two internal phases moving in opposite directions
+and one auxiliary gauge connection. Their total diagonal gauge charge cancels,
+while their relative phase still changes and can act as a clock. On one
+selected squashed-sphere background, the complete gravity--clock--gauge system
+has an exactly checked 70-part causal gauge complex. In ordinary language:
+the equations, constraints and redundancies propagate together without using
+an instantaneous nonlocal shortcut.
+
+This is the first proposed repair after the compensator failures to reach a
+complete classical causal parent. It is not yet a finished healthy universe.
+The next calculation must remove every redundant direction explicitly and
+check that all remaining clock and gravitational directions have acceptable
+signs, propagation and time-charge behavior.
+
+The original Berger laboratory adds something more tangible: a matter field acts as a
 clock, and an electromagnetic signal is emitted during a bounded time
 interval. Its response is retarded, and the frequency measured relative to
 the clock is unaffected by arbitrary coordinate, scale and electromagnetic
 gauge choices. One exact fixture gives a redshift ratio of (1+z=2).
 
 That is a real relational redshift calculation in a model, but not yet a
-prediction for a star or galaxy. The current observer programme is adding
-localized emitters, receivers, recoil and backreaction so that the global
-demonstration can become a more realistic measurement protocol. Its expanded
-108-part apparatus passes the basic cyclic consistency check, but fails a
-more demanding first-order consistency identity. The failure has been
-localized to a missing second-order clock transformation. Until that piece is
-derived and the test is replayed, the nonlinear detector cannot be promoted.
-This is a precise repair target, not a failure of the already certified
-linear redshift experiment.
+prediction for a star or galaxy. The attempt to promote its expanded
+apparatus has now produced an exact no-go inside the complete declared
+fixed-background, single-action local repair family: the necessary first-order
+gauge operation cannot be made to square to zero there. This does not undo the
+certified linear redshift experiment. It rules out that particular nonlinear
+apparatus completion and redirects the observer programme to the new
+two-phase counterflow parent, where the relative clock and detector must be
+constructed afresh from the changed action.
 
 ### 2. Nonlinear balance removes some waves—and resonance adds another test
 
@@ -347,7 +361,7 @@ tested.
 
 | Demonstrated in a model | Partly demonstrated | Open |
 |---|---|---|
-| Complete classical causal propagation on several controlled backgrounds | A causal clock-defined redshift signal, with realistic localized apparatus still under construction | Electrons, mass generation and Standard Model matter |
+| Complete classical causal propagation on several controlled backgrounds, including a changed two-phase counterflow parent | A causal clock-defined redshift signal; the old apparatus completion is obstructed and a new counterflow-based apparatus is being constructed | Electrons, mass generation and Standard Model matter |
 | Gauge reduction and exact classical comparison rules | Additional compact and black-hole wave families, with their final physical status unresolved | A positive interacting quantum state and physical particles |
 | Global nonlinear balance conditions and explicit resonance obstructions | Static black-hole thermodynamics; additional waves reach the horizon but are excluded by finite size at infinity in both parities at one fixture | Full black-hole scattering, stability, ringdown and Hawking radiation |
 | A one-loop anomaly calculation and a compensator-based local repair in a changed theory | Candidate reduced quantum two-point functions with both positive and negative signs | Gravitational lensing, realistic cosmology, dark matter and dark energy |
