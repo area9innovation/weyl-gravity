@@ -1,0 +1,30 @@
+{
+  "result_id": "BERGER_REPLACEMENT112_TO_APPARATUS_PUSHOUT_NONDEFINITION",
+  "recorded_at": "2026-07-21T02:02:49Z",
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      "python3 -m py_compile closed_universe_observers/generate_berger_replacement112_to_apparatus_pushout_nondefinition.py closed_universe_observers/verify_berger_replacement112_to_apparatus_pushout_nondefinition.py",
+      "python3 -m json.tool closed_universe_observers/schema/berger-replacement112-to-apparatus-pushout-nondefinition-v1.schema.json",
+      "git diff --check -- <explicit observer package paths>"
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m closed_universe_observers.generate_berger_replacement112_to_apparatus_pushout_nondefinition --write", "elapsed_seconds": 0.18, "result": "PASS"},
+      {"command": "python3 -m closed_universe_observers.verify_berger_replacement112_to_apparatus_pushout_nondefinition", "elapsed_seconds": 0.66, "result": "PASS"},
+      {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_replacement112_to_apparatus_pushout_nondefinition.py", "elapsed_seconds": 0.61, "result": "5 passed"},
+      {"command": "python3 -m closed_universe_observers.atlas.generate_observer_atlas_fragment && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment", "elapsed_seconds": 4.27, "result": "PASS"},
+      {"command": "python3 -m pytest -q closed_universe_observers/tests/test_observer_atlas_fragment.py", "elapsed_seconds": 40.91, "result": "62 passed"}
+    ]
+  },
+  "tier_2": {
+    "status": "NOT_RUN",
+    "criterion": "The terminal predecessors are unchanged content-addressed inputs; this package adds only their categorical disposition and directly checks the affected atlas consumer."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "criterion": "No freeze, release, theorem promotion or shared-core algebra changed."
+  }
+}

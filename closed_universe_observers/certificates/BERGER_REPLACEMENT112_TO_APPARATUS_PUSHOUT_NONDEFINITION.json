@@ -1,0 +1,83 @@
+{
+  "atlas_status": "NO_CERTIFIED_MAP",
+  "basis_independent_separator": {
+    "defect_entry_count": 132,
+    "defect_position_count": 28,
+    "exact_specialization_rank_lower_bound": 1,
+    "fixture": {
+      "ca": "4/5",
+      "cu": "12/13",
+      "sa": "3/5",
+      "su": "5/13"
+    },
+    "identity": "q1_squared",
+    "sphere_point": {
+      "x0": "3/5",
+      "x1": "4/5",
+      "x2": "0",
+      "x3": "0"
+    },
+    "transformation_law": "(S q1 S^-1)^2 = S q1^2 S^-1",
+    "witness": {
+      "coefficient": "14090097*j*x0**2/71402500 - 6665274*j*x0*x3/17850625 + 122453847*j*x1**2/142805000 + 122453847*j*x2**2/142805000 - 17067993*j/35701250 - 89311761*x0**2/1428050000 - 73416063*x0*x3/357012500 + 792508239*x1**2/2856100000 + 792508239*x2**2/2856100000 - 351598239/2856100000",
+      "input_index": 4,
+      "input_pbw_word": [],
+      "input_row_id": "sigma",
+      "output_index": 27,
+      "output_row_id": "h_hat_star_00",
+      "time_mode": -2
+    },
+    "witness_point_value": "253041999*j/1785062500 + 2282564151/71402500000",
+    "zero_property_is_basis_invariant": true
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE disposition imports the terminal replacement-112 mixed-nilpotency obstruction and the terminal global-rod obstruction by certificate and payload hashes. The prospective replacement-112 source has 132 nonzero mixed-square Fourier entries in 28 positions at the certified nondegenerate fixture, with a nonzero h_hat_star_00-from-sigma witness while all eight rod wave equations vanish. Hence it is not an object of the category of chain complexes. A chain-complex pushout with the material apparatus is therefore NONDEFINED before overlap identifications, parent adjoints, combined pairing, K action or background quotient can be formed. The separator is basis independent because q1 squared transforms by similarity; the exact nonzero specialization gives rank at least one. Zero padding, renaming and reuse of the rejected old unary leave the inherited square unchanged or violate the content-addressed terminal disposition. The minimal additional producer is a complete repaired 112-row unary that resolves every inherited mixed-square defect and passes generic symbolic nilpotency with independent replay. This certificate does not construct a 160-row carrier and leaves physical reduction, Z2 memory, detector response after reduction and relational redshift at NO_CERTIFIED_MAP.",
+  "claim_status": "CERTIFIED_NONDEFINED_CHAIN_COMPLEX_PUSHOUT_FROM_OBSTRUCTED_SOURCE",
+  "dependency_refs": {
+    "global_rod_obstruction": {
+      "path": "closed_universe_observers/certificates/BERGER_GLOBAL_ROD_TWO_DIRECTION_EXTENSION_OBSTRUCTION.json",
+      "result_id": "BERGER_GLOBAL_ROD_TWO_DIRECTION_EXTENSION_OBSTRUCTION",
+      "sha256": "c3e4e228a21043bab3492879d91287c65693b3eda3762418d78dd8545b7ad73a"
+    },
+    "global_rod_payload": {
+      "path": "closed_universe_observers/certificates/BERGER_GLOBAL_ROD_TWO_DIRECTION_EXTENSION_PAYLOAD.json",
+      "result_id": "BERGER_GLOBAL_ROD_TWO_DIRECTION_EXTENSION_PAYLOAD",
+      "sha256": "387bf58cdde1d67aedfa47c8d7b03af2c93c19b9bf2d3441e390c4eb1227ea84"
+    },
+    "terminal_replacement112": {
+      "path": "closed_universe_observers/certificates/BERGER_REPLACEMENT112_EXECUTABLE_UNARY_MIXED_NILPOTENCY_OBSTRUCTION.json",
+      "result_id": "BERGER_REPLACEMENT112_EXECUTABLE_UNARY_MIXED_NILPOTENCY_OBSTRUCTION",
+      "sha256": "7d1962d841c08b2d030e0dd34092d87f387b84157758b9171c4864628ce97c5d"
+    },
+    "terminal_replacement112_payload": {
+      "path": "closed_universe_observers/certificates/BERGER_REPLACEMENT112_EXECUTABLE_UNARY_MIXED_NILPOTENCY_OBSTRUCTION_PAYLOAD.json",
+      "result_id": "BERGER_REPLACEMENT112_EXECUTABLE_UNARY_MIXED_NILPOTENCY_OBSTRUCTION_PAYLOAD",
+      "sha256": "dec4eeece79d85e3274efaad2ad8dbeaa24697445e6ee1e6e6f8cbe7e919d984"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "gate_results": {
+    "apparatus_160_combined_unary": "NO_CERTIFIED_MAP",
+    "detector_response_after_reduction": "NO_CERTIFIED_MAP",
+    "physical_reduction": "NO_CERTIFIED_MAP",
+    "relational_redshift": "NO_CERTIFIED_MAP",
+    "z2_memory": "NO_CERTIFIED_MAP"
+  },
+  "next_gate": "PRODUCE_A_REPAIRED_NILPOTENT_REPLACEMENT112_UNARY_BEFORE_REOPENING_THE_APPARATUS_PUSHOUT",
+  "payload_ref": {
+    "canonical_sha256": "d77d49920f3860f0681cdb1170c78999f67b0820e271990c5f9577899c34b605",
+    "path": "closed_universe_observers/certificates/BERGER_REPLACEMENT112_TO_APPARATUS_PUSHOUT_NONDEFINITION_PAYLOAD.json",
+    "result_id": "BERGER_REPLACEMENT112_TO_APPARATUS_PUSHOUT_NONDEFINITION_PAYLOAD",
+    "sha256": "ad847fe090768f39f975a6376d8b3c4f8cbd7b6231f1ce0fbc59c2fbe45c6f10"
+  },
+  "provenance": {
+    "generator_command": "python3 -m closed_universe_observers.generate_berger_replacement112_to_apparatus_pushout_nondefinition --write",
+    "independent_verifier_command": "python3 -m closed_universe_observers.verify_berger_replacement112_to_apparatus_pushout_nondefinition",
+    "source_sha256": "5d30c0ce35168c74091ed69603ae6a7a8d2b98d4fb9bce830367d1305dada5ec"
+  },
+  "result_id": "BERGER_REPLACEMENT112_TO_APPARATUS_PUSHOUT_NONDEFINITION",
+  "schema": "closed-universe-berger-replacement112-to-apparatus-pushout-nondefinition-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

@@ -303,6 +303,18 @@ time mode `-2`.  The fail-closed atlas row is
 No executable-112, combined-160, gauge-reduced, detector, memory or redshift
 map is certified.
 
+The successor pushout disposition is therefore `NONDEFINED`, not a partial
+160-row construction.  A chain-complex pushout requires its replacement-112
+source to satisfy `q1^2=0`; the terminal exact separator has specialization
+rank at least one and transforms by similarity under every invertible basis
+change.  Row padding, relabeling and reuse of the rejected old unary cannot
+remove it.  The atlas row
+`observer.berger.interaction.replacement112_to_apparatus_pushout_nondefinition`
+keeps the combined unary, physical reduction, Z2 memory and relational
+redshift at `NO_CERTIFIED_MAP`.  The minimal missing producer is a repaired
+complete replacement-112 unary with generic symbolic nilpotency and an
+independent replay.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.
