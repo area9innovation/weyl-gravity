@@ -97,4 +97,5 @@ nodes: `ell=2` in 99.874 s, `ell=3` in 114.845 s, and `ell=4` in 191.541 s;
 total 406.260 s. This long rail is Tier 2. The ordinary generator, independent
 verifier and five mutation/scoped tests remain on the fast rail.
 
+EVIDENCE: bridge/certificates/EINSTEIN_MAXWELL_WEYL_POLAR_DIRECT_LEE_WALD_COMPLETION_V1.json
 CLOSE-OUT: DONE — generic polar direct four-dimensional Lee--Wald completion certified.
