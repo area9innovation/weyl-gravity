@@ -1,0 +1,175 @@
+{
+  "artifact_kind": "PROTOCOL_SPECIFICATION",
+  "claim_flags": {
+    "continuation_domain_declared": true,
+    "independent_rail_required": true,
+    "numerical_rail_implemented": false,
+    "off_real_axis_result_established": false,
+    "protocol_specified": true,
+    "quasinormal_mode_computed": false,
+    "real_axis_anchors_pinned_by_hash": true,
+    "spectrum_computed": false
+  },
+  "declaration": {
+    "is_specification_only": true,
+    "no_computation_run": true,
+    "purpose": "independent numerical-validation protocol (falsification rail) that any prospective BH-3 complex-frequency / quasinormal-mode computation MUST pass before its vocabulary is admissible",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "any complex-omega mode, symplectic-current continuation, spectrum, quasinormal mode, stability, scattering, or positivity result",
+    "any off-real-axis numerical value (nothing is computed here)",
+    "admissibility of BH-3 vocabulary (this protocol is a precondition on a future rail, not a BH-3 result)"
+  ],
+  "lifecycle": "SPECIFIED",
+  "missing_objects": [
+    "the two independent numerical implementations themselves (this item delivers the specification only)",
+    "any executed real-axis validation run (a future rail runs it)",
+    "the analytic-continuation certificate (separate item black-hole-complex-frequency-analytic-continuation-gate)"
+  ],
+  "protocol": {
+    "acceptance_thresholds": {
+      "convergence_order_declared": "spectral: geometric; shooting: declared algebraic order p, verified by Richardson",
+      "fail_closed": "any anchor not reproduced to tau_conv, any non-converging refinement, any method disagreement, or any real pole is a FAIL; a FAIL blocks BH-3 vocabulary -- a skip or timeout is never a pass",
+      "independent_agreement": "methods A and B must agree to tau_conv on every real-axis anchor above",
+      "tau_bc": "1e-9",
+      "tau_conv": "1e-10 relative",
+      "tau_resid": "1e-9"
+    },
+    "continuation_domain": {
+      "hands_off_to": "black-hole-complex-frequency-analytic-continuation-gate (which certifies or obstructs the continuation itself; this protocol only validates a numerical rail against the real-axis anchors)",
+      "statement": "the numerical rail may be continued into the complex-omega plane ONLY within an explicitly declared domain that EXCLUDES the certified poles {i, i/2} of a(omega) (and any branch structure the analytic-continuation gate isolates).  Reproducing the exact pole/zero structure of a(omega) on and near the real axis is a NECESSARY precondition for trusting the rail off the real axis."
+    },
+    "convergence_criterion": {
+      "shooting": "algebraic Richardson convergence of declared order p in h; extrapolated value stable to tau_conv",
+      "spectral": "geometric (exponential) Cauchy convergence in N: |Q_N - Q_{N-dN}| decreasing geometrically until below tau_conv",
+      "tau_conv": "1e-10 relative (declared; a rail may tighten but never loosen without a superseding protocol event)"
+    },
+    "error_control": {
+      "boundary_mismatch": "horizon/infinity boundary-condition residual below tau_bc = 1e-9",
+      "ode_residual": "sup-norm of the master-ODE residual on a refined grid below tau_resid = 1e-9",
+      "pairing_consistency": "the Lee-Wald pairing a(omega) recomputed from the numerical modes must be r-independent (on-shell) to tau_conv across at least two evaluation radii"
+    },
+    "numerical_method": {
+      "discretization_parameters": {
+        "shooting": "step size h (or adaptive tolerance atol/rtol), truncation radius R_infty, Frobenius series order K at each end",
+        "spectral": "collocation order N; compactification map; exponent-factorization ansatz"
+      },
+      "independent_rail_requirement": "TWO independent implementations are REQUIRED; agreement across them (not agreement with the exact symbolic producer) is the evidence -- Science Forge independent-rail law.  Neither implementation may call, import, or reuse the symbolic producers (bh2_symbolic_cross_invariant / bh2c_metric_all_orders / bh2_general_l_structural) as its own check.",
+      "method_A": "matched-asymptotic shooting in r_*: factor the certified boundary exponents, build analytic Frobenius series at the horizon (indicial roots +-2 i m omega) and at infinity (exponents from BH2C_METRIC_ALL_ORDERS), integrate to a midpoint, and match value/derivative via the Wronskian.",
+      "method_B": "hyperboloidal/analytic spectral collocation: compactify the radial coordinate, factor the boundary exponents so the residual field is analytic on the closed interval, and discretize on a Chebyshev-Lobatto grid."
+    },
+    "problem_definition": {
+      "domain": "r in (2m, infinity); tortoise r_* = r + 2m ln(r/2m - 1) in (-infinity, +infinity)",
+      "einstein_boundary_conditions": {
+        "horizon": "ingoing selection e^{-2 i m omega r_*} (indicial omega^2 + s^2/(4 m^2) = 0, s = +- 2 i m omega)",
+        "infinity": "outgoing e^{+ i omega r_*}; master field F = H1' (axial) = Ch (polar) decays as the certified exponents below"
+      },
+      "extra_branch": "fourth-order Bach system, extra residue spectrum ['0 (x2)', '-4*I*m*omega', '-2 - 4*I*m*omega']",
+      "master_ode_unified": {
+        "coefficients": [
+          "r**2 - 2*r",
+          "2*I*omega*r**2 + 2*r + 2",
+          "6*I*omega*r - 6"
+        ],
+        "form": "c2 F'' + c1 F' + c0 F = 0, F = Ch (polar) = H1' (axial)",
+        "unified_across_parities": true
+      },
+      "parities": "axial l = 2 (a(omega) anchor); polar via the parity-unified master ODE; general l via Lambda = l(l+1), exceptional l in [0, 1]",
+      "setting": "Schwarzschild exterior of pure-Weyl gravity L = alpha C_abcd C^abcd; m = 1 for the a(omega) anchor, symbolic m for the horizon indicial data",
+      "unknown_bvp": "the exterior complex-omega boundary-value problem for the axial (Regge-Wheeler) and polar master fields and the fourth-order Bach extra branch; the target functional is the cross pairing a(omega) = i F^r(E,X)/(pi alpha)"
+    },
+    "real_axis_cross_check_anchors": {
+      "a_of_omega": {
+        "conjugate_law": "cross(-omega)=conj(cross(omega)); a(-omega) = -conj(a(omega))",
+        "definition": "a(omega) = K(E,X) = i * F^r(E,X)/(pi*alpha) = i*cross(omega)",
+        "exact_rational": "(-1536*I*omega**4 - 3840*omega**3 + 1632*I*omega**2 + 192*omega)/(10*omega**2 - 15*I*omega - 5)",
+        "no_real_poles": true,
+        "omega_zero_excluded": true,
+        "poles": {
+          "I": 1,
+          "I/2": 1
+        },
+        "required_checks": [
+          "match a(omega) at a declared set of real sample frequencies omega != 0 to tau_conv",
+          "verify a(-omega) = -conj(a(omega)) numerically to tau_conv",
+          "exhibit NO real pole (regular solve for all real omega != 0)",
+          "recover the exact pole set {i, i/2} and zero set {0, 2i, i/4 (double)} as the analytic structure the rail must match before continuation"
+        ],
+        "zeros": {
+          "0": 1,
+          "2*I": 1,
+          "I/4": 2
+        }
+      },
+      "exceptional_angular_set": {
+        "exceptional_l": [
+          0,
+          1
+        ],
+        "note": "the rail must exclude l in {0, 1} (S_l or H2_l degenerate) and omega = 0 (excluded exceptional carrier)"
+      },
+      "horizon_indicial": {
+        "einstein_rw_exponents": [
+          "-2*I*m*omega",
+          "2*I*m*omega"
+        ],
+        "extra_residue_spectrum": [
+          "0 (x2)",
+          "-4*I*m*omega",
+          "-2 - 4*I*m*omega"
+        ],
+        "indicial_polynomial": "omega**2 + s**2/(4*m**2)",
+        "required_checks": [
+          "recover the ingoing horizon exponent -2 i m omega to tau_conv",
+          "recover the extra-branch residue spectrum ['0 (x2)', '-4*I*m*omega', '-2 - 4*I*m*omega']"
+        ]
+      },
+      "infinity_asymptotics": {
+        "exponents": {
+          "lam0_branch": "-3",
+          "oscillatory_branch": "-4*I*omega + 1",
+          "oscillatory_reading": "F ~ exp(-2 I omega r) r^{-4 I omega + 1} (1 + O(1/r))"
+        },
+        "master_ode": {
+          "coefficients": [
+            "r**2 - 2*r",
+            "2*I*omega*r**2 + 2*r + 2",
+            "6*I*omega*r - 6"
+          ],
+          "form": "c2 F'' + c1 F' + c0 F = 0, F = Ch (polar) = H1' (axial)",
+          "unified_across_parities": true
+        },
+        "required_checks": [
+          "recover the infinity exponents -3 and -4 i omega + 1 of the master field to tau_conv"
+        ]
+      },
+      "statement": "BEFORE any off-real-axis (complex-omega) value is trusted, the numerical rail MUST reproduce ALL of the following certified real-axis invariants to tau_conv."
+    },
+    "reproducibility_contract": {
+      "deterministic": "fixed grids / step sequences, no randomness in the acceptance path; environment (interpreter, linear-algebra backend, and precision) recorded with the run",
+      "pinned_anchors": "the three certificates below, by content hash",
+      "record": "each validation run records exact method parameters, the achieved residuals, the anchor-by-anchor pass/fail, elapsed time, and the environment; agreement is asserted across the two independent implementations",
+      "supersession": "tightening a tolerance or adding an anchor is a NEW protocol event (append-only), never an edit of this specification"
+    }
+  },
+  "provenance": {
+    "all_orders_certificate": "black_hole_programme/certificates/BH2C_METRIC_ALL_ORDERS.json",
+    "all_orders_sha256": "41efc9c13bf1637bbff3cd5f3c1e6e8f90744ce4abc7128ae5ea8f0afb1b7916",
+    "cross_invariant_certificate": "black_hole_programme/certificates/BH2_SYMBOLIC_CROSS_INVARIANT.json",
+    "cross_invariant_sha256": "9095fe6739ec9bc908508f5c531965d75bfb127f5cd0d06ff224ce63e985d512",
+    "general_l_certificate": "black_hole_programme/certificates/BH2_GENERAL_L_STRUCTURAL.json",
+    "general_l_sha256": "1c375331014b1121791e8d6c63d994d84a41a0a94aa94233ecf28222475b6863",
+    "generator_path": "black_hole_programme/bh3_numerical_validation_protocol.py"
+  },
+  "result_id": "PURE_WEYL_BH3_NUMERICAL_VALIDATION_PROTOCOL",
+  "result_token": "BH3_NUMERICAL_VALIDATION_PROTOCOL_SPECIFIED",
+  "schema": "pure-weyl-bh3-numerical-validation-protocol-v1",
+  "schema_path": "black_hole_programme/schema/bh3-numerical-validation-protocol-v1.schema.json",
+  "schema_sha256": "e2df9dbb29677da9decb678d398b3e59aae08870ee51e1c7c47950fb99f90376",
+  "verification_command": "python3 black_hole_programme/verify_bh3_numerical_validation_protocol.py"
+}

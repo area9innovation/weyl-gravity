@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh3-numerical-validation-protocol-v1",
+  "title": "BH-3 numerical-validation protocol -- specification and reproducibility contract",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_token",
+               "dependency_tags", "artifact_kind", "lifecycle", "declaration",
+               "protocol", "claim_flags", "missing_objects", "does_not_establish",
+               "provenance", "verification_command"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh3-numerical-validation-protocol-v1" },
+    "schema_path": { "const": "black_hole_programme/schema/bh3-numerical-validation-protocol-v1.schema.json" },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH3_NUMERICAL_VALIDATION_PROTOCOL" },
+    "result_token": { "const": "BH3_NUMERICAL_VALIDATION_PROTOCOL_SPECIFIED" },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "artifact_kind": { "const": "PROTOCOL_SPECIFICATION" },
+    "lifecycle": { "const": "SPECIFIED" },
+    "declaration": {
+      "type": "object",
+      "required": ["theory", "purpose", "is_specification_only", "no_computation_run"],
+      "properties": {
+        "is_specification_only": { "const": true },
+        "no_computation_run": { "const": true }
+      }
+    },
+    "protocol": {
+      "type": "object",
+      "required": ["problem_definition", "numerical_method", "convergence_criterion",
+                   "error_control", "real_axis_cross_check_anchors",
+                   "continuation_domain", "acceptance_thresholds",
+                   "reproducibility_contract"],
+      "properties": {
+        "numerical_method": {
+          "type": "object",
+          "required": ["independent_rail_requirement", "method_A", "method_B",
+                       "discretization_parameters"]
+        },
+        "real_axis_cross_check_anchors": {
+          "type": "object",
+          "required": ["statement", "a_of_omega", "horizon_indicial",
+                       "infinity_asymptotics", "exceptional_angular_set"],
+          "properties": {
+            "a_of_omega": {
+              "type": "object",
+              "required": ["definition", "exact_rational", "poles", "zeros",
+                           "conjugate_law", "no_real_poles", "omega_zero_excluded",
+                           "required_checks"],
+              "properties": {
+                "no_real_poles": { "const": true },
+                "omega_zero_excluded": { "const": true }
+              }
+            }
+          }
+        },
+        "continuation_domain": {
+          "type": "object",
+          "required": ["statement", "hands_off_to"]
+        },
+        "acceptance_thresholds": {
+          "type": "object",
+          "required": ["tau_conv", "tau_resid", "tau_bc", "independent_agreement",
+                       "convergence_order_declared", "fail_closed"]
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["protocol_specified", "real_axis_anchors_pinned_by_hash",
+                   "independent_rail_required", "continuation_domain_declared",
+                   "spectrum_computed", "quasinormal_mode_computed",
+                   "off_real_axis_result_established", "numerical_rail_implemented"],
+      "properties": {
+        "protocol_specified": { "const": true },
+        "real_axis_anchors_pinned_by_hash": { "const": true },
+        "independent_rail_required": { "const": true },
+        "continuation_domain_declared": { "const": true },
+        "spectrum_computed": { "const": false },
+        "quasinormal_mode_computed": { "const": false },
+        "off_real_axis_result_established": { "const": false },
+        "numerical_rail_implemented": { "const": false }
+      }
+    },
+    "missing_objects": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "does_not_establish": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "provenance": {
+      "type": "object",
+      "required": ["generator_path", "cross_invariant_certificate",
+                   "cross_invariant_sha256", "general_l_certificate",
+                   "general_l_sha256", "all_orders_certificate", "all_orders_sha256"],
+      "properties": {
+        "cross_invariant_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "general_l_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "all_orders_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh3_numerical_validation_protocol.py"
+    }
+  }
+}
