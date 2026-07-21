@@ -1,0 +1,156 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "Fixed and unrestricted charge sectors are distinct. No observer or quantum mode is inferred.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_V1",
+          "sha256": "cd1fe1bf22604d17c65b941032c6b31c404bfd5cc01bd7f8399642840da01ed4"
+        }
+      ],
+      "id": "classical.counterflow.fixed_charge_clock",
+      "mode_data": {
+        "dispersion": {
+          "statement": "lambda^2 with a size-two Jordan block on unrestricted branch; fixed branch removes the pair.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "lee_wald": {
+          "statement": "Darboux rank two unrestricted; rank zero after fixed-charge quotient.",
+          "status": "OBSTRUCTED"
+        },
+        "resonance": {
+          "statement": "No nonlinear promotion.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Unrestricted charge perturbations produce secular phase drift; fixed branch has no clock.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "causal_retarded": {
+            "statement": "Unary causality is not stability or nonlinear response.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "delta psi=t delta Q/I on unrestricted branch.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "Not computed after first exact health failure.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "stationary Berger R x S3, a=1, c_squared=9/40",
+        "boundaries": "none; closed S3 Cauchy slices",
+        "carrier": "global relative phase-charge sector of 70-row parent",
+        "charge_sector": "derived fixed-Q_rel quotient",
+        "degree": 0,
+        "ell": 0,
+        "k": "NOT_APPLICABLE",
+        "m": 0,
+        "omega": "zero-frequency linearized root; background Omega=3/4",
+        "parity": "scalar zero mode",
+        "theory": "selected two-phase counterflow action"
+      }
+    },
+    {
+      "claim_boundary": "Fixed and unrestricted charge sectors are distinct. No observer or quantum mode is inferred.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_V1",
+          "sha256": "cd1fe1bf22604d17c65b941032c6b31c404bfd5cc01bd7f8399642840da01ed4"
+        }
+      ],
+      "id": "classical.counterflow.unrestricted_charge_clock",
+      "mode_data": {
+        "dispersion": {
+          "statement": "lambda^2 with a size-two Jordan block on unrestricted branch; fixed branch removes the pair.",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "Darboux rank two unrestricted; rank zero after fixed-charge quotient.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "No nonlinear promotion.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Unrestricted charge perturbations produce secular phase drift; fixed branch has no clock.",
+            "status": "OBSTRUCTED"
+          },
+          "causal_retarded": {
+            "statement": "Unary causality is not stability or nonlinear response.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "delta psi=t delta Q/I on unrestricted branch.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "Not computed after first exact health failure.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "stationary Berger R x S3, a=1, c_squared=9/40",
+        "boundaries": "none; closed S3 Cauchy slices",
+        "carrier": "global relative phase-charge sector of 70-row parent",
+        "charge_sector": "unrestricted variable-Q_rel physical branch",
+        "degree": 0,
+        "ell": 0,
+        "k": "NOT_APPLICABLE",
+        "m": 0,
+        "omega": "zero-frequency linearized root; background Omega=3/4",
+        "parity": "scalar zero mode",
+        "theory": "selected two-phase counterflow action"
+      }
+    }
+  ],
+  "generated_by": "d_quotient_classical/atlas/generate_two_phase_counterflow_charge_clock_complementarity_atlas_fragment.py",
+  "generated_by_sha256": "b28b83d408b65139e3ec69df641d93490709123171e32876267e2bf48e7f47f1",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "classical",
+  "verification_commands": [
+    "python3 d_quotient_classical/compensator/two_phase_counterflow_charge_clock_complementarity.py --check",
+    "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_charge_clock_complementarity.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-charge-clock-complementarity-fragment-v1.json"
+  ]
+}

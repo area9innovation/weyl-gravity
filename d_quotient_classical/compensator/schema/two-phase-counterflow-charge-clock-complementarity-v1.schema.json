@@ -1,0 +1,14 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","additionalProperties":false,
+  "required":["schema","result_id","result_state","dependency_tags","imports","general_theorem_sha256","branch_dichotomy_sha256","first_failed_physical_sector","bounded_stability","real_exponential_growing_roots","payload_ref","claim_boundary"],
+  "properties":{
+    "schema":{"const":"pure-weyl-two-phase-counterflow-charge-clock-complementarity-v1"},
+    "result_id":{"const":"TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_V1"},
+    "result_state":{"const":"UNRESTRICTED_CHARGED_CLOCK_HAS_EXACT_SECULAR_ZERO_JORDAN_OBSTRUCTION"},
+    "dependency_tags":{"type":"array","items":{"enum":["LOCAL-ALGEBRAIC","REDUCED-MODE","LORENTZIAN-CAUSAL"]}},
+    "imports":{"type":"object","minProperties":4},"general_theorem_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"branch_dichotomy_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "first_failed_physical_sector":{"type":"string"},"bounded_stability":{"const":false},"real_exponential_growing_roots":{"const":0},
+    "payload_ref":{"type":"object","required":["path","content_sha256"],"properties":{"path":{"type":"string"},"content_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}}},
+    "claim_boundary":{"type":"object","required":["establishes","does_not_establish"],"properties":{"establishes":{"type":"array","items":{"type":"string"}},"does_not_establish":{"type":"array","items":{"type":"string"}}}}
+  }
+}
