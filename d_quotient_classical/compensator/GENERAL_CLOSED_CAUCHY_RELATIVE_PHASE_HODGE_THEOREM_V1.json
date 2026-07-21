@@ -1,0 +1,185 @@
+{
+  "S3_and_homogeneous_reproduction": {
+    "homogeneous_limit": "lambda=0 gives Q^T p_0=0 and G_rel=(N^T M^{-1}N)^{-1}",
+    "matrix_statement": "the general exact, coexact and constant-mode matrices equal the imported S3 formulas after this substitution",
+    "oracle_policy": "the predecessor terminal verdict is not consumed; it is used only as a hash-pinned regression crosscheck",
+    "specialization": "b1=0, Tor H2=0, lambda_ell=ell(ell+2)/a^2, m_ell=(ell+1)^2, nu_ell=(ell+1)^2/a^2 and coexact multiplicity 2 ell(ell+2)"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE structural theorem assumes the smooth Hodge theorem on a connected closed oriented Riemannian Cauchy three-manifold and proves the exact finite charge-lattice quotient, integrated and eigenspace Gauss reductions, mode counts, positive principal-form criteria, winding/Wilson sectors and the integral-split obstruction. It is linearized about the trivial smooth fixed-modulus branch. It does not construct a model-specific action, gravity or D coupling, a support-local BV/Green parent, nonlinear evolution, Hadamard data, particles, scale generation, or any quantum result.",
+  "claim_flags": {
+    "CONFLUX_VERDICT": false,
+    "FULL_BV_CAUSAL_PARENT": false,
+    "GENERAL_CLOSED_CAUCHY_HODGE_GAUSS_THEOREM": true,
+    "GLOBAL_GREEN_HYPERBOLICITY": false,
+    "GRAVITY_OR_D_GAUGE": false,
+    "HADAMARD_OR_QUANTUM": false,
+    "INTEGRAL_WILSON_WINDING_QUOTIENT": true,
+    "MODEL_SPECIFIC_ACTION": false,
+    "S3_REPRODUCED": true,
+    "TOPOLOGICAL_SPLIT_OBSTRUCTION": true
+  },
+  "content_hashes": {
+    "claim_boundary_sha256": "14130cd8315b96da21c3151b9718bcf5f11a9c9f75e1acaf48a707d66bc28427",
+    "gauss_sha256": "36e0cf103a85523a38fc0914f17f71c9a5e76a29164dcd634494d6797cde9bb8",
+    "hodge_sha256": "eab73eef861e6fab2f28681a16996cf7ded733e5fde4fa34c0d1c38cdf10b581",
+    "lattice_sha256": "2c29cbeb92a4b1bbd6b01a853246eeb53218dcc547c3d49edfae9cc11ac08214",
+    "mode_sha256": "59b964fe7602d2936510e11ba08bb4a8f0e9eb351cf3d9042d500371afc890fe",
+    "positivity_sha256": "584d281af93d82e1a2a6d62ae4ec2dc9eef0f9b05d5d941bb8fc5dc0d9296110",
+    "terminal_sha256": "06711a0c2f0ef131667b4ded915b471b7cef17c5033316992948b60ee9549310",
+    "topological_obstruction_sha256": "35a3ddbd29771c73b3bb9eb6c1483519febca70714b482bab324554a0617695d"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "gauss_reduction": {
+    "active_split": "S_perp=S-T(T^T K T)^{-1}T^T K S",
+    "exact_gauge_action": "delta theta_lambda=Q alpha_lambda; delta a_L=sqrt(lambda) alpha_lambda; delta A0=dot(alpha_lambda)",
+    "integrated_constraint": "Q^T integral_X M(dot(theta)-Q A0) vol=0",
+    "local_constraint": "Q^T M(dot(theta)-Q A0)+delta K(dot(A)-d A0)=0",
+    "longitudinal_frequency": "lambda I+K_a^{-1}V",
+    "longitudinal_schur": "K_L(lambda)=(K_a^{-1}+lambda V^{-1})^{-1}",
+    "matter_kernel_warning": "ker Q is reducibility only for constant gauge parameters; its nonconstant exact connection directions are gauge, while its coexact and harmonic directions are physical Maxwell/Wilson carriers",
+    "positive_scalar_mode": "Q^T M v_lambda+sqrt(lambda) K e_L_lambda=0",
+    "relative_character": "psi=N^T theta with Q^T N=0 and dim psi=n-k",
+    "relative_metric": "G_rel=(N^T M^{-1}N)^{-1}"
+  },
+  "hodge_theorem": {
+    "analytic_hypotheses": [
+      "X is a connected closed oriented smooth three-manifold",
+      "h is a smooth Riemannian metric",
+      "fields lie in the smooth Sobolev-completable de Rham complex"
+    ],
+    "coexact_spectrum": "positive coexact Hodge eigenspaces F_nu are independent topology/metric data; no S3 relation nu=lambda+constant is assumed",
+    "exact_spectrum": "d/sqrt(lambda) identifies E_lambda with the exact one-form eigenspace for every lambda>0",
+    "flat_bundle_components": "0 -> H1(X;R)/H1(X;Z)_free -> H1(X;R/Z) -> Tor H2(X;Z) -> 0",
+    "harmonic_dimension": "dim Harm1=b1(X)",
+    "integral_harmonic_lattice": "2*pi*H1(X;Z)_free embeds in Harm1 through harmonic representatives",
+    "one_form_decomposition": "Omega1=d Omega0_perp direct-sum delta Omega2 direct-sum Harm1",
+    "scalar_spectrum": "Delta0 has lambda_0=0 with multiplicity one and discrete positive eigenspaces E_lambda of finite multiplicity m_lambda"
+  },
+  "import": {
+    "actual_sha256": "8bea19daa641aed5d771dd440624e5c7ea6128ce857ebd04c3d9b010c7acd5f9",
+    "crosscheck_only": true,
+    "oracle_fields_consumed": [],
+    "path": "d_quotient_classical/compensator/CLOSED_S3_RELATIVE_PHASE_NONHOMOGENEOUS_HODGE_PREFLIGHT_V1.json",
+    "result_id": "CLOSED_S3_RELATIVE_PHASE_NONHOMOGENEOUS_HODGE_PREFLIGHT_V1",
+    "sha256": "8bea19daa641aed5d771dd440624e5c7ea6128ce857ebd04c3d9b010c7acd5f9",
+    "source_commit": "fcfa6f88b390a19a83f844791400f16da121e5d4"
+  },
+  "integral_lattice_quotient": {
+    "all_free_H1_generators": "take the b1-fold product; free relative winding rank is b1(n-k)",
+    "bundle_strata": "a nowhere-zero charged phase requires Q c=0 in H2(X;Z)^n; torsion flat sectors are ker(Q:Tor H2(X;Z)^r -> Tor H2(X;Z)^n)",
+    "charge_normal_form": "U Q V=diag(d_1,...,d_k,0), d_i>0 and d_i divides d_{i+1}",
+    "combined_harmonic_quotient_per_free_H1_generator": "R^k times T^{r-k} times Z^{n-k} times product_i Z/d_i",
+    "constant_stabilizer": "ker(T^r -> T^n)=T^{r-k} times product_i Z/d_i",
+    "quotient_derivation": "(w,a) in Z^n times R^r modulo (w,a)~(w+Qz,a+2*pi*z), z in Z^r",
+    "topological_obstruction": "the real K-orthogonal active complement need not preserve Z^r; without a primitive K-orthogonal integral complement, the local active/kernel split does not descend to a global product of Wilson subtori"
+  },
+  "mode_theorem": {
+    "constant_scalar": {
+      "Gauss": "Q^T p_0=0",
+      "exact_connection": "absent",
+      "infinitesimal_reducibility": "constant ker(Q) of dimension r-k",
+      "relative_phase_dimension": "n-k"
+    },
+    "harmonic_one_forms": {
+      "frequency_operator": "I_b1 tensor K^{-1}Q^T M Q",
+      "global_carrier": "combined integral phase-winding/Wilson quotient, not Harm1 treated as pure gauge",
+      "local_tangent_dimension": "b1*r",
+      "massive_active_families": "b1*k",
+      "massless_kernel_Wilson_families": "b1(r-k)"
+    },
+    "positive_coexact_eigenspace": {
+      "frequency_operator": "nu I+K^{-1}Q^T M Q",
+      "massive_families": "t_nu*k",
+      "massless_Maxwell_families": "t_nu(r-k)",
+      "multiplicity": "t_nu"
+    },
+    "positive_scalar_eigenspace": {
+      "massive_longitudinal_families": "m_lambda*k",
+      "matter_kernel_exact_physical_families": 0,
+      "multiplicity": "m_lambda",
+      "relative_phase_families": "m_lambda(n-k)"
+    }
+  },
+  "payload_ref": {
+    "content_sha256": "59497cdc8331c5dc2dc472746bcb3e80bf850e9c8ceae545dc2ce352b6b57fd0",
+    "path": "d_quotient_classical/compensator/GENERAL_CLOSED_CAUCHY_RELATIVE_PHASE_HODGE_THEOREM_PAYLOAD_V1.json",
+    "result_id": "GENERAL_CLOSED_CAUCHY_RELATIVE_PHASE_HODGE_THEOREM_PAYLOAD_V1",
+    "sha256": "63176bf8bd75554b8f4c9ebe22d93c7cc06708b40cd9563c3fe3e29011ddc2b0"
+  },
+  "positivity_and_hyperbolicity": {
+    "existence_corollary": "for M>0,K>0, healthy relative waves exist on every positive scalar eigenspace iff n-rank(Q)>0",
+    "full_modewise_criterion": "G_rel>0; K>0 on coexact/harmonic carriers; and K_a^{-1}+lambda V^{-1}>0 for every scalar eigenvalue lambda>0",
+    "global_limit": "modewise positive symbols are not a certificate of a support-local Green operator or nonlinear causal theory",
+    "indefinite_strata": "if M or K is indefinite, test the displayed finite matrices on each eigenspace; singular A, V or Schur matrices define a separate Dirac stratum and receive no health verdict",
+    "lower_order_stability": "a reduced potential Hessian is lower order and must be checked separately on constant and positive modes",
+    "positive_branch": "M>0 and K>0 imply G_rel>0, V>0, K_a>0 and K_L(lambda)>0 for every lambda>0",
+    "relative_necessary_and_sufficient": "on a nonsingular stratum, relative scalar modes have positive wave principal form iff G_rel>0"
+  },
+  "proof_obligations": {
+    "Hodge_hypotheses_declared": "PASS",
+    "S3_specialization": "PASS",
+    "Smith_lattice_quotient": "PASS",
+    "b1_positive_fixture": "PASS",
+    "exact_gauge_quotient": "PASS",
+    "harmonic_Wilson_retention": "PASS",
+    "homogeneous_zero_mode": "PASS",
+    "integral_split_obstruction": "PASS",
+    "integrated_Gauss": "PASS",
+    "positive_eigenspace_Gauss": "PASS",
+    "positive_modewise_forms": "PASS",
+    "predecessor_hash": "PASS",
+    "relative_metric": "PASS",
+    "torsion_bundle_strata": "PASS"
+  },
+  "result_id": "GENERAL_CLOSED_CAUCHY_RELATIVE_PHASE_HODGE_THEOREM_V1",
+  "result_state": "CERTIFIED_GENERAL_CLOSED_CAUCHY_HODGE_GAUSS_STRUCTURE_THEOREM",
+  "round_S3_steps_audit": {
+    "S3_specific": [
+      "closed formulas for scalar eigenvalues and multiplicities",
+      "closed formulas for coexact eigenvalues/curl chiralities and multiplicities",
+      "b1(S3)=0 and Tor H2(S3;Z)=0"
+    ],
+    "general_Hodge_only": [
+      "orthogonal exact/coexact/harmonic decomposition",
+      "exact one-form normalization dY/sqrt(lambda)",
+      "integrated divergence vanishes on a closed manifold",
+      "charge-rank split and every finite matrix identity"
+    ]
+  },
+  "schema": "pure-weyl-general-closed-cauchy-relative-phase-hodge-theorem-v1",
+  "scope": {
+    "carrier": "linear phase and compact Abelian connection perturbations at fixed positive moduli in the trivial local bundle chart",
+    "charge_matrix": "Q in Mat_{n by r}(Z)",
+    "derivative_order": 2,
+    "gauge_count": "finite r>=0",
+    "phase_count": "finite n>=1",
+    "spatial_manifold": "arbitrary connected closed oriented smooth Riemannian three-manifold X"
+  },
+  "terminal_verdict": {
+    "S3_reproduced": true,
+    "full_causal_parent_activated": false,
+    "homogeneous_constant_mode_reproduced": true,
+    "next_gate": "Select a positive local scalar-U1 action and construct its unreduced support-local BV causal parent while retaining the integral harmonic sector.",
+    "relative_wave_count_per_positive_scalar_eigenfunction": "n-rank(Q)",
+    "result": "GENERAL_CLOSED_CAUCHY_HODGE_GAUSS_STRUCTURE_THEOREM",
+    "topological_obstruction": "Harmonic connection modes cannot be discarded as gauge, and a local real K-orthogonal mass split cannot be promoted to a global Wilson-torus product unless an integral K-orthogonal complement exists.",
+    "topology_sensitive_global_sector": true
+  },
+  "topological_obstruction": {
+    "does_not_obstruct": "the local tangent-space Hodge/Gauss reduction or its exact mode counts",
+    "does_obstruct": "a presentation-free global factorization into separate active and kernel Wilson tori without extra integral splitting data",
+    "statement": "Harmonic connection modes cannot be discarded as gauge, and a local real K-orthogonal mass split cannot be promoted to a global Wilson-torus product unless an integral K-orthogonal complement exists.",
+    "status": "STRUCTURAL_TOPOLOGICAL_OBSTRUCTION"
+  },
+  "zero_modes_and_strata": {
+    "constant_gauge_reducibility": "identity stabilizer T^{r-k} with finite components product Z/d_i",
+    "constant_scalar": "n-k relative zero modes, subject to any lower-order potential",
+    "harmonic_connection": "b1*r local tangent modes retained; never exact gauge",
+    "modulus_support": "each vanishing-modulus support uses the restricted row matrix Q_S; inactive complex scalars require Cartesian variables and are outside the phase chart",
+    "phase_winding": "free rank b1(n-k) plus nonprimitive finite labels determined by d_i",
+    "torsion_bundles": "disconnected admissible sectors are ker Q on Tor H2; only the trivial sector is linearized here"
+  }
+}

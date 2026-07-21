@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "GENERAL_CLOSED_CAUCHY_RELATIVE_PHASE_HODGE_THEOREM_V1_TIER_RECEIPT",
+  "claim_id": "GENERAL_CLOSED_CAUCHY_RELATIVE_PHASE_HODGE_THEOREM_V1",
+  "date": "2026-07-21",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "artifacts": [
+    {
+      "path": "d_quotient_classical/compensator/general_closed_cauchy_relative_phase_hodge_theorem.py",
+      "sha256": "f725e04427375a1a9f7a351cf0da7ed0293d6e6847e5b6cd8d14dca3a16c09bc"
+    },
+    {
+      "path": "d_quotient_classical/compensator/GENERAL_CLOSED_CAUCHY_RELATIVE_PHASE_HODGE_THEOREM_V1.json",
+      "sha256": "9f49a66dd33095dee341afaca3aed9f7625319cf01850d64939af0aebe9d4ff7"
+    },
+    {
+      "path": "d_quotient_classical/compensator/GENERAL_CLOSED_CAUCHY_RELATIVE_PHASE_HODGE_THEOREM_PAYLOAD_V1.json",
+      "sha256": "63176bf8bd75554b8f4c9ebe22d93c7cc06708b40cd9563c3fe3e29011ddc2b0"
+    },
+    {
+      "path": "d_quotient_classical/compensator/verify_general_closed_cauchy_relative_phase_hodge_theorem.py",
+      "sha256": "701a871fe077988e4fcfc878eb2ee24935c70bb52ba2ea5435266d485942d425"
+    },
+    {
+      "path": "d_quotient_classical/compensator/tests/test_general_closed_cauchy_relative_phase_hodge_theorem.py",
+      "sha256": "799e16382a4b2f65fb3ddb34719de615794ae8db618f20745944ad34323f3fa2"
+    },
+    {
+      "path": "d_quotient_classical/schema/general-closed-cauchy-relative-phase-hodge-theorem-v1.schema.json",
+      "sha256": "86c4ff52ede8138bd718b31c7a9695d1b8cdb3ce463ececac303193f02bc0698"
+    },
+    {
+      "path": "d_quotient_classical/schema/general-closed-cauchy-relative-phase-hodge-theorem-payload-v1.schema.json",
+      "sha256": "8b002b6b297c62f07fb572887328b35c7988af093958578c8e561bceb3b73caa"
+    },
+    {
+      "path": "d_quotient_classical/atlas/generate_general_closed_cauchy_relative_phase_hodge_atlas_fragment.py",
+      "sha256": "397be1fe48c0c3dbd028e3ca9112713b01707a0650dad2449e549b39b1347e4a"
+    },
+    {
+      "path": "residual_atlas/general-closed-cauchy-relative-phase-hodge-fragment-v1.json",
+      "sha256": "f5f0a091ccf3cc38ffd5189cdfd5b5522c9647b90babd035fec038cf75d170bf"
+    },
+    {
+      "path": "d_quotient_classical/reports/general-closed-cauchy-relative-phase-hodge-theorem-v1.md",
+      "sha256": "ad058c89b3ddc28ccda951f9cbfeebce5aba5233f9fb3c952f061a8a0f870faa"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <producer, independent verifier, atlas generator, tests>; python3 -m json.tool <certificate, payload, schemas, atlas, receipt>; explicit artifact-hash and whitespace/newline audit",
+        "elapsed_seconds": 0.16,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/general_closed_cauchy_relative_phase_hodge_theorem.py --check",
+        "elapsed_seconds": 0.6,
+        "status": "PASS",
+        "method": "exact Hodge-sector formulas, determinantal-divisor Smith invariants, compact winding/Wilson quotient, charge-support strata and three rational/topological fixtures"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_general_closed_cauchy_relative_phase_hodge_theorem.py",
+        "elapsed_seconds": 0.51,
+        "status": "PASS",
+        "independent_rail": "imports no producer module; uses SymPy integer Smith normal form, cellular Betti/torsion reconstruction, exact matrix replay, brute finite torsion kernels, a unimodular presentation census and independent S3 specialization"
+      },
+      {
+        "command": "python3 -m unittest -v d_quotient_classical.compensator.tests.test_general_closed_cauchy_relative_phase_hodge_theorem",
+        "elapsed_seconds": 0.65,
+        "status": "PASS",
+        "tests": 11,
+        "mutation_controls": "import drift, payload corruption and causal-claim promotion are rejected; b1-positive Wilson counts, nonprimitive Smith sectors, torsion bundles, support strata and atlas fail-closure are exercised"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true <both theorem schemas and generated artifacts>",
+        "elapsed_seconds": 3.84,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/generate_general_closed_cauchy_relative_phase_hodge_atlas_fragment.py --check; python3 residual_atlas/validate_fragment.py residual_atlas/general-closed-cauchy-relative-phase-hodge-fragment-v1.json",
+        "elapsed_seconds": 0.25,
+        "status": "PASS",
+        "direct_consumer": "five fail-closed atlas carrier rows"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_closed_s3_relative_phase_nonhomogeneous_hodge_preflight.py",
+        "elapsed_seconds": 0.54,
+        "status": "PASS",
+        "scope": "hash-pinned round-S3 predecessor and its independent exact matrix replay"
+      },
+      {
+        "command": "bash ci/science-forge-shadow.sh",
+        "elapsed_seconds": 6.79,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "read-only rail reported pre-existing bridge certificate drift, corpus baseline growth from 976 to 1351 certificates, and an unpinned stale Forge development binary; diagnostics preserved at /tmp/sf-shadow.i4vAmw"
+      }
+    ]
+  },
+  "tier_3": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m unittest discover -v",
+        "elapsed_seconds": 2.39,
+        "status": "PASS",
+        "tests": 149,
+        "scope": "repository-wide Python discovery suite; the 11 package tests are also recorded separately in Tier 1"
+      }
+    ]
+  },
+  "claim_boundary": "The theorem assumes smooth Hodge decomposition on a connected closed oriented Riemannian three-manifold and certifies exact finite charge-lattice, topology and modewise Gauss statements. It does not select an action, construct the unreduced BV/Green parent, prove nonlinear or global causal evolution, couple gravity or D, or establish Hadamard, particle, scale-generation or quantum claims.",
+  "higher_tiers_not_run": []
+}

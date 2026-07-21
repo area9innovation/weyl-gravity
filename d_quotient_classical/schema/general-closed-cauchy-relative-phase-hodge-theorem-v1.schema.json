@@ -1,0 +1,398 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/general-closed-cauchy-relative-phase-hodge-theorem-v1.schema.json",
+  "title": "General closed-Cauchy relative-phase Hodge/Gauss theorem",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "import",
+    "scope",
+    "round_S3_steps_audit",
+    "hodge_theorem",
+    "gauss_reduction",
+    "integral_lattice_quotient",
+    "mode_theorem",
+    "positivity_and_hyperbolicity",
+    "zero_modes_and_strata",
+    "S3_and_homogeneous_reproduction",
+    "topological_obstruction",
+    "payload_ref",
+    "proof_obligations",
+    "claim_flags",
+    "terminal_verdict",
+    "claim_boundary",
+    "content_hashes"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-general-closed-cauchy-relative-phase-hodge-theorem-v1"
+    },
+    "result_id": {
+      "const": "GENERAL_CLOSED_CAUCHY_RELATIVE_PHASE_HODGE_THEOREM_V1"
+    },
+    "result_state": {
+      "const": "CERTIFIED_GENERAL_CLOSED_CAUCHY_HODGE_GAUSS_STRUCTURE_THEOREM"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ]
+    },
+    "import": {
+      "$ref": "#/$defs/import"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "spatial_manifold",
+        "carrier",
+        "phase_count",
+        "gauge_count",
+        "charge_matrix",
+        "derivative_order"
+      ],
+      "properties": {
+        "spatial_manifold": {
+          "const": "arbitrary connected closed oriented smooth Riemannian three-manifold X"
+        },
+        "carrier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "phase_count": {
+          "const": "finite n>=1"
+        },
+        "gauge_count": {
+          "const": "finite r>=0"
+        },
+        "charge_matrix": {
+          "const": "Q in Mat_{n by r}(Z)"
+        },
+        "derivative_order": {
+          "const": 2
+        }
+      }
+    },
+    "round_S3_steps_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "S3_specific",
+        "general_Hodge_only"
+      ],
+      "properties": {
+        "S3_specific": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "general_Hodge_only": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "hodge_theorem": {
+      "type": "object",
+      "minProperties": 8
+    },
+    "gauss_reduction": {
+      "type": "object",
+      "minProperties": 10
+    },
+    "integral_lattice_quotient": {
+      "type": "object",
+      "minProperties": 7
+    },
+    "mode_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "constant_scalar",
+        "positive_scalar_eigenspace",
+        "positive_coexact_eigenspace",
+        "harmonic_one_forms"
+      ],
+      "properties": {
+        "constant_scalar": {
+          "type": "object",
+          "minProperties": 4
+        },
+        "positive_scalar_eigenspace": {
+          "type": "object",
+          "minProperties": 4
+        },
+        "positive_coexact_eigenspace": {
+          "type": "object",
+          "minProperties": 4
+        },
+        "harmonic_one_forms": {
+          "type": "object",
+          "minProperties": 5
+        }
+      }
+    },
+    "positivity_and_hyperbolicity": {
+      "type": "object",
+      "minProperties": 7
+    },
+    "zero_modes_and_strata": {
+      "type": "object",
+      "minProperties": 6
+    },
+    "S3_and_homogeneous_reproduction": {
+      "type": "object",
+      "minProperties": 4
+    },
+    "topological_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "statement",
+        "does_not_obstruct",
+        "does_obstruct"
+      ],
+      "properties": {
+        "status": {
+          "const": "STRUCTURAL_TOPOLOGICAL_OBSTRUCTION"
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 50
+        },
+        "does_not_obstruct": {
+          "type": "string",
+          "minLength": 1
+        },
+        "does_obstruct": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "payload_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "result_id",
+        "sha256",
+        "content_sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "result_id": {
+          "const": "GENERAL_CLOSED_CAUCHY_RELATIVE_PHASE_HODGE_THEOREM_PAYLOAD_V1"
+        },
+        "sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "content_sha256": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "proof_obligations": {
+      "type": "object",
+      "minProperties": 14,
+      "additionalProperties": {
+        "const": "PASS"
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "GENERAL_CLOSED_CAUCHY_HODGE_GAUSS_THEOREM",
+        "INTEGRAL_WILSON_WINDING_QUOTIENT",
+        "TOPOLOGICAL_SPLIT_OBSTRUCTION",
+        "S3_REPRODUCED",
+        "MODEL_SPECIFIC_ACTION",
+        "FULL_BV_CAUSAL_PARENT",
+        "GLOBAL_GREEN_HYPERBOLICITY",
+        "GRAVITY_OR_D_GAUGE",
+        "HADAMARD_OR_QUANTUM",
+        "CONFLUX_VERDICT"
+      ],
+      "properties": {
+        "GENERAL_CLOSED_CAUCHY_HODGE_GAUSS_THEOREM": {
+          "const": true
+        },
+        "INTEGRAL_WILSON_WINDING_QUOTIENT": {
+          "const": true
+        },
+        "TOPOLOGICAL_SPLIT_OBSTRUCTION": {
+          "const": true
+        },
+        "S3_REPRODUCED": {
+          "const": true
+        },
+        "MODEL_SPECIFIC_ACTION": {
+          "const": false
+        },
+        "FULL_BV_CAUSAL_PARENT": {
+          "const": false
+        },
+        "GLOBAL_GREEN_HYPERBOLICITY": {
+          "const": false
+        },
+        "GRAVITY_OR_D_GAUGE": {
+          "const": false
+        },
+        "HADAMARD_OR_QUANTUM": {
+          "const": false
+        },
+        "CONFLUX_VERDICT": {
+          "const": false
+        }
+      }
+    },
+    "terminal_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result",
+        "relative_wave_count_per_positive_scalar_eigenfunction",
+        "topology_sensitive_global_sector",
+        "S3_reproduced",
+        "homogeneous_constant_mode_reproduced",
+        "topological_obstruction",
+        "full_causal_parent_activated",
+        "next_gate"
+      ],
+      "properties": {
+        "result": {
+          "const": "GENERAL_CLOSED_CAUCHY_HODGE_GAUSS_STRUCTURE_THEOREM"
+        },
+        "relative_wave_count_per_positive_scalar_eigenfunction": {
+          "const": "n-rank(Q)"
+        },
+        "topology_sensitive_global_sector": {
+          "const": true
+        },
+        "S3_reproduced": {
+          "const": true
+        },
+        "homogeneous_constant_mode_reproduced": {
+          "const": true
+        },
+        "topological_obstruction": {
+          "type": "string",
+          "minLength": 50
+        },
+        "full_causal_parent_activated": {
+          "const": false
+        },
+        "next_gate": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "claim_boundary": {
+      "type": "string",
+      "minLength": 200
+    },
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hodge_sha256",
+        "gauss_sha256",
+        "lattice_sha256",
+        "mode_sha256",
+        "positivity_sha256",
+        "topological_obstruction_sha256",
+        "terminal_sha256",
+        "claim_boundary_sha256"
+      ],
+      "properties": {
+        "hodge_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "gauss_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "lattice_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "mode_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "positivity_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "topological_obstruction_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "terminal_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "claim_boundary_sha256": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256",
+        "source_commit",
+        "result_id",
+        "actual_sha256",
+        "oracle_fields_consumed",
+        "crosscheck_only"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "source_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "result_id": {
+          "const": "CLOSED_S3_RELATIVE_PHASE_NONHOMOGENEOUS_HODGE_PREFLIGHT_V1"
+        },
+        "actual_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "oracle_fields_consumed": {
+          "const": []
+        },
+        "crosscheck_only": {
+          "const": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,446 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/general-closed-cauchy-relative-phase-hodge-theorem-payload-v1.schema.json",
+  "title": "General closed-Cauchy relative-phase exact payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "state",
+    "import_ref",
+    "fixtures",
+    "presentation_invariants",
+    "oracle_fields_consumed",
+    "content_sha256"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-general-closed-cauchy-relative-phase-hodge-payload-v1"
+    },
+    "result_id": {
+      "const": "GENERAL_CLOSED_CAUCHY_RELATIVE_PHASE_HODGE_THEOREM_PAYLOAD_V1"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ]
+    },
+    "state": {
+      "const": "ORACLE_FREE_EXACT_TOPOLOGICAL_MATRIX_PAYLOAD_NO_CONFLUX_VERDICT"
+    },
+    "import_ref": {
+      "type": "object",
+      "minProperties": 7
+    },
+    "fixtures": {
+      "type": "array",
+      "minItems": 3,
+      "contains": {
+        "type": "object",
+        "properties": {
+          "topology": {
+            "type": "object",
+            "properties": {
+              "betti_1": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "betti_1"
+            ]
+          }
+        },
+        "required": [
+          "topology"
+        ]
+      },
+      "items": {
+        "$ref": "#/$defs/fixture"
+      }
+    },
+    "presentation_invariants": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "charge",
+        "topology",
+        "relative_form",
+        "wilson_lattice"
+      ],
+      "properties": {
+        "charge": {
+          "type": "string",
+          "minLength": 1
+        },
+        "topology": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relative_form": {
+          "type": "string",
+          "minLength": 1
+        },
+        "wilson_lattice": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "oracle_fields_consumed": {
+      "const": []
+    },
+    "content_sha256": {
+      "$ref": "#/$defs/hash"
+    }
+  },
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "matrix": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    "topology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "manifold_id",
+        "connected_closed_oriented_dimension",
+        "cell_ranks_C0_C1_C2_C3",
+        "boundary_d3",
+        "boundary_d2",
+        "boundary_d1",
+        "betti_1",
+        "torsion_H2_invariant_factors",
+        "flat_U1_component_count",
+        "sample_positive_scalar_eigenvalue",
+        "sample_positive_scalar_real_multiplicity",
+        "sample_positive_coexact_eigenvalue",
+        "sample_positive_coexact_real_multiplicity"
+      ],
+      "properties": {
+        "manifold_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "connected_closed_oriented_dimension": {
+          "const": 3
+        },
+        "cell_ranks_C0_C1_C2_C3": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "integer",
+              "minimum": 1
+            }
+          ],
+          "items": false,
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "boundary_d3": {
+          "$ref": "#/$defs/matrix"
+        },
+        "boundary_d2": {
+          "$ref": "#/$defs/matrix"
+        },
+        "boundary_d1": {
+          "$ref": "#/$defs/matrix"
+        },
+        "betti_1": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "torsion_H2_invariant_factors": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 2
+          }
+        },
+        "flat_U1_component_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sample_positive_scalar_eigenvalue": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sample_positive_scalar_real_multiplicity": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sample_positive_coexact_eigenvalue": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sample_positive_coexact_real_multiplicity": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "stratum": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "active_phase_rows",
+        "active_phase_count",
+        "rank_Q_support",
+        "relative_phase_dimension_on_stratum",
+        "continuous_constant_stabilizer_dimension",
+        "smith_invariants",
+        "finite_constant_stabilizer_order"
+      ],
+      "properties": {
+        "active_phase_rows": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "active_phase_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rank_Q_support": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "relative_phase_dimension_on_stratum": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "continuous_constant_stabilizer_dimension": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "smith_invariants": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "finite_constant_stabilizer_order": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixture_id",
+        "topology",
+        "Q",
+        "phase_kinetic_M",
+        "gauge_kinetic_K",
+        "n",
+        "r",
+        "rank_Q",
+        "smith_invariants",
+        "relative_dimension_per_scalar_eigenfunction",
+        "matter_kernel_dimension",
+        "relative_character_basis_N",
+        "active_gauge_complement_S",
+        "matter_kernel_basis_T",
+        "K_orthogonal_active_basis_Sperp",
+        "effective_active_gauge_kinetic_Ka",
+        "vertical_phase_Gram_V",
+        "relative_metric_Grel",
+        "relative_horizontal_lift_H",
+        "sample_longitudinal_kinetic_after_Gauss",
+        "sample_longitudinal_frequency_squared_operator",
+        "sample_coexact_frequency_squared_operator",
+        "harmonic_frequency_squared_operator",
+        "harmonic_connection_tangent_dimension",
+        "massive_harmonic_family_count",
+        "kernel_Wilson_family_count",
+        "relative_winding_free_rank",
+        "finite_winding_sector_order",
+        "constant_gauge_stabilizer",
+        "admissible_torsion_bundle_kernel_order",
+        "active_support_strata",
+        "exact_checks"
+      ],
+      "properties": {
+        "fixture_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "topology": {
+          "$ref": "#/$defs/topology"
+        },
+        "Q": {
+          "$ref": "#/$defs/matrix"
+        },
+        "phase_kinetic_M": {
+          "$ref": "#/$defs/matrix"
+        },
+        "gauge_kinetic_K": {
+          "$ref": "#/$defs/matrix"
+        },
+        "n": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "r": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rank_Q": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "smith_invariants": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "relative_dimension_per_scalar_eigenfunction": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "matter_kernel_dimension": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "relative_character_basis_N": {
+          "$ref": "#/$defs/matrix"
+        },
+        "active_gauge_complement_S": {
+          "$ref": "#/$defs/matrix"
+        },
+        "matter_kernel_basis_T": {
+          "$ref": "#/$defs/matrix"
+        },
+        "K_orthogonal_active_basis_Sperp": {
+          "$ref": "#/$defs/matrix"
+        },
+        "effective_active_gauge_kinetic_Ka": {
+          "$ref": "#/$defs/matrix"
+        },
+        "vertical_phase_Gram_V": {
+          "$ref": "#/$defs/matrix"
+        },
+        "relative_metric_Grel": {
+          "$ref": "#/$defs/matrix"
+        },
+        "relative_horizontal_lift_H": {
+          "$ref": "#/$defs/matrix"
+        },
+        "sample_longitudinal_kinetic_after_Gauss": {
+          "$ref": "#/$defs/matrix"
+        },
+        "sample_longitudinal_frequency_squared_operator": {
+          "$ref": "#/$defs/matrix"
+        },
+        "sample_coexact_frequency_squared_operator": {
+          "$ref": "#/$defs/matrix"
+        },
+        "harmonic_frequency_squared_operator": {
+          "$ref": "#/$defs/matrix"
+        },
+        "harmonic_connection_tangent_dimension": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "massive_harmonic_family_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "kernel_Wilson_family_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "relative_winding_free_rank": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "finite_winding_sector_order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "constant_gauge_stabilizer": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "identity_torus_dimension",
+            "component_invariant_factors",
+            "component_count"
+          ],
+          "properties": {
+            "identity_torus_dimension": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "component_invariant_factors": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "component_count": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "admissible_torsion_bundle_kernel_order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "active_support_strata": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/stratum"
+          }
+        },
+        "exact_checks": {
+          "type": "object",
+          "minProperties": 8,
+          "additionalProperties": {
+            "const": true
+          }
+        }
+      }
+    }
+  }
+}
