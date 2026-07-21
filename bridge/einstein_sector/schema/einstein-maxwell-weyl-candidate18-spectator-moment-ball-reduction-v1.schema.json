@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "scope",
+    "input_gate",
+    "spectator_representation",
+    "spectator_moment_ball_theorem",
+    "active_coordinate_gate",
+    "necessity_and_sufficiency",
+    "phase_and_orbit_reconstruction",
+    "remaining_strict_gate",
+    "classification",
+    "provenance",
+    "verification_commands",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-candidate18-spectator-moment-ball-reduction-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_CANDIDATE18_SPECTATOR_MOMENT_BALL_REDUCTION_V1"
+    },
+    "result_state": {
+      "const": "TEN_SPECTATORS_EXACTLY_REDUCED_TO_CONNECTED_SPIN2_MOMENT_BALL_FIBRES"
+    },
+    "lifecycle_state": {
+      "const": "CLASSIFIED"
+    },
+    "spectator_representation": {
+      "type": "object",
+      "properties": {
+        "real_dimension": {"const": 20}
+      },
+      "required": ["carrier", "real_dimension", "exact_generator_check"]
+    },
+    "active_coordinate_gate": {
+      "type": "object",
+      "properties": {
+        "ambient_real_dimension": {"const": 40}
+      },
+      "required": [
+        "ambient_real_dimension",
+        "resonance_equations",
+        "spectator_slack",
+        "exact_spectator_existence_conditions"
+      ]
+    },
+    "classification": {
+      "type": "object"
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 4
+    }
+  },
+  "additionalProperties": true
+}

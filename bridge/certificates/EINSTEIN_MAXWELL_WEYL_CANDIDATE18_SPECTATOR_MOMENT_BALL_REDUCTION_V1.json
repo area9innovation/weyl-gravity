@@ -1,0 +1,179 @@
+{
+  "active_coordinate_gate": {
+    "active_rotation_moment": "M_f,a=<f,(A tensor T_a)f>-b*<g,(I_2 tensor T_a)g>",
+    "ambient_real_dimension": 40,
+    "coordinate_order": "(f_plus,f_minus,g_plus,g_minus), each in C^5",
+    "exact_spectator_existence_conditions": [
+      "H_s>=0",
+      "|M_f|^2<=4*H_s^2"
+    ],
+    "negative_norm_level": "b*(|g_plus|^2+|g_minus|^2)=6*N_minus, b=6*h_minus>0",
+    "positive_active_norm": "H_f=<f,(A tensor I_5)f>, A=[[a,c],[c,a]] with a=w_x/12+w_y/4 and c=-w_x/12+w_y/4",
+    "resonance_equations": [
+      "f_plus wedge g_plus=0 (ten complex 2x2 minors)",
+      "f_minus wedge g_minus=0 (ten complex 2x2 minors)"
+    ],
+    "spectator_slack": "H_s=6*N_plus-H_f",
+    "strict_reduction": "60 real amplitude coordinates -> 40 real active coordinates plus one exact quadratic inequality; spectator fibres and their stabilizer action are attached, not discarded"
+  },
+  "claim_boundary": "This exactly eliminates, but does not drop, all ten spectators and gives a necessary-and-sufficient 40-real-coordinate active gate. It does not compute that active real radical, classify the full compact-group orbit quotient, prove every component meets the bridge, glue occupations, or establish global finite-support, causal, all-orders, observational or quantum claims.",
+  "classification": {
+    "active_40_real_semialgebraic_gate_exact": true,
+    "active_real_radical_classified": false,
+    "complex_irreducibility_substituted_for_real_connectedness": false,
+    "every_component_meets_central_bridge": false,
+    "full_U1_squared_SO3_orbit_quotient_classified": false,
+    "global_finite_support_causal_all_orders_observational_or_quantum_claim": false,
+    "parent_gate_reduced_strictly": true,
+    "spectator_moment_fibres_connected": true,
+    "spectator_moment_image_exact_ball": true,
+    "ten_spectators_retained_by_exact_fibre_reconstruction": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "input_gate": {
+    "exact_hashes": {
+      "active_current": "af541fe8332dd1769bf23dfc12c207c9b3df46670d6f60bd7e02bcf8cc24bedc",
+      "central_bridge": "dbe2504b9ae1bcbdfda09f410ccb7beda5cfc70f9486fe300b73e1a3cc5d6806",
+      "complex_carrier": "16390b76191d608e3fd6b81db10c0fd9bd34817866033aa9ca26ae8c6d10b971",
+      "parent_gate": "52b075bd090246410741d46d83e2c814c05dae6daf94f38038c7294557011c24",
+      "phase_reduction": "d4e6091c079a75a82f16db01e3478d6e6b971df020c48557ffd471137fb80786",
+      "stabilizer": "7d2840bc88b3fb157345badb7ae2683adceb7401b611ba5b90dca4b8868993b8"
+    },
+    "parent_state": "GLOBAL_REAL_LOCUS_OPEN_CANDIDATE18_FIXED_OCCUPATION_GATE_EXACT",
+    "required_commit": "252df7272"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "necessity_and_sufficiency": {
+    "equivalence": "The projection of the complete 60-real-coordinate physical fibre onto active coordinates is exactly the displayed 40-real-coordinate semialgebraic set.",
+    "forward": "Any full rotation-zero point has M_s=-M_f and therefore satisfies H_s>=0 and |M_f|<=2*H_s.",
+    "reverse": "For any active resonance point satisfying the negative level and the two displayed inequalities, the spin-two moment-ball witness supplies all ten spectator amplitudes with norm H_s and moment -M_f, giving a full fixed-occupation rotation-zero point."
+  },
+  "next_gate": "classify the exact 40-real-coordinate active determinantal moment-ball set and its stabilizer/orbit strata, then attach the certified connected spectator fibres",
+  "phase_and_orbit_reconstruction": {
+    "equivariance": "F_{R*a}=R*F_a and the positive-node phase acts diagonally on (f,s), so stabilizers and relative phases are retained.",
+    "fibre_functor": "Over an active point a, attach F_a={s in C^10: |s|^2=H_s(a), M_s=-M_f(a)}; every F_a is nonempty exactly on the reduced gate and is connected.",
+    "full_orbit_type_classification": "OPEN",
+    "full_quotient_formula": "{(a,s): a in B_40, s in F_a}/(U(1)_plus x U(1)_minus x SO(3))",
+    "group": "U(1)_plus x U(1)_minus x lifted SO(3)"
+  },
+  "provenance": {
+    "input_commit": "252df7272",
+    "inputs": {
+      "active_current": {
+        "lifecycle_state": "CLASSIFIED",
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_active_restricted_current_degeneracy.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE18_ACTIVE_RESTRICTED_CURRENT_DEGENERACY",
+        "sha256": "af541fe8332dd1769bf23dfc12c207c9b3df46670d6f60bd7e02bcf8cc24bedc"
+      },
+      "central_bridge": {
+        "lifecycle_state": "CLASSIFIED",
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_singular_smooth_bridge.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE18_SINGULAR_SMOOTH_BRIDGE",
+        "sha256": "dbe2504b9ae1bcbdfda09f410ccb7beda5cfc70f9486fe300b73e1a3cc5d6806"
+      },
+      "complex_carrier": {
+        "lifecycle_state": "CLASSIFIED",
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_candidate18_complex_singular_resolution.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_CANDIDATE18_COMPLEX_SINGULAR_RESOLUTION",
+        "sha256": "16390b76191d608e3fd6b81db10c0fd9bd34817866033aa9ca26ae8c6d10b971"
+      },
+      "parent_gate": {
+        "lifecycle_state": "CLASSIFIED",
+        "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_GLOBAL_BOUNDED_CONE_REAL_LOCUS_GATE_V1.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_BOUNDED_CONE_REAL_LOCUS_GATE_V1",
+        "sha256": "52b075bd090246410741d46d83e2c814c05dae6daf94f38038c7294557011c24"
+      },
+      "phase_reduction": {
+        "lifecycle_state": "CLASSIFIED",
+        "path": "bridge/certificates/einstein_maxwell_weyl_same_sign_active_phase_reduced_presymplectic_divisors.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_ACTIVE_PHASE_REDUCED_PRESYMPLECTIC_DIVISORS",
+        "sha256": "d4e6091c079a75a82f16db01e3478d6e6b971df020c48557ffd471137fb80786"
+      },
+      "stabilizer": {
+        "lifecycle_state": "CLASSIFIED",
+        "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_PLEBANSKI_HACYAN_STABILIZER_DESCENT",
+        "sha256": "7d2840bc88b3fb157345badb7ae2683adceb7401b611ba5b90dca4b8868993b8"
+      }
+    },
+    "producer_path": "bridge/einstein_sector/einstein_maxwell_weyl_candidate18_spectator_moment_ball_reduction.py",
+    "producer_sha256": "3680da077db186dc78dabb0c0bdb009eabe7dd777e6bdf3eba4f558f98a36fc0",
+    "schema_path": "bridge/einstein_sector/schema/einstein-maxwell-weyl-candidate18-spectator-moment-ball-reduction-v1.schema.json",
+    "schema_sha256": "613dda83c4cdb09260adaf8786fc397103f6357e3c885fdd57dce6d76b3399c7"
+  },
+  "remaining_strict_gate": {
+    "Forge_component_singularity_layer_state": "PROPOSED_NOT_CERTIFIED_FOR_USE",
+    "active_real_dimension": 40,
+    "name": "candidate18-active-40-real-moment-ball-gate",
+    "parent_real_dimension": 60,
+    "problem": "Compute the real radical/component decomposition of B_40, its active stabilizer strata, and the associated connected spectator-fibre quotients; decide whether every resulting component meets the central bridge.",
+    "strictly_smaller_than_parent": true
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_CANDIDATE18_SPECTATOR_MOMENT_BALL_REDUCTION_V1",
+  "result_state": "TEN_SPECTATORS_EXACTLY_REDUCED_TO_CONNECTED_SPIN2_MOMENT_BALL_FIBRES",
+  "schema": "einstein-maxwell-weyl-candidate18-spectator-moment-ball-reduction-v1",
+  "scope": {
+    "background": "compactified magnetically supported Plebanski-Hacyan candidate 18 only",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "one same-sign two-|k| ell=2 active support at fixed positive exact scalar-cone occupations",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "correction_class": "bounded or finite-quasiperiodic",
+    "degree": 2,
+    "ell": 2,
+    "k": "candidate-18 signed compact n=(1,2), not identified with any other candidate",
+    "m": "all m=-2,...,2",
+    "omega": "positive-frequency p-extra(n=1)+q-minus(n=2) SUM collision with conjugate reality completion",
+    "parity": "complete axial/polar carrier",
+    "theory": "Weyl-Maxwell target"
+  },
+  "spectator_moment_ball_theorem": {
+    "all_ten_spectators_retained": true,
+    "connected_fibres": "For H_s>0, divide the norm sphere by its connected Hopf U(1) to CP^9. Kirwan connectedness for the compact connected Hamiltonian SO(3)-space CP^9 makes every moment fibre connected; its Hopf preimage is connected. At H_s=0 the fibre is the origin.",
+    "image_at_fixed_norm": "{nu in R^3: |nu|<=2*H_s}",
+    "necessity": "The spin-two operator norm bound gives |M_s|<=2*H_s.",
+    "normalized_moment": "M_s,a=sum_{r=1}^2 s_r^dagger*T_a*s_r",
+    "normalized_norm": "H_s=|s_1|^2+|s_2|^2",
+    "sufficiency": "The displayed m=0/m=2 witness realizes every radius 0<=r<=2*H_s on the z axis; SO(3) covariance realizes every direction."
+  },
+  "spectator_representation": {
+    "Hermitian_current": "positive identity block in the imported candidate-18 current normalization",
+    "carrier": "C^10_spectator=V_2 tensor C^2, two complete spin-two multiplets",
+    "exact_generator_check": {
+      "T3_eigenvalues": [
+        -2,
+        -1,
+        0,
+        1,
+        2
+      ],
+      "axis_witness": "s_1=x*e_0+y*e_2, s_2=0, S=x^2+y^2 and r=2*y^2; equivalently x^2=S-r/2, y^2=r/2 for 0<=r<=2S",
+      "axis_witness_moment": [
+        "0",
+        "0",
+        "2*y**2"
+      ],
+      "axis_witness_norm": "x**2 + y**2",
+      "basis_order": [
+        "m=-2",
+        "m=-1",
+        "m=0",
+        "m=1",
+        "m=2"
+      ],
+      "operator_norm_bound": "For every unit n, n_a*T_a is SO(3)-conjugate to T3, hence |s^dagger n_a*T_a s|<=2*s^dagger*s.",
+      "rotated_witness": "Apply the exact spin-two representation of an SO(3) rotation taking e_z to nu/|nu|."
+    },
+    "lifted_rotation": "SO(3) acts in V_2 on both spectator copies",
+    "node_phase": "the common positive-node U(1) acts diagonally on spectators and active f amplitudes; it is retained in the associated-fibre reconstruction",
+    "real_dimension": 20
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_candidate18_spectator_moment_ball_reduction --check",
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_candidate18_spectator_moment_ball_reduction",
+    "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_candidate18_spectator_moment_ball_reduction",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-candidate18-spectator-moment-ball-reduction-fragment-v1.json"
+  ]
+}

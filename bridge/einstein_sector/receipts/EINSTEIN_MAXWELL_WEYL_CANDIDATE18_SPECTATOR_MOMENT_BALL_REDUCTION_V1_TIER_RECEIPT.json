@@ -1,0 +1,64 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_CANDIDATE18_SPECTATOR_MOMENT_BALL_REDUCTION_V1",
+  "date": "2026-07-21",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "tier_0": {
+    "status": "PASSED",
+    "checks": [
+      "compileall on producer, independent verifier and tests",
+      "strict Draft 2020-12 certificate schema validation",
+      "JSON parse of generated certificate and atlas fragment",
+      "scoped git diff --check"
+    ]
+  },
+  "tier_1": {
+    "status": "PASSED",
+    "checks": [
+      {
+        "command": "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_candidate18_spectator_moment_ball_reduction --check",
+        "elapsed_seconds": 0.61,
+        "maxrss_kb": 72076
+      },
+      {
+        "command": "PYTHONPATH=. python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_candidate18_spectator_moment_ball_reduction",
+        "elapsed_seconds": 0.69,
+        "maxrss_kb": 71652
+      },
+      {
+        "command": "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_candidate18_spectator_moment_ball_reduction",
+        "elapsed_seconds": 0.76,
+        "maxrss_kb": 73172,
+        "tests": 6
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-candidate18-spectator-moment-ball-reduction-fragment-v1.json",
+        "elapsed_seconds": 0.15,
+        "maxrss_kb": 24504
+      }
+    ],
+    "independence": "The verifier does not import the producer. It constructs the spin-two matrices independently, checks the su(2) commutator and Casimir, replays the polynomial ball witness, checks all input hashes and rejects false real-radical/orbit promotions."
+  },
+  "repair_history": [
+    {
+      "status": "NOT_A_PASS",
+      "finding": "The initial square-root witness used S and r without declaring the branch predicate r<=2S, so symbolic conjugation did not reduce sqrt(S-r/2)^2."
+    },
+    {
+      "status": "REPAIRED_AND_PASSED",
+      "finding": "The witness was replaced by polynomial coordinates S=x^2+y^2 and r=2y^2. This exposes the exact domain 0<=r<=2S and removes the branch-sensitive simplification."
+    }
+  ],
+  "tier_2": {
+    "status": "NOT_RUN",
+    "criterion": "No upstream mathematical input, shared operator or shared schema changed; all six imported certificates are pinned by exact SHA-256."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "criterion": "The active real radical and full orbit quotient remain OPEN; no theorem-freeze, tag or release was promoted."
+  },
+  "claim_boundary": "This receipt certifies exact spectator elimination to connected spin-two moment-ball fibres and the resulting 40-real active gate. It is not a pass for the active real radical, orbit quotient, global finite-support cone, causality or all-orders integration."
+}
