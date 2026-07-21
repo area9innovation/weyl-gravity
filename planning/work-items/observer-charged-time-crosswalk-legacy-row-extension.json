@@ -1,0 +1,47 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/observer-charged-time-crosswalk-legacy-row-extension",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "observer-charged-time-crosswalk-legacy-row-extension",
+  "source": {
+    "path": "planning/work-items/observer-charged-time-crosswalk-legacy-row-extension.json",
+    "span": null
+  },
+  "body": {
+    "owner": "observer-1",
+    "state": "PROPOSED",
+    "stream": "observer",
+    "priority": 0,
+    "objective": "Extend the certified charged-time receiver admissibility census from its original five rows to the two subsequently landed legacy Berger receiver rows, resolving the exact semantic frontier found by Observer Tier-3 iteration 13 without changing either row's scientific disposition.",
+    "stop_condition": "Import by exact hashes the charged-time receiver admissibility contract, observer.berger.legacy_receiver_admissibility_replay and observer.berger.legacy_receiver_operational_frequency_ratio_nonactivation atlas rows, and their action-derived replay/nonactivation certificates. Extend the deterministic census to exactly seven current Observer rows. Classify both added rows as NO_CERTIFIED_MAP from their certified missing physical receiver/crosswalk evidence, not from name matching or the atlas display string. Regenerate the crosswalk certificate, interface dependencies, atlas fragment, report and receipt. The independent verifier must reconstruct the two classifications from their source certificates and reject deletion of either row, a stale dependency hash, UNCLASSIFIED, CERTIFIED_ADMISSIBLE, a coordinate-ratio-to-redshift promotion and any change to the original five dispositions. Run the scoped producer, independent verifier and mutation tests. This task changes only census completeness; it must not claim a receiver, detector, operational redshift or new science.",
+    "current_gate": "seven-row charged-time receiver census with source-derived classifications for the two legacy Berger rows",
+    "forbid": "no broad regeneration of unrelated Observer artifacts; no atlas observational label used as the sole proof of admissibility status; no missing receiver treated as a nonexistence theorem; no conditional or coordinate frequency ratio called operational redshift; no change to the original five classifications; no Paper 9 lifecycle promotion; no overwrite of another resident's concurrent files; no nonlinear, quantum, particle, phenomenology or unitarity claim",
+    "depends_on": [
+      "sf:program/work/observer-tier3-provenance-fixed-point-relock-after-berger84-handoff#ANY_TERMINAL"
+    ],
+    "activates": [
+      "sf:program/work/observer-tier3-fixed-point-after-legacy-crosswalk-extension"
+    ],
+    "allowed_paths": [
+      "closed_universe_observers/generate_charged_time_receiver_admissibility_crosswalk.py",
+      "closed_universe_observers/verify_charged_time_receiver_admissibility_crosswalk.py",
+      "closed_universe_observers/tests/test_charged_time_receiver_admissibility_crosswalk.py",
+      "closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json",
+      "closed_universe_observers/generated/CHARGED_TIME_PHYSICAL_RECEIVER_CROSSWALK_INTERFACE_V1.json",
+      "closed_universe_observers/atlas/generate_charged_time_receiver_admissibility_crosswalk_atlas.py",
+      "closed_universe_observers/reports/charged-time-receiver-admissibility-crosswalk-v1.md",
+      "closed_universe_observers/receipts/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1_TIER_RECEIPT.json",
+      "residual_atlas/charged-time-receiver-admissibility-crosswalk-fragment-v1.json",
+      "reports/",
+      "planning/events/"
+    ],
+    "resource_hint": "NARROW SEMANTIC CENSUS EXTENSION. The two added results already exist and remain NO_CERTIFIED_MAP; bind them by exact source evidence and mutation-test the classification before rerunning Tier 3.",
+    "notes": [
+      "Tier-3 iteration 13 passed 808 tests and every previously known provenance frontier before stopping at 86% because these two post-contract atlas rows were UNCLASSIFIED.",
+      "This is intentionally separate from the provenance relock: adding rows to a claimed-complete census changes its semantic domain even when their existing scientific statuses do not change."
+    ],
+    "input_commit": "f27bca6376ebf3d4561b45e385a9bffed98a2833"
+  },
+  "edges": []
+}
