@@ -1,0 +1,75 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "OBSERVER_TIER3_GIT_ATTACHED_EXACT_MATERIALIZATION_RERUN_V1_TIER_RECEIPT",
+  "claim_result_id": "OBSERVER_TIER3_GIT_ATTACHED_EXACT_MATERIALIZATION_RERUN_V1_OBSTRUCTION",
+  "decision": "OBSTRUCTED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifact_hashes": {
+    "closed_universe_observers/receipts/OBSERVER_TIER3_GIT_ATTACHED_EXACT_MATERIALIZATION_RERUN_V1_MANIFEST.json": "50c90fd4b3831c498f445d46ea6f8dd1d03a44e3c5f09d15e3ec393073f1e859",
+    "closed_universe_observers/receipts/OBSERVER_TIER3_GIT_ATTACHED_EXACT_MATERIALIZATION_RERUN_V1_OBSTRUCTION.json": "c88981bcf0b8cde5daf4d3328cf96f7c16565d4b5d1a01d42476376716f36764",
+    "closed_universe_observers/verify_observer_tier3_git_attached_exact_materialization_rerun_v1.py": "3fbd633079a8b6ef626a12ecf63320e4d724ded08a46d83a213d76bc26ef858a",
+    "closed_universe_observers/tests/test_observer_tier3_git_attached_exact_materialization_rerun_v1.py": "1ba0b11b25ae7762e607597ffe0f10f13288835a8719d39d4e3ed38e6857a4b7"
+  },
+  "gate_results": {
+    "git_attached_materialization": "PASS",
+    "exact_blob_and_mode_census": "PASS_11191_BLOBS",
+    "resource_preflight": "PASS",
+    "single_authoritative_run": "STOPPED_AT_FIRST_FAILURE_AFTER_826_PASSES",
+    "first_failure": "STALE_COMPARISON_LEDGER_BRIDGE_ARTIFACT_PIN_WITH_CLAIM_BOUNDARY_DRIFT",
+    "paper09_evidence_gate": false,
+    "paper09_theorem_freeze": false
+  },
+  "tests": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile closed_universe_observers/verify_observer_tier3_git_attached_exact_materialization_rerun_v1.py closed_universe_observers/tests/test_observer_tier3_git_attached_exact_materialization_rerun_v1.py && python3 -m json.tool closed_universe_observers/receipts/OBSERVER_TIER3_GIT_ATTACHED_EXACT_MATERIALIZATION_RERUN_V1_MANIFEST.json >/dev/null && python3 -m json.tool closed_universe_observers/receipts/OBSERVER_TIER3_GIT_ATTACHED_EXACT_MATERIALIZATION_RERUN_V1_OBSTRUCTION.json >/dev/null",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 closed_universe_observers/verify_observer_tier3_git_attached_exact_materialization_rerun_v1.py",
+      "result": "Independent Git object, tree census, first-frontier, stale-hash and stale-claim-boundary audit passed",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. pytest -q closed_universe_observers/tests/test_observer_tier3_git_attached_exact_materialization_rerun_v1.py",
+      "elapsed_seconds": 0.63,
+      "result": "16 passed",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "initial combined verifier development check",
+      "result": "Verifier initially enumerated the whole repository instead of the declared symplectic-reconstruction scope; corrected to an explicit --full-tree scoped pathspec before the final independent audit and mutation suite",
+      "status": "FAIL_CORRECTED_BEFORE_CLAIM"
+    },
+    {
+      "tier": 3,
+      "command": "PYTHONPATH=. pytest -q -x closed_universe_observers/tests",
+      "selected_commit": "d3b46e000875e06c97f4afd701c662e0ccb1bc1b",
+      "pytest_elapsed_seconds": 1175.10,
+      "wall_elapsed_seconds": 1183.15,
+      "max_rss_kib": 904656,
+      "result": "826 passed, then 1 failed at test_comparison_ledger_is_fail_closed; exit 1; no skips before failure",
+      "status": "EXPECTED_FAIL_CLOSED_OBSTRUCTION"
+    },
+    {
+      "tier": 3,
+      "command": "second full Observer traversal",
+      "result": "Not executed: the work package authorizes exactly one fresh fail-fast traversal and forbids retries",
+      "status": "NOT_RUN_SINGLE_RUN_POLICY"
+    },
+    {
+      "tier": 3,
+      "command": "Paper 9 PDF builds",
+      "result": "Not executed because the Observer Tier-3 and theorem-freeze preconditions are false",
+      "status": "NOT_APPLICABLE_OBSTRUCTED"
+    }
+  ],
+  "claim_boundary": "The Git-attached materialization repair is successful: the detached worktree resolves Git snapshots, is clean, and exactly matches all 11,191 committed regular-file/symlink blobs in the declared symplectic-reconstruction scope. Exactly one fresh fail-fast full Observer traversal then passed 826 tests and exposed a stale comparison-ledger bridge-artifact hash together with a materially stale claim boundary for BERGER_108_ROW_EMITTER_PHYSICAL_Q2_PBW. This is an evidence-ledger synchronization obstruction, not a materialization failure or scientific contradiction. No partial pass is promoted, no retry is credited, and Paper 9 remains DRAFT_ALLOWED."
+}

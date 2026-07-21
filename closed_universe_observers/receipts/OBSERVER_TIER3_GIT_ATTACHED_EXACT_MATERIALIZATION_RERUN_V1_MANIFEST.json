@@ -1,0 +1,75 @@
+{
+  "schema": "observer-tier3-git-attached-exact-materialization-rerun-manifest-v1",
+  "result_id": "OBSERVER_TIER3_GIT_ATTACHED_EXACT_MATERIALIZATION_RERUN_V1_MANIFEST",
+  "science_forge_work_item": "sf:program/work/observer-tier3-git-attached-exact-materialization-rerun-v1",
+  "recorded_at": "2026-07-21T21:18:36Z",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "input_refs": {
+    "prior_tier3_obstruction": {
+      "path": "closed_universe_observers/receipts/OBSERVER_TIER3_FIXED_POINT_AFTER_HISTORICAL_BASE_BINDING_REPAIR_V1_OBSTRUCTION.json",
+      "sha256": "66dcdb37816a706a839e7d09565d26b680a79a109e4faed8d7b6b622ce417d30"
+    },
+    "historical_base_repair": {
+      "path": "closed_universe_observers/receipts/OBSERVER_LEGACY_RECEIVER_HISTORICAL_BASE_BINDING_REPAIR_V1_MANIFEST.json",
+      "sha256": "d1f82deac9299c8bbbfa7ca5beffdeb4dad2572672867df4431e35dbceaef501"
+    },
+    "paper09_final_v2_disposition": {
+      "path": "closed_universe_observers/receipts/PAPER09_FINAL_FREEZE_AFTER_HISTORICAL_BASE_TIER3_V2_OBSTRUCTION.json",
+      "sha256": "04248f6e21e422dd32864f8224e7385d0c271bae9f35614a3630b8f43a93383d"
+    }
+  },
+  "selected_commit": "d3b46e000875e06c97f4afd701c662e0ccb1bc1b",
+  "repository_tree_oid": "b8c1778e128e4c3f8729e920d8fdf97af7a2f56d",
+  "scope": "physics/symplectic-reconstruction",
+  "scope_tree_oid": "45a345e2bf43a3cfaa806e0ef02aa80e041bd07c",
+  "materialization": {
+    "kind": "GIT_ATTACHED_DETACHED_WORKTREE",
+    "worktree": "/home/alstrup/area9/observer-tier3-git-attached.70iDr4/worktree",
+    "git_dir": "/home/alstrup/area9/bp2transformer/.git/worktrees/worktree",
+    "git_head": "d3b46e000875e06c97f4afd701c662e0ccb1bc1b",
+    "lfs_policy": "GIT_LFS_SKIP_SMUDGE=1_RETAIN_COMMITTED_POINTER_BLOBS",
+    "repo_prefix_from_scope": "physics/symplectic-reconstruction/",
+    "repo_prefix_from_observer_package": "physics/symplectic-reconstruction/closed_universe_observers/",
+    "git_rev_parse_prefix_status": "PASS",
+    "git_show_snapshot_resolution_status": "PASS",
+    "status_porcelain_byte_count": 0,
+    "untracked_scientific_artifact_count": 0,
+    "clean": true
+  },
+  "resource_margin": {
+    "filesystem": "/dev/mapper/ubuntu--vg-ubuntu--lv",
+    "free_bytes_before": 677096235008,
+    "free_bytes_after_materialization": 675438014464,
+    "worktree_bytes": 1611557906,
+    "preflight_status": "PASS"
+  },
+  "independent_blob_census": {
+    "algorithm": "Enumerate commit tree blobs; read each worktree regular file or symlink target; reconstruct Git blob SHA-1 from raw bytes; compare mode and object ID",
+    "regular_file_count": 11189,
+    "symlink_count": 2,
+    "total_blob_count": 11191,
+    "blob_hash_mismatch_count": 0,
+    "mode_mismatch_count": 0,
+    "missing_count": 0,
+    "status": "PASS_EXACT_WORKTREE_BYTES"
+  },
+  "run_policy": {
+    "command": "PYTHONPATH=. pytest -q -x closed_universe_observers/tests",
+    "allowed_run_count": 1,
+    "retry_allowed": false,
+    "patch_inside_run_allowed": false,
+    "prior_partial_passes_credited": false
+  },
+  "flags": {
+    "GIT_ATTACHED": true,
+    "EXACT_BLOBS": true,
+    "CLEAN_WORKTREE": true,
+    "RESOURCE_PREFLIGHT_PASS": true,
+    "READY_FOR_SINGLE_AUTHORITATIVE_RUN": true
+  },
+  "claim_boundary": "Certifies only the clean Git-attached materialization envelope for one fresh Observer Tier-3 traversal at the immutable historical-base repair commit. It establishes exact scoped worktree bytes, Git snapshot resolution, cleanliness and resource margin; it does not establish a green test suite or any observer, redshift, nonlinear, particle or quantum claim."
+}

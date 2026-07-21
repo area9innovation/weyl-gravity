@@ -1,0 +1,137 @@
+{
+  "schema": "observer-tier3-git-attached-exact-materialization-rerun-obstruction-v1",
+  "result_id": "OBSERVER_TIER3_GIT_ATTACHED_EXACT_MATERIALIZATION_RERUN_V1_OBSTRUCTION",
+  "science_forge_work_item": "sf:program/work/observer-tier3-git-attached-exact-materialization-rerun-v1",
+  "recorded_at": "2026-07-21T21:18:36Z",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "input_refs": {
+    "materialization_manifest": {
+      "path": "closed_universe_observers/receipts/OBSERVER_TIER3_GIT_ATTACHED_EXACT_MATERIALIZATION_RERUN_V1_MANIFEST.json",
+      "sha256": "50c90fd4b3831c498f445d46ea6f8dd1d03a44e3c5f09d15e3ec393073f1e859"
+    },
+    "prior_tier3_obstruction": {
+      "path": "closed_universe_observers/receipts/OBSERVER_TIER3_FIXED_POINT_AFTER_HISTORICAL_BASE_BINDING_REPAIR_V1_OBSTRUCTION.json",
+      "sha256": "66dcdb37816a706a839e7d09565d26b680a79a109e4faed8d7b6b622ce417d30"
+    },
+    "historical_base_repair": {
+      "path": "closed_universe_observers/receipts/OBSERVER_LEGACY_RECEIVER_HISTORICAL_BASE_BINDING_REPAIR_V1_MANIFEST.json",
+      "sha256": "d1f82deac9299c8bbbfa7ca5beffdeb4dad2572672867df4431e35dbceaef501"
+    },
+    "paper09_final_v2_disposition": {
+      "path": "closed_universe_observers/receipts/PAPER09_FINAL_FREEZE_AFTER_HISTORICAL_BASE_TIER3_V2_OBSTRUCTION.json",
+      "sha256": "04248f6e21e422dd32864f8224e7385d0c271bae9f35614a3630b8f43a93383d"
+    }
+  },
+  "materialization": {
+    "selected_commit": "d3b46e000875e06c97f4afd701c662e0ccb1bc1b",
+    "kind": "GIT_ATTACHED_DETACHED_WORKTREE",
+    "repository_tree_oid": "b8c1778e128e4c3f8729e920d8fdf97af7a2f56d",
+    "scope_tree_oid": "45a345e2bf43a3cfaa806e0ef02aa80e041bd07c",
+    "repo_prefix_from_scope": "physics/symplectic-reconstruction/",
+    "repo_prefix_from_observer_package": "physics/symplectic-reconstruction/closed_universe_observers/",
+    "regular_file_count": 11189,
+    "symlink_count": 2,
+    "total_blob_count": 11191,
+    "missing_count": 0,
+    "blob_hash_mismatch_count": 0,
+    "mode_mismatch_count": 0,
+    "status_porcelain_byte_count_before": 0,
+    "status_porcelain_byte_count_after": 0,
+    "status": "PASS_EXACT_GIT_ATTACHED_WORKTREE"
+  },
+  "resource_preflight": {
+    "free_bytes_before": 677096235008,
+    "free_bytes_after_materialization": 675438014464,
+    "worktree_bytes": 1611557906,
+    "max_rss_kib": 904656,
+    "status": "PASS"
+  },
+  "authoritative_run": {
+    "command": "PYTHONPATH=. pytest -q -x closed_universe_observers/tests",
+    "run_count": 1,
+    "retry_count": 0,
+    "patches_inside_run": 0,
+    "prior_partial_passes_credited": false,
+    "passed_before_first_failure": 826,
+    "failed": 1,
+    "skipped_before_failure": 0,
+    "pytest_elapsed_seconds": 1175.10,
+    "wall_elapsed_seconds": 1183.15,
+    "exit_code": 1,
+    "fail_fast": true,
+    "status": "STOPPED_AT_FIRST_FAILURE",
+    "stdout_log": {
+      "retained_path": "/tmp/observer-tier3-git-attached-v1-pytest.log",
+      "sha256": "decf8da65dfe054afd702614573fdc0d5c95ce461f7efc0e09823ea7ed64430c",
+      "byte_count": 4382,
+      "line_count": 69,
+      "committed": false
+    }
+  },
+  "first_failure": {
+    "nodeid": "closed_universe_observers/tests/test_comparison_ledger.py::test_comparison_ledger_is_fail_closed",
+    "exception_location": "closed_universe_observers/verify_comparison_ledger.py:59",
+    "exception": "AssertionError: bridge artifact drift: closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_PHYSICAL_Q2_PBW.json",
+    "classification": "STALE_COMPARISON_LEDGER_BRIDGE_ARTIFACT_PIN_WITH_CLAIM_BOUNDARY_DRIFT",
+    "test_path": "closed_universe_observers/tests/test_comparison_ledger.py",
+    "test_sha256_at_selected_commit": "8f933218bc926f3fe0bc56af4a5ec08185454fb05c183b887c4afaf67beaa096",
+    "verifier_path": "closed_universe_observers/verify_comparison_ledger.py",
+    "verifier_sha256_at_selected_commit": "fa458c08bd505791d79abb6ed542fc33b9b7757abef89f6c66f287ced37dd38f",
+    "ledger_path": "closed_universe_observers/ledgers/comparison_ledger.json",
+    "ledger_sha256_at_selected_commit": "c53551bbaf4dbfcf9bfd1226d4c389b1962b96fca6f76ce531f7ec775c920337",
+    "ledger_internal_snapshot_commit": "5a9bf16b16a2613675a826ab1dc336b57c9517a3",
+    "artifact_path": "closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_PHYSICAL_Q2_PBW.json",
+    "artifact_result_id": "BERGER_108_ROW_EMITTER_PHYSICAL_Q2_PBW",
+    "ledger_pinned_artifact_sha256": "eaed93a3fc0e8384a19000e12aa729528a5b693dba8c3576c1c6b8fe15262892",
+    "actual_artifact_sha256_at_selected_commit": "1adce4fe647af299c68382a9761020dc11aa9d746a6f4e897dd4a91089a862db",
+    "ledger_pinned_claim_boundary_sha256": "785149617ad60326a9af75b4b62eadcbd5e8bddaa30f8a6c6344beceb62b2a55",
+    "ledger_pinned_claim_boundary_byte_count": 1486,
+    "actual_claim_boundary_sha256_at_selected_commit": "9b12266b616307c13be1bfab94ebbab7fafa58a21f0b45a39fc866538e2ae15e",
+    "actual_claim_boundary_byte_count": 1903,
+    "artifact_hash_drift": true,
+    "claim_boundary_drift": true,
+    "claim_boundary_change_is_material": true,
+    "material_change_summary": "The stale ledger says the emitter Diff-BV q2 orbit remains to be scalarized and every q3 block is unavailable. The current artifact says the Diff-BV q2 orbit is separately certified and narrows the remaining arity-two obstruction to the relational temporal emitter-Diff orbit, while preserving the unavailable higher gates.",
+    "scientific_contradiction": false,
+    "materialization_defect": false,
+    "test_harness_defect": false,
+    "prior_archive_git_defect_recurred": false
+  },
+  "disposition": {
+    "status": "OBSTRUCTED",
+    "paper09_freeze_decision": "DRAFT_ALLOWED",
+    "smallest_successor": "SEMANTIC_COMPARISON_LEDGER_BRIDGE_ARTIFACT_RELOCK_AND_FRESH_TIER3_RERUN",
+    "successor_requirements": [
+      "Relock the BERGER_108_ROW_EMITTER_PHYSICAL_Q2_PBW bridge-artifact entry to the exact current artifact hash and exact current claim boundary.",
+      "Audit the changed scope semantically; a blind hash-only repin is forbidden.",
+      "Add an independent ledger verifier and mutations that detect hash, claim-boundary and scope drift.",
+      "After scoped verification, allocate a new owner for exactly one fresh fail-fast full Observer Tier-3 rerun."
+    ]
+  },
+  "flags": {
+    "GIT_ATTACHED": true,
+    "EXACT_BLOBS": true,
+    "CLEAN_WORKTREE": true,
+    "RESOURCE_PREFLIGHT_PASS": true,
+    "AUTHORITATIVE_RUN_COUNT_EXACTLY_ONE": true,
+    "AUTHORITATIVE_RUN_GREEN": false,
+    "STALE_COMPARISON_LEDGER_PIN": true,
+    "CLAIM_BOUNDARY_DRIFT": true,
+    "SCIENTIFIC_CONTRADICTION": false,
+    "MATERIALIZATION_DEFECT": false,
+    "PRIOR_ARCHIVE_GIT_DEFECT_RECURRED": false,
+    "PAPER9_EVIDENCE_GATE_ACTIVATED": false,
+    "PAPER9_THEOREM_FROZEN": false
+  },
+  "does_not_establish": [
+    "a green Observer Tier-3 traversal",
+    "a current semantically audited comparison ledger",
+    "a theorem-frozen Paper 9 edition",
+    "an operational receiver, frequency ratio or relational redshift",
+    "a nonlinear, particle or quantum theorem"
+  ]
+}
