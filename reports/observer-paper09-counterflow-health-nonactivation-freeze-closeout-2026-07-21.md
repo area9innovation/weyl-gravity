@@ -59,4 +59,5 @@ EVIDENCE: paper/09-relational-clocks-berger-d-cartan-claim-map.json;
 closed_universe_observers/receipts/PAPER09_COUNTERFLOW_HEALTH_NONACTIVATION_FREEZE_V1_TIER_RECEIPT.json;
 planning/paper-coverage/observer-phase1-relational-observable-dispositions-2026-07-21.json
 
-CLOSE-OUT: `DRAFT_ALLOWED` — two exact evidence gates remain open.
+CLOSE-OUT: SHORTFALL — publication decision `DRAFT_ALLOWED`; two exact
+evidence gates remain open.
