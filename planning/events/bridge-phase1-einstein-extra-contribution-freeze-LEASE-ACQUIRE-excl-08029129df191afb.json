@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/bridge-phase1-einstein-extra-contribution-freeze-LEASE-ACQUIRE-excl-08029129df191afb",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/bridge-phase1-einstein-extra-contribution-freeze-LEASE-ACQUIRE-excl-08029129df191afb.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "bridge-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T20:35:43Z", "seq": 2, "predecessor": "sf:program/event/bridge-phase1-einstein-extra-contribution-freeze-LEASE-ACQUIRE-excl-8bde49e9ec45b3b8", "payload": {"target": "sf:program/work/bridge-phase1-einstein-extra-contribution-freeze", "agent": "bridge-1", "lease_type": "exclusive", "action": "ACQUIRE", "acquired": "2026-07-21T20:35:43Z", "expires": "2026-07-22T04:35:43Z"}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/bridge-phase1-einstein-extra-contribution-freeze"}]
+}
