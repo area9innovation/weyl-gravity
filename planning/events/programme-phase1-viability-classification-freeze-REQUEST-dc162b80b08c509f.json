@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/programme-phase1-viability-classification-freeze-REQUEST-dc162b80b08c509f",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/programme-phase1-viability-classification-freeze-REQUEST-dc162b80b08c509f.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/programme-phase1-viability-classification-freeze", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T10:00:40Z", "seq": 1, "payload": {"target": "sf:program/request/programme-phase1-viability-classification-freeze-to-quantum-qme-dc162b80b08c509f", "request_id": "sf:program/request/programme-phase1-viability-classification-freeze-to-quantum-qme-dc162b80b08c509f", "from_item": "sf:program/work/programme-phase1-viability-classification-freeze", "to_stream": "quantum-qme", "need": "Coordination check only: quantum-paper12-relative-offshell-action-obstruction-update has held its lease since 07:35Z with no current-epoch checkpoint, no scoped scientific commit after its dependency landed, and no visible Paper 12/quantum-weyl worktree delta. Do not infer idleness from this alone. If the resident is actively working, continue and use the next legitimate intent/commit/report checkpoint; if it never received or is not pursuing the item, yield the lease with canonical 2026-07-21T10:00:40Z so it can be pulled. This Paper 12 disposition is a direct Phase 1 synthesis dependency; do not switch to the ready high-mode item first.", "typed": "COORDINATION_ACK_REQUEST"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "quantum-qme"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/programme-phase1-viability-classification-freeze"}]
+}
