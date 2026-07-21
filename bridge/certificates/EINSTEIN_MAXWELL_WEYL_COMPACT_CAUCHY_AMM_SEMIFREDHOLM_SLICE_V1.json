@@ -1,0 +1,175 @@
+{
+  "banach_problem": {
+    "charge_fibre": "fixed magnetic P_N,N=2 and fixed harmonic electric Q_e; Wilson line remains a physical coordinate",
+    "constraint_regularity": "C is C^infinity on this Hilbert manifold: H^s on the compact 3-manifold is a Banach algebra and inversion of a positive H^(s+2) metric is smooth",
+    "equation": "C(z)=0",
+    "phase_space": "weighted Hilbert manifold with h,P in H^(s+2), K,pi,a,E in H^(s+1), s>=4, on the open positive-metric cone",
+    "target": "the mixed Sobolev constraint target of the right-elliptic gate, with mean-zero Gauss component"
+  },
+  "claim_boundary": "The split right-semi-Fredholm theorem gives an exact full-Sobolev second-order Cauchy tangent cone cut out by five Taub maps. The direct fixed-group AMM homogeneous-quadratic normal form is obstructed on unextended data by the phase-space-dependent hypersurface-deformation bracket. No all-orders, bounded-time, causal, observational or quantum conclusion follows.",
+  "classification": {
+    "bounded_spacetime_stability": false,
+    "causal_claim": false,
+    "exact_five_taub_sufficiency_for_cauchy_second_order_equation": true,
+    "exact_homogeneous_quadratic_nonlinear_zero_set": false,
+    "extended_embedding_or_groupoid_repair": false,
+    "full_fixed_group_AMM_hypotheses": false,
+    "local_kuranishi_map": true,
+    "quantum_claim": false,
+    "sobolev_second_order_tangent_cone": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "finite_harmonic_crosswalk": {
+    "bounded_quasiperiodic": "not promoted: bounded spacetime resonance conditions remain stricter than the Cauchy second-order cone",
+    "map": "restriction of the five Sobolev adjoint pairings to finite harmonic exponential-polynomial data",
+    "same_background_and_charge": true,
+    "smooth_secular": "the imported finite-carrier theorem supplies its additional resonant solvability functionals; they are carrier-dependent and are not extra compact-Cauchy adjoint covectors",
+    "taub_maps": "MATCH by the imported action-derived moment-map/Taub identity"
+  },
+  "gauge_slice_audit": {
+    "normal_deformations": "OBSTRUCTED for direct fixed-Lie-group AMM on unextended canonical data",
+    "repair_classes": [
+      "extend phase space by embeddings so spacetime Diff acts as a fixed group",
+      "formulate and prove a Lie-algebroid/groupoid Kuranishi slice",
+      "derive a Weyl-Maxwell-specific analogue of the 1982 Einstein--Yang--Mills several-Killing-field theorem"
+    ],
+    "spatial_fixed_group": "Diff(Sigma) semidirect the two Weyl initial jets semidirect based_U1 has the standard Sobolev local slice after restricting the elliptic orbit operator A to the stabilizer-orthogonal complement; A^*A is self-adjoint elliptic and invertible there.",
+    "structure_function_witness": {
+      "conclusion": "No fixed Lie bracket on lapse functions can make the unextended canonical normal-deformation generators an infinitesimal action on a neighborhood of phase space.",
+      "hypersurface_deformation_bracket": "{H[N],H[M]}=H_i[h^ij(N d_j M-M d_j N)] plus Weyl-Maxwell first-class terms that do not remove the inverse-metric structure function",
+      "lapses": {
+        "M": "cos(x)",
+        "N": "sin(x)",
+        "wronskian": "-1"
+      },
+      "metric_fixture_1": {
+        "h_xx": "1",
+        "shift_coefficient": "-1"
+      },
+      "metric_fixture_2": {
+        "h_xx": "4",
+        "shift_coefficient": "-1/4"
+      }
+    }
+  },
+  "kuranishi_normal_form": {
+    "construction": "Solve the range projection P_R C(u+w)=0 uniquely for w=psi(u) in (ker DC)^perp by the Banach implicit-function theorem, then set kappa(u)=P_coker C(u+psi(u)).",
+    "higher_order_warning": "The Kuranishi obstruction kappa may contain cubic and higher terms; this theorem does not identify the exact nonlinear zero set with its homogeneous quadratic tangent cone.",
+    "necessity_and_sufficiency": "For u in the regular Sobolev domain, a second-order Cauchy correction v solving DC v=-(1/2)D^2C[u,u] exists iff all five displayed pairings vanish.",
+    "properties": [
+      "psi(0)=Dpsi(0)=0",
+      "kappa(0)=Dkappa(0)=0",
+      "C^-1(0) is locally diffeomorphic to {u in ker DC:kappa(u)=0}"
+    ],
+    "quadratic_term": "D^2 kappa(0)[u,u]/2 = P_coker D^2 C(0)[u,u]/2",
+    "second_order_tangent_cone": "Z2={u in ker DC : mu_H(u)=mu_Px(u)=mu_J1(u)=mu_J2(u)=mu_J3(u)=0}"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "mutation_controls": {
+    "call_constant_U1_a_charge": {
+      "rejected": true
+    },
+    "force_two_sided_fredholm": {
+      "rejected": true
+    },
+    "omit_H": {
+      "false_cone_has_extra_directions": true
+    },
+    "replace_h_xx_4_by_1": {
+      "structure_function_separator_disappears": true
+    }
+  },
+  "next_gate": {
+    "name": "COMPACT_CAUCHY_EMBEDDING_OR_ALGEBROID_AMM_REPAIR",
+    "required": [
+      "choose extended-embedding fixed-group or Lie-algebroid carrier",
+      "prove its Sobolev slice and equivariance",
+      "test whether kappa is smoothly right-equivalent to its five-component homogeneous quadratic term"
+    ]
+  },
+  "provenance": {
+    "imports": [
+      {
+        "name": "adjoint_kernel",
+        "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_ADJOINT_KERNEL_CLASSIFICATION_V1.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_ADJOINT_KERNEL_CLASSIFICATION_V1",
+        "sha256": "b0012a5ff0f1653523b90076e88a94212d16660a390128022b59598e20cc8ce0"
+      },
+      {
+        "name": "right_elliptic_gate",
+        "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_CONSTRAINT_FREDHOLM_GATE_V1.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_CONSTRAINT_FREDHOLM_GATE_V1",
+        "sha256": "261c77431cca2afb5facf65d33be7388f291757290cbc4129fc05e69c1a6c303"
+      },
+      {
+        "name": "canonical_operator",
+        "path": "bridge/einstein_sector/einstein_maxwell_weyl_compact_cauchy_constraint_fredholm_gate.py",
+        "result_id": "SOURCE_OPERATOR",
+        "sha256": "90bb779e7ec2d54c66472744d7fc3fd2799c2aea26478b859df692ad5233a278"
+      },
+      {
+        "name": "finite_harmonic_second_order",
+        "path": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_FINITE_HARMONIC_SMOOTH_GLOBAL_SECOND_ORDER",
+        "sha256": "d3770043041c94e52daa253c5dab1cf3730ea47f078e1b1553e42f00625496cd"
+      },
+      {
+        "name": "moment_map_taub_bridge",
+        "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+        "sha256": "047594a9019eb68a000ecce1799063789714db632c41e67e48d37bdf0fc3657a"
+      }
+    ],
+    "input_commit": "d28de74777a8a2f002d8c10fa607b703f4304b78",
+    "primary_literature": [
+      {
+        "citation": "Arms--Marsden--Moncrief, Commun. Math. Phys. 78 (1981) 455--478",
+        "role": "fixed-group equivariant momentum-map quadratic normal form and explicit closed-range/slice hypotheses"
+      },
+      {
+        "citation": "Arms--Marsden--Moncrief, Ann. Phys. 144 (1982) 81--106",
+        "role": "Einstein and Einstein--Yang--Mills several-Killing-field extension; not imported as an automatic Weyl--Maxwell theorem"
+      }
+    ],
+    "producer": "bridge/einstein_sector/einstein_maxwell_weyl_compact_cauchy_amm_semifredholm_slice.py",
+    "producer_sha256": "6ebe0e887fa7f53313a65f953e538b60bc1aeb642557ba793ba41112d5449127"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_AMM_SEMIFREDHOLM_SLICE_V1",
+  "result_state": "SOBOLEV_SECOND_ORDER_CONE_CERTIFIED_DIRECT_FIXED_GROUP_AMM_NORMAL_FORM_OBSTRUCTED",
+  "schema": "einstein-maxwell-weyl-compact-cauchy-amm-semifredholm-slice-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein-maxwell-weyl-compact-cauchy-amm-semifredholm-slice-v1.schema.json",
+  "schema_sha256": "2d7f300b5492abae28c152ee7be38c0f935285d4f1a7305f9f3c27af1a0b1cb6",
+  "scope": {
+    "background": "compactified magnetically supported Plebanski-Hacyan rational fixture",
+    "boundaries": "compact boundaryless Cauchy slice S1_L x S2",
+    "carrier": "weighted Sobolev canonical Cauchy data",
+    "charge_sector": "fixed P_N,N=2 and fixed Q_e; based Maxwell gauge",
+    "degree": "nonlinear constraint Kuranishi map and second-order tangent cone",
+    "ell": "all ell>=0",
+    "k": "all allowed 2*pi*n/L",
+    "m": "all with real structure",
+    "omega": "NOT_APPLICABLE to the Cauchy constraint map",
+    "parity": "all",
+    "theory": "pure Weyl-Maxwell"
+  },
+  "split_semifredholm_theorem": {
+    "bounded_inverse": "DC restricted to (ker DC)^perp is a bounded isomorphism onto range DC by the open mapping theorem",
+    "closed_range": "CERTIFIED by underdetermined ellipticity on compact Sigma",
+    "cokernel": "ker(DC)^*=span_R{H,P_x,J_1,J_2,J_3}",
+    "hilbert_splittings": [
+      "X=ker DC direct_sum (ker DC)^perp",
+      "Y=range DC direct_sum ker(DC)^*",
+      "ker DC=closure(range A) direct_sum P_phys, whenever A is restricted to the certified closed spatial gauge orbit"
+    ],
+    "physical_kernel": "retained; no TT or extra-primary direction is converted into a gauge condition"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_compact_cauchy_amm_semifredholm_slice --verify bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_AMM_SEMIFREDHOLM_SLICE_V1.json",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_compact_cauchy_amm_semifredholm_slice",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_compact_cauchy_amm_semifredholm_slice",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-weyl-compact-cauchy-amm-semifredholm-slice-fragment-v1.json"
+  ]
+}

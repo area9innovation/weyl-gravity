@@ -4718,6 +4718,32 @@ split complement and nonlinear Sobolev slice, then derive the five-component
 momentum-map quadratic normal form without imposing a fake gauge condition on
 physical TT data.
 
+### AMM semi-Fredholm split verdict
+
+The Hilbert/Kuranishi part of that bridge succeeds.  Closed range and the exact
+five-dimensional adjoint kernel give complemented domain and target
+splittings.  The full Sobolev second-order Cauchy tangent cone is therefore
+exactly the common zero of `mu_H, mu_Px, mu_J1, mu_J2, mu_J3`; their vanishing
+is necessary and sufficient for a Cauchy second-order correction.
+
+The direct fixed-Lie-group AMM homogeneous-quadratic normal form is obstructed
+on the unextended canonical phase space.  The exact separator is the universal
+hypersurface-deformation bracket
+
+```text
+{H[N],H[M]} = H_i[h^ij (N d_j M - M d_j N)] + ...
+```
+
+whose inverse-metric structure function varies across phase space.  For
+`N=sin(x), M=cos(x)`, its shift coefficient changes from `-1` at `h_xx=1` to
+`-1/4` at `h_xx=4`.  Thus the lapse sector is not an action of a fixed Lie
+algebra on unextended data.  The atlas keeps the Sobolev Taub cone `CERTIFIED`
+and the stronger exact nonlinear fixed-group AMM form `OBSTRUCTED`.
+
+The repair gate is explicit: add embedding variables, prove an algebroid/
+groupoid slice theorem, or derive a Weyl--Maxwell-specific analogue of the
+1982 several-Killing-field theorem.  None of these repairs is silently assumed.
+
 ## Cross-team contribution contract
 
 Submit new results through the generator and phase-space registries in

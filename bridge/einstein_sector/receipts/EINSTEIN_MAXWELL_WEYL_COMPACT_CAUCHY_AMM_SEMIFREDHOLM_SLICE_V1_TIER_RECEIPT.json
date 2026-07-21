@@ -1,0 +1,9 @@
+{
+ "schema":"science-forge-tier-receipt-v1","result_id":"EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_AMM_SEMIFREDHOLM_SLICE_V1","date":"2026-07-21","dependency_tags":["LOCAL-ALGEBRAIC","REDUCED-MODE"],
+ "artifact_hashes":{"certificate_sha256":"d49e367008aa9b6e123db49bb4ebf244913ec98c02e84a20f82305c7a7f630aa","producer_sha256":"6ebe0e887fa7f53313a65f953e538b60bc1aeb642557ba793ba41112d5449127","independent_verifier_sha256":"7f972bfe7f63cde100c8824a5bb4716cc78f4f9586b17e7f0e6a48fcca60b678","atlas_sha256":"37c39231823859b66a093c5ff296bf0a78de0e7cee6bf151c8460716db40d029"},
+ "tier_0":{"status":"PASS","commands":["python3 -m py_compile <three scoped Python files>","python3 -m json.tool <certificate and receipt>","git diff --check -- <scoped paths>"]},
+ "tier_1":{"status":"PASS","elapsed_seconds":1.38,"max_rss_kb":72864,"commands":["python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_compact_cauchy_amm_semifredholm_slice","python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_compact_cauchy_amm_semifredholm_slice","python3 residual_atlas/validate_fragment.py residual_atlas/einstein-weyl-compact-cauchy-amm-semifredholm-slice-fragment-v1.json"],"tests_run":10},
+ "tier_2":{"status":"PASS_BY_CONTENT_ADDRESS","criterion":"All five mathematical inputs are unchanged and imported by exact SHA-256; the new theorem composes their closed-range and adjoint-kernel conclusions."},
+ "tier_3":{"status":"NOT_RUN","criterion":"The fixed-group AMM promotion is obstructed rather than frozen; scoped certificate and paper rails suffice."},
+ "advisory_shadow":{"status":"ADVISORY_PASS_WITH_PREEXISTING_DRIFT","findings":["bridge audit drift with existence, edges, DAG and gates passing","coverage 1359 certificates versus baseline 976","unpinned Forge development binary differs from checked-out standard library"],"promotion_effect":"NONE"}
+}
