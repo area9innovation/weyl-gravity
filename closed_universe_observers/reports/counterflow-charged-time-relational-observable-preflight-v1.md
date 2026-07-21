@@ -32,4 +32,5 @@ cohomology and descended pairing/nontrivial receiver class.  No value is
 called redshift, and no apparatus, detector rank, particle, phenomenology or
 quantum result is promoted.
 
+EVIDENCE: closed_universe_observers/certificates/COUNTERFLOW_CHARGED_TIME_RELATIONAL_OBSERVABLE_PREFLIGHT_V1.json and closed_universe_observers/receipts/COUNTERFLOW_CHARGED_TIME_RELATIONAL_OBSERVABLE_PREFLIGHT_V1_TIER_RECEIPT.json
 CLOSE-OUT: DONE — charged-time covariant event-map contract certified; physical instantiation remains fail-closed
