@@ -20,12 +20,16 @@
     "legacy_receiver_audit": {
       "path": "closed_universe_observers/certificates/BERGER_LEGACY_RECEIVER_ADMISSIBILITY_REPLAY_V1.json",
       "result_id": "BERGER_LEGACY_RECEIVER_ADMISSIBILITY_REPLAY_V1",
-      "sha256": "8510cc0f00ae1e223fcb97614d51f3708e3f31455bdb789bb79aeb77acd8c50f"
+      "sha256": "3851a46dc9ab2b2f1ca092a67ffd17c7ecdb21b18b8a238f72c8de091835fde5"
     },
     "receiver_crosswalk": {
+      "object_type": "blob",
       "path": "closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json",
+      "repository_path": "physics/symplectic-reconstruction/closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json",
+      "resolution": "IMMUTABLE_GIT_BLOB",
       "result_id": "CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1",
-      "sha256": "e2c9aad23b667ec16bbb124b72066d803f3607fc4bd89acd459b53f672a43918"
+      "sha256": "e2c9aad23b667ec16bbb124b72066d803f3607fc4bd89acd459b53f672a43918",
+      "source_commit": "aa5ca7814798dfbcc92ee52e462d25af74806515"
     }
   },
   "dependency_tags": [
@@ -152,6 +156,26 @@
       "classification": "CLOCK_REMOVED_OBSTRUCTED",
       "detected": true,
       "name": "resurrect_fixed_charge_relative_clock"
+    },
+    {
+      "classification": "IMMUTABLE_HISTORICAL_BLOB_REJECTED",
+      "detected": true,
+      "name": "wrong_historical_commit"
+    },
+    {
+      "classification": "IMMUTABLE_HISTORICAL_BLOB_REJECTED",
+      "detected": true,
+      "name": "wrong_historical_path"
+    },
+    {
+      "classification": "IMMUTABLE_HISTORICAL_BLOB_REJECTED",
+      "detected": true,
+      "name": "wrong_historical_blob_hash"
+    },
+    {
+      "classification": "MUTABLE_CURRENT_PATH_FORBIDDEN",
+      "detected": true,
+      "name": "mutable_current_path_substitution"
     }
   ],
   "next_gate": "CONSUME_POSITIVE_BERGER_ACTION_DERIVED_LOCAL_RECEIVER_BV_COCYCLE_UNARY_EXPORT_V1_THEN_COMPUTE_RECEIVER_QUOTIENT_AND_PAIRING",
@@ -184,11 +208,11 @@
   },
   "provenance": {
     "higher_tiers_not_run": {
-      "tier_2": "the imported audit, receiver contract and all legacy mathematical artifacts are unchanged by exact hash",
-      "tier_3": "no physical ratio, lifecycle promotion, freeze, release or shared-core algebra change"
+      "tier_2": "the historical five-row contract is resolved by exact commit, repository path, blob type and SHA-256; all other inputs are current-path exact hashes",
+      "tier_3": "owned by the dedicated post-repair fixed-point successor"
     },
-    "independent_method": "direct structural absence replay on the hashed legacy certificates plus exact coordinate-frequency control",
-    "producer_method": "content-addressed maximal-candidate fold over the terminal receiver census"
+    "independent_method": "direct structural absence replay on the hashed legacy certificates, historical five-row contract reconstruction and exact coordinate-frequency control",
+    "producer_method": "content-addressed maximal-candidate fold over the terminal receiver census and one immutable historical Git blob"
   },
   "result_id": "BERGER_LEGACY_RECEIVER_OPERATIONAL_FREQUENCY_RATIO_NONACTIVATION_V1",
   "schema": "closed-universe-berger-legacy-receiver-operational-frequency-ratio-nonactivation-v1"

@@ -4,12 +4,14 @@
 import argparse
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 
 from jsonschema import Draft202012Validator
 
 
 ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = ROOT.parents[1]
 PKG = ROOT / "closed_universe_observers"
 CERT = PKG / "certificates/BERGER_LEGACY_RECEIVER_OPERATIONAL_FREQUENCY_RATIO_NONACTIVATION_V1.json"
 SCHEMA = PKG / "schema/berger-legacy-receiver-operational-frequency-ratio-nonactivation-v1.schema.json"
@@ -18,11 +20,27 @@ REQUEST = ROOT / "planning/forge-requests/positive-berger-action-derived-local-r
 
 AUDIT = {
     "path": "closed_universe_observers/certificates/BERGER_LEGACY_RECEIVER_ADMISSIBILITY_REPLAY_V1.json",
-    "sha256": "8510cc0f00ae1e223fcb97614d51f3708e3f31455bdb789bb79aeb77acd8c50f",
+    "sha256": "3851a46dc9ab2b2f1ca092a67ffd17c7ecdb21b18b8a238f72c8de091835fde5",
 }
-CROSSWALK = {
+HISTORICAL_SOURCE_COMMIT = "aa5ca7814798dfbcc92ee52e462d25af74806515"
+HISTORICAL_REPOSITORY_PATH = (
+    "physics/symplectic-reconstruction/closed_universe_observers/certificates/"
+    "CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json"
+)
+HISTORICAL_CONTRACT_SHA256 = "e2c9aad23b667ec16bbb124b72066d803f3607fc4bd89acd459b53f672a43918"
+HISTORICAL_CROSSWALK = {
     "path": "closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json",
-    "sha256": "e2c9aad23b667ec16bbb124b72066d803f3607fc4bd89acd459b53f672a43918",
+    "source_commit": HISTORICAL_SOURCE_COMMIT,
+    "repository_path": HISTORICAL_REPOSITORY_PATH,
+    "sha256": HISTORICAL_CONTRACT_SHA256,
+    "resolution": "IMMUTABLE_GIT_BLOB",
+}
+HISTORICAL_FIVE_DISPOSITIONS = {
+    "observer.general.charged_physical_time_relational_event_map": "CONDITIONAL_INTERFACE_ONLY",
+    "observer.general.charged_time_finite_resolution_sampling": "CONDITIONAL_INTERFACE_ONLY",
+    "observer.general.charged_time_emitter_receiver_composition": "CONDITIONAL_INTERFACE_ONLY",
+    "observer.two_phase_counterflow.unrestricted_charged_time_event_map_contract": "NO_CERTIFIED_MAP",
+    "observer.two_phase_counterflow.fixed_charge_relational_observable_obstruction": "CLOCK_REMOVED_OBSTRUCTED",
 }
 
 
@@ -32,6 +50,63 @@ def sha256(path: Path) -> str:
 
 def render(value: dict) -> str:
     return json.dumps(value, indent=2, sort_keys=True) + "\n"
+
+
+def historical_contract(ref: dict | None = None) -> tuple[dict, dict]:
+    source = dict(HISTORICAL_CROSSWALK if ref is None else ref)
+    assert source == HISTORICAL_CROSSWALK, "historical source declaration drift"
+    commit = source["source_commit"]
+    resolved = subprocess.run(
+        ["git", "rev-parse", "--verify", f"{commit}^{{commit}}"],
+        cwd=REPO_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    assert resolved == commit, "historical source commit did not resolve exactly"
+    object_spec = f"{commit}:{source['repository_path']}"
+    object_type = subprocess.run(
+        ["git", "cat-file", "-t", object_spec],
+        cwd=REPO_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    assert object_type == "blob", "historical receiver contract is not a regular Git blob"
+    payload = subprocess.run(
+        ["git", "show", object_spec],
+        cwd=REPO_ROOT,
+        check=True,
+        capture_output=True,
+    ).stdout
+    assert hashlib.sha256(payload).hexdigest() == source["sha256"], "historical blob hash drift"
+    document = json.loads(payload)
+    dispositions = {
+        row["atlas_id"]: row["admissibility_status"]
+        for row in document["observer_carrier_census"]
+    }
+    assert dispositions == HISTORICAL_FIVE_DISPOSITIONS, "historical five-row scientific dispositions drift"
+    completeness = document["census_completeness"]
+    assert completeness["complete"] and completeness["discovered_count"] == 5
+    return document, {
+        "path": source["path"],
+        "repository_path": source["repository_path"],
+        "source_commit": commit,
+        "object_type": object_type,
+        "resolution": source["resolution"],
+        "result_id": document["result_id"],
+        "sha256": source["sha256"],
+    }
+
+
+def rejects_historical_mutation(**changes) -> bool:
+    mutated = dict(HISTORICAL_CROSSWALK)
+    mutated.update(changes)
+    try:
+        historical_contract(mutated)
+    except (AssertionError, subprocess.CalledProcessError, json.JSONDecodeError):
+        return True
+    return False
 
 
 def request_value() -> dict:
@@ -84,7 +159,7 @@ def import_ref(path_text: str, expected: str) -> tuple[dict, dict]:
 
 def build() -> tuple[dict, dict]:
     audit, audit_ref = import_ref(AUDIT["path"], AUDIT["sha256"])
-    crosswalk, crosswalk_ref = import_ref(CROSSWALK["path"], CROSSWALK["sha256"])
+    crosswalk, crosswalk_ref = historical_contract()
     rows = {row["legacy_key"]: row for row in audit["legacy_receiver_census"]}
     if set(rows) != {
         "dynamical_emitter", "localized_transfer", "detector_covectors", "smeared_transfer",
@@ -138,6 +213,29 @@ def build() -> tuple[dict, dict]:
         {"name": "cross_unary_match_by_detector_name", "detected": True, "classification": "NO_CERTIFIED_MAP"},
         {"name": "divide_without_positive_receiver_margin", "detected": True, "classification": "UNDEFINED_ZERO_DENOMINATOR"},
         {"name": "resurrect_fixed_charge_relative_clock", "detected": True, "classification": "CLOCK_REMOVED_OBSTRUCTED"},
+        {
+            "name": "wrong_historical_commit",
+            "detected": rejects_historical_mutation(source_commit="0" * 40),
+            "classification": "IMMUTABLE_HISTORICAL_BLOB_REJECTED",
+        },
+        {
+            "name": "wrong_historical_path",
+            "detected": rejects_historical_mutation(repository_path=HISTORICAL_REPOSITORY_PATH + ".missing"),
+            "classification": "IMMUTABLE_HISTORICAL_BLOB_REJECTED",
+        },
+        {
+            "name": "wrong_historical_blob_hash",
+            "detected": rejects_historical_mutation(sha256="0" * 64),
+            "classification": "IMMUTABLE_HISTORICAL_BLOB_REJECTED",
+        },
+        {
+            "name": "mutable_current_path_substitution",
+            "detected": rejects_historical_mutation(
+                source_commit="HEAD",
+                sha256=sha256(ROOT / HISTORICAL_CROSSWALK["path"]),
+            ),
+            "classification": "MUTABLE_CURRENT_PATH_FORBIDDEN",
+        },
     ]
     value = {
         "schema": "closed-universe-berger-legacy-receiver-operational-frequency-ratio-nonactivation-v1",
@@ -207,11 +305,11 @@ def build() -> tuple[dict, dict]:
             "No replacement action, physical receiver, nonlinear memory, particle, phenomenology or quantum claim is supplied."
         ),
         "provenance": {
-            "producer_method": "content-addressed maximal-candidate fold over the terminal receiver census",
-            "independent_method": "direct structural absence replay on the hashed legacy certificates plus exact coordinate-frequency control",
+            "producer_method": "content-addressed maximal-candidate fold over the terminal receiver census and one immutable historical Git blob",
+            "independent_method": "direct structural absence replay on the hashed legacy certificates, historical five-row contract reconstruction and exact coordinate-frequency control",
             "higher_tiers_not_run": {
-                "tier_2": "the imported audit, receiver contract and all legacy mathematical artifacts are unchanged by exact hash",
-                "tier_3": "no physical ratio, lifecycle promotion, freeze, release or shared-core algebra change",
+                "tier_2": "the historical five-row contract is resolved by exact commit, repository path, blob type and SHA-256; all other inputs are current-path exact hashes",
+                "tier_3": "owned by the dedicated post-repair fixed-point successor",
             },
         },
     }

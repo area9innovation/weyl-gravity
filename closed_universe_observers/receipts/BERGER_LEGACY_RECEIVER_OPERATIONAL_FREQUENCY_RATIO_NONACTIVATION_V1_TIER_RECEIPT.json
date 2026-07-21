@@ -2,6 +2,8 @@
   "schema": "pure-weyl-test-tier-receipt-v1",
   "result_id": "BERGER_LEGACY_RECEIVER_OPERATIONAL_FREQUENCY_RATIO_NONACTIVATION_V1_TIER_RECEIPT",
   "claim_result_id": "BERGER_LEGACY_RECEIVER_OPERATIONAL_FREQUENCY_RATIO_NONACTIVATION_V1",
+  "science_forge_work_item": "sf:program/work/observer-legacy-receiver-historical-base-binding-repair-v1",
+  "recorded_at": "2026-07-21T19:30:10Z",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
   "commands": [
     {
@@ -19,7 +21,7 @@
     {
       "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_legacy_receiver_operational_frequency_ratio_nonactivation.py",
       "elapsed_seconds": 0.54,
-      "status": "PASS_3_TESTS",
+      "status": "PASS_7_TESTS",
       "tier": 1
     },
     {
@@ -39,35 +41,33 @@
       "elapsed_seconds": 0.04,
       "status": "PASS",
       "tier": 0
-    },
-    {
-      "command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory <temporary> paper/09-relational-clocks-berger-d-cartan.tex",
-      "elapsed_seconds": 0.79,
-      "status": "PASS_22_PAGES_WITH_FIRST_PASS_REFERENCE_WARNINGS",
-      "tier": 1
     }
   ],
   "source_hashes": {
     "closed_universe_observers/atlas/generate_berger_legacy_receiver_operational_frequency_ratio_nonactivation_atlas.py": "fb95038620817476a5f54c471c9639fa4815e6619f66bebca65edef5c4ee9228",
-    "closed_universe_observers/certificates/BERGER_LEGACY_RECEIVER_OPERATIONAL_FREQUENCY_RATIO_NONACTIVATION_V1.json": "7d758b01ed37bb695a30b8364ea4a0b1d425faaa307b990be2cefaa42aa29d4e",
-    "closed_universe_observers/generate_berger_legacy_receiver_operational_frequency_ratio_nonactivation.py": "4e0764779082e6bd427cd14c567f8cfaeffc4d830a36037256978292541c4ea5",
+    "closed_universe_observers/certificates/BERGER_LEGACY_RECEIVER_OPERATIONAL_FREQUENCY_RATIO_NONACTIVATION_V1.json": "e0deee0fdfadd1d3ea61ce11718c302ba7954756745974e126c457982a26637c",
+    "closed_universe_observers/generate_berger_legacy_receiver_operational_frequency_ratio_nonactivation.py": "788e8cffe00308e660a2b6624c188566188fdbc579f3be94ee87ffea83232f26",
     "closed_universe_observers/reports/berger-legacy-receiver-operational-frequency-ratio-nonactivation-v1.md": "0fa3def4a8d73702d404d44fb57165583963f5fca911751dcaded540054f3d61",
     "closed_universe_observers/schema/berger-legacy-receiver-operational-frequency-ratio-nonactivation-v1.schema.json": "470ae6c89b45aa323f85ff472c2db53c997261e5798d8a9a5ac56bf2a9a006b9",
-    "closed_universe_observers/tests/test_berger_legacy_receiver_operational_frequency_ratio_nonactivation.py": "1c00ec1c0d26c743def0f22d2109043f0593133b9fd86b8df0bfa416e5d668d6",
-    "closed_universe_observers/verify_berger_legacy_receiver_operational_frequency_ratio_nonactivation.py": "2893e291217c9872c0d16ee859646c8a336d437e94efd28b4150e6b1cd97587e",
-    "notes/closed-universe-observer-team-brief.md": "f1a175e1e245479b07d1a51136b6ad8893c093eb944d84239892943af3ee266a",
-    "paper/09-relational-clocks-berger-d-cartan.tex": "976d471c457025e79761b5efd8722c0045da1b73ebe5846cb338400a474f1d9a",
+    "closed_universe_observers/tests/test_berger_legacy_receiver_operational_frequency_ratio_nonactivation.py": "ecd9166e37ccf4f8ea0b73a954bb05b92fcae651695e83c235ef95986bac8005",
+    "closed_universe_observers/verify_berger_legacy_receiver_operational_frequency_ratio_nonactivation.py": "d0159fd04b04e8e5ecd630e986315eec3f374af719987d890acd2fe152dc229a",
     "planning/forge-requests/positive-berger-action-derived-local-receiver-bv-cocycle.json": "110e77c4db41cd6edd3a44e7e982911ad77d73de5a4bc0ab1ade2b5afa8cecfe",
-    "reports/observer-berger-legacy-receiver-operational-frequency-ratio-closeout-2026-07-21.md": "507ba09c0a2764bc24f1a4b34fb9fabb6bfa8dea4b60ec6d51ab637383c17519",
-    "residual_atlas/berger-legacy-receiver-operational-frequency-ratio-nonactivation-fragment-v1.json": "40c3f469f2795d4448ec49aaf5a93e189db7f2c822382d3eac4fa7c9362bf214"
+    "residual_atlas/berger-legacy-receiver-operational-frequency-ratio-nonactivation-fragment-v1.json": "770b29252f2ccfd5257594a8a5a49af84a731988ff0186d0d11f031b174dab0a"
+  },
+  "historical_base_contract": {
+    "source_commit": "aa5ca7814798dfbcc92ee52e462d25af74806515",
+    "repository_path": "physics/symplectic-reconstruction/closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json",
+    "object_type": "blob",
+    "sha256": "e2c9aad23b667ec16bbb124b72066d803f3607fc4bd89acd459b53f672a43918",
+    "verification": "Producer and method-distinct verifier independently resolve the immutable Git object and check all five historical dispositions."
   },
   "tier_2": {
     "status": "NOT_RUN",
-    "criterion": "The terminal audit, charged-time receiver contract and all legacy mathematical artifacts are unchanged and content-addressed."
+    "criterion": "The historical five-row contract is resolved by exact commit, repository path, regular-blob type and SHA-256; the regenerated audit and legacy inputs retain exact hashes."
   },
   "tier_3": {
     "status": "NOT_RUN",
-    "criterion": "No physical ratio, lifecycle promotion, freeze, release or shared-core algebra change."
+    "criterion": "Owned by the dedicated post-repair fixed-point successor."
   },
   "boundary": "Certifies ratio nonactivation on the seven-row legacy census and emits one minimal receiver-unary producer request; no physical receiver, redshift, nonlinear memory, particle or quantum claim."
 }

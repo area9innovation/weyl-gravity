@@ -29,6 +29,8 @@ ORIGINAL_FIVE = {
 }
 CONTRACT_PATH = "closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json"
 REPO_PREFIX = "physics/symplectic-reconstruction/"
+HISTORICAL_COMMIT = "aa5ca7814798dfbcc92ee52e462d25af74806515"
+HISTORICAL_SHA256 = "e2c9aad23b667ec16bbb124b72066d803f3607fc4bd89acd459b53f672a43918"
 
 
 def sha(path):
@@ -81,11 +83,31 @@ def verify_value(v, i):
     replay = json.loads((ROOT / sources["legacy_replay"]["path"]).read_text())
     ratio = json.loads((ROOT / sources["legacy_ratio"]["path"]).read_text())
     old_contract_sha = v["provenance"]["historical_base_contract_sha256"]
-    assert replay["dependency_refs"]["receiver_contract"]["sha256"] == old_contract_sha
-    assert ratio["dependency_refs"]["receiver_crosswalk"]["sha256"] == old_contract_sha
+    assert old_contract_sha == HISTORICAL_SHA256
+    historical_refs = (
+        replay["dependency_refs"]["receiver_contract"],
+        ratio["dependency_refs"]["receiver_crosswalk"],
+    )
+    for ref in historical_refs:
+        assert ref["path"] == CONTRACT_PATH
+        assert ref["repository_path"] == REPO_PREFIX + CONTRACT_PATH
+        assert ref["source_commit"] == HISTORICAL_COMMIT
+        assert ref["object_type"] == "blob"
+        assert ref["resolution"] == "IMMUTABLE_GIT_BLOB"
+        assert ref["sha256"] == old_contract_sha
     shortfall = json.loads((ROOT / v["dependency_refs"]["tier3_shortfall"]["path"]).read_text())
+    assert shortfall["baseline_commit"] == HISTORICAL_COMMIT
+    object_spec = f"{HISTORICAL_COMMIT}:{REPO_PREFIX}{CONTRACT_PATH}"
+    object_type = subprocess.run(
+        ["git", "cat-file", "-t", object_spec],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    assert object_type == "blob"
     old_contract_bytes = subprocess.run(
-        ["git", "show", f"{shortfall['baseline_commit']}:{REPO_PREFIX}{CONTRACT_PATH}"],
+        ["git", "show", object_spec],
         cwd=ROOT,
         check=True,
         capture_output=True,
