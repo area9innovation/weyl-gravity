@@ -1,0 +1,35 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/bridge-compact-cauchy-third-order-kuranishi-evaluation",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "bridge-compact-cauchy-third-order-kuranishi-evaluation",
+  "source": {
+    "path": "planning/work-items/bridge-compact-cauchy-third-order-kuranishi-evaluation.json",
+    "span": null
+  },
+  "body": {
+    "owner": "bridge-1",
+    "state": "PROPOSED",
+    "stream": "bridge",
+    "priority": 1,
+    "objective": "Evaluate the correction-independent cubic Kuranishi class of the balanced Einstein/extra tangent and decide its exact third-order integrability and resonant disposition.",
+    "stop_condition": "Import the terminal cubic-tensor export, the two-jet Kuranishi carrier and mixed-charge correspondence by exact hashes. Refuse evaluation unless every declared D3C, mixed D2C[u,v], five stabilizer projection, resonant shell projection and arity-three Noether input is present with one action convention. Compute K3(u;v)=P_O(D2C[u,v]+D3C[u,u,u]/6), construct im l2(u,-), reduce K3 to the exact four-dimensional quotient O/im l2(u,-), and prove correction-choice and nonlinear gauge-representative independence. Evaluate all four original ell=2 resonant shells and distinguish global Kuranishi obstruction from bounded secular resonance. State whether the balanced tangent extends through third order, extends only after a declared correction/charge deformation, or is exactly obstructed. Verify by an independent quotient/separator construction and representative, normalization, omitted-shell and action-hash mutations; update Paper 13 and the residual atlas with immediate scope limits.",
+    "current_gate": "first evaluated higher Kuranishi operation for the mixed-charge Einstein/extra tangent cone",
+    "forbid": "no evaluation from incomplete tensors; no representative-specific coefficient called invariant; no shell resonance conflated with a global Taub class; no third-order formal extension called bounded stability or all-order solution; no causal, particle, positivity, unitarity or quantum promotion",
+    "depends_on": [
+      "sf:program/work/bridge-compact-cauchy-cubic-constraint-tensor-export#ANY_TERMINAL"
+    ],
+    "allowed_paths": [
+      "bridge/einstein_sector/",
+      "bridge/certificates/",
+      "residual_atlas/",
+      "reports/",
+      "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
+      "notes/d-quotient-einstein-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "EVALUATION ONLY. Consume immutable cubic tensors; do not silently derive or repair missing producer rows inside this item."
+  },
+  "edges": []
+}

@@ -1,0 +1,37 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/bridge-compact-cauchy-cubic-constraint-tensor-export",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "bridge-compact-cauchy-cubic-constraint-tensor-export",
+  "source": {
+    "path": "planning/work-items/bridge-compact-cauchy-cubic-constraint-tensor-export.json",
+    "span": null
+  },
+  "body": {
+    "owner": "bridge-1",
+    "state": "PROPOSED",
+    "stream": "bridge",
+    "priority": 0,
+    "objective": "Export the first complete action-normalized cubic and mixed constraint tensors needed to evaluate the compact-Cauchy Einstein/extra third-order Kuranishi class on its exact finite resonance closure.",
+    "stop_condition": "Import EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_INPUT_OBSTRUCTION_V1, the selected Weyl-Maxwell action, balanced first-order fixture and stored second-order correction by exact hashes. Differentiate the same action and bundle-covariant constraint map to produce D3C_barPhi[u,u,u] and every mixed D2C_barPhi[u,v] row for the stored polar ell=0,2,4 correction channels at zero, double, sum and difference frequencies. Export all five stabilizer projections and every resonant ell=2 adjoint-shell projection on the sixteen-point odd frequency lattice, with exact field-component/harmonic crosswalk, row ordering, normalization, correction representative, real/conjugation rules and source-action hash. Derive and verify the second action jet of the constraint-algebroid action and the arity-three Noether identity required for representative independence. Use independent direct action variation and coefficient/harmonic projection rails; reject omitted-channel, normalization, representative-shift, parity, shell and Noether mutations. If a complete finite tensor export is impossible, certify the first exact missing action row or representation closure rather than inserting zero.",
+    "current_gate": "content-addressed cubic constraint input for the four-dimensional Kuranishi obstruction quotient",
+    "forbid": "no competing action; no quadratic balance called third-order integrability; no absent cubic coefficient set to zero; no reduced coefficient without a component crosswalk; no gauge independence without the arity-three identity; no bounded, causal, particle or quantum promotion",
+    "depends_on": [
+      "sf:program/work/bridge-compact-cauchy-third-order-kuranishi-obstruction#ANY_TERMINAL"
+    ],
+    "activates": [
+      "sf:program/work/bridge-compact-cauchy-third-order-kuranishi-evaluation"
+    ],
+    "allowed_paths": [
+      "bridge/einstein_sector/",
+      "bridge/certificates/",
+      "residual_atlas/",
+      "reports/",
+      "notes/d-quotient-einstein-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "ACTION-DERIVATIVE EXPORT. Split by harmonic channel if the exact payload exceeds the resident budget, and assemble only after every mandatory channel is terminal-DONE."
+  },
+  "edges": []
+}
