@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/two-phase-counterflow-repaired-q70-health-assembly-maximal-domain-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "dependency_tags", "lifecycle_state", "result_state",
+    "imports", "payload_ref", "certified_domain_summary", "cross_isotype_partition",
+    "remaining_carrier", "branch_verdicts", "terminal_verdict", "claim_boundary", "content_hashes"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-repaired-q70-health-assembly-maximal-domain-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_V1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_state": {"const": "OBSTRUCTED_LINEAR_PHYSICAL_HEALTH_WITH_TYPED_HIGHER_J_CENSUS_SHORTFALL"},
+    "imports": {"type": "object", "minProperties": 6},
+    "payload_ref": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256", "content_sha256"],
+      "properties": {
+        "path": {"const": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_PAYLOAD_V1.json"},
+        "result_id": {"const": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_PAYLOAD_V1"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "content_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "certified_domain_summary": {"type": "object"},
+    "cross_isotype_partition": {"type": "object"},
+    "remaining_carrier": {"type": "object"},
+    "branch_verdicts": {"type": "object"},
+    "terminal_verdict": {"type": "object"},
+    "claim_boundary": {"type": "object"},
+    "content_hashes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["certified_block_ledger", "symmetry_and_charge_ledger", "cross_isotype_partition"],
+      "properties": {
+        "certified_block_ledger": {"$ref": "#/$defs/sha256"},
+        "symmetry_and_charge_ledger": {"$ref": "#/$defs/sha256"},
+        "cross_isotype_partition": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
