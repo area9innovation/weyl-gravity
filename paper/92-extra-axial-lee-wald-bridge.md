@@ -126,9 +126,9 @@ The independent polar calculation now establishes the corresponding
 equation-level decomposition. A formally self-adjoint four-by-four target
 Hessian obeys the exact polynomial Einstein square
 
-\[
+$$
 H_P S_P=J_P E_P,
-\]
+$$
 
 without dividing by momentum or either characteristic factor. On every
 declared physical $\ell\geq2$ compact-momentum fibre, including $k=0$, its
@@ -146,10 +146,10 @@ current before the reduced Hessian is consulted; the result then agrees
 exactly with the reduced Green form. On the two $p$-primary representatives
 its Hermitian Gram determinant is
 
-\[
+$$
 9\lambda^2(\lambda-2)(9\lambda-2)
 (3k^2+3\lambda-2)(6k^2+3\lambda-2)^2,
-\]
+$$
 
 which never vanishes for physical $\lambda=\ell(\ell+1)\geq6$ and real
 compact momentum. The extra polar inertia is $(2,0)$, the Einstein--extra
@@ -165,10 +165,10 @@ However, it cannot be enhanced to a strict cyclic BV morphism while holding
 the physical identity field inclusion and the two standard action pairings
 fixed. On generic polar cohomology the cyclic defect is
 
-\[
+$$
 D=R-I=\begin{pmatrix}0&-3\lambda\\-3/2&0\end{pmatrix},
 \qquad D^2=\frac92\lambda I,
-\]
+$$
 
 so it is nonradical for every physical $\lambda\ge6$. Moreover the five
 connected background stabilizers are global charged symmetries, not universal
@@ -180,10 +180,10 @@ cyclic chain homotopies open.
 Combining both parities gives a maximal exact statement despite that
 obstruction. On every separately certified harmonic stratum,
 
-\[
+$$
 0\longrightarrow H^0_{\rm EM}\longrightarrow H^0_{\rm WM}
 \longrightarrow H^0_{\rm extra}\longrightarrow0
-\]
+$$
 
 is exact before global residual reduction. For a generic parity fibre the
 coefficient-field dimensions are $4\to8\to4$, the pairing ranks are
@@ -218,10 +218,10 @@ direct sum. The repeated outer root may carry Jordan partners, and the
 certificate does not yet reconstruct their metric falloff or finite flux at
 null infinity. The justified conclusion is therefore
 
-\[
+$$
 \boxed{\text{horizon analyticity plus the tested leading outer symbol}
        \not\Rightarrow \delta R_{ab}=0.}
-\]
+$$
 
 This endpoint-nonselection result does not exclude every local causal
 truncation. At linear order, the Cauchy restriction
