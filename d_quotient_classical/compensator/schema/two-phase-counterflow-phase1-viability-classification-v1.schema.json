@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/two-phase-counterflow-phase1-viability-classification-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "dependency_tags", "lifecycle_state", "result_state", "imports", "decision", "paper_disposition", "downstream_activation", "adversarial_mutations", "claim_boundary", "decision_sha256"],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-phase1-viability-classification-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_PHASE1_VIABILITY_CLASSIFICATION_V1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_state": {"const": "OBSTRUCTED_NO_ROBUST_STATIONARY_SAME_FIELD_CLOCK"},
+    "imports": {"type": "object", "minProperties": 8},
+    "decision": {"type": "object", "required": ["branch", "robust_stationary_retuning_exists", "first_exact_obstruction", "structural_identity", "selected_fixture_causal_parent", "familywide_green_homotopy", "selected_fixture_health", "all_isotype_retuning_branch", "new_action_architecture_opened"]},
+    "paper_disposition": {"type": "object"},
+    "downstream_activation": {"type": "object"},
+    "adversarial_mutations": {"type": "object", "minProperties": 4},
+    "claim_boundary": {"type": "object"},
+    "decision_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
