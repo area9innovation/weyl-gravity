@@ -93,3 +93,5 @@ is promoted.
 The work began from activation commit
 `77540b7cf178e8f75f5bd07e90e8c7ad4740981a`; the pre-report shared-tree HEAD
 was `f0f9bb1b2f309c5dd064ca345f0ad2d47a866e5d`.
+
+CLOSE-OUT: OBSTRUCTED — the complete parity-even local Einstein–Maxwell action quotient through four derivatives has no axial/polar q-primary preimage for the requested relative pairing shift; exact certificate and independent receipt are linked above.
