@@ -33,9 +33,11 @@
     "notes": [
       "Live motivation on 2026-07-21: the overview correctly listed thirteen blocked physics items, but several are long-horizon descendants of the same missing q26/C26 carrier or apparatus unary. The coordinator needs the smallest actionable frontier plus downstream impact, not thirteen equally urgent-looking paragraphs.",
       "WAITING on an ACTIVE/PROPOSED work dependency is ordinary queue state and should not be conflated with BLOCKED. PARKED means an explicit scientific decision to defer until a named wake condition, not a euphemism for an unresolved defect.",
-      "The default display may be short, but audit completeness is non-negotiable: counts, exact paths, source events and a one-command full tree must always remain available."
+      "The default display may be short, but audit completeness is non-negotiable: counts, exact paths, source events and a one-command full tree must always remain available.",
+      "2026-07-21 forge-coordinator ACCEPTED + mirrored sf:program/work/science-forge-blocker-frontier. KEY FINDING (measured on the live 13-blocked corpus): a fail-closed frontier CANNOT be computed from current data \u2014 0/13 blocked items structurally reference another blocked item (11 are free-text needs, 2 reference a forge-request, 0 reference any work item). The 'descendants of the same q26/C26 carrier' is a TOPICAL grouping in prose, not a structured dependency; clustering free text would risk hiding a real root cause, violating this request's own non-negotiable audit-completeness. => The feature needs DATA CO-DESIGN: a blocked item must declare a STRUCTURED blocker ref (depends_on / a typed `blocked_on: sf:program/work/<id>|sf:forge-request/<id>`). THEN the tool computes deterministically+fail-closed: FRONTIER = blocked items whose blockers are not themselves non-terminal; DESCENDANTS fold under their root with a count; STALE = blocker already terminal/LANDED (checkable NOW for the 2 request-referencing items); WAITING-on-ACTIVE/PROPOSED = ordinary queue, not BLOCKED; PARKED = an explicit wake-condition marker (new state, does not exist yet). Full drill-down (counts, paths, source events, one-command tree) retained. Recommend implementing STALE-detection + WAITING-vs-BLOCKED first (deterministic on existing data), then the frontier fold once structured blocker refs are adopted."
     ],
     "stream": "forge-requests"
   },
-  "edges": []
+  "edges": [],
+  "state": "ACCEPTED"
 }
