@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/bridge-sobolev-linearization-stability-completion-gate-LEASE-RELEASE-excl-f865e573ca741034",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/bridge-sobolev-linearization-stability-completion-gate-LEASE-RELEASE-excl-f865e573ca741034.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "bridge-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T03:01:55Z", "seq": 2, "predecessor": "sf:program/event/bridge-sobolev-linearization-stability-completion-gate-LEASE-ACQUIRE-excl-0100bde07fae92da", "payload": {"target": "sf:program/work/bridge-sobolev-linearization-stability-completion-gate", "agent": "bridge-1", "lease_type": "exclusive", "action": "RELEASE", "acquired": "2026-07-21T03:01:55Z", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/bridge-sobolev-linearization-stability-completion-gate"}]
+}
