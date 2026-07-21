@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/black-hole-symbolic-frequency-finite-flux-radiation-class-LEASE-ACQUIRE-excl-4ae4c2c474194c5c",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/black-hole-symbolic-frequency-finite-flux-radiation-class-LEASE-ACQUIRE-excl-4ae4c2c474194c5c.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "black-hole-1", "base_revision": "science-forge-ir-v0", "when": null, "seq": 3, "predecessor": "sf:program/event/black-hole-symbolic-frequency-finite-flux-radiation-class-LEASE-RELEASE-excl-71645cdb6f5a727a", "payload": {"target": "sf:program/work/black-hole-symbolic-frequency-finite-flux-radiation-class", "agent": "black-hole-1", "lease_type": "exclusive", "action": "ACQUIRE", "acquired": "", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/black-hole-symbolic-frequency-finite-flux-radiation-class"}]
+}
