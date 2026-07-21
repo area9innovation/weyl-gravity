@@ -4905,3 +4905,26 @@ fail-closed atlas row
 `einstein.ph.wm.polar.ungauged_bv.final_residual_descent` marks the cyclic
 symplectic descent `OBSTRUCTED`, nonlinear repair `OPEN`, and final residual,
 causal, observational and quantum outputs `NO_CERTIFIED_MAP`.
+
+## Maximal parity-complete exact sequence
+
+The next bridge assembles both parities without over-promoting the cyclic or
+residual structure. Before global residual reduction, every independently
+typed row obeys
+
+```text
+0 -> H0_EM -> H0_WM -> H0_extra -> 0.
+```
+
+Generic axial and polar fibres each have coefficient-field dimensions
+`4 -> 8 -> 4` and pairing ranks `4 -> 8 -> 4`; extra inertia is `(2,0)`,
+complete inertia `(3,1)`, and every radical is zero. Exceptional `ell=1` rows
+are `2 -> 4 -> 2` per parity. Homogeneous and twist solution cofibers vanish,
+while polar `ell=0,k!=0` has an empty physical quotient.
+
+This exact H0 sequence is not a split or cyclic theorem. At all-row level the
+certified object is a support-local noncyclic mapping-cofiber triangle; the
+equation/identity maps are not degreewise injective. After residual reduction
+there is `NO_CERTIFIED_MAP`, because the common moment-map-zero quotient
+carrier is absent. The fail-closed atlas row is
+`einstein.ph.wm.parity_complete.maximal_exact_sequence`.

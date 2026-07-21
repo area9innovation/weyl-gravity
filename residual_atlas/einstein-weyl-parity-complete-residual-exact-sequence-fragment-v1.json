@@ -1,0 +1,91 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This certificate assembles the maximal parity-complete compact-product result: a noncyclic mapping-cofiber triangle and exact H0 solution sequence before residual reduction. It does not promote this to a degreewise short exact BV sequence, a cyclic morphism, a split sequence, or an after-residual sequence; the latter lacks an authorized common moment-map-zero quotient carrier. No causal, particle, positivity, unitarity or quantum claim is made.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/EINSTEIN_WEYL_PARITY_COMPLETE_RESIDUAL_EXACT_SEQUENCE_MAXIMAL_V1.json",
+          "result_id": "EINSTEIN_WEYL_PARITY_COMPLETE_RESIDUAL_EXACT_SEQUENCE_MAXIMAL_V1",
+          "sha256": "d94140069b4972acdd2f5fcc99e8076bb773d9f2d904ce068e58548f86fbbd10"
+        }
+      ],
+      "id": "einstein.ph.wm.parity_complete.maximal_exact_sequence",
+      "mode_data": {
+        "dispersion": {
+          "statement": "All seven authoritative rows have exact Einstein/Weyl/extra dimensions.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "Pre-residual pairing ranks add exactly; generic extra blocks have inertia (2,0) and complete blocks (3,1), with zero radicals.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Linear exact-sequence theorem only.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Not promoted.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No retarded carrier.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Not promoted.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "A common moment-map-zero derived carrier is required before residual reduction.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan",
+        "boundaries": "closed S1_L times S2 before any global stabilizer reduction",
+        "carrier": "noncyclic all-row mapping cofiber and H0 solution modules",
+        "charge_sector": "fixed magnetic bundle; Q_e and W_x retained",
+        "degree": 1,
+        "ell": "generic >=2, exceptional 1, homogeneous 0",
+        "k": "all allowed compact momenta with zero/nonzero endpoints split",
+        "m": "all certified labels",
+        "omega": "q, p, exceptional and generalized-zero branches",
+        "parity": "axial and polar, separately typed",
+        "theory": "Einstein-Maxwell -> Weyl-Maxwell -> extra"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/generate_parity_complete_residual_exact_sequence_atlas.py",
+  "generated_by_sha256": "5c392d9d8538a5ecaddfbed694707c3469bf2f48796902bf38c921344f7d98b1",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_nonlinear",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.generate_parity_complete_residual_exact_sequence_atlas --check",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-weyl-parity-complete-residual-exact-sequence-fragment-v1.json"
+  ]
+}

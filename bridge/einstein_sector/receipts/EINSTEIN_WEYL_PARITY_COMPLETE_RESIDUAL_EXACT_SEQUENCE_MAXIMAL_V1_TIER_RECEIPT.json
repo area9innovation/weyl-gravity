@@ -1,0 +1,24 @@
+{
+  "schema":"pure-weyl-tier-receipt-v1",
+  "result_id":"EINSTEIN_WEYL_PARITY_COMPLETE_RESIDUAL_EXACT_SEQUENCE_MAXIMAL_V1_TIER_RECEIPT",
+  "claim_id":"EINSTEIN_WEYL_PARITY_COMPLETE_RESIDUAL_EXACT_SEQUENCE_MAXIMAL_V1",
+  "date":"2026-07-21",
+  "dependency_tags":["LOCAL-ALGEBRAIC","REDUCED-MODE"],
+  "artifacts":[
+    {"path":"bridge/einstein_sector/einstein_weyl_parity_complete_residual_exact_sequence.py","sha256":"66d1fb6779a32ceecb41a1811c7d56b34af70dabdeaa30059495326245fbe479"},
+    {"path":"bridge/certificates/EINSTEIN_WEYL_PARITY_COMPLETE_RESIDUAL_EXACT_SEQUENCE_MAXIMAL_V1.json","sha256":"d94140069b4972acdd2f5fcc99e8076bb773d9f2d904ce068e58548f86fbbd10"},
+    {"path":"bridge/einstein_sector/verify_einstein_weyl_parity_complete_residual_exact_sequence.py","sha256":"917e6619a64a774959f23570d69ce41a6d78df66a5bdb10db35db6d530f5e16e"},
+    {"path":"bridge/einstein_sector/tests/test_einstein_weyl_parity_complete_residual_exact_sequence.py","sha256":"366af42ef9b844c64456f351e954df4f23ca34f067904921e6f9ce69662beea5"},
+    {"path":"bridge/einstein_sector/schema/einstein-weyl-parity-complete-residual-exact-sequence-maximal-v1.schema.json","sha256":"618568a3b6939e44e289f20a9dc68fbeb7c45d0a244e409ba920c6b9bba04f0e"},
+    {"path":"bridge/einstein_sector/generate_parity_complete_residual_exact_sequence_atlas.py","sha256":"5c392d9d8538a5ecaddfbed694707c3469bf2f48796902bf38c921344f7d98b1"},
+    {"path":"residual_atlas/einstein-weyl-parity-complete-residual-exact-sequence-fragment-v1.json","sha256":"67f01166633c7fa252d8ca4d66dce6a3ea6e2cec87c2be904d5cc7c4d31f3c52"},
+    {"path":"reports/bridge-compact-product-parity-complete-residual-exact-sequence-closeout-2026-07-21.md","sha256":"95d0f51185ac46f044b58d8360b990d4141257e28eefcdcdf09b5c0c08fa0dad"},
+    {"path":"paper/92-extra-axial-lee-wald-bridge.md","sha256":"6fcaec42cafbc33556afe88eda43c06425c998c8e82069b7b1a40df1d3b0d25e"},
+    {"path":"notes/d-quotient-einstein-team-brief.md","sha256":"a0ff7590d8d9df2f2df835393bcac98017347cc700bc7fd53bd70ac42740fa52"}
+  ],
+  "tier_0":{"status":"PASS","commands":["py_compile scoped Python","strict schema and JSON parse PASS","scoped diff check PASS"]},
+  "tier_1":{"status":"PASS","commands":["producer PASS","independent verifier PASS","5 tests PASS including false split, degreewise SES and after-residual mutations","generated atlas and common validator PASS"]},
+  "tier_2":{"status":"PASS_WITH_ADVISORY_FINDINGS","commands":["all seven imported artifacts pinned by result ID and SHA-256; unchanged precursor verifiers passed in the immediately preceding gate","Science Forge shadow advisory exit 0: pre-existing bridge drift, corpus 1365 versus 976, unpinned development binary; /tmp/sf-shadow.7FsFTI"]},
+  "tier_3":{"status":"NOT_RUN","reason":"Scoped maximal-subsequence/first-absent-map result; no freeze, release, shared-core, causal or quantum promotion."},
+  "claim_boundary":"Certifies the parity-complete pre-residual H0 short exact sequence and noncyclic mapping-cofiber triangle. It does not certify a degreewise short exact complex, splitting, cyclicity, an after-residual quotient or any causal, particle or quantum statement."
+}

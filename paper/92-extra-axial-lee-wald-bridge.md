@@ -177,6 +177,23 @@ separately declared common moment-map-zero derived carrier; without it they
 remain undefined. This obstruction leaves corrected nonidentity maps and
 cyclic chain homotopies open.
 
+Combining both parities gives a maximal exact statement despite that
+obstruction. On every separately certified harmonic stratum,
+
+\[
+0\longrightarrow H^0_{\rm EM}\longrightarrow H^0_{\rm WM}
+\longrightarrow H^0_{\rm extra}\longrightarrow0
+\]
+
+is exact before global residual reduction. For a generic parity fibre the
+coefficient-field dimensions are $4\to8\to4$, the pairing ranks are
+$4\to8\to4$, and all three radicals vanish. This does not produce a
+degreewise short exact BV sequence: the all-row object is a noncyclic mapping
+cofiber, and its equation/identity maps are not injective. Nor does it produce
+an after-residual sequence, because no authorized common moment-map-zero
+quotient functor exists. Exactness, splitting, cyclicity and residual descent
+are therefore four distinct assertions.
+
 ## 5. Independent Schwarzschild boundary test
 
 The black-hole programme supplies a second laboratory in which boundary
@@ -277,6 +294,7 @@ arXiv:2109.12743v1, arXiv:2202.08298v2. Certificates:
 `AXIAL_LEE_WALD_COMPLETION`, `POLAR_PHYSICAL_COMPLETION`,
 `EINSTEIN_MAXWELL_WEYL_POLAR_DIRECT_LEE_WALD_COMPLETION_V1`,
 `EINSTEIN_MAXWELL_WEYL_POLAR_UNGAUGED_BV_RESIDUAL_DESCENT_OBSTRUCTION_V1`,
+`EINSTEIN_WEYL_PARITY_COMPLETE_RESIDUAL_EXACT_SEQUENCE_MAXIMAL_V1`,
 `BH2A_CROSS_BLOCK_NONZERO_HORIZON_FLUX_FIXTURES`, and
 the symbol/exponent payload of
 `BH2A_AXIAL_CAUSAL_DISPOSITION_EXTRA_BRANCH_UNAVOIDABLE`, narrowed by the
