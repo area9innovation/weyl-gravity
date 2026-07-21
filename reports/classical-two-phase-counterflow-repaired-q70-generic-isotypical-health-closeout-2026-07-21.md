@@ -26,6 +26,12 @@ physical polarizations per root.  The residue pairing is nondegenerate and
 the roots are semisimple.  The corresponding real eight-dimensional action
 sector has inertia ((4,4,0)).
 
+The selected action has (\alpha_B=5).  The exact calculation divides out
+that positive overall Hessian factor and records the monic (\alpha_B=1)
+Smith representative.  Roots, multiplicities, radical and inertia are
+unchanged; the certificate now states explicitly that its displayed
+Ostrogradsky matrix is the normalized representative.
+
 The charge ledger separates the result cleanly: (R_{\rm rel}) and the
 action-angle family tangent live in the separate (j=0) block, while every
 (j=1/2) harmonic has zero integrated charge variation.  Fixed and
@@ -36,7 +42,8 @@ are not gauge, a charged orbit, a radical or a zero-Jordan clock tangent.
 
 - Producer replay: PASS.
 - Independent manual spin-half Wigner/PBW replay: PASS.
-- Full finite repaired-q70 square and grading: PASS.
+- Full finite repaired-q70 square, grading, cross-(m) cyclicity and
+  140-to-52 contraction with side conditions: PASS.
 - Exact quotient identities and characteristic determinant: PASS.
 - Four factor-field rank and residue audits: PASS.
 - Orientation, omitted-weight and proper-truncation mutations: rejected.

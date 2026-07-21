@@ -11,6 +11,21 @@
       58,
       12
     ],
+    "finite_repaired_unary_and_contraction": {
+      "contraction_target_dimension": 52,
+      "homotopy_identity": true,
+      "pairing_rank": 140,
+      "pi_iota_identity": true,
+      "q70_cross_m_cyclic": true,
+      "q70_nonzero_entry_count": 610,
+      "q70_sha256": "10c820789866ad49d9772e4625f281ce941ba9f7018bc9f68e1779eb3b8327b6",
+      "q70_shape": [
+        140,
+        140
+      ],
+      "q70_squared_zero": true,
+      "side_conditions": true
+    },
     "labels": {
       "j": "1/2",
       "k_internal": [
@@ -54,7 +69,7 @@
       "a genuine non-gauge non-charge non-action-angle complex-frequency physical sector with split energy inertia"
     ]
   },
-  "content_sha256": "c6b0db9ad411fa633767007dbb543cd631d32f295bcd1dd549ccd90e96eed47e",
+  "content_sha256": "1fbf80cc40eb3aa9b12852dec29909a24ba8f95b4520700cfcc8a9b56e67ac18",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "REDUCED-MODE",
@@ -136,6 +151,18 @@
       "reason": "changing u=v or the e3 scale changes the selected Berger PBW relations and does not retain the pinned q=9/40 stationary action",
       "status": "OUTSIDE_SAME_BACKGROUND_GATE"
     }
+  },
+  "normalization": {
+    "computed_monic_representative_alpha_B": "1",
+    "invariant_outputs": [
+      "characteristic roots and multiplicities",
+      "Jordan and geometric multiplicities",
+      "pairing radical and nondegeneracy",
+      "Ostrogradsky inertia for positive alpha_B"
+    ],
+    "not_claimed": "The displayed Ostrogradsky matrix is the positive overall-normalized Smith representative, not an unnormalized alpha_B=5 matrix entry table.",
+    "relation": "The retained Hessian block is linear in alpha_B, so alpha_B=1 removes the positive overall factor five before monic Smith/spectral reduction.",
+    "selected_action_alpha_B": "5"
   },
   "oracle_fields_consumed": [],
   "physical_quotient": {

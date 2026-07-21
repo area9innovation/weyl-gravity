@@ -11,6 +11,21 @@
       58,
       12
     ],
+    "finite_repaired_unary_and_contraction": {
+      "contraction_target_dimension": 52,
+      "homotopy_identity": true,
+      "pairing_rank": 140,
+      "pi_iota_identity": true,
+      "q70_cross_m_cyclic": true,
+      "q70_nonzero_entry_count": 610,
+      "q70_sha256": "10c820789866ad49d9772e4625f281ce941ba9f7018bc9f68e1779eb3b8327b6",
+      "q70_shape": [
+        140,
+        140
+      ],
+      "q70_squared_zero": true,
+      "side_conditions": true
+    },
     "labels": {
       "j": "1/2",
       "k_internal": [
@@ -56,8 +71,9 @@
   },
   "content_hashes": {
     "boundary_sha256": "202fd692aaa17e6d476d9c764be529ea82c1c9166a9ad46f1f56c67553b6e662",
-    "carrier_sha256": "371e81428b33d896014eb2607d6009f5fd0f9c9ca590d203781c3fce8c1d408c",
+    "carrier_sha256": "691ef1bf22fdd72cc3d29d5a5c1d3f799dade517859c1f930df65242434f5655",
     "charges_sha256": "a0923fb69d42b7f1d24ed833c8dc00058fc62823e0cc3462ee096d384b1fbbd1",
+    "normalization_sha256": "decfecf0e19eacab851b94ab4d0d1654d5483d81d5975f5760854e3477d39a07",
     "quotient_sha256": "e53e6d6660f31adf1dd299ab5479b18451a35943d78338f37f6ef4b10d3d80cb",
     "terminal_sha256": "e0c3ee2215652a24e866b9ebf3580fe3edb86c5684827f850617373da5d9adc8",
     "unstable_sha256": "9c2cb71467ce29abd6ca9b932fba6ee2f0b60cb5b88c05c075667de772a42aae"
@@ -124,10 +140,22 @@
     }
   },
   "lifecycle_state": "CLASSIFIED",
+  "normalization": {
+    "computed_monic_representative_alpha_B": "1",
+    "invariant_outputs": [
+      "characteristic roots and multiplicities",
+      "Jordan and geometric multiplicities",
+      "pairing radical and nondegeneracy",
+      "Ostrogradsky inertia for positive alpha_B"
+    ],
+    "not_claimed": "The displayed Ostrogradsky matrix is the positive overall-normalized Smith representative, not an unnormalized alpha_B=5 matrix entry table.",
+    "relation": "The retained Hessian block is linear in alpha_B, so alpha_B=1 removes the positive overall factor five before monic Smith/spectral reduction.",
+    "selected_action_alpha_B": "5"
+  },
   "payload_ref": {
-    "content_sha256": "c6b0db9ad411fa633767007dbb543cd631d32f295bcd1dd549ccd90e96eed47e",
+    "content_sha256": "1fbf80cc40eb3aa9b12852dec29909a24ba8f95b4520700cfcc8a9b56e67ac18",
     "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_PAYLOAD_V1.json",
-    "sha256": "1b7da33be5a5bcb330dc4d11e7046e1b34422f84c2c9bf587d2ebb0609919953"
+    "sha256": "43595d6e974dd3ff852db658014fb34dcd1521f050a752e5732fb0c3b5f27797"
   },
   "physical_quotient_summary": {
     "characteristic_determinant_monic": "(z**2 + 13)**2*(40*z**4 + 773*z**2 + 3748)**2*(3240*z**4 + 168093*z**2 + 2172895)**2*(933120*z**6 + 10517040*z**4 + 34117578*z**2 + 24373901)**2/14624633760251904000000",

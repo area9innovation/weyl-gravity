@@ -4,7 +4,7 @@
   "title": "Repaired q70 first generic isotypical health obstruction",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "imports", "payload_ref", "carrier", "physical_quotient_summary", "unstable_sector", "charge_actions", "terminal_verdict", "claim_boundary", "content_hashes"],
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "imports", "normalization", "payload_ref", "carrier", "physical_quotient_summary", "unstable_sector", "charge_actions", "terminal_verdict", "claim_boundary", "content_hashes"],
   "properties": {
     "schema": {"const": "pure-weyl-two-phase-counterflow-repaired-q70-first-generic-isotypical-health-obstruction-v1"},
     "result_id": {"const": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_V1"},
@@ -12,6 +12,7 @@
     "lifecycle_state": {"const": "CLASSIFIED"},
     "dependency_tags": {"type": "array", "minItems": 1, "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}},
     "imports": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "object"}},
+    "normalization": {"type": "object"},
     "payload_ref": {"type": "object"},
     "carrier": {"type": "object"},
     "physical_quotient_summary": {"type": "object"},

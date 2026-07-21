@@ -88,6 +88,8 @@ U = 3 * SQRT10 / 20
 V = 2 * SQRT10 / 3
 TWO_J = 1
 N = 2
+ALPHA_B_SELECTED_ACTION = sp.Integer(5)
+ALPHA_B_MONIC_REPRESENTATIVE = sp.Integer(1)
 
 
 def _sha(path: Path) -> str:
@@ -147,7 +149,10 @@ def _finite(record: dict[str, Any], two_j: int = TWO_J) -> sp.Matrix:
             operator = sp.eye(n) * Z ** exponents[0]
             for axis in range(3):
                 operator *= spatial[axis] ** exponents[axis + 1]
-            coefficient = sp.sympify(raw, locals={"u": U, "v": V, "alpha_B": 1})
+            coefficient = sp.sympify(
+                raw,
+                locals={"u": U, "v": V, "alpha_B": ALPHA_B_MONIC_REPRESENTATIVE},
+            )
             block += coefficient * operator
         for i in range(n):
             for j in range(n):
@@ -165,6 +170,72 @@ def _matrix_record(matrix: sp.Matrix) -> dict[str, Any]:
     ]
     core = {"shape": [matrix.rows, matrix.cols], "entries": entries}
     return {**core, "sha256": _digest(core)}
+
+
+def _cross_m_pairing(record: dict[str, Any]) -> sp.Matrix:
+    # For m=j=1/2, complex conjugation sends k to -k with the standard
+    # Peter--Weyl phase. Cyclicity pairs the fixed-m block with its -m partner.
+    conjugation = sp.Matrix([[0, 1], [-1, 0]])
+    result = sp.MutableSparseMatrix(record["shape"][0] * N, record["shape"][1] * N, {})
+    for row, column, terms in record["entries"]:
+        coefficient = sp.sympify(terms[0][1])
+        for i in range(N):
+            for j in range(N):
+                if conjugation[i, j] != 0:
+                    result[row * N + i, column * N + j] = coefficient * conjugation[i, j]
+    return sp.Matrix(result)
+
+
+def _finite_parent_data(values: dict[str, Any]) -> dict[str, Any]:
+    operators = values["repaired_payload"]["operators"]
+    q70 = _finite(operators["q70"])
+    s70 = _finite(operators["S70"])
+    inclusion = _finite(operators["iota70_from_26"])
+    projection = _finite(operators["pi26_from_70"])
+    pairing = _cross_m_pairing(operators["pairing70"])
+
+    if any(sp.simplify(value) != 0 for value in (q70 * q70).todok().values()):
+        raise AssertionError("finite repaired q70 square failed")
+    if q70 * s70 + s70 * q70 != sp.eye(140) - inclusion * projection:
+        raise AssertionError("finite repaired q70 contraction failed")
+    if projection * inclusion != sp.eye(52):
+        raise AssertionError("finite repaired q70 projection/inclusion failed")
+    if s70 * s70 != sp.zeros(140) or s70 * inclusion != sp.zeros(140, 52) or projection * s70 != sp.zeros(52, 140):
+        raise AssertionError("finite repaired q70 side conditions failed")
+    cyclic_defect = q70.subs(Z, -Z).T * pairing + pairing * q70
+    if any(sp.simplify(value) != 0 for value in cyclic_defect.todok().values()):
+        raise AssertionError("finite repaired q70 cyclicity failed")
+    if pairing.rank() != 140:
+        raise AssertionError("finite repaired q70 pairing degenerated")
+
+    q70_record = _matrix_record(q70)
+    return {
+        "q70_shape": q70_record["shape"],
+        "q70_nonzero_entry_count": len(q70_record["entries"]),
+        "q70_sha256": q70_record["sha256"],
+        "q70_squared_zero": True,
+        "q70_cross_m_cyclic": True,
+        "pairing_rank": 140,
+        "contraction_target_dimension": 52,
+        "pi_iota_identity": True,
+        "homotopy_identity": True,
+        "side_conditions": True,
+    }
+
+
+def _normalization() -> dict[str, Any]:
+    return {
+        "selected_action_alpha_B": "5",
+        "computed_monic_representative_alpha_B": "1",
+        "relation": "The retained Hessian block is linear in alpha_B, so alpha_B=1 removes the positive overall factor five before monic Smith/spectral reduction.",
+        "invariant_outputs": [
+            "characteristic roots and multiplicities",
+            "Jordan and geometric multiplicities",
+            "pairing radical and nondegeneracy",
+            "Ostrogradsky inertia for positive alpha_B",
+        ],
+        "not_claimed": "The displayed Ostrogradsky matrix is the positive overall-normalized Smith representative, not an unnormalized alpha_B=5 matrix entry table.",
+    }
 
 
 def _quotient_data(operator: dict[str, Any]) -> dict[str, Any]:
@@ -410,7 +481,7 @@ def _unstable_energy() -> dict[str, Any]:
     }
 
 
-def _carrier_and_mutations(values: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any]]:
+def _carrier_and_mutations(values: dict[str, Any], finite_parent: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any]]:
     e1, e2, _ = generators(TWO_J)
     off_diagonal = sum(1 for matrix in (e1, e2) for (row, column), value in matrix.todok().items() if row != column and value != 0)
     if off_diagonal == 0:
@@ -429,6 +500,7 @@ def _carrier_and_mutations(values: dict[str, Any]) -> tuple[dict[str, Any], dict
         "U1_cohomology_dimension": 0,
         "q54_to_q26_contracted_component_dimension": 56,
         "retained_q26_component_dimension": 52,
+        "finite_repaired_unary_and_contraction": finite_parent,
     }
     mutations = {
         "omitted_weight": {"status": "REJECTED", "witness": "e1/e2 has a nonzero edge between k=-1/2 and k=+1/2"},
@@ -442,13 +514,15 @@ def _carrier_and_mutations(values: dict[str, Any]) -> tuple[dict[str, Any], dict
 def _payload(imports: dict[str, Any], values: dict[str, Any]) -> dict[str, Any]:
     quotient = _quotient_data(values["retained_operator"])
     spectral = _spectral_ledger(quotient["factors"], quotient["physical"])
-    carrier, mutations = _carrier_and_mutations(values)
+    finite_parent = _finite_parent_data(values)
+    carrier, mutations = _carrier_and_mutations(values, finite_parent)
     value: dict[str, Any] = {
         "schema": "pure-weyl-two-phase-counterflow-repaired-q70-first-generic-isotypical-health-obstruction-payload-v1",
         "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_PAYLOAD_V1",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "imports": imports,
         "oracle_fields_consumed": [],
+        "normalization": _normalization(),
         "carrier": carrier,
         "physical_quotient": {
             "degree_dimensions_before_on_shell_specialization": [0, 0, 0, 0],
@@ -515,6 +589,7 @@ def _certificate(imports: dict[str, Any], payload: dict[str, Any]) -> dict[str, 
         "lifecycle_state": "CLASSIFIED",
         "dependency_tags": payload["dependency_tags"],
         "imports": imports,
+        "normalization": payload["normalization"],
         "payload_ref": {"path": str(PAYLOAD.relative_to(ROOT)), "sha256": "PENDING_WRITE", "content_sha256": payload["content_sha256"]},
         "carrier": payload["carrier"],
         "physical_quotient_summary": {
@@ -532,6 +607,7 @@ def _certificate(imports: dict[str, Any], payload: dict[str, Any]) -> dict[str, 
         "quotient_sha256": _digest(value["physical_quotient_summary"]),
         "unstable_sha256": _digest(value["unstable_sector"]),
         "charges_sha256": _digest(value["charge_actions"]),
+        "normalization_sha256": _digest(value["normalization"]),
         "terminal_sha256": _digest(value["terminal_verdict"]),
         "boundary_sha256": _digest(value["claim_boundary"]),
     }
@@ -550,6 +626,7 @@ def _validate(certificate: dict[str, Any], payload: dict[str, Any]) -> None:
         "quotient_sha256": _digest(certificate["physical_quotient_summary"]),
         "unstable_sha256": _digest(certificate["unstable_sector"]),
         "charges_sha256": _digest(certificate["charge_actions"]),
+        "normalization_sha256": _digest(certificate["normalization"]),
         "terminal_sha256": _digest(certificate["terminal_verdict"]),
         "boundary_sha256": _digest(certificate["claim_boundary"]),
     }

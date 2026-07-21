@@ -45,7 +45,7 @@ def _spin_half() -> list[sp.Matrix]:
     ]
 
 
-def _finite(record: dict[str, object]) -> sp.Matrix:
+def _finite(record: dict[str, object], alpha_b: sp.Expr = sp.Integer(1)) -> sp.Matrix:
     spatial = _spin_half()
     result = sp.MutableSparseMatrix(record["shape"][0] * 2, record["shape"][1] * 2, {})
     for row, column, terms in record["entries"]:
@@ -54,7 +54,7 @@ def _finite(record: dict[str, object]) -> sp.Matrix:
             word = sp.eye(2) * Z ** exponents[0]
             for axis in range(3):
                 word *= spatial[axis] ** exponents[axis + 1]
-            block += sp.sympify(raw, locals={"u": U, "v": V, "alpha_B": 1}) * word
+            block += sp.sympify(raw, locals={"u": U, "v": V, "alpha_B": alpha_b}) * word
         for i in range(2):
             for j in range(2):
                 if block[i, j] != 0:
@@ -90,14 +90,48 @@ def _rank_mod(matrix: sp.Matrix, polynomial: sp.Expr) -> int:
     return pivot_row
 
 
-def _check_full_parent(parent: dict[str, object]) -> None:
+def _check_full_parent(parent: dict[str, object], payload: dict[str, object]) -> None:
     q70 = _finite(parent["operators"]["q70"])
+    q70_core = {
+        "shape": [q70.rows, q70.cols],
+        "entries": [
+            [row, column, sp.sstr(sp.factor(q70[row, column]))]
+            for row in range(q70.rows)
+            for column in range(q70.cols)
+            if q70[row, column] != 0
+        ],
+    }
+    stored_finite = payload["carrier"]["finite_repaired_unary_and_contraction"]
+    if stored_finite["q70_sha256"] != _digest(q70_core):
+        raise AssertionError("finite repaired q70 hash failed")
     if any(sp.simplify(value) != 0 for value in (q70 * q70).todok().values()):
         raise AssertionError("finite repaired q70 square failed")
     degrees = {row["index"]: row["degree"] for row in parent["row_layout"]["component_rows"]}
     shifts = [degrees[row] - degrees[column] for row, column, _ in parent["operators"]["q70"]["entries"]]
     if len(shifts) != 317 or set(shifts) != {1}:
         raise AssertionError("repaired q70 grading failed")
+
+    s70 = _finite(parent["operators"]["S70"])
+    inclusion = _finite(parent["operators"]["iota70_from_26"])
+    projection = _finite(parent["operators"]["pi26_from_70"])
+    if projection * inclusion != sp.eye(52):
+        raise AssertionError("finite repaired projection/inclusion failed")
+    if q70 * s70 + s70 * q70 != sp.eye(140) - inclusion * projection:
+        raise AssertionError("finite repaired homotopy identity failed")
+    if s70 * s70 != sp.zeros(140) or s70 * inclusion != sp.zeros(140, 52) or projection * s70 != sp.zeros(52, 140):
+        raise AssertionError("finite repaired contraction side conditions failed")
+
+    conjugation = sp.Matrix([[0, 1], [-1, 0]])
+    pairing = sp.MutableSparseMatrix(140, 140, {})
+    for row, column, terms in parent["operators"]["pairing70"]["entries"]:
+        coefficient = sp.sympify(terms[0][1])
+        for i in range(2):
+            for j in range(2):
+                if conjugation[i, j] != 0:
+                    pairing[row * 2 + i, column * 2 + j] = coefficient * conjugation[i, j]
+    cyclic = q70.subs(Z, -Z).T * pairing + pairing * q70
+    if pairing.rank() != 140 or any(sp.simplify(value) != 0 for value in cyclic.todok().values()):
+        raise AssertionError("finite repaired cross-m cyclicity failed")
 
     # The old orientation mutation is the exact transpose-back of the final
     # eight U1 component arrows and has degree -1.
@@ -114,6 +148,9 @@ def _check_quotient(operator: dict[str, object], payload: dict[str, object]) -> 
     blocks = operator["q1_blocks"]
     gauge = _finite(blocks["K_spatial"])
     hessian = _finite(blocks["H_retained"])
+    selected_hessian = _finite(blocks["H_retained"], sp.Integer(5))
+    if selected_hessian != 5 * hessian:
+        raise AssertionError("positive alpha_B normalization failed")
     identity = _finite(blocks["minus_K_spatial_sharp"])
     free = [0, 1, 2, 3, 4, 5, 6, 7, 14, 15, 16, 17, 18, 19]
     pivot = [8, 9, 10, 11, 12, 13]
@@ -173,10 +210,12 @@ def main() -> None:
         raise AssertionError("payload file hash failed")
     if payload["content_sha256"] != _digest({key: value for key, value in payload.items() if key != "content_sha256"}):
         raise AssertionError("payload content hash failed")
-    _check_full_parent(parent)
+    _check_full_parent(parent, payload)
     _check_quotient(operator, payload)
     if payload["charge_actions"]["R_rel"].startswith("zero tangent action") is False:
         raise AssertionError("charged-orbit separation failed")
+    if payload["normalization"]["selected_action_alpha_B"] != "5":
+        raise AssertionError("selected-action normalization drifted")
     print("independent repaired q70 first generic physical-health obstruction: PASS")
 
 

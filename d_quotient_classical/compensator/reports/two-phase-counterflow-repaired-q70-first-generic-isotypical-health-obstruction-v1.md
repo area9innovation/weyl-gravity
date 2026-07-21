@@ -48,6 +48,13 @@ eight-dimensional local Smith sector is two copies of
 inertia ((4,4,0)).  This is a Hamiltonian-Hopf exponential-oscillatory
 direction, not merely a guessed gradient sign.
 
+The selected action has (\alpha_B=5).  The computation removes this positive
+overall Hessian factor by setting (\alpha_B=1) before taking the monic Smith
+representative.  Consequently the displayed roots, multiplicities, radical
+and inertia are those of the selected action, while the printed Ostrogradsky
+matrix is explicitly the positive overall-normalized representative rather
+than an unnormalized (\alpha_B=5) coefficient table.
+
 ## Charge and mode separation
 
 For (j=1/2), every harmonic integrates to zero, so
@@ -61,10 +68,13 @@ unstable sector is not produced by deleting a charged symmetry.
 
 The producer constructs the quotient maps, characteristic matrix, quotient-
 field cohomology and residue pairings exactly over the required algebraic
-fields.  The independent rail rebuilds the spin-half Wigner generators and
-PBW matrices without importing the producer, verifies the full repaired q70
-square and grading, recomputes the physical determinant and factor-field
-ranks, and rejects old-orientation, omitted-weight and truncation mutations.
+fields.  It also materializes the 140-by-140 repaired unary, cross-(m) pairing,
+and 140-to-52 contraction and verifies nilpotency, cyclicity, homotopy and all
+side conditions.  The independent rail rebuilds the spin-half Wigner
+generators and PBW matrices without importing the producer, verifies the full
+repaired q70 square, grading and contraction, recomputes the physical
+determinant and factor-field ranks, and rejects old-orientation,
+omitted-weight and truncation mutations.
 
 ## Boundary
 
