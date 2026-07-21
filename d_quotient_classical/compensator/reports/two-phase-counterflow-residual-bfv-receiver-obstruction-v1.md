@@ -30,6 +30,11 @@ verify the matter-representation and equivariant-moment-map terms of
 (Q_BFV), the five-generator Taub ideal, the full causal Cartan contraction, or
 the bulk-to-time-slice chain map.
 
+The charge-clock complementarity theorem also prevents hiding this gap by
+switching charge sectors: the fixed-charge branch has no clock, whereas the
+unrestricted branch retains a physical clock but has an exact secular
+zero-frequency Jordan chain.  The receiver must therefore be charge-typed.
+
 ## Round-cylinder comparison
 
 The preserved spatial generators are explicitly

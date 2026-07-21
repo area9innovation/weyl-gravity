@@ -21,6 +21,7 @@ OUT = Path(__file__).with_name("TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBST
 PAYLOAD = Path(__file__).with_name("TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBSTRUCTION_PAYLOAD_V1.json")
 
 IMPORTS = {
+    "charge_clock_complementarity": ("d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_V1.json", "cd1fe1bf22604d17c65b941032c6b31c404bfd5cc01bd7f8399642840da01ed4"),
     "fixed_charge_health": ("d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_V1.json", "812f6a3c2308eaeef09bee25ec8c79c8f7c86de7a51383141f8cae46c2f9cae5"),
     "background_stabilizer": ("d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BACKGROUND_COMPONENT_ROUND_DISPOSITION_V1.json", "9fa277c57a28aa831d56cec4a49774f716cb000616afde74013d9320dc0a1763"),
     "background_payload": ("d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BACKGROUND_COMPONENT_ROUND_DISPOSITION_PAYLOAD_V1.json", "1eb9b83d1894a1b4905024c225bcd3b872e82bcfba25ac6e70bc28671d43e629"),
@@ -108,12 +109,15 @@ def build_payload() -> dict[str, Any]:
     health = json.loads((ROOT / IMPORTS["fixed_charge_health"][0]).read_text())
     causal = json.loads((ROOT / IMPORTS["causal_parent"][0]).read_text())
     causal_payload = json.loads((ROOT / IMPORTS["causal_payload"][0]).read_text())
+    complementarity = json.loads((ROOT / IMPORTS["charge_clock_complementarity"][0]).read_text())
     if background["claim_flags"]["SO_4_2_RECEIVER"] is not False or background_payload["charge_and_stabilizer_stratification"]["residual_global_stabilizer_dimension"] != 5:
         raise AssertionError("five-dimensional stabilizer import failed")
     if health["claim_flags"]["POSITIVE_RELATIVE_CLOCK_SURVIVES"] is not False:
         raise AssertionError("fixed-charge obstruction import failed")
     if causal["complete_parent"]["complete_component_rank"] != 70:
         raise AssertionError("causal parent rank changed")
+    if complementarity["bounded_stability"] is not False or complementarity["real_exponential_growing_roots"] != 0:
+        raise AssertionError("charge-sector disposition import failed")
     defects = jacobi_defects()
     if defects:
         raise AssertionError(f"Jacobi defects: {defects}")
@@ -173,6 +177,7 @@ def build_payload() -> dict[str, Any]:
             "causal_Green_homotopy": "CERTIFIED",
             "K_Rrel_D_U1_Cartan_ledger": "CERTIFIED",
             "abstract_five_generator_CE_algebra": "CERTIFIED_HERE",
+            "charge_sector_disposition": "fixed branch has no clock; unrestricted branch has a physical secular zero-Jordan clock",
         },
         "missing_carrier": {
             "spatial_generators": required_spatial,
