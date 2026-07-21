@@ -132,3 +132,5 @@ normalization, not a local boundary condition — and that selection is
   with `omega` symbolic and the profile set restricted to the Einstein branches.
 - The carrier rail reuses the BH-2A trace-free Ricci-carrier construction (the
   Session-2 unblock).
+
+CLOSE-OUT: DONE — symbolic real-frequency finite-Lee--Wald-flux classification established for the declared Schwarzschild radiation class; certificate `BH2C_SYMBOLIC_FLUX_RADIATION_CLASS.json`.
