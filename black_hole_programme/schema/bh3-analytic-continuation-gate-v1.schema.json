@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh3-analytic-continuation-gate-v1",
+  "title": "BH-3 complex-frequency analytic-continuation gate -- axial meromorphic, polar not activated",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_token",
+               "dependency_tags", "lifecycle", "declaration",
+               "axial_analytic_continuation", "polar_disposition", "headline",
+               "claim_flags", "missing_objects", "does_not_establish",
+               "provenance", "verification_command"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh3-analytic-continuation-gate-v1" },
+    "schema_path": { "const": "black_hole_programme/schema/bh3-analytic-continuation-gate-v1.schema.json" },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH3_ANALYTIC_CONTINUATION_GATE" },
+    "result_token": { "const": "BH3_AXIAL_ANALYTIC_CONTINUATION_MEROMORPHIC_POLAR_NOT_ACTIVATED" },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "lifecycle": { "const": "CLASSIFIED" },
+    "declaration": {
+      "type": "object",
+      "required": ["theory", "setting", "method", "gate"]
+    },
+    "axial_analytic_continuation": {
+      "type": "object",
+      "required": ["cross_current", "mode_families", "declared_domain"],
+      "properties": {
+        "cross_current": {
+          "type": "object",
+          "required": ["a_of_omega", "a_factored", "is_rational_no_branch_points",
+                       "pole_set_exact", "zero_set_exact", "current_relation",
+                       "continuation"],
+          "properties": {
+            "is_rational_no_branch_points": { "const": true },
+            "pole_set_exact": { "type": "array" }
+          }
+        },
+        "mode_families": {
+          "type": "object",
+          "required": ["boundary_exponents_entire_in_omega", "infinity_exponents",
+                       "horizon_indicial_roots", "infinity_series_omega_poles",
+                       "horizon_series_omega_poles", "horizon_resonance_closed_form",
+                       "orders_audited"],
+          "properties": {
+            "boundary_exponents_entire_in_omega": { "const": true }
+          }
+        },
+        "declared_domain": {
+          "type": "object",
+          "required": ["current_domain", "joint_mode_current_strip",
+                       "strip_halfwidth", "real_axis_in_domain",
+                       "continuation_through_pole", "omega_zero_excluded"],
+          "properties": {
+            "real_axis_in_domain": { "const": true },
+            "continuation_through_pole": { "const": false },
+            "omega_zero_excluded": { "const": true }
+          }
+        }
+      }
+    },
+    "polar_disposition": {
+      "type": "object",
+      "required": ["status", "reason", "route_b_missing_object",
+                   "no_fixture_extrapolation"],
+      "properties": {
+        "status": { "const": "NOT_ACTIVATED" }
+      }
+    },
+    "headline": { "type": "object", "required": ["statement", "no_obstruction_axial"] },
+    "claim_flags": {
+      "type": "object",
+      "required": ["axial_current_meromorphic_continuation_certified",
+                   "axial_current_exact_singular_set_certified",
+                   "axial_mode_series_omega_poles_exact_certified",
+                   "no_branch_points_axial_certified",
+                   "domain_declared_excludes_poles",
+                   "polar_continuation_activated",
+                   "polar_route_b_identity_obtained",
+                   "summability_certified", "general_l_certified",
+                   "stability_qnm_scattering_claimed"],
+      "properties": {
+        "axial_current_meromorphic_continuation_certified": { "const": true },
+        "axial_current_exact_singular_set_certified": { "const": true },
+        "axial_mode_series_omega_poles_exact_certified": { "const": true },
+        "no_branch_points_axial_certified": { "const": true },
+        "domain_declared_excludes_poles": { "const": true },
+        "polar_continuation_activated": { "const": false },
+        "polar_route_b_identity_obtained": { "const": false },
+        "summability_certified": { "const": false },
+        "general_l_certified": { "const": false },
+        "stability_qnm_scattering_claimed": { "const": false }
+      }
+    },
+    "missing_objects": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "does_not_establish": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "provenance": {
+      "type": "object",
+      "required": ["generator_path", "cross_invariant_certificate",
+                   "cross_invariant_sha256", "general_l_certificate",
+                   "general_l_sha256", "all_orders_certificate", "all_orders_sha256",
+                   "polar_quantifier_certificate", "polar_quantifier_sha256"],
+      "properties": {
+        "cross_invariant_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "all_orders_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "polar_quantifier_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh3_analytic_continuation_gate.py"
+    }
+  }
+}

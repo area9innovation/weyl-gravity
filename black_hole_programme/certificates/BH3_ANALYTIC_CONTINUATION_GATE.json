@@ -1,0 +1,128 @@
+{
+  "axial_analytic_continuation": {
+    "cross_current": {
+      "a_factored": "-96*I*omega*(omega - 2*I)*(4*omega - I)**2/(5*(omega - I)*(2*omega - I))",
+      "a_of_omega": "(-1536*I*omega**4 - 3840*omega**3 + 1632*I*omega**2 + 192*omega)/(10*omega**2 - 15*I*omega - 5)",
+      "continuation": "meromorphic on C; singular set EXACTLY {i, i/2}",
+      "current_relation": "F^r(E,X) = -i pi alpha a(omega)",
+      "is_rational_no_branch_points": true,
+      "pole_set_exact": [
+        "I",
+        "I/2"
+      ],
+      "zero_set_exact": [
+        "0",
+        "2*I",
+        "I/4"
+      ]
+    },
+    "declared_domain": {
+      "continuation_through_pole": false,
+      "current_domain": "C \\ {i, i/2}",
+      "joint_mode_current_strip": "|Im omega| < 1/4, omega != 0",
+      "omega_zero_excluded": true,
+      "real_axis_in_domain": true,
+      "strip_halfwidth": "1/4"
+    },
+    "mode_families": {
+      "boundary_exponents_entire_in_omega": true,
+      "horizon_indicial_roots": [
+        "0",
+        "2*I*(-2*omega + I)"
+      ],
+      "horizon_resonance_closed_form": {
+        "reading": "integer-difference Frobenius resonances (log basis); poles of the normalized representation, NOT branch points",
+        "s=-4Iomega-2_branch": "{ I*j/4 : j = 1, 0, -1, -2, ... }",
+        "s=0_branch": "{ I*j/4 : j = 3, 4, 5, ... }"
+      },
+      "horizon_series_omega_poles": {
+        "s=-4Iomega-2_branch": [
+          "-3*I/4",
+          "-I",
+          "-I/2",
+          "-I/4",
+          "0",
+          "I/4"
+        ],
+        "s=0_branch": [
+          "2*I",
+          "3*I/2",
+          "3*I/4",
+          "5*I/4",
+          "7*I/4",
+          "I"
+        ]
+      },
+      "infinity_exponents": {
+        "lam0_branch": "-3",
+        "oscillatory_branch": "-4*I*omega + 1",
+        "oscillatory_reading": "F ~ exp(-2 I omega r) r^{-4 I omega + 1} (1 + O(1/r))"
+      },
+      "infinity_series_omega_poles": [
+        "0"
+      ],
+      "orders_audited": 6
+    }
+  },
+  "claim_flags": {
+    "axial_current_exact_singular_set_certified": true,
+    "axial_current_meromorphic_continuation_certified": true,
+    "axial_mode_series_omega_poles_exact_certified": true,
+    "domain_declared_excludes_poles": true,
+    "general_l_certified": false,
+    "no_branch_points_axial_certified": true,
+    "polar_continuation_activated": false,
+    "polar_route_b_identity_obtained": false,
+    "stability_qnm_scattering_claimed": false,
+    "summability_certified": false
+  },
+  "declaration": {
+    "gate": "complex-omega analytic continuation of modes and current, with exact singular set (axial); polar disposition",
+    "method": "exact rational / Frobenius analysis; NO finite complex sample set (which cannot establish continuation)",
+    "setting": "Schwarzschild m = 1, axial l = 2, Eddington-Finkelstein carrier, t-chart Lee-Wald F^r; omega in C",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "any polar-sector continuation or polar singular set",
+    "any stability, quasinormal-mode, ringdown, scattering, positivity, particle, or quantum claim -- a meromorphic continuation of a REDUCED-MODE current is not a spectrum",
+    "convergence/summability of the asymptotic infinity series off the real axis",
+    "continuation through any pole (the declared domain excludes them)"
+  ],
+  "headline": {
+    "no_obstruction_axial": "the axial continuation has no branch point and no divergent-flux boundary; every singularity is an isolated pole at an exactly known location",
+    "statement": "the axial Schwarzschild exterior mode families and the Lee-Wald cross current continue analytically from the real frequency axis into the complex-omega plane as MEROMORPHIC objects with an EXACT singular set: the current a(omega) is rational with poles exactly {i, i/2} (no branch points), the mode Frobenius coefficients are rational in omega with poles on the exact discrete imaginary resonance sets, and the joint representation is analytic on the strip about the real axis up to the nearest imaginary pole; the polar sector continuation is NOT_ACTIVATED"
+  },
+  "lifecycle": "CLASSIFIED",
+  "missing_objects": [
+    "the polar analytic continuation (route-B symbolic identity is a certified missing object of BH2_POLAR_QUANTIFIER_REPAIR)",
+    "Borel/analytic summability of the (asymptotic) infinity Frobenius series -- coefficient-wise analyticity is proven, sum convergence off the real axis is a separate object",
+    "general l (this gate is l = 2; l enters only through Lambda but the cross current a(omega) is certified at l = 2)"
+  ],
+  "polar_disposition": {
+    "no_fixture_extrapolation": "no polar continuation is extrapolated from the real-omega fixtures (forbidden)",
+    "reason": "BH2_POLAR_QUANTIFIER_REPAIR closed the polar cross covector FIXTURE-ONLY; its route-B structural identity (Z = E - (K^{-1} a^H).X symplectically null for all real omega) is an explicit missing object and it does not claim complex-omega continuation",
+    "route_b_missing_object": "prove Z = E - (K^{-1} a^H).X is symplectically null / pure gauge for all real omega != 0 (radical of F^r on span(E,X0,X1,X2)); the even-parity twin of the axial RW-null theorem",
+    "status": "NOT_ACTIVATED"
+  },
+  "provenance": {
+    "all_orders_certificate": "black_hole_programme/certificates/BH2C_METRIC_ALL_ORDERS.json",
+    "all_orders_sha256": "41efc9c13bf1637bbff3cd5f3c1e6e8f90744ce4abc7128ae5ea8f0afb1b7916",
+    "cross_invariant_certificate": "black_hole_programme/certificates/BH2_SYMBOLIC_CROSS_INVARIANT.json",
+    "cross_invariant_sha256": "9095fe6739ec9bc908508f5c531965d75bfb127f5cd0d06ff224ce63e985d512",
+    "general_l_certificate": "black_hole_programme/certificates/BH2_GENERAL_L_STRUCTURAL.json",
+    "general_l_sha256": "1c375331014b1121791e8d6c63d994d84a41a0a94aa94233ecf28222475b6863",
+    "generator_path": "black_hole_programme/bh3_analytic_continuation_gate.py",
+    "polar_quantifier_certificate": "black_hole_programme/certificates/BH2_POLAR_QUANTIFIER_REPAIR.json",
+    "polar_quantifier_sha256": "77658bfa250edbc493a9fd1b9f0f3a55da5078ecf36167b48ebbd4afc3207021"
+  },
+  "result_id": "PURE_WEYL_BH3_ANALYTIC_CONTINUATION_GATE",
+  "result_token": "BH3_AXIAL_ANALYTIC_CONTINUATION_MEROMORPHIC_POLAR_NOT_ACTIVATED",
+  "schema": "pure-weyl-bh3-analytic-continuation-gate-v1",
+  "schema_path": "black_hole_programme/schema/bh3-analytic-continuation-gate-v1.schema.json",
+  "schema_sha256": "3d0190a4b0eff6e644158bc14d91b3f4617c8f65c0c09b346bfd8d83fb751691",
+  "verification_command": "python3 black_hole_programme/verify_bh3_analytic_continuation_gate.py"
+}
