@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/quantum-two-phase-counterflow-v2-local-anomaly-classification-REQUEST-49c054b1ce8cac61",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/quantum-two-phase-counterflow-v2-local-anomaly-classification-REQUEST-49c054b1ce8cac61.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/quantum-two-phase-counterflow-v2-local-anomaly-classification", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T13:12:57Z", "seq": 1, "payload": {"target": "sf:program/request/quantum-two-phase-counterflow-v2-local-anomaly-classification-to-quantum-qme-49c054b1ce8cac61", "request_id": "sf:program/request/quantum-two-phase-counterflow-v2-local-anomaly-classification-to-quantum-qme-49c054b1ce8cac61", "from_item": "sf:program/work/quantum-two-phase-counterflow-v2-local-anomaly-classification", "to_stream": "quantum-qme", "need": "Duplicate exclusive leases detected for quantum-qme-1. Keep quantum-two-phase-counterflow-v2-local-anomaly-classification as the canonical current Phase 1 item. Before editing, append a work-yield for quantum-two-phase-counterflow-v2-full-bv-hadamard-preflight using the current lease epoch. Then read /tmp/quantum-counterflow-anomaly-current-brief.md and follow the terminal-health OBSTRUCTED branch: land the typed changed-action anomaly NOT_ACTIVATED disposition, not an unstable-fixture calculation. After it closes, the Hadamard preflight may be pulled only to execute its own nonactivation branch.", "typed": "COORDINATION_DUPLICATE_EXCLUSIVE_LEASE_REPAIR"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "quantum-qme"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/quantum-two-phase-counterflow-v2-local-anomaly-classification"}]
+}
