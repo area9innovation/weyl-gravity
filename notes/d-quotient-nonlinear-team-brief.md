@@ -1107,6 +1107,52 @@ Evidence is recorded in
 and
 `planning/paper-coverage/nonlinear-phase1-interaction-materiality-2026-07-21.json`.
 
+### Minimal hyperbolic branch repair: residual-orbit obstruction
+
+The active branch bridge is now the noncontractible repair selected by the
+unary class `beta_1`.  Its activation gate is the globalization of the
+standard-fibre one-field/one-dual hyperbolic page completion into a real,
+support-local Berger-residual carrier.  The fail-closed atlas row is
+`nonlinear.berger.branch_repair.two_row.residual_orbit_obstruction`.
+
+`BERGER_MINIMAL_HYPERBOLIC_BRANCH_REPAIR_RESIDUAL_ORBIT_OBSTRUCTION_V1`
+closes this two-row attempt negatively at the first later gate.  Page
+incidence, the typed hyperbolic pairing and the scalar `K_Berger` weight are
+compatible.  Real rotational equivariance is not.  In the certified
+plus/cross frame,
+
+\[
+J=\begin{pmatrix}0&2\\-2&0\end{pmatrix},
+\qquad J^2=-4I.
+\]
+
+A one-dimensional real `SO(2)` representation is trivial, whereas the new
+page boundary sends its field generator to the plus obstruction class.  The
+equivariance defect is `-2 beta_cross`, and the normalized cross functional
+evaluates it to one.  A complex helicity line does not evade the result:
+reality exchanges weights `+2i` and `-2i`, so both are required.
+
+The exact global tensor calculation closes the orbit statement in the
+declared finite-free support-local row category.  The three rotation
+generators on spatial STF2 satisfy the `so(3)` relations, have Casimir
+`-6 I_5`, and the orbit of the plus class has rank five.  Their commutant is
+one-dimensional, so the normalized zero-order page coupling is the STF2
+identity.  Cyclicity adds the dual representation.  The minimum is therefore
+four added BV rows at one real null fibre and ten rows globally in this
+category.  The already landed ten-row STF2 graph is a negative control: it is
+contractible and contributes zero new image in the obstruction quotient.
+
+The next honest candidate is a noncontractible STF2 or equivalent
+mixed-bundle rank-46 carrier, distinct from the existing contractible graph.
+Later filtered pages, repaired-carrier `q2/q3`, retained `ell3` compatibility
+and a branch mixing table remain `NOT_ACTIVATED`.  A separately typed nonfree
+projective module is not ruled out by the finite-free row-minimality theorem.
+
+Evidence is recorded in
+`d_quotient_classical/certificates/BERGER_MINIMAL_HYPERBOLIC_BRANCH_REPAIR_RESIDUAL_ORBIT_OBSTRUCTION_V1.json`
+and
+`residual_atlas/berger-minimal-hyperbolic-branch-repair-residual-orbit-obstruction-fragment-v1.json`.
+
 ## Required handoff
 
 Deliver one human-readable report and machine-readable certificates containing:

@@ -1,0 +1,74 @@
+{
+  "schema": "science-forge-test-tier-receipt-v1",
+  "result_id": "BERGER_MINIMAL_HYPERBOLIC_BRANCH_REPAIR_RESIDUAL_ORBIT_OBSTRUCTION_V1_TIER_RECEIPT",
+  "work_item": "nonlinear-branch-repair-minimal-hyperbolic",
+  "status": "SCOPED_PASS_TIER3_FAIL",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "claim_boundary": "The scoped exact package proves that the one-field/one-dual page repair fails real Berger rotational equivariance and classifies the smallest residual orbit in the declared finite-free support-local tensor-row category. It does not pass the repository-wide Tier-3 release rail, construct the noncontractible STF2 carrier, activate later filtered pages or authorize ell3 branch projection.",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "PYTHONPYCACHEPREFIX=/tmp/nonlinear-branch-pyc PYTHONPATH=. python3 -m py_compile d_quotient_classical/backreacted_clock/berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py d_quotient_classical/backreacted_clock/verify_berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py d_quotient_classical/backreacted_clock/tests/test_berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py",
+        "JSON parsing and Draft 2020-12 schema validation",
+        "scoped git diff --check"
+      ],
+      "elapsed_seconds": 2.8
+    },
+    "tier_1": {
+      "status": "PASS",
+      "checks": [
+        "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py --check",
+        "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py",
+        "PYTHONPATH=. python3 -m pytest -q d_quotient_classical/backreacted_clock/tests/test_berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py",
+        "python3 residual_atlas/validate_fragment.py residual_atlas/berger-minimal-hyperbolic-branch-repair-residual-orbit-obstruction-fragment-v1.json",
+        "five mutations rejecting stale source, false two-row equivariance, contractible-as-repair, early ell3 activation and deletion of the cross orbit"
+      ],
+      "elapsed_seconds": 4.5
+    },
+    "tier_2": {
+      "status": "PASS",
+      "checks": [
+        "independent filtered cyclic branch-extension obstruction replay",
+        "independent physical-helicity filtered quotient replay",
+        "independent rank-46 principal-anchor replay",
+        "independent rank-46 STF2 graph-carrier replay",
+        "independent coupled K_Berger Cartan-through-arity-three replay",
+        "independent current nonlinear Phase-1 disposition replay"
+      ],
+      "elapsed_seconds": 24.9
+    },
+    "tier_3": {
+      "status": "FAIL",
+      "command": "PYTHONPATH=. PYTHONPYCACHEPREFIX=/tmp/nonlinear-branch-full-pyc python3 -m pytest -q",
+      "elapsed_seconds": 16.97,
+      "failure": "Collection stopped on four pre-existing quantum-weyl package import collisions: atlas.tests.test_quantum_atlas_fragment and three relative.tests modules.",
+      "scope_effect": "No repository-release or full-suite theorem-freeze promotion is made. The scoped scientific obstruction remains independently replayed."
+    }
+  },
+  "broad_domain_diagnostic": {
+    "status": "TERMINATED_NOT_PASS",
+    "command": "PYTHONPATH=. PYTHONPYCACHEPREFIX=/tmp/nonlinear-branch-domain-pyc python3 -m pytest -q d_quotient_classical",
+    "elapsed_seconds": 486.16,
+    "progress": "204 passed, 2 failed before manual termination",
+    "failures": [
+      "Berger26RowCausalGreenHomotopyTest: quantum green endpoint export fields drifted",
+      "BergerPortableCoupled64UnaryPairingSDRTest: persisted certificate differs from freshly built payload"
+    ],
+    "reason_terminated": "The broad diagnostic exceeded the fast commit-loop budget and was not the scoped falsification rail for this result."
+  },
+  "evidence_sha256": {
+    "d_quotient_classical/backreacted_clock/berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py": "bdee6e869700569dfc941ab736264b64fc2e8bfef017aef89f229213d43b89d9",
+    "d_quotient_classical/backreacted_clock/verify_berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py": "085e3ad082eaa6b4403ee769b6e553bc918a5a7eb22fc39261523cc420d87415",
+    "d_quotient_classical/backreacted_clock/tests/test_berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py": "24f3c0fe1c93833572070636a62f7dcb088ca8c5b916ad86183bf8a56ec83877",
+    "d_quotient_classical/schema/berger-minimal-hyperbolic-branch-repair-residual-orbit-obstruction-v1.schema.json": "68c80dd26e165b8c592df769c09fcacdcec61ae4803c1aad6a3df1a3537cc7d3",
+    "d_quotient_classical/certificates/BERGER_MINIMAL_HYPERBOLIC_BRANCH_REPAIR_RESIDUAL_ORBIT_OBSTRUCTION_V1.json": "ada801a3f53e56ef32ae4772631fcc3d63ff428124d7748bd52a591a3b59848f",
+    "d_quotient_classical/reports/berger-minimal-hyperbolic-branch-repair-residual-orbit-obstruction-v1.md": "386de8007a4dfc7ba6e7623f5f6f529d5a3f7ce454fc49ff0fceb484317779c1",
+    "residual_atlas/berger-minimal-hyperbolic-branch-repair-residual-orbit-obstruction-fragment-v1.json": "2cff62902c3e20ff66cfb3ceb8880e7a6bcdbc0f779d822dfb0eab9aabd8c898",
+    "notes/d-quotient-nonlinear-team-brief.md": "2b9f9ba7a1edb016c1fd1ac2c62e8e7554fdce3ca78d02e6b62b13b759fa5526",
+    "reports/nonlinear-branch-repair-minimal-hyperbolic-closeout-2026-07-21.md": "49ea2d516a8fb9619dc5f96fe938afe0159309fbdd40de683f186054581ad291"
+  },
+  "next_gate": "Construct a noncontractible STF2 or equivalent mixed-bundle rank-46 carrier, then solve its later filtered chain, pairing, residual-equivariance and q2/q3/ell3 compatibility equations."
+}

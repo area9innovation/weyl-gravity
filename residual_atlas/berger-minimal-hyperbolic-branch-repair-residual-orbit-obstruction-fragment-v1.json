@@ -1,0 +1,93 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This exact LOCAL-ALGEBRAIC obstruction proves that the rank-one first-page repair cannot be globalized as one real field direction and its cyclic dual while preserving the Berger rotational stabilizer. The plus obstruction generates the full real helicity plane at a null fibre and the full five-dimensional STF2 bundle under SO(3); cyclicity therefore forces at least four fibrewise BV rows, or ten global rows in the declared finite-free support-local tensor category without a momentum-dependent projective or mode projector. The already landed ten-row STF2 graph is contractible and is not the required repair. This result does not rule out a separately typed nonfree projective module, construct the noncontractible STF2 carrier, solve its later filtered pages, extend q2/q3, project ell3, or make causal, particle, sign, scattering, observational or quantum claims.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/BERGER_MINIMAL_HYPERBOLIC_BRANCH_REPAIR_RESIDUAL_ORBIT_OBSTRUCTION_V1.json",
+          "result_id": "BERGER_MINIMAL_HYPERBOLIC_BRANCH_REPAIR_RESIDUAL_ORBIT_OBSTRUCTION_V1",
+          "sha256": "ada801a3f53e56ef32ae4772631fcc3d63ff428124d7748bd52a591a3b59848f"
+        }
+      ],
+      "id": "nonlinear.berger.branch_repair.two_row.residual_orbit_obstruction",
+      "mode_data": {
+        "dispersion": {
+          "statement": "This is a local filtered-symbol carrier obstruction, not a harmonic dispersion theorem.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "The pairing is the typed odd BV hyperbolic completion, not a Lee-Wald radiative form.",
+          "status": "NOT_APPLICABLE"
+        },
+        "resonance": {
+          "statement": "No second-order resonance equation is reached.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The candidate fails at unary residual equivariance before a second-order correction class is declared.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "No Green operator or retarded interaction extension is constructed.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No secular correction is typed on the failed carrier.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "No Taub map is used in this unary carrier obstruction.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "compact positive rational Berger clock fixture",
+        "boundaries": "closed compact slice; support-local filtered PBW category",
+        "carrier": "retained 36-row cyclic BV complex plus a proposed noncontractible hyperbolic repair",
+        "charge_sector": "fixed gravity-clock-Maxwell bundle",
+        "degree": "unary first filtered branch-extension page; retained ell3 is only a downstream compatibility gate",
+        "ell": "NOT_APPLICABLE_LOCAL_PBW_CARRIER",
+        "k": "standard null-symbol fibre zeta=(1,1,0,0), not compact harmonic momentum",
+        "m": "NOT_APPLICABLE_LOCAL_PBW_CARRIER",
+        "omega": "principal null characteristic; no frequency-space branch crosswalk",
+        "parity": "real spin-two plus/cross polarization plane and its global STF2 closure",
+        "theory": "Weyl gravity coupled to the positive Berger clock and Maxwell field"
+      }
+    }
+  ],
+  "generated_by": "d_quotient_classical/backreacted_clock/berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py",
+  "generated_by_sha256": "bdee6e869700569dfc941ab736264b64fc2e8bfef017aef89f229213d43b89d9",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "nonlinear",
+  "verification_commands": [
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py --check",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py",
+    "PYTHONPATH=. python3 -m pytest -q d_quotient_classical/backreacted_clock/tests/test_berger_minimal_hyperbolic_branch_repair_orbit_obstruction.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/berger-minimal-hyperbolic-branch-repair-residual-orbit-obstruction-fragment-v1.json"
+  ]
+}

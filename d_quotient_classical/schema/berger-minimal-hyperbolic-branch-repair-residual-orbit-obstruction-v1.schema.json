@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-minimal-hyperbolic-branch-repair-residual-orbit-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "mode_scope",
+    "two_row_page_candidate",
+    "residual_representation",
+    "first_later_gate_obstruction",
+    "minimal_residual_orbit_enlargement",
+    "ordered_compatibility_ledger",
+    "retained_ell3_disposition",
+    "dependency_refs",
+    "source_manifest",
+    "verification_commands",
+    "claim_flags",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-berger-minimal-hyperbolic-branch-repair-residual-orbit-obstruction-v1"
+    },
+    "result_id": {
+      "const": "BERGER_MINIMAL_HYPERBOLIC_BRANCH_REPAIR_RESIDUAL_ORBIT_OBSTRUCTION_V1"
+    },
+    "result_state": {
+      "const": "TWO_ROW_PAGE_REPAIR_OBSTRUCTED_BY_REAL_RESIDUAL_ORBIT_MINIMAL_STF2_ENLARGEMENT_CLASSIFIED"
+    },
+    "lifecycle_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {
+      "type": "array",
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "mode_scope": {"type": "object", "minProperties": 11},
+    "two_row_page_candidate": {
+      "type": "object",
+      "required": ["page_incidence", "page_cyclicity", "global_residual_equivariance", "contractible"],
+      "properties": {
+        "page_incidence": {"const": "CERTIFIED"},
+        "page_cyclicity": {"const": "CERTIFIED_BY_HYPERBOLIC_COMPLETION"},
+        "global_residual_equivariance": {"const": "OBSTRUCTED"},
+        "contractible": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "residual_representation": {
+      "type": "object",
+      "required": ["K_Berger", "rotational_stabilizer", "real_structure"]
+    },
+    "first_later_gate_obstruction": {
+      "type": "object",
+      "required": ["ordered_gate", "equation", "normalized_evaluation", "annihilates_complete_two_row_ansatz"],
+      "properties": {
+        "ordered_gate": {"const": "REAL_ROTATIONAL_RESIDUAL_EQUIVARIANCE"},
+        "normalized_evaluation": {"const": "1"},
+        "annihilates_complete_two_row_ansatz": {"const": true}
+      },
+      "additionalProperties": true
+    },
+    "minimal_residual_orbit_enlargement": {
+      "type": "object",
+      "required": ["standard_null_fibre", "global_support_local_tensor_bundle", "existing_rank46_graph_negative_control", "smallest_next_candidate"]
+    },
+    "ordered_compatibility_ledger": {
+      "type": "array",
+      "minItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["gate", "status"],
+        "properties": {
+          "gate": {"type": "string"},
+          "status": {"enum": ["CERTIFIED", "OBSTRUCTED", "NOT_ACTIVATED"]}
+        }
+      }
+    },
+    "retained_ell3_disposition": {"type": "object"},
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "result_id", "sha256"],
+        "properties": {
+          "path": {"type": "string"},
+          "result_id": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "source_manifest": {
+      "type": "object",
+      "minProperties": 4,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+    },
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": {"type": "boolean"},
+      "required": [
+        "TWO_ROW_PAGE_CHAIN_REPAIR",
+        "TWO_ROW_TYPED_CYCLIC_COMPLETION",
+        "TWO_ROW_REAL_RESIDUAL_EQUIVARIANT_REPAIR",
+        "FIBREWISE_MINIMUM_FOUR_BV_ROWS",
+        "GLOBAL_SUPPORT_LOCAL_MINIMUM_TEN_BV_ROWS",
+        "GLOBAL_NONCONTRACTIBLE_STF2_REPAIR_CONSTRUCTED",
+        "Q2_Q3_REPAIRED_CARRIER_EXTENSION",
+        "ELL3_BRANCH_PROJECTION_AUTHORIZED",
+        "QUANTUM_CLAIM"
+      ]
+    },
+    "claim_boundary": {"type": "string", "minLength": 200}
+  }
+}
