@@ -1,0 +1,111 @@
+{
+  "a_definition": "a(omega) = K(E,X) = i * F^r(E,X)/(pi*alpha) = i*cross(omega)",
+  "a_of_omega": "(-1536*I*omega**4 - 3840*omega**3 + 1632*I*omega**2 + 192*omega)/(10*omega**2 - 15*I*omega - 5)",
+  "certified_fixtures_recovered": {
+    "2/7": "-15606912/844025 + 1283712*I/120575",
+    "3/5": "-10893744/129625 + 780048*I/25925"
+  },
+  "claim_flags": {
+    "a_nonzero_all_real_omega_certified": true,
+    "conjugate_frequency_law_certified": true,
+    "no_real_exceptional_frequency_certified": true,
+    "polar_cross_covector_certified": false
+  },
+  "conjugate_frequency_law": "cross(-omega)=conj(cross(omega)); a(-omega) = -conj(a(omega))",
+  "cross_factored": "(-96*omega*(omega - 2*I)*(4*omega - I)**2) / (5*(omega - I)*(2*omega - I))",
+  "cross_of_omega": "(-1536*omega**4 + 3840*I*omega**3 + 1632*omega**2 - 192*I*omega)/(10*omega**2 - 15*I*omega - 5)",
+  "degree": {
+    "denominator": 2,
+    "numerator": 4
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "ee_samples_record_only": {
+    "1/2": "6408*I/25",
+    "1/3": "191552*I/2925",
+    "1/4": "7776*I/425",
+    "1/5": "644544*I/235625",
+    "2/11": "-103644864*I/113966875",
+    "2/3": "8624576*I/14625",
+    "2/7": "206883648*I/5908175",
+    "3/4": "1317024*I/1625",
+    "3/5": "284488128*I/648125",
+    "3/7": "666455616*I/4227475",
+    "4/5": "2189169792*I/2280625",
+    "5/2": "5442120*I/377",
+    "5/7": "1345429440*I/1890959",
+    "6/5": "16757650368*I/6443125",
+    "7/5": "19025116992*I/5110625",
+    "8/9": "74595339008*I/59370975"
+  },
+  "fit_points": 7,
+  "held_out_prediction_points": 7,
+  "lifecycle": "CLASSIFIED",
+  "mutations_rejected": {
+    "M1_scaled_normalization_rejected": true,
+    "M2_wrong_sign_conjugation_rejected": true,
+    "M3_shifted_pole_rejected": true
+  },
+  "no_real_poles": true,
+  "no_real_zeros_except_origin": true,
+  "not_claimed": {
+    "complex_omega_continuation": false,
+    "general_l": false,
+    "omega_zero": "excluded (certified exceptional carrier)",
+    "physical_or_causal_reading": "none: a is a local-algebraic symplectic-pairing datum; no spectral, dynamical, causal, scattering, stability, or particle interpretation is asserted",
+    "polar_l2_cross_covector": "tower-limited; scoped successor"
+  },
+  "omega_zero_excluded": "certified exceptional carrier; a has a simple zero at omega=0 and the claim excludes it",
+  "parity": "axial l=2",
+  "poles": {
+    "I": 1,
+    "I/2": 1
+  },
+  "provenance": {
+    "axial_fixture_certificate": "black_hole_programme/certificates/BH2A_COMPOSED_REPAIR.json",
+    "axial_fixture_sha256": "e083348a5e711ea93a74c5b580fd01f55a17b683ddddf0873aea0ac7f0e7d96a",
+    "flux_window_KWIN": 1,
+    "modes_module": "black_hole_programme/bh2_cross_invariant_axial_modes.py",
+    "normal_form_certificate": "black_hole_programme/certificates/BH2_SYMPLECTIC_NORMAL_FORM.json",
+    "normal_form_sha256": "8c234c38784f972b6428cc1d415abeafef5dd83ee8ed1bdd67e89e0b0359f0b4",
+    "series_order_NORD": 6
+  },
+  "real_exceptional_frequencies": [],
+  "result_id": "PURE_WEYL_BH2_SYMBOLIC_CROSS_INVARIANT",
+  "result_token": "BH2_AXIAL_CROSS_INVARIANT_EXACT_RATIONAL_A_OF_OMEGA",
+  "samples": {
+    "1/2": "-1464/25 + 552*I/25",
+    "1/3": "-24848/975 + 4112*I/325",
+    "1/4": "-5952/425 + 3936*I/425",
+    "1/5": "-415536/47125 + 69936*I/9425",
+    "2/11": "-75050112/10360625 + 6370944*I/941875",
+    "2/3": "-502144/4875 + 59264*I/1625",
+    "2/7": "-15606912/844025 + 1283712*I/120575",
+    "3/4": "-209088/1625 + 74016*I/1625",
+    "3/5": "-10893744/129625 + 780048*I/25925",
+    "3/7": "-25865136/603925 + 1509264*I/86275",
+    "4/5": "-66150912/456125 + 4700928*I/91225",
+    "5/2": "-407640/377 + 124392*I/377",
+    "5/7": "-31718640/270137 + 1602096*I/38591",
+    "6/5": "-384815232/1288625 + 28236672*I/257725",
+    "7/5": "-398562864/1022125 + 29116752*I/204425",
+    "8/9": "-1159419904/6596775 + 46203392*I/732975"
+  },
+  "schema": "pure-weyl-bh2-symbolic-cross-invariant-v1",
+  "schema_path": "black_hole_programme/schema/bh2-symbolic-cross-invariant-v1.schema.json",
+  "schema_sha256": "a913b40655f202b500f03256e7945718a0ad4543aab7d6cb18f3a5fd79fdb09c",
+  "setting": "Schwarzschild m=1, real frequency omega != 0, Eddington-Finkelstein carrier, t-chart Lee-Wald F^r",
+  "stage_seconds": {
+    "classify": 3.9,
+    "reconstruct": 3.5,
+    "samples": 573.1
+  },
+  "total_exact_points": 16,
+  "zeros": {
+    "0": 1,
+    "2*I": 1,
+    "I/4": 2
+  }
+}

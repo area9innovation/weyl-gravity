@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "pure-weyl-bh2-symbolic-cross-invariant-v1",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "result_token", "dependency_tags", "lifecycle",
+    "parity", "provenance", "cross_of_omega", "cross_factored", "a_of_omega",
+    "a_definition", "degree", "fit_points", "held_out_prediction_points",
+    "total_exact_points", "samples", "zeros", "poles",
+    "no_real_zeros_except_origin", "no_real_poles",
+    "real_exceptional_frequencies", "omega_zero_excluded",
+    "conjugate_frequency_law", "mutations_rejected",
+    "certified_fixtures_recovered", "claim_flags", "not_claimed",
+    "stage_seconds"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-bh2-symbolic-cross-invariant-v1"},
+    "result_id": {"type": "string"},
+    "result_token": {"type": "string"},
+    "dependency_tags": {
+      "type": "array",
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL",
+                         "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}
+    },
+    "lifecycle": {"enum": ["CLASSIFIED", "COEFFICIENT_COMPUTED",
+                           "QME_RESTORED", "RESIDUAL_TRANSFERRED",
+                           "LORENTZIAN_CERTIFIED"]},
+    "parity": {"type": "string"},
+    "setting": {"type": "string"},
+    "provenance": {
+      "type": "object",
+      "required": ["normal_form_certificate", "normal_form_sha256",
+                   "axial_fixture_certificate", "axial_fixture_sha256",
+                   "modes_module", "series_order_NORD", "flux_window_KWIN"],
+      "properties": {
+        "normal_form_certificate": {"type": "string"},
+        "normal_form_sha256": {"type": "string"},
+        "axial_fixture_certificate": {"type": "string"},
+        "axial_fixture_sha256": {"type": "string"},
+        "modes_module": {"type": "string"},
+        "series_order_NORD": {"type": "integer"},
+        "flux_window_KWIN": {"type": "integer"}
+      }
+    },
+    "cross_of_omega": {"type": "string"},
+    "cross_factored": {"type": "string"},
+    "a_of_omega": {"type": "string"},
+    "a_definition": {"type": "string"},
+    "degree": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"},
+                     "denominator": {"type": "integer"}}
+    },
+    "fit_points": {"type": "integer"},
+    "held_out_prediction_points": {"type": "integer", "minimum": 1},
+    "total_exact_points": {"type": "integer"},
+    "samples": {"type": "object"},
+    "ee_samples_record_only": {"type": "object"},
+    "zeros": {"type": "object"},
+    "poles": {"type": "object"},
+    "no_real_zeros_except_origin": {"const": true},
+    "no_real_poles": {"const": true},
+    "real_exceptional_frequencies": {"type": "array"},
+    "omega_zero_excluded": {"type": "string"},
+    "conjugate_frequency_law": {"type": "string"},
+    "mutations_rejected": {
+      "type": "object",
+      "required": ["M1_scaled_normalization_rejected",
+                   "M2_wrong_sign_conjugation_rejected",
+                   "M3_shifted_pole_rejected"],
+      "properties": {
+        "M1_scaled_normalization_rejected": {"const": true},
+        "M2_wrong_sign_conjugation_rejected": {"const": true},
+        "M3_shifted_pole_rejected": {"const": true}
+      }
+    },
+    "certified_fixtures_recovered": {
+      "type": "object",
+      "required": ["3/5", "2/7"],
+      "properties": {"3/5": {"type": "string"}, "2/7": {"type": "string"}}
+    },
+    "claim_flags": {"type": "object"},
+    "not_claimed": {"type": "object"},
+    "schema_path": {"type": "string"},
+    "schema_sha256": {"type": ["string", "null"]},
+    "stage_seconds": {"type": "object"}
+  }
+}

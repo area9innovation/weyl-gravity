@@ -8,7 +8,8 @@ scratch pipeline whose results were validated by the null control at
 1e-18 relative and by frequency robustness.
 """
 
-def run_pipeline(wnum, NORD=16, radii=None, return_exprs=False, geo_cls=None):
+def run_pipeline(wnum, NORD=16, radii=None, return_exprs=False, geo_cls=None,
+                 carrier_only=False):
     import time, pickle
     import sympy as sp
     t0 = time.time()
@@ -323,7 +324,15 @@ def run_pipeline(wnum, NORD=16, radii=None, return_exprs=False, geo_cls=None):
     psi_m = series_system(sol_c, (P, Q), -wnum)
     Pp_p, Qp_p, Xp_p = carrier_polys(wnum, psi_sols)
     Pp_m, Qp_m, Xp_m = carrier_polys(-wnum, psi_m)
-    
+
+    if carrier_only:
+        # fast path for downstream cross-invariant sampling: the ingoing
+        # carrier polynomials are all that the composed-lift cascade needs;
+        # skip the RW t-chart lift and Lee-Wald pairing (unused here).
+        return {"exprs": {"carrier_p": (Pp_p, Qp_p, Xp_p),
+                          "carrier_m": (Pp_m, Qp_m, Xp_m),
+                          "r": r, "rho": rho, "w": w}}
+
     # pure RW modes from the certified master series (t-chart lift)
     t_ch = sp.Symbol("t")
     r_t, th_t = sp.symbols("r theta", positive=True)
