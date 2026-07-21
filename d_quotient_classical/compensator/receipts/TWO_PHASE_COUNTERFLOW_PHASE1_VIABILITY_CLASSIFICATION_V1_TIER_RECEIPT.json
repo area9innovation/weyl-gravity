@@ -1,0 +1,31 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "TWO_PHASE_COUNTERFLOW_PHASE1_VIABILITY_CLASSIFICATION_V1_TIER_RECEIPT",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "tier0": {
+    "status": "PASS",
+    "commands": [
+      "python3 -m py_compile d_quotient_classical/compensator/two_phase_counterflow_phase1_viability_classification.py d_quotient_classical/compensator/verify_two_phase_counterflow_phase1_viability_classification.py d_quotient_classical/atlas/generate_two_phase_counterflow_phase1_viability_classification_atlas.py",
+      "git diff --check -- <scoped paths>"
+    ]
+  },
+  "tier1": {
+    "status": "PASS",
+    "commands": [
+      "python3 d_quotient_classical/compensator/two_phase_counterflow_phase1_viability_classification.py --check",
+      "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_phase1_viability_classification.py",
+      "python3 -m pytest -q d_quotient_classical/compensator/tests/test_two_phase_counterflow_phase1_viability_classification.py",
+      "python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-phase1-viability-classification-fragment-v1.json"
+    ],
+    "elapsed_seconds": 0.88
+  },
+  "tier2": {
+    "status": "NOT_RUN",
+    "reason": "No mathematical input or shared operator changed; every imported prerequisite is content-addressed and independently certified."
+  },
+  "tier3": {
+    "status": "NOT_RUN",
+    "reason": "This closes one Science Forge branch but does not freeze/tag a repository release or promote a global theorem."
+  },
+  "claim_promotion": "CLASSIFIED"
+}
