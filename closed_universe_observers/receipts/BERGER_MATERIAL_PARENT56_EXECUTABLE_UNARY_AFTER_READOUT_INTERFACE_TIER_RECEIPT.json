@@ -1,0 +1,31 @@
+{
+  "result_id": "BERGER_MATERIAL_PARENT56_EXECUTABLE_UNARY_AFTER_READOUT_INTERFACE",
+  "recorded_at": "2026-07-21T02:16:41Z",
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      "python3 -m py_compile closed_universe_observers/generate_berger_material_parent56_executable_unary_after_readout_interface.py closed_universe_observers/verify_berger_material_parent56_executable_unary_after_readout_interface.py",
+      "python3 -m json.tool closed_universe_observers/schema/berger-material-parent56-executable-unary-after-readout-interface-v1.schema.json",
+      "git diff --check -- <explicit observer package paths>"
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m closed_universe_observers.generate_berger_material_parent56_executable_unary_after_readout_interface --write", "elapsed_seconds": 1.12, "result": "PASS"},
+      {"command": "python3 -m closed_universe_observers.verify_berger_material_parent56_executable_unary_after_readout_interface", "elapsed_seconds": 0.61, "result": "PASS"},
+      {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_material_parent56_executable_unary_after_readout_interface.py", "elapsed_seconds": 3.35, "result": "5 passed"},
+      {"command": "python3 -m closed_universe_observers.atlas.generate_observer_atlas_fragment && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment", "elapsed_seconds": 5.28, "result": "PASS"},
+      {"command": "python3 -m pytest -q closed_universe_observers/tests/test_observer_atlas_fragment.py", "elapsed_seconds": 55.21, "result": "62 passed"},
+      {"command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=<temporary-directory> paper/09-relational-clocks-berger-d-cartan.tex (two passes)", "elapsed_seconds": 1.04, "result": "PASS"}
+    ]
+  },
+  "tier_2": {
+    "status": "NOT_RUN",
+    "criterion": "All three upstream packages are unchanged content-addressed inputs; the new material export and its direct atlas/paper consumers were checked without changing shared algebra."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "criterion": "This is a scoped unary export, not a freeze, release or cross-programme theorem promotion."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "payload_ref", "gate_results", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-material-parent56-executable-unary-after-readout-interface-v1"},
+    "result_id": {"const": "BERGER_MATERIAL_PARENT56_EXECUTABLE_UNARY_AFTER_READOUT_INTERFACE"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_refs": {"type": "object", "minProperties": 6},
+    "payload_ref": {"type": "object", "required": ["path", "result_id", "sha256", "canonical_sha256"]},
+    "gate_results": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 500}
+  },
+  "additionalProperties": true
+}

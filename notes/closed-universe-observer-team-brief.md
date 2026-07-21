@@ -2412,6 +2412,19 @@ observer.berger.interaction.material_parent56_background_readout_interface.
 The complete material-parent-56 unary is the next gate; no reduction or
 nonlinear observer result is inferred here.
 
+That material gate is now closed in the correctly typed relative sense.  The
+standalone 56-row carrier has 52 normalized unary entries, rank-56 signed
+pairing, zero nilpotency/cyclicity/real/\(K\)-commutator defects, generic rank
+28 and \(s=0\) rank 24.  The material detector selection has exact rank two.
+The four \(-\lambda_a\bar P_a\cdot F_a\) derivatives remain an external
+base-to-parent readout interface because their Maxwell source or target rows
+are not indices of the 56-row carrier; they are not forced into its square
+matrix.  All four sign mutations fail.  The atlas row is
+`observer.berger.interaction.material_parent56_executable_unary_after_readout_interface`.
+This certifies the material half only.  The terminal replacement-side
+mixed-nilpotency obstruction keeps the 160-row pushout and all reduced
+observer consumers at `NO_CERTIFIED_MAP`.
+
 ## Active bridge: combined 160-row apparatus unary
 
 The typed pushout of the positive-mixed 112-row base and 56-row material

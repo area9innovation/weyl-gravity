@@ -315,6 +315,15 @@ redshift at `NO_CERTIFIED_MAP`.  The minimal missing producer is a repaired
 complete replacement-112 unary with generic symbolic nilpotency and an
 independent replay.
 
+The material-parent side is independently complete.  Its standalone 56-row
+unary has 52 normalized entries, zero square/cyclicity/real/K defects, a
+rank-56 pairing, generic rank 28 and zero-mode rank 24.  The detector
+selection has rank two, and the four action-derived readout blocks are kept as
+a typed external base-to-parent interface rather than inserted into nonexistent
+internal indices.  This is recorded at
+`observer.berger.interaction.material_parent56_executable_unary_after_readout_interface`.
+It does not reopen the nondefined 160-row pushout.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.
