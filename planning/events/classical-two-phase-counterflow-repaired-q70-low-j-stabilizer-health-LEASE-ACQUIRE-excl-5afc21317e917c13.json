@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-two-phase-counterflow-repaired-q70-low-j-stabilizer-health-LEASE-ACQUIRE-excl-5afc21317e917c13",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/classical-two-phase-counterflow-repaired-q70-low-j-stabilizer-health-LEASE-ACQUIRE-excl-5afc21317e917c13.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "classical-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T08:56:27Z", "seq": 3, "predecessor": "sf:program/event/classical-two-phase-counterflow-repaired-q70-low-j-stabilizer-health-LEASE-RELEASE-excl-a5387f08d62e8e79", "payload": {"target": "sf:program/work/classical-two-phase-counterflow-repaired-q70-low-j-stabilizer-health", "agent": "classical-1", "lease_type": "exclusive", "action": "ACQUIRE", "acquired": "2026-07-21T08:56:27Z", "expires": "2026-07-21T12:56:27Z"}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/classical-two-phase-counterflow-repaired-q70-low-j-stabilizer-health"}]
+}
