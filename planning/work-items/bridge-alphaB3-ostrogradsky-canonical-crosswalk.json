@@ -1,0 +1,30 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/bridge-alphaB3-ostrogradsky-canonical-crosswalk",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "bridge-alphaB3-ostrogradsky-canonical-crosswalk",
+  "source": {"path": "planning/work-items/bridge-alphaB3-ostrogradsky-canonical-crosswalk.json", "span": null},
+  "body": {
+    "owner": "bridge-1",
+    "state": "PROPOSED",
+    "stream": "bridge",
+    "priority": 0,
+    "objective": "Derive and certify the exact alpha_B=3 action-to-Ostrogradsky canonical transformation and channelwise covariant-to-canonical correction crosswalk that the cubic compact-Cauchy Kuranishi tensor requires.",
+    "stop_condition": "Import EINSTEIN_WEYL_COMPACT_CAUCHY_CUBIC_CONSTRAINT_TENSOR_EXPORT_OBSTRUCTION_V1, the selected alpha_B=3 Weyl-Maxwell action, canonical constraint ledger, balanced first-order fixture and complete covariant ell=0,2,4 second-order correction by exact hashes. Fix one action-derived higher-derivative boundary-term convention and derive the complete canonical pairs (h,pi),(K,P),(a,E), all primary constraints and the exact background momentum magnitude rather than a proportionality class. Export a normalized canonical transformation and its inverse on the declared perturbative carrier. For every stored correction channel and signed frequency, map the covariant fields to (delta h,delta K,delta pi,delta P,delta a,delta E), including time derivatives, reality/conjugation, harmonic normalization and gauge representative. Independently reconstruct the first H_perp one-slot cubic jet and prove the scale^2/32 ambiguity is removed in the selected convention; verify symplecticity, constraint pullback and compatibility with the alpha_B=3 Euler equations. Reject boundary-term shifts, rescaled P, zeroed momenta, omitted channels and competing-action mutations. Land exact artifacts, schema, method-distinct verifier, receipt, report and atlas fragment. If no local canonical map exists on the stored reduced carrier, certify the first exact missing auxiliary or boundary datum and stop without evaluating K3.",
+    "current_gate": "action-normalized canonical representation of the stored second-order correction",
+    "forbid": "no arbitrary scale choice; no rank-only canonical ledger used for cubic coefficients; no covariant Euler row substituted for H_perp; no missing momentum set to zero; no boundary convention left implicit; no K3, boundedness, causality, particle, positivity, unitarity or quantum promotion",
+    "depends_on": ["sf:program/work/bridge-compact-cauchy-cubic-constraint-tensor-export#ANY_TERMINAL"],
+    "activates": ["sf:program/work/bridge-compact-cauchy-third-order-kuranishi-evaluation-after-canonical-crosswalk"],
+    "allowed_paths": [
+      "bridge/einstein_sector/",
+      "bridge/certificates/",
+      "residual_atlas/",
+      "reports/",
+      "notes/d-quotient-einstein-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "CANONICAL BRIDGE. Split by boundary convention, background momenta and harmonic correction channels if resource limits require it; every child must share the same selected action hash."
+  },
+  "edges": []
+}

@@ -1,0 +1,30 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/bridge-compact-cauchy-third-order-kuranishi-evaluation-after-canonical-crosswalk",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "bridge-compact-cauchy-third-order-kuranishi-evaluation-after-canonical-crosswalk",
+  "source": {"path": "planning/work-items/bridge-compact-cauchy-third-order-kuranishi-evaluation-after-canonical-crosswalk.json", "span": null},
+  "body": {
+    "owner": "bridge-1",
+    "state": "PROPOSED",
+    "stream": "bridge",
+    "priority": 1,
+    "objective": "Evaluate the correction-independent cubic Kuranishi class only after the selected action has a certified canonical crosswalk and complete cubic constraint tensors.",
+    "stop_condition": "Import the terminal-success alpha_B=3 Ostrogradsky canonical crosswalk, the cubic-export obstruction it repairs, the two-jet Kuranishi carrier and mixed-charge correspondence by exact hashes. Regenerate rather than assume every D3C[u,u,u], mixed D2C[u,v], five stabilizer projection, resonant ell=2 shell projection, second action jet and arity-three Noether identity in the certified canonical convention. Compute K3(u;v)=P_O(D2C[u,v]+D3C[u,u,u]/6), construct im l2(u,-), reduce to O/im l2(u,-), and prove correction-choice, boundary-representative and nonlinear gauge independence. Evaluate all four original ell=2 resonant shells and distinguish global Kuranishi obstruction from bounded secular resonance. Verify by independent quotient/separator and direct-action rails with representative, normalization, boundary-term, omitted-shell and action-hash mutations; update Paper 13 and the residual atlas with immediate scope limits.",
+    "current_gate": "first action-normalized third-order integrability verdict for the balanced mixed-charge tangent",
+    "forbid": "no run after an obstructed or incomplete canonical crosswalk; no missing tensor inserted as zero; no representative coefficient called invariant; no shell resonance conflated with global Taub charge; no formal third-order extension called bounded stability, all-order solution, causality, particle, positivity, unitarity or quantum result",
+    "depends_on": ["sf:program/work/bridge-alphaB3-ostrogradsky-canonical-crosswalk"],
+    "allowed_paths": [
+      "bridge/einstein_sector/",
+      "bridge/certificates/",
+      "residual_atlas/",
+      "reports/",
+      "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
+      "notes/d-quotient-einstein-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "SUCCESS-GATED EVALUATION. An obstructed crosswalk terminates this route rather than activating a coefficient solve."
+  },
+  "edges": []
+}
