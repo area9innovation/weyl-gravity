@@ -29,7 +29,8 @@
     "resource_hint": "COORDINATION CORRECTNESS. Reuse the landed normalized RFC3339 comparator; the new type is event.when/acquired > caller --now, not expiry > now.",
     "notes": [
       "Exact live reproduction: at coordinator snapshot 2026-07-21T08:07:27Z, overview treated classical-two-phase-counterflow-repaired-q70-generic-isotypical-health as an ordinary live lease acquired by classical-3 at 2026-07-21T09:45:00Z, 5853 seconds in the future. The event files were actually materialized in the shared worktree at approximately 2026-07-21T08:04:42Z, but filesystem time is diagnostic only and must not become authority.",
-      "The event used normalized-valid RFC3339 syntax, so the landed offset comparator correctly parsed it; the missing behavior is future-event validation against explicit --now. Preserve the current lease pending a checkpoint because the correct scientific item may genuinely have been claimed; do not infer accidental work solely from the timestamp defect."
+      "The event used normalized-valid RFC3339 syntax, so the landed offset comparator correctly parsed it; the missing behavior is future-event validation against explicit --now. Preserve the current lease pending a checkpoint because the correct scientific item may genuinely have been claimed; do not infer accidental work solely from the timestamp defect.",
+      "Second exact reproduction: at coordinator time 2026-07-21T08:30:34Z, classical-3's newly materialized low-j lease and ACTIVE event claimed acquisition at 2026-07-21T10:30:00Z, almost two hours in the future, and overview treated it as ordinary live work. It also created a second exclusive lease for the same agent. The coordinator kept the earlier retuning lease and superseded the low-j item by higher sequence; retain the future-dated events as an imported quarantine fixture."
     ]
   },
   "edges": []

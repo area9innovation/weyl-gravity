@@ -1,0 +1,37 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-two-phase-counterflow-repaired-q70-low-j-stabilizer-health-LEASE-RELEASE-excl-a5387f08d62e8e79",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {
+    "path": "tools/science-forge/program/events/classical-two-phase-counterflow-repaired-q70-low-j-stabilizer-health-LEASE-RELEASE-excl-a5387f08d62e8e79.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "LEASE",
+    "actor": "coordinator",
+    "base_revision": "science-forge-ir-v0",
+    "when": "2026-07-21T08:30:34Z",
+    "seq": 2,
+    "payload": {
+      "target": "sf:program/work/classical-two-phase-counterflow-repaired-q70-low-j-stabilizer-health",
+      "agent": "classical-3",
+      "lease_type": "exclusive",
+      "action": "RELEASE",
+      "acquired": "2026-07-21T08:30:34Z",
+      "expires": "",
+      "reason": "second simultaneous exclusive lease was unstarted; retain the first-assigned Hamiltonian-Hopf retuning theorem as classical-3's canonical item"
+    },
+    "native": {
+      "authored_by": "coordinator explicit duplicate-lease release",
+      "policy": "append-only lease release; the future-dated acquire and ACTIVE events remain immutable diagnostic evidence"
+    }
+  },
+  "edges": [
+    {
+      "rel": "LEASES",
+      "to": "sf:program/work/classical-two-phase-counterflow-repaired-q70-low-j-stabilizer-health"
+    }
+  ]
+}
