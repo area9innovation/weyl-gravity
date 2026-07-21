@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-two-phase-counterflow-trace-charge-preflight-LEASE-RELEASE-excl-c625544629297763",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/classical-two-phase-counterflow-trace-charge-preflight-LEASE-RELEASE-excl-c625544629297763.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "classical-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T03:23:13Z", "seq": 2, "predecessor": "sf:program/event/classical-two-phase-counterflow-trace-charge-preflight-LEASE-ACQUIRE-excl-637b253d94c8abba", "payload": {"target": "sf:program/work/classical-two-phase-counterflow-trace-charge-preflight", "agent": "classical-1", "lease_type": "exclusive", "action": "RELEASE", "acquired": "2026-07-21T03:23:13Z", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/classical-two-phase-counterflow-trace-charge-preflight"}]
+}
