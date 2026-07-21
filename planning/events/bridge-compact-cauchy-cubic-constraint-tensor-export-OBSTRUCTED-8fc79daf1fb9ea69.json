@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/bridge-compact-cauchy-cubic-constraint-tensor-export-OBSTRUCTED-8fc79daf1fb9ea69",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/bridge-compact-cauchy-cubic-constraint-tensor-export-OBSTRUCTED-8fc79daf1fb9ea69.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "bridge-1", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-21T09:38:11+02:00", "seq": 2, "predecessor": "sf:program/event/bridge-compact-cauchy-cubic-constraint-tensor-export-ACTIVE-f2cefebb8949fc55", "payload": {"target": "sf:program/work/bridge-compact-cauchy-cubic-constraint-tensor-export", "to_state": "OBSTRUCTED", "note": "the first action-normalized H_perp cubic row is undefined until the alpha_B=3 Ostrogradsky normalization, boundary-term convention, background momentum and covariant-to-canonical correction crosswalk are certified.", "evidence_basis": "`bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_CUBIC_CONSTRAINT_TENSOR_EXPORT_OBSTRUCTION_V1.json`; `residual_atlas/einstein-weyl-compact-cauchy-cubic-constraint-tensor-export-obstruction-fragment-v1.json`; `bridge/einstein_sector/receipts/EINSTEIN_WEYL_COMPACT_CAUCHY_CUBIC_CONSTRAINT_TENSOR_EXPORT_OBSTRUCTION_V1_TIER_RECEIPT.json`"}, "native": {"authored_by": "sfc close-out", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/bridge-compact-cauchy-cubic-constraint-tensor-export"}]
+}
