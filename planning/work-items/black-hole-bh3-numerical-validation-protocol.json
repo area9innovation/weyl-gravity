@@ -1,0 +1,34 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/black-hole-bh3-numerical-validation-protocol",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "black-hole-bh3-numerical-validation-protocol",
+  "source": {
+    "path": "planning/work-items/black-hole-bh3-numerical-validation-protocol.json",
+    "span": null
+  },
+  "body": {
+    "owner": "black-hole",
+    "state": "PROPOSED",
+    "objective": "Define, before any BH-3 complex-frequency successor is created, an independent numerical-validation protocol that any prospective complex-frequency or quasinormal-mode computation must pass, cross-checked against the exact real-frequency invariants.",
+    "stop_condition": "Specify the numerical method, discretization, convergence criterion, and error control for the exterior complex-omega boundary-value problem, as an independent rail distinct from the exact symbolic producers. Pin the exact real-frequency cross-check anchors (BH2_SYMBOLIC_CROSS_INVARIANT a(omega) on the real axis; BH2_GENERAL_L_STRUCTURAL horizon exponents; BH2C_METRIC_ALL_ORDERS asymptotics) that the numerical rail must reproduce before it is trusted off the real axis. Deliver the protocol as a specification and a reproducibility contract; do NOT run a quasinormal-mode computation. The protocol is the deliverable, not any spectrum.",
+    "current_gate": "independent numerical-validation protocol specification",
+    "forbid": "no Conflux; no quasinormal-mode, stability, ringdown, scattering, or spectrum computation in this item; no numerical rail that reuses the symbolic producer as its own check; no protocol without a real-axis exact cross-check anchor",
+    "depends_on": [
+      "sf:program/work/black-hole-general-l-structural-extension"
+    ],
+    "activates": [
+      "the numerical-validation entry gate of the BH-3 proof-obligation DAG"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/",
+      "reports/",
+      "notes/d-quotient-black-hole-team-brief.md"
+    ],
+    "resource_hint": "Protocol-definition only. This item exists so no BH-3 successor is created without a pre-declared independent falsification rail (Science Forge independent-rail law). Do not begin a QNM solve.",
+    "input_commit": "5a84466c1",
+    "stream": "black-hole"
+  },
+  "edges": []
+}

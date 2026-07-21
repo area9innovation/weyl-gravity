@@ -1,0 +1,141 @@
+{
+  "artifact": "bh3-proof-obligation-dag",
+  "kind": "readiness-review-dag",
+  "version": "v1",
+  "review_item": "sf:program/work/black-hole-bh3-proof-readiness-review",
+  "disposition": "NOT_READY -- entry gates fail; no BH-3 successor created; typed missing-prerequisite work filed",
+  "boundary": "This DAG establishes readiness or missing gates ONLY. It performs and claims NO complex-frequency, quasinormal-mode, stability, ringdown, scattering, observational, or quantum result. Every BH-3 vocabulary token below is a GATED/BLOCKED prospective claim, never an established one.",
+  "fail_closed": true,
+  "evidence_base_real_omega": {
+    "BH2_SYMPLECTIC_NORMAL_FORM": "extension normal form; axial Einstein-extra block = hyperbolic plane; invariants (rank, inertia, cross class)",
+    "BH2_SYMBOLIC_CROSS_INVARIANT": "axial a(omega) exact RATIONAL function, nonzero for all real omega != 0; meromorphic with poles {I, I/2}, zeros {0, 2I, I/4}",
+    "BH2_POLAR_CROSS_COVECTOR + BH2_POLAR_QUANTIFIER_REPAIR": "polar K-null nine-fixture; a != 0 all real omega; generic-omega inertia/no-exceptional-frequency FIXTURE-ONLY (route B needed)",
+    "BH2_GENERAL_L_STRUCTURAL": "axial generic-l exact sequence; RW potential B(l(l+1)/r^2 - 6m/r^3); RW+extra horizon indicial l-INDEPENDENT (ingoing dimension characterized); exceptional set {0,1}",
+    "BH2C_METRIC_ALL_ORDERS": "all-orders metric reconstruction (real omega); LOG TAILS at infinity",
+    "BHCT": "local Cauchy truncation (zero exterior data selects the Einstein image, modulo conformal gauge polar)"
+  },
+  "gates": [
+    {
+      "id": "G_ANALYTIC_CONTINUATION",
+      "name": "analytic continuation of operator, modes, and symplectic current to a declared complex-omega domain",
+      "status": "FAIL",
+      "have": "axial reduced cross scalar a(omega) is an EXACT RATIONAL function => meromorphic continuation of the REDUCED-mode symplectic invariant exists (poles {I, I/2})",
+      "missing": "analytic continuation of the FULL mode families (Frobenius series coefficients are rational in omega but their joint analyticity/convergence domain in complex omega is not certified) and of the polar sector (fixture-only in real omega; no symbolic-omega statement -- blocked on repair route B)",
+      "failure_scenario": "a pole of a(omega) (omega in {I, I/2}) or a branch point / convergence boundary of the mode series inside the intended complex-omega domain invalidates continuation; the polar sector has no symbolic-omega mode statement at all, so a complex-omega polar BVP is undefined"
+    },
+    {
+      "id": "G_ASYMPTOTIC_PHASE_SPACE",
+      "name": "asymptotically flat finite-Lee-Wald-flux radiation class with a finite symplectic structure",
+      "status": "OPEN",
+      "have": "the finite-slice-norm class at infinity is EXACTLY the Einstein sector (BH2C fixture); RW/Einstein pairs r^-2 integrable",
+      "missing": "a declared radiation class containing the ADDITIONAL branch with finite Lee-Wald flux -- open (this is the existing item black-hole-symbolic-frequency-finite-flux-radiation-class, checkpointed with an obstruction: composed metric has LOG TAILS at infinity, every extra-involving pair divergent r^1..r^4)",
+      "failure_scenario": "the additional-branch modes have DIVERGENT Lee-Wald flux at infinity (log tails) => no finite symplectic phase space contains them => any quasinormal completeness/inner-product is ill-defined",
+      "covered_by_existing_item": "sf:program/work/black-hole-symbolic-frequency-finite-flux-radiation-class"
+    },
+    {
+      "id": "G_CURRENT_FINITENESS",
+      "name": "conserved symplectic current finite on the radiation class at complex omega",
+      "status": "FAIL",
+      "have": "Lee-Wald current conserved on shell (real omega, certified off-shell 4-alpha identity); RW block symplectically null; extra-block Hermitian form K classified",
+      "missing": "finiteness of the current on the complex-omega radiation class -- tied to G_ASYMPTOTIC_PHASE_SPACE and G_ANALYTIC_CONTINUATION; at complex omega the mode is not oscillatory but exponentially weighted, changing the flux convergence",
+      "failure_scenario": "divergent flux from the log tails => the symplectic norm needed to define a quasinormal-mode pairing does not converge"
+    },
+    {
+      "id": "G_BOUNDARY_WELLPOSED",
+      "name": "exterior complex-omega boundary-value problem well-posed (outgoing at infinity, ingoing/regular at the horizon)",
+      "status": "FAIL",
+      "have": "HORIZON ingoing structure fully characterized (BH2_GENERAL_L_STRUCTURAL: ingoing dimension l-independent, residue spectrum {0(x2), -4imw, -2-4imw}); asymptotic infinity fundamental system LOG-FREE both parities and log-tail structure certified",
+      "missing": "the OUTER-boundary condition (outgoing/radiation) that resolves the log-tail ambiguity, and an existence+uniqueness (well-posedness) statement for the exterior BVP; the outer boundary reconstruction/flux class is open",
+      "failure_scenario": "the additional branch's log tails at infinity make the standard outgoing (Sommerfeld) boundary condition ambiguous => the exterior boundary problem is not well-posed for the additional sector, so a discrete complex-omega spectrum is not yet defined"
+    },
+    {
+      "id": "G_NUMERICAL_VALIDATION",
+      "name": "an independent numerical-validation protocol DEFINED before any successor",
+      "status": "FAIL",
+      "have": "nothing",
+      "missing": "a defined protocol (method, discretization, convergence criterion, independent cross-check against the exact real-omega invariants) that any complex-omega/QNM successor must pass",
+      "failure_scenario": "without a pre-declared independent numerical rail, a complex-omega mode computation cannot be falsified or reproduced (violates the Science Forge independent-rail law)"
+    }
+  ],
+  "prospective_claims": [
+    {
+      "id": "MODE_EXISTENCE",
+      "label": "discrete complex-frequency mode existence for the exterior BVP",
+      "requires": ["G_ANALYTIC_CONTINUATION", "G_BOUNDARY_WELLPOSED"],
+      "status": "BLOCKED",
+      "blocked_by": ["G_ANALYTIC_CONTINUATION", "G_BOUNDARY_WELLPOSED"]
+    },
+    {
+      "id": "QNM_SPECTRUM",
+      "label": "quasinormal-mode spectrum (discrete set with QNM boundary conditions)",
+      "requires": ["MODE_EXISTENCE", "G_CURRENT_FINITENESS", "G_ASYMPTOTIC_PHASE_SPACE"],
+      "status": "BLOCKED",
+      "distinctness_note": "mode existence is NOT the spectrum: the spectrum needs the current/inner-product and the phase space to be a labelled discrete set",
+      "blocked_by": ["MODE_EXISTENCE", "G_CURRENT_FINITENESS", "G_ASYMPTOTIC_PHASE_SPACE"]
+    },
+    {
+      "id": "LINEAR_STABILITY",
+      "label": "linear (mode) stability -- absence of growing modes",
+      "requires": ["QNM_SPECTRUM", "SPECTRAL_HALF_PLANE_ARGUMENT"],
+      "status": "BLOCKED",
+      "distinctness_note": "a QNM spectrum existing is NOT stability: stability is a separate statement about the location of the whole spectrum in a half-plane, needing a spectral/energy argument absent here",
+      "blocked_by": ["QNM_SPECTRUM"]
+    },
+    {
+      "id": "RINGDOWN",
+      "label": "time-domain ringdown = quasinormal sum",
+      "requires": ["QNM_SPECTRUM", "COMPLETENESS_EXCITATION"],
+      "status": "BLOCKED",
+      "distinctness_note": "a spectrum is NOT observed ringdown: the time-domain reconstruction needs completeness and excitation coefficients, a further analytic step",
+      "blocked_by": ["QNM_SPECTRUM"]
+    },
+    {
+      "id": "SCATTERING_GREYBODY",
+      "label": "scattering / grey-body transmission at the outer boundary",
+      "requires": ["G_BOUNDARY_WELLPOSED", "G_ANALYTIC_CONTINUATION"],
+      "status": "BLOCKED",
+      "blocked_by": ["G_BOUNDARY_WELLPOSED", "G_ANALYTIC_CONTINUATION"]
+    }
+  ],
+  "universal_gate": {
+    "id": "G_NUMERICAL_VALIDATION",
+    "applies_to": ["MODE_EXISTENCE", "QNM_SPECTRUM", "LINEAR_STABILITY", "RINGDOWN", "SCATTERING_GREYBODY"],
+    "note": "every prospective claim additionally requires the pre-declared independent numerical-validation protocol"
+  },
+  "decision": {
+    "all_entry_gates_pass": false,
+    "gates_passing": [],
+    "gates_failing": ["G_ANALYTIC_CONTINUATION", "G_ASYMPTOTIC_PHASE_SPACE", "G_CURRENT_FINITENESS", "G_BOUNDARY_WELLPOSED", "G_NUMERICAL_VALIDATION"],
+    "action": "file typed missing-prerequisite work; do NOT create a complex-frequency/QNM successor",
+    "successor_created": false
+  },
+  "filed_missing_prerequisites": [
+    {
+      "gate": "G_ANALYTIC_CONTINUATION",
+      "item": "sf:program/work/black-hole-complex-frequency-analytic-continuation-gate",
+      "new": true
+    },
+    {
+      "gate": "G_BOUNDARY_WELLPOSED",
+      "item": "sf:program/work/black-hole-exterior-boundary-wellposedness-gate",
+      "new": true
+    },
+    {
+      "gate": "G_NUMERICAL_VALIDATION",
+      "item": "sf:program/work/black-hole-bh3-numerical-validation-protocol",
+      "new": true
+    },
+    {
+      "gate": "G_ASYMPTOTIC_PHASE_SPACE + G_CURRENT_FINITENESS",
+      "item": "sf:program/work/black-hole-symbolic-frequency-finite-flux-radiation-class",
+      "new": false,
+      "note": "existing READY item; not duplicated"
+    },
+    {
+      "gate": "polar analytic-continuation sub-dependency",
+      "item": "BH2_POLAR_QUANTIFIER_REPAIR route B (gauge-radical identity Z = E - (K^{-1}a^H).X symplectically null for all real omega)",
+      "new": false,
+      "note": "named activation identity in the polar quantifier repair; prerequisite of the polar branch of the analytic-continuation gate"
+    }
+  ]
+}
