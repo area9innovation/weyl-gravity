@@ -1,0 +1,41 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/observer-tier3-git-attached-exact-materialization-rerun-v1",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "observer-tier3-git-attached-exact-materialization-rerun-v1",
+  "source": {
+    "path": "planning/work-items/observer-tier3-git-attached-exact-materialization-rerun-v1.json",
+    "span": null
+  },
+  "body": {
+    "owner": "observer-1",
+    "state": "PROPOSED",
+    "stream": "observer",
+    "priority": 1,
+    "objective": "Establish the complete Observer Tier-3 verdict in an exact clean materialization that retains attached Git metadata, removing only the certified archive/test-harness mismatch without changing any producer, verifier, certificate or scientific claim.",
+    "stop_condition": "Import OBSERVER_TIER3_FIXED_POINT_AFTER_HISTORICAL_BASE_BINDING_REPAIR_V1_OBSTRUCTION and its exact repair commit. Create a clean Git-attached worktree or equivalent attached checkout at that commit on a filesystem with a recorded free-space margin. Independently prove that every tracked regular-file and symlink blob in physics/symplectic-reconstruction matches the selected commit, that `git rev-parse --show-prefix` succeeds from the observer package, and that no untracked scientific artifact is present. Run exactly one fresh fail-fast `PYTHONPATH=. pytest -q -x closed_universe_observers/tests` traversal from zero without patching or retrying. If green, record exact pass/skip counts, elapsed time, commit, worktree identity, blob census and mutation checks, and activate only OBSERVER_STREAM_TIER3_GREEN. If it fails, stop at the first failure and type it as scientific contradiction, stale pin, materialization defect, resource failure or test-harness defect; emit the smallest successor and leave Paper 9 theorem promotion false.",
+    "current_gate": "Git-attached exact-materialization Observer Tier-3 verdict",
+    "forbid": "no tar/archive checkout without Git metadata; no shared dirty worktree; no producer, verifier, certificate, atlas or test patch inside the run; no retry after first failure; no skipped, timed-out or OOM run called green; no receiver, redshift, detector, nonlinear or quantum promotion",
+    "depends_on": [
+      "sf:program/work/observer-tier3-fixed-point-after-historical-base-binding-repair-v1#ANY_TERMINAL",
+      "sf:program/work/observer-paper09-final-freeze-after-historical-base-tier3-v2#ANY_TERMINAL"
+    ],
+    "allowed_paths": [
+      "closed_universe_observers/verify_observer_tier3_git_attached_exact_materialization_rerun_v1.py",
+      "closed_universe_observers/tests/test_observer_tier3_git_attached_exact_materialization_rerun_v1.py",
+      "closed_universe_observers/receipts/OBSERVER_TIER3_GIT_ATTACHED_EXACT_MATERIALIZATION_RERUN_V1_MANIFEST.json",
+      "closed_universe_observers/receipts/OBSERVER_TIER3_GIT_ATTACHED_EXACT_MATERIALIZATION_RERUN_V1_OBSTRUCTION.json",
+      "closed_universe_observers/receipts/OBSERVER_TIER3_GIT_ATTACHED_EXACT_MATERIALIZATION_RERUN_V1_TIER_RECEIPT.json",
+      "reports/observer-tier3-git-attached-exact-materialization-rerun-v1-closeout-2026-07-21.md",
+      "planning/events/"
+    ],
+    "resource_hint": "HARNESS-ONLY COMPLETE VERIFICATION. The previous run reached 300 passes and failed because an archive lacked .git metadata. Preserve the exact corpus and change only the materialization envelope.",
+    "notes": [
+      "This is the sole owner of the next complete Observer Tier-3 traversal.",
+      "The prior 300 passes are context, not partial credit toward this fresh run."
+    ],
+    "input_commit": "81d628216df5bbbed61f468054f982ca707f1c35"
+  },
+  "edges": []
+}
