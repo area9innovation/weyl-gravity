@@ -1,0 +1,44 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/black-hole-exterior-bvp-functional-scope-repair",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "black-hole-exterior-bvp-functional-scope-repair",
+  "source": {
+    "path": "planning/work-items/black-hole-exterior-bvp-functional-scope-repair.json",
+    "span": null
+  },
+  "body": {
+    "owner": "black-hole-1",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 2,
+    "objective": "Reissue the exterior complex-frequency BVP gate at the strongest functional-analytic scope actually proved, separating its exact Wronskian and logarithmic-tail reductions from unproved Fredholm and well-posedness claims.",
+    "stop_condition": "Import PURE_WEYL_BH3_EXTERIOR_BVP_WELLPOSEDNESS_GATE and its exact boundary-series anchors by hash. For the Einstein branch, either supply declared function spaces, operator domain, Fredholm index and estimate, an analytic connection Wronskian, and an exact nonzero witness or theorem proving that the Wronskian is not identically zero; or state only the conditional result that invertibility reduces to nonvanishing of the uncomputed connection Wronskian. Do not infer discreteness from the phrase generically independent. For the additional branch, retain the exact logarithmic tail and prove only that the declared leading outgoing label does not distinguish the pure and logarithmic amplitudes; do not call every possible log-renormalized BVP ill-posed. Update producer, certificate, schema, report, independent verifier and tests with mutations rejecting both overpromotions. Reuse frozen source hashes and perform no new quasinormal search.",
+    "current_gate": "functional-analytic claim repair for the conditional exterior connection problem",
+    "forbid": "no generic independence asserted without a witness; no analytic function assumed nonzero; no homogeneous Wronskian criterion called full inhomogeneous well-posedness without spaces, estimate and continuous dependence; no failure of one outgoing label called failure of all boundary operators; no Wronskian zeros, QNM spectrum, ringdown, stability, scattering, particle or quantum claim",
+    "depends_on": [
+      "sf:program/work/black-hole-exterior-boundary-wellposedness-gate#ANY_TERMINAL",
+      "sf:program/work/black-hole-paper14-finite-flux-status-freeze#ANY_TERMINAL"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/bh3_exterior_bvp_wellposedness_gate.py",
+      "black_hole_programme/certificates/BH3_EXTERIOR_BVP_WELLPOSEDNESS_GATE.json",
+      "black_hole_programme/reports/bh3-exterior-bvp-wellposedness-gate.md",
+      "black_hole_programme/schema/bh3-exterior-bvp-wellposedness-gate-v1.schema.json",
+      "black_hole_programme/tests/test_bh3_exterior_bvp_wellposedness_gate.py",
+      "black_hole_programme/verify_bh3_exterior_bvp_wellposedness_gate.py",
+      "reports/",
+      "planning/events/",
+      "planning/forge-requests/",
+      "notes/d-quotient-black-hole-team-brief.md"
+    ],
+    "resource_hint": "LIGHTWEIGHT CLAIM REPAIR after Paper 14. Reuse exact boundary data; do not compute the transcendental connection problem.",
+    "notes": [
+      "The exact reusable content is the reduction to a connection Wronskian and the logarithmic-tail degeneracy of the declared leading outgoing label.",
+      "Paper 14 does not depend on this result and must remain scoped to real nonzero-frequency finite-flux selection."
+    ],
+    "input_commit": "187ae2672"
+  },
+  "edges": []
+}
