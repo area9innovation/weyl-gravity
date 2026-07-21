@@ -1,8 +1,9 @@
 # Extra fourth-order modes: compact currents and black-hole endpoint tests
 
 *Bridge note for conformal-gravity, higher-derivative quantization, and
-Einstein-from-conformal researchers. Status: compact classical current theorem
-and scoped Schwarzschild endpoint-nonselection result, 19 July 2026.*
+Einstein-from-conformal researchers. Status: compact axial-and-polar classical
+current theorem and scoped Schwarzschild endpoint-nonselection result,
+21 July 2026.*
 
 ## 1. Their object and the unresolved question
 
@@ -21,9 +22,8 @@ Our narrower classical question is prior to all three quantum conclusions:
 on one compact common Einstein--Maxwell/Weyl--Maxwell background, are the
 extra fourth-order roots actual gauge-quotient solution directions, are they
 radical under the action-derived current, and where does the negative
-classical current direction lie? The axial block now answers the full current
-question; the polar block supplies an independent off-shell equation-module
-comparison whose direct current remains the next gate. A second, independent
+classical current direction lie? The generic axial and polar blocks now answer
+the full current question before final residual descent. A second, independent
 Schwarzschild laboratory asks whether future-horizon analyticity and the
 presently tested leading outer asymptotics force the Ricci carrier to vanish.
 In the axial fixture they do not. This is an endpoint diagnostic, not a no-go
@@ -33,11 +33,11 @@ against every local causal restriction.
 H^0(Einstein--Maxwell)  --injects-->  H^0(Weyl--Maxwell)
           |                                |
           | standard image                 +--> Q_extra = two axial directions
-          |                                +--> two polar equation directions
+          |                                +--> two polar current directions
           |                                |
           +---------- direct Lee--Wald matrix ---------+
                     image signs (1,1), extra signs (2,0)
-                            full axial signature (3,1)
+                       full parity-block inertia (3,1)
 ```
 
 ## 2. Exact dictionary
@@ -55,7 +55,7 @@ The bridge lifecycle is deliberately split:
 
 | Component | Lifecycle | Missing gate |
 |---|---|---|
-| Compact axial Lee--Wald comparison | **Landed** | final residual descent and quantum interpretation |
+| Compact axial and polar Lee--Wald comparison | **Landed** | final residual descent and quantum interpretation |
 | Compact charge-fibre/nonlinear comparison | **Landed in Paper 91** | all-orders and causal extension |
 | Schwarzschild axial endpoint comparison | **Partial** | Jordan form, metric reconstruction, finite asymptotic flux, rigorous pairing bounds |
 | Schwarzschild polar comparison | **Partial** | polar current, outer behavior, and Zerilli control |
@@ -85,6 +85,9 @@ python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_full_tensor.py
 python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_physical_completion \
   --verify bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json
 python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_physical_completion.py
+python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_direct_lee_wald_completion \
+  --verify bridge/certificates/EINSTEIN_MAXWELL_WEYL_POLAR_DIRECT_LEE_WALD_COMPLETION_V1.json
+python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_direct_lee_wald_completion.py
 python3 black_hole_programme/verify_bh2a_cross_flux.py
 python3 black_hole_programme/verify_bh2a_causal_disposition.py
 python3 black_hole_programme/verify_bh2b_polar_split.py
@@ -133,8 +136,28 @@ invariant factors are $1,1,p,pq$. The Einstein image is the complete
 $q$-primary summand, the canonical extra quotient is
 $(K[\omega]/(p))^2$, and the action row weights
 $(-1,2,-1,2\lambda)$ are derived from the four-dimensional variation and
-harmonic norms. This is not yet a polar current theorem: the direct polar
-Lee--Wald form, ungauged BV/Noether lift, and residual descent remain open.
+harmonic norms.
+
+The direct polar current is now independently complete. Literal variation of
+the four-dimensional curvature-momentum potential, including the full
+$\delta(\nabla C)$ term, produces exact coordinate matrices at
+$\ell=2,3,4$. Their degree-two spectral interpolation gives the generic
+current before the reduced Hessian is consulted; the result then agrees
+exactly with the reduced Green form. On the two $p$-primary representatives
+its Hermitian Gram determinant is
+
+\[
+9\lambda^2(\lambda-2)(9\lambda-2)
+(3k^2+3\lambda-2)(6k^2+3\lambda-2)^2,
+\]
+
+which never vanishes for physical $\lambda=\ell(\ell+1)\geq6$ and real
+compact momentum. The extra polar inertia is $(2,0)$, the Einstein--extra
+cross block vanishes, and the complete generic polar inertia is $(3,1)$.
+These agree with the axial inertia data without identifying the two parity
+carriers. The omitted-$\delta(\nabla C)$ mutation is detected already by the
+$\ell=2$ $(A_t,B)$ entry, where its nonzero remainder at $k=1$ is
+$-7i\pi/5$. The ungauged BV/Noether lift and residual descent remain open.
 
 ## 5. Independent Schwarzschild boundary test
 
@@ -182,9 +205,10 @@ and metric analysis, stability, and ringdown remain open.
 
 The result does not choose between $PT$, Fock--BRST, or boundary-selected
 quantization. It says that any comparison must account for an explicit
-classical carrier space in both parities. In the axial block, “extra branch”
-and “negative direction” are demonstrably not synonymous; the polar current
-will test whether that separation persists. A successful boundary or quantum
+classical carrier space in both parities. In both generic parity blocks,
+“extra branch” and “negative direction” are demonstrably not synonymous: the
+extra blocks have inertia $(2,0)$, while the negative direction belongs to the
+Einstein image. A successful boundary or quantum
 prescription must explain which standard and extra compact directions survive
 its own quotient and why its inner product is the transported form appropriate
 to that state space.
@@ -209,7 +233,7 @@ real-time Lorentzian sector.
 The results are `LOCAL-ALGEBRAIC/REDUCED-MODE` on a compact product
 background. They are not a positive-frequency Hilbert norm, a BRST/Fock
 theorem, a $PT$ metric comparison, a quantum ghost result, or an S-matrix
-statement. The polar extra current and ungauged lift, final residual quotient,
+statement. The polar ungauged lift, final residual quotient,
 literal second expansion of the four-dimensional action density, and
 causal/asymptotic boundary phase spaces remain open. The compact negative
 direction may be removed, retained, or reinterpreted by those later gates.
@@ -219,8 +243,8 @@ and a leading asymptotic symbol. It is not `LORENTZIAN-CAUSAL`, and it is not
 a theorem about complex frequencies, arbitrary multipoles, a complete metric
 falloff class, the full exterior initial-boundary problem, nonlinear
 stability, ringdown, Hawking states, or asymptotic particles. The polar
-horizon-reach result is likewise mode-level and does not close the polar
-current or outer-boundary chain.
+horizon-reach result is likewise mode-level and does not close the
+outer-boundary chain.
 
 ## 8. One useful question for adjacent experts
 
@@ -232,6 +256,7 @@ current or outer-boundary chain.
 **Reproducibility receipt.** Sources: arXiv:1105.5632v2,
 arXiv:2109.12743v1, arXiv:2202.08298v2. Certificates:
 `AXIAL_LEE_WALD_COMPLETION`, `POLAR_PHYSICAL_COMPLETION`,
+`EINSTEIN_MAXWELL_WEYL_POLAR_DIRECT_LEE_WALD_COMPLETION_V1`,
 `BH2A_CROSS_BLOCK_NONZERO_HORIZON_FLUX_FIXTURES`, and
 the symbol/exponent payload of
 `BH2A_AXIAL_CAUSAL_DISPOSITION_EXTRA_BRANCH_UNAVOIDABLE`, narrowed by the
@@ -239,5 +264,5 @@ Paper 14 claim map; the polar horizon input is
 `BH2B_POLAR_EXTRA_BRANCH_REACHES_HORIZON_LINEAR_MODE_LEVEL`. Verification
 commands are in section 3. Tags: `LOCAL-ALGEBRAIC` and `REDUCED-MODE`.
 Open: asymptotic Jordan form, metric reconstruction, rigorous flux bounds,
-polar current/lift, residual descent, full causal boundary phase spaces,
+polar ungauged lift, residual descent, full causal boundary phase spaces,
 stability, and quantum state.

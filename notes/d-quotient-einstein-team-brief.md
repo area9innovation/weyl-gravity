@@ -4832,3 +4832,41 @@ Submit new results through the generator and phase-space registries in
 [`d_quotient_programme/`](../d_quotient_programme/README.md).  In particular,
 keep `H_ESU`, `D_M`, `D_rad`, and `P_0` in distinct ledger rows unless an
 explicit phase-space-preserving intertwiner has been certified.
+
+## Generic polar direct Lee--Wald completion
+
+The active Classical bridge now closes the generic polar current parity gap on
+the compactified magnetically supported Plebański--Hacyan background. The new
+producer starts from the four-dimensional Weyl--Maxwell curvature-momentum
+potential, retains the complete `delta(nabla C)` contribution, and computes
+exact independent-frequency coordinate matrices at `ell=2,3,4`. Only after
+the degree-two spectral interpolation is complete is the older reduced polar
+Green/Hessian gate consulted; the remainder is exactly zero.
+
+On every physical `ell>=2` and allowed compact momentum, including `k=0`, the
+two polar `p`-primary representatives have nondegenerate normalized Hermitian
+Gram determinant
+
+```text
+9 lambda^2 (lambda-2) (9 lambda-2)
+  (3 k^2+3 lambda-2) (6 k^2+3 lambda-2)^2.
+```
+
+Hence the generic polar extra block has inertia `(2,0)` and radical dimension
+zero, is orthogonal to the exact `q`-primary Einstein image, and yields
+complete polar inertia `(3,1)`. The same inertia data hold in the axial block,
+but no parity carriers are identified. The formal collision factors are
+listed explicitly and have empty intersection with the physical domain.
+
+The `ell=2` `(A_t,B)` audit makes the load-bearing connection term visible:
+the complete `delta(nabla C)` contribution is
+`-i*pi*k*(k^2+6)/5`, and omitting it leaves the nonzero remainder
+`-7*i*pi/5` at `k=1`. Sign, normalization and omitted-term mutations are all
+rejected by the independent verifier.
+
+The fail-closed atlas row is
+`einstein.ph.wm.polar.generic.direct_lee_wald`. Its linear symplectic datum is
+`CERTIFIED`; nonlinear resonance remains `OPEN`, and causal, observational and
+quantum maps remain `NO_CERTIFIED_MAP`. The current active bridge after this
+gate is the polar ungauged BV/Noether lift and final residual descent. No
+causal, particle, positive-norm, ghost or unitarity claim is promoted.

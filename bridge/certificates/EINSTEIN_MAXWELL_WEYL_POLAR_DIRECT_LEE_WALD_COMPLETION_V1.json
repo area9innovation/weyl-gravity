@@ -1,0 +1,374 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE certificate completes the generic polar direct four-dimensional Lee--Wald pairing before final residual descent. It does not identify axial and polar representatives, certify exceptional ell<2 sectors, causal propagation, particles, a Hilbert norm, ghosts, positivity, or unitarity.",
+  "classification": {
+    "all_allowed_compact_momenta_including_zero": true,
+    "all_physical_ell_at_least_2": true,
+    "causal_or_particle_claim": false,
+    "complete_delta_nabla_C_retained": true,
+    "complete_polar_inertia_3_1": true,
+    "direct_four_dimensional_current_is_producer": true,
+    "extra_polar_block_nonradical": true,
+    "extra_polar_inertia_2_0": true,
+    "final_residual_descent_certified": false,
+    "quantum_positivity_or_unitarity_claim": false,
+    "reduced_gate_used_only_as_comparator": true
+  },
+  "controls": {
+    "Einstein_extra_cross_block": [
+      "0",
+      "0"
+    ],
+    "Maxwell_UU_entry": "-I*lambda*(omega_1 + omega_2)",
+    "current_convention": "alpha_B=3 and Maxwell action -F^2/4",
+    "flat_constant_metric_variation_Weyl_current": "0"
+  },
+  "delta_nabla_C": {
+    "complete_delta_nabla_C_contribution": "-I*pi*k*(k**2 + 6)/5",
+    "delta_connection_on_background_C_contribution": "-2*I*pi*k/5",
+    "full_direct_entry": "-2*I*pi*k*(k**2 + 6)/5",
+    "nabla_delta_C_contribution": "-I*pi*k*(k**2 + 4)/5",
+    "nonzero_evaluation_at_k_1": "-7*I*pi/5",
+    "omission_mutation_remainder_at_k_1": "-7*I*pi/5",
+    "retained": true,
+    "sample": "ell=2, m=0, bilinear entry (A_t,B)"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "direct_current": {
+    "curvature_momentum": "P^(abcd)=alpha_B*C^(abcd)/4 with alpha_B=3",
+    "field_order": [
+      "A_t",
+      "B",
+      "C_t",
+      "U"
+    ],
+    "generic_direct_current_per_scalar_harmonic_norm": [
+      [
+        "0",
+        "-I*k*(k**2 + lambda)/2",
+        "-I*(2*k**2 - lambda)*(omega_1 + omega_2)/8",
+        "0"
+      ],
+      [
+        "-I*k*(k**2 + lambda)/2",
+        "-I*(4*k**2 + 3*lambda)*(omega_1 + omega_2)/4",
+        "I*k*(lambda - omega_1**2 - omega_1*omega_2 - omega_2**2)/2",
+        "0"
+      ],
+      [
+        "-I*(2*k**2 - lambda)*(omega_1 + omega_2)/8",
+        "I*k*(lambda - omega_1**2 - omega_1*omega_2 - omega_2**2)/2",
+        "I*(omega_1 + omega_2)*(2*lambda - omega_1**2 - omega_2**2)/4",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-I*lambda*(omega_1 + omega_2)"
+      ]
+    ],
+    "potential": "Theta^a=2*sqrt(-g)*(P^(abcd)*nabla_d(delta g_bc)-(nabla_d P^(abcd))*delta g_bc)+Theta_Maxwell^a",
+    "producer": "literal variation of the four-dimensional Weyl--Maxwell curvature-momentum potential",
+    "samples": [
+      {
+        "direct_integrated_matrix": [
+          [
+            "0",
+            "-2*I*pi*k*(k**2 + 6)/5",
+            "-I*pi*(k**2 - 3)*(omega_1 + omega_2)/5",
+            "0"
+          ],
+          [
+            "-2*I*pi*k*(k**2 + 6)/5",
+            "-2*I*pi*(2*k**2 + 9)*(omega_1 + omega_2)/5",
+            "-2*I*pi*k*(omega_1**2 + omega_1*omega_2 + omega_2**2 - 6)/5",
+            "0"
+          ],
+          [
+            "-I*pi*(k**2 - 3)*(omega_1 + omega_2)/5",
+            "-2*I*pi*k*(omega_1**2 + omega_1*omega_2 + omega_2**2 - 6)/5",
+            "-I*pi*(omega_1 + omega_2)*(omega_1**2 + omega_2**2 - 12)/5",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-24*I*pi*(omega_1 + omega_2)/5"
+          ]
+        ],
+        "ell": 2,
+        "harmonic_norm": "4*pi/5",
+        "lambda": 6
+      },
+      {
+        "direct_integrated_matrix": [
+          [
+            "0",
+            "-2*I*pi*k*(k**2 + 12)/7",
+            "-I*pi*(k**2 - 6)*(omega_1 + omega_2)/7",
+            "0"
+          ],
+          [
+            "-2*I*pi*k*(k**2 + 12)/7",
+            "-4*I*pi*(k**2 + 9)*(omega_1 + omega_2)/7",
+            "-2*I*pi*k*(omega_1**2 + omega_1*omega_2 + omega_2**2 - 12)/7",
+            "0"
+          ],
+          [
+            "-I*pi*(k**2 - 6)*(omega_1 + omega_2)/7",
+            "-2*I*pi*k*(omega_1**2 + omega_1*omega_2 + omega_2**2 - 12)/7",
+            "-I*pi*(omega_1 + omega_2)*(omega_1**2 + omega_2**2 - 24)/7",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-48*I*pi*(omega_1 + omega_2)/7"
+          ]
+        ],
+        "ell": 3,
+        "harmonic_norm": "4*pi/7",
+        "lambda": 12
+      },
+      {
+        "direct_integrated_matrix": [
+          [
+            "0",
+            "-2*I*pi*k*(k**2 + 20)/9",
+            "-I*pi*(k**2 - 10)*(omega_1 + omega_2)/9",
+            "0"
+          ],
+          [
+            "-2*I*pi*k*(k**2 + 20)/9",
+            "-4*I*pi*(k**2 + 15)*(omega_1 + omega_2)/9",
+            "-2*I*pi*k*(omega_1**2 + omega_1*omega_2 + omega_2**2 - 20)/9",
+            "0"
+          ],
+          [
+            "-I*pi*(k**2 - 10)*(omega_1 + omega_2)/9",
+            "-2*I*pi*k*(omega_1**2 + omega_1*omega_2 + omega_2**2 - 20)/9",
+            "-I*pi*(omega_1 + omega_2)*(omega_1**2 + omega_2**2 - 40)/9",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-80*I*pi*(omega_1 + omega_2)/9"
+          ]
+        ],
+        "ell": 4,
+        "harmonic_norm": "4*pi/9",
+        "lambda": 20
+      }
+    ],
+    "spectral_promotion": {
+      "SO3_equivariance_removes_m_dependence": true,
+      "degree_bound": 2,
+      "entry_degrees": [
+        [
+          null,
+          1,
+          1,
+          null
+        ],
+        [
+          1,
+          1,
+          1,
+          null
+        ],
+        [
+          1,
+          1,
+          1,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          1
+        ]
+      ],
+      "maximum_degree": 1,
+      "no_denominators_or_square_roots": true,
+      "nodes": [
+        6,
+        12,
+        20
+      ],
+      "reason": "A natural fourth-order bilinear current has at most four angular derivatives; compact harmonic integration by parts yields a polynomial of degree at most two in lambda."
+    }
+  },
+  "domain": "generic polar ell>=2 local-gauge-reduced Weyl-Maxwell modes on compactified Plebanski-Hacyan, every allowed compact k, before final residual quotient",
+  "lifecycle_state": "CLASSIFIED",
+  "mutations": {
+    "factor_two_action_normalization": "REJECTED",
+    "omit_complete_delta_nabla_C": "REJECTED by nonzero ell=2 (A_t,B), k=1 remainder -7*I*pi/5",
+    "overall_sign_flip": "REJECTED"
+  },
+  "next_gate": "lift the polar contraction to the ungauged BV/Noether complex and perform final residual descent",
+  "parity_comparison": {
+    "axial_complete_inertia": [
+      3,
+      1
+    ],
+    "axial_extra_inertia": [
+      2,
+      0
+    ],
+    "axial_result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
+    "polar_complete_inertia": [
+      3,
+      1
+    ],
+    "polar_extra_inertia": [
+      2,
+      0
+    ],
+    "statement": "Both generic parities have a nonradical extra p-primary block of inertia (2,0) and a complete local-gauge-reduced inertia (3,1); their representatives and current matrices are not identified across parity."
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_polar_direct_lee_wald_completion.py",
+    "generator_sha256": "b2728ae4c25e7d12d8946b695ddb9efa97dd1a3b64f1f97559456fd745e2cad0",
+    "inputs": {
+      "axial_direct_completion": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
+        "role": "import",
+        "sha256": "e3d59018c9ae4a1d65b2ca531f24534d553dc7da1e6386c1d4afb577effd05f8"
+      },
+      "polar_full_tensor": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_FULL_TENSOR",
+        "role": "import",
+        "sha256": "2cd92c4fc638ce5f3c26fc890e54908d8f2c8beec55efb3e90eee7b3affd8368"
+      },
+      "polar_physical_completion": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION",
+        "role": "import",
+        "sha256": "01ddd0a84f348d9c52a0e05812f6ceb27cb19d7fd2a6bc094eac2edfd7cedeaf"
+      },
+      "polar_reduced_gate_comparator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE",
+        "role": "comparator_only",
+        "sha256": "327cfacb304218b894b622f08a8ad0a2d8cb370a1cb041c69f58e343ac33ac76"
+      }
+    }
+  },
+  "reduced_gate_comparison": {
+    "remainder": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "role": "post-production comparator; never used to generate or interpolate the direct matrix"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_DIRECT_LEE_WALD_COMPLETION_V1",
+  "result_state": "GENERIC_POLAR_DIRECT_4D_LEE_WALD_COMPLETION_CERTIFIED",
+  "schema": "einstein-maxwell-weyl-polar-direct-lee-wald-completion-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein-maxwell-weyl-polar-direct-lee-wald-completion-v1.schema.json",
+  "schema_sha256": "f0563b9d3bb6b95061cffef996e031fee3387db40e16559c1d509e8bd843b414",
+  "shell_pullback": {
+    "Einstein_extra_cross_block_remainder": [
+      "0",
+      "0"
+    ],
+    "Einstein_inertia": [
+      1,
+      1
+    ],
+    "Einstein_representative_At_B_Ct_U": [
+      "-2*(k**2*lambda - k**2*mu - lambda)",
+      "2*k*omega_E*(lambda - mu)",
+      "-2*(k**2*lambda - k**2*mu + lambda**2 - lambda*mu - lambda)",
+      "lambda"
+    ],
+    "complete_polar_inertia": [
+      3,
+      1
+    ],
+    "exceptional_collision_locus_formal": [
+      "lambda=0",
+      "lambda=2",
+      "9*lambda-2=0",
+      "3*k**2+3*lambda-2=0",
+      "6*k**2+3*lambda-2=0",
+      "omega_e=0"
+    ],
+    "extra_Gram_determinant": "9*lambda**2*(lambda - 2)*(9*lambda - 2)*(3*k**2 + 3*lambda - 2)*(6*k**2 + 3*lambda - 2)**2",
+    "extra_Hermitian_Gram": [
+      [
+        "18*lambda*(4*k**2 + lambda - 2)*(12*k**2 + 9*lambda - 2)",
+        "-6*k*lambda*(3*lambda + 2)*(3*k**2 + 3*lambda - 2)"
+      ],
+      [
+        "-6*k*lambda*(3*lambda + 2)*(3*k**2 + 3*lambda - 2)",
+        "lambda*(3*lambda - 2)**2*(3*k**2 + 3*lambda - 2)/2"
+      ]
+    ],
+    "extra_basis_independence_minor": "-3*omega_e*(6*k**2 + 3*lambda - 2)**2",
+    "extra_inertia": [
+      2,
+      0
+    ],
+    "extra_representatives_At_B_Ct_U": [
+      [
+        "4*(3*k**2 - 2)",
+        "-2*k*(3*k**2 + 3*lambda - 2)"
+      ],
+      [
+        "0",
+        "omega_e*(6*k**2 + 3*lambda - 2)"
+      ],
+      [
+        "-12*(k**2 + lambda)",
+        "-2*k*(3*k**2 + 3*lambda - 2)"
+      ],
+      [
+        "3*(6*k**2 + 3*lambda - 2)",
+        "0"
+      ]
+    ],
+    "normalization": "Omega_WM/(-i*omega_e*L*N_(ell,m))",
+    "p_shell": "-k**2 - lambda + omega_e**2 + 2/3",
+    "physical_collision_locus": "empty for lambda=ell(ell+1)>=6 and real allowed compact k",
+    "q_shell_in_mu": "-2*lambda*mu + lambda*(lambda - 2) + mu**2",
+    "radical_dimension_extra": 0
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_direct_lee_wald_completion --verify bridge/certificates/EINSTEIN_MAXWELL_WEYL_POLAR_DIRECT_LEE_WALD_COMPLETION_V1.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_direct_lee_wald_completion.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_direct_lee_wald_completion",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_direct_lee_wald_completion --recompute-direct"
+  ]
+}
