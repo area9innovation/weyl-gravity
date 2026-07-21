@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-complex-clock-one-loop-breaking-nondefinition-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "input_pins",
+    "theory_scope",
+    "available_input_ledger",
+    "missing_input_ledger",
+    "first_missing_input",
+    "coefficient_ledger",
+    "quotient_disposition",
+    "ward_disposition",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary",
+    "proof_hashes"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-complex-clock-one-loop-breaking-nondefinition-v1"},
+    "result_id": {"const": "BERGER_COMPLEX_CLOCK_ONE_LOOP_BREAKING_NONDEFINITION_V1"},
+    "result_state": {"const": "NONDEFINED_MISSING_ACTION_DERIVED_EUCLIDEAN_BV_INTEGRATION_SLICE"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "input_pins": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {"$ref": "#/$defs/pin"}
+    },
+    "theory_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "chart", "strict_action_complex_map", "strict_separator"],
+      "properties": {
+        "theory": {"const": "positive Berger gravity plus two-real-scalar complex clock"},
+        "background": {"type": "string", "minLength": 40},
+        "chart": {"type": "string", "minLength": 30},
+        "strict_action_complex_map": {"const": "NONEXISTENT_IN_DECLARED_COMPLETE_MORPHISM_CLASS"},
+        "strict_separator": {"const": {"numerator": 961, "denominator": 1920}}
+      }
+    },
+    "available_input_ledger": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {"type": "string"}
+    },
+    "missing_input_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Euclidean_continuation_and_domains",
+        "action_derived_gauge_fixed_Lagrangian_integration_slice",
+        "complete_even_ghost_nonminimal_Hessian_blocks",
+        "ellipticity_and_formal_adjoint_proof",
+        "determinant_Berezinian_row_map",
+        "measure_and_Jacobians",
+        "zero_mode_and_stabilizer_projectors",
+        "real_contours_and_spectral_cuts",
+        "explicit_Euclidean_regulator_and_subtraction",
+        "independent_coefficient_rail"
+      ],
+      "properties": {
+        "Euclidean_continuation_and_domains": {"const": "MISSING"},
+        "action_derived_gauge_fixed_Lagrangian_integration_slice": {"const": "MISSING_FIRST"},
+        "complete_even_ghost_nonminimal_Hessian_blocks": {"const": "MISSING"},
+        "ellipticity_and_formal_adjoint_proof": {"const": "MISSING"},
+        "determinant_Berezinian_row_map": {"const": "MISSING"},
+        "measure_and_Jacobians": {"const": "MISSING"},
+        "zero_mode_and_stabilizer_projectors": {"const": "MISSING"},
+        "real_contours_and_spectral_cuts": {"const": "MISSING"},
+        "explicit_Euclidean_regulator_and_subtraction": {"const": "MISSING"},
+        "independent_coefficient_rail": {"const": "NOT_REACHED"}
+      }
+    },
+    "first_missing_input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "reason", "producer_request", "receiver_schema"],
+      "properties": {
+        "id": {"const": "POSITIVE_BERGER_COMPLEX_CLOCK_EUCLIDEAN_BV_INTEGRATION_SLICE_V1"},
+        "reason": {"type": "string", "minLength": 100},
+        "producer_request": {"const": "planning/forge-requests/positive-berger-complex-clock-euclidean-bv-integration-slice.json"},
+        "receiver_schema": {"const": "quantum-weyl/anomalies/schema/berger-complex-clock-euclidean-bv-integration-slice-v1.schema.json"}
+      }
+    },
+    "coefficient_ledger": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["class_id", "parity", "prequotient_coefficient", "quartet_primitive", "counterterm_coefficient"],
+        "properties": {
+          "class_id": {"enum": ["ANOM_OMEGA_C2", "ANOM_OMEGA_E4", "ANOM_OMEGA_C_DUAL_C", "ANOM_OMEGA_BOX_R"]},
+          "parity": {"enum": ["even", "odd", "even_scheme_dependent"]},
+          "prequotient_coefficient": {"const": "NONDEFINED"},
+          "quartet_primitive": {"type": "string", "minLength": 15},
+          "counterterm_coefficient": {"const": "NONDEFINED"}
+        }
+      }
+    },
+    "quotient_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["H14_even_dimension", "H14_odd_dimension", "actual_breaking", "actual_counterterm", "strict_199_over_30_minus_87_over_20_import", "zero_quotient_implication"],
+      "properties": {
+        "H14_even_dimension": {"const": 0},
+        "H14_odd_dimension": {"const": 0},
+        "actual_breaking": {"const": "NONDEFINED"},
+        "actual_counterterm": {"const": "NONDEFINED_COEFFICIENTS"},
+        "strict_199_over_30_minus_87_over_20_import": {"const": "FORBIDDEN_CHANGED_THEORY_NO_ACTION_COMPLEX_MAP"},
+        "zero_quotient_implication": {"type": "string", "minLength": 80}
+      }
+    },
+    "ward_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["phase_shift_current_compatibility", "K_Berger_compatibility", "raw_D"],
+      "properties": {
+        "phase_shift_current_compatibility": {"const": "NONDEFINED_BEFORE_REGULATED_INSERTION"},
+        "K_Berger_compatibility": {"const": "NONDEFINED_BEFORE_REGULATED_INSERTION"},
+        "raw_D": {"const": "NOT_A_LINEAR_SYMMETRY_OF_THE_FIXED_CLOCK_BACKGROUND"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "minProperties": 7,
+      "additionalProperties": {"const": false}
+    },
+    "next_gate": {"type": "string", "minLength": 200},
+    "claim_boundary": {"type": "string", "minLength": 700},
+    "proof_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["input_inventory_sha256", "missing_input_ledger_sha256", "coefficient_ledger_sha256"],
+      "properties": {
+        "input_inventory_sha256": {"$ref": "#/$defs/hash"},
+        "missing_input_ledger_sha256": {"$ref": "#/$defs/hash"},
+        "coefficient_ledger_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "source_commit", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 20},
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

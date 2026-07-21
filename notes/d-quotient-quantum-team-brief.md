@@ -2671,3 +2671,31 @@ open.
 
 - [`BERGER_COMPLEX_CLOCK_LOCAL_ANOMALY_COMPLEX_V1.json`](../quantum-weyl/anomalies/certificates/BERGER_COMPLEX_CLOCK_LOCAL_ANOMALY_COMPLEX_V1.json)
 - [`berger-complex-clock-local-anomaly-complex-v1.md`](../quantum-weyl/reports/berger-complex-clock-local-anomaly-complex-v1.md)
+
+## Positive-Berger one-loop coefficient gate (2026-07-21)
+
+The coefficient-bearing follow-up now has an exact first-missing-datum
+disposition.  The matter-coupled master action and complete classical
+gauge-fixed 54-row unary complex are certified, but that unary matrix is not a
+Euclidean Lagrangian integration slice or loop operator.  The repository has
+no action-derived positive-Berger complex-clock Euclidean full Hessian,
+determinant/Berezinian row map, measure, zero-mode projector, contours or
+selected regulator.
+
+Accordingly the prequotient coefficients of
+\(\omega C^2\), \(\omega E_4\), \(\omega C\widetilde C\) and
+\(\omega\Box R\) remain `NONDEFINED`; so do the actual counterterm
+coefficients and the phase-current/\(K_{\rm Berger}\) Ward tests.  The zero
+local quotient says that a future consistent local breaking is removable,
+not that its coefficients vanish.  The strict vector
+\((199/30,-87/20)\) is forbidden as an import across the exact
+\(961/1920\) action-complex separator.
+
+One typed producer request now names the complete integration-slice contract.
+This result is `LOCAL-ALGEBRAIC`/`EUCLIDEAN-SPECTRAL`; it makes no Lorentzian
+QME, Hadamard, positivity or particle claim.
+
+- [`BERGER_COMPLEX_CLOCK_ONE_LOOP_BREAKING_NONDEFINITION_V1.json`](../quantum-weyl/anomalies/certificates/BERGER_COMPLEX_CLOCK_ONE_LOOP_BREAKING_NONDEFINITION_V1.json)
+- [`berger-complex-clock-one-loop-breaking-nondefinition-v1.md`](../quantum-weyl/reports/berger-complex-clock-one-loop-breaking-nondefinition-v1.md)
+- [`positive-berger-complex-clock-one-loop-nondefinition-fragment-v1.json`](../residual_atlas/positive-berger-complex-clock-one-loop-nondefinition-fragment-v1.json)
+- [`positive-berger-complex-clock-euclidean-bv-integration-slice.json`](../planning/forge-requests/positive-berger-complex-clock-euclidean-bv-integration-slice.json)

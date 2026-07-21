@@ -1,0 +1,132 @@
+{
+  "available_input_ledger": {
+    "action_and_CME": "CERTIFIED",
+    "classical_gauge_fixed_54_row_unary_and_SDR": "CERTIFIED_CLASSICAL_NOT_LOOP_OPERATOR",
+    "conditional_covariant_regulator_receiver": "CERTIFIED_RECEIVER_ONLY",
+    "local_H14_even_and_odd": "ZERO_ON_DECLARED_REGULAR_FORMAL_POLAR_CHART",
+    "minimal_and_nonminimal_BV_rows": "CERTIFIED",
+    "quartet_primitives": "CERTIFIED"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/EUCLIDEAN-SPECTRAL audit imports the exact positive-Berger complex-clock local anomaly quotient, its 961/1920 strict-to-coupled separator, the complete matter-coupled master action, the classical 54-row gauge-fixed unary contraction, the repository loop-multiplicity receiver and the conditional covariant-regulator receiver. It proves that the actual one-loop breaking coefficients are not defined by the current repository data because the first indispensable input--an action-derived Euclidean gauge-fixed Lagrangian integration slice and full Hessian--is absent. The zero H14 quotient means a future consistent local breaking will be removable; it neither makes its coefficients zero nor restores the QME. Strict pure-Weyl coefficients are not imported across the certified nonexistence of an action-complex map. No Lorentzian QME, Hadamard state, positivity, particle, scattering or unitarity claim follows.",
+  "claim_flags": {
+    "ACTUAL_BREAKING_COEFFICIENTS_COMPUTED": false,
+    "COUNTERTERM_COEFFICIENTS_COMPUTED": false,
+    "HADAMARD_STATE_CERTIFIED": false,
+    "K_BERGER_WARD_IDENTITY_PROVED": false,
+    "LOCAL_GRAVITY_CLOCK_QME_RESTORED": false,
+    "LORENTZIAN_QME_CERTIFIED": false,
+    "PARTICLE_OR_POSITIVITY_CLAIM": false
+  },
+  "coefficient_ledger": [
+    {
+      "class_id": "ANOM_OMEGA_C2",
+      "counterterm_coefficient": "NONDEFINED",
+      "parity": "even",
+      "prequotient_coefficient": "NONDEFINED",
+      "quartet_primitive": "B_C=int sqrt(g) tau C2"
+    },
+    {
+      "class_id": "ANOM_OMEGA_E4",
+      "counterterm_coefficient": "NONDEFINED",
+      "parity": "even",
+      "prequotient_coefficient": "NONDEFINED",
+      "quartet_primitive": "B_E=four-dimensional Euler Wess-Zumino primitive"
+    },
+    {
+      "class_id": "ANOM_OMEGA_C_DUAL_C",
+      "counterterm_coefficient": "NONDEFINED",
+      "parity": "odd",
+      "prequotient_coefficient": "NONDEFINED",
+      "quartet_primitive": "B_P=int sqrt(g) tau CdualC"
+    },
+    {
+      "class_id": "ANOM_OMEGA_BOX_R",
+      "counterterm_coefficient": "NONDEFINED",
+      "parity": "even_scheme_dependent",
+      "prequotient_coefficient": "NONDEFINED",
+      "quartet_primitive": "B_BOX=-(1/12)int sqrt(g) R2 plus horizontal current"
+    }
+  ],
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "first_missing_input": {
+    "id": "POSITIVE_BERGER_COMPLEX_CLOCK_EUCLIDEAN_BV_INTEGRATION_SLICE_V1",
+    "producer_request": "planning/forge-requests/positive-berger-complex-clock-euclidean-bv-integration-slice.json",
+    "reason": "the complete classical 54-row unary BV matrix contains antifields and contractible rows and does not define the quadratic Lagrangian integration variables or their determinant exponents",
+    "receiver_schema": "quantum-weyl/anomalies/schema/berger-complex-clock-euclidean-bv-integration-slice-v1.schema.json"
+  },
+  "input_pins": {
+    "berger_classical_gauge_fixed_unary": {
+      "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0",
+      "source_commit": "445e26663d06764bc858ff0a004ba6178acce75f"
+    },
+    "conditional_covariant_regulator_receiver": {
+      "path": "quantum-weyl/anomalies/certificates/DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT.json",
+      "sha256": "62f53393712a58c25ca26f2318e9feba4fea8efedd2659e4eeb76b7634de2f13",
+      "source_commit": "5bf7a254183e407d439ea85ed99a979ed61917b4"
+    },
+    "local_anomaly_complex": {
+      "path": "quantum-weyl/anomalies/certificates/BERGER_COMPLEX_CLOCK_LOCAL_ANOMALY_COMPLEX_V1.json",
+      "sha256": "edfec590245e6e9c5156ae2ae72a8a8e18548a2e628012d7b44ded034df933ac",
+      "source_commit": "06f1531ee0485670eb0df45d82ef896d999cac60"
+    },
+    "loop_multiplicity_receiver": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_PREFLIGHT.json",
+      "sha256": "0927a3b9ad6e2d04366b30667d4eec64c7948a70cb54767459a7416f8ba71a0c",
+      "source_commit": "3213092073d15ca833fe1625d4fe4b57cd420a66"
+    },
+    "matter_coupled_master_action": {
+      "path": "d_quotient_classical/certificates/COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1.json",
+      "sha256": "a537e31bf667520443903551b5bf2596dff9a1c35fade88d2ffc1e89c1e0b836",
+      "source_commit": "306ff78a2001f23124d412e9a2f41531bec74f78"
+    }
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "missing_input_ledger": {
+    "Euclidean_continuation_and_domains": "MISSING",
+    "action_derived_gauge_fixed_Lagrangian_integration_slice": "MISSING_FIRST",
+    "complete_even_ghost_nonminimal_Hessian_blocks": "MISSING",
+    "determinant_Berezinian_row_map": "MISSING",
+    "ellipticity_and_formal_adjoint_proof": "MISSING",
+    "explicit_Euclidean_regulator_and_subtraction": "MISSING",
+    "independent_coefficient_rail": "NOT_REACHED",
+    "measure_and_Jacobians": "MISSING",
+    "real_contours_and_spectral_cuts": "MISSING",
+    "zero_mode_and_stabilizer_projectors": "MISSING"
+  },
+  "next_gate": "Supply one content-addressed action-derived positive-Berger complex-clock Euclidean BV integration slice satisfying the strict receiver schema; only then compute all prequotient coefficients on two independent rails and reduce them through the certified quartet primitives.",
+  "proof_hashes": {
+    "coefficient_ledger_sha256": "5d2bc4464fd8de932fbc15049979fcf1579ca9376b79bd73a688dba13fb81948",
+    "input_inventory_sha256": "39e514590772872f7039a11779048840fcf54695291197272542254171507e22",
+    "missing_input_ledger_sha256": "36e5bfa721d763783103b0eb3eb18c14181c8b5b40c5ee617054cc828e304c4f"
+  },
+  "quotient_disposition": {
+    "H14_even_dimension": 0,
+    "H14_odd_dimension": 0,
+    "actual_breaking": "NONDEFINED",
+    "actual_counterterm": "NONDEFINED_COEFFICIENTS",
+    "strict_199_over_30_minus_87_over_20_import": "FORBIDDEN_CHANGED_THEORY_NO_ACTION_COMPLEX_MAP",
+    "zero_quotient_implication": "IF_A_REGULATED_CONSISTENT_LOCAL_BREAKING_IS_COMPUTED_THEN_IT_IS_REMOVABLE_BY_THE_CERTIFIED_PRIMITIVES"
+  },
+  "result_id": "BERGER_COMPLEX_CLOCK_ONE_LOOP_BREAKING_NONDEFINITION_V1",
+  "result_state": "NONDEFINED_MISSING_ACTION_DERIVED_EUCLIDEAN_BV_INTEGRATION_SLICE",
+  "schema": "quantum-weyl-berger-complex-clock-one-loop-breaking-nondefinition-v1",
+  "theory_scope": {
+    "background": "a=1, q=9/40, alpha_B=5, rho^2=1, omega_clock=3/4, lambda=119/480",
+    "chart": "formal rho!=0 polar local-analytic jet algebra with tau=-log(rho/f)",
+    "strict_action_complex_map": "NONEXISTENT_IN_DECLARED_COMPLETE_MORPHISM_CLASS",
+    "strict_separator": {
+      "denominator": 1920,
+      "numerator": 961
+    },
+    "theory": "positive Berger gravity plus two-real-scalar complex clock"
+  },
+  "ward_disposition": {
+    "K_Berger_compatibility": "NONDEFINED_BEFORE_REGULATED_INSERTION",
+    "phase_shift_current_compatibility": "NONDEFINED_BEFORE_REGULATED_INSERTION",
+    "raw_D": "NOT_A_LINEAR_SYMMETRY_OF_THE_FIXED_CLOCK_BACKGROUND"
+  }
+}

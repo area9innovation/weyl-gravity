@@ -1,0 +1,65 @@
+{
+  "receipt_id": "BERGER_COMPLEX_CLOCK_ONE_LOOP_BREAKING_NONDEFINITION_V1_TIER_RECEIPT",
+  "result_id": "BERGER_COMPLEX_CLOCK_ONE_LOOP_BREAKING_NONDEFINITION_V1",
+  "recorded_at": "2026-07-21",
+  "base_commit": "79c580cedd6b4bcdab571cb86b011c77e004a14f",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "input_hashes": {
+    "BERGER_COMPLEX_CLOCK_LOCAL_ANOMALY_COMPLEX_V1": "edfec590245e6e9c5156ae2ae72a8a8e18548a2e628012d7b44ded034df933ac",
+    "COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1": "a537e31bf667520443903551b5bf2596dff9a1c35fade88d2ffc1e89c1e0b836",
+    "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0",
+    "REPOSITORY_FULL_BV_MULTIPLICITY_PREFLIGHT": "0927a3b9ad6e2d04366b30667d4eec64c7948a70cb54767459a7416f8ba71a0c",
+    "DRESSED_FOUR_DIMENSIONAL_COVARIANT_REGULATOR_PREFLIGHT": "62f53393712a58c25ca26f2318e9feba4fea8efedd2659e4eeb76b7634de2f13"
+  },
+  "output_hashes": {
+    "certificate": "43d8602c23180e8910a5bd36f4a96e844722a0961b2cc4b3c12cb82aa3d43365",
+    "report": "952db16cdb7a7ff45aa31d2c328e6eb1540ca5929f7285c866688152343a7253",
+    "result_schema": "049f68e01056ad4d6daa8cff12ec601be773c7dc2d18f6c06dfb0e685c1bdfd8",
+    "receiver_schema": "cc7f638128cf3b68d0eec730710840172b6ae698934d93108b2e83317144582e",
+    "producer_request": "74480680cdeb2531aa9c692b19db172b8f8bb17e6cb5148706e978536156b27a",
+    "atlas_fragment": "cfd60cd09443b9dfc8e2ef7c48ebb785d20f6e955f453c523ecba0ab1363fe70"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile quantum-weyl/anomalies/berger_complex_clock_one_loop_breaking_nondefinition.py quantum-weyl/anomalies/verify_berger_complex_clock_one_loop_breaking_nondefinition.py quantum-weyl/anomalies/tests/test_berger_complex_clock_one_loop_breaking_nondefinition.py",
+      "elapsed_seconds": 0.07,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 quantum-weyl/anomalies/berger_complex_clock_one_loop_breaking_nondefinition.py --check",
+      "elapsed_seconds": 0.40,
+      "status": "PASS_EXACT_PRODUCER_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 quantum-weyl/anomalies/verify_berger_complex_clock_one_loop_breaking_nondefinition.py",
+      "elapsed_seconds": 0.18,
+      "status": "PASS_METHOD_DISTINCT_HISTORICAL_PIN_AND_ORDERED_GATE_AUDIT"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest anomalies.tests.test_berger_complex_clock_one_loop_breaking_nondefinition",
+      "elapsed_seconds": 0.23,
+      "status": "PASS_8_TESTS_5_FAIL_CLOSED_MUTATIONS_AND_ATLAS_GUARD"
+    },
+    {
+      "tier": 1,
+      "command": "python3 residual_atlas/validate_fragment.py residual_atlas/positive-berger-complex-clock-one-loop-nondefinition-fragment-v1.json",
+      "elapsed_seconds": 0.72,
+      "status": "PASS_DEDICATED_GENERATED_FAIL_CLOSED_ATLAS_FRAGMENT"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 compile/validate --spec=draft2020 --strict=true for the result and Euclidean-integration-slice receiver schemas",
+      "elapsed_seconds": 6.10,
+      "status": "PASS_DRAFT_2020_12_STRICT_BOTH_SCHEMAS_AND_RESULT"
+    }
+  ],
+  "tier_2_not_run": "All five scientific inputs are immutable historical content-addressed artifacts. No shared algebra, operator, schema consumed by an existing certificate chain, or upstream mathematical datum changed; the directly affected atlas chain was run in Tier 1.",
+  "tier_3_not_run": "This is a fail-closed NONDEFINED disposition. It computes no anomaly coefficient, restores no QME, promotes no Lorentzian/Hadamard lifecycle, freezes no theorem, and prepares no release."
+}
