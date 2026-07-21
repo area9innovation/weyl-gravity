@@ -1,0 +1,17 @@
+{
+  "id": "sf:forge-request/bug-science-forge-conform-request-state-vocabulary",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Make `sfc conform` validate the documented physics-to-Forge request lifecycle instead of rejecting an honestly DECLINED request as an invalid ordinary work-item state.",
+    "depends_on": [],
+    "stop_condition": "Teach conformance to recognize files under a declared forge-request channel and validate their documented body.state vocabulary REQUESTED, ACCEPTED, LANDED and DECLINED, while continuing to apply the work-v0 structural checks to objective, dependencies, stop condition and forbids. Add deterministic fixtures for all four valid request states and mutations for an ordinary programme work item using a request-only state, a request using PROPOSED, and a request with an unknown state. Re-run conformance over the current physics planning tree and prove that the correctly declined duplicate request passes while the formerly PROPOSED residual-atlas request is rejected until changed to REQUESTED. Do not silently skip request files or weaken conformance for ordinary work items.",
+    "forbid": "no global acceptance of DECLINED/REQUESTED/LANDED as ordinary work-item lifecycle states; no directory-wide validation skip; no rewriting request history; no treating a malformed request as advisory-only; no special case keyed to one filename",
+    "notes": [
+      "Live reproduction 2026-07-21: `s-f conform planning` reports exactly two request-state nonconformances. `planning/forge-requests/bug-science-forge-large-programme-readonly-latency.json` is honestly DECLINED under the channel protocol but is rejected as `invalid state 'DECLINED'`. `planning/forge-requests/science-forge-residual-atlas-fragment-registration-coverage.json` incorrectly used PROPOSED and has been repaired locally to REQUESTED; this mutation is a useful negative fixture.",
+      "The authoritative channel protocol is planning/forge-requests/README.md: REQUESTED -> ACCEPTED -> LANDED | DECLINED."
+    ]
+  }
+}

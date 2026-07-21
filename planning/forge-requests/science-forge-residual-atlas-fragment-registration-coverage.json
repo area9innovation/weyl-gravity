@@ -4,7 +4,7 @@
   "schema": "work-v0",
   "body": {
     "owner": "physics-programme",
-    "state": "PROPOSED",
+    "state": "REQUESTED",
     "objective": "Make result-to-atlas registration automatic and fail closed. Recent certified results emit valid per-result fragments under residual_atlas/, but the published overview consumes only six manually maintained canonical team fragments; the new polar cyclic-BV obstruction, counterflow all-Hodge shortfall and charged-time event-map theorem therefore remain absent from the shared atlas even though their evidence and fragments have landed.",
     "depends_on": [],
     "stop_condition": "Add a deterministic registry/coverage layer that discovers every committed atlas fragment, validates its schema and evidence hashes, resolves deliberate supersession, deduplicates entry IDs and proves that each publishable per-result fragment is represented exactly once in the canonical shared atlas. Either generate the six team aggregates from registered per-result fragments or let the overview consume the registry directly; do not require manual copy-paste into large generator files. Add `s-f coverage --kind atlas` (or an equivalent coordinator section) listing unregistered results, stale aggregate rows, duplicate/conflicting entries and missing paper links. Integrate this with the reverse result-to-paper coverage baseline and the evidence DAG. Demonstrate the three live missing rows named in the objective, preserve stable entry IDs and public-vs-working-tree typing, and add mutations for an unregistered fragment, duplicate ID with divergent scope, stale evidence hash, explicit supersession and uncommitted preview input.",
