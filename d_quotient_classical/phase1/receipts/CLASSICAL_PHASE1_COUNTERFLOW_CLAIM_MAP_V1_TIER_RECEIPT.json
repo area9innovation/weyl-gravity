@@ -1,0 +1,32 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "CLASSICAL_PHASE1_COUNTERFLOW_CLAIM_MAP_V1_TIER_RECEIPT",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "tier0": {
+    "status": "PASS",
+    "commands": [
+      "python3 -m py_compile d_quotient_classical/phase1/generate_classical_phase1_counterflow_claim_map.py d_quotient_classical/phase1/verify_classical_phase1_counterflow_claim_map.py d_quotient_classical/atlas/generate_classical_phase1_counterflow_claim_map_atlas.py",
+      "python3 -m json.tool <each scoped JSON>",
+      "git diff --check -- <explicit manifest>"
+    ]
+  },
+  "tier1": {
+    "status": "PASS",
+    "commands": [
+      "python3 d_quotient_classical/phase1/generate_classical_phase1_counterflow_claim_map.py --check",
+      "python3 d_quotient_classical/phase1/verify_classical_phase1_counterflow_claim_map.py",
+      "python3 -m pytest -q d_quotient_classical/phase1/tests/test_classical_phase1_counterflow_claim_map.py",
+      "python3 residual_atlas/validate_fragment.py residual_atlas/classical-phase1-counterflow-claim-map-fragment-v1.json"
+    ],
+    "elapsed_seconds": 1.11
+  },
+  "tier2": {
+    "status": "NOT_RUN",
+    "reason": "No mathematical source, shared operator or schema used by an upstream certificate changed; the claim map imports terminal artifacts by exact hashes."
+  },
+  "tier3": {
+    "status": "NOT_RUN",
+    "reason": "This is the Classical input slice, not the programme-wide Phase-1 freeze or a release/tag."
+  },
+  "claim_promotion": "CLASSIFIED"
+}

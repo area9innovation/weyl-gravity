@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/classical-phase1-counterflow-claim-map-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "dependency_tags", "lifecycle_state", "result_state", "imports", "rows", "edges", "adversarial_mutations", "terminal_summary", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-classical-phase1-counterflow-claim-map-v1"},
+    "result_id": {"const": "CLASSICAL_PHASE1_COUNTERFLOW_CLAIM_MAP_V1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_state": {"const": "PHASE1_CLASSICAL_COUNTERFLOW_CHAIN_FROZEN_TERMINAL_OBSTRUCTED"},
+    "imports": {"type": "object", "minProperties": 6},
+    "rows": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/row"}},
+    "edges": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "additionalProperties": false, "required": ["from", "to", "relation"], "properties": {"from": {"type": "string"}, "to": {"type": "string"}, "relation": {"type": "string"}}}},
+    "adversarial_mutations": {"type": "object", "minProperties": 5},
+    "terminal_summary": {"type": "object"},
+    "claim_boundary": {"type": "object"}
+  },
+  "$defs": {
+    "row": {
+      "type": "object", "additionalProperties": false,
+      "required": ["row_id", "sequence", "source", "theory_action", "background", "charge_fibre", "causal_scope", "dressed_trace", "physical_quotient", "spectral_scope", "lifecycle"],
+      "properties": {
+        "row_id": {"type": "string"}, "sequence": {"type": "integer", "minimum": 0}, "source": {"type": "string"},
+        "theory_action": {"type": "string"}, "background": {"type": "string"}, "charge_fibre": {"type": "string"},
+        "causal_scope": {"type": "string"}, "dressed_trace": {"type": "string"}, "physical_quotient": {"type": "string"},
+        "spectral_scope": {"type": "string"}, "lifecycle": {"type": "string"}
+      }
+    }
+  }
+}

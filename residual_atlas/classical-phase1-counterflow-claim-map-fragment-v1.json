@@ -1,0 +1,92 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "Causal certification applies to the selected fixture, not the retuning family. The terminal obstruction is same-field and j=1/2 sufficient for candidate nonselection, not an all-isotype or all-architecture no-go.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/phase1/CLASSICAL_PHASE1_COUNTERFLOW_CLAIM_MAP_V1.json",
+          "result_id": "CLASSICAL_PHASE1_COUNTERFLOW_CLAIM_MAP_V1",
+          "sha256": "38ca82a0e07ead8b4d315304367008ce93b59a6de7ead3a93da922c1398c3624"
+        }
+      ],
+      "id": "classical.counterflow.phase1.claim_chain.terminal_nonselection",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The same-field stationary family retains the j=1/2 Hamiltonian-Hopf factor everywhere.",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "The terminal unstable sector is nonradical with split inertia (4,4,0).",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Stable-sector collision Jordan types remain open and cannot cure the persistent unstable factor.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The linear Hamiltonian-Hopf sector excludes the proposed bounded clock.",
+            "status": "OBSTRUCTED"
+          },
+          "causal_retarded": {
+            "statement": "The Green homotopy is selected-fixture only, not familywide.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No q2 family calculation is imported.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "No nonlinear tangent-cone result enters the Classical claim freeze.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "unit-cylinder source gates; selected Berger fixture; connected trace-healthy same-field Berger family",
+        "boundaries": "closed S3 Cauchy slices",
+        "carrier": "claim-chain synthesis; terminal physical witness is the both-k j=1/2 quotient",
+        "charge_sector": "unrestricted and fixed-Q_rel explicitly separated",
+        "degree": "claim map; terminal witness dimension 14",
+        "ell": "NOT_APPLICABLE",
+        "k": "+/-1/2 at terminal witness",
+        "m": "+/-1/2 at terminal witness",
+        "omega": "familywide Hamiltonian-Hopf quartet",
+        "parity": "reality-paired both-k sector",
+        "theory": "typed chain from passive tau-adic and declared minimal repairs to the selected two-phase counterflow action"
+      }
+    }
+  ],
+  "generated_by": "d_quotient_classical/atlas/generate_classical_phase1_counterflow_claim_map_atlas.py",
+  "generated_by_sha256": "4137830427e01eeb42405f60598e9f7723dfc323f4296a223212d07da73eba0f",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "classical",
+  "verification_commands": [
+    "python3 d_quotient_classical/phase1/generate_classical_phase1_counterflow_claim_map.py --check",
+    "python3 d_quotient_classical/phase1/verify_classical_phase1_counterflow_claim_map.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/classical-phase1-counterflow-claim-map-fragment-v1.json"
+  ]
+}

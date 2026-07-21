@@ -177,6 +177,24 @@ triangle, while a genuinely noncontractible Berger carrier remains open.
 The Bach-flat rank-310-to-metric causal rail is closed; only the categorically
 different bare-parent-to-metric crosswalk remains fail-closed.
 
+## Phase-1 counterflow claim freeze (2026-07-21)
+
+The active bridge is the Classical evidence slice for the programme Phase-1
+classification ending.  Its activation gate is terminal: the selected
+two-phase counterflow fixture has a certified 70-component support-local
+causal BV parent and removes the dressed trace, but its physical quotient has
+a nonradical Hamiltonian--Hopf sector.  The exact same-field stationary
+retuning theorem proves that this quartet persists throughout the connected
+trace-healthy family, while fixed `Q_rel` removes the proposed global clock.
+Consequently no robust same-field Phase-2 candidate is selected.
+
+The fail-closed atlas row is
+`classical.counterflow.phase1.claim_chain.terminal_nonselection`.  Its causal
+status is selected-fixture only; the familywide Green map, higher-isotype
+retuning spectrum, nonlinear continuation, observer realization and quantum
+promotion are all `NO_CERTIFIED_MAP`.  The authoritative machine chain is
+`d_quotient_classical/phase1/CLASSICAL_PHASE1_COUNTERFLOW_CLAIM_MAP_V1.json`.
+
 Three same-background handoffs follow the transverse replay; the first now
 has its fail-closed disposition and the second is active:
 
