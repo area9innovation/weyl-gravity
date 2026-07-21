@@ -1,0 +1,97 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This is the convention-correct degree-plus-one real cyclic causal q70 parent and V2 receiver contract. V1 remains immutable historical evidence. Physical cohomology, mode signs, q2, observers, Hadamard data, anomalies, QME, particles, positivity and unitarity remain open or unmapped.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2",
+          "sha256": "3f41cb5258f0883b217c9343e037074faf841728f29e03c306f101487411d2cf"
+        },
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_RECEIVER_CONTRACT_V2.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_RECEIVER_CONTRACT_V2",
+          "sha256": "8b2e8619af0cd67180c83f97a8166a25aae61d92f955cb20ad6f69834d004e2d"
+        }
+      ],
+      "id": "classical.counterflow.berger.q70_graded_cyclic_parent_v2",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The repaired q70 unary is certified, but no physical harmonic quotient or characteristic/Jordan census is computed here.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "lee_wald": {
+          "statement": "The chain-level odd BV pairing is explicit, nondegenerate, real and q70-cyclic; this is not a physical Hilbert or per-mode Gram form.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Resonance and Jordan data wait for the repaired-parent physical quotient.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The V2 unary is now an admissible input, but the q2 bounded-correction problem must be recomputed.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "Lambda70,+/- is the certified q54 homotopy direct-summed with the support-local repaired S16 block.",
+            "status": "CERTIFIED"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No V1 q2 hash is accepted automatically by the V2 receiver.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "No q2 or tangent-cone map has yet been rederived against the V2 hash.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "stationary biaxial Berger R x S3, a=1, c_squared=9/40",
+        "boundaries": "none; closed S3 Cauchy slices with compactly supported spacetime sources",
+        "carrier": "explicit 70-row graded cyclic BV parent, degree ranks 6/29/29/6, with q54 plus repaired contractible q16",
+        "charge_sector": "unrestricted parent retains Q_rel; receiver activation may declare the fixed-Q_rel leaf; D and R_rel are not quotiented",
+        "degree": "compact degree -ghost number; all 317 q70 operator blocks have degree +1",
+        "ell": "all spatial harmonics retained; no physical isotypical quotient in this certificate",
+        "k": "all right weights retained; no Hodge or weight truncation",
+        "m": "all left labels retained; conjugate labels governed by the imported q54 real structure",
+        "omega": "full time-differential operator; no characteristic root or positive-frequency selection here",
+        "parity": "real graded BV carrier with explicit nondegenerate odd pairing",
+        "theory": "selected fixed-action two-phase counterflow theory with repaired diagonal-U1 chain"
+      }
+    }
+  ],
+  "generated_by": "d_quotient_classical/atlas/generate_two_phase_counterflow_causal_bv_parent_v2_atlas_fragment.py",
+  "generated_by_sha256": "b8a244fc7cd73bebe5dbff7ff4e8695c1b47568f53d4506c24ee097de2924e0d",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "classical",
+  "verification_commands": [
+    "python3 d_quotient_classical/compensator/two_phase_counterflow_causal_bv_parent_v2.py --check",
+    "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_causal_bv_parent_v2.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-causal-bv-parent-v2-fragment.json"
+  ]
+}

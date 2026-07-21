@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-two-phase-counterflow-causal-bv-parent-v2.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "imports", "payload_ref", "receiver_ref", "row_layout", "operator_hashes", "exact_checks", "causal_direct_sum", "terminal_verdict", "claim_boundary", "content_hashes"],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-causal-bv-parent-v2"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2"},
+    "result_state": {"const": "CERTIFIED_GRADED_CYCLIC_70_ROW_CAUSAL_BV_PARENT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "imports": {"type": "object", "minProperties": 9},
+    "payload_ref": {"$ref": "#/$defs/ref"},
+    "receiver_ref": {"$ref": "#/$defs/ref"},
+    "row_layout": {"$ref": "#/$defs/layout"},
+    "operator_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["q70", "S70", "pairing70", "iota70_from_26", "pi26_from_70", "u1_q16", "u1_S16", "u1_pairing16"],
+      "properties": {
+        "q70": {"$ref": "#/$defs/hash"}, "S70": {"$ref": "#/$defs/hash"}, "pairing70": {"$ref": "#/$defs/hash"},
+        "iota70_from_26": {"$ref": "#/$defs/hash"}, "pi26_from_70": {"$ref": "#/$defs/hash"},
+        "u1_q16": {"$ref": "#/$defs/hash"}, "u1_S16": {"$ref": "#/$defs/hash"}, "u1_pairing16": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 11, "additionalProperties": {"const": true}},
+    "causal_direct_sum": {"type": "object", "minProperties": 7},
+    "terminal_verdict": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result_state", "V1_interface_status", "V2_receiver_activated", "physical_quotient_status", "next_gate"],
+      "properties": {
+        "result_state": {"const": "CERTIFIED_GRADED_CYCLIC_70_ROW_CAUSAL_BV_PARENT"},
+        "V1_interface_status": {"const": "SUPERSEDED_NOT_REWRITTEN"},
+        "V2_receiver_activated": {"const": true},
+        "physical_quotient_status": {"const": "OPEN"},
+        "next_gate": {"const": "REPAIRED_Q70_GENERIC_ISOTYPICAL_HEALTH"}
+      }
+    },
+    "claim_boundary": {
+      "type": "object", "additionalProperties": false, "required": ["establishes", "does_not_establish"],
+      "properties": {
+        "establishes": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+        "does_not_establish": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      }
+    },
+    "content_hashes": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "ref": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256", "content_sha256"],
+      "properties": {"path": {"type": "string"}, "sha256": {"$ref": "#/$defs/hash"}, "content_sha256": {"$ref": "#/$defs/hash"}}
+    },
+    "layout": {
+      "type": "object", "additionalProperties": false,
+      "required": ["component_rows", "degree_ranks", "old_component_rows", "repaired_u1_component_rows", "total_rows", "degree_convention"],
+      "properties": {
+        "component_rows": {"type": "array", "minItems": 70, "maxItems": 70, "items": {"type": "object"}},
+        "degree_ranks": {"const": [6, 29, 29, 6]},
+        "old_component_rows": {"const": 54}, "repaired_u1_component_rows": {"const": 16}, "total_rows": {"const": 70},
+        "degree_convention": {"type": "string"}
+      }
+    }
+  }
+}

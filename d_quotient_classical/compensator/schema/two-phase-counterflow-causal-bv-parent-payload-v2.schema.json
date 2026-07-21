@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-two-phase-counterflow-causal-bv-parent-payload-v2.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "dependency_tags", "imports", "oracle_fields_consumed", "supersedes_interface", "action_and_cotangent_derivation", "row_layout", "operators", "exact_checks", "grading", "causal_direct_sum", "background_and_Cartan", "real_structure", "claim_boundary", "content_sha256"],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-causal-bv-parent-payload-v2"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V2"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "imports": {"type": "object", "minProperties": 9},
+    "oracle_fields_consumed": {"type": "array", "maxItems": 0},
+    "supersedes_interface": {"type": "object", "minProperties": 3},
+    "action_and_cotangent_derivation": {"type": "object", "minProperties": 7},
+    "row_layout": {"type": "object", "minProperties": 6},
+    "operators": {
+      "type": "object", "additionalProperties": false,
+      "required": ["q70", "S70", "pairing70", "iota70_from_26", "pi26_from_70", "u1_q16", "u1_S16", "u1_pairing16"],
+      "properties": {
+        "q70": {"$ref": "#/$defs/matrix"}, "S70": {"$ref": "#/$defs/matrix"}, "pairing70": {"$ref": "#/$defs/matrix"},
+        "iota70_from_26": {"$ref": "#/$defs/matrix"}, "pi26_from_70": {"$ref": "#/$defs/matrix"},
+        "u1_q16": {"$ref": "#/$defs/matrix"}, "u1_S16": {"$ref": "#/$defs/matrix"}, "u1_pairing16": {"$ref": "#/$defs/matrix"}
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 11, "additionalProperties": {"const": true}},
+    "grading": {
+      "type": "object", "additionalProperties": false,
+      "required": ["degree_ranks", "nonzero_operator_blocks", "degree_shift_histogram", "old_V1_histogram_rejected"],
+      "properties": {
+        "degree_ranks": {"const": [6, 29, 29, 6]},
+        "nonzero_operator_blocks": {"const": 317},
+        "degree_shift_histogram": {"const": {"+1": 317}},
+        "old_V1_histogram_rejected": {"const": {"+1": 309, "-1": 8}}
+      }
+    },
+    "causal_direct_sum": {"type": "object", "minProperties": 7},
+    "background_and_Cartan": {"type": "object", "minProperties": 6},
+    "real_structure": {"type": "object", "minProperties": 3},
+    "claim_boundary": {"type": "string"},
+    "content_sha256": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "matrix": {
+      "type": "object", "additionalProperties": false, "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}},
+        "entries": {"type": "array", "items": {"type": "array", "minItems": 3, "maxItems": 3}},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2_TIER_RECEIPT",
+  "claim_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2",
+  "date": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "artifacts": [
+    {"path": "d_quotient_classical/compensator/two_phase_counterflow_causal_bv_parent_v2.py", "sha256": "858d9cbe6448b7e0d2caf19d91c21462e3cee363e03ddc10ea17747bb5a01383"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2.json", "sha256": "3f41cb5258f0883b217c9343e037074faf841728f29e03c306f101487411d2cf"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V2.json", "sha256": "c59b1a74aced082155db3446c40aa1b14e3982e66670a3c097539b25d5d5c938"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_RECEIVER_CONTRACT_V2.json", "sha256": "8b2e8619af0cd67180c83f97a8166a25aae61d92f955cb20ad6f69834d004e2d"},
+    {"path": "d_quotient_classical/compensator/verify_two_phase_counterflow_causal_bv_parent_v2.py", "sha256": "7cb5c11a28641718619238f939229ea95de0e59f16939610b818b641b951b8a1"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_causal_bv_parent_v2.py", "sha256": "07e270b1b5f0a395e926150dbe946a7ca8d8e4476b6e7939ab444a5756efe96c"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_causal_bv_parent_v2_atlas.py", "sha256": "66c7932ca79c4e4ed6cab03e2f7b8da29f368ffe265cf38b560da00dc4702746"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-causal-bv-parent-v2.schema.json", "sha256": "6d8ec1c3b465c36d37044147d95c57256d9b2d3d6a102b3cc5120ae7ca9e5d3a"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-causal-bv-parent-payload-v2.schema.json", "sha256": "a58d03e3c1051fc01536c8981b920074628cbca4d353a69af13be5f9d8bedd74"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-causal-bv-receiver-contract-v2.schema.json", "sha256": "c77308347084ead378f7e59d86590c6734cd94bfaed7b2b1de0c5457fc3bb4fd"},
+    {"path": "d_quotient_classical/atlas/generate_two_phase_counterflow_causal_bv_parent_v2_atlas_fragment.py", "sha256": "b8a244fc7cd73bebe5dbff7ff4e8695c1b47568f53d4506c24ee097de2924e0d"},
+    {"path": "residual_atlas/two-phase-counterflow-causal-bv-parent-v2-fragment.json", "sha256": "f2eda5bd4aaf556bf719e30213aba68b95a7fe08b867cbfcf483146a9aecf0b8"},
+    {"path": "d_quotient_classical/compensator/reports/two-phase-counterflow-causal-bv-parent-v2.md", "sha256": "bb003b06716357886ca3805defc6e89e74fdf158661d68023a2acc4a12675889"}
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m py_compile on producer, verifier, atlas generator and tests", "elapsed_seconds": 0.03, "status": "PASS"},
+      {"command": "json/schema parsing and explicit-path git diff --check", "status": "PASS"}
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 d_quotient_classical/compensator/two_phase_counterflow_causal_bv_parent_v2.py --check", "elapsed_seconds": 0.46, "status": "PASS", "method": "exact action/cotangent-derived U1 repair and explicit q70 matrix replay"},
+      {"command": "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_causal_bv_parent_v2.py", "elapsed_seconds": 6.13, "status": "PASS", "independent_rail": "reconstructs q16 from the original action and BRST/Noether rows, checks stored q/S/pairing matrices and hashes, applies orientation, deletion, pairing-sign, degree and homotopy mutations, and evaluates an exact two_j=1 Wigner block"},
+      {"command": "python3 -m pytest -q on repaired parent and atlas tests", "elapsed_seconds": 7.13, "status": "PASS", "tests": 4},
+      {"command": "atlas generator check and residual_atlas/validate_fragment.py", "elapsed_seconds": 0.15, "status": "PASS"},
+      {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true on parent, payload and receiver contract", "elapsed_seconds": 4.03, "status": "PASS"}
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {"command": "nine obstruction/V1/q54/Green/D/K imports content-hashed and semantic preconditions checked by producer and independent verifier", "status": "PASS"},
+      {"command": "bash ci/science-forge-shadow.sh", "elapsed_seconds": 4.70, "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS", "findings": "bridge audit reports existing drift; corpus 1371 versus baseline 976; Forge binary is an unpinned dirty development build; diagnostics /tmp/sf-shadow.6MrEn7"}
+    ]
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "criterion": "No programme freeze, release or global theorem promotion; the repaired interface has a complete affected certificate chain, exact scoped matrix replay and a method-distinct action reconstruction rail."
+  },
+  "claim_boundary": "The V2 parent repairs the diagonal-U1 orientation from the action and BV cotangent convention, reissues a degree-plus-one 70-row unary complex, explicit nondegenerate cyclic pairing, contraction, real structure and support-local advanced/retarded direct sum, and rejects stale V1 receivers. It does not establish the physical q70 cohomology or mode health, nonlinear q2 compatibility, Hadamard or quantum state data, QME, particles, positivity or unitarity.",
+  "higher_tiers_not_run": ["Tier 3 full repository suite; criterion recorded above"]
+}

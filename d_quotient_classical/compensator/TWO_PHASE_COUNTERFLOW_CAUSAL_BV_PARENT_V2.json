@@ -1,0 +1,628 @@
+{
+  "causal_direct_sum": {
+    "advanced_identity": "q70 Lambda70,- + Lambda70,- q70=I70",
+    "cyclic_adjoint": "q54 advanced/retarded adjointness direct-summed with the cyclic algebraic S16 block",
+    "formula": "Lambda70,+/-=Lambda54,+/- direct_sum S16_repaired",
+    "no_spatial_inverse": true,
+    "retarded_identity": "q70 Lambda70,+ + Lambda70,+ q70=I70",
+    "support": "Lambda54 has certified same-sided causal support; S16 is algebraic on the diagonal and is admissible in both support directions",
+    "zero_modes_retained": true
+  },
+  "claim_boundary": {
+    "does_not_establish": [
+      "physical q70 cohomology or mode health",
+      "nonlinear q2 compatibility",
+      "Hadamard or quantum state",
+      "QME, particle, positivity or unitarity claims"
+    ],
+    "establishes": [
+      "action/cotangent-derived diagonal-U1 orientation repair",
+      "explicit degree-plus-one 70-row unary and contraction",
+      "nondegenerate canonical cyclic pairing and real structure",
+      "support-local advanced/retarded direct-sum identities",
+      "V2 receiver contract with stale-V1 rejection"
+    ]
+  },
+  "content_hashes": {
+    "boundary_sha256": "905abe997aca60aebedfc5fd2fbce4dad58d9e1e28b6acb4f12edc4c8af223b2",
+    "causal_sha256": "ca5af5e2fe91ac60f4d2148cd4ae23c550bde574244841872acecdc23c38c626",
+    "checks_sha256": "19098ee412d98a7338fe9f4c0e9b983a23cc33bb7295fbc1233f34ec387ec805",
+    "layout_sha256": "9b62fc8bd9ecc6e73b170bb51366865f4c0876bff71d6b726f29839e075bb542",
+    "operators_sha256": "ab49abf256a1bd51f2ab34f1a8388a0b63f1dd8ba480c506db6379c23a081054",
+    "terminal_sha256": "fdb19f8f6b59218310618fa92f7b9640e84466c8b4d366a264a95650c92292ff"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "S70_cyclic": true,
+    "all_70_rows_explicit": true,
+    "pairing70_nondegenerate": true,
+    "pi26_iota70_identity": true,
+    "q70_S70_plus_S70_q70_identity": true,
+    "q70_cyclic": true,
+    "q70_degree_plus_one": true,
+    "q70_squared_zero": true,
+    "real_compatibility": true,
+    "side_conditions": true,
+    "support_local": true
+  },
+  "imports": {
+    "D_action_q54": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json",
+      "result_id": "BERGER_54_ROW_LOCAL_D_ACTION",
+      "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49",
+      "source_commit": "90bd7d3f3d2b13573ef527400ecd731096babbe3"
+    },
+    "K_Cartan_q54": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_CAUSAL_D_CARTAN_V2.json",
+      "result_id": "BERGER_CAUSAL_D_CARTAN_V2",
+      "sha256": "87c1b4d897d56bcfea51f79c71f6f0b387157fc8a76fb83eb909c8ef00d3f444",
+      "source_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0"
+    },
+    "gauge_fixed_q54": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0",
+      "source_commit": "445e26663d06764bc858ff0a004ba6178acce75f"
+    },
+    "grading_obstruction": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_V1",
+      "sha256": "a4e3ce0462344c05bb8ad1fa6d5c367bf2453b923916ba1aa34b58b8bee4a85c",
+      "source_commit": "238fdaec609d04be44bfcb97a21d13ee577a0eeb"
+    },
+    "grading_obstruction_payload": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_PAYLOAD_V1",
+      "sha256": "3e3bc451c7d3fec892634c9428cbda50bd274bd6dff3fbef2fa0fbc7e5407834",
+      "source_commit": "238fdaec609d04be44bfcb97a21d13ee577a0eeb"
+    },
+    "green_q54": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+      "result_id": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+      "sha256": "e92642b3225ab87b6058987f73f9ade3909646f2d0d3b95cc45cc9c5712b9c3b",
+      "source_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0"
+    },
+    "parent_payload_v1": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V1",
+      "sha256": "7c73705cc07062baf652c9cc0cb0977beda2a96d5b642fa186d6bfaeae01db57",
+      "source_commit": "951e88307abbea0996513773a33e66b37555272b"
+    },
+    "parent_v1": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1",
+      "sha256": "7d969e7e630f793dfe12fe07b0e98a67b2543f9aa85fa03277e491fb00296db7",
+      "source_commit": "951e88307abbea0996513773a33e66b37555272b"
+    },
+    "receiver_v1": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_RECEIVER_CONTRACT_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_RECEIVER_CONTRACT_V1",
+      "sha256": "d5efdfed97286aa9554e88a449e87941c3c589940845dbfe70209b513c59e3f7",
+      "source_commit": "951e88307abbea0996513773a33e66b37555272b"
+    }
+  },
+  "operator_hashes": {
+    "S70": "7a78eacf736018eefa4bf855d47613af257abd623cef7e10f5f316cb86dcbf19",
+    "iota70_from_26": "02682ad311475b08bf782ea590b9708bc65cd5046347bcad15bc2a5de95e46c9",
+    "pairing70": "a87aff20998b5899bb07b5e6889997ecd991b9073a2ee6fa373662a5783c9dcd",
+    "pi26_from_70": "ea99c740a44c1bae10c0cda629bfc6515dbf9beebac06b2d4c7606116015368d",
+    "q70": "9c26ca51c81863cdc51054ab6475525aea123e145152a8a0a5b6529e49a5e379",
+    "u1_S16": "7a7679349104852de2a91ed145b17c942c5e293b0618821bb2e3a9fa9bc33a6f",
+    "u1_pairing16": "c05db75b6b11bd79fea01ae7674868503b44f42f83bde4d5d5c970d689ed11a5",
+    "u1_q16": "802eeefb93765479c88adefd147221059074c438ac01016bd7f5daefd4f71fc8"
+  },
+  "payload_ref": {
+    "content_sha256": "7574f19f9626fba9287c5e2bc03e1f145e8f12f43f011425bdaac783cb3f9767",
+    "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V2.json",
+    "sha256": "c59b1a74aced082155db3446c40aa1b14e3982e66670a3c097539b25d5d5c938"
+  },
+  "receiver_ref": {
+    "content_sha256": "95fed96cb4e7d92e97b1450865095721c9fb93a1552fefd38cf4726281be4be7",
+    "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_RECEIVER_CONTRACT_V2.json",
+    "sha256": "8b2e8619af0cd67180c83f97a8166a25aae61d92f955cb20ad6f69834d004e2d"
+  },
+  "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2",
+  "result_state": "CERTIFIED_GRADED_CYCLIC_70_ROW_CAUSAL_BV_PARENT",
+  "row_layout": {
+    "component_rows": [
+      {
+        "degree": -1,
+        "index": 0,
+        "row_id": "c_spatial_1",
+        "sector": "minimal"
+      },
+      {
+        "degree": -1,
+        "index": 1,
+        "row_id": "c_spatial_2",
+        "sector": "minimal"
+      },
+      {
+        "degree": -1,
+        "index": 2,
+        "row_id": "c_spatial_3",
+        "sector": "minimal"
+      },
+      {
+        "degree": -1,
+        "index": 3,
+        "row_id": "tau",
+        "sector": "minimal"
+      },
+      {
+        "degree": -1,
+        "index": 4,
+        "row_id": "sigma",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 5,
+        "row_id": "h_hat_00",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 6,
+        "row_id": "h_hat_01",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 7,
+        "row_id": "h_hat_02",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 8,
+        "row_id": "h_hat_03",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 9,
+        "row_id": "h_hat_11",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 10,
+        "row_id": "h_hat_12",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 11,
+        "row_id": "h_hat_13",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 12,
+        "row_id": "h_hat_22",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 13,
+        "row_id": "h_hat_23",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 14,
+        "row_id": "h_hat_33",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 15,
+        "row_id": "R",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 16,
+        "row_id": "Theta",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 17,
+        "row_id": "b_diff_1",
+        "sector": "nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 18,
+        "row_id": "b_diff_2",
+        "sector": "nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 19,
+        "row_id": "b_diff_3",
+        "sector": "nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 20,
+        "row_id": "b_tau",
+        "sector": "nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 21,
+        "row_id": "b_sigma",
+        "sector": "nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 22,
+        "row_id": "bar_c_star_diff_1",
+        "sector": "nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 23,
+        "row_id": "bar_c_star_diff_2",
+        "sector": "nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 24,
+        "row_id": "bar_c_star_diff_3",
+        "sector": "nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 25,
+        "row_id": "bar_c_star_tau",
+        "sector": "nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 26,
+        "row_id": "bar_c_star_sigma",
+        "sector": "nonminimal_antighost_dual"
+      },
+      {
+        "degree": 1,
+        "index": 27,
+        "row_id": "h_hat_star_00",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 28,
+        "row_id": "h_hat_star_01",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 29,
+        "row_id": "h_hat_star_02",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 30,
+        "row_id": "h_hat_star_03",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 31,
+        "row_id": "h_hat_star_11",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 32,
+        "row_id": "h_hat_star_12",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 33,
+        "row_id": "h_hat_star_13",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 34,
+        "row_id": "h_hat_star_22",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 35,
+        "row_id": "h_hat_star_23",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 36,
+        "row_id": "h_hat_star_33",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 37,
+        "row_id": "R_star",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 38,
+        "row_id": "Theta_star",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 39,
+        "row_id": "b_star_diff_1",
+        "sector": "nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 40,
+        "row_id": "b_star_diff_2",
+        "sector": "nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 41,
+        "row_id": "b_star_diff_3",
+        "sector": "nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 42,
+        "row_id": "b_star_tau",
+        "sector": "nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 43,
+        "row_id": "b_star_sigma",
+        "sector": "nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 44,
+        "row_id": "bar_c_diff_1",
+        "sector": "nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 45,
+        "row_id": "bar_c_diff_2",
+        "sector": "nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 46,
+        "row_id": "bar_c_diff_3",
+        "sector": "nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 47,
+        "row_id": "bar_c_tau",
+        "sector": "nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 48,
+        "row_id": "bar_c_sigma",
+        "sector": "nonminimal_antighost"
+      },
+      {
+        "degree": 2,
+        "index": 49,
+        "row_id": "c_spatial_star_1",
+        "sector": "minimal"
+      },
+      {
+        "degree": 2,
+        "index": 50,
+        "row_id": "c_spatial_star_2",
+        "sector": "minimal"
+      },
+      {
+        "degree": 2,
+        "index": 51,
+        "row_id": "c_spatial_star_3",
+        "sector": "minimal"
+      },
+      {
+        "degree": 2,
+        "index": 52,
+        "row_id": "tau_star",
+        "sector": "minimal"
+      },
+      {
+        "degree": 2,
+        "index": 53,
+        "row_id": "sigma_star",
+        "sector": "minimal"
+      },
+      {
+        "Grassmann_parity": "even",
+        "bundle": "Omega0",
+        "degree": 0,
+        "ghost_number": 0,
+        "index": 54,
+        "row_id": "chi",
+        "sector": "diagonal_u1_repaired"
+      },
+      {
+        "Grassmann_parity": "odd",
+        "bundle": "Omega0",
+        "degree": -1,
+        "ghost_number": 1,
+        "index": 55,
+        "row_id": "c_U1",
+        "sector": "diagonal_u1_repaired"
+      },
+      {
+        "Grassmann_parity": "odd",
+        "bundle": "Omega1",
+        "degree": 1,
+        "ghost_number": -1,
+        "index": 56,
+        "row_id": "A_star_0",
+        "sector": "diagonal_u1_repaired"
+      },
+      {
+        "Grassmann_parity": "odd",
+        "bundle": "Omega1",
+        "degree": 1,
+        "ghost_number": -1,
+        "index": 57,
+        "row_id": "A_star_1",
+        "sector": "diagonal_u1_repaired"
+      },
+      {
+        "Grassmann_parity": "odd",
+        "bundle": "Omega1",
+        "degree": 1,
+        "ghost_number": -1,
+        "index": 58,
+        "row_id": "A_star_2",
+        "sector": "diagonal_u1_repaired"
+      },
+      {
+        "Grassmann_parity": "odd",
+        "bundle": "Omega1",
+        "degree": 1,
+        "ghost_number": -1,
+        "index": 59,
+        "row_id": "A_star_3",
+        "sector": "diagonal_u1_repaired"
+      },
+      {
+        "Grassmann_parity": "even",
+        "bundle": "Omega1",
+        "degree": 0,
+        "ghost_number": 0,
+        "index": 60,
+        "row_id": "B=A-dchi_0",
+        "sector": "diagonal_u1_repaired"
+      },
+      {
+        "Grassmann_parity": "even",
+        "bundle": "Omega1",
+        "degree": 0,
+        "ghost_number": 0,
+        "index": 61,
+        "row_id": "B=A-dchi_1",
+        "sector": "diagonal_u1_repaired"
+      },
+      {
+        "Grassmann_parity": "even",
+        "bundle": "Omega1",
+        "degree": 0,
+        "ghost_number": 0,
+        "index": 62,
+        "row_id": "B=A-dchi_2",
+        "sector": "diagonal_u1_repaired"
+      },
+      {
+        "Grassmann_parity": "even",
+        "bundle": "Omega1",
+        "degree": 0,
+        "ghost_number": 0,
+        "index": 63,
+        "row_id": "B=A-dchi_3",
+        "sector": "diagonal_u1_repaired"
+      },
+      {
+        "Grassmann_parity": "even",
+        "bundle": "Omega0",
+        "degree": 2,
+        "ghost_number": -2,
+        "index": 64,
+        "row_id": "c_U1_star",
+        "sector": "diagonal_u1_repaired"
+      },
+      {
+        "Grassmann_parity": "odd",
+        "bundle": "Omega0",
+        "degree": 1,
+        "ghost_number": -1,
+        "index": 65,
+        "row_id": "H=chi_star+delta_A_star",
+        "sector": "diagonal_u1_repaired"
+      },
+      {
+        "Grassmann_parity": "odd",
+        "bundle": "Omega0",
+        "degree": 1,
+        "ghost_number": -1,
+        "index": 66,
+        "row_id": "bar_c",
+        "sector": "diagonal_u1_repaired"
+      },
+      {
+        "Grassmann_parity": "even",
+        "bundle": "Omega0",
+        "degree": 0,
+        "ghost_number": 0,
+        "index": 67,
+        "row_id": "b",
+        "sector": "diagonal_u1_repaired"
+      },
+      {
+        "Grassmann_parity": "odd",
+        "bundle": "Omega0",
+        "degree": 1,
+        "ghost_number": -1,
+        "index": 68,
+        "row_id": "b_star",
+        "sector": "diagonal_u1_repaired"
+      },
+      {
+        "Grassmann_parity": "even",
+        "bundle": "Omega0",
+        "degree": 0,
+        "ghost_number": 0,
+        "index": 69,
+        "row_id": "bar_c_star",
+        "sector": "diagonal_u1_repaired"
+      }
+    ],
+    "degree_convention": "compact_degree=-ghost_number; q70 has degree +1",
+    "degree_ranks": [
+      6,
+      29,
+      29,
+      6
+    ],
+    "old_component_rows": 54,
+    "repaired_u1_component_rows": 16,
+    "total_rows": 70
+  },
+  "schema": "pure-weyl-two-phase-counterflow-causal-bv-parent-v2",
+  "terminal_verdict": {
+    "V1_interface_status": "SUPERSEDED_NOT_REWRITTEN",
+    "V2_receiver_activated": true,
+    "next_gate": "REPAIRED_Q70_GENERIC_ISOTYPICAL_HEALTH",
+    "physical_quotient_status": "OPEN",
+    "result_state": "CERTIFIED_GRADED_CYCLIC_70_ROW_CAUSAL_BV_PARENT"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-two-phase-counterflow-causal-bv-receiver-contract-v2.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "dependency_tags", "supersedes_interface", "receivers", "stale_hash_policy", "content_sha256"],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-causal-bv-receiver-contract-v2"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_RECEIVER_CONTRACT_V2"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "supersedes_interface": {"const": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_RECEIVER_CONTRACT_V1"},
+    "receivers": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Observer", "Nonlinear", "Bridge", "Quantum"],
+      "properties": {
+        "Observer": {"$ref": "#/$defs/receiver"}, "Nonlinear": {"$ref": "#/$defs/receiver"},
+        "Bridge": {"$ref": "#/$defs/receiver"}, "Quantum": {"$ref": "#/$defs/receiver"}
+      }
+    },
+    "stale_hash_policy": {"type": "object", "minProperties": 3},
+    "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {
+    "receiver": {
+      "type": "object", "additionalProperties": false,
+      "required": ["required_parent_result_id", "required_parent_content_sha256", "required_parent_state", "background", "charge_sector", "forbidden_promotions", "receives", "still_open"],
+      "properties": {
+        "required_parent_result_id": {"const": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2"},
+        "required_parent_content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "required_parent_state": {"const": "CERTIFIED_GRADED_CYCLIC_70_ROW_CAUSAL_BV_PARENT"},
+        "background": {"type": "string"}, "charge_sector": {"type": "string"},
+        "forbidden_promotions": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+        "receives": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+        "still_open": {"type": "string"}
+      }
+    }
+  }
+}

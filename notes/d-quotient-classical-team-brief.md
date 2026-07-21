@@ -3526,3 +3526,30 @@ and spatial gradient matrices remain `NOT_DEFINED` at this gate.  The
 separate q54 causal theorem and the algebraic contractibility of the U1 table
 remain valid; no Hadamard, observer, nonlinear, QME, particle, stability or
 unitarity conclusion follows.
+
+### Graded-cyclic q70 parent repair (2026-07-21)
+
+`TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2` closes the parent-interface
+defect without rewriting V1.  The diagonal-U1 chain is derived anew from the
+coordinate BRST rows, the invariant variables \(B=A-d\chi\) and
+\(H=\chi^*+\delta A^*\), the action density \(-2\langle B,B\rangle\), and
+the BV cotangent convention.  The resulting arrows are the transpose of the
+V1 multiplet table and all have compact-degree shift \(+1\).
+
+The explicit 70-row complex has degree ranks \((6,29,29,6)\).  All 317
+operator blocks have degree \(+1\), and the serialized q/S/pairing/iota/pi
+matrices pass nilpotency, contraction, side-condition, cyclicity,
+nondegeneracy and real-compatibility checks.  The canonical U1 pairs are
+`chi-H`, `c_U1-c_U1_star`, `B-A_star`, `bar_c-bar_c_star` and `b-b_star`.
+
+The causal homotopies are reissued as
+\(\Lambda_{70}^{\pm}=\Lambda_{54}^{\pm}\oplus S_{16}\): the q54 summand
+retains its pinned support/adjoint theorem and the repaired S16 summand is
+algebraic on the diagonal.  The V2 receiver contract rejects stale V1 parent,
+receiver and q2 hashes.  Thus nonlinear q2 and every physical isotypical
+quotient must be replayed against V2 explicitly.
+
+This is a unary graded-cyclic causal repair, not a physical-health theorem.
+Mode cohomology, pairing inertia, characteristics, stability, observers,
+Hadamard data, anomalies, QME, particles, positivity and unitarity remain
+open or unmapped.

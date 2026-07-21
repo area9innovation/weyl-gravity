@@ -1,0 +1,97 @@
+{
+  "content_sha256": "95fed96cb4e7d92e97b1450865095721c9fb93a1552fefd38cf4726281be4be7",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "receivers": {
+    "Bridge": {
+      "background": "same stationary Berger fixture a=1,c_squared=9/40",
+      "charge_sector": "fixed Q_rel leaf for receiver activation; unrestricted D remains charged",
+      "forbidden_promotions": [
+        "Hadamard",
+        "QME",
+        "physical cohomology",
+        "particle",
+        "unitarity"
+      ],
+      "receives": [
+        "selected action",
+        "graded cyclic q70",
+        "stress normalization"
+      ],
+      "required_parent_content_sha256": "7574f19f9626fba9287c5e2bc03e1f145e8f12f43f011425bdaac783cb3f9767",
+      "required_parent_result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2",
+      "required_parent_state": "CERTIFIED_GRADED_CYCLIC_70_ROW_CAUSAL_BV_PARENT",
+      "still_open": "replay any q70-dependent chain map against V2"
+    },
+    "Nonlinear": {
+      "background": "same stationary Berger fixture a=1,c_squared=9/40",
+      "charge_sector": "fixed Q_rel leaf for receiver activation; unrestricted D remains charged",
+      "forbidden_promotions": [
+        "Hadamard",
+        "QME",
+        "physical cohomology",
+        "particle",
+        "unitarity"
+      ],
+      "receives": [
+        "graded cyclic q70",
+        "K/D/R_rel ledger",
+        "selected action normalization"
+      ],
+      "required_parent_content_sha256": "7574f19f9626fba9287c5e2bc03e1f145e8f12f43f011425bdaac783cb3f9767",
+      "required_parent_result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2",
+      "required_parent_state": "CERTIFIED_GRADED_CYCLIC_70_ROW_CAUSAL_BV_PARENT",
+      "still_open": "rederive q2 against the V2 q70 hash; every V1 q2 hash is stale"
+    },
+    "Observer": {
+      "background": "same stationary Berger fixture a=1,c_squared=9/40",
+      "charge_sector": "fixed Q_rel leaf for receiver activation; unrestricted D remains charged",
+      "forbidden_promotions": [
+        "Hadamard",
+        "QME",
+        "physical cohomology",
+        "particle",
+        "unitarity"
+      ],
+      "receives": [
+        "graded cyclic q70",
+        "relative current",
+        "causal unary"
+      ],
+      "required_parent_content_sha256": "7574f19f9626fba9287c5e2bc03e1f145e8f12f43f011425bdaac783cb3f9767",
+      "required_parent_result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2",
+      "required_parent_state": "CERTIFIED_GRADED_CYCLIC_70_ROW_CAUSAL_BV_PARENT",
+      "still_open": "construct a repaired-parent physical quotient and detector map"
+    },
+    "Quantum": {
+      "background": "same stationary Berger fixture a=1,c_squared=9/40",
+      "charge_sector": "fixed Q_rel leaf for receiver activation; unrestricted D remains charged",
+      "forbidden_promotions": [
+        "Hadamard",
+        "QME",
+        "physical cohomology",
+        "particle",
+        "unitarity"
+      ],
+      "receives": [
+        "graded real cyclic causal q70",
+        "classical import hash",
+        "explicit cyclic pairing"
+      ],
+      "required_parent_content_sha256": "7574f19f9626fba9287c5e2bc03e1f145e8f12f43f011425bdaac783cb3f9767",
+      "required_parent_result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2",
+      "required_parent_state": "CERTIFIED_GRADED_CYCLIC_70_ROW_CAUSAL_BV_PARENT",
+      "still_open": "physical quotient, BRST Hadamard and QME remain separate gates"
+    }
+  },
+  "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_RECEIVER_CONTRACT_V2",
+  "schema": "pure-weyl-two-phase-counterflow-causal-bv-receiver-contract-v2",
+  "stale_hash_policy": {
+    "V1_parent_consumers": "HISTORICAL_NOT_AUTO_PROMOTED",
+    "V1_q2_or_receiver_hashes": "REJECT_FOR_V2_CLAIMS",
+    "consumer_action": "explicitly import this V2 result and independently replay the needed interface"
+  },
+  "supersedes_interface": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_RECEIVER_CONTRACT_V1"
+}
