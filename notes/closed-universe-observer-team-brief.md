@@ -2901,3 +2901,32 @@ frequency block is not a healthy preparation.  Raw $D$, $R_{\rm rel}$ and
 $K=D-H'(Q_{\rm rel})R_{\rm rel}$ remain separately typed.  Any new
 chain/cochain bridge or apparatus architecture requires explicit Phase 2
 authorization.
+
+## Active bridge: counterflow physical receiver not activated after health assembly
+
+The repaired-q70 health assembly now closes the next receiver gate without
+opening a new apparatus.  It forms the physical quotients for every $m,k$ at
+$j=0,1/2,1$ and proves their pairings nonradical.  That fact is not sufficient
+for a receiver preparation: the $j=0$ quotient has a real exponential
+direction, $j=1/2$ has a Hamiltonian--Hopf quartet, and $j=1$ has two
+complex-frequency sectors.  Every instability survives fixed charge.  On the
+remaining $j\geq3/2$ carrier the physical quotient, spectrum and pairing are
+all `NO_CERTIFIED_MAP`.
+
+The charge branches fail differently.  Fixed $Q_{\rm rel}$ removes the
+relative clock; unrestricted $Q_{\rm rel}$ retains the charged action--angle
+pair but has no certified healthy physical receiver block.  No common carrier
+therefore populates the thirteen required fields: local BV class, physical
+quotient, descended pairing, period, retarded support, monotone interval,
+positive denominator, separate $D/R_{\rm rel}/K$ actions, charge-fibre
+crosswalk, emitter and transported signal phase.  The operational ratio has
+empty domain, and no independent ratio evaluation is attempted after this
+first failed gate.
+
+The fail-closed atlas fragment is
+`counterflow-charged-time-physical-instantiation-after-repaired-q70-health-not-activated-fragment-v1`.
+Its three certified-isotype receiver rows are `OBSTRUCTED`; the higher-isotype
+receiver, thirteen-field interface and operational ratio are
+`NO_CERTIFIED_MAP`.  Reactivation requires a separately certified retuned
+action with one linearly healthy nonradical physical receiver and complete
+same-carrier $D/R_{\rm rel}/K$ data.

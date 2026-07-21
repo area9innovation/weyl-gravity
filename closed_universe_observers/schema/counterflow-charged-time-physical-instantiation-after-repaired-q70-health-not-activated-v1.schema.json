@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "payload_ref", "first_failed_receiver_gate", "thirteen_field_interface", "frequency_ratio_result", "paper_disposition", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "counterflow-charged-time-physical-instantiation-after-repaired-q70-health-not-activated-v1"},
+    "result_id": {"const": "COUNTERFLOW_CHARGED_TIME_PHYSICAL_INSTANTIATION_AFTER_REPAIRED_Q70_HEALTH_NOT_ACTIVATED_V1"},
+    "claim_status": {"const": "NOT_ACTIVATED_NO_COMMON_HEALTHY_PHYSICAL_CLOCK_RECEIVER_CARRIER"},
+    "atlas_status": {"const": "NO_CERTIFIED_MAP"},
+    "dependency_tags": {"type": "array", "uniqueItems": true, "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}, "contains": {"const": "REDUCED-MODE"}},
+    "dependency_refs": {"type": "object", "minProperties": 9, "additionalProperties": {"$ref": "#/$defs/ref"}},
+    "payload_ref": {"$ref": "#/$defs/ref"},
+    "first_failed_receiver_gate": {"type": "object"},
+    "thirteen_field_interface": {"type": "object", "minProperties": 13, "maxProperties": 13},
+    "frequency_ratio_result": {"type": "object"},
+    "paper_disposition": {"type": "object"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["generator_command", "independent_verifier_command", "source_sha256"], "properties": {"generator_command": {"type": "string"}, "independent_verifier_command": {"type": "string"}, "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  },
+  "$defs": {
+    "ref": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string"}, "result_id": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  }
+}

@@ -81,9 +81,11 @@ on the squashed Berger sphere, the round-style scalar exact-one-form sector
 is not closed under the gauge-fixed differential. Its leading defect is
 $93ik/40$ and is nonzero for every right weight $k\ne0$; the round-space
 mutation removes it. This is a failure of that decomposition, not a negative
-spectrum or a defect of the causal 70-row parent. The replacement now closes
-complete $SU(2)_L\times U(1)_R$ isotypical blocks under every mixed row before
-forming a physical quotient.
+spectrum or a defect of the causal 70-row parent. The replacement closes
+complete $SU(2)_L\times U(1)_R$ isotypical blocks and forms their physical
+quotients for every $m,k$ at $j=0,\frac12,1$.  Every certified quotient is
+nonradical but physically unstable; for $j\geq\frac32$ the physical quotient
+and spectrum remain `NO_CERTIFIED_MAP`.
 
 Two further promotions have now failed cleanly at their first maps. The
 selected Berger counterflow background is not a solution of conventional
@@ -118,7 +120,7 @@ quotients remain open.
 | Complete causal free complexes on several declared backgrounds | Relational clocks, causal redshift, and localized detector preparations | Invariant branch-resolved interactions |
 | Explicit Einstein-image and additional fourth-order classical summands | Bounded nonlinear continuation on selected finite mode spaces | Complete bounded finite-support cone |
 | Nonzero Lee--Wald pairings for selected additional directions | Schwarzschild horizon admissibility plus two-parity finite-norm Einstein selection at one fixture | Asymptotic Bach phase space and scattering |
-| Exact nonlinear balance conditions and a strict local Euclidean one-loop anomaly | A two-phase counterflow changed theory with a certified causal BV parent, exact charge--clock complementarity, and an integrable action--angle charged-clock block with positive transverse energy; compensator restoration and reduced Hadamard/Krein two-point functions on other carriers | All-Hodge health of the unrestricted charged-time counterflow branch, a full-BV state, Lorentzian QME, particles, and unitarity |
+| Exact nonlinear balance conditions, a repaired-$q_{70}$ health obstruction on every certified $j=0,\frac12,1$ physical block, and a strict local Euclidean one-loop anomaly | A two-phase counterflow changed theory with a certified causal BV parent, exact charge--clock complementarity, and an integrable action--angle charged-clock block with positive transverse energy; compensator restoration and reduced Hadamard/Krein two-point functions on other carriers | Higher-$j$ physical quotients, a healthy common clock--receiver carrier, a full-BV state, Lorentzian QME, particles, and unitarity |
 
 The [public construction map](../certificate_graph/universe-building-dag.svg)
 shows the dependency structure; the
@@ -483,8 +485,12 @@ the homogeneous clock is an integrable action--angle system with positive
 transverse energy and charge-dependent rate. A certified event-map preflight
 constructs a local-gauge-closed clock-slice observable and proves covariance,
 rather than quotient invariance, under the charged $R_{\rm rel}$ and $D$
-flows. Its physical nonzero receiver and redshift remain conditional on the
-unrestricted all-Hodge cohomology and descended pairing.
+flows.  The repaired-$q_{70}$ health assembly subsequently forms the physical
+quotients for $j=0,\frac12,1$: every certified block is nonradical but
+unstable, while the $j\geq\frac32$ quotient and pairing are undefined.  Fixed
+charge removes the clock.  Consequently no healthy common physical
+clock--receiver carrier, thirteen-field receiver interface or counterflow
+redshift is activated.
 
 This preflight has also been promoted to a general exact theorem for any
 physical action--angle clock with charged time translation. It proves the
@@ -545,7 +551,7 @@ to its derivation and verifier.
 | [Cyclic causal Green transfer](90-cyclic-green-transfer-bridge.md) | Abstract conditional theorem with Berger, flat, and Nariai consumers; one Nariai formal tangent | Extend to a finite background family or second detour theory. |
 | [Charge-fibre obstruction](91-charge-fibre-taub-bridge.md) | Formal cone, all-$\ell$ tuned standard cone, and all 164 two-momentum basis coefficients certified | Classify the common amplitude zero variety. |
 | [Additional axial/polar current](92-extra-axial-lee-wald-bridge.md) | Direct currents and the maximal pre-residual $H^0$ exact sequence are parity complete; the invariant source/image inertia mismatch obstructs every declared strict cyclic split | Construct the common constraint-algebroid/Kuranishi moment-map-zero carrier, then ask whether a non-strict homotopy and physical boundaries exist. |
-| Relational clock and light | Original spatially global retarded $G_0$ probe fixture certified on its declared carrier; the changed theory has a charged action--angle clock plus exact sharp, finite-resolution, reciprocity, composition and loop-holonomy laws, but no physical receiver | Phase~1 closes at the degree-zero local-cochain-to-$q_{70}$-chain obstruction; any new bridge or receiver architecture requires explicit Phase~2 authorization. |
+| Relational clock and light | Original spatially global retarded $G_0$ probe fixture certified on its declared carrier; the changed theory has conditional sharp, finite-resolution, reciprocity, composition and loop-holonomy laws, but its repaired-$q_{70}$ certified physical blocks are all unstable and the higher-$j$ receiver quotient is undefined | The operational counterflow ratio is `NOT_ACTIVATED`; require a separately certified retuned action with one healthy nonradical physical receiver and complete same-carrier $D/R_{\rm rel}/K$ data. |
 | Black-hole radiation | Static theorem and horizon reach in both parities; finite norm at infinity selects Einstein in both parities at one fixture | Generalize in frequency and $\ell$, then construct the asymptotic phase space. |
 | Einstein--Weyl relative theory | Matching action-derived tensors through $q_3$; strict $f_1$ has a nonzero arity-two defect; global five-charge receiver and Hessian Green-current cone certified | Precompose all stabilizers, add cyclic duals, compare with Lee--Wald, and determine the correct relative nonlinear extension. |
 | Residual branch mixing | Retained cyclic representative and rank-46 carrier exist; physical interaction class not certified | Finish the second-jet image test and obtain an admissible branch resolution. |

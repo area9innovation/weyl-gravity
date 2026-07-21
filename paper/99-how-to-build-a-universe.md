@@ -241,13 +241,14 @@ is exactly obstructed.  Phase~1 therefore ends before a receiver quotient,
 nonradical period or operational frequency-ratio domain; it does not open a
 new bridge or apparatus architecture.
 
-The changed clock now also has a finite-resolution theorem. A real clock
-cannot select an infinitely sharp instant, so the construction replaces the
-ideal slice by a narrow sampling window. The observable remains causal and
-its error decreases quadratically with the window width, provided a physical
-receiver survives the pending wave reduction. That condition has not yet
-been met, so this is a tested measurement rule rather than a new redshift
-result.
+The changed clock also has a finite-resolution theorem. A real clock cannot
+select an infinitely sharp instant, so the construction replaces the ideal
+slice by a narrow sampling window. The conditional observable remains causal
+and its error decreases quadratically with the window width.  The repaired
+wave reduction now gives a fail-closed answer: every certified physical block
+through $j=1$ is nonradical but unstable, while the higher-$j$ physical
+quotient is undefined.  Fixed charge removes the clock.  Thus the measurement
+rule remains exact, but no operational counterflow redshift is activated.
 
 The comparison rules also work for chains of clocks. Two successive frequency
 ratios multiply to the direct ratio only when both comparisons use the same
@@ -255,8 +256,9 @@ middle clock record and the same physical charge sector. Around a loop, any
 remaining factor records how the clock conventions or charge sectors were
 matched. If no such matching exists, the comparison is undefined rather than
 a mysterious physical effect. This is an exact consistency test for a future
-clock network, still conditional on finding a nonzero physical receiver in
-the changed theory.
+clock network.  Its current counterflow instantiation is `NOT_ACTIVATED`;
+using it physically requires a separately certified retuned action with one
+healthy nonradical receiver and a complete same-carrier clock/action map.
 
 ### 2. Nonlinear balance removes some waves—and resonance adds another test
 

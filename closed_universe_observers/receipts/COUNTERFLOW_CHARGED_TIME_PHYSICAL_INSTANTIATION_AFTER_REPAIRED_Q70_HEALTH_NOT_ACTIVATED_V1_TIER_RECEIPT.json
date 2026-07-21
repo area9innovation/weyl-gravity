@@ -1,0 +1,61 @@
+{
+  "claim_result_id": "COUNTERFLOW_CHARGED_TIME_PHYSICAL_INSTANTIATION_AFTER_REPAIRED_Q70_HEALTH_NOT_ACTIVATED_V1",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "higher_tiers": {
+    "tier_2": {
+      "criterion": "All mathematical inputs are unchanged content-addressed terminal certificates and payloads; no shared operator or upstream certificate changed.",
+      "status": "NOT_RUN"
+    },
+    "tier_3": {
+      "criterion": "This is a scoped observer consumer nonactivation, not a classical/quantum freeze, tag or release.",
+      "status": "NOT_RUN"
+    }
+  },
+  "independence": {
+    "producer": "serializes the receiver gate and thirteen-field nonactivation from the repaired-q70 health assembly",
+    "verifier": "reconstructs the certified block instability, pairing radical, charge-branch and remaining-carrier predicates directly from the health certificate and payload",
+    "status": "METHOD_DISTINCT"
+  },
+  "pdf_build": {
+    "paper": "paper/09-relational-clocks-berger-d-cartan.tex",
+    "passes": 2,
+    "sha256": "8369456efda81b39c241a0cd53154b2acc75cba531085123935736da0242b8f9",
+    "warnings": 0
+  },
+  "result_id": "COUNTERFLOW_CHARGED_TIME_PHYSICAL_INSTANTIATION_AFTER_REPAIRED_Q70_HEALTH_NOT_ACTIVATED_V1_TIER_RECEIPT",
+  "schema": "science-forge-tier-receipt-v1",
+  "tests": [
+    {
+      "command": "python3 -m py_compile closed_universe_observers/generate_counterflow_charged_time_physical_instantiation_after_repaired_q70_health_nonactivation.py closed_universe_observers/verify_counterflow_charged_time_physical_instantiation_after_repaired_q70_health_nonactivation.py closed_universe_observers/atlas/generate_counterflow_charged_time_physical_instantiation_after_repaired_q70_health_nonactivation_atlas.py",
+      "elapsed_seconds": "0.04",
+      "status": "PASS",
+      "tier": 0
+    },
+    {
+      "command": "python3 -m closed_universe_observers.generate_counterflow_charged_time_physical_instantiation_after_repaired_q70_health_nonactivation --write && python3 -m closed_universe_observers.atlas.generate_counterflow_charged_time_physical_instantiation_after_repaired_q70_health_nonactivation_atlas --write",
+      "elapsed_seconds": "0.08",
+      "status": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_counterflow_charged_time_physical_instantiation_after_repaired_q70_health_nonactivation",
+      "elapsed_seconds": "0.08",
+      "status": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "pytest -q closed_universe_observers/tests/test_counterflow_charged_time_physical_instantiation_after_repaired_q70_health_nonactivation.py closed_universe_observers/tests/test_counterflow_charged_time_physical_instantiation_after_repaired_q70_health_nonactivation_atlas.py",
+      "elapsed_seconds": "0.39",
+      "result": "6 passed in 0.14s",
+      "status": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=/tmp/tmp.8pTvXLyVUo paper/09-relational-clocks-berger-d-cartan.tex (passes 9 and 10); reject any !, LaTeX/Package warning, undefined control sequence, overfull or underfull diagnostic",
+      "elapsed_seconds": "1.70",
+      "result": "two consecutive warning-free builds",
+      "status": "PASS",
+      "tier": 1
+    }
+  ]
+}
