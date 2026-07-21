@@ -1,0 +1,141 @@
+{
+  "claim_boundary": "Pins the selected alpha_B=3 covariant action, canonical constraint ledger and complete covariant second-order correction, and certifies the first exact representation/normalization obstruction to a cubic canonical tensor export. It does not compute any D3 coefficient, choose a boundary term, invent canonical momenta, evaluate the third-order Kuranishi class, or promote bounded, causal, particle, positivity, unitarity or quantum claims.",
+  "classification": {
+    "absent_coefficient_inserted_as_zero": false,
+    "action_normalized_Hperp_D3_exported": false,
+    "arity_three_noether_exported": false,
+    "background_ostrogradsky_magnitude_present": false,
+    "balanced_correction_pinned": true,
+    "canonical_constraint_ledger_pinned": true,
+    "causal_particle_or_quantum_claim": false,
+    "complete_cubic_tensor_exported": false,
+    "covariant_to_canonical_correction_crosswalk_present": false,
+    "exact_action_to_canonical_normalization_present": false,
+    "selected_covariant_action_pinned": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "first_absent_export": {
+    "downstream_unavailable": [
+      "D3C_barPhi[u,u,u]",
+      "mixed D2C_barPhi[u,v]",
+      "five stabilizer projections",
+      "resonant ell=2 q_minus/p_extra projections",
+      "second action jet and arity-three Noether identity"
+    ],
+    "missing_map": "the exact alpha_B=3 action-to-canonical map giving P^ij and pi^ij, including background magnitude and boundary-term convention",
+    "required_crosswalk": "for every stored covariant correction channel, export (delta h,delta K,delta pi,delta P,delta a,delta E) with time/conjugation rules in the canonical ledger convention",
+    "row": "H_perp",
+    "term": "-(P_ij P^ij)/(2 sqrt(h))",
+    "why_first": "D3H_perp already depends on the suppressed P normalization; later harmonic projection cannot repair an undefined local coefficient"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "mutations": {
+    "infer_arity_three_Noether_from_linear_symbol": "REJECTED: rank and first-class counting do not determine the second action jet",
+    "set_missing_momenta_to_zero": "REJECTED: the correction is a covariant solution, not a certified zero-momentum canonical representative",
+    "set_suppressed_scale_to_one": "REJECTED: scale=1 is a new convention, not a consequence of the selected action certificate",
+    "use_covariant_Euler_rows_as_constraints": "REJECTED: no typed projection identifies those rows with the seven canonical constraints in the higher-derivative phase space"
+  },
+  "next_gate": "derive and certify the alpha_B=3 Ostrogradsky canonical transformation, boundary-term convention, exact background P magnitude, and channelwise covariant-to-canonical correction crosswalk before retrying D3C",
+  "normalization_witness": {
+    "conclusion": "both nonzero canonical normalizations preserve the imported rank-only symbol theorem but give different action-normalized cubic coefficients",
+    "epsilon_cubed_coefficient": "scale**2/32",
+    "isolated_constraint_term": "-(P_ij P^ij)/(2 sqrt(h))",
+    "one_slot_jet": "h=1+epsilon, P=scale*(1+epsilon)",
+    "scale_1": "1/32",
+    "scale_2": "1/8"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_weyl_compact_cauchy_cubic_constraint_tensor_export.py",
+    "generator_sha256": "ca741d834ea778e1640f1433969f02794079a2ea7d853b77ce43d48b5d49dc1d",
+    "inputs": {
+      "balanced_correction": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_BALANCED_ELL0_SECOND_ORDER",
+        "sha256": "13fc90b0ef18c6bf6a8f4f1a397c86aa235ed87fa86a3c3bf5ad031bc2304cfe"
+      },
+      "canonical_constraint_ledger": {
+        "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_CONSTRAINT_FREDHOLM_GATE_V1.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_CONSTRAINT_FREDHOLM_GATE_V1",
+        "sha256": "261c77431cca2afb5facf65d33be7388f291757290cbc4129fc05e69c1a6c303"
+      },
+      "polar_field_crosswalk": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_FULL_TENSOR",
+        "sha256": "2cd92c4fc638ce5f3c26fc890e54908d8f2c8beec55efb3e90eee7b3affd8368"
+      },
+      "selected_action": {
+        "path": "bridge/certificates/einstein_maxwell_product_incidence.json",
+        "result_id": "EINSTEIN_MAXWELL_PRODUCT_INCIDENCE",
+        "sha256": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+      },
+      "third_order_gate": {
+        "path": "bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_INPUT_OBSTRUCTION_V1.json",
+        "result_id": "EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_INPUT_OBSTRUCTION_V1",
+        "sha256": "e2a80e947b4ea640ffd0a9aadcfffeaca602dfa4610a3387aefd934515c394fc"
+      }
+    }
+  },
+  "representation_audit": {
+    "background_momentum_boundary": "parallel traceless P0^ij proportional to diag(-2,1,1); the suppressed nonzero action normalization does not affect ranks",
+    "boundary_term_issue": "the selected covariant C^2 action has no content-addressed boundary-term/canonical-transformation convention fixing pi and P",
+    "canonical_pairs": [
+      "(h_ij,pi^ij)",
+      "(K_ij,P^ij)",
+      "(a_i,E^i)"
+    ],
+    "conclusion": "the stored covariant correction cannot be inserted into the seven-row canonical constraint map in the same action normalization",
+    "constraint_rows": [
+      "H_perp",
+      "H_1",
+      "H_2",
+      "H_3",
+      "P_trace",
+      "Q_scale",
+      "Gauss"
+    ],
+    "covariant_correction_coordinates": [
+      "ell>=2: A_t=A+K,B,C_t=C-K,U",
+      "ell=0: C,K,U"
+    ],
+    "missing_canonical_coordinates": [
+      "delta K_ij",
+      "delta pi^ij",
+      "delta P^ij",
+      "delta E^i"
+    ],
+    "normalization_boundary": "The displayed unbarred pure-Weyl formulas use a nonzero canonical rescaling relative to alpha_B=3. The exact symbol ranks, TT kernel and Fredholm obstruction are invariant under that rescaling; no numerical Hamiltonian-energy claim is made."
+  },
+  "result_id": "EINSTEIN_WEYL_COMPACT_CAUCHY_CUBIC_CONSTRAINT_TENSOR_EXPORT_OBSTRUCTION_V1",
+  "result_state": "ACTION_PINNED_CUBIC_CANONICAL_EXPORT_OBSTRUCTED_BY_MISSING_NORMALIZED_OSTROGRADSKY_CROSSWALK",
+  "schema": "einstein-weyl-compact-cauchy-cubic-constraint-tensor-export-obstruction-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein-weyl-compact-cauchy-cubic-constraint-tensor-export-obstruction-v1.schema.json",
+  "schema_sha256": "fb3584add93b280dfc4f050f100903f41936478fa08b30c908e1116397c825cd",
+  "scope": {
+    "background": "compactified magnetically supported Plebanski-Hacyan",
+    "boundaries": "compact Cauchy slice S1_L x S2 before stabilizer reduction",
+    "carrier": "balanced ell=2,m=0,k=0 first-order fixture and stored ell=0,2,4 second-order correction",
+    "charge_sector": "fixed P_N,N=2 and fixed Q_e; based Maxwell gauge; W_x retained",
+    "degree": "cubic constraint/action derivative export preflight",
+    "ell": "required output 2,4,6",
+    "k": "0",
+    "m": "0",
+    "omega": "sixteen-point odd frequency lattice imported from the third-order gate",
+    "parity": "axial first order, polar second order, axial cubic output",
+    "theory": "Weyl-Maxwell canonical constraint export from the selected alpha_B=3 action"
+  },
+  "selected_action": {
+    "action": "S_WM=int sqrt(-g)[(alpha_B/8) C_abcd C^abcd-(1/4)F_ab F^ab]",
+    "alpha_B": "3",
+    "covariant_equation": "alpha_B B_ab=T_ab; nabla_a F^ab=0; dF=0",
+    "status": "PINNED_BY_CONTENT_HASH"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_weyl_compact_cauchy_cubic_constraint_tensor_export --verify bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_CUBIC_CONSTRAINT_TENSOR_EXPORT_OBSTRUCTION_V1.json",
+    "python3 bridge/einstein_sector/verify_einstein_weyl_compact_cauchy_cubic_constraint_tensor_export.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_compact_cauchy_cubic_constraint_tensor_export",
+    "python3 -m bridge.einstein_sector.generate_cubic_constraint_tensor_export_atlas --check"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "Pins the selected alpha_B=3 covariant action, canonical constraint ledger and complete covariant second-order correction, and certifies the first exact representation/normalization obstruction to a cubic canonical tensor export. It does not compute any D3 coefficient, choose a boundary term, invent canonical momenta, evaluate the third-order Kuranishi class, or promote bounded, causal, particle, positivity, unitarity or quantum claims.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_CUBIC_CONSTRAINT_TENSOR_EXPORT_OBSTRUCTION_V1.json",
+          "result_id": "EINSTEIN_WEYL_COMPACT_CAUCHY_CUBIC_CONSTRAINT_TENSOR_EXPORT_OBSTRUCTION_V1",
+          "sha256": "590a73db70dc193ecbbd6c3c41e06162797ec11808f6070eb4312476a129660b"
+        }
+      ],
+      "id": "einstein.ph.wm.compact_cauchy.cubic_constraint_tensor_export_gate",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The imported sixteen-point lattice remains certified; no cubic coefficient is supplied.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "A covariant current does not provide the missing action-to-canonical momentum crosswalk.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "Shell locations are known, source projections are not.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No cubic canonical tensor can be projected onto the resonant shells.",
+            "status": "OBSTRUCTED"
+          },
+          "causal_retarded": {
+            "statement": "No causal carrier.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No source coefficient to classify.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "The first action-normalized H_perp cubic row is undefined because the Ostrogradsky normalization and momenta are not fixed.",
+          "status": "OBSTRUCTED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan",
+        "boundaries": "compact Cauchy slice S1_L x S2 before stabilizer reduction",
+        "carrier": "balanced ell=2,m=0,k=0 first-order fixture and stored ell=0,2,4 second-order correction",
+        "charge_sector": "fixed P_N,N=2 and fixed Q_e; based Maxwell gauge; W_x retained",
+        "degree": "cubic constraint/action derivative export preflight",
+        "ell": "required output 2,4,6",
+        "k": "0",
+        "m": "0",
+        "omega": "sixteen-point odd frequency lattice imported from the third-order gate",
+        "parity": "axial first order, polar second order, axial cubic output",
+        "theory": "Weyl-Maxwell canonical constraint export from the selected alpha_B=3 action"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/generate_cubic_constraint_tensor_export_atlas.py",
+  "generated_by_sha256": "9df24b0fc36de3d958d59e87b6eb6beec92bd22584282156fe8004dbe7eb0021",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_nonlinear",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.generate_cubic_constraint_tensor_export_atlas --check",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-weyl-compact-cauchy-cubic-constraint-tensor-export-obstruction-fragment-v1.json"
+  ]
+}

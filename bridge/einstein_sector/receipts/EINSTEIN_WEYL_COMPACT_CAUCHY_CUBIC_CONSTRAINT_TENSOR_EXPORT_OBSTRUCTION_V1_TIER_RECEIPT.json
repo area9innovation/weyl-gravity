@@ -1,0 +1,54 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_COMPACT_CAUCHY_CUBIC_CONSTRAINT_TENSOR_EXPORT_OBSTRUCTION_V1",
+  "date": "2026-07-21",
+  "base_commit": "07680fe7fc707d2dfa9fe7812eeb22676d809606",
+  "artifacts": [
+    {"path": "bridge/einstein_sector/einstein_weyl_compact_cauchy_cubic_constraint_tensor_export.py", "sha256": "ca741d834ea778e1640f1433969f02794079a2ea7d853b77ce43d48b5d49dc1d"},
+    {"path": "bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_CUBIC_CONSTRAINT_TENSOR_EXPORT_OBSTRUCTION_V1.json", "sha256": "590a73db70dc193ecbbd6c3c41e06162797ec11808f6070eb4312476a129660b"},
+    {"path": "bridge/einstein_sector/verify_einstein_weyl_compact_cauchy_cubic_constraint_tensor_export.py", "sha256": "35452788efd7c6e1039152cf0969bed6cbc845fabf5091cb5e15daa55fa38948"},
+    {"path": "bridge/einstein_sector/tests/test_einstein_weyl_compact_cauchy_cubic_constraint_tensor_export.py", "sha256": "bea49738906c3758aa85666bcbcfc737412234aee11eeda238e9a4cde64951cb"},
+    {"path": "bridge/einstein_sector/schema/einstein-weyl-compact-cauchy-cubic-constraint-tensor-export-obstruction-v1.schema.json", "sha256": "fb3584add93b280dfc4f050f100903f41936478fa08b30c908e1116397c825cd"},
+    {"path": "bridge/einstein_sector/generate_cubic_constraint_tensor_export_atlas.py", "sha256": "9df24b0fc36de3d958d59e87b6eb6beec92bd22584282156fe8004dbe7eb0021"},
+    {"path": "residual_atlas/einstein-weyl-compact-cauchy-cubic-constraint-tensor-export-obstruction-fragment-v1.json", "sha256": "3c43a4fe1cfb957f473a46482c0cb5ed9e9f5483fb5e7912f5e6cc41f0619171"},
+    {"path": "reports/bridge-compact-cauchy-cubic-constraint-tensor-export-closeout-2026-07-21.md", "sha256": "50e78072804cdd34f5a632dc2c73d55d793a983e7d34e4f23309c7864601d384"},
+    {"path": "notes/d-quotient-einstein-team-brief.md", "sha256": "183f283b972361a8248ca8c472161504bf3832659d5603f1cbc884a20f1db8ef"}
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on producer, verifier, tests and atlas generator",
+        "python3 -m json.tool on certificate, schema, atlas and receipt",
+        "git diff --check on scoped paths"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "producer exact replay",
+        "method-distinct action/ledger/correction representation audit",
+        "exact independent scale-ambiguity reconstruction",
+        "seven replay and mutation tests",
+        "generated atlas equality and strict atlas validation"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The selected action, canonical ledger, polar field coordinates, balanced correction and predecessor gate are hash pinned; the normalization witness is independently reconstructed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "Scoped representation/normalization obstruction, not a release, shared-core change or cubic tensor freeze."
+    }
+  },
+  "mutations": {
+    "scale_equals_one": "rejected as an uncertified convention",
+    "missing_momenta_zero": "rejected as an uncertified canonical representative",
+    "Euler_rows_equal_constraints": "rejected without a typed higher-derivative projection",
+    "false_Hperp_export": "rejected by schema",
+    "false_arity_three_Noether": "rejected by schema",
+    "insert_absent_zero": "rejected by schema"
+  },
+  "claim_boundary": "Pins the same covariant action and certifies the first canonical representation/normalization obstruction only; no cubic coefficient, Kuranishi evaluation, bounded/causal, particle, positivity, unitarity or quantum result is promoted."
+}

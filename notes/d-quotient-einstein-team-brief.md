@@ -5058,3 +5058,39 @@ Evidence is
 `bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_INPUT_OBSTRUCTION_V1.json`;
 the fail-closed atlas row is
 `einstein.ph.wm.mixed_charge.third_order_kuranishi_input_gate`.
+
+## Cubic canonical constraint export obstruction
+
+The requested same-action cubic tensor export stops before harmonic
+projection. The selected covariant action is content-addressed at
+`alpha_B=3`, the seven-row canonical constraint ledger is imported, and the
+complete covariant second-order correction is present. Their representation
+bridge is not.
+
+The canonical ledger explicitly states that its pure-Weyl variables use an
+unspecified nonzero rescaling relative to the selected action and that the
+background Ostrogradsky momentum is only proportional to `diag(-2,1,1)` with
+its magnitude suppressed. The stored correction supplies covariant reduced
+coordinates `(A_t,B,C_t,U)` (and homogeneous `(C,K,U)`), but no certified
+channelwise values for `(delta K,delta pi,delta P,delta E)` in a declared
+higher-derivative boundary-term convention.
+
+This already makes the first `H_perp` cubic row undefined. For the displayed
+term `-(P_ij P^ij)/(2 sqrt(h))`, the one-slot jet
+`h=1+epsilon`, `P=s*(1+epsilon)` has epsilon-cubed coefficient `s^2/32`.
+The admissible normalized choices `s=1` and `s=2` give `1/32` and `1/8` while
+preserving the imported rank-only symbol theorem. Choosing `s=1`, setting the
+missing momenta to zero, or identifying covariant Euler rows with canonical
+constraints would therefore add a convention not certified by the inputs.
+
+No cubic coefficient is set to zero. `D3C`, mixed `D2C[u,v]`, the five
+stabilizer projections, resonant shell projections, and the arity-three
+Noether identity remain unavailable. The next gate is the exact
+`alpha_B=3` Ostrogradsky transformation and boundary-term convention,
+including the background momentum magnitude and the full covariant-to-
+canonical correction crosswalk.
+
+Evidence is
+`bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_CUBIC_CONSTRAINT_TENSOR_EXPORT_OBSTRUCTION_V1.json`;
+the fail-closed atlas row is
+`einstein.ph.wm.compact_cauchy.cubic_constraint_tensor_export_gate`.
