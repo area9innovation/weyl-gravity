@@ -1,0 +1,152 @@
+{
+  "carrier_exponents_axial": {
+    "powers": {
+      "-I*omega": "-2*I*omega",
+      "I*omega": "2*I*omega"
+    },
+    "rate_condition": "lambda**2 + omega**2 = 0",
+    "rates": [
+      "-I*omega",
+      "I*omega"
+    ],
+    "reading": "psi_carrier ~ exp(+- I omega r) r^{+- 2 I omega} = exp(+- I omega r_*); amplitude real part 0"
+  },
+  "claim_flags": {
+    "asymptotic_phase_space_constructed": false,
+    "axial_carrier_exponents_symbolic_certified": true,
+    "axial_divergent_table_symbolic_certified": false,
+    "axial_einstein_literal_flux_symbolic_certified": true,
+    "conjugate_frequency_pairing_theorem_certified": false,
+    "finite_divergent_split_omega_independent_certified": true,
+    "general_l_certified": false,
+    "no_real_exceptional_frequency_certified": true,
+    "numeric_anchor_hashed": true,
+    "polar_literal_flux_symbolic_recomputed": false,
+    "summability_certified": false,
+    "symbolic_log_tails_certified": false
+  },
+  "declaration": {
+    "background_family": "Schwarzschild m = 1; symbolic real omega",
+    "conformal_frame": "working gauge; ingoing EF chart",
+    "generator": "none; asymptotic Lee--Wald slice-norm classification",
+    "infinity_condition": "leading (r-power, log-power) and leading coefficient of F^v per class",
+    "lifecycle": "CLASSIFIED",
+    "phase_space": "EF sphere-integrated Lee--Wald slice density F^v on conjugate mode-pair classes",
+    "sector": "axial l = 2 (literal flux); trace-free Ricci carrier (extra branch)",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "any finite-flux statement for the DIVERGENT (extra-involving) classes at symbolic omega beyond the omega = 3/5 fixture anchor and the exponent-level omega-independence argument",
+    "a Lorentzian causal, spectral (quasinormal), scattering, stability, positivity, particle, or quantum claim",
+    "a phase-space / charge-algebra construction or a pairing theorem",
+    "convergence or summability of the formal mode series",
+    "any statement at omega = 0 (the excluded exceptional carrier) or for general l"
+  ],
+  "einstein_literal_flux_axial": {
+    "E0|E0": {
+      "finite": true,
+      "leading_coeff": "-96*I*pi*alpha*omega/5",
+      "leading_power": [
+        -2,
+        0
+      ]
+    },
+    "E2|E2": {
+      "finite": true,
+      "leading_coeff": "-13824*I*pi*alpha*omega**7/(5*(4*omega**2 + 1)*(1048576*omega**12 - 1048576*omega**10 + 1220608*omega**8 - 571392*omega**6 + 119952*omega**4 - 10287*omega**2 + 324))",
+      "leading_power": [
+        -2,
+        0
+      ]
+    }
+  },
+  "frequency_dependence": {
+    "einstein_amplitude_real_parts": {
+      "flux_density_ExE_leading_power": -2,
+      "metric_master_F": [
+        "-3 (mu=0 branch)",
+        "+1 (mu=-2omega branch)"
+      ]
+    },
+    "excluded_frequency": "omega = 0 (certified exceptional carrier, BH2C_SYMBOLIC_INDICIAL exceptional set {0})",
+    "extra_carrier_amplitude_real_part": 0,
+    "finite_divergent_split_omega_independent": true,
+    "no_real_exceptional_frequency": "exponents +-I omega, +-2 I omega are never real and never collide for real omega != 0",
+    "omega_enters_only_imaginary_tortoise_phase": true
+  },
+  "headline": {
+    "complement": "the horizon endpoint diagnostics do not exclude the extra branch (certified dispositions); at infinity symplectic-norm finiteness selects the Einstein sector -- a phase-space normalization, not a local boundary condition; the selection is omega-independent as a derived fact",
+    "statement": "at symbolic real omega the axial Einstein conjugate pairs give a literal Lee--Wald slice density falling as r^-2 (FINITE, omega-independent), while the extra (trace-free Ricci carrier) branch has amplitude real part 0 (non-decaying): the finite-slice-norm asymptotic phase space contains exactly the Einstein sector, for every real omega != 0"
+  },
+  "missing_objects": [
+    "the EXACT symbolic-omega DIVERGENT sub-table (E|X, X|X) and symbolic log tails: the composed sourced log solve over Q(omega) did not complete a bounded run; anchored at omega = 3/5 by the two fixtures plus the omega-independent exponent argument",
+    "the polar literal symbolic flux (recomputed): carried here by the parity-unified master ODE and BH2B_POLAR_FLUX nullness plus the polar fixture, not recomputed symbolically",
+    "a conjugate-frequency pairing theorem, lift invariance, and an independent current-identity rail at symbolic omega",
+    "an asymptotically flat phase-space and charge-algebra construction",
+    "Borel/analytic summability of the mode series; general l"
+  ],
+  "numeric_anchor": {
+    "axial_fixture": "black_hole_programme/certificates/BH2C_FLUX_CLASS.json",
+    "axial_fixture_sha256": "cf6ea556ebb2c42d3db0f3efc11c18d32a39f6c2acdd70a34de586725a972c01",
+    "axial_fixture_table": {
+      "E0|E0": [
+        "-2",
+        0
+      ],
+      "E0|X0": [
+        "0",
+        0
+      ],
+      "E2|E2": [
+        "-2",
+        0
+      ],
+      "E2|X2": [
+        "1",
+        0
+      ],
+      "X0|X0": [
+        "0",
+        1
+      ],
+      "X2|X2": [
+        "2",
+        0
+      ]
+    },
+    "polar_fixture": "black_hole_programme/certificates/BH2C_POLAR_FLUX_CLASS.json",
+    "polar_fixture_sha256": "e547439682a65a689c0c1bb8049a06e99638cbe91056918e3e5ffa39c1080f47",
+    "reading": "the omega = 3/5 specialization of this pipeline is the certified axial fixture (E0|E0 = E2|E2 = (-2,0) finite; extra-involving classes non-negative/divergent, X0|X0 with log); polar fixture selects the Einstein sector in the polar parity"
+  },
+  "provenance": {
+    "all_orders_certificate": "black_hole_programme/certificates/BH2C_METRIC_ALL_ORDERS.json",
+    "all_orders_certificate_sha256": "41efc9c13bf1637bbff3cd5f3c1e6e8f90744ce4abc7128ae5ea8f0afb1b7916",
+    "bach_engine_sha256": "17af69d23396452fc1a60306787a38276b12ebcabec72dc397e69533486f120a",
+    "engine_path": "black_hole_programme/weyl_geometry.py",
+    "engine_sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "flux_matrix_certificate": "black_hole_programme/certificates/BH2A_FLUX_MATRIX.json",
+    "flux_matrix_certificate_sha256": "95ca6daeabb16bf93faa1bb721e3464fc5363899a344f0281d126f9a14204732",
+    "generator_path": "black_hole_programme/bh2c_symbolic_flux_radiation_class.py",
+    "symbolic_indicial_certificate": "black_hole_programme/certificates/BH2C_SYMBOLIC_INDICIAL.json",
+    "symbolic_indicial_certificate_sha256": "a28ab13dda157111413138d3e28a3aa85eb1011927dfd574736c7f7dc80a9c67",
+    "theta_engine_sha256": "a18f2e843eb34becff9e84c0853ab8afa91db11d8edbdf1ec00bacc46b2aecab"
+  },
+  "result_id": "PURE_WEYL_BH2C_SYMBOLIC_FLUX_RADIATION_CLASS",
+  "result_token": "BH2C_SYMBOLIC_FREQUENCY_FINITE_FLUX_RADIATION_CLASS_EINSTEIN_SELECTED",
+  "schema": "pure-weyl-bh2c-symbolic-flux-radiation-class-v1",
+  "schema_path": "black_hole_programme/schema/bh2c-symbolic-flux-radiation-class-v1.schema.json",
+  "schema_sha256": "af91e4fcfa6c5348dc2201e8fba25e93ab01204ec8cf1d19f99abeee791b9d49",
+  "stage_seconds": {
+    "Fv": 35.5,
+    "carrier_exponents": 2.3,
+    "flux_ExE": 115.8,
+    "h_system": 10.8,
+    "hom": 115.1,
+    "total": 279.7
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh2c_symbolic_flux_radiation_class.py"
+}

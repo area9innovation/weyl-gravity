@@ -149,6 +149,24 @@ integrability floor. The `X0|X0` log matches the resonant/`r^{2 i omega}` tail.
 statement is certified at symbolic `omega`; this session records the exponent
 structure and the obstruction resolution only.
 
+## Session 3 (2026-07-21): certificate issued (finite side + exponents)
+
+The remaining "literal Lee–Wald current" step for the **finite side** is done
+symbolically and a certificate now exists:
+`certificates/BH2C_SYMBOLIC_FLUX_RADIATION_CLASS.json`
+(token `BH2C_SYMBOLIC_FREQUENCY_FINITE_FLUX_RADIATION_CLASS_EINSTEIN_SELECTED`;
+report `reports/bh2c-symbolic-flux-radiation-class.md`). Driving the certified
+axial `F^v` with the certified Einstein profiles at symbolic `omega`, retaining
+all terms, gives `F^v[E0 x E0] = F^v[E2 x E2] ~ r^-2` with `omega`-independent
+integer power and nonzero, real-pole-free leading coefficients: the Einstein
+slice norm is finite for every real `omega != 0`. Combined with the carrier
+exponents above (amplitude real part 0), the finite/divergent split is
+`omega`-independent with no real exceptional frequency. **Still open (in that
+certificate's `missing_objects`):** the exact symbolic-`omega` DIVERGENT
+sub-table and log tails (the composed `Q(omega)` log solve did not terminate in
+the box; anchored at `omega = 3/5` by the two fixtures), the polar literal
+symbolic recomputation, a pairing theorem, and the phase-space construction.
+
 ## Receipts
 
 - Session 1 scratch: `ff_probe.py` (positive control green, ~3 s); exponent-method

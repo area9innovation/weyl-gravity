@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh2c-symbolic-flux-radiation-class-v1",
+  "title": "BH-2C: symbolic-frequency finite-Lee-Wald-flux radiation class -- Einstein selected",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_token",
+               "dependency_tags", "declaration", "einstein_literal_flux_axial",
+               "carrier_exponents_axial", "frequency_dependence", "numeric_anchor",
+               "headline", "claim_flags", "missing_objects", "does_not_establish",
+               "stage_seconds", "provenance", "verification_command"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh2c-symbolic-flux-radiation-class-v1" },
+    "schema_path": { "const": "black_hole_programme/schema/bh2c-symbolic-flux-radiation-class-v1.schema.json" },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH2C_SYMBOLIC_FLUX_RADIATION_CLASS" },
+    "result_token": { "const": "BH2C_SYMBOLIC_FREQUENCY_FINITE_FLUX_RADIATION_CLASS_EINSTEIN_SELECTED" },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "declaration": {
+      "type": "object",
+      "required": ["theory", "background_family", "sector", "conformal_frame",
+                   "generator", "phase_space", "infinity_condition", "lifecycle"],
+      "properties": { "lifecycle": { "const": "CLASSIFIED" } }
+    },
+    "einstein_literal_flux_axial": {
+      "type": "object",
+      "required": ["E0|E0", "E2|E2"],
+      "additionalProperties": false,
+      "properties": {
+        "E0|E0": {
+          "type": "object",
+          "required": ["leading_power", "leading_coeff", "finite"],
+          "properties": {
+            "leading_power": { "const": [-2, 0] },
+            "finite": { "const": true }
+          }
+        },
+        "E2|E2": {
+          "type": "object",
+          "required": ["leading_power", "leading_coeff", "finite"],
+          "properties": {
+            "leading_power": { "const": [-2, 0] },
+            "finite": { "const": true }
+          }
+        }
+      }
+    },
+    "carrier_exponents_axial": {
+      "type": "object",
+      "required": ["rate_condition", "rates", "powers", "reading"],
+      "properties": {
+        "rates": { "const": ["-I*omega", "I*omega"] },
+        "powers": {
+          "type": "object",
+          "required": ["-I*omega", "I*omega"],
+          "properties": {
+            "-I*omega": { "const": "-2*I*omega" },
+            "I*omega": { "const": "2*I*omega" }
+          }
+        }
+      }
+    },
+    "frequency_dependence": {
+      "type": "object",
+      "required": ["einstein_amplitude_real_parts",
+                   "extra_carrier_amplitude_real_part",
+                   "omega_enters_only_imaginary_tortoise_phase",
+                   "finite_divergent_split_omega_independent",
+                   "no_real_exceptional_frequency", "excluded_frequency"],
+      "properties": {
+        "extra_carrier_amplitude_real_part": { "const": 0 },
+        "omega_enters_only_imaginary_tortoise_phase": { "const": true },
+        "finite_divergent_split_omega_independent": { "const": true }
+      }
+    },
+    "numeric_anchor": {
+      "type": "object",
+      "required": ["axial_fixture", "axial_fixture_sha256", "axial_fixture_table",
+                   "polar_fixture", "polar_fixture_sha256", "reading"],
+      "properties": {
+        "axial_fixture_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "polar_fixture_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "headline": { "type": "object", "required": ["statement", "complement"] },
+    "claim_flags": {
+      "type": "object",
+      "required": ["axial_einstein_literal_flux_symbolic_certified",
+                   "axial_carrier_exponents_symbolic_certified",
+                   "finite_divergent_split_omega_independent_certified",
+                   "no_real_exceptional_frequency_certified",
+                   "numeric_anchor_hashed",
+                   "axial_divergent_table_symbolic_certified",
+                   "symbolic_log_tails_certified",
+                   "polar_literal_flux_symbolic_recomputed",
+                   "conjugate_frequency_pairing_theorem_certified",
+                   "asymptotic_phase_space_constructed",
+                   "summability_certified", "general_l_certified"],
+      "properties": {
+        "axial_einstein_literal_flux_symbolic_certified": { "const": true },
+        "axial_carrier_exponents_symbolic_certified": { "const": true },
+        "finite_divergent_split_omega_independent_certified": { "const": true },
+        "no_real_exceptional_frequency_certified": { "const": true },
+        "numeric_anchor_hashed": { "const": true },
+        "axial_divergent_table_symbolic_certified": { "const": false },
+        "symbolic_log_tails_certified": { "const": false },
+        "polar_literal_flux_symbolic_recomputed": { "const": false },
+        "conjugate_frequency_pairing_theorem_certified": { "const": false },
+        "asymptotic_phase_space_constructed": { "const": false },
+        "summability_certified": { "const": false },
+        "general_l_certified": { "const": false }
+      }
+    },
+    "missing_objects": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "does_not_establish": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "stage_seconds": { "type": "object" },
+    "provenance": {
+      "type": "object",
+      "required": ["generator_path", "engine_path", "engine_sha256",
+                   "theta_engine_sha256", "bach_engine_sha256",
+                   "flux_matrix_certificate", "flux_matrix_certificate_sha256",
+                   "all_orders_certificate", "all_orders_certificate_sha256",
+                   "symbolic_indicial_certificate",
+                   "symbolic_indicial_certificate_sha256"]
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh2c_symbolic_flux_radiation_class.py"
+    }
+  }
+}
