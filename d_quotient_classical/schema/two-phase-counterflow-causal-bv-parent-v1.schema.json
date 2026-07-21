@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/two-phase-counterflow-causal-bv-parent-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "imports", "payload_ref", "receiver_contract_ref", "complete_parent", "Cartan_ledger", "clock_current_and_pairing", "terminal_verdict", "claim_flags", "claim_boundary", "content_hashes"],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-causal-bv-parent-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1"},
+    "result_state": {"const": "CERTIFIED_70_COMPONENT_SUPPORT_LOCAL_CAUSAL_BV_PARENT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "imports": {"type": "object", "minProperties": 8},
+    "payload_ref": {"$ref": "#/$defs/ref"},
+    "receiver_contract_ref": {"$ref": "#/$defs/ref"},
+    "complete_parent": {"type": "object", "minProperties": 10},
+    "Cartan_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["U1_diag", "R_rel", "K", "D"],
+      "properties": {"U1_diag": {"type": "object"}, "R_rel": {"type": "object"}, "K": {"type": "object"}, "D": {"type": "object"}}
+    },
+    "clock_current_and_pairing": {"type": "object", "minProperties": 5},
+    "terminal_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_state", "downstream_receivers_activated", "receiver_contract_result_id", "activation_scope", "Hadamard_status"],
+      "properties": {
+        "result_state": {"const": "CERTIFIED_70_COMPONENT_SUPPORT_LOCAL_CAUSAL_BV_PARENT"},
+        "downstream_receivers_activated": {"const": true},
+        "receiver_contract_result_id": {"const": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_RECEIVER_CONTRACT_V1"},
+        "activation_scope": {"type": "string", "minLength": 30},
+        "Hadamard_status": {"const": "OPEN"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["COMPLETE_70_COMPONENT_BV_PARENT", "SUPPORT_LOCAL_CAUSAL_GREEN_HOMOTOPY", "CYCLIC_AND_REAL", "FIXED_CHARGE_BERGER_ONLY", "COULOMB_INVERSE", "UNRESTRICTED_D_GAUGE", "HADAMARD", "NONLINEAR_Q2", "QME_OR_QUANTUM"],
+      "properties": {
+        "COMPLETE_70_COMPONENT_BV_PARENT": {"const": true},
+        "SUPPORT_LOCAL_CAUSAL_GREEN_HOMOTOPY": {"const": true},
+        "CYCLIC_AND_REAL": {"const": true},
+        "FIXED_CHARGE_BERGER_ONLY": {"const": true},
+        "COULOMB_INVERSE": {"const": false},
+        "UNRESTRICTED_D_GAUGE": {"const": false},
+        "HADAMARD": {"const": false},
+        "NONLINEAR_Q2": {"const": false},
+        "QME_OR_QUANTUM": {"const": false}
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["establishes", "does_not_establish"],
+      "properties": {
+        "establishes": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+        "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}}
+      }
+    },
+    "content_hashes": {"type": "object", "minProperties": 5}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "content_sha256"],
+      "properties": {"path": {"type": "string"}, "sha256": {"$ref": "#/$defs/hash"}, "content_sha256": {"$ref": "#/$defs/hash"}}
+    }
+  }
+}

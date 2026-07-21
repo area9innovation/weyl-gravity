@@ -1,0 +1,165 @@
+{
+  "Cartan_ledger": {
+    "D": {
+      "charge": "Omega Q_rel modulo closed diffeomorphism constraint; unrestricted D is not gauge",
+      "contraction": "iota_D=iota_K+Omega*iota_R",
+      "decomposition": "D=K+Omega R_rel",
+      "identity": "[Q70,iota_D]=L_D"
+    },
+    "K": {
+      "identification": "the imported D_helical=partial_t plus compensating internal rotation",
+      "identity": "certified cyclic causal K-Cartan through arity two on 54 rows; extension commutes and is algebraically contractible"
+    },
+    "R_rel": {
+      "Lie_action": "global O(2) rotation of the imported clock block; zero on U1 extension",
+      "charge": "Q_rel on unrestricted union; null only on fixed-Q_rel leaf",
+      "contraction": "iota_R,+/-=Lambda70,+/- L_R",
+      "identity": "[Q70,iota_R,+/-]=L_R"
+    },
+    "U1_diag": {
+      "Lie_action": "Q_U1 gauge action",
+      "charge": "Q_diag=0 by local Gauss",
+      "contraction": "the displayed algebraic S_U1",
+      "identity": "[Q70,iota_U1]=L_U1"
+    }
+  },
+  "claim_boundary": {
+    "does_not_establish": [
+      "Hadamard data or a compatible positive complex structure",
+      "nonlinear q2 stability for the selected extension",
+      "an Einstein-source bridge",
+      "a relational observable",
+      "a QME, anomaly cancellation or quantum theorem"
+    ],
+    "establishes": [
+      "exact action equivalence to the certified positive Berger clock carrier",
+      "complete 54+16=70 component minimal/nonminimal BV parent",
+      "nilpotent action-compatible algebraic diagonal-U1 extension",
+      "same-sided advanced/retarded chain homotopies without a Coulomb inverse",
+      "cyclic pairing, real structure, clock-current transport and four-generator Cartan ledger"
+    ]
+  },
+  "claim_flags": {
+    "COMPLETE_70_COMPONENT_BV_PARENT": true,
+    "COULOMB_INVERSE": false,
+    "CYCLIC_AND_REAL": true,
+    "FIXED_CHARGE_BERGER_ONLY": true,
+    "HADAMARD": false,
+    "NONLINEAR_Q2": false,
+    "QME_OR_QUANTUM": false,
+    "SUPPORT_LOCAL_CAUSAL_GREEN_HOMOTOPY": true,
+    "UNRESTRICTED_D_GAUGE": false
+  },
+  "clock_current_and_pairing": {
+    "fixed_leaf": "delta Q_rel=0 is preserved by the linearized lapse row; no global mode is deleted from the unreduced carrier",
+    "normalization_checks": {
+      "Omega": "3/4",
+      "mu_squared": "1",
+      "rho_squared": "1"
+    },
+    "pairing_transport": "the 54-row cyclic clock pairing is unchanged; the diagonal quartet adds an orthogonal canonical BV summand",
+    "relative_charge": "Q_rel=integral_S3 star j_R",
+    "relative_current": "j_R=T1*dT2-T2*dT1=dpsi at rho=1=mu_squared*dpsi"
+  },
+  "complete_parent": {
+    "H1_S3": "0; exact and coexact connection modes split, while scalar constants and Q_rel fibres remain explicit",
+    "adjoint_and_cyclic": "direct sum of the imported cyclic advanced/retarded adjoint pair and the canonical algebraic BV contraction",
+    "chain_identity": "Q70 Lambda70,+/-+Lambda70,+/- Q70=I70",
+    "complete_component_rank": 70,
+    "extension_component_rank": 16,
+    "formula": "Q70=Q54 direct_sum Q_U1; Lambda70,+/-=Lambda54,+/- direct_sum S_U1",
+    "no_spatial_inverse": true,
+    "old_component_rank": 54,
+    "support": "Lambda54,+/- is same-sided causal; S_U1 is support-local with support on the diagonal, hence also both advanced and retarded",
+    "zero_modes_retained": true
+  },
+  "content_hashes": {
+    "Cartan_sha256": "47a83572bc120ec71c070dad697ea13dd86d81eb90b4ccaa7e03bc8bbbf5b459",
+    "boundary_sha256": "1de4bb2f092011b0c3c97727347138197dffeb9d1acd30b8214fd4085397c9cd",
+    "current_pairing_sha256": "0647afd383ca7cfebb1342f66e1782e78bc92b3b620899c874a6ffea28df7f42",
+    "parent_sha256": "7a8468ee7ca0c422d26b97432b20128dbbaba1ed43639b0c0816d594a5f50fc1",
+    "terminal_sha256": "3f266499405fc6e058dc348e25f714715986eb70a9724b82769a0ad02a1b1747"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "imports": {
+    "D_action_54": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json",
+      "result_id": "BERGER_54_ROW_LOCAL_D_ACTION",
+      "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49",
+      "source_commit": "90bd7d3f3d2b13573ef527400ecd731096babbe3"
+    },
+    "K_Cartan_54": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_CAUSAL_D_CARTAN_V2.json",
+      "result_id": "BERGER_CAUSAL_D_CARTAN_V2",
+      "sha256": "87c1b4d897d56bcfea51f79c71f6f0b387157fc8a76fb83eb909c8ef00d3f444",
+      "source_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0"
+    },
+    "charge_seed": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_CLOCK_REDUCED_CHARGE_SEED.json",
+      "result_id": "BERGER_CLOCK_REDUCED_CHARGE_SEED",
+      "sha256": "573381287998b6645b37fcbad0273c23c0e5cff58450cbcf7a2dc1152a8dfcd9",
+      "source_commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db"
+    },
+    "gauge_fixed_54": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0",
+      "source_commit": "445e26663d06764bc858ff0a004ba6178acce75f"
+    },
+    "green_54": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+      "result_id": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+      "sha256": "e92642b3225ab87b6058987f73f9ade3909646f2d0d3b95cc45cc9c5712b9c3b",
+      "source_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0"
+    },
+    "hodge": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/CLOSED_S3_RELATIVE_PHASE_NONHOMOGENEOUS_HODGE_PREFLIGHT_V1.json",
+      "result_id": "CLOSED_S3_RELATIVE_PHASE_NONHOMOGENEOUS_HODGE_PREFLIGHT_V1",
+      "sha256": "8bea19daa641aed5d771dd440624e5c7ea6128ce857ebd04c3d9b010c7acd5f9",
+      "source_commit": "fcfa6f88b390a19a83f844791400f16da121e5d4"
+    },
+    "positive_clock": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "result_id": "POSITIVE_BERGER_CLOCK_BACKGROUND",
+      "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687",
+      "source_commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db"
+    },
+    "preflight": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_V1",
+      "sha256": "2b578967ece7a2e6a8079c8fd84665ac40cf2b7e0aeef41d96882553c35115ea",
+      "source_commit": "d6d54a6efaa30ffe48dd7b9718c1954fa4ea514b"
+    }
+  },
+  "payload_ref": {
+    "content_sha256": "05c7a25b4aa61932424e5d54fc27c2286bb2538256ad3736edc8aa7544e07eae",
+    "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V1.json",
+    "sha256": "7c73705cc07062baf652c9cc0cb0977beda2a96d5b642fa186d6bfaeae01db57"
+  },
+  "receiver_contract_ref": {
+    "content_sha256": "d1a96ad605103e5a28abc383445cb94dc1f0c9f9e355ac3630b4fd0710e3cafa",
+    "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_RECEIVER_CONTRACT_V1.json",
+    "sha256": "d5efdfed97286aa9554e88a449e87941c3c589940845dbfe70209b513c59e3f7"
+  },
+  "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1",
+  "result_state": "CERTIFIED_70_COMPONENT_SUPPORT_LOCAL_CAUSAL_BV_PARENT",
+  "schema": "pure-weyl-two-phase-counterflow-causal-bv-parent-v1",
+  "terminal_verdict": {
+    "Hadamard_status": "OPEN",
+    "activation_scope": "same selected Berger background and fixed-Q_rel leaf only",
+    "downstream_receivers_activated": true,
+    "receiver_contract_result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_RECEIVER_CONTRACT_V1",
+    "result_state": "CERTIFIED_70_COMPONENT_SUPPORT_LOCAL_CAUSAL_BV_PARENT"
+  }
+}

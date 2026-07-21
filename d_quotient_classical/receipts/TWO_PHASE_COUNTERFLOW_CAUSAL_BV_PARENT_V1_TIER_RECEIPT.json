@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1_TIER_RECEIPT",
+  "claim_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1",
+  "date": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "artifacts": [
+    {"path": "d_quotient_classical/compensator/two_phase_counterflow_causal_bv_parent.py", "sha256": "2362b3e51e6a6fbe0f7fc14c58cc9271a057b7915e05b525759366cdfae6dda5"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1.json", "sha256": "7d969e7e630f793dfe12fe07b0e98a67b2543f9aa85fa03277e491fb00296db7"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V1.json", "sha256": "7c73705cc07062baf652c9cc0cb0977beda2a96d5b642fa186d6bfaeae01db57"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_RECEIVER_CONTRACT_V1.json", "sha256": "d5efdfed97286aa9554e88a449e87941c3c589940845dbfe70209b513c59e3f7"},
+    {"path": "d_quotient_classical/compensator/verify_two_phase_counterflow_causal_bv_parent.py", "sha256": "6b7005f4bfb538734cae63e007ebe9f9912340d95436c293da793238f46408e2"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_causal_bv_parent.py", "sha256": "3f3ec7bbd05d33ac6c95bfd48455bed5ab0257bf9342b0f4f6ef5a332704331e"},
+    {"path": "d_quotient_classical/schema/two-phase-counterflow-causal-bv-parent-v1.schema.json", "sha256": "33089cdb9f4610a1f621e50920888936d06923e5da293d4811962361cb70616a"},
+    {"path": "d_quotient_classical/schema/two-phase-counterflow-causal-bv-parent-payload-v1.schema.json", "sha256": "c799a8231a4b711acda8f6af427b6f2bdf32a0d9095a1762e82d2db56780a9bc"},
+    {"path": "d_quotient_classical/schema/two-phase-counterflow-causal-bv-receiver-contract-v1.schema.json", "sha256": "a14fffc9c9db487cfb86b0b3835f3466fd73c6761f8eb84b806af3742d95562c"},
+    {"path": "d_quotient_classical/atlas/generate_two_phase_counterflow_causal_bv_atlas_fragment.py", "sha256": "99f30aec771f000759521cd20ce479465005bb4c973b7057f329a0c9067b52d1"},
+    {"path": "residual_atlas/two-phase-counterflow-causal-bv-parent-fragment-v1.json", "sha256": "a33a83c698b581f3a85d9a1069f718206b6617692c06d2a9f62c316f3a5d4527"},
+    {"path": "d_quotient_classical/reports/two-phase-counterflow-causal-bv-parent-v1.md", "sha256": "3c92c1069e7527a4cf16abf1c28d1f0406c366bf4237726fab5869e3379eaad9"}
+  ],
+  "tier_0": {"status": "PASS", "commands": [{"command": "python3 -m py_compile <producer, independent verifier, atlas, tests>; python3 -m json.tool <certificate, payload, receiver>", "elapsed_seconds": 0.13, "status": "PASS"}]},
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 d_quotient_classical/compensator/two_phase_counterflow_causal_bv_parent.py --check", "elapsed_seconds": 0.77, "status": "PASS", "method": "exact selected-action polar crosswalk, complete 16-component U1 minimal/nonminimal extension, rational Q/S matrices, 70-component direct-sum Green homotopy, four Cartan identities and receiver contracts"},
+      {"command": "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_causal_bv_parent.py", "elapsed_seconds": 0.8, "status": "PASS", "independent_rail": "imports no producer module; reconstructs the action coefficients, phase square, original-row nilpotency, Noether identity, changed-basis SDR, import semantics and receiver boundary"},
+      {"command": "python3 -m unittest -v d_quotient_classical.compensator.tests.test_two_phase_counterflow_causal_bv_parent", "elapsed_seconds": 1.0, "status": "PASS", "tests": 9, "mutation_controls": "import drift, rank loss, nilpotency loss, Coulomb inverse, unrestricted-D promotion, Hadamard/q2/quantum promotion and receiver loss are rejected"},
+      {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true <three schemas and generated artifacts>", "elapsed_seconds": 6.48, "status": "PASS"},
+      {"command": "python3 d_quotient_classical/atlas/generate_two_phase_counterflow_causal_bv_atlas_fragment.py --check; python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-causal-bv-parent-fragment-v1.json", "elapsed_seconds": 0.37, "status": "PASS"}
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {"command": "python3 d_quotient_classical/compensator/two_phase_counterflow_trace_charge_preflight.py --check", "elapsed_seconds": 0.45, "status": "PASS"},
+      {"command": "python3 d_quotient_classical/compensator/verify_closed_s3_relative_phase_nonhomogeneous_hodge_preflight.py", "elapsed_seconds": 0.41, "status": "PASS"},
+      {"command": "python3 -m d_quotient_classical.backreacted_clock.berger_54_row_causal_green_homotopy --check", "elapsed_seconds": 0.75, "status": "PASS"},
+      {"command": "python3 -m d_quotient_classical.backreacted_clock.berger_causal_d_cartan_extension --check", "elapsed_seconds": 0.77, "status": "PASS"},
+      {"command": "python3 -m d_quotient_classical.backreacted_clock.verify_berger_gauge_fixed_nonminimal_completion", "elapsed_seconds": 60.0, "status": "NOT_COUNTED_TIMEOUT_OR_UNOBSERVED_COMPLETION", "scope": "the unchanged hash-pinned legacy verifier exceeded the fast rail; no pass is claimed from this invocation"},
+      {"command": "bash ci/science-forge-shadow.sh", "elapsed_seconds": 9.08, "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS", "findings": "pre-existing bridge drift, baseline growth 976 to 1357 certificates, and stale unpinned Forge binary; diagnostics /tmp/sf-shadow.j5lE8J"}
+    ]
+  },
+  "tier_3": {"status": "PASS", "commands": [{"command": "python3 -m unittest discover -v", "elapsed_seconds": 3.21, "status": "PASS", "tests": 149}]},
+  "claim_boundary": "The certificate promotes only the exact selected fixed-charge Berger action by a coefficient-level crosswalk to the certified 54-row clock carrier and a newly verified 16-component algebraic U1 summand. It establishes a real cyclic support-local causal unary BV parent, but not Hadamard data, nonlinear q2, observers, Einstein sources, anomaly cancellation, QME restoration or quantum theory; unrestricted D remains charged.",
+  "higher_tiers_not_run": []
+}

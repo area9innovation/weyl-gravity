@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/two-phase-counterflow-causal-bv-parent-payload-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "dependency_tags", "imports", "oracle_fields_consumed", "action_equivalence", "u1_minimal_nonminimal_extension", "complete_parent", "Cartan_ledger", "clock_current_and_pairing", "content_sha256"],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-causal-bv-parent-payload-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "imports": {"type": "object", "minProperties": 8},
+    "oracle_fields_consumed": {"const": []},
+    "action_equivalence": {"type": "object", "minProperties": 5},
+    "u1_minimal_nonminimal_extension": {"type": "object", "minProperties": 15},
+    "complete_parent": {"type": "object", "minProperties": 10},
+    "Cartan_ledger": {"type": "object", "minProperties": 4},
+    "clock_current_and_pairing": {"type": "object", "minProperties": 5},
+    "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

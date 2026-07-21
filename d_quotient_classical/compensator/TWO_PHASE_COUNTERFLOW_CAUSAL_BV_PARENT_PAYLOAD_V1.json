@@ -1,0 +1,316 @@
+{
+  "Cartan_ledger": {
+    "D": {
+      "charge": "Omega Q_rel modulo closed diffeomorphism constraint; unrestricted D is not gauge",
+      "contraction": "iota_D=iota_K+Omega*iota_R",
+      "decomposition": "D=K+Omega R_rel",
+      "identity": "[Q70,iota_D]=L_D"
+    },
+    "K": {
+      "identification": "the imported D_helical=partial_t plus compensating internal rotation",
+      "identity": "certified cyclic causal K-Cartan through arity two on 54 rows; extension commutes and is algebraically contractible"
+    },
+    "R_rel": {
+      "Lie_action": "global O(2) rotation of the imported clock block; zero on U1 extension",
+      "charge": "Q_rel on unrestricted union; null only on fixed-Q_rel leaf",
+      "contraction": "iota_R,+/-=Lambda70,+/- L_R",
+      "identity": "[Q70,iota_R,+/-]=L_R"
+    },
+    "U1_diag": {
+      "Lie_action": "Q_U1 gauge action",
+      "charge": "Q_diag=0 by local Gauss",
+      "contraction": "the displayed algebraic S_U1",
+      "identity": "[Q70,iota_U1]=L_U1"
+    }
+  },
+  "action_equivalence": {
+    "checks": {
+      "Einstein_from_conformal_coupling": true,
+      "Omega": true,
+      "V0_equals_lambda_over_4": true,
+      "alpha_B": true,
+      "relative_phase_coefficient": true,
+      "rho_squared": true
+    },
+    "conclusion": "the physical gravity-relative-clock block is exactly the certified 54-row Berger carrier; the new diagonal U1 block is algebraically contractible",
+    "diagonal_contractible_density": "-2*(A-dchi)^2",
+    "identity": "S_selected=S_Berger_clock_at_rho=1 - 2*integral<B,B>, with B=A-dchi",
+    "polar_clock_density": "5*C^2/8-(dpsi)^2/2-R/12-119/1920"
+  },
+  "clock_current_and_pairing": {
+    "fixed_leaf": "delta Q_rel=0 is preserved by the linearized lapse row; no global mode is deleted from the unreduced carrier",
+    "normalization_checks": {
+      "Omega": "3/4",
+      "mu_squared": "1",
+      "rho_squared": "1"
+    },
+    "pairing_transport": "the 54-row cyclic clock pairing is unchanged; the diagonal quartet adds an orthogonal canonical BV summand",
+    "relative_charge": "Q_rel=integral_S3 star j_R",
+    "relative_current": "j_R=T1*dT2-T2*dT1=dpsi at rho=1=mu_squared*dpsi"
+  },
+  "complete_parent": {
+    "H1_S3": "0; exact and coexact connection modes split, while scalar constants and Q_rel fibres remain explicit",
+    "adjoint_and_cyclic": "direct sum of the imported cyclic advanced/retarded adjoint pair and the canonical algebraic BV contraction",
+    "chain_identity": "Q70 Lambda70,+/-+Lambda70,+/- Q70=I70",
+    "complete_component_rank": 70,
+    "extension_component_rank": 16,
+    "formula": "Q70=Q54 direct_sum Q_U1; Lambda70,+/-=Lambda54,+/- direct_sum S_U1",
+    "no_spatial_inverse": true,
+    "old_component_rank": 54,
+    "support": "Lambda54,+/- is same-sided causal; S_U1 is support-local with support on the diagonal, hence also both advanced and retarded",
+    "zero_modes_retained": true
+  },
+  "content_sha256": "05c7a25b4aa61932424e5d54fc27c2286bb2538256ad3736edc8aa7544e07eae",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "imports": {
+    "D_action_54": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json",
+      "result_id": "BERGER_54_ROW_LOCAL_D_ACTION",
+      "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49",
+      "source_commit": "90bd7d3f3d2b13573ef527400ecd731096babbe3"
+    },
+    "K_Cartan_54": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_CAUSAL_D_CARTAN_V2.json",
+      "result_id": "BERGER_CAUSAL_D_CARTAN_V2",
+      "sha256": "87c1b4d897d56bcfea51f79c71f6f0b387157fc8a76fb83eb909c8ef00d3f444",
+      "source_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0"
+    },
+    "charge_seed": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_CLOCK_REDUCED_CHARGE_SEED.json",
+      "result_id": "BERGER_CLOCK_REDUCED_CHARGE_SEED",
+      "sha256": "573381287998b6645b37fcbad0273c23c0e5cff58450cbcf7a2dc1152a8dfcd9",
+      "source_commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db"
+    },
+    "gauge_fixed_54": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0",
+      "source_commit": "445e26663d06764bc858ff0a004ba6178acce75f"
+    },
+    "green_54": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+      "result_id": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+      "sha256": "e92642b3225ab87b6058987f73f9ade3909646f2d0d3b95cc45cc9c5712b9c3b",
+      "source_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0"
+    },
+    "hodge": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/CLOSED_S3_RELATIVE_PHASE_NONHOMOGENEOUS_HODGE_PREFLIGHT_V1.json",
+      "result_id": "CLOSED_S3_RELATIVE_PHASE_NONHOMOGENEOUS_HODGE_PREFLIGHT_V1",
+      "sha256": "8bea19daa641aed5d771dd440624e5c7ea6128ce857ebd04c3d9b010c7acd5f9",
+      "source_commit": "fcfa6f88b390a19a83f844791400f16da121e5d4"
+    },
+    "positive_clock": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "result_id": "POSITIVE_BERGER_CLOCK_BACKGROUND",
+      "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687",
+      "source_commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db"
+    },
+    "preflight": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_V1",
+      "sha256": "2b578967ece7a2e6a8079c8fd84665ac40cf2b7e0aeef41d96882553c35115ea",
+      "source_commit": "d6d54a6efaa30ffe48dd7b9718c1954fa4ea514b"
+    }
+  },
+  "oracle_fields_consumed": [],
+  "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V1",
+  "schema": "pure-weyl-two-phase-counterflow-causal-bv-parent-payload-v1",
+  "u1_minimal_nonminimal_extension": {
+    "Q_S_plus_S_Q_identity": true,
+    "Q_changed_basis": {
+      "column_count": 10,
+      "entries": [
+        {
+          "coefficient": "1",
+          "column": 0,
+          "row": 1
+        },
+        {
+          "coefficient": "-4",
+          "column": 2,
+          "row": 3
+        },
+        {
+          "coefficient": "1",
+          "column": 4,
+          "row": 5
+        },
+        {
+          "coefficient": "1",
+          "column": 6,
+          "row": 7
+        },
+        {
+          "coefficient": "-1",
+          "column": 8,
+          "row": 9
+        }
+      ],
+      "row_count": 10,
+      "sha256": "6d7e81f015414321225225a2a5791ad285098175944af77109f888db03af3048"
+    },
+    "Q_squared_zero": true,
+    "S_changed_basis": {
+      "column_count": 10,
+      "entries": [
+        {
+          "coefficient": "1",
+          "column": 1,
+          "row": 0
+        },
+        {
+          "coefficient": "-1/4",
+          "column": 3,
+          "row": 2
+        },
+        {
+          "coefficient": "1",
+          "column": 5,
+          "row": 4
+        },
+        {
+          "coefficient": "1",
+          "column": 7,
+          "row": 6
+        },
+        {
+          "coefficient": "-1",
+          "column": 9,
+          "row": 8
+        }
+      ],
+      "row_count": 10,
+      "sha256": "0ae5d0eea3f5afd95ebf91cafa4cd17de1f6b40466da6a3a7e13eca8c0437711"
+    },
+    "action_compatibility": {
+      "Euler_A": "-4B",
+      "Euler_chi": "4 delta B",
+      "Noether_identity": "Euler_chi+delta Euler_A=0",
+      "density": "-2 <B,B>"
+    },
+    "canonical_change": {
+      "B": "A-dchi",
+      "H": "chi_star+delta A_star",
+      "finite_differential_and_support_local": true,
+      "inverse": "A=B+dchi; chi_star=H-delta A_star"
+    },
+    "changed_basis_component_ranks": [
+      1,
+      1,
+      4,
+      4,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "changed_basis_order": [
+      "chi",
+      "c_U1",
+      "A_star",
+      "B=A-dchi",
+      "c_U1_star",
+      "H=chi_star+delta_A_star",
+      "bar_c",
+      "b",
+      "b_star",
+      "bar_c_star"
+    ],
+    "cyclic_pairing": "canonical odd BV pairing A-A_star, chi-chi_star, c_U1-c_U1_star, bar_c-b_star, b-bar_c_star",
+    "gauge_fixing": {
+      "Coulomb_inverse": false,
+      "fermion": "Psi_U1=integral <bar_c,chi>",
+      "terms": "<b,chi>-<bar_c,c_U1>",
+      "unitary_gauge": "chi=0"
+    },
+    "minimal_component_rank": 12,
+    "nonminimal_component_rank": 4,
+    "original_rows": [
+      {
+        "Q_image": "0",
+        "bundle": "Omega0",
+        "component_rank": 1,
+        "ghost_number": 1,
+        "id": "c_U1"
+      },
+      {
+        "Q_image": "c_U1",
+        "bundle": "Omega0",
+        "component_rank": 1,
+        "ghost_number": 0,
+        "id": "chi"
+      },
+      {
+        "Q_image": "d c_U1",
+        "bundle": "Omega1",
+        "component_rank": 4,
+        "ghost_number": 0,
+        "id": "A"
+      },
+      {
+        "Q_image": "-4(A-dchi)",
+        "bundle": "Omega1",
+        "component_rank": 4,
+        "ghost_number": -1,
+        "id": "A_star"
+      },
+      {
+        "Q_image": "4 delta(A-dchi)",
+        "bundle": "Omega0",
+        "component_rank": 1,
+        "ghost_number": -1,
+        "id": "chi_star"
+      },
+      {
+        "Q_image": "chi_star+delta A_star",
+        "bundle": "Omega0",
+        "component_rank": 1,
+        "ghost_number": -2,
+        "id": "c_U1_star"
+      },
+      {
+        "Q_image": "b",
+        "bundle": "Omega0",
+        "component_rank": 1,
+        "ghost_number": -1,
+        "id": "bar_c"
+      },
+      {
+        "Q_image": "0",
+        "bundle": "Omega0",
+        "component_rank": 1,
+        "ghost_number": 0,
+        "id": "b"
+      },
+      {
+        "Q_image": "-bar_c_star",
+        "bundle": "Omega0",
+        "component_rank": 1,
+        "ghost_number": -1,
+        "id": "b_star"
+      },
+      {
+        "Q_image": "0",
+        "bundle": "Omega0",
+        "component_rank": 1,
+        "ghost_number": 0,
+        "id": "bar_c_star"
+      }
+    ],
+    "real_structure": "A,chi,B,b real; ghosts and antifields carry the convention-fixed real BV conjugation",
+    "total_component_rank": 16
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "content_sha256": "d1a96ad605103e5a28abc383445cb94dc1f0c9f9e355ac3630b4fd0710e3cafa",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "receivers": {
+    "Bridge": {
+      "background": "same stationary Berger fixture a=1,c_squared=9/40",
+      "charge_sector": "fixed Q_rel leaf; unrestricted D remains charged",
+      "forbidden_promotions": [
+        "Hadamard",
+        "QME",
+        "Einstein source",
+        "q2 stability",
+        "observable existence"
+      ],
+      "receives": [
+        "selected local action",
+        "causal q1 carrier",
+        "stress normalization"
+      ],
+      "required_parent_result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1",
+      "required_parent_state": "CERTIFIED_70_COMPONENT_SUPPORT_LOCAL_CAUSAL_BV_PARENT",
+      "still_open": "derive the same-background Einstein-source condition"
+    },
+    "Nonlinear": {
+      "background": "same stationary Berger fixture a=1,c_squared=9/40",
+      "charge_sector": "fixed Q_rel leaf; unrestricted D remains charged",
+      "forbidden_promotions": [
+        "Hadamard",
+        "QME",
+        "Einstein source",
+        "q2 stability",
+        "observable existence"
+      ],
+      "receives": [
+        "causal q1 carrier",
+        "K/D/R_rel Cartan ledger"
+      ],
+      "required_parent_result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1",
+      "required_parent_state": "CERTIFIED_70_COMPONENT_SUPPORT_LOCAL_CAUSAL_BV_PARENT",
+      "still_open": "derive and verify the selected-action q2 and tangent-cone map"
+    },
+    "Observer": {
+      "background": "same stationary Berger fixture a=1,c_squared=9/40",
+      "charge_sector": "fixed Q_rel leaf; unrestricted D remains charged",
+      "forbidden_promotions": [
+        "Hadamard",
+        "QME",
+        "Einstein source",
+        "q2 stability",
+        "observable existence"
+      ],
+      "receives": [
+        "relative clock current",
+        "cyclic pairing",
+        "causal q1 carrier"
+      ],
+      "required_parent_result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1",
+      "required_parent_state": "CERTIFIED_70_COMPONENT_SUPPORT_LOCAL_CAUSAL_BV_PARENT",
+      "still_open": "construct a relational observable and detector map"
+    },
+    "Quantum": {
+      "background": "same stationary Berger fixture a=1,c_squared=9/40",
+      "charge_sector": "fixed Q_rel leaf; unrestricted D remains charged",
+      "forbidden_promotions": [
+        "Hadamard",
+        "QME",
+        "Einstein source",
+        "q2 stability",
+        "observable existence"
+      ],
+      "receives": [
+        "real cyclic causal q1 parent",
+        "classical-to-quantum import hash boundary"
+      ],
+      "required_parent_result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1",
+      "required_parent_state": "CERTIFIED_70_COMPONENT_SUPPORT_LOCAL_CAUSAL_BV_PARENT",
+      "still_open": "construct a compatible complex structure, Hadamard two-point function and anomaly/QME disposition"
+    }
+  },
+  "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_RECEIVER_CONTRACT_V1",
+  "schema": "pure-weyl-two-phase-counterflow-causal-bv-receiver-contract-v1"
+}
