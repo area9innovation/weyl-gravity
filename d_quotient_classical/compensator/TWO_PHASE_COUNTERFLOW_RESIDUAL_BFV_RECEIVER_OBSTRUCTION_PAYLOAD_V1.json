@@ -1,0 +1,176 @@
+{
+  "automorphism_algebra": {
+    "basis": [
+      "L1",
+      "L2",
+      "L3",
+      "R3",
+      "K"
+    ],
+    "ce_differential": {
+      "K": [],
+      "L1": [
+        {
+          "coefficient": "-1",
+          "ghosts": [
+            "c_L2",
+            "c_L3"
+          ]
+        }
+      ],
+      "L2": [
+        {
+          "coefficient": "1",
+          "ghosts": [
+            "c_L1",
+            "c_L3"
+          ]
+        }
+      ],
+      "L3": [
+        {
+          "coefficient": "-1",
+          "ghosts": [
+            "c_L1",
+            "c_L2"
+          ]
+        }
+      ],
+      "R3": []
+    },
+    "diagonal_U1_global_reducibility_dimension": 0,
+    "diagonal_U1_reason": "the constant gauge ghost maps the Stueckelberg scalar chi nontrivially and belongs to an exact contractible pair",
+    "dimension": 5,
+    "isomorphism_type": "su(2)_L direct_sum u(1)_R3 direct_sum R_K",
+    "jacobi_defects": 0,
+    "nonzero_brackets": {
+      "[L1,L2]": "L3",
+      "[L2,L3]": "L1",
+      "[L3,L1]": "L2"
+    }
+  },
+  "available_receiver_data": {
+    "K_Rrel_D_U1_Cartan_ledger": "CERTIFIED",
+    "Q70_and_cyclic_pairing": "CERTIFIED",
+    "abstract_five_generator_CE_algebra": "CERTIFIED_HERE",
+    "causal_Green_homotopy": "CERTIFIED"
+  },
+  "charge_and_leaf": {
+    "D_K_identification_before_reduction": false,
+    "coefficient_rank": 1,
+    "fixed_leaf": "delta Q_rel=0; D and R_rel become null only after the explicit derived restriction",
+    "kernel": [
+      "K=D-Omega*R_rel"
+    ],
+    "physical_relative_clock_dimension": 0,
+    "unrestricted_moment_map_row_on_[D,R_rel,K]": [
+      "Omega*Q_rel",
+      "Q_rel",
+      "0"
+    ]
+  },
+  "claim_boundary": {
+    "does_not_establish": [
+      "a full residual BFV receiver",
+      "residual cohomology or descended pairing",
+      "an anomaly restriction",
+      "nonlinear, Hadamard, QME, particle or asymptotic claims"
+    ],
+    "establishes": [
+      "complete abstract five-generator background stabilizer and CE nilpotency",
+      "zero diagonal-U1 global reducibility",
+      "explicit preserved/broken round-cylinder crosswalk and non-quotient witness",
+      "the first missing carrier identity blocking the BFV receiver"
+    ]
+  },
+  "content_sha256": "69ec3f0ff3fc63e44b8a2da05e31e5f92f995c0821b9bd256fbb6de8f57482f8",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "imports": {
+    "background_payload": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BACKGROUND_COMPONENT_ROUND_DISPOSITION_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_BACKGROUND_COMPONENT_ROUND_DISPOSITION_PAYLOAD_V1",
+      "sha256": "1eb9b83d1894a1b4905024c225bcd3b872e82bcfba25ac6e70bc28671d43e629"
+    },
+    "background_stabilizer": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BACKGROUND_COMPONENT_ROUND_DISPOSITION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_BACKGROUND_COMPONENT_ROUND_DISPOSITION_V1",
+      "sha256": "9fa277c57a28aa831d56cec4a49774f716cb000616afde74013d9320dc0a1763"
+    },
+    "causal_parent": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1",
+      "sha256": "7d969e7e630f793dfe12fe07b0e98a67b2543f9aa85fa03277e491fb00296db7"
+    },
+    "causal_payload": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V1",
+      "sha256": "7c73705cc07062baf652c9cc0cb0977beda2a96d5b642fa186d6bfaeae01db57"
+    },
+    "fixed_charge_health": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_V1",
+      "sha256": "812f6a3c2308eaeef09bee25ec8c79c8f7c86de7a51383141f8cae46c2f9cae5"
+    }
+  },
+  "missing_carrier": {
+    "consequence": "the matter representation and equivariant moment-map terms in Q_BFV cannot be assembled or tested",
+    "first_undefined_identity": "[L_L1,L_L2]=L_L3 on the actual 70-row carrier",
+    "missing_objects": [
+      "four rowwise operators L_L1,L_L2,L_L3,L_R3 on the ordered 70-row carrier",
+      "their exact commutators with Q70 and cyclic skew-adjoint identities",
+      "four Hamiltonian quadratic matrices M_X=-(1/2) J L_X and fixed-leaf tangency",
+      "four causal Cartan contractions on the declared support class",
+      "bulk-to-time-slice transgression and projection for the five-generator carrier"
+    ],
+    "required_export": "BERGER_COUNTERFLOW_70_ROW_SPATIAL_STABILIZER_LIFT_AND_MOMENT_MAPS",
+    "spatial_generators": {
+      "L1": "rowwise Lie-action operator on the 70-row carrier",
+      "L2": "rowwise Lie-action operator on the 70-row carrier",
+      "L3": "rowwise Lie-action operator on the 70-row carrier",
+      "R3": "rowwise Lie-action operator on the 70-row carrier"
+    }
+  },
+  "old_round_crosswalk": {
+    "broken_generators": [
+      "R1=(R01-R23)/2",
+      "R2=(R02+R13)/2",
+      "K+_0",
+      "K+_1",
+      "K+_2",
+      "K+_3",
+      "K-_0",
+      "K-_1",
+      "K-_2",
+      "K-_3"
+    ],
+    "classification": "five-generator stabilizer subalgebra with an internal helical lift; absence of the other ten generators is not a quotient",
+    "not_a_quotient_witness": "[K+_0,K-_0]=2 D_old lies in the preserved subspace, so the ten-dimensional broken complement is not an ideal",
+    "preserved_subalgebra": {
+      "K": "D_old-Omega*R_rel (internal lift of old D)",
+      "L1": "(R01+R23)/2",
+      "L2": "(R02-R13)/2",
+      "L3": "(R03+R12)/2",
+      "R3": "(R03-R12)/2"
+    }
+  },
+  "oracle_fields_consumed": [],
+  "receiver_status": {
+    "abstract_CE_nilpotency": "CERTIFIED",
+    "causal_Cartan_all_five_generators": "NOT_DEFINED",
+    "descended_pairing": "NOT_COMPUTED",
+    "full_BFV_nilpotency": "NOT_DEFINED_MISSING_MATTER_REPRESENTATION_AND_MOMENT_MAPS",
+    "local_to_time_slice_chain_map": "NOT_DEFINED",
+    "residual_cohomology": "NOT_COMPUTED",
+    "terminal_state": "OBSTRUCTED_MISSING_SPATIAL_STABILIZER_LIFT_AND_MOMENT_MAPS"
+  },
+  "result_id": "TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBSTRUCTION_PAYLOAD_V1",
+  "schema": "pure-weyl-two-phase-counterflow-residual-bfv-receiver-obstruction-payload-v1"
+}

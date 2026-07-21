@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_id": "TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBSTRUCTION_V1",
+  "date": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "artifacts": [
+    {"path": "d_quotient_classical/compensator/two_phase_counterflow_residual_bfv_receiver_obstruction.py", "sha256": "556c5469cc64c9f4e0e781a2b811210d064c1a7c6e47697996395339f1bc0ee5"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBSTRUCTION_V1.json", "sha256": "6d68181e130e292545173e7a8bad098b4aea63df5fca45f650f000872a129058"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBSTRUCTION_PAYLOAD_V1.json", "sha256": "2a52347ede24eca60c21c63bf8b1aa62826f9a60c3fea16f17ed84104780ab20"},
+    {"path": "d_quotient_classical/compensator/verify_two_phase_counterflow_residual_bfv_receiver_obstruction.py", "sha256": "5266e7c6c2a9ea3a24cae3237691ab5057669b35c22a27ac6b85e4a42df97a72"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_residual_bfv_receiver_obstruction.py", "sha256": "3cd7d8f42804b8a95c5b24e882db113adff7a5003bb138303b9f212d7f61a897"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_residual_bfv_receiver_obstruction_atlas.py", "sha256": "88cba5a892551ab9d698338192fba900229952fafe9e1631c061f00e40d492fb"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-residual-bfv-receiver-obstruction-v1.schema.json", "sha256": "24fbbb1567e7de38103b6befd7faa36ef4be56eef87faa998e97e1bbc43960c5"},
+    {"path": "d_quotient_classical/atlas/generate_two_phase_counterflow_residual_bfv_receiver_obstruction_atlas_fragment.py", "sha256": "de3230344e2488e28ac1f3c6d97fdeefa85b51d5246b35fabbab4d1e6fbddd96"},
+    {"path": "d_quotient_classical/atlas/verify_two_phase_counterflow_residual_bfv_receiver_obstruction_atlas_fragment.py", "sha256": "489c24c35c26d7c5a567e4ad1683b790a34ff5fc9a3130eda2d3d09602a19a6b"},
+    {"path": "residual_atlas/two-phase-counterflow-residual-bfv-receiver-obstruction-fragment-v1.json", "sha256": "0498718171e22130ddbde36d9e965ac975e75dcc3b06a0963b7185dec290469a"},
+    {"path": "d_quotient_classical/compensator/reports/two-phase-counterflow-residual-bfv-receiver-obstruction-v1.md", "sha256": "8376b884e843c74c3d7bd170c1160940335636a716dcf8a755a67704f846f07c"}
+  ],
+  "tier_0": {"status": "PASS", "commands": [{"command": "python3 -m py_compile <producer, verifiers, atlas generator, tests>; python3 -m json.tool <certificate, payload, schema, atlas, receipt>; git diff --check <explicit scoped paths>", "status": "PASS"}]},
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 d_quotient_classical/compensator/two_phase_counterflow_residual_bfv_receiver_obstruction.py --check", "elapsed_seconds": 0.06, "status": "PASS", "method": "exact five-generator structure constants, CE differential, charge rank, preserved/broken crosswalk and serialized-carrier key audit"},
+      {"command": "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_residual_bfv_receiver_obstruction.py", "elapsed_seconds": 0.05, "status": "PASS", "independent_rail": "imports no producer module; independently reconstructs the five-dimensional Lie bracket, all Jacobi triples, 15-to-5 counts, hash boundary and fail-closed receiver status"},
+      {"command": "python3 -m unittest -v d_quotient_classical.compensator.tests.test_two_phase_counterflow_residual_bfv_receiver_obstruction d_quotient_classical.compensator.tests.test_two_phase_counterflow_residual_bfv_receiver_obstruction_atlas", "elapsed_seconds": 0.08, "status": "PASS", "tests": 5},
+      {"command": "python3 d_quotient_classical/atlas/generate_two_phase_counterflow_residual_bfv_receiver_obstruction_atlas_fragment.py --check; python3 d_quotient_classical/atlas/verify_two_phase_counterflow_residual_bfv_receiver_obstruction_atlas_fragment.py; python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-residual-bfv-receiver-obstruction-fragment-v1.json", "elapsed_seconds": 0.12, "status": "PASS"},
+      {"command": "npx --yes ajv-cli validate --spec=draft2020 -s d_quotient_classical/compensator/schema/two-phase-counterflow-residual-bfv-receiver-obstruction-v1.schema.json -d d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBSTRUCTION_V1.json --strict=true", "elapsed_seconds": 1.16, "status": "PASS"}
+    ]
+  },
+  "tier_2": {"status": "PASS_WITH_ADVISORY_FINDINGS", "commands": [{"command": "producer and independent verifier hash all five fixed-health/background/causal imports", "status": "PASS"}, {"command": "bash ci/science-forge-shadow.sh", "elapsed_seconds": 9.39, "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS", "findings": "pre-existing bridge drift, corpus growth 976 to 1361 certificates, and stale unpinned Forge dev binary; diagnostics /tmp/sf-shadow.uTnHoT"}]},
+  "tier_3": {"status": "PASS", "commands": [{"command": "python3 -m unittest discover -v", "elapsed_seconds": 2.99, "status": "PASS", "tests": 149}]},
+  "claim_boundary": "The abstract five-generator stabilizer, its CE nilpotency, zero diagonal-U1 reducibility and its non-quotient relation to the round conformal algebra are exact. The full BFV receiver is not defined because the 70-row carrier does not export L1/L2/L3/R3 row actions or their moment maps. No residual cohomology, descended pairing, anomaly, observer, Hadamard, QME or particle claim is made.",
+  "higher_tiers_not_run": []
+}

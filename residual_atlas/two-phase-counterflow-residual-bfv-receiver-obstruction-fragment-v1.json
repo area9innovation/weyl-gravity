@@ -1,0 +1,92 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "The abstract su(2)_L plus u(1)_R3 plus R_K CE algebra is certified. No physical residual mode, BFV quotient, anomaly image, observer class or quantum state is certified until the spatial row actions and moment maps land.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBSTRUCTION_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBSTRUCTION_V1",
+          "sha256": "6d68181e130e292545173e7a8bad098b4aea63df5fca45f650f000872a129058"
+        }
+      ],
+      "id": "classical.two_phase_counterflow.residual_bfv_receiver",
+      "mode_data": {
+        "dispersion": {
+          "statement": "No residual mode is promoted because the spatial stabilizer action is not serialized on the 70-row carrier.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "lee_wald": {
+          "statement": "The parent pairing is certified, but the five moment maps and descended receiver pairing are not defined.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "No background-correct residual quotient exists on which to test resonance.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Residual receiver missing.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "causal_retarded": {
+            "statement": "The unary parent is causal, but the bulk-to-five-generator time-slice map is missing.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Residual receiver missing.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "The four spatial Hamiltonian matrices needed to form the five-generator Taub ideal are missing.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "stationary Berger R x S3, a=1, c_squared=9/40",
+        "boundaries": "none; closed S3 Cauchy slices",
+        "carrier": "candidate five-generator residual BFV receiver over the certified 70-row causal parent",
+        "charge_sector": "derived fixed-Q_rel leaf",
+        "degree": "all BFV degrees",
+        "ell": "all",
+        "k": "NOT_APPLICABLE",
+        "m": "all",
+        "omega": "all supported frequencies",
+        "parity": "mixed",
+        "theory": "selected two-phase counterflow action"
+      }
+    }
+  ],
+  "generated_by": "d_quotient_classical/atlas/generate_two_phase_counterflow_residual_bfv_receiver_obstruction_atlas_fragment.py",
+  "generated_by_sha256": "de3230344e2488e28ac1f3c6d97fdeefa85b51d5246b35fabbab4d1e6fbddd96",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "classical",
+  "verification_commands": [
+    "python3 d_quotient_classical/compensator/two_phase_counterflow_residual_bfv_receiver_obstruction.py --check",
+    "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_residual_bfv_receiver_obstruction.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-residual-bfv-receiver-obstruction-fragment-v1.json"
+  ]
+}
