@@ -1,0 +1,286 @@
+{
+  "ambient_sequence": {
+    "sequence": "0 -> E --iota--> W --pi_X--> X -> 0 on pre-residual H0",
+    "splitting_used": "the target-internal Lee-Wald-orthogonal primary lift on each certified finite branch",
+    "status": "CERTIFIED",
+    "warning": "the correspondence does not turn this ambient sequence into an exact sequence of separately neutral derived fibres"
+  },
+  "balanced_fixture": {
+    "Einstein_mu_H": "-288/5 + 48*sqrt(3)",
+    "extra_amplitude_squared": "-81/26 + 135*sqrt(3)/52",
+    "extra_mu_H": "288/5 - 48*sqrt(3)",
+    "labels": "axial ell=2,m=0,k=0 Einstein-minus plus second extra p-primary representative",
+    "representation": "take e amplitude 1, x amplitude sqrt(27*(-6+5*sqrt(3))/52), and c=(mu_E,0,0,0,0)",
+    "separate_projection_test": "p_E has kappa_E=c nonzero and p_X has kappa_X=-c nonzero, while j has total kappa_W=0",
+    "total_mu_H": "0",
+    "transfer_c": [
+      "-288/5 + 48*sqrt(3)",
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  "claim_boundary": "Certifies the smallest exact two-jet homotopy-pullback correspondence retaining cancellation of the five compact-Cauchy charges, its tangent cohomology on the declared balanced carrier, and the exact map/form ledger. It does not construct higher Kuranishi brackets, an all-orders quotient, bounded or causal evolution, particles, positivity, unitarity or quantum transfer.",
+  "classification": {
+    "Schur_form_is_derived_quotient_pairing": false,
+    "Schur_form_pulls_back": true,
+    "all_orders_kuranishi": false,
+    "ambient_cofiber_projection_exists": true,
+    "anti_diagonal_homotopy_pullback": true,
+    "balanced_fixture_represented": true,
+    "causal_particle_or_quantum_claim": false,
+    "contractible_transfer_pair_eliminated": true,
+    "derived_differential_nilpotent": true,
+    "separate_neutral_projection_exists": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "derived_correspondence": {
+    "balanced_fixture_differential": [
+      [
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "balanced_fixture_tangent_complex": {
+      "H0": 2,
+      "H1": 5,
+      "carrier": "real balanced two-amplitude fixture plus five charge-transfer coordinates",
+      "degree_0": 7,
+      "degree_1": 10,
+      "rank_d": 5
+    },
+    "common_Weyl_map": "j(e,x,c)=iota(e)+s_orth(x), with the summed homotopy furnishing kappa_W(j)=0 in the derived fibre",
+    "contraction": "alpha=eta_E+eta_X has d alpha=kappa_E+kappa_X; beta=(eta_X-eta_E)/2 and c'=c+(kappa_X-kappa_E)/2 form the contractible pair d beta=c', d c'=0",
+    "dimension_formula": "for dim E=e and dim X=x, strict tangent dimensions are (e+x+5)->10 with rank 5, hence H0=e+x and H1=5 at the cone vertex",
+    "homotopy_pullback": "C=(E x X) x^h_(O x O) O_anti, with Delta_anti(c)=(c,-c)",
+    "minimal_model": "Sym(E*+X*) tensor Lambda(alpha_H,alpha_Px,alpha_J1,alpha_J2,alpha_J3), d alpha_A=kappa_E,A+kappa_X,A",
+    "nilpotency": "d^2=0 exactly because kappa_E,kappa_X and c are degree-zero closed coordinates",
+    "obstruction_space": "O=span{H,P_x,J1,J2,J3}",
+    "span": "Z_E -> C <- Z_X and C --j--> Z_W; p_E:C->E and p_X:C->X land in ambient branches, not generally in Z_E or Z_X",
+    "strict_cdga": "d eta_E=kappa_E(e)-c; d eta_X=kappa_X(x)+c; d(e,x,c)=0",
+    "strict_coordinates": "(e,x,c; eta_E,eta_X)"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "map_and_form_ledger": [
+    {
+      "kind": "HONEST_MAP",
+      "object": "ambient inclusion iota:E->W",
+      "status": "CERTIFIED"
+    },
+    {
+      "kind": "HONEST_MAP",
+      "object": "ambient cofiber pi_X:W->X",
+      "status": "CERTIFIED"
+    },
+    {
+      "kind": "DERIVED_MAP",
+      "object": "j:C->Z_W",
+      "status": "CERTIFIED"
+    },
+    {
+      "kind": "HONEST_MAP_TO_AMBIENT_BRANCHES",
+      "object": "p_E:C->E and p_X:C->X",
+      "status": "CERTIFIED"
+    },
+    {
+      "kind": "MAP",
+      "object": "C->Z_E x Z_X",
+      "status": "OBSTRUCTED"
+    },
+    {
+      "kind": "FUNCTIONS_WITH_HOMOTOPY",
+      "object": "component moment maps",
+      "statement": "kappa_E is homotopic to c and kappa_X to -c; neither is separately zero",
+      "status": "CERTIFIED"
+    },
+    {
+      "kind": "ACTION",
+      "object": "diagonal compact stabilizer action",
+      "statement": "c transforms coadjointly and the anti-diagonal equations are equivariant",
+      "status": "CERTIFIED"
+    },
+    {
+      "kind": "PULLED_BACK_FORM",
+      "object": "Omega_C=j^*Omega_W",
+      "status": "CERTIFIED"
+    },
+    {
+      "fixture": [
+        [
+          "1296",
+          "0"
+        ],
+        [
+          "0",
+          "208/3"
+        ]
+      ],
+      "kind": "PULLED_BACK_SCHUR_FORM",
+      "object": "p_X^*S_X",
+      "status": "CERTIFIED"
+    },
+    {
+      "kind": "DERIVED_QUOTIENT_PAIRING",
+      "object": "S_X as a pairing obtained by quotienting C",
+      "status": "NO_CERTIFIED_MAP"
+    },
+    {
+      "kind": "RELATIVE_COMPARISON_FORM",
+      "object": "p_E^*Omega_EM versus the Einstein block of Omega_C",
+      "status": "CERTIFIED_NONIDENTICAL"
+    },
+    {
+      "kind": "LIFT_DEPENDENT_FORM",
+      "object": "raw lifted extra-extra Gram",
+      "status": "NOT_INVARIANT"
+    }
+  ],
+  "mutations": {
+    "call_raw_extra_Gram_invariant": "REJECTED by the imported exact lift shear; only the Schur complement is invariant",
+    "change_anti_diagonal_to_diagonal": "REJECTED: the balanced fixture then has residual 2*mu_E",
+    "delete_one_Koszul_half": "REJECTED: the strict tangent differential rank drops from 5",
+    "delete_transfer_coordinate": "REJECTED: replacing the anti-diagonal pullback by Z_E x Z_X deletes the exact balanced point",
+    "project_to_separate_neutral_fibres": "REJECTED: exact projected H charges are nonzero opposites"
+  },
+  "next_gate": "use this mixed-charge correspondence as the branch-readable nonlinear tangent-cone target; any further quotient requires a higher Kuranishi/algebroid action theorem rather than separate neutral projections",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_weyl_mixed_charge_derived_correspondence.py",
+    "generator_sha256": "92e3bf5a7734373a1db75bfc8e22fe7e80d037ca9d1c1bfe7bc0712c6874ad2b",
+    "inputs": {
+      "ambient_cofiber": {
+        "path": "bridge/certificates/EINSTEIN_WEYL_PARITY_COMPLETE_RESIDUAL_EXACT_SEQUENCE_MAXIMAL_V1.json",
+        "result_id": "EINSTEIN_WEYL_PARITY_COMPLETE_RESIDUAL_EXACT_SEQUENCE_MAXIMAL_V1",
+        "sha256": "d94140069b4972acdd2f5fcc99e8076bb773d9f2d904ce068e58548f86fbbd10"
+      },
+      "balanced_fixture": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_mixed_moment_map_zero_locus.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_MIXED_MOMENT_MAP_ZERO_LOCUS",
+        "sha256": "a1310146fc4ce499d73585470289982abdabf902dbf361f39a5c1fff1625bb36"
+      },
+      "kuranishi": {
+        "path": "bridge/certificates/EINSTEIN_WEYL_CONSTRAINT_ALGEBROID_KURANISHI_CARRIER_V1.json",
+        "result_id": "EINSTEIN_WEYL_CONSTRAINT_ALGEBROID_KURANISHI_CARRIER_V1",
+        "sha256": "fa764024805f3c2ce67e63d9a15afed94861e1374e32ecda8124efc3849aea24"
+      },
+      "symplectic_extension": {
+        "path": "bridge/certificates/EINSTEIN_WEYL_SYMPLECTIC_EXTENSION_CLASSIFICATION_V1.json",
+        "result_id": "EINSTEIN_WEYL_SYMPLECTIC_EXTENSION_CLASSIFICATION_V1",
+        "sha256": "d316e61807112c31fcbf2733e4d93bb3ce2d3bcebe3389922d6baa463415cbd3"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_WEYL_MIXED_CHARGE_DERIVED_CORRESPONDENCE_V1",
+  "result_state": "TWO_JET_MIXED_CHARGE_DERIVED_CORRESPONDENCE_CERTIFIED_SEPARATE_NEUTRAL_PROJECTIONS_OBSTRUCTED",
+  "schema": "einstein-weyl-mixed-charge-derived-correspondence-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein-weyl-mixed-charge-derived-correspondence-v1.schema.json",
+  "schema_sha256": "05b810f70eb6485332c380db384800329b617c0787e90c3237017adc88da40a6",
+  "scope": {
+    "background": "compactified magnetically supported Plebanski-Hacyan",
+    "boundaries": "compact boundaryless Cauchy slice S1_L x S2 before stabilizer reduction",
+    "carrier": "arbitrary finite harmonic two-jet carrier; dimensions displayed on the real ell=2,m=0,k=0 balanced two-amplitude subcarrier",
+    "charge_sector": "fixed P_N,N=2 and fixed Q_e; based Maxwell gauge; W_x retained",
+    "degree": "constraint/Kuranishi two-jet",
+    "ell": "finite sums; exact witness ell=2",
+    "k": "allowed compact momenta; exact witness k=0",
+    "m": "finite sums; exact witness m=0",
+    "omega": "stationary branch frequencies only as labels; no evolution claim",
+    "parity": "branchwise; exact witness axial",
+    "theory": "Einstein-Maxwell source, Weyl-Maxwell target and extra cofiber"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_weyl_mixed_charge_derived_correspondence --verify bridge/certificates/EINSTEIN_WEYL_MIXED_CHARGE_DERIVED_CORRESPONDENCE_V1.json",
+    "python3 bridge/einstein_sector/verify_einstein_weyl_mixed_charge_derived_correspondence.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_mixed_charge_derived_correspondence",
+    "python3 -m bridge.einstein_sector.generate_mixed_charge_derived_correspondence_atlas --check"
+  ]
+}

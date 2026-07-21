@@ -1,0 +1,55 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_MIXED_CHARGE_DERIVED_CORRESPONDENCE_V1",
+  "date": "2026-07-21",
+  "base_commit": "88f979661224abe17243456211d576cfae89f140",
+  "artifacts": [
+    {"path": "bridge/einstein_sector/einstein_weyl_mixed_charge_derived_correspondence.py", "sha256": "92e3bf5a7734373a1db75bfc8e22fe7e80d037ca9d1c1bfe7bc0712c6874ad2b"},
+    {"path": "bridge/certificates/EINSTEIN_WEYL_MIXED_CHARGE_DERIVED_CORRESPONDENCE_V1.json", "sha256": "a0280458c2cd704f96b33e9a21d796074c85bdd305a445ad60690d3dcd4367c4"},
+    {"path": "bridge/einstein_sector/verify_einstein_weyl_mixed_charge_derived_correspondence.py", "sha256": "787cecdd85f4800afa13e18364c55f8cddeecd44ef406cc9f24abbf739405e40"},
+    {"path": "bridge/einstein_sector/tests/test_einstein_weyl_mixed_charge_derived_correspondence.py", "sha256": "a2dfc35829cfd00ea10d339cc11c01cc8ff806934c9c84b83cfd7a985a290904"},
+    {"path": "bridge/einstein_sector/schema/einstein-weyl-mixed-charge-derived-correspondence-v1.schema.json", "sha256": "05b810f70eb6485332c380db384800329b617c0787e90c3237017adc88da40a6"},
+    {"path": "bridge/einstein_sector/generate_mixed_charge_derived_correspondence_atlas.py", "sha256": "3e0fbbcbcf8a2b249ff569d911e4040e76ce506df885269db7fac74d5811ff62"},
+    {"path": "residual_atlas/einstein-weyl-mixed-charge-derived-correspondence-fragment-v1.json", "sha256": "217d57f7ff60a0247c9ec484e144878f29762c9125b86a5d4aabfa1caef92dda"},
+    {"path": "reports/bridge-einstein-extra-mixed-charge-derived-correspondence-closeout-2026-07-21.md", "sha256": "e4209a9de65d129d0654ba3ec909ae23896eaf3476b35f83e42dd7353273b28a"},
+    {"path": "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex", "sha256": "b5a54d6803646c9bb4446a5023eaae78dcd6ec4c59228a65ebe2615c472ca0d4"},
+    {"path": "notes/d-quotient-einstein-team-brief.md", "sha256": "bd14dc96341b7cb2a405721b3e34e957f0eeac34ded4b19c319c707952376a9c"}
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on producer, verifier, atlas generator and test",
+        "python3 -m json.tool on certificate, schema, atlas and receipt",
+        "git diff --check on scoped paths",
+        "two pdflatex passes for Paper 13"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "producer exact replay",
+        "method-distinct tangent-rank, charge-transfer and Schur reconstruction",
+        "six unit and mutation tests",
+        "generated atlas equality and strict atlas validation"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The Kuranishi, symplectic-extension, ambient-cofiber and balanced-fixture inputs are hash pinned; the new verifier independently reconstructs every decisive exact identity."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "Scoped two-jet derived correspondence, not a release, all-orders Kuranishi freeze or shared-core change."
+    }
+  },
+  "mutations": {
+    "delete_transfer_coordinate": "rejected by loss of the exact balanced point",
+    "separate_neutral_projection": "rejected by nonzero opposite component charges",
+    "diagonal_instead_of_antidiagonal": "rejected by residual charge 2*mu_E",
+    "delete_one_koszul_half": "rejected by tangent differential rank",
+    "false_quotient_pairing": "rejected by absent map and lift-shear audit",
+    "all_orders_promotion": "rejected by schema"
+  },
+  "claim_boundary": "Exact compact-Cauchy two-jet mixed-charge correspondence only; no higher Kuranishi, all-orders quotient, evolution, causal, particle, positivity, unitarity or quantum promotion."
+}

@@ -3126,4 +3126,77 @@ of separately neutral primary fibres.  A later residual sequence must be
 formulated as a derived correspondence or fibre product.  This statement is
 quadratic and does not remove the higher Kuranishi terms left open here.
 
+\section{Mixed-charge derived correspondence}
+
+The obstruction above has a minimal two-jet repair which does not reinstate a
+quotient of separately neutral branches.  Let $E\to W\to X$ denote the
+certified pre-residual Einstein, Weyl and additional-primary sequence and let
+\[
+  \kappa_E:E\longrightarrow\mathfrak o,
+  \qquad
+  \kappa_X:X\longrightarrow\mathfrak o,
+  \qquad
+  \mathfrak o=\operatorname{span}\{H,P_x,J_1,J_2,J_3\}.
+\]
+The correct branch-readable carrier is the homotopy pullback
+\[
+ \mathfrak C
+ = (E\times X)\mathop{\times}^{h}_{\mathfrak o\times\mathfrak o}
+   \mathfrak o_{\rm anti},
+ \qquad
+ \Delta_{\rm anti}(c)=(c,-c).
+\]
+Its strict Koszul presentation has coordinates
+$(e,x,c;\eta_E,\eta_X)$ and differential
+\[
+ d\eta_E=\kappa_E(e)-c,
+ \qquad
+ d\eta_X=\kappa_X(x)+c,
+ \qquad d(e,x,c)=0.
+\]
+Thus $d^2=0$ exactly at the declared two-jet order.  Moreover, with
+\[
+ \alpha=\eta_E+\eta_X,
+ \quad
+ \beta={1\over2}(\eta_X-\eta_E),
+ \quad
+ c'=c+{1\over2}(\kappa_X-\kappa_E),
+\]
+one has $d\alpha=\kappa_E+\kappa_X$ and $d\beta=c'$.  The pair
+$(\beta,c')$ is contractible, so this strict charge-transfer presentation is
+quasi-isomorphic to the five-generator Koszul model for the total moment map.
+It is nevertheless the useful presentation because $c$ records the charge
+carried from one primary to the other.
+
+On the real balanced two-amplitude fixture the strict tangent complex has
+dimensions $7\to10$, rank five, and hence
+\[
+ \dim H^0=2,
+ \qquad
+ \dim H^1=5.
+\]
+The certified point is represented by
+\[
+ c=(\tau_E,0,0,0,0),
+ \qquad
+ \tau_E={48\over5}(-6+5\sqrt3),
+ \qquad
+ \tau_X=-\tau_E.
+\]
+It maps to the total Weyl derived zero fibre, while its Einstein and extra
+projections have the nonzero charges $c$ and $-c$.  This simultaneously
+proves that the correspondence contains the balanced ray and that no map
+$\mathfrak C\to Z_E\times Z_X$ exists with the declared projections.
+
+The map/form ledger is correspondingly asymmetric.  The maps
+$\mathfrak C\to Z_W$, $\mathfrak C\to E$, and
+$\mathfrak C\to X$ are honest derived or ambient maps.  The pullbacks
+$j^*\Omega_W$ and $p_X^*S_X$ are defined, where $S_X$ is the
+lift-invariant Schur-complement form.  But $S_X$ is not obtained by
+quotienting the nonlinear correspondence, and a raw lifted extra Gram matrix
+remains lift dependent.  The diagonal compact stabilizer action does descend:
+the transfer coordinate transforms coadjointly and the anti-diagonal equations
+are equivariant.  No all-orders Kuranishi, bounded-evolution, causal, particle,
+positivity or quantum statement is inferred.
+
 \end{document}

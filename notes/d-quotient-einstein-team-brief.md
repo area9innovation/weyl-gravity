@@ -4976,3 +4976,46 @@ two projections have nonzero opposite `mu_H`. Therefore the common derived
 sector is intrinsically mixed and must be described by a correspondence or
 fibre product, not by an Einstein/extra quotient sequence. Evidence is
 `bridge/certificates/EINSTEIN_WEYL_CONSTRAINT_ALGEBROID_KURANISHI_CARRIER_V1.json`.
+
+## Mixed-charge derived Einstein/extra correspondence
+
+The obstructed projection to separately neutral branches has now been
+replaced by the exact two-jet homotopy pullback
+
+```text
+C = (E x X) x^h_(O x O) O_anti,
+Delta_anti(c)=(c,-c),
+d eta_E=kappa_E-c,
+d eta_X=kappa_X+c.
+```
+
+Here `O=span{H,P_x,J1,J2,J3}` and `c` is an explicit charge-transfer
+coordinate. The differential squares to zero exactly. After the change of
+variables `alpha=eta_E+eta_X`, `beta=(eta_X-eta_E)/2` and
+`c'=c+(kappa_X-kappa_E)/2`, the pair `(beta,c')` is contractible and the
+remaining minimal model is `d alpha=kappa_E+kappa_X`. Thus the strict
+presentation retains cancellation data without changing the total derived
+zero fibre.
+
+On the declared real balanced two-amplitude carrier the tangent complex is
+`7 -> 10`, has rank five, and has cohomology dimensions `H0=2`, `H1=5`.
+The exact fixture has `c_H=48*(-6+5*sqrt(3))/5`: its Einstein projection has
+charge `c_H`, its extra projection has charge `-c_H`, and their common Weyl
+tangent has total charge zero. This both includes the balanced ray and rejects
+the false map to `Z_E x Z_X`.
+
+The ambient inclusion and cofiber projection remain honest before residual
+reduction. The correspondence maps honestly to the total Weyl derived fibre
+and to the two ambient branch carriers, but not to their separate neutral
+fibres. `j^*Omega_W` and the pullback of the lift-invariant Schur complement
+are certified forms on the correspondence; neither supplies a quotient
+pairing through the absent separate projections. The raw lifted extra Gram is
+still lift dependent. The compact stabilizer acts diagonally with `c`
+transforming coadjointly. Higher Kuranishi brackets, an all-orders quotient,
+bounded or causal evolution, particle language and quantum transfer remain
+open or `NO_CERTIFIED_MAP`.
+
+Evidence is
+`bridge/certificates/EINSTEIN_WEYL_MIXED_CHARGE_DERIVED_CORRESPONDENCE_V1.json`;
+the fail-closed atlas row is
+`einstein.ph.wm.mixed_charge.derived_correspondence.two_jet`.

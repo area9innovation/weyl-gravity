@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-weyl-mixed-charge-derived-correspondence-v1",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "provenance", "scope",
+    "ambient_sequence", "derived_correspondence", "balanced_fixture",
+    "map_and_form_ledger", "mutations", "classification", "claim_boundary",
+    "next_gate", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-weyl-mixed-charge-derived-correspondence-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein-weyl-mixed-charge-derived-correspondence-v1.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_WEYL_MIXED_CHARGE_DERIVED_CORRESPONDENCE_V1"},
+    "result_state": {"const": "TWO_JET_MIXED_CHARGE_DERIVED_CORRESPONDENCE_CERTIFIED_SEPARATE_NEUTRAL_PROJECTIONS_OBSTRUCTED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "provenance": {"type": "object"},
+    "scope": {"type": "object"},
+    "ambient_sequence": {"type": "object"},
+    "derived_correspondence": {"type": "object"},
+    "balanced_fixture": {"type": "object"},
+    "map_and_form_ledger": {"type": "array", "minItems": 10},
+    "mutations": {"type": "object"},
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "anti_diagonal_homotopy_pullback", "derived_differential_nilpotent",
+        "contractible_transfer_pair_eliminated", "balanced_fixture_represented",
+        "separate_neutral_projection_exists", "ambient_cofiber_projection_exists",
+        "Schur_form_pulls_back", "Schur_form_is_derived_quotient_pairing",
+        "all_orders_kuranishi", "causal_particle_or_quantum_claim"
+      ],
+      "properties": {
+        "anti_diagonal_homotopy_pullback": {"const": true},
+        "derived_differential_nilpotent": {"const": true},
+        "contractible_transfer_pair_eliminated": {"const": true},
+        "balanced_fixture_represented": {"const": true},
+        "separate_neutral_projection_exists": {"const": false},
+        "ambient_cofiber_projection_exists": {"const": true},
+        "Schur_form_pulls_back": {"const": true},
+        "Schur_form_is_derived_quotient_pairing": {"const": false},
+        "all_orders_kuranishi": {"const": false},
+        "causal_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string"},
+    "next_gate": {"type": "string"},
+    "verification_commands": {"type": "array", "minItems": 4}
+  },
+  "additionalProperties": false
+}

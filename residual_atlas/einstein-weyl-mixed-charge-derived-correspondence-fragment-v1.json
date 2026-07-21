@@ -1,0 +1,91 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "Certifies the smallest exact two-jet homotopy-pullback correspondence retaining cancellation of the five compact-Cauchy charges, its tangent cohomology on the declared balanced carrier, and the exact map/form ledger. It does not construct higher Kuranishi brackets, an all-orders quotient, bounded or causal evolution, particles, positivity, unitarity or quantum transfer.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/EINSTEIN_WEYL_MIXED_CHARGE_DERIVED_CORRESPONDENCE_V1.json",
+          "result_id": "EINSTEIN_WEYL_MIXED_CHARGE_DERIVED_CORRESPONDENCE_V1",
+          "sha256": "a0280458c2cd704f96b33e9a21d796074c85bdd305a445ad60690d3dcd4367c4"
+        }
+      ],
+      "id": "einstein.ph.wm.mixed_charge.derived_correspondence.two_jet",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Two-jet Cauchy correspondence; branch frequencies are labels only.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "j^*Omega_W and p_X^*S_X are honest pullbacks; no quotient pairing through separately neutral fibres exists.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Spacetime resonance functionals remain carrier-class dependent and are not inferred here.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No evolution-space promotion.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No retarded carrier.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Not established by the Cauchy correspondence.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "The anti-diagonal transfer c records kappa_E=c and kappa_X=-c for all five compact stabilizer charges.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan",
+        "boundaries": "compact boundaryless Cauchy slice S1_L x S2 before stabilizer reduction",
+        "carrier": "arbitrary finite harmonic two-jet carrier; dimensions displayed on the real ell=2,m=0,k=0 balanced two-amplitude subcarrier",
+        "charge_sector": "fixed P_N,N=2 and fixed Q_e; based Maxwell gauge; W_x retained",
+        "degree": "constraint/Kuranishi two-jet",
+        "ell": "finite sums; exact witness ell=2",
+        "k": "allowed compact momenta; exact witness k=0",
+        "m": "finite sums; exact witness m=0",
+        "omega": "stationary branch frequencies only as labels; no evolution claim",
+        "parity": "branchwise; exact witness axial",
+        "theory": "Einstein-Maxwell source, Weyl-Maxwell target and extra cofiber"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/generate_mixed_charge_derived_correspondence_atlas.py",
+  "generated_by_sha256": "3e0fbbcbcf8a2b249ff569d911e4040e76ce506df885269db7fac74d5811ff62",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_nonlinear",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.generate_mixed_charge_derived_correspondence_atlas --check",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-weyl-mixed-charge-derived-correspondence-fragment-v1.json"
+  ]
+}
