@@ -1,0 +1,21 @@
+{
+  "id": "sf:forge-request/homogeneous-space-vector-tensor-hodge-harmonics",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Extend the landed scalar Wigner/harmonic layer into a convention-explicit differential harmonic calculus for scalar, vector, tensor and form modes on the compact homogeneous spaces actually used by the physics programme: S2, S3, Berger SU(2), S1 x S2 and their simple products. The present exact Wigner-D and Gaunt kernels decide coupling coefficients, but teams still hand-build gradients, curls, divergences, Hodge stars, exceptional modes, degeneracies and transverse/longitudinal projectors. This prevents Conflux from tracing one residual mode across cylinder, Berger, compact-product and observer carriers. The first consumers are sf:program/work/classical-closed-s3-relative-phase-nonhomogeneous-hodge-preflight, sf:program/work/classical-relative-phase-general-closed-cauchy-hodge-theorem and sf:program/work/bridge-residual-atlas-branch-manifest.",
+    "depends_on": [
+      "sf:program/work/classical-closed-s3-relative-phase-nonhomogeneous-hodge-preflight",
+      "sf:program/work/classical-relative-phase-general-closed-cauchy-hodge-theorem",
+      "sf:program/work/bridge-residual-atlas-branch-manifest"
+    ],
+    "stop_condition": "Provide typed harmonic bases with background, representation labels, parity, reality convention, normalization and degeneracy; exact scalar/vector/tensor Laplacian and Hodge-de Rham eigenvalues; grad/div/curl/exterior derivative/codifferential/Hodge-star matrices; longitudinal, coexact and harmonic projectors; Killing/conformal-Killing and exceptional low-mode classification; product-space Fourier coupling; and exact triple-product/selection-rule data through the existing Wigner/Gaunt rail. Generate basis-change witnesses between complex and real harmonics and between coordinate/tetrad mode carriers. Demonstrate the closed-S3 clock Hodge/Gauss reduction without private harmonic tables, reproduce one Berger anisotropic block and one S1 x S2 axial/polar exceptional fixture, and independently check orthogonality, completeness on the declared finite band, d^2=0, Hodge identities and degeneracy counts. Export stable mode identifiers and operator incidences to the residual atlas and Conflux.",
+    "forbid": "no scalar-harmonic formula reused for vector/tensor modes without a derived intertwiner; no convention or phase inferred from matching one fixture; no finite harmonic cutoff called functional completeness; no exceptional l=0 or l=1 mode dropped by generic formula; no coordinate component equality confused with invariant mode equality; no background-specific Bach or Lee-Wald operator in lib/math; no approximate quadrature where an exact representation identity is available",
+    "notes": [
+      "This request is the differential/representation continuation of landed math/wigner and math/harmonic, not a duplicate of abstract-index tensor canonicalization.",
+      "The immediate win is a common mode vocabulary for the residual atlas and Conflux; full arbitrary-manifold spectral geometry is out of scope."
+    ]
+  }
+}

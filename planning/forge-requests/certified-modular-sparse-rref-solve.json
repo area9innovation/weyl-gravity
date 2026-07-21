@@ -1,0 +1,21 @@
+{
+  "id": "sf:forge-request/certified-modular-sparse-rref-solve",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Complete the scalable exact-linear-algebra rail from multi-modular rank to proof-carrying sparse solve, RREF, nullspace and rational reconstruction. The finite exact core is mathematically adequate, but broad physics adoption will otherwise reintroduce dense SymPy bottlenecks and OOM risk on 100-row chain completions, large jet/PBW incidence systems and action-derived q2/q3 coefficient matrices. The first consumers are sf:program/work/classical-berger-q26-104-row-free-adjoint-completion, sf:program/work/nonlinear-cyclic-deformation-class-completeness and sf:program/work/observer-higher-jet-invariant-action-module-classification.",
+    "depends_on": [
+      "sf:program/work/classical-berger-q26-104-row-free-adjoint-completion",
+      "sf:program/work/nonlinear-cyclic-deformation-class-completeness",
+      "sf:program/work/observer-higher-jet-invariant-action-module-classification"
+    ],
+    "stop_condition": "Implement deterministic prime selection, bad-prime detection, sparse modular elimination, CRT accumulation, height-bound or stabilization-controlled rational reconstruction, and exact promotion for solve, affine solution space, RREF, kernel/cokernel bases and selected minors. Add block-Wiedemann or black-box rank/kernel only as a typed scout unless its Las Vegas success condition and exact replay are explicit. Every promoted output must be checked over Q by direct multiplication/substitution and carry the primes, reconstruction modulus, rejected primes, bounds, pivot profile, resource use and content hashes. Support resumable content-addressed modular batches and bounded memory. Demonstrate exact agreement with qmat/fsparse on adversarial small controls, reproduce the 104-row boundary-cokernel separator, and close one real large q2/q3 or PBW system that currently exceeds the comfortable dense path. The independent checker must consume only the reconstructed witness and original matrix, not rerun modular search.",
+    "forbid": "no modular rank promoted to characteristic-zero rank without a one-sided theorem or exact witness; no guessed rational reconstruction without exact replay; no random prime stream without recorded seed and exclusions; no dense fallback that exceeds the declared memory ceiling; no timeout or incomplete modulus called a negative result; no source producer reused as verifier; no physics row ordering embedded in the generic engine",
+    "notes": [
+      "This is the measured M15 continuation of qmat_mm and is complementary to exact-sparse-chain-complex-extension-sdr-solver: the latter is the structural solver, this request supplies its scalable exact linear-algebra engine.",
+      "Performance claims must include the exact reference result, peak RSS, elapsed time and a resource-bounded refusal path."
+    ]
+  }
+}

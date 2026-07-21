@@ -1,0 +1,21 @@
+{
+  "id": "sf:forge-request/exact-assumption-domain-branch-calculus",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Add a first-class exact calculus of assumptions, domains and branches shared by forge/lib/math and Conflux. The current kernels can compute exact ranks, Groebner bases, spectra, series and symbolic expressions, but a consumer still has to carry conditions such as q != 1/4, det A != 0, a selected real embedding, a logarithm sheet, or a nonzero harmonic label in prose. This is an adoption blocker: Conflux must not merge a generic identity with an exceptional stratum, and an exact kernel must not silently divide, cancel, choose a root or cross a branch wall without recording the condition that made the operation valid. The first consumers are sf:program/work/classical-compensator-kinetic-braiding-locus, sf:program/work/quantum-normalized-schur-pseudodifferential-variation and sf:program/work/black-hole-symbolic-frequency-finite-flux-radiation-class.",
+    "depends_on": [
+      "sf:program/work/classical-compensator-kinetic-braiding-locus",
+      "sf:program/work/quantum-normalized-schur-pseudodifferential-variation",
+      "sf:program/work/black-hole-symbolic-frequency-finite-flux-radiation-class"
+    ],
+    "stop_condition": "Provide typed Boolean combinations of polynomial/rational equalities and inequalities, integer/harmonic side conditions, embedding and branch predicates, and named regularity/domain hypotheses. Every partial operation in ratfunc, spectral, Groebner, series, symbolic, interval/complex continuation and matrix inversion must be able to return a value paired with its weakest known sufficient condition or a finite stratification of alternatives. Implement exact implication, consistency and overlap checks through the existing Groebner/semialgebraic rails; retain UNDECIDED when implication is outside the supported class. Support pullback/pushforward of conditions under substitutions and basis changes, explicit generic-versus-exceptional case splitting, unsatisfied-core extraction, and provenance back to the operation that introduced each condition. Conflux must index candidates by condition set and refuse cross-stratum equality unless a common domain is proved. Demonstrate: recover the q=1/4 active-clock bifurcation without erasing either side; separate omega=0 and repeated-root Schwarzschild strata; and keep primed zero-mode deletion distinct from the generic Schur determinant. An independent checker must validate every emitted condition against the defining identities and reject mutations that drop a denominator, branch or rank assumption.",
+    "forbid": "no generic pivot without a recorded nonvanishing condition; no cancellation across a possible zero divisor; no principal root/logarithm branch silently selected; no sampled parameter point used to discharge a symbolic assumption; no contradictory assumption set treated as a vacuous theorem without being marked EMPTY; no solver timeout treated as implication; no Conflux merge across incomparable domains; no physics-specific parameter names built into the generic layer",
+    "notes": [
+      "This request complements parametric-semialgebraic-rank-sign-stratification and certified-complex-analysis-analytic-continuation: those compute strata or analytic data, while this layer is the common condition/provenance type carried by all exact and discovery operations.",
+      "Suggested first slice: ConditionSet plus guarded RatFunc/QMat operations and Conflux condition-aware candidate keys."
+    ]
+  }
+}

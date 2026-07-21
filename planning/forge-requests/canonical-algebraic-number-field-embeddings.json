@@ -1,0 +1,21 @@
+{
+  "id": "sf:forge-request/canonical-algebraic-number-field-embeddings",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Add a canonical exact algebraic-number coefficient layer beyond the present finite radical QExt representation. General characteristic polynomials, mode frequencies, parameter walls and spectral projectors need roots of irreducible polynomials that are not conveniently expressible by radicals. Without a canonical field/embedding representation, Forge consumers fall back to floats or ad hoc symbolic root labels, and Conflux cannot decide whether independently produced coefficients denote the same algebraic number. The first consumers are sf:program/work/black-hole-general-l-structural-extension, sf:program/work/quantum-normalized-schur-pseudodifferential-variation and sf:program/work/bridge-global-bounded-cone-real-zero-locus.",
+    "depends_on": [
+      "sf:program/work/black-hole-general-l-structural-extension",
+      "sf:program/work/quantum-normalized-schur-pseudodifferential-variation",
+      "sf:program/work/bridge-global-bounded-cone-real-zero-locus"
+    ],
+    "stop_condition": "Provide exact algebraic numbers represented by a square-free minimal polynomial plus an isolating real interval or certified complex ball; canonical equality, ordering and sign for real embeddings; arithmetic with primitive-element/compositum construction; conjugation, norm, trace, minimal-polynomial recovery and exact zero tests; factorization and linear algebra over a declared number field; and explicit conversion from QExt when possible. Every embedding and root choice must remain part of the value and certificate. Use FLINT/PARI/Arb as an independent oracle, not the sole verifier. Demonstrate an irreducible non-radical spectral fixture, construct and verify its generalized eigenspaces/projectors over the exact field, prove a sign statement at a selected real embedding, and reject a conjugate-root mutation. Export canonical serialized values and embedding provenance to Conflux so equality and symmetry discovery work across independent producers.",
+    "forbid": "no decimal approximation as identity; no root index without an isolating region; no implicit embedding chosen by library iteration order; no equality by matching minimal polynomials alone; no unproved primitive-element merge; no QExt expression assumed canonical across presentations; no numerical eigenvector called exact; no physics-specific frequency polynomial in lib/math",
+    "notes": [
+      "This is the fixed-basis algebraic-number-field extension already named as open in COMPLETENESS M15, promoted because Conflux adoption needs canonical cross-producer equality rather than display-only radicals.",
+      "A narrow first increment may wrap FLINT fmpq_poly/nf arithmetic while retaining a small independent substitution and isolating-region checker in Forge."
+    ]
+  }
+}
