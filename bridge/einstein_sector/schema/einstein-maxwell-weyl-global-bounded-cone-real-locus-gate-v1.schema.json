@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "scope",
+    "input_gate",
+    "global_problem_type",
+    "closed_block_census",
+    "selected_invariant_gate",
+    "known_exact_geometry",
+    "remaining_real_gate",
+    "necessity_sufficiency_transfer",
+    "classification",
+    "provenance",
+    "verification_commands",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-maxwell-weyl-global-bounded-cone-real-locus-gate-v1"
+    },
+    "result_id": {
+      "const": "EINSTEIN_MAXWELL_WEYL_GLOBAL_BOUNDED_CONE_REAL_LOCUS_GATE_V1"
+    },
+    "result_state": {
+      "const": "GLOBAL_REAL_LOCUS_OPEN_CANDIDATE18_FIXED_OCCUPATION_GATE_EXACT"
+    },
+    "lifecycle_state": {
+      "const": "CLASSIFIED"
+    },
+    "dependency_tags": {
+      "contains": {
+        "const": "REDUCED-MODE"
+      }
+    },
+    "selected_invariant_gate": {
+      "type": "object",
+      "required": [
+        "candidate_index",
+        "ambient_real_dimension",
+        "complex_dimension",
+        "real_minor_equations_total",
+        "Hermitian_level_equations",
+        "rotation_equations",
+        "residual_group_at_this_gate"
+      ],
+      "properties": {
+        "candidate_index": {"const": 18},
+        "ambient_real_dimension": {"const": 60},
+        "complex_dimension": {"const": 22},
+        "real_minor_equations_total": {"const": 40}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "complete_finite_harmonic_bounded_ledger_frozen",
+        "candidate18_complex_carrier_classified",
+        "candidate18_complete_real_fixed_occupation_fibre_classified",
+        "complex_variety_substituted_for_real_locus",
+        "unrestricted_global_real_common_zero_classified"
+      ]
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 4
+    }
+  },
+  "additionalProperties": true
+}

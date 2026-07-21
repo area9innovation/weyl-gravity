@@ -1,0 +1,70 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_BOUNDED_CONE_REAL_LOCUS_GATE_V1",
+  "date": "2026-07-21",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "tier_0": {
+    "status": "PASSED",
+    "checks": [
+      "python3 -m compileall -q bridge/einstein_sector/einstein_maxwell_weyl_global_bounded_cone_real_locus_gate.py bridge/einstein_sector/verify_einstein_maxwell_weyl_global_bounded_cone_real_locus_gate.py bridge/einstein_sector/tests/test_einstein_maxwell_weyl_global_bounded_cone_real_locus_gate.py",
+      "strict Draft 2020-12 certificate schema validation",
+      "JSON parse of the generated certificate, atlas fragment and Paper 13 claim map",
+      "git diff --check on explicitly scoped paths"
+    ]
+  },
+  "tier_1": {
+    "status": "PASSED",
+    "checks": [
+      {
+        "command": "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_global_bounded_cone_real_locus_gate --check",
+        "elapsed_seconds": 0.17,
+        "maxrss_kb": 24640
+      },
+      {
+        "command": "PYTHONPATH=. python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_global_bounded_cone_real_locus_gate",
+        "elapsed_seconds": 0.18,
+        "maxrss_kb": 23916
+      },
+      {
+        "command": "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_global_bounded_cone_real_locus_gate",
+        "elapsed_seconds": 0.24,
+        "maxrss_kb": 25748,
+        "tests": 6
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-global-bounded-cone-real-locus-gate-fragment-v1.json",
+        "elapsed_seconds": 0.16,
+        "maxrss_kb": 24348
+      }
+    ],
+    "independence": "The verifier imports the pinned inputs directly, recomputes the determinantal combinatorics and dimension identities, and rejects false real/global promotions. It does not invoke the producer."
+  },
+  "repair_history": [
+    {
+      "status": "NOT_A_PASS",
+      "check": "common residual-atlas schema",
+      "finding": "the first generated row placed correction_class outside the canonical atlas scope vocabulary"
+    },
+    {
+      "status": "NOT_A_PASS",
+      "check": "common residual-atlas schema",
+      "finding": "the second generated row used a noncanonical whitespace spelling of the required second-order equation"
+    },
+    {
+      "status": "REPAIRED_AND_PASSED",
+      "finding": "correction_class moved to the second-order description boundary and the canonical equation spelling was used; no scientific datum changed"
+    }
+  ],
+  "tier_2": {
+    "status": "NOT_RUN",
+    "criterion": "No mathematical input, shared operator, schema interface or upstream certificate changed; all imported inputs are pinned by exact SHA-256."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "criterion": "The global real locus remains OPEN and no theorem-freeze or release lifecycle was promoted."
+  },
+  "claim_boundary": "The receipt certifies the exact fail-closed reduction to candidate 18. It is not a pass for the unresolved real radical, orbit quotient, global direct-union cone, causal corrections or all-orders integration."
+}

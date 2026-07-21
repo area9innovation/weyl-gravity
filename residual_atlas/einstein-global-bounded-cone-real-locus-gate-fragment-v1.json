@@ -1,0 +1,93 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This is an exact fail-closed reduction to the first unresolved real fixed-occupation gate under the declared candidate order. It does not classify that real radical or orbit quotient, the unrestricted direct-union cone, occupation gluing, causal corrections, final residual descent, all-orders solutions, observables or quantum states.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_GLOBAL_BOUNDED_CONE_REAL_LOCUS_GATE_V1.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_BOUNDED_CONE_REAL_LOCUS_GATE_V1",
+          "sha256": "52b075bd090246410741d46d83e2c814c05dae6daf94f38038c7294557011c24"
+        }
+      ],
+      "id": "einstein.ph.wm.finite_harmonic_cone.candidate18_real_locus_gate",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Candidate-18 collision and shell data are exact.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The active current, its smooth radical divisor and node-phase reduction are exact.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The complex resonance carrier is C^10 times two rank-at-most-one 5x2 cones.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Necessary-and-sufficient equations are exact; the complete real Hermitian orbit fibre is not classified.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No retarded complex is imported.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "This gate is scoped only to bounded or finite-quasiperiodic corrections.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "The two fixed norm levels and all three lifted rotation moment maps are retained.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan candidate 18 only",
+        "boundaries": "closed S1_L times S2 before final residual quotient",
+        "carrier": "one same-sign two-|k| ell=2 active support at fixed positive exact scalar-cone occupations",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+        "degree": 2,
+        "ell": 2,
+        "k": "candidate-18 signed compact n=(1,2), not identified with any other candidate",
+        "m": "all m=-2,...,2",
+        "omega": "positive-frequency p-extra(n=1)+q-minus(n=2) SUM collision with conjugate reality completion",
+        "parity": "complete axial/polar carrier",
+        "theory": "Weyl-Maxwell target"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/einstein_maxwell_weyl_global_bounded_cone_real_locus_gate.py",
+  "generated_by_sha256": "af3d6770720b116195e7463be6622845a6f27780a9c16fd8161a873e3ea15181",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_nonlinear",
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_global_bounded_cone_real_locus_gate --check",
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_global_bounded_cone_real_locus_gate",
+    "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_global_bounded_cone_real_locus_gate",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-global-bounded-cone-real-locus-gate-fragment-v1.json"
+  ]
+}
