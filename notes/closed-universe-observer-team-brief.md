@@ -2648,3 +2648,32 @@ coordinate detector remain separately certified, but the 160-row pushout is
 still nondefined.  Physical reduction, \(\mathcal O_{\rm detector}|_{\mathcal
 Z_2}\), memory, redshift, recoil, \(q_2,q_3\) and quantum promotion remain
 `NO_CERTIFIED_MAP` or not reached.
+
+## Active bridge: fresh post-repair apparatus pushout disposition
+
+The complete repair no-go has now been consumed together with the certified
+material-parent-56 interface.  The negative branch is decisive before any
+pushout assembly: the declared replacement family contains no nilpotent
+112-row source object, so no action-role identification relation, combined
+row count, unary, pairing, embeddings, quotient, real/K actions or detector
+map can be generated.  In particular, the old value 160 is not inherited as
+an assumed carrier size.  Physical reduction is not mathematically defined.
+
+The exact nonactivation separator retains all 4,542 repair equations.  Its
+coefficient rank is one, augmented rank is two and the canonical two-equation
+minor has determinant
+\(-1328324915314341/20393268025000000\); background preservation leaves
+correction dimension zero.  The standalone 56-row material complex, its
+rank-56 pairing, four relative readout blocks and rank-two coordinate detector
+remain certified but separate.
+
+The fail-closed atlas row is
+`observer.berger.interaction.repaired112_apparatus_pushout_after_132_defect_disposition`.
+Its activation gate is a complete exact catalogue of genuinely new
+one-vertex or one-field/BV-dual-pair action extensions.  Any candidate must
+add a coefficient-image direction that hits the target-only
+`h_hat_star_00 <- sigma` \(j x_0^2\) coordinate, cancels the correction-only
+`h_hat_star_00 <- c_spatial_1` direction, preserves the pinned background and
+passes cyclicity, reality, \(K_{\rm Berger}\), support and principal-symbol
+checks.  This disposition certifies that signature; it does not certify a
+viable extension.

@@ -225,6 +225,22 @@ def test_replacement112_complete_local_repair_ansatz_fails_closed():
     }
 
 
+def test_fresh_post_repair_pushout_is_certified_nonactivation():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.interaction.repaired112_apparatus_pushout_after_132_defect_disposition"
+    )
+    assert row["descriptions"]["symplectic"] == "CERTIFIED"
+    assert row["descriptions"]["observational"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["response_rank"]["status"] == "NO_CERTIFIED_MAP"
+    assert row["observer_data"]["clock_and_rod_dependence"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    assert "BERGER_REPAIRED112_APPARATUS_PUSHOUT_AFTER_132_DEFECT_DISPOSITION" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }
+
+
 def test_executable_160_export_stops_at_base_producer_coefficients():
     row = next(
         row for row in build()["entries"]

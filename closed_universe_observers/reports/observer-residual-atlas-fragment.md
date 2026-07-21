@@ -342,6 +342,22 @@ does not exclude a genuinely changed action/background architecture.  The
 replacement unary, 160-row pushout, reduction and all nonlinear observer
 consumers remain fail-closed.
 
+The fresh post-repair apparatus consumer is now separately terminal.  It
+imports the complete repair no-go and the executable material-parent-56
+interface by hash and stops at the categorical object gate.  Because no
+nilpotent replacement-112 source exists in the declared family, the pushout
+is `NONDEFINED`; the identification relation and combined row count are not
+reached, and physical reduction is `NO_CERTIFIED_MAP`.  The material-parent
+rank-two coordinate detector remains a certified separate object.
+
+The atlas row
+`observer.berger.interaction.repaired112_apparatus_pushout_after_132_defect_disposition`
+records the exact rank-one/rank-two repair separator and the minimal escape
+signature.  A successor must supply at least one genuinely new action-Hessian
+coefficient-image direction, either through a new invariant vertex or through
+a real degree-zero field together with its degree-one BV dual.  This is a
+necessary typed signature, not evidence that either extension exists.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.
