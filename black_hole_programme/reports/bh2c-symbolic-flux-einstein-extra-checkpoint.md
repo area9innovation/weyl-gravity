@@ -78,12 +78,84 @@ all-orders item avoid; for the 4th-order Bach system it appears genuinely
 required and is deferred to a dedicated session rather than forced inside this
 time box.
 
+## Session 2 (2026-07-21): the blocking obstruction is RESOLVED
+
+The gauge-invariant reduction the previous slice deferred is done, and the
+symbolic-`omega` **extra-branch asymptotic exponents at infinity are extracted
+cleanly in ~2 s**. Still a checkpoint (no certificate): the exponents are the
+unblock, but the item forbids "leading exponent alone called finite flux", so the
+literal Lee–Wald current evaluation, the polar parity, the phase-space definition
+and the ledger remain before a certificate can issue.
+
+**Key idea (resolves the rank-1 gauge degeneracy).** On a Ricci-flat background
+`delta Ric` is *gauge-invariant* (`L_xi Ric = L_xi 0 = 0`). So instead of the raw
+`(h0, h1)` metric (whose residual axial gauge made the Bach principal symbol
+rank-1 degenerate), work directly with the axial **Ricci carrier** `psi_ab`
+(trace-free, divergence-free; the certified BH-2A extra-branch object). Its
+operator `(1/2)Box psi + C psi = 0` at symbolic `omega`, angular-stripped and
+Fourier-reduced, is small and non-degenerate, and its infinity indicial is exact.
+
+**Result (axial l=2, symbolic real `omega`, scratch `ff_extra3.py`, ~2 s).**
+The carrier infinity branches are
+
+```
+exponential-rate condition:  lambda^2 + omega^2 = 0   =>  lambda = +- i omega
+power in each rate sector:    rate -i omega -> s = -2 i omega
+                              rate +i omega -> s = +2 i omega
+```
+
+i.e. `psi_carrier ~ e^{+- i omega r} r^{+- 2 i omega} = e^{+- i omega r_*}`
+(tortoise phase), so the **carrier amplitude is `O(1)` — real part of the
+exponent is `0`, independent of `omega`.** By contrast the certified Einstein
+sector (`BH2C_METRIC_ALL_ORDERS`, shared master `F = H1'`) decays: branches
+`r^{-3}` and `e^{-2 i omega r} r^{-4 i omega + 1}` (amplitude real parts `-3` and
+`+1` for `F`; the Einstein *metric* master `psi_E` decays).
+
+**Why this settles the frequency dependence (the note the item flagged).** The
+`omega` enters the exponents ONLY through the imaginary tortoise phase
+(`e^{+- i omega r_*}`, `|r^{2 i omega}| = 1` for real `omega`); the **amplitude
+real parts are `omega`-independent**. So the finite-vs-divergent split is
+`omega`-independent *as a derived fact*, not an assumption: Einstein modes decay
+(real part `<= -3`), extra modes do not (real part `0`), for every real
+`omega != 0`, with the exponents `+- i omega, +- 2 i omega` never real or
+colliding (no real exceptional frequency; `omega = 0` excluded).
+
+**Fixture consistency (`BH2C_FLUX_CLASS`, `omega = 3/5`).** The certified flux
+DENSITY powers are `E0|E0 = E2|E2 = -2` (integrable at infinity, `< -1` =>
+FINITE), and every extra-involving pair `E0|X0 = 0`, `E2|X2 = 1`, `X0|X0 = 0`
+(with a log), `X2|X2 = 2` (all `>= -1` => DIVERGENT). This is exactly the
+qualitative split the `omega`-independent amplitude exponents predict: the less
+decay of the extra branch pushes every extra-involving density above the
+integrability floor. The `X0|X0` log matches the resonant/`r^{2 i omega}` tail.
+
+**Remaining steps to a certificate (well-posed, bounded).**
+1. Drive the certified literal Lee–Wald bilinears `F_t, F_r`
+   (`BH2A_FLUX_MATRIX`, the working fast path from Session 1) with the
+   symbolic-`omega` extra-branch metric profiles (the carrier exponents lift to
+   the metric via `delta Ric[h_extra] = psi_carrier`, an `O(1/r)` inversion in
+   the oscillatory sector), retaining ALL boundary/derivative-of-curvature terms
+   — no leading-exponent shortcut. Produce the exact symbolic-`omega` power/log
+   table and specialise to `omega = 3/5` against `BH2C_FLUX_CLASS`.
+2. Repeat for the polar parity via `BH2C_POLAR_FLUX_CLASS` (same carrier method;
+   the shared master already unifies the Einstein sector across parities).
+3. Define the asymptotically flat finite-Lee–Wald-flux phase-space candidate in
+   coordinate and regular-tetrad variables (differentiability, residual gauge,
+   parity, real structure, `omega = 0` exclusion) as part of the certificate.
+4. Conjugate-frequency pairing, lift invariance, exceptional-set proof,
+   independent current-identity rail, boundary-condition mutations, and the
+   does-not-establish ledger.
+
+**Not claimed (unchanged):** no finite-flux, radiative, spectral, or physical
+statement is certified at symbolic `omega`; this session records the exponent
+structure and the obstruction resolution only.
+
 ## Receipts
 
-- Scratch harness `ff_probe.py` (positive control green, ~3 s); Bach-row builder
-  and the three exponent-method probes (`bach_extra_probe.py`,
-  `bach_classify.py`, `indicial2.py`) — all in the session scratchpad, all
-  fast-completing except the stalling symbolic companion solve noted above.
+- Session 1 scratch: `ff_probe.py` (positive control green, ~3 s); exponent-method
+  probes (`bach_extra_probe.py`, `bach_classify.py`, `indicial2.py`).
+- Session 2 scratch: `ff_extra3.py` (carrier infinity rates `+- i omega` and
+  powers `+- 2 i omega`, ~2 s; built on the certified BH-2A carrier operator and
+  the `delta Ric` gauge-invariance of the Ricci-flat background).
 - No repository source, certificate, schema, atlas, or note under
-  `black_hole_programme/` was modified by this slice (verify with
-  `git status --short black_hole_programme/`). Only this checkpoint report is new.
+  `black_hole_programme/` is modified by this slice other than this checkpoint
+  report. Only the report is updated.
