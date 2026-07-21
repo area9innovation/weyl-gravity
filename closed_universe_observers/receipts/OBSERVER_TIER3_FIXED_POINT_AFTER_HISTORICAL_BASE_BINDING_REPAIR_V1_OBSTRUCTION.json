@@ -1,0 +1,99 @@
+{
+  "schema": "closed-universe-observer-tier3-fixed-point-after-historical-base-binding-repair-obstruction-v1",
+  "result_id": "OBSERVER_TIER3_FIXED_POINT_AFTER_HISTORICAL_BASE_BINDING_REPAIR_V1_OBSTRUCTION",
+  "science_forge_work_item": "sf:program/work/observer-tier3-fixed-point-after-historical-base-binding-repair-v1",
+  "recorded_at": "2026-07-21T19:55:00Z",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "input_refs": {
+    "historical_base_repair": {
+      "path": "closed_universe_observers/receipts/OBSERVER_LEGACY_RECEIVER_HISTORICAL_BASE_BINDING_REPAIR_V1_MANIFEST.json",
+      "sha256": "d1f82deac9299c8bbbfa7ca5beffdeb4dad2572672867df4431e35dbceaef501"
+    },
+    "prior_tier3_obstruction": {
+      "path": "closed_universe_observers/receipts/OBSERVER_TIER3_FIXED_POINT_AFTER_LEGACY_CROSSWALK_EXTENSION_V2_OBSTRUCTION.json",
+      "sha256": "e4a78132adaa1ffe28649189ae13a9635706ebd309edcc0245dbafba20dfd21a"
+    }
+  },
+  "materialization": {
+    "repair_commit": "d3b46e000875e06c97f4afd701c662e0ccb1bc1b",
+    "scope": "physics/symplectic-reconstruction",
+    "method": "GIT_LFS_SKIP_SMUDGE=1 git archive <repair_commit> <scope>",
+    "regular_file_and_symlink_blob_count": 11191,
+    "missing_count": 0,
+    "hash_mismatch_count": 0,
+    "status": "PASS_EXACT_GIT_BLOBS",
+    "preflight_resource_event": {
+      "method": "full-parent-repository detached worktree under /tmp",
+      "status": "RESOURCE_FAILURE_BEFORE_TEST_START",
+      "effect_on_authoritative_run": "NONE"
+    }
+  },
+  "authoritative_run": {
+    "command": "PYTHONPATH=. pytest -q -x closed_universe_observers/tests",
+    "run_count": 1,
+    "passed_before_first_failure": 300,
+    "failed": 1,
+    "skipped_before_failure": 0,
+    "pytest_elapsed_seconds": 454.79,
+    "wall_elapsed_seconds": 462.24,
+    "status": "STOPPED_AT_FIRST_FAILURE"
+  },
+  "first_failure": {
+    "test": "closed_universe_observers/tests/test_berger_detector_records.py::test_smeared_retarded_transfer_gate_remains_fail_closed",
+    "producer": "closed_universe_observers/generate_berger_detector_records.py",
+    "producer_sha256": "5a0c2f5b71c378a6a4a26df9af4e1321e944e476ea85cf047c20c32fa03a399b",
+    "test_sha256": "c911a2132d3b86c426029cbdce0cfd2e5e4fe0567894c7e5006afe549b51e392",
+    "fixture": "closed_universe_observers/fixtures/berger_localized_detector_records_input.json",
+    "fixture_sha256": "0290db56fef702ab77eb7154d85b850618e94d68caa3006aa48ac1ead2c88fbf",
+    "dependency_snapshot_commit": "fc7a680d32d23d516a1c29c54ae1e0734d532a75",
+    "expected_content_identity": "A Git-attached exact materialization where git rev-parse --show-prefix returns physics/symplectic-reconstruction/ and git show resolves the declared dependency snapshot blobs.",
+    "actual_content_identity": "All 11191 scoped Git blobs matched exactly, but the archive carried no .git administrative metadata; git rev-parse --show-prefix exited 128 with fatal: not a git repository.",
+    "exception": "subprocess.CalledProcessError",
+    "classification": "TEST_HARNESS_MATERIALIZATION_INTERFACE_DEFECT",
+    "scientific_contradiction": false,
+    "historical_base_defect_recurred": false,
+    "stale_pin_detected": false
+  },
+  "mutation_results": [
+    {
+      "name": "classify_git_context_failure_as_scientific_contradiction",
+      "detected": true
+    },
+    {
+      "name": "count_failed_run_as_tier3_green",
+      "detected": true
+    },
+    {
+      "name": "activate_paper9_after_partial_suite",
+      "detected": true
+    },
+    {
+      "name": "credit_prior_398_passes_to_fresh_run",
+      "detected": true
+    },
+    {
+      "name": "hide_materialization_hash_mismatch",
+      "detected": true
+    }
+  ],
+  "smallest_typed_successor": {
+    "kind": "GIT_ATTACHED_EXACT_MATERIALIZATION_PREFLIGHT_AND_FRESH_TIER3_RUN",
+    "requirement": "Create an exact detached worktree for repair commit d3b46e000875e06c97f4afd701c662e0ccb1bc1b on a filesystem with sufficient capacity, prove all scoped blob identities and Git snapshot resolution before pytest, then run one new complete fail-fast Observer suite from zero.",
+    "forbid": "No retry credited to this run; no producer patch; no archive treated as Git-attached; no Paper 9 activation before a complete green suite."
+  },
+  "flags": {
+    "MATERIALIZATION_BLOBS_EXACT": true,
+    "AUTHORITATIVE_RUN_EXECUTED_ONCE": true,
+    "AUTHORITATIVE_RUN_GREEN": false,
+    "PAPER9_EVIDENCE_GATE_ACTIVATED": false,
+    "PHYSICS_DISPOSITION_CHANGED": false,
+    "NONLINEAR_CLAIM": false,
+    "PARTICLE_CLAIM": false,
+    "QUANTUM_CLAIM": false
+  },
+  "claim_boundary": "Records the exact first failure of the single post-repair Observer Tier-3 traversal after 300 passing tests. The scoped file blobs were exact; the failure arose because an archive lacks Git administrative metadata required by a legacy producer's snapshot resolver. This is not a scientific contradiction, does not reopen the historical-base repair, and does not activate the Paper 9 evidence gate."
+}
