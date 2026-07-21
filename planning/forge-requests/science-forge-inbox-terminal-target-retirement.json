@@ -1,0 +1,17 @@
+{
+  "id": "sf:forge-request/science-forge-inbox-terminal-target-retirement",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Prevent a stream inbox from presenting an unresolved recovery or assignment message as OPEN after the referenced target work item has already reached an authoritative terminal disposition.",
+    "depends_on": [],
+    "stop_condition": "Extend the inbox fold with a typed effective disposition for requests whose target work item is DONE, RETIRED, OBSTRUCTED, SHORTFALL or otherwise terminal. Preserve the append-only request event and its original state, but render it under a separate TERMINAL_TARGET, SUPERSEDED or HISTORICAL section rather than OPEN; show the target item, terminal disposition, terminal event and whether any distinct follow-up action remains. An assignment-recovery request that says `continue` or `you hold the live lease` must never remain actionable after the target is terminal or its lease has been released. Make `s-f inbox`, overview request counts and the JSON backend agree. Add deterministic both-backend fixtures for: a DONE target with an old OPEN lease-recovery request; a terminal SHORTFALL target whose delivered artifact is still useful history; a genuinely OPEN request to an ACTIVE target; a terminal target with an explicitly created successor request that remains actionable; and a stale request whose target cannot be resolved. Provide a compact command or documented filter for including historical requests when auditing provenance.",
+    "forbid": "no deletion, rewriting or implicit acceptance/rejection of historical request events; no terminal target treated as proof that every related successor request is resolved; no hiding unresolved requests whose target is still active; no filesystem-mtime inference; no physics-specific item-name exception; no automatic lease mutation from the read-only inbox view.",
+    "notes": [
+      "Live reproduction 2026-07-21 17:04 Europe/Berlin: `s-f inbox --stream classical` reports two OPEN ASSIGNED_LEASE_PACKAGE_RECOVERY messages for `classical-paper09-legacy-claim-binding-supersession` and `classical-phase1-counterflow-overview-publication-update`. Both target work items are already authoritatively DONE, their leases were released, and the coordinator overview correctly shows Classical with no active or ready item. The stale inbox messages instruct a newly corrected Classical session to continue completed work and make an honestly drained Phase-1 stream look misconfigured.",
+      "This is a presentation/fold defect, not permission to manufacture replacement work. The Classical stream is currently drained because its remaining four items are dependency-blocked and its Phase-1 evidence/publication slices are complete."
+    ]
+  }
+}
