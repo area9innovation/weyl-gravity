@@ -1,0 +1,85 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "PAPER09_FINAL_FREEZE_AFTER_HISTORICAL_BASE_TIER3_V2_TIER_RECEIPT",
+  "claim_result_id": "PAPER09_FINAL_FREEZE_AFTER_HISTORICAL_BASE_TIER3_V2_OBSTRUCTION",
+  "decision": "DRAFT_ALLOWED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifact_hashes": {
+    "paper/09-relational-clocks-berger-d-cartan-claim-map.json": "3dded6ad841140c9c4c1336d70d0891b2ed443741a077b615349a66a8456729a",
+    "planning/paper-coverage/observer-phase1-relational-observable-dispositions-2026-07-21.json": "1297dd53383ae1b3d70f0dbbdb8cedb7a8b5de936470f5292306491700dccfb1",
+    "closed_universe_observers/receipts/PAPER09_FINAL_FREEZE_AFTER_HISTORICAL_BASE_TIER3_V2_OBSTRUCTION.json": "04248f6e21e422dd32864f8224e7385d0c271bae9f35614a3630b8f43a93383d",
+    "closed_universe_observers/generate_paper09_counterflow_health_freeze.py": "5e3ea05d9e7b932ffa4ac36c434c2fcb17567dadf3346f78345d558876513b7b",
+    "paper/verify_09_relational_clocks_claim_map.py": "62c801eafb3d0c7a0051bef9a9646b82463125d9738a48efbcc76bf901fa2a0b",
+    "closed_universe_observers/verify_paper09_final_freeze_after_historical_base_tier3_v2.py": "3ff8b3b5a04641e35ed077b200809d30434772d27936c093a2006fe5ae6ca56a"
+  },
+  "gate_results": {
+    "legacy_source_binding": "OBSTRUCTED_RECURSIVE_EXACT_HASH_EDGE",
+    "historical_base_binding": "PASS_IMMUTABLE_GIT_BLOB",
+    "post_repair_observer_tier3": "OBSTRUCTED_TEST_HARNESS_MATERIALIZATION_INTERFACE_DEFECT",
+    "transitive_health_nonactivation": "OBSTRUCTED_THREE_STALE_HISTORICAL_BASE_DEPENDENCY_HASHES",
+    "theorem_freeze": false
+  },
+  "tests": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile closed_universe_observers/generate_paper09_counterflow_health_freeze.py paper/verify_09_relational_clocks_claim_map.py closed_universe_observers/verify_paper09_final_freeze_after_historical_base_tier3_v2.py closed_universe_observers/tests/test_paper09_counterflow_health_freeze.py closed_universe_observers/tests/test_paper09_final_freeze_after_historical_base_tier3_v2.py",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 closed_universe_observers/generate_paper09_counterflow_health_freeze.py && python3 paper/verify_09_relational_clocks_claim_map.py --write-coverage && python3 closed_universe_observers/verify_paper09_final_freeze_after_historical_base_tier3_v2.py --write-receipt",
+      "result": "22 claims, 48 exact imports; NONVACUOUS_PASS; DRAFT_ALLOWED obstruction replay PASS",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. pytest -q closed_universe_observers/tests/test_paper09_counterflow_health_freeze.py closed_universe_observers/tests/test_paper09_final_freeze_after_historical_base_tier3_v2.py",
+      "elapsed_seconds": 0.16,
+      "result": "13 passed",
+      "status": "PASS"
+    },
+    {
+      "tier": 2,
+      "command": "python3 d_quotient_classical/backreacted_clock/verify_paper_09_claim_table.py",
+      "elapsed_seconds": 0.09,
+      "result": "source-binding evidence hash mismatch: publication_claim_map",
+      "status": "EXPECTED_FAIL_CLOSED_OBSTRUCTION"
+    },
+    {
+      "tier": 2,
+      "command": "PYTHONPATH=. pytest -q closed_universe_observers/tests/test_counterflow_charged_time_physical_instantiation_after_repaired_q70_health_nonactivation.py",
+      "elapsed_seconds": 0.24,
+      "result": "2 failed, 3 passed; persisted certificate pins three pre-repair historical dependency hashes",
+      "status": "EXPECTED_FAIL_CLOSED_OBSTRUCTION"
+    },
+    {
+      "tier": 2,
+      "command": "python3 closed_universe_observers/verify_charged_time_receiver_admissibility_crosswalk.py",
+      "result": "Resident tree lacks residual_atlas/charged-physical-time-relational-event-map-theorem-fragment-v1.json; exact d3 archive contains the blob but is not Git-attached, so its immutable historical-object query exits 128",
+      "status": "NOT_REPRODUCED_CURRENT_WORKTREE_MATERIALIZATION_BOUNDARY"
+    },
+    {
+      "tier": 2,
+      "command": "python3 closed_universe_observers/verify_berger_legacy_receiver_admissibility_replay.py && python3 closed_universe_observers/verify_berger_legacy_receiver_operational_frequency_ratio_nonactivation.py && python3 closed_universe_observers/verify_observer_tier3_fixed_point_after_historical_base_binding_repair_v1.py",
+      "result": "three independent evidence replays pass",
+      "status": "PASS"
+    },
+    {
+      "tier": 3,
+      "command": "PYTHONPATH=. pytest -q -x closed_universe_observers/tests",
+      "result": "Imported terminal traversal: 300 passed, then exact Git-context materialization-interface failure; no retry credited",
+      "status": "NOT_RERUN_DEDICATED_GIT_ATTACHED_SUCCESSOR_OWNS_FRESH_TRAVERSAL"
+    },
+    {
+      "tier": 3,
+      "command": "two warning-free PDF builds",
+      "result": "Not executed because the theorem-freeze precondition is false",
+      "status": "NOT_APPLICABLE_DRAFT_ALLOWED"
+    }
+  ],
+  "claim_boundary": "The 22-claim map is regenerated against all four terminal dependency packages and its independent publication coverage is nonvacuous. Paper 9 remains DRAFT_ALLOWED because the legacy ledger and regenerated map have no simultaneous content-hash fixed point, the fresh post-repair Observer Tier-3 traversal is not green, and the health-nonactivation certificate still pins three pre-repair historical hashes. The historical repair is imported from its terminal exact receipt; a current-tree crosswalk replay is not claimed because one committed atlas dependency is absent and the exact archive is not Git-attached. No observer science or seven-row disposition changes."
+}

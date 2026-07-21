@@ -43,8 +43,11 @@ def verify_document(doc: dict, root: Path = ROOT) -> dict:
     gates = doc.get("draft_allowed_gates", [])
     if [gate.get("gate") for gate in gates] != [
         "LEGACY_TEN_CLAIM_SOURCE_BINDING_SUPERSESSION", "OBSERVER_STREAM_TIER3_GREEN"
-    ] or any(gate.get("status") != "OPEN" for gate in gates):
-        raise VerificationError("DRAFT_ALLOWED gates are incomplete or silently closed")
+    ] or [gate.get("status") for gate in gates] != [
+        "OBSTRUCTED_RECURSIVE_EXACT_HASH_EDGE",
+        "OBSTRUCTED_TEST_HARNESS_MATERIALIZATION_INTERFACE_DEFECT",
+    ]:
+        raise VerificationError("DRAFT_ALLOWED terminal evidence boundaries are incomplete or promoted")
 
     claim_ids = [row["claim_id"] for row in doc["claims"]]
     expected = [f"P09-C{i}" for i in range(1, 11)] + [f"P09-O{i}" for i in range(1, 13)]
@@ -86,6 +89,22 @@ def verify_document(doc: dict, root: Path = ROOT) -> dict:
     if not required_results.issubset(imported_ids):
         raise VerificationError("mandatory terminal imports are incomplete")
 
+    required_final_paths = {
+        "d_quotient_classical/receipts/PAPER_09_LEGACY_CLAIM_BINDING_REPIN_V1_TIER_RECEIPT.json",
+        "planning/events/classical-paper09-legacy-claim-binding-supersession-REPORT-a003ff65a37d1cf4.json",
+        "planning/events/classical-paper09-legacy-claim-binding-supersession-DONE-91e8ad26b9ef4cdf.json",
+        "closed_universe_observers/receipts/PAPER09_COUNTERFLOW_HEALTH_NONACTIVATION_FREEZE_V1_TIER_RECEIPT.json",
+        "planning/events/observer-paper09-counterflow-health-nonactivation-freeze-OBSTRUCTED-c004263fe35d9f83.json",
+        "closed_universe_observers/receipts/OBSERVER_LEGACY_RECEIVER_HISTORICAL_BASE_BINDING_REPAIR_V1_MANIFEST.json",
+        "planning/events/observer-legacy-receiver-historical-base-binding-repair-v1-DONE-314f6acccb592080.json",
+        "closed_universe_observers/receipts/OBSERVER_TIER3_FIXED_POINT_AFTER_HISTORICAL_BASE_BINDING_REPAIR_V1_OBSTRUCTION.json",
+        "closed_universe_observers/receipts/OBSERVER_TIER3_FIXED_POINT_AFTER_HISTORICAL_BASE_BINDING_REPAIR_V1_TIER_RECEIPT.json",
+        "planning/events/observer-tier3-fixed-point-after-historical-base-binding-repair-v1-OBSTRUCTED-1dc881aa4aaca801.json",
+    }
+    imported_paths = {row["path"] for row in doc["exact_hash_imports"]}
+    if not required_final_paths.issubset(imported_paths):
+        raise VerificationError("final source-binding, historical-base or Tier-3 evidence is incomplete")
+
     old = json.loads((root / "d_quotient_classical/certificates/PAPER_09_BERGER_CLAIM_TABLE.json").read_text())
     if old["claim_ids_complete"] != [f"P09-C{i}" for i in range(1, 11)]:
         raise VerificationError("legacy ten-claim table is not complete")
@@ -101,6 +120,28 @@ def verify_document(doc: dict, root: Path = ROOT) -> dict:
             if dotted(cert, key) is not False:
                 raise VerificationError(f"required false flag failed: {key}")
 
+    table_import = next(
+        row for row in doc["exact_hash_imports"]
+        if row["path"] == "d_quotient_classical/certificates/PAPER_09_BERGER_CLAIM_TABLE.json"
+    )
+    if table_import["sha256"] != digest(root / table_import["path"]):
+        raise VerificationError("publication map does not import the current legacy table")
+    binding = old["source_binding_disposition"]
+    if binding["selected_disposition"] != "REPIN_CURRENT_PUBLICATION_SOURCES":
+        raise VerificationError("terminal Classical source-binding disposition is not the declared repin")
+    pinned_map_hash = binding["publication_claim_map"]["sha256"]
+    current_map_hash = digest(root / MAP.relative_to(ROOT))
+    if pinned_map_hash == current_map_hash:
+        raise VerificationError("expected recursive source-binding obstruction disappeared without an acyclic authority")
+    fixed_point = doc.get("source_binding_fixed_point", {})
+    if fixed_point != {
+        "classification": "NO_SIMULTANEOUS_CONTENT_HASH_FIXED_POINT",
+        "cycle_present": True,
+        "legacy_table_imports_regenerated_publication_map": False,
+        "publication_map_imports_current_legacy_table": True,
+    }:
+        raise VerificationError("recursive publication/ledger source binding was hidden or called green")
+
     phase_events = [row for row in doc["exact_hash_imports"] if "phase1-relational-observable-disposition-synthesis" in row["path"] and "/events/" in row["path"]]
     health_events = [row for row in doc["exact_hash_imports"] if "after-repaired-q70-health" in row["path"] and "/events/" in row["path"]]
     if len(phase_events) != 3 or len(health_events) != 3:
@@ -109,6 +150,31 @@ def verify_document(doc: dict, root: Path = ROOT) -> dict:
         done = [json.loads((root / row["path"]).read_text()) for row in rows if "-DONE-" in row["path"]]
         if len(done) != 1 or done[0]["body"]["payload"]["to_state"] != "DONE":
             raise VerificationError("DONE lifecycle evidence is invalid")
+
+    terminal_states = {
+        "planning/events/classical-paper09-legacy-claim-binding-supersession-DONE-91e8ad26b9ef4cdf.json": "DONE",
+        "planning/events/observer-paper09-counterflow-health-nonactivation-freeze-OBSTRUCTED-c004263fe35d9f83.json": "OBSTRUCTED",
+        "planning/events/observer-legacy-receiver-historical-base-binding-repair-v1-DONE-314f6acccb592080.json": "DONE",
+        "planning/events/observer-tier3-fixed-point-after-historical-base-binding-repair-v1-OBSTRUCTED-1dc881aa4aaca801.json": "OBSTRUCTED",
+    }
+    for path, expected_state in terminal_states.items():
+        event = json.loads((root / path).read_text())
+        if event["body"]["payload"].get("to_state") != expected_state:
+            raise VerificationError(f"terminal dependency state drift: {path}")
+
+    tier3 = json.loads((root / "closed_universe_observers/receipts/OBSERVER_TIER3_FIXED_POINT_AFTER_HISTORICAL_BASE_BINDING_REPAIR_V1_OBSTRUCTION.json").read_text())
+    if tier3["authoritative_run"] != {
+        **tier3["authoritative_run"],
+        "status": "STOPPED_AT_FIRST_FAILURE",
+    } or tier3["flags"]["AUTHORITATIVE_RUN_GREEN"] is not False:
+        raise VerificationError("post-repair Tier-3 obstruction was promoted or mistyped")
+    if tier3["first_failure"]["classification"] != "TEST_HARNESS_MATERIALIZATION_INTERFACE_DEFECT":
+        raise VerificationError("post-repair Tier-3 first-failure classification drifted")
+    historical = json.loads((root / "closed_universe_observers/receipts/OBSERVER_LEGACY_RECEIVER_HISTORICAL_BASE_BINDING_REPAIR_V1_MANIFEST.json").read_text())
+    if historical["input_refs"]["historical_five_row_contract"]["object_type"] != "blob":
+        raise VerificationError("immutable historical base was replaced by a mutable current path")
+    if historical["scientific_disposition"]["original_five_dispositions_unchanged"] is not True:
+        raise VerificationError("historical-base repair changed the source-derived receiver census")
 
     hd = doc["health_disposition"]
     if hd != {
@@ -137,6 +203,23 @@ def verify_document(doc: dict, root: Path = ROOT) -> dict:
         raise VerificationError("operational layer was promoted")
     if doc["coverage"]["uncovered_material_results"] or not doc["coverage"]["all_material_imports_have_result_to_paper_edges"]:
         raise VerificationError("material publication coverage is incomplete")
+
+    final = doc.get("final_disposition", {})
+    if final != {
+        "classical_source_binding_item": "DONE_BUT_NO_BIDIRECTIONAL_HASH_FIXED_POINT",
+        "historical_base_binding": "CERTIFIED_IMMUTABLE_BLOB",
+        "post_repair_observer_tier3": "OBSTRUCTED_TEST_HARNESS_MATERIALIZATION_INTERFACE_DEFECT",
+        "reason_codes": [
+            "RECURSIVE_PUBLICATION_LEDGER_HASH_EDGE",
+            "OBSERVER_TIER3_NOT_GREEN",
+            "TRANSITIVE_HEALTH_NONACTIVATION_CERTIFICATE_STALE_AFTER_HISTORICAL_REPAIR",
+        ],
+        "status": "DRAFT_ALLOWED",
+        "theorem_frozen": False,
+        "transitive_health_nonactivation": "OBSTRUCTED_THREE_STALE_HISTORICAL_BASE_DEPENDENCY_HASHES",
+        "version": 2,
+    }:
+        raise VerificationError("final Paper 9 lifecycle disposition drifted or was promoted")
 
     return {
         "schema": "observer-paper-coverage-replay-v1",

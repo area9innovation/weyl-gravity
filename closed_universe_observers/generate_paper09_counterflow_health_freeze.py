@@ -59,6 +59,7 @@ def main() -> None:
     assembly_path = "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_V1.json"
     assembly = load(assembly_path)
     phase = load(phase_path)
+    all_claim_ids = [f"P09-C{i}" for i in range(1, 11)] + [f"P09-O{i}" for i in range(1, 13)]
 
     claims: list[dict] = []
     old_classes = {
@@ -141,6 +142,56 @@ def main() -> None:
         edge = ["P09-O10"] if "phase1-relational" in pattern else ["P09-O12"]
         add(str(matches[0].relative_to(ROOT)), "terminal Science Forge lifecycle evidence", edge)
 
+    final_dependency_imports = {
+        "d_quotient_classical/receipts/PAPER_09_LEGACY_CLAIM_BINDING_REPIN_V1_TIER_RECEIPT.json": (
+            "terminal Classical Paper 9 source-binding repin receipt", [f"P09-C{i}" for i in range(1, 11)]
+        ),
+        "planning/events/classical-paper09-legacy-claim-binding-supersession-REPORT-a003ff65a37d1cf4.json": (
+            "terminal Classical source-binding work report", [f"P09-C{i}" for i in range(1, 11)]
+        ),
+        "planning/events/classical-paper09-legacy-claim-binding-supersession-DONE-91e8ad26b9ef4cdf.json": (
+            "terminal Classical source-binding lifecycle disposition", [f"P09-C{i}" for i in range(1, 11)]
+        ),
+        "closed_universe_observers/receipts/PAPER09_COUNTERFLOW_HEALTH_NONACTIVATION_FREEZE_V1_TIER_RECEIPT.json": (
+            "predecessor Paper 9 DRAFT_ALLOWED evidence receipt", all_claim_ids
+        ),
+        "reports/observer-paper09-counterflow-health-nonactivation-freeze-closeout-2026-07-21.md": (
+            "predecessor Paper 9 DRAFT_ALLOWED closeout", all_claim_ids
+        ),
+        "planning/events/observer-paper09-counterflow-health-nonactivation-freeze-OBSTRUCTED-c004263fe35d9f83.json": (
+            "terminal predecessor publication lifecycle disposition", all_claim_ids
+        ),
+        "closed_universe_observers/receipts/OBSERVER_LEGACY_RECEIVER_HISTORICAL_BASE_BINDING_REPAIR_V1_MANIFEST.json": (
+            "immutable historical five-row binding repair manifest", ["P09-O6", "P09-O7"]
+        ),
+        "reports/observer-legacy-receiver-historical-base-binding-repair-v1-closeout-2026-07-21.md": (
+            "historical-base repair closeout", ["P09-O6", "P09-O7"]
+        ),
+        "planning/events/observer-legacy-receiver-historical-base-binding-repair-v1-REPORT-0df58f792b4ac7a9.json": (
+            "terminal historical-base repair work report", ["P09-O6", "P09-O7"]
+        ),
+        "planning/events/observer-legacy-receiver-historical-base-binding-repair-v1-DONE-314f6acccb592080.json": (
+            "terminal historical-base repair lifecycle disposition", ["P09-O6", "P09-O7"]
+        ),
+        "closed_universe_observers/receipts/OBSERVER_TIER3_FIXED_POINT_AFTER_HISTORICAL_BASE_BINDING_REPAIR_V1_OBSTRUCTION.json": (
+            "fresh post-repair Observer Tier-3 obstruction", all_claim_ids
+        ),
+        "closed_universe_observers/receipts/OBSERVER_TIER3_FIXED_POINT_AFTER_HISTORICAL_BASE_BINDING_REPAIR_V1_TIER_RECEIPT.json": (
+            "fresh post-repair Observer Tier-3 verification receipt", all_claim_ids
+        ),
+        "reports/observer-tier3-fixed-point-after-historical-base-binding-repair-v1-closeout-2026-07-21.md": (
+            "fresh post-repair Observer Tier-3 closeout", all_claim_ids
+        ),
+        "planning/events/observer-tier3-fixed-point-after-historical-base-binding-repair-v1-REPORT-91b858271c4ba6de.json": (
+            "fresh post-repair Observer Tier-3 work report", all_claim_ids
+        ),
+        "planning/events/observer-tier3-fixed-point-after-historical-base-binding-repair-v1-OBSTRUCTED-1dc881aa4aaca801.json": (
+            "terminal post-repair Observer Tier-3 lifecycle disposition", all_claim_ids
+        ),
+    }
+    for path, (materiality, edge) in final_dependency_imports.items():
+        add(path, materiality, edge)
+
     classifications = [item["classification"] for item in claims]
     counts = Counter(classifications)
     for allowed in ("CONDITIONAL_THEOREM", "KINEMATIC_FIXTURE", "LOCAL_BV_CLASS", "ACTION_INTEGRATION", "PHYSICAL_DESCENT", "OPERATIONAL_OBSERVABLE", "NOT_ACTIVATED", "OPEN"):
@@ -157,19 +208,19 @@ def main() -> None:
         "draft_allowed_gates": [
             {
                 "gate": "LEGACY_TEN_CLAIM_SOURCE_BINDING_SUPERSESSION",
-                "status": "OPEN",
-                "failure": "The frozen PAPER_09_BERGER_CLAIM_TABLE verifier rejects the publication-current TeX source hashes.",
-                "closure": "The classical ledger owner must either repin the publication sources or formally retire its source-binding role in favour of this superset; that path is outside this lease.",
+                "status": "OBSTRUCTED_RECURSIVE_EXACT_HASH_EDGE",
+                "failure": "Regenerating this 22-claim map imports the repinned PAPER_09_BERGER_CLAIM_TABLE exactly, but that table pins the pre-regeneration 22-claim map hash; the two current-path hash edges have no simultaneous fixed point.",
+                "closure": "Issue an acyclic source-binding authority: the legacy ledger may bind immutable source objects, but must not content-address the mutable publication map that content-addresses the ledger.",
             },
             {
                 "gate": "OBSERVER_STREAM_TIER3_GREEN",
-                "status": "OPEN",
-                "failure": "The full observer suite found persisted-certificate drift in test_berger_84_row_apparatus_handoff.py before the run was interrupted after the first failure.",
-                "closure": "The owner must reconcile BERGER_84_ROW_APPARATUS_HANDOFF and an uninterrupted full observer suite must pass.",
+                "status": "OBSTRUCTED_TEST_HARNESS_MATERIALIZATION_INTERFACE_DEFECT",
+                "failure": "The single fresh post-repair fail-fast traversal passed 300 tests, then stopped because the exact archive lacked Git administrative metadata required by generate_berger_detector_records.py.",
+                "closure": "Run the typed Git-attached exact-materialization successor from zero and require a complete green Observer suite; no prior partial run is credited.",
             },
         ],
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
-        "claim_boundary": "The ten classical theorem claims retain their prior scientific scope. The publication-current edition is DRAFT_ALLOWED pending two explicit evidence-rail gates. Observer entries preserve conditional theorems and carrier-scoped kinematic responses, but certify no populated operational observable on the tested counterflow point.",
+        "claim_boundary": "The ten classical theorem claims retain their prior scientific scope. The publication-current edition remains DRAFT_ALLOWED at two exact terminal evidence boundaries: a recursive bidirectional source-hash edge and a non-green post-repair Observer Tier-3 traversal. Observer entries preserve conditional theorems and carrier-scoped kinematic responses, but certify no populated operational observable on the tested counterflow point.",
         "source_hashes": [{"path": path, "sha256": sha256(ROOT / path)} for path in source_files],
         "exact_hash_imports": imports,
         "claims": claims,
@@ -187,16 +238,35 @@ def main() -> None:
             "thirteen_field_operational_ratio_domain": "EMPTY",
         },
         "generator_semantics": {"K": "D-omega R", "K_equals_D": False, "raw_D_affine": True},
+        "final_disposition": {
+            "version": 2,
+            "status": "DRAFT_ALLOWED",
+            "theorem_frozen": False,
+            "classical_source_binding_item": "DONE_BUT_NO_BIDIRECTIONAL_HASH_FIXED_POINT",
+            "historical_base_binding": "CERTIFIED_IMMUTABLE_BLOB",
+            "post_repair_observer_tier3": "OBSTRUCTED_TEST_HARNESS_MATERIALIZATION_INTERFACE_DEFECT",
+            "transitive_health_nonactivation": "OBSTRUCTED_THREE_STALE_HISTORICAL_BASE_DEPENDENCY_HASHES",
+            "reason_codes": [
+                "RECURSIVE_PUBLICATION_LEDGER_HASH_EDGE",
+                "OBSERVER_TIER3_NOT_GREEN",
+                "TRANSITIVE_HEALTH_NONACTIVATION_CERTIFICATE_STALE_AFTER_HISTORICAL_REPAIR",
+            ],
+        },
+        "source_binding_fixed_point": {
+            "publication_map_imports_current_legacy_table": True,
+            "legacy_table_imports_regenerated_publication_map": False,
+            "cycle_present": True,
+            "classification": "NO_SIMULTANEOUS_CONTENT_HASH_FIXED_POINT",
+        },
         "coverage": {
             "material_import_count": len(imports),
             "uncovered_material_results": [],
             "all_material_imports_have_result_to_paper_edges": all(row["covered_by"] for row in imports),
         },
-        "mutation_guards": ["STALE_HEALTHY_CARRIER", "COORDINATE_RATIO_AS_REDSHIFT", "K_EQUALS_D"],
-        "required_commands": [
-            {"tier": 0, "cmd": "cd physics/symplectic-reconstruction && python3 -m py_compile closed_universe_observers/generate_paper09_counterflow_health_freeze.py paper/verify_09_relational_clocks_claim_map.py closed_universe_observers/tests/test_paper09_counterflow_health_freeze.py"},
-            {"tier": 1, "cmd": "cd physics/symplectic-reconstruction && python3 paper/verify_09_relational_clocks_claim_map.py"},
-            {"tier": 1, "cmd": "cd physics/symplectic-reconstruction && env PYTHONPATH=. pytest -q closed_universe_observers/tests/test_paper09_counterflow_health_freeze.py closed_universe_observers/tests/test_counterflow_charged_time_physical_instantiation_after_repaired_q70_health_nonactivation.py"},
+        "mutation_guards": [
+            "STALE_HEALTHY_CARRIER", "COORDINATE_RATIO_AS_REDSHIFT", "K_EQUALS_D",
+            "TIER3_OBSTRUCTION_AS_GREEN", "SOURCE_BINDING_CYCLE_AS_PASS",
+            "HISTORICAL_BLOB_AS_MUTABLE_CURRENT_PATH", "DRAFT_ALLOWED_AS_THEOREM_FROZEN",
         ],
         "does_not_establish": [
             "a new receiver, suspension, apparatus, compensator or action architecture",
