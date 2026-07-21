@@ -1,0 +1,22 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-two-phase-counterflow-berger-full-isotypical-block-export",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-two-phase-counterflow-berger-full-isotypical-block-export",
+  "source": {"path": "planning/work-items/classical-two-phase-counterflow-berger-full-isotypical-block-export.json", "span": null},
+  "body": {
+    "owner": "classical-1",
+    "state": "PROPOSED",
+    "objective": "Replace the failed round exact/coexact split by complete SU(2)_L x U(1)_R isotypical Berger blocks containing every 70-row component mixed by the gauge-fixed counterflow differential.",
+    "stop_condition": "Import TWO_PHASE_COUNTERFLOW_BERGER_SCALAR_HODGE_BLOCK_OBSTRUCTION_V1 and TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1 by exact hashes. For generic (j,m,k), start from one scalar Wigner seed and close under every spatial differential, algebraic mixing, gauge, equation, identity, ghost and antifield row of q70 until a finite isotypical block stabilizes, or prove the first exact infinite-band/nonlocal closure obstruction. Export normalized row bases and exact inclusion/projection maps for the entire closed block, prove pi iota=1, q70 invariance, local Diff/Weyl/diagonal-U1 compatibility, cyclic real structure and conjugation. If finite closure exists, compute its unary, cohomology quotient, descended pairing/radical/inertia, characteristics/Jordan data and spatial principal/gradient matrices on the complete generic label domain. Keep k=0 and low-j exceptions separate for the next task. Verify through method-distinct PBW and finite Wigner realizations, with anisotropy, omitted-row, round-limit and truncation-boundary mutations; supply schema, receipt, report and atlas fragment.",
+    "current_gate": "first generic closed nonhomogeneous physical block on the selected Berger background",
+    "forbid": "no round exact/coexact split reused; no finite truncation called closed without boundary-coupling proof; no sampled j-band called generic; no charged D or R_rel quotient; no missing q70 row silently omitted; no all-Hodge health, observer, Hadamard, particle or unitarity promotion",
+    "depends_on": ["sf:program/work/classical-two-phase-counterflow-berger-scalar-hodge-block-export#ANY_TERMINAL"],
+    "activates": ["sf:program/work/classical-two-phase-counterflow-berger-right-neutral-exceptional-blocks"],
+    "allowed_paths": ["d_quotient_classical/compensator/", "d_quotient_classical/atlas/", "residual_atlas/", "reports/", "notes/d-quotient-classical-team-brief.md", "planning/forge-requests/"],
+    "resource_hint": "PREFERRED REPAIR FROM THE LANDED OBSTRUCTION. Closure must be generated from q70 itself. Use Conflux only as a conjecture/discovery rail; exact PBW and row-substitution receipts remain authoritative.",
+    "stream": "classical"
+  },
+  "edges": []
+}

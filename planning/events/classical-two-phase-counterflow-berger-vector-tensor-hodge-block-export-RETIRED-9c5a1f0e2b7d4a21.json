@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-two-phase-counterflow-berger-vector-tensor-hodge-block-export-RETIRED-9c5a1f0e2b7d4a21",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/classical-two-phase-counterflow-berger-vector-tensor-hodge-block-export-RETIRED-9c5a1f0e2b7d4a21.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "coordinator", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-21T06:06:00Z", "seq": 2, "predecessor": "sf:program/event/classical-two-phase-counterflow-berger-vector-tensor-hodge-block-export-ACTIVE-52edf5dcb655fe9e", "payload": {"target": "sf:program/work/classical-two-phase-counterflow-berger-vector-tensor-hodge-block-export", "to_state": "RETIRED", "note": "Coordinator race repair: the resident pulled this stale round-style successor seconds after the scalar obstruction landed and after the first retirement event was authored at the same sequence. The exact scalar theorem forbids this continuation; use classical-two-phase-counterflow-berger-full-isotypical-block-export. No work from the stale lease may be promoted."}, "native": {"authored_by": "sfc work-event", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/classical-two-phase-counterflow-berger-vector-tensor-hodge-block-export"}]
+}
