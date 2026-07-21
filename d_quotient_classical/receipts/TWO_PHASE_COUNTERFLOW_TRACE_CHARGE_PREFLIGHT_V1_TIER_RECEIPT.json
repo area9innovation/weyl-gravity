@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_V1_TIER_RECEIPT",
+  "claim_id": "TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_V1",
+  "date": "2026-07-21",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "artifacts": [
+    {"path": "d_quotient_classical/compensator/two_phase_counterflow_trace_charge_preflight.py", "sha256": "9cc98af2bd768f86ae1fe887cdab7506be6580ffbc000e78321e61c3ab47d565"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_V1.json", "sha256": "2b578967ece7a2e6a8079c8fd84665ac40cf2b7e0aeef41d96882553c35115ea"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_PAYLOAD_V1.json", "sha256": "9148ae434be6984fed4436c66430f4d72ac80e4626d4ef5e5cee5dde9e8577b7"},
+    {"path": "d_quotient_classical/compensator/verify_two_phase_counterflow_trace_charge_preflight.py", "sha256": "e56ee9054b2079e9134f43f365870edcfe2a77c9783b2b961ca7b19bb5661e76"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_trace_charge_preflight.py", "sha256": "88d824752ef2fa0ee986f28b1ab7f948ad10e80ff28aa013a4578126622321e3"},
+    {"path": "d_quotient_classical/schema/two-phase-counterflow-trace-charge-preflight-v1.schema.json", "sha256": "a8737e5ab242a7a19dde85329e327c1cdc11387676ab2370c3a68ab0b42f5b12"},
+    {"path": "d_quotient_classical/schema/two-phase-counterflow-trace-charge-preflight-payload-v1.schema.json", "sha256": "0ffdcdfb83327032f4373dc8373dea9edc32d694acb2a633d2dc06c7dcbd6aa7"},
+    {"path": "d_quotient_classical/atlas/generate_two_phase_counterflow_trace_charge_atlas_fragment.py", "sha256": "13167fcd271e35a54895ec3b6bcf615b3b5d9ac268bc128aaee8c30e24c7ed4d"},
+    {"path": "residual_atlas/two-phase-counterflow-trace-charge-preflight-fragment-v1.json", "sha256": "a97f34bf8cf0a1ac35c906f95654ca4838dcef09631dd654424670d3834925ed"},
+    {"path": "d_quotient_classical/reports/two-phase-counterflow-trace-charge-preflight-v1.md", "sha256": "9ef31a91576273157824a516e6aad95319ed45d26ced858d9e9f9128503728da"}
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <producer, independent verifier, atlas generator, tests>; python3 -m json.tool <certificate, payload, schemas, atlas>",
+        "elapsed_seconds": 0.18,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/two_phase_counterflow_trace_charge_preflight.py --check",
+        "elapsed_seconds": 0.68,
+        "status": "PASS",
+        "method": "exact phase square completion, stationary coefficient loci, raw homogeneous action Hessian, complete lapse/Gauss reduction, inertia, characteristic/Jordan thresholds and four-generator charge ledger"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_trace_charge_preflight.py",
+        "elapsed_seconds": 1.68,
+        "status": "PASS",
+        "independent_rail": "imports no producer module; reconstructs the phase identity, stationary RREF, epsilon-expanded raw action, Dirac/Gauss Schur reduction, kinetic inertia, characteristic discriminant and selected exact fixture"
+      },
+      {
+        "command": "python3 -m unittest -v d_quotient_classical.compensator.tests.test_two_phase_counterflow_trace_charge_preflight",
+        "elapsed_seconds": 2.63,
+        "status": "PASS",
+        "tests": 10,
+        "mutation_controls": "import drift, payload corruption, split-inertia erasure, cylinder promotion, unrestricted-D promotion, Maxwell addition and causal/quantum promotion are rejected"
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true <both strict schemas and generated artifacts>",
+        "elapsed_seconds": 3.26,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/generate_two_phase_counterflow_trace_charge_atlas_fragment.py --check; python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-trace-charge-preflight-fragment-v1.json",
+        "elapsed_seconds": 0.2,
+        "status": "PASS",
+        "direct_consumer": "three fail-closed cylinder, selected-Berger and unrestricted-D atlas rows"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_closed_s3_gauged_clock_gauss_structure_theorem.py",
+        "elapsed_seconds": 0.44,
+        "status": "PASS",
+        "scope": "hash-pinned compact-Gauss predecessor"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_closed_s3_relative_phase_nonhomogeneous_hodge_preflight.py",
+        "elapsed_seconds": 0.51,
+        "status": "PASS",
+        "scope": "hash-pinned nonhomogeneous relative-phase predecessor"
+      },
+      {
+        "command": "bash ci/science-forge-shadow.sh",
+        "elapsed_seconds": 7.7,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "read-only rail reported pre-existing bridge certificate drift, corpus baseline growth from 976 to 1355 certificates, and an unpinned stale Forge development binary; diagnostics preserved at /tmp/sf-shadow.MXPJGN"
+      }
+    ]
+  },
+  "tier_3": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m unittest discover -v",
+        "elapsed_seconds": 1.86,
+        "status": "PASS",
+        "tests": 149,
+        "scope": "repository-wide Python discovery suite; the 10 package tests are also recorded separately in Tier 1"
+      }
+    ]
+  },
+  "claim_boundary": "This certificate selects one exact fixed-relative-charge Berger homogeneous preflight stratum and excludes the cylinder and every nonzero-alpha_R stationary stratum in the declared family. It does not construct the full support-local BV complex, a spatial gravity principal symbol, a Green operator, causal evolution, a Hadamard state, a quantum theory, or make unrestricted D gauge.",
+  "higher_tiers_not_run": []
+}

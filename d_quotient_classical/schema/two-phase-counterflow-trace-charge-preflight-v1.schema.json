@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/two-phase-counterflow-trace-charge-preflight-v1.schema.json",
+  "title": "Two-phase counterflow trace/charge preflight",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "imports",
+    "payload_ref",
+    "selected_fixture",
+    "charge_ledger",
+    "terminal_verdict",
+    "claim_boundary",
+    "claim_flags",
+    "content_hashes"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-trace-charge-preflight-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_V1"},
+    "result_state": {"const": "CERTIFIED_SELECTED_FIXED_CHARGE_BERGER_PREFLIGHT"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "imports": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gauss_structure", "relative_hodge"],
+      "properties": {
+        "gauss_structure": {"$ref": "#/$defs/import"},
+        "relative_hodge": {"$ref": "#/$defs/import"}
+      }
+    },
+    "payload_ref": {"$ref": "#/$defs/payloadRef"},
+    "selected_fixture": {"type": "object", "minProperties": 12},
+    "charge_ledger": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["generator", "Hamiltonian", "unrestricted", "fixed_Q_rel_leaf"],
+        "properties": {
+          "generator": {"type": "string"},
+          "Hamiltonian": {"type": "string"},
+          "unrestricted": {"type": "string"},
+          "fixed_Q_rel_leaf": {"type": "string"}
+        }
+      }
+    },
+    "terminal_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_state", "cylinder", "alpha_R_nonzero", "selected_Berger", "selected_action", "downstream_causal_parent_activation", "activation_scope", "unrestricted_D_is_gauge"],
+      "properties": {
+        "result_state": {"const": "CERTIFIED_SELECTED_FIXED_CHARGE_BERGER_PREFLIGHT"},
+        "cylinder": {"const": "OBSTRUCTED_NEGATIVE_REAL_TRACE_MODE"},
+        "alpha_R_nonzero": {"const": "OBSTRUCTED_SPLIT_SCALAR_PAIR"},
+        "selected_Berger": {"const": "PASSED_FIXED_RELATIVE_CHARGE_BERGER_STRATUM"},
+        "selected_action": {"const": true},
+        "downstream_causal_parent_activation": {"const": true},
+        "activation_scope": {"type": "string", "minLength": 30},
+        "unrestricted_D_is_gauge": {"const": false}
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["establishes", "does_not_establish"],
+      "properties": {
+        "establishes": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+        "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["EXACT_HOMOGENEOUS_PREFLIGHT", "SELECTED_ACTION", "FULL_BV_CAUSAL_PARENT", "GREEN_HYPERBOLICITY", "HADAMARD_OR_QUANTUM", "UNRESTRICTED_D_GAUGE", "MAXWELL_TERM"],
+      "properties": {
+        "EXACT_HOMOGENEOUS_PREFLIGHT": {"const": true},
+        "SELECTED_ACTION": {"const": true},
+        "FULL_BV_CAUSAL_PARENT": {"const": false},
+        "GREEN_HYPERBOLICITY": {"const": false},
+        "HADAMARD_OR_QUANTUM": {"const": false},
+        "UNRESTRICTED_D_GAUGE": {"const": false},
+        "MAXWELL_TERM": {"const": false}
+      }
+    },
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selected_fixture_sha256", "charge_ledger_sha256", "terminal_sha256", "claim_boundary_sha256"],
+      "properties": {
+        "selected_fixture_sha256": {"$ref": "#/$defs/hash"},
+        "charge_ledger_sha256": {"$ref": "#/$defs/hash"},
+        "terminal_sha256": {"$ref": "#/$defs/hash"},
+        "claim_boundary_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "source_commit", "result_id", "actual_sha256", "oracle_fields_consumed"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "result_id": {"type": "string", "minLength": 1},
+        "actual_sha256": {"$ref": "#/$defs/hash"},
+        "oracle_fields_consumed": {"const": []}
+      }
+    },
+    "payloadRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "content_sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "content_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

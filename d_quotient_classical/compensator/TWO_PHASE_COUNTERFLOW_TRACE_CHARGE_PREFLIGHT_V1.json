@@ -1,0 +1,134 @@
+{
+  "charge_ledger": [
+    {
+      "Hamiltonian": "Q_diag=F*(dot_chi-A0)",
+      "fixed_Q_rel_leaf": "GAUGE_BY_GAUSS",
+      "generator": "U1_diag",
+      "unrestricted": "GAUGE_BY_GAUSS"
+    },
+    {
+      "Hamiltonian": "Q_rel",
+      "fixed_Q_rel_leaf": "PRESYMPLECTIC_NULL_HAMILTONIAN_CONSTANT",
+      "generator": "R_rel",
+      "unrestricted": "CHARGED_GLOBAL"
+    },
+    {
+      "Hamiltonian": "Omega*Q_rel modulo the closed diffeomorphism constraint",
+      "fixed_Q_rel_leaf": "PRESYMPLECTIC_NULL_ONLY_AFTER_FIXED_CHARGE_RESTRICTION",
+      "generator": "D",
+      "unrestricted": "CHARGED_GLOBAL"
+    },
+    {
+      "Hamiltonian": "0 modulo the closed diffeomorphism constraint",
+      "fixed_Q_rel_leaf": "GAUGE_AND_BACKGROUND_STABILIZER",
+      "generator": "K=D-Omega*R_rel",
+      "unrestricted": "GAUGE_AND_BACKGROUND_STABILIZER"
+    }
+  ],
+  "claim_boundary": {
+    "does_not_establish": [
+      "a support-local full BV causal parent",
+      "Green hyperbolicity or a causal propagator",
+      "a Hadamard state or any quantum claim",
+      "that unrestricted D is gauge",
+      "health away from the serialized action/background/charge leaf"
+    ],
+    "establishes": [
+      "exact two-phase diagonal/relative square completion and Gauss reduction",
+      "action-derived homogeneous trace/lapse Hessian on cylinder and frozen Berger backgrounds",
+      "exact inertia, characteristic and Jordan classification of the declared homogeneous scalar block",
+      "four-generator charge disposition on unrestricted and fixed-relative-charge strata",
+      "one selected positive fixed-charge Berger preflight stratum"
+    ]
+  },
+  "claim_flags": {
+    "EXACT_HOMOGENEOUS_PREFLIGHT": true,
+    "FULL_BV_CAUSAL_PARENT": false,
+    "GREEN_HYPERBOLICITY": false,
+    "HADAMARD_OR_QUANTUM": false,
+    "MAXWELL_TERM": false,
+    "SELECTED_ACTION": true,
+    "UNRESTRICTED_D_GAUGE": false
+  },
+  "content_hashes": {
+    "charge_ledger_sha256": "1d1425212e708102d5c8e7d0bd0b7038fcabdfe8bbf3e736c39477ed179bb440",
+    "claim_boundary_sha256": "1739ce94455619bc2f9e8679fde0ec57265b91c83a96e0eefe37a505966fac0a",
+    "selected_fixture_sha256": "f3f92f411650cccc0d876ed59df7b6a4bd9d3e92e446bd7624a2700758de5fe5",
+    "terminal_sha256": "6a6d8b7252f6c33c001e955dd1a1c3bfea41f0b379743f47444878b849383e6a"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "imports": {
+    "gauss_structure": {
+      "actual_sha256": "c88b41a26262c2e79f2e7dbcccf66c50e19cfc179ed96dad8a847fc81f4e2433",
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/CLOSED_S3_GAUGED_CLOCK_GAUSS_STRUCTURE_THEOREM_V1.json",
+      "result_id": "CLOSED_S3_GAUGED_CLOCK_GAUSS_STRUCTURE_THEOREM_V1",
+      "sha256": "c88b41a26262c2e79f2e7dbcccf66c50e19cfc179ed96dad8a847fc81f4e2433",
+      "source_commit": "02a688837b866e9318ae92107744bba9c52de4d7"
+    },
+    "relative_hodge": {
+      "actual_sha256": "8bea19daa641aed5d771dd440624e5c7ea6128ce857ebd04c3d9b010c7acd5f9",
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/CLOSED_S3_RELATIVE_PHASE_NONHOMOGENEOUS_HODGE_PREFLIGHT_V1.json",
+      "result_id": "CLOSED_S3_RELATIVE_PHASE_NONHOMOGENEOUS_HODGE_PREFLIGHT_V1",
+      "sha256": "8bea19daa641aed5d771dd440624e5c7ea6128ce857ebd04c3d9b010c7acd5f9",
+      "source_commit": "fcfa6f88b390a19a83f844791400f16da121e5d4"
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "payload_ref": {
+    "content_sha256": "1cc441ed9ef917c2b0248a450898397840bbf23fc7f556cf4aae7287b2c4f754",
+    "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_PAYLOAD_V1.json",
+    "sha256": "9148ae434be6984fed4436c66430f4d72ac80e4626d4ef5e5cee5dde9e8577b7"
+  },
+  "result_id": "TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_V1",
+  "result_state": "CERTIFIED_SELECTED_FIXED_CHARGE_BERGER_PREFLIGHT",
+  "schema": "pure-weyl-two-phase-counterflow-trace-charge-preflight-v1",
+  "selected_fixture": {
+    "Hamiltonian": "dot_u^2/8+659*u^2/1920",
+    "Hamiltonian_positive": true,
+    "Jordan": "two_simple_complex_roots",
+    "Maxwell_term": "ABSENT",
+    "action": "integral sqrt(-ghat){5*C_hat^2/8-(1/12)*R_hat-119/1920-1/2*[2*(dtheta1-A)^2+2*(dtheta2-A)^2]}",
+    "background": "stationary Berger R x S3, a=1, c_squared=9/40",
+    "characteristic_roots": [
+      "-I*sqrt(659/240)",
+      "I*sqrt(659/240)"
+    ],
+    "charge_leaf": "Q_rel fixed; Q_diag=0",
+    "equation": "ddot_u+659*u/240=0",
+    "parameters": {
+      "C": "9/16",
+      "F": "4",
+      "M_P_squared": "-1/6",
+      "Omega": "3/4",
+      "R": "151/80",
+      "V0": "119/1920",
+      "alpha_B": "5",
+      "alpha_R": "0",
+      "beta": "961/1920",
+      "f1_squared": "2",
+      "f2_squared": "2",
+      "mu_squared": "1"
+    },
+    "reduced_L2": "dot_u^2/8-659*u^2/1920",
+    "relative_nonhomogeneous_mode": "positive with coefficient mu_squared=1",
+    "selected": true,
+    "split_scalar_pair": false,
+    "terminal_status": "PASSED_FIXED_RELATIVE_CHARGE_BERGER_STRATUM",
+    "velocity_Hessian": "1/4"
+  },
+  "terminal_verdict": {
+    "activation_scope": "only the serialized action, Berger background and fixed-Q_rel leaf",
+    "alpha_R_nonzero": "OBSTRUCTED_SPLIT_SCALAR_PAIR",
+    "cylinder": "OBSTRUCTED_NEGATIVE_REAL_TRACE_MODE",
+    "downstream_causal_parent_activation": true,
+    "result_state": "CERTIFIED_SELECTED_FIXED_CHARGE_BERGER_PREFLIGHT",
+    "selected_Berger": "PASSED_FIXED_RELATIVE_CHARGE_BERGER_STRATUM",
+    "selected_action": true,
+    "unrestricted_D_is_gauge": false
+  }
+}

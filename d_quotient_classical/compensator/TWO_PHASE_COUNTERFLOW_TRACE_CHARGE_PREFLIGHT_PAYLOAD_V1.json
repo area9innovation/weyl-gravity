@@ -1,0 +1,313 @@
+{
+  "characteristic_and_Jordan_ledger": {
+    "alpha_R_nonzero_general": {
+      "Jordan_at_t_0": "size_2_at_lambda_zero",
+      "Jordan_at_t_D": "size_2_at_each_repeated_square_root_branch",
+      "dimensionless_parameters": [
+        "b=beta/C",
+        "t=alpha_R*R^2/C",
+        "y=lambda^2/R"
+      ],
+      "health": "OBSTRUCTED_SPLIT_INERTIA_FOR_ALL_t",
+      "repeated_threshold": "t_D=-(4*b-3)^2/48",
+      "roots_y": "(4*b+8*t-3 +/- sqrt((4*b-3)^2+48*t))/(24*t)",
+      "zero_root_threshold": "t_0=3/2-b"
+    },
+    "berger_alpha_R_nonzero_thresholds": {
+      "b": "961/1080",
+      "nonzero_lambda_squared_at_t_0": "221819/158160",
+      "repeated_y_at_t_D": "-1469/453",
+      "t_0": "659/1080",
+      "t_D": "-22801/3499200"
+    },
+    "cylinder_alpha_R_nonzero_thresholds": {
+      "t_0": "3/2",
+      "t_D": "-3/16"
+    },
+    "cylinder_alpha_R_zero": {
+      "Hamiltonian": "indefinite",
+      "Jordan": "simple",
+      "characteristic_roots": [
+        "-2",
+        "2"
+      ],
+      "reduced_L2": "-3*C*dot_u^2/8-3*C*u^2/2",
+      "status": "OBSTRUCTED",
+      "velocity_Hessian": "-3*C/4"
+    }
+  },
+  "charge_ledger": [
+    {
+      "Hamiltonian": "Q_diag=F*(dot_chi-A0)",
+      "fixed_Q_rel_leaf": "GAUGE_BY_GAUSS",
+      "generator": "U1_diag",
+      "unrestricted": "GAUGE_BY_GAUSS"
+    },
+    {
+      "Hamiltonian": "Q_rel",
+      "fixed_Q_rel_leaf": "PRESYMPLECTIC_NULL_HAMILTONIAN_CONSTANT",
+      "generator": "R_rel",
+      "unrestricted": "CHARGED_GLOBAL"
+    },
+    {
+      "Hamiltonian": "Omega*Q_rel modulo the closed diffeomorphism constraint",
+      "fixed_Q_rel_leaf": "PRESYMPLECTIC_NULL_ONLY_AFTER_FIXED_CHARGE_RESTRICTION",
+      "generator": "D",
+      "unrestricted": "CHARGED_GLOBAL"
+    },
+    {
+      "Hamiltonian": "0 modulo the closed diffeomorphism constraint",
+      "fixed_Q_rel_leaf": "GAUGE_AND_BACKGROUND_STABILIZER",
+      "generator": "K=D-Omega*R_rel",
+      "unrestricted": "GAUGE_AND_BACKGROUND_STABILIZER"
+    }
+  ],
+  "content_sha256": "1cc441ed9ef917c2b0248a450898397840bbf23fc7f556cf4aae7287b2c4f754",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "imports": {
+    "gauss_structure": {
+      "actual_sha256": "c88b41a26262c2e79f2e7dbcccf66c50e19cfc179ed96dad8a847fc81f4e2433",
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/CLOSED_S3_GAUGED_CLOCK_GAUSS_STRUCTURE_THEOREM_V1.json",
+      "result_id": "CLOSED_S3_GAUGED_CLOCK_GAUSS_STRUCTURE_THEOREM_V1",
+      "sha256": "c88b41a26262c2e79f2e7dbcccf66c50e19cfc179ed96dad8a847fc81f4e2433",
+      "source_commit": "02a688837b866e9318ae92107744bba9c52de4d7"
+    },
+    "relative_hodge": {
+      "actual_sha256": "8bea19daa641aed5d771dd440624e5c7ea6128ce857ebd04c3d9b010c7acd5f9",
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/CLOSED_S3_RELATIVE_PHASE_NONHOMOGENEOUS_HODGE_PREFLIGHT_V1.json",
+      "result_id": "CLOSED_S3_RELATIVE_PHASE_NONHOMOGENEOUS_HODGE_PREFLIGHT_V1",
+      "sha256": "8bea19daa641aed5d771dd440624e5c7ea6128ce857ebd04c3d9b010c7acd5f9",
+      "source_commit": "fcfa6f88b390a19a83f844791400f16da121e5d4"
+    }
+  },
+  "oracle_fields_consumed": [],
+  "phase_decomposition": {
+    "diagonal_Gauss_equation": "F*(dot_chi-A0)=0",
+    "diagonal_charge": "Q_diag=F*(dot_chi-A0)=0",
+    "exact_identity": "f1_squared*(dtheta1-A)^2+f2_squared*(dtheta2-A)^2=F*(dchi-A)^2+mu_squared*(dpsi)^2",
+    "field_change": {
+      "F": "f1_squared+f2_squared",
+      "chi": "(f1_squared*theta1+f2_squared*theta2)/F",
+      "mu_squared": "f1_squared*f2_squared/F",
+      "psi": "theta1-theta2"
+    },
+    "no_Maxwell_term": true,
+    "positivity_condition": "f1_squared>0 and f2_squared>0 implies mu_squared>0",
+    "relative_charge": "Q_rel=a^3*mu_squared*dot_psi/N"
+  },
+  "quadratic_hessian_and_constraints": {
+    "algebraic_constraints": {
+      "Gauss": "A=dot_c",
+      "delta_Q_rel_after_lapse": "0",
+      "homogeneous_shift": "no independent scalar zero-mode; it imposes the closed spatial-diffeomorphism constraint",
+      "lapse": "n=dot_p/Omega+3*u/2"
+    },
+    "alpha_R_nonzero_health": "OBSTRUCTED_SPLIT_SCALAR_PAIR",
+    "alpha_R_nonzero_inertia": [
+      1,
+      1
+    ],
+    "homogeneous_density": "beta*N/a-6*a*Phi*adot^2/N-6*a^2*adot*Phidot/N+N*a*R*Phi-N*a^3*U(Phi)+a^3*(mu_squared*dot_psi^2+F*(dot_chi-A0)^2)/(2*N)",
+    "principal_polynomials": {
+      "alpha_R_nonzero_homogeneous_temporal_top_order": "-9*lambda^4",
+      "alpha_R_zero_homogeneous_temporal_top_order": "6*(beta-3*C/4)*lambda^2/R",
+      "relative_phase_all_positive_scalar_harmonics": "mu_squared*(omega^2-lambda_ell)",
+      "spatial_gravity_parent": "NOT_COMPUTED_OUTSIDE_THIS_HOMOGENEOUS_PREFLIGHT"
+    },
+    "raw_L2": "F*(A-dot_c)^2/2+C*dot_p^2/(2*Omega^2)+C*n^2/2+3*(beta-3*C/4)*dot_u^2/R-3*dot_u*dot_z+(beta-3*C/8)*u^2+n*(-C*dot_p/Omega-3*C*u/2)+u*(3*C*dot_p/(2*Omega)-R*z)-z^2/(4*alpha_R)",
+    "raw_velocity_hessian": [
+      [
+        "-3*(3*C - 4*beta)/(2*R)",
+        "-3",
+        "-3*C/(2*Omega)",
+        "0"
+      ],
+      [
+        "-3",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "-3*C/(2*Omega)",
+        "0",
+        "C/Omega**2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "F"
+      ]
+    ],
+    "raw_velocity_order": [
+      "dot_u",
+      "dot_z",
+      "dot_p",
+      "dot_c"
+    ],
+    "reduced_L2_alpha_R_nonzero": "3*(beta-3*C/4)*dot_u^2/R-3*dot_u*dot_z+(beta-3*C/2)*u^2-R*u*z-z^2/(4*alpha_R)",
+    "reduced_velocity_determinant": "-9",
+    "reduced_velocity_hessian": [
+      [
+        "-3*(3*C - 4*beta)/(2*R)",
+        "-3"
+      ],
+      [
+        "-3",
+        "0"
+      ]
+    ],
+    "reduced_velocity_order": [
+      "dot_u",
+      "dot_z"
+    ],
+    "trace_touch": {
+      "compact_support_test": "with all other reduced variations zero, the u Euler row contains 2*(beta-3*C/2)*u; this coefficient is nonzero on both fixtures",
+      "conclusion": "an arbitrary compactly supported pure-u variation is not a kernel direction on either declared fixture",
+      "phase_order_zero_Hessian_nonzero_if": "C>0",
+      "reduced_u_squared_coefficient": "beta-3*C/2"
+    },
+    "variables": {
+      "A0": "A",
+      "N": "exp(n)",
+      "Phi": "Phi0+z",
+      "a": "exp(u/2)",
+      "chi": "chi_bar+c",
+      "psi": "Omega*t+p"
+    }
+  },
+  "result_id": "TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_PAYLOAD_V1",
+  "schema": "pure-weyl-two-phase-counterflow-trace-charge-preflight-payload-v1",
+  "selected_fixture": {
+    "Hamiltonian": "dot_u^2/8+659*u^2/1920",
+    "Hamiltonian_positive": true,
+    "Jordan": "two_simple_complex_roots",
+    "Maxwell_term": "ABSENT",
+    "action": "integral sqrt(-ghat){5*C_hat^2/8-(1/12)*R_hat-119/1920-1/2*[2*(dtheta1-A)^2+2*(dtheta2-A)^2]}",
+    "background": "stationary Berger R x S3, a=1, c_squared=9/40",
+    "characteristic_roots": [
+      "-I*sqrt(659/240)",
+      "I*sqrt(659/240)"
+    ],
+    "charge_leaf": "Q_rel fixed; Q_diag=0",
+    "equation": "ddot_u+659*u/240=0",
+    "parameters": {
+      "C": "9/16",
+      "F": "4",
+      "M_P_squared": "-1/6",
+      "Omega": "3/4",
+      "R": "151/80",
+      "V0": "119/1920",
+      "alpha_B": "5",
+      "alpha_R": "0",
+      "beta": "961/1920",
+      "f1_squared": "2",
+      "f2_squared": "2",
+      "mu_squared": "1"
+    },
+    "reduced_L2": "dot_u^2/8-659*u^2/1920",
+    "relative_nonhomogeneous_mode": "positive with coefficient mu_squared=1",
+    "selected": true,
+    "split_scalar_pair": false,
+    "terminal_status": "PASSED_FIXED_RELATIVE_CHARGE_BERGER_STRATUM",
+    "velocity_Hessian": "1/4"
+  },
+  "stationary_loci": {
+    "berger": {
+      "R": "151/80",
+      "alpha_R_zero_iff": "V0/C=119/1080",
+      "anisotropic_shape_equation": "alpha_B=80*C/9",
+      "background": "stationary Berger R x S3, a=1, c_squared=9/40",
+      "beta_over_C_on_locus": "961/1080",
+      "beta_per_alpha_B": "961/9600",
+      "coefficient_order": [
+        "alpha_B",
+        "alpha_R",
+        "M_P_squared",
+        "V0",
+        "C"
+      ],
+      "locus": {
+        "M2": "-80*(C - 4*V0)/151",
+        "alpha_B": "80*C/9",
+        "alpha_R": "160*(119*C - 1080*V0)/615627"
+      },
+      "pivot_columns": [
+        0,
+        1,
+        2
+      ],
+      "rref": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "-80/9"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "6400/22801",
+          "-19040/615627"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "-320/151",
+          "80/151"
+        ]
+      ],
+      "stationarity_matrix": [
+        [
+          "9/80",
+          "0",
+          "0",
+          "0",
+          "-1"
+        ],
+        [
+          "961/9600",
+          "22801/6400",
+          "0",
+          "1",
+          "-1"
+        ],
+        [
+          "961/4530",
+          "151/20",
+          "1",
+          "0",
+          "-240/151"
+        ]
+      ]
+    },
+    "cylinder": {
+      "R": "6",
+      "background": "R x S3 unit round cylinder",
+      "beta": "0",
+      "locus": {
+        "C_condition": "C=mu_squared*Omega^2>0",
+        "M_P_squared": "(C - 48*alpha_R)/2",
+        "V0": "C - 36*alpha_R",
+        "alpha_B": "arbitrary",
+        "alpha_R": "arbitrary"
+      }
+    },
+    "universal_static_equations": {
+      "M_P_squared": "2*Phi0-4*alpha_R*R",
+      "Phi0": "(3*C/2-2*beta)/R",
+      "U(Phi0)": "C-beta",
+      "V0": "C-beta-alpha_R*R^2"
+    }
+  }
+}
