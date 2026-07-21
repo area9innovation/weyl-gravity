@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/bridge-cylinder-arbitrary-support-full-bv-q2-time-slice-chain-map-LEASE-RELEASE-excl-0adc65a01bc6b495",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/bridge-cylinder-arbitrary-support-full-bv-q2-time-slice-chain-map-LEASE-RELEASE-excl-0adc65a01bc6b495.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "bridge-1", "base_revision": "science-forge-ir-v0", "when": null, "seq": 2, "predecessor": "sf:program/event/bridge-cylinder-arbitrary-support-full-bv-q2-time-slice-chain-map-LEASE-ACQUIRE-excl-569f655a52ae5ef1", "payload": {"target": "sf:program/work/bridge-cylinder-arbitrary-support-full-bv-q2-time-slice-chain-map", "agent": "bridge-1", "lease_type": "exclusive", "action": "RELEASE", "acquired": "", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/bridge-cylinder-arbitrary-support-full-bv-q2-time-slice-chain-map"}]
+}
