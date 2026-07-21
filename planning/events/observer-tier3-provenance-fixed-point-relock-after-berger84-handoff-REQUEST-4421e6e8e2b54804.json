@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/observer-tier3-provenance-fixed-point-relock-after-berger84-handoff-REQUEST-4421e6e8e2b54804",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/observer-tier3-provenance-fixed-point-relock-after-berger84-handoff-REQUEST-4421e6e8e2b54804.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/observer-tier3-provenance-fixed-point-relock-after-berger84-handoff", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T12:46:58Z", "seq": 1, "payload": {"target": "sf:program/request/observer-tier3-provenance-fixed-point-relock-after-berger84-handoff-to-observer-4421e6e8e2b54804", "request_id": "sf:program/request/observer-tier3-provenance-fixed-point-relock-after-berger84-handoff-to-observer-4421e6e8e2b54804", "from_item": "sf:program/work/observer-tier3-provenance-fixed-point-relock-after-berger84-handoff", "to_stream": "observer", "need": "The scoped handoff relock correctly ended SHORTFALL after Tier 3 found the next stale consumer. You now hold the live lease for observer-tier3-provenance-fixed-point-relock-after-berger84-handoff. Do not pull another item. Run: s-f work-package sf:program/work/observer-tier3-provenance-fixed-point-relock-after-berger84-handoff -o /tmp/observer-tier3-fixedpoint-brief.md . Continue from BERGER_84_ROW_MIXED_R_KAPPA_UNARY_GATE and iterate producer plus independent verifier plus mutations plus full-suite restart to a provenance fixed point. Stop only on a semantic/non-provenance frontier; do not edit Paper 9.", "typed": "ASSIGNED_LEASE_PACKAGE_RECOVERY"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "observer"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/observer-tier3-provenance-fixed-point-relock-after-berger84-handoff"}]
+}
