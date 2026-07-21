@@ -193,10 +193,18 @@ The exact stationary equations make the passing fixed-action Berger solution
 an isolated point rather than an open family, and the same action does not
 connect it continuously to the round cylinder. Its homogeneous trace motion
 has a healthy oscillatory sign, but every surviving nonhomogeneous physical
-direction must still pass the full reduction.
-The next calculation must remove every redundant direction explicitly and
-check that all remaining clock and gravitational directions have acceptable
-signs, propagation and time-charge behavior.
+direction still had to pass the full reduction. That reduction has now found
+a precise conflict. If the relative charge is fixed and its corresponding
+shift is treated as redundant, time translation becomes gauge-like—but the
+relative clock disappears with it. If the clock and its conjugate charge are
+kept, the clock survives, but time translation carries a physical charge.
+
+This does not invalidate the causal equations. It says that this model cannot
+provide both a physical evolving clock and gauge time on the same declared
+phase space. The next calculation asks whether the unrestricted, charged-time
+version is otherwise healthy. That alternative is closer to ordinary physics,
+where time translations generate energy, but it is a different answer to the
+project's original question.
 
 The original Berger laboratory adds something more tangible: a matter field acts as a
 clock, and an electromagnetic signal is emitted during a bounded time
@@ -366,7 +374,7 @@ tested.
 
 | Demonstrated in a model | Partly demonstrated | Open |
 |---|---|---|
-| Complete classical causal propagation on several controlled backgrounds, including a changed two-phase counterflow parent | A causal clock-defined redshift signal; the old apparatus completion is obstructed and a new counterflow-based apparatus is being constructed | Electrons, mass generation and Standard Model matter |
+| Complete classical causal propagation on several controlled backgrounds, including a changed two-phase counterflow parent | A causal clock-defined redshift signal; the new counterflow model is causal but loses its clock when time is made gauge-like | Electrons, mass generation and Standard Model matter |
 | Gauge reduction and exact classical comparison rules | Additional compact and black-hole wave families, with their final physical status unresolved | A positive interacting quantum state and physical particles |
 | Global nonlinear balance conditions and explicit resonance obstructions | Static black-hole thermodynamics; additional waves reach the horizon but are excluded by finite size at infinity in both parities at one fixture | Full black-hole scattering, stability, ringdown and Hawking radiation |
 | A one-loop anomaly calculation and a compensator-based local repair in a changed theory | Candidate reduced quantum two-point functions with both positive and negative signs | Gravitational lensing, realistic cosmology, dark matter and dark energy |

@@ -1,9 +1,9 @@
 # Pure-Weyl gravity programme: executive summary for physicists
 
 **Last substantive update: 21 July 2026 — certified two-phase counterflow
-causal BV parent, exact five-dimensional compact-Cauchy adjoint kernel,
-action-derived observer repair no-go, and symbolic-frequency black-hole
-pairing programme.**
+causal BV parent and fixed-charge clock obstruction, exact five-dimensional
+compact-Cauchy adjoint kernel, action-derived observer repair no-go, and
+symbolic-frequency black-hole pairing programme.**
 
 > **Research context.** Asger Alstrup Palm directs the programme and is the
 > accountable human contact. AI systems perform substantial derivation,
@@ -60,7 +60,12 @@ audited. An exact homogeneous stationary classification has also shown that
 the passing fixed-action point is isolated rather than an open phase, and that
 the same action has no stationary path to the round cylinder. The homogeneous
 trace block is positive and oscillatory there; this does not replace the full
-nonhomogeneous physical reduction.
+nonhomogeneous physical reduction. That fixed-charge reduction has now been
+performed in the relative global sector: fixing $Q_{\rm rel}$ and quotienting
+its shift removes the entire relative-clock Darboux pair. Thus the branch on
+which $D$ becomes null contains no physical relative clock. The alternative
+unrestricted branch retains the clock pair, but raw $D$ is then a charged
+physical symmetry. Its full health audit remains open.
 
 At one Euclidean loop order, strict fixed-field-content pure Weyl gravity has
 a nonzero local BV anomaly. A tau-adic compensator extension makes that local
@@ -85,7 +90,7 @@ quotients remain open.
 | Complete causal free complexes on several declared backgrounds | Relational clocks, causal redshift, and localized detector preparations | Invariant branch-resolved interactions |
 | Explicit Einstein-image and additional fourth-order classical summands | Bounded nonlinear continuation on selected finite mode spaces | Complete bounded finite-support cone |
 | Nonzero Lee--Wald pairings for selected additional directions | Schwarzschild horizon admissibility plus two-parity finite-norm Einstein selection at one fixture | Asymptotic Bach phase space and scattering |
-| Exact nonlinear balance conditions and a strict local Euclidean one-loop anomaly | A two-phase counterflow changed theory with a certified causal BV parent; compensator restoration and reduced Hadamard/Krein two-point functions on other declared carriers | Positive fixed-charge reduction of the counterflow theory, a full-BV state, Lorentzian QME, particles, and unitarity |
+| Exact nonlinear balance conditions and a strict local Euclidean one-loop anomaly | A two-phase counterflow changed theory with a certified causal BV parent but an exact fixed-charge clock obstruction; compensator restoration and reduced Hadamard/Krein two-point functions on other carriers | Health of the unrestricted charged-time counterflow branch, a full-BV state, Lorentzian QME, particles, and unitarity |
 
 The [public construction map](../certificate_graph/universe-building-dag.svg)
 shows the dependency structure; the
@@ -164,10 +169,13 @@ squashed background and fixed relative-charge leaf, the resulting theory has
 a complete 70-component action-derived causal BV parent. The exact
 fixed-action homogeneous stationary locus contains this positive solution as
 an isolated point and supplies no stationary route to the round cylinder.
-Raw $D$ remains charged on the unrestricted parent and becomes null only
-after the explicit fixed-$Q_{\rm rel}$ restriction. The full fixed-charge
-physical reduction and its complete descended inertia are the next Classical
-gate; positivity of the homogeneous trace block alone is not that theorem.
+Raw $D$ remains charged on the unrestricted parent. On the derived
+fixed-$Q_{\rm rel}$ fibre, quotienting the relative shift makes $D$ null but
+also contracts the complete relative-clock Darboux pair: the physical clock
+dimension is zero. The next Classical gate is therefore the distinct
+unrestricted branch, where the clock survives but time translation is a
+charged physical symmetry. Positivity of the homogeneous trace block alone
+is not a full health theorem for that branch.
 
 > **Immediate limitation.** This is not a universal removal of radiative
 > gravitons, an open viable phase for generic backgrounds, or an
@@ -333,7 +341,7 @@ milestones are excluded.
 |---|---|---|---|
 | Free causal complex and residual cohomology | Complete cylinder causal complex; selected zero-charge residual vacuum and one-particle cohomology acyclic; $H^4\cong\mathbb C^2$ contains deformation classes | **Certified** | Closed free sector, not particles; [Papers 7--8](07-08-conformal-residual-cohomology-computational-supplement.pdf) |
 | Is $D$ gauge? | Charged on the unrestricted compact phase space; gauge on the Taub-zero derived sector | **Certified, sector-dependent** | Must be recomputed with boundaries and matter; [status ledger](../d_quotient_programme/reports/consolidated-status.md) |
-| Clocks and redshift | Healthy Berger clock and retarded Maxwell redshift fixture; the declared fixed-background replacement-112 apparatus repair family has an exact nilpotency no-go; a two-phase relative-clock theory now has a certified 70-component causal BV parent | **Original observable certified / old apparatus no-go / changed-theory parent certified** | Fixed-charge reduced health and the new action-derived relational observable remain open; [Paper 9](09-relational-clocks-berger-d-cartan.pdf) |
+| Clocks and redshift | Healthy original Berger clock and retarded Maxwell redshift fixture; the old apparatus repair is obstructed; the two-phase theory has a causal parent, but its fixed-charge quotient removes the relative clock | **Original observable certified / changed fixed-charge clock obstructed** | The unrestricted charged-$D$ branch and a new action-derived observable remain open; [Paper 9](09-relational-clocks-berger-d-cartan.pdf) |
 | Einstein image and additional branches | Linear inclusion, axial additional nonradical block, and polar primary decomposition certified | **Certified classically** | Polar current, residual descent, causal boundaries, and quantization open; [Paper 92](92-extra-axial-lee-wald-bridge.pdf) |
 | Nonlinear tangent cone and resonances | Formal finite exponential-polynomial cone equals five-charge zero set; tuned standard bounded cone is classified for every $\ell\ge2$; all 164 two-momentum basis coefficients are closed | **Formal cone and all-$\ell$ standard subcone certified; larger cone partial** | Arbitrary-amplitude two-momentum zero variety, causal, infinite-mode, and all-order problems open; [Paper 13](13-compact-weyl-maxwell-second-order-tangent-cone.pdf) |
 | Interaction and branch mixing | Retained mixed tensor is exact/cyclic; fuller ghost structure removes it through first jet | **Representative certified; invariant class open** | Second-jet image and branch-resolved operation not certified; [Paper 11](11-gravity-light-cyclic-causal-ell3.pdf) |
@@ -439,7 +447,7 @@ to its derivation and verifier.
 | [Cyclic causal Green transfer](90-cyclic-green-transfer-bridge.md) | Abstract conditional theorem with Berger, flat, and Nariai consumers; one Nariai formal tangent | Extend to a finite background family or second detour theory. |
 | [Charge-fibre obstruction](91-charge-fibre-taub-bridge.md) | Formal cone, all-$\ell$ tuned standard cone, and all 164 two-momentum basis coefficients certified | Classify the common amplitude zero variety. |
 | [Additional axial/polar current](92-extra-axial-lee-wald-bridge.md) | Axial direct current and polar equation module certified | Compute the polar current, ungauged lift, residual descent, and physical boundary disposition. |
-| Relational clock and light | Original global retarded redshift certified; the old fixed-background apparatus completion is obstructed; the two-phase counterflow theory has a causal parent | Complete its fixed-charge reduced pairing, then build the new action-derived relational emitter--receiver observable. |
+| Relational clock and light | Original global retarded redshift certified; the old apparatus completion is obstructed; the two-phase causal parent loses its clock on the fixed-charge quotient | Audit the unrestricted charged-$D$ branch, then build an action-derived observable only if its clock survives the full reduction. |
 | Black-hole radiation | Static theorem and horizon reach in both parities; finite norm at infinity selects Einstein in both parities at one fixture | Generalize in frequency and $\ell$, then construct the asymptotic phase space. |
 | Einstein--Weyl relative theory | Matching action-derived tensors through $q_3$; strict $f_1$ has a nonzero arity-two defect; global five-charge receiver and Hessian Green-current cone certified | Precompose all stabilizers, add cyclic duals, compare with Lee--Wald, and determine the correct relative nonlinear extension. |
 | Residual branch mixing | Retained cyclic representative and rank-46 carrier exist; physical interaction class not certified | Finish the second-jet image test and obtain an admissible branch resolution. |
