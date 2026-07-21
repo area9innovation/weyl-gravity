@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-weyl-compact-cauchy-third-order-kuranishi-input-obstruction-v1",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "provenance", "scope",
+    "third_order_operation", "balanced_slice_ambiguity", "resonance_closed_carrier",
+    "missing_input", "mutations", "classification", "claim_boundary",
+    "next_gate", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-weyl-compact-cauchy-third-order-kuranishi-input-obstruction-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein-weyl-compact-cauchy-third-order-kuranishi-input-obstruction-v1.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_INPUT_OBSTRUCTION_V1"},
+    "result_state": {"const": "CUBIC_CLASS_FORMULA_AND_RESONANCE_CARRIER_CERTIFIED_EVALUATION_OBSTRUCTED_BY_MISSING_D3_CONSTRAINT_INPUT"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "provenance": {"type": "object"},
+    "scope": {"type": "object"},
+    "third_order_operation": {"type": "object"},
+    "balanced_slice_ambiguity": {"type": "object"},
+    "resonance_closed_carrier": {"type": "object"},
+    "missing_input": {"type": "object"},
+    "mutations": {"type": "object"},
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "formal_cubic_class_formula", "correction_choice_quotient",
+        "balanced_cubic_class_evaluated", "complete_resonance_carrier_enumerated",
+        "only_original_ell2_shells_kinematically_resonant", "D3_constraint_tensor_present",
+        "mixed_D2_first_second_tensor_present", "gauge_representative_independence",
+        "five_quadratic_Taub_charges_sufficient_through_order_three",
+        "new_adjoint_covector_coefficient_decided", "causal_particle_or_quantum_claim"
+      ],
+      "properties": {
+        "formal_cubic_class_formula": {"const": true},
+        "correction_choice_quotient": {"const": true},
+        "balanced_cubic_class_evaluated": {"const": false},
+        "complete_resonance_carrier_enumerated": {"const": true},
+        "only_original_ell2_shells_kinematically_resonant": {"const": true},
+        "D3_constraint_tensor_present": {"const": false},
+        "mixed_D2_first_second_tensor_present": {"const": false},
+        "gauge_representative_independence": {"const": false},
+        "five_quadratic_Taub_charges_sufficient_through_order_three": {"const": false},
+        "new_adjoint_covector_coefficient_decided": {"const": false},
+        "causal_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string"},
+    "next_gate": {"type": "string"},
+    "verification_commands": {"type": "array", "minItems": 4}
+  },
+  "additionalProperties": false
+}

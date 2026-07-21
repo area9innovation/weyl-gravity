@@ -1,0 +1,55 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_INPUT_OBSTRUCTION_V1",
+  "date": "2026-07-21",
+  "base_commit": "6ec835206729d1fb5fb94ad05f0fe04db10f64dc",
+  "artifacts": [
+    {"path": "bridge/einstein_sector/einstein_weyl_compact_cauchy_third_order_kuranishi_obstruction.py", "sha256": "5e87d822149cdbbe86d208e3d42c090ad10387aa5116f366085cc22dac0a9193"},
+    {"path": "bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_INPUT_OBSTRUCTION_V1.json", "sha256": "e2a80e947b4ea640ffd0a9aadcfffeaca602dfa4610a3387aefd934515c394fc"},
+    {"path": "bridge/einstein_sector/verify_einstein_weyl_compact_cauchy_third_order_kuranishi_obstruction.py", "sha256": "e9b6f199ee1fa0b6e790ac23815a5e16d919c6dfdbb5b109e40fecbb0c2572f4"},
+    {"path": "bridge/einstein_sector/tests/test_einstein_weyl_compact_cauchy_third_order_kuranishi_obstruction.py", "sha256": "65cef3d0a6a259fd678a6e434357cc468128182ad93acca4932b2bc1214b6bce"},
+    {"path": "bridge/einstein_sector/schema/einstein-weyl-compact-cauchy-third-order-kuranishi-input-obstruction-v1.schema.json", "sha256": "86949e9d0992e527430dc1609578d1ae1073d22748d36098927254ef577fc6e1"},
+    {"path": "bridge/einstein_sector/generate_third_order_kuranishi_obstruction_atlas.py", "sha256": "4ad94f56cf33ee082e75ed5b5989a53fe83b81839460423c7f8701aeb497deb6"},
+    {"path": "residual_atlas/einstein-weyl-compact-cauchy-third-order-kuranishi-obstruction-fragment-v1.json", "sha256": "1b3b6f11520f054402778b27960303d6ce6f009e113f91eb21b253b9dd77cba9"},
+    {"path": "reports/bridge-compact-cauchy-third-order-kuranishi-obstruction-closeout-2026-07-21.md", "sha256": "467ffd40087808c041f82c469be1a352fb3509d63da717eefadd8d2117333449"},
+    {"path": "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex", "sha256": "57a57fc8d4ab7a9dc55df21e320a8e5c58f14b5eddb7291fa597b613d461457a"},
+    {"path": "notes/d-quotient-einstein-team-brief.md", "sha256": "c5f54bfea3e680aeb5372900bd1e4b575390711eaa57366d815f0771caf3e694"}
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile on producer, independent verifier, tests and atlas generator",
+        "python3 -m json.tool on certificate, schema, atlas and receipt",
+        "git diff --check on scoped paths",
+        "two pdflatex passes for Paper 13"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "producer exact replay",
+        "method-distinct frequency-lattice, shell-resonance and l2-rank reconstruction",
+        "seven replay and mutation tests",
+        "generated atlas equality and strict atlas validation"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The terminal mixed correspondence, two-jet Kuranishi carrier, and exact quadratic source/correction are hash pinned; decisive frequency and ambiguity identities are independently reconstructed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "Scoped missing-input obstruction, not a release, shared-core change, or third-order theorem freeze."
+    }
+  },
+  "mutations": {
+    "false_D3_presence": "rejected by schema and imported-payload audit",
+    "false_balanced_evaluation": "rejected by schema",
+    "hidden_correction_ambiguity": "rejected by independent rank-one reconstruction",
+    "omitted_original_shell": "rejected by exact signed-frequency enumeration",
+    "false_gauge_independence": "rejected without arity-three action/Noether input",
+    "false_third_order_sufficiency": "rejected by schema"
+  },
+  "claim_boundary": "Formal cubic class and exact resonance preflight only; the class value, gauge independence, third-order integrability, bounded/causal evolution, particle, positivity, unitarity and quantum claims remain unestablished."
+}

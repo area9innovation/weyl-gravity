@@ -3199,4 +3199,61 @@ the transfer coordinate transforms coadjointly and the anti-diagonal equations
 are equivariant.  No all-orders Kuranishi, bounded-evolution, causal, particle,
 positivity or quantum statement is inferred.
 
+\section{Third-order Kuranishi input gate}
+
+The two-jet correspondence fixes the correct carrier but does not by itself
+define its first higher obstruction.  With the convention
+\[
+ \Phi(\epsilon)=\bar\Phi+\epsilon u+\epsilon^2v+\epsilon^3w
+ +O(\epsilon^4),
+\]
+the next equation and its projected constraint representative are
+\[
+ Lw=-D^2E[u,v]-{1\over6}D^3E[u,u,u],
+ \qquad
+ K_3(u;v)=P_{\mathfrak o}\left(
+ D^2C[u,v]+{1\over6}D^3C[u,u,u]\right).
+\]
+If $v$ is replaced by $v+z$ with $Lz=0$, then
+\[
+ K_3(u;v+z)-K_3(u;v)=P_{\mathfrak o}D^2C[u,z]
+ =\ell_2(u,z).
+\]
+The correction-independent object is therefore the class
+\[
+ [K_3(u;v)]\in
+ \mathfrak o/\operatorname{im}\ell_2(u,-).
+\]
+On the declared balanced two-amplitude slice the map
+$\ell_2(u,-)$ has rank one, so this formal quotient has dimension four.
+Independence under nonlinear gauge representatives would require, in
+addition, the second jet of the bundle-covariant algebroid action and its
+arity-three Noether identity.
+
+The smallest finite third-order closure can be fixed before its coefficients
+are known.  Its axial angular outputs are $\ell=2,4,6$.  Writing
+$\omega_-$ for the Einstein-minus frequency and $\omega_e$ for the additional
+frequency, its sixteen signed frequencies are
+\[
+ n_-\omega_-+n_e\omega_e,
+ \qquad
+ |n_-|+|n_e|\leq3,
+ \qquad
+ 3-|n_-|-|n_e|\in2\mathbb Z.
+\]
+An exact shell comparison shows that the only coincidences are the original
+$\ell=2$ shells: $(n_-,n_e)=(\pm1,0)$ on the Einstein-minus branch and
+$(0,\pm1)$ on the additional branch.  Thus no new kinematic shell type
+appears, but the coefficients of the potentially resonant original-shell
+sources remain load bearing.
+
+The imported quadratic certificate supplies $D^2E$ on two first-order axial
+inputs and a complete chosen second-order correction.  It does not supply the
+action-normalized tensor $D^3C[u,u,u]$, the mixed tensor $D^2C[u,v]$ for the
+stored polar correction channels, or the arity-three gauge/Noether data.
+Consequently $K_3$ cannot yet be evaluated even on the balanced fixture.
+Neither third-order integrability nor sufficiency of the five quadratic Taub
+charges is claimed.  The missing object is now content-addressed and scoped;
+reconstructing a different nonlinear action would not close this gate.
+
 \end{document}
