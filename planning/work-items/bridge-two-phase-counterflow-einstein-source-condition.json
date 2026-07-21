@@ -1,0 +1,24 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/bridge-two-phase-counterflow-einstein-source-condition",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "bridge-two-phase-counterflow-einstein-source-condition",
+  "source": {"path": "planning/work-items/bridge-two-phase-counterflow-einstein-source-condition.json", "span": null},
+  "body": {
+    "owner": "bridge",
+    "state": "PROPOSED",
+    "objective": "Determine how the selected healthy two-phase counterflow action changes the Einstein-image inclusion, additional Weyl quotient and charge-sector second-order obstruction on the Berger background.",
+    "stop_condition": "Import the terminal counterflow causal parent, exact selected stress tensor and the existing Einstein-to-Weyl linear chain map by hashes. Derive the action-specific linear Einstein/source equations on the selected Berger background and construct the exact sequence or first failed map between Einstein-image, changed Weyl--clock and additional sectors. Evaluate the compensated source condition Q(T)=0 for the neutral counterflow, distinguishing diagonal gauge neutrality from positive relative-clock stress. Compute the pulled-back cyclic pairing, residual K_Berger action, fixed-Q_rel versus variable-charge tangent spaces and the first quadratic Taub/source obstruction. Decide whether Einstein--clock data form a closed sector, necessarily source an extra mode, or close only on a stated constrained cone. Supply exact maps/separators, independent verifier, charge mutations, schema, receipt, atlas fragment and Paper 13/Einstein interpretation update.",
+    "current_gate": "Einstein/extra exact sequence and source closure for the selected counterflow repair",
+    "forbid": "no gauge-charge neutrality used as Q(T)=0; no linear injection called nonlinear closure; no fixed and variable relative-charge fibres conflated; no Einstein and Weyl symplectic forms assumed equal; no causal, scattering, particle or unitarity promotion",
+    "depends_on": ["sf:program/work/classical-two-phase-counterflow-causal-bv-parent"],
+    "activates": ["a changed-theory Einstein closure theorem", "branch-resolved nonlinear counterflow mixing"],
+    "allowed_paths": ["bridge/", "d_quotient_classical/", "residual_atlas/", "reports/", "paper/", "notes/d-quotient-einstein-team-brief.md", "planning/forge-requests/"],
+    "resource_hint": "EXACT-SEQUENCE BRIDGE. The relative phase carries zero diagonal charge but nonzero stress; compute rather than infer its Einstein-source disposition.",
+    "notes": ["A forced extra-Weyl source is as valuable as closure: it would explain the physical price of the successful trace repair."],
+    "input_commit": "e9d5eb67afa0b477285ca0471ff4d74d97f0ad1f",
+    "stream": "bridge"
+  },
+  "edges": []
+}
