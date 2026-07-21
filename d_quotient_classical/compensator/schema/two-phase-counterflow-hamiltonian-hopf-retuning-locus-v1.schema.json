@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.invalid/schema/two-phase-counterflow-hamiltonian-hopf-retuning-locus-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "imports", "payload_ref", "parameter_summary", "physical_quotient_summary", "terminal_verdict", "claim_boundary", "content_hashes"],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-hamiltonian-hopf-retuning-locus-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_HAMILTONIAN_HOPF_RETUNING_LOCUS_V1"},
+    "result_state": {"const": "OBSTRUCTED_NO_STABLE_JHALF_RETUNING_ON_CONNECTED_TRACE_HEALTHY_FAMILY"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}},
+    "imports": {"type": "object", "minProperties": 5},
+    "payload_ref": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256", "content_sha256"], "properties": {"path": {"type": "string"}, "result_id": {"const": "TWO_PHASE_COUNTERFLOW_HAMILTONIAN_HOPF_RETUNING_LOCUS_PAYLOAD_V1"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "parameter_summary": {"type": "object"},
+    "physical_quotient_summary": {"type": "object"},
+    "terminal_verdict": {"type": "object"},
+    "claim_boundary": {"type": "object"},
+    "content_hashes": {"type": "object", "minProperties": 6, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+  }
+}

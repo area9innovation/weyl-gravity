@@ -1,0 +1,40 @@
+{
+  "claim_promotion": "CLASSIFIED_SCOPED_J_HALF_RETUNING_NO_GO",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "result_id": "TWO_PHASE_COUNTERFLOW_HAMILTONIAN_HOPF_RETUNING_LOCUS_V1_TIER_RECEIPT",
+  "schema": "pure-weyl-test-tier-receipt-v1",
+  "tier0": {
+    "commands": [
+      "python3 -m py_compile <changed Python sources>",
+      "python3 -m json.tool <changed JSON artifacts>",
+      "git diff --check -- <scoped paths>"
+    ],
+    "status": "PASS"
+  },
+  "tier1": {
+    "commands": [
+      "producer --check",
+      "independent verifier",
+      "atlas generator --check",
+      "atlas verifier",
+      "scoped pytest"
+    ],
+    "status": "PASS"
+  },
+  "tier2": {
+    "commands": [
+      "time python3 d_quotient_classical/compensator/two_phase_counterflow_hamiltonian_hopf_retuning_locus.py --full-residue --check"
+    ],
+    "elapsed_seconds": 130.082,
+    "note": "The modular-RREF rail is intentionally separate from the fast commit loop.",
+    "status": "PASS"
+  },
+  "tier3": {
+    "reason": "No shared-core algebra or programme freeze was changed.",
+    "status": "NOT_RUN"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.invalid/schema/two-phase-counterflow-hamiltonian-hopf-retuning-locus-payload-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "dependency_tags", "imports", "oracle_fields_consumed", "parameter_family", "representation_crosswalk", "physical_quotient", "spectral_classification", "unstable_residue_pairing", "unstable_energy_signature", "charge_and_causal_gates", "mutations", "terminal_verdict", "claim_boundary", "content_sha256"],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-hamiltonian-hopf-retuning-locus-payload-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_HAMILTONIAN_HOPF_RETUNING_LOCUS_PAYLOAD_V1"},
+    "dependency_tags": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}},
+    "imports": {"type": "object", "minProperties": 5, "additionalProperties": {"$ref": "#/$defs/import"}},
+    "oracle_fields_consumed": {"type": "array", "maxItems": 0},
+    "parameter_family": {"type": "object"},
+    "representation_crosswalk": {"type": "object"},
+    "physical_quotient": {"type": "object", "required": ["physical_dimension", "physical_matrix", "factors"], "properties": {"physical_dimension": {"const": 14}, "physical_matrix": {"$ref": "#/$defs/matrix"}, "factors": {"type": "array", "minItems": 4, "maxItems": 4}}, "additionalProperties": true},
+    "spectral_classification": {"type": "object"},
+    "unstable_residue_pairing": {"type": "object", "required": ["residue_nondegenerate_on_component"], "properties": {"residue_nondegenerate_on_component": {"const": true}}, "additionalProperties": true},
+    "unstable_energy_signature": {"type": "object"},
+    "charge_and_causal_gates": {"type": "object"},
+    "mutations": {"type": "object"},
+    "terminal_verdict": {"type": "object", "required": ["result_state", "entire_component_Hamiltonian_Hopf", "stable_exact_retuned_fixture"], "properties": {"result_state": {"const": "OBSTRUCTED_NO_STABLE_JHALF_RETUNING_ON_CONNECTED_TRACE_HEALTHY_FAMILY"}, "entire_component_Hamiltonian_Hopf": {"const": true}, "stable_exact_retuned_fixture": {"type": "null"}}, "additionalProperties": true},
+    "claim_boundary": {"type": "object", "required": ["establishes", "does_not_establish"]},
+    "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {
+    "import": {"type": "object", "additionalProperties": false, "required": ["path", "sha256", "result_id", "oracle_fields_consumed"], "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "result_id": {"type": "string"}, "oracle_fields_consumed": {"type": "array", "maxItems": 0}}},
+    "matrix": {"type": "object", "additionalProperties": false, "required": ["shape", "entries", "sha256"], "properties": {"shape": {"type": "array", "prefixItems": [{"type": "integer"}, {"type": "integer"}], "minItems": 2, "maxItems": 2}, "entries": {"type": "array", "items": {"type": "array", "prefixItems": [{"type": "integer"}, {"type": "integer"}, {"type": "string"}], "minItems": 3, "maxItems": 3}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  }
+}

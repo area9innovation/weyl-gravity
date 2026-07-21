@@ -1,0 +1,97 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This row is a same-field, same-derivative-order, j=1/2 retuning no-go. It does not identify modes across backgrounds by name, does not supply a familywide causal Green map, and does not establish all-isotype, nonlinear, observer, quantum, particle, positivity or unitarity claims.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_HAMILTONIAN_HOPF_RETUNING_LOCUS_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_HAMILTONIAN_HOPF_RETUNING_LOCUS_V1",
+          "sha256": "ce2f046de0801541ec7a829b6717f5ce493c5015fa00d61cc653c574b870cbc4"
+        },
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_HAMILTONIAN_HOPF_RETUNING_LOCUS_PAYLOAD_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_HAMILTONIAN_HOPF_RETUNING_LOCUS_PAYLOAD_V1",
+          "sha256": "88e5f9a25ff3a5cfbbdbbbe1492ec879f6bfb1f495aed3aa4241b8e58e413508"
+        }
+      ],
+      "id": "classical.counterflow.berger.retuning_family.j_half_hamiltonian_hopf_no_go",
+      "mode_data": {
+        "dispersion": {
+          "statement": "disc_(z^2) F2=256*q^5*(9*q-8)<0 throughout the connected trace-healthy component.",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "The multiplicity-two modular residue pairing is nondegenerate and the real unstable sector has constant inertia (4,4,0).",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Three stable-sector cross-factor collisions are isolated exactly; their full polynomial Jordan types are not certified.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The linear j=1/2 quotient has an unavoidable exponential-oscillatory sector.",
+            "status": "OBSTRUCTED"
+          },
+          "causal_retarded": {
+            "statement": "The selected fixture has a causal parent, but a familywide Green homotopy has not been exported.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The action-derived q2 source has not been evaluated on this family.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "No q2 or tangent-cone map is imported into this retuning theorem.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "stationary biaxial Berger R x S3 family; (13-3*sqrt(17))/4<q<1/4, x>0, C>0",
+        "boundaries": "none; closed S3 Cauchy slices",
+        "carrier": "complete both-k spin-j=1/2 physical quotient of the symbolic PBW Hessian",
+        "charge_sector": "j=1/2 nonhomogeneous block; delta Q_rel=0 without deleting a charged orbit",
+        "degree": "14 physical metric coefficients after rank-six gauge and Noether quotients",
+        "ell": "NOT_APPLICABLE: Berger Peter-Weyl spin j, not a round-S3 Hodge label",
+        "k": "both internal weights +/-1/2 retained",
+        "m": "+/-1/2 paired by real structure",
+        "omega": "F2(q,z^2/x)=0 gives a nonzero-real-part frequency quartet for every admissible q",
+        "parity": "m=+/-1/2 reality pair; two physical polarizations per frequency root",
+        "theory": "same-field two-phase polar-clock Weyl action with repaired diagonal-U1 contractible sector"
+      }
+    }
+  ],
+  "generated_by": "d_quotient_classical/atlas/generate_two_phase_counterflow_hamiltonian_hopf_retuning_locus_atlas_fragment.py",
+  "generated_by_sha256": "4198b2d356af61edc61f2f577dbb3823a4f855c368efe799bf59f93b777bb448",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "classical",
+  "verification_commands": [
+    "python3 d_quotient_classical/compensator/two_phase_counterflow_hamiltonian_hopf_retuning_locus.py --check",
+    "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_hamiltonian_hopf_retuning_locus.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-hamiltonian-hopf-retuning-locus-fragment-v1.json"
+  ]
+}

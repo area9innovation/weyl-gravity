@@ -1,0 +1,919 @@
+{
+  "charge_and_causal_gates": {
+    "D": "acts as time translation z; it is not quotiented from the physical block",
+    "K": "equals D on this nonhomogeneous isotype",
+    "Q_rel": "linear variation vanishes by spatial integration on j=1/2",
+    "R_rel": "zero tangent action on every j=1/2 nonhomogeneous harmonic",
+    "causal_parent_at_selected_fixture": "CERTIFIED",
+    "diagonal_U1": "exact contractible summand for every positive normalization",
+    "familywide_full_Green_homotopy": "NO_CERTIFIED_MAP",
+    "familywide_gate_used_here": "stationary action, positive trace principal coefficient, local symbolic q1, cyclicity and charge architecture only"
+  },
+  "claim_boundary": {
+    "does_not_establish": [
+      "a familywide advanced/retarded Green homotopy away from the imported selected fixture",
+      "the Jordan type of the three stable-sector cross-factor collision points",
+      "all-isotype health, nonlinear stability, Hadamard, QME, particle, positivity or unitarity claims"
+    ],
+    "establishes": [
+      "complete stationary same-field coefficient/background family after normalization quotients",
+      "complete symbolic j=1/2 both-k physical characteristic divisor",
+      "exact discriminants, pairwise resultants and isolated cross-factor collision loci",
+      "nondegenerate multiplicity-two residue pairing and constant split energy inertia for the F2 unstable sector",
+      "structural absence of a stable j=1/2 retuning on the connected positive-trace component"
+    ]
+  },
+  "content_sha256": "1ccadba405d296e0f8906f1557f5c2f960c23da42aa5c22e536539ac5fd33bf9",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "imports": {
+    "causal_parent": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2",
+      "sha256": "3f41cb5258f0883b217c9343e037074faf841728f29e03c306f101487411d2cf"
+    },
+    "fixed_action_component": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BACKGROUND_COMPONENT_ROUND_DISPOSITION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_BACKGROUND_COMPONENT_ROUND_DISPOSITION_V1",
+      "sha256": "9fa277c57a28aa831d56cec4a49774f716cb000616afde74013d9320dc0a1763"
+    },
+    "selected_instability": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_V1",
+      "sha256": "d78fa16e9772924ded1b8262f33e3989a9e94acd01891257309bc07f7f7f282c"
+    },
+    "symbolic_pbw_operator": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json",
+      "result_id": "BERGER_RETAINED_MINIMAL_OPERATOR",
+      "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+    },
+    "trace_charge_preflight": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_V1",
+      "sha256": "2b578967ece7a2e6a8079c8fd84665ac40cf2b7e0aeef41d96882553c35115ea"
+    }
+  },
+  "mutations": {
+    "call_j_half_no_go_all_isotype_health": "REJECTED_SCOPE_ERROR",
+    "delete_F2_as_gauge_or_charge": "REJECTED_BY_NULLITY_RESIDUE_AND_CHARGE_AUDITS",
+    "finite_parameter_scan_as_locus_proof": "REJECTED",
+    "frozen_Peter_Weyl_generator_with_varied_PBW_coefficients": "REJECTED_SPURIOUS_MIXED_BACKGROUND"
+  },
+  "oracle_fields_consumed": [],
+  "parameter_family": {
+    "action_density": "sqrt(-g_hat){alpha_B*C_hat^2/8+M2*R_hat/2-V0-mu_squared*(dpsi)^2/2-2*(A-dchi)^2}",
+    "causal_trace_healthy_component": {
+      "conditions": [
+        "x>0",
+        "C>0",
+        "(13-3*sqrt(17))/4<q<1/4"
+      ],
+      "connected": true,
+      "lower_endpoint": "-(-13 + 3*sqrt(17))/4",
+      "lower_endpoint_isolating_interval": [
+        "3/20",
+        "4/25"
+      ],
+      "lower_endpoint_minimal_polynomial": "2*q^2-13*q+2",
+      "reason": "positive trace velocity requires q<1/4 and negative trace mass requires q>(13-3*sqrt(17))/4"
+    },
+    "derived_background_scalars": {
+      "R": "-x*(q - 4)/2",
+      "beta": "C*(q - 1)**2/(3*q)",
+      "trace_lambda_squared": "-x*(2*q**2 - 13*q + 2)/(3*(4*q - 1))",
+      "trace_mass_coefficient": "C*(2*q**2 - 13*q + 2)/(6*q)",
+      "trace_velocity_coefficient": "-C*(4*q - 1)/(2*q*x)"
+    },
+    "independent_positive_coordinates": [
+      "q=c_squared/a_squared",
+      "x=a^(-2)",
+      "C=mu_squared*Omega^2"
+    ],
+    "quotiented_normalizations": {
+      "diagonal_U1": "its positive coefficient rescales an exact contractible summand and does not enter the physical quotient",
+      "overall_action": "C fixes alpha_B through stationarity and multiplies the physical Hessian by a positive nonzero scalar",
+      "overall_scale": "x rescales z_squared; use w=z_squared/x",
+      "relative_phase": "mu_squared>0 and Omega!=0 enter the gravity block only through C=mu_squared*Omega^2; fix mu_squared=1 by field normalization"
+    },
+    "redundancy_quotient_dimension": 1,
+    "selected_fixture": {
+      "C": "9/16",
+      "M2": "-1/6",
+      "V0": "119/1920",
+      "alpha_B": "5",
+      "q": "9/40",
+      "x": "1"
+    },
+    "spectral_shape_coordinate": "q",
+    "stationary_equation_rank": 3,
+    "stationary_solution": {
+      "M2": "2*C*(4*q - 1)/(3*q*x)",
+      "V0": "-C*(q**2 - 5*q + 1)/(3*q)",
+      "alpha_B": "2*C/(q*x**2)"
+    }
+  },
+  "physical_quotient": {
+    "ambient_metric_component_dimension": 20,
+    "characteristic_divisor": "product(F_i(q,w)^2,i=1..4)",
+    "equation_free_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "factors": [
+      {
+        "factor_id": "F1",
+        "polynomial": "4*q*w + 12*q + 9",
+        "power": 2
+      },
+      {
+        "factor_id": "F2",
+        "polynomial": "-48*q**3*w + 32*q**3 + 16*q**2*w**2 - 108*q**2 + 72*q*w + 81",
+        "power": 2
+      },
+      {
+        "factor_id": "F3",
+        "polynomial": "-48*q**3*w + 80*q**3 + 16*q**2*w**2 - 48*q**2*w - 300*q**2 + 200*q*w - 300*q + 625",
+        "power": 2
+      },
+      {
+        "factor_id": "F4",
+        "polynomial": "1920*q**6*w - 320*q**6 + 640*q**5*w**2 - 1408*q**5*w + 800*q**5 + 256*q**4*w**3 + 768*q**4*w**2 + 960*q**4*w - 352*q**4 - 64*q**3*w**3 - 64*q**3*w**2 + 192*q**3*w + 200*q**3 - 48*q**2*w**2 - 80*q**2*w - 12*q*w - 12*q - 1",
+        "power": 2
+      }
+    ],
+    "field_free_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "gauge_pivot_indices": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "gauge_rank": 6,
+    "identity_pivot_indices": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "identity_rank": 6,
+    "normalization": "x=1, alpha_B=1, t=sqrt(q), e1=J1, e2=J2, e3=J3/t; restore w=z^2/x and the positive overall stationary action factor",
+    "physical_dimension": 14,
+    "physical_matrix": {
+      "entries": [
+        [
+          0,
+          0,
+          "(30*t**6 - 11*t**4 + 4*t**2 + 1)/(96*t**4)"
+        ],
+        [
+          0,
+          3,
+          "-I*z*(t - 1)*(t + 1)*(3*t**2 - 1)/(24*t**2)"
+        ],
+        [
+          0,
+          5,
+          "z*(t - 1)*(t + 1)*(3*t**2 - 1)/(24*t**2)"
+        ],
+        [
+          0,
+          6,
+          "-I*z*(t - 1)*(t + 1)*(3*t**2 + 1)/(24*t**3)"
+        ],
+        [
+          0,
+          8,
+          "-(t - 1)*(t + 1)*(-28*t**4 + 4*t**2*z**2 + 12*t**2 + 1)/(192*t**4)"
+        ],
+        [
+          0,
+          11,
+          "-I*(t - 1)*(t + 1)*(12*t**2*z**2 + 14*t**2 + 1)/(96*t**3)"
+        ],
+        [
+          0,
+          12,
+          "(t - 1)*(t + 1)*(-14*t**2 + 4*z**2 - 1)/(96*t**2)"
+        ],
+        [
+          1,
+          1,
+          "(30*t**6 - 11*t**4 + 4*t**2 + 1)/(96*t**4)"
+        ],
+        [
+          1,
+          2,
+          "-I*z*(t - 1)*(t + 1)*(3*t**2 - 1)/(24*t**2)"
+        ],
+        [
+          1,
+          4,
+          "-z*(t - 1)*(t + 1)*(3*t**2 - 1)/(24*t**2)"
+        ],
+        [
+          1,
+          7,
+          "I*z*(t - 1)*(t + 1)*(3*t**2 + 1)/(24*t**3)"
+        ],
+        [
+          1,
+          9,
+          "-(t - 1)*(t + 1)*(-28*t**4 + 4*t**2*z**2 + 12*t**2 + 1)/(192*t**4)"
+        ],
+        [
+          1,
+          10,
+          "-I*(t - 1)*(t + 1)*(12*t**2*z**2 + 14*t**2 + 1)/(96*t**3)"
+        ],
+        [
+          1,
+          13,
+          "(t - 1)*(t + 1)*(-14*t**2 + 4*z**2 - 1)/(96*t**2)"
+        ],
+        [
+          2,
+          1,
+          "-I*z*(t - 1)*(t + 1)*(3*t**2 - 1)/(24*t**2)"
+        ],
+        [
+          2,
+          2,
+          "-(48*t**6*z**2 + 96*t**6 - 68*t**4*z**2 - 186*t**4 + 60*t**2*z**2 + 9*t**2 + 123)/(96*t**4)"
+        ],
+        [
+          2,
+          4,
+          "I*(28*t**4*z**2 + 138*t**4 - 48*t**2*z**2 + 9*t**2 - 120)/(96*t**4)"
+        ],
+        [
+          2,
+          7,
+          "(24*t**4*z**2 - 48*t**4 - 4*t**2*z**2 + 18*t**2 + 3)/(96*t**3)"
+        ],
+        [
+          2,
+          9,
+          "-I*z*(-22*t**4 + 4*t**2*z**2 - 6*t**2 + 13)/(48*t**2)"
+        ],
+        [
+          2,
+          10,
+          "-z*(t - 1)*(t + 1)*(12*t**2*z**2 + 31*t**2 + 21)/(24*t**3)"
+        ],
+        [
+          2,
+          13,
+          "-I*z*(-38*t**4 + 4*t**2*z**2 + 20*t**2 + 3)/(48*t**2)"
+        ],
+        [
+          3,
+          0,
+          "-I*z*(t - 1)*(t + 1)*(3*t**2 - 1)/(24*t**2)"
+        ],
+        [
+          3,
+          3,
+          "-(48*t**6*z**2 + 96*t**6 - 68*t**4*z**2 - 186*t**4 + 60*t**2*z**2 + 9*t**2 + 123)/(96*t**4)"
+        ],
+        [
+          3,
+          5,
+          "-I*(28*t**4*z**2 + 138*t**4 - 48*t**2*z**2 + 9*t**2 - 120)/(96*t**4)"
+        ],
+        [
+          3,
+          6,
+          "-(24*t**4*z**2 - 48*t**4 - 4*t**2*z**2 + 18*t**2 + 3)/(96*t**3)"
+        ],
+        [
+          3,
+          8,
+          "-I*z*(-22*t**4 + 4*t**2*z**2 - 6*t**2 + 13)/(48*t**2)"
+        ],
+        [
+          3,
+          11,
+          "-z*(t - 1)*(t + 1)*(12*t**2*z**2 + 31*t**2 + 21)/(24*t**3)"
+        ],
+        [
+          3,
+          12,
+          "-I*z*(-38*t**4 + 4*t**2*z**2 + 20*t**2 + 3)/(48*t**2)"
+        ],
+        [
+          4,
+          1,
+          "z*(t - 1)*(t + 1)*(3*t**2 - 1)/(24*t**2)"
+        ],
+        [
+          4,
+          2,
+          "-I*(28*t**4*z**2 + 138*t**4 - 48*t**2*z**2 + 9*t**2 - 120)/(96*t**4)"
+        ],
+        [
+          4,
+          4,
+          "-(48*t**6*z**2 + 96*t**6 - 68*t**4*z**2 - 186*t**4 + 60*t**2*z**2 + 9*t**2 + 123)/(96*t**4)"
+        ],
+        [
+          4,
+          7,
+          "I*(24*t**4*z**2 - 48*t**4 - 4*t**2*z**2 + 18*t**2 + 3)/(96*t**3)"
+        ],
+        [
+          4,
+          9,
+          "-z*(-t**4 + 4*t**2*z**2 + 3*t**2 + 7)/(24*t**2)"
+        ],
+        [
+          4,
+          10,
+          "-I*z*(-34*t**4 + 12*t**2*z**2 - 2*t**2 + 39)/(48*t**3)"
+        ],
+        [
+          4,
+          13,
+          "z*(-38*t**4 + 4*t**2*z**2 + 20*t**2 + 3)/(48*t**2)"
+        ],
+        [
+          5,
+          0,
+          "-z*(t - 1)*(t + 1)*(3*t**2 - 1)/(24*t**2)"
+        ],
+        [
+          5,
+          3,
+          "I*(28*t**4*z**2 + 138*t**4 - 48*t**2*z**2 + 9*t**2 - 120)/(96*t**4)"
+        ],
+        [
+          5,
+          5,
+          "-(48*t**6*z**2 + 96*t**6 - 68*t**4*z**2 - 186*t**4 + 60*t**2*z**2 + 9*t**2 + 123)/(96*t**4)"
+        ],
+        [
+          5,
+          6,
+          "I*(24*t**4*z**2 - 48*t**4 - 4*t**2*z**2 + 18*t**2 + 3)/(96*t**3)"
+        ],
+        [
+          5,
+          8,
+          "z*(-t**4 + 4*t**2*z**2 + 3*t**2 + 7)/(24*t**2)"
+        ],
+        [
+          5,
+          11,
+          "I*z*(-34*t**4 + 12*t**2*z**2 - 2*t**2 + 39)/(48*t**3)"
+        ],
+        [
+          5,
+          12,
+          "-z*(-38*t**4 + 4*t**2*z**2 + 20*t**2 + 3)/(48*t**2)"
+        ],
+        [
+          6,
+          0,
+          "-I*z*(t - 1)*(t + 1)*(3*t**2 + 1)/(24*t**3)"
+        ],
+        [
+          6,
+          3,
+          "-(24*t**4*z**2 - 48*t**4 - 4*t**2*z**2 + 18*t**2 + 3)/(96*t**3)"
+        ],
+        [
+          6,
+          5,
+          "-I*(24*t**4*z**2 - 48*t**4 - 4*t**2*z**2 + 18*t**2 + 3)/(96*t**3)"
+        ],
+        [
+          6,
+          6,
+          "-(12*t**2*z**2 + 18*t**2 + 8*z**2 + 3)/(48*t**2)"
+        ],
+        [
+          6,
+          8,
+          "I*z*(-28*t**4 + 4*t**2*z**2 + 12*t**2 + 1)/(48*t**3)"
+        ],
+        [
+          6,
+          11,
+          "-z*(12*t**2*z**2 + 4*t**2 - 1)/(48*t**2)"
+        ],
+        [
+          6,
+          12,
+          "-I*z*(7*t**2 + 4*z**2 + 2)/(24*t)"
+        ],
+        [
+          7,
+          1,
+          "I*z*(t - 1)*(t + 1)*(3*t**2 + 1)/(24*t**3)"
+        ],
+        [
+          7,
+          2,
+          "(24*t**4*z**2 - 48*t**4 - 4*t**2*z**2 + 18*t**2 + 3)/(96*t**3)"
+        ],
+        [
+          7,
+          4,
+          "-I*(24*t**4*z**2 - 48*t**4 - 4*t**2*z**2 + 18*t**2 + 3)/(96*t**3)"
+        ],
+        [
+          7,
+          7,
+          "-(12*t**2*z**2 + 18*t**2 + 8*z**2 + 3)/(48*t**2)"
+        ],
+        [
+          7,
+          9,
+          "-I*z*(-28*t**4 + 4*t**2*z**2 + 12*t**2 + 1)/(48*t**3)"
+        ],
+        [
+          7,
+          10,
+          "z*(12*t**2*z**2 + 4*t**2 - 1)/(48*t**2)"
+        ],
+        [
+          7,
+          13,
+          "I*z*(7*t**2 + 4*z**2 + 2)/(24*t)"
+        ],
+        [
+          8,
+          0,
+          "-(t - 1)*(t + 1)*(-28*t**4 + 4*t**2*z**2 + 12*t**2 + 1)/(192*t**4)"
+        ],
+        [
+          8,
+          3,
+          "-I*z*(-22*t**4 + 4*t**2*z**2 - 6*t**2 + 13)/(48*t**2)"
+        ],
+        [
+          8,
+          5,
+          "-z*(-t**4 + 4*t**2*z**2 + 3*t**2 + 7)/(24*t**2)"
+        ],
+        [
+          8,
+          6,
+          "I*z*(-28*t**4 + 4*t**2*z**2 + 12*t**2 + 1)/(48*t**3)"
+        ],
+        [
+          8,
+          8,
+          "(64*t**8 + 16*t**6*z**2 - 18*t**6 + 16*t**4*z**4 - 24*t**4*z**2 - 134*t**4 + 104*t**2*z**2 - 114*t**2 + 265)/(96*t**4)"
+        ],
+        [
+          8,
+          11,
+          "-I*(64*t**6 + 44*t**4*z**2 - 70*t**4 + 16*t**2*z**2 + 29*t**2 + 40)/(96*t**3)"
+        ],
+        [
+          8,
+          12,
+          "-(128*t**6 - 48*t**4*z**2 - 68*t**4 + 16*t**2*z**4 + 44*t**2*z**2 + 4*t**2 + 4*z**2 - 1)/(192*t**2)"
+        ],
+        [
+          9,
+          1,
+          "-(t - 1)*(t + 1)*(-28*t**4 + 4*t**2*z**2 + 12*t**2 + 1)/(192*t**4)"
+        ],
+        [
+          9,
+          2,
+          "-I*z*(-22*t**4 + 4*t**2*z**2 - 6*t**2 + 13)/(48*t**2)"
+        ],
+        [
+          9,
+          4,
+          "z*(-t**4 + 4*t**2*z**2 + 3*t**2 + 7)/(24*t**2)"
+        ],
+        [
+          9,
+          7,
+          "-I*z*(-28*t**4 + 4*t**2*z**2 + 12*t**2 + 1)/(48*t**3)"
+        ],
+        [
+          9,
+          9,
+          "(64*t**8 + 16*t**6*z**2 - 18*t**6 + 16*t**4*z**4 - 24*t**4*z**2 - 134*t**4 + 104*t**2*z**2 - 114*t**2 + 265)/(96*t**4)"
+        ],
+        [
+          9,
+          10,
+          "-I*(64*t**6 + 44*t**4*z**2 - 70*t**4 + 16*t**2*z**2 + 29*t**2 + 40)/(96*t**3)"
+        ],
+        [
+          9,
+          13,
+          "-(128*t**6 - 48*t**4*z**2 - 68*t**4 + 16*t**2*z**4 + 44*t**2*z**2 + 4*t**2 + 4*z**2 - 1)/(192*t**2)"
+        ],
+        [
+          10,
+          1,
+          "I*(t - 1)*(t + 1)*(12*t**2*z**2 + 14*t**2 + 1)/(96*t**3)"
+        ],
+        [
+          10,
+          2,
+          "z*(t - 1)*(t + 1)*(12*t**2*z**2 + 31*t**2 + 21)/(24*t**3)"
+        ],
+        [
+          10,
+          4,
+          "-I*z*(-34*t**4 + 12*t**2*z**2 - 2*t**2 + 39)/(48*t**3)"
+        ],
+        [
+          10,
+          7,
+          "-z*(12*t**2*z**2 + 4*t**2 - 1)/(48*t**2)"
+        ],
+        [
+          10,
+          9,
+          "I*(64*t**6 + 44*t**4*z**2 - 70*t**4 + 16*t**2*z**2 + 29*t**2 + 40)/(96*t**3)"
+        ],
+        [
+          10,
+          10,
+          "(64*t**4 + 48*t**2*z**4 + 132*t**2*z**2 + 70*t**2 + 60*z**2 + 55)/(96*t**2)"
+        ],
+        [
+          10,
+          13,
+          "-I*(64*t**4 + 52*t**2*z**2 - 2*t**2 + 8*z**2 + 1)/(96*t)"
+        ],
+        [
+          11,
+          0,
+          "I*(t - 1)*(t + 1)*(12*t**2*z**2 + 14*t**2 + 1)/(96*t**3)"
+        ],
+        [
+          11,
+          3,
+          "z*(t - 1)*(t + 1)*(12*t**2*z**2 + 31*t**2 + 21)/(24*t**3)"
+        ],
+        [
+          11,
+          5,
+          "I*z*(-34*t**4 + 12*t**2*z**2 - 2*t**2 + 39)/(48*t**3)"
+        ],
+        [
+          11,
+          6,
+          "z*(12*t**2*z**2 + 4*t**2 - 1)/(48*t**2)"
+        ],
+        [
+          11,
+          8,
+          "I*(64*t**6 + 44*t**4*z**2 - 70*t**4 + 16*t**2*z**2 + 29*t**2 + 40)/(96*t**3)"
+        ],
+        [
+          11,
+          11,
+          "(64*t**4 + 48*t**2*z**4 + 132*t**2*z**2 + 70*t**2 + 60*z**2 + 55)/(96*t**2)"
+        ],
+        [
+          11,
+          12,
+          "-I*(64*t**4 + 52*t**2*z**2 - 2*t**2 + 8*z**2 + 1)/(96*t)"
+        ],
+        [
+          12,
+          0,
+          "(t - 1)*(t + 1)*(-14*t**2 + 4*z**2 - 1)/(96*t**2)"
+        ],
+        [
+          12,
+          3,
+          "-I*z*(-38*t**4 + 4*t**2*z**2 + 20*t**2 + 3)/(48*t**2)"
+        ],
+        [
+          12,
+          5,
+          "z*(-38*t**4 + 4*t**2*z**2 + 20*t**2 + 3)/(48*t**2)"
+        ],
+        [
+          12,
+          6,
+          "-I*z*(7*t**2 + 4*z**2 + 2)/(24*t)"
+        ],
+        [
+          12,
+          8,
+          "-(128*t**6 - 48*t**4*z**2 - 68*t**4 + 16*t**2*z**4 + 44*t**2*z**2 + 4*t**2 + 4*z**2 - 1)/(192*t**2)"
+        ],
+        [
+          12,
+          11,
+          "I*(64*t**4 + 52*t**2*z**2 - 2*t**2 + 8*z**2 + 1)/(96*t)"
+        ],
+        [
+          12,
+          12,
+          "(64*t**4 + 80*t**2*z**2 - 2*t**2 + 16*z**4 + 16*z**2 + 1)/96"
+        ],
+        [
+          13,
+          1,
+          "(t - 1)*(t + 1)*(-14*t**2 + 4*z**2 - 1)/(96*t**2)"
+        ],
+        [
+          13,
+          2,
+          "-I*z*(-38*t**4 + 4*t**2*z**2 + 20*t**2 + 3)/(48*t**2)"
+        ],
+        [
+          13,
+          4,
+          "-z*(-38*t**4 + 4*t**2*z**2 + 20*t**2 + 3)/(48*t**2)"
+        ],
+        [
+          13,
+          7,
+          "I*z*(7*t**2 + 4*z**2 + 2)/(24*t)"
+        ],
+        [
+          13,
+          9,
+          "-(128*t**6 - 48*t**4*z**2 - 68*t**4 + 16*t**2*z**4 + 44*t**2*z**2 + 4*t**2 + 4*z**2 - 1)/(192*t**2)"
+        ],
+        [
+          13,
+          10,
+          "I*(64*t**4 + 52*t**2*z**2 - 2*t**2 + 8*z**2 + 1)/(96*t)"
+        ],
+        [
+          13,
+          13,
+          "(64*t**4 + 80*t**2*z**2 - 2*t**2 + 16*z**4 + 16*z**2 + 1)/96"
+        ]
+      ],
+      "sha256": "9734f39a31955d456fe8ca0498603dd111fe9d6f0bf8f5c0cba13ec17ca47838",
+      "shape": [
+        14,
+        14
+      ]
+    },
+    "selected_fixture_reproduced": true
+  },
+  "representation_crosswalk": {
+    "PBW_parameters": [
+      "u=sqrt(q*x)",
+      "v=sqrt(x/q)",
+      "u*v=x",
+      "u/v=q"
+    ],
+    "abstract_generators": [
+      "J1=-i*sigma1/2",
+      "J2=-i*sigma2/2",
+      "J3=-i*sigma3/2"
+    ],
+    "commutators_verified": [
+      "[e1,e2]=u*e3",
+      "[e2,e3]=v*e1",
+      "[e3,e1]=v*e2"
+    ],
+    "metric_scaling": [
+      "e1=sqrt(x)*J1",
+      "e2=sqrt(x)*J2",
+      "e3=sqrt(x/q)*J3"
+    ],
+    "selected_specialized_generator_not_reused_as_generic": true
+  },
+  "result_id": "TWO_PHASE_COUNTERFLOW_HAMILTONIAN_HOPF_RETUNING_LOCUS_PAYLOAD_V1",
+  "schema": "pure-weyl-two-phase-counterflow-hamiltonian-hopf-retuning-locus-payload-v1",
+  "spectral_classification": {
+    "F4_sturm_sign_certificate": [
+      {
+        "polynomial": "342000*q**10 - 1054400*q**9 + 1391560*q**8 - 1398728*q**7 + 1027091*q**6 - 425962*q**5 + 98267*q**4 - 12552*q**3 + 48*q**2 + 312*q - 36",
+        "root_count": 0,
+        "sign_at_q_1_5": -1
+      },
+      {
+        "polynomial": "16*q**2*(40*q**3 + 48*q**2 - 4*q - 3)",
+        "root_count": 0,
+        "sign_at_q_1_5": -1
+      },
+      {
+        "polynomial": "4*q*(480*q**5 - 352*q**4 + 240*q**3 + 48*q**2 - 20*q - 3)",
+        "root_count": 0,
+        "sign_at_q_1_5": -1
+      },
+      {
+        "polynomial": "-(4*q**2 - 8*q - 1)*(80*q**4 - 40*q**3 + 28*q**2 - 4*q - 1)",
+        "root_count": 0,
+        "sign_at_q_1_5": -1
+      }
+    ],
+    "discriminants": [
+      {
+        "factor_id": "F1",
+        "polynomial": "1",
+        "root_count_on_broad_interval": 0,
+        "sign_on_component": 1
+      },
+      {
+        "factor_id": "F2",
+        "polynomial": "256*q**5*(9*q - 8)",
+        "root_count_on_broad_interval": 0,
+        "sign_on_component": -1
+      },
+      {
+        "factor_id": "F3",
+        "polynomial": "256*q**4*(9*q**2 - 2*q + 9)",
+        "root_count_on_broad_interval": 0,
+        "sign_on_component": 1
+      },
+      {
+        "factor_id": "F4",
+        "polynomial": "-16777216*q**12*(342000*q**10 - 1054400*q**9 + 1391560*q**8 - 1398728*q**7 + 1027091*q**6 - 425962*q**5 + 98267*q**4 - 12552*q**3 + 48*q**2 + 312*q - 36)",
+        "root_count_on_broad_interval": 0,
+        "sign_on_component": 1
+      }
+    ],
+    "factor_classes_on_component": {
+      "F1": "one simple negative w root",
+      "F2": "two nonreal conjugate w roots; four z roots with nonzero real and imaginary parts",
+      "F3": "two distinct negative w roots",
+      "F4": "three distinct negative w roots"
+    },
+    "isolated_cross_factor_collisions": [
+      {
+        "collision_id": "F1_F4",
+        "frequency_class": "PURELY_IMAGINARY_CROSS_FACTOR_COLLISION",
+        "full_polynomial_Jordan_status": "NOT_NEEDED_FOR_NO_GO_AND_NOT_CERTIFIED_BY_THIS_RESULT",
+        "inside_trace_healthy_component": true,
+        "isolating_interval": [
+          "2413/10000",
+          "1207/5000"
+        ],
+        "minimal_polynomial": "95*q**5 - 6*q**4 - 140*q**3 - 88*q**2 - 4*q + 8"
+      },
+      {
+        "collision_id": "F3_F4_a",
+        "frequency_class": "PURELY_IMAGINARY_CROSS_FACTOR_COLLISION",
+        "full_polynomial_Jordan_status": "NOT_NEEDED_FOR_NO_GO_AND_NOT_CERTIFIED_BY_THIS_RESULT",
+        "inside_trace_healthy_component": true,
+        "isolating_interval": [
+          "1227/5000",
+          "491/2000"
+        ],
+        "minimal_polynomial": "12960*q**11 - 21110*q**10 - 156479*q**9 - 173000*q**8 + 464322*q**7 + 994500*q**6 - 445572*q**5 - 1543536*q**4 + 236520*q**3 + 942192*q**2 - 412128*q + 46656"
+      },
+      {
+        "collision_id": "F3_F4_b",
+        "frequency_class": "PURELY_IMAGINARY_CROSS_FACTOR_COLLISION",
+        "full_polynomial_Jordan_status": "NOT_NEEDED_FOR_NO_GO_AND_NOT_CERTIFIED_BY_THIS_RESULT",
+        "inside_trace_healthy_component": true,
+        "isolating_interval": [
+          "123/500",
+          "2461/10000"
+        ],
+        "minimal_polynomial": "12960*q**11 - 21110*q**10 - 156479*q**9 - 173000*q**8 + 464322*q**7 + 994500*q**6 - 445572*q**5 - 1543536*q**4 + 236520*q**3 + 942192*q**2 - 412128*q + 46656"
+      }
+    ],
+    "open_Hamiltonian_Hopf_region": "the entire causal-trace-healthy connected component",
+    "resultants": {
+      "R12": {
+        "polynomial": "256*q**4*(11*q + 9)",
+        "root_count_on_broad_interval_3_20_to_1_4": 0
+      },
+      "R13": {
+        "polynomial": "512*q**2*(q - 1)*(q + 2)*(7*q - 4)",
+        "root_count_on_broad_interval_3_20_to_1_4": 0
+      },
+      "R14": {
+        "polynomial": "4096*q**3*(q - 1)*(95*q**5 - 6*q**4 - 140*q**3 - 88*q**2 - 4*q + 8)",
+        "root_count_on_broad_interval_3_20_to_1_4": 1
+      },
+      "R23": {
+        "polynomial": "-131072*q**4*(q - 1)*(9*q**5 - 54*q**4 + 48*q**3 + 8*q**2 - 64*q + 128)",
+        "root_count_on_broad_interval_3_20_to_1_4": 0
+      },
+      "R24": {
+        "polynomial": "16777216*q**6*(q - 1)**2*(4320*q**11 - 10694*q**10 - 15623*q**9 - 5568*q**8 + 18862*q**7 + 17090*q**6 - 6984*q**5 - 8396*q**4 + 2208*q**3 + 1536*q**2 - 640*q + 64)",
+        "root_count_on_broad_interval_3_20_to_1_4": 0
+      },
+      "R34": {
+        "polynomial": "16777216*q**6*(q - 1)**2*(12960*q**11 - 21110*q**10 - 156479*q**9 - 173000*q**8 + 464322*q**7 + 994500*q**6 - 445572*q**5 - 1543536*q**4 + 236520*q**3 + 942192*q**2 - 412128*q + 46656)",
+        "root_count_on_broad_interval_3_20_to_1_4": 2
+      }
+    },
+    "semisimple_purely_imaginary_all_mode_locus": "EMPTY_BECAUSE_F2_IS_HAMILTONIAN_HOPF_EVERYWHERE"
+  },
+  "terminal_verdict": {
+    "entire_component_Hamiltonian_Hopf": true,
+    "higher_isotype_and_nonlinear_status": "NOT_COMPUTED",
+    "result_state": "OBSTRUCTED_NO_STABLE_JHALF_RETUNING_ON_CONNECTED_TRACE_HEALTHY_FAMILY",
+    "retuned_all_isotype_programme_activated": false,
+    "scoped_linear_health_no_go": "CERTIFIED_FOR_THE_DECLARED_SAME_FIELD_CAUSAL_TRACE_HEALTHY_COMPONENT_AT_J_HALF",
+    "stable_exact_retuned_fixture": null,
+    "structural_reason": "disc_w(F2)=256*q^5*(9*q-8)<0 for every 0<q<1/4"
+  },
+  "unstable_energy_signature": {
+    "Ostrogradsky_Hessian_per_copy": [
+      [
+        "-32*q**3 + 108*q**2 - 81",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-24*q*(2*q**2 - 3)",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1/(16*q**2)"
+      ]
+    ],
+    "classification": "GENUINE_HAMILTONIAN_HOPF_SECTOR_NOT_GAUGE_OR_RADICAL",
+    "coefficients": {
+      "D0": "32*q**3 - 108*q**2 + 81",
+      "D2": "-24*q*(2*q**2 - 3)",
+      "D4": "16*q**2"
+    },
+    "inertia_constant_on_component": true,
+    "inertia_per_copy_positive_negative_zero": [
+      2,
+      2,
+      0
+    ],
+    "signs_on_component": {
+      "D0": "positive",
+      "D2": "positive",
+      "D4": "positive"
+    },
+    "two_copy_inertia_positive_negative_zero": [
+      4,
+      4,
+      0
+    ],
+    "two_copy_scalar_operator": "F2(q,D^2) on two physical polarizations"
+  },
+  "unstable_residue_pairing": {
+    "N_q_w": "512*q**5*w + 304*q**5 - 1488*q**4*w + 256*q**4 - 928*q**3*w - 1464*q**3 + 972*q**2*w - 1584*q**2 + 432*q*w + 891*q + 972",
+    "denominator_exception_count_on_broad_interval": 0,
+    "factor_id": "F2",
+    "full_symbolic_modular_rref_command": "python3 d_quotient_classical/compensator/two_phase_counterflow_hamiltonian_hopf_retuning_locus.py --full-residue --check",
+    "generic_left_nullity": 2,
+    "generic_right_nullity": 2,
+    "physical_multiplicity_per_frequency_root": 2,
+    "residue_determinant_mod_F2": "t^6*(9*t^2-8)*N(t^2,z^2)/(64*(t-1)^4*(t+1)^4*(32*t^6-108*t^4+81))",
+    "residue_nondegenerate_on_component": true,
+    "resultant_F2_N": "4096*q**4*(q - 1)**4*(11*q + 9)**2*(32*q**3 - 108*q**2 + 81)",
+    "resultant_root_count_on_broad_interval": 0
+  }
+}
