@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/nonlinear-cyclic-deformation-class-completeness-REQUEST-d30fea852687e497",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/nonlinear-cyclic-deformation-class-completeness-REQUEST-d30fea852687e497.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/nonlinear-cyclic-deformation-class-completeness", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T11:06:09Z", "seq": 1, "payload": {"target": "sf:program/request/nonlinear-cyclic-deformation-class-completeness-to-nonlinear-d30fea852687e497", "request_id": "sf:program/request/nonlinear-cyclic-deformation-class-completeness-to-nonlinear-d30fea852687e497", "from_item": "sf:program/work/nonlinear-cyclic-deformation-class-completeness", "to_stream": "nonlinear", "need": "The same stable agent nonlinear-1 currently holds two exclusive LEASED-UNSTARTED items. Treat nonlinear-cyclic-deformation-class-completeness (acquired 2026-07-21T13:01:00+02:00) as the canonical current item and append a work-yield event for the dormant nonlinear-branch-repair-minimal-hyperbolic lease before editing either scope. Do not rewrite lease history, do not release another agent identity, and do not work both exclusive items concurrently. If actual edits have already begun under the older item, stop and report that fact instead so the coordinator can reverse the designation safely.", "typed": "COORDINATION_DUPLICATE_EXCLUSIVE_LEASE_REPAIR"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "nonlinear"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/nonlinear-cyclic-deformation-class-completeness"}]
+}
