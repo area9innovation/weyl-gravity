@@ -1,0 +1,45 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-berger-k-cartan-one-loop-insertion",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-berger-k-cartan-one-loop-insertion",
+  "source": {
+    "path": "planning/work-items/quantum-berger-k-cartan-one-loop-insertion.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum-qme",
+    "state": "PROPOSED",
+    "objective": "Construct the renormalized one-loop Cartan insertion for the actual stationary Berger generator K_Berger=D-Omega R on the matter-coupled gravity-clock BV complex, and decide whether its quantum Cartan identity is exact, anomalous or not yet defined.",
+    "stop_condition": "Import the terminal matter-coupled one-loop breaking coefficients and counterterm, the complete K_Berger action on fields/ghosts/antifields, and the certified classical cyclic complex by content hash. Construct Q1 and the renormalized insertion iota_K^(1) in one declared scheme and evaluate the full defect [Q,iota_K^(1)]+[Q1,iota_K]-L_K^(1), including antifields, phase-shift current, boundary/transgression and zero modes. Reduce the defect in the actual Berger local BV quotient and supply an explicit primitive, nontrivial separator or smallest missing operator. Check counterterm-scheme covariance, representative independence, cyclicity and real structure with a method-distinct verifier and decisive mutations. State raw D separately: do not infer a D identity from K_Berger. Land schema, artifacts, hashes, receipt, report and claim-map/atlas updates.",
+    "current_gate": "quantum K_Berger Cartan identity after the actual matter-coupled loop breaking is known",
+    "forbid": "no raw D substituted for K_Berger; no strict-theory Q1 imported into the changed matter theory; no classical Cartan identity called quantum; no quotient-zero anomaly used without constructing the renormalized insertion; no local Euclidean identity promoted to Lorentzian causality, Hadamard positivity, particles, scattering or unitarity",
+    "depends_on": [
+      "sf:program/work/quantum-berger-matter-coupled-one-loop-breaking-coefficients"
+    ],
+    "activates": [
+      "a scoped quantum Berger clock-symmetry theorem",
+      "the next action-specific Lorentzian/Hadamard compatibility preflight"
+    ],
+    "allowed_paths": [
+      "quantum-weyl/",
+      "d_quotient_classical/",
+      "closed_universe_observers/",
+      "reports/",
+      "residual_atlas/",
+      "paper/12-quantum-weyl-one-loop-qme.tex",
+      "paper/12-quantum-weyl-one-loop-qme-claim-map.json",
+      "notes/d-quotient-quantum-team-brief.md",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "LOCAL-ALGEBRAIC/EUCLIDEAN-SPECTRAL only. Keep raw D, relative phase shift and the stationary K_Berger generator as three typed operations throughout.",
+    "notes": [
+      "The local anomaly quotient being zero makes an exact result plausible but does not construct the renormalized Cartan insertion.",
+      "A NONDEFINED result is acceptable only when it names the first missing Q1, insertion, domain or regulator object exactly."
+    ],
+    "input_commit": "79c580cedd6b4bcdab571cb86b011c77e004a14f",
+    "stream": "quantum-qme"
+  },
+  "edges": []
+}
