@@ -1,0 +1,22 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-two-phase-counterflow-berger-vector-tensor-hodge-block-export",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-two-phase-counterflow-berger-vector-tensor-hodge-block-export",
+  "source": {"path": "planning/work-items/classical-two-phase-counterflow-berger-vector-tensor-hodge-block-export.json", "span": null},
+  "body": {
+    "owner": "classical-1",
+    "state": "PROPOSED",
+    "objective": "Extend the exact counterflow Berger harmonic carrier from scalar rows to the complete vector and tensor physical blocks, with longitudinal/coexact and anisotropic representation mixing explicit.",
+    "stop_condition": "Import the terminal scalar-block export and the same frozen 70-row parent. Construct convention-explicit vector and symmetric-tensor Peter--Weyl bases on the biaxial Berger sphere, including longitudinal/coexact decomposition, trace/traceless splitting, parity/reality, anisotropic k-mixing and all low-representation exceptions. Export exact iota/pi maps into the 70 rows and prove pi iota=1, q70 closure, local gauge compatibility, cyclicity and conjugation. For every generic vector/tensor label family and exceptional block compute the physical cohomology quotient, descended Gram/inertia/radical, time characteristics and Jordan chains, spatial principal/gradient matrices and causal cones. Verify independently through exact differential-harmonic identities and direct row substitution; mutations must reject round-sphere degeneracies, omitted anisotropic mixing and wrong longitudinal projectors. If the generic vector/tensor harmonic calculus is unavailable, land the smallest exact missing operator/table request and a finite-band nonpromotion witness rather than guessing it. Supply schema, receipt, report and atlas fragment.",
+    "current_gate": "complete non-scalar physical carrier on the selected Berger background",
+    "forbid": "no scalar-only result called complete; no round-space transverse harmonics transplanted to Berger; no numerical eigensystem without exact or certified-algebraic typing; no finite band called generic; no charged global symmetry deleted as local gauge; no positivity or stability claim before exceptional/global assembly",
+    "depends_on": ["sf:program/work/classical-two-phase-counterflow-berger-scalar-hodge-block-export#ANY_TERMINAL"],
+    "activates": ["sf:program/work/classical-two-phase-counterflow-berger-exceptional-stabilizer-block-export"],
+    "allowed_paths": ["d_quotient_classical/compensator/", "d_quotient_classical/atlas/", "residual_atlas/", "reports/", "notes/d-quotient-classical-team-brief.md", "planning/forge-requests/"],
+    "resource_hint": "SECOND HODGE SPLIT. Use or request the homogeneous-space vector/tensor Hodge layer, but keep the action-specific 70-row maps and exact physical quotient in this repository. Split vector and tensor again if the declared exact carrier cannot close in one lease.",
+    "stream": "classical"
+  },
+  "edges": []
+}

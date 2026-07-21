@@ -1,0 +1,22 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/classical-two-phase-counterflow-berger-exceptional-stabilizer-block-export",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "classical-two-phase-counterflow-berger-exceptional-stabilizer-block-export",
+  "source": {"path": "planning/work-items/classical-two-phase-counterflow-berger-exceptional-stabilizer-block-export.json", "span": null},
+  "body": {
+    "owner": "classical-1",
+    "state": "PROPOSED",
+    "objective": "Complete the exceptional and global counterflow Berger blocks by exporting the rowwise SU(2)_L x U(1)_R spatial actions, moment maps and their interaction with charged D, R_rel and K.",
+    "stop_condition": "Import the vector/tensor export and TWO_PHASE_COUNTERFLOW_RESIDUAL_BFV_RECEIVER_OBSTRUCTION_V1. Derive exact 70-row Lie derivatives and cotangent lifts for L1,L2,L3,R3 and the helical K, with the diagonal-U1 action, D and R_rel separately typed. Prove the su(2)+u(1)+R_K commutators on every field, ghost and antifield row, q70 equivariance, cyclicity and moment-map identities. Match the exceptional scalar/vector/tensor zero modes to these actions, classify each as local gauge, global charged, background stabilizer, radical or physical cohomology on both unrestricted and fixed-charge carriers, and export exact exceptional iota/pi maps, descended pairings and characteristic/Jordan blocks. Construct the charge-typed residual BFV receiver only if all required actions exist; otherwise land the first exact row obstruction. Include independent bracket/moment-map verifiers, sign and generator-identification mutations, schema, receipt, report and atlas fragment.",
+    "current_gate": "exceptional/global completion and rowwise spatial stabilizer receiver",
+    "forbid": "no abstract stabilizer algebra substituted for rowwise actions; no K called raw D; no D or R_rel deleted as gauge on the unrestricted carrier; no fixed/unrestricted receiver conflation; no generic harmonic formula used for exceptional modes; no particle or unitarity promotion",
+    "depends_on": ["sf:program/work/classical-two-phase-counterflow-berger-vector-tensor-hodge-block-export#ANY_TERMINAL"],
+    "activates": ["sf:program/work/classical-two-phase-counterflow-unrestricted-all-hodge-health-assembly"],
+    "allowed_paths": ["d_quotient_classical/compensator/", "d_quotient_classical/residuals/", "d_quotient_classical/atlas/", "residual_atlas/", "reports/", "notes/d-quotient-classical-team-brief.md", "planning/forge-requests/"],
+    "resource_hint": "EXCEPTIONAL/GLOBAL SPLIT. This closes the exact carrier gap shared by the all-Hodge health and residual-BFV tasks. Preserve fixed-charge and unrestricted receivers as distinct objects.",
+    "stream": "classical"
+  },
+  "edges": []
+}
