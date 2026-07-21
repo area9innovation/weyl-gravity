@@ -3719,3 +3719,18 @@ stopped at the first counterexample.  Thus the health obstruction is
 complete while the all-isotype mode census is not.  No higher-\(j\)
 extrapolation, nonlinear blow-up, observer, Hadamard, anomaly, QME, particle,
 positivity or unitarity claim is made.
+
+### Phase-1 overview publication propagation (2026-07-21)
+
+Papers 00, 98 and 99 now consume the frozen Classical Phase-1 counterflow
+chain.  They preserve the selected-fixture q70 causal parent while stating
+separately that fixed `Q_rel` removes the clock, every certified low-isotype
+physical quotient is unstable, and the `j=1/2` Hamiltonian--Hopf quartet
+persists throughout the connected trace-healthy same-field family.  No robust
+Phase-2 candidate is selected from that family.
+
+The update does not extrapolate to the still-uncomputed higher-isotype
+retuning spectrum or familywide Green homotopy, and it is not a no-go for new
+field content, derivative order or action architecture.  The deterministic
+coverage record is
+`planning/paper-coverage/classical-phase1-counterflow-overview-publication-2026-07-21.json`.

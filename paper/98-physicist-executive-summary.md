@@ -1,9 +1,9 @@
 # Pure-Weyl gravity programme: executive summary for physicists
 
-**Last substantive update: 21 July 2026 — certified counterflow action--angle
-clock, finite-resolution and conditional comparison theorems, exact Berger
-scalar-carrier nonclosure, the invariant compact-product symplectic-extension
-obstruction, and the symbolic-frequency black-hole pairing programme.**
+**Last substantive update: 21 July 2026 — terminal Phase-1 counterflow
+nonselection, certified action--angle and conditional comparison theorems,
+the invariant compact-product symplectic-extension obstruction, and the
+symbolic-frequency black-hole pairing programme.**
 
 > **Research context.** Asger Alstrup Palm directs the programme and is the
 > accountable human contact. AI systems perform substantial derivation,
@@ -85,7 +85,14 @@ spectrum or a defect of the causal 70-row parent. The replacement closes
 complete $SU(2)_L\times U(1)_R$ isotypical blocks and forms their physical
 quotients for every $m,k$ at $j=0,\frac12,1$.  Every certified quotient is
 nonradical but physically unstable; for $j\geq\frac32$ the physical quotient
-and spectrum remain `NO_CERTIFIED_MAP`.
+and spectrum remain `NO_CERTIFIED_MAP`.  The exact same-field retuning theorem
+then closes the candidate-selection question without extrapolating to those
+higher isotypes: the complete $j=\frac12$ quotient retains its
+Hamiltonian--Hopf quartet throughout the connected trace-healthy stationary
+family.  There is therefore no open or structurally protected linearly
+healthy Phase-2 candidate in that declared family.  This leaves the selected
+causal parent intact and is not a no-go for changed field content, derivative
+order, or action architecture.
 
 Two further promotions have now failed cleanly at their first maps. The
 selected Berger counterflow background is not a solution of conventional
@@ -120,7 +127,7 @@ quotients remain open.
 | Complete causal free complexes on several declared backgrounds | Relational clocks, causal redshift, and localized detector preparations | Invariant branch-resolved interactions |
 | Explicit Einstein-image and additional fourth-order classical summands | Bounded nonlinear continuation on selected finite mode spaces | Complete bounded finite-support cone |
 | Nonzero Lee--Wald pairings for selected additional directions | Schwarzschild horizon admissibility plus two-parity finite-norm Einstein selection at one fixture | Asymptotic Bach phase space and scattering |
-| Exact nonlinear balance conditions, a repaired-$q_{70}$ health obstruction on every certified $j=0,\frac12,1$ physical block, and a strict local Euclidean one-loop anomaly | A two-phase counterflow changed theory with a certified causal BV parent, exact charge--clock complementarity, and an integrable action--angle charged-clock block with positive transverse energy; compensator restoration and reduced Hadamard/Krein two-point functions on other carriers | Higher-$j$ physical quotients, a healthy common clock--receiver carrier, a full-BV state, Lorentzian QME, particles, and unitarity |
+| Exact nonlinear balance conditions, a repaired-$q_{70}$ health obstruction on every certified $j=0,\frac12,1$ physical block, the familywide $j=\frac12$ same-field retuning obstruction, and a strict local Euclidean one-loop anomaly | A two-phase counterflow changed theory with a certified selected-fixture causal BV parent and exact charge--clock complementarity; compensator restoration and reduced Hadamard/Krein two-point functions on other carriers | Higher-$j$ counterflow spectra, changed-action architectures beyond the declared family, a full-BV state, Lorentzian QME, particles, and unitarity |
 
 The [public construction map](../certificate_graph/universe-building-dag.svg)
 shows the dependency structure; the
@@ -399,8 +406,12 @@ and the strict/extended quantum alternatives are computationally separated.
 The two-phase counterflow construction supplies one changed-theory causal
 parent with an exact charge--clock tradeoff and homogeneous action--angle
 stability theorem. Its first round-style scalar Hodge carrier is exactly not
-a subcomplex on the anisotropic Berger background. A full isotypical closure
-replaces that invalid split before the health audit can resume.
+a subcomplex on the anisotropic Berger background. Complete isotypical
+closures replace that invalid split for $j=0,\frac12,1$, and every certified
+physical quotient is nonradical but unstable.  The $j=\frac12$ quartet then
+persists over the connected trace-healthy same-field retuning family, so this
+candidate is terminally not selected for Phase 2 without claiming a complete
+higher-isotype spectrum or a universal changed-theory no-go.
 
 ## Authoritative result ledger
 
@@ -488,9 +499,13 @@ rather than quotient invariance, under the charged $R_{\rm rel}$ and $D$
 flows.  The repaired-$q_{70}$ health assembly subsequently forms the physical
 quotients for $j=0,\frac12,1$: every certified block is nonradical but
 unstable, while the $j\geq\frac32$ quotient and pairing are undefined.  Fixed
-charge removes the clock.  Consequently no healthy common physical
-clock--receiver carrier, thirteen-field receiver interface or counterflow
-redshift is activated.
+charge removes the clock.  On the unrestricted connected trace-healthy
+same-field family, the exact $j=\frac12$ discriminant remains negative and
+the Hamiltonian--Hopf quartet persists.  Consequently no robust Phase-2
+candidate, healthy common physical clock--receiver carrier, thirteen-field
+receiver interface or counterflow redshift is activated.  The higher-isotype
+retuning spectrum remains `NO_CERTIFIED_MAP`; it is not needed for this
+scoped nonselection and is not silently promoted.
 
 This preflight has also been promoted to a general exact theorem for any
 physical action--angle clock with charged time translation. It proves the
@@ -551,7 +566,7 @@ to its derivation and verifier.
 | [Cyclic causal Green transfer](90-cyclic-green-transfer-bridge.md) | Abstract conditional theorem with Berger, flat, and Nariai consumers; one Nariai formal tangent | Extend to a finite background family or second detour theory. |
 | [Charge-fibre obstruction](91-charge-fibre-taub-bridge.md) | Formal cone, all-$\ell$ tuned standard cone, and all 164 two-momentum basis coefficients certified | Classify the common amplitude zero variety. |
 | [Additional axial/polar current](92-extra-axial-lee-wald-bridge.md) | Direct currents and the maximal pre-residual $H^0$ exact sequence are parity complete; the invariant source/image inertia mismatch obstructs every declared strict cyclic split | Construct the common constraint-algebroid/Kuranishi moment-map-zero carrier, then ask whether a non-strict homotopy and physical boundaries exist. |
-| Relational clock and light | Original spatially global retarded $G_0$ probe fixture certified on its declared carrier; the changed theory has conditional sharp, finite-resolution, reciprocity, composition and loop-holonomy laws, but its repaired-$q_{70}$ certified physical blocks are all unstable and the higher-$j$ receiver quotient is undefined | The operational counterflow ratio is `NOT_ACTIVATED`; require a separately certified retuned action with one healthy nonradical physical receiver and complete same-carrier $D/R_{\rm rel}/K$ data. |
+| Relational clock and light | Original spatially global retarded $G_0$ probe fixture certified on its declared carrier; the changed theory has exact conditional comparison laws, but its repaired-$q_{70}$ certified physical blocks are unstable and the $j=\frac12$ quartet persists across the connected same-field retuning family | The operational counterflow ratio and Phase-2 candidate are `NOT_ACTIVATED`; a new action architecture would require its own causal, health, receiver and $D/R_{\rm rel}/K$ certificates. |
 | Black-hole radiation | Static theorem and horizon reach in both parities; finite norm at infinity selects Einstein in both parities at one fixture | Generalize in frequency and $\ell$, then construct the asymptotic phase space. |
 | Einstein--Weyl relative theory | Matching action-derived tensors through $q_3$; strict $f_1$ has a nonzero arity-two defect; global five-charge receiver and Hessian Green-current cone certified | Precompose all stabilizers, add cyclic duals, compare with Lee--Wald, and determine the correct relative nonlinear extension. |
 | Residual branch mixing | Retained cyclic representative and rank-46 carrier exist; physical interaction class not certified | Finish the second-jet image test and obtain an admissible branch resolution. |
@@ -672,6 +687,11 @@ symbolic laboratory rather than a collection of unchecked AI prose.
 <details>
 <summary><strong>Detailed changelog</strong></summary>
 
+- **21 July 2026:** froze the Classical Phase-1 counterflow chain: retained
+  the selected-fixture causal parent, recorded that fixed relative charge
+  removes the clock, and propagated the familywide $j=\frac12$
+  Hamiltonian--Hopf obstruction and terminal same-field nonselection without
+  extrapolating to higher isotypes or other action architectures.
 - **21 July 2026:** preserved the spatially global retarded $G_0$ probe
   observable on its declared carrier, removed its unsupported promotion to a
   localized operational apparatus redshift, and recorded the exact

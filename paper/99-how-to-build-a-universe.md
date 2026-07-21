@@ -221,8 +221,15 @@ attempt to run that larger test found that the obvious dictionary is actually
 wrong rather than merely absent. Squashing the sphere mixes wave families
 that separate cleanly on a round sphere, so the simplest scalar/vector/tensor
 sorting is not preserved by the full gauge equations. This is not a bad wave
-or a failure of causality. The project is now building larger mixed blocks
-that the equations genuinely preserve before judging their health.
+or a failure of causality. Larger mixed blocks that the equations genuinely
+preserve have now been constructed through the first three representation
+levels. Every resulting physical quotient is nondegenerate but unstable. An
+exact retuning theorem then follows the first unstable wave quartet across
+the whole connected family in which the trace remains healthy: the quartet
+never becomes a healthy oscillatory pair. Therefore this declared same-field
+candidate is not selected for Phase 2. Higher representation levels remain
+uncalculated, but that does not reopen the already persistent quartet. Nor is
+this a theorem against every possible new clock, field content or action.
 
 The original Berger laboratory adds something more tangible: a matter field acts as a
 clock, and an electromagnetic signal is emitted during a bounded time
@@ -248,7 +255,11 @@ and its error decreases quadratically with the window width.  The repaired
 wave reduction now gives a fail-closed answer: every certified physical block
 through $j=1$ is nonradical but unstable, while the higher-$j$ physical
 quotient is undefined.  Fixed charge removes the clock.  Thus the measurement
-rule remains exact, but no operational counterflow redshift is activated.
+rule remains exact, but no operational counterflow redshift is activated. An
+exact same-field retuning calculation also proves that the first unstable
+$j=\frac12$ quartet persists throughout the connected trace-healthy family,
+so there is no robust Phase-2 candidate in that declared family. This does not
+rule out a genuinely changed gravity--clock architecture.
 
 The comparison rules also work for chains of clocks. Two successive frequency
 ratios multiply to the direct ratio only when both comparisons use the same
@@ -423,7 +434,7 @@ tested.
 
 | Demonstrated in a model | Partly demonstrated | Open |
 |---|---|---|
-| Complete classical causal propagation on several controlled backgrounds, including a changed two-phase counterflow parent | A spatially global retarded $G_0$ clock-slice probe fixture with $1+z=2$ on its declared carrier; localized action-derived receiver descent and operational apparatus redshift are not activated | Electrons, mass generation and Standard Model matter |
+| Complete classical causal propagation on several controlled backgrounds, including a changed two-phase counterflow parent | The counterflow parent is causal on its selected fixture, but fixed relative charge removes its clock and a familywide $j=\frac12$ instability prevents Phase-2 selection; the original spatially global retarded $G_0$ probe remains carrier-scoped | Electrons, mass generation and Standard Model matter |
 | Gauge reduction and exact classical comparison rules | Additional compact and black-hole wave families, with their final physical status unresolved | A positive interacting quantum state and physical particles |
 | Global nonlinear balance conditions and explicit resonance obstructions | Static black-hole thermodynamics; additional waves reach the horizon but are excluded by finite size at infinity in both parities at one fixture | Full black-hole scattering, stability, ringdown and Hawking radiation |
 | A one-loop anomaly calculation and a compensator-based local repair in a changed theory | Candidate reduced quantum two-point functions with both positive and negative signs | Gravitational lensing, realistic cosmology, dark matter and dark energy |

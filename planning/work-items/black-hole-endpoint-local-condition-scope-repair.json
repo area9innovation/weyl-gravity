@@ -1,0 +1,44 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/black-hole-endpoint-local-condition-scope-repair",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "black-hole-endpoint-local-condition-scope-repair",
+  "source": {
+    "path": "planning/work-items/black-hole-endpoint-local-condition-scope-repair.json",
+    "span": null
+  },
+  "body": {
+    "owner": "black-hole-1",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 1,
+    "objective": "Repair the completed endpoint-selection assembly so it proves exactly horizon-analyticity nonselection plus finite-flux infinity selection, without claiming that every possible local differential horizon or initial-data restriction fails.",
+    "stop_condition": "Import PURE_WEYL_BH_ENDPOINT_NONSELECTION_ASSEMBLY and its source certificates by exact hashes. Preserve the exact real nonzero-frequency results: horizon analyticity admits both branches; the declared one-ended finite-Lee-Wald-flux infinity phase space selects exactly the Einstein sector; the Einstein-extra Gram has invariant rank two and signature (1,1). Replace every universal statement that no local horizon condition can remove the additional branch by the scoped statement that future-horizon analyticity or regularity alone does not force delta R_ab=0. State explicitly that separately imposed local differential delta-R initial or horizon data can select the Einstein branch, while naturalness, nonlinear preservation and compatibility with the desired phase space are not classified. Update producer, certificate, schema, report, independent verifier and tests; add a contradiction mutation rejecting the universal local-condition no-go. Reproduce only the lightweight assembly rails, then report and close with unchanged heavy-source hashes.",
+    "current_gate": "scientific claim-scope repair before the endpoint assembly is used as a universal local-boundary theorem",
+    "forbid": "no rewriting or deleting the original DONE lifecycle; no new radial solve; no weakening the finite-flux Einstein-selection theorem; no horizon analyticity called classification of all local differential boundary operators; no local initial-data truncation excluded; no complex-frequency, QNM, ringdown, stability, particle or quantum promotion",
+    "depends_on": [
+      "sf:program/work/black-hole-endpoint-nonselection-assembly#ANY_TERMINAL",
+      "sf:program/work/black-hole-paper14-finite-flux-status-freeze#ANY_TERMINAL"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/bh_endpoint_nonselection_assembly.py",
+      "black_hole_programme/certificates/BH_ENDPOINT_NONSELECTION_ASSEMBLY.json",
+      "black_hole_programme/reports/bh-endpoint-nonselection-assembly.md",
+      "black_hole_programme/schema/bh-endpoint-nonselection-assembly-v1.schema.json",
+      "black_hole_programme/tests/test_bh_endpoint_nonselection_assembly.py",
+      "black_hole_programme/verify_bh_endpoint_nonselection_assembly.py",
+      "reports/",
+      "planning/events/",
+      "planning/forge-requests/",
+      "notes/d-quotient-black-hole-team-brief.md"
+    ],
+    "resource_hint": "LIGHTWEIGHT CLAIM REPAIR after Paper 14. Reuse frozen heavy sources; do not recompute radial or flux certificates.",
+    "notes": [
+      "The original assembly landed before the coordinator scope correction was read. Its finite-flux theorem remains valuable and unchanged; only the universal local-condition inference is invalid.",
+      "Paper 14 already forbids excluding local initial-data truncations and must use the scoped wording even before this certificate repair closes."
+    ],
+    "input_commit": "6c556a25370d0dac4ec765d97a28b258237c2f1d"
+  },
+  "edges": []
+}
