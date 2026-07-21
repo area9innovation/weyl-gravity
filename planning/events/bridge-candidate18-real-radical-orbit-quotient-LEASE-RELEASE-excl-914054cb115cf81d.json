@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/bridge-candidate18-real-radical-orbit-quotient-LEASE-RELEASE-excl-914054cb115cf81d",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/bridge-candidate18-real-radical-orbit-quotient-LEASE-RELEASE-excl-914054cb115cf81d.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "bridge-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T02:21:00Z", "seq": 2, "predecessor": "sf:program/event/bridge-candidate18-real-radical-orbit-quotient-LEASE-ACQUIRE-excl-3ef9d087deb3378e", "payload": {"target": "sf:program/work/bridge-candidate18-real-radical-orbit-quotient", "agent": "bridge-1", "lease_type": "exclusive", "action": "RELEASE", "acquired": "2026-07-21T02:21:00Z", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/bridge-candidate18-real-radical-orbit-quotient"}]
+}
