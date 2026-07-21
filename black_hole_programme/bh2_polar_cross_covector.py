@@ -296,11 +296,24 @@ def build_certificate(geo_cls=Geometry):
             "series_order_NORD": NORD,
         },
         "claim_flags": {
+            # K-null and the (2,1) signature are certified at the nine exact
+            # fixtures (see over_determination_points); they are NOT upgraded to
+            # a generic-omega theorem here -- the sampler's numeric-nullspace
+            # frame is not a canonical rational omega-frame.
             "cross_covector_K_null_certified": True,
             "extra_block_signature_2_1_certified": True,
-            "no_real_exceptional_frequency_certified": True,
+            # the universal quantifier over real omega is FAIL-CLOSED and
+            # superseded by BH2_POLAR_QUANTIFIER_REPAIR (nine-fixture theorem +
+            # universal shortfall).  a != 0 for all real omega is proven there.
+            "generic_real_frequency_certified": False,
+            "no_real_exceptional_frequency_certified": False,
             "individual_components_rational_certified": False,
         },
+        "quantifier_repaired_by": "BH2_POLAR_QUANTIFIER_REPAIR",
+        "no_real_exceptional_frequency_scope":
+            "no real exceptional frequency was found among the nine sampled "
+            "rational frequencies; the universal statement is fail-closed and "
+            "superseded by BH2_POLAR_QUANTIFIER_REPAIR",
         "not_claimed": {
             "closed_rational_components_beyond_EX1":
                 "the E|X0, E|X2 components are non-rational in the tower's "

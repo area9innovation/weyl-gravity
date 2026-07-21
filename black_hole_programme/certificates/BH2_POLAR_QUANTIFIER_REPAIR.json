@@ -1,0 +1,167 @@
+{
+  "claim_flags": {
+    "K_null_nine_fixture_certified": true,
+    "covector_nonzero_all_real_omega_certified": true,
+    "generic_real_frequency_certified": false,
+    "no_real_exceptional_frequency_certified": false,
+    "signature_2_1_nine_fixture_certified": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": "NINE_FIXTURE_THEOREM + UNIVERSAL_SHORTFALL",
+  "lifecycle": "CLASSIFIED",
+  "missing_object": {
+    "route_A_canonical_frame": "a canonical rational/meromorphic omega-frame for X0,X1,X2 (rational nullspace normalization of the compose/einstein_mode step); direct symbolic construction intractable at NORD=16",
+    "route_B_structural_identity": "prove Z = E - (K^{-1} a^H).X is symplectically null / pure gauge for all real omega != 0 (radical of F^r on span(E,X0,X1,X2)); the even-parity twin of the axial RW-null theorem"
+  },
+  "non_null_mutation": {
+    "S_mut_nonzero": true,
+    "frequency": "1/2",
+    "rejected": true
+  },
+  "not_claimed": {
+    "complex_omega_continuation": false,
+    "finite_flux_scattering_qnm_ringdown_stability_positivity_particle": "none asserted",
+    "general_l": false,
+    "omega_zero": "excluded (certified exceptional carrier)",
+    "universal_K_null": "S = 0 is an exact frame-invariant fact at nine frequencies; a closed-form all-omega proof is left to route A or B",
+    "universal_signature_or_exceptional_frequency": "generic-omega inertia constancy and absence of real exceptional frequencies are NOT established (fail closed)"
+  },
+  "obstruction_to_universal_signature": {
+    "consequence": "det K(omega) and the inertia are NOT reconstructible from these independently normalized samples; real zeros of det K cannot be isolated; the universal no-real-exceptional-frequency statement is not established",
+    "corroborating_report_fact": "E|X0, E|X2 non-rational in the native frame: no rational fit up to degree (6,6) over 24 exact points (polar report)",
+    "held_out_reconstruction": {
+      "t1": "NO rational fit up to total degree 8 (7-point fit + 2 held-out)",
+      "t2": "NO rational fit up to total degree 8 (7-point fit + 2 held-out)",
+      "t3": "NO rational fit up to total degree 8 (7-point fit + 2 held-out)"
+    },
+    "invariant_candidates": "char-poly coefficients t1,t2,t3 of K_phys=iK (would be rational if the sampler frame were a single rational function of omega)",
+    "sampler_frame_is_rational": false
+  },
+  "parity": "polar l=2",
+  "preserved_fixture_theorem": {
+    "independent_rails": "inertia by Jacobi leading-principal-minor signs; S by solving K x = a^H",
+    "over_determination_points": 9,
+    "per_frequency": {
+      "1/2": {
+        "S": "0",
+        "a_nonzero": true,
+        "detK_nonzero": true,
+        "inertia": [
+          2,
+          1
+        ]
+      },
+      "1/3": {
+        "S": "0",
+        "a_nonzero": true,
+        "detK_nonzero": true,
+        "inertia": [
+          2,
+          1
+        ]
+      },
+      "1/4": {
+        "S": "0",
+        "a_nonzero": true,
+        "detK_nonzero": true,
+        "inertia": [
+          2,
+          1
+        ]
+      },
+      "2/3": {
+        "S": "0",
+        "a_nonzero": true,
+        "detK_nonzero": true,
+        "inertia": [
+          2,
+          1
+        ]
+      },
+      "2/7": {
+        "S": "0",
+        "a_nonzero": true,
+        "detK_nonzero": true,
+        "inertia": [
+          2,
+          1
+        ]
+      },
+      "3/4": {
+        "S": "0",
+        "a_nonzero": true,
+        "detK_nonzero": true,
+        "inertia": [
+          2,
+          1
+        ]
+      },
+      "3/5": {
+        "S": "0",
+        "a_nonzero": true,
+        "detK_nonzero": true,
+        "inertia": [
+          2,
+          1
+        ]
+      },
+      "4/5": {
+        "S": "0",
+        "a_nonzero": true,
+        "detK_nonzero": true,
+        "inertia": [
+          2,
+          1
+        ]
+      },
+      "5/7": {
+        "S": "0",
+        "a_nonzero": true,
+        "detK_nonzero": true,
+        "inertia": [
+          2,
+          1
+        ]
+      }
+    },
+    "statement": "at each of the nine recorded omega: K_phys=iK Hermitian, det K != 0, inertia (2,1), a != 0, a K^{-1} a^H = 0"
+  },
+  "provenance": {
+    "imported_records": "nine exact (a,K) at omega in {1/2,1/3,1/4,2/3,2/7,3/4,3/5,4/5,5/7}",
+    "polar_covector_certificate": "black_hole_programme/certificates/BH2_POLAR_CROSS_COVECTOR.json",
+    "polar_covector_sha256": "648c71581713e4eb7dd39c975e341d6af0881c9f49d8905a6c3e2538e98d6997",
+    "polar_fixture_certificate": "black_hole_programme/certificates/BH2B_COMPOSED_REPAIR.json",
+    "polar_fixture_sha256": "6fd94f8cd137592b6b5471c2bef62ad115c7f5453cb2b44f341e3b25206b94ac"
+  },
+  "repairs": {
+    "target_certificate": "black_hole_programme/certificates/BH2_POLAR_CROSS_COVECTOR.json",
+    "target_sha256": "648c71581713e4eb7dd39c975e341d6af0881c9f49d8905a6c3e2538e98d6997",
+    "unsupported_quantifier": "no_real_exceptional_frequency_certified (universal over real omega != 0 from a nine-point sample)"
+  },
+  "result_id": "PURE_WEYL_BH2_POLAR_QUANTIFIER_REPAIR",
+  "result_token": "BH2_POLAR_CROSS_COVECTOR_NINE_FIXTURE_THEOREM_UNIVERSAL_SHORTFALL",
+  "schema": "pure-weyl-bh2-polar-quantifier-repair-v1",
+  "schema_path": "black_hole_programme/schema/bh2-polar-quantifier-repair-v1.schema.json",
+  "schema_sha256": "2425d704820b059102d35bbfbe09cfef2cc2d55fc3fdcdb7252a79bcf7cc9c2d",
+  "setting": "Schwarzschild m=1, real frequency omega != 0, Eddington-Finkelstein carrier, t-chart Lee-Wald F^r",
+  "universal_results": {
+    "covector_nonzero_all_real_omega": {
+      "P": "64*omega**3 - 240*omega",
+      "Q": "49 - 200*omega**2",
+      "denominator_real_zeros": [],
+      "method": "E|X1 = 48(P + iQ)/(35(4w+i)); P,Q real polynomials with nonzero resultant (no common real root); denominator has no real zero; one nonzero component forces the covector nonzero (a=0 is basis-invariant)",
+      "off_sample_witnesses": {
+        "-1/2": "-432/7 - 1056*I/35",
+        "-3/5": "-10062672/147875 - 449856*I/29575",
+        "7/3": "48944/2379 - 614592*I/3965",
+        "9/2": "782736/2275 - 736992*I/2275"
+      },
+      "proven": true,
+      "resultant_P_Q": "98626146304",
+      "statement": "a(omega) != 0 for all real omega != 0"
+    }
+  }
+}

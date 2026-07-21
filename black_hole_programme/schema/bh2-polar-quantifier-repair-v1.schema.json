@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "pure-weyl-bh2-polar-quantifier-repair-v1",
+  "title": "BH-2 polar cross-covector universal-quantifier repair (fail-closed)",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "result_token", "dependency_tags", "lifecycle",
+    "disposition", "repairs", "provenance", "preserved_fixture_theorem",
+    "universal_results", "obstruction_to_universal_signature",
+    "claim_flags", "missing_object", "not_claimed"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-bh2-polar-quantifier-repair-v1"},
+    "result_id": {"const": "PURE_WEYL_BH2_POLAR_QUANTIFIER_REPAIR"},
+    "result_token": {
+      "const": "BH2_POLAR_CROSS_COVECTOR_NINE_FIXTURE_THEOREM_UNIVERSAL_SHORTFALL"
+    },
+    "dependency_tags": {
+      "type": "array",
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL",
+                          "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+      "contains": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+      "minItems": 1
+    },
+    "lifecycle": {
+      "enum": ["CLASSIFIED", "COEFFICIENT_COMPUTED", "QME_RESTORED",
+               "RESIDUAL_TRANSFERRED", "LORENTZIAN_CERTIFIED"]
+    },
+    "disposition": {"const": "NINE_FIXTURE_THEOREM + UNIVERSAL_SHORTFALL"},
+    "parity": {"type": "string"},
+    "setting": {"type": "string"},
+    "repairs": {
+      "type": "object",
+      "required": ["target_certificate", "target_sha256",
+                   "unsupported_quantifier"],
+      "properties": {
+        "target_certificate": {"type": "string"},
+        "target_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "unsupported_quantifier": {"type": "string"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["polar_covector_certificate", "polar_covector_sha256",
+                   "polar_fixture_certificate", "polar_fixture_sha256"],
+      "properties": {
+        "polar_covector_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "polar_fixture_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "preserved_fixture_theorem": {
+      "type": "object",
+      "required": ["statement", "independent_rails", "per_frequency",
+                   "over_determination_points"],
+      "properties": {
+        "over_determination_points": {"type": "integer", "minimum": 9},
+        "per_frequency": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["inertia", "S", "a_nonzero", "detK_nonzero"],
+            "properties": {
+              "inertia": {"type": "array", "items": {"type": "integer"},
+                          "minItems": 2, "maxItems": 2},
+              "S": {"const": "0"},
+              "a_nonzero": {"const": true},
+              "detK_nonzero": {"const": true}
+            }
+          }
+        }
+      }
+    },
+    "universal_results": {
+      "type": "object",
+      "required": ["covector_nonzero_all_real_omega"],
+      "properties": {
+        "covector_nonzero_all_real_omega": {
+          "type": "object",
+          "required": ["statement", "method", "resultant_P_Q",
+                       "denominator_real_zeros", "proven"],
+          "properties": {
+            "proven": {"const": true},
+            "denominator_real_zeros": {"type": "array", "maxItems": 0}
+          }
+        }
+      }
+    },
+    "obstruction_to_universal_signature": {
+      "type": "object",
+      "required": ["invariant_candidates", "held_out_reconstruction",
+                   "sampler_frame_is_rational", "consequence"],
+      "properties": {
+        "sampler_frame_is_rational": {"const": false}
+      }
+    },
+    "non_null_mutation": {
+      "type": "object",
+      "required": ["frequency", "rejected"],
+      "properties": {"rejected": {"const": true}}
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["covector_nonzero_all_real_omega_certified",
+                   "K_null_nine_fixture_certified",
+                   "signature_2_1_nine_fixture_certified",
+                   "generic_real_frequency_certified",
+                   "no_real_exceptional_frequency_certified"],
+      "properties": {
+        "covector_nonzero_all_real_omega_certified": {"const": true},
+        "K_null_nine_fixture_certified": {"const": true},
+        "signature_2_1_nine_fixture_certified": {"const": true},
+        "generic_real_frequency_certified": {"const": false},
+        "no_real_exceptional_frequency_certified": {"const": false}
+      }
+    },
+    "missing_object": {
+      "type": "object",
+      "required": ["route_A_canonical_frame", "route_B_structural_identity"]
+    },
+    "not_claimed": {"type": "object"}
+  }
+}

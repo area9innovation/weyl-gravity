@@ -98,6 +98,24 @@ vanishes and `E` remains Lagrangian.
   **non-null mutation** (`a + e_0` gives `S != 0`), and the BH-3 vocabulary
   lock. Sub-second.
 
+## Quantifier scope correction (supersedes the universal reading)
+
+The statement "there is **no real exceptional frequency**" below is a *universal*
+claim over real `omega != 0` inferred from nine samples. It is **fail-closed and
+superseded** by `certificates/BH2_POLAR_QUANTIFIER_REPAIR.json`
+(report `reports/bh2-polar-quantifier-repair.md`). That repair **preserves** the
+nine-fixture theorem (inertia `(2,1)`, `det K != 0`, `a != 0`, `S = 0`, re-derived
+on independent rails), **upgrades** `a != 0` to a genuine all-real-`omega`
+theorem (`E|X1` numerator has coprime real/imaginary parts — resultant
+`98626146304 != 0`), and sets the `generic_real_frequency_certified` and
+`no_real_exceptional_frequency_certified` flags **FALSE**: the sampler's
+numeric-nullspace frame is provably not a single rational function of `omega`
+(so `det K` and the inertia are not reconstructible), and the missing object — a
+canonical rational `omega`-frame (route A) or the gauge-radical identity `Z =
+E - (K^{-1} a^H).X` symplectically null (route B) — is named there. Read the two
+universal-sounding sentences in the next section under that correction: they hold
+at the nine sampled frequencies, not (yet) for all real `omega`.
+
 ## Paper 14 disposition
 
 Both `l=2` parities now carry an exact real-frequency Einstein–additional
