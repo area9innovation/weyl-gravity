@@ -4770,6 +4770,55 @@ Until its contraction and nonlinear continuity are certified, all three
 strict anomaly images and the raw-`D` Cartan defect remain
 `NO_CERTIFIED_MAP`.
 
+## Two-phase counterflow Einstein-source bridge obstruction
+
+The Science Forge bridge
+`bridge-two-phase-counterflow-einstein-source-condition` terminates before a
+linear relative triangle can be formed.  The selected two-phase counterflow
+action transports its physical gravity/relative-clock block exactly to the
+certified positive Berger clock action; its diagonal `U(1)` quartet is
+contractible.  It therefore retains the same positive clock stress on the
+stationary Berger background.
+
+At `a=1`, `q=9/40`, `alpha_B=5`, the Weyl--matter equation `5 B=T` holds, but
+the same-source Einstein equation does not.  Tracelessness fixes
+`Lambda=151/320`, while the tracefree components demand incompatible
+couplings:
+
+```text
+kappa_00 = 906/961,
+kappa_11 = 798/403,
+S_00 T_11 - S_11 T_00 = -279/2560.
+```
+
+Thus the first failed map is background incidence.  There is no
+same-base-point Einstein-clock Jacobi complex, hence no certified inclusion,
+additional-sector cofiber, pulled-back Weyl form, relative pairing, or
+Einstein restriction of `K_Berger`.  The compact magnetic
+Plebański--Hacyan Einstein--Maxwell chain map is explicitly `NOT_APPLICABLE`:
+matching the words “Einstein” and “Weyl” does not authorize a cross-background
+or cross-carrier identification.
+
+The source and charge distinctions remain fail-closed.  `Q_diag=0` by Gauss
+coexists with `T_00=961/1920>0` and nonzero unrestricted relative charge;
+diagonal neutrality is not stress freedom.  The flat constant-compensator
+operator `Q(T)` has no certified curved-Berger source-complex crosswalk and is
+therefore `NOT_APPLICABLE`, not zero.  On the unrestricted union the
+rank-two relative-clock Darboux pair survives only as a Weyl--matter degree of
+freedom, with charged `D` and stabilizer `K_Berger=D-(3/4)R_rel`.  The terminal
+charge-clock complementarity theorem also gives an exact size-two zero Jordan
+block: positive charge curvature but secularly unbounded clock evolution,
+with no real exponential growing root.  On the derived
+fixed-`Q_rel` quotient the complete relative clock and its pairing are
+removed.
+
+Accordingly an Einstein-clock Taub/source test is `NOT_APPLICABLE` in both
+charge strata.  The separate unrestricted Weyl--matter `q2` stability problem
+remains open and belongs to the nonlinear team; this obstruction neither
+solves nor refutes it.  The two fail-closed atlas rows are
+`bridge.two_phase_counterflow.einstein_source_condition.unrestricted` and
+`bridge.two_phase_counterflow.einstein_source_condition.fixed_q_rel`.
+
 ## Cross-team contribution contract
 
 Submit new results through the generator and phase-space registries in

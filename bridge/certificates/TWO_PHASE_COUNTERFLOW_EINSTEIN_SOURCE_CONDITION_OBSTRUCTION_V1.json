@@ -1,0 +1,232 @@
+{
+  "action_transport": {
+    "background_weyl_equation": "alpha_B B_ab=T_ab with alpha_B=5",
+    "conclusion": "the physical gravity-relative-clock block is exactly the certified 54-row Berger carrier; the new diagonal U1 block is algebraically contractible",
+    "identity": "S_selected=S_Berger_clock_at_rho=1 - 2*integral<B,B>, with B=A-dchi",
+    "status": "CERTIFIED",
+    "stress_transport": "the gravity/relative-clock stress is exactly the certified positive Berger clock stress; the diagonal U1 quartet is algebraically contractible"
+  },
+  "charge_sector_split": {
+    "fixed_Q_rel": {
+      "D": "presymplectic-null only after the explicit fixed-charge restriction",
+      "Einstein_clock_sector": "NOT_APPLICABLE: no clock remains and background incidence independently fails",
+      "K_Berger": "null stabilizer independently",
+      "clock": "OBSTRUCTED: the derived level set and R_rel quotient remove the complete relative-clock cohomology and pairing"
+    },
+    "unrestricted_Q_rel": {
+      "D": "charged global generator with H_D=(3/4)Q_rel",
+      "Einstein_clock_sector": "NOT_APPLICABLE: background incidence already fails",
+      "K_Berger": "K=D-(3/4)R_rel is the null Hamiltonian background stabilizer",
+      "background_Q_rel": "9*pi^2*sqrt(10)/5",
+      "clock": "one rank-two relative-clock Darboux pair survives in the unreduced Weyl--matter parent",
+      "linear_health": "OBSTRUCTED for bounded or finite-quasiperiodic stability by an exact size-two zero Jordan block; no real exponential growing root is present",
+      "secular_solution": "delta_Q_rel(t)=q1; delta_psi_0(t)=psi1+t*q1/I"
+    }
+  },
+  "claim_boundary": {
+    "does_not_establish": [
+      "a universal no-go for Einstein sectors on other common backgrounds",
+      "a value of the flat compensated Q(T) operator on the curved Berger fixture",
+      "a Weyl target q2 obstruction or extension",
+      "a residual BFV quotient, causal scattering, observer, particle, positivity, unitarity or quantum theorem"
+    ],
+    "establishes": [
+      "exact transport of the selected two-phase action to the certified positive Berger clock stress",
+      "a nonzero rational Einstein-incidence separator at the selected fixture",
+      "the first failed map before any same-background tangent inclusion or relative cofiber",
+      "separate unrestricted and fixed-relative-charge dispositions"
+    ]
+  },
+  "claim_flags": {
+    "counterflow_action_transport_certified": true,
+    "diagonal_neutrality_used_as_stress_vanishing": false,
+    "einstein_clock_second_order_test_defined": false,
+    "fixed_and_unrestricted_charge_sectors_separated": true,
+    "flat_Q_operator_transplanted_to_Berger": false,
+    "lorentzian_scattering_particle_or_quantum_claim": false,
+    "pulled_back_pairing_constructed": false,
+    "relative_cofiber_constructed": false,
+    "same_background_einstein_incidence": false,
+    "same_background_linear_inclusion": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_background_test": {
+    "bach_proportionality_minor_00_11": "-279/12800",
+    "einstein_matter_equation": "G_ab+Lambda g_ab=kappa T_ab: no constants (Lambda,kappa) solve all components",
+    "first_failed_map": "background incidence Sol_Einstein-matter -> Sol_Weyl-matter",
+    "kappa_from_00": "906/961",
+    "kappa_from_11": "798/403",
+    "linearization_consequence": "linearizing the Einstein equation at this non-solution yields an affine residual problem, not a same-base-point Jacobi complex",
+    "residual_00_after_kappa_11": "-27/52",
+    "residual_11_after_kappa_00": "27/124",
+    "stress": [
+      [
+        "961/1920",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "403/1920",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "403/1920",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "31/384"
+      ]
+    ],
+    "stress_proportionality_minor_00_11": "-279/2560",
+    "trace_fixed_lambda": "151/320",
+    "tracefree_ricci": [
+      [
+        "151/320",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "133/320",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "133/320",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-23/64"
+      ]
+    ],
+    "weyl_matter_equation": "5 B_ab=T_ab: PASS"
+  },
+  "imports": {
+    "berger_incidence": {
+      "path": "bridge/certificates/berger_einstein_incidence.json",
+      "result_id": "BERGER_EINSTEIN_INCIDENCE",
+      "sha256": "6ab941dbf3312bcc991dc0de59be30853f876e4599414196a3ae21c967c863b4",
+      "source_commit": "7e87281c416f4c4f98edfe61ae05829f4b48593a"
+    },
+    "charge_clock_complementarity": {
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_V1",
+      "sha256": "cd1fe1bf22604d17c65b941032c6b31c404bfd5cc01bd7f8399642840da01ed4",
+      "source_commit": "59764067a16a55d695fbe583724d7fb27c808b2e"
+    },
+    "charge_clock_complementarity_payload": {
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_PAYLOAD_V1",
+      "sha256": "2e25c28e06ab54256c8a4af4b6793f241801bdfa84eab3eb218a1ab53eb873c0",
+      "source_commit": "59764067a16a55d695fbe583724d7fb27c808b2e"
+    },
+    "compact_product_chain_map": {
+      "path": "bridge/certificates/EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1.json",
+      "result_id": "EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1",
+      "sha256": "50958aaae3339a1aa5a78d7be3d17d71a3754c06633783e9957e2df0a02eeec0",
+      "source_commit": "8a91c1260144e5d56dc0c033fc060988e320d33d"
+    },
+    "counterflow_parent": {
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1",
+      "sha256": "7d969e7e630f793dfe12fe07b0e98a67b2543f9aa85fa03277e491fb00296db7",
+      "source_commit": "951e88307abbea0996513773a33e66b37555272b"
+    },
+    "counterflow_parent_payload": {
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V1",
+      "sha256": "7c73705cc07062baf652c9cc0cb0977beda2a96d5b642fa186d6bfaeae01db57",
+      "source_commit": "951e88307abbea0996513773a33e66b37555272b"
+    },
+    "fixed_charge_reduction": {
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_V1",
+      "sha256": "812f6a3c2308eaeef09bee25ec8c79c8f7c86de7a51383141f8cae46c2f9cae5",
+      "source_commit": "a1ec93fe5d73d0c93341019c4e93a00d23ab95d6"
+    },
+    "trace_charge_preflight": {
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_V1",
+      "sha256": "2b578967ece7a2e6a8079c8fd84665ac40cf2b7e0aeef41d96882553c35115ea",
+      "source_commit": "d6d54a6efaa30ffe48dd7b9718c1954fa4ea514b"
+    }
+  },
+  "lifecycle_state": "OBSTRUCTED",
+  "pairing_and_residual_action": {
+    "Einstein_pairing": "NO_CERTIFIED_MAP at this background",
+    "K_Berger_Einstein_restriction": "NO_CERTIFIED_MAP",
+    "K_Berger_target_action": "CERTIFIED on the Weyl--matter parent at the abstract/background-stabilizer level",
+    "direct_target_pairing": "CERTIFIED on the 70-component Weyl--matter parent",
+    "pulled_back_Weyl_pairing": "NO_CERTIFIED_MAP because inclusion_i does not exist",
+    "relative_pairing": "NO_CERTIFIED_MAP because the cofiber is undefined"
+  },
+  "relative_triangle": {
+    "Einstein_linear_source_equations": "NOT_APPLICABLE_AS_A_JACOBI_COMPLEX_AT_THIS_BASE_POINT",
+    "additional_Weyl_quotient": "NO_CERTIFIED_MAP",
+    "background_object_map": "OBSTRUCTED",
+    "candidate_sequence": "T_Einstein-clock --i--> T_Weyl-clock --pi--> T_extra",
+    "comparison_map_disposition": {
+      "imported_map": "EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1",
+      "reason": "it is a compact magnetic Plebanski--Hacyan Einstein--Maxwell/Weyl--Maxwell map, not a Berger counterflow map; no cross-background or cross-carrier identification is authorized",
+      "status": "NOT_APPLICABLE"
+    },
+    "inclusion_i": "NO_CERTIFIED_MAP",
+    "projection_or_cofiber_pi": "NO_CERTIFIED_MAP"
+  },
+  "result_id": "TWO_PHASE_COUNTERFLOW_EINSTEIN_SOURCE_CONDITION_OBSTRUCTION_V1",
+  "result_state": "OBSTRUCTED_BEFORE_LINEAR_MAP_BY_EXACT_BACKGROUND_NONINCIDENCE",
+  "schema": "two-phase-counterflow-einstein-source-condition-obstruction-v1",
+  "schema_path": "bridge/einstein_sector/schema/two-phase-counterflow-einstein-source-condition-obstruction-v1.schema.json",
+  "schema_sha256": "a67efcd0a9fe2e5b0179201232e330e528ff4c56aea90d055fedc4d461c5f069",
+  "scope": {
+    "background": "stationary Berger R x S3, a=1, c_squared=q=9/40",
+    "boundaries": "closed S3 Cauchy slices; no asymptotic boundary",
+    "carrier": "certified 70-component causal Weyl--matter BV parent; proposed Einstein source object fails at background degree",
+    "charge_sectors": [
+      "unrestricted Q_rel",
+      "derived fixed-Q_rel leaf followed by R_rel quotient"
+    ],
+    "theory": "selected two-phase counterflow Weyl--matter action tested against conventional same-source Einstein--matter gravity"
+  },
+  "second_order_disposition": {
+    "Einstein_clock_Taub_source_test": "NOT_APPLICABLE: there is no same-base-point Einstein-clock linear tangent u",
+    "causal_retarded": "NO_CERTIFIED_MAP",
+    "does_not_refute": "the separate nonlinear-two-phase-counterflow-q2-stability work item on the Weyl--matter parent",
+    "equation": "L v=-(1/2)D^2E(u,u)",
+    "fixed_charge": "NOT_APPLICABLE: the relative clock is removed before q2",
+    "unrestricted_charge": "OPEN as a Weyl--matter q2 problem only; it is not an Einstein-sector closure test"
+  },
+  "source_condition_disposition": {
+    "Q_T_reason": "the certified Q chain map is a flat constant-compensator same-source theorem; no curved-Berger source-complex crosswalk exists, and the Berger fixture already fails the prerequisite common-background incidence",
+    "Q_T_status": "NOT_APPLICABLE",
+    "diagonal_gauge_charge": "Q_diag=0 by the local Gauss equation",
+    "flat_compensated_Q_operator": "Q(T)_mn=(1/2)Box T_mn-(1/6)(eta_mn Box-partial_m partial_n)tr(T)",
+    "forbidden_inference": "neither diagonal U1 neutrality nor formal homogeneity is used to set Q(T)=0",
+    "logical_separator": "Q_diag=0 does not imply vanishing stress, Einstein incidence, or Q(T)=0",
+    "positive_stress_witness": "T_00=961/1920>0",
+    "relative_charge_density": "mu_squared*Omega=3/4 on the selected stationary fixture, hence the unrestricted relative charge is nonzero"
+  },
+  "verification_commands": [
+    "python3 bridge/einstein_sector/two_phase_counterflow_einstein_source_condition.py --check",
+    "python3 bridge/einstein_sector/verify_two_phase_counterflow_einstein_source_condition.py",
+    "python3 -m unittest -v bridge.einstein_sector.tests.test_two_phase_counterflow_einstein_source_condition",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-einstein-source-condition-obstruction-fragment-v1.json"
+  ]
+}

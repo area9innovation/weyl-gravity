@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "two-phase-counterflow-einstein-source-condition-obstruction-v1",
+  "title": "Two-phase counterflow Einstein-source background-incidence obstruction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "imports",
+    "scope",
+    "action_transport",
+    "exact_background_test",
+    "source_condition_disposition",
+    "charge_sector_split",
+    "relative_triangle",
+    "pairing_and_residual_action",
+    "second_order_disposition",
+    "claim_flags",
+    "claim_boundary",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "two-phase-counterflow-einstein-source-condition-obstruction-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/two-phase-counterflow-einstein-source-condition-obstruction-v1.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_EINSTEIN_SOURCE_CONDITION_OBSTRUCTION_V1"},
+    "result_state": {"const": "OBSTRUCTED_BEFORE_LINEAR_MAP_BY_EXACT_BACKGROUND_NONINCIDENCE"},
+    "lifecycle_state": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "imports": {"type": "object"},
+    "scope": {"type": "object"},
+    "action_transport": {"type": "object"},
+    "exact_background_test": {
+      "type": "object",
+      "required": [
+        "weyl_matter_equation",
+        "einstein_matter_equation",
+        "trace_fixed_lambda",
+        "tracefree_ricci",
+        "stress",
+        "kappa_from_00",
+        "kappa_from_11",
+        "stress_proportionality_minor_00_11",
+        "first_failed_map"
+      ],
+      "properties": {
+        "weyl_matter_equation": {"type": "string"},
+        "einstein_matter_equation": {"type": "string"},
+        "trace_fixed_lambda": {"type": "string"},
+        "tracefree_ricci": {"type": "array"},
+        "stress": {"type": "array"},
+        "kappa_from_00": {"type": "string"},
+        "kappa_from_11": {"type": "string"},
+        "stress_proportionality_minor_00_11": {"const": "-279/2560"},
+        "bach_proportionality_minor_00_11": {"const": "-279/12800"},
+        "residual_11_after_kappa_00": {"type": "string"},
+        "residual_00_after_kappa_11": {"type": "string"},
+        "first_failed_map": {"const": "background incidence Sol_Einstein-matter -> Sol_Weyl-matter"},
+        "linearization_consequence": {"type": "string"}
+      }
+    },
+    "source_condition_disposition": {"type": "object"},
+    "charge_sector_split": {"type": "object"},
+    "relative_triangle": {"type": "object"},
+    "pairing_and_residual_action": {"type": "object"},
+    "second_order_disposition": {"type": "object"},
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "counterflow_action_transport_certified",
+        "same_background_einstein_incidence",
+        "same_background_linear_inclusion",
+        "relative_cofiber_constructed",
+        "pulled_back_pairing_constructed",
+        "fixed_and_unrestricted_charge_sectors_separated",
+        "diagonal_neutrality_used_as_stress_vanishing",
+        "flat_Q_operator_transplanted_to_Berger",
+        "einstein_clock_second_order_test_defined",
+        "lorentzian_scattering_particle_or_quantum_claim"
+      ],
+      "properties": {
+        "counterflow_action_transport_certified": {"const": true},
+        "same_background_einstein_incidence": {"const": false},
+        "same_background_linear_inclusion": {"const": false},
+        "relative_cofiber_constructed": {"const": false},
+        "pulled_back_pairing_constructed": {"const": false},
+        "fixed_and_unrestricted_charge_sectors_separated": {"const": true},
+        "diagonal_neutrality_used_as_stress_vanishing": {"const": false},
+        "flat_Q_operator_transplanted_to_Berger": {"const": false},
+        "einstein_clock_second_order_test_defined": {"const": false},
+        "lorentzian_scattering_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "object"},
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "TWO_PHASE_COUNTERFLOW_EINSTEIN_SOURCE_CONDITION_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_id": "TWO_PHASE_COUNTERFLOW_EINSTEIN_SOURCE_CONDITION_OBSTRUCTION_V1",
+  "date": "2026-07-21",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "artifacts": [
+    {"path": "bridge/einstein_sector/two_phase_counterflow_einstein_source_condition.py", "sha256": "7775c1bb7e083956b60103badf040c0abeafe4287d01e23a361065e19ca7cc35"},
+    {"path": "bridge/certificates/TWO_PHASE_COUNTERFLOW_EINSTEIN_SOURCE_CONDITION_OBSTRUCTION_V1.json", "sha256": "c3a4d41cb58d2e56fb6c81b772692277358fe2918dbdeb78414f9add74bd4a98"},
+    {"path": "bridge/einstein_sector/verify_two_phase_counterflow_einstein_source_condition.py", "sha256": "99e52afcdfe482b099b0a066c254a3b71259093054841b0809930094185b36f2"},
+    {"path": "bridge/einstein_sector/tests/test_two_phase_counterflow_einstein_source_condition.py", "sha256": "bfa917ab986f1c7a14b438615b8089547ec09593421a21500dc853f434205bea"},
+    {"path": "bridge/einstein_sector/schema/two-phase-counterflow-einstein-source-condition-obstruction-v1.schema.json", "sha256": "a67efcd0a9fe2e5b0179201232e330e528ff4c56aea90d055fedc4d461c5f069"},
+    {"path": "residual_atlas/two-phase-counterflow-einstein-source-condition-obstruction-fragment-v1.json", "sha256": "902324017c10cbfa618edfaad0e241d98ed3606caab542e5eba93c494c61d371"},
+    {"path": "reports/bridge-two-phase-counterflow-einstein-source-condition-closeout-2026-07-21.md", "sha256": "707ad61b63a433b0334dee4c59f3f60313d2975c6c28076a79f5ba6d91d7ee8d"}
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <producer, independent verifier, tests>; python3 -m json.tool <certificate, schema, atlas, receipt>; git diff --check <explicit scoped paths>",
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 bridge/einstein_sector/two_phase_counterflow_einstein_source_condition.py --check",
+        "elapsed_seconds": 0.39,
+        "status": "PASS",
+        "method": "content-addressed import gates plus exact rational Berger Ricci/Bach/stress incidence separator"
+      },
+      {
+        "command": "python3 bridge/einstein_sector/verify_two_phase_counterflow_einstein_source_condition.py",
+        "elapsed_seconds": 0.31,
+        "status": "PASS",
+        "independent_rail": "imports no producer; reconstructs tensors, couplings, nonzero minor, charge split, hashes and atlas statuses"
+      },
+      {
+        "command": "python3 -m unittest -v bridge.einstein_sector.tests.test_two_phase_counterflow_einstein_source_condition",
+        "elapsed_seconds": 0.32,
+        "status": "PASS",
+        "tests": 6,
+        "mutation_controls": "a forged same-background linear inclusion is rejected; cross-background map, charge-sector merge and neutrality-to-source promotion are tested fail-closed"
+      },
+      {
+        "command": "python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-einstein-source-condition-obstruction-fragment-v1.json",
+        "elapsed_seconds": 0.11,
+        "status": "PASS",
+        "direct_consumer": "two separate unrestricted/fixed-Q_rel fail-closed atlas rows"
+      },
+      {
+        "command": "npx --yes ajv-cli validate --spec=draft2020 -s bridge/einstein_sector/schema/two-phase-counterflow-einstein-source-condition-obstruction-v1.schema.json -d bridge/certificates/TWO_PHASE_COUNTERFLOW_EINSTEIN_SOURCE_CONDITION_OBSTRUCTION_V1.json --strict=true",
+        "elapsed_seconds": 1.10,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "producer and independent verifier content-hash all counterflow parent, preflight, fixed-charge, terminal charge-clock, Berger-incidence and comparison-map imports",
+        "status": "PASS",
+        "scope": "affected imported certificate chain; unchanged content-addressed producers were not rebuilt"
+      },
+      {
+        "command": "bash ci/science-forge-shadow.sh",
+        "elapsed_seconds": 3.731,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "read-only rail reported pre-existing bridge drift, corpus growth to 1362 certificates versus baseline 976, and an unpinned stale Forge development binary; diagnostics preserved at /tmp/sf-shadow.QTh7fO"
+      }
+    ]
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "the work item terminates at a background-incidence obstruction and promotes no freeze, release, shared core algebra, Lorentzian state or quantum claim"
+  },
+  "claim_boundary": "The selected counterflow gravity/relative-clock action transports exactly to the positive Berger clock stress, but the same fixture fails conventional same-source Einstein incidence by the nonzero rational minor -279/2560. Therefore no same-background Einstein-clock Jacobi complex, inclusion, cofiber, pairing pullback or Einstein-clock Taub map is defined. Unrestricted and fixed-Q_rel sectors are kept separate, including the terminal unrestricted secular zero-Jordan obstruction. The flat compensated Q(T) operator is not transplanted to Berger. No Weyl-target q2, residual BFV, causal scattering, observer, particle, positivity, unitarity or quantum result is established.",
+  "higher_tiers_not_run": [
+    "Tier 3: obstruction closeout does not satisfy any full-suite trigger"
+  ]
+}
