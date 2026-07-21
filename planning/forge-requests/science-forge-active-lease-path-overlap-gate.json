@@ -1,0 +1,17 @@
+{
+  "id": "sf:forge-request/science-forge-active-lease-path-overlap-gate",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Detect and prevent unsafe write-scope overlap between simultaneously live exclusive Science Forge leases. The current dashboard permits classical-1 and classical-2 to work on scientifically distinct items whose declared allowlists both include broad d_quotient_classical/, residual_atlas/, reports/ and shared brief paths; one-agent-per-item discipline alone does not prevent a file collision.",
+    "depends_on": [],
+    "stop_condition": "Canonicalize every live lease's allowed_paths relative to the same repository root and compute prefix/glob intersections in the single-pass coordinator fold. `s-f overview` and `work show` must surface ACTIVE_SCOPE_OVERLAP with both items, agents and minimal overlapping prefixes. By default, acquiring a second exclusive lease with a write-scope intersection must refuse before writing events unless the items declare disjoint narrowed write_paths, an explicit typed shared-read-only input, or a coordinator-authored overlap waiver naming exact paths and integration ownership. Recheck by compare-and-swap immediately before lease creation. Add commands or append-only events to narrow the effective write scope of an existing item without rewriting its base work file. Fixtures must cover broad-prefix overlap, nested paths, nonoverlapping siblings, shared read-only inputs, a deliberate common generated aggregate with one integration owner, moved-head concurrency and two active items in one stream. Preserve current one-lease-per-agent and cross-stream semantics.",
+    "forbid": "no global serialization of all work; no inference that same stream means safe overlap; no silent warning-only mode for an undeclared exclusive write collision; no rewrite of an authored work item; no treating allowed_paths as proof that every listed path will be written; no basename matching; no lease or scientific promotion from an advisory process heartbeat",
+    "notes": [
+      "Live reproduction 2026-07-21T07:02Z: classical-1 holds classical-two-phase-counterflow-berger-full-isotypical-block-export while classical-2 holds classical-berger-q26-104-row-free-adjoint-completion. Their mathematical producers are expected in distinct subdirectories, but their authored allowed_paths overlap at broad d_quotient_classical/, residual_atlas/, reports/ and shared notes. The dashboard reports both leases as healthy and does not surface the collision risk.",
+      "Immediate manual discipline remains explicit-path commits and no concurrent edits to shared atlas/brief files; the substrate request is to make this check normal and fail closed without reducing useful parallelism."
+    ]
+  }
+}
