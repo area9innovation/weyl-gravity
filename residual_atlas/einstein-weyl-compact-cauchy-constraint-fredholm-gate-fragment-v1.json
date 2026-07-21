@@ -1,0 +1,93 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This theorem derives the canonical Weyl-Maxwell constraint ledger, certifies the raw compact-Cauchy constraint symbol as underdetermined elliptic with closed range and finite cokernel, and proves that the declared constraint-plus-gauge operator is not Fredholm because its exact symbol retains sixteen physical directions. It does not identify the global adjoint kernel as exactly five, prove an AMM/Fischer-Marsden normal form, promote the finite EP theorem to Sobolev data, or establish evolution, bounded stability, causality, scattering, particles, observables or quantum theory.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_CONSTRAINT_FREDHOLM_GATE_V1.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_CONSTRAINT_FREDHOLM_GATE_V1",
+          "sha256": "261c77431cca2afb5facf65d33be7388f291757290cbc4129fc05e69c1a6c303"
+        }
+      ],
+      "id": "einstein.ph.wm.compact_cauchy.constraint_fredholm_gate",
+      "mode_data": {
+        "dispersion": {
+          "statement": "This is a spatial Cauchy constraint symbol, not a frequency-shell theorem.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "No Sobolev completion of the Lee-Wald phase space is constructed.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "No temporal resonance inversion occurs in the Cauchy symbol.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The finite harmonic result is not promoted by this symbol theorem.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No evolution or retarded map is analyzed.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Exponential-polynomial time corrections are a separate carrier.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "The adjoint kernel is finite and contains the five lifted stabilizers, but equality with those five remains open.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan product",
+        "boundaries": "compact boundaryless Cauchy slice S1_L x S2",
+        "carrier": "complete local canonical Weyl-Maxwell Cauchy phase space and one exact principal-symbol fibre",
+        "charge_sector": "fixed magnetic P_N, N=2; fixed harmonic electric Q_e; based Maxwell gauge",
+        "degree": "linearized constraint and gauge symbol; nonlinear mapping regularity only",
+        "ell": "all; principal-symbol statement is local and pre-harmonic",
+        "k": "all; witness covector is aligned with nonzero S1 cotangent direction",
+        "m": "all; principal-symbol statement is local and pre-harmonic",
+        "omega": "NOT_APPLICABLE: Cauchy constraint map",
+        "parity": "all local tensor components before harmonic parity splitting",
+        "theory": "Weyl-Maxwell target with Einstein-Maxwell finite-harmonic comparison"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/einstein_maxwell_weyl_compact_cauchy_constraint_fredholm_gate.py",
+  "generated_by_sha256": "90bb779e7ec2d54c66472744d7fc3fd2799c2aea26478b859df692ad5233a278",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_nonlinear",
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_compact_cauchy_constraint_fredholm_gate --check",
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_compact_cauchy_constraint_fredholm_gate",
+    "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_compact_cauchy_constraint_fredholm_gate",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-weyl-compact-cauchy-constraint-fredholm-gate-fragment-v1.json"
+  ]
+}

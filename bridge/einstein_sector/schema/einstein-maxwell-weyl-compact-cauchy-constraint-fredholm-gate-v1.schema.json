@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-compact-cauchy-constraint-fredholm-gate-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "provenance", "declared_cauchy_problem", "action_derived_constraint_ledger", "douglis_nirenberg_symbol", "functional_analytic_verdict", "adjoint_cokernel_ledger", "classification", "next_gate", "scope", "claim_boundary", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-compact-cauchy-constraint-fredholm-gate-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein-maxwell-weyl-compact-cauchy-constraint-fredholm-gate-v1.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_CONSTRAINT_FREDHOLM_GATE_V1"},
+    "result_state": {"const": "RIGHT_ELLIPTIC_CONSTRAINT_MAP_CERTIFIED_TWO_SIDED_FREDHOLM_GATE_OBSTRUCTED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_commit", "producer", "producer_sha256", "imported_artifacts", "canonical_cross_checks"],
+      "properties": {
+        "input_commit": {"const": "d78b1f8bd"},
+        "producer": {"type": "string", "minLength": 1},
+        "producer_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "imported_artifacts": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "additionalProperties": false, "required": ["name", "path", "sha256", "result_id"], "properties": {"name": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "result_id": {"type": "string"}}}},
+        "canonical_cross_checks": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object", "additionalProperties": false, "required": ["citation", "source_sha256"], "properties": {"citation": {"type": "string"}, "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}}
+      }
+    },
+    "declared_cauchy_problem": {"type": "object", "additionalProperties": false, "required": ["slice", "bundle_and_charge", "maxwell_gauge", "sobolev_index", "domain", "constraint_targets", "gauge_targets", "local_gauge_slice", "gauge_slice_completeness"], "properties": {"slice": {"type": "string"}, "bundle_and_charge": {"type": "string"}, "maxwell_gauge": {"type": "string"}, "sobolev_index": {"const": "integer s>=4"}, "domain": {"type": "string"}, "constraint_targets": {"type": "string"}, "gauge_targets": {"type": "string"}, "local_gauge_slice": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string"}}, "gauge_slice_completeness": {"type": "string"}}},
+    "action_derived_constraint_ledger": {"type": "object", "additionalProperties": false, "required": ["canonical_pairs", "H_i", "H_perp", "P_trace", "Q_scale", "Gauss", "maxwell_terms", "first_class_count", "local_phase_space_rank", "physical_phase_space_rank", "normalization_boundary"], "properties": {"canonical_pairs": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}}, "H_i": {"type": "string"}, "H_perp": {"type": "string"}, "P_trace": {"type": "string"}, "Q_scale": {"type": "string"}, "Gauss": {"type": "string"}, "maxwell_terms": {"type": "string"}, "first_class_count": {"const": 7}, "local_phase_space_rank": {"const": 30}, "physical_phase_space_rank": {"const": 16}, "normalization_boundary": {"type": "string"}}},
+    "douglis_nirenberg_symbol": {
+      "type": "object", "additionalProperties": false,
+      "required": ["covector_fixture", "background_momentum_normalization", "variables", "constraint_rows", "gauge_rows", "raw_constraint_symbol", "gauge_symbol", "combined_symbol", "raw_rank", "raw_surjective_minor", "gauge_rank", "gauge_on_gauge_orbit_determinant", "combined_rank", "domain_rank", "codomain_rank", "symbol_kernel_dimension", "tt_momentum_witnesses", "covariant_rank_argument", "combined_covariant_rank_argument", "mutation_control"],
+      "properties": {
+        "covector_fixture": {"type": "string"}, "background_momentum_normalization": {"type": "string"},
+        "variables": {"type": "array", "minItems": 30, "maxItems": 30, "uniqueItems": true, "items": {"type": "string"}},
+        "constraint_rows": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"type": "string"}},
+        "gauge_rows": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"type": "string"}},
+        "raw_constraint_symbol": {"$ref": "#/$defs/matrix7x30"}, "gauge_symbol": {"$ref": "#/$defs/matrix7x30"},
+        "combined_symbol": {"type": "array", "minItems": 14, "maxItems": 14, "items": {"type": "array", "minItems": 30, "maxItems": 30, "items": {"type": "string"}}},
+        "raw_rank": {"const": 7}, "raw_surjective_minor": {"type": "object", "additionalProperties": false, "required": ["columns", "determinant"], "properties": {"columns": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "string"}}, "determinant": {"const": "-16"}}},
+        "gauge_rank": {"const": 7}, "gauge_on_gauge_orbit_determinant": {"const": "-16"}, "combined_rank": {"const": 14}, "domain_rank": {"const": 30}, "codomain_rank": {"const": 14}, "symbol_kernel_dimension": {"const": 16},
+        "tt_momentum_witnesses": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "nonzero_components", "residual"],
+            "properties": {
+              "name": {"enum": ["P_cross", "P_plus"]},
+              "nonzero_components": {"type": "object"},
+              "residual": {"type": "array", "minItems": 14, "maxItems": 14, "items": {"const": "0"}}
+            }
+          }
+        },
+        "covariant_rank_argument": {"type": "string"},
+        "combined_covariant_rank_argument": {"type": "string"},
+        "mutation_control": {"type": "object", "additionalProperties": false, "required": ["added_row", "mutated_rank", "interpretation"], "properties": {"added_row": {"const": "P23=0"}, "mutated_rank": {"const": 15}, "interpretation": {"type": "string"}}}
+      }
+    },
+    "functional_analytic_verdict": {"type": "object", "additionalProperties": false, "required": ["raw_constraint_map", "raw_constraint_symbol_surjective", "raw_constraint_range_closed_on_compact_slice", "raw_constraint_cokernel_finite_dimensional", "combined_constraint_gauge_symbol_full_row_rank", "combined_constraint_gauge_range_closed_on_compact_slice", "combined_operator_fredholm", "reason_not_fredholm", "physical_kernel_may_not_be_gauge_fixed_away", "smooth_mapping", "tame_slice_and_momentum_map_normal_form"], "properties": {"raw_constraint_map": {"const": "UNDERDETERMINED_ELLIPTIC_RIGHT_SEMI_FREDHOLM"}, "raw_constraint_symbol_surjective": {"const": true}, "raw_constraint_range_closed_on_compact_slice": {"const": true}, "raw_constraint_cokernel_finite_dimensional": {"const": true}, "combined_constraint_gauge_symbol_full_row_rank": {"const": true}, "combined_constraint_gauge_range_closed_on_compact_slice": {"const": true}, "combined_operator_fredholm": {"const": false}, "reason_not_fredholm": {"type": "string"}, "physical_kernel_may_not_be_gauge_fixed_away": {"const": true}, "smooth_mapping": {"type": "string"}, "tame_slice_and_momentum_map_normal_form": {"type": "string"}}},
+    "adjoint_cokernel_ledger": {"type": "object", "additionalProperties": false, "required": ["finite_dimensional", "five_lifted_stabilizers_contained", "exactly_five", "constant_U1", "finite_EP_comparison"], "properties": {"finite_dimensional": {"type": "string"}, "five_lifted_stabilizers_contained": {"const": ["H", "P_x", "J_1", "J_2", "J_3"]}, "exactly_five": {"const": "OPEN"}, "constant_U1": {"type": "string"}, "finite_EP_comparison": {"type": "string"}}},
+    "classification": {"type": "object", "additionalProperties": false, "required": ["complete_action_derived_canonical_constraint_ledger", "explicit_weighted_sobolev_spaces", "explicit_complete_local_gauge_slice_at_symbol_level", "raw_constraint_right_ellipticity", "closed_range_and_finite_cokernel", "two_sided_ellipticity", "fredholm_constraint_plus_gauge_operator", "adjoint_kernel_exactly_five", "sobolev_momentum_map_normal_form", "finite_EP_theorem_promoted_by_density", "global_evolution_or_stability_claim", "lorentzian_causal_claim", "quantum_claim"], "properties": {"complete_action_derived_canonical_constraint_ledger": {"const": true}, "explicit_weighted_sobolev_spaces": {"const": true}, "explicit_complete_local_gauge_slice_at_symbol_level": {"const": true}, "raw_constraint_right_ellipticity": {"const": true}, "closed_range_and_finite_cokernel": {"const": true}, "two_sided_ellipticity": {"const": false}, "fredholm_constraint_plus_gauge_operator": {"const": false}, "adjoint_kernel_exactly_five": {"const": false}, "sobolev_momentum_map_normal_form": {"const": false}, "finite_EP_theorem_promoted_by_density": {"const": false}, "global_evolution_or_stability_claim": {"const": false}, "lorentzian_causal_claim": {"const": false}, "quantum_claim": {"const": false}}},
+    "next_gate": {"type": "object"}, "scope": {"type": "object"}, "claim_boundary": {"type": "string", "minLength": 1}, "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+  },
+  "$defs": {"matrix7x30": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "array", "minItems": 30, "maxItems": 30, "items": {"type": "string"}}}}
+}
