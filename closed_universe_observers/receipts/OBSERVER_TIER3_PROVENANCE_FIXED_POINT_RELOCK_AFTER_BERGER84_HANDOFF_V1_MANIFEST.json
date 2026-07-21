@@ -1,0 +1,297 @@
+{
+  "schema": "closed-universe-observer-tier3-provenance-fixed-point-manifest-v1",
+  "result_id": "OBSERVER_TIER3_PROVENANCE_FIXED_POINT_RELOCK_AFTER_BERGER84_HANDOFF_V1",
+  "science_forge_work_item": "sf:program/work/observer-tier3-provenance-fixed-point-relock-after-berger84-handoff",
+  "recorded_at": "2026-07-21T16:36:38Z",
+  "baseline_commit": "aa5ca7814798dfbcc92ee52e462d25af74806515",
+  "input_handoff_commit": "f63c54234ba62509be0b0059858193e63f7abca0",
+  "disposition": "SHORTFALL",
+  "relock_count": 22,
+  "comparison_contract": {
+    "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB": "Remove dependency_refs, provenance and recursively named SHA-256 fields, then require exact JSON equality against baseline_commit.",
+    "DETERMINISTIC_NORMALIZATION_PAYLOAD_UPDATE": "Require exact equality after additionally removing q10_memory_transport; require q10_formal_green_correction to remain exact and require the current producer, independent verifier and mutation test to pass for the regenerated normalization-dependent field."
+  },
+  "relocks": [
+    {
+      "result_id": "BERGER_84_ROW_MIXED_R_KAPPA_UNARY_GATE",
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_MIXED_R_KAPPA_UNARY_GATE.json",
+      "old_sha256": "b355e03d72560526997829c6fe381ea7695a19e15a0b3adb4131bf03b96caf60",
+      "new_sha256": "6dada801846a75291c0338fc8b2e011a972565939388506289af155d83e2957b",
+      "producer": "closed_universe_observers/generate_berger_84_row_mixed_r_kappa_unary_gate.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_84_row_mixed_r_kappa_unary_gate.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_84_row_mixed_r_kappa_unary_gate.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "DETERMINISTIC_NORMALIZATION_PAYLOAD_UPDATE",
+      "unchanged_invariants": "schema, claim status and boundary, bidegree audit, q10 formal Green correction, q11 obstruction, mutations, flags and sector dimensions"
+    },
+    {
+      "result_id": "BERGER_84_ROW_ROD_GRAVITY_UNARY",
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_ROD_GRAVITY_UNARY.json",
+      "old_sha256": "d3a48225a9f2182a0c388a2f6e807ebb3e93abc635071c370972d83cb9791656",
+      "new_sha256": "1e2db0b5fbcc31c02c7e4abef2d5bda8e700eb271254aa860b4b79471a412b04",
+      "producer": "closed_universe_observers/generate_berger_84_row_rod_gravity_unary.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_84_row_rod_gravity_unary.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_84_row_rod_gravity_unary.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_84_ROW_UNARY_PAIRING_GREEN_GATE",
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_UNARY_PAIRING_GREEN_GATE.json",
+      "old_sha256": "1c51f49ae867c5792bf4ece12f58d03e55079a9baa1c8a0209adeb74913e093f",
+      "new_sha256": "2b498506b920d9712fcdffd2b63466a55e32aa8bd7e2ba499558d317bf467f09",
+      "producer": "closed_universe_observers/generate_berger_84_row_unary_pairing_green_gate.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_84_row_unary_pairing_green_gate.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_84_row_unary_pairing_green_gate.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT",
+      "path": "closed_universe_observers/certificates/BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT.json",
+      "old_sha256": "40d7ebd4a9a629c70556421e98a4cdc4fa196b488d0e45f7be6bcc23cab9bb84",
+      "new_sha256": "3bfef22f07c9ef7e576d57779cdf433c9d545ed8c7dca30dc2e6e909e67b98a2",
+      "producer": "closed_universe_observers/generate_berger_adaptive_peter_weyl_route_preflight.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_adaptive_peter_weyl_route_preflight.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_adaptive_peter_weyl_route_preflight.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_CLOCK_INTEGRATED_FORM_PROFILE_COEFFICIENTS",
+      "path": "closed_universe_observers/certificates/BERGER_CLOCK_INTEGRATED_FORM_PROFILE_COEFFICIENTS.json",
+      "old_sha256": "fd66add7974cff5628195123c2420245b833b5e8089aab97529f4c4c0500afb5",
+      "new_sha256": "73149ccd3912db379b05188f58ecafb2d31d437669aff15120745c2cd9b175c7",
+      "producer": "closed_universe_observers/generate_berger_clock_integrated_form_profile_coefficients.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_clock_integrated_form_profile_coefficients.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_clock_integrated_form_profile_coefficients.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_CLOCK_INTEGRATED_SCALAR_STREAM_TWO_J139",
+      "path": "closed_universe_observers/certificates/BERGER_CLOCK_INTEGRATED_SCALAR_STREAM_TWO_J139.json",
+      "old_sha256": "5fc879818a7a34a0d79a5f55a7acb266054e15dc886e7187682677ac856a7ca5",
+      "new_sha256": "16265cc1b9713f9ac7d4e24d51d51d62241777c807056376876ae7fd46550f47",
+      "producer": "closed_universe_observers/generate_berger_clock_integrated_scalar_stream.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_clock_integrated_scalar_stream.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_clock_integrated_scalar_stream.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S0_TWO_J139",
+      "path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S0_TWO_J139.json",
+      "old_sha256": "5160cf123e6910db3d060ad2c856e5a159f0acdd3e67b9318ca6816b5c0e0cbe",
+      "new_sha256": "327a557858e9a23b8918fd9a89b388224d12b277b617fc525586390148c44d7f",
+      "producer": "closed_universe_observers/generate_berger_clock_weighted_scalar_stream.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_clock_weighted_scalar_stream.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_clock_weighted_scalar_stream.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S10_TWO_J139",
+      "path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S10_TWO_J139.json",
+      "old_sha256": "ff4035710abf62a081826fa81451d86ba3ebdd409969ccb8d9f0629496c595f8",
+      "new_sha256": "1e0f2e3f8009b449c8d87865bf3da6ee2a0f5c4d496f5f0b9162ba040d96d1bb",
+      "producer": "closed_universe_observers/generate_berger_clock_weighted_scalar_stream.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_clock_weighted_scalar_stream.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_clock_weighted_scalar_stream.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S2_TWO_J139",
+      "path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S2_TWO_J139.json",
+      "old_sha256": "1a0ab419ac987ec5c4f147cd684c58e8dd76f5c11f0a2b1326f961f9000177a1",
+      "new_sha256": "95d9d010546a362977f0dc94bf7cb3e2b13ccc0fc6479cedbf15aa32299c8734",
+      "producer": "closed_universe_observers/generate_berger_clock_weighted_scalar_stream.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_clock_weighted_scalar_stream.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_clock_weighted_scalar_stream.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S4_TWO_J139",
+      "path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S4_TWO_J139.json",
+      "old_sha256": "e1219d48f0b3e345a25b6926be321bda8692f549aecd247a12d6610799db16cc",
+      "new_sha256": "7e14e194e132324b042969d18478a1dcd889101c4d52b225b68b348876374dd2",
+      "producer": "closed_universe_observers/generate_berger_clock_weighted_scalar_stream.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_clock_weighted_scalar_stream.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_clock_weighted_scalar_stream.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S6_TWO_J139",
+      "path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S6_TWO_J139.json",
+      "old_sha256": "38113f9d81c4d55d498679fa30e73c13bcea0c1ed62eb7f1c85fe0a2270e02ed",
+      "new_sha256": "52dfb40522c4beff3e38bbec1d14aea5730e2b43ba9a7bbd871497b05abd4b74",
+      "producer": "closed_universe_observers/generate_berger_clock_weighted_scalar_stream.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_clock_weighted_scalar_stream.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_clock_weighted_scalar_stream.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S8_TWO_J139",
+      "path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S8_TWO_J139.json",
+      "old_sha256": "2d87a8a4bccbf2000f274d3f96dc56ddb9927126d43a4ad86f1439930378b3de",
+      "new_sha256": "55a6d46fac2cdd53b152c0cdc051cbd3f7caf2b2afdd41d31a11b9eca8a7e930",
+      "producer": "closed_universe_observers/generate_berger_clock_weighted_scalar_stream.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_clock_weighted_scalar_stream.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_clock_weighted_scalar_stream.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE",
+      "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE.json",
+      "old_sha256": "d61e8399ba235c22239ca52864aed148b1e2b4d2154685d12324bf4b3037e9dc",
+      "new_sha256": "8824061d7460da7bcb3c9b03d24222235eec0a6a43d6296d90c392758decd970",
+      "producer": "closed_universe_observers/generate_berger_green_weighted_detector_coderivative.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_green_weighted_detector_coderivative.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_green_weighted_detector_coderivative.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_HIGH_ORDER_PROFILE_MOMENT_RAIL",
+      "path": "closed_universe_observers/certificates/BERGER_HIGH_ORDER_PROFILE_MOMENT_RAIL.json",
+      "old_sha256": "eef457789018aba42808d5b3fd5a4898535db9f9f8757af6e25150721d9a61e7",
+      "new_sha256": "fff63465db68433a81dab7aadbdd176522a17afd6f1bd455149a9624b2398a4a",
+      "producer": "closed_universe_observers/generate_berger_high_order_profile_moment_rail.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_high_order_profile_moment_rail.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_high_order_profile_moment_rail.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_POLARIZATION_CLEBSCH_GORDAN_RECURRENCE",
+      "path": "closed_universe_observers/certificates/BERGER_POLARIZATION_CLEBSCH_GORDAN_RECURRENCE.json",
+      "old_sha256": "63ec51f24e3d9adebd00b409a61ec8348d5a9ba636f3bacf984eec8a53fa0294",
+      "new_sha256": "1c9f6306df336707c8dff74f95a3985003b22a2c974569cfa7e8415aa9f88394",
+      "producer": "closed_universe_observers/generate_berger_polarization_clebsch_gordan_recurrence.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_polarization_clebsch_gordan_recurrence.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_polarization_clebsch_gordan_recurrence.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_POSITIVE_MIXED_PHI2_LOCAL_COMPONENT_JET_EXPORT",
+      "path": "closed_universe_observers/certificates/BERGER_POSITIVE_MIXED_PHI2_LOCAL_COMPONENT_JET_EXPORT.json",
+      "old_sha256": "8eead0d3dde3c00195e3865822df978f21acfd063a15ee329309f8afddb7cd7e",
+      "new_sha256": "bb0ac9fc55164fa2443d6b13e920946fa93c925c7dc2b63095f662d7bbfd2572",
+      "producer": "closed_universe_observers/generate_berger_positive_mixed_phi2_local_component_jet_export.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_positive_mixed_phi2_local_component_jet_export.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_positive_mixed_phi2_local_component_jet_export.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_REPLACEMENT112_132_DEFECT_MINIMAL_NILPOTENT_REPAIR_NO_GO",
+      "path": "closed_universe_observers/certificates/BERGER_REPLACEMENT112_132_DEFECT_MINIMAL_NILPOTENT_REPAIR_NO_GO.json",
+      "old_sha256": "7b6016400609c701c62e81672e3e69d871fec39fff8e6c8e1f3ecae745bcfcf7",
+      "new_sha256": "0d7a229d519eda649898101547e55f2b430626bdd03a55853956c83423e2a5a0",
+      "producer": "closed_universe_observers/generate_berger_replacement112_132_defect_minimal_nilpotent_repair.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_replacement112_132_defect_minimal_nilpotent_repair.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_replacement112_132_defect_minimal_nilpotent_repair.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_REPLACEMENT112_EXECUTABLE_UNARY_AFTER_PHI2_MAP_SHORTFALL",
+      "path": "closed_universe_observers/certificates/BERGER_REPLACEMENT112_EXECUTABLE_UNARY_AFTER_PHI2_MAP_SHORTFALL.json",
+      "old_sha256": "b6e13a25b67348bacd2a23b314f644821151be2bc4762ea296997d8b85203a7e",
+      "new_sha256": "4fe1a7b9bb2e627cbaa5584607b70660b1f184af573962476712d89f8b63601e",
+      "producer": "closed_universe_observers/generate_berger_replacement112_executable_unary_after_phi2_map_shortfall.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_replacement112_executable_unary_after_phi2_map_shortfall.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_replacement112_executable_unary_after_phi2_map_shortfall.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_REPLACEMENT112_EXECUTABLE_UNARY_MIXED_NILPOTENCY_OBSTRUCTION",
+      "path": "closed_universe_observers/certificates/BERGER_REPLACEMENT112_EXECUTABLE_UNARY_MIXED_NILPOTENCY_OBSTRUCTION.json",
+      "old_sha256": "7d1962d841c08b2d030e0dd34092d87f387b84157758b9171c4864628ce97c5d",
+      "new_sha256": "662507edd90f933c75897025418e197827780ee0b570841a058dddf650e77e86",
+      "producer": "closed_universe_observers/generate_berger_replacement112_executable_unary_mixed_nilpotency_obstruction.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_replacement112_executable_unary_mixed_nilpotency_obstruction.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_replacement112_executable_unary_mixed_nilpotency_obstruction.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_REPLACEMENT112_MIXED_METRIC_ROD_HESSIAN_INTERFACE",
+      "path": "closed_universe_observers/certificates/BERGER_REPLACEMENT112_MIXED_METRIC_ROD_HESSIAN_INTERFACE.json",
+      "old_sha256": "76975c8092b5c370f959eed5885c69749dc9fd1a0388965a65e3f0b642536ce4",
+      "new_sha256": "ac6d55fa7316f1c9a89b9e662725137f72899d8214d02b23b4c52a5602e85173",
+      "producer": "closed_universe_observers/generate_berger_replacement112_mixed_metric_rod_hessian_interface.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_replacement112_mixed_metric_rod_hessian_interface.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_replacement112_mixed_metric_rod_hessian_interface.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_STREAMABLE_POLARIZATION_SECTORS",
+      "path": "closed_universe_observers/certificates/BERGER_STREAMABLE_POLARIZATION_SECTORS.json",
+      "old_sha256": "8f7cda5bc086c93fa0bdf4a9bac63ec36c3116786268ac94c9206d2b35ad0b03",
+      "new_sha256": "181bf9db266142582e9cd976711a27c021c6e07ade30e8dbe3f7754a23621ae2",
+      "producer": "closed_universe_observers/generate_berger_streamable_polarization_sectors.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_streamable_polarization_sectors.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_streamable_polarization_sectors.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    },
+    {
+      "result_id": "BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION",
+      "path": "closed_universe_observers/certificates/BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION.json",
+      "old_sha256": "266b15277a9b2e0cf8d4065b37e3d6dfdf711276d6497cb7ab667ebb9665fcdd",
+      "new_sha256": "a693d90fcc86b05a85002d6fd73fb7f3d04d187ed2874af0c42d327b5fc9dd9c",
+      "producer": "closed_universe_observers/generate_berger_two_j4_profile_tail_obstruction.py",
+      "independent_verifier": "closed_universe_observers/verify_berger_two_j4_profile_tail_obstruction.py",
+      "mutation_test": "closed_universe_observers/tests/test_berger_two_j4_profile_tail_obstruction.py",
+      "mutation_status": "PASS",
+      "scientific_comparison": "PIN_ONLY_IDENTICAL_AFTER_HASH_SCRUB"
+    }
+  ],
+  "suite_iterations": [
+    {"iteration": 0, "passed_before_fail": 151, "failed": 1, "elapsed_seconds": 473.57, "frontier": "BERGER_84_ROW_MIXED_R_KAPPA_UNARY_GATE", "failure_kind": "STALE_PROVENANCE_PIN"},
+    {"iteration": 1, "passed_before_fail": 165, "failed": 1, "elapsed_seconds": 460.17, "frontier": "BERGER_84_ROW_ROD_GRAVITY_UNARY", "failure_kind": "STALE_PROVENANCE_PIN"},
+    {"iteration": 2, "passed_before_fail": 173, "failed": 1, "elapsed_seconds": 526.72, "frontier": "BERGER_84_ROW_UNARY_PAIRING_GREEN_GATE", "failure_kind": "STALE_PROVENANCE_PIN"},
+    {"iteration": 3, "passed_before_fail": 232, "failed": 1, "elapsed_seconds": 456.66, "frontier": "BERGER_CLOCK_INTEGRATED_FORM_PROFILE_COEFFICIENTS", "failure_kind": "STALE_PROVENANCE_PIN"},
+    {"iteration": 4, "passed_before_fail": 240, "failed": 1, "elapsed_seconds": 466.99, "frontier": "BERGER_CLOCK_INTEGRATED_SCALAR_STREAM_TWO_J139", "failure_kind": "STALE_PROVENANCE_PIN"},
+    {"iteration": 5, "passed_before_fail": 261, "failed": 1, "elapsed_seconds": 516.94, "frontier": "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S10_TWO_J139", "failure_kind": "STALE_PROVENANCE_PIN"},
+    {"iteration": 6, "passed_before_fail": 365, "failed": 1, "elapsed_seconds": 673.01, "frontier": "BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE", "failure_kind": "STALE_PROVENANCE_PIN"},
+    {"iteration": 7, "passed_before_fail": 185, "failed": 1, "elapsed_seconds": 456.48, "frontier": "BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT", "failure_kind": "STALE_PROVENANCE_PIN"},
+    {"iteration": 8, "passed_before_fail": 386, "failed": 1, "elapsed_seconds": 652.97, "frontier": "BERGER_HIGH_ORDER_PROFILE_MOMENT_RAIL", "failure_kind": "STALE_PROVENANCE_PIN"},
+    {"iteration": 9, "passed_before_fail": 509, "failed": 1, "elapsed_seconds": 708.89, "frontier": "BERGER_POSITIVE_MIXED_PHI2_LOCAL_COMPONENT_JET_EXPORT", "failure_kind": "STALE_PROVENANCE_PIN"},
+    {"iteration": 10, "passed_before_fail": 670, "failed": 1, "elapsed_seconds": 933.61, "frontier": "BERGER_REPLACEMENT112_EXECUTABLE_UNARY_AFTER_PHI2_MAP_SHORTFALL", "failure_kind": "STALE_PROVENANCE_PIN"},
+    {"iteration": 11, "passed_before_fail": 675, "failed": 1, "elapsed_seconds": 983.73, "frontier": "BERGER_REPLACEMENT112_EXECUTABLE_UNARY_MIXED_NILPOTENCY_OBSTRUCTION", "failure_kind": "STALE_PROVENANCE_PIN"},
+    {"iteration": 12, "passed_before_fail": 665, "failed": 1, "elapsed_seconds": 974.62, "frontier": "BERGER_REPLACEMENT112_132_DEFECT_MINIMAL_NILPOTENT_REPAIR_NO_GO", "failure_kind": "STALE_PROVENANCE_PIN"},
+    {"iteration": 13, "passed_before_fail": 808, "failed": 1, "elapsed_seconds": 1055.75, "wall_seconds": 1064.01, "frontier": "CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1", "failure_kind": "NON_PROVENANCE_SEMANTIC_CENSUS_FRONTIER"}
+  ],
+  "terminal_frontier": {
+    "test": "closed_universe_observers/tests/test_charged_time_receiver_admissibility_crosswalk.py::test_positive_control_and_interface",
+    "producer": "closed_universe_observers/generate_charged_time_receiver_admissibility_crosswalk.py",
+    "expected_count": 5,
+    "discovered_count": 7,
+    "unclassified_ids": [
+      "observer.berger.legacy_receiver_admissibility_replay",
+      "observer.berger.legacy_receiver_operational_frequency_ratio_nonactivation"
+    ],
+    "classification": "SEMANTIC_AND_CONCURRENT_ATLAS_OWNERSHIP_FRONTIER",
+    "authoritative_successor": "sf:program/work/observer-charged-time-crosswalk-legacy-row-extension",
+    "required_action": "Assign explicit fail-closed charged-time receiver admissibility statuses and first-missing-condition statements for both rows, then regenerate and independently verify the seven-row census before resuming Tier 3."
+  },
+  "flags": {
+    "RELOCKED_ARTIFACTS_CONTENT_ADDRESSED": true,
+    "RELOCKED_SCIENTIFIC_COMPARISONS_PASS": true,
+    "ZERO_STALE_PINS_IN_RELOCKED_SET": true,
+    "ZERO_REMAINING_CORPUS_STALE_PINS_CERTIFIED": false,
+    "OBSERVER_STREAM_TIER3_GREEN": false,
+    "PAPER_9_FREEZE_GATE_ACTIVATED": false
+  },
+  "claim_boundary": "Certifies only the 22 listed provenance relocks and the exact non-provenance seven-row census frontier. It does not certify a complete Observer provenance fixed point, an uninterrupted green Tier 3, a new receiver, an observer algebra, a redshift, a nonlinear response, or the Paper 9 freeze gate."
+}

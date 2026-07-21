@@ -1,0 +1,69 @@
+{
+  "result_id": "OBSERVER_TIER3_PROVENANCE_FIXED_POINT_RELOCK_AFTER_BERGER84_HANDOFF_V1",
+  "science_forge_work_item": "sf:program/work/observer-tier3-provenance-fixed-point-relock-after-berger84-handoff",
+  "recorded_at": "2026-07-21T16:36:38Z",
+  "disposition": "SHORTFALL",
+  "result_boundary": "Twenty-two generated Observer certificates are relocked and independently compared with their baseline artifacts. The complete Observer suite is not green: its fourteenth fail-fast traversal stopped after 808 passes at a semantic seven-row charged-time receiver census frontier. No corpus-wide provenance fixed point, observer Tier-3 green state or Paper 9 activation is certified.",
+  "artifact_hashes": [
+    {
+      "path": "closed_universe_observers/receipts/OBSERVER_TIER3_PROVENANCE_FIXED_POINT_RELOCK_AFTER_BERGER84_HANDOFF_V1_MANIFEST.json",
+      "sha256": "309ccbf7db83e66b375d194e2c46cef330d441ab56e5896c4ec5b30d538d7d86"
+    },
+    {
+      "path": "closed_universe_observers/verify_observer_tier3_provenance_fixed_point_relock_after_berger84_handoff.py",
+      "sha256": "c3a09d32b7b5debe856b5f252dd2cdda40c0f31afe4d60a4d0de468a934708d7"
+    },
+    {
+      "path": "closed_universe_observers/tests/test_observer_tier3_provenance_fixed_point_relock_after_berger84_handoff.py",
+      "sha256": "93a1287b99802122020b35495ed8182b93cfa3625abf999cda1db858e3ffb32c"
+    },
+    {
+      "path": "reports/observer-tier3-provenance-fixed-point-relock-after-berger84-handoff-closeout-2026-07-21.md",
+      "sha256": "432b375a0c63b45fd017888fa3fb3c849019d5f6a17b4278f7be475f9c4a7a62"
+    }
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      "python3 -m py_compile closed_universe_observers/verify_observer_tier3_provenance_fixed_point_relock_after_berger84_handoff.py closed_universe_observers/tests/test_observer_tier3_provenance_fixed_point_relock_after_berger84_handoff.py",
+      "python3 -m json.tool <manifest, tier receipt and typed request>",
+      "git diff --check -- <explicit delivery paths>"
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "PYTHONPATH=. python3 -m closed_universe_observers.verify_observer_tier3_provenance_fixed_point_relock_after_berger84_handoff",
+        "result": "PASS"
+      },
+      {
+        "command": "PYTHONPATH=. pytest -q closed_universe_observers/tests/test_observer_tier3_provenance_fixed_point_relock_after_berger84_handoff.py",
+        "elapsed_seconds": 0.95,
+        "result": "3 passed"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_FOR_LISTED_RELOCKS_ONLY",
+    "criterion": "Each of the 22 manifest entries was replayed with its declared producer, independent verifier and mutation test. The independent manifest verifier checks current hashes, baseline hashes, scientific projections and every embedded path/hash reference. This status does not extend beyond the listed relocks."
+  },
+  "tier_3": {
+    "status": "SHORTFALL",
+    "command": "PYTHONPATH=. pytest -q -x closed_universe_observers/tests",
+    "iterations_started": 14,
+    "final_iteration": {
+      "result": "1 failed, 808 passed",
+      "pytest_elapsed_seconds": 1055.75,
+      "process_wall_seconds": 1064.01,
+      "failure": "closed_universe_observers/tests/test_charged_time_receiver_admissibility_crosswalk.py::test_positive_control_and_interface",
+      "frontier": "The generated census discovers seven Observer rows while the semantic EXPECTED table classifies five; two legacy receiver rows are UNCLASSIFIED."
+    },
+    "does_not_establish": [
+      "ZERO_REMAINING_CORPUS_STALE_PINS",
+      "OBSERVER_STREAM_TIER3_GREEN",
+      "PAPER_9_FREEZE_GATE_ACTIVATED"
+    ]
+  },
+  "ownership_boundary": "The shared Observer atlas generator/fragment and Observer team brief have concurrent resident modifications. This package does not overwrite them; sf:program/work/observer-charged-time-crosswalk-legacy-row-extension owns the semantic census repair."
+}
