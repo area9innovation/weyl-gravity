@@ -324,6 +324,50 @@ internal indices.  This is recorded at
 `observer.berger.interaction.material_parent56_executable_unary_after_readout_interface`.
 It does not reopen the nondefined 160-row pushout.
 
+The complete declared local repair class is now terminally `OBSTRUCTED`.
+The epsilon-degree filter fixes the two Gamma gauge/control blocks and leaves
+four action-Hessian amplitudes.  Exact Hessian integrability and pairing
+adjointness have rank three, so only their common action orbit survives; its
+real and simultaneous Berger-K defects vanish.  Across all 4,542 exact
+Berger-background/sphere coefficient equations, however, the nilpotency
+coefficient matrix has rank one while its augmentation by the inherited
+132-entry target has rank two.  The orbit creates a nonzero
+`h_hat_star_00 <- c_spatial_1` coefficient but has zero coefficient on the
+nonzero inherited `j*x0^2` component of `h_hat_star_00 <- sigma`.  Moreover,
+the nonzero first-variation anchor reduces the permitted background-preserving
+correction dimension to zero.  The atlas row is
+`observer.berger.interaction.replacement112_132_defect_minimal_nilpotent_repair_no_go`.
+It is scoped to this complete finite local single-action Hessian sector and
+does not exclude a genuinely changed action/background architecture.  The
+replacement unary, 160-row pushout, reduction and all nonlinear observer
+consumers remain fail-closed.
+
+The fresh post-repair apparatus consumer is now separately terminal.  It
+imports the complete repair no-go and the executable material-parent-56
+interface by hash and stops at the categorical object gate.  Because no
+nilpotent replacement-112 source exists in the declared family, the pushout
+is `NONDEFINED`; the identification relation and combined row count are not
+reached, and physical reduction is `NO_CERTIFIED_MAP`.  The material-parent
+rank-two coordinate detector remains a certified separate object.
+
+The atlas row
+`observer.berger.interaction.repaired112_apparatus_pushout_after_132_defect_disposition`
+records the exact rank-one/rank-two repair separator and the minimal escape
+signature.  A successor must supply at least one genuinely new action-Hessian
+coefficient-image direction, either through a new invariant vertex or through
+a real degree-zero field together with its degree-one BV dual.  This is a
+necessary typed signature, not evidence that either extension exists.
+
+The dependent physical-reduction branch is now explicitly `NOT_ACTIVATED`.
+The post-repair pushout exports no combined chain complex or row count, and an
+independent replay reproduces the nonzero augmented obstruction minor.
+Therefore kernels, images, \(\pi_{\rm cl}\), contraction data, descended
+pairing and physical detector rank are `NO_CERTIFIED_MAP` in generic,
+compact-support and spatial-zero-mode sectors.  The atlas row
+`observer.berger.interaction.repaired112_physical_reduction_and_detector_rank_not_activated`
+keeps the standalone material rank-two selection separate from any combined
+physical observable.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.

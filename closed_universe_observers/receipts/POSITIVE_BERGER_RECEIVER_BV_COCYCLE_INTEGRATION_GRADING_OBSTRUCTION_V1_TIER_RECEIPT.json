@@ -1,0 +1,22 @@
+{
+  "claim_result_id": "POSITIVE_BERGER_RECEIVER_BV_COCYCLE_INTEGRATION_GRADING_OBSTRUCTION_V1",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "higher_tiers": {
+    "tier_2": {"criterion": "Imported content-addressed inputs were unchanged; no shared operator or existing certificate chain was modified.", "status": "NOT_RUN"},
+    "tier_3": {"criterion": "This obstruction is not a freeze, tag, release or paper-theorem promotion.", "status": "NOT_RUN"}
+  },
+  "independence": {
+    "producer": "serializes the first grading/pairing obstruction and fail-closed repair contract",
+    "verifier": "reconstructs degree ranks and every pairing-degree sum directly from the two imported row/pairing ledgers",
+    "status": "METHOD_DISTINCT"
+  },
+  "result_id": "POSITIVE_BERGER_RECEIVER_BV_COCYCLE_INTEGRATION_GRADING_OBSTRUCTION_V1_TIER_RECEIPT",
+  "schema": "science-forge-tier-receipt-v1",
+  "tests": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_positive_berger_receiver_bv_cocycle_integration_obstruction.py closed_universe_observers/verify_positive_berger_receiver_bv_cocycle_integration_obstruction.py closed_universe_observers/atlas/generate_positive_berger_receiver_bv_cocycle_integration_obstruction_atlas.py", "elapsed_seconds": "0.03", "status": "PASS", "tier": 0},
+    {"command": "python3 -m closed_universe_observers.generate_positive_berger_receiver_bv_cocycle_integration_obstruction --write", "elapsed_seconds": "0.04", "status": "PASS", "tier": 1},
+    {"command": "python3 -m closed_universe_observers.atlas.generate_positive_berger_receiver_bv_cocycle_integration_obstruction_atlas --write", "elapsed_seconds": "0.03", "status": "PASS", "tier": 1},
+    {"command": "python3 -m closed_universe_observers.verify_positive_berger_receiver_bv_cocycle_integration_obstruction", "elapsed_seconds": "0.11", "status": "PASS", "tier": 1},
+    {"command": "pytest -q closed_universe_observers/tests/test_positive_berger_receiver_bv_cocycle_integration_obstruction.py closed_universe_observers/tests/test_positive_berger_receiver_bv_cocycle_integration_obstruction_atlas.py", "elapsed_seconds": "0.47", "result": "3 passed in 0.15s", "status": "PASS", "tier": 1}
+  ]
+}

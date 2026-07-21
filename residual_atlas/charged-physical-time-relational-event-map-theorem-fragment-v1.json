@@ -1,0 +1,93 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This exact theorem certifies a reusable distributional relational-event chain map for a physical charged action-angle clock, its local BV closure and representative independence, charged global covariance, Poisson brackets, primitive clock-basis composition, stability distinctions, phase-origin-independent ratio hypotheses and fixed-charge complementarity. Nontriviality is conditional on a receiver cohomology class and pairing descent. The counterflow fixture instantiates only the algebra. Its completed all-Hodge audit retains the homogeneous action-angle block but returns NO_CERTIFIED_MAP for a physical receiver because the same-background Berger harmonic inclusions, projections, physical quotients and descended pairings are not exported. No detector, redshift value, particle, phenomenology or quantum claim follows.",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "OPEN",
+        "observational": "CERTIFIED",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/CHARGED_PHYSICAL_TIME_RELATIONAL_EVENT_MAP_THEOREM_V1.json",
+          "result_id": "CHARGED_PHYSICAL_TIME_RELATIONAL_EVENT_MAP_THEOREM_V1",
+          "sha256": "b21e187ae6e488788d3e3f3e8ae78ebacb3f9f642a517b756999e2a57ec2e679"
+        }
+      ],
+      "id": "observer.general.charged_physical_time_relational_event_map",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Exact action-angle flow and primitive clock-basis composition are certified; no background-specific wave dispersion is inferred.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The theorem assumes and uses the nondegenerate clock Darboux pair; receiver nontriviality is conditional on pairing descent.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Lifted, orbital and modulated stability are separated without asserting a model-specific resonance theorem.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Requires a theory-specific receiver and correction class.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "Requires a theory-specific causal receiver class and Green image.",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The theorem permits modulated/secular clock descriptions but supplies no model source.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "No theory-specific second-order source is part of the general theorem.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "any oriented spacetime satisfying the declared local BV and compact-support hypotheses",
+        "boundaries": "closed or compact receiver support; regular clock level",
+        "carrier": "conditional compact receiver bicomplex class [A] and action-angle pair (psi,Q)",
+        "charge_sector": "unrestricted physical Q; R and D charged, K=D-H'(Q)R separate",
+        "degree": 0,
+        "ell": "all receiver modes satisfying the contract",
+        "k": "all/NOT_APPLICABLE according to background",
+        "m": "all",
+        "omega": "H'(Q) on a fixed-sign monotonicity interval",
+        "parity": "NOT_APPLICABLE",
+        "theory": "Hamiltonian/BV theories with one surviving physical action-angle clock pair"
+      }
+    }
+  ],
+  "generated_by": "closed_universe_observers/atlas/generate_charged_physical_time_event_map_theorem_atlas.py",
+  "generated_by_sha256": "ba95b44036231eb053c5c3ca64f19c7cdfdc820fc1f7c2389588f012da10c76b",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "observer",
+  "verification_commands": [
+    "python3 closed_universe_observers/generate_charged_physical_time_event_map_theorem.py --check",
+    "python3 closed_universe_observers/verify_charged_physical_time_event_map_theorem.py",
+    "python3 -m pytest -q closed_universe_observers/tests/test_charged_physical_time_event_map_theorem.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/charged-physical-time-relational-event-map-theorem-fragment-v1.json"
+  ]
+}

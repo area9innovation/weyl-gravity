@@ -1,0 +1,18 @@
+{
+  "claim_result_id": "POSITIVE_BERGER_REGRADED_RECEIVER_PHYSICAL_DESCENT_FREQUENCY_RATIO_NOT_ACTIVATED_V1",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "higher_tiers": {
+    "tier_2": {"criterion": "All five inputs are unchanged content-addressed terminal dispositions.", "status": "NOT_RUN"},
+    "tier_3": {"criterion": "This final architecture-specific nonactivation is not a freeze, tag, release or paper theorem.", "status": "NOT_RUN"}
+  },
+  "independence": {"producer": "serializes the ordered receiver and Classical admissibility ladder", "verifier": "replays the first map and three independent Classical dispositions from source certificates", "status": "METHOD_DISTINCT"},
+  "result_id": "POSITIVE_BERGER_REGRADED_RECEIVER_PHYSICAL_DESCENT_FREQUENCY_RATIO_NOT_ACTIVATED_V1_TIER_RECEIPT",
+  "schema": "science-forge-tier-receipt-v1",
+  "tests": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_positive_berger_regraded_physical_descent_frequency_ratio_nonactivation.py closed_universe_observers/verify_positive_berger_regraded_physical_descent_frequency_ratio_nonactivation.py closed_universe_observers/atlas/generate_positive_berger_regraded_physical_descent_frequency_ratio_nonactivation_atlas.py", "elapsed_seconds": "0.03", "status": "PASS", "tier": 0},
+    {"command": "python3 -m closed_universe_observers.generate_positive_berger_regraded_physical_descent_frequency_ratio_nonactivation --write", "elapsed_seconds": "0.04", "status": "PASS", "tier": 1},
+    {"command": "python3 -m closed_universe_observers.atlas.generate_positive_berger_regraded_physical_descent_frequency_ratio_nonactivation_atlas --write", "elapsed_seconds": "0.03", "status": "PASS", "tier": 1},
+    {"command": "python3 -m closed_universe_observers.verify_positive_berger_regraded_physical_descent_frequency_ratio_nonactivation", "elapsed_seconds": "0.08", "status": "PASS", "tier": 1},
+    {"command": "pytest -q closed_universe_observers/tests/test_positive_berger_regraded_physical_descent_frequency_ratio_nonactivation.py closed_universe_observers/tests/test_positive_berger_regraded_physical_descent_frequency_ratio_nonactivation_atlas.py", "elapsed_seconds": "0.39", "result": "3 passed in 0.13s", "status": "PASS", "tier": 1}
+  ]
+}

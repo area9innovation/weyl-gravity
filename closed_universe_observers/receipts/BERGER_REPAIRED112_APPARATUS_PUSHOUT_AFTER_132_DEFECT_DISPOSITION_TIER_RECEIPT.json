@@ -1,0 +1,47 @@
+{
+  "result_id": "BERGER_REPAIRED112_APPARATUS_PUSHOUT_AFTER_132_DEFECT_DISPOSITION",
+  "science_forge_work_item": "sf:program/work/observer-repaired112-apparatus-pushout-after-132-defect-disposition",
+  "recorded_at": "2026-07-21T03:46:00Z",
+  "result_boundary": "The complete declared replacement-112 repair family contains no nilpotent source object, so the fresh action-derived apparatus pushout is NONDEFINED before identification relations or a combined row count are generated. The certified 56-row material parent remains separate. A new action-Hessian coefficient-image direction with the serialized target, correction, background, cyclic, real, K_Berger and support signatures is necessary but is not constructed or proved viable here. Physical reduction and all downstream observer claims remain fail-closed.",
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_repaired112_apparatus_pushout_after_132_defect_disposition.py", "sha256": "066658a99d3d0b64bd5e9c8eec276d6351d45501075786b3bc76dbb5d3ec6ab6"},
+    {"path": "closed_universe_observers/verify_berger_repaired112_apparatus_pushout_after_132_defect_disposition.py", "sha256": "489fdcabb063bccf7105f4b85bf99cd089fd5f5bbeaaca97de9f6d308b8425db"},
+    {"path": "closed_universe_observers/certificates/BERGER_REPAIRED112_APPARATUS_PUSHOUT_AFTER_132_DEFECT_DISPOSITION.json", "sha256": "d106b243682a986e0adcb5023a0f19b2fa05663e6c29442b92da9beebe9ed5fc"},
+    {"path": "closed_universe_observers/certificates/BERGER_REPAIRED112_APPARATUS_PUSHOUT_AFTER_132_DEFECT_DISPOSITION_PAYLOAD.json", "sha256": "69031ac760ca0be161bd9aa7ed2a45931ce78b4c7b2deba3d0b4354d3b7b094c"},
+    {"path": "closed_universe_observers/schema/berger-repaired112-apparatus-pushout-after-132-defect-disposition-v1.schema.json", "sha256": "5adb592ffb74d5db411e6e7067dc16d39ea03f1ee0b069623fb8f85f2b776969"},
+    {"path": "closed_universe_observers/tests/test_berger_repaired112_apparatus_pushout_after_132_defect_disposition.py", "sha256": "436a31a5daa0755d1f6c32bea36959e8ff7974414239de37683a2f87de3478c1"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "af4a084f10488c3b2c4f222758a51012067714f5db2e837ef9b9bfc1055bc559"},
+    {"path": "closed_universe_observers/certificates/BERGER_REPLACEMENT112_132_DEFECT_MINIMAL_NILPOTENT_REPAIR_NO_GO.json", "sha256": "7b6016400609c701c62e81672e3e69d871fec39fff8e6c8e1f3ecae745bcfcf7"},
+    {"path": "closed_universe_observers/certificates/BERGER_MATERIAL_PARENT56_EXECUTABLE_UNARY_AFTER_READOUT_INTERFACE.json", "sha256": "f6d80ae2355dc8e1274942271bde71603851afbe08a5b5c942161cc5ce830c6e"}
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      "python3 -m py_compile closed_universe_observers/generate_berger_repaired112_apparatus_pushout_after_132_defect_disposition.py closed_universe_observers/verify_berger_repaired112_apparatus_pushout_after_132_defect_disposition.py closed_universe_observers/tests/test_berger_repaired112_apparatus_pushout_after_132_defect_disposition.py",
+      "python3 -m json.tool <new certificate, payload, schema and receipt>",
+      "git diff --check -- <explicit observer package paths>"
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m closed_universe_observers.generate_berger_repaired112_apparatus_pushout_after_132_defect_disposition --write", "elapsed_seconds": 3.01, "result": "PASS"},
+      {"command": "python3 -m closed_universe_observers.verify_berger_repaired112_apparatus_pushout_after_132_defect_disposition", "elapsed_seconds": 3.02, "result": "PASS"},
+      {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_repaired112_apparatus_pushout_after_132_defect_disposition.py", "elapsed_seconds": 1.04, "result": "7 passed"},
+      {"command": "PYTHONPATH=. python3 closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "elapsed_seconds": 3.96, "result": "PASS including independent atlas verifier"},
+      {"command": "python3 -m pytest -q closed_universe_observers/tests/test_observer_atlas_fragment.py", "elapsed_seconds": 48.22, "result": "64 passed"}
+    ]
+  },
+  "tier_2": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m closed_universe_observers.verify_berger_replacement112_132_defect_minimal_nilpotent_repair", "elapsed_seconds": 3.02, "result": "PASS in chained replay"},
+      {"command": "python3 -m closed_universe_observers.verify_berger_material_parent56_executable_unary_after_readout_interface", "elapsed_seconds": 3.02, "result": "PASS in chained replay"}
+    ],
+    "criterion": "Both direct terminal dependencies were independently replayed; their content-addressed artifacts and all shared operators are unchanged."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "criterion": "This is a scoped fail-closed consumer nonactivation, not a freeze, release, theorem promotion or shared-core algebra change."
+  }
+}

@@ -4,7 +4,39 @@
   "kind": "event",
   "schema": "event-v0",
   "title": "work report",
-  "source": {"path": "tools/science-forge/program/events/observer-positive-berger-local-receiver-action-preflight-REPORT-f70de5f9f488db21.json", "span": null},
-  "body": {"event_kind": "WORK_REPORTED", "actor": "observer-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T10:24:46+02:00", "seq": 1, "payload": {"target": "sf:program/work/observer-positive-berger-local-receiver-action-preflight", "agent": "observer-1", "record_type": "checkpoint", "base_commit": "d2feab4d528aa523369ec3eca569a1a60907420f", "current_commit": "19672a068b3f7f8dee0bd5eedf7817d6eea3b941", "changed_paths": "closed_universe_observers/atlas/generate_positive_berger_local_receiver_action_preflight_atlas.py;closed_universe_observers/certificates/POSITIVE_BERGER_LOCAL_RECEIVER_ACTION_PREFLIGHT_V1.json;closed_universe_observers/certificates/POSITIVE_BERGER_LOCAL_RECEIVER_ACTION_PREFLIGHT_V1_PAYLOAD.json;closed_universe_observers/generate_positive_berger_local_receiver_action_preflight.py;closed_universe_observers/generated/POSITIVE_BERGER_LOCAL_RECEIVER_BV_INTEGRATION_CONTRACT_V1.json;closed_universe_observers/receipts/POSITIVE_BERGER_LOCAL_RECEIVER_ACTION_PREFLIGHT_V1_TIER_RECEIPT.json;closed_universe_observers/reports/positive-berger-local-receiver-action-preflight-v1.md;closed_universe_observers/schema/positive-berger-local-receiver-action-preflight-v1.schema.json;closed_universe_observers/tests/test_positive_berger_local_receiver_action_preflight.py;closed_universe_observers/tests/test_positive_berger_local_receiver_action_preflight_atlas.py;closed_universe_observers/verify_positive_berger_local_receiver_action_preflight.py;notes/closed-universe-observer-team-brief.md;reports/observer-positive-berger-local-receiver-action-preflight-closeout-2026-07-21.md;residual_atlas/positive-berger-local-receiver-action-preflight-fragment-v1.json", "disposition": "DONE: certified standalone action-derived positive-Berger D0 receiver BV cocycle and fail-closed integration contract", "tests": "Tier 0 PASS: py_compile 0.05s, JSON parse and diff checks PASS. Tier 1 PASS: producer 0.06s, atlas generator 0.05s, independent exact verifier 0.65s, 3 focused tests PASS in 0.61s (1.26s wall). Post-rebase verifier and tests PASS. Tier 2 NOT_RUN: no shared input or existing certificate chain changed. Tier 3 NOT_RUN: not a freeze, tag, release or paper theorem promotion.", "receipts": "closed_universe_observers/receipts/POSITIVE_BERGER_LOCAL_RECEIVER_ACTION_PREFLIGHT_V1_TIER_RECEIPT.json;reports/observer-positive-berger-local-receiver-action-preflight-closeout-2026-07-21.md", "deviations": "none", "dependency_needs": "", "next_recommendation": "Consume the content-addressed 20-row contract in the separately scheduled same-background repaired-parent integration gate; require chain, pairing, support, signal-port and D/R/K intertwiners before quotient or redshift."}, "native": {"authored_by": "sfc work-report", "policy": "append-only (SPEC 4.5); one content-addressed report file per checkpoint; never rewritten."}},
-  "edges": [{"rel": "REPORTS", "to": "sf:program/work/observer-positive-berger-local-receiver-action-preflight"}]
+  "source": {
+    "path": "tools/science-forge/program/events/observer-positive-berger-local-receiver-action-preflight-REPORT-f70de5f9f488db21.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_REPORTED",
+    "actor": "observer-1",
+    "base_revision": "science-forge-ir-v0",
+    "when": "2026-07-21T10:24:46+02:00",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/observer-positive-berger-local-receiver-action-preflight",
+      "agent": "observer-1",
+      "record_type": "checkpoint",
+      "base_commit": "d2feab4d528aa523369ec3eca569a1a60907420f",
+      "current_commit": "19672a068b3f7f8dee0bd5eedf7817d6eea3b941",
+      "changed_paths": "closed_universe_observers/atlas/generate_positive_berger_local_receiver_action_preflight_atlas.py;closed_universe_observers/certificates/POSITIVE_BERGER_LOCAL_RECEIVER_ACTION_PREFLIGHT_V1.json;closed_universe_observers/certificates/POSITIVE_BERGER_LOCAL_RECEIVER_ACTION_PREFLIGHT_V1_PAYLOAD.json;closed_universe_observers/generate_positive_berger_local_receiver_action_preflight.py;closed_universe_observers/generated/POSITIVE_BERGER_LOCAL_RECEIVER_BV_INTEGRATION_CONTRACT_V1.json;closed_universe_observers/receipts/POSITIVE_BERGER_LOCAL_RECEIVER_ACTION_PREFLIGHT_V1_TIER_RECEIPT.json;closed_universe_observers/reports/positive-berger-local-receiver-action-preflight-v1.md;closed_universe_observers/schema/positive-berger-local-receiver-action-preflight-v1.schema.json;closed_universe_observers/tests/test_positive_berger_local_receiver_action_preflight.py;closed_universe_observers/tests/test_positive_berger_local_receiver_action_preflight_atlas.py;closed_universe_observers/verify_positive_berger_local_receiver_action_preflight.py;notes/closed-universe-observer-team-brief.md;reports/observer-positive-berger-local-receiver-action-preflight-closeout-2026-07-21.md;residual_atlas/positive-berger-local-receiver-action-preflight-fragment-v1.json",
+      "disposition": "DONE: certified standalone action-derived positive-Berger D0 receiver BV cocycle and fail-closed integration contract",
+      "tests": "Tier 0 PASS: py_compile 0.05s, JSON parse and diff checks PASS. Tier 1 PASS: producer 0.06s, atlas generator 0.05s, independent exact verifier 0.65s, 3 focused tests PASS in 0.61s (1.26s wall). Post-rebase verifier and tests PASS. Tier 2 NOT_RUN: no shared input or existing certificate chain changed. Tier 3 NOT_RUN: not a freeze, tag, release or paper theorem promotion.",
+      "receipts": "closed_universe_observers/receipts/POSITIVE_BERGER_LOCAL_RECEIVER_ACTION_PREFLIGHT_V1_TIER_RECEIPT.json;reports/observer-positive-berger-local-receiver-action-preflight-closeout-2026-07-21.md",
+      "deviations": "none",
+      "dependency_needs": "",
+      "next_recommendation": "Consume the content-addressed 20-row contract in the separately scheduled same-background repaired-parent integration gate; require chain, pairing, support, signal-port and D/R/K intertwiners before quotient or redshift."
+    },
+    "native": {
+      "authored_by": "sfc work-report",
+      "policy": "append-only (SPEC 4.5); one content-addressed report file per checkpoint; never rewritten."
+    }
+  },
+  "edges": [
+    {
+      "rel": "REPORTS",
+      "to": "sf:program/work/observer-positive-berger-local-receiver-action-preflight"
+    }
+  ]
 }

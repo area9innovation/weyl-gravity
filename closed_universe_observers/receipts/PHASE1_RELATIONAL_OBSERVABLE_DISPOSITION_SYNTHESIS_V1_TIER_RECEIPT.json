@@ -1,0 +1,67 @@
+{
+  "claim_result_id": "PHASE1_RELATIONAL_OBSERVABLE_DISPOSITION_SYNTHESIS_V1",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "higher_tiers": {
+    "tier_2": {
+      "criterion": "All eight mathematical inputs are unchanged content-addressed certificates; this synthesis changes no shared operator, schema consumed outside the new result, or upstream certificate chain.",
+      "status": "NOT_RUN"
+    },
+    "tier_3": {
+      "criterion": "This is the observer-stream disposition input to a later programme viability freeze, not a classical/quantum snapshot freeze, tag or release.",
+      "status": "NOT_RUN"
+    }
+  },
+  "independence": {
+    "producer": "serializes the five-layer carrier-explicit claim crosswalk from eight hashed inputs",
+    "verifier": "validates hashes and schema, reconstructs lifecycle ordering directly, and rejects independent stale-redshift and cocycle-equals-observable mutations",
+    "status": "METHOD_DISTINCT"
+  },
+  "pdf_builds": {
+    "00-ghosts-geometry-reality": {
+      "passes": 2,
+      "sha256": "2662e09856e18f5fbb93bf711ebcd694345a9b327f42ec76253a039cbb82d303",
+      "warnings": 0
+    },
+    "09-relational-clocks-berger-d-cartan": {
+      "passes": 2,
+      "sha256": "8c6f56f4581f1c75cec5e43e374e423dc31886a06821cacde910276044bd11b9",
+      "warnings": 0
+    }
+  },
+  "result_id": "PHASE1_RELATIONAL_OBSERVABLE_DISPOSITION_SYNTHESIS_V1_TIER_RECEIPT",
+  "schema": "science-forge-tier-receipt-v1",
+  "tests": [
+    {
+      "command": "python3 -m py_compile closed_universe_observers/generate_phase1_relational_observable_disposition_synthesis.py closed_universe_observers/verify_phase1_relational_observable_disposition_synthesis.py closed_universe_observers/atlas/generate_phase1_relational_observable_disposition_synthesis_atlas.py",
+      "elapsed_seconds": "0.04",
+      "status": "PASS",
+      "tier": 0
+    },
+    {
+      "command": "python3 -m closed_universe_observers.generate_phase1_relational_observable_disposition_synthesis --write && python3 -m closed_universe_observers.atlas.generate_phase1_relational_observable_disposition_synthesis_atlas --write",
+      "elapsed_seconds": "0.08",
+      "status": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_phase1_relational_observable_disposition_synthesis",
+      "elapsed_seconds": "0.08",
+      "status": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "pytest -q closed_universe_observers/tests/test_phase1_relational_observable_disposition_synthesis.py closed_universe_observers/tests/test_phase1_relational_observable_disposition_synthesis_atlas.py",
+      "elapsed_seconds": "0.39",
+      "result": "5 passed in 0.13s",
+      "status": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "for tex in 09-relational-clocks-berger-d-cartan.tex 00-ghosts-geometry-reality.tex; do for pass in 7 8; do pdflatex -interaction=nonstopmode -halt-on-error -output-directory=/tmp/tmp.8pTvXLyVUo paper/$tex; done; done; reject any !, LaTeX/Package warning, undefined control sequence, overfull or underfull diagnostic",
+      "elapsed_seconds": "3.70",
+      "result": "two consecutive warning-free builds for each changed TeX source",
+      "status": "PASS",
+      "tier": 1
+    }
+  ]
+}

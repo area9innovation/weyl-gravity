@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "atlas_status": {"const": "CERTIFIED"},
+    "claim_boundary": {"type": "string"},
+    "claim_status": {"const": "CERTIFIED_STANDALONE_ACTION_DERIVED_LOCAL_RECEIVER_BV_COCYCLE"},
+    "dependency_refs": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "path": {"type": "string"},
+          "result_id": {"type": ["string", "null"]},
+          "sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}
+        },
+        "required": ["path", "result_id", "sha256"],
+        "type": "object"
+      },
+      "minProperties": 7,
+      "type": "object"
+    },
+    "dependency_tags": {
+      "contains": {"const": "LOCAL-ALGEBRAIC"},
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+      "type": "array",
+      "uniqueItems": true
+    },
+    "downstream_disposition": {"type": "object"},
+    "gate_results": {"type": "object"},
+    "integration_contract_ref": {"$ref": "#/$defs/artifactRef"},
+    "next_gate": {"type": "string"},
+    "payload_ref": {"$ref": "#/$defs/artifactRef"},
+    "provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "generator_command": {"type": "string"},
+        "independent_verifier_command": {"type": "string"},
+        "source_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}
+      },
+      "required": ["generator_command", "independent_verifier_command", "source_sha256"],
+      "type": "object"
+    },
+    "receiver_result": {"type": "object"},
+    "result_id": {"const": "POSITIVE_BERGER_LOCAL_RECEIVER_ACTION_PREFLIGHT_V1"},
+    "schema": {"const": "positive-berger-local-receiver-action-preflight-v1"},
+    "setting_id": {"type": "string"}
+  },
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "atlas_status",
+    "dependency_tags", "dependency_refs", "payload_ref", "integration_contract_ref",
+    "gate_results", "receiver_result", "downstream_disposition", "next_gate",
+    "claim_boundary", "provenance"
+  ],
+  "type": "object",
+  "$defs": {
+    "artifactRef": {
+      "additionalProperties": false,
+      "properties": {
+        "contract_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+        "path": {"type": "string"},
+        "result_id": {"type": "string"},
+        "sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}
+      },
+      "required": ["path", "result_id", "sha256"],
+      "type": "object"
+    }
+  }
+}

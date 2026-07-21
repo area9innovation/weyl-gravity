@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "payload_ref", "claim_crosswalk", "phase1_freeze", "result_to_paper_dispositions", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "phase1-relational-observable-disposition-synthesis-v1"},
+    "result_id": {"const": "PHASE1_RELATIONAL_OBSERVABLE_DISPOSITION_SYNTHESIS_V1"},
+    "claim_status": {"const": "PHASE1_EXACT_OBSTRUCTION_DISPOSITION_CERTIFIED"},
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"type": "array", "uniqueItems": true, "contains": {"const": "LOCAL-ALGEBRAIC"}, "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}},
+    "dependency_refs": {"type": "object", "minProperties": 8, "additionalProperties": {"$ref": "#/$defs/ref"}},
+    "payload_ref": {"$ref": "#/$defs/ref"},
+    "claim_crosswalk": {"type": "array", "minItems": 5, "items": {"type": "object", "required": ["layer", "status"], "properties": {"layer": {"type": "string"}, "status": {"enum": ["CERTIFIED", "OBSTRUCTED", "OPEN", "NOT_APPLICABLE", "NO_CERTIFIED_MAP"]}}, "additionalProperties": false}},
+    "phase1_freeze": {"type": "object"},
+    "result_to_paper_dispositions": {"type": "object"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["generator_command", "independent_verifier_command", "source_sha256"], "properties": {"generator_command": {"type": "string"}, "independent_verifier_command": {"type": "string"}, "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  },
+  "$defs": {
+    "ref": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string"}, "result_id": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  }
+}

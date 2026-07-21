@@ -2270,6 +2270,100 @@ Individual preparation membership, balanced combinations, nonlinear rank,
 gauge survival on \(\mathcal Z_2\), persistent memory, recoil and redshift
 remain `NO_CERTIFIED_MAP`.
 
+## Active bridge: receiver20/q70 grading obstruction
+
+The standalone receiver and repaired q70 inputs each pass their own action,
+degree-one unary, cyclic-pairing and causal-support gates at exact hashes.
+Their action pushout nevertheless fails before any mixed Hessian can be
+typed.  Receiver20 assigns degree \(-1\) to its ten odd cotangents and has a
+homogeneous degree-\(-1\) pairing.  Repaired q70 uses
+`compact_degree=-ghost_number`: it has only six degree-\(-1\) rows, and all
+70 canonical pairing entries have total degree \(+1\).  The canonical
+receiver pair \((m,m^+)\) has degrees \((0,-1)\), while the q70 pair
+\((B_0,A^+_0)\) has degrees \((0,1)\).
+
+Consequently no degree-zero pairing-preserving inclusion or homogeneous
+graded odd-symplectic pushout exists for the pinned contracts.  Direct sum
+would make the pairing inhomogeneous; flipping the receiver grading changes
+its carrier, unary, pairing, cocycle and symmetry hashes and therefore needs
+a new action-derived certificate.
+
+The fail-closed atlas row is
+`positive-berger-receiver-bv-cocycle-integration-grading-obstruction-fragment-v1`.
+Its activation gate is a reissued receiver action sector in the q70 compact
+degree and degree-\(+1\) pairing convention, including a freshly derived
+local descent.  Mixed rows, receiver inclusion, quotient input, period,
+denominator and redshift remain `NO_CERTIFIED_MAP` or not reached.
+
+## Active bridge: physical receiver and frequency ratio not activated
+
+The terminal receiver20/q70 integration obstruction is now consumed by the
+charged-time admissibility ladder.  Although the standalone D0 action and
+local descent remain certified, the first required ambient chain-and-pairing
+intertwiner is obstructed and no residual-quotient input map exists.  The
+local class is therefore not promoted to a physical receiver.
+
+Residual cohomology, descended nonradical pairing and period, same-carrier
+retarded support, denominator margin, physical \(D/R/K\) actions and an
+action-derived emitter phase are not reached.  The operational
+frequency-ratio partial function has empty domain and no value; in
+particular, no coordinate-frequency ratio is called redshift.
+
+The fail-closed atlas row is
+`positive-berger-receiver-physical-descent-frequency-ratio-not-activated-fragment-v1`.
+Its activation gate is unchanged: reissue receiver20 in the q70 compact
+degree convention, rederive the local descent from that action, and pass the
+full mixed-action pushout before retrying physical descent.
+
+## Active bridge: regraded receiver chain/cochain obstruction
+
+The receiver action has now been rederived, rather than relabelled, in the
+q70 compact convention.  Its ten physical rows have compact degree zero,
+its ten canonical odd cotangents have degree one, and the action Hessian
+defines a nilpotent cyclic degree-one chain with a homogeneous rank-20
+degree-one pairing.  Reality, first-order causal support and the separate
+\(D/R/K\) actions pass.
+
+The same master action also exposes the decisive distinction: the genuine
+local BV derivation has ghost number one and therefore compact degree
+\(-1\).  It carries the rederived descent
+\[
+ s(m^+)+d\bigl(\lambda\rho_0(R)d^3R\bigr)=0.
+\]
+Thus the local receiver is a cochain for \(s\), while repaired q70 is the
+transposed degree-one chain.  A degree-zero map cannot satisfy
+\(q_{70}i=is\): the two sides shift degree by \(+1\) and \(-1\), so
+homogeneity forces both to vanish, contradicting injectivity on the nonzero
+memory-shift descent.
+
+The fail-closed atlas row is
+`positive-berger-receiver-regraded-action-cochain-intertwiner-obstruction-fragment-v1`.
+The obstruction is coefficient-independent over the complete declared
+first-order receiver action ansatz without new fields.  Its activation gate
+is an explicit action-derived degree-reversing chain/cochain suspension
+bridge.  Mixed rows, physical descent and redshift remain not reached.
+
+## Active bridge: final regraded physical-descent nonactivation
+
+The charged-time ladder now consumes the terminal regraded integration
+result.  The fresh action chain and local BV cochain remain certified, but
+their degree-zero inclusion is obstructed and no quotient input exists.
+Therefore the local descent is not a physical receiver, and the operational
+frequency-ratio partial function has empty domain.
+
+The current Classical dispositions are recorded separately: fixed
+\(Q_{\rm rel}\) removes the relative clock and its phase pairing, the
+unrestricted charged clock has a size-two secular zero Jordan block, and the
+first generic \(j=1/2\) physical block has complex-frequency modes.  These
+secondary failures do not replace or weaken the earlier receiver inclusion
+obstruction.
+
+The fail-closed atlas row is
+`positive-berger-regraded-receiver-physical-descent-frequency-ratio-not-activated-fragment-v1`.
+No Paper 9 claim is activated.  A certified degree-reversing chain/cochain
+suspension bridge remains the first gate before any new integration or
+physical-descent attempt.
+
 ## Active bridge: combined-q1 linear-K obstruction
 
 The queue successor
@@ -2615,3 +2709,195 @@ equations vanish.  The canonical first witness is
 Its activation gate is reconciliation of that mixed Weyl-Noether row before
 any executable-112 export.  The 160-row consumer, physical reduction,
 second-order detector restriction, memory and redshift remain inactive.
+
+## Active bridge: complete local repair ansatz no-go
+
+The 132-defect successor has now classified the complete declared finite
+local action-Hessian correction sector.  The \(\epsilon_R^2\) degree filter
+keeps \(\Gamma_R\) and \(\Gamma_R^\sharp\) fixed as healthy degree-zero
+gauge/control maps and generates four repair amplitudes:
+\(K_{RR},K_{Rh},K_{hR},\Delta K_{hh}^{\rm rod}\).  Equality of mixed
+partials, the signed pairing adjoints and derivation from the single scalar
+\(S_{R,H}-S_{R,I_6}\) give a rank-three exact constraint matrix, leaving one
+common action orbit.  Its real defect and the exact
+\(A^T H+H A\) \(K_{\rm Berger}\) defect both vanish.
+
+That orbit cannot cancel the inherited square.  Exact reduction of all 4,542
+Berger-background/sphere coefficient equations gives coefficient rank one
+but augmented rank two.  Canonically, the orbit creates a nonzero
+\(h^\star_{00}\leftarrow c_1\) coefficient where the target is zero, while
+its coefficient on the inherited \(j x_0^2\) component of
+\(h^\star_{00}\leftarrow\sigma\) is exactly zero.  The latter right-hand
+side is \(-14090097/71402500\).  Independently, the nonzero first-variation
+anchor \(-125/81\) forces the permitted background-preserving correction
+space to dimension zero.
+
+The active bridge is therefore fail-closed at
+`observer.berger.interaction.replacement112_132_defect_minimal_nilpotent_repair_no_go`
+(`symplectic=OBSTRUCTED`, `observational=OBSTRUCTED`).  Its activation gate is
+a genuinely changed action or background architecture under a new certified
+work item; no row deletion, sampled-momentum fit or direct compact-product
+identification is admissible.  The material-parent-56 unary and its rank-two
+coordinate detector remain separately certified, but the 160-row pushout is
+still nondefined.  Physical reduction, \(\mathcal O_{\rm detector}|_{\mathcal
+Z_2}\), memory, redshift, recoil, \(q_2,q_3\) and quantum promotion remain
+`NO_CERTIFIED_MAP` or not reached.
+
+## Active bridge: fresh post-repair apparatus pushout disposition
+
+The complete repair no-go has now been consumed together with the certified
+material-parent-56 interface.  The negative branch is decisive before any
+pushout assembly: the declared replacement family contains no nilpotent
+112-row source object, so no action-role identification relation, combined
+row count, unary, pairing, embeddings, quotient, real/K actions or detector
+map can be generated.  In particular, the old value 160 is not inherited as
+an assumed carrier size.  Physical reduction is not mathematically defined.
+
+The exact nonactivation separator retains all 4,542 repair equations.  Its
+coefficient rank is one, augmented rank is two and the canonical two-equation
+minor has determinant
+\(-1328324915314341/20393268025000000\); background preservation leaves
+correction dimension zero.  The standalone 56-row material complex, its
+rank-56 pairing, four relative readout blocks and rank-two coordinate detector
+remain certified but separate.
+
+The fail-closed atlas row is
+`observer.berger.interaction.repaired112_apparatus_pushout_after_132_defect_disposition`.
+Its activation gate is a complete exact catalogue of genuinely new
+one-vertex or one-field/BV-dual-pair action extensions.  Any candidate must
+add a coefficient-image direction that hits the target-only
+`h_hat_star_00 <- sigma` \(j x_0^2\) coordinate, cancels the correction-only
+`h_hat_star_00 <- c_spatial_1` direction, preserves the pinned background and
+passes cyclicity, reality, \(K_{\rm Berger}\), support and principal-symbol
+checks.  This disposition certifies that signature; it does not certify a
+viable extension.
+
+## Active bridge: repaired112 physical reduction not activated
+
+The fresh pushout disposition is terminally nondefined, so the physical
+reduction package stops before any kernel or image calculation.  An
+independent replay reconstructs the same nonzero canonical augmented minor
+from its two serialized equations.  Consequently generic-smooth,
+compact-support and spatial-zero-mode chain groups, \(\pi_{\rm cl}\),
+inclusion, homotopy, descended odd pairing, real structure and
+\(K_{\rm Berger}\) action are all `NO_CERTIFIED_MAP`.
+
+No raw rod, polarization, emitter, detector-record or persistent-memory row
+is called a physical class.  In particular, the separately certified
+material coordinate selection still has rank two, but the combined physical
+detector map has neither a defined rank nor a kernel.  The pre-repair 160-row
+cohomology is a different terminal carrier and is not imported.
+
+The fail-closed atlas row is
+`observer.berger.interaction.repaired112_physical_reduction_and_detector_rank_not_activated`.
+Its activation gate is a genuinely nilpotent same-background combined unary,
+serialized and independently verified.  Until then no Berger \(q_2/\mathcal
+Z_2\) receiver, memory, redshift, recoil, positivity, particle or quantum
+claim is activated.
+
+## Active bridge: legacy Berger physical-receiver replay
+
+The seven legacy emitter, detector, retarded-transfer and quartic-redshift
+certificates have now been populated against the charged-time physical-receiver
+interface without identifying their three `setting_id` carriers by name.  Exact
+independent replay retains rank two for the dynamical-emitter, localized-current
+and homogeneous-Maxwell source-to-probe matrices.  The identity matrix in the
+localized detector preflight remains only rank-two probe independence, not a
+response matrix.
+
+No legacy row exports an action-derived local detector BV class and cocycle,
+receiver representative quotient, descended nonradical pairing and period,
+sampled denominator margin, and separately typed D, R and K actions on one
+carrier.  The advanced detector covector remains an adjoint emitter-preparation
+map, and the quartic common-action redshift domain remains empty.  Consequently
+the active fail-closed atlas row is
+`observer.berger.legacy_receiver_admissibility_replay` with
+`observational=NO_CERTIFIED_MAP`; no physical receiver or redshift is promoted.
+The activation gate is an exact same-background action-derived receiver unary
+export carrying the BV class, quotient, pairing, retarded support and D/R/K
+actions required by
+`CHARGED_TIME_PHYSICAL_RECEIVER_CROSSWALK_INTERFACE_V1`.
+
+## Active bridge: operational frequency-ratio nonactivation
+
+The terminal legacy census leaves exactly three maximal nonempty linear
+source-to-probe chains: the dynamical massive-two-form emitter chain, the
+localized external-Maxwell-current chain and the homogeneous Maxwell chain.
+An independent replay retains rank two and retarded dependence for each only
+before receiver quotient descent.  Their common first missing datum is an
+action-derived local detector BV cocycle embedded in an executable
+positive-Berger receiver unary complex; the localized-current branch also
+retains an external, nondynamical emitter.
+
+Consequently the charged-time event, finite-resolution sampling and comparison
+maps cannot be instantiated.  The homogeneous coordinate frequencies are both
+`2*sqrt(10)/3`, so their exact coordinate ratio is one, but this is not an
+operational redshift.  The fail-closed atlas row is
+`observer.berger.legacy_receiver_operational_frequency_ratio_nonactivation`
+with `observational=NO_CERTIFIED_MAP`.  Exactly one minimal producer request,
+`sf:forge-request/positive-berger-action-derived-local-receiver-bv-cocycle`,
+has been issued.  Quotient, nonradical pairing, period, denominator and ratio
+calculations remain separate gates after that unary export lands.
+
+## Active bridge: standalone positive-Berger local receiver cocycle
+
+The requested common unary datum now exists as a standalone one-detector
+sector.  Restricting the certified dynamical apparatus action to the D0
+rod, polarization and memory fields gives ten real even rows and their ten
+odd BV cotangents.  The rigid phase action is not gauge, so the exhaustive
+gauge-generator and ghost ledgers are empty.  A transported background with
+\(\Theta=3t/4\), zero signal and zero memory multiplier solves every local
+apparatus equation without an external current.  The action-derived
+Koszul--Tate differential is nilpotent and cyclic for the exact rank-20 odd
+pairing.
+
+On compactly supported BV sections in the exact D0 worldtube, the
+memory-shift descent is
+\[
+ A=m^+,\qquad B=\lambda\rho_0(R)d^3R,\qquad sA+dB=0.
+\]
+It is not the persistent register \(m\): it is its degree-minus-one BV dual
+with a nonzero descent partner.  Probe smearing and advanced-covector
+substitutions fail the row, pairing and action-origin types.  Raw \(D\),
+phase \(R\) and \(K=D-(3/4)R\) are exported independently.
+
+The fail-closed atlas row is
+`positive-berger-local-receiver-action-preflight-fragment-v1`.  Its current
+activation gate is the content-addressed 20-row same-background embedding
+into a repaired ambient parent, including chain, pairing, support and
+\(D/R/K\) intertwiners.  That integration, the receiver residual quotient,
+nonradical period, denominator, redshift, nonlinear response and recoil all
+remain `NO_CERTIFIED_MAP`.
+
+## Phase 1 disposition: exact receiver-integration obstruction
+
+The complete Phase 1 audit now supersedes the older producer wording above.
+The positive Berger clock and the spatially global retarded $G_0$ probe
+observable with $1+z=2$ remain certified on their declared fixed-coupling
+carrier.  Three exact rank-two retarded matrices likewise remain certified
+only on their original pre-quotient source-to-probe carriers, and the
+homogeneous coordinate-frequency ratio one remains only a kinematic control.
+None of these statements supplies a localized action-derived physical
+receiver.
+
+The standalone $D0$ action-derived local BV descent is certified, but it is
+not an operational observable.  Its fresh q70-graded replay exposes the first
+ambient gate exactly: the local BV cochain differential has compact degree
+$-1$, the repaired q70 action-Hessian chain differential has degree $+1$,
+and no degree-zero inclusion can intertwine them on the nonzero memory-shift
+descent.  Phase 1 therefore accepts
+`degree_zero_receiver_cocycle_chain_cochain_intertwiner` as its exact
+obstruction alternative.  No suspension bridge or new receiver architecture
+is opened.
+
+The fail-closed atlas fragment is
+`phase1-relational-observable-disposition-synthesis-fragment-v1`.  It keeps
+conditional or kinematic fixtures and the local cocycle `CERTIFIED`, ambient
+action integration `OBSTRUCTED`, and residual/nonradical physical descent and
+the operational relational observable `NO_CERTIFIED_MAP`.  Fixed
+$Q_{\rm rel}$ removes the relative clock; unrestricted $Q_{\rm rel}$
+retains the secular zero Jordan obstruction; the generic $j=1/2$ complex
+frequency block is not a healthy preparation.  Raw $D$, $R_{\rm rel}$ and
+$K=D-H'(Q_{\rm rel})R_{\rm rel}$ remain separately typed.  Any new
+chain/cochain bridge or apparatus architecture requires explicit Phase 2
+authorization.

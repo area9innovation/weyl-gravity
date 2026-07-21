@@ -1,4 +1,4 @@
-PULLED by agent classical-1 — stream classical — lease exclusive (acquired 2026-07-21T04:54:16Z, expires 2026-07-21T12:54:16Z)
+PULLED by agent classical-1 — stream classical — lease exclusive (acquired 2026-07-21T04:34:23Z, expires 2026-07-21T12:34:23Z)
 
 WORK PACKAGE sf:program/work/classical-two-phase-counterflow-residual-bfv-receiver  (state: ACTIVE, owner: classical-1)
 
@@ -20,7 +20,7 @@ no automatic inheritance of the round-cylinder fifteen generators; no deletion o
 - a theorem-level comparison of round-cylinder and counterflow quotients
 
 ## Dependencies (verify state before starting)
-- sf:program/work/classical-two-phase-counterflow-charge-clock-complementarity-and-unrestricted-health#ANY_TERMINAL — DONE (met)
+- sf:program/work/classical-two-phase-counterflow-fixed-charge-reduced-health#ANY_TERMINAL — DONE (met)
 - sf:program/work/classical-two-phase-counterflow-background-neighborhood-and-round-cylinder-disposition#ANY_TERMINAL — DONE (met)
 
 ## Additional item fields (schema superset — passed through)

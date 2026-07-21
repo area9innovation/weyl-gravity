@@ -59,6 +59,7 @@ def main() -> int:
     assert "observer.berger.interaction.material_parent56_executable_unary_export_shortfall" in ids
     assert "observer.berger.interaction.replacement112_executable_unary_after_phi2_map_shortfall" in ids
     assert "observer.berger.interaction.material_parent56_background_readout_interface" in ids
+    assert "observer.berger.interaction.replacement112_132_defect_minimal_nilpotent_repair_no_go" in ids
     crosswalks = [row for row in value["entries"] if row["id"].startswith("observer.crosswalk")]
     assert {row["id"] for row in crosswalks} == {
         "observer.crosswalk.berger_physical_branch_to_detector",

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "payload_ref", "activation_gate", "reduction_disposition", "detector_disposition", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-repaired112-physical-reduction-and-detector-rank-not-activated-v1"},
+    "result_id": {"const": "BERGER_REPAIRED112_PHYSICAL_REDUCTION_AND_DETECTOR_RANK_NOT_ACTIVATED"},
+    "claim_status": {"const": "CERTIFIED_NOT_ACTIVATED_PHYSICAL_REDUCTION_FROM_NONDEFINED_PUSHOUT"},
+    "atlas_status": {"const": "NO_CERTIFIED_MAP"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "dependency_refs": {"type": "object", "minProperties": 4},
+    "payload_ref": {"type": "object", "required": ["path", "result_id", "sha256", "canonical_sha256"]},
+    "activation_gate": {"type": "object", "required": ["required_input", "apparatus_pushout", "combined_row_count", "combined_q1", "verdict"]},
+    "reduction_disposition": {"type": "object", "minProperties": 8},
+    "detector_disposition": {"type": "object", "minProperties": 8},
+    "claim_boundary": {"type": "string", "minLength": 1200},
+    "provenance": {"type": "object", "required": ["generator_command", "independent_verifier_command", "producer_source_sha256"]}
+  },
+  "additionalProperties": true
+}

@@ -20,7 +20,6 @@
 \newcommand{\C}{\mathbb C}
 \newcommand{\dd}{\mathrm d}
 \newcommand{\cE}{\mathcal E}
-\newcommand{\cC}{\mathcal C}
 \newcommand{\cL}{\mathcal L}
 \newcommand{\cZ}{\mathcal Z}
 \newcommand{\cP}{\mathcal P}
@@ -35,14 +34,14 @@
 
 \title{The Finite-Harmonic Formal Second-Order Tangent Cone\\
 of Compact Weyl--Maxwell Gravity\\
-\large Moment Maps, Bounded Resonances, and a Balanced Cubic Test}
+\large Moment Maps, Exponential-Polynomial Corrections, and Bounded Resonances}
 \author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
 \and Claude Fable 5\thanks{Anthropic model and computational coauthor. The
 project was commissioned and coordinated by Asger Alstrup Palm
 (\texttt{asger@area9.dk}), who initiated the questions, exercised editorial
 control, and serves as corresponding human contact, but claims no technical
 authorship.}}
-\date{Theorem-frozen draft, 21 July 2026}
+\date{Working draft, 19 July 2026}
 
 \begin{document}
 \maketitle
@@ -101,17 +100,6 @@ obstructed, while amplitude-level cancellations remain open.
 Consequently formal
 exponential-polynomial extendibility is a moment-map theorem, whereas
 bounded quasiperiodic extendibility is a strict resonance problem.
-
-For one balanced real Einstein-minus/additional-primary tangent, we also
-evaluate the first action-normalized third-order obstruction.  Its intrinsic
-compact-stabilizer class vanishes in the correction-independent quotient
-\(\mathfrak o/\operatorname{im}\ell_2\), but the certified second-order
-representative has nonzero adjoint pairings on every occupied original
-characteristic shell.  Hence it has no bounded finite-quasiperiodic
-third-order correction, while a finite exponential-polynomial correction
-with controlled secular degree exists.  The shell verdict is scoped to that
-second-order representative; its quotient by arbitrary homogeneous
-second-order additions remains open.
 
 All results are \textsc{local-algebraic} and \textsc{reduced-mode}.  They do
 not establish an all-orders family, a causal retarded correction, a final
@@ -181,19 +169,6 @@ paper gives several complete columns of the second line but does not claim a
 classification of the common quadratic zero locus of all bounded
 obstructions.
 
-At third order we make one further, fixture-scoped statement.  For the
-balanced tangent \(u\) and its certified no-homogeneous-addition correction
-\(v\),
-\begin{equation}\label{eq:third-order-summary}
- [K_3(u;v)]=0\quad\hbox{in}\quad
- \mathfrak o/\operatorname{im}\ell_2(u,-),
- \qquad
- \cR^{(3)}_{\rm occupied}(u;v)\ne0.
-\end{equation}
-The first statement is correction independent.  The second proves bounded
-third-order obstruction for the displayed representative only; finite
-exponential-polynomial inversion with secular terms remains possible.
-
 \subsection{Dependency typing}
 
 The spacetime is Lorentzian, but the proof is an exact harmonic and
@@ -232,16 +207,6 @@ obstructions.  The latter belongs to the broader problem of secular
 perturbation theory \cite{Pound}, but the concrete
 \(\{\mu,\mathcal P,\mathcal R\}\) ledger and exceptional mixed resonance are
 model-specific results.
-
-The third-order contribution is narrower and logically separate: for one
-balanced mixed-primary fixture it computes the action-normalized cubic
-compact-stabilizer quotient and the original-shell Fredholm pairings in the
-same calculation.  The resulting contrast---zero intrinsic global class but
-nonzero bounded shell obstruction for the certified second-order
-representative---is not supplied by the general momentum-map normal form or
-by the existence of a secular right inverse.  To our knowledge, this exact
-branch-resolved comparison has not previously been exhibited for the compact
-Weyl--Maxwell product.
 
 The relation is conceptual rather than a claim that the classical
 functional-analytic normal-form theorem has been reproved for this theory.
@@ -332,17 +297,6 @@ On a closed slice, the covariant Taub bridge identifies these with the
 pairings of the quadratic field-equation source against the stabilizer
 cokernel covectors.
 
-Let \(\cC\) denote the spatial constraint projection of the Euler--Lagrange
-operator and put
-\(
- \cC^{(2)}_{\bar\Phi}:=\tfrac12D^2\cC_{\bar\Phi}.
-\)
-For a constraint source \(S_A\), our pairing convention is
-\(
- \langle\zeta,S\rangle_\Sigma
- =\int_\Sigma\zeta^A S_A\,\dd\Sigma.
-\)
-
 \begin{proposition}[Taub moment maps on ordinary and generalized modes]
 \label{prop:generalized-taub}
 The five displayed automorphisms lift to the fixed magnetic bundle and act
@@ -350,7 +304,7 @@ symplectically on every certified linear block.  For every linear solution,
 including the homogeneous and twist Jordan blocks,
 \begin{equation}\label{eq:taub-bridge}
  \left\langle\zeta_X,
- \cC^{(2)}_{\bar\Phi}(u,u)\right\rangle_\Sigma
+ \cE^{(2)}_{\bar\Phi}(u,u)\right\rangle_\Sigma
  =\mu_X(u)
  =\frac12\Omega_\Sigma(u,\mathcal L_Xu),
  \qquad X\in\{H,P_x,J_1,J_2,J_3\}.
@@ -639,7 +593,7 @@ On the complete real candidate-13 generic two-fibre carrier,
 \[
  \cZ^{\rm qp}_{2,13}=\{0\}.
 \]
-The finite exponential-polynomial cone does not collapse: it remains the
+The smooth exponential-polynomial cone does not collapse: it remains the
 common zero of the five stabilizer moment maps and contains the explicit
 three-occupation Einstein--extra fixture.
 \end{theorem}
@@ -669,13 +623,12 @@ coefficient is increasing.  Thus \(D\) is a strictly positive sum of the
 absolute-current Gram occupations for every parity and \(m\).  Vanishing of
 \(\mu_H,\mu_{P_x},R_c\) forces every occupation, hence the tangent, to vanish.
 The rotations and eighteen resonance equations are then automatic.  In the
-finite exponential-polynomial correction class \(R_c\) and the
-finite-frequency resonances have
+smooth correction class \(R_c\) and the finite-frequency resonances have
 secular inverses, so only the five moment maps remain.
 \end{proof}
 
 The earlier three-occupation fixture has \(R_c<0\), consistently placing it
-in the finite exponential-polynomial cone but outside the bounded cone.  The theorem is a real
+in the smooth cone but outside the bounded cone.  The theorem is a real
 positivity result on this exact circumference; it makes no identification
 with another collision fibre and does not classify the complex zero variety.
 
@@ -2747,15 +2700,6 @@ shell collision.  The extra primary is therefore neither uniformly deleted
 nor uniformly liberated by the quadratic test; its disposition depends on
 the complete carrier and correction class.
 
-The action-normalized cubic fixture sharpens the same lesson.  Its global
-compact-stabilizer class vanishes after the complete homogeneous-correction
-quotient, while bounded shell inversion fails for the certified
-second-order representative.  Global charge cancellation and bounded
-resonant solvability are therefore independent tests at third order as well
-as at second order.  Since the shell quotient by arbitrary second-order
-homogeneous additions has not been computed, this is not a no-go for every
-representative of the balanced two-jet.
-
 The result supplies the middle map in the programme's residual atlas:
 \[
  X_\alpha
@@ -2773,9 +2717,6 @@ The following remain outside the theorem:
 \item infinite harmonic sums and Sobolev completion;
 \item retarded or advanced solvability and nonlinear causal dependence;
 \item integration of a second-order jet to an exact or all-orders family;
-\item a bounded third-order verdict after quotienting the shell functionals
-      by every admissible homogeneous second-order addition;
-\item a third-order classification for arbitrary finite harmonic sums;
 \item the final residual/background-stabilizer quotient;
 \item asymptotically flat, de Sitter, anti-de Sitter, or black-hole boundary
       conditions;
@@ -2786,10 +2727,9 @@ does not establish nonlinear stability.
 
 \section{Certificate and reproduction ledger}
 
-The scoped mathematical claims in this manuscript are
-\textsc{theorem-frozen} for external specialist review.  Its third-order
-source baseline is repository commit
-\nolinkurl{aa7f7ff984e930f71e208538deac6e22b9cc22cf}.
+The manuscript is an \textsc{outline-allowed}/\textsc{draft-allowed}
+integration of committed certificates.  Its current source baseline is
+repository commit \texttt{9825f5561427ebd8b546c381b65dcfdf008c0b6c}.
 
 \begingroup
 \small
@@ -2927,8 +2867,8 @@ Balanced third-order global quotient and four-shell bounded obstruction &
 
 Each certificate records its schema, imported hashes, exact commands, test
 tier, assumptions, and missing-object ledger.  The independent verifier for
-each named certificate has passed before the scoped claims were marked
-\textsc{theorem-frozen}.  This lifecycle state promotes only the complete
+each named certificate must pass before this manuscript advances to
+\textsc{theorem-frozen}.  The current draft promotes only the scoped complete
 formulas displayed above.  The candidate-13 real bounded geometry and all
 fifteen opposite-sign collision carriers are closed.  Each same-sign
 collision cone has a certified nonzero bounded point, while its full real
@@ -3068,6 +3008,108 @@ It is that each mode receives an exact disposition:
  \boxed{\text{linear mode}\;\to\;\text{moment map}\;\to\;
  \text{resonance}\;\to\;\text{interaction and observation}.}
 \]
+
+\begin{thebibliography}{99}
+\bibitem{BrillDeser}
+D.~R.~Brill and S.~Deser,
+\emph{Instability of closed spaces in general relativity},
+Commun. Math. Phys. \textbf{32} (1973) 291--304.
+
+\bibitem{FischerMarsden}
+A.~E.~Fischer and J.~E.~Marsden,
+\emph{Linearization stability of the Einstein equations},
+Bull. Am. Math. Soc. \textbf{79} (1973) 997--1003.
+
+\bibitem{MoncriefI}
+V.~Moncrief,
+\emph{Spacetime symmetries and linearization stability of the Einstein
+equations. I}, J. Math. Phys. \textbf{16} (1975) 493--498.
+
+\bibitem{MoncriefII}
+V.~Moncrief,
+\emph{Spacetime symmetries and linearization stability of the Einstein
+equations. II}, J. Math. Phys. \textbf{17} (1976) 1893--1902.
+
+\bibitem{ArmsEM}
+J.~M.~Arms,
+\emph{Linearization stability of the Einstein--Maxwell system},
+J. Math. Phys. \textbf{18} (1977) 830--833.
+
+\bibitem{AMMBifurcation}
+J.~M.~Arms, J.~E.~Marsden, and V.~Moncrief,
+\emph{Symmetry and bifurcations of momentum mappings},
+Commun. Math. Phys. \textbf{78} (1981) 455--478.
+
+\bibitem{FischerMarsdenMoncrief}
+A.~E.~Fischer, J.~E.~Marsden, and V.~Moncrief,
+\emph{The structure of the space of solutions of Einstein's equations. I.
+One Killing field}, Ann. Inst. H. Poincar\'e A \textbf{33} (1980) 147--194.
+
+\bibitem{ArmsMarsdenMoncrief}
+J.~M.~Arms, J.~E.~Marsden, and V.~Moncrief,
+\emph{The structure of the space of solutions of Einstein's equations. II.
+Several Killing fields and the Einstein--Yang--Mills equations},
+Ann. Phys. \textbf{144} (1982) 81--106.
+
+\bibitem{LMTW}
+E.~Lerman, E.~Meinrenken, S.~Tolman, and C.~Woodward,
+\emph{Non-abelian convexity by symplectic cuts},
+Topology \textbf{37} (1998) 245--259,
+\href{https://arxiv.org/abs/dg-ga/9603015}{arXiv:dg-ga/9603015}.
+
+\bibitem{AltasTekin}
+E.~Alta\c{s} and B.~Tekin,
+\emph{Linearization instability for generic gravity in AdS},
+Phys. Rev. D \textbf{97} (2018) 024028,
+\href{https://arxiv.org/abs/1705.10234}{arXiv:1705.10234}.
+
+\bibitem{AltasTekinTaub}
+E.~Alta\c{s} and B.~Tekin,
+\emph{Second order perturbation theory in general relativity: Taub charges
+as integral constraints}, Phys. Rev. D \textbf{99} (2019) 104078,
+\href{https://arxiv.org/abs/1903.11982}{arXiv:1903.11982}.
+
+\bibitem{Pound}
+A.~Pound,
+\emph{Second-order perturbation theory: problems on large scales},
+Phys. Rev. D \textbf{92} (2015) 104047,
+\href{https://arxiv.org/abs/1510.05172}{arXiv:1510.05172}.
+
+\bibitem{Carlotto}
+A.~Carlotto,
+\emph{The general relativistic constraint equations},
+Living Rev. Relativ. \textbf{24} (2021) 2.
+
+\bibitem{KieferNikolic}
+C.~Kiefer and B.~Nikoli\'c,
+\emph{Conformal and Weyl--Einstein gravity: Classical geometrodynamics},
+Phys. Rev. D \textbf{95} (2017) 084018.
+
+\bibitem{ChenMa}
+Q.~Chen and Y.~Ma,
+\emph{Hamiltonian structure and connection-dynamics of Weyl gravity},
+Phys. Rev. D \textbf{98} (2018) 064009.
+
+\bibitem{PlebanskiHacyan}
+J.~F.~Pleba\'nski and S.~Hacyan,
+\emph{Some exceptional electrovac type D metrics with cosmological
+constant}, J. Math. Phys. \textbf{20} (1979) 1004--1010.
+
+\bibitem{LeeWald}
+J.~Lee and R.~M.~Wald,
+\emph{Local symmetries and constraints},
+J. Math. Phys. \textbf{31} (1990) 725--743.
+
+\bibitem{Paper10}
+GPT-5.6.sol and Claude Fable 5,
+\emph{Einstein--Maxwell waves inside Weyl--Maxwell gravity on a compact
+product}, companion manuscript, 2026.
+
+\bibitem{Paper91}
+GPT-5.6.sol,
+\emph{Pure-extra Taub obstruction and a balanced second-order extension in
+compact Weyl--Maxwell gravity}, companion manuscript, 2026.
+\end{thebibliography}
 
 \section{Two-jet derived charge carrier}
 
@@ -3211,8 +3253,7 @@ $\ell=2$ shells: $(n_-,n_e)=(\pm1,0)$ on the Einstein-minus branch and
 $(0,\pm1)$ on the additional branch.  Thus no new kinematic shell type
 appears.  The action-normalized coefficients can now also be evaluated.
 
-\begin{theorem}[Correction-independent global cubic class versus a
-representative-scoped bounded shell obstruction]
+\begin{theorem}[Global cubic class versus bounded shell obstruction]
 \label{thm:balanced-third-order}
 Let $u$ be the real balanced Einstein-minus/additional-primary tangent and
 let $v$ be its certified no-homogeneous-addition second-order correction from
@@ -3224,10 +3265,9 @@ the companion construction.  Then:
 \]
 and hence $[K_3(u;v)]=0$ in
 $\mathfrak o/\operatorname{im}\ell_2(u,-)$;
-\item for this certified \(v\), in the bounded or finite-quasiperiodic
-correction class, each occupied original branch has a nonzero adjoint-shell
-functional.  Numerically, in the declared action-row normalization, the
-positive-frequency values are
+\item in the bounded or finite-quasiperiodic correction class, each occupied
+original branch has a nonzero adjoint-shell functional.  Numerically, in the
+declared action-row normalization, the positive-frequency values are
 \[
  \begin{aligned}
  R_-(u;v)&=-2323.7892958977675\ldots,\\
@@ -3238,8 +3278,8 @@ positive-frequency values are
 The negative-frequency values are their reality conjugates.  All nonzero
 claims are exact: the certificate records their algebraic expressions and
 minimal polynomials with nonzero constant coefficient;
-\item a finite exponential-polynomial third-order correction exists if
-secular terms are allowed.  The bounded obstruction is therefore not a
+\item a smooth finite exponential-polynomial third-order correction exists
+if secular terms are allowed.  The bounded obstruction is therefore not a
 global compact-stabilizer Kuranishi obstruction.
 \end{enumerate}
 \end{theorem}
@@ -3270,43 +3310,13 @@ Projection onto the four original shells gives the exact nonzero functionals
 recorded in
 \cert{bridge/certificates/EINSTEIN_WEYL_COMPACT_CAUCHY_THIRD_ORDER_KURANISHI_EVALUATION_V1.json}.
 Thus the Fredholm alternative forbids a bounded quasiperiodic primitive.
-For the finite exponential-polynomial class, the square axial
-constant-coefficient pencil
+For the smooth secular class, the square axial constant-coefficient pencil
 has nonzero determinant proportional to $p^2q$.  Its adjugate reduces the
 system to scalar constant-coefficient equations, which are surjective on
 finite exponential-polynomials after polynomial factors in $t$ are allowed.
 The required secular degree is at most one on the $q$ shell and at most two
-on the $p$ shell.  This proves the three distinct assertions.  Notice that
-only the quotient class in item~1 has been divided by the complete
-homogeneous second-order-correction freedom.  Items~2 and~3 retain the
-explicitly declared representative $v$.
+on the $p$ shell.  This proves the three distinct assertions.
 \end{proof}
-
-The theorem hierarchy is therefore:
-\begin{center}
-\small
-\begin{tabularx}{0.98\textwidth}{@{}Y Y Y@{}}
-\toprule
-Carrier and order & Correction class & Frozen disposition\\
-\midrule
-Arbitrary $u\in V_{\rm fin}$, second order & finite
-exponential-polynomial & iff the five Taub moment maps vanish\\
-Arbitrary $u\in V_{\rm fin}$, second order & bounded finite
-quasiperiodic & iff the complete finite $\{\mu,\cP,\cR\}$ ledger
-vanishes; its common real zero set is only partly classified\\
-Balanced $u$, third-order global projection & quotient by all homogeneous
-second-order corrections & $[K_3]=0$ in the two-dimensional quotient with
-basis $\{P_x,J_3\}$\\
-Balanced $u$ with certified $v$, third order & bounded finite
-quasiperiodic & obstructed on all four occupied original shells\\
-Balanced $u$ with certified $v$, third order & finite
-exponential-polynomial & solvable with secular degree at most one on $q$
-and at most two on $p$\\
-Balanced $u$, arbitrary admissible second-order correction & bounded finite
-quasiperiodic & open\\
-\bottomrule
-\end{tabularx}
-\end{center}
 
 The theorem is deliberately not an all-orders result.  It says that the
 quadratic charge balance survives the global cubic quotient, while uniform
@@ -3314,107 +3324,5 @@ boundedness fails for the chosen second-order representative because of a
 different, local-in-time resonant cokernel.  Causal/retarded inversion and
 the effect of allowing arbitrary homogeneous second-order additions on the
 shell representatives remain separate gates.
-
-\begin{thebibliography}{99}
-\bibitem{BrillDeser}
-D.~R.~Brill and S.~Deser,
-\emph{Instability of closed spaces in general relativity},
-Commun. Math. Phys. \textbf{32} (1973) 291--304.
-
-\bibitem{FischerMarsden}
-A.~E.~Fischer and J.~E.~Marsden,
-\emph{Linearization stability of the Einstein equations},
-Bull. Am. Math. Soc. \textbf{79} (1973) 997--1003.
-
-\bibitem{MoncriefI}
-V.~Moncrief,
-\emph{Spacetime symmetries and linearization stability of the Einstein
-equations. I}, J. Math. Phys. \textbf{16} (1975) 493--498.
-
-\bibitem{MoncriefII}
-V.~Moncrief,
-\emph{Spacetime symmetries and linearization stability of the Einstein
-equations. II}, J. Math. Phys. \textbf{17} (1976) 1893--1902.
-
-\bibitem{ArmsEM}
-J.~M.~Arms,
-\emph{Linearization stability of the Einstein--Maxwell system},
-J. Math. Phys. \textbf{18} (1977) 830--833.
-
-\bibitem{AMMBifurcation}
-J.~M.~Arms, J.~E.~Marsden, and V.~Moncrief,
-\emph{Symmetry and bifurcations of momentum mappings},
-Commun. Math. Phys. \textbf{78} (1981) 455--478.
-
-\bibitem{FischerMarsdenMoncrief}
-A.~E.~Fischer, J.~E.~Marsden, and V.~Moncrief,
-\emph{The structure of the space of solutions of Einstein's equations. I.
-One Killing field}, Ann. Inst. H. Poincar\'e A \textbf{33} (1980) 147--194.
-
-\bibitem{ArmsMarsdenMoncrief}
-J.~M.~Arms, J.~E.~Marsden, and V.~Moncrief,
-\emph{The structure of the space of solutions of Einstein's equations. II.
-Several Killing fields and the Einstein--Yang--Mills equations},
-Ann. Phys. \textbf{144} (1982) 81--106.
-
-\bibitem{LMTW}
-E.~Lerman, E.~Meinrenken, S.~Tolman, and C.~Woodward,
-\emph{Non-abelian convexity by symplectic cuts},
-Topology \textbf{37} (1998) 245--259,
-\href{https://arxiv.org/abs/dg-ga/9603015}{arXiv:dg-ga/9603015}.
-
-\bibitem{AltasTekin}
-E.~Alta\c{s} and B.~Tekin,
-\emph{Linearization instability for generic gravity in AdS},
-Phys. Rev. D \textbf{97} (2018) 024028,
-\href{https://arxiv.org/abs/1705.10234}{arXiv:1705.10234}.
-
-\bibitem{AltasTekinTaub}
-E.~Alta\c{s} and B.~Tekin,
-\emph{Second order perturbation theory in general relativity: Taub charges
-as integral constraints}, Phys. Rev. D \textbf{99} (2019) 104078,
-\href{https://arxiv.org/abs/1903.11982}{arXiv:1903.11982}.
-
-\bibitem{Pound}
-A.~Pound,
-\emph{Second-order perturbation theory: problems on large scales},
-Phys. Rev. D \textbf{92} (2015) 104047,
-\href{https://arxiv.org/abs/1510.05172}{arXiv:1510.05172}.
-
-\bibitem{Carlotto}
-A.~Carlotto,
-\emph{The general relativistic constraint equations},
-Living Rev. Relativ. \textbf{24} (2021) 2.
-
-\bibitem{KieferNikolic}
-C.~Kiefer and B.~Nikoli\'c,
-\emph{Conformal and Weyl--Einstein gravity: Classical geometrodynamics},
-Phys. Rev. D \textbf{95} (2017) 084018.
-
-\bibitem{ChenMa}
-Q.~Chen and Y.~Ma,
-\emph{Hamiltonian structure and connection-dynamics of Weyl gravity},
-Phys. Rev. D \textbf{98} (2018) 064009.
-
-\bibitem{PlebanskiHacyan}
-J.~F.~Pleba\'nski and S.~Hacyan,
-\emph{Some exceptional electrovac type D metrics with cosmological
-constant}, J. Math. Phys. \textbf{20} (1979) 1004--1010.
-
-\bibitem{LeeWald}
-J.~Lee and R.~M.~Wald,
-\emph{Local symmetries and constraints},
-J. Math. Phys. \textbf{31} (1990) 725--743.
-
-\bibitem{Paper10}
-GPT-5.6.sol and Claude Fable 5,
-\emph{Einstein--Maxwell waves inside Weyl--Maxwell gravity on a compact
-product}, companion manuscript, 2026.
-
-\bibitem{Paper91}
-GPT-5.6.sol,
-\emph{Pure-extra Taub obstruction and a balanced second-order extension in
-compact Weyl--Maxwell gravity}, companion manuscript, 2026.
-\end{thebibliography}
 
 \end{document}

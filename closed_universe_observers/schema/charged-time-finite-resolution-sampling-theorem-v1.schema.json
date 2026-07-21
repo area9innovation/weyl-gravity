@@ -1,0 +1,18 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","additionalProperties":false,
+  "required":["schema","result_id","claim_status","dependency_tags","dependency_ref","profile_contract","smeared_event_map","charged_covariance","support_inheritance","distributional_limit","finite_resolution_bounds","transported_signal_phases","frequency_ratio_bound","clock_topology_and_reduction","conditional_counterflow","mutation_results","flags","next_gate","claim_boundary","provenance"],
+  "properties":{
+    "schema":{"const":"closed-universe-charged-time-finite-resolution-sampling-theorem-v1"},"result_id":{"const":"CHARGED_TIME_FINITE_RESOLUTION_SAMPLING_THEOREM_V1"},"claim_status":{"const":"CERTIFIED_FINITE_RESOLUTION_SAMPLING_THEOREM_CONDITIONAL_RECEIVER"},"dependency_tags":{"const":["LOCAL-ALGEBRAIC","REDUCED-MODE","LORENTZIAN-CAUSAL"]},"dependency_ref":{"type":"object","required":["path","result_id","sha256"]},
+    "profile_contract":{"type":"object","required":["base_profile","scaled_profile","moments","exact_control_fixture"]},"smeared_event_map":{"type":"object"},
+    "charged_covariance":{"type":"object","required":["Q_bracket","H_bracket","K_bracket","primitive_orientation"]},
+    "support_inheritance":{"type":"object","required":["clock_band","causal_support","no_tail_promotion"],"properties":{"no_tail_promotion":{"const":true}}},
+    "distributional_limit":{"type":"object","required":["test_class","statement","proof_identity","not_pointwise_claim"],"properties":{"not_pointwise_claim":{"const":true}}},
+    "finite_resolution_bounds":{"type":"object","required":["even_second_order","two_profile_composition","two_phase_map_composition","quadratic_saturates_bound"],"properties":{"quadratic_saturates_bound":{"const":true},"composition_symbolic_defect":{"const":"0"}}},
+    "transported_signal_phases":{"type":"object"},"frequency_ratio_bound":{"type":"object","required":["origin_independent","called_redshift"],"properties":{"origin_independent":{"const":true},"called_redshift":{"const":false}}},
+    "clock_topology_and_reduction":{"type":"object","required":["lifted_line","compact_phase","fixed_charge","smoothing_does_not_restore_clock"],"properties":{"smoothing_does_not_restore_clock":{"const":true}}},
+    "conditional_counterflow":{"type":"object","required":["physical_nonzero_receiver","formal_ratio_promoted"],"properties":{"physical_nonzero_receiver":{"const":"NO_CERTIFIED_MAP"},"formal_ratio_promoted":{"const":false}}},
+    "mutation_results":{"type":"array","minItems":4,"items":{"type":"object","required":["name","detected","witness"],"properties":{"detected":{"const":true}}}},
+    "flags":{"type":"object","additionalProperties":false,"required":["FINITE_RESOLUTION_SAMPLING_THEOREM_CERTIFIED","DISTRIBUTIONAL_LIMIT_CERTIFIED","SUPPORT_INHERITANCE_CERTIFIED","TWO_PHASE_COMPOSITION_BOUND_CERTIFIED","NONZERO_RECEIVER_CERTIFIED","DETECTOR_OR_REDSHIFT_CERTIFIED","NONLINEAR_CLAIM","QUANTUM_CLAIM"],"properties":{"FINITE_RESOLUTION_SAMPLING_THEOREM_CERTIFIED":{"const":true},"DISTRIBUTIONAL_LIMIT_CERTIFIED":{"const":true},"SUPPORT_INHERITANCE_CERTIFIED":{"const":true},"TWO_PHASE_COMPOSITION_BOUND_CERTIFIED":{"const":true},"NONZERO_RECEIVER_CERTIFIED":{"const":false},"DETECTOR_OR_REDSHIFT_CERTIFIED":{"const":false},"NONLINEAR_CLAIM":{"const":false},"QUANTUM_CLAIM":{"const":false}}},
+    "next_gate":{"type":"string"},"claim_boundary":{"type":"string"},"provenance":{"type":"object"}
+  }
+}
