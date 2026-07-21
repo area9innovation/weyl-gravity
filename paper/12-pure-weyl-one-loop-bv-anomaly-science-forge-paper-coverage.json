@@ -7,7 +7,7 @@
       "body": {
         "paper_class": "technical",
         "path": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-        "manuscript_sha256": "89384462e424d53ccf573682148c40f601715996f1f1da97d204664b26147c84"
+        "manuscript_sha256": "82c33a046ef891372beac7748fa4ba04bfcb9bc75074c5b0382311c7f34bebdd"
       }
     },
     {
@@ -418,6 +418,61 @@
         "stale": false,
         "version": 1,
         "stamp": "2026-07-20",
+        "native": {"source_schema": "result-paper-edge-v0"}
+      }
+    },
+    {
+      "kind": "result",
+      "id": "sf:d_quotient_classical/result/COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1",
+      "body": {
+        "lifecycle": "CERTIFIED",
+        "boundary": "exactly-U-tested-separately-declared-minimal-compensator-ladder",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+        "certificate": "d_quotient_classical/compensator/COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1.json",
+        "certificate_sha256": "a942ff6a15af0c8a79978dc22ff2cc128a238c3abd6feb2685197d48deaeaf37",
+        "source_commit": "2497b1ace8415594bca64d8ba38e25475ca16858",
+        "stale": false,
+        "superseded": false
+      }
+    },
+    {
+      "kind": "materiality",
+      "id": "sf:materiality/COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1/v1",
+      "body": {
+        "result_id": "sf:d_quotient_classical/result/COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1",
+        "materiality": "TECHNICAL",
+        "version": 1,
+        "by": "quantum-qme-team",
+        "stamp": "2026-07-21",
+        "rationale": "The hash-pinned union theorem replaces the earlier component-by-component action-selection frontier and determines whether a determinant or QAP freeze is activated.",
+        "native": {"source_schema": "materiality-v0"}
+      }
+    },
+    {
+      "kind": "paper_claim",
+      "id": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/minimal-compensator-ladder-synthesis-frontier",
+      "body": {
+        "paper": "sf:paper/12-pure-weyl-one-loop-bv-anomaly",
+        "material": true,
+        "asserts_lifecycle": "CERTIFIED",
+        "boundary": "exactly-U-tested-separately-declared-minimal-compensator-ladder",
+        "cites": [
+          "sf:d_quotient_classical/result/COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1"
+        ],
+        "statement": "Every separately declared component of the exact passive, minimal polar/HT, quadratic P(X), first-braiding, literal and corrected linear-F, and minimal real-Weyl-connection union has empty good locus. The theorem is not closed under hybrids, selects no classical action for a determinant or QAP freeze, and treats the separated scale/U1 representation as preflight only."
+      }
+    },
+    {
+      "kind": "result_paper_edge",
+      "id": "sf:result-paper-edge/COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1/P12/v1",
+      "body": {
+        "from": "sf:d_quotient_classical/result/COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1",
+        "to": "sf:paper/12-pure-weyl-one-loop-bv-anomaly",
+        "claim": "sf:paper/12-pure-weyl-one-loop-bv-anomaly/claim/minimal-compensator-ladder-synthesis-frontier",
+        "edge_kind": "PRIMARY_THEOREM",
+        "stale": false,
+        "version": 1,
+        "stamp": "2026-07-21",
         "native": {"source_schema": "result-paper-edge-v0"}
       }
     }

@@ -16,10 +16,16 @@ COVERAGE = (
     / "paper/12-pure-weyl-one-loop-bv-anomaly-science-forge-paper-coverage.json"
 )
 EXPECTED_MANUSCRIPT_SHA256 = (
-    "89384462e424d53ccf573682148c40f601715996f1f1da97d204664b26147c84"
+    "82c33a046ef891372beac7748fa4ba04bfcb9bc75074c5b0382311c7f34bebdd"
 )
 ALL_LOOP_INPUT_SHA256 = (
     "3649925e44d99bea0020f3d1c20a16c54a44f6c9714a3c273c20a6e6d8f84dbc"
+)
+LADDER_SYNTHESIS_SHA256 = (
+    "a942ff6a15af0c8a79978dc22ff2cc128a238c3abd6feb2685197d48deaeaf37"
+)
+LADDER_SYNTHESIS_RECEIPT_SHA256 = (
+    "fb52c36f2f23bb19a003cca53ef7ba46085ba17c9d7d261422a2dc047e24f4f8"
 )
 
 
@@ -54,6 +60,54 @@ def _assert_active_clock_mutation_rejected(
     except AssertionError:
         return
     raise AssertionError(f"active-clock claim mutation was accepted: {key}")
+
+
+def _verify_ladder_synthesis_status(status: dict) -> None:
+    assert status["result_state"] == (
+        "SCOPED_MINIMAL_COMPENSATOR_LADDER_EXHAUSTED_WITHOUT_SELECTED_ACTION"
+    )
+    assert status["certificate_sha256"] == LADDER_SYNTHESIS_SHA256
+    assert status["independent_receipt_sha256"] == (
+        LADDER_SYNTHESIS_RECEIPT_SHA256
+    )
+    assert status["dependency_tags"] == [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL",
+    ]
+    assert status["verified_import_count"] == 15
+    assert len(status["verified_imports"]) == 15
+    assert status["tested_union"]["union_good_locus"] == (
+        "EMPTY_IN_EACH_DECLARED_COMPONENT"
+    )
+    assert len(status["tested_union"]["exhaustive_components"]) == 7
+    assert len(status["theory_space_table"]) == 9
+    assert status["historical_rank_390_direct_sum_status"] == "SUPERSEDED"
+    assert status["surviving_rank_390_subresults"] == [
+        "TRACE_SCHUR_COMPLEMENT",
+        "REDUCED_SCALAR_GREEN_IDENTITIES",
+        "PHASE_SCALAR_WAVE_BLOCK",
+    ]
+    assert status["selected_action"] is False
+    assert status["determinant_or_QAP_freeze_activated"] is False
+    assert status["next_preflight"] == "SEPARATED_SCALE_U1_CONNECTION_PREFLIGHT"
+    assert status["next_preflight_selected_action"] is False
+    assert status["smallest_representation_level_escape"]["activation"] == (
+        "PREFLIGHT_ONLY"
+    )
+    excluded = status["first_genuinely_untested_mechanisms"]
+    assert "simultaneously nonzero braiding and Horndeski curvature couplings" in excluded
+    assert "nonlinear F(X), G5 or general DHOST degeneracy classes" in excluded
+    assert "general metric-affine or complex gauge geometry" in excluded
+
+
+def _assert_ladder_mutation_rejected(status: dict, key: str, value: object) -> None:
+    mutated = copy.deepcopy(status)
+    mutated[key] = value
+    try:
+        _verify_ladder_synthesis_status(mutated)
+    except AssertionError:
+        return
+    raise AssertionError(f"minimal-ladder claim mutation was accepted: {key}")
 
 
 def main() -> None:
@@ -144,6 +198,13 @@ def main() -> None:
         "repairs only the clock-sign conflict",
         "upper witness is not a viable phase",
         "does not weaken the separate formal local Wess--Zumino",
+        "The later exact synthesis makes the complete declared classical selection frontier explicit",
+        "\\mathcal U_{\\rm tested}",
+        "This is a union theorem, not a closure theorem",
+        "historical complete direct-sum rank-$390$ causal promotion is superseded",
+        "neither a determinant nor an action-specific QAP freeze is activated",
+        "separated real scale plus compact internal $U(1)$ representation is the next preflight only",
+        "COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1",
     ]
     for fragment in required_manuscript_fragments:
         assert fragment in normalized_manuscript, fragment
@@ -337,6 +398,44 @@ def main() -> None:
         for node in active_edges
     )
 
+    ladder_result = (
+        "sf:d_quotient_classical/result/"
+        "COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1"
+    )
+    ladder_claim = (
+        f"{paper_id}/claim/minimal-compensator-ladder-synthesis-frontier"
+    )
+    assert nodes[ladder_result]["body"] == {
+        "lifecycle": "CERTIFIED",
+        "boundary": "exactly-U-tested-separately-declared-minimal-compensator-ladder",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+        "certificate": (
+            "d_quotient_classical/compensator/"
+            "COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1.json"
+        ),
+        "certificate_sha256": LADDER_SYNTHESIS_SHA256,
+        "source_commit": "2497b1ace8415594bca64d8ba38e25475ca16858",
+        "stale": False,
+        "superseded": False,
+    }
+    assert nodes[ladder_claim]["body"]["cites"] == [ladder_result]
+    assert nodes[ladder_claim]["body"]["asserts_lifecycle"] == "CERTIFIED"
+    ladder_materiality = [
+        node for node in coverage["nodes"]
+        if node["kind"] == "materiality"
+        and node["body"]["result_id"] == ladder_result
+    ]
+    assert len(ladder_materiality) == 1
+    assert ladder_materiality[0]["body"]["materiality"] == "TECHNICAL"
+    ladder_edges = [
+        node for node in coverage["nodes"]
+        if node["kind"] == "result_paper_edge"
+        and node["body"]["from"] == ladder_result
+    ]
+    assert len(ladder_edges) == 1
+    assert ladder_edges[0]["body"]["claim"] == ladder_claim
+    assert ladder_edges[0]["body"]["stale"] is False
+
     dispositions = payload["theory_dispositions"]
     assert dispositions == {
         "strict_fixed_field_content": "OBSTRUCTED",
@@ -414,6 +513,34 @@ def main() -> None:
         "candidate_C_selected": False,
         "selected_action_receiver": False,
         "universal_compensator_no_go": False,
+    }
+    ladder_status = payload["minimal_compensator_ladder_synthesis_status"]
+    _verify_ladder_synthesis_status(ladder_status)
+    _assert_ladder_mutation_rejected(ladder_status, "selected_action", True)
+    _assert_ladder_mutation_rejected(
+        ladder_status, "determinant_or_QAP_freeze_activated", True
+    )
+    _assert_ladder_mutation_rejected(
+        ladder_status, "next_preflight_selected_action", True
+    )
+    assert {
+        row["result_id"] for row in ladder_status["verified_imports"].values()
+    } == {
+        "COMPLEX_COMPENSATOR_ACTION_QUARTET_PREFLIGHT_V1",
+        "COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1",
+        "COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1",
+        "COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1",
+        "COMPENSATOR_KINETIC_BRAIDING_LEVEL2_NO_GO_V1",
+        "COMPENSATOR_KINETIC_BRAIDING_QUADRATIC_VISIBILITY_V1",
+        "COMPENSATOR_CANDIDATE_A_R2_AUXILIARY_SCALAR_OBSTRUCTION_V1",
+        "COMPENSATOR_CANDIDATE_AB_NEITHER_COMPARISON_V1",
+        "COMPENSATOR_CANDIDATE_B_UNIMODULAR_THREEFORM_OBSTRUCTION_V1",
+        "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1",
+        "COMPENSATOR_CONVENTION_CORRECT_HORNDESKI_LEVEL3B_NO_GO_V1",
+        "COMPENSATOR_DEGENERATE_CURVATURE_COUPLING_LEVEL3_NO_GO_V1",
+        "COMPENSATOR_MINIMAL_ACTION_CLASSIFICATION_AFTER_NEITHER_V1",
+        "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1",
+        "COMPENSATOR_INDEPENDENT_WEYL_CONNECTION_LEVEL4_NO_GO_V1",
     }
     active_clock = payload["quadratic_active_clock_status"]
     _verify_active_clock_claim_boundary(active_clock)
@@ -552,6 +679,13 @@ def main() -> None:
     assert claims["extended_all_loop_stable_H14_zero"] is True
     assert claims["extended_all_loop_stable_H04_even_dimension"] == 3
     assert claims["extended_all_loop_stable_H04_odd_dimension"] == 1
+    assert claims["declared_minimal_compensator_ladder_exhausted"] is True
+    assert claims["declared_minimal_compensator_ladder_import_count"] == 15
+    assert claims["declared_minimal_compensator_ladder_good_locus_empty"] is True
+    assert claims["historical_rank_390_direct_sum_causal_promotion_superseded"] is True
+    assert claims["minimal_ladder_no_selected_classical_action"] is True
+    assert claims["minimal_ladder_determinant_or_QAP_freeze_not_activated"] is True
+    assert claims["separated_scale_U1_is_preflight_only"] is True
     assert claims["finite_counterterm_bulk_Q1_ambiguity_rank"] == 2
     assert claims[
         "relative_Einstein_Weyl_action_cyclic_pushforward_obstructed"
@@ -939,7 +1073,7 @@ def main() -> None:
     assert claims["physical_Hessian_triangle_integrated_channel_count"] == 11
     assert claims["physical_Hessian_triangle_corner_count"] == 33
     assert claims["physical_Hessian_triangle_structured_basis_coordinate_count"] == 77
-    assert len(payload["inputs"]) == 81
+    assert len(payload["inputs"]) == 83
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative

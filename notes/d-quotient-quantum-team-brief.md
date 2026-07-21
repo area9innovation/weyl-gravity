@@ -2744,3 +2744,31 @@ Hadamard, state-space, positivity, or particle claim.
 - [`BERGER_K_ONE_LOOP_INSERTION_NONDEFINITION_V1.json`](../quantum-weyl/cartan/certificates/BERGER_K_ONE_LOOP_INSERTION_NONDEFINITION_V1.json)
 - [`berger-k-one-loop-insertion-nondefinition-v1.md`](../quantum-weyl/reports/berger-k-one-loop-insertion-nondefinition-v1.md)
 - [`positive-berger-k-one-loop-insertion-nondefinition-fragment-v1.json`](../residual_atlas/positive-berger-k-one-loop-insertion-nondefinition-fragment-v1.json)
+
+## Paper 12 minimal-compensator ladder synthesis import (2026-07-21)
+
+Paper 12 now uses
+`COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1` as the authoritative
+classical action-selection boundary.  The claim-map generator independently
+hash-imports all fifteen component artifacts consumed by that synthesis.
+The exact tested union contains the separately declared passive tau-adic,
+minimal polar plus optional small-HT, quadratic `P(X)`, first nonexact
+polynomial braiding, literal linear-`F`, convention-correct linear-`F`
+Horndeski and minimal real-Weyl-connection families.  Every component has an
+empty good locus under its own printed hypotheses.
+
+This is not closure under arbitrary hybrids and is not a universal
+scalar-tensor, Horndeski, DHOST, compensator or metric-affine no-go.  Higher
+`F/G`, `G5`/DHOST, extra fields, fixed-flux/global quotients, changed
+backgrounds and general metric-affine or complex gauge geometry remain
+outside the theorem.  The historical complete direct-sum rank-390 causal
+promotion is superseded by the full Candidate-A mixed Hessian; only the
+narrow trace Schur, reduced scalar Green and phase-wave subresults survive.
+
+No classical action or Hessian is selected for a determinant or QAP freeze.
+The separated real scale plus compact internal `U(1)` representation is the
+next preflight only and is not a selected theory.  This update changes no
+strict-theory anomaly coefficient, tau-adic local cohomology, restored
+one-loop local QME or conditional formal all-loop theorem.  Its dependency
+tags are `LOCAL-ALGEBRAIC` and `LORENTZIAN-CAUSAL`; it establishes no
+Hadamard, Lorentzian QME, particle, positivity or unitarity claim.

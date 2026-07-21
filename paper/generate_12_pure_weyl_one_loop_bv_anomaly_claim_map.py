@@ -29,11 +29,18 @@ COVERAGE_REPORT = (
 )
 OUTPUT = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json"
 EXPECTED_MANUSCRIPT_SHA256 = (
-    "89384462e424d53ccf573682148c40f601715996f1f1da97d204664b26147c84"
+    "82c33a046ef891372beac7748fa4ba04bfcb9bc75074c5b0382311c7f34bebdd"
 )
 ALL_LOOP_INPUT_COMMIT = "7fabe987861f1e4facfc2282e7023274df2ddc72"
 ALL_LOOP_INPUT_SHA256 = (
     "3649925e44d99bea0020f3d1c20a16c54a44f6c9714a3c273c20a6e6d8f84dbc"
+)
+LADDER_SYNTHESIS_SOURCE_COMMIT = "2497b1ace8415594bca64d8ba38e25475ca16858"
+LADDER_SYNTHESIS_SHA256 = (
+    "a942ff6a15af0c8a79978dc22ff2cc128a238c3abd6feb2685197d48deaeaf37"
+)
+LADDER_SYNTHESIS_RECEIPT_SHA256 = (
+    "fb52c36f2f23bb19a003cca53ef7ba46085ba17c9d7d261422a2dc047e24f4f8"
 )
 INPUTS = {
     "strict_AFN0_even": ROOT / "quantum-weyl/local_bv/certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json",
@@ -62,6 +69,8 @@ INPUTS = {
     "quadratic_active_clock_locus": ROOT / "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_LOCUS_V1.json",
     "quadratic_active_clock_independent_audit": ROOT / "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_PX2_INDEPENDENT_FREEZE_AUDIT_V1.json",
     "quadratic_active_clock_background_stability": ROOT / "d_quotient_classical/certificates/COMPENSATOR_ACTIVE_CLOCK_BACKGROUND_STABILITY_V1.json",
+    "minimal_compensator_ladder_synthesis": ROOT / "d_quotient_classical/compensator/COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1.json",
+    "minimal_compensator_ladder_synthesis_receipt": ROOT / "d_quotient_classical/receipts/COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1_TIER_RECEIPT.json",
     "Q1_disposition": ROOT / "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
     "relative_Einstein_Weyl_cyclic_pushforward": ROOT / "quantum-weyl/transfer/certificates/RELATIVE_EINSTEIN_WEYL_CYCLIC_PUSHFORWARD_OBSTRUCTION.json",
     "anomaly_induced_Gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
@@ -128,6 +137,31 @@ def _relative(path: Path) -> str:
     return str(path.relative_to(ROOT))
 
 
+def _verify_ladder_imports(synthesis: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    """Independently hash-import every component consumed by the synthesis."""
+    imports = synthesis["imports"]
+    if len(imports) != 15:
+        raise ValueError("minimal-ladder synthesis must import exactly fifteen artifacts")
+    verified: dict[str, dict[str, Any]] = {}
+    for key, row in sorted(imports.items()):
+        path = ROOT / row["path"]
+        payload = json.loads(path.read_text())
+        if _sha256(path) != row["sha256"]:
+            raise ValueError(f"minimal-ladder import hash drifted: {key}")
+        if payload.get("result_id") != row["result_id"]:
+            raise ValueError(f"minimal-ladder import result id drifted: {key}")
+        if payload.get("result_state") != row["result_state"]:
+            raise ValueError(f"minimal-ladder import state drifted: {key}")
+        verified[key] = {
+            "path": row["path"],
+            "result_id": row["result_id"],
+            "result_state": row["result_state"],
+            "sha256": row["sha256"],
+            "source_commit": row["source_commit"],
+        }
+    return verified
+
+
 def _load_inputs() -> dict[str, dict[str, Any]]:
     values = {name: json.loads(path.read_text()) for name, path in INPUTS.items()}
     even = values["strict_AFN0_even"]
@@ -160,6 +194,11 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     active_clock_stability = values[
         "quadratic_active_clock_background_stability"
     ]
+    ladder_synthesis = values["minimal_compensator_ladder_synthesis"]
+    ladder_synthesis_receipt = values[
+        "minimal_compensator_ladder_synthesis_receipt"
+    ]
+    verified_ladder_imports = _verify_ladder_imports(ladder_synthesis)
     q1 = values["Q1_disposition"]
     relative_cyclic_pushforward = values[
         "relative_Einstein_Weyl_cyclic_pushforward"
@@ -382,6 +421,35 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
             "HADAMARD_ANOMALY_QME_OR_QUANTUM"
         ]
         is not False
+        or _sha256(INPUTS["minimal_compensator_ladder_synthesis"])
+        != LADDER_SYNTHESIS_SHA256
+        or _sha256(INPUTS["minimal_compensator_ladder_synthesis_receipt"])
+        != LADDER_SYNTHESIS_RECEIPT_SHA256
+        or ladder_synthesis["result_state"]
+        != "SCOPED_MINIMAL_COMPENSATOR_LADDER_EXHAUSTED_WITHOUT_SELECTED_ACTION"
+        or ladder_synthesis["tested_union"]["union_good_locus"]
+        != "EMPTY_IN_EACH_DECLARED_COMPONENT"
+        or ladder_synthesis["tested_union"]["not_a_closure_under_hybrids"]
+        != (
+            "The union contains exactly the separately declared action families. "
+            "It does not include simultaneous nonzero braiding and Horndeski "
+            "couplings, higher functions, extra fields or changed global quotients."
+        )
+        or len(ladder_synthesis["theory_space_table"]) != 9
+        or ladder_synthesis["terminal_verdict"]["selected_action"] is not False
+        or ladder_synthesis["terminal_verdict"]["next_gate"]
+        != "SEPARATED_SCALE_U1_CONNECTION_PREFLIGHT"
+        or ladder_synthesis["smallest_representation_level_escape"]["activation"]
+        != "PREFLIGHT_ONLY"
+        or ladder_synthesis["exact_checks"][
+            "all_fifteen_authoritative_imports_hash_pinned"
+        ]
+        is not True
+        or ladder_synthesis["exact_checks"]["candidate_A_supersession_visible"]
+        is not True
+        or any(ladder_synthesis["claim_flags"].values())
+        or len(verified_ladder_imports) != 15
+        or ladder_synthesis_receipt["tier_1"]["status"] != "PASS"
     ):
         raise ValueError("Paper 12 conditional all-loop dependency drifted")
     if (
@@ -1182,6 +1250,8 @@ def build() -> dict[str, Any]:
     active_clock_stability = values[
         "quadratic_active_clock_background_stability"
     ]
+    ladder_synthesis = values["minimal_compensator_ladder_synthesis"]
+    ladder_imports = _verify_ladder_imports(ladder_synthesis)
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
@@ -1400,6 +1470,38 @@ def build() -> dict[str, Any]:
                 "UNIVERSAL_COMPENSATOR_NO_GO"
             ],
         },
+        "minimal_compensator_ladder_synthesis_status": {
+            "result_id": ladder_synthesis["result_id"],
+            "result_state": ladder_synthesis["result_state"],
+            "source_commit": LADDER_SYNTHESIS_SOURCE_COMMIT,
+            "certificate_sha256": LADDER_SYNTHESIS_SHA256,
+            "independent_receipt_sha256": LADDER_SYNTHESIS_RECEIPT_SHA256,
+            "dependency_tags": ladder_synthesis["dependency_tags"],
+            "tested_union": ladder_synthesis["tested_union"],
+            "theory_space_columns": ladder_synthesis["theory_space_columns"],
+            "theory_space_table": ladder_synthesis["theory_space_table"],
+            "verified_import_count": len(ladder_imports),
+            "verified_imports": ladder_imports,
+            "historical_rank_390_direct_sum_status": "SUPERSEDED",
+            "surviving_rank_390_subresults": [
+                "TRACE_SCHUR_COMPLEMENT",
+                "REDUCED_SCALAR_GREEN_IDENTITIES",
+                "PHASE_SCALAR_WAVE_BLOCK",
+            ],
+            "selected_action": ladder_synthesis["terminal_verdict"][
+                "selected_action"
+            ],
+            "determinant_or_QAP_freeze_activated": False,
+            "next_preflight": ladder_synthesis["terminal_verdict"]["next_gate"],
+            "next_preflight_selected_action": False,
+            "smallest_representation_level_escape": ladder_synthesis[
+                "smallest_representation_level_escape"
+            ],
+            "first_genuinely_untested_mechanisms": ladder_synthesis[
+                "first_genuinely_untested_mechanisms"
+            ],
+            "claim_boundary": ladder_synthesis["claim_boundary"],
+        },
         "quadratic_active_clock_status": {
             "result_id": active_clock_stability["result_id"],
             "predecessor_result_id": active_clock["result_id"],
@@ -1510,6 +1612,15 @@ def build() -> dict[str, Any]:
             "extended_all_loop_stable_H04_odd_dimension": all_loop[
                 "stable_H04_module"
             ]["independent_generator_count"]["odd"],
+            "declared_minimal_compensator_ladder_exhausted": True,
+            "declared_minimal_compensator_ladder_import_count": len(
+                ladder_imports
+            ),
+            "declared_minimal_compensator_ladder_good_locus_empty": True,
+            "historical_rank_390_direct_sum_causal_promotion_superseded": True,
+            "minimal_ladder_no_selected_classical_action": True,
+            "minimal_ladder_determinant_or_QAP_freeze_not_activated": True,
+            "separated_scale_U1_is_preflight_only": True,
             "finite_BV_Berezinian_nonunit": True,
             "action_independent_continuum_Jacobian_obstructed": True,
             "common_d_dimensional_even_AFN0_premodule_classified": True,
@@ -1779,6 +1890,9 @@ def build() -> dict[str, Any]:
             "full_BV_Bridge_4_particle_crosswalk": False,
             "Berger_Bridge_4_particle_crosswalk": False,
             "Bridge_5_interacting_BRST_map": False,
+            "universal_scalar_tensor_compensator_no_go": False,
+            "arbitrary_hybrid_minimal_ladder_no_go": False,
+            "selected_separated_scale_U1_action": False,
             "theorem_frozen": False,
         },
         "next_gate": {
