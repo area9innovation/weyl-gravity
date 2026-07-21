@@ -2295,6 +2295,26 @@ degree and degree-\(+1\) pairing convention, including a freshly derived
 local descent.  Mixed rows, receiver inclusion, quotient input, period,
 denominator and redshift remain `NO_CERTIFIED_MAP` or not reached.
 
+## Active bridge: physical receiver and frequency ratio not activated
+
+The terminal receiver20/q70 integration obstruction is now consumed by the
+charged-time admissibility ladder.  Although the standalone D0 action and
+local descent remain certified, the first required ambient chain-and-pairing
+intertwiner is obstructed and no residual-quotient input map exists.  The
+local class is therefore not promoted to a physical receiver.
+
+Residual cohomology, descended nonradical pairing and period, same-carrier
+retarded support, denominator margin, physical \(D/R/K\) actions and an
+action-derived emitter phase are not reached.  The operational
+frequency-ratio partial function has empty domain and no value; in
+particular, no coordinate-frequency ratio is called redshift.
+
+The fail-closed atlas row is
+`positive-berger-receiver-physical-descent-frequency-ratio-not-activated-fragment-v1`.
+Its activation gate is unchanged: reissue receiver20 in the q70 compact
+degree convention, rederive the local descent from that action, and pass the
+full mixed-action pushout before retrying physical descent.
+
 ## Active bridge: combined-q1 linear-K obstruction
 
 The queue successor
