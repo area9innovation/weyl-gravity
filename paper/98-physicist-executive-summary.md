@@ -55,8 +55,12 @@ clock system plus a contractible gauge summand. This gives a complete real
 cyclic 70-component BV parent with support-local advanced and retarded chain
 homotopies. It is the first compensator-successor model to pass the complete
 classical causal-parent gate. Its full fixed-charge physical cohomology,
-reduced inertia, neighborhood stability, interactions, observables and
-quantization are still being audited.
+reduced inertia, interactions, observables and quantization are still being
+audited. An exact homogeneous stationary classification has also shown that
+the passing fixed-action point is isolated rather than an open phase, and that
+the same action has no stationary path to the round cylinder. The homogeneous
+trace block is positive and oscillatory there; this does not replace the full
+nonhomogeneous physical reduction.
 
 At one Euclidean loop order, strict fixed-field-content pure Weyl gravity has
 a nonzero local BV anomaly. A tau-adic compensator extension makes that local
@@ -157,13 +161,16 @@ The newest Berger result concerns a genuinely changed action rather than a
 passive compensator. Two clock phases counterflow so that the diagonal compact
 gauge charge vanishes while the relative phase evolves. On the selected
 squashed background and fixed relative-charge leaf, the resulting theory has
-a complete 70-component action-derived causal BV parent. Raw $D$ remains
-charged on the unrestricted parent and becomes null only after the explicit
-fixed-$Q_{\rm rel}$ restriction. The fixed-charge physical reduction and its
-complete reduced inertia are the next Classical gate.
+a complete 70-component action-derived causal BV parent. The exact
+fixed-action homogeneous stationary locus contains this positive solution as
+an isolated point and supplies no stationary route to the round cylinder.
+Raw $D$ remains charged on the unrestricted parent and becomes null only
+after the explicit fixed-$Q_{\rm rel}$ restriction. The full fixed-charge
+physical reduction and its complete descended inertia are the next Classical
+gate; positivity of the homogeneous trace block alone is not that theorem.
 
 > **Immediate limitation.** This is not a universal removal of radiative
-> gravitons, an open neighborhood theorem for generic backgrounds, or an
+> gravitons, an open viable phase for generic backgrounds, or an
 > asymptotic particle theorem.
 
 ### B. Einstein-image and additional classical branches

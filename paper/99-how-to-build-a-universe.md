@@ -189,6 +189,11 @@ an instantaneous nonlocal shortcut.
 
 This is the first proposed repair after the compensator failures to reach a
 complete classical causal parent. It is not yet a finished healthy universe.
+The exact stationary equations make the passing fixed-action Berger solution
+an isolated point rather than an open family, and the same action does not
+connect it continuously to the round cylinder. Its homogeneous trace motion
+has a healthy oscillatory sign, but every surviving nonhomogeneous physical
+direction must still pass the full reduction.
 The next calculation must remove every redundant direction explicitly and
 check that all remaining clock and gravitational directions have acceptable
 signs, propagation and time-charge behavior.
