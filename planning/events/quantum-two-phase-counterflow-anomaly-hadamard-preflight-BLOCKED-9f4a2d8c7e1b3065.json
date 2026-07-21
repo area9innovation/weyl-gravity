@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/quantum-two-phase-counterflow-anomaly-hadamard-preflight-BLOCKED-9f4a2d8c7e1b3065",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/quantum-two-phase-counterflow-anomaly-hadamard-preflight-BLOCKED-9f4a2d8c7e1b3065.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "coordinator", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-21T07:28:30Z", "seq": 5, "predecessor": "sf:program/event/quantum-two-phase-counterflow-anomaly-hadamard-preflight-READY-a76187101ee9cf25", "payload": {"target": "sf:program/work/quantum-two-phase-counterflow-anomaly-hadamard-preflight", "to_state": "BLOCKED", "note": "BLOCKED by TWO_PHASE_COUNTERFLOW_BERGER_FULL_ISOTYPICAL_Q70_GRADING_OBSTRUCTION_V1: the composite 70-row carrier imported by the Hadamard half of this item is not currently a degree-plus-one graded-cyclic BV complex. Reactivate only if sf:program/work/classical-two-phase-counterflow-q70-graded-cyclic-parent-repair terminates with a reissued graded-cyclic causal parent and current hashes. If that repair obstructs, retire this combined item and retain only a separately scoped action-local anomaly classification; do not infer Lorentzian Hadamard, positivity, QME or particle status from the earlier ungraded/Z2 carrier."}, "native": {"authored_by": "sfc work-event", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/quantum-two-phase-counterflow-anomaly-hadamard-preflight"}]
+}
