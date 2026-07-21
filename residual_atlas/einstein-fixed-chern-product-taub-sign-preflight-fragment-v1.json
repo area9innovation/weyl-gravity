@@ -1,0 +1,93 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This exact preflight classifies the pure-magnetic fixed-Chern common-product background chambers and proves that the certified compact Plebanski-Hacyan Taub signs live on their flat double-root wall. It does not define or infer the off-wall q/p modes, Lee-Wald form, stabilizer moment maps, sign pivots, bounded tangent cone, causal evolution, observables, particles, scattering, or quantum norms.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_FIXED_CHERN_PRODUCT_TAUB_SIGN_PREFLIGHT_V1.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_FIXED_CHERN_PRODUCT_TAUB_SIGN_PREFLIGHT_V1",
+          "sha256": "89806ac03079127970dc16a5e0840c60c6294bf5f1e011183d77c3a1d69dd14a"
+        }
+      ],
+      "id": "einstein.product.fixed_chern.background_chambers.taub_sign_preflight",
+      "mode_data": {
+        "dispersion": {
+          "statement": "No off-wall harmonic shells are certified.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "lee_wald": {
+          "statement": "The off-wall action-derived current is missing.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "No off-wall source operator or resonant functional is defined.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Background chambers are exact; the off-wall tangent cone is undefined.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No retarded complex is imported.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No off-wall exponential-polynomial operator is certified.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "Wall moment maps cannot be transported without the lower-order carrier.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "M_2(k_1) x S^2(k_2), aligned pure magnetic Maxwell field",
+        "boundaries": "fixed-Chern compact-S2 products; compact Cauchy status branch-specific",
+        "carrier": "nonlinear background incidence plus imported fixed-wall reduced harmonic carriers only",
+        "charge_sector": "fixed magnetic U(1) bundle P_N, N nonzero; electric amplitude E=0",
+        "degree": "background degree 0; Taub comparison degree 2 only where imported",
+        "ell": "all certified wall harmonics; off-wall unclassified",
+        "k": "all certified compact wall momenta; off-wall spatial spectrum unclassified",
+        "m": "all certified wall magnetic labels; off-wall unclassified",
+        "omega": "certified wall q/p shells only; off-wall dispersion unclassified",
+        "parity": "axial and polar only on the flat wall; off-wall NO_CERTIFIED_MAP",
+        "theory": "common Einstein-Maxwell/pure-Weyl-Maxwell product solution locus"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/einstein_maxwell_weyl_fixed_chern_product_taub_sign_preflight.py",
+  "generated_by_sha256": "91a43c2a6537df70151fdfc9d709f529943af97728238d0a6aa392ea1dd2c37a",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_nonlinear",
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_fixed_chern_product_taub_sign_preflight --check",
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_fixed_chern_product_taub_sign_preflight",
+    "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_fixed_chern_product_taub_sign_preflight",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-fixed-chern-product-taub-sign-preflight-fragment-v1.json"
+  ]
+}

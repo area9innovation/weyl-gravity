@@ -1,0 +1,98 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_FIXED_CHERN_PRODUCT_TAUB_SIGN_PREFLIGHT_V1",
+  "date_utc": "2026-07-21",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "input_commit": "414853ed8",
+  "tests": [
+    {
+      "tier": 0,
+      "command": "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_fixed_chern_product_taub_sign_preflight --check",
+      "elapsed_seconds": 0.52,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_fixed_chern_product_taub_sign_preflight",
+      "elapsed_seconds": 0.79,
+      "status": "PASS",
+      "independence": "does not import the producer; independently eliminates the flux, solves the chamber quadratic, and checks decisive mutations"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_fixed_chern_product_taub_sign_preflight",
+      "elapsed_seconds": 0.91,
+      "status": "PASS",
+      "tests_run": 9
+    },
+    {
+      "tier": 1,
+      "command": "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-fixed-chern-product-taub-sign-preflight-fragment-v1.json",
+      "elapsed_seconds": 0.13,
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "python3 -m json.tool bridge/einstein_sector/schema/einstein-maxwell-weyl-fixed-chern-product-taub-sign-preflight-v1.schema.json",
+      "elapsed_seconds": 0.03,
+      "status": "PASS"
+    }
+  ],
+  "mutations": [
+    {
+      "name": "subcritical_discriminant",
+      "mutation": "N=2, q_min=1, kappa=1, alpha_B=2",
+      "expected": "negative discriminant and no real background",
+      "status": "REJECTED_AS_REAL_BACKGROUND"
+    },
+    {
+      "name": "critical_double_root",
+      "mutation": "N=2, q_min=1, kappa=1, alpha_B=3",
+      "expected": "double root k_2=1 and k_1=0",
+      "status": "DETECTED"
+    },
+    {
+      "name": "supercritical_branch_split",
+      "mutation": "N=2, q_min=1, kappa=1, alpha_B=4",
+      "expected": "two roots with opposite k_1 signs",
+      "status": "DETECTED"
+    },
+    {
+      "name": "false_off_wall_sign_promotion",
+      "mutation": "off_wall_extra_energy_definiteness_certified=true",
+      "expected": "strict schema rejection",
+      "status": "REJECTED"
+    },
+    {
+      "name": "atlas_evidence_hash",
+      "mutation": "replace certificate sha256 by zero hash",
+      "expected": "independent verifier rejection",
+      "status": "REJECTED"
+    }
+  ],
+  "higher_tiers": {
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "All six scientific inputs are unchanged content-addressed artifacts and are rechecked by exact hashes; no shared operator or schema consumer was modified."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a fail-closed obstruction preflight, not a theorem-freeze or release promotion."
+    }
+  },
+  "advisory_shadow": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 5.78,
+    "process_status": "PASS_ADVISORY",
+    "findings": [
+      "bridge certificate audit reported pre-existing corpus drift",
+      "coverage census reported 1349 certificates versus the 2026-07-19 baseline of 976",
+      "Forge binary is an unpinned development build whose revision differs from the stdlib checkout"
+    ],
+    "promotion_effect": "NONE; advisory findings are recorded and are not treated as a strict pass"
+  },
+  "claim_boundary": "The receipt covers the exact fixed-Chern background chamber theorem and the fail-closed carrier audit only. It does not certify an off-wall Taub sign, bounded tangent cone, causal map, observable, particle, scattering or quantum statement."
+}

@@ -1,0 +1,200 @@
+{
+  "carrier_audit": {
+    "curvature_flux_lower_order_hessians": "NO_CERTIFIED_MAP",
+    "flat_wall_taub_signs": "CERTIFIED_ON_THE_PLEBANSKI_HACYAN_DOUBLE_ROOT_FIXTURE",
+    "logical_consequence": "The wall signs cannot be continued to either open chamber from principal-symbol data alone.",
+    "nonlinear_product_incidence": "CERTIFIED_ON_THE_FULL_PARAMETERIZED_FAMILY",
+    "off_wall_action_derived_lee_wald_current": "NO_CERTIFIED_MAP",
+    "off_wall_axial_polar_branch_dictionary": "NO_CERTIFIED_MAP",
+    "principal_symbol_chain_map": "CERTIFIED_AND_PARAMETER_INDEPENDENT_AT_PRINCIPAL_ORDER"
+  },
+  "claim_boundary": "This exact preflight classifies the pure-magnetic fixed-Chern common-product background chambers and proves that the certified compact Plebanski-Hacyan Taub signs live on their flat double-root wall. It does not define or infer the off-wall q/p modes, Lee-Wald form, stabilizer moment maps, sign pivots, bounded tangent cone, causal evolution, observables, particles, scattering, or quantum norms.",
+  "claim_flags": {
+    "exact_background_chamber_theorem": true,
+    "lorentzian_causal_claim": false,
+    "moment_map_zero_equals_bounded_continuation": false,
+    "observable_claim": false,
+    "particle_or_quantum_norm_claim": false,
+    "scattering_claim": false,
+    "structural_taub_sign_theorem_beyond_flat_fixture": false
+  },
+  "classification": {
+    "bounded_second_order_sufficiency_certified_off_wall": false,
+    "fixed_chern_background_chambers_classified": true,
+    "flat_fixture_is_double_root_wall": true,
+    "no_real_background_below_critical_coupling": true,
+    "off_wall_einstein_opposite_sign_certified": false,
+    "off_wall_extra_energy_definiteness_certified": false,
+    "off_wall_full_linearized_operator_constructed": false,
+    "off_wall_taub_moment_maps_defined": false,
+    "sign_change_across_wall_certified": false,
+    "two_open_background_branches_above_critical_coupling": true,
+    "variable_flux_theorem_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "fixed_chern_background_theorem": {
+    "chambers": [
+      {
+        "background_count": 0,
+        "classification": "NO_REAL_FIXED_CHERN_PURE_MAGNETIC_COMMON_PRODUCT",
+        "condition": "alpha_B<alpha_critical"
+      },
+      {
+        "background_count": 1,
+        "classification": "FLAT_DOUBLE_ROOT_WALL",
+        "compact_cauchy_status": "CERTIFIED_BY_THE_IMPORTED_PLEBANSKI_HACYAN_FIXTURE",
+        "condition": "alpha_B=alpha_critical",
+        "k_1": "0",
+        "k_2": "4*q_min**2/(N**2*kappa)",
+        "multiplicity": 2
+      },
+      {
+        "background_count": 2,
+        "branches": [
+          {
+            "compact_cauchy_status": "GEOMETRICALLY_AVAILABLE_ON_GLOBAL_DS2_X_S2; TANGENT_CARRIER_NOT_CERTIFIED",
+            "id": "LOW_CURVATURE_DS2_BRANCH",
+            "k_1": "-4*q_min**2*s*(s - 1)/(N**2*kappa)",
+            "k_2": "-4*q_min**2*(s - 1)/(N**2*kappa)",
+            "sign_k_1": "POSITIVE"
+          },
+          {
+            "compact_cauchy_status": "NO_CERTIFIED_GLOBAL_COMPACT_CAUCHY_QUOTIENT",
+            "id": "HIGH_CURVATURE_ADS2_BRANCH",
+            "k_1": "-4*q_min**2*s*(s + 1)/(N**2*kappa)",
+            "k_2": "4*q_min**2*(s + 1)/(N**2*kappa)",
+            "sign_k_1": "NEGATIVE"
+          }
+        ],
+        "condition": "alpha_B>alpha_critical; s=sqrt(1-alpha_critical/alpha_B) in (0,1)"
+      }
+    ],
+    "exact_fixture": {
+      "N": 2,
+      "alpha_critical": "3",
+      "kappa": 1,
+      "open_chamber_example": {
+        "alpha_B": "4",
+        "branches": [
+          {
+            "k_1": "1/4",
+            "k_2": "1/2"
+          },
+          {
+            "k_1": "-3/4",
+            "k_2": "3/2"
+          }
+        ],
+        "s": "1/2"
+      },
+      "q_min": 1,
+      "wall": {
+        "alpha_B": "3",
+        "k_1": "0",
+        "k_2": "1"
+      }
+    },
+    "flux_quantization": {
+      "assumptions": [
+        "N is a nonzero integer",
+        "q_min>0",
+        "kappa>0",
+        "k_2>0",
+        "E=0"
+      ],
+      "chern_relation": "(q_min/(2*pi))*integral_Sigma F=N",
+      "fixed_scope": "fixed magnetic bundle component P_N; N is not varied",
+      "magnetic_amplitude": "P=N*k_2/(2*q_min)",
+      "sphere_area": "4*pi/k_2"
+    },
+    "reduction": {
+      "alpha_critical": "3*N**2/(4*q_min**2)",
+      "background_quadratic": "beta*k_2**2-2*k_2+3/(alpha_B*kappa)=0",
+      "beta": "N**2*kappa/(4*q_min**2)",
+      "discriminant": "-(3*N**2 - 4*alpha_B*q_min**2)/(alpha_B*q_min**2)",
+      "einstein_flux_relation": "k_1=-k_2*(N**2*k_2*kappa - 4*q_min**2)/(4*q_min**2)",
+      "expanded_left_hand_side": "(N**2*alpha_B*k_2**2*kappa**2 - 8*alpha_B*k_2*kappa*q_min**2 + 12*q_min**2)/(4*alpha_B*kappa*q_min**2)"
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": {
+    "priority_branch": "LOW_CURVATURE_DS2_BRANCH",
+    "required_objects": [
+      "full curvature/flux lower-order axial and polar Weyl-Maxwell Hessians",
+      "same-background Einstein image and q/p branch dictionary",
+      "action-derived Lee-Wald current and stabilizer lifts",
+      "factorization of every shell, current pivot, and exceptional harmonic wall"
+    ],
+    "then": "Repeat separately on the high-curvature AdS2 branch with an explicit boundary/global-hyperbolicity policy."
+  },
+  "provenance": {
+    "imported_artifacts": [
+      {
+        "name": "product_incidence",
+        "path": "bridge/certificates/einstein_maxwell_product_incidence.json",
+        "result_id": "EINSTEIN_MAXWELL_PRODUCT_INCIDENCE",
+        "sha256": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+      },
+      {
+        "name": "product_tangent_preflight",
+        "path": "bridge/certificates/einstein_maxwell_product_tangent_preflight.json",
+        "result_id": "EINSTEIN_MAXWELL_PRODUCT_TANGENT_PREFLIGHT",
+        "sha256": "cbae5417348975b9ceee8b04be7b6214c7ca8bf5f2c3778b4527de461569512b"
+      },
+      {
+        "name": "harmonic_taub_sign",
+        "path": "bridge/certificates/einstein_maxwell_weyl_harmonic_taub_sign_classification.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_HARMONIC_TAUB_SIGN_CLASSIFICATION",
+        "sha256": "26fae23935261735385d6a7796d5f10db3404f863d2bdf85c7b5d0869afd0006"
+      },
+      {
+        "name": "exceptional_all_m",
+        "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ALL_M_MOMENT_INTERSECTION_V1.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ALL_M_MOMENT_INTERSECTION_V1",
+        "sha256": "983bfc000f32975f55f8d8a9b8e1fc14138b2cbeccb070f2f13d2dc239d4a59e"
+      },
+      {
+        "name": "finite_harmonic_structural",
+        "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_CONE_STRUCTURAL_FREEZE_V1.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_CONE_STRUCTURAL_FREEZE_V1",
+        "sha256": "935a3c264858c4f425025f2f1adf50886739bb84cdc86331120058c9ce7bd545"
+      },
+      {
+        "name": "moment_map_taub",
+        "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+        "sha256": "047594a9019eb68a000ecce1799063789714db632c41e67e48d37bdf0fc3657a"
+      }
+    ],
+    "input_commit": "414853ed8",
+    "producer": "bridge/einstein_sector/einstein_maxwell_weyl_fixed_chern_product_taub_sign_preflight.py",
+    "producer_sha256": "91a43c2a6537df70151fdfc9d709f529943af97728238d0a6aa392ea1dd2c37a"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_FIXED_CHERN_PRODUCT_TAUB_SIGN_PREFLIGHT_V1",
+  "result_state": "BACKGROUND_CHAMBERS_CERTIFIED_TAUB_SIGN_GENERALIZATION_OBSTRUCTED",
+  "schema": "einstein-maxwell-weyl-fixed-chern-product-taub-sign-preflight-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein-maxwell-weyl-fixed-chern-product-taub-sign-preflight-v1.schema.json",
+  "schema_sha256": "8cc4a3b7d5eb05049685a61ea2c9c77a3c1912021b79103796d39332c1505c40",
+  "scope": {
+    "background": "M_2(k_1) x S^2(k_2), aligned pure magnetic Maxwell field",
+    "boundaries": "fixed-Chern compact-S2 products; compact Cauchy status branch-specific",
+    "carrier": "nonlinear background incidence plus imported fixed-wall reduced harmonic carriers only",
+    "charge_sector": "fixed magnetic U(1) bundle P_N, N nonzero; electric amplitude E=0",
+    "degree": "background degree 0; Taub comparison degree 2 only where imported",
+    "ell": "all certified wall harmonics; off-wall unclassified",
+    "k": "all certified compact wall momenta; off-wall spatial spectrum unclassified",
+    "m": "all certified wall magnetic labels; off-wall unclassified",
+    "omega": "certified wall q/p shells only; off-wall dispersion unclassified",
+    "parity": "axial and polar only on the flat wall; off-wall NO_CERTIFIED_MAP",
+    "theory": "common Einstein-Maxwell/pure-Weyl-Maxwell product solution locus"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_maxwell_weyl_fixed_chern_product_taub_sign_preflight --check",
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_fixed_chern_product_taub_sign_preflight",
+    "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_fixed_chern_product_taub_sign_preflight",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-fixed-chern-product-taub-sign-preflight-fragment-v1.json"
+  ]
+}

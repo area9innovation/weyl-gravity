@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-fixed-chern-product-taub-sign-preflight-v1",
+  "title": "Fixed-Chern product-background chamber preflight for Taub signs",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "provenance",
+    "scope",
+    "fixed_chern_background_theorem",
+    "carrier_audit",
+    "classification",
+    "next_gate",
+    "claim_flags",
+    "claim_boundary",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-fixed-chern-product-taub-sign-preflight-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein-maxwell-weyl-fixed-chern-product-taub-sign-preflight-v1.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_FIXED_CHERN_PRODUCT_TAUB_SIGN_PREFLIGHT_V1"},
+    "result_state": {"const": "BACKGROUND_CHAMBERS_CERTIFIED_TAUB_SIGN_GENERALIZATION_OBSTRUCTED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["input_commit", "producer", "producer_sha256", "imported_artifacts"],
+      "properties": {
+        "input_commit": {"const": "414853ed8"},
+        "producer": {"type": "string", "minLength": 1},
+        "producer_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "imported_artifacts": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "path", "result_id", "sha256"],
+            "properties": {
+              "name": {"type": "string", "minLength": 1},
+              "path": {"type": "string", "minLength": 1},
+              "result_id": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"],
+      "properties": {
+        "theory": {"type": "string", "minLength": 1},
+        "background": {"type": "string", "minLength": 1},
+        "boundaries": {"type": "string", "minLength": 1},
+        "charge_sector": {"type": "string", "minLength": 1},
+        "carrier": {"type": "string", "minLength": 1},
+        "degree": {"type": "string", "minLength": 1},
+        "parity": {"type": "string", "minLength": 1},
+        "ell": {"type": "string", "minLength": 1},
+        "m": {"type": "string", "minLength": 1},
+        "k": {"type": "string", "minLength": 1},
+        "omega": {"type": "string", "minLength": 1}
+      }
+    },
+    "fixed_chern_background_theorem": {"type": "object"},
+    "carrier_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nonlinear_product_incidence",
+        "principal_symbol_chain_map",
+        "curvature_flux_lower_order_hessians",
+        "off_wall_axial_polar_branch_dictionary",
+        "off_wall_action_derived_lee_wald_current",
+        "flat_wall_taub_signs",
+        "logical_consequence"
+      ],
+      "properties": {
+        "nonlinear_product_incidence": {"type": "string", "minLength": 1},
+        "principal_symbol_chain_map": {"type": "string", "minLength": 1},
+        "curvature_flux_lower_order_hessians": {"const": "NO_CERTIFIED_MAP"},
+        "off_wall_axial_polar_branch_dictionary": {"const": "NO_CERTIFIED_MAP"},
+        "off_wall_action_derived_lee_wald_current": {"const": "NO_CERTIFIED_MAP"},
+        "flat_wall_taub_signs": {"type": "string", "minLength": 1},
+        "logical_consequence": {"type": "string", "minLength": 1}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixed_chern_background_chambers_classified",
+        "flat_fixture_is_double_root_wall",
+        "two_open_background_branches_above_critical_coupling",
+        "no_real_background_below_critical_coupling",
+        "off_wall_full_linearized_operator_constructed",
+        "off_wall_taub_moment_maps_defined",
+        "off_wall_extra_energy_definiteness_certified",
+        "off_wall_einstein_opposite_sign_certified",
+        "sign_change_across_wall_certified",
+        "variable_flux_theorem_certified",
+        "bounded_second_order_sufficiency_certified_off_wall"
+      ],
+      "properties": {
+        "fixed_chern_background_chambers_classified": {"const": true},
+        "flat_fixture_is_double_root_wall": {"const": true},
+        "two_open_background_branches_above_critical_coupling": {"const": true},
+        "no_real_background_below_critical_coupling": {"const": true},
+        "off_wall_full_linearized_operator_constructed": {"const": false},
+        "off_wall_taub_moment_maps_defined": {"const": false},
+        "off_wall_extra_energy_definiteness_certified": {"const": false},
+        "off_wall_einstein_opposite_sign_certified": {"const": false},
+        "sign_change_across_wall_certified": {"const": false},
+        "variable_flux_theorem_certified": {"const": false},
+        "bounded_second_order_sufficiency_certified_off_wall": {"const": false}
+      }
+    },
+    "next_gate": {"type": "object"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exact_background_chamber_theorem",
+        "structural_taub_sign_theorem_beyond_flat_fixture",
+        "moment_map_zero_equals_bounded_continuation",
+        "lorentzian_causal_claim",
+        "observable_claim",
+        "scattering_claim",
+        "particle_or_quantum_norm_claim"
+      ],
+      "properties": {
+        "exact_background_chamber_theorem": {"const": true},
+        "structural_taub_sign_theorem_beyond_flat_fixture": {"const": false},
+        "moment_map_zero_equals_bounded_continuation": {"const": false},
+        "lorentzian_causal_claim": {"const": false},
+        "observable_claim": {"const": false},
+        "scattering_claim": {"const": false},
+        "particle_or_quantum_norm_claim": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  }
+}
