@@ -1,0 +1,70 @@
+{
+  "$schema": "../schema/two-phase-counterflow-physical-state-positivity-nonactivation-v1.schema.json",
+  "activation_gate": {
+    "branch": "REFUSE_PHYSICAL_POSITIVITY_ACTIVATION",
+    "classical_health_state": "OBSTRUCTED_LINEAR_PHYSICAL_HEALTH_WITH_TYPED_HIGHER_J_CENSUS_SHORTFALL",
+    "gate_passed": false,
+    "hadamard_all_70_rows": "NOT_COMPUTED",
+    "imported_hadamard_state": "NOT_ACTIVATED",
+    "required_hadamard_state": "SUCCESSFUL_FULL_BV_Q70_V2_HADAMARD"
+  },
+  "claim_boundary": "Physical-state positivity requires a successful full-q70 BV Hadamard covariance. The imported predecessor is explicitly NOT_ACTIVATED and constructs no 70-row covariance, so descent, radical, inertia and positivity are not defined. The classical health assembly remains valid but cannot replace the missing quantum covariance. No probability, particle, scattering or unitarity claim follows.",
+  "dependency_tags": [
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "lifecycle_state": "NOT_ACTIVATED",
+  "mutation_expectations": {
+    "K_rawD": "REJECT",
+    "Krein_probability": "REJECT",
+    "charge_conflation": "REJECT",
+    "generic_for_low_j": "REJECT",
+    "obstructed_hadamard_accepted": "REJECT",
+    "positivity_promotion": "REJECT"
+  },
+  "positivity_disposition": {
+    "D_Rrel_K_actions": "NOT_COMPUTED",
+    "descended_two_point_form": "NOT_COMPUTED",
+    "exceptional_isotypes": "NOT_COMPUTED",
+    "fixed_Q_rel": "NOT_COMPUTED",
+    "generic_isotypes": "NOT_COMPUTED",
+    "inertia": "NOT_COMPUTED",
+    "particles": "FORBIDDEN",
+    "physical_brst_cohomology": "NOT_COMPUTED",
+    "positive_quasifree_state": "NOT_ACTIVATED",
+    "radical": "NOT_COMPUTED",
+    "representative_independence": "NOT_TESTED",
+    "symplectic_compatibility": "NOT_TESTED",
+    "unitarity": "FORBIDDEN",
+    "unrestricted_Q_rel": "NOT_COMPUTED"
+  },
+  "provenance": {
+    "generator": "quantum-weyl/transfer/two_phase_counterflow_physical_state_positivity_nonactivation.py",
+    "generator_sha256": "2ae20aa44970ca1306eff8d4e661e66734b413c40ec7e1f0282373095bc36231"
+  },
+  "result_id": "TWO_PHASE_COUNTERFLOW_PHYSICAL_STATE_POSITIVITY_NONACTIVATION_V1",
+  "result_state": "NOT_ACTIVATED_MISSING_SUCCESSFUL_FULL_BV_HADAMARD_INPUT",
+  "schema": "two-phase-counterflow-physical-state-positivity-nonactivation-v1",
+  "source_refs": {
+    "hadamard": {
+      "path": "quantum-weyl/lorentzian/certificates/TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1",
+      "sha256": "0a52034f3e97336bc0da03861891c7610837a7f6eff2822fc604dafbc0ea53b7"
+    },
+    "hadamard_receipt": {
+      "path": "quantum-weyl/lorentzian/receipts/TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1_TIER_RECEIPT.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1_TIER_RECEIPT",
+      "sha256": "7821559735e09354306e479edfa6ef555be7a1d831416a4e0d88f0ca5c65faf2"
+    },
+    "health": {
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_V1",
+      "sha256": "cc3bb0ff507cfdd0721b5f2c203c8836e2e1860d8b4ba8dc3e4f12a257904b77"
+    },
+    "health_receipt": {
+      "path": "d_quotient_classical/compensator/receipts/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_V1_TIER_RECEIPT.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_V1_TIER_RECEIPT",
+      "sha256": "d2d2f1d2e7cd99aed2e6128c2194da925929394ece6d08eaa6f045d57ff4b523"
+    }
+  }
+}

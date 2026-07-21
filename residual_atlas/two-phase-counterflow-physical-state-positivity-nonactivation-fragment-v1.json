@@ -1,0 +1,97 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "Physical-state positivity requires a successful full-q70 BV Hadamard covariance. The imported predecessor is explicitly NOT_ACTIVATED and constructs no 70-row covariance, so descent, radical, inertia and positivity are not defined. The classical health assembly remains valid but cannot replace the missing quantum covariance. No probability, particle, scattering or unitarity claim follows.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "quantum-weyl/lorentzian/certificates/TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1",
+          "sha256": "0a52034f3e97336bc0da03861891c7610837a7f6eff2822fc604dafbc0ea53b7"
+        },
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_HEALTH_ASSEMBLY_MAXIMAL_DOMAIN_V1",
+          "sha256": "cc3bb0ff507cfdd0721b5f2c203c8836e2e1860d8b4ba8dc3e4f12a257904b77"
+        }
+      ],
+      "id": "quantum.counterflow.phase1.physical_state_positivity_nonactivation",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Classical health is obstructed and no quantum covariance is available.",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "No two-point form descends without the full-BV covariance.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "No quantum resonance state is defined.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The classical robust clock gate failed.",
+            "status": "OBSTRUCTED"
+          },
+          "causal_retarded": {
+            "statement": "Classical Green data alone do not define a Hadamard covariance.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No quantum state carrier exists.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "No interacting bridge is activated.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "selected Berger fixture and repaired-q70 health domain",
+        "boundaries": "closed S3 Cauchy slices",
+        "carrier": "no descended quantum state carrier",
+        "charge_sector": "unrestricted and fixed Q_rel kept distinct",
+        "degree": "physical BRST cohomology not activated",
+        "ell": "generic and exceptional not computed",
+        "k": "NOT_COMPUTED",
+        "m": "NOT_COMPUTED",
+        "omega": "NOT_COMPUTED",
+        "parity": "NOT_COMPUTED",
+        "theory": "same-field two-phase polar-clock Weyl action"
+      }
+    }
+  ],
+  "generated_by": "quantum-weyl/transfer/two_phase_counterflow_physical_state_positivity_nonactivation.py",
+  "generated_by_sha256": "2ae20aa44970ca1306eff8d4e661e66734b413c40ec7e1f0282373095bc36231",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "quantum",
+  "verification_commands": [
+    "python3 quantum-weyl/transfer/two_phase_counterflow_physical_state_positivity_nonactivation.py --check",
+    "python3 quantum-weyl/transfer/verify_two_phase_counterflow_physical_state_positivity_nonactivation.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-physical-state-positivity-nonactivation-fragment-v1.json"
+  ]
+}

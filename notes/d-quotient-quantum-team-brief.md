@@ -2840,3 +2840,16 @@ claim follows. This leaves the classical q70 V2 causal theorem intact.
 
 - [`TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1.json`](../quantum-weyl/lorentzian/certificates/TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1.json)
 - [`two-phase-counterflow-full-bv-hadamard-nonactivation-fragment-v1.json`](../residual_atlas/two-phase-counterflow-full-bv-hadamard-nonactivation-fragment-v1.json)
+
+## Two-phase counterflow physical-state positivity nonactivation (2026-07-21)
+
+The required successful full-q70 Hadamard input is absent: its predecessor is
+`NOT_ACTIVATED` and constructs no 70-row covariance. The classical repaired-
+q70 health assembly remains valid but cannot replace that missing quantum
+datum. Physical BRST cohomology, descended two-point form, radical, inertia,
+generic/exceptional isotypes and separate fixed/unrestricted charge-carrier
+actions therefore remain `NOT_COMPUTED`; a positive quasifree state is
+`NOT_ACTIVATED`. No Krein sign is called probability, and no particle or
+unitarity claim follows.
+
+- [`TWO_PHASE_COUNTERFLOW_PHYSICAL_STATE_POSITIVITY_NONACTIVATION_V1.json`](../quantum-weyl/transfer/certificates/TWO_PHASE_COUNTERFLOW_PHYSICAL_STATE_POSITIVITY_NONACTIVATION_V1.json)
