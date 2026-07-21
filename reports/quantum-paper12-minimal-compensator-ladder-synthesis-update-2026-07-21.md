@@ -123,6 +123,10 @@ claim edges only; it does not freeze a new theorem, tag a release, or change
 shared core algebra. The imported classical synthesis already carries its own
 Tier-3 freeze receipt.
 
+EVIDENCE: `paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json`;
+`paper/12-pure-weyl-one-loop-bv-anomaly-paper-coverage-report.json`;
+`d_quotient_classical/receipts/COMPENSATOR_MINIMAL_LADDER_SYNTHESIS_AFTER_LEVEL3B_V1_TIER_RECEIPT.json`
+
 ## Coordination deviation
 
 The work item listed `notes/quantum-team-brief.md`, which does not exist. The
