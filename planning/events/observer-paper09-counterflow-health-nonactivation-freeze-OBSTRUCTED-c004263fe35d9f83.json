@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/observer-paper09-counterflow-health-nonactivation-freeze-OBSTRUCTED-c004263fe35d9f83",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/observer-paper09-counterflow-health-nonactivation-freeze-OBSTRUCTED-c004263fe35d9f83.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "coordinator", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-21T20:31:22Z", "seq": 7, "predecessor": "sf:program/event/observer-paper09-counterflow-health-nonactivation-freeze-BLOCKED-722f61d2a2419632", "payload": {"target": "sf:program/work/observer-paper09-counterflow-health-nonactivation-freeze", "to_state": "OBSTRUCTED", "note": "Coordinator lifecycle repair: this scoped publication package correctly ended DRAFT_ALLOWED with two named evidence-integrity gates and no new observer science. Both gates now have separate terminal owners: classical-paper09-legacy-claim-binding-supersession is DONE, while the immutable historical-base repair is DONE and its fresh Observer Tier-3 successor is OBSTRUCTED. Preserve the original SHORTFALL report; terminalize this predecessor as OBSTRUCTED so observer-paper09-final-freeze-after-historical-base-tier3-v2 can compute the authoritative final lifecycle disposition. Evidence: reports/observer-paper09-counterflow-health-nonactivation-freeze-closeout-2026-07-21.md and PAPER09_COUNTERFLOW_HEALTH_NONACTIVATION_FREEZE_V1_TIER_RECEIPT."}, "native": {"authored_by": "sfc work-event", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/observer-paper09-counterflow-health-nonactivation-freeze"}]
+}
