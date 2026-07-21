@@ -2744,3 +2744,33 @@ with `observational=NO_CERTIFIED_MAP`.  Exactly one minimal producer request,
 `sf:forge-request/positive-berger-action-derived-local-receiver-bv-cocycle`,
 has been issued.  Quotient, nonradical pairing, period, denominator and ratio
 calculations remain separate gates after that unary export lands.
+
+## Active bridge: standalone positive-Berger local receiver cocycle
+
+The requested common unary datum now exists as a standalone one-detector
+sector.  Restricting the certified dynamical apparatus action to the D0
+rod, polarization and memory fields gives ten real even rows and their ten
+odd BV cotangents.  The rigid phase action is not gauge, so the exhaustive
+gauge-generator and ghost ledgers are empty.  A transported background with
+\(\Theta=3t/4\), zero signal and zero memory multiplier solves every local
+apparatus equation without an external current.  The action-derived
+Koszul--Tate differential is nilpotent and cyclic for the exact rank-20 odd
+pairing.
+
+On compactly supported BV sections in the exact D0 worldtube, the
+memory-shift descent is
+\[
+ A=m^+,\qquad B=\lambda\rho_0(R)d^3R,\qquad sA+dB=0.
+\]
+It is not the persistent register \(m\): it is its degree-minus-one BV dual
+with a nonzero descent partner.  Probe smearing and advanced-covector
+substitutions fail the row, pairing and action-origin types.  Raw \(D\),
+phase \(R\) and \(K=D-(3/4)R\) are exported independently.
+
+The fail-closed atlas row is
+`positive-berger-local-receiver-action-preflight-fragment-v1`.  Its current
+activation gate is the content-addressed 20-row same-background embedding
+into a repaired ambient parent, including chain, pairing, support and
+\(D/R/K\) intertwiners.  That integration, the receiver residual quotient,
+nonradical period, denominator, redshift, nonlinear response and recoil all
+remain `NO_CERTIFIED_MAP`.
