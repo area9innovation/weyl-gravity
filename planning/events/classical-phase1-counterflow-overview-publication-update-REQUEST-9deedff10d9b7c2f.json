@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/classical-phase1-counterflow-overview-publication-update-REQUEST-9deedff10d9b7c2f",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/classical-phase1-counterflow-overview-publication-update-REQUEST-9deedff10d9b7c2f.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/classical-phase1-counterflow-overview-publication-update", "base_revision": "science-forge-ir-v0", "when": "2026-07-21T13:11:37Z", "seq": 1, "payload": {"target": "sf:program/request/classical-phase1-counterflow-overview-publication-update-to-classical-9deedff10d9b7c2f", "request_id": "sf:program/request/classical-phase1-counterflow-overview-publication-update-to-classical-9deedff10d9b7c2f", "from_item": "sf:program/work/classical-phase1-counterflow-overview-publication-update", "to_stream": "classical", "need": "You hold the new live lease for classical-phase1-counterflow-overview-publication-update. Run: s-f work-package sf:program/work/classical-phase1-counterflow-overview-publication-update -o /tmp/classical-phase1-publication-update-brief.md . Read the package and update only Papers 00, 98 and 99 plus their scoped coverage artifacts. This is publication propagation of terminal certificates, not a new model calculation.", "typed": "ASSIGNED_LEASE_PACKAGE_RECOVERY"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "classical"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/classical-phase1-counterflow-overview-publication-update"}]
+}
