@@ -1,0 +1,41 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:forge-request/science-forge-blocker-frontier-parking-and-drilldown",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "science-forge-blocker-frontier-parking-and-drilldown",
+  "source": {
+    "path": "planning/forge-requests/science-forge-blocker-frontier-parking-and-drilldown.json",
+    "span": null
+  },
+  "body": {
+    "owner": "science-forge",
+    "state": "REQUESTED",
+    "objective": "Replace the flat all-blocked alarm list in `s-f overview` with a fail-closed blocker frontier that distinguishes actionable root causes, transitively held descendants, intentionally parked work and stale blockers whose named prerequisite has already landed, while retaining complete drill-down and append-only provenance.",
+    "stop_condition": "Extend append-only block coordination with typed blocker references and lifecycle metadata: blocker URI, blocker kind (WORK_ITEM, REQUEST, ARTIFACT, EXTERNAL, POLICY or RESOURCE), responsible stream/owner when known, wake condition, optional review-after time and rationale. Fold these references into a blocker graph with deterministic root-cause compression, downstream affected counts, shared-root grouping, strongly connected-cycle detection and a compatibility disposition for historical free-text blockers. In the default overview print only `ACTIONABLE BLOCKER FRONTIER` rows, each with root ID/status/owner, immediate blocked item count, total downstream count and wake condition; separately print compact totals for `TRANSITIVELY HELD`, `PARKED`, `STALE/REPLAY NEEDED` and `UNCLASSIFIED`. Add `s-f blockers --tree`, `s-f blockers --all` or documented equivalents that expose every blocked item, exact dependency path and original event. Add explicit append-only park/unpark or block/release operations so long-horizon work is not presented as an immediate incident. A blocked item whose typed prerequisite becomes terminal or whose artifact/request is delivered must become `STALE/REPLAY NEEDED`, never silently READY or silently remain an actionable root. Preserve the full blocked count in the overview header and provide commands for every hidden drill-down. Add deterministic fixtures for a five-item cascade, two branches sharing one root, a block cycle, a parked long-horizon item, an untyped legacy blocker, a delivered root awaiting replay, a genuinely independent pair of root blockers, and the physics pattern where one missing serialized C26/support carrier holds multiple Classical and Quantum descendants. Demonstrate byte-identical native/C output and bounded O(items+events+block-edges) folding on the live programme.",
+    "current_gate": "actionable blocker frontier and honest long-horizon parking in the coordinator view",
+    "forbid": "no hiding or dropping blocked items without visible counts and drill-down; no automatic unblock, close, retire or lease mutation from a read-only fold; no authoritative root grouping by fuzzy normalization of free-text prose; no treating elapsed time alone as PARKED; no collapsing two scientifically independent blockers because their descriptions look similar; no cycle ignored or arbitrarily rooted; no rewriting historical events; no weakening fail-closed dependency semantics to make the dashboard shorter",
+    "depends_on": [
+      "sf:forge-request/bug-science-forge-overview-superlinear-latency"
+    ],
+    "activates": [
+      "coordinator views that show what must move next rather than every downstream consequence",
+      "reliable long-horizon research parking with explicit wake conditions",
+      "cross-stream root-cause impact analysis"
+    ],
+    "allowed_paths": [
+      "forge/tools/science-forge/",
+      "forge/tools/science-forge-cli/",
+      "forge/tools/science-forge/fixtures/",
+      "forge/tools/science-forge/GUIDE.md"
+    ],
+    "resource_hint": "COORDINATOR SIGNAL-TO-NOISE. Reuse the single indexed event/dependency fold being optimized for overview; blocker-frontier analysis must be another linear graph pass, not per-item rescanning. Typed new events are authoritative. Legacy prose remains visible as UNCLASSIFIED until migrated by new append-only classification events.",
+    "notes": [
+      "Live motivation on 2026-07-21: the overview correctly listed thirteen blocked physics items, but several are long-horizon descendants of the same missing q26/C26 carrier or apparatus unary. The coordinator needs the smallest actionable frontier plus downstream impact, not thirteen equally urgent-looking paragraphs.",
+      "WAITING on an ACTIVE/PROPOSED work dependency is ordinary queue state and should not be conflated with BLOCKED. PARKED means an explicit scientific decision to defer until a named wake condition, not a euphemism for an unresolved defect.",
+      "The default display may be short, but audit completeness is non-negotiable: counts, exact paths, source events and a one-command full tree must always remain available."
+    ],
+    "stream": "forge-requests"
+  },
+  "edges": []
+}
