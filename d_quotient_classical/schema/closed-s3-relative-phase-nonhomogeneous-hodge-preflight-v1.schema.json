@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/closed-s3-relative-phase-nonhomogeneous-hodge-preflight-v1.schema.json",
+  "title": "Closed-S3 nonhomogeneous relative-phase Hodge/Gauss preflight",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "import",
+    "scope",
+    "hodge_decomposition",
+    "gauss_reduction",
+    "mode_theorem",
+    "positivity_and_hyperbolicity",
+    "zero_mode_ledger",
+    "payload_ref",
+    "proof_obligations",
+    "terminal_verdict",
+    "claim_flags",
+    "claim_boundary",
+    "content_hashes"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-closed-s3-relative-phase-nonhomogeneous-hodge-preflight-v1"
+    },
+    "result_id": {
+      "const": "CLOSED_S3_RELATIVE_PHASE_NONHOMOGENEOUS_HODGE_PREFLIGHT_V1"
+    },
+    "result_state": {
+      "const": "CERTIFIED_ALL_ELL_HODGE_GAUSS_RELATIVE_PHASE_PREFLIGHT"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "import": {"$ref": "#/$defs/import"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "spatial_manifold",
+        "carrier",
+        "field_count",
+        "gauge_count",
+        "charge_matrix",
+        "derivative_order",
+        "harmonic_range"
+      ],
+      "properties": {
+        "spatial_manifold": {"const": "round closed S3 of radius a"},
+        "carrier": {"type": "string", "minLength": 1},
+        "field_count": {"const": "finite n>=1"},
+        "gauge_count": {"const": "finite r>=0"},
+        "charge_matrix": {"const": "Q in Mat_{n by r}(Z)"},
+        "derivative_order": {"const": 2},
+        "harmonic_range": {"type": "string", "minLength": 1}
+      }
+    },
+    "hodge_decomposition": {"type": "object", "minProperties": 4},
+    "gauss_reduction": {"type": "object", "minProperties": 7},
+    "mode_theorem": {"type": "object", "minProperties": 4},
+    "positivity_and_hyperbolicity": {"type": "object", "minProperties": 4},
+    "zero_mode_ledger": {"type": "object", "minProperties": 9},
+    "payload_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256", "content_sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"const": "CLOSED_S3_RELATIVE_PHASE_NONHOMOGENEOUS_HODGE_PAYLOAD_V1"},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "content_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "proof_obligations": {
+      "type": "object",
+      "minProperties": 10,
+      "additionalProperties": {"const": "PASS"}
+    },
+    "terminal_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result",
+        "all_ell_symbolic",
+        "positive_branch_relative_wave_count_per_scalar_harmonic",
+        "necessary_and_sufficient_relative_health_condition",
+        "positive_M_corollary",
+        "homogeneous_ell_zero_reproduced",
+        "full_causal_parent_activated",
+        "next_gate"
+      ],
+      "properties": {
+        "result": {"const": "HEALTHY_NONHOMOGENEOUS_RELATIVE_PHASE_WAVES_SURVIVE"},
+        "all_ell_symbolic": {"const": true},
+        "positive_branch_relative_wave_count_per_scalar_harmonic": {"const": "n-rank(Q)"},
+        "necessary_and_sufficient_relative_health_condition": {"type": "string", "minLength": 1},
+        "positive_M_corollary": {"type": "string", "minLength": 1},
+        "homogeneous_ell_zero_reproduced": {"const": true},
+        "full_causal_parent_activated": {"const": false},
+        "next_gate": {"type": "string", "minLength": 1}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ALL_ELL_HODGE_GAUSS_THEOREM",
+        "POSITIVE_NONHOMOGENEOUS_RELATIVE_WAVES",
+        "HOMOGENEOUS_ELL_ZERO_REPRODUCED",
+        "ORACLE_FREE_MATRIX_PAYLOAD",
+        "CONFLUX_VERDICT",
+        "MODEL_SPECIFIC_ACTION_SELECTED",
+        "FULL_BV_CAUSAL_PARENT",
+        "GRAVITY_COUPLING",
+        "HADAMARD_OR_QUANTUM"
+      ],
+      "properties": {
+        "ALL_ELL_HODGE_GAUSS_THEOREM": {"const": true},
+        "POSITIVE_NONHOMOGENEOUS_RELATIVE_WAVES": {"const": true},
+        "HOMOGENEOUS_ELL_ZERO_REPRODUCED": {"const": true},
+        "ORACLE_FREE_MATRIX_PAYLOAD": {"const": true},
+        "CONFLUX_VERDICT": {"const": false},
+        "MODEL_SPECIFIC_ACTION_SELECTED": {"const": false},
+        "FULL_BV_CAUSAL_PARENT": {"const": false},
+        "GRAVITY_COUPLING": {"const": false},
+        "HADAMARD_OR_QUANTUM": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 100},
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hodge_sha256",
+        "gauss_sha256",
+        "mode_theorem_sha256",
+        "positivity_sha256",
+        "zero_modes_sha256",
+        "terminal_sha256",
+        "claim_boundary_sha256"
+      ],
+      "properties": {
+        "hodge_sha256": {"$ref": "#/$defs/hash"},
+        "gauss_sha256": {"$ref": "#/$defs/hash"},
+        "mode_theorem_sha256": {"$ref": "#/$defs/hash"},
+        "positivity_sha256": {"$ref": "#/$defs/hash"},
+        "zero_modes_sha256": {"$ref": "#/$defs/hash"},
+        "terminal_sha256": {"$ref": "#/$defs/hash"},
+        "claim_boundary_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256",
+        "source_commit",
+        "result_id",
+        "actual_sha256",
+        "oracle_fields_consumed"
+      ],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "result_id": {"const": "CLOSED_S3_GAUGED_CLOCK_GAUSS_STRUCTURE_THEOREM_V1"},
+        "actual_sha256": {"$ref": "#/$defs/hash"},
+        "oracle_fields_consumed": {"const": []}
+      }
+    }
+  }
+}

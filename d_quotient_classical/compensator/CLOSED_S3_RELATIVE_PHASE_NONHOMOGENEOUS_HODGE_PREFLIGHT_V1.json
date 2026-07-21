@@ -1,0 +1,159 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE theorem covers the quadratic phase and Abelian-connection sector of the declared fixed-modulus, two-derivative gauge-invariant class on round closed S3. It proves the all-ell Hodge/Gauss mode counts, quotient matrices and positive-principal-form criterion, and independently recovers ell=0. It does not select a gravity-coupled action, solve singular Dirac strata, construct a support-local BV or Green homotopy, prove nonlinear closure, global monotonicity, Hadamard data, particles, scale generation or a quantum result.",
+  "claim_flags": {
+    "ALL_ELL_HODGE_GAUSS_THEOREM": true,
+    "CONFLUX_VERDICT": false,
+    "FULL_BV_CAUSAL_PARENT": false,
+    "GRAVITY_COUPLING": false,
+    "HADAMARD_OR_QUANTUM": false,
+    "HOMOGENEOUS_ELL_ZERO_REPRODUCED": true,
+    "MODEL_SPECIFIC_ACTION_SELECTED": false,
+    "ORACLE_FREE_MATRIX_PAYLOAD": true,
+    "POSITIVE_NONHOMOGENEOUS_RELATIVE_WAVES": true
+  },
+  "content_hashes": {
+    "claim_boundary_sha256": "cdc5a97000a47d0ee35b39d84e065f177f59651783add58503c6e628d71b432c",
+    "gauss_sha256": "347807d3a6a08079f9a7779350dbe50a37a7d083b4100215761f4a7dc13f67f4",
+    "hodge_sha256": "849141528326fcae443dc254738db178856c06cc1610ca2f57125c50006de2ec",
+    "mode_theorem_sha256": "912a532c3b83c93bf172902fd5d9ee88ae255aadabd64c99ef497eab4227e2fc",
+    "positivity_sha256": "b641bf120adb12353b15e49adc7c0594a4ba3f12f3b2230f6232ab8a78712091",
+    "terminal_sha256": "3461627f2415df051782d1ed357ac2d9ac8598b9e42a9f26e0bdb9a45c4007e6",
+    "zero_modes_sha256": "ed808666eb6a620e9eaed11c76c8f113cd45c8ecb84b4da293903c5df26be07b"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "gauss_reduction": {
+    "active_longitudinal_coordinate": "b=a_active-sqrt(lambda) zeta",
+    "gauge_action_ell_positive": [
+      "delta theta=Q alpha",
+      "delta a_L=sqrt(lambda) alpha",
+      "delta A0=dot(alpha)"
+    ],
+    "gauge_invariants": [
+      "v=dot(theta)-Q A0",
+      "w=sqrt(lambda) theta-Q a_L",
+      "e_L=dot(a_L)-sqrt(lambda) A0"
+    ],
+    "linearized_constraint": "Q^T M v+sqrt(lambda) K e_L=0",
+    "matter_kernel_statement": "ker Q is not gauge reducibility of the connection. Its exact scalar connection modes are pure gauge/constraint modes, while its coexact connection modes are massless Maxwell polarizations.",
+    "relative_character": "psi=N^T theta",
+    "relative_horizontal_lift": "H=M^{-1}N(N^T M^{-1}N)^{-1}"
+  },
+  "hodge_decomposition": {
+    "coexact_one_forms": {
+      "curl_eigenvalues": "+/-(ell+1)/a",
+      "degeneracy_per_curl_chirality": "ell(ell+2)",
+      "hodge_eigenvalue": "mu_ell=(ell+1)^2/a^2=lambda_ell+1/a^2",
+      "range": "ell>=1",
+      "total_degeneracy": "2 ell(ell+2)"
+    },
+    "exact_one_forms": {
+      "basis": "dY_ell/sqrt(lambda_ell)",
+      "degeneracy": "(ell+1)^2",
+      "eigenvalue": "lambda_ell",
+      "range": "ell>=1"
+    },
+    "harmonic_one_forms": "none because H^1(S3)=0",
+    "scalar_harmonics": {
+      "degeneracy": "(ell+1)^2",
+      "eigenvalue": "lambda_ell=ell(ell+2)/a^2",
+      "range": "ell=0,1,..."
+    }
+  },
+  "import": {
+    "actual_sha256": "c88b41a26262c2e79f2e7dbcccf66c50e19cfc179ed96dad8a847fc81f4e2433",
+    "oracle_fields_consumed": [],
+    "path": "d_quotient_classical/compensator/CLOSED_S3_GAUGED_CLOCK_GAUSS_STRUCTURE_THEOREM_V1.json",
+    "result_id": "CLOSED_S3_GAUGED_CLOCK_GAUSS_STRUCTURE_THEOREM_V1",
+    "sha256": "c88b41a26262c2e79f2e7dbcccf66c50e19cfc179ed96dad8a847fc81f4e2433",
+    "source_commit": "02a688837b866e9318ae92107744bba9c52de4d7"
+  },
+  "mode_theorem": {
+    "ell_positive_coexact_vector": {
+      "connection_polarizations": "r copies of both curl chiralities",
+      "frequency_operator": "mu_ell I+K^{-1}Q^T M Q",
+      "massive_families": "k",
+      "massless_Maxwell_families": "r-k"
+    },
+    "ell_positive_scalar": {
+      "longitudinal_frequency_operator": "lambda_ell I+K_a^{-1}V",
+      "massive_longitudinal_connection_modes": "k",
+      "matter_kernel_scalar_connection_modes": "0 physical modes",
+      "relative_phase_modes": "n-k",
+      "relative_principal_polynomial": "det(G_rel)*(omega^2-lambda_ell)^(n-k)"
+    },
+    "ell_zero": {
+      "Gauss": "Q^T p_0=0",
+      "exact_connection_mode": "ABSENT",
+      "independent_homogeneous_crosscheck": "REPRODUCED",
+      "physical_relative_phase_dimension": "n-k",
+      "reduced_metric": "G_rel=(N^T M^{-1}N)^{-1}"
+    },
+    "local_charge_pairing": "Relative modes p=N Pi obey Q^T p=0 harmonic by harmonic. Active longitudinal modes may carry matter charge density balanced exactly by the longitudinal electric divergence. Only ell=0 contributes to the integrated compact charge, which vanishes source-free."
+  },
+  "payload_ref": {
+    "content_sha256": "fb752b50ee0c76305e1d90be83f502a3848c682831a0827c68d98c7befd7e878",
+    "path": "d_quotient_classical/compensator/CLOSED_S3_RELATIVE_PHASE_NONHOMOGENEOUS_HODGE_PAYLOAD_V1.json",
+    "result_id": "CLOSED_S3_RELATIVE_PHASE_NONHOMOGENEOUS_HODGE_PAYLOAD_V1",
+    "sha256": "4475919c1b6c850e91369b4448ba8f1e7c19373725574c841ffad53b5b9bacb6"
+  },
+  "positivity_and_hyperbolicity": {
+    "conclusion": "G_rel>0, V>0 and K_a>0; every ell>=1 relative mode has positive wave energy, every active longitudinal Schur kinetic form is positive, and all principal frequencies are real.",
+    "declared_indefinite_stratum": "When M is nonsingular indefinite, require A=N^T M^{-1}N and V=Q_a^T M Q_a to be nonsingular. The relative sector is positive hyperbolic iff G_rel=A^{-1}>0; the active longitudinal/vector sector is positive iff K_a>0 and V>0. Singular A or V is a separate Dirac stratum and receives no health verdict.",
+    "positive_branch_hypotheses": [
+      "M>0",
+      "K>0",
+      "rank(Q)=k",
+      "N has full column rank n-k and Q^T N=0"
+    ],
+    "potential_Hessian": "A gauge-invariant reduced Hessian U_rel is lower order. It does not change hyperbolicity; mode stability additionally requires lambda_ell G_rel+U_rel to be positive semidefinite."
+  },
+  "proof_obligations": {
+    "Gauss_Schur_complement": "PASS",
+    "all_ell_symbolic_identity": "PASS",
+    "ell_zero_independent_crosscheck": "PASS",
+    "homogeneous_import_hash": "PASS",
+    "homogeneous_verdict_not_consumed_as_oracle": "PASS",
+    "linearized_Gauss_constraint": "PASS",
+    "positive_principal_forms": "PASS",
+    "rank_deficient_gauge_split": "PASS",
+    "relative_vertical_orthogonal_split": "PASS",
+    "round_S3_Hodge_spectrum": "PASS",
+    "scalar_gauge_invariants": "PASS"
+  },
+  "result_id": "CLOSED_S3_RELATIVE_PHASE_NONHOMOGENEOUS_HODGE_PREFLIGHT_V1",
+  "result_state": "CERTIFIED_ALL_ELL_HODGE_GAUSS_RELATIVE_PHASE_PREFLIGHT",
+  "schema": "pure-weyl-closed-s3-relative-phase-nonhomogeneous-hodge-preflight-v1",
+  "scope": {
+    "carrier": "linear phase plus Abelian connection perturbations at fixed positive moduli",
+    "charge_matrix": "Q in Mat_{n by r}(Z)",
+    "derivative_order": 2,
+    "field_count": "finite n>=1",
+    "gauge_count": "finite r>=0",
+    "harmonic_range": "all scalar ell>=0 and exact/coexact one-form ell>=1",
+    "spatial_manifold": "round closed S3 of radius a"
+  },
+  "terminal_verdict": {
+    "all_ell_symbolic": true,
+    "full_causal_parent_activated": false,
+    "homogeneous_ell_zero_reproduced": true,
+    "necessary_and_sufficient_relative_health_condition": "G_rel=(N^T M^{-1}N)^{-1}>0",
+    "next_gate": "Select one model-specific positive two-derivative action and construct its unreduced local scalar-U1 BV causal parent without solving Gauss through a nonlocal Coulomb inverse.",
+    "positive_M_corollary": "healthy relative waves exist iff n-rank(Q)>0",
+    "positive_branch_relative_wave_count_per_scalar_harmonic": "n-rank(Q)",
+    "result": "HEALTHY_NONHOMOGENEOUS_RELATIVE_PHASE_WAVES_SURVIVE"
+  },
+  "zero_mode_ledger": {
+    "ell_0_A0": "Gauss multiplier, not a propagating mode",
+    "ell_0_relative": "n-k global relative coordinates; zero frequency when U_rel=0",
+    "ell_0_vertical_phase": "removed by constant compact gauge action",
+    "ell_positive_active_longitudinal": "k massive vector-longitudinal families",
+    "ell_positive_coexact": "k massive and r-k massless transverse Maxwell families",
+    "ell_positive_matter_kernel_longitudinal": "pure gauge plus Gauss, no scalar physical mode",
+    "ell_positive_relative": "n-k massless scalar-wave families",
+    "harmonic_spatial_connection": "absent because b1(S3)=0",
+    "nonprimitive_charge_effect": "finite isotropy only; no change to continuous mode counts"
+  }
+}
