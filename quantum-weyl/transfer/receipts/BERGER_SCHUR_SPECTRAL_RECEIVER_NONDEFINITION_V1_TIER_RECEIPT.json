@@ -1,0 +1,107 @@
+{
+  "receipt_id": "BERGER_SCHUR_SPECTRAL_RECEIVER_NONDEFINITION_V1_TIER_RECEIPT",
+  "result_id": "BERGER_SCHUR_SPECTRAL_RECEIVER_NONDEFINITION_V1",
+  "date": "2026-07-21",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "artifacts": {
+    "producer": {
+      "path": "quantum-weyl/spectral/euclidean/berger_schur_spectral_receiver_nondefinition.py",
+      "sha256": "0eae9bf006394886e2114cb91ca0434af7adfc4e9a1399e168505ae5c24c0316"
+    },
+    "independent_verifier": {
+      "path": "quantum-weyl/spectral/euclidean/verify_berger_schur_spectral_receiver_nondefinition.py",
+      "sha256": "07ba4e24972dc51ce9402e46e58fdb16d87c24734d76b82403bae7536f2f14bb"
+    },
+    "tests": {
+      "path": "quantum-weyl/spectral/euclidean/tests/test_berger_schur_spectral_receiver_nondefinition.py",
+      "sha256": "fce86cefaae9480a97fea5fa071ce36389f9160dca0e5db0a55d5d7f8cfa6e38"
+    },
+    "schema": {
+      "path": "quantum-weyl/spectral/euclidean/schema/berger-schur-spectral-receiver-nondefinition-v1.schema.json",
+      "sha256": "cd8a1adf98043b5dedf986904a03ee79124b1fbf97fe082b488418248a42c335"
+    },
+    "certificate": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/BERGER_SCHUR_SPECTRAL_RECEIVER_NONDEFINITION_V1.json",
+      "sha256": "c1e108d20c107b3b74e39e707b661166b2ec1c942a1e84d83efddcbb6ddd79c7"
+    },
+    "report": {
+      "path": "quantum-weyl/reports/berger-schur-spectral-receiver-nondefinition-v1.md",
+      "sha256": "5f6cec16009de5454054c4f1aafd924cd14f2f51e93df56aa1870c33f36e6512"
+    },
+    "closeout": {
+      "path": "reports/quantum-berger-schur-spectral-receiver-integration-closeout-2026-07-21.md",
+      "sha256": "e44f845493de7cdccf506e55120d3c550c067b080152061a3c045d732a0a0991"
+    }
+  },
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <producer, independent verifier, tests>",
+        "status": "PASS",
+        "elapsed_seconds": 0.03
+      },
+      {
+        "command": "python Draft202012Validator.check_schema + validate",
+        "status": "PASS",
+        "elapsed_seconds": 0.09
+      },
+      {
+        "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s <schema> -d <certificate>",
+        "status": "PASS",
+        "elapsed_seconds": 7.78
+      },
+      {
+        "command": "git diff --check -- <explicit eight-path manifest>",
+        "status": "PASS",
+        "elapsed_seconds": 0.0
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 quantum-weyl/spectral/euclidean/berger_schur_spectral_receiver_nondefinition.py --check",
+        "status": "PASS",
+        "elapsed_seconds": 0.11
+      },
+      {
+        "command": "python3 quantum-weyl/spectral/euclidean/verify_berger_schur_spectral_receiver_nondefinition.py",
+        "status": "PASS",
+        "elapsed_seconds": 0.38,
+        "independent_rail": "reconstructs the ten-dimensional ambiguity matrix and transpose kernel with exact SymPy linear algebra, independently recomputes all three rational local scale rows, verifies the exact coordinate partition, and reads the high-mode B1 obstruction without importing producer logic"
+      },
+      {
+        "command": "python3 -m unittest quantum-weyl/spectral/euclidean/tests/test_berger_schur_spectral_receiver_nondefinition.py -v",
+        "status": "PASS",
+        "elapsed_seconds": 0.53,
+        "mutation_count": 5
+      }
+    ]
+  },
+  "failed_pre_runs": [
+    {
+      "stage": "producer emit",
+      "status": "FAIL_REPAIRED",
+      "reason": "the initially transcribed M21 request hash was incorrect; the producer failed closed and the pinned hash was replaced by an independently replayed sha256sum"
+    },
+    {
+      "stage": "AJV strict Draft 2020-12",
+      "status": "FAIL_REPAIRED",
+      "reason": "the two-element dependency-tag tuple omitted strict minItems/maxItems cardinality; both bounds were added before the passing replay"
+    }
+  ],
+  "tier_2": {
+    "status": "NOT_RUN",
+    "criterion": "The result is a leaf integration/nondefinition certificate over unchanged content-addressed predecessors; it changes no shared operator, schema interface, coefficient lifecycle, or transitive theorem chain."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "criterion": "No freeze, theorem promotion, shared-core change, release, or explicit full-suite request applies."
+  },
+  "claim_boundary": "The passing rails certify the maximal Berger receiver input, exact rank-ten nondefinition, local scale replay and fail-closed lifecycle fields only. They do not compute a global finite trace, determinant, anomaly coefficient, QME, Lorentzian object or Hadamard state."
+}

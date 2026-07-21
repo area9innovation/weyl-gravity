@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "berger-schur-spectral-receiver-nondefinition-v1",
+  "title": "Berger Schur spectral receiver nondefinition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "input_commit", "dependencies", "external_math_requests", "background_and_conventions", "independent_local_scale_replay", "zero_pole_replay", "receiver", "spectral_disposition", "claim_flags", "paper12_disposition", "claim_boundary"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schema": {"const": "quantum-weyl-berger-schur-spectral-receiver-nondefinition-v1"},
+    "result_id": {"const": "BERGER_SCHUR_SPECTRAL_RECEIVER_NONDEFINITION_V1"},
+    "result_state": {"const": "MAXIMAL_CERTIFIED_INPUT_ASSEMBLED_FIVE_COMPLETE_FUNCTIONS_NONDEFINED"},
+    "lifecycle_state": {"const": "PARAMETERIZED_RECEIVER_SPECIALIZED_GLOBAL_FINITE_INPUT_STILL_OPEN"},
+    "dependency_tags": {"type": "array", "minItems": 2, "maxItems": 2, "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "EUCLIDEAN-SPECTRAL"}], "items": false},
+    "input_commit": {"type": "string", "minLength": 7},
+    "dependencies": {"type": "object", "minProperties": 8, "additionalProperties": {"$ref": "#/$defs/reference"}},
+    "external_math_requests": {
+      "type": "object", "additionalProperties": false, "required": ["M21", "M23"],
+      "properties": {"M21": {"$ref": "#/$defs/request"}, "M23": {"$ref": "#/$defs/request"}}
+    },
+    "background_and_conventions": {"$ref": "#/$defs/stringMap"},
+    "independent_local_scale_replay": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scalar_curvature", "ricci_squared", "Wres_K_density_without_(4pi)^-2", "Wres_K2_density_without_(4pi)^-2", "dlogmu_logDet3_density_without_(4pi)^-2", "status"],
+      "properties": {
+        "scalar_curvature": {"$ref": "#/$defs/rational"}, "ricci_squared": {"$ref": "#/$defs/rational"},
+        "Wres_K_density_without_(4pi)^-2": {"$ref": "#/$defs/rational"}, "Wres_K2_density_without_(4pi)^-2": {"$ref": "#/$defs/rational"},
+        "dlogmu_logDet3_density_without_(4pi)^-2": {"$ref": "#/$defs/rational"}, "status": {"const": "EXACT_LOCAL_ROWS_ONLY"}
+      }
+    },
+    "zero_pole_replay": {"$ref": "#/$defs/stringMap"},
+    "receiver": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coordinate_order", "dimension", "ambiguity_matrix", "ambiguity_rank", "transpose_kernel_dimension", "eliminated_relation", "coordinate_ledger", "carrier_ledger", "complete_function_count", "universal_partial_BV_carrier_count"],
+      "properties": {
+        "coordinate_order": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "string"}, "uniqueItems": true},
+        "dimension": {"const": 10},
+        "ambiguity_matrix": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "integer"}}},
+        "ambiguity_rank": {"const": 10}, "transpose_kernel_dimension": {"const": 0}, "eliminated_relation": {"type": "string"},
+        "coordinate_ledger": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/coordinateRow"}},
+        "carrier_ledger": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/carrierRow"}},
+        "complete_function_count": {"const": 0}, "universal_partial_BV_carrier_count": {"const": 5}
+      }
+    },
+    "spectral_disposition": {"$ref": "#/$defs/stringMap"},
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["TERMINAL_VARIATION_AND_BLOCK_RESULTS_IMPORTED", "MAXIMAL_CERTIFIED_BERGER_INPUT_ASSEMBLED", "LOCAL_SCALE_ROWS_REPLAYED_EXACTLY", "COORDINATE_BY_COORDINATE_NONDEFINITION_EMITTED", "UNIVERSAL_PARTIAL_BV_SUMMAND_PRESERVED", "M21_OR_M23_GLOBAL_PAYLOAD_LANDED", "COMPLETE_FIVE_FUNCTIONS_COMPUTED", "GLOBAL_DETERMINANT_OR_FINITE_TRACE_COMPUTED", "SCALAR_SURROGATE_USED", "ANOMALY_COEFFICIENT_LIFECYCLE_CHANGED", "QME_OR_LORENTZIAN_HADAMARD_PROMOTED"],
+      "properties": {
+        "TERMINAL_VARIATION_AND_BLOCK_RESULTS_IMPORTED": {"const": true}, "MAXIMAL_CERTIFIED_BERGER_INPUT_ASSEMBLED": {"const": true},
+        "LOCAL_SCALE_ROWS_REPLAYED_EXACTLY": {"const": true}, "COORDINATE_BY_COORDINATE_NONDEFINITION_EMITTED": {"const": true},
+        "UNIVERSAL_PARTIAL_BV_SUMMAND_PRESERVED": {"const": true}, "M21_OR_M23_GLOBAL_PAYLOAD_LANDED": {"const": false},
+        "COMPLETE_FIVE_FUNCTIONS_COMPUTED": {"const": false}, "GLOBAL_DETERMINANT_OR_FINITE_TRACE_COMPUTED": {"const": false},
+        "SCALAR_SURROGATE_USED": {"const": false}, "ANOMALY_COEFFICIENT_LIFECYCLE_CHANGED": {"const": false},
+        "QME_OR_LORENTZIAN_HADAMARD_PROMOTED": {"const": false}
+      }
+    },
+    "paper12_disposition": {"const": "NO_UPDATE_COEFFICIENT_LIFECYCLE_UNCHANGED"},
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "$defs": {
+    "reference": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string"}, "result_id": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "request": {"type": "object", "additionalProperties": false, "required": ["path", "request_id", "sha256", "status"], "properties": {"path": {"type": "string"}, "request_id": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "status": {"const": "ACCEPTED_NOT_LANDED"}}},
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "stringMap": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string"}},
+    "coordinateRow": {"type": "object", "additionalProperties": false, "required": ["carrier", "coordinate", "universal_partial_BV_status", "universal_partial_BV_digest", "finite_Schur_status", "complete_coordinate_status", "smallest_missing_spectral_object"], "properties": {"carrier": {"type": "string"}, "coordinate": {"type": "string"}, "universal_partial_BV_status": {"const": "COMPUTED"}, "universal_partial_BV_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "finite_Schur_status": {"const": "NONDEFINED"}, "complete_coordinate_status": {"const": "NONDEFINED"}, "smallest_missing_spectral_object": {"type": "string"}}},
+    "carrierRow": {"type": "object", "additionalProperties": false, "required": ["carrier", "coordinates", "universal_partial_BV_status", "complete_function_status", "reason"], "properties": {"carrier": {"type": "string"}, "coordinates": {"type": "array", "minItems": 1, "items": {"type": "string"}}, "universal_partial_BV_status": {"const": "COMPUTED"}, "complete_function_status": {"const": "NONDEFINED"}, "reason": {"type": "string"}}}
+  }
+}
