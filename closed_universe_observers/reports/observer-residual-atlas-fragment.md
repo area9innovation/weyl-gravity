@@ -358,6 +358,16 @@ coefficient-image direction, either through a new invariant vertex or through
 a real degree-zero field together with its degree-one BV dual.  This is a
 necessary typed signature, not evidence that either extension exists.
 
+The dependent physical-reduction branch is now explicitly `NOT_ACTIVATED`.
+The post-repair pushout exports no combined chain complex or row count, and an
+independent replay reproduces the nonzero augmented obstruction minor.
+Therefore kernels, images, \(\pi_{\rm cl}\), contraction data, descended
+pairing and physical detector rank are `NO_CERTIFIED_MAP` in generic,
+compact-support and spatial-zero-mode sectors.  The atlas row
+`observer.berger.interaction.repaired112_physical_reduction_and_detector_rank_not_activated`
+keeps the standalone material rank-two selection separate from any combined
+physical observable.
+
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.

@@ -2677,3 +2677,26 @@ add a coefficient-image direction that hits the target-only
 passes cyclicity, reality, \(K_{\rm Berger}\), support and principal-symbol
 checks.  This disposition certifies that signature; it does not certify a
 viable extension.
+
+## Active bridge: repaired112 physical reduction not activated
+
+The fresh pushout disposition is terminally nondefined, so the physical
+reduction package stops before any kernel or image calculation.  An
+independent replay reconstructs the same nonzero canonical augmented minor
+from its two serialized equations.  Consequently generic-smooth,
+compact-support and spatial-zero-mode chain groups, \(\pi_{\rm cl}\),
+inclusion, homotopy, descended odd pairing, real structure and
+\(K_{\rm Berger}\) action are all `NO_CERTIFIED_MAP`.
+
+No raw rod, polarization, emitter, detector-record or persistent-memory row
+is called a physical class.  In particular, the separately certified
+material coordinate selection still has rank two, but the combined physical
+detector map has neither a defined rank nor a kernel.  The pre-repair 160-row
+cohomology is a different terminal carrier and is not imported.
+
+The fail-closed atlas row is
+`observer.berger.interaction.repaired112_physical_reduction_and_detector_rank_not_activated`.
+Its activation gate is a genuinely nilpotent same-background combined unary,
+serialized and independently verified.  Until then no Berger \(q_2/\mathcal
+Z_2\) receiver, memory, redshift, recoil, positivity, particle or quantum
+claim is activated.

@@ -1,0 +1,44 @@
+{
+  "result_id": "BERGER_REPAIRED112_PHYSICAL_REDUCTION_AND_DETECTOR_RANK_NOT_ACTIVATED",
+  "science_forge_work_item": "sf:program/work/observer-repaired112-physical-reduction-and-detector-rank",
+  "recorded_at": "2026-07-21T04:10:00Z",
+  "result_boundary": "Physical reduction is NOT_ACTIVATED because the terminal post-repair apparatus pushout is NONDEFINED and supplies no combined chain complex. Exact generic, compact-support and spatial-zero-mode cohomology, pi_cl/i/h contraction, descended pairing, physical detector classes, rank and kernel remain NO_CERTIFIED_MAP. The standalone material coordinate rank two is retained only as a separate fact.",
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_repaired112_physical_reduction_and_detector_rank_not_activated.py", "sha256": "5c79b7b072ef54471e4df2e37cb6848245d42806428a00c9bd2fe30e2d6852bf"},
+    {"path": "closed_universe_observers/verify_berger_repaired112_physical_reduction_and_detector_rank_not_activated.py", "sha256": "ab1d8a3fbe2c55f9b5360aa7c1b75e077666089758f1384175a50c95270d56b3"},
+    {"path": "closed_universe_observers/certificates/BERGER_REPAIRED112_PHYSICAL_REDUCTION_AND_DETECTOR_RANK_NOT_ACTIVATED.json", "sha256": "cf2507ee7b16478a4450468b5bcf11887292279f68ca336f1c0a1ba0b1356f30"},
+    {"path": "closed_universe_observers/certificates/BERGER_REPAIRED112_PHYSICAL_REDUCTION_AND_DETECTOR_RANK_NOT_ACTIVATED_PAYLOAD.json", "sha256": "c29ff1e5bc52026b3b1e814b304419ba0c28798dafd25bdf721d59662441b905"},
+    {"path": "closed_universe_observers/schema/berger-repaired112-physical-reduction-and-detector-rank-not-activated-v1.schema.json", "sha256": "9ab4395a00f98f01e48c614a6f24eab76593fd923cc39cc685d2781d6a4d2afe"},
+    {"path": "closed_universe_observers/tests/test_berger_repaired112_physical_reduction_and_detector_rank_not_activated.py", "sha256": "f27cfe1a43022a856d26b66557b9ed2e1d218d15a75b2ff1707152b8a138ba24"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "98d01abd88bad3d0e7fc6b6731d057fe1dbda325304ba67041d2be5021ce4120"},
+    {"path": "closed_universe_observers/certificates/BERGER_REPAIRED112_APPARATUS_PUSHOUT_AFTER_132_DEFECT_DISPOSITION.json", "sha256": "d106b243682a986e0adcb5023a0f19b2fa05663e6c29442b92da9beebe9ed5fc"}
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      "python3 -m py_compile <new producer, independent verifier, tests and atlas files>",
+      "python3 -m json.tool <new certificate, payload, schema and receipt>",
+      "git diff --check -- <explicit observer, note and paper paths>"
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m closed_universe_observers.generate_berger_repaired112_physical_reduction_and_detector_rank_not_activated --write", "elapsed_seconds": 5.00, "result": "PASS including independent verifier"},
+      {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_repaired112_physical_reduction_and_detector_rank_not_activated.py", "elapsed_seconds": 0.73, "result": "7 passed"},
+      {"command": "PYTHONPATH=. python3 closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "elapsed_seconds": 6.38, "result": "PASS including independent atlas verifier"},
+      {"command": "python3 -m pytest -q closed_universe_observers/tests/test_observer_atlas_fragment.py", "elapsed_seconds": 59.27, "result": "65 passed"}
+    ]
+  },
+  "tier_2": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m closed_universe_observers.verify_berger_repaired112_apparatus_pushout_after_132_defect_disposition", "elapsed_seconds": 2.8, "result": "PASS in chained replay"}
+    ],
+    "criterion": "The direct terminal pushout dependency was independently replayed; its content-addressed artifacts and all shared operators are unchanged."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "criterion": "This is a scoped fail-closed nonactivation, not a freeze, release, theorem promotion or shared-core algebra change."
+  }
+}
