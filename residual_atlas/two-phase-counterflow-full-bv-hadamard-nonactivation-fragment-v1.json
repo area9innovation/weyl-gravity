@@ -1,0 +1,102 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "The repaired q70 V2 object remains a certified graded-cyclic classical causal BV parent on its selected Berger fixture. The terminal Phase 1 health theorem supplies no robust stationary same-field counterflow clock locus, so the work package's first stop branch applies: no full-BV Hadamard covariance, compatible complex structure, quantum state-space sign, physical positivity or QME construction is activated. This is not a microlocal nonexistence theorem and not a failure of the classical causal parent.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2",
+          "sha256": "3f41cb5258f0883b217c9343e037074faf841728f29e03c306f101487411d2cf"
+        },
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_PHASE1_VIABILITY_CLASSIFICATION_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_PHASE1_VIABILITY_CLASSIFICATION_V1",
+          "sha256": "6eae712f8bdc1a06db64c606e47792391c1fa16cd70beaee594943dc77a05e7d"
+        },
+        {
+          "path": "quantum-weyl/anomalies/certificates/TWO_PHASE_COUNTERFLOW_LOCAL_ANOMALY_NONACTIVATION_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_LOCAL_ANOMALY_NONACTIVATION_V1",
+          "sha256": "02bd10ee2e056287a804ca1be743f1fef790fb4df1e077140ac0aa521a9feb56"
+        }
+      ],
+      "id": "quantum.counterflow.phase1.full_bv_hadamard_nonactivation",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The persistent j=1/2 Hamiltonian-Hopf quartet terminates candidate selection.",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "The classical q70 pairing is graded cyclic; no quantum covariance or positivity is inferred.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "No full-BV quantum resonance or state calculation is activated.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No robust bounded same-field clock survives the earlier health gate.",
+            "status": "OBSTRUCTED"
+          },
+          "causal_retarded": {
+            "statement": "Advanced/retarded homotopies exist for the classical q70 V2 parent on the selected fixture.",
+            "status": "CERTIFIED"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No candidate-specific quantum insertion is constructed.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "The candidate-specific quantum branch is not activated.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "selected Berger causal fixture plus connected trace-healthy stationary family",
+        "boundaries": "closed S3 Cauchy slices",
+        "carrier": "repaired q70 V2 classical causal parent; no full-BV quantum covariance activated",
+        "charge_sector": "unrestricted and fixed Q_rel kept distinct",
+        "degree": "all 70 classical BV rows; quantum bidistribution not constructed",
+        "ell": "NOT_APPLICABLE",
+        "k": "+/-1/2",
+        "m": "+/-1/2 on the health obstruction",
+        "omega": "Hamiltonian-Hopf quartet throughout the connected family",
+        "parity": "NOT_COMPUTED",
+        "theory": "same-field two-phase polar-clock Weyl action"
+      }
+    }
+  ],
+  "generated_by": "quantum-weyl/lorentzian/two_phase_counterflow_full_bv_hadamard_nonactivation.py",
+  "generated_by_sha256": "2b3b22eb8cc2c0a5651b74a9edfa1340d4233a51c0eee11134c641fb9300d395",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "quantum",
+  "verification_commands": [
+    "python3 quantum-weyl/lorentzian/two_phase_counterflow_full_bv_hadamard_nonactivation.py --check",
+    "python3 quantum-weyl/lorentzian/verify_two_phase_counterflow_full_bv_hadamard_nonactivation.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-full-bv-hadamard-nonactivation-fragment-v1.json"
+  ]
+}

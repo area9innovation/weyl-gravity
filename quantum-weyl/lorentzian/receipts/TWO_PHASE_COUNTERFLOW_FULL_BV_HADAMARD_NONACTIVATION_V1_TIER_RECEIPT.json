@@ -1,0 +1,31 @@
+{
+  "schema": "quantum-lorentzian-tier-receipt-v1",
+  "result_id": "TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1_TIER_RECEIPT",
+  "subject_result_id": "TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1",
+  "recorded_at": "2026-07-21",
+  "dependency_tags": ["LORENTZIAN-CAUSAL", "REDUCED-MODE", "LOCAL-ALGEBRAIC"],
+  "source_pins": {
+    "q70_v2": "3f41cb5258f0883b217c9343e037074faf841728f29e03c306f101487411d2cf",
+    "viability": "6eae712f8bdc1a06db64c606e47792391c1fa16cd70beaee594943dc77a05e7d",
+    "phase1_quantum": "5045aa780cc203cc6f86a2d1b837268812dedbe0584ca4059bcda555c0e15239",
+    "anomaly_nonactivation": "02bd10ee2e056287a804ca1be743f1fef790fb4df1e077140ac0aa521a9feb56"
+  },
+  "output_hashes": {
+    "generator": "d41db94de2c11855c886555ec6c9d1c48807efc6ebeab9d2f424491bd94e24c7",
+    "verifier": "c51912676109596fcb5c86fb7182388620858f1d8d238c19c8cfdf1f4b085472",
+    "schema": "df6295d3018fc3175c80ec3a6059b4ffa603f941a308d8c4301106ed8da31223",
+    "certificate": "d28f64dabd180932a5c4a5de25770ddbcf37553bde4089a82a0f798246407329",
+    "tests": "efc12851218c5d963db7ba916ccab9735c6fd18f51ec4f7e1e9705796b0df7e6",
+    "report": "35983f03f6081b30aa61ff764650f72c767529e0932400cf536155ec5205d9fc",
+    "atlas": "fa92f1b83a4cf5b53ef0b2a6c26dd7b4c1b0a421e7cd0ba40500b28d1c34f08d",
+    "team_brief": "8988a2ff11b0eb93d9b51b2d05bf1b0cfbe4cb12b3cc110edcbc80a901320845",
+    "closeout": "eecef0fdb1600b99a5984fffacd366daaea8f5cdf77e2b1776a4acbe3ff3a06d"
+  },
+  "test_tiers": [
+    {"tier": 0, "status": "PASS", "commands": ["py_compile", "json.tool", "explicit-manifest whitespace checks"]},
+    {"tier": 1, "status": "PASS", "commands": ["generator --check", "independent verifier with six contradiction mutations", "3 scoped tests", "shared residual-atlas validator"]},
+    {"tier": 2, "status": "NOT_RUN", "reason": "Imported mathematical sources are unchanged and content-addressed; the stop-condition branch creates no covariance."},
+    {"tier": 3, "status": "NOT_RUN", "reason": "No Lorentzian/Hadamard lifecycle promotion or theorem freeze occurs."}
+  ],
+  "claim_boundary": "This receipt certifies only that the full-BV Hadamard construction is NOT_ACTIVATED after the terminal classical selection gate. It does not construct a covariance, wavefront set, Ward identity, state, positivity, particle, QME or unitarity result."
+}

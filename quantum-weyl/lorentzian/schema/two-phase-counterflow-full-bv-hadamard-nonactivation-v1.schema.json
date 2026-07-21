@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "two-phase-counterflow-full-bv-hadamard-nonactivation-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "source_refs", "activation_gate", "classical_quantum_boundary", "full_bv_hadamard_disposition", "brst_and_qme_status", "rejected_substitutions", "downstream_activation", "mutation_expectations", "claim_boundary", "provenance"],
+  "properties": {
+    "$schema": {"const": "../schema/two-phase-counterflow-full-bv-hadamard-nonactivation-v1.schema.json"},
+    "schema": {"const": "two-phase-counterflow-full-bv-hadamard-nonactivation-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1"},
+    "result_state": {"const": "NOT_ACTIVATED_NO_ROBUST_STATIONARY_SAME_FIELD_CLOCK"},
+    "lifecycle_state": {"const": "NOT_ACTIVATED"},
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true,
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}
+    },
+    "source_refs": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/source"}},
+    "activation_gate": {"type": "object", "minProperties": 7},
+    "classical_quantum_boundary": {"type": "object", "minProperties": 6},
+    "full_bv_hadamard_disposition": {"type": "object", "minProperties": 13},
+    "brst_and_qme_status": {"type": "object", "minProperties": 5},
+    "rejected_substitutions": {"type": "array", "minItems": 7, "uniqueItems": true, "items": {"type": "string"}},
+    "downstream_activation": {"type": "object", "minProperties": 3},
+    "mutation_expectations": {"type": "object", "minProperties": 9},
+    "claim_boundary": {"type": "string", "minLength": 220},
+    "provenance": {"type": "object", "required": ["generator", "generator_sha256", "independent_verifier"]}
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

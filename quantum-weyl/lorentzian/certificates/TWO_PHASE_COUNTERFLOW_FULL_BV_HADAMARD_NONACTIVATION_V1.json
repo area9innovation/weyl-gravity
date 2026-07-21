@@ -1,0 +1,114 @@
+{
+  "$schema": "../schema/two-phase-counterflow-full-bv-hadamard-nonactivation-v1.schema.json",
+  "activation_gate": {
+    "candidate_specific_quantum_activated": false,
+    "first_exact_obstruction": "j=1/2 Hamiltonian-Hopf quartet throughout the connected trace-healthy stationary family",
+    "q70_v2_imported": true,
+    "robust_stationary_counterflow_locus": false,
+    "selected_fixture_causal_parent": "CERTIFIED_IMPORTED",
+    "stale_v1_rejected": true,
+    "stop_branch": "TERMINAL_HEALTH_FAILURE_THEREFORE_DO_NOT_CONSTRUCT_FULL_BV_HADAMARD_COVARIANCE"
+  },
+  "brst_and_qme_status": {
+    "brst_cocycle": "NOT_EVALUATED",
+    "brst_exactness": "NOT_EVALUATED",
+    "local_anomaly": "NOT_ACTIVATED",
+    "qme": "NOT_ACTIVATED",
+    "renormalized_time_ordered_products": "NOT_ACTIVATED"
+  },
+  "claim_boundary": "The repaired q70 V2 object remains a certified graded-cyclic classical causal BV parent on its selected Berger fixture. The terminal Phase 1 health theorem supplies no robust stationary same-field counterflow clock locus, so the work package's first stop branch applies: no full-BV Hadamard covariance, compatible complex structure, quantum state-space sign, physical positivity or QME construction is activated. This is not a microlocal nonexistence theorem and not a failure of the classical causal parent.",
+  "classical_quantum_boundary": {
+    "classical_advanced_retarded_homotopies": "CERTIFIED_SELECTED_FIXTURE_ONLY",
+    "classical_causal_parent": "CERTIFIED_SELECTED_FIXTURE_ONLY",
+    "classical_causal_propagator_is_quantum_state": false,
+    "classical_mode_imported": true,
+    "classical_q70_pairing": "CERTIFIED_GRADED_CYCLIC",
+    "robust_physical_clock_carrier": "OBSTRUCTED"
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL",
+    "REDUCED-MODE",
+    "LOCAL-ALGEBRAIC"
+  ],
+  "downstream_activation": {
+    "interacting_qme": false,
+    "particle_interpretation": false,
+    "physical_state_positivity": false
+  },
+  "full_bv_hadamard_disposition": {
+    "all_70_rows_covered": "NOT_COMPUTED",
+    "antisymmetric_part_equals_causal_propagator": "NOT_COMPUTED",
+    "brst_q_ward_identity": "NOT_COMPUTED",
+    "compatible_complex_structure": "NOT_ACTIVATED",
+    "distribution_spaces": "NOT_DECLARED_BECAUSE_CONSTRUCTION_NOT_ACTIVATED",
+    "graded_adjoint_reality": "NOT_COMPUTED",
+    "hadamard_two_point_function": "NOT_ACTIVATED",
+    "k_stationarity": "NOT_COMPUTED",
+    "physical_positivity": "NOT_ACTIVATED",
+    "q16_contractible_block_treatment": "NOT_COMPUTED",
+    "q54_hadamard_wavefront_set": "NOT_COMPUTED",
+    "state_space_status": "NOT_ACTIVATED",
+    "zero_mode_domain": "NOT_DECLARED_BECAUSE_CONSTRUCTION_NOT_ACTIVATED"
+  },
+  "lifecycle_state": "NOT_ACTIVATED",
+  "mutation_expectations": {
+    "complex_structure_invented": "REJECT",
+    "omitted_rows": "REJECT",
+    "positivity_invented": "REJECT",
+    "qme_promoted": "REJECT",
+    "robust_locus_invented": "REJECT",
+    "source_hash_changed": "REJECT",
+    "stale_v1_parent": "REJECT",
+    "ward_identity_invented": "REJECT",
+    "wavefront_claim_invented": "REJECT"
+  },
+  "provenance": {
+    "generator": "quantum-weyl/lorentzian/two_phase_counterflow_full_bv_hadamard_nonactivation.py",
+    "generator_sha256": "2b3b22eb8cc2c0a5651b74a9edfa1340d4233a51c0eee11134c641fb9300d395",
+    "independent_verifier": "quantum-weyl/lorentzian/verify_two_phase_counterflow_full_bv_hadamard_nonactivation.py"
+  },
+  "rejected_substitutions": [
+    "reduced E/A/L covariance called full BV",
+    "retained-26 covariance called full BV",
+    "omitted ghost, equation or antifield rows",
+    "causal propagator called a Hadamard two-point function",
+    "indefinite Krein form called a positive state",
+    "raw D substituted for K=D-Omega R_rel",
+    "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1"
+  ],
+  "result_id": "TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1",
+  "result_state": "NOT_ACTIVATED_NO_ROBUST_STATIONARY_SAME_FIELD_CLOCK",
+  "schema": "two-phase-counterflow-full-bv-hadamard-nonactivation-v1",
+  "source_refs": {
+    "local_anomaly_nonactivation": {
+      "path": "quantum-weyl/anomalies/certificates/TWO_PHASE_COUNTERFLOW_LOCAL_ANOMALY_NONACTIVATION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_LOCAL_ANOMALY_NONACTIVATION_V1",
+      "sha256": "02bd10ee2e056287a804ca1be743f1fef790fb4df1e077140ac0aa521a9feb56"
+    },
+    "local_anomaly_receipt": {
+      "path": "quantum-weyl/anomalies/receipts/TWO_PHASE_COUNTERFLOW_LOCAL_ANOMALY_NONACTIVATION_V1_TIER_RECEIPT.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_LOCAL_ANOMALY_NONACTIVATION_V1_TIER_RECEIPT",
+      "sha256": "df447e412bc78f569867f1234b3214c8fd962753db1d4907e53090d2957a4da0"
+    },
+    "phase1_viability": {
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_PHASE1_VIABILITY_CLASSIFICATION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_PHASE1_VIABILITY_CLASSIFICATION_V1",
+      "sha256": "6eae712f8bdc1a06db64c606e47792391c1fa16cd70beaee594943dc77a05e7d"
+    },
+    "phase1_viability_receipt": {
+      "path": "d_quotient_classical/compensator/receipts/TWO_PHASE_COUNTERFLOW_PHASE1_VIABILITY_CLASSIFICATION_V1_TIER_RECEIPT.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_PHASE1_VIABILITY_CLASSIFICATION_V1_TIER_RECEIPT",
+      "sha256": "ffd8faafb224ff23b22f51e08dbe67a9c30b364641808738b22b21e2b5d00da5"
+    },
+    "q70_v2": {
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2",
+      "sha256": "3f41cb5258f0883b217c9343e037074faf841728f29e03c306f101487411d2cf"
+    },
+    "q70_v2_receipt": {
+      "path": "d_quotient_classical/compensator/receipts/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2_TIER_RECEIPT.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2_TIER_RECEIPT",
+      "sha256": "d19773886c23f9543c259c2586c07f0be8d4f2a74b3745681011272cba9a7ced"
+    }
+  }
+}

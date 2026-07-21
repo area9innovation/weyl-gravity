@@ -2823,3 +2823,20 @@ selected-fixture classical causal theorem.
 
 - [`TWO_PHASE_COUNTERFLOW_LOCAL_ANOMALY_NONACTIVATION_V1.json`](../quantum-weyl/anomalies/certificates/TWO_PHASE_COUNTERFLOW_LOCAL_ANOMALY_NONACTIVATION_V1.json)
 - [`two-phase-counterflow-local-anomaly-nonactivation-fragment-v1.json`](../residual_atlas/two-phase-counterflow-local-anomaly-nonactivation-fragment-v1.json)
+
+## Two-phase counterflow full-BV Hadamard nonactivation (2026-07-21)
+
+The repaired q70 V2 parent supplies classical advanced/retarded data, cyclic
+pairing and real structure on the selected Berger fixture. The terminal
+Phase 1 health gate is nevertheless evaluated first and selects no robust
+stationary same-field clock. A full-BV Hadamard covariance on that unstable
+fixture is therefore `NOT_ACTIVATED`.
+
+No distribution or zero-mode domain, 70-row covariance, wavefront condition,
+BRST Ward identity, graded reality identity or (K=D-\Omega R_{\rm rel})
+stationarity is claimed. Reduced covariances may not substitute for the full
+complex, raw (D) may not substitute for (K), and no positivity or particle
+claim follows. This leaves the classical q70 V2 causal theorem intact.
+
+- [`TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1.json`](../quantum-weyl/lorentzian/certificates/TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1.json)
+- [`two-phase-counterflow-full-bv-hadamard-nonactivation-fragment-v1.json`](../residual_atlas/two-phase-counterflow-full-bv-hadamard-nonactivation-fragment-v1.json)
