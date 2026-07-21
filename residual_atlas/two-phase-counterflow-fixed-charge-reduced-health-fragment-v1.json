@@ -1,0 +1,92 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "The causal parent remains certified before reduction. The fixed-charge symplectic quotient removes the relative clock, so no physical relative-clock, observer, nonlinear, Hadamard, quantum or particle map is certified.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_V1",
+          "sha256": "812f6a3c2308eaeef09bee25ec8c79c8f7c86de7a51383141f8cae46c2f9cae5"
+        }
+      ],
+      "id": "classical.two_phase_counterflow.fixed_charge_relative_clock_reduction",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The relative-clock direction is removed before a physical propagation polynomial can be assigned.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "lee_wald": {
+          "statement": "On delta Q_rel=0 the pullback pairing has radical span(delta psi_0), and the R_rel quotient removes that entire line.",
+          "status": "OBSTRUCTED"
+        },
+        "resonance": {
+          "statement": "No surviving relative-clock mode remains for a resonance test.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The reduced relative-clock carrier is zero.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "causal_retarded": {
+            "statement": "The unary parent is causal, but no relative-clock physical class survives reduction.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The reduced relative-clock carrier is zero.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "No q2 map is defined on a surviving relative-clock class.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "stationary Berger R x S3, a=1, c_squared=9/40",
+        "boundaries": "none; closed S3 Cauchy slices",
+        "carrier": "70-component causal parent with explicit global charge fibre",
+        "charge_sector": "derived fixed-Q_rel leaf followed by R_rel quotient",
+        "degree": 0,
+        "ell": 0,
+        "k": "NOT_APPLICABLE",
+        "m": 0,
+        "omega": "background Omega=3/4",
+        "parity": "relative phase scalar zero mode",
+        "theory": "selected two-phase counterflow action"
+      }
+    }
+  ],
+  "generated_by": "d_quotient_classical/atlas/generate_two_phase_counterflow_fixed_charge_reduced_health_atlas_fragment.py",
+  "generated_by_sha256": "e8f5ab8017c1a21ca4943bccd81e10a5c3ad640f28630dec6bcfbf60df570492",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "classical",
+  "verification_commands": [
+    "python3 d_quotient_classical/compensator/two_phase_counterflow_fixed_charge_reduced_health.py --check",
+    "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_fixed_charge_reduced_health.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-fixed-charge-reduced-health-fragment-v1.json"
+  ]
+}

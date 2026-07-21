@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_id": "TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_V1",
+  "date": "2026-07-21",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": [
+    {"path": "d_quotient_classical/compensator/two_phase_counterflow_fixed_charge_reduced_health.py", "sha256": "45d48fc68464aaf3535149f2d85192991d2bd3f8a39ee5f17c3bd38860ca7315"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_V1.json", "sha256": "812f6a3c2308eaeef09bee25ec8c79c8f7c86de7a51383141f8cae46c2f9cae5"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_PAYLOAD_V1.json", "sha256": "4704d703a7c80a5a1391ebd0dbaa346b1177f9febccb20027ccf1fa0a47585ec"},
+    {"path": "d_quotient_classical/compensator/verify_two_phase_counterflow_fixed_charge_reduced_health.py", "sha256": "06aabf454c2f17f6d56947b1b545364f9275b471001da6762408a60be154c0dd"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_fixed_charge_reduced_health.py", "sha256": "4e5eaee9b73b72f9fbbbf6ab82262d9c54716a207350a12f909d8274e8c6573e"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_fixed_charge_reduced_health_atlas.py", "sha256": "a6ca6588d64fd070dd2b8214b44f49a6866d3436513fe0df014bbf0bfd7095b8"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-fixed-charge-reduced-health-obstruction-v1.schema.json", "sha256": "a6a9f3d691611093f9935f29a68355bee75688b37efac8c1252f4d6f2d619700"},
+    {"path": "d_quotient_classical/atlas/generate_two_phase_counterflow_fixed_charge_reduced_health_atlas_fragment.py", "sha256": "e8f5ab8017c1a21ca4943bccd81e10a5c3ad640f28630dec6bcfbf60df570492"},
+    {"path": "d_quotient_classical/atlas/verify_two_phase_counterflow_fixed_charge_reduced_health_atlas_fragment.py", "sha256": "486ba1190eb5d2303aa95d2bb5d2b267dc883e3f602a798878512e6bdb3ed6fc"},
+    {"path": "residual_atlas/two-phase-counterflow-fixed-charge-reduced-health-fragment-v1.json", "sha256": "64e76fc660fb1e18a049c061a0401077bdfc170b50d42b0cb83986d7261a744f"},
+    {"path": "d_quotient_classical/compensator/reports/two-phase-counterflow-fixed-charge-reduced-health-obstruction-v1.md", "sha256": "63d600a5dfa6c762b6b5504f18d0f58ded3e3389a6502789a450bb8b1b6bd8ea"}
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m py_compile <producer, independent verifiers, atlas generator, tests>; python3 -m json.tool <certificate, payload, schema, atlas>; git diff --check <explicit scoped paths>",
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 d_quotient_classical/compensator/two_phase_counterflow_fixed_charge_reduced_health.py --check",
+        "elapsed_seconds": 0.78,
+        "status": "PASS",
+        "method": "exact derived fixed-charge fibre, rational matrix ranks, explicit contraction, presymplectic radical and charge/stabilizer ledger"
+      },
+      {
+        "command": "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_fixed_charge_reduced_health.py",
+        "elapsed_seconds": 0.61,
+        "status": "PASS",
+        "independent_rail": "imports no producer module; reconstructs exact matrices, ranks, homotopy identities, symplectic quotient and imported-content hashes"
+      },
+      {
+        "command": "python3 -m unittest -v d_quotient_classical.compensator.tests.test_two_phase_counterflow_fixed_charge_reduced_health d_quotient_classical.compensator.tests.test_two_phase_counterflow_fixed_charge_reduced_health_atlas",
+        "elapsed_seconds": 0.64,
+        "status": "PASS",
+        "tests": 6,
+        "mutation_controls": "clock-survival promotion and raw D/K identification are rejected; atlas generation and independent boundary checks fail closed"
+      },
+      {
+        "command": "python3 d_quotient_classical/atlas/generate_two_phase_counterflow_fixed_charge_reduced_health_atlas_fragment.py --check; python3 d_quotient_classical/atlas/verify_two_phase_counterflow_fixed_charge_reduced_health_atlas_fragment.py; python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-fixed-charge-reduced-health-fragment-v1.json",
+        "elapsed_seconds": 0.09,
+        "status": "PASS",
+        "direct_consumer": "schema-conforming unreduced causal-parent and obstructed fixed-charge physical-clock atlas entries"
+      },
+      {
+        "command": "npx --yes ajv-cli validate --spec=draft2020 -s d_quotient_classical/compensator/schema/two-phase-counterflow-fixed-charge-reduced-health-obstruction-v1.schema.json -d d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_V1.json --strict=true",
+        "elapsed_seconds": 1.87,
+        "status": "PASS"
+      }
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {
+        "command": "producer and independent verifier content-hash all five unchanged trace/causal-parent/receiver/positive-carrier imports before any conclusion",
+        "status": "PASS",
+        "scope": "affected imported certificate chain; unchanged content-addressed inputs were not rebuilt"
+      },
+      {
+        "command": "bash ci/science-forge-shadow.sh",
+        "elapsed_seconds": 20.08,
+        "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS",
+        "findings": "read-only rail reported pre-existing bridge certificate drift, corpus baseline growth from 976 to 1359 certificates, and an unpinned stale Forge development binary; diagnostics preserved at /tmp/sf-shadow.AyuRDA"
+      }
+    ]
+  },
+  "tier_3": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "python3 -m unittest discover -v",
+        "elapsed_seconds": 2.27,
+        "status": "PASS",
+        "tests": 149,
+        "scope": "repository-wide Python discovery suite; the six package tests are recorded separately in Tier 1"
+      }
+    ]
+  },
+  "claim_boundary": "This exact disposition retains the relative charge zero mode until the derived fixed-Q_rel fibre and quotient maps are explicit. It proves that fixing Q_rel makes D null but removes the complete relative-clock Darboux pair, so the requested healthy fixed-charge reduced theory fails its first PASS condition. The positive imported homogeneous trace and unreduced 26-row causal carrier remain certified. No complete all-Hodge physical census, negative-norm claim, raw D/K identification, Hadamard, quantum, q2, observer, Einstein-source, QME or particle statement is established.",
+  "higher_tiers_not_run": []
+}

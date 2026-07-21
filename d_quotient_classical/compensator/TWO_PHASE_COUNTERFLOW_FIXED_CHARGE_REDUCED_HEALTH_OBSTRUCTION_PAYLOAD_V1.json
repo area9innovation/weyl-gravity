@@ -1,0 +1,272 @@
+{
+  "charge_ledger": {
+    "fixed_Q_rel_fibre": {
+      "D": "null because i_D Omega=Omega_background*delta_Q_rel=0",
+      "D_equals_K_on_reduced_quotient": true,
+      "D_identified_with_K_before_reduction": false,
+      "K": "null stabilizer independently",
+      "Q_diag": "zero by Gauss",
+      "Q_rel": "constant by definition; delta_Q_rel=0",
+      "R_rel": "entire presymplectic radical and removed by quotient"
+    },
+    "unrestricted_parent": {
+      "D": "charged, H_D=Omega*Q_rel; not gauge",
+      "K": "D-Omega*R_rel; null Hamiltonian background stabilizer",
+      "Q_diag": "zero by local Gauss; diagonal U1 is gauge",
+      "Q_rel": "nonzero conserved global charge"
+    }
+  },
+  "content_sha256": "57d8c2fcba2ccc5dce75e8d62c29541732c3db54fb0a27e37d1b849777d503fe",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "derived_fixed_charge_fibre": {
+    "basis": [
+      "r_R_rel",
+      "delta_psi_0",
+      "delta_Q_rel",
+      "epsilon_Q_rel"
+    ],
+    "cohomology_dimensions": [
+      0,
+      0,
+      0
+    ],
+    "construction": "derived level set/homotopy fibre of Q_rel at its selected nonzero value, followed by the R_rel quotient",
+    "contracting_homotopy": [
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "dS_plus_Sd_identity": true,
+    "d_squared_zero": true,
+    "degree_ranks": [
+      1,
+      2,
+      1
+    ],
+    "degrees": [
+      -1,
+      0,
+      0,
+      1
+    ],
+    "differential": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "level_tangent": {
+      "basis": [
+        "delta_psi_0"
+      ],
+      "equation": "delta_Q_rel=0",
+      "pullback_symplectic_matrix": [
+        [
+          "0"
+        ]
+      ],
+      "radical_basis": [
+        "delta_psi_0=L_R_rel background"
+      ]
+    },
+    "quotient": {
+      "formula": "ker(d Q_rel)/im(L_R_rel)=span(delta_psi_0)/span(delta_psi_0)=0",
+      "inertia": [
+        0,
+        0,
+        0
+      ],
+      "pairing_rank": 0,
+      "positive_relative_clock_survives": false,
+      "relative_clock_dimension": 0
+    },
+    "shifted_pairing_matrix": [
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "-1",
+        "0",
+        "0"
+      ],
+      [
+        "-1",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "shifted_pairing_rank": 4,
+    "unreduced_phase_space": {
+      "basis": [
+        "delta_psi_0",
+        "delta_Q_rel"
+      ],
+      "inertia": "one canonical positive-clock Darboux pair before fixing charge",
+      "symplectic_matrix": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ]
+      ]
+    },
+    "zero_mode_retained_until_map_explicit": true
+  },
+  "first_failed_property": {
+    "actual": "relative-clock quotient dimension is zero",
+    "later_gates": "NOT_REACHED_AFTER_FIRST_EXACT_FAILURE",
+    "required": "one positive relative-clock direction survives the physical fixed-charge reduction",
+    "status": "OBSTRUCTED"
+  },
+  "imports": {
+    "causal_parent": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V1",
+      "sha256": "7d969e7e630f793dfe12fe07b0e98a67b2543f9aa85fa03277e491fb00296db7",
+      "source_commit": "951e88307abbea0996513773a33e66b37555272b"
+    },
+    "causal_parent_payload": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V1",
+      "sha256": "7c73705cc07062baf652c9cc0cb0977beda2a96d5b642fa186d6bfaeae01db57",
+      "source_commit": "951e88307abbea0996513773a33e66b37555272b"
+    },
+    "positive_54_green": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+      "result_id": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+      "sha256": "e92642b3225ab87b6058987f73f9ade3909646f2d0d3b95cc45cc9c5712b9c3b",
+      "source_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0"
+    },
+    "positive_54_parent": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0",
+      "source_commit": "445e26663d06764bc858ff0a004ba6178acce75f"
+    },
+    "receiver_contract": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_RECEIVER_CONTRACT_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_RECEIVER_CONTRACT_V1",
+      "sha256": "d5efdfed97286aa9554e88a449e87941c3c589940845dbfe70209b513c59e3f7",
+      "source_commit": "951e88307abbea0996513773a33e66b37555272b"
+    },
+    "trace_charge_preflight": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_TRACE_CHARGE_PREFLIGHT_V1",
+      "sha256": "2b578967ece7a2e6a8079c8fd84665ac40cf2b7e0aeef41d96882553c35115ea",
+      "source_commit": "d6d54a6efaa30ffe48dd7b9718c1954fa4ea514b"
+    }
+  },
+  "oracle_fields_consumed": [],
+  "result_id": "TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_PAYLOAD_V1",
+  "schema": "pure-weyl-two-phase-counterflow-fixed-charge-reduced-health-obstruction-payload-v1",
+  "sector_ledger": {
+    "Hodge_policy": {
+      "coexact": "retained in imported 70-row parent until its certified contractions",
+      "exact": "retained in imported 70-row parent until its certified contractions",
+      "exceptional_zero_modes": "not deleted by an elliptic projector",
+      "harmonic_one_forms": "absent because H1(S3)=0",
+      "homogeneous_scalar_constant": "explicitly retained through the derived fibre"
+    },
+    "clock_nonminimal_gaugefixing_28": {
+      "removed_rows": 28,
+      "retained_rows": 26,
+      "status": "EXACT_CONTRACTIBLE_BY_IMPORTED_54_TO_26_SDR"
+    },
+    "diagonal_U1_16": {
+      "basis": [
+        "chi,c_U1,A_star,B,c_U1_star,H,bar_c,b,b_star,bar_c_star"
+      ],
+      "cohomology_dimension": 0,
+      "status": "EXACT_CONTRACTIBLE"
+    },
+    "diffeomorphism_and_Weyl": {
+      "radial_scale_row": "R pairs with the Weyl ghost sigma",
+      "relative_phase_row": "Theta pairs with the temporal diffeomorphism ghost tau",
+      "status": "IMPORTED_EXACT_CONTRACTION"
+    },
+    "dressed_trace": {
+      "Hamiltonian_positive": true,
+      "characteristic_roots": [
+        "-I*sqrt(659/240)",
+        "I*sqrt(659/240)"
+      ],
+      "reduced_L2": "dot_u^2/8-659*u^2/1920",
+      "representative": "u=(h_hat_11+h_hat_22+h_hat_33)/3 on the homogeneous fixed-squashing scalar line",
+      "status": "SURVIVES_IN_RETAINED_DRESSED_METRIC_CARRIER",
+      "velocity_hessian": "1/4"
+    },
+    "relative_global_zero_mode": {
+      "cohomology_dimension": 0,
+      "status": "EXACT_AFTER_DERIVED_FIXED_CHARGE_REDUCTION"
+    },
+    "retained_metric_26": {
+      "complete_physical_cohomology_and_all_Hodge_sign_census": "NOT_REACHED_AFTER_FIRST_EXACT_PASS_FAILURE",
+      "status": "CAUSAL_UNARY_CERTIFIED"
+    }
+  }
+}

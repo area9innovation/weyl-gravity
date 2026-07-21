@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/two-phase-counterflow-fixed-charge-reduced-health-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "imports", "payload_ref", "terminal_verdict", "claim_boundary", "claim_flags", "content_hashes"],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-fixed-charge-reduced-health-obstruction-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_V1"},
+    "result_state": {"const": "OBSTRUCTED_FIXED_CHARGE_REDUCTION_REMOVES_RELATIVE_CLOCK"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "minItems": 3, "uniqueItems": true, "items": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}},
+    "imports": {"type": "object", "minProperties": 6},
+    "payload_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "content_sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "terminal_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_state", "fixed_charge_D_null", "positive_relative_clock_survives", "physically_healthy_reduced_theory", "first_failed_property"],
+      "properties": {
+        "result_state": {"const": "OBSTRUCTED_FIXED_CHARGE_REDUCTION_REMOVES_RELATIVE_CLOCK"},
+        "fixed_charge_D_null": {"const": true},
+        "positive_relative_clock_survives": {"const": false},
+        "physically_healthy_reduced_theory": {"const": false},
+        "first_failed_property": {"const": "relative-clock quotient dimension zero"}
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["establishes", "does_not_establish"],
+      "properties": {
+        "establishes": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+        "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}}
+      }
+    },
+    "claim_flags": {"type": "object", "minProperties": 6},
+    "content_hashes": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+  }
+}
