@@ -226,19 +226,20 @@ that the equations genuinely preserve before judging their health.
 
 The original Berger laboratory adds something more tangible: a matter field acts as a
 clock, and an electromagnetic signal is emitted during a bounded time
-interval. Its response is retarded, and the frequency measured relative to
-the clock is unaffected by arbitrary coordinate, scale and electromagnetic
-gauge choices. One exact fixture gives a redshift ratio of (1+z=2).
+interval. Its response is retarded, and a spatially global clock-slice
+$G_0$ probe observable is unaffected by arbitrary coordinate, scale and
+electromagnetic gauge choices. One exact probe fixture gives $1+z=2$ on its
+declared fixed-coupling carrier.
 
-That is a real relational redshift calculation in a model, but not yet a
-prediction for a star or galaxy. The attempt to promote its expanded
-apparatus has now produced an exact no-go inside the complete declared
-fixed-background, single-action local repair family: the necessary first-order
-gauge operation cannot be made to square to zero there. This does not undo the
-certified linear redshift experiment. It rules out that particular nonlinear
-apparatus completion and redirects the observer programme to the new
-two-phase counterflow parent, where the relative clock and detector must be
-constructed afresh from the changed action.
+That remains a real relational probe calculation in a model, but the complete
+receiver audit does not promote it to a localized action-derived physical
+receiver or operational apparatus redshift.  Three rank-two retarded
+source-to-probe matrices likewise survive only on their original pre-quotient
+carriers.  A standalone local receiver cocycle has now been derived from an
+action, but its degree-zero inclusion into the repaired ambient $q_{70}$ chain
+is exactly obstructed.  Phase~1 therefore ends before a receiver quotient,
+nonradical period or operational frequency-ratio domain; it does not open a
+new bridge or apparatus architecture.
 
 The changed clock now also has a finite-resolution theorem. A real clock
 cannot select an infinitely sharp instant, so the construction replaces the
@@ -420,13 +421,14 @@ tested.
 
 | Demonstrated in a model | Partly demonstrated | Open |
 |---|---|---|
-| Complete classical causal propagation on several controlled backgrounds, including a changed two-phase counterflow parent | A causal clock-defined redshift signal; the changed model has a charged homogeneous clock and a finite-resolution measurement rule, but its obvious round-sphere wave sorting fails on the squashed background and must be replaced | Electrons, mass generation and Standard Model matter |
+| Complete classical causal propagation on several controlled backgrounds, including a changed two-phase counterflow parent | A spatially global retarded $G_0$ clock-slice probe fixture with $1+z=2$ on its declared carrier; localized action-derived receiver descent and operational apparatus redshift are not activated | Electrons, mass generation and Standard Model matter |
 | Gauge reduction and exact classical comparison rules | Additional compact and black-hole wave families, with their final physical status unresolved | A positive interacting quantum state and physical particles |
 | Global nonlinear balance conditions and explicit resonance obstructions | Static black-hole thermodynamics; additional waves reach the horizon but are excluded by finite size at infinity in both parities at one fixture | Full black-hole scattering, stability, ringdown and Hawking radiation |
 | A one-loop anomaly calculation and a compensator-based local repair in a changed theory | Candidate reduced quantum two-point functions with both positive and negative signs | Gravitational lensing, realistic cosmology, dark matter and dark energy |
 
-Light, gravitational waves, redshift and black holes therefore occur in
-precisely scoped mathematical forms. Photons, gravitons and electrons do not
+Light, gravitational waves, a carrier-scoped relational probe ratio, and black holes therefore occur in
+precisely scoped mathematical forms. A localized operational redshift,
+photons, gravitons and electrons do not
 yet occur as established particles. Gravitational lensing, galaxy dynamics
 and cosmology are later observational tests, not current achievements.
 

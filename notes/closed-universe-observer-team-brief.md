@@ -2868,3 +2868,36 @@ into a repaired ambient parent, including chain, pairing, support and
 \(D/R/K\) intertwiners.  That integration, the receiver residual quotient,
 nonradical period, denominator, redshift, nonlinear response and recoil all
 remain `NO_CERTIFIED_MAP`.
+
+## Phase 1 disposition: exact receiver-integration obstruction
+
+The complete Phase 1 audit now supersedes the older producer wording above.
+The positive Berger clock and the spatially global retarded $G_0$ probe
+observable with $1+z=2$ remain certified on their declared fixed-coupling
+carrier.  Three exact rank-two retarded matrices likewise remain certified
+only on their original pre-quotient source-to-probe carriers, and the
+homogeneous coordinate-frequency ratio one remains only a kinematic control.
+None of these statements supplies a localized action-derived physical
+receiver.
+
+The standalone $D0$ action-derived local BV descent is certified, but it is
+not an operational observable.  Its fresh q70-graded replay exposes the first
+ambient gate exactly: the local BV cochain differential has compact degree
+$-1$, the repaired q70 action-Hessian chain differential has degree $+1$,
+and no degree-zero inclusion can intertwine them on the nonzero memory-shift
+descent.  Phase 1 therefore accepts
+`degree_zero_receiver_cocycle_chain_cochain_intertwiner` as its exact
+obstruction alternative.  No suspension bridge or new receiver architecture
+is opened.
+
+The fail-closed atlas fragment is
+`phase1-relational-observable-disposition-synthesis-fragment-v1`.  It keeps
+conditional or kinematic fixtures and the local cocycle `CERTIFIED`, ambient
+action integration `OBSTRUCTED`, and residual/nonradical physical descent and
+the operational relational observable `NO_CERTIFIED_MAP`.  Fixed
+$Q_{\rm rel}$ removes the relative clock; unrestricted $Q_{\rm rel}$
+retains the secular zero Jordan obstruction; the generic $j=1/2$ complex
+frequency block is not a healthy preparation.  Raw $D$, $R_{\rm rel}$ and
+$K=D-H'(Q_{\rm rel})R_{\rm rel}$ remain separately typed.  Any new
+chain/cochain bridge or apparatus architecture requires explicit Phase 2
+authorization.
