@@ -3615,3 +3615,35 @@ correction ansatz only.  It is not the general 104-row no-go and does not
 raise the 104-row lower bound.  The general non-cone gate still needs the
 accepted but not-yet-landed two-free-differential/rank-stratum solver,
 followed by cyclicity, real structure and the retained SDR.
+
+### Repaired-q70 low-j and stabilizer health (2026-07-21)
+
+`TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_V1` completes the
+exceptional representation census left open by the first generic
+\(j=1/2\) obstruction.  The only rank-changing spatial gauge maps occur at
+\(j=0\) and \(j=1\).  Their fixed-\(m\) stabilizer nullity is one, so the
+\(1+3=4\) total classes exactly exhaust
+\(\mathfrak{su}(2)_L\oplus\mathfrak u(1)_R\).  Both full \(z=0\) complexes
+have cohomology dimensions \((1,1,1,1)\) and a rank-four graded BV pairing
+with zero radical.  These are spatial Killing torsion quartets, not particles
+or the global charged \(R_{\rm rel}\) orbit.
+
+The invariant-coframe carrier retains all ten \(j=0\) and thirty \(j=1\)
+field rows per fixed \(m\); no row is deleted by importing low-\(j\)
+TT/vector tensor-harmonic availability from a different basis.  At \(j=1\),
+the exact ladder matrices reject an isolated \(k=0\) subcomplex.
+
+The nonzero-frequency quotient is physically unhealthy.  The \(j=0\)
+7-by-7 Hessian contains a sixth-order factor with one positive \(z^2\) root,
+hence a real exponential pair and inertia \((3,3,0)\).  The \(j=1\) 21-by-21
+Hessian contains two Hamiltonian-Hopf sectors, with exact two-copy inertias
+\((4,4,0)\) and \((8,12,0)\).  Every nonzero factor has factor-field nullity
+equal to its determinant exponent and zero pairing radical, so none of these
+directions is gauge or a polynomial-time Jordan partner.
+
+The repaired diagonal-\(U(1)\) rows contract exactly and carry zero local
+Gauss charge.  Fixing \(Q_{\rm rel}\) removes the separate global
+action-angle pair but leaves the nonzero-frequency instabilities unchanged.
+This closes the low-\(j\) gate and activates the repaired-q70 health assembly;
+nonlinear, observer, Hadamard, anomaly, QME, particle, positivity and
+unitarity conclusions remain open or unmapped.

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_V1_TIER_RECEIPT",
+  "claim_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_V1",
+  "date": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "artifacts": [
+    {"path": "d_quotient_classical/compensator/two_phase_counterflow_repaired_q70_low_j_stabilizer_health.py", "sha256": "5958b6cd3def427eccaa8c9487e977e40068b70098b394f166a81f3b8ce84e8b"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_V1.json", "sha256": "fa0d158301a1bf2076d7d7622866f4545d6a15370ec576ddcbe120837224d364"},
+    {"path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_PAYLOAD_V1.json", "sha256": "291071bab2494a4b4bdb21702be1bf28d672a2a6157b588003743aec5d0b5b5e"},
+    {"path": "d_quotient_classical/compensator/verify_two_phase_counterflow_repaired_q70_low_j_stabilizer_health.py", "sha256": "b0ebc9a55b05dd2aee39b0ba6a390b9c165d36eff79fd43f84e58f2a3e45c371"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_repaired_q70_low_j_stabilizer_health.py", "sha256": "c677c29c5da79bc8096d62a123534912cbac1b9f9472fa5473f660c965269949"},
+    {"path": "d_quotient_classical/compensator/tests/test_two_phase_counterflow_repaired_q70_low_j_stabilizer_health_atlas.py", "sha256": "1c2905cf47df17438ceef0c2b32ec2f7e730513a85492b8c743aa2052659c5b7"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-repaired-q70-low-j-stabilizer-health-v1.schema.json", "sha256": "377ccf27957532fb3255c8cc1389251cc537ca7e878b2487490cf9a609e8b9f9"},
+    {"path": "d_quotient_classical/compensator/schema/two-phase-counterflow-repaired-q70-low-j-stabilizer-health-payload-v1.schema.json", "sha256": "8a315d995dbc9a9895b9dd5a267ab8a86e5696f271ea76efdb6478ab5cfb3782"},
+    {"path": "d_quotient_classical/atlas/generate_two_phase_counterflow_repaired_q70_low_j_stabilizer_health_atlas_fragment.py", "sha256": "f6c9c4ead246fbd4e31cce2a074c4cbccfef560bf85739ec5ff26e0ecc51fc03"},
+    {"path": "residual_atlas/two-phase-counterflow-repaired-q70-low-j-stabilizer-health-fragment-v1.json", "sha256": "1e5429b69a9f136cfe5452f0a59f653ef492086a9b813d0e0bf02a134c2714fc"},
+    {"path": "d_quotient_classical/compensator/reports/two-phase-counterflow-repaired-q70-low-j-stabilizer-health-v1.md", "sha256": "e2833f92396b1910daac1108c0fa00f71ee7272757ef86f8ae60b9414e07f5c6"}
+  ],
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m py_compile on producer, process-isolated independent verifier, atlas generator and scoped tests; json.tool on result, payload and atlas; explicit-path git diff --check", "elapsed_seconds": 0.04, "peak_rss_kb": 16808, "status": "PASS"}
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "python3 -m d_quotient_classical.compensator.two_phase_counterflow_repaired_q70_low_j_stabilizer_health --check", "elapsed_seconds": 19.31, "peak_rss_kb": 85352, "status": "PASS", "method": "exact producer replay of j=0 and j=1 all-k quotient, zero-frequency cohomology, determinants, factor fields and root counts"},
+      {"command": "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_repaired_q70_low_j_stabilizer_health.py", "elapsed_seconds": 134.91, "peak_rss_kb": 105132, "status": "PASS", "independent_rail": "process-isolated direct Wigner/PBW reconstruction of both full q70 contractions and cyclic pairings, direct polynomial determinants, all factor-field ranks, zero-mode pairings, representation census, charges and mutations"},
+      {"command": "independent verifier scoped stages census, mutations, charges, zero:0 and zero:2", "elapsed_seconds": 14.79, "peak_rss_kb": 86280, "status": "PASS", "test_policy": "each edit-loop stage is independently runnable; the slowest scoped stage took 11.36 seconds, while the exhaustive 134.91-second replay is reserved for the affected certificate chain"},
+      {"command": "python3 -m pytest -q on low-j result and atlas tests", "elapsed_seconds": 0.48, "peak_rss_kb": 37012, "status": "PASS", "tests": 5},
+      {"command": "atlas generator --check and residual_atlas/validate_fragment.py", "elapsed_seconds": 0.02, "peak_rss_kb": 16704, "status": "PASS"},
+      {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true on result and payload", "elapsed_seconds": 3.77, "peak_rss_kb": 198636, "status": "PASS"}
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {"command": "eleven repaired-parent/generic/operator/layout/stabilizer/charge imports content-hashed and semantic preconditions checked by producer and independent verifier", "status": "PASS"},
+      {"command": "bash ci/science-forge-shadow.sh", "elapsed_seconds": 3.85, "peak_rss_kb": 241872, "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS", "findings": "bridge certificate drift; corpus 1375 versus baseline 976; unpinned dirty Forge development binary; diagnostics /tmp/sf-shadow.osadfg"}
+    ]
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "criterion": "No freeze, release or shared core-algebra mutation. The scoped exact producer, method-distinct process-isolated direct-matrix replay and affected content-addressed import chain cover the low-j health theorem."
+  },
+  "claim_boundary": "The complete repaired-q70 exceptional census contains only j=0 and j=1. Their zero-frequency stabilizer torsion has cohomology dimensions (1,1,1,1) and nondegenerate graded pairing, while the nonzero-frequency quotients contain a physical j=0 real exponential pair and two physical j=1 complex-frequency sectors. Fixed charge and the exactly contractible diagonal-U1 block do not remove these directions. This is a same-background linear theorem, not nonlinear blow-up, observer, Hadamard, anomaly, QME, particle, positivity or unitarity certification.",
+  "higher_tiers_not_run": ["Tier 3 full repository suite; criterion recorded above"]
+}

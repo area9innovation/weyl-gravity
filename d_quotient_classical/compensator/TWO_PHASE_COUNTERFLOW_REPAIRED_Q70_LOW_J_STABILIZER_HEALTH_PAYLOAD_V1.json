@@ -1,0 +1,1177 @@
+{
+  "charge_actions": {
+    "claim_boundary": "No charged R_rel orbit is deleted as local gauge, and the compact global action-angle ledger is imported rather than inferred from a local shift-component name.",
+    "global_action_angle_carrier": {
+      "classification": "separate global relative phase-charge Darboux carrier; it is not identified with a spatial Killing torsion class",
+      "fixed_charge": {
+        "formula": "ker(d Q_rel)/im(L_R_rel)=span(delta_psi_0)/span(delta_psi_0)=0",
+        "inertia": [
+          0,
+          0,
+          0
+        ],
+        "pairing_rank": 0,
+        "positive_relative_clock_survives": false,
+        "relative_clock_dimension": 0
+      },
+      "unrestricted": {
+        "D": "physical Hamiltonian generator H_D=Omega_background Q_rel",
+        "K": "D-Omega_background R_rel is the background stabilizer",
+        "R_rel": "charged global symmetry",
+        "pairing_rank": 2,
+        "relative_clock_dimension": 2,
+        "symplectic_basis": [
+          "delta_psi_0",
+          "delta_Q_rel"
+        ],
+        "symplectic_matrix": [
+          [
+            0,
+            1
+          ],
+          [
+            -1,
+            0
+          ]
+        ]
+      },
+      "zero_Jordan": {
+        "algebraic_multiplicity": 2,
+        "geometric_multiplicity": 1,
+        "largest_Jordan_block": 2,
+        "root": "0"
+      }
+    },
+    "nonzero_characteristic_modes": {
+      "j0_exponential_survives_fixed_charge": true,
+      "j1_complex_frequency_survives_fixed_charge": true,
+      "reason": "Q_rel is conserved, so a nonzero-frequency eigenmode has delta Q_rel=0; every j=1 harmonic also has zero spatial integral",
+      "unrestricted_vs_fixed_charge": "IDENTICAL"
+    },
+    "repaired_diagonal_U1": {
+      "D_R_rel_K_action": "K=D-Omega R_rel with Omega=3/4; the corrected U1 block is invariant and commutes with K,D,R_rel",
+      "classification": "contractible local gauge generator with zero local Gauss charge",
+      "contraction": "q16*S16+S16*q16=I16 before Peter-Weyl specialization and I_(16*(2j+1)) after specialization",
+      "j0_row_count": 16,
+      "j1_all_k_row_count": 48,
+      "local_Gauss_charge": "ZERO",
+      "physical_cohomology": "ZERO",
+      "row_count_per_Peter_Weyl_weight": 16
+    },
+    "spatial_Killing_stabilizers": {
+      "D": "multiplication by z; zero on the stabilizer specialization",
+      "K": "D-(3/4)R_rel=D on these rows",
+      "R_rel": "zero on these pure spatial Killing rows",
+      "classification": "local Diff reducibility/stabilizer data, not charged global orbits",
+      "j0": "right-U(1) spatial diffeomorphism stabilizer; not the internal clock R_rel",
+      "j1": "left-SU(2) spatial diffeomorphism stabilizers, one per m"
+    }
+  },
+  "claim_boundary": {
+    "does_not_establish": [
+      "nonlinear instability or finite-time blow-up",
+      "Hadamard, anomaly, QME, particle, positivity or unitarity claims",
+      "a particle interpretation of stabilizer torsion or residual deformation classes"
+    ],
+    "establishes": [
+      "complete j=0 and j=1 all-k repaired q70 exceptional carriers and exact z=0 cohomology",
+      "structural exhaustion of the four-dimensional Berger spatial Killing algebra",
+      "exact nonzero characteristic factors, geometric multiplicities, residue pairings and Jordan status",
+      "physical real-exponential j=0 and complex-frequency j=1 directions on unrestricted and fixed-charge carriers",
+      "separation of local spatial stabilizers from the global charged R_rel action-angle carrier"
+    ]
+  },
+  "content_sha256": "446c4ddc52d19796ade2febc0ff9007417c49ee716efa4b41eb95ab402178f46",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exceptional_blocks": {
+    "j0": {
+      "finite_parent": {
+        "carrier_dimension_per_fixed_m": 70,
+        "cross_m_cyclic": true,
+        "cross_m_pairing_rank": 70,
+        "degree_dimensions": [
+          6,
+          29,
+          29,
+          6
+        ],
+        "homotopy_identity": true,
+        "pi_iota_identity": true,
+        "proof_split": "producer specializes and hashes the full finite unary; imported PBW identities imply the representation identities, and the independent direct-matrix rail materializes and checks every finite identity",
+        "q70": {
+          "nonzero_entry_count": 100,
+          "sha256": "411dbfabe25f05a00f68e9306a9f766b1d007b0ee20fd44514512c8f2f6b9e9e",
+          "shape": [
+            70,
+            70
+          ]
+        },
+        "q_squared_zero": true,
+        "retained_dimension_per_fixed_m": 26,
+        "side_conditions": true
+      },
+      "labels": {
+        "j": "0",
+        "k": "all weights -j,...,+j retained",
+        "m": "all m retained as the exact degeneracy orbit",
+        "two_j": 0
+      },
+      "localized_nonzero_frequency_quotient": {
+        "equation_free_indices": [
+          0,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "field_dimension": 10,
+        "field_free_indices": [
+          0,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "gauge_dimension": 3,
+        "gauge_pivot_rows_at_z1": [
+          1,
+          2,
+          3
+        ],
+        "localization": "Q(sqrt(2),sqrt(5),sqrt(10),i)[z,z^-1]; z=0 is handled by the separate full-complex specialization",
+        "physical_dimension": 7,
+        "physical_matrix": {
+          "nonzero_entry_count": 19,
+          "sha256": "0434602f66595f6cc4de28425b496d042ecdad85512653b0db8549e68cc021c8",
+          "shape": [
+            7,
+            7
+          ]
+        }
+      },
+      "spectrum": {
+        "determinant_in_y": "-y**2*(9*y + 58)**2*(3240*y**2 + 106533*y + 872836)**2*(3200*y**3 + 12600*y**2 + 7605*y - 7812)/185752092672000000",
+        "nonzero_factor_audits": [
+          {
+            "H0_dimension": 2,
+            "H1_dimension": 2,
+            "H2_dimension": 0,
+            "Hminus1_dimension": 0,
+            "Jordan_status": "SEMISIMPLE_NO_POLYNOMIAL_TIME_PARTNER",
+            "determinant_exponent": 2,
+            "factor": "9*z**2 + 58",
+            "factor_field_rank_verification": "REQUIRED_AND_SUPPLIED_BY_INDEPENDENT_DIRECT_MATRIX_RAIL",
+            "pairing_proof": "nondegenerate cross-m cyclic parent plus independently verified equality of determinant exponent and exact factor-field nullity (simple elementary divisors)",
+            "pairing_radical_dimension": 0,
+            "physical_rank_over_factor_field": 5,
+            "residue_nondegenerate": true,
+            "root_class": "TWO_PURELY_IMAGINARY_ROOTS",
+            "root_counts": {
+              "discriminant": "1",
+              "negative_real_y_roots": 1,
+              "nonreal_y_roots": 0,
+              "positive_real_y_roots": 0,
+              "proof": "exact Sturm/root-count computation over Q",
+              "y_degree": 1
+            }
+          },
+          {
+            "H0_dimension": 2,
+            "H1_dimension": 2,
+            "H2_dimension": 0,
+            "Hminus1_dimension": 0,
+            "Jordan_status": "SEMISIMPLE_NO_POLYNOMIAL_TIME_PARTNER",
+            "determinant_exponent": 2,
+            "factor": "3240*z**4 + 106533*z**2 + 872836",
+            "factor_field_rank_verification": "REQUIRED_AND_SUPPLIED_BY_INDEPENDENT_DIRECT_MATRIX_RAIL",
+            "pairing_proof": "nondegenerate cross-m cyclic parent plus independently verified equality of determinant exponent and exact factor-field nullity (simple elementary divisors)",
+            "pairing_radical_dimension": 0,
+            "physical_rank_over_factor_field": 5,
+            "residue_nondegenerate": true,
+            "root_class": "FOUR_PURELY_IMAGINARY_ROOTS",
+            "root_counts": {
+              "discriminant": "37325529",
+              "negative_real_y_roots": 2,
+              "nonreal_y_roots": 0,
+              "positive_real_y_roots": 0,
+              "proof": "exact Sturm/root-count computation over Q",
+              "y_degree": 2
+            }
+          },
+          {
+            "H0_dimension": 1,
+            "H1_dimension": 1,
+            "H2_dimension": 0,
+            "Hminus1_dimension": 0,
+            "Jordan_status": "SEMISIMPLE_NO_POLYNOMIAL_TIME_PARTNER",
+            "determinant_exponent": 1,
+            "factor": "3200*z**6 + 12600*z**4 + 7605*z**2 - 7812",
+            "factor_field_rank_verification": "REQUIRED_AND_SUPPLIED_BY_INDEPENDENT_DIRECT_MATRIX_RAIL",
+            "pairing_proof": "nondegenerate cross-m cyclic parent plus independently verified equality of determinant exponent and exact factor-field nullity (simple elementary divisors)",
+            "pairing_radical_dimension": 0,
+            "physical_rank_over_factor_field": 6,
+            "positive_y_root_isolating_interval": [
+              0,
+              1
+            ],
+            "residue_nondegenerate": true,
+            "root_class": "ONE_REAL_EXPONENTIAL_PAIR_AND_FOUR_PURELY_IMAGINARY_ROOTS",
+            "root_counts": {
+              "discriminant": "6069376192680000",
+              "negative_real_y_roots": 2,
+              "nonreal_y_roots": 0,
+              "positive_real_y_roots": 1,
+              "proof": "exact Sturm/root-count computation over Q",
+              "y_degree": 3
+            }
+          }
+        ],
+        "unstable_sector": {
+          "classification": "GENUINE_REAL_EXPONENTIAL_PHYSICAL_DIRECTION",
+          "energy": {
+            "Hessian": [
+              [
+                "7812",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "7605",
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "-12600",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/3200"
+              ]
+            ],
+            "basis": [
+              "Q0",
+              "Q1",
+              "Q2",
+              "P0",
+              "P1",
+              "P2"
+            ],
+            "inertia_positive_negative_zero": [
+              3,
+              3,
+              0
+            ],
+            "inertia_proof": "exact congruence: each (Q_i,P_{i-1}) block has negative determinant; Q0 and P_last have the displayed exact signs",
+            "operator": "(-7812)*D^0+(7605)*D^2+(12600)*D^4+(3200)*D^6"
+          },
+          "factor": "3200*z**6 + 12600*z**4 + 7605*z**2 - 7812",
+          "fixed_isotype_spatial_potential_matrix": [
+            [
+              -7812
+            ]
+          ],
+          "geometric_multiplicity_per_root": 1,
+          "lower_time_order_matrices": {
+            "D2": [
+              [
+                7605
+              ]
+            ],
+            "D4": [
+              [
+                12600
+              ]
+            ]
+          },
+          "pairing_radical_dimension": 0,
+          "principal_time_order_six_matrix": [
+            [
+              3200
+            ]
+          ]
+        },
+        "zero_factor": "y^2 is excluded from the localized quotient and resolved by the full z=0 cohomology block"
+      },
+      "zero_frequency_full_complex": {
+        "classification": "KILLING_STABILIZER_TORSION_QUARTET_AT_Z_ZERO",
+        "cohomology_dimensions_Hminus1_H0_H1_H2": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "cohomology_pairing": [
+          [
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "-1",
+            "0",
+            "0"
+          ],
+          [
+            "-1",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "cohomology_pairing_basis": [
+          "Hminus1",
+          "H0",
+          "H1",
+          "H2"
+        ],
+        "not_a_propagating_particle": true,
+        "ordinary_inertia": "NOT_APPLICABLE_TO_GRADED_PAIRING",
+        "pairing_form_type": "GRADED_BV_PAIRING",
+        "pairing_radical_dimension": 0,
+        "pairing_rank": 4,
+        "representatives": {
+          "H0": [
+            [
+              3,
+              "1"
+            ]
+          ],
+          "H1": [
+            [
+              3,
+              "1"
+            ]
+          ],
+          "H2": [
+            [
+              2,
+              "1"
+            ]
+          ],
+          "Hminus1": [
+            [
+              2,
+              "1"
+            ]
+          ]
+        },
+        "specialized_ranks_K_H_Ksharp": [
+          2,
+          7,
+          2
+        ]
+      }
+    },
+    "j1": {
+      "finite_parent": {
+        "carrier_dimension_per_fixed_m": 210,
+        "cross_m_cyclic": true,
+        "cross_m_pairing_rank": 210,
+        "degree_dimensions": [
+          18,
+          87,
+          87,
+          18
+        ],
+        "homotopy_identity": true,
+        "pi_iota_identity": true,
+        "proof_split": "producer specializes and hashes the full finite unary; imported PBW identities imply the representation identities, and the independent direct-matrix rail materializes and checks every finite identity",
+        "q70": {
+          "nonzero_entry_count": 1157,
+          "sha256": "f8eb32c14eacf69bba41b7114448c5a2628caf51cdec4a970d7830d3b12d983c",
+          "shape": [
+            210,
+            210
+          ]
+        },
+        "q_squared_zero": true,
+        "retained_dimension_per_fixed_m": 78,
+        "side_conditions": true
+      },
+      "labels": {
+        "j": "1",
+        "k": "all weights -j,...,+j retained",
+        "m": "all m retained as the exact degeneracy orbit",
+        "two_j": 2
+      },
+      "localized_nonzero_frequency_quotient": {
+        "equation_free_indices": [
+          0,
+          1,
+          2,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "field_dimension": 30,
+        "field_free_indices": [
+          0,
+          1,
+          2,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "gauge_dimension": 9,
+        "gauge_pivot_rows_at_z1": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "localization": "Q(sqrt(2),sqrt(5),sqrt(10),i)[z,z^-1]; z=0 is handled by the separate full-complex specialization",
+        "physical_dimension": 21,
+        "physical_matrix": {
+          "nonzero_entry_count": 193,
+          "sha256": "2707b6c47f580001da69702de1ae11da4fdd93ccefa18f103da43b6e2834065c",
+          "shape": [
+            21,
+            21
+          ]
+        }
+      },
+      "spectrum": {
+        "determinant_in_y": "-y**8*(y + 2)*(9*y + 196)**2*(40*y**2 + 3013*y + 56574)**2*(3240*y**2 + 113013*y + 986578)**2*(3200*y**4 + 44600*y**3 + 189205*y**2 + 235096*y + 82944)*(7558272000*y**5 + 268203182400*y**4 + 3648301495200*y**3 + 23672119906305*y**2 + 73066019605029*y + 85345353120218)**2/79125437933256602109650097143808000000000000000000",
+        "nonzero_factor_audits": [
+          {
+            "H0_dimension": 1,
+            "H1_dimension": 1,
+            "H2_dimension": 0,
+            "Hminus1_dimension": 0,
+            "Jordan_status": "SEMISIMPLE_NO_POLYNOMIAL_TIME_PARTNER",
+            "determinant_exponent": 1,
+            "factor": "z**2 + 2",
+            "factor_field_rank_verification": "REQUIRED_AND_SUPPLIED_BY_INDEPENDENT_DIRECT_MATRIX_RAIL",
+            "pairing_proof": "nondegenerate cross-m cyclic parent plus independently verified equality of determinant exponent and exact factor-field nullity (simple elementary divisors)",
+            "pairing_radical_dimension": 0,
+            "physical_rank_over_factor_field": 20,
+            "residue_nondegenerate": true,
+            "root_class": "TWO_PURELY_IMAGINARY_ROOTS",
+            "root_counts": {
+              "discriminant": "1",
+              "negative_real_y_roots": 1,
+              "nonreal_y_roots": 0,
+              "positive_real_y_roots": 0,
+              "proof": "exact Sturm/root-count computation over Q",
+              "y_degree": 1
+            }
+          },
+          {
+            "H0_dimension": 2,
+            "H1_dimension": 2,
+            "H2_dimension": 0,
+            "Hminus1_dimension": 0,
+            "Jordan_status": "SEMISIMPLE_NO_POLYNOMIAL_TIME_PARTNER",
+            "determinant_exponent": 2,
+            "factor": "9*z**2 + 196",
+            "factor_field_rank_verification": "REQUIRED_AND_SUPPLIED_BY_INDEPENDENT_DIRECT_MATRIX_RAIL",
+            "pairing_proof": "nondegenerate cross-m cyclic parent plus independently verified equality of determinant exponent and exact factor-field nullity (simple elementary divisors)",
+            "pairing_radical_dimension": 0,
+            "physical_rank_over_factor_field": 19,
+            "residue_nondegenerate": true,
+            "root_class": "TWO_PURELY_IMAGINARY_ROOTS",
+            "root_counts": {
+              "discriminant": "1",
+              "negative_real_y_roots": 1,
+              "nonreal_y_roots": 0,
+              "positive_real_y_roots": 0,
+              "proof": "exact Sturm/root-count computation over Q",
+              "y_degree": 1
+            }
+          },
+          {
+            "H0_dimension": 2,
+            "H1_dimension": 2,
+            "H2_dimension": 0,
+            "Hminus1_dimension": 0,
+            "Jordan_status": "SEMISIMPLE_NO_POLYNOMIAL_TIME_PARTNER",
+            "determinant_exponent": 2,
+            "factor": "40*z**4 + 3013*z**2 + 56574",
+            "factor_field_rank_verification": "REQUIRED_AND_SUPPLIED_BY_INDEPENDENT_DIRECT_MATRIX_RAIL",
+            "pairing_proof": "nondegenerate cross-m cyclic parent plus independently verified equality of determinant exponent and exact factor-field nullity (simple elementary divisors)",
+            "pairing_radical_dimension": 0,
+            "physical_rank_over_factor_field": 19,
+            "residue_nondegenerate": true,
+            "root_class": "FOUR_PURELY_IMAGINARY_ROOTS",
+            "root_counts": {
+              "discriminant": "26329",
+              "negative_real_y_roots": 2,
+              "nonreal_y_roots": 0,
+              "positive_real_y_roots": 0,
+              "proof": "exact Sturm/root-count computation over Q",
+              "y_degree": 2
+            }
+          },
+          {
+            "H0_dimension": 2,
+            "H1_dimension": 2,
+            "H2_dimension": 0,
+            "Hminus1_dimension": 0,
+            "Jordan_status": "SEMISIMPLE_NO_POLYNOMIAL_TIME_PARTNER",
+            "determinant_exponent": 2,
+            "factor": "3240*z**4 + 113013*z**2 + 986578",
+            "factor_field_rank_verification": "REQUIRED_AND_SUPPLIED_BY_INDEPENDENT_DIRECT_MATRIX_RAIL",
+            "pairing_proof": "nondegenerate cross-m cyclic parent plus independently verified equality of determinant exponent and exact factor-field nullity (simple elementary divisors)",
+            "pairing_radical_dimension": 0,
+            "physical_rank_over_factor_field": 19,
+            "residue_nondegenerate": true,
+            "root_class": "COMPLEX_FREQUENCY_QUARTET",
+            "root_counts": {
+              "discriminant": "-14112711",
+              "negative_real_y_roots": 0,
+              "nonreal_y_roots": 2,
+              "positive_real_y_roots": 0,
+              "proof": "exact Sturm/root-count computation over Q",
+              "y_degree": 2
+            }
+          },
+          {
+            "H0_dimension": 1,
+            "H1_dimension": 1,
+            "H2_dimension": 0,
+            "Hminus1_dimension": 0,
+            "Jordan_status": "SEMISIMPLE_NO_POLYNOMIAL_TIME_PARTNER",
+            "determinant_exponent": 1,
+            "factor": "3200*z**8 + 44600*z**6 + 189205*z**4 + 235096*z**2 + 82944",
+            "factor_field_rank_verification": "REQUIRED_AND_SUPPLIED_BY_INDEPENDENT_DIRECT_MATRIX_RAIL",
+            "pairing_proof": "nondegenerate cross-m cyclic parent plus independently verified equality of determinant exponent and exact factor-field nullity (simple elementary divisors)",
+            "pairing_radical_dimension": 0,
+            "physical_rank_over_factor_field": 20,
+            "residue_nondegenerate": true,
+            "root_class": "EIGHT_PURELY_IMAGINARY_ROOTS",
+            "root_counts": {
+              "discriminant": "25405318973217607211520000",
+              "negative_real_y_roots": 4,
+              "nonreal_y_roots": 0,
+              "positive_real_y_roots": 0,
+              "proof": "exact Sturm/root-count computation over Q",
+              "y_degree": 4
+            }
+          },
+          {
+            "H0_dimension": 2,
+            "H1_dimension": 2,
+            "H2_dimension": 0,
+            "Hminus1_dimension": 0,
+            "Jordan_status": "SEMISIMPLE_NO_POLYNOMIAL_TIME_PARTNER",
+            "determinant_exponent": 2,
+            "factor": "7558272000*z**10 + 268203182400*z**8 + 3648301495200*z**6 + 23672119906305*z**4 + 73066019605029*z**2 + 85345353120218",
+            "factor_field_rank_verification": "REQUIRED_AND_SUPPLIED_BY_INDEPENDENT_DIRECT_MATRIX_RAIL",
+            "pairing_proof": "nondegenerate cross-m cyclic parent plus independently verified equality of determinant exponent and exact factor-field nullity (simple elementary divisors)",
+            "pairing_radical_dimension": 0,
+            "physical_rank_over_factor_field": 19,
+            "residue_nondegenerate": true,
+            "root_class": "SIX_PURELY_IMAGINARY_ROOTS_AND_FOUR_COMPLEX_FREQUENCY_ROOTS",
+            "root_counts": {
+              "discriminant": "-4266980016064659680299366064789841105643054357440496287188483007616036876006195200000000",
+              "negative_real_y_roots": 3,
+              "nonreal_y_roots": 2,
+              "positive_real_y_roots": 0,
+              "proof": "exact Sturm/root-count computation over Q",
+              "y_degree": 5
+            }
+          }
+        ],
+        "unstable_sectors": [
+          {
+            "classification": "GENUINE_HAMILTONIAN_HOPF_COMPLEX_FREQUENCY_DIRECTION",
+            "energy_per_copy": {
+              "Hessian": [
+                [
+                  "-986578",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "113013",
+                  "1",
+                  "0"
+                ],
+                [
+                  "0",
+                  "1",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "1/3240"
+                ]
+              ],
+              "basis": [
+                "Q0",
+                "Q1",
+                "P0",
+                "P1"
+              ],
+              "inertia_positive_negative_zero": [
+                2,
+                2,
+                0
+              ],
+              "inertia_proof": "exact congruence: each (Q_i,P_{i-1}) block has negative determinant; Q0 and P_last have the displayed exact signs",
+              "operator": "(986578)*D^0+(113013)*D^2+(3240)*D^4"
+            },
+            "factor": "3240*z**4 + 113013*z**2 + 986578",
+            "pairing_radical_dimension": 0,
+            "physical_multiplicity_per_root": 2,
+            "two_copy_inertia_positive_negative_zero": [
+              4,
+              4,
+              0
+            ]
+          },
+          {
+            "classification": "MIXED_STABLE_AND_HAMILTONIAN_HOPF_TENTH_ORDER_DIRECTION",
+            "energy_per_copy": {
+              "Hessian": [
+                [
+                  "-85345353120218",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "73066019605029",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "-23672119906305",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "3648301495200",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "-268203182400",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0"
+                ],
+                [
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "-1/7558272000"
+                ]
+              ],
+              "basis": [
+                "Q0",
+                "Q1",
+                "Q2",
+                "Q3",
+                "Q4",
+                "P0",
+                "P1",
+                "P2",
+                "P3",
+                "P4"
+              ],
+              "inertia_positive_negative_zero": [
+                4,
+                6,
+                0
+              ],
+              "inertia_proof": "exact congruence: each (Q_i,P_{i-1}) block has negative determinant; Q0 and P_last have the displayed exact signs",
+              "operator": "(85345353120218)*D^0+(73066019605029)*D^2+(23672119906305)*D^4+(3648301495200)*D^6+(268203182400)*D^8+(7558272000)*D^10"
+            },
+            "factor": "7558272000*z**10 + 268203182400*z**8 + 3648301495200*z**6 + 23672119906305*z**4 + 73066019605029*z**2 + 85345353120218",
+            "pairing_radical_dimension": 0,
+            "physical_multiplicity_per_root": 2,
+            "two_copy_inertia_positive_negative_zero": [
+              8,
+              12,
+              0
+            ]
+          }
+        ],
+        "zero_factor": "y^8 is excluded from the localized quotient and resolved by the full z=0 cohomology block"
+      },
+      "zero_frequency_full_complex": {
+        "classification": "KILLING_STABILIZER_TORSION_QUARTET_AT_Z_ZERO",
+        "cohomology_dimensions_Hminus1_H0_H1_H2": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "cohomology_pairing": [
+          [
+            "0",
+            "0",
+            "0",
+            "-2*sqrt(5)/3"
+          ],
+          [
+            "0",
+            "0",
+            "-2*sqrt(5)/3",
+            "0"
+          ],
+          [
+            "0",
+            "2*sqrt(5)/3",
+            "0",
+            "0"
+          ],
+          [
+            "2*sqrt(5)/3",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "cohomology_pairing_basis": [
+          "Hminus1",
+          "H0",
+          "H1",
+          "H2"
+        ],
+        "not_a_propagating_particle": true,
+        "ordinary_inertia": "NOT_APPLICABLE_TO_GRADED_PAIRING",
+        "pairing_form_type": "GRADED_BV_PAIRING",
+        "pairing_radical_dimension": 0,
+        "pairing_rank": 4,
+        "representatives": {
+          "H0": [
+            [
+              3,
+              "2*sqrt(5)/3"
+            ],
+            [
+              5,
+              "-2*sqrt(5)/3"
+            ],
+            [
+              6,
+              "2*sqrt(5)*I/3"
+            ],
+            [
+              8,
+              "2*sqrt(5)*I/3"
+            ],
+            [
+              10,
+              "1"
+            ]
+          ],
+          "H1": [
+            [
+              3,
+              "1"
+            ]
+          ],
+          "H2": [
+            [
+              0,
+              "1"
+            ]
+          ],
+          "Hminus1": [
+            [
+              0,
+              "2*sqrt(5)/3"
+            ],
+            [
+              2,
+              "-2*sqrt(5)/3"
+            ],
+            [
+              3,
+              "2*sqrt(5)*I/3"
+            ],
+            [
+              5,
+              "2*sqrt(5)*I/3"
+            ],
+            [
+              7,
+              "1"
+            ]
+          ]
+        },
+        "specialized_ranks_K_H_Ksharp": [
+          8,
+          21,
+          8
+        ]
+      }
+    }
+  },
+  "imports": {
+    "action_angle": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_SECULAR_CLOCK_ORBITAL_STABILITY_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_SECULAR_CLOCK_ORBITAL_STABILITY_V1",
+      "sha256": "679c0b889da5ed9042414dac29bef5608b60490869d1d198c5570ab332af3bde"
+    },
+    "action_angle_payload": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_SECULAR_CLOCK_ORBITAL_STABILITY_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_SECULAR_CLOCK_ORBITAL_STABILITY_PAYLOAD_V1",
+      "sha256": "f4b002b87f1e966c3f9a3f8bcf2030023e9de076854a0471bddf6a662c7b5d67"
+    },
+    "background_stabilizer": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BACKGROUND_COMPONENT_ROUND_DISPOSITION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_BACKGROUND_COMPONENT_ROUND_DISPOSITION_V1",
+      "sha256": "9fa277c57a28aa831d56cec4a49774f716cb000616afde74013d9320dc0a1763"
+    },
+    "charge_clock": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_V1",
+      "sha256": "cd1fe1bf22604d17c65b941032c6b31c404bfd5cc01bd7f8399642840da01ed4"
+    },
+    "charge_clock_payload": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CHARGE_CLOCK_COMPLEMENTARITY_PAYLOAD_V1",
+      "sha256": "2e25c28e06ab54256c8a4af4b6793f241801bdfa84eab3eb218a1ab53eb873c0"
+    },
+    "fixed_charge": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_V1",
+      "sha256": "812f6a3c2308eaeef09bee25ec8c79c8f7c86de7a51383141f8cae46c2f9cae5"
+    },
+    "fixed_charge_payload": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_FIXED_CHARGE_REDUCED_HEALTH_OBSTRUCTION_PAYLOAD_V1",
+      "sha256": "4704d703a7c80a5a1391ebd0dbaa346b1177f9febccb20027ccf1fa0a47585ec"
+    },
+    "generic_health": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_V1",
+      "sha256": "d78fa16e9772924ded1b8262f33e3989a9e94acd01891257309bc07f7f7f282c"
+    },
+    "generic_payload": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_PAYLOAD_V1",
+      "sha256": "43595d6e974dd3ff852db658014fb34dcd1521f050a752e5732fb0c3b5f27797"
+    },
+    "repaired_parent": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_V2",
+      "sha256": "3f41cb5258f0883b217c9343e037074faf841728f29e03c306f101487411d2cf"
+    },
+    "repaired_payload": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V2.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_CAUSAL_BV_PARENT_PAYLOAD_V2",
+      "sha256": "c59b1a74aced082155db3446c40aa1b14e3982e66670a3c097539b25d5d5c938"
+    },
+    "retained_layout": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json",
+      "result_id": "BERGER_RETAINED_MINIMAL_LAYOUT",
+      "sha256": "3eccbcc1076eaf29ab1dc540440f8f2d3ffd5c9aa5be9265443db2997f68b1ba"
+    },
+    "retained_operator": {
+      "oracle_fields_consumed": [],
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json",
+      "result_id": "BERGER_RETAINED_MINIMAL_OPERATOR",
+      "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+    }
+  },
+  "mutations": {
+    "charged_R_rel_called_spatial_gauge": "REJECTED_BY_IMPORTED_CHARGE_CURRENT_AND_SEPARATE_CARRIER",
+    "generic_rank_substitution": "REJECTED_BY_EXACT_NULLITY_ONE_AT_TWO_J_0_AND_2",
+    "isolated_k0_at_j1": "REJECTED_BY_NONZERO_E1_E2_LADDER_BOUNDARY",
+    "round_limit": "OUTSIDE_SAME_BACKGROUND_GATE",
+    "stabilizer_deleted_as_gauge": "REJECTED_BY_NONDEGENERATE_FOUR_DIMENSIONAL_SPECIALIZED_COHOMOLOGY_PAIRING"
+  },
+  "normalization": {
+    "computed_monic_representative_alpha_B": "1",
+    "invariance": "positive overall scaling preserves roots, multiplicities, radicals and inertia",
+    "selected_action_alpha_B": "5"
+  },
+  "oracle_fields_consumed": [],
+  "representation_census": {
+    "absent_tensor_harmonic_disposition": {
+      "basis_language": "invariant coframe tensor components with Peter-Weyl scalar coefficients",
+      "conclusion": "standard irreducible tensor-harmonic absences at low j do not remove invariant-coframe component rows; the exact gauge rank and quotient compute their relations",
+      "j0_field_rows_retained": 10,
+      "j1_field_rows_retained": 30,
+      "row_deletion_policy": "NO_ROW_IS_DELETED_BY_TT_OR_VECTOR_TENSOR_HARMONIC_AVAILABILITY"
+    },
+    "direct_matrix_rows": [
+      {
+        "all_k_dimension": 1,
+        "fixed_m_count": 1,
+        "gauge_domain_dimension_per_fixed_m": 3,
+        "gauge_rank_at_z0_per_fixed_m": 2,
+        "j": "0",
+        "stabilizer_nullity_per_fixed_m": 1,
+        "two_j": 0
+      },
+      {
+        "all_k_dimension": 2,
+        "fixed_m_count": 2,
+        "gauge_domain_dimension_per_fixed_m": 6,
+        "gauge_rank_at_z0_per_fixed_m": 6,
+        "j": "1/2",
+        "stabilizer_nullity_per_fixed_m": 0,
+        "two_j": 1
+      },
+      {
+        "all_k_dimension": 3,
+        "fixed_m_count": 3,
+        "gauge_domain_dimension_per_fixed_m": 9,
+        "gauge_rank_at_z0_per_fixed_m": 8,
+        "j": "1",
+        "stabilizer_nullity_per_fixed_m": 1,
+        "two_j": 2
+      },
+      {
+        "all_k_dimension": 4,
+        "fixed_m_count": 4,
+        "gauge_domain_dimension_per_fixed_m": 12,
+        "gauge_rank_at_z0_per_fixed_m": 12,
+        "j": "3/2",
+        "stabilizer_nullity_per_fixed_m": 0,
+        "two_j": 3
+      },
+      {
+        "all_k_dimension": 5,
+        "fixed_m_count": 5,
+        "gauge_domain_dimension_per_fixed_m": 15,
+        "gauge_rank_at_z0_per_fixed_m": 15,
+        "j": "2",
+        "stabilizer_nullity_per_fixed_m": 0,
+        "two_j": 4
+      },
+      {
+        "all_k_dimension": 6,
+        "fixed_m_count": 6,
+        "gauge_domain_dimension_per_fixed_m": 18,
+        "gauge_rank_at_z0_per_fixed_m": 18,
+        "j": "5/2",
+        "stabilizer_nullity_per_fixed_m": 0,
+        "two_j": 5
+      },
+      {
+        "all_k_dimension": 7,
+        "fixed_m_count": 7,
+        "gauge_domain_dimension_per_fixed_m": 21,
+        "gauge_rank_at_z0_per_fixed_m": 21,
+        "j": "3",
+        "stabilizer_nullity_per_fixed_m": 0,
+        "two_j": 6
+      }
+    ],
+    "exceptional_two_j": [
+      0,
+      2
+    ],
+    "generic_gluing": {
+      "j_half": "full rank and already computed by the imported generic certificate",
+      "j_one_and_half_and_above": "full stabilizer rank by the exact isometry-algebra exhaustion",
+      "j_two_direct_regression": "two_j=4 is full rank",
+      "no_class_lost": true
+    },
+    "structural_exhaustiveness_proof": {
+      "Peter_Weyl_decomposition": "one j=0 right-U(1) generator plus one j=1 multiplet with three m values",
+      "accounted_dimension": "1 + 3 = 4",
+      "conclusion": "the exact Killing equation has no further j or tensor-harmonic exceptions; invariant-coframe tensor components exist for every scalar coefficient isotype",
+      "dimension": 4,
+      "spatial_stabilizer": "SU(2)_L x U(1)_R"
+    }
+  },
+  "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_PAYLOAD_V1",
+  "schema": "pure-weyl-two-phase-counterflow-repaired-q70-low-j-stabilizer-health-payload-v1",
+  "terminal_verdict": {
+    "exceptional_isotypes": [
+      "j=0",
+      "j=1"
+    ],
+    "fixed_charge_removes_global_action_angle_but_not_nonzero_frequency_instabilities": true,
+    "health_assembly_activated": true,
+    "j0_health": "OBSTRUCTED_REAL_EXPONENTIAL_PHYSICAL_MODE",
+    "j1_health": "OBSTRUCTED_COMPLEX_FREQUENCY_PHYSICAL_MODES",
+    "result_state": "CERTIFIED_COMPLETE_LOW_J_STABILIZER_CENSUS_WITH_PHYSICAL_J0_EXPONENTIAL_AND_J1_COMPLEX_FREQUENCY_MODES",
+    "stabilizer_dimension_accounted": 4,
+    "zero_frequency_stabilizer_pairing_radical": 0
+  }
+}

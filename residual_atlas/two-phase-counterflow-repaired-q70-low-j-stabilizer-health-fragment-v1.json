@@ -1,0 +1,304 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This is local Diff reducibility for the right-U(1) Berger spatial Killing generator. It is not the global charged R_rel action-angle orbit and is not a particle, observer or quantum mode.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_V1",
+          "sha256": "fa0d158301a1bf2076d7d7622866f4545d6a15370ec576ddcbe120837224d364"
+        },
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_PAYLOAD_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_PAYLOAD_V1",
+          "sha256": "291071bab2494a4b4bdb21702be1bf28d672a2a6157b588003743aec5d0b5b5e"
+        }
+      ],
+      "id": "classical.counterflow.berger.repaired_q70.j0_spatial_killing_torsion",
+      "mode_data": {
+        "dispersion": {
+          "statement": "This row is the right-U(1) spatial Killing stabilizer torsion quartet, not a propagating characteristic mode.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "The descended graded BV pairing has rank four and zero radical; ordinary symmetric-form inertia is not applicable.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The zero-frequency class is kept in the full complex and is not inferred by localizing the nonzero-frequency quotient.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No q2 source has been evaluated on this stabilizer class.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "The repaired q70 parent retains its causal contraction; this does not turn stabilizer torsion into a particle.",
+            "status": "CERTIFIED"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No secular correction-class theorem has been evaluated on this stabilizer class.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "No repaired-q70 q2 map has been replayed on this torsion quartet.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "stationary biaxial Berger R x S3, a=1, c_squared=9/40",
+        "boundaries": "none; closed S3 Cauchy slices",
+        "carrier": "complete repaired 70-row j=0 all-k carrier; 26-row retained complex after the explicit diagonal-U1 contraction",
+        "charge_sector": "unrestricted and fixed-Q_rel dispositions are recorded separately; spatial Killing stabilizers are not the charged R_rel orbit",
+        "degree": "z=0 cohomology H^-1,H^0,H^1,H^2=(1,1,1,1)",
+        "ell": "NOT_APPLICABLE: Berger Peter-Weyl spin j is used instead of a round-S3 Hodge label",
+        "k": "k=0 (the complete j=0 representation, not a truncation)",
+        "m": "m=0",
+        "omega": "z=0 only",
+        "parity": "Berger Peter-Weyl reality orbit; no round-S3 parity identification",
+        "theory": "selected fixed-action two-phase counterflow theory with repaired diagonal-U1 chain"
+      }
+    },
+    {
+      "claim_boundary": "The mode survives the fixed-Q_rel restriction and is neither spatial gauge, diagonal-U1, global action-angle, nor a pairing radical. This is linear instability, not nonlinear blow-up or a particle/QME theorem.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_V1",
+          "sha256": "fa0d158301a1bf2076d7d7622866f4545d6a15370ec576ddcbe120837224d364"
+        },
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_PAYLOAD_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_PAYLOAD_V1",
+          "sha256": "291071bab2494a4b4bdb21702be1bf28d672a2a6157b588003743aec5d0b5b5e"
+        }
+      ],
+      "id": "classical.counterflow.berger.repaired_q70.j0_exponential_physical_mode",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The factor 3200*z^6+12600*z^4+7605*z^2-7812 has one positive y=z^2 root, hence a real exponential pair.",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "The characteristic root space has zero pairing radical; the sixth-order action representative has inertia (3,3,0).",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The factor has geometric multiplicity one equal to its determinant exponent, so it has no polynomial-time Jordan partner.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The linear physical carrier already contains a real exponentially growing direction.",
+            "status": "OBSTRUCTED"
+          },
+          "causal_retarded": {
+            "statement": "Causal solvability of the parent coexists with, and does not remove, the physical exponential mode.",
+            "status": "CERTIFIED"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Nonlinear continuation has not been computed.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "No repaired-q70 q2 source has been replayed against this physical quotient.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "stationary biaxial Berger R x S3, a=1, c_squared=9/40",
+        "boundaries": "none; closed S3 Cauchy slices",
+        "carrier": "j=0 repaired q70 nonzero-frequency quotient, exact 7-by-7 physical Hessian",
+        "charge_sector": "unrestricted and fixed-Q_rel dispositions are recorded separately; spatial Killing stabilizers are not the charged R_rel orbit",
+        "degree": "physical H0/H1 at a simple characteristic factor after explicit gauge quotient",
+        "ell": "NOT_APPLICABLE: Berger Peter-Weyl spin j is used instead of a round-S3 Hodge label",
+        "k": "k=0 (complete j=0 representation)",
+        "m": "m=0",
+        "omega": "3200*z^6+12600*z^4+7605*z^2-7812",
+        "parity": "Berger Peter-Weyl reality orbit; no round-S3 parity identification",
+        "theory": "selected fixed-action two-phase counterflow theory with repaired diagonal-U1 chain"
+      }
+    },
+    {
+      "claim_boundary": "These are local spatial Diff reducibilities. They are not the charged R_rel carrier, cannot be isolated to k=0, and are not particle or quantum entries.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_V1",
+          "sha256": "fa0d158301a1bf2076d7d7622866f4545d6a15370ec576ddcbe120837224d364"
+        },
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_PAYLOAD_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_PAYLOAD_V1",
+          "sha256": "291071bab2494a4b4bdb21702be1bf28d672a2a6157b588003743aec5d0b5b5e"
+        }
+      ],
+      "id": "classical.counterflow.berger.repaired_q70.j1_spatial_killing_torsion",
+      "mode_data": {
+        "dispersion": {
+          "statement": "This row records the left-SU(2) spatial Killing stabilizer torsion, not a propagating characteristic mode.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "Each fixed-m torsion quartet has a rank-four graded BV pairing with zero radical.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The exact representation census accounts for all three j=1 Killing generators without deleting low-j tensor-component rows.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No q2 source has been evaluated on the torsion classes.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "The repaired all-k parent is causal; this is not a propagating-state assertion.",
+            "status": "CERTIFIED"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No secular correction-class theorem has been evaluated on the torsion classes.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "No repaired-q70 q2 map has been replayed on these stabilizer classes.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "stationary biaxial Berger R x S3, a=1, c_squared=9/40",
+        "boundaries": "none; closed S3 Cauchy slices",
+        "carrier": "complete repaired 210-component j=1 all-k carrier per reality orbit; 78 retained components after diagonal-U1 contraction",
+        "charge_sector": "unrestricted and fixed-Q_rel dispositions are recorded separately; spatial Killing stabilizers are not the charged R_rel orbit",
+        "degree": "one z=0 torsion quartet per fixed m; total left-SU(2) stabilizer dimension three",
+        "ell": "NOT_APPLICABLE: Berger Peter-Weyl spin j is used instead of a round-S3 Hodge label",
+        "k": "all k=-1,0,+1 retained; isolated k=0 is rejected by the ladder boundary",
+        "m": "m=-1,0,+1 retained as the exact degeneracy orbit",
+        "omega": "z=0 only",
+        "parity": "Berger Peter-Weyl reality orbit; no round-S3 parity identification",
+        "theory": "selected fixed-action two-phase counterflow theory with repaired diagonal-U1 chain"
+      }
+    },
+    {
+      "claim_boundary": "The physical modes survive fixed charge and are not spatial gauge, diagonal-U1, charged R_rel orbit or pairing radical. No observer, Hadamard, QME, particle, positivity or nonlinear blow-up claim follows.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_V1",
+          "sha256": "fa0d158301a1bf2076d7d7622866f4545d6a15370ec576ddcbe120837224d364"
+        },
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_PAYLOAD_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_PAYLOAD_V1",
+          "sha256": "291071bab2494a4b4bdb21702be1bf28d672a2a6157b588003743aec5d0b5b5e"
+        }
+      ],
+      "id": "classical.counterflow.berger.repaired_q70.j1_complex_frequency_physical_modes",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Two exact factors contain complex-frequency roots: 3240*z^4+113013*z^2+986578 and the degree-ten mixed factor.",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "Both multiplicity-two characteristic sectors have zero pairing radical; their two-copy action inertias are (4,4,0) and (8,12,0).",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Every nonzero factor has factor-field nullity equal to its determinant exponent and therefore no polynomial-time Jordan partner.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The linear physical carrier already has exponentially growing oscillatory directions.",
+            "status": "OBSTRUCTED"
+          },
+          "causal_retarded": {
+            "statement": "The causal parent remains valid but does not remove the Hamiltonian-Hopf sectors.",
+            "status": "CERTIFIED"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Nonlinear continuation has not been computed.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "No repaired-q70 q2 source has been replayed against this j=1 quotient.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "stationary biaxial Berger R x S3, a=1, c_squared=9/40",
+        "boundaries": "none; closed S3 Cauchy slices",
+        "carrier": "j=1 repaired q70 nonzero-frequency quotient, exact 21-by-21 physical Hessian per fixed m",
+        "charge_sector": "unrestricted and fixed-Q_rel dispositions are recorded separately; spatial Killing stabilizers are not the charged R_rel orbit",
+        "degree": "physical H0/H1 at two exact Hamiltonian-Hopf characteristic factors",
+        "ell": "NOT_APPLICABLE: Berger Peter-Weyl spin j is used instead of a round-S3 Hodge label",
+        "k": "all k=-1,0,+1 retained",
+        "m": "m=-1,0,+1 retained as the exact degeneracy orbit",
+        "omega": "3240*z^4+113013*z^2+986578 and the degree-ten mixed factor",
+        "parity": "Berger Peter-Weyl reality orbit; no round-S3 parity identification",
+        "theory": "selected fixed-action two-phase counterflow theory with repaired diagonal-U1 chain"
+      }
+    }
+  ],
+  "generated_by": "d_quotient_classical/atlas/generate_two_phase_counterflow_repaired_q70_low_j_stabilizer_health_atlas_fragment.py",
+  "generated_by_sha256": "f6c9c4ead246fbd4e31cce2a074c4cbccfef560bf85739ec5ff26e0ecc51fc03",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "classical",
+  "verification_commands": [
+    "python3 -m d_quotient_classical.compensator.two_phase_counterflow_repaired_q70_low_j_stabilizer_health --check",
+    "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_repaired_q70_low_j_stabilizer_health.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-repaired-q70-low-j-stabilizer-health-fragment-v1.json"
+  ]
+}

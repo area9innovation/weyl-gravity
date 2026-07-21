@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/two-phase-counterflow-repaired-q70-low-j-stabilizer-health-v1.schema.json",
+  "title": "Repaired q70 low-j stabilizer health certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "imports", "payload_ref", "normalization", "representation_census", "exceptional_block_summary", "charge_actions", "terminal_verdict", "claim_boundary", "content_hashes"],
+  "properties": {
+    "schema": {"const": "pure-weyl-two-phase-counterflow-repaired-q70-low-j-stabilizer-health-v1"},
+    "result_id": {"const": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_LOW_J_STABILIZER_HEALTH_V1"},
+    "result_state": {"const": "CERTIFIED_COMPLETE_LOW_J_STABILIZER_CENSUS_WITH_PHYSICAL_J0_EXPONENTIAL_AND_J1_COMPLEX_FREQUENCY_MODES"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "minItems": 1, "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}},
+    "imports": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "object"}},
+    "payload_ref": {"type": "object"},
+    "normalization": {"type": "object"},
+    "representation_census": {"type": "object"},
+    "exceptional_block_summary": {"type": "object"},
+    "charge_actions": {"type": "object"},
+    "terminal_verdict": {"type": "object"},
+    "claim_boundary": {"type": "object"},
+    "content_hashes": {"type": "object"}
+  }
+}
