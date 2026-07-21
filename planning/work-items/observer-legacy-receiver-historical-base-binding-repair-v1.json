@@ -1,0 +1,57 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/observer-legacy-receiver-historical-base-binding-repair-v1",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "observer-legacy-receiver-historical-base-binding-repair-v1",
+  "source": {
+    "path": "planning/work-items/observer-legacy-receiver-historical-base-binding-repair-v1.json",
+    "span": null
+  },
+  "body": {
+    "owner": "observer-1",
+    "state": "PROPOSED",
+    "stream": "observer",
+    "priority": 0,
+    "objective": "Repair the exact historical-base/current-path binding conflict exposed by the post-extension Observer Tier-3 traversal without changing either legacy receiver disposition or creating a recursive content-address dependency.",
+    "stop_condition": "Import OBSERVER_TIER3_FIXED_POINT_AFTER_LEGACY_CROSSWALK_EXTENSION_V2_OBSTRUCTION and the terminal seven-row CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1 by exact hashes. Make both legacy rails—BERGER_LEGACY_RECEIVER_ADMISSIBILITY_REPLAY_V1 and BERGER_LEGACY_RECEIVER_OPERATIONAL_FREQUENCY_RATIO_NONACTIVATION_V1—resolve the exact historical five-row receiver-contract blob by immutable source commit, repository-relative path and SHA-256 instead of assuming that blob remains at the mutable current crosswalk path. Independently verify the commit exists, the named blob is a regular Git blob with the declared hash, and its five scientific dispositions match the historical contract. Regenerate both legacy certificates, then regenerate and independently verify the seven-row crosswalk against the new legacy certificate hashes. Prove that both legacy rows remain NO_CERTIFIED_MAP, the operational frequency-ratio domain remains empty, coordinate ratio one remains non-redshift, all original five rows remain unchanged, and no current-contract-to-legacy-to-current-contract cycle exists. Audit the direct atlas/crosswalk consumers and fail closed at the first additional stale pin rather than broad relocking. Add mutations for wrong commit, wrong historical path, wrong blob hash, current-path substitution, deleted legacy row and attempted redshift promotion. Export exact certificates, receipts, reports and atlas dispositions with dependency tags and content hashes.",
+    "current_gate": "historical five-row base resolution for the two legacy Observer rails without a recursive current-crosswalk dependency",
+    "forbid": "no direct relock of either legacy rail to the mutable seven-row current crosswalk; no current crosswalk imported as a dependency of a legacy certificate that the current crosswalk itself imports; no change to either NO_CERTIFIED_MAP disposition; no coordinate ratio called redshift; no producer rerun called independent verification; no broad corpus relock beyond the two legacy rails and their direct typed consumers; no Paper 9, detector, nonlinear, particle or quantum promotion",
+    "depends_on": [
+      "sf:program/work/observer-tier3-fixed-point-after-legacy-crosswalk-extension-v2#ANY_TERMINAL"
+    ],
+    "allowed_paths": [
+      "closed_universe_observers/generate_berger_legacy_receiver_admissibility_replay.py",
+      "closed_universe_observers/verify_berger_legacy_receiver_admissibility_replay.py",
+      "closed_universe_observers/tests/test_berger_legacy_receiver_admissibility_replay.py",
+      "closed_universe_observers/certificates/BERGER_LEGACY_RECEIVER_ADMISSIBILITY_REPLAY_V1.json",
+      "closed_universe_observers/generate_berger_legacy_receiver_operational_frequency_ratio_nonactivation.py",
+      "closed_universe_observers/verify_berger_legacy_receiver_operational_frequency_ratio_nonactivation.py",
+      "closed_universe_observers/tests/test_berger_legacy_receiver_operational_frequency_ratio_nonactivation.py",
+      "closed_universe_observers/certificates/BERGER_LEGACY_RECEIVER_OPERATIONAL_FREQUENCY_RATIO_NONACTIVATION_V1.json",
+      "closed_universe_observers/generate_charged_time_receiver_admissibility_crosswalk.py",
+      "closed_universe_observers/verify_charged_time_receiver_admissibility_crosswalk.py",
+      "closed_universe_observers/tests/test_charged_time_receiver_admissibility_crosswalk.py",
+      "closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json",
+      "closed_universe_observers/generated/CHARGED_TIME_PHYSICAL_RECEIVER_CROSSWALK_INTERFACE_V1.json",
+      "closed_universe_observers/atlas/generate_berger_legacy_receiver_admissibility_replay_atlas.py",
+      "closed_universe_observers/atlas/generate_berger_legacy_receiver_operational_frequency_ratio_nonactivation_atlas.py",
+      "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
+      "closed_universe_observers/atlas/verify_observer_atlas_fragment.py",
+      "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "closed_universe_observers/tests/test_observer_atlas_fragment.py",
+      "closed_universe_observers/reports/",
+      "closed_universe_observers/receipts/",
+      "residual_atlas/",
+      "reports/",
+      "planning/events/"
+    ],
+    "resource_hint": "OBSERVER PHASE-1 PROVENANCE REPAIR. This is an immutable historical-blob resolution problem, not a new receiver calculation. Preserve all seven scientific dispositions and stop on the first downstream pin outside the direct consumer set.",
+    "notes": [
+      "The failed Tier-3 run passed 398 tests before exposing this binding conflict. The seven-row crosswalk itself is correct.",
+      "A direct hash update is forbidden because the legacy certificates are extension sources of the current crosswalk; the repair must break the cycle by addressing the historical base blob independently of the current path."
+    ],
+    "input_commit": "d33c8e33371f0a073a59beeb54238ceafdcab9da"
+  },
+  "edges": []
+}
