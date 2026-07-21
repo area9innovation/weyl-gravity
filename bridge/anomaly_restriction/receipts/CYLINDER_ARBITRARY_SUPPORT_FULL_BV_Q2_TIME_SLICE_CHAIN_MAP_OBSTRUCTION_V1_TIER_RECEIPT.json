@@ -1,0 +1,58 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "CYLINDER_ARBITRARY_SUPPORT_FULL_BV_Q2_TIME_SLICE_CHAIN_MAP_OBSTRUCTION_V1",
+  "date": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "artifact_hashes": {
+    "certificate_sha256": "f956ad6b5e68ccf7980935d4b6b1defc13b0a7bce8357b8b4cbc21bbb4c72692",
+    "producer_sha256": "b3e9f5f1620186c6ce4cd39dd760a02af7577ddfec732772fbf6a632dfc9f2ed",
+    "independent_verifier_sha256": "09667607cf858804fce288659335769db231c5b9ead0bb13862addc08f7c2ed4",
+    "schema_sha256": "d564e6e340815c7114c28df5fc0f02f0124e123043c4475707f4c7df696106d8",
+    "atlas_sha256": "2c7745abe103974eb373c370420a65a4e5338b10f7c81748bc5e9105a346d53e",
+    "report_sha256": "7c9002a7bb6c7ed1fff01a938b3f52705c8c0c909b6158e66df11176872960a8"
+  },
+  "tier_0": {
+    "status": "PASS",
+    "commands": [
+      "python3 -m py_compile <producer, independent verifier, scoped test>",
+      "Draft202012Validator(<schema>).validate(<certificate>)",
+      "git diff --check -- <scoped paths>"
+    ]
+  },
+  "tier_1": {
+    "status": "PASS",
+    "elapsed_seconds": 0.65,
+    "commands": [
+      "PYTHONPATH=. python3 -m bridge.anomaly_restriction.cylinder_arbitrary_support_full_bv_q2_time_slice_obstruction --check",
+      "PYTHONPATH=. python3 -m bridge.anomaly_restriction.verify_cylinder_arbitrary_support_full_bv_q2_time_slice_obstruction",
+      "PYTHONPATH=. python3 -m unittest bridge.anomaly_restriction.tests.test_cylinder_arbitrary_support_full_bv_q2_time_slice_obstruction -v",
+      "python3 residual_atlas/validate_fragment.py residual_atlas/cylinder-arbitrary-support-full-bv-q2-time-slice-obstruction-fragment-v1.json"
+    ],
+    "tests_run": 9,
+    "decisive_mutation": "Adding a target E_5 block changes the reconstructed minimum SDR defect rank from 64 to 0 without promoting the unconstructed all-energy carrier."
+  },
+  "tier_2": {
+    "status": "PASS_BY_CONTENT_ADDRESS_AND_INDEPENDENT_RECONSTRUCTION",
+    "criterion": "Eight immutable inputs are SHA-256 pinned. The verifier independently reconstructs the E_5 two-chirality dimension and source/target rank defect without importing the producer."
+  },
+  "paper_build": {
+    "status": "PASS",
+    "command": "three pdflatex passes in an external temporary output directory",
+    "pages": 43,
+    "undefined_references": 0,
+    "overfull_boxes": 0
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "criterion": "The finite-receiver bridge is obstructed and no freeze, release, shared core algebra, quantum coefficient, or Lorentzian state claim is promoted."
+  },
+  "advisory_shadow": {
+    "status": "ADVISORY_PASS_WITH_PREEXISTING_DRIFT",
+    "findings": [
+      "bridge audit existence, edges, DAG and gates pass while the historical drift rail remains fail-closed",
+      "coverage census reports 1361 certificates versus the 2026-07-19 baseline of 976",
+      "the unpinned Forge development binary differs from the checked-out standard library"
+    ],
+    "promotion_effect": "NONE"
+  }
+}

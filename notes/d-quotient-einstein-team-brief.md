@@ -4744,6 +4744,32 @@ The repair gate is explicit: add embedding variables, prove an algebroid/
 groupoid slice theorem, or derive a Weyl--Maxwell-specific analogue of the
 1982 several-Killing-field theorem.  None of these repairs is silently assumed.
 
+## Cylinder arbitrary-support full-BV receiver obstruction
+
+The Science Forge bridge
+`bridge-cylinder-arbitrary-support-full-bv-q2-time-slice-chain-map` is
+terminally obstructed as scoped.  The imported 386-row causal BV complex and
+its finite-order local SDR to the all-energy 30-row minimal endpoint remain
+certified.  The failed arrow is the further equivariant projection to the
+selected weights `2,3,4` residual receiver.
+
+The all-energy theorem contains a two-chirality `E_5` cohomology block of
+dimension 64, while the selected receiver has no weight-five block.
+Therefore an `SO(4,2)`-equivariant projection vanishes on `H_E,5`, but an
+SDR must induce the identity there.  The unary SDR defect has rank at least
+64, so the requested arbitrary-support arity-two chain map cannot exist
+with that finite receiver.  The complete six-role action-defined minimal
+`q2` ansatz is recorded, but no portable component payload or anomaly image
+is promoted after the earlier unary failure.
+
+The fail-closed atlas row is
+`pure_weyl.cylinder.full_bv.arbitrary_support.to_selected_derived_time_slice`.
+The smallest repair is a rapid-decay all-energy `E/A/L` Cauchy carrier,
+with both chiralities and the same fifteen CE ghosts and BFV/Koszul momenta.
+Until its contraction and nonlinear continuity are certified, all three
+strict anomaly images and the raw-`D` Cartan defect remain
+`NO_CERTIFIED_MAP`.
+
 ## Cross-team contribution contract
 
 Submit new results through the generator and phase-space registries in

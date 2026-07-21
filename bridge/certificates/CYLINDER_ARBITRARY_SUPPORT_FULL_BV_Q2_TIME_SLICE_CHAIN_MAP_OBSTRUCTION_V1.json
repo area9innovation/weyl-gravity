@@ -1,0 +1,223 @@
+{
+  "anomaly_receiver_verdicts": {
+    "ANOM_OMEGA_C2": "NO_CERTIFIED_MAP",
+    "ANOM_OMEGA_C_DUAL_C": "NO_CERTIFIED_MAP",
+    "ANOM_OMEGA_E4": "NO_CERTIFIED_MAP",
+    "raw_D_Cartan_defect": "NO_CERTIFIED_MAP"
+  },
+  "claim_boundary": "This exact obstruction imports the complete all-energy 386-row vacuum-cylinder causal BV contraction and the selected fifteen-generator derived BFV receiver. The frozen contraction to the 30-row field-bundle endpoint remains valid. What fails is the further SO(4,2)-equivariant SDR to the finite weights-2,3,4 receiver: the nonzero two-chirality E_5 cohomology block has dimension 64 while the target weight-five block is zero. Therefore the arbitrary-support chain map is impossible as scoped, before q2 or anomaly coefficients enter. The result does not obstruct a support-local full-BV q2 on the all-energy local carrier, an all-energy completed time-slice receiver, or later anomaly restriction after that repair. It makes no anomaly-cohomology, QME, state, particle, positivity or unitarity claim.",
+  "classification": {
+    "all_energy_repair_carrier_constructed": false,
+    "all_energy_to_selected_receiver_unary_sdr_certified": false,
+    "all_energy_to_selected_receiver_unary_sdr_obstructed": true,
+    "complete_minimal_q2_ansatz_declared": true,
+    "frozen_386_to_30_causal_contraction_imported": true,
+    "full_arity_two_time_slice_chain_map_certified": false,
+    "local_anomaly_images_computed": false,
+    "portable_arbitrary_input_q2_component_payload_certified": false,
+    "quantum_claim": false,
+    "raw_D_Cartan_defect_computed": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "first_failed_gate": {
+    "conclusion": "No SO(4,2)-equivariant unary SDR, hence no full arity-two local-to-selected-time-slice chain map, exists for the declared arbitrary-support domain and finite receiver.",
+    "hypotheses": [
+      "pi_cl and iota_cl are q1-chain maps",
+      "the SDR is compatible with the residual SO(4,2) action and hence with D weights",
+      "the target physical matter carrier has only weights 2,3,4",
+      "the source q1 cohomology contains both E chiralities at every n>=2"
+    ],
+    "kind": "COHOMOLOGY_COKERNEL_AND_WEIGHT_SUPPORT_WITNESS",
+    "requested_identity": "pi_cl iota_cl=1 and iota_cl pi_cl=1-q1 s_cl-s_cl q1 on the arbitrary-support full causal complex",
+    "witness": {
+      "both_chiralities_dimension": 64,
+      "energy": 5,
+      "family": "E",
+      "identity": "[iota_cl pi_cl]=0 on H_E,5 but [1]=1 on H_E,5",
+      "minimum_sdr_defect_rank": 64,
+      "one_chirality_dimension": 32,
+      "rank_of_identity_on_witness": 64,
+      "rank_of_iota_pi_on_witness": 0,
+      "selected_target_weight_dimension": 0
+    }
+  },
+  "frozen_causal_contraction": {
+    "algebraically_contracted_rank": 356,
+    "endpoint_rank": 30,
+    "full_rank": 386,
+    "homotopy": "Lambda_plus/minus with supp Lambda_plus/minus f subset J_plus/minus(supp f)",
+    "iota_endpoint": "j_end=I_cyl I_aux; finite-order differential, compact and spacelike-compact support preserving",
+    "pi_endpoint": "p_end=P_aux P_cyl; finite-order differential, compact and spacelike-compact support preserving",
+    "status": "CERTIFIED_TO_ALL_ENERGY_30_ROW_FIELD_BUNDLE_ENDPOINT_NOT_TO_THE_SELECTED_FINITE_RESIDUAL_RECEIVER"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "local_q2_ansatz": {
+    "arity_two_master_identity": "q1 q2(u,v)+q2(q1 u,v)+(-1)^|u|q2(u,q1 v)=0",
+    "background": "g=gbar, c=omega=gstar=cstar=omegastar=0 on the unit vacuum conformal cylinder",
+    "complete_minimal_roles": [
+      {
+        "degree": -1,
+        "q2_source_terms": [
+          "cstar[c,c]/2"
+        ],
+        "role": "Diff ghost",
+        "symbol": "c_mu"
+      },
+      {
+        "degree": -1,
+        "q2_source_terms": [
+          "omegastar L_c omega"
+        ],
+        "role": "Weyl ghost",
+        "symbol": "omega"
+      },
+      {
+        "degree": 0,
+        "q2_source_terms": [
+          "gstar L_c g",
+          "2 gstar omega g"
+        ],
+        "role": "metric",
+        "symbol": "h_mu_nu"
+      },
+      {
+        "degree": 1,
+        "q2_source_terms": [
+          "D^2 Bach[h,h]",
+          "cotangent Diff/Weyl action"
+        ],
+        "role": "metric antifield/equation",
+        "symbol": "hstar_mu_nu"
+      },
+      {
+        "degree": 2,
+        "q2_source_terms": [
+          "metric-antifield Noether Hessian",
+          "ad_c^star cstar",
+          "omega-antifield transport"
+        ],
+        "role": "Diff-ghost antifield/identity",
+        "symbol": "cstar_mu"
+      },
+      {
+        "degree": 2,
+        "q2_source_terms": [
+          "2 h.hstar",
+          "Diff cotangent transport"
+        ],
+        "role": "Weyl-ghost antifield/identity",
+        "symbol": "omegastar"
+      }
+    ],
+    "domain": {
+      "coefficient_ring": "real rational tensor-natural coefficients in the unit-cylinder curvature normalization",
+      "local_inputs": "Gamma_c(E_min) tensor Gamma_c(E_min), polarized by bilinearity; one compact and one smooth input is also allowed",
+      "local_output": "Gamma_c(E_min)",
+      "maximum_metric_derivative_order": 4,
+      "support_rule": "supp q2(u,v) subset supp(u) intersection supp(v) for two compact inputs"
+    },
+    "master_action": [
+      "S_W[g]",
+      "integral gstar^(mu nu)(L_c g_(mu nu)+2 omega g_(mu nu))",
+      "integral cstar_mu [c,c]^mu/2",
+      "integral omegastar L_c omega"
+    ],
+    "reason_not_executed": "the requested composite SDR fails already on unary cohomology before q2 can be projected to the selected receiver",
+    "status": "COMPLETE_ACTION_DEFINED_ANSATZ_NOT_SERIALIZED_AS_PORTABLE_COMPONENT_PAYLOAD",
+    "taylor_convention": "Q(epsilon Phi)=epsilon q1(Phi)+epsilon^2 q2(Phi,Phi)+O(epsilon^3); q2=(1/2)D^2Q at the background",
+    "vector_field": "Q=(S_min,-)_BV"
+  },
+  "provenance": {
+    "imported_artifacts": [
+      {
+        "name": "intrinsic_derived_receiver",
+        "path": "bridge/certificates/CYLINDER_DERIVED_BFV_KOSZUL_TIME_SLICE_CARRIER_V1.json",
+        "result_id": "CYLINDER_DERIVED_BFV_KOSZUL_TIME_SLICE_CARRIER_V1",
+        "sha256": "31d47b21a63e03261c109568e1f852155412169fc7260500baba8a972da6a02c"
+      },
+      {
+        "name": "predecessor_chain_map_obstruction",
+        "path": "bridge/certificates/STRICT_ANOMALY_SECTOR_RESTRICTION_CHAIN_MAP_OBSTRUCTION_V1.json",
+        "result_id": "STRICT_ANOMALY_SECTOR_RESTRICTION_CHAIN_MAP_OBSTRUCTION_V1",
+        "sha256": "4863e00186e719e933e20fe58f2bc0429b1cb0a13db8481b6f8152680b3255fb"
+      },
+      {
+        "name": "minimal_bv_chain",
+        "path": "field_bv_identification/certificates/minimal_bv_chain.json",
+        "result_id": "pure-weyl-field-bv-minimal-chain-v1",
+        "sha256": "3f9d04dd729c911fbe07768158d96ae411634b7a91bf70a139e8c7cf1dcd8c64"
+      },
+      {
+        "name": "selected_polarized_receiver",
+        "path": "field_bv_identification/polarized_state/certificates/polarized_state_complex.json",
+        "result_id": "pure-weyl-polarized-state-complex-v1",
+        "sha256": "efe492946333578e91d880fde0008166ba8960bc366840413883e5c0e39d0ec1"
+      },
+      {
+        "name": "selected_hpl_transfer",
+        "path": "bridge/certificates/full_hpl_transfer.json",
+        "result_id": "pure-weyl-full-hpl-transfer-v1",
+        "sha256": "18acc197a45ba9256e0979e7b04c0cd5e7ca36de94b7540aa2038fc1f9e3511a"
+      },
+      {
+        "name": "all_energy_eal_spectrum",
+        "path": "covariant_completion/certificates/curved_EAL_spectrum_all_level.json",
+        "result_id": "pure-weyl-curvature-eal-spectrum-all-level-v1",
+        "sha256": "253b13da55b1e139ed7af0d1af32a142a6824f8c515ef6d82296a162fa9ef16d"
+      },
+      {
+        "name": "causal_endpoint_complex",
+        "path": "covariant_completion/certificates/curved_prolonged_metric_endpoint_complex.json",
+        "result_id": "pure-weyl-prolonged-metric-endpoint-complex-v1",
+        "sha256": "870621ae6750b1e66e3f3316c5a2680d1244c7fca3be4d6aeaabbfdc2178fd79"
+      },
+      {
+        "name": "full_causal_homotopy",
+        "path": "covariant_completion/certificates/curved_full_prolonged_green_homotopy_assembly.json",
+        "result_id": "pure-weyl-full-prolonged-green-homotopy-assembly-v1",
+        "sha256": "1f8aae727a06fb82c70732f7207499d427894247d09fea22f677a0f9b38be0ee"
+      }
+    ],
+    "producer": "bridge/anomaly_restriction/cylinder_arbitrary_support_full_bv_q2_time_slice_obstruction.py",
+    "producer_sha256": "b3e9f5f1620186c6ce4cd39dd760a02af7577ddfec732772fbf6a632dfc9f2ed"
+  },
+  "result_id": "CYLINDER_ARBITRARY_SUPPORT_FULL_BV_Q2_TIME_SLICE_CHAIN_MAP_OBSTRUCTION_V1",
+  "result_state": "ALL_ENERGY_TO_SELECTED_FINITE_RECEIVER_EQUIVARIANT_SDR_OBSTRUCTED_AT_UNARY_ORDER",
+  "schema": "cylinder-arbitrary-support-full-bv-q2-time-slice-obstruction-v1",
+  "schema_path": "bridge/anomaly_restriction/schema/cylinder-arbitrary-support-full-bv-q2-time-slice-obstruction-v1.schema.json",
+  "schema_sha256": "d564e6e340815c7114c28df5fc0f02f0124e123043c4475707f4c7df696106d8",
+  "scope": {
+    "background": "unit vacuum conformal cylinder R x S3",
+    "boundaries": "closed Cauchy S3; compact/spacelike-compact causal domains",
+    "carrier": "arbitrary-support all-energy 386-row causal source versus selected 132-dimensional positive-frequency E/A/L matter receiver with 15 CE ghosts and 15 BFV/Koszul momenta",
+    "charge_sector": "candidate common zero fibre of all fifteen SO(4,2) moment maps",
+    "degree": "unary SDR gate preceding the declared complete minimal q2 ansatz",
+    "ell": "all cylinder harmonics at source; selected compact energies 2,3,4 at target",
+    "k": "NOT_APPLICABLE on S3",
+    "m": "complete multiplicities at each source energy",
+    "omega": "all integer E/A/L frequencies at source; weights 2,3,4 at selected target",
+    "parity": "both E/A/L chiralities",
+    "theory": "strict pure-Weyl minimal BV and its certified 386-row causal prolongation"
+  },
+  "smallest_repair": {
+    "carrier": "rapid-decay all-energy E/A/L Cauchy coefficient completion (and its distributional dual), tensored with the same fifteen CE ghosts and fifteen BFV/Koszul momenta",
+    "next_checks": [
+      "construct the all-energy q1/pi_cl/iota_cl/s_cl time-slice SDR on declared Frechet/Sobolev domains",
+      "serialize the action-defined q2 and verify continuity under harmonic convolution",
+      "verify arity-two master identity, cyclicity, real structure and SO(4,2) equivariance",
+      "only then restrict the three anomaly representatives and compute raw-D Cartan data"
+    ],
+    "required_weights": "E_n for n>=2, A_n for n>=3, L_n for n>=4, both chiralities and conjugate Cauchy data",
+    "why_direct_sum_is_insufficient": "a generic smooth compactly supported source has infinitely many S3 harmonic coefficients; arbitrary-support reception requires a rapid-decay completion rather than a finite D window"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.anomaly_restriction.cylinder_arbitrary_support_full_bv_q2_time_slice_obstruction --check",
+    "PYTHONPATH=. python3 -m bridge.anomaly_restriction.verify_cylinder_arbitrary_support_full_bv_q2_time_slice_obstruction",
+    "PYTHONPATH=. python3 -m unittest bridge.anomaly_restriction.tests.test_cylinder_arbitrary_support_full_bv_q2_time_slice_obstruction -v",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/cylinder-arbitrary-support-full-bv-q2-time-slice-obstruction-fragment-v1.json"
+  ]
+}

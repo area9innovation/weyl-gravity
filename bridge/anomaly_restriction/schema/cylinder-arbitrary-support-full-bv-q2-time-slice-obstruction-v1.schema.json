@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "cylinder-arbitrary-support-full-bv-q2-time-slice-obstruction-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "provenance", "scope",
+    "frozen_causal_contraction", "local_q2_ansatz", "first_failed_gate",
+    "smallest_repair", "anomaly_receiver_verdicts", "classification",
+    "claim_boundary", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "cylinder-arbitrary-support-full-bv-q2-time-slice-obstruction-v1"},
+    "schema_path": {"const": "bridge/anomaly_restriction/schema/cylinder-arbitrary-support-full-bv-q2-time-slice-obstruction-v1.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "CYLINDER_ARBITRARY_SUPPORT_FULL_BV_Q2_TIME_SLICE_CHAIN_MAP_OBSTRUCTION_V1"},
+    "result_state": {"const": "ALL_ENERGY_TO_SELECTED_FINITE_RECEIVER_EQUIVARIANT_SDR_OBSTRUCTED_AT_UNARY_ORDER"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["producer", "producer_sha256", "imported_artifacts"],
+      "properties": {
+        "producer": {"type": "string", "minLength": 1},
+        "producer_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "imported_artifacts": {
+          "type": "array", "minItems": 8, "maxItems": 8,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["name", "path", "sha256", "result_id"],
+            "properties": {
+              "name": {"type": "string"}, "path": {"type": "string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+              "result_id": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"],
+      "properties": {
+        "theory": {"type": "string"}, "background": {"type": "string"}, "boundaries": {"type": "string"},
+        "charge_sector": {"type": "string"}, "carrier": {"type": "string"}, "degree": {"type": "string"},
+        "parity": {"type": "string"}, "ell": {"type": "string"}, "m": {"type": "string"},
+        "k": {"type": "string"}, "omega": {"type": "string"}
+      }
+    },
+    "frozen_causal_contraction": {"type": "object"},
+    "local_q2_ansatz": {
+      "type": "object",
+      "required": ["master_action", "vector_field", "taylor_convention", "complete_minimal_roles", "domain", "arity_two_master_identity", "status"],
+      "properties": {
+        "complete_minimal_roles": {"type": "array", "minItems": 6, "maxItems": 6},
+        "status": {"const": "COMPLETE_ACTION_DEFINED_ANSATZ_NOT_SERIALIZED_AS_PORTABLE_COMPONENT_PAYLOAD"}
+      }
+    },
+    "first_failed_gate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["requested_identity", "hypotheses", "witness", "conclusion", "kind"],
+      "properties": {
+        "requested_identity": {"type": "string"}, "hypotheses": {"type": "array", "minItems": 4},
+        "conclusion": {"type": "string"}, "kind": {"const": "COHOMOLOGY_COKERNEL_AND_WEIGHT_SUPPORT_WITNESS"},
+        "witness": {
+          "type": "object", "additionalProperties": false,
+          "required": ["family", "energy", "one_chirality_dimension", "both_chiralities_dimension", "selected_target_weight_dimension", "rank_of_iota_pi_on_witness", "rank_of_identity_on_witness", "minimum_sdr_defect_rank", "identity"],
+          "properties": {
+            "family": {"const": "E"}, "energy": {"const": 5},
+            "one_chirality_dimension": {"const": 32}, "both_chiralities_dimension": {"const": 64},
+            "selected_target_weight_dimension": {"const": 0}, "rank_of_iota_pi_on_witness": {"const": 0},
+            "rank_of_identity_on_witness": {"const": 64}, "minimum_sdr_defect_rank": {"const": 64},
+            "identity": {"type": "string"}
+          }
+        }
+      }
+    },
+    "smallest_repair": {"type": "object"},
+    "anomaly_receiver_verdicts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ANOM_OMEGA_C2", "ANOM_OMEGA_E4", "ANOM_OMEGA_C_DUAL_C", "raw_D_Cartan_defect"],
+      "properties": {
+        "ANOM_OMEGA_C2": {"const": "NO_CERTIFIED_MAP"},
+        "ANOM_OMEGA_E4": {"const": "NO_CERTIFIED_MAP"},
+        "ANOM_OMEGA_C_DUAL_C": {"const": "NO_CERTIFIED_MAP"},
+        "raw_D_Cartan_defect": {"const": "NO_CERTIFIED_MAP"}
+      }
+    },
+    "classification": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "frozen_386_to_30_causal_contraction_imported", "complete_minimal_q2_ansatz_declared",
+        "portable_arbitrary_input_q2_component_payload_certified", "all_energy_to_selected_receiver_unary_sdr_certified",
+        "all_energy_to_selected_receiver_unary_sdr_obstructed", "full_arity_two_time_slice_chain_map_certified",
+        "all_energy_repair_carrier_constructed", "local_anomaly_images_computed", "raw_D_Cartan_defect_computed", "quantum_claim"
+      ],
+      "properties": {
+        "frozen_386_to_30_causal_contraction_imported": {"const": true},
+        "complete_minimal_q2_ansatz_declared": {"const": true},
+        "portable_arbitrary_input_q2_component_payload_certified": {"const": false},
+        "all_energy_to_selected_receiver_unary_sdr_certified": {"const": false},
+        "all_energy_to_selected_receiver_unary_sdr_obstructed": {"const": true},
+        "full_arity_two_time_slice_chain_map_certified": {"const": false},
+        "all_energy_repair_carrier_constructed": {"const": false},
+        "local_anomaly_images_computed": {"const": false},
+        "raw_D_Cartan_defect_computed": {"const": false},
+        "quantum_claim": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+  }
+}

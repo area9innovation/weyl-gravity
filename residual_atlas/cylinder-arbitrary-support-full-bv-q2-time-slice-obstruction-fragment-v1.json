@@ -1,0 +1,93 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This exact obstruction imports the complete all-energy 386-row vacuum-cylinder causal BV contraction and the selected fifteen-generator derived BFV receiver. The frozen contraction to the 30-row field-bundle endpoint remains valid. What fails is the further SO(4,2)-equivariant SDR to the finite weights-2,3,4 receiver: the nonzero two-chirality E_5 cohomology block has dimension 64 while the target weight-five block is zero. Therefore the arbitrary-support chain map is impossible as scoped, before q2 or anomaly coefficients enter. The result does not obstruct a support-local full-BV q2 on the all-energy local carrier, an all-energy completed time-slice receiver, or later anomaly restriction after that repair. It makes no anomaly-cohomology, QME, state, particle, positivity or unitarity claim.",
+      "descriptions": {
+        "causal": "OBSTRUCTED",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/CYLINDER_ARBITRARY_SUPPORT_FULL_BV_Q2_TIME_SLICE_CHAIN_MAP_OBSTRUCTION_V1.json",
+          "result_id": "CYLINDER_ARBITRARY_SUPPORT_FULL_BV_Q2_TIME_SLICE_CHAIN_MAP_OBSTRUCTION_V1",
+          "sha256": "f956ad6b5e68ccf7980935d4b6b1defc13b0a7bce8357b8b4cbc21bbb4c72692"
+        }
+      ],
+      "id": "pure_weyl.cylinder.full_bv.arbitrary_support.to_selected_derived_time_slice",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The source has E_n for every n>=2; the selected target stops at n=4.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "No full composite receiver map exists on the declared domain.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "The chain map fails at unary cohomology before a quadratic resonance comparison.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The E_5 rank-64 unary defect blocks transfer to this receiver before correction-class analysis.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "causal_retarded": {
+            "statement": "The all-energy causal endpoint is certified, but its projection to the finite receiver is obstructed.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The E_5 rank-64 unary defect blocks transfer to this receiver before correction-class analysis.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "The intrinsic fifteen selected moment maps remain certified only on their selected finite carrier.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "unit vacuum conformal cylinder R x S3",
+        "boundaries": "closed Cauchy S3; compact/spacelike-compact causal domains",
+        "carrier": "arbitrary-support all-energy 386-row causal source versus selected 132-dimensional positive-frequency E/A/L matter receiver with 15 CE ghosts and 15 BFV/Koszul momenta",
+        "charge_sector": "candidate common zero fibre of all fifteen SO(4,2) moment maps",
+        "degree": "unary SDR gate preceding the declared complete minimal q2 ansatz",
+        "ell": "all cylinder harmonics at source; selected compact energies 2,3,4 at target",
+        "k": "NOT_APPLICABLE on S3",
+        "m": "complete multiplicities at each source energy",
+        "omega": "all integer E/A/L frequencies at source; weights 2,3,4 at selected target",
+        "parity": "both E/A/L chiralities",
+        "theory": "strict pure-Weyl minimal BV and its certified 386-row causal prolongation"
+      }
+    }
+  ],
+  "generated_by": "bridge/anomaly_restriction/cylinder_arbitrary_support_full_bv_q2_time_slice_obstruction.py",
+  "generated_by_sha256": "b3e9f5f1620186c6ce4cd39dd760a02af7577ddfec732772fbf6a632dfc9f2ed",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_nonlinear",
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.anomaly_restriction.cylinder_arbitrary_support_full_bv_q2_time_slice_obstruction --check",
+    "PYTHONPATH=. python3 -m bridge.anomaly_restriction.verify_cylinder_arbitrary_support_full_bv_q2_time_slice_obstruction",
+    "PYTHONPATH=. python3 -m unittest bridge.anomaly_restriction.tests.test_cylinder_arbitrary_support_full_bv_q2_time_slice_obstruction -v",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/cylinder-arbitrary-support-full-bv-q2-time-slice-obstruction-fragment-v1.json"
+  ]
+}
