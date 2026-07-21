@@ -159,6 +159,24 @@ carriers. The omitted-$\delta(\nabla C)$ mutation is detected already by the
 $\ell=2$ $(A_t,B)$ entry, where its nonzero remainder at $k=1$ is
 $-7i\pi/5$. The ungauged BV/Noether lift and residual descent remain open.
 
+The subsequent ungauged audit separates two statements. The natural local
+ghost--field--equation--identity chain map exists and all its squares close.
+However, it cannot be enhanced to a strict cyclic BV morphism while holding
+the physical identity field inclusion and the two standard action pairings
+fixed. On generic polar cohomology the cyclic defect is
+
+\[
+D=R-I=\begin{pmatrix}0&-3\lambda\\-3/2&0\end{pmatrix},
+\qquad D^2=\frac92\lambda I,
+\]
+
+so it is nonradical for every physical $\lambda\ge6$. Moreover the five
+connected background stabilizers are global charged symmetries, not universal
+presymplectic null directions. Final residual dimensions therefore require a
+separately declared common moment-map-zero derived carrier; without it they
+remain undefined. This obstruction leaves corrected nonidentity maps and
+cyclic chain homotopies open.
+
 ## 5. Independent Schwarzschild boundary test
 
 The black-hole programme supplies a second laboratory in which boundary
@@ -233,7 +251,8 @@ real-time Lorentzian sector.
 The results are `LOCAL-ALGEBRAIC/REDUCED-MODE` on a compact product
 background. They are not a positive-frequency Hilbert norm, a BRST/Fock
 theorem, a $PT$ metric comparison, a quantum ghost result, or an S-matrix
-statement. The polar ungauged lift, final residual quotient,
+statement. A strict fixed-identity cyclic polar lift is obstructed; corrected
+maps or cyclic homotopies and the final residual quotient,
 literal second expansion of the four-dimensional action density, and
 causal/asymptotic boundary phase spaces remain open. The compact negative
 direction may be removed, retained, or reinterpreted by those later gates.
@@ -257,6 +276,7 @@ outer-boundary chain.
 arXiv:2109.12743v1, arXiv:2202.08298v2. Certificates:
 `AXIAL_LEE_WALD_COMPLETION`, `POLAR_PHYSICAL_COMPLETION`,
 `EINSTEIN_MAXWELL_WEYL_POLAR_DIRECT_LEE_WALD_COMPLETION_V1`,
+`EINSTEIN_MAXWELL_WEYL_POLAR_UNGAUGED_BV_RESIDUAL_DESCENT_OBSTRUCTION_V1`,
 `BH2A_CROSS_BLOCK_NONZERO_HORIZON_FLUX_FIXTURES`, and
 the symbol/exponent payload of
 `BH2A_AXIAL_CAUSAL_DISPOSITION_EXTRA_BRANCH_UNAVOIDABLE`, narrowed by the
@@ -264,5 +284,5 @@ Paper 14 claim map; the polar horizon input is
 `BH2B_POLAR_EXTRA_BRANCH_REACHES_HORIZON_LINEAR_MODE_LEVEL`. Verification
 commands are in section 3. Tags: `LOCAL-ALGEBRAIC` and `REDUCED-MODE`.
 Open: asymptotic Jordan form, metric reconstruction, rigorous flux bounds,
-polar ungauged lift, residual descent, full causal boundary phase spaces,
+polar cyclic-lift repair, moment-map-zero residual descent, full causal boundary phase spaces,
 stability, and quantum state.

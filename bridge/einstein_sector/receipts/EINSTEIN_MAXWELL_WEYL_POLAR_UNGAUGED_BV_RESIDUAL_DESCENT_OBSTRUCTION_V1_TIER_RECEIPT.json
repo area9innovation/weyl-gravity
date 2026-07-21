@@ -1,0 +1,38 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_UNGAUGED_BV_RESIDUAL_DESCENT_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_id": "EINSTEIN_MAXWELL_WEYL_POLAR_UNGAUGED_BV_RESIDUAL_DESCENT_OBSTRUCTION_V1",
+  "date": "2026-07-21",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": [
+    {"path": "bridge/einstein_sector/einstein_maxwell_weyl_polar_ungauged_bv_residual_descent.py", "sha256": "824c7fff8335fc7b067fd12e4160da513f5d932c61b1cc845b9fe7f1902a3635"},
+    {"path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_POLAR_UNGAUGED_BV_RESIDUAL_DESCENT_OBSTRUCTION_V1.json", "sha256": "48fe90ab737751abc445200740bb54a1f926af722234d6af4db1fb3980aa370f"},
+    {"path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_ungauged_bv_residual_descent.py", "sha256": "5cbca72f3c37f73165145d2a11ac52d7e052054e1e0e1940d856f4af47e6c813"},
+    {"path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_polar_ungauged_bv_residual_descent.py", "sha256": "abe92192276a11fc22e2b1e055752561dbf9bb3c1bae6d7b92c760a5f47b4a11"},
+    {"path": "bridge/einstein_sector/schema/einstein-maxwell-weyl-polar-ungauged-bv-residual-descent-obstruction-v1.schema.json", "sha256": "5c1d5b08753b1c1a4bfe53b968d3aa4677114b29947ef8a9c201a7c68ea842cb"},
+    {"path": "bridge/einstein_sector/generate_polar_ungauged_bv_residual_obstruction_atlas.py", "sha256": "ab963036260cf90e11125cb6557a2c0277ad52696954c0f05251f4f5cb635fec"},
+    {"path": "residual_atlas/einstein-weyl-polar-ungauged-bv-residual-obstruction-fragment-v1.json", "sha256": "f5ca05e11ba752acbd3bba3d70118f47b93002489781ec281fb9204ccc2ec232"},
+    {"path": "reports/bridge-compact-product-polar-ungauged-bv-residual-descent-closeout-2026-07-21.md", "sha256": "fffa9aafc0909fe20c89edde200f74024d1cbe1f65c3b5bf9367589de5ee9d79"},
+    {"path": "paper/92-extra-axial-lee-wald-bridge.md", "sha256": "b771891e44a4c716e81f5c9c59d46aba7470f37d4078d8a33e3215702690da6b"},
+    {"path": "notes/d-quotient-einstein-team-brief.md", "sha256": "baa4b5b82d85a6b69484a102f2a8399a4a7697bd7df9d114e8e63ad43ccb86b7"}
+  ],
+  "tier_0": {"status": "PASS", "commands": ["py_compile scoped Python", "strict Draft 2020-12 schema PASS", "json parse and scoped diff check PASS"]},
+  "tier_1": {
+    "status": "PASS",
+    "commands": [
+      {"command": "producer certificate verification", "status": "PASS"},
+      {"command": "independent obstruction verifier", "status": "PASS", "method": "reconstructs D, D^2, determinant, endpoint ledger, hashes and fail-closed residual authority without importing the producer"},
+      {"command": "five scoped tests", "status": "PASS", "mutations": "false cyclic promotion, absolute stabilizer gauge quotient and Wilson-line deletion rejected"},
+      {"command": "generated atlas plus common validator", "status": "PASS"}
+    ]
+  },
+  "tier_2": {
+    "status": "PASS_WITH_ADVISORY_FINDINGS",
+    "commands": [
+      {"command": "independent polar ungauged-lift, cyclic-obstruction, stabilizer and exceptional/global chain-map verifiers plus 13 direct-consumer tests", "status": "PASS", "elapsed_seconds": 9.6},
+      {"command": "bash ci/science-forge-shadow.sh", "status": "ADVISORY_PASS_WITH_PREEXISTING_FINDINGS", "elapsed_seconds": 3.6, "findings": "bridge drift; corpus 1364 versus baseline 976; unpinned dirty Forge development binary; diagnostics /tmp/sf-shadow.ThcohF"}
+    ]
+  },
+  "tier_3": {"status": "NOT_RUN", "reason": "The work item terminates at a scoped exact obstruction and promotes no theorem freeze, release, shared core algebra, Lorentzian or quantum lifecycle."},
+  "claim_boundary": "The receipt covers the full-rank generic polar cohomology-form defect obstructing a strict fixed-identity cyclic BV lift, the independently imported exceptional/global all-row maps, and the absence of authority for an absolute quotient by nonnull charged stabilizers. Corrected maps, cyclic homotopies, a moment-map-zero derived carrier, residual dimensions, causal observables, particles and quantum claims remain open or NO_CERTIFIED_MAP."
+}

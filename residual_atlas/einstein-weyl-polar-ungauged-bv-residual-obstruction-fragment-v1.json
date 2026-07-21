@@ -1,0 +1,91 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This obstruction rules out a strict cyclic BV enhancement of the fixed identity Einstein inclusion with the standard action-derived pairings, and records why no absolute quotient by the charged background stabilizer is authorized. It does not obstruct corrected nonidentity maps or cyclic chain homotopies, compute a declared moment-map-zero derived quotient, or establish causal, observable, particle, positivity, unitarity or quantum claims.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_POLAR_UNGAUGED_BV_RESIDUAL_DESCENT_OBSTRUCTION_V1.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_UNGAUGED_BV_RESIDUAL_DESCENT_OBSTRUCTION_V1",
+          "sha256": "48fe90ab737751abc445200740bb54a1f926af722234d6af4db1fb3980aa370f"
+        }
+      ],
+      "id": "einstein.ph.wm.polar.ungauged_bv.final_residual_descent",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The imported generic and exceptional branch shells remain certified.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The prequotient direct current is certified, but the fixed identity inclusion has full-rank cyclic defect D=R-I and cannot define a strict cyclic BV morphism with standard pairings.",
+          "status": "OBSTRUCTED"
+        },
+        "resonance": {
+          "statement": "This is a linear cyclic/residual gate, not a second-order resonance calculation.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Not promoted by this linear obstruction.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No retarded complex is imported.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Not promoted by this linear obstruction.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "The complete common moment-map-zero derived carrier needed to authorize a stabilizer quotient is absent.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan",
+        "boundaries": "closed S1_L times S2; no asymptotic boundary carrier",
+        "carrier": "ungauged local ghost-field-equation-identity complexes plus separately typed exceptional/global endpoints",
+        "charge_sector": "fixed magnetic bundle; electric tangent and Wilson-line tangent retained",
+        "degree": "linear BV/equation-Noether map and induced solution pairing",
+        "ell": "generic ell>=2 plus independent ell=1 and ell=0 ledgers",
+        "k": "all allowed compact momenta, including zero, with endpoint split",
+        "m": "all certified values; no cross-stratum identification",
+        "omega": "q-primary Einstein, p-primary extra, exceptional and generalized-zero shells",
+        "parity": "generic polar obstruction; exceptional axial twist endpoint recorded separately",
+        "theory": "Einstein-Maxwell source to Weyl-Maxwell target"
+      }
+    }
+  ],
+  "generated_by": "bridge/einstein_sector/generate_polar_ungauged_bv_residual_obstruction_atlas.py",
+  "generated_by_sha256": "ab963036260cf90e11125cb6557a2c0277ad52696954c0f05251f4f5cb635fec",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "einstein_nonlinear",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.generate_polar_ungauged_bv_residual_obstruction_atlas --check",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/einstein-weyl-polar-ungauged-bv-residual-obstruction-fragment-v1.json"
+  ]
+}

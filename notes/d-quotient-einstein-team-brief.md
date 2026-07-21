@@ -4870,3 +4870,38 @@ The fail-closed atlas row is
 quantum maps remain `NO_CERTIFIED_MAP`. The current active bridge after this
 gate is the polar ungauged BV/Noether lift and final residual descent. No
 causal, particle, positive-norm, ghost or unitarity claim is promoted.
+
+## Polar ungauged BV residual-descent obstruction
+
+The successor gate terminates at the first exact obstruction. The natural
+support-local ungauged equation/Noether map remains certified, including
+nilpotency and every ghost--field--equation--identity square. It cannot be made
+a strict cyclic BV morphism with the fixed identity field inclusion and the
+standard Einstein--Maxwell/Weyl--Maxwell action pairings. On generic polar
+solution cohomology,
+
+```text
+D=R-I=[[0,-3 lambda],[-3/2,0]],
+D^2=(9/2) lambda I,
+det D=-(9/2) lambda.
+```
+
+The defect is therefore full rank for every physical `ell>=2`. Corrected
+nonidentity field maps and cyclic chain homotopies remain separate open gates.
+
+Exceptional and global endpoints are not inferred from the generic block.
+Independent all-row maps cover polar `ell=1` at zero and nonzero momentum and
+polar `ell=0` at all momenta. The nonzero-Fourier `ell=0` physical quotient is
+empty; the homogeneous block retains `Q_e,W_x` and has relative operator
+`I+N`; each twist pair has relative operator `-2I`. Large `U(1)` winding makes
+the finite Wilson line periodic but does not delete its tangent or electric
+conjugate.
+
+Finally, the actual five-generator product-background stabilizer is not a
+universal null gauge algebra. Explicit `H`, `P_x` and rotation moment maps are
+nonzero on generic extra modes. Hence no absolute stabilizer quotient is
+authorized without a declared common moment-map-zero derived carrier. The
+fail-closed atlas row
+`einstein.ph.wm.polar.ungauged_bv.final_residual_descent` marks the cyclic
+symplectic descent `OBSTRUCTED`, nonlinear repair `OPEN`, and final residual,
+causal, observational and quantum outputs `NO_CERTIFIED_MAP`.

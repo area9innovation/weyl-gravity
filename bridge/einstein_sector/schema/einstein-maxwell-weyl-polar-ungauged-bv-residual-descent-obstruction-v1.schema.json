@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-polar-ungauged-bv-residual-descent-obstruction-v1",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "provenance", "domain",
+    "certified_precursor", "first_exact_obstruction", "endpoint_ledger",
+    "global_residual_authority", "charge_and_large_gauge", "obstruction_scope",
+    "mutations", "classification", "claim_boundary", "next_gate",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-polar-ungauged-bv-residual-descent-obstruction-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein-maxwell-weyl-polar-ungauged-bv-residual-descent-obstruction-v1.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_POLAR_UNGAUGED_BV_RESIDUAL_DESCENT_OBSTRUCTION_V1"},
+    "result_state": {"const": "STRICT_IDENTITY_CYCLIC_BV_LIFT_OBSTRUCTED_BEFORE_FINAL_RESIDUAL_DESCENT"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "allOf": [{"contains": {"const": "LOCAL-ALGEBRAIC"}}, {"contains": {"const": "REDUCED-MODE"}}]},
+    "provenance": {"type": "object"},
+    "domain": {"type": "string"},
+    "certified_precursor": {"type": "object"},
+    "first_exact_obstruction": {
+      "type": "object",
+      "required": ["relative_operator_R", "cyclic_defect_D_equals_R_minus_I", "D_squared", "determinant_D", "rank_for_every_physical_lambda_ell_at_least_2", "cohomology_pairing_identity", "necessary_condition", "conclusion"],
+      "properties": {
+        "relative_operator_R": {"type": "array"},
+        "cyclic_defect_D_equals_R_minus_I": {"type": "array"},
+        "D_squared": {"const": "9*lambda*I/2"},
+        "determinant_D": {"const": "-9*lambda/2"},
+        "rank_for_every_physical_lambda_ell_at_least_2": {"const": 2},
+        "cohomology_pairing_identity": {"type": "string"},
+        "necessary_condition": {"type": "string"},
+        "conclusion": {"type": "string"}
+      }
+    },
+    "endpoint_ledger": {"type": "array", "minItems": 7, "maxItems": 7},
+    "global_residual_authority": {
+      "type": "object",
+      "required": ["connected_stabilizer", "Lee_Wald_invariance", "universal_presymplectic_nullity", "nonzero_charge_witnesses", "absolute_stabilizer_gauge_quotient", "required_missing_carrier", "final_residual_cohomology_dimensions", "descended_pairing_and_radical"],
+      "properties": {
+        "connected_stabilizer": {"type": "string"},
+        "Lee_Wald_invariance": {"const": "CERTIFIED"},
+        "universal_presymplectic_nullity": {"const": false},
+        "nonzero_charge_witnesses": {"type": "array", "minItems": 3},
+        "absolute_stabilizer_gauge_quotient": {"const": "NOT_AUTHORIZED"},
+        "required_missing_carrier": {"type": "string"},
+        "final_residual_cohomology_dimensions": {"const": "NO_CERTIFIED_MAP"},
+        "descended_pairing_and_radical": {"const": "NO_CERTIFIED_MAP"}
+      }
+    },
+    "charge_and_large_gauge": {"type": "object"},
+    "obstruction_scope": {"type": "object"},
+    "mutations": {"type": "object"},
+    "classification": {
+      "type": "object",
+      "required": ["ungauged_equation_Noether_chain_map_certified", "strict_identity_cyclic_BV_lift_exists", "first_exact_obstruction_nonradical", "exceptional_and_global_strata_separate", "large_gauge_and_charge_directions_preserved", "final_residual_descent_certified", "causal_particle_or_quantum_claim"],
+      "properties": {
+        "ungauged_equation_Noether_chain_map_certified": {"const": true},
+        "strict_identity_cyclic_BV_lift_exists": {"const": false},
+        "first_exact_obstruction_nonradical": {"const": true},
+        "exceptional_and_global_strata_separate": {"const": true},
+        "large_gauge_and_charge_directions_preserved": {"const": true},
+        "final_residual_descent_certified": {"const": false},
+        "causal_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string"},
+    "next_gate": {"type": "string"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": false
+}
