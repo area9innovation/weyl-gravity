@@ -60,12 +60,11 @@ There were no deviations from the work package.  In particular, no forced
 orbit enlargement, new architecture, later-page solve or branch-mixing table
 was attempted.
 
-EVIDENCE:
-`d_quotient_classical/certificates/BERGER_MINIMAL_HYPERBOLIC_BRANCH_REPAIR_RESIDUAL_ORBIT_OBSTRUCTION_V1.json`,
+EVIDENCE: `d_quotient_classical/certificates/BERGER_MINIMAL_HYPERBOLIC_BRANCH_REPAIR_RESIDUAL_ORBIT_OBSTRUCTION_V1.json`,
 `d_quotient_classical/receipts/NONLINEAR_BRANCH_REPAIR_RESIDUAL_ORBIT_OBSTRUCTION_FREEZE_V2_TIER_RECEIPT.json`,
 and
 `residual_atlas/berger-minimal-hyperbolic-branch-repair-residual-orbit-obstruction-fragment-v1.json`.
 
-CLOSE-OUT: `DONE` — the existing exact two-row residual-orbit obstruction is
+CLOSE-OUT: DONE — the existing exact two-row residual-orbit obstruction is
 adopted and scoped; the forced noncontractible enlargement remains a separate
 post-Phase-1 theorem.
