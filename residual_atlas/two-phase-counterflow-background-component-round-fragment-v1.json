@@ -1,0 +1,157 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "The selected point is causal and symplectic, but its fixed-action stationary geometry component is a singleton. No neighbouring causal transport, q2, observer, quantum or round-mode identification is certified.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BACKGROUND_COMPONENT_ROUND_DISPOSITION_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_BACKGROUND_COMPONENT_ROUND_DISPOSITION_V1",
+          "sha256": "9fa277c57a28aa831d56cec4a49774f716cb000616afde74013d9320dc0a1763"
+        }
+      ],
+      "id": "classical.two_phase_counterflow_component.selected_berger",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The constrained homogeneous trace roots are simple with lambda_squared=-659/240; the full unary carrier remains hash-imported.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The imported 70-component parent supplies the real cyclic pairing and relative-clock current.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "No nonlinear resonance computation is imported.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No selected-action q2 correction is imported.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "causal_retarded": {
+            "statement": "The unary retarded carrier is certified, but its nonlinear source and q2 are not.",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No selected-action secular correction is imported.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "No selected-action q2 tangent-cone map is imported.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "stationary Berger R x S3, a=1, c_squared=9/40",
+        "boundaries": "none; closed S3 Cauchy slices",
+        "carrier": "complete real cyclic 70-component gauge-fixed BV carrier",
+        "charge_sector": "unrestricted Q_rel plus explicit fixed-Q_rel leaf",
+        "degree": 0,
+        "ell": "all certified Berger S3 Hodge sectors",
+        "k": "NOT_APPLICABLE",
+        "m": "all certified Berger carrier labels",
+        "omega": "background Omega=3/4; perturbation frequencies carrier-dependent",
+        "parity": "full BV carrier; no round-cylinder parity crosswalk",
+        "theory": "selected two-phase counterflow action with auxiliary diagonal U1 and separate Weyl scale quartet"
+      }
+    },
+    {
+      "claim_boundary": "Negative crosswalk only: the selected fixed action does not reach a positive stationary round cylinder. The separately retuned round trace obstruction is imported as a boundary datum, not identified mode-by-mode.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_BACKGROUND_COMPONENT_ROUND_DISPOSITION_V1.json",
+          "result_id": "TWO_PHASE_COUNTERFLOW_BACKGROUND_COMPONENT_ROUND_DISPOSITION_V1",
+          "sha256": "9fa277c57a28aa831d56cec4a49774f716cb000616afde74013d9320dc0a1763"
+        }
+      ],
+      "id": "classical.two_phase_counterflow_component.same_action_round",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The same fixed action has no positive stationary q=1 solution; the formal branch has x=-119/160.",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "No same-action positive round carrier exists on which to transport the pairing.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "The imported retuned round real-root obstruction is not a same-action mode crosswalk.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No selected-action q2 correction is imported.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "causal_retarded": {
+            "statement": "No same-action round unary carrier exists for a causal-retarded q2 problem.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No selected-action secular correction is imported.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "No same-action round q2 map exists.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "round q=1 cylinder candidate under the same fixed action",
+        "boundaries": "none; closed S3 Cauchy slices",
+        "carrier": "NO_CERTIFIED_MAP",
+        "charge_sector": "candidate positive relative-charge sector",
+        "degree": 0,
+        "ell": "NO_CERTIFIED_MAP",
+        "k": "NOT_APPLICABLE",
+        "m": "NO_CERTIFIED_MAP",
+        "omega": "NO_CERTIFIED_MAP",
+        "parity": "NO_CERTIFIED_MAP",
+        "theory": "selected two-phase counterflow action with auxiliary diagonal U1 and separate Weyl scale quartet"
+      }
+    }
+  ],
+  "generated_by": "d_quotient_classical/atlas/generate_two_phase_counterflow_background_component_round_atlas_fragment.py",
+  "generated_by_sha256": "4b9fc18487927ae753f3ac582d3cc8f1fb7610d0433f60d51c3c194c58bf4a02",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "classical",
+  "verification_commands": [
+    "python3 d_quotient_classical/compensator/two_phase_counterflow_background_component_round_disposition.py --check",
+    "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_background_component_round_disposition.py",
+    "python3 d_quotient_classical/atlas/generate_two_phase_counterflow_background_component_round_atlas_fragment.py --check",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/two-phase-counterflow-background-component-round-fragment-v1.json"
+  ]
+}
