@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh3-exterior-bvp-wellposedness-gate-v1",
+  "title": "BH-3 exterior complex-frequency BVP well-posedness gate",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_token",
+               "dependency_tags", "lifecycle", "declaration", "bvp_definition",
+               "einstein_branch", "additional_branch", "einstein_vs_additional",
+               "headline", "claim_flags", "missing_objects", "does_not_establish",
+               "provenance", "verification_command"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh3-exterior-bvp-wellposedness-gate-v1" },
+    "schema_path": { "const": "black_hole_programme/schema/bh3-exterior-bvp-wellposedness-gate-v1.schema.json" },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH3_EXTERIOR_BVP_WELLPOSEDNESS_GATE" },
+    "result_token": { "const": "BH3_EXTERIOR_BVP_EINSTEIN_WELLPOSED_MODULO_DISCRETE_ADDITIONAL_LOGTAIL_OBSTRUCTED" },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "lifecycle": { "const": "CLASSIFIED" },
+    "declaration": { "type": "object", "required": ["theory", "setting", "gate"] },
+    "bvp_definition": {
+      "type": "object",
+      "required": ["exterior_domain", "operator", "horizon_condition", "outer_condition"]
+    },
+    "einstein_branch": {
+      "type": "object",
+      "required": ["type", "wellposedness_criterion", "W_analytic",
+                   "W_not_identically_zero", "disposition", "exceptional_set"]
+    },
+    "additional_branch": {
+      "type": "object",
+      "required": ["type", "shared_oscillation_rate", "obstruction",
+                   "first_failed_hypothesis", "resolution_required"]
+    },
+    "einstein_vs_additional": { "type": "string" },
+    "headline": { "type": "object", "required": ["statement"] },
+    "claim_flags": {
+      "type": "object",
+      "required": ["bvp_precisely_stated",
+                   "einstein_wellposed_modulo_discrete_certified",
+                   "additional_branch_obstruction_certified",
+                   "einstein_vs_additional_distinguished",
+                   "connection_wronskian_constructed", "exceptional_set_computed",
+                   "additional_outgoing_condition_resolved",
+                   "discrete_spectrum_claimed", "qnm_stability_scattering_claimed",
+                   "single_frequency_solve_used"],
+      "properties": {
+        "bvp_precisely_stated": { "const": true },
+        "einstein_wellposed_modulo_discrete_certified": { "const": true },
+        "additional_branch_obstruction_certified": { "const": true },
+        "einstein_vs_additional_distinguished": { "const": true },
+        "connection_wronskian_constructed": { "const": false },
+        "exceptional_set_computed": { "const": false },
+        "additional_outgoing_condition_resolved": { "const": false },
+        "discrete_spectrum_claimed": { "const": false },
+        "qnm_stability_scattering_claimed": { "const": false },
+        "single_frequency_solve_used": { "const": false }
+      }
+    },
+    "missing_objects": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "does_not_establish": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "provenance": {
+      "type": "object",
+      "required": ["generator_path",
+                   "general_l_certificate", "general_l_sha256",
+                   "all_orders_certificate", "all_orders_sha256",
+                   "flux_class_certificate", "flux_class_sha256",
+                   "asymptotic_jordan_certificate", "asymptotic_jordan_sha256",
+                   "analytic_continuation_certificate", "analytic_continuation_sha256",
+                   "symbolic_flux_certificate", "symbolic_flux_sha256"]
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh3_exterior_bvp_wellposedness_gate.py"
+    }
+  }
+}
