@@ -4,7 +4,7 @@
   "lifecycle_state": "THEOREM_FROZEN",
   "structural_theorem_lifecycle_state": "THEOREM_FROZEN",
   "bounded_common_zero_lifecycle_state": "OPEN",
-  "source_baseline": "d28de74777a8a2f002d8c10fa607b703f4304b78",
+  "source_baseline": "7da94b1021b2c9175610256be381cd2fbd58f3bf",
   "manuscript": "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -79,7 +79,9 @@
     "all_orders_solution": false,
     "quantum_claim": false,
     "compact_cauchy_right_elliptic_constraint_map": true,
-    "compact_cauchy_global_adjoint_kernel": "EXACTLY_FIVE_LIFTED_STABILIZERS"
+    "compact_cauchy_global_adjoint_kernel": "EXACTLY_FIVE_LIFTED_STABILIZERS",
+    "compact_cauchy_sobolev_second_order_cone": "COMMON_ZERO_OF_FIVE_TAUB_MAPS",
+    "compact_cauchy_fixed_group_AMM_normal_form": "OBSTRUCTED_BY_HYPERSURFACE_DEFORMATION_STRUCTURE_FUNCTION"
   },
   "sources": [
     {
@@ -313,6 +315,10 @@
     {
       "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_ADJOINT_KERNEL_CLASSIFICATION_V1.json",
       "git_blob": "a1c3d412174d2acf6375c5335480fea9abc39c80"
+    },
+    {
+      "path": "bridge/certificates/EINSTEIN_MAXWELL_WEYL_COMPACT_CAUCHY_AMM_SEMIFREDHOLM_SLICE_V1.json",
+      "git_blob": "7f7beb6812a1e87fefea9d57e5a6e0d78a5bfad5"
     }
   ],
   "verification_receipt": {
@@ -368,12 +374,13 @@
         "candidate-17/20 fixed-direction independent-node-scaling verifier and 8 tests",
         "fixed-occupation node-phase-reduced presymplectic-divisor verifier and 5 tests",
         "local lifted-rotation/current-leaf descent verifier and 5 tests",
-        "compact-Cauchy global adjoint-kernel independent verifier and 10 tests"
+        "compact-Cauchy global adjoint-kernel independent verifier and 10 tests",
+        "compact-Cauchy semi-Fredholm Kuranishi/AMM hypothesis audit and 10 tests"
       ]
     },
     "tier_2": {
       "status": "PASS_BY_CONTENT_ADDRESS",
-      "criterion": "All 58 source blobs are pinned at integration baseline d28de7477; the collision chain includes the classifier, 864-defect census, universal four-ray theorem, candidatewise audit, all 24 ray lifts, scalar-cone sections, exact bounded fibre products, complete complex resonance-face strata, connected automatic-face rotation links, the axisymmetric critical-locus theorem, its aligned and complete axial/polar Hessians, the candidate-16 stratumwise negative-Kahler current, singular rotation-zero-fibre and nonzero occupation-gluing theorems, the candidate-17/20 singular axisymmetric Zariski-tangent current theorem, complete complex third-transvectant singular carrier, physical singular-component incidence, connected double-singular rotation-zero hub, frequency-weighted one-parity common-square quotient, balanced complete-singular radial contraction including vertex strata, the repaired complete uniform-scaling/moving-square ansatz with its alpha=0 two-stage contraction and scoped opposite-sign obstruction, the complete fixed-direction independent-node iff-incidence theorem with its three-stage contraction, the deformable-kernel compact admissible component-incidence normal form with zero-node stabilizers retained, the candidate-18 complete complex singular resolution with all ten spectators, unavoidable singular rotation-zero sections at every positive occupation on candidates 17/18/20, the candidate-18 singular-quotient two-component lower bound and explicit smooth bridge, the candidate-17/20 and candidate-18 smooth bounded projective-current radical theorems, the complete smooth affine divisor theorem, the fixed-occupation node-phase-reduced augmented divisor theorem, the local lifted-rotation/current-leaf descent theorem, all six candidate-19/21 linear-sheet current and connected-link theorems, and the complete compact-Cauchy five-dimensional adjoint-kernel theorem."
+      "criterion": "All 59 source blobs are pinned at integration baseline 7da94b102; the collision chain includes the classifier, 864-defect census, universal four-ray theorem, candidatewise audit, all 24 ray lifts, scalar-cone sections, exact bounded fibre products, complete complex resonance-face strata, connected automatic-face rotation links, the axisymmetric critical-locus theorem, its aligned and complete axial/polar Hessians, the candidate-16 stratumwise negative-Kahler current, singular rotation-zero-fibre and nonzero occupation-gluing theorems, the candidate-17/20 singular axisymmetric Zariski-tangent current theorem, complete complex third-transvectant singular carrier, physical singular-component incidence, connected double-singular rotation-zero hub, frequency-weighted one-parity common-square quotient, balanced complete-singular radial contraction including vertex strata, the repaired complete uniform-scaling/moving-square ansatz with its alpha=0 two-stage contraction and scoped opposite-sign obstruction, the complete fixed-direction independent-node iff-incidence theorem with its three-stage contraction, the deformable-kernel compact admissible component-incidence normal form with zero-node stabilizers retained, the candidate-18 complete complex singular resolution with all ten spectators, unavoidable singular rotation-zero sections at every positive occupation on candidates 17/18/20, the candidate-18 singular-quotient two-component lower bound and explicit smooth bridge, the candidate-17/20 and candidate-18 smooth bounded projective-current radical theorems, the complete smooth affine divisor theorem, the fixed-occupation node-phase-reduced augmented divisor theorem, the local lifted-rotation/current-leaf descent theorem, all six candidate-19/21 linear-sheet current and connected-link theorems, the complete compact-Cauchy five-dimensional adjoint-kernel theorem, and the semi-Fredholm Sobolev Kuranishi cone with its fixed-group AMM separator."
     },
     "broader_atlas_audit": {
       "status": "PASSED",
