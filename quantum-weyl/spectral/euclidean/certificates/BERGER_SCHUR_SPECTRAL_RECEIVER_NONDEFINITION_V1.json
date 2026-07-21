@@ -1,0 +1,418 @@
+{
+  "$schema": "../schema/berger-schur-spectral-receiver-nondefinition-v1.schema.json",
+  "background_and_conventions": {
+    "background": "EUCLIDEAN_SCALAR_FLAT_BERGER_S1_S3_A1_C2",
+    "domain_status": "EXACT_LOW_BLOCKS_ONLY_GLOBAL_COMMON_DOMAIN_NOT_CERTIFIED",
+    "insertion_convention": "B1=-(1/3)Delta0^-1 delta W d Delta0^-1; B2 order -4; B3 order -6",
+    "local_global_subtraction": "LOCAL_WODZICKI_ROWS_EXACT; REGULATED_FINITE_GLOBAL_ROWS_ABSENT",
+    "metric": "g=dtheta^2+sigma1^2+sigma2^2+4 sigma3^2",
+    "orientation": "dtheta wedge sigma1 wedge sigma2 wedge sigma3",
+    "phase_and_contour": "Q=Delta_0+Pi_0 positive; det3/log use the Agmon ray exp(i*pi/2) R_+ and the phase continuous from S_L(t)=I+tK; the spectral payload must certify primed invertibility and crossings",
+    "phase_and_contour_status": "DECLARED_NOT_GLOBALLY_CERTIFIED",
+    "priming_status": "LOW_BLOCK_SCALAR_CONSTANT_AND_FIVE_A1_KILLING_ZEROS_CERTIFIED_ONLY",
+    "reference_scale": "mu_0=1 in a^(-1) units"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/EUCLIDEAN-SPECTRAL receiver integration imports the exact normalized Schur variations, low blocks, high-mode B1 trace obstruction, frozen rank-ten affine receiver, and accepted-but-unlanded M21/M23 requests. It preserves all ten universal partial-BV coordinate rows and independently replays the three exact local scale rows. Because the ordinary B1 trace is obstructed and no regulated B1, finite-part B2, complete B3 tail, global priming or exceptional continuation has landed, every complete Berger carrier function remains NONDEFINED. It does not use the scalar surrogate, compute a determinant or anomaly coefficient, change Paper 12, restore a QME, or establish any Lorentzian, Hadamard, state, particle, positivity or unitarity claim.",
+  "claim_flags": {
+    "ANOMALY_COEFFICIENT_LIFECYCLE_CHANGED": false,
+    "COMPLETE_FIVE_FUNCTIONS_COMPUTED": false,
+    "COORDINATE_BY_COORDINATE_NONDEFINITION_EMITTED": true,
+    "GLOBAL_DETERMINANT_OR_FINITE_TRACE_COMPUTED": false,
+    "LOCAL_SCALE_ROWS_REPLAYED_EXACTLY": true,
+    "M21_OR_M23_GLOBAL_PAYLOAD_LANDED": false,
+    "MAXIMAL_CERTIFIED_BERGER_INPUT_ASSEMBLED": true,
+    "QME_OR_LORENTZIAN_HADAMARD_PROMOTED": false,
+    "SCALAR_SURROGATE_USED": false,
+    "TERMINAL_VARIATION_AND_BLOCK_RESULTS_IMPORTED": true,
+    "UNIVERSAL_PARTIAL_BV_SUMMAND_PRESERVED": true
+  },
+  "dependencies": {
+    "background_shortfall": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/BACKGROUND_SPECIFIC_FIVE_FORM_FACTOR_SPECTRAL_REALIZATION_SHORTFALL.json",
+      "result_id": "BACKGROUND_SPECIFIC_FIVE_FORM_FACTOR_SPECTRAL_REALIZATION_SHORTFALL",
+      "sha256": "45c0debd97f904f80d4454d69582515761a97eafb83e9babc69af91eadcab890"
+    },
+    "generic_kernel_nonuniqueness": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_PRIMED_SCHUR_FINITE_RELATIVE_TRACE_KERNEL_NONUNIQUENESS.json",
+      "result_id": "GENERIC_PRIMED_SCHUR_FINITE_RELATIVE_TRACE_KERNEL_NONUNIQUENESS",
+      "sha256": "dd114394a10d0669bcbdad88adbec31e789a37f264c39d314b2e672a4baae89c"
+    },
+    "high_mode_obstruction": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/SCALAR_FLAT_BERGER_VECTOR_SCHUR_HIGH_MODE_TRACE_MAJORANT_OBSTRUCTION_V1.json",
+      "result_id": "SCALAR_FLAT_BERGER_VECTOR_SCHUR_HIGH_MODE_TRACE_MAJORANT_OBSTRUCTION_V1",
+      "sha256": "73b4ec7e13df4ca55477d13f2bbfd4d2bf398eee6f8a313fb74d28a246cd7157"
+    },
+    "independent_family_audit": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/PARAMETERIZED_PARITY_EVEN_FIVE_FORM_FACTOR_FAMILY_INDEPENDENT_AUDIT.json",
+      "result_id": "PARAMETERIZED_PARITY_EVEN_FIVE_FORM_FACTOR_FAMILY_INDEPENDENT_AUDIT",
+      "sha256": "254670931510a3d70a63556bd4734f3ce32486ad0d810143f04e88756cff7aaf"
+    },
+    "low_blocks": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/SCALAR_FLAT_BERGER_VECTOR_SCHUR_LOW_BLOCKS.json",
+      "result_id": "SCALAR_FLAT_BERGER_VECTOR_SCHUR_LOW_BLOCKS",
+      "sha256": "58d8646e3aedc1a897a8e6d05d6128f0e0eb4f885225443b9133f1c1968914f0"
+    },
+    "m23_surrogate_obstruction": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION.json",
+      "result_id": "SCALAR_FLAT_BERGER_SCHUR_SURROGATE_OBSTRUCTION",
+      "sha256": "687aa26ec62e34dfa9adde53f4d1793741a97b9829c7dee55b71f11f6d54f2d5"
+    },
+    "normalized_variation": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/NORMALIZED_SCHUR_PSEUDODIFFERENTIAL_VARIATION.json",
+      "result_id": "NORMALIZED_SCHUR_PSEUDODIFFERENTIAL_VARIATION",
+      "sha256": "5e437f7feed2044fd4ab7254388556536e41bf74a874398ece47f1d8b88f4a95"
+    },
+    "parameterized_family": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/PARAMETERIZED_PARITY_EVEN_FIVE_FORM_FACTOR_FAMILY.json",
+      "result_id": "PARAMETERIZED_PARITY_EVEN_FIVE_FORM_FACTOR_FAMILY",
+      "sha256": "b615a8aedb305e8014ad904a8bc2648fe149678aa201d65217164eecf9e791f0"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "external_math_requests": {
+    "M21": {
+      "path": "planning/forge-requests/global-spectral-resolvent-relative-determinant.json",
+      "request_id": "sf:forge-request/global-spectral-resolvent-relative-determinant",
+      "sha256": "e165d4f9e6c86bc012df6f655abb9fddc97d77eb13a7d1a07bd167c0738d2632",
+      "status": "ACCEPTED_NOT_LANDED"
+    },
+    "M23": {
+      "path": "planning/forge-requests/scalar-flat-berger-spectral-measure.json",
+      "request_id": "sf:forge-request/scalar-flat-berger-spectral-measure",
+      "sha256": "f22cdec8cbba70620a1847c26d7da9cbc074a873781dec425bb6d9249e753f9c",
+      "status": "ACCEPTED_NOT_LANDED"
+    }
+  },
+  "independent_local_scale_replay": {
+    "Wres_K2_density_without_(4pi)^-2": {
+      "denominator": 9,
+      "numerator": 4
+    },
+    "Wres_K_density_without_(4pi)^-2": {
+      "denominator": 3,
+      "numerator": 8
+    },
+    "dlogmu_logDet3_density_without_(4pi)^-2": {
+      "denominator": 9,
+      "numerator": 22
+    },
+    "ricci_squared": {
+      "denominator": 1,
+      "numerator": 6
+    },
+    "scalar_curvature": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "status": "EXACT_LOCAL_ROWS_ONLY"
+  },
+  "input_commit": "0200fc87b",
+  "lifecycle_state": "PARAMETERIZED_RECEIVER_SPECIALIZED_GLOBAL_FINITE_INPUT_STILL_OPEN",
+  "paper12_disposition": "NO_UPDATE_COEFFICIENT_LIFECYCLE_UNCHANGED",
+  "receiver": {
+    "ambiguity_matrix": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "ambiguity_rank": 10,
+    "carrier_ledger": [
+      {
+        "carrier": "I10",
+        "complete_function_status": "NONDEFINED",
+        "coordinates": [
+          "I10_123"
+        ],
+        "reason": "rank-ten finite Schur ambiguity and absent complete regulated Berger spectrum",
+        "universal_partial_BV_status": "COMPUTED"
+      },
+      {
+        "carrier": "I24",
+        "complete_function_status": "NONDEFINED",
+        "coordinates": [
+          "I24_123",
+          "I24_213",
+          "I24_312"
+        ],
+        "reason": "rank-ten finite Schur ambiguity and absent complete regulated Berger spectrum",
+        "universal_partial_BV_status": "COMPUTED"
+      },
+      {
+        "carrier": "I25",
+        "complete_function_status": "NONDEFINED",
+        "coordinates": [
+          "I25_123",
+          "I25_213",
+          "I25_312"
+        ],
+        "reason": "rank-ten finite Schur ambiguity and absent complete regulated Berger spectrum",
+        "universal_partial_BV_status": "COMPUTED"
+      },
+      {
+        "carrier": "I28",
+        "complete_function_status": "NONDEFINED",
+        "coordinates": [
+          "I28_123",
+          "I28_132"
+        ],
+        "reason": "rank-ten finite Schur ambiguity and absent complete regulated Berger spectrum",
+        "universal_partial_BV_status": "COMPUTED"
+      },
+      {
+        "carrier": "I29",
+        "complete_function_status": "NONDEFINED",
+        "coordinates": [
+          "I29_123"
+        ],
+        "reason": "rank-ten finite Schur ambiguity and absent complete regulated Berger spectrum",
+        "universal_partial_BV_status": "COMPUTED"
+      }
+    ],
+    "complete_function_count": 0,
+    "coordinate_ledger": [
+      {
+        "carrier": "I10",
+        "complete_coordinate_status": "NONDEFINED",
+        "coordinate": "I10_123",
+        "finite_Schur_status": "NONDEFINED",
+        "smallest_missing_spectral_object": "REGULATED_B1_PLUS_FINITE_PART_B2_PLUS_TRACE_CLASS_B3_ON_COMPLETE_PRIMED_BERGER_VECTOR_SCHUR_SPECTRUM",
+        "universal_partial_BV_digest": "645bf4e40d68415bafbd5ea464c59a0e6e365da0a9ee1bf83404e0e44c10c941",
+        "universal_partial_BV_status": "COMPUTED"
+      },
+      {
+        "carrier": "I24",
+        "complete_coordinate_status": "NONDEFINED",
+        "coordinate": "I24_123",
+        "finite_Schur_status": "NONDEFINED",
+        "smallest_missing_spectral_object": "REGULATED_B1_PLUS_FINITE_PART_B2_PLUS_TRACE_CLASS_B3_ON_COMPLETE_PRIMED_BERGER_VECTOR_SCHUR_SPECTRUM",
+        "universal_partial_BV_digest": "da2983ac8a26bdb987f04b8aeee5b6c3990d668f0acdfac6deda12d713320313",
+        "universal_partial_BV_status": "COMPUTED"
+      },
+      {
+        "carrier": "I24",
+        "complete_coordinate_status": "NONDEFINED",
+        "coordinate": "I24_213",
+        "finite_Schur_status": "NONDEFINED",
+        "smallest_missing_spectral_object": "REGULATED_B1_PLUS_FINITE_PART_B2_PLUS_TRACE_CLASS_B3_ON_COMPLETE_PRIMED_BERGER_VECTOR_SCHUR_SPECTRUM",
+        "universal_partial_BV_digest": "fcaa78d8ed531bd18bec095123bd7a7ee8876ccb2b876cd9e05e8630888540d2",
+        "universal_partial_BV_status": "COMPUTED"
+      },
+      {
+        "carrier": "I24",
+        "complete_coordinate_status": "NONDEFINED",
+        "coordinate": "I24_312",
+        "finite_Schur_status": "NONDEFINED",
+        "smallest_missing_spectral_object": "REGULATED_B1_PLUS_FINITE_PART_B2_PLUS_TRACE_CLASS_B3_ON_COMPLETE_PRIMED_BERGER_VECTOR_SCHUR_SPECTRUM",
+        "universal_partial_BV_digest": "8ac87768b00486968003173d1ac68e79549233d035607b4a95c648b0e1d47b8e",
+        "universal_partial_BV_status": "COMPUTED"
+      },
+      {
+        "carrier": "I25",
+        "complete_coordinate_status": "NONDEFINED",
+        "coordinate": "I25_123",
+        "finite_Schur_status": "NONDEFINED",
+        "smallest_missing_spectral_object": "REGULATED_B1_PLUS_FINITE_PART_B2_PLUS_TRACE_CLASS_B3_ON_COMPLETE_PRIMED_BERGER_VECTOR_SCHUR_SPECTRUM",
+        "universal_partial_BV_digest": "fd7bc78e486818f2773c0f74f26ef3c217d97cb79efcd2c7b03d41cb3f8bae44",
+        "universal_partial_BV_status": "COMPUTED"
+      },
+      {
+        "carrier": "I25",
+        "complete_coordinate_status": "NONDEFINED",
+        "coordinate": "I25_213",
+        "finite_Schur_status": "NONDEFINED",
+        "smallest_missing_spectral_object": "REGULATED_B1_PLUS_FINITE_PART_B2_PLUS_TRACE_CLASS_B3_ON_COMPLETE_PRIMED_BERGER_VECTOR_SCHUR_SPECTRUM",
+        "universal_partial_BV_digest": "0dca2be52166ea50a7af530bb0413e534ee535507a8c0b90a20911e9bce54765",
+        "universal_partial_BV_status": "COMPUTED"
+      },
+      {
+        "carrier": "I25",
+        "complete_coordinate_status": "NONDEFINED",
+        "coordinate": "I25_312",
+        "finite_Schur_status": "NONDEFINED",
+        "smallest_missing_spectral_object": "REGULATED_B1_PLUS_FINITE_PART_B2_PLUS_TRACE_CLASS_B3_ON_COMPLETE_PRIMED_BERGER_VECTOR_SCHUR_SPECTRUM",
+        "universal_partial_BV_digest": "c9fd069efbc284cfa8983f1326eb5b0065cf1e5bb4955864d9041f9adfe3b2de",
+        "universal_partial_BV_status": "COMPUTED"
+      },
+      {
+        "carrier": "I28",
+        "complete_coordinate_status": "NONDEFINED",
+        "coordinate": "I28_123",
+        "finite_Schur_status": "NONDEFINED",
+        "smallest_missing_spectral_object": "REGULATED_B1_PLUS_FINITE_PART_B2_PLUS_TRACE_CLASS_B3_ON_COMPLETE_PRIMED_BERGER_VECTOR_SCHUR_SPECTRUM",
+        "universal_partial_BV_digest": "d13696ab5c293ea2d02addcbfbcd8a8940de03c2dcb073c38bb5acdea9709c0c",
+        "universal_partial_BV_status": "COMPUTED"
+      },
+      {
+        "carrier": "I28",
+        "complete_coordinate_status": "NONDEFINED",
+        "coordinate": "I28_132",
+        "finite_Schur_status": "NONDEFINED",
+        "smallest_missing_spectral_object": "REGULATED_B1_PLUS_FINITE_PART_B2_PLUS_TRACE_CLASS_B3_ON_COMPLETE_PRIMED_BERGER_VECTOR_SCHUR_SPECTRUM",
+        "universal_partial_BV_digest": "afe5b5bb93689934192b287e10d0b9c383f5a026d65c7517b71c8966f2e56a8c",
+        "universal_partial_BV_status": "COMPUTED"
+      },
+      {
+        "carrier": "I29",
+        "complete_coordinate_status": "NONDEFINED",
+        "coordinate": "I29_123",
+        "finite_Schur_status": "NONDEFINED",
+        "smallest_missing_spectral_object": "REGULATED_B1_PLUS_FINITE_PART_B2_PLUS_TRACE_CLASS_B3_ON_COMPLETE_PRIMED_BERGER_VECTOR_SCHUR_SPECTRUM",
+        "universal_partial_BV_digest": "90c2d54f3852c04b2c50707275862a87825dd572a29c30327eb4d07ea09cf714",
+        "universal_partial_BV_status": "COMPUTED"
+      }
+    ],
+    "coordinate_order": [
+      "I10_123",
+      "I24_123",
+      "I24_213",
+      "I24_312",
+      "I25_123",
+      "I25_213",
+      "I25_312",
+      "I28_123",
+      "I28_132",
+      "I29_123"
+    ],
+    "dimension": 10,
+    "eliminated_relation": "I28_123+I28_132+I28_231=0",
+    "transpose_kernel_dimension": 0,
+    "universal_partial_BV_carrier_count": 5
+  },
+  "result_id": "BERGER_SCHUR_SPECTRAL_RECEIVER_NONDEFINITION_V1",
+  "result_state": "MAXIMAL_CERTIFIED_INPUT_ASSEMBLED_FIVE_COMPLETE_FUNCTIONS_NONDEFINED",
+  "schema": "quantum-weyl-berger-schur-spectral-receiver-nondefinition-v1",
+  "spectral_disposition": {
+    "B1": "ORDINARY_ABSOLUTE_TRACE_OBSTRUCTED_REGULATED_VALUE_NOT_COMPUTED",
+    "B2": "FINITE_PART_NOT_COMPUTED",
+    "B3": "COMPLETE_TRACE_CLASS_TAIL_NOT_COMPUTED",
+    "complete_A_t_high_mode_coercivity": "NOT_COMPUTED",
+    "next_gate": "LANDED_M21_OR_M23_REPLACEMENT_WITH_REGULATOR_SUBTRACTION_COMPLETE_PRIMING_AND_CERTIFIED_GLOBAL_TAIL",
+    "smallest_missing_spectral_object": "REGULATED_B1_PLUS_FINITE_PART_B2_PLUS_TRACE_CLASS_B3_ON_COMPLETE_PRIMED_BERGER_VECTOR_SCHUR_SPECTRUM"
+  },
+  "zero_pole_replay": {
+    "all_mode_continuation": "NONDEFINED",
+    "finite_exceptional_block_census": "NONDEFINED",
+    "matched_low_block_zero_poles": "VERIFIED_BY_IMPORTED_EXACT_THEOREM",
+    "scope": "2j<=2 and abs(n)<=1"
+  }
+}
