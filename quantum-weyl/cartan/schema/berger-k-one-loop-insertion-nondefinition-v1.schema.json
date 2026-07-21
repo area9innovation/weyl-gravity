@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-k-one-loop-insertion-nondefinition-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_status",
+    "dependency_tags",
+    "input_pins",
+    "setting",
+    "classical_import",
+    "one_loop_import",
+    "operator_ledger",
+    "phase_boundary_zero_mode_ledger",
+    "defect_target",
+    "first_missing_operator",
+    "verification_disposition",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary",
+    "science_forge",
+    "proof_hashes"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-k-one-loop-insertion-nondefinition-v1"},
+    "result_id": {"const": "BERGER_K_ONE_LOOP_INSERTION_NONDEFINITION_V1"},
+    "result_state": {"const": "NONDEFINED_UPSTREAM_Q1_AND_RENORMALIZED_K_INSERTIONS_ABSENT"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "input_pins": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {"$ref": "#/$defs/pin"}
+    },
+    "setting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "chart", "carrier", "generator", "raw_D"],
+      "properties": {
+        "theory": {"const": "positive Berger gravity plus two-real-scalar complex clock"},
+        "background": {"type": "string", "minLength": 40},
+        "chart": {"type": "string", "minLength": 30},
+        "carrier": {"const": "complete 54-row gauge-fixed gravity-clock BV complex"},
+        "generator": {"const": "K_Berger=D-omega R"},
+        "raw_D": {"const": "AFFINE_WITH_NONZERO_ZERO_ARITY_COMPONENT"}
+      }
+    },
+    "classical_import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "Q0", "iota_K_0", "L_K_0", "cyclic_pairing", "real_structure", "K_fixes_background", "raw_D_fixes_background"],
+      "properties": {
+        "status": {"const": "CERTIFIED_54_ROW_K_CARTAN_THROUGH_ARITY_THREE"},
+        "Q0": {"const": "CERTIFIED"},
+        "iota_K_0": {"const": "CERTIFIED_CLASSICAL"},
+        "L_K_0": {"const": "CERTIFIED_CLASSICAL"},
+        "cyclic_pairing": {"const": "CERTIFIED_CLASSICAL"},
+        "real_structure": {"const": "NOT_EXPORTED_IN_IMPORTED_54_ROW_K_SIGNOFF"},
+        "K_fixes_background": {"const": true},
+        "raw_D_fixes_background": {"const": false}
+      }
+    },
+    "one_loop_import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["breaking_coefficients", "counterterm_coefficients", "local_QME", "H14_even_dimension", "H14_odd_dimension", "zero_quotient_implication"],
+      "properties": {
+        "breaking_coefficients": {"const": "NONDEFINED"},
+        "counterterm_coefficients": {"const": "NONDEFINED"},
+        "local_QME": {"const": "NOT_RESTORED"},
+        "H14_even_dimension": {"const": 0},
+        "H14_odd_dimension": {"const": 0},
+        "zero_quotient_implication": {"const": "CONDITIONAL_REMOVABILITY_ONLY_AFTER_A_REGULATED_CONSISTENT_BREAKING_IS_COMPUTED"}
+      }
+    },
+    "operator_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["Q0", "iota_K_0", "L_K_0", "Gamma1_regulated", "breaking_A1", "counterterm_B1", "Q1", "iota_K_1", "L_K_1", "cartan_defect_A_K_1"],
+      "properties": {
+        "Q0": {"const": "CERTIFIED"},
+        "iota_K_0": {"const": "CERTIFIED_CLASSICAL"},
+        "L_K_0": {"const": "CERTIFIED_CLASSICAL"},
+        "Gamma1_regulated": {"const": "NOT_DEFINED"},
+        "breaking_A1": {"const": "NOT_DEFINED"},
+        "counterterm_B1": {"const": "NOT_DEFINED"},
+        "Q1": {"const": "NOT_DEFINED"},
+        "iota_K_1": {"const": "NOT_DEFINED"},
+        "L_K_1": {"const": "NOT_DEFINED"},
+        "cartan_defect_A_K_1": {"const": "NOT_DEFINED"}
+      }
+    },
+    "phase_boundary_zero_mode_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rotation_generator_R", "phase_shift_current_regulated_insertion", "K_Berger_regulated_Ward_carrier", "boundary_and_transgression_terms", "zero_mode_and_stabilizer_projectors"],
+      "properties": {
+        "rotation_generator_R": {"const": "CERTIFIED_CLASSICAL_MATRIX"},
+        "phase_shift_current_regulated_insertion": {"const": "NOT_EXPORTED"},
+        "K_Berger_regulated_Ward_carrier": {"const": "NOT_EXPORTED"},
+        "boundary_and_transgression_terms": {"const": "NOT_DEFINED_WITHOUT_INTEGRATION_SLICE"},
+        "zero_mode_and_stabilizer_projectors": {"const": "NOT_DEFINED_WITHOUT_INTEGRATION_SLICE"}
+      }
+    },
+    "defect_target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formula", "classification", "local_quotient_reduction", "exact_primitive", "nontrivial_separator", "raw_D_disposition"],
+      "properties": {
+        "formula": {"const": "A_K^(1)=[Q0,iota_K^(1)]_+ + [Q1,iota_K^(0)]_+ - L_K^(1)"},
+        "classification": {"const": "NONDEFINED_UPSTREAM_Q1_AND_RENORMALIZED_INSERTIONS_ABSENT"},
+        "local_quotient_reduction": {"const": "NOT_ENTERED_UNDEFINED_DEFECT"},
+        "exact_primitive": {"const": "NOT_APPLICABLE_BEFORE_DEFECT_EXISTS"},
+        "nontrivial_separator": {"const": "NOT_APPLICABLE_BEFORE_DEFECT_EXISTS"},
+        "raw_D_disposition": {"const": "SEPARATE_AFFINE_GENERATOR_NO_QUANTUM_D_IDENTITY_INFERRED"}
+      }
+    },
+    "first_missing_operator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "status", "reason", "upstream_first_missing_input", "producer_request", "receiver_schema"],
+      "properties": {
+        "id": {"const": "Q1_BERGER_COMPLEX_CLOCK_ONE_LOOP"},
+        "status": {"const": "NOT_DEFINED"},
+        "reason": {"type": "string", "minLength": 150},
+        "upstream_first_missing_input": {"const": "POSITIVE_BERGER_COMPLEX_CLOCK_EUCLIDEAN_BV_INTEGRATION_SLICE_V1"},
+        "producer_request": {"const": "planning/forge-requests/positive-berger-complex-clock-euclidean-bv-integration-slice.json"},
+        "receiver_schema": {"const": "quantum-weyl/anomalies/schema/berger-complex-clock-euclidean-bv-integration-slice-v1.schema.json"}
+      }
+    },
+    "verification_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["counterterm_scheme_covariance", "representative_independence", "quantum_cyclicity", "quantum_real_structure", "phase_current_compatibility"],
+      "properties": {
+        "counterterm_scheme_covariance": {"const": "NOT_DEFINED_NO_COUNTERTERM_OR_BASE_SCHEME"},
+        "representative_independence": {"const": "NOT_DEFINED_NO_RENORMALIZED_INSERTION"},
+        "quantum_cyclicity": {"const": "NOT_DEFINED_CLASSICAL_CYCLICITY_ONLY"},
+        "quantum_real_structure": {"const": "NOT_DEFINED_CLASSICAL_REAL_STRUCTURE_NOT_EXPORTED"},
+        "phase_current_compatibility": {"const": "NOT_DEFINED_NO_REGULATED_CURRENT_INSERTION"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "minProperties": 10,
+      "additionalProperties": {"const": false}
+    },
+    "next_gate": {"type": "string", "minLength": 250},
+    "claim_boundary": {"type": "string", "minLength": 650},
+    "science_forge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["work_item", "stop_condition_disposition"],
+      "properties": {
+        "work_item": {"const": "sf:program/work/quantum-berger-k-cartan-one-loop-insertion"},
+        "stop_condition_disposition": {"const": "SMALLEST_MISSING_OPERATOR_Q1_NAMED_WITH_EXACT_UPSTREAM_INPUT"}
+      }
+    },
+    "proof_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["input_inventory_sha256", "operator_ledger_sha256", "defect_target_sha256", "phase_boundary_zero_mode_ledger_sha256"],
+      "properties": {
+        "input_inventory_sha256": {"$ref": "#/$defs/hash"},
+        "operator_ledger_sha256": {"$ref": "#/$defs/hash"},
+        "defect_target_sha256": {"$ref": "#/$defs/hash"},
+        "phase_boundary_zero_mode_ledger_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "source_commit", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 20},
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

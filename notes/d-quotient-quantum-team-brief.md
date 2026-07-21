@@ -2699,3 +2699,48 @@ QME, Hadamard, positivity or particle claim.
 - [`berger-complex-clock-one-loop-breaking-nondefinition-v1.md`](../quantum-weyl/reports/berger-complex-clock-one-loop-breaking-nondefinition-v1.md)
 - [`positive-berger-complex-clock-one-loop-nondefinition-fragment-v1.json`](../residual_atlas/positive-berger-complex-clock-one-loop-nondefinition-fragment-v1.json)
 - [`positive-berger-complex-clock-euclidean-bv-integration-slice.json`](../planning/forge-requests/positive-berger-complex-clock-euclidean-bv-integration-slice.json)
+
+## Positive-Berger one-loop K-Cartan insertion gate (2026-07-21)
+
+The stationary classical generator is now imported without the legacy naming
+ambiguity:
+
+\[
+K_{\rm Berger}=D-\omega R.
+\]
+
+Its cyclic Cartan contraction is certified on all 54 gauge-fixed
+gravity-clock BV rows through arity three.  Raw \(D\) remains affine about the
+rotating clock background and is not substituted for \(K_{\rm Berger}\).
+
+The one-loop defect
+
+\[
+\mathcal A^{(1)}_K
+=
+[Q_0,\iota_K^{(1)}]_+
++[Q_1,\iota_K^{(0)}]_+
+-\mathcal L_K^{(1)}
+\]
+
+is nevertheless `NONDEFINED`.  The smallest missing quantum operator is the
+actual matter-coupled \(Q_1\).  The preceding coefficient gate supplies
+neither the regulated breaking nor counterterm coefficients, so it does not
+define \(Q_1\), \(\iota_K^{(1)}\), \(\mathcal L_K^{(1)}\), the regulated
+phase-current insertion, boundary/transgression terms, or the zero-mode
+contribution.  The classical real structure is also not exported by the
+imported 54-row K-signoff and is not inferred from cyclicity.
+
+Consequently the defect has not entered the local quotient and is not
+classified as zero, exact, or anomalous.  Vanishing of the matter-coupled
+\(H^{1,4}\) only guarantees conditional removability after a regulated
+consistent breaking has actually been constructed.
+
+The activation gate remains the existing action-derived Euclidean BV
+integration-slice request.  This result is
+`LOCAL-ALGEBRAIC`/`EUCLIDEAN-SPECTRAL`; it establishes no Lorentzian QME,
+Hadamard, state-space, positivity, or particle claim.
+
+- [`BERGER_K_ONE_LOOP_INSERTION_NONDEFINITION_V1.json`](../quantum-weyl/cartan/certificates/BERGER_K_ONE_LOOP_INSERTION_NONDEFINITION_V1.json)
+- [`berger-k-one-loop-insertion-nondefinition-v1.md`](../quantum-weyl/reports/berger-k-one-loop-insertion-nondefinition-v1.md)
+- [`positive-berger-k-one-loop-insertion-nondefinition-fragment-v1.json`](../residual_atlas/positive-berger-k-one-loop-insertion-nondefinition-fragment-v1.json)

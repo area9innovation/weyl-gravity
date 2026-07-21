@@ -1,0 +1,64 @@
+{
+  "receipt_id": "BERGER_K_ONE_LOOP_INSERTION_NONDEFINITION_V1_TIER_RECEIPT",
+  "result_id": "BERGER_K_ONE_LOOP_INSERTION_NONDEFINITION_V1",
+  "recorded_at": "2026-07-21",
+  "base_commit": "79c580cedd6b4bcdab571cb86b011c77e004a14f",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "input_hashes": {
+    "BERGER_COMPLEX_CLOCK_ONE_LOOP_BREAKING_NONDEFINITION_V1": "43d8602c23180e8910a5bd36f4a96e844722a0961b2cc4b3c12cb82aa3d43365",
+    "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF": "1065c80d6c73ca63c49d7c55368fe9aa7e6284903639ae0a87f4d589d819e3e8",
+    "BERGER_GENERATOR_CONJUGATION_AUDIT": "afc14ea90b10a9a59f0e7d240fcb2231eada9097d1d0e051f8f058d86de3d149",
+    "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0",
+    "POSITIVE_BERGER_COMPLEX_CLOCK_EUCLIDEAN_BV_INTEGRATION_SLICE_REQUEST": "74480680cdeb2531aa9c692b19db172b8f8bb17e6cb5148706e978536156b27a",
+    "POSITIVE_BERGER_COMPLEX_CLOCK_EUCLIDEAN_BV_INTEGRATION_SLICE_RECEIVER": "cc7f638128cf3b68d0eec730710840172b6ae698934d93108b2e83317144582e"
+  },
+  "output_hashes": {
+    "certificate": "8fe34674d61bf2b69730614a2813d4ecbdae6c6e36d5909606cf68db6bfbf891",
+    "report": "8818f511bb7633ab2900f75cf59dc093285c0dc0b647f4b3780a685c5d552b3e",
+    "result_schema": "96be27488446d745dd1cf2eae5f30ca236b8790a6e310ba800de2123eb19844c",
+    "atlas_fragment": "58a142824259dbb708db1d1b52cb8f866fb86339a944ad7e997c6fd7d3db01fa"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile quantum-weyl/cartan/berger_k_one_loop_insertion_nondefinition.py quantum-weyl/cartan/verify_berger_k_one_loop_insertion_nondefinition.py quantum-weyl/cartan/tests/test_berger_k_one_loop_insertion_nondefinition.py",
+      "elapsed_seconds": 0.07,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 quantum-weyl/cartan/berger_k_one_loop_insertion_nondefinition.py --check",
+      "elapsed_seconds": 0.25,
+      "status": "PASS_EXACT_PRODUCER_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 quantum-weyl/cartan/verify_berger_k_one_loop_insertion_nondefinition.py",
+      "elapsed_seconds": 0.23,
+      "status": "PASS_METHOD_DISTINCT_HISTORICAL_PIN_AND_OPERATOR_BOUNDARY_AUDIT"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/cartan/tests/test_berger_k_one_loop_insertion_nondefinition.py -v",
+      "elapsed_seconds": 0.29,
+      "status": "PASS_9_TESTS_5_FAIL_CLOSED_PROMOTION_MUTATIONS_AND_ATLAS_GUARD"
+    },
+    {
+      "tier": 1,
+      "command": "python3 residual_atlas/validate_fragment.py residual_atlas/positive-berger-k-one-loop-insertion-nondefinition-fragment-v1.json",
+      "elapsed_seconds": 0.20,
+      "status": "PASS_DEDICATED_GENERATED_FAIL_CLOSED_ATLAS_FRAGMENT"
+    },
+    {
+      "tier": 1,
+      "command": "npx --yes ajv-cli@5 compile/validate --spec=draft2020 --strict=true for the result schema and certificate",
+      "elapsed_seconds": 3.58,
+      "status": "PASS_DRAFT_2020_12_STRICT_SCHEMA_AND_RESULT"
+    }
+  ],
+  "tier_2_not_run": "All scientific inputs are immutable historical content-addressed artifacts. No shared algebra, operator, upstream schema or mathematical datum changed; the directly affected generated atlas fragment was validated in Tier 1.",
+  "tier_3_not_run": "This fail-closed NONDEFINED disposition constructs no Q1 or renormalized insertion, classifies no quantum Cartan defect, restores no QME, promotes no Lorentzian or Hadamard lifecycle, freezes no theorem and prepares no release."
+}
