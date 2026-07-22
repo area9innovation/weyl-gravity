@@ -1,0 +1,20 @@
+{
+  "id": "sf:forge-request/bug-science-forge-private-commit-post-head-index-reconcile",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Make private-index Science Forge commits leave the shared worktree index immediately usable after HEAD advances, without scanning unrelated Git-LFS content or changing any worktree bytes. The current isolated-index safety invariant is correct, but after several Phase-3 commits the shared index still represented pre-Phase-3 HEAD e9f5ffc2c while HEAD/origin had advanced to 677363be3. Raw Git then displayed 24 staged deletions plus matching untracked files even though every blob was present and committed. The landed three-tree reconcile command repaired this exactly, but only after an explicit coordinator diagnosis and a roughly 70-second optional update-index refresh through Git-LFS.",
+    "depends_on": [
+      "sf:forge-request/bug-science-forge-shared-index-cross-stream-commit"
+    ],
+    "stop_condition": "After every successful private-index commit/adoption that advances local HEAD, compare the shared-index tree, old HEAD and new HEAD. If the shared index has no genuine user staging conflict, reconcile it automatically by the same three-tree/CAS rule and prove that raw git status contains no private-commit artifact. If genuine staged entries exist, preserve them byte-for-byte and either perform a conflict-free three-tree carry-forward or emit a precise INDEX_RECONCILE_REQUIRED command with old/new HEAD and conflicting paths; never leave a misleading silent split state. The read-only and reconcile paths must not run whole-repository update-index --refresh or invoke Git-LFS for unselected paths. Add a deterministic nested-monorepo regression with three consecutive private commits, unrelated staged/unstaged/untracked work, an LFS-managed unrelated file, a concurrent HEAD advance, exact index/worktree hashes before and after, and a non-gating reference target below two seconds on the current physics-sized fixture.",
+    "forbid": "no reset --hard; no checkout or rewrite of worktree files; no clearing, committing or silently unstaging another agent's index entries; no broad Git-LFS filter scan; no assumption that HEAD and shared index were initially equal; no directory-mtime-only cache; no false clean status that hides genuine staged work",
+    "notes": [
+      "Live reproduction 2026-07-22: HEAD/origin 677363be3, shared index anchored at e9f5ffc2c. The stale index's only seven staged additions had already landed identically, yet raw -uall showed 555 paths including 24 staged deletions and matching untracked Phase-3 files. `s-f git reconcile-index --old-head e9f5ffc2c0d1581af21b406f3b1c203f21031d17 --new-head 677363be30ff858dd4236c6713f3a5f45b7066fe` returned INDEX_RECONCILED_CLEAN: cached diff 24 to 0, shared-index tree exactly equal to new HEAD, and all 531 genuine worktree changes preserved.",
+      "The optional private update-index --refresh preceding reconciliation spent about 70 seconds in git-lfs filter-process although no selected Phase-3 or lifecycle path was LFS-managed. Index reconciliation should compare trees and selected paths directly; a whole-monorepo stat refresh is neither required for correctness nor acceptable in the interactive path."
+    ]
+  },
+  "state": "PROPOSED"
+}
