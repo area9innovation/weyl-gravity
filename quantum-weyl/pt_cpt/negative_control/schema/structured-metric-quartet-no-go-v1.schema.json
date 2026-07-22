@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/pure-weyl/structured-metric-quartet-no-go-v1.schema.json",
+  "title": "Structured metric contract and counterflow quartet no-go",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "scope",
+    "source_refs",
+    "structured_metric_contract",
+    "nilpotent_positive_metric_no_go",
+    "selected_counterflow_negative_control",
+    "family_counterflow_negative_control",
+    "decision",
+    "mutation_expectations",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "$schema": {"const": "../schema/structured-metric-quartet-no-go-v1.schema.json"},
+    "schema": {"const": "pure-weyl-structured-metric-quartet-no-go-v1"},
+    "result_id": {"const": "STRUCTURED_METRIC_QUARTET_NO_GO_V1"},
+    "result_state": {"const": "STRUCTURED_METRIC_CONTRACT_FIXED_AND_COUNTERFLOW_POSITIVE_ETA_INFEASIBLE"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "scope": {"type": "object", "minProperties": 5},
+    "source_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selected_jhalf", "healthy_family", "retained_operator"],
+      "properties": {
+        "selected_jhalf": {"$ref": "#/$defs/source"},
+        "healthy_family": {"$ref": "#/$defs/source"},
+        "retained_operator": {"$ref": "#/$defs/source"}
+      }
+    },
+    "structured_metric_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eta_candidate_required_data", "C_operator_additional_required_data", "BRST_compatibility", "forbidden_shortcuts"],
+      "properties": {
+        "eta_candidate_required_data": {"type": "object", "minProperties": 8},
+        "C_operator_additional_required_data": {"type": "object", "minProperties": 6},
+        "BRST_compatibility": {"type": "object", "minProperties": 6},
+        "forbidden_shortcuts": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      }
+    },
+    "nilpotent_positive_metric_no_go": {
+      "type": "object",
+      "required": ["theorem", "proof_identity", "strict_positivity_step", "nonzero_nilpotent_fixture_Q", "fixture_square", "nontrivial_BRST_positive_self_adjoint_gate_feasible"],
+      "properties": {
+        "nontrivial_BRST_positive_self_adjoint_gate_feasible": {"const": false}
+      }
+    },
+    "selected_counterflow_negative_control": {
+      "type": "object",
+      "required": ["source_physical_H_sha256", "source_complete_characteristic_determinant_monic", "real_companion_generator_A", "Schrodinger_generator_H_equals_iA", "source_characteristic_factor", "y_equals_z_squared_discriminant", "root_class", "positive_eta_feasible", "C_operator_claimed", "broken_PT_negative_control", "norm_only_rescue_possible"],
+      "properties": {
+        "source_physical_H_sha256": {"const": "9bf1c1eb5e51d8698518f4b4d9a64f9ea27718b54d0c057f5f6ecfe78327bcc5"},
+        "y_equals_z_squared_discriminant": {"const": "-2151"},
+        "root_class": {"const": "HAMILTONIAN_HOPF_QUARTET_NONZERO_REAL_AND_IMAGINARY_PARTS"},
+        "positive_eta_feasible": {"const": false},
+        "C_operator_claimed": {"const": false},
+        "broken_PT_negative_control": {"const": true},
+        "norm_only_rescue_possible": {"const": false}
+      }
+    },
+    "family_counterflow_negative_control": {
+      "type": "object",
+      "required": ["parameter", "trace_healthy_component", "F2_coefficients_in_w", "discriminant", "exact_sign_reason", "positive_eta_feasible_everywhere_on_component", "familywide_causal_or_quantum_promotion"],
+      "properties": {
+        "discriminant": {"const": "256*q**5*(9*q - 8)"},
+        "positive_eta_feasible_everywhere_on_component": {"const": false},
+        "familywide_causal_or_quantum_promotion": {"const": false}
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["positive_eta_on_selected_quartet", "positive_eta_on_trace_healthy_family", "BRST_positive_metric_self_adjointness_gate", "replacement_BRST_gate", "Mannheim_C_operator", "field_theoretic_state_or_unitarity"],
+      "properties": {
+        "positive_eta_on_selected_quartet": {"const": "EXACTLY_INFEASIBLE"},
+        "positive_eta_on_trace_healthy_family": {"const": "EXACTLY_INFEASIBLE"},
+        "BRST_positive_metric_self_adjointness_gate": {"const": "REJECTED_AS_TRIVIALIZING_Q"},
+        "replacement_BRST_gate": {"const": "CHAIN_MAP_PLUS_EXPLICIT_COHOMOLOGY_DESCENT"},
+        "Mannheim_C_operator": {"const": "NOT_CONSTRUCTED"},
+        "field_theoretic_state_or_unitarity": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "mutation_expectations": {"type": "object", "minProperties": 6},
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["establishes", "does_not_establish"],
+      "properties": {
+        "establishes": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+        "does_not_establish": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      }
+    },
+    "provenance": {"type": "object", "minProperties": 4}
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "result_id", "input_commit"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "result_id": {"type": "string"},
+        "input_commit": {"const": "4a212883aefa5525cc847d0c12763c74c1c3411a"}
+      }
+    }
+  }
+}

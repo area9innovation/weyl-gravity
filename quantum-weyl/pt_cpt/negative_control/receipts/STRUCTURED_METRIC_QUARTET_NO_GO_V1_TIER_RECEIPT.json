@@ -1,0 +1,69 @@
+{
+  "schema": "pure-weyl-structured-metric-tier-receipt-v1",
+  "result_id": "STRUCTURED_METRIC_QUARTET_NO_GO_V1_TIER_RECEIPT",
+  "subject_result_id": "STRUCTURED_METRIC_QUARTET_NO_GO_V1",
+  "recorded_at": "2026-07-22",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "source_pins": {
+    "healthy_family": "88e5f9a25ff3a5cfbbdbbbe1492ec879f6bfb1f495aed3aa4241b8e58e413508",
+    "retained_operator": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77",
+    "selected_jhalf": "43595d6e974dd3ff852db658014fb34dcd1521f050a752e5732fb0c3b5f27797"
+  },
+  "output_hashes": {
+    "generator": "60d202542961f6177ad42f4ba0103a763b150fc69ca594d479da5abf0e67711d",
+    "verifier": "4cb4513260970e502b6f7a2f349862f9ce397e2f1323a270603a250b4ab02daa",
+    "schema": "26790e17587c660f76a4dbba4b7cb76cff8ca15434bb11befa3839c3bc247398",
+    "certificate": "377f699d854724f743188b854e4f5be3f29540ba1f5bc2beee3ec9204e7dbf6a",
+    "tests": "0aec5d12874618b6d8669ddb469fcaa4d053d46e18cfba5fae8b30dc4910adb8",
+    "report": "54eac5ddd82c9af67ca12ba19e9afd63e53e06a16e6b6693a25643dc1f19bcea"
+  },
+  "independent_rail": {
+    "status": "PASS",
+    "method": "imports no producer module; reconstructs the real companion generator from the hash-pinned Smith coefficients, recomputes the characteristic polynomial and negative algebraic discriminant, and independently solves the general Hermitian two-by-two nilpotent fixture",
+    "decisive_mutations_rejected": [
+      "real-spectrum reclassification",
+      "positive eta on the quartet",
+      "norm-only rescue",
+      "nonzero nilpotent positive-self-adjoint BRST",
+      "eta promoted to C without the involution",
+      "finite block promoted to unitarity"
+    ]
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile quantum-weyl/pt_cpt/negative_control/structured_metric_quartet_no_go.py quantum-weyl/pt_cpt/negative_control/verify_structured_metric_quartet_no_go.py quantum-weyl/pt_cpt/negative_control/tests/test_structured_metric_quartet_no_go.py",
+        "python3 -m json.tool quantum-weyl/pt_cpt/negative_control/certificates/STRUCTURED_METRIC_QUARTET_NO_GO_V1.json",
+        "if rg -n '[ \\t]+$' quantum-weyl/pt_cpt/negative_control reports/phase2-cpt-quartet-negative-control-2026-07-22.md; then exit 1; fi",
+        "git diff --check -- quantum-weyl/pt_cpt/negative_control reports/phase2-cpt-quartet-negative-control-2026-07-22.md"
+      ],
+      "elapsed_seconds": 0.08
+    },
+    {
+      "tier": 1,
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/pt_cpt/negative_control/structured_metric_quartet_no_go.py --check",
+        "python3 quantum-weyl/pt_cpt/negative_control/verify_structured_metric_quartet_no_go.py",
+        "pytest -q quantum-weyl/pt_cpt/negative_control/tests/test_structured_metric_quartet_no_go.py"
+      ],
+      "elapsed_seconds": 2.3
+    },
+    {
+      "tier": 2,
+      "status": "NOT_RUN",
+      "reason": "All imported mathematical inputs are unchanged and content-addressed; this package adds only a downstream finite classification and contract."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "reason": "No freeze, release, shared core algebra change, or Lorentzian/quantum lifecycle promotion occurs."
+    }
+  ],
+  "claim_boundary": "This receipt certifies the exact structured eta/C and corrected BRST compatibility contract, the positive-metric self-adjoint nilpotent no-go, and spectral infeasibility of positive pseudo-Hermiticity on the counterflow quartet. It does not construct a Mannheim C operator, a full-BV or Hadamard state, particles, scattering, anomaly/QME data, positivity of pure conformal gravity, or unitarity."
+}

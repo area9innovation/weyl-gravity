@@ -1,0 +1,229 @@
+{
+  "$schema": "../schema/structured-metric-quartet-no-go-v1.schema.json",
+  "claim_boundary": {
+    "does_not_establish": [
+      "a Mannheim C operator on any strict-Weyl block",
+      "a full-BV state, Hadamard covariance, particle interpretation, scattering theory or unitarity",
+      "an anomaly or QME statement",
+      "a no-go for PT/CPT quantization of pure conformal gravity"
+    ],
+    "establishes": [
+      "the exact admissibility contract for eta, C, real structure, sector compatibility and BRST cohomology descent",
+      "the general positive-metric self-adjoint nilpotent no-go",
+      "an exact companion realization of the frozen counterflow quartic",
+      "spectral infeasibility of every positive pseudo-Hermitian eta on the selected quartet and the declared trace-healthy family"
+    ]
+  },
+  "decision": {
+    "BRST_positive_metric_self_adjointness_gate": "REJECTED_AS_TRIVIALIZING_Q",
+    "Mannheim_C_operator": "NOT_CONSTRUCTED",
+    "field_theoretic_state_or_unitarity": "NOT_ESTABLISHED",
+    "positive_eta_on_selected_quartet": "EXACTLY_INFEASIBLE",
+    "positive_eta_on_trace_healthy_family": "EXACTLY_INFEASIBLE",
+    "replacement_BRST_gate": "CHAIN_MAP_PLUS_EXPLICIT_COHOMOLOGY_DESCENT"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "family_counterflow_negative_control": {
+    "F2_coefficients_in_w": {
+      "w0": "32*q**3 - 108*q**2 + 81",
+      "w1": "-24*q*(2*q**2 - 3)",
+      "w2": "16*q**2"
+    },
+    "discriminant": "256*q**5*(9*q - 8)",
+    "exact_sign_reason": "q>0 and q<1/4 imply q^5>0 and 9*q-8<0",
+    "familywide_causal_or_quantum_promotion": false,
+    "parameter": "q",
+    "positive_eta_feasible_everywhere_on_component": false,
+    "trace_healthy_component": [
+      "x>0",
+      "C>0",
+      "(13-3*sqrt(17))/4<q<1/4"
+    ]
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "mutation_expectations": {
+    "eta_called_C_without_involution": "REJECT",
+    "finite_block_promoted_to_unitarity": "REJECT",
+    "nonzero_nilpotent_positive_self_adjoint_Q": "REJECT",
+    "norm_only_rescue": "REJECT",
+    "positive_eta_on_quartet": "REJECT",
+    "real_spectrum_reclassification": "REJECT"
+  },
+  "nilpotent_positive_metric_no_go": {
+    "fixture_square": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "nontrivial_BRST_positive_self_adjoint_gate_feasible": false,
+    "nonzero_nilpotent_fixture_Q": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "proof_identity": "||Qv||_eta^2=<Qv,Qv>_eta=<v,Q^2v>_eta=0",
+    "strict_positivity_step": "||Qv||_eta=0 implies Qv=0 for every v",
+    "theorem": "If eta is strictly positive Hermitian, Q^2=0, and Q^dagger*eta=eta*Q, then Q=0."
+  },
+  "provenance": {
+    "exact_engine": "SymPy rational/algebraic matrices; no floating-point decisions",
+    "generator": "quantum-weyl/pt_cpt/negative_control/structured_metric_quartet_no_go.py",
+    "generator_sha256": "60d202542961f6177ad42f4ba0103a763b150fc69ca594d479da5abf0e67711d",
+    "independent_verifier": "quantum-weyl/pt_cpt/negative_control/verify_structured_metric_quartet_no_go.py"
+  },
+  "result_id": "STRUCTURED_METRIC_QUARTET_NO_GO_V1",
+  "result_state": "STRUCTURED_METRIC_CONTRACT_FIXED_AND_COUNTERFLOW_POSITIVE_ETA_INFEASIBLE",
+  "schema": "pure-weyl-structured-metric-quartet-no-go-v1",
+  "scope": {
+    "background": "selected Berger j=1/2 all-k physical Smith sector and its trace-healthy stationary family",
+    "carrier": "one exact four-dimensional companion block, occurring twice in the physical quotient",
+    "claim_level": "finite structured pseudo-Hermitian feasibility preflight",
+    "coefficient_domain": "exact rational/algebraic arithmetic",
+    "theory": "same-field two-phase counterflow changed theory, used only as a negative control"
+  },
+  "selected_counterflow_negative_control": {
+    "C_operator_claimed": false,
+    "Schrodinger_generator_H_equals_iA": [
+      [
+        "0",
+        "I",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "I",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "I"
+      ],
+      [
+        "-937*I/10",
+        "0",
+        "-773*I/40",
+        "0"
+      ]
+    ],
+    "broken_PT_negative_control": true,
+    "characteristic_polynomial_A_monic": "(40*z**4 + 773*z**2 + 3748)/40",
+    "coefficient_domain": "Q(i,sqrt(239))",
+    "multiplicity": "two identical physical polarizations; one companion block is displayed",
+    "norm_only_rescue_possible": false,
+    "positive_eta_feasible": false,
+    "real_companion_generator_A": [
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "-937/10",
+        "0",
+        "-773/40",
+        "0"
+      ]
+    ],
+    "root_class": "HAMILTONIAN_HOPF_QUARTET_NONZERO_REAL_AND_IMAGINARY_PARTS",
+    "scalar_operator_coefficients": {
+      "D0": "3748",
+      "D2": "773",
+      "D4": "40"
+    },
+    "source_characteristic_factor": "40*z**4 + 773*z**2 + 3748",
+    "source_complete_characteristic_determinant_monic": "(z**2 + 13)**2*(40*z**4 + 773*z**2 + 3748)**2*(3240*z**4 + 168093*z**2 + 2172895)**2*(933120*z**6 + 10517040*z**4 + 34117578*z**2 + 24373901)**2/14624633760251904000000",
+    "source_physical_H_sha256": "9bf1c1eb5e51d8698518f4b4d9a64f9ea27718b54d0c057f5f6ecfe78327bcc5",
+    "source_sector": "two copies of 40*D^4+773*D^2+3748",
+    "spectral_infeasibility_theorem": "eta>0 and H^dagger*eta=eta*H would make every H eigenvalue real; H=iA has nonreal eigenvalues because every A root z has nonzero real part",
+    "y_equals_z_squared_discriminant": "-2151",
+    "y_roots": [
+      "I*(3*sqrt(239) + 773*I)/80",
+      "-I*(3*sqrt(239) - 773*I)/80"
+    ]
+  },
+  "source_refs": {
+    "healthy_family": {
+      "input_commit": "4a212883aefa5525cc847d0c12763c74c1c3411a",
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_HAMILTONIAN_HOPF_RETUNING_LOCUS_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_HAMILTONIAN_HOPF_RETUNING_LOCUS_PAYLOAD_V1",
+      "sha256": "88e5f9a25ff3a5cfbbdbbbe1492ec879f6bfb1f495aed3aa4241b8e58e413508"
+    },
+    "retained_operator": {
+      "input_commit": "4a212883aefa5525cc847d0c12763c74c1c3411a",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json",
+      "result_id": "BERGER_RETAINED_MINIMAL_OPERATOR",
+      "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+    },
+    "selected_jhalf": {
+      "input_commit": "4a212883aefa5525cc847d0c12763c74c1c3411a",
+      "path": "d_quotient_classical/compensator/TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_PAYLOAD_V1.json",
+      "result_id": "TWO_PHASE_COUNTERFLOW_REPAIRED_Q70_FIRST_GENERIC_ISOTYPICAL_HEALTH_OBSTRUCTION_PAYLOAD_V1",
+      "sha256": "43595d6e974dd3ff852db658014fb34dcd1521f050a752e5732fb0c3b5f27797"
+    }
+  },
+  "structured_metric_contract": {
+    "BRST_compatibility": {
+      "accepted_chain_gate": "C preserves ker(Q) and im(Q), preferably by an explicit graded chain map; this induces C on H^0(Q)",
+      "accepted_cohomology_gate": "supply explicit pi and i with pi*i=1, Q*i=0, pi*Q=0 (or a proved Hodge representative), then prove positivity of i^dagger*eta*i on H^0(Q)",
+      "exact_states_not_positive_null_vectors": "a strictly positive metric has no nonzero null vectors, so exact states are removed by cohomology rather than declared null",
+      "full_complex_pairing": "an indefinite BV/Krein pairing may remain on the nonphysical complex; positivity is a separate cohomology statement",
+      "rejected_gate": "Q^dagger*eta=eta*Q with eta>0 on a nonzero nilpotent BRST complex",
+      "rejection_reason": "positive-metric self-adjointness plus Q^2=0 forces ||Qv||_eta^2=<v,Q^2v>_eta=0 for every v, hence Q=0"
+    },
+    "C_operator_additional_required_data": {
+      "BRST_chain_map": "C_(n+1)*Q_n=Q_n*C_n in every degree, including any nontrivial ghost action",
+      "PT_relation": "P and the anti-linear T are independently declared; [C,PT]=0 and the convention relating eta, P, and C is proved",
+      "dynamics": "[C,H]=0",
+      "eta_is_not_C_by_definition": true,
+      "involution": "C^2=1",
+      "symmetry_real_and_sector_compatibility": true
+    },
+    "eta_candidate_required_data": {
+      "causal_covariance_gate": "a field-theoretic promotion additionally verifies the CCR under the new adjoint and the declared wavefront/support properties",
+      "declared_carrier_basis_and_adjoint": true,
+      "exact_Hermitian_matrix_or_operator": true,
+      "invariant_commutant_membership": "eta commutes with every declared spatial/internal symmetry generator",
+      "momentum_frequency_compatibility": "opposite momentum/frequency blocks are related by the declared real-field involution, not fitted independently",
+      "parameter_regularness": "eta and eta inverse are nonsingular on the entire declared parameter locus; singular limiting metrics are separate strata",
+      "pseudo_Hermiticity": "H^dagger*eta=eta*H on a declared invariant domain",
+      "real_structure": "for r(v)=R*conjugate(v), require R*conjugate(R)=1 and R^dagger*eta*R=conjugate(eta)",
+      "strict_positivity_certificate": "exact LDL/congruence, principal-minor, sum-of-squares, or equivalent exact proof; numerical eigenvalues are not accepted"
+    },
+    "forbidden_shortcuts": [
+      "manufacture eta by diagonalizing each finite matrix independently",
+      "call a positive eta a C operator without C^2=1 and the declared P/T relation",
+      "infer a field-theoretic state or unitarity theorem from a finite reduced block",
+      "replace chain-map/cohomology descent by positive-metric BRST self-adjointness"
+    ]
+  }
+}
