@@ -7,7 +7,7 @@
   "source": {"path": "planning/forge-requests/phase3-validated-singular-endpoint-initializer.json", "span": null},
   "body": {
     "owner": "science-forge",
-    "state": "REQUESTED",
+    "state": "LANDED",
     "stream": "forge-requests",
     "priority": 0,
     "objective": "Add the smallest generic validated singular-endpoint initializer needed to turn exact vector Frobenius and irregular normal-form series into finite-radius interval basis boxes consumed by math/ivlinode.",
@@ -21,7 +21,8 @@
     "notes": [
       "For a horizon branch a_n, a sufficient tail contract is q_H=S_B(tau)/(N+1-kappa)<1 with epsilon<tau below the nearest coefficient singularity; return function and derivative geometric-tail boxes, including the |s|/epsilon term.",
       "For infinity set K_N=F_N^{-1}E_N and verify |K_ij|<=C_ij r^{-p_ij}, p_ij>1. The contraction q_inf=max_i sum_j C_ij R^(1-p_ij)/(p_ij-1)<1 implies ||Z(R)-I||_inf<=q_inf/(1-q_inf). Incorporate same-rate resonances into the normal form until every weighted remainder entry is integrable.",
-      "Real-frequency scope only. Complex upper-half-plane pole searches require a later exponential-dichotomy extension and are not part of this request."
+      "Real-frequency scope only. Complex upper-half-plane pole searches require a later exponential-dichotomy extension and are not part of this request.",
+      "2026-07-22 forge-coordinator: LANDED in tango/forge commit 7d745b65e. The new math/ivendpoint API supplies separate regular-singular Frobenius and rank-1 irregular Volterra contracts, exact resonance/indicial witnesses, analytic value and derivative tails, rational decay-power isolation, Krawczyk basis-rank gates, explicit refusals, and six-column real-frequency Schwarzschild adapters. The full C/native and dual-ASan rail passes. The adapters intentionally use placeholder heads: repaired Schwarzschild recurrences and their analytic residual constants remain physics-consumer obligations; no BVP, scattering, pole, or stability claim is promoted."
     ]
   },
   "edges": []
