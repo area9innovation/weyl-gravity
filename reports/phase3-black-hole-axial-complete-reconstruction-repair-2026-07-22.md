@@ -194,3 +194,6 @@ PYTHONPATH=black_hole_programme python3 black_hole_programme/phase3/axial_comple
 python3 -m unittest black_hole_programme.phase3.axial_complete_reconstruction_repair.tests.test_repair
 python3 residual_atlas/validate_fragment.py residual_atlas/phase3-black-hole-axial-complete-reconstruction-repair-fragment-v1.json
 ```
+
+CLOSE-OUT: DONE — The complete three-row axial reconstruction, exact six-state flow, constraint-compatible endpoint modules, and Phase-2 supersession are independently certified; convergence and global matching remain separate successors.
+EVIDENCE: black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json; black_hole_programme/phase3/axial_complete_reconstruction_repair/receipt.json; residual_atlas/phase3-black-hole-axial-complete-reconstruction-repair-fragment-v1.json
