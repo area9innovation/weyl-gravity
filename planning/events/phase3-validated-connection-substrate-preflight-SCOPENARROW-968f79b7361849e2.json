@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase3-validated-connection-substrate-preflight-SCOPENARROW-968f79b7361849e2",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work scope narrow",
+  "source": {"path": "tools/science-forge/program/events/phase3-validated-connection-substrate-preflight-SCOPENARROW-968f79b7361849e2.json", "span": null},
+  "body": {"event_kind": "WORK_SCOPE_NARROW", "actor": "coordinator", "base_revision": "science-forge-ir-v0", "when": "2026-07-22T21:27:22Z", "seq": 1, "payload": {"target": "sf:program/work/phase3-validated-connection-substrate-preflight", "narrowed_by": "coordinator", "paths": "black_hole_programme/phase3/validated_connection_preflight/ reports/phase3-validated-connection-substrate-preflight-2026-07-22.md planning/forge-requests/phase3-validated-connection-substrate.json", "reason": "disjoint Phase-3 subagent ownership"}, "native": {"authored_by": "sfc work-scope-narrow", "policy": "append-only (SPEC 4.5); narrows the EFFECTIVE write scope to a validated SUBSET of allowed_paths — never widens, never rewrites the base item. The overlap gate reads the narrowed scope."}},
+  "edges": [{"rel": "SCOPE_NARROW", "to": "sf:program/work/phase3-validated-connection-substrate-preflight"}]
+}

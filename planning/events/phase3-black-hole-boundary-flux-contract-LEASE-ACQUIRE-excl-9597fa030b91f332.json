@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase3-black-hole-boundary-flux-contract-LEASE-ACQUIRE-excl-9597fa030b91f332",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/phase3-black-hole-boundary-flux-contract-LEASE-ACQUIRE-excl-9597fa030b91f332.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "phase3-boundary-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-22T21:20:12Z", "seq": 2, "predecessor": "sf:program/event/phase3-black-hole-boundary-flux-contract-LEASE-ACQUIRE-excl-0cdd320dfeb44fde", "payload": {"target": "sf:program/work/phase3-black-hole-boundary-flux-contract", "agent": "phase3-boundary-1", "lease_type": "exclusive", "action": "ACQUIRE", "acquired": "2026-07-22T21:20:12Z", "expires": "2026-07-23T09:20:12Z"}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/phase3-black-hole-boundary-flux-contract"}]
+}

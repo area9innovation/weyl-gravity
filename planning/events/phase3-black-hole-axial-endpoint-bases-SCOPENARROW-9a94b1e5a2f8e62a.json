@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase3-black-hole-axial-endpoint-bases-SCOPENARROW-9a94b1e5a2f8e62a",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work scope narrow",
+  "source": {"path": "tools/science-forge/program/events/phase3-black-hole-axial-endpoint-bases-SCOPENARROW-9a94b1e5a2f8e62a.json", "span": null},
+  "body": {"event_kind": "WORK_SCOPE_NARROW", "actor": "coordinator", "base_revision": "science-forge-ir-v0", "when": "2026-07-22T21:27:15Z", "seq": 1, "payload": {"target": "sf:program/work/phase3-black-hole-axial-endpoint-bases", "narrowed_by": "coordinator", "paths": "black_hole_programme/phase3/axial_endpoint_bases/ reports/phase3-black-hole-axial-endpoint-bases-2026-07-22.md residual_atlas/phase3-black-hole-axial-endpoint-bases-fragment-v1.json planning/forge-requests/phase3-black-hole-axial-endpoint-bases.json", "reason": "disjoint Phase-3 subagent ownership"}, "native": {"authored_by": "sfc work-scope-narrow", "policy": "append-only (SPEC 4.5); narrows the EFFECTIVE write scope to a validated SUBSET of allowed_paths — never widens, never rewrites the base item. The overlap gate reads the narrowed scope."}},
+  "edges": [{"rel": "SCOPE_NARROW", "to": "sf:program/work/phase3-black-hole-axial-endpoint-bases"}]
+}
