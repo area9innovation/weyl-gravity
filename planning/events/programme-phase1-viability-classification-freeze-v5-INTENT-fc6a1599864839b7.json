@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/programme-phase1-viability-classification-freeze-v5-INTENT-fc6a1599864839b7",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work intent",
+  "source": {"path": "tools/science-forge/program/events/programme-phase1-viability-classification-freeze-v5-INTENT-fc6a1599864839b7.json", "span": null},
+  "body": {"event_kind": "WORK_INTENT", "actor": "coordinator", "base_revision": "science-forge-ir-v0", "when": "2026-07-22T04:26:14Z", "seq": 2, "predecessor": "sf:program/event/programme-phase1-viability-classification-freeze-v5-INTENT-56a284b544457171", "payload": {"target": "sf:program/work/programme-phase1-viability-classification-freeze-v5", "agent": "coordinator", "lease": "exclusive", "base_commit": "83077ac23e4323c44b88ac57d208b50d11b4a566", "transaction_id": "12366a3e1e4f706e", "allowlist_verdict": "within-allowlist", "intended_paths": ["planning/paper-coverage/generate_phase1_closure.py", "planning/paper-coverage/verify_phase1_closure.py", "reports/PHASE1_CLOSURE_V1_TIER_RECEIPT.json", "residual_atlas/programme-phase1-classification-ending-fragment-v1.json", "residual_atlas/programme-phase1-classification-ending-atlas-fragment.json"], "verify_commands": ["python3 planning/paper-coverage/generate_phase1_closure.py --check", "python3 planning/paper-coverage/verify_phase1_closure.py", "python3 planning/paper-coverage/test_phase1_closure.py", "python3 residual_atlas/validate_fragment.py residual_atlas/programme-phase1-classification-ending-atlas-fragment.json"]}, "native": {"authored_by": "sfc work-intent", "policy": "append-only (SPEC 4.5); an uncommitted delivery manifest — NO current_commit, NO test-success. Superseded by a later intent; sealed by WORK_COMMITTED."}},
+  "edges": [{"rel": "INTENDS", "to": "sf:program/work/programme-phase1-viability-classification-freeze-v5"}]
+}
