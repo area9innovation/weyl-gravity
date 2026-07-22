@@ -1,0 +1,28 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:forge-request/phase3-validated-singular-endpoint-initializer",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-validated-singular-endpoint-initializer",
+  "source": {"path": "planning/forge-requests/phase3-validated-singular-endpoint-initializer.json", "span": null},
+  "body": {
+    "owner": "science-forge",
+    "state": "REQUESTED",
+    "stream": "forge-requests",
+    "priority": 0,
+    "objective": "Add the smallest generic validated singular-endpoint initializer needed to turn exact vector Frobenius and irregular normal-form series into finite-radius interval basis boxes consumed by math/ivlinode.",
+    "stop_condition": "Land a generic lib/math API with two fail-closed modes. REGULAR-SINGULAR mode accepts a parameter-interval rational matrix series for rho Y'=B(rho,p)Y, exact indicial data and compatible finite resonance witnesses; it returns outward enclosures for a normalized vector Frobenius basis and derivative at rational epsilon using a proved analytic majorant/tail inequality. IRREGULAR-RANK1 mode accepts a truncated exact normal form F_N=P_N D, its exact residual E_N=F_N'-A F_N, declared real-parameter rate/power weights and entrywise rational decay bounds for K_N=F_N^{-1}E_N; it verifies p_ij>1 and a Volterra contraction q<1, then returns an outward enclosure for F(R)=F_N(R)Z(R) and its derivative. Both modes must support interval parameter cells, exact compatible resonance heads, normalized phases equal to one at the initialization radius, derivative tails, basis-rank/conditioning checks through math/ivmat, explicit refusal codes and mutation tests. Gate a scalar regular-singular control plus the Phase-3 axial ell=2 real-frequency fixtures on omega in [1/2,3/4], initially epsilon=1/4 and R=32. A stricter subdivision/order replay must intersect and improve the result. The irregular fixture must reject a nonintegrable 1/r remainder, an underestimated remainder constant, a duplicated column and a frequency box crossing omega=0.",
+    "current_gate": "Validated horizon and infinity initial boxes before the axial global connection pilot",
+    "forbid": "no truncated series called an enclosure; no convergence claim for the Gevrey-1 infinity expansion; no floating tail constant without outward rounding; no silently ignored resonance; no point frequency called parameter-uniform; no singular endpoint embedded into ivlinode; no BVP, scattering, pole or stability promotion",
+    "depends_on": ["sf:forge-request/phase3-validated-connection-substrate"],
+    "activates": ["sf:program/work/phase3-black-hole-axial-endpoint-remainder-enclosures", "sf:program/work/phase3-black-hole-axial-global-connection-pilot-v2"],
+    "allowed_paths": ["forge/lib/math/", "forge/examples/", "forge/docs/math/", "forge/lib/math/COMPLETENESS.md"],
+    "resource_hint": "Horizon: use inverse-pivot bounds after the finite resonant head and an analytic coefficient majorant. Infinity: the axial recurrences are Gevrey-1, so use a truncated normal form plus weighted Volterra correction; math/ivlinode remains only the finite nonsingular middle flow and math/ivmat supplies rank/solve gates.",
+    "notes": [
+      "For a horizon branch a_n, a sufficient tail contract is q_H=S_B(tau)/(N+1-kappa)<1 with epsilon<tau below the nearest coefficient singularity; return function and derivative geometric-tail boxes, including the |s|/epsilon term.",
+      "For infinity set K_N=F_N^{-1}E_N and verify |K_ij|<=C_ij r^{-p_ij}, p_ij>1. The contraction q_inf=max_i sum_j C_ij R^(1-p_ij)/(p_ij-1)<1 implies ||Z(R)-I||_inf<=q_inf/(1-q_inf). Incorporate same-rate resonances into the normal form until every weighted remainder entry is integrable.",
+      "Real-frequency scope only. Complex upper-half-plane pole searches require a later exponential-dichotomy extension and are not part of this request."
+    ]
+  },
+  "edges": []
+}
