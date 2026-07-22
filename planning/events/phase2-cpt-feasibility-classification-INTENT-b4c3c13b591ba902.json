@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase2-cpt-feasibility-classification-INTENT-b4c3c13b591ba902",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work intent",
+  "source": {"path": "tools/science-forge/program/events/phase2-cpt-feasibility-classification-INTENT-b4c3c13b591ba902.json", "span": null},
+  "body": {"event_kind": "WORK_INTENT", "actor": "phase2-cpt-review-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-22T12:43:40Z", "seq": 1, "payload": {"target": "sf:program/work/phase2-cpt-feasibility-classification", "agent": "phase2-cpt-review-1", "lease": "exclusive", "base_commit": "14205a9889288ea2c8867349432c258ddd794ac0", "transaction_id": "77596e068eda74ce", "allowlist_verdict": "within-allowlist", "intended_paths": ["quantum-weyl/pt_cpt/synthesis/__init__.py", "quantum-weyl/pt_cpt/synthesis/certificates/PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1.json", "quantum-weyl/pt_cpt/synthesis/cpt_feasibility_classification.py", "quantum-weyl/pt_cpt/synthesis/receipts/PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1_TIER_RECEIPT.json", "quantum-weyl/pt_cpt/synthesis/schema/phase2-cpt-feasibility-classification-v1.schema.json", "quantum-weyl/pt_cpt/synthesis/tests/__init__.py", "quantum-weyl/pt_cpt/synthesis/tests/test_cpt_feasibility_classification.py", "quantum-weyl/pt_cpt/synthesis/verify_cpt_feasibility_classification.py", "reports/phase2-cpt-feasibility-classification-2026-07-22.md", "planning/paper-coverage/phase2-cpt-paper15-correction-request.json"], "verify_commands": ["python3 quantum-weyl/pt_cpt/synthesis/cpt_feasibility_classification.py --check", "python3 quantum-weyl/pt_cpt/synthesis/verify_cpt_feasibility_classification.py", "pytest -q quantum-weyl/pt_cpt/synthesis/tests/test_cpt_feasibility_classification.py"]}, "native": {"authored_by": "sfc work-intent", "policy": "append-only (SPEC 4.5); an uncommitted delivery manifest — NO current_commit, NO test-success. Superseded by a later intent; sealed by WORK_COMMITTED."}},
+  "edges": [{"rel": "INTENDS", "to": "sf:program/work/phase2-cpt-feasibility-classification"}]
+}
