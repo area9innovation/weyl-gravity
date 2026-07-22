@@ -20,7 +20,8 @@ LEDGER = ROOT / f"reports/phase1-closure-claims-ledger-{STAMP}.json"
 SNAPSHOT = ROOT / f"reports/phase1-closure-dependency-snapshot-{STAMP}.json"
 PAPER_AUDIT = ROOT / f"planning/paper-coverage/phase1-closure-paper-audit-{STAMP}.json"
 REPORT = ROOT / f"reports/phase1-closure-{STAMP}.md"
-ATLAS = ROOT / "residual_atlas/programme-phase1-classification-ending-fragment-v1.json"
+ATLAS = ROOT / "residual_atlas/programme-phase1-classification-ending-atlas-fragment.json"
+LEGACY_ATLAS = ROOT / "residual_atlas/programme-phase1-classification-ending-fragment-v1.json"
 RECEIPT = ROOT / f"reports/PHASE1_CLOSURE_V1_TIER_RECEIPT.json"
 
 SOURCES = {
@@ -421,7 +422,7 @@ EVIDENCE: reports/phase1-closure-claims-ledger-{STAMP}.json
         "verification_commands": [
             "python3 planning/paper-coverage/generate_phase1_closure.py --check",
             "python3 planning/paper-coverage/verify_phase1_closure.py",
-            "python3 residual_atlas/validate_fragment.py residual_atlas/programme-phase1-classification-ending-fragment-v1.json",
+            "python3 residual_atlas/validate_fragment.py residual_atlas/programme-phase1-classification-ending-atlas-fragment.json",
         ],
         "entries": [{
             "id": "programme.phase1.classification_ending.no_candidate_selected",
@@ -467,6 +468,7 @@ EVIDENCE: reports/phase1-closure-claims-ledger-{STAMP}.json
         str(PAPER_AUDIT.relative_to(ROOT)): render_json(paper_audit),
         str(REPORT.relative_to(ROOT)): report,
         str(ATLAS.relative_to(ROOT)): render_json(atlas),
+        str(LEGACY_ATLAS.relative_to(ROOT)): render_json(atlas),
     }
     receipt = {
         "schema": "pure-weyl-programme-phase1-tier-receipt-v1",
@@ -481,7 +483,7 @@ EVIDENCE: reports/phase1-closure-claims-ledger-{STAMP}.json
             "python3 planning/paper-coverage/generate_phase1_closure.py --check",
             "python3 planning/paper-coverage/verify_phase1_closure.py",
             "python3 planning/paper-coverage/test_phase1_closure.py",
-            "python3 residual_atlas/validate_fragment.py residual_atlas/programme-phase1-classification-ending-fragment-v1.json",
+            "python3 residual_atlas/validate_fragment.py residual_atlas/programme-phase1-classification-ending-atlas-fragment.json",
         ],
         "tiers": {
             "tier_0": "PASS: generated outputs, exact input hashes, and scoped diff checked",
@@ -514,6 +516,7 @@ def main() -> int:
         PAPER_AUDIT: render_json(paper_audit),
         REPORT: report,
         ATLAS: render_json(atlas),
+        LEGACY_ATLAS: render_json(atlas),
         RECEIPT: render_json(receipt),
     }
     if args.emit:

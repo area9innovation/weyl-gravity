@@ -20,7 +20,7 @@ def main() -> int:
     ledger = json.loads((ROOT / f"reports/phase1-closure-claims-ledger-{STAMP}.json").read_text())
     snapshot = json.loads((ROOT / f"reports/phase1-closure-dependency-snapshot-{STAMP}.json").read_text())
     audit = json.loads((ROOT / f"planning/paper-coverage/phase1-closure-paper-audit-{STAMP}.json").read_text())
-    atlas = json.loads((ROOT / "residual_atlas/programme-phase1-classification-ending-fragment-v1.json").read_text())
+    atlas = json.loads((ROOT / "residual_atlas/programme-phase1-classification-ending-atlas-fragment.json").read_text())
     receipt = json.loads((ROOT / "reports/PHASE1_CLOSURE_V1_TIER_RECEIPT.json").read_text())
 
     assert ledger["result_state"] == "PHASE1_CLOSED_CLASSIFICATION_ENDING_NO_PHASE2_CANDIDATE"
