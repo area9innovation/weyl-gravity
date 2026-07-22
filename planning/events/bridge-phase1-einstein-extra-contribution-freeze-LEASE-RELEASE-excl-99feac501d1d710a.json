@@ -1,0 +1,38 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/bridge-phase1-einstein-extra-contribution-freeze-LEASE-RELEASE-excl-99feac501d1d710a",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {
+    "path": "planning/events/bridge-phase1-einstein-extra-contribution-freeze-LEASE-RELEASE-excl-99feac501d1d710a.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "LEASE",
+    "actor": "coordinator",
+    "base_revision": "science-forge-ir-v0",
+    "when": "2026-07-22T02:19:49Z",
+    "seq": 3,
+    "predecessor": "sf:program/event/bridge-phase1-einstein-extra-contribution-freeze-LEASE-ACQUIRE-excl-08029129df191afb",
+    "payload": {
+      "target": "sf:program/work/bridge-phase1-einstein-extra-contribution-freeze",
+      "agent": "bridge-1",
+      "lease_type": "exclusive",
+      "action": "RELEASE",
+      "acquired": "2026-07-21T20:35:43Z",
+      "expires": "",
+      "reason": "coordinator repair after the user confirmed there is no resident Bridge team or bridge-1 session; the leased item had no checkpoint and no work product"
+    },
+    "native": {
+      "authored_by": "coordinator explicit orphan-lease release",
+      "policy": "append-only ownership repair; prior lease events remain immutable and the unstarted bounded synthesis is reassigned to an existing resident team"
+    }
+  },
+  "edges": [
+    {
+      "rel": "LEASES",
+      "to": "sf:program/work/bridge-phase1-einstein-extra-contribution-freeze"
+    }
+  ]
+}

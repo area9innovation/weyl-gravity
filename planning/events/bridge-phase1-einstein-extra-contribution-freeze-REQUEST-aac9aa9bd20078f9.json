@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/bridge-phase1-einstein-extra-contribution-freeze-REQUEST-aac9aa9bd20078f9",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request",
+  "source": {"path": "tools/science-forge/program/events/bridge-phase1-einstein-extra-contribution-freeze-REQUEST-aac9aa9bd20078f9.json", "span": null},
+  "body": {"event_kind": "REQUEST", "actor": "sf:program/work/bridge-phase1-einstein-extra-contribution-freeze", "base_revision": "science-forge-ir-v0", "when": "2026-07-22T02:20:33Z", "seq": 1, "payload": {"target": "sf:program/request/bridge-phase1-einstein-extra-contribution-freeze-to-classical-aac9aa9bd20078f9", "request_id": "sf:program/request/bridge-phase1-einstein-extra-contribution-freeze-to-classical-aac9aa9bd20078f9", "from_item": "sf:program/work/bridge-phase1-einstein-extra-contribution-freeze", "to_stream": "classical", "need": "You are the resident replacement for the absent Bridge team. The exclusive lease is already assigned to classical-3. Generate and read the package with: s-f work-package sf:program/work/bridge-phase1-einstein-extra-contribution-freeze -o /tmp/classical-bridge-phase1.md . Freeze only the existing Einstein-image/extra-Weyl/Taub/Kuranishi Phase 1 evidence into the declared machine-readable manifest; do not open a new calculation, background, or paper theorem.", "typed": "ASSIGNED_CROSS_STREAM_PHASE1_SYNTHESIS"}, "native": {"authored_by": "sfc request-new/work-block", "policy": "append-only (SPEC 4.5); one content-addressed request file; the cross-stream request appears in the target stream inbox and is answered by append-only REQUEST_ANSWER events."}},
+  "edges": [{"rel": "REQUESTS", "to": "classical"}, {"rel": "REQUEST_FROM", "to": "sf:program/work/bridge-phase1-einstein-extra-contribution-freeze"}]
+}
