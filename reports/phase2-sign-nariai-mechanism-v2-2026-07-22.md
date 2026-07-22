@@ -175,3 +175,6 @@ normalized second-order branch canonical form.  For family robustness,
 construct and certify a separate open Nariai-type background family before
 transporting this fixed-background residue conclusion.
 
+EVIDENCE: `d_quotient_classical/phase2/nariai_sign_mechanism_v2/NARIAI_SIGN_MECHANISM_V2.json` — result `NARIAI_SIGN_MECHANISM_V2`, SHA-256 `abc73ddf5ada84dfe93d7891411f7134c7c2906ec3f70550fe50e1a6c542b4f8`.
+
+CLOSE-OUT: DONE — exact Nariai static-patch Einstein/complementary projectors and opposite Lee–Wald residue multipliers are certified within the stated horizon-flux and claim boundaries.
