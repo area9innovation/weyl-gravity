@@ -1,0 +1,42 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/quantum-counterflow-nonactivation-provenance-repair",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "quantum-counterflow-nonactivation-provenance-repair",
+  "source": {
+    "path": "planning/work-items/quantum-counterflow-nonactivation-provenance-repair.json",
+    "span": null
+  },
+  "body": {
+    "owner": "quantum-qme-1",
+    "state": "PROPOSED",
+    "stream": "quantum-qme",
+    "priority": 1,
+    "objective": "Repair the committed-blob provenance chain for the counterflow full-BV Hadamard and downstream physical-state positivity nonactivation results without changing their scientific dispositions.",
+    "stop_condition": "Pin scientific result commit 0966eebe5147e1458e419073940ae1dbedc17159; recompute every Hadamard tier-receipt output hash from the final committed blobs; add an independent committed-blob receipt replay with a rejected hash mutation; regenerate the downstream positivity certificate, atlas and receipt against the repaired receipt; replay all source pins and output hashes; add missing completion checkpoints for the three terminal counterflow quantum items; and deliver the accepted provenance repair request. Preserve every NOT_ACTIVATED lifecycle and claim boundary.",
+    "current_gate": "LOCAL-ALGEBRAIC provenance repair for committed nonactivation artifacts",
+    "forbid": "no change to the counterflow scientific disposition; no Hadamard, QME, anomaly, positivity, particle, scattering or unitarity promotion; no replacement of committed source objects; no broad receipt rewrite outside this dependency chain",
+    "depends_on": [
+      "sf:program/work/quantum-two-phase-counterflow-v2-local-anomaly-classification",
+      "sf:program/work/quantum-two-phase-counterflow-v2-full-bv-hadamard-preflight",
+      "sf:program/work/quantum-two-phase-counterflow-v2-physical-state-positivity"
+    ],
+    "allowed_paths": [
+      "planning/work-items/quantum-counterflow-nonactivation-provenance-repair.json",
+      "quantum-weyl/lorentzian/receipts/TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1_TIER_RECEIPT.json",
+      "quantum-weyl/lorentzian/verify_two_phase_counterflow_full_bv_hadamard_receipt.py",
+      "quantum-weyl/lorentzian/tests/test_two_phase_counterflow_full_bv_hadamard_receipt.py",
+      "quantum-weyl/transfer/two_phase_counterflow_physical_state_positivity_nonactivation.py",
+      "quantum-weyl/transfer/verify_two_phase_counterflow_physical_state_positivity_nonactivation.py",
+      "quantum-weyl/transfer/tests/test_two_phase_counterflow_physical_state_positivity_nonactivation.py",
+      "quantum-weyl/transfer/certificates/TWO_PHASE_COUNTERFLOW_PHYSICAL_STATE_POSITIVITY_NONACTIVATION_V1.json",
+      "quantum-weyl/transfer/receipts/TWO_PHASE_COUNTERFLOW_PHYSICAL_STATE_POSITIVITY_NONACTIVATION_V1_TIER_RECEIPT.json",
+      "residual_atlas/two-phase-counterflow-physical-state-positivity-nonactivation-fragment-v1.json",
+      "quantum-weyl/reports/two-phase-counterflow-physical-state-positivity-nonactivation-v1.md",
+      "reports/quantum-counterflow-nonactivation-provenance-repair-2026-07-22.md"
+    ],
+    "resource_hint": "Accepted request quantum-two-phase-counterflow-v2-full-bv-hadamard-preflight-to-quantum-qme-dcbc757c35c30698. This is provenance-only and must leave the scientific payload unchanged."
+  },
+  "edges": []
+}

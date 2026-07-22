@@ -3,27 +3,28 @@
   "result_id": "TWO_PHASE_COUNTERFLOW_PHYSICAL_STATE_POSITIVITY_NONACTIVATION_V1_TIER_RECEIPT",
   "subject_result_id": "TWO_PHASE_COUNTERFLOW_PHYSICAL_STATE_POSITIVITY_NONACTIVATION_V1",
   "recorded_at": "2026-07-21",
+  "provenance_repaired_at": "2026-07-22",
   "dependency_tags": ["REDUCED-MODE", "LORENTZIAN-CAUSAL"],
   "source_pins": {
     "hadamard": "0a52034f3e97336bc0da03861891c7610837a7f6eff2822fc604dafbc0ea53b7",
-    "hadamard_receipt": "7821559735e09354306e479edfa6ef555be7a1d831416a4e0d88f0ca5c65faf2",
+    "hadamard_receipt": "eed2c272392cf5b407c28162a88433fe281771b0ea8c427b9c5e71cff22e3391",
     "health": "cc3bb0ff507cfdd0721b5f2c203c8836e2e1860d8b4ba8dc3e4f12a257904b77",
     "health_receipt": "d2d2f1d2e7cd99aed2e6128c2194da925929394ece6d08eaa6f045d57ff4b523"
   },
   "output_hashes": {
-    "generator": "2ae20aa44970ca1306eff8d4e661e66734b413c40ec7e1f0282373095bc36231",
-    "verifier": "997acd7f386dff044a559ab912b570ff736f7221129a909c72a86f6bf84c7608",
+    "generator": "b7e89e642ab677bc700b7e2245b6174e89f65919fe08a91f4b30681129da20eb",
+    "verifier": "f668952960a443bce1e7c89a6c6414e1130fe1128bb06918c13a0f2ae69d8c82",
     "schema": "4db6c3acb432cd9a31d3a6f13ea5b10b9594c802700fc3eb75d6cca461c6bd55",
-    "certificate": "1f7b71e8095407ab2be73e5349edf23ed3645597068c5e1a851ef5299d3acbeb",
-    "tests": "f97eee5f1d701de90f39841f33656d1e5ebe0e02f1020da6b28efcf7641062df",
+    "certificate": "655e95d9e2f79d1f06ab5d29b57c0b8435c22bf3a204acd54d61015fe4fe9d81",
+    "tests": "42bfd6f755385419637d45ccf62de3d92e75562c4fa38c2d07ddf2aa093ed858",
     "report": "92cfc14e890873c827eb3d556ed9982833a24d870782aa94bb5ec7f083320b2f",
-    "atlas": "6391ede3ecb9b8cd7d6a4d592d7b3f208c1857ae4b30b2eb5f1a899b2a2646a1",
+    "atlas": "5f7c6ba58f441f2e12669de7d465e7d82f3cb3407356b23a43d83200d928d2d7",
     "team_brief": "e1b553f40fa07dbd89af69b5da79bcb599c07a268cc8f3d2defb536d8c30a981",
     "closeout": "73117354e580536020b028d9b54a35da0d452770133bfef557453e385fa4ca23"
   },
   "test_tiers": [
     {"tier": 0, "status": "PASS", "commands": ["py_compile", "json.tool", "explicit-path whitespace checks"]},
-    {"tier": 1, "status": "PASS", "commands": ["generator --check", "independent verifier with five contradiction mutations", "3 scoped tests", "shared atlas validator"]},
+    {"tier": 1, "status": "PASS", "commands": ["generator --check", "independent verifier with five scientific contradiction mutations and one receipt-hash mutation", "4 scoped tests", "shared atlas validator"]},
     {"tier": 2, "status": "NOT_RUN", "reason": "The required Hadamard input is content-addressed and explicitly nonactivated; no physical descent is constructed."},
     {"tier": 3, "status": "NOT_RUN", "reason": "No positivity or quantum lifecycle promotion occurs."}
   ],
