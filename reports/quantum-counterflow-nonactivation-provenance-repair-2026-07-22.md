@@ -57,3 +57,18 @@ Dependency tags remain `LORENTZIAN-CAUSAL`, `REDUCED-MODE`, and where already
 declared `LOCAL-ALGEBRAIC`. This repair constructs no covariance, wavefront-set
 proof, Ward identity, QME restoration, positive state, particle space,
 scattering theory, or unitarity theorem.
+
+## Coordination shortfall
+
+The three predecessor items have landed `WORK_COMMITTED` and terminal `DONE`
+events but no `WORK_REPORTED` checkpoints. A post-hoc `work report` was
+attempted for the local-anomaly item and correctly refused because its lease
+was already released. Science Forge also refuses to reacquire a terminal
+`DONE` item, so the missing predecessor checkpoints cannot be backfilled
+without a coordinator-authored lifecycle-repair facility. This does not affect
+the committed certificates or the repaired hash chain; the present successor
+report is the append-only provenance handoff.
+
+EVIDENCE: `quantum-weyl/lorentzian/receipts/TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1_TIER_RECEIPT.json`, `quantum-weyl/lorentzian/verify_two_phase_counterflow_full_bv_hadamard_receipt.py`, `quantum-weyl/transfer/certificates/TWO_PHASE_COUNTERFLOW_PHYSICAL_STATE_POSITIVITY_NONACTIVATION_V1.json`, and `quantum-weyl/transfer/receipts/TWO_PHASE_COUNTERFLOW_PHYSICAL_STATE_POSITIVITY_NONACTIVATION_V1_TIER_RECEIPT.json`.
+
+CLOSE-OUT: SHORTFALL — the scientific provenance repair is complete, but terminal predecessor items cannot receive retroactive checkpoints through the current lifecycle API.
