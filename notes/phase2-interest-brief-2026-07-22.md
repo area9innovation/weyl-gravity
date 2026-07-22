@@ -22,6 +22,16 @@ written.  They found three load-bearing scope corrections:
 The implementation graph is split at these boundaries so a polar, boundary,
 BRST or parity shortfall cannot erase an independently completed theorem.
 
+Wave-1 disposition (2026-07-22): the structured-metric contract and
+counterflow positive-$\eta$ negative control are exact; the generic-$\ell$
+axial Schwarzschild recurrence and exceptional set are exact; and the dyonic
+family preflight found a global fixed-bundle obstruction.  For $E\ne0$,
+$\mathcal L_{\partial_t}A=E\,dx$ has nonzero $S^1$ period, so the metric and
+field strength are stationary but the connection has no continuous global
+time-translation lift.  The accompanying parity--duality involution also
+fails to preserve fixed-Chern tangents.  The invalid dyonic tangent/sign
+continuations are therefore retired rather than weakened.
+
 ## P2-A  Structured CPT feasibility (pilot, first gate)
 
 A structured pseudo-Hermitian/CPT **preflight**, not a Mannheim
@@ -80,31 +90,25 @@ An explicit $A_\ell(\omega)$ with a certified zero-set classification is
 already a substantial standalone result (the Lorentzian counterpart of
 the Euclidean/AdS Einstein-selection arguments).
 
-## P2-C  Background robustness of the sign result
+## P2-C  Independent sign-mechanism classification
 
-Use the stationary compact dyonic $k_1=0$ family at fixed magnetic Chern
-number.  With
+The proposed stationary compact dyonic family is now an exact negative
+preflight, not a valid sign phase-diagram base.  Its nonzero electric field
+changes the spatial Wilson loop, preventing a continuous global lift of
+$H=\partial_t$ on the fixed bundle; the only background-fixing
+parity--duality involution leaves the fixed-Chern tangent space.  Thus no
+inherited positive-frequency or axial/polar comparison is available away
+from the pure-magnetic endpoint.
 
-\[
- \beta=\frac{\kappa N^2}{4q_{\min}^2},\qquad
- k_2=\frac1{\beta(1+\tau^2)},\qquad
- P=\frac{2q_{\min}}{N\kappa(1+\tau^2)},\qquad E=\tau P,
-\]
-\[
- \alpha_B=\frac{3N^2}{4q_{\min}^2}(1+\tau^2).
-\]
-
-This is explicitly a coupling--background family, not an open family within
-one fixed $\alpha_B$ theory.  It preserves the compact Cauchy surface and
-global $H=\partial_t$.  First decide whether the electric background preserves
-parity only after a discrete duality/charge action; otherwise use a combined
-mixed-parity carrier.  Then compute the family map
-
-  (background parameters) ↦ (inertia h_E, inertia h_A, rad Ω).
-
-Output: either an open robustness region or exact signature walls with a
-mechanism explaining them.  Either is the citable form of the Result
-card A surprise.
+The replacement experiment uses the already factorized Nariai Bach complex
+as an independent curved-background mechanism test.  It must first choose
+one valid sign observable: a static-patch canonical-energy/current form with
+declared horizon boundaries, a Taub charge for a named Killing generator, or
+a global mode form with an explicit Euclidean/de Sitter complex structure.
+It then identifies the Einstein projector, complementary fourth-order
+factor, and their pure-Weyl Lee--Wald residues.  The result may be a scoped
+mechanism theorem or an exact obstruction to every declared sign structure;
+neither outcome is called the original compact Weyl--Maxwell family theorem.
 
 ## P2-D  Optional Lorentzian quantum theorem (stretch, not closure)
 
@@ -145,8 +149,9 @@ predeclared operational observable.
 
 Short Phase 2 closes with: an exact structured-CPT feasibility
 classification; a general real-frequency Schwarzschild asymptotic phase
-diagram; a compact-background sign-robustness theorem; an updated
-Paper 15.  The Hadamard result is a high-value bonus.
+diagram; the exact compact dyonic global-lift obstruction plus an independent
+curved-background sign-mechanism classification; and an updated Paper 15.
+The Hadamard result is a high-value bonus.
 
 Impact estimates: CPT pilot alone ≈ 6–6.5/10; general Schwarzschild
 theorem or exceptional-frequency classification ≈ 8/10; Schwarzschild +

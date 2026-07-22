@@ -121,25 +121,23 @@ null-infinity phase space, scattering theory, monochromatic Hilbert norm,
 QNM, stability or particle theorem.  The already certified raw-corner and
 local-counterterm obstructions are imported rather than hidden or rerun.
 
-### P2-C — robustness of the compact sign mismatch
+### P2-C — compact-family obstruction and independent sign mechanism
 
-The first family is the stationary compact dyonic product, not an off-wall
-pure-magnetic branch without a comparable global positive-frequency split.
-At fixed magnetic Chern number and `k1=0`, use
+Wave 1 proved that the proposed stationary dyonic continuation is not a valid
+fixed-bundle positive-frequency family.  Although its metric and field
+strength are stationary, `L_H A=E dx` has nonzero `S1` period for `E!=0`, so
+`H=partial_t` has no continuous global connection lift.  Its background-fixing
+parity--duality involution also fails to preserve fixed-Chern tangents.  The
+dependent dyonic tangent and sign-diagram jobs are retired.
 
-```text
-u = beta k2 in (0,1],   k2=u/beta,
-P = N k2/(2 q_min),     E^2=(k2/kappa)(1-u),
-alpha_B = alpha_crit/u.
-```
-
-The present pure-magnetic fixture is `u=1`.  This family preserves
-`R_t x S1 x S2` and the same global time generator, so the Hermitian
-positive-frequency forms are comparable.  The deliverable is either an open
-region on which the Einstein/additional inertia mismatch persists or an
-exact signature-wall classification with its invariant mechanism.  Nariai is
-a separate mechanism cross-check, not the primary family, because its current
-causal machinery does not yet provide the same global stationary splitting.
+The replacement is an independent Nariai mechanism classification using the
+already exact factorized Bach complex.  It must identify the Einstein and
+complementary projectors and adopt exactly one valid sign structure: a
+static-patch current/canonical energy with horizon boundaries, a Taub charge
+for a declared Killing generator, or a global mode form with an explicit
+Euclidean/de Sitter complex structure.  A scoped residue/sign theorem or the
+first exact obstruction is terminal evidence.  It is not represented as the
+same Weyl--Maxwell family or as a global stationary positive-frequency result.
 
 ### P2-D — optional Lorentzian quantum theorem
 
@@ -160,9 +158,10 @@ priorities.
 
 The short phase closes with: an exact structured-CPT feasibility
 classification; a generic-real-frequency Schwarzschild asymptotic phase
-diagram (with axial theorem and explicit polar disposition); a compact-family
-sign-robustness theorem; and an updated Paper 15.  The Hadamard result is a
-bonus.
+diagram (with axial theorem and explicit polar disposition); the compact
+dyonic global-lift obstruction plus an independent curved-background
+sign-mechanism classification; and an updated Paper 15.  The Hadamard result
+is a bonus.
 
 Phase 2 pilots short-lived subagents under one coordinator rather than fixed
 resident sessions.  The coordinator owns the roadmap, dependency graph,
