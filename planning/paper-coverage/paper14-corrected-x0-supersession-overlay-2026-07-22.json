@@ -1,0 +1,94 @@
+{
+  "append_only_parent": "planning/paper-coverage/phase1-paper-coverage-overlay-2026-07-22.json",
+  "append_only_parent_sha256": "389d1033e9b40bd66cfc5237d3cd2df4ea2575e1d17847d4a519dba89f6b8be2",
+  "claim_map": "paper/14-pure-weyl-black-hole-radiation-claim-map.json",
+  "claim_map_sha256": "b7eb273ad1b48d55260bc1562c25816242fb2880c60149512135620a0955168f",
+  "ir": "science-forge-ir-v0",
+  "nodes": [
+    {
+      "body": {
+        "action": "MARK_STALE_BY_APPEND_ONLY_SUPERSESSION",
+        "reason": "The corrected axial X0 lift and restriction-stable polar module invalidate the old Einstein-only infinity-selection reading while preserving independent horizon and Einstein-current components.",
+        "stamp": "2026-07-22",
+        "superseded_by": "sf:coverage/edge/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1/paper-14/v2",
+        "target_edge": "sf:coverage/edge/PURE_WEYL_BH2C_SYMBOLIC_FLUX_RADIATION_CLASS/paper-14/v1",
+        "version": 2
+      },
+      "id": "sf:coverage/correction/PURE_WEYL_BH2C_SYMBOLIC_FLUX_RADIATION_CLASS/paper-14/v2",
+      "kind": "coverage_correction"
+    },
+    {
+      "body": {
+        "action": "MARK_STALE_BY_APPEND_ONLY_SUPERSESSION",
+        "reason": "The corrected axial X0 lift and restriction-stable polar module invalidate the old Einstein-only infinity-selection reading while preserving independent horizon and Einstein-current components.",
+        "stamp": "2026-07-22",
+        "superseded_by": "sf:coverage/edge/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1/paper-14/v2",
+        "target_edge": "sf:coverage/edge/PURE_WEYL_BH_ENDPOINT_NONSELECTION_ASSEMBLY/paper-14/v1",
+        "version": 2
+      },
+      "id": "sf:coverage/correction/PURE_WEYL_BH_ENDPOINT_NONSELECTION_ASSEMBLY/paper-14/v2",
+      "kind": "coverage_correction"
+    },
+    {
+      "body": {
+        "by": "Asger Alstrup Palm",
+        "materiality": "HEADLINE",
+        "native": {
+          "source_schema": "materiality-v0"
+        },
+        "rationale": "Terminal correction of Paper 14's formal-infinity disposition after the generic-l axial counterexample and polar Q21 filtration.",
+        "result_id": "sf:coverage/result/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1",
+        "stamp": "2026-07-22",
+        "version": 1
+      },
+      "id": "sf:coverage/materiality/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1/v1",
+      "kind": "materiality"
+    },
+    {
+      "body": {
+        "asserts_lifecycle": "CLASSIFIED",
+        "boundary": "Formal radial modes in a fixed Lee-Wald representative; global matching and asymptotic phase space remain open.",
+        "cites": [
+          "sf:coverage/result/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1"
+        ],
+        "material": true,
+        "paper": "paper:14-pure-weyl-black-hole-radiation"
+      },
+      "id": "paper:14-pure-weyl-black-hole-radiation/claim/phase2_generic_l_parity_disposition_v1",
+      "kind": "paper_claim"
+    },
+    {
+      "body": {
+        "boundary": "Formal radial modes in a fixed Lee-Wald representative; no horizon-to-infinity phase space, scattering, stability, particles, positivity, or quantum theorem.",
+        "lifecycle": "CLASSIFIED",
+        "native": {
+          "certificate": "black_hole_programme/phase2/generic_l_synthesis/certificate.json",
+          "certificate_sha256": "8a9914400f0929f37a63570b95383ebc4131cbf2928b5f923db0d002d0783d33",
+          "source_kind": "phase2-terminal-certificate"
+        },
+        "result_id": "PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1"
+      },
+      "edges": [],
+      "id": "sf:coverage/result/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1",
+      "kind": "result",
+      "title": "PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1"
+    },
+    {
+      "body": {
+        "claim": "paper:14-pure-weyl-black-hole-radiation/claim/phase2_generic_l_parity_disposition_v1",
+        "edge_kind": "PRIMARY_THEOREM_CORRECTION",
+        "from": "sf:coverage/result/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1",
+        "native": {
+          "source_schema": "result-paper-edge-v0"
+        },
+        "stale": false,
+        "stamp": "2026-07-22",
+        "to": "paper:14-pure-weyl-black-hole-radiation",
+        "version": 2
+      },
+      "id": "sf:coverage/edge/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1/paper-14/v2",
+      "kind": "result_paper_edge"
+    }
+  ],
+  "schema": "paper14-corrected-x0-supersession-overlay-v1"
+}

@@ -33,7 +33,7 @@ project was commissioned and coordinated by Asger Alstrup Palm
 (\texttt{asger@area9.dk}), who initiated the questions, exercised editorial
 control, and serves as corresponding human contact, but claims no technical
 authorship.}}
-\date{Working draft, 19 July 2026}
+\date{Working draft, 22 July 2026}
 
 \begin{document}
 \maketitle
@@ -62,15 +62,20 @@ Controlled finite-series fixtures at three frequencies exhibit nonzero
 Einstein--additional cross pairing and nonzero additional-sector pairing;
 these fixture results are not promoted to a symbolic all-frequency theorem.
 
-At infinity the certified characteristic polynomial is repeated.  Until its
-Jordan structure, metric reconstruction, finite-flux falloff, and polar
-analogue are completed, we claim only endpoint nonselection: horizon
-analyticity together with the presently tested real-frequency leading
-asymptotics does not imply \(\delta R_{ab}=0\).  This is not a no-go against
-all local causal truncations; the local Cauchy restriction
-\(\psi|_\Sigma=\nabla_n\psi|_\Sigma=0\) selects the Einstein kernel at the
-linear level.  We make no claim about stability, quasinormal spectra,
-nonlinear closure, Hawking radiation, or quantum unitarity.
+At infinity the earlier \(\ell=2\), \(M_{\rm BH}\omega=3/5\) claim that finite radial
+pairing selects exactly the Einstein sector is superseded.  The legacy axial
+\(X_0\) lift omitted a differentiated source term; the corrected non-Einstein
+lift exists formally for every \(\ell\ge2\) and real \(\omega\ne0\), and its
+Lee--Wald radial density is integrable.  Independently, the polar
+restriction-stable module contains a mixed Einstein/additional line that is
+finite and generically nonradical, with an explicit algebraic exceptional
+locus.  Thus neither leading endpoint diagnostics nor finite formal radial
+pairing isolates the Einstein image.  These are formal infinity-mode
+statements: no horizon-to-infinity matching, asymptotically flat phase space,
+scattering, stability, quasinormal spectrum, Hawking state, or quantum
+unitarity theorem is claimed.  The local Cauchy restriction
+\(\psi|_\Sigma=\nabla_n\psi|_\Sigma=0\) still selects the Einstein kernel at
+the linear level.
 \end{abstract}
 
 \section*{AI authorship and computational accountability}
@@ -523,12 +528,13 @@ amplitudes of order \(r^0\) and \(r^{-1}\).  But the characteristic is
 \emph{double}.  The polynomial alone does not determine geometric
 multiplicity.  As in \((D^2+\omega^2)^2h=0\), a Jordan chain may produce
 \(r_*e^{\pm i\omega r_*}\) even though every characteristic exponent is
-oscillatory.  This question is now certified: the integer-spaced
-exponent resonances within each characteristic sector are consistent, so
-the \emph{carrier} formal fundamental systems at infinity are log-free in
-both parity sectors (axial at symbolic real frequency; the polar
-\(\mu=-2\omega\) sector at two rational fixtures) --- no Jordan blocks at
-the formal carrier level.
+oscillatory.  The axial carrier and homogeneous metric recurrences are now
+known to all formal orders for every integer \(\ell\ge2\) and real
+\(\omega\ne0\); their integer-spaced resonance is compatible and forces no
+logarithm.  In the polar calculation below we use only the maximal
+restriction-stable module through the certified depth.  Two additional
+terminal-only prefix vectors still require their next compatibility test and
+are not promoted to formal solutions.
 
 \begin{theorem}[Endpoint regularity-and-leading-symbol nonselection]
 On the declared Schwarzschild axial \(\ell=2\), nonzero-real-frequency mode
@@ -541,75 +547,139 @@ endpoint diagnostics do not select the Einstein kernel.
 
 This deliberately does \emph{not} say that every ordinary asymptotically
 flat radiation condition admits an additional metric mode.  That stronger
-statement requires: (i) the full asymptotic Jordan decomposition;
-(ii) reconstruction of \(h\) from \(\psi=\delta R[h]\); (iii) falloff in a
-regular tetrad or asymptotic gauge; and (iv) finite Lee--Wald flux at null
-infinity.  Three of these four stations are now certified, and they
-\emph{reverse} the expectation the nonselection theorem might have
-suggested.  (i) The carrier Jordan decomposition is log-free in both
-parities.  (ii) Reconstruction is not: solving \(\delta R[h]=\psi\) at
-infinity, the pure-power ansatz is inconsistent and the single-log ansatz
-succeeds with nonzero log part in both characteristic sectors --- the
-composed metric carries \emph{logarithmic tails}, the inhomogeneous
-realization of the double characteristic root.  (iv) Substituting the
-formal pair classes into the sphere-integrated slice density \(F^v\)
-(axial \(\ell=2\), \(\omega=3/5\) fixture): the Einstein self-class falls
-as \(r^{-2}\) in both sectors and has \emph{finite} slice norm, while
-every class involving the composed modes has leading behavior between
-\(r^{0}\ln r\) and \(r^{2}\) and \emph{diverges}, invariantly under
-Einstein-shifts of the composed representative.
+statement requires convergence or another completion of the formal series,
+falloff in a regular tetrad or asymptotic gauge, a differentiable
+Lee--Wald phase space, and a horizon-to-infinity connection map.  None is
+supplied by the formal calculations below.
 
-\begin{theorem}[Fixture norm-selection at infinity]
-On the declared axial \(\ell=2\), \(\omega=3/5\) mode laboratory, the
-finite-slice-norm asymptotic class of the sphere-integrated presymplectic
-density contains exactly the Einstein sector.
+\subsection{All-angular-momentum Einstein finiteness}
+
+Let \(\Lambda=\ell(\ell+1)\) and use \(m=1\) units.  For the polynomial
+Einstein branch \(E_0\) and the oscillatory branch \(E_2\), normalized by unit
+leading \(F=dH_1/dr\), exact angular reduction of the literal sphere-integrated
+Lee--Wald slice density gives
+\begin{align}
+ F^v(E_0,\overline E_0)
+  &= -\frac{4i\pi\alpha_{\rm W}\omega\Lambda(\Lambda-2)}{2\ell+1}
+     r^{-2}+O(r^{-3}),\\
+ F^v(E_2,\overline E_2)
+  &= -\frac{i\pi\alpha_{\rm W}\Lambda(\Lambda-2)}
+          {\omega^3(2\ell+1)}r^{-2}+O(r^{-3}).
+\end{align}
+The coefficients have no zero for integer \(\ell\ge2\), real
+\(\omega\ne0\), and nonzero \(\alpha_{\rm W}\).  General mass is recovered
+with \(\widehat\omega=m\omega\).
+
+\begin{theorem}[Generic-\(\ell\) axial Einstein radial finiteness]
+For every integer \(\ell\ge2\) and real \(\omega\ne0\), both formal axial
+Einstein branches have \(F^v=A_{EE}r^{-2}+O(r^{-3})\) with
+\(A_{EE}\ne0\) in the declared Lee--Wald representative.
 \end{theorem}
 
-The \emph{finite} side of this selection is no longer fixture-bound.  Driving
-the certified sphere-integrated Lee--Wald slice density \(F^v\) with the
-certified Einstein profiles at \emph{symbolic} real \(\omega\), retaining all
-boundary and derivative-of-curvature terms (no leading-exponent shortcut), the
-axial Einstein conjugate pairs fall as
+This is radial integrability of a formal mode density.  It is not a Hilbert
+norm, an asymptotic phase space, or a selection theorem.
+
+\subsection{Corrected axial \texorpdfstring{\(X_0\)}{X0}: a finite non-Einstein direction}
+
+The earlier \(\ell=2\), \(\widehat\omega=3/5\) infinity table used a metric
+lift that did not satisfy all original Ricci reconstruction rows.  When the
+radial source was replaced by a temporary symbol before differentiation, the
+term
 \begin{equation}
- F^v[E_0\times E_0]\sim r^{-2},\qquad
- F^v[E_2\times E_2]\sim r^{-2},
+ \frac{2r c'(r)}{r-2m}
 \end{equation}
-with an \(\omega\)-independent integer leading power \(-2<-1\) and a nonzero,
-real-pole-free leading coefficient.  Because \(\omega\) enters the extra-branch
-carrier exponents \(\pm i\omega,\ \pm2i\omega\) only through the imaginary
-tortoise phase, the amplitude real parts are \(\omega\)-independent: the
-Einstein slice norm is \emph{finite for every real \(\omega\neq0\)}, with
-\(\omega=0\) the excluded exceptional carrier.
+was silently lost from the \(F'=H_1''\) equation.  Substitution of that
+legacy lift into the original row leaves the exact defect
+\begin{equation}
+ \delta R_{r\varphi}[h_{\rm legacy}]-Q S_\ell=c'(r)S_\ell,
+\end{equation}
+which equals \(S_2/2+O(r^{-2})\) at the published fixture.  Thus its
+logarithmic tail and divergent \(X_0\) entry did not describe a solution of
+\(\delta R[h]=\psi\).
 
-\begin{theorem}[Axial symbolic-frequency Einstein finiteness]
-On the declared axial \(\ell=2\) sector at symbolic real \(\omega\neq0\), the
-literal Lee--Wald Einstein slice norm is finite (\(F^v\sim r^{-2}\)),
-\(\omega\)-independently.  The complementary divergent classes and the polar
-sector remain at the \(\omega=3/5\) fixture level.
+With the derivative restored, the rate-zero top carrier has
+\(P=1+O(r^{-1})\), hence nonzero \(\delta R[h]\), and its metric lift extends
+uniquely to all formal radial orders modulo an Einstein shift.  In \(m=1\)
+units its exact mixed density begins
+\begin{equation}
+ F^v(E_0,\overline X_0)=
+ -\frac{8i\pi\alpha_{\rm W}\Lambda
+ (\Lambda^2-2\Lambda-6i\omega)}
+ {\omega(\Lambda-2)(2\ell+1)}r^{-2}+O(r^{-3}).
+\end{equation}
+The numerator cannot vanish on the physical real-frequency domain, and every
+\(X_0\)--\(X_0\) coefficient at the nonintegrable powers \(p\ge-1\) cancels.
+
+\begin{theorem}[Generic-\(\ell\) axial Einstein-only selection counterexample]
+For every integer \(\ell\ge2\) and real \(\omega\ne0\), the corrected formal
+\(X_0\) lift is non-Einstein and has finite fixed-representative Lee--Wald
+radial pairing.  Hence radial pairing finiteness does not isolate the axial
+Einstein image in this formal class.
 \end{theorem}
 
-The Einstein--extra symplectic pairing carries an invariant of the same
-data.  On \(\mathrm{span}(E,X)\) the Lee--Wald Gram is
-\(G=\begin{psmallmatrix}0 & a\\ \bar a & b\end{psmallmatrix}\), with
-\(a=a(\omega)=iF^r(E,X)/(\pi\alpha)\) the exact rational cross invariant
-(nonzero for every real \(\omega\neq0\)) and \(b\) the
-representative-dependent extra self-pairing.  Then \(\det G=-|a|^2<0\)
-strictly, so \(G\) has \emph{rank two and signature \((1,1)\), independent of
-the representative \(b\)}.  The rank and signature are invariant; the sign of
-the extra self-pairing \(b\) is \emph{not}, and no such basis-dependent sign
-is claimed.
+The other axial additional direction \(X_2\) is not classified by this
+theorem.
 
-Thus the two ends of the exterior play opposite roles: the tested horizon
-and leading-symbol diagnostics do not select the Einstein kernel, but
-symplectic-norm finiteness at infinity does --- as a phase-space
-normalization, not a local differential boundary condition --- and on the
-finite-flux phase space the additional solution, admitted at the horizon, is
-excluded at infinity by norm finiteness rather than by any local boundary
-condition.  Station (iii), falloff in a regular tetrad or asymptotic gauge,
-remains open; the divergent-class table and the polar recomputation remain at
-the fixture level; and the exact global horizon-to-infinity connection map
-(a confluent-Heun connection) remains the open transcendental object.  Nor is there a no-go against local causal selection: it is
-now a certified statement.  On the globally hyperbolic exterior with
+\subsection{Polar mixed finite line and its exceptional wall}
+
+On the maximal restriction-stable polar module, choose the ordered formal
+basis \((E,X_0,X_1,X_2)\).  The denominator-cleared current matrices at
+powers \(p=0,-1,-2\) are anti-Hermitian.  The \(p=0\) matrix has rank three
+and a one-dimensional mixed Einstein/additional radical.  If \(y\) spans
+that line, then
+\begin{equation}
+ y^\dagger N^{(-1)}y=0,
+\end{equation}
+while its first finite coefficient factors as
+\begin{equation}\label{eq:polar-q21-wall}
+ y^\dagger N^{(-2)}y=
+ C\,\omega^{51}\Lambda^3(\Lambda-2)^5P_6^2P_{20}
+ Q_{21}(\Lambda,\omega^2).
+\end{equation}
+The constant \(C\) is nonzero, and the exact sum-of-squares and resultant
+certificates show that \(P_6P_{20}\ne0\) for integer \(\ell\ge2\) and real
+\(\omega\ne0\).  Therefore the filtered line is generically nonradical.  At
+\(Q_{21}=0\) its deeper disposition remains open.
+
+Writing \(x=\widehat\omega^2>0\), the exact positive-root phase diagram is
+\begin{center}
+\begin{tabular}{@{}c c c@{}}
+\toprule
+Harmonic & positive \(x\)-roots & real nonzero \(\widehat\omega\)-roots\\
+\midrule
+\(\ell=2\) & 0 & 0\\
+\(\ell=3\) & 3 & 6\\
+\(4\le\ell\le10\) & 1 & 2\\
+\(11\le\ell\le40\) & 3 & 6\\
+\(\ell\ge41\) & 1 & 2\\
+\bottomrule
+\end{tabular}
+\end{center}
+At the legacy fixture \((\Lambda,x)=(6,9/25)\),
+\begin{equation}
+ Q_{21}(6,9/25)=
+ -\frac{174226120816040380076641138108451235935620694016}
+ {227373675443232059478759765625}\ne0.
+\end{equation}
+The previously recorded longer rational was \(Q_{21}(6,81/625)\), caused by
+squaring \(x\) twice; it was neither the fixture value nor a Hilbert norm.
+
+\begin{theorem}[Generic polar formal radial disposition]
+Away from the explicit \(Q_{21}\) wall, a one-dimensional mixed
+Einstein/additional polar line is finite through the nonintegrable layers and
+has nonzero first finite pairing.  Thus formal radial pairing finiteness does
+not canonically select a polar Einstein representative.
+\end{theorem}
+
+This theorem neither extends the terminal-only polar prefixes nor matches the
+mixed line to future-horizon-regular data.  In particular, the axial and
+polar infinity results do not identify a global solution admitted at both
+ends of the exterior.
+
+\subsection{Local Cauchy selection remains available}
+
+There is no no-go against local causal selection.  On the globally
+hyperbolic exterior with
 Cauchy surface \(\Sigma=\{t=\mathrm{const},\,r>2m\}\), the local Cauchy
 condition
 \begin{equation}
@@ -716,38 +786,16 @@ as in the axial sector: the endpoint-nonselection result is now
 this is not a classification of all local differential boundary
 operators.
 
-\emph{(v) Polar asymptotics and norm selection.}  The asymptotic gate now
-closes in the polar sector as well (\(\omega=3/5\) fixture).  Solving
-\(\delta\mathrm{Ric}[h]=\psi\) at infinity for each leading carrier formal
-solution, the polar composed lift is \emph{power-enhanced}: in the
-\(\mu=0\) sector the pure-power and logarithmic ans\"atze at the naive
-base all fail, and the lift requires exactly one extra power of \(r\)
-together with a single logarithm --- the inhomogeneous realization of the
-certified rank-one resonance (``at most one power of enhancement'') ---
-while the \(\mu=-2\omega\) sector lifts as a pure oscillatory power with
-neither enhancement nor logarithm, in contrast to the axial sector's
-two-sided logarithmic tails.  The exact conformal-gauge lift
-(\(h=\Phi g\), \(\Box\Phi=0\)) passes through the same machinery as a
-pure power, an internal control that also guards the source-series depth
-(the derived carrier sources carry positive \(r\)-weights, so shallow
-carrier jets corrupt the resonant staircase; the certified computation
-uses depth-12 jets with recorded validity margins).  Substituting the
-conjugate pair classes into the sphere-integrated slice density \(F^v\):
-the \(\mu=0\) Einstein self-pair is \emph{identically zero} in the slice
-density --- an extra degeneracy of that sector --- and the
-\(\mu=-2\omega\) Einstein self-pair falls as \(r^{-2}\), exactly the
-axial Einstein behavior, so the Einstein slice norm is finite in both
-sectors (the certified vanishing of the polar Einstein-branch
-\emph{radial} flux for conjugate pairs is a separate exact statement);
-meanwhile every pair involving a composed mode diverges, with leading
-powers \(r^{1}\) to \(r^{4}\), over all carrier representatives.
-
-\begin{theorem}[Polar fixture norm-selection at infinity]
-On the declared polar \(\ell=2\), \(\omega=3/5\) mode laboratory, the
-finite-slice-norm asymptotic class of the sphere-integrated presymplectic
-density contains exactly the Einstein sector: the norm-selection of the
-axial fixture theorem is parity complete at the fixture level.
-\end{theorem}
+\emph{(v) Polar formal infinity module.}  A later full-seven-row audit found
+that the shallow four-state master used in the earlier norm-selection table
+contained a source-zero direction that did not satisfy the complete Ricci
+system.  The restriction-stable replacement and its current filtration are
+summarized by Equation~\eqref{eq:polar-q21-wall}: a mixed Einstein/additional line is
+finite and generically nonradical.  The former power-enhanced/logarithmic
+fixture and parity-complete Einstein-only norm-selection theorem are therefore
+superseded.  The independently verified polar composition, horizon reach,
+Einstein isotropy, conformal degeneracy, and controlled horizon pairings in
+items (i)--(iv) are unaffected.
 
 \section{Horizon monodromy temperature}
 
@@ -799,21 +847,20 @@ Carry current? & Einstein self-block exactly null; mixed/additional blocks
 nonzero in fixtures & exact identity plus three frequencies\\
 Selected by tested endpoints? & no: horizon and leading-symbol tests do not
 force \(\psi=0\) & not a general causal no-go\\
-Asymptotic metric radiation? & carrier formal systems log-free; composed
-metric has logarithmic tails (axial) or one power of enhancement with a
-single log (polar $\mu=0$); finite-slice-norm class at infinity is
-exactly the Einstein sector in both parities, the polar $\mu=0$ Einstein
-pair identically zero in the slice density & axial Einstein finite side
-symbolic ($F^v\sim r^{-2}$, all real $\omega\neq0$); divergent classes and
-polar at fixture $\omega=3/5$; tetrad falloff and phase-space construction
-open\\
-Einstein--extra pairing invariant? & Lee--Wald Gram rank two, signature
-$(1,1)$, representative-independent; extra self-pairing sign not invariant &
-axial $\ell=2$, real $\omega\neq0$\\
+Formal radial infinity? & Einstein axial density is integrable for every
+$\ell\ge2$ and real $\omega\ne0$; corrected axial $X_0$ is also finite and
+non-Einstein; polar sector has a mixed finite line & fixed Lee--Wald
+representative; no phase space, norm, or global matching\\
+Polar exceptional wall? & generically nonradical finite line; exact wall
+$Q_{21}(\ell(\ell+1),\widehat\omega^2)=0$ with certified harmonic root counts &
+deeper filtration open on the wall\\
+Einstein--extra horizon pairing invariant? & Einstein block isotropic;
+nonzero cross pairing and full rank in controlled fixtures; extra self-pairing
+sign not invariant & axial $\ell=2$, real $\omega\neq0$\\
 Complex-frequency structure? & axial modes and cross current continue
-meromorphically, exact singular set $\{i,i/2\}$ (polar not activated);
-Einstein BVP well-posed modulo discrete Wronskian zeros, additional branch
-log-tail obstructed & \textsc{reduced-mode}; not a spectrum\\
+meromorphically with exact singular set $\{i,i/2\}$ (polar not activated);
+the Einstein connection problem is conditional on an uncomputed Wronskian &
+\textsc{reduced-mode}; not a spectrum or BVP theorem\\
 Static ($\omega=0$) sectors? & log-classified: two-parameter log-free
 families both parities; polar Einstein variables degenerate &
 classification only; static composition open\\
@@ -838,13 +885,14 @@ Stable/ringing? & not established & complex frequencies open; no QNM\\
 The paper does not establish:
 \begin{itemize}
 \item a complete exterior initial-boundary well-posedness theorem: the
-      Einstein-branch complex-frequency boundary-value problem is well-posed
-      only \emph{modulo} the discrete zeros of the connection Wronskian (the
-      confluent-Heun connection, uncomputed), and the additional-branch
-      outgoing condition is certified \emph{ill-defined} by the log tails
-      rather than resolved;
-\item general \(\ell,m\), the \(\omega=0\) sector, or a non-Einstein
-      background Ricci-carrier composition;
+      complex-frequency Einstein connection is conditional on the
+      nonvanishing of an uncomputed confluent-Heun Wronskian, while no
+      outgoing function space has been constructed for the additional
+      directions;
+\item convergence or summability of the generic-\(\ell\) formal series,
+      axial \(X_2\), the deeper polar filtration on the \(Q_{21}=0\) wall,
+      the terminal-only polar prefixes, or a non-Einstein-background
+      Ricci-carrier composition;
 \item a canonical splitting of the Bach solution space, or complete metric
       reconstruction from every Ricci-carrier solution;
 \item a representative-invariant sign theory for the carrier self-pairing
@@ -857,10 +905,9 @@ The paper does not establish:
 \item a second-order physical-process first law or nonlinear horizon
       dynamics;
 \item asymptotically flat conformal-gravity scattering with a complete
-      boundary phase space and metric/tetrad falloffs: the axial Einstein
-      \emph{finite} side is now symbolic-frequency, but the divergent-class
-      table, the polar recomputation, the regular-tetrad falloff audit and the
-      gauge-audited phase-space/charge-algebra construction remain open;
+      boundary phase space, metric/tetrad falloffs, gauge-audited charge
+      algebra, and horizon-to-infinity connection map: formal radial
+      integrability is not a substitute for any of these;
 \item Hawking states, particles, grey-body factors, luminosity, a quantum
       BRST quotient, positivity, or unitarity: the monodromy temperature is
       a mode-level continuation factor, not a quantum state construction.
@@ -914,24 +961,20 @@ Horizon monodromy temperature &
 \cert{black_hole_programme/certificates/BH4_HAWKING_MONODROMY.json}\\
 Static-sector log classification &
 \cert{black_hole_programme/certificates/BH2_OMEGA_ZERO.json}\\
-Log-free carrier Jordan structure at infinity &
-\cert{black_hole_programme/certificates/BH2C_ASYMPTOTIC_JORDAN.json}\\
-Leading metric enhancement and flux symbol &
-\cert{black_hole_programme/certificates/BH2C_METRIC_LEADING.json}\\
-Composed log tails; Einstein norm-selection at infinity &
-\cert{black_hole_programme/certificates/BH2C_FLUX_CLASS.json}\\
-Polar composed classes; parity-complete norm-selection &
-\cert{black_hole_programme/certificates/BH2C_POLAR_FLUX_CLASS.json}\\
+Generic-\(\ell\) axial recurrences and Einstein current &
+\cert{black_hole_programme/phase2/general_l_axial_asymptotics/certificate.json};
+\cert{black_hole_programme/phase2/general_l_axial_current/certificate.json}\\
+Corrected non-Einstein axial \(X_0\) lift and legacy derivative defect &
+\cert{black_hole_programme/phase2/general_l_axial_selection/certificate.json}\\
+Polar restriction-stable module and invariant current filtration &
+\cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json}\\
+Generic-\(\ell\) two-parity formal-infinity phase diagram &
+\cert{black_hole_programme/phase2/generic_l_synthesis/certificate.json}\\
 Local Cauchy truncation selects Einstein modulo conformal gauge &
 \cert{black_hole_programme/certificates/BH_LOCAL_EINSTEIN_CAUCHY_TRUNCATION.json}\\
-Cross invariant $a(\omega)$; axial symbolic-frequency Einstein finiteness &
+Horizon cross invariant and complex-frequency continuation &
 \cert{black_hole_programme/certificates/BH2_SYMBOLIC_CROSS_INVARIANT.json};
-\cert{black_hole_programme/certificates/BH2C_SYMBOLIC_FLUX_RADIATION_CLASS.json}\\
-Endpoint selection and invariant pairing; complex-frequency continuation;
-exterior BVP disposition &
-\cert{black_hole_programme/certificates/BH_ENDPOINT_NONSELECTION_ASSEMBLY.json};
-\cert{black_hole_programme/certificates/BH3_ANALYTIC_CONTINUATION_GATE.json};
-\cert{black_hole_programme/certificates/BH3_EXTERIOR_BVP_WELLPOSEDNESS_GATE.json}\\
+\cert{black_hole_programme/certificates/BH3_ANALYTIC_CONTINUATION_GATE.json}\\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -939,54 +982,48 @@ exterior BVP disposition &
 
 Every certificate records a schema, exact or controlled-numerical payload,
 independent verifier, mutations or controls, command receipt, dependency
-tags, and missing claims.  This manuscript must not advance to
-\textsc{theorem-frozen} until the mixed/extra flux fixtures acquire rigorous
-symbolic or interval nonvanishing bounds, the divergent-class symbolic table
-is completed in both parities, and the regular-tetrad falloff and asymptotic
-phase-space constructions are certified; the axial Einstein \emph{finite}
-side is now symbolic-frequency, the asymptotic Jordan/metric analysis and the
-polar parity-completion gate are closed at the fixture level, and the static
-certificate's complementary-sheet wording is repaired.
+tags, and missing claims.  The former axial and polar infinity-flux
+certificates, the infinity-selection half of the endpoint assembly, and the
+additional-log-tail half of the exterior boundary-value gate are historical
+inputs, not active authorities for infinity selection.  Their unaffected
+Einstein, horizon, and leading-symbol components are represented above by
+independent certificates.  The exact superseded identifiers are recorded in
+the machine-readable claim map.  A theorem about asymptotically flat
+radiation still requires the regular-tetrad falloff, differentiable
+phase-space, charge-algebra, and global connection constructions.
 
 \section{Outlook}
 
-The repeated-root asymptotic gate
+The formal infinity problem now has a different shape from the one suggested
+by the original fixture.  The Einstein axial density is integrable throughout
+the generic real-frequency angular tower, but so is a corrected non-Einstein
+axial direction.  The polar module similarly contains a generically
+nonradical mixed finite line, with a finite algebraic set of exceptional
+frequencies at each harmonic.  Formal radial finiteness is therefore not an
+Einstein-selection principle.
+
+The next decisive map is global:
 \[
- \text{first-order matrix and Jordan form}
- \longrightarrow \text{metric reconstruction}
- \longrightarrow \text{finite-flux boundary class}
+ \text{future-horizon data}
+ \longrightarrow \text{exact exterior connection}
+ \longrightarrow \text{differentiable asymptotic phase space}.
 \]
-has now run past the fixture level: log-free carrier Jordan structure,
-log-tailed (axial) and power-enhanced single-log (polar) composed metrics,
-and the Einstein-only finite-slice-norm class at infinity, with the polar
-\(\mu=0\) Einstein pair identically zero in the slice density.  Its
-\emph{finite} side is now symbolic: the axial Einstein slice norm is
-\(\omega\)-independently finite (\(F^v\sim r^{-2}\)) for every real
-\(\omega\neq0\), and the Einstein--extra pairing carries a
-representative-independent rank-two signature-\((1,1)\) invariant.  The
-remaining completions are the divergent-class symbolic table in both
-parities, the regular-tetrad falloff audit, and the asymptotically flat
-phase-space and charge-algebra construction that would promote the
-Einstein finiteness to a full theorem about which flux reaches null
-infinity.  In parallel, one rigorous interval or symbolic horizon-pairing
-fixture should replace the present controlled numerical nonvanishing of the
-extra self-pairing, whose \emph{sign} (unlike the pairing rank and
-signature) is still not representative-invariant.  The complex-frequency
-picture is now opened only as far as an exact meromorphic continuation of
-the axial modes and cross current, with singular set \(\{i,i/2\}\) and the
-Einstein boundary-value problem well-posed away from the discrete zeros of
-its connection Wronskian; that Wronskian and its zeros --- the
-confluent-Heun connection object --- are exactly what a quasinormal
-computation would need, and their activation remains gated on coordinator
-review.
+It must include a regular tetrad or gauge, convergence or another completion
+of the formal series, a gauge-audited Lee--Wald charge algebra, and the
+connection matrix between the two ends.  The present exact rational and
+polynomial data neither prove nor obstruct that map.  Complex-frequency work
+is likewise limited to the existing meromorphic axial continuation; no
+Wronskian zeros, quasinormal spectrum, or stability theorem have been
+computed.
 
 The present result already fixes an important baseline:
 \begin{center}
 \fbox{\parbox{0.82\textwidth}{\centering
-The axial non-Einstein curvature sector contains future-horizon-regular
-solutions and has nonzero controlled Lee--Wald pairing fixtures.  Horizon
-analyticity and the presently tested leading asymptotic diagnostics do not
-select the Einstein kernel.}}
+Additional curvature directions occur in the future-horizon carrier, and
+independently the formal infinity modules contain finite non-Einstein or
+mixed directions.  Neither leading endpoint diagnostics nor formal radial
+pairing finiteness selects the Einstein kernel.  Whether one global solution
+realizes both endpoint properties remains open.}}
 \end{center}
 
 \begingroup

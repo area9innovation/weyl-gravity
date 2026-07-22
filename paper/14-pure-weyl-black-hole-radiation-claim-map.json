@@ -1,194 +1,224 @@
 {
- "schema": "paper-draft-source-map-v1",
- "paper_id": "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION",
- "lifecycle_state": "DRAFT_ALLOWED",
- "source_baseline": "39c8fd92c5fa9403098d2ba6333e7d62cd45cfc9",
- "manuscript": "paper/14-pure-weyl-black-hole-radiation.tex",
- "dependency_tags": [
-  "LOCAL-ALGEBRAIC",
-  "REDUCED-MODE"
- ],
- "certified_scope": {
-  "static_laurent_family": true,
-  "normalized_static_first_law": true,
-  "linear_spherical_gauge_audit": true,
-  "ricci_flat_ricci_bach_composition": true,
-  "axial_l2_exact_sequence_onto_realized_ricci_image": true,
-  "canonical_einstein_additional_direct_sum": false,
-  "axial_horizon_reach_for_ricci_carrier": true,
-  "full_metric_quotient_horizon_dimension": false,
-  "axial_einstein_self_pairing_exactly_null": true,
-  "axial_mixed_and_additional_pairing_controlled_fixtures": true,
-  "axial_mixed_pairing_symbolic_or_interval_certified": true,
-  "axial_tested_endpoint_nonselection": true,
-  "axial_local_causal_truncation_no_go": false,
-  "asymptotic_jordan_and_metric_falloff": false,
-  "polar_ricci_bach_composition": true,
-  "polar_causal_chain": true,
-  "complex_frequency_stability": false,
-  "nonlinear_black_hole_theorem": false,
-  "quantum_claim": false,
-  "polar_einstein_two_dimensional_reduction": true,
-  "polar_carrier_horizon_reach_modulo_conformal_gauge": true,
-  "polar_einstein_self_pairing_exactly_null": true,
-  "polar_conformal_direction_offshell_degeneracy": true,
-  "polar_realized_image_closes_on_analytic_carrier_space": true,
-  "polar_mixed_pairing_controlled_fixtures": true,
-  "polar_tested_endpoint_nonselection": true,
-  "carrier_self_pairing_invariant_sign_theory": false,
-  "horizon_monodromy_temperature_reduced_mode": true,
-  "zerilli_schrodinger_master_scalar": false,
-  "hawking_state_or_flux_balance": false,
-  "carrier_asymptotic_jordan_log_free": true,
-  "composed_metric_log_tails": true,
-  "finite_flux_class_fixture_einstein_selected": true,
-  "omega_zero_static_sector_classified": true,
-  "asymptotic_tetrad_falloff_audit": false,
-  "asymptotic_phase_space_charge_algebra": false,
-  "polar_composed_lift_power_enhanced_single_log": true,
-  "polar_norm_selection_fixture_einstein_selected": true,
-  "local_cauchy_truncation_selects_einstein_axial": true,
-  "local_cauchy_truncation_polar_modulo_conformal_gauge": true,
-  "axial_symbolic_frequency_finite_flux_einstein_selected": true,
-  "invariant_einstein_extra_pairing_rank_signature": true,
-  "one_ended_endpoint_selection_assembled": true,
-  "axial_complex_frequency_meromorphic_continuation_exact_singular_set": true,
-  "polar_complex_frequency_continuation_activated": false,
-  "axial_exterior_bvp_einstein_wellposed_modulo_discrete": true,
-  "additional_branch_outgoing_condition_logtail_obstructed": true,
-  "numerical_validation_protocol_specified": true
- },
- "known_source_scope_corrections": [
-  {
-   "source": "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json",
-   "issue": "The legacy phrase Einstein iff gamma=0 applies only to the Mannheim-Kazanas sheet through w=1.",
-   "manuscript_disposition": "On the complete Laurent locus the paper requires gamma=0 and w=1; the complementary (gamma,w)=(0,-1) point is explicitly excluded.",
-   "status": "REPAIRED at source (commit 8ef7b7a0): the generator docstring now states the sheet-scoped classification; the certificate content was already free of the phrase"
+  "certified_scope": {
+    "additional_branch_outgoing_condition_logtail_obstructed": false,
+    "asymptotic_phase_space_charge_algebra": false,
+    "asymptotic_tetrad_falloff_audit": false,
+    "axial_complex_frequency_meromorphic_continuation_exact_singular_set": true,
+    "axial_einstein_self_pairing_exactly_null": true,
+    "axial_horizon_reach_for_ricci_carrier": true,
+    "axial_l2_exact_sequence_onto_realized_ricci_image": true,
+    "axial_local_causal_truncation_no_go": false,
+    "axial_mixed_and_additional_pairing_controlled_fixtures": true,
+    "axial_mixed_pairing_symbolic_or_interval_certified": true,
+    "axial_symbolic_frequency_finite_flux_einstein_selected": false,
+    "axial_tested_endpoint_nonselection": true,
+    "canonical_einstein_additional_direct_sum": false,
+    "carrier_self_pairing_invariant_sign_theory": false,
+    "complex_frequency_stability": false,
+    "composed_metric_log_tails": false,
+    "finite_flux_class_fixture_einstein_selected": false,
+    "formal_radial_einstein_only_selection": false,
+    "full_metric_quotient_horizon_dimension": false,
+    "generic_l_axial_corrected_x0_non_einstein_finite": true,
+    "generic_l_axial_einstein_radial_finiteness": true,
+    "global_horizon_to_infinity_matching": false,
+    "hawking_state_or_flux_balance": false,
+    "horizon_monodromy_temperature_reduced_mode": true,
+    "invariant_einstein_extra_pairing_rank_signature": false,
+    "legacy_axial_x0_derivative_defect": true,
+    "linear_spherical_gauge_audit": true,
+    "local_cauchy_truncation_polar_modulo_conformal_gauge": true,
+    "local_cauchy_truncation_selects_einstein_axial": true,
+    "nonlinear_black_hole_theorem": false,
+    "normalized_static_first_law": true,
+    "numerical_validation_protocol_specified": true,
+    "omega_zero_static_sector_classified": true,
+    "one_ended_endpoint_selection_assembled": false,
+    "polar_carrier_horizon_reach_modulo_conformal_gauge": true,
+    "polar_causal_chain": true,
+    "polar_complex_frequency_continuation_activated": false,
+    "polar_composed_lift_power_enhanced_single_log": false,
+    "polar_conformal_direction_offshell_degeneracy": true,
+    "polar_einstein_self_pairing_exactly_null": true,
+    "polar_einstein_two_dimensional_reduction": true,
+    "polar_mixed_finite_line": true,
+    "polar_mixed_pairing_controlled_fixtures": true,
+    "polar_norm_selection_fixture_einstein_selected": false,
+    "polar_q21_exceptional_wall": true,
+    "polar_q21_legacy_fixture_nonzero": true,
+    "polar_realized_image_closes_on_analytic_carrier_space": true,
+    "polar_ricci_bach_composition": true,
+    "polar_tested_endpoint_nonselection": true,
+    "quantum_claim": false,
+    "ricci_flat_ricci_bach_composition": true,
+    "static_laurent_family": true
   },
-  {
-   "source": "black_hole_programme/certificates/BH2A_CAUSAL_DISPOSITION.json",
-   "issue": "The certificate's causal-unavoidability interpretation exceeds its reduced-mode leading-asymptotic data.",
-   "manuscript_disposition": "The paper retains only endpoint regularity and leading-symbol nonselection, and explicitly recognizes zero Ricci-carrier Cauchy data as a local linear truncation.",
-   "status": "REPAIRED at source (commit 8ef7b7a0): both disposition certificates regenerated with interpretation language scoped to the tested endpoint diagnostics"
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "known_source_scope_corrections": [
+    {
+      "issue": "The legacy phrase Einstein iff gamma=0 applies only to the Mannheim-Kazanas sheet through w=1.",
+      "manuscript_disposition": "On the complete Laurent locus the paper requires gamma=0 and w=1.",
+      "source": "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json"
+    },
+    {
+      "issue": "The former causal-unavoidability interpretation exceeded its endpoint data.",
+      "manuscript_disposition": "Only scoped endpoint nonselection is retained; local Cauchy selection is explicit.",
+      "source": "black_hole_programme/certificates/BH2A_CAUSAL_DISPOSITION.json"
+    },
+    {
+      "issue": "The legacy axial X0 reconstruction omitted 2 r c'(r)/(r-2M).",
+      "manuscript_disposition": "The Einstein-only radial-selection and X0 log-tail claims are superseded by the corrected generic-l counterexample.",
+      "source": "black_hole_programme/certificates/BH2C_FLUX_CLASS.json"
+    },
+    {
+      "issue": "The shallow polar source-zero direction did not satisfy all seven Ricci rows.",
+      "manuscript_disposition": "The parity-complete norm-selection claim is superseded by the restriction-stable mixed finite line and Q21 wall.",
+      "source": "black_hole_programme/certificates/BH2C_POLAR_FLUX_CLASS.json"
+    },
+    {
+      "issue": "Its compound infinity-selection half depended on superseded axial and polar fixtures.",
+      "manuscript_disposition": "Independent horizon and leading-symbol statements are retained; the infinity-selection assembly is withdrawn.",
+      "source": "black_hole_programme/certificates/BH_ENDPOINT_NONSELECTION_ASSEMBLY.json"
+    },
+    {
+      "issue": "Its additional-log-tail boundary disposition depended on the defective reconstruction.",
+      "manuscript_disposition": "Only the separately certified meromorphic axial continuation is retained; no exterior BVP theorem is claimed.",
+      "source": "black_hole_programme/certificates/BH3_EXTERIOR_BVP_WELLPOSEDNESS_GATE.json"
+    }
+  ],
+  "lifecycle_state": "DRAFT_ALLOWED",
+  "manuscript": "paper/14-pure-weyl-black-hole-radiation.tex",
+  "next_gate": "GLOBAL_HORIZON_TO_INFINITY_CONNECTION_PLUS_DIFFERENTIABLE_ASYMPTOTIC_PHASE_SPACE",
+  "paper_id": "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION",
+  "paper_sha256": "03cd6c4a203fff9f813a59ca691c2c9fa34a4aac467dcf8cdddd1c1192bad330",
+  "result_id": "PAPER_14_CORRECTED_X0_SUPERSESSION_V1",
+  "schema": "paper-draft-source-map-v1",
+  "source_baseline": "936d76dbd2a9149243e57a082fa3519f0cfa8724",
+  "sources": [
+    {
+      "git_blob": "3f2fe3bc827a4876315c1e63f165ffe0eaf0b56b",
+      "path": "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json"
+    },
+    {
+      "git_blob": "f8a1aa56904a5148c8cdf915247285e87bb605e9",
+      "path": "black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json"
+    },
+    {
+      "git_blob": "9b289a3fa726a008aadfed10c97340002fbf6f2d",
+      "path": "black_hole_programme/certificates/BH1B_DYNAMICAL_EXTENSION.json"
+    },
+    {
+      "git_blob": "d7d8775b870bf08b5ada1725e3fd1b7e5108123d",
+      "path": "black_hole_programme/certificates/BH2A_AXIAL_OPERATOR.json"
+    },
+    {
+      "git_blob": "aa9332a3869c1349d2b36d07ca502420e1efa50e",
+      "path": "black_hole_programme/certificates/BH2A_HORIZON_REACH.json"
+    },
+    {
+      "git_blob": "99be341088198d0ad461969df9dde81aa91c3adb",
+      "path": "black_hole_programme/certificates/BH2A_FLUX_MATRIX.json"
+    },
+    {
+      "git_blob": "b1a61df3940fd3b1dc71d25d17ced659850c08cd",
+      "path": "black_hole_programme/certificates/BH2A_CROSS_FLUX.json"
+    },
+    {
+      "git_blob": "23150ba0ad8a6903abf75ee308c556861a0eef91",
+      "path": "black_hole_programme/certificates/BH2A_CAUSAL_DISPOSITION.json"
+    },
+    {
+      "git_blob": "5c4b95447a22210b37fc7832e858aced99c0043e",
+      "path": "black_hole_programme/certificates/BH2B_POLAR_SPLIT.json"
+    },
+    {
+      "git_blob": "584cbd99de539f9555b43179fcbe30efbddad493",
+      "path": "black_hole_programme/certificates/BH2B_POLAR_REACH.json"
+    },
+    {
+      "git_blob": "7670f96887de8c2c1f1a4a3941cc1337b9895405",
+      "path": "black_hole_programme/certificates/BH2B_POLAR_EINSTEIN.json"
+    },
+    {
+      "git_blob": "7292bf5422598e6ddb1e8fe37d8f943e238239e4",
+      "path": "black_hole_programme/certificates/BH2B_POLAR_FLUX.json"
+    },
+    {
+      "git_blob": "cbb8b2c341235755052e301a46b3024f9ff8e109",
+      "path": "black_hole_programme/certificates/BH2B_POLAR_CROSS_FLUX.json"
+    },
+    {
+      "git_blob": "11aeaf7160b3a6ca4d2bdcc8719270d4b89df67b",
+      "path": "black_hole_programme/certificates/BH2B_POLAR_DISPOSITION.json"
+    },
+    {
+      "git_blob": "bbb39b30bedaeb9b696cfb39671d2a67064f0f99",
+      "path": "black_hole_programme/certificates/BH4_HAWKING_MONODROMY.json"
+    },
+    {
+      "git_blob": "44c81944ecec047e9c7f612e41e711c12ab9a05a",
+      "path": "black_hole_programme/certificates/BH2_OMEGA_ZERO.json"
+    },
+    {
+      "git_blob": "b1ef4af347791bbb4ce62bc17b6d39b81e366ff9",
+      "path": "black_hole_programme/certificates/BH_LOCAL_EINSTEIN_CAUCHY_TRUNCATION.json"
+    },
+    {
+      "git_blob": "fd75c059bf329f2ce751bafbde3f8efc5f4ab0ef",
+      "path": "black_hole_programme/certificates/BH2_SYMBOLIC_CROSS_INVARIANT.json"
+    },
+    {
+      "git_blob": "45acd4fbe624f9647dec6b6a5c171b8d819b7579",
+      "path": "black_hole_programme/certificates/BH2_GENERAL_L_STRUCTURAL.json"
+    },
+    {
+      "git_blob": "cde84616d5badaeb5fc9bf070c01c76b438b7784",
+      "path": "black_hole_programme/certificates/BH3_ANALYTIC_CONTINUATION_GATE.json"
+    },
+    {
+      "git_blob": "801434e39284fdf7c0dec8dac81e6e7f2096b5d0",
+      "path": "black_hole_programme/certificates/BH3_NUMERICAL_VALIDATION_PROTOCOL.json"
+    },
+    {
+      "git_blob": "707467bb2a4b279b8355bc79b0b9482a8f2da8f0",
+      "path": "black_hole_programme/phase2/general_l_axial_asymptotics/certificate.json"
+    },
+    {
+      "git_blob": "4fabff559fb840af267f65de1acc6fc1c8bade6f",
+      "path": "black_hole_programme/phase2/general_l_axial_current/certificate.json"
+    },
+    {
+      "git_blob": "37fda2bf510eda9c554004826200ec8d498e6169",
+      "path": "black_hole_programme/phase2/general_l_axial_selection/certificate.json"
+    },
+    {
+      "git_blob": "47b6d81d39ee1a79c19fb5ceadbbe2eea8e489ef",
+      "path": "black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json"
+    },
+    {
+      "git_blob": "d889ef9e17f80fca7ad3edea4217a6150dabdbb8",
+      "path": "black_hole_programme/phase2/generic_l_synthesis/certificate.json"
+    }
+  ],
+  "superseded_active_claims": [
+    "axial or parity-complete Einstein-only finite radial selection",
+    "legacy axial X0 logarithmic tail and divergent current",
+    "legacy polar power-enhanced single-log lift and divergent composed-current table",
+    "additional-branch outgoing-condition obstruction inferred from those tails"
+  ],
+  "terminal_supersession_authority": {
+    "certificate": "black_hole_programme/phase2/generic_l_synthesis/certificate.json",
+    "certificate_sha256": "8a9914400f0929f37a63570b95383ebc4131cbf2928b5f923db0d002d0783d33",
+    "correction_request": "planning/paper-coverage/phase2-black-hole-paper-correction-request.json",
+    "correction_request_sha256": "308b27ba24076f7e439e36ebceb322442af1b1dcee225449d791cc105f403094",
+    "receipt": "black_hole_programme/phase2/generic_l_synthesis/receipt.json",
+    "receipt_sha256": "0888efb8f14518d38e40bd1b0a3926b8fab37ad729dce798c221a01d24aeabee",
+    "report": "reports/phase2-black-hole-generic-l-disposition-2026-07-22.md",
+    "report_sha256": "571fab0469b7bfde2b051b94bea657547570376b390a30a5b9ad6b6e93e92558",
+    "result_id": "PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1",
+    "result_token": "BH_PHASE2_GENERIC_L_AXIAL_COUNTEREXAMPLE_POLAR_FINITE_LINE_Q21_WALL"
   }
- ],
- "sources": [
-  {
-   "path": "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json",
-   "git_blob": "3f2fe3bc827a4876315c1e63f165ffe0eaf0b56b"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json",
-   "git_blob": "f8a1aa56904a5148c8cdf915247285e87bb605e9"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH1B_DYNAMICAL_EXTENSION.json",
-   "git_blob": "9b289a3fa726a008aadfed10c97340002fbf6f2d"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2A_AXIAL_OPERATOR.json",
-   "git_blob": "d7d8775b870bf08b5ada1725e3fd1b7e5108123d"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2A_HORIZON_REACH.json",
-   "git_blob": "aa9332a3869c1349d2b36d07ca502420e1efa50e"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2A_FLUX_MATRIX.json",
-   "git_blob": "99be341088198d0ad461969df9dde81aa91c3adb"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2A_CROSS_FLUX.json",
-   "git_blob": "b1a61df3940fd3b1dc71d25d17ced659850c08cd"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2A_CAUSAL_DISPOSITION.json",
-   "git_blob": "23150ba0ad8a6903abf75ee308c556861a0eef91"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2B_POLAR_SPLIT.json",
-   "git_blob": "5c4b95447a22210b37fc7832e858aced99c0043e"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2B_POLAR_REACH.json",
-   "git_blob": "584cbd99de539f9555b43179fcbe30efbddad493"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2B_POLAR_EINSTEIN.json",
-   "git_blob": "7670f96887de8c2c1f1a4a3941cc1337b9895405"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2B_POLAR_FLUX.json",
-   "git_blob": "7292bf5422598e6ddb1e8fe37d8f943e238239e4"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2B_POLAR_CROSS_FLUX.json",
-   "git_blob": "cbb8b2c341235755052e301a46b3024f9ff8e109"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2B_POLAR_DISPOSITION.json",
-   "git_blob": "11aeaf7160b3a6ca4d2bdcc8719270d4b89df67b"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH4_HAWKING_MONODROMY.json",
-   "git_blob": "bbb39b30bedaeb9b696cfb39671d2a67064f0f99"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2C_ASYMPTOTIC_JORDAN.json",
-   "git_blob": "120c1f651fb560c2dc25f1b6fe2096a65ebdc593"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2_OMEGA_ZERO.json",
-   "git_blob": "44c81944ecec047e9c7f612e41e711c12ab9a05a"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2C_METRIC_LEADING.json",
-   "git_blob": "37e755acfa17e40489f6f7b4fc34d400ce9c4e0c"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2C_FLUX_CLASS.json",
-   "git_blob": "bcb5acacaf9fecc63a4e2b168fb3155e7b2eb386"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2C_POLAR_FLUX_CLASS.json",
-   "git_blob": "3f349d60b33861047a0e0fc34eea357f09b74241"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH_LOCAL_EINSTEIN_CAUCHY_TRUNCATION.json",
-   "git_blob": "b1ef4af347791bbb4ce62bc17b6d39b81e366ff9"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2_SYMBOLIC_CROSS_INVARIANT.json",
-   "git_blob": "fd75c059bf329f2ce751bafbde3f8efc5f4ab0ef"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2_GENERAL_L_STRUCTURAL.json",
-   "git_blob": "45acd4fbe624f9647dec6b6a5c171b8d819b7579"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2C_METRIC_ALL_ORDERS.json",
-   "git_blob": "27533b5a06471d3b5aa7997afe884e532e3ff18e"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH2C_SYMBOLIC_FLUX_RADIATION_CLASS.json",
-   "git_blob": "38aff1e38380764bb3b2c3efa4dfea5877c7b2fd"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH_ENDPOINT_NONSELECTION_ASSEMBLY.json",
-   "git_blob": "7054ff53fabc3ee58775b2adbe29a43b0a7f5ee7"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH3_ANALYTIC_CONTINUATION_GATE.json",
-   "git_blob": "cde84616d5badaeb5fc9bf070c01c76b438b7784"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH3_EXTERIOR_BVP_WELLPOSEDNESS_GATE.json",
-   "git_blob": "42d682ffbf34240e172077117e11e6025a920b1b"
-  },
-  {
-   "path": "black_hole_programme/certificates/BH3_NUMERICAL_VALIDATION_PROTOCOL.json",
-   "git_blob": "801434e39284fdf7c0dec8dac81e6e7f2096b5d0"
-  }
- ],
- "next_gate": "BH2C_SYMBOLIC_DIVERGENT_TABLE_BOTH_PARITIES_AND_TETRAD_FALLOFF_AND_ASYMPTOTIC_PHASE_SPACE_AND_HEUN_CONNECTION_MAP"
 }
