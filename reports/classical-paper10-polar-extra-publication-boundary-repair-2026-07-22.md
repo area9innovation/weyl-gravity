@@ -26,3 +26,5 @@ successive stabilized builds have SHA-256
 `7978a409a888ebe82694a767dd3408d5e22692c224b230481781c7ba72a34ea3`.
 
 Papers 13, 91 and 92 were not edited.
+
+CLOSE-OUT: DONE — objective met; scoped correction, claim map, verifier and reproducible PDF are committed.
