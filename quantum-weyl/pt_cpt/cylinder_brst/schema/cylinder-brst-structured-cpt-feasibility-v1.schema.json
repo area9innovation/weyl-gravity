@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cylinder BRST structured CPT feasibility v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "scope",
+    "source_refs",
+    "reduced_stationary_candidate",
+    "finite_buffer_regression",
+    "invariant_commutant_search",
+    "BRST_chain_decision",
+    "decision",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "result_id": {"const": "CYLINDER_BRST_STRUCTURED_CPT_FEASIBILITY_V1"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "REDUCED-MODE"}
+    },
+    "finite_buffer_regression": {
+      "type": "object",
+      "required": ["maximum_energy", "buffer_warning", "generator_count", "chiralities"]
+    },
+    "BRST_chain_decision": {
+      "type": "object",
+      "required": ["C0_chain_map", "corrected_residual_invariant_C_exists", "positive_cohomology_test_reached"]
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": ["establishes", "does_not_establish"]
+    }
+  }
+}

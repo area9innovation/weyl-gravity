@@ -1,0 +1,76 @@
+{
+  "schema": "pure-weyl-cylinder-brst-structured-cpt-tier-receipt-v1",
+  "result_id": "CYLINDER_BRST_STRUCTURED_CPT_FEASIBILITY_V1_TIER_RECEIPT",
+  "subject_result_id": "CYLINDER_BRST_STRUCTURED_CPT_FEASIBILITY_V1",
+  "recorded_at": "2026-07-22",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "source_pins": {
+    "all_level_generators": "9b7f90e8377d794cd2fa4cde8b34a88baf2cba90c41074cb1a4a0fde4c77a6a0",
+    "closed_generators": "9165404959b1f581a710a233fb7a076290f559e3bb9d0790a0c896cf9798332f",
+    "krein_implementation": "1924e6cd323df39dc280e9b39e0c890a63673db4e1a5c249382bbe3b7e19c295",
+    "one_particle_krein": "c52f8b2fcee6573e55e72402008779fd706311b77e2463a774b9eb16ce12b374",
+    "p2a_contract": "377f699d854724f743188b854e4f5be3f29540ba1f5bc2beee3ec9204e7dbf6a",
+    "polarized_state_complex": "efe492946333578e91d880fde0008166ba8960bc366840413883e5c0e39d0ec1",
+    "polarized_state_implementation": "245452186edd42cba7d4eeb2feb2bca0b5db2c39eba846903c4b3d39e854511d",
+    "reduced_bridge4": "f49edce04b39d1e600d0072bfabc784b8ef6edf0d5a1fc39c8ad89f7fe031d48"
+  },
+  "output_hashes": {
+    "atlas": "d0fdbfdf9493473cc9c940ecf4995fde97cd0c0c0580f20041ea25fd4628eb8d",
+    "certificate": "1505dbbff6e6756a2c4472d607b66a02084c184bf0c50092bf7aab3f8dd4d532",
+    "producer": "748d098976b8132634d2a50e9711146d2e322d027a09852b92bed4e0cf6a887e",
+    "report": "03c8c6b7a00fa475128d1dfea1516015609a131f906db89c0b2ea193f676121c",
+    "schema": "da18efda856368facc3daabdd4137d331eccbd40efaaa771b35c467ba50e05a5",
+    "tests": "d13e4782f9c32556a7430b5dfc45fcd63bc19972f5f23512869170fc45f9ccea",
+    "verifier": "a1f77e2532afe7744a4a62cf4087a62e3bf8d4aad0205f505e70a61891c2964c"
+  },
+  "independent_rail": {
+    "status": "PASS",
+    "method": "imports no producer module; reconstructs both exact energy-five chirality matrices from the pinned all-level representation, recomputes all fifteen C0 commutator ranks and the stacked BRST defect, rebuilds the tower-link graph, and separately proves positivity of every analytic coefficient-square tail",
+    "decisive_mutations_rejected": [
+      "C0 promoted to a BRST chain map",
+      "rank-32 proper-conformal regression changed",
+      "finite buffer promoted to a finite exact representation",
+      "positive invariant G*C asserted",
+      "nontrivial ghost normalizers silently excluded",
+      "reduced result promoted to full-BV state or unitarity"
+    ]
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile quantum-weyl/pt_cpt/cylinder_brst/cylinder_brst_feasibility.py quantum-weyl/pt_cpt/cylinder_brst/verify_cylinder_brst_feasibility.py quantum-weyl/pt_cpt/cylinder_brst/tests/test_cylinder_brst_feasibility.py",
+        "python3 -m json.tool quantum-weyl/pt_cpt/cylinder_brst/certificates/CYLINDER_BRST_STRUCTURED_CPT_FEASIBILITY_V1.json",
+        "python3 -m json.tool residual_atlas/phase2-cpt-cylinder-brst-feasibility-fragment-v1.json",
+        "if rg -n '[ \\t]+$' quantum-weyl/pt_cpt/cylinder_brst reports/phase2-cpt-cylinder-brst-feasibility-2026-07-22.md residual_atlas/phase2-cpt-cylinder-brst-feasibility-fragment-v1.json; then exit 1; fi",
+        "git diff --check -- quantum-weyl/pt_cpt/cylinder_brst reports/phase2-cpt-cylinder-brst-feasibility-2026-07-22.md residual_atlas/phase2-cpt-cylinder-brst-feasibility-fragment-v1.json"
+      ],
+      "elapsed_seconds": 0.12
+    },
+    {
+      "tier": 1,
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/pt_cpt/cylinder_brst/cylinder_brst_feasibility.py --check",
+        "python3 quantum-weyl/pt_cpt/cylinder_brst/verify_cylinder_brst_feasibility.py",
+        "pytest -q quantum-weyl/pt_cpt/cylinder_brst/tests/test_cylinder_brst_feasibility.py"
+      ],
+      "elapsed_seconds": 101.2
+    },
+    {
+      "tier": 2,
+      "status": "NOT_RUN",
+      "reason": "All imported mathematical inputs are unchanged and content-addressed; this package adds a downstream feasibility classification."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "reason": "No freeze, release, shared core algebra change, or Lorentzian/quantum lifecycle promotion occurs."
+    }
+  ],
+  "claim_boundary": "This receipt certifies exact reduced eta0 positivity, the finite energy-five generator and BRST-chain defects, and the all-energy invariant-commutant obstruction on the finite-support core. It does not classify nontrivial ghost normalizers or construct a full-BV C operator, Lorentzian Hadamard state, scattering positivity, anomaly result, or unitarity."
+}
