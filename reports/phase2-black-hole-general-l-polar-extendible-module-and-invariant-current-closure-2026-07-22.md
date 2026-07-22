@@ -30,5 +30,16 @@ pivot factors whose physical wall set has not yet been classified.
 
 No generic-polar current or selection theorem is promoted by this checkpoint.
 
-CLOSE-OUT: PARTIAL — exact master/seven-row mismatch and shallow-log disposition recorded; quotient-typed source-zero bases, physical pivot-wall audit and the representative-invariant 31-entry current table remain open.
+A bounded GJ reconnaissance of the actual seven-row prefixes stabilizes at
+one zero-rate free direction through depth eight and three oscillatory
+log-at-most-one directions through depth eight.  At depth seven the
+oscillatory log-free system has two free directions, so one apparent log
+direction survives the tested horizon.  This reverses the earlier four-row
+preflight count.  Because the GJ matrices have not yet been serialized in
+this package, these counts are recorded as reconnaissance, not a theorem.
 
+The literal current parser itself is now independently checked: its expanded
+numerator has 272 terms in 79 oriented field/derivative signatures.  The
+remaining obstacle is mathematical typing of its input bases, not parsing.
+
+CLOSE-OUT: PARTIAL — exact master/seven-row mismatch and shallow-log disposition recorded; quotient-typed source-zero bases, physical pivot-wall audit and the representative-invariant 31-entry current table remain open.

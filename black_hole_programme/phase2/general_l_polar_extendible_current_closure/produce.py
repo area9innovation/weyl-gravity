@@ -2,7 +2,7 @@
 from __future__ import annotations
 import hashlib, json, subprocess
 from pathlib import Path
-from .module_audit import master_infinity_audit, polynomial_master_ricci_residual, shallow_log_audit
+from .module_audit import literal_current_shape, master_infinity_audit, polynomial_master_ricci_residual, shallow_log_audit
 
 ROOT = Path(__file__).resolve().parents[3]
 PKG = Path(__file__).resolve().parent
@@ -14,6 +14,8 @@ def build() -> dict:
     completion = ROOT/'black_hole_programme/phase2/general_l_polar_completion/certificate.json'
     polar = ROOT/'black_hole_programme/phase2/general_l_polar/certificate.json'
     branches = sorted((completion.parent/'branch_artifacts').glob('*.json'))
+    polar_data = json.loads(polar.read_text())
+    current = polar_data['exact_symbolic_lambda_result']['literal_lee_wald_current']['sphere_integrated_slice_current']
     return {
       "schema_version":"phase2-polar-extendible-current-closure-v1",
       "result_id":"POLAR_EXTENDIBLE_MODULE_CURRENT_CLOSURE_CHECKPOINT_V1",
@@ -24,8 +26,16 @@ def build() -> dict:
       "master_infinity":master_infinity_audit(),
       "polynomial_master_seven_row_crosscheck":polynomial_master_ricci_residual(),
       "shallow_log":shallow_log_audit(),
+      "literal_current_parser": literal_current_shape(current),
+      "bounded_gj_reconnaissance": {
+        "status": "UNPROMOTED_UNSERIALIZED_RECONNAISSANCE",
+        "zero_rate_depth8_log_le_1_final_free": 1,
+        "oscillatory_depth8_log_le_1_final_free": 3,
+        "oscillatory_depth7_log0_final_free": 2,
+        "interpretation": "The apparent additional oscillatory log direction survives through horizon 8. These counts motivate the next serialized GJ witness but are not themselves a certificate because the matrices are not stored here."
+      },
       "status":{
-        "module_reconciliation":"OPEN: Bach-master generalized dimensions cannot be used as source-zero seven-row Einstein dimensions without quotient identification",
+        "module_reconciliation":"OPEN: the full-seven GJ reconnaissance reverses the four-row preflight counts and leaves an apparent oscillatory log direction; serialize the matrices and identify Einstein/gauge/Weyl/prefix quotients before promotion",
         "current":"NOT_COMPUTED",
         "expected_31_entry_table":"NOT_PROMOTED",
         "bounded_frontier":"The optimized GJ seven-row splitting has different finite-depth free counts from the four-state master estimate; basis/quotient identification and new physical pivot-wall factors must be resolved before a representative-invariant Gram table is well typed."},
@@ -35,4 +45,3 @@ def main():
     PKG.mkdir(parents=True,exist_ok=True)
     (PKG/'certificate.json').write_text(json.dumps(build(),indent=2,sort_keys=True)+'\n')
 if __name__=='__main__': main()
-

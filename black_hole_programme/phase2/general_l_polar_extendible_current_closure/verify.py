@@ -17,5 +17,7 @@ def main():
     defect=3*L-48*w**2+15+12*sp.I*w
     assert sp.im(defect)==12*w
     assert d['status']['current']=='NOT_COMPUTED'
+    assert d['literal_current_parser']=={'expanded_numerator_terms':272,'oriented_field_derivative_signatures':79}
+    assert d['bounded_gj_reconnaissance']['status']=='UNPROMOTED_UNSERIALIZED_RECONNAISSANCE'
     print('verified polar module/current bounded checkpoint')
 if __name__=='__main__': main()

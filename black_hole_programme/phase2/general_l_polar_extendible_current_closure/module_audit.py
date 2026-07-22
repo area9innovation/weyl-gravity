@@ -9,6 +9,26 @@ from __future__ import annotations
 import sympy as sp
 
 
+def literal_current_shape(expression: str) -> dict:
+    r = sp.Symbol("r")
+    names = ["FAa_r", "FBa_r", "FCa_r", "FKa_r", "FAb_r", "FBb_r", "FCb_r", "FKb_r"]
+    local = {name: sp.Function(name) for name in names}
+    local.update({name: sp.Symbol(name) for name in ("Lambda", "m", "omega", "alpha", "ell")})
+    local.update({"r": r, "I": sp.I, "pi": sp.pi, "Derivative": sp.Derivative})
+    value = sp.sympify(expression, locals=local)
+    numerator, _ = sp.fraction(value)
+    terms = sp.Add.make_args(sp.expand(numerator))
+    signatures = set()
+    for term in terms:
+        atoms = [(f.func.__name__, 0) for f in term.atoms(sp.Function) if f.func.__name__ in names]
+        for derivative in term.atoms(sp.Derivative):
+            if derivative.expr.func.__name__ in names:
+                atoms = [a for a in atoms if a[0] != derivative.expr.func.__name__]
+                atoms.append((derivative.expr.func.__name__, sum(n for _, n in derivative.variable_count)))
+        signatures.add(tuple(sorted(atoms)))
+    return {"expanded_numerator_terms": len(terms), "oriented_field_derivative_signatures": len(signatures)}
+
+
 def master_infinity_audit() -> dict:
     w, z = sp.symbols("omega z", real=True, nonzero=True)
     A = sp.Matrix([
@@ -56,4 +76,3 @@ def shallow_log_audit() -> dict:
         "nowhere_zero": sp.simplify(sp.im(defect)/(12*w)) == 1,
         "disposition": "NONEXTENDIBLE_SHALLOW_SOURCE_ARTIFACT",
     }
-
