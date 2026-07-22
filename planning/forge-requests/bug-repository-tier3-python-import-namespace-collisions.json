@@ -1,0 +1,23 @@
+{
+  "id": "sf:forge-request/bug-repository-tier3-python-import-namespace-collisions",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Make the repository-wide Python Tier-3 rail collect the complete physics test corpus without ambiguous top-level package identities. In an exact clean invocation from physics/symplectic-reconstruction, `PYTHONDONTWRITEBYTECODE=1 PYTHONPYCACHEPREFIX=/tmp/tier3-collision-pyc PYTHONPATH=. python3 -m pytest --collect-only -q` collects 5,608 tests but terminates with four collection errors: `quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py` is imported as the already-occupied top-level `atlas.tests` namespace, and three `quantum-weyl/relative/tests` modules are imported through the already-occupied top-level `relative.tests` namespace. The affected packages pass when invoked separately, so this is a repository/test-infrastructure namespace collision, not a contradiction in the scoped scientific theorems.",
+    "depends_on": [
+      "sf:program/work/observer-tier3-git-attached-exact-materialization-rerun-v1",
+      "sf:program/work/nonlinear-branch-repair-minimal-hyperbolic"
+    ],
+    "stop_condition": "From a clean Git-attached materialization of the current physics programme, the repository-wide pytest collection must finish with zero import or import-file-mismatch errors and must collect each of the four currently rejected quantum tests under a unique canonical module identity. Preserve independent per-family execution. Add a fast deterministic preflight, exposed through the Science Forge Tier-3/test coordination surface, which computes prospective Python test-module identities before the expensive rail and fails visibly on duplicate or shadowed names, printing both source paths and the colliding import name. Prove that the chosen repair imports the intended module file by resolved path rather than merely suppressing the error or accepting whichever package entered `sys.modules` first. Include fixtures for the current `atlas.tests` collision, the three `relative.tests` collisions, two genuinely distinct same-basename test files that must coexist, and a negative control that deliberately recreates a shadowed namespace. Record the exact pytest/import mode and Python path policy so resident teams run the same Tier-3 rail.",
+    "forbid": "no deleting, skipping, xfail-marking or silently deselecting colliding tests; no counting separate per-package runs as a repository-wide Tier-3 pass; no `sys.modules` deletion or order-dependent `sys.path` mutation; no broad renaming of scientific artifacts or certificate identities merely to satisfy pytest; no weakening import errors to warnings; no scientific claim promotion from a collection-only pass; no use of the dirty shared index as the source of the test inventory",
+    "resource_hint": "INFRASTRUCTURE PAPERCUT WITH A 12-SECOND READ-ONLY REPRODUCTION. Prefer a repository-level canonical packaging/import policy plus a Science Forge collision preflight. Candidate mechanisms such as explicit package roots, unique namespace packages, or pytest importlib mode are acceptable only if the resolved-file and negative-control gates prove that no test is shadowed. The full scientific suite need not run while implementing the preflight; collection plus the affected package rails are the fast gate, with full Tier 3 reserved for the eventual programme freeze.",
+    "notes": [
+      "Exact reproduction on 2026-07-22: 5,608 tests collected before four collection errors. The rejected modules are `quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py`, `quantum-weyl/relative/tests/test_contribution.py`, `quantum-weyl/relative/tests/test_einstein_weyl_qme_readiness.py`, and `quantum-weyl/relative/tests/test_relative_offshell_changed_action_bv_lift_obstruction.py`.",
+      "An older Observer receipt already records the same class in a smaller combined atlas rail: every atlas package passed separately, while the combined invocation imported `atlas.tests` from an earlier fragment package. The new root collection proves that this is repository-wide and also affects `relative.tests`.",
+      "The Nonlinear scoped obstruction remains independently verified. Its Tier-3 receipt correctly records `SCOPED_PASS_TIER3_FAIL`; repairing collection infrastructure must not retroactively relabel the prior full-suite attempt as a pass.",
+      "The Observer Git-attached Tier-3 theorem stopped later at a stale semantic comparison-ledger pin after 826 passing tests. That scoped obstruction is independent of these root collection collisions and remains unchanged."
+    ]
+  }
+}
