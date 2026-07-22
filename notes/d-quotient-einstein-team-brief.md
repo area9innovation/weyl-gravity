@@ -5230,3 +5230,21 @@ observational and quantum columns left at `NO_CERTIFIED_MAP`.
 Evidence is `bridge/phase1/BRIDGE_PHASE1_EINSTEIN_EXTRA_CONTRIBUTION_V1.json`,
 `residual_atlas/bridge-phase1-einstein-extra-contribution-fragment-v1.json`
 and `planning/paper-coverage/bridge-phase1-einstein-extra-materiality-2026-07-22.json`.
+
+## Paper 10 polar-extra publication boundary
+
+The scoped Paper 10 correction requested by the Phase-1 reverse materiality
+audit is now applied. The manuscript and generated claim map import the
+Phase-1 manifest and the independent polar direct Lee--Wald completion by
+exact hash. They state separately that the generic polar extra block has
+inertia `(2,0)` and the complete generic polar block has inertia `(3,1)` on
+the local-gauge-reduced module before final residual descent; no axial/polar
+representative identification is made.
+
+The independent map verifier rejects residual, causal, Hilbert, particle,
+stability, unitarity and parity-identification promotions. Exceptional extra
+sectors, the polar detector, ungauged BV/Noether lift and final residual
+descent remain open. Evidence is
+`planning/paper-coverage/paper10-polar-extra-publication-boundary-repair-2026-07-22.json`
+and
+`reports/classical-paper10-polar-extra-publication-boundary-repair-tier-receipt-2026-07-22.json`.

@@ -23,7 +23,7 @@
 
 \title{Einstein--Maxwell Waves inside Weyl--Maxwell Gravity\\
 on a Compact Product:\\
-Exact Linear Phase-Space Inclusion and the Extra Axial Branch}
+Exact Linear Phase-Space Inclusion and the Generic Extra Branches}
 \author{Asger Alstrup Palm\thanks{Corresponding author:
 \texttt{asger@area9.dk}.}}
 \date{Working draft, July 2026}
@@ -66,6 +66,11 @@ and the normalized positive-frequency current has axial inertia $(3,1)$.
 Inverting the extra Gram matrix gives two conserved spectral coefficient
 extractors
 which annihilate the Einstein image.
+An independent literal four-dimensional polar-current calculation certifies
+the corresponding generic polar extra block on every declared
+$\ell\geq2$ compact-momentum fibre. The generic polar extra block has inertia
+$(2,0)$, while the complete generic polar block has inertia $(3,1)$. These
+are separate parity calculations: we do not identify axial and polar representatives.
 
 These are classical \textsc{local-algebraic}/\textsc{reduced-mode}
 statements before any background-stabilizer/moment-map reduction. They prove
@@ -102,7 +107,7 @@ phase-space form. We study a magnetically supported compactification of the
 Pleba\'nski--Hacyan direct-product electrovacuum
 \cite{PlebanskiHacyan,KrtousEtAl,Ortaggio}. It lies on the intersection of
 the two theories, and we determine both its induced Einstein image and the
-additional axial target. The relevant question is not whether one can fix
+generic additional target in each parity. The relevant question is not whether one can fix
 Weyl gauge to obtain Einstein gravity---one cannot do so in general
 \cite{Bach,Maldacena,DeserJoungWaldron}---but instead:
 \begin{quote}
@@ -113,16 +118,18 @@ Weyl--Maxwell solutions remain?
 
 To our knowledge, this paper answers that question for the first time as one
 combined phase-space/current/module calculation: completely for the standard harmonic
-Einstein--Maxwell tangent and for the generic axial part of the additional
-target on a fixed compact magnetic bundle. The answer has three logically
+Einstein--Maxwell tangent and for the independently classified generic axial
+and polar parts of the additional target on a fixed compact magnetic bundle.
+The answer has three logically
 separate layers:
 \begin{enumerate}
 \item every standard Einstein--Maxwell tangent class injects as a
 Weyl--Maxwell solution class;
 \item the target Lee--Wald form restricts nondegenerately to that image, but
 does not equal the source form under the identity map; and
-\item the generic axial Weyl--Maxwell target contains two further nonradical
-solution directions which are not Einstein representatives or local gauge.
+\item each generic parity sector of the Weyl--Maxwell target contains two
+further nonradical solution directions which are not Einstein representatives
+or local gauge; the axial and polar representatives are not identified.
 \end{enumerate}
 
 Let $\cT_{\rm EM}^{\rm std}$ denote the complete fixed-bundle standard
@@ -156,13 +163,15 @@ quotient, not a choice of complement. Section~\ref{sec:extra} proves this
 without inverting $k$, $\omega$, or either shell polynomial.
 
 \subsection{What is and is not frozen}
-The theorem level of this manuscript is deliberately asymmetric in parity.
 The standard Einstein--Maxwell image is complete in both axial and polar
-parities and includes all exceptional/global blocks. The additional
-Weyl--Maxwell branch is complete only in the generic axial sector. The polar
-extra branch and any background-stabilizer/moment-map descent remain open.
-Accordingly the
-paper makes no parity-complete claim about the full Weyl--Maxwell target.
+parities and includes all exceptional/global blocks. The additional generic
+$\ell\geq2$ Weyl--Maxwell branch is classified independently in the axial and
+polar sectors on the local-gauge-reduced module before the final residual
+quotient. Each extra parity block is nonradical with inertia $(2,0)$, and each
+complete generic parity block has inertia $(3,1)$. This parity-complete
+current classification does not identify axial and polar representatives.
+Exceptional extra sectors and every background-stabilizer/moment-map or final
+residual descent remain open.
 
 The dependency labels are
 \begin{center}
@@ -866,6 +875,18 @@ The extra block has inertia $(2,0)$; the negative target direction lies on
 the minus Einstein-image branch.
 \end{theorem}
 
+\begin{theorem}[Independent polar direct-current completion]
+\label{thm:polar-target}
+For every $\ell\geq2$ and every allowed compact momentum, the literal
+four-dimensional polar Lee--Wald current is nondegenerate on the independently
+reconstructed local-gauge-reduced generic polar solution module before the final residual quotient.
+In the same positive-frequency current convention,
+the generic polar extra block has inertia $(2,0)$ and the complete generic
+polar block has inertia $(3,1)$. The Einstein and extra polar shell blocks are
+orthogonal. This theorem and Theorem~\ref{thm:axial-target} do not identify
+axial and polar representatives.
+\end{theorem}
+
 \begin{remark}[What the sign does not prove]
 Theorem~\ref{thm:axial-target} is a sign theorem for a classical conserved
 current after a declared positive-frequency normalization. No compatible
@@ -1015,15 +1036,14 @@ local Weyl gauge fixing.
 
 \section{Open gates and theorem boundary}\label{sec:open}
 
-The following are not prerequisites for the scoped axial paper, but they are
+The following are not prerequisites for the scoped generic-current paper, but they are
 required to widen its title-level theorem.
 \begin{enumerate}
-\item \textbf{Polar extra branch.} A post-freeze certificate has now
-reconstructed the exact physical polar module on every declared
-$\ell\geq2$ compact-momentum fibre, including the complete Einstein primary
-summand and two extra summands with action-derived normalization.  The direct
-polar extra Lee--Wald current, ungauged BV/Noether lift, radical/sign audit,
-detector response, and final residual descent remain open.
+\item \textbf{Polar ungauged descent and detector.} The exact generic polar
+module and its direct four-dimensional Lee--Wald current, orthogonality,
+nonradicality, and inertia are now certified. The ungauged BV/Noether lift,
+polar coefficient detector, exceptional extra sectors, and final residual
+descent remain open.
 \item \textbf{Background-stabilizer/moment-map descent.} Complete the
 $H$, $P_x$, and $J_i$ descent and quotient only by a subalgebra proved null
 on the declared derived sector.  Post-freeze results classify the generic
@@ -1110,6 +1130,12 @@ field, without an integrability assumption.\\
 $k=0$.\\
 \cert{EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION}
 & Direct four-dimensional current and complete axial current inertia.\\
+\cert{EINSTEIN_MAXWELL_WEYL_POLAR_DIRECT_LEE_WALD_COMPLETION_V1}
+& Independent direct four-dimensional polar current, orthogonality, and
+complete generic polar current inertia.\\
+\cert{BRIDGE_PHASE1_EINSTEIN_EXTRA_CONTRIBUTION_V1}
+& Publication-independent axial/polar structural crosswalk and claim
+boundaries.\\
 \cert{EINSTEIN_MAXWELL_WEYL_AXIAL_REDUCED_ACTION_HESSIAN}
 & Reduced Hessian and normalization triangle.\\
 \cert{EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_DETECTOR}
@@ -1137,7 +1163,9 @@ formatting is typographical and each line is one shell command.
 \par\noindent\path{python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_lee_wald_completion.py}
 \par\noindent\path{python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_reduced_action_hessian.py}
 \par\noindent\path{python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_extra_detector.py}
-\par\noindent\path{python3 bridge/einstein_sector/verify_compact_linear_paper_claim_map.py}
+\par\noindent\path{python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_direct_lee_wald_completion.py}
+\par\noindent\path{python3 paper/generate_10_compact_einstein_maxwell_weyl_phase_space_claim_map.py --check}
+\par\noindent\path{python3 paper/verify_10_compact_einstein_maxwell_weyl_phase_space_claim_map.py}
 \endgroup
 The manuscript itself is checked with two passes of \texttt{pdflatex}.
 
@@ -1152,11 +1180,12 @@ branch-dependent weights on regular radiation, a factor four on the physical
 $\ell=1$ quotient, a unipotent shear on the homogeneous sector, and a factor
 minus two on the twists.
 
-The target is strictly larger. Its generic axial quotient contains two
-additional nonradical solution summands, detected by conserved coefficient
-extractors, and the normalized positive-frequency axial current has inertia
-$(3,1)$.
-These statements settle where ordinary waves and one genuine extra branch
+The target is strictly larger. In each generic parity sector its quotient
+contains two additional nonradical solution summands. The axial summands are
+detected by conserved coefficient extractors; the independently computed
+axial and polar positive-frequency currents each have complete inertia
+$(3,1)$, with extra-block inertia $(2,0)$.
+These statements settle where ordinary waves and the generic extra branches
 sit before any optional background-stabilizer/moment-map reduction. They do
 not turn a classical sign
 into a quantum ghost theorem, and they do not replace the separate causal

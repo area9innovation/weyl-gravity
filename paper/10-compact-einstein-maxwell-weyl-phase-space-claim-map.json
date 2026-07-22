@@ -1,78 +1,104 @@
 {
-  "schema": "compact-linear-paper-claim-map-v1",
-  "result_id": "COMPACT_EINSTEIN_MAXWELL_WEYL_LINEAR_PAPER_A",
-  "result_state": "SCOPED_MATHEMATICAL_CLAIMS_THEOREM_FROZEN_EXTERNAL_SPECIALIST_REVIEW_PENDING",
-  "lifecycle_state": "THEOREM_FROZEN",
-  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
-  "manuscript": "paper/10-compact-einstein-maxwell-weyl-phase-space.tex",
-  "scope": {
-    "background": "R_t x S1_L x S2, unit magnetic product fixture, fixed compact U(1) bundle P_N with N=2",
-    "standard_einstein_maxwell_image": "complete axial and polar harmonic tangent including regular radiation, physical ell=1 quotient, homogeneous generalized block, and axial twist",
-    "extra_weyl_maxwell_target": "complete generic axial ell>=2 branch only",
-    "quotient_stage": "after local gauge reduction and before any optional background-stabilizer/moment-map reduction"
+  "certified_claims": {
+    "all_compact_momenta_including_k_zero_certified": true,
+    "axial_polar_representatives_identified": false,
+    "complete_generic_axial_positive_frequency_current_inertia": [
+      3,
+      1
+    ],
+    "complete_generic_polar_positive_frequency_current_inertia": [
+      3,
+      1
+    ],
+    "complete_parity_even_four_derivative_action_response_classified": true,
+    "connected_background_stabilizer_dimension": 5,
+    "extra_spectral_coefficient_extractor_before_residual_descent": true,
+    "formal_linear_inclusion_covers_nonintegrable_jacobi_fields": true,
+    "full_SO42_is_background_stabilizer": false,
+    "generic_axial_extra_module_on_every_physical_fiber": "(K_ell_n[omega]/(omega^2-k^2-lambda+2/3))^2",
+    "generic_axial_extra_positive_frequency_current_inertia": [
+      2,
+      0
+    ],
+    "generic_polar_extra_module_classified": true,
+    "generic_polar_extra_positive_frequency_current_inertia": [
+      2,
+      0
+    ],
+    "generic_primary_modules_and_Lee_Wald_form_stabilizer_invariant": true,
+    "identity_inclusion_symplectic": false,
+    "linear_solution_quotient_inclusion_injective": true,
+    "minimal_reduced_source_action_repair_four_derivative_lift_exists": false,
+    "nonzero_four_derivative_deformation_with_zero_q_to_p_cross_response_exists": false,
+    "regular_radiative_relative_inertia_per_real_spatial_harmonic": [
+      2,
+      2
+    ],
+    "stabilizer_generators_universally_presymplectically_null": false,
+    "target_pullback_nondegenerate_on_complete_standard_image": true
+  },
+  "claim_boundary": "This manuscript assembles exact LOCAL-ALGEBRAIC/REDUCED-MODE compact linear results. The complete standard Einstein-Maxwell image is parity-complete. The complementary generic ell>=2 Weyl-Maxwell extra blocks are independently classified in the axial and polar sectors on the local-gauge-reduced solution module before final residual descent; each extra block has inertia (2,0) and each complete generic parity block has inertia (3,1). No axial/polar representative identification is made. The actual five-generator product-background stabilizer and its generic primary-module action are certified. A complete parity-even four-derivative action-response calculation gives a scoped no-lift theorem for the minimal reduced source-action repair, including a full-rank q-to-p zero-cross obstruction; it does not exclude higher-derivative, nonlocal or auxiliary-field repairs. No moment-map-zero or final residual quotient, nonlinear, causal, scattering, particle, stability, positive-frequency Hilbert, QME, determinant, ghost, unitarity, or other quantum theorem is promoted.",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "explicit_nonclaims": {
+    "asymptotically_flat_scattering_constructed": false,
+    "background_stabilizer_moment_map_descent_complete": false,
+    "explicit_off_shell_chevreton_row_factorization_constructed": false,
+    "final_residual_descent_complete": false,
+    "global_multivariate_unimodular_smith_transformations_constructed": false,
+    "linear_or_nonlinear_stability_theorem": false,
+    "literal_four_dimensional_action_density_second_expansion_complete": false,
+    "lorentzian_causal_bv_complex_certified": false,
+    "nonlinear_einstein_sector_closed": false,
+    "particle_interpretation_constructed": false,
+    "positive_frequency_hilbert_space_constructed": false,
+    "quantum_ghost_or_unitarity_theorem": false
   },
   "freeze_disposition": {
-    "mathematical_claims": "THEOREM_FROZEN",
-    "next_review": "external specialist review of the dual-number Chevreton bridge, exceptional harmonic reduction, and direct Lee-Wald normalization",
+    "additional_internal_major_calculation_required_before_circulation": false,
     "human_accountability": "final human verification of the manuscript, deterministic certificates, citations, and authorship disclosure remains required before submission",
-    "additional_internal_major_calculation_required_before_circulation": false
-  },
-  "certified_claims": {
-    "linear_solution_quotient_inclusion_injective": true,
-    "formal_linear_inclusion_covers_nonintegrable_jacobi_fields": true,
-    "target_pullback_nondegenerate_on_complete_standard_image": true,
-    "identity_inclusion_symplectic": false,
-    "regular_radiative_relative_inertia_per_real_spatial_harmonic": [2, 2],
-    "generic_axial_extra_module_on_every_physical_fiber": "(K_ell_n[omega]/(omega^2-k^2-lambda+2/3))^2",
-    "all_compact_momenta_including_k_zero_certified": true,
-    "generic_axial_extra_positive_frequency_current_inertia": [2, 0],
-    "complete_generic_axial_positive_frequency_current_inertia": [3, 1],
-    "extra_spectral_coefficient_extractor_before_residual_descent": true,
-    "connected_background_stabilizer_dimension": 5,
-    "full_SO42_is_background_stabilizer": false,
-    "generic_primary_modules_and_Lee_Wald_form_stabilizer_invariant": true,
-    "stabilizer_generators_universally_presymplectically_null": false,
-    "complete_parity_even_four_derivative_action_response_classified": true,
-    "minimal_reduced_source_action_repair_four_derivative_lift_exists": false,
-    "nonzero_four_derivative_deformation_with_zero_q_to_p_cross_response_exists": false
-  },
-  "explicit_nonclaims": {
-    "polar_extra_branch_classified": false,
-    "final_residual_descent_complete": false,
-    "background_stabilizer_moment_map_descent_complete": false,
-    "literal_four_dimensional_action_density_second_expansion_complete": false,
-    "explicit_off_shell_chevreton_row_factorization_constructed": false,
-    "global_multivariate_unimodular_smith_transformations_constructed": false,
-    "nonlinear_einstein_sector_closed": false,
-    "positive_frequency_hilbert_space_constructed": false,
-    "quantum_ghost_or_unitarity_theorem": false,
-    "asymptotically_flat_scattering_constructed": false,
-    "lorentzian_causal_bv_complex_certified": false
+    "mathematical_claims": "THEOREM_FROZEN",
+    "next_review": "external specialist review of the dual-number Chevreton bridge, exceptional harmonic reduction, and direct axial and polar Lee-Wald normalizations"
   },
   "inputs": {
-    "bridge/certificates/einstein_maxwell_product_incidence.json": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8",
-    "bridge/certificates/einstein_maxwell_chevreton_tangent.json": "b8cf3781a88bfa08407be252093a1689296250589bfd7d92488b87f2de85fead",
+    "bridge/certificates/EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1.json": "cb47110872bdf976f7fda661f722041f034936d8ec1087781d90615ce3b922fe",
+    "bridge/certificates/EINSTEIN_MAXWELL_WEYL_POLAR_DIRECT_LEE_WALD_COMPLETION_V1.json": "f411d2e62c4ffa7436966d11f7d77e4c91b85d4ffbaf220f04f816bd80ec0b71",
     "bridge/certificates/einstein_maxwell_chevreton_formal_linearization.json": "a2421ca7160a93f4c0154118a6362cf03b1c2d7058ad99e2993961beeaf86433",
+    "bridge/certificates/einstein_maxwell_chevreton_tangent.json": "b8cf3781a88bfa08407be252093a1689296250589bfd7d92488b87f2de85fead",
+    "bridge/certificates/einstein_maxwell_product_incidence.json": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8",
     "bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json": "dc02ac8feea4c6ce0b6bfb206c4615023f37c4e31eeb26210373c3604a27cf9c",
-    "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json": "442d4bbd0de7b02215f13b4dc3b8f5becf1cdc99f57bba7c7b58586405c48821",
-    "bridge/certificates/einstein_maxwell_weyl_radiative_symplectic_restriction.json": "560f9e96be8ee095972e745544a709fdb6a8ac7a939658a21163bc173884c2bd",
-    "bridge/certificates/einstein_maxwell_weyl_ell1_physical_symplectic_restriction.json": "0413c43de06931565f18effe21bdc18d272d45d5d52d5007273935c6ea71a0ec",
-    "bridge/certificates/einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.json": "ca8f300c9b8be08b016c7d607edafaeba4fcf5112a8621ae43568599f9ca8119",
-    "bridge/certificates/einstein_maxwell_weyl_axial_twist_symplectic_restriction.json": "a8234234694293a24a62a1f326441f478c090232c6e310063e774e22e25462dc",
-    "bridge/certificates/einstein_maxwell_weyl_mixed_block_orthogonality.json": "222746c92b9da487a95c2029e05766954b5db5f29db4923f75e4ff330568df57",
+    "bridge/certificates/einstein_maxwell_weyl_axial_extra_detector.json": "dc8133d0a97c3bdf1e6fa6eb03768b3785f6415ad536ab4605bdbb52303ca17b",
+    "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json": "e3d59018c9ae4a1d65b2ca531f24534d553dc7da1e6386c1d4afb577effd05f8",
     "bridge/certificates/einstein_maxwell_weyl_axial_operator.json": "2d4ed44e290674a21187395aaa4417897d44609d4954135ad183646deea3f5f4",
     "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json": "32ba6f119d9eccc3b68bf9282c3b18042857c1631c44fb762b8e290e5709f864",
-    "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json": "e3d59018c9ae4a1d65b2ca531f24534d553dc7da1e6386c1d4afb577effd05f8",
     "bridge/certificates/einstein_maxwell_weyl_axial_reduced_action_hessian.json": "75c51862317a7bb7c7f72cdf11cdfbe529fb88ddf0d1e9cdcca59eb3dff0f900",
-    "bridge/certificates/einstein_maxwell_weyl_axial_extra_detector.json": "dc8133d0a97c3bdf1e6fa6eb03768b3785f6415ad536ab4605bdbb52303ca17b",
+    "bridge/certificates/einstein_maxwell_weyl_axial_twist_symplectic_restriction.json": "a8234234694293a24a62a1f326441f478c090232c6e310063e774e22e25462dc",
+    "bridge/certificates/einstein_maxwell_weyl_ell1_physical_symplectic_restriction.json": "0413c43de06931565f18effe21bdc18d272d45d5d52d5007273935c6ea71a0ec",
+    "bridge/certificates/einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.json": "ca8f300c9b8be08b016c7d607edafaeba4fcf5112a8621ae43568599f9ca8119",
+    "bridge/certificates/einstein_maxwell_weyl_mixed_block_orthogonality.json": "222746c92b9da487a95c2029e05766954b5db5f29db4923f75e4ff330568df57",
     "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json": "7d2840bc88b3fb157345badb7ae2683adceb7401b611ba5b90dca4b8868993b8",
-    "bridge/certificates/EINSTEIN_MAXWELL_FOUR_DERIVATIVE_ACTION_RESPONSE_V1.json": "cb47110872bdf976f7fda661f722041f034936d8ec1087781d90615ce3b922fe"
+    "bridge/certificates/einstein_maxwell_weyl_radiative_symplectic_restriction.json": "560f9e96be8ee095972e745544a709fdb6a8ac7a939658a21163bc173884c2bd",
+    "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json": "442d4bbd0de7b02215f13b4dc3b8f5becf1cdc99f57bba7c7b58586405c48821",
+    "bridge/phase1/BRIDGE_PHASE1_EINSTEIN_EXTRA_CONTRIBUTION_V1.json": "7c045d4bde9e3961ad422faa0e6f8ca4d22cde76970e6071ca7a9bff392666d3"
+  },
+  "lifecycle_state": "THEOREM_FROZEN",
+  "manuscript": "paper/10-compact-einstein-maxwell-weyl-phase-space.tex",
+  "result_id": "COMPACT_EINSTEIN_MAXWELL_WEYL_LINEAR_PAPER_A",
+  "result_state": "SCOPED_MATHEMATICAL_CLAIMS_THEOREM_FROZEN_EXTERNAL_SPECIALIST_REVIEW_PENDING",
+  "schema": "compact-linear-paper-claim-map-v1",
+  "scope": {
+    "background": "R_t x S1_L x S2, unit magnetic product fixture, fixed compact U(1) bundle P_N with N=2",
+    "extra_weyl_maxwell_target": "complete generic axial and polar ell>=2 branches, classified independently",
+    "quotient_stage": "after local gauge reduction and before any optional background-stabilizer/moment-map or final residual quotient",
+    "standard_einstein_maxwell_image": "complete axial and polar harmonic tangent including regular radiation, physical ell=1 quotient, homogeneous generalized block, and axial twist"
   },
   "verification_commands": [
-    "python3 bridge/einstein_sector/verify_compact_linear_paper_claim_map.py",
+    "python3 paper/generate_10_compact_einstein_maxwell_weyl_phase_space_claim_map.py --check",
+    "python3 paper/verify_10_compact_einstein_maxwell_weyl_phase_space_claim_map.py",
     "pdflatex -interaction=nonstopmode -halt-on-error -output-directory paper paper/10-compact-einstein-maxwell-weyl-phase-space.tex",
     "pdflatex -interaction=nonstopmode -halt-on-error -output-directory paper paper/10-compact-einstein-maxwell-weyl-phase-space.tex",
     "pdflatex -interaction=nonstopmode -halt-on-error -output-directory paper paper/10-compact-einstein-maxwell-weyl-phase-space.tex"
-  ],
-  "claim_boundary": "This manuscript assembles exact LOCAL-ALGEBRAIC/REDUCED-MODE compact linear results. The complete standard Einstein-Maxwell image is parity-complete, while the complementary Weyl-Maxwell classification is generic axial only. The actual five-generator product-background stabilizer and its generic primary-module action are certified. A post-freeze complete parity-even four-derivative action-response calculation gives a scoped no-lift theorem for the minimal reduced source-action repair, including a full-rank q-to-p zero-cross obstruction; it does not exclude higher-derivative, nonlocal or auxiliary-field repairs. No moment-map-zero quotient, nonlinear, causal scattering, one-particle Hilbert, QME, determinant, or quantum theorem is promoted."
+  ]
 }
