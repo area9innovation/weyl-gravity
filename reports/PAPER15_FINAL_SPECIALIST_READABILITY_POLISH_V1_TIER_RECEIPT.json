@@ -1,0 +1,53 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "PAPER15_FINAL_SPECIALIST_READABILITY_POLISH_V1",
+  "stamp": "2026-07-22",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Reader-facing notation, literature, ledger-sign, and exposition corrections to the frozen Paper 15 synthesis; no theorem or lifecycle promotion.",
+  "artifacts": {
+    "paper/15-four-level-ghost-classification-phase1-synthesis.tex": "d19afb15e19b0346a313c5574892cc04eab89441dadbd1238de7a0e8b9456c14",
+    "paper/15-four-level-ghost-classification-phase1-synthesis.pdf": "427664e947ec9ef3f58883f76c5d5b28b056760c47f64152097ad24e5a71060b",
+    "paper/15-four-level-ghost-classification-phase1-synthesis-claim-map.json": "7afc5863cf712ee49c2f7f9cf9d1614570fcc53e1365bbb73df8fa4174de3e38",
+    "paper/verify_15_phase1_synthesis_claim_map.py": "b58ee7136321831c19f4a5d524534235857b65e540c6ce5d5b51c96ad9bcf438",
+    "planning/paper-coverage/paper15-phase1-synthesis-overlay-2026-07-22.json": "36d51bf0b1dbe1de2322879bbeb1f772341f1c64929a61542eadb6c9adc2321d",
+    "reports/paper15-final-specialist-readability-polish-2026-07-22.md": "a1c80bd4c80a318b9811115af4bb8ca4b3698809323c64f4817024675fde1e0d"
+  },
+  "tests": [
+    {
+      "tier": 1,
+      "command": "python3 paper/generate_15_phase1_synthesis_claim_map.py && python3 paper/verify_15_phase1_synthesis_claim_map.py",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m pytest -q paper/test_15_phase1_synthesis_claim_map.py planning/paper-coverage/test_phase1_paper_coverage_overlay.py",
+      "status": "PASS",
+      "detail": "5 passed"
+    },
+    {
+      "tier": 1,
+      "command": "python3 planning/paper-coverage/verify_phase1_paper_coverage_overlay.py planning/paper-coverage/phase1-paper-coverage-overlay-2026-07-22.json",
+      "status": "PASS",
+      "detail": "5 contradiction mutations rejected"
+    },
+    {
+      "tier": 1,
+      "command": "pdflatex -interaction=nonstopmode -halt-on-error (two passes)",
+      "status": "PASS",
+      "detail": "19 pages, 402671 bytes; no warnings, overfull boxes, or undefined references"
+    }
+  ],
+  "higher_tiers_not_run": "No scientific producer, operator, source certificate, shared schema, or theorem lifecycle changed; the full repository chain was not triggered.",
+  "does_not_establish": [
+    "a new scientific theorem",
+    "a new anomaly coefficient or sign convention",
+    "an all-frequency Schwarzschild result",
+    "an invariant physical mixed interaction",
+    "a positive full-BV state, scattering theory, or unitarity theorem"
+  ]
+}

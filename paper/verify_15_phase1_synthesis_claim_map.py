@@ -75,14 +75,17 @@ def main() -> None:
         "Result card C: radial-pairing selection at a Schwarzschild fixture",
         "Result card D: strict and compensated local quantum theories",
         "Result card E: causal construction and physical nonselection",
-        "(2,3/5)",
+        "M\\omega=3/5",
+        "N_{\\ell m}=\\int_{S^2}|Y_{\\ell m}|^2\\dd\\Omega>0",
         "h_+(u,v)=",
         "S_{\\rm cf}=",
         "\\operatorname{disc}_wF_2=256q^5(9q-8)<0",
         "\\mathcal N_R[u_1,u_2]",
         "c_{\\rm W}=\\frac{199}{30}",
         "a_{\\rm W}=\\frac{87}{20}",
+        "net signed contributions",
         "\\Gamma^{(1)}_{\\rm div}(d)",
+        "Stelle's foundational analyses",
         "This is a classification ending, not a viable-theory claim",
         "No positive full-BV state has been constructed",
     ]
@@ -98,6 +101,7 @@ def main() -> None:
         "counterflow theory is physically viable",
         "Lee--Wald inertia",
         "exact 70-component causal BV parent",
+        "$(\\ell,m\\omega)=(2,3/5)$",
     ]
     for phrase in forbidden_phrases:
         if phrase.lower() in text.lower():
