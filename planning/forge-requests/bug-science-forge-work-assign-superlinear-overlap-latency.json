@@ -1,0 +1,20 @@
+{
+  "id": "sf:forge-request/bug-science-forge-work-assign-superlinear-overlap-latency",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Make coordinator lease assignment fast enough for interactive multi-subagent dispatch on a large append-only programme without weakening the exclusive-scope overlap gate.",
+    "depends_on": [],
+    "stop_condition": "On a deterministic fixture comparable to the current 136-open-item/252-completion physics programme, `sfc work-assign` must complete within 4 seconds on the reference workstation when the candidate scope is disjoint, and within the same bound with a typed refusal when it overlaps. The implementation must fold only leases live at the supplied `--now`, use effective narrowed scopes, preserve path-prefix semantics and waivers, and invalidate any cache exactly when a relevant item, lease, scope-narrow or waiver event changes. Add a regression showing that assigning the same agent twice does not append a second ACQUIRE/ACTIVE pair silently: it must return ALREADY_HELD or append an explicit RENEW according to a documented rule.",
+    "forbid": "no skipped overlap check; no clockless expiry assumption; no directory-mtime-only cache; no stale effective scope; no automatic waiver; no semantic special case for the physics repository; no performance pass measured only after deleting historical events.",
+    "notes": [
+      "Reproduction 2026-07-22: with the current physics programme, `work-scope-narrow` completed in under one second and `overview` in roughly 13 seconds, but each `work-assign` consumed about 110-150 seconds at approximately 100% CPU before returning.",
+      "The first attempted Phase-3 assignment correctly refused a broad planning/forge-requests and planning/events overlap. After exact scope narrowing, the successful assignments still paid the same full-CPU delay, so the cost is not explained by a difficult conflicting-path result.",
+      "A repeated assignment of phase3-boundary-1 to its already-held item appended sequence-2 ACQUIRE and ACTIVE events instead of reporting an already-held lease or using RENEW. The fold remained coherent, but the duplicate journal noise should be prevented or made explicit.",
+      "This is distinct from the landed read-only overview/event-index work: the regression is on the mutating assignment path and its live-scope overlap calculation."
+    ]
+  },
+  "state": "PROPOSED"
+}
