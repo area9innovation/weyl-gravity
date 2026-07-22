@@ -1,0 +1,18 @@
+{
+  "id": "sf:forge-request/science-forge-fast-lease-mutation-path",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Make the normal Science Forge lease path fast and comfortable at programme scale. A single `s-f work assign` on the live physics corpus consumed roughly 90 seconds of one CPU before writing a correct lease, even though the read-only overview fold is now only a few seconds. Pull, assign, renew, yield, abort and close are inner-loop coordination operations and must not rescan or refold the entire append-only corpus expensively on every mutation.",
+    "depends_on": [],
+    "stop_condition": "Profile the live-sized path and identify the time spent in event discovery, JSON parsing, lifecycle folding, dependency folding, effective-scope calculation, active-overlap CAS and Git state checks. Introduce a content-addressed incremental fold/index or equivalent bounded mutation path whose cache key includes every authoritative work item and event input. Preserve a full-fold fallback and verify cached == uncached state byte-for-byte. On a deterministic fixture at least as large as the current physics programme (>=4,000 events, >=135 open items, >=7 streams), warm `work assign`, `work pull`, `work renew` and `work yield` must each complete in under 1 second p95; a stale/missing-cache rebuild followed by the requested mutation must complete in under 4 seconds p95 on the reference machine. The final acquire guard must still recheck lifecycle, one-lease-per-agent, dependencies and active write-scope overlap atomically before writing an event. Add concurrent-writer, stale-cache, moved-HEAD, corrupt-cache, expired-lease and append-during-rebuild fixtures, with C == native and ASan-clean gates. If an operation exceeds two seconds, the wrapper must print a short progress reason rather than appearing hung. Document cache location, invalidation, rebuild and recovery in GUIDE.md and expose timing/cache-hit fields in an opt-in diagnostic mode.",
+    "forbid": "no weakening or bypassing the final lease CAS; no cache treated as authoritative over append-only events; no wall-clock-only invalidation; no silently stale lifecycle or overlap decision; no global daemon required for correctness; no background mutation; no performance claim from a toy ten-event fixture; no hiding a slow rebuild without progress output; no change to scientific lifecycle semantics",
+    "notes": [
+      "Live reproduction 2026-07-22: after a verified cross-stream request correctly changed programme-global-paper-coverage-baseline from BLOCKED to READY, `s-f work assign --item programme-global-paper-coverage-baseline --agent coordinator --now 2026-07-22T03:41:30Z --expires 2026-07-22T06:41:30Z` ran at approximately 100% CPU for about 90 seconds before landing the correct ACTIVE/LEASE events.",
+      "The same corpus currently contains 135 open work items across seven streams and more than two hundred terminal results. This is already normal operational scale, not an artificial stress test.",
+      "A correct slow lease path is safer than a fast incorrect one, but it is too costly for five resident agents that pull, report and release work repeatedly. The target is exact incremental state, not relaxed coordination discipline."
+    ]
+  }
+}

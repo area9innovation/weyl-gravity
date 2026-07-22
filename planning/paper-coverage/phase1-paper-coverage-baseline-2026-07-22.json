@@ -1,0 +1,66 @@
+{
+  "commands": [
+    "s-f shadow-import-all . /home/alstrup/area9/tango/forge shadow.json shadow-ledger.json",
+    "python3 /home/alstrup/area9/tango/forge/tools/science-forge/discover/mine_evidence.py --physics-root . --out-dir <scratch>",
+    "python3 planning/paper-coverage/generate_phase1_paper_coverage_overlay.py --discovery <scratch>/evidence_graph.json --output planning/paper-coverage/phase1-paper-coverage-overlay-2026-07-22.json",
+    "s-f coverage-adapt <scratch>/shadow.json --overlay planning/paper-coverage/phase1-paper-coverage-overlay-2026-07-22.json -o <scratch>/coverage-graph.json",
+    "s-f paper-coverage <scratch>/coverage-graph.json --mode advisory --stamp 2026-07-22 -o <scratch>/coverage-report.json"
+  ],
+  "counts": {
+    "blocking": 0,
+    "claim_no_evidence": 0,
+    "classified": 8,
+    "coverage_graph_nodes": 1496,
+    "deferred_ok": 0,
+    "discovery_papers_before_markdown_overlay": 47,
+    "lifecycle_disagreement": 0,
+    "overview_only": 0,
+    "paper_claims": 11,
+    "papers": 52,
+    "results": 1408,
+    "review_queue": 1400,
+    "shadow_certificates": 1404,
+    "superseded_evidence": 0,
+    "typed_result_paper_edges": 17,
+    "unclassified": 1400,
+    "uncovered_material": 0
+  },
+  "does_not_establish": [
+    "that all 1,400 unclassified result candidates are publication-relevant",
+    "that every prose theorem statement in every manuscript has been converted to a typed paper_claim",
+    "that an overview mention counts as technical coverage",
+    "that Phase 1 establishes a viable theory, particles, scattering, positivity, unitarity, or complete quantum gravity"
+  ],
+  "human_materiality": {
+    "by": "Asger Alstrup Palm",
+    "classified_result_ids": [
+      "BRIDGE_PHASE1_EINSTEIN_EXTRA_CONTRIBUTION_V1",
+      "CLASSICAL_PHASE1_COUNTERFLOW_CLAIM_MAP_V1",
+      "EINSTEIN_MAXWELL_WEYL_POLAR_DIRECT_LEE_WALD_COMPLETION_V1",
+      "NONLINEAR_PHASE1_INTERACTION_DISPOSITION_V1",
+      "PAPER09_COUNTERFLOW_HEALTH_NONACTIVATION_FREEZE_V1",
+      "PHASE1_QUANTUM_DISPOSITION_SYNTHESIS_V1",
+      "PURE_WEYL_BH2C_SYMBOLIC_FLUX_RADIATION_CLASS",
+      "PURE_WEYL_BH_ENDPOINT_NONSELECTION_ASSEMBLY"
+    ],
+    "version": 1
+  },
+  "inputs": {
+    "adapted_graph_sha256": "2f9bcb870907e2a15e3d887b19de4465682a9d97d9676a2940cdee1d5aecbe9f",
+    "advisory_report_sha256": "08e565c234224346aee3940121e3a6bde7777de62272d61ee7d481094a65ae28",
+    "discovery_graph_sha256": "1a7df35ae096979ba764b5f6292350999099dfc643f9f12bae09034ed283b461",
+    "shadow_import_sha256": "567e56015791241ca433be616e64f6c2a605ea5d3145f103ae0b0b404a6ad83d",
+    "typed_overlay": "planning/paper-coverage/phase1-paper-coverage-overlay-2026-07-22.json",
+    "typed_overlay_sha256": "389d1033e9b40bd66cfc5237d3cd2df4ea2575e1d17847d4a519dba89f6b8be2"
+  },
+  "interpretation": {
+    "release_status": "This is an advisory baseline, not a release-mode all-corpus coverage pass.",
+    "reviewed_slice": "All eight human-classified recent/headline Phase-1 results have current technical coverage; all eleven typed reverse paper claims pass.",
+    "unclassified_remainder": "The other 1,400 discovered result candidates remain visibly queued for human materiality review. Their count is inventory, not publication debt and not a no-paper disposition."
+  },
+  "mode": "advisory",
+  "result_id": "PROGRAMME_GLOBAL_PAPER_COVERAGE_BASELINE_V1",
+  "result_state": "NONVACUOUS_ADVISORY_BASELINE_REVIEWED_SLATE_COVERED",
+  "schema": "programme-paper-coverage-baseline-v1",
+  "stamp": "2026-07-22"
+}
