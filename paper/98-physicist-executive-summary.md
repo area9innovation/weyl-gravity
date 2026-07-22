@@ -1,9 +1,9 @@
 # Pure-Weyl gravity programme: executive summary for physicists
 
-**Last substantive update: 21 July 2026 — terminal Phase-1 counterflow
-nonselection, certified action--angle and conditional comparison theorems,
-the invariant compact-product symplectic-extension obstruction, and the
-symbolic-frequency black-hole pairing programme.**
+**Last substantive update: 22 July 2026 — Phase 1 closed with an exact
+classification ending: a causal counterflow parent exists, but its declared
+same-field stationary family supplies no robust physically healthy Phase-2
+candidate.**
 
 > **Research context.** Asger Alstrup Palm directs the programme and is the
 > accountable human contact. AI systems perform substantial derivation,
@@ -54,9 +54,10 @@ action is exactly equivalent to the previously certified positive Berger
 clock system plus a contractible gauge summand. This gives a complete real
 cyclic 70-component BV parent with support-local advanced and retarded chain
 homotopies. It is the first compensator-successor model to pass the complete
-classical causal-parent gate. Its full fixed-charge physical cohomology,
-reduced inertia, interactions, observables and quantization are still being
-audited. An exact homogeneous stationary classification has also shown that
+classical causal-parent gate. Its physical cohomology, reduced inertia,
+interactions, observables and quantization were therefore tested as separate
+promotion gates rather than inferred from causality. An exact homogeneous
+stationary classification has also shown that
 the passing fixed-action point is isolated rather than an open phase, and that
 the same action has no stationary path to the round cylinder. The homogeneous
 trace block is positive and oscillatory there; this does not replace the full
@@ -119,6 +120,13 @@ horizon tests, while both parities at one Schwarzschild fixture are removed
 by finite symplectic norm at infinity. Nonlinear and quantum calculations impose
 further real obstructions; the general asymptotic and full-BV physical
 quotients remain open.
+
+**Phase 1 is closed.** Its outcome is a classification rather than a selected
+theory: the programme constructed its first causal changed-theory candidate,
+found a nonradical Hamiltonian--Hopf instability that persists across the
+connected trace-healthy same-field family, and did not activate interaction,
+observer, or quantum promotion for that candidate. This does not rule out a
+genuinely different action or field content in a future Phase 2.
 
 ## Current verdict
 
@@ -313,9 +321,11 @@ The Berger interaction programme has exact cyclic $q_2,q_3$ tensors and a
 retained mixed gravity--Maxwell $\ell_3$ representative on its declared
 mode space. That representative is an architectural result, not yet an
 invariant physical interaction. Once the fuller Maxwell ghost structure is
-included, the mixed interaction is cyclically removable through first jet.
-The second-jet image calculation is still active; no nontrivial cyclic
-deformation class or Einstein/additional/Maxwell mixing table is certified.
+included, the physical-action mixed interaction is cyclically removable
+through summed input-jet order two. On the complete full-BV bounded cyclic
+complex, the former second-jet witness is invalid but no full primitive or
+replacement witness is certified. The invariant class and every
+Einstein/additional/Maxwell mixing table therefore remain open.
 The nonlinear symmetry that does close is
 $K_{\rm Berger}=D-\omega R$, not raw $D$.
 
@@ -425,7 +435,7 @@ milestones are excluded.
 | Clocks and redshift | Healthy original Berger clock and a spatially global retarded $G_0$ probe fixture with $1+z=2$ on its declared carrier; the changed theory has a charged action--angle clock plus exact distributional and finite-resolution conditional event maps | **Probe-mode fixture / changed-theory clock and conditional sampling theorems certified; operational apparatus ratio not activated** | The standalone local receiver cocycle cannot be included by a degree-zero map into repaired $q_{70}$; no residual nonradical receiver or localized operational redshift is certified; [Paper 9](09-relational-clocks-berger-d-cartan.pdf) |
 | Einstein image and additional branches | Linear inclusion, parity-complete pre-residual $H^0$ exact sequence and nonradical currents certified; lift-shear invariants give a canonical target-orthogonal split but obstruct every declared parity-complete strict cyclic split | **Pre-residual exact sequence / direct currents / invariant strict-cyclic obstruction certified** | A common charge-zero derived carrier, any admissible non-strict homotopy, causal boundaries, and quantization remain open; [Paper 92](92-extra-axial-lee-wald-bridge.pdf) |
 | Nonlinear tangent cone and resonances | Formal finite exponential-polynomial cone equals five-charge zero set; tuned standard bounded cone is classified for every $\ell\ge2$; all 164 two-momentum basis coefficients are closed | **Formal cone and all-$\ell$ standard subcone certified; larger cone partial** | Arbitrary-amplitude two-momentum zero variety, causal, infinite-mode, and all-order problems open; [Paper 13](13-compact-weyl-maxwell-second-order-tangent-cone.pdf) |
-| Interaction and branch mixing | Retained mixed tensor is exact/cyclic; fuller ghost structure removes it through first jet | **Representative certified; invariant class open** | Second-jet image and branch-resolved operation not certified; [Paper 11](11-gravity-light-cyclic-causal-ell3.pdf) |
+| Interaction and branch mixing | Retained mixed tensor is exact/cyclic; the physical action is trivial through summed input-jet order two | **Representative certified; complete full-BV invariant class open** | A full-BV primitive or replacement cokernel witness and branch-resolved operation are not certified; [Paper 11](11-gravity-light-cyclic-causal-ell3.pdf) |
 | Free quantum observables and reduced states | Curvature CCR algebra exact; separate reduced E/A/L Hadamard carrier has signs $(+,-,-)$ | **Certified on distinct free carriers** | No full-BV positive state, particles, or interacting products; [state report](../quantum-weyl/reports/vacuum-cylinder-reduced-bridge4-hadamard.md) |
 | One-loop anomaly | Strict local Euclidean QME obstructed; compensator extension restores changed theory at one loop | **Strict obstructed / extension restored** | No Lorentzian QME or unitarity theorem; [Paper 12](12-pure-weyl-one-loop-bv-anomaly.pdf) |
 | Black holes | Static first law; additional axial and polar families reach the horizon, but finite symplectic norm at infinity selects the Einstein sector at the certified $\ell=2,\omega=3/5$ fixture | **Static certified / two-parity fixture classified** | Symbolic frequency, general $\ell$, full scattering phase space, stability, and ringdown open; [Paper 14](14-pure-weyl-black-hole-radiation.pdf) |
@@ -569,7 +579,7 @@ to its derivation and verifier.
 | Relational clock and light | Original spatially global retarded $G_0$ probe fixture certified on its declared carrier; the changed theory has exact conditional comparison laws, but its repaired-$q_{70}$ certified physical blocks are unstable and the $j=\frac12$ quartet persists across the connected same-field retuning family | The operational counterflow ratio and Phase-2 candidate are `NOT_ACTIVATED`; a new action architecture would require its own causal, health, receiver and $D/R_{\rm rel}/K$ certificates. |
 | Black-hole radiation | Static theorem and horizon reach in both parities; finite norm at infinity selects Einstein in both parities at one fixture | Generalize in frequency and $\ell$, then construct the asymptotic phase space. |
 | Einstein--Weyl relative theory | Matching action-derived tensors through $q_3$; strict $f_1$ has a nonzero arity-two defect; global five-charge receiver and Hessian Green-current cone certified | Precompose all stabilizers, add cyclic duals, compare with Lee--Wald, and determine the correct relative nonlinear extension. |
-| Residual branch mixing | Retained cyclic representative and rank-46 carrier exist; physical interaction class not certified | Finish the second-jet image test and obtain an admissible branch resolution. |
+| Residual branch mixing | Retained cyclic representative and rank-46 carrier exist; physical-action order two is trivial, while the complete full-BV interaction class is open | Decide the full-BV bounded cyclic class and obtain an admissible branch resolution. |
 | Quantum anomaly and states | Strict anomaly, compensator restoration, reduced Hadamard carrier, and determinant subproblems certified | Assemble the physical Hessian/determinant and test the Lorentzian full-BV QME/state. |
 | Asymptotic Bach/BMS | Programme stage only | Construct differentiable charges, flux, falloffs, and signs at null infinity. |
 
@@ -703,7 +713,8 @@ symbolic laboratory rather than a collection of unchecked AI prose.
   Narrowed the Schwarzschild result to horizon-and-leading-asymptotic
   nonselection, added polar horizon reach, and updated observer and one-loop
   determinant work. Corrected the Berger mixed-interaction status to removal
-  through first jet with the second-jet image gate open.
+  through physical-action input order two while keeping the complete full-BV
+  bounded cyclic class open.
 - **18 July 2026:** added the noncyclic Einstein--Weyl linear triangle,
   Einstein--Maxwell tensors through $q_3$, the formal Nariai causal
   variation, black-hole horizon pairing fixtures, reduced cylinder

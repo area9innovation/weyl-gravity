@@ -1,0 +1,39 @@
+{
+  "commands": [
+    "python3 planning/paper-coverage/generate_phase1_closure.py --check",
+    "python3 planning/paper-coverage/verify_phase1_closure.py",
+    "python3 planning/paper-coverage/test_phase1_closure.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/programme-phase1-classification-ending-fragment-v1.json"
+  ],
+  "does_not_establish": [
+    "independent re-verification of every imported scientific certificate",
+    "a viable theory, universal no-go, or Phase-2 candidate"
+  ],
+  "outputs": {
+    "planning/paper-coverage/phase1-closure-paper-audit-2026-07-22.json": {
+      "sha256": "fdd23469bbc2b18fb2b89c5e5e6b599d8474cd022a55bd7108add8da4c0e022b"
+    },
+    "reports/phase1-closure-2026-07-22.md": {
+      "sha256": "229aa15248d286dfa21120e58559451e70c7d823fa447180422fd9a757081509"
+    },
+    "reports/phase1-closure-claims-ledger-2026-07-22.json": {
+      "sha256": "1da97e9085e5c7138b88140106f0b1ab6d2a698ab539af4a6827f86708521fae"
+    },
+    "reports/phase1-closure-dependency-snapshot-2026-07-22.json": {
+      "sha256": "e4a6c8603ecc3b7ae59c384e26668c32e9ca2792a4281c32d12e4692c43b20dc"
+    },
+    "residual_atlas/programme-phase1-classification-ending-fragment-v1.json": {
+      "sha256": "e1a6637a627bfc756bf07f5605de628a752fd061475c41c00d08687d617afa56"
+    }
+  },
+  "result_id": "PURE_WEYL_PROGRAMME_PHASE1_CLASSIFICATION_ENDING_V1_TIER_RECEIPT",
+  "schema": "pure-weyl-programme-phase1-tier-receipt-v1",
+  "scope": "Programme-level deterministic join of already-frozen Phase-1 evidence; no scientific producer is replayed.",
+  "stamp": "2026-07-22",
+  "tiers": {
+    "tier_0": "PASS: generated outputs, exact input hashes, and scoped diff checked",
+    "tier_1": "PASS: generator freshness, independent verifier, unit tests, and atlas schema",
+    "tier_2": "HASH-GATED: dependencies were imported at their frozen commits and checked by content hash",
+    "tier_3": "NOT_RUN: no scientific theorem or shared algebra was changed by this synthesis"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/black-hole-paper92-finite-flux-bridge-update",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "black-hole-paper92-finite-flux-bridge-update",
+  "source": {"path": "planning/work-items/black-hole-paper92-finite-flux-bridge-update.json", "span": null},
+  "body": {
+    "owner": "black-hole-1",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 2,
+    "objective": "Bring Paper 92's Schwarzschild comparison up to the final scoped finite-flux and endpoint/BVP dispositions without changing its compact-product Lee-Wald theorem.",
+    "stop_condition": "After the endpoint-local-condition and exterior-BVP scope repairs are terminal, update only Paper 92's independent Schwarzschild comparison and scope boundary. State horizon analyticity, axial symbolic real-frequency finite-flux Einstein selection, the polar fixture boundary, and every remaining complex-frequency/phase-space/stability limitation exactly as certified. Run Markdown link and claim-boundary checks and record the exact black-hole claim-map hash.",
+    "current_gate": "terminal endpoint/BVP scope repairs followed by Paper 92 comparison propagation",
+    "forbid": "no universal local causal-truncation no-go; no polar symbolic-frequency promotion; no scattering, QNM, stability, particle or unitarity claim; no change to Paper 92's compact-product theorem",
+    "depends_on": ["sf:program/work/black-hole-endpoint-local-condition-scope-repair#ANY_TERMINAL", "sf:program/work/black-hole-exterior-bvp-functional-scope-repair#ANY_TERMINAL"],
+    "allowed_paths": ["paper/92-extra-axial-lee-wald-bridge.md", "paper/92-extra-axial-lee-wald-bridge.pdf", "planning/paper-coverage/", "reports/", "planning/events/"],
+    "resource_hint": "COMPANION BRIDGE UPDATE. It does not gate the Phase-1 core classification ending.",
+    "input_commit": "f84219211e36096be34ce6c5d9cd2c3275c2bb68"
+  },
+  "edges": []
+}

@@ -44,54 +44,37 @@ The backgrounds must remain separate until an explicit bridge is certified.
 |---|---|---|
 | Vacuum conformal cylinder | complete free causal gauge complex and the stated residual reduction | matter clocks, interactions, particles, or scattering |
 | Positive Berger clock | healthy rotating scalar clock and fixed-coupling `D`-degeneracy; complete 54-row causal clock complex; repaired mixed \(q_2,q_3\), retained \(\ell_3\), full retained BV cyclicity, and an exact first-page obstruction to removing the mixed \(\ell_3\) by the declared filtered cyclic `F2/F3` class; exact spatially global retarded relational Maxwell observable with \(1+z=2\); exact cyclic rank-46 STF2 graph carrier and physical-helicity quotient; exact subprincipal obstruction to the requested support-local branch projector; covariantly normalized coefficientwise 84-row apparatus unary through the mixed first jet with a formal bivariate Green coefficient; exact apparatus cubic/quartic action jets, rank-two affine-`K` family observer morphism, scoped C-G4 two-record Poisson algebra, receiver-adjacent localized-emitter rank-two transfer, recoil-input underdetermination with formal rank stability, selected 108-row massive-two-form emitter handoff, certified 108-row unary, first formal coupled Euler recoil Green term, coefficientwise causal chain homotopy through \(g^2\), rank-two leading transfer from actual localized massive-emitter Cauchy data, the exact absolute-\(g^3\)/relative-\(g^2\) recoil operator, exact normalized compact emitter switches, the emitter stress/clock-switch \(q_2\) backreaction jet, the covariant all-row \(q_1q_2\) master identity, a complete order-14 formal temporal charge-block stream through `two_j=138` with an exact obstruction to direct Green-image promotion, its finite-rail exact-`T` blockwise functional-calculus successor, and a generated 95-key nonlinear clock second jet whose complete scalar 108-row first-bidegree unary square vanishes on all 699 modes of the same-background quotient while the mixed `epsilon_R_squared*kappa` coefficient remains freely zero | a residual-cohomology or SDR-independent deformation-class theorem beyond the declared filtered equivalence relation, a different noncontractible filtered or mixed-bundle branch split, a branch-resolved mode-pair source table, original common-Hopf emitter, a validated infinite-mode temporal Green image, detector-selected full Green images and evaluated recoil coefficient, scalar apparatus `q2,q3`, `K_Berger` equivariance and observer-morphism stability on the completed 108-row unary carrier, a solved backreacted branch, full apparatus/harmonic algebra, full `q4` and higher brackets, fixed-background linear descent, finite-parameter/all-orders Green hyperbolicity, all-orders closure, or genericity |
-| Two-phase counterflow Berger successor | a changed action with two phases and one auxiliary diagonal `U(1)` has an exact 70-component cyclic BV parent on the selected Berger point; the diagonal gauge sector is contractible, the dressed-trace class is eliminated, and causal homotopies are certified; its unrestricted homogeneous clock is a positive action--angle system while fixed-`Q_rel` reduction removes the clock; sharp and finite-resolution charged-time event maps plus conditional reciprocity, comparison composition and loop-holonomy laws are exact but still lack a physical receiver; the round-style scalar exact-one-form carrier is not closed under the anisotropic gauge-fixed differential, with leading defect `93 i k/40` for every `k != 0`; the selected background also fails conventional same-source Einstein--matter incidence, and the rowwise spatial stabilizer receiver is absent | full `SU(2)_L x U(1)_R` isotypical closure under all 70 mixed rows, right-neutral/exceptional blocks, then the unrestricted pairing/gradient/characteristic assembly and a nonzero receiver; in parallel freeze the general receiver/crosswalk contract; structural stability, action-derived `q2`, action-specific anomaly/Hadamard data, particles, or unitarity |
+| Two-phase counterflow Berger successor | Phase 1 classification is closed: the selected changed action has an exact 70-component cyclic causal BV parent and removes the dressed trace, but fixed-`Q_rel` reduction removes the proposed clock; every certified selected-fixture physical quotient is nonradical and unstable, and the Hamiltonian--Hopf quartet persists throughout the connected trace-healthy same-field family | no Phase-2 candidate selected; higher isotypes and familywide Green homotopies remain `NO_CERTIFIED_MAP`, but they cannot remove the already persistent `j=1/2` obstruction; any Phase 2 must choose a genuinely new action or field architecture and repeat the causal, health, observer and quantum gates |
 | Compact Einstein--Maxwell product | complete standard harmonic Einstein--Maxwell inclusion with nondegenerate nonsymplectic Weyl--Maxwell pullback; direct axial and polar extra-branch Lee--Wald currents; maximal parity-complete pre-residual solution exact sequence with generic dimensions `4 -> 8 -> 4` and zero radicals; lift-shear classification gives a canonical target-internal orthogonal split but proves that every declared time-translation-preserving parity-complete strict cyclic split is obstructed by the source/image inertia mismatch; pure-extra Taub no-go, classified mixed moment-map cones, and a two-parameter second-order-extendible face | construct the common five-charge constraint-algebroid/Kuranishi derived carrier, then classify any non-strict cyclic homotopy and the pulled-back sequence; quadratic-source disposition, nonlinear causal closure, or asymptotic radiation |
 | Quantum local algebra and free reduced carrier | complete full-BV strict local quotient on the regular Bach locus; exact repository Euclidean elliptic complex and anomaly vector `(199/30,-87/20,0,0)`; strict one-loop local Euclidean QME obstruction and formal tau-adic compensator restoration; exact Wess--Zumino `Q1` contribution with rank-two finite ambiguity; anomaly-induced Paneitz/Riegert representative; exact `BoxR` scheme conversion; flat-TT and covariantized `C2` logarithm; FV scalar-flat completion and Ricci-sector dependence; complete algebraic `C3` and parity-even five-carrier manifests; five universal CPT kernels; exact generic ghost n=3 triangle and ten-dimensional scalar-flat projection, with ten exact generic `Delta` cancellations, one direct `I10` open-edge source, a pointwise `I28` relation, positive vertex margins, exact relative-IBP reduction of all ten pole-three rows, normalized corner non-membership witnesses, an exact S3-covariant scalar-triangle differential system and complete generic J-plus-two-log functions for all ten pole-three rows, a full exact 55-row pole-four `I29` reduction to the same master basis, and all eleven generic functions with exact symmetric-point regressions; exact n=1/n=2 Hodge reduction, pure-vector CPT slice and generic integration of its six nonzero plus five zero channels into the same triangle/two-log/rational basis with no new transcendental master; all three longitudinal `D_W` towers resummed into the normalized scalar Schur operator with cubic weights `(-1/3,1/9,-1/81)`; its correction is in `S_3`, `Wres(K)`, `Wres(K^2)`, and `Wres(log S_L)` are exact, the declared order-two weighted trace fixes the pole and scale row, the round-`S4` reference finite `K/K2` rows, canonical `det_3` tail, weighted modified determinant and Einstein-ratio defect `5/3` are complete, and the distinct generic weight-raised local defect is `-(1/4)Wres(K^2)` with round specialization `-1/3`; a smoothing proof shows that generic finite values still require global spectral data; the same-gauge physical Hessian is imported through `H1` and its projected algebraic `H2` block, with an exact derivative-ordering commutator crosswalk and round split `24-16=8`; its rank-nine `H1` momentum vertex is formally self-adjoint, the full physical three-`H1` alpha numerator is projected exactly onto the five scalar-flat carriers using 28 training and two unseen fixtures, and its isolated symmetric-point integral has an exact logarithmic `M14` corner obstruction with rank jump `49 -> 50`, normalized dual witness and total coefficient `1/2`; an exact equal-box TT polarization of `H2` gives raw coefficients `-1975/72` from all six `H1^3` orderings and `2704/27` from all six mixed-bubble endpoints, for nonzero sum `15707/216`, refuting universal algebraic `H2` cancellation on that fixture; a generic covariant Volterra carrier joins all six ordered triangle cells and three `H1-H2` contact cells under one resolved-boundary Mellin extension, all generic boundary incidence and 33 finite contact rows are exact, the physical triangle lies in the exact rank-52 six-master span, the `M14` singlet plus standard-`S3` pair have exact Mellin-renormalized values and scale derivatives, all 66 reduced rational physical six-master coordinate functions are exact, and the physical triangle/contact rows, all eleven ghost-`n=3` channels and the pure-vector ghost `n=1+n=2` slice are assembled into a partial-BV five-carrier Mellin-MS representative in the same ten-dimensional quotient; reduced vacuum-cylinder Bridge 4 with normalized E/A/L modes, causal Green carrier, pairing, compatible complex structure, microlocal Hadamard two-point distribution, positive E and negative-Krein A/L | exactly three longitudinal/mixed `D_W` carriers plus their generic finite Schur rows and remaining BV sectors; a generic primed Green/resolvent kernel or complete spectral measure for the finite Schur rows and `det_3` tail; absolute dressed `R(g_hat)^2` and additive finite `C2` normalization, parity-odd derivative carrier manifest, complete renormalized `Q1`, all-loop or Lorentzian extended QME, a same-background compensator-inclusive classical contraction and residual transfer, full-BV or Berger BRST Hadamard state, positive graviton Hilbert space, asymptotic particle crosswalk, or scattering |
 | Static pure-Weyl black holes | exact static spherical Bach-flat family and regular three-horizon fixture; bare nonintegrability removed by the basicness-forced normalized generator `chi = u d_t` with exact Hamiltonian `H = -16 pi alpha beta^2 D2`, Wald entropy, and first law at every simple horizon; linear-level frame independence: arbitrary time-dependent conformal and `l=0` diffeo perturbations carry exactly zero charge and flux, entropy conformally invariant on the symbolic family, unique linear generator extension | radiative `l>=2` bilinear flux matrix and exterior causal complex (BH-2A), second-order/physical-process first law, nonlinear horizon dynamics, stability, or any ringdown statement |
 
-Counterflow successor pivot (2026-07-21): the causal theorem above is the
-first changed compensator-successor theory to pass the complete declared
-classical parent gate.  It is a theorem on the selected squashed Berger
-background, not the round conformal cylinder; the old fifteen-generator
-`SO(4,2)` receiver therefore cannot be inherited.  The complete declared
-fixed-action homogeneous stationary ideal now sharpens this further: the
-positive point is an isolated singleton, not an open phase, and the same
-action has no stationary path to the round cylinder.  Its reduced homogeneous
-trace block is positive with simple oscillatory roots, but that is not the
-full physical-cohomology health theorem.  The fixed-charge audit has now
-failed its first required property exactly: the derived level set and
-`R_rel` quotient contract the entire `(delta psi_0,delta Q_rel)` clock pair.
-Thus the fixed-charge branch makes `D` null but has no physical relative
-clock.  The distinct unrestricted branch retains the clock Darboux pair
-while raw `D` remains charged and `K=D-Omega R_rel` is the helical stabilizer.
-Its charge curvature is positive and it has no real exponential root.  The
-exact size-two zero Jordan chain is now proved to be the tangent to an
-integrable action--angle family with charge-dependent frequency.  The
-augmented energy has positive transverse curvature and no negative direction;
-fixed-charge orbital and shifted-frequency modulated stability pass, while
-absolute lifted/compact phase stability fails for clocks of different rates.
-The complete fixed-action Berger background is nevertheless isolated and its
-linearized constraints force the selected charge variation to vanish.  The
-first scalar Hodge attempt has now sharpened the carrier shortfall into an
-exact nonclosure theorem.  On every nonzero right weight, the anisotropic
-gauge-fixed differential leaves the round-style exact-one-form sector; the
-defect vanishes in the round mutation.  The invalid scalar/vector/tensor lane
-has therefore been retired and replaced by full Berger isotypical closure,
-right-neutral/exceptional completion and a new health assembly.  This is not
-a negative spectrum or a failure of the causal parent.  Nonlinear,
-Observer, Quantum and Bridge must type these two phase spaces separately; no
-fixed-charge clock observable, state or interaction may be promoted.  The compact-Cauchy AMM gate is
-closed: the five Taub pairings are necessary and sufficient for the declared
-second-order Sobolev Cauchy problem, while the fixed-group normal form fails
-because the lapse bracket has phase-space-dependent structure functions.
-The counterflow Einstein bridge now stops before a linear map: the selected
-Berger metric and positive clock stress solve the Weyl--matter equation but
-not the conventional Einstein--matter equation for any constants
-`(Lambda,kappa)`.  A same-background Einstein cofiber is therefore undefined,
-without excluding other common backgrounds.  The residual gate also stops at
-an exact carrier shortfall: the five-dimensional stabilizer is certified, but
-the 70-row parent lacks rowwise `L1,L2,L3,R3` actions and moment maps.  Absence
-of a round-cylinder map is not itself a quotient theorem.
+Phase 1 closure (2026-07-22): the counterflow successor passed the complete
+selected-fixture causal-parent gate and eliminated the dressed-trace class,
+then failed the independent physical-health gate.  Fixing and quotienting
+`Q_rel` makes raw `D` null but removes the relative-clock Darboux pair.  On the
+unrestricted carrier the clock survives and `D` remains charged.  After the
+round-Hodge carrier was correctly rejected, complete Berger isotypical
+quotients were constructed for every `m,k` at `j=0,1/2,1`; every certified
+quotient is nonradical and unstable.  The complete both-`k`, `j=1/2` quotient
+then proves a stronger candidate-selection result: its Hamiltonian--Hopf
+quartet persists throughout the connected trace-healthy same-field
+stationary family.  This closes Phase 1 without selecting a robust Phase-2
+candidate.  Higher-isotype spectra away from the selected fixture and a
+familywide Green homotopy remain uncertified, but neither can remove the
+already persistent `j=1/2` obstruction.  The ending is scoped to the declared
+same-field family, not to every changed action or field architecture.
+
+The joined Phase-1 record also keeps the other laboratories separate.  The
+compact-product Einstein/extra exact sequence and five-charge
+Taub--Kuranishi results remain structural results on their own background.
+The Berger interaction representative is exact and cyclic, but the physical
+action is trivial through second input jet and the complete full-BV cyclic
+class remains open.  No counterflow interaction, operational receiver, or
+quantum promotion is activated.  Strict pure Weyl gravity retains its local
+one-loop Euclidean anomaly, while the compensator restores a changed formal
+theory at that order.  Phase 1 therefore ends with an exact viability
+classification, not a viable theory and not a universal no-go.
 
 Positive-Berger coefficient disposition (2026-07-21): the one-complex-clock
 local anomaly quotient is zero on its declared regular chart, but its actual

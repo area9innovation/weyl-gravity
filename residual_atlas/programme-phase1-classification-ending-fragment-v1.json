@@ -1,0 +1,92 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "The axis statuses summarize different typed rows; they are not one cross-background mode. The ending is not a universal no-go and does not establish particles, scattering, unitarity, or complete quantum gravity.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "OBSTRUCTED",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "reports/phase1-closure-claims-ledger-2026-07-22.json",
+          "result_id": "PURE_WEYL_PROGRAMME_PHASE1_CLASSIFICATION_ENDING_V1",
+          "sha256": "1da97e9085e5c7138b88140106f0b1ab6d2a698ab539af4a6827f86708521fae"
+        }
+      ],
+      "id": "programme.phase1.classification_ending.no_candidate_selected",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The declared same-field counterflow family retains the j=1/2 Hamiltonian--Hopf quartet.",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "The selected physical unstable block is nonradical; causality did not imply a healthy reduced pairing.",
+          "status": "OBSTRUCTED"
+        },
+        "resonance": {
+          "statement": "The complete bounded compact-product zero locus remains open and is distinct from counterflow candidate selection.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Row-specific bounded continuation results remain typed to their original laboratories.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No programme-wide causal second-order join is claimed.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Selected compact-product balanced representatives have finite exponential-polynomial secular corrections.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The separate compact-product laboratory has a five-charge formal second-order criterion; it is not imported into the counterflow background.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "cylinder, Berger, compact Plebanski-Hacyan, Euclidean anomaly, and Schwarzschild laboratories kept separate",
+        "boundaries": "row-specific boundaries and charge fibres",
+        "carrier": "Phase-1 claims ledger",
+        "charge_sector": "unrestricted, Taub-zero, fixed-Q_rel, and asymptotic finite-flux sectors kept distinct",
+        "degree": "classification join",
+        "ell": "row-specific",
+        "k": "row-specific",
+        "m": "row-specific",
+        "omega": "row-specific",
+        "parity": "row-specific",
+        "theory": "programme-level typed synthesis; distinct theory rows are not identified"
+      }
+    }
+  ],
+  "generated_by": "planning/paper-coverage/generate_phase1_closure.py",
+  "generated_by_sha256": "c0bb83ea616a6e2d4379ad90ec86cbc86ea6f73cbdfda6bbce492775130f1305",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "programme",
+  "verification_commands": [
+    "python3 planning/paper-coverage/generate_phase1_closure.py --check",
+    "python3 planning/paper-coverage/verify_phase1_closure.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/programme-phase1-classification-ending-fragment-v1.json"
+  ]
+}

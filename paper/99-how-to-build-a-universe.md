@@ -201,10 +201,9 @@ kept, the clock survives, but time translation carries a physical charge.
 
 This does not invalidate the causal equations. It says that this model cannot
 provide both a physical evolving clock and gauge time on the same declared
-phase space. The next calculation asks whether the unrestricted, charged-time
-version is otherwise healthy. That alternative is closer to ordinary physics,
-where time translations generate energy, but it is a different answer to the
-project's original question.
+phase space. The unrestricted, charged-time version was therefore tested as a
+separate physical theory, closer to ordinary physics where time translations
+generate energy.
 
 The first part of that health test is now exact. The clock's energy bends in
 the positive direction, and there is no exponentially growing solution in
@@ -230,6 +229,12 @@ never becomes a healthy oscillatory pair. Therefore this declared same-field
 candidate is not selected for Phase 2. Higher representation levels remain
 uncalculated, but that does not reopen the already persistent quartet. Nor is
 this a theorem against every possible new clock, field content or action.
+
+This is the end of Phase 1. The outcome is not a finished universe; it is an
+exact classification. The project built a changed theory that passed the
+causality gate, then found why its declared family fails the physical-health
+gate. A future Phase 2 would begin only after choosing a genuinely new
+candidate rather than quietly modifying this failed one.
 
 The original Berger laboratory adds something more tangible: a matter field acts as a
 clock, and an electromagnetic signal is emitted during a bounded time
@@ -312,10 +317,12 @@ cancellation geometry remains open.
 The interaction story has also produced a useful correction. An apparent
 gravity–light interaction survived an initial reduction. Once the missing
 gauge structure was included, however, that term could be removed through
-the first derivative order. A larger second-derivative calculation is now
-testing whether any invariant interaction remains. This is precisely why the
-project treats intermediate symbolic results as provisional until the full
-gauge structure has been checked.
+the first derivative order, and the physical-action calculation now removes
+it through the second derivative order as well. The complete gauge-complex
+question remains open because the old second-order witness fails while no
+full primitive has yet been found. This is precisely why the project treats
+intermediate symbolic results as provisional until the full gauge structure
+has been checked.
 
 These findings do not yet prove long-term stability. They turn a vague fear
 about higher derivatives into explicit balance and resonance tests that can
