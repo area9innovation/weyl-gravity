@@ -27,4 +27,5 @@ successive stabilized builds have SHA-256
 
 Papers 13, 91 and 92 were not edited.
 
+EVIDENCE: reports/classical-paper10-polar-extra-publication-boundary-repair-tier-receipt-2026-07-22.json
 CLOSE-OUT: DONE — objective met; scoped correction, claim map, verifier and reproducible PDF are committed.
