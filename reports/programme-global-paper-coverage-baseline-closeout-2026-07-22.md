@@ -36,3 +36,7 @@ the reverse typed claims are current, and the unreviewed remainder is impossible
 mistake for a clean or empty audit. It does **not** claim release-mode coverage of the
 entire historical corpus. The exact hashes and reproduction commands are recorded in
 `planning/paper-coverage/phase1-paper-coverage-baseline-2026-07-22.json`.
+
+EVIDENCE: planning/paper-coverage/phase1-paper-coverage-baseline-2026-07-22.json; planning/paper-coverage/phase1-paper-coverage-report-2026-07-22.json; independent verifier PASS.
+
+CLOSE-OUT: DONE — nonvacuous advisory baseline frozen; eight human-classified Phase-1 results have technical coverage, eleven reverse claims pass, and 1,400 unclassified results remain visibly queued.
