@@ -24,20 +24,33 @@
     }
   ],
   "paper": "paper/15-four-level-ghost-classification-phase1-synthesis.tex",
-  "paper_sha256": "9d41027f5508d912d3abaac4c32182b62fc1890e16bcc8cf103c89cdf6381977",
-  "phase2_updates": [
+  "paper_sha256": "046cd9aa68aa5aa425a9f208582f2dc3408c562f94571c0b2d9b888ee65f458d",
+  "post_phase1_updates": [
     {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
         "REDUCED-MODE"
       ],
-      "edge_kind": "NEGATIVE_RESULT",
+      "edge_kind": "SUPPORTING_POLAR_THEOREM",
       "key": "generic_l_schwarzschild",
       "paper_location": "Result card C",
       "path": "black_hole_programme/phase2/generic_l_synthesis/certificate.json",
-      "relationship": "Supersedes the fixture-level Einstein-selection reading in the declared formal radial class.",
+      "relationship": "Retains the generic-angular polar Q21 filtration; its axial metric disposition is superseded by the Phase-3 all-row ell=2 repair.",
       "result_id": "PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1",
       "sha256": "8a9914400f0929f37a63570b95383ebc4131cbf2928b5f923db0d002d0783d33"
+    },
+    {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "edge_kind": "PRIMARY_THEOREM_CORRECTION",
+      "key": "phase3_axial_complete_reconstruction",
+      "paper_location": "Result card C",
+      "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+      "relationship": "Supersedes the Phase-2 generic-ell axial metric and representative-independence claims while retaining the separate polar filtration.",
+      "result_id": "PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR",
+      "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990"
     },
     {
       "dependency_tags": [
@@ -92,9 +105,9 @@
       "sha256": "db0baaa808b131389de09adcbe02d423d210201f96290f94bea0f25be05fdfc2"
     }
   ],
-  "result_id": "PAPER15_FOUR_LEVEL_PHASE1_SYNTHESIS_WITH_PHASE2_UPDATE_V3",
+  "result_id": "PAPER15_FOUR_LEVEL_PHASE1_SYNTHESIS_WITH_PHASE3_UPDATE_V4",
   "result_state": "PUBLICATION_SYNTHESIS_OF_FROZEN_CLAIMS",
-  "schema": "paper15-phase1-synthesis-claim-map-v3",
+  "schema": "paper15-phase1-synthesis-claim-map-v4",
   "scope_rule": "Every scientific statement inherits the exact mathematical scope (theory, spacetime, background fields, gauge group, function or phase space, and boundary/support class) of its frozen source claim; dependency tags, evidence state, and limitation are recorded separately.",
   "supporting_claim_ids": [
     "phase1.interaction.disposition",

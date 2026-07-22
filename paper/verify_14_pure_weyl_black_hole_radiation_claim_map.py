@@ -24,11 +24,19 @@ PARENT_COVERAGE = ROOT / "planning/paper-coverage/phase1-paper-coverage-overlay-
 
 SOURCE_BASELINE = "936d76dbd2a9149243e57a082fa3519f0cfa8724"
 GENERIC_RESULT = "PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1"
+PHASE3_RESULT = "PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR"
+PHASE3_COMMIT = "d5d5d6de648795203604d62ce7bc4f4ce6fea510"
 EXPECTED_AUTHORITY_HASHES = {
     "certificate_sha256": "8a9914400f0929f37a63570b95383ebc4131cbf2928b5f923db0d002d0783d33",
     "receipt_sha256": "0888efb8f14518d38e40bd1b0a3926b8fab37ad729dce798c221a01d24aeabee",
     "report_sha256": "571fab0469b7bfde2b051b94bea657547570376b390a30a5b9ad6b6e93e92558",
     "correction_request_sha256": "308b27ba24076f7e439e36ebceb322442af1b1dcee225449d791cc105f403094",
+}
+EXPECTED_PHASE3_HASHES = {
+    "certificate_sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+    "receipt_sha256": "6aa563238027bc214e9a397c9ac67869695fd8ad2154ce45f5e9fafda1f070b0",
+    "report_sha256": "29f6d7cbc8a10b9cf9f97c1a4b205e3e8a2ec7ab2bfc96e434fe6344e55ca30a",
+    "atlas_sha256": "e6640a40089445cabef167153911407da61fed5764552292af252b6ae8883f4e",
 }
 OLD_EDGES = {
     "sf:coverage/edge/PURE_WEYL_BH2C_SYMBOLIC_FLUX_RADIATION_CLASS/paper-14/v1",
@@ -70,8 +78,8 @@ def main() -> None:
         fail("wrong source-map schema")
     if claim_map.get("paper_id") != "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION":
         fail("wrong paper identity")
-    if claim_map.get("result_id") != "PAPER_14_CORRECTED_X0_SUPERSESSION_V1":
-        fail("wrong corrected-paper result identity")
+    if claim_map.get("result_id") != "PAPER_14_PHASE3_AXIAL_RECONSTRUCTION_SUPERSESSION_V2":
+        fail("wrong Phase-3 paper result identity")
     if claim_map.get("lifecycle_state") != "DRAFT_ALLOWED":
         fail("Paper 14 lifecycle overpromotion")
     if claim_map.get("source_baseline") != SOURCE_BASELINE:
@@ -97,6 +105,24 @@ def main() -> None:
         if digest(path) != authority[hash_key]:
             fail(f"terminal authority content drift: {key}")
 
+    phase3 = claim_map.get("phase3_axial_authority", {})
+    if phase3.get("result_id") != PHASE3_RESULT:
+        fail("Phase-3 axial result not authoritative")
+    if phase3.get("source_commit") != PHASE3_COMMIT or git("cat-file", "-t", PHASE3_COMMIT) != "commit":
+        fail("Phase-3 source commit drift")
+    for field, wanted in EXPECTED_PHASE3_HASHES.items():
+        if phase3.get(field) != wanted:
+            fail(f"Phase-3 authority hash drift: {field}")
+    for key, hash_key in [
+        ("certificate", "certificate_sha256"),
+        ("receipt", "receipt_sha256"),
+        ("report", "report_sha256"),
+        ("atlas", "atlas_sha256"),
+    ]:
+        path = ROOT / phase3[key]
+        if digest(path) != phase3[hash_key]:
+            fail(f"Phase-3 authority content drift: {key}")
+
     generic = json.loads((ROOT / authority["certificate"]).read_text())
     if generic.get("result_id") != GENERIC_RESULT:
         fail("generic-l certificate result mismatch")
@@ -121,10 +147,22 @@ def main() -> None:
     )
     if fixture.get("omega_squared") != "9/25" or fixture.get("Q21_value") != expected_fixture:
         fail("Q21 legacy fixture drift")
-    if generic["joint_disposition"]["einstein_only_selection"] != (
-        "FALSE_IN_THE_DECLARED_FORMAL_RADIAL_CLASS_BY_AXIAL_X0"
+    repair = json.loads((ROOT / phase3["certificate"]).read_text())
+    if repair.get("result_id") != PHASE3_RESULT:
+        fail("Phase-3 certificate result mismatch")
+    if repair["complete_reconstruction"]["constraint"]["propagation"] != "dC/dr=-2*C/r":
+        fail("axial constraint propagation drift")
+    if repair["dimension_and_rank"]["complete_metric_dimension"] != 6:
+        fail("complete axial module dimension drift")
+    warning = repair["downstream_current_warning"]
+    if warning["status"] != "EXACT ASYMPTOTIC COEFFICIENT AUDIT; not a finite-flux phase-space theorem":
+        fail("current-audit scope drift")
+    if warning["finite_rate_zero_table_at_p_minus_2"]["Xfull_cross_Xfull"] != (
+        "32*I*pi*alpha_W*(540-omega^2)/(15*omega^3*(omega^2+4))"
     ):
-        fail("axial counterexample disposition drift")
+        fail("repaired X0 finite coefficient drift")
+    if "r^(3-4*I*omega)" not in warning["Eosc_cross_Xfull"]:
+        fail("oscillatory divergent cross term drift")
 
     sources = claim_map.get("sources", [])
     if len(sources) < 20:
@@ -151,8 +189,11 @@ def main() -> None:
         "polar_carrier_horizon_reach_modulo_conformal_gauge",
         "horizon_monodromy_temperature_reduced_mode",
         "local_cauchy_truncation_selects_einstein_axial",
-        "generic_l_axial_einstein_radial_finiteness",
-        "generic_l_axial_corrected_x0_non_einstein_finite",
+        "axial_l2_complete_six_dimensional_endpoint_module",
+        "axial_l2_constraint_propagation_c_prime_minus_2c_over_r",
+        "axial_l2_repaired_x0_fixed_representative_finite",
+        "axial_l2_rate_zero_einstein_shear_finite",
+        "axial_l2_oscillatory_einstein_shear_divergent",
         "legacy_axial_x0_derivative_defect",
         "polar_mixed_finite_line",
         "polar_q21_exceptional_wall",
@@ -168,6 +209,9 @@ def main() -> None:
         "invariant_einstein_extra_pairing_rank_signature",
         "one_ended_endpoint_selection_assembled",
         "additional_branch_outgoing_condition_logtail_obstructed",
+        "generic_l_axial_einstein_radial_finiteness",
+        "generic_l_axial_corrected_x0_non_einstein_finite",
+        "axial_l2_unrestricted_representative_independence",
         "global_horizon_to_infinity_matching",
         "asymptotic_tetrad_falloff_audit",
         "asymptotic_phase_space_charge_algebra",
@@ -184,12 +228,14 @@ def main() -> None:
     text = paper.read_text()
     required_phrases = [
         "M_{\\rm BH}\\omega=3/5",
-        "Generic-\\(\\ell\\) axial Einstein radial finiteness",
-        "Generic-\\(\\ell\\) axial Einstein-only selection counterexample",
+        "Scoped axial reconstruction and radial disposition",
+        "C'=-\\frac2r C",
+        "\\mathcal E_{\\rm Bach,ax}^{6}",
+        "is not itself a complete Einstein solution",
+        "under true rate-zero Einstein shears",
+        "true oscillatory Einstein shears",
+        "no representative-independent axial selection",
         "Generic polar formal radial disposition",
-        "\\frac{2r c'(r)}{r-2m}",
-        "c'(r)S_\\ell",
-        "S_2/2+O(r^{-2})",
         "Q_{21}(6,9/25)=",
         "174226120816040380076641138108451235935620694016",
         "227373675443232059478759765625",
@@ -213,6 +259,10 @@ def main() -> None:
         "the finite-flux phase space the additional solution",
         "a global horizon-to-infinity solution is established",
         "Q_{21}(6,81/625)=0",
+        "Generic-\\(\\ell\\) axial Einstein radial finiteness",
+        "Generic-\\(\\ell\\) axial Einstein-only selection counterexample",
+        "corrected non-Einstein lift exists formally for every",
+        "This remains finite under $X_0\\mapsto X_0+\\beta E_0$",
     ]
     lower = text.lower()
     for phrase in forbidden_phrases:
@@ -220,7 +270,7 @@ def main() -> None:
             fail(f"superseded or overbroad manuscript phrase present: {phrase}")
 
     coverage = json.loads(coverage_path.read_text())
-    if coverage.get("schema") != "paper14-corrected-x0-supersession-overlay-v1":
+    if coverage.get("schema") != "paper14-phase3-axial-supersession-overlay-v2":
         fail("wrong coverage overlay schema")
     if coverage.get("append_only_parent_sha256") != digest(PARENT_COVERAGE):
         fail("coverage parent hash drift")
@@ -233,19 +283,26 @@ def main() -> None:
     corrections = [node for node in nodes if node.get("kind") == "coverage_correction"]
     if {node["body"].get("target_edge") for node in corrections} != OLD_EDGES:
         fail("append-only supersession set incomplete")
-    new_edge_id = "sf:coverage/edge/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1/paper-14/v2"
+    new_edge_id = "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR/paper-14/v1"
     for correction in corrections:
         body = correction["body"]
         if body.get("action") != "MARK_STALE_BY_APPEND_ONLY_SUPERSESSION":
             fail("legacy edge not marked stale by append-only correction")
         if body.get("superseded_by") != new_edge_id:
             fail("legacy edge correction points to wrong authority")
-    new_edges = [node for node in nodes if node.get("kind") == "result_paper_edge"]
-    if len(new_edges) != 1 or new_edges[0]["id"] != new_edge_id:
-        fail("new Paper 14 result edge missing or duplicated")
-    edge = new_edges[0]["body"]
+    new_edges = {node["id"]: node for node in nodes if node.get("kind") == "result_paper_edge"}
+    expected_edges = {
+        new_edge_id,
+        "sf:coverage/edge/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1/paper-14/v2",
+    }
+    if set(new_edges) != expected_edges:
+        fail("Paper 14 Phase-2/Phase-3 result edges missing or duplicated")
+    edge = new_edges[new_edge_id]["body"]
     if edge.get("stale") is not False or edge.get("edge_kind") != "PRIMARY_THEOREM_CORRECTION":
         fail("new Paper 14 coverage edge is stale or mistyped")
+    polar_edge = new_edges["sf:coverage/edge/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1/paper-14/v2"]["body"]
+    if polar_edge.get("edge_kind") != "SUPPORTING_POLAR_THEOREM":
+        fail("Phase-2 generic result was not demoted to polar supporting scope")
 
     print(
         "PASS: corrected Paper 14 semantics, terminal hashes, source pins, "

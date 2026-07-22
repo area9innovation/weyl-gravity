@@ -40,9 +40,9 @@ class Paper15ClaimMapTest(unittest.TestCase):
         self.assertNotEqual(completed.returncode, 0)
         self.assertIn("lifecycle drift", completed.stderr + completed.stdout)
 
-    def test_phase2_hash_mutation_is_rejected(self) -> None:
+    def test_post_phase1_hash_mutation_is_rejected(self) -> None:
         payload = json.loads(CLAIM_MAP.read_text())
-        payload["phase2_updates"][0]["sha256"] = "0" * 64
+        payload["post_phase1_updates"][0]["sha256"] = "0" * 64
         with tempfile.TemporaryDirectory() as directory:
             mutated = Path(directory) / "mutated.json"
             mutated.write_text(json.dumps(payload))

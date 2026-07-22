@@ -64,7 +64,7 @@ class Paper14CorrectedClaimMapTest(unittest.TestCase):
         self.assertIn("Q_{21}(6,9/25)=", completed.stdout + completed.stderr)
 
     def test_legacy_selection_sentence_is_rejected(self) -> None:
-        marker = "This is radial integrability of a formal mode density."
+        marker = "This is an exact formal asymptotic coefficient audit."
         old_sentence = (
             "The finite-slice-norm asymptotic class of the sphere-integrated "
             "presymplectic density contains exactly the Einstein sector."
@@ -78,6 +78,16 @@ class Paper14CorrectedClaimMapTest(unittest.TestCase):
             )
         self.assertNotEqual(completed.returncode, 0)
         self.assertIn("superseded or overbroad", completed.stdout + completed.stderr)
+
+    def test_unrestricted_representative_independence_is_rejected(self) -> None:
+        payload = json.loads(CLAIM_MAP.read_text())
+        payload["certified_scope"]["axial_l2_unrestricted_representative_independence"] = True
+        with tempfile.TemporaryDirectory() as directory:
+            claim_map = Path(directory) / "mutated.json"
+            claim_map.write_text(json.dumps(payload))
+            completed = self.run_verifier("--claim-map", str(claim_map))
+        self.assertNotEqual(completed.returncode, 0)
+        self.assertIn("axial_l2_unrestricted_representative_independence", completed.stdout + completed.stderr)
 
     def test_global_matching_promotion_is_rejected(self) -> None:
         marker = "The next decisive map is global:"

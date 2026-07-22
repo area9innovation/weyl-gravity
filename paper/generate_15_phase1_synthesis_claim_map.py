@@ -27,16 +27,26 @@ CARD_CLAIMS = {
     ],
 }
 
-PHASE2_INPUTS = [
+POST_PHASE1_INPUTS = [
     {
         "key": "generic_l_schwarzschild",
         "result_id": "PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1",
         "path": "black_hole_programme/phase2/generic_l_synthesis/certificate.json",
         "sha256": "8a9914400f0929f37a63570b95383ebc4131cbf2928b5f923db0d002d0783d33",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
-        "edge_kind": "NEGATIVE_RESULT",
+        "edge_kind": "SUPPORTING_POLAR_THEOREM",
         "paper_location": "Result card C",
-        "relationship": "Supersedes the fixture-level Einstein-selection reading in the declared formal radial class.",
+        "relationship": "Retains the generic-angular polar Q21 filtration; its axial metric disposition is superseded by the Phase-3 all-row ell=2 repair.",
+    },
+    {
+        "key": "phase3_axial_complete_reconstruction",
+        "result_id": "PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR",
+        "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+        "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+        "edge_kind": "PRIMARY_THEOREM_CORRECTION",
+        "paper_location": "Result card C",
+        "relationship": "Supersedes the Phase-2 generic-ell axial metric and representative-independence claims while retaining the separate polar filtration.",
     },
     {
         "key": "compact_pt_cpt",
@@ -108,10 +118,10 @@ def main() -> None:
     if missing:
         raise SystemExit(f"missing frozen claims: {missing}")
 
-    for item in PHASE2_INPUTS + GENERIC_L_TERMINAL_RECEIPTS:
+    for item in POST_PHASE1_INPUTS + GENERIC_L_TERMINAL_RECEIPTS:
         path = ROOT / item["path"]
         if digest(path) != item["sha256"]:
-            raise SystemExit(f"Phase-2 input hash drift: {item['path']}")
+            raise SystemExit(f"post-Phase-1 input hash drift: {item['path']}")
 
     cards = []
     for card, ids in CARD_CLAIMS.items():
@@ -125,8 +135,8 @@ def main() -> None:
         )
 
     payload = {
-        "schema": "paper15-phase1-synthesis-claim-map-v3",
-        "result_id": "PAPER15_FOUR_LEVEL_PHASE1_SYNTHESIS_WITH_PHASE2_UPDATE_V3",
+        "schema": "paper15-phase1-synthesis-claim-map-v4",
+        "result_id": "PAPER15_FOUR_LEVEL_PHASE1_SYNTHESIS_WITH_PHASE3_UPDATE_V4",
         "result_state": "PUBLICATION_SYNTHESIS_OF_FROZEN_CLAIMS",
         "paper": str(PAPER.relative_to(ROOT)),
         "paper_sha256": digest(PAPER),
@@ -134,7 +144,7 @@ def main() -> None:
         "authoritative_ledger_sha256": digest(LEDGER),
         "authoritative_result_id": ledger["result_id"],
         "theorem_cards": cards,
-        "phase2_updates": PHASE2_INPUTS,
+        "post_phase1_updates": POST_PHASE1_INPUTS,
         "generic_l_terminal_receipts": GENERIC_L_TERMINAL_RECEIPTS,
         "supporting_claim_ids": [
             "phase1.interaction.disposition",
@@ -159,7 +169,7 @@ def main() -> None:
             "source": {"path": str(PAPER.relative_to(ROOT))},
             "body": {
                 "paper_class": "overview",
-                "native": {"source_kind": "paper15-additive-phase1-synthesis-with-phase2-v3"},
+                "native": {"source_kind": "paper15-additive-phase1-synthesis-with-phase3-v4"},
             },
             "edges": [],
         }
@@ -196,10 +206,10 @@ def main() -> None:
                 },
             ]
         )
-    for item in PHASE2_INPUTS:
+    for item in POST_PHASE1_INPUTS:
         raw = item["result_id"]
         result_id = f"sf:result/{raw}"
-        claim_id = f"paper:15-four-level-ghost-classification-phase1-synthesis/claim/phase2-{item['key']}"
+        claim_id = f"paper:15-four-level-ghost-classification-phase1-synthesis/claim/update-{item['key']}"
         coverage_nodes.extend(
             [
                 {
@@ -233,15 +243,15 @@ def main() -> None:
                 },
                 {
                     "kind": "result_paper_edge",
-                    "id": f"sf:coverage/edge/{raw}/paper-15/phase2-update-v3",
+                    "id": f"sf:coverage/edge/{raw}/paper-15/post-phase1-update-v4",
                     "body": {
                         "from": result_id,
                         "to": "paper:15-four-level-ghost-classification-phase1-synthesis",
                         "claim": claim_id,
                         "edge_kind": item["edge_kind"],
                         "stale": False,
-                        "version": 3,
-                        "stamp": "2026-07-22",
+                        "version": 4,
+                        "stamp": "2026-07-23",
                         "native": {"source_schema": "result-paper-edge-v0"},
                     },
                 },
@@ -249,7 +259,7 @@ def main() -> None:
         )
     coverage = {
         "ir": "science-forge-ir-v0",
-        "schema": "paper15-phase1-synthesis-overlay-v3",
+        "schema": "paper15-phase1-synthesis-overlay-v4",
         "append_only_parent": str(COVERAGE_SOURCE.relative_to(ROOT)),
         "append_only_parent_sha256": digest(COVERAGE_SOURCE),
         "claim_map": str(OUTPUT.relative_to(ROOT)),

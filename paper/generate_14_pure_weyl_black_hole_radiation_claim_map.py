@@ -28,6 +28,11 @@ GENERIC_CERT = ROOT / "black_hole_programme/phase2/generic_l_synthesis/certifica
 GENERIC_RECEIPT = ROOT / "black_hole_programme/phase2/generic_l_synthesis/receipt.json"
 GENERIC_REPORT = ROOT / "reports/phase2-black-hole-generic-l-disposition-2026-07-22.md"
 CORRECTION_REQUEST = ROOT / "planning/paper-coverage/phase2-black-hole-paper-correction-request.json"
+PHASE3_CERT = ROOT / "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json"
+PHASE3_RECEIPT = ROOT / "black_hole_programme/phase3/axial_complete_reconstruction_repair/receipt.json"
+PHASE3_REPORT = ROOT / "reports/phase3-black-hole-axial-complete-reconstruction-repair-2026-07-22.md"
+PHASE3_ATLAS = ROOT / "residual_atlas/phase3-black-hole-axial-complete-reconstruction-repair-fragment-v1.json"
+PHASE3_COMMIT = "d5d5d6de648795203604d62ce7bc4f4ce6fea510"
 
 ACTIVE_SOURCES = [
     "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json",
@@ -100,7 +105,7 @@ def claim_map() -> dict:
     return {
         "schema": "paper-draft-source-map-v1",
         "paper_id": "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION",
-        "result_id": "PAPER_14_CORRECTED_X0_SUPERSESSION_V1",
+        "result_id": "PAPER_14_PHASE3_AXIAL_RECONSTRUCTION_SUPERSESSION_V2",
         "lifecycle_state": "DRAFT_ALLOWED",
         "source_baseline": SOURCE_BASELINE,
         "manuscript": str(PAPER.relative_to(ROOT)),
@@ -117,6 +122,18 @@ def claim_map() -> dict:
             "report_sha256": digest(GENERIC_REPORT),
             "correction_request": str(CORRECTION_REQUEST.relative_to(ROOT)),
             "correction_request_sha256": digest(CORRECTION_REQUEST),
+        },
+        "phase3_axial_authority": {
+            "result_id": "PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR",
+            "source_commit": PHASE3_COMMIT,
+            "certificate": str(PHASE3_CERT.relative_to(ROOT)),
+            "certificate_sha256": digest(PHASE3_CERT),
+            "receipt": str(PHASE3_RECEIPT.relative_to(ROOT)),
+            "receipt_sha256": digest(PHASE3_RECEIPT),
+            "report": str(PHASE3_REPORT.relative_to(ROOT)),
+            "report_sha256": digest(PHASE3_REPORT),
+            "atlas": str(PHASE3_ATLAS.relative_to(ROOT)),
+            "atlas_sha256": digest(PHASE3_ATLAS),
         },
         "certified_scope": {
             "static_laurent_family": True,
@@ -148,8 +165,14 @@ def claim_map() -> dict:
             "local_cauchy_truncation_polar_modulo_conformal_gauge": True,
             "axial_complex_frequency_meromorphic_continuation_exact_singular_set": True,
             "polar_complex_frequency_continuation_activated": False,
-            "generic_l_axial_einstein_radial_finiteness": True,
-            "generic_l_axial_corrected_x0_non_einstein_finite": True,
+            "generic_l_axial_einstein_radial_finiteness": False,
+            "generic_l_axial_corrected_x0_non_einstein_finite": False,
+            "axial_l2_complete_six_dimensional_endpoint_module": True,
+            "axial_l2_constraint_propagation_c_prime_minus_2c_over_r": True,
+            "axial_l2_repaired_x0_fixed_representative_finite": True,
+            "axial_l2_rate_zero_einstein_shear_finite": True,
+            "axial_l2_oscillatory_einstein_shear_divergent": True,
+            "axial_l2_unrestricted_representative_independence": False,
             "legacy_axial_x0_derivative_defect": True,
             "polar_mixed_finite_line": True,
             "polar_q21_exceptional_wall": True,
@@ -186,7 +209,12 @@ def claim_map() -> dict:
             {
                 "source": "black_hole_programme/certificates/BH2C_FLUX_CLASS.json",
                 "issue": "The legacy axial X0 reconstruction omitted 2 r c'(r)/(r-2M).",
-                "manuscript_disposition": "The Einstein-only radial-selection and X0 log-tail claims are superseded by the corrected generic-l counterexample.",
+                "manuscript_disposition": "The Einstein-only radial-selection and X0 log-tail claims are superseded; the complete ell=2 all-row module is now the axial authority.",
+            },
+            {
+                "source": "black_hole_programme/phase2/general_l_axial_selection/certificate.json",
+                "issue": "The Phase-2 generic-angular metric lift omitted the independent v-phi Ricci row; its legacy E0 is not a complete Einstein solution.",
+                "manuscript_disposition": "Only the Phase-3 ell=2 complete six-dimensional module and its scoped current audit are retained; generic-ell complete axial disposition is open.",
             },
             {
                 "source": "black_hole_programme/certificates/BH2C_POLAR_FLUX_CLASS.json",
@@ -207,21 +235,26 @@ def claim_map() -> dict:
         "superseded_active_claims": [
             "axial or parity-complete Einstein-only finite radial selection",
             "legacy axial X0 logarithmic tail and divergent current",
+            "generic-l complete axial X0 finite counterexample",
+            "unrestricted representative independence under arbitrary Einstein shears",
             "legacy polar power-enhanced single-log lift and divergent composed-current table",
             "additional-branch outgoing-condition obstruction inferred from those tails",
         ],
         "sources": [
             {"path": path, "git_blob": git_blob(path)} for path in ACTIVE_SOURCES
         ],
-        "next_gate": "GLOBAL_HORIZON_TO_INFINITY_CONNECTION_PLUS_DIFFERENTIABLE_ASYMPTOTIC_PHASE_SPACE",
+        "next_gate": "VALIDATED_ENDPOINT_REMAINDERS_THEN_GLOBAL_HORIZON_TO_INFINITY_CONNECTION",
     }
 
 
 def coverage(claim_payload: dict) -> dict:
     result_id = "sf:coverage/result/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1"
+    phase3_result_id = "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR"
     paper_id = "paper:14-pure-weyl-black-hole-radiation"
     claim_id = f"{paper_id}/claim/phase2_generic_l_parity_disposition_v1"
+    phase3_claim_id = f"{paper_id}/claim/phase3_axial_complete_reconstruction_repair"
     edge_id = "sf:coverage/edge/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1/paper-14/v2"
+    phase3_edge_id = "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR/paper-14/v1"
     nodes = [
         {
             "kind": "materiality",
@@ -232,7 +265,7 @@ def coverage(claim_payload: dict) -> dict:
                 "by": "Asger Alstrup Palm",
                 "stamp": "2026-07-22",
                 "version": 1,
-                "rationale": "Terminal correction of Paper 14's formal-infinity disposition after the generic-l axial counterexample and polar Q21 filtration.",
+                "rationale": "Terminal Phase-2 polar Q21 filtration retained after the axial half was superseded by the complete Phase-3 reconstruction.",
                 "native": {"source_schema": "materiality-v0"},
             },
         },
@@ -243,7 +276,7 @@ def coverage(claim_payload: dict) -> dict:
             "body": {
                 "result_id": "PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1",
                 "lifecycle": "CLASSIFIED",
-                "boundary": "Formal radial modes in a fixed Lee-Wald representative; no horizon-to-infinity phase space, scattering, stability, particles, positivity, or quantum theorem.",
+                "boundary": "Generic-angular polar formal filtration only; the axial half is superseded by the Phase-3 all-row ell=2 repair. No global theorem.",
                 "native": {
                     "source_kind": "phase2-terminal-certificate",
                     "certificate": str(GENERIC_CERT.relative_to(ROOT)),
@@ -259,7 +292,7 @@ def coverage(claim_payload: dict) -> dict:
                 "paper": paper_id,
                 "material": True,
                 "asserts_lifecycle": "CLASSIFIED",
-                "boundary": "Formal radial modes in a fixed Lee-Wald representative; global matching and asymptotic phase space remain open.",
+                "boundary": "Generic-angular polar formal filtration; global matching and asymptotic phase space remain open.",
                 "cites": [result_id],
             },
         },
@@ -270,10 +303,51 @@ def coverage(claim_payload: dict) -> dict:
                 "from": result_id,
                 "to": paper_id,
                 "claim": claim_id,
-                "edge_kind": "PRIMARY_THEOREM_CORRECTION",
+                "edge_kind": "SUPPORTING_POLAR_THEOREM",
                 "stale": False,
                 "version": 2,
                 "stamp": "2026-07-22",
+                "native": {"source_schema": "result-paper-edge-v0"},
+            },
+        },
+        {
+            "kind": "result",
+            "id": phase3_result_id,
+            "title": "PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR",
+            "body": {
+                "result_id": "PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR",
+                "lifecycle": "CLASSIFIED",
+                "boundary": "Complete axial ell=2 formal endpoint module on real omega in [1/2,3/4]; no convergence, global matching, scattering, stability, or CPT theorem.",
+                "native": {
+                    "source_kind": "phase3-terminal-certificate",
+                    "certificate": str(PHASE3_CERT.relative_to(ROOT)),
+                    "certificate_sha256": digest(PHASE3_CERT),
+                },
+            },
+            "edges": [],
+        },
+        {
+            "kind": "paper_claim",
+            "id": phase3_claim_id,
+            "body": {
+                "paper": paper_id,
+                "material": True,
+                "asserts_lifecycle": "CLASSIFIED",
+                "boundary": "Six-dimensional complete axial ell=2 formal module; repaired X0 finite only in the fixed/rate-zero class and divergent against oscillatory Einstein shears.",
+                "cites": [phase3_result_id],
+            },
+        },
+        {
+            "kind": "result_paper_edge",
+            "id": phase3_edge_id,
+            "body": {
+                "from": phase3_result_id,
+                "to": paper_id,
+                "claim": phase3_claim_id,
+                "edge_kind": "PRIMARY_THEOREM_CORRECTION",
+                "stale": False,
+                "version": 1,
+                "stamp": "2026-07-23",
                 "native": {"source_schema": "result-paper-edge-v0"},
             },
         },
@@ -287,16 +361,16 @@ def coverage(claim_payload: dict) -> dict:
                 "body": {
                     "target_edge": old_edge,
                     "action": "MARK_STALE_BY_APPEND_ONLY_SUPERSESSION",
-                    "superseded_by": edge_id,
-                    "reason": "The corrected axial X0 lift and restriction-stable polar module invalidate the old Einstein-only infinity-selection reading while preserving independent horizon and Einstein-current components.",
-                    "stamp": "2026-07-22",
-                    "version": 2,
+                    "superseded_by": phase3_edge_id,
+                    "reason": "The complete all-row ell=2 reconstruction supersedes the old axial infinity-selection and representative-independence readings; the separate polar filtration remains supporting evidence.",
+                    "stamp": "2026-07-23",
+                    "version": 3,
                 },
             }
         )
     return {
         "ir": "science-forge-ir-v0",
-        "schema": "paper14-corrected-x0-supersession-overlay-v1",
+        "schema": "paper14-phase3-axial-supersession-overlay-v2",
         "append_only_parent": str(PARENT_COVERAGE.relative_to(ROOT)),
         "append_only_parent_sha256": digest(PARENT_COVERAGE),
         "claim_map": str(OUTPUT.relative_to(ROOT)),

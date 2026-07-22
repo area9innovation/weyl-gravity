@@ -2,17 +2,17 @@
   "append_only_parent": "planning/paper-coverage/phase1-paper-coverage-overlay-2026-07-22.json",
   "append_only_parent_sha256": "389d1033e9b40bd66cfc5237d3cd2df4ea2575e1d17847d4a519dba89f6b8be2",
   "claim_map": "paper/14-pure-weyl-black-hole-radiation-claim-map.json",
-  "claim_map_sha256": "b7eb273ad1b48d55260bc1562c25816242fb2880c60149512135620a0955168f",
+  "claim_map_sha256": "19ceb9a039b22e90e335e89679442a0ac2faf96f819089587515c45a50524823",
   "ir": "science-forge-ir-v0",
   "nodes": [
     {
       "body": {
         "action": "MARK_STALE_BY_APPEND_ONLY_SUPERSESSION",
-        "reason": "The corrected axial X0 lift and restriction-stable polar module invalidate the old Einstein-only infinity-selection reading while preserving independent horizon and Einstein-current components.",
-        "stamp": "2026-07-22",
-        "superseded_by": "sf:coverage/edge/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1/paper-14/v2",
+        "reason": "The complete all-row ell=2 reconstruction supersedes the old axial infinity-selection and representative-independence readings; the separate polar filtration remains supporting evidence.",
+        "stamp": "2026-07-23",
+        "superseded_by": "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR/paper-14/v1",
         "target_edge": "sf:coverage/edge/PURE_WEYL_BH2C_SYMBOLIC_FLUX_RADIATION_CLASS/paper-14/v1",
-        "version": 2
+        "version": 3
       },
       "id": "sf:coverage/correction/PURE_WEYL_BH2C_SYMBOLIC_FLUX_RADIATION_CLASS/paper-14/v2",
       "kind": "coverage_correction"
@@ -20,11 +20,11 @@
     {
       "body": {
         "action": "MARK_STALE_BY_APPEND_ONLY_SUPERSESSION",
-        "reason": "The corrected axial X0 lift and restriction-stable polar module invalidate the old Einstein-only infinity-selection reading while preserving independent horizon and Einstein-current components.",
-        "stamp": "2026-07-22",
-        "superseded_by": "sf:coverage/edge/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1/paper-14/v2",
+        "reason": "The complete all-row ell=2 reconstruction supersedes the old axial infinity-selection and representative-independence readings; the separate polar filtration remains supporting evidence.",
+        "stamp": "2026-07-23",
+        "superseded_by": "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR/paper-14/v1",
         "target_edge": "sf:coverage/edge/PURE_WEYL_BH_ENDPOINT_NONSELECTION_ASSEMBLY/paper-14/v1",
-        "version": 2
+        "version": 3
       },
       "id": "sf:coverage/correction/PURE_WEYL_BH_ENDPOINT_NONSELECTION_ASSEMBLY/paper-14/v2",
       "kind": "coverage_correction"
@@ -36,7 +36,7 @@
         "native": {
           "source_schema": "materiality-v0"
         },
-        "rationale": "Terminal correction of Paper 14's formal-infinity disposition after the generic-l axial counterexample and polar Q21 filtration.",
+        "rationale": "Terminal Phase-2 polar Q21 filtration retained after the axial half was superseded by the complete Phase-3 reconstruction.",
         "result_id": "sf:coverage/result/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1",
         "stamp": "2026-07-22",
         "version": 1
@@ -47,7 +47,7 @@
     {
       "body": {
         "asserts_lifecycle": "CLASSIFIED",
-        "boundary": "Formal radial modes in a fixed Lee-Wald representative; global matching and asymptotic phase space remain open.",
+        "boundary": "Generic-angular polar formal filtration; global matching and asymptotic phase space remain open.",
         "cites": [
           "sf:coverage/result/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1"
         ],
@@ -59,7 +59,20 @@
     },
     {
       "body": {
-        "boundary": "Formal radial modes in a fixed Lee-Wald representative; no horizon-to-infinity phase space, scattering, stability, particles, positivity, or quantum theorem.",
+        "asserts_lifecycle": "CLASSIFIED",
+        "boundary": "Six-dimensional complete axial ell=2 formal module; repaired X0 finite only in the fixed/rate-zero class and divergent against oscillatory Einstein shears.",
+        "cites": [
+          "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR"
+        ],
+        "material": true,
+        "paper": "paper:14-pure-weyl-black-hole-radiation"
+      },
+      "id": "paper:14-pure-weyl-black-hole-radiation/claim/phase3_axial_complete_reconstruction_repair",
+      "kind": "paper_claim"
+    },
+    {
+      "body": {
+        "boundary": "Generic-angular polar formal filtration only; the axial half is superseded by the Phase-3 all-row ell=2 repair. No global theorem.",
         "lifecycle": "CLASSIFIED",
         "native": {
           "certificate": "black_hole_programme/phase2/generic_l_synthesis/certificate.json",
@@ -75,8 +88,24 @@
     },
     {
       "body": {
+        "boundary": "Complete axial ell=2 formal endpoint module on real omega in [1/2,3/4]; no convergence, global matching, scattering, stability, or CPT theorem.",
+        "lifecycle": "CLASSIFIED",
+        "native": {
+          "certificate": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+          "certificate_sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+          "source_kind": "phase3-terminal-certificate"
+        },
+        "result_id": "PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR"
+      },
+      "edges": [],
+      "id": "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR",
+      "kind": "result",
+      "title": "PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR"
+    },
+    {
+      "body": {
         "claim": "paper:14-pure-weyl-black-hole-radiation/claim/phase2_generic_l_parity_disposition_v1",
-        "edge_kind": "PRIMARY_THEOREM_CORRECTION",
+        "edge_kind": "SUPPORTING_POLAR_THEOREM",
         "from": "sf:coverage/result/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1",
         "native": {
           "source_schema": "result-paper-edge-v0"
@@ -88,7 +117,23 @@
       },
       "id": "sf:coverage/edge/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1/paper-14/v2",
       "kind": "result_paper_edge"
+    },
+    {
+      "body": {
+        "claim": "paper:14-pure-weyl-black-hole-radiation/claim/phase3_axial_complete_reconstruction_repair",
+        "edge_kind": "PRIMARY_THEOREM_CORRECTION",
+        "from": "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR",
+        "native": {
+          "source_schema": "result-paper-edge-v0"
+        },
+        "stale": false,
+        "stamp": "2026-07-23",
+        "to": "paper:14-pure-weyl-black-hole-radiation",
+        "version": 1
+      },
+      "id": "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR/paper-14/v1",
+      "kind": "result_paper_edge"
     }
   ],
-  "schema": "paper14-corrected-x0-supersession-overlay-v1"
+  "schema": "paper14-phase3-axial-supersession-overlay-v2"
 }

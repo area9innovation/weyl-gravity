@@ -28,6 +28,11 @@ EXPECTED_PHASE2 = {
         "8a9914400f0929f37a63570b95383ebc4131cbf2928b5f923db0d002d0783d33",
         ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
     ),
+    "PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR": (
+        "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+        "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+        ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+    ),
     "PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1": (
         "quantum-weyl/pt_cpt/synthesis/certificates/PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1.json",
         "516415604952c1f835ea0d46095d8fa82b07fe36de3dc33d641e34f0b938223c",
@@ -86,10 +91,10 @@ def main() -> None:
         fail("authoritative ledger hash drift")
     if claim_map["authoritative_result_id"] != "PURE_WEYL_PROGRAMME_PHASE1_CLASSIFICATION_ENDING_V1":
         fail("wrong Phase-1 authority")
-    if claim_map["schema"] != "paper15-phase1-synthesis-claim-map-v3":
+    if claim_map["schema"] != "paper15-phase1-synthesis-claim-map-v4":
         fail("wrong claim-map schema")
 
-    updates = {item["result_id"]: item for item in claim_map["phase2_updates"]}
+    updates = {item["result_id"]: item for item in claim_map["post_phase1_updates"]}
     if set(updates) != set(EXPECTED_PHASE2):
         fail("Phase-2 result set drift")
     for result_id, (path_string, expected_hash, expected_tags) in EXPECTED_PHASE2.items():
@@ -142,7 +147,7 @@ def main() -> None:
     required_phrases = [
         "Result card A: compact Einstein/additional decomposition",
         "Result card B: finite-harmonic second-order cone",
-        "Result card C: generic-angular formal radial disposition on Schwarzschild",
+        "Result card C: complete axial pilot and generic-angular polar disposition",
         "Result card D: strict and compensated local quantum theories",
         "Result card E: causal construction and physical nonselection",
         "R_\\ell(x):=Q_{21}\\bigl(\\ell(\\ell+1),x\\bigr)",
@@ -150,7 +155,12 @@ def main() -> None:
         "precisely the degeneracy locus of the $p=-2$",
         "\\widehat r=\\frac rM",
         "\\widehat\\omega=M\\omega",
-        "Einstein-only formal radial selection is",
+        "C'=-2C/r",
+        "zero fibre is a six-dimensional",
+        "legacy $E_0$ is not a complete Einstein solution",
+        "oscillatory Einstein shear instead diverges",
+        "no unrestricted",
+        "representative-independent quotient statement",
         "not physical scattering thresholds",
         "N_{\\ell m}=\\int_{S^2}|Y_{\\ell m}|^2\\dd\\Omega>0",
         "h_+(u,v)=",
@@ -192,6 +202,9 @@ def main() -> None:
         "a full covariance is impossible",
         "the Nariai factors are the compact-product branches",
         "the anomaly vanishes under PT",
+        "finite $X_0|X_0$ pairing and nonzero finite",
+        "$X_0\\mapsto X_0+\\beta E_0$",
+        "axial non-Einstein finite formal radial direction for every",
     ]
     for phrase in forbidden_phrases:
         if phrase.lower() in text.lower():
@@ -223,15 +236,15 @@ def main() -> None:
         if not claim or claim["body"]["cites"] != [body["from"]]:
             fail("Paper 15 coverage claim/edge mismatch")
 
-    phase2_edges = [edge for edge in edges if edge not in phase1_edges]
-    if {edge["body"]["from"].removeprefix("sf:result/") for edge in phase2_edges} != set(EXPECTED_PHASE2):
-        fail("Paper 15 Phase-2 reverse-coverage result set is incomplete")
-    expected_kinds = {item["result_id"]: item["edge_kind"] for item in claim_map["phase2_updates"]}
-    for edge in phase2_edges:
+    update_edges = [edge for edge in edges if edge not in phase1_edges]
+    if {edge["body"]["from"].removeprefix("sf:result/") for edge in update_edges} != set(EXPECTED_PHASE2):
+        fail("Paper 15 post-Phase-1 reverse-coverage result set is incomplete")
+    expected_kinds = {item["result_id"]: item["edge_kind"] for item in claim_map["post_phase1_updates"]}
+    for edge in update_edges:
         body = edge["body"]
         raw = body["from"].removeprefix("sf:result/")
         if body["edge_kind"] != expected_kinds[raw] or body["stale"] is not False:
-            fail(f"Paper 15 Phase-2 edge drift for {raw}")
+            fail(f"Paper 15 update edge drift for {raw}")
         claim = claims.get(body["claim"])
         if not claim or claim["body"]["cites"] != [body["from"]]:
             fail("Paper 15 Phase-2 coverage claim/edge mismatch")
