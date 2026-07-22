@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase3-validated-connection-substrate-preflight-v1",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "result_token", "lifecycle", "dependency_tags",
+    "declaration", "axial_system", "landed_capabilities", "uncontrolled_pilot",
+    "rounded_output_counterexample", "obstruction", "claim_flags",
+    "does_not_establish", "provenance", "verification"
+  ],
+  "properties": {
+    "schema": {"const": "phase3-validated-connection-substrate-preflight-v1"},
+    "result_id": {"const": "PURE_WEYL_PHASE3_VALIDATED_CONNECTION_SUBSTRATE_PREFLIGHT"},
+    "result_token": {"const": "BLOCKED_MISSING_VALIDATED_COUPLED_FUNDAMENTAL_FLOW"},
+    "lifecycle": {"const": "OBSTRUCTED"},
+    "dependency_tags": {
+      "type": "array", "contains": {"const": "REDUCED-MODE"}, "minItems": 1
+    },
+    "landed_capabilities": {
+      "type": "object",
+      "required": [
+        "scalar_validated_ivp", "interval_matrix_algebra",
+        "coupled_vector_validated_ivp", "validated_fundamental_matrix",
+        "wrapping_control", "validated_boundary_value_connection",
+        "certified_endpoint_series_remainder"
+      ]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "landed_substrate_audited", "representative_uncontrolled_flow_computed",
+        "validated_fundamental_matrix_enclosed", "endpoint_basis_error_enclosed",
+        "current_conservation_defect_enclosed", "global_connection_constructed",
+        "scattering_claim"
+      ],
+      "properties": {
+        "landed_substrate_audited": {"const": true},
+        "representative_uncontrolled_flow_computed": {"const": true},
+        "validated_fundamental_matrix_enclosed": {"const": false},
+        "endpoint_basis_error_enclosed": {"const": false},
+        "current_conservation_defect_enclosed": {"const": false},
+        "global_connection_constructed": {"const": false},
+        "scattering_claim": {"const": false}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+  }
+}

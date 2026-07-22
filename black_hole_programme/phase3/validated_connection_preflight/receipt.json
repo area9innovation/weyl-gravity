@@ -1,0 +1,56 @@
+{
+  "schema": "phase3-validated-connection-substrate-preflight-receipt-v1",
+  "result_id": "PURE_WEYL_PHASE3_VALIDATED_CONNECTION_SUBSTRATE_PREFLIGHT",
+  "result_token": "BLOCKED_MISSING_VALIDATED_COUPLED_FUNDAMENTAL_FLOW",
+  "when": "2026-07-22",
+  "artifacts": {
+    "black_hole_programme/phase3/validated_connection_preflight/certificate.json": "621048a747aa8748f58c32cc69c55e0b1e64ef1c9ae937fea5703d85a5d78a74",
+    "black_hole_programme/phase3/validated_connection_preflight/schema.json": "af65d663f2292c566f177ab7fb871f9b3a07bebd00a08fb073919fd6281c40be",
+    "black_hole_programme/phase3/validated_connection_preflight/produce.py": "9892a8d8347ac2eb77ad83138b90dab5e3bea7e57b2fab030fce39d3a1de4a9a",
+    "black_hole_programme/phase3/validated_connection_preflight/verify.py": "ced32c4beeb20a21749fe62af9347f7de1d746d5b3b334fea3413b19293b0e63",
+    "black_hole_programme/phase3/validated_connection_preflight/substrate_gate.forge": "70bb72efbacc89e8bda18f7daf85a3798c2dce6fbf57a35a3142602c25e0eb86",
+    "planning/forge-requests/phase3-validated-connection-substrate.json": "bf88e7a5e6ad427770cb8893af40c5c8c3c0c8a9ad2444f7d6aee270711a41eb"
+  },
+  "checks": [
+    {
+      "command": "python3 black_hole_programme/phase3/validated_connection_preflight/produce.py --check",
+      "elapsed_seconds": 1.20,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 black_hole_programme/phase3/validated_connection_preflight/verify.py",
+      "elapsed_seconds": 0.97,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 black_hole_programme/phase3/validated_connection_preflight/verify.py --self-test-mutation",
+      "elapsed_seconds": 1.02,
+      "status": "PASS_3_OF_3_REJECTED"
+    },
+    {
+      "command": "pytest -q black_hole_programme/phase3/validated_connection_preflight/tests",
+      "elapsed_seconds": 4.53,
+      "status": "PASS_3"
+    },
+    {
+      "command": "FORGE_LIB=/home/alstrup/area9/tango/forge/lib forge -test black_hole_programme/phase3/validated_connection_preflight",
+      "elapsed_seconds": 0.89,
+      "status": "PASS_1_C"
+    },
+    {
+      "command": "FORGE_LIB=/home/alstrup/area9/tango/forge/lib forge -emit-asm -test black_hole_programme/phase3/validated_connection_preflight",
+      "elapsed_seconds": 1.43,
+      "status": "PASS_1_NATIVE"
+    },
+    {
+      "command": "FORGE_LIB=/home/alstrup/area9/tango/forge/lib forge -sanitize -test black_hole_programme/phase3/validated_connection_preflight",
+      "elapsed_seconds": 2.80,
+      "status": "PASS_1_ASAN_UBSAN"
+    }
+  ],
+  "higher_tiers": {
+    "tier_2": "NOT_RUN: no shared mathematical input, interface or certificate chain changed",
+    "tier_3": "NOT_RUN: no theorem promotion, freeze or release"
+  },
+  "claim_boundary": "OBSTRUCTED substrate preflight; uncontrolled numerics are observations, not enclosures"
+}

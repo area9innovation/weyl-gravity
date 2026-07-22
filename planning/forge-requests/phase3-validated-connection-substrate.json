@@ -1,0 +1,44 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:forge-request/phase3-validated-connection-substrate",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-validated-connection-substrate",
+  "source": {
+    "path": "planning/forge-requests/phase3-validated-connection-substrate.json",
+    "span": null
+  },
+  "body": {
+    "owner": "science-forge",
+    "state": "REQUESTED",
+    "stream": "forge-requests",
+    "priority": 0,
+    "objective": "Land the smallest missing validated-ODE primitive needed by the Phase-3 Schwarzschild axial pilot: a rigorous real coupled linear IVP and fundamental-matrix enclosure on a finite nonsingular radial interval. This is the first executable child of the accepted broad M25 vector-BVP request, not a request for the full singular-endpoint or boundary-value stack.",
+    "stop_condition": "Add a generic lib/math validated real vector-linear-IVP API for y'=A(t)y on a finite nonsingular interval, accepting a caller-supplied outward-rounded interval extension of A and returning a box enclosure for y together with existence/uniqueness receipts. Add a fundamental-matrix mode that encloses every entry, uses explicit wrapping control (Lohner/QR or an equivalently proved method), retains per-step a-priori boxes and refusal reasons, and composes with math/ivmat for endpoint-basis solves. Pass an exactly solvable coupled Hamiltonian control with constant symplectic current and the physics consumer black_hole_programme/phase3/validated_connection_preflight: realify the declared 2x2 complex axial master system to 4x4 at ell=2, M=1, hat_omega=3/5 on r in [3,4], enclose its 4x4 fundamental matrix, and rigorously enclose the matrix current-conservation defect. The enclosure must exclude a declared nonzero mutation of one coefficient and must remain valid under a stricter independent subdivision. The API must be sufficient to cover each rational frequency subbox in the frozen pilot interval hat_omega in [1/2,3/4], though uniform parameter continuation and singular endpoint initialization remain later M25 clauses.",
+    "current_gate": "validated coupled fundamental flow before any horizon-to-infinity shooting result can be called a connection theorem",
+    "forbid": "no componentwise scalar-IVP calls that discard correlations; no floating trajectory or convergence table called an enclosure; no interval extension whose validity is merely assumed without an explicit caller obligation and negative control; no uncontrolled matrix inverse; no black-hole-specific equation embedded in lib/math; no BVP, singular-endpoint, global scattering or stability promotion from this finite-interval primitive; no interval overlap read as exact equality",
+    "depends_on": [
+      "sf:program/work/phase3-validated-connection-substrate-preflight#ANY_TERMINAL"
+    ],
+    "activates": [
+      "sf:program/work/phase3-black-hole-axial-global-connection-pilot",
+      "validated finite-interval transfer and flux-conservation enclosures",
+      "a later singular-endpoint/multiple-shooting M25 child"
+    ],
+    "allowed_paths": [
+      "forge/lib/math/",
+      "forge/examples/",
+      "forge/tools/science-forge/program/",
+      "forge/docs/math/",
+      "forge/lib/math/COMPLETENESS.md"
+    ],
+    "resource_hint": "NARROW HIGH-PRIORITY M25 CHILD. The existing math/ivode state is one real Iv and cannot express a coupled 4-real-dimensional flow or the correlations among 16 fundamental-matrix entries. math/ivmat already supplies interval matrix products and certified rational-center solves. Reuse it rather than implementing BVP or endpoint-series machinery in this item. The physics preflight certificate includes an independent DOP853/RK4 observation and a rounded-output mutation showing why small residuals are not proofs.",
+    "notes": [
+      "The accepted request sf:forge-request/validated-vector-bvp-connection-flux remains the broad parent. This request deliberately splits only its first finite-interval fundamental-flow clause so the Phase-3 pilot need not wait for singular endpoints, BVP Newton, complex parameter continuation or certified Frobenius tails.",
+      "Complex coefficients may be represented by exact real 2x2 blocks; a separate complex-interval scalar type is not required for this first pass.",
+      "Endpoint basis-conditioning can use math/ivmat after the flow is enclosed. Certified horizon/infinity series remainders are a separate endpoint-basis work item and are not silently included here.",
+      "Frozen downstream domain: axial ell=2, M=1, hat_omega in [1/2,3/4]. The first substrate fixture is the center hat_omega=3/5 on r in [3,4]; this does not itself establish an open-frequency connection theorem."
+    ]
+  },
+  "edges": []
+}

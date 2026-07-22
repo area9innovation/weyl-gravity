@@ -1,0 +1,62 @@
+// Physics-side adoption gate for the landed M13 scalar-IVP and interval-matrix kernels.
+// It proves that those two pieces are callable from this programme.  It deliberately
+// does NOT pretend that a scalar Iv state is a coupled fundamental matrix.
+// expect: 6
+// backends: c native
+
+import prelude;
+import math/rational;
+import math/interval;
+import math/ivode;
+import math/qmat;
+import math/ivmat;
+import ds/vec;
+import ds/manualvec;
+
+fn ode_y(t: Iv, y: Iv) -> Iv { _ = t; return y; }
+
+fn qmat2(a: i64, b: i64, c: i64, d: i64) -> QMat {
+  let m: QMat = qm_new(2, 2);
+  m = qm_set(m, 0, 0, rat(a, 1)); m = qm_set(m, 0, 1, rat(b, 1));
+  m = qm_set(m, 1, 0, rat(c, 1)); m = qm_set(m, 1, 1, rat(d, 1));
+  return m;
+}
+
+fn ratvec2(a: i64, b: i64) -> Vec<Rat> {
+  let v: ManualVec<Rat> = manual_vec_new<Rat>(system_allocator(), 2);
+  v = manual_vec_push<Rat>(v, rat(a, 1));
+  v = manual_vec_push<Rat>(v, rat(b, 1));
+  return vec_seal(v);
+}
+
+fn main() -> i64 {
+  let ok: i64 = 0;
+
+  // The landed scalar validated IVP succeeds and encloses declared rational
+  // lower/upper decimal bounds for e.
+  match (ode_integrate(&ode_y, 0.0, iv_point(1.0), 1.0, 1000)) {
+    some(c) => {
+      ok += 1;
+      if (iv_encloses_rat(c.y, rat(2718281828459045, 1000000000000000))) { ok += 1; }
+      if (iv_encloses_rat(c.y, rat(2718281828459046, 1000000000000000))) { ok += 1; }
+    },
+    none => {},
+  }
+
+  // The interval-matrix layer certifies the exact rational endpoint basis
+  // solve B x=e1 for B=[[1000,1000],[1000,1001]].  Scaling by 1000 is
+  // immaterial to the conditioning stress but keeps the center integral.
+  let ac: QMat = qmat2(1000, 1000, 1000, 1001);
+  let bc: Vec<Rat> = ratvec2(1, 0);
+  let ai: IvMat = ivm_from_qmat(ac);
+  let bi: IvVec = ivv_from_rat_vec(bc);
+  match (ivm_solve_certified(ac, bc, ai, bi)) {
+    some(c) => {
+      ok += 1;
+      if (c.unique) { ok += 1; }
+      if (ivv_max_width(c.x) < 1.0e-6) { ok += 1; }
+    },
+    none => {},
+  }
+  return ok;
+}

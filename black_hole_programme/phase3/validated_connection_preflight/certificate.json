@@ -1,0 +1,156 @@
+{
+  "axial_system": {
+    "conservation_identity": "Phi(r)^T J(r) Phi(r)=J(3)",
+    "current": "J(r)=exp(integral_3^r(c1/c2)ds)*[[0,1],[-1,0]]",
+    "first_order": "Y'=[[0,1],[-c0/c2,-c1/c2]]Y",
+    "ode": "(r^2-2r)F''+(2*i*omega*r^2+2r+2)F'+(6*i*omega*r-6)F=0",
+    "provenance": "BH2C_METRIC_ALL_ORDERS certified master ODE; this preflight does not promote it to a global scattering equation"
+  },
+  "claim_flags": {
+    "current_conservation_defect_enclosed": false,
+    "endpoint_basis_error_enclosed": false,
+    "global_connection_constructed": false,
+    "landed_substrate_audited": true,
+    "representative_uncontrolled_flow_computed": true,
+    "scattering_claim": false,
+    "validated_fundamental_matrix_enclosed": false
+  },
+  "declaration": {
+    "background": "Schwarzschild, M=1",
+    "basis": "identity at r=3; exact rational conditioning stress basis [[1,1],[1,1001/1000]] at r=4",
+    "claim_kind": "SUBSTRATE_CAPABILITY_OBSTRUCTION",
+    "frequency": "center hat_omega=M*omega=3/5 of frozen downstream interval [1/2,3/4]",
+    "radial_box": [
+      "3",
+      "4"
+    ],
+    "sector": "representative l=2 axial reconstruction master equation",
+    "theory": "pure Weyl gravity"
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a rigorous enclosure of any axial trajectory or connection coefficient",
+    "endpoint Frobenius or infinity-series truncation bounds",
+    "horizon-to-infinity matching, finite flux, scattering, stability or positivity",
+    "failure of a future validated solver; the result identifies the first missing primitive"
+  ],
+  "landed_capabilities": {
+    "certified_endpoint_series_remainder": {
+      "available": false
+    },
+    "coupled_vector_validated_ivp": {
+      "available": false
+    },
+    "exact_rational_center_solve": {
+      "available": true,
+      "module": "math/ivmat"
+    },
+    "interval_matrix_algebra": {
+      "available": true,
+      "module": "math/ivmat"
+    },
+    "scalar_validated_ivp": {
+      "available": true,
+      "signature": "ode_integrate(f: fn(Iv, Iv) -> Iv, t0: f64, y0: Iv, t_end: f64, n: i64) -> Option<OdeCert>"
+    },
+    "validated_boundary_value_connection": {
+      "available": false
+    },
+    "validated_complex_ivp": {
+      "available": false,
+      "note": "real block representation is sufficient once vector IVP exists"
+    },
+    "validated_fundamental_matrix": {
+      "available": false
+    },
+    "wrapping_control": {
+      "available": false
+    }
+  },
+  "lifecycle": "OBSTRUCTED",
+  "obstruction": {
+    "broad_parent_request": "sf:forge-request/validated-vector-bvp-connection-flux",
+    "minimal_missing_primitive": "validated real vector linear IVP with fundamental-matrix enclosure and wrapping control on a finite nonsingular interval",
+    "reason": "the scalar Iv state cannot represent the coupled 4-real-dimensional axial flow or correlations among the 16 fundamental-matrix entries",
+    "request": "planning/forge-requests/phase3-validated-connection-substrate.json"
+  },
+  "provenance": {
+    "forge_commit": "222086baacd09f45f6d573c38d92190ea30732af",
+    "forge_sources": {
+      "lib/math/COMPLETENESS.md": {
+        "sha256": "ce424dcd5e8826975c890716c1d32a98fe61ec8d52a2b11cc10f81f6edecbd07"
+      },
+      "lib/math/interval.forge": {
+        "sha256": "548a81c6ec08127fb68408e65d07ab08d57e440deb080bbe9642ce96ef7087b6"
+      },
+      "lib/math/ivmat.forge": {
+        "sha256": "088157ca82051d8757a8578cca320562e5a9c58d6346e1e113ea13e0f4e234d6"
+      },
+      "lib/math/ivode.forge": {
+        "sha256": "0c8c64300ce4ce64d34c2e795cd29cf222bb44f39a298036c9d40f5f37366048"
+      }
+    },
+    "physics_input_commit": "27a3dcf982400a68dbe76257bbd56a200e032e21",
+    "work_item_sha256": "c149ac6f8a429360aca235aa1a5fde07b17bf1ce68dcdcb5e6e36f7ad9d79fe9"
+  },
+  "result_id": "PURE_WEYL_PHASE3_VALIDATED_CONNECTION_SUBSTRATE_PREFLIGHT",
+  "result_token": "BLOCKED_MISSING_VALIDATED_COUPLED_FUNDAMENTAL_FLOW",
+  "rounded_output_counterexample": {
+    "conclusion": "matching printed digits and a small residual cannot certify current conservation",
+    "entry_perturbation": "1.0e-15",
+    "mutated_current_defect_max": "3.07337886510055054e-15",
+    "normalized_current_defect_max": "3.52842820956969518e-81",
+    "printed_digits": 12,
+    "same_printed_matrix": true
+  },
+  "schema": "phase3-validated-connection-substrate-preflight-v1",
+  "uncontrolled_pilot": {
+    "basis_condition_infinity_exact": "4004001/1000",
+    "basis_error_amplification_observed": "1155.54503608174274",
+    "current_defect_max": {
+      "1024": "4.74053594159205846e-13",
+      "256": "1.21971774170052827e-10",
+      "512": "7.5976459526513341e-12"
+    },
+    "evidence_status": "UNCONTROLLED_NUMERIC_OBSERVATION",
+    "fundamental_matrix_n1024": [
+      [
+        {
+          "im": "-0.7126562140505945503326430474167119242313",
+          "re": "0.6442958844760427817592868567030066456949"
+        },
+        {
+          "im": "-0.3611133837484283872353075973168408394541",
+          "re": "0.01899234013142425545910632575034716933635"
+        }
+      ],
+      [
+        {
+          "im": "-0.5632694309362926818025828215866727512333",
+          "re": "-1.012365178001027013158306517122342993169"
+        },
+        {
+          "im": "-0.07984784337911583898338092306715112176824",
+          "re": "-0.5059680830163028612047354738960561466152"
+        }
+      ]
+    ],
+    "method": "80-decimal fixed-step RK4; no interval/truncation enclosure",
+    "mpmath_version": "1.3.0",
+    "steps": [
+      256,
+      512,
+      1024
+    ],
+    "successive_connection_difference_max": "8.72727952327667449e-9",
+    "successive_fundamental_difference_max": "7.55252218716580651e-12"
+  },
+  "verification": {
+    "forge_gate": "FORGE_LIB=/home/alstrup/area9/tango/forge/lib forge -test black_hole_programme/phase3/validated_connection_preflight",
+    "independent": "python3 black_hole_programme/phase3/validated_connection_preflight/verify.py",
+    "mutation": "python3 black_hole_programme/phase3/validated_connection_preflight/verify.py --self-test-mutation",
+    "producer": "python3 black_hole_programme/phase3/validated_connection_preflight/produce.py --check"
+  }
+}
