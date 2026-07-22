@@ -1,0 +1,23 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-endpoint-bases",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-endpoint-bases",
+  "source": {"path": "planning/work-items/phase3-black-hole-axial-endpoint-bases.json", "span": null},
+  "body": {
+    "owner": "phase3-axial-bases-1",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Construct exact axial horizon Frobenius and infinity polyhomogeneous bases for the complete linearized Bach system and reconstructed metric.",
+    "stop_condition": "Import the corrected generic-ell axial curvature and metric equations by hash. For fixed ell=2 and symbolic dimensionless frequency where possible, derive complete endpoint bases with geometric multiplicities, logarithmic/Jordan partners, Einstein/additional/gauge labels, reconstruction maps and exact residual checks. State precisely which bases extend to general ell and which exceptional frequencies remain excluded.",
+    "current_gate": "Complete independently verified endpoint bases",
+    "forbid": "no horizon-to-infinity matching; no finite-flux or scattering claim before the boundary contract; no silently dropped differentiated reconstruction term; no numerical basis accepted without exact residual and independence checks",
+    "depends_on": ["sf:program/work/phase2-black-hole-general-l-axial-selection#ANY_TERMINAL"],
+    "allowed_paths": ["black_hole_programme/phase3/axial_endpoint_bases/", "reports/phase3-black-hole-axial-endpoint-bases-2026-07-22.md", "residual_atlas/phase3-black-hole-axial-endpoint-bases-fragment-v1.json", "planning/forge-requests/", "planning/events/"],
+    "resource_hint": "Keep the exact endpoint algebra separate from the numerical connection code so it can serve as an independent oracle.",
+    "input_commit": "27a3dcf982400a68dbe76257bbd56a200e032e21"
+  },
+  "edges": []
+}

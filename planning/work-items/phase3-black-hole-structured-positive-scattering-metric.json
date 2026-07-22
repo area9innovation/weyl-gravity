@@ -1,0 +1,23 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-structured-positive-scattering-metric",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-structured-positive-scattering-metric",
+  "source": {"path": "planning/work-items/phase3-black-hole-structured-positive-scattering-metric.json", "span": null},
+  "body": {
+    "owner": "phase3-cpt-1",
+    "state": "PROPOSED",
+    "stream": "quantum-qme",
+    "priority": 1,
+    "objective": "Test whether the actual Schwarzschild finite-flux scattering bundle admits a smooth positive symmetry-compatible metric and determine what additional data are required for a genuine CPT construction.",
+    "stop_condition": "Solve the structured S^dagger eta S=eta problem on the certified channel bundle with reality, parity, rotation, BRST-descent, uniform positivity, low/high-frequency and time-domain locality conditions. Separately test an antilinear involution Theta and a linear C with the required commutants. Produce an exact positive construction, an infeasibility certificate, or a typed boundary showing why only quasi-unitarity and not Mannheim CPT is established.",
+    "current_gate": "Structured positive scattering metric and CPT disposition",
+    "forbid": "no arbitrary independent eta at each frequency; no radial transfer metric called time-evolution metric; no quasi-Hermiticity called Mannheim CPT without Theta and C; no quantum interacting unitarity or QME claim",
+    "depends_on": ["sf:program/work/phase3-black-hole-wavepacket-phase-space", "sf:program/work/phase2-cpt-feasibility-classification#ANY_TERMINAL"],
+    "allowed_paths": ["quantum-weyl/phase3/schwarzschild_scattering_metric/", "reports/phase3-black-hole-structured-positive-scattering-metric-2026-07-22.md", "residual_atlas/phase3-black-hole-structured-positive-scattering-metric-fragment-v1.json", "planning/forge-requests/", "planning/events/"],
+    "resource_hint": "The wave-packet channel bundle is authoritative. The finite-block Phase-2 eta cone is a comparison, not a substitute.",
+    "input_commit": "27a3dcf982400a68dbe76257bbd56a200e032e21"
+  },
+  "edges": []
+}
