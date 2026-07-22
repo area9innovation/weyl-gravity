@@ -1,0 +1,23 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-complete-reconstruction-repair",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-complete-reconstruction-repair",
+  "source": {"path": "planning/work-items/phase3-black-hole-axial-complete-reconstruction-repair.json", "span": null},
+  "body": {
+    "owner": "phase3-axial-repair-1",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Replace the incomplete two-row axial metric reconstruction by the complete system including the omitted delta Ricci v-phi equation, then derive valid endpoint metric bases.",
+    "stop_condition": "Import the certified endpoint-basis obstruction and corrected axial curvature carrier by hash. Derive the complete gauge-fixed axial metric reconstruction using delta Ricci v-phi, r-phi and x-phi together with every constraint/Bianchi dependency. Prove the independent row rank and compatibility conditions, remove the spurious polynomial vector, and construct exact horizon and infinity metric bases with residual-zero checks on every retained row for ell=2 and real M omega in [1/2,3/4]. State the strongest symbolic ell extension. If the curvature carrier is not in the complete reconstruction image, certify the first exact image obstruction instead.",
+    "current_gate": "Complete three-row axial metric reconstruction and endpoint bases",
+    "forbid": "no omitted field-equation row; no equation set declared complete from Bianchi intuition without an exact dependency; no spurious homogeneous vector retained; no global matching, finite-flux, scattering, positivity or stability promotion",
+    "depends_on": ["sf:program/work/phase3-black-hole-axial-endpoint-bases#ANY_TERMINAL"],
+    "allowed_paths": ["black_hole_programme/phase3/axial_complete_reconstruction_repair/", "reports/phase3-black-hole-axial-complete-reconstruction-repair-2026-07-22.md", "residual_atlas/phase3-black-hole-axial-complete-reconstruction-repair-fragment-v1.json", "planning/forge-requests/phase3-black-hole-axial-complete-reconstruction-repair.json"],
+    "resource_hint": "The exact negative control is delta Ricci_vphi/S=3 i (omega-2 i)/r^2 on the legacy ell=2 polynomial vector. Every replacement basis vector must pass that row independently.",
+    "input_commit": "54228581256e6c0f39b9c5b977a2821dbccfe4df"
+  },
+  "edges": []
+}
