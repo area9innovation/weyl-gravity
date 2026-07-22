@@ -1,0 +1,36 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/programme-paper15-stelle-mass-ledger-clarification",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "programme-paper15-stelle-mass-ledger-clarification",
+  "source": {
+    "path": "planning/work-items/programme-paper15-stelle-mass-ledger-clarification.json",
+    "span": null
+  },
+  "body": {
+    "owner": "coordinator",
+    "state": "PROPOSED",
+    "stream": "unassigned",
+    "priority": 0,
+    "objective": "Close three final reader-facing ambiguities in Paper 15: cite Stelle's foundational higher-derivative gravity work, reserve M for Schwarzschild mass, and declare the anomaly-ledger entries to be net signed contributions.",
+    "stop_condition": "Paper 15 cites Stelle in the ghost/prior-work discussion and bibliography; every Schwarzschild fixture uses M omega rather than the azimuthal-index symbol m; the determinant ledger states that statistics and determinant-exponent signs are already applied; the claim map and PDF are regenerated and verified.",
+    "current_gate": "Paper 15 final specialist readability polish",
+    "forbid": "no authorship change; no theorem-scope change; no new anomaly coefficient; no alteration of the azimuthal harmonic index in N_{ell m}; no unrelated paper edit",
+    "depends_on": [
+      "sf:program/work/programme-paper15-referee-self-containment-revision"
+    ],
+    "allowed_paths": [
+      "paper/",
+      "reports/",
+      "planning/paper-coverage/",
+      "planning/work-items/"
+    ],
+    "resource_hint": "Small editorial correction; use an isolated Science Forge commit because the shared index remains untrustworthy.",
+    "notes": [
+      "The author line remains out of scope by explicit coordinator instruction."
+    ],
+    "input_commit": "b258fb0f580ee42f732202fb975f1c928f885125"
+  },
+  "edges": []
+}
