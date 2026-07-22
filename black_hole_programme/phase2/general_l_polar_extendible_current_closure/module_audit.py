@@ -76,3 +76,86 @@ def shallow_log_audit() -> dict:
         "nowhere_zero": sp.simplify(sp.im(defect)/(12*w)) == 1,
         "disposition": "NONEXTENDIBLE_SHALLOW_SOURCE_ARTIFACT",
     }
+
+
+def _differentiate_profile(coeffs, beta, rate, order):
+    out=list(coeffs)
+    for _ in range(order):
+        nxt=[sp.Integer(0)]*(len(out)+1)
+        for n,c in enumerate(out):
+            nxt[n] += rate*c
+            nxt[n+1] += (beta-n)*c
+        out=[sp.expand(x) for x in nxt]
+    return out
+
+
+def current_layer_table(current_expression: str, profiles: dict, minimum_power=-1,
+                        sector_filter=None, pair_filter=None) -> dict:
+    """Accumulate the literal current by radial layer, cancelling once/layer."""
+    r=sp.Symbol('r'); L=sp.Symbol('Lambda',real=True); w=sp.Symbol('omega',real=True,nonzero=True)
+    alpha=sp.Symbol('alpha'); ell=sp.Symbol('ell',integer=True)
+    names=['FAa_r','FBa_r','FCa_r','FKa_r','FAb_r','FBb_r','FCb_r','FKb_r']
+    funcs={n:sp.Function(n) for n in names}
+    local={**funcs,'r':r,'Lambda':L,'m':sp.Integer(1),'omega':w,'alpha':alpha,'ell':ell,'I':sp.I,'pi':sp.pi,'Derivative':sp.Derivative}
+    expr=sp.sympify(current_expression,locals=local)
+    pref=4*sp.pi*alpha/(3*(2*ell+1))
+    terms=sp.Add.make_args(sp.expand(sp.cancel(expr/pref)))
+
+    def slot(term):
+        ds=list(term.atoms(sp.Derivative)); occupied={d.expr for d in ds}
+        atoms=[(d.expr.func.__name__,sum(n for _,n in d.variable_count),d) for d in ds]
+        atoms += [(f.func.__name__,0,f) for f in term.atoms(sp.Function) if f.func.__name__ in names and f not in occupied]
+        if len(atoms)!=2: raise RuntimeError(f'nonbilinear current term: {term}')
+        factor=atoms[0][2]*atoms[1][2]; return atoms,sp.cancel(term/factor)
+    parsed=[slot(t) for t in terms]
+    field_index={'FA':0,'FB':1,'FC':2,'FK':3}
+    result={}
+    for sector,modes in profiles.items():
+      if sector_filter is not None and sector != sector_filter: continue
+      entries={}
+      labels=list(modes)
+      for ia,a in enumerate(labels):
+       for b in labels[ia:]:
+        if pair_filter is not None and (a,b) != tuple(pair_filter): continue
+        left=modes[a]; right=modes[b]
+        prepared=[]; structural_max=None
+        for atoms,coef in parsed:
+            pieces=[]
+            for name,order,_ in atoms:
+                is_left=name.endswith('a_r'); stem=name[:2]
+                prof=left if is_left else right
+                cs=prof['coeffs'][field_index[stem]]
+                beta=prof['beta']; rate=prof['rate']
+                if not is_left:
+                    cs=[sp.conjugate(c).subs({sp.conjugate(L):L,sp.conjugate(w):w}) for c in cs]
+                    beta=sp.conjugate(beta).subs({sp.conjugate(L):L,sp.conjugate(w):w})
+                    rate=sp.conjugate(rate).subs({sp.conjugate(w):w})
+                pieces.append((beta,_differentiate_profile(cs,beta,rate,order)))
+            rp=coef.as_powers_dict().get(r,0); c0=coef/r**rp
+            nz0=[(n,x) for n,x in enumerate(pieces[0][1]) if x!=0]
+            nz1=[(n,y) for n,y in enumerate(pieces[1][1]) if y!=0]
+            if not nz0 or not nz1: continue
+            top=sp.simplify(pieces[0][0]+pieces[1][0]+rp-nz0[0][0]-nz1[0][0])
+            if not top.is_integer: raise RuntimeError(f'noninteger stationary power {top}')
+            top=int(top); structural_max=top if structural_max is None else max(structural_max,top)
+            prepared.append((pieces,c0,int(rp),nz0,nz1))
+        closed={}
+        cancelled=[]
+        for target in range(structural_max if structural_max is not None else minimum_power,minimum_power-1,-1):
+            value=0
+            for pieces,c0,rp,nz0,nz1 in prepared:
+                offset=int(sp.simplify(pieces[0][0]+pieces[1][0]+rp))
+                for n,x in nz0:
+                    m=offset-target-n
+                    if 0<=m<len(pieces[1][1]): value += c0*x*pieces[1][1][m]
+            value=sp.expand(value)
+            if value!=0:
+                closed[str(target)]=sp.sstr(sp.factor(value))
+                break
+            cancelled.append(target)
+        entries[f'{a}|{b}']={'structural_maximum_power':structural_max,
+          'exact_zero_cancellations':cancelled,'layers':closed,
+          'leading_power':int(next(iter(closed))) if closed else None,
+          'disposition':'DANGEROUS' if closed else 'FINITE_BELOW_P_MINUS_1'}
+      result[sector]=entries
+    return result

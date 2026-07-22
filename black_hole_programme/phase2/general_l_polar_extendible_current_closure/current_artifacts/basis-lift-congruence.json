@@ -1,0 +1,41 @@
+{
+  "abstract_identity": {
+    "basis_change": "X' = X + E*c",
+    "current": "G'=S^dagger*G*S",
+    "einstein_cross_covector": "a'=a",
+    "extra_block": "K'=K+c^dagger*a+b*c when G_EE=0",
+    "shear": "S=[[1,c],[0,I3]]",
+    "verified": true
+  },
+  "exact_probe": {
+    "Lambda": 6,
+    "einstein_cross_covector_unchanged": true,
+    "omega": "3/5",
+    "radical_dimension_after": 1,
+    "radical_dimension_before": 1,
+    "rank_after": 3,
+    "rank_before": 3,
+    "raw_detK_changed": true,
+    "raw_extra_block_changed": true,
+    "shear_c": [
+      1,
+      2,
+      -1
+    ]
+  },
+  "invariant_ledger": {
+    "invariant": [
+      "full current rank",
+      "full radical dimension",
+      "filtered finite-line dimension",
+      "nonvanishing of the Einstein cross covector"
+    ],
+    "lift_sensitive": [
+      "raw XX entries",
+      "chosen-complement detK and its factorization",
+      "coordinates of the mixed radical",
+      "a sign assigned to one chosen extra lift"
+    ]
+  },
+  "schema_version": "polar-basis-lift-congruence-v1"
+}

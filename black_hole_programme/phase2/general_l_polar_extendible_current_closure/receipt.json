@@ -1,17 +1,29 @@
 {
   "schema_version": "tier-receipt-v1",
-  "status": "PASS_PARTIAL_CHECKPOINT",
+  "status": "PASS_SCOPED_TERMINAL",
   "commands": [
+    "16 ordered calls: timeout --signal=TERM --kill-after=5s 150s python -m black_hole_programme.phase2.general_l_polar_extendible_current_closure.current_pair --sector oscillatory --left <mode> --right <mode>",
+    "timeout --signal=TERM --kill-after=5s 240s python -m black_hole_programme.phase2.general_l_polar_extendible_current_closure.current_matrix",
+    "python -m black_hole_programme.phase2.general_l_polar_extendible_current_closure.basis_audit",
+    "timeout --signal=TERM --kill-after=5s 150s python -m black_hole_programme.phase2.general_l_polar_extendible_current_closure.wall_audit",
     "python -m black_hole_programme.phase2.general_l_polar_extendible_current_closure.produce",
     "python -m black_hole_programme.phase2.general_l_polar_extendible_current_closure.verify",
     "python -m unittest black_hole_programme.phase2.general_l_polar_extendible_current_closure.tests.test_closure",
-    "git diff --check -- <the exact eleven intended paths>"
+    "git diff --check -- <exact intended paths>"
   ],
-  "test_result": "3 tests passed; independent verifier passed",
+  "test_result": "5 tests passed; independent exact fixture verifier passed; wall and lift verifiers passed",
   "artifacts": {
-    "certificate_sha256": "160604973f506cc1f23c9bb07b9703386c4c6e8f738c9df291d23b4826a8e59b",
-    "report_sha256": "868f151f1d3a6cb59f81e3a85dfb8e345f21d70c24f6e845f3b107fd11218c9f",
-    "atlas_sha256": "ed4df7925b57f227d1cf25cd51b3d766b9adec13c005d3e06c0920fc9e8a91eb"
+    "certificate_sha256": "38cedbfab9931c111cb3569b0d5b15ea6182638a7e7de00ea849cfe8728f7fce",
+    "matrix_sha256": "0673e01d5b2cca9ded3d8b97db579b1f10473967d59f0dd3a2da31cadb86c587",
+    "wall_sha256": "d28ec7f9e046295dd45d58bbf1ef6b5cae1a640e98eb565835c6dadc86f3ce85",
+    "basis_sha256": "f3d3481282d01e821b28a5740f093639bc1343096375c0f059a3780e79c091f0",
+    "report_sha256": "7b6e42faf695fc3c09396bdd414b2dc971dab5c4a158e65a4f80b2fbe35fac6a",
+    "atlas_sha256": "4bc4b961774896b5b2abe0b0e2eead1a0ccfba6f595c9e62adb04e1cf583b3cf"
   },
-  "claim_boundary": "Bounded exact module-reconciliation checkpoint only; no current theorem. The expensive direct all-seven exploration was terminated and is not evidence."
+  "bounded_shortfalls": [
+    "The q=9 compatibility of terminal-only depth-eight prefix vectors is outside the retained maximal restriction-stable module.",
+    "At Q21 exceptional frequencies the current filtration below p=-2 remains open.",
+    "Horizon-to-infinity matching and asymptotic phase-space completion remain open."
+  ],
+  "claim_boundary": "Formal real-frequency polar infinity module. The scoped theorem proves a generically nonradical mixed Einstein/additional finite line and its exact algebraic exceptional locus; it does not prove global scattering admissibility."
 }

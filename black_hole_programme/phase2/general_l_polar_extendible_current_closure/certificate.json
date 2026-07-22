@@ -1,19 +1,27 @@
 {
   "bounded_gj_reconnaissance": {
-    "interpretation": "The apparent additional oscillatory log direction survives through horizon 8. These counts motivate the next serialized GJ witness but are not themselves a certificate because the matrices are not stored here.",
+    "interpretation": "One zero and one oscillatory direction are restriction-stable. The two additional oscillatory vectors are terminal-only at n=8 and are excluded pending q9 compatibility.",
     "oscillatory_depth7_log0_final_free": 2,
     "oscillatory_depth8_log_le_1_final_free": 3,
-    "status": "UNPROMOTED_UNSERIALIZED_RECONNAISSANCE",
+    "status": "SERIALIZED_PREFIX_CLASSIFICATION",
     "zero_rate_depth8_log_le_1_final_free": 1
+  },
+  "compatibility_stabilized_module_typing": {
+    "E": "The nonterminal full-seven-row homogeneous direction has zero Ricci carrier by construction and is the retained Einstein-image direction.",
+    "X0_X1_X2": "The three imported metric reconstructions have nonzero sourced Ricci carriers and form the chosen additional complement.",
+    "maximality": "The lower-order restriction image of the depth-eight oscillatory log-free kernel is one-dimensional; every other displayed basis vector is terminal-only. Thus span(E) is the maximal restriction-stable homogeneous input at the certified depth.",
+    "residual_gauge": "No independent residual diffeomorphism or Weyl-gauge vector occurs in the generic ell>=2, omega!=0 Regge-Wheeler-gauge restriction-stable prefix image.",
+    "weyl_radical": "No standalone Weyl-radical direction is promoted in the retained module; the filtered mixed radical is an asymptotic-current statement, not a gauge classification."
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "REDUCED-MODE"
   ],
   "does_not_establish": [
-    "generic-ell polar finite-flux selection",
-    "31-entry current Gram table",
+    "terminal-only prefix extension",
+    "deeper filtration on Q21 exceptional frequencies",
     "all-order asymptotic solutions",
+    "horizon-to-infinity matching",
     "asymptotic phase space",
     "scattering",
     "stability",
@@ -31,6 +39,68 @@
     "completion_sha256": "cfd437f7aa1c647b37ffbdfa3563faa821720540101a70f801f5d8c23ea84efc",
     "input_commit": "b9d347d832492d9e39a8cfbd346b041f35f22de7",
     "polar_v1_sha256": "49b224aec8ee358dd4f0c096063d83ee00b2571b222009f73eadd84241a23ab2"
+  },
+  "invariant_current_filtration": {
+    "anti_hermitian": {
+      "p0": true,
+      "p_minus_1": true,
+      "p_minus_2": true
+    },
+    "basis": [
+      "E",
+      "X0",
+      "X1",
+      "X2"
+    ],
+    "basis_congruence_artifact": "black_hole_programme/phase2/general_l_polar_extendible_current_closure/current_artifacts/basis-lift-congruence.json",
+    "basis_congruence_sha256": "f3d3481282d01e821b28a5740f093639bc1343096375c0f059a3780e79c091f0",
+    "canonical_pivot_wall_status": "EMPTY_CANONICAL_PIVOT_WALL_ON_PHYSICAL_DOMAIN",
+    "disposition": "NONRADICAL_AWAY_FROM_Q21_ZERO_LOCUS",
+    "entry_sha256": {
+      "oscillatory-E-E.json": "600e64fedde96089d2383f0898a818758414ff126c875d6907d2bc96cde85c56",
+      "oscillatory-E-X0.json": "a7b5f48e9c88058d7a4c762c92c47e0b3100635773af3c11c25d71e82d93baea",
+      "oscillatory-E-X1.json": "fba6b1d97d161cd5d9641c514e8b079ed53b89b7419f87bccdd2aca217f4a9bd",
+      "oscillatory-E-X2.json": "ac9e6acca82579fbb2b254dd9f2a1817d66cfaae76b3b53079d09d8c1e4bc727",
+      "oscillatory-X0-E.json": "4dd5b683bbd910260a7ef57433cc5d71e25cf1ddbcdbd301cbed9bc66e8a1f2b",
+      "oscillatory-X0-X0.json": "6590f761e72b1feab95a9982bd0db6ae7d0b8808f9911a57add6f152ee3303bd",
+      "oscillatory-X0-X1.json": "c718f199243f95613483a79e9422bcbf2f149739ac293b8e4eb85d0fd2e111b5",
+      "oscillatory-X0-X2.json": "6643a24ea35e097e85593cc277a0bf1cfe8296863b6c5c32acb1c8ab6a261859",
+      "oscillatory-X1-E.json": "417666a2614dd98b092e6a48072db6f4f61c1b3172a591e155adeae2f7b5d744",
+      "oscillatory-X1-X0.json": "93770fe27da63c9827e37999dfaa03031d567538851e1c69b97379f6dfd9c0a3",
+      "oscillatory-X1-X1.json": "c26967d16cccd9c4d1532f93a560c0d4b2cd469d83e2524e36bc4e806eb0b578",
+      "oscillatory-X1-X2.json": "39a62d75982d597da8705213cc60e9a1f1e5da897a98a0d6279acd11873744b6",
+      "oscillatory-X2-E.json": "9ac5e1372a879543a6fc7e84b3f88f2e00af30a93ba3ac3cddf33ef47a19f9fc",
+      "oscillatory-X2-X0.json": "7fd9a322fb0af27b4e2d1e79c34d168b31046701b1ddbb7a688a89fa77069646",
+      "oscillatory-X2-X1.json": "d392dcf6b56183dbda0a69674e191e0f4a0a595642cbbc9908209ca4801f215e",
+      "oscillatory-X2-X2.json": "5d23a74be8494c65a3d8676a606ea652077879982ea82a563dba060c2e007c05",
+      "oscillatory-matrix-filtration.json": "0673e01d5b2cca9ded3d8b97db579b1f10473967d59f0dd3a2da31cadb86c587"
+    },
+    "exact_exceptional_locus": "Q21(ell*(ell+1),omega^2)=0",
+    "generic_radical_dimension_away_from_detK_walls": 1,
+    "generic_rank_away_from_detK_walls": 3,
+    "invariant_ledger": {
+      "invariant": [
+        "full current rank",
+        "full radical dimension",
+        "filtered finite-line dimension",
+        "nonvanishing of the Einstein cross covector"
+      ],
+      "lift_sensitive": [
+        "raw XX entries",
+        "chosen-complement detK and its factorization",
+        "coordinates of the mixed radical",
+        "a sign assigned to one chosen extra lift"
+      ]
+    },
+    "leading_power": 0,
+    "matrix_artifact": "black_hole_programme/phase2/general_l_polar_extendible_current_closure/current_artifacts/oscillatory-matrix-filtration.json",
+    "matrix_sha256": "0673e01d5b2cca9ded3d8b97db579b1f10473967d59f0dd3a2da31cadb86c587",
+    "p_minus_1_induced_radical_form_identically_zero": true,
+    "p_minus_2_induced_form_identically_zero": false,
+    "schur_numerator_identically_zero": true,
+    "subleading_power": -1,
+    "wall_artifact": "black_hole_programme/phase2/general_l_polar_extendible_current_closure/current_artifacts/canonical-pivot-wall-certificate.json",
+    "wall_sha256": "d28ec7f9e046295dd45d58bbf1ef6b5cae1a640e98eb565835c6dadc86f3ce85"
   },
   "literal_current_parser": {
     "expanded_numerator_terms": 272,
@@ -83,18 +153,189 @@
     "physical_domain_reading": "The polynomial four-state Bach-master direction is not a nontrivial source-zero seven-Ricci-row direction for generic Lambda=ell(ell+1), ell>=2 and real omega!=0.",
     "remaining_vv_residual": "-kappa*(Lambda**2 - 2*Lambda - 12*I*omega)/(4*r**2)"
   },
-  "result_id": "POLAR_EXTENDIBLE_MODULE_CURRENT_CLOSURE_CHECKPOINT_V1",
+  "prefix_projection": {
+    "oscillatory": "one log-free direction restricts nontrivially; a second log0 vector and the third log<=1 vector are supported only at terminal n=8",
+    "terminal_only_disposition": "not promoted to an extendible quotient before one-step q9 compatibility",
+    "zero": "one direction restricts nontrivially; log0/log<=1 dimensions 1/1"
+  },
+  "result_id": "POLAR_RESTRICTION_STABLE_MODULE_CURRENT_FILTRATION_V1",
   "schema_version": "phase2-polar-extendible-current-closure-v1",
+  "serialized_full_seven_prefixes": {
+    "oscillatory-log0-depth8.json": {
+      "depth": 8,
+      "final_free_dimension": 2,
+      "last_nullity": 2,
+      "last_rank": 4,
+      "logs": 0,
+      "sector": "oscillatory",
+      "sha256": "eca50801347c436ac1db4cff411f2b572dd035509384dd87fd2d6e8a9619c928"
+    },
+    "oscillatory-log1-depth8.json": {
+      "depth": 8,
+      "final_free_dimension": 3,
+      "last_nullity": 3,
+      "last_rank": 8,
+      "logs": 1,
+      "sector": "oscillatory",
+      "sha256": "388a391edbaef8d7c627c464a89c24ae1f85b7669e3d6546a787cf34937fe526"
+    },
+    "zero-log0-depth8.json": {
+      "depth": 8,
+      "final_free_dimension": 1,
+      "last_nullity": 1,
+      "last_rank": 4,
+      "logs": 0,
+      "sector": "zero",
+      "sha256": "c7e2bc207efe5db002af88cc7809de77f71e6c8a8c68e99c873d73b11968c0ea"
+    },
+    "zero-log1-depth8.json": {
+      "depth": 8,
+      "final_free_dimension": 1,
+      "last_nullity": 1,
+      "last_rank": 8,
+      "logs": 1,
+      "sector": "zero",
+      "sha256": "8a425019c482773f3b9060e4e41df32058a45977140f0a87b3133ed7fdfe9d39"
+    }
+  },
   "shallow_log": {
     "defect": "3*Lambda - 48*omega**2 + 12*I*omega + 15",
     "disposition": "NONEXTENDIBLE_SHALLOW_SOURCE_ARTIFACT",
     "imaginary_part": "12*omega",
     "nowhere_zero": true
   },
+  "six_sourced_carrier_safe_tail_ledger": [
+    {
+      "all_seven_rows_through_metric_depth": true,
+      "artifact_path": "black_hole_programme/phase2/general_l_polar_completion/branch_artifacts/zero-0.json",
+      "artifact_sha256": "1b4e6edf7ad3a75ea6e01dc90c0451af08a666fc5fd37f58b9cedfe191ac3f0b",
+      "branch_index": 0,
+      "safe_tail_ledger": {
+        "carrier_minus_metric_depth": 4,
+        "carrier_orders_serialized": [
+          0,
+          7
+        ],
+        "maximum_source_derivative_order": 4,
+        "metric_orders_verified": [
+          0,
+          3
+        ],
+        "reading": "Every coefficient used by the seven-row checks through the declared metric depth lies inside the serialized carrier jet; no all-order tail is claimed."
+      },
+      "sector": "zero"
+    },
+    {
+      "all_seven_rows_through_metric_depth": true,
+      "artifact_path": "black_hole_programme/phase2/general_l_polar_completion/branch_artifacts/zero-1.json",
+      "artifact_sha256": "773802ebd67874d8ab2febe56e326cb1bbe60f717b33deb6aca1695c23ca2c35",
+      "branch_index": 1,
+      "safe_tail_ledger": {
+        "carrier_minus_metric_depth": 4,
+        "carrier_orders_serialized": [
+          0,
+          8
+        ],
+        "maximum_source_derivative_order": 4,
+        "metric_orders_verified": [
+          0,
+          4
+        ],
+        "reading": "Every coefficient used by the seven-row checks through the declared metric depth lies inside the serialized carrier jet; no all-order tail is claimed."
+      },
+      "sector": "zero"
+    },
+    {
+      "all_seven_rows_through_metric_depth": true,
+      "artifact_path": "black_hole_programme/phase2/general_l_polar_completion/branch_artifacts/zero-2.json",
+      "artifact_sha256": "f18f87ad4d7d7fc9d189167aafae3dbd73701b4cd07472998d943430568ae7ed",
+      "branch_index": 2,
+      "safe_tail_ledger": {
+        "carrier_minus_metric_depth": 4,
+        "carrier_orders_serialized": [
+          0,
+          9
+        ],
+        "maximum_source_derivative_order": 4,
+        "metric_orders_verified": [
+          0,
+          5
+        ],
+        "reading": "Every coefficient used by the seven-row checks through the declared metric depth lies inside the serialized carrier jet; no all-order tail is claimed."
+      },
+      "sector": "zero"
+    },
+    {
+      "all_seven_rows_through_metric_depth": true,
+      "artifact_path": "black_hole_programme/phase2/general_l_polar_completion/branch_artifacts/oscillatory-0.json",
+      "artifact_sha256": "6e92fb33445f692eb298c0d4b3993ae91e57e389c9a0d595c095da3d99455344",
+      "branch_index": 0,
+      "safe_tail_ledger": {
+        "carrier_minus_metric_depth": 4,
+        "carrier_orders_serialized": [
+          0,
+          9
+        ],
+        "maximum_source_derivative_order": 4,
+        "metric_orders_verified": [
+          0,
+          5
+        ],
+        "reading": "Every coefficient used by the seven-row checks through the declared metric depth lies inside the serialized carrier jet; no all-order tail is claimed."
+      },
+      "sector": "oscillatory"
+    },
+    {
+      "all_seven_rows_through_metric_depth": true,
+      "artifact_path": "black_hole_programme/phase2/general_l_polar_completion/branch_artifacts/oscillatory-1.json",
+      "artifact_sha256": "4a15bc975f46e5101509ad5a5d64676498f5c917159f3b4ca1f1f742dba241e8",
+      "branch_index": 1,
+      "safe_tail_ledger": {
+        "carrier_minus_metric_depth": 4,
+        "carrier_orders_serialized": [
+          0,
+          8
+        ],
+        "maximum_source_derivative_order": 4,
+        "metric_orders_verified": [
+          0,
+          4
+        ],
+        "reading": "Every coefficient used by the seven-row checks through the declared metric depth lies inside the serialized carrier jet; no all-order tail is claimed."
+      },
+      "sector": "oscillatory"
+    },
+    {
+      "all_seven_rows_through_metric_depth": true,
+      "artifact_path": "black_hole_programme/phase2/general_l_polar_completion/branch_artifacts/oscillatory-2.json",
+      "artifact_sha256": "c7bdb2946a449032c75fdc92f598965ed09ac247bf0e7d5bec68091954f2e24a",
+      "branch_index": 2,
+      "safe_tail_ledger": {
+        "carrier_minus_metric_depth": 4,
+        "carrier_orders_serialized": [
+          0,
+          9
+        ],
+        "maximum_source_derivative_order": 4,
+        "metric_orders_verified": [
+          0,
+          5
+        ],
+        "reading": "Every coefficient used by the seven-row checks through the declared metric depth lies inside the serialized carrier jet; no all-order tail is claimed."
+      },
+      "sector": "oscillatory"
+    }
+  ],
   "status": {
-    "bounded_frontier": "The optimized GJ seven-row splitting has different finite-depth free counts from the four-state master estimate; basis/quotient identification and new physical pivot-wall factors must be resolved before a representative-invariant Gram table is well typed.",
-    "current": "NOT_COMPUTED",
-    "expected_31_entry_table": "NOT_PROMOTED",
-    "module_reconciliation": "OPEN: the full-seven GJ reconnaissance reverses the four-row preflight counts and leaves an apparent oscillatory log direction; serialize the matrices and identify Einstein/gauge/Weyl/prefix quotients before promotion"
+    "bounded_frontier": "q9 compatibility of terminal-only prefixes and deeper filtration on the Q21 exceptional locus remain open.",
+    "current": "SCOPED PASS: the full ordered 4x4 oscillatory current on (E,X0,X1,X2) is exact through p=-1",
+    "current_convention_mutation": "reconstruction uses exp(+I*omega*v), literal current left slot exp(-I*omega*v); raw insertion gives a false Lambda=6 E|E p=4, while whole-profile conjugation restores dangerous-layer cancellation",
+    "finite_radical": "A one-dimensional mixed Einstein/additional line survives p=0,-1 and has a generically nonzero first finite p=-2 pairing; its exact exceptional set is Q21(ell(ell+1),omega^2)=0",
+    "module_reconciliation": "SCOPED PASS: one zero and one oscillatory full-seven-row direction are restriction-stable; terminal-only n=8 vectors remain unpromoted pending q9"
+  },
+  "zero_rate_disposition": {
+    "available_evidence": "The serialized zero-rate upper-triangle entries cancel every dangerous p>=-1 layer; no zero-rate scattering norm is defined here.",
+    "reason": "The zero-rate block is stationary/generalized-zero data, whereas the conjugate-frequency radiation current theorem assumes real omega!=0. Its p>=-1 cancellations are not promoted as a gauge or radical theorem.",
+    "status": "EXCLUDED_FROM_RADIATIVE_HEADLINE"
   }
 }
