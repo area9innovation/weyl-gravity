@@ -1,0 +1,1690 @@
+{
+  "actual_power_depth_mapping": {
+    "carrier": "exp((-2*I*omega)*r) * r^(-4*I*omega - 3-n), 0<=n<=9",
+    "carrier_to_metric_power_shift": 5,
+    "metric": "exp((-2*I*omega)*r) * r^(-4*I*omega + 2-n) * log(r)^j, 0<=n<=5, 0<=j<=0"
+  },
+  "carrier_depth": 9,
+  "carrier_jet": [
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "1",
+      "-2*I*omega"
+    ],
+    [
+      "0",
+      "0",
+      "-1/2",
+      "I*omega",
+      "(-I*Lambda + 16*I*omega**2 + 4*omega)/(2*omega)",
+      "-Lambda + 16*omega**2 - 8*I*omega - 3"
+    ],
+    [
+      "(omega - 3*I)/(4*omega)",
+      "-I*omega/2 - 3/2",
+      "(I*Lambda - 16*I*omega**2 - 2*omega)/(4*omega)",
+      "Lambda/2 - 8*omega**2 + 3*I*omega + 2",
+      "(-Lambda**2 + 32*Lambda*omega**2 - 8*I*Lambda*omega + 2*Lambda - 256*omega**4 + 192*I*omega**3 + 40*omega**2 - 4*I*omega)/(8*omega**2)",
+      "(I*Lambda**2 - 32*I*Lambda*omega**2 - 16*Lambda*omega + 6*I*Lambda + 256*I*omega**4 + 320*omega**3 - 200*I*omega**2 - 36*omega)/(4*omega)"
+    ],
+    [
+      "(-5*I*Lambda*omega - 15*Lambda + 80*I*omega**3 + 240*omega**2 + 108*I*omega + 60)/(40*omega**2)",
+      "(-5*Lambda*omega + 15*I*Lambda + 80*omega**3 - 260*I*omega**2 + 23*omega + 15*I)/(20*omega)",
+      "(5*Lambda**2 - 160*Lambda*omega**2 + 20*I*Lambda*omega - 20*Lambda + 1280*omega**4 - 640*I*omega**3 - 80*omega**2 + 38*I*omega)/(80*omega**2)",
+      "(-5*I*Lambda**2 + 160*I*Lambda*omega**2 + 60*Lambda*omega - 30*I*Lambda - 1280*I*omega**4 - 1280*omega**3 + 960*I*omega**2 + 138*omega)/(40*omega)",
+      "(5*I*Lambda**3 - 240*I*Lambda**2*omega**2 - 60*Lambda**2*omega - 40*I*Lambda**2 + 3840*I*Lambda*omega**4 + 2880*Lambda*omega**3 - 120*I*Lambda*omega**2 - 60*Lambda*omega + 60*I*Lambda - 20480*I*omega**6 - 30720*omega**5 + 16000*I*omega**4 + 3840*omega**3 - 168*I*omega**2 + 120*omega)/(240*omega**3)",
+      "(5*Lambda**3 - 240*Lambda**2*omega**2 + 120*I*Lambda**2*omega + 35*Lambda**2 + 3840*Lambda*omega**4 - 4800*I*Lambda*omega**3 - 3000*Lambda*omega**2 + 540*I*Lambda*omega - 90*Lambda - 20480*omega**6 + 46080*I*omega**5 + 46720*omega**4 - 20640*I*omega**3 - 3408*omega**2 + 180*I*omega)/(120*omega**2)"
+    ],
+    [
+      "(-5*Lambda**2*omega + 15*I*Lambda**2 + 160*Lambda*omega**3 - 480*I*Lambda*omega**2 + 246*Lambda*omega - 190*I*Lambda - 1280*omega**5 + 4160*I*omega**4 - 2496*omega**3 + 1520*I*omega**2 - 1620*omega + 600*I)/(160*omega**3)",
+      "(5*I*Lambda**2*omega + 15*Lambda**2 - 160*I*Lambda*omega**3 - 520*Lambda*omega**2 - 66*I*Lambda*omega - 10*Lambda + 1280*I*omega**5 + 4800*omega**4 - 384*I*omega**3 - 496*omega**2 - 156*I*omega - 120)/(80*omega**2)",
+      "(-5*I*Lambda**3 + 240*I*Lambda**2*omega**2 + 30*Lambda**2*omega + 70*I*Lambda**2 - 3840*I*Lambda*omega**4 - 1920*Lambda*omega**3 - 720*I*Lambda*omega**2 + 210*Lambda*omega - 240*I*Lambda + 20480*I*omega**6 + 23040*omega**5 - 8320*I*omega**4 - 2784*omega**3 + 96*I*omega**2 - 432*omega)/(480*omega**3)",
+      "(-5*Lambda**3 + 240*Lambda**2*omega**2 - 90*I*Lambda**2*omega - 20*Lambda**2 - 3840*Lambda*omega**4 + 3840*I*Lambda*omega**3 + 2400*Lambda*omega**2 - 330*I*Lambda*omega + 120*Lambda + 20480*omega**6 - 38400*I*omega**5 - 39040*omega**4 + 15264*I*omega**3 + 1992*omega**2 - 252*I*omega)/(240*omega**2)",
+      "(5*Lambda**4 - 320*Lambda**3*omega**2 + 80*I*Lambda**3*omega - 100*Lambda**3 + 7680*Lambda**2*omega**4 - 5760*I*Lambda**2*omega**3 + 1360*Lambda**2*omega**2 + 80*I*Lambda**2*omega + 540*Lambda**2 - 81920*Lambda*omega**6 + 122880*I*Lambda*omega**5 + 48640*Lambda*omega**4 - 11520*I*Lambda*omega**3 - 3648*Lambda*omega**2 - 2400*I*Lambda*omega - 720*Lambda + 327680*omega**8 - 819200*I*omega**7 - 778240*omega**6 + 363520*I*omega**5 + 72192*omega**4 + 4224*I*omega**3 - 1008*omega**2 + 1440*I*omega)/(1920*omega**4)",
+      "(-5*I*Lambda**4 + 320*I*Lambda**3*omega**2 + 160*Lambda**3*omega - 20*I*Lambda**3 - 7680*I*Lambda**2*omega**4 - 9600*Lambda**2*omega**3 + 5360*I*Lambda**2*omega**2 + 880*Lambda**2*omega + 420*I*Lambda**2 + 81920*I*Lambda*omega**6 + 184320*Lambda*omega**5 - 186880*I*Lambda*omega**4 - 82560*Lambda*omega**3 + 7488*I*Lambda*omega**2 - 720*I*Lambda - 327680*I*omega**8 - 1146880*omega**7 + 1761280*I*omega**6 + 1356800*omega**5 - 517632*I*omega**4 - 90624*omega**3 + 3120*I*omega**2 - 1440*omega)/(960*omega**3)"
+    ],
+    [
+      "(35*I*Lambda**3*omega + 105*Lambda**3 - 1680*I*Lambda**2*omega**3 - 5040*Lambda**2*omega**2 - 2968*I*Lambda**2*omega - 2940*Lambda**2 + 26880*I*Lambda*omega**5 + 87360*Lambda*omega**4 + 62496*I*Lambda*omega**3 + 53256*Lambda*omega**2 + 55536*I*Lambda*omega + 26460*Lambda - 143360*I*omega**7 - 537600*omega**6 - 240128*I*omega**5 - 279552*omega**4 - 463680*I*omega**3 - 48720*omega**2 - 257400*I*omega - 75600)/(6720*omega**4)",
+      "(35*Lambda**3*omega - 105*I*Lambda**3 - 1680*Lambda**2*omega**3 + 5460*I*Lambda**2*omega**2 - 973*Lambda**2*omega + 735*I*Lambda**2 + 26880*Lambda*omega**5 - 100800*I*Lambda*omega**4 - 1344*Lambda*omega**3 - 3360*I*Lambda*omega**2 + 3414*Lambda*omega + 1470*I*Lambda - 143360*omega**7 + 645120*I*omega**6 + 297472*omega**5 - 122304*I*omega**4 + 30912*omega**3 - 38640*I*omega**2 + 31140*omega - 12600*I)/(3360*omega**3)",
+      "(-35*Lambda**4 + 2240*Lambda**3*omega**2 - 280*I*Lambda**3*omega + 1120*Lambda**3 - 53760*Lambda**2*omega**4 + 26880*I*Lambda**2*omega**3 - 28000*Lambda**2*omega**2 - 4564*I*Lambda**2*omega - 11340*Lambda**2 + 573440*Lambda*omega**6 - 645120*I*Lambda*omega**5 - 17920*Lambda*omega**4 + 67200*I*Lambda*omega**3 + 107520*Lambda*omega**2 + 61896*I*Lambda*omega + 35280*Lambda - 2293760*omega**8 + 4587520*I*omega**7 + 3297280*omega**6 - 1412096*I*omega**5 - 252672*omega**4 - 182784*I*omega**3 + 38640*omega**2 - 60960*I*omega)/(26880*omega**4)",
+      "(35*I*Lambda**4 - 2240*I*Lambda**3*omega**2 - 840*Lambda**3*omega - 140*I*Lambda**3 + 53760*I*Lambda**2*omega**4 + 53760*Lambda**2*omega**3 - 22400*I*Lambda**2*omega**2 - 2604*Lambda**2*omega - 2380*I*Lambda**2 - 573440*I*Lambda*omega**6 - 1075200*Lambda*omega**5 + 985600*I*Lambda*omega**4 + 362880*Lambda*omega**3 + 10080*I*Lambda*omega**2 - 6144*Lambda*omega + 11760*I*Lambda + 2293760*I*omega**8 + 6881280*omega**7 - 9891840*I*omega**6 - 6859776*omega**5 + 2195200*I*omega**4 + 373632*omega**3 - 9072*I*omega**2 + 23712*omega)/(13440*omega**3)",
+      "(-7*I*Lambda**5 + 560*I*Lambda**4*omega**2 + 140*Lambda**4*omega + 280*I*Lambda**4 - 17920*I*Lambda**3*omega**4 - 13440*Lambda**3*omega**3 - 8400*I*Lambda**3*omega**2 - 3556*I*Lambda**3 + 286720*I*Lambda**2*omega**6 + 430080*Lambda**2*omega**5 - 80640*I*Lambda**2*omega**4 - 13440*Lambda**2*omega**3 + 54544*I*Lambda**2*omega**2 - 24080*Lambda**2*omega + 16128*I*Lambda**2 - 2293760*I*Lambda*omega**8 - 5734400*Lambda*omega**7 + 4874240*I*Lambda*omega**6 + 2114560*Lambda*omega**5 - 551936*I*Lambda*omega**4 + 220416*Lambda*omega**3 - 50544*I*Lambda*omega**2 + 97440*Lambda*omega - 20160*I*Lambda + 7340032*I*omega**10 + 27525120*omega**9 - 41287680*I*omega**8 - 32112640*omega**7 + 13045760*I*omega**6 + 1971200*omega**5 - 123648*I*omega**4 - 149184*omega**3 - 82368*I*omega**2 - 40320*omega)/(26880*omega**5)",
+      "(-7*Lambda**5 + 560*Lambda**4*omega**2 - 280*I*Lambda**4*omega + 35*Lambda**4 - 17920*Lambda**3*omega**4 + 22400*I*Lambda**3*omega**3 + 9520*Lambda**3*omega**2 - 1120*I*Lambda**3*omega + 1344*Lambda**3 + 286720*Lambda**2*omega**6 - 645120*I*Lambda**2*omega**5 - 618240*Lambda**2*omega**4 + 257600*I*Lambda**2*omega**3 - 9856*Lambda**2*omega**2 + 5040*I*Lambda**2*omega - 10332*Lambda**2 - 2293760*Lambda*omega**8 + 8028160*I*Lambda*omega**7 + 12328960*Lambda*omega**6 - 9497600*I*Lambda*omega**5 - 3257856*Lambda*omega**4 + 446208*I*Lambda*omega**3 + 61008*Lambda*omega**2 + 40320*I*Lambda*omega + 15120*Lambda + 7340032*omega**10 - 36700160*I*omega**9 - 80281600*omega**8 + 94044160*I*omega**7 + 61358080*omega**6 - 21805056*I*omega**5 - 3542784*omega**4 - 29568*I*omega**3 + 7344*omega**2 - 30240*I*omega)/(13440*omega**4)"
+    ],
+    [
+      "(35*Lambda**4*omega - 105*I*Lambda**4 - 2240*Lambda**3*omega**3 + 6720*I*Lambda**3*omega**2 - 4564*Lambda**3*omega + 5460*I*Lambda**3 + 53760*Lambda**2*omega**5 - 174720*I*Lambda**2*omega**4 + 149632*Lambda**2*omega**3 - 161784*I*Lambda**2*omega**2 + 170652*Lambda**2*omega - 101220*I*Lambda**2 - 573440*Lambda*omega**7 + 2150400*I*Lambda*omega**6 - 1283072*Lambda*omega**5 + 1811712*I*Lambda*omega**4 - 3043584*Lambda*omega**3 + 677376*I*Lambda*omega**2 - 2166288*Lambda*omega + 786240*I*Lambda + 2293760*omega**9 - 10321920*I*omega**8 + 487424*omega**7 - 6924288*I*omega**6 + 12429312*omega**5 - 161280*I*omega**4 + 13949400*omega**3 + 2902032*I*omega**2 + 8457120*omega - 2116800*I)/(53760*omega**5)",
+      "(-35*I*Lambda**4*omega - 105*Lambda**4 + 2240*I*Lambda**3*omega**3 + 7280*Lambda**3*omega**2 + 1764*I*Lambda**3*omega + 2100*Lambda**3 - 53760*I*Lambda**2*omega**5 - 201600*Lambda**2*omega**4 - 15232*I*Lambda**2*omega**3 - 47992*Lambda**2*omega**2 - 28636*I*Lambda**2*omega - 7140*Lambda**2 + 573440*I*Lambda*omega**7 + 2580480*Lambda*omega**6 - 974848*I*Lambda*omega**5 + 16128*Lambda*omega**4 + 191616*I*Lambda*omega**3 - 138240*Lambda*omega**2 - 34224*I*Lambda*omega - 60480*Lambda - 2293760*I*omega**9 - 12615680*omega**8 + 12701696*I*omega**7 + 6436864*omega**6 - 272384*I*omega**5 + 1365504*omega**4 + 1667880*I*omega**3 + 342672*omega**2 + 989280*I*omega + 302400)/(26880*omega**4)",
+      "(7*I*Lambda**5 - 560*I*Lambda**4*omega**2 - 70*Lambda**4*omega - 420*I*Lambda**4 + 17920*I*Lambda**3*omega**4 + 8960*Lambda**3*omega**3 + 16800*I*Lambda**3*omega**2 - 2156*Lambda**3*omega + 8876*I*Lambda**3 - 286720*I*Lambda**2*omega**6 - 322560*Lambda**2*omega**5 - 134400*I*Lambda**2*omega**4 + 23744*Lambda**2*omega**3 - 179536*I*Lambda**2*omega**2 + 82040*Lambda**2*omega - 76608*I*Lambda**2 + 2293760*I*Lambda*omega**8 + 4587520*Lambda*omega**7 - 2150400*I*Lambda*omega**6 - 896000*Lambda*omega**5 + 1012480*I*Lambda*omega**4 - 775296*Lambda*omega**3 + 433392*I*Lambda*omega**2 - 542256*Lambda*omega + 221760*I*Lambda - 7340032*I*omega**10 - 22937600*omega**9 + 27525120*I*omega**8 + 17948672*omega**7 - 6250496*I*omega**6 + 587776*omega**5 + 274176*I*omega**4 + 970320*omega**3 + 480576*I*omega**2 + 371520*omega)/(53760*omega**5)",
+      "(7*Lambda**5 - 560*Lambda**4*omega**2 + 210*I*Lambda**4*omega - 140*Lambda**4 + 17920*Lambda**3*omega**4 - 17920*I*Lambda**3*omega**3 - 2240*Lambda**3*omega**2 - 84*I*Lambda**3*omega - 84*Lambda**3 - 286720*Lambda**2*omega**6 + 537600*I*Lambda**2*omega**5 + 403200*Lambda**2*omega**4 - 126784*I*Lambda**2*omega**3 + 26208*Lambda**2*omega**2 - 168*I*Lambda**2*omega + 14112*Lambda**2 + 2293760*Lambda*omega**8 - 6881280*I*Lambda*omega**7 - 9318400*Lambda*omega**6 + 6128640*I*Lambda*omega**5 + 1424640*Lambda*omega**4 - 192384*I*Lambda*omega**3 - 179184*Lambda*omega**2 - 94032*I*Lambda*omega - 60480*Lambda - 7340032*omega**10 + 32112640*I*omega**9 + 64225280*omega**8 - 67837952*I*omega**7 - 38277120*omega**6 + 11719680*I*omega**5 + 1564416*omega**4 + 337392*I*omega**3 - 72384*omega**2 + 116160*I*omega)/(26880*omega**4)",
+      "(-7*Lambda**6 + 672*Lambda**5*omega**2 - 168*I*Lambda**5*omega + 490*Lambda**5 - 26880*Lambda**4*omega**4 + 20160*I*Lambda**4*omega**3 - 22680*Lambda**4*omega**2 + 420*I*Lambda**4*omega - 11956*Lambda**4 + 573440*Lambda**3*omega**6 - 860160*I*Lambda**3*omega**5 + 89600*Lambda**3*omega**4 - 53760*I*Lambda**3*omega**3 + 314496*Lambda**3*omega**2 + 107856*I*Lambda**3*omega + 122808*Lambda**3 - 6881280*Lambda**2*omega**8 + 17203200*I*Lambda**2*omega**7 + 11755520*Lambda**2*omega**6 - 3978240*I*Lambda**2*omega**5 - 2996224*Lambda**2*omega**4 - 1751232*I*Lambda**2*omega**3 - 1291728*Lambda**2*omega**2 - 1284528*I*Lambda**2*omega - 504000*Lambda**2 + 44040192*Lambda*omega**10 - 165150720*I*Lambda*omega**9 - 233963520*Lambda*omega**8 + 172032000*I*Lambda*omega**7 + 71049216*Lambda*omega**6 - 1376256*I*Lambda*omega**5 + 3475968*Lambda*omega**4 + 8290944*I*Lambda*omega**3 - 1037088*Lambda*omega**2 + 3588480*I*Lambda*omega + 604800*Lambda - 117440512*omega**12 + 616562688*I*omega**11 + 1339555840*omega**10 - 1568931840*I*omega**9 - 1049853952*omega**8 + 372965376*I*omega**7 + 62533632*omega**6 - 9569280*I*omega**5 + 6322752*omega**4 - 2780352*I*omega**3 + 3663360*omega**2 - 1209600*I*omega)/(322560*omega**6)",
+      "(7*I*Lambda**6 - 672*I*Lambda**5*omega**2 - 336*Lambda**5*omega - 154*I*Lambda**5 + 26880*I*Lambda**4*omega**4 + 33600*Lambda**4*omega**3 - 7560*I*Lambda**4*omega**2 + 420*Lambda**4*omega - 1484*I*Lambda**4 - 573440*I*Lambda**3*omega**6 - 1290240*Lambda**3*omega**5 + 1093120*I*Lambda**3*omega**4 + 389760*Lambda**3*omega**3 + 88704*I*Lambda**3*omega**2 + 22512*Lambda**3*omega + 47880*I*Lambda**3 + 6881280*I*Lambda**2*omega**8 + 24084480*Lambda**2*omega**7 - 35840000*I*Lambda**2*omega**6 - 26557440*Lambda**2*omega**5 + 7189504*I*Lambda**2*omega**4 + 202944*Lambda**2*omega**3 - 748464*I*Lambda**2*omega**2 + 258384*Lambda**2*omega - 270144*I*Lambda**2 - 44040192*I*Lambda*omega**10 - 220200960*Lambda*omega**9 + 481689600*I*Lambda*omega**8 + 564264960*Lambda*omega**7 - 355762176*I*Lambda*omega**6 - 116121600*Lambda*omega**5 + 17726976*I*Lambda*omega**4 - 3502080*Lambda*omega**3 + 1124640*I*Lambda*omega**2 - 1572480*Lambda*omega + 362880*I*Lambda + 117440512*I*omega**12 + 792723456*omega**11 - 2352480256*I*omega**10 - 3881041920*omega**9 + 3802365952*I*omega**8 + 2227470336*omega**7 - 736038912*I*omega**6 - 107154432*omega**5 + 3192768*I*omega**4 + 2403648*omega**3 + 1257984*I*omega**2 + 725760*omega)/(161280*omega**5)"
+    ],
+    [
+      "(-7*I*Lambda**5*omega - 21*Lambda**5 + 560*I*Lambda**4*omega**3 + 1680*Lambda**4*omega**2 + 1316*I*Lambda**4*omega + 1820*Lambda**4 - 17920*I*Lambda**3*omega**5 - 58240*Lambda**3*omega**4 - 59584*I*Lambda**3*omega**3 - 76552*Lambda**3*omega**2 - 83436*I*Lambda**3*omega - 59668*Lambda**3 + 286720*I*Lambda**2*omega**7 + 1075200*Lambda**2*omega**6 + 838656*I*Lambda**2*omega**5 + 1355648*Lambda**2*omega**4 + 2354112*I*Lambda**2*omega**3 + 822560*Lambda**2*omega**2 + 2090576*I*Lambda**2*omega + 918624*Lambda**2 - 2293760*I*Lambda*omega**9 - 10321920*Lambda*omega**8 - 2207744*I*Lambda*omega**7 - 11110400*Lambda*omega**6 - 20499456*I*Lambda*omega**5 - 3037184*Lambda*omega**4 - 29744984*I*Lambda*omega**3 + 3594576*Lambda*omega**2 - 21692704*I*Lambda*omega - 6552000*Lambda + 7340032*I*omega**11 + 40370176*omega**10 - 21561344*I*omega**9 + 25001984*omega**8 + 52641792*I*omega**7 + 7168000*omega**6 + 101938560*I*omega**5 - 56493312*omega**4 + 100251200*I*omega**3 - 57912960*omega**2 + 76312320*I*omega + 16934400)/(107520*omega**6)",
+      "(-7*Lambda**5*omega + 21*I*Lambda**5 + 560*Lambda**4*omega**3 - 1820*I*Lambda**4*omega**2 + 581*Lambda**4*omega - 875*I*Lambda**4 - 17920*Lambda**3*omega**5 + 67200*I*Lambda**3*omega**4 - 12544*Lambda**3*omega**3 + 34328*I*Lambda**3*omega**2 - 20520*Lambda**3*omega + 10528*I*Lambda**3 + 286720*Lambda**2*omega**7 - 1290240*I*Lambda**2*omega**6 - 344064*Lambda**2*omega**5 - 381696*I*Lambda**2*omega**4 + 360288*Lambda**2*omega**3 - 49112*I*Lambda**2*omega**2 + 149828*Lambda**2*omega - 7644*I*Lambda**2 - 2293760*Lambda*omega**9 + 12615680*I*Lambda*omega**8 + 11554816*Lambda*omega**7 - 3110912*I*Lambda*omega**6 - 1704960*Lambda*omega**5 - 1093888*I*Lambda*omega**4 + 356776*Lambda*omega**3 - 1025808*I*Lambda*omega**2 + 948848*Lambda*omega - 524160*I*Lambda + 7340032*omega**11 - 49545216*I*omega**10 - 83492864*omega**9 + 65945600*I*omega**8 + 20557824*omega**7 + 5433344*I*omega**6 - 10570368*omega**5 + 2147232*I*omega**4 - 13685272*omega**3 - 2033808*I*omega**2 - 8268960*omega + 2116800*I)/(53760*omega**5)",
+      "(7*Lambda**6 - 672*Lambda**5*omega**2 + 84*I*Lambda**5*omega - 700*Lambda**5 + 26880*Lambda**4*omega**4 - 13440*I*Lambda**4*omega**3 + 38640*Lambda**4*omega**2 + 4326*I*Lambda**4*omega + 26236*Lambda**4 - 573440*Lambda**3*omega**6 + 645120*I*Lambda**3*omega**5 - 627200*Lambda**3*omega**4 - 18816*I*Lambda**3*omega**3 - 843360*Lambda**3*omega**2 - 343512*I*Lambda**3*omega - 452928*Lambda**3 + 6881280*Lambda**2*omega**8 - 13762560*I*Lambda**2*omega**7 - 1863680*Lambda**2*omega**6 + 494592*I*Lambda**2*omega**5 + 8721664*Lambda**2*omega**4 + 5744256*I*Lambda**2*omega**3 + 6442464*Lambda**2*omega**2 + 5820984*I*Lambda**2*omega + 3528000*Lambda**2 - 44040192*Lambda*omega**10 + 137625600*I*Lambda*omega**9 + 137625600*Lambda*omega**8 - 77414400*I*Lambda*omega**7 - 52297728*Lambda*omega**6 - 23881728*I*Lambda*omega**5 - 22953984*Lambda*omega**4 - 45251040*I*Lambda*omega**3 - 5673024*Lambda*omega**2 - 29405472*I*Lambda*omega - 9676800*Lambda + 117440512*omega**12 - 528482304*I*omega**11 - 954204160*omega**10 + 933101568*I*omega**9 + 524812288*omega**8 - 110960640*I*omega**7 - 15310848*omega**6 + 48591360*I*omega**5 - 34551936*omega**4 + 29830224*I*omega**3 - 29405376*omega**2 + 15825600*I*omega)/(645120*omega**6)",
+      "(-7*I*Lambda**6 + 672*I*Lambda**5*omega**2 + 252*Lambda**5*omega + 322*I*Lambda**5 - 26880*I*Lambda**4*omega**4 - 26880*Lambda**4*omega**3 - 6720*I*Lambda**4*omega**2 - 1974*Lambda**4*omega - 3556*I*Lambda**4 + 573440*I*Lambda**3*omega**6 + 1075200*Lambda**3*omega**5 - 555520*I*Lambda**3*omega**4 - 99456*Lambda**3*omega**3 - 12096*I*Lambda**3*omega**2 - 14064*Lambda**3*omega - 26376*I*Lambda**3 - 6881280*I*Lambda**2*omega**8 - 20643840*Lambda**2*omega**7 + 25088000*I*Lambda**2*omega**6 + 14687232*Lambda**2*omega**5 - 2033920*I*Lambda**2*omega**4 + 153216*Lambda**2*omega**3 + 1283520*I*Lambda**2*omega**2 - 447768*Lambda**2*omega + 608832*I*Lambda**2 + 44040192*I*Lambda*omega**10 + 192675840*Lambda*omega**9 - 371589120*I*Lambda*omega**8 - 376750080*Lambda*omega**7 + 189923328*I*Lambda*omega**6 + 48801792*Lambda*omega**5 - 13112832*I*Lambda*omega**4 + 7016352*Lambda*omega**3 - 4716000*I*Lambda*omega**2 + 5198592*Lambda*omega - 2298240*I*Lambda - 117440512*I*omega**12 - 704643072*omega**11 + 1901068288*I*omega**10 + 2832334848*omega**9 - 2441936896*I*omega**8 - 1230200832*omega**7 + 338731008*I*omega**6 + 23431680*omega**5 - 3541248*I*omega**4 - 11033232*omega**3 - 5462208*I*omega**2 - 4236480*omega)/(322560*omega**5)",
+      "(I*Lambda**7 - 112*I*Lambda**6*omega**2 - 28*Lambda**6*omega - 112*I*Lambda**6 + 5376*I*Lambda**5*omega**4 + 4032*Lambda**5*omega**3 + 7000*I*Lambda**5*omega**2 + 196*Lambda**5*omega + 4648*I*Lambda**5 - 143360*I*Lambda**4*omega**6 - 215040*Lambda**4*omega**5 - 103040*I*Lambda**4*omega**4 - 40320*Lambda**4*omega**3 - 179704*I*Lambda**4*omega**2 + 52136*Lambda**4*omega - 89280*I*Lambda**4 + 2293760*I*Lambda**3*omega**8 + 5734400*Lambda**3*omega**7 - 2580480*I*Lambda**3*omega**6 - 179200*Lambda**3*omega**5 + 2318848*I*Lambda**3*omega**4 - 1167936*Lambda**3*omega**3 + 1769904*I*Lambda**3*omega**2 - 1345680*Lambda**3*omega + 808848*I*Lambda**3 - 22020096*I*Lambda**2*omega**10 - 82575360*Lambda**2*omega**9 + 105512960*I*Lambda**2*omega**8 + 67665920*Lambda**2*omega**7 - 34779136*I*Lambda**2*omega**6 + 6938624*Lambda**2*omega**5 - 11721984*I*Lambda**2*omega**4 + 17491584*Lambda**2*omega**3 - 2690976*I*Lambda**2*omega**2 + 10586016*Lambda**2*omega - 3110400*I*Lambda**2 + 117440512*I*Lambda*omega**12 + 616562688*Lambda*omega**11 - 1295515648*I*Lambda*omega**10 - 1458831360*Lambda*omega**9 + 956268544*I*Lambda*omega**8 + 283508736*Lambda*omega**7 - 10899456*I*Lambda*omega**6 - 57062400*Lambda*omega**5 - 16394304*I*Lambda*omega**4 - 48657600*Lambda*omega**3 - 22584768*I*Lambda*omega**2 - 24675840*Lambda*omega + 3628800*I*Lambda - 268435456*I*omega**14 - 1879048192*omega**13 + 5578424320*I*omega**12 + 9189720064*omega**11 - 9101639680*I*omega**10 - 5391253504*omega**9 + 1808105472*I*omega**8 + 326516736*omega**7 + 26293248*I*omega**6 + 25818624*omega**5 + 51029184*I*omega**4 + 1597824*omega**3 + 27636480*I*omega**2 + 7257600*omega)/(645120*omega**7)",
+      "(Lambda**7 - 112*Lambda**6*omega**2 + 56*I*Lambda**6*omega - 49*Lambda**6 + 5376*Lambda**5*omega**4 - 6720*I*Lambda**5*omega**3 + 280*Lambda**5*omega**2 - 644*I*Lambda**5*omega + 238*Lambda**5 - 143360*Lambda**4*omega**6 + 322560*I*Lambda**4*omega**5 + 219520*Lambda**4*omega**4 - 50400*I*Lambda**4*omega**3 + 26096*Lambda**4*omega**2 - 8092*I*Lambda**4*omega + 18324*Lambda**4 + 2293760*Lambda**3*omega**8 - 8028160*I*Lambda**3*omega**7 - 11182080*Lambda**3*omega**6 + 7562240*I*Lambda**3*omega**5 + 1297408*Lambda**3*omega**4 + 393792*I*Lambda**3*omega**3 - 629136*Lambda**3*omega**2 - 116256*I*Lambda**3*omega - 296424*Lambda**3 - 22020096*Lambda**2*omega**10 + 110100480*I*Lambda**2*omega**9 + 236257280*Lambda**2*omega**8 - 269516800*I*Lambda**2*omega**7 - 156491776*Lambda**2*omega**6 + 40850432*I*Lambda**2*omega**5 + 8239104*Lambda**2*omega**4 + 3436416*I*Lambda**2*omega**3 + 3796464*Lambda**2*omega**2 + 2990736*I*Lambda**2*omega + 1425600*Lambda**2 + 117440512*Lambda*omega**12 - 792723456*I*Lambda*omega**11 - 2352480256*Lambda*omega**10 + 3881041920*I*Lambda*omega**9 + 3750068224*Lambda*omega**8 - 2115993600*I*Lambda*omega**7 - 655847424*Lambda*omega**6 + 55544832*I*Lambda*omega**5 - 14514240*Lambda*omega**4 - 21812544*I*Lambda*omega**3 + 1102944*Lambda*omega**2 - 10039680*I*Lambda*omega - 1814400*Lambda - 268435456*omega**14 + 2348810240*I*omega**13 + 9101639680*omega**12 - 20097007616*I*omega**11 - 27433369600*omega**10 + 23711055872*I*omega**9 + 12748652544*omega**8 - 3933339648*I*omega**7 - 574786560*omega**6 + 35013888*I*omega**5 - 16996992*omega**4 + 8771904*I*omega**3 - 10172160*omega**2 + 3628800*I*omega)/(322560*omega**6)"
+    ],
+    [
+      "(-35*Lambda**6*omega + 105*I*Lambda**6 + 3360*Lambda**5*omega**3 - 10080*I*Lambda**5*omega**2 + 9086*Lambda**5*omega - 14070*I*Lambda**5 - 134400*Lambda**4*omega**5 + 436800*I*Lambda**4*omega**4 - 530880*Lambda**4*omega**3 + 775320*I*Lambda**4*omega**2 - 885320*Lambda**4*omega + 742140*I*Lambda**4 + 2867200*Lambda**3*omega**7 - 10752000*I*Lambda**3*omega**6 + 10716160*Lambda**3*omega**5 - 19084800*I*Lambda**3*omega**4 + 34807680*Lambda**3*omega**3 - 16685040*I*Lambda**3*omega**2 + 37621128*Lambda**3*omega - 19603080*I*Lambda**3 - 34406400*Lambda**2*omega**9 + 154828800*I*Lambda**2*omega**8 - 64655360*Lambda**2*omega**7 + 247726080*I*Lambda**2*omega**6 - 479275520*Lambda**2*omega**5 + 139864320*I*Lambda**2*omega**4 - 869985192*Lambda**2*omega**3 - 26309520*I*Lambda**2*omega**2 - 755068944*Lambda**2*omega + 270708480*I*Lambda**2 + 220200960*Lambda*omega**11 - 1211105280*I*Lambda*omega**10 - 440401920*Lambda*omega**9 - 1362493440*I*Lambda*omega**8 + 2611568640*Lambda*omega**7 - 790794240*I*Lambda*omega**6 + 6488352000*Lambda*omega**5 + 2935872000*I*Lambda*omega**4 + 8083285776*Lambda*omega**3 + 3784626720*I*Lambda*omega**2 + 6918655680*Lambda*omega - 1823472000*I*Lambda - 587202560*omega**13 + 3963617280*I*omega**12 + 4969201664*omega**11 + 357826560*I*omega**10 - 5087559680*omega**9 + 2676817920*I*omega**8 - 15168006144*omega**7 - 10660800000*I*omega**6 - 20827345920*omega**5 - 27661233600*I*omega**4 - 20057881536*omega**3 - 24968424960*I*omega**2 - 22669113600*omega + 4572288000*I)/(6451200*omega**7)",
+      "(35*I*Lambda**6*omega + 105*Lambda**6 - 3360*I*Lambda**5*omega**3 - 10920*Lambda**5*omega**2 - 4466*I*Lambda**5*omega - 7770*Lambda**5 + 134400*I*Lambda**4*omega**5 + 504000*Lambda**4*omega**4 + 161280*I*Lambda**4*omega**3 + 429240*Lambda**4*omega**2 + 272120*I*Lambda**4*omega + 196140*Lambda**4 - 2867200*I*Lambda**3*omega**7 - 12902400*Lambda**3*omega**6 + 1648640*I*Lambda**3*omega**5 - 8762880*Lambda**3*omega**4 - 7746240*I*Lambda**3*omega**3 - 3731760*Lambda**3*omega**2 - 5430168*I*Lambda**3*omega - 1702680*Lambda**3 + 34406400*I*Lambda**2*omega**9 + 189235200*Lambda**2*omega**8 - 150384640*I*Lambda**2*omega**7 + 25804800*Lambda**2*omega**6 + 65000960*I*Lambda**2*omega**5 + 15663360*Lambda**2*omega**4 + 65044392*I*Lambda**2*omega**3 - 22208400*Lambda**2*omega**2 + 17661264*I*Lambda**2*omega - 4878720*Lambda**2 - 220200960*I*Lambda*omega**11 - 1486356480*Lambda*omega**10 + 2367160320*I*Lambda*omega**9 + 1469153280*Lambda*omega**8 - 615997440*I*Lambda*omega**7 + 82391040*Lambda*omega**6 + 25946880*I*Lambda*omega**5 + 277629120*Lambda*omega**4 + 408860304*I*Lambda*omega**3 + 103129440*Lambda*omega**2 + 375395520*I*Lambda*omega + 142128000*Lambda + 587202560*I*omega**13 + 4844421120*omega**12 - 12015632384*I*omega**11 - 14340587520*omega**10 + 8555724800*I*omega**9 + 1493237760*omega**8 - 1484691456*I*omega**7 - 578572800*omega**6 - 2975024640*I*omega**5 + 1316904000*omega**4 - 3067923264*I*omega**3 + 1562941440*omega**2 - 2256710400*I*omega - 508032000)/(3225600*omega**6)",
+      "(-5*I*Lambda**7 + 560*I*Lambda**6*omega**2 + 70*Lambda**6*omega + 770*I*Lambda**6 - 26880*I*Lambda**5*omega**4 - 13440*Lambda**5*omega**3 - 54320*I*Lambda**5*omega**2 + 5558*Lambda**5*omega - 46340*I*Lambda**5 + 716800*I*Lambda**4*omega**6 + 806400*Lambda**4*omega**5 + 1321600*I*Lambda**4*omega**4 + 23520*Lambda**4*omega**3 + 2080400*I*Lambda**4*omega**2 - 786920*Lambda**4*omega + 1376280*I*Lambda**4 - 11468800*I*Lambda**3*omega**8 - 22937600*Lambda**3*omega**7 - 6451200*I*Lambda**3*omega**6 - 3906560*Lambda**3*omega**5 - 33125120*I*Lambda**3*omega**4 + 19134720*Lambda**3*omega**3 - 33278880*I*Lambda**3*omega**2 + 26021784*Lambda**3*omega - 20933280*I*Lambda**3 + 110100480*I*Lambda**2*omega**10 + 344064000*Lambda**2*omega**9 - 252313600*I*Lambda**2*omega**8 - 89169920*Lambda**2*omega**7 + 248729600*I*Lambda**2*omega**6 - 143252480*Lambda**2*omega**5 + 271864320*I*Lambda**2*omega**4 - 392172336*Lambda**2*omega**3 + 160437600*I*Lambda**2*omega**2 - 328350912*Lambda**2*omega + 151632000*I*Lambda**2 - 587202560*I*Lambda*omega**12 - 2642411520*Lambda*omega**11 + 4330618880*I*Lambda*omega**10 + 3784704000*Lambda*omega**9 - 2486435840*I*Lambda*omega**8 - 85401600*Lambda*omega**7 - 735928320*I*Lambda*omega**6 + 1556820480*Lambda*omega**5 - 31896960*I*Lambda*omega**4 + 2018390928*Lambda*omega**3 + 371279040*I*Lambda*omega**2 + 1421465280*Lambda*omega - 399168000*I*Lambda + 1342177280*I*omega**14 + 8220835840*omega**13 - 20845690880*I*omega**12 - 29095886848*omega**11 + 24313856000*I*omega**10 + 11152261120*omega**9 - 2699427840*I*omega**8 - 1598287872*omega**7 - 896916480*I*omega**6 - 1267495680*omega**5 - 1996060800*I*omega**4 - 619600128*omega**3 - 1508152320*I*omega**2 - 640281600*omega)/(6451200*omega**7)",
+      "(-5*Lambda**7 + 560*Lambda**6*omega**2 - 210*I*Lambda**6*omega + 420*Lambda**6 - 26880*Lambda**5*omega**4 + 26880*I*Lambda**5*omega**3 - 19040*Lambda**5*omega**2 + 4242*I*Lambda**5*omega - 11340*Lambda**5 + 716800*Lambda**4*omega**6 - 1344000*I*Lambda**4*omega**5 - 291200*Lambda**4*omega**4 - 124320*I*Lambda**4*omega**3 + 234920*Lambda**4*omega**2 + 45900*I*Lambda**4*omega + 64480*Lambda**4 - 11468800*Lambda**3*omega**8 + 34406400*I*Lambda**3*omega**7 + 35123200*Lambda**3*omega**6 - 15805440*I*Lambda**3*omega**5 - 2141440*Lambda**3*omega**4 - 1326720*I*Lambda**3*omega**3 + 2018880*Lambda**3*omega**2 + 212376*I*Lambda**3*omega + 1713120*Lambda**3 + 110100480*Lambda**2*omega**10 - 481689600*I*Lambda**2*omega**9 - 871628800*Lambda**2*omega**8 + 814571520*I*Lambda**2*omega**7 + 351805440*Lambda**2*omega**6 - 55910400*I*Lambda**2*omega**5 - 49333760*Lambda**2*omega**4 - 23889744*I*Lambda**2*omega**3 - 45265920*Lambda**2*omega**2 - 33258288*I*Lambda**2*omega - 24768000*Lambda**2 - 587202560*Lambda*omega**12 + 3523215360*I*Lambda*omega**11 + 9285140480*Lambda*omega**10 - 13418496000*I*Lambda*omega**9 - 10916003840*Lambda*omega**8 + 5002076160*I*Lambda*omega**7 + 1401323520*Lambda*omega**6 + 96345600*I*Lambda*omega**5 + 210781440*Lambda*omega**4 + 357621552*I*Lambda*omega**3 + 66820800*Lambda*omega**2 + 242344320*I*Lambda*omega + 84672000*Lambda + 1342177280*omega**14 - 10569646080*I*omega**13 - 37287362560*omega**12 + 74604085248*I*omega**11 + 90686095360*omega**10 - 68303585280*I*omega**9 - 31159255040*omega**8 + 7452536832*I*omega**7 + 840453120*omega**6 - 471033600*I*omega**5 + 328140480*omega**4 - 283803552*I*omega**3 + 278628480*omega**2 - 150998400*I*omega)/(3225600*omega**6)",
+      "(5*Lambda**8 - 640*Lambda**7*omega**2 + 160*I*Lambda**7*omega - 840*Lambda**7 + 35840*Lambda**6*omega**4 - 26880*I*Lambda**6*omega**3 + 66080*Lambda**6*omega**2 - 2240*I*Lambda**6*omega + 54600*Lambda**6 - 1146880*Lambda**5*omega**6 + 1720320*I*Lambda**5*omega**5 - 1612800*Lambda**5*omega**4 + 591360*I*Lambda**5*omega**3 - 2834048*Lambda**5*omega**2 - 730240*I*Lambda**5*omega - 1747840*Lambda**5 + 22937600*Lambda**4*omega**8 - 57344000*I*Lambda**4*omega**7 - 8601600*Lambda**4*omega**6 - 13260800*I*Lambda**4*omega**5 + 51287040*Lambda**4*omega**4 + 20213760*I*Lambda**4*omega**3 + 53280160*Lambda**4*omega**2 + 34605440*I*Lambda**4*omega + 29042640*Lambda**4 - 293601280*Lambda**3*omega**10 + 1101004800*I*Lambda**3*omega**9 + 1192755200*Lambda**3*omega**8 - 550502400*I*Lambda**3*omega**7 - 592936960*Lambda**3*omega**6 - 203857920*I*Lambda**3*omega**5 - 591984640*Lambda**3*omega**4 - 708487680*I*Lambda**3*omega**3 - 317265024*Lambda**3*omega**2 - 568281600*I*Lambda**3*omega - 242029440*Lambda**3 + 2348810240*Lambda**2*omega**12 - 12331253760*I*Lambda**2*omega**11 - 24442306560*Lambda**2*omega**10 + 25323110400*I*Lambda**2*omega**9 + 16703160320*Lambda**2*omega**8 - 3307601920*I*Lambda**2*omega**7 + 2656337920*Lambda**2*omega**6 + 4550266880*I*Lambda**2*omega**5 + 461949696*Lambda**2*omega**4 + 5830579200*I*Lambda**2*omega**3 - 1101990528*Lambda**2*omega**2 + 3660295680*I*Lambda**2*omega + 889056000*Lambda**2 - 10737418240*Lambda*omega**14 + 75161927680*I*Lambda*omega**13 + 218439352320*Lambda*omega**12 - 349972725760*I*Lambda*omega**11 - 338669076480*Lambda*omega**10 + 188345221120*I*Lambda*omega**9 + 51610910720*Lambda*omega**8 - 16751001600*I*Lambda*omega**7 + 2789253120*Lambda*omega**6 - 14968197120*I*Lambda*omega**5 + 13388024832*Lambda*omega**4 - 10334208000*I*Lambda*omega**3 + 10830589440*Lambda*omega**2 - 7634995200*I*Lambda*omega - 1016064000*Lambda + 21474836480*omega**16 - 193273528320*I*omega**15 - 751619276800*omega**14 + 1658260029440*I*omega**13 + 2274705276928*omega**12 - 1983276646400*I*omega**11 - 1078722560000*omega**10 + 347466629120*I*omega**9 + 47276163072*omega**8 + 5772165120*I*omega**7 - 13928448000*omega**6 - 1277460480*I*omega**5 - 15031456512*omega**4 - 4238899200*I*omega**3 - 9049420800*omega**2 + 2032128000*I*omega)/(51609600*omega**8)",
+      "(-5*I*Lambda**8 + 640*I*Lambda**7*omega**2 + 320*Lambda**7*omega + 440*I*Lambda**7 - 35840*I*Lambda**6*omega**4 - 44800*Lambda**6*omega**3 - 16800*I*Lambda**6*omega**2 - 8960*Lambda**6*omega - 9800*I*Lambda**6 + 1146880*I*Lambda**5*omega**6 + 2580480*Lambda**5*omega**5 - 1182720*I*Lambda**5*omega**4 + 98560*Lambda**5*omega**3 + 2688*I*Lambda**5*omega**2 - 64960*Lambda**5*omega - 111360*I*Lambda**5 - 22937600*I*Lambda**4*omega**8 - 80281600*Lambda**4*omega**7 + 100352000*I*Lambda**4*omega**6 + 56268800*Lambda**4*omega**5 - 3619840*I*Lambda**4*omega**4 + 7589120*Lambda**4*omega**3 + 10259680*I*Lambda**4*omega**2 - 533760*Lambda**4*omega + 6669360*I*Lambda**4 + 293601280*I*Lambda**3*omega**10 + 1468006400*Lambda**3*omega**9 - 3027763200*I*Lambda**3*omega**8 - 3257139200*Lambda**3*omega**7 + 1653800960*I*Lambda**3*omega**6 + 238837760*Lambda**3*omega**5 - 148684800*I*Lambda**3*omega**4 + 41871360*Lambda**3*omega**3 - 175387776*I*Lambda**3*omega**2 + 99406080*Lambda**3*omega - 81509760*I*Lambda**3 - 2348810240*I*Lambda**2*omega**12 - 15854469120*Lambda**2*omega**11 + 46462402560*I*Lambda**2*omega**10 + 75235328000*Lambda**2*omega**9 - 69734891520*I*Lambda**2*omega**8 - 35938631680*Lambda**2*omega**7 + 10145136640*I*Lambda**2*omega**6 - 100700160*Lambda**2*omega**5 + 1428190464*I*Lambda**2*omega**4 - 1596610560*Lambda**2*omega**3 + 484618368*I*Lambda**2*omega**2 - 1071774720*Lambda**2*omega + 355104000*I*Lambda**2 + 10737418240*I*Lambda*omega**14 + 93952409600*Lambda*omega**13 - 364065587200*I*Lambda*omega**12 - 803880304640*Lambda*omega**11 + 1090288353280*I*Lambda*omega**10 + 924880732160*Lambda*omega**9 - 479479726080*I*Lambda*omega**8 - 131898408960*Lambda*omega**7 + 10700513280*I*Lambda*omega**6 + 5233674240*Lambda*omega**5 + 954912768*I*Lambda*omega**4 + 5515269120*Lambda*omega**3 + 2151452160*I*Lambda*omega**2 + 2815948800*Lambda*omega - 435456000*I*Lambda - 21474836480*I*omega**16 - 236223201280*omega**15 + 1159641169920*I*omega**14 + 3302427197440*omega**13 - 5976430215168*I*omega**12 - 7115427020800*omega**11 + 5581978992640*I*omega**10 + 2793264906240*omega**9 - 822761029632*I*omega**8 - 120627609600*omega**7 - 719831040*I*omega**6 - 3440240640*omega**5 - 5635868928*I*omega**4 - 456192000*omega**3 - 3166387200*I*omega**2 - 870912000*omega)/(25804800*omega**7)"
+    ],
+    [
+      "(55*I*Lambda**7*omega + 165*Lambda**7 - 6160*I*Lambda**6*omega**3 - 18480*Lambda**6*omega**2 - 19096*I*Lambda**6*omega - 32340*Lambda**6 + 295680*I*Lambda**5*omega**5 + 960960*Lambda**5*omega**4 + 1377376*I*Lambda**5*omega**3 + 2217600*Lambda**5*omega**2 + 2677180*I*Lambda**5*omega + 2568720*Lambda**5 - 7884800*I*Lambda**4*omega**7 - 29568000*Lambda**4*omega**6 - 36861440*I*Lambda**4*omega**5 - 70519680*Lambda**4*omega**4 - 136597120*I*Lambda**4*omega**3 - 83035920*Lambda**4*omega**2 - 175894488*I*Lambda**4*omega - 106595280*Lambda**4 + 126156800*I*Lambda**3*omega**9 + 567705600*Lambda**3*omega**8 + 373739520*I*Lambda**3*omega**7 + 1272606720*Lambda**3*omega**6 + 2622906880*I*Lambda**3*omega**5 + 1143521280*Lambda**3*omega**4 + 5789669160*I*Lambda**3*omega**3 + 360241200*Lambda**3*omega**2 + 5910211584*I*Lambda**3*omega + 2475578160*Lambda**3 - 1211105280*I*Lambda**2*omega**11 - 6661079040*Lambda**2*omega**10 + 1034485760*I*Lambda**2*omega**9 - 11808276480*Lambda**2*omega**8 - 22602342400*I*Lambda**2*omega**7 - 10767482880*Lambda**2*omega**6 - 69415285632*I*Lambda**2*omega**5 + 24207025920*Lambda**2*omega**4 - 106640160960*I*Lambda**2*omega**3 + 39572998080*Lambda**2*omega**2 - 103067976480*I*Lambda**2*omega - 31788028800*Lambda**2 + 6459228160*I*Lambda*omega**13 + 43599790080*Lambda*omega**12 - 47394586624*I*Lambda*omega**11 + 31185960960*Lambda*omega**10 + 87040983040*I*Lambda*omega**9 + 67243376640*Lambda*omega**8 + 350130468864*I*Lambda*omega**7 - 207620497920*Lambda*omega**6 + 625099005696*I*Lambda*omega**5 - 715229095680*Lambda*omega**4 + 754155021216*I*Lambda*omega**3 - 750294072000*Lambda*omega**2 + 867285244800*I*Lambda*omega + 205371936000*Lambda - 14763950080*I*omega**15 - 121802588160*omega**14 + 254493589504*I*omega**13 + 150177054720*omega**12 - 205080494080*I*omega**11 - 191354634240*omega**10 - 594588893184*I*omega**9 + 396751872000*omega**8 - 1209385267200*I*omega**7 + 2119814906880*omega**6 - 1063364391936*I*omega**5 + 3951072111360*omega**4 - 1095446920320*I*omega**3 + 3758600102400*omega**2 - 2697250752000*I*omega - 502951680000)/(141926400*omega**8)",
+      "(55*Lambda**7*omega - 165*I*Lambda**7 - 6160*Lambda**6*omega**3 + 20020*I*Lambda**6*omega**2 - 10241*Lambda**6*omega + 19635*I*Lambda**6 + 295680*Lambda**5*omega**5 - 1108800*I*Lambda**5*omega**4 + 527296*Lambda**5*omega**3 - 1397704*I*Lambda**5*omega**2 + 958694*Lambda**5*omega - 866250*I*Lambda**5 - 7884800*Lambda**4*omega**7 + 35481600*I*Lambda**4*omega**6 - 1379840*Lambda**4*omega**5 + 41025600*I*Lambda**4*omega**4 - 38246560*Lambda**4*omega**3 + 28176280*I*Lambda**4*omega**2 - 36116608*Lambda**4*omega + 16796340*I*Lambda**4 + 126156800*Lambda**3*omega**9 - 693862400*I*Lambda**3*omega**8 - 446279680*Lambda**3*omega**7 - 443125760*I*Lambda**3*omega**6 + 486520320*Lambda**3*omega**5 - 365798400*I*Lambda**3*omega**4 + 843798120*Lambda**3*omega**3 + 3319008*I*Lambda**3*omega**2 + 495519576*Lambda**3*omega - 103605480*I*Lambda**3 - 1211105280*Lambda**2*omega**11 + 8174960640*I*Lambda**2*omega**10 + 12010127360*Lambda**2*omega**9 - 4081172480*I*Lambda**2*omega**8 - 3879096320*Lambda**2*omega**7 + 1880750080*I*Lambda**2*omega**6 - 5268917632*Lambda**2*omega**5 - 2851260192*I*Lambda**2*omega**4 - 2529571608*Lambda**2*omega**3 - 3166512624*I*Lambda**2*omega**2 + 206538864*Lambda**2*omega - 967697280*I*Lambda**2 + 6459228160*Lambda*omega**13 - 53288632320*I*Lambda*omega**12 - 127327535104*Lambda*omega**11 + 134735462400*I*Lambda*omega**10 + 80379904000*Lambda*omega**9 - 17290690560*I*Lambda*omega**8 - 664283136*Lambda*omega**7 + 17819112960*I*Lambda*omega**6 - 30813218304*Lambda*omega**5 + 4324009536*I*Lambda*omega**4 - 57398982000*Lambda*omega**3 - 12066611040*I*Lambda*omega**2 - 50104860480*Lambda*omega + 15268176000*I*Lambda - 14763950080*omega**15 + 147639500800*I*omega**14 + 499944259584*omega**13 - 848419618816*I*omega**12 - 790609526784*omega**11 + 371910246400*I*omega**10 + 138785816576*omega**9 - 53254569984*I*omega**8 + 156868276224*omega**7 + 86545113600*I*omega**6 + 239650185984*omega**5 + 278483941824*I*omega**4 + 232946047296*omega**3 + 260020316160*I*omega**2 + 246892665600*omega - 50295168000*I)/(70963200*omega**7)",
+      "(-55*Lambda**8 + 7040*Lambda**7*omega**2 - 880*I*Lambda**7*omega + 12320*Lambda**7 - 394240*Lambda**6*omega**4 + 197120*I*Lambda**6*omega**3 - 1059520*Lambda**6*omega**2 - 101640*I*Lambda**6*omega - 1111880*Lambda**6 + 12615680*Lambda**5*omega**6 - 14192640*I*Lambda**5*omega**5 + 34298880*Lambda**5*omega**4 - 1438976*I*Lambda**5*omega**3 + 64763776*Lambda**5*omega**2 + 23231472*I*Lambda**5*omega + 51837280*Lambda**5 - 252313600*Lambda**4*omega**8 + 504627200*I*Lambda**4*omega**7 - 394240000*Lambda**4*omega**6 + 213678080*I*Lambda**4*omega**5 - 1429711360*Lambda**4*omega**4 - 745085440*I*Lambda**4*omega**3 - 1824305120*Lambda**4*omega**2 - 1304094880*I*Lambda**4*omega - 1330916400*Lambda**4 + 3229614080*Lambda**3*omega**10 - 10092544000*I*Lambda**3*omega**9 - 4037017600*Lambda**3*omega**8 - 1286799360*I*Lambda**3*omega**7 + 14747729920*Lambda**3*omega**6 + 7800094720*I*Lambda**3*omega**5 + 24246323200*Lambda**3*omega**4 + 30273217920*I*Lambda**3*omega**3 + 20623456128*Lambda**3*omega**2 + 31335627456*I*Lambda**3*omega + 18529695360*Lambda**3 - 25836912640*Lambda**2*omega**12 + 116266106880*I*Lambda**2*omega**11 + 164710318080*Lambda**2*omega**10 - 113642045440*I*Lambda**2*omega**9 - 124541992960*Lambda**2*omega**8 - 19314606080*I*Lambda**2*omega**7 - 142639185920*Lambda**2*omega**6 - 226040793088*I*Lambda**2*omega**5 - 91913513472*Lambda**2*omega**4 - 397747510464*I*Lambda**2*omega**3 - 15466898304*Lambda**2*omega**2 - 334288290048*I*Lambda**2*omega - 127135008000*Lambda**2 + 118111600640*Lambda*omega**14 - 723433553920*I*Lambda*omega**13 - 1731073146880*Lambda*omega**12 + 2234892943360*I*Lambda*omega**11 + 1881250201600*Lambda*omega**10 - 733814456320*I*Lambda*omega**9 + 154127564800*Lambda*omega**8 + 604292874240*I*Lambda*omega**7 + 79169249280*Lambda*omega**6 + 1307558529024*I*Lambda*omega**5 - 703734856704*Lambda*omega**4 + 1529463544704*I*Lambda*omega**3 - 819963555840*Lambda*omega**2 + 1305176117760*I*Lambda*omega + 324124416000*Lambda - 236223201280*omega**16 + 1889785610240*I*omega**15 + 6407554334720*omega**14 - 12184688001024*I*omega**13 - 14278769770496*omega**12 + 10272110542848*I*omega**11 + 4383739740160*omega**10 - 1492295090176*I*omega**9 + 84997963776*omega**8 - 687382806528*I*omega**7 + 1168592916480*omega**6 - 311532908544*I*omega**5 + 1817543042304*omega**4 + 36410038272*I*omega**3 + 1432739404800*omega**2 - 511689830400*I*omega)/(1135411200*omega**8)",
+      "(55*I*Lambda**8 - 7040*I*Lambda**7*omega**2 - 2640*Lambda**7*omega - 7480*I*Lambda**7 + 394240*I*Lambda**6*omega**4 + 394240*Lambda**6*omega**3 + 492800*I*Lambda**6*omega**2 + 101640*Lambda**6*omega + 366520*I*Lambda**6 - 12615680*I*Lambda**5*omega**6 - 23654400*Lambda**5*omega**5 - 3548160*I*Lambda**5*omega**4 - 7549696*Lambda**5*omega**3 - 14138432*I*Lambda**5*omega**2 + 1539648*Lambda**5*omega - 6980160*I*Lambda**5 + 252313600*I*Lambda**4*omega**8 + 756940800*Lambda**4*omega**7 - 583475200*I*Lambda**4*omega**6 - 101713920*Lambda**4*omega**5 + 142123520*I*Lambda**4*omega**4 - 35552000*Lambda**4*omega**3 + 87473760*I*Lambda**4*omega**2 - 57905760*Lambda**4*omega - 1322640*I*Lambda**4 - 3229614080*I*Lambda**3*omega**10 - 14129561600*Lambda**3*omega**9 + 23212851200*I*Lambda**3*omega**8 + 18645975040*Lambda**3*omega**7 - 7127859200*I*Lambda**3*omega**6 - 78397440*Lambda**3*omega**5 + 1083371520*I*Lambda**3*omega**4 + 36643200*Lambda**3*omega**3 + 2430831744*I*Lambda**3*omega**2 - 1221974016*Lambda**3*omega + 1733719680*I*Lambda**3 + 25836912640*I*Lambda**2*omega**12 + 155021475840*Lambda**2*omega**11 - 392398110720*I*Lambda**2*omega**10 - 535510384640*Lambda**2*omega**9 + 400169369600*I*Lambda**2*omega**8 + 154554695680*Lambda**2*omega**7 - 47706193920*I*Lambda**2*omega**6 + 8323848192*Lambda**2*omega**5 - 33206486016*I*Lambda**2*omega**4 + 38349345984*Lambda**2*omega**3 - 24257177472*I*Lambda**2*omega**2 + 36929856768*Lambda**2*omega - 19644768000*I*Lambda**2 - 118111600640*I*Lambda*omega**14 - 930128855040*Lambda*omega**13 + 3229614080000*I*Lambda*omega**12 + 6317125140480*Lambda*omega**11 - 7405505085440*I*Lambda*omega**10 - 5272633344000*Lambda*omega**9 + 2282803691520*I*Lambda*omega**8 + 427914854400*Lambda*omega**7 + 85208555520*I*Lambda*omega**6 - 210671425536*Lambda*omega**5 + 24137507328*I*Lambda*omega**4 - 293648651520*Lambda*omega**3 - 39790333440*I*Lambda*omega**2 - 211309409280*Lambda*omega + 62270208000*I*Lambda + 236223201280*I*omega**16 + 2362232012800*omega**15 - 10600516157440*I*omega**14 - 27480140283904*omega**13 + 44699150712832*I*omega**12 + 46995406323712*omega**11 - 31845148262400*I*omega**10 - 13237882454016*omega**9 + 3090645516288*I*omega**8 + 544045252608*omega**7 + 145780715520*I*omega**6 + 212789508096*omega**5 + 332743057152*I*omega**4 + 105313345536*omega**3 + 252531164160*I*omega**2 + 108102758400*omega)/(567705600*omega**7)",
+      "(-55*I*Lambda**9 + 7920*I*Lambda**8*omega**2 + 1980*Lambda**8*omega + 13200*I*Lambda**8 - 506880*I*Lambda**7*omega**4 - 380160*Lambda**7*omega**3 - 1251360*I*Lambda**7*omega**2 - 47520*Lambda**7*omega - 1265880*I*Lambda**7 + 18923520*I*Lambda**6*omega**6 + 28385280*Lambda**6*omega**5 + 41986560*I*Lambda**6*omega**4 + 15079680*Lambda**6*omega**3 + 83226528*I*Lambda**6*omega**2 - 19625760*Lambda**6*omega + 62469440*I*Lambda**6 - 454164480*I*Lambda**5*omega**8 - 1135411200*Lambda**5*omega**7 - 246005760*I*Lambda**5*omega**6 - 631572480*Lambda**5*omega**5 - 2017247232*I*Lambda**5*omega**4 + 632104704*Lambda**5*omega**3 - 2631749472*I*Lambda**5*omega**2 + 1536543360*Lambda**5*omega - 1703758320*I*Lambda**5 + 7266631680*I*Lambda**4*omega**10 + 27249868800*Lambda**4*omega**9 - 22708224000*I*Lambda**4*omega**8 - 2270822400*Lambda**4*omega**7 + 24572190720*I*Lambda**4*omega**6 - 7202764800*Lambda**4*omega**5 + 42676677120*I*Lambda**4*omega**4 - 43833144960*Lambda**4*omega**3 + 34221141504*I*Lambda**4*omega**2 - 44951353920*Lambda**4*omega + 25664094720*I*Lambda**4 - 77510737920*I*Lambda**3*omega**12 - 406931374080*Lambda**3*omega**11 + 738774220800*I*Lambda**3*omega**10 + 653996851200*Lambda**3*omega**9 - 493071237120*I*Lambda**3*omega**8 - 44053954560*Lambda**3*omega**7 - 337200906240*I*Lambda**3*omega**6 + 439908986880*Lambda**3*omega**5 - 223557016320*I*Lambda**3*omega**4 + 773192673792*Lambda**3*omega**3 - 21620769408*I*Lambda**3*omega**2 + 593578782720*Lambda**3*omega - 201466932480*I*Lambda**3 + 531502202880*I*Lambda**2*omega**14 + 3720515420160*Lambda**2*omega**13 - 10425194250240*I*Lambda**2*omega**12 - 15812190535680*Lambda**2*omega**11 + 14828773048320*I*Lambda**2*omega**10 + 7426497576960*Lambda**2*omega**9 - 584293416960*I*Lambda**2*omega**8 - 1925981798400*Lambda**2*omega**7 + 493081104384*I*Lambda**2*omega**6 - 4211963762688*Lambda**2*omega**5 - 2152239088896*I*Lambda**2*omega**4 - 4447914425856*Lambda**2*omega**3 - 2518696438272*I*Lambda**2*omega**2 - 3381764981760*Lambda**2*omega + 715309056000*I*Lambda**2 - 2126008811520*I*Lambda*omega**16 - 19134079303680*Lambda*omega**15 + 73347303997440*I*Lambda*omega**14 + 158586969784320*Lambda*omega**13 - 213243666628608*I*Lambda*omega**12 - 179776467763200*Lambda*omega**11 + 90572335349760*I*Lambda*omega**10 + 29003722260480*Lambda*omega**9 - 2879876431872*I*Lambda*omega**8 + 8045110149120*Lambda*omega**7 + 8442269687808*I*Lambda*omega**6 + 6867702319104*Lambda*omega**5 + 15477239109888*I*Lambda*omega**4 + 3844153589760*Lambda*omega**3 + 12003196308480*I*Lambda*omega**2 + 6535497830400*Lambda*omega - 804722688000*I*Lambda + 3779571220480*I*omega**18 + 42520176230400*omega**17 - 209766202736640*I*omega**16 - 597408476037120*omega**15 + 1083724133302272*I*omega**14 + 1297669272109056*omega**13 - 1026756693721088*I*omega**12 - 522707502366720*omega**11 + 155832604950528*I*omega**10 + 19070210801664*omega**9 - 6513711316992*I*omega**8 + 105276948480*omega**7 - 11045173506048*I*omega**6 + 7298046176256*omega**5 - 10409709053952*I*omega**4 + 7162999050240*omega**3 - 8054078054400*I*omega**2 - 1609445376000*omega)/(10218700800*omega**9)",
+      "(-55*Lambda**9 + 7920*Lambda**8*omega**2 - 3960*I*Lambda**8*omega + 7755*Lambda**8 - 506880*Lambda**7*omega**4 + 633600*I*Lambda**7*omega**3 - 491040*Lambda**7*omega**2 + 205920*I*Lambda**7*omega - 351120*Lambda**7 + 18923520*Lambda**6*omega**6 - 42577920*I*Lambda**6*omega**5 - 7687680*Lambda**6*omega**4 - 11975040*I*Lambda**6*omega**3 + 10378368*Lambda**6*omega**2 + 443520*I*Lambda**6*omega + 3010040*Lambda**6 - 454164480*Lambda**5*omega**8 + 1589575680*I*Lambda**5*omega**7 + 1684193280*Lambda**5*omega**6 - 603187200*I*Lambda**5*omega**5 - 26729472*Lambda**5*omega**4 - 153812736*I*Lambda**5*omega**3 + 165353760*Lambda**5*omega**2 - 49167360*I*Lambda**5*omega + 199639440*Lambda**5 + 7266631680*Lambda**4*omega**10 - 36333158400*I*Lambda**4*omega**9 - 70395494400*Lambda**4*omega**8 + 68124672000*I*Lambda**4*omega**7 + 28688056320*Lambda**4*omega**6 + 1334108160*I*Lambda**4*omega**5 - 5170260480*Lambda**4*omega**4 + 721416960*I*Lambda**4*omega**3 - 10097198496*Lambda**4*omega**2 - 4234855680*I*Lambda**4*omega - 5963340240*Lambda**4 - 77510737920*Lambda**3*omega**12 + 523197480960*I*Lambda**3*omega**11 + 1494503915520*Lambda**3*omega**10 - 2325322137600*I*Lambda**3*omega**9 - 2009980600320*Lambda**3*omega**8 + 878354104320*I*Lambda**3*omega**7 + 227779706880*Lambda**3*omega**6 + 16518205440*I*Lambda**3*omega**5 + 140553135360*Lambda**3*omega**4 + 123987359232*I*Lambda**3*omega**3 + 98841328128*Lambda**3*omega**2 + 121123537920*I*Lambda**3*omega + 62103127680*Lambda**3 + 531502202880*Lambda**2*omega**14 - 4650644275200*I*Lambda**2*omega**13 - 17866225090560*Lambda**2*omega**12 + 38920079278080*I*Lambda**2*omega**11 + 51474396610560*Lambda**2*omega**10 - 41617816289280*I*Lambda**2*omega**9 - 20083845365760*Lambda**2*omega**8 + 4476050472960*I*Lambda**2*omega**7 - 597765206016*Lambda**2*omega**6 - 926208949248*I*Lambda**2*omega**5 - 346392944640*Lambda**2*omega**4 - 1465198073856*I*Lambda**2*omega**3 + 130848336000*Lambda**2*omega**2 - 956363189760*I*Lambda**2*omega - 252872928000*Lambda**2 - 2126008811520*Lambda*omega**16 + 23386096926720*I*Lambda*omega**15 + 114804475822080*Lambda*omega**14 - 326940292546560*I*Lambda*omega**13 - 589713320706048*Lambda*omega**12 + 695009720401920*I*Lambda*omega**11 + 533967667200000*Lambda*omega**10 - 254549588705280*I*Lambda*omega**9 - 65717554839552*Lambda*omega**8 + 9092186357760*I*Lambda*omega**7 - 522633019392*Lambda*omega**6 + 4131006511104*I*Lambda*omega**5 - 3194666300160*Lambda*omega**4 + 3120885504000*I*Lambda*omega**3 - 2814773690880*Lambda*omega**2 + 2181373286400*I*Lambda*omega + 301771008000*Lambda + 3779571220480*omega**18 - 51024211476480*I*omega**17 - 309688616878080*omega**16 + 1105524581990400*I*omega**15 + 2558908497395712*omega**14 - 4004297733832704*I*omega**13 - 4289288292270080*omega**12 + 3109669904056320*I*omega**11 + 1468158257922048*omega**10 - 416182730489856*I*omega**9 - 55711675514880*omega**8 - 875499356160*I*omega**7 + 3617032015872*omega**6 + 45565065216*I*omega**5 + 4280943004416*omega**4 + 1036732815360*I*omega**3 + 2605463884800*omega**2 - 603542016000*I*omega)/(5109350400*omega**8)"
+    ]
+  ],
+  "carrier_state_order": [
+    "a",
+    "a_prime",
+    "b",
+    "b_prime",
+    "c",
+    "c_prime"
+  ],
+  "complete_log_classification": false,
+  "constructed_log_degree": 0,
+  "does_not_establish": [
+    "physical finite-norm boundary admissibility",
+    "exceptional loci where a listed pivot denominator vanishes",
+    "a branch-specialized EE/EX/XX Lee-Wald table by itself",
+    "complete resonant log-module classification or invariance under carrier splitting"
+  ],
+  "equation_linked_variable_map": {
+    "metric_variable_index": "4*((depth+3)*log_power+inverse_radial_order)+field_index",
+    "row_equations": {
+      "angP": "metric_rows.angP-f",
+      "angW": "metric_rows.angW-Gc",
+      "rr": "metric_rows.rr-c",
+      "rx": "metric_rows.rx-Ec",
+      "vr": "metric_rows.vr-b",
+      "vv": "metric_rows.vv-a",
+      "vx": "metric_rows.vx-D"
+    },
+    "row_order": [
+      "vv",
+      "vr",
+      "rr",
+      "vx",
+      "rx",
+      "angP",
+      "angW"
+    ]
+  },
+  "field": "QQ(I)(Lambda,omega)",
+  "generic_assumptions": [
+    "omega is real and nonzero",
+    "Lambda is real",
+    "Lambda = ell*(ell+1)",
+    "ell is an integer >= 2",
+    "m=1 in the serialized recurrence"
+  ],
+  "imported_v1": {
+    "certificate": {
+      "git_blob": "324fe1839d1c5e9d8e6257f409204fd7d74abee5",
+      "path": "black_hole_programme/phase2/general_l_polar/certificate.json",
+      "sha256": "49b224aec8ee358dd4f0c096063d83ee00b2571b222009f73eadd84241a23ab2"
+    },
+    "commit": "e5e372f0feabb5faaf91888241d04efab66d46c1",
+    "subobjects": {
+      "carrier_conventions": {
+        "canonical_json_sha256": "19d366a23c4130a763926a36a83afc37aa5ef1db8f5a08259ca477a01dbf43d1",
+        "json_pointer": "/exact_symbolic_lambda_result/generic_carrier_asymptotics"
+      },
+      "dependent_source_rows": {
+        "canonical_json_sha256": "5d6a6e651d8413fc5d44fb8557ccd71d29e92aba1e1a5d0701657af919093708",
+        "json_pointer": "/exact_symbolic_lambda_result/ricci_to_metric_reconstruction/source_dependent_components"
+      },
+      "depth2_pilot": {
+        "canonical_json_sha256": "64a90838487b83a3a3ed03a95e75e43d0b16f40aba82cbf1c194a8af051cceb7",
+        "json_pointer": "/exact_symbolic_lambda_result/bounded_sourced_lift_depth2_pilot"
+      },
+      "ricci_reconstruction": {
+        "canonical_json_sha256": "98959867cb94dfb739e6ee05d136f6400762f8b52b08ec7dea86d44b06344cc4",
+        "json_pointer": "/exact_symbolic_lambda_result/ricci_to_metric_reconstruction"
+      },
+      "seven_metric_rows": {
+        "canonical_json_sha256": "02a034fb0cf8218bce77a5d3f37b5ea0a18c45875580e75a8d9c3212b96ce009",
+        "json_pointer": "/exact_symbolic_lambda_result/ricci_to_metric_reconstruction/metric_rows"
+      }
+    }
+  },
+  "index": 2,
+  "jet_axis_order": [
+    "log_power",
+    "inverse_radial_order",
+    "field"
+  ],
+  "mass_normalization": "M=1",
+  "metric_depth": 5,
+  "metric_field_order": [
+    "Ah",
+    "Bh",
+    "Ch",
+    "Kh"
+  ],
+  "metric_reconstruction": {
+    "base": "-4*I*omega + 2",
+    "canonical_metric_jets": [
+      [
+        [
+          "-2*I*omega**3/(Lambda**2 - 2*Lambda)",
+          "4*I*omega**3/(Lambda**2 - 2*Lambda)",
+          "-8*I*omega**3/(Lambda**2 - 2*Lambda)",
+          "0"
+        ],
+        [
+          "(-5*Lambda**4*omega**2 + 192*Lambda**3*omega**4 + 52*Lambda**3*omega**2 - 1536*Lambda**2*omega**6 - 384*I*Lambda**2*omega**5 - 1152*Lambda**2*omega**4 - 144*I*Lambda**2*omega**3 - 156*Lambda**2*omega**2 - 16384*Lambda*omega**8 + 12288*I*Lambda*omega**7 + 5120*Lambda*omega**6 + 4608*I*Lambda*omega**5 + 1536*Lambda*omega**4 + 672*I*Lambda*omega**3 + 144*Lambda*omega**2 + 196608*omega**10 - 98304*I*omega**9 + 12288*omega**8 - 36864*I*omega**7 + 1536*omega**6 - 9216*I*omega**5 + 368*omega**4 - 864*I*omega**3)/(8*Lambda**5 - 192*Lambda**4*omega**2 - 56*Lambda**4 + 768*Lambda**3*omega**2 + 96*I*Lambda**3*omega + 128*Lambda**3 + 16384*Lambda**2*omega**6 - 12288*I*Lambda**2*omega**5 - 2048*Lambda**2*omega**4 - 2304*I*Lambda**2*omega**3 - 768*Lambda**2*omega**2 - 480*I*Lambda**2*omega - 96*Lambda**2 - 32768*Lambda*omega**6 + 24576*I*Lambda*omega**5 + 4096*Lambda*omega**4 + 4608*I*Lambda*omega**3 + 576*I*Lambda*omega)",
+          "(5*Lambda**4*omega**2 - 192*Lambda**3*omega**4 + 32*I*Lambda**3*omega**3 - 60*Lambda**3*omega**2 + 1536*Lambda**2*omega**6 - 384*I*Lambda**2*omega**5 + 1344*Lambda**2*omega**4 - 16*I*Lambda**2*omega**3 + 196*Lambda**2*omega**2 + 16384*Lambda*omega**8 - 12288*I*Lambda*omega**7 - 5120*Lambda*omega**6 - 3072*I*Lambda*omega**5 - 2304*Lambda*omega**4 - 576*I*Lambda*omega**3 - 192*Lambda*omega**2 - 196608*omega**10 + 163840*I*omega**9 + 20480*omega**8 + 40960*I*omega**7 + 9728*omega**6 + 11520*I*omega**5 + 784*omega**4 + 1152*I*omega**3)/(4*Lambda**5 - 96*Lambda**4*omega**2 - 28*Lambda**4 + 384*Lambda**3*omega**2 + 48*I*Lambda**3*omega + 64*Lambda**3 + 8192*Lambda**2*omega**6 - 6144*I*Lambda**2*omega**5 - 1024*Lambda**2*omega**4 - 1152*I*Lambda**2*omega**3 - 384*Lambda**2*omega**2 - 240*I*Lambda**2*omega - 48*Lambda**2 - 16384*Lambda*omega**6 + 12288*I*Lambda*omega**5 + 2048*Lambda*omega**4 + 2304*I*Lambda*omega**3 + 288*I*Lambda*omega)",
+          "(-5*Lambda**4*omega**2 + 192*Lambda**3*omega**4 - 64*I*Lambda**3*omega**3 + 68*Lambda**3*omega**2 - 1536*Lambda**2*omega**6 + 1152*I*Lambda**2*omega**5 - 1536*Lambda**2*omega**4 + 176*I*Lambda**2*omega**3 - 236*Lambda**2*omega**2 - 16384*Lambda*omega**8 + 12288*I*Lambda*omega**7 + 5120*Lambda*omega**6 + 1536*I*Lambda*omega**5 + 3072*Lambda*omega**4 + 480*I*Lambda*omega**3 + 240*Lambda*omega**2 + 196608*omega**10 - 229376*I*omega**9 - 53248*omega**8 - 45056*I*omega**7 - 20992*omega**6 - 13824*I*omega**5 - 1936*omega**4 - 1440*I*omega**3)/(2*Lambda**5 - 48*Lambda**4*omega**2 - 14*Lambda**4 + 192*Lambda**3*omega**2 + 24*I*Lambda**3*omega + 32*Lambda**3 + 4096*Lambda**2*omega**6 - 3072*I*Lambda**2*omega**5 - 512*Lambda**2*omega**4 - 576*I*Lambda**2*omega**3 - 192*Lambda**2*omega**2 - 120*I*Lambda**2*omega - 24*Lambda**2 - 8192*Lambda*omega**6 + 6144*I*Lambda*omega**5 + 1024*Lambda*omega**4 + 1152*I*Lambda*omega**3 + 144*I*Lambda*omega)",
+          "2*omega**2/(Lambda**2 - 2*Lambda)"
+        ],
+        [
+          "(I*Lambda**5*omega - 48*I*Lambda**4*omega**3 - 2*I*Lambda**4*omega + 512*I*Lambda**3*omega**5 - 128*Lambda**3*omega**4 + 320*I*Lambda**3*omega**3 - 112*Lambda**3*omega**2 - 28*I*Lambda**3*omega + 8192*I*Lambda**2*omega**7 + 6144*Lambda**2*omega**6 - 8192*I*Lambda**2*omega**5 + 4096*Lambda**2*omega**4 - 832*I*Lambda**2*omega**3 + 416*Lambda**2*omega**2 + 104*I*Lambda**2*omega - 196608*I*Lambda*omega**9 - 98304*Lambda*omega**8 + 36864*I*Lambda*omega**7 - 12288*Lambda*omega**6 + 7680*I*Lambda*omega**5 - 9216*Lambda*omega**4 + 208*I*Lambda*omega**3 - 96*Lambda*omega**2 - 96*I*Lambda*omega + 1048576*I*omega**11 + 524288*omega**10 - 65536*I*omega**9 - 65536*I*omega**7 + 16384*omega**6 + 20736*I*omega**5 + 4608*omega**4 + 1312*I*omega**3 - 576*omega**2)/(16*Lambda**5 - 384*Lambda**4*omega**2 - 112*Lambda**4 + 1536*Lambda**3*omega**2 + 192*I*Lambda**3*omega + 256*Lambda**3 + 32768*Lambda**2*omega**6 - 24576*I*Lambda**2*omega**5 - 4096*Lambda**2*omega**4 - 4608*I*Lambda**2*omega**3 - 1536*Lambda**2*omega**2 - 960*I*Lambda**2*omega - 192*Lambda**2 - 65536*Lambda*omega**6 + 49152*I*Lambda*omega**5 + 8192*Lambda*omega**4 + 9216*I*Lambda*omega**3 + 1152*I*Lambda*omega)",
+          "(-I*Lambda**5*omega + 48*I*Lambda**4*omega**3 + 20*Lambda**4*omega**2 + 10*I*Lambda**4*omega - 512*I*Lambda**3*omega**5 - 640*Lambda**3*omega**4 - 512*I*Lambda**3*omega**3 - 96*Lambda**3*omega**2 - 28*I*Lambda**3*omega - 8192*I*Lambda**2*omega**7 + 9728*I*Lambda**2*omega**5 + 512*Lambda**2*omega**4 + 2176*I*Lambda**2*omega**3 + 112*Lambda**2*omega**2 + 24*I*Lambda**2*omega + 196608*I*Lambda*omega**9 + 163840*Lambda*omega**8 - 69632*I*Lambda*omega**7 + 4096*Lambda*omega**6 - 28160*I*Lambda*omega**5 + 5376*Lambda*omega**4 - 3664*I*Lambda*omega**3 - 1048576*I*omega**11 - 1310720*omega**10 + 458752*I*omega**9 - 49152*omega**8 + 180224*I*omega**7 - 47104*omega**6 + 20224*I*omega**5 - 10688*omega**4 + 2144*I*omega**3)/(8*Lambda**5 - 192*Lambda**4*omega**2 - 56*Lambda**4 + 768*Lambda**3*omega**2 + 96*I*Lambda**3*omega + 128*Lambda**3 + 16384*Lambda**2*omega**6 - 12288*I*Lambda**2*omega**5 - 2048*Lambda**2*omega**4 - 2304*I*Lambda**2*omega**3 - 768*Lambda**2*omega**2 - 480*I*Lambda**2*omega - 96*Lambda**2 - 32768*Lambda*omega**6 + 24576*I*Lambda*omega**5 + 4096*Lambda*omega**4 + 4608*I*Lambda*omega**3 + 576*I*Lambda*omega)",
+          "(I*Lambda**5*omega - 48*I*Lambda**4*omega**3 - 40*Lambda**4*omega**2 - 18*I*Lambda**4*omega + 512*I*Lambda**3*omega**5 + 1408*Lambda**3*omega**4 + 576*I*Lambda**3*omega**3 + 368*Lambda**3*omega**2 + 84*I*Lambda**3*omega + 8192*I*Lambda**2*omega**7 - 6144*Lambda**2*omega**6 - 8192*I*Lambda**2*omega**5 - 6656*Lambda**2*omega**4 - 2880*I*Lambda**2*omega**3 - 960*Lambda**2*omega**2 - 152*I*Lambda**2*omega - 196608*I*Lambda*omega**9 - 229376*Lambda*omega**8 + 102400*I*Lambda*omega**7 + 4096*Lambda*omega**6 + 42496*I*Lambda*omega**5 + 3072*Lambda*omega**4 + 7120*I*Lambda*omega**3 + 480*Lambda*omega**2 + 96*I*Lambda*omega + 1048576*I*omega**11 + 2097152*omega**10 - 1114112*I*omega**9 + 32768*omega**8 - 360448*I*omega**7 + 24576*omega**6 - 79616*I*omega**5 + 12160*omega**4 - 7904*I*omega**3 + 576*omega**2)/(4*Lambda**5 - 96*Lambda**4*omega**2 - 28*Lambda**4 + 384*Lambda**3*omega**2 + 48*I*Lambda**3*omega + 64*Lambda**3 + 8192*Lambda**2*omega**6 - 6144*I*Lambda**2*omega**5 - 1024*Lambda**2*omega**4 - 1152*I*Lambda**2*omega**3 - 384*Lambda**2*omega**2 - 240*I*Lambda**2*omega - 48*Lambda**2 - 16384*Lambda*omega**6 + 12288*I*Lambda*omega**5 + 2048*Lambda*omega**4 + 2304*I*Lambda*omega**3 + 288*I*Lambda*omega)",
+          "(3*I*Lambda**4*omega + 12*I*Lambda**3*omega - 1536*I*Lambda**2*omega**5 + 384*Lambda**2*omega**4 - 768*I*Lambda**2*omega**3 + 48*Lambda**2*omega**2 - 108*I*Lambda**2*omega + 3072*I*Lambda*omega**5 - 2304*Lambda*omega**4 + 1536*I*Lambda*omega**3 - 384*Lambda*omega**2 + 144*I*Lambda*omega + 196608*I*omega**9 + 98304*omega**8 + 12288*I*omega**7 + 36864*omega**6 + 1536*I*omega**5 + 9216*omega**4 + 368*I*omega**3 + 864*omega**2)/(8*Lambda**5 - 192*Lambda**4*omega**2 - 56*Lambda**4 + 768*Lambda**3*omega**2 + 96*I*Lambda**3*omega + 128*Lambda**3 + 16384*Lambda**2*omega**6 - 12288*I*Lambda**2*omega**5 - 2048*Lambda**2*omega**4 - 2304*I*Lambda**2*omega**3 - 768*Lambda**2*omega**2 - 480*I*Lambda**2*omega - 96*Lambda**2 - 32768*Lambda*omega**6 + 24576*I*Lambda*omega**5 + 4096*Lambda*omega**4 + 4608*I*Lambda*omega**3 + 576*I*Lambda*omega)"
+        ],
+        [
+          "(-Lambda**6 + 96*Lambda**5*omega**2 + 70*Lambda**5 - 3840*Lambda**4*omega**4 + 192*I*Lambda**4*omega**3 - 2880*Lambda**4*omega**2 - 156*I*Lambda**4*omega - 484*Lambda**4 + 81920*Lambda**3*omega**6 - 12288*I*Lambda**3*omega**5 + 29696*Lambda**3*omega**4 + 3840*I*Lambda**3*omega**3 + 12672*Lambda**3*omega**2 + 2160*I*Lambda**3*omega + 1128*Lambda**3 - 983040*Lambda**2*omega**8 + 294912*I*Lambda**2*omega**7 + 167936*Lambda**2*omega**6 - 67584*I*Lambda**2*omega**5 - 102400*Lambda**2*omega**4 - 49920*I*Lambda**2*omega**3 - 18576*Lambda**2*omega**2 - 7728*I*Lambda**2*omega - 864*Lambda**2 + 6291456*Lambda*omega**10 - 3145728*I*Lambda*omega**9 - 3932160*Lambda*omega**8 + 1769472*I*Lambda*omega**7 - 909312*Lambda*omega**6 + 454656*I*Lambda*omega**5 + 13824*Lambda*omega**4 + 110592*I*Lambda*omega**3 - 1248*Lambda*omega**2 + 8064*I*Lambda*omega - 16777216*omega**12 + 12582912*I*omega**11 + 13631488*omega**10 - 14155776*I*omega**9 + 9961472*omega**8 - 4079616*I*omega**7 + 1241088*omega**6 - 697344*I*omega**5 + 261120*omega**4 - 68544*I*omega**3 + 17280*omega**2)/(192*Lambda**5 - 4608*Lambda**4*omega**2 - 1344*Lambda**4 + 18432*Lambda**3*omega**2 + 2304*I*Lambda**3*omega + 3072*Lambda**3 + 393216*Lambda**2*omega**6 - 294912*I*Lambda**2*omega**5 - 49152*Lambda**2*omega**4 - 55296*I*Lambda**2*omega**3 - 18432*Lambda**2*omega**2 - 11520*I*Lambda**2*omega - 2304*Lambda**2 - 786432*Lambda*omega**6 + 589824*I*Lambda*omega**5 + 98304*Lambda*omega**4 + 110592*I*Lambda*omega**3 + 13824*I*Lambda*omega)",
+          "(Lambda**6 - 96*Lambda**5*omega**2 - 24*I*Lambda**5*omega - 46*Lambda**5 + 3840*Lambda**4*omega**4 + 960*I*Lambda**4*omega**3 + 2016*Lambda**4*omega**2 + 204*I*Lambda**4*omega + 316*Lambda**4 - 81920*Lambda**3*omega**6 - 20480*Lambda**3*omega**4 - 9984*I*Lambda**3*omega**3 - 7296*Lambda**3*omega**2 - 1104*I*Lambda**3*omega - 744*Lambda**3 + 983040*Lambda**2*omega**8 - 491520*I*Lambda**2*omega**7 - 266240*Lambda**2*omega**6 + 227328*I*Lambda**2*omega**5 + 4096*Lambda**2*omega**4 + 57600*I*Lambda**2*omega**3 + 8976*Lambda**2*omega**2 + 3312*I*Lambda**2*omega + 576*Lambda**2 - 6291456*Lambda*omega**10 + 7864320*I*Lambda*omega**9 + 6291456*Lambda*omega**8 - 2654208*I*Lambda*omega**7 + 1105920*Lambda*omega**6 - 638976*I*Lambda*omega**5 + 164352*Lambda*omega**4 - 106368*I*Lambda*omega**3 - 2208*Lambda*omega**2 - 3456*I*Lambda*omega + 16777216*omega**12 - 37748736*I*omega**11 - 32505856*omega**10 + 18874368*I*omega**9 - 7208960*omega**8 + 4866048*I*omega**7 - 1585152*omega**6 + 396288*I*omega**5 - 324096*omega**4 + 64704*I*omega**3)/(96*Lambda**5 - 2304*Lambda**4*omega**2 - 672*Lambda**4 + 9216*Lambda**3*omega**2 + 1152*I*Lambda**3*omega + 1536*Lambda**3 + 196608*Lambda**2*omega**6 - 147456*I*Lambda**2*omega**5 - 24576*Lambda**2*omega**4 - 27648*I*Lambda**2*omega**3 - 9216*Lambda**2*omega**2 - 5760*I*Lambda**2*omega - 1152*Lambda**2 - 393216*Lambda*omega**6 + 294912*I*Lambda*omega**5 + 49152*Lambda*omega**4 + 55296*I*Lambda*omega**3 + 6912*I*Lambda*omega)",
+          "(-Lambda**6 + 96*Lambda**5*omega**2 + 48*I*Lambda**5*omega + 22*Lambda**5 - 3840*Lambda**4*omega**4 - 2112*I*Lambda**4*omega**3 - 1632*Lambda**4*omega**2 - 636*I*Lambda**4*omega - 148*Lambda**4 + 81920*Lambda**3*omega**6 + 12288*I*Lambda**3*omega**5 + 29696*Lambda**3*omega**4 + 25344*I*Lambda**3*omega**3 + 8448*Lambda**3*omega**2 + 2736*I*Lambda**3*omega + 360*Lambda**3 - 983040*Lambda**2*omega**8 + 688128*I*Lambda**2*omega**7 + 217088*Lambda**2*omega**6 - 423936*I*Lambda**2*omega**5 - 53248*Lambda**2*omega**4 - 115968*I*Lambda**2*omega**3 - 17424*Lambda**2*omega**2 - 5040*I*Lambda**2*omega - 288*Lambda**2 + 6291456*Lambda*omega**10 - 12582912*I*Lambda*omega**9 - 10223616*Lambda*omega**8 + 3932160*I*Lambda*omega**7 - 1400832*Lambda*omega**6 + 1363968*I*Lambda*omega**5 - 231936*Lambda*omega**4 + 221952*I*Lambda*omega**3 + 5664*Lambda*omega**2 + 3456*I*Lambda*omega - 16777216*omega**12 + 62914560*I*omega**11 + 70254592*omega**10 - 33030144*I*omega**9 + 8781824*omega**8 - 9977856*I*omega**7 + 2863104*omega**6 - 1618944*I*omega**5 + 643584*omega**4 - 199104*I*omega**3 + 10368*omega**2)/(48*Lambda**5 - 1152*Lambda**4*omega**2 - 336*Lambda**4 + 4608*Lambda**3*omega**2 + 576*I*Lambda**3*omega + 768*Lambda**3 + 98304*Lambda**2*omega**6 - 73728*I*Lambda**2*omega**5 - 12288*Lambda**2*omega**4 - 13824*I*Lambda**2*omega**3 - 4608*Lambda**2*omega**2 - 2880*I*Lambda**2*omega - 576*Lambda**2 - 196608*Lambda*omega**6 + 147456*I*Lambda*omega**5 + 24576*Lambda*omega**4 + 27648*I*Lambda*omega**3 + 3456*I*Lambda*omega)",
+          "(Lambda**5 - 36*Lambda**4*omega**2 - 7*Lambda**4 + 256*Lambda**3*omega**4 + 64*I*Lambda**3*omega**3 + 48*Lambda**3*omega**2 + 16*I*Lambda**3*omega + 16*Lambda**3 + 2048*Lambda**2*omega**6 - 1536*I*Lambda**2*omega**5 + 1536*Lambda**2*omega**4 - 512*I*Lambda**2*omega**3 + 336*Lambda**2*omega**2 - 80*I*Lambda**2*omega - 12*Lambda**2 - 4096*Lambda*omega**6 - 4864*Lambda*omega**4 - 384*I*Lambda*omega**3 - 624*Lambda*omega**2 + 96*I*Lambda*omega - 262144*omega**10 + 131072*I*omega**9 - 16384*omega**8 + 65536*I*omega**7 + 18432*omega**6 + 26624*I*omega**5 + 1984*omega**4 + 3456*I*omega**3 + 144*omega**2)/(4*Lambda**5 - 96*Lambda**4*omega**2 - 28*Lambda**4 + 384*Lambda**3*omega**2 + 48*I*Lambda**3*omega + 64*Lambda**3 + 8192*Lambda**2*omega**6 - 6144*I*Lambda**2*omega**5 - 1024*Lambda**2*omega**4 - 1152*I*Lambda**2*omega**3 - 384*Lambda**2*omega**2 - 240*I*Lambda**2*omega - 48*Lambda**2 - 16384*Lambda*omega**6 + 12288*I*Lambda*omega**5 + 2048*Lambda*omega**4 + 2304*I*Lambda*omega**3 + 288*I*Lambda*omega)"
+        ],
+        [
+          "(I*Lambda**7 - 96*I*Lambda**6*omega**2 - 40*I*Lambda**6 + 3840*I*Lambda**5*omega**4 + 192*Lambda**5*omega**3 + 2496*I*Lambda**5*omega**2 - 252*Lambda**5*omega + 208*I*Lambda**5 - 81920*I*Lambda**4*omega**6 - 12288*Lambda**4*omega**5 - 55808*I*Lambda**4*omega**4 + 9216*Lambda**4*omega**3 - 11136*I*Lambda**4*omega**2 + 2376*Lambda**4*omega - 240*I*Lambda**4 + 983040*I*Lambda**3*omega**8 + 294912*Lambda**3*omega**7 + 421888*I*Lambda**3*omega**6 - 141312*Lambda**3*omega**5 + 212992*I*Lambda**3*omega**4 - 74496*Lambda**3*omega**3 + 13968*I*Lambda**3*omega**2 - 7440*Lambda**3*omega - 336*I*Lambda**3 - 6291456*I*Lambda**2*omega**10 - 3145728*Lambda**2*omega**9 + 1966080*I*Lambda**2*omega**8 + 2162688*Lambda**2*omega**7 - 933888*I*Lambda**2*omega**6 + 1032192*Lambda**2*omega**5 - 136704*I*Lambda**2*omega**4 + 175104*Lambda**2*omega**3 + 13248*I*Lambda**2*omega**2 + 8544*Lambda**2*omega + 576*I*Lambda**2 + 16777216*I*Lambda*omega**12 + 12582912*Lambda*omega**11 - 38797312*I*Lambda*omega**10 - 26738688*Lambda*omega**9 - 7602176*I*Lambda*omega**8 - 8798208*Lambda*omega**7 - 798720*I*Lambda*omega**6 - 1827840*Lambda*omega**5 - 340992*I*Lambda*omega**4 - 119232*Lambda*omega**3 - 42816*I*Lambda*omega**2 - 2304*Lambda*omega + 100663296*I*omega**12 + 150994944*omega**11 + 56623104*I*omega**10 + 51904512*omega**9 + 11010048*I*omega**8 + 5996544*omega**7 + 4939776*I*omega**6 + 749568*omega**5 + 442368*I*omega**4 - 42624*omega**3 + 34560*I*omega**2)/(384*Lambda**5*omega - 9216*Lambda**4*omega**3 - 2688*Lambda**4*omega + 36864*Lambda**3*omega**3 + 4608*I*Lambda**3*omega**2 + 6144*Lambda**3*omega + 786432*Lambda**2*omega**7 - 589824*I*Lambda**2*omega**6 - 98304*Lambda**2*omega**5 - 110592*I*Lambda**2*omega**4 - 36864*Lambda**2*omega**3 - 23040*I*Lambda**2*omega**2 - 4608*Lambda**2*omega - 1572864*Lambda*omega**7 + 1179648*I*Lambda*omega**6 + 196608*Lambda*omega**5 + 221184*I*Lambda*omega**4 + 27648*I*Lambda*omega**2)",
+          "(-I*Lambda**7 + 96*I*Lambda**6*omega**2 + 4*Lambda**6*omega + 32*I*Lambda**6 - 3840*I*Lambda**5*omega**4 - 576*Lambda**5*omega**3 - 2016*I*Lambda**5*omega**2 - 28*Lambda**5*omega - 200*I*Lambda**5 + 81920*I*Lambda**4*omega**6 + 27648*Lambda**4*omega**5 + 44288*I*Lambda**4*omega**4 + 2688*Lambda**4*omega**3 + 9648*I*Lambda**4*omega**2 - 248*Lambda**4*omega + 448*I*Lambda**4 - 983040*I*Lambda**3*omega**8 - 622592*Lambda**3*omega**7 - 258048*I*Lambda**3*omega**6 + 10240*Lambda**3*omega**5 - 168960*I*Lambda**3*omega**4 + 14592*Lambda**3*omega**3 - 17616*I*Lambda**3*omega**2 + 1968*Lambda**3*omega - 336*I*Lambda**3 + 6291456*I*Lambda**2*omega**10 + 7077888*Lambda**2*omega**9 - 3932160*I*Lambda**2*omega**8 - 2834432*Lambda**2*omega**7 + 1024000*I*Lambda**2*omega**6 - 671744*Lambda**2*omega**5 + 285184*I*Lambda**2*omega**4 - 65472*Lambda**2*omega**3 + 8832*I*Lambda**2*omega**2 - 3936*Lambda**2*omega - 16777216*I*Lambda*omega**12 - 37748736*Lambda*omega**11 + 57671680*I*Lambda*omega**10 + 45613056*Lambda*omega**9 - 3801088*I*Lambda*omega**8 + 10076160*Lambda*omega**7 - 1363968*I*Lambda*omega**6 + 1723392*Lambda*omega**5 - 235008*I*Lambda*omega**4 + 59712*Lambda*omega**3 + 9408*I*Lambda*omega**2 + 2304*Lambda*omega + 67108864*omega**13 - 184549376*I*omega**12 - 230686720*omega**11 + 39845888*I*omega**10 - 58720256*omega**9 + 11075584*I*omega**8 - 7618560*omega**7 - 1044480*I*omega**6 - 1492992*omega**5 + 148224*I*omega**4 + 28800*omega**3 - 13824*I*omega**2)/(192*Lambda**5*omega - 4608*Lambda**4*omega**3 - 1344*Lambda**4*omega + 18432*Lambda**3*omega**3 + 2304*I*Lambda**3*omega**2 + 3072*Lambda**3*omega + 393216*Lambda**2*omega**7 - 294912*I*Lambda**2*omega**6 - 49152*Lambda**2*omega**5 - 55296*I*Lambda**2*omega**4 - 18432*Lambda**2*omega**3 - 11520*I*Lambda**2*omega**2 - 2304*Lambda**2*omega - 786432*Lambda*omega**7 + 589824*I*Lambda*omega**6 + 98304*Lambda*omega**5 + 110592*I*Lambda*omega**4 + 13824*I*Lambda*omega**2)",
+          "(I*Lambda**7 - 96*I*Lambda**6*omega**2 - 8*Lambda**6*omega - 24*I*Lambda**6 + 3840*I*Lambda**5*omega**4 + 960*Lambda**5*omega**3 + 1632*I*Lambda**5*omega**2 + 116*Lambda**5*omega + 144*I*Lambda**5 - 81920*I*Lambda**4*omega**6 - 43008*Lambda**4*omega**5 - 37376*I*Lambda**4*omega**4 - 7680*Lambda**4*omega**3 - 8736*I*Lambda**4*omega**2 - 536*Lambda**4*omega - 320*I*Lambda**4 + 983040*I*Lambda**3*omega**8 + 950272*Lambda**3*omega**7 + 143360*I*Lambda**3*omega**6 + 59392*Lambda**3*omega**5 + 192512*I*Lambda**3*omega**4 + 19200*Lambda**3*omega**3 + 21648*I*Lambda**3*omega**2 + 816*Lambda**3*omega + 240*I*Lambda**3 - 6291456*I*Lambda**2*omega**10 - 11010048*Lambda**2*omega**9 + 6684672*I*Lambda**2*omega**8 + 3702784*Lambda**2*omega**7 - 1998848*I*Lambda**2*omega**6 + 483328*Lambda**2*omega**5 - 611840*I*Lambda**2*omega**4 - 28800*Lambda**2*omega**3 - 25536*I*Lambda**2*omega**2 - 288*Lambda**2*omega + 16777216*I*Lambda*omega**12 + 62914560*Lambda*omega**11 - 95420416*I*Lambda*omega**10 - 73924608*Lambda*omega**9 + 15597568*I*Lambda*omega**8 - 14106624*Lambda*omega**7 + 5443584*I*Lambda*omega**6 - 2307072*Lambda*omega**5 + 1027584*I*Lambda*omega**4 - 192*Lambda*omega**3 + 12480*I*Lambda*omega**2 - 134217728*omega**13 + 369098752*I*omega**12 + 411041792*omega**11 - 142606336*I*omega**10 + 74973184*omega**9 - 39452672*I*omega**8 + 16711680*omega**7 - 4694016*I*omega**6 + 3674112*omega**5 - 999936*I*omega**4 + 12672*omega**3)/(96*Lambda**5*omega - 2304*Lambda**4*omega**3 - 672*Lambda**4*omega + 9216*Lambda**3*omega**3 + 1152*I*Lambda**3*omega**2 + 1536*Lambda**3*omega + 196608*Lambda**2*omega**7 - 147456*I*Lambda**2*omega**6 - 24576*Lambda**2*omega**5 - 27648*I*Lambda**2*omega**4 - 9216*Lambda**2*omega**3 - 5760*I*Lambda**2*omega**2 - 1152*Lambda**2*omega - 393216*Lambda*omega**7 + 294912*I*Lambda*omega**6 + 49152*Lambda*omega**5 + 55296*I*Lambda*omega**4 + 6912*I*Lambda*omega**2)",
+          "(-7*I*Lambda**6 + 384*I*Lambda**5*omega**2 + 82*I*Lambda**5 - 6912*I*Lambda**4*omega**4 + 576*Lambda**4*omega**3 - 2688*I*Lambda**4*omega**2 + 228*Lambda**4*omega - 316*I*Lambda**4 + 32768*I*Lambda**3*omega**6 - 24576*Lambda**3*omega**5 + 17408*I*Lambda**3*omega**4 - 13056*Lambda**3*omega**3 + 6144*I*Lambda**3*omega**2 - 1680*Lambda**3*omega + 504*I*Lambda**3 + 196608*I*Lambda**2*omega**8 + 294912*Lambda**2*omega**7 + 241664*I*Lambda**2*omega**6 + 178176*Lambda**2*omega**5 + 75776*I*Lambda**2*omega**4 + 56064*Lambda**2*omega**3 - 1776*I*Lambda**2*omega**2 + 4176*Lambda**2*omega - 288*I*Lambda**2 - 393216*I*Lambda*omega**8 - 196608*Lambda*omega**7 - 909312*I*Lambda*omega**6 - 86016*Lambda*omega**5 - 239616*I*Lambda*omega**4 - 64512*Lambda*omega**3 - 9120*I*Lambda*omega**2 - 3456*Lambda*omega - 16777216*I*omega**12 - 12582912*omega**11 + 1048576*I*omega**10 - 6291456*omega**9 + 3670016*I*omega**8 - 3883008*omega**7 + 1044480*I*omega**6 - 789504*omega**5 + 221184*I*omega**4 - 13248*omega**3 + 10368*I*omega**2)/(192*Lambda**5*omega - 4608*Lambda**4*omega**3 - 1344*Lambda**4*omega + 18432*Lambda**3*omega**3 + 2304*I*Lambda**3*omega**2 + 3072*Lambda**3*omega + 393216*Lambda**2*omega**7 - 294912*I*Lambda**2*omega**6 - 49152*Lambda**2*omega**5 - 55296*I*Lambda**2*omega**4 - 18432*Lambda**2*omega**3 - 11520*I*Lambda**2*omega**2 - 2304*Lambda**2*omega - 786432*Lambda*omega**7 + 589824*I*Lambda*omega**6 + 98304*Lambda*omega**5 + 110592*I*Lambda*omega**4 + 13824*I*Lambda*omega**2)"
+        ],
+        [
+          "(-4*I*Lambda**7*omega - 2*Lambda**7 + 384*I*Lambda**6*omega**3 + 200*Lambda**6*omega**2 + 128*I*Lambda**6*omega + 3*Lambda**6 - 15360*I*Lambda**5*omega**5 - 9216*Lambda**5*omega**4 - 7680*I*Lambda**5*omega**3 - 896*Lambda**5*omega**2 - 728*I*Lambda**5*omega + 30*Lambda**5 + 327680*I*Lambda**4*omega**7 + 243712*Lambda**4*omega**6 + 154112*I*Lambda**4*omega**5 + 49408*Lambda**4*omega**4 + 38496*I*Lambda**4*omega**3 + 512*Lambda**4*omega**2 + 1444*I*Lambda**4*omega - 20*Lambda**4 - 3932160*I*Lambda**3*omega**9 - 3801088*Lambda**3*omega**8 - 540672*I*Lambda**3*omega**7 - 598016*Lambda**3*omega**6 - 743424*I*Lambda**3*omega**5 - 31744*Lambda**3*omega**4 - 96192*I*Lambda**3*omega**3 + 5856*Lambda**3*omega**2 - 3120*I*Lambda**3*omega - 216*Lambda**3 + 25165824*I*Lambda**2*omega**11 + 33030144*Lambda**2*omega**10 - 19660800*I*Lambda**2*omega**9 - 9404416*Lambda**2*omega**8 + 6111232*I*Lambda**2*omega**7 - 1560576*Lambda**2*omega**6 + 2197504*I*Lambda**2*omega**5 - 105344*Lambda**2*omega**4 + 171648*I*Lambda**2*omega**3 - 18768*Lambda**2*omega**2 + 10704*I*Lambda**2*omega + 288*Lambda**2 - 67108864*I*Lambda*omega**13 - 134217728*Lambda*omega**12 + 230686720*I*Lambda*omega**11 + 216006656*Lambda*omega**10 - 45088768*I*Lambda*omega**9 + 40763392*Lambda*omega**8 - 14303232*I*Lambda*omega**7 + 8724480*Lambda*omega**6 - 3207168*I*Lambda*omega**5 + 391680*Lambda*omega**4 - 117888*I*Lambda*omega**3 + 45600*Lambda*omega**2 - 12672*I*Lambda*omega + 134217728*omega**14 - 637534208*I*omega**13 - 1098907648*omega**12 + 423624704*I*omega**11 - 206569472*omega**10 + 89522176*I*omega**9 - 52527104*omega**8 + 1990656*I*omega**7 - 16994304*omega**6 + 2274816*I*omega**5 - 852480*omega**4 - 100800*I*omega**3 - 65664*omega**2)/(384*Lambda**5*omega**2 - 9216*Lambda**4*omega**4 - 2688*Lambda**4*omega**2 + 36864*Lambda**3*omega**4 + 4608*I*Lambda**3*omega**3 + 6144*Lambda**3*omega**2 + 786432*Lambda**2*omega**8 - 589824*I*Lambda**2*omega**7 - 98304*Lambda**2*omega**6 - 110592*I*Lambda**2*omega**5 - 36864*Lambda**2*omega**4 - 23040*I*Lambda**2*omega**3 - 4608*Lambda**2*omega**2 - 1572864*Lambda*omega**8 + 1179648*I*Lambda*omega**7 + 196608*Lambda*omega**6 + 221184*I*Lambda*omega**5 + 27648*I*Lambda*omega**3)",
+          "(2*I*Lambda**7*omega + Lambda**7 - 192*I*Lambda**6*omega**3 - 104*Lambda**6*omega**2 - 48*I*Lambda**6*omega - 9*Lambda**6 + 7680*I*Lambda**5*omega**5 + 4992*Lambda**5*omega**4 + 2880*I*Lambda**5*omega**3 + 824*Lambda**5*omega**2 + 348*I*Lambda**5*omega + 54*Lambda**5 - 163840*I*Lambda**4*omega**7 - 137216*Lambda**4*omega**6 - 54784*I*Lambda**4*omega**5 - 30464*Lambda**4*omega**4 - 17760*I*Lambda**4*omega**3 - 2960*Lambda**4*omega**2 - 1252*I*Lambda**4*omega - 212*Lambda**4 + 1966080*I*Lambda**3*omega**9 + 2228224*Lambda**3*omega**8 - 8192*I*Lambda**3*omega**7 + 294912*Lambda**3*omega**6 + 335872*I*Lambda**3*omega**5 + 61952*Lambda**3*omega**4 + 58272*I*Lambda**3*omega**3 + 3888*Lambda**3*omega**2 + 3360*I*Lambda**3*omega + 408*Lambda**3 - 12582912*I*Lambda**2*omega**11 - 20447232*Lambda**2*omega**10 + 12582912*I*Lambda**2*omega**9 + 5865472*Lambda**2*omega**8 - 3260416*I*Lambda**2*omega**7 + 782336*Lambda**2*omega**6 - 1321984*I*Lambda**2*omega**5 - 47744*Lambda**2*omega**4 - 109056*I*Lambda**2*omega**3 + 4464*Lambda**2*omega**2 - 6672*I*Lambda**2*omega - 288*Lambda**2 + 33554432*I*Lambda*omega**13 + 92274688*Lambda*omega**12 - 140509184*I*Lambda*omega**11 - 123731968*Lambda*omega**10 + 30408704*I*Lambda*omega**9 - 23429120*Lambda*omega**8 + 9854976*I*Lambda*omega**7 - 4761600*Lambda*omega**6 + 2282496*I*Lambda*omega**5 - 144000*Lambda*omega**4 + 84288*I*Lambda*omega**3 - 21024*Lambda*omega**2 + 5760*I*Lambda*omega - 134217728*omega**14 + 436207616*I*omega**13 + 629145600*omega**12 - 285212672*I*omega**11 + 100663296*omega**10 - 64356352*I*omega**9 + 30834688*omega**8 - 6955008*I*omega**7 + 8933376*omega**6 - 1955328*I*omega**5 + 329472*omega**4 + 15552*I*omega**3 + 24192*omega**2)/(192*Lambda**5*omega**2 - 4608*Lambda**4*omega**4 - 1344*Lambda**4*omega**2 + 18432*Lambda**3*omega**4 + 2304*I*Lambda**3*omega**3 + 3072*Lambda**3*omega**2 + 393216*Lambda**2*omega**8 - 294912*I*Lambda**2*omega**7 - 49152*Lambda**2*omega**6 - 55296*I*Lambda**2*omega**5 - 18432*Lambda**2*omega**4 - 11520*I*Lambda**2*omega**3 - 2304*Lambda**2*omega**2 - 786432*Lambda*omega**8 + 589824*I*Lambda*omega**7 + 98304*Lambda*omega**6 + 110592*I*Lambda*omega**5 + 13824*I*Lambda*omega**3)",
+          "0",
+          "0"
+        ]
+      ]
+    ],
+    "final_affine_splitting": {
+      "0": {
+        "free_coefficients": [
+          "0",
+          "0"
+        ],
+        "particular": "-2*I*omega**3/(Lambda**2 - 2*Lambda)"
+      },
+      "1": {
+        "free_coefficients": [
+          "0",
+          "0"
+        ],
+        "particular": "4*I*omega**3/(Lambda**2 - 2*Lambda)"
+      },
+      "10": {
+        "free_coefficients": [
+          "0",
+          "(-48*I*Lambda*omega**3 + 768*I*omega**5 + 384*omega**4 + 96*I*omega**3)/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)"
+        ],
+        "particular": "(I*Lambda**5*omega - 48*I*Lambda**4*omega**3 - 40*Lambda**4*omega**2 - 18*I*Lambda**4*omega + 512*I*Lambda**3*omega**5 + 1408*Lambda**3*omega**4 + 576*I*Lambda**3*omega**3 + 368*Lambda**3*omega**2 + 84*I*Lambda**3*omega + 8192*I*Lambda**2*omega**7 - 6144*Lambda**2*omega**6 - 8192*I*Lambda**2*omega**5 - 6656*Lambda**2*omega**4 - 2880*I*Lambda**2*omega**3 - 960*Lambda**2*omega**2 - 152*I*Lambda**2*omega - 196608*I*Lambda*omega**9 - 229376*Lambda*omega**8 + 102400*I*Lambda*omega**7 + 4096*Lambda*omega**6 + 42496*I*Lambda*omega**5 + 3072*Lambda*omega**4 + 7120*I*Lambda*omega**3 + 480*Lambda*omega**2 + 96*I*Lambda*omega + 1048576*I*omega**11 + 2097152*omega**10 - 1114112*I*omega**9 + 32768*omega**8 - 360448*I*omega**7 + 24576*omega**6 - 79616*I*omega**5 + 12160*omega**4 - 7904*I*omega**3 + 576*omega**2)/(4*Lambda**5 - 96*Lambda**4*omega**2 - 28*Lambda**4 + 384*Lambda**3*omega**2 + 48*I*Lambda**3*omega + 64*Lambda**3 + 8192*Lambda**2*omega**6 - 6144*I*Lambda**2*omega**5 - 1024*Lambda**2*omega**4 - 1152*I*Lambda**2*omega**3 - 384*Lambda**2*omega**2 - 240*I*Lambda**2*omega - 48*Lambda**2 - 16384*Lambda*omega**6 + 12288*I*Lambda*omega**5 + 2048*Lambda*omega**4 + 2304*I*Lambda*omega**3 + 288*I*Lambda*omega)"
+      },
+      "11": {
+        "free_coefficients": [
+          "0",
+          "24*I*omega**3/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)"
+        ],
+        "particular": "(3*I*Lambda**4*omega + 12*I*Lambda**3*omega - 1536*I*Lambda**2*omega**5 + 384*Lambda**2*omega**4 - 768*I*Lambda**2*omega**3 + 48*Lambda**2*omega**2 - 108*I*Lambda**2*omega + 3072*I*Lambda*omega**5 - 2304*Lambda*omega**4 + 1536*I*Lambda*omega**3 - 384*Lambda*omega**2 + 144*I*Lambda*omega + 196608*I*omega**9 + 98304*omega**8 + 12288*I*omega**7 + 36864*omega**6 + 1536*I*omega**5 + 9216*omega**4 + 368*I*omega**3 + 864*omega**2)/(8*Lambda**5 - 192*Lambda**4*omega**2 - 56*Lambda**4 + 768*Lambda**3*omega**2 + 96*I*Lambda**3*omega + 128*Lambda**3 + 16384*Lambda**2*omega**6 - 12288*I*Lambda**2*omega**5 - 2048*Lambda**2*omega**4 - 2304*I*Lambda**2*omega**3 - 768*Lambda**2*omega**2 - 480*I*Lambda**2*omega - 96*Lambda**2 - 32768*Lambda*omega**6 + 24576*I*Lambda*omega**5 + 4096*Lambda*omega**4 + 4608*I*Lambda*omega**3 + 576*I*Lambda*omega)"
+      },
+      "12": {
+        "free_coefficients": [
+          "0",
+          "(-3*Lambda**2*omega**2 + 96*Lambda*omega**4 + 6*Lambda*omega**2 - 768*omega**6 + 192*I*omega**5 - 192*omega**4 - 36*I*omega**3)/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)"
+        ],
+        "particular": "(-Lambda**6 + 96*Lambda**5*omega**2 + 70*Lambda**5 - 3840*Lambda**4*omega**4 + 192*I*Lambda**4*omega**3 - 2880*Lambda**4*omega**2 - 156*I*Lambda**4*omega - 484*Lambda**4 + 81920*Lambda**3*omega**6 - 12288*I*Lambda**3*omega**5 + 29696*Lambda**3*omega**4 + 3840*I*Lambda**3*omega**3 + 12672*Lambda**3*omega**2 + 2160*I*Lambda**3*omega + 1128*Lambda**3 - 983040*Lambda**2*omega**8 + 294912*I*Lambda**2*omega**7 + 167936*Lambda**2*omega**6 - 67584*I*Lambda**2*omega**5 - 102400*Lambda**2*omega**4 - 49920*I*Lambda**2*omega**3 - 18576*Lambda**2*omega**2 - 7728*I*Lambda**2*omega - 864*Lambda**2 + 6291456*Lambda*omega**10 - 3145728*I*Lambda*omega**9 - 3932160*Lambda*omega**8 + 1769472*I*Lambda*omega**7 - 909312*Lambda*omega**6 + 454656*I*Lambda*omega**5 + 13824*Lambda*omega**4 + 110592*I*Lambda*omega**3 - 1248*Lambda*omega**2 + 8064*I*Lambda*omega - 16777216*omega**12 + 12582912*I*omega**11 + 13631488*omega**10 - 14155776*I*omega**9 + 9961472*omega**8 - 4079616*I*omega**7 + 1241088*omega**6 - 697344*I*omega**5 + 261120*omega**4 - 68544*I*omega**3 + 17280*omega**2)/(192*Lambda**5 - 4608*Lambda**4*omega**2 - 1344*Lambda**4 + 18432*Lambda**3*omega**2 + 2304*I*Lambda**3*omega + 3072*Lambda**3 + 393216*Lambda**2*omega**6 - 294912*I*Lambda**2*omega**5 - 49152*Lambda**2*omega**4 - 55296*I*Lambda**2*omega**3 - 18432*Lambda**2*omega**2 - 11520*I*Lambda**2*omega - 2304*Lambda**2 - 786432*Lambda*omega**6 + 589824*I*Lambda*omega**5 + 98304*Lambda*omega**4 + 110592*I*Lambda*omega**3 + 13824*I*Lambda*omega)"
+      },
+      "13": {
+        "free_coefficients": [
+          "0",
+          "(6*Lambda**2*omega**2 - 192*Lambda*omega**4 + 48*I*Lambda*omega**3 - 12*Lambda*omega**2 + 1536*omega**6 - 1152*I*omega**5 + 192*omega**4 - 24*I*omega**3)/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)"
+        ],
+        "particular": "(Lambda**6 - 96*Lambda**5*omega**2 - 24*I*Lambda**5*omega - 46*Lambda**5 + 3840*Lambda**4*omega**4 + 960*I*Lambda**4*omega**3 + 2016*Lambda**4*omega**2 + 204*I*Lambda**4*omega + 316*Lambda**4 - 81920*Lambda**3*omega**6 - 20480*Lambda**3*omega**4 - 9984*I*Lambda**3*omega**3 - 7296*Lambda**3*omega**2 - 1104*I*Lambda**3*omega - 744*Lambda**3 + 983040*Lambda**2*omega**8 - 491520*I*Lambda**2*omega**7 - 266240*Lambda**2*omega**6 + 227328*I*Lambda**2*omega**5 + 4096*Lambda**2*omega**4 + 57600*I*Lambda**2*omega**3 + 8976*Lambda**2*omega**2 + 3312*I*Lambda**2*omega + 576*Lambda**2 - 6291456*Lambda*omega**10 + 7864320*I*Lambda*omega**9 + 6291456*Lambda*omega**8 - 2654208*I*Lambda*omega**7 + 1105920*Lambda*omega**6 - 638976*I*Lambda*omega**5 + 164352*Lambda*omega**4 - 106368*I*Lambda*omega**3 - 2208*Lambda*omega**2 - 3456*I*Lambda*omega + 16777216*omega**12 - 37748736*I*omega**11 - 32505856*omega**10 + 18874368*I*omega**9 - 7208960*omega**8 + 4866048*I*omega**7 - 1585152*omega**6 + 396288*I*omega**5 - 324096*omega**4 + 64704*I*omega**3)/(96*Lambda**5 - 2304*Lambda**4*omega**2 - 672*Lambda**4 + 9216*Lambda**3*omega**2 + 1152*I*Lambda**3*omega + 1536*Lambda**3 + 196608*Lambda**2*omega**6 - 147456*I*Lambda**2*omega**5 - 24576*Lambda**2*omega**4 - 27648*I*Lambda**2*omega**3 - 9216*Lambda**2*omega**2 - 5760*I*Lambda**2*omega - 1152*Lambda**2 - 393216*Lambda*omega**6 + 294912*I*Lambda*omega**5 + 49152*Lambda*omega**4 + 55296*I*Lambda*omega**3 + 6912*I*Lambda*omega)"
+      },
+      "14": {
+        "free_coefficients": [
+          "0",
+          "(-12*Lambda**2*omega**2 + 384*Lambda*omega**4 - 192*I*Lambda*omega**3 + 24*Lambda*omega**2 - 3072*omega**6 + 3840*I*omega**5 + 384*omega**4 + 240*I*omega**3)/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)"
+        ],
+        "particular": "(-Lambda**6 + 96*Lambda**5*omega**2 + 48*I*Lambda**5*omega + 22*Lambda**5 - 3840*Lambda**4*omega**4 - 2112*I*Lambda**4*omega**3 - 1632*Lambda**4*omega**2 - 636*I*Lambda**4*omega - 148*Lambda**4 + 81920*Lambda**3*omega**6 + 12288*I*Lambda**3*omega**5 + 29696*Lambda**3*omega**4 + 25344*I*Lambda**3*omega**3 + 8448*Lambda**3*omega**2 + 2736*I*Lambda**3*omega + 360*Lambda**3 - 983040*Lambda**2*omega**8 + 688128*I*Lambda**2*omega**7 + 217088*Lambda**2*omega**6 - 423936*I*Lambda**2*omega**5 - 53248*Lambda**2*omega**4 - 115968*I*Lambda**2*omega**3 - 17424*Lambda**2*omega**2 - 5040*I*Lambda**2*omega - 288*Lambda**2 + 6291456*Lambda*omega**10 - 12582912*I*Lambda*omega**9 - 10223616*Lambda*omega**8 + 3932160*I*Lambda*omega**7 - 1400832*Lambda*omega**6 + 1363968*I*Lambda*omega**5 - 231936*Lambda*omega**4 + 221952*I*Lambda*omega**3 + 5664*Lambda*omega**2 + 3456*I*Lambda*omega - 16777216*omega**12 + 62914560*I*omega**11 + 70254592*omega**10 - 33030144*I*omega**9 + 8781824*omega**8 - 9977856*I*omega**7 + 2863104*omega**6 - 1618944*I*omega**5 + 643584*omega**4 - 199104*I*omega**3 + 10368*omega**2)/(48*Lambda**5 - 1152*Lambda**4*omega**2 - 336*Lambda**4 + 4608*Lambda**3*omega**2 + 576*I*Lambda**3*omega + 768*Lambda**3 + 98304*Lambda**2*omega**6 - 73728*I*Lambda**2*omega**5 - 12288*Lambda**2*omega**4 - 13824*I*Lambda**2*omega**3 - 4608*Lambda**2*omega**2 - 2880*I*Lambda**2*omega - 576*Lambda**2 - 196608*Lambda*omega**6 + 147456*I*Lambda*omega**5 + 24576*Lambda*omega**4 + 27648*I*Lambda*omega**3 + 3456*I*Lambda*omega)"
+      },
+      "15": {
+        "free_coefficients": [
+          "0",
+          "-192*omega**4/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)"
+        ],
+        "particular": "(Lambda**5 - 36*Lambda**4*omega**2 - 7*Lambda**4 + 256*Lambda**3*omega**4 + 64*I*Lambda**3*omega**3 + 48*Lambda**3*omega**2 + 16*I*Lambda**3*omega + 16*Lambda**3 + 2048*Lambda**2*omega**6 - 1536*I*Lambda**2*omega**5 + 1536*Lambda**2*omega**4 - 512*I*Lambda**2*omega**3 + 336*Lambda**2*omega**2 - 80*I*Lambda**2*omega - 12*Lambda**2 - 4096*Lambda*omega**6 - 4864*Lambda*omega**4 - 384*I*Lambda*omega**3 - 624*Lambda*omega**2 + 96*I*Lambda*omega - 262144*omega**10 + 131072*I*omega**9 - 16384*omega**8 + 65536*I*omega**7 + 18432*omega**6 + 26624*I*omega**5 + 1984*omega**4 + 3456*I*omega**3 + 144*omega**2)/(4*Lambda**5 - 96*Lambda**4*omega**2 - 28*Lambda**4 + 384*Lambda**3*omega**2 + 48*I*Lambda**3*omega + 64*Lambda**3 + 8192*Lambda**2*omega**6 - 6144*I*Lambda**2*omega**5 - 1024*Lambda**2*omega**4 - 1152*I*Lambda**2*omega**3 - 384*Lambda**2*omega**2 - 240*I*Lambda**2*omega - 48*Lambda**2 - 16384*Lambda*omega**6 + 12288*I*Lambda*omega**5 + 2048*Lambda*omega**4 + 2304*I*Lambda*omega**3 + 288*I*Lambda*omega)"
+      },
+      "16": {
+        "free_coefficients": [
+          "0",
+          "(I*Lambda**3*omega - 48*I*Lambda**2*omega**3 - 2*I*Lambda**2*omega + 768*I*Lambda*omega**5 + 192*Lambda*omega**4 + 96*I*Lambda*omega**3 - 12*Lambda*omega**2 - 4096*I*omega**7 - 3072*omega**6 - 1024*I*omega**5 + 192*omega**4)/(2*Lambda**3 - 48*Lambda**2*omega**2 - 10*Lambda**2 + 96*Lambda*omega**2 + 24*I*Lambda*omega + 12*Lambda + 4096*omega**6 - 3072*I*omega**5 - 512*omega**4 - 576*I*omega**3 - 72*I*omega)"
+        ],
+        "particular": "(I*Lambda**7 - 96*I*Lambda**6*omega**2 - 40*I*Lambda**6 + 3840*I*Lambda**5*omega**4 + 192*Lambda**5*omega**3 + 2496*I*Lambda**5*omega**2 - 252*Lambda**5*omega + 208*I*Lambda**5 - 81920*I*Lambda**4*omega**6 - 12288*Lambda**4*omega**5 - 55808*I*Lambda**4*omega**4 + 9216*Lambda**4*omega**3 - 11136*I*Lambda**4*omega**2 + 2376*Lambda**4*omega - 240*I*Lambda**4 + 983040*I*Lambda**3*omega**8 + 294912*Lambda**3*omega**7 + 421888*I*Lambda**3*omega**6 - 141312*Lambda**3*omega**5 + 212992*I*Lambda**3*omega**4 - 74496*Lambda**3*omega**3 + 13968*I*Lambda**3*omega**2 - 7440*Lambda**3*omega - 336*I*Lambda**3 - 6291456*I*Lambda**2*omega**10 - 3145728*Lambda**2*omega**9 + 1966080*I*Lambda**2*omega**8 + 2162688*Lambda**2*omega**7 - 933888*I*Lambda**2*omega**6 + 1032192*Lambda**2*omega**5 - 136704*I*Lambda**2*omega**4 + 175104*Lambda**2*omega**3 + 13248*I*Lambda**2*omega**2 + 8544*Lambda**2*omega + 576*I*Lambda**2 + 16777216*I*Lambda*omega**12 + 12582912*Lambda*omega**11 - 38797312*I*Lambda*omega**10 - 26738688*Lambda*omega**9 - 7602176*I*Lambda*omega**8 - 8798208*Lambda*omega**7 - 798720*I*Lambda*omega**6 - 1827840*Lambda*omega**5 - 340992*I*Lambda*omega**4 - 119232*Lambda*omega**3 - 42816*I*Lambda*omega**2 - 2304*Lambda*omega + 100663296*I*omega**12 + 150994944*omega**11 + 56623104*I*omega**10 + 51904512*omega**9 + 11010048*I*omega**8 + 5996544*omega**7 + 4939776*I*omega**6 + 749568*omega**5 + 442368*I*omega**4 - 42624*omega**3 + 34560*I*omega**2)/(384*Lambda**5*omega - 9216*Lambda**4*omega**3 - 2688*Lambda**4*omega + 36864*Lambda**3*omega**3 + 4608*I*Lambda**3*omega**2 + 6144*Lambda**3*omega + 786432*Lambda**2*omega**7 - 589824*I*Lambda**2*omega**6 - 98304*Lambda**2*omega**5 - 110592*I*Lambda**2*omega**4 - 36864*Lambda**2*omega**3 - 23040*I*Lambda**2*omega**2 - 4608*Lambda**2*omega - 1572864*Lambda*omega**7 + 1179648*I*Lambda*omega**6 + 196608*Lambda*omega**5 + 221184*I*Lambda*omega**4 + 27648*I*Lambda*omega**2)"
+      },
+      "17": {
+        "free_coefficients": [
+          "0",
+          "(-I*Lambda**3*omega + 48*I*Lambda**2*omega**3 + 12*Lambda**2*omega**2 + 2*I*Lambda**2*omega - 768*I*Lambda*omega**5 - 576*Lambda*omega**4 - 12*Lambda*omega**2 + 4096*I*omega**7 + 6144*omega**6 - 1280*I*omega**5 + 192*omega**4 - 48*I*omega**3)/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)"
+        ],
+        "particular": "(-I*Lambda**7 + 96*I*Lambda**6*omega**2 + 4*Lambda**6*omega + 32*I*Lambda**6 - 3840*I*Lambda**5*omega**4 - 576*Lambda**5*omega**3 - 2016*I*Lambda**5*omega**2 - 28*Lambda**5*omega - 200*I*Lambda**5 + 81920*I*Lambda**4*omega**6 + 27648*Lambda**4*omega**5 + 44288*I*Lambda**4*omega**4 + 2688*Lambda**4*omega**3 + 9648*I*Lambda**4*omega**2 - 248*Lambda**4*omega + 448*I*Lambda**4 - 983040*I*Lambda**3*omega**8 - 622592*Lambda**3*omega**7 - 258048*I*Lambda**3*omega**6 + 10240*Lambda**3*omega**5 - 168960*I*Lambda**3*omega**4 + 14592*Lambda**3*omega**3 - 17616*I*Lambda**3*omega**2 + 1968*Lambda**3*omega - 336*I*Lambda**3 + 6291456*I*Lambda**2*omega**10 + 7077888*Lambda**2*omega**9 - 3932160*I*Lambda**2*omega**8 - 2834432*Lambda**2*omega**7 + 1024000*I*Lambda**2*omega**6 - 671744*Lambda**2*omega**5 + 285184*I*Lambda**2*omega**4 - 65472*Lambda**2*omega**3 + 8832*I*Lambda**2*omega**2 - 3936*Lambda**2*omega - 16777216*I*Lambda*omega**12 - 37748736*Lambda*omega**11 + 57671680*I*Lambda*omega**10 + 45613056*Lambda*omega**9 - 3801088*I*Lambda*omega**8 + 10076160*Lambda*omega**7 - 1363968*I*Lambda*omega**6 + 1723392*Lambda*omega**5 - 235008*I*Lambda*omega**4 + 59712*Lambda*omega**3 + 9408*I*Lambda*omega**2 + 2304*Lambda*omega + 67108864*omega**13 - 184549376*I*omega**12 - 230686720*omega**11 + 39845888*I*omega**10 - 58720256*omega**9 + 11075584*I*omega**8 - 7618560*omega**7 - 1044480*I*omega**6 - 1492992*omega**5 + 148224*I*omega**4 + 28800*omega**3 - 13824*I*omega**2)/(192*Lambda**5*omega - 4608*Lambda**4*omega**3 - 1344*Lambda**4*omega + 18432*Lambda**3*omega**3 + 2304*I*Lambda**3*omega**2 + 3072*Lambda**3*omega + 393216*Lambda**2*omega**7 - 294912*I*Lambda**2*omega**6 - 49152*Lambda**2*omega**5 - 55296*I*Lambda**2*omega**4 - 18432*Lambda**2*omega**3 - 11520*I*Lambda**2*omega**2 - 2304*Lambda**2*omega - 786432*Lambda*omega**7 + 589824*I*Lambda*omega**6 + 98304*Lambda*omega**5 + 110592*I*Lambda*omega**4 + 13824*I*Lambda*omega**2)"
+      },
+      "18": {
+        "free_coefficients": [
+          "0",
+          "(2*I*Lambda**3*omega - 96*I*Lambda**2*omega**3 - 48*Lambda**2*omega**2 - 4*I*Lambda**2*omega + 1536*I*Lambda*omega**5 + 1920*Lambda*omega**4 - 384*I*Lambda*omega**3 + 72*Lambda*omega**2 - 8192*I*omega**7 - 18432*omega**6 + 10240*I*omega**5 + 384*omega**4 + 576*I*omega**3)/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)"
+        ],
+        "particular": "(I*Lambda**7 - 96*I*Lambda**6*omega**2 - 8*Lambda**6*omega - 24*I*Lambda**6 + 3840*I*Lambda**5*omega**4 + 960*Lambda**5*omega**3 + 1632*I*Lambda**5*omega**2 + 116*Lambda**5*omega + 144*I*Lambda**5 - 81920*I*Lambda**4*omega**6 - 43008*Lambda**4*omega**5 - 37376*I*Lambda**4*omega**4 - 7680*Lambda**4*omega**3 - 8736*I*Lambda**4*omega**2 - 536*Lambda**4*omega - 320*I*Lambda**4 + 983040*I*Lambda**3*omega**8 + 950272*Lambda**3*omega**7 + 143360*I*Lambda**3*omega**6 + 59392*Lambda**3*omega**5 + 192512*I*Lambda**3*omega**4 + 19200*Lambda**3*omega**3 + 21648*I*Lambda**3*omega**2 + 816*Lambda**3*omega + 240*I*Lambda**3 - 6291456*I*Lambda**2*omega**10 - 11010048*Lambda**2*omega**9 + 6684672*I*Lambda**2*omega**8 + 3702784*Lambda**2*omega**7 - 1998848*I*Lambda**2*omega**6 + 483328*Lambda**2*omega**5 - 611840*I*Lambda**2*omega**4 - 28800*Lambda**2*omega**3 - 25536*I*Lambda**2*omega**2 - 288*Lambda**2*omega + 16777216*I*Lambda*omega**12 + 62914560*Lambda*omega**11 - 95420416*I*Lambda*omega**10 - 73924608*Lambda*omega**9 + 15597568*I*Lambda*omega**8 - 14106624*Lambda*omega**7 + 5443584*I*Lambda*omega**6 - 2307072*Lambda*omega**5 + 1027584*I*Lambda*omega**4 - 192*Lambda*omega**3 + 12480*I*Lambda*omega**2 - 134217728*omega**13 + 369098752*I*omega**12 + 411041792*omega**11 - 142606336*I*omega**10 + 74973184*omega**9 - 39452672*I*omega**8 + 16711680*omega**7 - 4694016*I*omega**6 + 3674112*omega**5 - 999936*I*omega**4 + 12672*omega**3)/(96*Lambda**5*omega - 2304*Lambda**4*omega**3 - 672*Lambda**4*omega + 9216*Lambda**3*omega**3 + 1152*I*Lambda**3*omega**2 + 1536*Lambda**3*omega + 196608*Lambda**2*omega**7 - 147456*I*Lambda**2*omega**6 - 24576*Lambda**2*omega**5 - 27648*I*Lambda**2*omega**4 - 9216*Lambda**2*omega**3 - 5760*I*Lambda**2*omega**2 - 1152*Lambda**2*omega - 393216*Lambda*omega**7 + 294912*I*Lambda*omega**6 + 49152*Lambda*omega**5 + 55296*I*Lambda*omega**4 + 6912*I*Lambda*omega**2)"
+      },
+      "19": {
+        "free_coefficients": [
+          "0",
+          "(3*I*Lambda**2*omega - 6*I*Lambda*omega - 768*I*omega**5 - 192*omega**4 - 36*omega**2)/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)"
+        ],
+        "particular": "(-7*I*Lambda**6 + 384*I*Lambda**5*omega**2 + 82*I*Lambda**5 - 6912*I*Lambda**4*omega**4 + 576*Lambda**4*omega**3 - 2688*I*Lambda**4*omega**2 + 228*Lambda**4*omega - 316*I*Lambda**4 + 32768*I*Lambda**3*omega**6 - 24576*Lambda**3*omega**5 + 17408*I*Lambda**3*omega**4 - 13056*Lambda**3*omega**3 + 6144*I*Lambda**3*omega**2 - 1680*Lambda**3*omega + 504*I*Lambda**3 + 196608*I*Lambda**2*omega**8 + 294912*Lambda**2*omega**7 + 241664*I*Lambda**2*omega**6 + 178176*Lambda**2*omega**5 + 75776*I*Lambda**2*omega**4 + 56064*Lambda**2*omega**3 - 1776*I*Lambda**2*omega**2 + 4176*Lambda**2*omega - 288*I*Lambda**2 - 393216*I*Lambda*omega**8 - 196608*Lambda*omega**7 - 909312*I*Lambda*omega**6 - 86016*Lambda*omega**5 - 239616*I*Lambda*omega**4 - 64512*Lambda*omega**3 - 9120*I*Lambda*omega**2 - 3456*Lambda*omega - 16777216*I*omega**12 - 12582912*omega**11 + 1048576*I*omega**10 - 6291456*omega**9 + 3670016*I*omega**8 - 3883008*omega**7 + 1044480*I*omega**6 - 789504*omega**5 + 221184*I*omega**4 - 13248*omega**3 + 10368*I*omega**2)/(192*Lambda**5*omega - 4608*Lambda**4*omega**3 - 1344*Lambda**4*omega + 18432*Lambda**3*omega**3 + 2304*I*Lambda**3*omega**2 + 3072*Lambda**3*omega + 393216*Lambda**2*omega**7 - 294912*I*Lambda**2*omega**6 - 49152*Lambda**2*omega**5 - 55296*I*Lambda**2*omega**4 - 18432*Lambda**2*omega**3 - 11520*I*Lambda**2*omega**2 - 2304*Lambda**2*omega - 786432*Lambda*omega**7 + 589824*I*Lambda*omega**6 + 98304*Lambda*omega**5 + 110592*I*Lambda*omega**4 + 13824*I*Lambda*omega**2)"
+      },
+      "2": {
+        "free_coefficients": [
+          "0",
+          "0"
+        ],
+        "particular": "-8*I*omega**3/(Lambda**2 - 2*Lambda)"
+      },
+      "20": {
+        "free_coefficients": [
+          "1/4",
+          "(-4*I*Lambda**3*omega + 192*I*Lambda**2*omega**3 + 72*Lambda**2*omega**2 + 8*I*Lambda**2*omega + 3*Lambda**2 - 3072*I*Lambda*omega**5 - 3072*Lambda*omega**4 + 384*I*Lambda*omega**3 - 96*Lambda*omega**2 - 6*Lambda + 16384*I*omega**7 + 30720*omega**6 - 12800*I*omega**5 - 672*I*omega**3 + 36*I*omega)/(2*Lambda**3 - 48*Lambda**2*omega**2 - 10*Lambda**2 + 96*Lambda*omega**2 + 24*I*Lambda*omega + 12*Lambda + 4096*omega**6 - 3072*I*omega**5 - 512*omega**4 - 576*I*omega**3 - 72*I*omega)"
+        ],
+        "particular": "(-4*I*Lambda**7*omega - 2*Lambda**7 + 384*I*Lambda**6*omega**3 + 200*Lambda**6*omega**2 + 128*I*Lambda**6*omega + 3*Lambda**6 - 15360*I*Lambda**5*omega**5 - 9216*Lambda**5*omega**4 - 7680*I*Lambda**5*omega**3 - 896*Lambda**5*omega**2 - 728*I*Lambda**5*omega + 30*Lambda**5 + 327680*I*Lambda**4*omega**7 + 243712*Lambda**4*omega**6 + 154112*I*Lambda**4*omega**5 + 49408*Lambda**4*omega**4 + 38496*I*Lambda**4*omega**3 + 512*Lambda**4*omega**2 + 1444*I*Lambda**4*omega - 20*Lambda**4 - 3932160*I*Lambda**3*omega**9 - 3801088*Lambda**3*omega**8 - 540672*I*Lambda**3*omega**7 - 598016*Lambda**3*omega**6 - 743424*I*Lambda**3*omega**5 - 31744*Lambda**3*omega**4 - 96192*I*Lambda**3*omega**3 + 5856*Lambda**3*omega**2 - 3120*I*Lambda**3*omega - 216*Lambda**3 + 25165824*I*Lambda**2*omega**11 + 33030144*Lambda**2*omega**10 - 19660800*I*Lambda**2*omega**9 - 9404416*Lambda**2*omega**8 + 6111232*I*Lambda**2*omega**7 - 1560576*Lambda**2*omega**6 + 2197504*I*Lambda**2*omega**5 - 105344*Lambda**2*omega**4 + 171648*I*Lambda**2*omega**3 - 18768*Lambda**2*omega**2 + 10704*I*Lambda**2*omega + 288*Lambda**2 - 67108864*I*Lambda*omega**13 - 134217728*Lambda*omega**12 + 230686720*I*Lambda*omega**11 + 216006656*Lambda*omega**10 - 45088768*I*Lambda*omega**9 + 40763392*Lambda*omega**8 - 14303232*I*Lambda*omega**7 + 8724480*Lambda*omega**6 - 3207168*I*Lambda*omega**5 + 391680*Lambda*omega**4 - 117888*I*Lambda*omega**3 + 45600*Lambda*omega**2 - 12672*I*Lambda*omega + 134217728*omega**14 - 637534208*I*omega**13 - 1098907648*omega**12 + 423624704*I*omega**11 - 206569472*omega**10 + 89522176*I*omega**9 - 52527104*omega**8 + 1990656*I*omega**7 - 16994304*omega**6 + 2274816*I*omega**5 - 852480*omega**4 - 100800*I*omega**3 - 65664*omega**2)/(384*Lambda**5*omega**2 - 9216*Lambda**4*omega**4 - 2688*Lambda**4*omega**2 + 36864*Lambda**3*omega**4 + 4608*I*Lambda**3*omega**3 + 6144*Lambda**3*omega**2 + 786432*Lambda**2*omega**8 - 589824*I*Lambda**2*omega**7 - 98304*Lambda**2*omega**6 - 110592*I*Lambda**2*omega**5 - 36864*Lambda**2*omega**4 - 23040*I*Lambda**2*omega**3 - 4608*Lambda**2*omega**2 - 1572864*Lambda*omega**8 + 1179648*I*Lambda*omega**7 + 196608*Lambda*omega**6 + 221184*I*Lambda*omega**5 + 27648*I*Lambda*omega**3)"
+      },
+      "21": {
+        "free_coefficients": [
+          "-1/2",
+          "(2*I*Lambda**3*omega - 96*I*Lambda**2*omega**3 - 48*Lambda**2*omega**2 - 4*I*Lambda**2*omega + 1536*I*Lambda*omega**5 + 1920*Lambda*omega**4 - 384*I*Lambda*omega**3 + 72*Lambda*omega**2 - 8192*I*omega**7 - 18432*omega**6 + 10240*I*omega**5 + 384*omega**4 + 576*I*omega**3)/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)"
+        ],
+        "particular": "(2*I*Lambda**7*omega + Lambda**7 - 192*I*Lambda**6*omega**3 - 104*Lambda**6*omega**2 - 48*I*Lambda**6*omega - 9*Lambda**6 + 7680*I*Lambda**5*omega**5 + 4992*Lambda**5*omega**4 + 2880*I*Lambda**5*omega**3 + 824*Lambda**5*omega**2 + 348*I*Lambda**5*omega + 54*Lambda**5 - 163840*I*Lambda**4*omega**7 - 137216*Lambda**4*omega**6 - 54784*I*Lambda**4*omega**5 - 30464*Lambda**4*omega**4 - 17760*I*Lambda**4*omega**3 - 2960*Lambda**4*omega**2 - 1252*I*Lambda**4*omega - 212*Lambda**4 + 1966080*I*Lambda**3*omega**9 + 2228224*Lambda**3*omega**8 - 8192*I*Lambda**3*omega**7 + 294912*Lambda**3*omega**6 + 335872*I*Lambda**3*omega**5 + 61952*Lambda**3*omega**4 + 58272*I*Lambda**3*omega**3 + 3888*Lambda**3*omega**2 + 3360*I*Lambda**3*omega + 408*Lambda**3 - 12582912*I*Lambda**2*omega**11 - 20447232*Lambda**2*omega**10 + 12582912*I*Lambda**2*omega**9 + 5865472*Lambda**2*omega**8 - 3260416*I*Lambda**2*omega**7 + 782336*Lambda**2*omega**6 - 1321984*I*Lambda**2*omega**5 - 47744*Lambda**2*omega**4 - 109056*I*Lambda**2*omega**3 + 4464*Lambda**2*omega**2 - 6672*I*Lambda**2*omega - 288*Lambda**2 + 33554432*I*Lambda*omega**13 + 92274688*Lambda*omega**12 - 140509184*I*Lambda*omega**11 - 123731968*Lambda*omega**10 + 30408704*I*Lambda*omega**9 - 23429120*Lambda*omega**8 + 9854976*I*Lambda*omega**7 - 4761600*Lambda*omega**6 + 2282496*I*Lambda*omega**5 - 144000*Lambda*omega**4 + 84288*I*Lambda*omega**3 - 21024*Lambda*omega**2 + 5760*I*Lambda*omega - 134217728*omega**14 + 436207616*I*omega**13 + 629145600*omega**12 - 285212672*I*omega**11 + 100663296*omega**10 - 64356352*I*omega**9 + 30834688*omega**8 - 6955008*I*omega**7 + 8933376*omega**6 - 1955328*I*omega**5 + 329472*omega**4 + 15552*I*omega**3 + 24192*omega**2)/(192*Lambda**5*omega**2 - 4608*Lambda**4*omega**4 - 1344*Lambda**4*omega**2 + 18432*Lambda**3*omega**4 + 2304*I*Lambda**3*omega**3 + 3072*Lambda**3*omega**2 + 393216*Lambda**2*omega**8 - 294912*I*Lambda**2*omega**7 - 49152*Lambda**2*omega**6 - 55296*I*Lambda**2*omega**5 - 18432*Lambda**2*omega**4 - 11520*I*Lambda**2*omega**3 - 2304*Lambda**2*omega**2 - 786432*Lambda*omega**8 + 589824*I*Lambda*omega**7 + 98304*Lambda*omega**6 + 110592*I*Lambda*omega**5 + 13824*I*Lambda*omega**3)"
+      },
+      "22": {
+        "free_coefficients": [
+          "1",
+          "0"
+        ],
+        "particular": "0"
+      },
+      "23": {
+        "free_coefficients": [
+          "0",
+          "1"
+        ],
+        "particular": "0"
+      },
+      "3": {
+        "free_coefficients": [
+          "0",
+          "0"
+        ],
+        "particular": "0"
+      },
+      "4": {
+        "free_coefficients": [
+          "0",
+          "24*omega**4/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)"
+        ],
+        "particular": "(-5*Lambda**4*omega**2 + 192*Lambda**3*omega**4 + 52*Lambda**3*omega**2 - 1536*Lambda**2*omega**6 - 384*I*Lambda**2*omega**5 - 1152*Lambda**2*omega**4 - 144*I*Lambda**2*omega**3 - 156*Lambda**2*omega**2 - 16384*Lambda*omega**8 + 12288*I*Lambda*omega**7 + 5120*Lambda*omega**6 + 4608*I*Lambda*omega**5 + 1536*Lambda*omega**4 + 672*I*Lambda*omega**3 + 144*Lambda*omega**2 + 196608*omega**10 - 98304*I*omega**9 + 12288*omega**8 - 36864*I*omega**7 + 1536*omega**6 - 9216*I*omega**5 + 368*omega**4 - 864*I*omega**3)/(8*Lambda**5 - 192*Lambda**4*omega**2 - 56*Lambda**4 + 768*Lambda**3*omega**2 + 96*I*Lambda**3*omega + 128*Lambda**3 + 16384*Lambda**2*omega**6 - 12288*I*Lambda**2*omega**5 - 2048*Lambda**2*omega**4 - 2304*I*Lambda**2*omega**3 - 768*Lambda**2*omega**2 - 480*I*Lambda**2*omega - 96*Lambda**2 - 32768*Lambda*omega**6 + 24576*I*Lambda*omega**5 + 4096*Lambda*omega**4 + 4608*I*Lambda*omega**3 + 576*I*Lambda*omega)"
+      },
+      "5": {
+        "free_coefficients": [
+          "0",
+          "-48*omega**4/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)"
+        ],
+        "particular": "(5*Lambda**4*omega**2 - 192*Lambda**3*omega**4 + 32*I*Lambda**3*omega**3 - 60*Lambda**3*omega**2 + 1536*Lambda**2*omega**6 - 384*I*Lambda**2*omega**5 + 1344*Lambda**2*omega**4 - 16*I*Lambda**2*omega**3 + 196*Lambda**2*omega**2 + 16384*Lambda*omega**8 - 12288*I*Lambda*omega**7 - 5120*Lambda*omega**6 - 3072*I*Lambda*omega**5 - 2304*Lambda*omega**4 - 576*I*Lambda*omega**3 - 192*Lambda*omega**2 - 196608*omega**10 + 163840*I*omega**9 + 20480*omega**8 + 40960*I*omega**7 + 9728*omega**6 + 11520*I*omega**5 + 784*omega**4 + 1152*I*omega**3)/(4*Lambda**5 - 96*Lambda**4*omega**2 - 28*Lambda**4 + 384*Lambda**3*omega**2 + 48*I*Lambda**3*omega + 64*Lambda**3 + 8192*Lambda**2*omega**6 - 6144*I*Lambda**2*omega**5 - 1024*Lambda**2*omega**4 - 1152*I*Lambda**2*omega**3 - 384*Lambda**2*omega**2 - 240*I*Lambda**2*omega - 48*Lambda**2 - 16384*Lambda*omega**6 + 12288*I*Lambda*omega**5 + 2048*Lambda*omega**4 + 2304*I*Lambda*omega**3 + 288*I*Lambda*omega)"
+      },
+      "6": {
+        "free_coefficients": [
+          "0",
+          "96*omega**4/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)"
+        ],
+        "particular": "(-5*Lambda**4*omega**2 + 192*Lambda**3*omega**4 - 64*I*Lambda**3*omega**3 + 68*Lambda**3*omega**2 - 1536*Lambda**2*omega**6 + 1152*I*Lambda**2*omega**5 - 1536*Lambda**2*omega**4 + 176*I*Lambda**2*omega**3 - 236*Lambda**2*omega**2 - 16384*Lambda*omega**8 + 12288*I*Lambda*omega**7 + 5120*Lambda*omega**6 + 1536*I*Lambda*omega**5 + 3072*Lambda*omega**4 + 480*I*Lambda*omega**3 + 240*Lambda*omega**2 + 196608*omega**10 - 229376*I*omega**9 - 53248*omega**8 - 45056*I*omega**7 - 20992*omega**6 - 13824*I*omega**5 - 1936*omega**4 - 1440*I*omega**3)/(2*Lambda**5 - 48*Lambda**4*omega**2 - 14*Lambda**4 + 192*Lambda**3*omega**2 + 24*I*Lambda**3*omega + 32*Lambda**3 + 4096*Lambda**2*omega**6 - 3072*I*Lambda**2*omega**5 - 512*Lambda**2*omega**4 - 576*I*Lambda**2*omega**3 - 192*Lambda**2*omega**2 - 120*I*Lambda**2*omega - 24*Lambda**2 - 8192*Lambda*omega**6 + 6144*I*Lambda*omega**5 + 1024*Lambda*omega**4 + 1152*I*Lambda*omega**3 + 144*I*Lambda*omega)"
+      },
+      "7": {
+        "free_coefficients": [
+          "0",
+          "0"
+        ],
+        "particular": "2*omega**2/(Lambda**2 - 2*Lambda)"
+      },
+      "8": {
+        "free_coefficients": [
+          "0",
+          "(-12*I*Lambda*omega**3 + 192*I*omega**5 + 24*I*omega**3)/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)"
+        ],
+        "particular": "(I*Lambda**5*omega - 48*I*Lambda**4*omega**3 - 2*I*Lambda**4*omega + 512*I*Lambda**3*omega**5 - 128*Lambda**3*omega**4 + 320*I*Lambda**3*omega**3 - 112*Lambda**3*omega**2 - 28*I*Lambda**3*omega + 8192*I*Lambda**2*omega**7 + 6144*Lambda**2*omega**6 - 8192*I*Lambda**2*omega**5 + 4096*Lambda**2*omega**4 - 832*I*Lambda**2*omega**3 + 416*Lambda**2*omega**2 + 104*I*Lambda**2*omega - 196608*I*Lambda*omega**9 - 98304*Lambda*omega**8 + 36864*I*Lambda*omega**7 - 12288*Lambda*omega**6 + 7680*I*Lambda*omega**5 - 9216*Lambda*omega**4 + 208*I*Lambda*omega**3 - 96*Lambda*omega**2 - 96*I*Lambda*omega + 1048576*I*omega**11 + 524288*omega**10 - 65536*I*omega**9 - 65536*I*omega**7 + 16384*omega**6 + 20736*I*omega**5 + 4608*omega**4 + 1312*I*omega**3 - 576*omega**2)/(16*Lambda**5 - 384*Lambda**4*omega**2 - 112*Lambda**4 + 1536*Lambda**3*omega**2 + 192*I*Lambda**3*omega + 256*Lambda**3 + 32768*Lambda**2*omega**6 - 24576*I*Lambda**2*omega**5 - 4096*Lambda**2*omega**4 - 4608*I*Lambda**2*omega**3 - 1536*Lambda**2*omega**2 - 960*I*Lambda**2*omega - 192*Lambda**2 - 65536*Lambda*omega**6 + 49152*I*Lambda*omega**5 + 8192*Lambda*omega**4 + 9216*I*Lambda*omega**3 + 1152*I*Lambda*omega)"
+      },
+      "9": {
+        "free_coefficients": [
+          "0",
+          "(24*I*Lambda*omega**3 - 384*I*omega**5 - 96*omega**4 - 48*I*omega**3)/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)"
+        ],
+        "particular": "(-I*Lambda**5*omega + 48*I*Lambda**4*omega**3 + 20*Lambda**4*omega**2 + 10*I*Lambda**4*omega - 512*I*Lambda**3*omega**5 - 640*Lambda**3*omega**4 - 512*I*Lambda**3*omega**3 - 96*Lambda**3*omega**2 - 28*I*Lambda**3*omega - 8192*I*Lambda**2*omega**7 + 9728*I*Lambda**2*omega**5 + 512*Lambda**2*omega**4 + 2176*I*Lambda**2*omega**3 + 112*Lambda**2*omega**2 + 24*I*Lambda**2*omega + 196608*I*Lambda*omega**9 + 163840*Lambda*omega**8 - 69632*I*Lambda*omega**7 + 4096*Lambda*omega**6 - 28160*I*Lambda*omega**5 + 5376*Lambda*omega**4 - 3664*I*Lambda*omega**3 - 1048576*I*omega**11 - 1310720*omega**10 + 458752*I*omega**9 - 49152*omega**8 + 180224*I*omega**7 - 47104*omega**6 + 20224*I*omega**5 - 10688*omega**4 + 2144*I*omega**3)/(8*Lambda**5 - 192*Lambda**4*omega**2 - 56*Lambda**4 + 768*Lambda**3*omega**2 + 96*I*Lambda**3*omega + 128*Lambda**3 + 16384*Lambda**2*omega**6 - 12288*I*Lambda**2*omega**5 - 2048*Lambda**2*omega**4 - 2304*I*Lambda**2*omega**3 - 768*Lambda**2*omega**2 - 480*I*Lambda**2*omega - 96*Lambda**2 - 32768*Lambda*omega**6 + 24576*I*Lambda*omega**5 + 4096*Lambda*omega**4 + 4608*I*Lambda*omega**3 + 576*I*Lambda*omega)"
+      }
+    },
+    "final_homogeneous_parameter_count": 2,
+    "logs": 0,
+    "original_row_count": 41,
+    "original_seven_row_residuals_zero": true,
+    "per_order_affine_rank_witnesses": [
+      {
+        "compact_augmented_matrix": [
+          [
+            "2*omega**2",
+            "2*omega**2",
+            "omega**2/2",
+            "omega**2",
+            "0"
+          ],
+          [
+            "-2*omega**2",
+            "-2*omega**2",
+            "-omega**2/2",
+            "-2*omega**2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "4*omega**2",
+            "0"
+          ],
+          [
+            "-I*omega",
+            "-3*I*omega/2",
+            "-I*omega/2",
+            "-I*omega/2",
+            "0"
+          ],
+          [
+            "0",
+            "I*omega",
+            "I*omega/2",
+            "I*omega",
+            "0"
+          ],
+          [
+            "0",
+            "-1",
+            "-1/2",
+            "0",
+            "0"
+          ]
+        ],
+        "coordinate_labels": [
+          "metric_variable_0",
+          "metric_variable_1",
+          "metric_variable_2",
+          "metric_variable_3"
+        ],
+        "equation_count": 6,
+        "free_columns": [
+          2
+        ],
+        "nullity": 1,
+        "nullspace_basis": [
+          [
+            "1/4",
+            "-1/2",
+            "1",
+            "0"
+          ]
+        ],
+        "particular_solution": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "pivot_columns": [
+          0,
+          1,
+          3
+        ],
+        "q": 0,
+        "rank": 3,
+        "row_labels": [
+          "vv:log0",
+          "vr:log0",
+          "rr:log0",
+          "vx:log0",
+          "rx:log0",
+          "angW:log0"
+        ],
+        "rref_augmented_matrix": [
+          [
+            "1",
+            "0",
+            "-1/4",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "1/2",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "rref_is_exact_rank_witness": true,
+        "variable_count": 4,
+        "variable_pivot_columns": [
+          0,
+          1,
+          3
+        ]
+      },
+      {
+        "compact_augmented_matrix": [
+          [
+            "-I*omega/4",
+            "2*omega**2",
+            "2*omega**2",
+            "omega**2/2",
+            "omega**2",
+            "0"
+          ],
+          [
+            "I*omega/2",
+            "-2*omega**2",
+            "-2*omega**2",
+            "-omega**2/2",
+            "-2*omega**2",
+            "0"
+          ],
+          [
+            "-I*omega",
+            "0",
+            "0",
+            "0",
+            "4*omega**2",
+            "0"
+          ],
+          [
+            "I*omega/2 - 1/4",
+            "-I*omega",
+            "-3*I*omega/2",
+            "-I*omega/2",
+            "-I*omega/2",
+            "0"
+          ],
+          [
+            "-I*omega + 1/2",
+            "0",
+            "I*omega",
+            "I*omega/2",
+            "I*omega",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "-1",
+            "-1/2",
+            "0",
+            "-2*omega**2/(Lambda**2 - 2*Lambda)"
+          ]
+        ],
+        "coordinate_labels": [
+          "prior_free_0",
+          "metric_variable_4",
+          "metric_variable_5",
+          "metric_variable_6",
+          "metric_variable_7"
+        ],
+        "equation_count": 7,
+        "free_columns": [
+          3
+        ],
+        "nullity": 1,
+        "nullspace_basis": [
+          [
+            "0",
+            "1/4",
+            "-1/2",
+            "1",
+            "0"
+          ]
+        ],
+        "particular_solution": [
+          "-8*I*omega**3/(Lambda**2 - 2*Lambda)",
+          "(8*I*omega**3 - 2*omega**2)/(Lambda**2 - 2*Lambda)",
+          "(-8*I*omega**3 + 2*omega**2)/(Lambda**2 - 2*Lambda)",
+          "0",
+          "2*omega**2/(Lambda**2 - 2*Lambda)"
+        ],
+        "pivot_columns": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "q": 1,
+        "rank": 4,
+        "row_labels": [
+          "vv:log0",
+          "vr:log0",
+          "rr:log0",
+          "vx:log0",
+          "rx:log0",
+          "angP:log0",
+          "angW:log0"
+        ],
+        "rref_augmented_matrix": [
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "-8*I*omega**3/(Lambda**2 - 2*Lambda)"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "-1/4",
+            "0",
+            "(8*I*omega**3 - 2*omega**2)/(Lambda**2 - 2*Lambda)"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "1/2",
+            "0",
+            "(-8*I*omega**3 + 2*omega**2)/(Lambda**2 - 2*Lambda)"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "2*omega**2/(Lambda**2 - 2*Lambda)"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "rref_is_exact_rank_witness": true,
+        "variable_count": 5,
+        "variable_pivot_columns": [
+          0,
+          1,
+          2,
+          4
+        ]
+      },
+      {
+        "compact_augmented_matrix": [
+          [
+            "-I*omega/4",
+            "2*omega**2",
+            "2*omega**2",
+            "omega**2/2",
+            "omega**2",
+            "(I*Lambda*omega**3 - 16*I*omega**5 - 2*I*omega**3)/(Lambda**2 - 2*Lambda)"
+          ],
+          [
+            "I*omega/2",
+            "-2*omega**2",
+            "-2*omega**2",
+            "-omega**2/2",
+            "-2*omega**2",
+            "(-2*I*Lambda*omega**3 + 16*I*omega**5 + 8*omega**4 + 4*I*omega**3)/(Lambda**2 - 2*Lambda)"
+          ],
+          [
+            "-I*omega",
+            "0",
+            "0",
+            "0",
+            "4*omega**2",
+            "(4*I*Lambda*omega**3 - 32*omega**4 - 8*I*omega**3)/(Lambda**2 - 2*Lambda)"
+          ],
+          [
+            "I*omega/2 - 1/8",
+            "-I*omega",
+            "-3*I*omega/2",
+            "-I*omega/2",
+            "-I*omega/2",
+            "0"
+          ],
+          [
+            "-I*omega + 1/4",
+            "0",
+            "I*omega",
+            "I*omega/2",
+            "I*omega",
+            "(-16*omega**4 - 8*I*omega**3)/(Lambda**2 - 2*Lambda)"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "-1",
+            "-1/2",
+            "0",
+            "(I*Lambda*omega - 16*I*omega**3 - 2*I*omega)/(Lambda**2 - 2*Lambda)"
+          ]
+        ],
+        "coordinate_labels": [
+          "prior_free_0",
+          "metric_variable_8",
+          "metric_variable_9",
+          "metric_variable_10",
+          "metric_variable_11"
+        ],
+        "equation_count": 7,
+        "free_columns": [
+          3,
+          4
+        ],
+        "nullity": 2,
+        "nullspace_basis": [
+          [
+            "0",
+            "1/4",
+            "-1/2",
+            "1",
+            "0"
+          ],
+          [
+            "-4*I*omega",
+            "4*I*omega",
+            "-4*I*omega",
+            "0",
+            "1"
+          ]
+        ],
+        "particular_solution": [
+          "(-4*Lambda*omega**2 - 32*I*omega**3 + 8*omega**2)/(Lambda**2 - 2*Lambda)",
+          "(4*Lambda*omega**2 + I*Lambda*omega + 8*I*omega**3 - 4*omega**2 - 2*I*omega)/(Lambda**2 - 2*Lambda)",
+          "(-4*Lambda*omega**2 - I*Lambda*omega - 16*I*omega**3 + 8*omega**2 + 2*I*omega)/(Lambda**2 - 2*Lambda)",
+          "0",
+          "0"
+        ],
+        "pivot_columns": [
+          0,
+          1,
+          2
+        ],
+        "q": 2,
+        "rank": 3,
+        "row_labels": [
+          "vv:log0",
+          "vr:log0",
+          "rr:log0",
+          "vx:log0",
+          "rx:log0",
+          "angP:log0",
+          "angW:log0"
+        ],
+        "rref_augmented_matrix": [
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "4*I*omega",
+            "(-4*Lambda*omega**2 - 32*I*omega**3 + 8*omega**2)/(Lambda**2 - 2*Lambda)"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "-1/4",
+            "-4*I*omega",
+            "(4*Lambda*omega**2 + I*Lambda*omega + 8*I*omega**3 - 4*omega**2 - 2*I*omega)/(Lambda**2 - 2*Lambda)"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "1/2",
+            "4*I*omega",
+            "(-4*Lambda*omega**2 - I*Lambda*omega - 16*I*omega**3 + 8*omega**2 + 2*I*omega)/(Lambda**2 - 2*Lambda)"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "rref_is_exact_rank_witness": true,
+        "variable_count": 5,
+        "variable_pivot_columns": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "compact_augmented_matrix": [
+          [
+            "-I*omega/4",
+            "-I*Lambda*omega/2 + 8*I*omega**3 + 4*omega**2 + I*omega",
+            "2*omega**2",
+            "2*omega**2",
+            "omega**2/2",
+            "omega**2",
+            "(Lambda**2*omega**2 - 16*Lambda*omega**4 - 16*omega**4 + 12*I*omega**3 - 4*omega**2)/(2*Lambda**2 - 4*Lambda)"
+          ],
+          [
+            "I*omega/2",
+            "I*Lambda*omega - 8*I*omega**3 - 8*omega**2 - 2*I*omega",
+            "-2*omega**2",
+            "-2*omega**2",
+            "-omega**2/2",
+            "-2*omega**2",
+            "(-Lambda**2*omega**2 + 8*Lambda*omega**4 - 4*I*Lambda*omega**3 + 32*omega**4 - 4*I*omega**3 + 4*omega**2)/(Lambda**2 - 2*Lambda)"
+          ],
+          [
+            "-I*omega",
+            "-2*I*Lambda*omega + 16*omega**2 + 4*I*omega",
+            "0",
+            "0",
+            "0",
+            "4*omega**2",
+            "(2*Lambda**2*omega**2 + 16*I*Lambda*omega**3 - 96*omega**4 - 8*I*omega**3 - 8*omega**2)/(Lambda**2 - 2*Lambda)"
+          ],
+          [
+            "I*omega/2",
+            "0",
+            "-I*omega",
+            "-3*I*omega/2",
+            "-I*omega/2",
+            "-I*omega/2",
+            "(-2*Lambda*omega**2 + 16*omega**4 + 4*omega**2)/(Lambda**2 - 2*Lambda)"
+          ],
+          [
+            "-I*omega",
+            "8*omega**2",
+            "0",
+            "I*omega",
+            "I*omega/2",
+            "I*omega",
+            "(8*I*Lambda*omega**3 - 32*omega**4 - 16*I*omega**3)/(Lambda**2 - 2*Lambda)"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "-1",
+            "-1/2",
+            "0",
+            "(Lambda**2 - 32*Lambda*omega**2 - 2*Lambda + 256*omega**4 - 64*I*omega**3 + 64*omega**2 + 4*I*omega)/(4*Lambda**2 - 8*Lambda)"
+          ]
+        ],
+        "coordinate_labels": [
+          "prior_free_0",
+          "prior_free_1",
+          "metric_variable_12",
+          "metric_variable_13",
+          "metric_variable_14",
+          "metric_variable_15"
+        ],
+        "equation_count": 7,
+        "free_columns": [
+          4,
+          5
+        ],
+        "nullity": 2,
+        "nullspace_basis": [
+          [
+            "0",
+            "0",
+            "1/4",
+            "-1/2",
+            "1",
+            "0"
+          ],
+          [
+            "(I*Lambda - 16*I*omega**2 - 8*omega - 2*I)/(4*omega)",
+            "-I/(8*omega)",
+            "(-I*Lambda + 16*I*omega**2 + 6*omega + 2*I)/(4*omega)",
+            "(I*Lambda - 16*I*omega**2 - 8*omega - 2*I)/(4*omega)",
+            "0",
+            "1"
+          ]
+        ],
+        "particular_solution": [
+          "(-I*Lambda**3 + 32*I*Lambda**2*omega**2 + 8*Lambda**2*omega + 4*I*Lambda**2 - 256*I*Lambda*omega**4 - 192*Lambda*omega**3 - 12*Lambda*omega - 4*I*Lambda + 2048*omega**5 - 512*I*omega**4 - 96*I*omega**2 - 8*omega)/(16*Lambda**2*omega - 32*Lambda*omega)",
+          "(I*Lambda**2 - 2*I*Lambda + 256*I*omega**4 - 64*omega**3 - 4*omega)/(32*Lambda**2*omega - 64*Lambda*omega)",
+          "(I*Lambda**3 - 32*I*Lambda**2*omega**2 - 2*Lambda**2*omega - 4*I*Lambda**2 + 256*I*Lambda*omega**4 - 32*I*Lambda*omega**2 + 4*I*Lambda - 512*omega**5 + 384*I*omega**4 + 384*omega**3 + 184*I*omega**2 + 8*omega)/(16*Lambda**2*omega - 32*Lambda*omega)",
+          "(-I*Lambda**3 + 32*I*Lambda**2*omega**2 + 4*Lambda**2*omega + 4*I*Lambda**2 - 256*I*Lambda*omega**4 - 64*Lambda*omega**3 - 4*Lambda*omega - 4*I*Lambda + 1024*omega**5 - 256*I*omega**4 - 256*omega**3 - 112*I*omega**2 - 8*omega)/(16*Lambda**2*omega - 32*Lambda*omega)",
+          "0",
+          "0"
+        ],
+        "pivot_columns": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "q": 3,
+        "rank": 4,
+        "row_labels": [
+          "vv:log0",
+          "vr:log0",
+          "rr:log0",
+          "vx:log0",
+          "rx:log0",
+          "angP:log0",
+          "angW:log0"
+        ],
+        "rref_augmented_matrix": [
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "(-I*Lambda + 16*I*omega**2 + 8*omega + 2*I)/(4*omega)",
+            "(-I*Lambda**3 + 32*I*Lambda**2*omega**2 + 8*Lambda**2*omega + 4*I*Lambda**2 - 256*I*Lambda*omega**4 - 192*Lambda*omega**3 - 12*Lambda*omega - 4*I*Lambda + 2048*omega**5 - 512*I*omega**4 - 96*I*omega**2 - 8*omega)/(16*Lambda**2*omega - 32*Lambda*omega)"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "I/(8*omega)",
+            "(I*Lambda**2 - 2*I*Lambda + 256*I*omega**4 - 64*omega**3 - 4*omega)/(32*Lambda**2*omega - 64*Lambda*omega)"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0",
+            "-1/4",
+            "(I*Lambda - 16*I*omega**2 - 6*omega - 2*I)/(4*omega)",
+            "(I*Lambda**3 - 32*I*Lambda**2*omega**2 - 2*Lambda**2*omega - 4*I*Lambda**2 + 256*I*Lambda*omega**4 - 32*I*Lambda*omega**2 + 4*I*Lambda - 512*omega**5 + 384*I*omega**4 + 384*omega**3 + 184*I*omega**2 + 8*omega)/(16*Lambda**2*omega - 32*Lambda*omega)"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "1/2",
+            "(-I*Lambda + 16*I*omega**2 + 8*omega + 2*I)/(4*omega)",
+            "(-I*Lambda**3 + 32*I*Lambda**2*omega**2 + 4*Lambda**2*omega + 4*I*Lambda**2 - 256*I*Lambda*omega**4 - 64*Lambda*omega**3 - 4*Lambda*omega - 4*I*Lambda + 1024*omega**5 - 256*I*omega**4 - 256*omega**3 - 112*I*omega**2 - 8*omega)/(16*Lambda**2*omega - 32*Lambda*omega)"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "rref_is_exact_rank_witness": true,
+        "variable_count": 6,
+        "variable_pivot_columns": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "compact_augmented_matrix": [
+          [
+            "-I*omega/4",
+            "(I*Lambda**2 - 32*I*Lambda*omega**2 - 8*Lambda*omega - 2*I*Lambda + 256*I*omega**4 + 256*omega**3 + 16*I*omega**2 + 4*omega)/(32*omega)",
+            "2*omega**2",
+            "2*omega**2",
+            "omega**2/2",
+            "omega**2",
+            "(I*Lambda**4 - 48*I*Lambda**3*omega**2 - 8*Lambda**3*omega - 4*I*Lambda**3 + 768*I*Lambda**2*omega**4 + 192*Lambda**2*omega**3 - 16*I*Lambda**2*omega**2 + 16*Lambda**2*omega + 4*I*Lambda**2 - 4096*I*Lambda*omega**6 - 1024*Lambda*omega**5 + 1536*I*Lambda*omega**4 + 320*Lambda*omega**3 + 192*I*Lambda*omega**2 - 12288*I*omega**6 - 12288*omega**5 - 3840*I*omega**4 - 576*omega**3 + 16*I*omega**2)/(128*Lambda**2*omega - 256*Lambda*omega)"
+          ],
+          [
+            "I*omega/2",
+            "(-I*Lambda**2 + 24*I*Lambda*omega**2 + 8*Lambda*omega + 2*I*Lambda - 128*I*omega**4 - 192*omega**3 - 4*omega)/(16*omega)",
+            "-2*omega**2",
+            "-2*omega**2",
+            "-omega**2/2",
+            "-2*omega**2",
+            "(-I*Lambda**4 + 40*I*Lambda**3*omega**2 + 8*Lambda**3*omega + 4*I*Lambda**3 - 512*I*Lambda**2*omega**4 - 192*Lambda**2*omega**3 + 32*I*Lambda**2*omega**2 - 16*Lambda**2*omega - 4*I*Lambda**2 + 2048*I*Lambda*omega**6 + 1536*Lambda*omega**5 - 1536*I*Lambda*omega**4 - 288*Lambda*omega**3 - 192*I*Lambda*omega**2 + 12288*I*omega**6 + 8192*omega**5 + 2816*I*omega**4 + 448*omega**3 - 16*I*omega**2)/(64*Lambda**2*omega - 128*Lambda*omega)"
+          ],
+          [
+            "-I*omega",
+            "(I*Lambda**2 - 16*I*Lambda*omega**2 - 8*Lambda*omega - 2*I*Lambda + 128*omega**3 - 16*I*omega**2 + 4*omega)/(8*omega)",
+            "0",
+            "0",
+            "0",
+            "4*omega**2",
+            "(I*Lambda**4 - 32*I*Lambda**3*omega**2 - 8*Lambda**3*omega - 4*I*Lambda**3 + 256*I*Lambda**2*omega**4 + 192*Lambda**2*omega**3 - 48*I*Lambda**2*omega**2 + 16*Lambda**2*omega + 4*I*Lambda**2 - 2048*Lambda*omega**5 + 1536*I*Lambda*omega**4 + 256*Lambda*omega**3 + 192*I*Lambda*omega**2 - 12288*I*omega**6 - 4096*omega**5 - 1792*I*omega**4 - 320*omega**3 + 16*I*omega**2)/(32*Lambda**2*omega - 64*Lambda*omega)"
+          ],
+          [
+            "I*omega/2 + 1/8",
+            "(-I*Lambda + 8*I*omega**2 + 6*omega + 2*I)/(8*omega)",
+            "-I*omega",
+            "-3*I*omega/2",
+            "-I*omega/2",
+            "-I*omega/2",
+            "(-I*Lambda**3 + 40*I*Lambda**2*omega**2 + 6*Lambda**2*omega + 4*I*Lambda**2 - 512*I*Lambda*omega**4 - 128*Lambda*omega**3 - 8*Lambda*omega - 4*I*Lambda + 2048*I*omega**6 + 1024*omega**5 + 384*I*omega**4 - 160*omega**3 - 136*I*omega**2 - 8*omega)/(32*Lambda**2*omega - 64*Lambda*omega)"
+          ],
+          [
+            "-I*omega - 1/4",
+            "(-2*Lambda*omega + I*Lambda + 32*omega**3 - 24*I*omega**2 - 2*omega - 2*I)/(4*omega)",
+            "0",
+            "I*omega",
+            "I*omega/2",
+            "I*omega",
+            "(-2*Lambda**3*omega + I*Lambda**3 + 64*Lambda**2*omega**3 - 40*I*Lambda**2*omega**2 - 2*Lambda**2*omega - 4*I*Lambda**2 - 512*Lambda*omega**5 + 384*I*Lambda*omega**4 + 128*Lambda*omega**3 - 8*I*Lambda*omega**2 + 8*Lambda*omega + 4*I*Lambda - 2048*I*omega**6 - 1024*omega**5 + 640*I*omega**4 - 96*omega**3 + 168*I*omega**2 + 8*omega)/(16*Lambda**2*omega - 32*Lambda*omega)"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "-1",
+            "-1/2",
+            "0",
+            "(-I*Lambda**3 + 48*I*Lambda**2*omega**2 + 2*I*Lambda**2 - 768*I*Lambda*omega**4 - 192*Lambda*omega**3 - 96*I*Lambda*omega**2 + 12*Lambda*omega + 4096*I*omega**6 + 3072*omega**5 + 1024*I*omega**4 + 192*omega**3 - 48*omega)/(24*Lambda**2*omega - 48*Lambda*omega)"
+          ]
+        ],
+        "coordinate_labels": [
+          "prior_free_0",
+          "prior_free_1",
+          "metric_variable_16",
+          "metric_variable_17",
+          "metric_variable_18",
+          "metric_variable_19"
+        ],
+        "equation_count": 7,
+        "free_columns": [
+          4,
+          5
+        ],
+        "nullity": 2,
+        "nullspace_basis": [
+          [
+            "0",
+            "0",
+            "1/4",
+            "-1/2",
+            "1",
+            "0"
+          ],
+          [
+            "(4*I*Lambda**2*omega - 128*I*Lambda*omega**3 - 64*Lambda*omega**2 - 8*I*Lambda*omega + 1024*I*omega**5 + 1280*omega**4 - 128*I*omega**3 + 80*omega**2)/(Lambda**2 - 2*Lambda - 256*omega**4 + 64*I*omega**3 + 12*I*omega)",
+            "64*I*omega**3/(Lambda**2 - 2*Lambda - 256*omega**4 + 64*I*omega**3 + 12*I*omega)",
+            "(-4*I*Lambda**2*omega + 128*I*Lambda*omega**3 + 48*Lambda*omega**2 + 8*I*Lambda*omega - 1024*I*omega**5 - 1024*omega**4 - 48*omega**2)/(Lambda**2 - 2*Lambda - 256*omega**4 + 64*I*omega**3 + 12*I*omega)",
+            "(4*I*Lambda**2*omega - 128*I*Lambda*omega**3 - 64*Lambda*omega**2 - 8*I*Lambda*omega + 1024*I*omega**5 + 1280*omega**4 - 128*I*omega**3 + 80*omega**2)/(Lambda**2 - 2*Lambda - 256*omega**4 + 64*I*omega**3 + 12*I*omega)",
+            "0",
+            "1"
+          ]
+        ],
+        "particular_solution": [
+          "(-Lambda**5 + 64*Lambda**4*omega**2 - 8*I*Lambda**4*omega + 10*Lambda**4 - 1536*Lambda**3*omega**4 + 512*I*Lambda**3*omega**3 - 352*Lambda**3*omega**2 + 32*I*Lambda**3*omega - 28*Lambda**3 + 16384*Lambda**2*omega**6 - 12288*I*Lambda**2*omega**5 + 1024*Lambda**2*omega**4 - 256*I*Lambda**2*omega**3 + 832*Lambda**2*omega**2 + 16*I*Lambda**2*omega + 24*Lambda**2 - 65536*Lambda*omega**8 + 131072*I*Lambda*omega**7 + 86016*Lambda*omega**6 - 22528*I*Lambda*omega**5 + 5632*Lambda*omega**4 - 4992*I*Lambda*omega**3 - 912*Lambda*omega**2 - 96*I*Lambda*omega - 524288*I*omega**9 - 655360*omega**8 + 294912*I*omega**7 - 90112*omega**6 + 94208*I*omega**5 - 3072*omega**4 + 8064*I*omega**3 + 288*omega**2)/(6*Lambda**4 - 24*Lambda**3 - 1536*Lambda**2*omega**4 + 384*I*Lambda**2*omega**3 + 72*I*Lambda**2*omega + 24*Lambda**2 + 3072*Lambda*omega**4 - 768*I*Lambda*omega**3 - 144*I*Lambda*omega)",
+          "(3*Lambda**4 - 64*Lambda**3*omega**2 - 12*Lambda**3 + 384*I*Lambda**2*omega**3 - 64*Lambda**2*omega**2 + 48*I*Lambda**2*omega + 12*Lambda**2 - 768*I*Lambda*omega**3 + 384*Lambda*omega**2 - 96*I*Lambda*omega + 65536*omega**8 + 4096*omega**6 - 6144*I*omega**5 - 3072*omega**4 - 2304*I*omega**3 - 144*omega**2)/(12*Lambda**4 - 48*Lambda**3 - 3072*Lambda**2*omega**4 + 768*I*Lambda**2*omega**3 + 144*I*Lambda**2*omega + 48*Lambda**2 + 6144*Lambda*omega**4 - 1536*I*Lambda*omega**3 - 288*I*Lambda*omega)",
+          "(4*Lambda**5*omega - I*Lambda**5 - 256*Lambda**4*omega**3 + 72*I*Lambda**4*omega**2 - 52*Lambda**4*omega + I*Lambda**4 + 6144*Lambda**3*omega**5 - 2048*I*Lambda**3*omega**4 + 1536*Lambda**3*omega**3 - 288*I*Lambda**3*omega**2 + 184*Lambda**3*omega + 8*I*Lambda**3 - 65536*Lambda**2*omega**7 + 28672*I*Lambda**2*omega**6 - 4096*Lambda**2*omega**5 + 2048*I*Lambda**2*omega**4 - 3776*Lambda**2*omega**3 - 96*I*Lambda**2*omega**2 - 216*Lambda**2*omega - 12*I*Lambda**2 + 262144*Lambda*omega**9 - 196608*I*Lambda*omega**8 - 245760*Lambda*omega**7 + 102400*I*Lambda*omega**6 - 16384*Lambda*omega**5 + 16384*I*Lambda*omega**4 + 4032*Lambda*omega**3 + 912*I*Lambda*omega**2 + 48*Lambda*omega + 524288*I*omega**10 + 1310720*omega**9 - 1343488*I*omega**8 + 327680*omega**7 - 282624*I*omega**6 + 18432*omega**5 - 30336*I*omega**4 - 576*omega**3 - 720*I*omega**2)/(24*Lambda**4*omega - 96*Lambda**3*omega - 6144*Lambda**2*omega**5 + 1536*I*Lambda**2*omega**4 + 288*I*Lambda**2*omega**2 + 96*Lambda**2*omega + 12288*Lambda*omega**5 - 3072*I*Lambda*omega**4 - 576*I*Lambda*omega**2)",
+          "(-4*Lambda**5*omega + I*Lambda**5 + 256*Lambda**4*omega**3 - 80*I*Lambda**4*omega**2 + 40*Lambda**4*omega - 4*I*Lambda**4 - 6144*Lambda**3*omega**5 + 2560*I*Lambda**3*omega**4 - 1280*Lambda**3*omega**3 + 320*I*Lambda**3*omega**2 - 136*Lambda**3*omega + 4*I*Lambda**3 + 65536*Lambda**2*omega**7 - 40960*I*Lambda**2*omega**6 + 4096*Lambda**2*omega**5 - 3072*I*Lambda**2*omega**4 + 3456*Lambda**2*omega**3 - 128*I*Lambda**2*omega**2 + 192*Lambda**2*omega - 262144*Lambda*omega**9 + 327680*I*Lambda*omega**8 + 245760*Lambda*omega**7 - 94208*I*Lambda*omega**6 + 16384*Lambda*omega**5 - 16384*I*Lambda*omega**4 - 4416*Lambda*omega**3 - 528*I*Lambda*omega**2 - 96*Lambda*omega - 1048576*I*omega**10 - 1572864*omega**9 + 1245184*I*omega**8 - 196608*omega**7 + 327680*I*omega**6 - 12288*omega**5 + 33024*I*omega**4 + 1152*omega**3 + 576*I*omega**2)/(24*Lambda**4*omega - 96*Lambda**3*omega - 6144*Lambda**2*omega**5 + 1536*I*Lambda**2*omega**4 + 288*I*Lambda**2*omega**2 + 96*Lambda**2*omega + 12288*Lambda*omega**5 - 3072*I*Lambda*omega**4 - 576*I*Lambda*omega**2)",
+          "0",
+          "0"
+        ],
+        "pivot_columns": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "q": 4,
+        "rank": 4,
+        "row_labels": [
+          "vv:log0",
+          "vr:log0",
+          "rr:log0",
+          "vx:log0",
+          "rx:log0",
+          "angP:log0",
+          "angW:log0"
+        ],
+        "rref_augmented_matrix": [
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "(-4*I*Lambda**2*omega + 128*I*Lambda*omega**3 + 64*Lambda*omega**2 + 8*I*Lambda*omega - 1024*I*omega**5 - 1280*omega**4 + 128*I*omega**3 - 80*omega**2)/(Lambda**2 - 2*Lambda - 256*omega**4 + 64*I*omega**3 + 12*I*omega)",
+            "(-Lambda**5 + 64*Lambda**4*omega**2 - 8*I*Lambda**4*omega + 10*Lambda**4 - 1536*Lambda**3*omega**4 + 512*I*Lambda**3*omega**3 - 352*Lambda**3*omega**2 + 32*I*Lambda**3*omega - 28*Lambda**3 + 16384*Lambda**2*omega**6 - 12288*I*Lambda**2*omega**5 + 1024*Lambda**2*omega**4 - 256*I*Lambda**2*omega**3 + 832*Lambda**2*omega**2 + 16*I*Lambda**2*omega + 24*Lambda**2 - 65536*Lambda*omega**8 + 131072*I*Lambda*omega**7 + 86016*Lambda*omega**6 - 22528*I*Lambda*omega**5 + 5632*Lambda*omega**4 - 4992*I*Lambda*omega**3 - 912*Lambda*omega**2 - 96*I*Lambda*omega - 524288*I*omega**9 - 655360*omega**8 + 294912*I*omega**7 - 90112*omega**6 + 94208*I*omega**5 - 3072*omega**4 + 8064*I*omega**3 + 288*omega**2)/(6*Lambda**4 - 24*Lambda**3 - 1536*Lambda**2*omega**4 + 384*I*Lambda**2*omega**3 + 72*I*Lambda**2*omega + 24*Lambda**2 + 3072*Lambda*omega**4 - 768*I*Lambda*omega**3 - 144*I*Lambda*omega)"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "-64*I*omega**3/(Lambda**2 - 2*Lambda - 256*omega**4 + 64*I*omega**3 + 12*I*omega)",
+            "(3*Lambda**4 - 64*Lambda**3*omega**2 - 12*Lambda**3 + 384*I*Lambda**2*omega**3 - 64*Lambda**2*omega**2 + 48*I*Lambda**2*omega + 12*Lambda**2 - 768*I*Lambda*omega**3 + 384*Lambda*omega**2 - 96*I*Lambda*omega + 65536*omega**8 + 4096*omega**6 - 6144*I*omega**5 - 3072*omega**4 - 2304*I*omega**3 - 144*omega**2)/(12*Lambda**4 - 48*Lambda**3 - 3072*Lambda**2*omega**4 + 768*I*Lambda**2*omega**3 + 144*I*Lambda**2*omega + 48*Lambda**2 + 6144*Lambda*omega**4 - 1536*I*Lambda*omega**3 - 288*I*Lambda*omega)"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0",
+            "-1/4",
+            "(4*I*Lambda**2*omega - 128*I*Lambda*omega**3 - 48*Lambda*omega**2 - 8*I*Lambda*omega + 1024*I*omega**5 + 1024*omega**4 + 48*omega**2)/(Lambda**2 - 2*Lambda - 256*omega**4 + 64*I*omega**3 + 12*I*omega)",
+            "(4*Lambda**5*omega - I*Lambda**5 - 256*Lambda**4*omega**3 + 72*I*Lambda**4*omega**2 - 52*Lambda**4*omega + I*Lambda**4 + 6144*Lambda**3*omega**5 - 2048*I*Lambda**3*omega**4 + 1536*Lambda**3*omega**3 - 288*I*Lambda**3*omega**2 + 184*Lambda**3*omega + 8*I*Lambda**3 - 65536*Lambda**2*omega**7 + 28672*I*Lambda**2*omega**6 - 4096*Lambda**2*omega**5 + 2048*I*Lambda**2*omega**4 - 3776*Lambda**2*omega**3 - 96*I*Lambda**2*omega**2 - 216*Lambda**2*omega - 12*I*Lambda**2 + 262144*Lambda*omega**9 - 196608*I*Lambda*omega**8 - 245760*Lambda*omega**7 + 102400*I*Lambda*omega**6 - 16384*Lambda*omega**5 + 16384*I*Lambda*omega**4 + 4032*Lambda*omega**3 + 912*I*Lambda*omega**2 + 48*Lambda*omega + 524288*I*omega**10 + 1310720*omega**9 - 1343488*I*omega**8 + 327680*omega**7 - 282624*I*omega**6 + 18432*omega**5 - 30336*I*omega**4 - 576*omega**3 - 720*I*omega**2)/(24*Lambda**4*omega - 96*Lambda**3*omega - 6144*Lambda**2*omega**5 + 1536*I*Lambda**2*omega**4 + 288*I*Lambda**2*omega**2 + 96*Lambda**2*omega + 12288*Lambda*omega**5 - 3072*I*Lambda*omega**4 - 576*I*Lambda*omega**2)"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "1/2",
+            "(-4*I*Lambda**2*omega + 128*I*Lambda*omega**3 + 64*Lambda*omega**2 + 8*I*Lambda*omega - 1024*I*omega**5 - 1280*omega**4 + 128*I*omega**3 - 80*omega**2)/(Lambda**2 - 2*Lambda - 256*omega**4 + 64*I*omega**3 + 12*I*omega)",
+            "(-4*Lambda**5*omega + I*Lambda**5 + 256*Lambda**4*omega**3 - 80*I*Lambda**4*omega**2 + 40*Lambda**4*omega - 4*I*Lambda**4 - 6144*Lambda**3*omega**5 + 2560*I*Lambda**3*omega**4 - 1280*Lambda**3*omega**3 + 320*I*Lambda**3*omega**2 - 136*Lambda**3*omega + 4*I*Lambda**3 + 65536*Lambda**2*omega**7 - 40960*I*Lambda**2*omega**6 + 4096*Lambda**2*omega**5 - 3072*I*Lambda**2*omega**4 + 3456*Lambda**2*omega**3 - 128*I*Lambda**2*omega**2 + 192*Lambda**2*omega - 262144*Lambda*omega**9 + 327680*I*Lambda*omega**8 + 245760*Lambda*omega**7 - 94208*I*Lambda*omega**6 + 16384*Lambda*omega**5 - 16384*I*Lambda*omega**4 - 4416*Lambda*omega**3 - 528*I*Lambda*omega**2 - 96*Lambda*omega - 1048576*I*omega**10 - 1572864*omega**9 + 1245184*I*omega**8 - 196608*omega**7 + 327680*I*omega**6 - 12288*omega**5 + 33024*I*omega**4 + 1152*omega**3 + 576*I*omega**2)/(24*Lambda**4*omega - 96*Lambda**3*omega - 6144*Lambda**2*omega**5 + 1536*I*Lambda**2*omega**4 + 288*I*Lambda**2*omega**2 + 96*Lambda**2*omega + 12288*Lambda*omega**5 - 3072*I*Lambda*omega**4 - 576*I*Lambda*omega**2)"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "rref_is_exact_rank_witness": true,
+        "variable_count": 6,
+        "variable_pivot_columns": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "compact_augmented_matrix": [
+          [
+            "-I*omega/4",
+            "(I*Lambda**3*omega - 48*I*Lambda**2*omega**3 - 8*Lambda**2*omega**2 - 2*I*Lambda**2*omega + 768*I*Lambda*omega**5 + 576*Lambda*omega**4 + 4*Lambda*omega**2 - 4096*I*omega**7 - 7168*omega**6 + 2048*I*omega**5 - 64*omega**4 + 96*I*omega**3)/(2*Lambda**2 - 4*Lambda - 512*omega**4 + 128*I*omega**3 + 24*I*omega)",
+            "2*omega**2",
+            "2*omega**2",
+            "omega**2/2",
+            "omega**2",
+            "(Lambda**6 - 80*Lambda**5*omega**2 + 16*I*Lambda**5*omega - 14*Lambda**5 + 2560*Lambda**4*omega**4 - 1024*I*Lambda**4*omega**3 + 560*Lambda**4*omega**2 - 28*I*Lambda**4*omega + 50*Lambda**4 - 40960*Lambda**3*omega**6 + 24576*I*Lambda**3*omega**5 - 4096*Lambda**3*omega**4 + 2688*I*Lambda**3*omega**3 - 1472*Lambda**3*omega**2 - 176*I*Lambda**3*omega - 64*Lambda**3 + 327680*Lambda**2*omega**8 - 262144*I*Lambda**2*omega**7 - 102400*Lambda**2*omega**6 - 16384*I*Lambda**2*omega**5 + 5120*Lambda**2*omega**4 - 128*I*Lambda**2*omega**3 + 1296*Lambda**2*omega**2 + 288*I*Lambda**2*omega + 24*Lambda**2 - 1048576*Lambda*omega**10 + 1048576*I*Lambda*omega**9 + 1638400*Lambda*omega**8 - 1081344*I*Lambda*omega**7 + 73728*Lambda*omega**6 - 114688*I*Lambda*omega**5 - 30464*Lambda*omega**4 - 2304*I*Lambda*omega**3 + 96*Lambda*omega**2 + 96*I*Lambda*omega - 5242880*omega**10 + 9175040*I*omega**9 + 851968*omega**8 + 1851392*I*omega**7 + 393216*omega**6 + 196608*I*omega**5 + 60672*omega**4 + 2880*I*omega**3 + 1440*omega**2)/(48*Lambda**4 - 192*Lambda**3 - 12288*Lambda**2*omega**4 + 3072*I*Lambda**2*omega**3 + 576*I*Lambda**2*omega + 192*Lambda**2 + 24576*Lambda*omega**4 - 6144*I*Lambda*omega**3 - 1152*I*Lambda*omega)"
+          ],
+          [
+            "I*omega/2",
+            "(-I*Lambda**3*omega + 40*I*Lambda**2*omega**3 + 8*Lambda**2*omega**2 + 3*I*Lambda**2*omega - 512*I*Lambda*omega**5 - 448*Lambda*omega**4 + 16*I*Lambda*omega**3 - 4*Lambda*omega**2 - 2*I*Lambda*omega + 2048*I*omega**7 + 4608*omega**6 - 1792*I*omega**5 - 96*omega**4 - 96*I*omega**3 - 12*omega**2)/(Lambda**2 - 2*Lambda - 256*omega**4 + 64*I*omega**3 + 12*I*omega)",
+            "-2*omega**2",
+            "-2*omega**2",
+            "-omega**2/2",
+            "-2*omega**2",
+            "(-Lambda**6 + 72*Lambda**5*omega**2 - 12*I*Lambda**5*omega + 13*Lambda**5 - 2048*Lambda**4*omega**4 + 768*I*Lambda**4*omega**3 - 480*Lambda**4*omega**2 + 36*I*Lambda**4*omega - 46*Lambda**4 + 28672*Lambda**3*omega**6 - 18432*I*Lambda**3*omega**5 + 2560*Lambda**3*omega**4 - 1856*I*Lambda**3*omega**3 + 1152*Lambda**3*omega**2 + 96*I*Lambda**3*omega + 60*Lambda**3 - 196608*Lambda**2*omega**8 + 196608*I*Lambda**2*omega**7 + 102400*Lambda**2*omega**6 - 896*I*Lambda**2*omega**3 - 912*Lambda**2*omega**2 - 288*I*Lambda**2*omega - 24*Lambda**2 + 524288*Lambda*omega**10 - 786432*I*Lambda*omega**9 - 1343488*Lambda*omega**8 + 884736*I*Lambda*omega**7 - 36864*Lambda*omega**6 + 98304*I*Lambda*omega**5 + 20352*Lambda*omega**4 + 2496*I*Lambda*omega**3 - 240*Lambda*omega**2 + 96*I*Lambda*omega + 4194304*omega**10 - 6553600*I*omega**9 - 917504*omega**8 - 1196032*I*omega**7 - 393216*omega**6 - 86016*I*omega**5 - 43008*omega**4 + 576*I*omega**3 - 288*omega**2)/(24*Lambda**4 - 96*Lambda**3 - 6144*Lambda**2*omega**4 + 1536*I*Lambda**2*omega**3 + 288*I*Lambda**2*omega + 96*Lambda**2 + 12288*Lambda*omega**4 - 3072*I*Lambda*omega**3 - 576*I*Lambda*omega)"
+          ],
+          [
+            "-I*omega",
+            "(2*I*Lambda**3*omega - 64*I*Lambda**2*omega**3 - 16*Lambda**2*omega**2 - 8*I*Lambda**2*omega + 512*I*Lambda*omega**5 + 640*Lambda*omega**4 - 64*I*Lambda*omega**3 + 8*Lambda*omega**2 + 8*I*Lambda*omega - 4096*omega**6 + 3072*I*omega**5 + 512*omega**4 + 192*I*omega**3 + 48*omega**2)/(Lambda**2 - 2*Lambda - 256*omega**4 + 64*I*omega**3 + 12*I*omega)",
+            "0",
+            "0",
+            "0",
+            "4*omega**2",
+            "(Lambda**6 - 64*Lambda**5*omega**2 + 8*I*Lambda**5*omega - 12*Lambda**5 + 1536*Lambda**4*omega**4 - 512*I*Lambda**4*omega**3 + 400*Lambda**4*omega**2 - 44*I*Lambda**4*omega + 42*Lambda**4 - 16384*Lambda**3*omega**6 + 12288*I*Lambda**3*omega**5 - 1024*Lambda**3*omega**4 + 1024*I*Lambda**3*omega**3 - 832*Lambda**3*omega**2 - 16*I*Lambda**3*omega - 56*Lambda**3 + 65536*Lambda**2*omega**8 - 131072*I*Lambda**2*omega**7 - 102400*Lambda**2*omega**6 + 16384*I*Lambda**2*omega**5 - 5120*Lambda**2*omega**4 + 1920*I*Lambda**2*omega**3 + 528*Lambda**2*omega**2 + 288*I*Lambda**2*omega + 24*Lambda**2 + 524288*I*Lambda*omega**9 + 1048576*Lambda*omega**8 - 688128*I*Lambda*omega**7 - 81920*I*Lambda*omega**5 - 10240*Lambda*omega**4 - 2688*I*Lambda*omega**3 + 384*Lambda*omega**2 - 288*I*Lambda*omega - 3145728*omega**10 + 3932160*I*omega**9 + 983040*omega**8 + 540672*I*omega**7 + 393216*omega**6 - 24576*I*omega**5 + 25344*omega**4 - 4032*I*omega**3 - 864*omega**2)/(12*Lambda**4 - 48*Lambda**3 - 3072*Lambda**2*omega**4 + 768*I*Lambda**2*omega**3 + 144*I*Lambda**2*omega + 48*Lambda**2 + 6144*Lambda*omega**4 - 1536*I*Lambda*omega**3 - 288*I*Lambda*omega)"
+          ],
+          [
+            "I*omega/2 + 1/4",
+            "(-4*I*Lambda**2*omega + 96*I*Lambda*omega**3 + 48*Lambda*omega**2 + 8*I*Lambda*omega - 512*I*omega**5 - 768*omega**4 + 64*I*omega**3 - 48*omega**2)/(Lambda**2 - 2*Lambda - 256*omega**4 + 64*I*omega**3 + 12*I*omega)",
+            "-I*omega",
+            "-3*I*omega/2",
+            "-I*omega/2",
+            "-I*omega/2",
+            "(-2*Lambda**5*omega + 144*Lambda**4*omega**3 - 24*I*Lambda**4*omega**2 + 44*Lambda**4*omega - 3*I*Lambda**4 - 4096*Lambda**3*omega**5 + 1536*I*Lambda**3*omega**4 - 928*Lambda**3*omega**3 + 144*I*Lambda**3*omega**2 - 164*Lambda**3*omega + 12*I*Lambda**3 + 57344*Lambda**2*omega**7 - 36864*I*Lambda**2*omega**6 - 6656*Lambda**2*omega**5 + 2432*Lambda**2*omega**3 + 24*I*Lambda**2*omega**2 + 216*Lambda**2*omega - 12*I*Lambda**2 - 393216*Lambda*omega**9 + 393216*I*Lambda*omega**8 + 229376*Lambda*omega**7 - 67584*I*Lambda*omega**6 + 32768*Lambda*omega**5 - 17280*I*Lambda*omega**4 - 3168*Lambda*omega**3 - 576*I*Lambda*omega**2 - 96*Lambda*omega + 1048576*omega**11 - 1572864*I*omega**10 - 851968*omega**9 + 589824*I*omega**8 - 253952*omega**7 + 258048*I*omega**6 + 3840*omega**5 + 22656*I*omega**4 + 2592*omega**3 + 144*I*omega**2)/(24*Lambda**4*omega - 96*Lambda**3*omega - 6144*Lambda**2*omega**5 + 1536*I*Lambda**2*omega**4 + 288*I*Lambda**2*omega**2 + 96*Lambda**2*omega + 12288*Lambda*omega**5 - 3072*I*Lambda*omega**4 - 576*I*Lambda*omega**2)"
+          ],
+          [
+            "-I*omega - 1/2",
+            "(-8*Lambda**2*omega**2 + 8*I*Lambda**2*omega + Lambda**2 + 256*Lambda*omega**4 - 320*I*Lambda*omega**3 - 80*Lambda*omega**2 - 16*I*Lambda*omega - 2*Lambda - 2048*omega**6 + 3584*I*omega**5 + 1792*omega**4 + 32*I*omega**3 + 96*omega**2 + 12*I*omega)/(Lambda**2 - 2*Lambda - 256*omega**4 + 64*I*omega**3 + 12*I*omega)",
+            "0",
+            "I*omega",
+            "I*omega/2",
+            "I*omega",
+            "(8*I*Lambda**5*omega**2 + 8*Lambda**5*omega + I*Lambda**5 - 512*I*Lambda**4*omega**4 - 544*Lambda**4*omega**3 - 32*I*Lambda**4*omega**2 - 80*Lambda**4*omega + 2*I*Lambda**4 + 12288*I*Lambda**3*omega**6 + 14336*Lambda**3*omega**5 - 1536*I*Lambda**3*omega**4 + 2688*Lambda**3*omega**3 + 32*I*Lambda**3*omega**2 + 248*Lambda**3*omega - 20*I*Lambda**3 - 131072*I*Lambda**2*omega**8 - 180224*Lambda**2*omega**7 + 73728*I*Lambda**2*omega**6 - 3072*Lambda**2*omega**5 - 5120*I*Lambda**2*omega**4 - 5888*Lambda**2*omega**3 - 432*I*Lambda**2*omega**2 - 432*Lambda**2*omega + 24*I*Lambda**2 + 524288*I*Lambda*omega**10 + 1048576*Lambda*omega**9 - 1081344*I*Lambda*omega**8 - 655360*Lambda*omega**7 + 98304*I*Lambda*omega**6 - 81920*Lambda*omega**5 + 44672*I*Lambda*omega**4 + 6528*Lambda*omega**3 + 1296*I*Lambda*omega**2 + 384*Lambda*omega - 2097152*omega**11 + 4194304*I*omega**10 + 4325376*omega**9 - 1114112*I*omega**8 + 1163264*omega**7 - 516096*I*omega**6 + 102912*omega**5 - 62976*I*omega**4 - 1728*omega**3 - 1440*I*omega**2)/(24*Lambda**4*omega - 96*Lambda**3*omega - 6144*Lambda**2*omega**5 + 1536*I*Lambda**2*omega**4 + 288*I*Lambda**2*omega**2 + 96*Lambda**2*omega + 12288*Lambda*omega**5 - 3072*I*Lambda*omega**4 - 576*I*Lambda*omega**2)"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "-1",
+            "-1/2",
+            "0",
+            "(-Lambda**4 + 64*Lambda**3*omega**2 + 4*Lambda**3 - 1536*Lambda**2*omega**4 + 384*I*Lambda**2*omega**3 - 128*Lambda**2*omega**2 - 48*I*Lambda**2*omega - 28*Lambda**2 + 16384*Lambda*omega**6 - 12288*I*Lambda*omega**5 + 1024*Lambda*omega**4 + 288*I*Lambda*omega + 48*Lambda - 65536*omega**8 + 98304*I*omega**7 + 12288*omega**6 + 12288*I*omega**5 + 2560*omega**4 - 3072*I*omega**3 + 432*omega**2 - 672*I*omega)/(192*Lambda**2*omega**2 - 384*Lambda*omega**2)"
+          ]
+        ],
+        "coordinate_labels": [
+          "prior_free_0",
+          "prior_free_1",
+          "metric_variable_20",
+          "metric_variable_21",
+          "metric_variable_22",
+          "metric_variable_23"
+        ],
+        "equation_count": 7,
+        "free_columns": [
+          4,
+          5
+        ],
+        "nullity": 2,
+        "nullspace_basis": [
+          [
+            "0",
+            "0",
+            "1/4",
+            "-1/2",
+            "1",
+            "0"
+          ],
+          [
+            "(2*I*Lambda**3*omega - 96*I*Lambda**2*omega**3 - 48*Lambda**2*omega**2 - 4*I*Lambda**2*omega + 1536*I*Lambda*omega**5 + 1920*Lambda*omega**4 - 384*I*Lambda*omega**3 + 72*Lambda*omega**2 - 8192*I*omega**7 - 18432*omega**6 + 10240*I*omega**5 + 384*omega**4 + 576*I*omega**3)/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)",
+            "(3*I*Lambda**2*omega - 6*I*Lambda*omega - 768*I*omega**5 - 192*omega**4 - 36*omega**2)/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)",
+            "(-4*I*Lambda**3*omega + 192*I*Lambda**2*omega**3 + 72*Lambda**2*omega**2 + 8*I*Lambda**2*omega + 3*Lambda**2 - 3072*I*Lambda*omega**5 - 3072*Lambda*omega**4 + 384*I*Lambda*omega**3 - 96*Lambda*omega**2 - 6*Lambda + 16384*I*omega**7 + 30720*omega**6 - 12800*I*omega**5 - 672*I*omega**3 + 36*I*omega)/(2*Lambda**3 - 48*Lambda**2*omega**2 - 10*Lambda**2 + 96*Lambda*omega**2 + 24*I*Lambda*omega + 12*Lambda + 4096*omega**6 - 3072*I*omega**5 - 512*omega**4 - 576*I*omega**3 - 72*I*omega)",
+            "(2*I*Lambda**3*omega - 96*I*Lambda**2*omega**3 - 48*Lambda**2*omega**2 - 4*I*Lambda**2*omega + 1536*I*Lambda*omega**5 + 1920*Lambda*omega**4 - 384*I*Lambda*omega**3 + 72*Lambda*omega**2 - 8192*I*omega**7 - 18432*omega**6 + 10240*I*omega**5 + 384*omega**4 + 576*I*omega**3)/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)",
+            "0",
+            "1"
+          ]
+        ],
+        "particular_solution": [
+          "(I*Lambda**7 - 96*I*Lambda**6*omega**2 - 8*Lambda**6*omega - 24*I*Lambda**6 + 3840*I*Lambda**5*omega**4 + 960*Lambda**5*omega**3 + 1632*I*Lambda**5*omega**2 + 116*Lambda**5*omega + 144*I*Lambda**5 - 81920*I*Lambda**4*omega**6 - 43008*Lambda**4*omega**5 - 37376*I*Lambda**4*omega**4 - 7680*Lambda**4*omega**3 - 8736*I*Lambda**4*omega**2 - 536*Lambda**4*omega - 320*I*Lambda**4 + 983040*I*Lambda**3*omega**8 + 950272*Lambda**3*omega**7 + 143360*I*Lambda**3*omega**6 + 59392*Lambda**3*omega**5 + 192512*I*Lambda**3*omega**4 + 19200*Lambda**3*omega**3 + 21648*I*Lambda**3*omega**2 + 816*Lambda**3*omega + 240*I*Lambda**3 - 6291456*I*Lambda**2*omega**10 - 11010048*Lambda**2*omega**9 + 6684672*I*Lambda**2*omega**8 + 3702784*Lambda**2*omega**7 - 1998848*I*Lambda**2*omega**6 + 483328*Lambda**2*omega**5 - 611840*I*Lambda**2*omega**4 - 28800*Lambda**2*omega**3 - 25536*I*Lambda**2*omega**2 - 288*Lambda**2*omega + 16777216*I*Lambda*omega**12 + 62914560*Lambda*omega**11 - 95420416*I*Lambda*omega**10 - 73924608*Lambda*omega**9 + 15597568*I*Lambda*omega**8 - 14106624*Lambda*omega**7 + 5443584*I*Lambda*omega**6 - 2307072*Lambda*omega**5 + 1027584*I*Lambda*omega**4 - 192*Lambda*omega**3 + 12480*I*Lambda*omega**2 - 134217728*omega**13 + 369098752*I*omega**12 + 411041792*omega**11 - 142606336*I*omega**10 + 74973184*omega**9 - 39452672*I*omega**8 + 16711680*omega**7 - 4694016*I*omega**6 + 3674112*omega**5 - 999936*I*omega**4 + 12672*omega**3)/(96*Lambda**5*omega - 2304*Lambda**4*omega**3 - 672*Lambda**4*omega + 9216*Lambda**3*omega**3 + 1152*I*Lambda**3*omega**2 + 1536*Lambda**3*omega + 196608*Lambda**2*omega**7 - 147456*I*Lambda**2*omega**6 - 24576*Lambda**2*omega**5 - 27648*I*Lambda**2*omega**4 - 9216*Lambda**2*omega**3 - 5760*I*Lambda**2*omega**2 - 1152*Lambda**2*omega - 393216*Lambda*omega**7 + 294912*I*Lambda*omega**6 + 49152*Lambda*omega**5 + 55296*I*Lambda*omega**4 + 6912*I*Lambda*omega**2)",
+          "(-7*I*Lambda**6 + 384*I*Lambda**5*omega**2 + 82*I*Lambda**5 - 6912*I*Lambda**4*omega**4 + 576*Lambda**4*omega**3 - 2688*I*Lambda**4*omega**2 + 228*Lambda**4*omega - 316*I*Lambda**4 + 32768*I*Lambda**3*omega**6 - 24576*Lambda**3*omega**5 + 17408*I*Lambda**3*omega**4 - 13056*Lambda**3*omega**3 + 6144*I*Lambda**3*omega**2 - 1680*Lambda**3*omega + 504*I*Lambda**3 + 196608*I*Lambda**2*omega**8 + 294912*Lambda**2*omega**7 + 241664*I*Lambda**2*omega**6 + 178176*Lambda**2*omega**5 + 75776*I*Lambda**2*omega**4 + 56064*Lambda**2*omega**3 - 1776*I*Lambda**2*omega**2 + 4176*Lambda**2*omega - 288*I*Lambda**2 - 393216*I*Lambda*omega**8 - 196608*Lambda*omega**7 - 909312*I*Lambda*omega**6 - 86016*Lambda*omega**5 - 239616*I*Lambda*omega**4 - 64512*Lambda*omega**3 - 9120*I*Lambda*omega**2 - 3456*Lambda*omega - 16777216*I*omega**12 - 12582912*omega**11 + 1048576*I*omega**10 - 6291456*omega**9 + 3670016*I*omega**8 - 3883008*omega**7 + 1044480*I*omega**6 - 789504*omega**5 + 221184*I*omega**4 - 13248*omega**3 + 10368*I*omega**2)/(192*Lambda**5*omega - 4608*Lambda**4*omega**3 - 1344*Lambda**4*omega + 18432*Lambda**3*omega**3 + 2304*I*Lambda**3*omega**2 + 3072*Lambda**3*omega + 393216*Lambda**2*omega**7 - 294912*I*Lambda**2*omega**6 - 49152*Lambda**2*omega**5 - 55296*I*Lambda**2*omega**4 - 18432*Lambda**2*omega**3 - 11520*I*Lambda**2*omega**2 - 2304*Lambda**2*omega - 786432*Lambda*omega**7 + 589824*I*Lambda*omega**6 + 98304*Lambda*omega**5 + 110592*I*Lambda*omega**4 + 13824*I*Lambda*omega**2)",
+          "(-4*I*Lambda**7*omega - 2*Lambda**7 + 384*I*Lambda**6*omega**3 + 200*Lambda**6*omega**2 + 128*I*Lambda**6*omega + 3*Lambda**6 - 15360*I*Lambda**5*omega**5 - 9216*Lambda**5*omega**4 - 7680*I*Lambda**5*omega**3 - 896*Lambda**5*omega**2 - 728*I*Lambda**5*omega + 30*Lambda**5 + 327680*I*Lambda**4*omega**7 + 243712*Lambda**4*omega**6 + 154112*I*Lambda**4*omega**5 + 49408*Lambda**4*omega**4 + 38496*I*Lambda**4*omega**3 + 512*Lambda**4*omega**2 + 1444*I*Lambda**4*omega - 20*Lambda**4 - 3932160*I*Lambda**3*omega**9 - 3801088*Lambda**3*omega**8 - 540672*I*Lambda**3*omega**7 - 598016*Lambda**3*omega**6 - 743424*I*Lambda**3*omega**5 - 31744*Lambda**3*omega**4 - 96192*I*Lambda**3*omega**3 + 5856*Lambda**3*omega**2 - 3120*I*Lambda**3*omega - 216*Lambda**3 + 25165824*I*Lambda**2*omega**11 + 33030144*Lambda**2*omega**10 - 19660800*I*Lambda**2*omega**9 - 9404416*Lambda**2*omega**8 + 6111232*I*Lambda**2*omega**7 - 1560576*Lambda**2*omega**6 + 2197504*I*Lambda**2*omega**5 - 105344*Lambda**2*omega**4 + 171648*I*Lambda**2*omega**3 - 18768*Lambda**2*omega**2 + 10704*I*Lambda**2*omega + 288*Lambda**2 - 67108864*I*Lambda*omega**13 - 134217728*Lambda*omega**12 + 230686720*I*Lambda*omega**11 + 216006656*Lambda*omega**10 - 45088768*I*Lambda*omega**9 + 40763392*Lambda*omega**8 - 14303232*I*Lambda*omega**7 + 8724480*Lambda*omega**6 - 3207168*I*Lambda*omega**5 + 391680*Lambda*omega**4 - 117888*I*Lambda*omega**3 + 45600*Lambda*omega**2 - 12672*I*Lambda*omega + 134217728*omega**14 - 637534208*I*omega**13 - 1098907648*omega**12 + 423624704*I*omega**11 - 206569472*omega**10 + 89522176*I*omega**9 - 52527104*omega**8 + 1990656*I*omega**7 - 16994304*omega**6 + 2274816*I*omega**5 - 852480*omega**4 - 100800*I*omega**3 - 65664*omega**2)/(384*Lambda**5*omega**2 - 9216*Lambda**4*omega**4 - 2688*Lambda**4*omega**2 + 36864*Lambda**3*omega**4 + 4608*I*Lambda**3*omega**3 + 6144*Lambda**3*omega**2 + 786432*Lambda**2*omega**8 - 589824*I*Lambda**2*omega**7 - 98304*Lambda**2*omega**6 - 110592*I*Lambda**2*omega**5 - 36864*Lambda**2*omega**4 - 23040*I*Lambda**2*omega**3 - 4608*Lambda**2*omega**2 - 1572864*Lambda*omega**8 + 1179648*I*Lambda*omega**7 + 196608*Lambda*omega**6 + 221184*I*Lambda*omega**5 + 27648*I*Lambda*omega**3)",
+          "(2*I*Lambda**7*omega + Lambda**7 - 192*I*Lambda**6*omega**3 - 104*Lambda**6*omega**2 - 48*I*Lambda**6*omega - 9*Lambda**6 + 7680*I*Lambda**5*omega**5 + 4992*Lambda**5*omega**4 + 2880*I*Lambda**5*omega**3 + 824*Lambda**5*omega**2 + 348*I*Lambda**5*omega + 54*Lambda**5 - 163840*I*Lambda**4*omega**7 - 137216*Lambda**4*omega**6 - 54784*I*Lambda**4*omega**5 - 30464*Lambda**4*omega**4 - 17760*I*Lambda**4*omega**3 - 2960*Lambda**4*omega**2 - 1252*I*Lambda**4*omega - 212*Lambda**4 + 1966080*I*Lambda**3*omega**9 + 2228224*Lambda**3*omega**8 - 8192*I*Lambda**3*omega**7 + 294912*Lambda**3*omega**6 + 335872*I*Lambda**3*omega**5 + 61952*Lambda**3*omega**4 + 58272*I*Lambda**3*omega**3 + 3888*Lambda**3*omega**2 + 3360*I*Lambda**3*omega + 408*Lambda**3 - 12582912*I*Lambda**2*omega**11 - 20447232*Lambda**2*omega**10 + 12582912*I*Lambda**2*omega**9 + 5865472*Lambda**2*omega**8 - 3260416*I*Lambda**2*omega**7 + 782336*Lambda**2*omega**6 - 1321984*I*Lambda**2*omega**5 - 47744*Lambda**2*omega**4 - 109056*I*Lambda**2*omega**3 + 4464*Lambda**2*omega**2 - 6672*I*Lambda**2*omega - 288*Lambda**2 + 33554432*I*Lambda*omega**13 + 92274688*Lambda*omega**12 - 140509184*I*Lambda*omega**11 - 123731968*Lambda*omega**10 + 30408704*I*Lambda*omega**9 - 23429120*Lambda*omega**8 + 9854976*I*Lambda*omega**7 - 4761600*Lambda*omega**6 + 2282496*I*Lambda*omega**5 - 144000*Lambda*omega**4 + 84288*I*Lambda*omega**3 - 21024*Lambda*omega**2 + 5760*I*Lambda*omega - 134217728*omega**14 + 436207616*I*omega**13 + 629145600*omega**12 - 285212672*I*omega**11 + 100663296*omega**10 - 64356352*I*omega**9 + 30834688*omega**8 - 6955008*I*omega**7 + 8933376*omega**6 - 1955328*I*omega**5 + 329472*omega**4 + 15552*I*omega**3 + 24192*omega**2)/(192*Lambda**5*omega**2 - 4608*Lambda**4*omega**4 - 1344*Lambda**4*omega**2 + 18432*Lambda**3*omega**4 + 2304*I*Lambda**3*omega**3 + 3072*Lambda**3*omega**2 + 393216*Lambda**2*omega**8 - 294912*I*Lambda**2*omega**7 - 49152*Lambda**2*omega**6 - 55296*I*Lambda**2*omega**5 - 18432*Lambda**2*omega**4 - 11520*I*Lambda**2*omega**3 - 2304*Lambda**2*omega**2 - 786432*Lambda*omega**8 + 589824*I*Lambda*omega**7 + 98304*Lambda*omega**6 + 110592*I*Lambda*omega**5 + 13824*I*Lambda*omega**3)",
+          "0",
+          "0"
+        ],
+        "pivot_columns": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "q": 5,
+        "rank": 4,
+        "row_labels": [
+          "vv:log0",
+          "vr:log0",
+          "rr:log0",
+          "vx:log0",
+          "rx:log0",
+          "angP:log0",
+          "angW:log0"
+        ],
+        "rref_augmented_matrix": [
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "(-2*I*Lambda**3*omega + 96*I*Lambda**2*omega**3 + 48*Lambda**2*omega**2 + 4*I*Lambda**2*omega - 1536*I*Lambda*omega**5 - 1920*Lambda*omega**4 + 384*I*Lambda*omega**3 - 72*Lambda*omega**2 + 8192*I*omega**7 + 18432*omega**6 - 10240*I*omega**5 - 384*omega**4 - 576*I*omega**3)/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)",
+            "(I*Lambda**7 - 96*I*Lambda**6*omega**2 - 8*Lambda**6*omega - 24*I*Lambda**6 + 3840*I*Lambda**5*omega**4 + 960*Lambda**5*omega**3 + 1632*I*Lambda**5*omega**2 + 116*Lambda**5*omega + 144*I*Lambda**5 - 81920*I*Lambda**4*omega**6 - 43008*Lambda**4*omega**5 - 37376*I*Lambda**4*omega**4 - 7680*Lambda**4*omega**3 - 8736*I*Lambda**4*omega**2 - 536*Lambda**4*omega - 320*I*Lambda**4 + 983040*I*Lambda**3*omega**8 + 950272*Lambda**3*omega**7 + 143360*I*Lambda**3*omega**6 + 59392*Lambda**3*omega**5 + 192512*I*Lambda**3*omega**4 + 19200*Lambda**3*omega**3 + 21648*I*Lambda**3*omega**2 + 816*Lambda**3*omega + 240*I*Lambda**3 - 6291456*I*Lambda**2*omega**10 - 11010048*Lambda**2*omega**9 + 6684672*I*Lambda**2*omega**8 + 3702784*Lambda**2*omega**7 - 1998848*I*Lambda**2*omega**6 + 483328*Lambda**2*omega**5 - 611840*I*Lambda**2*omega**4 - 28800*Lambda**2*omega**3 - 25536*I*Lambda**2*omega**2 - 288*Lambda**2*omega + 16777216*I*Lambda*omega**12 + 62914560*Lambda*omega**11 - 95420416*I*Lambda*omega**10 - 73924608*Lambda*omega**9 + 15597568*I*Lambda*omega**8 - 14106624*Lambda*omega**7 + 5443584*I*Lambda*omega**6 - 2307072*Lambda*omega**5 + 1027584*I*Lambda*omega**4 - 192*Lambda*omega**3 + 12480*I*Lambda*omega**2 - 134217728*omega**13 + 369098752*I*omega**12 + 411041792*omega**11 - 142606336*I*omega**10 + 74973184*omega**9 - 39452672*I*omega**8 + 16711680*omega**7 - 4694016*I*omega**6 + 3674112*omega**5 - 999936*I*omega**4 + 12672*omega**3)/(96*Lambda**5*omega - 2304*Lambda**4*omega**3 - 672*Lambda**4*omega + 9216*Lambda**3*omega**3 + 1152*I*Lambda**3*omega**2 + 1536*Lambda**3*omega + 196608*Lambda**2*omega**7 - 147456*I*Lambda**2*omega**6 - 24576*Lambda**2*omega**5 - 27648*I*Lambda**2*omega**4 - 9216*Lambda**2*omega**3 - 5760*I*Lambda**2*omega**2 - 1152*Lambda**2*omega - 393216*Lambda*omega**7 + 294912*I*Lambda*omega**6 + 49152*Lambda*omega**5 + 55296*I*Lambda*omega**4 + 6912*I*Lambda*omega**2)"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "(-3*I*Lambda**2*omega + 6*I*Lambda*omega + 768*I*omega**5 + 192*omega**4 + 36*omega**2)/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)",
+            "(-7*I*Lambda**6 + 384*I*Lambda**5*omega**2 + 82*I*Lambda**5 - 6912*I*Lambda**4*omega**4 + 576*Lambda**4*omega**3 - 2688*I*Lambda**4*omega**2 + 228*Lambda**4*omega - 316*I*Lambda**4 + 32768*I*Lambda**3*omega**6 - 24576*Lambda**3*omega**5 + 17408*I*Lambda**3*omega**4 - 13056*Lambda**3*omega**3 + 6144*I*Lambda**3*omega**2 - 1680*Lambda**3*omega + 504*I*Lambda**3 + 196608*I*Lambda**2*omega**8 + 294912*Lambda**2*omega**7 + 241664*I*Lambda**2*omega**6 + 178176*Lambda**2*omega**5 + 75776*I*Lambda**2*omega**4 + 56064*Lambda**2*omega**3 - 1776*I*Lambda**2*omega**2 + 4176*Lambda**2*omega - 288*I*Lambda**2 - 393216*I*Lambda*omega**8 - 196608*Lambda*omega**7 - 909312*I*Lambda*omega**6 - 86016*Lambda*omega**5 - 239616*I*Lambda*omega**4 - 64512*Lambda*omega**3 - 9120*I*Lambda*omega**2 - 3456*Lambda*omega - 16777216*I*omega**12 - 12582912*omega**11 + 1048576*I*omega**10 - 6291456*omega**9 + 3670016*I*omega**8 - 3883008*omega**7 + 1044480*I*omega**6 - 789504*omega**5 + 221184*I*omega**4 - 13248*omega**3 + 10368*I*omega**2)/(192*Lambda**5*omega - 4608*Lambda**4*omega**3 - 1344*Lambda**4*omega + 18432*Lambda**3*omega**3 + 2304*I*Lambda**3*omega**2 + 3072*Lambda**3*omega + 393216*Lambda**2*omega**7 - 294912*I*Lambda**2*omega**6 - 49152*Lambda**2*omega**5 - 55296*I*Lambda**2*omega**4 - 18432*Lambda**2*omega**3 - 11520*I*Lambda**2*omega**2 - 2304*Lambda**2*omega - 786432*Lambda*omega**7 + 589824*I*Lambda*omega**6 + 98304*Lambda*omega**5 + 110592*I*Lambda*omega**4 + 13824*I*Lambda*omega**2)"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0",
+            "-1/4",
+            "(4*I*Lambda**3*omega - 192*I*Lambda**2*omega**3 - 72*Lambda**2*omega**2 - 8*I*Lambda**2*omega - 3*Lambda**2 + 3072*I*Lambda*omega**5 + 3072*Lambda*omega**4 - 384*I*Lambda*omega**3 + 96*Lambda*omega**2 + 6*Lambda - 16384*I*omega**7 - 30720*omega**6 + 12800*I*omega**5 + 672*I*omega**3 - 36*I*omega)/(2*Lambda**3 - 48*Lambda**2*omega**2 - 10*Lambda**2 + 96*Lambda*omega**2 + 24*I*Lambda*omega + 12*Lambda + 4096*omega**6 - 3072*I*omega**5 - 512*omega**4 - 576*I*omega**3 - 72*I*omega)",
+            "(-4*I*Lambda**7*omega - 2*Lambda**7 + 384*I*Lambda**6*omega**3 + 200*Lambda**6*omega**2 + 128*I*Lambda**6*omega + 3*Lambda**6 - 15360*I*Lambda**5*omega**5 - 9216*Lambda**5*omega**4 - 7680*I*Lambda**5*omega**3 - 896*Lambda**5*omega**2 - 728*I*Lambda**5*omega + 30*Lambda**5 + 327680*I*Lambda**4*omega**7 + 243712*Lambda**4*omega**6 + 154112*I*Lambda**4*omega**5 + 49408*Lambda**4*omega**4 + 38496*I*Lambda**4*omega**3 + 512*Lambda**4*omega**2 + 1444*I*Lambda**4*omega - 20*Lambda**4 - 3932160*I*Lambda**3*omega**9 - 3801088*Lambda**3*omega**8 - 540672*I*Lambda**3*omega**7 - 598016*Lambda**3*omega**6 - 743424*I*Lambda**3*omega**5 - 31744*Lambda**3*omega**4 - 96192*I*Lambda**3*omega**3 + 5856*Lambda**3*omega**2 - 3120*I*Lambda**3*omega - 216*Lambda**3 + 25165824*I*Lambda**2*omega**11 + 33030144*Lambda**2*omega**10 - 19660800*I*Lambda**2*omega**9 - 9404416*Lambda**2*omega**8 + 6111232*I*Lambda**2*omega**7 - 1560576*Lambda**2*omega**6 + 2197504*I*Lambda**2*omega**5 - 105344*Lambda**2*omega**4 + 171648*I*Lambda**2*omega**3 - 18768*Lambda**2*omega**2 + 10704*I*Lambda**2*omega + 288*Lambda**2 - 67108864*I*Lambda*omega**13 - 134217728*Lambda*omega**12 + 230686720*I*Lambda*omega**11 + 216006656*Lambda*omega**10 - 45088768*I*Lambda*omega**9 + 40763392*Lambda*omega**8 - 14303232*I*Lambda*omega**7 + 8724480*Lambda*omega**6 - 3207168*I*Lambda*omega**5 + 391680*Lambda*omega**4 - 117888*I*Lambda*omega**3 + 45600*Lambda*omega**2 - 12672*I*Lambda*omega + 134217728*omega**14 - 637534208*I*omega**13 - 1098907648*omega**12 + 423624704*I*omega**11 - 206569472*omega**10 + 89522176*I*omega**9 - 52527104*omega**8 + 1990656*I*omega**7 - 16994304*omega**6 + 2274816*I*omega**5 - 852480*omega**4 - 100800*I*omega**3 - 65664*omega**2)/(384*Lambda**5*omega**2 - 9216*Lambda**4*omega**4 - 2688*Lambda**4*omega**2 + 36864*Lambda**3*omega**4 + 4608*I*Lambda**3*omega**3 + 6144*Lambda**3*omega**2 + 786432*Lambda**2*omega**8 - 589824*I*Lambda**2*omega**7 - 98304*Lambda**2*omega**6 - 110592*I*Lambda**2*omega**5 - 36864*Lambda**2*omega**4 - 23040*I*Lambda**2*omega**3 - 4608*Lambda**2*omega**2 - 1572864*Lambda*omega**8 + 1179648*I*Lambda*omega**7 + 196608*Lambda*omega**6 + 221184*I*Lambda*omega**5 + 27648*I*Lambda*omega**3)"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "1/2",
+            "(-2*I*Lambda**3*omega + 96*I*Lambda**2*omega**3 + 48*Lambda**2*omega**2 + 4*I*Lambda**2*omega - 1536*I*Lambda*omega**5 - 1920*Lambda*omega**4 + 384*I*Lambda*omega**3 - 72*Lambda*omega**2 + 8192*I*omega**7 + 18432*omega**6 - 10240*I*omega**5 - 384*omega**4 - 576*I*omega**3)/(Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega)",
+            "(2*I*Lambda**7*omega + Lambda**7 - 192*I*Lambda**6*omega**3 - 104*Lambda**6*omega**2 - 48*I*Lambda**6*omega - 9*Lambda**6 + 7680*I*Lambda**5*omega**5 + 4992*Lambda**5*omega**4 + 2880*I*Lambda**5*omega**3 + 824*Lambda**5*omega**2 + 348*I*Lambda**5*omega + 54*Lambda**5 - 163840*I*Lambda**4*omega**7 - 137216*Lambda**4*omega**6 - 54784*I*Lambda**4*omega**5 - 30464*Lambda**4*omega**4 - 17760*I*Lambda**4*omega**3 - 2960*Lambda**4*omega**2 - 1252*I*Lambda**4*omega - 212*Lambda**4 + 1966080*I*Lambda**3*omega**9 + 2228224*Lambda**3*omega**8 - 8192*I*Lambda**3*omega**7 + 294912*Lambda**3*omega**6 + 335872*I*Lambda**3*omega**5 + 61952*Lambda**3*omega**4 + 58272*I*Lambda**3*omega**3 + 3888*Lambda**3*omega**2 + 3360*I*Lambda**3*omega + 408*Lambda**3 - 12582912*I*Lambda**2*omega**11 - 20447232*Lambda**2*omega**10 + 12582912*I*Lambda**2*omega**9 + 5865472*Lambda**2*omega**8 - 3260416*I*Lambda**2*omega**7 + 782336*Lambda**2*omega**6 - 1321984*I*Lambda**2*omega**5 - 47744*Lambda**2*omega**4 - 109056*I*Lambda**2*omega**3 + 4464*Lambda**2*omega**2 - 6672*I*Lambda**2*omega - 288*Lambda**2 + 33554432*I*Lambda*omega**13 + 92274688*Lambda*omega**12 - 140509184*I*Lambda*omega**11 - 123731968*Lambda*omega**10 + 30408704*I*Lambda*omega**9 - 23429120*Lambda*omega**8 + 9854976*I*Lambda*omega**7 - 4761600*Lambda*omega**6 + 2282496*I*Lambda*omega**5 - 144000*Lambda*omega**4 + 84288*I*Lambda*omega**3 - 21024*Lambda*omega**2 + 5760*I*Lambda*omega - 134217728*omega**14 + 436207616*I*omega**13 + 629145600*omega**12 - 285212672*I*omega**11 + 100663296*omega**10 - 64356352*I*omega**9 + 30834688*omega**8 - 6955008*I*omega**7 + 8933376*omega**6 - 1955328*I*omega**5 + 329472*omega**4 + 15552*I*omega**3 + 24192*omega**2)/(192*Lambda**5*omega**2 - 4608*Lambda**4*omega**4 - 1344*Lambda**4*omega**2 + 18432*Lambda**3*omega**4 + 2304*I*Lambda**3*omega**3 + 3072*Lambda**3*omega**2 + 393216*Lambda**2*omega**8 - 294912*I*Lambda**2*omega**7 - 49152*Lambda**2*omega**6 - 55296*I*Lambda**2*omega**5 - 18432*Lambda**2*omega**4 - 11520*I*Lambda**2*omega**3 - 2304*Lambda**2*omega**2 - 786432*Lambda*omega**8 + 589824*I*Lambda*omega**7 + 98304*Lambda*omega**6 + 110592*I*Lambda*omega**5 + 13824*I*Lambda*omega**3)"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "rref_is_exact_rank_witness": true,
+        "variable_count": 6,
+        "variable_pivot_columns": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "physical_domain_exceptional_set": [],
+    "physical_domain_pivot_classification": [
+      {
+        "class": "NONZERO_RATIONAL_UNIT",
+        "factor": "16"
+      },
+      {
+        "class": "NONZERO_RATIONAL_UNIT",
+        "factor": "192"
+      },
+      {
+        "class": "NONZERO_RATIONAL_UNIT",
+        "factor": "2"
+      },
+      {
+        "class": "NONZERO_RATIONAL_UNIT",
+        "factor": "384"
+      },
+      {
+        "class": "NONZERO_RATIONAL_UNIT",
+        "factor": "4"
+      },
+      {
+        "class": "NONZERO_RATIONAL_UNIT",
+        "factor": "48"
+      },
+      {
+        "class": "NONZERO_RATIONAL_UNIT",
+        "factor": "8"
+      },
+      {
+        "class": "NONZERO_RATIONAL_UNIT",
+        "factor": "96"
+      },
+      {
+        "class": "PROVED_NONZERO_ON_PHYSICAL_DOMAIN",
+        "factor": "Lambda",
+        "proof": "Lambda=ell*(ell+1)>=6"
+      },
+      {
+        "class": "PROVED_NONZERO_ON_PHYSICAL_DOMAIN",
+        "factor": "Lambda - 2",
+        "proof": "Lambda-2>=4"
+      },
+      {
+        "class": "PROVED_NONZERO_ON_PHYSICAL_DOMAIN",
+        "factor": "Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega",
+        "proof": "Let x=omega**2>0. Im(Delta)=12*omega*(Lambda-128*x**2-24*x-3). If Im(Delta)=0, substitution into Re(Delta) gives 128*x**2*(16384*x**4+6144*x**3+1088*x**2+112*x+1)>0."
+      },
+      {
+        "class": "PROVED_NONZERO_ON_PHYSICAL_DOMAIN",
+        "factor": "omega",
+        "proof": "declared real omega!=0"
+      }
+    ],
+    "pivot_denominator_factors": [
+      "16",
+      "192",
+      "2",
+      "384",
+      "4",
+      "48",
+      "8",
+      "96",
+      "Lambda",
+      "Lambda - 2",
+      "Lambda**3 - 24*Lambda**2*omega**2 - 5*Lambda**2 + 48*Lambda*omega**2 + 12*I*Lambda*omega + 6*Lambda + 2048*omega**6 - 1536*I*omega**5 - 256*omega**4 - 288*I*omega**3 - 36*I*omega",
+      "omega"
+    ],
+    "q_counts": {
+      "0": 6,
+      "1": 7,
+      "2": 7,
+      "3": 7,
+      "4": 7,
+      "5": 7
+    },
+    "seven_original_ricci_rows": [
+      "vv",
+      "vr",
+      "rr",
+      "vx",
+      "rx",
+      "angP",
+      "angW"
+    ],
+    "seven_row_residual_intervals": {
+      "0": {
+        "angP": "0",
+        "angW": "0",
+        "rr": "0",
+        "rx": "0",
+        "vr": "0",
+        "vv": "0",
+        "vx": "0"
+      },
+      "1": {
+        "angP": "0",
+        "angW": "0",
+        "rr": "0",
+        "rx": "0",
+        "vr": "0",
+        "vv": "0",
+        "vx": "0"
+      },
+      "2": {
+        "angP": "0",
+        "angW": "0",
+        "rr": "0",
+        "rx": "0",
+        "vr": "0",
+        "vv": "0",
+        "vx": "0"
+      },
+      "3": {
+        "angP": "0",
+        "angW": "0",
+        "rr": "0",
+        "rx": "0",
+        "vr": "0",
+        "vv": "0",
+        "vx": "0"
+      },
+      "4": {
+        "angP": "0",
+        "angW": "0",
+        "rr": "0",
+        "rx": "0",
+        "vr": "0",
+        "vv": "0",
+        "vx": "0"
+      },
+      "5": {
+        "angP": "0",
+        "angW": "0",
+        "rr": "0",
+        "rx": "0",
+        "vr": "0",
+        "vv": "0",
+        "vx": "0"
+      }
+    }
+  },
+  "payload_sha256": "27d5987f31f2d00c671c906456131c72311f5b81ab2cfaeecaf9c5af2dae76f6",
+  "payload_sha256_canonicalization": "UTF-8 json.dumps(payload,sort_keys=True,separators=(',',':'),ensure_ascii=False)",
+  "payload_sha256_scope": [
+    "actual_power_depth_mapping",
+    "carrier_depth",
+    "carrier_jet",
+    "carrier_state_order",
+    "complete_log_classification",
+    "constructed_log_degree",
+    "equation_linked_variable_map",
+    "imported_v1",
+    "index",
+    "jet_axis_order",
+    "metric_depth",
+    "metric_field_order",
+    "metric_reconstruction",
+    "physical_conjugation",
+    "rate",
+    "safe_tail_ledger",
+    "sector",
+    "shift",
+    "sigma",
+    "source_f_map",
+    "source_field_order"
+  ],
+  "physical_conjugation": {
+    "fixed_symbols": [
+      "Lambda",
+      "m",
+      "omega",
+      "alpha"
+    ],
+    "map": "I -> -I",
+    "omega_is_not_negated": true,
+    "rate_effect": "-2*I*omega -> +2*I*omega"
+  },
+  "rate": "-2*I*omega",
+  "resonant_log_discrepancy": {
+    "applies_directly": false,
+    "disposition": "NONEXTENDIBLE_SHALLOW_SOURCE_ARTIFACT; complete all-order log classification is still not claimed",
+    "this_result": "the constructed direct-seven-row representative has log_degree=0 after the moving carrier recurrence fixes faster-mode freedoms",
+    "v1_depth2_result": "oscillatory branch 1 required log_degree=1 with nonzero log coefficients in the triangular eliminated splitting",
+    "v1_terminal_carrier_reconciliation": {
+      "agreement": "v1 and the extendible carrier agree at n=0,1 and differ at the terminal n=2 coefficient",
+      "first_next_order_left_null_defect": "3*Lambda - 48*omega**2 + 15 + 12*I*omega",
+      "physical_domain_proof": "its imaginary part is 12*omega, nonzero for real omega!=0",
+      "reading": "the v1 terminal carrier jet is nowhere extendible on the declared physical domain; its log is not evidence for an extendible logarithmic branch"
+    }
+  },
+  "result_id": "PHASE2_POLAR_OSCILLATORY_2_EXACT_LIFT_V1",
+  "safe_tail_ledger": {
+    "carrier_minus_metric_depth": 4,
+    "carrier_orders_serialized": [
+      0,
+      9
+    ],
+    "maximum_source_derivative_order": 4,
+    "metric_orders_verified": [
+      0,
+      5
+    ],
+    "reading": "Every coefficient used by the seven-row checks through the declared metric depth lies inside the serialized carrier jet; no all-order tail is claimed."
+  },
+  "schema_version": "phase2-polar-branch-artifact-v1",
+  "sector": "oscillatory",
+  "shift": 5,
+  "sigma": "-4*I*omega - 3",
+  "source_f_map": "f_n=-b_n-c_n/2+c_(n-1), with c_(-1)=0, at M=1",
+  "source_field_order": [
+    "a",
+    "b",
+    "c",
+    "f"
+  ]
+}

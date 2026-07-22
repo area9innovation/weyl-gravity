@@ -1,0 +1,76 @@
+{
+  "schema": "phase2-black-hole-general-l-polar-canonical-frontier-receipt-v1",
+  "result_id": "PHASE2_BLACK_HOLE_GENERAL_L_POLAR_CANONICAL_LOG_FREE_FRONTIER_RECEIPT_V1",
+  "date": "2026-07-22",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "scientific_disposition": "PARTIAL",
+  "verification_status": "PASS",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile black_hole_programme/phase2/general_l_polar_completion/{incremental_recurrence.py,produce.py,verify.py} black_hole_programme/phase2/general_l_polar_completion/tests/test_incremental_recurrence.py",
+        "python3 -m json.tool black_hole_programme/phase2/general_l_polar_completion/{schema.json,certificate.json,receipt.json}",
+        "git diff --check -- black_hole_programme/phase2/general_l_polar_completion reports/phase2-black-hole-general-l-polar-incremental-completion-2026-07-22.md residual_atlas/phase2-black-hole-general-l-polar-incremental-completion-fragment-v1.json"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m black_hole_programme.phase2.general_l_polar_completion.produce --check",
+        "timeout -k 10s 300s python3 -u -m black_hole_programme.phase2.general_l_polar_completion.verify",
+        "timeout -k 10s 300s python3 -u -m unittest black_hole_programme.phase2.general_l_polar_completion.tests.test_incremental_recurrence -v",
+        "python3 residual_atlas/validate_fragment.py residual_atlas/phase2-black-hole-general-l-polar-incremental-completion-fragment-v1.json"
+      ],
+      "results": [
+        "content-addressed assembly replay passed",
+        "independent exact RREF, seven-row and v1 next-order compatibility replay passed",
+        "4 tests passed in 228.450 seconds",
+        "residual atlas fragment validator passed"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "reason": "The verifier replayed the complete affected v1 carrier/reconstruction subobject chain by exact content hash and fresh equation substitution."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This terminalizes a scoped PARTIAL frontier without promoting the EE/EX/XX current theorem, parity join, phase space, or paper freeze."
+    }
+  },
+  "bounded_solver_ledger": {
+    "hard_bound_per_branch_seconds": 180,
+    "method": "incremental exact fraction-field carrier recurrence plus per-order affine all-seven Ricci solve",
+    "final_regeneration_seconds": {
+      "zero:0": "2.78",
+      "zero:1": "4.17",
+      "zero:2": "6.25",
+      "oscillatory:1": "26.97",
+      "oscillatory:2": "100.37"
+    },
+    "oscillatory_0": {
+      "mathematical_checkpoint": "q=0..5 completed exactly in two prior bounded runs; the preserved artifact contains all jets and affine witnesses",
+      "final_metadata_run": "the recurrence again completed q=5, but exact denominator postprocessing reached the 180-second process wall before file replacement",
+      "disposition": "NOT_A_SCIENTIFIC_SHORTFALL; deterministic metadata hardening preserved the existing exact checkpoint, and the independent verifier freshly replayed its RREFs and seven rows"
+    },
+    "no_orphan_processes": true
+  },
+  "content_sha256_manifest": {
+    "black_hole_programme/phase2/general_l_polar_completion/incremental_recurrence.py": "7ec34f7c335a409dbe74f3278b5d6b45190d62acb2e8a42163d227027c4b8ad8",
+    "black_hole_programme/phase2/general_l_polar_completion/produce.py": "2ddfbcd9ebbc42fce202667130969e39f36af5d680f3fe6b6dfb3857316f7657",
+    "black_hole_programme/phase2/general_l_polar_completion/verify.py": "3060e085da35e493528bc7024d7c7751a5cfba281a7ac9ed8e9e2175cb218ac8",
+    "black_hole_programme/phase2/general_l_polar_completion/schema.json": "360f0152ed195f64acceeb3552cc1ddca4ce0e3eaa3f770f5bd6ab9e1810c3b9",
+    "black_hole_programme/phase2/general_l_polar_completion/certificate.json": "cfd437f7aa1c647b37ffbdfa3563faa821720540101a70f801f5d8c23ea84efc",
+    "black_hole_programme/phase2/general_l_polar_completion/branch_artifacts/oscillatory-0.json": "6e92fb33445f692eb298c0d4b3993ae91e57e389c9a0d595c095da3d99455344",
+    "black_hole_programme/phase2/general_l_polar_completion/branch_artifacts/oscillatory-1.json": "4a15bc975f46e5101509ad5a5d64676498f5c917159f3b4ca1f1f742dba241e8",
+    "black_hole_programme/phase2/general_l_polar_completion/branch_artifacts/oscillatory-2.json": "c7bdb2946a449032c75fdc92f598965ed09ac247bf0e7d5bec68091954f2e24a",
+    "black_hole_programme/phase2/general_l_polar_completion/branch_artifacts/zero-0.json": "1b4e6edf7ad3a75ea6e01dc90c0451af08a666fc5fd37f58b9cedfe191ac3f0b",
+    "black_hole_programme/phase2/general_l_polar_completion/branch_artifacts/zero-1.json": "773802ebd67874d8ab2febe56e326cb1bbe60f717b33deb6aca1695c23ca2c35",
+    "black_hole_programme/phase2/general_l_polar_completion/branch_artifacts/zero-2.json": "f18f87ad4d7d7fc9d189167aafae3dbd73701b4cd07472998d943430568ae7ed",
+    "black_hole_programme/phase2/general_l_polar_completion/tests/__init__.py": "a8b4ab22ab22943112153fc2e9e4239d9cc0ca7b027da4da995e3312a3fb0c4c",
+    "black_hole_programme/phase2/general_l_polar_completion/tests/test_incremental_recurrence.py": "8525a02b3d9d2bc12fb29e4ed883ff4d41ac6eee43b7b1147c6e0e243ef86f62",
+    "reports/phase2-black-hole-general-l-polar-incremental-completion-2026-07-22.md": "62cca06979a1b1e178c186f367e1bde1b779fde86d10ada2bf142172216ff6a9",
+    "residual_atlas/phase2-black-hole-general-l-polar-incremental-completion-fragment-v1.json": "57d07057f2bedff89045f7e3d9288244164bec07b84bda0ea8064af1700064fa"
+  },
+  "claim_boundary": "The receipt certifies six canonical log-free finite-depth generic-polar sourced metric representatives, exact all-seven-row closure through conservative depths, exact affine/rank witnesses, an empty physical pivot-wall set for these representatives, and the nonextendibility of the old shallow oscillatory carrier artifact. It does not certify a complete log module, homogeneous Einstein basis, representative-shift law, EE/EX/XX current table, current exceptional set, asymptotic phase space, stability, scattering, positivity, particles, or quantum claims."
+}

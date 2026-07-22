@@ -1,0 +1,69 @@
+{
+  "description_axes": ["causal", "symplectic", "nonlinear", "observational", "quantum"],
+  "entries": [
+    {
+      "claim_boundary": "This LOCAL-ALGEBRAIC + REDUCED-MODE result constructs six canonical log-free finite-depth generic-polar sourced metric jets, verifies all seven original Ricci rows, classifies every exposed pivot denominator as a physical nonwall, and proves the old shallow oscillatory logarithm came from a nowhere-extendible terminal carrier jet. It does not certify the complete log module, a representative-shift-invariant EE/EX/XX table, asymptotic phase space, stability, particles, positivity, or quantum claims.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "symplectic": "OPEN",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "black_hole_programme/phase2/general_l_polar_completion/certificate.json",
+          "result_id": "PHASE2_BLACK_HOLE_GENERAL_L_POLAR_CANONICAL_LOG_FREE_FRONTIER_V1",
+          "sha256": "cfd437f7aa1c647b37ffbdfa3563faa821720540101a70f801f5d8c23ea84efc"
+        }
+      ],
+      "id": "black_hole.schwarzschild.polar.general_l_canonical_log_free_frontier",
+      "mode_data": {
+        "dispersion": {
+          "statement": "All six canonical carrier representatives have exact all-seven sourced metric jets through conservative finite depths.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The universal F^v bilinear remains certified by v1; the branch-specialized representative-shift-invariant EE/EX/XX table is open.",
+          "status": "OPEN"
+        },
+        "resonance": {
+          "statement": "The old depth-2 logarithm is a nonextendible shallow-source artifact; complete extendible log-module classification remains open.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {"statement": "No nonlinear source is evaluated.", "status": "NOT_APPLICABLE"},
+          "causal_retarded": {"statement": "No retarded propagator or causal phase space is constructed.", "status": "NO_CERTIFIED_MAP"},
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {"statement": "No quadratic source is evaluated.", "status": "NOT_APPLICABLE"}
+        },
+        "taub_maps": {"statement": "No compact second-order Taub map is involved.", "status": "NOT_APPLICABLE"}
+      },
+      "scope": {
+        "background": "Schwarzschild exterior, M=1 with dimensionless restoration by rho=r/M and varpi=M*omega",
+        "boundaries": "formal large-radius finite inverse-radial jets",
+        "carrier": "six canonical polar additional Ricci-carrier representatives",
+        "charge_sector": "no asymptotic charge or phase-space quotient",
+        "degree": 1,
+        "ell": "all integer ell>=2 through Lambda=ell(ell+1)",
+        "k": "finite formal radial 1/r order",
+        "m": "axisymmetric representative with exact irreducible harmonic norms",
+        "omega": "real omega!=0",
+        "parity": "polar only",
+        "theory": "linearized four-dimensional pure Weyl C^2 gravity"
+      }
+    }
+  ],
+  "generated_by": "black_hole_programme/phase2/general_l_polar_completion/produce.py",
+  "generated_by_sha256": "2ddfbcd9ebbc42fce202667130969e39f36af5d680f3fe6b6dfb3857316f7657",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": ["CERTIFIED", "OBSTRUCTED", "OPEN", "NOT_APPLICABLE", "NO_CERTIFIED_MAP"],
+  "team": "black_hole",
+  "verification_commands": [
+    "python3 -m black_hole_programme.phase2.general_l_polar_completion.produce --check",
+    "python3 -m black_hole_programme.phase2.general_l_polar_completion.verify",
+    "python3 -m unittest black_hole_programme.phase2.general_l_polar_completion.tests.test_incremental_recurrence -v",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/phase2-black-hole-general-l-polar-incremental-completion-fragment-v1.json"
+  ]
+}
