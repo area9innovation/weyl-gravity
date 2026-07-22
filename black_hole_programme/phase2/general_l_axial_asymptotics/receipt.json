@@ -1,0 +1,76 @@
+{
+  "schema": "phase2-black-hole-general-l-axial-asymptotics-receipt-v1",
+  "result_id": "PURE_WEYL_PHASE2_GENERAL_L_AXIAL_ASYMPTOTICS_TIER_RECEIPT",
+  "date": "2026-07-22",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.13,
+      "commands": [
+        "python3 -m py_compile black_hole_programme/phase2/general_l_axial_asymptotics/{general_l_axial_asymptotics.py,verify_general_l_axial_asymptotics.py,test_general_l_axial_asymptotics.py}",
+        "python3 -m json.tool black_hole_programme/phase2/general_l_axial_asymptotics/{schema.json,certificate.json,atlas_fragment.json}",
+        "git diff --check -- black_hole_programme/phase2/general_l_axial_asymptotics reports/phase2-black-hole-general-l-axial-asymptotics-2026-07-22.md"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 33.01,
+      "commands": [
+        "python3 black_hole_programme/phase2/general_l_axial_asymptotics/general_l_axial_asymptotics.py --check",
+        "python3 black_hole_programme/phase2/general_l_axial_asymptotics/verify_general_l_axial_asymptotics.py",
+        "python3 -m pytest black_hole_programme/phase2/general_l_axial_asymptotics/test_general_l_axial_asymptotics.py -q",
+        "python3 residual_atlas/validate_fragment.py black_hole_programme/phase2/general_l_axial_asymptotics/atlas_fragment.json"
+      ],
+      "results": [
+        "certificate reproduces byte-for-byte",
+        "independent explicit-P3/VbGeo metric and carrier systems pass",
+        "ell=3 rates/powers, recurrence pivots, exceptions and claim boundary pass",
+        "8 tests pass, including the prospective-tree provenance-format gate",
+        "residual-atlas fragment passes"
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "No imported mathematical input, shared operator, existing schema, generated artifact or existing claim changed. Every prerequisite is a read-only content-hashed input, so the affected existing certificate chain is empty."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a scoped CLASSIFIED recurrence theorem, not a classical/quantum freeze, theorem-frozen paper promotion, release, or shared-core change."
+    }
+  },
+  "content_sha256_manifest": {
+    "black_hole_programme/phase2/general_l_axial_asymptotics/__init__.py": "7fa9c8f06e1130122b9a8d2d45e190c24fb860f3d3f23a591ef60ad6d61b0ae6",
+    "black_hole_programme/phase2/general_l_axial_asymptotics/general_l_axial_asymptotics.py": "f7931dcf23fd108ba120a1bccf1a53d0227e4445726768563b5af7460f8b16ef",
+    "black_hole_programme/phase2/general_l_axial_asymptotics/verify_general_l_axial_asymptotics.py": "78992411e28713f867c19c3aa163d6159595acdecdd7e6e255225e55f2d0c528",
+    "black_hole_programme/phase2/general_l_axial_asymptotics/test_general_l_axial_asymptotics.py": "c4448f8d860c84c348def66a941e5a5664374ac307a3280d8131e3846d9ab974",
+    "black_hole_programme/phase2/general_l_axial_asymptotics/schema.json": "710333693d895f4522df64d08bdd51a8784d07392c4713d16eea9d4cb77bb044",
+    "black_hole_programme/phase2/general_l_axial_asymptotics/certificate.json": "6742e049806d3122a4c1b3a2b01d1305448f0ee6287e955083a0749cbe304523",
+    "black_hole_programme/phase2/general_l_axial_asymptotics/atlas_fragment.json": "430bd6782091ec71534585b365c4828d6f990fb5f3988fbe31478e8d3b1b11e3",
+    "reports/phase2-black-hole-general-l-axial-asymptotics-2026-07-22.md": "0a46b827ba9967f947084c062a1368b102aea212315946fa352ecc2a07329eec"
+  },
+  "source_manifest": {
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_asymptotics/__init__.py": "417d8846d289269b0061114802362664d01b6c1b",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_asymptotics/general_l_axial_asymptotics.py": "98535097ee7303b6d108de7c19afa4257da31e33",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_asymptotics/verify_general_l_axial_asymptotics.py": "a64423b840d7c3c136203d1cc2c14ec21f1d08e0",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_asymptotics/test_general_l_axial_asymptotics.py": "2d84ea1ae8e653860a041b84bb49bcc3b8992436",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_asymptotics/schema.json": "70802cc583436f72fd973546c3d1f7ad1912b8ec",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_asymptotics/certificate.json": "707467bb2a4b279b8355bc79b0b9482a8f2da8f0",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_asymptotics/atlas_fragment.json": "3a5d8e3b15f4fe99bca6b31bcf31b228ff86cf8f",
+    "physics/symplectic-reconstruction/reports/phase2-black-hole-general-l-axial-asymptotics-2026-07-22.md": "228c7d92aecf155371fcf3efc351de0cae422404"
+  },
+  "independent_rail": {
+    "status": "PASS",
+    "method": "The verifier does not import the producer. It substitutes the explicit Legendre polynomial P3=(5*x^3-3*x)/2 before geometry, uses the verifier-side VbGeo Schouten/Kulkarni-Nomizu curvature engine, reconstructs the complete ell=3 carrier and metric systems, and independently derives their large-radius rates and powers."
+  },
+  "mutations_rejected": [
+    "top recurrence n*(n-1) changed to n*(n+1)",
+    "spurious angular pole (Lambda-6)^-1 inserted into a pivot",
+    "omega=0 omitted from the exceptional set",
+    "literal-current, finite-selection, polar or phase-space claim flag promoted"
+  ],
+  "claim_boundary": "This receipt covers the exact generic-ell axial Schwarzschild Ricci-carrier and homogeneous metric asymptotic systems, all-orders formal recurrence pivots, compatible integer-spaced carrier resonances and exact exceptional locus on ell>=2 and real omega!=0. It does not cover a literal Lee-Wald current, finite radial pairing or selection theorem, the polar sector, convergence, an asymptotic phase space or Hilbert norm, scattering, QNMs, stability, particles, positivity, unitarity or quantum claims."
+}

@@ -1,0 +1,93 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This LOCAL-ALGEBRAIC + REDUCED-MODE theorem derives the generic-ell axial Schwarzschild Ricci-carrier and homogeneous metric asymptotic systems, all-orders formal recurrence pivots, compatible integer-spaced resonances and exact exceptional set. It computes no literal Lee-Wald current, finite-pairing selection, polar sector, asymptotic phase space, Hilbert norm, scattering, QNM, stability, particle, positivity or quantum result.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OPEN"
+      },
+      "evidence": [
+        {
+          "path": "black_hole_programme/phase2/general_l_axial_asymptotics/certificate.json",
+          "result_id": "PURE_WEYL_PHASE2_GENERAL_L_AXIAL_ASYMPTOTICS",
+          "sha256": "6742e049806d3122a4c1b3a2b01d1305448f0ee6287e955083a0749cbe304523"
+        }
+      ],
+      "id": "black_hole.schwarzschild.axial.general_l_asymptotic_recurrences",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The exact EF exponential rates are 0 and -2 i omega; carrier powers are {0,-1} and {-4 i M omega,-4 i M omega-1}, while the metric-master powers are -3 and 1-4 i M omega.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The generic-ell recurrence is ready for the separately gated literal-current calculation; no current coefficient or finite-pairing theorem is asserted here.",
+          "status": "OPEN"
+        },
+        "resonance": {
+          "statement": "The n=1 integer-spaced resonance in each top carrier sector is exactly compatible and introduces no logarithm; all later pivots are nonzero for real omega != 0.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No nonlinear or second-order solution is evaluated.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "No retarded propagator or causal phase space is constructed.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No quadratic source is evaluated.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "No compact second-order Taub map is involved.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "Schwarzschild exterior, mass M>0",
+        "boundaries": "formal large-radius expansion only",
+        "carrier": "axial tracefree Ricci carrier and homogeneous metric perturbation",
+        "charge_sector": "no asymptotic charge or phase-space quotient",
+        "degree": 1,
+        "ell": "all integer ell>=2; ell=0,1 isolated exceptional representations",
+        "k": "radial formal 1/r order",
+        "m": "axisymmetric representative used for harmonic reduction; radial operator depends only on ell",
+        "omega": "real omega!=0; omega=0 is the exact exceptional frequency",
+        "parity": "axial only",
+        "theory": "linearized four-dimensional pure Weyl C^2 gravity"
+      }
+    }
+  ],
+  "generated_by": "black_hole_programme/phase2/general_l_axial_asymptotics/general_l_axial_asymptotics.py",
+  "generated_by_sha256": "f7931dcf23fd108ba120a1bccf1a53d0227e4445726768563b5af7460f8b16ef",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "black_hole",
+  "verification_commands": [
+    "python3 black_hole_programme/phase2/general_l_axial_asymptotics/general_l_axial_asymptotics.py --check",
+    "python3 black_hole_programme/phase2/general_l_axial_asymptotics/verify_general_l_axial_asymptotics.py",
+    "python3 -m pytest black_hole_programme/phase2/general_l_axial_asymptotics/test_general_l_axial_asymptotics.py -q",
+    "python3 residual_atlas/validate_fragment.py black_hole_programme/phase2/general_l_axial_asymptotics/atlas_fragment.json"
+  ]
+}

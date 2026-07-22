@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase2-black-hole-general-l-axial-asymptotics-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_token",
+    "dependency_tags", "lifecycle", "declaration", "provenance", "carrier",
+    "metric", "exceptional_set", "positive_controls", "claim_flags",
+    "does_not_establish", "verification"
+  ],
+  "properties": {
+    "schema": {"const": "phase2-black-hole-general-l-axial-asymptotics-v1"},
+    "schema_path": {"const": "black_hole_programme/phase2/general_l_axial_asymptotics/schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "PURE_WEYL_PHASE2_GENERAL_L_AXIAL_ASYMPTOTICS"},
+    "result_token": {"const": "BH_PHASE2_GENERAL_L_AXIAL_ASYMPTOTIC_RECURRENCES_EXACT"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle": {"const": "CLASSIFIED"},
+    "declaration": {
+      "type": "object",
+      "required": ["background", "chart", "coefficient_field", "frequency", "radial_class", "sector", "theory", "future_consumer"]
+    },
+    "provenance": {
+      "type": "object",
+      "minProperties": 9,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "carrier": {
+      "type": "object",
+      "required": ["state", "matrix", "A0", "A1", "characteristic_polynomial", "rates", "sectors", "formal_class"]
+    },
+    "metric": {
+      "type": "object",
+      "required": ["state", "matrix", "master", "formal_sectors", "generalized_polynomial_mode", "all_orders_reading"]
+    },
+    "exceptional_set": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["frequency", "angular_representations", "declared_domain_exception_free", "proof"],
+      "properties": {
+        "frequency": {"const": ["omega=0"]},
+        "angular_representations": {"const": ["ell=0", "ell=1"]},
+        "declared_domain_exception_free": {"const": true},
+        "proof": {"type": "string"}
+      }
+    },
+    "positive_controls": {"type": "object"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generic_ell_carrier_operator_certified", "generic_ell_metric_operator_certified",
+        "all_orders_formal_recurrences_certified", "exact_exceptional_set_certified",
+        "carrier_logs_excluded_for_real_omega_nonzero", "literal_lee_wald_current_computed",
+        "finite_pairing_selection_certified", "polar_certified", "asymptotic_phase_space_constructed"
+      ],
+      "properties": {
+        "generic_ell_carrier_operator_certified": {"const": true},
+        "generic_ell_metric_operator_certified": {"const": true},
+        "all_orders_formal_recurrences_certified": {"const": true},
+        "exact_exceptional_set_certified": {"const": true},
+        "carrier_logs_excluded_for_real_omega_nonzero": {"const": true},
+        "literal_lee_wald_current_computed": {"const": false},
+        "finite_pairing_selection_certified": {"const": false},
+        "polar_certified": {"const": false},
+        "asymptotic_phase_space_constructed": {"const": false}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "verification": {"type": "object"}
+  }
+}

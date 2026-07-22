@@ -1,0 +1,314 @@
+{
+  "carrier": {
+    "A0": [
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-2*I*omega",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-2*I*omega"
+      ]
+    ],
+    "A1": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-4*I*M*omega",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-2",
+        "-2*I*omega",
+        "-4*I*M*omega - 2"
+      ]
+    ],
+    "characteristic_polynomial": "z**2*(2*I*omega + z)**2",
+    "formal_class": "exp(rate*r)*r**sigma*sum_{n>=0} y_n*r**(-n), over Q(Lambda,omega,M,i), with omega!=0",
+    "matrix": [
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "(Lambda*r - 4*M)/(-2*M*r**2 + r**3)",
+        "-2*I*omega*r/(-2*M + r)",
+        "-2*I*M*omega/(-2*M*r + r**2)",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "-2/(-2*M + r)",
+        "(Lambda*r - 4*M - 2*I*omega*r**2)/(-2*M*r**2 + r**3)",
+        "(-2*I*omega*r - 2)/(-2*M + r)"
+      ]
+    ],
+    "rates": [
+      "0",
+      "-2*I*omega"
+    ],
+    "sectors": {
+      "-2*I*omega": {
+        "all_orders_reading": "after the compatible n=1 resonance, the top pivot is nonzero for every integer n>=2; the lower pivot is nonzero for every integer n>=1 when omega!=0",
+        "indicial_determinant": "4*omega**2*(4*M*omega - I*sigma)*(4*M*omega - I*sigma - I)",
+        "logarithm_forced": false,
+        "lower_power": "-4*I*M*omega - 1",
+        "lower_recurrence_pivot": "-4*n*omega**2*(n + 1)",
+        "powers": [
+          "-4*I*M*omega - 1",
+          "-4*I*M*omega"
+        ],
+        "top_n1_resonance": {
+          "compatible": true,
+          "free_parameter_reading": "the one free coefficient is the independent lower-power solution; setting it to zero fixes the top-power representative",
+          "particular_coefficient": [
+            "I*(Lambda - 16*M**2*omega**2)/(4*omega)",
+            "0"
+          ],
+          "rhs": [
+            "-(Lambda - 16*M**2*omega**2)/2",
+            "Lambda - 16*M**2*omega**2"
+          ]
+        },
+        "top_power": "-4*I*M*omega",
+        "top_recurrence_pivot": "-4*n*omega**2*(n - 1)"
+      },
+      "0": {
+        "all_orders_reading": "after the compatible n=1 resonance, the top pivot is nonzero for every integer n>=2; the lower pivot is nonzero for every integer n>=1 when omega!=0",
+        "indicial_determinant": "-4*omega**2*sigma*(sigma + 1)",
+        "logarithm_forced": false,
+        "lower_power": "-1",
+        "lower_recurrence_pivot": "-4*n*omega**2*(n + 1)",
+        "powers": [
+          "-1",
+          "0"
+        ],
+        "top_n1_resonance": {
+          "compatible": true,
+          "free_parameter_reading": "the one free coefficient is the independent lower-power solution; setting it to zero fixes the top-power representative",
+          "particular_coefficient": [
+            "I*Lambda/(2*omega)",
+            "0"
+          ],
+          "rhs": [
+            "Lambda",
+            "0"
+          ]
+        },
+        "top_power": "0",
+        "top_recurrence_pivot": "-4*n*omega**2*(n - 1)"
+      }
+    },
+    "state": [
+      "Pc",
+      "dPc/dr",
+      "Qc",
+      "dQc/dr"
+    ]
+  },
+  "claim_flags": {
+    "all_orders_formal_recurrences_certified": true,
+    "asymptotic_phase_space_constructed": false,
+    "carrier_logs_excluded_for_real_omega_nonzero": true,
+    "exact_exceptional_set_certified": true,
+    "finite_pairing_selection_certified": false,
+    "generic_ell_carrier_operator_certified": true,
+    "generic_ell_metric_operator_certified": true,
+    "literal_lee_wald_current_computed": false,
+    "polar_certified": false
+  },
+  "declaration": {
+    "background": "Schwarzschild mass M>0; M=1 is the Paper-14 normalization",
+    "chart": "ingoing Eddington--Finkelstein",
+    "coefficient_field": "Q(Lambda,omega,M,i)",
+    "frequency": "real omega!=0",
+    "future_consumer": "conjugate-frequency sphere-integrated Lee--Wald F^v; not computed here",
+    "radial_class": "formal exponential/polyhomogeneous 1/r series; no convergence asserted",
+    "sector": "axial, Lambda=ell*(ell+1), ell>=2",
+    "theory": "pure Weyl gravity, S=alpha*integral sqrt(-g) C^2"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a literal Lee--Wald current coefficient or finite-radial-pairing theorem",
+    "a polar-parity or omega=0 statement",
+    "convergence or summability of the formal radial series",
+    "a full asymptotic phase space, Hilbert norm, scattering map, QNM, stability, particle, positivity or quantum statement"
+  ],
+  "exceptional_set": {
+    "angular_representations": [
+      "ell=0",
+      "ell=1"
+    ],
+    "declared_domain_exception_free": true,
+    "frequency": [
+      "omega=0"
+    ],
+    "proof": "all post-indicial pivots depend only on a nonzero integer and omega; Lambda occurs only in numerators. The two rates collide only at omega=0. The imported exact harmonic theorem isolates ell=0,1 before the generic ell>=2 reduction."
+  },
+  "lifecycle": "CLASSIFIED",
+  "metric": {
+    "all_orders_reading": "both scalar master recurrences have a nonzero diagonal pivot at every post-indicial order for omega!=0; Lambda and M occur only in recurrence numerators",
+    "formal_sectors": {
+      "rate_0": {
+        "logarithm_forced": false,
+        "pivot_domain": "k=3 is the indicial root; nonzero for every integer k>=4 when omega!=0",
+        "power": "-3",
+        "rate": "0",
+        "recurrence_pivot": "-2*I*omega*(k - 3)",
+        "series_head": {
+          "3": "1",
+          "4": "I*(Lambda - 6)/(2*omega)",
+          "5": "-(Lambda**2 - 18*Lambda - 60*I*M*omega + 72)/(8*omega**2)",
+          "6": "-I*(Lambda**3 - 38*Lambda**2 - 252*I*Lambda*M*omega + 432*Lambda + 2352*I*M*omega - 1440)/(48*omega**3)"
+        }
+      },
+      "rate_minus_2_i_omega": {
+        "logarithm_forced": false,
+        "pivot_domain": "nonzero for every integer n>=1 when omega!=0",
+        "power": "-4*I*M*omega + 1",
+        "rate": "-2*I*omega",
+        "recurrence_pivot": "2*I*n*omega",
+        "series_head": {
+          "0": "1",
+          "1": "-I*(Lambda - 16*M**2*omega**2 + 8*I*M*omega - 2)/(2*omega)",
+          "2": "-(Lambda**2 - 32*Lambda*M**2*omega**2 + 16*I*Lambda*M*omega - 2*Lambda + 256*M**4*omega**4 - 320*I*M**3*omega**3 - 32*M**2*omega**2 - 20*I*M*omega)/(8*omega**2)",
+          "3": "I*(Lambda**3 - 48*Lambda**2*M**2*omega**2 + 24*I*Lambda**2*M*omega - 2*Lambda**2 + 768*Lambda*M**4*omega**4 - 960*I*Lambda*M**3*omega**3 - 192*Lambda*M**2*omega**2 - 36*I*Lambda*M*omega - 4096*M**6*omega**6 + 9216*I*M**5*omega**5 + 5120*M**4*omega**4 - 192*I*M**3*omega**3 + 288*M**2*omega**2)/(48*omega**3)"
+        }
+      }
+    },
+    "generalized_polynomial_mode": {
+      "H0": "-I*(I*Lambda*r + 4*I*M + 2*omega*r**2 - 2*I*r)/(2*r)",
+      "condition": "H1=constant",
+      "degree": 1,
+      "logarithm": false,
+      "ramified": false
+    },
+    "master": {
+      "coefficients": [
+        "-2*M*r + r**2",
+        "2*M + 2*I*omega*r**2 + 2*r",
+        "-Lambda + 6*I*omega*r"
+      ],
+      "equation": "(r**2-2*M*r)*F'' + (2*I*omega*r**2+2*r+2*M)*F' + (6*I*omega*r-Lambda)*F = 0",
+      "variable": "F=dH1/dr"
+    },
+    "matrix": [
+      [
+        "0",
+        "(-2*M - I*omega*r**2)/r**2",
+        "(2*M - r)/r"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "-2/(-2*M*r + r**2)",
+        "(Lambda*r + 4*M - 2*I*omega*r**2 - 2*r)/(-2*M*r**2 + r**3)",
+        "(-4*M - 2*I*omega*r**2)/(-2*M*r + r**2)"
+      ]
+    ],
+    "state": [
+      "H0",
+      "H1",
+      "dH1/dr"
+    ]
+  },
+  "positive_controls": {
+    "ell_2_carrier_powers_match_BH2C_ASYMPTOTIC_JORDAN": true,
+    "ell_2_metric_master_matches_BH2C_METRIC_ALL_ORDERS": true,
+    "ell_3_independent_recomputation": "required from verify_general_l_axial_asymptotics.py"
+  },
+  "provenance": {
+    "asymptotic_jordan_l2": {
+      "path": "black_hole_programme/certificates/BH2C_ASYMPTOTIC_JORDAN.json",
+      "sha256": "9ed3c744f2916042acee118ce380f469fdcad69bd2010e2deaae78486b97468e"
+    },
+    "bach_engine": {
+      "path": "black_hole_programme/linearized_bach.py",
+      "sha256": "17af69d23396452fc1a60306787a38276b12ebcabec72dc397e69533486f120a"
+    },
+    "endpoint_assembly": {
+      "path": "black_hole_programme/certificates/BH_ENDPOINT_NONSELECTION_ASSEMBLY.json",
+      "sha256": "01ddadcfe4354bb20b57df838b013e9fc5d39f728dcb0be8a70c45ad3c92177a"
+    },
+    "general_l_structural": {
+      "path": "black_hole_programme/certificates/BH2_GENERAL_L_STRUCTURAL.json",
+      "sha256": "1c375331014b1121791e8d6c63d994d84a41a0a94aa94233ecf28222475b6863"
+    },
+    "geometry_engine": {
+      "path": "black_hole_programme/weyl_geometry.py",
+      "sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c"
+    },
+    "metric_all_orders": {
+      "path": "black_hole_programme/certificates/BH2C_METRIC_ALL_ORDERS.json",
+      "sha256": "41efc9c13bf1637bbff3cd5f3c1e6e8f90744ce4abc7128ae5ea8f0afb1b7916"
+    },
+    "omega_zero": {
+      "path": "black_hole_programme/certificates/BH2_OMEGA_ZERO.json",
+      "sha256": "46ec15deda3e79eb6d0481c457e5b4b7e9a70508e7d5964f6c68e57ef11a7b47"
+    },
+    "producer": {
+      "path": "black_hole_programme/phase2/general_l_axial_asymptotics/general_l_axial_asymptotics.py",
+      "sha256": "f7931dcf23fd108ba120a1bccf1a53d0227e4445726768563b5af7460f8b16ef"
+    },
+    "symbolic_flux": {
+      "path": "black_hole_programme/certificates/BH2C_SYMBOLIC_FLUX_RADIATION_CLASS.json",
+      "sha256": "8cbcfa2d762d1274f05a41d6200856c6d6f406d181543c44d56748bbc20f55ae"
+    },
+    "symbolic_indicial": {
+      "path": "black_hole_programme/certificates/BH2C_SYMBOLIC_INDICIAL.json",
+      "sha256": "a28ab13dda157111413138d3e28a3aa85eb1011927dfd574736c7f7dc80a9c67"
+    }
+  },
+  "result_id": "PURE_WEYL_PHASE2_GENERAL_L_AXIAL_ASYMPTOTICS",
+  "result_token": "BH_PHASE2_GENERAL_L_AXIAL_ASYMPTOTIC_RECURRENCES_EXACT",
+  "schema": "phase2-black-hole-general-l-axial-asymptotics-v1",
+  "schema_path": "black_hole_programme/phase2/general_l_axial_asymptotics/schema.json",
+  "schema_sha256": "710333693d895f4522df64d08bdd51a8784d07392c4713d16eea9d4cb77bb044",
+  "verification": {
+    "independent_ell3": "python3 black_hole_programme/phase2/general_l_axial_asymptotics/verify_general_l_axial_asymptotics.py",
+    "producer_check": "python3 black_hole_programme/phase2/general_l_axial_asymptotics/general_l_axial_asymptotics.py --check"
+  }
+}
