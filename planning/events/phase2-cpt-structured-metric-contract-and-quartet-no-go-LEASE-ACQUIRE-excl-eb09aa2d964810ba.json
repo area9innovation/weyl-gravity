@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase2-cpt-structured-metric-contract-and-quartet-no-go-LEASE-ACQUIRE-excl-eb09aa2d964810ba",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/phase2-cpt-structured-metric-contract-and-quartet-no-go-LEASE-ACQUIRE-excl-eb09aa2d964810ba.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "phase2-cpt-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-22T09:25:51Z", "seq": 2, "predecessor": "sf:program/event/phase2-cpt-structured-metric-contract-and-quartet-no-go-LEASE-ACQUIRE-excl-bbbcc69dc14d4844", "payload": {"target": "sf:program/work/phase2-cpt-structured-metric-contract-and-quartet-no-go", "agent": "phase2-cpt-1", "lease_type": "exclusive", "action": "ACQUIRE", "acquired": "2026-07-22T09:25:51Z", "expires": "2026-07-22T15:25:51Z"}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/phase2-cpt-structured-metric-contract-and-quartet-no-go"}]
+}

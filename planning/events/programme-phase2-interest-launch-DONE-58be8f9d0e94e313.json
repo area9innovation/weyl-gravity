@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/programme-phase2-interest-launch-DONE-58be8f9d0e94e313",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/programme-phase2-interest-launch-DONE-58be8f9d0e94e313.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "coordinator", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-22T09:23:03Z", "seq": 3, "predecessor": "sf:program/event/programme-phase2-interest-launch-ACTIVE-f1c3908a84070fec", "payload": {"target": "sf:program/work/programme-phase2-interest-launch", "to_state": "DONE", "note": "Phase 2 is adopted, split before shortfall risk, and ready", "evidence_basis": "reports/PHASE2_INTEREST_LAUNCH_V1_TIER_RECEIPT.json"}, "native": {"authored_by": "sfc close-out", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/programme-phase2-interest-launch"}]
+}

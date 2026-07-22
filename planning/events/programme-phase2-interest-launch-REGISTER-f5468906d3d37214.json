@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/programme-phase2-interest-launch-REGISTER-f5468906d3d37214",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item register",
+  "source": {"path": "tools/science-forge/program/events/programme-phase2-interest-launch-REGISTER-f5468906d3d37214.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_REGISTER", "actor": "coordinator", "base_revision": "science-forge-ir-v0", "when": "2026-07-22T09:10:10Z", "seq": 1, "payload": {"target": "sf:program/work/programme-phase2-interest-launch", "actor": "coordinator"}, "native": {"authored_by": "sfc work-register", "policy": "append-only (SPEC 4.5); a coordinator admits an uncommitted work-item definition into the authoritative queue; keyed to the definition hash. The normal admission is committing the definition."}},
+  "edges": [{"rel": "REGISTERS", "to": "sf:program/work/programme-phase2-interest-launch"}]
+}
