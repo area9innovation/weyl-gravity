@@ -27,6 +27,74 @@ CARD_CLAIMS = {
     ],
 }
 
+PHASE2_INPUTS = [
+    {
+        "key": "generic_l_schwarzschild",
+        "result_id": "PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1",
+        "path": "black_hole_programme/phase2/generic_l_synthesis/certificate.json",
+        "sha256": "8a9914400f0929f37a63570b95383ebc4131cbf2928b5f923db0d002d0783d33",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+        "edge_kind": "NEGATIVE_RESULT",
+        "paper_location": "Result card C",
+        "relationship": "Supersedes the fixture-level Einstein-selection reading in the declared formal radial class.",
+    },
+    {
+        "key": "compact_pt_cpt",
+        "result_id": "PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1",
+        "path": "quantum-weyl/pt_cpt/synthesis/certificates/PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1.json",
+        "sha256": "516415604952c1f835ea0d46095d8fa82b07fe36de3dc33d641e34f0b938223c",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+        "edge_kind": "SUPPORTING_EVIDENCE",
+        "paper_location": "Result cards A and E",
+        "relationship": "Adds positive-metric feasibility, BRST-chain obstruction, and quartet negative control without promoting a full state.",
+    },
+    {
+        "key": "berger_hadamard",
+        "result_id": "PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1",
+        "path": "quantum-weyl/pt_cpt/hadamard_stretch/certificates/PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1.json",
+        "sha256": "cb705de9f5ba2589ebe514304709f175846307a20f0ea671a78711490e152e8c",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL", "REDUCED-MODE"],
+        "edge_kind": "LIMITATION",
+        "paper_location": "Can a positive quantum state be constructed?",
+        "relationship": "Pins the missing full-carrier obstruction and does not claim nonexistence.",
+    },
+    {
+        "key": "nariai_sign_mechanism",
+        "result_id": "NARIAI_SIGN_MECHANISM_V2",
+        "path": "d_quotient_classical/phase2/nariai_sign_mechanism_v2/NARIAI_SIGN_MECHANISM_V2.json",
+        "sha256": "abc73ddf5ada84dfe93d7891411f7134c7c2906ec3f70550fe50e1a6c542b4f8",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+        "edge_kind": "PRIMARY_THEOREM",
+        "paper_location": "Result card A discussion",
+        "relationship": "Adds a scoped relative-residue mechanism without identifying background families or absolute signs.",
+    },
+    {
+        "key": "dyonic_flat_preflight",
+        "result_id": "DYONIC_FLAT_FAMILY_PREFLIGHT_V1",
+        "path": "bridge/phase2/dyonic_flat_family_preflight/DYONIC_FLAT_FAMILY_PREFLIGHT_V1.json",
+        "sha256": "db0baaa808b131389de09adcbe02d423d210201f96290f94bea0f25be05fdfc2",
+        "dependency_tags": ["LOCAL-ALGEBRAIC"],
+        "edge_kind": "NEGATIVE_RESULT",
+        "paper_location": "Result card A discussion",
+        "relationship": "Prevents promotion of a fixed-coupling stationary sign-family scan.",
+    },
+]
+
+GENERIC_L_TERMINAL_RECEIPTS = [
+    {
+        "path": "black_hole_programme/phase2/generic_l_synthesis/receipt.json",
+        "sha256": "0888efb8f14518d38e40bd1b0a3926b8fab37ad729dce798c221a01d24aeabee",
+    },
+    {
+        "path": "reports/phase2-black-hole-generic-l-disposition-2026-07-22.md",
+        "sha256": "571fab0469b7bfde2b051b94bea657547570376b390a30a5b9ad6b6e93e92558",
+    },
+    {
+        "path": "planning/paper-coverage/phase2-black-hole-paper-correction-request.json",
+        "sha256": "308b27ba24076f7e439e36ebceb322442af1b1dcee225449d791cc105f403094",
+    },
+]
+
 
 def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -40,6 +108,11 @@ def main() -> None:
     if missing:
         raise SystemExit(f"missing frozen claims: {missing}")
 
+    for item in PHASE2_INPUTS + GENERIC_L_TERMINAL_RECEIPTS:
+        path = ROOT / item["path"]
+        if digest(path) != item["sha256"]:
+            raise SystemExit(f"Phase-2 input hash drift: {item['path']}")
+
     cards = []
     for card, ids in CARD_CLAIMS.items():
         cards.append(
@@ -52,8 +125,8 @@ def main() -> None:
         )
 
     payload = {
-        "schema": "paper15-phase1-synthesis-claim-map-v2",
-        "result_id": "PAPER15_FOUR_LEVEL_PHASE1_SYNTHESIS_V2",
+        "schema": "paper15-phase1-synthesis-claim-map-v3",
+        "result_id": "PAPER15_FOUR_LEVEL_PHASE1_SYNTHESIS_WITH_PHASE2_UPDATE_V3",
         "result_state": "PUBLICATION_SYNTHESIS_OF_FROZEN_CLAIMS",
         "paper": str(PAPER.relative_to(ROOT)),
         "paper_sha256": digest(PAPER),
@@ -61,6 +134,8 @@ def main() -> None:
         "authoritative_ledger_sha256": digest(LEDGER),
         "authoritative_result_id": ledger["result_id"],
         "theorem_cards": cards,
+        "phase2_updates": PHASE2_INPUTS,
+        "generic_l_terminal_receipts": GENERIC_L_TERMINAL_RECEIPTS,
         "supporting_claim_ids": [
             "phase1.interaction.disposition",
             "phase1.observer.disposition",
@@ -84,7 +159,7 @@ def main() -> None:
             "source": {"path": str(PAPER.relative_to(ROOT))},
             "body": {
                 "paper_class": "overview",
-                "native": {"source_kind": "paper15-additive-phase1-synthesis-v2"},
+                "native": {"source_kind": "paper15-additive-phase1-synthesis-with-phase2-v3"},
             },
             "edges": [],
         }
@@ -121,9 +196,60 @@ def main() -> None:
                 },
             ]
         )
+    for item in PHASE2_INPUTS:
+        raw = item["result_id"]
+        result_id = f"sf:result/{raw}"
+        claim_id = f"paper:15-four-level-ghost-classification-phase1-synthesis/claim/phase2-{item['key']}"
+        coverage_nodes.extend(
+            [
+                {
+                    "kind": "result",
+                    "id": result_id,
+                    "title": raw,
+                    "source": {"path": item["path"], "sha256": item["sha256"]},
+                    "body": {
+                        "lifecycle": "CLASSIFIED",
+                        "boundary": {
+                            "dependency_tags": item["dependency_tags"],
+                            "relationship": item["relationship"],
+                        },
+                    },
+                    "edges": [],
+                },
+                {
+                    "kind": "paper_claim",
+                    "id": claim_id,
+                    "body": {
+                        "paper": "paper:15-four-level-ghost-classification-phase1-synthesis",
+                        "material": True,
+                        "asserts_lifecycle": "CLASSIFIED",
+                        "boundary": {
+                            "dependency_tags": item["dependency_tags"],
+                            "paper_location": item["paper_location"],
+                            "relationship": item["relationship"],
+                        },
+                        "cites": [result_id],
+                    },
+                },
+                {
+                    "kind": "result_paper_edge",
+                    "id": f"sf:coverage/edge/{raw}/paper-15/phase2-update-v3",
+                    "body": {
+                        "from": result_id,
+                        "to": "paper:15-four-level-ghost-classification-phase1-synthesis",
+                        "claim": claim_id,
+                        "edge_kind": item["edge_kind"],
+                        "stale": False,
+                        "version": 3,
+                        "stamp": "2026-07-22",
+                        "native": {"source_schema": "result-paper-edge-v0"},
+                    },
+                },
+            ]
+        )
     coverage = {
         "ir": "science-forge-ir-v0",
-        "schema": "paper15-phase1-synthesis-overlay-v2",
+        "schema": "paper15-phase1-synthesis-overlay-v3",
         "append_only_parent": str(COVERAGE_SOURCE.relative_to(ROOT)),
         "append_only_parent_sha256": digest(COVERAGE_SOURCE),
         "claim_map": str(OUTPUT.relative_to(ROOT)),

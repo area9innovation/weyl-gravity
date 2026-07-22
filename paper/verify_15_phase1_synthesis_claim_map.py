@@ -16,6 +16,49 @@ LEDGER = ROOT / "reports/phase1-closure-claims-ledger-2026-07-22.json"
 COVERAGE_SOURCE = ROOT / "planning/paper-coverage/phase1-paper-coverage-overlay-2026-07-22.json"
 COVERAGE = ROOT / "planning/paper-coverage/paper15-phase1-synthesis-overlay-2026-07-22.json"
 
+AUTHOR_BLOCK = r"""\author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
+\and Claude Fable 5\thanks{Anthropic model and computational coauthor. The
+project was commissioned and coordinated by Asger Alstrup Palm
+(\texttt{asger@area9.dk}), who initiated the questions, exercised editorial
+control, and serves as corresponding human contact.}}"""
+
+EXPECTED_PHASE2 = {
+    "PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1": (
+        "black_hole_programme/phase2/generic_l_synthesis/certificate.json",
+        "8a9914400f0929f37a63570b95383ebc4131cbf2928b5f923db0d002d0783d33",
+        ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+    ),
+    "PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1": (
+        "quantum-weyl/pt_cpt/synthesis/certificates/PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1.json",
+        "516415604952c1f835ea0d46095d8fa82b07fe36de3dc33d641e34f0b938223c",
+        ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+    ),
+    "PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1": (
+        "quantum-weyl/pt_cpt/hadamard_stretch/certificates/PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1.json",
+        "cb705de9f5ba2589ebe514304709f175846307a20f0ea671a78711490e152e8c",
+        ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL", "REDUCED-MODE"],
+    ),
+    "NARIAI_SIGN_MECHANISM_V2": (
+        "d_quotient_classical/phase2/nariai_sign_mechanism_v2/NARIAI_SIGN_MECHANISM_V2.json",
+        "abc73ddf5ada84dfe93d7891411f7134c7c2906ec3f70550fe50e1a6c542b4f8",
+        ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+    ),
+    "DYONIC_FLAT_FAMILY_PREFLIGHT_V1": (
+        "bridge/phase2/dyonic_flat_family_preflight/DYONIC_FLAT_FAMILY_PREFLIGHT_V1.json",
+        "db0baaa808b131389de09adcbe02d423d210201f96290f94bea0f25be05fdfc2",
+        ["LOCAL-ALGEBRAIC"],
+    ),
+}
+
+EXPECTED_GENERIC_RECEIPTS = {
+    "black_hole_programme/phase2/generic_l_synthesis/receipt.json":
+        "0888efb8f14518d38e40bd1b0a3926b8fab37ad729dce798c221a01d24aeabee",
+    "reports/phase2-black-hole-generic-l-disposition-2026-07-22.md":
+        "571fab0469b7bfde2b051b94bea657547570376b390a30a5b9ad6b6e93e92558",
+    "planning/paper-coverage/phase2-black-hole-paper-correction-request.json":
+        "308b27ba24076f7e439e36ebceb322442af1b1dcee225449d791cc105f403094",
+}
+
 
 def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -43,6 +86,31 @@ def main() -> None:
         fail("authoritative ledger hash drift")
     if claim_map["authoritative_result_id"] != "PURE_WEYL_PROGRAMME_PHASE1_CLASSIFICATION_ENDING_V1":
         fail("wrong Phase-1 authority")
+    if claim_map["schema"] != "paper15-phase1-synthesis-claim-map-v3":
+        fail("wrong claim-map schema")
+
+    updates = {item["result_id"]: item for item in claim_map["phase2_updates"]}
+    if set(updates) != set(EXPECTED_PHASE2):
+        fail("Phase-2 result set drift")
+    for result_id, (path_string, expected_hash, expected_tags) in EXPECTED_PHASE2.items():
+        item = updates[result_id]
+        if item["path"] != path_string or item["sha256"] != expected_hash:
+            fail(f"Phase-2 pin drift for {result_id}")
+        path = ROOT / path_string
+        if digest(path) != expected_hash:
+            fail(f"Phase-2 source hash drift for {result_id}")
+        source = json.loads(path.read_text())
+        if source.get("result_id") != result_id:
+            fail(f"Phase-2 source result mismatch for {result_id}")
+        if item["dependency_tags"] != expected_tags or source.get("dependency_tags") != expected_tags:
+            fail(f"Phase-2 dependency-tag drift for {result_id}")
+
+    receipts = {item["path"]: item["sha256"] for item in claim_map["generic_l_terminal_receipts"]}
+    if receipts != EXPECTED_GENERIC_RECEIPTS:
+        fail("generic-l terminal receipt set drift")
+    for path_string, expected_hash in EXPECTED_GENERIC_RECEIPTS.items():
+        if digest(ROOT / path_string) != expected_hash:
+            fail(f"generic-l terminal receipt hash drift: {path_string}")
 
     mapped = set()
     for card in claim_map["theorem_cards"]:
@@ -69,13 +137,17 @@ def main() -> None:
         fail(f"theorem-card coverage mismatch: {sorted(mapped ^ required_ids)}")
 
     text = paper.read_text()
+    if AUTHOR_BLOCK not in text:
+        fail("frozen author block drift")
     required_phrases = [
         "Result card A: compact Einstein/additional decomposition",
         "Result card B: finite-harmonic second-order cone",
-        "Result card C: radial-pairing selection at a Schwarzschild fixture",
+        "Result card C: generic-angular formal radial disposition on Schwarzschild",
         "Result card D: strict and compensated local quantum theories",
         "Result card E: causal construction and physical nonselection",
-        "M\\omega=3/5",
+        "Q_{21}\\bigl(\\ell(\\ell+1),\\omega^2\\bigr)=0",
+        "Einstein-only formal radial selection is",
+        "not physical scattering thresholds",
         "N_{\\ell m}=\\int_{S^2}|Y_{\\ell m}|^2\\dd\\Omega>0",
         "h_+(u,v)=",
         "S_{\\rm cf}=",
@@ -87,7 +159,12 @@ def main() -> None:
         "\\Gamma^{(1)}_{\\rm div}(d)",
         "Stelle's foundational analyses",
         "This is a classification ending, not a viable-theory claim",
-        "No positive full-BV state has been constructed",
+        "no positive full-BV state or one-particle Hilbert space has been constructed",
+        "do not construct a genuine Mannheim $C$ operator",
+        "not a proof that no BRST-compatible Hadamard",
+        "complex spectrum excludes a",
+        "the two factor projectors have Lee--Wald residues",
+        "constructs neither a",
     ]
     for phrase in required_phrases:
         if phrase not in text:
@@ -102,6 +179,11 @@ def main() -> None:
         "Lee--Wald inertia",
         "exact 70-component causal BV parent",
         "$(\\ell,m\\omega)=(2,3/5)$",
+        "radial-pairing selection at a Schwarzschild fixture",
+        "selects the Einstein sector at the stated",
+        "a full covariance is impossible",
+        "the Nariai factors are the compact-product branches",
+        "the anomaly vanishes under PT",
     ]
     for phrase in forbidden_phrases:
         if phrase.lower() in text.lower():
@@ -120,15 +202,31 @@ def main() -> None:
     nodes = coverage["nodes"]
     edges = [node for node in nodes if node["kind"] == "result_paper_edge"]
     claims = {node["id"]: node for node in nodes if node["kind"] == "paper_claim"}
-    if {edge["body"]["from"] for edge in edges} != source_results:
+    phase1_edges = [
+        edge for edge in edges if edge["body"]["edge_kind"] == "OVERVIEW_SYNTHESIS"
+    ]
+    if {edge["body"]["from"] for edge in phase1_edges} != source_results:
         fail("Paper 15 reverse-coverage result set is incomplete")
-    for edge in edges:
+    for edge in phase1_edges:
         body = edge["body"]
         if body["edge_kind"] != "OVERVIEW_SYNTHESIS" or body["stale"] is not False:
             fail("Paper 15 coverage edge overpromoted or stale")
         claim = claims.get(body["claim"])
         if not claim or claim["body"]["cites"] != [body["from"]]:
             fail("Paper 15 coverage claim/edge mismatch")
+
+    phase2_edges = [edge for edge in edges if edge not in phase1_edges]
+    if {edge["body"]["from"].removeprefix("sf:result/") for edge in phase2_edges} != set(EXPECTED_PHASE2):
+        fail("Paper 15 Phase-2 reverse-coverage result set is incomplete")
+    expected_kinds = {item["result_id"]: item["edge_kind"] for item in claim_map["phase2_updates"]}
+    for edge in phase2_edges:
+        body = edge["body"]
+        raw = body["from"].removeprefix("sf:result/")
+        if body["edge_kind"] != expected_kinds[raw] or body["stale"] is not False:
+            fail(f"Paper 15 Phase-2 edge drift for {raw}")
+        claim = claims.get(body["claim"])
+        if not claim or claim["body"]["cites"] != [body["from"]]:
+            fail("Paper 15 Phase-2 coverage claim/edge mismatch")
 
     print("PASS: Paper 15 claim map, append-only reverse coverage, lifecycles, limitations, and scope sentinels")
 

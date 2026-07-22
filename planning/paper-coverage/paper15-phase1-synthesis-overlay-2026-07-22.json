@@ -2,13 +2,13 @@
   "append_only_parent": "planning/paper-coverage/phase1-paper-coverage-overlay-2026-07-22.json",
   "append_only_parent_sha256": "389d1033e9b40bd66cfc5237d3cd2df4ea2575e1d17847d4a519dba89f6b8be2",
   "claim_map": "paper/15-four-level-ghost-classification-phase1-synthesis-claim-map.json",
-  "claim_map_sha256": "8a24bc5ca307d47f4397bd098a3e0b93b789e548eb46b6e358bdedb25d26f564",
+  "claim_map_sha256": "1343e15e954e8dc6fdd53ef1ed9ddacc3e38c61fcaf16ffb932579a52afb4ac6",
   "ir": "science-forge-ir-v0",
   "nodes": [
     {
       "body": {
         "native": {
-          "source_kind": "paper15-additive-phase1-synthesis-v2"
+          "source_kind": "paper15-additive-phase1-synthesis-with-phase2-v3"
         },
         "paper_class": "overview"
       },
@@ -100,6 +100,106 @@
     },
     {
       "body": {
+        "asserts_lifecycle": "CLASSIFIED",
+        "boundary": {
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "LORENTZIAN-CAUSAL",
+            "REDUCED-MODE"
+          ],
+          "paper_location": "Can a positive quantum state be constructed?",
+          "relationship": "Pins the missing full-carrier obstruction and does not claim nonexistence."
+        },
+        "cites": [
+          "sf:result/PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1"
+        ],
+        "material": true,
+        "paper": "paper:15-four-level-ghost-classification-phase1-synthesis"
+      },
+      "id": "paper:15-four-level-ghost-classification-phase1-synthesis/claim/phase2-berger_hadamard",
+      "kind": "paper_claim"
+    },
+    {
+      "body": {
+        "asserts_lifecycle": "CLASSIFIED",
+        "boundary": {
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "REDUCED-MODE"
+          ],
+          "paper_location": "Result cards A and E",
+          "relationship": "Adds positive-metric feasibility, BRST-chain obstruction, and quartet negative control without promoting a full state."
+        },
+        "cites": [
+          "sf:result/PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1"
+        ],
+        "material": true,
+        "paper": "paper:15-four-level-ghost-classification-phase1-synthesis"
+      },
+      "id": "paper:15-four-level-ghost-classification-phase1-synthesis/claim/phase2-compact_pt_cpt",
+      "kind": "paper_claim"
+    },
+    {
+      "body": {
+        "asserts_lifecycle": "CLASSIFIED",
+        "boundary": {
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC"
+          ],
+          "paper_location": "Result card A discussion",
+          "relationship": "Prevents promotion of a fixed-coupling stationary sign-family scan."
+        },
+        "cites": [
+          "sf:result/DYONIC_FLAT_FAMILY_PREFLIGHT_V1"
+        ],
+        "material": true,
+        "paper": "paper:15-four-level-ghost-classification-phase1-synthesis"
+      },
+      "id": "paper:15-four-level-ghost-classification-phase1-synthesis/claim/phase2-dyonic_flat_preflight",
+      "kind": "paper_claim"
+    },
+    {
+      "body": {
+        "asserts_lifecycle": "CLASSIFIED",
+        "boundary": {
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "REDUCED-MODE"
+          ],
+          "paper_location": "Result card C",
+          "relationship": "Supersedes the fixture-level Einstein-selection reading in the declared formal radial class."
+        },
+        "cites": [
+          "sf:result/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1"
+        ],
+        "material": true,
+        "paper": "paper:15-four-level-ghost-classification-phase1-synthesis"
+      },
+      "id": "paper:15-four-level-ghost-classification-phase1-synthesis/claim/phase2-generic_l_schwarzschild",
+      "kind": "paper_claim"
+    },
+    {
+      "body": {
+        "asserts_lifecycle": "CLASSIFIED",
+        "boundary": {
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "LORENTZIAN-CAUSAL"
+          ],
+          "paper_location": "Result card A discussion",
+          "relationship": "Adds a scoped relative-residue mechanism without identifying background families or absolute signs."
+        },
+        "cites": [
+          "sf:result/NARIAI_SIGN_MECHANISM_V2"
+        ],
+        "material": true,
+        "paper": "paper:15-four-level-ghost-classification-phase1-synthesis"
+      },
+      "id": "paper:15-four-level-ghost-classification-phase1-synthesis/claim/phase2-nariai_sign_mechanism",
+      "kind": "paper_claim"
+    },
+    {
+      "body": {
         "asserts_lifecycle": "CERTIFIED",
         "boundary": "Symbolic real-frequency flux/radiation-class evidence on the declared Schwarzschild carrier; metric reconstruction, complex frequencies, full exterior phase space, stability, and ringdown remain open.",
         "cites": [
@@ -123,6 +223,106 @@
       },
       "id": "paper:15-four-level-ghost-classification-phase1-synthesis/claim/pure_weyl_bh_endpoint_nonselection_assembly",
       "kind": "paper_claim"
+    },
+    {
+      "body": {
+        "boundary": {
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC"
+          ],
+          "relationship": "Prevents promotion of a fixed-coupling stationary sign-family scan."
+        },
+        "lifecycle": "CLASSIFIED"
+      },
+      "edges": [],
+      "id": "sf:result/DYONIC_FLAT_FAMILY_PREFLIGHT_V1",
+      "kind": "result",
+      "source": {
+        "path": "bridge/phase2/dyonic_flat_family_preflight/DYONIC_FLAT_FAMILY_PREFLIGHT_V1.json",
+        "sha256": "db0baaa808b131389de09adcbe02d423d210201f96290f94bea0f25be05fdfc2"
+      },
+      "title": "DYONIC_FLAT_FAMILY_PREFLIGHT_V1"
+    },
+    {
+      "body": {
+        "boundary": {
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "LORENTZIAN-CAUSAL"
+          ],
+          "relationship": "Adds a scoped relative-residue mechanism without identifying background families or absolute signs."
+        },
+        "lifecycle": "CLASSIFIED"
+      },
+      "edges": [],
+      "id": "sf:result/NARIAI_SIGN_MECHANISM_V2",
+      "kind": "result",
+      "source": {
+        "path": "d_quotient_classical/phase2/nariai_sign_mechanism_v2/NARIAI_SIGN_MECHANISM_V2.json",
+        "sha256": "abc73ddf5ada84dfe93d7891411f7134c7c2906ec3f70550fe50e1a6c542b4f8"
+      },
+      "title": "NARIAI_SIGN_MECHANISM_V2"
+    },
+    {
+      "body": {
+        "boundary": {
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "LORENTZIAN-CAUSAL",
+            "REDUCED-MODE"
+          ],
+          "relationship": "Pins the missing full-carrier obstruction and does not claim nonexistence."
+        },
+        "lifecycle": "CLASSIFIED"
+      },
+      "edges": [],
+      "id": "sf:result/PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1",
+      "kind": "result",
+      "source": {
+        "path": "quantum-weyl/pt_cpt/hadamard_stretch/certificates/PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1.json",
+        "sha256": "cb705de9f5ba2589ebe514304709f175846307a20f0ea671a78711490e152e8c"
+      },
+      "title": "PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1"
+    },
+    {
+      "body": {
+        "boundary": {
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "REDUCED-MODE"
+          ],
+          "relationship": "Adds positive-metric feasibility, BRST-chain obstruction, and quartet negative control without promoting a full state."
+        },
+        "lifecycle": "CLASSIFIED"
+      },
+      "edges": [],
+      "id": "sf:result/PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1",
+      "kind": "result",
+      "source": {
+        "path": "quantum-weyl/pt_cpt/synthesis/certificates/PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1.json",
+        "sha256": "516415604952c1f835ea0d46095d8fa82b07fe36de3dc33d641e34f0b938223c"
+      },
+      "title": "PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1"
+    },
+    {
+      "body": {
+        "boundary": {
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "REDUCED-MODE"
+          ],
+          "relationship": "Supersedes the fixture-level Einstein-selection reading in the declared formal radial class."
+        },
+        "lifecycle": "CLASSIFIED"
+      },
+      "edges": [],
+      "id": "sf:result/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1",
+      "kind": "result",
+      "source": {
+        "path": "black_hole_programme/phase2/generic_l_synthesis/certificate.json",
+        "sha256": "8a9914400f0929f37a63570b95383ebc4131cbf2928b5f923db0d002d0783d33"
+      },
+      "title": "PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1"
     },
     {
       "body": {
@@ -158,6 +358,22 @@
     },
     {
       "body": {
+        "claim": "paper:15-four-level-ghost-classification-phase1-synthesis/claim/phase2-dyonic_flat_preflight",
+        "edge_kind": "NEGATIVE_RESULT",
+        "from": "sf:result/DYONIC_FLAT_FAMILY_PREFLIGHT_V1",
+        "native": {
+          "source_schema": "result-paper-edge-v0"
+        },
+        "stale": false,
+        "stamp": "2026-07-22",
+        "to": "paper:15-four-level-ghost-classification-phase1-synthesis",
+        "version": 3
+      },
+      "id": "sf:coverage/edge/DYONIC_FLAT_FAMILY_PREFLIGHT_V1/paper-15/phase2-update-v3",
+      "kind": "result_paper_edge"
+    },
+    {
+      "body": {
         "claim": "paper:15-four-level-ghost-classification-phase1-synthesis/claim/einstein_maxwell_weyl_polar_direct_lee_wald_completion_v1",
         "edge_kind": "OVERVIEW_SYNTHESIS",
         "from": "sf:coverage/result/EINSTEIN_MAXWELL_WEYL_POLAR_DIRECT_LEE_WALD_COMPLETION_V1",
@@ -170,6 +386,22 @@
         "version": 2
       },
       "id": "sf:coverage/edge/EINSTEIN_MAXWELL_WEYL_POLAR_DIRECT_LEE_WALD_COMPLETION_V1/paper-15/phase1-synthesis-v2",
+      "kind": "result_paper_edge"
+    },
+    {
+      "body": {
+        "claim": "paper:15-four-level-ghost-classification-phase1-synthesis/claim/phase2-nariai_sign_mechanism",
+        "edge_kind": "PRIMARY_THEOREM",
+        "from": "sf:result/NARIAI_SIGN_MECHANISM_V2",
+        "native": {
+          "source_schema": "result-paper-edge-v0"
+        },
+        "stale": false,
+        "stamp": "2026-07-22",
+        "to": "paper:15-four-level-ghost-classification-phase1-synthesis",
+        "version": 3
+      },
+      "id": "sf:coverage/edge/NARIAI_SIGN_MECHANISM_V2/paper-15/phase2-update-v3",
       "kind": "result_paper_edge"
     },
     {
@@ -222,6 +454,38 @@
     },
     {
       "body": {
+        "claim": "paper:15-four-level-ghost-classification-phase1-synthesis/claim/phase2-berger_hadamard",
+        "edge_kind": "LIMITATION",
+        "from": "sf:result/PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1",
+        "native": {
+          "source_schema": "result-paper-edge-v0"
+        },
+        "stale": false,
+        "stamp": "2026-07-22",
+        "to": "paper:15-four-level-ghost-classification-phase1-synthesis",
+        "version": 3
+      },
+      "id": "sf:coverage/edge/PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1/paper-15/phase2-update-v3",
+      "kind": "result_paper_edge"
+    },
+    {
+      "body": {
+        "claim": "paper:15-four-level-ghost-classification-phase1-synthesis/claim/phase2-compact_pt_cpt",
+        "edge_kind": "SUPPORTING_EVIDENCE",
+        "from": "sf:result/PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1",
+        "native": {
+          "source_schema": "result-paper-edge-v0"
+        },
+        "stale": false,
+        "stamp": "2026-07-22",
+        "to": "paper:15-four-level-ghost-classification-phase1-synthesis",
+        "version": 3
+      },
+      "id": "sf:coverage/edge/PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1/paper-15/phase2-update-v3",
+      "kind": "result_paper_edge"
+    },
+    {
+      "body": {
         "claim": "paper:15-four-level-ghost-classification-phase1-synthesis/claim/pure_weyl_bh2c_symbolic_flux_radiation_class",
         "edge_kind": "OVERVIEW_SYNTHESIS",
         "from": "sf:coverage/result/PURE_WEYL_BH2C_SYMBOLIC_FLUX_RADIATION_CLASS",
@@ -251,7 +515,23 @@
       },
       "id": "sf:coverage/edge/PURE_WEYL_BH_ENDPOINT_NONSELECTION_ASSEMBLY/paper-15/phase1-synthesis-v2",
       "kind": "result_paper_edge"
+    },
+    {
+      "body": {
+        "claim": "paper:15-four-level-ghost-classification-phase1-synthesis/claim/phase2-generic_l_schwarzschild",
+        "edge_kind": "NEGATIVE_RESULT",
+        "from": "sf:result/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1",
+        "native": {
+          "source_schema": "result-paper-edge-v0"
+        },
+        "stale": false,
+        "stamp": "2026-07-22",
+        "to": "paper:15-four-level-ghost-classification-phase1-synthesis",
+        "version": 3
+      },
+      "id": "sf:coverage/edge/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1/paper-15/phase2-update-v3",
+      "kind": "result_paper_edge"
     }
   ],
-  "schema": "paper15-phase1-synthesis-overlay-v2"
+  "schema": "paper15-phase1-synthesis-overlay-v3"
 }

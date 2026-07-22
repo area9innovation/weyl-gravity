@@ -9,11 +9,92 @@
     "an operational relational redshift on the repaired counterflow carrier",
     "a Lorentzian QME, positive full-BV state, particles, scattering, unitarity, or complete quantum gravity"
   ],
+  "generic_l_terminal_receipts": [
+    {
+      "path": "black_hole_programme/phase2/generic_l_synthesis/receipt.json",
+      "sha256": "0888efb8f14518d38e40bd1b0a3926b8fab37ad729dce798c221a01d24aeabee"
+    },
+    {
+      "path": "reports/phase2-black-hole-generic-l-disposition-2026-07-22.md",
+      "sha256": "571fab0469b7bfde2b051b94bea657547570376b390a30a5b9ad6b6e93e92558"
+    },
+    {
+      "path": "planning/paper-coverage/phase2-black-hole-paper-correction-request.json",
+      "sha256": "308b27ba24076f7e439e36ebceb322442af1b1dcee225449d791cc105f403094"
+    }
+  ],
   "paper": "paper/15-four-level-ghost-classification-phase1-synthesis.tex",
-  "paper_sha256": "9da91e2a219dda8d58c53422f1f3652e576f0736faa806dc70af1a9ad0e5facb",
-  "result_id": "PAPER15_FOUR_LEVEL_PHASE1_SYNTHESIS_V2",
+  "paper_sha256": "3af95a25819f31f8fa26e20f8e7a5d6d7feb2b52fc72e469b39a3650952e05f1",
+  "phase2_updates": [
+    {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "edge_kind": "NEGATIVE_RESULT",
+      "key": "generic_l_schwarzschild",
+      "paper_location": "Result card C",
+      "path": "black_hole_programme/phase2/generic_l_synthesis/certificate.json",
+      "relationship": "Supersedes the fixture-level Einstein-selection reading in the declared formal radial class.",
+      "result_id": "PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1",
+      "sha256": "8a9914400f0929f37a63570b95383ebc4131cbf2928b5f923db0d002d0783d33"
+    },
+    {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "edge_kind": "SUPPORTING_EVIDENCE",
+      "key": "compact_pt_cpt",
+      "paper_location": "Result cards A and E",
+      "path": "quantum-weyl/pt_cpt/synthesis/certificates/PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1.json",
+      "relationship": "Adds positive-metric feasibility, BRST-chain obstruction, and quartet negative control without promoting a full state.",
+      "result_id": "PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1",
+      "sha256": "516415604952c1f835ea0d46095d8fa82b07fe36de3dc33d641e34f0b938223c"
+    },
+    {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL",
+        "REDUCED-MODE"
+      ],
+      "edge_kind": "LIMITATION",
+      "key": "berger_hadamard",
+      "paper_location": "Can a positive quantum state be constructed?",
+      "path": "quantum-weyl/pt_cpt/hadamard_stretch/certificates/PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1.json",
+      "relationship": "Pins the missing full-carrier obstruction and does not claim nonexistence.",
+      "result_id": "PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1",
+      "sha256": "cb705de9f5ba2589ebe514304709f175846307a20f0ea671a78711490e152e8c"
+    },
+    {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "edge_kind": "PRIMARY_THEOREM",
+      "key": "nariai_sign_mechanism",
+      "paper_location": "Result card A discussion",
+      "path": "d_quotient_classical/phase2/nariai_sign_mechanism_v2/NARIAI_SIGN_MECHANISM_V2.json",
+      "relationship": "Adds a scoped relative-residue mechanism without identifying background families or absolute signs.",
+      "result_id": "NARIAI_SIGN_MECHANISM_V2",
+      "sha256": "abc73ddf5ada84dfe93d7891411f7134c7c2906ec3f70550fe50e1a6c542b4f8"
+    },
+    {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "edge_kind": "NEGATIVE_RESULT",
+      "key": "dyonic_flat_preflight",
+      "paper_location": "Result card A discussion",
+      "path": "bridge/phase2/dyonic_flat_family_preflight/DYONIC_FLAT_FAMILY_PREFLIGHT_V1.json",
+      "relationship": "Prevents promotion of a fixed-coupling stationary sign-family scan.",
+      "result_id": "DYONIC_FLAT_FAMILY_PREFLIGHT_V1",
+      "sha256": "db0baaa808b131389de09adcbe02d423d210201f96290f94bea0f25be05fdfc2"
+    }
+  ],
+  "result_id": "PAPER15_FOUR_LEVEL_PHASE1_SYNTHESIS_WITH_PHASE2_UPDATE_V3",
   "result_state": "PUBLICATION_SYNTHESIS_OF_FROZEN_CLAIMS",
-  "schema": "paper15-phase1-synthesis-claim-map-v2",
+  "schema": "paper15-phase1-synthesis-claim-map-v3",
   "scope_rule": "Every scientific statement inherits the exact mathematical scope (theory, spacetime, background fields, gauge group, function or phase space, and boundary/support class) of its frozen source claim; dependency tags, evidence state, and limitation are recorded separately.",
   "supporting_claim_ids": [
     "phase1.interaction.disposition",

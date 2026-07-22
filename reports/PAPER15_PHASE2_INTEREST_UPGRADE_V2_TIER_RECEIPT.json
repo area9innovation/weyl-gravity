@@ -1,0 +1,87 @@
+{
+  "schema": "paper15-phase2-interest-upgrade-v2-tier-receipt-v1",
+  "result_id": "PAPER15_PHASE2_INTEREST_UPGRADE_V2",
+  "generated_at": "2026-07-22T21:05:00+02:00",
+  "source_commit": "936d76dbd2a9149243e57a082fa3519f0cfa8724",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL",
+    "REDUCED-MODE"
+  ],
+  "status": "PASS",
+  "outputs": {
+    "paper/15-four-level-ghost-classification-phase1-synthesis.tex": "3af95a25819f31f8fa26e20f8e7a5d6d7feb2b52fc72e469b39a3650952e05f1",
+    "paper/15-four-level-ghost-classification-phase1-synthesis.pdf": "31552962864a3bf607b0e7b661e7f70a896a23f1e6ba55f0ac9e93ab7f8ba062",
+    "paper/15-four-level-ghost-classification-phase1-synthesis-claim-map.json": "1343e15e954e8dc6fdd53ef1ed9ddacc3e38c61fcaf16ffb932579a52afb4ac6",
+    "paper/generate_15_phase1_synthesis_claim_map.py": "15644bafc8d13196ea93f320786d2ca7d5f1a125e8ebbfea29fdbacf3c0830f2",
+    "paper/verify_15_phase1_synthesis_claim_map.py": "2264bdbd5ee24cf1604124ccba1d75863bcd859bb292be73f6574b2083f9ba03",
+    "paper/test_15_phase1_synthesis_claim_map.py": "a69e4cd0e5d14e6dd43aae40a0af5d33b7d43c84bda2eba7c2186843dc7e6866",
+    "planning/paper-coverage/paper15-phase1-synthesis-overlay-2026-07-22.json": "0b482196c5d3628c8bb48d6764ac31acc28d74b64bfd212313eaec161c16e537",
+    "reports/phase2-paper15-interest-upgrade-v2-2026-07-22.md": "af0edbacf37ec48a5f7be5fbe20957176449bd1df8197ca480ff69c98f160014"
+  },
+  "frozen_inputs": {
+    "reports/phase1-closure-claims-ledger-2026-07-22.json": "1da97e9085e5c7138b88140106f0b1ab6d2a698ab539af4a6827f86708521fae",
+    "planning/paper-coverage/phase1-paper-coverage-overlay-2026-07-22.json": "389d1033e9b40bd66cfc5237d3cd2df4ea2575e1d17847d4a519dba89f6b8be2",
+    "black_hole_programme/phase2/generic_l_synthesis/certificate.json": "8a9914400f0929f37a63570b95383ebc4131cbf2928b5f923db0d002d0783d33",
+    "black_hole_programme/phase2/generic_l_synthesis/receipt.json": "0888efb8f14518d38e40bd1b0a3926b8fab37ad729dce798c221a01d24aeabee",
+    "reports/phase2-black-hole-generic-l-disposition-2026-07-22.md": "571fab0469b7bfde2b051b94bea657547570376b390a30a5b9ad6b6e93e92558",
+    "planning/paper-coverage/phase2-black-hole-paper-correction-request.json": "308b27ba24076f7e439e36ebceb322442af1b1dcee225449d791cc105f403094",
+    "quantum-weyl/pt_cpt/synthesis/certificates/PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1.json": "516415604952c1f835ea0d46095d8fa82b07fe36de3dc33d641e34f0b938223c",
+    "quantum-weyl/pt_cpt/hadamard_stretch/certificates/PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1.json": "cb705de9f5ba2589ebe514304709f175846307a20f0ea671a78711490e152e8c",
+    "d_quotient_classical/phase2/nariai_sign_mechanism_v2/NARIAI_SIGN_MECHANISM_V2.json": "abc73ddf5ada84dfe93d7891411f7134c7c2906ec3f70550fe50e1a6c542b4f8",
+    "bridge/phase2/dyonic_flat_family_preflight/DYONIC_FLAT_FAMILY_PREFLIGHT_V1.json": "db0baaa808b131389de09adcbe02d423d210201f96290f94bea0f25be05fdfc2"
+  },
+  "tiers": [
+    {
+      "tier": 0,
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile paper/generate_15_phase1_synthesis_claim_map.py paper/verify_15_phase1_synthesis_claim_map.py paper/test_15_phase1_synthesis_claim_map.py",
+        "git diff --check -- <all scoped text, JSON and Python paths>",
+        "pdflatex -interaction=nonstopmode -halt-on-error 15-four-level-ghost-classification-phase1-synthesis.tex (two passes)"
+      ],
+      "elapsed_seconds": 2.8,
+      "detail": "The second TeX pass had no undefined citations, undefined references, LaTeX warnings, or overfull boxes."
+    },
+    {
+      "tier": 1,
+      "status": "PASS",
+      "commands": [
+        "python3 paper/generate_15_phase1_synthesis_claim_map.py",
+        "python3 paper/verify_15_phase1_synthesis_claim_map.py",
+        "python3 -m unittest paper.test_15_phase1_synthesis_claim_map -v"
+      ],
+      "elapsed_seconds": 0.3,
+      "tests": 4
+    },
+    {
+      "tier": 2,
+      "status": "PASS",
+      "commands": [
+        "python3 -m black_hole_programme.phase2.generic_l_synthesis.verify",
+        "python3 quantum-weyl/pt_cpt/synthesis/verify_cpt_feasibility_classification.py",
+        "python3 quantum-weyl/pt_cpt/hadamard_stretch/verify_hadamard_stretch_obstruction.py",
+        "python3 d_quotient_classical/phase2/nariai_sign_mechanism_v2/verify.py",
+        "python3 bridge/phase2/dyonic_flat_family_preflight/verify.py"
+      ],
+      "elapsed_seconds": 13.9,
+      "detail": "All imported terminal results independently replayed; CPT verifier rejected eight mutations."
+    },
+    {
+      "tier": 3,
+      "status": "PASS",
+      "command": "python3 -m unittest discover -s . -p 'test_*.py' -f",
+      "elapsed_seconds": 1.6,
+      "tests": 149,
+      "detail": "Triggered by scoped paper theorem promotion; all tests discovered in the programme subtree passed."
+    }
+  ],
+  "does_not_establish": [
+    "an asymptotically flat Bach phase space or Hilbert norm",
+    "horizon-to-infinity matching or physical scattering thresholds",
+    "a genuine BRST-compatible Mannheim C operator",
+    "a full-BV Hadamard covariance or its nonexistence",
+    "a positive physical Hilbert space, particles, scattering, optical theorem or unitarity",
+    "anomaly cancellation under a changed contour or measure without a separate regulator and QAP"
+  ]
+}
