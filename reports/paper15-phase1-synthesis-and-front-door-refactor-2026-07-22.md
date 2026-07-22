@@ -54,3 +54,8 @@ positive full-BV state, Lorentzian QME, particles, scattering, or unitarity.
 
 The independently frozen Phase-1 coverage overlay remained byte-identical to
 its committed version after the additive overlay was generated.
+
+CLOSE-OUT: DONE — Paper 15 and its PDF, claim map, independent verifier,
+additive reverse-coverage overlay, publication receipt, and the concise Paper
+98 portal opening are committed and published.
+EVIDENCE: reports/PAPER15_PHASE1_SYNTHESIS_V1_TIER_RECEIPT.json
