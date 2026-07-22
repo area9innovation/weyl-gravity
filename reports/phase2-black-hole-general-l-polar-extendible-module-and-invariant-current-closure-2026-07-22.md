@@ -171,3 +171,5 @@ CLOSE-OUT: DONE — the maximal restriction-stable 4x4 current filtration,
 canonical-pivot wall, lift congruence and generic nonradical finite line are
 closed. Terminal-only q9 extension, the isolated \(Q_{21}\) frequencies and
 horizon-to-infinity matching remain outside this scoped theorem.
+
+EVIDENCE: `black_hole_programme/phase2/general_l_polar_extendible_current_closure/receipt.json`
