@@ -1,0 +1,71 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "PAPER15_REFEREE_SELF_CONTAINMENT_REVISION_V2",
+  "stamp": "2026-07-22",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Technical self-containment and exposition revision of the frozen Paper 15 Phase-1 synthesis; no source theorem or lifecycle state is promoted.",
+  "artifacts": {
+    "paper/15-four-level-ghost-classification-phase1-synthesis.tex": "1ea8d045c71625a3b9ce8378615e2c2db71ed713cac1331420f844e9c4e43706",
+    "paper/15-four-level-ghost-classification-phase1-synthesis.pdf": "769b10e3dfaa7b35563f6c1006adfdd90b4d392b7afcd710d0365b7d3928d791",
+    "paper/15-four-level-ghost-classification-phase1-synthesis-claim-map.json": "d95a203a504a00932a36c8360426873d1a4109d9126df70de6c58527b086af3f",
+    "paper/generate_15_phase1_synthesis_claim_map.py": "73c01c10f2fbbf05e36f21b82689c20ca20cd7150dde9998b41205110962e1d7",
+    "paper/verify_15_phase1_synthesis_claim_map.py": "2178a9871d02fa393f7afcdb457d3eb55ed48963baedd4f06f78d106ec36c723",
+    "planning/paper-coverage/paper15-phase1-synthesis-overlay-2026-07-22.json": "c2c5ce0dd01ba1be2631c155e451059bd414e51a53f3db7f7d38911bbccf442e",
+    "planning/work-items/programme-paper15-referee-self-containment-revision.json": "78f1001df810c287c7636b929ba19bfa54416b4d04bdb7b0ff056435eaf23b8e",
+    "reports/paper15-referee-self-containment-revision-2026-07-22.md": "41bd1d423db982137509f91d134e320c89e39af6debe694b7ecbf541d9a9f158",
+    "reports/phase1-closure-claims-ledger-2026-07-22.json": "1da97e9085e5c7138b88140106f0b1ab6d2a698ab539af4a6827f86708521fae"
+  },
+  "tests": [
+    {
+      "tier": 0,
+      "command": "git diff --no-index --check <committed-base> <scoped-worktree-path>",
+      "status": "PASS",
+      "elapsed_seconds": 0.2,
+      "detail": "Used per-path committed-base comparisons because the shared Git index was externally poisoned; no unrelated index entries were trusted or changed."
+    },
+    {
+      "tier": 1,
+      "command": "python3 paper/generate_15_phase1_synthesis_claim_map.py && python3 paper/verify_15_phase1_synthesis_claim_map.py",
+      "status": "PASS",
+      "elapsed_seconds": 0.09,
+      "detail": "Schema v2 claim map and additive reverse-coverage overlay regenerated; scope and forbidden-wording sentinels passed."
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m pytest -q paper/test_15_phase1_synthesis_claim_map.py planning/paper-coverage/test_phase1_paper_coverage_overlay.py",
+      "status": "PASS",
+      "elapsed_seconds": 0.55,
+      "detail": "5 passed."
+    },
+    {
+      "tier": 1,
+      "command": "python3 planning/paper-coverage/verify_phase1_paper_coverage_overlay.py planning/paper-coverage/phase1-paper-coverage-overlay-2026-07-22.json",
+      "status": "PASS",
+      "elapsed_seconds": 0.05,
+      "detail": "5 contradiction mutations rejected; the independently frozen Phase-1 overlay was not rewritten."
+    },
+    {
+      "tier": 1,
+      "command": "pdflatex -interaction=nonstopmode -halt-on-error paper/15-four-level-ghost-classification-phase1-synthesis.tex (two passes)",
+      "status": "PASS",
+      "elapsed_seconds": 1.48,
+      "detail": "18 pages, 400567 bytes; no LaTeX/package warnings, overfull boxes, ignored errors, or undefined references."
+    }
+  ],
+  "higher_tiers_not_run": "No source theorem, mathematical operator, shared scientific schema, or lifecycle promotion changed. The revision exposes already frozen definitions and evidence in a referee-readable form, so the full repository certificate chain was not triggered.",
+  "does_not_establish": [
+    "a new scientific theorem beyond the frozen Phase-1 sources",
+    "an inertia or signature for the real antisymmetric Lee-Wald form",
+    "a Cauchy, scattering, wave-packet, or Hilbert norm for the Schwarzschild monochromatic fixture",
+    "an all-frequency black-hole selection theorem",
+    "a full-PDE or nonlinear counterflow stability theorem",
+    "anomaly freedom beyond the declared strict and compensated local Euclidean calculations",
+    "viability or nonviability outside the printed counterflow family",
+    "a positive full-BV state, particles, scattering, or unitarity"
+  ]
+}

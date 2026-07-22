@@ -27,6 +27,7 @@ control, and serves as corresponding human contact.}}
 \date{Phase-1 synthesis, 22 July 2026}
 
 \begin{document}
+\raggedbottom
 \maketitle
 
 \begin{abstract}
@@ -40,21 +41,23 @@ continuable directions; and quantum states or particles.
 
 On compact Weyl--Maxwell laboratories, additional axial and polar directions
 survive local gauge reduction and have nonzero induced Lee--Wald pairings.
-Their classical signs are not organized by the simple rule ``Einstein
-positive, additional negative.''  At second order, finite-harmonic
+The signature of the associated positive-frequency Hermitian current form is
+not organized by the simple rule ``Einstein positive, additional negative.''
+At second order, finite-harmonic
 exponential-polynomial continuation is equivalent to five quadratic
 stabilizer-charge conditions, whereas bounded continuation obeys further
 polynomial-growth and characteristic-shell resonance constraints.  On
 Schwarzschild, horizon regularity alone admits additional curvature
-solutions, while finite symplectic norm excludes the additional axial and
-polar solutions at the certified $(\ell,\omega)=(2,3/5)$ fixture.  In the
+solutions, while a specified radial Lee--Wald slice-pairing condition excludes
+the additional axial and polar solutions at the specified
+$(\ell,m\omega)=(2,3/5)$ fixture.  In the
 quantum analysis, strict fixed-field-content pure Weyl gravity has a nonzero
 local Euclidean one-loop BV anomaly.  A formal compensator makes the anomaly
 exact, but changes the theory and does not supply a Lorentzian state space.
 
 We also analyze a changed two-phase counterflow gravity--clock theory.  It has
-an exact 70-component causal BV parent and removes a dressed-trace
-obstruction.  Charge reduction reveals an exact tradeoff: making time
+a complete free causal BV complex at a specified Berger background and removes
+a dressed-trace obstruction.  Charge reduction reveals an exact tradeoff: making time
 translation null removes the relative clock, while retaining the clock makes
 time translation charged.  More decisively, the complete
 $j=\tfrac12$ reduced block contains a Hamiltonian--Hopf quartet throughout
@@ -116,7 +119,7 @@ particle interpretation can even be posed?
 The answer is mixed.  Some additional directions survive local gauge and
 presymplectic reduction.  Compact nonlinear constraints remove some of them,
 while balanced combinations can continue formally with secular terms.  A
-specified Schwarzschild finite-norm condition removes them at one two-parity
+specified Schwarzschild radial-pairing condition removes them at one two-parity
 fixture.  The strict quantum gauge theory is locally anomalous.  Finally, a
 changed theory that passes a difficult causal construction fails a physical
 spectral test.  Different candidates fail at different levels.
@@ -148,9 +151,9 @@ Two comparison theories appear.  On the compact product we use
  &=\frac1{2\kappa}\int_M\sqrt{-g}\,(R-2\Lambda)\,\dd^4x
    -\frac14\int_M\sqrt{-g}\,F_{\mu\nu}F^{\mu\nu}\,\dd^4x.
 \end{align}
-The magnetic bundle is fixed in that comparison.  The Einstein--Maxwell
-theory is a source/comparator; it is not silently identified with a subsector
-having the same symplectic structure.
+The magnetic bundle is fixed in that comparison.  Einstein--Maxwell is a
+source theory and comparator; it is not identified with a subsector carrying
+the same symplectic structure.
 
 The quantum repair uses a formal Wess--Zumino field $\tau$ with
 \(
@@ -179,20 +182,54 @@ Writing
  \mu^2=\frac{f_1^2f_2^2}{f_1^2+f_2^2},
 \end{equation}
 separates a diagonal gauge phase from a gauge-invariant relative phase with
-positive bare kinetic coefficient $\mu^2$.  The certified model also contains
-the action-derived repaired compensator/scale sector recorded by its frozen
-70-component Hessian.  Results for this changed theory are never imported
-back into the strict theory.
+positive bare kinetic coefficient $\mu^2$.  Fixing the harmless positive
+diagonal normalization to $f_1^2+f_2^2=4$, the complete counterflow action
+used below is
+\begin{equation}
+ S_{\rm cf}=
+ \int_M\sqrt{-\widehat g}\left[
+ \frac{\alpha_B}{8}\widehat C_{\mu\nu\rho\sigma}
+                         \widehat C^{\mu\nu\rho\sigma}
+ +\frac{M_2}{2}\widehat R-V_0
+ -\frac{\mu^2}{2}(\widehat\nabla\psi)^2
+ -2(A-\dd\chi)^2\right]\dd^4x .
+ \label{eq:complete-counterflow-action}
+\end{equation}
+There is no Maxwell kinetic term for $A$.  Besides diffeomorphisms, the local
+gauge transformations are
+\begin{equation}
+ g\mapsto e^{2\sigma}g,
+ \quad \tau\mapsto\tau+\sigma,
+ \qquad
+ \chi\mapsto\chi+\lambda,
+ \quad A\mapsto A+\dd\lambda,
+ \label{eq:counterflow-gauge}
+\end{equation}
+so that $\widehat g$ and $\psi$ are gauge invariant.  Constant shifts of
+$\psi$ generate the physical relative symmetry $R_{\rm rel}$ rather than a
+local gauge symmetry.  Equation~\eqref{eq:complete-counterflow-action}, its
+BV cotangent lift, and ordinary nonminimal gauge-fixing doublets define the
+changed theory; a component Hessian is evidence for this action, not its
+definition.  Results for the changed theory are never imported back into the
+strict theory.
 
 \subsection{The scope tuple}
 
-Every result is typed by
+The mathematical scope of every result is typed by
 \begin{equation}
- \boxed{\mathfrak S=
- (\text{theory},\text{background},\text{generator},
-  \text{phase space},\text{boundary/support class},\text{claim state}).}
+ \boxed{\mathfrak S=(\mathcal T,M,\bar\Phi,\mathcal G,
+                     \mathcal X,\mathcal B),}
  \label{eq:scope-tuple}
 \end{equation}
+where the entries are the theory, spacetime, background fields, gauge group,
+function or phase space, and boundary/support class.  Evidence is recorded
+separately as
+\begin{equation}
+ \mathfrak E=(\text{claim identifier},\text{dependency tags},
+              \text{evidence state},\text{limitation}).
+ \label{eq:evidence-tuple}
+\end{equation}
+Thus an epistemic label is never treated as part of the mathematical object.
 Two statements with different entries in $\mathfrak S$ are not combined
 without a constructed map.  This matters because the programme uses several
 controlled laboratories:
@@ -218,11 +255,14 @@ anomaly classes \\
 These are related tests of a common architecture, not successive
 approximations to one already unified universe.
 
+\clearpage
 \section{What ``ghost'' can mean}
 
 The literature uses the word \emph{ghost} for inequivalent failures.  The
 distinctions are especially important in a gauge theory with a fourth-order
-equation.
+equation.  A modern review of the nondegenerate higher-derivative
+Ostrogradsky theorem is Ref.~\cite{Woodard}; gauge degeneracy and physical
+reduction must be analyzed separately.
 
 \begin{longtable}{@{}p{0.22\textwidth}p{0.39\textwidth}p{0.31\textwidth}@{}}
 \toprule
@@ -235,8 +275,9 @@ this is not used as a complete physical quotient. \\
 Negative pole residue & Does a gauge-fixed propagator decompose with a
 negative coefficient? & Treated as an initial warning, not a final state
 classification. \\
-Negative classical energy or flux & What is the sign of the descended
-Lee--Wald/canonical form on a declared real quotient? & Computed for selected
+Negative classical energy or flux & What is the sign of a declared
+canonical-energy form, flux, or positive-frequency Hermitian current derived
+from the real Lee--Wald form? & Computed for selected
 compact and black-hole sectors.  Some signs contradict a naive
 Einstein/additional split. \\
 Radical or pure gauge & Does the induced presymplectic form vanish on the
@@ -271,6 +312,32 @@ The compact magnetic product is the cleanest place to compare the
 Einstein--Maxwell and Weyl--Maxwell linear solution spaces.  The computation
 uses both parities, generic harmonics, exceptional modes, and global blocks.
 
+The sign-bearing object must be distinguished from the underlying
+presymplectic form.  Let $\Omega_{\rm WM}$ be the real, antisymmetric
+Lee--Wald form obtained from the Weyl--Maxwell action
+\cite{LeeWald,IyerWald}.  Rank and radical are defined on the real reduced
+solution space; $\Omega_{\rm WM}$ itself has no inertia.  After complexifying,
+fix a common stationary shell
+\begin{equation}
+ e^{-i\omega t},\qquad \omega>0,\qquad
+ k=\frac{2\pi n}{L},\qquad \lambda=\ell(\ell+1),\quad \ell\ge2,
+\end{equation}
+and impose the conjugation reality condition between positive- and
+negative-frequency coefficients.  On the positive-frequency space define
+\begin{equation}
+ h_+(u,v)=\frac{\Omega_{\rm WM}(\bar u,v)}
+ {-i\omega L N_{\ell m}},
+ \qquad L N_{\ell m}>0.
+ \label{eq:positive-frequency-current}
+\end{equation}
+Reality and antisymmetry of $\Omega_{\rm WM}$ make $h_+$ Hermitian.  A
+positive change of the circle or harmonic normalization, and a nonzero
+complex rescaling of any basis vector, act by Hermitian congruence and leave
+its inertia invariant.  The signatures below refer only to this $h_+$.
+Exceptional dipoles, generalized zero modes, and $\omega=0$ are classified
+in separate real blocks and are not assigned these frequency-shell
+signatures.
+
 \begin{resultcard}{Result card A: compact Einstein/additional decomposition}
 \textbf{Theory.} Einstein--Maxwell source and Weyl--Maxwell target.\par
 \textbf{Background.} The magnetically supported compactified
@@ -284,22 +351,27 @@ $H^0$ exact sequence; final stabilizer reduction is not included.\par
 condition.\par
 \textbf{Statement.} The Einstein--Maxwell solutions inject into the
 Weyl--Maxwell solutions.  The cofiber contains additional axial and polar
-blocks.  Each additional generic block is nonradical with Lee--Wald inertia
-$(2,0)$, while the target Einstein image has inertia $(1,1)$ and the complete
-generic target has inertia $(3,1)$.  The source Einstein--Maxwell form has
-inertia $(2,0)$, so inclusion does not define a cyclic or symplectic
-equivalence.\par
+blocks.  On each generic additional real block $\Omega_{\rm WM}$ has zero
+radical and rank four.  On the associated positive-frequency complex
+two-plane, $h_+$ has inertia $(2,0)$; its restriction to the target Einstein
+image has inertia $(1,1)$ and the complete generic target has inertia
+$(3,1)$.  The independently normalized Einstein--Maxwell source Hermitian
+current form has inertia $(2,0)$, so inclusion does not define a cyclic or
+symplectic equivalence.\par
 \textbf{Not claimed.} No positive energy, particle norm, final residual
 quotient, causal boundary admissibility, or nonlinear closure follows.
 \end{resultcard}
 
 The important conclusion is not that the additional block is ``healthy''
-because its displayed inertia is positive.  The conclusion is that it is not
+because the displayed frequency form is positive.  The conclusion is that it
+is not
 an algebraic duplicate or a radical direction on this quotient, and that the
 standard pairing does not respect the naive expectation that the Einstein
 image should inherit the ordinary Einstein sign while the complement should
 carry the bad sign.  The action matters: the Einstein--Hilbert and Weyl
-Lee--Wald forms are different even on the same metric perturbation.
+Lee--Wald forms are different even on the same metric perturbation.  Neither
+the rank statement nor the inertia of $h_+$ is by itself a positive-energy or
+positive-norm quantum theorem.
 
 This exact-sequence formulation also prevents an unjustified direct-sum
 claim.  A lift of an additional curvature representative may be shifted by
@@ -425,7 +497,7 @@ The Einstein image lies in $\ker\delta R$; the additional curvature content
 is visible in $\psi$.
 
 Horizon analyticity does not force $\psi$ to vanish.  Regular ingoing
-additional curvature solutions exist in the certified real-frequency axial
+additional curvature solutions exist in the declared real-frequency axial
 analysis.  This already shows that future-horizon regularity alone does not
 select the Einstein image.  It does not show that every local differential
 initial or boundary condition fails: imposing $\psi$ and its normal
@@ -434,22 +506,67 @@ the Einstein image at linear order.
 
 The outer boundary gives a sharper fixture-level result.
 
-\begin{resultcard}{Result card C: finite-norm selection at a Schwarzschild fixture}
+Here the Schwarzschild parameter is normalized to $m=1$, so the horizon is
+$r=2$ and the quoted frequency means $m\omega=3/5$.  In ingoing
+Eddington--Finkelstein coordinates $(v,r,\vartheta,\varphi)$ let
+$F^v[u_1,u_2](r)$ denote the sphere integral of the $v$-component of the
+action-derived Lee--Wald current for two formal mode representatives.  For a
+conjugate-frequency pair define the truncated radial slice form
+\begin{equation}
+ \mathcal N_R[u_1,u_2]
+ =i\int_{2}^{R}F^v[\bar u_1,u_2](r)\,\dd r,
+ \qquad
+ \mathcal N_\infty[u_1,u_2]=\lim_{R\to\infty}\mathcal N_R[u_1,u_2],
+ \label{eq:schwarzschild-radial-pairing}
+\end{equation}
+whenever the improper integral exists in the declared formal asymptotic
+class.  ``Finite radial slice form'' below means finiteness of this quadratic
+form.  It is neither an $L^2$ norm on monochromatic scattering states nor a
+wave-packet Hilbert norm, and the polar zero-sector quadratic form can vanish.
+
+The reconstruction makes the power test explicit.  For both parities the
+homogeneous Einstein reconstruction is governed by a common master variable
+$F=C_h=H_1'$ with
+\begin{equation}
+ F_E^{(0)}\sim r^{-3}(1+O(r^{-1})),\qquad
+ F_E^{(2)}\sim e^{-2i\omega r}r^{-4i\omega+1}
+                    (1+O(r^{-1})).
+ \label{eq:schwarzschild-einstein-asymptotics}
+\end{equation}
+The sourced additional metric lifts are different: the axial lifts have a
+nonzero single-log coefficient in both characteristic sectors; the polar
+$\mu=0$ lift is enhanced by one power and has one logarithm, whereas the
+polar $\mu=-2\omega$ lift is a pure oscillatory power.  At the fixture the
+resulting sphere-integrated densities are
+\begin{equation}
+\begin{array}{c|ccc}
+ &E\!\times E&E\!\times X&X\!\times X\\ \hline
+\text{axial}&r^{-2}&r^0\ \text{or}\ r^1&r^0\log r\ \text{or}\ r^2\\
+\text{polar}&0\ \text{or}\ r^{-2}&r^1\ \text{or}\ r^3&r^2\ \text{or}\ r^4.
+\end{array}
+\label{eq:schwarzschild-density-table}
+\end{equation}
+Thus the finite/divergent distinction is a radial-integrability statement
+about the full current, not an inference from a characteristic exponent
+alone.
+
+\begin{resultcard}{Result card C: radial-pairing selection at a Schwarzschild fixture}
 \textbf{Theory.} Strict pure $C^2$ gravity.\par
-\textbf{Background.} Schwarzschild exterior.\par
+\textbf{Background.} Schwarzschild exterior with $m=1$ and horizon $r=2$.\par
 \textbf{Domain.} Axial and polar $\ell=2$ reconstructed metric solutions at
-real frequency $\omega=3/5$, with the declared Lee--Wald flux/norm
-normalization.\par
+real dimensionless frequency $m\omega=3/5$, with the radial slice form
+\eqref{eq:schwarzschild-radial-pairing}.\par
 \textbf{Gauge and quotient.} Regge--Wheeler/Zerilli-type parity reduction and
 the action-derived pure-Weyl Lee--Wald current.\par
 \textbf{Boundary condition.} Future-horizon ingoing regularity followed by
-finite symplectic norm in the certified asymptotic radiation class.\par
+finiteness of $\mathcal N_\infty$ in the declared formal asymptotic class.\par
 \textbf{Statement.} At this two-parity fixture the Einstein solutions have
-finite norm, whereas the reconstructed additional axial and polar solutions
-have divergent norm.  Finite norm therefore selects the Einstein sector at
-the stated $(\ell,\omega)$.\par
-\textbf{Not claimed.} No all-frequency theorem, full exterior initial-boundary
-well-posedness, quasinormal spectrum, ringdown, stability, particle
+finite radial slice form, whereas the reconstructed additional axial and
+polar solutions give divergent radial integrals.  This condition therefore
+selects the Einstein sector at the stated $(\ell,m\omega)$.\par
+\textbf{Not claimed.} No Cauchy-slice Hilbert norm, wave-packet completion,
+all-frequency theorem, full exterior initial-boundary well-posedness,
+quasinormal spectrum, ringdown, stability, particle
 interpretation, or universal causal-truncation theorem follows.
 \end{resultcard}
 
@@ -460,7 +577,10 @@ reconstruction and Jordan analysis at all relevant frequencies, finite flux,
 and a well-posed exterior problem.  Existing AdS/Euclidean Einstein-selection
 arguments operate in different boundary classes
 \cite{Maldacena,LuPangPope}.  The present contribution is a Lorentzian
-Schwarzschild horizon/finite-norm comparison at an exact declared fixture.
+Schwarzschild horizon/radial-integrability comparison at an exact declared
+fixture.  Covariant phase-space and canonical-energy methods provide the
+conceptual comparison, but their global hypotheses are not asserted here
+\cite{IyerWald,HollandsWald}.
 
 \section{Can a positive quantum state be constructed?}
 
@@ -471,25 +591,85 @@ two-point functions.  They are not interchangeable.
 In four dimensions a local Weyl breaking at ghost number one and form degree
 four has essential type-B and type-A representatives of the form
 \begin{equation}
- \mathcal A
- =\int_M\sqrt g\,\omega
+ \mathcal A^{(1)}
+ =\frac1{(4\pi)^2}\int_M\sqrt g\,\omega
  \bigl(c_{\rm W}C_{\mu\nu\rho\sigma}C^{\mu\nu\rho\sigma}
        -a_{\rm W}E_4+b_{\rm W}\Box R\bigr)\,\dd^4x .
  \label{eq:anomaly}
 \end{equation}
+In the action normalization of Eq.~\eqref{eq:weyl-action} and the repository's
+$\Box R=0$ finite-counterterm convention, the computed coordinates are
+\begin{equation}
+ \boxed{c_{\rm W}=\frac{199}{30},\qquad
+        a_{\rm W}=\frac{87}{20},\qquad b_{\rm W}=0.}
+ \label{eq:anomaly-coefficients}
+\end{equation}
 The $\Box R$ coefficient is scheme dependent and may be shifted by a local
 counterterm.  The nonzero $C^2$ and Euler representatives are the essential
-local classes.  A one-loop divergence, beta function, trace anomaly, and BV
+type-B and type-A classes, respectively, in the Deser--Schwimmer
+classification\cite{DeserSchwimmer}.  A one-loop divergence, beta function,
+trace anomaly, and BV
 master-equation breaking are related only after the gauge-fixed determinant,
 normalization, descent, and quotient maps have been supplied.
+
+The complete local determinant and heat-kernel ledger is:
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}Ylccrr@{}}
+\toprule
+sector & operator & statistics & $Z$ exponent & $c_i$ & $a_i$\\
+\midrule
+metric TT, upper & $\Delta_{2,\perp}(4)$ & bosonic & $-1/2$
+  & $37/24$ & $31/72$\\
+Diff--Weyl scalar ghost & $\Delta_0(-4)'$ & fermionic & $+1/2$
+  & $89/120$ & $269/360$\\
+metric TT, lower & $\Delta_{2,\perp}(2)$ & bosonic & $-1/2$
+  & $29/8$ & $181/72$\\
+transverse Diff ghost & $\Delta_{1,\perp}(-3)'$ & fermionic & $+1/2$
+  & $29/40$ & $79/120$\\
+\midrule
+exact sum &&&& $199/30$ & $87/20$\\
+\bottomrule
+\end{tabularx}
+\end{center}
+All four factors are second order.  Their bundle ranks are $5,1,5,3$;
+the primes delete five scalar and ten transverse conformal-Killing ghost zero
+modes.  York/Hodge Jacobians and the nonminimal doublets are already included.
+The table lists $a_i$ with the sign convention $c_iC^2-a_iE_4$.
+
+The map from this Euclidean spectral ledger to a gauge anomaly is a residue
+and cohomology map, not a comparison of names.  If $I_i(d)$ are the
+dimensionally continued integrated carriers, then
+\begin{equation}
+ s_d I_i(d)=(d-4)A_i^4+s_dB_i(d)+\dd C_i(d)
+             +O((d-4)^2).
+ \label{eq:anomaly-residue-map}
+\end{equation}
+Multiplication by the one-loop pole, replacement of the Weyl parameter by the
+ghost $\omega$, addition of the diffeomorphism completion, and reduction
+modulo $s$ and $\dd$ give
+\begin{equation}
+ \Gamma^{(1)}_{\rm div}(d)
+ \xrightarrow{\ s_d,\ \operatorname{Res}_{d=4}\ }
+ \mathcal W^{(1)}_\sigma
+ \xrightarrow{\ \sigma\mapsto\omega+\mathrm{Diff}\ }
+ Z^{1,4}(s\mid\dd)\longrightarrow H^{1,4}(s\mid\dd).
+ \label{eq:determinant-to-bv}
+\end{equation}
+The nonzero coordinates in Eq.~\eqref{eq:anomaly-coefficients} survive the
+last quotient.  This is what promotes the effective-action Weyl anomaly to an
+obstruction to treating Weyl symmetry as an exact quantum gauge redundancy
+in the strict fixed-field-content theory.
 
 \begin{resultcard}{Result card D: strict and compensated local quantum theories}
 \textbf{Strict theory.} Fixed-field-content $\Diff\ltimes$Weyl pure $C^2$
 gravity.\par
 \textbf{Domain.} Complete declared gauge-fixed local BV quotient on a regular
 Bach-locus chart, with Euclidean one-loop coefficient input.\par
-\textbf{Statement.} The regulated breaking has nonzero components along the
-essential ghost-number-one, form-degree-four Weyl classes.  The strict local
+\textbf{Statement.} The regulated breaking has $c_{\rm W}=199/30$,
+$a_{\rm W}=87/20$, and vanishing parity-odd and chosen type-D coordinates.
+Its essential ghost-number-one, form-degree-four Weyl components are
+nonzero.  The strict local
 Euclidean one-loop QME is obstructed.\par
 \textbf{Extended theory.} In the formal $\tau$-adic Wess--Zumino BV algebra
 with $s\tau=\omega$, the same cocycle is exact and a local counterterm restores
@@ -538,14 +718,83 @@ The relative phase can move while the diagonal compact gauge charge
 vanishes.  Because its stress tensor is built from the dressed metric, it is
 quadratically visible in the dressed-trace direction.
 
+For self-containment, the stationary family can be stated directly.  Let
+$\sigma_i$ be left-invariant one-forms on $S^3$ with
+\begin{equation}
+ \dd\sigma_1=-\sigma_2\wedge\sigma_3,
+ \quad \dd\sigma_2=-\sigma_3\wedge\sigma_1,
+ \quad \dd\sigma_3=-\sigma_1\wedge\sigma_2,
+ \quad \int_{S^3}\sigma_1\wedge\sigma_2\wedge\sigma_3=16\pi^2.
+\end{equation}
+In the gauge $\tau=0$, $A=0$, and constant $\chi$, take
+\begin{equation}
+ \dd s^2=-\dd t^2+a^2(\sigma_1^2+\sigma_2^2)+c^2\sigma_3^2,
+ \qquad \psi=\Omega t,
+\end{equation}
+and define
+\begin{equation}
+ q=\frac{c^2}{a^2},\qquad x=a^{-2},\qquad C=\mu^2\Omega^2.
+\end{equation}
+The exact stationary equations for Eq.~\eqref{eq:complete-counterflow-action}
+have rank three and give
+\begin{equation}
+ M_2=\frac{2C(4q-1)}{3qx},\qquad
+ V_0=-\frac{C(q^2-5q+1)}{3q},\qquad
+ \alpha_B=\frac{2C}{qx^2}.
+ \label{eq:counterflow-stationary-family}
+\end{equation}
+The connected causal trace-healthy component is
+\begin{equation}
+ x>0,\qquad C>0,\qquad
+ \frac{13-3\sqrt{17}}4<q<\frac14.
+ \label{eq:counterflow-healthy-component}
+\end{equation}
+The selected causal point fixes $\mu^2=1$ and
+\begin{equation}
+ q=\frac9{40},\quad x=1,\quad C=\frac9{16},\quad
+ \Omega=\frac34,\quad \alpha_B=5,\quad
+ M_2=-\frac16,\quad V_0=\frac{119}{1920}.
+ \label{eq:counterflow-point}
+\end{equation}
+
+The free BV object is the tangent complex of the displayed action and gauge
+transformations.  Write its ghost and field bundles as
+\begin{equation}
+ \mathcal F^{-1}=TM\oplus\mathbf1_{\rm W}\oplus\mathbf1_{U(1)},
+ \qquad
+ \mathcal F^0=S^2T^*M\oplus\mathbf1_\tau\oplus\mathbf1_\psi
+              \oplus\mathbf1_\chi\oplus T^*M_A.
+\end{equation}
+The minimal linear complex is then
+\begin{equation}
+ \Gamma(\mathcal F^{-1})\xrightarrow{q_{-1}}
+ \Gamma(\mathcal F^0)\xrightarrow{q_0}
+ \Gamma(\mathcal E)\xrightarrow{q_1}
+ \Gamma((\mathcal F^{-1})^*\otimes\Lambda^4T^*M),
+ \label{eq:counterflow-bv-complex}
+\end{equation}
+where $q_{-1}$ is the linearized Diff--Weyl--$U(1)$ action, $q_0$ is the
+Euler--Lagrange Hessian, $q_1$ contains the Noether identities, and
+$\mathcal E$ is the dual equation bundle to the field bundle.  The
+differential orders are also fixed by the action: $q_{-1}$ is first order in the
+diffeomorphism and diagonal-$U(1)$ parameters and zeroth order in the Weyl
+parameter; $q_0$ is fourth order in the metric $C^2$ block, second order in
+the dressed Einstein and phase blocks, and algebraic in the auxiliary
+connection before elimination; $q_1$ has the corresponding formal-adjoint
+Noether orders.  The cotangent
+BV rows and standard antighost--multiplier doublets complete this to a cyclic
+complex.  The 70-row certificate is a harmonic-component implementation of
+Eq.~\eqref{eq:counterflow-bv-complex}; the invariant definition is the action
+and this graded complex.
+
 \begin{resultcard}{Result card E: causal construction and physical nonselection}
-\textbf{Theory.} The action-derived two-phase counterflow theory with
-auxiliary diagonal $U(1)$ and repaired compensator sector.\par
+\textbf{Theory.} Equation~\eqref{eq:complete-counterflow-action} with the
+gauge transformations~\eqref{eq:counterflow-gauge}.\par
 \textbf{Background.} The selected positive biaxial Berger solution and its
 connected trace-healthy same-field stationary retuning family.\par
-\textbf{Domain.} A 70-component cyclic BV parent, decomposing at the selected
-point into a 54-component causal parent and a 16-component contractible
-diagonal-$U(1)$ sector; physical spectral reduction uses complete
+\textbf{Domain.} The free cyclic BV complex
+\eqref{eq:counterflow-bv-complex}; at the selected point its diagonal-$U(1)$
+summand is contractible, and the physical spectral reduction uses complete
 $SU(2)_L\times U(1)_R$ isotypical blocks.\par
 \textbf{Gauge and charge.} Diagonal gauge charge, relative-phase charge
 $Q_{\rm rel}$, time translation $D$, and the background-preserving generator
@@ -559,23 +808,45 @@ block contains a Hamiltonian--Hopf quartet.  The obstructing factor is
  (40z^4+773z^2+3748)^2,
  \qquad 773^2-4(40)(3748)=-2151<0.
 \]
-The quartet persists throughout the connected trace-healthy same-field
-stationary family.  Therefore no member of that family is selected as a
-robust linearly stable Phase-2 candidate.\par
+With perturbations proportional to $e^{zt}$, the substitution $y=z^2$ gives
+two nonreal conjugate $y$-roots, hence four $z$-roots
+$\{\pm(\alpha+i\beta),\pm(\alpha-i\beta)\}$ with
+$\alpha\beta\ne0$; two grow exponentially.  The quartet persists throughout
+the connected trace-healthy same-field stationary family.  Therefore no
+member of that family is selected as a robust linearly stable candidate.\par
 \textbf{Not claimed.} This is not an all-isotype spectrum, a familywide
 Green-homotopy theorem, a full-PDE stability theorem, or a no-go over other
 field contents and gauge architectures.
 \end{resultcard}
 
-The rejection criterion was fixed before the computation: a Phase-2
+The rejection criterion was fixed before the computation: a successor
 candidate had to be linearly stable in every physical sector.  One exact
 unstable physical isotypical block is sufficient to reject it.  It is not
 necessary to finish every higher-$j$ block to establish this nonselection.
 Conversely, the finite block does not by itself describe the nonlinear
 evolution of arbitrary PDE data.
 
+The persistence statement is exact rather than a numerical continuation from
+Eq.~\eqref{eq:counterflow-point}.  Restoring
+$w=z^2/x$, the family characteristic divisor contains the quadratic factor
+\begin{equation}
+ F_2(q,w)=16q^2w^2+24q(3-2q^2)w
+          +32q^3-108q^2+81,
+ \end{equation}
+with discriminant
+\begin{equation}
+ \operatorname{disc}_wF_2=256q^5(9q-8)<0
+ \qquad\text{on \eqref{eq:counterflow-healthy-component}.}
+ \label{eq:counterflow-discriminant}
+\end{equation}
+Thus the two $w$-roots remain a nonreal conjugate pair everywhere on the
+connected component; they cannot cross onto the negative real axis or pass
+through a multiple root.  Since $x>0$, their square roots remain a
+Hamiltonian--Hopf quartet.  This no-crossing lemma is the familywide argument.
+
 The quartet is a spectral Hamiltonian instability associated with a
-Krein-sign collision, not merely a coordinate drift.  The global clock block
+Krein-sign collision in the standard Hamiltonian--Krein sense
+\cite{KapitulaPromislow}, not merely a coordinate drift.  The global clock block
 has a different status.  On the unrestricted phase space,
 \begin{equation}
  \Omega_{\rm rel}=\dd Q_{\rm rel}\wedge\dd\psi,
@@ -593,7 +864,7 @@ linear charge constraint $CQ=q_0$ and clock velocity vector $v$,
  \quad\Longleftrightarrow\quad
  v\in\im C^T,
 \end{equation}
-while physical clocks are classes of $v$ modulo $\im C^T$.  In the certified
+while physical clocks are classes of $v$ modulo $\im C^T$.  In the selected
 model, fixing and quotienting $Q_{\rm rel}$ makes $D$ null but contracts the
 relative-clock Darboux pair.  Keeping the clock leaves
 \(
@@ -634,7 +905,7 @@ solutions & A single causal theory covering every laboratory and boundary
 class \\
 Reduced classical directions & Additional axial/polar compact-product
 directions are nonradical; counterflow causal parent and exact charge
-classification; finite-norm Schwarzschild fixture & Universal asymptotic
+classification; radial-integrability Schwarzschild fixture & Universal asymptotic
 phase space, positive energy theorem, and acceptable counterflow spectrum \\
 Nonlinear continuation & Five-charge necessary-and-sufficient finite
 exponential-polynomial cone; bounded resonance ledger and classified
@@ -695,15 +966,29 @@ well known in Euclidean and asymptotically (A)dS settings
 \cite{Maldacena,LuPangPope,DeserJoungWaldron}.  Prior Weyl-black-hole
 quasinormal analyses often isolate a second-order conformally transported
 sector rather than the full fourth-order Bach solution space
-\cite{MomenniaHendi}.  Our fixture-level finite-norm result addresses the
+\cite{MomenniaHendi}.  The static spherical Bach-flat lineage begins with
+Riegert and Mannheim--Kazanas\cite{Riegert,MannheimKazanas}.  Four-dimensional
+conformal gravity already has consistent AdS boundary conditions, response
+functions, and finite canonical charges\cite{GrumillerEtAl,Lovrekovic}; our
+open problem is specifically the asymptotically flat/null-infinity Bach phase
+space.  Our fixture-level radial-integrability result addresses the
 full additional reconstruction in a one-ended Lorentzian Schwarzschild
 problem, but does not yet provide a general asymptotically flat Bach phase
 space.
 
+The magnetic product background belongs to the exceptional direct-product
+Einstein--Maxwell family introduced by Pleba\'nski and Hacyan
+\cite{PlebanskiHacyan}.  The recent Weyl-gravity classification of separated
+$2+2$ direct products with electromagnetic and Yang--Mills sources proves
+generalized Birkhoff statements and organizes their Weyl-equivalence classes
+\cite{JizbaLeheckova}.  The present contribution is different: it fixes one
+compact magnetic bundle and computes its perturbative exact sequence,
+presymplectic form, nonlinear Taub cone, and resonances.
+
 \paragraph{Quantum conformal gravity.}
 One-loop divergences, conformal anomalies, BRST cohomology, and conformal
 gauge fixing have extensive prior literatures
-\cite{FradkinTseytlin,BarnichBrandtHenneaux,Rachwal}.  The phase-one quantum
+\cite{FradkinTseytlin,BarnichBrandtHenneaux,Rachwal,OdaOhta}.  The phase-one quantum
 claim is narrower: an exact local-BV quotient and coefficient ledger for the
 declared strict theory, followed by a formal $\tau$-adic Wess--Zumino
 trivialization in a changed theory.  It does not settle the competing
@@ -765,6 +1050,14 @@ stored in
 \begin{center}
 \cert{reports/phase1-closure-claims-ledger-2026-07-22.json}.
 \end{center}
+The public repository root is
+\begin{center}
+\url{https://github.com/area9innovation/bp2transformer/tree/master/physics/symplectic-reconstruction},
+\end{center}
+with this manuscript and its machine-readable claim map under
+\url{https://github.com/area9innovation/bp2transformer/tree/master/physics/symplectic-reconstruction/paper}.
+The JSON artifacts carry content hashes; no archival DOI is claimed at this
+stage.
 It binds each statement to a theory, background, phase space, correction or
 boundary class, lifecycle state, limitation, and source certificate.  This
 paper has its own claim map and verifier; the live programme portal remains
@@ -779,52 +1072,6 @@ results carry different dependency labels.  Third, stopping rules are fixed
 before the result is known.  The counterflow candidate passed its causal gate
 and then failed a later physical gate; both facts remain part of the record.
 
-\appendix
-\section{Frozen claim-boundary index}
-
-Table~\ref{tab:claim-boundaries} is a compact crosswalk from the synthesis to
-the authoritative Phase-1 ledger.  The identifiers are stable machine-facing
-names, while the paper uses conventional scientific language.  ``Terminal''
-means that the declared Phase-1 question has an outcome; it does not promote
-the result beyond its scope tuple.
-
-\begin{longtable}{@{}p{0.30\textwidth}p{0.25\textwidth}p{0.37\textwidth}@{}}
-\caption{Frozen Phase-1 claim boundaries.}\label{tab:claim-boundaries}\\
-\toprule
-Ledger identifier & Claim state & Boundary preserved in this paper \\
-\midrule
-\endfirsthead
-\toprule
-Ledger identifier & Claim state & Boundary preserved in this paper \\
-\midrule
-\endhead
-\cert{phase1.einstein_extra.structure} & Classified & Pre-residual compact
-linear exact sequence and Lee--Wald form; no particle or final quotient. \\
-\cert{phase1.taub_kuranishi.structure} & Scoped theorem frozen & Complete
-finite exponential-polynomial second-order cone; full bounded locus open. \\
-\cert{phase1.interaction.disposition} & Representative frozen; invariant
-class open & Exact retained cyclic representative; physical action
-trivialized through summed input order two; no branch-resolved class. \\
-\cert{phase1.black_hole.companion} & Companion draft allowed & Horizon
-curvature and finite-flux results in declared axial class and polar fixture;
-no stability or universal endpoint theorem. \\
-\cert{phase1.quantum.strict} & Local Euclidean one-loop obstruction & No
-Lorentzian QME, state, particle, or unitarity inference. \\
-\cert{phase1.quantum.compensator} & QME restored in changed theory at one loop
-& Formal $\tau$-adic local Euclidean statement; no equivalence to strict
-theory or unconditional all-loop result. \\
-\cert{phase1.counterflow.causal_parent} & Causal only & Exact causal parent at
-the selected Berger point; no positivity follows. \\
-\cert{phase1.counterflow.physical_viability} & Terminally obstructed for the
-declared family & Persistent $j=\tfrac12$ Hamiltonian--Hopf block rejects the
-same-field family; no all-architecture no-go. \\
-\cert{phase1.counterflow.clock_charge} & Classified & Fixed charge makes $D$
-null and removes the clock; unrestricted clock leaves $D$ charged. \\
-\cert{phase1.observer.disposition} & Draft allowed; no promotion & No
-operational counterflow frequency ratio; not a receiver nonexistence theorem. \\
-\bottomrule
-\end{longtable}
-
 \section{Conclusion}
 
 The phase-one programme began with a common but underspecified question:
@@ -836,7 +1083,7 @@ directions, and quantum states are different mathematical objects.
 That distinction did not automatically rescue the theory.  Additional
 compact-product directions survive local reduction, yet some fail bounded
 nonlinear continuation.  Horizon regularity admits additional Schwarzschild
-curvature solutions, yet a certified finite-norm fixture selects the
+curvature solutions, yet a specified radial-integrability fixture selects the
 Einstein sector.  Strict pure Weyl gravity has a local Euclidean one-loop BV
 obstruction; a compensator removes it only in a changed theory.  The first
 changed model with a complete causal BV parent is itself rejected by an exact
@@ -856,6 +1103,33 @@ complete changed theory fails a robust linear physical-stability test.
 \end{equation}
 
 \begin{thebibliography}{99}
+
+\bibitem{LeeWald}
+J.~Lee and R.~M.~Wald,
+``Local symmetries and constraints,''
+\emph{J. Math. Phys.} \textbf{31} (1990) 725--743.
+
+\bibitem{IyerWald}
+V.~Iyer and R.~M.~Wald,
+``Some properties of Noether charge and a proposal for dynamical black hole
+entropy,'' \emph{Phys. Rev. D} \textbf{50} (1994) 846--864,
+\href{https://arxiv.org/abs/gr-qc/9403028}{arXiv:gr-qc/9403028}.
+
+\bibitem{HollandsWald}
+S.~Hollands and R.~M.~Wald,
+``Stability of black holes and black branes,''
+\emph{Commun. Math. Phys.} \textbf{321} (2013) 629--680,
+\href{https://arxiv.org/abs/1201.0463}{arXiv:1201.0463}.
+
+\bibitem{Woodard}
+R.~P.~Woodard,
+``The theorem of Ostrogradsky,''
+\href{https://arxiv.org/abs/1506.02210}{arXiv:1506.02210}.
+
+\bibitem{KapitulaPromislow}
+T.~Kapitula and K.~Promislow,
+\emph{Spectral and Dynamical Stability of Nonlinear Waves},
+Springer, New York (2013).
 
 \bibitem{BenderMannheim}
 C.~M.~Bender and P.~D.~Mannheim,
@@ -930,6 +1204,38 @@ M.~Momennia and S.~H.~Hendi,
 gravitational perturbations,''
 \href{https://arxiv.org/abs/1910.00428}{arXiv:1910.00428}.
 
+\bibitem{Riegert}
+R.~J.~Riegert,
+``Birkhoff's theorem in conformal gravity,''
+\emph{Phys. Rev. Lett.} \textbf{53} (1984) 315--318.
+
+\bibitem{MannheimKazanas}
+P.~D.~Mannheim and D.~Kazanas,
+``Exact vacuum solution to conformal Weyl gravity and galactic rotation
+curves,'' \emph{Astrophys. J.} \textbf{342} (1989) 635--638.
+
+\bibitem{GrumillerEtAl}
+D.~Grumiller, M.~Irakleidou, I.~Lovrekovic, and R.~McNees,
+``Conformal gravity holography in four dimensions,''
+\emph{Phys. Rev. Lett.} \textbf{112} (2014) 111102,
+\href{https://arxiv.org/abs/1310.0819}{arXiv:1310.0819}.
+
+\bibitem{Lovrekovic}
+I.~Lovrekovic,
+``Canonical charges and asymptotic symmetries in four dimensional conformal
+gravity,'' \href{https://arxiv.org/abs/1505.05820}{arXiv:1505.05820}.
+
+\bibitem{PlebanskiHacyan}
+J.~F.~Pleba\'nski and S.~Hacyan,
+``Some exceptional electrovac type D metrics with cosmological constant,''
+\emph{J. Math. Phys.} \textbf{20} (1979) 1004--1010.
+
+\bibitem{JizbaLeheckova}
+P.~Jizba and T.~Lehe\v ckov\'a,
+``Generalized Birkhoff theorems and $2+2$ direct product spacetimes in Weyl
+conformal gravity,'' \emph{Phys. Rev. D} \textbf{113} (2026) 044060,
+\href{https://arxiv.org/abs/2512.18482}{arXiv:2512.18482}.
+
 \bibitem{BarnichBrandtHenneaux}
 G.~Barnich, F.~Brandt, and M.~Henneaux,
 ``Local BRST cohomology in gauge theories,''
@@ -941,10 +1247,21 @@ E.~S.~Fradkin and A.~A.~Tseytlin,
 ``Renormalizable asymptotically free quantum theory of gravity,''
 \emph{Nucl. Phys. B} \textbf{201} (1982) 469--491.
 
+\bibitem{DeserSchwimmer}
+S.~Deser and A.~Schwimmer,
+``Geometric classification of conformal anomalies in arbitrary dimensions,''
+\emph{Phys. Lett. B} \textbf{309} (1993) 279--284,
+\href{https://arxiv.org/abs/hep-th/9302047}{arXiv:hep-th/9302047}.
+
 \bibitem{Rachwal}
 L.~Rachwa\l,
 ``Introduction to quantization of conformal gravity,''
 \href{https://arxiv.org/abs/2204.13856}{arXiv:2204.13856}.
+
+\bibitem{OdaOhta}
+I.~Oda and N.~Ohta,
+``Quantum conformal gravity,''
+\href{https://arxiv.org/abs/2311.09582}{arXiv:2311.09582}.
 
 \bibitem{BaumeKerenZur}
 F.~Baume and B.~Keren-Zur,

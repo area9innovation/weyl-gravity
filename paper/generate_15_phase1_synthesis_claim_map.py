@@ -52,8 +52,8 @@ def main() -> None:
         )
 
     payload = {
-        "schema": "paper15-phase1-synthesis-claim-map-v1",
-        "result_id": "PAPER15_FOUR_LEVEL_PHASE1_SYNTHESIS_V1",
+        "schema": "paper15-phase1-synthesis-claim-map-v2",
+        "result_id": "PAPER15_FOUR_LEVEL_PHASE1_SYNTHESIS_V2",
         "result_state": "PUBLICATION_SYNTHESIS_OF_FROZEN_CLAIMS",
         "paper": str(PAPER.relative_to(ROOT)),
         "paper_sha256": digest(PAPER),
@@ -66,7 +66,7 @@ def main() -> None:
             "phase1.observer.disposition",
         ],
         "does_not_establish": ledger["does_not_establish"],
-        "scope_rule": "Every scientific statement inherits the exact theory, background, phase-space, boundary/correction class, lifecycle, and limitation of its frozen source claim.",
+        "scope_rule": "Every scientific statement inherits the exact mathematical scope (theory, spacetime, background fields, gauge group, function or phase space, and boundary/support class) of its frozen source claim; dependency tags, evidence state, and limitation are recorded separately.",
     }
     OUTPUT.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
     print(OUTPUT.relative_to(ROOT))
@@ -84,7 +84,7 @@ def main() -> None:
             "source": {"path": str(PAPER.relative_to(ROOT))},
             "body": {
                 "paper_class": "overview",
-                "native": {"source_kind": "paper15-additive-phase1-synthesis"},
+                "native": {"source_kind": "paper15-additive-phase1-synthesis-v2"},
             },
             "edges": [],
         }
@@ -107,14 +107,14 @@ def main() -> None:
                 },
                 {
                     "kind": "result_paper_edge",
-                    "id": f"sf:coverage/edge/{raw}/paper-15/phase1-synthesis-v1",
+                    "id": f"sf:coverage/edge/{raw}/paper-15/phase1-synthesis-v2",
                     "body": {
                         "from": result["id"],
                         "to": "paper:15-four-level-ghost-classification-phase1-synthesis",
                         "claim": claim_id,
                         "edge_kind": "OVERVIEW_SYNTHESIS",
                         "stale": False,
-                        "version": 1,
+                        "version": 2,
                         "stamp": "2026-07-22",
                         "native": {"source_schema": "result-paper-edge-v0"},
                     },
@@ -123,7 +123,7 @@ def main() -> None:
         )
     coverage = {
         "ir": "science-forge-ir-v0",
-        "schema": "paper15-phase1-synthesis-overlay-v1",
+        "schema": "paper15-phase1-synthesis-overlay-v2",
         "append_only_parent": str(COVERAGE_SOURCE.relative_to(ROOT)),
         "append_only_parent_sha256": digest(COVERAGE_SOURCE),
         "claim_map": str(OUTPUT.relative_to(ROOT)),

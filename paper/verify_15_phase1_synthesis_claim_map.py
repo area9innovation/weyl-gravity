@@ -72,10 +72,17 @@ def main() -> None:
     required_phrases = [
         "Result card A: compact Einstein/additional decomposition",
         "Result card B: finite-harmonic second-order cone",
-        "Result card C: finite-norm selection at a Schwarzschild fixture",
+        "Result card C: radial-pairing selection at a Schwarzschild fixture",
         "Result card D: strict and compensated local quantum theories",
         "Result card E: causal construction and physical nonselection",
         "(2,3/5)",
+        "h_+(u,v)=",
+        "S_{\\rm cf}=",
+        "\\operatorname{disc}_wF_2=256q^5(9q-8)<0",
+        "\\mathcal N_R[u_1,u_2]",
+        "c_{\\rm W}=\\frac{199}{30}",
+        "a_{\\rm W}=\\frac{87}{20}",
+        "\\Gamma^{(1)}_{\\rm div}(d)",
         "This is a classification ending, not a viable-theory claim",
         "No positive full-BV state has been constructed",
     ]
@@ -89,9 +96,11 @@ def main() -> None:
         "ordinary local causal boundary conditions cannot remove",
         "strict pure Weyl gravity is anomaly-free",
         "counterflow theory is physically viable",
+        "Lee--Wald inertia",
+        "exact 70-component causal BV parent",
     ]
     for phrase in forbidden_phrases:
-        if phrase in text.lower():
+        if phrase.lower() in text.lower():
             fail(f"overbroad phrase present: {phrase}")
 
     coverage = json.loads(COVERAGE.read_text())
