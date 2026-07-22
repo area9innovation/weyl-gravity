@@ -1,0 +1,189 @@
+{
+  "$schema": "../schema/phase2-cpt-feasibility-classification-v1.schema.json",
+  "claim_boundary": {
+    "does_not_establish": [
+      "a genuine Mannheim C on strict conformal gravity",
+      "a nontrivial ghost-normalizer no-go",
+      "a full-BV Hadamard state, particles, scattering, anomaly cancellation, QME restoration or unitarity"
+    ],
+    "establishes": [
+      "the exact six-row terminal structured-CPT classification",
+      "independent exact replay of the compact commutant/C0, cylinder commutator defects and quartet discriminant"
+    ]
+  },
+  "decision": {
+    "conformal_gravity_unitarity": "NOT_ESTABLISHED",
+    "counterflow": "POSITIVE_ETA_SPECTRALLY_IMPOSSIBLE",
+    "finite_positive_eta": "YES_ON_COMPACT_AND_STATIONARY_CYLINDER_REDUCED_BLOCKS",
+    "genuine_Mannheim_C": "NONE_CERTIFIED",
+    "ghost_normalizer": "OPEN",
+    "residual_BRST_C": "CYLINDER_OBSTRUCTED_IN_DECLARED_COMMUTANT"
+  },
+  "definition_crosswalk": {
+    "C": "requires involution, dynamics, PT convention and BRST chain compatibility",
+    "H": "positive-frequency generator; compact H is the positive spectral square root of the displayed H^2",
+    "P_T": "absent on compact fixed-N=2 and cylinder inputs",
+    "Q": "residual CE/BRST differential on the cylinder; no positive-self-adjoint Q condition",
+    "cohomology": "requires explicit chain descent before positivity",
+    "dagger": "declared coefficient-space Hermitian adjoint in each finite reduced carrier",
+    "eta": "strictly positive Hermitian pseudo-Hermitian metric, not C by definition",
+    "real_structure": "conjugate opposite-frequency/momentum completion; not time reversal by itself"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "independent_replays": {
+    "compact": {
+      "H_and_H2_same_commutant": true,
+      "Hamiltonian": "positive spectral square root of H^2",
+      "full_commutant": "M_2(C) direct-sum M_2(C) direct-sum M_4(C)",
+      "full_commutant_complex_dimension": 24,
+      "q_checks": {
+        "axial": {
+          "C_squared_identity": true,
+          "eta_determinant": "lambda*(9*lambda - 2)"
+        },
+        "polar": {
+          "C_squared_identity": true,
+          "eta_determinant": "(lambda - 2)*(9*lambda - 2)"
+        }
+      }
+    },
+    "cylinder": {
+      "-1": {
+        "compact_ranks": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "proper_ranks": [
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32
+        ],
+        "stacked_BRST_defect_rank": 102
+      },
+      "1": {
+        "compact_ranks": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "proper_ranks": [
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32
+        ],
+        "stacked_BRST_defect_rank": 102
+      }
+    },
+    "quartet": {
+      "H_has_nonreal_spectrum": true,
+      "discriminant": "-2151"
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "mutation_expectations": {
+    "H_equals_H2": "REJECT",
+    "PU_analogy_promoted": "REJECT",
+    "compact_commutant_dim12": "REJECT",
+    "cylinder_chain_map": "REJECT",
+    "eta_equals_C": "REJECT",
+    "ghost_normalizer_closed": "REJECT",
+    "quartet_rescued": "REJECT",
+    "unitarity": "REJECT"
+  },
+  "provenance": {
+    "generator": "quantum-weyl/pt_cpt/synthesis/cpt_feasibility_classification.py",
+    "science_forge_identity": "phase2-cpt-review-1",
+    "work_item": "sf:program/work/phase2-cpt-feasibility-classification"
+  },
+  "result_id": "PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1",
+  "result_state": "FINITE_STRUCTURED_ETA_POSITIVE_C0_PARTIAL_GENUINE_C_AND_BRST_OPEN_OR_OBSTRUCTED_QUARTET_NO_GO",
+  "schema": "pure-weyl-phase2-cpt-feasibility-classification-v1",
+  "scoped_analogy": {
+    "Pais_Uhlenbeck_equal_frequency_Jordan": "secular logarithms/Jordan structure at characteristic shells are an algebraic analogy to the equal-frequency PU limit only",
+    "does_not_establish": [
+      "zero-norm decoupling",
+      "a Mannheim C operator",
+      "equivalence of compact/cylinder blocks to the PU oscillator"
+    ]
+  },
+  "source_refs": {
+    "compact": {
+      "path": "quantum-weyl/pt_cpt/compact_blocks/certificates/COMPACT_BLOCK_STRUCTURED_CPT_FEASIBILITY_V1.json",
+      "sha256": "8852a5503f1549e2bcfc05bbf72b714be8b7079708bd06d8059eee1ea2139fd4"
+    },
+    "cylinder": {
+      "path": "quantum-weyl/pt_cpt/cylinder_brst/certificates/CYLINDER_BRST_STRUCTURED_CPT_FEASIBILITY_V1.json",
+      "sha256": "1505dbbff6e6756a2c4472d607b66a02084c184bf0c50092bf7aab3f8dd4d532"
+    },
+    "quartet": {
+      "path": "quantum-weyl/pt_cpt/negative_control/certificates/STRUCTURED_METRIC_QUARTET_NO_GO_V1.json",
+      "sha256": "377f699d854724f743188b854e4f5be3f29540ba1f5bc2beee3ec9204e7dbf6a"
+    }
+  },
+  "typed_classification": [
+    {
+      "claim": "structured_positive_eta",
+      "compact_blocks": "EXACT_NONEMPTY_CONE_CLASSIFIED",
+      "counterflow_quartet": "EXACTLY_INFEASIBLE",
+      "cylinder_reduced": "ETA0_EQUALS_IDENTITY",
+      "type": "REDUCED_MODE_METRIC_FEASIBILITY"
+    },
+    {
+      "claim": "unique_fundamental_symmetry",
+      "compact_blocks": "UNIQUE_C0_MINUS_I2_PLUS_I2_PLUS_I4",
+      "counterflow_quartet": "NO_POSITIVE_ETA_SO_GATE_NOT_REACHED",
+      "cylinder_reduced": "C0_EXISTS_BUT_NOT_CHAIN_MAP",
+      "type": "G_RELATIVE_INVOLUTION"
+    },
+    {
+      "claim": "genuine_Mannheim_C",
+      "compact_blocks": "NOT_ESTABLISHED_MISSING_INDEPENDENT_PT",
+      "counterflow_quartet": "SPECTRALLY_EXCLUDED",
+      "cylinder_reduced": "NOT_ESTABLISHED",
+      "type": "C_OPERATOR_WITH_PT_DATA"
+    },
+    {
+      "claim": "residual_BRST_descent",
+      "compact_blocks": "INVARIANT_STATE_ORBIT_QUOTIENT_NOT_ESTABLISHED",
+      "counterflow_quartet": "NOT_APPLICABLE_CHANGED_THEORY_NEGATIVE_CONTROL",
+      "cylinder_reduced": "OBSTRUCTED_IN_DECLARED_INVARIANT_COMMUTANT",
+      "type": "CHAIN_AND_COHOMOLOGY_GATE"
+    },
+    {
+      "claim": "broken_PT_negative_control",
+      "compact_blocks": "NOT_APPLICABLE",
+      "counterflow_quartet": "UNRESCUABLE_COMPLEX_SPECTRUM",
+      "cylinder_reduced": "NOT_APPLICABLE",
+      "type": "SPECTRAL_NO_GO"
+    },
+    {
+      "claim": "nontrivial_ghost_normalizer_route",
+      "compact_blocks": "NOT_CLASSIFIED",
+      "counterflow_quartet": "CANNOT_REPAIR_COMPLEX_SPECTRUM",
+      "cylinder_reduced": "NOT_CLASSIFIED_OUTSIDE_DECLARED_INVARIANT_COMMUTANT",
+      "type": "OPEN_ROUTE"
+    }
+  ]
+}
