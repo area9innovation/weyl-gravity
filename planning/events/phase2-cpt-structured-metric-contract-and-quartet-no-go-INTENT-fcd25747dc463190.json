@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase2-cpt-structured-metric-contract-and-quartet-no-go-INTENT-fcd25747dc463190",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work intent",
+  "source": {"path": "tools/science-forge/program/events/phase2-cpt-structured-metric-contract-and-quartet-no-go-INTENT-fcd25747dc463190.json", "span": null},
+  "body": {"event_kind": "WORK_INTENT", "actor": "phase2-cpt-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-22T11:29:22Z", "seq": 1, "payload": {"target": "sf:program/work/phase2-cpt-structured-metric-contract-and-quartet-no-go", "agent": "phase2-cpt-1", "lease": "exclusive", "base_commit": "1921878e20d1929a5ac2e6b882b8ae944622336d", "transaction_id": "ba442b8236afe4d4", "allowlist_verdict": "within-allowlist", "intended_paths": ["quantum-weyl/pt_cpt/negative_control/__init__.py", "quantum-weyl/pt_cpt/negative_control/certificates/STRUCTURED_METRIC_QUARTET_NO_GO_V1.json", "quantum-weyl/pt_cpt/negative_control/receipts/STRUCTURED_METRIC_QUARTET_NO_GO_V1_TIER_RECEIPT.json", "quantum-weyl/pt_cpt/negative_control/schema/structured-metric-quartet-no-go-v1.schema.json", "quantum-weyl/pt_cpt/negative_control/structured_metric_quartet_no_go.py", "quantum-weyl/pt_cpt/negative_control/tests/__init__.py", "quantum-weyl/pt_cpt/negative_control/tests/test_structured_metric_quartet_no_go.py", "quantum-weyl/pt_cpt/negative_control/verify_structured_metric_quartet_no_go.py", "reports/phase2-cpt-quartet-negative-control-2026-07-22.md"], "verify_commands": ["python3 quantum-weyl/pt_cpt/negative_control/structured_metric_quartet_no_go.py --check", "python3 quantum-weyl/pt_cpt/negative_control/verify_structured_metric_quartet_no_go.py", "python3 -m pytest -q quantum-weyl/pt_cpt/negative_control/tests/test_structured_metric_quartet_no_go.py"]}, "native": {"authored_by": "sfc work-intent", "policy": "append-only (SPEC 4.5); an uncommitted delivery manifest — NO current_commit, NO test-success. Superseded by a later intent; sealed by WORK_COMMITTED."}},
+  "edges": [{"rel": "INTENDS", "to": "sf:program/work/phase2-cpt-structured-metric-contract-and-quartet-no-go"}]
+}

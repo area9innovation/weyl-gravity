@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase2-black-hole-general-l-axial-current-LEASE-ACQUIRE-excl-7a25593b973c999e",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/phase2-black-hole-general-l-axial-current-LEASE-ACQUIRE-excl-7a25593b973c999e.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "phase2-bh-2", "base_revision": "science-forge-ir-v0", "when": "2026-07-22T11:42:57Z", "seq": 1, "payload": {"target": "sf:program/work/phase2-black-hole-general-l-axial-current", "agent": "phase2-bh-2", "lease_type": "exclusive", "action": "ACQUIRE", "acquired": "2026-07-22T11:42:57Z", "expires": "2026-07-22T19:42:57Z"}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/phase2-black-hole-general-l-axial-current"}]
+}

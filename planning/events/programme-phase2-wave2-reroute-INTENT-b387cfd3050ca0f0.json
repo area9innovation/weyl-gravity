@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/programme-phase2-wave2-reroute-INTENT-b387cfd3050ca0f0",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work intent",
+  "source": {"path": "tools/science-forge/program/events/programme-phase2-wave2-reroute-INTENT-b387cfd3050ca0f0.json", "span": null},
+  "body": {"event_kind": "WORK_INTENT", "actor": "coordinator", "base_revision": "science-forge-ir-v0", "when": "2026-07-22T11:41:29Z", "seq": 1, "payload": {"target": "sf:program/work/programme-phase2-wave2-reroute", "agent": "coordinator", "lease": "exclusive", "base_commit": "85548b8982bce7cd7ba764a245112e09be59d5dd", "transaction_id": "1b31b1b67a4338d1", "allowlist_verdict": "within-allowlist", "intended_paths": ["notes/phase2-interest-brief-2026-07-22.md", "notes/universe-building-roadmap.md", "planning/work-items/programme-phase2-wave2-reroute.json", "planning/work-items/phase2-sign-nariai-mechanism-v2.json", "planning/examples/phase2-sign-nariai-mechanism-v2-brief.md", "reports/phase2-wave2-reroute-2026-07-22.md"], "verify_commands": ["python3 -c \"import json", "json.load(open(\\\"planning/work-items/programme-phase2-wave2-reroute.json\\\"))", "json.load(open(\\\"planning/work-items/phase2-sign-nariai-mechanism-v2.json\\\"))\"", "s-f import-program planning/work-items /tmp/phase2-wave2-prospective.json", "git diff --check -- notes/phase2-interest-brief-2026-07-22.md notes/universe-building-roadmap.md planning/work-items/programme-phase2-wave2-reroute.json planning/work-items/phase2-sign-nariai-mechanism-v2.json planning/examples/phase2-sign-nariai-mechanism-v2-brief.md reports/phase2-wave2-reroute-2026-07-22.md"]}, "native": {"authored_by": "sfc work-intent", "policy": "append-only (SPEC 4.5); an uncommitted delivery manifest — NO current_commit, NO test-success. Superseded by a later intent; sealed by WORK_COMMITTED."}},
+  "edges": [{"rel": "INTENDS", "to": "sf:program/work/programme-phase2-wave2-reroute"}]
+}
