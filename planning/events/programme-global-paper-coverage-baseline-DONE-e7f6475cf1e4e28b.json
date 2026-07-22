@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/programme-global-paper-coverage-baseline-DONE-e7f6475cf1e4e28b",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/programme-global-paper-coverage-baseline-DONE-e7f6475cf1e4e28b.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "coordinator", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-22T03:46:00Z", "seq": 5, "predecessor": "sf:program/event/programme-global-paper-coverage-baseline-ACTIVE-20acf45dcb058bd0", "payload": {"target": "sf:program/work/programme-global-paper-coverage-baseline", "to_state": "DONE", "note": "nonvacuous advisory baseline frozen; eight human-classified Phase-1 results have technical coverage, eleven reverse claims pass, and 1,400 unclassified results remain visibly queued.", "evidence_basis": "planning/paper-coverage/phase1-paper-coverage-baseline-2026-07-22.json; planning/paper-coverage/phase1-paper-coverage-report-2026-07-22.json; independent verifier PASS."}, "native": {"authored_by": "sfc close-out", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/programme-global-paper-coverage-baseline"}]
+}

@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/programme-global-paper-coverage-baseline-to-unassigned-a7f3b6931a199620-RANSWER-DELIVER-f38e0f00dc989159",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "cross-stream request answer",
+  "source": {"path": "tools/science-forge/program/events/programme-global-paper-coverage-baseline-to-unassigned-a7f3b6931a199620-RANSWER-DELIVER-f38e0f00dc989159.json", "span": null},
+  "body": {"event_kind": "REQUEST_ANSWER", "actor": "science-forge", "base_revision": "science-forge-ir-v0", "when": "2026-07-22T03:41:10Z", "seq": 2, "predecessor": "sf:program/event/programme-global-paper-coverage-baseline-to-unassigned-a7f3b6931a199620-RANSWER-ACCEPT-c563f0c28422caac", "payload": {"target": "sf:program/request/programme-global-paper-coverage-baseline-to-unassigned-a7f3b6931a199620", "request_id": "sf:program/request/programme-global-paper-coverage-baseline-to-unassigned-a7f3b6931a199620", "action": "DELIVER", "by": "science-forge", "reason": "", "delivered_ids": "tools/science-forge/sfc.forge;tools/science-forge/run.sh"}, "native": {"authored_by": "sfc request-accept/reject/deliver/verify", "policy": "append-only (SPEC 4.5); one content-addressed answer file; the request status is the max-seq fold of these answers, fail-closed on an ambiguous tie."}},
+  "edges": [{"rel": "ANSWERS", "to": "sf:program/request/programme-global-paper-coverage-baseline-to-unassigned-a7f3b6931a199620"}]
+}

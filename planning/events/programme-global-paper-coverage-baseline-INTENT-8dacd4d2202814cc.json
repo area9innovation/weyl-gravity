@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/programme-global-paper-coverage-baseline-INTENT-8dacd4d2202814cc",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work intent",
+  "source": {"path": "tools/science-forge/program/events/programme-global-paper-coverage-baseline-INTENT-8dacd4d2202814cc.json", "span": null},
+  "body": {"event_kind": "WORK_INTENT", "actor": "coordinator", "base_revision": "science-forge-ir-v0", "when": "2026-07-22T03:45:30Z", "seq": 2, "predecessor": "sf:program/event/programme-global-paper-coverage-baseline-INTENT-3905d96be2db3f77", "payload": {"target": "sf:program/work/programme-global-paper-coverage-baseline", "agent": "coordinator", "lease": "exclusive", "base_commit": "2d9f1cbd9f376c89dee146061d4c23af558392b9", "transaction_id": "ed6dbe453ac36b0d", "allowlist_verdict": "within-allowlist", "intended_paths": ["reports/programme-global-paper-coverage-baseline-closeout-2026-07-22.md"], "verify_commands": ["python3 planning/paper-coverage/verify_phase1_paper_coverage_baseline.py --census planning/paper-coverage/phase1-paper-coverage-baseline-2026-07-22.json --report planning/paper-coverage/phase1-paper-coverage-report-2026-07-22.json --overlay planning/paper-coverage/phase1-paper-coverage-overlay-2026-07-22.json"]}, "native": {"authored_by": "sfc work-intent", "policy": "append-only (SPEC 4.5); an uncommitted delivery manifest — NO current_commit, NO test-success. Superseded by a later intent; sealed by WORK_COMMITTED."}},
+  "edges": [{"rel": "INTENDS", "to": "sf:program/work/programme-global-paper-coverage-baseline"}]
+}
