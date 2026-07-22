@@ -1,0 +1,93 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This LOCAL-ALGEBRAIC + REDUCED-MODE theorem computes the fixed-representative sphere-integrated axial Einstein Lee-Wald slice density for all integer ell>=2 and real omega!=0 and proves its exact nonvanishing. It does not classify the additional branch, construct an asymptotic phase space or Hilbert norm, define a scattering flux topology, or establish a polar, stability, particle, positivity or quantum result.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "black_hole_programme/phase2/general_l_axial_current/certificate.json",
+          "result_id": "PURE_WEYL_PHASE2_GENERAL_L_AXIAL_EINSTEIN_CURRENT",
+          "sha256": "02ebd63775ca12646973f95866773bdb669eadcda4578426713adad95d2cde9f"
+        }
+      ],
+      "id": "black_hole.schwarzschild.axial.general_l_einstein_lee_wald_current",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The imported exact Einstein branches have rates 0 and -2 i omega; the literal current theorem uses their certified all-orders formal recurrences.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "For both axial Einstein branches, F^v(E,bar E)=A_EE r^-2+O(r^-3) with explicit nonzero A_EE for every integer ell>=2 and real omega!=0. This is a fixed-representative finite radial form, not a Hilbert norm or scattering topology.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The legacy E2 basis denominator has no real-frequency zero on the discrete physical angular domain; the unit-F normalization contains no such wall.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No nonlinear or second-order solution is evaluated.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "No retarded propagator or causal phase space is constructed.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No quadratic source is evaluated.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "No compact second-order Taub map is involved.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "Schwarzschild exterior, M>0; M=1 units with hat_omega=M omega",
+        "boundaries": "formal large-radius fixed-representative Lee-Wald slice density",
+        "carrier": "homogeneous axial Einstein-image metric perturbations only",
+        "charge_sector": "no asymptotic charge or phase-space quotient",
+        "degree": 1,
+        "ell": "all integer ell>=2",
+        "k": "radial formal 1/r order",
+        "m": "axisymmetric representative; exact harmonic norms restore the irreducible ell result",
+        "omega": "all real omega!=0 by exact conjugation/time reversal",
+        "parity": "axial only",
+        "theory": "linearized four-dimensional pure Weyl C^2 gravity, alpha_W!=0"
+      }
+    }
+  ],
+  "generated_by": "black_hole_programme/phase2/general_l_axial_current/general_l_axial_current.py",
+  "generated_by_sha256": "bb44fbcf80fe1389e1da0fe43106a0a48ed1996f00bfd8595dbdaeeb0de0a78a",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "black_hole",
+  "verification_commands": [
+    "python3 black_hole_programme/phase2/general_l_axial_current/general_l_axial_current.py --check",
+    "python3 black_hole_programme/phase2/general_l_axial_current/verify_general_l_axial_current.py",
+    "python3 -m pytest black_hole_programme/phase2/general_l_axial_current/test_general_l_axial_current.py -q",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/phase2-black-hole-general-l-axial-current-fragment-v1.json"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase2-black-hole-general-l-axial-current-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_token",
+    "dependency_tags", "lifecycle", "declaration", "normalization",
+    "angular_reduction", "coefficients", "legacy_wall", "frequency_extension",
+    "mass_restoration", "literal_controls", "representative_ambiguity",
+    "provenance", "claim_flags", "does_not_establish", "verification"
+  ],
+  "properties": {
+    "schema": {"const": "phase2-black-hole-general-l-axial-current-v1"},
+    "schema_path": {"const": "black_hole_programme/phase2/general_l_axial_current/schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "PURE_WEYL_PHASE2_GENERAL_L_AXIAL_EINSTEIN_CURRENT"},
+    "result_token": {"const": "BH_PHASE2_GENERAL_L_AXIAL_EINSTEIN_CURRENT_NONVANISHING"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "declaration": {"type": "object", "required": ["theory", "background", "chart", "sector", "frequency", "object", "asymptotic_form"]},
+    "normalization": {"type": "object", "required": ["E0", "E2_unit_F", "rescaling_law", "legacy_E2_scale_kappa", "legacy_reading"]},
+    "angular_reduction": {"type": "object", "required": ["S_ell", "derivative_identities", "evaluated_norms", "unevaluated_integral_remaining"]},
+    "coefficients": {"type": "object", "required": ["E0", "E2_unit_F", "E2_legacy", "leading_power", "all_nonzero_on_declared_domain"]},
+    "legacy_wall": {"type": "object", "required": ["G", "G_abs_squared", "real_G_in_u", "imag_G_over_12omega_in_u", "resultant_u", "resultant_factor_H", "H_at_ell2", "H_at_ell3", "H_shifted_ell_ge_4", "proof"]},
+    "frequency_extension": {"type": "object", "required": ["identity", "reason", "nonvanishing_preserved"]},
+    "mass_restoration": {"type": "object", "required": ["dimensionless_frequency", "rule", "nonvanishing_invariant_for_M_positive"]},
+    "literal_controls": {"type": "object", "required": ["2", "3"]},
+    "representative_ambiguity": {"type": "object", "required": ["fixed_representative", "closed_sphere_angular_exact_forms", "radial_exact_form_quotient_analyzed", "reading"]},
+    "provenance": {
+      "type": "object",
+      "minProperties": 4,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "content_sha256", "git_blob"],
+        "properties": {
+          "path": {"type": "string"},
+          "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "git_blob": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["literal_all_ell_axial_einstein_current_certified", "all_ell_einstein_finite_radial_form_certified", "legacy_normalization_wall_excluded", "extra_branch_selection_certified", "polar_certified", "asymptotic_phase_space_constructed", "hilbert_norm_constructed"],
+      "properties": {
+        "literal_all_ell_axial_einstein_current_certified": {"const": true},
+        "all_ell_einstein_finite_radial_form_certified": {"const": true},
+        "legacy_normalization_wall_excluded": {"const": true},
+        "extra_branch_selection_certified": {"const": false},
+        "polar_certified": {"const": false},
+        "asymptotic_phase_space_constructed": {"const": false},
+        "hilbert_norm_constructed": {"const": false}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "verification": {"type": "object"}
+  }
+}

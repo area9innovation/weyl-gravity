@@ -1,0 +1,78 @@
+{
+  "schema": "phase2-black-hole-general-l-axial-current-receipt-v1",
+  "result_id": "PURE_WEYL_PHASE2_GENERAL_L_AXIAL_CURRENT_TIER_RECEIPT",
+  "date": "2026-07-22",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 1.89,
+      "commands": [
+        "python3 -m py_compile black_hole_programme/phase2/general_l_axial_current/{general_l_axial_current.py,verify_general_l_axial_current.py,test_general_l_axial_current.py}",
+        "python3 -m json.tool black_hole_programme/phase2/general_l_axial_current/{schema.json,certificate.json,receipt.json} residual_atlas/phase2-black-hole-general-l-axial-current-fragment-v1.json",
+        "git diff --check -- black_hole_programme/phase2/general_l_axial_current reports/phase2-black-hole-general-l-axial-current-2026-07-22.md residual_atlas/phase2-black-hole-general-l-axial-current-fragment-v1.json"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 111.75,
+      "commands": [
+        "python3 black_hole_programme/phase2/general_l_axial_current/general_l_axial_current.py --check",
+        "python3 black_hole_programme/phase2/general_l_axial_current/verify_general_l_axial_current.py",
+        "python3 -m pytest black_hole_programme/phase2/general_l_axial_current/test_general_l_axial_current.py -q",
+        "python3 residual_atlas/validate_fragment.py residual_atlas/phase2-black-hole-general-l-axial-current-fragment-v1.json"
+      ],
+      "results": [
+        "certificate reproduces byte-for-byte from the literal arbitrary-profile Lee-Wald current",
+        "independent explicit-P3/VbGeo ell=3 literal E0 and unit-F E2 currents pass",
+        "independent exact resultant, H(6), H(12), shifted positivity and negative-frequency extension pass",
+        "seven tests pass, including sampled-mode, exponent-only, selection and dual-provenance mutation gates",
+        "residual-atlas fragment passes"
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "No imported mathematical input, shared operator, existing schema, generated artifact or existing claim changed. Every prerequisite is read-only and imported by both content SHA256 and Git-blob identity, so the affected existing certificate chain is empty."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a scoped CLASSIFIED all-ell Einstein-current theorem, not a classical/quantum freeze, release, or shared-core change."
+    }
+  },
+  "content_sha256_manifest": {
+    "black_hole_programme/phase2/general_l_axial_current/__init__.py": "2233d7bc5bbefee739af3a63ef7b2da1fc8ad747f24fe3f551fd5672aa4ddb8b",
+    "black_hole_programme/phase2/general_l_axial_current/general_l_axial_current.py": "bb44fbcf80fe1389e1da0fe43106a0a48ed1996f00bfd8595dbdaeeb0de0a78a",
+    "black_hole_programme/phase2/general_l_axial_current/verify_general_l_axial_current.py": "275c8bc610fbadef8495bb2f688572774bb408aa1dcc95770d70a283e2798773",
+    "black_hole_programme/phase2/general_l_axial_current/test_general_l_axial_current.py": "6a3ae1b464b1a9929f27bba79fa7b3cc1ec80a18aa625d29a22933c3b4a347e5",
+    "black_hole_programme/phase2/general_l_axial_current/schema.json": "0f83e2c378433a9b7cdd114626755556dd5f06fe2cca6cf5d692ab0a5988fa84",
+    "black_hole_programme/phase2/general_l_axial_current/certificate.json": "02ebd63775ca12646973f95866773bdb669eadcda4578426713adad95d2cde9f",
+    "reports/phase2-black-hole-general-l-axial-current-2026-07-22.md": "654057af147416d1d0ba5c83b9bf977b9a07ef20aa6d7c36efa63af8aa22bfd1",
+    "residual_atlas/phase2-black-hole-general-l-axial-current-fragment-v1.json": "696ea7b689993cd4879d20c1667b940b390f3256c2a57e9343bdd5651fc7a54c"
+  },
+  "source_manifest": {
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_current/__init__.py": "127df0fba4b04f14ecc0948953791430803f1459",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_current/general_l_axial_current.py": "695c639b325491332e8c1c224185b357bc893fd4",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_current/verify_general_l_axial_current.py": "3f8ce3fbe5ccc70d1ad3b8678b5c4939188e73c5",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_current/test_general_l_axial_current.py": "c7763770e363ede16c620f48de4d7709e30814d0",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_current/schema.json": "6f499038b06e812ec109a67b3e9987f80dda291b",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_current/certificate.json": "4fabff559fb840af267f65de1acc6fc1c8bade6f",
+    "physics/symplectic-reconstruction/reports/phase2-black-hole-general-l-axial-current-2026-07-22.md": "ceb53d51fc4c9018a765abaae1cad411c23df704",
+    "physics/symplectic-reconstruction/residual_atlas/phase2-black-hole-general-l-axial-current-fragment-v1.json": "16f829f037ee655000c04e2e50fc620ea54b9db3"
+  },
+  "independent_rail": {
+    "status": "PASS",
+    "method": "The verifier does not import the producer. It inserts P3=(5*x^3-3*x)/2 before geometry, uses the VbGeo Schouten/Kulkarni-Nomizu curvature engine, independently derives the Lambda=12 unit-F master series, rebuilds the literal sphere-integrated Lee-Wald current, and recomputes the wall resultant."
+  },
+  "mutations_rejected": [
+    "sampled ell=2 and ell=3 fixtures substituted for the closed symbolic-Lambda coefficient",
+    "an exponent-only r^-2 statement substituted for the literal current coefficient",
+    "an unevaluated generic Legendre integral substituted for the four exact norms",
+    "the legacy normalization wall promoted to a physical mode wall",
+    "the Einstein-current theorem promoted to extra-branch selection, Hilbert norm or asymptotic phase space",
+    "content SHA256 and Git-blob provenance formats collapsed into one manifest"
+  ],
+  "claim_boundary": "This receipt covers the literal fixed-representative sphere-integrated axial Einstein Lee-Wald r^-2 coefficient for every integer ell>=2 and real omega!=0, exact nonvanishing in natural and legacy normalizations, the ell=2 replay and an independent ell=3 replay. It does not cover the extra branch, polar parity, unrestricted Lee-Wald exact-form ambiguities, an asymptotic phase space, Hilbert norm, scattering topology, stability, QNMs, particles, positivity, unitarity or quantum claims."
+}

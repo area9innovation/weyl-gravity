@@ -1,0 +1,132 @@
+{
+  "angular_reduction": {
+    "S_ell": "-(1-x**2)*P_ell'(x)",
+    "derivative_identities": [
+      "S_ell'=Lambda*P_ell",
+      "S_ell''=Lambda*P_ell'"
+    ],
+    "evaluated_norms": {
+      "integral_P2": "2/(2*ell+1)",
+      "integral_Pprime2": "Lambda",
+      "integral_x2_Pprime2": "Lambda*(2*ell-1)/(2*ell+1)",
+      "integral_x_P_Pprime": "2*ell/(2*ell+1)"
+    },
+    "unevaluated_integral_remaining": false
+  },
+  "claim_flags": {
+    "all_ell_einstein_finite_radial_form_certified": true,
+    "asymptotic_phase_space_constructed": false,
+    "extra_branch_selection_certified": false,
+    "hilbert_norm_constructed": false,
+    "legacy_normalization_wall_excluded": true,
+    "literal_all_ell_axial_einstein_current_certified": true,
+    "polar_certified": false
+  },
+  "coefficients": {
+    "E0": "-4*I*pi*Lambda*alpha*omega*(Lambda - 2)/(2*ell + 1)",
+    "E2_legacy": "-9216*I*pi*Lambda*alpha*omega**7*(Lambda - 2)/((2*ell + 1)*(2*omega - I)*(2*omega + I)*(Lambda**3 - 48*Lambda**2*omega**2 - 12*I*Lambda**2*omega - 5*Lambda**2 + 768*Lambda*omega**4 + 576*I*Lambda*omega**3 + 36*I*Lambda*omega + 6*Lambda - 4096*omega**6 - 6144*I*omega**5 + 2048*omega**4 - 384*I*omega**3 + 144*omega**2 - 36*I*omega)*(Lambda**3 - 48*Lambda**2*omega**2 + 12*I*Lambda**2*omega - 5*Lambda**2 + 768*Lambda*omega**4 - 576*I*Lambda*omega**3 - 36*I*Lambda*omega + 6*Lambda - 4096*omega**6 + 6144*I*omega**5 + 2048*omega**4 + 384*I*omega**3 + 144*omega**2 + 36*I*omega))",
+    "E2_unit_F": "-I*pi*Lambda*alpha*(Lambda - 2)/(omega**3*(2*ell + 1))",
+    "all_nonzero_on_declared_domain": true,
+    "leading_power": -2
+  },
+  "declaration": {
+    "asymptotic_form": "F^v=A_EE*r^-2+O(r^-3)",
+    "background": "Schwarzschild M>0; formulas use M=1 and hat_omega=M*omega",
+    "chart": "ingoing Eddington--Finkelstein",
+    "frequency": "real omega!=0; producer symbol is omega>0 and the negative half-line follows exactly by conjugation/time reversal",
+    "object": "fixed-representative sphere-integrated Lee--Wald slice density F^v(E,bar E)",
+    "sector": "axial integer ell>=2, Lambda=ell*(ell+1)",
+    "theory": "pure Weyl gravity, alpha_W integral sqrt(-g) C^2, alpha_W!=0"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "extra-branch exclusion or an Einstein-image selection theorem",
+    "a polar-parity statement",
+    "a complete asymptotic phase space, Hilbert norm or scattering flux topology",
+    "invariance under unrestricted Lee--Wald exact-form ambiguities",
+    "convergence of the formal radial series, stability, QNMs, particles, positivity or a quantum statement"
+  ],
+  "frequency_extension": {
+    "identity": "A_EE(-omega)=-A_EE(omega)=conjugate(A_EE(omega))",
+    "nonvanishing_preserved": true,
+    "reason": "all displayed denominators are real and even in omega while the imaginary numerator is odd"
+  },
+  "legacy_wall": {
+    "G": "-Lambda**3 + 48*Lambda**2*omega**2 - 12*I*Lambda**2*omega + 5*Lambda**2 - 768*Lambda*omega**4 + 576*I*Lambda*omega**3 + 36*I*Lambda*omega - 6*Lambda + 4096*omega**6 - 6144*I*omega**5 - 2048*omega**4 - 384*I*omega**3 - 144*omega**2 - 36*I*omega",
+    "G_abs_squared": "(Lambda**3 - 48*Lambda**2*omega**2 - 12*I*Lambda**2*omega - 5*Lambda**2 + 768*Lambda*omega**4 + 576*I*Lambda*omega**3 + 36*I*Lambda*omega + 6*Lambda - 4096*omega**6 - 6144*I*omega**5 + 2048*omega**4 - 384*I*omega**3 + 144*omega**2 - 36*I*omega)*(Lambda**3 - 48*Lambda**2*omega**2 + 12*I*Lambda**2*omega - 5*Lambda**2 + 768*Lambda*omega**4 - 576*I*Lambda*omega**3 - 36*I*Lambda*omega + 6*Lambda - 4096*omega**6 + 6144*I*omega**5 + 2048*omega**4 + 384*I*omega**3 + 144*omega**2 + 36*I*omega)",
+    "H_at_ell2": "-47331",
+    "H_at_ell3": "-89397",
+    "H_shifted_ell_ge_4": "3*k**10 + 135*k**9 + 2725*k**8 + 32490*k**7 + 252803*k**6 + 1334853*k**5 + 4808061*k**4 + 11545578*k**3 + 17433941*k**2 + 14610501*k + 4936627",
+    "imag_G_over_12omega_in_u": "-Lambda**2 + 48*Lambda*u + 3*Lambda - 512*u**2 - 32*u - 3",
+    "proof": "For omega!=0, G=0 implies simultaneous zeros of Re(G) and Im(G)/(12*omega) in u=omega^2. Their resultant is a nonzero signed factor 2^24 times H(Lambda). H(6) and H(12) are nonzero; after Lambda=ell(ell+1), ell=k+4, every coefficient of H is positive. Hence no common real zero for integer ell>=2.",
+    "real_G_in_u": "-Lambda**3 + 48*Lambda**2*u + 5*Lambda**2 - 768*Lambda*u**2 - 6*Lambda + 4096*u**3 - 2048*u**2 - 144*u",
+    "resultant_factor_H": "3*Lambda**5 - 5*Lambda**4 - 582*Lambda**3 + 2112*Lambda**2 - 2691*Lambda + 1647",
+    "resultant_relation": "resultant=-2^24*H(Lambda)",
+    "resultant_u": "-16777216*(3*Lambda**5 - 5*Lambda**4 - 582*Lambda**3 + 2112*Lambda**2 - 2691*Lambda + 1647)"
+  },
+  "lifecycle": "CLASSIFIED",
+  "literal_controls": {
+    "2": {
+      "E0": "-96*I*pi*alpha*omega/5",
+      "E2_unit_F": "-24*I*pi*alpha/(5*omega**3)",
+      "Lambda": 6
+    },
+    "3": {
+      "E0": "-480*I*pi*alpha*omega/7",
+      "E2_unit_F": "-120*I*pi*alpha/(7*omega**3)",
+      "Lambda": 12
+    }
+  },
+  "mass_restoration": {
+    "dimensionless_frequency": "hat_omega=M*omega",
+    "nonvanishing_invariant_for_M_positive": true,
+    "rule": "replace every omega in the dimensionless M=1 wall polynomials by hat_omega; mode-normalization powers restore the overall dimension and cannot create a zero for M>0"
+  },
+  "normalization": {
+    "E0": "H1=1/2 and H0=-i*omega*r/2+(Lambda-2)/4+M/r (legacy-compatible)",
+    "E2_unit_F": "F=dH1/dr has leading coefficient 1 in exp(-2*i*omega*r)*r^(1-4*i*M*omega)",
+    "legacy_E2_scale_kappa": "-96*omega**5/((2*omega - I)*(Lambda**3 - 48*Lambda**2*omega**2 + 12*I*Lambda**2*omega - 5*Lambda**2 + 768*Lambda*omega**4 - 576*I*Lambda*omega**3 - 36*I*Lambda*omega + 6*Lambda - 4096*omega**6 + 6144*I*omega**5 + 2048*omega**4 + 384*I*omega**3 + 144*omega**2 + 36*I*omega))",
+    "legacy_reading": "the G denominator is a basis-normalization wall only; the unit-F current has no such wall",
+    "rescaling_law": "E -> c E sends A_EE -> |c|^2 A_EE"
+  },
+  "provenance": {
+    "generic_ell_recurrence": {
+      "content_sha256": "6742e049806d3122a4c1b3a2b01d1305448f0ee6287e955083a0749cbe304523",
+      "git_blob": "707467bb2a4b279b8355bc79b0b9482a8f2da8f0",
+      "path": "black_hole_programme/phase2/general_l_axial_asymptotics/certificate.json"
+    },
+    "geometry_engine": {
+      "content_sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+      "git_blob": "054cbde5f4d67738629c7e1dc3cb11872269e8aa",
+      "path": "black_hole_programme/weyl_geometry.py"
+    },
+    "lee_wald_engine": {
+      "content_sha256": "a18f2e843eb34becff9e84c0853ab8afa91db11d8edbdf1ec00bacc46b2aecab",
+      "git_blob": "cabae6a728042e82c0e1578f4ab82e3acfdb2e26",
+      "path": "black_hole_programme/linearized_theta.py"
+    },
+    "legacy_ell2_certificate": {
+      "content_sha256": "8cbcfa2d762d1274f05a41d6200856c6d6f406d181543c44d56748bbc20f55ae",
+      "git_blob": "38aff1e38380764bb3b2c3efa4dfea5877c7b2fd",
+      "path": "black_hole_programme/certificates/BH2C_SYMBOLIC_FLUX_RADIATION_CLASS.json"
+    }
+  },
+  "representative_ambiguity": {
+    "closed_sphere_angular_exact_forms": "integrate to zero for regular integer-ell harmonics",
+    "fixed_representative": "LinearizedTheta for L=alpha_W C^2 used by the existing BH2C certificate",
+    "radial_exact_form_quotient_analyzed": false,
+    "reading": "the theorem is for this factorized Lee--Wald representative; it does not assert invariance under every symplectic-potential exact-form redefinition"
+  },
+  "result_id": "PURE_WEYL_PHASE2_GENERAL_L_AXIAL_EINSTEIN_CURRENT",
+  "result_token": "BH_PHASE2_GENERAL_L_AXIAL_EINSTEIN_CURRENT_NONVANISHING",
+  "schema": "phase2-black-hole-general-l-axial-current-v1",
+  "schema_path": "black_hole_programme/phase2/general_l_axial_current/schema.json",
+  "schema_sha256": "0f83e2c378433a9b7cdd114626755556dd5f06fe2cca6cf5d692ab0a5988fa84",
+  "verification": {
+    "independent": "python3 black_hole_programme/phase2/general_l_axial_current/verify_general_l_axial_current.py",
+    "producer": "python3 black_hole_programme/phase2/general_l_axial_current/general_l_axial_current.py --check"
+  }
+}
