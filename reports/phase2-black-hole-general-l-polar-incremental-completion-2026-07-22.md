@@ -121,6 +121,6 @@ establish an asymptotically flat phase space, finite norm, flux, scattering,
 quasinormal modes, ringdown, stability, positivity, particles, or a quantum
 theory.
 
-CLOSE-OUT: PARTIAL — six canonical log-free generic-polar sourced metric jets close all seven original Ricci rows through conservative depths, with exact affine/rank witnesses and no physical pivot wall; the old shallow logarithm is a nowhere-extendible terminal artifact, while the complete extendible log module and representative-shift-invariant EE/EX/XX current table remain open.
+CLOSE-OUT: SHORTFALL — six canonical log-free generic-polar sourced metric jets close all seven original Ricci rows through conservative depths, with exact affine/rank witnesses and no physical pivot wall; the old shallow logarithm is a nowhere-extendible terminal artifact, while the complete extendible log module and representative-shift-invariant EE/EX/XX current table remain open.
 EVIDENCE: black_hole_programme/phase2/general_l_polar_completion/certificate.json
 MISSING-DEP: POLAR_RESONANT_LOG_MODULE_AND_REPRESENTATIVE_SHIFT_INVARIANT_EE_EX_XX_CURRENT
