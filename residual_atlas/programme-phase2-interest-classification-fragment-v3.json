@@ -1,0 +1,91 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "The axes join typed results from distinct theories and backgrounds. They do not define one common mode, a viable theory, an asymptotic particle space, or a quantum unitarity theorem.",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "reports/phase2-closure-claims-ledger-2026-07-22.json",
+          "result_id": "PURE_WEYL_PROGRAMME_PHASE2_INTEREST_CLASSIFICATION_V1",
+          "sha256": "8023f123901bffdbabf124b4582a9351e3cb61c997a1de72f5539e71489f2c9b"
+        }
+      ],
+      "id": "programme.phase2.interest_classification.corrected_terminal_join",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The counterflow Hamiltonian--Hopf quartet is an exact spectral no-go for a positive pseudo-Hermitian rescue; Schwarzschild formal infinity is not a full dispersion or scattering theorem.",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "Corrected axial non-Einstein modes survive formal radial finiteness, while Nariai Einstein and complementary projectors carry exact relative multipliers -1/3 and +1/3.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The polar formal module has an explicit Q21 exceptional wall; no global matching or complete bounded nonlinear cone is imported.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Phase 2 does not change the Phase-1 bounded-resonance classification.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No programme-wide causal second-order join or Schwarzschild global scattering map is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The separate Phase-1 finite exponential-polynomial theorem remains certified on its declared compact carrier.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The separate compact-product five-charge formal criterion remains certified and is not identified with the Schwarzschild or Nariai rows.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compact Plebanski-Hacyan, conformal cylinder, Berger, Schwarzschild, and Nariai laboratories kept distinct",
+        "boundaries": "finite exact blocks, formal radial infinity, fixed magnetic bundle, static-patch horizons, and global Cauchy requests kept distinct",
+        "carrier": "Phase-2 claims ledger",
+        "charge_sector": "row-specific",
+        "degree": "classification join",
+        "ell": "row-specific; Schwarzschild theorem ell >= 2",
+        "k": "row-specific",
+        "m": "row-specific",
+        "omega": "row-specific; Schwarzschild theorem real omega != 0",
+        "parity": "row-specific",
+        "theory": "programme-level typed synthesis; distinct theory rows are not identified"
+      }
+    }
+  ],
+  "generated_by": "reports/phase2-closure-claims-ledger-2026-07-22.json",
+  "generated_by_sha256": "8023f123901bffdbabf124b4582a9351e3cb61c997a1de72f5539e71489f2c9b",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "programme",
+  "verification_commands": [
+    "python3 residual_atlas/validate_fragment.py residual_atlas/programme-phase2-interest-classification-fragment-v3.json",
+    "python3 -m json.tool reports/phase2-closure-claims-ledger-2026-07-22.json"
+  ]
+}

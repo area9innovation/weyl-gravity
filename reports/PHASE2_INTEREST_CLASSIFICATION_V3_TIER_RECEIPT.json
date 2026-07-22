@@ -1,0 +1,105 @@
+{
+  "commands": [
+    "python3 quantum-weyl/pt_cpt/synthesis/cpt_feasibility_classification.py --check",
+    "python3 quantum-weyl/pt_cpt/synthesis/verify_cpt_feasibility_classification.py",
+    "python3 -m black_hole_programme.phase2.generic_l_synthesis.produce --check",
+    "python3 -m black_hole_programme.phase2.generic_l_synthesis.verify",
+    "PYTHONPATH=. python3 -m bridge.phase2.dyonic_flat_family_preflight.verify",
+    "python3 -m d_quotient_classical.phase2.nariai_sign_mechanism_v2.verify",
+    "python3 quantum-weyl/pt_cpt/hadamard_stretch/verify_hadamard_stretch_obstruction.py",
+    "python3 paper/generate_14_pure_weyl_black_hole_radiation_claim_map.py --check",
+    "python3 paper/verify_14_pure_weyl_black_hole_radiation_claim_map.py",
+    "python3 -m unittest paper/test_14_pure_weyl_black_hole_radiation_claim_map.py -v",
+    "python3 paper/verify_13_14_draft_source_maps.py",
+    "python3 paper/generate_15_phase1_synthesis_claim_map.py --check",
+    "python3 paper/verify_15_phase1_synthesis_claim_map.py",
+    "python3 -m unittest paper.test_15_phase1_synthesis_claim_map -v",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/programme-phase2-interest-classification-fragment-v3.json",
+    "s-f paper-coverage planning/paper-coverage/phase2-paper-coverage-overlay-2026-07-22.json --mode release --stamp 2026-07-22 -o <scratch>/phase2-reviewed-slice-release.json",
+    "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=<clean-scratch> paper/{14,15} (three passes; no unresolved references)",
+    "python3 -m unittest discover -s . -p 'test_*.py' -f",
+    "git diff --check -- <exact closure paths>"
+  ],
+  "does_not_establish": [
+    "independent re-derivation of every imported Phase-1 theorem",
+    "a global Schwarzschild phase space, scattering theorem, QNM or stability result",
+    "a genuine field-theoretic C operator or positive full-BV quantum state",
+    "a viable theory, particles, unitarity, or universal no-go"
+  ],
+  "inputs": {
+    "black_hole_generic_angular": {
+      "commit": "d1efd41b65cd031a2c4441fad0de1747050b75cd",
+      "sha256": "8a9914400f0929f37a63570b95383ebc4131cbf2928b5f923db0d002d0783d33"
+    },
+    "cpt_classification": {
+      "commit": "2667083d0103f7a81379192a06689fa8e484e4ea",
+      "sha256": "516415604952c1f835ea0d46095d8fa82b07fe36de3dc33d641e34f0b938223c"
+    },
+    "dyonic_global_lift": {
+      "commit": "85548b8982bce7cd7ba764a245112e09be59d5dd",
+      "sha256": "db0baaa808b131389de09adcbe02d423d210201f96290f94bea0f25be05fdfc2"
+    },
+    "hadamard_stretch": {
+      "commit": "3ee20426ca0b7a8850816412e0514e477a2da4d7",
+      "sha256": "cb705de9f5ba2589ebe514304709f175846307a20f0ea671a78711490e152e8c"
+    },
+    "nariai_sign_mechanism": {
+      "commit": "0567e6ea75420da4d4a0520d112cb2cc19cb3c9a",
+      "sha256": "abc73ddf5ada84dfe93d7891411f7134c7c2906ec3f70550fe50e1a6c542b4f8"
+    },
+    "paper14_claim_map": {
+      "commit": "3b9b0d139a05709c16c3a8f5f65e3b5297509193",
+      "sha256": "b7eb273ad1b48d55260bc1562c25816242fb2880c60149512135620a0955168f"
+    },
+    "paper15_claim_map": {
+      "commit": "e530b0096e20a2c22596e7b573e24d99c1686f7e",
+      "sha256": "1343e15e954e8dc6fdd53ef1ed9ddacc3e38c61fcaf16ffb932579a52afb4ac6"
+    }
+  },
+  "outputs": {
+    "notes/universe-building-roadmap.md": {
+      "sha256": "5a03c9a56597a6b50ffa52233de3027f321533ea7a1fdc722849015c5555092b"
+    },
+    "planning/paper-coverage/phase2-paper-coverage-overlay-2026-07-22.json": {
+      "sha256": "895fa46100aa72a3d1fc21878c87043c683309275b353269f60ca2db7ac6d79d"
+    },
+    "reports/phase2-closure-2026-07-22.md": {
+      "sha256": "84642852fe0dbcc8dece3ec02ebe7a062dbdf6d757f716f0026424d773497983"
+    },
+    "reports/phase2-closure-claims-ledger-2026-07-22.json": {
+      "sha256": "8023f123901bffdbabf124b4582a9351e3cb61c997a1de72f5539e71489f2c9b"
+    },
+    "reports/phase2-closure-dependency-snapshot-2026-07-22.json": {
+      "sha256": "ac43f7a3f562b9b35af200a2215ca3160d988267883b236a8aa202f7f7b61645"
+    },
+    "residual_atlas/programme-phase2-interest-classification-fragment-v3.json": {
+      "sha256": "a5d497dcf3784b10be4b5bc6c943d6c569a01334db64100be216d3193b70480b"
+    }
+  },
+  "paper_builds": {
+    "paper14_committed_pdf_sha256": "faa3d4481ecf340f766c9a2db9b32dc6c46ed44a5d85a14a379a8a639989af1b",
+    "paper14_source_sha256": "03cd6c4a203fff9f813a59ca691c2c9fa34a4aac467dcf8cdddd1c1192bad330",
+    "paper15_committed_pdf_sha256": "31552962864a3bf607b0e7b661e7f70a896a23f1e6ba55f0ac9e93ab7f8ba062",
+    "paper15_source_sha256": "3af95a25819f31f8fa26e20f8e7a5d6d7feb2b52fc72e469b39a3650952e05f1",
+    "status": "PASS: clean isolated builds completed; no undefined references or unresolved cross-reference warnings after the terminal pass. Paper 15 retains nonblocking underfull-box typography warnings."
+  },
+  "paper_coverage_release": {
+    "classified": 11,
+    "deferred_ok": 3,
+    "release_report_sha256": "874ab415574c3f542860f375ce0e5b7dfc6cb3caee1fc0d04f8c2f5eb8097cd7",
+    "review_queue": 0,
+    "status": "RELEASE_PASS",
+    "uncovered_material": 0
+  },
+  "result_id": "PURE_WEYL_PROGRAMME_PHASE2_INTEREST_CLASSIFICATION_V1_TIER_RECEIPT",
+  "schema": "pure-weyl-programme-phase2-tier-receipt-v1",
+  "scope": "Programme-level terminal join of independently frozen short-Phase-2 evidence, corrected papers, append-only coverage supersession, and release verification.",
+  "source_revision": "d60edec56f0c2df0aa2efba34d4b0d711096bbff",
+  "stamp": "2026-07-22",
+  "tiers": {
+    "tier_0": "PASS: JSON parsing, atlas schema, exact hashes, scoped diff, and clean PDF compilation",
+    "tier_1": "PASS: flagship independent verifiers, paper generators/verifiers, 9 paper mutation tests, and 8 CPT mutations",
+    "tier_2": "PASS: affected Phase-2 certificate chain and content-addressed dependency snapshot",
+    "tier_3": "PASS: 149 repository tests; reviewed-slice paper-coverage release audit passed with zero blocking findings"
+  }
+}

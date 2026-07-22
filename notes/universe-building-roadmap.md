@@ -76,101 +76,93 @@ one-loop Euclidean anomaly, while the compensator restores a changed formal
 theory at that order.  Phase 1 therefore ends with an exact viability
 classification, not a viable theory and not a universal no-go.
 
-## Short Phase 2: externally decisive tests (adopted 2026-07-22)
+## Short Phase 2: externally decisive tests (closed 2026-07-22)
 
-Phase 2 is not another search through changed actions.  It converts the three
-most externally interesting Phase-1 boundaries into outcome-independent
-classification experiments.  The detailed scope is frozen in
-`notes/phase2-interest-brief-2026-07-22.md`.  Every principal experiment must
-produce a useful theorem whether the proposed mechanism passes or fails.
+Phase 2 did not open another changed action.  It tested the three most
+externally interesting Phase-1 boundaries under the outcome-independent rules
+in `notes/phase2-interest-brief-2026-07-22.md`.  All mandatory experiments are
+terminal, Paper 14 is corrected, and Paper 15 is updated.  The resulting
+classification is stronger than the proposed positive story because two
+initial premises failed exact checks rather than being weakened into examples.
 
-### P2-A — structured pseudo-Hermitian/CPT feasibility
+### P2-A — structured pseudo-Hermitian/CPT classification
 
-Begin with a finite exact preflight, not a claim to have constructed
-Mannheim's field-theoretic `C` operator.  A positive metric must lie in the
-invariant commutant algebra, respect the real structure and frequency/momentum
-blocks, vary nonsingularly in parameters, and descend positively to a declared
-BRST cohomology representative.  BRST compatibility is `[C,Q]=0` or the
-corresponding chain-map/descent condition: the superficially tempting
-condition `Q^dagger eta = eta Q` with positive `eta` is impossible for every
-nonzero nilpotent `Q` and is not the gate.
+Selected compact Einstein/additional blocks and the stationary reduced
+cylinder block admit exact positive structured pseudo-Hermitian metrics.  This
+does **not** construct Mannheim's field-theoretic `C`: the compact calculation
+lacks independent `P,T` data, and the cylinder fundamental-symmetry candidate
+fails the proper-conformal BRST chain condition in the declared invariant
+commutant.  The nontrivial ghost-normalizer route remains open.  Conversely,
+the counterflow `j=1/2` Hamiltonian--Hopf quartet has complex spectrum and
+therefore admits no positive `eta` satisfying `H^dagger eta=eta H`; no change
+of inner product can rescue that candidate.
 
-The first exact negative control is the counterflow `j=1/2` quartet.  A
-positive `eta` satisfying `H^dagger eta = eta H` would make `H` similar to a
-Hermitian operator and force a real spectrum, so the certified complex
-Hamiltonian--Hopf quartet forbids it.  Positive tests then use the compact
-Weyl--Maxwell Einstein/additional blocks and the reduced cylinder carrier.
-An arbitrary eigenvector-by-eigenvector metric is not accepted as a physical
-CPT construction.
+### P2-B — generic-angular Schwarzschild formal-infinity classification
 
-### P2-B — generic-angular Schwarzschild boundary selection
+The intended Einstein-only selection theorem is false in the declared formal
+radial class.  For every integer `ell>=2` and real `omega!=0`, the corrected
+axial `X0` lift is non-Einstein, extends to all formal radial orders modulo the
+declared Einstein shift, and has finite radial Lee--Wald pairing.  The legacy
+divergent/logarithmic fixture omitted the exact differentiated term
+`2 r c'(r)/(r-2M)` and was off shell.  In the polar sector the leading
+coefficient has rank three, leaving a one-dimensional mixed
+Einstein/additional filtered radical through the first two layers; its first
+induced finite-line coefficient is generically nonzero and has the exact
+exceptional wall `Q21(ell(ell+1),omega^2)=0`, with certified real-root counts.
 
-The axial `ell=2` theorem already covers every real nonzero frequency.  The
-new headline is generic `ell>=2`.  Work is deliberately split:
+This is a formal infinity-mode classification in one Lee--Wald
+representative.  It establishes neither convergence nor horizon-to-infinity
+matching, a differentiable asymptotically flat phase space, a Hilbert norm,
+scattering, QNMs, stability, particles or positivity.  Paper 14 now preserves
+its independent horizon, Einstein-isotropy, local-Cauchy and monodromy results
+while append-only superseding every Einstein-only infinity-selection and
+legacy log-tail edge that used the defective reconstruction.
 
-1. generic-`ell` axial asymptotic operator, recurrence and exceptional set;
-2. literal Einstein Lee--Wald current coefficient and all-`ell` finiteness;
-3. additional metric lift and axial selection table;
-4. an independently gated polar construction or exact polar obstruction;
-5. only then a wave-packet/`ell`-sum boundary topology.
+### P2-C — dyonic obstruction and Nariai residue mechanism
 
-The first publishable target is the axial formal-radiation theorem
-`R_formal,finite(ell,omega)=im(E_ell,omega)` for `ell>=2` and real
-`omega!=0`, with all exceptional loci classified exactly.  It is not a full
-null-infinity phase space, scattering theory, monochromatic Hilbert norm,
-QNM, stability or particle theorem.  The already certified raw-corner and
-local-counterterm obstructions are imported rather than hidden or rerun.
+The proposed compact dyonic sign family fails before a sign diagram exists.
+For nonzero electric field, `L_H A=E dx` has nonzero `S1` period, so the
+stationary metric and field strength have no continuous global
+time-translation lift on the fixed bundle; the parity--duality reflection also
+fails to preserve the fixed-Chern tangent carrier.  This is a certified global
+lift obstruction, not a sign or all-family no-go.
 
-### P2-C — compact-family obstruction and independent sign mechanism
+Nariai supplies the independent mechanism result.  On the declared
+transverse static-patch carrier, the exact Bach factorization gives invariant
+Einstein and complementary projectors, and the pure-Weyl Lee--Wald current
+restricts with opposite multipliers `-1/3` and `+1/3`.  Both horizon-flux terms
+remain in the finite-slab balance.  No absolute energy sign, globally timelike
+generator, compact-product identification, family robustness or quantum
+positivity follows.
 
-Wave 1 proved that the proposed stationary dyonic continuation is not a valid
-fixed-bundle positive-frequency family.  Although its metric and field
-strength are stationary, `L_H A=E dx` has nonzero `S1` period for `E!=0`, so
-`H=partial_t` has no continuous global connection lift.  Its background-fixing
-parity--duality involution also fails to preserve fixed-Chern tangents.  The
-dependent dyonic tangent and sign-diagram jobs are retired.
+### P2-D — optional Hadamard stretch
 
-The replacement is an independent Nariai mechanism classification using the
-already exact factorized Bach complex.  It must identify the Einstein and
-complementary projectors and adopt exactly one valid sign structure: a
-static-patch current/canonical energy with horizon boundaries, a Taub charge
-for a declared Killing generator, or a global mode form with an explicit
-Euclidean/de Sitter complex structure.  A scoped residue/sign theorem or the
-first exact obstruction is terminal evidence.  It is not represented as the
-same Weyl--Maxwell family or as a global stationary positive-frequency result.
+The complete 54-row Berger causal BV complex was imported, but the requested
+global BRST-compatible covariance cannot yet be selected: the missing
+104-dimensional stationary Cauchy carrier (`A104`, `q_Cauchy_104`,
+`G_Cauchy_104` and its real structure) leaves the zero/Jordan sector
+undetermined.  This is an exact missing-input obstruction, not a covariance
+nonexistence theorem and not a quantum state.
 
-### P2-D — optional Lorentzian quantum theorem
+### Phase-2 verdict and operating lesson
 
-After P2-A, attempt one BRST-compatible Hadamard covariance or a scoped no-go
-on one complete causal BV complex.  This is a high-value stretch result, not a
-condition for closing the short phase.
+Phase 2 closes with the classification
 
-### P2-E — theory-admission gate
+`classical survival != boundary exclusion != quantum positivity`.
 
-No new changed theory enters the programme without a predeclared operational
-observable in addition to causal completeness, stable reduced dynamics,
-acceptable charge interpretation and nonlinear preservation.  The full
-arbitrary-support bounded cone, further isolated counterflow blocks, another
-changed action and a standard-matter anomaly census are not Phase-2
-priorities.
+The black-hole result supplies a corrected counterexample to naive radial
+Einstein selection; the sign calculation supplies an invariant relative
+residue mechanism; and the CPT pilot separates positive finite-block metrics
+from a genuine symmetry- and BRST-compatible quantum construction.  No viable
+theory, asymptotic particle space or unitarity theorem is selected.
 
-### Phase-2 closure and operating model
-
-The short phase closes with: an exact structured-CPT feasibility
-classification; a generic-real-frequency Schwarzschild asymptotic phase
-diagram (with axial theorem and explicit polar disposition); the compact
-dyonic global-lift obstruction plus an independent curved-background
-sign-mechanism classification; and an updated Paper 15.  The Hadamard result
-is a bonus.
-
-Phase 2 pilots short-lived subagents under one coordinator rather than fixed
-resident sessions.  The coordinator owns the roadmap, dependency graph,
-paper integration and final commits.  A subagent receives one bounded theorem,
-one disjoint output family and one Science Forge lease, then exits after a
-report.  Read-only reconnaissance needs no lease and may run in parallel.
-Scientific producers and independent verifiers remain separate tasks; using
-subagents reduces synchronization traffic but does not weaken append-only
-events, exact path containment, provenance or adversarial verification.
+The short-lived subagent experiment was operationally successful: bounded,
+disjoint theorem packages reduced synchronization costs while independent
+producers, verifiers, append-only events and path-contained commits remained
+mandatory.  The theory-admission rule survives unchanged: no future changed
+theory enters without causal completeness, stable reduced dynamics,
+acceptable charges, nonlinear preservation and a predeclared operational
+observable.
 
 Positive-Berger coefficient disposition (2026-07-21): the one-complex-clock
 local anomaly quotient is zero on its declared regular chart, but its actual
