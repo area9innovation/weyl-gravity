@@ -1,0 +1,24 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase2-cpt-structured-metric-contract-and-quartet-no-go",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase2-cpt-structured-metric-contract-and-quartet-no-go",
+  "source": {"path": "planning/work-items/phase2-cpt-structured-metric-contract-and-quartet-no-go.json", "span": null},
+  "body": {
+    "owner": "phase2-cpt-1",
+    "state": "PROPOSED",
+    "stream": "quantum-qme",
+    "priority": 0,
+    "objective": "Define the nontrivial structured pseudo-Hermitian/CPT feasibility contract and certify the counterflow Hamiltonian-Hopf quartet as an exact negative control.",
+    "stop_condition": "Import the frozen counterflow j=1/2 reduced generator and characteristic polynomial by exact hashes. Define the accepted eta/C data: invariant-commutant membership, Hermiticity and strict positivity, real-structure and momentum/frequency compatibility, nonsingular parameter dependence, C^2=1 and [C,H]=0 where a C operator is claimed, and chain-map/cohomology descent for BRST. Prove that Q^dagger eta=eta Q with eta>0 is impossible for nonzero nilpotent Q and is therefore not the BRST gate. Give an exact infeasibility certificate for eta>0 and H^dagger eta=eta H on the complex quartet, with a verifier rejecting a real-spectrum or norm-only mutation. Export schema, certificate, independent verifier, tests, report and receipt.",
+    "current_gate": "Exact structured-CPT contract plus broken-PT spectral no-go",
+    "forbid": "no arbitrary eigenbasis metric accepted; no positive eta called a C operator without the involution; no BRST Q required to be positive-metric self-adjoint; no finite-block statement called a field-theoretic unitarity theorem; no anomaly claim",
+    "depends_on": ["sf:program/work/programme-phase1-viability-classification-freeze-v5"],
+    "activates": ["sf:program/work/phase2-cpt-compact-block-feasibility", "sf:program/work/phase2-cpt-cylinder-brst-feasibility"],
+    "allowed_paths": ["quantum-weyl/pt_cpt/negative_control/", "reports/phase2-cpt-quartet-negative-control-2026-07-22.md", "planning/forge-requests/phase2-cpt-structured-exact-solver.json"],
+    "resource_hint": "Small exact linear-algebra theorem and schema. Prefer forge/lib/math exact Hermitian, commutant and positivity machinery; request missing exact support rather than diagonalizing numerically.",
+    "input_commit": "4a212883aefa5525cc847d0c12763c74c1c3411a"
+  },
+  "edges": []
+}

@@ -1,0 +1,23 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase2-quantum-brst-hadamard-stretch",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase2-quantum-brst-hadamard-stretch",
+  "source": {"path": "planning/work-items/phase2-quantum-brst-hadamard-stretch.json", "span": null},
+  "body": {
+    "owner": "phase2-hadamard",
+    "state": "PROPOSED",
+    "stream": "quantum-qme",
+    "priority": 8,
+    "objective": "Construct one BRST-compatible Hadamard covariance, or certify a scoped no-go, on a complete causal BV complex using the adjoint/C structure selected by P2-A.",
+    "stop_condition": "Select exactly one complete causal BV complex after the structured-CPT classification. Import its action-derived differential, pairing, real structure, Green homotopies, zero modes and the P2-A adjoint/C disposition. Construct a bidistribution with the declared wavefront set, BRST chain identities, antisymmetric part equal to the causal propagator and positivity in the chosen physical cohomology, or certify the first exact obstruction. Export dependency tags distinguishing LORENTZIAN-CAUSAL from REDUCED-MODE and do not infer QME, particles, scattering or unitarity.",
+    "current_gate": "Optional one-background full-BV Hadamard theorem",
+    "forbid": "no reduced carrier substituted for full BV; no Euclidean determinant called Hadamard; no old adjoint retained if P2-A changes it; no Phase-2 closure dependency",
+    "depends_on": ["sf:program/work/phase2-cpt-feasibility-classification"],
+    "allowed_paths": ["quantum-weyl/pt_cpt/hadamard_stretch/", "reports/phase2-quantum-brst-hadamard-stretch-2026-07-22.md", "residual_atlas/phase2-quantum-brst-hadamard-fragment-v1.json", "planning/forge-requests/phase2-hadamard-microlocal-transfer.json"],
+    "resource_hint": "Stretch theorem; select one background and fail at the first exact missing analytic object rather than broadening the carrier.",
+    "input_commit": "4a212883aefa5525cc847d0c12763c74c1c3411a"
+  },
+  "edges": []
+}

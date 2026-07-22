@@ -1,0 +1,23 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase2-cpt-feasibility-classification",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase2-cpt-feasibility-classification",
+  "source": {"path": "planning/work-items/phase2-cpt-feasibility-classification.json", "span": null},
+  "body": {
+    "owner": "phase2-cpt-review",
+    "state": "PROPOSED",
+    "stream": "quantum-qme",
+    "priority": 3,
+    "objective": "Join the counterflow negative control, compact-block feasibility and cylinder BRST descent into one exact structured-CPT classification with clear separation between eta and a genuine C operator.",
+    "stop_condition": "Independently replay the three inputs, compare their definitions of H, dagger, real structure, P/T, C, eta, Q and cohomology, and publish a typed classification table. State which finite sectors admit a structured positive eta, which admit a genuine C operator, which fail BRST/residual descent, and why the broken-PT quartet is unrescuable. Record the equal-frequency Pais-Uhlenbeck/Jordan comparison only as a scoped analogy. Export claim map, independent verifier, report, receipt and Paper-15 correction request; do not edit Paper 15 in this work item.",
+    "current_gate": "Phase-2 P2-A terminal classification",
+    "forbid": "no manufactured eta counted; no finite-block result called conformal-gravity unitarity; no anomaly cancellation inferred; no paper edit before independent replay",
+    "depends_on": ["sf:program/work/phase2-cpt-structured-metric-contract-and-quartet-no-go", "sf:program/work/phase2-cpt-compact-block-feasibility#ANY_TERMINAL", "sf:program/work/phase2-cpt-cylinder-brst-feasibility#ANY_TERMINAL"],
+    "allowed_paths": ["quantum-weyl/pt_cpt/synthesis/", "reports/phase2-cpt-feasibility-classification-2026-07-22.md", "planning/paper-coverage/phase2-cpt-paper15-correction-request.json"],
+    "resource_hint": "Independent join/review task; reproduce certificates rather than importing their prose verdicts.",
+    "input_commit": "4a212883aefa5525cc847d0c12763c74c1c3411a"
+  },
+  "edges": []
+}

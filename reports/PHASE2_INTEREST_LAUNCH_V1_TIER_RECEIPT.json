@@ -1,0 +1,74 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "PHASE2_INTEREST_LAUNCH_V1",
+  "stamp": "2026-07-22",
+  "dependency_tags": [
+    "COORDINATION",
+    "NO_SCIENTIFIC_PROMOTION"
+  ],
+  "scope": "Adoption and machine-readable decomposition of the short external-interest Phase 2 after three independent read-only input audits.",
+  "artifacts": {
+    "notes/phase2-interest-brief-2026-07-22.md": "1fe7474615c313a70161f4012ac64c5350e5017df045e6ae7a82373225b0c06e",
+    "notes/universe-building-roadmap.md": "e6d442f3c8c60277117b2357e80360181dd85ab8ed9fbff95dba823dd0b44dda",
+    "reports/phase2-interest-launch-2026-07-22.md": "5f9f2c76a7361d94418ac04b72a6d46337ef323e37a820d608407f1e5e96645e",
+    "phase2_work_item_bundle": {
+      "count": 18,
+      "sha256_of_sorted_path_sha256_lines": "a96f1cda20c734dd09988a85fb2dc5456e8a419d3c485ab555d16bef54a0e3d7"
+    },
+    "initial_rendered_brief_bundle": {
+      "count": 4,
+      "sha256_of_sorted_path_sha256_lines": "b9eff3fe4fa6b2307fef63b808047e5bab7e36687d084fb428144de1c0f22e00"
+    }
+  },
+  "subagent_audits": [
+    {
+      "scope": "structured CPT feasibility",
+      "mode": "read-only",
+      "material_correction": "Replaced positive-metric BRST self-adjointness by C-chain compatibility and cohomology positivity; identified the cylinder proper-conformal commutant obstruction."
+    },
+    {
+      "scope": "generic-angular Schwarzschild",
+      "mode": "read-only",
+      "material_correction": "Recognized the existing all-real-frequency axial ell=2 theorem and split generic-ell axial, polar and boundary-topology gates."
+    },
+    {
+      "scope": "compact sign-family robustness",
+      "mode": "read-only",
+      "material_correction": "Selected the stationary compact dyonic coupling-background family and made parity/duality a preflight theorem."
+    }
+  ],
+  "tests": [
+    {
+      "tier": 0,
+      "command": "python3 json.load over all phase2-*.json and programme-phase2-*.json work items",
+      "status": "PASS",
+      "detail": "18 Phase-2 work-item definitions parsed."
+    },
+    {
+      "tier": 1,
+      "command": "s-f import-program planning/work-items /tmp/phase2-program-graph.json",
+      "status": "PASS",
+      "detail": "1118 nodes; 0 invalid items; 0 malformed events; graph sha256 41c785425ec16955f38040f72accda6489a641358fad5104498902b5a37553af."
+    },
+    {
+      "tier": 1,
+      "command": "s-f work show for the four initial producers",
+      "status": "PASS",
+      "detail": "All dependencies satisfied; all four scopes disjoint before lease assignment."
+    },
+    {
+      "tier": 1,
+      "command": "s-f work-package for four initial producers",
+      "status": "PASS",
+      "detail": "Four deterministic briefs rendered, 404 lines total."
+    }
+  ],
+  "higher_tiers_not_run": "This launch changes planning and coordination only. It imports but does not alter a scientific operator, certificate, theorem, paper lifecycle or release surface.",
+  "does_not_establish": [
+    "a positive pseudo-Hermitian metric or Mannheim C operator",
+    "a generic-angular Schwarzschild boundary-selection theorem",
+    "a compact-background sign-robustness theorem",
+    "a BRST-compatible Hadamard state",
+    "a viable changed theory, particles, scattering or unitarity"
+  ]
+}

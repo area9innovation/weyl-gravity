@@ -1,0 +1,23 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase2-black-hole-general-l-axial-current",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase2-black-hole-general-l-axial-current",
+  "source": {"path": "planning/work-items/phase2-black-hole-general-l-axial-current.json", "span": null},
+  "body": {
+    "owner": "phase2-bh-2",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 1,
+    "objective": "Compute and factor the literal generic-ell axial Einstein Lee-Wald radial-current coefficient and prove its exact nonvanishing domain.",
+    "stop_condition": "Import the generic-ell axial recurrence. Separate the radial Lee-Wald kernel from exact angular harmonic norms and derivative identities. Derive A_EE(ell,omega) in F^v(E,bar E)=A_EE r^-2+O(r^-3), factor all denominators and wall polynomials, and prove nonvanishing for discrete Lambda=ell(ell+1), ell>=2, real omega!=0 by exact resultant/Sturm or equivalent characteristic-zero arguments. Reproduce ell=2 and independently replay ell=3. Export a lower-risk all-ell Einstein-finiteness theorem with certificate, verifier, tests and mutations rejecting sampled-mode and exponent-only promotion.",
+    "current_gate": "Literal all-ell axial Einstein current coefficient",
+    "forbid": "no unevaluated generic Legendre expression used as proof; no extra-branch selection yet; no sampled modes; no finite radial form called Hilbert norm or scattering flux topology",
+    "depends_on": ["sf:program/work/phase2-black-hole-general-l-axial-asymptotics"],
+    "allowed_paths": ["black_hole_programme/phase2/general_l_axial_current/", "reports/phase2-black-hole-general-l-axial-current-2026-07-22.md", "residual_atlas/phase2-black-hole-general-l-axial-current-fragment-v1.json", "planning/forge-requests/phase2-black-hole-discrete-polynomial-nonvanishing.json"],
+    "resource_hint": "Exact symbolic coefficient plus discrete-domain nonvanishing theorem; use independent angular and radial rails.",
+    "input_commit": "4a212883aefa5525cc847d0c12763c74c1c3411a"
+  },
+  "edges": []
+}

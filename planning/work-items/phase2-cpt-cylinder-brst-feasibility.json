@@ -1,0 +1,23 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase2-cpt-cylinder-brst-feasibility",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase2-cpt-cylinder-brst-feasibility",
+  "source": {"path": "planning/work-items/phase2-cpt-cylinder-brst-feasibility.json", "span": null},
+  "body": {
+    "owner": "phase2-cpt-3",
+    "state": "PROPOSED",
+    "stream": "quantum-qme",
+    "priority": 2,
+    "objective": "Test whether a symmetry-compatible C/eta structure descends through the selected cylinder BRST/residual complex rather than merely flipping the reduced E/A/L signs.",
+    "stop_condition": "Import the certified cylinder E/A/L carrier, Krein form, D action, residual generators and P2-A contract. Reproduce the obvious C0=+1_E direct-sum -1_A direct-sum -1_L positivity on the reduced carrier, then compute its commutators with every residual generator and BRST/chain map through the declared energy cutoff. Search the full invariant commutant for a corrected C/eta satisfying chain-map descent and positive cohomology; either construct it with exact witnesses or certify the first representation-theoretic obstruction. The known rank-32 proper-conformal commutator is a required regression, not a conclusion to hard-code.",
+    "current_gate": "Cylinder BRST-compatible structured-CPT descent",
+    "forbid": "no Q positive-self-adjointness condition; no reduced sign flip called a residual C operator; no finite energy cutoff silently promoted to all energies; no full-BV state or unitarity claim",
+    "depends_on": ["sf:program/work/phase2-cpt-structured-metric-contract-and-quartet-no-go", "sf:program/work/programme-phase1-viability-classification-freeze-v5"],
+    "allowed_paths": ["quantum-weyl/pt_cpt/cylinder_brst/", "reports/phase2-cpt-cylinder-brst-feasibility-2026-07-22.md", "residual_atlas/phase2-cpt-cylinder-brst-feasibility-fragment-v1.json", "planning/forge-requests/phase2-cpt-cylinder-commutant.json"],
+    "resource_hint": "The proper-conformal generators are the first nontrivial compatibility test; retain both chiralities and all declared residual rows.",
+    "input_commit": "4a212883aefa5525cc847d0c12763c74c1c3411a"
+  },
+  "edges": []
+}

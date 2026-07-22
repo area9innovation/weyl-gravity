@@ -5,6 +5,23 @@ note.  Source: Paper 15 limitations list, external-interest review of the
 Phase-1 synthesis, and coordinating review.  Design rule: every principal
 experiment must be valuable under either outcome.
 
+Launch refinement: three short-lived read-only subagents independently
+audited the CPT, Schwarzschild and sign-family inputs before work items were
+written.  They found three load-bearing scope corrections:
+
+- BRST compatibility is a chain-map/intertwining and cohomology-descent gate,
+  not `Q^dagger eta = eta Q` with positive `eta`; the latter would force every
+  nilpotent `Q` to vanish.
+- the axial `ell=2` Schwarzschild result already covers every real nonzero
+  frequency, so the new headline begins at generic `ell>=2`; polar and the
+  full boundary topology remain independently gated;
+- the first comparable sign family is the stationary compact dyonic
+  `k1=0` coupling--background family.  Pure-magnetic off-wall branches do not
+  preserve the same global stationary positive-frequency policy.
+
+The implementation graph is split at these boundaries so a polar, boundary,
+BRST or parity shortfall cannot erase an independently completed theorem.
+
 ## P2-A  Structured CPT feasibility (pilot, first gate)
 
 A structured pseudo-Hermitian/CPT **preflight**, not a Mannheim
@@ -24,6 +41,11 @@ metric):
 - descends positively to $H^0(Q)$;
 - compatible with the causal covariance.
 
+For a nontrivial BRST complex, require an explicit `C` chain map or graded
+intertwiner (normally `[C,Q]=0`) and positivity on a declared representative
+of $H^0(Q)$.  Exact states are removed cohomologically; $Q$ is not required
+to be self-adjoint in a positive metric.
+
 Test blocks:
 
 - compact Weyl–Maxwell Einstein and additional blocks;
@@ -41,7 +63,9 @@ examined, not an identification.
 
 ## P2-B  Schwarzschild asymptotic phase diagram (headline)
 
-Staged so the project does not hinge on a full scattering theory:
+The existing axial $\ell=2$ result is already symbolic in every real
+$\omega\ne0$.  Phase 2 therefore starts at generic angular momentum and is
+staged so the project does not hinge on a full scattering theory:
 
 1. **General asymptotic-coefficient theorem.**  For real $\omega\neq0$,
    $\ell\ge2$, both parities: reconstruction, current powers, leading
@@ -58,8 +82,23 @@ the Euclidean/AdS Einstein-selection arguments).
 
 ## P2-C  Background robustness of the sign result
 
-Map the compact magnetic product into the direct-product classification
-and compute the family map
+Use the stationary compact dyonic $k_1=0$ family at fixed magnetic Chern
+number.  With
+
+\[
+ \beta=\frac{\kappa N^2}{4q_{\min}^2},\qquad
+ k_2=\frac1{\beta(1+\tau^2)},\qquad
+ P=\frac{2q_{\min}}{N\kappa(1+\tau^2)},\qquad E=\tau P,
+\]
+\[
+ \alpha_B=\frac{3N^2}{4q_{\min}^2}(1+\tau^2).
+\]
+
+This is explicitly a coupling--background family, not an open family within
+one fixed $\alpha_B$ theory.  It preserves the compact Cauchy surface and
+global $H=\partial_t$.  First decide whether the electric background preserves
+parity only after a discrete duality/charge action; otherwise use a combined
+mixed-parity carrier.  Then compute the family map
 
   (background parameters) ↦ (inertia h_E, inertia h_A, rad Ω).
 

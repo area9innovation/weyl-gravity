@@ -1,0 +1,23 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase2-sign-dyonic-flat-family-preflight",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase2-sign-dyonic-flat-family-preflight",
+  "source": {"path": "planning/work-items/phase2-sign-dyonic-flat-family-preflight.json", "span": null},
+  "body": {
+    "owner": "phase2-sign-1",
+    "state": "PROPOSED",
+    "stream": "bridge",
+    "priority": 0,
+    "objective": "Certify the stationary compact dyonic Einstein-Maxwell/Weyl-Maxwell product family and its exact symmetry/parity disposition as the P2-C sign-robustness base.",
+    "stop_condition": "At k1=0 and fixed nonzero magnetic Chern N, independently derive beta=kappa N^2/(4 q_min^2), k2=1/(beta(1+tau^2)), P=2 q_min/(N kappa(1+tau^2)), E=tau P, alpha_B=alpha_crit(1+tau^2), alpha_crit=3N^2/(4 q_min^2) from the incidence equations and flux quantization. Freeze the metric, bundle connection, electric-charge convention, stabilizer lifts and global H=partial_t. State explicitly that this varies coupling and background, not one fixed-alpha_B theory. Because F wedge F is nonzero for tau!=0, prove whether parity remains a block symmetry only after an accompanying duality/charge action; otherwise certify a combined mixed-parity carrier. Export exact certificate, schema, verifier, tests, report and atlas fragment.",
+    "current_gate": "Stationary dyonic compact-family and symmetry preflight",
+    "forbid": "no pure-magnetic off-wall dS2/AdS2 branch used as a comparable positive-frequency family; no inherited axial/polar split assumed; no fixed-coupling family claim; no sign computation yet",
+    "depends_on": ["sf:program/work/bridge-phase1-einstein-extra-contribution-freeze"],
+    "allowed_paths": ["bridge/phase2/dyonic_flat_family_preflight/", "reports/phase2-sign-dyonic-flat-family-preflight-2026-07-22.md", "residual_atlas/phase2-sign-dyonic-flat-family-preflight-fragment-v1.json", "planning/forge-requests/phase2-dyonic-parity-duality.json"],
+    "resource_hint": "Exact rational one-parameter family. The parity/duality disposition is load-bearing and may itself be the first structural result.",
+    "input_commit": "4a212883aefa5525cc847d0c12763c74c1c3411a"
+  },
+  "edges": []
+}

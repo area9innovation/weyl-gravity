@@ -1,0 +1,23 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase2-sign-dyonic-phase-diagram",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase2-sign-dyonic-phase-diagram",
+  "source": {"path": "planning/work-items/phase2-sign-dyonic-phase-diagram.json", "span": null},
+  "body": {
+    "owner": "phase2-sign-3",
+    "state": "PROPOSED",
+    "stream": "bridge",
+    "priority": 2,
+    "objective": "Compute the direct Lee-Wald Hermitian sign phase diagram over the stationary dyonic compact family and explain the invariant mechanism behind the Einstein/additional mismatch.",
+    "stop_condition": "Compute the action-derived target current directly. Define h_E=iota^dagger h_W iota and the lift-invariant extra form by the Schur complement h_A=h_XX-h_XE h_E^-1 h_EX. Factor every real wall controlling shell collision, det h_E, det h_A and rad h_W; prove the inertia on each connected semialgebraic chamber of (tau,Lambda,k^2), with discrete Lambda=ell(ell+1), or export the first exact wall/counterexample. Derive the family analogue R_tau=f_tau(M_tau) explaining the response on the Einstein image. Account for k2 scaling, varying alpha_B normalization, charge policy, reality/opposite momentum, omega=0 and radical jumps. Export exact phase diagram, certificate, independent verifier, tests, report, receipt and Paper-15 correction request.",
+    "current_gate": "P2-C open-region robustness or exact signature-wall theorem",
+    "forbid": "no inertia assigned to the real symplectic form; no raw extra lift sign; no source Einstein-Maxwell form substituted for target restriction; no sampled parameter sweep; no fixed-theory claim across varying alpha_B; no quantum norm or unitarity interpretation",
+    "depends_on": ["sf:program/work/phase2-sign-dyonic-tangent-cofiber"],
+    "allowed_paths": ["bridge/phase2/dyonic_sign_phase_diagram/", "reports/phase2-sign-dyonic-phase-diagram-2026-07-22.md", "residual_atlas/phase2-sign-dyonic-phase-diagram-fragment-v1.json", "planning/paper-coverage/phase2-sign-paper15-correction-request.json", "planning/forge-requests/phase2-sign-semialgebraic-wall-classification.json"],
+    "resource_hint": "Use the generic tensor current evaluator, exact Schur complement and semialgebraic chamber decomposition. No numeric phase diagram is terminal evidence.",
+    "input_commit": "4a212883aefa5525cc847d0c12763c74c1c3411a"
+  },
+  "edges": []
+}

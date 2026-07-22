@@ -76,6 +76,103 @@ one-loop Euclidean anomaly, while the compensator restores a changed formal
 theory at that order.  Phase 1 therefore ends with an exact viability
 classification, not a viable theory and not a universal no-go.
 
+## Short Phase 2: externally decisive tests (adopted 2026-07-22)
+
+Phase 2 is not another search through changed actions.  It converts the three
+most externally interesting Phase-1 boundaries into outcome-independent
+classification experiments.  The detailed scope is frozen in
+`notes/phase2-interest-brief-2026-07-22.md`.  Every principal experiment must
+produce a useful theorem whether the proposed mechanism passes or fails.
+
+### P2-A — structured pseudo-Hermitian/CPT feasibility
+
+Begin with a finite exact preflight, not a claim to have constructed
+Mannheim's field-theoretic `C` operator.  A positive metric must lie in the
+invariant commutant algebra, respect the real structure and frequency/momentum
+blocks, vary nonsingularly in parameters, and descend positively to a declared
+BRST cohomology representative.  BRST compatibility is `[C,Q]=0` or the
+corresponding chain-map/descent condition: the superficially tempting
+condition `Q^dagger eta = eta Q` with positive `eta` is impossible for every
+nonzero nilpotent `Q` and is not the gate.
+
+The first exact negative control is the counterflow `j=1/2` quartet.  A
+positive `eta` satisfying `H^dagger eta = eta H` would make `H` similar to a
+Hermitian operator and force a real spectrum, so the certified complex
+Hamiltonian--Hopf quartet forbids it.  Positive tests then use the compact
+Weyl--Maxwell Einstein/additional blocks and the reduced cylinder carrier.
+An arbitrary eigenvector-by-eigenvector metric is not accepted as a physical
+CPT construction.
+
+### P2-B — generic-angular Schwarzschild boundary selection
+
+The axial `ell=2` theorem already covers every real nonzero frequency.  The
+new headline is generic `ell>=2`.  Work is deliberately split:
+
+1. generic-`ell` axial asymptotic operator, recurrence and exceptional set;
+2. literal Einstein Lee--Wald current coefficient and all-`ell` finiteness;
+3. additional metric lift and axial selection table;
+4. an independently gated polar construction or exact polar obstruction;
+5. only then a wave-packet/`ell`-sum boundary topology.
+
+The first publishable target is the axial formal-radiation theorem
+`R_formal,finite(ell,omega)=im(E_ell,omega)` for `ell>=2` and real
+`omega!=0`, with all exceptional loci classified exactly.  It is not a full
+null-infinity phase space, scattering theory, monochromatic Hilbert norm,
+QNM, stability or particle theorem.  The already certified raw-corner and
+local-counterterm obstructions are imported rather than hidden or rerun.
+
+### P2-C — robustness of the compact sign mismatch
+
+The first family is the stationary compact dyonic product, not an off-wall
+pure-magnetic branch without a comparable global positive-frequency split.
+At fixed magnetic Chern number and `k1=0`, use
+
+```text
+u = beta k2 in (0,1],   k2=u/beta,
+P = N k2/(2 q_min),     E^2=(k2/kappa)(1-u),
+alpha_B = alpha_crit/u.
+```
+
+The present pure-magnetic fixture is `u=1`.  This family preserves
+`R_t x S1 x S2` and the same global time generator, so the Hermitian
+positive-frequency forms are comparable.  The deliverable is either an open
+region on which the Einstein/additional inertia mismatch persists or an
+exact signature-wall classification with its invariant mechanism.  Nariai is
+a separate mechanism cross-check, not the primary family, because its current
+causal machinery does not yet provide the same global stationary splitting.
+
+### P2-D — optional Lorentzian quantum theorem
+
+After P2-A, attempt one BRST-compatible Hadamard covariance or a scoped no-go
+on one complete causal BV complex.  This is a high-value stretch result, not a
+condition for closing the short phase.
+
+### P2-E — theory-admission gate
+
+No new changed theory enters the programme without a predeclared operational
+observable in addition to causal completeness, stable reduced dynamics,
+acceptable charge interpretation and nonlinear preservation.  The full
+arbitrary-support bounded cone, further isolated counterflow blocks, another
+changed action and a standard-matter anomaly census are not Phase-2
+priorities.
+
+### Phase-2 closure and operating model
+
+The short phase closes with: an exact structured-CPT feasibility
+classification; a generic-real-frequency Schwarzschild asymptotic phase
+diagram (with axial theorem and explicit polar disposition); a compact-family
+sign-robustness theorem; and an updated Paper 15.  The Hadamard result is a
+bonus.
+
+Phase 2 pilots short-lived subagents under one coordinator rather than fixed
+resident sessions.  The coordinator owns the roadmap, dependency graph,
+paper integration and final commits.  A subagent receives one bounded theorem,
+one disjoint output family and one Science Forge lease, then exits after a
+report.  Read-only reconnaissance needs no lease and may run in parallel.
+Scientific producers and independent verifiers remain separate tasks; using
+subagents reduces synchronization traffic but does not weaken append-only
+events, exact path containment, provenance or adversarial verification.
+
 Positive-Berger coefficient disposition (2026-07-21): the one-complex-clock
 local anomaly quotient is zero on its declared regular chart, but its actual
 one-loop breaking coefficients remain nondefined.  The first missing input is
