@@ -1,0 +1,82 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "NARIAI_SIGN_MECHANISM_V2_TIER_RECEIPT",
+  "result_state": "TIER_0_AND_SCOPED_TIER_1_PASS",
+  "date": "2026-07-22",
+  "agent": "phase2-sign-2",
+  "work_item": "sf:program/work/phase2-sign-nariai-mechanism-v2",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifact": {
+    "path": "d_quotient_classical/phase2/nariai_sign_mechanism_v2/NARIAI_SIGN_MECHANISM_V2.json",
+    "result_id": "NARIAI_SIGN_MECHANISM_V2",
+    "sha256": "abc73ddf5ada84dfe93d7891411f7134c7c2906ec3f70550fe50e1a6c542b4f8"
+  },
+  "changed_artifact_hashes": {
+    "d_quotient_classical/phase2/nariai_sign_mechanism_v2/generate.py": "3bfdd733ffe71757fa1458ac720db5e2ff3c5db280ff790ea6dd5de0a4368707",
+    "d_quotient_classical/phase2/nariai_sign_mechanism_v2/nariai-sign-mechanism-v2.schema.json": "6addf0b24d685a0934bd60e2177cc3c2b4aa034b37fa04d5abe6a057dec2514c",
+    "d_quotient_classical/phase2/nariai_sign_mechanism_v2/tests/test_nariai_sign_mechanism_v2.py": "ff2634f3d1cabd60f83bf66637882b3c1b4b9f6d138461205d3b747fa2fe92ea",
+    "d_quotient_classical/phase2/nariai_sign_mechanism_v2/verify.py": "15faebea9529fadb9f5c85b0d7c9c2053f5f654ea02c174670b20fd729285edb",
+    "reports/phase2-sign-nariai-mechanism-v2-2026-07-22.md": "6ac2e788a7432e70b1e00324342e1c57fa98b231c130b6020dea78f8e5b0b7c2",
+    "residual_atlas/phase2-sign-nariai-mechanism-v2-fragment-v1.json": "221bcc0bea4e276a202bf43b6189b349d83255b32e671e43c070b4560c0defb9"
+  },
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile d_quotient_classical/phase2/nariai_sign_mechanism_v2/generate.py d_quotient_classical/phase2/nariai_sign_mechanism_v2/verify.py d_quotient_classical/phase2/nariai_sign_mechanism_v2/tests/test_nariai_sign_mechanism_v2.py",
+      "elapsed_seconds": 0.03,
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "python3 -m json.tool d_quotient_classical/phase2/nariai_sign_mechanism_v2/NARIAI_SIGN_MECHANISM_V2.json; python3 -m json.tool d_quotient_classical/phase2/nariai_sign_mechanism_v2/nariai-sign-mechanism-v2.schema.json; python3 -m json.tool residual_atlas/phase2-sign-nariai-mechanism-v2-fragment-v1.json",
+      "elapsed_seconds": 0.1,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m d_quotient_classical.phase2.nariai_sign_mechanism_v2.generate --check",
+      "elapsed_seconds": 0.45,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m d_quotient_classical.phase2.nariai_sign_mechanism_v2.verify",
+      "elapsed_seconds": 0.51,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest d_quotient_classical.phase2.nariai_sign_mechanism_v2.tests.test_nariai_sign_mechanism_v2",
+      "elapsed_seconds": 0.71,
+      "status": "PASS",
+      "tests_run": 12
+    }
+  ],
+  "mutation_coverage": [
+    "factor scalar gap",
+    "curvature-channel rank",
+    "Einstein residue sign",
+    "global timelike promotion",
+    "horizon boundary omission",
+    "zero-horizon-flux assumption",
+    "Phase-1 Weyl-Maxwell-family relabeling",
+    "real symplectic inertia promotion",
+    "positive-energy promotion",
+    "imported artifact hash"
+  ],
+  "higher_tiers": {
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No imported mathematical input, shared operator, schema, or generated artifact in an existing certificate chain was changed; all five authorities are content-addressed read-only imports."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a scoped Phase-2 certificate package, not a freeze, theorem promotion in the main paper, shared-core change, or release."
+    }
+  },
+  "claim_boundary": "The receipt certifies deterministic replay, independent exact verification, and mutation rejection for the Nariai static-patch opposite-residue mechanism. It does not certify an absolute canonical-energy sign, global timelike generator, discarded horizon flux, Hadamard state, positivity, CPT metric, particles, unitarity, open-family robustness, or identity with the Phase-1 compact Weyl-Maxwell family."
+}
+

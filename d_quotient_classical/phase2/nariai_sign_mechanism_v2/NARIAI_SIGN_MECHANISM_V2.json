@@ -1,0 +1,426 @@
+{
+  "claim_boundary": {
+    "does_not_establish": [
+      "the absolute sign of either second-order branch canonical energy",
+      "positivity, Hilbert-space norm, particles, CPT metric, or unitarity",
+      "a globally timelike Nariai generator",
+      "a conserved static-patch energy after discarding horizon flux",
+      "a Hadamard state or Lorentzian quantum master equation",
+      "robustness over an open background family",
+      "identification with the Phase-1 compact Weyl-Maxwell family"
+    ],
+    "establishes": "On the declared Nariai transverse carrier, the exact Bach biwave polynomial has invariant Einstein/complementary solution projectors and its static-patch Lee-Wald current restricts with opposite exact multipliers -1/3 and +1/3, including both horizon-flux terms."
+  },
+  "classification": {
+    "Einstein_factor_identified": true,
+    "Hadamard_state_constructed": false,
+    "complementary_factor_identified": true,
+    "global_timelike_killing_used": false,
+    "horizon_boundaries_omitted": false,
+    "invariant_solution_projectors_constructed": true,
+    "lee_wald_residue_multipliers_exact": true,
+    "opposite_residue_mechanism_established": true,
+    "positive_energy_claimed": false,
+    "quantum_unitarity_claimed": false,
+    "real_symplectic_inertia_claimed": false,
+    "same_Weyl_Maxwell_family_claimed": false,
+    "zero_horizon_flux_assumed": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_factorization_and_projectors": {
+    "curvature_channels": {
+      "A_eigenvalues": [
+        "-2",
+        "2",
+        "0"
+      ],
+      "Einstein_identification": "On unit Einstein Nariai in transverse total-tracefree gauge, the fixed-Lambda linearized Einstein equation is L_E h=(Box I_9+2 Riemann_action)h=0.",
+      "derivation": "For each unit-curvature two-factor block, 2 R_{mu alpha nu beta}h^{alpha beta}=2(g_{mu nu} tr_factor(h)-h_{mu nu}); this has eigenvalues -2 on intrafactor tracefree tensors, +2 on the total-tracefree relative factor trace, and 0 on mixed tensors.",
+      "geometric_identity": "A=2 Riemann_action=-2 P_intraTF+2 P_relativeTrace+0 P_mixed",
+      "ordered_names": [
+        "intrafactor_tracefree",
+        "relative_trace",
+        "mixed"
+      ],
+      "projectors": [
+        {
+          "entries": [
+            [
+              0,
+              0,
+              "1"
+            ],
+            [
+              1,
+              1,
+              "1"
+            ],
+            [
+              1,
+              4,
+              "1/2"
+            ],
+            [
+              1,
+              8,
+              "1/2"
+            ],
+            [
+              4,
+              4,
+              "1/2"
+            ],
+            [
+              4,
+              8,
+              "-1/2"
+            ],
+            [
+              7,
+              7,
+              "1"
+            ],
+            [
+              8,
+              4,
+              "-1/2"
+            ],
+            [
+              8,
+              8,
+              "1/2"
+            ]
+          ],
+          "shape": [
+            9,
+            9
+          ]
+        },
+        {
+          "entries": [
+            [
+              1,
+              4,
+              "-1/2"
+            ],
+            [
+              1,
+              8,
+              "-1/2"
+            ],
+            [
+              4,
+              4,
+              "1/2"
+            ],
+            [
+              4,
+              8,
+              "1/2"
+            ],
+            [
+              8,
+              4,
+              "1/2"
+            ],
+            [
+              8,
+              8,
+              "1/2"
+            ]
+          ],
+          "shape": [
+            9,
+            9
+          ]
+        },
+        {
+          "entries": [
+            [
+              2,
+              2,
+              "1"
+            ],
+            [
+              3,
+              3,
+              "1"
+            ],
+            [
+              5,
+              5,
+              "1"
+            ],
+            [
+              6,
+              6,
+              "1"
+            ]
+          ],
+          "shape": [
+            9,
+            9
+          ]
+        }
+      ],
+      "ranks": [
+        4,
+        1,
+        4
+      ]
+    },
+    "factor_a_matrix": {
+      "entries": [
+        [
+          0,
+          0,
+          "-2"
+        ],
+        [
+          1,
+          1,
+          "-2"
+        ],
+        [
+          1,
+          4,
+          "-2"
+        ],
+        [
+          1,
+          8,
+          "-2"
+        ],
+        [
+          4,
+          8,
+          "2"
+        ],
+        [
+          7,
+          7,
+          "-2"
+        ],
+        [
+          8,
+          4,
+          "2"
+        ]
+      ],
+      "shape": [
+        9,
+        9
+      ]
+    },
+    "factor_b_matrix": {
+      "entries": [
+        [
+          0,
+          0,
+          "-8/3"
+        ],
+        [
+          1,
+          1,
+          "-8/3"
+        ],
+        [
+          1,
+          4,
+          "-2"
+        ],
+        [
+          1,
+          8,
+          "-2"
+        ],
+        [
+          2,
+          2,
+          "-2/3"
+        ],
+        [
+          3,
+          3,
+          "-2/3"
+        ],
+        [
+          4,
+          4,
+          "-2/3"
+        ],
+        [
+          4,
+          8,
+          "2"
+        ],
+        [
+          5,
+          5,
+          "-2/3"
+        ],
+        [
+          6,
+          6,
+          "-2/3"
+        ],
+        [
+          7,
+          7,
+          "-8/3"
+        ],
+        [
+          8,
+          4,
+          "2"
+        ],
+        [
+          8,
+          8,
+          "-2/3"
+        ]
+      ],
+      "shape": [
+        9,
+        9
+      ]
+    },
+    "factor_definitions": {
+      "L_C": "Box I_9+B=L_E-(2/3)I_9",
+      "L_E": "Box I_9+A",
+      "scalar_gap_L_E_minus_L_C": "2/3"
+    },
+    "gauge_fixed_identity": "G_H^{-1}B_action+(1/2)K T=(1/2)(Box I_9+A)(Box I_9+B)",
+    "solution_space_projectors": {
+      "Pi_C": "(3/2)L_E",
+      "Pi_E": "-(3/2)L_C",
+      "branch_values": {
+        "on_ker_L_C": [
+          "0",
+          "1"
+        ],
+        "on_ker_L_E": [
+          "1",
+          "0"
+        ]
+      },
+      "domain": "ker(L_E L_C) intersect ker(T) on the action-paired transverse carrier",
+      "identities_modulo_product_equation": [
+        "Pi_E+Pi_C=I",
+        "Pi_E^2-Pi_E=(9/4)L_E L_C",
+        "Pi_C^2-Pi_C=(9/4)L_E L_C",
+        "Pi_E Pi_C=-(9/4)L_E L_C"
+      ],
+      "lift_or_mode_choice_used": false
+    },
+    "transverse_factorization": "G_H^{-1} B_action=(1/2)L_E L_C when T h=0"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": {
+    "disposition": "DONE_SCOPED_MECHANISM_THEOREM",
+    "required_for_absolute_sign": "Independently determine the sign/nondegeneracy of one normalized second-order branch canonical form under an explicit horizon state or boundary prescription.",
+    "required_for_family_robustness": "Construct a separately certified open Nariai-type background family and repeat the factor-residue comparison without reusing this fixed-background conclusion."
+  },
+  "provenance": {
+    "declared_input_commit": "85548b8982bce7cd7ba764a245112e09be59d5dd",
+    "implementation_base_commit": "04bc76a67b7e328b4ae31f9de488df5cbb8afc33",
+    "imported_artifacts": [
+      {
+        "name": "action_endpoint",
+        "path": "d_quotient_classical/certificates/NARIAI_ACTION_DERIVED_BACH_ENDPOINT_V1.json",
+        "result_id": "NARIAI_ACTION_DERIVED_BACH_ENDPOINT_V1",
+        "result_state": "ACTION_DERIVED_BACH_AND_CORRECTED_PARENT_COMPRESSION_EXACT",
+        "sha256": "1dcc5e83f6942b3598930b8ffe206bc8ff0b0f821d74b9925ad61e5db9b8267d"
+      },
+      {
+        "name": "cyclic_metric_bv_complex",
+        "path": "d_quotient_classical/certificates/NARIAI_METRIC_BACH_CYCLIC_BV_COMPLEX_V1.json",
+        "result_id": "NARIAI_METRIC_BACH_CYCLIC_BV_COMPLEX_V1",
+        "result_state": "ACTION_PAIRED_FOUR_ROW_METRIC_BACH_COMPLEX_EXACT",
+        "sha256": "3333074f4a7b94b9d36ce9d20927155fa61b1541f02b152cfd179e8e50f76dcc"
+      },
+      {
+        "name": "metric_biwave_green_homotopy",
+        "path": "d_quotient_classical/certificates/NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json",
+        "result_id": "NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+        "result_state": "FOUR_ROW_METRIC_CAUSAL_GREEN_HOMOTOPY_EXACT",
+        "sha256": "5d755293ffbe32585fb1d6afc4ccb3643784306236e4b456777040858f5266bc"
+      },
+      {
+        "name": "invariant_einstein_biwave_identification",
+        "path": "d_quotient_classical/certificates/EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json",
+        "result_id": "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+        "result_state": "EINSTEIN_BACKGROUND_FOUR_ROW_METRIC_CAUSAL_GREEN_HOMOTOPY_EXACT",
+        "sha256": "e2978cf23f577ab365729d139c8eabf0bcbc2277bc2a124d872c03c94b7b8a75"
+      },
+      {
+        "name": "rank_310_causal_transfer",
+        "path": "d_quotient_classical/certificates/NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1.json",
+        "result_id": "NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1",
+        "result_state": "RANK_310_CAUSAL_GREEN_HOMOTOPY_AND_METRIC_DESCENT_EXACT",
+        "sha256": "0e7774b93f54d5cdc45385b5b119d7508173622fb0d4a7ca93618738971ac2ff"
+      }
+    ],
+    "producer": "d_quotient_classical/phase2/nariai_sign_mechanism_v2/generate.py",
+    "producer_sha256": "3bfdd733ffe71757fa1458ac720db5e2ff3c5db280ff790ea6dd5de0a4368707",
+    "tests": "d_quotient_classical/phase2/nariai_sign_mechanism_v2/tests/test_nariai_sign_mechanism_v2.py",
+    "tests_sha256": "ff2634f3d1cabd60f83bf66637882b3c1b4b9f6d138461205d3b747fa2fe92ea",
+    "verifier": "d_quotient_classical/phase2/nariai_sign_mechanism_v2/verify.py",
+    "verifier_sha256": "15faebea9529fadb9f5c85b0d7c9c2053f5f654ea02c174670b20fd729285edb"
+  },
+  "result_id": "NARIAI_SIGN_MECHANISM_V2",
+  "result_state": "STATIC_PATCH_OPPOSITE_LEE_WALD_RESIDUE_MECHANISM_EXACT",
+  "schema": "nariai-sign-mechanism-v2",
+  "schema_path": "d_quotient_classical/phase2/nariai_sign_mechanism_v2/nariai-sign-mechanism-v2.schema.json",
+  "schema_sha256": "6addf0b24d685a0934bd60e2177cc3c2b4aa034b37fa04d5abe6a057dec2514c",
+  "scope": {
+    "background": "global unit Nariai, restricted only for the sign observable to one static patch",
+    "carrier": "action-paired transverse metric carrier T h=0 inside the certified metric BV complex",
+    "comparison": "invariant factor-residue multipliers on the Einstein and complementary kernels",
+    "observable": "H-canonical Lee-Wald current and finite-static-slab flux balance",
+    "theory": "strict pure-Weyl metric Bach theory"
+  },
+  "static_patch_residue_theorem": {
+    "lee_wald_concomitant": {
+      "Einstein_branch_restriction": "j_B|ker(L_E)=-(1/3)j_LE",
+      "Einstein_residue_multiplier": "-1/3",
+      "applies_to": [
+        "static-patch slice term",
+        "r=-1 horizon flux",
+        "r=+1 horizon flux"
+      ],
+      "canonical_current": "J_H(h1,h2)=j_B(h1,Lie_H h2)",
+      "complementary_branch_restriction": "j_B|ker(L_C)=+(1/3)jLC",
+      "complementary_residue_multiplier": "1/3",
+      "finite_slab_balance": "slice difference plus flux through r=-1 plus flux through r=+1 equals zero",
+      "fourth_order_representative": "j_B(u,v)=(1/2)[j_LE(u,L_C v)+j_LC(L_E u,v)] on T u=T v=0",
+      "opposite_nonzero_residues": true,
+      "second_order_definition": "div j_L(u,v)=<u,Lv>-<Lu,v>"
+    },
+    "mechanism": {
+      "background_family_claim": false,
+      "fourth_order_positive_energy_claimed": false,
+      "raw_real_symplectic_inertia_computed": false,
+      "same_Weyl_Maxwell_family_as_phase1": false,
+      "second_order_branch_energy_sign_determined": false,
+      "statement": "The opposite branch multiplier is the derivative/residue of the factor polynomial, fixed by the exact scalar gap L_E-L_C=2/3; it is not assigned by an Einstein-versus-additional label or by a raw lift."
+    },
+    "sign_structure": {
+      "boundary_components": [
+        "r=-1 Killing horizon",
+        "r=+1 Killing horizon"
+      ],
+      "choice": "STATIC_PATCH_WITH_HORIZON_FLUX_BOUNDARIES",
+      "coordinate_domain": "-1<r<1",
+      "global_timelike_generator_claimed": false,
+      "horizon_flux_policy": "Both horizon fluxes are retained in the finite-slab Lee-Wald balance; no reflecting or zero-flux boundary condition is imposed.",
+      "metric": "ds^2=-(1-r^2)dt^2+(1-r^2)^(-1)dr^2+dOmega_2^2",
+      "named_killing_field": "H=partial_t",
+      "norm_g_H_H": "-(1-r^2)",
+      "timelike_domain": "-1<r<1 only"
+    }
+  }
+}

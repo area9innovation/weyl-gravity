@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nariai-sign-mechanism-v2.schema.json",
+  "title": "Exact Nariai static-patch opposite-residue mechanism",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "provenance",
+    "scope",
+    "exact_factorization_and_projectors",
+    "static_patch_residue_theorem",
+    "classification",
+    "claim_boundary",
+    "next_gate"
+  ],
+  "properties": {
+    "schema": {"const": "nariai-sign-mechanism-v2"},
+    "schema_path": {"type": "string"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "NARIAI_SIGN_MECHANISM_V2"},
+    "result_state": {"const": "STATIC_PATCH_OPPOSITE_LEE_WALD_RESIDUE_MECHANISM_EXACT"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["declared_input_commit", "implementation_base_commit", "producer", "producer_sha256", "verifier", "verifier_sha256", "tests", "tests_sha256", "imported_artifacts"],
+      "properties": {
+        "declared_input_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "implementation_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "producer": {"type": "string"},
+        "producer_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "verifier": {"type": "string"},
+        "verifier_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "tests": {"type": "string"},
+        "tests_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "imported_artifacts": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": ["name", "path", "result_id", "result_state", "sha256"],
+            "properties": {
+              "name": {"type": "string"},
+              "path": {"type": "string"},
+              "result_id": {"type": "string"},
+              "result_state": {"type": "string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "scope": {"type": "object"},
+    "exact_factorization_and_projectors": {
+      "type": "object",
+      "required": ["transverse_factorization", "gauge_fixed_identity", "factor_definitions", "factor_a_matrix", "factor_b_matrix", "curvature_channels", "solution_space_projectors"],
+      "properties": {
+        "transverse_factorization": {"type": "string"},
+        "gauge_fixed_identity": {"type": "string"},
+        "factor_definitions": {
+          "type": "object",
+          "required": ["L_E", "L_C", "scalar_gap_L_E_minus_L_C"],
+          "properties": {
+            "L_E": {"type": "string"},
+            "L_C": {"type": "string"},
+            "scalar_gap_L_E_minus_L_C": {"const": "2/3"}
+          }
+        },
+        "factor_a_matrix": {"$ref": "#/$defs/sparseMatrix"},
+        "factor_b_matrix": {"$ref": "#/$defs/sparseMatrix"},
+        "curvature_channels": {"type": "object"},
+        "solution_space_projectors": {"type": "object"}
+      }
+    },
+    "static_patch_residue_theorem": {
+      "type": "object",
+      "required": ["sign_structure", "lee_wald_concomitant", "mechanism"],
+      "properties": {
+        "sign_structure": {
+          "type": "object",
+          "required": ["choice", "boundary_components", "global_timelike_generator_claimed", "horizon_flux_policy"],
+          "properties": {
+            "choice": {"const": "STATIC_PATCH_WITH_HORIZON_FLUX_BOUNDARIES"},
+            "boundary_components": {"type": "array", "minItems": 2, "maxItems": 2},
+            "global_timelike_generator_claimed": {"const": false},
+            "horizon_flux_policy": {"type": "string"}
+          }
+        },
+        "lee_wald_concomitant": {
+          "type": "object",
+          "required": ["Einstein_residue_multiplier", "complementary_residue_multiplier", "opposite_nonzero_residues", "applies_to"],
+          "properties": {
+            "Einstein_residue_multiplier": {"const": "-1/3"},
+            "complementary_residue_multiplier": {"const": "1/3"},
+            "opposite_nonzero_residues": {"const": true},
+            "applies_to": {"type": "array", "minItems": 3, "maxItems": 3}
+          }
+        },
+        "mechanism": {"type": "object"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": ["Einstein_factor_identified", "complementary_factor_identified", "invariant_solution_projectors_constructed", "lee_wald_residue_multipliers_exact", "opposite_residue_mechanism_established", "global_timelike_killing_used", "horizon_boundaries_omitted", "zero_horizon_flux_assumed", "same_Weyl_Maxwell_family_claimed", "real_symplectic_inertia_claimed", "positive_energy_claimed", "Hadamard_state_constructed", "quantum_unitarity_claimed"],
+      "properties": {
+        "Einstein_factor_identified": {"const": true},
+        "complementary_factor_identified": {"const": true},
+        "invariant_solution_projectors_constructed": {"const": true},
+        "lee_wald_residue_multipliers_exact": {"const": true},
+        "opposite_residue_mechanism_established": {"const": true},
+        "global_timelike_killing_used": {"const": false},
+        "horizon_boundaries_omitted": {"const": false},
+        "zero_horizon_flux_assumed": {"const": false},
+        "same_Weyl_Maxwell_family_claimed": {"const": false},
+        "real_symplectic_inertia_claimed": {"const": false},
+        "positive_energy_claimed": {"const": false},
+        "Hadamard_state_constructed": {"const": false},
+        "quantum_unitarity_claimed": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {"type": "object"},
+    "next_gate": {
+      "type": "object",
+      "required": ["disposition", "required_for_absolute_sign", "required_for_family_robustness"],
+      "properties": {
+        "disposition": {"const": "DONE_SCOPED_MECHANISM_THEOREM"},
+        "required_for_absolute_sign": {"type": "string"},
+        "required_for_family_robustness": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "sparseMatrix": {
+      "type": "object",
+      "required": ["shape", "entries"],
+      "properties": {
+        "shape": {"const": [9, 9]},
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [{"type": "integer"}, {"type": "integer"}, {"type": "string"}],
+            "minItems": 3,
+            "maxItems": 3
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
