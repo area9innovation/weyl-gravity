@@ -5197,3 +5197,36 @@ validation, a zero-stale 1,986-edge provenance graph, and the complete
 Einstein package rail: 1,391 tests, zero failures or errors, one declared
 skip.  Evidence is
 `bridge/einstein_sector/receipts/PAPER13_THIRD_ORDER_KURANISHI_DISPOSITION_V1_TIER_RECEIPT.json`.
+
+## Phase-1 Einstein/extra contribution freeze
+
+The publication-independent Bridge contribution is now assembled in
+`BRIDGE_PHASE1_EINSTEIN_EXTRA_CONTRIBUTION_V1`. Nine exact inputs trace the
+parity-complete pre-residual linear sequence, the failure of a cyclic
+Einstein-image identification, the independent axial and polar direct
+Lee--Wald pairings, the five-covector finite-harmonic cone, the two-jet
+charge carrier and mixed-charge correspondence, and the theorem-frozen
+third-order balanced fixture.
+
+The manifest keeps four branch traces separate. Both extra generic parity
+blocks are nonradical with inertia `(2,0)` and both full generic target blocks
+have inertia `(3,1)`, but this does not identify their representatives or make
+the Einstein inclusion a symplectic equivalence. Total five-charge
+cancellation is represented by the anti-diagonal mixed-charge correspondence;
+it does not produce separately neutral Einstein and extra projections.
+
+At third order the correction-independent statement is `[K3]=0` in the global
+quotient. The four-shell bounded obstruction and the finite
+exponential-polynomial secular preimage remain scoped to the certified
+second-order representative. The complete bounded quotient is open and the
+causal/retarded map is `NO_CERTIFIED_MAP`.
+
+The reverse materiality audit finds Papers 13, 91 and 92 aligned. Paper 10's
+claim map still says that the polar extra branch is unclassified, so it carries
+a separate narrowly scoped correction request; this freeze does not edit the
+paper. The generated atlas has one fail-closed row per branch, with causal,
+observational and quantum columns left at `NO_CERTIFIED_MAP`.
+
+Evidence is `bridge/phase1/BRIDGE_PHASE1_EINSTEIN_EXTRA_CONTRIBUTION_V1.json`,
+`residual_atlas/bridge-phase1-einstein-extra-contribution-fragment-v1.json`
+and `planning/paper-coverage/bridge-phase1-einstein-extra-materiality-2026-07-22.json`.

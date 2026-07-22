@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/bridge-phase1-einstein-extra-contribution-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "imports", "rows", "branch_traces", "adversarial_mutations", "terminal_summary", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-bridge-phase1-einstein-extra-contribution-v1"},
+    "result_id": {"const": "BRIDGE_PHASE1_EINSTEIN_EXTRA_CONTRIBUTION_V1"},
+    "result_state": {"const": "PHASE1_EINSTEIN_EXTRA_STRUCTURAL_CONTRIBUTION_FROZEN"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "imports": {"type": "object", "minProperties": 9, "additionalProperties": {"$ref": "#/$defs/import"}},
+    "rows": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/row"}},
+    "branch_traces": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object"}},
+    "adversarial_mutations": {"type": "object", "minProperties": 5},
+    "terminal_summary": {"type": "object"},
+    "claim_boundary": {"type": "object", "required": ["establishes", "does_not_establish"]}
+  },
+  "$defs": {
+    "import": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "result_state", "lifecycle_state", "sha256"],
+      "properties": {"path": {"type": "string"}, "result_id": {"type": "string"}, "result_state": {"type": "string"}, "lifecycle_state": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    },
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_fibre", "carrier", "degree", "parity", "harmonic_support"],
+      "properties": {"theory": {"type": "string"}, "background": {"type": "string"}, "boundaries": {"type": "string"}, "charge_fibre": {"type": "string"}, "carrier": {"type": "string"}, "degree": {"type": "string"}, "parity": {"type": "string"}, "harmonic_support": {"type": "string"}}
+    },
+    "row": {
+      "type": "object", "additionalProperties": false,
+      "required": ["row_id", "sequence", "source", "scope", "claim", "disposition", "representative_dependence", "correction_class", "lifecycle"],
+      "properties": {"row_id": {"type": "string"}, "sequence": {"type": "integer", "minimum": 0}, "source": {"type": "string"}, "scope": {"$ref": "#/$defs/scope"}, "claim": {"type": "string"}, "disposition": {"type": "string"}, "representative_dependence": {"type": "string"}, "correction_class": {"type": "string"}, "lifecycle": {"type": "string"}}
+    }
+  }
+}

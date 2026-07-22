@@ -1,0 +1,51 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "BRIDGE_PHASE1_EINSTEIN_EXTRA_CONTRIBUTION_V1_TIER_RECEIPT",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "tier0": {
+    "status": "PASS",
+    "elapsed_seconds": 0.13,
+    "commands": [
+      "python3 -m py_compile bridge/phase1/generate_bridge_phase1_einstein_extra_manifest.py bridge/phase1/verify_bridge_phase1_einstein_extra_manifest.py bridge/phase1/generate_bridge_phase1_atlas_fragment.py",
+      "python3 -m json.tool <each scoped JSON>",
+      "git diff --check -- <explicit manifest>"
+    ]
+  },
+  "tier1": {
+    "status": "PASS",
+    "elapsed_seconds": 0.78,
+    "commands": [
+      "python3 bridge/phase1/generate_bridge_phase1_einstein_extra_manifest.py --check",
+      "python3 bridge/phase1/verify_bridge_phase1_einstein_extra_manifest.py",
+      "python3 bridge/phase1/generate_bridge_phase1_atlas_fragment.py --check",
+      "python3 residual_atlas/validate_fragment.py residual_atlas/bridge-phase1-einstein-extra-contribution-fragment-v1.json",
+      "python3 -m pytest -q bridge/phase1/tests/test_bridge_phase1_einstein_extra_manifest.py"
+    ],
+    "tests": "5 passed, including four independently rejected boundary mutations"
+  },
+  "tier2": {
+    "status": "NOT_RUN",
+    "reason": "No mathematical input, shared operator, source certificate, source atlas or upstream schema changed; all nine terminal inputs are imported by exact SHA-256."
+  },
+  "tier3": {
+    "status": "NOT_RUN",
+    "reason": "This publication-independent synthesis creates no new theorem or lifecycle promotion and changes no shared Bridge algebra. The imported Paper 13 receipt content-addresses the immediately preceding complete 1391-test Bridge rail."
+  },
+  "advisory_shadow": {
+    "status": "EXIT_0_WITH_FINDINGS",
+    "elapsed_seconds": 4.49,
+    "findings": [
+      "pre-existing Bridge certificate drift finding",
+      "corpus census drift: 1418 certificates versus baseline 976",
+      "unpublished dirty Forge development build"
+    ],
+    "claim_effect": "ADVISORY_ONLY_NO_PROMOTION"
+  },
+  "output_sha256": {
+    "bridge/phase1/BRIDGE_PHASE1_EINSTEIN_EXTRA_CONTRIBUTION_V1.json": "7c045d4bde9e3961ad422faa0e6f8ca4d22cde76970e6071ca7a9bff392666d3",
+    "planning/paper-coverage/bridge-phase1-einstein-extra-materiality-2026-07-22.json": "3d913ea43aa726fa54787c6f91278e6738f6773cbd47373b50d529ffeac45bec",
+    "residual_atlas/bridge-phase1-einstein-extra-contribution-fragment-v1.json": "1004ec5673e54b5d5103d11a7574d054d639b48bea7be8d40fbeb4c181beea42"
+  },
+  "claim_promotion": "CLASSIFIED",
+  "claim_boundary": "This receipt certifies the deterministic synthesis, source hashes, branch completeness, charge-fibre distinctions, correction-class distinctions, reverse materiality audit and fail-closed atlas. It does not re-verify upstream mathematics or promote a causal, particle or quantum claim."
+}
