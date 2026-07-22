@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase2-quantum-brst-hadamard-stretch-INTENT-30f132c01253c557",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work intent",
+  "source": {"path": "tools/science-forge/program/events/phase2-quantum-brst-hadamard-stretch-INTENT-30f132c01253c557.json", "span": null},
+  "body": {"event_kind": "WORK_INTENT", "actor": "phase2-hadamard-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-22T13:02:01Z", "seq": 1, "payload": {"target": "sf:program/work/phase2-quantum-brst-hadamard-stretch", "agent": "phase2-hadamard-1", "lease": "exclusive", "base_commit": "59a96fbed8a962fc02b1742e635811b1ca6b476e", "transaction_id": "cd614c15955aa6a9", "allowlist_verdict": "within-allowlist", "intended_paths": ["quantum-weyl/pt_cpt/hadamard_stretch/", "reports/phase2-quantum-brst-hadamard-stretch-2026-07-22.md", "residual_atlas/phase2-quantum-brst-hadamard-fragment-v1.json", "planning/forge-requests/phase2-hadamard-microlocal-transfer.json"], "verify_commands": ["python3 quantum-weyl/pt_cpt/hadamard_stretch/hadamard_stretch_obstruction.py --check", "python3 quantum-weyl/pt_cpt/hadamard_stretch/verify_hadamard_stretch_obstruction.py", "python3 -m unittest quantum-weyl/pt_cpt/hadamard_stretch/tests/test_hadamard_stretch_obstruction.py -v", "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/pt_cpt/hadamard_stretch/schema/phase2-brst-hadamard-stretch-obstruction-v1.schema.json -d quantum-weyl/pt_cpt/hadamard_stretch/certificates/PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1.json", "python3 residual_atlas/validate_fragment.py residual_atlas/phase2-quantum-brst-hadamard-fragment-v1.json"]}, "native": {"authored_by": "sfc work-intent", "policy": "append-only (SPEC 4.5); an uncommitted delivery manifest — NO current_commit, NO test-success. Superseded by a later intent; sealed by WORK_COMMITTED."}},
+  "edges": [{"rel": "INTENDS", "to": "sf:program/work/phase2-quantum-brst-hadamard-stretch"}]
+}
