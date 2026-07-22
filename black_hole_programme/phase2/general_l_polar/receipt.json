@@ -1,0 +1,95 @@
+{
+  "schema": "phase2-black-hole-general-l-polar-disposition-receipt-v1",
+  "result_id": "PHASE2_BLACK_HOLE_GENERAL_L_POLAR_DISPOSITION_RECEIPT",
+  "date": "2026-07-22",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "scientific_disposition": "SHORTFALL",
+  "verification_status": "PASS",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile black_hole_programme/phase2/general_l_polar/*.py black_hole_programme/phase2/general_l_polar/tests/*.py",
+        "python3 -m json.tool black_hole_programme/phase2/general_l_polar/{schema.json,certificate.json,sourced_lift_depth2_pilot.json,receipt.json}",
+        "git diff --check -- black_hole_programme/phase2/general_l_polar reports/phase2-black-hole-general-l-polar-disposition-2026-07-22.md residual_atlas/phase2-black-hole-general-l-polar-disposition-fragment-v1.json"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "fast_rail": {
+        "commands": [
+          "python3 -m black_hole_programme.phase2.general_l_polar.verify_general_l_polar_disposition",
+          "python3 -m pytest black_hole_programme/phase2/general_l_polar/tests -q"
+        ],
+        "results": [
+          "independent verifier passed",
+          "17 tests passed in 47.19 seconds, including plain package import and exact current-coefficient reconstruction"
+        ]
+      },
+      "exhaustive_rail": {
+        "commands": [
+          "python3 -m black_hole_programme.phase2.general_l_polar.produce_sourced_lift_depth2_pilot",
+          "python3 -m black_hole_programme.phase2.general_l_polar.general_l_polar_disposition",
+          "python3 -m black_hole_programme.phase2.general_l_polar.general_l_polar_disposition --check"
+        ],
+        "results": [
+          "content-addressed depth-2 pilot generation passed in 208.09 seconds",
+          "main certificate and atlas generation passed in 351.77 seconds",
+          "byte-for-byte main certificate and atlas replay passed in 335.03 seconds",
+          "final canonical-atlas regeneration passed in 390.79 seconds and the repository-wide atlas validator passed"
+        ],
+        "commit_loop_policy": "The exhaustive symbolic producers are release/receipt rails; the independent verifier and mutation suite are the ordinary scoped feedback rail."
+      }
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "No imported mathematical input, shared operator, existing certificate, or schema outside this new scoped package changed; all prerequisites are read-only content-hashed imports."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a scoped CLASSIFIED scientific shortfall, not a freeze, release, shared-core change, or paper-theorem promotion."
+    }
+  },
+  "bounded_solver_ledger": {
+    "method": "exact DomainMatrix fraction-field augmented RREF, one simple branch per solve",
+    "depth_2_passes": {"zero:0": "8.17s", "zero:1": "10.27s", "zero:2": "14.48s", "oscillatory:1": "167.99s"},
+    "depth_2_bounded_nonresults": {"oscillatory:0": ">180s", "oscillatory:2": ">180s"},
+    "reading": "bounded nonresults are computational bottlenecks, not mathematical obstructions",
+    "pivot_wall_audit": "NOT_EXPOSED; solution denominators contain Lambda and Lambda-2, but additional RREF pivot walls are not excluded"
+  },
+  "content_sha256_manifest": {
+    "black_hole_programme/phase2/general_l_polar/__init__.py": "b7e1dea6ed033637020724a3780ba209d7cfbc8ecab4a636e65fa6c8b433ba9b",
+    "black_hole_programme/phase2/general_l_polar/general_l_polar_disposition.py": "ebdfdcb2aa1d08c86cbc50d83274112e778735034f31a8bd0c1c6995b4aeb021",
+    "black_hole_programme/phase2/general_l_polar/symbolic_reconstruction.py": "3efd7e2af5aa9b9778fb0b7b1128aa277de4a3890a9d2831c345358138a3bb5f",
+    "black_hole_programme/phase2/general_l_polar/literal_current.py": "97c680af434464028e3865c848b143b524eab2f52fec584e7b9c7a5c07b7ddc5",
+    "black_hole_programme/phase2/general_l_polar/generic_carrier_asymptotics.py": "fbc1335f317798cf6183686b587541684229fd2a9562e2548f3ddb6ad159b76d",
+    "black_hole_programme/phase2/general_l_polar/sourced_lift.py": "3573a9da81d8491aaf2ac9fde9b6a3be500e94d8bbaa743b4de41d08d87937d4",
+    "black_hole_programme/phase2/general_l_polar/produce_sourced_lift_depth2_pilot.py": "d82b5c71c2921d5907f4051c30a56c9a20651d772248797b9b95e6b809482ee9",
+    "black_hole_programme/phase2/general_l_polar/verify_general_l_polar_disposition.py": "f3ca947c7701c912e684d1f340edc8d1a2b300cc4cb7cb250d96e4946010b287",
+    "black_hole_programme/phase2/general_l_polar/schema.json": "60b8945ecae2f635b90450b1d82a7a3bcd92a98fcfe389eb2f3cd55e739a2b5c",
+    "black_hole_programme/phase2/general_l_polar/certificate.json": "49b224aec8ee358dd4f0c096063d83ee00b2571b222009f73eadd84241a23ab2",
+    "black_hole_programme/phase2/general_l_polar/sourced_lift_depth2_pilot.json": "1e147ed9b094a4ff45970565957e1ecbccb69327311f4e2466e55b82da426d18",
+    "black_hole_programme/phase2/general_l_polar/tests/__init__.py": "7517dad39320789f9446e38aa03a11f76b1ad2d31eafed12c79023b1abfda035",
+    "black_hole_programme/phase2/general_l_polar/tests/test_general_l_polar_disposition.py": "046eec09bd7f6db64e652ba4517d1248865573b927a022e61e28efe261a85a6f",
+    "reports/phase2-black-hole-general-l-polar-disposition-2026-07-22.md": "bc0df70dfc79dfe777989730dfde322a9266efaa8cb97fe95b8bdbecffd6d811",
+    "residual_atlas/phase2-black-hole-general-l-polar-disposition-fragment-v1.json": "16e99cb77e12e2f86eccdca42383968d7758a0a8862e9b44c0392e383fa077f7"
+  },
+  "source_manifest": {
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_polar/__init__.py": "f5932864d7515f22c2c3cc3911bcb8fecbc1582a",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_polar/general_l_polar_disposition.py": "e9c4e316e804fa70059f54f1e0c9f178477c7244",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_polar/symbolic_reconstruction.py": "f3210312b4e2bb78b592ba741cb902e51715412d",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_polar/literal_current.py": "041a368f2a0aa19a43cad260701c34fc5a954469",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_polar/generic_carrier_asymptotics.py": "fb85767e11d0516b919e820a1ececabc9059e8ff",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_polar/sourced_lift.py": "ecc817f05b4b11cdc2c87b355dc41b8a2d805f5d",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_polar/produce_sourced_lift_depth2_pilot.py": "0e6c762a2d18341feed09c63c0743d88079435d9",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_polar/verify_general_l_polar_disposition.py": "b20e91a71192195db5f53574c35cd8757f4278f8",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_polar/schema.json": "c22ec01aef319c1c0d9fa94e891ead35817fa2ad",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_polar/certificate.json": "324fe1839d1c5e9d8e6257f409204fd7d74abee5",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_polar/sourced_lift_depth2_pilot.json": "4084a1d408bcb72e6ad2c3d445e2e7976eea9c7a",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_polar/tests/__init__.py": "fc2dcf0889331dcacd29b04148c820f317225753",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_polar/tests/test_general_l_polar_disposition.py": "9505b5af7e86228da48a4c10ba607b33b1a94dd0",
+    "physics/symplectic-reconstruction/reports/phase2-black-hole-general-l-polar-disposition-2026-07-22.md": "404760a3b41b35b24193faba6fdb3ff237cb7ac8",
+    "physics/symplectic-reconstruction/residual_atlas/phase2-black-hole-general-l-polar-disposition-fragment-v1.json": "511fc538c3cfd85e03de8e6a50dfe00735c5f90a"
+  },
+  "claim_boundary": "The receipt certifies the exact generic-Lambda polar harmonic/Bianchi/reconstruction/current infrastructure, exact oriented current filtration and zero-shell depth-2 coefficient, generic Bach-carrier asymptotics, and four finite depth-2 sourced-lift pilots. It does not certify all-seven sourced jets, stable all-order log degrees, a complete RREF pivot-wall exceptional set, generic EE/EX/XX coefficients, boundary selection, phase space, stability, scattering, positivity, particles, or quantum claims."
+}
