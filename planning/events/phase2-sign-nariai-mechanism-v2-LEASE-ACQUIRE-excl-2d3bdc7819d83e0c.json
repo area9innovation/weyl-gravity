@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase2-sign-nariai-mechanism-v2-LEASE-ACQUIRE-excl-2d3bdc7819d83e0c",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/phase2-sign-nariai-mechanism-v2-LEASE-ACQUIRE-excl-2d3bdc7819d83e0c.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "phase2-sign-2", "base_revision": "science-forge-ir-v0", "when": "2026-07-22T11:45:47Z", "seq": 3, "predecessor": "sf:program/event/phase2-sign-nariai-mechanism-v2-LEASE-ACQUIRE-excl-f2f594ba6b2094be", "payload": {"target": "sf:program/work/phase2-sign-nariai-mechanism-v2", "agent": "phase2-sign-2", "lease_type": "exclusive", "action": "ACQUIRE", "acquired": "2026-07-22T11:45:47Z", "expires": "2026-07-22T19:45:47Z"}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/phase2-sign-nariai-mechanism-v2"}]
+}

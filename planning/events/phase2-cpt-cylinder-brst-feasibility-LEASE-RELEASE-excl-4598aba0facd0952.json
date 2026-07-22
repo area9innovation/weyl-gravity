@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase2-cpt-cylinder-brst-feasibility-LEASE-RELEASE-excl-4598aba0facd0952",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/phase2-cpt-cylinder-brst-feasibility-LEASE-RELEASE-excl-4598aba0facd0952.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "phase2-cpt-2", "base_revision": "science-forge-ir-v0", "when": "2026-07-22T13:01:00Z", "seq": 2, "predecessor": "sf:program/event/phase2-cpt-cylinder-brst-feasibility-LEASE-ACQUIRE-excl-5a5859eaa316aa79", "payload": {"target": "sf:program/work/phase2-cpt-cylinder-brst-feasibility", "agent": "phase2-cpt-2", "lease_type": "exclusive", "action": "RELEASE", "acquired": "2026-07-22T13:01:00Z", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/phase2-cpt-cylinder-brst-feasibility"}]
+}
