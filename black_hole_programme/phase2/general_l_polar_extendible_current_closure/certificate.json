@@ -1,0 +1,89 @@
+{
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "generic-ell polar finite-flux selection",
+    "31-entry current Gram table",
+    "all-order asymptotic solutions",
+    "asymptotic phase space",
+    "scattering",
+    "stability",
+    "positivity"
+  ],
+  "imports": {
+    "branch_sha256": {
+      "oscillatory-0.json": "6e92fb33445f692eb298c0d4b3993ae91e57e389c9a0d595c095da3d99455344",
+      "oscillatory-1.json": "4a15bc975f46e5101509ad5a5d64676498f5c917159f3b4ca1f1f742dba241e8",
+      "oscillatory-2.json": "c7bdb2946a449032c75fdc92f598965ed09ac247bf0e7d5bec68091954f2e24a",
+      "zero-0.json": "1b4e6edf7ad3a75ea6e01dc90c0451af08a666fc5fd37f58b9cedfe191ac3f0b",
+      "zero-1.json": "773802ebd67874d8ab2febe56e326cb1bbe60f717b33deb6aca1695c23ca2c35",
+      "zero-2.json": "f18f87ad4d7d7fc9d189167aafae3dbd73701b4cd07472998d943430568ae7ed"
+    },
+    "completion_sha256": "cfd437f7aa1c647b37ffbdfa3563faa821720540101a70f801f5d8c23ea84efc",
+    "input_commit": "b9d347d832492d9e39a8cfbd346b041f35f22de7",
+    "polar_v1_sha256": "49b224aec8ee358dd4f0c096063d83ee00b2571b222009f73eadd84241a23ab2"
+  },
+  "master_infinity": {
+    "characteristic_polynomial": "z**3*(2*I*omega + z)",
+    "matrix": [
+      [
+        "0",
+        "I*omega/2",
+        "1/2",
+        "I*omega"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-2*I*omega",
+        "0"
+      ],
+      [
+        "0",
+        "I*omega",
+        "1/2",
+        "0"
+      ]
+    ],
+    "oscillatory_geometric_multiplicity": 1,
+    "zero_algebraic_multiplicity": 3,
+    "zero_generalized_nullities": [
+      1,
+      2,
+      3
+    ],
+    "zero_geometric_multiplicity": 1
+  },
+  "polynomial_master_seven_row_crosscheck": {
+    "angP_zero_choice": "kappa*(2 - Lambda)/2",
+    "mode": "Ch=Bh=0, Kh=kappa, Ah=I*omega*kappa*r+a0",
+    "nonzero_rows": {
+      "angP": "(Lambda*kappa + 2*a0 - 2*kappa)/(2*r**2)",
+      "vv": "I*(-I*Lambda*a0 + Lambda*kappa*omega*r + 2*a0*omega*r - 2*kappa*omega*r + 6*kappa*omega)/(2*r**2)"
+    },
+    "physical_domain_reading": "The polynomial four-state Bach-master direction is not a nontrivial source-zero seven-Ricci-row direction for generic Lambda=ell(ell+1), ell>=2 and real omega!=0.",
+    "remaining_vv_residual": "-kappa*(Lambda**2 - 2*Lambda - 12*I*omega)/(4*r**2)"
+  },
+  "result_id": "POLAR_EXTENDIBLE_MODULE_CURRENT_CLOSURE_CHECKPOINT_V1",
+  "schema_version": "phase2-polar-extendible-current-closure-v1",
+  "shallow_log": {
+    "defect": "3*Lambda - 48*omega**2 + 12*I*omega + 15",
+    "disposition": "NONEXTENDIBLE_SHALLOW_SOURCE_ARTIFACT",
+    "imaginary_part": "12*omega",
+    "nowhere_zero": true
+  },
+  "status": {
+    "bounded_frontier": "The optimized GJ seven-row splitting has different finite-depth free counts from the four-state master estimate; basis/quotient identification and new physical pivot-wall factors must be resolved before a representative-invariant Gram table is well typed.",
+    "current": "NOT_COMPUTED",
+    "expected_31_entry_table": "NOT_PROMOTED",
+    "module_reconciliation": "OPEN: Bach-master generalized dimensions cannot be used as source-zero seven-row Einstein dimensions without quotient identification"
+  }
+}
