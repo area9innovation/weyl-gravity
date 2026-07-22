@@ -1,0 +1,70 @@
+{
+  "result_id": "PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1",
+  "result_state": "COMPLETE_CAUSAL_BV_SELECTED_ZERO_FREQUENCY_CARRIER_EXACTLY_NOT_IDENTIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL",
+    "REDUCED-MODE"
+  ],
+  "source_manifest": {
+    "physics/symplectic-reconstruction/quantum-weyl/pt_cpt/hadamard_stretch/__init__.py": "e5477d79d5621e73fa4be36c79877d950e3c6214",
+    "physics/symplectic-reconstruction/quantum-weyl/pt_cpt/hadamard_stretch/hadamard_stretch_obstruction.py": "a1bf2e7507dc52b1b322399eef1e21902dbfe765",
+    "physics/symplectic-reconstruction/quantum-weyl/pt_cpt/hadamard_stretch/verify_hadamard_stretch_obstruction.py": "1a28c15c4aa53a460935ce61a2bc11f4e90c9466",
+    "physics/symplectic-reconstruction/quantum-weyl/pt_cpt/hadamard_stretch/tests/__init__.py": "3ac0a63d85ca3a24ec37d835d5a8a8ce21c8cb8d",
+    "physics/symplectic-reconstruction/quantum-weyl/pt_cpt/hadamard_stretch/tests/test_hadamard_stretch_obstruction.py": "b7db8c067cb0397924d2586a90ba5e8bb699d399",
+    "physics/symplectic-reconstruction/quantum-weyl/pt_cpt/hadamard_stretch/schema/phase2-brst-hadamard-stretch-obstruction-v1.schema.json": "78d564b363672730773c9bb1aad4757767f34050",
+    "physics/symplectic-reconstruction/quantum-weyl/pt_cpt/hadamard_stretch/certificates/PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1.json": "7e67478344a44983023c09552f6afd33754d84de",
+    "physics/symplectic-reconstruction/reports/phase2-quantum-brst-hadamard-stretch-2026-07-22.md": "78323540a79b09b73ca5a4cd6685e10c0686ba2e",
+    "physics/symplectic-reconstruction/residual_atlas/phase2-quantum-brst-hadamard-fragment-v1.json": "13678b3a0ea787346dfb4a97daf27fda96c93c8c",
+    "physics/symplectic-reconstruction/planning/forge-requests/phase2-hadamard-microlocal-transfer.json": "2fe674273a8b7988d7e0acac61e2a5bdeb682827"
+  },
+  "content_sha256_manifest": {
+    "quantum-weyl/pt_cpt/hadamard_stretch/__init__.py": "33d2c949939aabfe97b6dcd7524215e346ea8cda6961b41965962d9aa40713de",
+    "quantum-weyl/pt_cpt/hadamard_stretch/hadamard_stretch_obstruction.py": "6a343a02fbbc98584472b442da3e36a5bd9819ab26bf2d3f14e887657190d8cc",
+    "quantum-weyl/pt_cpt/hadamard_stretch/verify_hadamard_stretch_obstruction.py": "3ff952c4c1df3e9dff156c783620716b3976bd7e7b95be9c35bb801b91b5677a",
+    "quantum-weyl/pt_cpt/hadamard_stretch/tests/__init__.py": "e8815d1f6618faf5b70113c4ea1f99647e12e611e7cdbe04b64fa2d4867818e9",
+    "quantum-weyl/pt_cpt/hadamard_stretch/tests/test_hadamard_stretch_obstruction.py": "b3a4657e8201b22949b78dcee8bd5b19070ee3f43b3d7540648b99aefdf9f43d",
+    "quantum-weyl/pt_cpt/hadamard_stretch/schema/phase2-brst-hadamard-stretch-obstruction-v1.schema.json": "365d2cb916d7e12ecd835e80b5f90dd93d6f772391359b2b544bfd4faadf6fe7",
+    "quantum-weyl/pt_cpt/hadamard_stretch/certificates/PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1.json": "cb705de9f5ba2589ebe514304709f175846307a20f0ea671a78711490e152e8c",
+    "reports/phase2-quantum-brst-hadamard-stretch-2026-07-22.md": "4f39e2188f905ad519594e24c39f03563103e6e64fbdda7c6c902a378e5ea1bd",
+    "residual_atlas/phase2-quantum-brst-hadamard-fragment-v1.json": "e026921325d7a50a3affcbfe4996e2a42b3585a5cbb18aa4ad4a5d5820be883d",
+    "planning/forge-requests/phase2-hadamard-microlocal-transfer.json": "fec9bdabaf08deb6d2e157bbacab36b9b287574488f0d1faeee9db38241da3be"
+  },
+  "verification_receipts": [
+    {
+      "command": "python3 quantum-weyl/pt_cpt/hadamard_stretch/hadamard_stretch_obstruction.py --check",
+      "elapsed_seconds": "0.12",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 quantum-weyl/pt_cpt/hadamard_stretch/verify_hadamard_stretch_obstruction.py",
+      "elapsed_seconds": "0.05",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 -m unittest quantum-weyl/pt_cpt/hadamard_stretch/tests/test_hadamard_stretch_obstruction.py -v",
+      "elapsed_seconds": "0.12",
+      "status": "PASS_6_TESTS",
+      "test_tier": 1
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/pt_cpt/hadamard_stretch/schema/phase2-brst-hadamard-stretch-obstruction-v1.schema.json -d quantum-weyl/pt_cpt/hadamard_stretch/certificates/PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1.json",
+      "elapsed_seconds": "2.95",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 residual_atlas/validate_fragment.py residual_atlas/phase2-quantum-brst-hadamard-fragment-v1.json",
+      "elapsed_seconds": "0.23",
+      "status": "PASS",
+      "test_tier": 1
+    }
+  ],
+  "higher_tiers_not_run": {
+    "tier_2": "No imported mathematical input, shared operator, schema consumed by another certificate chain, or generated upstream artifact changed; all inputs are unchanged and content-addressed.",
+    "tier_3": "No theorem freeze, lifecycle promotion to LORENTZIAN_CERTIFIED, shared core algebra change, release, tag, or full-suite request occurred."
+  },
+  "claim_boundary": "This receipt certifies exactly-one selection of the complete 54-row causal Berger BV complex and the first exact input obstruction to its global BRST-compatible Hadamard bidistribution: current exports do not identify the retained generalized zero/Jordan carrier. It is nonidentifiability from current exports, not a Hadamard nonexistence theorem. Reduced P2-A metrics do not replace the full-BV adjoint. No positivity, particles, scattering, renormalized products, QME restoration or unitarity claim is promoted."
+}

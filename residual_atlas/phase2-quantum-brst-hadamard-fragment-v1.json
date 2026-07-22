@@ -1,0 +1,144 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "Exactly one complete causal BV complex is selected and imported by hash. The current exact stationary mask does not determine the generalized zero/Jordan carrier, so no global BRST-compatible Hadamard covariance or positivity result is constructed. This is an input obstruction, not a microlocal nonexistence theorem.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "OBSTRUCTED",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "quantum-weyl/pt_cpt/hadamard_stretch/certificates/PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1.json",
+          "result_id": "PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1",
+          "sha256": "cb705de9f5ba2589ebe514304709f175846307a20f0ea671a78711490e152e8c"
+        }
+      ],
+      "id": "quantum.phase2.berger.full_bv_hadamard_zero_mode_obstruction",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The complete stationary 104-row Cauchy generator has not been supplied; zero-isolation is separately open.",
+          "status": "OPEN"
+        },
+        "lee_wald": {
+          "statement": "The nondegenerate odd BV pairing and even graded causal commutator are imported on all 54 rows.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The generalized zero/Jordan carrier is not determined by the current exact known-entry mask.",
+          "status": "OBSTRUCTED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Not part of this free quantum covariance audit.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "Advanced and retarded chain contractions are certified on all 54 rows.",
+            "status": "CERTIFIED"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The smooth zero-frequency covariance correction cannot be selected from current data.",
+            "status": "OBSTRUCTED"
+          }
+        },
+        "taub_maps": {
+          "statement": "Not part of this free quantum covariance audit.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "quantum_data": {
+        "BRST_cocycle": {
+          "statement": "The causal commutator is q54-closed and the conditional 26-to-54 covariance lift preserves both Ward identities.",
+          "status": "CERTIFIED"
+        },
+        "BRST_exactness": {
+          "statement": "No exact global covariance exists in the certified inventory to test beyond the conditional lift.",
+          "status": "OPEN"
+        },
+        "Hadamard_two_point_function": {
+          "statement": "Local singularities are certified, but the global zero-frequency correction is not determined.",
+          "status": "OBSTRUCTED"
+        },
+        "anomaly_QME_dependency": {
+          "statement": "No anomaly or QME inference is made.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "carrier_crosswalk": {
+          "statement": "The retained 26 rows localize the conditional construction and are not substituted for the selected complete 54-row BV complex.",
+          "status": "CERTIFIED"
+        },
+        "classical_mode_imported": {
+          "statement": "The complete 54-row differential, pairing, real structure and Green homotopies are imported by hash.",
+          "status": "CERTIFIED"
+        },
+        "compatible_complex_structure": {
+          "statement": "P2-A supplies no full-BV Mannheim C; the stationary zero-mode structure required for a global choice is absent.",
+          "status": "OBSTRUCTED"
+        },
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "LORENTZIAN-CAUSAL",
+          "REDUCED-MODE"
+        ],
+        "entry_kind": "CARRIER_IMPORT_GAP",
+        "lifecycle_state": {
+          "statement": "CLASSIFIED obstruction; no Lorentzian certification promotion.",
+          "status": "CERTIFIED"
+        },
+        "pairing_status": {
+          "statement": "The complete 54-row odd Darboux pairing is nondegenerate and compatible with the real causal chain.",
+          "status": "CERTIFIED"
+        },
+        "particle_interpretation": {
+          "statement": "No particle interpretation is claimed.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "state_space_status": {
+          "statement": "Global state selection and positivity on ghost-number-zero cohomology are not reached.",
+          "status": "OBSTRUCTED"
+        }
+      },
+      "scope": {
+        "background": "compact positive Berger clock fixed-coupling fixture",
+        "boundaries": "closed S3 Cauchy slices",
+        "carrier": "complete gauge-fixed 54-row causal BV complex",
+        "charge_sector": "certified fixed clock leaf",
+        "degree": "all 54 BV rows; retained 26-row obstruction localization only",
+        "ell": "all retained harmonic sectors; exact stationary generator absent",
+        "k": "all certified Berger labels",
+        "m": "all certified Berger labels with imported real structure",
+        "omega": "global zero-frequency sector obstructed at carrier import",
+        "parity": "full graded BV parity ledger",
+        "theory": "Weyl gravity on the selected positive-clock Berger fixture"
+      }
+    }
+  ],
+  "generated_by": "quantum-weyl/pt_cpt/hadamard_stretch/hadamard_stretch_obstruction.py",
+  "generated_by_sha256": "6a343a02fbbc98584472b442da3e36a5bd9819ab26bf2d3f14e887657190d8cc",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "quantum",
+  "verification_commands": [
+    "python3 quantum-weyl/pt_cpt/hadamard_stretch/hadamard_stretch_obstruction.py --check",
+    "python3 quantum-weyl/pt_cpt/hadamard_stretch/verify_hadamard_stretch_obstruction.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/phase2-quantum-brst-hadamard-fragment-v1.json"
+  ]
+}

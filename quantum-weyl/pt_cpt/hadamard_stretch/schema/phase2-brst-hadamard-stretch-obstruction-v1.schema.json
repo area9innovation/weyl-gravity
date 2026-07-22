@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-phase2-brst-hadamard-stretch-obstruction-v1",
+  "type": "object",
+  "required": [
+    "$schema", "schema", "result_id", "result_state", "lifecycle_state",
+    "dependency_tags", "selected_complex", "imported_contract",
+    "bidistribution_contract_attempt", "first_exact_obstruction", "exact_checks",
+    "source_refs", "claim_flags", "claim_boundary", "next_gate"
+  ],
+  "properties": {
+    "$schema": {"const": "../schema/phase2-brst-hadamard-stretch-obstruction-v1.schema.json"},
+    "schema": {"const": "pure-weyl-phase2-brst-hadamard-stretch-obstruction-v1"},
+    "result_id": {"const": "PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1"},
+    "result_state": {"const": "COMPLETE_CAUSAL_BV_SELECTED_ZERO_FREQUENCY_CARRIER_EXACTLY_NOT_IDENTIFIED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL", "REDUCED-MODE"]},
+    "selected_complex": {"type": "object"},
+    "imported_contract": {"type": "object"},
+    "bidistribution_contract_attempt": {"type": "object"},
+    "first_exact_obstruction": {"type": "object"},
+    "exact_checks": {"type": "object"},
+    "source_refs": {"type": "object"},
+    "claim_flags": {"type": "object"},
+    "claim_boundary": {"type": "object"},
+    "next_gate": {"const": "SUPPLY_AND_ACCEPT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_THEN_PROVE_ZERO_SPECTRAL_DISPOSITION"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,20 @@
+{
+  "id": "sf:forge-request/phase2-hadamard-microlocal-transfer",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Supply the missing complete stationary Cauchy carrier and closed-realization spectral disposition needed by the optional Phase-2 full-BV Hadamard stretch. The selected complete 54-row Berger causal BV complex already has an action-derived differential, pairing, real structure, and advanced/retarded homotopies. Its global covariance remains undefined because the retained Cauchy generator is only a partial 104-row mask: 288 ghost/identity coordinates are unknown, and two exact compatible completions differ by 24 endpoint zero modes.",
+    "depends_on": [
+      "sf:program/work/phase2-quantum-brst-hadamard-stretch"
+    ],
+    "stop_condition": "Export a committed `BERGER_RETAINED_26_STATIONARY_GENERATOR_V1` manifest containing exact 104-by-104 `A104`, `q_Cauchy_104`, `G_Cauchy_104`, and `real_structure_104` objects in the frozen ordering. Independently verify completeness, PBW nilpotency, BRST commutation, nondegeneracy, BRST pairing compatibility, Krein skew-adjointness, and real intertwining. Then declare a closed mixed-Sobolev/Krein realization and either compute the Riesz generalized zero space when zero is isolated or certify the precise non-isolated obstruction. Export the finite zero/Jordan restrictions needed for the graded CCR, BRST, reality, stationarity, and selected-adjoint equations without constructing a physics-specific state in the generic library.",
+    "forbid": "no completion of unknown A104 entries by convention; no finite coefficient table called proof that zero is spectrally isolated; no reduced 26-row covariance called a full 54-row BV state; no Euclidean determinant or mode sum called a Lorentzian Hadamard theorem; no P2-A reduced positive metric promoted to a full-BV C operator; no positivity, QME, particles, scattering or unitarity inferred from the carrier import",
+    "notes": [
+      "The exact receiving contract already exists in `BERGER_RETAINED_26_STATIONARY_GENERATOR_IMPORT_READINESS`.",
+      "The first physics consumer is `PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1`.",
+      "This optional request must not become a dependency of Phase-2 closure."
+    ]
+  }
+}
