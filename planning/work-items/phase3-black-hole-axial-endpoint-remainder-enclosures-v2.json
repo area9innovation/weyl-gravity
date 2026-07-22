@@ -1,0 +1,27 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-endpoint-remainder-enclosures-v2",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-endpoint-remainder-enclosures-v2",
+  "source": {"path": "planning/work-items/phase3-black-hole-axial-endpoint-remainder-enclosures-v2.json", "span": null},
+  "body": {
+    "owner": "phase3-axial-remainders-1",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Turn the repaired six-column axial horizon and infinity formal bases into rigorous finite-radius initial enclosures for the validated global connection calculation.",
+    "stop_condition": "Import the complete reconstruction repair by hash. For ell=2 and dimensionless real omega in [1/2,3/4], prove convergent or explicitly asymptotic-with-certified-remainder endpoint representations for all six constraint-compatible metric columns. At the future horizon, enclose each retained Frobenius branch and derivative at a declared rational epsilon>0, including the compatible order-two resonance and every omega-uniform denominator. At infinity, enclose each retained polyhomogeneous branch and derivative at a declared rational R, including oscillatory phases and the constraint-correction column. Provide outward interval boxes, basis-rank/conditioning bounds, exact residual identities, a posteriori tail inequalities, subdivision stability, and mutations that invalidate one recurrence coefficient and one remainder constant. The deliverable must expose a stable initializer consumed directly by math/ivlinode; if no uniform tail proof closes, certify the first exact obstruction and the narrower frequency/radius domain that does close.",
+    "current_gate": "Rigorous endpoint initial boxes before validated horizon-to-infinity transfer",
+    "forbid": "no truncated formal series called an enclosure; no decimal remainder without outward rounding; no pointwise omega fixture called interval-uniform; no omission of the propagated vphi constraint; no global matching, flux inertia, pole, stability, CPT or scattering promotion",
+    "depends_on": ["sf:program/work/phase3-black-hole-axial-complete-reconstruction-repair"],
+    "allowed_paths": ["black_hole_programme/phase3/axial_endpoint_remainder_enclosures/", "reports/phase3-black-hole-axial-endpoint-remainder-enclosures-2026-07-23.md", "residual_atlas/phase3-black-hole-axial-endpoint-remainder-enclosures-fragment-v1.json", "planning/forge-requests/phase3-black-hole-axial-endpoint-remainder-enclosures.json"],
+    "resource_hint": "Use exact recurrences and interval majorants at the two singular endpoints, then hand finite nonsingular-radius boxes to Forge math/ivlinode. Keep horizon and infinity tail proofs separable so one can narrow independently.",
+    "input_commit": "d5d5d6de648795203604d62ce7bc4f4ce6fea510",
+    "notes": [
+      "Generic endpoint substrate imported from tango/forge commit 7d745b65e; its real-frequency contract is a landed external dependency, not a Science Forge programme node.",
+      "This v2 successor repairs the predecessor's malformed dependency on sf:forge-request/phase3-validated-singular-endpoint-initializer; no scientific scope changes."
+    ]
+  },
+  "edges": []
+}
