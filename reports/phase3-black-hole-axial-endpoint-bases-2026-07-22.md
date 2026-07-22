@@ -113,3 +113,7 @@ The verifier recomputes the omitted row through the independent
 `LinearizedBach` implementation.  Mutation tests change the polynomial lift,
 attempt an invalid metric-basis promotion and exercise the resonant carrier
 branch.
+
+CLOSE-OUT: OBSTRUCTED — the complete four-dimensional Ricci-carrier endpoint basis is exact and log-free on the pilot interval, but a complete reconstructed metric endpoint basis is not defined because the inherited subsystem omits the independent `delta Ric_{v phi}=P` compatibility row. The Phase-2 corrected sourced `X0` lift therefore requires re-audit before any global connection or flux claim.
+
+EVIDENCE: `black_hole_programme/phase3/axial_endpoint_bases/receipt.json`
