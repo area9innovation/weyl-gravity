@@ -135,9 +135,18 @@ the repository's declared certificate dependencies.
 
 Physicist-facing live summary:
 [`Pure-Weyl gravity programme: executive summary for physicists`](paper/98-physicist-executive-summary.md)
-([PDF](paper/98-physicist-executive-summary.pdf)) gives the ten-minute claim map,
-audience-specific highlights, strongest limitations, decisive next tests, and
-links to the papers and certificates.
+([PDF](paper/98-physicist-executive-summary.pdf)) is the live portal: a concise
+current verdict followed by the authoritative claims ledger, active routes,
+and links to papers and certificates.
+
+Stable Phase-1 synthesis:
+[`What Survives the Ghost Test? A Four-Level Phase-1 Classification in
+Pure-Weyl Gravity`](paper/15-four-level-ghost-classification-phase1-synthesis.tex)
+([PDF](paper/15-four-level-ghost-classification-phase1-synthesis.pdf)) gives
+the citable scientific account: defining theories and conventions, the
+four-level ghost taxonomy, five scoped result cards, relation to prior work,
+the exact classification ending, and its non-claims. Unlike Paper 98, it has
+no live queue, changelog, or project-management material.
 
 Video orientation:
 [`Conformal ghosts, fourth-order gravity, and quantum completion`](paper/video-background-guide.md)

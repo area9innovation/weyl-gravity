@@ -1,0 +1,63 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "PAPER15_FOUR_LEVEL_PHASE1_SYNTHESIS_V1",
+  "stamp": "2026-07-22",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Publication synthesis only; each statement retains the dependency tag and limitation of its frozen source claim.",
+  "artifacts": {
+    "paper/15-four-level-ghost-classification-phase1-synthesis.tex": "697e0353d3c6d65e641de0ce35739a5d5a22a8856c31605a2b9bc659eaf466bb",
+    "paper/15-four-level-ghost-classification-phase1-synthesis.pdf": "b6c196233abfbd331a89999a50969ce71464d878272a84379e46d5b6eb2065a3",
+    "paper/15-four-level-ghost-classification-phase1-synthesis-claim-map.json": "e4c7ddb55849510abe47a07deee077ff85a0c243d9b7b6ed6f89c22291bae991",
+    "paper/98-physicist-executive-summary.md": "cccaa64a58f2e80d12d314a04445f491f2e1a7e5b2f9e5acbe381327f2c04a15",
+    "paper/98-physicist-executive-summary.pdf": "ed2df078026d696f00452d97ef1f6c677b9d561f64f1d58a9f981a9444d95acb",
+    "planning/paper-coverage/paper15-phase1-synthesis-overlay-2026-07-22.json": "5a4b1dadc0328ad289feb4124b8c910e674a05a35bab14bae81ea20ec2c78b45",
+    "reports/phase1-closure-claims-ledger-2026-07-22.json": "1da97e9085e5c7138b88140106f0b1ab6d2a698ab539af4a6827f86708521fae"
+  },
+  "tests": [
+    {
+      "tier": 0,
+      "command": "git diff --check -- <scoped paths>",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 paper/verify_15_phase1_synthesis_claim_map.py",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m pytest -q paper/test_15_phase1_synthesis_claim_map.py planning/paper-coverage/test_phase1_paper_coverage_overlay.py",
+      "status": "PASS",
+      "detail": "5 passed"
+    },
+    {
+      "tier": 1,
+      "command": "python3 planning/paper-coverage/verify_phase1_paper_coverage_overlay.py planning/paper-coverage/phase1-paper-coverage-overlay-2026-07-22.json",
+      "status": "PASS",
+      "detail": "5 contradiction mutations rejected; frozen overlay byte-stable"
+    },
+    {
+      "tier": 1,
+      "command": "pdflatex -interaction=nonstopmode -halt-on-error (four passes)",
+      "status": "PASS",
+      "detail": "Paper 15: 15 pages"
+    },
+    {
+      "tier": 1,
+      "command": "pandoc --from=gfm --pdf-engine=xelatex",
+      "status": "PASS",
+      "detail": "Paper 98: 12 pages; expanded technical synopsis retained"
+    }
+  ],
+  "higher_tiers_not_run": "No source theorem, mathematical operator, schema shared by scientific producers, or lifecycle promotion changed; this is a synthesis of the already frozen Phase-1 ledger.",
+  "does_not_establish": [
+    "a new scientific theorem beyond the frozen Phase-1 sources",
+    "a universal ghost or no-go theorem",
+    "a positive full-BV state, particles, scattering, unitarity, or complete quantum gravity"
+  ]
+}

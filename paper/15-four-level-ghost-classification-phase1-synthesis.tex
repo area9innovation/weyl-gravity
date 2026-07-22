@@ -1,0 +1,962 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,booktabs,tabularx,longtable}
+\usepackage{microtype,xurl}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,
+            citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\newcommand{\dd}{\mathrm d}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Diff}{\operatorname{Diff}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\cert}[1]{\nolinkurl{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newenvironment{resultcard}[1]
+ {\par\medskip\noindent\hrule\smallskip\noindent\textbf{#1}\par\smallskip}
+ {\par\smallskip\hrule\medskip}
+
+\title{What Survives the Ghost Test?\\
+\large A Four-Level Phase-1 Classification in Pure-Weyl Gravity}
+\author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
+\and Claude Fable 5\thanks{Anthropic model and computational coauthor. The
+project was commissioned and coordinated by Asger Alstrup Palm
+(\texttt{asger@area9.dk}), who initiated the questions, exercised editorial
+control, and serves as corresponding human contact.}}
+\date{Phase-1 synthesis, 22 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Pure Weyl gravity is a fourth-order conformal metric theory.  Its linearized
+equations contain more solutions than Einstein gravity, and standard
+propagator decompositions assign indefinite signs to some of them.  Those
+signs diagnose a problem, but do not by themselves determine a physical state
+space.  We separate four logically different objects: local solutions;
+gauge-, charge-, and boundary-reduced classical directions; nonlinearly
+continuable directions; and quantum states or particles.
+
+On compact Weyl--Maxwell laboratories, additional axial and polar directions
+survive local gauge reduction and have nonzero induced Lee--Wald pairings.
+Their classical signs are not organized by the simple rule ``Einstein
+positive, additional negative.''  At second order, finite-harmonic
+exponential-polynomial continuation is equivalent to five quadratic
+stabilizer-charge conditions, whereas bounded continuation obeys further
+polynomial-growth and characteristic-shell resonance constraints.  On
+Schwarzschild, horizon regularity alone admits additional curvature
+solutions, while finite symplectic norm excludes the additional axial and
+polar solutions at the certified $(\ell,\omega)=(2,3/5)$ fixture.  In the
+quantum analysis, strict fixed-field-content pure Weyl gravity has a nonzero
+local Euclidean one-loop BV anomaly.  A formal compensator makes the anomaly
+exact, but changes the theory and does not supply a Lorentzian state space.
+
+We also analyze a changed two-phase counterflow gravity--clock theory.  It has
+an exact 70-component causal BV parent and removes a dressed-trace
+obstruction.  Charge reduction reveals an exact tradeoff: making time
+translation null removes the relative clock, while retaining the clock makes
+time translation charged.  More decisively, the complete
+$j=\tfrac12$ reduced block contains a Hamiltonian--Hopf quartet throughout
+the connected trace-healthy same-field stationary family.  Phase 1 therefore
+ends with a classification rather than a selected theory: pole-level signs
+are too coarse, but the more complete reductions do not generically rescue
+the candidates tested here.  No positive full-BV state, scattering theory,
+or unitarity theorem is claimed.
+\end{abstract}
+
+\tableofcontents
+
+\section{The question and the four levels}
+
+The metric action of strict pure Weyl gravity is
+\begin{equation}
+ S_{\rm W}[g]
+ =\alpha_{\rm W}\int_M \sqrt{-g}\,
+ C_{\mu\nu\rho\sigma}C^{\mu\nu\rho\sigma}\,\dd^4x,
+ \qquad B_{\mu\nu}=0,
+ \label{eq:weyl-action}
+\end{equation}
+where $B_{\mu\nu}$ is the Bach tensor.  Around a fixed background, the
+linearized Bach equation is fourth order.  A formal factorization, a partial
+fraction decomposition, or a negative residue can reveal an indefinite
+direction.  None of these alone says whether the direction survives gauge
+reduction, global constraints, physical boundary conditions, nonlinear
+integrability, or the construction of a quantum state.
+
+This paper organizes the first phase of a computer-assisted research
+programme by the following hierarchy:
+\begin{equation}
+\boxed{
+\begin{array}{cl}
+\text{Level 1:}&\text{local solutions of the linear field equations},\\
+\text{Level 2:}&\text{reduced classical directions after gauge, charge,
+and boundary conditions},\\
+\text{Level 3:}&\text{directions tangent to nonlinear solutions in a stated
+correction class},\\
+\text{Level 4:}&\text{quantum states, particles, and a positive physical
+probability interpretation}.
+\end{array}}
+\label{eq:four-levels}
+\end{equation}
+The arrows between these levels are mathematical problems.  They are not
+terminological promotions.  A nonzero classical symplectic pairing at Level
+2 is not a positive quantum norm at Level 4.  A secular second-order
+primitive at Level 3 is not nonlinear stability.  A local Euclidean anomaly
+calculation is not a Lorentzian scattering theorem.
+
+The phase-one question is therefore not simply ``does the propagator contain
+a ghost?''  It is:
+\begin{quote}
+Which additional fourth-order directions survive each declared reduction,
+which fail nonlinear or boundary tests, and what remains undecided before a
+particle interpretation can even be posed?
+\end{quote}
+
+The answer is mixed.  Some additional directions survive local gauge and
+presymplectic reduction.  Compact nonlinear constraints remove some of them,
+while balanced combinations can continue formally with secular terms.  A
+specified Schwarzschild finite-norm condition removes them at one two-parity
+fixture.  The strict quantum gauge theory is locally anomalous.  Finally, a
+changed theory that passes a difficult causal construction fails a physical
+spectral test.  Different candidates fail at different levels.
+
+\section{Theories, conventions, and scope}
+
+We use Lorentzian signature $(-,+,+,+)$ and
+\(
+[\nabla_\mu,\nabla_\nu]v^\rho
+=R^\rho{}_{\sigma\mu\nu}v^\sigma
+\).
+Classical fields are real; complex Fourier modes are bookkeeping devices and
+physical pairings use the corresponding real or conjugate-frequency form.
+The connected local gauge group of the strict theory is
+\begin{equation}
+ \Diff_0(M)\ltimes C^\infty(M,\R)_{\rm Weyl},
+ \qquad g_{\mu\nu}\mapsto e^{2\sigma}g_{\mu\nu}.
+\end{equation}
+Unless a theorem card says otherwise, no boundary counterterm or topological
+density is included in the action.  Boundary and support conditions are part
+of the theorem, not implicit conventions.
+
+Two comparison theories appear.  On the compact product we use
+\begin{align}
+ S_{\rm WM}[g,A]
+ &=S_{\rm W}[g]-\frac14\int_M\sqrt{-g}\,F_{\mu\nu}F^{\mu\nu}\,\dd^4x,
+ \\
+ S_{\rm EM}[g,A]
+ &=\frac1{2\kappa}\int_M\sqrt{-g}\,(R-2\Lambda)\,\dd^4x
+   -\frac14\int_M\sqrt{-g}\,F_{\mu\nu}F^{\mu\nu}\,\dd^4x.
+\end{align}
+The magnetic bundle is fixed in that comparison.  The Einstein--Maxwell
+theory is a source/comparator; it is not silently identified with a subsector
+having the same symplectic structure.
+
+The quantum repair uses a formal Wess--Zumino field $\tau$ with
+\(
+s\tau=\omega
+\), where $\omega$ is the Weyl ghost, and the dressed metric
+\(
+\widehat g=e^{-2\tau}g
+\).
+This is an enlarged BV theory.  It is not strict pure Weyl gravity in another
+gauge.
+
+The later counterflow experiment changes the classical action as well.  Its
+defining matter mechanism is two positive phase fields with an auxiliary
+diagonal $U(1)$ connection,
+\begin{equation}
+ S_{\rm phase}
+ =-\frac12\int_M\sqrt{-\widehat g}\,
+ \left[f_1^2(\dd\theta_1-A)^2+f_2^2(\dd\theta_2-A)^2\right].
+ \label{eq:counterflow-action}
+\end{equation}
+Writing
+\begin{equation}
+ \chi=\frac{f_1^2\theta_1+f_2^2\theta_2}{f_1^2+f_2^2},
+ \qquad \psi=\theta_1-\theta_2,
+ \qquad
+ \mu^2=\frac{f_1^2f_2^2}{f_1^2+f_2^2},
+\end{equation}
+separates a diagonal gauge phase from a gauge-invariant relative phase with
+positive bare kinetic coefficient $\mu^2$.  The certified model also contains
+the action-derived repaired compensator/scale sector recorded by its frozen
+70-component Hessian.  Results for this changed theory are never imported
+back into the strict theory.
+
+\subsection{The scope tuple}
+
+Every result is typed by
+\begin{equation}
+ \boxed{\mathfrak S=
+ (\text{theory},\text{background},\text{generator},
+  \text{phase space},\text{boundary/support class},\text{claim state}).}
+ \label{eq:scope-tuple}
+\end{equation}
+Two statements with different entries in $\mathfrak S$ are not combined
+without a constructed map.  This matters because the programme uses several
+controlled laboratories:
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Laboratory & Question isolated there \\
+\midrule
+$\R\times S^3$ conformal cylinder & Complete free causal complex and a
+selected residual zero-charge reduction \\
+Biaxial Berger spacetime & Clocks, relational observables, interactions, and
+the counterflow successor \\
+$\R\times S^1\times S^2$ magnetic product & Einstein/additional branches,
+Lee--Wald pairing, Taub constraints, and resonances \\
+Nariai & Transfer of the causal construction to a second curved background \\
+Schwarzschild and static spherical metrics & Horizons, finite-flux
+admissibility, and black-hole perturbations \\
+Euclidean $S^4$ and regular local charts & One-loop determinants and local BV
+anomaly classes \\
+\bottomrule
+\end{tabularx}
+\end{center}
+These are related tests of a common architecture, not successive
+approximations to one already unified universe.
+
+\section{What ``ghost'' can mean}
+
+The literature uses the word \emph{ghost} for inequivalent failures.  The
+distinctions are especially important in a gauge theory with a fourth-order
+equation.
+
+\begin{longtable}{@{}p{0.22\textwidth}p{0.39\textwidth}p{0.31\textwidth}@{}}
+\toprule
+Diagnosis & Mathematical question & Phase-1 disposition \\
+\midrule
+\endhead
+Ostrogradsky direction & Is a nondegenerate higher-derivative Hamiltonian
+unbounded before constraints? & Crosswalks are computed on selected blocks;
+this is not used as a complete physical quotient. \\
+Negative pole residue & Does a gauge-fixed propagator decompose with a
+negative coefficient? & Treated as an initial warning, not a final state
+classification. \\
+Negative classical energy or flux & What is the sign of the descended
+Lee--Wald/canonical form on a declared real quotient? & Computed for selected
+compact and black-hole sectors.  Some signs contradict a naive
+Einstein/additional split. \\
+Radical or pure gauge & Does the induced presymplectic form vanish on the
+direction? & Additional compact-product directions are nonradical on the
+declared pre-residual quotient. \\
+Nonlinear obstruction & Is a linear direction tangent to a second-order
+solution in a stated function class? & Classified completely on a finite
+harmonic exponential-polynomial space; bounded continuation is stricter. \\
+Negative quantum norm & Is there a BRST-compatible positive state on the
+full physical algebra? & Not established.  Reduced indefinite two-point
+functions are not a full-BV state. \\
+Failure of unitarity & Does an asymptotic state space satisfy the optical
+theorem? & Not tested: no complete scattering or particle theory exists. \\
+Alternative pole prescription & Is the theory redefined by a PT-symmetric,
+Dirac--Pauli, or fakeon prescription? & Not adopted.  These are neighboring
+programmes with different physical rules, not consequences of our classical
+reductions. \\
+\bottomrule
+\end{longtable}
+
+PT-symmetric treatments of the Pais--Uhlenbeck system, Dirac--Pauli
+formulations of quadratic gravity, and fakeon prescriptions all demonstrate
+that ``negative residue implies negative-probability asymptotic particle'' is
+not the only proposed logical route
+\cite{BenderMannheim,Salvio,Anselmi}.  They also demonstrate why the chosen
+state space and prescription must be declared.  Phase 1 follows the ordinary
+Lorentzian BV/Lee--Wald route and leaves those alternatives as comparisons.
+
+\section{Which additional linear directions survive reduction?}
+
+The compact magnetic product is the cleanest place to compare the
+Einstein--Maxwell and Weyl--Maxwell linear solution spaces.  The computation
+uses both parities, generic harmonics, exceptional modes, and global blocks.
+
+\begin{resultcard}{Result card A: compact Einstein/additional decomposition}
+\textbf{Theory.} Einstein--Maxwell source and Weyl--Maxwell target.\par
+\textbf{Background.} The magnetically supported compactified
+Plebanski--Hacyan product $\R\times S^1\times S^2$, in a fixed magnetic
+bundle.\par
+\textbf{Domain.} Parity-complete generic linear modes, together with the
+declared exceptional and global blocks.\par
+\textbf{Gauge and quotient.} Local gauge quotient and maximal pre-residual
+$H^0$ exact sequence; final stabilizer reduction is not included.\par
+\textbf{Boundary condition.} Spatial periodicity; no asymptotic scattering
+condition.\par
+\textbf{Statement.} The Einstein--Maxwell solutions inject into the
+Weyl--Maxwell solutions.  The cofiber contains additional axial and polar
+blocks.  Each additional generic block is nonradical with Lee--Wald inertia
+$(2,0)$, while the target Einstein image has inertia $(1,1)$ and the complete
+generic target has inertia $(3,1)$.  The source Einstein--Maxwell form has
+inertia $(2,0)$, so inclusion does not define a cyclic or symplectic
+equivalence.\par
+\textbf{Not claimed.} No positive energy, particle norm, final residual
+quotient, causal boundary admissibility, or nonlinear closure follows.
+\end{resultcard}
+
+The important conclusion is not that the additional block is ``healthy''
+because its displayed inertia is positive.  The conclusion is that it is not
+an algebraic duplicate or a radical direction on this quotient, and that the
+standard pairing does not respect the naive expectation that the Einstein
+image should inherit the ordinary Einstein sign while the complement should
+carry the bad sign.  The action matters: the Einstein--Hilbert and Weyl
+Lee--Wald forms are different even on the same metric perturbation.
+
+This exact-sequence formulation also prevents an unjustified direct-sum
+claim.  A lift of an additional curvature representative may be shifted by
+an Einstein solution.  The invariant information is the injection, cofiber,
+induced ranks, radicals, and extension class.  A canonical branch split
+requires more structure than composition of differential operators.
+
+On the conformal cylinder a different reduction occurs.  In a selected
+derived zero-charge sector, all fifteen residual conformal generators are
+implemented by a BFV/Koszul receiver, and the vacuum and selected residual
+one-particle cohomologies are acyclic.  The first surviving $H^4$ classes are
+deformation or vertex classes, not one-particle gravitons.  This is a theorem
+about that selected compact sector.  It is not a universal removal of
+radiative gravitons and it supplies no asymptotic particle interpretation.
+
+The two laboratories therefore teach complementary lessons: additional
+directions can survive a compact local-gauge quotient, while a stronger
+zero-charge residual reduction can remove selected one-particle
+cohomology.  Neither statement transfers to the other without a map.
+
+\section{Which directions survive nonlinear integrability?}
+
+Linearization stability on compact Cauchy surfaces has a classical history
+from Brill--Deser through Fischer--Marsden, Moncrief, and the
+Arms--Marsden--Moncrief momentum-map normal form
+\cite{BrillDeser,FischerMarsden,Moncrief,AMM}.  The general idea that a
+symmetric solution has a quadratic momentum-map cone is therefore not new.
+The contribution here is an exhaustive model-specific calculation for a
+fourth-order Weyl--Maxwell mode space and a separation of formal secular
+solvability from bounded solvability.
+
+Let $L$ be the linearized equation and $D^2E[u,u]$ the quadratic source.  Two
+correction spaces are kept distinct:
+\begin{align}
+ \mathscr X_{\rm ep}
+ &=\left\{\text{finite sums of }t^p e^{-i\Omega t}
+    \text{ with spatially periodic finite harmonic support}\right\},\\
+ \mathscr X_{\rm qp}
+ &=\left\{\text{finite bounded quasiperiodic sums }
+    e^{-i\Omega t}\right\}.
+\end{align}
+The first allows secular polynomials; the second does not.
+
+\begin{resultcard}{Result card B: finite-harmonic second-order cone}
+\textbf{Theory.} Compact Weyl--Maxwell theory, with the Einstein--Maxwell
+comparison used to label branches.\par
+\textbf{Background.} $\R\times S^1\times S^2$ with the fixed magnetic
+bundle.\par
+\textbf{Domain.} The complete declared finite harmonic space: generic
+Einstein and additional primaries, both parities, exceptional dipoles,
+twists, homogeneous generalized modes, electric flux, and Wilson directions.\par
+\textbf{Gauge and quotient.} The five stabilizer covectors generated by time
+translation $H$, circle translation $P_x$, and rotations $J_1,J_2,J_3$.\par
+\textbf{Correction class.} Finite exponential-polynomial corrections
+$\mathscr X_{\rm ep}$.\par
+\textbf{Statement.}
+\[
+ \mathcal Z^{\rm ep}_2
+ =\{u:\mu_H(u)=\mu_{P_x}(u)=
+          \mu_{J_1}(u)=\mu_{J_2}(u)=\mu_{J_3}(u)=0\}.
+\]
+The five moment maps are necessary and sufficient in this correction class.\par
+\textbf{Not claimed.} This is not a theorem for all smooth or Sobolev fields,
+retarded solutions, bounded dynamics, all-order integration, or stability.
+\end{resultcard}
+
+The sufficiency statement follows from blockwise constant-coefficient
+surjectivity: nonzero invariant factors are surjective on finite
+exponential-polynomial modules, including at characteristic roots after the
+appropriate polynomial degree is allowed.  The only zero invariant factors
+are the five stabilizer covectors.  This is the explicit exhaustive content
+beyond the general momentum-map normal form.
+
+Bounded continuation has a larger obstruction ledger.  If the quadratic
+source is expanded by frequency shell and polynomial degree, then a bounded
+primitive exists only when three types of functional vanish:
+\begin{equation}
+ \{\mu_X\}
+ \ \cup\ 
+ \{\mathcal P_{j,r}\}
+ \ \cup\ 
+ \{\mathcal R_{j,a}\}.
+ \label{eq:bounded-ledger}
+\end{equation}
+Here $\mu_X$ are the global zero-block Taub constraints,
+$\mathcal P_{j,r}$ are coefficients that would require positive powers of
+$t$, and $\mathcal R_{j,a}$ are adjoint-kernel pairings on nonzero
+characteristic shells.  Their common nonlinear zero locus is not fully
+classified for arbitrary finite support.  It is classified on several
+important subspaces.  In particular, on the complete global plus
+$(\ell=2,k=0)$ additional-primary space, the bounded cone reduces to the
+standard global generalized-zero cone: no nonzero additional-primary
+amplitude survives.  At other momenta, balanced sheets can remain.
+
+The distinction is physical.  A resonant source can have a formal primitive
+$t e^{-i\omega t}$ and hence define a second-order jet, while failing every
+bounded quasiperiodic test.  The programme therefore does not report
+``second-order solvable'' without naming the correction class.
+
+The same calculation also blocks a common branchwise simplification.
+Balanced Einstein--additional configurations can have zero total moment map
+while their projected Einstein and additional pieces carry equal and
+opposite nonzero charges.  Consequently the ambient exact sequence does not
+descend to separately neutral branch fibers.  Nonlinear reduction is
+intrinsically mixed.
+
+\section{Which boundary conditions retain the extra solutions?}
+
+Compact charge constraints and black-hole endpoint conditions test different
+questions.  The Schwarzschild analysis uses the Ricci perturbation
+$\psi_{\mu\nu}=\delta R_{\mu\nu}[h]$ as a second-order curvature variable in
+the fourth-order Bach system.  On a Ricci-flat background the universal
+linear identity is
+\begin{equation}
+ \delta B_{\mu\nu}
+ =\frac12\Box\delta R_{\mu\nu}
+  +C_{\mu\rho\nu\sigma}\delta R^{\rho\sigma}
+  -\frac16\nabla_\mu\nabla_\nu\delta R
+  -\frac1{12}g_{\mu\nu}\Box\delta R.
+ \label{eq:ricci-bach}
+\end{equation}
+The Einstein image lies in $\ker\delta R$; the additional curvature content
+is visible in $\psi$.
+
+Horizon analyticity does not force $\psi$ to vanish.  Regular ingoing
+additional curvature solutions exist in the certified real-frequency axial
+analysis.  This already shows that future-horizon regularity alone does not
+select the Einstein image.  It does not show that every local differential
+initial or boundary condition fails: imposing $\psi$ and its normal
+derivative to vanish on a Cauchy surface is a local restriction that selects
+the Einstein image at linear order.
+
+The outer boundary gives a sharper fixture-level result.
+
+\begin{resultcard}{Result card C: finite-norm selection at a Schwarzschild fixture}
+\textbf{Theory.} Strict pure $C^2$ gravity.\par
+\textbf{Background.} Schwarzschild exterior.\par
+\textbf{Domain.} Axial and polar $\ell=2$ reconstructed metric solutions at
+real frequency $\omega=3/5$, with the declared Lee--Wald flux/norm
+normalization.\par
+\textbf{Gauge and quotient.} Regge--Wheeler/Zerilli-type parity reduction and
+the action-derived pure-Weyl Lee--Wald current.\par
+\textbf{Boundary condition.} Future-horizon ingoing regularity followed by
+finite symplectic norm in the certified asymptotic radiation class.\par
+\textbf{Statement.} At this two-parity fixture the Einstein solutions have
+finite norm, whereas the reconstructed additional axial and polar solutions
+have divergent norm.  Finite norm therefore selects the Einstein sector at
+the stated $(\ell,\omega)$.\par
+\textbf{Not claimed.} No all-frequency theorem, full exterior initial-boundary
+well-posedness, quasinormal spectrum, ringdown, stability, particle
+interpretation, or universal causal-truncation theorem follows.
+\end{resultcard}
+
+This result is deliberately narrower than the proposition that ``ordinary
+boundary conditions always remove the additional branch.''  The latter
+would require a complete asymptotically flat Bach phase space, metric
+reconstruction and Jordan analysis at all relevant frequencies, finite flux,
+and a well-posed exterior problem.  Existing AdS/Euclidean Einstein-selection
+arguments operate in different boundary classes
+\cite{Maldacena,LuPangPope}.  The present contribution is a Lorentzian
+Schwarzschild horizon/finite-norm comparison at an exact declared fixture.
+
+\section{Can a positive quantum state be constructed?}
+
+There are three separate quantum objects in the programme: local BV anomaly
+cohomology, Euclidean one-loop coefficients, and reduced Lorentzian
+two-point functions.  They are not interchangeable.
+
+In four dimensions a local Weyl breaking at ghost number one and form degree
+four has essential type-B and type-A representatives of the form
+\begin{equation}
+ \mathcal A
+ =\int_M\sqrt g\,\omega
+ \bigl(c_{\rm W}C_{\mu\nu\rho\sigma}C^{\mu\nu\rho\sigma}
+       -a_{\rm W}E_4+b_{\rm W}\Box R\bigr)\,\dd^4x .
+ \label{eq:anomaly}
+\end{equation}
+The $\Box R$ coefficient is scheme dependent and may be shifted by a local
+counterterm.  The nonzero $C^2$ and Euler representatives are the essential
+local classes.  A one-loop divergence, beta function, trace anomaly, and BV
+master-equation breaking are related only after the gauge-fixed determinant,
+normalization, descent, and quotient maps have been supplied.
+
+\begin{resultcard}{Result card D: strict and compensated local quantum theories}
+\textbf{Strict theory.} Fixed-field-content $\Diff\ltimes$Weyl pure $C^2$
+gravity.\par
+\textbf{Domain.} Complete declared gauge-fixed local BV quotient on a regular
+Bach-locus chart, with Euclidean one-loop coefficient input.\par
+\textbf{Statement.} The regulated breaking has nonzero components along the
+essential ghost-number-one, form-degree-four Weyl classes.  The strict local
+Euclidean one-loop QME is obstructed.\par
+\textbf{Extended theory.} In the formal $\tau$-adic Wess--Zumino BV algebra
+with $s\tau=\omega$, the same cocycle is exact and a local counterterm restores
+the Euclidean QME at one loop.\par
+\textbf{Not claimed.} The extension changes the BV theory.  It gives no
+unconditional all-loop theorem, regulator/QAP for an arbitrary changed
+action, Lorentzian QME, Hadamard state, positive physical Hilbert space,
+particles, scattering, or unitarity.
+\end{resultcard}
+
+The compensator statement is an exact BV realization of the familiar
+dilaton/Wess--Zumino mechanism, whose broader structure is known
+\cite{BaumeKerenZur}.  Its value is not a claim that a compensator is a free
+repair.  Indeed, the passive compensator leaves a gauge-invariant dressed
+trace in the classical causal complex.  Repairing that obstruction led to
+the changed counterflow experiment in Section~\ref{sec:counterflow}.
+
+Separately, the programme constructs candidate Hadamard two-point functions
+on a reduced free Einstein/additional/longitudinal mode space.  The candidate
+pairing has signs $(+,-,-)$ on that selected space.  This is useful evidence
+that an indefinite direction survives that reduction.  It is not a
+BRST-compatible Hadamard covariance for the full metric BV complex and not a
+one-particle Hilbert space.  No positive full-BV state has been constructed.
+
+The immediate quantum literature includes conformal-gauge fixing and its
+additional ghosts, local BRST cohomology, and several alternative
+quantization prescriptions\cite{Rachwal,BarnichBrandtHenneaux}.  Phase 1
+neither reproduces all of that literature nor supersedes it.  It contributes
+a content-addressed strict/extended local-BV calculation and records the
+precise point at which Lorentzian state construction remains absent.
+
+\section{What the counterflow candidate taught us}
+\label{sec:counterflow}
+
+The strict anomaly and passive-compensator causal obstruction motivated a
+small changed-theory ladder.  Passive trace repairs and a one-phase active
+clock failed combined causal, sign, and charge tests.  Two phases with an
+auxiliary diagonal $U(1)$ allow neutral counterflow:
+\begin{equation}
+ \dot\chi=0,
+ \qquad \dot\psi=\Omega,
+ \qquad Q_{\rm diag}=0,
+ \qquad E_{\rm rel}=\frac12\mu^2\Omega^2>0.
+\end{equation}
+The relative phase can move while the diagonal compact gauge charge
+vanishes.  Because its stress tensor is built from the dressed metric, it is
+quadratically visible in the dressed-trace direction.
+
+\begin{resultcard}{Result card E: causal construction and physical nonselection}
+\textbf{Theory.} The action-derived two-phase counterflow theory with
+auxiliary diagonal $U(1)$ and repaired compensator sector.\par
+\textbf{Background.} The selected positive biaxial Berger solution and its
+connected trace-healthy same-field stationary retuning family.\par
+\textbf{Domain.} A 70-component cyclic BV parent, decomposing at the selected
+point into a 54-component causal parent and a 16-component contractible
+diagonal-$U(1)$ sector; physical spectral reduction uses complete
+$SU(2)_L\times U(1)_R$ isotypical blocks.\par
+\textbf{Gauge and charge.} Diagonal gauge charge, relative-phase charge
+$Q_{\rm rel}$, time translation $D$, and the background-preserving generator
+$K=D-\Omega R_{\rm rel}$ are kept distinct.\par
+\textbf{Causal statement.} Exact retarded and advanced homotopies, nilpotency,
+cyclicity, and support identities hold at the selected point, and the original
+dressed-trace cohomology class is removed.\par
+\textbf{Physical statement.} The complete both-$k$, $j=\tfrac12$ reduced
+block contains a Hamiltonian--Hopf quartet.  The obstructing factor is
+\[
+ (40z^4+773z^2+3748)^2,
+ \qquad 773^2-4(40)(3748)=-2151<0.
+\]
+The quartet persists throughout the connected trace-healthy same-field
+stationary family.  Therefore no member of that family is selected as a
+robust linearly stable Phase-2 candidate.\par
+\textbf{Not claimed.} This is not an all-isotype spectrum, a familywide
+Green-homotopy theorem, a full-PDE stability theorem, or a no-go over other
+field contents and gauge architectures.
+\end{resultcard}
+
+The rejection criterion was fixed before the computation: a Phase-2
+candidate had to be linearly stable in every physical sector.  One exact
+unstable physical isotypical block is sufficient to reject it.  It is not
+necessary to finish every higher-$j$ block to establish this nonselection.
+Conversely, the finite block does not by itself describe the nonlinear
+evolution of arbitrary PDE data.
+
+The quartet is a spectral Hamiltonian instability associated with a
+Krein-sign collision, not merely a coordinate drift.  The global clock block
+has a different status.  On the unrestricted phase space,
+\begin{equation}
+ \Omega_{\rm rel}=\dd Q_{\rm rel}\wedge\dd\psi,
+ \qquad
+ H_{\rm rel}=\frac{Q_{\rm rel}^2}{2I}+E_{\rm geometry},
+\end{equation}
+so its secular dephasing is tangent to an action--angle family and passes an
+orbital, frequency-modulated interpretation.  It does not cure the
+$j=\tfrac12$ quartet.
+
+The charge analysis gives an independent theorem.  For phase clocks with
+linear charge constraint $CQ=q_0$ and clock velocity vector $v$,
+\begin{equation}
+ D\text{ is null after reduction}
+ \quad\Longleftrightarrow\quad
+ v\in\im C^T,
+\end{equation}
+while physical clocks are classes of $v$ modulo $\im C^T$.  In the certified
+model, fixing and quotienting $Q_{\rm rel}$ makes $D$ null but contracts the
+relative-clock Darboux pair.  Keeping the clock leaves
+\(
+H_D=\Omega Q_{\rm rel}
+\)
+and raw $D$ charged; $K=D-\Omega R_{\rm rel}$ preserves the background.  No
+single declared charge fibre supplies both the proposed physical clock and a
+gauge time translation.
+
+The counterflow result is therefore not a failed piece of engineering.  It
+separates three notions that are often conflated:
+\begin{equation}
+ \begin{aligned}
+ \text{causal completeness}
+ &\quad\not\Rightarrow\quad
+ \text{positive reduced dynamics},\\
+ \text{positive reduced dynamics}
+ &\quad\not\Rightarrow\quad
+ \text{acceptable clock/charge interpretation}.
+ \end{aligned}
+\end{equation}
+The causal theorem remains valid even though the candidate is rejected by a
+later physical gate.
+
+\section{Integrated Phase-1 verdict}
+
+The main findings can now be placed on the four levels of
+Eq.~\eqref{eq:four-levels}.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}p{0.16\textwidth}YY@{}}
+\toprule
+Level & Established in a declared scope & Still absent \\
+\midrule
+Local linear systems & Complete causal BV complexes on selected compact
+backgrounds; exact additional compact-product and Schwarzschild curvature
+solutions & A single causal theory covering every laboratory and boundary
+class \\
+Reduced classical directions & Additional axial/polar compact-product
+directions are nonradical; counterflow causal parent and exact charge
+classification; finite-norm Schwarzschild fixture & Universal asymptotic
+phase space, positive energy theorem, and acceptable counterflow spectrum \\
+Nonlinear continuation & Five-charge necessary-and-sufficient finite
+exponential-polynomial cone; bounded resonance ledger and classified
+subcones & Full bounded finite-support zero locus, retarded nonlinear
+existence, all-order integration, and stability \\
+Quantum states/particles & Strict local one-loop BV obstruction; formal
+changed-theory Wess--Zumino resolution; reduced indefinite two-point
+functions & Lorentzian QME, full-BV Hadamard state, positive physical Hilbert
+space, particles, scattering, optical theorem, and unitarity \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+This supports the following central claim:
+\begin{quote}
+\textbf{A pole-level diagnosis is too coarse, but the more complete reduction
+does not generically rescue the theory.}  Some additional classical
+directions survive gauge and presymplectic reduction.  Nonlinear moment maps,
+resonances, boundary norms, local anomalies, and reduced spectral tests then
+eliminate different candidates for different reasons.  The first changed
+theory to achieve a complete causal BV parent is rejected throughout its
+connected trace-healthy same-field family by a physical
+$j=\tfrac12$ Hamiltonian--Hopf instability.
+\end{quote}
+
+This is a classification ending, not a viable-theory claim and not a
+universal no-go.  A different field content, a different gauge architecture,
+or a different admissible state prescription could define a new Phase 2.
+Phase 1 does not select one.
+
+\section{Relation to prior work}
+
+The programme combines several established structures.  Its claims should be
+read as explicit constructions and exhaustive calculations in specified
+models, not as inventions of the surrounding general theories.
+
+\paragraph{Causal gauge complexes.}
+Green-hyperbolic complexes, retarded/advanced Green homotopies, and their
+induced Poisson structures have a general Lorentzian theory
+\cite{BeniniMusanteSchenkel}.  Conformal deformation and Yang--Mills detour
+complexes place the Bach operator in a longer conformal-geometric lineage
+\cite{BransonGover,GoverSombergSoucek}.  The contribution here is the explicit
+action-derived conformal-gravity BV construction, its cyclic pairings and
+support identities, and transfer across the declared backgrounds.
+
+\paragraph{Linearization stability.}
+The relation between Killing symmetries, quadratic Taub constraints, and
+singular momentum-map zero sets is classical
+\cite{BrillDeser,FischerMarsden,Moncrief,AMM}.  The finite-harmonic theorem is
+an exhaustive Weyl--Maxwell realization: exactly five covectors exhaust the
+exponential-polynomial cokernel, exceptional and generalized modes are
+included, and bounded resonance conditions are separated from the formal
+cone.
+
+\paragraph{Einstein selection and black holes.}
+Boundary-condition selection of Einstein solutions in conformal gravity is
+well known in Euclidean and asymptotically (A)dS settings
+\cite{Maldacena,LuPangPope,DeserJoungWaldron}.  Prior Weyl-black-hole
+quasinormal analyses often isolate a second-order conformally transported
+sector rather than the full fourth-order Bach solution space
+\cite{MomenniaHendi}.  Our fixture-level finite-norm result addresses the
+full additional reconstruction in a one-ended Lorentzian Schwarzschild
+problem, but does not yet provide a general asymptotically flat Bach phase
+space.
+
+\paragraph{Quantum conformal gravity.}
+One-loop divergences, conformal anomalies, BRST cohomology, and conformal
+gauge fixing have extensive prior literatures
+\cite{FradkinTseytlin,BarnichBrandtHenneaux,Rachwal}.  The phase-one quantum
+claim is narrower: an exact local-BV quotient and coefficient ledger for the
+declared strict theory, followed by a formal $\tau$-adic Wess--Zumino
+trivialization in a changed theory.  It does not settle the competing
+PT-symmetric, Dirac--Pauli, fakeon, or conventional positive-state proposals.
+
+\paragraph{Relational clocks.}
+The construction of complete or partial observables from internal clocks is
+standard constrained-system territory\cite{Dittrich}.  The counterflow
+experiment adds a typed distinction between diagonal gauge charge, relative
+clock charge, time translation $D$, and the background-preserving combination
+$K$.  No operational counterflow frequency ratio survived Phase 1, so the
+result is a charge/clock classification rather than an observational
+prediction.
+
+\section{Limitations and the next scientific boundary}
+
+The classification leaves several sharp, finite questions.  The most
+important are not ``finish quantum gravity.''  They are:
+\begin{enumerate}
+\item construct a complete asymptotically flat Bach phase space and determine
+which additional black-hole solutions have finite flux for general
+frequency and angular momentum;
+\item determine the common zero locus of all bounded nonlinear obstruction
+functionals on the full declared finite-support space;
+\item decide whether the retained mixed interaction defines a nonzero class
+in the complete bounded cyclic deformation complex (its physical action is
+trivialized through summed input order two, so the earlier representative is
+not yet an invariant physical interaction);
+\item construct a BRST-compatible Hadamard covariance for a full Lorentzian
+BV complex, or prove a scoped obstruction;
+\item if a new changed theory is proposed, require an open stationary locus
+with causal completeness, positive reduced dynamics, coherent charge
+interpretation, a preserved nonlinear sector, and at least one operational
+observable before calling it a candidate.
+\end{enumerate}
+
+These questions define a possible Phase 2.  They are not conditions for
+closing Phase 1.  The stopping rule was outcome-independent: Phase 1 ended
+when the programme could give an exact viability classification of the first
+causally complete changed-theory candidate and reconcile it with the compact
+linear, nonlinear, black-hole, observer, and quantum results.  That record is
+now frozen.
+
+\section{Computational accountability}
+
+The project treats computer algebra as an experimental instrument whose
+outputs require independent checks.  Material results are represented by a
+producer, a machine-readable certificate, a verifier that does not merely
+rerun the producer, adversarial mutation tests where practical, a tiered test
+receipt, and a human-readable scope report.  Exact algebraic ranks, Smith
+forms, cohomology witnesses, and characteristic factors use rational or
+algebraic arithmetic; numerical evidence is typed separately.
+
+The authoritative Phase-1 record is
+\begin{center}
+\cert{PURE_WEYL_PROGRAMME_PHASE1_CLASSIFICATION_ENDING_V1},
+\end{center}
+stored in
+\begin{center}
+\cert{reports/phase1-closure-claims-ledger-2026-07-22.json}.
+\end{center}
+It binds each statement to a theory, background, phase space, correction or
+boundary class, lifecycle state, limitation, and source certificate.  This
+paper has its own claim map and verifier; the live programme portal remains
+Paper 98.  A claim that is not linked to evidence is left unpromoted rather
+than inferred from neighboring calculations.
+
+Three aspects of this workflow matter scientifically.  First, a failed
+promotion is retained: the invalid Berger round-sphere Hodge subspace, for
+example, was replaced by full $SU(2)_L\times U(1)_R$ isotypical blocks rather
+than silently repaired.  Second, causal, spectral, algebraic, and quantum
+results carry different dependency labels.  Third, stopping rules are fixed
+before the result is known.  The counterflow candidate passed its causal gate
+and then failed a later physical gate; both facts remain part of the record.
+
+\appendix
+\section{Frozen claim-boundary index}
+
+Table~\ref{tab:claim-boundaries} is a compact crosswalk from the synthesis to
+the authoritative Phase-1 ledger.  The identifiers are stable machine-facing
+names, while the paper uses conventional scientific language.  ``Terminal''
+means that the declared Phase-1 question has an outcome; it does not promote
+the result beyond its scope tuple.
+
+\begin{longtable}{@{}p{0.30\textwidth}p{0.25\textwidth}p{0.37\textwidth}@{}}
+\caption{Frozen Phase-1 claim boundaries.}\label{tab:claim-boundaries}\\
+\toprule
+Ledger identifier & Claim state & Boundary preserved in this paper \\
+\midrule
+\endfirsthead
+\toprule
+Ledger identifier & Claim state & Boundary preserved in this paper \\
+\midrule
+\endhead
+\cert{phase1.einstein_extra.structure} & Classified & Pre-residual compact
+linear exact sequence and Lee--Wald form; no particle or final quotient. \\
+\cert{phase1.taub_kuranishi.structure} & Scoped theorem frozen & Complete
+finite exponential-polynomial second-order cone; full bounded locus open. \\
+\cert{phase1.interaction.disposition} & Representative frozen; invariant
+class open & Exact retained cyclic representative; physical action
+trivialized through summed input order two; no branch-resolved class. \\
+\cert{phase1.black_hole.companion} & Companion draft allowed & Horizon
+curvature and finite-flux results in declared axial class and polar fixture;
+no stability or universal endpoint theorem. \\
+\cert{phase1.quantum.strict} & Local Euclidean one-loop obstruction & No
+Lorentzian QME, state, particle, or unitarity inference. \\
+\cert{phase1.quantum.compensator} & QME restored in changed theory at one loop
+& Formal $\tau$-adic local Euclidean statement; no equivalence to strict
+theory or unconditional all-loop result. \\
+\cert{phase1.counterflow.causal_parent} & Causal only & Exact causal parent at
+the selected Berger point; no positivity follows. \\
+\cert{phase1.counterflow.physical_viability} & Terminally obstructed for the
+declared family & Persistent $j=\tfrac12$ Hamiltonian--Hopf block rejects the
+same-field family; no all-architecture no-go. \\
+\cert{phase1.counterflow.clock_charge} & Classified & Fixed charge makes $D$
+null and removes the clock; unrestricted clock leaves $D$ charged. \\
+\cert{phase1.observer.disposition} & Draft allowed; no promotion & No
+operational counterflow frequency ratio; not a receiver nonexistence theorem. \\
+\bottomrule
+\end{longtable}
+
+\section{Conclusion}
+
+The phase-one programme began with a common but underspecified question:
+whether the additional poles of pure Weyl gravity are physical ghosts.  Its
+main conceptual result is that there is no single promotion from pole to
+particle.  Local solutions, reduced classical directions, nonlinear tangent
+directions, and quantum states are different mathematical objects.
+
+That distinction did not automatically rescue the theory.  Additional
+compact-product directions survive local reduction, yet some fail bounded
+nonlinear continuation.  Horizon regularity admits additional Schwarzschild
+curvature solutions, yet a certified finite-norm fixture selects the
+Einstein sector.  Strict pure Weyl gravity has a local Euclidean one-loop BV
+obstruction; a compensator removes it only in a changed theory.  The first
+changed model with a complete causal BV parent is itself rejected by an exact
+family-persistent Hamiltonian--Hopf instability.
+
+The most defensible conclusion is therefore neither ``the propagator already
+settled the physics'' nor ``constraints removed every ghost.''  It is:
+\begin{equation}
+\boxed{
+\begin{minipage}{0.84\textwidth}
+Pole-level signs are an initial diagnostic.  Physical viability is a sequence
+of reductions and existence tests.  In the laboratories completed in Phase
+1, different additional sectors survive different early tests, but no
+candidate reaches a positive full quantum state, and the first causally
+complete changed theory fails a robust linear physical-stability test.
+\end{minipage}}
+\end{equation}
+
+\begin{thebibliography}{99}
+
+\bibitem{BenderMannheim}
+C.~M.~Bender and P.~D.~Mannheim,
+``No-ghost theorem for the fourth-order derivative Pais--Uhlenbeck oscillator
+model,'' \emph{Phys. Rev. Lett.} \textbf{100} (2008) 110402,
+\href{https://arxiv.org/abs/0706.0207}{arXiv:0706.0207}.
+
+\bibitem{Salvio}
+A.~Salvio,
+``A non-perturbative and background-independent formulation of quadratic
+gravity,'' \href{https://arxiv.org/abs/2404.08034}{arXiv:2404.08034}.
+
+\bibitem{Anselmi}
+D.~Anselmi,
+``Fakeons, quantum gravity and the correspondence principle,''
+\href{https://arxiv.org/abs/1911.10343}{arXiv:1911.10343}.
+
+\bibitem{BeniniMusanteSchenkel}
+M.~Benini, M.~Musante, and A.~Schenkel,
+``Green hyperbolic complexes on Lorentzian manifolds,''
+\href{https://arxiv.org/abs/2207.04069}{arXiv:2207.04069}.
+
+\bibitem{BransonGover}
+T.~P.~Branson and A.~R.~Gover,
+``The conformal deformation detour complex for the obstruction tensor,''
+\href{https://arxiv.org/abs/math/0605192}{arXiv:math/0605192}.
+
+\bibitem{GoverSombergSoucek}
+A.~R.~Gover, P.~Somberg, and V.~Sou\v cek,
+``Yang--Mills detour complexes and conformal geometry,''
+\href{https://arxiv.org/abs/math/0606401}{arXiv:math/0606401}.
+
+\bibitem{BrillDeser}
+D.~R.~Brill and S.~Deser,
+``Instability of closed spaces in general relativity,''
+\emph{Commun. Math. Phys.} \textbf{32} (1973) 291--304.
+
+\bibitem{FischerMarsden}
+A.~E.~Fischer and J.~E.~Marsden,
+``Linearization stability of the Einstein equations,''
+\emph{Bull. Am. Math. Soc.} \textbf{79} (1973) 997--1003.
+
+\bibitem{Moncrief}
+V.~Moncrief,
+``Spacetime symmetries and linearization stability of the Einstein equations
+I, II,'' \emph{J. Math. Phys.} \textbf{16} (1975) 493--498 and
+\textbf{17} (1976) 1893--1902.
+
+\bibitem{AMM}
+J.~M.~Arms, J.~E.~Marsden, and V.~Moncrief,
+``Symmetry and bifurcations of momentum mappings,''
+\emph{Commun. Math. Phys.} \textbf{78} (1981) 455--478.
+
+\bibitem{Maldacena}
+J.~Maldacena,
+``Einstein gravity from conformal gravity,''
+\href{https://arxiv.org/abs/1105.5632}{arXiv:1105.5632}.
+
+\bibitem{LuPangPope}
+H.~L\"u, Y.~Pang, and C.~N.~Pope,
+``Conformal gravity and extensions of critical gravity,''
+\href{https://arxiv.org/abs/1106.4657}{arXiv:1106.4657}.
+
+\bibitem{DeserJoungWaldron}
+S.~Deser, E.~Joung, and A.~Waldron,
+``Partial masslessness and conformal gravity,''
+\href{https://arxiv.org/abs/1208.1307}{arXiv:1208.1307}.
+
+\bibitem{MomenniaHendi}
+M.~Momennia and S.~H.~Hendi,
+``Quasinormal modes of black holes in Weyl gravity: electromagnetic and
+gravitational perturbations,''
+\href{https://arxiv.org/abs/1910.00428}{arXiv:1910.00428}.
+
+\bibitem{BarnichBrandtHenneaux}
+G.~Barnich, F.~Brandt, and M.~Henneaux,
+``Local BRST cohomology in gauge theories,''
+\emph{Phys. Rept.} \textbf{338} (2000) 439--569,
+\href{https://arxiv.org/abs/hep-th/0002245}{arXiv:hep-th/0002245}.
+
+\bibitem{FradkinTseytlin}
+E.~S.~Fradkin and A.~A.~Tseytlin,
+``Renormalizable asymptotically free quantum theory of gravity,''
+\emph{Nucl. Phys. B} \textbf{201} (1982) 469--491.
+
+\bibitem{Rachwal}
+L.~Rachwa\l,
+``Introduction to quantization of conformal gravity,''
+\href{https://arxiv.org/abs/2204.13856}{arXiv:2204.13856}.
+
+\bibitem{BaumeKerenZur}
+F.~Baume and B.~Keren-Zur,
+``The dilaton Wess--Zumino action in higher dimensions,''
+\href{https://arxiv.org/abs/1307.0484}{arXiv:1307.0484}.
+
+\bibitem{Dittrich}
+B.~Dittrich,
+``Partial and complete observables for Hamiltonian constrained systems,''
+\emph{Gen. Rel. Grav.} \textbf{39} (2007) 1891--1927,
+\href{https://arxiv.org/abs/gr-qc/0411013}{arXiv:gr-qc/0411013}.
+
+\end{thebibliography}
+
+\end{document}

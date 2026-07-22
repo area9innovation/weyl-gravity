@@ -13,6 +13,37 @@ candidate.**
 
 ## The sixty-second version
 
+Pure Weyl gravity contains additional fourth-order gravitational solutions.
+A pole sign is an important warning, but it is not yet a physical particle:
+local solutions, gauge- and charge-reduced classical directions, nonlinearly
+continuable directions, and quantum states are four different objects. Phase
+1 tested those promotions separately on several explicitly declared model
+backgrounds rather than assuming that one calculation settles them all.
+
+The result is a classification, not a rescue and not a universal no-go.
+Additional axial and polar directions survive local reduction on a compact
+Weyl--Maxwell laboratory, while bounded nonlinear continuation imposes
+stronger resonance conditions than formal second-order solvability. At the
+certified Schwarzschild fixture $(\ell,\omega)=(2,3/5)$, finite symplectic norm
+selects the Einstein solutions in both parities. Strict fixed-field-content
+pure Weyl gravity has a local Euclidean one-loop BV anomaly; a formal
+compensator makes it exact only in an enlarged theory. No positive full-BV
+state, particle space, scattering theory, or unitarity theorem exists.
+
+The first changed gravity--clock model to pass the complete causal BV gate was
+then tested physically. Its exact $j=\tfrac12$ reduced block has a
+Hamiltonian--Hopf quartet throughout the connected trace-healthy same-field
+stationary family. Phase 1 therefore selects no robust Phase-2 theory. The
+stable, citable account is
+[Paper 15, *What Survives the Ghost Test?*](15-four-level-ghost-classification-phase1-synthesis.pdf);
+this file remains the live portal, claims ledger, and route to current
+artifacts.
+
+<details>
+<summary>Expanded Phase 1 technical synopsis</summary>
+
+### Detailed account
+
 Pure Weyl gravity is a four-dimensional, locally conformal, fourth-order
 theory of the metric. Relative to Einstein gravity it has additional local
 gravitational solutions, and conventional pole or oscillator analyses attach
@@ -127,6 +158,8 @@ found a nonradical Hamiltonian--Hopf instability that persists across the
 connected trace-healthy same-field family, and did not activate interaction,
 observer, or quantum promotion for that candidate. This does not rule out a
 genuinely different action or field content in a future Phase 2.
+
+</details>
 
 ## Current verdict
 
