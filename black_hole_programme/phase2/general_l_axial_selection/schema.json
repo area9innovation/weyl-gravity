@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "result_id", "result_token", "dependency_tags", "declaration", "corrected_X0", "literal_current", "legacy_fixture_obstruction", "disposition", "source_manifest", "content_sha256_manifest", "claim_flags", "does_not_establish", "verification"],
+  "properties": {
+    "schema": {"const": "phase2-black-hole-general-l-axial-selection-counterexample-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "source_manifest": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{40}$"}},
+    "content_sha256_manifest": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,60 @@
+{
+  "description_axes": ["causal", "symplectic", "nonlinear", "observational", "quantum"],
+  "entries": [
+    {
+      "claim_boundary": "This LOCAL-ALGEBRAIC + REDUCED-MODE result gives the first exact counterexample to modewise generic-ell axial Einstein selection in the declared formal radial class. It certifies a non-Einstein rate-zero curvature carrier with finite fixed-representative radial Lee-Wald pairing and an exact defect in the inherited ell=2 lift. It does not construct a global phase space, scattering state, horizon extension, polar result or X2 classification.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "black_hole_programme/phase2/general_l_axial_selection/certificate.json",
+          "result_id": "PURE_WEYL_PHASE2_GENERAL_L_AXIAL_SELECTION_COUNTEREXAMPLE",
+          "sha256": "e480fd0f247fd42c049ce395099c1c957199586a31f907d32d0b6c7f64c71caf"
+        }
+      ],
+      "id": "black_hole.schwarzschild.axial.general_l_selection_counterexample",
+      "mode_data": {
+        "dispersion": {"status": "CERTIFIED", "statement": "The counterexample is the rate-zero top axial curvature carrier for real omega!=0."},
+        "lee_wald": {"status": "CERTIFIED", "statement": "E0|X0 starts at r^-2 and every X0|X0 coefficient at p>=-1 vanishes exactly after correcting the full metric forcing."},
+        "resonance": {"status": "CERTIFIED", "statement": "The carrier, scalar-F and H0 integration resonances are compatible; the inherited fixture instead drops the c' forcing."},
+        "second_order": {
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "bounded_or_finite_quasiperiodic": {"status": "NOT_APPLICABLE", "statement": "No nonlinear solution is evaluated."},
+          "causal_retarded": {"status": "NO_CERTIFIED_MAP", "statement": "No retarded propagator is constructed."},
+          "smooth_secular": {"status": "NOT_APPLICABLE", "statement": "No quadratic source is evaluated."}
+        },
+        "taub_maps": {"status": "NOT_APPLICABLE", "statement": "No compact Taub map is involved."}
+      },
+      "scope": {
+        "background": "Schwarzschild exterior, M>0; current in M=1 units with hat_omega=M omega",
+        "boundaries": "formal large-radius fixed-representative Lee-Wald slice density",
+        "carrier": "axial rate-zero additional curvature carrier X0",
+        "charge_sector": "no asymptotic charge or phase-space quotient",
+        "degree": 1,
+        "ell": "all integer ell>=2",
+        "k": "formal radial 1/r order",
+        "m": "axisymmetric harmonic representative",
+        "omega": "real omega!=0",
+        "parity": "axial only",
+        "theory": "linearized four-dimensional pure Weyl C^2 gravity"
+      }
+    }
+  ],
+  "generated_by": "black_hole_programme/phase2/general_l_axial_selection/general_l_axial_selection.py",
+  "generated_by_sha256": "b8c7e2bafedacc8a622b5aa98e354a0ad55feb3d32680ee13a89ff5828c7c654",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": ["CERTIFIED", "OBSTRUCTED", "OPEN", "NOT_APPLICABLE", "NO_CERTIFIED_MAP"],
+  "team": "black_hole",
+  "verification_commands": [
+    "python3 black_hole_programme/phase2/general_l_axial_selection/general_l_axial_selection.py --check",
+    "python3 black_hole_programme/phase2/general_l_axial_selection/verify_general_l_axial_selection.py",
+    "python3 -m pytest black_hole_programme/phase2/general_l_axial_selection/test_general_l_axial_selection.py -q",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/phase2-black-hole-general-l-axial-selection-fragment-v1.json"
+  ]
+}

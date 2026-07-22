@@ -1,0 +1,99 @@
+{
+  "claim_flags": {
+    "asymptotic_phase_space_constructed": false,
+    "first_exact_counterexample_certified": true,
+    "generic_l_axial_einstein_selection_certified": false,
+    "legacy_fixture_defect_certified": true,
+    "polar_certified": false
+  },
+  "content_sha256_manifest": {
+    "physics/symplectic-reconstruction/black_hole_programme/bh2c_flux_class.py": "147d663f7f9c709ae9b5fe19eca5a8dc5f1d54f9e2af752c826deb340575f1a8",
+    "physics/symplectic-reconstruction/black_hole_programme/certificates/BH2C_FLUX_CLASS.json": "cf6ea556ebb2c42d3db0f3efc11c18d32a39f6c2acdd70a34de586725a972c01",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_asymptotics/certificate.json": "6742e049806d3122a4c1b3a2b01d1305448f0ee6287e955083a0749cbe304523",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_current/certificate.json": "02ebd63775ca12646973f95866773bdb669eadcda4578426713adad95d2cde9f"
+  },
+  "corrected_X0": {
+    "Einstein_lift_freedom": "the free F~r^-3 coefficient and H1 integration constant are set to zero; adding them is X0->X0+beta*E0",
+    "F_resonance_obstruction": "0",
+    "H0": "2*r^2/(Lambda-2)+(Lambda^2-2*Lambda-4*i*M*omega)/(4*omega^2*(Lambda-2))+O(r^-1)",
+    "H0_log_obstruction": "0",
+    "H1": "-i*(Lambda^2-2*Lambda+4*i*M*omega)/(2*omega^3*(Lambda-2))*r^-1+O(r^-3)",
+    "all_order_pivots": "carrier: -4*n*(n-1)*omega^2 then nonzero n>=2; metric F: 2*i*omega*(1-n), nonzero n>=2 after compatible n=1",
+    "carrier_nonzero": true,
+    "not_einstein_or_gauge_reason": "delta Ric[h]=psi has P-leading coefficient 1; Einstein-image and diffeomorphism modes have delta Ric=0 on Ricci-flat Schwarzschild, while an axisymmetric conformal scalar has no axial phi component"
+  },
+  "declaration": {
+    "background": "Schwarzschild M>0 in ingoing EF coordinates; current coefficient displayed in M=1 units with omega understood as M*omega",
+    "domain": "integer ell>=2, Lambda=ell(ell+1), real omega!=0",
+    "radial_class": "formal polyhomogeneous 1/r series; no convergence claim",
+    "sector": "axial rate-zero top curvature carrier P=1+O(r^-1), Q=O(r^-2)"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "X2": "unclassified after the first exact counterexample stop condition fired",
+    "headline_selection_theorem": "OBSTRUCTED_BY_COUNTEREXAMPLE",
+    "reason": "a non-Einstein rate-zero axial curvature carrier has a corrected formal metric lift with finite radial Lee-Wald pairing"
+  },
+  "does_not_establish": [
+    "convergence of the formal mode, horizon extendibility, a global scattering state or phase space",
+    "the oscillatory X2 disposition, polar parity, omega=0, QNMs, stability, particles or quantum positivity"
+  ],
+  "exact_metric_forcing": {
+    "F_prime_source": "2*r*(c'-Q)/(r-2*M), F=H1'",
+    "H0_prime_source": "2*c",
+    "c": "[r^2(P'+Q'+i*omega*Q)+2r(P+Q-Q')-2Q]/(Lambda-2)",
+    "scalar_master_source": "2*(r^2*c''-r^2*Q'-2*r*Q+2*r*c'-2*c)",
+    "scalar_operator": "(r^2-2Mr)F''+(2i*omega*r^2+2r+2M)F'+(6i*omega*r-Lambda)F"
+  },
+  "exceptional_set": {
+    "declared_domain_exception_free": true,
+    "poles": [
+      "Lambda=2 (ell=1, outside declared domain)",
+      "omega=0 (excluded)"
+    ],
+    "zeros": [
+      "E0|X0 bracket has real part Lambda*(Lambda-2) and imaginary part -6*omega, hence no zero for ell>=2, real omega!=0 and alpha!=0; the overall factor 8 is nonzero"
+    ]
+  },
+  "legacy_fixture_obstruction": {
+    "X0_residual_head": "2*S_ell/(Lambda-2)+O(r^-2)",
+    "consequence": "the inherited log tail and divergent X0 table are not certificates for delta Ric[h]=psi",
+    "dropped_term": "2*r*c'(r)/(r-2*M)",
+    "ell2_control": "Lambda=6 gives residual S_2/2+O(r^-2), nonzero",
+    "mechanism": "bh2c_flux_class.py replaces c(r) by XSRC before differentiating H0', so diff(XSRC,r)=0",
+    "original_row_residual": "delta Ric_{r phi}[h_legacy]-q*S_ell = c'(r)*S_ell"
+  },
+  "lifecycle": "CLASSIFIED",
+  "literal_current": {
+    "E0|X0": {
+      "coefficient": "-8*I*pi*Lambda*alpha*(Lambda**2 - 2*Lambda - 6*I*omega)/(omega*(Lambda - 2)*(2*ell + 1))",
+      "finite": true,
+      "leading_power": -2,
+      "log_power": 0
+    },
+    "X0|X0": {
+      "coefficients_at_p_ge_minus_1": {},
+      "finite": true,
+      "reading": "all potentially divergent coefficients vanish exactly"
+    },
+    "shift_invariance": "adding beta*E0 changes X0|X0 only by finite E0|X0 and E0|E0 terms and cannot create a p>=-1 coefficient",
+    "tail_filtration": "literal F^v has maximal rate-zero shifts h0h0:-3, h0h1:-2, h1h1:-1 and radial derivative order 3. With H0=C2*r^2+C0+O(r^-1), H1=O(r^-1), only p=1 and p=-1 can threaten X0|X0. At p=-1 the r^2 x C0 h0h0 and r^2 x r^-1 h0h1 contributions jointly cancel; all p>=-1 coefficients reduce exactly to zero. After retaining the r^-1 lift jet, every omitted tail contributes p<=-2."
+  },
+  "result_id": "PURE_WEYL_PHASE2_GENERAL_L_AXIAL_SELECTION_COUNTEREXAMPLE",
+  "result_token": "BH_PHASE2_GENERIC_L_AXIAL_SELECTION_OBSTRUCTED_BY_CORRECTED_X0",
+  "schema": "phase2-black-hole-general-l-axial-selection-counterexample-v1",
+  "schema_path": "black_hole_programme/phase2/general_l_axial_selection/schema.json",
+  "source_manifest": {
+    "physics/symplectic-reconstruction/black_hole_programme/bh2c_flux_class.py": "a8dce6af3d698fe46301586358530d78bcf21abd",
+    "physics/symplectic-reconstruction/black_hole_programme/certificates/BH2C_FLUX_CLASS.json": "bcb5acacaf9fecc63a4e2b168fb3155e7b2eb386",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_asymptotics/certificate.json": "707467bb2a4b279b8355bc79b0b9482a8f2da8f0",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_current/certificate.json": "4fabff559fb840af267f65de1acc6fc1c8bade6f"
+  },
+  "verification": {
+    "independent": "python3 black_hole_programme/phase2/general_l_axial_selection/verify_general_l_axial_selection.py",
+    "producer": "python3 black_hole_programme/phase2/general_l_axial_selection/general_l_axial_selection.py --check"
+  }
+}

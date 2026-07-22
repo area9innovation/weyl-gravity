@@ -1,0 +1,77 @@
+{
+  "schema": "phase2-black-hole-general-l-axial-selection-counterexample-receipt-v1",
+  "result_id": "PURE_WEYL_PHASE2_GENERAL_L_AXIAL_SELECTION_COUNTEREXAMPLE_RECEIPT",
+  "date": "2026-07-22",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile black_hole_programme/phase2/general_l_axial_selection/{derive_selection.py,current_probe.py,general_l_axial_selection.py,verify_general_l_axial_selection.py,test_general_l_axial_selection.py}",
+        "python3 -m json.tool black_hole_programme/phase2/general_l_axial_selection/{schema.json,certificate.json,receipt.json} residual_atlas/phase2-black-hole-general-l-axial-selection-fragment-v1.json",
+        "git diff --check -- black_hole_programme/phase2/general_l_axial_selection reports/phase2-black-hole-general-l-axial-selection-2026-07-22.md residual_atlas/phase2-black-hole-general-l-axial-selection-fragment-v1.json"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 214.02,
+      "commands": [
+        "python3 black_hole_programme/phase2/general_l_axial_selection/general_l_axial_selection.py --check",
+        "python3 black_hole_programme/phase2/general_l_axial_selection/verify_general_l_axial_selection.py",
+        "python3 -m pytest black_hole_programme/phase2/general_l_axial_selection/test_general_l_axial_selection.py -q",
+        "python3 residual_atlas/validate_fragment.py residual_atlas/phase2-black-hole-general-l-axial-selection-fragment-v1.json"
+      ],
+      "results": [
+        "producer replay passed byte-for-byte in 110.58 seconds",
+        "independent carrier/source/original-three-row/current/ell2 replay passed in 103.40 seconds",
+        "two fail-closed certificate tests passed",
+        "residual-atlas fragment validation passed"
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "All prerequisite mathematical operators and certificates are read-only dual-hash imports; no shared input or existing certificate changed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a scoped CLASSIFIED counterexample, not a freeze, release or shared-core change."
+    }
+  },
+  "content_sha256_manifest": {
+    "black_hole_programme/phase2/general_l_axial_selection/__init__.py": "6c9bde278f52a454cbd405fb27de68f5880b4900ca24ba139eaeba3cb8a51eb0",
+    "black_hole_programme/phase2/general_l_axial_selection/derive_selection.py": "1ad8d693337d95feb17ecf1d7e240882e17719e1e515a1f481d59a327335ff27",
+    "black_hole_programme/phase2/general_l_axial_selection/current_probe.py": "37765169c07f0e45063fe3d1d3945bb34ff35f51174b1c14669da3cb0a82f024",
+    "black_hole_programme/phase2/general_l_axial_selection/general_l_axial_selection.py": "b8c7e2bafedacc8a622b5aa98e354a0ad55feb3d32680ee13a89ff5828c7c654",
+    "black_hole_programme/phase2/general_l_axial_selection/verify_general_l_axial_selection.py": "88d569f97ed6fdc3bfa14bef0dd09ea654192c17d13904f218e33007e567fd46",
+    "black_hole_programme/phase2/general_l_axial_selection/test_general_l_axial_selection.py": "5adea341ee197f4a1ec604670915fb4598b9aa65ad6b470fc46211e7823f81d3",
+    "black_hole_programme/phase2/general_l_axial_selection/schema.json": "d52f3e724568f1d955ce639a122b43caf78ad55f2751fa231ef0555859239863",
+    "black_hole_programme/phase2/general_l_axial_selection/certificate.json": "e480fd0f247fd42c049ce395099c1c957199586a31f907d32d0b6c7f64c71caf",
+    "reports/phase2-black-hole-general-l-axial-selection-2026-07-22.md": "9a5a35dbe2038dc22c0ad5c890624c0bb6dd7a60feaac74e338bc82bbad39cac",
+    "residual_atlas/phase2-black-hole-general-l-axial-selection-fragment-v1.json": "3d54792c516e5e48b7922f9093dc9383b379d44b8680a4878c3c5efd9bdee095"
+  },
+  "source_manifest": {
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_selection/__init__.py": "4a4763cbc4ae46fff3b9ef8201bf824c01ecb039",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_selection/derive_selection.py": "3b4dee519bfa2b6d591cff2eda1ce5b7f482da44",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_selection/current_probe.py": "b994b2bb108a804b9d51cb04a720d1e1372037c4",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_selection/general_l_axial_selection.py": "0c6d15295895bccbc7ca6bc5415123f6cac562d2",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_selection/verify_general_l_axial_selection.py": "8ec58402fcc59c046966a8de16f1d4d9010dce02",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_selection/test_general_l_axial_selection.py": "b6a6cd5da220b1359a98eb547c2a361269ceea9d",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_selection/schema.json": "c279580187a30f15ff7983510cb6b3e4368740e1",
+    "physics/symplectic-reconstruction/black_hole_programme/phase2/general_l_axial_selection/certificate.json": "37fda2bf510eda9c554004826200ec8d498e6169",
+    "physics/symplectic-reconstruction/reports/phase2-black-hole-general-l-axial-selection-2026-07-22.md": "e92bd4c7cdac07ba91d91ac187309ca501711ab8",
+    "physics/symplectic-reconstruction/residual_atlas/phase2-black-hole-general-l-axial-selection-fragment-v1.json": "1f066807336f3e7b126905a767f0dbf91fc2b275"
+  },
+  "independent_rail": {
+    "status": "PASS",
+    "method": "The verifier does not import the producer. It derives P1-P3 and Q2-Q3 from the two carrier rows, eliminates and replays the scalar equation, reconstructs the canonical lift from all three original metric rows, evaluates the literal current by an independent sparse target-power algorithm, and certifies the ell=2 defect."
+  },
+  "mutations_rejected": [
+    "the radial source replaced by a constant placeholder before differentiating H0'",
+    "the c' term removed from the original F' forcing",
+    "the sign of the leading H0 lift coefficient changed",
+    "the H0 constant omitted after scalar elimination",
+    "the inherited ell=2 divergent table treated as a valid delta-Ricci lift",
+    "the formal radial counterexample promoted to horizon/global scattering existence"
+  ],
+  "claim_boundary": "The receipt certifies the first exact counterexample to generic-ell axial Einstein selection in the declared formal radial class, the finite E0|X0 and X0|X0 current classification, lift-shift invariance, and the exact dropped-source-derivative defect in the inherited ell=2 fixture. It does not certify convergence, horizon extension, a global phase space or scattering state, X2, polar parity, omega=0, QNMs, stability, particles, positivity or quantum claims."
+}
