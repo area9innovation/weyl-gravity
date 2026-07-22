@@ -1,0 +1,77 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "PAPER15_PUBLICATION_CLARIFICATIONS_V3",
+  "stamp": "2026-07-22",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Referee-facing formalization and scope clarification of the frozen Paper 15 synthesis; no source theorem, certificate, lifecycle, or authorship claim is changed.",
+  "artifacts": {
+    "paper/15-four-level-ghost-classification-phase1-synthesis.tex": "9d41027f5508d912d3abaac4c32182b62fc1890e16bcc8cf103c89cdf6381977",
+    "paper/15-four-level-ghost-classification-phase1-synthesis.pdf": "3179f51d63936e48e4ac38c0eed8908dde7d549543e27273d263b1c497b98bb2",
+    "paper/15-four-level-ghost-classification-phase1-synthesis-claim-map.json": "99f025385912405ff434672b3ed6622af4ef737e0d806ec511d15b377716acad",
+    "paper/generate_15_phase1_synthesis_claim_map.py": "5f896fc7f448c17115d06407c2ae8ebb9a52483fa056cf6a9a8be26934a14457",
+    "paper/verify_15_phase1_synthesis_claim_map.py": "36438c71200c326c80aa3bd9da471cdf4dc42318eca6c8e8b2291b1115831324",
+    "planning/paper-coverage/paper15-phase1-synthesis-overlay-2026-07-22.json": "720a8a7f117a26e98a0cd29e4d1ccaea2f74ef70e232ad188f11656baa32f384",
+    "reports/paper15-publication-clarifications-2026-07-22.md": "7069d5aa405321c215521d98c54b60ee9299bb6e9b3f832eaff909dade8e411d",
+    "reports/phase1-closure-claims-ledger-2026-07-22.json": "1da97e9085e5c7138b88140106f0b1ab6d2a698ab539af4a6827f86708521fae"
+  },
+  "tests": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile paper/generate_15_phase1_synthesis_claim_map.py paper/verify_15_phase1_synthesis_claim_map.py paper/test_15_phase1_synthesis_claim_map.py && git diff --check -- <scoped paths>",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest paper.test_15_phase1_synthesis_claim_map -v",
+      "status": "PASS",
+      "elapsed_seconds": 0.25,
+      "detail": "4 tests passed, including lifecycle, Phase-2 pin, and frozen-authorship adversarial mutations."
+    },
+    {
+      "tier": 1,
+      "command": "python3 planning/paper-coverage/verify_phase1_paper_coverage_overlay.py planning/paper-coverage/phase1-paper-coverage-overlay-2026-07-22.json",
+      "status": "PASS",
+      "detail": "5 contradiction mutations rejected."
+    },
+    {
+      "tier": 1,
+      "command": "pdflatex -interaction=nonstopmode -halt-on-error 15-four-level-ghost-classification-phase1-synthesis.tex (three stable passes)",
+      "status": "PASS",
+      "elapsed_seconds": 3.4,
+      "detail": "23 pages, 428323 bytes; no undefined citations, undefined references, overfull boxes, ignored errors, or fatal errors."
+    },
+    {
+      "tier": 2,
+      "command": "python3 quantum-weyl/pt_cpt/synthesis/verify_cpt_feasibility_classification.py",
+      "status": "PASS",
+      "elapsed_seconds": 7.44,
+      "detail": "Independent replay passed; 8 mutations rejected."
+    },
+    {
+      "tier": 2,
+      "command": "python3 -m black_hole_programme.phase2.generic_l_synthesis.verify",
+      "status": "PASS",
+      "elapsed_seconds": 9.3
+    },
+    {
+      "tier": 2,
+      "command": "python3 d_quotient_classical/compensator/verify_two_phase_counterflow_hamiltonian_hopf_retuning_locus.py",
+      "status": "PASS",
+      "elapsed_seconds": 6.1
+    }
+  ],
+  "higher_tiers_not_run": "No source operator, certificate, shared scientific schema, or theorem lifecycle changed. The full repository suite was not triggered.",
+  "does_not_establish": [
+    "a genuine Mannheim C or independently declared PT involution",
+    "a nontrivial ghost-normalizer solution or compact BRST metric descent",
+    "a full-BV Hadamard covariance, positive physical state, particle interpretation, scattering theory, optical theorem, or unitarity",
+    "an asymptotically flat Bach phase space, horizon-to-infinity matching, wave-packet norm, or physical exceptional-frequency threshold",
+    "a new Weyl-anomaly coefficient",
+    "a familywide counterflow Green homotopy, full-PDE stability theorem, or viable changed theory"
+  ]
+}

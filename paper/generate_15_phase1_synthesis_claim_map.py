@@ -55,7 +55,7 @@ PHASE2_INPUTS = [
         "sha256": "cb705de9f5ba2589ebe514304709f175846307a20f0ea671a78711490e152e8c",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL", "REDUCED-MODE"],
         "edge_kind": "LIMITATION",
-        "paper_location": "Can a positive quantum state be constructed?",
+        "paper_location": "Appendix: Berger Hadamard-covariance gate",
         "relationship": "Pins the missing full-carrier obstruction and does not claim nonexistence.",
     },
     {
@@ -75,7 +75,7 @@ PHASE2_INPUTS = [
         "sha256": "db0baaa808b131389de09adcbe02d423d210201f96290f94bea0f25be05fdfc2",
         "dependency_tags": ["LOCAL-ALGEBRAIC"],
         "edge_kind": "NEGATIVE_RESULT",
-        "paper_location": "Result card A discussion",
+        "paper_location": "Appendix: dyonic stationary-family preflight",
         "relationship": "Prevents promotion of a fixed-coupling stationary sign-family scan.",
     },
 ]

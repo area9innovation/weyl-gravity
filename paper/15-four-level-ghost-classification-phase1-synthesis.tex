@@ -24,7 +24,7 @@
 project was commissioned and coordinated by Asger Alstrup Palm
 (\texttt{asger@area9.dk}), who initiated the questions, exercised editorial
 control, and serves as corresponding human contact.}}
-\date{Phase-1 synthesis with scoped Phase-2 update, 22 July 2026}
+\date{22 July 2026}
 
 \begin{document}
 \raggedbottom
@@ -42,56 +42,39 @@ tests exclude different candidates.
 Pure Weyl gravity is a fourth-order conformal metric theory.  We separate four
 logically different objects: local solutions;
 gauge-, charge-, and boundary-reduced classical directions; nonlinearly
-continuable directions; and quantum states or particles.
+continuable directions; and quantum states or particles.  This separation is
+also corrective: a boundary conclusion valid for an incomplete
+reconstruction need not survive reconstruction of the metric and its
+symplectic current.
 
-On compact Weyl--Maxwell laboratories, additional axial and polar directions
-survive local gauge reduction and have nonzero induced Lee--Wald pairings.
-The signature of the associated positive-frequency Hermitian current form is
-not organized by the simple rule ``Einstein positive, additional negative.''
-A Nariai factorization identifies a related mechanism at the operator level:
-the two spin-two factors have opposite Lee--Wald residues, although no
-absolute energy sign or identification with the compact-product family is
-thereby established.  A dyonic-flat-family preflight, by contrast, finds no
-fixed-coupling stationary sign laboratory because the required global
-Hamiltonian lift and fixed-Chern tangent conditions fail.
-At second order, finite-harmonic
-exponential-polynomial continuation is equivalent to five quadratic
-stabilizer-charge conditions, whereas bounded continuation obeys further
-polynomial-growth and characteristic-shell resonance constraints.  On
-Schwarzschild, horizon regularity alone admits additional curvature
-solutions.  The Phase-2 generic-angular calculation overturns the former
-fixture-level Einstein-selection reading: an axial non-Einstein branch has a
-finite formal radial pairing for every integer $\ell\ge2$ and real
-$\omega\ne0$, while the polar calculation retains a one-dimensional mixed
-finite line and an exact exceptional wall.  These are formal-infinity,
-fixed-current-representative results, not a completed asymptotically flat
-phase space.  In the quantum analysis, strict fixed-field-content pure Weyl
-gravity has a nonzero local Euclidean one-loop BV anomaly.  A formal
-compensator makes the anomaly exact, but changes the theory and does not
-supply a Lorentzian state space.
+On a compact Weyl--Maxwell laboratory, additional axial and polar directions
+survive local gauge reduction and have nonzero induced Lee--Wald pairings;
+the associated positive-frequency Hermitian signs do not follow the simple
+rule ``Einstein positive, additional negative.''  At second order,
+finite-harmonic exponential-polynomial continuation is equivalent to five
+quadratic stabilizer-charge conditions, whereas bounded continuation obeys
+further resonance constraints.  On Schwarzschild, restoring differentiated
+metric-reconstruction forcing omitted from an earlier fixture reverses its
+Einstein-selection interpretation.  The corrected generic-angular result
+contains an axial non-Einstein finite formal radial direction for every
+$\ell\ge2$ and real nonzero frequency, and a polar mixed finite line away
+from an exact algebraic exceptional locus.  This is a formal-infinity result,
+not an asymptotically flat scattering theorem.
 
-An exact PT/CPT pilot sharpens, but does not reverse, this classification.
-Selected compact reduced blocks admit structured positive pseudo-Hermitian
-metrics, yet the available data do not define an independent parity/time
-involution and hence do not construct a genuine Mannheim $C$ operator.  On
-the cylinder, the natural involution fails the BRST chain-map test.  The
-counterflow Hamiltonian--Hopf quartet has complex spectrum and therefore
-admits no positive pseudo-Hermitian metric.  For one complete causal Berger
-BV complex the local Hadamard singular structure and causal commutator are
-available, but the full covariance remains unconstructed because an explicit
-104-dimensional stationary carrier is missing.
-
-We also analyze a changed two-phase counterflow gravity--clock theory.  It has
-a complete free causal BV complex at a specified Berger background and removes
-a dressed-trace obstruction.  Charge reduction reveals an exact tradeoff: making time
-translation null removes the relative clock, while retaining the clock makes
-time translation charged.  More decisively, the complete
-$j=\tfrac12$ reduced block contains a Hamiltonian--Hopf quartet throughout
-the connected trace-healthy same-field stationary family.  Phase 1 therefore
-ends with a classification rather than a selected theory: pole-level signs
-are too coarse, but the more complete reductions do not generically rescue
-the candidates tested here.  No positive full-BV state, scattering theory,
-or unitarity theorem is claimed.
+Strict fixed-field-content pure Weyl gravity has the established nonzero
+local Euclidean one-loop Weyl-anomaly coefficients, here reconstructed from
+the declared determinant complex and mapped into local BV cohomology.  A
+formal compensator makes the cocycle exact but changes the theory.  On
+selected compact reduced blocks, an exact pilot classifies a nonempty
+24-real-dimensional cone of symmetry-compatible positive pseudo-Hermitian
+metrics.  It does not construct Mannheim's $CPT$ prescription: independent
+parity/time data and BRST descent are absent or obstructed.  A changed
+two-phase counterflow theory supplies a complete free causal BV complex at a
+specified Berger background, but its physical $j=\tfrac12$ block has a
+family-persistent Hamiltonian--Hopf quartet.  Its complex spectrum forbids a
+positive pseudo-Hermitian rescue.  Thus pole signs are too coarse, but no
+candidate studied here reaches a positive full-BV state, scattering theory,
+or unitarity theorem.
 \end{abstract}
 
 \tableofcontents
@@ -153,6 +136,16 @@ positive state has been constructed.  The strict quantum gauge theory is
 locally anomalous.  Finally, a changed theory that passes a difficult causal
 construction fails a physical spectral test that no choice of positive inner
 product can repair.  Different candidates fail at different levels.
+
+The framework also corrected one of the programme's own conclusions.  At
+$\ell=2$ and $M\omega=3/5$, an earlier Schwarzschild reconstruction appeared
+to make the additional axial direction radially divergent.  The
+generic-angular audit found that the reconstruction had differentiated a
+placeholder rather than its radial source and had thereby omitted the
+$2r c'(r)/(r-2M)$ forcing term.  Restoring that term gives a finite formal
+non-Einstein direction throughout the declared $\ell\ge2$, real-frequency
+domain.  The superseded table is retained as a failed promotion rather than
+used as evidence for Einstein selection.
 
 \section{Theories, conventions, and scope}
 
@@ -423,24 +416,88 @@ the naive split is therefore adjoint-dependent evidence that motivates, but
 does not prove, alternative inner-product prescriptions of the PT/CPT
 type\cite{BenderMannheim}.
 
-The Phase-2 finite-block pilot makes this last qualification exact.  On the
-selected compact physical blocks, the intertwining equation
+The Phase-2 finite-block pilot makes this last qualification exact.  Let
+$G$ denote the imported action-derived Krein form, and let $H$ be the
+positive-frequency generator.  In the normal spectral frame,
+\begin{equation}
+ \mathcal V=\mathcal V_-
+       \oplus\mathcal V_+\oplus\mathcal V_p,
+ \qquad \dim_{\mathbb C}(\mathcal V_-,\mathcal V_+,\mathcal V_p)=(2,2,4),
+ \label{eq:cpt-spectral-frame}
+\end{equation}
+with
+\begin{equation}
+ H^2=\operatorname{diag}(q_-I_2,q_+I_2,pI_4),\quad
+ q_\pm=k^2+\lambda\pm\sqrt{2\lambda},\quad
+ p=k^2+\lambda-\frac23.
+\end{equation}
+The connected orientation-preserving product symmetry has exact commutant
+\begin{equation}
+ \operatorname{Comm}(H)=M_2(\mathbb C)\oplus M_2(\mathbb C)
+                         \oplus M_4(\mathbb C),
+\end{equation}
+of complex dimension $24$.  The complete structured Hermitian solution of
+the intertwining equation
 \begin{equation}
  H^\dagger\eta=\eta H,
  \qquad \eta=\eta^\dagger>0,
  \label{eq:pseudo-hermitian-metric}
 \end{equation}
-has a nonempty symmetry-compatible structured cone.  Its distinguished
-fundamental symmetry is
-$C_0=-I_2\oplus I_2\oplus I_4$.  This is a positive
-pseudo-Hermitian-metric result, not yet a Mannheim construction: the reduced
-data do not supply independent operators $P$ and $T$ from which a physical
-$C$ can be defined, and quotient descent has not been established.  On the
-selected conformal-cylinder carrier the natural candidate $C_0$ is not a
-chain map for the BRST differential, so the declared invariant commutant
-does not yield a BRST-descended positive metric.  These conclusions carry
-the dependency tags \texttt{LOCAL-ALGEBRAIC} and \texttt{REDUCED-MODE}; they
-do not establish a Lorentzian state.
+is
+\begin{equation}
+ \eta=A_-\oplus A_+\oplus A_p,
+ \qquad A_-\in\operatorname{Herm}_2^+,\qquad
+ A_+\in\operatorname{Herm}_2^+,\qquad
+ A_p\in\operatorname{Herm}_4^+,
+ \label{eq:structured-eta-cone}
+\end{equation}
+with rational or polynomial parameter dependence, no poles on the physical
+domain, and reality condition
+$\eta(\lambda,-k)=\overline{\eta(\lambda,k)}$.  This is a
+$4+4+16=24$ real-dimensional open cone at fixed $(\lambda,k)$.  Positivity
+is equivalently the positivity of the exact LDL pivots of all three blocks;
+one explicit exact member is $A_-=I_2$, $A_+=I_2$, $A_p=I_4$.
+
+The form $G$ is negative definite on $\mathcal V_-$ and positive definite on
+$\mathcal V_+\oplus\mathcal V_p$.  Consequently
+\begin{equation}
+ C_0=-I_2\oplus I_2\oplus I_4,
+ \qquad C_0^2=1,\qquad \eta_0=G C_0>0,
+ \label{eq:fundamental-symmetry}
+\end{equation}
+and $C_0$ is the unique $G$-self-adjoint involution in the declared
+commutant for which $GC_0$ is positive.  Equations
+\eqref{eq:structured-eta-cone}--\eqref{eq:fundamental-symmetry} transform by
+congruence under a change of multiplicity frame, so the cone and its
+positivity do not depend on the printed basis.
+
+This is an exact finite-block quasi-Hermiticity theorem in the sense of
+Mostafazadeh, not yet Mannheim's more specific $CPT$ construction.  The
+fixed magnetic carrier supplies neither an independently declared linear
+parity $P$ nor an antilinear time reversal $T$; orientation reversal may
+change the magnetic bundle sector.  Thus no relation between $\eta$, $P$,
+and a physical $C$ can be asserted, and quotient descent is not established.
+A representation-independent Mannheim gate would instead supply an
+antilinear involution $\Theta$ with
+\(
+\Theta^2=1
+\)
+and $[\Theta,H]=0$, together with a linear involution $C$ satisfying
+\(
+C^2=1
+\),
+$[C,H]=[C,\Theta]=0$, an explicit convention relating $C,\Theta,G$ and
+$\eta$, and a chain map on the BRST complex.  None of that missing structure
+is manufactured from $\eta$ alone.
+On each chirality of the selected conformal-cylinder energy-five regression,
+the stationary $C_0$ has rank-$32$ commutator with every one of the eight
+proper-conformal rows and degree-zero-to-one BRST defect rank $102$ (rank
+$204$ on both chiralities).  The all-energy representation argument reduces
+every residual-invariant Hermitian involution to a scalar on each chirality;
+neither scalar choice makes $GC$ positive.  A nontrivial action on the ghost
+normalizer lies outside this classified commutant and remains open.  These
+conclusions carry the dependency tags \texttt{LOCAL-ALGEBRAIC} and
+\texttt{REDUCED-MODE}; they do not establish a Lorentzian state.
 
 A second Phase-2 calculation isolates an operator mechanism on Nariai.  The
 spin-two operator factors as $L_E L_C$ with
@@ -453,15 +510,8 @@ the factors with the compact magnetic-product Einstein image and additional
 cofiber.  It is a mechanism-level comparison across different scope tuples,
 not a family theorem.
 
-The attempted dyonic-flat-family extension fails earlier.  For nonzero
-electric parameter the stationary symmetry has no continuous global
-Hamiltonian lift on the circle, since $\mathcal L_HA=E\,\dd x$ changes the
-holonomy.  Electromagnetic duality also fails to define a tangent direction
-in a fixed-Chern sector.  Consequently that preflight constructs neither a
-fixed-coupling open stationary family nor a sign, current, inertia, or
-signature-wall theorem.  Recording this obstruction prevents a formally
-attractive but ill-typed background scan from being read as evidence for
-Result card~A.
+The failed dyonic-family extension is recorded separately in
+Appendix~\ref{app:nonpromotions}; it supplies no sign-family theorem.
 
 This exact-sequence formulation also prevents an unjustified direct-sum
 claim.  A lift of an additional curvature representative may be shifted by
@@ -568,7 +618,7 @@ opposite nonzero charges.  Consequently the ambient exact sequence does not
 descend to separately neutral branch fibers.  Nonlinear reduction is
 intrinsically mixed.
 
-\section{Which boundary conditions retain the extra solutions?}
+\section{Which formal asymptotic classes retain the extra solutions?}
 
 Compact charge constraints and black-hole endpoint conditions test different
 questions.  The Schwarzschild analysis uses the Ricci perturbation
@@ -594,14 +644,22 @@ initial or boundary condition fails: imposing $\psi$ and its normal
 derivative to vanish on a Cauchy surface is a local restriction that selects
 the Einstein image at linear order.
 
-The outer boundary instead gives a filtration-sensitive Phase-2 result.  In
-ingoing Eddington--Finkelstein coordinates $(v,r,\vartheta,\varphi)$ let
+The infinity calculation instead gives a filtration-sensitive Phase-2
+result.  Introduce the dimensionless variables
+\begin{equation}
+ \widehat r=\frac rM,
+ \qquad \widehat\omega=M\omega,
+ \qquad \Lambda=\ell(\ell+1),
+ \label{eq:schwarzschild-dimensionless}
+\end{equation}
+and write formal radial powers in $\widehat r$.  In ingoing
+Eddington--Finkelstein coordinates $(v,r,\vartheta,\varphi)$ let
 $F^v[u_1,u_2](r)$ denote the sphere integral of the $v$-component of the
 action-derived Lee--Wald current for two formal mode representatives.  For a
 conjugate-frequency pair define the truncated radial slice form
 \begin{equation}
  \mathcal N_R[u_1,u_2]
- =i\int_{2}^{R}F^v[\bar u_1,u_2](r)\,\dd r,
+ =i\int_{2M}^{R}F^v[\bar u_1,u_2](r)\,\dd r,
  \qquad
  \mathcal N_\infty[u_1,u_2]=\lim_{R\to\infty}\mathcal N_R[u_1,u_2],
  \label{eq:schwarzschild-radial-pairing}
@@ -612,7 +670,7 @@ form.  It is neither an $L^2$ norm on monochromatic scattering states nor a
 wave-packet Hilbert norm, and the polar zero-sector quadratic form can vanish.
 
 The dangerous-layer rule in this class is that a term
-$r^p(\log r)^q$ is nonintegrable for $p\ge-1$ unless its invariant
+$\widehat r^p(\log \widehat r)^q$ is nonintegrable for $p\ge-1$ unless its invariant
 coefficient vanishes.  Correctly retaining differentiated reconstruction
 forcing changes the old fixture-level conclusion.
 
@@ -620,13 +678,14 @@ forcing changes the old fixture-level conclusion.
 \textbf{Theory.} Strict pure $C^2$ gravity.\par
 \textbf{Background.} Schwarzschild with $M>0$ in ingoing
 Eddington--Finkelstein coordinates.\par
-\textbf{Domain.} Integer $\ell\ge2$, real $\omega\ne0$, formal
+\textbf{Domain.} Integer $\ell\ge2$, real $\widehat\omega\ne0$, formal
 polyhomogeneous infinity data, and the fixed action-derived pure-Weyl
 Lee--Wald representative.\par
 \textbf{Gauge and quotient.} Regge--Wheeler/Zerilli-type parity reduction and
 metric reconstruction in the certified formal radial modules.\par
-\textbf{Statement.} In the axial zero-rate sector, both Einstein directions
-have finite $r^{-2}$ current and a reconstructed non-Einstein all-orders
+\textbf{Statement.} In the axial $X_0$ reconstruction branch, whose top
+curvature carrier has radial index zero, both Einstein directions have
+finite $\widehat r^{-2}$ current and a reconstructed non-Einstein all-orders
 formal lift $X_0$ has finite $X_0|X_0$ pairing and nonzero finite
 $E_0|X_0$ pairing.  This remains finite under
 $X_0\mapsto X_0+\beta E_0$, so Einstein-only formal radial selection is
@@ -634,26 +693,37 @@ false throughout the declared domain.  In the polar oscillatory block, the
 leading $p=0$ coefficient matrix of the ordered current on
 $(E,X_0,X_1,X_2)$ has generic rank three.  Its one-dimensional filtered
 radical survives through the $p=0,-1$ layers as a mixed
-Einstein/additional line and has a generically nonzero first finite $p=-2$
-induced pairing.  Its exact exceptional wall is
+Einstein/additional line.  The canonical-pivot wall is empty on the physical
+domain.  Define the specialized polynomial
 \[
- Q_{21}\bigl(\ell(\ell+1),\omega^2\bigr)=0,
+ R_\ell(x):=Q_{21}\bigl(\ell(\ell+1),x\bigr),
+ \qquad x=\widehat\omega^2.
 \]
-where $Q_{21}$ is the certified bidegree-$(21,21)$ polynomial.  Exact Sturm
-counts give respectively $0,6,2,6,2$ real nonzero zeros of this induced
-$p=-2$ coefficient for
+Away from $R_\ell(\widehat\omega^2)=0$, the first finite $p=-2$ induced
+pairing is nonzero, so the mixed line is nonradical in this filtered sense.
+On $R_\ell(\widehat\omega^2)=0$ that induced coefficient vanishes and the
+deeper filtration is open.  Thus $Q_{21}=0$ is not a second pivot or
+construction wall: it is precisely the degeneracy locus of the $p=-2$
+finite-line pairing.  Here $Q_{21}$ is the certified
+bidegree-$(21,21)$ polynomial.  Exact Sturm counts give respectively
+$0,6,2,6,2$ real nonzero zeros of $R_\ell(\widehat\omega^2)$ for
 $\ell=2$, $\ell=3$, $4\le\ell\le10$, $11\le\ell\le40$, and
 $\ell\ge41$; these are not physical scattering thresholds.\par
 \textbf{Not claimed.} The axial $X_2$ branch, terminal-only polar prefixes,
-the deeper filtration on the $Q_{21}$ wall, all-order polar solutions, and
+the deeper filtration on $R_\ell(\widehat\omega^2)=0$, all-order polar solutions, and
 horizon-to-infinity matching remain open.  No asymptotically flat phase
 space, Hilbert norm, scattering theory, quasinormal spectrum, ringdown,
 stability, particle, positivity, or quantum theorem follows.
 \end{resultcard}
 
-The old $\ell=2$, $M\omega=3/5$ divergence table omitted differentiated
+The full 282-term $Q_{21}$ is machine readable at
+\cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/current_artifacts/q21-finite-line-factor.json}
+(SHA-256
+\cert{9c08f3c59adfd2da973872a0d718ef97249fa91b690f63df40bdcac81cae7f62}).
+
+The old $\ell=2$, $\widehat\omega=3/5$ divergence table omitted differentiated
 $c'$ forcing in the axial reconstruction and is superseded.  That point is
-not on the polar $Q_{21}$ wall, but this does not restore its earlier
+not on the polar $R_2$ locus, but this does not restore its earlier
 Einstein-selection interpretation.  Existing AdS/Euclidean selection
 arguments operate in different boundary classes
 \cite{Maldacena,LuPangPope}.  A physical asymptotically flat theorem still
@@ -662,6 +732,16 @@ wave-packet flux topology, and a well-posed exterior problem.  Covariant
 phase-space and canonical-energy methods provide the conceptual comparison,
 but their global hypotheses are not asserted here
 \cite{IyerWald,HollandsWald}.
+
+\subsection{From formal radial pairing to physical boundary conditions}
+
+The result above classifies a fixed formal infinity module and one
+action-derived current representative.  A physical boundary theorem would
+add convergent or suitably summable metric reconstructions, match the
+infinity data to future-horizon data, specify an asymptotically flat
+wave-packet phase space and flux topology, and prove a well-posed exterior
+initial-boundary problem.  None of these steps is inferred from radial
+integrability of a monochromatic formal series.
 
 \section{Can a positive quantum state be constructed?}
 
@@ -692,6 +772,21 @@ classification\cite{DeserSchwimmer}.  A one-loop divergence, beta function,
 trace anomaly, and BV
 master-equation breaking are related only after the gauge-fixed determinant,
 normalization, descent, and quotient maps have been supplied.
+
+The numbers in Eq.~\eqref{eq:anomaly-coefficients} are established
+conformal-graviton coefficients, not new constants.  With the common
+$(4\pi)^{-2}$ prefactor and the anomaly written as $cC^2-aE_4$, the convention
+crosswalk is
+\begin{equation}
+ (c,-a)_{\rm here}=\left(\frac{199}{30},-\frac{87}{20}\right)
+                  =(c,-a)_{\rm FT},
+ \label{eq:anomaly-convention-crosswalk}
+\end{equation}
+after translating the Euler-sign convention of Fradkin and
+Tseytlin\cite{FradkinTseytlin1984}.  The contribution here is their
+reconstruction from the declared determinant complex, including zero-mode,
+Jacobian, and ghost bookkeeping, and the explicit map to the nontrivial
+class in $H^{1,4}(s\mid\dd)$.
 
 The complete local determinant and heat-kernel ledger is:
 \begin{center}
@@ -777,18 +872,15 @@ repair.  Indeed, the passive compensator leaves a gauge-invariant dressed
 trace in the classical causal complex.  Repairing that obstruction led to
 the changed counterflow experiment in Section~\ref{sec:counterflow}.
 
-Separately, Phase 2 audits the Hadamard gate on one complete causal 54-row
-Berger BV complex.  The local Hadamard singular structure, causal commutator,
-and a conditional lifting statement are available.  A full covariance is
-not constructed because the explicit 104-dimensional stationary carrier
-$A_{104}$, its Cauchy pairing $q^{\rm Cauchy}_{104}$, Green carrier
-$G^{\rm Cauchy}_{104}$, and real structure have not been supplied.  The
-current ledger leaves 288 coordinates undetermined; the two tested compatible
-completion branches have zero-eigenspace dimensions 24 and 0.  This is a
-missing-object obstruction, not a proof that no BRST-compatible Hadamard
-covariance exists.  The reduced positive $\eta$ result above does not define
-the adjoint on this full BV carrier and cannot be used to fill the gap.  Thus
-no positive full-BV state or one-particle Hilbert space has been constructed.
+Separately, on one complete causal Berger BV complex the local Hadamard
+singular structure and causal commutator are available, but a full
+BRST-compatible covariance is not constructed because its stationary Cauchy
+carrier and real structure are incomplete.  This is a missing-object
+obstruction, not a proof that no BRST-compatible Hadamard covariance exists;
+details are recorded in Appendix~\ref{app:nonpromotions}.  The reduced
+positive $\eta$ result above does not define an adjoint on this full BV
+complex.  Thus no positive full-BV state or one-particle Hilbert space has
+been constructed.
 
 The immediate quantum literature includes conformal-gauge fixing and its
 additional ghosts, local BRST cohomology, and several alternative
@@ -839,12 +931,29 @@ have rank three and give
  \alpha_B=\frac{2C}{qx^2}.
  \label{eq:counterflow-stationary-family}
 \end{equation}
-The connected causal trace-healthy component is
+The connected trace-principal healthy stationary component is
 \begin{equation}
  x>0,\qquad C>0,\qquad
  \frac{13-3\sqrt{17}}4<q<\frac14.
  \label{eq:counterflow-healthy-component}
 \end{equation}
+The word ``healthy'' here has a specific homogeneous trace-block meaning,
+not positivity of the complete physical theory.  The exact coefficients are
+\begin{equation}
+ K_{\rm tr}=-\frac{C(4q-1)}{2qx}>0,
+ \qquad
+ M_{\rm tr}=\frac{C(2q^2-13q+2)}{6q}<0,
+ \qquad
+ \lambda_{\rm tr}^2
+ =-\frac{x(2q^2-13q+2)}{3(4q-1)}<0.
+ \label{eq:counterflow-trace-inequalities}
+\end{equation}
+Thus $q<1/4$ gives a positive trace velocity coefficient, while
+$q>(13-3\sqrt{17})/4$ gives the negative trace mass coefficient and purely
+oscillatory homogeneous trace roots.  The conditions $x>0$ and $C>0$ mean a
+positive spatial scale and positive relative-phase kinetic normalization
+times nonzero clock rate.  A complete Green homotopy is certified at the
+selected point below, not throughout this whole stationary family.
 The selected causal point fixes $\mu^2=1$ and
 \begin{equation}
  q=\frac9{40},\quad x=1,\quad C=\frac9{16},\quad
@@ -886,8 +995,10 @@ and this graded complex.
 \begin{resultcard}{Result card E: causal construction and physical nonselection}
 \textbf{Theory.} Equation~\eqref{eq:complete-counterflow-action} with the
 gauge transformations~\eqref{eq:counterflow-gauge}.\par
-\textbf{Background.} The selected positive biaxial Berger solution and its
-connected trace-healthy same-field stationary retuning family.\par
+\textbf{Background.} The selected causal biaxial Berger solution with
+$\mu^2>0$ and homogeneous trace inequalities
+\eqref{eq:counterflow-trace-inequalities}, together with its connected
+trace-principal healthy same-field stationary retuning family.\par
 \textbf{Domain.} The free cyclic BV complex
 \eqref{eq:counterflow-bv-complex}; at the selected point its diagonal-$U(1)$
 summand is contractible, and the physical spectral reduction uses complete
@@ -1031,7 +1142,7 @@ class \\
 Reduced classical directions & Additional axial/polar compact-product
 directions are nonradical; counterflow causal parent and exact charge
 classification; axial formal Schwarzschild counterexample and polar finite
-mixed line with exact $Q_{21}$ wall & Universal asymptotic phase space,
+mixed line with exact $R_\ell$ degeneracy locus & Universal asymptotic phase space,
 positive energy theorem, and acceptable counterflow spectrum \\
 Nonlinear continuation & Five-charge necessary-and-sufficient finite
 exponential-polynomial cone; bounded resonance ledger and classified
@@ -1116,7 +1227,8 @@ presymplectic form, nonlinear Taub cone, and resonances.
 \paragraph{Quantum conformal gravity.}
 One-loop divergences, conformal anomalies, BRST cohomology, and conformal
 gauge fixing have extensive prior literatures
-\cite{FradkinTseytlin,BarnichBrandtHenneaux,Rachwal,OdaOhta}.  The phase-one quantum
+\cite{FradkinTseytlin1982,FradkinTseytlin1984,
+BarnichBrandtHenneaux,Rachwal,OdaOhta}.  The phase-one quantum
 claim is narrower: an exact local-BV quotient and coefficient ledger for the
 declared strict theory, followed by a formal $\tau$-adic Wess--Zumino
 trivialization in a changed theory.  The Phase-2 comparison with
@@ -1145,12 +1257,12 @@ endpoint questions.  The most important are not ``finish quantum gravity.''  The
 to the certified formal infinity modules, and determine whether the axial
 counterexample and polar mixed line survive a wave-packet flux topology;
 \item classify the axial $X_2$ branch, terminal-only polar prefixes, and the
-deeper filtration at $Q_{21}=0$;
+deeper filtration at $R_\ell(\widehat\omega^2)=0$;
 \item construct independent $P,T,C$ data and prove BRST and causal-covariance
 compatibility, rather than promoting finite-block $\eta$ existence to a
 state theorem;
-\item supply the missing 104-dimensional stationary carrier and decide the
-Hadamard covariance problem for the complete Berger BV complex;
+\item supply the missing stationary Cauchy carrier and real structure, then
+decide the Hadamard covariance problem for the complete Berger BV complex;
 \item if a new changed theory is proposed, require an open stationary locus
 with causal completeness, positive reduced dynamics, coherent charge
 interpretation, a preserved nonlinear sector, and at least one operational
@@ -1240,6 +1352,36 @@ candidate reaches a positive full quantum state, and the first causally
 complete changed theory fails a robust linear physical-stability test.
 \end{minipage}}
 \end{equation}
+
+\appendix
+
+\section{Scoped nonpromotions retained in the evidence record}
+\label{app:nonpromotions}
+
+\subsection{Dyonic stationary-family preflight}
+
+The attempted dyonic-flat-family extension fails before a sign calculation.
+For nonzero electric parameter the stationary symmetry has no continuous
+global Hamiltonian lift on the circle, since
+$\mathcal L_HA=E\,\dd x$ changes the holonomy.  Electromagnetic duality also
+fails to define a tangent direction in a fixed-Chern sector.  Consequently
+that preflight constructs neither a fixed-coupling open stationary family nor
+a sign, current, inertia, or signature-wall theorem.  It is retained to
+prevent an ill-typed background scan from being read as evidence for Result
+card~A.
+
+\subsection{Berger Hadamard-covariance gate}
+
+The complete causal Berger BV complex has the required local Hadamard
+singular structure, causal commutator, and a conditional lifting statement.
+A full covariance is not constructed because the explicit 104-dimensional
+stationary carrier $A_{104}$, its Cauchy pairing
+$q^{\rm Cauchy}_{104}$, Green carrier $G^{\rm Cauchy}_{104}$, and real
+structure have not been supplied.  The current linear ledger leaves 288
+coordinates undetermined; the two tested compatible completions have
+zero-eigenspace dimensions 24 and 0.  These figures diagnose missing input,
+not nonexistence.  In particular, the finite reduced pseudo-Hermitian metric
+does not complete the full BV adjoint or a BRST-compatible Hadamard state.
 
 \begin{thebibliography}{99}
 
@@ -1419,10 +1561,18 @@ G.~Barnich, F.~Brandt, and M.~Henneaux,
 \emph{Phys. Rept.} \textbf{338} (2000) 439--569,
 \href{https://arxiv.org/abs/hep-th/0002245}{arXiv:hep-th/0002245}.
 
-\bibitem{FradkinTseytlin}
+\bibitem{FradkinTseytlin1982}
 E.~S.~Fradkin and A.~A.~Tseytlin,
 ``Renormalizable asymptotically free quantum theory of gravity,''
 \emph{Nucl. Phys. B} \textbf{201} (1982) 469--491.
+
+\bibitem{FradkinTseytlin1984}
+E.~S.~Fradkin and A.~A.~Tseytlin,
+``Conformal anomaly in Weyl theory and anomaly free superconformal
+theories,''
+\emph{Phys. Lett. B} \textbf{134} (1984) 187--193,
+\href{https://doi.org/10.1016/0370-2693(84)90668-3}
+{doi:10.1016/0370-2693(84)90668-3}.
 
 \bibitem{DeserSchwimmer}
 S.~Deser and A.~Schwimmer,
