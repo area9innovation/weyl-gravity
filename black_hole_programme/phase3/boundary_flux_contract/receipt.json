@@ -1,0 +1,41 @@
+{
+  "schema": "phase3-black-hole-boundary-flux-contract-tier-receipt-v1",
+  "result_id": "PURE_WEYL_PHASE3_BOUNDARY_FLUX_CONTRACT_RECEIPT_V1",
+  "status": "PASS_SCOPED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "commands": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.boundary_flux_contract.produce --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.boundary_flux_contract.verify",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.boundary_flux_contract.tests.test_contract -v",
+      "status": "PASS",
+      "result": "6 tests, including orientation, premature-scattering and singular-basis mutations"
+    },
+    {
+      "command": "python3 residual_atlas/validate_fragment.py residual_atlas/phase3-black-hole-boundary-flux-contract-fragment-v1.json",
+      "status": "PASS"
+    }
+  ],
+  "artifact_sha256": {
+    "black_hole_programme/phase3/boundary_flux_contract/produce.py": "3cf910b697f73dfd2fc471ade3e73fb742cdab82b3d52e930e97425aa19f4b8a",
+    "black_hole_programme/phase3/boundary_flux_contract/verify.py": "5aa3ca6bdb31ecc802cb92951c21823bc95a25a1a166800619114698d5c84e54",
+    "black_hole_programme/phase3/boundary_flux_contract/schema.json": "a0e0215b7650d4f74850528175e7190dc40d8ee7f2575ed7fa45c68b35c3f03b",
+    "black_hole_programme/phase3/boundary_flux_contract/certificate.json": "3ee56677677f66df7ccba021a1e40cfd3af7e548aa24f991b8bae8f4689550ef",
+    "black_hole_programme/phase3/boundary_flux_contract/tests/test_contract.py": "31b46b050bd8393eb24c542ea29c6ae55b597330537a7642b155242d43663ce3",
+    "residual_atlas/phase3-black-hole-boundary-flux-contract-fragment-v1.json": "dab25cacd7f1ab6d51a95d39e2c69e1e16f5aa9ab20c9e375177f9c046ed7968"
+  },
+  "tier_boundary": {
+    "tier0": "PASS: Python compile, JSON parse, exact-path diff check",
+    "tier1": "PASS: producer freshness, independent verifier, six focused tests and atlas validation",
+    "tier2": "Phase-2 artifacts checked by frozen content hashes; their producers were deliberately not rerun",
+    "tier3": "not run: no theorem promotion outside the new contract and no shared core algebra changed"
+  },
+  "claim_boundary": "The action-derived endpoint quotient and orientation are defined and basis-invariant. Global endpoint traces, connection/scattering matrices, flux inertia, stability and CPT data remain unconstructed."
+}
+

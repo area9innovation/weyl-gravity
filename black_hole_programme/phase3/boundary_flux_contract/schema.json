@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase3-black-hole-boundary-flux-contract-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_token",
+    "lifecycle",
+    "dependency_tags",
+    "declaration",
+    "action_derived_current",
+    "mathematical_contract",
+    "exceptional_strata",
+    "basis_invariance",
+    "phase2_application",
+    "input_snapshot",
+    "claim_flags",
+    "does_not_establish",
+    "verification"
+  ],
+  "properties": {
+    "schema": {"const": "phase3-black-hole-boundary-flux-contract-v1"},
+    "result_id": {"const": "PURE_WEYL_PHASE3_BOUNDARY_FLUX_CONTRACT_V1"},
+    "result_token": {"const": "BOUNDARY_FLUX_CONTRACT_DEFINED_GLOBAL_CHANNEL_SPACE_UNPOPULATED"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "REDUCED-MODE"}],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "declaration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "dimensionless_variables", "mode_domain", "fields", "gauge_group", "pilot_domain"],
+      "properties": {
+        "theory": {"type": "string", "minLength": 20},
+        "background": {"type": "string", "minLength": 10},
+        "dimensionless_variables": {"type": "string"},
+        "mode_domain": {"type": "string"},
+        "fields": {"type": "string"},
+        "gauge_group": {"type": "string"},
+        "pilot_domain": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["parity", "ell", "hat_omega_interval", "legacy_fixture_inside", "negative_frequency_rule", "omega_zero"],
+          "properties": {
+            "parity": {"const": "axial"},
+            "ell": {"const": 2},
+            "hat_omega_interval": {"const": ["1/2", "3/4"]},
+            "legacy_fixture_inside": {"const": "3/5"},
+            "negative_frequency_rule": {"type": "string"},
+            "omega_zero": {"type": "string"}
+          }
+        }
+      }
+    },
+    "action_derived_current": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["E_tensor", "theta", "presymplectic_current", "real_frequency_hermitian_flux", "representative", "orientation"],
+      "properties": {
+        "E_tensor": {"type": "string"},
+        "theta": {"type": "string"},
+        "presymplectic_current": {"type": "string"},
+        "real_frequency_hermitian_flux": {"type": "string"},
+        "representative": {"type": "string"},
+        "orientation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["boundary_identity", "outgoing", "incoming", "convention"],
+          "properties": {
+            "boundary_identity": {"const": "J_Hplus + J_Iplus - J_Hminus - J_Iminus = 0"},
+            "outgoing": {"const": ["Hplus", "Iplus"]},
+            "incoming": {"const": ["Hminus", "Iminus"]},
+            "convention": {"type": "string"}
+          }
+        }
+      }
+    },
+    "mathematical_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["endpoint_labels", "reconstruction_class", "small_gauge_subspace", "divergent_map", "finite_space", "radical", "physical_endpoint_space", "incoming_space", "outgoing_space", "connection_vs_scattering", "conservation_gate"],
+      "properties": {
+        "endpoint_labels": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["Hplus", "Hminus", "Iplus", "Iminus"],
+          "properties": {
+            "Hplus": {"type": "string"}, "Hminus": {"type": "string"},
+            "Iplus": {"type": "string"}, "Iminus": {"type": "string"}
+          }
+        },
+        "reconstruction_class": {"type": "string"},
+        "small_gauge_subspace": {"type": "string"},
+        "divergent_map": {"type": "string"},
+        "finite_space": {"type": "string", "pattern": "F_B=ker D_B"},
+        "radical": {"type": "string", "pattern": "R_B="},
+        "physical_endpoint_space": {"type": "string", "pattern": "P_B=F_B/R_B"},
+        "incoming_space": {"const": "P_in=P_Hminus direct_sum P_Iminus"},
+        "outgoing_space": {"const": "P_out=P_Hplus direct_sum P_Iplus"},
+        "connection_vs_scattering": {"type": "string"},
+        "conservation_gate": {"type": "string", "pattern": "T\\^dagger J_out T=J_in"}
+      }
+    },
+    "exceptional_strata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["omega_zero", "algebraically_special_or_repeated_root", "polar_Q21", "axial_imported"],
+      "properties": {
+        "omega_zero": {"type": "object"},
+        "algebraically_special_or_repeated_root": {"type": "string"},
+        "polar_Q21": {
+          "type": "object",
+          "required": ["locus", "disposition", "not_a_second_wall"],
+          "properties": {"not_a_second_wall": {"const": true}},
+          "additionalProperties": true
+        },
+        "axial_imported": {"type": "object"}
+      }
+    },
+    "basis_invariance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theorem", "symbolic_witness", "independent_rational_control"],
+      "properties": {
+        "theorem": {"type": "string"},
+        "symbolic_witness": {"type": "object"},
+        "independent_rational_control": {
+          "type": "object",
+          "required": ["basis_determinant", "finite_dimension_before", "finite_dimension_after", "flux_rank_before", "flux_rank_after", "quotient_dimension_before", "quotient_dimension_after"],
+          "properties": {"basis_determinant": {"not": {"const": "0"}}},
+          "additionalProperties": true
+        }
+      }
+    },
+    "phase2_application": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["imported_axial_basis", "formal_infinity_finiteness", "basis_invariant_statement", "first_exact_nondefinition", "global_channel_status"],
+      "properties": {
+        "imported_axial_basis": {"const": ["E0", "X0"]},
+        "formal_infinity_finiteness": {"type": "object"},
+        "basis_invariant_statement": {"type": "string"},
+        "first_exact_nondefinition": {"type": "string"},
+        "global_channel_status": {"const": "UNPOPULATED_NOT_ZERO"}
+      }
+    },
+    "input_snapshot": {
+      "type": "object",
+      "minProperties": 8,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["boundary_flux_contract_defined", "basis_invariance_proved", "phase2_formal_infinity_module_imported", "global_endpoint_spaces_populated", "connection_matrix_constructed", "scattering_matrix_constructed", "flux_inertia_computed", "stability_or_CPT_established"],
+      "properties": {
+        "boundary_flux_contract_defined": {"const": true},
+        "basis_invariance_proved": {"const": true},
+        "phase2_formal_infinity_module_imported": {"const": true},
+        "global_endpoint_spaces_populated": {"const": false},
+        "connection_matrix_constructed": {"const": false},
+        "scattering_matrix_constructed": {"const": false},
+        "flux_inertia_computed": {"const": false},
+        "stability_or_CPT_established": {"const": false}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "verification": {"type": "object", "required": ["producer", "independent", "tests", "atlas"], "additionalProperties": false, "properties": {"producer": {"type": "string"}, "independent": {"type": "string"}, "tests": {"type": "string"}, "atlas": {"type": "string"}}}
+  }
+}

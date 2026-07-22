@@ -1,0 +1,92 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "The boundary/flux quotient contract and its basis invariance are certified. The imported Phase-2 formal infinity module does not populate global endpoint traces, a connection matrix, scattering channels, flux inertia, stability or CPT data.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "black_hole_programme/phase3/boundary_flux_contract/certificate.json",
+          "result_id": "PURE_WEYL_PHASE3_BOUNDARY_FLUX_CONTRACT_V1",
+          "sha256": "3ee56677677f66df7ccba021a1e40cfd3af7e548aa24f991b8bae8f4689550ef"
+        }
+      ],
+      "id": "black_hole.schwarzschild.phase3.boundary_flux_contract",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Complete four-endpoint bases and global exterior traces are not yet constructed.",
+          "status": "OPEN"
+        },
+        "lee_wald": {
+          "statement": "The action-derived current, endpoint orientation, finite subspace, radical quotient and basis-covariance laws are frozen exactly.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "omega=0, repeated-root strata and the polar Q21 locus are separated rather than filled by generic continuation.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No nonlinear source is evaluated.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "No retarded Green operator or global scattering map is constructed.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No nonlinear correction is evaluated.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "No compact second-order Taub map enters this linear boundary contract.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "Schwarzschild exterior, M>0",
+        "boundaries": "Hplus, Hminus, Iplus and Iminus contract; no global traces populated",
+        "carrier": "formal endpoint solution data reconstructed to metric perturbations",
+        "charge_sector": "small endpoint gauge quotient; large or charged symmetries retained",
+        "degree": 1,
+        "ell": "pilot ell=2; abstract contract for integer ell>=2",
+        "k": "radial endpoint jets",
+        "m": "real-field conjugate harmonic pairs",
+        "omega": "pilot hat_omega in [1/2,3/4]; omega=0 separate",
+        "parity": "axial pilot; contract also names the future polar strata",
+        "theory": "strict linearized four-dimensional pure Weyl C^2 gravity"
+      }
+    }
+  ],
+  "generated_by": "black_hole_programme/phase3/boundary_flux_contract/produce.py",
+  "generated_by_sha256": "3cf910b697f73dfd2fc471ade3e73fb742cdab82b3d52e930e97425aa19f4b8a",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "black_hole",
+  "verification_commands": [
+    "python3 -m black_hole_programme.phase3.boundary_flux_contract.produce --check",
+    "python3 -m black_hole_programme.phase3.boundary_flux_contract.verify",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/phase3-black-hole-boundary-flux-contract-fragment-v1.json"
+  ]
+}

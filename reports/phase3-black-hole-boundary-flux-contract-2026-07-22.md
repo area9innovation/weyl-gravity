@@ -1,0 +1,181 @@
+# Phase 3 Schwarzschild boundary/flux contract
+
+Result: `BOUNDARY_FLUX_CONTRACT_DEFINED_GLOBAL_CHANNEL_SPACE_UNPOPULATED`
+
+Dependency tags: `LOCAL-ALGEBRAIC` + `REDUCED-MODE`
+
+Lifecycle: `CLASSIFIED`
+
+## Outcome
+
+The action-derived boundary and flux objects required by the Schwarzschild
+Bach scattering programme are now defined.  The construction is invariant
+under changes of endpoint basis.  Applying it to the frozen Phase-2 evidence
+also identifies the first exact nondefinition: those artifacts contain formal
+infinity modules, but no four-endpoint trace maps or global exterior solution
+relation.  Consequently the incoming space, outgoing space, connection
+matrix and scattering matrix are presently **unpopulated, not zero**.
+
+This is a successful contract theorem and a fail-closed global-channel
+disposition.  It is not evidence for either global Einstein selection or a
+global additional scattering channel.
+
+## Action-derived current and orientation
+
+For
+
+\[
+ S_{\rm W}=\alpha_{\rm W}\int\sqrt{-g}\,
+ C_{abcd}C^{abcd},
+ \qquad E^{abcd}=2\alpha_{\rm W}C^{abcd},
+\]
+
+the frozen representative is
+
+\[
+ \theta^a(h)=2E^{abcd}\nabla_d h_{bc}
+ -2h_{bc}\nabla_dE^{abcd},
+\]
+
+with the density variation retained in
+\(\omega^a(h_1,h_2)=\delta_1\theta^a(h_2)-\delta_2\theta^a(h_1)\).
+On a real-frequency shell the endpoint form is the Hermitian form
+
+\[
+ J_B(h_1,h_2)
+ =i\int_B\omega^a(\bar h_1,h_2)\,d\Sigma_a.
+\]
+
+The Stokes orientation is frozen as
+
+\[
+ J_{\mathcal H^+}+J_{\mathscr I^+}
+ -J_{\mathcal H^-}-J_{\mathscr I^-}=0.
+\]
+
+Thus \(\mathcal H^-\oplus\mathscr I^-\) is incoming and
+\(\mathcal H^+\oplus\mathscr I^+\) outgoing.  An orientation sign is not
+interpreted as positivity.
+
+## Gauge, reconstruction and quotient
+
+The metric equivalence relation includes linearized diffeomorphisms and Weyl
+shifts.  Only endpoint-preserving transformations with zero boundary
+Hamiltonian are quotiented as small gauge; large or charged endpoint
+symmetries remain visible.
+
+A curvature carrier \(\psi=\delta R[h]\) enters the endpoint space only when
+its metric lift:
+
+1. satisfies every original linearized Ricci reconstruction row;
+2. obeys the selected local gauge conditions;
+3. lies in the declared endpoint polyhomogeneous class; and
+4. has finite action-derived flux against every admitted test jet.
+
+Homogeneous Einstein additions are retained as lift freedom.  They are not
+silently normalized away.
+
+For each endpoint \(B\), let \(D_B\) collect every nonintegrable coefficient
+of the current.  The contract defines
+
+\[
+ F_B=\ker D_B,
+ \qquad
+ R_B=\{x\in F_B:J_B(x,y)=0\ \forall y\in F_B\},
+ \qquad
+ P_B=F_B/R_B.
+\]
+
+The physical incoming and outgoing candidates are
+
+\[
+ P_{\rm in}=P_{\mathcal H^-}\oplus P_{\mathscr I^-},
+ \qquad
+ P_{\rm out}=P_{\mathcal H^+}\oplus P_{\mathscr I^+}.
+\]
+
+A local-basis connection matrix is not called a scattering matrix.  A
+scattering map exists only after global solutions induce an existence-and-
+uniqueness trace relation \(P_{\rm in}\to P_{\rm out}\).  Its mandatory
+conservation identity is
+
+\[
+ T^\dagger J_{\rm out}T=J_{\rm in}.
+\]
+
+## Basis-invariance theorem
+
+For an invertible endpoint change of basis \(B\),
+
+\[
+ D\longmapsto DB,
+ \qquad
+ J\longmapsto B^\dagger JB.
+\]
+
+Therefore
+
+\[
+ \ker(DB)=B^{-1}\ker D,
+ \qquad
+ \ker(B^\dagger JB)=B^{-1}\ker J,
+\]
+
+on the corresponding finite subspace.  The dimensions of \(F_B,R_B,P_B\),
+the rank of the induced form and its Hermitian inertia are basis invariant.
+The producer includes a symbolic two-dimensional congruence identity and an
+independent exact rational control.  The verifier rejects singular basis,
+orientation and premature-scattering mutations.
+
+## Frozen pilot domain
+
+The first downstream pilot is applicable without changing this contract:
+
+\[
+ \ell=2,
+ \qquad
+ \widehat\omega=M\omega\in[1/2,3/4].
+\]
+
+It contains \(\widehat\omega=3/5\), but is an interval computation rather
+than a fixture replay.  Negative frequencies follow only through the
+declared real-field involution after the positive-frequency contract is
+verified.  The point \(\omega=0\) remains a separate static stratum.
+
+## Exceptional strata
+
+- Every repeated indicial root, logarithmic partner, normalization pole,
+  vanishing pivot or rank change is treated as a separate stratum.
+- The polar exceptional set is the single certified locus
+  \(R_\ell(\widehat\omega^2)=Q_{21}(\ell(\ell+1),\widehat\omega^2)=0\).
+  On it the first finite \(p=-2\) form vanishes and the deeper filtration is
+  open.  It is not split into a second wall.
+- The imported axial \(E_0/X_0\) counterexample has no exceptional point on
+  its declared nonzero-real-frequency domain.  The axial \(X_2\) direction
+  remains unclassified.
+
+## Exact Phase-2 import and boundary
+
+All Phase-2 inputs are reused by SHA-256 and no producer is rerun.  The
+formal infinity span generated by \((E_0,X_0)\) remains finite under every
+invertible mixing of those representatives.  This does not supply its full
+finite Hermitian Gram matrix, endpoint radical, horizon traces or global
+matching.
+
+The result does not establish convergence of the formal series, generic-
+\(\ell\) horizon bases, a connection or scattering matrix, a nonzero or zero
+additional global channel, flux inertia, QNMs, stability, particles,
+positivity, CPT or unitarity.
+
+## Verification
+
+```text
+python3 -m black_hole_programme.phase3.boundary_flux_contract.produce --check
+python3 -m black_hole_programme.phase3.boundary_flux_contract.verify
+python3 -m unittest black_hole_programme.phase3.boundary_flux_contract.tests.test_contract -v
+python3 residual_atlas/validate_fragment.py residual_atlas/phase3-black-hole-boundary-flux-contract-fragment-v1.json
+```
+
+CLOSE-OUT: DONE — the Schwarzschild Bach boundary/flux contract is action-derived and basis-invariant; the frozen Phase-2 data leave global channel spaces unpopulated rather than zero.
+
+EVIDENCE: black_hole_programme/phase3/boundary_flux_contract/certificate.json
