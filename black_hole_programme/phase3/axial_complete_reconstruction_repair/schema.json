@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phase 3 complete axial reconstruction repair",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "lifecycle",
+    "declaration",
+    "complete_reconstruction",
+    "dimension_and_rank",
+    "endpoint_bases",
+    "x0_and_legacy_reaudit",
+    "exceptional_set",
+    "supersedes",
+    "disposition",
+    "claim_flags",
+    "does_not_establish",
+    "verification"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-black-hole-axial-complete-reconstruction-repair-v1"
+    },
+    "result_token": {
+      "const": "BH_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_SIX_COLUMN_BASES"
+    },
+    "lifecycle": {"const": "CLASSIFIED"},
+    "disposition": {"const": "COMPLETE_LOCAL_ENDPOINT_RECONSTRUCTION_REPAIRED"},
+    "complete_reconstruction": {
+      "type": "object",
+      "required": ["constraint", "H0_reconstruction", "flow6", "kernel2", "row_theorem"]
+    },
+    "dimension_and_rank": {
+      "type": "object",
+      "properties": {
+        "carrier_dimension": {"const": 4},
+        "Einstein_kernel_dimension": {"const": 2},
+        "complete_metric_dimension": {"const": 6}
+      },
+      "required": ["carrier_dimension", "Einstein_kernel_dimension", "complete_metric_dimension"]
+    },
+    "endpoint_bases": {
+      "type": "object",
+      "required": ["horizon", "infinity"]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "complete_three_row_reconstruction_certified",
+        "six_column_horizon_basis_certified",
+        "six_column_infinity_formal_basis_certified",
+        "global_matching_certified",
+        "finite_flux_certified",
+        "scattering_certified"
+      ]
+    },
+    "does_not_establish": {"type": "array", "minItems": 5}
+  },
+  "additionalProperties": true
+}

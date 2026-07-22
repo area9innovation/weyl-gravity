@@ -1,0 +1,69 @@
+{
+  "description_axes": ["causal", "symplectic", "nonlinear", "observational", "quantum"],
+  "entries": [
+    {
+      "id": "black_hole.schwarzschild.phase3.axial_complete_reconstruction_repair",
+      "claim_boundary": "For axial ell=2 Schwarzschild and real M omega in [1/2,3/4], the omitted v-phi Ricci row is an exactly propagated constraint C'=-2C/r. Its zero fibre is a six-dimensional complete formal endpoint module: four Ricci-carrier lifts plus two Einstein-kernel columns at both horizon and infinity. Phase-2 X0 is repaired by an exact transverse addition, while legacy E0=T/2 is not a complete Einstein solution. No global matching or flux claim follows.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "symplectic": "NO_CERTIFIED_MAP",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+          "result_id": "PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR",
+          "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990"
+        }
+      ],
+      "mode_data": {
+        "dispersion": {
+          "status": "CERTIFIED",
+          "statement": "Six exact formal columns: four carrier lifts and two complete Einstein-kernel modes, with no real pilot-interval exception."
+        },
+        "lee_wald": {
+          "status": "NO_CERTIFIED_MAP",
+          "statement": "The repaired X0 changes the asymptotic current problem; no finite-flux phase space is promoted."
+        },
+        "resonance": {
+          "status": "CERTIFIED",
+          "statement": "The analytic n=0 and lower-singular n=1 forced horizon lift resonances have exact zero obstruction."
+        },
+        "second_order": {
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "bounded_or_finite_quasiperiodic": {"status": "NOT_APPLICABLE", "statement": "No nonlinear source."},
+          "causal_retarded": {"status": "NO_CERTIFIED_MAP", "statement": "No global retarded problem."},
+          "smooth_secular": {"status": "NOT_APPLICABLE", "statement": "No quadratic correction."}
+        },
+        "taub_maps": {"status": "NOT_APPLICABLE", "statement": "No compact Taub map."}
+      },
+      "scope": {
+        "theory": "linearized four-dimensional pure Weyl C^2 gravity",
+        "background": "Schwarzschild exterior, M=1, ingoing Eddington-Finkelstein chart",
+        "carrier": "complete axial metric reconstruction over the trace-free Ricci carrier",
+        "parity": "axial",
+        "ell": "2",
+        "m": "axisymmetric harmonic representative",
+        "omega": "real dimensionless M omega in [1/2,3/4]",
+        "k": "all formal endpoint orders",
+        "degree": 1,
+        "boundaries": "separate horizon Frobenius and infinity polyhomogeneous modules; no matching",
+        "charge_sector": "none"
+      }
+    }
+  ],
+  "generated_by": "black_hole_programme/phase3/axial_complete_reconstruction_repair/produce.py",
+  "generated_by_sha256": "f3965825b1a326782c2b9257678c5f90a98c731de36243f5d052d1371a939953",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": ["CERTIFIED", "OBSTRUCTED", "OPEN", "NOT_APPLICABLE", "NO_CERTIFIED_MAP"],
+  "team": "black_hole",
+  "verification_commands": [
+    "PYTHONPATH=black_hole_programme python3 black_hole_programme/phase3/axial_complete_reconstruction_repair/produce.py --check",
+    "PYTHONPATH=black_hole_programme python3 black_hole_programme/phase3/axial_complete_reconstruction_repair/verify.py",
+    "PYTHONPATH=black_hole_programme python3 black_hole_programme/phase3/axial_complete_reconstruction_repair/mutations.py",
+    "python3 -m unittest black_hole_programme.phase3.axial_complete_reconstruction_repair.tests.test_repair"
+  ]
+}
