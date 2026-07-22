@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Compact block structured CPT feasibility v1",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "scope", "source_refs", "generic_blocks", "exceptional_and_residual_ledger", "basis_invariance", "Mannheim_C_gate", "decision", "claim_boundary", "provenance"],
+  "properties": {
+    "result_id": {"const": "COMPACT_BLOCK_STRUCTURED_CPT_FEASIBILITY_V1"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "REDUCED-MODE"}},
+    "generic_blocks": {"type": "object", "required": ["computed_commutant", "all_structured_eta", "canonical_construction", "intrinsic_parameter_walls", "exact_blocks"]},
+    "exceptional_and_residual_ledger": {"type": "object", "required": ["ell1_standard", "ell1_extra_k_zero", "ell1_extra_nonzero_k", "global_generalized_zero_blocks", "residual_scope"]},
+    "basis_invariance": {"type": "object", "required": ["change_of_frame", "preserved_equations", "unconstrained_eigenbasis_metric_accepted"]},
+    "Mannheim_C_gate": {"type": "object", "required": ["eta_is_not_C", "unique_fundamental_symmetry_candidate_C0_constructed", "genuine_Mannheim_C_certified", "first_obstruction"]},
+    "claim_boundary": {"type": "object", "required": ["establishes", "does_not_establish"]}
+  }
+}

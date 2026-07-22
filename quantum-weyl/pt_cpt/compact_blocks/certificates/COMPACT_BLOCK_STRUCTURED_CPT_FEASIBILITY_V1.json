@@ -1,0 +1,418 @@
+{
+  "$schema": "../schema/compact-block-structured-cpt-feasibility-v1.schema.json",
+  "Mannheim_C_gate": {
+    "eta_is_not_C": true,
+    "first_obstruction": "the imported fixed-N=2 carrier declares only the orientation-preserving H_product and conjugate real-field involution; it supplies no independent linear P, anti-linear time-reversal T, [C,PT] test, or proved eta/P/C convention",
+    "genuine_Mannheim_C_certified": false,
+    "magnetic_parity_caution": "an orientation-reversing parity may change the magnetic bundle sector and cannot be invented as an endomorphism of the fixed-N=2 carrier",
+    "required_next_input": "a content-addressed discrete P/T or combined parity-charge-conjugation crosswalk on the fixed or paired magnetic sectors",
+    "unique_fundamental_symmetry_candidate_C0_constructed": true
+  },
+  "basis_invariance": {
+    "change_of_frame": "H'=B^-1 H B, G'=B^dagger G B, eta'=B^dagger eta B, C'=B^-1 C B",
+    "commutant_isomorphism": "Comm(H',symmetry')=B^-1 Comm(H,symmetry) B",
+    "inertia_invariant": "G and eta transform by congruence, so rank and inertia are basis independent",
+    "preserved_equations": [
+      "H^dagger eta=eta H",
+      "eta>0",
+      "C^2=1",
+      "C^dagger G=G C",
+      "eta=G C"
+    ],
+    "rejection_reason": "a separately fitted matrix for each eigenvector/m/k without the tensor transformation law, H_product constancy on irreducible harmonic factors, real-involution relation and pole-free parameter family is not a structured eta",
+    "unconstrained_eigenbasis_metric_accepted": false
+  },
+  "claim_boundary": {
+    "does_not_establish": [
+      "a genuine Mannheim C without independently certified P and T",
+      "a positive metric on invariant-state cohomology or a final global orbit quotient",
+      "survival of pure exceptional ell=1 directions through the nonlinear Taub gate",
+      "a Hadamard state, particles, interacting positivity, scattering, anomaly/QME restoration or unitarity"
+    ],
+    "establishes": [
+      "the full rational/polynomial H_product-, parity- and reality-compatible positive eta cone on every generic branch fibre",
+      "the exact generic commutant before the eta solve",
+      "a basis-invariant unique positive fundamental symmetry C0 relative to the imported action form",
+      "the intrinsic and candidate-dependent singular walls",
+      "the ell=1 standard and exceptional positive-block dispositions and the residual/global exclusions"
+    ]
+  },
+  "decision": {
+    "canonical_eta0": "EXACTLY_CONSTRUCTED_AND_POSITIVE_ON_PHYSICAL_DOMAIN",
+    "fundamental_symmetry_C0": "EXACTLY_CONSTRUCTED_AND_UNIQUE_WITHIN_DECLARED_COMMUTANT",
+    "genuine_Mannheim_C": "NOT_ESTABLISHED_MISSING_PT_DATUM",
+    "particles_scattering_or_unitarity": "NOT_ESTABLISHED",
+    "residual_invariant_state_metric": "NOT_ESTABLISHED",
+    "structured_positive_eta": "EXACT_NONEMPTY_CONE_CLASSIFIED"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exceptional_and_residual_ledger": {
+    "ell1_extra_k_zero": {
+      "Gram": [
+        [
+          "16",
+          "0"
+        ],
+        [
+          "0",
+          "3"
+        ]
+      ],
+      "commutant": "C direct-sum C by spatial parity",
+      "eta_classification": "diag(a_axial,a_polar), both positive",
+      "nonlinear_warning": "every nonzero pure exceptional tangent fails the imported second-order compact Taub gate",
+      "shell": "omega^2=4/3",
+      "unique_positive_GC_involution": "I_2"
+    },
+    "ell1_extra_nonzero_k": {
+      "Gram_per_parity": "4*(3*k^2+4)",
+      "commutant": "C direct-sum C by spatial parity",
+      "eta_classification": "diag(a_axial,a_polar), both positive",
+      "shell": "omega^2=k^2+4/3",
+      "unique_positive_GC_involution": "I_2"
+    },
+    "ell1_standard": {
+      "action_form": "positive on both parity lines",
+      "commutant": "C direct-sum C",
+      "eta_classification": "diag(a_axial,a_polar), both positive and linked to opposite momentum by reality",
+      "parity_blocks": [
+        "axial",
+        "polar"
+      ],
+      "shell": "omega^2=k^2+4",
+      "unique_positive_GC_involution": "I_2"
+    },
+    "global_generalized_zero_blocks": {
+      "homogeneous": "solution cofiber zero; generalized-zero/Jordan carrier has no imported positive-frequency complex structure",
+      "structured_eta_classification": "NOT_APPLICABLE_IN_THIS_POSITIVE_FREQUENCY_PILOT",
+      "twist": "solution cofiber zero; generalized-zero position/velocity carrier has no imported positive-frequency complex structure"
+    },
+    "residual_scope": {
+      "H_product_representation_retained": true,
+      "branchwise_solution_relative_cohomology": "CERTIFIED_BRANCHWISE",
+      "consequence": "the metric classification is on certified physical solution/cofiber blocks as H_product representations, not on invariant-state cohomology or a final orbit quotient",
+      "global_orbit_or_symplectic_quotient": "NO_CERTIFIED_MAP",
+      "imported_result_id": "EINSTEIN_WEYL_RELATIVE_RESIDUAL_ACTION_DESCENT_V1",
+      "support_local_physical_branch_projection": "NO_CERTIFIED_MAP"
+    }
+  },
+  "generic_blocks": {
+    "Hamiltonian_convention": {
+      "H": "the positive spectral square root diag(sqrt(q_minus),sqrt(q_plus),sqrt(p),sqrt(p)) on the selected positive-frequency carrier",
+      "H_confused_with_H_squared": false,
+      "H_squared": "diag(q_minus,q_plus,p,p) in the normal branch frame",
+      "commutant_identity": "sqrt(x) is injective on the positive spectrum, so H and H^2 have identical spectral projectors and Comm(H)=Comm(H^2)",
+      "positivity_proof": [
+        "lambda>=6 implies lambda-sqrt(2*lambda)>0 because lambda>2; hence q_minus>=lambda-sqrt(2*lambda)>0",
+        "q_plus=k^2+lambda+sqrt(2*lambda)>0",
+        "p=k^2+lambda-2/3>=16/3>0"
+      ],
+      "pseudo_Hermiticity": "every classified eta is block diagonal on those common spectral projectors, hence H^dagger*eta=eta*H; C0 is polynomial in H^2 and therefore commutes with H",
+      "relative_operator_distinction": "the imported q-block relative spectral operator maps the Einstein action form to the restricted Weyl action form; it is not H or H^2"
+    },
+    "all_structured_eta": {
+      "candidate_singular_walls": [
+        "a pole in any matrix entry",
+        "a zero of any LDL pivot",
+        "det(A_minus)*det(A_plus)*det(A_p)=0"
+      ],
+      "coefficient_class": "all entries are polynomial or rational functions on the declared parameter domain with no poles there",
+      "full_H_product_spectral_frame": "eta=A_minus direct-sum A_plus direct-sum A_p with Hermitian sizes 2,2,4 on the axial/polar multiplicity spaces",
+      "k_zero_specialization": "all three Hermitian multiplicity matrices are real symmetric",
+      "optional_parity_graded_slice": "setting all axial-polar mixing entries to zero recovers two copies of diag(a_minus,a_plus,A_p2), with each 2x2 extra block positive iff u>0 and u*v-|z|^2>0",
+      "real_involution": "eta(lambda,-k)=conjugate(eta(lambda,k)); entrywise real parts are even in k and imaginary parts are odd in k",
+      "representative_ambiguity": "under B=B_minus direct-sum B_plus direct-sum B_p, eta transforms by B^dagger*eta*B; matrices related this way represent the same Hermitian tensor in different multiplicity frames",
+      "strict_positivity": "A_minus>0, A_plus>0 and A_p>0, equivalently every leading principal minor in each declared frame is positive (or every exact LDL pivot is positive)"
+    },
+    "canonical_construction": {
+      "Hermitian_involution": true,
+      "commutes_with_H_and_H_product": true,
+      "definition": "C0=sign_G on the three H spectral summands: -I_2 on the full q_minus multiplicity and +I_2,+I_4 on q_plus,p",
+      "eta0_equals_G_times_C0_positive": true,
+      "respects_real_involution": true,
+      "spectral_projector_formula": "P_minus=((H^2-q_plus I)(H^2-p I))/((q_minus-q_plus)(q_minus-p)); C0=I-2P_minus",
+      "uniqueness": "If C is G-self-adjoint, C^2=1, commutes with the declared symmetries and GC>0, G is negative definite on the complete two-copy q_minus multiplicity and positive definite on q_plus and p. Positivity therefore forces C=-I_2,+I_2,+I_4 respectively, even when axial/polar mixing is allowed."
+    },
+    "computed_commutant": {
+      "full_complex_dimension": 24,
+      "full_orientation_preserving_H_product_algebra": "M_2(C) direct-sum M_2(C) direct-sum M_4(C)",
+      "multiplicities": {
+        "p": 4,
+        "q_minus": 2,
+        "q_plus": 2
+      },
+      "optional_parity_graded_subcommutant": {
+        "algebra": "(C direct-sum C direct-sum M_2(C)) direct-sum (C direct-sum C direct-sum M_2(C))",
+        "complex_dimension": 12,
+        "status": "ALGEBRAIC_BOOKKEEPING_ONLY_UNLESS_A_FIXED_BUNDLE_DISCRETE_PARITY_IS_SEPARATELY_CERTIFIED"
+      },
+      "reason": "the three frequencies separate q_minus, q_plus and p, while the connected orientation-preserving H_product does not itself distinguish the isospectral axial and polar copies",
+      "uncertified_parity_label_used_to_shrink_full_commutant": false
+    },
+    "exact_blocks": {
+      "axial": {
+        "Einstein_source_form": [
+          [
+            "lambda",
+            "0"
+          ],
+          [
+            "0",
+            "2"
+          ]
+        ],
+        "complete_C0": "Cq direct-sum I_2 on the extra multiplicity",
+        "complete_eta0": "(Gq*Cq) direct-sum Gextra",
+        "complete_eta0_positive_for_lambda_ge_6_real_k": true,
+        "extra_C0": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "extra_Gram_determinant_on_shell": "lambda**4*(lambda - 2)*(9*lambda - 2)/3",
+        "extra_action_Gram": [
+          [
+            "lambda*(9*k**2*lambda**2 - 12*k**2*lambda + 4*k**2 + 9*lambda**3 - 18*lambda**2)/6",
+            "k*lambda*omega*(3*lambda - 2)**2/6"
+          ],
+          [
+            "k*lambda*omega*(3*lambda - 2)**2/6",
+            "lambda*(27*k**2*lambda**2 - 36*k**2*lambda + 12*k**2 + 36*lambda - 8)/18"
+          ]
+        ],
+        "q_eta0_determinant": "lambda*(9*lambda - 2)",
+        "q_eta0_equals_Gq_C0": [
+          [
+            "3*sqrt(2)*lambda**(3/2)/2",
+            "sqrt(2)*sqrt(lambda)"
+          ],
+          [
+            "sqrt(2)*sqrt(lambda)",
+            "3*sqrt(2)*sqrt(lambda)"
+          ]
+        ],
+        "q_eta0_leading_minor": "3*sqrt(2)*lambda**(3/2)/2",
+        "q_fundamental_symmetry_C0": [
+          [
+            "0",
+            "sqrt(2)/sqrt(lambda)"
+          ],
+          [
+            "sqrt(2)*sqrt(lambda)/2",
+            "0"
+          ]
+        ],
+        "relative_spectral_operator": [
+          [
+            "1",
+            "3"
+          ],
+          [
+            "3*lambda/2",
+            "1"
+          ]
+        ],
+        "restricted_Weyl_q_form": [
+          [
+            "lambda",
+            "3*lambda"
+          ],
+          [
+            "3*lambda",
+            "2"
+          ]
+        ]
+      },
+      "polar": {
+        "Einstein_source_form": [
+          [
+            "1",
+            "-2"
+          ],
+          [
+            "-2",
+            "2*lambda"
+          ]
+        ],
+        "complete_C0": "Cq direct-sum I_2 on the extra multiplicity",
+        "complete_eta0": "(Gq*Cq) direct-sum Gextra",
+        "complete_eta0_positive_for_lambda_ge_6_real_k": true,
+        "extra_C0": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "extra_Gram_determinant_on_shell": "9*lambda**2*(lambda - 2)*(9*lambda - 2)*(3*k**2 + 3*lambda - 2)*(6*k**2 + 3*lambda - 2)**2",
+        "extra_action_Gram": [
+          [
+            "18*lambda*(4*k**2 + lambda - 2)*(12*k**2 + 9*lambda - 2)",
+            "-6*k*lambda*(3*lambda + 2)*(3*k**2 + 3*lambda - 2)"
+          ],
+          [
+            "-6*k*lambda*(3*lambda + 2)*(3*k**2 + 3*lambda - 2)",
+            "lambda*(3*lambda - 2)**2*(3*k**2 + 3*lambda - 2)/2"
+          ]
+        ],
+        "q_eta0_determinant": "(lambda - 2)*(9*lambda - 2)",
+        "q_eta0_equals_Gq_C0": [
+          [
+            "sqrt(2)*(3*lambda + 2)/(2*sqrt(lambda))",
+            "-4*sqrt(2)*sqrt(lambda)"
+          ],
+          [
+            "-4*sqrt(2)*sqrt(lambda)",
+            "sqrt(2)*sqrt(lambda)*(3*lambda + 2)"
+          ]
+        ],
+        "q_eta0_leading_minor": "sqrt(2)*(3*lambda + 2)/(2*sqrt(lambda))",
+        "q_fundamental_symmetry_C0": [
+          [
+            "0",
+            "-sqrt(2)*sqrt(lambda)"
+          ],
+          [
+            "-sqrt(2)/(2*sqrt(lambda))",
+            "0"
+          ]
+        ],
+        "relative_spectral_operator": [
+          [
+            "1",
+            "-3*lambda"
+          ],
+          [
+            "-3/2",
+            "1"
+          ]
+        ],
+        "restricted_Weyl_q_form": [
+          [
+            "4",
+            "-3*lambda - 2"
+          ],
+          [
+            "-3*lambda - 2",
+            "8*lambda"
+          ]
+        ]
+      }
+    },
+    "intrinsic_parameter_walls": {
+      "axial_extra_Gram": "lambda^4*(lambda-2)*(9*lambda-2)/3=0",
+      "physical_domain_avoids_all_intrinsic_walls": "lambda=ell(ell+1)>=6 and real k",
+      "polar_extra_Gram": "9*lambda^2*(lambda-2)*(9*lambda-2)*(3*k^2+3*lambda-2)*(6*k^2+3*lambda-2)^2=0",
+      "q_form_or_eta_degeneracy": [
+        "lambda=0",
+        "lambda=2/9",
+        "lambda=2 (polar q form)"
+      ],
+      "spectral_collisions": [
+        "lambda=0 (q_minus=q_plus)",
+        "lambda=2/9 (q_minus=p)"
+      ]
+    },
+    "normal_branch_frame": [
+      "q_minus",
+      "q_plus",
+      "p_1",
+      "p_2"
+    ],
+    "shell_separations": {
+      "nonzero_on_physical_domain": true,
+      "q_minus_minus_p": "-(3*sqrt(2)*sqrt(lambda) - 2)/3",
+      "q_plus_minus_p": "(3*sqrt(2)*sqrt(lambda) + 2)/3",
+      "q_plus_minus_q_minus": "2*sqrt(2)*sqrt(lambda)"
+    },
+    "squared_frequencies": {
+      "p": "(3*k**2 + 3*lambda - 2)/3",
+      "q_minus": "k**2 - sqrt(2)*sqrt(lambda) + lambda",
+      "q_plus": "k**2 + sqrt(2)*sqrt(lambda) + lambda"
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "mutation_expectations": {
+    "H_confused_with_H_squared": "REJECT",
+    "commutant_made_diagonal_on_extra_multiplicity": "REJECT",
+    "eta_promoted_to_C": "REJECT",
+    "exceptional_or_residual_omitted": "REJECT",
+    "intrinsic_wall_inside_physical_lambda_domain": "REJECT",
+    "quantum_unitarity_promoted": "REJECT",
+    "uncertified_parity_used_to_shrink_full_commutant": "REJECT",
+    "unconstrained_eigenbasis_metric_accepted": "REJECT"
+  },
+  "provenance": {
+    "arithmetic": "exact SymPy rational/algebraic matrices",
+    "generator": "quantum-weyl/pt_cpt/compact_blocks/compact_block_feasibility.py",
+    "science_forge_identity": "phase2-cpt-3",
+    "work_item": "sf:program/work/phase2-cpt-compact-block-feasibility"
+  },
+  "result_id": "COMPACT_BLOCK_STRUCTURED_CPT_FEASIBILITY_V1",
+  "result_state": "STRUCTURED_ETA_CONE_CLASSIFIED_AND_UNIQUE_FUNDAMENTAL_SYMMETRY_CONSTRUCTED_PT_DATUM_ABSENT",
+  "schema": "pure-weyl-compact-block-structured-cpt-feasibility-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan R_t x S1 x S2, fixed Chern class N=2",
+    "carrier": "generic ell>=2 axial/polar q-primary Einstein image plus p-primary extra blocks, with ell=1 standard/extra dispositions",
+    "claim_level": "finite REDUCED-MODE structured-metric feasibility on branchwise solution blocks",
+    "reality": "positive-frequency amplitudes completed by conjugate (-k,-m,-omega) amplitudes",
+    "symmetry": "H_product=(R_t x U(1)_x x SO(3))_orientation-preserving x U(1)_gauge; axial/polar labels are retained as algebraic bookkeeping but no fixed-bundle discrete parity is assumed"
+  },
+  "source_refs": {
+    "axial_extra_gram": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_axial_extra_green_pairing.json",
+      "sha256": "024d580eb7f6c6be88fd561d52a53c716b53ee6ac487b95f8326db7484a36c7d"
+    },
+    "axial_lee_wald": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+      "sha256": "e3d59018c9ae4a1d65b2ca531f24534d553dc7da1e6386c1d4afb577effd05f8"
+    },
+    "branch_dictionary": {
+      "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
+      "sha256": "0489e3a15956b9e397387476cd76974f6083692a85bc840b34d81d7893bae5aa"
+    },
+    "cyclic_inertia": {
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
+      "sha256": "affb12a8655671a06748a8fc6e2d38e8732478e4ef293b3cfea482597735bd9c"
+    },
+    "ell1_exceptional": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
+      "sha256": "04399fac0172e73a74026401cdd3972028add3f54ca8f141bd00ef7a04adaaed"
+    },
+    "ell1_nonzero_k": {
+      "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1.json",
+      "sha256": "4d3839689270af952808b14adef4f00fcbabeb69ef17efcf7e6d18b7747340a3"
+    },
+    "ell1_standard": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_ell1_physical_symplectic_restriction.json",
+      "sha256": "0413c43de06931565f18effe21bdc18d272d45d5d52d5007273935c6ea71a0ec"
+    },
+    "p2a_contract": {
+      "path": "quantum-weyl/pt_cpt/negative_control/certificates/STRUCTURED_METRIC_QUARTET_NO_GO_V1.json",
+      "sha256": "377f699d854724f743188b854e4f5be3f29540ba1f5bc2beee3ec9204e7dbf6a"
+    },
+    "polar_lee_wald": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+      "sha256": "327cfacb304218b894b622f08a8ad0a2d8cb370a1cb041c69f58e343ac33ac76"
+    },
+    "radiative_restriction": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_radiative_symplectic_restriction.json",
+      "sha256": "560f9e96be8ee095972e745544a709fdb6a8ac7a939658a21163bc173884c2bd"
+    },
+    "residual_descent": {
+      "path": "bridge/certificates/EINSTEIN_WEYL_RELATIVE_RESIDUAL_ACTION_DESCENT_V1.json",
+      "sha256": "84bc53857ea4ca2620d0be42a3fae98432775868c1780411d0586de705cf08c9"
+    }
+  }
+}

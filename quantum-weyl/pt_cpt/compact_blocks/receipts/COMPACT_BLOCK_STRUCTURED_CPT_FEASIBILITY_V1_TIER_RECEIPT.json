@@ -1,0 +1,41 @@
+{
+  "schema": "pure-weyl-compact-block-structured-cpt-tier-receipt-v1",
+  "result_id": "COMPACT_BLOCK_STRUCTURED_CPT_FEASIBILITY_V1_TIER_RECEIPT",
+  "subject_result_id": "COMPACT_BLOCK_STRUCTURED_CPT_FEASIBILITY_V1",
+  "recorded_at": "2026-07-22",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "source_pins": {
+    "axial_extra_gram": "024d580eb7f6c6be88fd561d52a53c716b53ee6ac487b95f8326db7484a36c7d",
+    "axial_lee_wald": "e3d59018c9ae4a1d65b2ca531f24534d553dc7da1e6386c1d4afb577effd05f8",
+    "branch_dictionary": "0489e3a15956b9e397387476cd76974f6083692a85bc840b34d81d7893bae5aa",
+    "cyclic_inertia": "affb12a8655671a06748a8fc6e2d38e8732478e4ef293b3cfea482597735bd9c",
+    "ell1_exceptional": "04399fac0172e73a74026401cdd3972028add3f54ca8f141bd00ef7a04adaaed",
+    "ell1_nonzero_k": "4d3839689270af952808b14adef4f00fcbabeb69ef17efcf7e6d18b7747340a3",
+    "ell1_standard": "0413c43de06931565f18effe21bdc18d272d45d5d52d5007273935c6ea71a0ec",
+    "p2a_contract": "377f699d854724f743188b854e4f5be3f29540ba1f5bc2beee3ec9204e7dbf6a",
+    "polar_lee_wald": "327cfacb304218b894b622f08a8ad0a2d8cb370a1cb041c69f58e343ac33ac76",
+    "radiative_restriction": "560f9e96be8ee095972e745544a709fdb6a8ac7a939658a21163bc173884c2bd",
+    "residual_descent": "84bc53857ea4ca2620d0be42a3fae98432775868c1780411d0586de705cf08c9"
+  },
+  "output_hashes": {
+    "atlas": "e5ff4f0f78ba42e823f88e15b9b0ce437117e92d471e82f0a1a053b2b08c262d",
+    "certificate": "8852a5503f1549e2bcfc05bbf72b714be8b7079708bd06d8059eee1ea2139fd4",
+    "producer": "8f910af39aa994ca448eebe51b7715ac02cac645de30e9e3713d1e980ce20b08",
+    "report": "27f741345cff88ff57b8e8e72e1247caf6652f7a50fe74190ace4f172c11102b",
+    "schema": "8d7a04f8e61be34896522b99998c7dd164c35c2650700d1a1f997acbc9d11a25",
+    "tests": "d7e76c80fd017666ab4ec540a6ee1fa4afc512b950b8fb9c02028187433ad597",
+    "verifier": "bc81b09a2bf7735c232928ddbb14117e2c153aaf3dc124bc59353bb16a19e8c6"
+  },
+  "independent_rail": {
+    "status": "PASS",
+    "method": "imports no producer; independently solves the full orientation-preserving 8x8 commutant, checks the positive spectral-square-root Hamiltonian convention, reconstructs both q-block forms and fundamental symmetries, checks exact axial/polar extra determinants, and audits exceptional/residual scope",
+    "decisive_mutations_rejected": ["full commutant shrunk to parity-graded algebra", "uncertified parity label used as an invariant splitter", "H confused with H squared", "unconstrained eigenbasis metric accepted", "eta promoted to genuine C", "canonical determinant changed", "exceptional block omitted", "quantum unitarity promoted"]
+  },
+  "test_tiers": [
+    {"tier": 0, "status": "PASS", "commands": ["python3 -m py_compile quantum-weyl/pt_cpt/compact_blocks/compact_block_feasibility.py quantum-weyl/pt_cpt/compact_blocks/verify_compact_block_feasibility.py quantum-weyl/pt_cpt/compact_blocks/tests/test_compact_block_feasibility.py", "python3 -m json.tool <compact certificate/schema/receipt and atlas>", "git diff --check -- <compact scoped paths>"]},
+    {"tier": 1, "status": "PASS", "elapsed_seconds": 4.2, "commands": ["python3 quantum-weyl/pt_cpt/compact_blocks/compact_block_feasibility.py --check", "python3 quantum-weyl/pt_cpt/compact_blocks/verify_compact_block_feasibility.py", "pytest -q quantum-weyl/pt_cpt/compact_blocks/tests/test_compact_block_feasibility.py"]},
+    {"tier": 2, "status": "NOT_RUN", "reason": "All mathematical inputs are unchanged and content-addressed; this is a downstream exact classification."},
+    {"tier": 3, "status": "NOT_RUN", "reason": "No freeze, release, shared core change or lifecycle promotion occurs."}
+  ],
+  "claim_boundary": "Certifies the exact structured eta cone, basis invariance, singular walls and unique positive fundamental symmetry on compact branchwise solution blocks. It does not certify an independent P/T datum, genuine Mannheim C, invariant-state metric, Hadamard state, particles, scattering, QME or unitarity."
+}
