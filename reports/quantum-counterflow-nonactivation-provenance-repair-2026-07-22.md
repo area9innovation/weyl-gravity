@@ -71,4 +71,4 @@ report is the append-only provenance handoff.
 
 EVIDENCE: `quantum-weyl/lorentzian/receipts/TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1_TIER_RECEIPT.json`, `quantum-weyl/lorentzian/verify_two_phase_counterflow_full_bv_hadamard_receipt.py`, `quantum-weyl/transfer/certificates/TWO_PHASE_COUNTERFLOW_PHYSICAL_STATE_POSITIVITY_NONACTIVATION_V1.json`, and `quantum-weyl/transfer/receipts/TWO_PHASE_COUNTERFLOW_PHYSICAL_STATE_POSITIVITY_NONACTIVATION_V1_TIER_RECEIPT.json`.
 
-CLOSE-OUT: SHORTFALL — the scientific provenance repair is complete, but terminal predecessor items cannot receive retroactive checkpoints through the current lifecycle API.
+CLOSE-OUT: OBSTRUCTED — the scientific provenance repair is complete, but terminal predecessor items cannot receive retroactive checkpoints through the current lifecycle API.
