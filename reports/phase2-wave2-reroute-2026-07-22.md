@@ -49,3 +49,4 @@ It records the evidence-driven scope change and prevents an obstructed premise
 from remaining in the active scientific frontier.
 
 CLOSE-OUT: DONE — Wave-1 evidence is consumed, invalid dyonic successors are retired, and the improved three-lane wave-2 graph is ready for bounded subagents.
+EVIDENCE: planning/work-items/phase2-sign-nariai-mechanism-v2.json
