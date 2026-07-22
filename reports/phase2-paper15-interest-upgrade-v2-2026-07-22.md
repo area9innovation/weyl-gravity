@@ -86,10 +86,9 @@ filtrations, a genuine BRST-compatible (C) operator, a full Hadamard
 covariance, a positive physical Hilbert space, particles, scattering, the
 optical theorem, or unitarity.
 
-EVIDENCE:
+EVIDENCE: `reports/PAPER15_PHASE2_INTEREST_UPGRADE_V2_TIER_RECEIPT.json`;
 `paper/15-four-level-ghost-classification-phase1-synthesis-claim-map.json`;
-`planning/paper-coverage/paper15-phase1-synthesis-overlay-2026-07-22.json`;
-`reports/PAPER15_PHASE2_INTEREST_UPGRADE_V2_TIER_RECEIPT.json`.
+`planning/paper-coverage/paper15-phase1-synthesis-overlay-2026-07-22.json`.
 
 CLOSE-OUT: DONE — Paper 15 is upgraded by exact terminal Phase-2 evidence
 without widening the source theorems or changing the frozen Phase-1 record.
