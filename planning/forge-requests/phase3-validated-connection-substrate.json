@@ -10,7 +10,7 @@
   },
   "body": {
     "owner": "science-forge",
-    "state": "REQUESTED",
+        "state": "LANDED",
     "stream": "forge-requests",
     "priority": 0,
     "objective": "Land the smallest missing validated-ODE primitive needed by the Phase-3 Schwarzschild axial pilot: a rigorous real coupled linear IVP and fundamental-matrix enclosure on a finite nonsingular radial interval. This is the first executable child of the accepted broad M25 vector-BVP request, not a request for the full singular-endpoint or boundary-value stack.",
@@ -37,7 +37,8 @@
       "The accepted request sf:forge-request/validated-vector-bvp-connection-flux remains the broad parent. This request deliberately splits only its first finite-interval fundamental-flow clause so the Phase-3 pilot need not wait for singular endpoints, BVP Newton, complex parameter continuation or certified Frobenius tails.",
       "Complex coefficients may be represented by exact real 2x2 blocks; a separate complex-interval scalar type is not required for this first pass.",
       "Endpoint basis-conditioning can use math/ivmat after the flow is enclosed. Certified horizon/infinity series remainders are a separate endpoint-basis work item and are not silently included here.",
-      "Frozen downstream domain: axial ell=2, M=1, hat_omega in [1/2,3/4]. The first substrate fixture is the center hat_omega=3/5 on r in [3,4]; this does not itself establish an open-frequency connection theorem."
+            "Frozen downstream domain: axial ell=2, M=1, hat_omega in [1/2,3/4]. The first substrate fixture is the center hat_omega=3/5 on r in [3,4]; this does not itself establish an open-frequency connection theorem.",
+            "LANDED 2026-07-22 in Forge commit 5de8107da: math/ivlinode supplies rigorous coupled real linear-IVP and fundamental-matrix enclosures using interval Peano-Baker factors with a proved geometric tail, retained ordered local factors, per-step all-times boxes, typed refusal data, vector application and Phi^T J1 Phi-J0 enclosure. The exact Hamiltonian and realified axial ell=2, hat_omega=3/5 fixtures pass native/C parity and ASan, including full [1/2,3/4] frequency-box acceptance and coefficient-mutation rejection. Honest remaining boundary: long ill-conditioned transfer still needs QR/Lohner-style wrapping or certified subdivision discipline; singular endpoint tails, BVP matching and scattering are not supplied by this primitive."
     ]
   },
   "edges": []
