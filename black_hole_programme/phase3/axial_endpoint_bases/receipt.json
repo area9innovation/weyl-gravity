@@ -1,0 +1,24 @@
+{
+  "input_sha256": {
+    "corrected_axial_selection": "e480fd0f247fd42c049ce395099c1c957199586a31f907d32d0b6c7f64c71caf",
+    "general_l_structural": "1c375331014b1121791e8d6c63d994d84a41a0a94aa94233ecf28222475b6863",
+    "generic_axial_asymptotics": "6742e049806d3122a4c1b3a2b01d1305448f0ee6287e955083a0749cbe304523",
+    "generic_axial_asymptotics_source": "f7931dcf23fd108ba120a1bccf1a53d0227e4445726768563b5af7460f8b16ef",
+    "geometry": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "linearized_bach": "17af69d23396452fc1a60306787a38276b12ebcabec72dc397e69533486f120a"
+  },
+  "result_token": "BH_PHASE3_AXIAL_ENDPOINT_METRIC_BASIS_OBSTRUCTED_BY_OMITTED_VPHI_ROW",
+  "schema": "phase3-black-hole-axial-endpoint-bases-receipt-v1",
+  "source_sha256": {
+    "produce.py": "f45b2d691de0a6e133c18904ffb462b1433560abbac7b937f1fb418df842fcbb",
+    "schema.json": "c9b23aa21aa30e31ec39268d66211424849e17b2249cdb30b91fa6e645f52d75"
+  },
+  "tier0": "Python parse + JSON schema parse + scoped diff-check required at close-out",
+  "tier1": [
+    "python3 black_hole_programme/phase3/axial_endpoint_bases/produce.py --check",
+    "python3 black_hole_programme/phase3/axial_endpoint_bases/verify.py",
+    "python3 -m unittest black_hole_programme.phase3.axial_endpoint_bases.tests.test_endpoint_bases"
+  ],
+  "tier2": "not run: no imported operator or shared schema changed",
+  "tier3": "not run: obstruction classification does not promote a scattering theorem"
+}

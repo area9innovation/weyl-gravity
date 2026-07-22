@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phase 3 axial endpoint-basis gate",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "result_token", "dependency_tags", "lifecycle",
+    "declaration", "carrier_endpoint_basis", "metric_reconstruction_gate",
+    "disposition", "claim_flags", "does_not_establish", "verification"
+  ],
+  "properties": {
+    "schema": {"const": "phase3-black-hole-axial-endpoint-bases-v1"},
+    "result_token": {"const": "BH_PHASE3_AXIAL_ENDPOINT_METRIC_BASIS_OBSTRUCTED_BY_OMITTED_VPHI_ROW"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "carrier_endpoint_basis": {"type": "object"},
+    "metric_reconstruction_gate": {"type": "object"},
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 4}
+  },
+  "additionalProperties": true
+}

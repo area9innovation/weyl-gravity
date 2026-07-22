@@ -1,0 +1,69 @@
+{
+  "description_axes": ["causal", "symplectic", "nonlinear", "observational", "quantum"],
+  "entries": [
+    {
+      "id": "black_hole.schwarzschild.phase3.axial_endpoint_basis_reconstruction_gate",
+      "claim_boundary": "The four-dimensional axial Ricci carrier has exact complete formal horizon and infinity bases on the ell=2 pilot interval, but the complete reconstructed metric basis is NOT_DEFINED: the imported two-row metric system omits delta Ric_{v phi}=p and contains a polynomial mode with exact nonzero omitted-row residual 3 i (omega-2 i)/r^2. No connection, flux, scattering or stability claim follows.",
+      "descriptions": {
+        "causal": "OBSTRUCTED",
+        "symplectic": "NO_CERTIFIED_MAP",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "black_hole_programme/phase3/axial_endpoint_bases/certificate.json",
+          "result_id": "PURE_WEYL_PHASE3_AXIAL_ENDPOINT_BASES",
+          "sha256": "bf5367cc6e0b778c91736ab4088fb0dcf78868ba5f61c30f56d71659f790e779"
+        }
+      ],
+      "mode_data": {
+        "dispersion": {
+          "status": "CERTIFIED",
+          "statement": "Carrier infinity rates are 0 and -2 i omega; horizon exponents are 0 (twice), -4 i omega and -2-4 i omega."
+        },
+        "lee_wald": {
+          "status": "NO_CERTIFIED_MAP",
+          "statement": "The carrier basis has not yet been lifted to a complete metric basis on which endpoint flux could be defined."
+        },
+        "resonance": {
+          "status": "CERTIFIED",
+          "statement": "The order-two horizon resonance between the singular carrier branches has exact zero cokernel obstruction and forces no logarithm."
+        },
+        "second_order": {
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "bounded_or_finite_quasiperiodic": {"status": "NOT_APPLICABLE", "statement": "Linear endpoint problem only."},
+          "causal_retarded": {"status": "NO_CERTIFIED_MAP", "statement": "No global retarded problem is constructed."},
+          "smooth_secular": {"status": "NOT_APPLICABLE", "statement": "No quadratic source is evaluated."}
+        },
+        "taub_maps": {"status": "NOT_APPLICABLE", "statement": "No compact Taub map is involved."}
+      },
+      "scope": {
+        "theory": "linearized four-dimensional pure Weyl C^2 gravity",
+        "background": "Schwarzschild exterior, M=1, ingoing Eddington-Finkelstein chart",
+        "carrier": "axial trace-free Ricci carrier plus attempted metric reconstruction",
+        "parity": "axial",
+        "ell": "2 (carrier extension imported for all ell>=2)",
+        "m": "axisymmetric harmonic representative",
+        "omega": "real dimensionless M omega in [1/2,3/4]",
+        "k": "formal endpoint order",
+        "degree": 1,
+        "boundaries": "separate formal horizon and infinity expansions; no matching",
+        "charge_sector": "none"
+      }
+    }
+  ],
+  "generated_by": "black_hole_programme/phase3/axial_endpoint_bases/produce.py",
+  "generated_by_sha256": "f45b2d691de0a6e133c18904ffb462b1433560abbac7b937f1fb418df842fcbb",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": ["CERTIFIED", "OBSTRUCTED", "OPEN", "NOT_APPLICABLE", "NO_CERTIFIED_MAP"],
+  "team": "black_hole",
+  "verification_commands": [
+    "PYTHONPATH=black_hole_programme python3 black_hole_programme/phase3/axial_endpoint_bases/produce.py --check",
+    "PYTHONPATH=black_hole_programme python3 black_hole_programme/phase3/axial_endpoint_bases/verify.py",
+    "python3 -m unittest black_hole_programme.phase3.axial_endpoint_bases.tests.test_endpoint_bases",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/phase3-black-hole-axial-endpoint-bases-fragment-v1.json"
+  ]
+}

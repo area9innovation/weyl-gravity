@@ -1,0 +1,83 @@
+{
+  "carrier_ode_matrix": [
+    [
+      "0",
+      "1",
+      "0",
+      "0"
+    ],
+    [
+      "(6*r-4)/(r^2*(r-2))",
+      "-2*i*omega*r/(r-2)",
+      "-2*i*omega/(r*(r-2))",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "1"
+    ],
+    [
+      "0",
+      "-2/(r-2)",
+      "(6*r-4-2*i*omega*r^2)/(r^2*(r-2))",
+      "(-2*i*omega*r-2)/(r-2)"
+    ]
+  ],
+  "carrier_state": [
+    "P",
+    "P_prime",
+    "Q",
+    "Q_prime"
+  ],
+  "chart_and_phase": "ingoing EF (v,r,x,phi), Fourier phase exp(+i*omega*v)",
+  "corrected_sourced_lift_import": {
+    "path": "black_hole_programme/phase2/general_l_axial_selection/certificate.json",
+    "reading": "the Phase-2 verifier checks row_x, H1'=F and row_f; H1'=F is definitional, not the omitted vphi Ricci row. The polynomial control does not itself disprove the sourced X0 lift, but X0 has not passed the newly exposed compatibility equation.",
+    "sha256": "e480fd0f247fd42c049ce395099c1c957199586a31f907d32d0b6c7f64c71caf",
+    "status": "REQUIRES_REAUDIT"
+  },
+  "differential_reconstruction_rows": {
+    "F_prime": "-2*H0/(r*(r-2))+(6*r+4-2*i*omega*r^2-2*r)*H1/(r^2*(r-2))+(-4-2*i*omega*r^2)*F/(r*(r-2))+2*r*(c_prime-Q)/(r-2)",
+    "H0_prime": "(-i*omega-2/r^2)*H1+(-1+2/r)*F+2*c",
+    "H1_prime": "F"
+  },
+  "divergence_constraint": {
+    "c": "(r^2*(P_prime+Q_prime+i*omega*Q)+2*r*(P+Q-Q_prime)-2*Q)/4",
+    "c_prime": "total r derivative after substituting the carrier ODE; it must be differentiated before any source placeholder replacement"
+  },
+  "forbidden_promotions": [
+    "no connection matrix from the two-row subsystem",
+    "no finite-flux or scattering channel before the six-vector endpoint bases pass all three rows"
+  ],
+  "known_failed_vector": {
+    "C": "3*i*(omega-2*i)/r^2",
+    "H0": "-i*omega*r+2+2/r",
+    "H1": "1",
+    "P": "0"
+  },
+  "metric_state": [
+    "H0",
+    "H1",
+    "F=H1_prime"
+  ],
+  "minimal_successor_obligations": [
+    "derive C exactly from the three Ricci rows without source placeholders",
+    "prove the propagation identity for C under the carrier and differential reconstruction equations",
+    "impose C=0 and remove the spurious polynomial direction",
+    "re-audit the corrected sourced X0 lift against delta Ric_{v phi}=P before preserving its Phase-2 promotion",
+    "construct six independent complete Bach metric endpoint vectors: two Einstein-kernel vectors and four additional lifts",
+    "retain the differentiated c_prime forcing and verify all three Ricci rows on every vector",
+    "report every real or complex recurrence exception before any connection or flux consumer runs"
+  ],
+  "pilot_domain": "real omega in [1/2,3/4]",
+  "required_algebraic_row": {
+    "constraint": "C := delta_Ric_vphi_over_S2-P = 0",
+    "equation": "delta_Ric_vphi_over_S2 = P",
+    "left_hand_side": "-(omega**2*r**3*H1(r) + I*omega*r**3*Derivative(H0(r), r) - I*omega*r**3*Derivative(H1(r), r) - 2*I*omega*r**2*H0(r) - 2*I*omega*r**2*H1(r) + 2*I*omega*r**2*Derivative(H1(r), r) + 4*I*omega*r*H1(r) + r**3*Derivative(H0(r), (r, 2)) - 2*r**2*Derivative(H0(r), (r, 2)) - 6*r*H0(r) + 4*H0(r))/(2*r**3)",
+    "role": "compatibility constraint reducing the apparent homogeneous dimension of the exposed three-state evolution"
+  },
+  "schema": "phase3-black-hole-axial-complete-reconstruction-repair-input-v1",
+  "theory": "pure Weyl gravity; axial ell=2 on Schwarzschild M=1"
+}

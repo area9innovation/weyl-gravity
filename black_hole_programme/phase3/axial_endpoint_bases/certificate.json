@@ -1,0 +1,351 @@
+{
+  "carrier_endpoint_basis": {
+    "complete_as_carrier_basis": true,
+    "dimension": 4,
+    "general_ell_reading": "the infinity carrier basis and its recurrences are exact for all ell>=2; the horizon residue is Lambda-independent by the imported structural theorem, and ell=2 is recomputed here",
+    "horizon": {
+      "branches": [
+        {
+          "exponent": "0",
+          "label": "XH0a",
+          "multiplicity": 1,
+          "role": "additional carrier, future-horizon analytic"
+        },
+        {
+          "exponent": "0",
+          "label": "XH0b",
+          "multiplicity": 1,
+          "role": "additional carrier, future-horizon analytic"
+        },
+        {
+          "exponent": "-4*I*omega",
+          "label": "XHplus",
+          "multiplicity": 1,
+          "role": "additional carrier, singular/outgoing partner"
+        },
+        {
+          "exponent": "-2-4*I*omega",
+          "label": "XHminus",
+          "multiplicity": 1,
+          "role": "additional carrier, singular/outgoing partner"
+        }
+      ],
+      "characteristic_polynomial": "z**2*(4*I*omega + z)*(4*I*omega + z + 2)",
+      "geometric_multiplicities": {
+        "-2-4*I*omega": 1,
+        "-4*I*omega": 1,
+        "0": 2
+      },
+      "integer_spaced_resonance": {
+        "cokernel_obstruction": "0",
+        "compatible": true,
+        "from": "-2-4*I*omega",
+        "logarithm_forced": false,
+        "order": 2,
+        "to": "-4*I*omega"
+      },
+      "real_nonzero_frequency_reading": "all four carrier branches are log-free; the only positive-order integer resonance is compatible",
+      "recurrence_determinants": {
+        "regular_s0": "n**2*(n + 4*I*omega)*(n + 4*I*omega + 2)",
+        "singular_lower": "n*(n - 2)*(n - 4*I*omega - 2)**2",
+        "singular_upper": "n*(n + 2)*(n - 4*I*omega)**2"
+      },
+      "residue": [
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "2",
+          "-4*I*omega",
+          "-I*omega",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-2",
+          "-2*I*(omega + I)",
+          "-2*I*(2*omega - I)"
+        ]
+      ],
+      "state": [
+        "P",
+        "dP/dr",
+        "Q",
+        "dQ/dr"
+      ]
+    },
+    "infinity": {
+      "all_orders_basis": true,
+      "branches": [
+        {
+          "label": "XI0",
+          "power": "0",
+          "rate": "0",
+          "role": "additional carrier, rate-zero top"
+        },
+        {
+          "label": "XI1",
+          "power": "-1",
+          "rate": "0",
+          "role": "additional carrier, rate-zero lower"
+        },
+        {
+          "label": "XI2",
+          "power": "-4*I*omega",
+          "rate": "-2*I*omega",
+          "role": "additional carrier, oscillatory top (M=1)"
+        },
+        {
+          "label": "XI3",
+          "power": "-4*I*omega-1",
+          "rate": "-2*I*omega",
+          "role": "additional carrier, oscillatory lower (M=1)"
+        }
+      ],
+      "geometric_multiplicities": {
+        "rate_0": 2,
+        "rate_minus_2_i_omega": 2
+      },
+      "integer_spaced_resonances": {
+        "oscillatory_order_1": {
+          "compatible": true,
+          "free_parameter_reading": "the one free coefficient is the independent lower-power solution; setting it to zero fixes the top-power representative",
+          "particular_coefficient": [
+            "I*(Lambda - 16*M**2*omega**2)/(4*omega)",
+            "0"
+          ],
+          "rhs": [
+            "-(Lambda - 16*M**2*omega**2)/2",
+            "Lambda - 16*M**2*omega**2"
+          ]
+        },
+        "rate_0_order_1": {
+          "compatible": true,
+          "free_parameter_reading": "the one free coefficient is the independent lower-power solution; setting it to zero fixes the top-power representative",
+          "particular_coefficient": [
+            "I*Lambda/(2*omega)",
+            "0"
+          ],
+          "rhs": [
+            "Lambda",
+            "0"
+          ]
+        }
+      },
+      "logarithm_forced": false,
+      "radial_class": "exp(rate*r)*r**sigma*sum_{n>=0} y_n*r**(-n), over Q(Lambda,omega,M,i), with omega!=0",
+      "rates": [
+        "0",
+        "-2*I*omega"
+      ],
+      "state": [
+        "Pc",
+        "dPc/dr",
+        "Qc",
+        "dQc/dr"
+      ]
+    }
+  },
+  "claim_flags": {
+    "carrier_horizon_basis_complete": true,
+    "carrier_infinity_basis_complete": true,
+    "carrier_logs_excluded_on_pilot_interval": true,
+    "complete_metric_endpoint_basis_certified": false,
+    "corrected_X0_vphi_reaudit_required": true,
+    "corrected_differentiated_forcing_imported": true,
+    "finite_flux_or_scattering_certified": false,
+    "horizon_to_infinity_connection_certified": false,
+    "omitted_vphi_row_obstruction_certified": true
+  },
+  "declaration": {
+    "background": "Schwarzschild M=1 in ingoing Eddington-Finkelstein coordinates",
+    "frequency": "real dimensionless omega=M*omega in [1/2,3/4]",
+    "phase": "Phase 3 endpoint-basis gate only",
+    "sector": "axial ell=2; carrier formulas imported from symbolic Lambda=ell(ell+1)",
+    "theory": "pure Weyl gravity, S=alpha*integral sqrt(-g) C^2"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "carrier_endpoint_basis": "COMPLETE_FORMAL",
+    "next_required_object": "derive the full three-row Ricci reconstruction DAE, prove its constraint propagation, and rebuild the six-dimensional Bach metric endpoint basis without the spurious polynomial row",
+    "reconstructed_metric_endpoint_basis": "NOT_DEFINED",
+    "stop_condition": "FIRST_EXACT_OBSTRUCTION"
+  },
+  "does_not_establish": [
+    "a complete reconstructed metric basis at either endpoint",
+    "horizon-to-infinity matching or a connection matrix",
+    "a finite-flux quotient, scattering channel, pole, stability, CPT, particle, or quantum statement",
+    "convergence or summability of the formal infinity basis"
+  ],
+  "exceptional_set": {
+    "complex_omitted_row_zero": [
+      "omega=2*I"
+    ],
+    "excluded_angular_representations": [
+      "ell=0",
+      "ell=1"
+    ],
+    "excluded_frequency": [
+      "omega=0"
+    ],
+    "real_pilot_interval": []
+  },
+  "imported_operator_hashes": {
+    "corrected_axial_selection": {
+      "path": "black_hole_programme/phase2/general_l_axial_selection/certificate.json",
+      "sha256": "e480fd0f247fd42c049ce395099c1c957199586a31f907d32d0b6c7f64c71caf"
+    },
+    "general_l_structural": {
+      "path": "black_hole_programme/certificates/BH2_GENERAL_L_STRUCTURAL.json",
+      "sha256": "1c375331014b1121791e8d6c63d994d84a41a0a94aa94233ecf28222475b6863"
+    },
+    "generic_axial_asymptotics": {
+      "path": "black_hole_programme/phase2/general_l_axial_asymptotics/certificate.json",
+      "sha256": "6742e049806d3122a4c1b3a2b01d1305448f0ee6287e955083a0749cbe304523"
+    },
+    "generic_axial_asymptotics_source": {
+      "path": "black_hole_programme/phase2/general_l_axial_asymptotics/general_l_axial_asymptotics.py",
+      "sha256": "f7931dcf23fd108ba120a1bccf1a53d0227e4445726768563b5af7460f8b16ef"
+    },
+    "geometry": {
+      "path": "black_hole_programme/weyl_geometry.py",
+      "sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c"
+    },
+    "linearized_bach": {
+      "path": "black_hole_programme/linearized_bach.py",
+      "sha256": "17af69d23396452fc1a60306787a38276b12ebcabec72dc397e69533486f120a"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "metric_reconstruction_gate": {
+    "advertised_polynomial_mode": {
+      "H0": "-I*omega*r + 2 + 2/r",
+      "H1": "1",
+      "imported_label": "generalized_polynomial_mode"
+    },
+    "consequence": "the imported 3x3 system contains a spurious solution of the two-row subsystem and cannot define the complete metric endpoint basis; the missing vphi differential-algebraic constraint must be incorporated before lifting all four carriers",
+    "corrected_X0_disposition": "REQUIRES_REAUDIT: retaining c_prime repairs the differentiated forcing defect, but the Phase-2 verifier does not impose the newly exposed vphi compatibility row. The polynomial control does not itself disprove X0.",
+    "differentiated_forcing_retained_in_corrected_X0": "2*r*(c'-Q)/(r-2*M), F=H1'",
+    "exact_omitted_row_residual": "3*I*(omega - 2*I)/r**2",
+    "imported_rows_used": [
+      "delta Ric_{x phi}=c",
+      "delta Ric_{r phi}=q"
+    ],
+    "imported_state": [
+      "H0",
+      "H1",
+      "dH1/dr"
+    ],
+    "omitted_required_row": "delta Ric_{v phi}=p",
+    "omitted_row_formula_ell2": "-(omega**2*r**3*H1(r) + I*omega*r**3*Derivative(H0(r), r) - I*omega*r**3*Derivative(H1(r), r) - 2*I*omega*r**2*H0(r) - 2*I*omega*r**2*H1(r) + 2*I*omega*r**2*Derivative(H1(r), r) + 4*I*omega*r*H1(r) + r**3*Derivative(H0(r), (r, 2)) - 2*r**2*Derivative(H0(r), (r, 2)) - 6*r*H0(r) + 4*H0(r))/(2*r**3)",
+    "pilot_interval_disjoint_from_zero_set": true,
+    "residual_zero_set": [
+      "omega=2*I"
+    ],
+    "successor_interface": "black_hole_programme/phase3/axial_endpoint_bases/repair-interface.json"
+  },
+  "repair_interface": {
+    "carrier_ode_matrix": [
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "(6*r-4)/(r^2*(r-2))",
+        "-2*i*omega*r/(r-2)",
+        "-2*i*omega/(r*(r-2))",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "-2/(r-2)",
+        "(6*r-4-2*i*omega*r^2)/(r^2*(r-2))",
+        "(-2*i*omega*r-2)/(r-2)"
+      ]
+    ],
+    "carrier_state": [
+      "P",
+      "P_prime",
+      "Q",
+      "Q_prime"
+    ],
+    "chart_and_phase": "ingoing EF (v,r,x,phi), Fourier phase exp(+i*omega*v)",
+    "corrected_sourced_lift_import": {
+      "path": "black_hole_programme/phase2/general_l_axial_selection/certificate.json",
+      "reading": "the Phase-2 verifier checks row_x, H1'=F and row_f; H1'=F is definitional, not the omitted vphi Ricci row. The polynomial control does not itself disprove the sourced X0 lift, but X0 has not passed the newly exposed compatibility equation.",
+      "sha256": "e480fd0f247fd42c049ce395099c1c957199586a31f907d32d0b6c7f64c71caf",
+      "status": "REQUIRES_REAUDIT"
+    },
+    "differential_reconstruction_rows": {
+      "F_prime": "-2*H0/(r*(r-2))+(6*r+4-2*i*omega*r^2-2*r)*H1/(r^2*(r-2))+(-4-2*i*omega*r^2)*F/(r*(r-2))+2*r*(c_prime-Q)/(r-2)",
+      "H0_prime": "(-i*omega-2/r^2)*H1+(-1+2/r)*F+2*c",
+      "H1_prime": "F"
+    },
+    "divergence_constraint": {
+      "c": "(r^2*(P_prime+Q_prime+i*omega*Q)+2*r*(P+Q-Q_prime)-2*Q)/4",
+      "c_prime": "total r derivative after substituting the carrier ODE; it must be differentiated before any source placeholder replacement"
+    },
+    "forbidden_promotions": [
+      "no connection matrix from the two-row subsystem",
+      "no finite-flux or scattering channel before the six-vector endpoint bases pass all three rows"
+    ],
+    "known_failed_vector": {
+      "C": "3*i*(omega-2*i)/r^2",
+      "H0": "-i*omega*r+2+2/r",
+      "H1": "1",
+      "P": "0"
+    },
+    "metric_state": [
+      "H0",
+      "H1",
+      "F=H1_prime"
+    ],
+    "minimal_successor_obligations": [
+      "derive C exactly from the three Ricci rows without source placeholders",
+      "prove the propagation identity for C under the carrier and differential reconstruction equations",
+      "impose C=0 and remove the spurious polynomial direction",
+      "re-audit the corrected sourced X0 lift against delta Ric_{v phi}=P before preserving its Phase-2 promotion",
+      "construct six independent complete Bach metric endpoint vectors: two Einstein-kernel vectors and four additional lifts",
+      "retain the differentiated c_prime forcing and verify all three Ricci rows on every vector",
+      "report every real or complex recurrence exception before any connection or flux consumer runs"
+    ],
+    "pilot_domain": "real omega in [1/2,3/4]",
+    "required_algebraic_row": {
+      "constraint": "C := delta_Ric_vphi_over_S2-P = 0",
+      "equation": "delta_Ric_vphi_over_S2 = P",
+      "left_hand_side": "-(omega**2*r**3*H1(r) + I*omega*r**3*Derivative(H0(r), r) - I*omega*r**3*Derivative(H1(r), r) - 2*I*omega*r**2*H0(r) - 2*I*omega*r**2*H1(r) + 2*I*omega*r**2*Derivative(H1(r), r) + 4*I*omega*r*H1(r) + r**3*Derivative(H0(r), (r, 2)) - 2*r**2*Derivative(H0(r), (r, 2)) - 6*r*H0(r) + 4*H0(r))/(2*r**3)",
+      "role": "compatibility constraint reducing the apparent homogeneous dimension of the exposed three-state evolution"
+    },
+    "schema": "phase3-black-hole-axial-complete-reconstruction-repair-input-v1",
+    "theory": "pure Weyl gravity; axial ell=2 on Schwarzschild M=1"
+  },
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_ENDPOINT_BASES",
+  "result_token": "BH_PHASE3_AXIAL_ENDPOINT_METRIC_BASIS_OBSTRUCTED_BY_OMITTED_VPHI_ROW",
+  "schema": "phase3-black-hole-axial-endpoint-bases-v1",
+  "schema_path": "black_hole_programme/phase3/axial_endpoint_bases/schema.json",
+  "verification": {
+    "independent": "python3 black_hole_programme/phase3/axial_endpoint_bases/verify.py",
+    "producer": "python3 black_hole_programme/phase3/axial_endpoint_bases/produce.py --check",
+    "tests": "python3 -m unittest black_hole_programme.phase3.axial_endpoint_bases.tests.test_endpoint_bases"
+  }
+}
