@@ -1,0 +1,29 @@
+{
+  "artifact_sha256": {
+    "black_hole_programme/phase2/generic_l_synthesis/certificate.json": "8a9914400f0929f37a63570b95383ebc4131cbf2928b5f923db0d002d0783d33",
+    "black_hole_programme/phase2/generic_l_synthesis/claim_map.json": "683f0e39966dc3682372fdc3696a4bb010316a709be43ad3b59270786f89323e",
+    "planning/paper-coverage/phase2-black-hole-paper-correction-request.json": "308b27ba24076f7e439e36ebceb322442af1b1dcee225449d791cc105f403094",
+    "reports/phase2-black-hole-generic-l-disposition-2026-07-22.md": "c8a1f553fbaf8dd821a4f01d41c010403b5901b0fd0d39c701fd68cacb13c0cb"
+  },
+  "claim_boundary": "Scoped formal radial parity join; no global phase space, horizon matching, scattering, stability, particle, positivity or quantum claim.",
+  "commands": [
+    "python3 -m py_compile black_hole_programme/phase2/generic_l_synthesis/{produce.py,verify.py} black_hole_programme/phase2/generic_l_synthesis/tests/test_generic_l_synthesis.py",
+    "python3 -m black_hole_programme.phase2.generic_l_synthesis.produce --check",
+    "python3 -m black_hole_programme.phase2.generic_l_synthesis.verify",
+    "python3 -m unittest black_hole_programme.phase2.generic_l_synthesis.tests.test_generic_l_synthesis -v",
+    "git diff --check -- <exact allowed paths>"
+  ],
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "input_sha256": {
+    "black_hole_programme/phase2/general_l_axial_selection/certificate.json": "e480fd0f247fd42c049ce395099c1c957199586a31f907d32d0b6c7f64c71caf",
+    "black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json": "38cedbfab9931c111cb3569b0d5b15ea6182638a7e7de00ea849cfe8728f7fce",
+    "black_hole_programme/phase2/general_l_polar_extendible_current_closure/current_artifacts/q21-finite-line-factor.json": "9c08f3c59adfd2da973872a0d718ef97249fa91b690f63df40bdcac81cae7f62"
+  },
+  "result_id": "PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_RECEIPT_V1",
+  "schema": "phase2-black-hole-generic-l-tier-receipt-v1",
+  "status": "PASS_SCOPED",
+  "test_result": "5 scoped tests passed; independent exact fixture and fixed-harmonic Sturm verifier passed; producer byte-current check passed"
+}

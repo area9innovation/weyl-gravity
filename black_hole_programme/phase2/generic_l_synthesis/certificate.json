@@ -1,0 +1,261 @@
+{
+  "axial_phase": {
+    "E0": "finite nonzero r^-2 Einstein current on the full declared domain",
+    "E2": "finite nonzero r^-2 Einstein current in the declared fixed representative",
+    "X0": "non-Einstein all-orders formal lift with finite X0|X0 and nonzero finite E0|X0; finiteness is invariant under X0->X0+beta*E0",
+    "X2": "UNCLASSIFIED_AFTER_FIRST_COUNTEREXAMPLE_STOP",
+    "exceptional_set": "empty inside ell>=2, real omega!=0 for the certified E0/X0 counterexample",
+    "headline": "GENERIC_ELL_EINSTEIN_ONLY_FORMAL_RADIAL_SELECTION_FALSE",
+    "legacy_fixture": "the inherited divergent axial ell=2 X0 table is invalid because it omitted the differentiated c' forcing"
+  },
+  "claim_map_path": "black_hole_programme/phase2/generic_l_synthesis/claim_map.json",
+  "declaration": {
+    "background": "Schwarzschild M>0 in ingoing Eddington-Finkelstein coordinates",
+    "dangerous_layer_rule": "a radial/log layer r^p log(r)^q is nonintegrable when p>=-1 unless its invariant coefficient vanishes",
+    "domain": "Lambda=ell*(ell+1), integer ell>=2, real omega!=0",
+    "radial_class": "formal polyhomogeneous infinity data in the fixed Lee-Wald representative",
+    "theory": "strict pure-Weyl gravity"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "axial X2 disposition",
+    "q9 extension of terminal-only polar prefixes",
+    "the deeper polar filtration on Q21 exceptional frequencies",
+    "all-order polar asymptotic solutions",
+    "horizon-to-infinity matching",
+    "an asymptotically flat phase space or Hilbert norm",
+    "scattering, QNMs, ringdown, stability, particles, positivity or quantum theory"
+  ],
+  "input_snapshot": {
+    "axial": {
+      "certificate_sha256": "e480fd0f247fd42c049ce395099c1c957199586a31f907d32d0b6c7f64c71caf",
+      "evidence_commit": "fe1cd1e60a874f0548fae464bff987054fa5482a",
+      "path": "black_hole_programme/phase2/general_l_axial_selection/certificate.json",
+      "receipt_sha256": "fc6566fecf5ba63902ada98c50a27f5cea95768c585f51e15928edca7dc0517c",
+      "receipt_status": "PASS",
+      "result_id": "PURE_WEYL_PHASE2_GENERAL_L_AXIAL_SELECTION_COUNTEREXAMPLE"
+    },
+    "polar": {
+      "certificate_sha256": "38cedbfab9931c111cb3569b0d5b15ea6182638a7e7de00ea849cfe8728f7fce",
+      "path": "black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json",
+      "receipt_sha256": "a46c5b737a8797395675039f7170c3492dd8d9565bb5b6aaa0fb1fd6e2dcf963",
+      "rejected_inputs": [
+        "PHASE2_BLACK_HOLE_GENERAL_L_POLAR_DISPOSITION",
+        "PHASE2_BLACK_HOLE_GENERAL_L_POLAR_CANONICAL_LOG_FREE_FRONTIER_V1"
+      ],
+      "result_id": "POLAR_RESTRICTION_STABLE_MODULE_CURRENT_FILTRATION_V1",
+      "terminal_commit": "e66db9d7b01df3510472aa0359c6b9070c8fc6f4",
+      "terminal_status": "PASS_SCOPED_TERMINAL"
+    },
+    "polar_wall": {
+      "identity_verified": true,
+      "path": "black_hole_programme/phase2/general_l_polar_extendible_current_closure/current_artifacts/canonical-pivot-wall-certificate.json",
+      "sha256": "d28ec7f9e046295dd45d58bbf1ef6b5cae1a640e98eb565835c6dadc86f3ce85"
+    },
+    "q21": {
+      "bidegree": [
+        21,
+        21
+      ],
+      "path": "black_hole_programme/phase2/general_l_polar_extendible_current_closure/current_artifacts/q21-finite-line-factor.json",
+      "sha256": "9c08f3c59adfd2da973872a0d718ef97249fa91b690f63df40bdcac81cae7f62",
+      "term_count": 282
+    }
+  },
+  "joint_disposition": {
+    "einstein_only_selection": "FALSE_IN_THE_DECLARED_FORMAL_RADIAL_CLASS_BY_AXIAL_X0",
+    "not_parity_complete_all_modes": "axial X2, terminal-only polar prefixes, and the deeper Q21-wall filtration remain unclassified",
+    "parity_reading": "axial X0 survives the formal radial gate; the certified polar oscillatory block has a generically nonradical finite mixed Einstein/additional line away from Q21=0",
+    "strongest_theorem": "modewise formal radial survival after classical reduction is parity- and filtration-sensitive and does not reduce to an Einstein-image selection rule"
+  },
+  "lifecycle": "CLASSIFIED",
+  "polar_phase": {
+    "at_exceptional_wall": "the p=-2 induced form vanishes and the deeper asymptotic-current filtration remains open",
+    "basis": [
+      "E",
+      "X0",
+      "X1",
+      "X2"
+    ],
+    "congruence_invariants": [
+      "full current rank",
+      "full radical dimension",
+      "filtered finite-line dimension",
+      "nonvanishing of the Einstein cross covector"
+    ],
+    "current_scope": "SCOPED PASS: the full ordered 4x4 oscillatory current on (E,X0,X1,X2) is exact through p=-1",
+    "denominator_cleared_p_minus_2_factorization": "C*omega^51*Lambda^3*(Lambda-2)^5*P6^2*P20*Q21(Lambda,omega^2)",
+    "denominator_cleared_prefactor_constant_C": "-44564031399364154019017544996328203878400*I",
+    "exceptional_wall": "Q21(ell*(ell+1),omega^2)=0",
+    "finite_line": "A one-dimensional mixed Einstein/additional line survives p=0,-1 and has a generically nonzero first finite p=-2 pairing; its exact exceptional set is Q21(ell(ell+1),omega^2)=0",
+    "generic_radical_dimension": 1,
+    "generic_rank": 3,
+    "headline": "GENERICALLY_NONRADICAL_FINITE_MIXED_LINE_WITH_Q21_EXCEPTIONAL_WALL",
+    "lift_sensitive": [
+      "raw XX entries",
+      "chosen-complement detK and its factorization",
+      "coordinates of the mixed radical",
+      "a sign assigned to one chosen extra lift"
+    ],
+    "module_scope": "SCOPED PASS: one zero and one oscillatory full-seven-row direction are restriction-stable; terminal-only n=8 vectors remain unpromoted pending q9",
+    "normalization_boundary": "this is the denominator-cleared induced-current coefficient, not a Hilbert norm",
+    "zero_rate": "EXCLUDED_FROM_RADIATIVE_HEADLINE"
+  },
+  "q21_exceptional_frequency_count": {
+    "boundary_factorization": "Lambda**6*(Lambda - 3)*(Lambda - 2)**6*(Lambda + 2)*(Lambda**2 - 4*Lambda + 12)*(145*Lambda**5 - 1228*Lambda**4 + 1292*Lambda**3 + 2056*Lambda**2 + 480*Lambda + 13536)",
+    "boundary_transition_factor": "145*Lambda**5 - 1228*Lambda**4 + 1292*Lambda**3 + 2056*Lambda**2 + 480*Lambda + 13536",
+    "boundary_transition_roots_ge_6": 1,
+    "continuous_lambda_bands": [
+      {
+        "positive_x_roots": 0,
+        "sample": "6"
+      },
+      {
+        "positive_x_roots": 0,
+        "sample": "13/2"
+      },
+      {
+        "positive_x_roots": 2,
+        "sample": "27/4"
+      },
+      {
+        "positive_x_roots": 3,
+        "sample": "7"
+      },
+      {
+        "positive_x_roots": 3,
+        "sample": "10"
+      },
+      {
+        "positive_x_roots": 1,
+        "sample": "20"
+      },
+      {
+        "positive_x_roots": 3,
+        "sample": "132"
+      },
+      {
+        "positive_x_roots": 1,
+        "sample": "1722"
+      }
+    ],
+    "count_evidence_type": "EXACT_RATIONAL_STURM",
+    "count_method": "exact x-Sturm counts at every triangular Lambda through ell=41 and at one sample in every continuous-Lambda chamber",
+    "discriminant_factorization": {
+      "certified_isolation_method": "exhaustive Arb complex-root enclosures narrowed to rational intervals; exact rational endpoint signs are replayed separately",
+      "degree_397_factor_sha256": "6a353990e18669a473cff2f3afa5f14ffc6ba16c3a72ca523b0208034ef90603",
+      "degree_397_factor_square_free": true,
+      "degree_397_real_roots_ge_6": 5,
+      "factorization": "unit*D397(Lambda)*(Lambda-3)^2*(Lambda+1)^2*Lambda^14*(Lambda-2)^16",
+      "factorization_evidence_type": "EXACT_RATIONAL",
+      "resultant_object": "disc_x(Q21)=(-1)^210*LC_x(Q21)^(-1)*Res_x(Q21,dQ21/dx)",
+      "root_isolation_evidence_type": "CERTIFIED_INTERVAL_NUMERIC",
+      "unit_decimal_digits": 481
+    },
+    "leading_x_coefficient": "-7253554917687775048237056*(Lambda + 2)*(5*Lambda + 8)",
+    "leading_x_coefficient_nonzero_for_Lambda_ge_6": true,
+    "legacy_fixture": {
+      "Lambda": 6,
+      "Q21_value": "-174226120816040380076641138108451235935620694016/227373675443232059478759765625",
+      "consequence": "the legacy ell=2, M*omega=3/5 point is not on the polar finite-line exceptional wall",
+      "evaluator_variable_correction": {
+        "correct_substitution": "after conversion to Q21(Lambda,x), substitute x=omega^2=9/25",
+        "disposition": "CORRECTED_EXACTLY_NO_EFFECT_ON_NONVANISHING",
+        "prior_substitution": "the serialized even-omega polynomial was evaluated at omega=9/25, producing reparametrized x=(9/25)^2=81/625",
+        "prior_value": "-14448171146294349891375497475824503848382375518461685248033668073043001344/51698788284564229679463043254372678347863256931304931640625"
+      },
+      "nonzero": true,
+      "omega_squared": "9/25"
+    },
+    "physical_triangular_harmonics": [
+      {
+        "ell": "2",
+        "positive_x_roots": 0,
+        "real_omega_roots": 0
+      },
+      {
+        "ell": "3",
+        "positive_x_roots": 3,
+        "real_omega_roots": 6
+      },
+      {
+        "ell": "4..10",
+        "positive_x_roots": 1,
+        "real_omega_roots": 2
+      },
+      {
+        "ell": "11..40",
+        "positive_x_roots": 3,
+        "real_omega_roots": 6
+      },
+      {
+        "ell": ">=41",
+        "positive_x_roots": 1,
+        "real_omega_roots": 2
+      }
+    ],
+    "transition_roots": [
+      {
+        "isolating_interval": [
+          "1647/250",
+          "6589/1000"
+        ],
+        "kind": "DISCRIMINANT",
+        "relative_to_triangular_harmonics": "between Lambda_2=6 and Lambda_3=12"
+      },
+      {
+        "isolating_interval": [
+          "1699/250",
+          "6797/1000"
+        ],
+        "kind": "X_ZERO_BOUNDARY",
+        "relative_to_triangular_harmonics": "between Lambda_2=6 and Lambda_3=12"
+      },
+      {
+        "isolating_interval": [
+          "4113/500",
+          "8227/1000"
+        ],
+        "kind": "DISCRIMINANT",
+        "relative_to_triangular_harmonics": "between Lambda_2=6 and Lambda_3=12"
+      },
+      {
+        "isolating_interval": [
+          "13983/1000",
+          "1748/125"
+        ],
+        "kind": "DISCRIMINANT",
+        "relative_to_triangular_harmonics": "between Lambda_3=12 and Lambda_4=20"
+      },
+      {
+        "isolating_interval": [
+          "2783/25",
+          "55661/500"
+        ],
+        "kind": "DISCRIMINANT",
+        "relative_to_triangular_harmonics": "between Lambda_10=110 and Lambda_11=132"
+      },
+      {
+        "isolating_interval": [
+          "1640901/1000",
+          "820451/500"
+        ],
+        "kind": "DISCRIMINANT",
+        "relative_to_triangular_harmonics": "between Lambda_40=1640 and Lambda_41=1722"
+      }
+    ],
+    "uniform_tail_reason": "all real discriminant and x=0 boundary transitions with Lambda>=6 lie below Lambda_41=1722, and the leading-x coefficient has no physical zero",
+    "variable": "x=omega^2>0"
+  },
+  "result_id": "PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1",
+  "result_token": "BH_PHASE2_GENERIC_L_AXIAL_COUNTEREXAMPLE_POLAR_FINITE_LINE_Q21_WALL",
+  "schema": "phase2-black-hole-generic-l-parity-disposition-v1",
+  "verification": {
+    "independent": "python3 -m black_hole_programme.phase2.generic_l_synthesis.verify",
+    "producer": "python3 -m black_hole_programme.phase2.generic_l_synthesis.produce --check",
+    "tests": "python3 -m unittest black_hole_programme.phase2.generic_l_synthesis.tests.test_generic_l_synthesis -v"
+  }
+}
