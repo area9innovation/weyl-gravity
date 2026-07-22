@@ -1,0 +1,206 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC preflight certifies the exact rational coupling-background incidence family and its bundle/charge conventions. It proves that for nonzero electric field on the compact spatial circle, time translation has no continuous global connection lift, and that the equation-level duality reflection restoring spherical parity does not preserve the fixed-Chern tangent carrier. It therefore obstructs this family as the proposed stationary positive-frequency sign-comparison base and requires a combined mixed-parity carrier in any nonstationary continuation. It constructs no tangent cofiber, Lee-Wald current, inertia, sign wall, causal evolution, observable, particle or quantum state.",
+  "claim_flags": {
+    "axial_polar_family_split": false,
+    "exact_background_incidence": true,
+    "lorentzian_causal_claim": false,
+    "positive_frequency_family_base": false,
+    "quantum_claim": false,
+    "sign_claim": false,
+    "stationary_global_connection": false,
+    "stationary_metric_field_strength": true,
+    "tangent_or_symplectic_claim": false
+  },
+  "classification": {
+    "combined_mixed_parity_carrier_required": true,
+    "continuous_H_bundle_stabilizer_for_tau_nonzero": false,
+    "duality_reflection_preserves_fixed_chern_tangent": false,
+    "equation_level_duality_reflection_fixes_background": true,
+    "exact_rational_local_background_family": true,
+    "fixed_coupling_open_family": false,
+    "generic_axial_polar_block_split_authorized": false,
+    "global_connection_stationary_for_tau_nonzero": false,
+    "global_metric_and_field_strength_stationary": true,
+    "lee_wald_current_constructed": false,
+    "ordinary_parity_preserves_dyonic_background": false,
+    "sign_or_inertia_computed": false,
+    "tangent_cofiber_constructed": false
+  },
+  "connection_and_symmetry": {
+    "bundle_connection": {
+      "electric_charge_policy": "Q_e labels the background and is not topological; electric tangents are allowed unless a downstream fixed-Q_e carrier is separately declared",
+      "fixed_bundle": "P_N with N fixed and nonzero",
+      "north_patch": "A_N=E t dx+(P/k_2)(1-cos(theta))dphi",
+      "south_patch": "A_S=E t dx-(P/k_2)(1+cos(theta))dphi",
+      "transition": "A_N-A_S=(N/q_min)dphi"
+    },
+    "geometry": {
+      "compact_cauchy_surface": "S1_L x S2",
+      "field_strength": "F=E dt wedge dx+P k_2^(-1) sin(theta) dtheta wedge dphi",
+      "field_strength_invariant_under_H": true,
+      "global_metric_killing_H": true,
+      "global_vector_field_H": "partial_t",
+      "metric": "-dt^2+dx^2+k_2^(-1)(dtheta^2+sin(theta)^2 dphi^2)",
+      "spacetime": "R_t x S1_L x S2(k_2)"
+    },
+    "parity_duality": {
+      "background_vector_up_to_positive_scale": [
+        "tau",
+        "1"
+      ],
+      "charge_conjugation": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "charge_vector_order": [
+        "E",
+        "P"
+      ],
+      "combined_determinant": "-1",
+      "combined_fixes_background": true,
+      "combined_involution_D_tau_times_parity": [
+        [
+          "(tau - 1)*(tau + 1)/(tau**2 + 1)",
+          "2*tau/(tau**2 + 1)"
+        ],
+        [
+          "2*tau/(tau**2 + 1)",
+          "-(tau - 1)*(tau + 1)/(tau**2 + 1)"
+        ]
+      ],
+      "combined_square_is_identity": true,
+      "duality_rotation_restoring_background": [
+        [
+          "(tau - 1)*(tau + 1)/(tau**2 + 1)",
+          "-2*tau/(tau**2 + 1)"
+        ],
+        [
+          "2*tau/(tau**2 + 1)",
+          "(tau - 1)*(tau + 1)/(tau**2 + 1)"
+        ]
+      ],
+      "equation_level_duality_remark": "The source-free Maxwell equations and stress tensor admit the displayed SO(2) charge rotation, but it is not a local off-shell symmetry of the declared single-potential fixed-bundle action and it mixes allowed electric tangents into forbidden magnetic-Chern tangents.",
+      "fixed_chern_electric_tangent": [
+        "delta E",
+        "0"
+      ],
+      "generic_disposition": "COMBINED_MIXED_PARITY_CARRIER_REQUIRED",
+      "off_shell_single_potential_symmetry": false,
+      "preserves_fixed_chern_tangent_for_tau_nonzero": false,
+      "pure_magnetic_limit": "at tau=0 the combined involution is charge conjugation times spherical parity and the certified Phase-1 parity split may be recovered",
+      "spherical_antipodal_parity": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "transformed_magnetic_tangent_component": "2*tau*delta E/(tau**2+1)"
+    },
+    "stabilizer_lifts": {
+      "H": "NO_CONTINUOUS_GLOBAL_CONNECTION_LIFT_FOR_E_NONZERO",
+      "H_obstruction": "L_H A=E dx. For every single-valued infinitesimal U(1) parameter chi, integral_S1 dchi=0, whereas integral_S1 E dx=E L. Thus L_H A+dchi cannot vanish when E!=0.",
+      "P_x": "global lift (partial_x,chi=0)",
+      "finite_time_remark": "A large gauge transformation can compensate only isolated time shifts satisfying q_min E L Delta_t in 2*pi*Z; this does not supply an infinitesimal H stabilizer.",
+      "pure_magnetic_endpoint": "at tau=0, E=0 and H has the lift (partial_t,chi=0)",
+      "sphere_rotations": "for i=x,y,z, use chi_i=-(i_{J_i}A_patch)-(P/k_2)n_i; since i_{J_i}F=(P/k_2)dn_i, L_{J_i}A+dchi_i=0 patchwise and the lifts respect the monopole transition",
+      "wilson_loop": "W_x(t)=exp(i q_min E L t) times the time-independent flat-holonomy factor"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_family": {
+    "E": "2*q_min*tau/(N*kappa*(tau**2 + 1))",
+    "Lambda": "2*q_min**2/(N**2*kappa*(tau**2 + 1))",
+    "P": "2*q_min/(N*kappa*(tau**2 + 1))",
+    "alpha_B": "3*N**2*(tau**2 + 1)/(4*q_min**2)",
+    "alpha_critical": "3*N**2/(4*q_min**2)",
+    "beta": "N**2*kappa/(4*q_min**2)",
+    "electric_charge_Qe": "N*tau/(2*q_min)",
+    "electric_charge_convention": "Q_e=(1/(4*pi))*integral_S2 star F=E/k_2 for the declared orientation",
+    "family_type": "COUPLING_BACKGROUND_FAMILY",
+    "fixed_coupling_open_family": false,
+    "k_1": "0",
+    "k_2": "4*q_min**2/(N**2*kappa*(tau**2 + 1))",
+    "magnetic_chern_relation": "(q_min/(2*pi))*integral_S2 F=N",
+    "parameter_domain": "tau=E/P is real; the oriented branch tau>=0 is used for the phase diagram; N is a fixed nonzero integer; q_min,kappa,L>0",
+    "unit_fixture": {
+      "E": "tau/(tau**2 + 1)",
+      "N": 2,
+      "P": "1/(tau**2 + 1)",
+      "alpha_B": "3*tau**2 + 3",
+      "k_2": "1/(tau**2 + 1)",
+      "kappa": 1,
+      "pure_magnetic_endpoint": "tau=0",
+      "q_min": 1
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": {
+    "admissible_successors": [
+      "enlarge to a duality-covariant two-potential/global charge lattice and re-audit the symplectic structure",
+      "drop compact S1 and declare boundary conditions permitting the electric gauge compensator",
+      "retain the compact fixed-bundle theory and use a nonstationary mixed-parity formulation without positive-frequency continuation"
+    ],
+    "disposition": "OBSTRUCTED_AS_STATIONARY_FIXED_BUNDLE_SIGN_BASE",
+    "reason": "For tau!=0, H has no continuous global lift to the compact-circle connection, and the only equation-level parity-duality involution fails to preserve the fixed-Chern tangent carrier."
+  },
+  "provenance": {
+    "declared_input_commit": "4a212883aefa5525cc847d0c12763c74c1c3411a",
+    "implementation_base_commit": "1921878e20d1929a5ac2e6b882b8ae944622336d",
+    "imported_artifacts": [
+      {
+        "name": "product_incidence",
+        "path": "bridge/certificates/einstein_maxwell_product_incidence.json",
+        "result_id": "EINSTEIN_MAXWELL_PRODUCT_INCIDENCE",
+        "sha256": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+      },
+      {
+        "name": "phase1_bridge_freeze",
+        "path": "bridge/phase1/BRIDGE_PHASE1_EINSTEIN_EXTRA_CONTRIBUTION_V1.json",
+        "result_id": "BRIDGE_PHASE1_EINSTEIN_EXTRA_CONTRIBUTION_V1",
+        "sha256": "7c045d4bde9e3961ad422faa0e6f8ca4d22cde76970e6071ca7a9bff392666d3"
+      }
+    ],
+    "producer": "bridge/phase2/dyonic_flat_family_preflight/generate.py",
+    "producer_sha256": "7075f06eac34aced3f7eadb6181b502c40c6ab167e7d94bfdad3cea9e4dd82a9",
+    "tests": "bridge/phase2/dyonic_flat_family_preflight/tests/test_dyonic_flat_family_preflight.py",
+    "tests_sha256": "8c5f92bb0e05b095db33d8c250a6029929a7629fc3ef20c0c91bcbb1fef35899",
+    "verifier": "bridge/phase2/dyonic_flat_family_preflight/verify.py",
+    "verifier_sha256": "0a6952d90ba6debc212e36ba8c5839820773fb5d744bc8d17305c563fdb28fa6"
+  },
+  "result_id": "DYONIC_FLAT_FAMILY_PREFLIGHT_V1",
+  "result_state": "EXACT_LOCAL_FAMILY_CERTIFIED_GLOBAL_CONNECTION_STATIONARITY_OBSTRUCTED_MIXED_PARITY_REQUIRED",
+  "schema": "dyonic-flat-family-preflight-v1",
+  "schema_path": "bridge/phase2/dyonic_flat_family_preflight/dyonic-flat-family-preflight-v1.schema.json",
+  "schema_sha256": "ed6c3a21367a951743fd1510d1a4c1fa45900d3a01630eb8282a68b5c562c61c",
+  "scope": {
+    "background": "flat-factor dyonic R_t x S1_L x S2(k_2), parameter tau=E/P; coupling-background family, not fixed-alpha_B openness",
+    "boundaries": "compact spatial circle and sphere; no asymptotic boundary",
+    "carrier": "background fields and exact symmetry preflight only",
+    "charge_sector": "fixed nonzero magnetic Chern N; continuously varying background electric charge Q_e",
+    "degree": "background degree zero only",
+    "ell": "not constructed",
+    "k": "not constructed",
+    "m": "not constructed",
+    "omega": "not constructed",
+    "parity": "generic tau requires a combined mixed-parity carrier; no split authorized",
+    "theory": "common Einstein-Maxwell and pure-Weyl-Maxwell background incidence"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.phase2.dyonic_flat_family_preflight.generate --check",
+    "PYTHONPATH=. python3 -m bridge.phase2.dyonic_flat_family_preflight.verify",
+    "PYTHONPATH=. python3 -m unittest bridge.phase2.dyonic_flat_family_preflight.tests.test_dyonic_flat_family_preflight",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/phase2-sign-dyonic-flat-family-preflight-fragment-v1.json"
+  ]
+}

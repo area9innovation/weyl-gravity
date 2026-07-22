@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dyonic-flat-family-preflight-v1.schema.json",
+  "title": "Exact dyonic flat-family preflight",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "provenance", "scope",
+    "exact_family", "connection_and_symmetry", "classification", "next_gate",
+    "claim_flags", "claim_boundary", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "dyonic-flat-family-preflight-v1"},
+    "schema_path": {"type": "string"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "DYONIC_FLAT_FAMILY_PREFLIGHT_V1"},
+    "result_state": {"const": "EXACT_LOCAL_FAMILY_CERTIFIED_GLOBAL_CONNECTION_STATIONARITY_OBSTRUCTED_MIXED_PARITY_REQUIRED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["declared_input_commit", "implementation_base_commit", "producer", "producer_sha256", "verifier", "verifier_sha256", "tests", "tests_sha256", "imported_artifacts"],
+      "properties": {
+        "declared_input_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "implementation_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "producer": {"type": "string"}, "producer_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "verifier": {"type": "string"}, "verifier_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "tests": {"type": "string"}, "tests_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "imported_artifacts": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["name", "path", "result_id", "sha256"],
+            "properties": {
+              "name": {"type": "string"}, "path": {"type": "string"},
+              "result_id": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "scope": {"type": "object", "additionalProperties": {"type": "string"}},
+    "exact_family": {
+      "type": "object", "additionalProperties": false,
+      "required": ["parameter_domain", "beta", "alpha_critical", "k_1", "k_2", "P", "E", "alpha_B", "Lambda", "electric_charge_Qe", "electric_charge_convention", "magnetic_chern_relation", "fixed_coupling_open_family", "family_type", "unit_fixture"],
+      "properties": {
+        "parameter_domain": {"type": "string"}, "beta": {"type": "string"}, "alpha_critical": {"type": "string"},
+        "k_1": {"const": "0"}, "k_2": {"type": "string"}, "P": {"type": "string"}, "E": {"type": "string"},
+        "alpha_B": {"type": "string"}, "Lambda": {"type": "string"}, "electric_charge_Qe": {"type": "string"},
+        "electric_charge_convention": {"type": "string"}, "magnetic_chern_relation": {"type": "string"},
+        "fixed_coupling_open_family": {"const": false}, "family_type": {"const": "COUPLING_BACKGROUND_FAMILY"},
+        "unit_fixture": {"type": "object"}
+      }
+    },
+    "connection_and_symmetry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["geometry", "bundle_connection", "stabilizer_lifts", "parity_duality"],
+      "properties": {
+        "geometry": {"type": "object"}, "bundle_connection": {"type": "object"},
+        "stabilizer_lifts": {
+          "type": "object", "required": ["H", "H_obstruction"],
+          "properties": {"H": {"const": "NO_CONTINUOUS_GLOBAL_CONNECTION_LIFT_FOR_E_NONZERO"}, "H_obstruction": {"type": "string"}}
+        },
+        "parity_duality": {
+          "type": "object", "required": ["combined_fixes_background", "preserves_fixed_chern_tangent_for_tau_nonzero", "off_shell_single_potential_symmetry", "generic_disposition"],
+          "properties": {
+            "combined_fixes_background": {"const": true},
+            "preserves_fixed_chern_tangent_for_tau_nonzero": {"const": false},
+            "off_shell_single_potential_symmetry": {"const": false},
+            "generic_disposition": {"const": "COMBINED_MIXED_PARITY_CARRIER_REQUIRED"}
+          }
+        }
+      }
+    },
+    "classification": {
+      "type": "object", "additionalProperties": {"type": "boolean"},
+      "required": ["exact_rational_local_background_family", "fixed_coupling_open_family", "global_metric_and_field_strength_stationary", "global_connection_stationary_for_tau_nonzero", "continuous_H_bundle_stabilizer_for_tau_nonzero", "ordinary_parity_preserves_dyonic_background", "equation_level_duality_reflection_fixes_background", "duality_reflection_preserves_fixed_chern_tangent", "generic_axial_polar_block_split_authorized", "combined_mixed_parity_carrier_required", "tangent_cofiber_constructed", "lee_wald_current_constructed", "sign_or_inertia_computed"]
+    },
+    "next_gate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["disposition", "reason", "admissible_successors"],
+      "properties": {
+        "disposition": {"const": "OBSTRUCTED_AS_STATIONARY_FIXED_BUNDLE_SIGN_BASE"},
+        "reason": {"type": "string"}, "admissible_successors": {"type": "array", "items": {"type": "string"}, "minItems": 3}
+      }
+    },
+    "claim_flags": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "claim_boundary": {"type": "string"},
+    "verification_commands": {"type": "array", "items": {"type": "string"}, "minItems": 4}
+  }
+}
+

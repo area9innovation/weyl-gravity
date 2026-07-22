@@ -1,0 +1,93 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "This LOCAL-ALGEBRAIC preflight certifies the exact rational coupling-background incidence family and its bundle/charge conventions. It proves that for nonzero electric field on the compact spatial circle, time translation has no continuous global connection lift, and that the equation-level duality reflection restoring spherical parity does not preserve the fixed-Chern tangent carrier. It therefore obstructs this family as the proposed stationary positive-frequency sign-comparison base and requires a combined mixed-parity carrier in any nonstationary continuation. It constructs no tangent cofiber, Lee-Wald current, inertia, sign wall, causal evolution, observable, particle or quantum state.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OBSTRUCTED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/phase2/dyonic_flat_family_preflight/DYONIC_FLAT_FAMILY_PREFLIGHT_V1.json",
+          "result_id": "DYONIC_FLAT_FAMILY_PREFLIGHT_V1",
+          "sha256": "db0baaa808b131389de09adcbe02d423d210201f96290f94bea0f25be05fdfc2"
+        }
+      ],
+      "id": "phase2.sign.dyonic_flat_family.preflight",
+      "mode_data": {
+        "dispersion": {
+          "statement": "No dyonic tangent operator or harmonic shell is constructed.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "lee_wald": {
+          "statement": "The proposed stationary fixed-bundle positive-frequency comparison fails because H has no continuous global connection lift for tau!=0.",
+          "status": "OBSTRUCTED"
+        },
+        "resonance": {
+          "statement": "No dyonic source operator is defined.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No tangent carrier exists yet.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No causal complex is imported.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No tangent carrier exists yet.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "No dyonic stabilizer moment map is defined.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "flat-factor dyonic R_t x S1_L x S2(k_2), parameter tau=E/P; coupling-background family, not fixed-alpha_B openness",
+        "boundaries": "compact spatial circle and sphere; no asymptotic boundary",
+        "carrier": "background fields and exact symmetry preflight only",
+        "charge_sector": "fixed nonzero magnetic Chern N; continuously varying background electric charge Q_e",
+        "degree": "background degree zero only",
+        "ell": "not constructed",
+        "k": "not constructed",
+        "m": "not constructed",
+        "omega": "not constructed",
+        "parity": "generic tau requires a combined mixed-parity carrier; no split authorized",
+        "theory": "common Einstein-Maxwell and pure-Weyl-Maxwell background incidence"
+      }
+    }
+  ],
+  "generated_by": "bridge/phase2/dyonic_flat_family_preflight/generate.py",
+  "generated_by_sha256": "7075f06eac34aced3f7eadb6181b502c40c6ab167e7d94bfdad3cea9e4dd82a9",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "phase2_sign",
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.phase2.dyonic_flat_family_preflight.generate --check",
+    "PYTHONPATH=. python3 -m bridge.phase2.dyonic_flat_family_preflight.verify",
+    "PYTHONPATH=. python3 -m unittest bridge.phase2.dyonic_flat_family_preflight.tests.test_dyonic_flat_family_preflight",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/phase2-sign-dyonic-flat-family-preflight-fragment-v1.json"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "schema": "tier-receipt-v1",
+  "result_id": "DYONIC_FLAT_FAMILY_PREFLIGHT_V1_TIER_RECEIPT",
+  "subject_result_id": "DYONIC_FLAT_FAMILY_PREFLIGHT_V1",
+  "date": "2026-07-22",
+  "agent": "phase2-sign-1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "artifacts": {
+    "certificate": {
+      "path": "bridge/phase2/dyonic_flat_family_preflight/DYONIC_FLAT_FAMILY_PREFLIGHT_V1.json",
+      "sha256": "db0baaa808b131389de09adcbe02d423d210201f96290f94bea0f25be05fdfc2"
+    },
+    "producer": {
+      "path": "bridge/phase2/dyonic_flat_family_preflight/generate.py",
+      "sha256": "7075f06eac34aced3f7eadb6181b502c40c6ab167e7d94bfdad3cea9e4dd82a9"
+    },
+    "independent_verifier": {
+      "path": "bridge/phase2/dyonic_flat_family_preflight/verify.py",
+      "sha256": "0a6952d90ba6debc212e36ba8c5839820773fb5d744bc8d17305c563fdb28fa6"
+    },
+    "schema": {
+      "path": "bridge/phase2/dyonic_flat_family_preflight/dyonic-flat-family-preflight-v1.schema.json",
+      "sha256": "ed6c3a21367a951743fd1510d1a4c1fa45900d3a01630eb8282a68b5c562c61c"
+    },
+    "tests": {
+      "path": "bridge/phase2/dyonic_flat_family_preflight/tests/test_dyonic_flat_family_preflight.py",
+      "sha256": "8c5f92bb0e05b095db33d8c250a6029929a7629fc3ef20c0c91bcbb1fef35899"
+    },
+    "atlas": {
+      "path": "residual_atlas/phase2-sign-dyonic-flat-family-preflight-fragment-v1.json",
+      "sha256": "d0cf0726503119b611eb12b6874d10f3c3a6840d7ff67ef18c588db31d718cff"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile bridge/phase2/dyonic_flat_family_preflight/generate.py bridge/phase2/dyonic_flat_family_preflight/verify.py bridge/phase2/dyonic_flat_family_preflight/tests/test_dyonic_flat_family_preflight.py",
+        "git diff --check -- bridge/phase2/dyonic_flat_family_preflight reports/phase2-sign-dyonic-flat-family-preflight-2026-07-22.md residual_atlas/phase2-sign-dyonic-flat-family-preflight-fragment-v1.json"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "runs": [
+        {
+          "command": "PYTHONPATH=. python3 -m bridge.phase2.dyonic_flat_family_preflight.generate --check",
+          "elapsed_seconds": "0.46",
+          "result": "PASS"
+        },
+        {
+          "command": "PYTHONPATH=. python3 -m bridge.phase2.dyonic_flat_family_preflight.verify",
+          "elapsed_seconds": "0.50",
+          "result": "PASS"
+        },
+        {
+          "command": "PYTHONPATH=. python3 -m unittest bridge.phase2.dyonic_flat_family_preflight.tests.test_dyonic_flat_family_preflight",
+          "elapsed_seconds": "0.74",
+          "result": "PASS; 6 tests including four false-promotion/coefficient mutations"
+        },
+        {
+          "command": "python3 residual_atlas/validate_fragment.py residual_atlas/phase2-sign-dyonic-flat-family-preflight-fragment-v1.json",
+          "elapsed_seconds": "0.10",
+          "result": "PASS"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No imported mathematical operator, shared schema, or upstream certificate changed; both inputs are consumed read-only by exact content hash."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a scoped background/symmetry preflight obstruction, not a classical/quantum freeze, theorem promotion, release, or shared-core change."
+    }
+  },
+  "independence": {
+    "producer": "Solves the incidence and charge-plane identities with exact SymPy expressions.",
+    "verifier": "Does not import the producer; eliminates the incidence independently, checks source hashes, rederives the parity-duality involution, and uses the nonzero S1 period as the bundle-lift obstruction.",
+    "mutation_controls": [
+      "false fixed-alpha openness",
+      "false continuous global H lift",
+      "false inherited axial/polar split",
+      "false fixed-Chern preservation by duality",
+      "factor-two k_2 mutation"
+    ]
+  },
+  "claim_boundary": "The receipt supports only the LOCAL-ALGEBRAIC exact family, global connection-lift obstruction, and mixed-parity disposition. It supports no tangent, Lee-Wald, sign, causal, particle, positivity or quantum claim."
+}
