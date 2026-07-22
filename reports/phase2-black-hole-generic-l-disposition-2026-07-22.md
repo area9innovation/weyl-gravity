@@ -1,7 +1,9 @@
 # Phase 2 generic-ell Schwarzschild parity disposition
 
-Result: `BH_PHASE2_GENERIC_L_AXIAL_COUNTEREXAMPLE_POLAR_FINITE_LINE_Q21_WALL`  
-Dependency tags: `LOCAL-ALGEBRAIC` + `REDUCED-MODE`  
+Result: `BH_PHASE2_GENERIC_L_AXIAL_COUNTEREXAMPLE_POLAR_FINITE_LINE_Q21_WALL`
+
+Dependency tags: `LOCAL-ALGEBRAIC` + `REDUCED-MODE`
+
 Lifecycle: `CLASSIFIED`
 
 ## Joined disposition

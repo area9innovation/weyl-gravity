@@ -394,8 +394,10 @@ def build_outputs() -> dict[Path, bytes]:
 
     report = f"""# Phase 2 generic-ell Schwarzschild parity disposition
 
-Result: `{certificate['result_token']}`  
-Dependency tags: `LOCAL-ALGEBRAIC` + `REDUCED-MODE`  
+Result: `{certificate['result_token']}`
+
+Dependency tags: `LOCAL-ALGEBRAIC` + `REDUCED-MODE`
+
 Lifecycle: `CLASSIFIED`
 
 ## Joined disposition
