@@ -1068,6 +1068,32 @@ is not predictive: \([A_{{\rm in},2}']\) is a unit, so such a class
 QNM and adjoint germ together with a convergent Fredholm pairing; no
 nonzero extension resonance is promoted here.
 
+\begin{proposition}[Local QNM Smith dichotomy]
+\label{prop:axial-qnm-smith-dichotomy}
+Let \(\omega_n\) be a simple zero of the spin-two incoming Jost
+coefficient \(a=A_{{\rm in},2}\), and suppose the spin-one coefficient
+\(f=A_{{\rm in},1}\) is nonzero there.  After analytic elimination of the
+spin-one factor, the local connection is equivalent to
+\[
+ \begin{pmatrix}a&b\\0&a\end{pmatrix}.
+\]
+If \([b]\ne0\) in \(\mathcal O_{\omega_n}/(a)\), its Smith valuations are
+\((0,2)\): the resonance has one root vector, a length-two chain, and a
+second-order resolvent pole.  If \([b]=0\), the valuations are \((1,1)\):
+there are two independent root vectors and only simple poles.  Under
+compatible endpoint normalizations the selector is the invariant Fredholm
+overlap
+\[
+ \beta_n=
+ \left\langle\widetilde u_n,\,
+ \mathcal E_{\rm RW}(\omega_n)u_n\right\rangle,
+ \qquad
+ [b]\ne0\ \Longleftrightarrow\ \beta_n\ne0 .
+\]
+The present certificate proves this dichotomy and commutator invariance,
+but does not evaluate \(\beta_n\) at any physical QNM.
+\end{proposition}
+
 \begin{theorem}[Exact future-horizon flux]
 \label{thm:axial-future-horizon-gram}
 For axial \(\ell=2\) and every real \(\omega>0\), the exact
@@ -1527,6 +1553,7 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/future_horizon_outward_gram.json};
 \cert{black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/future_horizon_factor_quotient.json};
 \cert{black_hole_programme/phase3/axial_spin_two_scattering_extension_preflight/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_local_smith_dichotomy/certificate.json};
 \cert{black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json}\\
 Polar restriction-stable module and invariant current filtration &
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json}\\
