@@ -1,0 +1,363 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase3-axial-global-channel-handoff-v1",
+  "title": "Validated first-cell axial Schwarzschild channel handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "dependency_tags",
+    "cell",
+    "basis",
+    "connection",
+    "endpoint_forms",
+    "classification_witnesses",
+    "provenance",
+    "missing_Hminus",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-global-channel-handoff-v1"
+    },
+    "status": {
+      "const": "CERTIFIED"
+    },
+    "dependency_tags": {
+      "const": ["LORENTZIAN-CAUSAL", "REDUCED-MODE"]
+    },
+    "cell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ell",
+        "mass_normalization",
+        "omega_parameter",
+        "omega_interval",
+        "affine_generator"
+      ],
+      "properties": {
+        "ell": {"const": 2},
+        "mass_normalization": {"const": "M=1"},
+        "omega_parameter": {"const": "M*omega"},
+        "omega_interval": {"const": ["1/2", "129/256"]},
+        "affine_generator": {"const": 7315}
+      }
+    },
+    "basis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "phase_convention",
+        "complex_infinity_order",
+        "real_infinity_order",
+        "Iminus_selector",
+        "Iplus_selector",
+        "raw_horizon_order",
+        "public_horizon_order",
+        "public_index_to_raw_index",
+        "raw_index_to_public_index",
+        "raw_future_regular_selector",
+        "public_future_regular_selector",
+        "future_regular_origin_order",
+        "standard_r4_real_order"
+      ],
+      "properties": {
+        "phase_convention": {"const": "exp(+i*omega*v)"},
+        "complex_infinity_order": {
+          "const": ["XI0", "XI1", "XI2", "XI3", "EI0", "EI2"]
+        },
+        "real_infinity_order": {
+          "const": [
+            "Re(XI0)", "Re(XI1)", "Re(XI2)", "Re(XI3)", "Re(EI0)", "Re(EI2)",
+            "Im(XI0)", "Im(XI1)", "Im(XI2)", "Im(XI3)", "Im(EI0)", "Im(EI2)"
+          ]
+        },
+        "Iminus_selector": {"const": [0, 1, 4]},
+        "Iplus_selector": {"const": [2, 3, 5]},
+        "raw_horizon_order": {
+          "const": ["XH0a", "XH0b", "EH0", "XHplus", "EHout", "XHminus"]
+        },
+        "public_horizon_order": {
+          "const": ["XH0a", "XH0b", "XHplus", "XHminus", "EH0", "EHout"]
+        },
+        "public_index_to_raw_index": {"const": [0, 1, 3, 5, 2, 4]},
+        "raw_index_to_public_index": {"const": [0, 1, 4, 2, 5, 3]},
+        "raw_future_regular_selector": {"const": [0, 1, 2]},
+        "public_future_regular_selector": {"const": [0, 1, 4]},
+        "future_regular_origin_order": {"const": ["XH0a", "XH0b", "EH0"]},
+        "standard_r4_real_order": {
+          "const": [
+            "Re(P)", "Re(Pprime)", "Re(Q)", "Re(Qprime)", "Re(H1)", "Re(F)",
+            "Im(P)", "Im(Pprime)", "Im(Q)", "Im(Qprime)", "Im(H1)", "Im(F)"
+          ]
+        }
+      }
+    },
+    "connection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "complex_6_by_3",
+        "realified_12_by_6",
+        "Cminus_3_by_3",
+        "Cplus_3_by_3"
+      ],
+      "properties": {
+        "complex_6_by_3": {"$ref": "#/$defs/complex6x3"},
+        "realified_12_by_6": {"$ref": "#/$defs/real12x6"},
+        "Cminus_3_by_3": {"$ref": "#/$defs/complex3x3"},
+        "Cplus_3_by_3": {"$ref": "#/$defs/complex3x3"}
+      }
+    },
+    "endpoint_forms": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "orientation",
+        "Gminus",
+        "Gplus",
+        "GHplus_outward",
+        "gminus_pullback",
+        "gplus_pullback",
+        "conservation"
+      ],
+      "properties": {
+        "orientation": {
+          "const": {
+            "radial_current": "F^r/(pi*alpha_W)",
+            "Hermitian_flux": "i*F^r/(pi*alpha_W)",
+            "Hplus_outward": "minus the +r radial orientation",
+            "identity": "GHplus+gplus-gminus=0"
+          }
+        },
+        "Gminus": {"$ref": "#/$defs/complex3x3"},
+        "Gplus": {"$ref": "#/$defs/complex3x3"},
+        "GHplus_outward": {"$ref": "#/$defs/complex3x3"},
+        "gminus_pullback": {"$ref": "#/$defs/complex3x3"},
+        "gplus_pullback": {"$ref": "#/$defs/complex3x3"},
+        "conservation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "identity",
+            "defect",
+            "zero_contained_entrywise",
+            "structural_identity_witness",
+            "witness_sha256"
+          ],
+          "properties": {
+            "identity": {"const": "GHplus+gplus-gminus=0"},
+            "defect": {"$ref": "#/$defs/complex3x3"},
+            "zero_contained_entrywise": {"const": true},
+            "structural_identity_witness": {
+              "type": "string",
+              "minLength": 20
+            },
+            "witness_sha256": {"$ref": "#/$defs/sha256"}
+          }
+        }
+      }
+    },
+    "classification_witnesses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rank",
+        "inertia",
+        "exceptional_cell",
+        "multiplier_bounds"
+      ],
+      "properties": {
+        "rank": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["connection", "Cminus", "Cplus"],
+          "properties": {
+            "connection": {"$ref": "#/$defs/rank3"},
+            "Cminus": {"$ref": "#/$defs/rank3"},
+            "Cplus": {"$ref": "#/$defs/rank3"}
+          }
+        },
+        "inertia": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["GHplus", "gminus", "gplus"],
+          "properties": {
+            "GHplus": {"$ref": "#/$defs/inertia"},
+            "gminus": {"$ref": "#/$defs/inertia"},
+            "gplus": {"$ref": "#/$defs/inertia"}
+          }
+        },
+        "exceptional_cell": {"type": "boolean"},
+        "multiplier_bounds": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "connection_operator_norm_upper",
+            "Cminus_inverse_norm_upper",
+            "frequency_derivative_norm_upper",
+            "whole_cell"
+          ],
+          "properties": {
+            "connection_operator_norm_upper": {"$ref": "#/$defs/nonnegative"},
+            "Cminus_inverse_norm_upper": {"$ref": "#/$defs/nonnegative"},
+            "frequency_derivative_norm_upper": {"$ref": "#/$defs/nonnegative"},
+            "whole_cell": {"const": true}
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "global_frame_table_sha256",
+        "left_boundary_frame_sha256",
+        "right_boundary_frame_sha256",
+        "moving_join_artifact_sha256",
+        "horizon_transport_artifact_sha256",
+        "endpoint_gram_artifact_sha256",
+        "producer_sha256",
+        "verifier_sha256",
+        "replay_receipt_sha256"
+      ],
+      "properties": {
+        "global_frame_table_sha256": {"$ref": "#/$defs/sha256"},
+        "left_boundary_frame_sha256": {"$ref": "#/$defs/sha256"},
+        "right_boundary_frame_sha256": {"$ref": "#/$defs/sha256"},
+        "moving_join_artifact_sha256": {"$ref": "#/$defs/sha256"},
+        "horizon_transport_artifact_sha256": {"$ref": "#/$defs/sha256"},
+        "endpoint_gram_artifact_sha256": {"$ref": "#/$defs/sha256"},
+        "producer_sha256": {"$ref": "#/$defs/sha256"},
+        "verifier_sha256": {"$ref": "#/$defs/sha256"},
+        "replay_receipt_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "missing_Hminus": {
+      "const": {
+        "available": false,
+        "full_scattering_matrix_constructed": false,
+        "reason": "Past-horizon incoming data are not part of this one-sided future-regular handoff."
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"type": "string", "minLength": 12}
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "rational": {
+      "type": "string",
+      "pattern": "^-?[0-9]+/[1-9][0-9]*$"
+    },
+    "f64bits": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{16}$"
+    },
+    "nonnegative": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?([eE][+-]?[0-9]+)?$"
+    },
+    "affineScalar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["center", "linear", "remainder"],
+      "properties": {
+        "center": {"$ref": "#/$defs/rational"},
+        "linear": {"$ref": "#/$defs/rational"},
+        "remainder": {
+          "type": "array",
+          "prefixItems": [
+            {"$ref": "#/$defs/f64bits"},
+            {"$ref": "#/$defs/f64bits"}
+          ],
+          "items": false
+        }
+      }
+    },
+    "complexAffine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["re", "im"],
+      "properties": {
+        "re": {"$ref": "#/$defs/affineScalar"},
+        "im": {"$ref": "#/$defs/affineScalar"}
+      }
+    },
+    "complexRow3": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/complexAffine"}
+    },
+    "complex3x3": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/complexRow3"}
+    },
+    "complex6x3": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {"$ref": "#/$defs/complexRow3"}
+    },
+    "realRow6": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {"$ref": "#/$defs/affineScalar"}
+    },
+    "real12x6": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {"$ref": "#/$defs/realRow6"}
+    },
+    "rank3": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rank",
+        "kernel_dimension",
+        "whole_cell",
+        "method",
+        "witness_sha256"
+      ],
+      "properties": {
+        "rank": {"const": 3},
+        "kernel_dimension": {"const": 0},
+        "whole_cell": {"const": true},
+        "method": {"type": "string", "minLength": 12},
+        "witness_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "inertia": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "positive",
+        "negative",
+        "zero",
+        "whole_cell",
+        "method",
+        "witness_sha256"
+      ],
+      "properties": {
+        "positive": {"type": "integer", "minimum": 0, "maximum": 3},
+        "negative": {"type": "integer", "minimum": 0, "maximum": 3},
+        "zero": {"type": "integer", "minimum": 0, "maximum": 3},
+        "whole_cell": {"const": true},
+        "method": {"type": "string", "minLength": 12},
+        "witness_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}
