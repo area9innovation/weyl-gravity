@@ -1,0 +1,42 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-boundary-devissage-no-growth",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-boundary-devissage-no-growth",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-boundary-devissage-no-growth.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-analytic-connection",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Decide whether the exact non-split RW/RW/spin-one filtration upgrades the reduced positive-potential no-growth result to the complete six-state axial ell=2 separated boundary problem.",
+    "stop_condition": "In the repository convention exp(+i omega t), certify or refuse that every filtration inclusion, quotient and master map preserves the future-horizon-regular and zero-incoming/pure-outgoing germ classes for Im(omega)<0. If preservation and endpoint kernel exactness pass, use successive quotient elimination and the nonnegative spin-two and spin-one Regge-Wheeler operators to classify growing separated modes of the full six-state system. Define the intrinsic regularized Evans product and record, without selecting, the exact local extension/Smith gate at a simple damped spin-two QNM.",
+    "current_gate": "Complex-frequency boundary devissage, complete separated-mode no-growth theorem, and intrinsic Evans/extension claim boundary",
+    "forbid": "no time-domain boundedness, decay, completeness or full PDE stability theorem; no absence of damped upper-half-plane quasinormal modes; no classification of omega=i/4,i/2,i as Evans zeros or nonzeros; no claimed spectral-derivative identity or nonzero extension invariant before computation; no polar, general-ell, CPT, particle, ghost or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-incoming-extended-domain-audit"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_boundary_devissage_no_growth/",
+      "reports/phase3-axial-boundary-devissage-no-growth-2026-07-23.md",
+      "paper/14-pure-weyl-black-hole-radiation.tex",
+      "paper/15-four-level-ghost-classification-phase1-synthesis.tex",
+      "planning/work-items/phase3-black-hole-axial-boundary-devissage-no-growth.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use the exact J, K and U chain maps and the weighted spin-one master y=r^2(r-2)K_0(state). Growth is Im(omega)<0. The physical radial factors are exp(+i omega rstar) at the future horizon and exp(-i omega rstar) for pure outgoing infinity. On the simultaneous two-ended kernel, left exactness and kernel identification suffice; do not claim quotient surjectivity.",
+    "input_commit": "eaf61ca2f",
+    "notes": [
+      "LORENTZIAN-CAUSAL",
+      "REDUCED-MODE",
+      "The intrinsic factor Evans product is A_in_2^2 A_in_1.",
+      "At a simple damped spin-two zero, the extension class [c] in O/(A_in_2) controls the local Smith type.",
+      "The spectral-derivative congruence is a next test, not an established identity."
+    ]
+  },
+  "edges": []
+}

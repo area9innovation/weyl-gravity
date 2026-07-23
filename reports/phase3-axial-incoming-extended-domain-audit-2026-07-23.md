@@ -60,6 +60,19 @@ Hence
 }
 \]
 
+The same monotonicity and Wronskian bound apply on the whole positive real
+axis.  Since \(|C(\omega)|\to1/4\) as \(\omega\to0^+\),
+
+\[
+\boxed{
+|\det T_-(\omega)|>\frac14
+\qquad(\omega>0),
+}
+\]
+
+with \(1/4\) the unattained positive-real infimum.  This remains a
+volume-determinant bound, not a smallest-singular-value estimate.
+
 ## Extension to every positive real frequency
 
 Every exact map used by the factorization and endpoint assignment is regular
@@ -192,6 +205,110 @@ Hence the exact factor/pairing anatomy is
 \operatorname{span}\{SI\}\ (0,1,0).
 }
 \]
+
+If the quotient line is normalized to unit \(L_x\) amplitude,
+
+\[
+SI_{\rm unit}=-\frac{SI}{6\omega^2},
+\qquad
+\pi_x(SI_{\rm unit})=1,
+\]
+
+then its exact flux weight is
+
+\[
+\boxed{
+G_-(SI_{\rm unit},SI_{\rm unit})
+=-\frac{32}{15\omega}.
+}
+\]
+
+## Natural all-positive-frequency majorant
+
+In the canonical basis
+
+\[
+E,\qquad
+RI_0=RI-\frac{13}{24\omega^2}E,\qquad
+SI_{\rm unit},
+\]
+
+set
+
+\[
+a(\omega)=\frac{576}{5}\omega,
+\qquad
+b(\omega)=\frac{32}{15\omega}.
+\]
+
+The incoming flux density is exactly
+
+\[
+2a(\omega)\operatorname{Re}(\bar e r)-b(\omega)|s|^2.
+\]
+
+Its absolute-value majorant therefore defines the natural positive
+coefficient norm
+
+\[
+\int_0^\infty
+\left[
+a(\omega)(|e|^2+|r|^2)+b(\omega)|s|^2
+\right]d\omega.
+\]
+
+The normalized combinations
+
+\[
+P_2=\frac{E+RI_0}{\sqrt{2a}},\qquad
+N_2=\frac{E-RI_0}{\sqrt{2a}},\qquad
+N_1=\frac{SI_{\rm unit}}{\sqrt b}
+\]
+
+give the fiberwise signature \(\operatorname{diag}(1,-1,-1)\).
+
+This weighted direct integral is the natural all-positive-frequency
+endpoint space.  It is not ordinary unweighted
+\(L^2((0,\infty);\mathbb C^3)\).  At threshold,
+\(a(\omega)\sim\omega\) while \(b(\omega)\sim1/\omega\), so finite
+spin-one flux requires
+
+\[
+\int_0^\epsilon\frac{|s(\omega)|^2}{\omega}\,d\omega<\infty.
+\]
+
+On the positive-frequency Fourier core these are the homogeneous fractional
+Sobolev weights
+
+\[
+ (e,r)\in\dot H^{1/2},\qquad s\in\dot H^{-1/2},
+\]
+
+up to Fourier normalization and the real-field extension.  Weighted
+integrability alone does not define a point value \(s(0)\).  If a continuous
+threshold trace is assumed separately, the condition forces that trace to
+vanish.  The static/memory sector at \(\omega=0\) therefore remains
+separate.
+
+In the normalized positive/negative channel basis the classical fundamental
+symmetry is
+
+\[
+ C_{\rm fac}=\operatorname{diag}(1,-1,-1),\qquad
+ \widehat G_-C_{\rm fac}=I.
+\]
+
+Equivalently, in the null factor basis it exchanges \(EI\) and \(RI_0\) and
+negates \(SI_{\rm unit}\), producing the positive majorant
+\(\operatorname{diag}(a,a,b)\).  This is a regular Krein-space fundamental
+symmetry of the incoming classical endpoint data.  It is not Mannheim's
+\(C\) operator, has not been descended through BRST, and has not been shown
+to commute with the scattering dynamics.
+
+Pointwise invertibility of \(T_-\) also does not, by itself, prove that
+\(T_-\) or its inverse is bounded on this full weighted direct integral; the
+compact-band wave-packet theorem remains the presently controlled global
+matching statement.
 
 For a canonical Witt display set
 \(RI_0=RI-13EI/(24\omega^2)\).  In the basis \((EI,RI_0,SI)\),

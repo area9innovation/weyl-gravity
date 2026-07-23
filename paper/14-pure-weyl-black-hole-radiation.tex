@@ -88,8 +88,9 @@ data to the incoming \(\mathscr I^-\) trace is invertible for every real
 globally populated; its spin-two extension is hyperbolic and its orthogonal
 spin-one quotient line is negative.  The outgoing reflection block,
 non-real poles, a complete asymptotically flat scattering operator, full
-mode stability, quasinormal spectrum, Hawking state, and quantum unitarity
-remain open.  The local Cauchy restriction
+time-domain stability, damped quasinormal spectrum, Hawking state, and
+quantum unitarity remain open.  The exact filtration does, however, exclude
+exponentially growing axial \(\ell=2\) separated modes.  The local Cauchy restriction
 \(\psi|_\Sigma=\nabla_n\psi|_\Sigma=0\) still selects the Einstein kernel at
 the linear level.
 \end{abstract}
@@ -781,7 +782,44 @@ negative, of inertia \((0,1,0)\).  Equivalently, after
  \begin{pmatrix}-384\omega^3/5\end{pmatrix}.
 \]
 This factor attribution does not require the differential extension to
-split.
+split.  With the quotient normalized to one,
+\[
+ S_{\rm unit}=-\frac{S}{6\omega^2},\qquad
+ \pi_x(S_{\rm unit})=1,\qquad
+ \frac{G_-(S_{\rm unit},S_{\rm unit})}{\pi\alpha_{\rm W}}
+ =-\frac{32}{15\omega}.
+\]
+In this canonical basis the fiberwise form is congruent to
+\(\operatorname{diag}(1,-1,-1)\).  Across the whole positive frequency
+axis its natural Hilbert majorant is weighted:
+\[
+ \int_0^\infty\left[
+ \frac{576\omega}{5}(|e|^2+|r|^2)
+ +\frac{32}{15\omega}|s|^2
+ \right]d\omega.
+\]
+Thus a finite-flux spin-one amplitude must obey
+\(\int_0^\epsilon |s(\omega)|^2d\omega/\omega<\infty\) near threshold.
+On the positive-frequency Fourier core these are the homogeneous fractional
+Sobolev weights
+\[
+ (e,r)\in\dot H^{1/2},\qquad s\in\dot H^{-1/2},
+\]
+up to Fourier normalization and the real-field extension.  Weighted
+integrability alone does not define \(s(0)\); if a continuous threshold trace
+is separately available, it must vanish.
+The unweighted \(L^2\) topology remains equivalent on compact frequency
+bands away from zero, while the static/memory sector at \(\omega=0\) is
+separate.  Pointwise invertibility of \(T_-\) does not by itself give a
+bounded global operator on this weighted direct integral.
+
+The normalized signature basis also defines the canonical classical
+fundamental symmetry \(C_{\rm fac}=\operatorname{diag}(1,-1,-1)\).
+In the null basis it exchanges \(EI\) and \(RI_0\), negates
+\(SI_{\rm unit}\), and yields the positive majorant
+\(\operatorname{diag}(a,a,b)\).  This is an endpoint Krein-space
+fundamental symmetry, not a Mannheim \(C\) operator: BRST descent and
+compatibility with the full scattering dynamics are not established.
 
 The \(L^2\) completion here uses the auxiliary positive coefficient norm,
 not the indefinite flux as a norm.  Exact Sturm counts applied to
@@ -936,6 +974,11 @@ prefactor is
 \]
 and \(\lvert A_{{\rm in},s}\rvert\geq1\).  This is a volume-determinant
 bound, not by itself a smallest-singular-value estimate.
+On the full positive real axis the same monotonicity gives
+\[
+ \left|\det T_-(\omega)\right|>\frac14,\qquad \omega>0,
+\]
+with \(1/4\) approached only as \(\omega\to0^+\).
 
 Congruence by the invertible \(T_-\) preserves inertia.  The
 horizon-regular pullback of the incoming endpoint form therefore has
@@ -952,8 +995,8 @@ This is a one-sided global connection and flux theorem, not yet a complete
 scattering theorem.  It does not determine the rank of the outgoing
 \(\mathscr I^+\) reflection block \(T_+\), the reflection amplitudes,
 non-real complex-frequency poles, total canonical energy, a particle norm, CPT
-positivity, stability, or invariance under unrestricted radial or corner
-improvements of the presymplectic potential.
+positivity, time-domain stability, or invariance under unrestricted radial
+or corner improvements of the presymplectic potential.
 It does exclude a future-horizon-regular solution with zero incoming
 \(\mathscr I^-\) trace, and hence excludes purely outgoing real-frequency
 axial modes and real-axis incoming spectral singularities for every
@@ -969,13 +1012,50 @@ coefficient in that half-plane would produce an \(L^2(dr_*)\) mode of
 with eigenvalue \(\omega^2\).  Both displayed potentials are nonnegative.
 Self-adjointness excludes a nonreal eigenvalue when
 \(\operatorname{Re}\omega\ne0\), and nonnegativity excludes
-\(\omega^2<0\) on the imaginary axis.  Hence the three diagonal factors
-have no lower-half-plane growing Evans zeros.  This is not yet a stability
-theorem for the full non-split six-state boundary problem: preservation of
-the complex-frequency boundary classes by the filtration maps remains to
-be certified.  The frame events at
+\(\omega^2<0\) on the imaginary axis.  The exact inclusion, quotient, and
+master maps preserve the future-horizon-regular and pure-outgoing germ
+classes throughout that half-plane.  Successive quotient elimination
+therefore proves that the complete non-split six-state axial \(\ell=2\)
+system has no growing separated mode.  Equivalently, its intrinsic factor
+Evans product
+\[
+ {\cal E}_{\rm reg}(\omega)
+ =A_{{\rm in},2}(\omega)^2A_{{\rm in},1}(\omega)
+\]
+is zero-free for \(\operatorname{Im}\omega<0\).  This is a separated-mode
+spectral no-growth theorem, not time-domain boundedness, decay,
+completeness, or a full PDE stability theorem.  The frame events at
 \(\omega=i/4,i/2,i\) lie in the temporally damped half-plane in this
 convention and remain unclassified by the energy argument.
+
+\begin{theorem}[Exact future-horizon flux]
+\label{thm:axial-future-horizon-gram}
+For the same axial \(\ell=2\) pilot band, the exact outward-oriented
+future-horizon Gram \(H_{\mathcal H^+}\), evaluated from the correlated
+Frobenius series and the action current, has rank three and inertia
+\[
+ \operatorname{inertia}H_{\mathcal H^+}=(1,2,0)
+ \qquad(\alpha_{\rm W}>0).
+\]
+Its metric/carrier spin-two kernel plane has inertia \((1,1,0)\), while the
+orthogonal unit spin-one quotient has exact norm
+\[
+ -\pi\alpha_{\rm W}\frac{32}{15\omega}.
+\]
+Neither \(H_{\mathcal H^+}\) nor \(-H_{\mathcal H^+}\) is positive
+semidefinite.
+\end{theorem}
+
+The oriented Stokes identity is therefore
+\[
+ H_{\mathcal H^+}
+ +T_+^\dagger G_+T_+
+ -T_-^\dagger G_-T_-=0.
+\]
+The horizon theorem independently reproduces the hyperbolic-spin-two plus
+negative-spin-one anatomy of the incoming endpoint.  Its indefiniteness
+also means that a semidefinite shortcut cannot determine
+\(\operatorname{rank}T_+\); the outgoing connection remains necessary.
 
 For comparison, the Einstein problem admits a global finite-energy
 Schwarzschild scattering theory relating initial data and radiation spaces
@@ -1230,11 +1310,12 @@ deeper filtration open on the wall\\
 Einstein--extra horizon pairing invariant? & Einstein block isotropic;
 nonzero cross pairing and full rank in controlled fixtures; extra self-pairing
 sign not invariant & axial $\ell=2$, real $\omega\neq0$\\
-Complex-frequency structure? & the three reduced diagonal factors have no
-lower-half-plane growing Evans zeros in the $e^{+i\omega t}$ convention;
+Complex-frequency structure? & the complete non-split axial $\ell=2$
+system has no lower-half-plane growing separated mode in the
+$e^{+i\omega t}$ convention;
 the selected frames have damped-half-plane events at
-$\{i/4,i/2,i\}$ & boundary d\'evissage, regularized damped poles, and the
-full coupled spectrum remain open\\
+$\{i/4,i/2,i\}$ & time-domain PDE stability, regularized damped poles, and
+the quasinormal spectrum remain open\\
 Static ($\omega=0$) sectors? & log-classified: two-parameter log-free
 families both parities; polar Einstein variables degenerate &
 classification only; static composition open\\
@@ -1270,11 +1351,10 @@ The paper does not establish:
       reconstruction from every Ricci-carrier solution;
 \item a representative-invariant sign theory for the carrier self-pairing
       (the null-quotient pairing);
-\item full mode stability, quasinormal modes, or ringdown waveforms: the
-      three reduced diagonal factors have no lower-half-plane growing Evans
-      zeros in the \(e^{+i\omega t}\) convention, but preservation of the
-      complex-frequency boundary classes under the non-split filtration is
-      not yet certified; the damped-half-plane frame events
+\item time-domain boundedness, decay, completeness, quasinormal modes, or
+      ringdown waveforms: boundary d\'evissage excludes growing separated
+      modes of the complete non-split axial \(\ell=2\) system, but does not
+      prove a full PDE stability theorem; the damped-half-plane frame events
       \(\{i/4,i/2,i\}\) are not classified as Evans zeros or nonzeros;
 \item a second-order physical-process first law or nonlinear horizon
       dynamics;
@@ -1351,7 +1431,9 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json};
 \cert{black_hole_programme/phase3/axial_incoming_connection_analytic/certificate.json};
 \cert{black_hole_programme/phase3/axial_incoming_extended_domain_audit/certificate.json};
-\cert{reports/phase3-axial-incoming-extended-domain-audit-2026-07-23.md}\\
+\cert{reports/phase3-axial-incoming-extended-domain-audit-2026-07-23.md};
+\cert{black_hole_programme/phase3/axial_boundary_devissage_no_growth/certificate.json};
+\cert{reports/phase3-axial-boundary-devissage-no-growth-2026-07-23.md}\\
 Polar restriction-stable module and invariant current filtration &
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json}\\
 Generic-\(\ell\) two-parity formal-infinity phase diagram &

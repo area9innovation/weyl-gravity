@@ -3,11 +3,11 @@
   "result_id": "PURE_WEYL_PHASE3_AXIAL_INCOMING_EXTENDED_DOMAIN_AUDIT",
   "date": "2026-07-23",
   "artifacts": {
-    "README.md": "074bf5f3364ab67cd9792321651547995e655c4d7eb755cab0981850fd909f18",
-    "certificate.json": "bf7fa69f4cba4440725f067cb2ba8fb7e89936819400b8eadcf2b69786212ce4",
-    "verify.py": "9e17d49a5c8e5b6429066795cfdc5b0ee7129c5352a9fe6b782a71efd590e9d4",
-    "tests/test_audit.py": "bdbef825de8e60ffddbbd3ca3d562d160ac6bbc66f3fa9fb5dd566f20df307be",
-    "reports/phase3-axial-incoming-extended-domain-audit-2026-07-23.md": "d93b21bde153c1485cde0685773e44aad2992f847e99dc6bb407fe2c6a8fdbc5"
+    "README.md": "892bd8de75c1566a97785e12c78335f1ecb29ff886e3dada7461dcb87da70a6d",
+    "certificate.json": "f223358ca9de0f6d819684ce61d62677d6e5f8c5d4edaa600e2bae02719af0ef",
+    "verify.py": "8f1dbfc93a4632d1fcbf8a0a93349a6f1cff573d0f6cc2d96fbf772f923a4a95",
+    "tests/test_audit.py": "1f0e9d37d04c418d4960141c7c62a17fe064e9c0269cb59514a713f3c11118ca",
+    "reports/phase3-axial-incoming-extended-domain-audit-2026-07-23.md": "bdb8ae60e98b4d12459edb5d64aa6bcc917a28b5a8db26c25a54ba8c545553d2"
   },
   "verification": [
     {
@@ -20,16 +20,16 @@
     {
       "tier": 1,
       "command": "python3 -m black_hole_programme.phase3.axial_incoming_extended_domain_audit.verify",
-      "elapsed_seconds": 0.41,
+      "elapsed_seconds": 0.83,
       "status": "PASS",
       "scope": "exact imported determinant, endpoint-collision, factor projection, Hermitian Gram, positive-real and Evans-convention audit"
     },
     {
       "tier": 1,
       "command": "python3 -m unittest -v black_hole_programme.phase3.axial_incoming_extended_domain_audit.tests.test_audit",
-      "elapsed_seconds": 0.54,
+      "elapsed_seconds": 0.83,
       "status": "PASS",
-      "scope": "13 certificate and adverse claim-promotion mutations"
+      "scope": "18 certificate and adverse claim-promotion mutations"
     }
   ],
   "higher_tiers": {

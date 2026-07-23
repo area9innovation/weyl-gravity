@@ -74,8 +74,9 @@ to the incoming \(\mathscr I^-\) trace is invertible for every real
 \(\omega>0\).  Thus the full indefinite incoming endpoint space is globally
 populated.  Its metric/carrier spin-two extension is hyperbolic, while the
 orthogonal spin-one quotient lift is strictly negative.  The outgoing
-reflection block, non-real poles, full mode stability, CPT positivity, and
-a complete scattering operator remain open.
+reflection block, damped poles, time-domain PDE stability, CPT positivity,
+and a complete scattering operator remain open.  The exact filtration does,
+however, exclude exponentially growing axial \(\ell=2\) separated modes.
 
 Strict fixed-field-content pure Weyl gravity has the established nonzero
 local Euclidean one-loop Weyl-anomaly coefficients, here reconstructed from
@@ -860,6 +861,20 @@ Thus \(\ker\pi_x=\operatorname{span}\{E,R\}\), the metric/carrier
 spin-two extension, has inertia \((1,1,0)\); the orthogonal lift \(S\) of
 the spin-one quotient is strictly negative.  The two incoming negative
 directions therefore have different structural origins.
+With the quotient normalized to one, its exact norm is
+\(-32/(15\omega)\).  After an Einstein shear, the canonical all-frequency
+majorant has weights
+\[
+ \frac{576}{5}\omega(|e|^2+|r|^2)
+ +\frac{32}{15\omega}|s|^2.
+\]
+On the positive-frequency Fourier core this is the homogeneous
+\(\dot H^{1/2}\oplus\dot H^{1/2}\oplus\dot H^{-1/2}\) topology, up to
+Fourier normalization and the real-field extension.  Weighted integrability
+does not itself define a threshold value \(s(0)\).  The canonical
+\(\operatorname{diag}(1,-1,-1)\) fundamental symmetry supplies a positive
+classical Krein majorant; it is not a BRST-compatible Mannheim \(C\)
+operator.
 
 There is nevertheless a sharp conditional consequence of the endpoint
 inertia.  If a globally matched gauge-reduced trace map
@@ -908,17 +923,32 @@ Congruence therefore preserves the incoming inertia \((1,2,0)\); on every
 compact positive-frequency interval its \(L^2\) wave-packet completion has
 infinite positive and negative index.  This proves globally populated indefinite incoming
 channels, not the rank of \(T_+\), nonzero reflection, absence of unstable
-poles, positive total energy, CPT obstruction, or a complete scattering
-theory.
+poles beyond the separated-mode result below, positive total energy, CPT
+obstruction, or a complete scattering theory.
 Since \(\ker T_-(\omega)=0\), there is no future-horizon-regular solution
 with vanishing incoming trace: purely outgoing real-frequency axial modes
 and real-axis incoming spectral singularities are excluded for every
 \(\omega>0\).  With the repository phase \(e^{+i\omega t}\), growth is in
 the lower half-plane.  Positivity of both reduced Regge--Wheeler
 Schr\"odinger operators excludes lower-half-plane growing Evans zeros for
-the three diagonal factors.  A full six-state mode-stability theorem still
-requires the filtration maps to preserve the complex-frequency boundary
-classes; damped upper-half-plane poles remain open.
+the three diagonal factors.  The exact filtration maps preserve the
+future-horizon-regular and pure-outgoing germ classes there, so successive
+quotient elimination proves that the complete non-split six-state axial
+\(\ell=2\) system has no growing separated mode.  This is not a time-domain
+boundedness, decay, completeness, or full PDE stability theorem; damped
+upper-half-plane poles remain open.
+
+An independent exact Laurent-current calculation at the future horizon
+gives an outward Gram of rank three and inertia \((1,2,0)\) on the pilot
+band.  Its metric/carrier spin-two plane is hyperbolic, and its orthogonal
+unit spin-one quotient again has norm \(-32/(15\omega)\).  Thus the factor
+anatomy agrees at the incoming endpoint and future horizon.  Neither
+orientation of the horizon Gram is semidefinite, so the Stokes identity
+\[
+ H_{\mathcal H^+}+T_+^\dagger G_+T_+
+ -T_-^\dagger G_-T_-=0
+\]
+does not determine the rank of \(T_+\) without the outgoing connection.
 
 The full 282-term $Q_{21}$ is machine readable at
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/current_artifacts/q21-finite-line-factor.json}
@@ -1363,7 +1393,8 @@ fixed-representative extra direction but divergent oscillatory Einstein
 shear, polar finite mixed line with exact $R_\ell$ degeneracy locus, and
 exact axial endpoint $L^2$ flux Grams of rank three, zero radical, and
 inertia $(1,2,0)$; exact RW/RW/spin-one filtration and invertible incoming
-Schwarzschild map \(T_-\) & Complete outgoing/horizon scattering map,
+Schwarzschild map \(T_-\); no growing separated axial \(\ell=2\) mode &
+Complete outgoing/horizon scattering map, time-domain PDE stability,
 positive energy theorem, and acceptable counterflow spectrum \\
 Nonlinear continuation & Five-charge necessary-and-sufficient finite
 exponential-polynomial cone; bounded resonance ledger and classified
@@ -1560,7 +1591,9 @@ nondegenerate indefinite endpoint flux Grams, and the full incoming trace is
 globally populated at every positive real frequency by future-horizon-regular
 solutions through an invertible RW/RW/spin-one connection.  One incoming
 negative direction lies in the spin-two extension and the other is the
-spin-one quotient line.  The outgoing block and full stability remain open.
+spin-one quotient line.  Boundary d\'evissage excludes growing separated
+axial \(\ell=2\) modes, while the outgoing reflection block, damped
+quasinormal spectrum, and time-domain stability remain open.
 Selected compact blocks
 admit positive pseudo-Hermitian metrics, but neither a genuine
 BRST-compatible $C$ operator nor a full Hadamard covariance follows.  Strict

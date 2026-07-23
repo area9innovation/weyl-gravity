@@ -1,0 +1,39 @@
+{
+  "schema": "phase3-axial-boundary-devissage-no-growth-receipt-v1",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_BOUNDARY_DEVISSAGE_NO_GROWTH",
+  "date": "2026-07-23",
+  "inputs": {
+    "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579",
+    "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+    "black_hole_programme/phase3/axial_incoming_connection_analytic/certificate.json": "c7d54c15cd7928227d62ede7825edba2b6ebc51ca6f6c617c7b0b56a74cdd040",
+    "black_hole_programme/phase3/axial_endpoint_bases/certificate.json": "bf5367cc6e0b778c91736ab4088fb0dcf78868ba5f61c30f56d71659f790e779"
+  },
+  "outputs": {
+    "black_hole_programme/phase3/axial_boundary_devissage_no_growth/README.md": "194709d98db315e5a54ee25554760cd17c0924af4d3afc9502a111b28b35a664",
+    "black_hole_programme/phase3/axial_boundary_devissage_no_growth/certificate.json": "5de2cdee18bcafc09c86b9273cfa87ea99d7dec1a081c903349435d2fc3ce2fe",
+    "black_hole_programme/phase3/axial_boundary_devissage_no_growth/verify.py": "37d2be6ac1780b73a29c191f5688c2ac7abb736dbc66f90c540082478ca202b6",
+    "black_hole_programme/phase3/axial_boundary_devissage_no_growth/tests/test_devissage.py": "e2a181bb6fa88536e4c1068515039e1f732212b3e5835afc4a57161c8a37d983",
+    "reports/phase3-axial-boundary-devissage-no-growth-2026-07-23.md": "2e21b3c4e65963fdcc8dab790c033ff79f881f0589c44fddefd0b851e63d9719"
+  },
+  "verification": [
+    {
+      "tier": 1,
+      "command": "python3 -m black_hole_programme.phase3.axial_boundary_devissage_no_growth.verify",
+      "status": "PASS",
+      "elapsed_seconds": 1.25
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_boundary_devissage_no_growth.tests.test_devissage",
+      "status": "PASS",
+      "tests": 15,
+      "elapsed_seconds": 3.06
+    },
+    {
+      "tier": 0,
+      "command": "python3 -m compileall -q black_hole_programme/phase3/axial_boundary_devissage_no_growth && python3 -m json.tool black_hole_programme/phase3/axial_boundary_devissage_no_growth/certificate.json >/dev/null && git diff --check -- black_hole_programme/phase3/axial_boundary_devissage_no_growth reports/phase3-axial-boundary-devissage-no-growth-2026-07-23.md",
+      "status": "PASS"
+    }
+  ],
+  "claim_boundary": "The complete axial ell=2 six-state separated system has no future-horizon-regular pure-outgoing mode with Im(omega)<0 in the exp(+I*omega*t) convention. This is not a time-domain stability theorem and does not classify damped UHP Evans zeros or the simple-QNM extension Smith type."
+}

@@ -49,7 +49,9 @@
     "minimum_at": "omega=1/2",
     "minimum_modulus_squared": "5/2",
     "Wronskian_lower_bounds": "abs(A_in_1)>=1 and abs(A_in_2)>=1",
-    "conclusion": "abs(det(Tminus))>=sqrt(5/2) on [1/2,3/4]"
+    "conclusion": "abs(det(Tminus))>=sqrt(5/2) on [1/2,3/4]",
+    "positive_real_infimum": "1/4",
+    "positive_real_conclusion": "abs(det(Tminus))>1/4 for every real omega>0, with infimum approached only as omega tends to zero from above"
   },
   "positive_real_extension": {
     "carrier_cyclic_determinant": "-4*omega**2/(r**2*(r-2)**2)",
@@ -170,6 +172,9 @@
       "differential_factor": "spin-one quotient L_x",
       "quotient_amplitude": "-6*omega**2",
       "norm": "-384*omega**3/5",
+      "unit_quotient_vector": "SI_unit=-SI/(6*omega**2)",
+      "unit_quotient_amplitude": "1",
+      "unit_quotient_norm": "-32/(15*omega)",
       "inertia": [
         0,
         1,
@@ -199,6 +204,49 @@
       ]
     ],
     "factor_alignment_warning": "pi_x(XI0)=2, so XI0 is not the carrier RW line and the earlier endpoint Witt basis is not factor aligned. The exact factor split is ker(pi_x)=span{EI,RI} with inertia (1,1,0), orthogonal to the spin-one quotient lift span{SI} with inertia (0,1,0)."
+  },
+  "positive_real_direct_integral": {
+    "canonical_basis": [
+      "EI",
+      "RI0=RI-13*EI/(24*omega**2)",
+      "SI_unit=-SI/(6*omega**2)"
+    ],
+    "spin_two_weight": "a(omega)=576*omega/5",
+    "spin_one_weight": "b(omega)=32/(15*omega)",
+    "flux_density": "2*a(omega)*Re(conjugate(e)*r)-b(omega)*abs(s)**2",
+    "absolute_value_majorant": "a(omega)*(abs(e)**2+abs(r)**2)+b(omega)*abs(s)**2",
+    "canonical_signature_coordinates": [
+      "P2=(EI+RI0)/sqrt(2*a)",
+      "N2=(EI-RI0)/sqrt(2*a)",
+      "N1=SI_unit/sqrt(b)"
+    ],
+    "canonical_signature": [
+      1,
+      -1,
+      -1
+    ],
+    "fractional_Sobolev_reading": {
+      "spin_two": "(e,r) belong to homogeneous H^(1/2) on the positive-frequency Fourier core",
+      "spin_one": "s belongs to homogeneous H^(-1/2) on the positive-frequency Fourier core",
+      "qualification": "This is the standard Fourier-weight identification for the factor coefficients, up to Fourier normalization and the reality extension. It does not supply a point trace at omega=0."
+    },
+    "fundamental_symmetry": {
+      "normalized_signature_basis": "C_fac=diag(1,-1,-1)",
+      "null_basis_action": [
+        "C_fac(EI)=RI0",
+        "C_fac(RI0)=EI",
+        "C_fac(SI_unit)=-SI_unit"
+      ],
+      "positive_majorant": "Ghat_minus*C_fac=diag(a(omega),a(omega),b(omega)) in the null basis",
+      "scope": "Classical endpoint Krein fundamental symmetry only; not Mannheim's C operator, not BRST descended, and not proved to commute with scattering dynamics."
+    },
+    "threshold": {
+      "spin_two": "a(omega) tends to zero linearly as omega tends to zero from above",
+      "spin_one": "b(omega) diverges as 1/omega",
+      "finite_spin_one_condition": "integral_0^epsilon abs(s(omega))**2/omega d omega is finite",
+      "point_trace_warning": "Weighted integrability alone neither defines s(0) nor proves s(0)=0. If s has a continuous trace at zero, finite weighted flux forces that trace to vanish."
+    },
+    "scope": "This defines the natural all-positive-frequency endpoint Hilbert majorant. Pointwise Tminus invertibility does not by itself prove that Tminus or its inverse is bounded on this global weighted direct integral."
   },
   "Evans_convention_audit": {
     "Schrodinger_operator": "H_s=-D_rstar**2+V_s with H_s psi=omega**2 psi",
@@ -247,9 +295,11 @@
   },
   "claim_flags": {
     "uniform_pilot_determinant_margin_certified": true,
+    "global_positive_real_determinant_floor_certified": true,
     "Tminus_invertible_all_real_positive_omega_certified": true,
     "Gminus_inertia_all_real_positive_omega_certified": true,
     "factor_adapted_Iminus_gram_certified": true,
+    "positive_real_weighted_endpoint_majorant_certified": true,
     "no_lower_half_plane_growing_Evans_zeros_certified": true,
     "no_upper_half_plane_Evans_zeros_certified": false,
     "special_imaginary_points_are_genuine_Evans_zeros": false,

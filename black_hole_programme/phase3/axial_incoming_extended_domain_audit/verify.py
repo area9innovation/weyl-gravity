@@ -106,6 +106,16 @@ def verify_certificate(data: dict[str, Any]) -> None:
         == "abs(det(Tminus))>=sqrt(5/2) on [1/2,3/4]",
         "uniform determinant margin demoted",
     )
+    _require(
+        _zero(_expr(margin["positive_real_infimum"]) - sp.Rational(1, 4))
+        and margin["positive_real_conclusion"]
+        == (
+            "abs(det(Tminus))>1/4 for every real omega>0, with infimum "
+            "approached only as omega tends to zero from above"
+        )
+        and _zero(f_mod.subs(X, 0) - sp.Rational(1, 16)),
+        "positive-real determinant infimum drift",
+    )
 
     extension = data["positive_real_extension"]
     _require(
@@ -273,9 +283,16 @@ def verify_certificate(data: dict[str, Any]) -> None:
         "carrier factor-plane anatomy drift",
     )
     spin_one = transformed[1, 1]
+    spin_one_data = gram_data["spin_one_quotient_line"]
     _require(
-        _zero(spin_one - _expr(gram_data["spin_one_quotient_line"]["norm"]))
-        and gram_data["spin_one_quotient_line"]["inertia"] == [0, 1, 0]
+        _zero(spin_one - _expr(spin_one_data["norm"]))
+        and spin_one_data["inertia"] == [0, 1, 0]
+        and spin_one_data["unit_quotient_vector"] == "SI_unit=-SI/(6*omega**2)"
+        and _expr(spin_one_data["unit_quotient_amplitude"]) == 1
+        and _zero(
+            spin_one / (36 * W**4)
+            - _expr(spin_one_data["unit_quotient_norm"])
+        )
         and _zero(transformed[1, 0])
         and _zero(transformed[1, 2]),
         "orthogonal spin-one quotient line drift",
@@ -298,6 +315,50 @@ def verify_certificate(data: dict[str, Any]) -> None:
             for column in range(3)
         ),
         "canonical factor-aligned Witt Gram drift",
+    )
+    direct = data["positive_real_direct_integral"]
+    unit_scale = sp.diag(1, 1, -1 / (6 * W**2))
+    unit_witt = (
+        sp.conjugate(unit_scale).T * witt * unit_scale
+    ).applyfunc(lambda value: sp.cancel(sp.together(value)))
+    a_weight = 576 * W / 5
+    b_weight = sp.Rational(32, 15) / W
+    expected_unit = sp.Matrix(
+        [[0, a_weight, 0], [a_weight, 0, 0], [0, 0, -b_weight]]
+    )
+    _require(
+        all(
+            _zero(unit_witt[row, column] - expected_unit[row, column])
+            for row in range(3)
+            for column in range(3)
+        )
+        and _zero(_expr(direct["spin_two_weight"].split("=")[1]) - a_weight)
+        and _zero(_expr(direct["spin_one_weight"].split("=")[1]) - b_weight)
+        and direct["canonical_signature"] == [1, -1, -1]
+        and "H^(1/2)" in direct["fractional_Sobolev_reading"]["spin_two"]
+        and "H^(-1/2)" in direct["fractional_Sobolev_reading"]["spin_one"]
+        and "does not supply a point trace" in direct[
+            "fractional_Sobolev_reading"
+        ]["qualification"]
+        and direct["fundamental_symmetry"]["normalized_signature_basis"]
+        == "C_fac=diag(1,-1,-1)"
+        and direct["fundamental_symmetry"]["null_basis_action"]
+        == [
+            "C_fac(EI)=RI0",
+            "C_fac(RI0)=EI",
+            "C_fac(SI_unit)=-SI_unit",
+        ]
+        and "not Mannheim's C operator" in direct[
+            "fundamental_symmetry"
+        ]["scope"]
+        and "integral_0^epsilon" in direct["threshold"][
+            "finite_spin_one_condition"
+        ]
+        and "neither defines s(0)" in direct["threshold"][
+            "point_trace_warning"
+        ]
+        and "does not by itself prove" in direct["scope"],
+        "positive-real weighted endpoint majorant drift",
     )
     _require(
         gram_data["full_inertia_for_alpha_W_positive"] == [1, 2, 0]
@@ -350,9 +411,11 @@ def verify_certificate(data: dict[str, Any]) -> None:
     flags = data["claim_flags"]
     for proved in (
         "uniform_pilot_determinant_margin_certified",
+        "global_positive_real_determinant_floor_certified",
         "Tminus_invertible_all_real_positive_omega_certified",
         "Gminus_inertia_all_real_positive_omega_certified",
         "factor_adapted_Iminus_gram_certified",
+        "positive_real_weighted_endpoint_majorant_certified",
         "no_lower_half_plane_growing_Evans_zeros_certified",
     ):
         _require(flags[proved] is True, f"proved claim demoted: {proved}")

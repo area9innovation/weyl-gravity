@@ -1,0 +1,42 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-incoming-extended-domain-audit",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-incoming-extended-domain-audit",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-incoming-extended-domain-audit.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-analytic-connection",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Strengthen the exact axial incoming theorem by auditing its full positive-real domain, resolving the two negative incoming directions by differential factor, and fixing the complex-frequency growth convention before any stability promotion.",
+    "stop_condition": "For strict pure Weyl gravity on Schwarzschild with M=1 and axial ell=2, prove or refuse Tminus invertibility for every real omega>0; certify a uniform determinant margin on the original pilot band; pull the exact Iminus Gram into the quotient-adapted RW/RW/spin-one filtration and identify the inertia of ker(pi_x) and its orthogonal quotient lift; and determine which half-plane is exponentially growing under exp(+i omega t). Update Papers 14 and 15 with the same scoped theorem and retain omega=0, Tplus, damped poles and full coupled stability as explicit open boundaries.",
+    "current_gate": "All-positive-real endpoint audit, exact factor-sign attribution, reduced no-growing Evans theorem, and paper-ready claim boundary",
+    "forbid": "no omega=0 theorem; no Tplus rank or reflection claim; no upper-half-plane no-pole claim in the exp(+i omega t) convention; no classification of omega=i/4,i/2,i as physical zeros or nonzeros; no full coupled mode-stability, total-energy, CPT, particle, ghost or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-analytic-incoming-connection"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_incoming_extended_domain_audit/",
+      "reports/phase3-axial-incoming-extended-domain-audit-2026-07-23.md",
+      "paper/14-pure-weyl-black-hole-radiation.tex",
+      "paper/15-four-level-ghost-classification-phase1-synthesis.tex",
+      "planning/work-items/phase3-black-hole-axial-incoming-extended-domain-audit.json",
+      "planning/events/"
+    ],
+    "resource_hint": "The mathematical delivery and paper update landed before this coordination node in commit eaf61ca2f. Record that chronology honestly as already-landed work. The exact incoming factor basis is R=XI0-i XI1/omega, S=-omega^2 XI0-2i omega XI1+4 EI0/3, E=EI0. The repository phase is exp(+i omega t), so growth is Im(omega)<0.",
+    "input_commit": "b3be2b0778d61ae6053ec39edb8542bc1e074044",
+    "notes": [
+      "LORENTZIAN-CAUSAL",
+      "REDUCED-MODE",
+      "The full incoming map is invertible for every real omega>0.",
+      "The spin-two extension ker(pi_x) has inertia (1,1,0); the orthogonal spin-one quotient lift has inertia (0,1,0).",
+      "The positive-potential argument excludes growing lower-half-plane zeros only for the three reduced diagonal factors until boundary devissage is certified."
+    ]
+  },
+  "edges": []
+}

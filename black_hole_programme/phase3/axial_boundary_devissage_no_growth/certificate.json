@@ -1,0 +1,224 @@
+{
+  "schema": "phase3-axial-boundary-devissage-no-growth-v1",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_BOUNDARY_DEVISSAGE_NO_GROWTH",
+  "result_token": "BH_PHASE3_AXIAL_LHP_BOUNDARY_DEVISSAGE",
+  "lifecycle": "CLASSIFIED",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL",
+    "REDUCED-MODE"
+  ],
+  "declaration": {
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity",
+    "background": "Schwarzschild exterior M=1",
+    "sector": "axial ell=2 separated modes",
+    "phase": "exp(+I*omega*v)=exp(+I*omega*t)*exp(+I*omega*rstar)",
+    "growth_domain": "Im(omega)<0",
+    "boundary_class": "future-horizon regular and zero-incoming/pure-outgoing at infinity",
+    "frequency_exclusions": [
+      "omega=0"
+    ]
+  },
+  "imports": {
+    "triangular_factorization": {
+      "path": "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json",
+      "sha256": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579",
+      "commit": "8e7de78c3835a35180294a8e2d6d3437f0a716a2"
+    },
+    "complete_reconstruction": {
+      "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+      "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+      "commit": "d5d5d6de648795203604d62ce7bc4f4ce6fea510"
+    },
+    "analytic_incoming_connection": {
+      "path": "black_hole_programme/phase3/axial_incoming_connection_analytic/certificate.json",
+      "sha256": "c7d54c15cd7928227d62ede7825edba2b6ebc51ca6f6c617c7b0b56a74cdd040",
+      "commit": "b3be2b0778d61ae6053ec39edb8542bc1e074044"
+    },
+    "endpoint_bases": {
+      "path": "black_hole_programme/phase3/axial_endpoint_bases/certificate.json",
+      "sha256": "bf5367cc6e0b778c91736ab4088fb0dcf78868ba5f61c30f56d71659f790e779",
+      "commit": "3e19d9c9b6abf50982c98a879c6183f2f8050b0a"
+    }
+  },
+  "scalar_boundary_problem": {
+    "Schrodinger_equation": "(-D_rstar**2+V_s)*psi=omega**2*psi",
+    "ingoing_EF_relation": "psi=exp(+I*omega*rstar)*u",
+    "future_horizon_regular": "u tends to a finite nonzero constant, hence psi is proportional to exp(+I*omega*rstar)",
+    "pure_outgoing_infinity": "u is proportional to exp(-2*I*omega*rstar), hence psi is proportional to exp(-I*omega*rstar)",
+    "L2_reading": "Both factors decay at their respective ends when Im(omega)<0.",
+    "potentials": {
+      "spin_two": "6*(r-2)*(r-1)/r**4",
+      "spin_one": "6*(r-2)/r**3"
+    },
+    "energy_identity": "integral(abs(D_rstar(psi))**2+V_s*abs(psi)**2)drstar=omega**2*integral(abs(psi)**2)drstar",
+    "no_mode_argument": "The left side and L2 norm are real nonnegative. If Re(omega)!=0 and Im(omega)<0, omega**2 is nonreal; if Re(omega)=0, omega**2<0. Both contradict the identity for a nonzero mode.",
+    "spin_two_LHP_kernel_dimension": 0,
+    "spin_one_LHP_kernel_dimension": 0
+  },
+  "local_boundary_maps": {
+    "future_horizon": {
+      "carrier_regular_basis": [
+        "XH0a",
+        "XH0b"
+      ],
+      "spin_one_quotient_amplitudes": {
+        "XH0a": "4*omega**2-3*I*omega+4",
+        "XH0b": "4*(omega-I)*(2*omega-I)"
+      },
+      "carrier_spin_two_kernel": "RH=XH0a-(4*omega**2-3*I*omega+4)*XH0b/(4*(omega-I)*(2*omega-I))",
+      "carrier_spin_two_horizon_amplitude": "I*omega*(4*omega-I)/(2*(omega-I))",
+      "spin_one_lift": "SH=XH0b",
+      "spin_one_horizon_amplitude": "4*(omega-I)*(2*omega-I)",
+      "metric_spin_two_lift": "EH=EH0",
+      "metric_spin_two_horizon_amplitude": "-I*omega*(4*omega-I)/(4*(omega-I))",
+      "regular_for_LHP": true,
+      "germ_sequence": "0 -> H_RW_metric -> H_full -> H_RW_carrier -> H_x -> 0 as a three-step exact filtration on future-horizon-regular germs"
+    },
+    "pure_outgoing_infinity": {
+      "carrier_outgoing_basis": [
+        "XI2",
+        "XI3"
+      ],
+      "spin_one_quotient_amplitudes": {
+        "XI2": "2*(16*omega**2-4*I*omega-5)",
+        "XI3": "-2*I*omega"
+      },
+      "carrier_spin_two_kernel": "RO=XI2-(I*(16*omega**2-4*I*omega-5)/omega)*XI3",
+      "carrier_spin_two_outgoing_amplitude": "1",
+      "spin_one_lift": "SO=XI3",
+      "spin_one_outgoing_amplitude": "-2*I*omega",
+      "metric_spin_two_lift": "EO=EI2",
+      "metric_spin_two_outgoing_amplitude": "1/2",
+      "regular_for_LHP": true,
+      "germ_sequence": "0 -> O_RW_metric -> O_full -> O_RW_carrier -> O_x -> 0 as a three-step exact filtration on pure-outgoing infinity germs"
+    },
+    "complex_frequency_regularities": {
+      "nonzero_in_LHP": [
+        "omega",
+        "omega-I",
+        "2*omega-I",
+        "4*omega-I",
+        "omega*r-2*I for r>2"
+      ],
+      "horizon_recurrence_factors": [
+        "n+4*I*omega",
+        "n+2+4*I*omega"
+      ],
+      "horizon_recurrence_reading": "For Im(omega)<0 and positive integer n, both factors have positive real part and cannot vanish.",
+      "endpoint_rate_reading": "The ingoing and outgoing rates are distinct because omega!=0."
+    }
+  },
+  "intrinsic_boundary_map_audit": {
+    "carrier_inclusion": "J: M_RW -> M_A4 with J_prime+J*A_RW=A4*J",
+    "carrier_quotient": "K: M_A4 -> M_x with K_prime+K*A4=A_x*K and K*J=0",
+    "weighted_spin_one_map": "y=r**2*(r-2)*K_0(state)",
+    "metric_kernel_master": "U: (H1,F) -> (Psi,Psi_prime) with U_prime+U*K2=A_RW*U",
+    "LHP_reconstruction_regularities": [
+      "omega!=0",
+      "omega*r-2*I!=0 for r>2"
+    ],
+    "reading": "Boundary preservation is a property of the chain maps on the weighted ingoing/outgoing germ modules. The displayed endpoint frames only witness ranks; their normalization denominators do not define the boundary theorem.",
+    "frame_independence_certified": true
+  },
+  "boundary_devissage": {
+    "filtration_order": [
+      "metric spin-two Regge-Wheeler kernel",
+      "carrier spin-two Regge-Wheeler submodule",
+      "spin-one L_x quotient"
+    ],
+    "boundary_preservation": "Every filtration projection/inclusion is a local rational differential map regular in the LHP and maps the declared horizon and infinity germ classes to the corresponding scalar germ class.",
+    "boundary_exactness": "The exact local factor frames prove exactness on each endpoint germ space. On the simultaneous two-ended boundary kernel, left exactness and exact kernel identification suffice for successive elimination; surjectivity is not assumed.",
+    "successive_elimination": [
+      "Project a full boundary mode to the spin-one L_x quotient. The projected mode has both boundary conditions and is zero by the spin-one energy theorem.",
+      "Exactness puts the carrier in the spin-two RW submodule. Its scalar master has both boundary conditions and is zero by the spin-two energy theorem.",
+      "The remaining full mode lies in the metric spin-two RW kernel. Its scalar master has both boundary conditions and is zero by the spin-two energy theorem."
+    ],
+    "conclusion": "The complete six-state axial ell=2 Bach system has no nonzero future-horizon-regular, pure-outgoing separated mode with Im(omega)<0.",
+    "scope": "Separated-mode spectral no-growth theorem; not a time-domain boundedness or full PDE stability theorem."
+  },
+  "regularized_Evans": {
+    "definition": "E_reg(omega)=A_in_2(omega)**2*A_in_1(omega)",
+    "normalization": "Each A_in_s is the incoming coefficient at infinity of the scalar spin-s Jost solution normalized to unit future-horizon-regular amplitude.",
+    "intrinsic_reading": "E_reg omits all rational endpoint-frame prefactors from det(Tminus) and depends only on the two scalar factor boundary problems.",
+    "analytic_domain": "Im(omega)<0, omega!=0, with standard short-range Jost normalization",
+    "zero_free_in_growth_domain": true,
+    "multiplicities": {
+      "spin_two": 2,
+      "spin_one": 1
+    }
+  },
+  "simple_spin_two_QNM_extension_gate": {
+    "status": "OPEN_EXACT_NEXT_GATE",
+    "local_ring": "O is the discrete valuation ring of analytic germs at omega_star.",
+    "general_local_model": "After filtration-preserving analytic left/right equivalences, the two-copy extension has matrix [[a,c],[0,a]] over O.",
+    "frame_law": "c -> u*c+a*d where u is a unit and d is in O.",
+    "invariant_extension_class": "[c] in O/(a), defined up to multiplication by a unit.",
+    "valuation_formula": {
+      "hypotheses": "ord(a)=m and ord(c)=n, with ord(0)=infinity",
+      "first_Smith_valuation": "min(m,n)",
+      "second_Smith_valuation": "2*m-min(m,n)"
+    },
+    "simple_zero_specialization": "For m=1: n=0 gives diag(1,delta**2), while n>=1 gives diag(delta,delta), with delta=omega-omega_star.",
+    "Fredholm_pairing": "Gamma_star=<psi_star_adjoint, Extension(omega_star)*psi_star>",
+    "identification": "At a simple zero, c(omega_star) is a normalization multiple of Gamma_star; neither factor is certified nonzero here.",
+    "Smith_cases": {
+      "Gamma_star_nonzero": "diag(1,delta**2)",
+      "Gamma_star_zero_with_first_order_divisibility_and_nondegenerate_residual": "diag(delta,delta)"
+    },
+    "spectral_derivative_next_test": "Test whether c == q*A_in_2_prime modulo A_in_2 in O/(A_in_2).",
+    "spectral_derivative_status": "OPEN: neither the congruence nor nonvanishing of q modulo A_in_2 is claimed.",
+    "required_computation": "Construct normalized spin-two QNM and adjoint QNM germs in a regular analytic patch, pull back the exact full-system extension, and evaluate Gamma_star with a boundary-convergent Fredholm pairing.",
+    "claim": "No Smith case is selected by the present certificate."
+  },
+  "positive_real_direct_integral_context": {
+    "domain": "omega>0",
+    "factor_Witt_majorant_weights": {
+      "null_pair": "576*omega/5",
+      "negative_line": "32/(15*omega)"
+    },
+    "reading": "An all-positive-frequency direct integral requires this weighted majorant rather than an unweighted coordinate norm.",
+    "omega_zero": "separate threshold; not included"
+  },
+  "upper_half_plane_frame_events": {
+    "phase_reading": "Im(omega)>0 is damped, not growing, for exp(+I*omega*t).",
+    "omega=I/4": [
+      "4*omega-I=0",
+      "Einstein horizon frame/exponent collision",
+      "omega*r-2*I=0 at r=8"
+    ],
+    "omega=I/2": [
+      "2*omega-I=0",
+      "carrier horizon frame/exponent collision",
+      "omega*r-2*I=0 at r=4"
+    ],
+    "omega=I": [
+      "omega-I=0",
+      "spin-one fourth-order Frobenius resonance",
+      "omega*r-2*I=0 at r=2"
+    ],
+    "classification": "DAMPED_UHP_FROBENIUS_OR_RECONSTRUCTION_FRAME_EVENTS",
+    "regularized_Evans_status": "OPEN_PENDING_LOCAL_ANALYTIC_PATCHES"
+  },
+  "claim_flags": {
+    "factor_maps_preserve_LHP_horizon_and_outgoing_germs_certified": true,
+    "endpoint_germ_filtration_exact_certified": true,
+    "full_six_state_no_LHP_growing_separated_modes_certified": true,
+    "intrinsic_regularized_Evans_zero_free_in_LHP_certified": true,
+    "simple_QNM_extension_Smith_case_certified": false,
+    "time_domain_linear_stability_certified": false,
+    "upper_half_plane_Evans_status_certified": false,
+    "special_UHP_points_classified_as_Evans_zeros_or_nonzeros": false
+  },
+  "does_not_establish": [
+    "time-domain boundedness, decay, completeness or a full PDE stability theorem",
+    "absence of damped upper-half-plane quasinormal or Evans zeros",
+    "the regularized Evans status of omega=I/4, I/2 or I",
+    "the Fredholm extension pairing or Smith type at a simple damped spin-two QNM",
+    "a polar-parity or general-ell theorem",
+    "positive total flux, CPT positivity, particles, ghosts, unitarity or nonlinear stability"
+  ],
+  "verification": {
+    "command": "python3 -m black_hole_programme.phase3.axial_boundary_devissage_no_growth.verify",
+    "tests": "python3 -m unittest -v black_hole_programme.phase3.axial_boundary_devissage_no_growth.tests.test_devissage"
+  }
+}
