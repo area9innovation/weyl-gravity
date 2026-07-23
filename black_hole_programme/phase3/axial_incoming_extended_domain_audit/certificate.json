@@ -1,0 +1,271 @@
+{
+  "schema": "phase3-axial-incoming-extended-domain-audit-v1",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_INCOMING_EXTENDED_DOMAIN_AUDIT",
+  "result_token": "BH_PHASE3_AXIAL_TMINUS_ALL_POSITIVE_REAL_AND_EVANS_CONVENTION",
+  "lifecycle": "CLASSIFIED",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL",
+    "REDUCED-MODE"
+  ],
+  "declaration": {
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity",
+    "background": "Schwarzschild exterior M=1",
+    "sector": "axial ell=2",
+    "repository_phase": "exp(+I*omega*v), hence exp(+I*omega*t)",
+    "positive_real_domain": "omega>0",
+    "zero_frequency": "separate and not included"
+  },
+  "imports": {
+    "incoming_connection": {
+      "path": "black_hole_programme/phase3/axial_incoming_connection_analytic/certificate.json",
+      "sha256": "c7d54c15cd7928227d62ede7825edba2b6ebc51ca6f6c617c7b0b56a74cdd040",
+      "commit": "b3be2b0778d61ae6053ec39edb8542bc1e074044"
+    },
+    "triangular_factorization": {
+      "path": "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json",
+      "sha256": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579",
+      "commit": "8e7de78c3487c4a5cc8b8f3ccf069df0936de1df"
+    },
+    "formal_grams": {
+      "path": "black_hole_programme/phase3/axial_null_flux_gram/formal-grams.json",
+      "sha256": "f278101c7abc0ff513cea6e726ada9664e42e2f983227e9f737e06688f535b6a",
+      "commit": "a5b3d56d2bdfbd0fd984ff4b7e5c427570ba5ff1"
+    },
+    "endpoint_bases": {
+      "path": "black_hole_programme/phase3/axial_endpoint_bases/certificate.json",
+      "sha256": "bf5367cc6e0b778c91736ab4088fb0dcf78868ba5f61c30f56d71659f790e779",
+      "commit": "3e19d9c9b6abf50982c98a879c6183f2f8050b0a"
+    },
+    "complete_reconstruction": {
+      "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+      "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+      "commit": "d5d5d6de648795203604d62ce7bc4f4ce6fea510"
+    }
+  },
+  "uniform_pilot_margin": {
+    "prefactor_modulus_squared_in_x": "(4*x+1)*(16*x+1)**2/(16*(x+1))",
+    "x": "omega**2",
+    "derivative": "(16*x+1)*(128*x**2+208*x+35)/(16*(x+1)**2)",
+    "minimum_at": "omega=1/2",
+    "minimum_modulus_squared": "5/2",
+    "Wronskian_lower_bounds": "abs(A_in_1)>=1 and abs(A_in_2)>=1",
+    "conclusion": "abs(det(Tminus))>=sqrt(5/2) on [1/2,3/4]"
+  },
+  "positive_real_extension": {
+    "carrier_cyclic_determinant": "-4*omega**2/(r**2*(r-2)**2)",
+    "carrier_gauge_determinant": "-r**2*(r-2)**2/(4*omega**2)",
+    "Einstein_master_determinant": "-I*omega**2*(r-2)/(2*r*(omega*r-2*I))",
+    "factor_frame_denominators": [
+      "omega",
+      "omega-I",
+      "2*omega-I",
+      "4*omega-I"
+    ],
+    "horizon_exponent_collisions": {
+      "omega=0": "spin-two and spin-one ingoing/outgoing rates collide",
+      "omega=I/4": "Einstein-kernel horizon exponents collide",
+      "omega=I/2": "carrier exponents 0 and -2-4*I*omega collide"
+    },
+    "recurrence_reading": "For real omega>0, n+4*I*omega and n+2+4*I*omega never vanish for positive integer n; the certified integer-spaced carrier resonance remains compatible and log-free.",
+    "reconstruction_reading": "omega*r-2*I has no zero for real omega>0 and r>2.",
+    "conclusion": "All exact maps, frames and Jost/Wronskian arguments used by Tminus are regular for every real omega>0.",
+    "Tminus_invertible_all_positive_real": true,
+    "omega_zero_excluded": true
+  },
+  "factor_adapted_Iminus_gram": {
+    "source_basis": [
+      "XI0",
+      "XI1",
+      "EI0"
+    ],
+    "factor_basis": [
+      "RI=XI0-I*XI1/omega",
+      "SI=-omega**2*XI0-2*I*omega*XI1+4*EI0/3",
+      "EI=EI0"
+    ],
+    "auxiliary_null_vector": "NI=-omega**2*XI0-2*I*omega*XI1+EI0",
+    "basis_change_columns_in_XI0_XI1_EI0": [
+      [
+        "1",
+        "-omega**2",
+        "0"
+      ],
+      [
+        "-I/omega",
+        "-2*I*omega",
+        "0"
+      ],
+      [
+        "0",
+        "4/3",
+        "1"
+      ]
+    ],
+    "Hermitian_slot_convention": "G(u,v)=conjugate(u)^T G v: the first slot is conjugate-linear and the second slot is linear.",
+    "factor_projection": {
+      "pi_x(XI0)": "2",
+      "pi_x(XI1)": "-2*I*omega",
+      "pi_x(EI0)": "0",
+      "pi_x(RI)": "0",
+      "pi_x(NI)": "-6*omega**2",
+      "pi_x(SI)": "-6*omega**2"
+    },
+    "attribution_identities": {
+      "G(EI,NI)": "0",
+      "G(EI,RI)": "3*G(EI,XI0)/2=576*omega/5",
+      "G(RI,NI)": "-192*omega/5",
+      "SI_definition": "SI=NI+EI/3 makes G(RI,SI)=0",
+      "G(SI,SI)": "G(NI,NI)=-384*omega**3/5"
+    },
+    "orientation": "Gminus is minus the coordinate Gram because Iminus carries the past-boundary Stokes sign",
+    "gram_over_pi_alpha_W": [
+      [
+        "624/(5*omega)",
+        "0",
+        "576*omega/5"
+      ],
+      [
+        "0",
+        "-384*omega**3/5",
+        "0"
+      ],
+      [
+        "576*omega/5",
+        "0",
+        "0"
+      ]
+    ],
+    "leading_principal_minors": [
+      "624/(5*omega)",
+      "-239616*omega**2/25",
+      "127401984*omega**5/125"
+    ],
+    "full_inertia_for_alpha_W_positive": [
+      1,
+      2,
+      0
+    ],
+    "carrier_factor_plane": {
+      "basis": [
+        "RI",
+        "EI"
+      ],
+      "differential_factor": "spin-two Regge-Wheeler extension ker(pi_x)",
+      "determinant": "-331776*omega**2/25",
+      "inertia": [
+        1,
+        1,
+        0
+      ],
+      "individual_norms": {
+        "RI": "624/(5*omega)",
+        "EI": "0"
+      },
+      "cross": "576*omega/5"
+    },
+    "spin_one_quotient_line": {
+      "basis": [
+        "SI"
+      ],
+      "differential_factor": "spin-one quotient L_x",
+      "quotient_amplitude": "-6*omega**2",
+      "norm": "-384*omega**3/5",
+      "inertia": [
+        0,
+        1,
+        0
+      ]
+    },
+    "canonical_Witt_basis": [
+      "EI",
+      "RI0=RI-13*EI/(24*omega**2)",
+      "SI"
+    ],
+    "canonical_Witt_gram_over_pi_alpha_W": [
+      [
+        "0",
+        "576*omega/5",
+        "0"
+      ],
+      [
+        "576*omega/5",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-384*omega**3/5"
+      ]
+    ],
+    "factor_alignment_warning": "pi_x(XI0)=2, so XI0 is not the carrier RW line and the earlier endpoint Witt basis is not factor aligned. The exact factor split is ker(pi_x)=span{EI,RI} with inertia (1,1,0), orthogonal to the spin-one quotient lift span{SI} with inertia (0,1,0)."
+  },
+  "Evans_convention_audit": {
+    "Schrodinger_operator": "H_s=-D_rstar**2+V_s with H_s psi=omega**2 psi",
+    "potentials": {
+      "V2": "6*(r-2)*(r-1)/r**4",
+      "V1": "6*(r-2)/r**3"
+    },
+    "nonnegative_quadratic_form": "integral(abs(psi_prime)**2+V_s*abs(psi)**2) drstar >= 0",
+    "growth_half_plane": "Im(omega)<0 because the time factor is exp(+I*omega*t)",
+    "L2_boundary_reading": "For A_in=0 and Im(omega)<0, exp(+I*omega*rstar) decays at the horizon and exp(-I*omega*rstar) decays at infinity.",
+    "no_growing_zero_theorem": "The reduced spin-one and spin-two Evans functions have no zeros for Im(omega)<0: if Re(omega)!=0 then omega**2 is nonreal, while if Re(omega)=0 then omega**2<0, both impossible for nonnegative self-adjoint H_s.",
+    "upper_half_plane": "Im(omega)>0 is temporally damped in this convention; the outgoing radial factors grow on a t-slice, so the L2 energy identity does not exclude UHP Evans zeros.",
+    "requested_no_UHP_theorem": "REFUSED_BY_PHASE_CONVENTION",
+    "no_LHP_growing_zeros_certified": true,
+    "no_UHP_zeros_certified": false
+  },
+  "special_imaginary_points": {
+    "omega=I/4": {
+      "frame_events": [
+        "4*omega-I=0, so the displayed spin-two horizon amplitudes vanish",
+        "Einstein-kernel horizon exponents 0 and -1-4*I*omega collide",
+        "omega*r-2*I=0 at r=8 in the reduced reconstruction chart"
+      ],
+      "classification": "FROBENIUS_AND_RECONSTRUCTION_FRAME_SINGULARITY",
+      "genuine_reduced_Evans_zero": "OPEN"
+    },
+    "omega=I/2": {
+      "frame_events": [
+        "2*omega-I=0, so the selected spin-one horizon normalization vanishes",
+        "carrier horizon exponents 0 and -2-4*I*omega collide",
+        "omega*r-2*I=0 at r=4 in the reduced reconstruction chart"
+      ],
+      "classification": "FROBENIUS_AND_RECONSTRUCTION_FRAME_SINGULARITY",
+      "genuine_reduced_Evans_zero": "OPEN"
+    },
+    "omega=I": {
+      "frame_events": [
+        "omega-I=0, so the factor-adapted horizon basis formula is singular",
+        "the spin-one horizon Frobenius recurrence meets its fourth-order integer resonance",
+        "omega*r-2*I=0 at r=2, the horizon endpoint of the reduced reconstruction chart"
+      ],
+      "classification": "FROBENIUS_AND_RECONSTRUCTION_FRAME_SINGULARITY",
+      "genuine_reduced_Evans_zero": "OPEN"
+    },
+    "joint_reading": "These points are certainly singularities of the chosen frames. Positivity does not exclude damped UHP Evans zeros in the repository phase convention, so none is classified as a genuine zero or a nonzero without a regularized Evans calculation."
+  },
+  "claim_flags": {
+    "uniform_pilot_determinant_margin_certified": true,
+    "Tminus_invertible_all_real_positive_omega_certified": true,
+    "Gminus_inertia_all_real_positive_omega_certified": true,
+    "factor_adapted_Iminus_gram_certified": true,
+    "no_lower_half_plane_growing_Evans_zeros_certified": true,
+    "no_upper_half_plane_Evans_zeros_certified": false,
+    "special_imaginary_points_are_genuine_Evans_zeros": false,
+    "special_imaginary_points_are_proved_nonzeros": false,
+    "Tplus_or_reflection_nonvanishing_certified": false
+  },
+  "does_not_establish": [
+    "the omega=0 endpoint phase space or zero-frequency connection",
+    "absence of upper-half-plane damped quasinormal or Evans zeros",
+    "whether omega=I/4, I/2 or I is a genuine regularized Evans zero",
+    "invertibility or fixed rank of Tplus or nonvanishing reflection amplitudes",
+    "positive total energy, CPT positivity, stability beyond the reduced no-growing-mode theorem, particles, ghosts or unitarity",
+    "polar parity or ell other than two"
+  ],
+  "verification": {
+    "command": "python3 -m black_hole_programme.phase3.axial_incoming_extended_domain_audit.verify",
+    "tests": "python3 -m unittest -v black_hole_programme.phase3.axial_incoming_extended_domain_audit.tests.test_audit"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schema": "phase3-axial-incoming-extended-domain-audit-receipt-v1",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_INCOMING_EXTENDED_DOMAIN_AUDIT",
+  "date": "2026-07-23",
+  "artifacts": {
+    "README.md": "074bf5f3364ab67cd9792321651547995e655c4d7eb755cab0981850fd909f18",
+    "certificate.json": "bf7fa69f4cba4440725f067cb2ba8fb7e89936819400b8eadcf2b69786212ce4",
+    "verify.py": "9e17d49a5c8e5b6429066795cfdc5b0ee7129c5352a9fe6b782a71efd590e9d4",
+    "tests/test_audit.py": "bdbef825de8e60ffddbbd3ca3d562d160ac6bbc66f3fa9fb5dd566f20df307be",
+    "reports/phase3-axial-incoming-extended-domain-audit-2026-07-23.md": "d93b21bde153c1485cde0685773e44aad2992f847e99dc6bb407fe2c6a8fdbc5"
+  },
+  "verification": [
+    {
+      "tier": 0,
+      "command": "git diff --check -- black_hole_programme/phase3/axial_incoming_extended_domain_audit reports/phase3-axial-incoming-extended-domain-audit-2026-07-23.md",
+      "elapsed_seconds": 0.01,
+      "status": "PASS",
+      "scope": "structured data, source, report and whitespace checks"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m black_hole_programme.phase3.axial_incoming_extended_domain_audit.verify",
+      "elapsed_seconds": 0.41,
+      "status": "PASS",
+      "scope": "exact imported determinant, endpoint-collision, factor projection, Hermitian Gram, positive-real and Evans-convention audit"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_incoming_extended_domain_audit.tests.test_audit",
+      "elapsed_seconds": 0.54,
+      "status": "PASS",
+      "scope": "13 certificate and adverse claim-promotion mutations"
+    }
+  ],
+  "higher_tiers": {
+    "tier2": "not run: all mathematical inputs are content-addressed and the exact verifier replays every strengthened claim against them",
+    "tier3": "not run: this is not yet a release or full scattering-theorem freeze"
+  },
+  "claim_boundary": "Tminus invertibility and incoming inertia are certified for every real omega>0; the exact incoming sign split is a hyperbolic metric/carrier spin-two extension plus a negative spin-one quotient line. The reduced diagonal factors have no lower-half-plane growing Evans zeros under exp(+i omega t). Omega=0, Tplus, regularized damped poles, full coupled stability, total energy, CPT positivity, particles and unitarity remain open."
+}

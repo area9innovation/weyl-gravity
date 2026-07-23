@@ -70,10 +70,12 @@ action-derived flux Grams have rank three, zero radical, and inertia
 module has an exact triangular filtration into two spin-two
 Regge--Wheeler factors and one spin-one Regge--Wheeler factor.  Their
 real-potential Wronskians prove that the map from future-horizon-regular data
-to the incoming \(\mathscr I^-\) trace is invertible throughout the pilot
-interval.  Thus the full indefinite incoming endpoint space is globally
-populated.  The outgoing reflection block, poles, stability, CPT positivity,
-and a complete scattering operator remain open.
+to the incoming \(\mathscr I^-\) trace is invertible for every real
+\(\omega>0\).  Thus the full indefinite incoming endpoint space is globally
+populated.  Its metric/carrier spin-two extension is hyperbolic, while the
+orthogonal spin-one quotient lift is strictly negative.  The outgoing
+reflection block, non-real poles, full mode stability, CPT positivity, and
+a complete scattering operator remain open.
 
 Strict fixed-field-content pure Weyl gravity has the established nonzero
 local Euclidean one-loop Weyl-anomaly coefficients, here reconstructed from
@@ -832,6 +834,33 @@ The natural gauge retains a nonzero extension term, so a direct
 \(\ker L_{\rm RW}^2\oplus\ker L_x\) splitting and a time-translation
 Jordan interpretation are not claimed.
 
+The incoming quotient map fixes the factor attribution without requiring
+such a splitting:
+\[
+ \pi_x(\mathrm{XI0})=2,\qquad
+ \pi_x(\mathrm{XI1})=-2i\omega,\qquad
+ \pi_x(\mathrm{EI0})=0.
+\]
+With
+\[
+ R=\mathrm{XI0}-\frac{i}{\omega}\mathrm{XI1},\qquad
+ S=-\omega^2\mathrm{XI0}-2i\omega\mathrm{XI1}
+   +\frac43\mathrm{EI0},\qquad E=\mathrm{EI0},
+\]
+the exact incoming Gram divided by \(\pi\alpha_{\rm W}\) is
+\[
+ \left.G_-\right|_{(R,S,E)}=
+ \begin{pmatrix}
+ 624/(5\omega)&0&576\omega/5\\
+ 0&-384\omega^3/5&0\\
+ 576\omega/5&0&0
+ \end{pmatrix}.
+\]
+Thus \(\ker\pi_x=\operatorname{span}\{E,R\}\), the metric/carrier
+spin-two extension, has inertia \((1,1,0)\); the orthogonal lift \(S\) of
+the spin-one quotient is strictly negative.  The two incoming negative
+directions therefore have different structural origins.
+
 There is nevertheless a sharp conditional consequence of the endpoint
 inertia.  If a globally matched gauge-reduced trace map
 \(T_\omega:U_\omega\to\mathcal X_\omega\) has rank \(r\), then
@@ -868,17 +897,28 @@ unit horizon-ingoing Jost solutions,
  |A_{{\rm in},s}|^2-|A_{{\rm out},s}|^2=1,
  \qquad s=1,2,
 \]
-so \(T_-(\omega)\in GL(3,\mathbb C)\) for every real
-\(\omega\in[1/2,3/4]\).  Congruence therefore preserves the incoming
-inertia \((1,2,0)\); its \(L^2\) wave-packet completion has infinite positive
-and negative index.  This proves globally populated indefinite incoming
+so \(T_-(\omega)\in GL(3,\mathbb C)\) for every real \(\omega>0\);
+the symbolic endpoint maps and recurrence pivots have no positive-real
+collision, while \(\omega=0\) remains separate.  On the original pilot
+interval,
+\[
+ |\det T_-(\omega)|\geq\sqrt{5/2}.
+\]
+Congruence therefore preserves the incoming inertia \((1,2,0)\); on every
+compact positive-frequency interval its \(L^2\) wave-packet completion has
+infinite positive and negative index.  This proves globally populated indefinite incoming
 channels, not the rank of \(T_+\), nonzero reflection, absence of unstable
 poles, positive total energy, CPT obstruction, or a complete scattering
 theory.
 Since \(\ker T_-(\omega)=0\), there is no future-horizon-regular solution
 with vanishing incoming trace: purely outgoing real-frequency axial modes
-and real-axis incoming spectral singularities are excluded on the pilot
-interval.  Only non-real complex-frequency poles remain open.
+and real-axis incoming spectral singularities are excluded for every
+\(\omega>0\).  With the repository phase \(e^{+i\omega t}\), growth is in
+the lower half-plane.  Positivity of both reduced Regge--Wheeler
+Schr\"odinger operators excludes lower-half-plane growing Evans zeros for
+the three diagonal factors.  A full six-state mode-stability theorem still
+requires the filtration maps to preserve the complex-frequency boundary
+classes; damped upper-half-plane poles remain open.
 
 The full 282-term $Q_{21}$ is machine readable at
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/current_artifacts/q21-finite-line-factor.json}
@@ -1517,8 +1557,10 @@ true oscillatory Einstein shear; the generic-angular polar filtration has a
 mixed finite line with an exact exceptional wall.  On the axial pilot, exact
 three-dimensional wave-packet trace spaces at both null ends carry
 nondegenerate indefinite endpoint flux Grams, and the full incoming trace is
-globally populated by future-horizon-regular solutions through an invertible
-RW/RW/spin-one connection.  The outgoing block and stability remain open.
+globally populated at every positive real frequency by future-horizon-regular
+solutions through an invertible RW/RW/spin-one connection.  One incoming
+negative direction lies in the spin-two extension and the other is the
+spin-one quotient line.  The outgoing block and full stability remain open.
 Selected compact blocks
 admit positive pseudo-Hermitian metrics, but neither a genuine
 BRST-compatible $C$ operator nor a full Hadamard covariance follows.  Strict
