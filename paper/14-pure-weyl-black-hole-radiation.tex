@@ -714,6 +714,60 @@ statement does not cover radial or subleading, nonlocal or soft,
 explicit-time, or nondecaying improvements.  Their additive
 \(\Delta G_\pm\) and inertia strata remain open.
 
+\begin{proposition}[Index pullback and local wave-packet consequence]
+\label{prop:endpoint-index-pullback}
+Fix either certified axial endpoint and a frequency at which its Hermitian
+flux form \(G(\omega)\) has inertia \((1,2,0)\).  Let
+\[
+ T_\omega:U_\omega\longrightarrow\mathcal X_\omega
+\]
+be any globally matched, gauge-reduced trace map, and set
+\(K_\omega=T_\omega^\dagger G(\omega)T_\omega\).  After quotienting
+\(\ker T_\omega\), write \(r=\operatorname{rank}T_\omega\).  Then
+\[
+ n_-(K_\omega)\geq r-1.
+\]
+In particular, a populated endpoint image of rank at least two necessarily
+contains a negative-flux direction, while full rank forces inertia
+\((1,2,0)\).
+
+If \(T_\omega\) and the horizon-regular frame vary continuously near an
+interior frequency \(\omega_0\), then
+\(\operatorname{rank}T_{\omega_0}\geq2\) implies the existence of a
+nonzero smooth compact-frequency horizon amplitude whose populated endpoint
+flux is strictly negative.  In fact the negative index of the populated
+wave-packet space is then infinite.
+\end{proposition}
+
+\begin{proof}
+Let \(W=\operatorname{im}T_\omega\).  If the restriction of \(G\) to \(W\)
+has inertia \((a,b,c)\), it has a nonnegative subspace of dimension
+\(a+c\).  Projection of such a subspace onto the one-dimensional positive
+spectral subspace of \(G\) is injective: a vector with zero positive
+projection has nonpositive norm in the negative spectral subspace, and
+nonnegativity forces it to vanish.  Hence \(a+c\leq1\), and
+\(b=r-a-c\geq r-1\).
+
+For the second statement choose \(u\in U_{\omega_0}\) with
+\(u^\dagger K_{\omega_0}u<0\).  In a continuous local trivialization the
+same coefficient vector has negative flux on some open interval
+\(J\ni\omega_0\).  Multiplying it by any nonzero
+\(\chi\in C_c^\infty(J)\) and integrating the diagonal frequency-space
+pairing gives a strictly negative finite wave-packet flux.
+Choose countably many nonzero cutoffs with pairwise disjoint supports inside
+\(J\).  Their cross-pairings vanish, while every self-pairing is negative.
+They therefore span an infinite-dimensional negative subspace.
+\end{proof}
+
+Proposition~\ref{prop:endpoint-index-pullback} lowers the first global
+decision gate considerably.  Positivity can survive global matching only if
+the populated endpoint image has rank at most one.  Certifying rank two at
+one interior frequency already produces a negative endpoint-flux wave
+packet; it does not require a uniform full-rank theorem on the entire pilot
+interval.  Nor can the resulting infinite negative index be removed by
+finitely many global charge conditions, a finite-dimensional residual
+quotient, or deletion of finitely many exceptional frequencies.
+
 This is an endpoint flux theorem, not a global scattering theorem.  It does
 not show that any endpoint direction is reached by horizon-regular data, and
 it establishes no positive energy, particle norm, CPT metric, pole
