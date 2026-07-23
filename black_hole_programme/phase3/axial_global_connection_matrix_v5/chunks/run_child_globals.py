@@ -1,0 +1,135 @@
+#!/usr/bin/env python3
+"""Execute and emit all sixteen exact child global radial maps."""
+from __future__ import annotations
+
+import argparse
+import json
+import subprocess
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
+
+from ..affine_rail import build_microfactor_render_context
+from .child_cell_factor import frequency_cell
+from .compose_child_global import build_global, composition_factors
+from .join_microfactors import render_join_source
+
+
+def _run(source: Path, binary: Path, log: Path, timeout: float) -> dict:
+    compiled = subprocess.run(
+        ["forge", "-o", str(binary), str(source)],
+        text=True, capture_output=True, timeout=300, check=False,
+    )
+    if compiled.returncode:
+        return {
+            "status": "REFUSED", "stage": "compile",
+            "stderr": compiled.stderr[-4000:],
+        }
+    ran = subprocess.run(
+        [str(binary)], text=True, capture_output=True,
+        timeout=timeout, check=False,
+    )
+    log.write_text(ran.stdout)
+    binary.unlink(missing_ok=True)
+    if ran.returncode != 42:
+        return {
+            "status": "REFUSED", "stage": "run",
+            "returncode": ran.returncode, "stderr": ran.stderr[-4000:],
+        }
+    return {"status": "PASS", "log": str(log)}
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--artifact-dir", type=Path, required=True)
+    parser.add_argument("--tail-join-dir", type=Path, required=True)
+    parser.add_argument("--prefix", type=Path, required=True)
+    parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--scratch", type=Path, required=True)
+    parser.add_argument("--summary", type=Path, required=True)
+    parser.add_argument("--repo-root", type=Path, required=True)
+    parser.add_argument("--workers", type=int, default=4)
+    parser.add_argument("--run-timeout", type=float, default=900.0)
+    args = parser.parse_args()
+    if not 1 <= args.workers <= 4:
+        raise SystemExit("workers must lie in [1,4]")
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    args.scratch.mkdir(parents=True, exist_ok=True)
+    prefix = json.loads(args.prefix.read_text())
+    prefix_context = build_microfactor_render_context()
+    contexts, tails, sources, jobs = {}, {}, {}, []
+    for child in range(16):
+        context = build_microfactor_render_context(frequency_cell(child))
+        contexts[child] = context
+        tail_path = args.tail_join_dir / f"child_tail_join_q{child:02d}.json"
+        if not tail_path.is_file():
+            raise SystemExit(f"missing tail join {tail_path}")
+        tail = json.loads(tail_path.read_text())
+        tails[child] = (tail_path, tail)
+        source = args.scratch / f"global_q{child:02d}.forge"
+        binary = args.scratch / f"global_q{child:02d}"
+        log = args.scratch / f"global_q{child:02d}.log"
+        source.write_text(
+            render_join_source(composition_factors(prefix, tail, child))
+        )
+        sources[child] = source
+        jobs.append((child, source, binary, log))
+    results = {}
+    with ThreadPoolExecutor(max_workers=args.workers) as pool:
+        futures = {
+            pool.submit(
+                _run, source, binary, log, args.run_timeout
+            ): child
+            for child, source, binary, log in jobs
+        }
+        for future in as_completed(futures):
+            child = futures[future]
+            result = future.result()
+            results[child] = result
+            print(
+                f"{result['status']} child=q{child:02d} "
+                f"stage={result.get('stage', 'complete')}",
+                flush=True,
+            )
+    artifacts = []
+    for child in range(16):
+        result = results[child]
+        if result["status"] != "PASS":
+            continue
+        tail_path, tail = tails[child]
+        payload = build_global(
+            child=child,
+            trace=Path(result["log"]).read_text(),
+            prefix=prefix,
+            prefix_path=args.prefix,
+            tail=tail,
+            tail_path=tail_path,
+            source=sources[child],
+            artifact_dir=args.artifact_dir,
+            repo_root=args.repo_root,
+            prefix_context=prefix_context,
+            child_context=contexts[child],
+        )
+        output = args.output_dir / f"global_map_q{child:02d}.json"
+        output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
+        artifacts.append(str(output))
+    all_passed = (
+        len(results) == 16
+        and all(result["status"] == "PASS" for result in results.values())
+        and len(artifacts) == 16
+    )
+    summary = {
+        "schema": "phase3-axial-final-frequency-child-global-maps-v1",
+        "all_passed": all_passed,
+        "results": [
+            {"frequency_child": child, **results[child]}
+            for child in sorted(results)
+        ],
+        "artifacts": artifacts,
+    }
+    args.summary.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n")
+    print(f"SUMMARY all_passed={all_passed} artifacts={len(artifacts)}/16")
+    return 0 if all_passed else 3
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
