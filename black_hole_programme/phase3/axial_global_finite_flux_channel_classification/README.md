@@ -31,6 +31,13 @@ calls the available one-sided relation a full two-ended scattering matrix.
    that every activated statement is a scope-preserving logical consequence
    of the independently verified handoff.
 
+The validated radial solvers retain a shared degree-two frequency model.
+`taylor2_adapter.py` supplies the explicit evidence boundary into the affine
+handoff schema: it absorbs \(A_2e^2\), with \(e^2\in[0,1]\), into an outward
+remainder and recovers the complex block from the realified solve by an
+outer affine hull.  It does not discard the quadratic term or replace the
+shared frequency by independent interval generators.
+
 The activated certificate classifies, cell by cell:
 
 - populated dimensions and physical quotient dimensions at
@@ -54,6 +61,7 @@ python3 -m black_hole_programme.phase3.axial_global_finite_flux_channel_classifi
 python3 -m black_hole_programme.phase3.axial_global_finite_flux_channel_classification.activate
 python3 -m black_hole_programme.phase3.axial_global_finite_flux_channel_classification.verify_activated
 python3 -m unittest black_hole_programme.phase3.axial_global_finite_flux_channel_classification.tests.test_classifier
+python3 -m unittest black_hole_programme.phase3.axial_global_finite_flux_channel_classification.tests.test_taylor2_adapter
 python3 -m black_hole_programme.phase3.axial_global_finite_flux_channel_classification.mutations
 ```
 
