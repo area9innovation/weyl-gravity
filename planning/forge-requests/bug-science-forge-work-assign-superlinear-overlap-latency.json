@@ -13,7 +13,8 @@
       "Reproduction 2026-07-22: with the current physics programme, `work-scope-narrow` completed in under one second and `overview` in roughly 13 seconds, but each `work-assign` consumed about 110-150 seconds at approximately 100% CPU before returning.",
       "The first attempted Phase-3 assignment correctly refused a broad planning/forge-requests and planning/events overlap. After exact scope narrowing, the successful assignments still paid the same full-CPU delay, so the cost is not explained by a difficult conflicting-path result.",
       "A repeated assignment of phase3-boundary-1 to its already-held item appended sequence-2 ACQUIRE and ACTIVE events instead of reporting an already-held lease or using RENEW. The fold remained coherent, but the duplicate journal noise should be prevented or made explicit.",
-      "This is distinct from the landed read-only overview/event-index work: the regression is on the mutating assignment path and its live-scope overlap calculation."
+      "This is distinct from the landed read-only overview/event-index work: the regression is on the mutating assignment path and its live-scope overlap calculation.",
+      "Reproduced again 2026-07-23 after a BLOCKED -> READY coordinator transition: both `s-f work assign` and resident `s-f work pull --item` ran at 100% CPU for more than a minute with no progress output. The resident pull eventually wrote a valid ACQUIRE/ACTIVE pair but did not return promptly; a later duplicate assign continued spinning after the authoritative fold already showed the lease and had to be terminated. The acquisition guard and overlap fold need the same indexed fast path and an ALREADY_HELD early return after the guarded refold."
     ]
   },
   "state": "PROPOSED"
