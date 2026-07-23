@@ -1,0 +1,40 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-horizon-grassmann-mobius-to-r4-v2",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-horizon-grassmann-mobius-to-r4-v2",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-horizon-grassmann-mobius-to-r4-v2.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-horizon-mobius",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Extend the certified four-subcell Grassmann/Mobius axial future-horizon-regular plane from rho=2^-22 to r=4, with certified chart switches and a separately tracked amplitude map, then emit the standard real 12x6 horizon transport artifact required by the frozen channel-handoff schema.",
+    "stop_condition": "For strict pure Weyl gravity with M=1, ell=2 and the ordered frequency subcells [1/2,513/1024], [513/1024,257/512], [257/512,515/1024], [515/1024,129/256], transport the future-horizon-regular complex plane from rho=2^-22 to rho=2. Every panel must retain generator 7315, a certified rank-six chart, checked right solve, 128-bit dyadic rebase and chart norm below the frozen limit, with certified dynamic chart switches or a typed refusal. Separately propagate the 6x6 amplitude/pivot map with exact chart-transition covariance. Emit a content-addressed standard-order real 12x6 Y4 for raw origin columns [XH0a,XH0b,EH0], with rank six, exact parent-cell and ordered-cells metadata, basis/realification/orientation fields conforming to channel-handoff v1, native/C agreement, independent verification, gauge covariance, and direct-overlap controls on every shell where the full-column rail remains tractable. If runtime or source size exceeds the declared budget, split at exact dyadic shell boundaries and freeze a join schema rather than relaxing any gate.",
+    "current_gate": "Certified multi-shell Grassmann chart and amplitude transport to r=4",
+    "forbid": "no whole-cell interval flattening; no unvalidated chart reset or inverse; no loss or silent renaming of generator 7315; no basis-only transport called a plane theorem; no plane-only transport called a horizon-labelled connection; no missing/reordered frequency cell; no interpolation across refused shells; no horizon-to-infinity, scattering, flux-sign, stability, ghost, positivity, CPT or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-horizon-grassmann-mobius-one-shell",
+      "sf:program/work/phase3-black-hole-axial-complete-reconstruction-repair"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4/",
+      "reports/phase3-black-hole-axial-horizon-grassmann-mobius-to-r4-v2-2026-07-23.md",
+      "residual_atlas/phase3-black-hole-axial-horizon-grassmann-mobius-to-r4-v2-fragment-v1.json",
+      "planning/work-items/phase3-black-hole-axial-horizon-grassmann-mobius-to-r4-v2.json"
+    ],
+    "resource_hint": "Consume the one-shell certificate and source as the frozen first-shell kernel. Use channel-handoff schema commits 089000382 and 48c0e46f5 for basis, realification, orientation and invariant validation. The exploratory chart schedule in reports/phase3-horizon-grassmann-transport-design-2026-07-23.md is unvalidated design input only. Split into one producer per exact dyadic shell plus a content-addressed ordered join if a monolithic run exceeds budget.",
+    "input_commit": "26a81c6902cdceebf1dd1d65ecba1d92f8e782cd",
+    "notes": [
+      "Parent cell [1/2,129/256] has center 257/512 and radius 1/512; each ordered child has radius 1/2048 and generator 7315.",
+      "The plane chart begins at I=(Pprime,Q,H1). Any later chart is selected only from a certified complex-row triple.",
+      "The amplitude rail must transform covariantly under the same exact rational column-gauge mutation used in the one-shell certificate.",
+      "The final standard state order is Re(P), Re(Pprime), Re(Q), Re(Qprime), Re(H1), Re(F), Im(P), Im(Pprime), Im(Q), Im(Qprime), Im(H1), Im(F)."
+    ]
+  },
+  "edges": []
+}
