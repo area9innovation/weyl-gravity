@@ -1,0 +1,182 @@
+{
+  "schema": "axial-global-connection-numeric-preview-pilot-v1",
+  "lifecycle": "UNVALIDATED-NUMERIC",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL",
+    "UNVALIDATED-NUMERIC"
+  ],
+  "scope": {
+    "theory": "strict pure Weyl gravity",
+    "background": "Schwarzschild, M=1",
+    "sector": "axial ell=2",
+    "frequency": "M*omega=1/2",
+    "working_precision_decimal_digits": 30,
+    "horizon_start": "rho=2^-22",
+    "horizon_log_macro_step": "1/4",
+    "horizon_radial_macro_step": "1",
+    "infinity_normalization_radius": 64,
+    "infinity_correction_macro_step": "-2",
+    "method": "exact-coefficient RK4 Richardson point transport; no interval enclosure"
+  },
+  "imports": {
+    "axial_complete_reconstruction_repair/certificate.json": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+    "axial_endpoint_remainder_enclosures/certificate.json": "9886a02e9d49dbfca813e9520d9e488afce22fc82470b2ba6601b3092f9c64b9",
+    "axial_infinity_practical_transfer/certificate.json": "40cd67db3e0d0cac79a8097bd6c7e5a2b09a1de0498ef078c2ac50c927f11a8d",
+    "axial_null_infinity_trace_preflight/certificate.json": "c048f60c3f8f3790f4243311476e6c049a663b67e00e8a401e4f574152dc4a63",
+    "axial_null_flux_gram/certificate.json": "59fb9b443ce0b92ce016f53c376cb367bcf004e00d1b241ad22ec925e99deed2"
+  },
+  "basis": {
+    "horizon_future_regular": [
+      "XH0a",
+      "XH0b",
+      "EH0"
+    ],
+    "infinity_full": [
+      "XI0",
+      "XI1",
+      "XI2",
+      "XI3",
+      "EI0",
+      "EI2"
+    ],
+    "Iminus": [
+      "XI0",
+      "XI1",
+      "EI0"
+    ],
+    "Iplus": [
+      "XI2",
+      "XI3",
+      "EI2"
+    ]
+  },
+  "infinity_frame": {
+    "bare_B_at_R32": {
+      "numeric_rank": 6,
+      "condition_2": "208295042.600314836209",
+      "smallest_singular_value": "0.00005918708646736012304429"
+    },
+    "normalized_correction_Z": {
+      "numeric_rank": 6,
+      "condition_2_printed": "1.0"
+    },
+    "corrected_BZ": {
+      "numeric_rank": 6,
+      "condition_2": "208295042.600314836209"
+    },
+    "diagnostic_reading": "Phase-normalized correction transport avoids the rank collapse seen under direct inward propagation of six physical modes."
+  },
+  "connection": {
+    "numeric_rank": {
+      "full_6_by_3": 3,
+      "Cminus_3_by_3": 3,
+      "Cplus_3_by_3": 3
+    },
+    "Cminus_3_by_3": [
+      [
+        "0.5068684455470126417531-0.2955221480357553604337j",
+        "-0.1733347744944487537421-0.02724018949967328631996j",
+        "0"
+      ],
+      [
+        "-0.1575026072608133434095-0.152290498336859512036j",
+        "-0.142660099012863141417+0.1836328998325054407057j",
+        "0"
+      ],
+      [
+        "4.235258729674737805125-0.125927114749919333397j",
+        "-2.410115457964686884497-6.418424155443284255502j",
+        "-0.1531498940134856596538-0.4800652303384108609763j"
+      ]
+    ],
+    "Cplus_3_by_3": [
+      [
+        "-0.04516568137948912328608-0.321364545700072181107j",
+        "-0.4417174351977403431736+0.1197238055738610514684j",
+        "0"
+      ],
+      [
+        "0.1000472493189327893906-0.004392399704664191574045j",
+        "-0.005541823382036610363308-0.1310366350034785726583j",
+        "0"
+      ],
+      [
+        "-53.60562112487226425063+24.54836041200115191955j",
+        "28.85924380340537587253+53.3394350393016306228j",
+        "-1.362054739319668424769-1.47383086188853879076j"
+      ]
+    ]
+  },
+  "flux_diagnostic": {
+    "R32_amplitude_crosswalk_applied": true,
+    "numeric_inertia": {
+      "Cminus_dagger_Gminus_Cminus": [
+        1,
+        2,
+        0
+      ],
+      "Cplus_dagger_Gplus_Cplus": [
+        1,
+        2,
+        0
+      ],
+      "Hplus_outward_candidate": [
+        2,
+        1,
+        0
+      ]
+    },
+    "eigenvalues": {
+      "Iminus_pullback": [
+        "-24.07319493276526690601913",
+        "-7.291365946823535515037689",
+        "264.7907039420743520776636"
+      ],
+      "Iplus_pullback": [
+        "-89.26276325145428778629746",
+        "-0.8867222586958980870645192",
+        "0.03020725763862612709149865"
+      ],
+      "Hplus_outward_candidate": [
+        "-351.3336998770192095612646",
+        "4.509730951328805060209064",
+        "22.33686834306484337535556"
+      ]
+    },
+    "orientation_tests": {
+      "declared_Hplus_plus_Iplus_minus_Iminus": {
+        "absolute_max_residual": "368.1758450288371349792138",
+        "relative_max_residual": "0.9993864189361812743232372",
+        "disposition": "FAIL"
+      },
+      "reversed_horizon_sign_minus_Hplus_plus_Iplus_minus_Iminus": {
+        "absolute_max_residual": "0.4766270584480391085522565",
+        "relative_max_residual": "0.001293769310349958375298216",
+        "disposition": "NUMERICALLY_SMALLER_BUT_NOT_ZERO_OR_CERTIFIED"
+      }
+    },
+    "interpretation": "The point preview suggests that horizon-regular columns populate both positive and negative directions at both null endpoints, but the unresolved horizon outward/radial sign and amplitude crosswalk blocks every physical interpretation."
+  },
+  "missing_Hminus": {
+    "available": false,
+    "reason": "No past-horizon incoming basis or two-ended scattering matrix was constructed."
+  },
+  "claim_flags": {
+    "diagnostic_preview_computed": true,
+    "phase_normalized_transport_preserved_rank": true,
+    "declared_flux_conservation_passed": false,
+    "validated_global_connection": false,
+    "physical_scattering_channels_classified": false,
+    "physical_ghost_established": false,
+    "stability_or_pole_exclusion_established": false
+  },
+  "does_not_establish": [
+    "the declared global connection because neither point transport nor endpoint truncation is interval-certified",
+    "Lee-Wald flux conservation because the declared orientation identity fails in this preview",
+    "a two-ended scattering map because Hminus data are absent",
+    "uniform-in-frequency rank or inertia",
+    "physical scattering channels or a physical ghost",
+    "complex-frequency poles, stability, CPT positivity or unitarity",
+    "a PDE scattering theorem"
+  ]
+}
