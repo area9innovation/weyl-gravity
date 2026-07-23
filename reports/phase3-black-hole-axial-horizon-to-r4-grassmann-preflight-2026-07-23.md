@@ -101,3 +101,7 @@ indicate a singularity in the Bach flow.
 
 The machine-readable evidence is in
 `black_hole_programme/phase3/axial_horizon_to_r4_transport_preflight/`.
+
+CLOSE-OUT: SHORTFALL — the horizon-to-r4 map is not emitted; the numerical-method boundary and exact successor are certified.
+
+MISSING-DEP: PARAMETER_CORRELATED_VALIDATED_GRASSMANN_RICCATI_FLOW
