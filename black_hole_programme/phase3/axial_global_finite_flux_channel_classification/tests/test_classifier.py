@@ -66,6 +66,42 @@ class ExactClassifierTest(unittest.TestCase):
         )
         self.assertEqual(result.imin["physical_inertia"], (1, 2, 0))
         self.assertEqual(result.iplus["physical_inertia"], (1, 2, 0))
+        self.assertEqual(
+            result.imin["origins"]["additional"][
+                "restricted_pullback_inertia"
+            ],
+            (1, 1, 0),
+        )
+        self.assertEqual(
+            result.imin["origins"]["einstein"][
+                "restricted_pullback_inertia"
+            ],
+            (0, 1, 0),
+        )
+        self.assertEqual(result.imin["einstein_additional_mixed_rank"], 0)
+
+    def test_einstein_additional_mixing_is_reported(self) -> None:
+        gram = sp.Matrix(
+            [
+                [2, 0, 1 + sp.I],
+                [0, -1, 2],
+                [1 - sp.I, 2, 3],
+            ]
+        )
+        result = classify_populated_form(sp.eye(3), gram)
+        self.assertEqual(result["einstein_additional_mixed_rank"], 1)
+        self.assertEqual(
+            result["einstein_additional_mixed_block"],
+            sp.Matrix([[1 + sp.I], [2]]),
+        )
+        self.assertEqual(
+            result["origins"]["additional"]["restricted_pullback_inertia"],
+            (1, 1, 0),
+        )
+        self.assertEqual(
+            result["origins"]["einstein"]["restricted_pullback_inertia"],
+            (1, 0, 0),
+        )
 
     def test_radical_synthetic_cell(self) -> None:
         trace = sp.diag(1, 1, 0)
@@ -97,4 +133,3 @@ class ExactClassifierTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

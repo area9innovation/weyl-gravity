@@ -217,12 +217,25 @@ def classify_populated_form(
         embedded = _origin_embedding(columns)
         image = _column_space_matrix(trace_map * embedded)
         quotient_rank = _joined_rank(image_radical, image) - image_radical.rank()
+        restricted_pullback = (
+            dagger(embedded) * pullback * embedded
+        ).applyfunc(sp.simplify)
         origins[name] = {
             "domain_dimension": len(columns),
             "populated_image_dimension": image.rank(),
             "physical_quotient_dimension": quotient_rank,
+            # This is the signature of the form restricted to the declared
+            # origin subspace.  Its nullity need not equal the radical of the
+            # full populated image when Einstein/additional cross terms are
+            # present, so it is deliberately not labelled a quotient inertia.
+            "restricted_pullback_rank": restricted_pullback.rank(),
+            "restricted_pullback_inertia": complex_hermitian_inertia(
+                restricted_pullback
+            ),
+            "restricted_pullback_gram": restricted_pullback,
         }
 
+    mixed_block = pullback.extract((0, 1), (2,))
     inertia = complex_hermitian_inertia(pullback)
     return {
         "trace_rank": image_rank,
@@ -236,6 +249,8 @@ def classify_populated_form(
         "domain_inertia": inertia,
         "physical_inertia": (inertia[0], inertia[1], 0),
         "origins": origins,
+        "einstein_additional_mixed_block": mixed_block,
+        "einstein_additional_mixed_rank": mixed_block.rank(),
     }
 
 
@@ -324,4 +339,3 @@ def classify_exact_cell(
         conservation_certified=conservation_certified,
         one_sided_relation=one_sided,
     )
-
