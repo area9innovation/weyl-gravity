@@ -1,0 +1,40 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-global-connection-matrix-v5",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-global-connection-matrix-v5",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-global-connection-matrix-v5.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-axial-global-5",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Construct and validate the global real-frequency axial Bach connection matrix from future-horizon-regular data to the repaired six-column infinity basis, without prematurely imposing a Cauchy or null-infinity admissibility map.",
+    "stop_condition": "For ell=2, M=1 and real M omega in [1/2,3/4], import the exact six-state reconstruction, the rank-certified future-horizon basis, the conserved radial Lee-Wald matrix, and the practical R=32 infinity initializer. Propagate the infinity carrier 4x4 and Einstein-kernel 2x2 blocks inward with validated reconditioning and the forced lower lift by variation of constants; propagate the three future-horizon-regular columns outward to the common matching radius r=4. Use certified linear solves, never an explicit inverse, to enclose the 6x3 coordinate matrix T(omega) expressing the horizon-regular basis in the full ordered infinity basis (XI0,XI1,XI2,XI3,EI0,EI2) on a finite rational frequency subdivision. Certify the pointwise column rank of T and the ranks of its I-minus and I-plus three-row projections on every cell, recording any exceptional cells rather than sampling through them. Independently verify the coordinate-orientation conservation identity T^dagger H_I T=H_H and its outward-normal equivalent with interval residual enclosures. Expose a stable public consumer for the subsequent wave-packet trace/flux classification, with exact provenance, backend differential checks, sanitizer rails and mutations that swap endpoint order, omit the lower lift, use an explicit inverse, or conflate the radial current with an endpoint flux.",
+    "current_gate": "Validated global horizon-to-infinity connection before physical endpoint quotient",
+    "forbid": "no uncontrolled shooting; no monolithic ill-conditioned 6x6 propagation; no explicit matrix inverse; no raw EF F^v improper integral called null flux; no radial Wronskian called a Cauchy or null-infinity norm; no finite formal span called a physical scattering space; no real-frequency result called pole absence, stability, CPT, positivity or unitarity",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-boundary-flux-contract",
+      "sf:program/work/phase3-black-hole-axial-complete-reconstruction-repair",
+      "sf:program/work/phase3-black-hole-axial-infinity-practical-transfer",
+      "sf:program/work/phase3-black-hole-axial-null-infinity-trace-preflight"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_global_connection_matrix_v5/",
+      "reports/phase3-black-hole-axial-global-connection-matrix-v5-2026-07-23.md",
+      "residual_atlas/phase3-black-hole-axial-global-connection-matrix-v5-fragment-v1.json",
+      "planning/forge-requests/phase3-black-hole-axial-global-connection-matrix-v5.json"
+    ],
+    "resource_hint": "Consume `axial_infinity_initializer(which)` from the practical-transfer package. The diagnostic scout found good separate carrier/kernel conditioning and a 6x3 rank-three connection at sampled frequencies; this is subdivision guidance only. Preserve the infinity order XI0,XI1,XI2,XI3,EI0,EI2 and the exp(+i omega v) convention.",
+    "input_commit": "e5a108654ea4b487e36ca20a748a8c34a35d1752",
+    "notes": [
+      "This item replaces v4 because the raw F^v Cauchy-density filter is not the physical null-infinity trace.",
+      "Physical finite-flux channel classification is a join of this global matrix with the depth-five wave-packet trace theorem."
+    ]
+  },
+  "edges": []
+}
