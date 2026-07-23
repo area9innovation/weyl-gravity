@@ -36,6 +36,9 @@ from black_hole_programme.phase3.axial_global_finite_flux_channel_classification
 from black_hole_programme.phase3.axial_global_finite_flux_channel_classification.verify import (
     verify_document,
 )
+from black_hole_programme.phase3.axial_global_finite_flux_channel_classification.verify_activated import (
+    verify_documents as independently_verify_activated_documents,
+)
 
 
 HERE = Path(__file__).resolve().parents[1]
@@ -543,6 +546,26 @@ class AffineCellAdapterTest(unittest.TestCase):
             ValueError, "full[_ ]scattering_matrix_constructed"
         ):
             verify_activated_document(document)
+
+    def test_independent_activated_verifier_accepts_sixteen_cells(self) -> None:
+        handoff = synthetic_sixteen_cell_handoff()
+        document = build_classification(handoff, handoff_sha256="d" * 64)
+        independently_verify_activated_documents(
+            handoff,
+            document,
+            handoff_sha256="d" * 64,
+        )
+
+    def test_independent_activated_verifier_rejects_claim_drift(self) -> None:
+        handoff = synthetic_sixteen_cell_handoff()
+        document = build_classification(handoff, handoff_sha256="e" * 64)
+        document["cells"][3]["Iplus"]["inertia"] = [2, 1, 0]
+        with self.assertRaisesRegex(SystemExit, "Iplus inertia changed"):
+            independently_verify_activated_documents(
+                handoff,
+                document,
+                handoff_sha256="e" * 64,
+            )
 
 
 if __name__ == "__main__":
