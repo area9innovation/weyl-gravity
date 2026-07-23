@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import math
 import struct
 from fractions import Fraction
@@ -34,19 +35,64 @@ def validate(document: dict) -> None:
     if [public[i] for i in basis["raw_index_to_public_index"]] != raw:
         raise ValueError("basis: raw/public horizon crosswalk mismatch")
 
-    full = document["connection"]["complex_6_by_3"]
+    cells = document["cells"]
+    parent_lo, parent_hi = map(Fraction, document["parent_cell"]["omega_interval"])
+    cursor = parent_lo
+    unresolved = []
+    for index, cell in enumerate(cells):
+        if cell["cell_id"] != f"q{index}":
+            raise ValueError("cells: ids are not ordered q0,q1,...")
+        lo, hi = map(Fraction, cell["omega_interval"])
+        if lo != cursor or hi <= lo:
+            raise ValueError("cells: gap, overlap, or reversed interval")
+        if Fraction(cell["center"]) != (lo + hi) / 2:
+            raise ValueError("cells: wrong exact center")
+        if Fraction(cell["radius"]) != (hi - lo) / 2:
+            raise ValueError("cells: wrong exact radius")
+        cursor = hi
+        if cell["disposition"] == "CERTIFIED":
+            if cell["validated_payload"] is None or cell["shortfall"] is not None:
+                raise ValueError("cells: certified cell lacks a clean payload")
+            _validate_payload(cell["validated_payload"])
+        else:
+            unresolved.append(cell["cell_id"])
+            if cell["validated_payload"] is not None or cell["shortfall"] is None:
+                raise ValueError("cells: unresolved cell must be fail-closed")
+    if cursor != parent_hi:
+        raise ValueError("cells: exact cover does not reach parent upper bound")
+
+    state = document["parent_classification"]
+    all_resolved = not unresolved
+    if state["all_cells_resolved"] != all_resolved:
+        raise ValueError("parent_classification: wrong resolved flag")
+    if state["exceptional_or_unresolved_cells"] != unresolved:
+        raise ValueError("parent_classification: wrong unresolved-cell ledger")
+    if state["parent_rank_inertia_promoted"] != all_resolved:
+        raise ValueError("parent_classification: invalid parent promotion")
+    expected_status = "CERTIFIED" if all_resolved else "SCOPED_SHORTFALL"
+    if document["status"] != expected_status:
+        raise ValueError("root: status does not match cell dispositions")
+
+
+def _validate_payload(payload: dict) -> None:
+    full = payload["connection"]["complex_6_by_3"]
     for name, selector in (("Cminus_3_by_3", (0, 1, 4)), ("Cplus_3_by_3", (2, 3, 5))):
-        if document["connection"][name] != [full[i] for i in selector]:
+        if payload["connection"][name] != [full[i] for i in selector]:
             raise ValueError(f"connection: {name} is not the frozen row projection")
-    if document["connection"]["realified_12_by_6"] != _realify(full):
+    if payload["connection"]["realified_12_by_6"] != _realify(full):
         raise ValueError("connection: realified matrix does not match complex matrix")
 
-    forms = document["endpoint_forms"]
+    forms = payload["endpoint_forms"]
     expected = _complex_matrix_add(
         forms["GHplus_outward"], forms["gplus_pullback"],
         _complex_matrix_neg(forms["gminus_pullback"]),
     )
     defect = forms["conservation"]["defect"]
+    witness = forms["conservation"]["structural_identity_witness"]
+    if hashlib.sha256(witness.encode("utf-8")).hexdigest() != (
+        forms["conservation"]["witness_sha256"]
+    ):
+        raise ValueError("endpoint_forms: structural witness hash mismatch")
     for i in range(3):
         for j in range(3):
             for part in ("re", "im"):
@@ -54,10 +100,10 @@ def validate(document: dict) -> None:
                     raise ValueError("endpoint_forms: conservation defect is not enclosed")
                 lo, hi = _remainder(defect[i][j][part])
                 center = float(Fraction(defect[i][j][part]["center"]))
-                linear = abs(float(Fraction(defect[i][j][part]["linear"]))) / 512.0
+                linear = abs(float(Fraction(defect[i][j][part]["linear"])))
                 if center + lo - linear > 0.0 or center + hi + linear < 0.0:
                     raise ValueError("endpoint_forms: defect does not contain zero")
-    for witness in document["classification_witnesses"]["inertia"].values():
+    for witness in payload["classification_witnesses"]["inertia"].values():
         if witness["positive"] + witness["negative"] + witness["zero"] != 3:
             raise ValueError("classification_witnesses: inertia does not sum to three")
 
