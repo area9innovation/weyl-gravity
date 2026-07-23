@@ -53,13 +53,13 @@ POST_PHASE1_INPUTS = [
         "key": "phase3_axial_null_endpoint_flux",
         "result_id": "PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1",
         "path": "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
-        "sha256": "6158a259fcf4f5888df58a3da8ffe8fa0de40d6ae992f1c132a0726218f95162",
-        "content_commit": "3baef5e665228c747f78935a367c76bb9a00a9df",
+        "sha256": "59fb9b443ce0b92ce016f53c376cb367bcf004e00d1b241ad22ec925e99deed2",
+        "content_commit": "332564286df69b0638aa8c618aa64e39581ab090",
         "lifecycle_commit": "0da46f3b0916e4e53f441df37077038892cf89c3",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "edge_kind": "PRIMARY_ENDPOINT_THEOREM",
         "paper_location": "Phase-3 endpoint completion after Result card C",
-        "relationship": "Adds exact three-dimensional L2 wave-packet traces and rank-three, radical-free endpoint flux Grams of inertia (1,2,0) on the axial pilot; no global population, scattering, CPT or stability claim.",
+        "relationship": "Adds exact three-dimensional L2 wave-packet traces, explicit rank-three radical-free endpoint flux Grams of inertia (1,2,0), uniform auxiliary-L2 bounds, and scoped trace-local improvement invariance on the axial pilot; no global population, unrestricted improvement invariance, scattering, CPT or stability claim.",
     },
     {
         "key": "phase3_global_connection_v5_shortfall",
@@ -181,8 +181,8 @@ def main() -> None:
         )
 
     payload = {
-        "schema": "paper15-phase1-synthesis-claim-map-v5",
-        "result_id": "PAPER15_FOUR_LEVEL_PHASE1_SYNTHESIS_WITH_ENDPOINT_FLUX_V5",
+        "schema": "paper15-phase1-synthesis-claim-map-v6",
+        "result_id": "PAPER15_FOUR_LEVEL_PHASE1_SYNTHESIS_WITH_ENDPOINT_FLUX_V6",
         "result_state": "PUBLICATION_SYNTHESIS_OF_FROZEN_CLAIMS",
         "paper": str(PAPER.relative_to(ROOT)),
         "paper_sha256": digest(PAPER),
@@ -306,7 +306,7 @@ def main() -> None:
         )
     coverage = {
         "ir": "science-forge-ir-v0",
-        "schema": "paper15-phase1-synthesis-overlay-v5",
+        "schema": "paper15-phase1-synthesis-overlay-v6",
         "append_only_parent": str(COVERAGE_SOURCE.relative_to(ROOT)),
         "append_only_parent_sha256": digest(COVERAGE_SOURCE),
         "claim_map": str(OUTPUT.relative_to(ROOT)),

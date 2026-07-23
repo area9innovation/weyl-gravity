@@ -37,7 +37,7 @@ ENDPOINT_CERT = ROOT / "black_hole_programme/phase3/axial_null_flux_gram/certifi
 ENDPOINT_RECEIPT = ROOT / "black_hole_programme/phase3/axial_null_flux_gram/receipt.json"
 ENDPOINT_REPORT = ROOT / "reports/phase3-black-hole-axial-null-flux-gram-2026-07-23.md"
 ENDPOINT_ATLAS = ROOT / "residual_atlas/phase3-black-hole-axial-null-flux-gram-fragment-v1.json"
-ENDPOINT_CONTENT_COMMIT = "3baef5e665228c747f78935a367c76bb9a00a9df"
+ENDPOINT_CONTENT_COMMIT = "332564286df69b0638aa8c618aa64e39581ab090"
 ENDPOINT_LIFECYCLE_COMMIT = "0da46f3b0916e4e53f441df37077038892cf89c3"
 GLOBAL_V5_CONTENT_COMMIT = "54670c5e371200ee1f08b88843cb3e67b3f17b3b"
 GLOBAL_V5_LIFECYCLE_COMMIT = "b1eec02b2d04e585fddbf8f6f1c2ba1d0b96c6f1"
@@ -124,7 +124,7 @@ def claim_map() -> dict:
     return {
         "schema": "paper-draft-source-map-v1",
         "paper_id": "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION",
-        "result_id": "PAPER_14_PHASE3_ENDPOINT_FLUX_UPDATE_V3",
+        "result_id": "PAPER_14_PHASE3_ENDPOINT_FLUX_UPDATE_V4",
         "lifecycle_state": "DRAFT_ALLOWED",
         "source_baseline": SOURCE_BASELINE,
         "manuscript": str(PAPER.relative_to(ROOT)),
@@ -226,6 +226,9 @@ def claim_map() -> dict:
             "axial_l2_endpoint_flux_grams_inertia_one_two_zero_alpha_positive": True,
             "axial_l2_endpoint_flux_frequency_wall_absent_on_pilot": True,
             "axial_l2_endpoint_trace_limit_interchange": True,
+            "axial_l2_endpoint_uniform_auxiliary_l2_bounds": True,
+            "axial_l2_endpoint_scoped_trace_local_improvement_invariance": True,
+            "axial_l2_endpoint_unrestricted_improvement_invariance": False,
             "axial_l2_endpoint_direction_globally_populated": False,
             "axial_l2_endpoint_flux_positive_energy": False,
             "axial_l2_endpoint_flux_cpt_or_stability": False,
@@ -434,7 +437,7 @@ def coverage(claim_payload: dict) -> dict:
             "body": {
                 "result_id": "PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1",
                 "lifecycle": "CLASSIFIED",
-                "boundary": "Strict pure Weyl, M=1, axial ell=2, omega in [1/2,3/4]: exact three-dimensional L2 traces at both null ends with rank-three, radical-free flux Grams of inertia (1,2,0) for alpha_W>0. No global matching, scattering, CPT or stability theorem.",
+                "boundary": "Strict pure Weyl, M=1, axial ell=2, omega in [1/2,3/4]: exact three-dimensional L2 traces at both null ends with rank-three, radical-free flux Grams of inertia (1,2,0), explicit uniform auxiliary-L2 bounds, and scoped trace-local improvement invariance for alpha_W>0. No global population, unrestricted radial/corner improvement invariance, scattering, CPT or stability theorem.",
                 "native": {
                     "source_kind": "phase3-terminal-certificate",
                     "certificate": str(ENDPOINT_CERT.relative_to(ROOT)),
@@ -533,7 +536,7 @@ def coverage(claim_payload: dict) -> dict:
         )
     return {
         "ir": "science-forge-ir-v0",
-        "schema": "paper14-phase3-endpoint-flux-overlay-v3",
+        "schema": "paper14-phase3-endpoint-flux-overlay-v4",
         "append_only_parent": str(PARENT_COVERAGE.relative_to(ROOT)),
         "append_only_parent_sha256": digest(PARENT_COVERAGE),
         "claim_map": str(OUTPUT.relative_to(ROOT)),

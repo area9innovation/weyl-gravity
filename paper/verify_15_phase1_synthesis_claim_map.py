@@ -36,7 +36,7 @@ EXPECTED_PHASE2 = {
     ),
     "PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1": (
         "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
-        "6158a259fcf4f5888df58a3da8ffe8fa0de40d6ae992f1c132a0726218f95162",
+        "59fb9b443ce0b92ce016f53c376cb367bcf004e00d1b241ad22ec925e99deed2",
         ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
     ),
     "PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5": (
@@ -113,9 +113,9 @@ def main() -> None:
         fail("authoritative ledger hash drift")
     if claim_map["authoritative_result_id"] != "PURE_WEYL_PROGRAMME_PHASE1_CLASSIFICATION_ENDING_V1":
         fail("wrong Phase-1 authority")
-    if claim_map["schema"] != "paper15-phase1-synthesis-claim-map-v5":
+    if claim_map["schema"] != "paper15-phase1-synthesis-claim-map-v6":
         fail("wrong claim-map schema")
-    if claim_map["result_id"] != "PAPER15_FOUR_LEVEL_PHASE1_SYNTHESIS_WITH_ENDPOINT_FLUX_V5":
+    if claim_map["result_id"] != "PAPER15_FOUR_LEVEL_PHASE1_SYNTHESIS_WITH_ENDPOINT_FLUX_V6":
         fail("wrong Paper 15 endpoint-flux result identity")
 
     updates = {item["result_id"]: item for item in claim_map["post_phase1_updates"]}
@@ -137,7 +137,7 @@ def main() -> None:
         if item["dependency_tags"] != expected_tags or source.get("dependency_tags") != expected_tags:
             fail(f"Phase-2 dependency-tag drift for {result_id}")
     endpoint = updates["PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1"]
-    if endpoint.get("content_commit") != "3baef5e665228c747f78935a367c76bb9a00a9df":
+    if endpoint.get("content_commit") != "332564286df69b0638aa8c618aa64e39581ab090":
         fail("endpoint content commit drift")
     if endpoint.get("lifecycle_commit") != "0da46f3b0916e4e53f441df37077038892cf89c3":
         fail("endpoint lifecycle commit drift")
@@ -158,6 +158,11 @@ def main() -> None:
     ):
         fail("endpoint flux theorem payload drift")
     endpoint_flags = endpoint_source["claim_flags"]
+    if not (
+        endpoint_flags["uniform_auxiliary_L2_isomorphism_certified"]
+        and endpoint_flags["scoped_trace_local_improvement_invariance_certified"]
+    ):
+        fail("endpoint uniform-L2/improvement theorem hidden")
     if any(
         endpoint_flags[key]
         for key in [
@@ -165,6 +170,7 @@ def main() -> None:
             "horizon_to_infinity_matching_constructed",
             "scattering_channels_classified",
             "stability_or_CPT_established",
+            "unrestricted_improvement_invariance_certified",
         ]
     ):
         fail("endpoint flux source overpromotes a global/physical claim")
@@ -266,6 +272,9 @@ def main() -> None:
         "\\mathcal X_{\\mathscr I^+}",
         "\\det G_-",
         "\\operatorname{inertia}(G_-)",
+        "\\|a\\|_{L^2}\\leq\\|G_\\pm a\\|_{L^2}",
+        "T^\\dagger J_{\\rm out}T=J_{\\rm in}",
+        "finite-tangential-jet",
         "does not establish a globally populated negative scattering",
         "(XH0a,XH0b,EH0,XHplus,EHout,XHminus)",
         "raw future-regular columns \\(0,1,2\\)",
@@ -303,7 +312,7 @@ def main() -> None:
             fail(f"overbroad phrase present: {phrase}")
 
     coverage = json.loads(COVERAGE.read_text())
-    if coverage["schema"] != "paper15-phase1-synthesis-overlay-v5":
+    if coverage["schema"] != "paper15-phase1-synthesis-overlay-v6":
         fail("wrong Paper 15 coverage schema")
     if coverage["append_only_parent_sha256"] != digest(COVERAGE_SOURCE):
         fail("frozen coverage parent hash drift")

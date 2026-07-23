@@ -27,7 +27,7 @@ GENERIC_RESULT = "PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1"
 PHASE3_RESULT = "PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR"
 PHASE3_COMMIT = "d5d5d6de648795203604d62ce7bc4f4ce6fea510"
 ENDPOINT_RESULT = "PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1"
-ENDPOINT_CONTENT_COMMIT = "3baef5e665228c747f78935a367c76bb9a00a9df"
+ENDPOINT_CONTENT_COMMIT = "332564286df69b0638aa8c618aa64e39581ab090"
 ENDPOINT_LIFECYCLE_COMMIT = "0da46f3b0916e4e53f441df37077038892cf89c3"
 GLOBAL_V5_RESULT = "PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5"
 GLOBAL_V5_CONTENT_COMMIT = "54670c5e371200ee1f08b88843cb3e67b3f17b3b"
@@ -45,10 +45,10 @@ EXPECTED_PHASE3_HASHES = {
     "atlas_sha256": "e6640a40089445cabef167153911407da61fed5764552292af252b6ae8883f4e",
 }
 EXPECTED_ENDPOINT_HASHES = {
-    "certificate_sha256": "6158a259fcf4f5888df58a3da8ffe8fa0de40d6ae992f1c132a0726218f95162",
-    "receipt_sha256": "35f7efd65893b3d534f5dacd79e15d72336e05a9fc615e9cd830e89fa9f826cd",
-    "report_sha256": "27d7473135b578a73109f275ceac932728c45b1e003054ee03f6271b3e6b06c5",
-    "atlas_sha256": "e24799dac989f714231c05deff18c16d294f6b3613e438909c2a7d7f38600962",
+    "certificate_sha256": "59fb9b443ce0b92ce016f53c376cb367bcf004e00d1b241ad22ec925e99deed2",
+    "receipt_sha256": "3a6d685048d2bd8ac80a5f2f9d14c39dd955303d353cf281f96bd16a2f9b177b",
+    "report_sha256": "484f34f72d170df6e6f7ece457784c05c928ade72c84dd94de974963ad9deb59",
+    "atlas_sha256": "002e86ae985a577f5cdfe3460b1b0d25e39a02af5dae2e9d5fdb0eaabe1a83a9",
 }
 EXPECTED_GLOBAL_V5_HASHES = {
     "certificate_sha256": "1b1fbffe77f367b406cb029e64f2a91ec4620de2a5a52213b741e6bd38a6d953",
@@ -100,7 +100,7 @@ def main() -> None:
         fail("wrong source-map schema")
     if claim_map.get("paper_id") != "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION":
         fail("wrong paper identity")
-    if claim_map.get("result_id") != "PAPER_14_PHASE3_ENDPOINT_FLUX_UPDATE_V3":
+    if claim_map.get("result_id") != "PAPER_14_PHASE3_ENDPOINT_FLUX_UPDATE_V4":
         fail("wrong Phase-3 paper result identity")
     if claim_map.get("lifecycle_state") != "DRAFT_ALLOWED":
         fail("Paper 14 lifecycle overpromotion")
@@ -265,6 +265,8 @@ def main() -> None:
             "action_current_pulled_back",
             "endpoint_rank_radical_inertia_certified",
             "trace_limit_interchange_proved",
+            "uniform_auxiliary_L2_isomorphism_certified",
+            "scoped_trace_local_improvement_invariance_certified",
         ]
     ):
         fail("endpoint certified flags drift")
@@ -275,6 +277,7 @@ def main() -> None:
             "horizon_to_infinity_matching_constructed",
             "scattering_channels_classified",
             "stability_or_CPT_established",
+            "unrestricted_improvement_invariance_certified",
         ]
     ):
         fail("endpoint certificate overpromotes a global/physical claim")
@@ -330,6 +333,8 @@ def main() -> None:
         "axial_l2_endpoint_flux_grams_inertia_one_two_zero_alpha_positive",
         "axial_l2_endpoint_flux_frequency_wall_absent_on_pilot",
         "axial_l2_endpoint_trace_limit_interchange",
+        "axial_l2_endpoint_uniform_auxiliary_l2_bounds",
+        "axial_l2_endpoint_scoped_trace_local_improvement_invariance",
         "axial_global_connection_v5_method_shortfall_recorded",
     }
     required_false = {
@@ -353,6 +358,7 @@ def main() -> None:
         "axial_l2_endpoint_direction_globally_populated",
         "axial_l2_endpoint_flux_positive_energy",
         "axial_l2_endpoint_flux_cpt_or_stability",
+        "axial_l2_endpoint_unrestricted_improvement_invariance",
     }
     for key in required_true:
         if scope.get(key) is not True:
@@ -386,6 +392,10 @@ def main() -> None:
         "\\mathcal X_{\\mathscr I^+}",
         "\\det G_-",
         "\\operatorname{inertia}(G_-)",
+        "\\|a\\|_{L^2}\\leq \\|G_\\pm a\\|_{L^2}",
+        "T^\\dagger J_{\\rm out}T=J_{\\rm in}",
+        "finite-tangential-jet",
+        "Explicit axial endpoint Grams and uniform bounds",
         "not a global scattering theorem",
         "(XH0a,XH0b,EH0,XHplus,EHout,XHminus)",
         "raw future-regular columns \\(0,1,2\\)",
@@ -420,7 +430,7 @@ def main() -> None:
             fail(f"superseded or overbroad manuscript phrase present: {phrase}")
 
     coverage = json.loads(coverage_path.read_text())
-    if coverage.get("schema") != "paper14-phase3-endpoint-flux-overlay-v3":
+    if coverage.get("schema") != "paper14-phase3-endpoint-flux-overlay-v4":
         fail("wrong coverage overlay schema")
     if coverage.get("append_only_parent_sha256") != digest(PARENT_COVERAGE):
         fail("coverage parent hash drift")

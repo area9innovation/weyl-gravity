@@ -677,11 +677,55 @@ radical, no frequency wall, and
 Reversing the overall action sign reverses the positive and negative counts.
 \end{theorem}
 
+The \(L^2\) completion here uses the auxiliary positive coefficient norm,
+not the indefinite flux as a norm.  Exact Sturm counts applied to
+\(\|G_\pm(\omega)\|_F^2\) and
+\(\|G_\pm(\omega)^{-1}\|_F^2\) give the uniform normalized estimate
+\begin{equation}\label{eq:endpoint-uniform-l2}
+ \|a\|_{L^2}\leq \|G_\pm a\|_{L^2}
+ \leq 645\,\|a\|_{L^2}.
+\end{equation}
+Thus the endpoint forms are bounded and uniformly nondegenerate, rather
+than merely pointwise invertible.  The continuous fundamental symmetry
+\(J_\pm=\operatorname{sign}(G_\pm)\) and positive majorant \(|G_\pm|\)
+make each endpoint a Krein space with topology equivalent to the auxiliary
+\(L^2\) topology.  This majorant is not a CPT metric, positive energy, or
+particle norm.  The exact matrices and separate endpoint bounds are printed
+in Appendix~\ref{app:endpoint-grams}.
+
+The past-boundary sign is already absorbed into the incoming Gram.  Hence a
+future global relation \(a_{\rm out}=T a_{\rm in}\) must obey
+\begin{equation}\label{eq:endpoint-global-conservation}
+ T^\dagger J_{\rm out}T=J_{\rm in};
+\end{equation}
+without horizon channels this would reduce to
+\(T^\dagger G_+T=G_-\).  No such map is constructed here.  The two negative
+endpoint indices are therefore not a mere orientation sign, but neither are
+they yet populated negative scattering channels.
+
+For the presymplectic ambiguity
+\(\theta\mapsto\theta+\delta Y+dZ\), the \(\delta Y\) term vanishes by
+\(\delta^2=0\), and angular exact terms integrate to zero.  A stationary,
+globally defined local finite-tangential-jet \(dZ\) with finite trace-only
+pullback contributes only cut terms; these vanish on the
+\(C_c^\infty\) frequency core because the inverse Fourier traces are
+Schwartz, and hence on its continuous \(L^2\) extension.  This scoped
+statement does not cover radial or subleading, nonlocal or soft,
+explicit-time, or nondecaying improvements.  Their additive
+\(\Delta G_\pm\) and inertia strata remain open.
+
 This is an endpoint flux theorem, not a global scattering theorem.  It does
 not show that any endpoint direction is reached by horizon-regular data, and
 it establishes no positive energy, particle norm, CPT metric, pole
 exclusion, stability, or invariance under unrestricted radial or corner
 improvements of the presymplectic potential.
+
+For comparison, the Einstein problem admits a global finite-energy
+Schwarzschild scattering theory relating initial data and radiation spaces
+by Hilbert-space isomorphisms \cite{MasaoodScattering}.  Flat-space
+conformal-higher-spin scattering also admits conformal-gravity states beyond
+ordinary Einstein gravitons \cite{AdamoNakachTseytlin}; it does not construct
+the Schwarzschild Bach connection considered here.
 
 \subsection{Polar mixed finite line and its exceptional wall}
 
@@ -1114,6 +1158,68 @@ pairing finiteness selects the Einstein kernel.  Whether one global solution
 realizes both endpoint properties remains open.}}
 \end{center}
 
+\appendix
+\section{Explicit axial endpoint Grams and uniform bounds}
+\label{app:endpoint-grams}
+
+In the ordered bases
+\[
+ \mathscr I^-:(\mathrm{XI0},\mathrm{XI1},\mathrm{EI0}),\qquad
+ \mathscr I^+:(\mathrm{XI2},\mathrm{XI3},\mathrm{EI2}),
+\]
+the normalized incoming past Gram is
+\begin{equation}
+G_-=
+\begin{pmatrix}
+ \dfrac{576}{5\omega} & \dfrac{96i}{5} & \dfrac{384\omega}{5}\\
+ -\dfrac{96i}{5} &-\dfrac{144\omega}{5}&-\dfrac{192i\omega^2}{5}\\
+ \dfrac{384\omega}{5}&\dfrac{192i\omega^2}{5}&0
+\end{pmatrix},
+\end{equation}
+and the normalized outgoing future Gram is
+\begin{equation}
+\resizebox{0.98\textwidth}{!}{$
+G_+=
+\begin{pmatrix}
+\dfrac{384(-512\omega^6+640\omega^4-278\omega^2+39)}{5\omega}
+&
+\dfrac{12288i\omega^4-3072\omega^3-9984i\omega^2}{5}
+ +192\omega+384i
+&
+\dfrac{-1536i\omega^2+384\omega+768i}{5}
+\\[1mm]
+\dfrac{-12288i\omega^4-3072\omega^3+9984i\omega^2}{5}
+ +192\omega-384i
+&
+-\dfrac{768\omega^3}{5}+48\omega
+&
+\dfrac{96\omega}{5}
+\\[1mm]
+\dfrac{1536i\omega^2+384\omega-768i}{5}
+&
+\dfrac{96\omega}{5}
+&
+0
+\end{pmatrix}
+$}.
+\end{equation}
+The full current Grams are \(\pi\alpha_{\rm W}G_\pm\).
+
+The exact squared Frobenius functions have certified maxima
+\begin{equation}
+\begin{array}{c|cc}
+ & \max_{\omega\in[1/2,3/4]}\|G_\pm\|_F^2
+ & \max_{\omega\in[1/2,3/4]}\|G_\pm^{-1}\|_F^2\\ \hline
+G_- & 1429056/25 & 7025/65536\\
+G_+ & 10389888/25 & 19825/65536 .
+\end{array}
+\end{equation}
+For \(G_-\), both functions are strictly decreasing.  For \(G_+\), exact
+Sturm counts find one interior critical point for each function, and the
+endpoint derivative signs are \((-,+)\), proving that the critical point is
+a minimum.  These facts prove \eqref{eq:endpoint-uniform-l2} without
+inferring a lower bound merely from the determinants.
+
 \begingroup
 \raggedright
 \begin{thebibliography}{99}
@@ -1233,6 +1339,18 @@ P.-K.~Hung, J.~Keller, and M.-T.~Wang,
 \emph{Linear stability of Schwarzschild spacetime: decay of metric
 coefficients},
 \href{https://arxiv.org/abs/1702.02843}{arXiv:1702.02843}.
+
+\bibitem{MasaoodScattering}
+H.~Masaood,
+\emph{A scattering theory for linearised gravity on the exterior of the
+Schwarzschild black hole II: the full system},
+\href{https://arxiv.org/abs/2211.07462}{arXiv:2211.07462}.
+
+\bibitem{AdamoNakachTseytlin}
+T.~Adamo, S.~Nakach, and A.~A.~Tseytlin,
+\emph{Scattering of conformal higher spin fields},
+JHEP \textbf{07} (2018) 016,
+\href{https://arxiv.org/abs/1805.00394}{arXiv:1805.00394}.
 
 \bibitem{Stelle}
 K.~S.~Stelle,
