@@ -1,0 +1,62 @@
+{
+  "schema": "phase3-axial-horizon-grassmann-mobius-r4-taylor2-certificate-v1",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "lifecycle_state": "CLASSIFIED",
+  "status": "TAYLOR2_AMPLITUDE_RANK_SHORTFALL",
+  "frequency_child": 0,
+  "frequency_bounds": ["1/2", "2049/4096"],
+  "generator": 7315,
+  "taylor_degree": 2,
+  "first_refusal": {
+    "gate": "amplitude_full_column_rank_cells",
+    "shell": 2,
+    "after_panel": 256,
+    "frequency_cover_cells": 64,
+    "exit_code": 3,
+    "diagnostic_center_rank": 6,
+    "interpretation": "Uniform rank was not certified; this is not a singularity or physical rank-loss proof."
+  },
+  "certified_prefix": {
+    "shells": [0, 1],
+    "panels_per_shell": 256,
+    "chart": 11,
+    "rank": 6,
+    "direct_overlap": true,
+    "switches": 0
+  },
+  "last_enclosed_state": {
+    "shell": 2,
+    "panel": 256,
+    "chart": 11,
+    "norm": 1.5016025242724733,
+    "zwidth": 3.003205047438802
+  },
+  "comparison_to_frozen_affine": {
+    "same_first_refusal_gate": true,
+    "affine_zwidth": 3.003240069284962,
+    "taylor2_zwidth": 3.003205047438802,
+    "material_gate_improvement": false
+  },
+  "provenance": {
+    "frozen_affine_commit": "630880a6cb8d83efa286c585ffe68c52898e7f04",
+    "frozen_affine_source_sha256": "6978e7532e7f30944b746db91fb58d2254bd3267607947b2c3e7ea5e9ed527c3",
+    "tango_commit": "972aa4337b73cc0f632d9599fb345098bc8ccce8",
+    "tango_ivtaylor_sha256": "fd51f0ab2a1ebce950660b58dcfc31728c032de872001f50f907f11cfa2be103",
+    "producer_sha256": "2e7fb92a74eae07b405feac1715846756732398b3244bb0c5ef7f057b1f90e0a",
+    "source_sha256": "8d3f419d9867aa853fb853929e5cf7826dc0da54b24a858a775e0ec54c2e53b1",
+    "source_metadata_sha256": "a8d7064be851a0f95b29e9f77a6cb48b173fc73bd96e261c5da2c178c5c56cc5",
+    "log_sha256": "ad2ed827857016737ab2bd14e60bbaea275be0f5ef74b9fecb0a501aee98b833"
+  },
+  "run": {
+    "elapsed_seconds": 925.10,
+    "max_rss_kb": 3656,
+    "higher_frequency_children_run": false
+  },
+  "does_not_establish": [
+    "physical amplitude rank loss or a singularity",
+    "any frequency child other than q0",
+    "horizon-to-infinity connection or scattering",
+    "flux sign, stability, ghost, positivity, CPT or unitarity",
+    "LORENTZIAN-CAUSAL quantum claims"
+  ]
+}

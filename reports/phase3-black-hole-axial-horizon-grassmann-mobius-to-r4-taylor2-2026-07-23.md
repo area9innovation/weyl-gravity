@@ -183,3 +183,7 @@ This is an exact reduced-mode endpoint-current theorem.  It does not
 construct a horizon-to-infinity connection, decide boundary projection rank,
 or establish scattering, stability, ghost, positivity, CPT, unitarity, or a
 `LORENTZIAN-CAUSAL` quantum claim.
+
+EVIDENCE: black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/certificate.json
+MISSING-DEP: parameter-correlated validated Grassmann transport that preserves the separate amplitude rank beyond shell 2 and reaches the declared r=4 handoff
+CLOSE-OUT: SHORTFALL — the q0 Taylor2 sentinel classified the first enclosure failure exactly; the independent horizon Gram passed, but the required horizon-to-r4 transport did not.

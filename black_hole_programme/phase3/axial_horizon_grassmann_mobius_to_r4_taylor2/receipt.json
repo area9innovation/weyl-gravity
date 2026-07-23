@@ -1,0 +1,35 @@
+{
+  "schema": "science-forge-receipt-v1",
+  "work_item": "sf:program/work/phase3-black-hole-axial-horizon-grassmann-mobius-to-r4-taylor2",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "render": {
+    "command": "PYTHONPATH=. python3 -m black_hole_programme.phase3.axial_horizon_grassmann_mobius_to_r4_taylor2.produce",
+    "exit_code": 0
+  },
+  "compile": {
+    "command": "FORGE_LIB=/tmp/forge-972aa4337/forge/lib forge -o /tmp/axial-horizon-taylor2-q0 black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/transport_c00_taylor2.forge",
+    "exit_code": 0,
+    "library_snapshot_commit": "972aa4337b73cc0f632d9599fb345098bc8ccce8"
+  },
+  "sentinel": {
+    "command": "/tmp/axial-horizon-taylor2-q0",
+    "exit_code": 3,
+    "elapsed_seconds": 925.10,
+    "max_rss_kb": 3656,
+    "expected_disposition": "TAYLOR2_AMPLITUDE_RANK_SHORTFALL",
+    "log": "black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/sentinel_q00.log"
+  },
+  "tier_0": [
+    "python3 -m py_compile producer, verifier and test",
+    "jq empty source metadata, certificate and receipt",
+    "git diff --check on scoped paths"
+  ],
+  "tier_1": [
+    "python3 black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/verify.py",
+    "python3 -m unittest black_hole_programme.phase3.axial_horizon_grassmann_mobius_to_r4_taylor2.test_verify"
+  ],
+  "higher_tiers_not_run": {
+    "tier_2": "The q0 consumer refused before an r4 handoff existed, so no downstream certificate chain is admissible.",
+    "tier_3": "This is a method-shortfall classification, not a theorem promotion, freeze, or release."
+  }
+}
