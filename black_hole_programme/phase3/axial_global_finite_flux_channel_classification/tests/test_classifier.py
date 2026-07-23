@@ -16,6 +16,7 @@ from black_hole_programme.phase3.axial_global_finite_flux_channel_classification
     certify_origin_blocks,
     certify_whole_cell_inertia,
     determinant_excludes_zero,
+    json_ready,
     matrix_add,
     matrix_from_json,
     matrix_multiply,
@@ -387,6 +388,9 @@ class AffineCellAdapterTest(unittest.TestCase):
             result["certified_cells"]["q0"]["inertia"]["gminus"].complex_inertia,
             (3, 0, 0),
         )
+        encoded = json.dumps(json_ready(result), sort_keys=True)
+        self.assertIn('"complex_inertia": [3, 0, 0]', encoded)
+        self.assertIn('"normalized_affine_parameter": "e in [-1,1]"', encoded)
         origins = result["certified_cells"]["q0"]["origin_blocks"]["Iminus"]
         self.assertEqual(origins["additional"]["inertia"], (2, 0, 0))
         self.assertEqual(origins["einstein"]["inertia"], (1, 0, 0))

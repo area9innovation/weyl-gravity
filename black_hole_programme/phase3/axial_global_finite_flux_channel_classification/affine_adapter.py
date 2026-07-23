@@ -368,6 +368,27 @@ class WholeCellInertia:
     inverse_perturbation_bound: Fraction
 
 
+def json_ready(value):
+    """Convert exact adapter witnesses to deterministic JSON-compatible data."""
+    if isinstance(value, WholeCellInertia):
+        return {
+            "complex_inertia": list(value.complex_inertia),
+            "inverse_perturbation_bound": (
+                f"{value.inverse_perturbation_bound.numerator}/"
+                f"{value.inverse_perturbation_bound.denominator}"
+            ),
+        }
+    if isinstance(value, Fraction):
+        return f"{value.numerator}/{value.denominator}"
+    if isinstance(value, tuple):
+        return [json_ready(item) for item in value]
+    if isinstance(value, list):
+        return [json_ready(item) for item in value]
+    if isinstance(value, dict):
+        return {key: json_ready(item) for key, item in value.items()}
+    return value
+
+
 def certify_whole_cell_inertia(matrix: AffineMatrix) -> WholeCellInertia:
     """Certify constant inertia by a rigorous inverse-perturbation bound.
 
