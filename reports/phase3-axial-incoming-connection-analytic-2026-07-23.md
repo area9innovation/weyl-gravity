@@ -203,3 +203,6 @@ the factor-basis changes and normalization ratios, verifies the two exact
 real short-range potentials and their \(L^1(dr_*)\) integrals, derives the
 determinant prefactor, and rejects outgoing, reflection, stability and
 quantum overpromotions.
+
+CLOSE-OUT: DONE — the exact RW/RW/spin-one filtration and real-potential Wronskians prove that the axial incoming connection is invertible throughout the pilot interval.
+EVIDENCE: black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json; black_hole_programme/phase3/axial_incoming_connection_analytic/certificate.json
