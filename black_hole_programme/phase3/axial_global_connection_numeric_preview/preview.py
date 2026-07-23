@@ -363,6 +363,25 @@ def parse_current(omega_value: sp.Rational, digits: int) -> mp.matrix:
     return eval_sympy_matrix(symbolic, {omega: omega_value}, digits)
 
 
+def future_horizon_outward_gram(
+    horizon_state: mp.matrix,
+    radial_current_matrix: mp.matrix,
+) -> mp.matrix:
+    """Return the Stokes-oriented i*F^r Gram at the future horizon.
+
+    The imported current satisfies
+    F^r/(pi*alpha_W)=z^dagger*Jhat*y.  The Schwarzschild exterior has the
+    future horizon as its inner radial boundary, so the outward normal is
+    minus the increasing-r coordinate normal.
+    """
+    coordinate_gram = (
+        mp_conjugate_transpose(horizon_state)
+        * (mp.j * radial_current_matrix)
+        * horizon_state
+    )
+    return -coordinate_gram
+
+
 def singular_values(matrix: mp.matrix) -> list[mp.mpf]:
     _, values, _ = mp.svd(matrix)
     return sorted((abs(values[i]) for i in range(values.rows)), reverse=True)
@@ -444,10 +463,7 @@ def one_frequency(frequency: sp.Rational, digits: int,
     gplus = mp_conjugate_transpose(cplus) * gplus_endpoint * cplus
 
     j4 = parse_current(frequency, digits)
-    radial_horizon = (
-        mp_conjugate_transpose(horizon4) * (-mp.j * j4) * horizon4
-    )
-    horizon_plus = -radial_horizon
+    horizon_plus = future_horizon_outward_gram(horizon4, j4)
     conservation = horizon_plus + gplus - gminus
     denominator = max(
         max_abs(horizon_plus) + max_abs(gplus) + max_abs(gminus),

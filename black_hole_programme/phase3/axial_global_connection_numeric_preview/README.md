@@ -22,8 +22,10 @@ does_not_establish
 ```
 
 The frozen one-frequency result is `pilot-diagnostic.json`; its interpretation
-and stop condition are in `report.md`.  Run the exploratory five-frequency
-driver only after the horizon orientation crosswalk is repaired:
+and stop condition are in `report.md`.  The future-horizon orientation
+crosswalk is now typed explicitly, but the residual is not enclosed.  Run the
+exploratory five-frequency driver only after the validated transport closes
+the same current identity:
 
 ```bash
 python3 -m black_hole_programme.phase3.axial_global_connection_numeric_preview.preview
@@ -47,8 +49,9 @@ G_{\mathcal H^+}+C_+^\dagger G_+C_+
 -C_-^\dagger G_-C_-=0.
 \]
 
-The frozen pilot intentionally stopped because the declared conservation
-orientation did not close.  There is also no past-horizon basis in this
-calculation.  It is therefore not a
+The frozen pilot intentionally stopped because conservation is only
+numerically close after the corrected orientation; neither the endpoint
+truncations nor the radial transports are enclosed.  There is also no
+past-horizon basis in this calculation.  It is therefore not a
 two-ended scattering map, even if the numerical conservation residual is
 small.

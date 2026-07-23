@@ -44,15 +44,24 @@ def main() -> None:
             "Iminus point inertia changed")
     require(inertia["Cplus_dagger_Gplus_Cplus"] == [1, 2, 0],
             "Iplus point inertia changed")
+    require(inertia["Hplus_outward_candidate"] == [1, 2, 0],
+            "future-horizon point inertia changed")
     tests = data["flux_diagnostic"]["orientation_tests"]
     declared = float(
         tests["declared_Hplus_plus_Iplus_minus_Iminus"]["relative_max_residual"])
-    alternate = float(
-        tests["reversed_horizon_sign_minus_Hplus_plus_Iplus_minus_Iminus"]
+    reversed_control = float(
+        tests["incorrect_double_reversal_minus_Hplus_plus_Iplus_minus_Iminus"]
         ["relative_max_residual"])
-    require(declared > 0.9, "declared conservation unexpectedly recorded as small")
-    require(1e-4 < alternate < 1e-2,
-            "alternate sign diagnostic left its recorded scale")
+    require(1e-4 < declared < 1e-2,
+            "correctly oriented residual left its recorded scale")
+    require(reversed_control > 0.9,
+            "incorrect horizon-sign control unexpectedly became small")
+    require(
+        data["flux_diagnostic"]["orientation_crosswalk"].startswith(
+            "The imported radial matrix represents F^r/"
+        ),
+        "orientation crosswalk is absent",
+    )
     require(not data["missing_Hminus"]["available"], "Hminus was invented")
     require(len(data["does_not_establish"]) >= 6, "boundaries were weakened")
 

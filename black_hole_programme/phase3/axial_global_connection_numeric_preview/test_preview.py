@@ -14,6 +14,7 @@ from .preview import (
     INFINITY_ORDER,
     IPLUS_ROWS,
     extrapolated_step,
+    future_horizon_outward_gram,
     hermitian_inertia,
     numeric_rank,
 )
@@ -40,6 +41,14 @@ class PreviewSanityTests(unittest.TestCase):
         self.assertEqual(numeric_rank(matrix, mp.mpf("1e-20")), 2)
         form = mp.matrix([[2, 0, 0], [0, -1, 0], [0, 0, 0]])
         self.assertEqual(hermitian_inertia(form, mp.mpf("1e-20"))[:3], (1, 1, 1))
+
+    def test_future_horizon_uses_inner_boundary_orientation(self):
+        state = mp.matrix([[1]])
+        # i*Jhat=+1 is the increasing-r coordinate Gram.  The future horizon
+        # is the inner boundary, so its outward Gram must be -1.
+        jhat = mp.matrix([[-mp.j]])
+        outward = future_horizon_outward_gram(state, jhat)
+        self.assertEqual(outward[0, 0], -1)
 
     def test_basis_contract(self):
         self.assertEqual([INFINITY_ORDER[i] for i in IMINUS_ROWS],

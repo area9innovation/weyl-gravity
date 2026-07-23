@@ -42,22 +42,34 @@ pulled-back endpoint forms both have pointwise numerical inertia
 both positive and negative endpoint directions.  It does **not** establish a
 physical negative-flux scattering channel.
 
-## Conservation failure and stop
+## Corrected orientation and stop
 
-The declared orientation identity
+The imported finite-radius current is \(F^r/(\pi\alpha_{\rm W})\).  The
+Hermitian flux convention is \(iF^r/(\pi\alpha_{\rm W})\), and the future
+horizon is the inner boundary of the exterior.  Its outward Gram is therefore
+
+\[
+G_{\mathcal H^+}=-Y^\dagger(i\widehat J)Y.
+\]
+
+An earlier diagnostic applied the factor of \(i\) with the wrong sign before
+the inner-boundary reversal.  Correcting that typing makes the declared
+orientation identity
 
 \[
 G_{\mathcal H^+}+C_+^\dagger G_+C_+
 -C_-^\dagger G_-C_-=0
 \]
 
-does not close: its relative max residual is approximately \(9.994\times
-10^{-1}\).  Reversing only the candidate horizon sign reduces the residual to
-approximately \(1.294\times10^{-3}\), but does not make it zero or certified.
+numerically close: its relative max residual is approximately
+\(1.294\times10^{-3}\).  The control with the horizon sign reversed is of
+order one.  The remaining small residual does not establish conservation:
+the horizon and infinity series are truncated and the radial transports are
+not enclosed.
 
-The preview therefore localizes the next required audit to the
-future-horizon outward/radial orientation and endpoint amplitude crosswalk.
-No five-frequency scan is warranted until that typing is fixed.
+The preview therefore supplies the orientation and amplitude conventions to
+the validated rail, but no five-frequency scan is warranted until the exact
+transport closes the same identity.
 
 There is also no \(\mathcal H^-\) basis, so this is not a two-ended scattering
 map.
