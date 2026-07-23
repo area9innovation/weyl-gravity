@@ -204,6 +204,34 @@ def synthetic_subdivided_handoff() -> dict:
     }
 
 
+def synthetic_sixteen_cell_handoff() -> dict:
+    """Refine the synthetic pilot into the production 16-cell cover."""
+    document = synthetic_subdivided_handoff()
+    payload = document["cells"][0]["validated_payload"]
+    lower = Fraction(1, 2)
+    width = Fraction(1, 4096)
+    cells = []
+    for index in range(16):
+        lo = lower + index * width
+        hi = lo + width
+        cells.append(
+            {
+                "cell_id": f"q{index}",
+                "omega_interval": [rational(lo), rational(hi)],
+                "center": rational((lo + hi) / 2),
+                "radius": rational(width / 2),
+                "affine_generator": 7315,
+                "disposition": "CERTIFIED",
+                # A JSON round trip gives every cell an independent payload,
+                # matching the production handoff's per-cell ownership.
+                "validated_payload": json.loads(json.dumps(payload)),
+                "shortfall": None,
+            }
+        )
+    document["cells"] = cells
+    return document
+
+
 def connection_from_traces(cminus: sp.Matrix, cplus: sp.Matrix) -> sp.Matrix:
     """Assemble infinity order XI0,XI1,XI2,XI3,EI0,EI2."""
     answer = sp.zeros(6, 3)
@@ -481,6 +509,29 @@ class AffineCellAdapterTest(unittest.TestCase):
             document["cells"][0]["one_sided_relation"]["input"],
             "Iminus",
         )
+
+    def test_sixteen_cell_cover_activates_without_coarse_hulling(self) -> None:
+        handoff = synthetic_sixteen_cell_handoff()
+        algebra = validate_channel_handoff_algebra(handoff)
+        self.assertEqual(list(algebra["certified_cells"]), [
+            f"q{index}" for index in range(16)
+        ])
+        document = build_classification(handoff, handoff_sha256="b" * 64)
+        verify_activated_document(document)
+        self.assertEqual(len(document["cells"]), 16)
+        self.assertTrue(document["parent"]["all_cells_resolved"])
+        self.assertTrue(
+            document["parent"]["one_sided_J_isometry_constructed"]
+        )
+
+    def test_activated_certificate_refuses_gap_in_cell_cover(self) -> None:
+        document = build_classification(
+            synthetic_sixteen_cell_handoff(),
+            handoff_sha256="c" * 64,
+        )
+        document["cells"][8]["omega_interval"][0] = "2057/4096"
+        with self.assertRaisesRegex(ValueError, "gap, overlap"):
+            verify_activated_document(document)
 
     def test_activated_certificate_refuses_scattering_promotion(self) -> None:
         document = build_classification(

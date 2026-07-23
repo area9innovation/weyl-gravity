@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+from fractions import Fraction
 from pathlib import Path
 
 from jsonschema import Draft202012Validator
@@ -191,6 +192,19 @@ def verify_document(document: dict) -> None:
         path = ".".join(str(part) for part in errors[0].path) or "root"
         raise ValueError(f"{path}: {errors[0].message}")
     cells = document["cells"]
+    cursor = Fraction(1, 2)
+    upper = Fraction(129, 256)
+    for index, cell in enumerate(cells):
+        if cell["cell_id"] != f"q{index}":
+            raise ValueError("activated cells are not ordered q0,q1,...")
+        lo, hi = map(Fraction, cell["omega_interval"])
+        if lo != cursor or hi <= lo:
+            raise ValueError(
+                "activated cells have a gap, overlap, or reversed interval"
+            )
+        cursor = hi
+    if cursor != upper:
+        raise ValueError("activated cells do not exactly cover the pilot interval")
     certified = [cell for cell in cells if cell["disposition"] == "CERTIFIED"]
     unresolved = [cell for cell in cells if cell["disposition"] == "UNRESOLVED"]
     parent = document["parent"]
