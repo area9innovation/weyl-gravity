@@ -1,0 +1,47 @@
+{
+  "schema": "phase3-axial-horizon-carrier-subspace-witness-v1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "frequency": "4097/8192",
+  "basis": [
+    "XH0a",
+    "XH0b"
+  ],
+  "leading_vector_matrix": [
+    [
+      "16785409/33554432 + 20485*I/16384",
+      "16785409/16777216 - 4097*I/4096"
+    ],
+    [
+      "1 - 4097*I/8192",
+      "-1 - 4097*I/4096"
+    ],
+    [
+      "1",
+      "0"
+    ],
+    [
+      "0",
+      "1"
+    ]
+  ],
+  "rank_B": 2,
+  "rank_B_join_A_B": 4,
+  "determinants": {
+    "r=5/2": "358966075620077313/703687441776640000 + 629739221395215291293*I/1441151880758558720000",
+    "r=3": "15626133139461281/30399297484750848 + 66205195600673411189*I/186773283746309210112",
+    "r=4": "8869548009176991/18014398509481984 + 4051700247213338635*I/18446744073709551616"
+  },
+  "source": {
+    "carrier_matrix": "black_hole_programme/phase3/axial_complete_reconstruction_repair/produce.py:72",
+    "basis_heads": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json"
+  },
+  "conclusion": "XH0a and XH0b span the two-dimensional future-regular zero-indicial solution subspace inside the four-dimensional Ricci carrier. Their fixed leading-vector coordinate span is not invariant under A(r).",
+  "does_not_establish": [
+    "the rank of any boundary projection",
+    "invertibility of a selected endpoint-to-endpoint two-plane map",
+    "a scattering, flux-sign, stability, ghost, positivity, CPT or unitarity claim"
+  ]
+}
