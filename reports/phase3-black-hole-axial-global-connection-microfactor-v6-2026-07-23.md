@@ -158,3 +158,4 @@ populated endpoint pullback exists.
 CLOSE-OUT: DONE — the declared sixteen-cell radial microfactor cover and
 exact global-map assembly are complete; normalized H4, typed endpoint maps,
 and the Stokes join remain separate successor gates.
+EVIDENCE: black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_map_cover_receipt.json
