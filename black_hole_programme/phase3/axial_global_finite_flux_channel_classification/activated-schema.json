@@ -144,6 +144,20 @@
               "bounded_wavepacket_multiplier_certified": {"const": true},
               "full_two_ended_scattering_matrix": {"const": false}
             }
+          },
+          "multiplier_bound_verification": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "connection_frobenius_bound_squared",
+              "Cminus_inverse_infinity_bound",
+              "Cminus_neumann_bound"
+            ],
+            "properties": {
+              "connection_frobenius_bound_squared": {"type": "string"},
+              "Cminus_inverse_infinity_bound": {"type": "string"},
+              "Cminus_neumann_bound": {"type": "string"}
+            }
           }
         }
       }

@@ -18,6 +18,7 @@ from black_hole_programme.phase3.axial_global_finite_flux_channel_classification
     ComplexAffine,
     Interval,
     certify_origin_blocks,
+    certify_multiplier_bounds,
     certify_whole_cell_inertia,
     determinant_excludes_zero,
     json_ready,
@@ -168,7 +169,7 @@ def synthetic_subdivided_handoff() -> dict:
                 for name in ("GHplus", "gminus", "gplus")
             },
             "multiplier_bounds": {
-                "connection_operator_norm_upper": "2.0",
+                "connection_operator_norm_upper": "3.0",
                 "Cminus_inverse_norm_upper": "1.0",
                 "frequency_derivative_norm_upper": "3.0",
                 "whole_cell": True,
@@ -391,6 +392,27 @@ class AffineCellAdapterTest(unittest.TestCase):
         self.assertEqual(witness.complex_inertia, (2, 1, 0))
         self.assertLess(witness.inverse_perturbation_bound, 1)
 
+    def test_multiplier_bounds_are_independently_checked(self) -> None:
+        handoff = synthetic_subdivided_handoff()
+        payload = handoff["cells"][0]["validated_payload"]
+        connection = matrix_from_json(payload["connection"]["complex_6_by_3"])
+        cminus = matrix_from_json(payload["connection"]["Cminus_3_by_3"])
+        witness = certify_multiplier_bounds(
+            connection,
+            cminus,
+            payload["classification_witnesses"]["multiplier_bounds"],
+        )
+        self.assertEqual(witness["Cminus_inverse_infinity_bound"], 1)
+        payload["classification_witnesses"]["multiplier_bounds"][
+            "connection_operator_norm_upper"
+        ] = "1.0"
+        with self.assertRaisesRegex(ValueError, "connection operator bound"):
+            certify_multiplier_bounds(
+                connection,
+                cminus,
+                payload["classification_witnesses"]["multiplier_bounds"],
+            )
+
     def test_singular_cell_is_refused(self) -> None:
         matrix = matrix_from_json(
             affine_diagonal(
@@ -576,6 +598,22 @@ class AffineCellAdapterTest(unittest.TestCase):
                 handoff,
                 document,
                 handoff_sha256="f" * 64,
+            )
+
+    def test_independent_verifier_rejects_small_multiplier_bound(self) -> None:
+        handoff = synthetic_sixteen_cell_handoff()
+        document = build_classification(handoff, handoff_sha256="1" * 64)
+        document["cells"][11]["wavepacket_multiplier_bounds"][
+            "Cminus_inverse_norm_upper"
+        ] = "1/2"
+        handoff["cells"][11]["validated_payload"]["classification_witnesses"][
+            "multiplier_bounds"
+        ]["Cminus_inverse_norm_upper"] = "1/2"
+        with self.assertRaisesRegex(SystemExit, "inverse multiplier bound"):
+            independently_verify_activated_documents(
+                handoff,
+                document,
+                handoff_sha256="1" * 64,
             )
 
 

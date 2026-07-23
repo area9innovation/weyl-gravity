@@ -128,6 +128,9 @@ def build_classification(handoff: dict, *, handoff_sha256: str) -> dict:
                     "full_two_ended_scattering_matrix": False,
                 },
                 "wavepacket_multiplier_bounds": multipliers,
+                "multiplier_bound_verification": json_ready(
+                    result["multiplier_bounds_independently_checked"]
+                ),
                 "provenance": payload["provenance"],
             }
         )
@@ -239,6 +242,17 @@ def verify_document(document: dict) -> None:
             or relation["full_two_ended_scattering_matrix"]
         ):
             raise ValueError("certified one-sided relation has invalid scope")
+        multiplier_verification = cell["multiplier_bound_verification"]
+        if (
+            Fraction(multiplier_verification["Cminus_neumann_bound"]) >= 1
+            or Fraction(
+                multiplier_verification["Cminus_inverse_infinity_bound"]
+            ) < 0
+            or Fraction(
+                multiplier_verification["connection_frobenius_bound_squared"]
+            ) < 0
+        ):
+            raise ValueError("invalid independent multiplier-bound witness")
         for endpoint in ("Iminus", "Iplus"):
             data = cell[endpoint]
             if data["populated_dimension"] != 3:

@@ -331,6 +331,113 @@ def determinant_excludes_zero(matrix: AffineMatrix) -> bool:
     )
 
 
+def _complex_abs_upper(value: ComplexAffine) -> Fraction:
+    """Rational upper bound for the complex modulus on the whole cell."""
+    return (
+        value.re.value_interval().abs_upper()
+        + value.im.value_interval().abs_upper()
+    )
+
+
+def _complex_rational_abs_upper(value: sp.Expr) -> Fraction:
+    value = sp.expand_complex(value)
+    return abs(_fraction_from_sympy(sp.re(value))) + abs(
+        _fraction_from_sympy(sp.im(value))
+    )
+
+
+def certify_multiplier_bounds(
+    connection: AffineMatrix,
+    cminus: AffineMatrix,
+    declared: dict,
+) -> dict[str, Fraction]:
+    """Independently bound the connection and inverse multipliers.
+
+    The connection uses a Frobenius majorant.  For ``Cminus`` we split the
+    affine family as ``C0+E`` and use the infinity-norm Neumann estimate
+
+        ||Cminus^-1|| <= ||C0^-1|| / (1-||C0^-1 E||).
+
+    Both estimates are rational; decimal strings in the handoff must dominate
+    them.  The frequency-derivative bound has separate differentiated
+    provenance and is not inferred from a value-only affine enclosure.
+    """
+    connection_bound_squared = sum(
+        (_complex_abs_upper(value) ** 2 for row in connection for value in row),
+        Fraction(),
+    )
+    declared_connection = Fraction(declared["connection_operator_norm_upper"])
+    if declared_connection**2 < connection_bound_squared:
+        raise ValueError(
+            "declared connection operator bound is smaller than the "
+            "independent Frobenius majorant"
+        )
+
+    if matrix_shape(cminus) != (3, 3):
+        raise ValueError("Cminus inverse bound requires a 3x3 matrix")
+    center = sp.Matrix(
+        [
+            [
+                _sympy_rational(value.re.center)
+                + sp.I * _sympy_rational(value.im.center)
+                for value in row
+            ]
+            for row in cminus
+        ]
+    )
+    if center.det() == 0:
+        raise ValueError("Cminus center is singular")
+    inverse = center.inv()
+    inverse_norm = max(
+        (
+            sum(
+                (_complex_rational_abs_upper(inverse[i, j]) for j in range(3)),
+                Fraction(),
+            )
+            for i in range(3)
+        ),
+        default=Fraction(),
+    )
+    error = [
+        [cminus[i][j].re.error_interval().abs_upper()
+         + cminus[i][j].im.error_interval().abs_upper()
+         for j in range(3)]
+        for i in range(3)
+    ]
+    neumann = max(
+        (
+            sum(
+                (
+                    _complex_rational_abs_upper(inverse[i, k]) * error[k][j]
+                    for k in range(3)
+                    for j in range(3)
+                ),
+                Fraction(),
+            )
+            for i in range(3)
+        ),
+        default=Fraction(),
+    )
+    if neumann >= 1:
+        raise ValueError(
+            f"Cminus inverse multiplier unresolved: Neumann bound {neumann} >= 1"
+        )
+    inverse_bound = inverse_norm / (1 - neumann)
+    declared_inverse = Fraction(declared["Cminus_inverse_norm_upper"])
+    if declared_inverse < inverse_bound:
+        raise ValueError(
+            "declared Cminus inverse bound is smaller than the independent "
+            "Neumann majorant"
+        )
+    if Fraction(declared["frequency_derivative_norm_upper"]) < 0:
+        raise ValueError("frequency derivative bound is negative")
+    return {
+        "connection_frobenius_bound_squared": connection_bound_squared,
+        "Cminus_inverse_infinity_bound": inverse_bound,
+        "Cminus_neumann_bound": neumann,
+    }
+
+
 def _realification(matrix: AffineMatrix) -> list[list[AffineScalar]]:
     rows, cols = matrix_shape(matrix)
     if rows != cols:
@@ -522,6 +629,11 @@ def _validate_payload_algebra(payload: dict) -> dict:
         raise ValueError("Cminus rank three is not independently certified")
     if not determinant_excludes_zero(cplus):
         raise ValueError("Cplus rank three is not independently certified")
+    multiplier_bounds = certify_multiplier_bounds(
+        connection,
+        cminus,
+        payload["classification_witnesses"]["multiplier_bounds"],
+    )
 
     forms = payload["endpoint_forms"]
     gminus = matrix_from_json(forms["Gminus"])
@@ -581,6 +693,7 @@ def _validate_payload_algebra(payload: dict) -> dict:
         },
         "pullbacks_independently_enclosed": True,
         "conservation_enclosure_independently_checked": True,
+        "multiplier_bounds_independently_checked": multiplier_bounds,
         "structural_hermiticity_required": True,
     }
 

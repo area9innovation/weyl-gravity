@@ -178,6 +178,18 @@ def verify_documents(
             "classification_witnesses"
         ]["multiplier_bounds"]:
             fail(f"{expected_id}: multiplier bounds changed")
+        declared_bounds = cell["wavepacket_multiplier_bounds"]
+        checked_bounds = cell["multiplier_bound_verification"]
+        if Fraction(declared_bounds["connection_operator_norm_upper"]) ** 2 < (
+            Fraction(checked_bounds["connection_frobenius_bound_squared"])
+        ):
+            fail(f"{expected_id}: connection multiplier bound is too small")
+        if Fraction(declared_bounds["Cminus_inverse_norm_upper"]) < Fraction(
+            checked_bounds["Cminus_inverse_infinity_bound"]
+        ):
+            fail(f"{expected_id}: inverse multiplier bound is too small")
+        if Fraction(checked_bounds["Cminus_neumann_bound"]) >= 1:
+            fail(f"{expected_id}: inverse Neumann witness does not close")
 
     if cursor != Fraction(129, 256):
         fail("activated cells do not exactly cover the pilot interval")
