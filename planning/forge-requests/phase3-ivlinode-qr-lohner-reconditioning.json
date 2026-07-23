@@ -1,0 +1,38 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:forge-request/phase3-ivlinode-qr-lohner-reconditioning",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-ivlinode-qr-lohner-reconditioning",
+  "source": {
+    "path": "planning/forge-requests/phase3-ivlinode-qr-lohner-reconditioning.json",
+    "span": null
+  },
+  "body": {
+    "owner": "science-forge",
+    "state": "PROPOSED",
+    "stream": "forge-requests",
+    "priority": 0,
+    "objective": "Add validated affine QR/Lohner-style reconditioning to math/ivlinode so long, moderately conditioned fundamental flows retain correlations instead of widening to rank-indeterminate interval boxes.",
+    "stop_condition": "Extend the generic validated linear-ODE API with an affine moving-frame representation: at caller-selected or adaptive checkpoints, choose a point/rational centre transformation R, certify its invertibility, enclose the transformed local flow and remainder without flattening correlated columns, and compose the exact/point frame factors separately from the small interval correction. Preserve a rigorous enclosure of the original fundamental matrix and expose certified application and linear-solve operations that do not first flatten the whole product to an IvMat box. Add exact refusal data for singular reset centres, noncontractive corrections, nonfinite flows and exhausted subdivision. Pass constant Hamiltonian and ill-conditioned-but-known fundamental controls, plus the Phase-3 axial carrier/kernel consumer on r in [4,32], ell=2, omega in [1/2,129/256]: the current 1/64-radius reset implementation has all local Krawczyk solves close but ends with widths 1.7013130829841143 and 3.2457500574335043 and cannot certify rank; the new representation must certify full carrier/kernel rank and the conserved-current enclosure without narrowing the frequency cell. Provide native/C parity, ASan/UBSan rails, deterministic coarse/fine overlap, and mutations dropping one reset factor, widening a reset remainder, or flattening before the terminal rank test.",
+    "current_gate": "Validated long-interval correlation-preserving fundamental flow for the Schwarzschild global connection",
+    "forbid": "no floating QR called a proof; no unverified inverse; no point trajectory or sampled condition number called an enclosure; no frequency-cell narrowing below the declared 1/256 width as the only cure; no hidden monolithic black-hole equation in lib/math; no loss of current API refusal semantics; no full-product interval flattening before the consumer solve; no scattering or physics claim from the substrate fixture",
+    "depends_on": [],
+    "activates": [
+      "sf:program/work/phase3-black-hole-axial-global-connection-matrix-v5"
+    ],
+    "allowed_paths": [
+      "forge/lib/math/",
+      "forge/examples/",
+      "forge/tools/science-forge/program/",
+      "forge/docs/math/",
+      "forge/lib/math/COMPLETENESS.md"
+    ],
+    "resource_hint": "Reuse ivlinode retained local Peano-Baker factors and ivmat Krawczyk solves. A rational midpoint frame with a certified affine remainder is acceptable; the essential requirement is to preserve column correlations across resets and expose apply/solve operations in that representation.",
+    "notes": [
+      "This is the explicit long-transfer child left open by the LANDED phase3-validated-connection-substrate request, whose own note states that QR/Lohner wrapping control remained missing.",
+      "The physics shortfall package supplies width growth at integer radii, a 448-reset negative control and the exact first-cell reproduction."
+    ]
+  },
+  "edges": []
+}
