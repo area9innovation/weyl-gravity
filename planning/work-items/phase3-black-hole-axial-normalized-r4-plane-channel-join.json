@@ -1,0 +1,44 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-normalized-r4-plane-channel-join",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-normalized-r4-plane-channel-join",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-normalized-r4-plane-channel-join.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-normalized-plane-join",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Join the independently normalized horizon, Iminus and Iplus axial planes at r=4M and classify only the basis-invariant whole-cell channel data. Activate the first negative-endpoint-flux conclusion on any certified open cell with rank_Cplus at least two, while keeping the stronger full-rank one-sided J-isometry branch separate and never fabricating discarded canonical endpoint amplitudes.",
+    "stop_condition": "For every child frequency cell on which all three plane producers land, import their strict Taylor-v2 frames in the common standard state order and generator 7315. Certify complex-structure equivariance, separate complex rank three, combined endpoint rank six, continuity, and a validated solve [Bminus Bplus]*[Cminus;Cplus]=H. Independently reconstruct K4=+i*Jhat(4,omega), crosscheck its sign by congruence with the exact action-derived endpoint Gram of inertia (1,2,0), compute the complete W^dagger*K4*W including the Iminus/Iplus cross block, require that cross block to contain exact zero, and certify GHplus+gplus-gminus=0 with the future-horizon inner-boundary sign. Run nonunitary GL(3,C) basis-covariance mutations and classify whole-cell projection ranks and current-form ranks/radicals/inertias. On any certified open cell with rank_Cplus>=2, apply n_minus(Cplus^dagger Gplus Cplus)>=rank_Cplus-1 and construct a nonzero compact-frequency negative endpoint-flux wave packet; then use countably many pairwise disjoint frequency supports to certify an infinite-dimensional negative endpoint-flux subspace. Separately certify the normalized one-sided J-isometry only where Cminus is uniformly invertible. Emit typed CERTIFIED cells and SCOPED_SHORTFALL cells for unresolved children; a partial interval does not block the first rank-two activation.",
+    "current_gate": "One landed open child cell with normalized r4 planes, continuous endpoint Gram and connection, the +i current-sign, exact endpoint inertia (1,2,0), rank_Cplus at least two, cross-block zero, Stokes and basis-covariance gates. Full-rank Cminus remains a stronger optional branch.",
+    "forbid": "no edits to the active horizon or infinity transport packages; no use of the old -i affine current convention; no center-only rank or inertia; no omitted endpoint cross block; no raw equality demanded under a nonunitary basis change; no canonical endpoint or scattering amplitudes; no XI/EI/XH origin labels after unrestricted plane mixing; no frozen endpoint L2 equivalence without a uniformly bounded amplitude crosswalk; no full scattering without Hminus; no promotion of negative endpoint flux to negative total conserved energy or a horizon-completed sign; no stability, CPT, physical quantum ghost, particles, unitarity, or quantum promotion",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-horizon-grassmann-mobius-to-r4-taylor2",
+      "sf:program/work/phase3-black-hole-axial-global-connection-microfactor-v6",
+      "sf:program/work/phase3-black-hole-axial-arbitrary-radius-current-conservation-provenance",
+      "sf:program/work/phase3-black-hole-axial-null-flux-gram"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_global_normalized_plane_channel_classification/",
+      "reports/phase3-axial-global-normalized-plane-classification-contract-2026-07-23.md",
+      "residual_atlas/phase3-axial-global-normalized-plane-channel-fragment-v1.json"
+    ],
+    "resource_hint": "Start from the fail-closed contract package at black_hole_programme/phase3/axial_global_normalized_plane_channel_classification. Consume only landed producer artifacts. The strict Taylor-v2 adapter is pinned at physics commit d09a33f01cb8b1b70f21bd22b236c21c7a2a20cf and Tango Forge producer commit 2e2461eada037d18794952d466ca584e07cc33f4.",
+    "input_commit": "d09a33f01cb8b1b70f21bd22b236c21c7a2a20cf",
+    "notes": [
+      "LORENTZIAN-CAUSAL",
+      "REDUCED-MODE",
+      "The contract itself is NOT_ACTIVATED and contains no propagated plane data.",
+      "The normalized connection is basis covariant, not a canonical amplitude matrix.",
+      "The +i sign requires an endpoint-Gram crosscheck because conservation is invariant under a global sign flip.",
+      "For endpoint inertia (1,2,0), a populated image of rank r has negative index at least max(0,r-1).",
+      "Rank_Cplus>=2 on one certified open cell is sufficient for a compact-frequency negative endpoint-flux wave packet; the horizon contribution remains separate, so this is not a total-energy or quantum-ghost theorem."
+    ]
+  },
+  "edges": []
+}

@@ -1,0 +1,174 @@
+{
+  "schema": "phase3-axial-normalized-plane-classification-preactivation-v1",
+  "result_id": "AXIAL_NORMALIZED_R4_PLANE_CLASSIFICATION_CONTRACT_V1",
+  "status": "NOT_ACTIVATED",
+  "lifecycle": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "scope": {
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity",
+    "background": "Schwarzschild exterior M=1",
+    "sector": "axial ell=2",
+    "matching_radius": "r=4M",
+    "phase": "exp(+i*omega*v)",
+    "frequency_scope": "each separately certified rational child cell"
+  },
+  "imports": {
+    "arbitrary_radius_current": {
+      "path": "black_hole_programme/phase3/axial_arbitrary_radius_current_conservation/certificate.json",
+      "sha256": "3fa795e2c84a665ddf0217cf764ec3e156a737d33d249e230c6b81ff07312bd6",
+      "commit": "2ba0f461054b3eeb974424a4a151f770f66616a0"
+    },
+    "endpoint_gram_data": {
+      "path": "black_hole_programme/phase3/axial_null_flux_gram/formal-grams.json",
+      "sha256": "f278101c7abc0ff513cea6e726ada9664e42e2f983227e9f737e06688f535b6a",
+      "commit": "a5b3d56d2bdfbd0fd984ff4b7e5c427570ba5ff1"
+    },
+    "endpoint_gram_producer": {
+      "path": "black_hole_programme/phase3/axial_null_flux_gram/formal_gram.py",
+      "sha256": "c3b821432390087f6af4e7f3cc1a35e7d1380c7657d89f15dfe45f34efe053a3",
+      "commit": "a5b3d56d2bdfbd0fd984ff4b7e5c427570ba5ff1"
+    },
+    "infinity_plane_contract": {
+      "path": "black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/infinity_plane_contract.py",
+      "sha256": "b12f0938e06ab90d060313cd53b3fbb28d14e727844dd20090ccd8093f2e27ab",
+      "commit": "ea590a4584b66387f7b1d0c9eaeeacd403d4770a"
+    },
+    "strict_taylor_adapter": {
+      "path": "black_hole_programme/phase3/axial_global_finite_flux_channel_classification/taylor2_adapter.py",
+      "sha256": "cf24f33c14da4f813704d1f66f968c9bc48a6d390a1c9259e103e77353fb7005",
+      "commit": "d09a33f01cb8b1b70f21bd22b236c21c7a2a20cf"
+    }
+  },
+  "normalization_contract": {
+    "kind": "chart-identity-normalized-r4-planes",
+    "accumulated_endpoint_amplitudes_available": false,
+    "complex_state_order": [
+      "P",
+      "Pprime",
+      "Q",
+      "Qprime",
+      "H1",
+      "F"
+    ],
+    "real_state_order": [
+      "Re(P)",
+      "Re(Pprime)",
+      "Re(Q)",
+      "Re(Qprime)",
+      "Re(H1)",
+      "Re(F)",
+      "Im(P)",
+      "Im(Pprime)",
+      "Im(Q)",
+      "Im(Qprime)",
+      "Im(H1)",
+      "Im(F)"
+    ],
+    "current": {
+      "raw": "F^r/(pi*alpha_W) = z^dagger*Jhat*y",
+      "hermitian": "K4 = +i*Jhat(r=4,omega)",
+      "realification": "R(K4) = [[Re(K4),-Im(K4)],[Im(K4),Re(K4)]]",
+      "required_endpoint_crosscheck": "the +i convention must agree by congruence with the exact action-derived endpoint Gram; conservation alone is insufficient"
+    },
+    "connection": {
+      "frame_equation": "[Bminus Bplus]*[Cminus;Cplus] = H",
+      "basis_covariance": "Cpm' = Apm^-1*Cpm*AH",
+      "basis_changes": "H'=H*AH, Bpm'=Bpm*Apm with AH,Apm in GL(3,C)"
+    },
+    "pullbacks": {
+      "cross": "Bminus^dagger*K4*Bplus = 0",
+      "Gminus": "-Bminus^dagger*K4*Bminus",
+      "Gplus": "Bplus^dagger*K4*Bplus",
+      "GHplus": "-H^dagger*K4*H",
+      "gminus": "Cminus^dagger*Gminus*Cminus",
+      "gplus": "Cplus^dagger*Gplus*Cplus",
+      "stokes": "GHplus+gplus-gminus=0"
+    },
+    "one_sided_relation": {
+      "condition": "Cminus is uniformly invertible on the complete cell",
+      "map": "a_minus -> (Cminus^-1*a_minus, Cplus*Cminus^-1*a_minus)",
+      "allowed_name": "normalized one-sided J-isometry",
+      "forbidden_name": "full or canonically normalized scattering matrix"
+    },
+    "index_pullback": {
+      "endpoint_inertia": "(1,2,0) for alpha_W>0",
+      "lower_bound": "n_minus >= max(0,rank_Cplus-1)",
+      "proof": "If the populated endpoint image has dimension r, its intersection with the two-dimensional negative subspace has dimension at least r-1 by the dimension inequality; equivalently a nonnegative subspace has dimension at most one.",
+      "wavepacket_corollary": "On any certified open frequency cell where the endpoint Gram and normalized connection are continuous, rank_Cplus>=2 supplies a local continuous negative direction; multiplying it by a nonzero compactly supported frequency profile gives strictly negative endpoint flux.",
+      "infinite_dimensional_refinement": "Choose countably many nonzero compactly supported profiles with pairwise disjoint frequency supports inside the certified open cell. Frequency-diagonality makes their cross pairings zero, while each diagonal endpoint flux is negative, so their span is an infinite-dimensional negative endpoint-flux subspace.",
+      "claim_boundary": "This is endpoint flux only. The horizon contribution remains separate, so it establishes neither negative total conserved energy nor a physical quantum ghost."
+    }
+  },
+  "required_gates": [
+    "all realified frames obey the standard complex-structure equivariance",
+    "H, Bminus and Bplus have complex rank three on the whole cell",
+    "[Bminus Bplus] has complex rank six on the whole cell",
+    "the validated solve encloses [Bminus Bplus]*C-H as exact zero",
+    "the full pulled current includes and certifies the endpoint cross block as zero",
+    "K4 uses +i*Jhat and matches the exact endpoint Gram by congruence",
+    "the future-horizon outward sign is minus the increasing-r orientation",
+    "the Stokes defect encloses exact zero entrywise",
+    "the endpoint Gplus Gram has inertia (1,2,0) for alpha_W positive",
+    "the endpoint Gram and normalized connection vary continuously on an open frequency cell",
+    "nonunitary GL(3,C) basis changes obey the connection and Gram covariance laws",
+    "every rank, inertia, inverse and multiplier statement is certified on the complete frequency cell"
+  ],
+  "mandatory_mutations": [
+    "replace +i*Jhat by -i*Jhat",
+    "flip only the future-horizon outward sign",
+    "swap Iminus and Iplus",
+    "corrupt one imaginary realification partner while preserving real rank",
+    "duplicate one frame column",
+    "replace one frame by an arbitrary full-rank plane",
+    "transpose, invert or block-swap the connection",
+    "narrow a solve or Stokes remainder so that the true residual is excluded",
+    "drop or zero the endpoint cross block without recomputation",
+    "apply an invertible nonunitary right basis change and demand raw matrix equality",
+    "apply a singular right basis change",
+    "mutate the child cell, shared generator, state order or phase convention",
+    "lower rank_Cplus from two to one while retaining the negative-wavepacket claim",
+    "change endpoint Gplus inertia while retaining the rank-index conclusion",
+    "drop the infinite-dimensional disjoint-frequency-support refinement while retaining rank_Cplus at least two",
+    "promote negative endpoint flux to negative total energy or a quantum ghost",
+    "promote canonical amplitudes, origin labels, endpoint L2 equivalence, full scattering, stability, CPT, ghost or unitarity"
+  ],
+  "claim_flags": {
+    "normalized_plane_handoff_available": false,
+    "normalized_plane_connection_certified": false,
+    "negative_endpoint_wavepacket_certified": false,
+    "normalized_one_sided_J_isometry_certified": false,
+    "canonical_endpoint_amplitudes_certified": false,
+    "Einstein_additional_origin_labels_certified": false,
+    "frozen_endpoint_L2_equivalence_certified": false,
+    "full_scattering_matrix_certified": false,
+    "stability_or_CPT_certified": false,
+    "physical_quantum_ghost_or_unitarity_certified": false
+  },
+  "missing_inputs": [
+    "a landed whole-cell normalized horizon plane at r=4M",
+    "landed whole-cell normalized Iminus and Iplus planes at r=4M",
+    "a validated normalized connection solve and complete pulled-current evidence",
+    "an independent +i current-sign and endpoint-Gram crosscheck",
+    "a basis-covariance mutation receipt",
+    "a whole-cell continuity and rank certificate for the populated Iplus image"
+  ],
+  "does_not_establish": [
+    "a propagated normalized horizon or infinity plane",
+    "a normalized or canonical connection matrix",
+    "canonical endpoint or scattering amplitudes",
+    "Einstein/additional origin restrictions after plane mixing",
+    "equivalence with the frozen endpoint L2 normalization",
+    "a full two-ended scattering matrix",
+    "negative total conserved energy or a horizon-completed energy sign",
+    "a physical quantum ghost, particles, or unitarity",
+    "stability or CPT positivity"
+  ],
+  "commands": {
+    "verify": "python3 -m black_hole_programme.phase3.axial_global_normalized_plane_channel_classification.verify",
+    "mutations": "python3 -m black_hole_programme.phase3.axial_global_normalized_plane_channel_classification.mutations",
+    "tests": "python3 -m unittest -v black_hole_programme.phase3.axial_global_normalized_plane_channel_classification.tests.test_contract"
+  }
+}
