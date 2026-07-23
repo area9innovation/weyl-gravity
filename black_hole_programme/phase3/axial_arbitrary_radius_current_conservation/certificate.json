@@ -1,0 +1,429 @@
+{
+  "claim_flags": {
+    "endpoint_flux_limits_certified": false,
+    "global_connection_constructed": false,
+    "literal_action_current_reconstructed_for_arbitrary_r": true,
+    "repaired_six_state_current_conservation_certified": true,
+    "scattering_or_stability_certified": false
+  },
+  "conservation_proof": {
+    "identity": "dJhat/dr + A(r,-omega)^T*Jhat + Jhat*A(r,omega) = 0",
+    "nonzero_numerator_count": 0,
+    "proof_ring": "QQ(I)(r,omega)",
+    "residual_shape": [
+      6,
+      6
+    ],
+    "status": "EXACT_RATIONAL_IDENTITY",
+    "zero_numerator_count": 36
+  },
+  "declaration": {
+    "background": "Schwarzschild exterior M=1 in ingoing Eddington-Finkelstein coordinates",
+    "current_normalization": "F^r(y,bar(z))=pi*alpha_W*z^dagger*Jhat(r,omega)*y",
+    "domain": "r>2 away from algebraic poles; omega is an exact indeterminate",
+    "sector": "axial ell=2 with Fourier phase exp(+I*omega*v)",
+    "state_order": [
+      "P",
+      "P_prime",
+      "Q",
+      "Q_prime",
+      "H1",
+      "F"
+    ],
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "regularity at the horizon r=2 or at algebraic frequency poles",
+    "convergence of endpoint series or existence of endpoint flux limits",
+    "a horizon-to-infinity connection matrix or scattering matrix",
+    "mode stability, quasinormal-mode exclusion, CPT positivity, particles, or quantum unitarity"
+  ],
+  "imports": {
+    "fixed_radius_current": {
+      "path": "black_hole_programme/phase3/axial_null_infinity_trace_preflight/certificate.json",
+      "sha256": "c048f60c3f8f3790f4243311476e6c049a663b67e00e8a401e4f574152dc4a63"
+    },
+    "literal_action_current": {
+      "path": "black_hole_programme/certificates/BH2A_FLUX_MATRIX.json",
+      "sha256": "95ca6daeabb16bf93faa1bb721e3464fc5363899a344f0281d126f9a14204732"
+    },
+    "literal_current_dag": {
+      "path": "black_hole_programme/phase3/axial_null_infinity_trace_preflight/current_dag.py",
+      "sha256": "2962e0045e8ce11317f305e8e3edc9b5c9983a2b43f46cdd6dcc01d2cdfb16c2"
+    },
+    "literal_samples": {
+      "path": "black_hole_programme/phase3/axial_arbitrary_radius_current_conservation/literal-samples.json",
+      "sha256": "b889287589c1492254c7abc94890dd53e6143fa57021e6bf8fc702ee90641508"
+    },
+    "literal_samples_receipt": {
+      "path": "black_hole_programme/phase3/axial_arbitrary_radius_current_conservation/literal-samples-receipt.json",
+      "sha256": "dff42a3442a30b49a9451a8931c7948262673af0ffcc205ae449ba8360152dc4"
+    },
+    "repaired_system": {
+      "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+      "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990"
+    },
+    "repaired_system_producer": {
+      "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/produce.py",
+      "sha256": "f3965825b1a326782c2b9257678c5f90a98c731de36243f5d052d1371a939953"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "literal_current_reconstruction": {
+    "common_denominator": "r^7*(r-2)^6*(omega*r-2*I)^4*(omega*r+2*I)^4",
+    "denominator_exponents": {
+      "omega_r_minus_2I": 4,
+      "omega_r_plus_2I": 4,
+      "r": 7,
+      "r_minus_2": 6
+    },
+    "interpolation_uniqueness": "D*Jhat has radial degree <=29, so its values at 30 distinct radii determine it uniquely over QQ(I)(omega)",
+    "matrix_without_pi_alpha": [
+      [
+        "0",
+        "(-96*omega**8*r**23/5 + r**22*(1152*omega**8/5 - 96*I*omega**7/5) + r**21*(-1152*omega**8 + 1152*I*omega**7/5 - 1344*omega**6/5) + r**20*(3072*omega**8 - 1152*I*omega**7 + 16128*omega**6/5 - 1152*I*omega**5/5) + r**19*(-4608*omega**8 + 3072*I*omega**7 - 16128*omega**6 + 13824*I*omega**5/5 - 6912*omega**4/5) + r**18*(18432*omega**8/5 - 4608*I*omega**7 + 43008*omega**6 - 13824*I*omega**5 + 82944*omega**4/5 - 4608*I*omega**3/5) + r**17*(-6144*omega**8/5 + 18432*I*omega**7/5 - 64512*omega**6 + 36864*I*omega**5 - 82944*omega**4 + 55296*I*omega**3/5 - 3072*omega**2) + r**16*(-6144*I*omega**7/5 + 258048*omega**6/5 - 55296*I*omega**5 + 221184*omega**4 - 55296*I*omega**3 + 36864*omega**2 - 6144*I*omega/5) + r**15*(-86016*omega**6/5 + 221184*I*omega**5/5 - 331776*omega**4 + 147456*I*omega**3 - 184320*omega**2 + 73728*I*omega/5 - 12288/5) + r**14*(-73728*I*omega**5/5 + 1327104*omega**4/5 - 221184*I*omega**3 + 491520*omega**2 - 73728*I*omega + 147456/5) + r**13*(-442368*omega**4/5 + 884736*I*omega**3/5 - 737280*omega**2 + 196608*I*omega - 147456) + r**12*(-294912*I*omega**3/5 + 589824*omega**2 - 294912*I*omega + 393216) + r**11*(-196608*omega**2 + 1179648*I*omega/5 - 589824) + r**10*(-393216*I*omega/5 + 2359296/5) - 786432*r**9/5)/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(r**21*(96*omega**8/5 + 192*I*omega**7/5) + r**20*(-1152*omega**8/5 - 2496*I*omega**7/5 - 384*omega**6/5) + r**19*(1152*omega**8 + 13824*I*omega**7/5 + 6528*omega**6/5 + 2304*I*omega**5/5) + r**18*(-3072*omega**8 - 8448*I*omega**7 - 9216*omega**6 - 29952*I*omega**5/5 - 4608*omega**4/5) + r**17*(4608*omega**8 + 15360*I*omega**7 + 35328*omega**6 + 165888*I*omega**5/5 + 13824*omega**4 + 9216*I*omega**3/5) + r**16*(-18432*omega**8/5 - 82944*I*omega**7/5 - 79872*omega**6 - 101376*I*omega**5 - 442368*omega**4/5 - 119808*I*omega**3/5 - 18432*omega**2/5) + r**15*(6144*omega**8/5 + 49152*I*omega**7/5 + 534528*omega**6/5 + 184320*I*omega**5 + 313344*omega**4 + 663552*I*omega**3/5 + 264192*omega**2/5 + 12288*I*omega/5) + r**14*(-12288*I*omega**7/5 - 393216*omega**6/5 - 995328*I*omega**5/5 - 663552*omega**4 - 405504*I*omega**3 - 1622016*omega**2/5 - 159744*I*omega/5 - 24576/5) + r**13*(24576*omega**6 + 589824*I*omega**5/5 + 4202496*omega**4/5 + 737280*I*omega**3 + 1105920*omega**2 + 884736*I*omega/5 + 344064/5) + r**12*(-147456*I*omega**5/5 - 589824*omega**4 - 3981312*I*omega**3/5 - 2260992*omega**2 - 540672*I*omega - 2064384/5) + r**11*(884736*omega**4/5 + 2359296*I*omega**3/5 + 13860864*omega**2/5 + 983040*I*omega + 1376256) + r**10*(-589824*I*omega**3/5 - 9437184*omega**2/5 - 5308416*I*omega/5 - 2752512) + r**9*(2752512*omega**2/5 + 3145728*I*omega/5 + 16515072/5) + r**8*(-786432*I*omega/5 - 11010048/5) + 3145728*r**7/5)/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(-48*omega**8*r**23/5 + 786432*I*omega*r**9/5 + r**22*(672*omega**8/5 - 96*I*omega**7/5) + r**21*(-4032*omega**8/5 + 1344*I*omega**7/5 - 576*omega**6/5) + r**20*(2688*omega**8 - 8064*I*omega**7/5 + 8064*omega**6/5 - 1152*I*omega**5/5) + r**19*(-5376*omega**8 + 5376*I*omega**7 - 48384*omega**6/5 + 16128*I*omega**5/5 - 2304*omega**4/5) + r**18*(32256*omega**8/5 - 10752*I*omega**7 + 32256*omega**6 - 96768*I*omega**5/5 + 32256*omega**4/5 - 4608*I*omega**3/5) + r**17*(-21504*omega**8/5 + 64512*I*omega**7/5 - 64512*omega**6 + 64512*I*omega**5 - 193536*omega**4/5 + 64512*I*omega**3/5 - 3072*omega**2/5) + r**16*(6144*omega**8/5 - 43008*I*omega**7/5 + 387072*omega**6/5 - 129024*I*omega**5 + 129024*omega**4 - 387072*I*omega**3/5 + 43008*omega**2/5 - 6144*I*omega/5) + r**15*(12288*I*omega**7/5 - 258048*omega**6/5 + 774144*I*omega**5/5 - 258048*omega**4 + 258048*I*omega**3 - 258048*omega**2/5 + 86016*I*omega/5) + r**14*(73728*omega**6/5 - 516096*I*omega**5/5 + 1548288*omega**4/5 - 516096*I*omega**3 + 172032*omega**2 - 516096*I*omega/5) + r**13*(147456*I*omega**5/5 - 1032192*omega**4/5 + 3096576*I*omega**3/5 - 344064*omega**2 + 344064*I*omega) + r**12*(294912*omega**4/5 - 2064384*I*omega**3/5 + 2064384*omega**2/5 - 688128*I*omega) + r**11*(589824*I*omega**3/5 - 1376256*omega**2/5 + 4128768*I*omega/5) + r**10*(393216*omega**2/5 - 2752512*I*omega/5))/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(384*I*omega**9*r**21/5 + r**20*(-4608*I*omega**9/5 - 576*omega**8/5) + r**19*(4608*I*omega**9 + 1536*omega**8 + 4992*I*omega**7/5) + r**18*(-12288*I*omega**9 - 43776*omega**8/5 - 58752*I*omega**7/5 - 6912*omega**6/5) + r**17*(18432*I*omega**9 + 27648*omega**8 + 285696*I*omega**7/5 + 92928*omega**6/5 + 4608*I*omega**5) + r**16*(-73728*I*omega**9/5 - 52224*omega**8 - 145920*I*omega**7 - 534528*omega**6/5 - 262656*I*omega**5/5 - 27648*omega**4/5) + r**15*(24576*I*omega**9/5 + 294912*omega**8/5 + 202752*I*omega**7 + 340992*omega**6 + 1216512*I*omega**5/5 + 377856*omega**4/5 + 43008*I*omega**3/5) + r**14*(-36864*omega**8 - 681984*I*omega**7/5 - 651264*omega**6 - 571392*I*omega**5 - 442368*omega**4 - 92160*I*omega**3 - 36864*omega**2/5) + r**13*(49152*omega**8/5 + 98304*I*omega**7/5 + 3723264*omega**6/5 + 663552*I*omega**5 + 1437696*omega**4 + 1916928*I*omega**3/5 + 528384*omega**2/5 + 24576*I*omega/5) + r**12*(73728*I*omega**7/5 - 2359296*omega**6/5 - 221184*I*omega**5 - 2801664*omega**4 - 712704*I*omega**3 - 3244032*omega**2/5 - 221184*I*omega/5) + r**11*(638976*omega**6/5 - 1179648*I*omega**5/5 + 16367616*omega**4/5 + 294912*I*omega**3 + 2211840*omega**2 + 589824*I*omega/5 + 49152/5) + r**10*(884736*I*omega**5/5 - 10616832*omega**4/5 + 5013504*I*omega**3/5 - 4521984*omega**2 + 98304*I*omega - 589824/5) + r**9*(589824*omega**4 - 1572864*I*omega**3 + 27721728*omega**2/5 - 1179648*I*omega + 589824) + r**8*(3538944*I*omega**3/5 - 18874368*omega**2/5 + 12976128*I*omega/5 - 1572864) + r**7*(5505024*omega**2/5 - 12582912*I*omega/5 + 2359296) + r**6*(4718592*I*omega/5 - 9437184/5) + 3145728*r**5/5)/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(192*omega**8*r**21/5 + r**20*(-2688*omega**8/5 + 192*I*omega**7/5) + r**19*(16128*omega**8/5 - 2688*I*omega**7/5 + 2688*omega**6/5) + r**18*(-10752*omega**8 + 16128*I*omega**7/5 - 37632*omega**6/5 + 2304*I*omega**5/5) + r**17*(21504*omega**8 - 10752*I*omega**7 + 225792*omega**6/5 - 32256*I*omega**5/5 + 13824*omega**4/5) + r**16*(-129024*omega**8/5 + 21504*I*omega**7 - 150528*omega**6 + 193536*I*omega**5/5 - 193536*omega**4/5 + 9216*I*omega**3/5) + r**15*(86016*omega**8/5 - 129024*I*omega**7/5 + 301056*omega**6 - 129024*I*omega**5 + 1161216*omega**4/5 - 129024*I*omega**3/5 + 6144*omega**2) + r**14*(-24576*omega**8/5 + 86016*I*omega**7/5 - 1806336*omega**6/5 + 258048*I*omega**5 - 774144*omega**4 + 774144*I*omega**3/5 - 86016*omega**2 + 12288*I*omega/5) + r**13*(-24576*I*omega**7/5 + 1204224*omega**6/5 - 1548288*I*omega**5/5 + 1548288*omega**4 - 516096*I*omega**3 + 516096*omega**2 - 172032*I*omega/5 + 24576/5) + r**12*(-344064*omega**6/5 + 1032192*I*omega**5/5 - 9289728*omega**4/5 + 1032192*I*omega**3 - 1720320*omega**2 + 1032192*I*omega/5 - 344064/5) + r**11*(-294912*I*omega**5/5 + 6193152*omega**4/5 - 6193152*I*omega**3/5 + 3440640*omega**2 - 688128*I*omega + 2064384/5) + r**10*(-1769472*omega**4/5 + 4128768*I*omega**3/5 - 4128768*omega**2 + 1376256*I*omega - 1376256) + r**9*(-1179648*I*omega**3/5 + 2752512*omega**2 - 8257536*I*omega/5 + 2752512) + r**8*(-786432*omega**2 + 5505024*I*omega/5 - 16515072/5) + r**7*(-1572864*I*omega/5 + 11010048/5) - 3145728*r**6/5)/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)"
+      ],
+      [
+        "(96*omega**8*r**23/5 + r**22*(-1152*omega**8/5 - 96*I*omega**7/5) + r**21*(1152*omega**8 + 1152*I*omega**7/5 + 1344*omega**6/5) + r**20*(-3072*omega**8 - 1152*I*omega**7 - 16128*omega**6/5 - 1152*I*omega**5/5) + r**19*(4608*omega**8 + 3072*I*omega**7 + 16128*omega**6 + 13824*I*omega**5/5 + 6912*omega**4/5) + r**18*(-18432*omega**8/5 - 4608*I*omega**7 - 43008*omega**6 - 13824*I*omega**5 - 82944*omega**4/5 - 4608*I*omega**3/5) + r**17*(6144*omega**8/5 + 18432*I*omega**7/5 + 64512*omega**6 + 36864*I*omega**5 + 82944*omega**4 + 55296*I*omega**3/5 + 3072*omega**2) + r**16*(-6144*I*omega**7/5 - 258048*omega**6/5 - 55296*I*omega**5 - 221184*omega**4 - 55296*I*omega**3 - 36864*omega**2 - 6144*I*omega/5) + r**15*(86016*omega**6/5 + 221184*I*omega**5/5 + 331776*omega**4 + 147456*I*omega**3 + 184320*omega**2 + 73728*I*omega/5 + 12288/5) + r**14*(-73728*I*omega**5/5 - 1327104*omega**4/5 - 221184*I*omega**3 - 491520*omega**2 - 73728*I*omega - 147456/5) + r**13*(442368*omega**4/5 + 884736*I*omega**3/5 + 737280*omega**2 + 196608*I*omega + 147456) + r**12*(-294912*I*omega**3/5 - 589824*omega**2 - 294912*I*omega - 393216) + r**11*(196608*omega**2 + 1179648*I*omega/5 + 589824) + r**10*(-393216*I*omega/5 - 2359296/5) + 786432*r**9/5)/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "0",
+        "(48*I*omega**9*r**24/5 + 393216*I*omega*r**9/5 + r**23*(-576*I*omega**9/5 + 144*omega**8/5) + r**22*(576*I*omega**9 - 1776*omega**8/5 + 96*I*omega**7) + r**21*(-1536*I*omega**9 + 9216*omega**8/5 - 5664*I*omega**7/5 + 1728*omega**6/5) + r**20*(2304*I*omega**9 - 5184*omega**8 + 27648*I*omega**7/5 - 21312*omega**6/5 + 1152*I*omega**5/5) + r**19*(-9216*I*omega**9/5 + 8448*omega**8 - 14208*I*omega**7 + 110592*omega**6/5 - 12672*I*omega**5/5 + 6912*omega**4/5) + r**18*(3072*I*omega**9/5 - 39168*omega**8/5 + 19968*I*omega**7 - 62208*omega**6 + 55296*I*omega**5/5 - 85248*omega**4/5 - 1536*I*omega**3/5) + r**17*(18432*omega**8/5 - 13824*I*omega**7 + 101376*omega**6 - 23040*I*omega**5 + 442368*omega**4/5 + 4608*I*omega**3 + 9216*omega**2/5) + r**16*(-3072*omega**8/5 + 12288*I*omega**7/5 - 470016*omega**6/5 + 18432*I*omega**5 - 248832*omega**4 - 147456*I*omega**3/5 - 113664*omega**2/5 - 6144*I*omega/5) + r**15*(6144*I*omega**7/5 + 221184*omega**6/5 + 55296*I*omega**5/5 + 405504*omega**4 + 104448*I*omega**3 + 589824*omega**2/5 + 79872*I*omega/5) + r**14*(-36864*omega**6/5 - 147456*I*omega**5/5 - 1880064*omega**4/5 - 221184*I*omega**3 - 331776*omega**2 - 442368*I*omega/5) + r**13*(73728*I*omega**5/5 + 884736*omega**4/5 + 1400832*I*omega**3/5 + 540672*omega**2 + 270336*I*omega) + r**12*(-147456*omega**4/5 - 196608*I*omega**3 - 2506752*omega**2/5 - 491520*I*omega) + r**11*(294912*I*omega**3/5 + 1179648*omega**2/5 + 2654208*I*omega/5) + r**10*(-196608*omega**2/5 - 1572864*I*omega/5))/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(24*omega**8*r**24/5 + 393216*I*omega*r**10/5 + r**23*(-336*omega**8/5 - 48*I*omega**7/5) + r**22*(2016*omega**8/5 + 672*I*omega**7/5 + 288*omega**6/5) + r**21*(-1344*omega**8 - 4032*I*omega**7/5 - 4032*omega**6/5 - 576*I*omega**5/5) + r**20*(2688*omega**8 + 2688*I*omega**7 + 24192*omega**6/5 + 8064*I*omega**5/5 + 1152*omega**4/5) + r**19*(-16128*omega**8/5 - 5376*I*omega**7 - 16128*omega**6 - 48384*I*omega**5/5 - 16128*omega**4/5 - 2304*I*omega**3/5) + r**18*(10752*omega**8/5 + 32256*I*omega**7/5 + 32256*omega**6 + 32256*I*omega**5 + 96768*omega**4/5 + 32256*I*omega**3/5 + 1536*omega**2/5) + r**17*(-3072*omega**8/5 - 21504*I*omega**7/5 - 193536*omega**6/5 - 64512*I*omega**5 - 64512*omega**4 - 193536*I*omega**3/5 - 21504*omega**2/5 - 3072*I*omega/5) + r**16*(6144*I*omega**7/5 + 129024*omega**6/5 + 387072*I*omega**5/5 + 129024*omega**4 + 129024*I*omega**3 + 129024*omega**2/5 + 43008*I*omega/5) + r**15*(-36864*omega**6/5 - 258048*I*omega**5/5 - 774144*omega**4/5 - 258048*I*omega**3 - 86016*omega**2 - 258048*I*omega/5) + r**14*(73728*I*omega**5/5 + 516096*omega**4/5 + 1548288*I*omega**3/5 + 172032*omega**2 + 172032*I*omega) + r**13*(-147456*omega**4/5 - 1032192*I*omega**3/5 - 1032192*omega**2/5 - 344064*I*omega) + r**12*(294912*I*omega**3/5 + 688128*omega**2/5 + 2064384*I*omega/5) + r**11*(-196608*omega**2/5 - 1376256*I*omega/5))/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(-96*omega**8*r**21/5 + 1344*omega**8*r**20/5 + r**19*(-8064*omega**8/5 - 1536*omega**6/5) + r**18*(5376*omega**8 + 21504*omega**6/5) + r**17*(-10752*omega**8 - 129024*omega**6/5 - 9216*omega**4/5) + r**16*(64512*omega**8/5 + 86016*omega**6 + 129024*omega**4/5) + r**15*(-43008*omega**8/5 - 172032*omega**6 - 774144*omega**4/5 - 24576*omega**2/5) + r**14*(12288*omega**8/5 + 1032192*omega**6/5 + 516096*omega**4 + 344064*omega**2/5) + r**13*(-688128*omega**6/5 - 1032192*omega**4 - 2064384*omega**2/5 - 24576/5) + r**12*(196608*omega**6/5 + 6193152*omega**4/5 + 1376256*omega**2 + 344064/5) + r**11*(-4128768*omega**4/5 - 2752512*omega**2 - 2064384/5) + r**10*(1179648*omega**4/5 + 16515072*omega**2/5 + 1376256) + r**9*(-11010048*omega**2/5 - 2752512) + r**8*(3145728*omega**2/5 + 16515072/5) - 11010048*r**7/5 + 3145728*r**6/5)/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "0"
+      ],
+      [
+        "(r**21*(-96*omega**8/5 + 192*I*omega**7/5) + r**20*(1152*omega**8/5 - 2496*I*omega**7/5 + 384*omega**6/5) + r**19*(-1152*omega**8 + 13824*I*omega**7/5 - 6528*omega**6/5 + 2304*I*omega**5/5) + r**18*(3072*omega**8 - 8448*I*omega**7 + 9216*omega**6 - 29952*I*omega**5/5 + 4608*omega**4/5) + r**17*(-4608*omega**8 + 15360*I*omega**7 - 35328*omega**6 + 165888*I*omega**5/5 - 13824*omega**4 + 9216*I*omega**3/5) + r**16*(18432*omega**8/5 - 82944*I*omega**7/5 + 79872*omega**6 - 101376*I*omega**5 + 442368*omega**4/5 - 119808*I*omega**3/5 + 18432*omega**2/5) + r**15*(-6144*omega**8/5 + 49152*I*omega**7/5 - 534528*omega**6/5 + 184320*I*omega**5 - 313344*omega**4 + 663552*I*omega**3/5 - 264192*omega**2/5 + 12288*I*omega/5) + r**14*(-12288*I*omega**7/5 + 393216*omega**6/5 - 995328*I*omega**5/5 + 663552*omega**4 - 405504*I*omega**3 + 1622016*omega**2/5 - 159744*I*omega/5 + 24576/5) + r**13*(-24576*omega**6 + 589824*I*omega**5/5 - 4202496*omega**4/5 + 737280*I*omega**3 - 1105920*omega**2 + 884736*I*omega/5 - 344064/5) + r**12*(-147456*I*omega**5/5 + 589824*omega**4 - 3981312*I*omega**3/5 + 2260992*omega**2 - 540672*I*omega + 2064384/5) + r**11*(-884736*omega**4/5 + 2359296*I*omega**3/5 - 13860864*omega**2/5 + 983040*I*omega - 1376256) + r**10*(-589824*I*omega**3/5 + 9437184*omega**2/5 - 5308416*I*omega/5 + 2752512) + r**9*(-2752512*omega**2/5 + 3145728*I*omega/5 - 16515072/5) + r**8*(-786432*I*omega/5 + 11010048/5) - 3145728*r**7/5)/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(48*I*omega**9*r**24/5 + 393216*I*omega*r**9/5 + r**23*(-576*I*omega**9/5 - 144*omega**8/5) + r**22*(576*I*omega**9 + 1776*omega**8/5 + 96*I*omega**7) + r**21*(-1536*I*omega**9 - 9216*omega**8/5 - 5664*I*omega**7/5 - 1728*omega**6/5) + r**20*(2304*I*omega**9 + 5184*omega**8 + 27648*I*omega**7/5 + 21312*omega**6/5 + 1152*I*omega**5/5) + r**19*(-9216*I*omega**9/5 - 8448*omega**8 - 14208*I*omega**7 - 110592*omega**6/5 - 12672*I*omega**5/5 - 6912*omega**4/5) + r**18*(3072*I*omega**9/5 + 39168*omega**8/5 + 19968*I*omega**7 + 62208*omega**6 + 55296*I*omega**5/5 + 85248*omega**4/5 - 1536*I*omega**3/5) + r**17*(-18432*omega**8/5 - 13824*I*omega**7 - 101376*omega**6 - 23040*I*omega**5 - 442368*omega**4/5 + 4608*I*omega**3 - 9216*omega**2/5) + r**16*(3072*omega**8/5 + 12288*I*omega**7/5 + 470016*omega**6/5 + 18432*I*omega**5 + 248832*omega**4 - 147456*I*omega**3/5 + 113664*omega**2/5 - 6144*I*omega/5) + r**15*(6144*I*omega**7/5 - 221184*omega**6/5 + 55296*I*omega**5/5 - 405504*omega**4 + 104448*I*omega**3 - 589824*omega**2/5 + 79872*I*omega/5) + r**14*(36864*omega**6/5 - 147456*I*omega**5/5 + 1880064*omega**4/5 - 221184*I*omega**3 + 331776*omega**2 - 442368*I*omega/5) + r**13*(73728*I*omega**5/5 - 884736*omega**4/5 + 1400832*I*omega**3/5 - 540672*omega**2 + 270336*I*omega) + r**12*(147456*omega**4/5 - 196608*I*omega**3 + 2506752*omega**2/5 - 491520*I*omega) + r**11*(294912*I*omega**3/5 - 1179648*omega**2/5 + 2654208*I*omega/5) + r**10*(196608*omega**2/5 - 1572864*I*omega/5))/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(-96*I*omega**9*r**23/5 + 1056*I*omega**9*r**22/5 - 12582912*I*omega*r**8/5 + 1572864*I*omega*r**7/5 + r**21*(-4608*I*omega**9/5 - 384*I*omega**7/5) + r**20*(1920*I*omega**9 + 1536*I*omega**7/5) + r**19*(-1536*I*omega**9 + 14208*I*omega**7/5 + 4608*I*omega**5/5) + r**18*(-4608*I*omega**9/5 - 127488*I*omega**7/5 - 82944*I*omega**5/5) + r**17*(12288*I*omega**9/5 + 84480*I*omega**7 + 612864*I*omega**5/5 + 6144*I*omega**3) + r**16*(-6144*I*omega**9/5 - 724992*I*omega**7/5 - 2451456*I*omega**5/5 - 466944*I*omega**3/5) + r**15*(657408*I*omega**7/5 + 1161216*I*omega**5 + 608256*I*omega**3 + 49152*I*omega/5) + r**14*(-270336*I*omega**7/5 - 8257536*I*omega**5/5 - 11034624*I*omega**3/5 - 712704*I*omega/5) + r**13*(24576*I*omega**7/5 + 6709248*I*omega**5/5 + 4841472*I*omega**3 + 4448256*I*omega/5) + r**12*(-2654208*I*omega**5/5 - 6488064*I*omega**3 - 15532032*I*omega/5) + r**11*(294912*I*omega**5/5 + 25264128*I*omega**3/5 + 6586368*I*omega) + r**10*(-1966080*I*omega**3 - 42860544*I*omega/5) + r**9*(1179648*I*omega**3/5 + 32636928*I*omega/5))/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(24*I*omega**9*r**24/5 + r**23*(-336*I*omega**9/5 - 144*omega**8/5) + r**22*(2016*I*omega**9/5 + 2016*omega**8/5 + 192*I*omega**7/5) + r**21*(-1344*I*omega**9 - 12096*omega**8/5 - 2688*I*omega**7/5 - 1536*omega**6/5) + r**20*(2688*I*omega**9 + 8064*omega**8 + 16128*I*omega**7/5 + 4224*omega**6) + r**19*(-16128*I*omega**9/5 - 16128*omega**8 - 10752*I*omega**7 - 123648*omega**6/5 - 4608*omega**4/5) + r**18*(10752*I*omega**9/5 + 96768*omega**8/5 + 21504*I*omega**7 + 397824*omega**6/5 + 59904*omega**4/5 - 3072*I*omega**3/5) + r**17*(-3072*I*omega**9/5 - 64512*omega**8/5 - 129024*I*omega**7/5 - 150528*omega**6 - 64512*omega**4 + 43008*I*omega**3/5) + r**16*(18432*omega**8/5 + 86016*I*omega**7/5 + 817152*omega**6/5 + 903168*omega**4/5 - 258048*I*omega**3/5 - 18432*omega**2/5 - 6144*I*omega/5) + r**15*(-24576*I*omega**7/5 - 86016*omega**6 - 258048*omega**4 + 172032*I*omega**3 + 258048*omega**2/5 + 86016*I*omega/5 + 12288/5) + r**14*(24576*omega**6/5 + 516096*omega**4/5 - 344064*I*omega**3 - 1548288*omega**2/5 - 516096*I*omega/5 - 196608/5) + r**13*(49152*omega**6/5 + 1032192*omega**4/5 + 2064384*I*omega**3/5 + 1032192*omega**2 + 344064*I*omega + 1376256/5) + r**12*(-294912*omega**4 - 1376256*I*omega**3/5 - 2064384*omega**2 - 688128*I*omega - 5505024/5) + r**11*(589824*omega**4/5 + 393216*I*omega**3/5 + 12386304*omega**2/5 + 4128768*I*omega/5 + 2752512) + r**10*(-8257536*omega**2/5 - 2752512*I*omega/5 - 22020096/5) + r**9*(2359296*omega**2/5 + 786432*I*omega/5 + 22020096/5) - 12582912*r**8/5 + 3145728*r**7/5)/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(192*omega**10*r**22/5 - 4718592*I*omega*r**5/5 + r**21*(-2304*omega**10/5 + 672*I*omega**9/5) + r**20*(2304*omega**10 - 1728*I*omega**9 + 1344*omega**8/5) + r**19*(-6144*omega**10 + 47232*I*omega**9/5 - 13824*omega**8/5 + 7296*I*omega**7/5) + r**18*(9216*omega**10 - 28416*I*omega**9 + 52416*omega**8/5 - 18432*I*omega**7 - 2304*omega**6/5) + r**17*(-36864*omega**10/5 + 50688*I*omega**9 - 69888*omega**8/5 + 491904*I*omega**7/5 + 55296*omega**6/5 + 4608*I*omega**5) + r**16*(12288*omega**10/5 - 267264*I*omega**9/5 - 16128*omega**8 - 1430016*I*omega**7/5 - 476928*omega**6/5 - 55296*I*omega**5 - 33792*omega**4/5) + r**15*(30720*I*omega**9 + 387072*omega**8/5 + 483840*I*omega**7 + 2110464*omega**6/5 + 1368576*I*omega**5/5 + 516096*omega**4/5 + 6144*I*omega**3/5) + r**14*(-36864*I*omega**9/5 - 494592*omega**8/5 - 2322432*I*omega**7/5 - 1078272*omega**6 - 3520512*I*omega**5/5 - 3382272*omega**4/5 - 12288*omega**2) + r**13*(258048*omega**8/5 + 215040*I*omega**7 + 8183808*omega**6/5 + 940032*I*omega**5 + 12374016*omega**4/5 - 571392*I*omega**3/5 + 884736*omega**2/5 - 49152*I*omega/5) + r**12*(-36864*omega**8/5 - 73728*I*omega**7/5 - 7114752*omega**6/5 - 442368*I*omega**5 - 5492736*omega**4 + 4104192*I*omega**3/5 - 5492736*omega**2/5 + 147456*I*omega) + r**11*(-73728*I*omega**7/5 + 3096576*omega**6/5 - 368640*I*omega**5 + 37453824*omega**4/5 - 2727936*I*omega**3 + 19120128*omega**2/5 - 958464*I*omega) + r**10*(-442368*omega**6/5 + 2654208*I*omega**5/5 - 30031872*omega**4/5 + 25362432*I*omega**3/5 - 8110080*omega**2 + 17596416*I*omega/5) + r**9*(-884736*I*omega**5/5 + 12386304*omega**4/5 - 5406720*I*omega**3 + 10616832*omega**2 - 7962624*I*omega) + r**8*(-1769472*omega**4/5 + 15335424*I*omega**3/5 - 41091072*omega**2/5 + 56623104*I*omega/5) + r**7*(-3538944*I*omega**3/5 + 16515072*omega**2/5 - 9830400*I*omega) + r**6*(-2359296*omega**2/5 + 4718592*I*omega))/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(-96*I*omega**9*r**22/5 + 1572864*I*omega*r**6/5 + r**21*(1344*I*omega**9/5 + 288*omega**8/5) + r**20*(-8064*I*omega**9/5 - 4128*omega**8/5 - 192*I*omega**7) + r**19*(5376*I*omega**9 + 25536*omega**8/5 + 13248*I*omega**7/5 + 3456*omega**6/5) + r**18*(-10752*I*omega**9 - 88704*omega**8/5 - 77952*I*omega**7/5 - 49536*omega**6/5 - 2304*I*omega**5/5) + r**17*(64512*I*omega**9/5 + 37632*omega**8 + 252672*I*omega**7/5 + 306432*omega**6/5 + 29952*I*omega**5/5 + 13824*omega**4/5) + r**16*(-43008*I*omega**9/5 - 247296*omega**8/5 - 96768*I*omega**7 - 1064448*omega**6/5 - 32256*I*omega**5 - 198144*omega**4/5 + 3072*I*omega**3/5) + r**15*(12288*I*omega**9/5 + 193536*omega**8/5 + 107520*I*omega**7 + 451584*omega**6 + 451584*I*omega**5/5 + 1225728*omega**4/5 - 52224*I*omega**3/5 + 18432*omega**2/5) + r**14*(-79872*omega**8/5 - 301056*I*omega**7/5 - 2967552*omega**6/5 - 129024*I*omega**5 - 4257792*omega**4/5 + 387072*I*omega**3/5 - 264192*omega**2/5 + 12288*I*omega/5) + r**13*(12288*omega**8/5 + 36864*I*omega**7/5 + 2322432*omega**6/5 + 258048*I*omega**5/5 + 1806336*omega**4 - 1634304*I*omega**3/5 + 1634304*omega**2/5 - 36864*I*omega) + r**12*(24576*I*omega**7/5 - 958464*omega**6/5 + 516096*I*omega**5/5 - 11870208*omega**4/5 + 860160*I*omega**3 - 5677056*omega**2/5 + 1204224*I*omega/5) + r**11*(147456*omega**6/5 - 147456*I*omega**5 + 9289728*omega**4/5 - 7225344*I*omega**3/5 + 2408448*omega**2 - 4472832*I*omega/5) + r**10*(294912*I*omega**5/5 - 3833856*omega**4/5 + 7569408*I*omega**3/5 - 15826944*omega**2/5 + 2064384*I*omega) + r**9*(589824*omega**4/5 - 4521984*I*omega**3/5 + 12386304*omega**2/5 - 15138816*I*omega/5) + r**8*(1179648*I*omega**3/5 - 5111808*omega**2/5 + 2752512*I*omega) + r**7*(786432*omega**2/5 - 7077888*I*omega/5))/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)"
+      ],
+      [
+        "(48*omega**8*r**23/5 + 786432*I*omega*r**9/5 + r**22*(-672*omega**8/5 - 96*I*omega**7/5) + r**21*(4032*omega**8/5 + 1344*I*omega**7/5 + 576*omega**6/5) + r**20*(-2688*omega**8 - 8064*I*omega**7/5 - 8064*omega**6/5 - 1152*I*omega**5/5) + r**19*(5376*omega**8 + 5376*I*omega**7 + 48384*omega**6/5 + 16128*I*omega**5/5 + 2304*omega**4/5) + r**18*(-32256*omega**8/5 - 10752*I*omega**7 - 32256*omega**6 - 96768*I*omega**5/5 - 32256*omega**4/5 - 4608*I*omega**3/5) + r**17*(21504*omega**8/5 + 64512*I*omega**7/5 + 64512*omega**6 + 64512*I*omega**5 + 193536*omega**4/5 + 64512*I*omega**3/5 + 3072*omega**2/5) + r**16*(-6144*omega**8/5 - 43008*I*omega**7/5 - 387072*omega**6/5 - 129024*I*omega**5 - 129024*omega**4 - 387072*I*omega**3/5 - 43008*omega**2/5 - 6144*I*omega/5) + r**15*(12288*I*omega**7/5 + 258048*omega**6/5 + 774144*I*omega**5/5 + 258048*omega**4 + 258048*I*omega**3 + 258048*omega**2/5 + 86016*I*omega/5) + r**14*(-73728*omega**6/5 - 516096*I*omega**5/5 - 1548288*omega**4/5 - 516096*I*omega**3 - 172032*omega**2 - 516096*I*omega/5) + r**13*(147456*I*omega**5/5 + 1032192*omega**4/5 + 3096576*I*omega**3/5 + 344064*omega**2 + 344064*I*omega) + r**12*(-294912*omega**4/5 - 2064384*I*omega**3/5 - 2064384*omega**2/5 - 688128*I*omega) + r**11*(589824*I*omega**3/5 + 1376256*omega**2/5 + 4128768*I*omega/5) + r**10*(-393216*omega**2/5 - 2752512*I*omega/5))/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(-24*omega**8*r**24/5 + 393216*I*omega*r**10/5 + r**23*(336*omega**8/5 - 48*I*omega**7/5) + r**22*(-2016*omega**8/5 + 672*I*omega**7/5 - 288*omega**6/5) + r**21*(1344*omega**8 - 4032*I*omega**7/5 + 4032*omega**6/5 - 576*I*omega**5/5) + r**20*(-2688*omega**8 + 2688*I*omega**7 - 24192*omega**6/5 + 8064*I*omega**5/5 - 1152*omega**4/5) + r**19*(16128*omega**8/5 - 5376*I*omega**7 + 16128*omega**6 - 48384*I*omega**5/5 + 16128*omega**4/5 - 2304*I*omega**3/5) + r**18*(-10752*omega**8/5 + 32256*I*omega**7/5 - 32256*omega**6 + 32256*I*omega**5 - 96768*omega**4/5 + 32256*I*omega**3/5 - 1536*omega**2/5) + r**17*(3072*omega**8/5 - 21504*I*omega**7/5 + 193536*omega**6/5 - 64512*I*omega**5 + 64512*omega**4 - 193536*I*omega**3/5 + 21504*omega**2/5 - 3072*I*omega/5) + r**16*(6144*I*omega**7/5 - 129024*omega**6/5 + 387072*I*omega**5/5 - 129024*omega**4 + 129024*I*omega**3 - 129024*omega**2/5 + 43008*I*omega/5) + r**15*(36864*omega**6/5 - 258048*I*omega**5/5 + 774144*omega**4/5 - 258048*I*omega**3 + 86016*omega**2 - 258048*I*omega/5) + r**14*(73728*I*omega**5/5 - 516096*omega**4/5 + 1548288*I*omega**3/5 - 172032*omega**2 + 172032*I*omega) + r**13*(147456*omega**4/5 - 1032192*I*omega**3/5 + 1032192*omega**2/5 - 344064*I*omega) + r**12*(294912*I*omega**3/5 - 688128*omega**2/5 + 2064384*I*omega/5) + r**11*(196608*omega**2/5 - 1376256*I*omega/5))/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(24*I*omega**9*r**24/5 + r**23*(-336*I*omega**9/5 + 144*omega**8/5) + r**22*(2016*I*omega**9/5 - 2016*omega**8/5 + 192*I*omega**7/5) + r**21*(-1344*I*omega**9 + 12096*omega**8/5 - 2688*I*omega**7/5 + 1536*omega**6/5) + r**20*(2688*I*omega**9 - 8064*omega**8 + 16128*I*omega**7/5 - 4224*omega**6) + r**19*(-16128*I*omega**9/5 + 16128*omega**8 - 10752*I*omega**7 + 123648*omega**6/5 + 4608*omega**4/5) + r**18*(10752*I*omega**9/5 - 96768*omega**8/5 + 21504*I*omega**7 - 397824*omega**6/5 - 59904*omega**4/5 - 3072*I*omega**3/5) + r**17*(-3072*I*omega**9/5 + 64512*omega**8/5 - 129024*I*omega**7/5 + 150528*omega**6 + 64512*omega**4 + 43008*I*omega**3/5) + r**16*(-18432*omega**8/5 + 86016*I*omega**7/5 - 817152*omega**6/5 - 903168*omega**4/5 - 258048*I*omega**3/5 + 18432*omega**2/5 - 6144*I*omega/5) + r**15*(-24576*I*omega**7/5 + 86016*omega**6 + 258048*omega**4 + 172032*I*omega**3 - 258048*omega**2/5 + 86016*I*omega/5 - 12288/5) + r**14*(-24576*omega**6/5 - 516096*omega**4/5 - 344064*I*omega**3 + 1548288*omega**2/5 - 516096*I*omega/5 + 196608/5) + r**13*(-49152*omega**6/5 - 1032192*omega**4/5 + 2064384*I*omega**3/5 - 1032192*omega**2 + 344064*I*omega - 1376256/5) + r**12*(294912*omega**4 - 1376256*I*omega**3/5 + 2064384*omega**2 - 688128*I*omega + 5505024/5) + r**11*(-589824*omega**4/5 + 393216*I*omega**3/5 - 12386304*omega**2/5 + 4128768*I*omega/5 - 2752512) + r**10*(8257536*omega**2/5 - 2752512*I*omega/5 + 22020096/5) + r**9*(-2359296*omega**2/5 + 786432*I*omega/5 - 22020096/5) + 12582912*r**8/5 - 3145728*r**7/5)/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(-96*I*omega**7*r**23/5 + 1536*I*omega**7*r**22/5 + 6291456*I*omega*r**10/5 - 1572864*I*omega*r**9/5 + r**21*(-10752*I*omega**7/5 - 1152*I*omega**5/5) + r**20*(43008*I*omega**7/5 + 18432*I*omega**5/5) + r**19*(-21504*I*omega**7 - 129024*I*omega**5/5 - 4608*I*omega**3/5) + r**18*(172032*I*omega**7/5 + 516096*I*omega**5/5 + 73728*I*omega**3/5) + r**17*(-172032*I*omega**7/5 - 258048*I*omega**5 - 516096*I*omega**3/5 - 6144*I*omega/5) + r**16*(98304*I*omega**7/5 + 2064384*I*omega**5/5 + 2064384*I*omega**3/5 + 98304*I*omega/5) + r**15*(-24576*I*omega**7/5 - 2064384*I*omega**5/5 - 1032192*I*omega**3 - 688128*I*omega/5) + r**14*(1179648*I*omega**5/5 + 8257536*I*omega**3/5 + 2752512*I*omega/5) + r**13*(-294912*I*omega**5/5 - 8257536*I*omega**3/5 - 1376256*I*omega) + r**12*(4718592*I*omega**3/5 + 11010048*I*omega/5) + r**11*(-1179648*I*omega**3/5 - 11010048*I*omega/5))/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(96*I*omega**9*r**22/5 - 4718592*I*omega*r**6/5 + r**21*(-1344*I*omega**9/5 - 288*omega**8/5) + r**20*(8064*I*omega**9/5 + 864*omega**8 + 192*I*omega**7) + r**19*(-5376*I*omega**9 - 28224*omega**8/5 - 12864*I*omega**7/5 - 3456*omega**6/5) + r**18*(10752*I*omega**9 + 104832*omega**8/5 + 72576*I*omega**7/5 + 10368*omega**6 + 2304*I*omega**5/5) + r**17*(-64512*I*omega**9/5 - 48384*omega**8 - 220416*I*omega**7/5 - 338688*omega**6/5 - 25344*I*omega**5/5 - 13824*omega**4/5) + r**16*(43008*I*omega**9/5 + 354816*omega**8/5 + 75264*I*omega**7 + 1257984*omega**6/5 + 96768*I*omega**5/5 + 41472*omega**4 - 3072*I*omega**3/5) + r**15*(-12288*I*omega**9/5 - 64512*omega**8 - 64512*I*omega**7 - 580608*omega**6 - 64512*I*omega**5/5 - 1354752*omega**4/5 + 70656*I*omega**3/5 - 18432*omega**2/5) + r**14*(165888*omega**8/5 + 43008*I*omega**7/5 + 4257792*omega**6/5 - 129024*I*omega**5 + 5031936*omega**4/5 - 129024*I*omega**3 + 55296*omega**2 - 12288*I*omega/5) + r**13*(-36864*omega**8/5 + 135168*I*omega**7/5 - 774144*omega**6 + 2322432*I*omega**5/5 - 2322432*omega**4 + 3182592*I*omega**3/5 - 1806336*omega**2/5 + 208896*I*omega/5) + r**12*(-73728*I*omega**7/5 + 1990656*omega**6/5 - 3612672*I*omega**5/5 + 17031168*omega**4/5 - 1892352*I*omega**3 + 6709248*omega**2/5 - 1548288*I*omega/5) + r**11*(-442368*omega**6/5 + 2801664*I*omega**5/5 - 3096576*omega**4 + 17547264*I*omega**3/5 - 3096576*omega**2 + 6537216*I*omega/5) + r**10*(-884736*I*omega**5/5 + 7962624*omega**4/5 - 19955712*I*omega**3/5 + 22708224*omega**2/5 - 3440640*I*omega) + r**9*(-1769472*omega**4/5 + 2555904*I*omega**3 - 4128768*omega**2 + 28901376*I*omega/5) + r**8*(-3538944*I*omega**3/5 + 10616832*omega**2/5 - 30277632*I*omega/5) + r**7*(-2359296*omega**2/5 + 18087936*I*omega/5))/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(48*omega**8*r**22/5 + 1572864*I*omega*r**7/5 + r**21*(-768*omega**8/5 + 96*I*omega**7/5) + r**20*(5376*omega**8/5 - 1536*I*omega**7/5 + 576*omega**6/5) + r**19*(-21504*omega**8/5 + 10752*I*omega**7/5 - 9216*omega**6/5 + 1152*I*omega**5/5) + r**18*(10752*omega**8 - 43008*I*omega**7/5 + 64512*omega**6/5 - 18432*I*omega**5/5 + 2304*omega**4/5) + r**17*(-86016*omega**8/5 + 21504*I*omega**7 - 258048*omega**6/5 + 129024*I*omega**5/5 - 36864*omega**4/5 + 4608*I*omega**3/5) + r**16*(86016*omega**8/5 - 172032*I*omega**7/5 + 129024*omega**6 - 516096*I*omega**5/5 + 258048*omega**4/5 - 73728*I*omega**3/5 + 3072*omega**2/5) + r**15*(-49152*omega**8/5 + 172032*I*omega**7/5 - 1032192*omega**6/5 + 258048*I*omega**5 - 1032192*omega**4/5 + 516096*I*omega**3/5 - 49152*omega**2/5 + 6144*I*omega/5) + r**14*(12288*omega**8/5 - 98304*I*omega**7/5 + 1032192*omega**6/5 - 2064384*I*omega**5/5 + 516096*omega**4 - 2064384*I*omega**3/5 + 344064*omega**2/5 - 98304*I*omega/5) + r**13*(24576*I*omega**7/5 - 589824*omega**6/5 + 2064384*I*omega**5/5 - 4128768*omega**4/5 + 1032192*I*omega**3 - 1376256*omega**2/5 + 688128*I*omega/5) + r**12*(147456*omega**6/5 - 1179648*I*omega**5/5 + 4128768*omega**4/5 - 8257536*I*omega**3/5 + 688128*omega**2 - 2752512*I*omega/5) + r**11*(294912*I*omega**5/5 - 2359296*omega**4/5 + 8257536*I*omega**3/5 - 5505024*omega**2/5 + 1376256*I*omega) + r**10*(589824*omega**4/5 - 4718592*I*omega**3/5 + 5505024*omega**2/5 - 11010048*I*omega/5) + r**9*(1179648*I*omega**3/5 - 3145728*omega**2/5 + 11010048*I*omega/5) + r**8*(786432*omega**2/5 - 6291456*I*omega/5))/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)"
+      ],
+      [
+        "(384*I*omega**9*r**21/5 + r**20*(-4608*I*omega**9/5 + 576*omega**8/5) + r**19*(4608*I*omega**9 - 1536*omega**8 + 4992*I*omega**7/5) + r**18*(-12288*I*omega**9 + 43776*omega**8/5 - 58752*I*omega**7/5 + 6912*omega**6/5) + r**17*(18432*I*omega**9 - 27648*omega**8 + 285696*I*omega**7/5 - 92928*omega**6/5 + 4608*I*omega**5) + r**16*(-73728*I*omega**9/5 + 52224*omega**8 - 145920*I*omega**7 + 534528*omega**6/5 - 262656*I*omega**5/5 + 27648*omega**4/5) + r**15*(24576*I*omega**9/5 - 294912*omega**8/5 + 202752*I*omega**7 - 340992*omega**6 + 1216512*I*omega**5/5 - 377856*omega**4/5 + 43008*I*omega**3/5) + r**14*(36864*omega**8 - 681984*I*omega**7/5 + 651264*omega**6 - 571392*I*omega**5 + 442368*omega**4 - 92160*I*omega**3 + 36864*omega**2/5) + r**13*(-49152*omega**8/5 + 98304*I*omega**7/5 - 3723264*omega**6/5 + 663552*I*omega**5 - 1437696*omega**4 + 1916928*I*omega**3/5 - 528384*omega**2/5 + 24576*I*omega/5) + r**12*(73728*I*omega**7/5 + 2359296*omega**6/5 - 221184*I*omega**5 + 2801664*omega**4 - 712704*I*omega**3 + 3244032*omega**2/5 - 221184*I*omega/5) + r**11*(-638976*omega**6/5 - 1179648*I*omega**5/5 - 16367616*omega**4/5 + 294912*I*omega**3 - 2211840*omega**2 + 589824*I*omega/5 - 49152/5) + r**10*(884736*I*omega**5/5 + 10616832*omega**4/5 + 5013504*I*omega**3/5 + 4521984*omega**2 + 98304*I*omega + 589824/5) + r**9*(-589824*omega**4 - 1572864*I*omega**3 - 27721728*omega**2/5 - 1179648*I*omega - 589824) + r**8*(3538944*I*omega**3/5 + 18874368*omega**2/5 + 12976128*I*omega/5 + 1572864) + r**7*(-5505024*omega**2/5 - 12582912*I*omega/5 - 2359296) + r**6*(4718592*I*omega/5 + 9437184/5) - 3145728*r**5/5)/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(96*omega**8*r**21/5 - 1344*omega**8*r**20/5 + r**19*(8064*omega**8/5 + 1536*omega**6/5) + r**18*(-5376*omega**8 - 21504*omega**6/5) + r**17*(10752*omega**8 + 129024*omega**6/5 + 9216*omega**4/5) + r**16*(-64512*omega**8/5 - 86016*omega**6 - 129024*omega**4/5) + r**15*(43008*omega**8/5 + 172032*omega**6 + 774144*omega**4/5 + 24576*omega**2/5) + r**14*(-12288*omega**8/5 - 1032192*omega**6/5 - 516096*omega**4 - 344064*omega**2/5) + r**13*(688128*omega**6/5 + 1032192*omega**4 + 2064384*omega**2/5 + 24576/5) + r**12*(-196608*omega**6/5 - 6193152*omega**4/5 - 1376256*omega**2 - 344064/5) + r**11*(4128768*omega**4/5 + 2752512*omega**2 + 2064384/5) + r**10*(-1179648*omega**4/5 - 16515072*omega**2/5 - 1376256) + r**9*(11010048*omega**2/5 + 2752512) + r**8*(-3145728*omega**2/5 - 16515072/5) + 11010048*r**7/5 - 3145728*r**6/5)/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(-192*omega**10*r**22/5 - 4718592*I*omega*r**5/5 + r**21*(2304*omega**10/5 + 672*I*omega**9/5) + r**20*(-2304*omega**10 - 1728*I*omega**9 - 1344*omega**8/5) + r**19*(6144*omega**10 + 47232*I*omega**9/5 + 13824*omega**8/5 + 7296*I*omega**7/5) + r**18*(-9216*omega**10 - 28416*I*omega**9 - 52416*omega**8/5 - 18432*I*omega**7 + 2304*omega**6/5) + r**17*(36864*omega**10/5 + 50688*I*omega**9 + 69888*omega**8/5 + 491904*I*omega**7/5 - 55296*omega**6/5 + 4608*I*omega**5) + r**16*(-12288*omega**10/5 - 267264*I*omega**9/5 + 16128*omega**8 - 1430016*I*omega**7/5 + 476928*omega**6/5 - 55296*I*omega**5 + 33792*omega**4/5) + r**15*(30720*I*omega**9 - 387072*omega**8/5 + 483840*I*omega**7 - 2110464*omega**6/5 + 1368576*I*omega**5/5 - 516096*omega**4/5 + 6144*I*omega**3/5) + r**14*(-36864*I*omega**9/5 + 494592*omega**8/5 - 2322432*I*omega**7/5 + 1078272*omega**6 - 3520512*I*omega**5/5 + 3382272*omega**4/5 + 12288*omega**2) + r**13*(-258048*omega**8/5 + 215040*I*omega**7 - 8183808*omega**6/5 + 940032*I*omega**5 - 12374016*omega**4/5 - 571392*I*omega**3/5 - 884736*omega**2/5 - 49152*I*omega/5) + r**12*(36864*omega**8/5 - 73728*I*omega**7/5 + 7114752*omega**6/5 - 442368*I*omega**5 + 5492736*omega**4 + 4104192*I*omega**3/5 + 5492736*omega**2/5 + 147456*I*omega) + r**11*(-73728*I*omega**7/5 - 3096576*omega**6/5 - 368640*I*omega**5 - 37453824*omega**4/5 - 2727936*I*omega**3 - 19120128*omega**2/5 - 958464*I*omega) + r**10*(442368*omega**6/5 + 2654208*I*omega**5/5 + 30031872*omega**4/5 + 25362432*I*omega**3/5 + 8110080*omega**2 + 17596416*I*omega/5) + r**9*(-884736*I*omega**5/5 - 12386304*omega**4/5 - 5406720*I*omega**3 - 10616832*omega**2 - 7962624*I*omega) + r**8*(1769472*omega**4/5 + 15335424*I*omega**3/5 + 41091072*omega**2/5 + 56623104*I*omega/5) + r**7*(-3538944*I*omega**3/5 - 16515072*omega**2/5 - 9830400*I*omega) + r**6*(2359296*omega**2/5 + 4718592*I*omega))/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(96*I*omega**9*r**22/5 - 4718592*I*omega*r**6/5 + r**21*(-1344*I*omega**9/5 + 288*omega**8/5) + r**20*(8064*I*omega**9/5 - 864*omega**8 + 192*I*omega**7) + r**19*(-5376*I*omega**9 + 28224*omega**8/5 - 12864*I*omega**7/5 + 3456*omega**6/5) + r**18*(10752*I*omega**9 - 104832*omega**8/5 + 72576*I*omega**7/5 - 10368*omega**6 + 2304*I*omega**5/5) + r**17*(-64512*I*omega**9/5 + 48384*omega**8 - 220416*I*omega**7/5 + 338688*omega**6/5 - 25344*I*omega**5/5 + 13824*omega**4/5) + r**16*(43008*I*omega**9/5 - 354816*omega**8/5 + 75264*I*omega**7 - 1257984*omega**6/5 + 96768*I*omega**5/5 - 41472*omega**4 - 3072*I*omega**3/5) + r**15*(-12288*I*omega**9/5 + 64512*omega**8 - 64512*I*omega**7 + 580608*omega**6 - 64512*I*omega**5/5 + 1354752*omega**4/5 + 70656*I*omega**3/5 + 18432*omega**2/5) + r**14*(-165888*omega**8/5 + 43008*I*omega**7/5 - 4257792*omega**6/5 - 129024*I*omega**5 - 5031936*omega**4/5 - 129024*I*omega**3 - 55296*omega**2 - 12288*I*omega/5) + r**13*(36864*omega**8/5 + 135168*I*omega**7/5 + 774144*omega**6 + 2322432*I*omega**5/5 + 2322432*omega**4 + 3182592*I*omega**3/5 + 1806336*omega**2/5 + 208896*I*omega/5) + r**12*(-73728*I*omega**7/5 - 1990656*omega**6/5 - 3612672*I*omega**5/5 - 17031168*omega**4/5 - 1892352*I*omega**3 - 6709248*omega**2/5 - 1548288*I*omega/5) + r**11*(442368*omega**6/5 + 2801664*I*omega**5/5 + 3096576*omega**4 + 17547264*I*omega**3/5 + 3096576*omega**2 + 6537216*I*omega/5) + r**10*(-884736*I*omega**5/5 - 7962624*omega**4/5 - 19955712*I*omega**3/5 - 22708224*omega**2/5 - 3440640*I*omega) + r**9*(1769472*omega**4/5 + 2555904*I*omega**3 + 4128768*omega**2 + 28901376*I*omega/5) + r**8*(-3538944*I*omega**3/5 - 10616832*omega**2/5 - 30277632*I*omega/5) + r**7*(2359296*omega**2/5 + 18087936*I*omega/5))/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "0",
+        "0"
+      ],
+      [
+        "(-192*omega**8*r**21/5 + r**20*(2688*omega**8/5 + 192*I*omega**7/5) + r**19*(-16128*omega**8/5 - 2688*I*omega**7/5 - 2688*omega**6/5) + r**18*(10752*omega**8 + 16128*I*omega**7/5 + 37632*omega**6/5 + 2304*I*omega**5/5) + r**17*(-21504*omega**8 - 10752*I*omega**7 - 225792*omega**6/5 - 32256*I*omega**5/5 - 13824*omega**4/5) + r**16*(129024*omega**8/5 + 21504*I*omega**7 + 150528*omega**6 + 193536*I*omega**5/5 + 193536*omega**4/5 + 9216*I*omega**3/5) + r**15*(-86016*omega**8/5 - 129024*I*omega**7/5 - 301056*omega**6 - 129024*I*omega**5 - 1161216*omega**4/5 - 129024*I*omega**3/5 - 6144*omega**2) + r**14*(24576*omega**8/5 + 86016*I*omega**7/5 + 1806336*omega**6/5 + 258048*I*omega**5 + 774144*omega**4 + 774144*I*omega**3/5 + 86016*omega**2 + 12288*I*omega/5) + r**13*(-24576*I*omega**7/5 - 1204224*omega**6/5 - 1548288*I*omega**5/5 - 1548288*omega**4 - 516096*I*omega**3 - 516096*omega**2 - 172032*I*omega/5 - 24576/5) + r**12*(344064*omega**6/5 + 1032192*I*omega**5/5 + 9289728*omega**4/5 + 1032192*I*omega**3 + 1720320*omega**2 + 1032192*I*omega/5 + 344064/5) + r**11*(-294912*I*omega**5/5 - 6193152*omega**4/5 - 6193152*I*omega**3/5 - 3440640*omega**2 - 688128*I*omega - 2064384/5) + r**10*(1769472*omega**4/5 + 4128768*I*omega**3/5 + 4128768*omega**2 + 1376256*I*omega + 1376256) + r**9*(-1179648*I*omega**3/5 - 2752512*omega**2 - 8257536*I*omega/5 - 2752512) + r**8*(786432*omega**2 + 5505024*I*omega/5 + 16515072/5) + r**7*(-1572864*I*omega/5 - 11010048/5) + 3145728*r**6/5)/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "0",
+        "(-96*I*omega**9*r**22/5 + 1572864*I*omega*r**6/5 + r**21*(1344*I*omega**9/5 - 288*omega**8/5) + r**20*(-8064*I*omega**9/5 + 4128*omega**8/5 - 192*I*omega**7) + r**19*(5376*I*omega**9 - 25536*omega**8/5 + 13248*I*omega**7/5 - 3456*omega**6/5) + r**18*(-10752*I*omega**9 + 88704*omega**8/5 - 77952*I*omega**7/5 + 49536*omega**6/5 - 2304*I*omega**5/5) + r**17*(64512*I*omega**9/5 - 37632*omega**8 + 252672*I*omega**7/5 - 306432*omega**6/5 + 29952*I*omega**5/5 - 13824*omega**4/5) + r**16*(-43008*I*omega**9/5 + 247296*omega**8/5 - 96768*I*omega**7 + 1064448*omega**6/5 - 32256*I*omega**5 + 198144*omega**4/5 + 3072*I*omega**3/5) + r**15*(12288*I*omega**9/5 - 193536*omega**8/5 + 107520*I*omega**7 - 451584*omega**6 + 451584*I*omega**5/5 - 1225728*omega**4/5 - 52224*I*omega**3/5 - 18432*omega**2/5) + r**14*(79872*omega**8/5 - 301056*I*omega**7/5 + 2967552*omega**6/5 - 129024*I*omega**5 + 4257792*omega**4/5 + 387072*I*omega**3/5 + 264192*omega**2/5 + 12288*I*omega/5) + r**13*(-12288*omega**8/5 + 36864*I*omega**7/5 - 2322432*omega**6/5 + 258048*I*omega**5/5 - 1806336*omega**4 - 1634304*I*omega**3/5 - 1634304*omega**2/5 - 36864*I*omega) + r**12*(24576*I*omega**7/5 + 958464*omega**6/5 + 516096*I*omega**5/5 + 11870208*omega**4/5 + 860160*I*omega**3 + 5677056*omega**2/5 + 1204224*I*omega/5) + r**11*(-147456*omega**6/5 - 147456*I*omega**5 - 9289728*omega**4/5 - 7225344*I*omega**3/5 - 2408448*omega**2 - 4472832*I*omega/5) + r**10*(294912*I*omega**5/5 + 3833856*omega**4/5 + 7569408*I*omega**3/5 + 15826944*omega**2/5 + 2064384*I*omega) + r**9*(-589824*omega**4/5 - 4521984*I*omega**3/5 - 12386304*omega**2/5 - 15138816*I*omega/5) + r**8*(1179648*I*omega**3/5 + 5111808*omega**2/5 + 2752512*I*omega) + r**7*(-786432*omega**2/5 - 7077888*I*omega/5))/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "(-48*omega**8*r**22/5 + 1572864*I*omega*r**7/5 + r**21*(768*omega**8/5 + 96*I*omega**7/5) + r**20*(-5376*omega**8/5 - 1536*I*omega**7/5 - 576*omega**6/5) + r**19*(21504*omega**8/5 + 10752*I*omega**7/5 + 9216*omega**6/5 + 1152*I*omega**5/5) + r**18*(-10752*omega**8 - 43008*I*omega**7/5 - 64512*omega**6/5 - 18432*I*omega**5/5 - 2304*omega**4/5) + r**17*(86016*omega**8/5 + 21504*I*omega**7 + 258048*omega**6/5 + 129024*I*omega**5/5 + 36864*omega**4/5 + 4608*I*omega**3/5) + r**16*(-86016*omega**8/5 - 172032*I*omega**7/5 - 129024*omega**6 - 516096*I*omega**5/5 - 258048*omega**4/5 - 73728*I*omega**3/5 - 3072*omega**2/5) + r**15*(49152*omega**8/5 + 172032*I*omega**7/5 + 1032192*omega**6/5 + 258048*I*omega**5 + 1032192*omega**4/5 + 516096*I*omega**3/5 + 49152*omega**2/5 + 6144*I*omega/5) + r**14*(-12288*omega**8/5 - 98304*I*omega**7/5 - 1032192*omega**6/5 - 2064384*I*omega**5/5 - 516096*omega**4 - 2064384*I*omega**3/5 - 344064*omega**2/5 - 98304*I*omega/5) + r**13*(24576*I*omega**7/5 + 589824*omega**6/5 + 2064384*I*omega**5/5 + 4128768*omega**4/5 + 1032192*I*omega**3 + 1376256*omega**2/5 + 688128*I*omega/5) + r**12*(-147456*omega**6/5 - 1179648*I*omega**5/5 - 4128768*omega**4/5 - 8257536*I*omega**3/5 - 688128*omega**2 - 2752512*I*omega/5) + r**11*(294912*I*omega**5/5 + 2359296*omega**4/5 + 8257536*I*omega**3/5 + 5505024*omega**2/5 + 1376256*I*omega) + r**10*(-589824*omega**4/5 - 4718592*I*omega**3/5 - 5505024*omega**2/5 - 11010048*I*omega/5) + r**9*(1179648*I*omega**3/5 + 3145728*omega**2/5 + 11010048*I*omega/5) + r**8*(-786432*omega**2/5 - 6291456*I*omega/5))/(r**7*(r - 2)**6*(omega*r - 2*I)**4*(omega*r + 2*I)**4)",
+        "0",
+        "0"
+      ]
+    ],
+    "maximum_numerator_omega_degree": 13,
+    "maximum_numerator_r_degree": 29,
+    "method": "localized-ring degree bound plus 30 exact rational-radius evaluations over QQ(I)(omega)",
+    "observed_entry_numerator_degrees": [
+      [
+        {
+          "omega": 0,
+          "r": 0
+        },
+        {
+          "omega": 8,
+          "r": 23
+        },
+        {
+          "omega": 8,
+          "r": 21
+        },
+        {
+          "omega": 8,
+          "r": 23
+        },
+        {
+          "omega": 9,
+          "r": 21
+        },
+        {
+          "omega": 8,
+          "r": 21
+        }
+      ],
+      [
+        {
+          "omega": 8,
+          "r": 23
+        },
+        {
+          "omega": 0,
+          "r": 0
+        },
+        {
+          "omega": 9,
+          "r": 24
+        },
+        {
+          "omega": 8,
+          "r": 24
+        },
+        {
+          "omega": 8,
+          "r": 21
+        },
+        {
+          "omega": 0,
+          "r": 0
+        }
+      ],
+      [
+        {
+          "omega": 8,
+          "r": 21
+        },
+        {
+          "omega": 9,
+          "r": 24
+        },
+        {
+          "omega": 9,
+          "r": 23
+        },
+        {
+          "omega": 9,
+          "r": 24
+        },
+        {
+          "omega": 10,
+          "r": 22
+        },
+        {
+          "omega": 9,
+          "r": 22
+        }
+      ],
+      [
+        {
+          "omega": 8,
+          "r": 23
+        },
+        {
+          "omega": 8,
+          "r": 24
+        },
+        {
+          "omega": 9,
+          "r": 24
+        },
+        {
+          "omega": 7,
+          "r": 23
+        },
+        {
+          "omega": 9,
+          "r": 22
+        },
+        {
+          "omega": 8,
+          "r": 22
+        }
+      ],
+      [
+        {
+          "omega": 9,
+          "r": 21
+        },
+        {
+          "omega": 8,
+          "r": 21
+        },
+        {
+          "omega": 10,
+          "r": 22
+        },
+        {
+          "omega": 9,
+          "r": 22
+        },
+        {
+          "omega": 0,
+          "r": 0
+        },
+        {
+          "omega": 0,
+          "r": 0
+        }
+      ],
+      [
+        {
+          "omega": 8,
+          "r": 21
+        },
+        {
+          "omega": 0,
+          "r": 0
+        },
+        {
+          "omega": 9,
+          "r": 22
+        },
+        {
+          "omega": 8,
+          "r": 22
+        },
+        {
+          "omega": 0,
+          "r": 0
+        },
+        {
+          "omega": 0,
+          "r": 0
+        }
+      ]
+    ],
+    "sample_count": 30,
+    "sample_radii": [
+      {
+        "literal_matrix_sha256": "52f8f66d82c45d77148536a1458c3a0321b63a8c80c31885e81668b0dc3b3546",
+        "radius": 3
+      },
+      {
+        "literal_matrix_sha256": "0d4251385501340f0c6f46fa5cece18187b6eedb2ad74ea1cc5fbd299c74ecac",
+        "radius": 4
+      },
+      {
+        "literal_matrix_sha256": "3e513dcbfed670af79a88c0b0b81311787647940ab29687feb74f0c91450e7d6",
+        "radius": 5
+      },
+      {
+        "literal_matrix_sha256": "0fbf29131f57908912299f339abb1774cd660a43eced9689aac255ba3380b01b",
+        "radius": 6
+      },
+      {
+        "literal_matrix_sha256": "e04e7d46746e0fd2fa1364f82e5d27e42162714768cd552049f41360fe11b56b",
+        "radius": 7
+      },
+      {
+        "literal_matrix_sha256": "17e699f22e071d5f6533bc6ee09b8cb7f538f77c10278237a2a76e17c4d1a009",
+        "radius": 8
+      },
+      {
+        "literal_matrix_sha256": "1266ef757245883e68e9d827341f9b36c30307a97bc3c482a7a99b9ed279f771",
+        "radius": 9
+      },
+      {
+        "literal_matrix_sha256": "23800df3df74964b6e189d502f91b1fa3e1033263ae1e2accb63a70dab44559d",
+        "radius": 10
+      },
+      {
+        "literal_matrix_sha256": "5f214b66e3a75aa80c6ac345f534a0e7768ab6cf1369a72d5ce1f1b79cc28da3",
+        "radius": 11
+      },
+      {
+        "literal_matrix_sha256": "0a41d7022ded2d0f89f9087becf36357409a0616dae393ddeb4e7b6d1baba1ec",
+        "radius": 12
+      },
+      {
+        "literal_matrix_sha256": "32021687b3357460001d1fc14a54d1adf2e9d591b5327fc92b35d29655fe0bfe",
+        "radius": 13
+      },
+      {
+        "literal_matrix_sha256": "cc40403fa7b56b4e59f1ed15eef6d5c34f701e3640da34ed2ea10d8d69210aa8",
+        "radius": 14
+      },
+      {
+        "literal_matrix_sha256": "35a480e891467d402c18346ad7a29afd358ca263e2bc47c7121e1d142de986b6",
+        "radius": 15
+      },
+      {
+        "literal_matrix_sha256": "ef4c3685560c6a5b33e9f50b2557f2b954da012f2280372acd436c83b9b91fe4",
+        "radius": 16
+      },
+      {
+        "literal_matrix_sha256": "9f36d99a63139a4f2b3e4fc398fdc461a31cf447704f507d12aa9b86034b4606",
+        "radius": 17
+      },
+      {
+        "literal_matrix_sha256": "ef26837a6c9b80645bd80a362e20b04806ec2f32309816580a24f2408edc237a",
+        "radius": 18
+      },
+      {
+        "literal_matrix_sha256": "a19fb23caf309650548394f1fcac221e450ef4fec372bcea6afe3439f11bb149",
+        "radius": 19
+      },
+      {
+        "literal_matrix_sha256": "01f8a5307677ed46e3d3eb5547fa9f2f70160aa6f7ae1d7a8c6e7162ba67412d",
+        "radius": 20
+      },
+      {
+        "literal_matrix_sha256": "18eef341db4647aec2c9770ca2d17dba28402d1d282063faf52bd22acfc79767",
+        "radius": 21
+      },
+      {
+        "literal_matrix_sha256": "77c7388bbec9965c8710b65207cd67ec84ce48a13c3c4c49140f93d13bb99845",
+        "radius": 22
+      },
+      {
+        "literal_matrix_sha256": "51f687beed29301bf2e3483df3605fd699fcbda6224a86349f165d07cbc7d14c",
+        "radius": 23
+      },
+      {
+        "literal_matrix_sha256": "caca56f113040b5ba6983592a8f5f041fa9748703b556325f9cd66c594ad6fa2",
+        "radius": 24
+      },
+      {
+        "literal_matrix_sha256": "9d2d1f0de49173c506c66d252ebeb3ec084aff081f08694f5b47615a4c6ba715",
+        "radius": 25
+      },
+      {
+        "literal_matrix_sha256": "0b47ba6810197e63a5fbf278760a47a9902f12e36d9abb63535b0d0039426062",
+        "radius": 26
+      },
+      {
+        "literal_matrix_sha256": "208cc464f0f5d6d5b3478ce5a81e0d00308147b336b2a866a013fe6afadb4184",
+        "radius": 27
+      },
+      {
+        "literal_matrix_sha256": "ff3ac0bd2cc274fd25b8f570d341a9c7499426fd3c9397759687e0d197fe7a64",
+        "radius": 28
+      },
+      {
+        "literal_matrix_sha256": "30fa7550c26e6ea9dab61abae42f00ab843bee3599596068ec8b237bdb599f8c",
+        "radius": 29
+      },
+      {
+        "literal_matrix_sha256": "0c45c8d0c227eaf4779054b6e1929c35faab54d197b2bd22b137d800f85a429c",
+        "radius": 30
+      },
+      {
+        "literal_matrix_sha256": "d39876c9b4f56b62d2ea54a5e6d2e81a02b8e5e6019216d65272f2fad2c42801",
+        "radius": 31
+      },
+      {
+        "literal_matrix_sha256": "ffb6b13575533a73932021f001c6632a03c4dc5e9bbd208fcd9661188ad9bb6b",
+        "radius": 32
+      }
+    ]
+  },
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_ARBITRARY_RADIUS_CURRENT_CONSERVATION_V1",
+  "result_token": "LITERAL_ACTION_CURRENT_CONSERVATION_EXACT_ALL_R",
+  "schema": "phase3-black-hole-axial-arbitrary-radius-current-conservation-v1",
+  "verification": {
+    "exhaustive_literal_replay": "python3 -m black_hole_programme.phase3.axial_arbitrary_radius_current_conservation.verify --replay-literal-samples",
+    "independent_verifier": "python3 -m black_hole_programme.phase3.axial_arbitrary_radius_current_conservation.verify",
+    "producer_reproduction": "python3 -m black_hole_programme.phase3.axial_arbitrary_radius_current_conservation.produce --check",
+    "tests": "python3 -m pytest -q black_hole_programme/phase3/axial_arbitrary_radius_current_conservation/tests"
+  }
+}

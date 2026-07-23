@@ -1,0 +1,29 @@
+{
+  "schema": "phase3-black-hole-axial-current-interpolation-shortfall-v1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "superseded_artifact": {
+    "path": "black_hole_programme/phase3/axial_arbitrary_radius_current_conservation/literal-samples-26-superseded.json",
+    "sha256": "713b1d762b967f199c5a8ebcf8c94c925cfd6a76d028a832e533dbe7e92a3830",
+    "sample_count": 26,
+    "radii": "3,...,28"
+  },
+  "superseded_receipt": {
+    "path": "black_hole_programme/phase3/axial_arbitrary_radius_current_conservation/literal-samples-26-superseded-receipt.json",
+    "sha256": "320100552d5f2139b15bdea5609de11942adea2ad5a9b0758db799ce178744f2"
+  },
+  "disposition": "SUPERSEDED_SHORTFALL_NOT_ACCEPTED_AS_PROOF",
+  "reason": "The first audit recorded per-entry denominator/degree maxima independently. Promotion to one common interpolation denominator requires r^7*(r-2)^6*(omega*r-2*I)^5 and raises the cleared radial degree bound to 26. Thus 27, not 26, distinct exact nodes are required.",
+  "replacement_requirements": {
+    "common_denominator": "r^7*(r-2)^6*(omega*r-2*I)^5",
+    "maximum_cleared_radial_degree": 26,
+    "minimum_distinct_nodes": 27,
+    "canonical_radii": "3,...,29"
+  },
+  "claim_flags": {
+    "arbitrary_radius_literal_current_reconstructed": false,
+    "conservation_identity_established": false
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phase 3 axial arbitrary-radius current conservation",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_token",
+    "lifecycle",
+    "dependency_tags",
+    "declaration",
+    "literal_current_reconstruction",
+    "conservation_proof",
+    "claim_flags",
+    "imports",
+    "does_not_establish",
+    "verification"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-black-hole-axial-arbitrary-radius-current-conservation-v1"
+    },
+    "result_id": {"type": "string"},
+    "result_token": {
+      "const": "LITERAL_ACTION_CURRENT_CONSERVATION_EXACT_ALL_R"
+    },
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "REDUCED-MODE"}
+    },
+    "declaration": {
+      "type": "object",
+      "required": ["domain", "state_order", "current_normalization"]
+    },
+    "literal_current_reconstruction": {
+      "type": "object",
+      "required": [
+        "sample_radii",
+        "sample_count",
+        "common_denominator",
+        "denominator_exponents",
+        "maximum_numerator_r_degree",
+        "maximum_numerator_omega_degree",
+        "observed_entry_numerator_degrees",
+        "matrix_without_pi_alpha"
+      ],
+      "properties": {
+        "sample_radii": {
+          "type": "array",
+          "minItems": 30,
+          "maxItems": 30,
+          "items": {
+            "type": "object",
+            "required": ["radius", "literal_matrix_sha256"],
+            "properties": {
+              "radius": {"type": "integer", "exclusiveMinimum": 2},
+              "literal_matrix_sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            }
+          }
+        },
+        "sample_count": {"const": 30},
+        "common_denominator": {
+          "const": "r^7*(r-2)^6*(omega*r-2*I)^4*(omega*r+2*I)^4"
+        },
+        "maximum_numerator_r_degree": {"const": 29},
+        "maximum_numerator_omega_degree": {"const": 13},
+        "matrix_without_pi_alpha": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "array",
+            "minItems": 6,
+            "maxItems": 6,
+            "items": {"type": "string"}
+          }
+        }
+      }
+    },
+    "conservation_proof": {
+      "type": "object",
+      "required": [
+        "identity",
+        "zero_numerator_count",
+        "nonzero_numerator_count",
+        "proof_ring",
+        "status"
+      ],
+      "properties": {
+        "zero_numerator_count": {"const": 36},
+        "nonzero_numerator_count": {"const": 0},
+        "proof_ring": {"const": "QQ(I)(r,omega)"},
+        "status": {"const": "EXACT_RATIONAL_IDENTITY"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "literal_action_current_reconstructed_for_arbitrary_r",
+        "repaired_six_state_current_conservation_certified",
+        "global_connection_constructed",
+        "endpoint_flux_limits_certified",
+        "scattering_or_stability_certified"
+      ]
+    },
+    "imports": {"type": "object", "minProperties": 5},
+    "does_not_establish": {"type": "array", "minItems": 4},
+    "verification": {"type": "object"}
+  }
+}

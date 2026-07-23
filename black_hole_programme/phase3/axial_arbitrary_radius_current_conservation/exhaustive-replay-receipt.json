@@ -1,0 +1,28 @@
+{
+  "schema": "phase3-black-hole-axial-arbitrary-radius-current-exhaustive-replay-receipt-v1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "command": "python3 -m black_hole_programme.phase3.axial_arbitrary_radius_current_conservation.verify --replay-literal-samples",
+  "scope": {
+    "independent_global_rational_identity_entries": 36,
+    "independent_localized_ring_degree_audit": true,
+    "literal_action_sample_rederivations": 30,
+    "literal_action_sample_radii": "3,...,32"
+  },
+  "elapsed_seconds": 528.98,
+  "maximum_resident_kibibytes": 112860,
+  "exit_code": 0,
+  "status": "PASS",
+  "content_hashes": {
+    "certificate.json": "3fa795e2c84a665ddf0217cf764ec3e156a737d33d249e230c6b81ff07312bd6",
+    "literal-samples.json": "b889287589c1492254c7abc94890dd53e6143fa57021e6bf8fc702ee90641508",
+    "literal-samples-receipt.json": "dff42a3442a30b49a9451a8931c7948262673af0ffcc205ae449ba8360152dc4",
+    "verify.py": "38cc2eb4763137ef5e4498b9d46cc8483ecac09cf289007c1514d593200721b1",
+    "current_dag.py": "2962e0045e8ce11317f305e8e3edc9b5c9983a2b43f46cdd6dcc01d2cdfb16c2",
+    "axial_complete_reconstruction_repair/certificate.json": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+    "BH2A_FLUX_MATRIX.json": "95ca6daeabb16bf93faa1bb721e3464fc5363899a344f0281d126f9a14204732"
+  },
+  "claim_boundary": "PASS establishes exact arbitrary-r conservation for the literal action current on the repaired six-state reduced flow away from declared algebraic poles. It does not establish endpoint limits, a global connection matrix, scattering, stability, or a quantum claim."
+}
