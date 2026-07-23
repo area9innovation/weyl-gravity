@@ -76,6 +76,56 @@ inertia is constant:
 Changing the overall sign of the action reverses the positive and negative
 counts.
 
+## Uniform endpoint Hilbert-space control
+
+The matrices above define indefinite flux forms on an auxiliary positive
+Hilbert topology.  With
+
+\[
+ \|a\|_{L^2}^2=\int_{1/2}^{3/4}a(\omega)^\dagger a(\omega)\,d\omega,
+\]
+
+the normalized current form is
+
+\[
+ [a,b]_\pm=\int_{1/2}^{3/4}
+ a(\omega)^\dagger G_\pm(\omega)b(\omega)\,d\omega.
+\]
+
+This distinction matters: the positive \(L^2\) norm defines the completion;
+the action-derived flux is the indefinite form being classified.
+
+An exact Sturm audit of the Frobenius-square functions gives
+
+\[
+\begin{array}{c|cc}
+ &\displaystyle\max\|G_\pm\|_F^2&
+ \displaystyle\max\|G_\pm^{-1}\|_F^2\\ \hline
+\mathscr I^-&1429056/25&7025/65536\\
+\mathscr I^+&10389888/25&19825/65536 .
+\end{array}
+\]
+
+For \(G_-\), both norm functions are strictly decreasing.  For \(G_+\),
+each has exactly one interior critical point, and exact derivative signs
+show that point is a minimum.  Thus the displayed maxima are certified
+endpoint values, not sampled estimates.  Since
+\(\|A\|_2\leq\|A\|_F\), a common explicit estimate is
+
+\[
+\boxed{
+ \|a\|_{L^2}\leq\|G_\pm a\|_{L^2}
+ \leq645\,\|a\|_{L^2}.
+}
+\]
+
+The endpoint forms are therefore bounded and uniformly nondegenerate on the
+whole closed interval.  Spectral calculus supplies the continuous
+fundamental symmetry \(J_\pm=\operatorname{sign}(G_\pm)\) and the positive
+Krein majorant defined by \(|G_\pm|\), uniformly equivalent to the auxiliary
+\(L^2\) topology.  This canonical majorant is not a CPT metric, positive
+energy, or particle norm.
+
 ## Why the formal matrices define exact wave-packet flux
 
 The frozen current is the action-derived `LinearizedTheta` representative,
@@ -112,6 +162,42 @@ toward increasing \(r\), but the past null boundary has the opposite Stokes
 orientation.  Thus \(G_-\) is minus the coordinate-radial Gram, whereas
 \(G_+\) equals it.  This is why the two endpoint inertias agree.
 
+The incoming/outgoing convention absorbs this past-boundary sign.  Once a
+global map \(a_{\rm out}=T a_{\rm in}\) exists, the required conservation
+identity is
+
+\[
+ T^\dagger J_{\rm out}T=J_{\rm in}.
+\]
+
+If horizon channels were absent, its null-infinity restriction would be
+\(T^\dagger G_+T=G_-\).  No such \(T\) is constructed here.  Consequently,
+the negative indices are not removable by changing the declared orientation,
+but they are still only endpoint indices.
+
+## Presymplectic-improvement scope
+
+For the standard ambiguity
+
+\[
+ \theta\longmapsto\theta+\delta Y+dZ,
+\]
+
+\(\delta Y\) drops out by \(\delta^2=0\), and angular exact terms integrate
+to zero.  There is also a scoped endpoint statement: a stationary, globally
+defined, local finite-tangential-jet \(dZ\) with a finite trace-only pullback
+changes the integrated current only by cut terms.  On the
+\(C_c^\infty\) frequency core the inverse Fourier traces are Schwartz, so
+those corners vanish; continuity then preserves the conclusion on the
+declared \(L^2\) completion.
+
+This does **not** establish unrestricted representative invariance.  A
+complete audit still requires a typed improvement basis modulo \(d\) and
+\(\delta\), radial and subleading pullbacks on all six endpoint jets,
+uniform corner bounds, and the resulting additive matrices
+\(\Delta G_{\pm,A}\).  Nonlocal, soft, explicit-time, nondecaying, and
+radial/subleading improvements remain open.
+
 ## Interpretation
 
 The endpoint spaces are not radical: all three matching trace directions at
@@ -119,6 +205,14 @@ each null infinity carry nonzero, nondegenerate flux data.  The form is
 indefinite at both endpoints.  This is an endpoint theorem, not yet a
 scattering theorem.  In particular it does not say whether any selected
 \(\mathscr I^+\) direction is reached by horizon-regular data.
+
+The mature comparison is Einstein scattering on Schwarzschild, where
+finite-energy initial data and radiation states are related by Hilbert-space
+isomorphisms.  The present theorem constructs only the endpoint side for the
+axial Bach system.  Flat-space conformal-higher-spin scattering separately
+shows that admissible conformal-gravity states need not be limited to
+Einstein gravitons; it does not supply the Schwarzschild Bach connection.
+These comparisons sharpen, rather than close, the missing global map.
 
 ## Does not establish
 

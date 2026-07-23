@@ -7,8 +7,11 @@
     "global_connection_constructed": false,
     "horizon_to_infinity_matching_constructed": false,
     "scattering_channels_classified": false,
+    "scoped_trace_local_improvement_invariance_certified": true,
     "stability_or_CPT_established": false,
-    "trace_limit_interchange_proved": true
+    "trace_limit_interchange_proved": true,
+    "uniform_auxiliary_L2_isomorphism_certified": true,
+    "unrestricted_improvement_invariance_certified": false
   },
   "common_verdict": {
     "frequency_walls": [],
@@ -29,6 +32,23 @@
       "reason": "The literal frozen current is written in the Schwarzschild t chart; omitting this differentiated reconstruction changes the endpoint form."
     },
     "counterterm_or_radial_improvement_added": false,
+    "improvement_audit": {
+      "not_covered": [
+        "radial or subleading improvements",
+        "nonlocal or soft improvements",
+        "explicit-time or nondecaying improvements",
+        "improvements without a finite trace-only pullback"
+      ],
+      "scope": "stationary globally defined local finite-tangential-jet improvements with finite trace-only pullback",
+      "scoped_invariance": "delta Y vanishes by delta^2=0; angular exact terms integrate to zero; and a stationary globally defined local finite-tangential-jet dZ with finite trace-only pullback has zero cut terms on the C_c^infinity frequency core because the inverse Fourier traces are Schwartz. Its continuous L2 extension therefore leaves the endpoint Grams unchanged.",
+      "unrestricted_missing_audit": [
+        "a typed local-improvement basis {Z_A} modulo d and delta",
+        "radial and subleading pullbacks on all six endpoint jets",
+        "uniform corner-continuity bounds on the L2 completion",
+        "the exact additive matrices Delta G_A and their inertia strata"
+      ],
+      "unrestricted_status": "OPEN"
+    },
     "presymplectic_current": "omega^a(h1,h2)=delta_1 theta^a(h2)-delta_2 theta^a(h1), including density variation",
     "representative": "the frozen LinearizedTheta representative; closed-sphere angular exact forms integrate to zero, while unrestricted radial/corner improvements remain unquotiented",
     "theta": "theta^a(h)=2 E^{abcd} nabla_d h_bc - 2 h_bc nabla_d E^{abcd}"
@@ -190,7 +210,67 @@
           "192*I*omega**2/5",
           "0"
         ]
-      ]
+      ],
+      "uniform_auxiliary_L2_control": {
+        "direct_frobenius_squared": {
+          "certified_maximum": "1429056/25",
+          "critical_point_disposition": "strictly decreasing",
+          "derivative_denominator": "25*omega**3",
+          "derivative_endpoint_signs": [
+            "-",
+            "-"
+          ],
+          "derivative_numerator": "4608*(64*omega**6 + 137*omega**4 - 144)",
+          "endpoint_values": [
+            "1429056/25",
+            "809136/25"
+          ],
+          "function": "2304*(32*omega**6 + 137*omega**4 + 8*omega**2 + 144)/(25*omega**2)",
+          "interior_critical_point_count": 0,
+          "interior_pole_count": 0,
+          "proof": "Exact Sturm counts and exact derivative signs show that every interior critical point is a minimum, so the maximum is the larger exact endpoint value."
+        },
+        "inverse_frobenius_squared": {
+          "certified_maximum": "7025/65536",
+          "critical_point_disposition": "strictly decreasing",
+          "derivative_denominator": "294912*omega**7",
+          "derivative_endpoint_signs": [
+            "-",
+            "-"
+          ],
+          "derivative_numerator": "25*(4*omega**8 - 96*omega**4 - 64*omega**2 - 75)",
+          "endpoint_values": [
+            "7025/65536",
+            "32551225/1719926784"
+          ],
+          "function": "25*(4*omega**8 + 32*omega**6 + 96*omega**4 + 32*omega**2 + 25)/(589824*omega**6)",
+          "interior_critical_point_count": 0,
+          "interior_pole_count": 0,
+          "proof": "Exact Sturm counts and exact derivative signs show that every interior critical point is a minimum, so the maximum is the larger exact endpoint value."
+        },
+        "inverse_matrix": [
+          [
+            "-5*omega/384",
+            "5*I/192",
+            "5/(192*omega)"
+          ],
+          [
+            "-5*I/192",
+            "-5/(96*omega)",
+            "5*I/(192*omega**2)"
+          ],
+          [
+            "5/(192*omega)",
+            "-5*I/(192*omega**2)",
+            "-25/(768*omega**3)"
+          ]
+        ],
+        "inverse_spectral_operator_norm_strict_upper_bound": "1",
+        "method": "||A||_2<=||A||_F and ||A^(-1)||_2<=||A^(-1)||_F; the exact Frobenius-square maxima are independently certified by Sturm counts and derivative signs.",
+        "pointwise_estimate": "||a||_2 <= ||G(omega)a||_2 <= 240||a||_2",
+        "spectral_operator_norm_upper_bound": "240",
+        "uniform_singular_value_lower_bound": "1"
+      }
     },
     "Iplus": {
       "basis": [
@@ -323,13 +403,75 @@
           "96*omega/5",
           "0"
         ]
-      ]
+      ],
+      "uniform_auxiliary_L2_control": {
+        "direct_frobenius_squared": {
+          "certified_maximum": "10389888/25",
+          "critical_point_disposition": "one strict interior minimum",
+          "derivative_denominator": "25*omega**3",
+          "derivative_endpoint_signs": [
+            "-",
+            "+"
+          ],
+          "derivative_numerator": "4608*(83886080*omega**12 - 167247872*omega**10 + 132686592*omega**8 - 50410816*omega**6 + 8106689*omega**4 - 97344)",
+          "endpoint_values": [
+            "1793088/25",
+            "10389888/25"
+          ],
+          "function": "2304*(16777216*omega**12 - 41811968*omega**10 + 44228864*omega**8 - 25205408*omega**6 + 8106689*omega**4 - 1384064*omega**2 + 97344)/(25*omega**2)",
+          "interior_critical_point_count": 1,
+          "interior_pole_count": 0,
+          "proof": "Exact Sturm counts and exact derivative signs show that every interior critical point is a minimum, so the maximum is the larger exact endpoint value."
+        },
+        "inverse_frobenius_squared": {
+          "certified_maximum": "19825/65536",
+          "critical_point_disposition": "one strict interior minimum",
+          "derivative_denominator": "73728*omega**3",
+          "derivative_endpoint_signs": [
+            "-",
+            "+"
+          ],
+          "derivative_numerator": "25*(196608*omega**8 - 244736*omega**6 + 90913*omega**4 - 4228)",
+          "endpoint_values": [
+            "19825/65536",
+            "1328425/21233664"
+          ],
+          "function": "25*(65536*omega**8 - 122368*omega**6 + 90913*omega**4 - 31232*omega**2 + 4228)/(147456*omega**2)",
+          "interior_critical_point_count": 1,
+          "interior_pole_count": 0,
+          "proof": "Exact Sturm counts and exact derivative signs show that every interior critical point is a minimum, so the maximum is the larger exact endpoint value."
+        },
+        "inverse_matrix": [
+          [
+            "-5*omega/384",
+            "-5*I*(4*omega**2 + I*omega - 2)/96",
+            "0"
+          ],
+          [
+            "5*I*(4*omega**2 - I*omega - 2)/96",
+            "-5*(16*omega**4 - 15*omega**2 + 4)/(24*omega)",
+            "5/(96*omega)"
+          ],
+          [
+            "0",
+            "5/(96*omega)",
+            "5*(16*omega**2 - 5)/(192*omega)"
+          ]
+        ],
+        "inverse_spectral_operator_norm_strict_upper_bound": "1",
+        "method": "||A||_2<=||A||_F and ||A^(-1)||_2<=||A^(-1)||_F; the exact Frobenius-square maxima are independently certified by Sturm counts and derivative signs.",
+        "pointwise_estimate": "||a||_2 <= ||G(omega)a||_2 <= 645||a||_2",
+        "spectral_operator_norm_upper_bound": "645",
+        "uniform_singular_value_lower_bound": "1"
+      }
     },
     "normalization": "G_endpoint = Stokes-oriented i*F^r/(pi*alpha_W)",
     "orientation": {
       "Iminus": "minus the increasing-r coordinate Gram",
       "Iplus": "the increasing-r coordinate Gram",
-      "boundary_identity": "J_Hplus + J_Iplus - J_Hminus - J_Iminus = 0"
+      "boundary_identity": "J_Hplus + J_Iplus - J_Hminus - J_Iminus = 0",
+      "scattering_convention": "Incoming Grams include the past-boundary sign, so a globally constructed a_out=T*a_in must satisfy T^dagger*J_out*T=J_in. If no horizon channels are present, this reduces to T^dagger*Gplus*T=Gminus.",
+      "warning": "The negative indices are not orientation artifacts after this incoming/outgoing convention is fixed, but they remain endpoint indices until a global connection populates the trace spaces."
     }
   },
   "imports": {
@@ -367,7 +509,7 @@
   "result_token": "EXACT_AXIAL_WAVEPACKET_ENDPOINT_GRAMS_FULL_RANK_INDEFINITE",
   "schema": "phase3-black-hole-axial-null-flux-gram-v1",
   "trace_limit_theorem": {
-    "completion": "The rational Gram entries are bounded on [1/2,3/4], so the pairing on the smooth compactly supported core extends uniquely and continuously to the L2 trace space.",
+    "completion": "Exact Sturm-certified Frobenius bounds for G and G^(-1) show that the pairing on the smooth compactly supported core extends uniquely and continuously to a uniformly nondegenerate form on the auxiliary positive L2 trace space.",
     "exact_remainder_input": {
       "decay_rule": "d_omega^k correction = O(r^(-(p-k))) up to logarithms",
       "minimum_cross_rate_decay_p": 5,
@@ -393,6 +535,16 @@
     },
     "interchange": "Uniform Volterra remainder bounds and the displayed bilinear error give dominated convergence on the compact frequency interval. Cross-rate oscillatory products have L1 spectral amplitudes and vanish by the Riemann-Lebesgue lemma.",
     "status": "PASS"
+  },
+  "trace_space_geometry": {
+    "auxiliary_positive_topology": "The Hilbert completion uses the coefficient norm ||a||_L2^2=integral a(omega)^dagger*a(omega)domega.",
+    "common_uniform_constants": {
+      "C": "645",
+      "c": "1",
+      "estimate": "||a||_L2 <= ||G_endpoint*a||_L2 <= 645||a||_L2 at either endpoint"
+    },
+    "indefinite_flux_form": "The normalized endpoint form is integral a(omega)^dagger*G_endpoint(omega)*b(omega)domega; the physical current restores the overall factor pi*alpha_W.",
+    "krein_majorant": "Because G is continuous, Hermitian and uniformly invertible, J=sign(G) is a continuous fundamental symmetry and |G| defines a positive Krein majorant uniformly equivalent to the auxiliary L2 norm. This canonical majorant is not a CPT metric, positive energy, or particle norm."
   },
   "verification": {
     "deep_literal_current_replay": "python3 -m black_hole_programme.phase3.axial_null_flux_gram.formal_gram --check --jobs 4",

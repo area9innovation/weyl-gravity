@@ -51,6 +51,97 @@ def text_matrix(matrix: sp.Matrix) -> list[list[str]]:
             for i in range(matrix.rows)]
 
 
+def frobenius_squared(matrix: sp.Matrix) -> sp.Expr:
+    """Return the exact squared Frobenius norm."""
+    return sp.factor(
+        sum(sp.expand_complex(sp.conjugate(entry) * entry) for entry in matrix)
+    )
+
+
+def interval_maximum_by_derivative(expression: sp.Expr) -> dict:
+    """Certify a rational-function maximum on the closed pilot interval."""
+    left, right = sp.Rational(1, 2), sp.Rational(3, 4)
+    derivative = sp.factor(sp.diff(expression, OMEGA))
+    numerator, denominator = sp.fraction(derivative)
+    critical_count = int(
+        sp.count_roots(sp.Poly(numerator, OMEGA), left, right)
+    )
+    pole_count = int(
+        sp.count_roots(sp.Poly(denominator, OMEGA), left, right)
+    )
+    if pole_count:
+        raise RuntimeError("norm function has a pole in the pilot interval")
+    endpoint_signs = [
+        int(sp.sign(derivative.subs(OMEGA, value)))
+        for value in (left, right)
+    ]
+    if critical_count == 0:
+        if endpoint_signs[0] != endpoint_signs[1] or endpoint_signs[0] not in (-1, 1):
+            raise RuntimeError("uncertified monotonic norm function")
+        disposition = (
+            "strictly increasing" if endpoint_signs[0] > 0
+            else "strictly decreasing"
+        )
+    elif critical_count == 1:
+        if endpoint_signs != [-1, 1]:
+            raise RuntimeError("interior critical point is not a certified minimum")
+        disposition = "one strict interior minimum"
+    else:
+        raise RuntimeError("unexpected number of norm critical points")
+    endpoint_values = [
+        sp.factor(expression.subs(OMEGA, value))
+        for value in (left, right)
+    ]
+    maximum = max(endpoint_values)
+    return {
+        "function": sp.sstr(sp.factor(expression)),
+        "derivative_numerator": sp.sstr(sp.factor(numerator)),
+        "derivative_denominator": sp.sstr(sp.factor(denominator)),
+        "interior_critical_point_count": critical_count,
+        "interior_pole_count": pole_count,
+        "derivative_endpoint_signs": [
+            "+" if sign > 0 else "-" for sign in endpoint_signs
+        ],
+        "critical_point_disposition": disposition,
+        "endpoint_values": [sp.sstr(value) for value in endpoint_values],
+        "certified_maximum": sp.sstr(maximum),
+        "proof": (
+            "Exact Sturm counts and exact derivative signs show that every "
+            "interior critical point is a minimum, so the maximum is the "
+            "larger exact endpoint value."
+        ),
+    }
+
+
+def uniform_control(matrix: sp.Matrix, operator_ceiling: int) -> dict:
+    """Certify uniform Euclidean operator and inverse bounds."""
+    direct = interval_maximum_by_derivative(frobenius_squared(matrix))
+    inverse_matrix = sp.simplify(matrix.inv())
+    inverse = interval_maximum_by_derivative(frobenius_squared(inverse_matrix))
+    direct_max = parse(direct["certified_maximum"])
+    inverse_max = parse(inverse["certified_maximum"])
+    if direct_max > operator_ceiling**2:
+        raise RuntimeError("declared direct operator ceiling is too small")
+    if inverse_max >= 1:
+        raise RuntimeError("inverse norm is not certified below one")
+    return {
+        "inverse_matrix": text_matrix(inverse_matrix),
+        "direct_frobenius_squared": direct,
+        "inverse_frobenius_squared": inverse,
+        "spectral_operator_norm_upper_bound": str(operator_ceiling),
+        "inverse_spectral_operator_norm_strict_upper_bound": "1",
+        "uniform_singular_value_lower_bound": "1",
+        "pointwise_estimate": (
+            f"||a||_2 <= ||G(omega)a||_2 <= {operator_ceiling}||a||_2"
+        ),
+        "method": (
+            "||A||_2<=||A||_F and ||A^(-1)||_2<=||A^(-1)||_F; "
+            "the exact Frobenius-square maxima are independently certified "
+            "by Sturm counts and derivative signs."
+        ),
+    }
+
+
 def classify(matrix: sp.Matrix, sample: sp.Rational) -> dict:
     """Classify a continuous Hermitian 3x3 family on the pilot interval.
 
@@ -170,8 +261,20 @@ def build_document() -> dict:
             ),
             "Iminus": "minus the increasing-r coordinate Gram",
             "Iplus": "the increasing-r coordinate Gram",
+            "scattering_convention": (
+                "Incoming Grams include the past-boundary sign, so a globally "
+                "constructed a_out=T*a_in must satisfy "
+                "T^dagger*J_out*T=J_in. If no horizon channels are present, "
+                "this reduces to T^dagger*Gplus*T=Gminus."
+            ),
+            "warning": (
+                "The negative indices are not orientation artifacts after this "
+                "incoming/outgoing convention is fixed, but they remain endpoint "
+                "indices until a global connection populates the trace spaces."
+            ),
         },
     }
+    ceilings = {"Iminus": 240, "Iplus": 645}
     for endpoint in ("Iminus", "Iplus"):
         endpoint_grams[endpoint] = {
             "basis": formal[endpoint]["basis"],
@@ -180,6 +283,9 @@ def build_document() -> dict:
             ),
             "stokes_gram_over_pi_alpha_W": text_matrix(stokes[endpoint]),
             "classification": classifications[endpoint],
+            "uniform_auxiliary_L2_control": uniform_control(
+                stokes[endpoint], ceilings[endpoint]
+            ),
             "formal_laurent_audit": formal[endpoint]["laurent_audit"],
         }
 
@@ -213,6 +319,33 @@ def build_document() -> dict:
                 "action_derived_current"
             ]["representative"],
             "counterterm_or_radial_improvement_added": False,
+            "improvement_audit": {
+                "scoped_invariance": (
+                    "delta Y vanishes by delta^2=0; angular exact terms integrate "
+                    "to zero; and a stationary globally defined local "
+                    "finite-tangential-jet dZ with finite trace-only pullback has "
+                    "zero cut terms on the C_c^infinity frequency core because "
+                    "the inverse Fourier traces are Schwartz. Its continuous L2 "
+                    "extension therefore leaves the endpoint Grams unchanged."
+                ),
+                "scope": (
+                    "stationary globally defined local finite-tangential-jet "
+                    "improvements with finite trace-only pullback"
+                ),
+                "unrestricted_status": "OPEN",
+                "unrestricted_missing_audit": [
+                    "a typed local-improvement basis {Z_A} modulo d and delta",
+                    "radial and subleading pullbacks on all six endpoint jets",
+                    "uniform corner-continuity bounds on the L2 completion",
+                    "the exact additive matrices Delta G_A and their inertia strata",
+                ],
+                "not_covered": [
+                    "radial or subleading improvements",
+                    "nonlocal or soft improvements",
+                    "explicit-time or nondecaying improvements",
+                    "improvements without a finite trace-only pullback",
+                ],
+            },
             "chart_pullback": {
                 "metric": "h0_t=h0_v; h1_t=h1_EF+B^(-1)h0_v, B=1-2/r",
                 "fixed_t_radial_derivative": (
@@ -258,11 +391,38 @@ def build_document() -> dict:
                 "amplitudes and vanish by the Riemann-Lebesgue lemma."
             ),
             "completion": (
-                "The rational Gram entries are bounded on [1/2,3/4], so the "
-                "pairing on the smooth compactly supported core extends uniquely "
-                "and continuously to the L2 trace space."
+                "Exact Sturm-certified Frobenius bounds for G and G^(-1) show "
+                "that the pairing on the smooth compactly supported core extends "
+                "uniquely and continuously to a uniformly nondegenerate form on "
+                "the auxiliary positive L2 trace space."
             ),
             "status": "PASS",
+        },
+        "trace_space_geometry": {
+            "auxiliary_positive_topology": (
+                "The Hilbert completion uses the coefficient norm "
+                "||a||_L2^2=integral a(omega)^dagger*a(omega)domega."
+            ),
+            "indefinite_flux_form": (
+                "The normalized endpoint form is integral "
+                "a(omega)^dagger*G_endpoint(omega)*b(omega)domega; the physical "
+                "current restores the overall factor pi*alpha_W."
+            ),
+            "common_uniform_constants": {
+                "c": "1",
+                "C": "645",
+                "estimate": (
+                    "||a||_L2 <= ||G_endpoint*a||_L2 <= "
+                    "645||a||_L2 at either endpoint"
+                ),
+            },
+            "krein_majorant": (
+                "Because G is continuous, Hermitian and uniformly invertible, "
+                "J=sign(G) is a continuous fundamental symmetry and |G| defines "
+                "a positive Krein majorant uniformly equivalent to the auxiliary "
+                "L2 norm. This canonical majorant is not a CPT metric, positive "
+                "energy, or particle norm."
+            ),
         },
         "endpoint_grams": endpoint_grams,
         "common_verdict": {
@@ -282,6 +442,9 @@ def build_document() -> dict:
             "Iminus_flux_Gram_certified": True,
             "Iplus_flux_Gram_certified": True,
             "endpoint_rank_radical_inertia_certified": True,
+            "uniform_auxiliary_L2_isomorphism_certified": True,
+            "scoped_trace_local_improvement_invariance_certified": True,
+            "unrestricted_improvement_invariance_certified": False,
             "global_connection_constructed": False,
             "horizon_to_infinity_matching_constructed": False,
             "scattering_channels_classified": False,

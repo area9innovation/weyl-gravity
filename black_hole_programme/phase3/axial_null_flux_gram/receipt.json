@@ -1,6 +1,6 @@
 {
-  "schema": "phase3-black-hole-axial-null-flux-gram-receipt-v1",
-  "generated_at_utc": "2026-07-23T04:15:48Z",
+  "schema": "phase3-black-hole-axial-null-flux-gram-receipt-v2",
+  "generated_at_utc": "2026-07-23T07:42:12Z",
   "environment": {
     "python": "3.12.13",
     "sympy": "1.14.0",
@@ -13,13 +13,15 @@
     "pre_close_head": "23e72b2e8e085dea20038a35580d0ea92ab9339c"
   },
   "artifacts": {
-    "certificate.json": "6158a259fcf4f5888df58a3da8ffe8fa0de40d6ae992f1c132a0726218f95162",
+    "certificate.json": "59fb9b443ce0b92ce016f53c376cb367bcf004e00d1b241ad22ec925e99deed2",
     "formal-grams.json": "f278101c7abc0ff513cea6e726ada9664e42e2f983227e9f737e06688f535b6a",
-    "schema.json": "0fcad54450347948295064287134aeaf98495c752ea824ad9ef69a773dc5d146",
-    "verify.py": "6850f8473acfb2adb8640337da16b16dc739bd4ee632ddee23cb3d4c45b1ca1c",
-    "mutations.py": "58dd6cda8aa8327f97967befbe7d2724fa7a12e93e391e7fc2c2804207262e58",
-    "report": "27d7473135b578a73109f275ceac932728c45b1e003054ee03f6271b3e6b06c5",
-    "atlas_fragment": "e24799dac989f714231c05deff18c16d294f6b3613e438909c2a7d7f38600962"
+    "schema.json": "d4545b5910e11b18d86e39dc2fe0ac34ce839b8400b14fb1a1682c208d2704fc",
+    "produce.py": "0f0003fa73981067d73563f8b9f2acdb816adf8f1ed172879a7e665dc4b52ae0",
+    "verify.py": "dd63c4d25658a41188cb9a59660c04a837052a59052b1d1330ae40a932ae03b4",
+    "mutations.py": "093c1e8e4237e772aff0b2b59ef1d17ee76ddc51e27a1b3b733299f07bb77182",
+    "test": "eff561c25f13b9713b5913a8083a6af1a1e82a63e2e1f2212df7cf9a43b9b4eb",
+    "report": "484f34f72d170df6e6f7ece457784c05c928ade72c84dd94de974963ad9deb59",
+    "atlas_fragment": "002e86ae985a577f5cdfe3460b1b0d25e39a02af5dae2e9d5fdb0eaabe1a83a9"
   },
   "tiers": [
     {
@@ -30,31 +32,32 @@
     {
       "tier": 1,
       "command": "python3 -m black_hole_programme.phase3.axial_null_flux_gram.produce --check",
-      "elapsed_seconds": 2.3,
+      "elapsed_seconds": 1.2,
       "status": "PASS"
     },
     {
       "tier": 1,
       "command": "python3 -m black_hole_programme.phase3.axial_null_flux_gram.verify",
-      "elapsed_seconds": 2.5,
-      "status": "PASS"
+      "elapsed_seconds": 0.7,
+      "status": "PASS",
+      "note": "Independently reconstructed both inverse matrices and certified the exact Frobenius maxima by Sturm counts and derivative signs."
     },
     {
       "tier": 1,
       "command": "python3 -m black_hole_programme.phase3.axial_null_flux_gram.mutations",
       "status": "PASS",
-      "mutations_rejected": 7
+      "mutations_rejected": 11
     },
     {
       "tier": 1,
       "command": "python3 -m unittest black_hole_programme.phase3.axial_null_flux_gram.tests.test_null_flux_gram",
-      "elapsed_seconds": 2.5,
+      "elapsed_seconds": 0.7,
       "status": "PASS"
     },
     {
       "tier": 2,
       "command": "python3 -m black_hole_programme.phase3.axial_null_flux_gram.verify --deep",
-      "elapsed_seconds": 102.6,
+      "elapsed_seconds": 45.8,
       "status": "PASS",
       "note": "Independently replayed the literal-current XI0 self-flux and Laurent sentinel."
     },
@@ -88,7 +91,7 @@
     }
   },
   "result_boundary": {
-    "establishes": "Exact full-rank indefinite axial null-endpoint Lee-Wald wave-packet Grams on the declared pilot interval.",
-    "does_not_establish": "Global matching, scattering, stability, CPT positivity, particles, or unitarity."
+    "establishes": "Exact full-rank indefinite axial null-endpoint Lee-Wald wave-packet Grams, explicit matrices, uniform auxiliary-L2 operator/inverse bounds, incoming/outgoing orientation, and scoped trace-local finite-order improvement invariance on the declared pilot interval.",
+    "does_not_establish": "Global matching, populated negative scattering channels, unrestricted radial/corner improvement invariance, stability, CPT positivity, particles, or unitarity."
   }
 }
