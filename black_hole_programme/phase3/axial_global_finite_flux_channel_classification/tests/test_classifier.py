@@ -14,8 +14,10 @@ from black_hole_programme.phase3.axial_global_finite_flux_channel_classification
     Interval,
     certify_whole_cell_inertia,
     determinant_excludes_zero,
+    matrix_add,
     matrix_from_json,
     matrix_multiply,
+    matrix_negate,
     require_hermitian_enclosure,
 )
 from black_hole_programme.phase3.axial_global_finite_flux_channel_classification.classifier import (
@@ -269,6 +271,18 @@ class AffineCellAdapterTest(unittest.TestCase):
             product[0][0].re.remainder.lo,
             -Fraction(1, 512**2),
         )
+
+    def test_orientation_correct_matrix_defect(self) -> None:
+        incoming = matrix_from_json([[complex_affine(3)]])
+        outgoing_horizon = matrix_from_json([[complex_affine(1)]])
+        outgoing_infinity = matrix_from_json([[complex_affine(2)]])
+        defect = matrix_add(
+            outgoing_horizon,
+            outgoing_infinity,
+            matrix_negate(incoming),
+        )
+        self.assertEqual(defect[0][0].re.value_interval(), Interval.point(0))
+        self.assertEqual(defect[0][0].im.value_interval(), Interval.point(0))
 
 
 if __name__ == "__main__":

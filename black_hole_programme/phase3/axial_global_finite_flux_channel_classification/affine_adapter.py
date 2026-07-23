@@ -231,6 +231,29 @@ def matrix_multiply(left: AffineMatrix, right: AffineMatrix) -> AffineMatrix:
     return answer
 
 
+def matrix_add(*matrices: AffineMatrix) -> AffineMatrix:
+    if not matrices:
+        raise ValueError("no affine matrices to add")
+    shape = matrix_shape(matrices[0])
+    if any(matrix_shape(matrix) != shape for matrix in matrices[1:]):
+        raise ValueError("affine matrix addition shape mismatch")
+    rows, cols = shape
+    return [
+        [
+            sum(
+                (matrix[i][j] for matrix in matrices),
+                ComplexAffine.zero(),
+            )
+            for j in range(cols)
+        ]
+        for i in range(rows)
+    ]
+
+
+def matrix_negate(matrix: AffineMatrix) -> AffineMatrix:
+    return [[-value for value in row] for row in matrix]
+
+
 def matrix_contains(outer: AffineMatrix, inner: AffineMatrix) -> bool:
     if matrix_shape(outer) != matrix_shape(inner):
         return False
@@ -419,12 +442,28 @@ def validate_channel_handoff_algebra(document: dict) -> dict:
     if not matrix_contains(pulled_plus, pullback(cplus, gplus)):
         raise ValueError("declared gplus does not enclose the independent pullback")
 
+    ghplus = matrix_from_json(forms["GHplus_outward"])
+    computed_defect = matrix_add(
+        ghplus,
+        pulled_plus,
+        matrix_negate(pulled_minus),
+    )
+    declared_defect = matrix_from_json(forms["conservation"]["defect"])
+    if not matrix_contains(declared_defect, computed_defect):
+        raise ValueError(
+            "declared conservation defect does not enclose the independent sum"
+        )
+    for row in declared_defect:
+        for value in row:
+            if not value.re.value_interval().contains_zero():
+                raise ValueError("conservation defect real part excludes zero")
+            if not value.im.value_interval().contains_zero():
+                raise ValueError("conservation defect imaginary part excludes zero")
+
     inertia = {
         "gminus": certify_whole_cell_inertia(pulled_minus),
         "gplus": certify_whole_cell_inertia(pulled_plus),
-        "GHplus": certify_whole_cell_inertia(
-            matrix_from_json(forms["GHplus_outward"])
-        ),
+        "GHplus": certify_whole_cell_inertia(ghplus),
     }
     declared = document["classification_witnesses"]["inertia"]
     for name, witness in inertia.items():
@@ -444,4 +483,5 @@ def validate_channel_handoff_algebra(document: dict) -> dict:
         "Cplus_rank": 3,
         "inertia": inertia,
         "pullbacks_independently_enclosed": True,
+        "conservation_enclosure_independently_checked": True,
     }
