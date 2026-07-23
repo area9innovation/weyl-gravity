@@ -13,6 +13,18 @@
       "refusal_reset": 0
     }
   },
+  "chunk_successor": {
+    "delta_t": "1",
+    "handoff_type": "content-addressed IvAffineMat",
+    "join_checks": [
+      "exact affine composition",
+      "T and projection ranks",
+      "radial-current coordinate conservation"
+    ],
+    "panels_per_chunk": 64,
+    "radial_chunks": 28,
+    "shared_generator": 7315
+  },
   "claim_flags": {
     "all_local_checkpoint_solves_certified": true,
     "endpoint_flux_or_scattering_claim": false,
@@ -105,11 +117,63 @@
     "peano_baker_order": 12,
     "solve": "certified Krawczyk solves only; never an explicit consumer inverse"
   },
-  "missing_dependency": "Validated parameter-dependent affine frames (or equivalent Taylor-model/affine-arithmetic parameter generators) plus rectangular correlated multi-column factor-coordinate apply/solve. The frame must retain the shared omega generator through the block-triangular VoC cancellation instead of replacing D(omega) by a fixed rational box.",
-  "missing_dependency_request": "planning/forge-requests/phase3-ivlinode-parametric-affine-rectangular.json",
+  "missing_dependency": "A bounded-runtime radial chunk/checkpoint rail for the already validated shared-generator affine propagation. The compact table-backed rail preserves omega correlation and compiles below 1 GiB, but the first 8x8 carrier flow over all 1792 panels did not return within the declared 20-minute execution budget. Seven independent Delta-t=4 factors with content-addressed IvAffineMat handoffs and a small composition/current join are required; no interval-mathematical refusal was reached.",
+  "missing_dependency_request": "planning/forge-requests/phase3-black-hole-axial-global-connection-matrix-v5.json",
+  "parameter_affine_successor": {
+    "generator": 7315,
+    "horizon_factors": 184,
+    "horizon_shells": 23,
+    "inward_factors": 28,
+    "inward_local_steps": 64,
+    "inward_panels": 1792,
+    "omega_cell": [
+      "1/2",
+      "129/256"
+    ],
+    "public_future_regular_selector": [
+      0,
+      1,
+      4
+    ],
+    "public_horizon_order": [
+      "XH0a",
+      "XH0b",
+      "XHplus",
+      "XHminus",
+      "EH0",
+      "EHout"
+    ],
+    "raw_future_regular_selector": [
+      0,
+      1,
+      2
+    ],
+    "raw_horizon_order": [
+      "XH0a",
+      "XH0b",
+      "EH0",
+      "XHplus",
+      "EHout",
+      "XHminus"
+    ]
+  },
   "provenance": {
-    "forge_head_observed": "3c4dfd5b43f0177e7ee450778a73d7c33f9749ac",
+    "forge_head_observed": "f2ab419230f03003580d885735e029ce2deed71e",
     "ivlinode_sha256": "cc60f08e8eb8f59774f818a5d6ee457a84a8f16f66100a8ea1f64a9627649a64"
+  },
+  "reset_runtime_gate": {
+    "carrier_cutoff_seconds": 600,
+    "carrier_returned": false,
+    "compiled_runner_peak_rss_kib": 867480,
+    "domain": [
+      "0",
+      "1"
+    ],
+    "mathematical_refusal_reached": false,
+    "next_decomposition": "eight-panel microfactors with exact shared micro-boundary frames",
+    "panels": 64,
+    "reset": 0,
+    "runtime_peak_rss_kib": 22100
   },
   "result_id": "PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5",
   "result_token": "BH_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5",
@@ -124,6 +188,18 @@
     "maximum_width_reset": 65,
     "midpoint_correction_max_abs_at_reset_65": 2.9720385240453925e-11,
     "midpoint_lower_frame_max_abs_at_reset_65": 520.7048486768947
+  },
+  "table_backed_runtime_gate": {
+    "carrier_flow_returned_within_20_minutes": false,
+    "coefficient_table_entries": 1792,
+    "coefficient_table_materialized": true,
+    "compiler_peak_rss_kib": 999384,
+    "disposition": "runtime-budget-shortfall",
+    "forge_commit": "f2ab419230f03003580d885735e029ce2deed71e",
+    "generated_source_bytes": 3968000,
+    "generated_source_lines": 75900,
+    "ivlinparam_sha256": "d8d3775306d12b00b4ba35306a043a5cb41edfcb23e3c0d61e63e9dda85b2f55",
+    "mathematical_refusal_reached": false
   },
   "verification": {
     "independent": "python3 -m black_hole_programme.phase3.axial_global_connection_matrix_v5.verify",

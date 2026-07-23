@@ -1,0 +1,38 @@
+{
+  "schema": "work-v0",
+  "id": "phase3-black-hole-axial-global-connection-matrix-v5",
+  "title": "Content-addressed chunk runner for long validated affine flows",
+  "status": "REQUESTED",
+  "requester": "phase3-axial-global-5",
+  "consumer": "phase3-black-hole-axial-global-connection-matrix-v5",
+  "problem": "The table-backed shared-generator affine rail compiles below 1 GiB and materializes all 1792 coefficient entries, but a single 8x8 carrier propagation over t in [0,28] did not return within 20 minutes. No interval-mathematical refusal was reached. A bounded-runtime decomposition is needed without weakening validation or losing the common omega generator.",
+  "requested_capability": {
+    "kind": "validated-affine-flow-chunk-handoff",
+    "radial_partition": "224 consecutive rational microintervals [j/8,(j+1)/8]",
+    "panels_per_chunk": 8,
+    "requirements": [
+      "preserve the same IvAffineCell generator across every chunk",
+      "serialize exact rational center and linear data plus outward interval remainder",
+      "hash every input and output handoff",
+      "fail closed on generator, shape, interval-containment or hash mismatch",
+      "support parallel C/native chunk execution",
+      "compose chunks through certified affine apply/solve, never an explicit inverse",
+      "expose a small final rank and current-conservation join rail"
+    ]
+  },
+  "measured_gate": {
+    "forge_commit": "f2ab419230f03003580d885735e029ce2deed71e",
+    "coefficient_entries": 1792,
+    "table_materialization": "PASS",
+    "compiler_peak_rss_kib": 999384,
+    "carrier_runtime_budget_seconds": 600,
+    "carrier_returned": false,
+    "mathematical_refusal_reached": false,
+    "one_reset_64_panel_pilot_returned": false
+  },
+  "does_not_establish": [
+    "a mathematical obstruction in the Bach system",
+    "a global connection matrix",
+    "an endpoint flux or scattering theorem"
+  ]
+}

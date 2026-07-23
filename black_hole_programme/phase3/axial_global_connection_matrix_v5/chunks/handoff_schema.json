@@ -1,0 +1,254 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase3-axial-global-affine-reset-handoff-v2",
+  "title": "Phase-3 parameter-correlated affine reset handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "artifact_kind",
+    "chunk_id",
+    "status",
+    "cell",
+    "domain",
+    "state",
+    "solver",
+    "frames",
+    "matrix",
+    "integrity",
+    "proof"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-global-affine-reset-handoff-v2"
+    },
+    "artifact_kind": {
+      "enum": [
+        "infinity-standard-fundamental",
+        "horizon-sheared-fundamental"
+      ]
+    },
+    "chunk_id": {
+      "type": "string",
+      "pattern": "^(infinity-([0-9]|1[0-9]|2[0-7])|horizon-[0-3])$"
+    },
+    "status": {
+      "const": "CERTIFIED"
+    },
+    "cell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parameter",
+        "generator",
+        "lower",
+        "upper",
+        "center",
+        "radius"
+      ],
+      "properties": {
+        "parameter": {"const": "Momega"},
+        "generator": {"const": 7315},
+        "lower": {"const": "1/2"},
+        "upper": {"const": "129/256"},
+        "center": {"const": "257/512"},
+        "radius": {"const": "1/512"}
+      }
+    },
+    "domain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coordinate", "orientation", "start", "end"],
+      "properties": {
+        "coordinate": {"enum": ["t=32-r", "rho=r-2"]},
+        "orientation": {
+          "enum": ["increasing-t/inward-r", "increasing-rho/outward-r"]
+        },
+        "start": {"$ref": "#/$defs/rational"},
+        "end": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rows", "cols", "chart", "order"],
+      "properties": {
+        "rows": {"const": 12},
+        "cols": {"const": 12},
+        "chart": {"enum": ["standard-real-12", "horizon-sheared-real-12"]},
+        "order": {
+          "type": "array",
+          "minItems": 12,
+          "maxItems": 12,
+          "prefixItems": [
+            {"const": "Re(P)"},
+            {"const": "Re(Pprime)"},
+            {"const": "Re(Q)"},
+            {"const": "Re(Qprime)"},
+            {"const": "Re(H1)"},
+            {"enum": ["Re(F)", "Re(rhoF)"]},
+            {"const": "Im(P)"},
+            {"const": "Im(Pprime)"},
+            {"const": "Im(Q)"},
+            {"const": "Im(Qprime)"},
+            {"const": "Im(H1)"},
+            {"enum": ["Im(F)", "Im(rhoF)"]}
+          ],
+          "items": false
+        }
+      }
+    },
+    "solver": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "panels",
+        "resets",
+        "local_steps",
+        "order",
+        "rank_cells",
+        "global_panel_start",
+        "global_panel_end"
+      ],
+      "properties": {
+        "panels": {"type": "integer", "minimum": 1},
+        "resets": {"type": "integer", "minimum": 1},
+        "local_steps": {"type": "integer", "minimum": 1},
+        "order": {"const": 12},
+        "rank_cells": {"const": 8},
+        "global_panel_start": {"type": "integer", "minimum": 0},
+        "global_panel_end": {"type": "integer", "minimum": 1}
+      }
+    },
+    "frames": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "table_sha256",
+        "left_boundary_sha256",
+        "right_boundary_sha256",
+        "generation"
+      ],
+      "properties": {
+        "table_sha256": {"$ref": "#/$defs/sha256"},
+        "left_boundary_sha256": {"$ref": "#/$defs/sha256"},
+        "right_boundary_sha256": {"$ref": "#/$defs/sha256"},
+        "generation": {
+          "const": "single-global-exact-table-sliced-with-byte-identical-overlap"
+        }
+      }
+    },
+    "matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["center", "linear", "remainder", "hull"],
+      "properties": {
+        "center": {"$ref": "#/$defs/rationalMatrix12"},
+        "linear": {"$ref": "#/$defs/rationalMatrix12"},
+        "remainder": {"$ref": "#/$defs/bitsIntervalMatrix12"},
+        "hull": {"$ref": "#/$defs/bitsIntervalMatrix12"}
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "producer",
+        "inputs",
+        "input_sha256",
+        "output_sha256"
+      ],
+      "properties": {
+        "producer": {"$ref": "#/$defs/pathHash"},
+        "inputs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/pathHash"}
+        },
+        "input_sha256": {"$ref": "#/$defs/sha256"},
+        "output_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "proof": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok",
+        "refusal_code",
+        "existence_certified",
+        "uniqueness_certified",
+        "factor_rank_certified",
+        "outward_remainders"
+      ],
+      "properties": {
+        "ok": {"const": true},
+        "refusal_code": {"const": 0},
+        "existence_certified": {"const": true},
+        "uniqueness_certified": {"const": true},
+        "factor_rank_certified": {"const": true},
+        "outward_remainders": {"const": true}
+      }
+    }
+  },
+  "$defs": {
+    "rational": {
+      "type": "string",
+      "pattern": "^-?(0|[1-9][0-9]*)/[1-9][0-9]*$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "f64bits": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{16}$"
+    },
+    "pathHash": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+        },
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "rationalRow12": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {"$ref": "#/$defs/rational"}
+    },
+    "rationalMatrix12": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {"$ref": "#/$defs/rationalRow12"}
+    },
+    "bitsInterval": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {"$ref": "#/$defs/f64bits"},
+        {"$ref": "#/$defs/f64bits"}
+      ],
+      "items": false
+    },
+    "bitsIntervalRow12": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {"$ref": "#/$defs/bitsInterval"}
+    },
+    "bitsIntervalMatrix12": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {"$ref": "#/$defs/bitsIntervalRow12"}
+    }
+  }
+}

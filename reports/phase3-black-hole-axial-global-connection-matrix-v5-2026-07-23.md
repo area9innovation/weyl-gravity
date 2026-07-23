@@ -1,113 +1,80 @@
 # Phase 3 axial global connection matrix v5
 
-## Scope and terminal disposition
+## Scope and disposition
 
-This gate attempted the first validated horizon-to-infinity connection matrix
+This item attempted the first validated horizon-to-infinity connection matrix
 for the repaired axial Bach system on Schwarzschild with `M=1`, `ell=2`, and
-real `M omega` in `[1/2,3/4]`. It imports the certified horizon basis, the
-practical `R=32` infinity initializer, and the exact block-triangular six-state
-reconstruction.
+real `M omega` in `[1/2,3/4]`. The required first cell was
+`[1/2,129/256]`.
 
-The result remains **SHORTFALL**, not a black-hole theorem. The newly landed
-affine moving-frame substrate closes the entire diagonal flow on the first
-required frequency cell. The remaining failure is now isolated to uniform
-parameter correlation in the forced lower block. Therefore no `6x3`
-connection matrix, projection rank, or current identity is promoted.
+The result is **SHORTFALL**, not a black-hole theorem. The affine substrate
+gap reported by the earlier attempt is closed. The remaining issue is a
+bounded-runtime decomposition of the validated radial flow; no mathematical
+refusal was reached.
 
-## What the new substrate closed
+## What landed
 
-For
+The generated rail now:
 
-\[
-  M\omega\in[1/2,129/256],
-\]
+* imports the exact repaired six-state flow and exact radial current;
+* imports the certified horizon and infinity endpoint initializers;
+* preserves one affine frequency generator (`7315`) through coefficients,
+  frames, the forced lower lift, endpoint bases and the current;
+* uses the raw horizon order
+  `XH0a,XH0b,EH0,XHplus,EHout,XHminus` and selects raw columns `0,1,2`;
+* propagates the horizon data from `rho=2^-22` in the sheared
+  `(P,P',Q,Q',H1,rho F)` chart;
+* materializes all 1,792 infinity coefficient entries once and reuses them
+  through the table-backed affine-flow API;
+* keeps the carrier, Einstein kernel and forced lower block separate.
 
-the eight-real carrier and four-real Einstein-kernel blocks were propagated
-separately from `r=32` to `r=4` as 1,792 retained affine factors. Every local
-Peano--Baker enclosure and Krawczyk frame solve closed. Factorwise
-nonsingularity is certified, with maximum local correction widths
+Forge commit
+`f2ab419230f03003580d885735e029ce2deed71e` supplies the table-backed
+`IvLinParamAffineFlow` API. Its affected C/native and ASan gates pass.
 
-\[
-  w_C=0.009978474438174208,
-  \qquad
-  w_K=0.00332335609866979.
-\]
+## Measured execution gate
 
-This supersedes the previous diagonal-rank shortfall. The old flattened
-carrier control still widens from `0.0138` at `r=31` to
-`2.56e15` at `r=4`, demonstrating why the factor representation is necessary.
+The compact generated rail is approximately 3.9 MB rather than the earlier
+38 MB monolith. Forge compilation remains below 1 GiB peak RSS. In the
+table-backed run:
 
-A naïve unstructured twelve-real affine frame is refused at reset zero with
-`IVLIN_AFFINE_FACTOR_RANK_UNCERTIFIED`. That refusal is expected: interval
-realification loses the exact zero upper-right block. It is not evidence that
-the mathematical factor is singular.
+1. the complete coefficient table materialized successfully;
+2. the first 8-by-8 carrier flow began;
+3. it did not return or refuse within the declared 20-minute execution
+   budget;
+4. the run was stopped before kernel, raw lower-lift, horizon, rank or current
+   gates.
 
-## Structured variation of constants
+The complete command consumed 505 CPU seconds and 25:29 wall time including
+compilation, with peak RSS 999,384 KiB. This is a runtime-budget shortfall,
+not evidence of singularity or nonexistence.
 
-The lower lift was then implemented with exact block-triangular frames
+## Exact successor
 
-\[
- C_k=\begin{pmatrix}C^c_k&0\\D_k&C^k_k\end{pmatrix}
-\]
+The first reset-level pilot on `t in [0,1]` (64 panels) also remained inside
+the carrier flow at the ten-minute cutoff. Its compiled runner used 867,480
+KiB peak RSS; execution itself used only 22,100 KiB. No mathematical refusal
+was reached.
 
-and local correction
+The next bounded unit is therefore an eight-panel microfactor of width `1/8`.
+The 224 microfactors must use byte-identical shared micro-boundary frames and
+the same affine cell. Each must emit a content-addressed `IvAffineMat` handoff
+containing exact rational centre and linear data plus an outward interval
+remainder. The final join composes those handoffs by certified affine
+apply/solve and then performs:
 
-\[
- L_k=(C^k_{k+1})^{-1}
- \left(G_kC^c_k+U^k_kD_k-D_{k+1}W^c_k\right).
-\]
+* the full `T` column-rank test;
+* the `I-` and `I+` projection-rank tests;
+* the radial-current coordinate identity.
 
-All 1,792 columnwise Krawczyk solves for the `4x8` matrices `L_k` close. The
-remaining enclosure is nevertheless unusable. At reset 65 the rational
-midpoint correction has maximum magnitude
-
-\[
-  2.9720385240453925\times10^{-11},
-\]
-
-while fixed-frame interval evaluation produces the run's maximum width
-
-\[
-  3.6880892110833354\times10^7.
-\]
-
-The reason is precise: `A(omega)`, the cumulative lower frame `D(omega)`, and
-the local flow share the same frequency parameter, but the present fixed
-rational-frame API replaces those occurrences by decorrelated interval boxes
-before their cancellation.
-
-## Missing dependency
-
-The next reusable primitive is a parameter-dependent affine or Taylor-model
-frame that retains the shared `omega` generator through local
-variation-of-constants algebra. The same API should transport a correlated
-rectangular column family so the six horizon columns can be carried and rank
-tested without independent-vector wrapping.
-
-The exact request is
-`planning/forge-requests/phase3-ivlinode-parametric-affine-rectangular.json`.
-It extends the successful affine API; it is not a request for another generic
-ODE integrator or a black-hole-specific kernel.
-
-## Verification disposition
-
-Producer replay, JSON Schema validation, the independent certificate verifier,
-seven negative mutations, unit tests, and both ordinary C and native Forge
-backends pass. The two sanitizer builds each reached the declared 1,800-second
-limit without producing a diagnostic; those runs are recorded as **TIMEOUT**,
-not as passes.
+The request is recorded at
+`planning/forge-requests/phase3-black-hole-axial-global-connection-matrix-v5.json`.
 
 ## Claim boundary
 
-This shortfall does not show that the connection matrix is singular, nor that
-an additional Bach scattering channel exists or fails to exist. It makes no
-endpoint-flux, scattering, pole, stability, CPT, positivity, or unitarity
-claim. It establishes that the diagonal long transfer is now certified and
-that the first unresolved numerical theorem is shared-parameter correlation
-in the structured lower lift.
+This work does not establish a global connection matrix, endpoint flux,
+scattering channel, stability, CPT metric, positivity or unitarity. It also
+does not establish a mathematical obstruction in the Bach system.
 
-CLOSE-OUT: SHORTFALL — the affine carrier and kernel chains are uniformly rank-certified on the first required frequency cell, and all 1,792 structured lower Krawczyk solves close, but fixed rational frames decorrelate the common frequency generator and inflate an approximately 3e-11 lower correction to width 3.69e7; a parameter-dependent affine/Taylor frame with correlated rectangular transport is required before the global connection can be certified.
-
-EVIDENCE: black_hole_programme/phase3/axial_global_connection_matrix_v5/certificate.json
-
-MISSING-DEP: sf:forge-request/phase3-ivlinode-parametric-affine-rectangular
+CLOSE-OUT: SHORTFALL — the shared-generator table rail is compiler-safe, but both the full carrier and one-reset carrier exceeded their execution budgets before any mathematical verdict
+MISSING-DEP: content-addressed eight-panel microfactor flow and composition rail

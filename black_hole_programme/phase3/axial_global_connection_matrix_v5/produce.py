@@ -20,6 +20,8 @@ import sympy as sp
 import numpy as np
 from scipy.integrate import solve_ivp
 
+from .affine_rail import render_affine_adapter
+
 HERE = Path(__file__).resolve().parent
 PHYSICS = HERE.parents[3]
 FORGE = Path("/home/alstrup/area9/tango/forge")
@@ -183,7 +185,7 @@ def structured_lower_data(full: list[np.ndarray], carrier: list[np.ndarray],
     return d, answer
 
 
-def render_adapter() -> str:
+def render_adapter_legacy() -> str:
     # Reading the already-certified exact strings avoids replaying the expensive
     # symbolic geometry producer merely to generate a typed numerical consumer.
     r, omega = sp.symbols("r omega", real=True)
@@ -324,7 +326,7 @@ def render_adapter() -> str:
     return "\n".join(lines)
 
 
-def build_certificate() -> dict:
+def build_certificate(affine_metadata: dict | None = None) -> dict:
     return {
         "schema": "phase3-black-hole-axial-global-connection-matrix-v5-v1",
         "result_id": "PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5",
@@ -390,8 +392,8 @@ def build_certificate() -> dict:
             "diagnosis": "fixed rational frames discard the common omega dependence of A, D and the local flow before the cancellation; interval decorrelation overwhelms a nearly zero structured correction"
         },
         "stop_condition_disposition": "SHORTFALL",
-        "missing_dependency": "Validated parameter-dependent affine frames (or equivalent Taylor-model/affine-arithmetic parameter generators) plus rectangular correlated multi-column factor-coordinate apply/solve. The frame must retain the shared omega generator through the block-triangular VoC cancellation instead of replacing D(omega) by a fixed rational box.",
-        "missing_dependency_request": "planning/forge-requests/phase3-ivlinode-parametric-affine-rectangular.json",
+        "missing_dependency": "A bounded-runtime radial chunk/checkpoint rail for the already validated shared-generator affine propagation. The compact table-backed rail preserves omega correlation and compiles below 1 GiB, but the first 8x8 carrier flow over all 1792 panels did not return within the declared 20-minute execution budget. Seven independent Delta-t=4 factors with content-addressed IvAffineMat handoffs and a small composition/current join are required; no interval-mathematical refusal was reached.",
+        "missing_dependency_request": "planning/forge-requests/phase3-black-hole-axial-global-connection-matrix-v5.json",
         "claim_flags": {"required_first_cell_attempted": True,
                         "all_local_checkpoint_solves_certified": True,
                         "required_first_cell_diagonal_rank_certified": True,
@@ -400,12 +402,45 @@ def build_certificate() -> dict:
                         "global_connection_certified": False,
                         "radial_current_conservation_certified": False,
                         "endpoint_flux_or_scattering_claim": False},
+        "table_backed_runtime_gate": {
+            "forge_commit": "f2ab419230f03003580d885735e029ce2deed71e",
+            "ivlinparam_sha256": "d8d3775306d12b00b4ba35306a043a5cb41edfcb23e3c0d61e63e9dda85b2f55",
+            "generated_source_bytes": 3968000,
+            "generated_source_lines": 75900,
+            "compiler_peak_rss_kib": 999384,
+            "coefficient_table_entries": 1792,
+            "coefficient_table_materialized": True,
+            "carrier_flow_returned_within_20_minutes": False,
+            "mathematical_refusal_reached": False,
+            "disposition": "runtime-budget-shortfall",
+        },
+        "chunk_successor": {
+            "radial_chunks": 28,
+            "delta_t": "1",
+            "panels_per_chunk": 64,
+            "shared_generator": 7315,
+            "handoff_type": "content-addressed IvAffineMat",
+            "join_checks": ["exact affine composition", "T and projection ranks",
+                            "radial-current coordinate conservation"],
+        },
+        "reset_runtime_gate": {
+            "reset": 0,
+            "domain": ["0", "1"],
+            "panels": 64,
+            "compiled_runner_peak_rss_kib": 867480,
+            "runtime_peak_rss_kib": 22100,
+            "carrier_cutoff_seconds": 600,
+            "carrier_returned": False,
+            "mathematical_refusal_reached": False,
+            "next_decomposition": "eight-panel microfactors with exact shared micro-boundary frames"
+        },
         "does_not_establish": ["a global connection matrix", "an endpoint trace or flux",
                                "the nonexistence of a global connection matrix",
                                "a scientific obstruction in the Bach system",
                                "scattering, stability, CPT, positivity or unitarity"],
+        "parameter_affine_successor": affine_metadata,
         "provenance": {
-            "forge_head_observed": "3c4dfd5b43f0177e7ee450778a73d7c33f9749ac",
+            "forge_head_observed": "f2ab419230f03003580d885735e029ce2deed71e",
             "ivlinode_sha256": sha256(FORGE / "lib/math/ivlinode.forge")
         },
         "verification": {
@@ -421,8 +456,8 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true")
     args = ap.parse_args()
-    adapter = render_adapter()
-    cert = json.dumps(build_certificate(), indent=2, sort_keys=True) + "\n"
+    adapter, affine_metadata = render_affine_adapter()
+    cert = json.dumps(build_certificate(affine_metadata), indent=2, sort_keys=True) + "\n"
     if args.check:
         require(ADAPTER.exists() and ADAPTER.read_text() == adapter, "adapter drift")
         require(OUTPUT.exists() and OUTPUT.read_text() == cert, "certificate drift")

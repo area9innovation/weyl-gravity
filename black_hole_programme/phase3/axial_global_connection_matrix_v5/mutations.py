@@ -25,19 +25,19 @@ def main() -> None:
     cases.append((m, None))
 
     m = copy.deepcopy(base)
-    m["affine_moving_frame_result"]["carrier_rank_certified"] = False
+    m["table_backed_runtime_gate"]["coefficient_table_materialized"] = False
     cases.append((m, None))
 
     m = copy.deepcopy(base)
-    m["structured_lower_lift_result"]["maximum_interval_width"] = 0.01
+    m["table_backed_runtime_gate"]["carrier_flow_returned_within_20_minutes"] = True
     cases.append((m, None))
 
     m = copy.deepcopy(base)
-    m["missing_dependency"] = ""
+    m["chunk_successor"]["shared_generator"] = 999
     cases.append((m, None))
 
     m = copy.deepcopy(base)
-    m["flattened_width_growth"][-1]["carrier_max_width"] = 0.1
+    m["chunk_successor"]["panels_per_chunk"] = 255
     cases.append((m, None))
 
     m = copy.deepcopy(base)
