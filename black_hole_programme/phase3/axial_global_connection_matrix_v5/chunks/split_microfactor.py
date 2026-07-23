@@ -50,6 +50,10 @@ def relative(path: Path, root: Path) -> str:
     return path.resolve().relative_to(root.resolve()).as_posix()
 
 
+def rational_text(value: Fraction) -> str:
+    return f"{value.numerator}/{value.denominator}"
+
+
 def trace_id(parent: int, depth: int, child: int) -> int:
     if not (0 <= parent < MICROFACTOR_COUNT):
         raise ValueError("parent microfactor out of range")
@@ -114,8 +118,8 @@ def build_split_handoff(
         "domain": {
             "coordinate": "t=32-r",
             "orientation": "increasing-t/inward-r",
-            "start": str(Fraction(start, 64)),
-            "end": str(Fraction(end, 64)),
+            "start": rational_text(Fraction(start, 64)),
+            "end": rational_text(Fraction(end, 64)),
         },
         "state": {
             "rows": 12,

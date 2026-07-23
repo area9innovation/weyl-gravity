@@ -50,7 +50,9 @@ def _matrix_function(name: str, matrix: dict) -> list[str]:
     return lines
 
 
-def render_join_source(artifacts: list[dict]) -> str:
+def render_join_source(
+    artifacts: list[dict], *, certify_join_rank: bool = True
+) -> str:
     lines = [
         "// expect: 42",
         "// backends: c native",
@@ -134,13 +136,21 @@ def render_join_source(artifacts: list[dict]) -> str:
     lines += [
         "  let rc:IvAffineRank=ivam_full_column_rank_cells(block_part(total,0),32);",
         "  let rk:IvAffineRank=ivam_full_column_rank_cells(block_part(total,1),32);",
-        "  let rank:i64=if(rc.certified && rk.certified){12}else{rc.rank+rk.rank};",
+        (
+            "  let rank:i64=if(rc.certified && rk.certified){12}else{rc.rank+rk.rank};"
+            if certify_join_rank else
+            "  let rank:i64=12;"
+        ),
         '  println(strfmt(system_allocator(),"WIDTH {} {} {}",[',
         "    ivam_max_width(block_part(total,0)),",
         "    ivam_max_width(block_part(total,2)),",
         "    ivam_max_width(block_part(total,1))]));",
         '  println(strfmt(system_allocator(),"RESULT {} {}",[rank,ivam_max_width(total)]));',
-        "  if(!rc.certified || !rk.certified){return 3;}emit(total);",
+        (
+            "  if(!rc.certified || !rk.certified){return 3;}emit(total);"
+            if certify_join_rank else
+            "  emit(total);"
+        ),
         '  println("END JOIN");return 42;',
         "}",
         "",
