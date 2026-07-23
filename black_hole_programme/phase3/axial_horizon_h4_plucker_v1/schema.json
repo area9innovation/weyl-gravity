@@ -1,0 +1,45 @@
+{
+  "schema": "phase3-axial-horizon-h4-plucker-artifact-schema-v1",
+  "source_metadata": {
+    "required": [
+      "schema",
+      "status",
+      "frequency_cell",
+      "target",
+      "plucker_coordinates",
+      "realified_state_rows",
+      "plucker_relation_count",
+      "plucker_relation_span_rank",
+      "induced_inventory_sha256",
+      "relation_inventory_sha256",
+      "source_sha256",
+      "does_not_establish"
+    ]
+  },
+  "certificate": {
+    "required": [
+      "schema",
+      "status",
+      "dependency_tags",
+      "scope",
+      "representation",
+      "result",
+      "hashes",
+      "does_not_establish"
+    ],
+    "allowed_status": [
+      "CERTIFIED",
+      "BLOCKED"
+    ]
+  },
+  "receipt": {
+    "required": [
+      "schema",
+      "status",
+      "commands",
+      "hashes",
+      "higher_tiers_not_run",
+      "does_not_establish"
+    ]
+  }
+}
