@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 
 
@@ -32,6 +33,16 @@ EXPECTED_PHASE2 = {
         "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
         "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
         ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+    ),
+    "PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1": (
+        "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
+        "6158a259fcf4f5888df58a3da8ffe8fa0de40d6ae992f1c132a0726218f95162",
+        ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+    ),
+    "PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5": (
+        "black_hole_programme/phase3/axial_global_connection_matrix_v5/certificate.json",
+        "1b1fbffe77f367b406cb029e64f2a91ec4620de2a5a52213b741e6bd38a6d953",
+        ["EXACT-ALGEBRAIC", "NUMERIC-ENCLOSURE"],
     ),
     "PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1": (
         "quantum-weyl/pt_cpt/synthesis/certificates/PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1.json",
@@ -73,6 +84,17 @@ def fail(message: str) -> None:
     raise SystemExit(f"REFUSED: {message}")
 
 
+def committed_bytes(commit: str, path: str) -> bytes:
+    repo = Path(
+        subprocess.check_output(
+            ["git", "rev-parse", "--show-toplevel"], cwd=ROOT, text=True
+        ).strip()
+    )
+    prefix = ROOT.relative_to(repo).as_posix()
+    repo_path = f"{prefix}/{path}" if prefix else path
+    return subprocess.check_output(["git", "show", f"{commit}:{repo_path}"], cwd=repo)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--paper", type=Path, default=DEFAULT_PAPER)
@@ -91,8 +113,10 @@ def main() -> None:
         fail("authoritative ledger hash drift")
     if claim_map["authoritative_result_id"] != "PURE_WEYL_PROGRAMME_PHASE1_CLASSIFICATION_ENDING_V1":
         fail("wrong Phase-1 authority")
-    if claim_map["schema"] != "paper15-phase1-synthesis-claim-map-v4":
+    if claim_map["schema"] != "paper15-phase1-synthesis-claim-map-v5":
         fail("wrong claim-map schema")
+    if claim_map["result_id"] != "PAPER15_FOUR_LEVEL_PHASE1_SYNTHESIS_WITH_ENDPOINT_FLUX_V5":
+        fail("wrong Paper 15 endpoint-flux result identity")
 
     updates = {item["result_id"]: item for item in claim_map["post_phase1_updates"]}
     if set(updates) != set(EXPECTED_PHASE2):
@@ -101,14 +125,68 @@ def main() -> None:
         item = updates[result_id]
         if item["path"] != path_string or item["sha256"] != expected_hash:
             fail(f"Phase-2 pin drift for {result_id}")
-        path = ROOT / path_string
-        if digest(path) != expected_hash:
+        if "content_commit" in item:
+            source_bytes = committed_bytes(item["content_commit"], path_string)
+        else:
+            source_bytes = (ROOT / path_string).read_bytes()
+        if hashlib.sha256(source_bytes).hexdigest() != expected_hash:
             fail(f"Phase-2 source hash drift for {result_id}")
-        source = json.loads(path.read_text())
+        source = json.loads(source_bytes)
         if source.get("result_id") != result_id:
             fail(f"Phase-2 source result mismatch for {result_id}")
         if item["dependency_tags"] != expected_tags or source.get("dependency_tags") != expected_tags:
             fail(f"Phase-2 dependency-tag drift for {result_id}")
+    endpoint = updates["PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1"]
+    if endpoint.get("content_commit") != "3baef5e665228c747f78935a367c76bb9a00a9df":
+        fail("endpoint content commit drift")
+    if endpoint.get("lifecycle_commit") != "0da46f3b0916e4e53f441df37077038892cf89c3":
+        fail("endpoint lifecycle commit drift")
+    for commit in [endpoint["content_commit"], endpoint["lifecycle_commit"]]:
+        kind = subprocess.check_output(
+            ["git", "cat-file", "-t", commit], cwd=ROOT, text=True
+        ).strip()
+        if kind != "commit":
+            fail("endpoint provenance pin is not a commit")
+    endpoint_source = json.loads((ROOT / endpoint["path"]).read_text())
+    endpoint_verdict = endpoint_source["common_verdict"]
+    if (
+        endpoint_verdict["quotient_dimension"] != 3
+        or endpoint_verdict["rank"] != 3
+        or endpoint_verdict["radical_dimension"] != 0
+        or endpoint_verdict["inertia_for_alpha_W_positive"] != [1, 2, 0]
+        or endpoint_verdict["frequency_walls"] != []
+    ):
+        fail("endpoint flux theorem payload drift")
+    endpoint_flags = endpoint_source["claim_flags"]
+    if any(
+        endpoint_flags[key]
+        for key in [
+            "global_connection_constructed",
+            "horizon_to_infinity_matching_constructed",
+            "scattering_channels_classified",
+            "stability_or_CPT_established",
+        ]
+    ):
+        fail("endpoint flux source overpromotes a global/physical claim")
+    global_v5 = updates["PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5"]
+    if global_v5.get("content_commit") != "54670c5e371200ee1f08b88843cb3e67b3f17b3b":
+        fail("global v5 content commit drift")
+    if global_v5.get("lifecycle_commit") != "b1eec02b2d04e585fddbf8f6f1c2ba1d0b96c6f1":
+        fail("global v5 lifecycle commit drift")
+    if global_v5.get("lifecycle") != "NUMERIC-ENCLOSURE":
+        fail("global v5 lifecycle drift")
+    if global_v5.get("disposition") != "SHORTFALL":
+        fail("global v5 disposition overpromotion")
+    global_v5_source = json.loads(
+        committed_bytes(global_v5["content_commit"], global_v5["path"])
+    )
+    if global_v5_source["stop_condition_disposition"] != "SHORTFALL":
+        fail("global v5 terminal disposition drift")
+    if (
+        global_v5_source["claim_flags"]["global_connection_certified"]
+        or global_v5_source["claim_flags"]["lower_lift_certified"]
+    ):
+        fail("global v5 shortfall silently promoted")
 
     receipts = {item["path"]: item["sha256"] for item in claim_map["generic_l_terminal_receipts"]}
     if receipts != EXPECTED_GENERIC_RECEIPTS:
@@ -183,6 +261,16 @@ def main() -> None:
         "constructs neither a",
         "FradkinTseytlin1984",
         "K_{\\rm tr}=",
+        "Phase-3 endpoint completion: exact axial wave-packet flux",
+        "\\mathcal X_{\\mathscr I^-}",
+        "\\mathcal X_{\\mathscr I^+}",
+        "\\det G_-",
+        "\\operatorname{inertia}(G_-)",
+        "does not establish a globally populated negative scattering",
+        "(XH0a,XH0b,EH0,XHplus,EHout,XHminus)",
+        "raw future-regular columns \\(0,1,2\\)",
+        "ended in \\textsc{shortfall}",
+        "nonexistence result for the Bach connection",
     ]
     for phrase in required_phrases:
         if phrase not in text:
@@ -205,12 +293,18 @@ def main() -> None:
         "finite $X_0|X_0$ pairing and nonzero finite",
         "$X_0\\mapsto X_0+\\beta E_0$",
         "axial non-Einstein finite formal radial direction for every",
+        "endpoint flux proves a physical ghost",
+        "endpoint flux selects the Einstein sector",
+        "a globally populated negative scattering channel is established",
+        "v5 proves that no global connection exists",
     ]
     for phrase in forbidden_phrases:
         if phrase.lower() in text.lower():
             fail(f"overbroad phrase present: {phrase}")
 
     coverage = json.loads(COVERAGE.read_text())
+    if coverage["schema"] != "paper15-phase1-synthesis-overlay-v5":
+        fail("wrong Paper 15 coverage schema")
     if coverage["append_only_parent_sha256"] != digest(COVERAGE_SOURCE):
         fail("frozen coverage parent hash drift")
     if coverage["claim_map_sha256"] != digest(claim_map_path):

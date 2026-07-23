@@ -33,6 +33,17 @@ PHASE3_RECEIPT = ROOT / "black_hole_programme/phase3/axial_complete_reconstructi
 PHASE3_REPORT = ROOT / "reports/phase3-black-hole-axial-complete-reconstruction-repair-2026-07-22.md"
 PHASE3_ATLAS = ROOT / "residual_atlas/phase3-black-hole-axial-complete-reconstruction-repair-fragment-v1.json"
 PHASE3_COMMIT = "d5d5d6de648795203604d62ce7bc4f4ce6fea510"
+ENDPOINT_CERT = ROOT / "black_hole_programme/phase3/axial_null_flux_gram/certificate.json"
+ENDPOINT_RECEIPT = ROOT / "black_hole_programme/phase3/axial_null_flux_gram/receipt.json"
+ENDPOINT_REPORT = ROOT / "reports/phase3-black-hole-axial-null-flux-gram-2026-07-23.md"
+ENDPOINT_ATLAS = ROOT / "residual_atlas/phase3-black-hole-axial-null-flux-gram-fragment-v1.json"
+ENDPOINT_CONTENT_COMMIT = "3baef5e665228c747f78935a367c76bb9a00a9df"
+ENDPOINT_LIFECYCLE_COMMIT = "0da46f3b0916e4e53f441df37077038892cf89c3"
+GLOBAL_V5_CONTENT_COMMIT = "54670c5e371200ee1f08b88843cb3e67b3f17b3b"
+GLOBAL_V5_LIFECYCLE_COMMIT = "b1eec02b2d04e585fddbf8f6f1c2ba1d0b96c6f1"
+GLOBAL_V5_CERT = "black_hole_programme/phase3/axial_global_connection_matrix_v5/certificate.json"
+GLOBAL_V5_REPORT = "reports/phase3-black-hole-axial-global-connection-matrix-v5-2026-07-23.md"
+GLOBAL_V5_ATLAS = "residual_atlas/phase3-black-hole-axial-global-connection-matrix-v5-fragment-v1.json"
 
 ACTIVE_SOURCES = [
     "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json",
@@ -83,6 +94,14 @@ def git_blob(path: str) -> str:
     ).strip()
 
 
+def committed_digest(commit: str, path: str) -> str:
+    repo_path = f"{PREFIX}/{path}" if PREFIX else path
+    content = subprocess.check_output(
+        ["git", "show", f"{commit}:{repo_path}"], cwd=REPO
+    )
+    return hashlib.sha256(content).hexdigest()
+
+
 def encoded(payload: dict) -> bytes:
     return (json.dumps(payload, indent=2, sort_keys=True) + "\n").encode()
 
@@ -105,7 +124,7 @@ def claim_map() -> dict:
     return {
         "schema": "paper-draft-source-map-v1",
         "paper_id": "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION",
-        "result_id": "PAPER_14_PHASE3_AXIAL_RECONSTRUCTION_SUPERSESSION_V2",
+        "result_id": "PAPER_14_PHASE3_ENDPOINT_FLUX_UPDATE_V3",
         "lifecycle_state": "DRAFT_ALLOWED",
         "source_baseline": SOURCE_BASELINE,
         "manuscript": str(PAPER.relative_to(ROOT)),
@@ -134,6 +153,33 @@ def claim_map() -> dict:
             "report_sha256": digest(PHASE3_REPORT),
             "atlas": str(PHASE3_ATLAS.relative_to(ROOT)),
             "atlas_sha256": digest(PHASE3_ATLAS),
+        },
+        "phase3_endpoint_flux_authority": {
+            "result_id": "PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1",
+            "content_commit": ENDPOINT_CONTENT_COMMIT,
+            "lifecycle_commit": ENDPOINT_LIFECYCLE_COMMIT,
+            "certificate": str(ENDPOINT_CERT.relative_to(ROOT)),
+            "certificate_sha256": digest(ENDPOINT_CERT),
+            "receipt": str(ENDPOINT_RECEIPT.relative_to(ROOT)),
+            "receipt_sha256": digest(ENDPOINT_RECEIPT),
+            "report": str(ENDPOINT_REPORT.relative_to(ROOT)),
+            "report_sha256": digest(ENDPOINT_REPORT),
+            "atlas": str(ENDPOINT_ATLAS.relative_to(ROOT)),
+            "atlas_sha256": digest(ENDPOINT_ATLAS),
+        },
+        "phase3_global_connection_shortfall": {
+            "result_id": "PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5",
+            "lifecycle": "NUMERIC-ENCLOSURE",
+            "disposition": "SHORTFALL",
+            "content_commit": GLOBAL_V5_CONTENT_COMMIT,
+            "lifecycle_commit": GLOBAL_V5_LIFECYCLE_COMMIT,
+            "certificate": GLOBAL_V5_CERT,
+            "certificate_sha256": committed_digest(GLOBAL_V5_CONTENT_COMMIT, GLOBAL_V5_CERT),
+            "report": GLOBAL_V5_REPORT,
+            "report_sha256": committed_digest(GLOBAL_V5_CONTENT_COMMIT, GLOBAL_V5_REPORT),
+            "atlas": GLOBAL_V5_ATLAS,
+            "atlas_sha256": committed_digest(GLOBAL_V5_CONTENT_COMMIT, GLOBAL_V5_ATLAS),
+            "boundary": "The first-cell diagonal ranks and local lower solves close, but cumulative correlated lower transport does not. This is not a scientific obstruction or a global connection theorem.",
         },
         "certified_scope": {
             "static_laurent_family": True,
@@ -173,6 +219,17 @@ def claim_map() -> dict:
             "axial_l2_rate_zero_einstein_shear_finite": True,
             "axial_l2_oscillatory_einstein_shear_divergent": True,
             "axial_l2_unrestricted_representative_independence": False,
+            "axial_l2_endpoint_trace_dimensions_three_three": True,
+            "axial_l2_endpoint_flux_grams_action_derived": True,
+            "axial_l2_endpoint_flux_grams_rank_three": True,
+            "axial_l2_endpoint_flux_grams_radical_zero": True,
+            "axial_l2_endpoint_flux_grams_inertia_one_two_zero_alpha_positive": True,
+            "axial_l2_endpoint_flux_frequency_wall_absent_on_pilot": True,
+            "axial_l2_endpoint_trace_limit_interchange": True,
+            "axial_l2_endpoint_direction_globally_populated": False,
+            "axial_l2_endpoint_flux_positive_energy": False,
+            "axial_l2_endpoint_flux_cpt_or_stability": False,
+            "axial_global_connection_v5_method_shortfall_recorded": True,
             "legacy_axial_x0_derivative_defect": True,
             "polar_mixed_finite_line": True,
             "polar_q21_exceptional_wall": True,
@@ -243,18 +300,24 @@ def claim_map() -> dict:
         "sources": [
             {"path": path, "git_blob": git_blob(path)} for path in ACTIVE_SOURCES
         ],
-        "next_gate": "VALIDATED_ENDPOINT_REMAINDERS_THEN_GLOBAL_HORIZON_TO_INFINITY_CONNECTION",
+        "next_gate": "CORRELATED_PARAMETRIC_LOWER_LIFT_WITH_RAW_PUBLIC_BASIS_PERMUTATION_THEN_VALIDATED_GLOBAL_CONNECTION",
     }
 
 
 def coverage(claim_payload: dict) -> dict:
     result_id = "sf:coverage/result/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1"
     phase3_result_id = "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR"
+    endpoint_result_id = "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1"
+    global_v5_result_id = "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5"
     paper_id = "paper:14-pure-weyl-black-hole-radiation"
     claim_id = f"{paper_id}/claim/phase2_generic_l_parity_disposition_v1"
     phase3_claim_id = f"{paper_id}/claim/phase3_axial_complete_reconstruction_repair"
     edge_id = "sf:coverage/edge/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1/paper-14/v2"
     phase3_edge_id = "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR/paper-14/v1"
+    endpoint_claim_id = f"{paper_id}/claim/phase3_axial_null_endpoint_flux_grams_v1"
+    endpoint_edge_id = "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1/paper-14/v1"
+    global_v5_claim_id = f"{paper_id}/claim/phase3_axial_global_connection_matrix_v5_shortfall"
+    global_v5_edge_id = "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5/paper-14/v1"
     nodes = [
         {
             "kind": "materiality",
@@ -351,6 +414,106 @@ def coverage(claim_payload: dict) -> dict:
                 "native": {"source_schema": "result-paper-edge-v0"},
             },
         },
+        {
+            "kind": "materiality",
+            "id": "sf:coverage/materiality/PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1/v1",
+            "body": {
+                "result_id": endpoint_result_id,
+                "materiality": "HEADLINE",
+                "by": "Asger Alstrup Palm",
+                "stamp": "2026-07-23",
+                "version": 1,
+                "rationale": "First exact action-derived wave-packet flux forms on the axial null-endpoint trace spaces; global population remains open.",
+                "native": {"source_schema": "materiality-v0"},
+            },
+        },
+        {
+            "kind": "result",
+            "id": endpoint_result_id,
+            "title": "PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1",
+            "body": {
+                "result_id": "PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1",
+                "lifecycle": "CLASSIFIED",
+                "boundary": "Strict pure Weyl, M=1, axial ell=2, omega in [1/2,3/4]: exact three-dimensional L2 traces at both null ends with rank-three, radical-free flux Grams of inertia (1,2,0) for alpha_W>0. No global matching, scattering, CPT or stability theorem.",
+                "native": {
+                    "source_kind": "phase3-terminal-certificate",
+                    "certificate": str(ENDPOINT_CERT.relative_to(ROOT)),
+                    "certificate_sha256": digest(ENDPOINT_CERT),
+                    "content_commit": ENDPOINT_CONTENT_COMMIT,
+                    "lifecycle_commit": ENDPOINT_LIFECYCLE_COMMIT,
+                },
+            },
+            "edges": [],
+        },
+        {
+            "kind": "paper_claim",
+            "id": endpoint_claim_id,
+            "body": {
+                "paper": paper_id,
+                "material": True,
+                "asserts_lifecycle": "CLASSIFIED",
+                "boundary": "Exact endpoint wave-packet flux only; no endpoint direction is proved to be populated by horizon-regular data.",
+                "cites": [endpoint_result_id],
+            },
+        },
+        {
+            "kind": "result_paper_edge",
+            "id": endpoint_edge_id,
+            "body": {
+                "from": endpoint_result_id,
+                "to": paper_id,
+                "claim": endpoint_claim_id,
+                "edge_kind": "PRIMARY_ENDPOINT_THEOREM",
+                "stale": False,
+                "version": 1,
+                "stamp": "2026-07-23",
+                "native": {"source_schema": "result-paper-edge-v0"},
+            },
+        },
+        {
+            "kind": "result",
+            "id": global_v5_result_id,
+            "title": "PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5",
+            "body": {
+                "result_id": "PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5",
+                "lifecycle": "NUMERIC-ENCLOSURE",
+                "disposition": "SHORTFALL",
+                "boundary": "Validated first-cell method shortfall: diagonal ranks and local lower solves close, but correlated cumulative lower transport does not. No scientific nonexistence or global connection claim.",
+                "native": {
+                    "source_kind": "phase3-terminal-shortfall",
+                    "certificate": GLOBAL_V5_CERT,
+                    "certificate_sha256": committed_digest(GLOBAL_V5_CONTENT_COMMIT, GLOBAL_V5_CERT),
+                    "content_commit": GLOBAL_V5_CONTENT_COMMIT,
+                    "lifecycle_commit": GLOBAL_V5_LIFECYCLE_COMMIT,
+                },
+            },
+            "edges": [],
+        },
+        {
+            "kind": "paper_claim",
+            "id": global_v5_claim_id,
+            "body": {
+                "paper": paper_id,
+                "material": True,
+                "asserts_lifecycle": "NUMERIC-ENCLOSURE",
+                "boundary": "Method/substrate SHORTFALL only; not evidence for or against existence of the Bach connection.",
+                "cites": [global_v5_result_id],
+            },
+        },
+        {
+            "kind": "result_paper_edge",
+            "id": global_v5_edge_id,
+            "body": {
+                "from": global_v5_result_id,
+                "to": paper_id,
+                "claim": global_v5_claim_id,
+                "edge_kind": "METHOD_SHORTFALL",
+                "stale": False,
+                "version": 1,
+                "stamp": "2026-07-23",
+                "native": {"source_schema": "result-paper-edge-v0"},
+            },
+        },
     ]
     for old_edge in SUPERSEDED_EDGES:
         old_name = old_edge.rsplit("/", 3)[-3]
@@ -370,7 +533,7 @@ def coverage(claim_payload: dict) -> dict:
         )
     return {
         "ir": "science-forge-ir-v0",
-        "schema": "paper14-phase3-axial-supersession-overlay-v2",
+        "schema": "paper14-phase3-endpoint-flux-overlay-v3",
         "append_only_parent": str(PARENT_COVERAGE.relative_to(ROOT)),
         "append_only_parent_sha256": digest(PARENT_COVERAGE),
         "claim_map": str(OUTPUT.relative_to(ROOT)),

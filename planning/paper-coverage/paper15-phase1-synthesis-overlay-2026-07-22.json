@@ -2,13 +2,13 @@
   "append_only_parent": "planning/paper-coverage/phase1-paper-coverage-overlay-2026-07-22.json",
   "append_only_parent_sha256": "389d1033e9b40bd66cfc5237d3cd2df4ea2575e1d17847d4a519dba89f6b8be2",
   "claim_map": "paper/15-four-level-ghost-classification-phase1-synthesis-claim-map.json",
-  "claim_map_sha256": "84402be988301d7f0cbb6d6c84ab2e26f1e6e7536b8b173e6ee6944b4315a528",
+  "claim_map_sha256": "92efb623512d0d40f73a573ab2f90a8f774c6ceb32989a28f39e99adf3979ace",
   "ir": "science-forge-ir-v0",
   "nodes": [
     {
       "body": {
         "native": {
-          "source_kind": "paper15-additive-phase1-synthesis-with-phase3-v4"
+          "source_kind": "paper15-additive-phase1-synthesis-with-endpoint-flux-v5"
         },
         "paper_class": "overview"
       },
@@ -246,12 +246,53 @@
     },
     {
       "body": {
+        "asserts_lifecycle": "CLASSIFIED",
+        "boundary": {
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "REDUCED-MODE"
+          ],
+          "paper_location": "Phase-3 endpoint completion after Result card C",
+          "relationship": "Adds exact three-dimensional L2 wave-packet traces and rank-three, radical-free endpoint flux Grams of inertia (1,2,0) on the axial pilot; no global population, scattering, CPT or stability claim."
+        },
+        "cites": [
+          "sf:result/PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1"
+        ],
+        "material": true,
+        "paper": "paper:15-four-level-ghost-classification-phase1-synthesis"
+      },
+      "id": "paper:15-four-level-ghost-classification-phase1-synthesis/claim/update-phase3_axial_null_endpoint_flux",
+      "kind": "paper_claim"
+    },
+    {
+      "body": {
+        "asserts_lifecycle": "NUMERIC-ENCLOSURE",
+        "boundary": {
+          "dependency_tags": [
+            "EXACT-ALGEBRAIC",
+            "NUMERIC-ENCLOSURE"
+          ],
+          "paper_location": "From formal radial pairing to physical boundary conditions",
+          "relationship": "Records that first-cell diagonal ranks and local lower solves close while cumulative correlated lower transport does not; it is not a scientific obstruction or global connection theorem."
+        },
+        "cites": [
+          "sf:result/PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5"
+        ],
+        "material": true,
+        "paper": "paper:15-four-level-ghost-classification-phase1-synthesis"
+      },
+      "id": "paper:15-four-level-ghost-classification-phase1-synthesis/claim/update-phase3_global_connection_v5_shortfall",
+      "kind": "paper_claim"
+    },
+    {
+      "body": {
         "boundary": {
           "dependency_tags": [
             "LOCAL-ALGEBRAIC"
           ],
           "relationship": "Prevents promotion of a fixed-coupling stationary sign-family scan."
         },
+        "disposition": null,
         "lifecycle": "CLASSIFIED"
       },
       "edges": [],
@@ -272,6 +313,7 @@
           ],
           "relationship": "Adds a scoped relative-residue mechanism without identifying background families or absolute signs."
         },
+        "disposition": null,
         "lifecycle": "CLASSIFIED"
       },
       "edges": [],
@@ -293,6 +335,7 @@
           ],
           "relationship": "Pins the missing full-carrier obstruction and does not claim nonexistence."
         },
+        "disposition": null,
         "lifecycle": "CLASSIFIED"
       },
       "edges": [],
@@ -313,6 +356,7 @@
           ],
           "relationship": "Adds positive-metric feasibility, BRST-chain obstruction, and quartet negative control without promoting a full state."
         },
+        "disposition": null,
         "lifecycle": "CLASSIFIED"
       },
       "edges": [],
@@ -333,6 +377,7 @@
           ],
           "relationship": "Retains the generic-angular polar Q21 filtration; its axial metric disposition is superseded by the Phase-3 all-row ell=2 repair."
         },
+        "disposition": null,
         "lifecycle": "CLASSIFIED"
       },
       "edges": [],
@@ -353,6 +398,7 @@
           ],
           "relationship": "Supersedes the Phase-2 generic-ell axial metric and representative-independence claims while retaining the separate polar filtration."
         },
+        "disposition": null,
         "lifecycle": "CLASSIFIED"
       },
       "edges": [],
@@ -363,6 +409,48 @@
         "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990"
       },
       "title": "PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR"
+    },
+    {
+      "body": {
+        "boundary": {
+          "dependency_tags": [
+            "EXACT-ALGEBRAIC",
+            "NUMERIC-ENCLOSURE"
+          ],
+          "relationship": "Records that first-cell diagonal ranks and local lower solves close while cumulative correlated lower transport does not; it is not a scientific obstruction or global connection theorem."
+        },
+        "disposition": "SHORTFALL",
+        "lifecycle": "NUMERIC-ENCLOSURE"
+      },
+      "edges": [],
+      "id": "sf:result/PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5",
+      "kind": "result",
+      "source": {
+        "path": "black_hole_programme/phase3/axial_global_connection_matrix_v5/certificate.json",
+        "sha256": "1b1fbffe77f367b406cb029e64f2a91ec4620de2a5a52213b741e6bd38a6d953"
+      },
+      "title": "PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5"
+    },
+    {
+      "body": {
+        "boundary": {
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "REDUCED-MODE"
+          ],
+          "relationship": "Adds exact three-dimensional L2 wave-packet traces and rank-three, radical-free endpoint flux Grams of inertia (1,2,0) on the axial pilot; no global population, scattering, CPT or stability claim."
+        },
+        "disposition": null,
+        "lifecycle": "CLASSIFIED"
+      },
+      "edges": [],
+      "id": "sf:result/PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1",
+      "kind": "result",
+      "source": {
+        "path": "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
+        "sha256": "6158a259fcf4f5888df58a3da8ffe8fa0de40d6ae992f1c132a0726218f95162"
+      },
+      "title": "PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1"
     },
     {
       "body": {
@@ -407,9 +495,9 @@
         "stale": false,
         "stamp": "2026-07-23",
         "to": "paper:15-four-level-ghost-classification-phase1-synthesis",
-        "version": 4
+        "version": 5
       },
-      "id": "sf:coverage/edge/DYONIC_FLAT_FAMILY_PREFLIGHT_V1/paper-15/post-phase1-update-v4",
+      "id": "sf:coverage/edge/DYONIC_FLAT_FAMILY_PREFLIGHT_V1/paper-15/post-phase1-update-v5",
       "kind": "result_paper_edge"
     },
     {
@@ -439,9 +527,9 @@
         "stale": false,
         "stamp": "2026-07-23",
         "to": "paper:15-four-level-ghost-classification-phase1-synthesis",
-        "version": 4
+        "version": 5
       },
-      "id": "sf:coverage/edge/NARIAI_SIGN_MECHANISM_V2/paper-15/post-phase1-update-v4",
+      "id": "sf:coverage/edge/NARIAI_SIGN_MECHANISM_V2/paper-15/post-phase1-update-v5",
       "kind": "result_paper_edge"
     },
     {
@@ -503,9 +591,9 @@
         "stale": false,
         "stamp": "2026-07-23",
         "to": "paper:15-four-level-ghost-classification-phase1-synthesis",
-        "version": 4
+        "version": 5
       },
-      "id": "sf:coverage/edge/PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1/paper-15/post-phase1-update-v4",
+      "id": "sf:coverage/edge/PHASE2_BRST_HADAMARD_STRETCH_OBSTRUCTION_V1/paper-15/post-phase1-update-v5",
       "kind": "result_paper_edge"
     },
     {
@@ -519,9 +607,9 @@
         "stale": false,
         "stamp": "2026-07-23",
         "to": "paper:15-four-level-ghost-classification-phase1-synthesis",
-        "version": 4
+        "version": 5
       },
-      "id": "sf:coverage/edge/PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1/paper-15/post-phase1-update-v4",
+      "id": "sf:coverage/edge/PHASE2_CPT_FEASIBILITY_CLASSIFICATION_V1/paper-15/post-phase1-update-v5",
       "kind": "result_paper_edge"
     },
     {
@@ -567,9 +655,9 @@
         "stale": false,
         "stamp": "2026-07-23",
         "to": "paper:15-four-level-ghost-classification-phase1-synthesis",
-        "version": 4
+        "version": 5
       },
-      "id": "sf:coverage/edge/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1/paper-15/post-phase1-update-v4",
+      "id": "sf:coverage/edge/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1/paper-15/post-phase1-update-v5",
       "kind": "result_paper_edge"
     },
     {
@@ -583,11 +671,43 @@
         "stale": false,
         "stamp": "2026-07-23",
         "to": "paper:15-four-level-ghost-classification-phase1-synthesis",
-        "version": 4
+        "version": 5
       },
-      "id": "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR/paper-15/post-phase1-update-v4",
+      "id": "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR/paper-15/post-phase1-update-v5",
+      "kind": "result_paper_edge"
+    },
+    {
+      "body": {
+        "claim": "paper:15-four-level-ghost-classification-phase1-synthesis/claim/update-phase3_global_connection_v5_shortfall",
+        "edge_kind": "METHOD_SHORTFALL",
+        "from": "sf:result/PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5",
+        "native": {
+          "source_schema": "result-paper-edge-v0"
+        },
+        "stale": false,
+        "stamp": "2026-07-23",
+        "to": "paper:15-four-level-ghost-classification-phase1-synthesis",
+        "version": 5
+      },
+      "id": "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5/paper-15/post-phase1-update-v5",
+      "kind": "result_paper_edge"
+    },
+    {
+      "body": {
+        "claim": "paper:15-four-level-ghost-classification-phase1-synthesis/claim/update-phase3_axial_null_endpoint_flux",
+        "edge_kind": "PRIMARY_ENDPOINT_THEOREM",
+        "from": "sf:result/PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1",
+        "native": {
+          "source_schema": "result-paper-edge-v0"
+        },
+        "stale": false,
+        "stamp": "2026-07-23",
+        "to": "paper:15-four-level-ghost-classification-phase1-synthesis",
+        "version": 5
+      },
+      "id": "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1/paper-15/post-phase1-update-v5",
       "kind": "result_paper_edge"
     }
   ],
-  "schema": "paper15-phase1-synthesis-overlay-v4"
+  "schema": "paper15-phase1-synthesis-overlay-v5"
 }

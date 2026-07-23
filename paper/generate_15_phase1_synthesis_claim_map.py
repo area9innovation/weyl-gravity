@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 
 
@@ -47,6 +48,32 @@ POST_PHASE1_INPUTS = [
         "edge_kind": "PRIMARY_THEOREM_CORRECTION",
         "paper_location": "Result card C",
         "relationship": "Supersedes the Phase-2 generic-ell axial metric and representative-independence claims while retaining the separate polar filtration.",
+    },
+    {
+        "key": "phase3_axial_null_endpoint_flux",
+        "result_id": "PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1",
+        "path": "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
+        "sha256": "6158a259fcf4f5888df58a3da8ffe8fa0de40d6ae992f1c132a0726218f95162",
+        "content_commit": "3baef5e665228c747f78935a367c76bb9a00a9df",
+        "lifecycle_commit": "0da46f3b0916e4e53f441df37077038892cf89c3",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+        "edge_kind": "PRIMARY_ENDPOINT_THEOREM",
+        "paper_location": "Phase-3 endpoint completion after Result card C",
+        "relationship": "Adds exact three-dimensional L2 wave-packet traces and rank-three, radical-free endpoint flux Grams of inertia (1,2,0) on the axial pilot; no global population, scattering, CPT or stability claim.",
+    },
+    {
+        "key": "phase3_global_connection_v5_shortfall",
+        "result_id": "PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5",
+        "path": "black_hole_programme/phase3/axial_global_connection_matrix_v5/certificate.json",
+        "sha256": "1b1fbffe77f367b406cb029e64f2a91ec4620de2a5a52213b741e6bd38a6d953",
+        "content_commit": "54670c5e371200ee1f08b88843cb3e67b3f17b3b",
+        "lifecycle_commit": "b1eec02b2d04e585fddbf8f6f1c2ba1d0b96c6f1",
+        "dependency_tags": ["EXACT-ALGEBRAIC", "NUMERIC-ENCLOSURE"],
+        "lifecycle": "NUMERIC-ENCLOSURE",
+        "disposition": "SHORTFALL",
+        "edge_kind": "METHOD_SHORTFALL",
+        "paper_location": "From formal radial pairing to physical boundary conditions",
+        "relationship": "Records that first-cell diagonal ranks and local lower solves close while cumulative correlated lower transport does not; it is not a scientific obstruction or global connection theorem.",
     },
     {
         "key": "compact_pt_cpt",
@@ -110,6 +137,26 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def committed_bytes(commit: str, path: str) -> bytes:
+    prefix = ROOT.relative_to(
+        Path(
+            subprocess.check_output(
+                ["git", "rev-parse", "--show-toplevel"], cwd=ROOT, text=True
+            ).strip()
+        )
+    ).as_posix()
+    repo_path = f"{prefix}/{path}" if prefix else path
+    return subprocess.check_output(["git", "show", f"{commit}:{repo_path}"], cwd=ROOT)
+
+
+def input_digest(item: dict) -> str:
+    if "content_commit" in item:
+        return hashlib.sha256(
+            committed_bytes(item["content_commit"], item["path"])
+        ).hexdigest()
+    return digest(ROOT / item["path"])
+
+
 def main() -> None:
     ledger = json.loads(LEDGER.read_text())
     claims = {claim["claim_id"]: claim for claim in ledger["claims"]}
@@ -119,8 +166,7 @@ def main() -> None:
         raise SystemExit(f"missing frozen claims: {missing}")
 
     for item in POST_PHASE1_INPUTS + GENERIC_L_TERMINAL_RECEIPTS:
-        path = ROOT / item["path"]
-        if digest(path) != item["sha256"]:
+        if input_digest(item) != item["sha256"]:
             raise SystemExit(f"post-Phase-1 input hash drift: {item['path']}")
 
     cards = []
@@ -135,8 +181,8 @@ def main() -> None:
         )
 
     payload = {
-        "schema": "paper15-phase1-synthesis-claim-map-v4",
-        "result_id": "PAPER15_FOUR_LEVEL_PHASE1_SYNTHESIS_WITH_PHASE3_UPDATE_V4",
+        "schema": "paper15-phase1-synthesis-claim-map-v5",
+        "result_id": "PAPER15_FOUR_LEVEL_PHASE1_SYNTHESIS_WITH_ENDPOINT_FLUX_V5",
         "result_state": "PUBLICATION_SYNTHESIS_OF_FROZEN_CLAIMS",
         "paper": str(PAPER.relative_to(ROOT)),
         "paper_sha256": digest(PAPER),
@@ -169,7 +215,7 @@ def main() -> None:
             "source": {"path": str(PAPER.relative_to(ROOT))},
             "body": {
                 "paper_class": "overview",
-                "native": {"source_kind": "paper15-additive-phase1-synthesis-with-phase3-v4"},
+                "native": {"source_kind": "paper15-additive-phase1-synthesis-with-endpoint-flux-v5"},
             },
             "edges": [],
         }
@@ -218,7 +264,8 @@ def main() -> None:
                     "title": raw,
                     "source": {"path": item["path"], "sha256": item["sha256"]},
                     "body": {
-                        "lifecycle": "CLASSIFIED",
+                        "lifecycle": item.get("lifecycle", "CLASSIFIED"),
+                        "disposition": item.get("disposition"),
                         "boundary": {
                             "dependency_tags": item["dependency_tags"],
                             "relationship": item["relationship"],
@@ -232,7 +279,7 @@ def main() -> None:
                     "body": {
                         "paper": "paper:15-four-level-ghost-classification-phase1-synthesis",
                         "material": True,
-                        "asserts_lifecycle": "CLASSIFIED",
+                        "asserts_lifecycle": item.get("lifecycle", "CLASSIFIED"),
                         "boundary": {
                             "dependency_tags": item["dependency_tags"],
                             "paper_location": item["paper_location"],
@@ -243,14 +290,14 @@ def main() -> None:
                 },
                 {
                     "kind": "result_paper_edge",
-                    "id": f"sf:coverage/edge/{raw}/paper-15/post-phase1-update-v4",
+                    "id": f"sf:coverage/edge/{raw}/paper-15/post-phase1-update-v5",
                     "body": {
                         "from": result_id,
                         "to": "paper:15-four-level-ghost-classification-phase1-synthesis",
                         "claim": claim_id,
                         "edge_kind": item["edge_kind"],
                         "stale": False,
-                        "version": 4,
+                        "version": 5,
                         "stamp": "2026-07-23",
                         "native": {"source_schema": "result-paper-edge-v0"},
                     },
@@ -259,7 +306,7 @@ def main() -> None:
         )
     coverage = {
         "ir": "science-forge-ir-v0",
-        "schema": "paper15-phase1-synthesis-overlay-v4",
+        "schema": "paper15-phase1-synthesis-overlay-v5",
         "append_only_parent": str(COVERAGE_SOURCE.relative_to(ROOT)),
         "append_only_parent_sha256": digest(COVERAGE_SOURCE),
         "claim_map": str(OUTPUT.relative_to(ROOT)),

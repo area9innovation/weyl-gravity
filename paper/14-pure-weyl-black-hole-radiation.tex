@@ -1,7 +1,7 @@
 \documentclass[11pt]{article}
 
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,tabularx}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,booktabs,tabularx}
 \usepackage{microtype,xurl}
 \usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue!55!black,
@@ -75,8 +75,14 @@ representative-independent axial selection theorem follows.  Independently, the 
 restriction-stable module contains a mixed Einstein/additional line that is
 finite and generically nonradical, with an explicit algebraic exceptional
 locus.  Thus neither leading endpoint diagnostics nor finite formal radial
-pairing isolates the Einstein image.  These are formal infinity-mode
-statements: no horizon-to-infinity matching, asymptotically flat phase space,
+pairing isolates the Einstein image.  Separately, on the same axial pilot,
+the exact three-dimensional \(L^2\) wave-packet trace spaces at
+\(\mathscr I^-\) and \(\mathscr I^+\) carry action-derived endpoint flux
+Grams of rank three, zero radical, and inertia \((1,2,0)\) for
+\(\alpha_{\rm W}>0\), with no frequency wall on the pilot interval.  The
+radial statements remain formal, and the endpoint theorem does not establish
+that any trace direction is populated by horizon-regular data: no
+horizon-to-infinity matching, global asymptotically flat phase space,
 scattering, stability, quasinormal spectrum, Hawking state, or quantum
 unitarity theorem is claimed.  The local Cauchy restriction
 \(\psi|_\Sigma=\nabla_n\psi|_\Sigma=0\) still selects the Einstein kernel at
@@ -625,9 +631,57 @@ quotient theorem.
 \end{theorem}
 
 This is an exact formal asymptotic coefficient audit.  It establishes no
-convergence, finite-flux phase space, horizon-to-infinity matching,
-scattering channel, stability, or CPT property.  The other axial additional
-direction and the generic angular tower require separate all-row audits.
+convergence or endpoint wave-packet flux space \emph{by itself}, and it
+establishes no horizon-to-infinity matching, global scattering channel,
+stability, or CPT property.  The endpoint flux construction below is a
+separate completion of one part of that boundary problem.  The other axial
+additional direction and the generic angular tower require separate all-row
+audits.
+
+\subsection{Exact axial null-endpoint wave-packet flux}
+
+The complete axial pilot admits exact matching trace spaces
+\begin{equation}
+ \mathcal X_{\mathscr I^-}
+ =\operatorname{span}\{\mathrm{XI0},\mathrm{XI1},\mathrm{EI0}\},
+ \qquad
+ \mathcal X_{\mathscr I^+}
+ =\operatorname{span}\{\mathrm{XI2},\mathrm{XI3},\mathrm{EI2}\}.
+\end{equation}
+Positive-frequency amplitudes lie initially in
+\(C_c^\infty((1/2,3/4);\mathbb C^3)\), with negative frequencies fixed by
+the real-field involution; the completion is
+\(L^2([1/2,3/4];\mathbb C^3)\) at each endpoint.  Pulling the frozen
+action-derived current from Schwarzschild \(t\) coordinates to the ingoing
+Eddington--Finkelstein reconstruction, including differentiated
+reconstruction terms, gives Stokes-oriented Hermitian Grams \(G_-\) and
+\(G_+\).  After division by \(\pi\alpha_{\rm W}\),
+\begin{equation}
+ \det G_-=\frac{14155776}{125}\omega^3,
+ \qquad
+ \det G_+=\frac{3538944}{125}\omega .
+\end{equation}
+The past sign includes the reversal between the coordinate-radial direction
+and the outward Stokes orientation at \(\mathscr I^-\).
+
+\begin{theorem}[Scoped axial null-endpoint flux]
+For strict pure Weyl gravity with \(M=1\), axial \(\ell=2\), and
+\(\omega\in[1/2,3/4]\), both exact wave-packet endpoint trace spaces have
+dimension three.  Their action-derived Stokes Grams have rank three, zero
+radical, no frequency wall, and
+\[
+ \operatorname{inertia}(G_-)
+ =\operatorname{inertia}(G_+)=(1,2,0)
+ \qquad(\alpha_{\rm W}>0).
+\]
+Reversing the overall action sign reverses the positive and negative counts.
+\end{theorem}
+
+This is an endpoint flux theorem, not a global scattering theorem.  It does
+not show that any endpoint direction is reached by horizon-regular data, and
+it establishes no positive energy, particle norm, CPT metric, pole
+exclusion, stability, or invariance under unrestricted radial or corner
+improvements of the presymplectic potential.
 
 \subsection{Polar mixed finite line and its exceptional wall}
 
@@ -861,6 +915,10 @@ $X_0$ is finite in the fixed representative and under rate-zero Einstein
 shears, but oscillatory Einstein shears cross it divergently; the polar
 sector has a generic-angular mixed finite line & no representative-invariant
 axial quotient, phase space, norm, or global matching\\
+Null-endpoint wave-packet flux? & Exact three-dimensional axial
+$L^2$ trace spaces at both null ends; Grams have rank three, zero radical,
+and inertia $(1,2,0)$ for $\alpha_{\rm W}>0$ & $\ell=2$, $M=1$,
+$\omega\in[1/2,3/4]$; no global population or scattering claim\\
 Polar exceptional wall? & generically nonradical finite line; exact wall
 $Q_{21}(\ell(\ell+1),\widehat\omega^2)=0$ with certified harmonic root counts &
 deeper filtration open on the wall\\
@@ -916,8 +974,9 @@ The paper does not establish:
       dynamics;
 \item asymptotically flat conformal-gravity scattering with a complete
       boundary phase space, metric/tetrad falloffs, gauge-audited charge
-      algebra, and horizon-to-infinity connection map: formal radial
-      integrability is not a substitute for any of these;
+      algebra, and horizon-to-infinity connection map: the scoped endpoint
+      \(L^2\) trace spaces and Grams do not by themselves supply these global
+      structures;
 \item Hawking states, particles, grey-body factors, luminosity, a quantum
       BRST quotient, positivity, or unitarity: the monodromy temperature is
       a mode-level continuation factor, not a quantum state construction.
@@ -978,6 +1037,10 @@ Complete axial six-dimensional module, repaired \(X_0\), and legacy
 \(E_0\) supersession &
 \cert{black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json};
 \cert{reports/phase3-black-hole-axial-complete-reconstruction-repair-2026-07-22.md}\\
+Exact axial null-endpoint wave-packet traces and action-derived flux Grams &
+\cert{black_hole_programme/phase3/axial_wavepacket_null_trace/certificate.json};
+\cert{black_hole_programme/phase3/axial_null_flux_gram/certificate.json};
+\cert{reports/phase3-black-hole-axial-null-flux-gram-2026-07-23.md}\\
 Polar restriction-stable module and invariant current filtration &
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json}\\
 Generic-\(\ell\) two-parity formal-infinity phase diagram &
@@ -1000,9 +1063,11 @@ additional-log-tail half of the exterior boundary-value gate are historical
 inputs, not active authorities for infinity selection.  Their unaffected
 Einstein, horizon, and leading-symbol components are represented above by
 independent certificates.  The exact superseded identifiers are recorded in
-the machine-readable claim map.  A theorem about asymptotically flat
-radiation still requires the regular-tetrad falloff, differentiable
-phase-space, charge-algebra, and global connection constructions.
+the machine-readable claim map.  Exact axial endpoint trace spaces and flux
+Grams now supply one boundary ingredient, but a theorem about globally
+populated asymptotically flat radiation still requires the regular-tetrad
+falloff, differentiable phase-space, charge-algebra, and global connection
+constructions.
 
 \section{Outlook}
 
@@ -1024,8 +1089,17 @@ The next decisive map is global:
 \]
 It must include a regular tetrad or gauge, convergence or another completion
 of the formal series, a gauge-audited Lee--Wald charge algebra, and the
-connection matrix between the two ends.  The present exact rational and
-polynomial data neither prove nor obstruct that map.  Complex-frequency work
+connection matrix between the two ends.  That audit must also certify the
+permutation between the raw endpoint initializer order
+\((XH0a,XH0b,EH0,XHplus,EHout,XHminus)\) and its public labelled order before
+selecting raw future-regular columns \(0,1,2\).  The present exact endpoint
+Grams neither prove nor obstruct that global map.  A first validated
+global-connection attempt certified the diagonal carrier and kernel ranks
+and all local lower-lift solves on its required first frequency cell, but
+ended in \textsc{shortfall}: fixed interval frames discarded the shared
+\(\omega\)-dependence needed for the cumulative lower-block cancellation.
+That numerical-enclosure result is a method/substrate limitation, not
+evidence that the Bach connection fails to exist.  Complex-frequency work
 is likewise limited to the existing meromorphic axial continuation; no
 Wronskian zeros, quasinormal spectrum, or stability theorem have been
 computed.
