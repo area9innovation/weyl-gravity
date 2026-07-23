@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase3-black-hole-axial-null-infinity-trace-preflight-LEASE-RELEASE-excl-ea4bd09658a5b6af",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/phase3-black-hole-axial-null-infinity-trace-preflight-LEASE-RELEASE-excl-ea4bd09658a5b6af.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "phase3-axial-nulltrace-1", "base_revision": "science-forge-ir-v0", "when": null, "seq": 2, "predecessor": "sf:program/event/phase3-black-hole-axial-null-infinity-trace-preflight-LEASE-ACQUIRE-excl-06af265c4bbb17c2", "payload": {"target": "sf:program/work/phase3-black-hole-axial-null-infinity-trace-preflight", "agent": "phase3-axial-nulltrace-1", "lease_type": "exclusive", "action": "RELEASE", "acquired": "", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/phase3-black-hole-axial-null-infinity-trace-preflight"}]
+}
