@@ -1,0 +1,145 @@
+{
+  "schema": "phase3-axial-repeated-factor-audit-v1",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_REPEATED_FACTOR_SHORTCUT_AUDIT",
+  "result_token": "BH_PHASE3_AXIAL_SCALAR_RW_SQUARE_SHORTCUT_OBSTRUCTED",
+  "lifecycle": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "declaration": {
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity",
+    "background": "Schwarzschild exterior M=1",
+    "sector": "axial ell=2",
+    "frequency": "real omega in [1/2,3/4]",
+    "radial_module": "the certified complete six-dimensional Fourier-reduced Bach module with all three Ricci reconstruction rows",
+    "allowed_conjugacy": "local invertible changes of reduced variables that are regular at the declared endpoint"
+  },
+  "imports": {
+    "axial_operator": {
+      "path": "black_hole_programme/certificates/BH2A_AXIAL_OPERATOR.json",
+      "sha256": "58eead1536d9c14696dd3b21592aa22523681cad7b42f8179b322c5872391c2a",
+      "commit": "5b196c5cc3a2ee1479a20839090908b8eef1d93e"
+    },
+    "horizon_reach": {
+      "path": "black_hole_programme/certificates/BH2A_HORIZON_REACH.json",
+      "sha256": "dcab47cf90e5a0120308b2031444539604d902c9cc5b788ce510f366f0d26d7f",
+      "commit": "727d44c32e08673231e94089e8cf173d02098fd3"
+    },
+    "legacy_metric_all_orders": {
+      "path": "black_hole_programme/certificates/BH2C_METRIC_ALL_ORDERS.json",
+      "sha256": "41efc9c13bf1637bbff3cd5f3c1e6e8f90744ce4abc7128ae5ea8f0afb1b7916",
+      "commit": "070374dcbc506b4dc0baf5efd9f76513c4ac1e22"
+    },
+    "endpoint_obstruction": {
+      "path": "black_hole_programme/phase3/axial_endpoint_bases/certificate.json",
+      "sha256": "bf5367cc6e0b778c91736ab4088fb0dcf78868ba5f61c30f56d71659f790e779",
+      "commit": "3e19d9c9b6abf50982c98a879c6183f2f8050b0a"
+    },
+    "complete_reconstruction": {
+      "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+      "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+      "commit": "d5d5d6de648795203604d62ce7bc4f4ce6fea510"
+    }
+  },
+  "exact_composition": {
+    "identity": "delta_Bach[h] = L_Ricci(delta_Ric[h])",
+    "outer_factor": "L_Ricci(psi)_ab = (1/2) Box psi_ab + C_acbd psi^cd",
+    "inner_factor": "D_Ricci(h)_ab = delta_Ric[h]_ab",
+    "typing": "D_Ricci maps the reduced metric module to the trace-free divergence-free axial Ricci-carrier module; L_Ricci acts on that carrier",
+    "classification": "exact two-factor operator composition, not an identified repeated scalar factor"
+  },
+  "dimension_obstruction": {
+    "Einstein_kernel_dimension": 2,
+    "Ricci_carrier_solution_dimension": 4,
+    "complete_Bach_solution_dimension": 6,
+    "exact_sequence": "0 -> E_Einstein^2 -> E_Bach^6 -> E_Ricci-carrier^4 -> 0",
+    "scalar_RW_order": 2,
+    "scalar_RW_square_solution_dimension": 4,
+    "conclusion": "No invertible conjugacy can identify the complete six-dimensional reduced Bach module with the four-dimensional local solution module of a scalar Regge-Wheeler square.",
+    "spectral_derivative_ceiling": "A scalar RW solution family has two local columns; adjoining one spectral derivative for each supplies at most two generalized columns, hence at most four columns including the original RW kernel and misses at least two certified Bach directions."
+  },
+  "endpoint_obstruction": {
+    "RW_scalar_horizon_exponents": [
+      "0",
+      "-4*I*omega"
+    ],
+    "naive_zero_weight_doubled_RW_multiplicities": {
+      "0": 2,
+      "-4*I*omega": 2
+    },
+    "Ricci_carrier_horizon_exponents": [
+      "0",
+      "0",
+      "-4*I*omega",
+      "-2-4*I*omega"
+    ],
+    "complete_Bach_horizon_exponents": [
+      "0",
+      "0",
+      "0",
+      "-4*I*omega",
+      "-1-4*I*omega",
+      "-2-4*I*omega"
+    ],
+    "carrier_infinity_rates": {
+      "0": 2,
+      "-2*I*omega": 2
+    },
+    "carrier_infinity_powers": {
+      "rate_0": [
+        "0",
+        "-1"
+      ],
+      "rate_minus_2_i_omega": [
+        "-4*I*omega",
+        "-4*I*omega-1"
+      ]
+    },
+    "logs_for_real_nonzero_omega": false,
+    "conclusion": "The horizon exponent multiset is not the naively doubled Regge-Wheeler scalar multiset, so the carrier is not a direct duplicated-root copy of the RW module under a zero-weight regular endpoint identification. This is diagnostic rather than a general operator-square no-go: composing singular differential expressions can shift indicial roots. The scalar-square obstruction for the complete module rests on the invariant six-versus-four dimension mismatch. The doubled infinity rates alone are insufficient to infer a square because the carrier has two independent tensorial power columns at each rate."
+  },
+  "matrix_factor_disposition": {
+    "certified": "The covariant composition L_Ricci o D_Ricci is exact.",
+    "not_certified": "No common reduced bundle, regular intertwiner, or equality of the two factors has been constructed, so an identical matrix-factor square is not established.",
+    "regular_identical_factor_shortcut": "not established; the certified factors have unequal typing, and no common three-component module or intertwiner has been produced",
+    "arbitrary_matrix_square_equivalence": "not classified; the endpoint exponents alone cannot exclude weighted singular compositions",
+    "arbitrary_singular_or_nonlocal_equivalence": "not classified"
+  },
+  "spectral_and_time_derivatives": {
+    "fixed_frequency_radial_sensitivity": "For P(omega)u(omega)=0, partial_omega u satisfies P partial_omega u = -(partial_omega P)u. It is an inhomogeneous variational column and is not automatically a homogeneous Bach mode.",
+    "scalar_spectral_parameter_case": "If P(lambda)=P0+lambda and P(lambda)u(lambda)=0, then P partial_lambda u=-u and P^2 partial_lambda u=0. This constructs at most one generalized scalar partner per RW solution.",
+    "radial_generalized_mode": "A fixed-omega solution with polynomial or logarithmic radial behaviour still carries exp(i*omega*v), so time translation acts diagonally.",
+    "genuine_time_Jordan_chain": "Differentiating the complete spacetime mode gives partial_omega(exp(i*omega*v)u)=exp(i*omega*v)(i*v*u+partial_omega*u), and (partial_v-i*omega) of this vector equals i times the original mode.",
+    "transport_warning": "Taylor sensitivity columns used to validate frequency-correlated radial transport omit the i*v*u term and must not be counted as time-translation Jordan states or extra physical solutions."
+  },
+  "legacy_radial_column": {
+    "candidate": "H1=constant with H0=-i*omega*r+O(1)",
+    "legacy_status": "a degree-one, log-free radial generalized column of the incomplete two-row reconstruction",
+    "complete_status": "excluded from the complete six-dimensional module",
+    "exact_reason": "the omitted delta_Ric_vphi=P row has residual 3*i*(omega-2*i)/r^2, nonzero throughout the real pilot interval",
+    "consequence": "It is neither evidence for a scalar RW square nor a genuine time-translation Jordan chain."
+  },
+  "claim_flags": {
+    "exact_typed_operator_composition_certified": true,
+    "complete_module_scalar_RW_square_conjugacy_obstructed": true,
+    "naive_doubled_RW_endpoint_identification_obstructed": true,
+    "identical_matrix_factor_square_certified": false,
+    "canonical_scalar_spectral_derivative_submodule_certified": false,
+    "frequency_transport_sensitivities_are_physical_modes": false,
+    "time_translation_Jordan_chain_certified": false,
+    "legacy_polynomial_column_in_complete_module": false
+  },
+  "does_not_establish": [
+    "nonexistence of every singular, nonlocal or frequency-dependent matrix equivalence",
+    "nonexistence of every local three-component matrix repeated-factor representation",
+    "a canonical scalar spectral-derivative submodule inside the complete Bach module",
+    "a global horizon-to-infinity connection or scattering theorem",
+    "stability, CPT positivity, a physical quantum ghost, particles or unitarity",
+    "polar parity, omega=0 or ell other than two"
+  ],
+  "verification": {
+    "command": "python3 -m black_hole_programme.phase3.axial_repeated_factor_audit.verify",
+    "tests": "python3 -m unittest -v black_hole_programme.phase3.axial_repeated_factor_audit.tests.test_audit"
+  }
+}
