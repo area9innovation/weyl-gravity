@@ -1,0 +1,255 @@
+{
+  "schema": "phase3-axial-rw-lx-triangular-preflight-v1",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_RW_LX_TRIANGULAR_PREFLIGHT",
+  "result_token": "BH_PHASE3_AXIAL_RW_RW_LX_FACTOR_FILTRATION",
+  "lifecycle": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "declaration": {
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity",
+    "background": "Schwarzschild exterior M=1",
+    "sector": "axial ell=2",
+    "domain": "r>2 and real omega in [1/2,3/4]",
+    "differential_field": "Q(i,omega,r) with d/dr",
+    "state_order": [
+      "P",
+      "P_prime",
+      "Q",
+      "Q_prime",
+      "H1",
+      "F"
+    ]
+  },
+  "imports": {
+    "complete_reconstruction": {
+      "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+      "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+      "commit": "d5d5d6de648795203604d62ce7bc4f4ce6fea510"
+    },
+    "repeated_factor_audit": {
+      "path": "black_hole_programme/phase3/axial_repeated_factor_audit/certificate.json",
+      "sha256": "48c5cbb2510913769ba3bf3dad50065825d2cff750c7ab03bf92674a567d6f0b",
+      "commit": "82f2638f0f6fc0b2595d71d2641e7c0721e47403"
+    },
+    "endpoint_witt": {
+      "path": "black_hole_programme/phase3/axial_endpoint_witt_decomposition/certificate.json",
+      "sha256": "4c96f4e37f13993229b4815d5e24387bfb230c03eaf675c314c7d25777e0daee",
+      "commit": "45531cafc1577f5e4136e9bf79b438a0c9ca829d"
+    }
+  },
+  "operator_convention": "L(a,b)=D_r**2+a*D_r+b, with the rightmost factor acting first",
+  "operators": {
+    "L_RW": {
+      "a": "2/(r*(r-2))+2*I*omega*r/(r-2)",
+      "b": "-6*(r-1)/(r**2*(r-2))",
+      "horizon_scalar_exponents": [
+        "0",
+        "-4*I*omega"
+      ]
+    },
+    "L_x": {
+      "a": "2*I*(omega*r**2-3*I*r+3*I)/(r*(r-2))",
+      "b": "2*I*(3*omega*r**2-4*omega*r-I)/(r*(r-2)**2)",
+      "horizon_scalar_exponents": [
+        "-1",
+        "-1-4*I*omega"
+      ],
+      "not_identical_to_L_RW": true
+    },
+    "L_x_spin_one_gauge": {
+      "substitution": "Z=g*y",
+      "g": "1/(r**2*(r-2))",
+      "tortoise_factor": "f=(r-2)/r and D_rstar=f*D_r",
+      "r_form_after_substitution": "y_primeprime+(f_prime/f+2*I*omega/f)*y_prime-6*y/(r*(r-2))=0",
+      "tortoise_ingoing_EF_form": "D_rstar**2*y+2*I*omega*D_rstar*y-6*(r-2)*y/r**3=0",
+      "potential": "V_1=f*ell*(ell+1)/r**2=6*(r-2)/r**3 for ell=2",
+      "classification": "spin-one/Maxwell Regge-Wheeler-type differential factor",
+      "physical_spin_one_state_claim": false
+    }
+  },
+  "carrier_cyclic_elimination": {
+    "cyclic_coordinate": "P",
+    "observability_rows": [
+      "P",
+      "D_r P",
+      "D_r**2 P",
+      "D_r**3 P"
+    ],
+    "observability_determinant": "-4*omega**2/(r**2*(r-2)**2)",
+    "scalar_operator": {
+      "order": 4,
+      "D3": "2*I*(2*omega*r**2-3*I*r+2*I)/(r*(r-2))",
+      "D2": "-2*(2*omega**2*r**4-9*I*omega*r**3+12*I*omega*r**2+3*r**2-12*r+8)/(r**2*(r-2)**2)",
+      "D1": "-4*(3*omega**2*r**4+3*I*omega*r**3-I*omega*r**2+3*r**2-4)/(r**3*(r-2)**2)",
+      "D0": "-12*I*(omega*r**2+3*I*r-4*I)/(r**3*(r-2)**2)"
+    },
+    "exact_factorization": "L4=L_x o L_RW"
+  },
+  "carrier_exact_sequence": {
+    "RW_embedding_J": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ],
+      [
+        "-I/(omega*r)",
+        "-I/omega"
+      ],
+      [
+        "-I*(5*r-4)/(omega*r**2*(r-2))",
+        "-(2*omega*r**2+I*r-4*I)/(omega*r*(r-2))"
+      ]
+    ],
+    "RW_embedding_reading": "For L_RW P=0, Q=-I*(P+r*P_prime)/(omega*r), and J_prime+A4? uses J_prime+J*A_RW=A4*J.",
+    "quotient_K": [
+      [
+        "2/(r**2*(r-2))",
+        "2/(r*(r-2))",
+        "-2*I*omega/(r*(r-2))",
+        "0"
+      ],
+      [
+        "6/(r**2*(r-2)**2)",
+        "-2*I*(2*omega*r-I)/(r*(r-2)**2)",
+        "4*I*omega/(r**2*(r-2))",
+        "-2*I*omega/(r*(r-2))"
+      ]
+    ],
+    "quotient_reading": "K maps a carrier state to (Z,Z_prime), where Z=L_RW P, and satisfies K_prime+K*A4=A_x*K.",
+    "right_inverse_N": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "I*r*(r-2)/(2*omega)",
+        "0"
+      ],
+      [
+        "I*(r-2)/omega",
+        "I*r*(r-2)/(2*omega)"
+      ]
+    ],
+    "gauge_T": "T=[J,N]",
+    "gauge_determinant": "-r**2*(r-2)**2/(4*omega**2)",
+    "transformed_A4": [
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "6*(r-1)/(r**2*(r-2))",
+        "-2*I*(omega*r**2-I)/(r*(r-2))",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "-2*I*(3*omega*r**2-4*omega*r-I)/(r*(r-2)**2)",
+        "-2*I*(omega*r**2-3*I*r+3*I)/(r*(r-2))"
+      ]
+    ],
+    "exact_sequence": "0 -> M_RW -> M_A4 -> M_x -> 0",
+    "dimensions": [
+      2,
+      4,
+      2
+    ]
+  },
+  "Einstein_kernel_RW_equivalence": {
+    "master": "Psi=(B*H1+H0)/r with B=1-2/r, evaluated on the carrier-zero Einstein kernel",
+    "U_H1F_to_PsiPsiPrime": [
+      [
+        "-I*omega*(omega*r**2+I*r-3*I)/(r*(omega*r-2*I))",
+        "-omega*(r-2)/(2*(omega*r-2*I))"
+      ],
+      [
+        "-3*omega*(r-1)/(r**2*(omega*r-2*I))",
+        "omega*(r-2)/(2*r*(omega*r-2*I))"
+      ]
+    ],
+    "U_determinant": "-I*omega**2*(r-2)/(2*r*(omega*r-2*I))",
+    "chain_identity": "U_prime+U*K2=A_RW*U",
+    "real_domain_invertible": true
+  },
+  "complete_six_state_filtration": {
+    "diagonal_factor_order_after_reordering": [
+      "L_RW Einstein metric kernel",
+      "L_RW carrier submodule",
+      "L_x carrier quotient"
+    ],
+    "dimensions": [
+      2,
+      2,
+      2
+    ],
+    "triangular_equivalent_certified": true,
+    "natural_gauge_Lx_to_metric_extension_witness": "-r*(3*omega**2*r**4-4*omega**2*r**3-10*I*omega*r**2+12*I*omega*r+12*r**2-40*r+32)/(8*(omega*r-2*I)**2)",
+    "stronger_direct_decomposition": "not established",
+    "stronger_scalar_square_statement": "No rational gauge has yet been constructed that identifies the two RW factors with the canonical extension ker(L_RW**2) while splitting off M_x."
+  },
+  "endpoint_comparison": {
+    "carrier_horizon_multiset": [
+      "0",
+      "0",
+      "-4*I*omega",
+      "-2-4*I*omega"
+    ],
+    "carrier_infinity_rates": {
+      "0": 2,
+      "-2*I*omega": 2
+    },
+    "endpoint_Witt_split": "(1,1) orthogonal direct sum (0,1)",
+    "reading": "The exact 2+2 carrier filtration is compatible with the observed two-by-two endpoint multiplicities, and the complete factor dimensions are compatible with the endpoint Witt anatomy. Neither exponent multiplicities nor flux signature identifies which endpoint vector belongs to a differential factor; that requires applying the exact quotient K to normalized endpoint solutions."
+  },
+  "Jordan_boundary": {
+    "radial_sensitivity": "A fixed-frequency derivative is an inhomogeneous variational column unless the differentiated operator equation is included.",
+    "time_Jordan": "A genuine time-translation Jordan vector contains the i*v*u term from differentiating exp(i*omega*v).",
+    "conclusion": "The factor filtration and endpoint Witt vectors do not certify radial or temporal Jordan origin."
+  },
+  "claim_flags": {
+    "carrier_scalar_factorization_Lx_after_LRW_certified": true,
+    "carrier_RW_submodule_certified": true,
+    "carrier_Lx_quotient_certified": true,
+    "Lx_spin_one_RW_gauge_certified": true,
+    "Einstein_kernel_RW_equivalence_certified": true,
+    "complete_RW_RW_Lx_triangular_filtration_certified": true,
+    "complete_direct_RW_square_plus_Lx_decomposition_certified": false,
+    "rational_extension_splitting_certified": false,
+    "endpoint_Witt_vectors_assigned_to_operator_factors": false,
+    "radial_or_time_Jordan_origin_certified": false
+  },
+  "does_not_establish": [
+    "a direct differential-module isomorphism M_Bach = ker(L_RW**2) direct_sum ker(L_x)",
+    "that L_x is gauge-equivalent or Darboux-equivalent to L_RW",
+    "a physical Maxwell field, spin-one particle or reconstruction assignment for the L_x factor",
+    "that the natural nonzero extension witness is invariant under every rational gauge",
+    "a radial generalized-mode or time-translation Jordan interpretation",
+    "an assignment of endpoint Witt vectors to the RW or L_x factors",
+    "global horizon-to-infinity matching, scattering, stability, CPT positivity, particles, ghosts or unitarity",
+    "polar parity, omega=0 or ell other than two"
+  ],
+  "verification": {
+    "command": "python3 -m black_hole_programme.phase3.axial_rw_lx_triangular_preflight.verify",
+    "tests": "python3 -m unittest -v black_hole_programme.phase3.axial_rw_lx_triangular_preflight.tests.test_preflight"
+  }
+}

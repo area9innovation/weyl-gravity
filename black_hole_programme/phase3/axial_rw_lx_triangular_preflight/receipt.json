@@ -1,0 +1,36 @@
+{
+  "schema": "phase3-axial-rw-lx-triangular-preflight-receipt-v1",
+  "result_token": "BH_PHASE3_AXIAL_RW_RW_LX_FACTOR_FILTRATION",
+  "date": "2026-07-23",
+  "inputs": {
+    "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+    "black_hole_programme/phase3/axial_endpoint_witt_decomposition/certificate.json": "4c96f4e37f13993229b4815d5e24387bfb230c03eaf675c314c7d25777e0daee",
+    "black_hole_programme/phase3/axial_repeated_factor_audit/certificate.json": "48c5cbb2510913769ba3bf3dad50065825d2cff750c7ab03bf92674a567d6f0b"
+  },
+  "outputs": {
+    "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/README.md": "0477ec188c4c1e29884a6a37655ca874f2f0d6aef1fccb8295b3dd9606fc93b6",
+    "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579",
+    "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/tests/test_preflight.py": "1cdf810519581b0442ffebebbb1269faf463dfc02e9842e30ec84a5849ddb0e4",
+    "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/verify.py": "73616c7f949b843752140e376579cd08e766d905d32970ace9719937a4470017",
+    "reports/phase3-axial-rw-lx-triangular-preflight-2026-07-23.md": "27e331c7065280e2b2c25af61d2de9f2fb48de18de08a116c820b1d9a6bf8b82"
+  },
+  "tests": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_rw_lx_triangular_preflight.verify",
+      "elapsed_seconds": 2.11,
+      "status": "PASS",
+      "scope": "exact cyclic elimination, noncommutative factorization, embedding, quotient, triangular gauge, Einstein-kernel conjugacy and claim boundary"
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_rw_lx_triangular_preflight.tests.test_preflight",
+      "elapsed_seconds": 19.32,
+      "status": "PASS",
+      "scope": "15 tests including coefficient, spin-one gauge, map, factor, extension, provenance and overpromotion mutations"
+    }
+  ],
+  "higher_tiers": {
+    "tier2": "not run: all imported mathematical inputs are content-addressed and unchanged; the exact independent verifier replays every new factor claim",
+    "tier3": "not run: this is an isolated scoped classification, not a repository freeze or release"
+  },
+  "claim_boundary": "The triangular RW/RW/Lx factor filtration is certified. A rational splitting into ker(L_RW**2) direct_sum ker(L_x), endpoint-factor assignment, Jordan origin, global matching and physical scattering claims remain open."
+}
