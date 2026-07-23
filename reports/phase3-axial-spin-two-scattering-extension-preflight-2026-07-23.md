@@ -111,3 +111,7 @@ Machine receipts:
 - `black_hole_programme/phase3/axial_spin_two_scattering_extension_preflight/certificate.json`
 - `black_hole_programme/phase3/axial_spin_two_scattering_extension_preflight/receipt.json`
 - `black_hole_programme/phase3/axial_spin_two_scattering_extension_preflight/verify.py`
+
+EVIDENCE: black_hole_programme/phase3/axial_spin_two_scattering_extension_preflight/certificate.json
+MISSING-DEP: certified damped spin-two QNM and adjoint germs together with a convergent Fredholm pairing that computes the invariant extension class
+CLOSE-OUT: SHORTFALL — the exact local extension and rational-gauge obstruction are certified, but the scattering class and local Smith type remain undefined without the missing analytic germs.
