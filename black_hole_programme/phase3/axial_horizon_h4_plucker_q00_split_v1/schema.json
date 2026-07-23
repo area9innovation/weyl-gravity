@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "phase3-axial-h4-plucker-q00-split-schema-v1",
+  "cover_invariants": {
+    "parent_cell": ["1/2", "2049/4096"],
+    "split_point": "4097/8192",
+    "child_cells": [
+      ["1/2", "4097/8192"],
+      ["4097/8192", "2049/4096"]
+    ],
+    "target": {"shell": 4, "segment": 3}
+  },
+  "required_child_evidence": [
+    "source",
+    "source metadata",
+    "compile receipt",
+    "run log",
+    "20 ordered segment heartbeats or one typed refusal"
+  ],
+  "typed_refusals": {
+    "31": "Pluecker relation enclosure defect",
+    "32": "no raw real/imaginary Pluecker coordinate component excludes zero",
+    "33": "complex realification layout defect",
+    "34": "source or shape defect"
+  }
+}

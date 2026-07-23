@@ -1,0 +1,64 @@
+{
+  "child_cells": [
+    [
+      "1/2",
+      "4097/8192"
+    ],
+    [
+      "4097/8192",
+      "2049/4096"
+    ]
+  ],
+  "children": [
+    {
+      "child_index": 0,
+      "compile_log_path": "children/q00_child_0_compile.txt",
+      "frequency_cell": [
+        "1/2",
+        "4097/8192"
+      ],
+      "metadata_path": "children/q00_child_0_metadata.json",
+      "process_exit": 3,
+      "run_log_path": "children/q00_child_0_run.txt",
+      "run_log_sha256": "3a704e3c5cf470b6edf7c3dfb2fd4f96be70ee77c0f83784ed7954de223af990",
+      "source_path": "children/q00_child_0.forge",
+      "source_sha256": "70050adee2b4d8217aead2c068ebdbd632f4afef048511ead70b5c888ff8553b",
+      "terminal_refusal": "PLUCKER_REFUSE shell=4 segment=3 code=32"
+    },
+    {
+      "child_index": 1,
+      "compile_log_path": "children/q00_child_1_compile.txt",
+      "frequency_cell": [
+        "4097/8192",
+        "2049/4096"
+      ],
+      "metadata_path": "children/q00_child_1_metadata.json",
+      "process_exit": 3,
+      "run_log_path": "children/q00_child_1_run.txt",
+      "run_log_sha256": "0cbacbd1b2407aa2fa99e06bcfa4f2fbf96456a3c5897c4bb37ff978660806c7",
+      "source_path": "children/q00_child_1.forge",
+      "source_sha256": "ee29048d16022b5d7aaa3ce6727a3d409cd957f3613992a8ae2b4e195ab7aea3",
+      "terminal_refusal": "PLUCKER_REFUSE shell=4 segment=3 code=32"
+    }
+  ],
+  "does_not_establish": [
+    "transport beyond shell 4 segment 3",
+    "the complete 23-shell horizon transport",
+    "canonical endpoint amplitudes",
+    "a horizon-to-infinity scattering theorem"
+  ],
+  "parent_cell": [
+    "1/2",
+    "2049/4096"
+  ],
+  "parent_certificate_sha256": "230173e50fed0933530ae43c6033bb0b2e4e667ae190224bf33a63a3d7cfb857",
+  "payload_sha256": "7c2a28b025c428d7da42118e5f7b8ee9c11dd7c445d2f6cb23063185bcf6b13a",
+  "schema": "phase3-axial-h4-plucker-q00-split-cover-v1",
+  "shortfall_certificate_sha256": "e51af25bb2f5d9b5fd66941aba4a2c60db7a300800f4a4a6f8ff59914ee8defb",
+  "split_point": "4097/8192",
+  "status": "COVER_REFUSED",
+  "target": {
+    "segment": 3,
+    "shell": 4
+  }
+}

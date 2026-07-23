@@ -1,0 +1,79 @@
+{
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "does_not_establish": [
+    "transport beyond shell 4 segment 3",
+    "the complete 23-shell horizon transport",
+    "canonical endpoint amplitudes",
+    "a horizon-to-infinity scattering theorem"
+  ],
+  "hashes": {
+    "README.md": "5dd13e72da0ab6fe6fe26c1f35a3eed5394a33e67e3fc5e3987b9b71a4311eac",
+    "__init__.py": "e574c3289ac9a79ddc3ebb7191babfdae8ac2a230584a0fbdbeb965157d82e44",
+    "child_cover_manifest.json": "e8a253ad95687bbb5ed18701969a50bebe6a018ab154389a9d02182016ddc5f3",
+    "children/q00_child_0.forge": "70050adee2b4d8217aead2c068ebdbd632f4afef048511ead70b5c888ff8553b",
+    "children/q00_child_0_compile.txt": "9d5636935623085528f36a52ccc58c59db0d7bbb5b3e6cb60e679ed525d469fa",
+    "children/q00_child_0_metadata.json": "d26b05785287326e3048de552df109676a20934a3bc3e05e1ad159064d9053a6",
+    "children/q00_child_0_run.txt": "3a704e3c5cf470b6edf7c3dfb2fd4f96be70ee77c0f83784ed7954de223af990",
+    "children/q00_child_1.forge": "ee29048d16022b5d7aaa3ce6727a3d409cd957f3613992a8ae2b4e195ab7aea3",
+    "children/q00_child_1_compile.txt": "1eab149b49b44b26d4cf47a9836331aced0afe9bcd2432c3a47994d56e630fc5",
+    "children/q00_child_1_metadata.json": "5b092be97fc673ee4c72b3104f6aa1485006d62943e2be5fcca8646084c3f613",
+    "children/q00_child_1_run.txt": "0cbacbd1b2407aa2fa99e06bcfa4f2fbf96456a3c5897c4bb37ff978660806c7",
+    "produce.py": "043d3f116dcc8f3fa546ec93e6d0d6326824140fa8ac96de4a711edae754dfd9",
+    "report.md": "e8e306a18631c15229f60c0db00817413a64ce9b8c29c14b884a9832f576c092",
+    "run_children.py": "03d2647ea61ed3060d10adf19aa6947ee14dc0c2be23e949d8b6a08d2efb9960",
+    "schema.json": "bad6558d241478c553174c0deb6aef09079e97230e80b8a8d93245c57af1afd9",
+    "test_split.py": "edbb65c5ed603f2029de86f5682d6a8a27ac05eba55df117d9261dfad71d02b7",
+    "verify.py": "10ee12ec83d29fb244d015effacae3a767f7e86421dfe08b12cf5f47c0519f97"
+  },
+  "interpretation": "Both exact dyadic children independently retain the shell-4/segment-3 code-32 raw-component pivot refusal; frequency halving does not remove the failure.",
+  "parent_certificate_sha256": "230173e50fed0933530ae43c6033bb0b2e4e667ae190224bf33a63a3d7cfb857",
+  "result": {
+    "children": [
+      {
+        "elapsed_milliseconds": 119959,
+        "last": {
+          "margin": "8.883383071043247e-08",
+          "norm": "0.7382769766131768",
+          "pivot": 5,
+          "segment": 2,
+          "shell": 4
+        },
+        "reached_segments": 19,
+        "refusal": {
+          "code": 32,
+          "segment": 3,
+          "shell": 4
+        },
+        "status": "REFUSED"
+      },
+      {
+        "elapsed_milliseconds": 119545,
+        "last": {
+          "margin": "8.808679226360098e-08",
+          "norm": "0.7403864989742762",
+          "pivot": 5,
+          "segment": 2,
+          "shell": 4
+        },
+        "reached_segments": 19,
+        "refusal": {
+          "code": 32,
+          "segment": 3,
+          "shell": 4
+        },
+        "status": "REFUSED"
+      }
+    ],
+    "cover_pass": false,
+    "target": {
+      "segment": 3,
+      "shell": 4
+    }
+  },
+  "schema": "phase3-axial-h4-plucker-q00-split-certificate-v1",
+  "shortfall_certificate_sha256": "e51af25bb2f5d9b5fd66941aba4a2c60db7a300800f4a4a6f8ff59914ee8defb",
+  "status": "CERTIFIED_SPLIT_COVER_NEGATIVE"
+}
