@@ -6,29 +6,33 @@ Dependency tags: `LORENTZIAN-CAUSAL`, `LOCAL-ALGEBRAIC`
 
 ## Result
 
-The first final-frequency child now has a complete exact
-\(r=32\)-to-\(r=4\) radial transport map on
+All sixteen final-frequency children now have complete exact
+\(r=32\)-to-\(r=4\) radial transport maps.  Together they cover
 
 \[
   \ell=2,\qquad M=1,\qquad
-  M\omega\in[1/2,2049/4096],\qquad
+  M\omega\in[1/2,129/256],\qquad
   t=32-r\in[0,28].
 \]
 
-It is assembled from a certified prefix, an exact inherited-boundary
-crosswalk, and 66 child-specialized tail factors.  Every factor is rank
-twelve.  The exact block-to-standard state permutation is applied only after
-radial composition and before the six-state complex infinity projection.  A
-separate exact rank witness certifies the boundary crosswalk; the wide final
-interval hull is not misused as a direct numerical rank test.
+The cover contains 1,056 certified child-tail factors, sixteen exact tail
+joins and sixteen exact global maps.  Each global map is assembled from the
+same certified prefix, an exact inherited-boundary crosswalk, and 66
+child-specialized tail factors.  Every factor is rank twelve.  The exact
+block-to-standard state permutation is applied only after radial composition
+and before the six-state complex infinity projection.  A separate exact rank
+witness certifies each boundary crosswalk; a wide final interval hull is
+never misused as a direct numerical rank test.
 
-This advances the earlier first-factor result described below.  The
-canonical child-global artifact is
-`black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_maps/global_map_q00.json`.
-The remaining fifteen frequency children are being evaluated by the same
-frozen rail.
+The canonical child-global artifacts are
+`black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_maps/global_map_q00.json`
+through `global_map_q15.json`.
+Their exact membership, contiguous rational frequency cover and
+prefix/tail/replay provenance are bound by
+`chunks/artifacts/global_map_cover_manifest.json`
+(`sha256:d5b2e4ddef623136155b315be5ff847f14597440b21e5bd1c4beb800d2ba16d8`).
 
-The original first exact infinity-side radial microfactor was on
+The original first exact infinity-side radial microfactor on
 
 \[
   \ell=2,\qquad M=1,\qquad
@@ -118,31 +122,34 @@ python -m black_hole_programme.phase3.axial_global_connection_matrix_v5.chunks.v
   black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/microfactor_000.json \
   --repo-root .
 
-python -m unittest \
-  black_hole_programme.phase3.axial_global_connection_matrix_v5.chunks.tests.test_microfactor \
-  black_hole_programme.phase3.axial_global_connection_matrix_v5.chunks.tests.test_handoff
+python3 -m unittest discover -v \
+  -s black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/tests \
+  -t .
 ```
 
-The artifact and provenance verifiers pass.  Fifty-five scoped chunk tests
-pass, including layout, exact-boundary, affine-hull, source-hash,
-upper-right-zero, false-restart, state-permutation, projection-order and
-prefix/tail provenance mutation tests.
+The artifact and provenance verifiers pass.  Seventy-four scoped chunk tests
+pass, including replay of all sixteen global maps without scratch files and
+layout, exact-boundary, affine-hull, source-hash, upper-right-zero,
+false-restart, state-permutation, projection-order and prefix/tail provenance
+mutation tests.
 
 ## Next gate
 
-This result certifies the complete \(r=32\)-to-\(r=4\) radial transport only
-on the first of sixteen final frequency cells.  It does not establish a
-horizon-to-infinity connection, endpoint flux, a populated additional
-channel, stability, CPT positivity, scattering or unitarity.
+This result certifies the complete \(r=32\)-to-\(r=4\) radial transport on
+all sixteen final frequency cells covering the declared parent frequency
+cell.  It does not by itself establish a horizon-to-infinity connection,
+endpoint flux, a populated additional channel, stability, CPT positivity,
+scattering or unitarity.
 
 The next steps are:
 
-1. complete and emit the other fifteen child-specialized tails;
-2. compose and replay all sixteen \(r=32\)-to-\(r=4\) global maps;
-3. attach a separately certified future-horizon-regular map at \(r=4\);
-4. materialize endpoint action once, with the radial/outward orientation
+1. attach a separately certified, chart-normalized future-horizon-regular
+   map at \(r=4\);
+2. materialize endpoint action once, with the radial/outward orientation
    recorded explicitly;
-5. compute the populated pullback
+3. compute typed \(T_-\), \(T_+\) and the Stokes defect in the same endpoint
+   frames;
+4. compute the populated pullback
    \(C_{\rm reg}^{\dagger}G_{\rm endpoint}C_{\rm reg}\).
 
 No physical-ghost or scattering-channel statement is licensed before that

@@ -1,7 +1,7 @@
 {
   "schema": "residual-atlas-fragment-v1",
   "result_id": "PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MICROFACTOR_V6_000",
-  "title": "First complete final-frequency axial Bach radial child map",
+  "title": "Complete sixteen-child axial Bach radial transport cover",
   "lifecycle": "COEFFICIENT_COMPUTED",
   "dependency_tags": [
     "LORENTZIAN-CAUSAL",
@@ -17,9 +17,9 @@
       "1/2",
       "129/256"
     ],
-    "certified_frequency_child": [
+    "certified_frequency_cover": [
       "1/2",
-      "2049/4096"
+      "129/256"
     ],
     "radial_coordinate": "t=32-r",
     "radial_interval": [
@@ -29,15 +29,16 @@
     "layout": "contiguous-block-lower-v1"
   },
   "establishes": [
-    "one complete r=32-to-r=4 final-frequency child transport",
-    "certified prefix, inherited-boundary crosswalk, and 66 tail factors",
-    "rank-12 factor-product certificate",
+    "all sixteen complete r=32-to-r=4 final-frequency child transports",
+    "one exact contiguous rational cover of [1/2,129/256]",
+    "1056 certified child-tail factors, sixteen tail joins, and sixteen global maps",
+    "rank-12 factor-product certificates",
     "exact zero upper-right transition block",
     "byte-identical global boundary-frame provenance",
-    "exact block-to-standard state permutation before infinity projection"
+    "exact block-to-standard state permutation before infinity projection",
+    "hash-bound global-map cover manifest with replay and prefix-tail linkage"
   ],
   "does_not_establish": [
-    "the other fifteen final frequency children",
     "horizon-to-infinity connection",
     "endpoint flux or populated endpoint pullback",
     "physical scattering channel",
@@ -47,8 +48,8 @@
     "unitarity"
   ],
   "artifact": {
-    "path": "black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_maps/global_map_q00.json",
-    "sha256": "0a746815f6d94304df208e64ccae83b65eeaf58933d0729460cb2eb9a952862d"
+    "path": "black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_map_cover_manifest.json",
+    "sha256": "d5b2e4ddef623136155b315be5ff847f14597440b21e5bd1c4beb800d2ba16d8"
   },
   "report": "reports/phase3-black-hole-axial-global-connection-microfactor-v6-2026-07-23.md"
 }
