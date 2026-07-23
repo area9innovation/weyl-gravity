@@ -1,0 +1,48 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-analytic-incoming-connection",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-analytic-incoming-connection",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-analytic-incoming-connection.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-analytic-connection",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Replace the first global population question by an exact differential-module and Jost audit: factor the complete axial ell=2 Bach module into its three two-dimensional composition factors, assign the future-horizon-regular and Iminus endpoint filtrations, and decide whether the incoming global connection is invertible on the real pilot interval.",
+    "stop_condition": "For strict pure Weyl gravity on Schwarzschild with M=1, axial ell=2 and real omega in [1/2,3/4], derive and independently verify the complete six-state triangular differential-module filtration, including exact embedding, quotient and reconstruction maps. Identify every diagonal factor in a real short-range tortoise-coordinate form. Prove that the future-horizon-regular and Iminus endpoint spaces each contain one Jost line per factor, derive the exact determinant of the incoming connection Tminus including endpoint normalizations, and certify its rank throughout the pilot interval. Combine the result with the exact Iminus flux Gram to state the populated inertia and wave-packet index, while updating Papers 14 and 15 with the same limitation boundary.",
+    "current_gate": "Exact RW/RW/spin-one filtration, factor-adapted endpoint frames, nonzero Jost determinant, and paper-ready populated incoming-flux disposition",
+    "forbid": "no scalar L_RW squared claim from dimension counting; no physical Maxwell field inferred from the spin-one differential factor; no radial generalized column promoted to a time-translation Jordan state; no claim about Tplus or nonzero reflection; no upper-half-plane pole exclusion, stability, total positive or negative energy, CPT obstruction, particle, ghost, unitarity, polar parity, omega outside the pilot interval, or ell other than two",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-complete-reconstruction-repair",
+      "sf:program/work/phase3-black-hole-axial-null-flux-gram",
+      "sf:program/work/phase3-black-hole-axial-arbitrary-radius-current-conservation-provenance"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/",
+      "black_hole_programme/phase3/axial_incoming_connection_analytic/",
+      "reports/phase3-axial-rw-lx-triangular-preflight-2026-07-23.md",
+      "reports/phase3-axial-incoming-connection-analytic-2026-07-23.md",
+      "paper/14-pure-weyl-black-hole-radiation.tex",
+      "paper/15-four-level-ghost-classification-phase1-synthesis.tex",
+      "planning/work-items/phase3-black-hole-axial-analytic-incoming-connection.json",
+      "planning/events/"
+    ],
+    "resource_hint": "The mathematical delivery landed before this coordination node. Use the already-landed commits 8e7de78c3835a35180294a8e2d6d3437f0a716a2, b3be2b0778d61ae6053ec39edb8542bc1e074044, and paper integration 5c66a0cea. Record that chronology honestly through a report naming the real commits; do not fabricate a pre-commit intent.",
+    "input_commit": "d5d5d6de648795203604d62ce7bc4f4ce6fea510",
+    "notes": [
+      "LORENTZIAN-CAUSAL",
+      "REDUCED-MODE",
+      "The carrier exact sequence is 0 -> M_RW -> M_A4 -> M_x -> 0.",
+      "After Z=y/[r^2(r-2)], M_x is the ell=2 spin-one Regge-Wheeler differential factor.",
+      "The complete diagonal factor list is spin-two RW, spin-two RW, spin-one RW.",
+      "Tminus is the map from future-horizon-regular coefficients to the incoming Iminus trace coefficients.",
+      "Invertibility of Tminus populates the full incoming endpoint form but does not classify Tplus or the complete scattering operator."
+    ]
+  },
+  "edges": []
+}
