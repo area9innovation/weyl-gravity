@@ -1,0 +1,224 @@
+{
+  "schema": "phase3-axial-endpoint-witt-decomposition-v1",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_ENDPOINT_WITT_DECOMPOSITION",
+  "result_token": "BH_PHASE3_AXIAL_ENDPOINT_WITT_11_PLUS_01",
+  "lifecycle": "CLASSIFIED",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL",
+    "REDUCED-MODE"
+  ],
+  "declaration": {
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity",
+    "background": "Schwarzschild exterior M=1",
+    "sector": "axial ell=2 endpoint trace spaces",
+    "frequency_interval": [
+      "1/2",
+      "3/4"
+    ],
+    "frequency_assumption": "omega is real and strictly positive",
+    "coupling_assumption": "alpha_W>0",
+    "normalization": "dimensionless Hermitian form i*F^r/(pi*alpha_W), with endpoint Stokes orientation applied"
+  },
+  "import": {
+    "path": "black_hole_programme/phase3/axial_null_flux_gram/formal-grams.json",
+    "sha256": "f278101c7abc0ff513cea6e726ada9664e42e2f983227e9f737e06688f535b6a",
+    "commit": "a5b3d56d2bdfbd0fd984ff4b7e5c427570ba5ff1",
+    "source_normalization": "i*F^r/(pi*alpha_W), before Stokes endpoint orientation"
+  },
+  "pairing_convention": "<u,v> = conjugate(u)^T G v",
+  "endpoints": {
+    "Iminus": {
+      "coordinate_basis": [
+        "XI0",
+        "XI1",
+        "EI0"
+      ],
+      "orientation_multiplier": -1,
+      "witt_basis_order": [
+        "E",
+        "X",
+        "Y"
+      ],
+      "vectors": {
+        "E": [
+          "0",
+          "0",
+          "1"
+        ],
+        "X": [
+          "1",
+          "0",
+          "0"
+        ],
+        "Y": [
+          "-omega**2",
+          "-2*I*omega",
+          "1"
+        ]
+      },
+      "named_vectors": {
+        "E": "EI0",
+        "X": "XI0",
+        "Y": "-omega**2*XI0 - 2*I*omega*XI1 + EI0"
+      },
+      "basis_determinant": "-2*I*omega",
+      "transformed_gram": [
+        [
+          "0",
+          "384*omega/5",
+          "0"
+        ],
+        [
+          "384*omega/5",
+          "576/(5*omega)",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-384*omega**3/5"
+        ]
+      ],
+      "E_norm": "0",
+      "E_X_cross": "384*omega/5",
+      "EX_pair_determinant": "-147456*omega**2/25",
+      "second_null_vector": "X - 3*E/(4*omega**2)",
+      "second_null_vector_norm": "0",
+      "Y_orthogonal_to": [
+        "E",
+        "X"
+      ],
+      "Y_norm": "-384*omega**3/5",
+      "witt_split": {
+        "EX_plane_inertia": [
+          1,
+          1,
+          0
+        ],
+        "Y_line_inertia": [
+          0,
+          1,
+          0
+        ],
+        "full_inertia": [
+          1,
+          2,
+          0
+        ]
+      }
+    },
+    "Iplus": {
+      "coordinate_basis": [
+        "XI2",
+        "XI3",
+        "EI2"
+      ],
+      "orientation_multiplier": 1,
+      "witt_basis_order": [
+        "E",
+        "X",
+        "Y"
+      ],
+      "vectors": {
+        "E": [
+          "0",
+          "0",
+          "1"
+        ],
+        "X": [
+          "0",
+          "1",
+          "0"
+        ],
+        "Y": [
+          "I*omega",
+          "4*(4*omega**2-I*omega-2)",
+          "0"
+        ]
+      },
+      "named_vectors": {
+        "E": "EI2",
+        "X": "XI3",
+        "Y": "I*omega*XI2 + 4*(4*omega**2-I*omega-2)*XI3"
+      },
+      "basis_determinant": "-I*omega",
+      "transformed_gram": [
+        [
+          "0",
+          "96*omega/5",
+          "0"
+        ],
+        [
+          "96*omega/5",
+          "-48*omega*(16*omega**2-5)/5",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-384*omega/5"
+        ]
+      ],
+      "E_norm": "0",
+      "E_X_cross": "96*omega/5",
+      "EX_pair_determinant": "-9216*omega**2/25",
+      "second_null_vector": "X + (16*omega**2-5)*E/4",
+      "second_null_vector_norm": "0",
+      "Y_orthogonal_to": [
+        "E",
+        "X"
+      ],
+      "Y_norm": "-384*omega/5",
+      "witt_split": {
+        "EX_plane_inertia": [
+          1,
+          1,
+          0
+        ],
+        "Y_line_inertia": [
+          0,
+          1,
+          0
+        ],
+        "full_inertia": [
+          1,
+          2,
+          0
+        ]
+      }
+    }
+  },
+  "uniform_interval_conclusion": {
+    "basis_changes_invertible": true,
+    "EX_cross_terms_strictly_positive": true,
+    "EX_pair_determinants_strictly_negative": true,
+    "Y_norms_strictly_negative": true,
+    "radicals_zero": true,
+    "witt_decomposition": "(1,1) orthogonal direct sum (0,1)",
+    "full_inertia": [
+      1,
+      2,
+      0
+    ]
+  },
+  "claim_flags": {
+    "exact_endpoint_witt_decomposition_certified": true,
+    "uniform_on_closed_pilot_interval": true,
+    "radial_Jordan_origin_certified": false,
+    "time_translation_Jordan_origin_certified": false,
+    "repeated_factor_origin_certified": false,
+    "globally_populated_scattering_channel_certified": false
+  },
+  "does_not_establish": [
+    "that E, X or Y originates from a radial Jordan chain or spectral derivative",
+    "that E, X or Y is a time-translation Jordan vector",
+    "a scalar or matrix repeated-factor representation of the Bach operator",
+    "horizon-to-infinity matching or population by horizon-regular data",
+    "total scattering energy, CPT positivity, stability, particles, ghosts or unitarity",
+    "polar parity, omega outside [1/2,3/4], ell other than two or alpha_W<0"
+  ],
+  "verification": {
+    "command": "python3 -m black_hole_programme.phase3.axial_endpoint_witt_decomposition.verify",
+    "tests": "python3 -m unittest -v black_hole_programme.phase3.axial_endpoint_witt_decomposition.tests.test_witt"
+  }
+}
