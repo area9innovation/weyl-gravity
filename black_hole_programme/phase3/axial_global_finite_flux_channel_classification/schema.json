@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase3-black-hole-axial-global-finite-flux-channel-classification-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_token",
+    "lifecycle",
+    "dependency_tags",
+    "declaration",
+    "activation",
+    "basis_contract",
+    "endpoint_input",
+    "classifier_contract",
+    "classification",
+    "forbidden_promotions",
+    "claim_flags",
+    "does_not_establish",
+    "verification"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-black-hole-axial-global-finite-flux-channel-classification-v1"
+    },
+    "result_id": {
+      "const": "PURE_WEYL_PHASE3_AXIAL_GLOBAL_FINITE_FLUX_CHANNEL_CLASSIFICATION_V1"
+    },
+    "result_token": {
+      "const": "MISSING_GLOBAL_CONNECTION_NOT_ACTIVATED"
+    },
+    "lifecycle": {
+      "const": "NOT_ACTIVATED"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "declaration": {
+      "type": "object"
+    },
+    "activation": {
+      "type": "object",
+      "required": [
+        "status",
+        "expected_handoff_path",
+        "expected_handoff_schema",
+        "path_present",
+        "missing_or_unverified_fields",
+        "rule"
+      ],
+      "properties": {
+        "status": {
+          "enum": ["MISSING_GLOBAL_CONNECTION", "INCOMPATIBLE_GLOBAL_CONNECTION"]
+        },
+        "expected_handoff_schema": {
+          "const": "phase3-axial-global-channel-handoff-v1"
+        },
+        "path_present": {
+          "type": "boolean"
+        },
+        "missing_or_unverified_fields": {
+          "type": "array",
+          "minItems": 10,
+          "items": {"type": "string", "minLength": 20}
+        }
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "status",
+        "frequency_cells",
+        "exceptional_cells",
+        "global_additional_channel_status",
+        "reason"
+      ],
+      "properties": {
+        "status": {"const": "NOT_COMPUTED"},
+        "frequency_cells": {"const": []},
+        "exceptional_cells": {"const": []},
+        "global_additional_channel_status": {"const": "UNPOPULATED_NOT_ZERO"}
+      }
+    },
+    "basis_contract": {
+      "type": "object"
+    },
+    "endpoint_input": {
+      "type": "object"
+    },
+    "classifier_contract": {
+      "type": "object"
+    },
+    "claim_flags": {
+      "type": "object",
+      "properties": {
+        "endpoint_grams_imported": {"const": true},
+        "global_connection_imported": {"const": false},
+        "whole_interval_channel_classified": {"const": false},
+        "additional_global_channel_classified": {"const": false},
+        "current_conservation_on_populated_quotient": {"const": false},
+        "wavepacket_channel_extension_certified": {"const": false},
+        "one_sided_J_isometry_certified": {"const": false},
+        "full_scattering_matrix_constructed": {"const": false},
+        "CPT_stability_positivity_or_unitarity_established": {"const": false}
+      },
+      "required": [
+        "endpoint_grams_imported",
+        "global_connection_imported",
+        "whole_interval_channel_classified",
+        "additional_global_channel_classified",
+        "current_conservation_on_populated_quotient",
+        "wavepacket_channel_extension_certified",
+        "one_sided_J_isometry_certified",
+        "full_scattering_matrix_constructed",
+        "CPT_stability_positivity_or_unitarity_established"
+      ]
+    },
+    "forbidden_promotions": {
+      "type": "object",
+      "additionalProperties": {"const": false}
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 4
+    },
+    "verification": {
+      "type": "object"
+    }
+  }
+}

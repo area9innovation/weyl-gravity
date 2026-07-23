@@ -1,0 +1,35 @@
+{
+  "schema": "work-v0",
+  "id": "phase3-black-hole-axial-global-finite-flux-channel-classification-handoff",
+  "title": "Validated global-connection handoff for the axial finite-flux classifier",
+  "status": "REQUESTED",
+  "requester": "phase3-axial-channel-1",
+  "consumer": "phase3-black-hole-axial-global-finite-flux-channel-classification",
+  "problem": "The endpoint L2 trace spaces and indefinite Lee-Wald Grams are certified, and the downstream quotient classifier is implemented. The global radial calculation has not yet emitted a typed correlated 6x3 handoff with whole-cell rank, current and multiplier evidence, so no global finite-flux channel can be classified.",
+  "requested_capability": {
+    "kind": "phase3-axial-global-channel-handoff-v1",
+    "frequency_cover": ["1/2", "3/4"],
+    "requirements": [
+      "emit a finite rational frequency subdivision with no silent gaps or overlaps",
+      "preserve the shared affine frequency generator in every 6x3 connection enclosure",
+      "freeze infinity order XI0,XI1,XI2,XI3,EI0,EI2",
+      "freeze raw horizon order XH0a,XH0b,EH0,XHplus,EHout,XHminus and selector [0,1,2]",
+      "include the public/raw crosswalk and reject public selector [0,1,4] on the raw initializer",
+      "certify whole-cell ranks and kernels of T, Pminus*T and Pplus*T",
+      "emit exact or validated realified pulled-back Gram and inertia witnesses",
+      "emit the future-horizon outward Gram and certify GHplus+gplus-gminus=0",
+      "list every unresolved or exceptional cell without continuity across it",
+      "emit uniform multiplier and inverse bounds sufficient for the L2 wave-packet extension",
+      "content-address every handoff and include an independent replay receipt"
+      ,
+      "write the final typed handoff at black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/channel-handoff-v6.json",
+      "include validated affine-interval classification witnesses; an exact point or constant-matrix classifier result is not a whole-cell proof"
+    ]
+  },
+  "does_not_establish": [
+    "a global connection matrix before the requested handoff passes",
+    "a populated additional channel",
+    "a full scattering matrix",
+    "CPT, stability, positivity or unitarity"
+  ]
+}
