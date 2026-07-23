@@ -89,7 +89,7 @@ def contract_payload() -> dict[str, Any]:
         "standard_to_block_crosswalk_sha256": permutation[
             "crosswalk_sha256"
         ],
-        "initial_planes": {
+        "trace_coordinate_selectors": {
             "Iminus_standard_12_by_6": standard_plane(IMINUS_SELECTOR),
             "Iplus_standard_12_by_6": standard_plane(IPLUS_SELECTOR),
             "Iminus_block_12_by_6": block_plane(IMINUS_SELECTOR),

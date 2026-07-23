@@ -37,7 +37,9 @@ class InfinityPlaneContractTest(unittest.TestCase):
 
     def test_state_permutation_drift_is_rejected(self) -> None:
         payload = copy.deepcopy(contract_payload())
-        payload["initial_planes"]["Iminus_block_12_by_6"][0][0] = "0/1"
+        payload["trace_coordinate_selectors"][
+            "Iminus_block_12_by_6"
+        ][0][0] = "0/1"
         with self.assertRaisesRegex(HandoffError, "exact payload drift"):
             verify_contract(payload)
 

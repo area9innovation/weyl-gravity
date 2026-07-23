@@ -323,7 +323,58 @@
     "real_plane_dimension": 6,
     "state_factorization": "Y=G_chart(Z)*A"
   },
-  "initial_planes": {
+  "payload_sha256": "dc16ba677c43fbe99dd32aeac8e5add559b904e722576cad608bc1b85b1f571b",
+  "required_terminal_gate": {
+    "concatenated_endpoint_basis_rank": 12,
+    "separate_plane_rank": 6,
+    "separate_plane_rank_does_not_imply_combined_rank": true
+  },
+  "schema": "phase3-axial-infinity-physical-plane-contract-v1",
+  "selectors": {
+    "Iminus": [
+      0,
+      1,
+      4
+    ],
+    "Iplus": [
+      2,
+      3,
+      5
+    ]
+  },
+  "standard_to_block_crosswalk_sha256": "209def72c2f5eceac2b3f2bd87189b7513cc76ce5cb789e4702d4d14adf6b0af",
+  "state_orders": {
+    "block": [
+      "Re(P)",
+      "Re(Pprime)",
+      "Re(Q)",
+      "Re(Qprime)",
+      "Im(P)",
+      "Im(Pprime)",
+      "Im(Q)",
+      "Im(Qprime)",
+      "Re(H1)",
+      "Re(F)",
+      "Im(H1)",
+      "Im(F)"
+    ],
+    "standard": [
+      "Re(P)",
+      "Re(Pprime)",
+      "Re(Q)",
+      "Re(Qprime)",
+      "Re(H1)",
+      "Re(F)",
+      "Im(P)",
+      "Im(Pprime)",
+      "Im(Q)",
+      "Im(Qprime)",
+      "Im(H1)",
+      "Im(F)"
+    ]
+  },
+  "status": "CERTIFIED",
+  "trace_coordinate_selectors": {
     "Iminus_block_12_by_6": [
       [
         "1",
@@ -716,56 +767,5 @@
         "1/1"
       ]
     ]
-  },
-  "payload_sha256": "6eb0966a414c2ce27d3aa0755db9c6e60e57454cb25ee90d1eb563c1bb7657ba",
-  "required_terminal_gate": {
-    "concatenated_endpoint_basis_rank": 12,
-    "separate_plane_rank": 6,
-    "separate_plane_rank_does_not_imply_combined_rank": true
-  },
-  "schema": "phase3-axial-infinity-physical-plane-contract-v1",
-  "selectors": {
-    "Iminus": [
-      0,
-      1,
-      4
-    ],
-    "Iplus": [
-      2,
-      3,
-      5
-    ]
-  },
-  "standard_to_block_crosswalk_sha256": "209def72c2f5eceac2b3f2bd87189b7513cc76ce5cb789e4702d4d14adf6b0af",
-  "state_orders": {
-    "block": [
-      "Re(P)",
-      "Re(Pprime)",
-      "Re(Q)",
-      "Re(Qprime)",
-      "Im(P)",
-      "Im(Pprime)",
-      "Im(Q)",
-      "Im(Qprime)",
-      "Re(H1)",
-      "Re(F)",
-      "Im(H1)",
-      "Im(F)"
-    ],
-    "standard": [
-      "Re(P)",
-      "Re(Pprime)",
-      "Re(Q)",
-      "Re(Qprime)",
-      "Re(H1)",
-      "Re(F)",
-      "Im(P)",
-      "Im(Pprime)",
-      "Im(Q)",
-      "Im(Qprime)",
-      "Im(H1)",
-      "Im(F)"
-    ]
-  },
-  "status": "CERTIFIED"
+  }
 }
