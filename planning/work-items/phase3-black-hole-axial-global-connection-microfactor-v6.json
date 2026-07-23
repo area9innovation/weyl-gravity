@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-global-connection-microfactor-v6",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-global-connection-microfactor-v6",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-global-connection-microfactor-v6.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-axial-global-6",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Replace the runtime-shortfall 64-panel reset factors by 224 content-addressed eight-panel affine microfactors in a layout-tagged moving block frame with byte-identical shared boundary frames, then compose them in exact radial order into the validated axial Bach horizon-to-infinity connection.",
+    "stop_condition": "For ell=2, M=1 and the first rational frequency cell M omega in [1/2,129/256], generate one global table of 1793 exact affine panel-boundary frames and its 225 exact micro-boundary hashes at t=j/8. For every j=0,...,223 certify the carrier and Einstein-kernel flows on [j/8,(j+1)/8], reconstruct the forced lower lift, and emit the contiguous moving-frame transition [[Wc,0],[Wl,Wk]] with center, shared-generator linear coefficient, outward interval remainder and hull. Independently verify its generator, cell, exact bounds, global panel span, layout tag, frame hashes, exact zero upper-right block, diagonal ranks, existence and uniqueness. Join all 224 factors in radial order using the structured block recurrence and a checked 128-bit dyadic rebase after every join; refuse any missing, duplicated or reordered factor or mismatched boundary hash. Compose once with the separately certified future-horizon-regular transport and endpoint frames, state the outward/radial orientation explicitly, and report the connection/projection ranks plus the populated endpoint pullback C_reg^dagger G_endpoint C_reg. Preserve any exceptional/refused microcell as an explicit shortfall rather than widening through it.",
+    "current_gate": "Content-addressed eight-panel microfactor flow and fail-closed radial composition",
+    "forbid": "no independently rounded adjacent frames; no uncontrolled shooting; no explicit matrix inverse; no omitted lower lift; no raw radial current called endpoint flux; no finite formal span called a scattering space; no flux-sign, stability, CPT, positivity or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-boundary-flux-contract",
+      "sf:program/work/phase3-black-hole-axial-complete-reconstruction-repair",
+      "sf:program/work/phase3-black-hole-axial-infinity-practical-transfer",
+      "sf:program/work/phase3-black-hole-axial-null-infinity-trace-preflight"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_global_connection_matrix_v5/",
+      "reports/phase3-black-hole-axial-global-connection-microfactor-v6-2026-07-23.md",
+      "residual_atlas/phase3-black-hole-axial-global-connection-microfactor-v6-fragment-v1.json",
+      "planning/work-items/phase3-black-hole-axial-global-connection-microfactor-v6.json",
+      "planning/forge-requests/phase3-black-hole-axial-global-connection-matrix-v5.json"
+    ],
+    "resource_hint": "The v5 reset-level rail is a certified runtime shortfall, not a mathematical refusal. Use the landed Forge table-backed parametric affine flow at f2ab419230f03003580d885735e029ce2deed71e. Compile once, validate one complete microfactor artifact first, then scale with bounded worker concurrency.",
+    "input_commit": "81397386e",
+    "notes": [
+      "This is the active computational successor to the blocked v5 item.",
+      "The v5 handoff schema remains useful as a negative/legacy contract; v6 introduces exact 1/8-width microfactor coverage.",
+      "The first standard-chart materialization was ill-conditioned. V6 keeps all intermediate factors in their natural contiguous 8+4 moving block frame and materializes endpoint action only once.",
+      "The earlier structured-preflight multi-panel composition mixed standard-interleaved and contiguous storage layouts. Its certificate is withdrawn; v6 carries explicit layout tags and mutation tests."
+    ]
+  },
+  "edges": []
+}

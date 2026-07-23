@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import importlib.util
+import hashlib
 import json
 import sys
 from fractions import Fraction
@@ -38,6 +39,9 @@ INFINITY_SOURCE = (
     / "axial_infinity_practical_transfer/validated_infinity_transfer.forge"
 )
 CURRENT_CERT = HERE.parent / "axial_null_infinity_trace_preflight/certificate.json"
+STRUCTURED_PREFLIGHT_SOURCE = (
+    HERE.parent / "axial_structured_lower_transition_preflight/actual_fixture.forge"
+)
 OMEGA_CELL = (Fraction(1, 2), Fraction(129, 256))
 OMEGA_CENTER = sum(OMEGA_CELL, Fraction(0)) / 2
 OMEGA_RADIUS = (OMEGA_CELL[1] - OMEGA_CELL[0]) / 2
@@ -45,6 +49,9 @@ GENERATOR = 7315
 INWARD_RESETS = 28
 INWARD_LOCAL_STEPS = 64
 INWARD_PANELS = INWARD_RESETS * INWARD_LOCAL_STEPS
+MICROFACTOR_COUNT = 224
+MICROFACTOR_PANELS = 8
+MICROFACTOR_WIDTH = Fraction(1, 8)
 HORIZON_RESETS_PER_SHELL = 8
 HORIZON_LOCAL_STEPS = 2
 HORIZON_EPSILON = Fraction(1, 1 << 22)
@@ -109,6 +116,19 @@ def _strip_endpoint_source(path: Path) -> str:
     marker = "pub fn main() -> i64 {"
     require(marker in text, f"endpoint adapter has no terminal main: {path}")
     return text.split(marker, 1)[0].rstrip() + "\n"
+
+
+def _structured_kernel_source() -> str:
+    """Import only the local block-lower exponential/tail kernel.
+
+    The source package's multi-panel compose used an interleaved extractor on
+    a contiguous ``ivam_block_lower`` result.  It is intentionally excluded;
+    this package supplies and tests its own layout-tagged composition.
+    """
+    text = STRUCTURED_PREFLIGHT_SOURCE.read_text()
+    start = text.index("fn sl_inf_norm_hi")
+    end = text.index("fn sl_compose")
+    return text[start:end].rstrip() + "\n"
 
 
 def _render_cell() -> list[str]:
@@ -235,6 +255,429 @@ def _common_affine_helpers() -> list[str]:
         "}",
         "",
     ]
+
+
+def _frame_payload(frame: FrameTaylor) -> dict:
+    def matrix(values):
+        return [
+            [f"{value.numerator}/{value.denominator}" for value in row]
+            for row in values
+        ]
+
+    return {
+        "center": matrix(frame.center),
+        "derivative": matrix(frame.derivative),
+    }
+
+
+def _canonical_sha256(value) -> str:
+    return hashlib.sha256(
+        json.dumps(value, sort_keys=True, separators=(",", ":")).encode("ascii")
+    ).hexdigest()
+
+
+def build_microfactor_render_context() -> dict:
+    """Build the shared exact coefficient/frame context once for all factors."""
+    data = exact_inputs()
+    omega = data["omega"]
+    t = next(s for s in data["inward"].free_symbols if s.name == "t")
+    frames = numerical_frames_with_sensitivity(
+        data["inward"], t, omega, OMEGA_CENTER,
+        Fraction(0), Fraction(28), INWARD_PANELS, bits=34,
+    )
+    frame_payloads = [_frame_payload(frame) for frame in frames]
+    return {
+        "data": data,
+        "t": t,
+        "frames": frames,
+        "runtime_lines": render_runtime_taylor_builder(
+            "gc_micro_runtime", data["inward"], t, omega,
+            OMEGA_CENTER, OMEGA_RADIUS,
+        ),
+        "structured_kernel_source": _structured_kernel_source(),
+        "frame_sha256": [
+            _canonical_sha256(payload) for payload in frame_payloads
+        ],
+        "frame_table_sha256": _canonical_sha256(frame_payloads),
+    }
+
+
+def render_microfactor_adapter(
+    micro: int = 0, *, context: dict | None = None
+) -> tuple[str, dict]:
+    """Render a compile-once runner for the 224 validated eight-panel factors.
+
+    The exact coefficient table is generated at runtime for only the requested
+    microinterval.  All 225 boundary frames are generated together by one
+    sensitivity solve and quantized exactly, so adjacent artifacts reuse
+    byte-identical frame payloads.
+    """
+    context = context or build_microfactor_render_context()
+    data = context["data"]
+    omega = data["omega"]
+    t = context["t"]
+    require(0 <= micro < MICROFACTOR_COUNT, "microfactor id out of range")
+    frames = context["frames"]
+    frame_hashes = context["frame_sha256"]
+    table_hash = context["frame_table_sha256"]
+
+    lines = [
+        "// expect: 42",
+        "// backends: c native",
+        "// Generated eight-panel affine microfactor runner.",
+        "import prelude;",
+        "import sys/args;",
+        "import math/rational;",
+        "import math/interval;",
+        "import math/qmat;",
+        "import math/ivmat;",
+        "import math/ivaffine;",
+        "import math/ivlinparam;",
+        "import ds/vec;",
+        "import ds/manualvec;",
+        "import text/parse;",
+        "import text/format;",
+        "import text/strbuilder;",
+        "",
+        "fn big(s:string)->Rat{return match(parse<Rat>(bytes(s),0)){",
+        "  ok(r)=>r,err(e)=>trap()};}",
+        "",
+    ]
+    lines += _render_cell()
+    lines += _common_affine_helpers()
+    lines += [
+        "fn gc_sym(x:Iv)->Iv{let a:Iv=iv_abs(x);return iv(0.0-a.hi,a.hi);}",
+        "",
+    ]
+    lines += context["runtime_lines"]
+    frame_base = MICROFACTOR_PANELS * micro
+    local_frames = frames[frame_base:frame_base + MICROFACTOR_PANELS + 1]
+    frame_lines, frame_names = _render_frame_family(
+        f"gc_micro_{micro}_frame", local_frames
+    )
+    lines += frame_lines
+    lines.append(context["structured_kernel_source"])
+    frame_dispatch = _if_dispatch("k", frame_names, "(c)")
+    lines += [
+        "fn gc_micro_frame_full(k:i64)->IvAffineMat{",
+        "  let c:IvAffineCell=gc_cell();",
+        f"  if(k<{frame_base} || k>{frame_base + MICROFACTOR_PANELS}){{trap();}}",
+        f"  let q:i64=k-{frame_base};return {frame_dispatch.replace('k==', 'q==')};",
+        "}",
+        "",
+        "fn gc_micro_frame_part(k:i64,kind:i64)->IvAffineMat{",
+        "  return gc_affine_submatrix(gc_micro_frame_full(k),kind);",
+        "}",
+        "",
+        "fn gc_micro_coeff(panel:i64,tbox:Iv)->IvAffineMat{",
+        "  let c:IvAffineCell=gc_cell();",
+        "  let xc:Rat=rat(2*panel+1,128);",
+        "  return gc_micro_runtime(xc,tbox,rat(1,128),c);",
+        "}",
+        "",
+        "fn gc_micro_raw_coeff(panel:i64,tbox:Iv)->IvAffineMat{",
+        "  let c:IvAffineCell=gc_cell();",
+        "  let xc:Rat=rat(2*panel+1,512);",
+        "  return gc_micro_runtime(xc,tbox,rat(1,512),c);",
+        "}",
+        "",
+        "fn gc_micro_coeff_table(j:i64)->Vec<IvAffineMat>{",
+        "  let d:ManualVec<IvAffineMat>=manual_vec_new<IvAffineMat>(",
+        f"    system_allocator(),{MICROFACTOR_PANELS});",
+        "  let p:i64=j*8;while(p<(j+1)*8){",
+        "    let ta:Iv=iv_from_rat(rat(p,64));",
+        "    let tb:Iv=iv_from_rat(rat(p+1,64));",
+        "    d=manual_vec_push<IvAffineMat>(d,gc_micro_coeff(p,iv(ta.lo,tb.hi)));",
+        "    p=p+1;}return vec_seal(d);",
+        "}",
+        "",
+        "fn gc_micro_subtable(a:borrow Vec<IvAffineMat>,kind:i64)->Vec<IvAffineMat>{",
+        "  let d:ManualVec<IvAffineMat>=manual_vec_new<IvAffineMat>(",
+        "    system_allocator(),len(a));let k:usize=0;while(k<len(a)){",
+        "    d=manual_vec_push<IvAffineMat>(d,gc_affine_submatrix(",
+        "      vec_get_ref<IvAffineMat>(a,k),kind));k=k+1;}return vec_seal(d);",
+        "}",
+        "",
+        "fn gc_micro_frames(j:i64,kind:i64)->Vec<IvAffineMat>{",
+        "  let d:ManualVec<IvAffineMat>=manual_vec_new<IvAffineMat>(",
+        "    system_allocator(),2);",
+        "  d=manual_vec_push<IvAffineMat>(d,",
+        "    if(kind==3){match(gc_micro_full_frame(j*8)){some(z)=>z,none=>{trap();}}}",
+        "    else{gc_micro_frame_part(j*8,kind)});",
+        "  d=manual_vec_push<IvAffineMat>(d,",
+        "    if(kind==3){match(gc_micro_full_frame((j+1)*8)){some(z)=>z,none=>{trap();}}}",
+        "    else{gc_micro_frame_part((j+1)*8,kind)});",
+        "  return vec_seal(d);",
+        "}",
+        "",
+        "fn gc_micro_raw_coeff_table(j:i64)->Vec<IvAffineMat>{",
+        "  let d:ManualVec<IvAffineMat>=manual_vec_new<IvAffineMat>(",
+        "    system_allocator(),32);",
+        "  let p:i64=j*32;while(p<(j+1)*32){",
+        "    let ta:Iv=iv_from_rat(rat(p,256));",
+        "    let tb:Iv=iv_from_rat(rat(p+1,256));",
+        "    d=manual_vec_push<IvAffineMat>(d,gc_micro_raw_coeff(p,iv(ta.lo,tb.hi)));",
+        "    p=p+1;}return vec_seal(d);",
+        "}",
+        "",
+        "fn gc_micro_full_frame(k:i64)->Option<IvAffineMat>{",
+        "  let b:IvAffineResult=ivam_block_lower(",
+        "    gc_micro_frame_part(k,0),gc_micro_frame_part(k,2),",
+        "    gc_micro_frame_part(k,1));",
+        "  if(!b.ok){return Option.none;}return Option.some(ivam_clone(b.value));",
+        "}",
+        "",
+        "// Extract from the contiguous [[Wc,0],[Wl,Wk]] layout produced by",
+        "// ivam_block_lower.  This is deliberately distinct from",
+        "// gc_affine_submatrix, which extracts the interleaved standard ODE blocks.",
+        "fn gc_block_part(a:borrow IvAffineMat,kind:i64)->IvAffineMat{",
+        "  let nr:i64=if(kind==0){8}else{4};",
+        "  let nc:i64=if(kind==2){8}else{nr};",
+        "  let ro:i64=if(kind==0){0}else{8};",
+        "  let co:i64=if(kind==1){8}else{0};",
+        "  let c:QMat=qm_new(nr,nc);let l:QMat=qm_new(nr,nc);",
+        "  let r:IvMat=ivm_zeros(nr,nc);let i:i64=0;",
+        "  while(i<nr){let j:i64=0;while(j<nc){",
+        "    c=qm_set(c,i,j,qm_get(a.center,ro+i,co+j));",
+        "    l=qm_set(l,i,j,qm_get(a.linear,ro+i,co+j));",
+        "    ivm_set(r,i,j,ivm_at(a.remainder,ro+i,co+j));",
+        "    j=j+1;}i=i+1;}",
+        "  return new IvAffineMat(a.generator,nr,nc,c,l,r);",
+        "}",
+        "",
+        "fn gc_sl_compose(left:borrow IvAffineMat,right:borrow IvAffineMat)",
+        "->Option<IvAffineMat>{",
+        "  let lc:IvAffineMat=gc_block_part(left,0);",
+        "  let lk:IvAffineMat=gc_block_part(left,1);",
+        "  let ll:IvAffineMat=gc_block_part(left,2);",
+        "  let rc:IvAffineMat=gc_block_part(right,0);",
+        "  let rk:IvAffineMat=gc_block_part(right,1);",
+        "  let rl:IvAffineMat=gc_block_part(right,2);",
+        "  let cc:IvAffineResult=ivam_mul_checked(lc,rc);",
+        "  let kk:IvAffineResult=ivam_mul_checked(lk,rk);",
+        "  let a:IvAffineResult=ivam_mul_checked(ll,rc);",
+        "  let b:IvAffineResult=ivam_mul_checked(lk,rl);",
+        "  if(!cc.ok || !kk.ok || !a.ok || !b.ok){return Option.none;}",
+        "  let low:IvAffineResult=ivam_add_checked(a.value,b.value);",
+        "  if(!low.ok){return Option.none;}",
+        "  let ccr:IvAffineResult=ivam_rebase_dyadic(cc.value,128);",
+        "  let kkr:IvAffineResult=ivam_rebase_dyadic(kk.value,128);",
+        "  let lr:IvAffineResult=ivam_rebase_dyadic(low.value,128);",
+        "  if(!ccr.ok || !kkr.ok || !lr.ok){return Option.none;}",
+        "  let out:IvAffineResult=ivam_block_lower(ccr.value,lr.value,kkr.value);",
+        "  if(!out.ok){return Option.none;}return Option.some(ivam_clone(out.value));",
+        "}",
+        "",
+        "fn gc_micro_moving_structured(u:borrow IvAffineMat,",
+        "p:i64)->Option<IvAffineMat>{",
+        "  let uc:IvAffineMat=gc_block_part(u,0);",
+        "  let uk:IvAffineMat=gc_block_part(u,1);",
+        "  let lower0:IvAffineMat=gc_block_part(u,2);",
+        "  let c0:IvAffineMat=gc_micro_frame_part(p,0);",
+        "  let c1:IvAffineMat=gc_micro_frame_part(p+1,0);",
+        "  let k0:IvAffineMat=gc_micro_frame_part(p,1);",
+        "  let k1:IvAffineMat=gc_micro_frame_part(p+1,1);",
+        "  let d0:IvAffineMat=gc_micro_frame_part(p,2);",
+        "  let d1:IvAffineMat=gc_micro_frame_part(p+1,2);",
+        "  let cc0:IvAffineResult=ivam_mul_checked(uc,c0);",
+        "  let kk0:IvAffineResult=ivam_mul_checked(uk,k0);",
+        "  if(!cc0.ok || !kk0.ok){return Option.none;}",
+        "  let wc0:IvAffineResult=ivam_solve_rect(c1,cc0.value);",
+        "  let wk0:IvAffineResult=ivam_solve_rect(k1,kk0.value);",
+        "  if(!wc0.ok || !wk0.ok){return Option.none;}",
+        "  let lc:IvAffineResult=ivam_mul_checked(lower0,c0);",
+        "  let kd:IvAffineResult=ivam_mul_checked(uk,d0);",
+        "  if(!lc.ok || !kd.ok){return Option.none;}",
+        "  let sum:IvAffineResult=ivam_add_checked(lc.value,kd.value);",
+        "  let dw:IvAffineResult=ivam_mul_checked(d1,wc0.value);",
+        "  if(!sum.ok || !dw.ok){return Option.none;}",
+        "  let rhs:IvAffineResult=ivam_sub_checked(sum.value,dw.value);",
+        "  if(!rhs.ok){return Option.none;}",
+        "  let wl0:IvAffineResult=ivam_solve_rect(k1,rhs.value);",
+        "  if(!wl0.ok){return Option.none;}",
+        "  let wc:IvAffineResult=ivam_rebase_dyadic(wc0.value,128);",
+        "  let wk:IvAffineResult=ivam_rebase_dyadic(wk0.value,128);",
+        "  let wl:IvAffineResult=ivam_rebase_dyadic(wl0.value,128);",
+        "  if(!wc.ok || !wk.ok || !wl.ok){return Option.none;}",
+        "  let rc:IvAffineRank=ivam_full_column_rank_cells(wc.value,32);",
+        "  let rk:IvAffineRank=ivam_full_column_rank_cells(wk.value,32);",
+        "  if(!rc.certified || !rk.certified){return Option.none;}",
+        "  let out:IvAffineResult=ivam_block_lower(wc.value,wl.value,wk.value);",
+        "  if(!out.ok){return Option.none;}return Option.some(ivam_clone(out.value));",
+        "}",
+        "",
+        "fn gc_micro_structured_product(at:borrow Vec<IvAffineMat>,",
+        "j:i64)->Option<IvAffineMat>{",
+        "  if(len(at)!=8){return Option.none;}",
+        "  let total:IvAffineMat=ivam_identity(gc_cell().generator,12);",
+        "  let k:i64=0;while(k<8){",
+        "    let u:IvAffineMat=match(sl_local_transition(",
+        "      vec_get_ref<IvAffineMat>(at,usize(k)),rat(1,64),12)){",
+        "      some(z)=>z,none=>{return Option.none;}};",
+        "    let w:IvAffineMat=match(gc_micro_moving_structured(u,j*8+k)){",
+        "      some(z)=>z,none=>{return Option.none;}};",
+        "    let z:IvAffineMat=match(gc_sl_compose(w,total)){",
+        "      some(v)=>v,none=>{return Option.none;}};",
+        "    total=ivam_clone(z);k=k+1;}",
+        "  return Option.some(ivam_clone(total));",
+        "}",
+        "",
+        "fn gc_micro_transfer_factor(w:borrow IvAffineMat,",
+        "j:i64)->Option<IvAffineMat>{",
+        "  let eye:IvAffineMat=ivam_identity(gc_cell().generator,12);",
+        "  let x:IvAffineMat=gc_standard_to_block_rows(eye);",
+        "  let b0:IvAffineMat=match(gc_micro_full_frame(j*8)){",
+        "    some(z)=>z,none=>{return Option.none;}};",
+        "  let y0:IvAffineResult=ivam_solve_rect(b0,x);",
+        "  if(!y0.ok){return Option.none;}",
+        "  let y1:IvAffineResult=ivam_apply_rect(w,y0.value);",
+        "  if(!y1.ok){return Option.none;}",
+        "  let b1:IvAffineMat=match(gc_micro_full_frame((j+1)*8)){",
+        "    some(z)=>z,none=>{return Option.none;}};",
+        "  let z:IvAffineResult=ivam_apply_rect(b1,y1.value);",
+        "  if(!z.ok){return Option.none;}",
+        "  return Option.some(gc_block_to_standard_rows(z.value));",
+        "}",
+        "",
+        "fn gc_micro_raw_frames()->Vec<IvAffineMat>{",
+        "  let d:ManualVec<IvAffineMat>=manual_vec_new<IvAffineMat>(",
+        "    system_allocator(),33);let k:i64=0;while(k<33){",
+        "    d=manual_vec_push<IvAffineMat>(d,",
+        "      ivam_identity(gc_cell().generator,12));k=k+1;}",
+        "  return vec_seal(d);",
+        "}",
+        "",
+        "fn gc_micro_raw_product(raw:borrow IvLinParamAffineFlow)->Option<IvAffineMat>{",
+        "  let u:IvAffineMat=ivam_identity(gc_cell().generator,12);",
+        "  let k:i64=0;while(k<32){",
+        "    let w:IvAffineMat=match(ivlin_param_affine_correction(raw,k)){",
+        "      some(z)=>z,none=>{return Option.none;}};",
+        "    let z:IvAffineResult=ivam_apply_rect(w,u);",
+        "    if(!z.ok){return Option.none;}",
+        "    let rb:IvAffineResult=ivam_rebase_dyadic(z.value,128);",
+        "    if(!rb.ok){return Option.none;}u=ivam_clone(rb.value);k=k+1;}",
+        "  return Option.some(ivam_clone(u));",
+        "}",
+        "",
+        "fn gc_micro_lift(fc:borrow IvLinParamAffineFlow,",
+        "fk:borrow IvLinParamAffineFlow,u:borrow IvAffineMat,",
+        "j:i64)->Option<IvAffineMat>{",
+        "  let wc:IvAffineMat=match(ivlin_param_affine_correction(fc,0)){",
+        "    some(z)=>z,none=>{return Option.none;}};",
+        "  let wk:IvAffineMat=match(ivlin_param_affine_correction(fk,0)){",
+        "    some(z)=>z,none=>{return Option.none;}};",
+        "  let g:IvAffineMat=gc_affine_submatrix(u,2);",
+        "  let uk:IvAffineMat=gc_affine_submatrix(u,1);",
+        "  let cc:IvAffineMat=gc_micro_frame_part(j*8,0);",
+        "  let ck1:IvAffineMat=gc_micro_frame_part((j+1)*8,1);",
+        "  let d0:IvAffineMat=gc_micro_frame_part(j*8,2);",
+        "  let d1:IvAffineMat=gc_micro_frame_part((j+1)*8,2);",
+        "  let a:IvAffineResult=ivam_mul_checked(g,cc);",
+        "  if(!a.ok){return Option.none;}",
+        "  let b:IvAffineResult=ivam_mul_checked(uk,d0);",
+        "  if(!b.ok){return Option.none;}",
+        "  let c:IvAffineResult=ivam_add_checked(a.value,b.value);",
+        "  if(!c.ok){return Option.none;}",
+        "  let dw:IvAffineResult=ivam_mul_checked(d1,wc);",
+        "  if(!dw.ok){return Option.none;}",
+        "  let rhs:IvAffineResult=ivam_sub_checked(c.value,dw.value);",
+        "  if(!rhs.ok){return Option.none;}",
+        "  let lower:IvAffineResult=ivam_solve_rect(ck1,rhs.value);",
+        "  if(!lower.ok){return Option.none;}",
+        "  let w:IvAffineResult=ivam_block_lower(wc,lower.value,wk);",
+        "  if(!w.ok){return Option.none;}return Option.some(ivam_clone(w.value));",
+        "}",
+        "",
+        "fn gc_micro_transfer(fc:borrow IvLinParamAffineFlow,",
+        "fk:borrow IvLinParamAffineFlow,u:borrow IvAffineMat,",
+        "j:i64)->Option<IvAffineMat>{",
+        "  let eye:IvAffineMat=ivam_identity(gc_cell().generator,12);",
+        "  let x:IvAffineMat=gc_standard_to_block_rows(eye);",
+        "  let b0:IvAffineMat=match(gc_micro_full_frame(j*8)){",
+        "    some(z)=>z,none=>{return Option.none;}};",
+        "  let y0:IvAffineResult=ivam_solve_rect(b0,x);",
+        "  if(!y0.ok){return Option.none;}",
+        "  let w:IvAffineMat=match(gc_micro_lift(fc,fk,u,j)){",
+        "    some(z)=>z,none=>{return Option.none;}};",
+        "  let y1:IvAffineResult=ivam_apply_rect(w,y0.value);",
+        "  if(!y1.ok){return Option.none;}",
+        "  let b1:IvAffineMat=match(gc_micro_full_frame((j+1)*8)){",
+        "    some(z)=>z,none=>{return Option.none;}};",
+        "  let z:IvAffineResult=ivam_apply_rect(b1,y1.value);",
+        "  if(!z.ok){return Option.none;}",
+        "  return Option.some(gc_block_to_standard_rows(z.value));",
+        "}",
+        "",
+        "fn gc_emit_affine(a:borrow IvAffineMat)->void{",
+        "  let h:IvMat=ivam_hull(a);let i:i64=0;while(i<12){",
+        "    let j:i64=0;while(j<12){",
+        "      let cs:String=rat_str(qm_get(a.center,i,j));",
+        "      let ls:String=rat_str(qm_get(a.linear,i,j));",
+        "      let r:Iv=ivm_at(a.remainder,i,j);let q:Iv=ivm_at(h,i,j);",
+        "      println(strfmt(system_allocator(),\"A {} {} {} {} {} {} {} {}\",",
+        "        [i,j,str_view(cs),str_view(ls),f64_bits(r.lo),f64_bits(r.hi),",
+        "         f64_bits(q.lo),f64_bits(q.hi)]));",
+        "      drop(cs);drop(ls);j=j+1;}i=i+1;}",
+        "}",
+        "",
+        "pub fn axial_microfactor(j:i64)->bool{",
+        f"  if(j!={micro}){{return false;}}",
+        "  let at:Vec<IvAffineMat>=gc_micro_coeff_table(j);",
+        "  let ac:Vec<IvAffineMat>=gc_micro_subtable(at,0);",
+        "  let ak:Vec<IvAffineMat>=gc_micro_subtable(at,1);",
+        "  let cell:IvAffineCell=gc_cell();",
+        "  let lo:Rat=rat(j,8);let hi:Rat=rat(j+1,8);",
+        "  println(strfmt(system_allocator(),\"BEGIN {}\",[j]));",
+        "  println(\"LAYOUT contiguous-block-lower-v1\");",
+        "  let fc:IvLinParamAffineFlow=ivlin_param_affine_fundamental_tables(",
+        "    ac,gc_micro_frames(j,0),cell,8,rat_clone(lo),rat_clone(hi),",
+        "    1,8,12,8,true,true,true);",
+        "  println(strfmt(system_allocator(),\"FLOW carrier {} {} {}\",",
+        "    [fc.ok,fc.refusal_code,fc.refusal_reset]));",
+        "  let fk:IvLinParamAffineFlow=ivlin_param_affine_fundamental_tables(",
+        "    ak,gc_micro_frames(j,1),cell,4,rat_clone(lo),rat_clone(hi),",
+        "    1,8,12,8,true,true,true);",
+        "  println(strfmt(system_allocator(),\"FLOW kernel {} {} {}\",",
+        "    [fk.ok,fk.refusal_code,fk.refusal_reset]));",
+        "  if(!fc.ok || !fk.ok){return false;}",
+        "  let w:IvAffineMat=match(gc_micro_structured_product(at,j)){",
+        "    some(z)=>z,none=>{println(\"FLOW structured false 12 0\");return false;}};",
+        "  println(\"FLOW structured true 0 -1\");",
+        "  let pr:IvAffineResult=ivam_rebase_dyadic(w,128);",
+        "  if(!pr.ok){return false;}let phi:IvAffineMat=ivam_clone(pr.value);",
+        "  let rc:IvAffineRank=ivam_full_column_rank_cells(",
+        "    gc_block_part(phi,0),32);",
+        "  let rk:IvAffineRank=ivam_full_column_rank_cells(",
+        "    gc_block_part(phi,1),32);",
+        "  let rank:i64=if(rc.certified && rk.certified){12}",
+        "    else{rc.rank+rk.rank};",
+        "  println(strfmt(system_allocator(),\"WIDTH {} {} {}\",[",
+        "    ivam_max_width(gc_block_part(phi,0)),",
+        "    ivam_max_width(gc_block_part(phi,2)),",
+        "    ivam_max_width(gc_block_part(phi,1))]));",
+        "  println(strfmt(system_allocator(),\"RESULT {} {} {}\",",
+        "    [j,rank,ivam_max_width(phi)]));",
+        "  if(!rc.certified || !rk.certified){return false;}gc_emit_affine(phi);",
+        "  println(strfmt(system_allocator(),\"END {}\",[j]));return true;",
+        "}",
+        "",
+        "pub fn main()->i64{",
+        "  let j:i64=if(args_count()>1){match(parse_i64(bytes(arg(1)),0)){",
+        "    ok(p)=>p.v,err(e)=>-1}}else{-1};",
+        "  if(!axial_microfactor(j)){return 3;}return 42;}",
+        "",
+    ]
+    metadata = {
+        "schema": "phase3-axial-microfactor-runner-v1",
+        "generator": GENERATOR,
+        "omega_cell": [str(x) for x in OMEGA_CELL],
+        "microfactor_count": MICROFACTOR_COUNT,
+        "rendered_microfactor": micro,
+        "panels_per_microfactor": MICROFACTOR_PANELS,
+        "frame_table_sha256": table_hash,
+        "frame_sha256": frame_hashes,
+    }
+    return "\n".join(lines), metadata
 
 
 def render_affine_adapter() -> tuple[str, dict]:

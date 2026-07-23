@@ -1,0 +1,49 @@
+{
+  "schema": "residual-atlas-fragment-v1",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MICROFACTOR_V6_000",
+  "title": "First exact moving-frame axial Bach radial microfactor",
+  "lifecycle": "COEFFICIENT_COMPUTED",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL",
+    "LOCAL-ALGEBRAIC"
+  ],
+  "scope": {
+    "theory": "strict pure Weyl gravity",
+    "background": "Schwarzschild exterior",
+    "parity": "axial",
+    "ell": 2,
+    "mass_normalization": "M=1",
+    "frequency_cell": [
+      "1/2",
+      "129/256"
+    ],
+    "radial_coordinate": "t=32-r",
+    "radial_interval": [
+      "0/1",
+      "1/8"
+    ],
+    "layout": "contiguous-block-lower-v1"
+  },
+  "establishes": [
+    "one exact shared-generator affine radial microfactor",
+    "carrier rank 8 and Einstein-kernel rank 4",
+    "rank-12 block-lower determinant certificate",
+    "exact zero upper-right transition block",
+    "byte-identical global boundary-frame provenance"
+  ],
+  "does_not_establish": [
+    "complete 224-factor infinity transport",
+    "horizon-to-infinity connection",
+    "endpoint flux or populated endpoint pullback",
+    "physical scattering channel",
+    "flux sign",
+    "stability",
+    "CPT positivity",
+    "unitarity"
+  ],
+  "artifact": {
+    "path": "black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/microfactor_000.json",
+    "sha256": "8ca1a55e5600f0ce5551c5563cf3120a9b03ab5519d54f3b607eba8cde4e0603"
+  },
+  "report": "reports/phase3-black-hole-axial-global-connection-microfactor-v6-2026-07-23.md"
+}

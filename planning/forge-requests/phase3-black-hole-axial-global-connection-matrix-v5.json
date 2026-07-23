@@ -1,11 +1,11 @@
 {
   "schema": "work-v0",
   "id": "phase3-black-hole-axial-global-connection-matrix-v5",
-  "title": "Content-addressed chunk runner for long validated affine flows",
+  "title": "Content-addressed microfactor runner and rigorous dyadic affine rebase",
   "status": "REQUESTED",
   "requester": "phase3-axial-global-5",
-  "consumer": "phase3-black-hole-axial-global-connection-matrix-v5",
-  "problem": "The table-backed shared-generator affine rail compiles below 1 GiB and materializes all 1792 coefficient entries, but a single 8x8 carrier propagation over t in [0,28] did not return within 20 minutes. No interval-mathematical refusal was reached. A bounded-runtime decomposition is needed without weakening validation or losing the common omega generator.",
+  "consumer": "phase3-black-hole-axial-global-connection-microfactor-v6",
+  "problem": "The table-backed shared-generator affine rail compiles below 1 GiB and materializes all 1792 coefficient entries, but a single 8x8 carrier propagation over t in [0,28] and a 64-panel reset factor both failed to return within their runtime gates. The measured exact rational center/linear bit lengths grow from about 968 bits after one panel to 7732 after eight and 61839 after 64. Eight-panel microfactors are therefore the correct execution grain, but a naive exact sequential join recreates the same denominator explosion. A rigorous dyadic affine rebase is required before the 224-factor join can be promoted.",
   "requested_capability": {
     "kind": "validated-affine-flow-chunk-handoff",
     "radial_partition": "224 consecutive rational microintervals [j/8,(j+1)/8]",
@@ -17,6 +17,10 @@
       "fail closed on generator, shape, interval-containment or hash mismatch",
       "support parallel C/native chunk execution",
       "compose chunks through certified affine apply/solve, never an explicit inverse",
+      "provide ivam_rebase_dyadic(a,bits), preserving the affine generator and shared epsilon while rounding center and linear entries to dyadic rationals and adding an outward enclosure of (C-Cq)+(L-Lq)[-1,1] to the interval remainder",
+      "refuse nonfinite endpoints, invalid bit depths, generator changes, or any hull-containment failure in the rebase",
+      "provide independent C/native gates, mutation tests, and an ASan-clean certificate for rebase enclosure and composition",
+      "support scheduled rebase after every four to eight microfactors and after a balanced ordered join",
       "expose a small final rank and current-conservation join rail"
     ]
   },
@@ -28,7 +32,15 @@
     "carrier_runtime_budget_seconds": 600,
     "carrier_returned": false,
     "mathematical_refusal_reached": false,
-    "one_reset_64_panel_pilot_returned": false
+    "one_reset_64_panel_pilot_returned": false,
+    "measured_rational_bits": {
+      "after_1_panel": 968,
+      "after_8_panels": 7732,
+      "after_16_panels": 15476,
+      "after_32_panels": 30934,
+      "after_64_panels": 61839
+    },
+    "join_without_rebase_is_allowed": false
   },
   "does_not_establish": [
     "a mathematical obstruction in the Bach system",
