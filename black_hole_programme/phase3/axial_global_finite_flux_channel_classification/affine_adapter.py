@@ -14,7 +14,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from fractions import Fraction
-import hashlib
 import math
 import struct
 from typing import Iterable
@@ -632,12 +631,21 @@ def validate_channel_handoff_algebra(document: dict) -> dict:
         witness = payload["endpoint_forms"]["conservation"][
             "structural_identity_witness"
         ]
-        expected_hash = hashlib.sha256(witness.encode("utf-8")).hexdigest()
-        if (
-            payload["endpoint_forms"]["conservation"]["witness_sha256"]
-            != expected_hash
+        if not isinstance(witness, dict) or witness.get("kind") != (
+            "verified-action-current-identity"
         ):
-            raise ValueError("structural current witness hash mismatch")
+            raise ValueError("structural current witness is not a typed identity")
+        for key in (
+            "path",
+            "result_id",
+            "sha256",
+            "verifier_path",
+            "verifier_sha256",
+            "replay_command",
+            "certified_claim_path",
+        ):
+            if key not in witness:
+                raise ValueError(f"structural current witness lacks {key}")
         results[cell["cell_id"]] = _validate_payload_algebra(payload)
     if cursor != upper:
         raise ValueError("subcell cover does not reach the parent endpoint")

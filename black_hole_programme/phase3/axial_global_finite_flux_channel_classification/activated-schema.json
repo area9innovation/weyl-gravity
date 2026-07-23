@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase3-black-hole-axial-global-finite-flux-channel-classification-activated-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "lifecycle",
+    "dependency_tags",
+    "scope",
+    "input",
+    "cells",
+    "parent",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-black-hole-axial-global-finite-flux-channel-classification-activated-v1"
+    },
+    "result_id": {
+      "const": "PURE_WEYL_PHASE3_AXIAL_GLOBAL_FINITE_FLUX_CHANNEL_CLASSIFICATION_ACTIVATED_V1"
+    },
+    "lifecycle": {
+      "enum": ["CERTIFIED", "SCOPED_SHORTFALL"]
+    },
+    "dependency_tags": {
+      "const": ["LORENTZIAN-CAUSAL", "REDUCED-MODE"]
+    },
+    "scope": {"type": "object"},
+    "input": {
+      "type": "object",
+      "required": ["handoff_path", "handoff_sha256", "handoff_schema"],
+      "properties": {
+        "handoff_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "handoff_schema": {
+          "const": "phase3-axial-global-channel-handoff-v1"
+        }
+      }
+    },
+    "cells": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["cell_id", "omega_interval", "disposition"],
+        "properties": {
+          "cell_id": {"type": "string", "pattern": "^q[0-9]+$"},
+          "omega_interval": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "disposition": {
+            "enum": ["CERTIFIED", "UNRESOLVED"]
+          },
+          "additional_global_direction_survives": {
+            "type": "boolean"
+          },
+          "current_conservation": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "identity",
+              "structural_identity_witness",
+              "affine_enclosure_independently_checked"
+            ],
+            "properties": {
+              "identity": {
+                "const": "GHplus+gplus-gminus=0"
+              },
+              "structural_identity_witness": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "path",
+                  "result_id",
+                  "sha256",
+                  "verifier_path",
+                  "verifier_sha256",
+                  "replay_command",
+                  "certified_claim_path"
+                ],
+                "properties": {
+                  "kind": {
+                    "const": "verified-action-current-identity"
+                  },
+                  "path": {"type": "string", "minLength": 1},
+                  "result_id": {"type": "string", "minLength": 8},
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "verifier_path": {"type": "string", "minLength": 1},
+                  "verifier_sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "replay_command": {
+                    "type": "array",
+                    "minItems": 2,
+                    "items": {"type": "string", "minLength": 1}
+                  },
+                  "certified_claim_path": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {"type": "string", "minLength": 1}
+                  }
+                }
+              },
+              "affine_enclosure_independently_checked": {"const": true}
+            }
+          }
+        }
+      }
+    },
+    "parent": {
+      "type": "object",
+      "required": [
+        "exact_contiguous_cover",
+        "all_cells_resolved",
+        "unresolved_cells",
+        "additional_global_channel_classified",
+        "wavepacket_extension_certified",
+        "current_conservation_certified",
+        "one_sided_J_isometry_constructed",
+        "full_scattering_matrix_constructed"
+      ],
+      "properties": {
+        "exact_contiguous_cover": {"const": true},
+        "full_scattering_matrix_constructed": {"const": false}
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string", "minLength": 15}
+    }
+  }
+}

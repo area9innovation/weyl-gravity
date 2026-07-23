@@ -9,6 +9,10 @@ from pathlib import Path
 
 import sympy as sp
 
+from black_hole_programme.phase3.axial_global_finite_flux_channel_classification.activate import (
+    build_classification,
+    verify_document as verify_activated_document,
+)
 from black_hole_programme.phase3.axial_global_finite_flux_channel_classification.affine_adapter import (
     AffineScalar,
     ComplexAffine,
@@ -114,7 +118,28 @@ def synthetic_subdivided_handoff() -> dict:
             [0, 0, 1],
         ]
     )
-    witness = "action-current conservation on the synthetic exact cell"
+    artifact = (
+        HERE.parent
+        / "axial_global_connection_matrix_v5/chunks/tests/fixtures/"
+        "current_identity.json"
+    )
+    verifier = artifact.with_name("verify_current_identity.py")
+    witness = {
+        "kind": "verified-action-current-identity",
+        "path": str(artifact.relative_to(HERE.parents[2])),
+        "result_id": "SYNTHETIC_ACTION_CURRENT_IDENTITY_V1",
+        "sha256": hashlib.sha256(artifact.read_bytes()).hexdigest(),
+        "verifier_path": str(verifier.relative_to(HERE.parents[2])),
+        "verifier_sha256": hashlib.sha256(verifier.read_bytes()).hexdigest(),
+        "replay_command": [
+            "python",
+            str(verifier.relative_to(HERE.parents[2])),
+        ],
+        "certified_claim_path": [
+            "claim_flags",
+            "radial_current_conservation_certified",
+        ],
+    }
     payload = {
         "connection": {
             "complex_6_by_3": connection,
@@ -128,17 +153,25 @@ def synthetic_subdivided_handoff() -> dict:
             "gminus_pullback": twice_identity,
             "gplus_pullback": identity,
             "conservation": {
+                "identity": "GHplus+gplus-gminus=0",
                 "defect": zero,
+                "zero_contained_entrywise": True,
                 "structural_identity_witness": witness,
-                "witness_sha256": hashlib.sha256(witness.encode()).hexdigest(),
             },
         },
         "classification_witnesses": {
             "inertia": {
                 name: {"positive": 3, "negative": 0, "zero": 0}
                 for name in ("GHplus", "gminus", "gplus")
-            }
+            },
+            "multiplier_bounds": {
+                "connection_operator_norm_upper": "2.0",
+                "Cminus_inverse_norm_upper": "1.0",
+                "frequency_derivative_norm_upper": "3.0",
+                "whole_cell": True,
+            },
         },
+        "provenance": {"synthetic_sha256": "a" * 64},
     }
     return {
         "schema": "phase3-axial-global-channel-handoff-v1",
@@ -424,6 +457,34 @@ class AffineCellAdapterTest(unittest.TestCase):
         self.assertEqual(result["einstein"]["inertia"], (1, 0, 0))
         self.assertEqual(result["mixed_status"], "CERTIFIED_NONZERO")
         self.assertEqual(result["mixed_rank"], 1)
+
+    def test_activated_certificate_from_certified_pilot(self) -> None:
+        document = build_classification(
+            synthetic_subdivided_handoff(),
+            handoff_sha256="a" * 64,
+        )
+        verify_activated_document(document)
+        self.assertEqual(document["lifecycle"], "CERTIFIED")
+        self.assertTrue(
+            document["parent"]["additional_global_channel_classified"]
+        )
+        self.assertTrue(document["cells"][0][
+            "additional_global_direction_survives"
+        ])
+        self.assertFalse(
+            document["parent"]["full_scattering_matrix_constructed"]
+        )
+
+    def test_activated_certificate_refuses_scattering_promotion(self) -> None:
+        document = build_classification(
+            synthetic_subdivided_handoff(),
+            handoff_sha256="a" * 64,
+        )
+        document["parent"]["full_scattering_matrix_constructed"] = True
+        with self.assertRaisesRegex(
+            ValueError, "full[_ ]scattering_matrix_constructed"
+        ):
+            verify_activated_document(document)
 
 
 if __name__ == "__main__":
