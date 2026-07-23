@@ -1,0 +1,374 @@
+{
+  "claim_flags": {
+    "direct_ivlinode_pair_certified": false,
+    "finite_flux_certified": false,
+    "global_matching_certified": false,
+    "horizon_six_column_initializer_certified": true,
+    "horizon_subdivision_uniform_certified": true,
+    "infinity_six_column_existence_enclosure_certified": true,
+    "infinity_six_column_initializer_certified": false,
+    "scattering_certified": false
+  },
+  "declaration": {
+    "background": "Schwarzschild M=1 in ingoing EF coordinates",
+    "frequency": "real dimensionless omega=M*omega in [1/2,3/4]",
+    "horizon_initializer": "rho=r-2 at epsilon; four exact rational omega cells",
+    "infinity_initializer": "existence enclosure at R=2^256; practical dispatcher not promoted",
+    "sector": "axial ell=2, exp(+i omega v)",
+    "theory": "linearized four-dimensional pure Weyl C^2 gravity"
+  },
+  "dependency_tags": [
+    "REDUCED-MODE",
+    "NUMERIC-ENCLOSURE"
+  ],
+  "does_not_establish": [
+    "a practical infinity initializer, horizon-to-infinity connection matrix or channel",
+    "finite flux, scattering, poles, stability or CPT positivity",
+    "complex-frequency endpoint enclosures",
+    "polar parity or frequencies outside the declared real pilot"
+  ],
+  "horizon": {
+    "S_B_tau": {
+      "decimal": 0.17718958427767476,
+      "den": 6102665760,
+      "num": 1081328809
+    },
+    "analytic_radius": "at least 2; nearest rho singularity is rho=-2",
+    "cauchy_disk_radius": {
+      "decimal": 0.5,
+      "den": 2,
+      "num": 1
+    },
+    "cauchy_majorant": {
+      "decimal": 23224.416000859106,
+      "den": 46560,
+      "num": 1081328809
+    },
+    "cauchy_row_bounds": [
+      {
+        "decimal": 2.1875,
+        "den": 16,
+        "num": 35
+      },
+      {
+        "decimal": 17.5,
+        "den": 2,
+        "num": 35
+      },
+      {
+        "decimal": 18350.183887457046,
+        "den": 232800,
+        "num": 4271922809
+      },
+      {
+        "decimal": 2975.0625,
+        "den": 16,
+        "num": 47601
+      },
+      {
+        "decimal": 23224.416000859106,
+        "den": 46560,
+        "num": 1081328809
+      },
+      {
+        "decimal": 505.80078125,
+        "den": 256,
+        "num": 129485
+      }
+    ],
+    "claim": "all six complex constraint-compatible horizon columns and derivatives have outward finite-radius interval enclosures",
+    "coefficient_majorant": 8.0,
+    "complex_dimension": 6,
+    "epsilon": {
+      "decimal": 2.384185791015625e-07,
+      "den": 4194304,
+      "num": 1
+    },
+    "forge_disposition": "must return 42 under C and native backends",
+    "frequency_cells": [
+      [
+        {
+          "decimal": 0.5,
+          "den": 2,
+          "num": 1
+        },
+        {
+          "decimal": 0.5625,
+          "den": 16,
+          "num": 9
+        }
+      ],
+      [
+        {
+          "decimal": 0.5625,
+          "den": 16,
+          "num": 9
+        },
+        {
+          "decimal": 0.625,
+          "den": 8,
+          "num": 5
+        }
+      ],
+      [
+        {
+          "decimal": 0.625,
+          "den": 8,
+          "num": 5
+        },
+        {
+          "decimal": 0.6875,
+          "den": 16,
+          "num": 11
+        }
+      ],
+      [
+        {
+          "decimal": 0.6875,
+          "den": 16,
+          "num": 11
+        },
+        {
+          "decimal": 0.75,
+          "den": 4,
+          "num": 3
+        }
+      ]
+    ],
+    "initializer": "symplectic-reconstruction/black_hole_programme/phase3/axial_endpoint_remainder_enclosures/validated_horizon_initializer.forge",
+    "kappa": 2,
+    "realified_dimension": 12,
+    "recurrence_order": 3,
+    "regular_singular_identity": "rho*x'=B(rho,omega)*x",
+    "residue_characteristic_polynomial": "lambda**3*(lambda + 4*I*omega)*(lambda + 4*I*omega + 1)*(lambda + 4*I*omega + 2)",
+    "resonance_witnesses": [
+      {
+        "column": 4,
+        "free_parameters_set_to_zero": 1,
+        "order": 1,
+        "residual": "0"
+      },
+      {
+        "column": 5,
+        "free_parameters_set_to_zero": 1,
+        "order": 1,
+        "residual": "0"
+      },
+      {
+        "column": 5,
+        "free_parameters_set_to_zero": 1,
+        "order": 2,
+        "residual": "0"
+      }
+    ],
+    "scaled_head_row_bounds": [
+      {
+        "decimal": 6.75,
+        "den": 4,
+        "num": 27
+      },
+      {
+        "decimal": 0.00014334933574383077,
+        "den": 54525952000,
+        "num": 7816259
+      },
+      {
+        "decimal": 1.7630321321017256e-09,
+        "den": 111490479056486400,
+        "num": 196561297
+      },
+      {
+        "decimal": 1.4565993529835234e-14,
+        "den": 192544578214070164704460800,
+        "num": 2804603080471
+      }
+    ],
+    "state_chart": [
+      "P",
+      "P_prime",
+      "Q",
+      "Q_prime",
+      "H1",
+      "rho*F"
+    ],
+    "tau": {
+      "decimal": 3.814697265625e-06,
+      "den": 262144,
+      "num": 1
+    }
+  },
+  "imports": {
+    "forge_ivendpoint": {
+      "landed_commit": "7d745b65e",
+      "path": "/home/alstrup/area9/tango/forge/lib/math/ivendpoint.forge",
+      "sha256": "1c036a9654043a763cae6dc700359efcd8913a9683bf143935a006107b160e64"
+    },
+    "infinity_metric_heads": {
+      "path": "symplectic-reconstruction/black_hole_programme/phase3/axial_endpoint_remainder_enclosures/infinity-metric-heads.json",
+      "schema": "phase3-axial-infinity-metric-heads-v1",
+      "sha256": "969701a67581469459e66f6e82a161654f37cf8b29915790d2f92d0a2f7269c3"
+    },
+    "infinity_volterra_envelope": {
+      "path": "symplectic-reconstruction/black_hole_programme/phase3/axial_endpoint_remainder_enclosures/infinity-volterra-envelope.json",
+      "schema": "phase3-axial-infinity-volterra-envelope-v1",
+      "sha256": "b8125ef86f953f74e77aad90ee1a4e72d3d6f3ddd325706f28eb5d619448e85e"
+    },
+    "reconstruction_repair": {
+      "path": "symplectic-reconstruction/black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+      "result_token": "BH_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_SIX_COLUMN_BASES",
+      "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990"
+    },
+    "reconstruction_source": {
+      "path": "symplectic-reconstruction/black_hole_programme/phase3/axial_complete_reconstruction_repair/produce.py",
+      "sha256": "f3965825b1a326782c2b9257678c5f90a98c731de36243f5d052d1371a939953"
+    }
+  },
+  "infinity": {
+    "basis_normalization": "each scalar phase is exp(a*(r-R))*(r/R)^power, hence equals one at R",
+    "bounded_high_order_attempt": "generic exact N=8 was stopped fail-closed: carrier depth about ten is required and generic rational-omega expression swell OOMs; no new resonance or mathematical nonintegrability was found",
+    "carrier_heads_imported": [
+      "XI0",
+      "XI1",
+      "XI2",
+      "XI3"
+    ],
+    "constant_C_ij": [
+      [
+        "10000000000000000000000000",
+        "10000000000000000000000000",
+        "10000000000000000000000000",
+        "10000000000000000000000000",
+        "0",
+        "0"
+      ],
+      [
+        "10000000000000000000000000",
+        "10000000000000000000000000",
+        "10000000000000000000000000",
+        "10000000000000000000000000",
+        "0",
+        "0"
+      ],
+      [
+        "10000000000000000000000000",
+        "10000000000000000000000000",
+        "10000000000000000000000000",
+        "10000000000000000000000000",
+        "0",
+        "0"
+      ],
+      [
+        "10000000000000000000000000",
+        "10000000000000000000000000",
+        "10000000000000000000000000",
+        "10000000000000000000000000",
+        "0",
+        "0"
+      ],
+      [
+        "100000000000000000000000000000000000000000000000000",
+        "100000000000000000000000000000000000000000000000000",
+        "100000000000000000000000000000000000000000000000000",
+        "100000000000000000000000000000000000000000000000000",
+        "10000000000000000000000000",
+        "10000000000000000000000000"
+      ],
+      [
+        "100000000000000000000000000000000000000000000000000",
+        "100000000000000000000000000000000000000000000000000",
+        "100000000000000000000000000000000000000000000000000",
+        "100000000000000000000000000000000000000000000000000",
+        "10000000000000000000000000",
+        "10000000000000000000000000"
+      ]
+    ],
+    "decay_p_ij": [
+      [
+        6,
+        7,
+        6,
+        7,
+        99,
+        99
+      ],
+      [
+        5,
+        6,
+        5,
+        6,
+        99,
+        99
+      ],
+      [
+        6,
+        7,
+        6,
+        7,
+        99,
+        99
+      ],
+      [
+        5,
+        6,
+        5,
+        6,
+        99,
+        99
+      ],
+      [
+        3,
+        4,
+        3,
+        3,
+        5,
+        4
+      ],
+      [
+        4,
+        5,
+        4,
+        4,
+        6,
+        5
+      ]
+    ],
+    "disposition": "EXISTENCE_ONLY_NOT_DIRECTLY_CONSUMABLE",
+    "existence_enclosure_disposition": "ENCLOSED_AT_PROOF_RADIUS",
+    "first_remaining_proof_obligation": "replace the R=2^256 proof radius by a cellwise higher-order interval recurrence at practical R=32/64/128, or validate the phase-normalized correction flow in z=1/r from z=0 to a practical handoff radius",
+    "frequency_cells_enclosed": 4,
+    "metric_heads_imported": [
+      "XI0",
+      "XI1",
+      "XI2",
+      "XI3"
+    ],
+    "metric_heads_log_free": true,
+    "missing_metric_normal_form_heads": [],
+    "normalization_radius_R": "115792089237316195423570985008687907853269984665640564039457584007913129639936",
+    "oscillatory_n1_obstructions": {
+      "XI2": "0",
+      "XI3": "0"
+    },
+    "practical_handoff_disposition": "NOT_STABLE_FOR_IVLINODE",
+    "q_infinity": "719250865992804610110320001744345516844477012070009353157949763497685648624075379224987884258586037106534615262398387412654342791064593948463038589043407731103250484475985920000000894069671630859375/64290516431176039256905502943600108633684288702332016446625023302221063067496167349591902728941751487655680375053188809511228717141538842615907465448191448823607406648945385912526447630374226851267725092918278849901491647604392605354993263676462377487427178866119253005962578989915746321023234008416256",
+    "q_less_than_one_quarter": true,
+    "required_contract": "F_N,F_N_prime,p_ij,C_ij and a proved |K_N,ij(r)|<=C_ij*r^-p_ij for every r>=R",
+    "uniform_residual_decay_envelope_present": true,
+    "volterra_envelope_schema": "phase3-axial-infinity-volterra-envelope-v1"
+  },
+  "lifecycle": "PARTIAL_ENDPOINT_ENCLOSURE",
+  "missing_dependency": "practical-radius phase-normalized infinity initializer (higher-order cellwise recurrence or validated z=1/r inward transfer)",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_ENDPOINT_REMAINDER_ENCLOSURES",
+  "result_token": "BH_PHASE3_AXIAL_ENDPOINT_REMAINDER_ENCLOSURES_V1",
+  "schema": "phase3-black-hole-axial-endpoint-remainder-enclosures-v1",
+  "schema_path": "symplectic-reconstruction/black_hole_programme/phase3/axial_endpoint_remainder_enclosures/schema.json",
+  "stop_condition_disposition": "SHORTFALL",
+  "verification": {
+    "forge": "forge verify --full --no-cache black_hole_programme/phase3/axial_endpoint_remainder_enclosures/validated_horizon_initializer.forge",
+    "independent": "PYTHONPATH=black_hole_programme python3 black_hole_programme/phase3/axial_endpoint_remainder_enclosures/verify.py",
+    "infinity_envelope": "PYTHONPATH=. python3 black_hole_programme/phase3/axial_endpoint_remainder_enclosures/verify_infinity_volterra_envelope.py",
+    "mutations": "PYTHONPATH=black_hole_programme python3 black_hole_programme/phase3/axial_endpoint_remainder_enclosures/mutations.py",
+    "producer": "PYTHONPATH=black_hole_programme python3 black_hole_programme/phase3/axial_endpoint_remainder_enclosures/produce.py --check",
+    "tests": "python3 -m unittest black_hole_programme.phase3.axial_endpoint_remainder_enclosures.tests.test_endpoint_enclosures"
+  }
+}

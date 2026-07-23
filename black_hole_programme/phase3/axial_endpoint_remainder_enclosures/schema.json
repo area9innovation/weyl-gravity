@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase3-black-hole-axial-endpoint-remainder-enclosures-v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_token",
+    "imports",
+    "horizon",
+    "infinity",
+    "claim_flags",
+    "stop_condition_disposition",
+    "missing_dependency"
+  ],
+  "properties": {
+    "schema": {"const": "phase3-black-hole-axial-endpoint-remainder-enclosures-v1"},
+    "result_token": {"const": "BH_PHASE3_AXIAL_ENDPOINT_REMAINDER_ENCLOSURES_V1"},
+    "imports": {"type": "object"},
+    "horizon": {
+      "type": "object",
+      "required": ["complex_dimension", "realified_dimension", "frequency_cells", "initializer", "claim"]
+    },
+    "infinity": {
+      "type": "object",
+      "required": [
+        "carrier_heads_imported",
+        "missing_metric_normal_form_heads",
+        "q_infinity",
+        "decay_p_ij",
+        "existence_enclosure_disposition",
+        "practical_handoff_disposition",
+        "disposition"
+      ]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["horizon_six_column_initializer_certified", "infinity_six_column_initializer_certified", "global_matching_certified"]
+    },
+    "stop_condition_disposition": {"enum": ["DONE", "SHORTFALL", "OBSTRUCTED"]},
+    "missing_dependency": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,94 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "id": "black_hole.schwarzschild.phase3.axial_endpoint_remainder_enclosures",
+      "claim_boundary": "For axial ell=2 Schwarzschild and real M omega in [1/2,3/4], all six constraint-compatible future-horizon columns have outward rank-certified endpoint boxes. The six log-free formal infinity columns have an omega-uniform integrable Volterra existence enclosure at R=2^256, including the derivative-forced XI2/XI3 F4 terms that raise every cross-rate entry to p>=3. The proof radius is not a stable direct math/ivlinode handoff, so no practical connection matrix, finite-flux channel, pole, stability or CPT claim is promoted.",
+      "descriptions": {
+        "causal": "OPEN",
+        "symplectic": "NO_CERTIFIED_MAP",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "black_hole_programme/phase3/axial_endpoint_remainder_enclosures/certificate.json",
+          "result_id": "PURE_WEYL_PHASE3_AXIAL_ENDPOINT_REMAINDER_ENCLOSURES",
+          "sha256": "9886a02e9d49dbfca813e9520d9e488afce22fc82470b2ba6601b3092f9c64b9"
+        }
+      ],
+      "mode_data": {
+        "dispersion": {
+          "status": "CERTIFIED",
+          "statement": "Separate six-column horizon and infinity endpoint existence enclosures are certified on four rational real-frequency cells; practical-radius global transfer remains open."
+        },
+        "lee_wald": {
+          "status": "NO_CERTIFIED_MAP",
+          "statement": "No horizon-to-infinity connection matrix or finite-flux quotient is populated."
+        },
+        "resonance": {
+          "status": "CERTIFIED",
+          "statement": "All retained horizon recurrences and the oscillatory infinity n=1 metric resonances are exactly compatible; no forced logarithm appears."
+        },
+        "second_order": {
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "bounded_or_finite_quasiperiodic": {
+            "status": "NOT_APPLICABLE",
+            "statement": "No nonlinear source is evaluated."
+          },
+          "causal_retarded": {
+            "status": "NO_CERTIFIED_MAP",
+            "statement": "The endpoint boxes are not yet connected by a practical validated exterior flow."
+          },
+          "smooth_secular": {
+            "status": "NOT_APPLICABLE",
+            "statement": "No nonlinear correction is evaluated."
+          }
+        },
+        "taub_maps": {
+          "status": "NOT_APPLICABLE",
+          "statement": "No compact Taub map enters this linear endpoint calculation."
+        }
+      },
+      "scope": {
+        "theory": "linearized four-dimensional pure Weyl C^2 gravity",
+        "background": "Schwarzschild exterior, M=1, ingoing Eddington-Finkelstein chart",
+        "carrier": "complete axial six-state metric reconstruction on the propagated constraint-zero fibre",
+        "parity": "axial",
+        "ell": "2",
+        "m": "axisymmetric harmonic representative",
+        "omega": "real dimensionless M omega in [1/2,3/4]",
+        "k": "three horizon recurrence orders; four displayed infinity inverse-radius orders plus derivative-forced F4",
+        "degree": 1,
+        "boundaries": "future-horizon Frobenius boxes and separate infinity Volterra existence boxes; no global matching",
+        "charge_sector": "none"
+      }
+    }
+  ],
+  "generated_by": "black_hole_programme/phase3/axial_endpoint_remainder_enclosures/produce.py",
+  "generated_by_sha256": "72f849ed9dce1a9cf865ccc79d7ea2a754920d46f10b3143fcd04b766aff7f2b",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "black_hole",
+  "verification_commands": [
+    "PYTHONPATH=black_hole_programme python3 black_hole_programme/phase3/axial_endpoint_remainder_enclosures/produce.py --check",
+    "PYTHONPATH=black_hole_programme python3 black_hole_programme/phase3/axial_endpoint_remainder_enclosures/verify.py",
+    "PYTHONPATH=. python3 black_hole_programme/phase3/axial_endpoint_remainder_enclosures/verify_infinity_volterra_envelope.py",
+    "PYTHONPATH=black_hole_programme python3 black_hole_programme/phase3/axial_endpoint_remainder_enclosures/mutations.py",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/phase3-black-hole-axial-endpoint-remainder-enclosures-fragment-v1.json"
+  ]
+}
