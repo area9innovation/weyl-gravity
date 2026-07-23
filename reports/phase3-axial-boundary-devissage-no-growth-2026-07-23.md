@@ -373,6 +373,7 @@ The result does not establish:
 * positivity, CPT completion, particles, ghosts, unitarity or nonlinear
   stability.
 
+EVIDENCE: black_hole_programme/phase3/axial_boundary_devissage_no_growth/receipt.json
 CLOSE-OUT: DONE — exact boundary dévissage excludes growing axial ell=2
 separated modes while preserving the stated time-domain and damped-QNM
 limitations.

@@ -401,5 +401,6 @@ proves absence of reduced exponentially growing modes for the three
 diagonal scalar factors; it is not yet a full stability theorem for the
 coupled Bach system.
 
+EVIDENCE: black_hole_programme/phase3/axial_incoming_extended_domain_audit/receipt.json
 CLOSE-OUT: DONE — all-positive-real incoming population, factor-resolved flux,
 weighted Krein majorant, and the exact claim boundary are certified.
