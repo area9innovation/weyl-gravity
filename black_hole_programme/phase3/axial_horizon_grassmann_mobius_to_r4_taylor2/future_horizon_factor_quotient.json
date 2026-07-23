@@ -1,0 +1,66 @@
+{
+  "schema": "phase3-axial-future-horizon-factor-quotient-v1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "lifecycle": "CLASSIFIED",
+  "status": "PASS",
+  "frequency_interval": [
+    "1/2",
+    "3/4"
+  ],
+  "factor_basis": [
+    "RH",
+    "SH",
+    "EH"
+  ],
+  "quotient_map": {
+    "pi_x_XH0a": "4*omega**2 - 3*I*omega + 4",
+    "pi_x_XH0b": "(2*omega - I)*(4*omega - 4*I)",
+    "RH": "XH0a-(pi_x_XH0a/pi_x_XH0b)*XH0b",
+    "SH": "XH0b",
+    "EH": "EH0"
+  },
+  "spin_two_extension": {
+    "basis": [
+      "RH",
+      "EH"
+    ],
+    "determinant": "-5184*omega**4*(16*omega**2 + 1)**2/(25*(omega**2 + 1)**2)",
+    "inertia_for_alpha_W_positive": [
+      1,
+      1,
+      0
+    ]
+  },
+  "spin_one_quotient": {
+    "raw_lift": "SH",
+    "raw_schur_complement": "-512*(omega**2 + 1)*(4*omega**2 + 1)/(15*omega)",
+    "quotient_amplitude_norm": "16*(omega**2 + 1)*(4*omega**2 + 1)",
+    "unit_quotient_norm": "-32/(15*omega)",
+    "inertia_for_alpha_W_positive": [
+      0,
+      1,
+      0
+    ]
+  },
+  "full_inertia_for_alpha_W_positive": [
+    1,
+    2,
+    0
+  ],
+  "structural_check": "the exact outward Gram is the hyperbolic spin-two extension plus a strictly negative spin-one quotient line",
+  "provenance": {
+    "gram_path": "black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/future_horizon_outward_gram.json",
+    "gram_sha256": "3051f43f73e4649dede60176e12f13afc59bdd5b3e8e09970db842a1ede00fdb",
+    "devissage_path": "black_hole_programme/phase3/axial_boundary_devissage_no_growth/certificate.json",
+    "devissage_sha256": "5de2cdee18bcafc09c86b9273cfa87ea99d7dec1a081c903349435d2fc3ce2fe"
+  },
+  "does_not_establish": [
+    "a splitting of the differential extension",
+    "a global horizon-to-infinity connection",
+    "a boundary projection rank or scattering map",
+    "stability, ghost, positivity, CPT or unitarity"
+  ]
+}

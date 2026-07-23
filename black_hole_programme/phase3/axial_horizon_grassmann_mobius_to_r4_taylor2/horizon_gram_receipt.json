@@ -1,0 +1,70 @@
+{
+  "schema": "phase3-axial-future-horizon-outward-gram-receipt-v1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "status": "PASS",
+  "artifacts": {
+    "horizon_gram_laurent.py": "e6d51b0e20d80412796c4baab5761b0ffb525d570f238fd72b39e57e2415ff0e",
+    "future_horizon_outward_gram.json": "3051f43f73e4649dede60176e12f13afc59bdd5b3e8e09970db842a1ede00fdb",
+    "horizon_factor_quotient.py": "1900b9728f6528b2460c04974d8ac141370a2cab11b4dc3a8fa4cbbd84fd31ae",
+    "future_horizon_factor_quotient.json": "d42e0a06c4e87aaa89962821e683dbd54a7f72aad239b42084777a246320f30c",
+    "verify_horizon_gram.py": "6e2475d9f8f831ad4fcb9f812e10ec430d4274dcbb70df53abba90696be2a9c0",
+    "test_horizon_gram.py": "f38251f1573158bee70c2bf266311b38e95264471d9832c3a8af06ba6916bef6"
+  },
+  "tests": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/{horizon_gram_laurent,horizon_factor_quotient,verify_horizon_gram,test_horizon_gram}.py",
+      "elapsed_seconds": 0.1,
+      "exit": 0,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m black_hole_programme.phase3.axial_horizon_grassmann_mobius_to_r4_taylor2.horizon_gram_laurent",
+      "elapsed_seconds": 551.74,
+      "max_rss_kib": 212220,
+      "exit": 0,
+      "status": "PASS",
+      "cache_disposition": "cold exact run; no symbolic cache is read or written"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m black_hole_programme.phase3.axial_horizon_grassmann_mobius_to_r4_taylor2.horizon_factor_quotient",
+      "elapsed_seconds": 0.47,
+      "max_rss_kib": 67056,
+      "exit": 0,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m black_hole_programme.phase3.axial_horizon_grassmann_mobius_to_r4_taylor2.verify_horizon_gram",
+      "elapsed_seconds": 0.38,
+      "max_rss_kib": 67640,
+      "exit": 0,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m unittest -v black_hole_programme.phase3.axial_horizon_grassmann_mobius_to_r4_taylor2.test_horizon_gram",
+      "elapsed_seconds": 0.46,
+      "max_rss_kib": 69160,
+      "exit": 0,
+      "status": "PASS",
+      "tests": 6
+    }
+  ],
+  "higher_tiers": {
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No shared operator, imported classical snapshot, or transitive certificate-chain input changed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a scoped CLASSIFIED reduced-mode endpoint theorem, not a freeze, release, lifecycle promotion beyond CLASSIFIED, or shared-core change."
+    }
+  },
+  "claim_boundary": "The exact future-horizon outward Gram has inertia (1,2,0). Its spin-two factor plane is hyperbolic and its unit spin-one quotient has norm -32/(15*omega). Neither H_out nor -H_out is positive semidefinite, so the Stokes semidefinite shortcut yields no direct endpoint projection-rank bound."
+}

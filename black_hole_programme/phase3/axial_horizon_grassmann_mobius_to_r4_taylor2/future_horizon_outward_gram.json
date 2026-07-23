@@ -1,0 +1,95 @@
+{
+  "schema": "phase3-axial-future-horizon-outward-gram-v2",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "lifecycle": "CLASSIFIED",
+  "status": "PASS",
+  "basis": [
+    "XH0a",
+    "XH0b",
+    "EH0"
+  ],
+  "frequency_interval": [
+    "1/2",
+    "3/4"
+  ],
+  "orientation": {
+    "coordinate_radial": "K4=+I*Jhat",
+    "future_horizon_outward": "H_out=-Hframe^dagger*K4*Hframe=-I*Hframe^dagger*Jhat*Hframe"
+  },
+  "normalization": "canonical repaired future-regular Frobenius heads",
+  "gram_without_pi_alpha_W": [
+    [
+      "96*omega*(16*omega**4 + 41*omega**2 + 7)/(5*(omega**2 + 1))",
+      "384*omega*(2*omega - I)*(4*omega**3 - 5*I*omega**2 + 4*omega - 2*I)/(5*(omega**2 + 1))",
+      "48*omega*(omega - 2*I)*(4*omega - I)**2/(5*(omega - I))"
+    ],
+    [
+      "384*omega*(2*omega + I)*(4*omega**3 + 5*I*omega**2 + 4*omega + 2*I)/(5*(omega**2 + 1))",
+      "768*omega*(2*omega**2 + 1)*(4*omega**2 + 1)/(5*(omega**2 + 1))",
+      "96*omega*(2*omega - I)*(2*omega + I)*(4*omega - I)/(5*(omega - I))"
+    ],
+    [
+      "48*omega*(omega + 2*I)*(4*omega + I)**2/(5*(omega + I))",
+      "96*omega*(2*omega - I)*(2*omega + I)*(4*omega + I)/(5*(omega + I))",
+      "0"
+    ]
+  ],
+  "leading_principal_minors": [
+    "96*omega*(16*omega**4 + 41*omega**2 + 7)/(5*(omega**2 + 1))",
+    "-73728*omega**2*(4*omega**2 + 1)*(16*omega**2 + 1)/(25*(omega**2 + 1))",
+    "884736*omega**3*(4*omega**2 + 1)*(16*omega**2 + 1)**2/(125*(omega**2 + 1))"
+  ],
+  "ldl_pivots": [
+    "96*omega*(16*omega**4 + 41*omega**2 + 7)/(5*(omega**2 + 1))",
+    "-768*omega*(4*omega**2 + 1)*(16*omega**2 + 1)/(5*(16*omega**4 + 41*omega**2 + 7))",
+    "-12*omega*(16*omega**2 + 1)/5"
+  ],
+  "ldl_pivot_signs_on_closed_interval": [
+    "positive",
+    "negative",
+    "negative"
+  ],
+  "inertia_for_alpha_W_positive": [
+    1,
+    2,
+    0
+  ],
+  "rank": 3,
+  "semidefinite_disposition": {
+    "H_out_positive_semidefinite": false,
+    "minus_H_out_positive_semidefinite": false,
+    "reason": "H_out has exact inertia (1,2,0), while -H_out has inertia (2,1,0)"
+  },
+  "stokes_rank_shortcut": {
+    "identity": "H_out+T_plus^dagger*G_plus*T_plus-T_minus^dagger*G_minus*T_minus=0",
+    "activated": false,
+    "direct_endpoint_rank_bound": null,
+    "reason": "neither H_out nor -H_out is positive semidefinite; the semidefinite Stokes shortcut supplies no endpoint projection-rank bound"
+  },
+  "construction": "exact rho-to-zero Laurent constant of the correlated order-three Frobenius recurrence paired in the literal Lee-Wald current",
+  "order_three_sufficiency": {
+    "first_omitted_sheared_head": "O(rho^4)",
+    "minimum_omitted/exact_cross_current_order": 2,
+    "constant_term_affected": false
+  },
+  "epsilon_method": {
+    "status": "METHOD_SHORTFALL",
+    "reason": "independent entrywise Frobenius-tail boxes are amplified by the singular horizon current; they do not preserve the correlations needed for the Laurent cancellation"
+  },
+  "provenance": {
+    "literal_current": "black_hole_programme/certificates/BH2A_FLUX_MATRIX.json",
+    "literal_current_sha256": "95ca6daeabb16bf93faa1bb721e3464fc5363899a344f0281d126f9a14204732",
+    "repaired_system": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+    "repaired_system_sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+    "frobenius_recurrence": "black_hole_programme/phase3/axial_endpoint_remainder_enclosures/produce.py",
+    "frobenius_recurrence_sha256": "72f849ed9dce1a9cf865ccc79d7ea2a754920d46f10b3143fcd04b766aff7f2b"
+  },
+  "does_not_establish": [
+    "a global horizon-to-infinity connection",
+    "a boundary projection rank or scattering map",
+    "stability, ghost, positivity, CPT or unitarity"
+  ]
+}

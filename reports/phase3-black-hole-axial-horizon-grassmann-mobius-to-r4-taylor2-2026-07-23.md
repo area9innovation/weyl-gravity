@@ -81,3 +81,105 @@ The smallest corrective architecture is the exact `rho -> 0` Laurent
 constant term of the correlated Frobenius series paired with the exact
 current.  No horizon Gram or inertia claim is promoted by the failed epsilon
 method.
+
+## Exact future-horizon outward Gram
+
+`CLASSIFIED — PASS`
+
+Dependency tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`.
+
+The corrective correlated calculation is complete.  It substitutes the
+canonical order-three repaired Frobenius recurrence for
+`(XH0a,XH0b,EH0)` directly into the frozen literal action current and takes
+the exact `rho -> 0` Laurent constant.  A separate power-count audit shows
+that the first omitted sheared head is `O(rho^4)` and every omitted/exact
+cross-current begins at least at `O(rho^2)`, so it cannot affect the constant
+term.
+
+The sign chain is:
+
+\[
+ K_4=+i\widehat J
+ \quad\hbox{(coordinate radial)},\qquad
+ H_{\mathcal H^+}
+ =-H^\dagger K_4H
+ =-iH^\dagger\widehat JH
+ \quad\hbox{(future-horizon outward)}.
+\]
+
+After division by `pi*alpha_W`, the leading principal minors are
+
+\[
+\begin{aligned}
+\Delta_1&=
+\frac{96\omega(16\omega^4+41\omega^2+7)}
+     {5(\omega^2+1)},\\
+\Delta_2&=
+-\frac{73728\omega^2(4\omega^2+1)(16\omega^2+1)}
+      {25(\omega^2+1)},\\
+\Delta_3&=
+\frac{884736\omega^3(4\omega^2+1)(16\omega^2+1)^2}
+     {125(\omega^2+1)}.
+\end{aligned}
+\]
+
+All displayed factors are strictly positive for
+`\omega in [1/2,3/4]` apart from the explicit sign of `Delta_2`.  The exact
+LDL pivot signs are therefore `(+,-,-)`, giving
+
+\[
+\operatorname{rank}H_{\mathcal H^+}=3,\qquad
+\operatorname{inertia}H_{\mathcal H^+}=(1,2,0)
+\quad(\alpha_W>0).
+\]
+
+Neither `H_{\mathcal H^+}` nor its negative is positive semidefinite.  Hence
+the sign-covariant Stokes identity
+
+\[
+H_{\mathcal H^+}+T_+^\dagger G_+T_+
+-T_-^\dagger G_-T_-=0
+\]
+
+does not activate a semidefinite shortcut and supplies no direct endpoint
+projection-rank bound.  The propagated-plane join remains necessary.
+
+As an independent structural crosscheck, applying the already certified
+spin-one quotient map gives
+
+\[
+ RH=XH0a-\frac{4\omega^2-3i\omega+4}
+ {4(\omega-i)(2\omega-i)}XH0b,\qquad SH=XH0b,\qquad EH=EH0.
+\]
+
+The `(RH,EH)` spin-two extension has determinant
+
+\[
+-\frac{5184\omega^4(16\omega^2+1)^2}
+ {25(\omega^2+1)^2}<0
+\]
+
+and hence inertia `(1,1,0)`.  The exact Schur complement on the `SH`
+quotient lift is
+
+\[
+-\frac{512(\omega^2+1)(4\omega^2+1)}{15\omega}.
+\]
+
+Dividing by the squared quotient amplitude
+`|4(\omega-i)(2\omega-i)|^2` gives the unit-quotient norm
+`-32/(15\omega)`, strictly negative on the pilot interval.  Thus the
+factor decomposition is precisely a hyperbolic spin-two extension plus a
+negative spin-one quotient line; it reproduces the full `(1,2,0)` inertia
+without being assumed in its derivation.
+
+Machine certificate and independent verifier:
+
+- `black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/future_horizon_outward_gram.json`
+- `black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/future_horizon_factor_quotient.json`
+- `black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/verify_horizon_gram.py`
+
+This is an exact reduced-mode endpoint-current theorem.  It does not
+construct a horizon-to-infinity connection, decide boundary projection rank,
+or establish scattering, stability, ghost, positivity, CPT, unitarity, or a
+`LORENTZIAN-CAUSAL` quantum claim.
