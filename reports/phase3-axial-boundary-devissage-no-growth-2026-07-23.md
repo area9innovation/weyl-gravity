@@ -372,3 +372,7 @@ The result does not establish:
 * polar parity or general \(\ell\);
 * positivity, CPT completion, particles, ghosts, unitarity or nonlinear
   stability.
+
+CLOSE-OUT: DONE — exact boundary dévissage excludes growing axial ell=2
+separated modes while preserving the stated time-domain and damped-QNM
+limitations.

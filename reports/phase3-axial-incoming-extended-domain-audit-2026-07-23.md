@@ -400,3 +400,6 @@ particles, ghosts or unitarity.  It strengthens the incoming theorem and
 proves absence of reduced exponentially growing modes for the three
 diagonal scalar factors; it is not yet a full stability theorem for the
 coupled Bach system.
+
+CLOSE-OUT: DONE — all-positive-real incoming population, factor-resolved flux,
+weighted Krein majorant, and the exact claim boundary are certified.
