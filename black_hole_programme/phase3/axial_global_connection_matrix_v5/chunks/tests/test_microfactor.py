@@ -10,6 +10,7 @@ from black_hole_programme.phase3.axial_global_connection_matrix_v5.chunks.verify
 )
 from black_hole_programme.phase3.axial_global_connection_matrix_v5.chunks.verify_microfactor import (
     verify_microfactor,
+    verify_microfactor_chain,
 )
 
 
@@ -170,6 +171,14 @@ class MicrofactorVerifierTests(unittest.TestCase):
         bad["integrity"]["generated_source"]["micro"] = 7
         with self.assertRaises(HandoffError):
             verify_microfactor(bad)
+
+    def test_complete_chain_and_boundary_hash_mutation(self):
+        chain = [_artifact(j) for j in range(224)]
+        self.assertTrue(verify_microfactor_chain(chain))
+        bad = copy.deepcopy(chain)
+        bad[91]["frames"]["left_boundary_sha256"] = "f" * 64
+        with self.assertRaises(HandoffError):
+            verify_microfactor_chain(bad)
         bad = copy.deepcopy(_artifact())
         bad["integrity"]["output_sha256"] = "f" * 64
         with self.assertRaises(HandoffError):
