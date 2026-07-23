@@ -1,0 +1,63 @@
+{
+  "schema": "work-v0",
+  "id": "forge-math-ivaffine-dyadic-rebase",
+  "title": "Rigorous dyadic rebasing for shared-generator affine interval matrices",
+  "status": "REQUESTED",
+  "requester": "phase3-coordinator",
+  "consumer": "phase3-black-hole-axial-global-connection-microfactor-v6",
+  "problem": "Validated parameter-affine transport is operationally bounded on eight-panel factors, but exact rational center and linear coefficients acquire approximately 968 bits per panel. A 64-panel 8x8 carrier remained in exact affine multiplication after 651.5 CPU seconds, while an independent rational skeleton measured about 0.50 seconds for 8 panels, 1.85 seconds for 16, 8.30 seconds for 32 and 46.6 seconds for 64. Joining exact microfactors without rebasing would recreate the same denominator-growth bottleneck.",
+  "requested_capability": {
+    "kind": "validated-affine-dyadic-rebase",
+    "api": "ivam_rebase_dyadic(a: borrow IvAffineMat, bits: i64) -> IvAffineResult",
+    "semantics": [
+      "preserve matrix shape, affine generator and the single shared parameter epsilon",
+      "round each exact rational center and linear coefficient to an exact dyadic with the declared bit budget",
+      "add an outward interval enclosure of (center-center_dyadic)+(linear-linear_dyadic)*[-1,1] to the existing remainder",
+      "return an enclosure containing every value represented by the input affine matrix on the same cell",
+      "fail closed on a nonpositive bit budget, nonfinite remainder endpoint, reversed interval, shape defect or unsupported generator",
+      "do not collapse the shared affine parameter into independent entrywise interval boxes"
+    ],
+    "phase3_usage": [
+      "rebase every four to eight panels during local accumulation",
+      "rebase every emitted eight-panel handoff",
+      "use an ordered or balanced composition tree with rebasing after each join",
+      "retain exact pre-rebase and post-rebase hashes and a maximum added-remainder ledger"
+    ]
+  },
+  "acceptance_tests": [
+    "C/native parity for exact dyadic inputs, non-dyadic rational inputs and matrices with pre-existing remainders",
+    "independent endpoint containment over epsilon=-1,0,1 and randomized rational epsilon values",
+    "monotonic containment under repeated rebasing and composition",
+    "generator, center and linear correlation are retained rather than flattened",
+    "mutations that omit center error, omit linear error, use inward rounding, change the generator or reverse a remainder endpoint are rejected",
+    "ASan-clean affected rail",
+    "Phase-3 benchmark: one complete eight-panel 8x8 carrier handoff is emitted and verified, and a multi-factor join does not show unbounded rational bit growth"
+  ],
+  "measured_evidence": {
+    "carrier_dimension": 8,
+    "affine_generators": 1,
+    "frequency_generator": 7315,
+    "peano_baker_order": 12,
+    "exact_center_linear_bits": {
+      "after_1_panel": 968,
+      "after_8_panels": 7732,
+      "after_16_panels": 15476,
+      "after_32_panels": 30934,
+      "after_64_panels": 61839
+    },
+    "fraction_skeleton_seconds": {
+      "8_panels": 0.50,
+      "16_panels": 1.85,
+      "32_panels": 8.30,
+      "64_panels": 46.6
+    },
+    "validated_64_panel_cutoff_seconds": 600,
+    "validated_64_panel_returned": false,
+    "mathematical_refusal_reached": false
+  },
+  "does_not_establish": [
+    "a global Bach connection matrix",
+    "that any chosen dyadic bit budget will close the Phase-3 transport",
+    "a scattering, flux-signature, CPT, stability or unitarity theorem"
+  ]
+}
