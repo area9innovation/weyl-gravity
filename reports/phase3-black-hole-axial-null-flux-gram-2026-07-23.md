@@ -149,3 +149,7 @@ python3 -m black_hole_programme.phase3.axial_null_flux_gram.formal_gram --check 
 
 The machine-readable result is
 `black_hole_programme/phase3/axial_null_flux_gram/certificate.json`.
+
+EVIDENCE: `black_hole_programme/phase3/axial_null_flux_gram/receipt.json` records the exact producer, independent verifier, mutation, deep literal-current, schema, atlas, and test gates.
+
+CLOSE-OUT: DONE — exact action-derived axial null-endpoint wave-packet flux Grams, trace-limit theorem, rank, radical and inertia are certified on the declared pilot interval.
