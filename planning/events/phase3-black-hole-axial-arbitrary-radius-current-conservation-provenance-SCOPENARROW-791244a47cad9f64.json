@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase3-black-hole-axial-arbitrary-radius-current-conservation-provenance-SCOPENARROW-791244a47cad9f64",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work scope narrow",
+  "source": {"path": "tools/science-forge/program/events/phase3-black-hole-axial-arbitrary-radius-current-conservation-provenance-SCOPENARROW-791244a47cad9f64.json", "span": null},
+  "body": {"event_kind": "WORK_SCOPE_NARROW", "actor": "p3-current-provenance-coordinator", "base_revision": "science-forge-ir-v0", "when": null, "seq": 1, "payload": {"target": "sf:program/work/phase3-black-hole-axial-arbitrary-radius-current-conservation-provenance", "narrowed_by": "p3-current-provenance-coordinator", "paths": "black_hole_programme/phase3/axial_null_infinity_trace_preflight/current_dag.py black_hole_programme/phase3/axial_arbitrary_radius_current_conservation/ planning/work-items/phase3-black-hole-axial-arbitrary-radius-current-conservation-provenance.json", "reason": "Remove the repository report path from this retroactive provenance-only lifecycle seal; lifecycle evidence is append-only events and the scientific artifacts are already landed at 2ba0f461."}, "native": {"authored_by": "sfc work-scope-narrow", "policy": "append-only (SPEC 4.5); narrows the EFFECTIVE write scope to a validated SUBSET of allowed_paths — never widens, never rewrites the base item. The overlap gate reads the narrowed scope."}},
+  "edges": [{"rel": "SCOPE_NARROW", "to": "sf:program/work/phase3-black-hole-axial-arbitrary-radius-current-conservation-provenance"}]
+}
