@@ -1,0 +1,254 @@
+{
+  "claim_flags": {
+    "endpoint_flux_Gram_certified": false,
+    "exact_solution_wrong_endpoint_suppression": false,
+    "formal_head_joint_symbol_bounds_through_order_three": true,
+    "formal_head_wrong_endpoint_suppression": true,
+    "global_connection_constructed": false,
+    "matching_direction_formal_trace_dimension": true,
+    "scalar_nonstationary_phase_lemma": true,
+    "scattering_channels_classified": false,
+    "stability_or_CPT_established": false,
+    "wavepacket_trace_constructed": false
+  },
+  "declaration": {
+    "background": "Schwarzschild exterior, M=1, ingoing Eddington-Finkelstein convention exp(+I*omega*v)",
+    "endpoint_split": {
+      "Iminus_matching": [
+        "XI0",
+        "XI1",
+        "EI0"
+      ],
+      "Iplus_matching": [
+        "XI2",
+        "XI3",
+        "EI2"
+      ]
+    },
+    "frequency_profiles": "C_c^infinity((1/2,3/4)); negative frequencies fixed by the real-field involution",
+    "sector": "axial ell=2",
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "missing_dependency": "Two additional exact infinity recurrence orders and a p>=5 omega-differentiated Volterra envelope.",
+    "status": "SHORTFALL",
+    "what_is_proved": "Exact all-order scalar IBP lemma, its six-head formal application, uniform exact coefficient bounds through three omega derivatives, and the first missing remainder derivative with minimum recurrence depth."
+  },
+  "does_not_establish": [
+    "a bounded exact-solution trace at Iplus or Iminus",
+    "a finite Lee-Wald wave-packet flux Gram, radical, quotient or inertia",
+    "horizon-to-infinity matching or scattering channels",
+    "pole exclusion, stability, CPT positivity, particles or unitarity"
+  ],
+  "endpoint_flux_disposition": {
+    "Iminus": {
+      "flux_Gram": "NOT_CERTIFIED",
+      "inertia": "UNDEFINED",
+      "quotient_dimension": "UNDEFINED",
+      "radical": "UNDEFINED",
+      "trace_dimension": 3
+    },
+    "Iplus": {
+      "flux_Gram": "NOT_CERTIFIED",
+      "inertia": "UNDEFINED",
+      "quotient_dimension": "UNDEFINED",
+      "radical": "UNDEFINED",
+      "trace_dimension": 3
+    },
+    "orientation": "Iplus and Iminus retain separate outward-normal conventions; they are never combined into one local endpoint test.",
+    "reality": "a_{ell,-m}(-omega)=(-1)^m*conjugate(a_{ell,m}(omega)); only positive-frequency amplitudes are independent.",
+    "reason": "The exact three-derivative remainder estimate needed to pass from formal heads to a bounded wave-packet trace is absent; a formal fixed-frequency Gram is not promoted as a physical null-flux Gram."
+  },
+  "exact_remainder_derivative_audit": {
+    "absolute_decay_after_k_derivatives": "r^(-(p-k)) up to logarithms",
+    "certified_omega_derivatives": 1,
+    "first_failure": "At k=2 and p=3 the absolute Volterra majorant is r^(-1) times logarithms and is not integrable.",
+    "first_missing_derivative_order": 2,
+    "imported_kernel_bound": "|K_N,ij(r,omega)| <= C_ij*r^(-p_ij)",
+    "integrability_condition": "p-k>1",
+    "minimum_additional_inverse_radius_recurrence_orders": 2,
+    "minimum_cross_rate_decay_p": 3,
+    "orders_needed_by_wrong_endpoint_lemma": 3,
+    "phase_derivative_rule": "Each omega derivative of exp(+/-2*I*omega*r)*r^(+/-4*I*omega) costs at most one power of r (log r is subleading).",
+    "required_extension": "Extend H0 and H1 from inverse order 3 through inverse order 5, retain the derivative-forced F coefficient through inverse order 6, and reprove a cross-rate p>=5 Volterra envelope with omega derivatives k=0,1,2,3.",
+    "required_minimum_decay_p": 5
+  },
+  "formal_joint_symbol_bounds": {
+    "bounds_by_branch": {
+      "EI0": {
+        "coefficient_count": 4,
+        "derivative_orders": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "exact_l1_upper_bounds": [
+          "33/2",
+          "57",
+          "324",
+          "2520"
+        ],
+        "only_real_pole": "omega=0 (outside the compact pilot support)"
+      },
+      "EI2": {
+        "coefficient_count": 4,
+        "derivative_orders": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "exact_l1_upper_bounds": [
+          "2247/2",
+          "2898",
+          "7380",
+          "24768"
+        ],
+        "only_real_pole": "omega=0 (outside the compact pilot support)"
+      },
+      "XI0": {
+        "coefficient_count": 12,
+        "derivative_orders": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "exact_l1_upper_bounds": [
+          "780",
+          "7200",
+          "81600",
+          "1094400"
+        ],
+        "only_real_pole": "omega=0 (outside the compact pilot support)"
+      },
+      "XI1": {
+        "coefficient_count": 12,
+        "derivative_orders": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "exact_l1_upper_bounds": [
+          "1095",
+          "8250",
+          "79440",
+          "928800"
+        ],
+        "only_real_pole": "omega=0 (outside the compact pilot support)"
+      },
+      "XI2": {
+        "coefficient_count": 13,
+        "derivative_orders": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "exact_l1_upper_bounds": [
+          "59088",
+          "329328",
+          "1802016",
+          "8769960"
+        ],
+        "only_real_pole": "omega=0 (outside the compact pilot support)"
+      },
+      "XI3": {
+        "coefficient_count": 13,
+        "derivative_orders": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "exact_l1_upper_bounds": [
+          "976",
+          "5276",
+          "25748",
+          "102864"
+        ],
+        "only_real_pole": "omega=0 (outside the compact pilot support)"
+      }
+    },
+    "frequency_interval": [
+      "1/2",
+      "3/4"
+    ],
+    "method": "exact rational l1 coefficient bound using omega<=3/4 and omega^(-1)<=2",
+    "pole_statement": "Every displayed coefficient and its first three omega derivatives is uniformly bounded; the only real denominator zero is omega=0, outside the profile support."
+  },
+  "imports": {
+    "endpoint_bases": {
+      "path": "black_hole_programme/phase3/axial_endpoint_bases/certificate.json",
+      "sha256": "bf5367cc6e0b778c91736ab4088fb0dcf78868ba5f61c30f56d71659f790e779"
+    },
+    "metric_heads": {
+      "path": "black_hole_programme/phase3/axial_endpoint_remainder_enclosures/infinity-metric-heads.json",
+      "sha256": "969701a67581469459e66f6e82a161654f37cf8b29915790d2f92d0a2f7269c3"
+    },
+    "null_trace_preflight": {
+      "path": "black_hole_programme/phase3/axial_null_infinity_trace_preflight/certificate.json",
+      "sha256": "c048f60c3f8f3790f4243311476e6c049a663b67e00e8a401e4f574152dc4a63"
+    },
+    "reconstruction": {
+      "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+      "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990"
+    },
+    "volterra_envelope": {
+      "path": "black_hole_programme/phase3/axial_endpoint_remainder_enclosures/infinity-volterra-envelope.json",
+      "sha256": "b8125ef86f953f74e77aad90ee1a4e72d3d6f3ddd325706f28eb5d619448e85e"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "matching_direction_formal_trace": {
+    "Iminus": {
+      "basis": [
+        "XI0",
+        "XI1",
+        "EI0"
+      ],
+      "dimension": 3,
+      "fixed_coordinate": "v",
+      "phase": "exp(I*omega*v)"
+    },
+    "Iplus": {
+      "basis": [
+        "XI2",
+        "XI3",
+        "EI2"
+      ],
+      "dimension": 3,
+      "finite_radius_factor": "(1-2/r)^(4*I*omega) -> 1 uniformly in omega",
+      "fixed_coordinate": "u",
+      "phase": "2^(-4*I*omega)*exp(I*omega*u)"
+    },
+    "limit_integral_interchange_for_heads": "The finite formal heads obey uniform coefficient bounds on compact frequency support, so dominated convergence applies after the declared columnwise radiation rescaling.",
+    "status": "FORMAL_HEAD_TRACE_ONLY"
+  },
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_WAVEPACKET_NULL_TRACE_SHORTFALL_V1",
+  "result_token": "FORMAL_HEAD_NONSTATIONARY_SUPPRESSION_EXACT_REMAINDER_C2_MISSING",
+  "scalar_nonstationary_phase_lemma": {
+    "formal_head_consequence": "Every displayed wrong-endpoint finite head vanishes after three integrations by parts, including the r^2 metric heads.",
+    "maximum_formal_metric_weight": 2,
+    "minimum_IBP_orders_for_vanishing": 3,
+    "proof": "Integrate by parts N times. Every boundary term vanishes because b has compact support in the open interval.",
+    "statement": "If b is C_c^N((1/2,3/4)) and Phi has constant nonzero omega derivative L, then |integral exp(I*omega*L)b(omega)domega| <= |L|^(-N)*||d_omega^N b||_L1.",
+    "wrong_endpoint_phases": {
+      "nonstationarity": "For fixed u or v, |L| is bounded below by r for all sufficiently large r.",
+      "rate_minus_2Iomega_at_fixed_v": "exp(I*omega*(v-2*r-4*log(r))); L=v-2*r-4*log(r)",
+      "rate_zero_at_fixed_u": "exp(I*omega*(u+2*r_star)); L=u+2*r_star"
+    }
+  },
+  "schema": "phase3-black-hole-axial-wavepacket-null-trace-v1",
+  "verification": {
+    "producer": "python3 -m black_hole_programme.phase3.axial_wavepacket_null_trace.produce --check",
+    "tests": "python3 -m pytest -q black_hole_programme/phase3/axial_wavepacket_null_trace/tests",
+    "verifier": "python3 -m black_hole_programme.phase3.axial_wavepacket_null_trace.verify"
+  }
+}

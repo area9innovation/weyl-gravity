@@ -1,0 +1,68 @@
+{
+  "description_axes": ["causal", "symplectic", "nonlinear", "observational", "quantum"],
+  "entries": [
+    {
+      "claim_boundary": "Three-fold nonstationary-phase suppression is exact for the displayed formal heads, but the exact Volterra remainder is certified only through one omega derivative. No exact wave-packet null trace, flux Gram, scattering channel, stability or CPT result is established.",
+      "descriptions": {
+        "causal": "OBSTRUCTED",
+        "symplectic": "NO_CERTIFIED_MAP",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "black_hole_programme/phase3/axial_wavepacket_null_trace/certificate.json",
+          "result_id": "PURE_WEYL_PHASE3_AXIAL_WAVEPACKET_NULL_TRACE_SHORTFALL_V1",
+          "sha256": "39313f7be23cf3dc974936ca48722bd115808bc5406484ed38d1b87a2a1961d8"
+        }
+      ],
+      "id": "black_hole.schwarzschild.phase3.axial_wavepacket_null_trace_shortfall",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Rate-zero and rate-minus-2iomega packets are assigned separately to Iminus and Iplus. The displayed wrong-endpoint heads vanish after three integrations by parts.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The exact null-flux Gram, radical, quotient and inertia are not defined until the exact-solution trace estimate closes.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "The first missing estimate is the second omega derivative of the p=3 cross-rate Volterra remainder. Two additional recurrence orders would raise the required decay to p>=5.",
+          "status": "OBSTRUCTED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {"statement": "No nonlinear source is evaluated.", "status": "NOT_APPLICABLE"},
+          "causal_retarded": {"statement": "No global retarded solution or scattering map is constructed.", "status": "NO_CERTIFIED_MAP"},
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {"statement": "No nonlinear correction is evaluated.", "status": "NOT_APPLICABLE"}
+        },
+        "taub_maps": {"statement": "No compact second-order Taub map enters this endpoint audit.", "status": "NOT_APPLICABLE"}
+      },
+      "scope": {
+        "background": "Schwarzschild exterior, M=1",
+        "boundaries": "separate formal Iplus and Iminus wave-packet heads; exact remainder trace open",
+        "carrier": "repaired six-state axial Bach reconstruction",
+        "charge_sector": "small gauge quotient inherited from the frozen reconstruction",
+        "degree": 1,
+        "ell": 2,
+        "k": "compact positive-frequency support in (1/2,3/4)",
+        "m": "negative-frequency harmonic fixed by real-field involution",
+        "omega": "C_c^infinity((1/2,3/4))",
+        "parity": "axial",
+        "theory": "strict linearized four-dimensional pure Weyl C^2 gravity"
+      }
+    }
+  ],
+  "generated_by": "black_hole_programme/phase3/axial_wavepacket_null_trace/produce.py",
+  "generated_by_sha256": "28ba8f88b600eecbd7a161e97d91ea31142c11305dd37877be2a9eaadec40f7d",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": ["CERTIFIED", "OBSTRUCTED", "OPEN", "NOT_APPLICABLE", "NO_CERTIFIED_MAP"],
+  "team": "black_hole",
+  "verification_commands": [
+    "python3 -m black_hole_programme.phase3.axial_wavepacket_null_trace.produce --check",
+    "python3 -m black_hole_programme.phase3.axial_wavepacket_null_trace.verify",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/phase3-black-hole-axial-wavepacket-null-trace-fragment-v1.json"
+  ]
+}
