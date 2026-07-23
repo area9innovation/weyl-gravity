@@ -1,0 +1,39 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-arbitrary-radius-current-conservation-provenance",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-arbitrary-radius-current-conservation-provenance",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-arbitrary-radius-current-conservation-provenance.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-axial-current-identity",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Close the provenance gap between the literal axial Lee--Wald action current and the repaired six-state radial flow by recording the already-landed exact arbitrary-radius rational identity and its independent exhaustive replay.",
+    "stop_condition": "Pin landed commit 2ba0f461054b3eeb974424a4a151f770f66616a0 and certify that the literal action current is reconstructed over QQ(I)(r,omega) from a separately audited common denominator, degree bound and sufficient exact rational-radius evaluations; independently verify all 36 entries of dJ/dr+A(r,-omega)^T J+J A(r,omega)=0; preserve insufficient interpolation attempts as non-claiming append-only shortfalls; record exact hashes, commands, elapsed times and limitations.",
+    "current_gate": "Append-only Science Forge provenance and lifecycle seal for the landed exact arbitrary-radius current-conservation certificate",
+    "forbid": "no endpoint-flux limit, global connection, scattering, stability, CPT, positivity, particle, unitarity or quantum promotion; no use of the superseded 26-node or 27-node artifacts as proof; no edits to global handoff, classifier, paper or other-team paths",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-complete-reconstruction-repair",
+      "sf:program/work/phase3-black-hole-axial-null-infinity-trace-preflight"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_null_infinity_trace_preflight/current_dag.py",
+      "black_hole_programme/phase3/axial_arbitrary_radius_current_conservation/",
+      "reports/phase3-black-hole-axial-arbitrary-radius-current-conservation-provenance-2026-07-23.md",
+      "planning/work-items/phase3-black-hole-axial-arbitrary-radius-current-conservation-provenance.json"
+    ],
+    "resource_hint": "This is a retroactive lifecycle/provenance seal for commit 2ba0f461054b3eeb974424a4a151f770f66616a0, not a request to recompute or amend its scientific artifacts. The authoritative rails are certificate SHA-256 3fa795e2c84a665ddf0217cf764ec3e156a737d33d249e230c6b81ff07312bd6 and the exhaustive replay receipt.",
+    "input_commit": "2ba0f461054b3eeb974424a4a151f770f66616a0",
+    "notes": [
+      "Dependency tags are LOCAL-ALGEBRAIC and REDUCED-MODE.",
+      "The accepted common denominator is r^7*(r-2)^6*(omega*r-2*I)^4*(omega*r+2*I)^4; the cleared degree bounds are deg_r<=29 and deg_omega<=13; 30 exact nodes r=3,...,32 are used.",
+      "The 26-node and 27-node attempts are preserved only as SUPERSEDED_SHORTFALL_NOT_ACCEPTED_AS_PROOF."
+    ]
+  },
+  "edges": []
+}
