@@ -1,0 +1,114 @@
+{
+  "does_not_establish": [
+    "single-affine-cell enclosure without omega subdivision",
+    "all 224 infinity microfactors",
+    "useful joined horizon-to-infinity widths",
+    "global horizon-to-infinity connection",
+    "physical channel or flux classification"
+  ],
+  "establishes": [
+    "The first axial infinity microfactor admits a four-omega-subcell moving-frame block-lower enclosure with certified 8+4 diagonal rank and exact zero upper-right block.",
+    "The maximum lower-block width is strictly smaller than the superseded unframed width benchmark."
+  ],
+  "layout_contract": {
+    "coefficient_and_frame_layout": "standard-real-interleaved-12",
+    "predecessor_interleaved_extractor_rejected": true,
+    "structured_transition_layout": "contiguous-block-lower-8+4",
+    "upper_right_exact_zero": true
+  },
+  "method": {
+    "dyadic_rebase_bits": 128,
+    "formula": "Ck1^-1*(L*Cc0+Uk*D0-D1*Wc)",
+    "full_12x12_interval_rank_used": false,
+    "generator": 7315,
+    "omega_subcells": 4,
+    "radial_panels": 8,
+    "rank_argument": "block-lower-diagonal-ranks",
+    "taylor_order": 12
+  },
+  "proof_contract": {
+    "dyadic_rebasing": true,
+    "global_frame_affine_restriction_exact": true,
+    "global_remainder_retained_outward": true,
+    "independent_exact_layout_oracle": true,
+    "mutations_rejected": [
+      "interleaved-extractor-on-contiguous-block",
+      "drop-D1-Wc-term",
+      "break-generator",
+      "erase-width-improvement",
+      "change-source-hash"
+    ],
+    "outward_local_tails": true,
+    "shared_generator": true
+  },
+  "provenance": {
+    "frame_table_import_is_data_only": true,
+    "producer_path": "black_hole_programme/phase3/axial_moving_lower_transition_preflight/produce.py",
+    "producer_sha256": "843953cc425dcb64ae8ca2f12dd021cf0fecf297e3420a13e890533aee675acc",
+    "source_metadata_path": "black_hole_programme/phase3/axial_moving_lower_transition_preflight/source_metadata.json",
+    "source_metadata_sha256": "1e99647a9faeb66151277b3cb86130d75a02516eff1da87f5abaff8bf67301fd",
+    "source_path": "black_hole_programme/phase3/axial_moving_lower_transition_preflight/moving_fixture.forge",
+    "source_sha256": "4bae7330a5606f5a1b85074f428cf2a86545f9c2c9314a170adeb7f3b68058e0",
+    "superseded_predecessor_certificate_used": false
+  },
+  "result": {
+    "baseline_unframed_lower_width": 621.8840812306481,
+    "carrier_rank_each_subcell": 8,
+    "contraction_factor": 8849.33433079602,
+    "kernel_rank_each_subcell": 4,
+    "max_local_lower_width": 0.00887141066029161,
+    "piecewise_moving_lower_width": 0.07027467354990395,
+    "subcells": [
+      {
+        "carrier_rank": 8,
+        "full_width": 0.07026986123846328,
+        "index": 0,
+        "kernel_rank": 4,
+        "lower_width": 0.07026986123846328
+      },
+      {
+        "carrier_rank": 8,
+        "full_width": 0.07027140265078359,
+        "index": 1,
+        "kernel_rank": 4,
+        "lower_width": 0.07027140265078359
+      },
+      {
+        "carrier_rank": 8,
+        "full_width": 0.07027300675444804,
+        "index": 2,
+        "kernel_rank": 4,
+        "lower_width": 0.07027300675444804
+      },
+      {
+        "carrier_rank": 8,
+        "full_width": 0.07027467354990395,
+        "index": 3,
+        "kernel_rank": 4,
+        "lower_width": 0.07027467354990395
+      }
+    ]
+  },
+  "runtime": {
+    "compile_returncode": 0,
+    "compile_seconds": 17.29414819998783,
+    "run_returncode": 42,
+    "run_seconds": 50.346610434004106
+  },
+  "schema": "phase3-axial-moving-lower-preflight-v1",
+  "scope": {
+    "background": "Schwarzschild-M=1",
+    "ell": 2,
+    "omega_cell": [
+      "1/2",
+      "129/256"
+    ],
+    "parity": "axial",
+    "radial_microinterval": [
+      "0",
+      "1/8"
+    ],
+    "theory": "strict-pure-Weyl"
+  },
+  "status": "PREFLIGHT_PASS"
+}
