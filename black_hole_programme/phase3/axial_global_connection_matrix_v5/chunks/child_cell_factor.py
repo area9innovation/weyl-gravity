@@ -106,9 +106,9 @@ def prefix_boundary_crosswalk(
     )
     zero = Fraction(0)
 
-    def to_standard_block(raw: tuple[tuple[Fraction, ...], ...]):
+    def to_block_order(raw: tuple[tuple[Fraction, ...], ...]):
         rows = []
-        for state_row in range(12):
+        for state_row in CARRIER_INDICES + KERNEL_INDICES:
             if state_row in CARRIER_INDICES:
                 rows.append(
                     tuple(raw[state_row][col] for col in CARRIER_INDICES)
@@ -127,15 +127,15 @@ def prefix_boundary_crosswalk(
         "parameter_cell": cell_payload(child),
         "generator": GENERATOR,
         "input_chart": "global-moving-block-lower-12",
-        "output_chart": "standard-realified-six-state-12",
-        "center": _matrix_text(to_standard_block(raw_center)),
-        "linear": _matrix_text(to_standard_block(raw_linear)),
+        "output_chart": "fixed-standard-frame-block-order-12",
+        "center": _matrix_text(to_block_order(raw_center)),
+        "linear": _matrix_text(to_block_order(raw_linear)),
         "remainder": "exact-zero-coordinate-choice",
         "physical_restart": False,
         "construction": (
             "restrict the one global prefix frame Taylor model to the exact "
             "frequency child, assemble carrier/kernel block-lower order, "
-            "then restore standard state-row order"
+            "in the fixed standard frame and contiguous carrier/kernel order"
         ),
         "global_frame_table_sha256": prefix_context["frame_table_sha256"],
         "global_boundary_frame_sha256": prefix_context["frame_sha256"][
@@ -245,7 +245,7 @@ def build_factor(
         "state": {
             "rows": 12,
             "cols": 12,
-            "chart": "standard-realified-six-state-12",
+            "chart": "fixed-standard-frame-block-order-12",
             "order": list(BLOCK_ORDER),
         },
         "solver": {
@@ -343,7 +343,7 @@ def verify_factor(
     )
     _require(
         data["state"]["order"] == list(BLOCK_ORDER)
-        and data["state"]["chart"] == "standard-realified-six-state-12",
+        and data["state"]["chart"] == "fixed-standard-frame-block-order-12",
         "child factor: state chart drift",
     )
     identity = [
