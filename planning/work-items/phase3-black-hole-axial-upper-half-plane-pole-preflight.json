@@ -1,0 +1,37 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-upper-half-plane-pole-preflight",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-upper-half-plane-pole-preflight",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-upper-half-plane-pole-preflight.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-axial-poles-1",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 2,
+    "objective": "Build the first fail-closed complex-frequency Evans/connection preflight for upper-half-plane axial Bach modes on Schwarzschild.",
+    "stop_condition": "Starting from the terminal real-frequency global connection package, complexify the exact six-state flow and endpoint recurrences on an explicitly bounded rectangle Re(M omega) in [1/2,3/4], Im(M omega) in [0,eta]. Construct interval or ball enclosures of the horizon-decaying and infinity-admissible subbundles away from thresholds, define a basis-invariant Evans determinant or exterior-product section, and prove analyticity plus nonvanishing basis normalizations. Run an argument-principle or validated contour enclosure that either counts all zeros in the rectangle or certifies the first exact obstruction to doing so. Separate physical upper-half-plane poles from gauge, endpoint-basis and exceptional-wall zeros. Include independent replay and mutations that reverse the temporal convention, omit a generalized/logarithmic endpoint column, cross an unresolved threshold, or infer zero count from sampled nonzero values.",
+    "current_gate": "Validated complex-frequency spectral-instability preflight",
+    "forbid": "no real-frequency rank theorem called pole absence; no grid scan called an argument-principle count; no uncontrolled complex shooting; no gauge or endpoint normalization zero called an instability; no bounded rectangle result called full mode stability",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-global-finite-flux-channel-classification"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_upper_half_plane_pole_preflight/",
+      "reports/phase3-black-hole-axial-upper-half-plane-pole-preflight-2026-07-23.md",
+      "residual_atlas/phase3-black-hole-axial-upper-half-plane-pole-preflight-fragment-v1.json",
+      "planning/forge-requests/phase3-black-hole-axial-upper-half-plane-pole-preflight.json"
+    ],
+    "resource_hint": "Treat the first bounded complex-frequency rectangle as a preflight. If the current interval library lacks complex balls, exterior algebra or validated argument-principle support, emit a precise Forge request and freeze the missing theorem rather than sampling.",
+    "input_commit": "0c3cfc906",
+    "notes": [
+      "This is a stability diagnostic, not part of the minimum real-frequency channel verdict.",
+      "The sign of Im(omega) must be tied explicitly to the exp(+i omega v) convention."
+    ]
+  },
+  "edges": []
+}

@@ -1,0 +1,37 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-channel-cpt-metric",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-channel-cpt-metric",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-channel-cpt-metric.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-axial-cpt-1",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 1,
+    "objective": "Determine whether the globally populated finite-flux axial Schwarzschild channel bundle admits a nontrivial symmetry-compatible positive pseudo-Hermitian/CPT metric.",
+    "stop_condition": "Import the terminal global finite-flux channel classification. If no additional physical channel survives, certify the CPT question as non-applicable on that quotient and stop. Otherwise define the real-field antilinear involution and the action-derived indefinite endpoint form on the exact channel bundle. Seek a Hermitian eta_ell(omega)>0 that is smooth or meromorphic on every resolved real-frequency cell, obeys eta(-omega)=conjugate(eta(omega)), is rotation/parity invariant, descends through the BRST/gauge quotient, has controlled low/high-frequency limits within the declared window, and is preserved by the full boundary evolution or incoming-to-outgoing relation actually constructed. Distinguish generic quasi-Hermiticity from Mannheim's stronger C,P,T data: if claiming CPT, construct an antilinear involution Theta and a linear involution C with Theta^2=C^2=1, [Theta,H]=[C,H]=0 and a positive induced form. Give an exact structured-cone parameterization and one explicit algebraic positive solution, or an exact infeasibility witness. Prove that any result extends to the certified compactly supported wave-packet completion. Include the Hamiltonian-Hopf counterflow quartet as an exact broken-PT negative control, but do not use it as evidence about Schwarzschild.",
+    "current_gate": "Positive structured metric on the actual global finite-flux channel bundle",
+    "forbid": "no arbitrary pointwise diagonalization metric; no separate eta chosen discontinuously at each frequency; no positive matrix called Mannheim CPT without C/P/T involutions; no finite-dimensional formal block substituted for the global channel quotient; no radial-current metric substituted for endpoint flux; no positivity called unitarity, Hadamard, pole-freeness or nonlinear stability",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-global-finite-flux-channel-classification"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_channel_cpt_metric/",
+      "reports/phase3-black-hole-axial-channel-cpt-metric-2026-07-23.md",
+      "residual_atlas/phase3-black-hole-axial-channel-cpt-metric-fragment-v1.json",
+      "planning/forge-requests/phase3-black-hole-axial-channel-cpt-metric.json"
+    ],
+    "resource_hint": "Use invariant Gram and quotient maps from the channel classifier. A positive eta for a finite diagonalizable matrix with real spectrum is not by itself a physical result; the frequency regularity, real structure, symmetry and quotient constraints are essential.",
+    "input_commit": "0c3cfc906",
+    "notes": [
+      "This is conditional: zero globally surviving additional channels is a terminal non-applicability result, not a failed search.",
+      "A pseudo-Hermitian pass does not establish a BRST-compatible Hadamard state or interacting unitarity."
+    ]
+  },
+  "edges": []
+}
