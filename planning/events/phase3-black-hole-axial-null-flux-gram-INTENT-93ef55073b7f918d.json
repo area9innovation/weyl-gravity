@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase3-black-hole-axial-null-flux-gram-INTENT-93ef55073b7f918d",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work intent",
+  "source": {"path": "tools/science-forge/program/events/phase3-black-hole-axial-null-flux-gram-INTENT-93ef55073b7f918d.json", "span": null},
+  "body": {"event_kind": "WORK_INTENT", "actor": "phase3-axial-wavepacket-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-23T04:23:52Z", "seq": 2, "predecessor": "sf:program/event/phase3-black-hole-axial-null-flux-gram-INTENT-9b32c0774728319c", "payload": {"target": "sf:program/work/phase3-black-hole-axial-null-flux-gram", "agent": "phase3-axial-wavepacket-1", "lease": "exclusive", "base_commit": "a5b3d56d2bdfbd0fd984ff4b7e5c427570ba5ff1", "transaction_id": "760981144f570292", "allowlist_verdict": "within-allowlist", "intended_paths": ["black_hole_programme/phase3/axial_null_flux_gram/receipt.json", "reports/phase3-black-hole-axial-null-flux-gram-2026-07-23.md"], "verify_commands": ["python3 -m black_hole_programme.phase3.axial_null_flux_gram.produce --check", "python3 -m black_hole_programme.phase3.axial_null_flux_gram.verify", "git diff --check -- black_hole_programme/phase3/axial_null_flux_gram/receipt.json reports/phase3-black-hole-axial-null-flux-gram-2026-07-23.md"]}, "native": {"authored_by": "sfc work-intent", "policy": "append-only (SPEC 4.5); an uncommitted delivery manifest — NO current_commit, NO test-success. Superseded by a later intent; sealed by WORK_COMMITTED."}},
+  "edges": [{"rel": "INTENDS", "to": "sf:program/work/phase3-black-hole-axial-null-flux-gram"}]
+}
