@@ -1,0 +1,38 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-null-flux-gram",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-null-flux-gram",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-null-flux-gram.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-axial-null-flux-1",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Pull the action-derived pure-Weyl Lee-Wald current to the exact axial wave-packet trace spaces at past and future null infinity and classify the resulting finite flux forms before global matching.",
+    "stop_condition": "For axial ell=2, M=1 and positive-frequency profiles compactly supported in (1/2,3/4), import the exact three-dimensional I-minus and I-plus wave-packet trace theorem, its k<=3 differentiated Volterra bounds, the repaired six-state reconstruction, and the action-derived current DAG. Derive the correct oriented flux through finite null or hyperboloidal truncations from the Lee-Wald current, insert the phase-normalized reconstructed metric heads, and prove the renormalized/pulled-back limit exists on the matching trace L2 space. Justify every limit-frequency interchange using the certified symbol/remainder bounds; keep the C_c^infinity/H3 wrong-endpoint core distinct from the matching L2 completion. Produce exact 3x3 Hermitian endpoint Gram matrices G_minus(omega), G_plus(omega), or certify the first exact continuity/renormalization obstruction. On a finite rational omega subdivision, classify each Gram's rank, radical, quotient dimension and inertia, including exceptional polynomial loci by exact Sturm or interval proof, with negative-frequency reality and the two outward-normal orientations explicit. Verify conservation compatibility with the finite-radius radial current without identifying the two forms. Include an independent derivation/verifier and mutations that drop a differentiated reconstruction term, interchange I-plus/I-minus, omit a boundary counterterm or rescaling, and assert a rank across an unresolved exceptional wall.",
+    "current_gate": "LORENTZIAN-CAUSAL action-current flux on the exact null-infinity wave-packet traces",
+    "forbid": "no raw EF F^v improper integral called null flux; no monochromatic generalized mode called finite energy; no formal-head limit without the exact remainder; no radial Wronskian renamed an endpoint flux; no mixing of I-plus and I-minus orientations; no sampled eigenvalue called an interval-uniform inertia; no horizon matching, global channel, scattering, CPT, stability, positivity or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-wavepacket-null-trace",
+      "sf:program/work/phase3-black-hole-axial-null-infinity-trace-preflight"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_null_flux_gram/",
+      "reports/phase3-black-hole-axial-null-flux-gram-2026-07-23.md",
+      "residual_atlas/phase3-black-hole-axial-null-flux-gram-fragment-v1.json",
+      "planning/forge-requests/phase3-black-hole-axial-null-flux-gram.json"
+    ],
+    "resource_hint": "Start from the exact current identity in axial_null_infinity_trace_preflight/current_dag.py and the new wave-packet trace multiplier, not from the superseded raw F^v Cauchy-density proxy. If a boundary improvement/counterterm is required, derive it from the declared Lee-Wald representative and state the representative dependence explicitly.",
+    "input_commit": "20db6b5f6",
+    "notes": [
+      "This item is local at null infinity and may proceed independently of the affine-reconditioning/global-connection repair.",
+      "Its endpoint Gram is the physical quotient consumed by the final global channel classifier."
+    ]
+  },
+  "edges": []
+}
