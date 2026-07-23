@@ -13,6 +13,7 @@ from black_hole_programme.phase3.axial_global_finite_flux_channel_classification
     AffineScalar,
     ComplexAffine,
     Interval,
+    certify_origin_blocks,
     certify_whole_cell_inertia,
     determinant_excludes_zero,
     matrix_add,
@@ -386,6 +387,11 @@ class AffineCellAdapterTest(unittest.TestCase):
             result["certified_cells"]["q0"]["inertia"]["gminus"].complex_inertia,
             (3, 0, 0),
         )
+        origins = result["certified_cells"]["q0"]["origin_blocks"]["Iminus"]
+        self.assertEqual(origins["additional"]["inertia"], (2, 0, 0))
+        self.assertEqual(origins["einstein"]["inertia"], (1, 0, 0))
+        self.assertEqual(origins["mixed_status"], "EXACT_ZERO")
+        self.assertEqual(origins["mixed_rank"], 0)
 
     def test_wrong_generator_is_refused(self) -> None:
         document = synthetic_subdivided_handoff()
@@ -402,6 +408,18 @@ class AffineCellAdapterTest(unittest.TestCase):
         )
         with self.assertRaisesRegex(ValueError, "conservation defect"):
             validate_channel_handoff_algebra(document)
+
+    def test_nonzero_origin_mixing_is_certified(self) -> None:
+        matrix = matrix_from_json(
+            constant_complex_matrix(
+                [[2, 0, 1], [0, -1, 0], [1, 0, 3]]
+            )
+        )
+        result = certify_origin_blocks(matrix)
+        self.assertEqual(result["additional"]["inertia"], (1, 1, 0))
+        self.assertEqual(result["einstein"]["inertia"], (1, 0, 0))
+        self.assertEqual(result["mixed_status"], "CERTIFIED_NONZERO")
+        self.assertEqual(result["mixed_rank"], 1)
 
 
 if __name__ == "__main__":

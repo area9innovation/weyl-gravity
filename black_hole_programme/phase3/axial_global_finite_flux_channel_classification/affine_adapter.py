@@ -426,6 +426,70 @@ def select_rows(matrix: AffineMatrix, rows: Iterable[int]) -> AffineMatrix:
     return [matrix[i] for i in rows]
 
 
+def select_principal(matrix: AffineMatrix, indices: Iterable[int]) -> AffineMatrix:
+    indices = tuple(indices)
+    rows, cols = matrix_shape(matrix)
+    if rows != cols or any(index < 0 or index >= rows for index in indices):
+        raise ValueError("invalid principal-submatrix selection")
+    return [[matrix[i][j] for j in indices] for i in indices]
+
+
+def _is_exact_zero(value: AffineScalar) -> bool:
+    return (
+        value.center == 0
+        and value.linear == 0
+        and value.remainder == ZERO_INTERVAL
+    )
+
+
+def _complex_excludes_zero(value: ComplexAffine) -> bool:
+    return not (
+        value.re.value_interval().contains_zero()
+        and value.im.value_interval().contains_zero()
+    )
+
+
+def certify_origin_blocks(matrix: AffineMatrix) -> dict:
+    """Classify Einstein/additional restrictions and their mixed block."""
+    if matrix_shape(matrix) != (3, 3):
+        raise ValueError("origin classification requires a 3x3 form")
+    additional = select_principal(matrix, (0, 1))
+    einstein = select_principal(matrix, (2,))
+    mixed = [[matrix[0][2]], [matrix[1][2]]]
+    if any(_complex_excludes_zero(row[0]) for row in mixed):
+        mixed_status = "CERTIFIED_NONZERO"
+        mixed_rank = 1
+    elif all(
+        _is_exact_zero(row[0].re) and _is_exact_zero(row[0].im)
+        for row in mixed
+    ):
+        mixed_status = "EXACT_ZERO"
+        mixed_rank = 0
+    else:
+        mixed_status = "UNRESOLVED"
+        mixed_rank = None
+    def restricted_witness(block: AffineMatrix) -> dict:
+        try:
+            witness = certify_whole_cell_inertia(block)
+        except ValueError as exc:
+            return {
+                "status": "UNRESOLVED",
+                "reason": str(exc),
+            }
+        return {
+            "status": "CERTIFIED",
+            "inertia": witness.complex_inertia,
+            "inverse_perturbation_bound": witness.inverse_perturbation_bound,
+        }
+
+    return {
+        "additional": restricted_witness(additional),
+        "einstein": restricted_witness(einstein),
+        "mixed_status": mixed_status,
+        "mixed_rank": mixed_rank,
+    }
+
+
 def _validate_payload_algebra(payload: dict) -> dict:
     connection = matrix_from_json(payload["connection"]["complex_6_by_3"])
     cminus = matrix_from_json(payload["connection"]["Cminus_3_by_3"])
@@ -491,6 +555,10 @@ def _validate_payload_algebra(payload: dict) -> dict:
         "Cminus_rank": 3,
         "Cplus_rank": 3,
         "inertia": inertia,
+        "origin_blocks": {
+            "Iminus": certify_origin_blocks(pulled_minus),
+            "Iplus": certify_origin_blocks(pulled_plus),
+        },
         "pullbacks_independently_enclosed": True,
         "conservation_enclosure_independently_checked": True,
         "structural_hermiticity_required": True,
