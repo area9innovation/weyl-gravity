@@ -58,7 +58,7 @@ POST_PHASE1_INPUTS = [
         "lifecycle_commit": "0da46f3b0916e4e53f441df37077038892cf89c3",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "edge_kind": "PRIMARY_ENDPOINT_THEOREM",
-        "paper_location": "Phase-3 endpoint completion after Result card C",
+        "paper_location": "Phase-3A endpoint completion after Result card C",
         "relationship": "Adds exact three-dimensional L2 wave-packet traces, explicit rank-three radical-free endpoint flux Grams of inertia (1,2,0), uniform auxiliary-L2 bounds, and scoped trace-local improvement invariance on the axial pilot; no global population, unrestricted improvement invariance, scattering, CPT or stability claim.",
     },
     {

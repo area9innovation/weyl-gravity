@@ -267,7 +267,7 @@ def main() -> None:
         "constructs neither a",
         "FradkinTseytlin1984",
         "K_{\\rm tr}=",
-        "Phase-3 endpoint completion: exact axial wave-packet flux",
+        "Phase-3A endpoint completion: exact axial wave-packet flux",
         "\\mathcal X_{\\mathscr I^-}",
         "\\mathcal X_{\\mathscr I^+}",
         "\\det G_-",
