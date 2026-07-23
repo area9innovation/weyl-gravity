@@ -1,0 +1,68 @@
+{
+  "description_axes": ["causal", "symplectic", "nonlinear", "observational", "quantum"],
+  "entries": [
+    {
+      "claim_boundary": "The exact six-state radial current and the separate Iminus/Iplus formal polarizations are certified. A wave-packet null trace, global connection, scattering channel, stability result and CPT metric are not constructed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "black_hole_programme/phase3/axial_null_infinity_trace_preflight/certificate.json",
+          "result_id": "PURE_WEYL_PHASE3_AXIAL_NULL_INFINITY_TRACE_PREFLIGHT_V1",
+          "sha256": "c048f60c3f8f3790f4243311476e6c049a663b67e00e8a401e4f574152dc4a63"
+        }
+      ],
+      "id": "black_hole.schwarzschild.phase3.axial_null_infinity_trace_preflight",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The rate-zero formal group is assigned to Iminus and the rate-minus-2iomega group to Iplus; no global spectrum is inferred.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The exact six-state radial pairing is anti-Hermitian, rank six for real omega, and has Hermitian inertia (3,3) at the pilot anchor.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "omega=0 and endpoint thresholds remain separate; no wave-packet threshold estimate is supplied.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {"statement": "No nonlinear source is evaluated.", "status": "NOT_APPLICABLE"},
+          "causal_retarded": {"statement": "No global retarded solution or scattering map is constructed.", "status": "NO_CERTIFIED_MAP"},
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {"statement": "No nonlinear correction is evaluated.", "status": "NOT_APPLICABLE"}
+        },
+        "taub_maps": {"statement": "No compact second-order Taub map enters this preflight.", "status": "NOT_APPLICABLE"}
+      },
+      "scope": {
+        "background": "Schwarzschild exterior, M=1",
+        "boundaries": "formal Hplus, Iplus and Iminus polarizations; no global trace",
+        "carrier": "repaired six-state axial Bach metric reconstruction",
+        "charge_sector": "small gauge quotient inherited from the frozen reconstruction",
+        "degree": 1,
+        "ell": 2,
+        "k": "radial endpoint jets",
+        "m": "real-field conjugate harmonic pairs",
+        "omega": "real omega in [1/2,3/4], omega=0 separate",
+        "parity": "axial",
+        "theory": "strict linearized four-dimensional pure Weyl C^2 gravity"
+      }
+    }
+  ],
+  "generated_by": "black_hole_programme/phase3/axial_null_infinity_trace_preflight/produce.py",
+  "generated_by_sha256": "8858a9adf2ce5bf2ced6eeccaad6d0ae415176bf0f0338c1e24a96e59143af48",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": ["CERTIFIED", "OBSTRUCTED", "OPEN", "NOT_APPLICABLE", "NO_CERTIFIED_MAP"],
+  "team": "black_hole",
+  "verification_commands": [
+    "python3 -m black_hole_programme.phase3.axial_null_infinity_trace_preflight.produce --check",
+    "python3 -m black_hole_programme.phase3.axial_null_infinity_trace_preflight.verify",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/phase3-black-hole-axial-null-infinity-trace-preflight-fragment-v1.json"
+  ]
+}

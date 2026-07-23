@@ -1,0 +1,32 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:forge-request/oscillatory-null-trace-wavepacket-estimates",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "oscillatory-null-trace-wavepacket-estimates",
+  "source": {
+    "path": "planning/forge-requests/phase3-black-hole-axial-null-infinity-trace-preflight.json",
+    "span": null
+  },
+  "body": {
+    "owner": "science-forge",
+    "state": "PROPOSED",
+    "stream": "forge-requests",
+    "priority": 0,
+    "objective": "Add typed estimates for parameter-dependent polyhomogeneous oscillatory endpoint bases and wave-packet null traces, so formal Schwarzschild mode heads can be promoted to bounded Iplus/Iminus trace operators without confusing a coordinate current density with boundary flux.",
+    "stop_condition": "Provide uniform joint (z,omega) symbol bounds, including omega derivatives and threshold exclusions, for finite matrix-valued polyhomogeneous expansions with phases exp(+-i*omega/z) and z^(i*c*omega). Provide a stationary-phase/integration-by-parts theorem that turns Schwartz or declared weighted-L2 spectral amplitudes into endpoint traces with certified remainder and conserved quadratic flux. The API must type Iplus and Iminus separately, retain orientation, return continuity/norm bounds, and compose with validated connection-matrix enclosures. Include exact scalar controls, a 2x2 matrix control, endpoint-mixing and omitted-omega-derivative mutations, and a refusal when only fixed-frequency formal heads are supplied.",
+    "forbid": "no monochromatic generalized mode called a finite-energy state; no improper Fv integral called null flux; no mixing Iplus and Iminus test polarizations; no interchange of limit and frequency integral without a bound; no sampled-frequency smoothness claim; no interval overlap called equality; no physics-specific Schwarzschild equations in lib/math",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-null-infinity-trace-preflight",
+      "sf:forge-request/validated-vector-bvp-connection-flux"
+    ],
+    "activates": ["sf:program/work/phase3-black-hole-axial-wavepacket-trace"],
+    "allowed_paths": ["forge/lib/math/", "forge/examples/", "forge/docs/math/", "forge/lib/math/COMPLETENESS.md"],
+    "resource_hint": "The physics preflight has exact endpoint phase assignments and an exact six-state radial current. The missing object is the functional-analytic trace estimate, not another fixed-frequency asymptotic coefficient table.",
+    "notes": [
+      "Keep exact formal asymptotics, validated numerical connection evidence and analytic wave-packet estimates as distinct evidence types.",
+      "The first consumer uses omega in [1/2,3/4], but the design should expose threshold exclusions rather than hard-code that interval."
+    ]
+  },
+  "edges": []
+}

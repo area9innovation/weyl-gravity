@@ -1,0 +1,209 @@
+{
+  "claim_flags": {
+    "exact_six_state_radial_current": true,
+    "future_horizon_regular_selector": true,
+    "global_connection_constructed": false,
+    "null_infinity_phase_polarizations": true,
+    "radial_current_nondegenerate_on_pilot": true,
+    "raw_Fv_rejected_as_null_flux": true,
+    "scattering_channels_classified": false,
+    "stability_or_CPT_established": false,
+    "wavepacket_trace_constructed": false
+  },
+  "connection_conservation": {
+    "common_radius_basis_relation": "B_H=B_I*T",
+    "connection_matrix_status": "NOT_CONSTRUCTED",
+    "coordinate_orientation": "T^dagger*H_I*T=H_H",
+    "outward_boundary_orientation": "T^dagger*H_I_out*T+H_H_out=0"
+  },
+  "current_and_topology_distinction": {
+    "all_six_raw_test_disposition": "INVALID_ENDPOINT_MIXING",
+    "coordinate_pullback": {
+      "B": "1-2/r",
+      "u": "F^u=F^t-B^(-1)*F^r",
+      "v": "F^v=F^t+B^(-1)*F^r"
+    },
+    "radial_flux": "For two exact same-frequency on-shell solutions, F^r is independent of r; finite amplitudes therefore do not define a nontrivial radial-divergence map.",
+    "raw_Fv": "The improper integral of the ingoing-EF component F^v on a v-adapted slice is a Cauchy-density diagnostic, not the flux through future or past null infinity.",
+    "wave_packets": "A physical null trace must be defined after frequency superposition, separately at Iplus and Iminus, with a declared energy/flux topology."
+  },
+  "declaration": {
+    "background": "Schwarzschild exterior with M=1 in ingoing Eddington-Finkelstein coordinates",
+    "match_radius": "r=4",
+    "sector": "axial ell=2, exp(+I*omega*v), real omega in [1/2,3/4]",
+    "state_order": [
+      "P",
+      "dP/dr",
+      "Q",
+      "dQ/dr",
+      "H1",
+      "F"
+    ],
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a wave-packet radiation phase space at Iplus or Iminus",
+    "horizon-to-infinity matching or a global connection matrix",
+    "a Schwarzschild scattering matrix or its flux inertia",
+    "mode stability, pole exclusion, CPT positivity, particles, or quantum unitarity"
+  ],
+  "endpoint_polarizations": {
+    "Iminus_incoming_rate_zero": [
+      "XI0",
+      "XI1",
+      "EI0"
+    ],
+    "Iplus_outgoing_rate_minus_2Iomega": [
+      "XI2",
+      "XI3",
+      "EI2"
+    ],
+    "future_horizon_regular_columns": [
+      0,
+      1,
+      4
+    ],
+    "future_horizon_regular_dimension": 3,
+    "horizon_column_order": [
+      "XH0a",
+      "XH0b",
+      "XHplus",
+      "XHminus",
+      "EH0",
+      "EHout"
+    ],
+    "infinity_column_order": [
+      "XI0",
+      "XI1",
+      "XI2",
+      "XI3",
+      "EI0",
+      "EI2"
+    ],
+    "phase_identity": "exp(I*omega*v)*exp(-2*I*omega*r)*r^(-4*I*omega) = 2^(-4*I*omega)*(1-2/r)^(4*I*omega)*exp(I*omega*u)",
+    "warning": "The Iminus and Iplus polarizations are different endpoint traces and must not be cross-tested as one six-dimensional improper-density domain."
+  },
+  "exact_radial_current": {
+    "anchor_inertia": [
+      3,
+      3
+    ],
+    "anchor_ldl_pivots_without_pi_alpha": [
+      "-168/5",
+      "192/7",
+      "-27648/5",
+      "256/75",
+      "12/5",
+      "-3/20"
+    ],
+    "anchor_permutation": [
+      2,
+      0,
+      1,
+      3,
+      4,
+      5
+    ],
+    "antihermitian": true,
+    "conservation_identity": "dJ/dr + A(-omega)^T*J + J*A(omega) = 0",
+    "definition": "F^r(y,bar(z)) = pi*alpha_W*z^dagger*Jhat*y",
+    "determinant": "195689447424/(15625*(4*omega**2 + 1))",
+    "hermitian_form": "H=-I*pi*alpha_W*Jhat for the boundary convention I*F^r(bar(z),y), alpha_W>0",
+    "matrix_without_pi_alpha": [
+      [
+        "0",
+        "-768*(4*omega - I)/(5*(2*omega - I))",
+        "192*(omega + I)/(5*(2*omega - I))",
+        "-768*omega/(5*(2*omega - I))",
+        "12*I*(8*omega - I)**2/(5*(2*omega - I))",
+        "48*(4*omega - I)/(5*(2*omega - I))"
+      ],
+      [
+        "768*(4*omega + I)/(5*(2*omega + I))",
+        "0",
+        "384*I*omega*(16*omega - 3*I)/(5*(2*omega + I))",
+        "1536*omega/(5*(2*omega + I))",
+        "-48/5",
+        "0"
+      ],
+      [
+        "-192*(omega - I)/(5*(2*omega + I))",
+        "384*I*omega*(16*omega + 3*I)/(5*(2*omega - I))",
+        "-96*I*omega*(80*omega**2 - 13)/(5*(4*omega**2 + 1))",
+        "192*I*(16*omega**3 + 24*I*omega**2 - 4*omega - I)/(5*(4*omega**2 + 1))",
+        "6*omega*(256*omega**2 + 48*I*omega - 11)/(5*(2*omega - I))",
+        "-24*I*omega*(16*omega + 3*I)/(5*(2*omega - I))"
+      ],
+      [
+        "768*omega/(5*(2*omega + I))",
+        "-1536*omega/(5*(2*omega - I))",
+        "192*I*(16*omega**3 - 24*I*omega**2 - 4*omega + I)/(5*(4*omega**2 + 1))",
+        "-1536*I*omega/(5*(4*omega**2 + 1))",
+        "24*I*omega*(16*omega + I)/(5*(2*omega - I))",
+        "96*omega/(5*(2*omega - I))"
+      ],
+      [
+        "12*I*(8*omega + I)**2/(5*(2*omega + I))",
+        "48/5",
+        "-6*omega*(256*omega**2 - 48*I*omega - 11)/(5*(2*omega + I))",
+        "24*I*omega*(16*omega - I)/(5*(2*omega + I))",
+        "0",
+        "0"
+      ],
+      [
+        "-48*(4*omega + I)/(5*(2*omega + I))",
+        "0",
+        "-24*I*omega*(16*omega - 3*I)/(5*(2*omega + I))",
+        "-96*omega/(5*(2*omega + I))",
+        "0",
+        "0"
+      ]
+    ],
+    "pilot_interval_inertia": [
+      3,
+      3
+    ],
+    "real_frequency_rank": 6
+  },
+  "first_missing_estimate": {
+    "required_output": "A bounded trace operator from a declared Schwartz or finite-energy spectral profile to separate Iplus and Iminus radiation data, with a finite conserved quadratic flux.",
+    "statement": "Uniform joint (r,omega) bounds for the reconstructed endpoint expansions and their omega derivatives, followed by a stationary-phase/integration-by-parts estimate proving existence and continuity of the Iplus/Iminus wave-packet trace and Lee-Wald flux.",
+    "status": "CERTIFIED_MISSING_DEPENDENCY",
+    "why_formal_heads_are_insufficient": "Fixed-frequency polyhomogeneous heads do not control frequency integration, endpoint thresholds, omega derivatives, or the interchange of the r-to-infinity limit with the spectral integral."
+  },
+  "imports": {
+    "boundary_contract": {
+      "path": "black_hole_programme/phase3/boundary_flux_contract/certificate.json",
+      "sha256": "3ee56677677f66df7ccba021a1e40cfd3af7e548aa24f991b8bae8f4689550ef"
+    },
+    "complete_reconstruction": {
+      "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+      "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990"
+    },
+    "endpoint_basis": {
+      "path": "black_hole_programme/phase3/axial_endpoint_bases/certificate.json",
+      "sha256": "bf5367cc6e0b778c91736ab4088fb0dcf78868ba5f61c30f56d71659f790e779"
+    },
+    "literal_current": {
+      "path": "black_hole_programme/certificates/BH2A_FLUX_MATRIX.json",
+      "sha256": "95ca6daeabb16bf93faa1bb721e3464fc5363899a344f0281d126f9a14204732"
+    },
+    "metric_heads": {
+      "path": "black_hole_programme/phase3/axial_endpoint_remainder_enclosures/infinity-metric-heads.json",
+      "sha256": "969701a67581469459e66f6e82a161654f37cf8b29915790d2f92d0a2f7269c3"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_NULL_INFINITY_TRACE_PREFLIGHT_V1",
+  "result_token": "RADIAL_CURRENT_EXACT_NULL_POLARIZATIONS_SEPARATED_WAVEPACKET_TRACE_OPEN",
+  "schema": "phase3-black-hole-axial-null-infinity-trace-preflight-v1",
+  "verification": {
+    "producer": "python3 -m black_hole_programme.phase3.axial_null_infinity_trace_preflight.produce --check",
+    "tests": "python3 -m pytest -q black_hole_programme/phase3/axial_null_infinity_trace_preflight/tests",
+    "verifier": "python3 -m black_hole_programme.phase3.axial_null_infinity_trace_preflight.verify"
+  }
+}

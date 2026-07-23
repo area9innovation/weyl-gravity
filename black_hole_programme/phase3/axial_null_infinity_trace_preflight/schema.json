@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase3-black-hole-axial-null-infinity-trace-preflight-v1",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "result_token", "lifecycle", "dependency_tags",
+    "declaration", "exact_radial_current", "endpoint_polarizations",
+    "current_and_topology_distinction", "connection_conservation",
+    "first_missing_estimate", "imports", "claim_flags", "does_not_establish",
+    "verification"
+  ],
+  "properties": {
+    "schema": {"const": "phase3-black-hole-axial-null-infinity-trace-preflight-v1"},
+    "result_id": {"const": "PURE_WEYL_PHASE3_AXIAL_NULL_INFINITY_TRACE_PREFLIGHT_V1"},
+    "result_token": {"const": "RADIAL_CURRENT_EXACT_NULL_POLARIZATIONS_SEPARATED_WAVEPACKET_TRACE_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "exact_radial_current": {
+      "type": "object",
+      "required": ["matrix_without_pi_alpha", "antihermitian", "determinant", "real_frequency_rank", "anchor_inertia"],
+      "properties": {
+        "matrix_without_pi_alpha": {
+          "type": "array", "minItems": 6, "maxItems": 6,
+          "items": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string"}}
+        },
+        "antihermitian": {"const": true},
+        "determinant": {"const": "195689447424/(15625*(4*omega**2 + 1))"},
+        "real_frequency_rank": {"const": 6},
+        "anchor_inertia": {"const": [3, 3]}
+      }
+    },
+    "endpoint_polarizations": {
+      "type": "object",
+      "required": ["future_horizon_regular_columns", "Iminus_incoming_rate_zero", "Iplus_outgoing_rate_minus_2Iomega"],
+      "properties": {
+        "future_horizon_regular_columns": {"const": [0, 1, 4]},
+        "Iminus_incoming_rate_zero": {"const": ["XI0", "XI1", "EI0"]},
+        "Iplus_outgoing_rate_minus_2Iomega": {"const": ["XI2", "XI3", "EI2"]}
+      }
+    },
+    "first_missing_estimate": {
+      "type": "object",
+      "required": ["status", "statement", "required_output", "why_formal_heads_are_insufficient"],
+      "properties": {"status": {"const": "CERTIFIED_MISSING_DEPENDENCY"}}
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["exact_six_state_radial_current", "wavepacket_trace_constructed", "global_connection_constructed", "scattering_channels_classified", "stability_or_CPT_established"],
+      "properties": {
+        "exact_six_state_radial_current": {"const": true},
+        "wavepacket_trace_constructed": {"const": false},
+        "global_connection_constructed": {"const": false},
+        "scattering_channels_classified": {"const": false},
+        "stability_or_CPT_established": {"const": false}
+      }
+    }
+  },
+  "additionalProperties": true
+}
