@@ -1,0 +1,133 @@
+{
+  "schema": "phase3-axial-spin-two-scattering-extension-preflight-v1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "lifecycle": "CLASSIFIED",
+  "status": "METHOD_SHORTFALL",
+  "declaration": {
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity",
+    "background": "Schwarzschild exterior M=1",
+    "sector": "axial ell=2",
+    "time_phase": "exp(+I*omega*t)",
+    "ingoing_EF_phase": "exp(+I*omega*v)=exp(+I*omega*t)*exp(+I*omega*rstar)",
+    "damped_QNM_half_plane": "Im(omega)>0"
+  },
+  "exact_local_extension": {
+    "definition": "E_RW=U_metric*(carrier_to_metric_source)*J_carrier_RW",
+    "system": "d_r [x_metric;x_carrier]=[[A_RW,E_RW],[0,A_RW]]*[x_metric;x_carrier]",
+    "matrix": [
+      [
+        "I*(3*r - 2)*(3*omega*r - 8*I)/(4*r*(omega*r - 2*I)**2)",
+        "(3*omega**2*r**3 - 3*I*omega*r**2 - 6*I*omega*r + 8*r - 16)/(4*(omega*r - 2*I)**2)"
+      ],
+      [
+        "-I*(3*r - 2)*(3*omega*r - 8*I)/(4*r**2*(omega*r - 2*I)**2)",
+        "-(3*omega**2*r**3 - 3*I*omega*r**2 - 6*I*omega*r + 8*r - 16)/(4*r*(omega*r - 2*I)**2)"
+      ]
+    ],
+    "rank": 1,
+    "determinant": "0",
+    "trace": "-(3*omega**2*r**2 - 12*I*omega*r - 16)/(4*(omega*r - 2*I)**2)",
+    "spectral_derivative_matrix": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-2*I*r/(r - 2)"
+      ]
+    ],
+    "pointwise_scalar_multiple_of_domega_A_RW": false
+  },
+  "rational_gauge_trace_test": {
+    "candidate_identity": "E_RW=q(omega)*d_omega(A_RW)+B_prime+B*A_RW-A_RW*B",
+    "trace_E_minus_q_domega_A": "I*(8*omega**2*q*r**3 + 3*I*omega**2*r**3 - 6*I*omega**2*r**2 - 32*I*omega*q*r**2 + 12*omega*r**2 - 24*omega*r - 32*q*r - 16*I*r + 32*I)/(4*(r - 2)*(omega*r - 2*I)**2)",
+    "rational_antiderivative_of_trace_E": "-(3*omega**2*r**2 - 6*I*omega*r + 4)/(4*omega*(omega*r - 2*I))",
+    "residue_at_r=2": "4*I*q",
+    "zero_residue_forces": [
+      "q=0"
+    ],
+    "conclusion": "No nonzero q(omega) can occur in this identity with a globally rational B. This does not test endpoint-analytic gauges containing logarithmic spectral-phase derivatives.",
+    "pure_rational_coboundary_status": "NOT_DECIDED",
+    "relation_to_scattering_q": "This operator-level rational q is not the quotient class [q]=[c]/[A_in_2_prime]; the latter allows endpoint-analytic spectral-phase gauges and remains uncomputed."
+  },
+  "local_filtration_invariant": {
+    "hypothesis": "omega_star is a simple zero of a=A_in_2 in the analytic-germ DVR O",
+    "reduced_matrix": "[[a,c],[0,a]]",
+    "frame_law": "c -> u*c+a*d, u in O^times, d in O",
+    "class": "[c] in O/(A_in_2), defined up to multiplication by a unit",
+    "smith_valuations": "(min(ord(a),ord(c)), 2*ord(a)-min(ord(a),ord(c)))"
+  },
+  "spectral_derivative_congruence": {
+    "statement": "c == q*A_in_2_prime modulo A_in_2",
+    "existence_at_a_simple_zero": "TAUTOLOGICALLY_TRUE",
+    "reason": "[A_in_2_prime] is a unit in O/(A_in_2), so every [c] has a unique [q]=[c]*[A_in_2_prime]^-1",
+    "canonical_class": "[q]=[c]*[A_in_2_prime]^-1 in O/(A_in_2)",
+    "nonvanishing_equivalence": "[q]!=0 iff [c]!=0 iff the Fredholm extension pairing is nonzero, after compatible normalizations",
+    "physical_q_computed": false,
+    "smith_case_selected": false
+  },
+  "jost_data_audit": {
+    "available": [
+      "the exact short-range spin-two potential",
+      "formal symbols A_in_2 and A_out_2",
+      "the real-frequency Wronskian identity",
+      "real-frequency nonvanishing of A_in_2",
+      "exact rational endpoint factor frames"
+    ],
+    "missing": [
+      "a certified damped QNM omega_star with A_in_2(omega_star)=0",
+      "a regular analytic horizon-normalized QNM germ near omega_star",
+      "a compatible adjoint QNM germ and normalization",
+      "A_in_2_prime(omega_star) and a proof that the zero is simple",
+      "a boundary-convergent or regularized Fredholm pairing",
+      "the normalization identity relating that pairing to c"
+    ],
+    "incoming_certificate_domain": "real omega in [1/2,3/4]"
+  },
+  "minimal_successor_input": {
+    "qnm": "An exact or independently certified complex omega_star in Im(omega)>0 with A_in_2(omega_star)=0 and A_in_2_prime(omega_star)!=0.",
+    "analytic_patches": "Horizon and infinity Jost/adjoint germs holomorphic in omega through omega_star, with all Frobenius frame events resolved.",
+    "pairing": "A convergent contour, complex scaling, or explicitly renormalized Fredholm pairing Gamma_star=<psi_star_adj,E_RW(omega_star)psi_star>.",
+    "normalization": "A proved formula c(omega_star)=unit*Gamma_star and compatible normalizations for A_in_2_prime.",
+    "decision": "Then [q]=[c]/[A_in_2_prime] can be evaluated; its zero or nonzero value selects the simple-zero Smith case."
+  },
+  "imports": {
+    "triangular_factorization": {
+      "path": "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json",
+      "sha256": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579",
+      "commit": "8e7de78c3835a35180294a8e2d6d3437f0a716a2"
+    },
+    "complete_reconstruction": {
+      "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+      "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+      "commit": "d5d5d6de648795203604d62ce7bc4f4ce6fea510"
+    },
+    "analytic_incoming_connection": {
+      "path": "black_hole_programme/phase3/axial_incoming_connection_analytic/certificate.json",
+      "sha256": "c7d54c15cd7928227d62ede7825edba2b6ebc51ca6f6c617c7b0b56a74cdd040",
+      "commit": "b3be2b0778d61ae6053ec39edb8542bc1e074044"
+    }
+  },
+  "claim_flags": {
+    "exact_local_RW_to_RW_extension_extracted": true,
+    "filtration_invariant_class_defined": true,
+    "unquantified_simple_zero_congruence_is_tautological": true,
+    "nonzero_rational_operator_derivative_coefficient_ruled_out": true,
+    "scattering_extension_coefficient_c_computed": false,
+    "Fredholm_pairing_computed": false,
+    "spectral_derivative_q_nonzero_certified": false,
+    "simple_QNM_Smith_case_selected": false
+  },
+  "does_not_establish": [
+    "the existence or location of a damped axial spin-two QNM",
+    "a closed symbolic formula for A_in_2, c or q",
+    "nonvanishing of the extension class [c]",
+    "a Smith type for the repeated spin-two QNM block",
+    "time-domain stability, CPT positivity, particles or unitarity",
+    "a LORENTZIAN-CAUSAL quantum theorem"
+  ]
+}

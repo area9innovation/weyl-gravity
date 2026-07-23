@@ -1,0 +1,60 @@
+{
+  "schema": "phase3-axial-spin-two-scattering-extension-preflight-receipt-v1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "status": "METHOD_SHORTFALL",
+  "artifacts": {
+    "__init__.py": "1ca9e10756b86e6725ab726e625762e34c219c34edbb4c06f53f90c8cd3a7768",
+    "produce.py": "6083edbca1f9ee8f7b019f4e8609ebc49237e60fcbbc04b06c15ef94b099d65e",
+    "certificate.json": "863dcf40f9d94e5ceec8518639ade6ea27b5357d302719f7669c53caf4d7f10c",
+    "verify.py": "a5b9de99d85fdebb9ca2868fc782862fb8f9129706fbc956698b5c5bb4bf4dd4",
+    "test_preflight.py": "af7adae8cd50eea8d3294ef741358c1c766bfdf2ed3cc5acbdd5c910b43c8b3f",
+    "README.md": "1f1ca2b5e4b1788e6955027798c40b7877c32aa9c427cf204ccd4d90feebbb84"
+  },
+  "tests": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_spin_two_scattering_extension_preflight/*.py",
+      "status": "PASS",
+      "exit": 0
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m black_hole_programme.phase3.axial_spin_two_scattering_extension_preflight.produce",
+      "elapsed_seconds": 1.49,
+      "max_rss_kib": 71504,
+      "status": "PASS_EXPECTED_METHOD_SHORTFALL",
+      "exit": 0
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m black_hole_programme.phase3.axial_spin_two_scattering_extension_preflight.verify",
+      "elapsed_seconds": 1.02,
+      "max_rss_kib": 70264,
+      "status": "PASS",
+      "exit": 0
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m unittest -v black_hole_programme.phase3.axial_spin_two_scattering_extension_preflight.test_preflight",
+      "elapsed_seconds": 2.87,
+      "max_rss_kib": 72076,
+      "tests": 5,
+      "status": "PASS",
+      "exit": 0
+    }
+  ],
+  "higher_tiers": {
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No imported operator, schema, or transitive certificate-chain input changed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a scoped fail-closed preflight, not a freeze, release, shared-core change, or theorem lifecycle promotion."
+    }
+  },
+  "claim_boundary": "The exact local repeated-spin-two extension is extracted and the germ class [c] is defined. The unquantified congruence c=q*A_in_2_prime mod A_in_2 is tautological at a simple zero. No QNM germ, Fredholm pairing, nonzero [c], physical q, or Smith case is certified."
+}
