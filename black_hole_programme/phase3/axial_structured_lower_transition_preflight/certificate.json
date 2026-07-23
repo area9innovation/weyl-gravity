@@ -1,6 +1,6 @@
 {
   "schema": "phase3-axial-structured-lower-preflight-v1",
-  "status": "PREFLIGHT_PASS",
+  "status": "WITHDRAWN_LAYOUT_DEFECT",
   "dependency_tags": [
     "LORENTZIAN-CAUSAL",
     "VALIDATED-NUMERIC"
@@ -66,5 +66,15 @@
     "physical scattering channels",
     "a reusable Forge mathlib API",
     "paper theorem promotion"
-  ]
+  ],
+  "withdrawal": {
+    "date": "2026-07-23",
+    "evidence": "withdrawal.json",
+    "reason": "The multi-panel composition extracted contiguous 8+4 block-lower matrices with an interleaved-standard-state extractor. The printed upper-right-zero check was reconstructed after the incorrect extraction and therefore did not detect the block mixing.",
+    "supersedes_claims": [
+      "The emitted multi-panel lower transition is a valid enclosure.",
+      "The reported carrier/kernel ranks certify the emitted composed transition.",
+      "The reported width is evidence about the correct structured transition."
+    ]
+  }
 }

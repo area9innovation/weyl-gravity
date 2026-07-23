@@ -1,8 +1,21 @@
 # Phase-3 structured lower-transition preflight
 
+## Withdrawal
+
+The former `PREFLIGHT_PASS` is withdrawn. The multi-panel `sl_compose`
+routine received matrices produced by `ivam_block_lower`, whose layout is
+contiguous \(8+4\), but extracted their blocks with
+`gc_affine_submatrix`, which assumes the original interleaved standard-state
+ordering. Its upper-right-zero check reconstructed a zero block after the
+incorrect extraction and therefore could not expose the defect.
+
+The source, certificate, and historical measurements are retained for
+provenance. They establish no composed transition, rank, width, or global
+connection. See `withdrawal.json`.
+
 ## Disposition
 
-`PREFLIGHT_PASS`, without paper promotion.
+`WITHDRAWN_LAYOUT_DEFECT`, without paper promotion.
 
 The full 12-by-12 raw interval transition is not needed to prove local
 factor rank.  The axial system is exactly block lower after the certified

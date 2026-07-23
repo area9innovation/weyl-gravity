@@ -1,5 +1,12 @@
 # Structured block-lower transition preflight
 
+> **WITHDRAWN — layout defect (23 July 2026).** The multi-panel
+> `sl_compose` path applied the interleaved-standard-state extractor to
+> matrices stored in contiguous \(8+4\) block-lower order. Consequently the
+> emitted transition, ranks, and width are not certified. See
+> `withdrawal.json`. The exact block-lower identity remains valid, but this
+> implementation is retained only as failed-provenance evidence.
+
 This is an isolated fallback for the axial Phase-3 global connection.  It
 does not modify the active v5/v6 connection implementation or Forge
 `lib/math`.
@@ -39,7 +46,7 @@ kernel diagonal factors:
 \det\begin{pmatrix}C&0\\L&K\end{pmatrix}=\det(C)\det(K).
 \]
 
-## First actual fixture
+## Withdrawn first fixture
 
 On the first eight-panel infinity microfactor
 \(t\in[0,1/8]\), \(M\omega\in[1/2,129/256]\):
@@ -51,10 +58,9 @@ On the first eight-panel infinity microfactor
 - Forge runtime: 0.80 seconds after compilation;
 - full-matrix rank enclosure: not used.
 
-The resulting maximum entry width is approximately `621.884`.  The method
-therefore closes the local raw-rank refusal, but it does **not** yet prove
-that composing all 224 factors will retain useful widths.  Moving-frame
-lower correction or shorter local resets may still be required.
+The historical run reported maximum entry width approximately `621.884`.
+Because the composed blocks were extracted in the wrong layout, this number
+does not characterize the intended transition and closes no rank gate.
 
 ## Verification
 
@@ -69,7 +75,6 @@ python3 -m \
   --metadata black_hole_programme/phase3/axial_structured_lower_transition_preflight/source_metadata.json
 ```
 
-The independent rational oracle compares the structured recurrence with an
-exact nilpotent constant block exponential.  Mutation rails reject omission
-of the kernel-times-lower term, swapped multiplication order, deletion of
-the lower tail, and a changed affine generator.
+The independent rational oracle still checks the one-panel algebraic
+recurrence, but the original verifier did not mutate the layout used by the
+multi-panel composition. The command now refuses the withdrawn certificate.

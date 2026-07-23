@@ -8,6 +8,7 @@ from black_hole_programme.phase3.axial_structured_lower_transition_preflight.ver
     VerificationError,
     verify_certificate,
     verify_source,
+    verify_withdrawal,
 )
 
 
@@ -22,8 +23,24 @@ def inputs():
     )
 
 
-def test_certificate_and_source_pass():
-    assert verify_certificate(*inputs())
+def test_certificate_and_source_are_withdrawn():
+    certificate, source, _ = inputs()
+    withdrawal = json.loads((HERE / "withdrawal.json").read_text())
+    assert verify_withdrawal(certificate, withdrawal, source)
+    with pytest.raises(VerificationError, match="not a pass"):
+        verify_certificate(*inputs())
+
+
+def test_layout_defect_mutation_is_rejected():
+    certificate, source, _ = inputs()
+    withdrawal = json.loads((HERE / "withdrawal.json").read_text())
+    mutated = source.replace(
+        "let lc:IvAffineMat=gc_affine_submatrix(left,0);",
+        "let lc:IvAffineMat=sl_contiguous_submatrix(left,0);",
+        1,
+    )
+    with pytest.raises(VerificationError):
+        verify_withdrawal(certificate, withdrawal, mutated)
 
 
 @pytest.mark.parametrize(

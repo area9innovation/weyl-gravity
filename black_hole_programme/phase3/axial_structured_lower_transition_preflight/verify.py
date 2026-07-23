@@ -13,6 +13,7 @@ from .structured_reference import verify_exact_fixture
 
 SCHEMA = "phase3-axial-structured-lower-preflight-v1"
 SOURCE_SCHEMA = "phase3-axial-structured-lower-preflight-source-v1"
+WITHDRAWAL_SCHEMA = "phase3-axial-structured-lower-preflight-withdrawal-v1"
 GENERATOR = 7315
 
 
@@ -127,6 +128,46 @@ def verify_certificate(
     return True
 
 
+def verify_withdrawal(
+    certificate: dict[str, Any],
+    withdrawal: dict[str, Any],
+    source: str,
+) -> bool:
+    require(certificate.get("schema") == SCHEMA, "wrong certificate schema")
+    require(
+        certificate.get("status") == "WITHDRAWN_LAYOUT_DEFECT",
+        "certificate is not marked withdrawn",
+    )
+    require(
+        withdrawal.get("schema") == WITHDRAWAL_SCHEMA,
+        "wrong withdrawal schema",
+    )
+    require(
+        withdrawal.get("status") == "WITHDRAWN_LAYOUT_DEFECT",
+        "withdrawal disposition changed",
+    )
+    defect = withdrawal.get("defect", {})
+    require(defect.get("producer_operation") == "sl_compose", "wrong defect site")
+    require(
+        defect.get("incorrect_extractor") == "gc_affine_submatrix",
+        "wrong defective extractor",
+    )
+    require(
+        "fn sl_compose" in source
+        and "let lc:IvAffineMat=gc_affine_submatrix(left,0);" in source
+        and "ivam_block_lower(ccr.value,lr.value,kkr.value)" in source,
+        "withdrawn layout defect is not present in the retained source",
+    )
+    superseded = certificate.get("withdrawal", {}).get("supersedes_claims", [])
+    require(len(superseded) == 3, "superseded-claim ledger incomplete")
+    require(
+        withdrawal.get("disposition", {}).get("scientific_claim")
+        == "No structured-transition pass remains from this package.",
+        "withdrawal claim boundary changed",
+    )
+    return True
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--certificate", type=Path, required=True)
@@ -134,11 +175,16 @@ def main() -> int:
     parser.add_argument("--metadata", type=Path, required=True)
     args = parser.parse_args()
     try:
-        verify_certificate(
-            json.loads(args.certificate.read_text()),
-            args.source.read_text(),
-            json.loads(args.metadata.read_text()),
-        )
+        certificate = json.loads(args.certificate.read_text())
+        source = args.source.read_text()
+        if certificate.get("status") == "WITHDRAWN_LAYOUT_DEFECT":
+            withdrawal = json.loads(
+                (args.certificate.parent / "withdrawal.json").read_text()
+            )
+            verify_withdrawal(certificate, withdrawal, source)
+            print("WITHDRAWN: structured-lower layout defect")
+            return 4
+        verify_certificate(certificate, source, json.loads(args.metadata.read_text()))
     except (OSError, json.JSONDecodeError, VerificationError) as exc:
         print(f"REFUSED: {exc}")
         return 3

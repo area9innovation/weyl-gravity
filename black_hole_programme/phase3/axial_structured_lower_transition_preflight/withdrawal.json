@@ -1,0 +1,25 @@
+{
+  "schema": "phase3-axial-structured-lower-preflight-withdrawal-v1",
+  "status": "WITHDRAWN_LAYOUT_DEFECT",
+  "date": "2026-07-23",
+  "affected_certificate": "certificate.json",
+  "affected_source": "actual_fixture.forge",
+  "defect": {
+    "producer_operation": "sl_compose",
+    "incorrect_extractor": "gc_affine_submatrix",
+    "input_layout": "contiguous block-lower order: carrier rows 0..7, kernel rows 8..11",
+    "extractor_layout": "interleaved standard order: carrier rows 0..3 and 6..9, kernel rows 4..5 and 10..11",
+    "escaped_check": "The upper-right block was reconstructed as exact zero after extraction, so the zero-block assertion could not detect the mixed diagonal/lower data.",
+    "independent_detection": "The Phase-3 v6 consumer required an explicit layout-preserving handoff and found that the emitted moving-frame factor failed that contract."
+  },
+  "disposition": {
+    "scientific_claim": "No structured-transition pass remains from this package.",
+    "runtime_observation": "The historical runtime remains descriptive only and is not evidence for the connection.",
+    "required_repair": "Use dedicated contiguous 8+4 extraction and composition, attach explicit layout metadata, and reject an interleaved-extractor mutation before issuing a replacement certificate."
+  },
+  "does_not_affect": [
+    "The independently certified Phase-3A null-endpoint flux theorem.",
+    "The exact block-lower algebraic identity det([[C,0],[L,K]])=det(C)det(K).",
+    "The active v6 global-connection calculation, which detected the defect before accepting this package as provenance."
+  ]
+}
