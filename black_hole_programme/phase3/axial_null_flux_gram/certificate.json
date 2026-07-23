@@ -1,0 +1,404 @@
+{
+  "claim_flags": {
+    "Iminus_flux_Gram_certified": true,
+    "Iplus_flux_Gram_certified": true,
+    "action_current_pulled_back": true,
+    "endpoint_rank_radical_inertia_certified": true,
+    "global_connection_constructed": false,
+    "horizon_to_infinity_matching_constructed": false,
+    "scattering_channels_classified": false,
+    "stability_or_CPT_established": false,
+    "trace_limit_interchange_proved": true
+  },
+  "common_verdict": {
+    "frequency_walls": [],
+    "inertia_for_alpha_W_positive": [
+      1,
+      2,
+      0
+    ],
+    "quotient_dimension": 3,
+    "radical_dimension": 0,
+    "rank": 3,
+    "statement": "Both exact axial null-endpoint trace spaces carry a full-rank indefinite Lee-Wald flux Gram throughout the pilot interval."
+  },
+  "current_representative": {
+    "chart_pullback": {
+      "fixed_t_radial_derivative": "partial_r|t=partial_r|v+i*omega/B on the positive-frequency slot and partial_r|v-i*omega/B on the conjugate slot",
+      "metric": "h0_t=h0_v; h1_t=h1_EF+B^(-1)h0_v, B=1-2/r",
+      "reason": "The literal frozen current is written in the Schwarzschild t chart; omitting this differentiated reconstruction changes the endpoint form."
+    },
+    "counterterm_or_radial_improvement_added": false,
+    "presymplectic_current": "omega^a(h1,h2)=delta_1 theta^a(h2)-delta_2 theta^a(h1), including density variation",
+    "representative": "the frozen LinearizedTheta representative; closed-sphere angular exact forms integrate to zero, while unrestricted radial/corner improvements remain unquotiented",
+    "theta": "theta^a(h)=2 E^{abcd} nabla_d h_bc - 2 h_bc nabla_d E^{abcd}"
+  },
+  "declaration": {
+    "background": "Schwarzschild exterior with M=1",
+    "completion": "L2([1/2,3/4];C^3)",
+    "coupling_convention": "Matrices are divided by pi*alpha_W. Inertia (1,2) assumes alpha_W>0; reversing the action sign reverses the inertia.",
+    "frequency_interval": [
+      "1/2",
+      "3/4"
+    ],
+    "negative_frequencies": "fixed by a_{ell,-m}(-omega)=(-1)^m conjugate(a_{ell,m}(omega))",
+    "positive_frequency_core": "C_c^infinity((1/2,3/4);C^3)",
+    "sector": "axial ell=2",
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a horizon-to-infinity connection or scattering matrix",
+    "that any endpoint direction is populated by horizon-regular data",
+    "a positive energy, CPT metric, particle norm or unitarity theorem",
+    "pole exclusion, quasinormal stability or time-domain decay",
+    "polar parity, ell other than two or frequencies outside [1/2,3/4]",
+    "invariance under unrestricted radial/corner improvements of the current"
+  ],
+  "endpoint_grams": {
+    "Iminus": {
+      "basis": [
+        "XI0",
+        "XI1",
+        "EI0"
+      ],
+      "classification": {
+        "determinant": "14155776*omega**3/125",
+        "inertia_for_alpha_W_negative": {
+          "negative": 1,
+          "positive": 2,
+          "zero": 0
+        },
+        "inertia_for_alpha_W_positive": {
+          "negative": 2,
+          "positive": 1,
+          "zero": 0
+        },
+        "leading_principal_minors": [
+          "576/(5*omega)",
+          "-18432/5",
+          "14155776*omega**3/125"
+        ],
+        "radical_dimension": 0,
+        "rank": 3,
+        "sample_LDL_pivots": [
+          "1152/5",
+          "-16",
+          "-96/25"
+        ],
+        "sample_frequency": "1/2",
+        "sample_pivot_signs": [
+          "+",
+          "-",
+          "-"
+        ],
+        "whole_interval_argument": "The Hermitian entries are continuous on [1/2,3/4] and the exact determinant has no zero there. Eigenvalues cannot cross zero, so the exact sample inertia is constant on the connected interval."
+      },
+      "coordinate_radial_gram_over_pi_alpha_W": [
+        [
+          "-576/(5*omega)",
+          "-96*I/5",
+          "-384*omega/5"
+        ],
+        [
+          "96*I/5",
+          "144*omega/5",
+          "192*I*omega**2/5"
+        ],
+        [
+          "-384*omega/5",
+          "-192*I*omega**2/5",
+          "0"
+        ]
+      ],
+      "formal_laurent_audit": [
+        [
+          {
+            "first_power": 0,
+            "nonzero_coefficients": {
+              "0": "-576/(5*omega)"
+            }
+          },
+          {
+            "first_power": 0,
+            "nonzero_coefficients": {
+              "0": "-96*I/5"
+            }
+          },
+          {
+            "first_power": 0,
+            "nonzero_coefficients": {
+              "0": "-384*omega/5"
+            }
+          }
+        ],
+        [
+          {
+            "first_power": 0,
+            "nonzero_coefficients": {
+              "0": "96*I/5"
+            }
+          },
+          {
+            "first_power": 0,
+            "nonzero_coefficients": {
+              "0": "144*omega/5"
+            }
+          },
+          {
+            "first_power": 0,
+            "nonzero_coefficients": {
+              "0": "192*I*omega**2/5"
+            }
+          }
+        ],
+        [
+          {
+            "first_power": 0,
+            "nonzero_coefficients": {
+              "0": "-384*omega/5"
+            }
+          },
+          {
+            "first_power": 0,
+            "nonzero_coefficients": {
+              "0": "-192*I*omega**2/5"
+            }
+          },
+          {
+            "first_power": null,
+            "nonzero_coefficients": {}
+          }
+        ]
+      ],
+      "stokes_gram_over_pi_alpha_W": [
+        [
+          "576/(5*omega)",
+          "96*I/5",
+          "384*omega/5"
+        ],
+        [
+          "-96*I/5",
+          "-144*omega/5",
+          "-192*I*omega**2/5"
+        ],
+        [
+          "384*omega/5",
+          "192*I*omega**2/5",
+          "0"
+        ]
+      ]
+    },
+    "Iplus": {
+      "basis": [
+        "XI2",
+        "XI3",
+        "EI2"
+      ],
+      "classification": {
+        "determinant": "3538944*omega/125",
+        "inertia_for_alpha_W_negative": {
+          "negative": 1,
+          "positive": 2,
+          "zero": 0
+        },
+        "inertia_for_alpha_W_positive": {
+          "negative": 2,
+          "positive": 1,
+          "zero": 0
+        },
+        "leading_principal_minors": [
+          "-384*(512*omega**6 - 640*omega**4 + 278*omega**2 - 39)/(5*omega)",
+          "18432*(16*omega**2 - 5)/25",
+          "3538944*omega/125"
+        ],
+        "radical_dimension": 0,
+        "rank": 3,
+        "sample_LDL_pivots": [
+          "1152/5",
+          "-16/5",
+          "-96/5"
+        ],
+        "sample_frequency": "1/2",
+        "sample_pivot_signs": [
+          "+",
+          "-",
+          "-"
+        ],
+        "whole_interval_argument": "The Hermitian entries are continuous on [1/2,3/4] and the exact determinant has no zero there. Eigenvalues cannot cross zero, so the exact sample inertia is constant on the connected interval."
+      },
+      "coordinate_radial_gram_over_pi_alpha_W": [
+        [
+          "-384*(512*omega**6 - 640*omega**4 + 278*omega**2 - 39)/(5*omega)",
+          "192*I*(16*omega**2 - 5)*(4*omega**2 + I*omega - 2)/5",
+          "-384*I*(4*omega**2 + I*omega - 2)/5"
+        ],
+        [
+          "-192*I*(16*omega**2 - 5)*(4*omega**2 - I*omega - 2)/5",
+          "-48*omega*(16*omega**2 - 5)/5",
+          "96*omega/5"
+        ],
+        [
+          "384*I*(4*omega**2 - I*omega - 2)/5",
+          "96*omega/5",
+          "0"
+        ]
+      ],
+      "formal_laurent_audit": [
+        [
+          {
+            "first_power": 0,
+            "nonzero_coefficients": {
+              "0": "(-196608*omega**6 + 245760*omega**4 - 106752*omega**2 + 14976)/(5*omega)"
+            }
+          },
+          {
+            "first_power": 0,
+            "nonzero_coefficients": {
+              "0": "12288*I*omega**4/5 - 3072*omega**3/5 - 9984*I*omega**2/5 + 192*omega + 384*I"
+            }
+          },
+          {
+            "first_power": 0,
+            "nonzero_coefficients": {
+              "0": "-1536*I*omega**2/5 + 384*omega/5 + 768*I/5"
+            }
+          }
+        ],
+        [
+          {
+            "first_power": 0,
+            "nonzero_coefficients": {
+              "0": "-12288*I*omega**4/5 - 3072*omega**3/5 + 9984*I*omega**2/5 + 192*omega - 384*I"
+            }
+          },
+          {
+            "first_power": 0,
+            "nonzero_coefficients": {
+              "0": "-768*omega**3/5 + 48*omega"
+            }
+          },
+          {
+            "first_power": 0,
+            "nonzero_coefficients": {
+              "0": "96*omega/5"
+            }
+          }
+        ],
+        [
+          {
+            "first_power": 0,
+            "nonzero_coefficients": {
+              "0": "1536*I*omega**2/5 + 384*omega/5 - 768*I/5"
+            }
+          },
+          {
+            "first_power": 0,
+            "nonzero_coefficients": {
+              "0": "96*omega/5"
+            }
+          },
+          {
+            "first_power": null,
+            "nonzero_coefficients": {}
+          }
+        ]
+      ],
+      "stokes_gram_over_pi_alpha_W": [
+        [
+          "-384*(512*omega**6 - 640*omega**4 + 278*omega**2 - 39)/(5*omega)",
+          "192*I*(16*omega**2 - 5)*(4*omega**2 + I*omega - 2)/5",
+          "-384*I*(4*omega**2 + I*omega - 2)/5"
+        ],
+        [
+          "-192*I*(16*omega**2 - 5)*(4*omega**2 - I*omega - 2)/5",
+          "-48*omega*(16*omega**2 - 5)/5",
+          "96*omega/5"
+        ],
+        [
+          "384*I*(4*omega**2 - I*omega - 2)/5",
+          "96*omega/5",
+          "0"
+        ]
+      ]
+    },
+    "normalization": "G_endpoint = Stokes-oriented i*F^r/(pi*alpha_W)",
+    "orientation": {
+      "Iminus": "minus the increasing-r coordinate Gram",
+      "Iplus": "the increasing-r coordinate Gram",
+      "boundary_identity": "J_Hplus + J_Iplus - J_Hminus - J_Iminus = 0"
+    }
+  },
+  "imports": {
+    "boundary_flux_contract": {
+      "path": "black_hole_programme/phase3/boundary_flux_contract/certificate.json",
+      "sha256": "3ee56677677f66df7ccba021a1e40cfd3af7e548aa24f991b8bae8f4689550ef"
+    },
+    "complete_reconstruction": {
+      "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+      "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990"
+    },
+    "depth_five_heads": {
+      "path": "black_hole_programme/phase3/axial_wavepacket_null_trace/depth5-heads.json",
+      "sha256": "582b1f3a8427a3144788af2bc8cec01db7d9765dcfce128817886f57079af0ef"
+    },
+    "differentiated_envelope": {
+      "path": "black_hole_programme/phase3/axial_wavepacket_null_trace/differentiated-envelope.json",
+      "sha256": "23d21a81aa33d43ef8c02ec20dcdf106a8da60e9b602b589999e320dc52d36f8"
+    },
+    "formal_grams": {
+      "path": "black_hole_programme/phase3/axial_null_flux_gram/formal-grams.json",
+      "sha256": "f278101c7abc0ff513cea6e726ada9664e42e2f983227e9f737e06688f535b6a"
+    },
+    "literal_axial_current": {
+      "path": "black_hole_programme/certificates/BH2A_FLUX_MATRIX.json",
+      "sha256": "95ca6daeabb16bf93faa1bb721e3464fc5363899a344f0281d126f9a14204732"
+    },
+    "wavepacket_traces": {
+      "path": "black_hole_programme/phase3/axial_wavepacket_null_trace/certificate.json",
+      "sha256": "e2df2e47d85530f8984ee6ddf8f38313f35862d43e241e07e834ff02a9633670"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1",
+  "result_token": "EXACT_AXIAL_WAVEPACKET_ENDPOINT_GRAMS_FULL_RANK_INDEFINITE",
+  "schema": "phase3-black-hole-axial-null-flux-gram-v1",
+  "trace_limit_theorem": {
+    "completion": "The rational Gram entries are bounded on [1/2,3/4], so the pairing on the smooth compactly supported core extends uniquely and continuously to the L2 trace space.",
+    "exact_remainder_input": {
+      "decay_rule": "d_omega^k correction = O(r^(-(p-k))) up to logarithms",
+      "minimum_cross_rate_decay_p": 5,
+      "omega_derivatives": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "finite_radius_pairing": "For the unitary Fourier convention, time integration and Plancherel give integral a(omega)^dagger H_R(omega)b(omega)domega.",
+    "formal_current_audit": {
+      "bilinear_error": "Every formal/exact cross term is O(r^-2) and every remainder/remainder term is O(r^-8), up to harmless logarithms.",
+      "coefficient_radial_degree_range": [
+        -5,
+        0
+      ],
+      "current_radial_coefficient_growth": "at most r^0",
+      "first_omitted_metric_order": "O(r^-4), uniformly on the pilot interval",
+      "fixed_t_radial_order": 3,
+      "formal_Laurent_result": "Every one of the nine entries at each endpoint has no negative z=1/r power; its z^0 coefficient is the printed Gram.",
+      "maximum_metric_head_growth": "r^2"
+    },
+    "interchange": "Uniform Volterra remainder bounds and the displayed bilinear error give dominated convergence on the compact frequency interval. Cross-rate oscillatory products have L1 spectral amplitudes and vanish by the Riemann-Lebesgue lemma.",
+    "status": "PASS"
+  },
+  "verification": {
+    "deep_literal_current_replay": "python3 -m black_hole_programme.phase3.axial_null_flux_gram.formal_gram --check --jobs 4",
+    "mutations": "python3 -m black_hole_programme.phase3.axial_null_flux_gram.mutations",
+    "producer": "python3 -m black_hole_programme.phase3.axial_null_flux_gram.produce --check",
+    "tests": "python3 -m unittest black_hole_programme.phase3.axial_null_flux_gram.tests.test_null_flux_gram",
+    "verifier": "python3 -m black_hole_programme.phase3.axial_null_flux_gram.verify"
+  }
+}

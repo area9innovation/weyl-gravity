@@ -1,0 +1,92 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "On the exact axial ell=2 wave-packet traces at Iminus and Iplus with omega in [1/2,3/4], the action-derived Stokes-oriented Lee-Wald flux Grams are Hermitian, rank three, radical-free and have inertia (1,2,0) for alpha_W>0. No horizon-to-infinity matching or scattering channel is constructed.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "symplectic": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
+          "result_id": "PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1",
+          "sha256": "6158a259fcf4f5888df58a3da8ffe8fa0de40d6ae992f1c132a0726218f95162"
+        }
+      ],
+      "id": "black_hole.schwarzschild.phase3.axial_null_endpoint_flux_grams",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Exact three-dimensional positive-frequency L2 wave-packet traces are imported separately at Iminus and Iplus.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The frozen action-derived current pulls back to full-rank Stokes-oriented endpoint Grams with zero radical and inertia (1,2,0) throughout the pilot interval for alpha_W>0.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The exact Volterra corrections have cross-rate decay p>=5 and uniform omega derivatives through order three, closing the current trace/limit interchange.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No nonlinear source is evaluated.",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "No global retarded or horizon-to-infinity scattering map is constructed.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No nonlinear correction is evaluated.",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "No compact second-order Taub map enters this endpoint audit.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "Schwarzschild exterior, M=1",
+        "boundaries": "separate exact Iminus and Iplus endpoint wave-packet flux spaces; no global matching",
+        "carrier": "repaired six-state axial Bach reconstruction",
+        "charge_sector": "small gauge quotient inherited from the frozen reconstruction",
+        "degree": 1,
+        "ell": 2,
+        "k": "compact positive-frequency support in (1/2,3/4)",
+        "m": "negative-frequency harmonic fixed by real-field involution",
+        "omega": "L2([1/2,3/4];C^3), with C_c^infinity core",
+        "parity": "axial",
+        "theory": "strict linearized four-dimensional pure Weyl C^2 gravity"
+      }
+    }
+  ],
+  "generated_by": "black_hole_programme/phase3/axial_null_flux_gram/produce.py",
+  "generated_by_sha256": "b047ab977fb5afc7e46390778248fd582881ebf78ec8495c917462ee56d58089",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "black_hole",
+  "verification_commands": [
+    "python3 -m black_hole_programme.phase3.axial_null_flux_gram.produce --check",
+    "python3 -m black_hole_programme.phase3.axial_null_flux_gram.verify",
+    "python3 residual_atlas/validate_fragment.py residual_atlas/phase3-black-hole-axial-null-flux-gram-fragment-v1.json"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase3-black-hole-axial-null-flux-gram-v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "current_representative",
+    "trace_limit_theorem",
+    "endpoint_grams",
+    "common_verdict",
+    "claim_flags",
+    "does_not_establish",
+    "imports",
+    "verification"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-black-hole-axial-null-flux-gram-v1"
+    },
+    "result_id": {
+      "const": "PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1"
+    },
+    "result_token": {
+      "const": "EXACT_AXIAL_WAVEPACKET_ENDPOINT_GRAMS_FULL_RANK_INDEFINITE"
+    },
+    "common_verdict": {
+      "type": "object",
+      "properties": {
+        "rank": {"const": 3},
+        "radical_dimension": {"const": 0},
+        "quotient_dimension": {"const": 3},
+        "inertia_for_alpha_W_positive": {
+          "const": [1, 2, 0]
+        },
+        "frequency_walls": {
+          "const": []
+        }
+      },
+      "required": [
+        "rank",
+        "radical_dimension",
+        "quotient_dimension",
+        "inertia_for_alpha_W_positive",
+        "frequency_walls"
+      ]
+    },
+    "claim_flags": {
+      "type": "object",
+      "properties": {
+        "action_current_pulled_back": {"const": true},
+        "trace_limit_interchange_proved": {"const": true},
+        "Iminus_flux_Gram_certified": {"const": true},
+        "Iplus_flux_Gram_certified": {"const": true},
+        "endpoint_rank_radical_inertia_certified": {"const": true},
+        "global_connection_constructed": {"const": false},
+        "horizon_to_infinity_matching_constructed": {"const": false},
+        "scattering_channels_classified": {"const": false},
+        "stability_or_CPT_established": {"const": false}
+      },
+      "required": [
+        "action_current_pulled_back",
+        "trace_limit_interchange_proved",
+        "Iminus_flux_Gram_certified",
+        "Iplus_flux_Gram_certified",
+        "endpoint_rank_radical_inertia_certified",
+        "global_connection_constructed",
+        "horizon_to_infinity_matching_constructed",
+        "scattering_channels_classified",
+        "stability_or_CPT_established"
+      ]
+    }
+  }
+}

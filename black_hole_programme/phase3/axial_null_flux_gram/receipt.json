@@ -1,0 +1,94 @@
+{
+  "schema": "phase3-black-hole-axial-null-flux-gram-receipt-v1",
+  "generated_at_utc": "2026-07-23T04:15:48Z",
+  "environment": {
+    "python": "3.12.13",
+    "sympy": "1.14.0",
+    "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.43"
+  },
+  "science_forge": {
+    "work_item": "phase3-black-hole-axial-null-flux-gram",
+    "stable_agent_id": "phase3-axial-wavepacket-1",
+    "intent_base_commit": "0c3cfc9066ba",
+    "pre_close_head": "23e72b2e8e085dea20038a35580d0ea92ab9339c"
+  },
+  "artifacts": {
+    "certificate.json": "6158a259fcf4f5888df58a3da8ffe8fa0de40d6ae992f1c132a0726218f95162",
+    "formal-grams.json": "f278101c7abc0ff513cea6e726ada9664e42e2f983227e9f737e06688f535b6a",
+    "schema.json": "0fcad54450347948295064287134aeaf98495c752ea824ad9ef69a773dc5d146",
+    "verify.py": "6850f8473acfb2adb8640337da16b16dc739bd4ee632ddee23cb3d4c45b1ca1c",
+    "mutations.py": "58dd6cda8aa8327f97967befbe7d2724fa7a12e93e391e7fc2c2804207262e58",
+    "report": "3ddf3bcc326b1d35821d4176440f5320391ea6059fe712b11ad70076ff7f955e",
+    "atlas_fragment": "e24799dac989f714231c05deff18c16d294f6b3613e438909c2a7d7f38600962"
+  },
+  "tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_null_flux_gram/*.py black_hole_programme/phase3/axial_null_flux_gram/tests/*.py",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m black_hole_programme.phase3.axial_null_flux_gram.produce --check",
+      "elapsed_seconds": 2.3,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m black_hole_programme.phase3.axial_null_flux_gram.verify",
+      "elapsed_seconds": 2.5,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m black_hole_programme.phase3.axial_null_flux_gram.mutations",
+      "status": "PASS",
+      "mutations_rejected": 7
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_null_flux_gram.tests.test_null_flux_gram",
+      "elapsed_seconds": 2.5,
+      "status": "PASS"
+    },
+    {
+      "tier": 2,
+      "command": "python3 -m black_hole_programme.phase3.axial_null_flux_gram.verify --deep",
+      "elapsed_seconds": 102.6,
+      "status": "PASS",
+      "note": "Independently replayed the literal-current XI0 self-flux and Laurent sentinel."
+    },
+    {
+      "tier": 2,
+      "command": "python3 -m black_hole_programme.phase3.axial_null_flux_gram.formal_gram --jobs 4",
+      "elapsed_seconds": 517.0,
+      "status": "PASS",
+      "note": "Produced all twelve exact upper-triangle endpoint-current pullbacks."
+    },
+    {
+      "tier": 1,
+      "command": "python3 residual_atlas/validate_fragment.py residual_atlas/phase3-black-hole-axial-null-flux-gram-fragment-v1.json",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "Draft202012Validator(schema).validate(certificate)",
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "git diff --check -- <declared changed paths>",
+      "status": "PASS"
+    }
+  ],
+  "higher_tiers_not_run": {
+    "tier_3_full_repository": {
+      "status": "NOT_RUN",
+      "reason": "This scoped endpoint theorem changes no shared operator or schema and is not a repository release freeze."
+    }
+  },
+  "result_boundary": {
+    "establishes": "Exact full-rank indefinite axial null-endpoint Lee-Wald wave-packet Grams on the declared pilot interval.",
+    "does_not_establish": "Global matching, scattering, stability, CPT positivity, particles, or unitarity."
+  }
+}
