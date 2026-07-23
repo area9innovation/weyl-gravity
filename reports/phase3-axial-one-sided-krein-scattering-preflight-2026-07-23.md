@@ -145,3 +145,7 @@ Machine result:
 Scoped producer, independent verifier, and six mutation tests pass.  Tier 2
 was limited to content hashes and the exact horizon recurrence audit; Tier 3
 was not run because no lifecycle state or paper theorem was promoted.
+
+EVIDENCE: black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json
+MISSING-DEP: typed full outgoing Tplus matrix, same-frame normalization, and orientation-correct global Stokes defect on the populated channels
+CLOSE-OUT: SHORTFALL — the typed conditional Krein theorem and all-positive-frequency horizon algebra pass, but the physical one-sided scattering identity remains unactivated.
