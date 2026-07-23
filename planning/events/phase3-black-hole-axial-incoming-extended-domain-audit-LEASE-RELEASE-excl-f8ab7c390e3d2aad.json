@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase3-black-hole-axial-incoming-extended-domain-audit-LEASE-RELEASE-excl-f8ab7c390e3d2aad",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/phase3-black-hole-axial-incoming-extended-domain-audit-LEASE-RELEASE-excl-f8ab7c390e3d2aad.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "phase3-analytic-connection", "base_revision": "science-forge-ir-v0", "when": "2026-07-23T15:38:08Z", "seq": 2, "predecessor": "sf:program/event/phase3-black-hole-axial-incoming-extended-domain-audit-LEASE-ACQUIRE-excl-51af5138024b3dd9", "payload": {"target": "sf:program/work/phase3-black-hole-axial-incoming-extended-domain-audit", "agent": "phase3-analytic-connection", "lease_type": "exclusive", "action": "RELEASE", "acquired": "2026-07-23T15:38:08Z", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/phase3-black-hole-axial-incoming-extended-domain-audit"}]
+}
