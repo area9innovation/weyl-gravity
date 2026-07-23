@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import struct
 import unittest
 from fractions import Fraction
@@ -19,6 +20,7 @@ from black_hole_programme.phase3.axial_global_finite_flux_channel_classification
     matrix_multiply,
     matrix_negate,
     require_hermitian_enclosure,
+    validate_channel_handoff_algebra,
 )
 from black_hole_programme.phase3.axial_global_finite_flux_channel_classification.classifier import (
     classify_exact_cell,
@@ -75,6 +77,96 @@ def affine_diagonal(values: list[dict]) -> list:
         [values[i] if i == j else zero for j in range(len(values))]
         for i in range(len(values))
     ]
+
+
+def constant_complex_matrix(values: list[list[int | complex]]) -> list:
+    return [
+        [
+            complex_affine(
+                Fraction(value.real) if isinstance(value, complex) else value,
+                Fraction(value.imag) if isinstance(value, complex) else 0,
+            )
+            for value in row
+        ]
+        for row in values
+    ]
+
+
+def synthetic_subdivided_handoff() -> dict:
+    identity = constant_complex_matrix(
+        [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+    )
+    twice_identity = constant_complex_matrix(
+        [[2, 0, 0], [0, 2, 0], [0, 0, 2]]
+    )
+    zero = constant_complex_matrix(
+        [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+    )
+    connection = constant_complex_matrix(
+        [
+            [1, 0, 0],
+            [0, 1, 0],
+            [1, 0, 0],
+            [0, 1, 0],
+            [0, 0, 1],
+            [0, 0, 1],
+        ]
+    )
+    witness = "action-current conservation on the synthetic exact cell"
+    payload = {
+        "connection": {
+            "complex_6_by_3": connection,
+            "Cminus_3_by_3": identity,
+            "Cplus_3_by_3": identity,
+        },
+        "endpoint_forms": {
+            "Gminus": twice_identity,
+            "Gplus": identity,
+            "GHplus_outward": identity,
+            "gminus_pullback": twice_identity,
+            "gplus_pullback": identity,
+            "conservation": {
+                "defect": zero,
+                "structural_identity_witness": witness,
+                "witness_sha256": hashlib.sha256(witness.encode()).hexdigest(),
+            },
+        },
+        "classification_witnesses": {
+            "inertia": {
+                name: {"positive": 3, "negative": 0, "zero": 0}
+                for name in ("GHplus", "gminus", "gplus")
+            }
+        },
+    }
+    return {
+        "schema": "phase3-axial-global-channel-handoff-v1",
+        "status": "CERTIFIED",
+        "parent_cell": {
+            "ell": 2,
+            "mass_normalization": "M=1",
+            "omega_parameter": "M*omega",
+            "omega_interval": ["1/2", "129/256"],
+            "center": "257/512",
+            "radius": "1/512",
+        },
+        "cells": [
+            {
+                "cell_id": "q0",
+                "omega_interval": ["1/2", "129/256"],
+                "center": "257/512",
+                "radius": "1/512",
+                "affine_generator": 7315,
+                "disposition": "CERTIFIED",
+                "validated_payload": payload,
+                "shortfall": None,
+            }
+        ],
+        "parent_classification": {
+            "all_cells_resolved": True,
+            "parent_rank_inertia_promoted": True,
+            "exceptional_or_unresolved_cells": [],
+        },
+    }
 
 
 def connection_from_traces(cminus: sp.Matrix, cplus: sp.Matrix) -> sp.Matrix:
@@ -197,7 +289,7 @@ class AffineCellAdapterTest(unittest.TestCase):
         self.assertEqual(product.center, 1)
         self.assertEqual(product.linear, 0)
         self.assertEqual(product.remainder.hi, 0)
-        self.assertEqual(product.remainder.lo, -Fraction(1, 512**2))
+        self.assertEqual(product.remainder.lo, -1)
 
     def test_affine_containment_allows_rebased_center_and_linear(self) -> None:
         inner = AffineScalar(
@@ -207,8 +299,8 @@ class AffineCellAdapterTest(unittest.TestCase):
         )
         outer = AffineScalar(
             Fraction(1001, 1000),
-            Fraction(3),
-            Interval(Fraction(-2, 100), Fraction(2, 100)),
+            Fraction(201, 100),
+            Interval(Fraction(-3, 100), Fraction(3, 100)),
         )
         self.assertTrue(outer.contains_affine(inner))
         narrow = AffineScalar(
@@ -223,7 +315,7 @@ class AffineCellAdapterTest(unittest.TestCase):
             affine_diagonal(
                 [
                     complex_affine(2, real_linear=1),
-                    complex_affine(-1, real_linear=1),
+                    complex_affine(-1, real_linear=Fraction(1, 4)),
                     complex_affine(3),
                 ]
             )
@@ -269,7 +361,7 @@ class AffineCellAdapterTest(unittest.TestCase):
         self.assertEqual(product[0][0].re.linear, 0)
         self.assertEqual(
             product[0][0].re.remainder.lo,
-            -Fraction(1, 512**2),
+            -1,
         )
 
     def test_orientation_correct_matrix_defect(self) -> None:
@@ -283,6 +375,33 @@ class AffineCellAdapterTest(unittest.TestCase):
         )
         self.assertEqual(defect[0][0].re.value_interval(), Interval.point(0))
         self.assertEqual(defect[0][0].im.value_interval(), Interval.point(0))
+
+    def test_subdivided_handoff_is_independently_classified(self) -> None:
+        result = validate_channel_handoff_algebra(
+            synthetic_subdivided_handoff()
+        )
+        self.assertTrue(result["parent_promoted"])
+        self.assertEqual(result["unresolved_cells"], [])
+        self.assertEqual(
+            result["certified_cells"]["q0"]["inertia"]["gminus"].complex_inertia,
+            (3, 0, 0),
+        )
+
+    def test_wrong_generator_is_refused(self) -> None:
+        document = synthetic_subdivided_handoff()
+        document["cells"][0]["affine_generator"] = 7316
+        with self.assertRaisesRegex(ValueError, "generator"):
+            validate_channel_handoff_algebra(document)
+
+    def test_nonzero_conservation_defect_is_refused(self) -> None:
+        document = synthetic_subdivided_handoff()
+        document["cells"][0]["validated_payload"]["endpoint_forms"][
+            "GHplus_outward"
+        ] = constant_complex_matrix(
+            [[2, 0, 0], [0, 2, 0], [0, 0, 2]]
+        )
+        with self.assertRaisesRegex(ValueError, "conservation defect"):
+            validate_channel_handoff_algebra(document)
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 
 The global handoff represents every scalar as
 
-    center + linear * t + remainder,       |t| <= 1/512,
+    center + linear * e + remainder,       |e| <= 1,
 
 with exact rational center/linear coefficients and binary64 interval
 endpoints encoded by their bits.  This module independently checks the
@@ -14,6 +14,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from fractions import Fraction
+import hashlib
 import math
 import struct
 from typing import Iterable
@@ -23,7 +24,10 @@ import sympy as sp
 from .classifier import rational_symmetric_inertia
 
 
-PARAMETER_RADIUS = Fraction(1, 512)
+# Forge's IvAffineMat uses a normalized generator e in [-1,1].  The physical
+# frequency-cell radius is already absorbed into the serialized linear
+# coefficient; applying it a second time would unsoundly shrink every bound.
+PARAMETER_RADIUS = Fraction(1)
 
 
 def _fraction(value: str) -> Fraction:
@@ -270,7 +274,13 @@ def pullback(connection: AffineMatrix, gram: AffineMatrix) -> AffineMatrix:
 
 
 def require_hermitian_enclosure(matrix: AffineMatrix, name: str) -> None:
-    """Require exact Hermitian affine coefficients and compatible remainders."""
+    """Require a conjugation-compatible enclosure of a Hermitian family.
+
+    Interval boxes cannot themselves encode the dependency equating
+    ``A[j,i]`` with ``conj(A[i,j])``.  This check therefore validates a
+    symmetric enclosure; structural Hermiticity must still come from the
+    action-current/pullback construction pinned by provenance.
+    """
     rows, cols = matrix_shape(matrix)
     if rows != cols:
         raise ValueError(f"{name} is not square")
@@ -416,11 +426,10 @@ def select_rows(matrix: AffineMatrix, rows: Iterable[int]) -> AffineMatrix:
     return [matrix[i] for i in rows]
 
 
-def validate_channel_handoff_algebra(document: dict) -> dict:
-    """Independently validate the algebra needed by the channel classifier."""
-    connection = matrix_from_json(document["connection"]["complex_6_by_3"])
-    cminus = matrix_from_json(document["connection"]["Cminus_3_by_3"])
-    cplus = matrix_from_json(document["connection"]["Cplus_3_by_3"])
+def _validate_payload_algebra(payload: dict) -> dict:
+    connection = matrix_from_json(payload["connection"]["complex_6_by_3"])
+    cminus = matrix_from_json(payload["connection"]["Cminus_3_by_3"])
+    cplus = matrix_from_json(payload["connection"]["Cplus_3_by_3"])
     if not matrix_contains(cminus, select_rows(connection, (0, 1, 4))):
         raise ValueError("Cminus does not contain the frozen connection projection")
     if not matrix_contains(cplus, select_rows(connection, (2, 3, 5))):
@@ -430,7 +439,7 @@ def validate_channel_handoff_algebra(document: dict) -> dict:
     if not determinant_excludes_zero(cplus):
         raise ValueError("Cplus rank three is not independently certified")
 
-    forms = document["endpoint_forms"]
+    forms = payload["endpoint_forms"]
     gminus = matrix_from_json(forms["Gminus"])
     gplus = matrix_from_json(forms["Gplus"])
     require_hermitian_enclosure(gminus, "Gminus")
@@ -465,7 +474,7 @@ def validate_channel_handoff_algebra(document: dict) -> dict:
         "gplus": certify_whole_cell_inertia(pulled_plus),
         "GHplus": certify_whole_cell_inertia(ghplus),
     }
-    declared = document["classification_witnesses"]["inertia"]
+    declared = payload["classification_witnesses"]["inertia"]
     for name, witness in inertia.items():
         expected = (
             declared[name]["positive"],
@@ -484,4 +493,81 @@ def validate_channel_handoff_algebra(document: dict) -> dict:
         "inertia": inertia,
         "pullbacks_independently_enclosed": True,
         "conservation_enclosure_independently_checked": True,
+        "structural_hermiticity_required": True,
+    }
+
+
+def validate_channel_handoff_algebra(document: dict) -> dict:
+    """Validate every certified cell in the subdivided channel handoff.
+
+    The physical cell center/radius are checked as metadata.  Affine algebra
+    always uses Forge's normalized generator ``e in [-1,1]``; the physical
+    radius has already been absorbed into each serialized linear coefficient.
+    """
+    if document.get("schema") != "phase3-axial-global-channel-handoff-v1":
+        raise ValueError("unexpected channel handoff schema")
+    parent = document["parent_cell"]
+    if parent != {
+        "ell": 2,
+        "mass_normalization": "M=1",
+        "omega_parameter": "M*omega",
+        "omega_interval": ["1/2", "129/256"],
+        "center": "257/512",
+        "radius": "1/512",
+    }:
+        raise ValueError("unexpected parent frequency cell")
+
+    cursor = Fraction(parent["omega_interval"][0])
+    upper = Fraction(parent["omega_interval"][1])
+    results = {}
+    unresolved = []
+    for index, cell in enumerate(document["cells"]):
+        if cell["cell_id"] != f"q{index}":
+            raise ValueError("subcell ids are not ordered")
+        lo, hi = map(Fraction, cell["omega_interval"])
+        if lo != cursor or hi <= lo:
+            raise ValueError("subcell cover has a gap, overlap, or reversal")
+        if Fraction(cell["center"]) != (lo + hi) / 2:
+            raise ValueError("subcell center is inconsistent")
+        if Fraction(cell["radius"]) != (hi - lo) / 2:
+            raise ValueError("subcell radius is inconsistent")
+        if cell["affine_generator"] != 7315:
+            raise ValueError("subcell affine generator changed")
+        cursor = hi
+        if cell["disposition"] != "CERTIFIED":
+            unresolved.append(cell["cell_id"])
+            continue
+        payload = cell["validated_payload"]
+        if payload is None or cell["shortfall"] is not None:
+            raise ValueError("certified subcell has no clean payload")
+        witness = payload["endpoint_forms"]["conservation"][
+            "structural_identity_witness"
+        ]
+        expected_hash = hashlib.sha256(witness.encode("utf-8")).hexdigest()
+        if (
+            payload["endpoint_forms"]["conservation"]["witness_sha256"]
+            != expected_hash
+        ):
+            raise ValueError("structural current witness hash mismatch")
+        results[cell["cell_id"]] = _validate_payload_algebra(payload)
+    if cursor != upper:
+        raise ValueError("subcell cover does not reach the parent endpoint")
+
+    state = document["parent_classification"]
+    if state["exceptional_or_unresolved_cells"] != unresolved:
+        raise ValueError("parent unresolved-cell ledger mismatch")
+    all_resolved = not unresolved
+    if state["all_cells_resolved"] != all_resolved:
+        raise ValueError("parent resolved flag mismatch")
+    if state["parent_rank_inertia_promoted"] != all_resolved:
+        raise ValueError("parent classification promotion mismatch")
+    expected_status = "CERTIFIED" if all_resolved else "SCOPED_SHORTFALL"
+    if document["status"] != expected_status:
+        raise ValueError("root handoff status mismatch")
+    return {
+        "parent_cell": parent,
+        "normalized_affine_parameter": "e in [-1,1]",
+        "certified_cells": results,
+        "unresolved_cells": unresolved,
+        "parent_promoted": all_resolved,
     }
