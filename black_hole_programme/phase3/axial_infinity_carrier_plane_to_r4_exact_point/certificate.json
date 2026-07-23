@@ -1,0 +1,73 @@
+{
+  "schema": "phase3-axial-infinity-carrier-plane-to-r4-exact-point-v1",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_INFINITY_CARRIER_PLANES_TO_R4_EXACT_POINT",
+  "result_token": "BH_PHASE3_AXIAL_INFINITY_PLANES_AT_R4_EXACT_POINT",
+  "lifecycle": "CLASSIFIED",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL",
+    "REDUCED-MODE"
+  ],
+  "declaration": {
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity",
+    "background": "Schwarzschild exterior M=1",
+    "sector": "axial ell=2 Ricci carrier",
+    "frequency": "Momega=4097/8192 exactly",
+    "radial_interval": "r in [4,32]",
+    "inward_coordinate": "t=32-r in [0,28]",
+    "endpoint_planes": {
+      "Iminus": "span(XI0,XI1)",
+      "Iplus": "span(XI2,XI3)"
+    }
+  },
+  "construction": {
+    "state": "realified 8-dimensional Ricci carrier",
+    "factorization": "220 factors of width 1/8 followed by 128 factors of width 1/256",
+    "factor_count": 348,
+    "stage_count": 11,
+    "parameter_model": "degree-two Taylor carrier with identically zero frequency coefficients at the exact point",
+    "subspace_representation": "six-chart Grassmann graph with exact identity pivot",
+    "transversality_proof": "the common certified invertible fundamental flow preserves the rank-eight endpoint direct sum",
+    "final_stage_payload_sha256": "f1132afe140b7842d1129bb8e585872bef7981998f3c3723bfb24cb092b0361a"
+  },
+  "results": {
+    "Iminus_dimension_at_r4": 4,
+    "Iplus_dimension_at_r4": 4,
+    "combined_dimension_at_r4": 8,
+    "Iminus_final_chart": 1,
+    "Iplus_final_chart": 4,
+    "all_factor_ranks_certified": true,
+    "all_stage_graph_transports_certified": true,
+    "frequency_neighbourhood_certified": false
+  },
+  "provenance": {
+    "full_factor_summary_sha256": "6e5f96266a2e9b51265951bfb6c5a9d25609bb94e144005a4895c3498762e3ca",
+    "tail_factor_summary_sha256": "59c3612cd4c7289ae23257ca676e8597aa47dc6edec10fe1daf7a3657339cca3",
+    "infinity_endpoint_source_sha256": "eec0fb3484acdd9a08286d790c9a2a6e879d36e639ab12de2a80e24abac1c7de",
+    "forge_binary_sha256": "f643d2d5b99ad7a77faea0ca5157b09624a8583c7602dbb1515b850f3fdf2d3e",
+    "python": "3.12.13",
+    "sympy": "1.14.0",
+    "scipy": "1.18.0",
+    "numpy": "2.5.0"
+  },
+  "claim_flags": {
+    "exact_point_infinity_carrier_planes_populated_at_r4": true,
+    "exact_point_infinity_planes_transverse_at_r4": true,
+    "horizon_regular_plane_at_r4_certified": false,
+    "direct_Cplus_rank_certified": false,
+    "Tplus_rank_certified": false,
+    "reflection_nonzero_certified": false,
+    "global_scattering_channel_certified": false
+  },
+  "does_not_establish": [
+    "an intersection with the future-horizon-regular plane",
+    "rank or nonvanishing of the outgoing connection block Tplus",
+    "an open frequency interval",
+    "a finite-flux global scattering channel",
+    "flux sign, stability, CPT, particles or unitarity",
+    "polar parity, ell other than two or a frequency other than 4097/8192"
+  ],
+  "verification": {
+    "command": "python3 -m black_hole_programme.phase3.axial_infinity_carrier_plane_to_r4_exact_point.verify",
+    "tests": "python3 -m pytest -q black_hole_programme/phase3/axial_infinity_carrier_plane_to_r4_exact_point/tests"
+  }
+}

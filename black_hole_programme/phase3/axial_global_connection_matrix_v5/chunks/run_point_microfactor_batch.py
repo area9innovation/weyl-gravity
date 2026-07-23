@@ -108,13 +108,36 @@ def verify_point_source(source: str) -> bool:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--start", type=int, default=0)
+    parser.add_argument("--end", type=int, default=MICROFACTOR_COUNT)
     parser.add_argument("--workers", type=int, default=8)
+    parser.add_argument(
+        "--width-limit",
+        type=float,
+        default=WIDTH_LIMIT,
+        help=(
+            "finite whole-factor guard; carrier-only consumers separately "
+            "record the much smaller carrier-block width"
+        ),
+    )
     parser.add_argument("--run-timeout", type=float, default=900.0)
     parser.add_argument("--scratch", type=Path, required=True)
     parser.add_argument("--summary", type=Path, required=True)
+    parser.add_argument(
+        "--resume-summary",
+        type=Path,
+        help=(
+            "merge previously passing traces from this schema; traces in the "
+            "requested range are always regenerated"
+        ),
+    )
     args = parser.parse_args()
+    if not 0 <= args.start < args.end <= MICROFACTOR_COUNT:
+        raise SystemExit("expected 0 <= start < end <= 224")
     if not 1 <= args.workers <= 8:
         raise SystemExit("workers must lie in [1,8]")
+    if not 0.0 < args.width_limit < float("inf"):
+        raise SystemExit("width limit must be finite and positive")
 
     sources = args.scratch / "sources"
     binaries = args.scratch / "bin"
@@ -125,7 +148,7 @@ def main() -> int:
     context = build_point_context()
     jobs, source_receipts = [], []
     started = time.perf_counter()
-    for micro in range(MICROFACTOR_COUNT):
+    for micro in range(args.start, args.end):
         trace = point_trace_id(micro)
         text, metadata = render_point_factor(micro, context)
         source = sources / f"point_micro_{micro:03d}.forge"
@@ -134,7 +157,7 @@ def main() -> int:
         source.write_text(text)
         digest = hashlib.sha256(text.encode()).hexdigest()
         jobs.append((
-            trace, source, binary, log, digest, WIDTH_LIMIT,
+            trace, source, binary, log, digest, args.width_limit,
             args.run_timeout,
         ))
         source_receipts.append({
@@ -169,7 +192,31 @@ def main() -> int:
             future_job[1].unlink(missing_ok=True)
             future_job[2].unlink(missing_ok=True)
 
+    if args.resume_summary:
+        prior = json.loads(args.resume_summary.read_text())
+        if prior.get("schema") != "phase3-axial-exact-point-microfactor-batch-v1":
+            raise SystemExit("REFUSED: incompatible resume summary")
+        result_by_trace = {
+            item["micro"]: item for item in prior.get("results", [])
+            if item.get("status") == "PASS"
+            and not (
+                point_trace_id(args.start)
+                <= int(item["micro"])
+                < point_trace_id(args.end)
+            )
+        }
+        result_by_trace.update({item["micro"]: item for item in results})
+        results = list(result_by_trace.values())
+        source_by_trace = {
+            item["trace_id"]: item for item in prior.get("sources", [])
+        }
+        source_by_trace.update(
+            {item["trace_id"]: item for item in source_receipts}
+        )
+        source_receipts = list(source_by_trace.values())
+
     results.sort(key=lambda value: value["micro"])
+    source_receipts.sort(key=lambda value: value["trace_id"])
     failed = [item for item in results if item["status"] != "PASS"]
     summary = {
         "schema": "phase3-axial-exact-point-microfactor-batch-v1",
@@ -179,10 +226,11 @@ def main() -> int:
             "radius": "0/1",
         },
         "factor_range": [0, MICROFACTOR_COUNT],
+        "regenerated_range": [args.start, args.end],
         "expected_factor_count": MICROFACTOR_COUNT,
         "completed_factor_count": len(results),
         "workers": args.workers,
-        "width_limit": WIDTH_LIMIT,
+        "width_limit": args.width_limit,
         "run_timeout": args.run_timeout,
         "elapsed_seconds": time.perf_counter() - started,
         "all_passed": not failed and len(results) == MICROFACTOR_COUNT,

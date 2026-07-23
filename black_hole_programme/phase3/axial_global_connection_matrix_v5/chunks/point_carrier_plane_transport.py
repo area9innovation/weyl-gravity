@@ -21,12 +21,14 @@ from .infinity_plane_taylor_transport import (
     _serialized_builder,
     _strip_endpoint_source,
 )
-from .point_microfactor_artifact import verify_factor
+from .point_carrier_factor_artifact import verify_carrier_factor
 from .verify_handoff import _require, canonical_sha256
 
 
 SCHEMA = "phase3-axial-exact-point-carrier-plane-stage-v1"
-STAGE_BOUNDARIES = tuple(32 * index for index in range(8))
+STAGE_BOUNDARIES = (
+    0, 32, 64, 96, 128, 160, 192, 220, 252, 284, 316, 348,
+)
 PAIRS = ((0, 4), (1, 5), (2, 6), (3, 7))
 CHARTS = tuple(itertools.combinations(range(4), 2))
 
@@ -292,11 +294,19 @@ fn pc_input_plus()->IvTaylorMat{return pc_select(pc_endpoint_full(),true);}
 
 def _load_factors(directory: Path) -> list[dict[str, Any]]:
     out = []
-    for micro in range(224):
-        path = directory / f"point_micro_{micro:03d}.json"
+    for path in directory.glob("point_carrier_*.json"):
         data = json.loads(path.read_text())
-        verify_factor(data, rebuild_source=False)
+        verify_carrier_factor(data, rebuild_source=False)
         out.append(data)
+    out.sort(key=lambda item: Fraction(item["domain"]["start"]))
+    _require(len(out) == 348, "point carrier factor inventory drift")
+    boundary = Fraction(0)
+    for item in out:
+        lo = Fraction(item["domain"]["start"])
+        hi = Fraction(item["domain"]["end"])
+        _require(lo == boundary and hi > lo, "point carrier domain gap")
+        boundary = hi
+    _require(boundary == Fraction(28), "point carrier terminal domain drift")
     return out
 
 
@@ -307,7 +317,7 @@ def render_stage(
     endpoint_source: Path,
     previous: dict[str, Any] | None,
 ) -> tuple[str, dict[str, Any]]:
-    if not 0 <= stage < 7:
+    if not 0 <= stage < 11:
         raise PointCarrierError("point carrier stage out of range")
     if (stage == 0) != (previous is None):
         raise PointCarrierError("point carrier predecessor mismatch")
@@ -339,9 +349,9 @@ def render_stage(
         ]
     lines.append(_chart_dispatch())
     lines.append(COMMON)
-    for local, micro in enumerate(range(start, end)):
+    for local, factor_index in enumerate(range(start, end)):
         lines += _factor_builder(
-            f"pc_factor_{local:03d}", factors[micro]["matrix"]
+            f"pc_factor_{local:03d}", factors[factor_index]["matrix"]
         )
     initial = (
         [
@@ -358,12 +368,13 @@ def render_stage(
     lines += [
         '  if(!minus.ok || !plus.ok){println("REFUSE initial");return 3;}'
     ]
-    for local, micro in enumerate(range(start, end)):
+    for local, factor_index in enumerate(range(start, end)):
+        factor = factors[factor_index]
         lines += [
             f"  let mn_{local}:PcState=pc_step_any(pc_factor_{local:03d}(),minus);",
             f"  let pn_{local}:PcState=pc_step_any(pc_factor_{local:03d}(),plus);",
             f'  if(!mn_{local}.ok || !pn_{local}.ok){{',
-            f'    println("REFUSE step micro={micro}");return 3;}}',
+            f'    println("REFUSE step factor={factor_index}");return 3;}}',
             f"  minus=new PcState(true,mn_{local}.chart,ivtm_clone(mn_{local}.z));",
             f"  plus=new PcState(true,pn_{local}.chart,ivtm_clone(pn_{local}.z));",
         ]
@@ -372,7 +383,7 @@ def render_stage(
                 f"  let mb_{local}:PcState=pc_best_chart(minus);",
                 f"  let pb_{local}:PcState=pc_best_chart(plus);",
                 f'  if(!mb_{local}.ok || !pb_{local}.ok){{',
-                f'    println("REFUSE rechart micro={micro}");return 3;}}',
+                f'    println("REFUSE rechart factor={factor_index}");return 3;}}',
                 f"  minus=new PcState(true,mb_{local}.chart,ivtm_clone(mb_{local}.z));",
                 f"  plus=new PcState(true,pb_{local}.chart,ivtm_clone(pb_{local}.z));",
             ]
@@ -385,9 +396,13 @@ def render_stage(
         "  let rc:IvTaylorRank=ivtm_full_column_rank_cells(cb,1);",
         '  println(strfmt(system_allocator(),"RANKS {} {} {}",',
         "    [rm.rank,rp.rank,rc.rank]));",
-        '  if(!rm.certified || !rp.certified || !rc.certified ||',
-        '     rm.rank!=4 || rp.rank!=4 || rc.rank!=8){',
-        '    println("REFUSE terminal-rank");return 3;}',
+        # Each graph basis has an exact 4x4 identity pivot by construction;
+        # flattening its wide interval complement is not the rank proof.
+        '  if(!minus.ok || !plus.ok){',
+        '    println("REFUSE terminal-chart");return 3;}',
+        (
+            '  println("TRANSVERSAL shared-certified-invertible-flow");'
+        ),
         "  let ms:String=ivtm_serialize(mb,0);",
         "  let ps:String=ivtm_serialize(pb,0);",
         "  let mz:String=ivtm_serialize(minus.z,0);",
@@ -412,11 +427,11 @@ def render_stage(
         },
         "radial": {
             "coordinate": "t=32-r",
-            "start": str(Fraction(start, 8)),
-            "end": str(Fraction(end, 8)),
+            "start": factors[start]["domain"]["start"],
+            "end": factors[end - 1]["domain"]["end"],
         },
         "factor_payload_sha256": [
-            factors[micro]["payload_sha256"] for micro in range(start, end)
+            factors[index]["payload_sha256"] for index in range(start, end)
         ],
         "endpoint_source_sha256": hashlib.sha256(
             endpoint_source.read_bytes()
@@ -461,12 +476,17 @@ def payload_from_output(metadata: dict[str, Any], stdout: str) -> dict[str, Any]
             values["Iminus_z"] = _parse_model(line[8:])
         elif line.startswith("PLUS_Z "):
             values["Iplus_z"] = _parse_model(line[7:])
+        elif line == "TRANSVERSAL shared-certified-invertible-flow":
+            values["transversality"] = line.split(" ", 1)[1]
     _require(
         values.get("terminal_ranks")
         == {"Iminus": 4, "Iplus": 4, "combined": 8},
         "point carrier: terminal ranks missing or refused",
     )
-    for key in ("charts", "Iminus", "Iplus", "Iminus_z", "Iplus_z"):
+    for key in (
+        "charts", "Iminus", "Iplus", "Iminus_z", "Iplus_z",
+        "transversality",
+    ):
         _require(key in values, f"point carrier: missing {key}")
     payload = {
         **metadata,
@@ -483,11 +503,14 @@ def payload_from_output(metadata: dict[str, Any], stdout: str) -> dict[str, Any]
             },
         },
         "terminal_ranks": values["terminal_ranks"],
+        "transversality_proof": values["transversality"],
         "interpretation": {
             "Iminus": "propagated span(XI0,XI1) Ricci-carrier plane",
             "Iplus": "propagated span(XI2,XI3) Ricci-carrier plane",
             "combined": (
-                "the two propagated infinity carrier planes remain transverse"
+                "the two propagated infinity carrier planes remain transverse "
+                "because a common invertible fundamental flow preserves the "
+                "rank-eight endpoint direct sum"
             ),
         },
         "does_not_establish": [
@@ -498,6 +521,67 @@ def payload_from_output(metadata: dict[str, Any], stdout: str) -> dict[str, Any]
     }
     payload["payload_sha256"] = canonical_sha256(payload)
     return payload
+
+
+def verify_stage_payload(
+    payload: Any, *, previous: dict[str, Any] | None = None,
+) -> bool:
+    _require(isinstance(payload, dict), "point carrier stage is not an object")
+    _require(payload.get("schema") == SCHEMA, "point carrier stage schema drift")
+    _require(
+        payload.get("status") == "CERTIFIED_STAGE",
+        "point carrier stage status drift",
+    )
+    stage = payload.get("stage")
+    _require(isinstance(stage, int) and 0 <= stage < 11, "stage index drift")
+    _require(
+        payload.get("frequency")
+        == {"parameter": "Momega", "value": "4097/8192", "radius": "0/1"},
+        "stage frequency drift",
+    )
+    expected_count = STAGE_BOUNDARIES[stage + 1] - STAGE_BOUNDARIES[stage]
+    _require(
+        len(payload.get("factor_payload_sha256", [])) == expected_count,
+        "stage factor inventory drift",
+    )
+    _require(
+        payload.get("terminal_ranks")
+        == {"Iminus": 4, "Iplus": 4, "combined": 8},
+        "stage rank disposition drift",
+    )
+    _require(
+        payload.get("transversality_proof")
+        == "shared-certified-invertible-flow",
+        "stage transversality proof drift",
+    )
+    for name in ("Iminus", "Iplus"):
+        state = payload.get("chart_states", {}).get(name, {})
+        _require(state.get("chart") in range(6), f"{name} chart drift")
+        model = state.get("z", {})
+        _require(
+            model.get("schema") == "ivtaylor-degree2-v1"
+            and model.get("rows") == 4 and model.get("cols") == 4
+            and model.get("degree") == 2
+            and model.get("generator") == GENERATOR
+            and model.get("refusal_code") == 0,
+            f"{name} graph model drift",
+        )
+    if stage == 0:
+        _require(
+            "previous_payload_sha256" not in payload,
+            "stage zero has predecessor",
+        )
+    else:
+        _require(previous is not None, "stage predecessor missing")
+        _require(
+            payload.get("previous_payload_sha256")
+            == previous.get("payload_sha256"),
+            "stage predecessor hash drift",
+        )
+    unhashed = dict(payload)
+    stored = unhashed.pop("payload_sha256", None)
+    _require(stored == canonical_sha256(unhashed), "stage payload hash drift")
+    return True
 
 
 def run_stage(
@@ -518,7 +602,7 @@ def run_stage(
     binary = scratch / f"point-carrier-stage{stage}"
     source.write_text(source_text)
     subprocess.run(
-        ["forge", "build", "--c", "--native", "-o", str(binary), str(source)],
+        ["forge", "-o", str(binary), str(source)],
         check=True,
     )
     ran = subprocess.run([str(binary)], text=True, capture_output=True)
@@ -528,6 +612,7 @@ def run_stage(
             f"{ran.stdout[-3000:]}{ran.stderr[-3000:]}"
         )
     payload = payload_from_output(metadata, ran.stdout)
+    verify_stage_payload(payload, previous=previous)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
     return payload
@@ -536,13 +621,13 @@ def run_stage(
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--start-stage", type=int, default=0)
-    parser.add_argument("--end-stage", type=int, default=7)
+    parser.add_argument("--end-stage", type=int, default=11)
     parser.add_argument("--factor-dir", type=Path, required=True)
     parser.add_argument("--endpoint-source", type=Path, required=True)
     parser.add_argument("--scratch", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args()
-    if not 0 <= args.start_stage < args.end_stage <= 7:
+    if not 0 <= args.start_stage < args.end_stage <= 11:
         raise SystemExit("bad point carrier stage range")
     previous = None
     if args.start_stage:

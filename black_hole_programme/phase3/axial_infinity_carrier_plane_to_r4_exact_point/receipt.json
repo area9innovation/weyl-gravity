@@ -1,0 +1,54 @@
+{
+  "schema": "phase3-axial-infinity-carrier-plane-to-r4-exact-point-receipt-v1",
+  "result_token": "BH_PHASE3_AXIAL_INFINITY_PLANES_AT_R4_EXACT_POINT",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL",
+    "REDUCED-MODE"
+  ],
+  "producer_commands": [
+    "python3 -m black_hole_programme.phase3.axial_global_connection_matrix_v5.chunks.run_point_microfactor_batch --start 0 --end 224 --workers 8 --scratch <scratch> --summary <full-summary>",
+    "python3 -m black_hole_programme.phase3.axial_global_connection_matrix_v5.chunks.run_point_carrier_factor_batch --start 220 --end 224 --split32 --workers 8 --scratch <scratch> --summary <tail-summary>",
+    "python3 -m black_hole_programme.phase3.axial_global_connection_matrix_v5.chunks.point_carrier_factor_artifact --full-summary <full-summary> --tail-summary <tail-summary> --output-dir <factor-dir>",
+    "python3 -m black_hole_programme.phase3.axial_global_connection_matrix_v5.chunks.point_carrier_plane_transport --start-stage 0 --end-stage 11 --factor-dir <factor-dir> --endpoint-source <point-endpoint.forge> --scratch <scratch> --output-dir <stage-dir>"
+  ],
+  "verification_commands": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_infinity_carrier_plane_to_r4_exact_point.verify",
+      "status": "PASS",
+      "elapsed_seconds": 0.27
+    },
+    {
+      "command": "python3 -m pytest -q black_hole_programme/phase3/axial_infinity_carrier_plane_to_r4_exact_point/tests black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/tests/test_point_microfactor_artifact.py",
+      "status": "PASS",
+      "tests": 4,
+      "elapsed_seconds": 0.65
+    },
+    {
+      "command": "python3 -m pytest -q black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/tests/test_point_microfactor_artifact.py black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/tests/test_point_infinity_endpoint.py",
+      "status": "PASS",
+      "tests": 3,
+      "elapsed_seconds": 210.25
+    }
+  ],
+  "factor_disposition": {
+    "full_summary_sha256": "6e5f96266a2e9b51265951bfb6c5a9d25609bb94e144005a4895c3498762e3ca",
+    "tail_summary_sha256": "59c3612cd4c7289ae23257ca676e8597aa47dc6edec10fe1daf7a3657339cca3",
+    "full_factor_count": 220,
+    "tail_factor_count": 128,
+    "all_factor_ranks_certified": true,
+    "stage_count": 11,
+    "all_stages_passed": true
+  },
+  "test_tiers": {
+    "tier0": "PASS",
+    "tier1": "PASS",
+    "tier2": "not required; no shared mathematical input or promoted downstream theorem changed",
+    "tier3": "not run; this is an exact-point infrastructure classification, not a release or paper-theorem promotion"
+  },
+  "does_not_establish": [
+    "the future-horizon plane at r=4M",
+    "Cplus or Tplus rank",
+    "a global scattering channel",
+    "flux, stability, CPT or unitarity"
+  ]
+}
