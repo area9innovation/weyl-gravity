@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase3-black-hole-axial-global-connection-microfactor-v6-LEASE-REVOKE-excl-8c13df3f97270ec6",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease revoke",
+  "source": {"path": "tools/science-forge/program/events/phase3-black-hole-axial-global-connection-microfactor-v6-LEASE-REVOKE-excl-8c13df3f97270ec6.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "phase3-coordinator", "base_revision": "science-forge-ir-v0", "when": "2026-07-23T16:43:38Z", "seq": 2, "predecessor": "sf:program/event/phase3-black-hole-axial-global-connection-microfactor-v6-LEASE-ACQUIRE-excl-3b90d7b5eba9c0f3", "payload": {"target": "sf:program/work/phase3-black-hole-axial-global-connection-microfactor-v6", "agent": "phase3-axial-global-6", "lease_type": "exclusive", "action": "RELEASE", "acquired": "", "expires": "", "revoked_by": "phase3-coordinator", "on_behalf_of": "phase3-axial-global-6", "reason": "Producer has been idle for more than four hours with no live Forge process; preserve 182 emitted microfactors and three assembled child maps, then resume under coordinator-owned execution."}, "native": {"authored_by": "sfc work-revoke", "policy": "append-only (SPEC 4.5); a COORDINATOR-authored lease RELEASE (actor = coordinator, NOT the holder), freeing a stale/invalidated live lease with on-behalf-of + reason. The original ACQUIRE is untouched; NO implicit READY — the item's effective state is preserved (a BLOCKED/RETIRED item stays so)."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/phase3-black-hole-axial-global-connection-microfactor-v6"}]
+}

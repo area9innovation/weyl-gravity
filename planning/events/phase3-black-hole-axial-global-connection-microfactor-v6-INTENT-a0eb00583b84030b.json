@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase3-black-hole-axial-global-connection-microfactor-v6-INTENT-a0eb00583b84030b",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work intent",
+  "source": {"path": "tools/science-forge/program/events/phase3-black-hole-axial-global-connection-microfactor-v6-INTENT-a0eb00583b84030b.json", "span": null},
+  "body": {"event_kind": "WORK_INTENT", "actor": "phase3-coordinator", "base_revision": "science-forge-ir-v0", "when": "2026-07-23T21:10:40Z", "seq": 6, "predecessor": "sf:program/event/phase3-black-hole-axial-global-connection-microfactor-v6-INTENT-718383d1877ff820", "payload": {"target": "sf:program/work/phase3-black-hole-axial-global-connection-microfactor-v6", "agent": "phase3-coordinator", "lease": "exclusive", "base_commit": "a4736ce405c3372b63352bc93035e8e09d1037d2", "transaction_id": "a462ca602cb77f98", "allowlist_verdict": "within-allowlist", "intended_paths": ["reports/phase3-black-hole-axial-global-connection-microfactor-v6-2026-07-23.md"], "verify_commands": ["python3 -m unittest discover -v -s black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/tests -t .", "python3 -m black_hole_programme.phase3.axial_global_connection_matrix_v5.chunks.verify_global_cover_manifest --repo-root /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction --manifest black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_map_cover_manifest.json --receipt black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_map_cover_receipt.json"]}, "native": {"authored_by": "sfc work-intent", "policy": "append-only (SPEC 4.5); an uncommitted delivery manifest — NO current_commit, NO test-success. Superseded by a later intent; sealed by WORK_COMMITTED."}},
+  "edges": [{"rel": "INTENDS", "to": "sf:program/work/phase3-black-hole-axial-global-connection-microfactor-v6"}]
+}

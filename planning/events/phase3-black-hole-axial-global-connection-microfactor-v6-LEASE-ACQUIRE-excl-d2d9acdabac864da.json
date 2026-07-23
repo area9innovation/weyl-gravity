@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase3-black-hole-axial-global-connection-microfactor-v6-LEASE-ACQUIRE-excl-d2d9acdabac864da",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/phase3-black-hole-axial-global-connection-microfactor-v6-LEASE-ACQUIRE-excl-d2d9acdabac864da.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "phase3-coordinator", "base_revision": "science-forge-ir-v0", "when": "2026-07-23T16:43:38Z", "seq": 3, "predecessor": "sf:program/event/phase3-black-hole-axial-global-connection-microfactor-v6-LEASE-REVOKE-excl-8c13df3f97270ec6", "payload": {"target": "sf:program/work/phase3-black-hole-axial-global-connection-microfactor-v6", "agent": "phase3-coordinator", "lease_type": "exclusive", "action": "ACQUIRE", "acquired": "2026-07-23T16:43:38Z", "expires": "2026-07-24T00:43:40Z"}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/phase3-black-hole-axial-global-connection-microfactor-v6"}]
+}
