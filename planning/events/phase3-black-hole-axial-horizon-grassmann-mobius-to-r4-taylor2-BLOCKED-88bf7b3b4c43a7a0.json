@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase3-black-hole-axial-horizon-grassmann-mobius-to-r4-taylor2-BLOCKED-88bf7b3b4c43a7a0",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/phase3-black-hole-axial-horizon-grassmann-mobius-to-r4-taylor2-BLOCKED-88bf7b3b4c43a7a0.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "phase3-horizon-taylor2", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-23T16:18:03Z", "seq": 2, "predecessor": "sf:program/event/phase3-black-hole-axial-horizon-grassmann-mobius-to-r4-taylor2-ACTIVE-b47663f3998069c5", "payload": {"target": "sf:program/work/phase3-black-hole-axial-horizon-grassmann-mobius-to-r4-taylor2", "to_state": "BLOCKED", "note": "SHORTFALL (precondition not met): the q0 Taylor2 sentinel classified the first enclosure failure exactly; the independent horizon Gram passed, but the required horizon-to-r4 transport did not. — needs parameter-correlated validated Grassmann transport that preserves the separate amplitude rank beyond shell 2 and reaches the declared r=4 handoff", "evidence_basis": "black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/certificate.json", "missing_dependency": "parameter-correlated validated Grassmann transport that preserves the separate amplitude rank beyond shell 2 and reaches the declared r=4 handoff"}, "native": {"authored_by": "sfc close-out", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/phase3-black-hole-axial-horizon-grassmann-mobius-to-r4-taylor2"}]
+}
