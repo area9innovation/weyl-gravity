@@ -474,6 +474,13 @@ class AffineCellAdapterTest(unittest.TestCase):
         self.assertFalse(
             document["parent"]["full_scattering_matrix_constructed"]
         )
+        self.assertTrue(
+            document["parent"]["one_sided_J_isometry_constructed"]
+        )
+        self.assertEqual(
+            document["cells"][0]["one_sided_relation"]["input"],
+            "Iminus",
+        )
 
     def test_activated_certificate_refuses_scattering_promotion(self) -> None:
         document = build_classification(

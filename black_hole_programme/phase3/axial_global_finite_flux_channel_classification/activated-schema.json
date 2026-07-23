@@ -114,6 +114,36 @@
               },
               "affine_enclosure_independently_checked": {"const": true}
             }
+          },
+          "one_sided_relation": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "input",
+              "output",
+              "definition",
+              "input_gram",
+              "output_gram",
+              "J_isometry_identity",
+              "Cminus_inverse_whole_cell_certified",
+              "bounded_wavepacket_multiplier_certified",
+              "full_two_ended_scattering_matrix"
+            ],
+            "properties": {
+              "input": {"const": "Iminus"},
+              "output": {"const": "Hplus_direct_sum_Iplus"},
+              "definition": {"type": "object"},
+              "input_gram": {"const": "Gminus"},
+              "output_gram": {
+                "const": "GHplus_outward_direct_sum_Gplus"
+              },
+              "J_isometry_identity": {
+                "const": "S^dagger*(GHplus_outward direct_sum Gplus)*S=Gminus"
+              },
+              "Cminus_inverse_whole_cell_certified": {"const": true},
+              "bounded_wavepacket_multiplier_certified": {"const": true},
+              "full_two_ended_scattering_matrix": {"const": false}
+            }
           }
         }
       }

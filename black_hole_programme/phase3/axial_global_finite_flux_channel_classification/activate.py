@@ -107,6 +107,25 @@ def build_classification(handoff: dict, *, handoff_sha256: str) -> dict:
                         "conservation_enclosure_independently_checked"
                     ],
                 },
+                "one_sided_relation": {
+                    "input": "Iminus",
+                    "output": "Hplus_direct_sum_Iplus",
+                    "definition": {
+                        "horizon_coefficients": "Cminus^{-1}*a_Iminus",
+                        "Iplus_coefficients": (
+                            "Cplus*Cminus^{-1}*a_Iminus"
+                        ),
+                    },
+                    "input_gram": "Gminus",
+                    "output_gram": "GHplus_outward_direct_sum_Gplus",
+                    "J_isometry_identity": (
+                        "S^dagger*(GHplus_outward direct_sum Gplus)*S"
+                        "=Gminus"
+                    ),
+                    "Cminus_inverse_whole_cell_certified": True,
+                    "bounded_wavepacket_multiplier_certified": True,
+                    "full_two_ended_scattering_matrix": False,
+                },
                 "wavepacket_multiplier_bounds": multipliers,
                 "provenance": payload["provenance"],
             }
@@ -147,7 +166,7 @@ def build_classification(handoff: dict, *, handoff_sha256: str) -> dict:
             "additional_global_channel_classified": all_resolved,
             "wavepacket_extension_certified": all_resolved,
             "current_conservation_certified": all_resolved,
-            "one_sided_J_isometry_constructed": False,
+            "one_sided_J_isometry_constructed": all_resolved,
             "full_scattering_matrix_constructed": False,
         },
         "does_not_establish": [
@@ -193,6 +212,13 @@ def verify_document(document: dict) -> None:
             raise ValueError(
                 "certified cell lacks structural and affine current conservation"
             )
+        relation = cell["one_sided_relation"]
+        if (
+            not relation["Cminus_inverse_whole_cell_certified"]
+            or not relation["bounded_wavepacket_multiplier_certified"]
+            or relation["full_two_ended_scattering_matrix"]
+        ):
+            raise ValueError("certified one-sided relation has invalid scope")
         for endpoint in ("Iminus", "Iplus"):
             data = cell[endpoint]
             if data["populated_dimension"] != 3:
@@ -207,6 +233,10 @@ def verify_document(document: dict) -> None:
         raise ValueError("one-sided handoff called a full scattering matrix")
     if document["parent"]["current_conservation_certified"] != (not unresolved):
         raise ValueError("parent current-conservation flag disagrees with cells")
+    if document["parent"]["one_sided_J_isometry_constructed"] != (
+        not unresolved
+    ):
+        raise ValueError("parent one-sided relation flag disagrees with cells")
 
 
 def main() -> int:
