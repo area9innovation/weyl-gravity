@@ -154,3 +154,7 @@ The next steps are:
 
 No physical-ghost or scattering-channel statement is licensed before that
 populated endpoint pullback exists.
+
+CLOSE-OUT: DONE — the declared sixteen-cell radial microfactor cover and
+exact global-map assembly are complete; normalized H4, typed endpoint maps,
+and the Stokes join remain separate successor gates.
