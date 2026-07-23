@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase3-black-hole-axial-wavepacket-null-trace-BLOCKED-16eceab729642bb0",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/phase3-black-hole-axial-wavepacket-null-trace-BLOCKED-16eceab729642bb0.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "phase3-axial-wavepacket-1", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": null, "seq": 5, "predecessor": "sf:program/event/phase3-black-hole-axial-wavepacket-null-trace-ACTIVE-b85c2cd675f08bd4", "payload": {"target": "sf:program/work/phase3-black-hole-axial-wavepacket-null-trace", "to_state": "BLOCKED", "note": "SHORTFALL (precondition not met): exact three-dimensional axial wave-packet radiation — needs certify the asymptotic Lee--Wald current pullback, its radial", "evidence_basis": "`black_hole_programme/phase3/axial_wavepacket_null_trace/certificate.json`;", "missing_dependency": "certify the asymptotic Lee--Wald current pullback, its radial"}, "native": {"authored_by": "sfc close-out", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/phase3-black-hole-axial-wavepacket-null-trace"}]
+}
