@@ -41,6 +41,12 @@ def _run(source: Path, binary: Path, log: Path, timeout: float) -> dict:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--artifact-dir", type=Path, required=True)
+    parser.add_argument(
+        "--tail-factor-dir",
+        type=Path,
+        required=True,
+        help="Directory containing the emitted child tail factor artifacts.",
+    )
     parser.add_argument("--tail-join-dir", type=Path, required=True)
     parser.add_argument("--prefix", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
@@ -68,18 +74,32 @@ def main() -> int:
         source = args.scratch / f"global_q{child:02d}.forge"
         binary = args.scratch / f"global_q{child:02d}"
         log = args.scratch / f"global_q{child:02d}.log"
+        factors = composition_factors(prefix, tail, child)
         source.write_text(
-            render_join_source(composition_factors(prefix, tail, child))
+            render_join_source(factors, certify_join_rank=False)
         )
+        crosswalk_source = (
+            args.scratch / f"global_q{child:02d}_crosswalk_rank.forge"
+        )
+        crosswalk_binary = (
+            args.scratch / f"global_q{child:02d}_crosswalk_rank"
+        )
+        crosswalk_log = (
+            args.scratch / f"global_q{child:02d}_crosswalk_rank.log"
+        )
+        crosswalk_source.write_text(render_join_source([factors[1]]))
         sources[child] = source
-        jobs.append((child, source, binary, log))
+        jobs.append((
+            child, source, binary, log,
+            crosswalk_source, crosswalk_binary, crosswalk_log,
+        ))
     results = {}
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         futures = {
             pool.submit(
                 _run, source, binary, log, args.run_timeout
             ): child
-            for child, source, binary, log in jobs
+            for child, source, binary, log, _, _, _ in jobs
         }
         for future in as_completed(futures):
             child = futures[future]
@@ -96,6 +116,27 @@ def main() -> int:
         if result["status"] != "PASS":
             continue
         tail_path, tail = tails[child]
+        crosswalk_source = (
+            args.scratch / f"global_q{child:02d}_crosswalk_rank.forge"
+        )
+        crosswalk_binary = (
+            args.scratch / f"global_q{child:02d}_crosswalk_rank"
+        )
+        crosswalk_log = (
+            args.scratch / f"global_q{child:02d}_crosswalk_rank.log"
+        )
+        crosswalk_result = _run(
+            crosswalk_source, crosswalk_binary, crosswalk_log,
+            args.run_timeout,
+        )
+        if crosswalk_result["status"] != "PASS":
+            results[child] = {
+                "status": "REFUSED",
+                "stage": "crosswalk-rank-" + crosswalk_result.get(
+                    "stage", "unknown"
+                ),
+            }
+            continue
         payload = build_global(
             child=child,
             trace=Path(result["log"]).read_text(),
@@ -104,7 +145,10 @@ def main() -> int:
             tail=tail,
             tail_path=tail_path,
             source=sources[child],
-            artifact_dir=args.artifact_dir,
+            crosswalk_trace=crosswalk_log.read_text(),
+            crosswalk_source=crosswalk_source,
+            prefix_artifact_dir=args.artifact_dir,
+            tail_artifact_dir=args.tail_factor_dir,
             repo_root=args.repo_root,
             prefix_context=prefix_context,
             child_context=contexts[child],

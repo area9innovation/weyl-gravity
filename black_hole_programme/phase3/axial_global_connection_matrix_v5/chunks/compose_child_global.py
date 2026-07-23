@@ -132,22 +132,34 @@ def build_global(
     tail: dict,
     tail_path: Path,
     source: Path,
-    artifact_dir: Path,
+    crosswalk_trace: str,
+    crosswalk_source: Path,
+    prefix_artifact_dir: Path,
+    tail_artifact_dir: Path,
     repo_root: Path,
     prefix_context: dict,
     child_context: dict,
 ) -> dict[str, Any]:
     verify_prefix_join(
-        prefix, artifact_dir, repo_root, context=prefix_context
+        prefix, prefix_artifact_dir, repo_root, context=prefix_context
     )
     verify_tail_join(
-        tail, artifact_dir, repo_root,
+        tail, tail_artifact_dir, repo_root,
         context=child_context, prefix_context=prefix_context,
     )
     factors = composition_factors(prefix, tail, child)
-    expected_source = render_join_source(factors)
+    expected_source = render_join_source(factors, certify_join_rank=False)
     _require(source.read_text() == expected_source, "global map: source drift")
     block_matrix, widths = parse_join_trace(trace)
+    crosswalk_factor = factors[1]
+    expected_crosswalk_source = render_join_source([crosswalk_factor])
+    _require(
+        crosswalk_source.read_text() == expected_crosswalk_source,
+        "global map: crosswalk rank source drift",
+    )
+    crosswalk_rank_matrix, crosswalk_widths = parse_join_trace(
+        crosswalk_trace
+    )
     standard_matrix = permute_affine_block_to_standard(block_matrix)
     permutation = permutation_payload()
     payload = {
@@ -167,6 +179,11 @@ def build_global(
             "block_order_join_certified": True,
         },
         "block_order_map": block_matrix,
+        "crosswalk_rank_witness": {
+            "matrix": crosswalk_rank_matrix,
+            "rank": 12,
+            "block_max_width": crosswalk_widths,
+        },
         "block_to_standard_permutation": permutation,
         "standard_realified_map": standard_matrix,
         "projection_contract": {
@@ -187,16 +204,24 @@ def build_global(
                     repo_root.resolve()
                 ).as_posix(),
                 "sha256": _file_sha256(prefix_path),
+                "payload_sha256": canonical_sha256(prefix),
             },
             "tail": {
                 "path": tail_path.resolve().relative_to(
                     repo_root.resolve()
                 ).as_posix(),
                 "sha256": _file_sha256(tail_path),
+                "payload_sha256": canonical_sha256(tail),
             },
             "join_source_sha256": hashlib.sha256(
                 expected_source.encode()
             ).hexdigest(),
+            "crosswalk_rank_source_sha256": hashlib.sha256(
+                expected_crosswalk_source.encode()
+            ).hexdigest(),
+            "crosswalk_rank_output_sha256": canonical_sha256(
+                crosswalk_rank_matrix
+            ),
             "block_output_sha256": canonical_sha256(block_matrix),
             "standard_output_sha256": canonical_sha256(standard_matrix),
         },
@@ -204,19 +229,30 @@ def build_global(
             "ok": True,
             "factor_rank_certified": True,
             "factor_rank": 12,
+            "rank_argument": (
+                "certified prefix factors * certified boundary crosswalk * "
+                "certified tail factors"
+            ),
+            "crosswalk_rank_certified": True,
+            "crosswalk_rank": 12,
+            "crosswalk_block_max_width": crosswalk_widths,
+            "joined_interval_rank_not_required": True,
             "shared_generator_preserved": True,
             "block_max_width": widths,
             "exact_state_permutation_verified": True,
         },
     }
     verify_global(
-        payload, prefix, tail, source, child,
+        payload, prefix, tail, child,
     )
     return payload
 
 
 def verify_global(
-    data: Any, prefix: dict, tail: dict, source: Path, child: int
+    data: Any,
+    prefix: dict,
+    tail: dict,
+    child: int,
 ) -> bool:
     _require(data.get("schema") == SCHEMA, "global map: wrong schema")
     _require(data.get("status") == "CERTIFIED", "global map: not certified")
@@ -227,6 +263,7 @@ def verify_global(
         "global map: false restart or uncertified join",
     )
     _verify_affine_hull(data["block_order_map"])
+    _verify_affine_hull(data["crosswalk_rank_witness"]["matrix"])
     verify_permutation(data["block_to_standard_permutation"])
     expected_standard = permute_affine_block_to_standard(
         data["block_order_map"]
@@ -243,10 +280,32 @@ def verify_global(
     )
     factors = composition_factors(prefix, tail, child)
     _require(
+        data["integrity"]["prefix"]["payload_sha256"]
+        == canonical_sha256(prefix)
+        and data["integrity"]["tail"]["payload_sha256"]
+        == canonical_sha256(tail),
+        "global map: prefix/tail payload drift",
+    )
+    _require(
         data["integrity"]["join_source_sha256"]
-        == hashlib.sha256(render_join_source(factors).encode()).hexdigest()
-        == hashlib.sha256(source.read_bytes()).hexdigest(),
+        == hashlib.sha256(
+            render_join_source(factors, certify_join_rank=False).encode()
+        ).hexdigest(),
         "global map: composition source drift",
+    )
+    expected_crosswalk_source = render_join_source([factors[1]])
+    _require(
+        data["integrity"]["crosswalk_rank_source_sha256"]
+        == hashlib.sha256(expected_crosswalk_source.encode()).hexdigest()
+        and data["proof"]["crosswalk_rank_certified"] is True
+        and data["proof"]["crosswalk_rank"] == 12,
+        "global map: boundary crosswalk rank certificate drift",
+    )
+    _require(
+        data["crosswalk_rank_witness"]["rank"] == 12
+        and data["integrity"]["crosswalk_rank_output_sha256"]
+        == canonical_sha256(data["crosswalk_rank_witness"]["matrix"]),
+        "global map: boundary crosswalk rank output drift",
     )
     _require(
         data["integrity"]["block_output_sha256"]
