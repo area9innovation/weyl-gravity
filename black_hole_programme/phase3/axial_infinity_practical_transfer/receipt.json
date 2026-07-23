@@ -1,0 +1,74 @@
+{
+  "schema": "phase3-verification-receipt-v1",
+  "result_token": "BH_PHASE3_AXIAL_INFINITY_PRACTICAL_TRANSFER_V1",
+  "base_commit": "249c546e3ff62b30e344eedf970d986da907cc69",
+  "python_working_directory": "/home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction",
+  "dependency_tags": [
+    "EXACT-ALGEBRAIC",
+    "NUMERIC-ENCLOSURE"
+  ],
+  "claim": "On axial ell=2, M=1 and real M omega in [1/2,3/4], the F4-corrected phase-normalized infinity frame has a continuous zero generator at z=0 and transfers by a validated twelve-real ivlinode flow to a full-rank basis at R=32M.",
+  "does_not_establish": [
+    "horizon-to-infinity matching",
+    "Lee-Wald current or flux",
+    "global scattering channels",
+    "upper-half-plane pole exclusion",
+    "stability",
+    "CPT positivity"
+  ],
+  "files": {
+    "certificate.json": "40cd67db3e0d0cac79a8097bd6c7e5a2b09a1de0498ef078c2ac50c927f11a8d",
+    "validated_infinity_transfer.forge": "e2270831fa6c34628ec0d4a2073e4afda2ae8c5d3cc40192803a7a2fad90c8e5",
+    "schema.json": "05db89a22234e30deed0e552fc71721e319c3b835b1b27b0412401da20864445",
+    "produce.py": "8061c8847c17d5ac61390825ee0ec85a935b4897b0aedf3fca1b197f0ab483fa",
+    "verify.py": "ebe6b148831abfc4cf82b4cb751543d57e5324543fc8629bf41a16fb7c71d9f7",
+    "mutations.py": "030bb64161281ad7c3467be153b7334c31ecdbc490103ffdc5b2de2cd301d6dd",
+    "tests/test_practical_transfer.py": "34db24265b1bd87489196a2b36be9f22d4342fd0d8f73e30acbf87503e65698f"
+  },
+  "verification": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_infinity_practical_transfer.produce --check --reuse-cells",
+      "elapsed_seconds": 51.18,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_infinity_practical_transfer.verify",
+      "elapsed_seconds": 13.58,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_infinity_practical_transfer.tests.test_practical_transfer -v",
+      "elapsed_seconds": 1.08,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_infinity_practical_transfer.mutations",
+      "elapsed_seconds": 2.27,
+      "status": "PASS: six negative mutations rejected"
+    },
+    {
+      "command": "FORGE_LIB=/home/alstrup/area9/tango/forge/lib /tmp/forgebin -run /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_infinity_practical_transfer/validated_infinity_transfer.forge",
+      "elapsed_seconds": 12.95,
+      "status": "PASS: exit 42"
+    },
+    {
+      "command": "FORGE_LIB=/home/alstrup/area9/tango/forge/lib /tmp/forgebin -run -emit-asm /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_infinity_practical_transfer/validated_infinity_transfer.forge",
+      "elapsed_seconds": 89.0,
+      "status": "PASS: exit 42"
+    },
+    {
+      "command": "FORGE_LIB=/home/alstrup/area9/tango/forge/lib /tmp/forgebin -run -sanitize /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_infinity_practical_transfer/validated_infinity_transfer.forge",
+      "elapsed_seconds": 32.26,
+      "status": "PASS: exit 42; ASan/UBSan clean"
+    },
+    {
+      "command": "FORGE_LIB=/home/alstrup/area9/tango/forge/lib /tmp/forgebin -run -emit-asm -sanitize /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_infinity_practical_transfer/validated_infinity_transfer.forge",
+      "elapsed_seconds": 107.82,
+      "status": "PASS: exit 42; ASan/UBSan clean"
+    }
+  ],
+  "higher_tiers_not_run": [
+    "No global horizon-to-infinity connection or flux rail was run because those are downstream consumers and are explicitly outside this endpoint handoff."
+  ],
+  "production_note": "The 2048 exact rational subdivision cells were produced by the non-reuse producer before the timed closure rails; that long run was not instrumented, so no elapsed time is asserted for it. The timed reuse check deterministically rebuilt and compared the compact certificate and generated Forge consumer from those exact cells."
+}
