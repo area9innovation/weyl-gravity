@@ -1,0 +1,37 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-infinity-practical-transfer",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-infinity-practical-transfer",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-infinity-practical-transfer.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-axial-practical-1",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Convert the certified axial infinity existence enclosure into a practical, full-rank interval basis at R=32M for direct use by the validated global connection solver.",
+    "stop_condition": "Import the complete six-state reconstruction at d5d5d6de648795203604d62ce7bc4f4ce6fea510 and the endpoint existence package at ed3d95901. For ell=2 and real dimensionless M omega in [1/2,3/4], incorporate the exact derivative-consistency coefficient F4=(hpower-3)H1_3 for the XI2/XI3 columns and prove that every phase-normalized cross-rate entry has physical decay p>=3. Derive the exact z=1/r correction flow dZ/dz=z^-2 K(1/z,omega)Z with Z(0)=I; certify its continuous extension at z=0 by exact same-rate limits and zero cross-rate limits, never evaluating log(z) or 1/z at z=0. Propagate the 12-dimensional realified basis outwardly on z in [0,1/32] with validated intervals, prove full column rank and conditioning at R=32, expose a public IvEndpointCert in the state order Re(P,P',Q,Q',H1,F), Im(P,P',Q,Q',H1,F), and demonstrate direct compatibility with Forge math/ivlinode. Include exact residual checks, omega subdivision stability, independent replay, and mutations for F4, one z=0 limit, one phase bound, and one rank bound. If the validated transfer does not close, certify the first exact obstruction and the narrowest z/omega domain that does.",
+    "current_gate": "Practical-radius infinity basis before global horizon-to-infinity matching",
+    "forbid": "no R=2^256 proof box called practical; no pointwise floating shooting; no evaluation of oscillatory logarithmic phases at z=0; no omitted F4 reconstruction coefficient; no explicit matrix inverse; no global connection, flux, scattering, pole, stability or CPT promotion",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-complete-reconstruction-repair"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_infinity_practical_transfer/",
+      "reports/phase3-black-hole-axial-infinity-practical-transfer-2026-07-23.md",
+      "residual_atlas/phase3-black-hole-axial-infinity-practical-transfer-fragment-v1.json",
+      "planning/forge-requests/phase3-black-hole-axial-infinity-practical-transfer.json"
+    ],
+    "resource_hint": "Reuse the exact endpoint metric heads and the landed Forge math/ivlinode substrate. Work in the phase-normalized z chart: p>=3 cross-rate terms vanish at z=0 despite bounded oscillatory phases, while same-rate p=2 terms have exact finite limits.",
+    "input_commit": "ed3d95901",
+    "notes": [
+      "This narrow successor consumes the real theorem in the endpoint SHORTFALL: existence is proved uniformly, but the original majorant radius is not a stable numerical handoff.",
+      "The derivative-consistency coefficient F4 raises the XI2 raw residual to z^3 and the XI3 raw residual to z^2 with an additional r^-1 column weight, so both physical cross-rate entries have p=3."
+    ]
+  },
+  "edges": []
+}
