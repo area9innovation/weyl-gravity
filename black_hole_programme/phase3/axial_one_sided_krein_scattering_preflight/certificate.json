@@ -1,0 +1,266 @@
+{
+  "schema": "phase3-axial-one-sided-krein-scattering-preflight-v1",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_ONE_SIDED_KREIN_PREFLIGHT",
+  "result_token": "BH_PHASE3_AXIAL_ONE_SIDED_KREIN_METHOD_SHORTFALL",
+  "lifecycle": "CLASSIFIED",
+  "status": "METHOD_SHORTFALL",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "declaration": {
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity",
+    "background": "Schwarzschild exterior M=1",
+    "sector": "axial ell=2",
+    "frequency_scope": "real omega in [1/2,3/4]",
+    "phase": "exp(+I*omega*t)",
+    "normalization": "all endpoint Grams divided by pi*alpha_W"
+  },
+  "basis_contract": {
+    "signature_basis": {
+      "name": "J_sigma",
+      "matrix": [
+        [
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-1"
+        ]
+      ]
+    },
+    "triangular_null_basis": {
+      "name": "J0",
+      "matrix": [
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-1"
+        ]
+      ]
+    },
+    "null_to_signature_columns": [
+      [
+        "1/sqrt(2)",
+        "1/sqrt(2)",
+        "0"
+      ],
+      [
+        "1/sqrt(2)",
+        "-1/sqrt(2)",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "congruence": "Q^dagger*J0*Q=J_sigma",
+    "warning": "J_sigma and J0 are congruent but not equal; triangular component identities are stated only in J0."
+  },
+  "conditional_exact_theorem": {
+    "hypotheses": [
+      "Gminus, Gplus and Hout are nondegenerate Hermitian 3x3 forms of inertia (1,2,0)",
+      "Tminus is invertible",
+      "the typed raw Stokes identity Hout+Tplus^dagger*Gplus*Tplus-Tminus^dagger*Gminus*Tminus=0 holds",
+      "Nminus^dagger*Gminus*Nminus=Nplus^dagger*Gplus*Nplus=N_H^dagger*Hout*N_H=J for one common J in {J0,J_sigma}"
+    ],
+    "raw_maps": {
+      "Rraw": "Tplus*Tminus^(-1)",
+      "raw_defect": "Gminus-Rraw^dagger*Gplus*Rraw=Tminus^(-dagger)*Hout*Tminus^(-1)"
+    },
+    "normalized_maps": {
+      "Tminus_hat": "Nminus^(-1)*Tminus*N_H",
+      "Tplus_hat": "Nplus^(-1)*Tplus*N_H",
+      "normalized_frame_shorthand": "after hats are adopted, R=Tplus*Tminus^(-1) and A=Tminus^(-1)",
+      "R": "Nplus^(-1)*Tplus*Tminus^(-1)*Nminus",
+      "A": "N_H^(-1)*Tminus^(-1)*Nminus",
+      "Sstack": "vertical_stack(R,A)",
+      "target_form": "J direct_sum J",
+      "identity": "Sstack^dagger*(J direct_sum J)*Sstack=J"
+    },
+    "reflection_defect": {
+      "D": "J-R^dagger*J*R=A^dagger*J*A",
+      "inertia": [
+        1,
+        2,
+        0
+      ],
+      "reason": "A is invertible, so D is congruent to J",
+      "determinant_general": "det(D)=abs(det(Nminus))^2/(abs(det(NH))^2*abs(det(Tminus))^2)",
+      "determinant_endpoint_ratio": "det(D)=det(Hout)/(det(Gminus)*abs(det(Tminus))^2)",
+      "determinant_axial_simplified": "det(D)=1/(abs(A_in_2)^4*abs(A_in_1)^2)",
+      "normalized_Tminus_formula": "det(D)=abs(det(Tminus_hat))^(-2)",
+      "rejected_bare_formula": "det(D)=abs(det(Tminus_raw))^(-2)",
+      "rejection_reason": "the endpoint normalizer determinant ratio is the nonunit rational prefactor modulus squared"
+    },
+    "completion": {
+      "statement": "The nondegenerate J-isometric embedding Sstack has a (J direct_sum J)-orthogonal complement of inertia (1,2,0); choosing any J-isometry C onto that complement makes U=[Sstack C] an element of U(2,4).",
+      "existence": "ALGEBRAIC_CONDITIONAL",
+      "canonical": false,
+      "physical_full_scattering_matrix": false
+    }
+  },
+  "determinant_audit": {
+    "horizon_raw_determinant": "884736*omega**3*(4*omega**2 + 1)*(16*omega**2 + 1)**2/(125*(omega**2 + 1))",
+    "incoming_factor_basis_determinant": "127401984*omega**5/125",
+    "incoming_factor_to_raw_determinant_modulus_squared": "9*omega**2",
+    "incoming_raw_determinant": "14155776*omega**3/125",
+    "endpoint_normalizer_determinant_ratio": "(4*omega**2 + 1)*(16*omega**2 + 1)**2/(16*(omega**2 + 1))",
+    "Tminus_rational_prefactor_modulus_squared": "(4*omega**2 + 1)*(16*omega**2 + 1)**2/(16*(omega**2 + 1))",
+    "ratio_matches_prefactor": true,
+    "consequence": "the normalization ratio cancels the rational Tminus prefactor, leaving the inverse Jost-amplitude product"
+  },
+  "triangular_J0_identities": {
+    "scope": "pure algebra only; no imported certificate proves that the normalized physical R and A have this triangular form",
+    "upper_triangular_convention": "X=[[a_X,b_X,d_X],[0,c_X,e_X],[0,0,f_X]], X in {R,A}",
+    "independent_equations": [
+      "sum_X conjugate(a_X)*c_X=1",
+      "sum_X conjugate(a_X)*e_X=0",
+      "sum_X (conjugate(b_X)*c_X+conjugate(c_X)*b_X)=0",
+      "sum_X (conjugate(b_X)*e_X+conjugate(c_X)*d_X)=0",
+      "sum_X (conjugate(d_X)*e_X+conjugate(e_X)*d_X-abs(f_X)^2)=-1"
+    ],
+    "lower_triangular_convention": "X=[[a_X,0,0],[b_X,c_X,0],[d_X,e_X,f_X]], X in {R,A}",
+    "lower_independent_equations": [
+      "sum_X (conjugate(a_X)*b_X+conjugate(b_X)*a_X-abs(d_X)^2)=0",
+      "sum_X (conjugate(a_X)*c_X-conjugate(d_X)*e_X)=1",
+      "sum_X conjugate(d_X)*f_X=0",
+      "sum_X abs(e_X)^2=0, hence e_R=e_A=0",
+      "sum_X abs(f_X)^2=1"
+    ],
+    "alpha_gamma_mu_reduction": "REFUSED_NOT_PROVED",
+    "reason": "triangularity in the normalized J0 frame, the off-diagonal entries, and the full typed Tplus entries are not certified; the conservation equations do not reduce to three diagonal parameters by themselves"
+  },
+  "Tplus_disposition": {
+    "scalar_outgoing_coefficients_exist_in_Jost_expansions": true,
+    "typed_full_3x3_Tplus_entries_certified": false,
+    "typed_Tplus_normalization_certified": false,
+    "Tplus_rank_certified": false,
+    "reflection_nonvanishing_certified": false,
+    "global_current_conservation_defect_certified": false
+  },
+  "horizon_positive_real_scope_audit": {
+    "printed_gram_pivots_sign_regular_for_every_real_omega_gt_0": true,
+    "printed_factor_quotient_sign_regular_for_every_real_omega_gt_0": true,
+    "upstream_certificate_scope": [
+      "1/2",
+      "3/4"
+    ],
+    "exact_local_formula_domain": "every real omega>0",
+    "promoted_beyond_pilot": true,
+    "symbolic_recurrence_audit": {
+      "residue_rates": [
+        "0",
+        "0",
+        "0",
+        "-4*I*omega",
+        "-1-4*I*omega",
+        "-2-4*I*omega"
+      ],
+      "residue_eigenbasis_determinant": "-I*(2*omega-I)/8",
+      "basis_denominator_factors": [
+        "2*omega-I",
+        "4*omega-I",
+        "4*omega-3*I",
+        "4*omega-5*I",
+        "omega-I"
+      ],
+      "positive_real_collisions": [],
+      "compatible_resonances": [
+        "column=4 order=1 free=1 residual=0",
+        "column=5 order=1 free=1 residual=0",
+        "column=5 order=2 free=1 residual=0"
+      ],
+      "minimum_omitted_exact_cross_current_order": 2,
+      "constant_term_affected": false
+    },
+    "reason": "the recurrence and omitted-head power count are symbolic in omega; all actual basis denominators and the residue eigenbasis determinant are collision-free on omega>0; the three integer resonances have exact zero residual; and every printed inertia pivot and factor quotient has fixed sign there. This widens only the local horizon algebra, not the global scattering gate."
+  },
+  "activation": {
+    "status": "MISSING_GLOBAL_CONNECTION",
+    "physical_one_sided_J_isometry_certified": false,
+    "physical_reflection_defect_inertia_certified": false,
+    "physical_U_2_4_completion_certified": false,
+    "missing": [
+      "the typed global 3x3 Tplus entries in the certified endpoint frames",
+      "the orientation-correct global Stokes defect certificate",
+      "the same-frame normalizer crosswalk consumed by the global handoff"
+    ]
+  },
+  "claim_flags": {
+    "J0_Jsigma_distinction_certified": true,
+    "conditional_one_sided_Krein_theorem_certified": true,
+    "conditional_reflection_defect_inertia_certified": true,
+    "conditional_algebraic_U_2_4_completion_certified": true,
+    "determinant_normalization_ratio_certified": true,
+    "physical_one_sided_J_isometry_certified": false,
+    "physical_reflection_defect_inertia_certified": false,
+    "physical_full_scattering_matrix_constructed": false,
+    "alpha_gamma_mu_reduction_certified": false,
+    "horizon_gram_all_positive_real_provenance_promoted": true
+  },
+  "imports": {
+    "incoming_extended_domain": {
+      "path": "black_hole_programme/phase3/axial_incoming_extended_domain_audit/certificate.json",
+      "sha256": "f223358ca9de0f6d819684ce61d62677d6e5f8c5d4edaa600e2bae02719af0ef"
+    },
+    "incoming_connection": {
+      "path": "black_hole_programme/phase3/axial_incoming_connection_analytic/certificate.json",
+      "sha256": "c7d54c15cd7928227d62ede7825edba2b6ebc51ca6f6c617c7b0b56a74cdd040"
+    },
+    "future_horizon_gram": {
+      "path": "black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/future_horizon_outward_gram.json",
+      "sha256": "3051f43f73e4649dede60176e12f13afc59bdd5b3e8e09970db842a1ede00fdb"
+    },
+    "future_horizon_factor_quotient": {
+      "path": "black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/future_horizon_factor_quotient.json",
+      "sha256": "d42e0a06c4e87aaa89962821e683dbd54a7f72aad239b42084777a246320f30c"
+    },
+    "global_channel_gate": {
+      "path": "black_hole_programme/phase3/axial_global_finite_flux_channel_classification/certificate.json",
+      "sha256": "657bfb58d47bec550e5ebcefaff6348a99e2db25c26c5f7561e7f63c3edb81d5"
+    }
+  },
+  "source_provenance": {
+    "horizon_gram_producer": {
+      "path": "black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/horizon_gram_laurent.py",
+      "sha256": "e6d51b0e20d80412796c4baab5761b0ffb525d570f238fd72b39e57e2415ff0e"
+    },
+    "horizon_recurrence_producer": {
+      "path": "black_hole_programme/phase3/axial_endpoint_remainder_enclosures/produce.py",
+      "sha256": "72f849ed9dce1a9cf865ccc79d7ea2a754920d46f10b3143fcd04b766aff7f2b"
+    }
+  },
+  "verification": {
+    "command": "python3 -m black_hole_programme.phase3.axial_one_sided_krein_scattering_preflight.verify",
+    "tests": "python3 -m unittest -v black_hole_programme.phase3.axial_one_sided_krein_scattering_preflight.tests.test_preflight"
+  },
+  "does_not_establish": [
+    "a typed or numerically evaluated Tplus matrix",
+    "the global Stokes identity on populated pilot-band channels",
+    "a physical one-sided J-isometry or reflection defect",
+    "a physical full scattering matrix or canonical U(2,4) completion",
+    "an alpha/gamma/mu scattering parameterization",
+    "stability, CPT positivity, particles, ghosts or quantum unitarity"
+  ]
+}

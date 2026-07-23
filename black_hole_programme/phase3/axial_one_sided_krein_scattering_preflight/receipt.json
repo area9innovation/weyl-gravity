@@ -1,0 +1,60 @@
+{
+  "schema": "phase3-axial-one-sided-krein-scattering-preflight-receipt-v1",
+  "date": "2026-07-23",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": "METHOD_SHORTFALL_PHYSICAL_PASS_CONDITIONAL_ALGEBRA",
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/produce.py black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/verify.py black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/tests/test_preflight.py",
+      "elapsed_seconds": "0.02",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m black_hole_programme.phase3.axial_one_sided_krein_scattering_preflight.produce",
+      "elapsed_seconds": "0.39",
+      "status": "PASS_METHOD_SHORTFALL_DISPOSITION"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m black_hole_programme.phase3.axial_one_sided_krein_scattering_preflight.verify",
+      "elapsed_seconds": "0.41",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_one_sided_krein_scattering_preflight.tests.test_preflight",
+      "elapsed_seconds": "0.87",
+      "status": "PASS",
+      "tests": 6
+    }
+  ],
+  "horizon_positive_real_audit": {
+    "kind": "exact symbolic recurrence and denominator audit",
+    "result": "PASS",
+    "basis_denominator_factors": [
+      "2*omega-I",
+      "4*omega-I",
+      "4*omega-3*I",
+      "4*omega-5*I",
+      "omega-I"
+    ],
+    "residue_eigenbasis_determinant": "-I*(2*omega-I)/8",
+    "compatible_resonance_residuals": 3,
+    "minimum_omitted_exact_cross_current_order": 2
+  },
+  "tier_2": {
+    "status": "CONTENT_ADDRESSED_AND_SCOPED_EXACT_AUDIT",
+    "reason": "No mathematical input was changed; imported certificates and symbolic producers are hash pinned."
+  },
+  "tier_3": {
+    "status": "NOT_RUN",
+    "reason": "No freeze, release, shared core algebra change, physical lifecycle promotion, or paper theorem promotion."
+  },
+  "paper_14_or_15_edited": false,
+  "unrelated_worktree_changes_included": false
+}
