@@ -62,6 +62,15 @@ def main() -> None:
         ),
         "orientation crosswalk is absent",
     )
+    refinement = data["flux_diagnostic"]["refinement_control"]
+    require(
+        refinement["horizon_radial_macro_step"] == "1/2"
+        and refinement["infinity_normalization_radius"] == 128,
+        "refinement control changed",
+    )
+    refined = float(refinement["relative_conservation_residual"])
+    require(1e-4 < refined < declared < 1e-2,
+            "refinement residual disposition changed")
     require(not data["missing_Hminus"]["available"], "Hminus was invented")
     require(len(data["does_not_establish"]) >= 6, "boundaries were weakened")
 

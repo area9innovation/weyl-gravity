@@ -156,6 +156,16 @@
       }
     },
     "orientation_crosswalk": "The imported radial matrix represents F^r/(pi*alpha_W). The flux Gram is i*F^r/(pi*alpha_W), and the future horizon is the inner radial boundary, so GHplus=-Y^dagger*(i*Jhat)*Y.",
+    "refinement_control": {
+      "working_precision_decimal_digits": 40,
+      "horizon_radial_macro_step": "1/2",
+      "infinity_normalization_radius": 128,
+      "infinity_correction_macro_step": "-1",
+      "horizon_radial_embedded_step_defect": "0.0001416686296",
+      "absolute_conservation_residual": "0.45979351026435964473",
+      "relative_conservation_residual": "0.0012480324598405675825",
+      "interpretation": "The correctly oriented residual decreases only slightly while the radial embedded-step defect falls by more than one order of magnitude. Formal endpoint/horizon truncation or its amplitude crosswalk remains the dominant unvalidated error."
+    },
     "interpretation": "The corrected point preview suggests that horizon-regular columns populate both positive and negative directions at both null endpoints. The declared Stokes identity is numerically close but not zero; non-enclosed endpoint truncation and radial transport still block every physical interpretation."
   },
   "missing_Hminus": {

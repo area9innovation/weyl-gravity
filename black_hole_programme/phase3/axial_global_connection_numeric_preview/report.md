@@ -67,6 +67,14 @@ order one.  The remaining small residual does not establish conservation:
 the horizon and infinity series are truncated and the radial transports are
 not enclosed.
 
+At 40 working digits, halving the horizon radial macro-step and moving the
+infinity normalization radius from \(64\) to \(128\) reduces the recorded
+radial embedded-step defect from \(6.16\times10^{-3}\) to
+\(1.42\times10^{-4}\), but changes the relative conservation residual only
+from \(1.294\times10^{-3}\) to \(1.248\times10^{-3}\).  The dominant
+unvalidated error is therefore not the ordinary radial step size; it remains
+in the formal horizon/endpoint truncation or its amplitude crosswalk.
+
 The preview therefore supplies the orientation and amplitude conventions to
 the validated rail, but no five-frequency scan is warranted until the exact
 transport closes the same identity.
