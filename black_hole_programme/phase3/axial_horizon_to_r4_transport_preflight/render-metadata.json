@@ -1,0 +1,334 @@
+{
+  "does_not_establish": [
+    "an infinity basis or horizon-to-infinity connection matrix",
+    "finite endpoint flux, a populated scattering channel or a ghost",
+    "scattering, poles, stability or CPT positivity",
+    "frequencies outside [1/2,129/256], other ell or polar parity"
+  ],
+  "generator": 7315,
+  "generator_preserved": true,
+  "imports": {
+    "/home/alstrup/area9/tango/forge/lib/math/ivaffine.forge": "c9f7fe51ae598f38cde37b79cedefa6d9b2bcd4eef35c272c513b34b81f6a1bc",
+    "/home/alstrup/area9/tango/forge/lib/math/ivlinparam.forge": "d8d3775306d12b00b4ba35306a043a5cb41edfcb23e3c0d61e63e9dda85b2f55",
+    "symplectic-reconstruction/black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+    "symplectic-reconstruction/black_hole_programme/phase3/axial_endpoint_remainder_enclosures/certificate.json": "9886a02e9d49dbfca813e9520d9e488afce22fc82470b2ba6601b3092f9c64b9",
+    "symplectic-reconstruction/black_hole_programme/phase3/axial_endpoint_remainder_enclosures/validated_horizon_initializer.forge": "558cc357a1a6d205c1d0ae156b7f16d4399fb39e1426d0f95ead2d914257c97a",
+    "symplectic-reconstruction/black_hole_programme/phase3/axial_global_connection_matrix_v5/affine_codegen.py": "def0d650cdcd1e9ec61752db5194daeca0e91afade096cc15b841a3cb1da7b1c",
+    "symplectic-reconstruction/black_hole_programme/phase3/axial_structured_lower_transition_preflight/actual_fixture.forge": "11713c14ebcf2d5f49f7f9527b31a1ee1e4533ded7d491a9d6838c5d80680a27"
+  },
+  "initializer_proof": {
+    "coefficient_majorant": "8",
+    "epsilon_over_tau": "1/4194304",
+    "qh": "1081328809/12205331520",
+    "recurrence_order": 3,
+    "resonance_witnesses": [
+      {
+        "column": 4,
+        "free_parameters_set_to_zero": 1,
+        "order": 1,
+        "residual": "0"
+      },
+      {
+        "column": 5,
+        "free_parameters_set_to_zero": 1,
+        "order": 1,
+        "residual": "0"
+      },
+      {
+        "column": 5,
+        "free_parameters_set_to_zero": 1,
+        "order": 2,
+        "residual": "0"
+      }
+    ],
+    "tau": "1/262144",
+    "uniform_value_tail": "63569435/2241348481419257701750001150984192",
+    "zero_indicial_columns": [
+      0,
+      1,
+      2
+    ]
+  },
+  "local_steps": 2,
+  "omega_cell": [
+    "1/2",
+    "129/256"
+  ],
+  "omega_center": "257/512",
+  "omega_radius": "1/512",
+  "output_sha256": "9c93cf5343734ae8c6621a4ccb4690ed502b66264ea6ae2586d096e5bcef9987",
+  "public_future_regular_selector": [
+    0,
+    1,
+    4
+  ],
+  "public_horizon_order": [
+    "XH0a",
+    "XH0b",
+    "XHplus",
+    "XHminus",
+    "EH0",
+    "EHout"
+  ],
+  "raw_future_regular_selector": [
+    0,
+    1,
+    2
+  ],
+  "raw_horizon_order": [
+    "XH0a",
+    "XH0b",
+    "EH0",
+    "XHplus",
+    "EHout",
+    "XHminus"
+  ],
+  "rebase_bits": 128,
+  "requested_initializer_section": "1/4194304",
+  "requested_initializer_shell_index": 18,
+  "resets_per_shell": 8,
+  "rho_final": "2",
+  "rho_initial": "1/1099511627776",
+  "schema": "phase3-axial-horizon-to-r4-render-v1",
+  "sheared_state_order": [
+    "Re(P)",
+    "Re(P_prime)",
+    "Re(Q)",
+    "Re(Q_prime)",
+    "Re(H1)",
+    "Re(rho*F)",
+    "Im(P)",
+    "Im(P_prime)",
+    "Im(Q)",
+    "Im(Q_prime)",
+    "Im(H1)",
+    "Im(rho*F)"
+  ],
+  "shells": [
+    [
+      0,
+      "1/1099511627776",
+      "1/549755813888"
+    ],
+    [
+      1,
+      "1/549755813888",
+      "1/274877906944"
+    ],
+    [
+      2,
+      "1/274877906944",
+      "1/137438953472"
+    ],
+    [
+      3,
+      "1/137438953472",
+      "1/68719476736"
+    ],
+    [
+      4,
+      "1/68719476736",
+      "1/34359738368"
+    ],
+    [
+      5,
+      "1/34359738368",
+      "1/17179869184"
+    ],
+    [
+      6,
+      "1/17179869184",
+      "1/8589934592"
+    ],
+    [
+      7,
+      "1/8589934592",
+      "1/4294967296"
+    ],
+    [
+      8,
+      "1/4294967296",
+      "1/2147483648"
+    ],
+    [
+      9,
+      "1/2147483648",
+      "1/1073741824"
+    ],
+    [
+      10,
+      "1/1073741824",
+      "1/536870912"
+    ],
+    [
+      11,
+      "1/536870912",
+      "1/268435456"
+    ],
+    [
+      12,
+      "1/268435456",
+      "1/134217728"
+    ],
+    [
+      13,
+      "1/134217728",
+      "1/67108864"
+    ],
+    [
+      14,
+      "1/67108864",
+      "1/33554432"
+    ],
+    [
+      15,
+      "1/33554432",
+      "1/16777216"
+    ],
+    [
+      16,
+      "1/16777216",
+      "1/8388608"
+    ],
+    [
+      17,
+      "1/8388608",
+      "1/4194304"
+    ],
+    [
+      18,
+      "1/4194304",
+      "1/2097152"
+    ],
+    [
+      19,
+      "1/2097152",
+      "1/1048576"
+    ],
+    [
+      20,
+      "1/1048576",
+      "1/524288"
+    ],
+    [
+      21,
+      "1/524288",
+      "1/262144"
+    ],
+    [
+      22,
+      "1/262144",
+      "1/131072"
+    ],
+    [
+      23,
+      "1/131072",
+      "1/65536"
+    ],
+    [
+      24,
+      "1/65536",
+      "1/32768"
+    ],
+    [
+      25,
+      "1/32768",
+      "1/16384"
+    ],
+    [
+      26,
+      "1/16384",
+      "1/8192"
+    ],
+    [
+      27,
+      "1/8192",
+      "1/4096"
+    ],
+    [
+      28,
+      "1/4096",
+      "1/2048"
+    ],
+    [
+      29,
+      "1/2048",
+      "1/1024"
+    ],
+    [
+      30,
+      "1/1024",
+      "1/512"
+    ],
+    [
+      31,
+      "1/512",
+      "1/256"
+    ],
+    [
+      32,
+      "1/256",
+      "1/128"
+    ],
+    [
+      33,
+      "1/128",
+      "1/64"
+    ],
+    [
+      34,
+      "1/64",
+      "1/32"
+    ],
+    [
+      35,
+      "1/32",
+      "1/16"
+    ],
+    [
+      36,
+      "1/16",
+      "1/8"
+    ],
+    [
+      37,
+      "1/8",
+      "1/4"
+    ],
+    [
+      38,
+      "1/4",
+      "1/2"
+    ],
+    [
+      39,
+      "1/2",
+      "1"
+    ],
+    [
+      40,
+      "1",
+      "2"
+    ]
+  ],
+  "state_order": [
+    "Re(P)",
+    "Re(P_prime)",
+    "Re(Q)",
+    "Re(Q_prime)",
+    "Re(H1)",
+    "Re(F)",
+    "Im(P)",
+    "Im(P_prime)",
+    "Im(Q)",
+    "Im(Q_prime)",
+    "Im(H1)",
+    "Im(F)"
+  ],
+  "structured_transport": {
+    "composition": "direct rectangular apply to tagged block-row state",
+    "layout": "contiguous-block-lower-8-plus-4",
+    "panel_method": "order-12 Peano-Baker block recurrence",
+    "withdrawn_predecessor_composer_imported": false
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "phase3-axial-horizon-transport-receipt-v1",
+  "date": "2026-07-23",
+  "result": "VALIDATED_METHOD_SHORTFALL_NOT_PHYSICS",
+  "commands": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_horizon_to_r4_transport_preflight.produce && forge -run black_hole_programme/phase3/axial_horizon_to_r4_transport_preflight/validated_horizon_to_r4.forge",
+      "status": "REFUSED_AS_EXPECTED",
+      "elapsed_seconds": 287.76,
+      "note": "wide-cell control; interval trap after shell 11"
+    },
+    {
+      "command": "forge -run black_hole_programme/phase3/axial_horizon_to_r4_transport_preflight/validated_horizon_to_r4.forge",
+      "status": "REFUSED_AS_EXPECTED",
+      "note": "narrow-cell order-three control; interval trap after shell 11"
+    },
+    {
+      "command": "forge -run black_hole_programme/phase3/axial_horizon_to_r4_transport_preflight/validated_horizon_to_r4.forge",
+      "status": "REFUSED_AS_EXPECTED",
+      "note": "auxiliary rho=2^-40 control; interval trap after shell 13"
+    },
+    {
+      "command": "forge -run black_hole_programme/phase3/axial_horizon_to_r4_transport_preflight/validated_regular_subspace_first_shell.forge",
+      "status": "REFUSED_AS_EXPECTED",
+      "note": "one-shell graph-reset control; rank certificate false and no strict width improvement"
+    },
+    {
+      "command": "python3 black_hole_programme/phase3/axial_horizon_to_r4_transport_preflight/verify.py",
+      "status": "PASS",
+      "elapsed_seconds": 0.04
+    },
+    {
+      "command": "python3 -m pytest -q black_hole_programme/phase3/axial_horizon_to_r4_transport_preflight/tests",
+      "status": "PASS",
+      "elapsed_seconds": 0.09,
+      "note": "2 tests passed"
+    }
+  ],
+  "tiers": {
+    "tier0": "scoped parse and diff checks required",
+    "tier1": "independent verifier and mutation tests required",
+    "tier2": "not run: no mathematical input or downstream certificate was promoted",
+    "tier3": "not run: this is a terminal shortfall, not a theorem promotion or release"
+  }
+}

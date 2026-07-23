@@ -1,0 +1,94 @@
+{
+  "schema": "phase3-axial-horizon-transport-controls-v1",
+  "scope": {
+    "theory": "strict pure Weyl gravity",
+    "M": 1,
+    "ell": 2,
+    "omega_cell": ["1/2", "129/256"],
+    "generator": 7315
+  },
+  "disposition": "VALIDATED_METHOD_SHORTFALL",
+  "controls": [
+    {
+      "id": "wide-cell-full-column",
+      "method": "wide-cell endpoint enclosure restricted to the pilot cell, followed by structured full-column interval transport from rho=2^-22",
+      "shell_widths": [
+        6.5228, 36.169, 157.739, 630.355, 2425.05, 9163.71,
+        34324.85, 128012.55, 476405.02, 1771362.0, 6585489.89,
+        24498690.8
+      ],
+      "terminal": "interval trap at shell 11",
+      "interpretation": "The wide independent remainder loses the common omega correlation and injects complementary directions."
+    },
+    {
+      "id": "narrow-cell-n3-full-column",
+      "method": "exact order-three shared-generator recurrence on the pilot cell, followed by structured full-column interval transport from rho=2^-22",
+      "uniform_value_tail": "12713887/88992021688",
+      "shell_widths": [
+        1.864809712469132, 10.27878485881946, 44.346853479649546,
+        176.18750529863289, 675.796645937001, 2549.7918927107235,
+        9543.372519477505, 35577.216847897245, 132375.25847298437,
+        492144.15288423205, 1829573.355775833, 6806012.149192623
+      ],
+      "terminal": "interval trap at shell 11",
+      "interpretation": "A narrow shared-generator initializer alone does not preserve the invariant regular subspace once its analytic tail is padded as an independent row box."
+    },
+    {
+      "id": "auxiliary-rho-2^-40-full-column",
+      "method": "same exact recurrence normalization started at rho=2^-40 to reduce the initializer tail by approximately 2^-88",
+      "uniform_value_tail": "63569435/2241348481419257701750001150984192",
+      "shell_widths": [
+        1.8541043131094788, 10.219984522235558, 44.091541828158796,
+        175.16774856961322, 671.8663485376161, 2534.870870908479,
+        9486.939945749704, 35362.66966366178, 131546.33946008567,
+        488835.44764869456, 1815588.4636753213, 6741478.9367502695,
+        25028408.068099905, 92913916.7788047
+      ],
+      "terminal": "interval trap at shell 13",
+      "interpretation": "The failure persists after making the endpoint tail negligible; coefficient interval boxes still forget the invariant regular-plane geometry."
+    },
+    {
+      "id": "one-shell-graph-reset-cadence-four",
+      "method": "one-shell graph representation with certified transpose solves and four-panel chart resets",
+      "rho_cell": ["1/4194304", "1/2097152"],
+      "basis_width": 1.8026509437645812,
+      "amplitude_width": 2.6912174486275924,
+      "reconstruction_width": 6.42085301474721,
+      "direct_width": 1.864809712469132,
+      "reconstruction_defect_width": 6.913999683564003,
+      "computed_rank": [6, 6],
+      "rank_certified": false,
+      "top_identity": true,
+      "terminal": "typed refusal: one rank certificate is false and the graph enclosure is not materially narrower than the direct control",
+      "interpretation": "Subspace/amplitude separation is the right architecture, but the existing factor-box Möbius implementation is not a certified multi-shell parameter-correlated transport."
+    }
+  ],
+  "required_successor": {
+    "type": "PARAMETER_CORRELATED_VALIDATED_GRASSMANN_RICCATI_FLOW",
+    "equations": [
+      "Z'=A_JI+A_JJ Z-Z A_II-Z A_IJ Z",
+      "X'=(A_II+A_IJ Z)X"
+    ],
+    "initial_complex_pivot": ["Pprime", "Q", "H1"],
+    "initial_complex_graph_rows": ["P", "Qprime", "rhoF"],
+    "initial_real_pivot_rows": [1, 2, 8, 5, 6, 10],
+    "initial_real_graph_rows": [0, 3, 9, 4, 7, 11],
+    "initial_midpoint_condition": 2.62534,
+    "initial_graph_norm": 1.4953713,
+    "requirements": [
+      "retain generator 7315 across every frequency subcell",
+      "use certified right solves for exact Mobius updates",
+      "rebase at 128 dyadic bits after every panel",
+      "certify every chart reset and preserve the separately tracked 6x6 amplitude",
+      "prove basis-gauge invariance",
+      "refuse rather than widen if no chart has certified rank six"
+    ]
+  },
+  "does_not_establish": [
+    "a validated horizon-to-r4 map",
+    "a horizon-to-infinity connection matrix",
+    "a populated endpoint channel",
+    "flux conservation, scattering, stability, CPT positivity or a physical ghost",
+    "a singularity of the Bach flow"
+  ]
+}
