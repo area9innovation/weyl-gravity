@@ -567,6 +567,17 @@ class AffineCellAdapterTest(unittest.TestCase):
                 handoff_sha256="e" * 64,
             )
 
+    def test_independent_verifier_rejects_deleted_additional_origin(self) -> None:
+        handoff = synthetic_sixteen_cell_handoff()
+        document = build_classification(handoff, handoff_sha256="f" * 64)
+        document["cells"][7]["additional_origin_dimension"] = 1
+        with self.assertRaisesRegex(SystemExit, "horizon-origin dimensions"):
+            independently_verify_activated_documents(
+                handoff,
+                document,
+                handoff_sha256="f" * 64,
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

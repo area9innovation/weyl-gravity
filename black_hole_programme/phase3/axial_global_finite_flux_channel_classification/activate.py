@@ -215,6 +215,12 @@ def verify_document(document: dict) -> None:
     if parent["additional_global_channel_classified"] != (not unresolved):
         raise ValueError("additional-channel promotion crosses unresolved cell")
     for cell in certified:
+        if (
+            cell["future_horizon_regular_domain_dimension"] != 3
+            or cell["additional_origin_dimension"] != 2
+            or cell["einstein_origin_dimension"] != 1
+        ):
+            raise ValueError("certified horizon-origin dimensions changed")
         if not cell["additional_global_direction_survives"]:
             raise ValueError("certified full-rank cell deleted additional origins")
         conservation = cell["current_conservation"]
@@ -243,6 +249,23 @@ def verify_document(document: dict) -> None:
                 data["inertia"][0] + data["inertia"][1]
             ):
                 raise ValueError("physical quotient/inertia mismatch")
+            origins = data["origins"]
+            for name, dimension in (("additional", 2), ("einstein", 1)):
+                restricted = origins[name]
+                if restricted["status"] == "CERTIFIED" and sum(
+                    restricted["inertia"]
+                ) != dimension:
+                    raise ValueError(
+                        f"{endpoint} {name} restricted inertia has wrong dimension"
+                    )
+            mixed_status = origins["einstein_additional_mixed_status"]
+            mixed_rank = origins["einstein_additional_mixed_rank"]
+            if (
+                (mixed_status == "EXACT_ZERO" and mixed_rank != 0)
+                or (mixed_status == "CERTIFIED_NONZERO" and mixed_rank != 1)
+                or (mixed_status == "UNRESOLVED" and mixed_rank is not None)
+            ):
+                raise ValueError(f"{endpoint} origin-mixing witness is inconsistent")
     if document["parent"]["full_scattering_matrix_constructed"]:
         raise ValueError("one-sided handoff called a full scattering matrix")
     if document["parent"]["current_conservation_certified"] != (not unresolved):

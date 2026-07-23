@@ -103,6 +103,12 @@ def verify_documents(
             fail(f"{expected_id}: certified source was silently dropped")
         payload = source["validated_payload"]
         inertia = payload["classification_witnesses"]["inertia"]
+        if (
+            cell["future_horizon_regular_domain_dimension"] != 3
+            or cell["additional_origin_dimension"] != 2
+            or cell["einstein_origin_dimension"] != 1
+        ):
+            fail(f"{expected_id}: horizon-origin dimensions changed")
         for endpoint, source_name in (
             ("Iminus", "gminus"),
             ("Iplus", "gplus"),
@@ -121,6 +127,23 @@ def verify_documents(
                 expected_inertia[:2]
             ):
                 fail(f"{expected_id}: quotient dimension disagrees with inertia")
+            origins = data["origins"]
+            for name, dimension in (("additional", 2), ("einstein", 1)):
+                restricted = origins[name]
+                if restricted["status"] == "CERTIFIED" and sum(
+                    restricted["inertia"]
+                ) != dimension:
+                    fail(
+                        f"{expected_id}: {endpoint} {name} origin dimension changed"
+                    )
+            mixed_status = origins["einstein_additional_mixed_status"]
+            mixed_rank = origins["einstein_additional_mixed_rank"]
+            if (
+                (mixed_status == "EXACT_ZERO" and mixed_rank != 0)
+                or (mixed_status == "CERTIFIED_NONZERO" and mixed_rank != 1)
+                or (mixed_status == "UNRESOLVED" and mixed_rank is not None)
+            ):
+                fail(f"{expected_id}: {endpoint} mixing witness is inconsistent")
         expected_horizon = [
             inertia["GHplus"]["positive"],
             inertia["GHplus"]["negative"],
