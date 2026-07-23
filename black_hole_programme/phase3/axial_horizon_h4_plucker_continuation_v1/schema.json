@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "phase3-axial-h4-plucker-continuation-schema-v1",
+  "artifact_kinds": {
+    "shared_state": {
+      "required": [
+        "schema",
+        "status",
+        "position",
+        "rows",
+        "producer_source_sha256",
+        "producer_log_sha256",
+        "input_state_sha256",
+        "predecessor_certificate_sha256",
+        "payload_sha256"
+      ]
+    },
+    "join_manifest": {
+      "required": [
+        "schema",
+        "status",
+        "predecessor_certificate_sha256",
+        "support_prefix_sha256",
+        "exporter",
+        "chunks",
+        "terminal",
+        "payload_sha256"
+      ]
+    },
+    "certificate": {
+      "required": [
+        "schema",
+        "status",
+        "dependency_tags",
+        "predecessor_certificate_sha256",
+        "result",
+        "does_not_establish"
+      ]
+    }
+  },
+  "typed_refusals": {
+    "31": "Pluecker relation enclosure defect",
+    "32": "no raw real/imaginary Pluecker coordinate component excludes zero",
+    "33": "complex realification layout defect",
+    "34": "source or shape defect"
+  }
+}

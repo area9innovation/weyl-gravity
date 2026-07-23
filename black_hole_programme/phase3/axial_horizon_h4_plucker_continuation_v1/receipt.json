@@ -1,0 +1,60 @@
+{
+  "commands": [
+    {
+      "chunk_elapsed_milliseconds": {
+        "shell3_tail": 18489,
+        "shell4": 21725
+      },
+      "command": "PYTHONPATH=. python3 -m black_hole_programme.phase3.axial_horizon_h4_plucker_continuation_v1.run_bounded",
+      "result": "HONEST_REFUSAL_RECORDED",
+      "tier": 1
+    },
+    {
+      "command": "PYTHONPATH=. python3 -m unittest -v black_hole_programme.phase3.axial_horizon_h4_plucker_continuation_v1.test_continuation",
+      "result": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "PYTHONPATH=. python3 -m black_hole_programme.phase3.axial_horizon_h4_plucker_continuation_v1.verify",
+      "result": "PASS",
+      "tier": 1
+    }
+  ],
+  "does_not_establish": [
+    "the complete 23-shell horizon transport",
+    "canonical endpoint amplitudes",
+    "a horizon-to-infinity scattering theorem"
+  ],
+  "hashes": {
+    "README.md": "141330eaa842fa6685adf076d6927908b79f5586597a16d1f792a43fd0285e01",
+    "boundary_exporter.forge": "1cfc15fce273c4757129eb58e316684ee33c7fedd6d260d5f1155f31d9dfa403",
+    "boundary_exporter_compile.txt": "f86477718fd3abe5777b56911e094dc8a9e688f4b47cdfef57ae2ebccd075ffc",
+    "boundary_exporter_run.txt": "b2bf95e215b5304b33f3b717137e286860433f503a1b1a0483a73a9ee97ad458",
+    "chunks/shell3_tail.forge": "0f5059baaed453c8b5fab3690b0978336e376eaabf0981766b595873ec3f527a",
+    "chunks/shell3_tail_compile.txt": "5c659f79cdaaffae073863ea9e4ce33730f9c55c6c0204cd714c36499c268cb6",
+    "chunks/shell3_tail_metadata.json": "a00002e32af7a68f161083b504c69f70ea0b559c915f8574d2b7623ea3f41c68",
+    "chunks/shell3_tail_run.txt": "9ffb2478ca268f0763b02b6df00499081d937cc12ab91e5bbe3d0e03d1593ae9",
+    "chunks/shell4.forge": "7ef61eaae29d1ef00c4976c08ff0f2364b1598d9dc9a8617a67f63e4eb51cff7",
+    "chunks/shell4_compile.txt": "6173f173f5d05593f6360b233858a828843c82e3d6b49fa41fbb839d5deacb61",
+    "chunks/shell4_metadata.json": "4f26a00febd9d2607902b6a87db96ac1fb771487557bee512f1517ca7cdc4b69",
+    "chunks/shell4_run.txt": "8aad24ef6003dfc1d8518a663150b0faa39e7735569e183b47401847130135ba",
+    "join_manifest.json": "244eca88620947164c97f0108db2a49bd3193220d0b64caa46f5d85dd0aec8be",
+    "produce.py": "be270e5a3b3dd799f108c3270eb36ba75a6f700c7f28344b59bae7e22bb361a1",
+    "report.md": "7dcec3bc97c54ad7a4586f2fc08b2e18b1e19ab5f74499501fa1a068973cb351",
+    "run_bounded.py": "fb66fe3b9d08b07d435f59f1e68a8998e8bc83e492602cb92e1b3e1ba8b7533f",
+    "schema.json": "278802c8e9cf57b7fc0678bb969ff53aefa7bea4580f39d243ffa35c76b6526d",
+    "states/boundary_shell3_segment0.json": "b9592384b364da5328a12bb9f914e119bef6c07528e2041acd3b328245927794",
+    "states/boundary_shell3_segment3.json": "b7f84b9ca6342f22bb1ee84e7a1c0e29c1eed6779a37871cdce66ed4e2d87294",
+    "test_continuation.py": "a1e37c8fc7903048682f01d3538968520ccd3bce2105b772fb8747e81122133e",
+    "verify.py": "f0aaabd6470b60d46ce59b59481269c8e9fe0e1e73c5b06300f18a985c3635f5"
+  },
+  "higher_tiers_not_run": {
+    "criterion": "bounded disjoint continuation shortfall; no shared operator, paper theorem, or lifecycle state changed",
+    "tiers": [
+      2,
+      3
+    ]
+  },
+  "schema": "phase3-axial-h4-plucker-continuation-receipt-v1",
+  "status": "PASS_CERTIFIED_SHORTFALL"
+}
