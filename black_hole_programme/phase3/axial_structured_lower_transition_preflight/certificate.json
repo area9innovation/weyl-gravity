@@ -1,0 +1,70 @@
+{
+  "schema": "phase3-axial-structured-lower-preflight-v1",
+  "status": "PREFLIGHT_PASS",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL",
+    "VALIDATED-NUMERIC"
+  ],
+  "generator": 7315,
+  "omega_cell": [
+    "1/2",
+    "129/256"
+  ],
+  "first_microfactor": {
+    "domain": [
+      "0",
+      "1/8"
+    ],
+    "coordinate": "t=32-r",
+    "panels": 8,
+    "order": 12,
+    "dyadic_rebase_bits": 128,
+    "carrier_rank": 8,
+    "kernel_rank": 4,
+    "upper_right_exact_zero": true,
+    "max_width": 621.8840812306481,
+    "rank_argument": "block-lower-determinant",
+    "full_12x12_interval_rank_used": false,
+    "runtime": {
+      "compile_elapsed_seconds": 16.24,
+      "compile_peak_rss_kib": 493768,
+      "run_elapsed_seconds": 0.8,
+      "run_peak_rss_kib": 7636,
+      "expected_exit_code": 42
+    }
+  },
+  "proof_contract": {
+    "outward_tails": true,
+    "shared_generator": true,
+    "dyadic_rebasing": true,
+    "constant_block_exact_fixture": true,
+    "mutations_rejected": [
+      "omit-kernel-times-lower",
+      "swap-multiplication-order",
+      "drop-tail",
+      "break-generator"
+    ],
+    "lower_recurrence": "L_(n+1)=G*C_n+A_k*L_n",
+    "lower_tail_majorant": "beta*h*sum_(m=order)^infinity (max(alpha_c,alpha_k)*h)^m/m!",
+    "full_rank_identity": "det([[C,0],[L,K]])=det(C)*det(K)"
+  },
+  "source_sha256": "11713c14ebcf2d5f49f7f9527b31a1ee1e4533ded7d491a9d6838c5d80680a27",
+  "forge": {
+    "commit": "f0469bee059b271d316cffd74a82ce7d6d455104",
+    "binary_sha256": "f3ccfe1684d179dac35626cf78ff6641a0f624fe4d737fbff45e88aca57de8b5",
+    "compile_command": "/home/alstrup/area9/tango/forge/forge -incremental -o /tmp/structured_actual actual_fixture.forge",
+    "run_command": "/tmp/structured_actual"
+  },
+  "establishes": [
+    "The first eight-panel axial infinity microfactor has a rigorous parameter-affine block-lower transition over the shared omega cell.",
+    "The carrier and kernel diagonal factors are independently full rank; block triangularity therefore proves rank twelve without a full 12x12 interval rank enclosure.",
+    "The lower lift includes its Peano-Baker convolution and an outward one-G tail, while the upper-right block remains exactly zero."
+  ],
+  "does_not_establish": [
+    "useful full-chain widths",
+    "global horizon-to-infinity connection",
+    "physical scattering channels",
+    "a reusable Forge mathlib API",
+    "paper theorem promotion"
+  ]
+}
