@@ -303,20 +303,60 @@ def build_microfactor_render_context() -> dict:
 
 
 def render_microfactor_adapter(
-    micro: int = 0, *, context: dict | None = None
+    micro: int = 0, *, context: dict | None = None,
+    panel_start: int | None = None,
+    panel_count: int = MICROFACTOR_PANELS,
+    trace_id: int | None = None,
 ) -> tuple[str, dict]:
-    """Render a compile-once runner for the 224 validated eight-panel factors.
+    """Render a compile-once runner for one validated dyadic radial factor.
 
     The exact coefficient table is generated at runtime for only the requested
-    microinterval.  All 225 boundary frames are generated together by one
+    interval.  All boundary frames are generated together by one
     sensitivity solve and quantized exactly, so adjacent artifacts reuse
-    byte-identical frame payloads.
+    byte-identical frame payloads.  The default remains the original
+    eight-panel microfactor.  ``panel_count`` may be reduced dyadically when a
+    parent factor exceeds the declared width budget; this changes the radial
+    factorization without changing the shared frequency generator.
     """
     context = context or build_microfactor_render_context()
     data = context["data"]
     omega = data["omega"]
     t = context["t"]
     require(0 <= micro < MICROFACTOR_COUNT, "microfactor id out of range")
+    panel_start = (
+        MICROFACTOR_PANELS * micro if panel_start is None else panel_start
+    )
+    trace_id = micro if trace_id is None else trace_id
+    require(
+        panel_count in (1, 2, 4, 8),
+        "panel count must be a dyadic divisor of the parent microfactor",
+    )
+    require(
+        MICROFACTOR_PANELS * micro <= panel_start
+        and panel_start + panel_count
+        <= MICROFACTOR_PANELS * (micro + 1),
+        "split interval leaves its parent microfactor",
+    )
+    require(
+        (panel_start - MICROFACTOR_PANELS * micro) % panel_count == 0,
+        "split interval is not aligned to its dyadic panel count",
+    )
+    panel_end = panel_start + panel_count
+    raw_panel_start = 4 * panel_start
+    raw_panel_count = 4 * panel_count
+    interval_lo = Fraction(panel_start, 64)
+    interval_hi = Fraction(panel_end, 64)
+    legacy = (
+        panel_start == MICROFACTOR_PANELS * micro
+        and panel_count == MICROFACTOR_PANELS
+        and trace_id == micro
+    )
+    coefficient_start = "j*8" if legacy else str(panel_start)
+    coefficient_end = "(j+1)*8" if legacy else str(panel_end)
+    raw_start = "j*32" if legacy else str(raw_panel_start)
+    raw_end = "(j+1)*32" if legacy else str(raw_panel_start + raw_panel_count)
+    boundary_start = "j*8" if legacy else str(panel_start)
+    boundary_end = "(j+1)*8" if legacy else str(panel_end)
     frames = context["frames"]
     frame_hashes = context["frame_sha256"]
     table_hash = context["frame_table_sha256"]
@@ -324,7 +364,11 @@ def render_microfactor_adapter(
     lines = [
         "// expect: 42",
         "// backends: c native",
-        "// Generated eight-panel affine microfactor runner.",
+        (
+            "// Generated eight-panel affine microfactor runner."
+            if legacy else
+            "// Generated dyadic-panel affine microfactor runner."
+        ),
         "import prelude;",
         "import sys/args;",
         "import math/rational;",
@@ -350,8 +394,8 @@ def render_microfactor_adapter(
         "",
     ]
     lines += context["runtime_lines"]
-    frame_base = MICROFACTOR_PANELS * micro
-    local_frames = frames[frame_base:frame_base + MICROFACTOR_PANELS + 1]
+    frame_base = panel_start
+    local_frames = frames[frame_base:frame_base + panel_count + 1]
     frame_lines, frame_names = _render_frame_family(
         f"gc_micro_{micro}_frame", local_frames
     )
@@ -361,7 +405,7 @@ def render_microfactor_adapter(
     lines += [
         "fn gc_micro_frame_full(k:i64)->IvAffineMat{",
         "  let c:IvAffineCell=gc_cell();",
-        f"  if(k<{frame_base} || k>{frame_base + MICROFACTOR_PANELS}){{trap();}}",
+        f"  if(k<{frame_base} || k>{frame_base + panel_count}){{trap();}}",
         f"  let q:i64=k-{frame_base};return {frame_dispatch.replace('k==', 'q==')};",
         "}",
         "",
@@ -383,8 +427,8 @@ def render_microfactor_adapter(
         "",
         "fn gc_micro_coeff_table(j:i64)->Vec<IvAffineMat>{",
         "  let d:ManualVec<IvAffineMat>=manual_vec_new<IvAffineMat>(",
-        f"    system_allocator(),{MICROFACTOR_PANELS});",
-        "  let p:i64=j*8;while(p<(j+1)*8){",
+        f"    system_allocator(),{panel_count});",
+        f"  let p:i64={coefficient_start};while(p<{coefficient_end}){{",
         "    let ta:Iv=iv_from_rat(rat(p,64));",
         "    let tb:Iv=iv_from_rat(rat(p+1,64));",
         "    d=manual_vec_push<IvAffineMat>(d,gc_micro_coeff(p,iv(ta.lo,tb.hi)));",
@@ -402,18 +446,18 @@ def render_microfactor_adapter(
         "  let d:ManualVec<IvAffineMat>=manual_vec_new<IvAffineMat>(",
         "    system_allocator(),2);",
         "  d=manual_vec_push<IvAffineMat>(d,",
-        "    if(kind==3){match(gc_micro_full_frame(j*8)){some(z)=>z,none=>{trap();}}}",
-        "    else{gc_micro_frame_part(j*8,kind)});",
+        f"    if(kind==3){{match(gc_micro_full_frame({boundary_start})){{some(z)=>z,none=>{{trap();}}}}}}",
+        f"    else{{gc_micro_frame_part({boundary_start},kind)}});",
         "  d=manual_vec_push<IvAffineMat>(d,",
-        "    if(kind==3){match(gc_micro_full_frame((j+1)*8)){some(z)=>z,none=>{trap();}}}",
-        "    else{gc_micro_frame_part((j+1)*8,kind)});",
+        f"    if(kind==3){{match(gc_micro_full_frame({boundary_end})){{some(z)=>z,none=>{{trap();}}}}}}",
+        f"    else{{gc_micro_frame_part({boundary_end},kind)}});",
         "  return vec_seal(d);",
         "}",
         "",
         "fn gc_micro_raw_coeff_table(j:i64)->Vec<IvAffineMat>{",
         "  let d:ManualVec<IvAffineMat>=manual_vec_new<IvAffineMat>(",
-        "    system_allocator(),32);",
-        "  let p:i64=j*32;while(p<(j+1)*32){",
+        f"    system_allocator(),{raw_panel_count});",
+        f"  let p:i64={raw_start};while(p<{raw_end}){{",
         "    let ta:Iv=iv_from_rat(rat(p,256));",
         "    let tb:Iv=iv_from_rat(rat(p+1,256));",
         "    d=manual_vec_push<IvAffineMat>(d,gc_micro_raw_coeff(p,iv(ta.lo,tb.hi)));",
@@ -508,13 +552,17 @@ def render_microfactor_adapter(
         "",
         "fn gc_micro_structured_product(at:borrow Vec<IvAffineMat>,",
         "j:i64)->Option<IvAffineMat>{",
-        "  if(len(at)!=8){return Option.none;}",
+        f"  if(len(at)!={panel_count}){{return Option.none;}}",
         "  let total:IvAffineMat=ivam_identity(gc_cell().generator,12);",
-        "  let k:i64=0;while(k<8){",
+        f"  let k:i64=0;while(k<{panel_count}){{",
         "    let u:IvAffineMat=match(sl_local_transition(",
         "      vec_get_ref<IvAffineMat>(at,usize(k)),rat(1,64),12)){",
         "      some(z)=>z,none=>{return Option.none;}};",
-        "    let w:IvAffineMat=match(gc_micro_moving_structured(u,j*8+k)){",
+        (
+            "    let w:IvAffineMat=match(gc_micro_moving_structured(u,j*8+k)){"
+            if legacy else
+            f"    let w:IvAffineMat=match(gc_micro_moving_structured(u,{panel_start}+k)){{"
+        ),
         "      some(z)=>z,none=>{return Option.none;}};",
         "    let z:IvAffineMat=match(gc_sl_compose(w,total)){",
         "      some(v)=>v,none=>{return Option.none;}};",
@@ -526,13 +574,13 @@ def render_microfactor_adapter(
         "j:i64)->Option<IvAffineMat>{",
         "  let eye:IvAffineMat=ivam_identity(gc_cell().generator,12);",
         "  let x:IvAffineMat=gc_standard_to_block_rows(eye);",
-        "  let b0:IvAffineMat=match(gc_micro_full_frame(j*8)){",
+        f"  let b0:IvAffineMat=match(gc_micro_full_frame({boundary_start})){{",
         "    some(z)=>z,none=>{return Option.none;}};",
         "  let y0:IvAffineResult=ivam_solve_rect(b0,x);",
         "  if(!y0.ok){return Option.none;}",
         "  let y1:IvAffineResult=ivam_apply_rect(w,y0.value);",
         "  if(!y1.ok){return Option.none;}",
-        "  let b1:IvAffineMat=match(gc_micro_full_frame((j+1)*8)){",
+        f"  let b1:IvAffineMat=match(gc_micro_full_frame({boundary_end})){{",
         "    some(z)=>z,none=>{return Option.none;}};",
         "  let z:IvAffineResult=ivam_apply_rect(b1,y1.value);",
         "  if(!z.ok){return Option.none;}",
@@ -541,7 +589,7 @@ def render_microfactor_adapter(
         "",
         "fn gc_micro_raw_frames()->Vec<IvAffineMat>{",
         "  let d:ManualVec<IvAffineMat>=manual_vec_new<IvAffineMat>(",
-        "    system_allocator(),33);let k:i64=0;while(k<33){",
+        f"    system_allocator(),{raw_panel_count + 1});let k:i64=0;while(k<{raw_panel_count + 1}){{",
         "    d=manual_vec_push<IvAffineMat>(d,",
         "      ivam_identity(gc_cell().generator,12));k=k+1;}",
         "  return vec_seal(d);",
@@ -549,7 +597,7 @@ def render_microfactor_adapter(
         "",
         "fn gc_micro_raw_product(raw:borrow IvLinParamAffineFlow)->Option<IvAffineMat>{",
         "  let u:IvAffineMat=ivam_identity(gc_cell().generator,12);",
-        "  let k:i64=0;while(k<32){",
+        f"  let k:i64=0;while(k<{raw_panel_count}){{",
         "    let w:IvAffineMat=match(ivlin_param_affine_correction(raw,k)){",
         "      some(z)=>z,none=>{return Option.none;}};",
         "    let z:IvAffineResult=ivam_apply_rect(w,u);",
@@ -568,10 +616,10 @@ def render_microfactor_adapter(
         "    some(z)=>z,none=>{return Option.none;}};",
         "  let g:IvAffineMat=gc_affine_submatrix(u,2);",
         "  let uk:IvAffineMat=gc_affine_submatrix(u,1);",
-        "  let cc:IvAffineMat=gc_micro_frame_part(j*8,0);",
-        "  let ck1:IvAffineMat=gc_micro_frame_part((j+1)*8,1);",
-        "  let d0:IvAffineMat=gc_micro_frame_part(j*8,2);",
-        "  let d1:IvAffineMat=gc_micro_frame_part((j+1)*8,2);",
+        f"  let cc:IvAffineMat=gc_micro_frame_part({boundary_start},0);",
+        f"  let ck1:IvAffineMat=gc_micro_frame_part({boundary_end},1);",
+        f"  let d0:IvAffineMat=gc_micro_frame_part({boundary_start},2);",
+        f"  let d1:IvAffineMat=gc_micro_frame_part({boundary_end},2);",
         "  let a:IvAffineResult=ivam_mul_checked(g,cc);",
         "  if(!a.ok){return Option.none;}",
         "  let b:IvAffineResult=ivam_mul_checked(uk,d0);",
@@ -593,7 +641,7 @@ def render_microfactor_adapter(
         "j:i64)->Option<IvAffineMat>{",
         "  let eye:IvAffineMat=ivam_identity(gc_cell().generator,12);",
         "  let x:IvAffineMat=gc_standard_to_block_rows(eye);",
-        "  let b0:IvAffineMat=match(gc_micro_full_frame(j*8)){",
+        f"  let b0:IvAffineMat=match(gc_micro_full_frame({boundary_start})){{",
         "    some(z)=>z,none=>{return Option.none;}};",
         "  let y0:IvAffineResult=ivam_solve_rect(b0,x);",
         "  if(!y0.ok){return Option.none;}",
@@ -601,7 +649,7 @@ def render_microfactor_adapter(
         "    some(z)=>z,none=>{return Option.none;}};",
         "  let y1:IvAffineResult=ivam_apply_rect(w,y0.value);",
         "  if(!y1.ok){return Option.none;}",
-        "  let b1:IvAffineMat=match(gc_micro_full_frame((j+1)*8)){",
+        f"  let b1:IvAffineMat=match(gc_micro_full_frame({boundary_end})){{",
         "    some(z)=>z,none=>{return Option.none;}};",
         "  let z:IvAffineResult=ivam_apply_rect(b1,y1.value);",
         "  if(!z.ok){return Option.none;}",
@@ -621,22 +669,26 @@ def render_microfactor_adapter(
         "}",
         "",
         "pub fn axial_microfactor(j:i64)->bool{",
-        f"  if(j!={micro}){{return false;}}",
+        f"  if(j!={trace_id}){{return false;}}",
         "  let at:Vec<IvAffineMat>=gc_micro_coeff_table(j);",
         "  let ac:Vec<IvAffineMat>=gc_micro_subtable(at,0);",
         "  let ak:Vec<IvAffineMat>=gc_micro_subtable(at,1);",
         "  let cell:IvAffineCell=gc_cell();",
-        "  let lo:Rat=rat(j,8);let hi:Rat=rat(j+1,8);",
+        (
+            "  let lo:Rat=rat(j,8);let hi:Rat=rat(j+1,8);"
+            if legacy else
+            f"  let lo:Rat={rat_literal(interval_lo)};let hi:Rat={rat_literal(interval_hi)};"
+        ),
         "  println(strfmt(system_allocator(),\"BEGIN {}\",[j]));",
         "  println(\"LAYOUT contiguous-block-lower-v1\");",
         "  let fc:IvLinParamAffineFlow=ivlin_param_affine_fundamental_tables(",
         "    ac,gc_micro_frames(j,0),cell,8,rat_clone(lo),rat_clone(hi),",
-        "    1,8,12,8,true,true,true);",
+        f"    1,{panel_count},12,8,true,true,true);",
         "  println(strfmt(system_allocator(),\"FLOW carrier {} {} {}\",",
         "    [fc.ok,fc.refusal_code,fc.refusal_reset]));",
         "  let fk:IvLinParamAffineFlow=ivlin_param_affine_fundamental_tables(",
         "    ak,gc_micro_frames(j,1),cell,4,rat_clone(lo),rat_clone(hi),",
-        "    1,8,12,8,true,true,true);",
+        f"    1,{panel_count},12,8,true,true,true);",
         "  println(strfmt(system_allocator(),\"FLOW kernel {} {} {}\",",
         "    [fk.ok,fk.refusal_code,fk.refusal_reset]));",
         "  if(!fc.ok || !fk.ok){return false;}",
@@ -673,7 +725,10 @@ def render_microfactor_adapter(
         "omega_cell": [str(x) for x in OMEGA_CELL],
         "microfactor_count": MICROFACTOR_COUNT,
         "rendered_microfactor": micro,
-        "panels_per_microfactor": MICROFACTOR_PANELS,
+        "panels_per_microfactor": panel_count,
+        "global_panel_start": panel_start,
+        "global_panel_end": panel_end,
+        "trace_id": trace_id,
         "frame_table_sha256": table_hash,
         "frame_sha256": frame_hashes,
     }

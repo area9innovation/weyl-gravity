@@ -9,9 +9,10 @@ import math
 from pathlib import Path
 
 from .emit_microfactor import _bits, _rational
+from .factor_cover import factor_id, factor_table_hash, load_factor_cover
 from .verify_handoff import CELL, canonical_sha256
 from .verify_join import SCHEMA, verify_join
-from .verify_microfactor import BLOCK_ORDER, COUNT, verify_microfactor_chain
+from .verify_microfactor import BLOCK_ORDER
 
 
 class JoinTraceError(ValueError):
@@ -97,13 +98,15 @@ def build_join(
     *, trace: str, artifacts: Path, source: Path, receipt: Path,
     producer: Path, repo_root: Path
 ) -> dict:
-    paths = sorted(artifacts.glob("microfactor_*.json"))
-    payloads = [json.loads(path.read_text()) for path in paths]
-    verify_microfactor_chain(payloads, repo_root)
+    paths, payloads = load_factor_cover(artifacts, repo_root)
     matrix, widths = parse_join_trace(trace)
     factor_set = [
-        {"micro": micro, "path": _relative(path, repo_root), "sha256": _sha256(path)}
-        for micro, path in enumerate(paths)
+        {
+            "factor_id": factor_id(item),
+            "path": _relative(path, repo_root),
+            "sha256": _sha256(path),
+        }
+        for path, item in zip(paths, payloads)
     ]
     payload = {
         "schema": SCHEMA,
@@ -122,13 +125,13 @@ def build_join(
             "order": list(BLOCK_ORDER),
         },
         "composition": {
-            "factor_count": COUNT,
-            "radial_order": "left-multiply-increasing-micro-id",
+            "factor_count": len(payloads),
+            "radial_order": "left-multiply-increasing-exact-radial-leaf",
             "dyadic_rebase_bits_after_each_join": 128,
             "standard_basis_materialized": False,
         },
         "frames": {
-            "table_sha256": payloads[0]["frames"]["table_sha256"],
+            "table_sha256": factor_table_hash(payloads[0]),
             "left_boundary_sha256": payloads[0]["frames"]["left_boundary_sha256"],
             "right_boundary_sha256": payloads[-1]["frames"]["right_boundary_sha256"],
             "adjacent_hashes_verified": True,

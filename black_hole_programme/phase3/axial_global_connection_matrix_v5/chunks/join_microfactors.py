@@ -8,7 +8,7 @@ import json
 import struct
 from pathlib import Path
 
-from .verify_microfactor import verify_microfactor_chain
+from .factor_cover import factor_id, load_factor_cover
 
 
 def _f64(bits: str) -> str:
@@ -54,7 +54,7 @@ def render_join_source(artifacts: list[dict]) -> str:
     lines = [
         "// expect: 42",
         "// backends: c native",
-        "// Generated exact structured join of 224 content-addressed microfactors.",
+        "// Generated exact structured join of a content-addressed dyadic factor cover.",
         "import prelude;",
         "import math/rational;",
         "import math/interval;",
@@ -155,24 +155,27 @@ def main() -> int:
     parser.add_argument("--output-source", type=Path, required=True)
     parser.add_argument("--receipt", type=Path, required=True)
     args = parser.parse_args()
-    paths = sorted(args.artifacts.glob("microfactor_*.json"))
-    payloads = [json.loads(path.read_text()) for path in paths]
-    verify_microfactor_chain(payloads, args.repo_root)
+    paths, payloads = load_factor_cover(args.artifacts, args.repo_root)
     source = render_join_source(payloads)
     args.output_source.write_text(source)
     receipt = {
-        "schema": "phase3-axial-microfactor-join-source-v1",
+        "schema": "phase3-axial-factor-cover-join-source-v2",
         "layout": "contiguous-block-lower-v1",
         "factor_count": len(payloads),
         "factor_sha256": [
-            {"path": str(path), "sha256": _sha256(path)} for path in paths
+            {
+                "factor_id": factor_id(payload),
+                "path": str(path),
+                "sha256": _sha256(path),
+            }
+            for path, payload in zip(paths, payloads)
         ],
         "source": {
             "path": str(args.output_source),
             "sha256": hashlib.sha256(source.encode()).hexdigest(),
             "bytes": len(source.encode()),
         },
-        "composition": "left-multiply in increasing radial micro id",
+        "composition": "left-multiply in increasing exact radial leaf order",
         "dyadic_rebase_bits_after_each_join": 128,
         "standard_basis_materialized": False,
     }

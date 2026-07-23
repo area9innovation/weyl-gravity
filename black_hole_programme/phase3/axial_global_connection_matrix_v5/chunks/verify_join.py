@@ -9,6 +9,7 @@ import math
 from pathlib import Path
 from typing import Any
 
+from .factor_cover import factor_id, factor_table_hash, verify_factor_cover
 from .verify_handoff import (
     CELL,
     HandoffError,
@@ -19,7 +20,7 @@ from .verify_handoff import (
     _verify_affine_hull,
     canonical_sha256,
 )
-from .verify_microfactor import BLOCK_ORDER, COUNT, verify_microfactor_chain
+from .verify_microfactor import BLOCK_ORDER
 
 
 SCHEMA = "phase3-axial-moving-frame-global-join-v1"
@@ -59,10 +60,13 @@ def verify_join(data: Any, repo_root: Path | None = None) -> bool:
         },
         "state: wrong chart/order",
     )
+    factor_count = data["composition"].get("factor_count")
     _require(
-        data["composition"] == {
-            "factor_count": COUNT,
-            "radial_order": "left-multiply-increasing-micro-id",
+        isinstance(factor_count, int)
+        and factor_count >= 224
+        and data["composition"] == {
+            "factor_count": factor_count,
+            "radial_order": "left-multiply-increasing-exact-radial-leaf",
             "dyadic_rebase_bits_after_each_join": 128,
             "standard_basis_materialized": False,
         },
@@ -143,10 +147,13 @@ def verify_join(data: Any, repo_root: Path | None = None) -> bool:
         _exact_keys(integrity[key], {"path", "sha256"}, f"integrity.{key}")
         _sha(integrity[key]["sha256"], f"integrity.{key}.sha256")
     factors = integrity["factor_artifacts"]
-    _require(isinstance(factors, list) and len(factors) == COUNT, "factor set incomplete")
+    _require(
+        isinstance(factors, list) and len(factors) == factor_count,
+        "factor set incomplete",
+    )
     for expected, item in enumerate(factors):
-        _exact_keys(item, {"micro", "path", "sha256"}, f"factor[{expected}]")
-        _require(item["micro"] == expected, "factor set reordered")
+        _exact_keys(item, {"factor_id", "path", "sha256"}, f"factor[{expected}]")
+        _require(isinstance(item["factor_id"], str), "factor id malformed")
         _sha(item["sha256"], f"factor[{expected}].sha256")
     _require(
         integrity["factor_set_sha256"] == canonical_sha256(factors),
@@ -173,15 +180,21 @@ def verify_join(data: Any, repo_root: Path | None = None) -> bool:
                 f"factor[{expected}]: hash mismatch",
             )
             payloads.append(json.loads(path.read_text()))
-        verify_microfactor_chain(payloads, repo_root)
+        ordered = verify_factor_cover(payloads, repo_root)
+        _require(payloads == ordered, "factor set is not in exact radial order")
+        _require(
+            [item["factor_id"] for item in factors]
+            == [factor_id(payload) for payload in payloads],
+            "factor ids differ from payloads",
+        )
         receipt_path = repo_root / integrity["join_receipt"]["path"]
         receipt = json.loads(receipt_path.read_text())
         _require(
-            receipt.get("schema") == "phase3-axial-microfactor-join-source-v1"
+            receipt.get("schema") == "phase3-axial-factor-cover-join-source-v2"
             and receipt.get("layout") == "contiguous-block-lower-v1"
-            and receipt.get("factor_count") == COUNT
+            and receipt.get("factor_count") == factor_count
             and receipt.get("composition")
-            == "left-multiply in increasing radial micro id"
+            == "left-multiply in increasing exact radial leaf order"
             and receipt.get("dyadic_rebase_bits_after_each_join") == 128
             and receipt.get("standard_basis_materialized") is False,
             "join receipt contract mismatch",
@@ -191,6 +204,7 @@ def verify_join(data: Any, repo_root: Path | None = None) -> bool:
             receipt_factors
             == [
                 {
+                    "factor_id": item["factor_id"],
                     "path": item["path"],
                     "sha256": item["sha256"],
                 }
@@ -217,7 +231,7 @@ def verify_join(data: Any, repo_root: Path | None = None) -> bool:
         )
         _require(
             data["frames"]["table_sha256"]
-            == payloads[0]["frames"]["table_sha256"],
+            == factor_table_hash(payloads[0]),
             "join frame table differs from factors",
         )
         _require(
