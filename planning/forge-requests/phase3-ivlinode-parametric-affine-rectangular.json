@@ -34,7 +34,8 @@
     "notes": [
       "The landed affine API closes the full first-cell carrier and kernel chains with maximum local correction widths 0.009978474438174208 and 0.00332335609866979.",
       "All 1,792 structured 4x8 lower Krawczyk solves close, but fixed frames inflate a midpoint correction of about 2.97e-11 at reset 65 to interval width 3.6880892110833354e7 because the common omega dependence of A, D and the local flow is lost.",
-      "The request is a correlation-preservation extension of the successful affine API, not a request for a new ODE integrator or a physics-specific solver."
+      "The request is a correlation-preservation extension of the successful affine API, not a request for a new ODE integrator or a physics-specific solver.",
+      "2026-07-23 science-forge: LANDED at tango/forge f1b412c68. The generic parameter-correlated affine/Taylor representation, structured block-lower factors, rectangular apply/solve and finite-cell rank gates pass C/native and both sanitizers; the existing validated affine and linear-flow examples also pass their full gates, and the unchanged Phase-3 v5 consumer replays on C/native. Physics must still generate and certify the action-specific omega-Taylor coefficient/frame data and remainders before v5 can promote a global connection."
     ]
   },
   "edges": []
