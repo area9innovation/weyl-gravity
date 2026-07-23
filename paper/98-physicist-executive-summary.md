@@ -408,18 +408,26 @@ fixtures give nonzero Einstein--additional and additional--additional horizon
 pairing, while the pure Einstein block is null in the pure-Weyl current.
 
 Horizon analyticity alone does not force the additional family to vanish.
-But at $\ell=2$, $\omega=3/5$, the completed axial and polar metric
-reconstructions have divergent Einstein--extra and extra--extra slice norms,
-while the Einstein sector is finite (with an additional zero polar
-self-density in one sector). Thus finite symplectic norm at infinity selects
-exactly the Einstein sector in both parities at this fixture. This is a
-global phase-space selection, not a local horizon condition or a general
-all-frequency theorem.
+The earlier claim that finite radial pairing selects exactly the Einstein
+sector at one $\ell=2$ fixture has been withdrawn: differentiated metric
+reconstruction terms reverse that interpretation. The repaired formal
+analysis contains non-Einstein finite directions, although some of their
+pairings with genuine oscillatory Einstein shears diverge.
 
-> **Immediate limitation.** A symbolic-frequency theorem, general $\ell$,
-> summability, a complete asymptotically
-> flat phase space, the exterior initial-boundary problem, complex
-> frequencies, ringdown, and stability remain open.
+A separate Phase-3A theorem concerns wave packets rather than individual
+formal radial representatives. For axial $\ell=2$ perturbations with $M=1$,
+each null endpoint carries a three-dimensional
+$L^2([1/2,3/4];\mathbb C^3)$ trace space. Throughout the tested interval the
+action-derived classical flux form is nondegenerate and indefinite, with
+inertia $(1,2,0)$ for $\alpha_{\rm W}>0$: one positive direction, two
+negative directions, no radical, and no frequency-dependent signature wall.
+
+> **Immediate limitation.** This is an endpoint wave-packet flux theorem,
+> not a global scattering or physical-ghost theorem. Whether the negative
+> endpoint directions are populated by horizon-regular global solutions
+> remains open, as do the horizon-to-infinity connection, a complete
+> asymptotically flat phase space, complex frequencies, ringdown, and
+> stability.
 
 ## Where the strongest criticism currently lands
 
