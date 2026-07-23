@@ -812,6 +812,24 @@ The unweighted \(L^2\) topology remains equivalent on compact frequency
 bands away from zero, while the static/memory sector at \(\omega=0\) is
 separate.  Pointwise invertibility of \(T_-\) does not by itself give a
 bounded global operator on this weighted direct integral.
+In weight-normalized factor frames, write
+\[
+ T_-=\begin{pmatrix}
+ a_2&b&c\\0&a_2&d\\0&0&a_1
+ \end{pmatrix},
+ \qquad a_s=A_{{\rm in},s}.
+\]
+Since the scalar Wronskians give \(\lvert a_s^{-1}\rvert\leq1\) on the
+positive real axis, boundedness of the incoming-to-horizon population map
+\(T_-^{-1}\) reduces to weighted bounds on only
+\[
+ \frac{b}{a_2^2},\qquad
+ \frac{d}{a_2a_1},\qquad
+ \frac{bd-a_2c}{a_2^2a_1}.
+\]
+Threshold, high-frequency, and limiting-absorption estimates for these
+three extension ratios are the remaining quantitative gate between
+separated-mode no-growth and time-domain boundedness.
 
 The normalized signature basis also defines the canonical classical
 fundamental symmetry \(C_{\rm fac}=\operatorname{diag}(1,-1,-1)\).
@@ -1028,11 +1046,33 @@ completeness, or a full PDE stability theorem.  The frame events at
 \(\omega=i/4,i/2,i\) lie in the temporally damped half-plane in this
 convention and remain unclassified by the energy argument.
 
+The non-split spin-two extension can also be extracted exactly in local
+Regge--Wheeler companion frames.  Its rational \(2\times2\) source matrix
+\(\mathcal E_{\rm RW}\) has rank one, but it is not a pointwise scalar
+multiple of \(\partial_\omega A_{\rm RW}\).  More strongly, a putative
+global rational-gauge identity
+\[
+ \mathcal E_{\rm RW}
+ =q(\omega)\partial_\omega A_{\rm RW}
+ +B'+BA_{\rm RW}-A_{\rm RW}B
+\]
+has trace residue \(4iq\) at \(r=2\), whereas a rational derivative has
+zero residue.  It therefore forces \(q=0\) in that gauge class.  This does
+not exclude endpoint-analytic logarithmic spectral-phase gauges.
+
+At a simple damped spin-two zero, the invariant scattering datum remains
+\([c]\in\mathcal O/(A_{{\rm in},2})\).  The congruence
+\(c\equiv qA_{{\rm in},2}'\pmod{A_{{\rm in},2}}\) with unspecified \(q\)
+is not predictive: \([A_{{\rm in},2}']\) is a unit, so such a class
+\([q]\) always exists.  Selecting the local Smith type requires a certified
+QNM and adjoint germ together with a convergent Fredholm pairing; no
+nonzero extension resonance is promoted here.
+
 \begin{theorem}[Exact future-horizon flux]
 \label{thm:axial-future-horizon-gram}
-For the same axial \(\ell=2\) pilot band, the exact outward-oriented
-future-horizon Gram \(H_{\mathcal H^+}\), evaluated from the correlated
-Frobenius series and the action current, has rank three and inertia
+For axial \(\ell=2\) and every real \(\omega>0\), the exact
+outward-oriented future-horizon Gram \(H_{\mathcal H^+}\), evaluated from
+the correlated Frobenius series and the action current, has rank three and inertia
 \[
  \operatorname{inertia}H_{\mathcal H^+}=(1,2,0)
  \qquad(\alpha_{\rm W}>0).
@@ -1046,6 +1086,11 @@ Neither \(H_{\mathcal H^+}\) nor \(-H_{\mathcal H^+}\) is positive
 semidefinite.
 \end{theorem}
 
+The all-positive-frequency extension follows from the symbolic recurrence:
+its residue eigenbasis and all factor-frame denominators are collision-free
+on \(\omega>0\), the three integer resonances have exact zero residual, and
+the omitted-head power count cannot change the Laurent constant.
+
 The oriented Stokes identity is therefore
 \[
  H_{\mathcal H^+}
@@ -1056,6 +1101,51 @@ The horizon theorem independently reproduces the hyperbolic-spin-two plus
 negative-spin-one anatomy of the incoming endpoint.  Its indefiniteness
 also means that a semidefinite shortcut cannot determine
 \(\operatorname{rank}T_+\); the outgoing connection remains necessary.
+
+There is nevertheless an exact conditional Krein theorem.  Normalize the
+incoming, outgoing, and horizon forms either to
+\[
+ J_\sigma=\operatorname{diag}(1,-1,-1)
+ \quad\hbox{or}\quad
+ J_0=\begin{pmatrix}0&1&0\\1&0&0\\0&0&-1\end{pmatrix}.
+\]
+The signature frame \(J_\sigma\) carries the invariant sign
+decomposition; the null frame \(J_0\) carries factor triangularity.  They
+must not be conflated.  If a typed, same-frame \(T_+\) and the global Stokes
+defect are supplied, then with normalized maps
+\[
+ R=\widehat T_+\widehat T_-^{-1},\qquad
+ A=\widehat T_-^{-1},\qquad
+ \mathsf S=\binom RA,
+\]
+one has
+\[
+ \mathsf S^\dagger(J\oplus J)\mathsf S=J,\qquad
+ D:=J-R^\dagger JR=A^\dagger JA.
+\]
+Thus \(D\) is nondegenerate with inertia \((1,2,0)\), and
+\(\mathsf S\) admits a noncanonical algebraic completion to \(U(2,4)\).
+The determinant is normalization-sensitive:
+\[
+ \det D=|\det\widehat T_-|^{-2}
+ =|A_{{\rm in},2}|^{-4}|A_{{\rm in},1}|^{-2}.
+\]
+Using the raw \(T_-\) without the endpoint normalizer ratio is incorrect.
+Equivalently, with the Krein adjoint \(M^\sharp=J^{-1}M^\dagger J\),
+the conditional identity is
+\[
+ R^\sharp R+A^\sharp A=I.
+\]
+Because \(A\) is invertible, \(I-R^\sharp R\) is invertible and hence
+\(1\notin\sigma(R^\sharp R)\).  This does not exclude nonzero horizon
+waves of zero scalar flux: a nondegenerate indefinite horizon form still
+has a null cone.
+
+This conditional theorem is not yet a physical scattering result.  The
+repository does not certify the typed full \(3\times3\) \(T_+\), its
+same-frame normalization, or the orientation-correct global Stokes defect.
+It likewise does not certify a three-parameter
+\((\alpha,\gamma,\mu)\) reduction of the null-frame extension entries.
 
 For comparison, the Einstein problem admits a global finite-energy
 Schwarzschild scattering theory relating initial data and radiation spaces
@@ -1433,7 +1523,11 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_incoming_extended_domain_audit/certificate.json};
 \cert{reports/phase3-axial-incoming-extended-domain-audit-2026-07-23.md};
 \cert{black_hole_programme/phase3/axial_boundary_devissage_no_growth/certificate.json};
-\cert{reports/phase3-axial-boundary-devissage-no-growth-2026-07-23.md}\\
+\cert{reports/phase3-axial-boundary-devissage-no-growth-2026-07-23.md};
+\cert{black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/future_horizon_outward_gram.json};
+\cert{black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/future_horizon_factor_quotient.json};
+\cert{black_hole_programme/phase3/axial_spin_two_scattering_extension_preflight/certificate.json};
+\cert{black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json}\\
 Polar restriction-stable module and invariant current filtration &
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json}\\
 Generic-\(\ell\) two-parity formal-infinity phase diagram &

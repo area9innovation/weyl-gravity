@@ -1,0 +1,40 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-one-sided-krein-scattering-preflight",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-one-sided-krein-scattering-preflight",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-one-sided-krein-scattering-preflight.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-current-identity",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Type the incoming, outgoing and future-horizon flux frames correctly and determine which one-sided Krein-scattering consequences are exact before the missing outgoing connection is constructed.",
+    "stop_condition": "Distinguish the signature and null factor frames; derive the normalized conditional J-isometry, reflection-defect inertia and determinant, and algebraic completion; audit the raw endpoint normalizer ratio; test any triangular component reduction only in the null frame; and either activate or fail closed on the physical Tplus/Stokes handoff.",
+    "current_gate": "Conditional Krein theorem, determinant normalization, all-positive-real horizon audit, and physical activation disposition",
+    "forbid": "no mixing of J_sigma and J0 component equations; no bare raw-det(Tminus) defect formula; no physical scattering or U(2,4) completion without typed Tplus and global Stokes defect; no alpha/gamma/mu reduction without exact same-frame triangular data; no CPT, particle, ghost or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-boundary-devissage-no-growth",
+      "sf:program/work/phase3-black-hole-axial-horizon-grassmann-mobius-to-r4-taylor2"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/",
+      "reports/phase3-axial-one-sided-krein-scattering-preflight-2026-07-23.md",
+      "planning/work-items/phase3-black-hole-axial-one-sided-krein-scattering-preflight.json",
+      "planning/events/"
+    ],
+    "resource_hint": "The exact preflight landed before this coordination node in commit f81426fb23b1647b58c2e61782989ef44913adf8. Record PASS for the conditional theorem and METHOD_SHORTFALL for physical activation. The missing typed Tplus/global Stokes handoff remains the decisive dependency.",
+    "input_commit": "524b44078",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "The raw determinant formula requires the exact endpoint normalizer ratio.",
+      "The local horizon Gram and factor formula extend to every real omega>0, but the physical scattering theorem remains unactivated."
+    ]
+  },
+  "edges": []
+}

@@ -938,9 +938,19 @@ quotient elimination proves that the complete non-split six-state axial
 boundedness, decay, completeness, or full PDE stability theorem; damped
 upper-half-plane poles remain open.
 
+The exact local metric/carrier extension has rank one, but a hoped-for
+spectral-derivative shortcut does not presently select the damped resonance
+structure.  In a globally rational gauge, the trace residue at the horizon
+forces any coefficient of \(\partial_\omega A_{\rm RW}\) to vanish.
+Moreover, at a simple zero the statement
+\(c=qA_{{\rm in},2}'\bmod A_{{\rm in},2}\) with unspecified \(q\) is
+tautological because \([A_{{\rm in},2}']\) is a unit.  The invariant class
+\([c]\), and hence the local Smith type, still requires certified QNM and
+adjoint germs plus a convergent Fredholm pairing.
+
 An independent exact Laurent-current calculation at the future horizon
-gives an outward Gram of rank three and inertia \((1,2,0)\) on the pilot
-band.  Its metric/carrier spin-two plane is hyperbolic, and its orthogonal
+gives an outward Gram of rank three and inertia \((1,2,0)\) for every real
+\(\omega>0\).  Its metric/carrier spin-two plane is hyperbolic, and its orthogonal
 unit spin-one quotient again has norm \(-32/(15\omega)\).  Thus the factor
 anatomy agrees at the incoming endpoint and future horizon.  Neither
 orientation of the horizon Gram is semidefinite, so the Stokes identity
@@ -949,6 +959,34 @@ orientation of the horizon Gram is semidefinite, so the Stokes identity
  -T_-^\dagger G_-T_-=0
 \]
 does not determine the rank of \(T_+\) without the outgoing connection.
+
+After separate normalization to either the signature form
+\(J_\sigma=\operatorname{diag}(1,-1,-1)\) or the triangular null form
+\(J_0\), the same identity would make
+\(\mathsf S=(R,A)^T\) a \(J\)-isometric embedding and the reflection defect
+\(J-R^\dagger JR=A^\dagger JA\) nondegenerate with inertia \((1,2,0)\).
+Its correctly normalized determinant is
+\[
+ |\det\widehat T_-|^{-2}
+ =|A_{{\rm in},2}|^{-4}|A_{{\rm in},1}|^{-2};
+\]
+the raw determinant needs the endpoint volume ratio.  This remains a
+conditional algebraic theorem, not an activated scattering result, because
+the typed full \(T_+\), its same-frame normalization, and the global Stokes
+defect are not yet certified.
+
+The remaining time-domain population problem is already smaller than a
+full matrix estimate.  In a weight-normalized triangular factor frame,
+boundedness of \(T_-^{-1}\) reduces to threshold, high-frequency, and
+limiting-absorption bounds on
+\[
+ \frac{b}{A_{{\rm in},2}^{\,2}},\qquad
+ \frac{d}{A_{{\rm in},2}A_{{\rm in},1}},\qquad
+ \frac{bd-A_{{\rm in},2}c}
+ {A_{{\rm in},2}^{\,2}A_{{\rm in},1}}.
+\]
+The scalar diagonal inverses are already bounded by their Wronskian
+identities; the non-split extension ratios are not.
 
 The full 282-term $Q_{21}$ is machine readable at
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/current_artifacts/q21-finite-line-factor.json}
