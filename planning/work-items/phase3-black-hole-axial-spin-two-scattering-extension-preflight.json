@@ -1,0 +1,39 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-spin-two-scattering-extension-preflight",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-spin-two-scattering-extension-preflight",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-spin-two-scattering-extension-preflight.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-current-identity",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 1,
+    "objective": "Extract the exact metric/carrier spin-two extension and decide whether the scattering extension class or a spectral-derivative identity can select the local Smith type at simple damped Regge-Wheeler resonances.",
+    "stop_condition": "Compute the exact local RW-to-RW extension matrix and its rational-gauge invariants; define the filtration-preserving germ class [c] in O/(A_in_2); test rather than assume a structural spectral-derivative identity; and either compute the nonzero class/Smith type or record the exact missing QNM, adjoint and Fredholm inputs.",
+    "current_gate": "Exact local extension extraction, rational-gauge residue test, and fail-closed scattering-resonance disposition",
+    "forbid": "no inferred nonzero scattering class from a nonzero differential extension; no claim that an unspecified q congruence is predictive at a simple zero; no QNM location, Smith type, time-domain stability, CPT, particle, ghost or unitarity promotion without the missing analytic germs and pairing",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-boundary-devissage-no-growth"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_spin_two_scattering_extension_preflight/",
+      "reports/phase3-axial-spin-two-scattering-extension-preflight-2026-07-23.md",
+      "planning/work-items/phase3-black-hole-axial-spin-two-scattering-extension-preflight.json",
+      "planning/events/"
+    ],
+    "resource_hint": "The exact preflight landed before this coordination node in commit 0b99cf06f61faf3de6cca80b74f93c50423c2bbc. Record METHOD_SHORTFALL honestly: the local extension is exact, but c, [q] and the Smith case require a certified damped QNM/adjoint germ and convergent Fredholm pairing.",
+    "input_commit": "a6b67d0ca",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "The rational-gauge trace residue forces a putative global nonzero spectral-derivative coefficient q to vanish in that gauge class.",
+      "At a simple zero, existence of an unspecified q in c=q*A_in_2' mod A_in_2 is tautological because [A_in_2'] is a unit."
+    ]
+  },
+  "edges": []
+}
