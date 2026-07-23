@@ -1,0 +1,37 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-wavepacket-null-trace",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-wavepacket-null-trace",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-wavepacket-null-trace.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-axial-wavepacket-1",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Construct a physics-specific wave-packet trace and Lee-Wald flux at Schwarzschild null infinity for the repaired axial Bach modes, separating I-plus from I-minus.",
+    "stop_condition": "For ell=2, use positive-frequency amplitudes compactly supported in the open interval (1/2,3/4), with the negative-frequency half fixed by the real-field involution. Import the exact reconstructed XI0..XI3/EI0/EI2 heads and the exact six-state current. Prove uniform joint (r,omega) symbol bounds, including enough omega derivatives and the endpoint remainder, for the phase-normalized metric basis. At fixed retarded time u, prove by explicit repeated integration by parts that the rate-zero I-minus packet has vanishing pullback at I-plus faster than the required polynomial weights; at fixed advanced time v prove the corresponding suppression of the rate-minus-2iomega I-plus packet at I-minus. For the matching propagation direction, define the rescaled radiation trace amplitudes, justify interchange of the r-to-infinity limit with the omega integral, and derive the finite action-derived quadratic flux as an omega integral of an exact Hermitian endpoint Gram matrix. Report each endpoint trace dimension, radical, quotient dimension and inertia on every omega cell, with orientation and omega-to-minus-omega reality explicit. Include a scalar nonstationary-phase lemma, the six-state matrix application, exact coefficient/denominator bounds, an independent verifier, and mutations omitting one omega derivative, swapping I-plus/I-minus, and dropping one remainder bound. If the fixed formal-head depth is insufficient, certify the first missing derivative/remainder estimate and the minimum additional recurrence depth required.",
+    "current_gate": "LORENTZIAN-CAUSAL wave-packet endpoint phase space before global scattering",
+    "forbid": "no monochromatic generalized mode called finite energy; no raw EF F^v improper integral called null flux; no mixing I-plus and I-minus polarizations; no unproved limit-frequency interchange; no frequency samples called uniform symbol bounds; no compact support touching omega=0 or the interval thresholds; no global matching, pole, stability, CPT or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-null-infinity-trace-preflight"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_wavepacket_null_trace/",
+      "reports/phase3-black-hole-axial-wavepacket-null-trace-2026-07-23.md",
+      "residual_atlas/phase3-black-hole-axial-wavepacket-null-trace-fragment-v1.json",
+      "planning/forge-requests/phase3-black-hole-axial-wavepacket-null-trace.json"
+    ],
+    "resource_hint": "The compact frequency interval is uniformly separated from zero. In the exp(+i omega v) convention, rate zero is stationary at fixed v and nonstationary at fixed u, while rate -2iomega is stationary at fixed u and nonstationary at fixed v. Use this exact phase separation before evaluating the endpoint Gram.",
+    "input_commit": "5046458e2",
+    "notes": [
+      "This is the physics consumer of the generic oscillatory-null-trace-wavepacket-estimates Forge request; a direct exact proof is permitted and should log only genuinely reusable missing substrate.",
+      "The result must remain separate from the practical R=32 global-connection initializer."
+    ]
+  },
+  "edges": []
+}
