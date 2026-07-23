@@ -32,7 +32,8 @@
     "notes": [
       "This is the exact provenance chicken-and-egg surface the WORK_INTENT design was intended to remove; the remaining defect is transaction selection during resume.",
       "Required mutation: make the resolver choose the oldest compatible agent commit instead of the latest intent-bound commit; the test must fail.",
-      "Required clean-clone test: after durable push, `work show` must surface the latest real containing checkpoint and retain the earlier false checkpoint only as superseded history."
+      "Required clean-clone test: after durable push, `work show` must surface the latest real containing checkpoint and retain the earlier false checkpoint only as superseded history.",
+      "2026-07-23 follow-up: manual recovery also exposed unsafe abbreviated-SHA handling. The reachable commit was `630880a6cb8d83efa286c585ffe68c52898e7f04`, but a hand-expanded `630880a6cb7968b18d6d789438e658f2f6a34fe3` was accepted into a low-level WORK_COMMITTED event and then named by a report. Require every commit-taking surface to resolve its caller input with Git, store only the exact `rev-parse --verify <input>^{commit}` result, and refuse nonexistent full-length hashes. A later append-only WORK_COMMITTED/WORK_REPORTED seq3 correctly names the reachable SHA; both bad checkpoints remain superseded history."
     ]
   },
   "edges": []
