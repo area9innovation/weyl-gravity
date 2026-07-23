@@ -1,0 +1,36 @@
+{
+  "schema": "phase3-axial-incoming-connection-analytic-receipt-v1",
+  "result_token": "BH_PHASE3_AXIAL_TMINUS_ANALYTICALLY_INVERTIBLE",
+  "date": "2026-07-23",
+  "inputs": {
+    "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+    "black_hole_programme/phase3/axial_global_finite_flux_channel_classification/certificate.json": "657bfb58d47bec550e5ebcefaff6348a99e2db25c26c5f7561e7f63c3edb81d5",
+    "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579"
+  },
+  "outputs": {
+    "black_hole_programme/phase3/axial_incoming_connection_analytic/README.md": "19c9f500a9a8fe6bf24edda110be3248e64bda54f2aac931e6857ffc8afdd874",
+    "black_hole_programme/phase3/axial_incoming_connection_analytic/certificate.json": "c7d54c15cd7928227d62ede7825edba2b6ebc51ca6f6c617c7b0b56a74cdd040",
+    "black_hole_programme/phase3/axial_incoming_connection_analytic/tests/test_connection.py": "9f0dc27f50be520131908e72732f8303e73b3f672bcfca48665cf5e1fd6dcab1",
+    "black_hole_programme/phase3/axial_incoming_connection_analytic/verify.py": "2d751046097e6ed09af4090c80988cbdae24209b27570eb449aab875ae27ad22",
+    "reports/phase3-axial-incoming-connection-analytic-2026-07-23.md": "9d59965fdff6d5b5457ac3a61e86747daedf304b168c9b2d35c515b12c0513a5"
+  },
+  "tests": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_incoming_connection_analytic.verify",
+      "elapsed_seconds": 2.08,
+      "status": "PASS",
+      "scope": "exact endpoint quotient/master amplitudes, factor frames, real short-range potentials, Wronskian contract and Tminus determinant"
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_incoming_connection_analytic.tests.test_connection",
+      "elapsed_seconds": 3.63,
+      "status": "PASS",
+      "scope": "11 tests including endpoint, potential, prefactor, provenance and Tplus/reflection/stability overpromotion mutations"
+    }
+  ],
+  "higher_tiers": {
+    "tier2": "not run: all imported mathematical inputs are content-addressed and unchanged; the exact independent verifier replays the new endpoint and determinant claims",
+    "tier3": "not run: this is a scoped one-sided connection theorem, not a repository freeze or release"
+  },
+  "claim_boundary": "Tminus is analytically invertible on the real pilot interval. No Tplus rank, nonzero reflection, complex-frequency pole exclusion, stability, CPT, total-flux positivity or unitarity theorem is claimed."
+}

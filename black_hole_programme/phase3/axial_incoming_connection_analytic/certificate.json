@@ -1,0 +1,147 @@
+{
+  "schema": "phase3-axial-incoming-connection-analytic-v1",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_INCOMING_CONNECTION_ANALYTIC",
+  "result_token": "BH_PHASE3_AXIAL_TMINUS_ANALYTICALLY_INVERTIBLE",
+  "lifecycle": "CLASSIFIED",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL",
+    "REDUCED-MODE"
+  ],
+  "declaration": {
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity",
+    "background": "Schwarzschild exterior M=1",
+    "sector": "axial ell=2",
+    "frequency": "real omega in [1/2,3/4]",
+    "phase": "exp(+I*omega*v)",
+    "horizon_regular_basis": [
+      "XH0a",
+      "XH0b",
+      "EH0"
+    ],
+    "Iminus_basis": [
+      "XI0",
+      "XI1",
+      "EI0"
+    ],
+    "classified_block": "Tminus: horizon-regular coefficients to Iminus incoming coefficients"
+  },
+  "imports": {
+    "complete_reconstruction": {
+      "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+      "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+      "commit": "d5d5d6de648795203604d62ce7bc4f4ce6fea510"
+    },
+    "triangular_factorization": {
+      "path": "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json",
+      "sha256": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579",
+      "commit": "8e7de78c3835a35180294a8e2d6d3437f0a716a2"
+    },
+    "connection_contract": {
+      "path": "black_hole_programme/phase3/axial_global_finite_flux_channel_classification/certificate.json",
+      "sha256": "657bfb58d47bec550e5ebcefaff6348a99e2db25c26c5f7561e7f63c3edb81d5",
+      "commit": "4aa596a65f6ddb43f08532f3e8e8efb0bce227ee"
+    }
+  },
+  "factor_potentials": {
+    "spin_two": {
+      "equation": "D_rstar**2*u+2*I*omega*D_rstar*u-V2*u=0",
+      "V2": "6*(r-2)*(r-1)/r**4",
+      "V2_over_f": "6*(r-1)/r**3",
+      "L1_integral": "9/4",
+      "copies": 2
+    },
+    "spin_one": {
+      "equation": "D_rstar**2*y+2*I*omega*D_rstar*y-V1*y=0",
+      "V1": "6*(r-2)/r**3",
+      "V1_over_f": "6/r**2",
+      "L1_integral": "3",
+      "copies": 1
+    },
+    "common": {
+      "f": "(r-2)/r",
+      "rstar_derivative": "D_rstar=f*D_r",
+      "properties": [
+        "real for real omega",
+        "nonnegative on r>2",
+        "short-range at both ends"
+      ]
+    }
+  },
+  "horizon_factor_frame": {
+    "spin_one_quotient_amplitudes": {
+      "XH0a": "4*omega**2-3*I*omega+4",
+      "XH0b": "4*(omega-I)*(2*omega-I)"
+    },
+    "carrier_RW_line": "RH=XH0a-(4*omega**2-3*I*omega+4)*XH0b/(4*(omega-I)*(2*omega-I))",
+    "carrier_RW_horizon_amplitude": "I*omega*(4*omega-I)/(2*(omega-I))",
+    "spin_one_line": "SH=XH0b",
+    "spin_one_horizon_amplitude": "4*(omega-I)*(2*omega-I)",
+    "metric_RW_line": "EH=EH0",
+    "metric_RW_horizon_amplitude": "-I*omega*(4*omega-I)/(4*(omega-I))",
+    "factor_order": [
+      "carrier spin-two RW",
+      "spin-one RW",
+      "metric spin-two RW"
+    ],
+    "change_of_basis_determinant": "1"
+  },
+  "Iminus_factor_frame": {
+    "spin_one_quotient_amplitudes": {
+      "XI0": "2",
+      "XI1": "-2*I*omega"
+    },
+    "carrier_RW_line": "RI=XI0-I*XI1/omega",
+    "carrier_RW_incoming_amplitude": "1",
+    "spin_one_line": "SI=XI1",
+    "spin_one_incoming_amplitude": "-2*I*omega",
+    "metric_RW_line": "EI=EI0",
+    "metric_RW_incoming_amplitude": "-I*omega",
+    "factor_order": [
+      "carrier spin-two RW",
+      "spin-one RW",
+      "metric spin-two RW"
+    ],
+    "change_of_basis_determinant": "1"
+  },
+  "formal_uniqueness_gate": {
+    "horizon": "The analytic carrier plane maps under the spin-one quotient to its one-dimensional ingoing analytic Jost line; cancelling the displayed leading y amplitude makes the quotient identically zero and selects the carrier RW submodule.",
+    "Iminus": "The rate-zero carrier plane maps to the one-dimensional spin-one incoming formal line; cancelling the displayed leading y amplitude makes the quotient identically zero and selects the carrier RW submodule.",
+    "uses_log_free_all_orders_bases": true
+  },
+  "Wronskian_gate": {
+    "normalization": "For each spin s=1,2, normalize the horizon-ingoing scalar Jost solution to unit amplitude.",
+    "infinity_expansion": "u_H=A_in_s*exp(+I*omega*rstar)+A_out_s*exp(-I*omega*rstar)",
+    "identity": "abs(A_in_s)**2-abs(A_out_s)**2=1",
+    "consequence": "abs(A_in_s)>=1, hence A_in_s is nonzero for every real omega in the pilot interval"
+  },
+  "determinant_theorem": {
+    "formula": "-(2*omega-I)*(4*omega-I)**2*A_in_2**2*A_in_1/(4*(omega-I))",
+    "rational_prefactor": "-(2*omega-I)*(4*omega-I)**2/(4*(omega-I))",
+    "prefactor_modulus_squared": "(4*omega**2+1)*(16*omega**2+1)**2/(16*(omega**2+1))",
+    "nonzero_on_pilot_interval": true,
+    "Tminus_rank": 3,
+    "Tminus_invertible": true,
+    "proof_kind": "exact triangular factor reduction plus real-potential Jost/Wronskian theorem; no interval transport"
+  },
+  "claim_flags": {
+    "horizon_frame_factor_adapted_certified": true,
+    "Iminus_frame_factor_adapted_certified": true,
+    "global_Tminus_exists_by_short_range_Jost_theory": true,
+    "global_Tminus_invertible_on_real_pilot_certified": true,
+    "Tplus_rank_certified": false,
+    "reflection_amplitudes_nonzero_certified": false,
+    "upper_half_plane_pole_exclusion_certified": false,
+    "full_scattering_or_stability_certified": false
+  },
+  "does_not_establish": [
+    "invertibility or any fixed rank of the Iplus outgoing/reflection block Tplus",
+    "nonvanishing of either spin-one or spin-two reflection amplitude",
+    "absence of complex-frequency poles or quasinormal instabilities",
+    "a positive total flux, CPT metric, physical ghost, particles, unitarity or nonlinear stability",
+    "polar parity, omega outside [1/2,3/4] or ell other than two"
+  ],
+  "verification": {
+    "command": "python3 -m black_hole_programme.phase3.axial_incoming_connection_analytic.verify",
+    "tests": "python3 -m unittest -v black_hole_programme.phase3.axial_incoming_connection_analytic.tests.test_connection"
+  }
+}
