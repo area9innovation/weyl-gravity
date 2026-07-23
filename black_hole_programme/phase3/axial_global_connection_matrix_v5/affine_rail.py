@@ -131,11 +131,14 @@ def _structured_kernel_source() -> str:
     return text[start:end].rstrip() + "\n"
 
 
-def _render_cell() -> list[str]:
+def _render_cell(
+    center: Fraction = OMEGA_CENTER,
+    radius: Fraction = OMEGA_RADIUS,
+) -> list[str]:
     return [
         "fn gc_cell() -> IvAffineCell {",
-        f"  return match(iva_cell({GENERATOR},{rat_literal(OMEGA_CENTER)},",
-        f"    {rat_literal(OMEGA_RADIUS)})){{some(z)=>z,none=>{{trap();}}}};",
+        f"  return match(iva_cell({GENERATOR},{rat_literal(center)},",
+        f"    {rat_literal(radius)})){{some(z)=>z,none=>{{trap();}}}};",
         "}",
         "",
     ]
@@ -276,23 +279,37 @@ def _canonical_sha256(value) -> str:
     ).hexdigest()
 
 
-def build_microfactor_render_context() -> dict:
+def build_microfactor_render_context(
+    omega_cell: tuple[Fraction, Fraction] = OMEGA_CELL,
+    *,
+    frame_bits: int = 34,
+) -> dict:
     """Build the shared exact coefficient/frame context once for all factors."""
+    require(
+        len(omega_cell) == 2 and omega_cell[0] < omega_cell[1],
+        "bad frequency cell",
+    )
+    omega_center = sum(omega_cell, Fraction(0)) / 2
+    omega_radius = (omega_cell[1] - omega_cell[0]) / 2
     data = exact_inputs()
     omega = data["omega"]
     t = next(s for s in data["inward"].free_symbols if s.name == "t")
     frames = numerical_frames_with_sensitivity(
-        data["inward"], t, omega, OMEGA_CENTER,
-        Fraction(0), Fraction(28), INWARD_PANELS, bits=34,
+        data["inward"], t, omega, omega_center,
+        Fraction(0), Fraction(28), INWARD_PANELS, bits=frame_bits,
     )
     frame_payloads = [_frame_payload(frame) for frame in frames]
     return {
         "data": data,
         "t": t,
+        "omega_cell": omega_cell,
+        "omega_center": omega_center,
+        "omega_radius": omega_radius,
+        "frame_bits": frame_bits,
         "frames": frames,
         "runtime_lines": render_runtime_taylor_builder(
             "gc_micro_runtime", data["inward"], t, omega,
-            OMEGA_CENTER, OMEGA_RADIUS,
+            omega_center, omega_radius,
         ),
         "structured_kernel_source": _structured_kernel_source(),
         "frame_sha256": [
@@ -307,6 +324,9 @@ def render_microfactor_adapter(
     panel_start: int | None = None,
     panel_count: int = MICROFACTOR_PANELS,
     trace_id: int | None = None,
+    panel_denominator: int = 64,
+    local_frames: tuple[FrameTaylor, ...] | None = None,
+    base_frame_table_sha256: str | None = None,
 ) -> tuple[str, dict]:
     """Render a compile-once runner for one validated dyadic radial factor.
 
@@ -331,25 +351,29 @@ def render_microfactor_adapter(
         panel_count in (1, 2, 4, 8),
         "panel count must be a dyadic divisor of the parent microfactor",
     )
+    require(panel_denominator > 0, "panel denominator must be positive")
+    parent_lo = Fraction(micro, 8)
+    parent_hi = Fraction(micro + 1, 8)
     require(
-        MICROFACTOR_PANELS * micro <= panel_start
-        and panel_start + panel_count
-        <= MICROFACTOR_PANELS * (micro + 1),
+        parent_lo <= Fraction(panel_start, panel_denominator)
+        and Fraction(panel_start + panel_count, panel_denominator) <= parent_hi,
         "split interval leaves its parent microfactor",
     )
     require(
-        (panel_start - MICROFACTOR_PANELS * micro) % panel_count == 0,
+        Fraction(panel_start, panel_denominator) >= parent_lo,
         "split interval is not aligned to its dyadic panel count",
     )
     panel_end = panel_start + panel_count
     raw_panel_start = 4 * panel_start
     raw_panel_count = 4 * panel_count
-    interval_lo = Fraction(panel_start, 64)
-    interval_hi = Fraction(panel_end, 64)
+    interval_lo = Fraction(panel_start, panel_denominator)
+    interval_hi = Fraction(panel_end, panel_denominator)
     legacy = (
         panel_start == MICROFACTOR_PANELS * micro
         and panel_count == MICROFACTOR_PANELS
         and trace_id == micro
+        and panel_denominator == 64
+        and local_frames is None
     )
     coefficient_start = "j*8" if legacy else str(panel_start)
     coefficient_end = "(j+1)*8" if legacy else str(panel_end)
@@ -357,9 +381,17 @@ def render_microfactor_adapter(
     raw_end = "(j+1)*32" if legacy else str(raw_panel_start + raw_panel_count)
     boundary_start = "j*8" if legacy else str(panel_start)
     boundary_end = "(j+1)*8" if legacy else str(panel_end)
-    frames = context["frames"]
-    frame_hashes = context["frame_sha256"]
-    table_hash = context["frame_table_sha256"]
+    frames = context["frames"] if local_frames is None else local_frames
+    frame_hashes = (
+        context["frame_sha256"]
+        if local_frames is None
+        else [_canonical_sha256(_frame_payload(frame)) for frame in local_frames]
+    )
+    table_hash = (
+        context["frame_table_sha256"]
+        if base_frame_table_sha256 is None
+        else base_frame_table_sha256
+    )
 
     lines = [
         "// expect: 42",
@@ -387,7 +419,7 @@ def render_microfactor_adapter(
         "  ok(r)=>r,err(e)=>trap()};}",
         "",
     ]
-    lines += _render_cell()
+    lines += _render_cell(context["omega_center"], context["omega_radius"])
     lines += _common_affine_helpers()
     lines += [
         "fn gc_sym(x:Iv)->Iv{let a:Iv=iv_abs(x);return iv(0.0-a.hi,a.hi);}",
@@ -395,9 +427,16 @@ def render_microfactor_adapter(
     ]
     lines += context["runtime_lines"]
     frame_base = panel_start
-    local_frames = frames[frame_base:frame_base + panel_count + 1]
+    selected_frames = (
+        frames[frame_base:frame_base + panel_count + 1]
+        if local_frames is None else frames
+    )
+    require(
+        len(selected_frames) == panel_count + 1,
+        "local frame table does not match the refined panel count",
+    )
     frame_lines, frame_names = _render_frame_family(
-        f"gc_micro_{micro}_frame", local_frames
+        f"gc_micro_{micro}_frame", selected_frames
     )
     lines += frame_lines
     lines.append(context["structured_kernel_source"])
@@ -415,22 +454,22 @@ def render_microfactor_adapter(
         "",
         "fn gc_micro_coeff(panel:i64,tbox:Iv)->IvAffineMat{",
         "  let c:IvAffineCell=gc_cell();",
-        "  let xc:Rat=rat(2*panel+1,128);",
-        "  return gc_micro_runtime(xc,tbox,rat(1,128),c);",
+        f"  let xc:Rat=rat(2*panel+1,{2 * panel_denominator});",
+        f"  return gc_micro_runtime(xc,tbox,rat(1,{2 * panel_denominator}),c);",
         "}",
         "",
         "fn gc_micro_raw_coeff(panel:i64,tbox:Iv)->IvAffineMat{",
         "  let c:IvAffineCell=gc_cell();",
-        "  let xc:Rat=rat(2*panel+1,512);",
-        "  return gc_micro_runtime(xc,tbox,rat(1,512),c);",
+        f"  let xc:Rat=rat(2*panel+1,{8 * panel_denominator});",
+        f"  return gc_micro_runtime(xc,tbox,rat(1,{8 * panel_denominator}),c);",
         "}",
         "",
         "fn gc_micro_coeff_table(j:i64)->Vec<IvAffineMat>{",
         "  let d:ManualVec<IvAffineMat>=manual_vec_new<IvAffineMat>(",
         f"    system_allocator(),{panel_count});",
         f"  let p:i64={coefficient_start};while(p<{coefficient_end}){{",
-        "    let ta:Iv=iv_from_rat(rat(p,64));",
-        "    let tb:Iv=iv_from_rat(rat(p+1,64));",
+        f"    let ta:Iv=iv_from_rat(rat(p,{panel_denominator}));",
+        f"    let tb:Iv=iv_from_rat(rat(p+1,{panel_denominator}));",
         "    d=manual_vec_push<IvAffineMat>(d,gc_micro_coeff(p,iv(ta.lo,tb.hi)));",
         "    p=p+1;}return vec_seal(d);",
         "}",
@@ -458,8 +497,8 @@ def render_microfactor_adapter(
         "  let d:ManualVec<IvAffineMat>=manual_vec_new<IvAffineMat>(",
         f"    system_allocator(),{raw_panel_count});",
         f"  let p:i64={raw_start};while(p<{raw_end}){{",
-        "    let ta:Iv=iv_from_rat(rat(p,256));",
-        "    let tb:Iv=iv_from_rat(rat(p+1,256));",
+        f"    let ta:Iv=iv_from_rat(rat(p,{4 * panel_denominator}));",
+        f"    let tb:Iv=iv_from_rat(rat(p+1,{4 * panel_denominator}));",
         "    d=manual_vec_push<IvAffineMat>(d,gc_micro_raw_coeff(p,iv(ta.lo,tb.hi)));",
         "    p=p+1;}return vec_seal(d);",
         "}",
@@ -556,7 +595,7 @@ def render_microfactor_adapter(
         "  let total:IvAffineMat=ivam_identity(gc_cell().generator,12);",
         f"  let k:i64=0;while(k<{panel_count}){{",
         "    let u:IvAffineMat=match(sl_local_transition(",
-        "      vec_get_ref<IvAffineMat>(at,usize(k)),rat(1,64),12)){",
+        f"      vec_get_ref<IvAffineMat>(at,usize(k)),rat(1,{panel_denominator}),12)){{",
         "      some(z)=>z,none=>{return Option.none;}};",
         (
             "    let w:IvAffineMat=match(gc_micro_moving_structured(u,j*8+k)){"
@@ -722,15 +761,24 @@ def render_microfactor_adapter(
     metadata = {
         "schema": "phase3-axial-microfactor-runner-v1",
         "generator": GENERATOR,
-        "omega_cell": [str(x) for x in OMEGA_CELL],
+        "omega_cell": [str(x) for x in context["omega_cell"]],
+        "omega_center": str(context["omega_center"]),
+        "omega_radius": str(context["omega_radius"]),
         "microfactor_count": MICROFACTOR_COUNT,
         "rendered_microfactor": micro,
         "panels_per_microfactor": panel_count,
         "global_panel_start": panel_start,
         "global_panel_end": panel_end,
+        "panel_denominator": panel_denominator,
         "trace_id": trace_id,
         "frame_table_sha256": table_hash,
         "frame_sha256": frame_hashes,
+        "left_boundary_sha256": frame_hashes[
+            frame_base if local_frames is None else 0
+        ],
+        "right_boundary_sha256": frame_hashes[
+            frame_base + panel_count if local_frames is None else panel_count
+        ],
     }
     return "\n".join(lines), metadata
 
