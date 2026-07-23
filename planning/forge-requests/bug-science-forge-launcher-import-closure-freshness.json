@@ -1,0 +1,18 @@
+{
+  "id": "sf:forge-request/bug-science-forge-launcher-import-closure-freshness",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "PROPOSED",
+    "objective": "Make the Science Forge launcher rebuild its cached sfc executable whenever any imported Science Forge source changes, not only when sfc.forge itself is newer.",
+    "depends_on": [],
+    "stop_condition": "Construct a deterministic fixture that builds/caches sfc, changes an imported module such as tools/science-forge/sfc_work.forge without touching sfc.forge, and invokes s-f again. The launcher must detect the changed import closure and rebuild before dispatch. Cache freshness may use a content-addressed import-closure hash or exact dependency manifest; it must also invalidate on compiler or relevant Forge library changes. Add a negative control showing that an unchanged closure reuses the cached executable, a mutation that watches only the root mtime, and clear diagnostics identifying rebuild versus cache reuse. Preserve current explicit SF_BIN/FORGEBIN overrides and run C/native plus sanitizer gates for the affected launcher rail.",
+    "forbid": "no root-file-mtime-only freshness; no directory-mtime heuristic; no unconditional rebuild on every command; no silently stale cached sfc; no physics-repository special case; no bypass of explicit binary overrides",
+    "notes": [
+      "Discovered while validating the Phase-3 SF9 superseding-intent repair: editing sfc_work.forge left the launcher-provided cached sfc stale because freshness considered only sfc.forge.",
+      "Hermetic regressions that build a fresh compiler passed; the defect is specifically the resident launcher cache invalidation path."
+    ]
+  },
+  "state": "PROPOSED"
+}
