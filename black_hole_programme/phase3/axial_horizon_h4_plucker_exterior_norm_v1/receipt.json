@@ -1,0 +1,57 @@
+{
+  "commands": [
+    {
+      "child_elapsed_milliseconds": {
+        "0": 118043,
+        "1": 118377
+      },
+      "command": "PYTHONPATH=. python3 -m black_hole_programme.phase3.axial_horizon_h4_plucker_exterior_norm_v1.run_children",
+      "result": "EXTERIOR_REFUSED",
+      "tier": 1
+    },
+    {
+      "command": "PYTHONPATH=. python3 -m unittest -v black_hole_programme.phase3.axial_horizon_h4_plucker_exterior_norm_v1.test_exterior",
+      "result": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "PYTHONPATH=. python3 -m black_hole_programme.phase3.axial_horizon_h4_plucker_exterior_norm_v1.verify",
+      "result": "PASS",
+      "tier": 1
+    }
+  ],
+  "does_not_establish": [
+    "transport beyond shell 4 segment 3",
+    "the complete 23-shell horizon transport",
+    "canonical endpoint amplitudes",
+    "a horizon-to-infinity scattering theorem"
+  ],
+  "hashes": {
+    "README.md": "061c55cc487e2202a72a3a372a246976478d770f5ef739846166dccda391378d",
+    "__init__.py": "64e7ca96d3fb9c54b8bccef4ce43280773b55a129c59df8c827bd0c9660ba8cb",
+    "children/q00_child_0_exterior.forge": "1102bc85f9847f536b53a1c9fa2d9776f139f4878231fc9ed096799156d732a4",
+    "children/q00_child_0_exterior_compile.txt": "fb94005e6df452c189bda751444c31a3044fce4da621aa3744d369a9a9ebcf20",
+    "children/q00_child_0_exterior_metadata.json": "af9f69ca7e74cb8daace9c7a81cdb95e35e5e55dc1984be366fa386e90701c37",
+    "children/q00_child_0_exterior_run.txt": "1ef99826285676d400fbde9d6a38f052830875a635fc3026d6e8db0ccff89cc0",
+    "children/q00_child_1_exterior.forge": "cc5996c53e9af7aa234de36033a5f9886a870bfa330e10fbd413b33eefe1e74a",
+    "children/q00_child_1_exterior_compile.txt": "3e11ba93e96337b0f439d2c99ce86020fe7a0502f46858023d940d7a1abad630",
+    "children/q00_child_1_exterior_metadata.json": "eead61c4a6071a6c0a2d60f338a6c5ad26c0e5a9d74c096e1f583546be68156f",
+    "children/q00_child_1_exterior_run.txt": "b5fc309c735f924d9ec9f063e71a1751cd4fffbdd27dffd7a96ce897e4f0d95a",
+    "exterior_manifest.json": "f3cd31d81f675556dbbfeccaa85ad972820f1390fcee534a530fb2e1bff4e1c5",
+    "produce.py": "4e444ad7dcbd6adbba358587dac1120fe187bfa474d670206c7f89d28c968d1f",
+    "report.md": "e094fc56dc7030fef943a34bfe3306e51d222debc7972c116a2af3f448c5d677",
+    "run_children.py": "721ea2e9d73ac05205709316e83f5dda0932154f11a7518bec0f66afc30f3871",
+    "schema.json": "50b03d1926f87c4cbd6517164041d72615149ea86f6ba1343c00660416e735a3",
+    "test_exterior.py": "e71d1ca441cb49f3dec678aa0b2d451bc041f1f7dedbd15dcb75d3680267d44a",
+    "verify.py": "e80d675f765e75215c99a145bef2b48ee97fd501fa9ae523781bb1bba0e5773e"
+  },
+  "higher_tiers_not_run": {
+    "criterion": "bounded disjoint design-feasibility audit; no shared operator, paper, or lifecycle claim changed",
+    "tiers": [
+      2,
+      3
+    ]
+  },
+  "schema": "phase3-axial-h4-plucker-exterior-norm-receipt-v1",
+  "status": "PASS_CERTIFIED_DESIGN_BLOCKER"
+}

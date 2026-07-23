@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "phase3-axial-h4-plucker-exterior-norm-schema-v1",
+  "scope": {
+    "children": [0, 1],
+    "replayed_boundary": {"shell": 4, "segment": 3},
+    "no_later_shell": true
+  },
+  "witness": {
+    "kind": "correlated exterior squared norm",
+    "formula": "sum_j ((Re p_j)^2 + (Im p_j)^2)",
+    "success_condition": "strictly positive lower enclosure",
+    "conditioning": "lower/(40*component_sup^2) > 0"
+  },
+  "typed_refusals": {
+    "36": "exterior squared-norm enclosure does not have a positive lower bound",
+    "37": "exterior projective conditioning ratio is not certified positive"
+  }
+}

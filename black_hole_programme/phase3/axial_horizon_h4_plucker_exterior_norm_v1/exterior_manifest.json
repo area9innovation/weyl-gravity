@@ -1,0 +1,62 @@
+{
+  "children": [
+    {
+      "child_index": 0,
+      "compile_log_path": "children/q00_child_0_exterior_compile.txt",
+      "frequency_cell": [
+        "1/2",
+        "4097/8192"
+      ],
+      "metadata_path": "children/q00_child_0_exterior_metadata.json",
+      "process_exit": 3,
+      "run_log_path": "children/q00_child_0_exterior_run.txt",
+      "run_log_sha256": "1ef99826285676d400fbde9d6a38f052830875a635fc3026d6e8db0ccff89cc0",
+      "source_path": "children/q00_child_0_exterior.forge",
+      "source_sha256": "1102bc85f9847f536b53a1c9fa2d9776f139f4878231fc9ed096799156d732a4",
+      "terminal_evidence": [
+        "EXTERIOR_NORM_DEFECT lo=-1.8806067696070636 hi=1.8806067696219595 norm=0.7575348795807845",
+        "PLUCKER_REFUSE shell=4 segment=3 code=36"
+      ]
+    },
+    {
+      "child_index": 1,
+      "compile_log_path": "children/q00_child_1_exterior_compile.txt",
+      "frequency_cell": [
+        "4097/8192",
+        "2049/4096"
+      ],
+      "metadata_path": "children/q00_child_1_exterior_metadata.json",
+      "process_exit": 3,
+      "run_log_path": "children/q00_child_1_exterior_run.txt",
+      "run_log_sha256": "b5fc309c735f924d9ec9f063e71a1751cd4fffbdd27dffd7a96ce897e4f0d95a",
+      "source_path": "children/q00_child_1_exterior.forge",
+      "source_sha256": "cc5996c53e9af7aa234de36033a5f9886a870bfa330e10fbd413b33eefe1e74a",
+      "terminal_evidence": [
+        "EXTERIOR_NORM_DEFECT lo=-1.8915929169003969 hi=1.8915929169152985 norm=0.7597025238436113",
+        "PLUCKER_REFUSE shell=4 segment=3 code=36"
+      ]
+    }
+  ],
+  "does_not_establish": [
+    "transport beyond shell 4 segment 3",
+    "the complete 23-shell horizon transport",
+    "canonical endpoint amplitudes",
+    "a horizon-to-infinity scattering theorem"
+  ],
+  "payload_sha256": "a257d84ad49919fc59a0f8a2c9d80fa82c5422fbd1d44ace1f43da589ed96be4",
+  "schema": "phase3-axial-h4-plucker-exterior-norm-manifest-v1",
+  "scope": {
+    "children": [
+      0,
+      1
+    ],
+    "no_later_shell": true,
+    "replayed_boundary": {
+      "segment": 3,
+      "shell": 4
+    }
+  },
+  "split_certificate_sha256": "af08dcca5bd805a2fbcbd1817bf8342c685c9c2c82103609c782a8e4c4cf988a",
+  "split_manifest_sha256": "e8a253ad95687bbb5ed18701969a50bebe6a018ab154389a9d02182016ddc5f3",
+  "status": "EXTERIOR_REFUSED"
+}
