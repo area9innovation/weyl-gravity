@@ -1,11 +1,23 @@
 from __future__ import annotations
 
 import json
+import struct
 import unittest
+from fractions import Fraction
 from pathlib import Path
 
 import sympy as sp
 
+from black_hole_programme.phase3.axial_global_finite_flux_channel_classification.affine_adapter import (
+    AffineScalar,
+    ComplexAffine,
+    Interval,
+    certify_whole_cell_inertia,
+    determinant_excludes_zero,
+    matrix_from_json,
+    matrix_multiply,
+    require_hermitian_enclosure,
+)
 from black_hole_programme.phase3.axial_global_finite_flux_channel_classification.classifier import (
     classify_exact_cell,
     classify_populated_form,
@@ -17,6 +29,50 @@ from black_hole_programme.phase3.axial_global_finite_flux_channel_classification
 
 
 HERE = Path(__file__).resolve().parents[1]
+
+
+def float_bits(value: float) -> str:
+    return f"{struct.unpack('>Q', struct.pack('>d', value))[0]:016x}"
+
+
+def rational(value: int | Fraction) -> str:
+    value = Fraction(value)
+    return f"{value.numerator}/{value.denominator}"
+
+
+def affine_scalar(
+    center: int | Fraction,
+    linear: int | Fraction = 0,
+    remainder: tuple[float, float] = (0.0, 0.0),
+) -> dict:
+    return {
+        "center": rational(center),
+        "linear": rational(linear),
+        "remainder": [float_bits(remainder[0]), float_bits(remainder[1])],
+    }
+
+
+def complex_affine(
+    real: int | Fraction,
+    imag: int | Fraction = 0,
+    *,
+    real_linear: int | Fraction = 0,
+    imag_linear: int | Fraction = 0,
+    real_remainder: tuple[float, float] = (0.0, 0.0),
+    imag_remainder: tuple[float, float] = (0.0, 0.0),
+) -> dict:
+    return {
+        "re": affine_scalar(real, real_linear, real_remainder),
+        "im": affine_scalar(imag, imag_linear, imag_remainder),
+    }
+
+
+def affine_diagonal(values: list[dict]) -> list:
+    zero = complex_affine(0)
+    return [
+        [values[i] if i == j else zero for j in range(len(values))]
+        for i in range(len(values))
+    ]
 
 
 def connection_from_traces(cminus: sp.Matrix, cplus: sp.Matrix) -> sp.Matrix:
@@ -129,6 +185,71 @@ class ExactClassifierTest(unittest.TestCase):
                 identity,
                 identity,
             )
+
+
+class AffineCellAdapterTest(unittest.TestCase):
+    def test_affine_product_keeps_quadratic_remainder(self) -> None:
+        left = AffineScalar(Fraction(1), Fraction(1), Interval.point(0))
+        right = AffineScalar(Fraction(1), Fraction(-1), Interval.point(0))
+        product = left * right
+        self.assertEqual(product.center, 1)
+        self.assertEqual(product.linear, 0)
+        self.assertEqual(product.remainder.hi, 0)
+        self.assertEqual(product.remainder.lo, -Fraction(1, 512**2))
+
+    def test_whole_cell_rank_and_inertia(self) -> None:
+        matrix = matrix_from_json(
+            affine_diagonal(
+                [
+                    complex_affine(2, real_linear=1),
+                    complex_affine(-1, real_linear=1),
+                    complex_affine(3),
+                ]
+            )
+        )
+        self.assertTrue(determinant_excludes_zero(matrix))
+        witness = certify_whole_cell_inertia(matrix)
+        self.assertEqual(witness.complex_inertia, (2, 1, 0))
+        self.assertLess(witness.inverse_perturbation_bound, 1)
+
+    def test_singular_cell_is_refused(self) -> None:
+        matrix = matrix_from_json(
+            affine_diagonal(
+                [
+                    complex_affine(0, real_linear=1),
+                    complex_affine(1),
+                    complex_affine(1),
+                ]
+            )
+        )
+        self.assertFalse(determinant_excludes_zero(matrix))
+        with self.assertRaisesRegex(ValueError, "center form is singular"):
+            certify_whole_cell_inertia(matrix)
+
+    def test_nonhermitian_affine_coefficient_is_refused(self) -> None:
+        matrix = matrix_from_json(
+            [
+                [complex_affine(1), complex_affine(1, imag=1)],
+                [complex_affine(1, imag=1), complex_affine(1)],
+            ]
+        )
+        with self.assertRaisesRegex(ValueError, "imaginary center"):
+            require_hermitian_enclosure(matrix, "mutation")
+
+    def test_affine_matrix_product(self) -> None:
+        left = matrix_from_json(
+            [[complex_affine(1, real_linear=1), complex_affine(0)]]
+        )
+        right = matrix_from_json(
+            [[complex_affine(1, real_linear=-1)], [complex_affine(2)]]
+        )
+        product = matrix_multiply(left, right)
+        self.assertEqual(product[0][0].re.center, 1)
+        self.assertEqual(product[0][0].re.linear, 0)
+        self.assertEqual(
+            product[0][0].re.remainder.lo,
+            -Fraction(1, 512**2),
+        )
 
 
 if __name__ == "__main__":

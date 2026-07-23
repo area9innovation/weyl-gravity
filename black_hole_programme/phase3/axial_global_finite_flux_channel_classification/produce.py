@@ -62,7 +62,6 @@ def missing_fields() -> list[str]:
         "the orientation-correct current conservation defect GHplus+Tplus^dagger*Gplus*Tplus-Tminus^dagger*Gminus*Tminus",
         "uniform multiplier and inverse bounds needed for the L2 wave-packet extension",
         "content hashes for every affine handoff and independent replay receipt",
-        "a validated affine-interval classifier adapter; the exact constant-matrix oracle is not an interval proof",
     ]
 
 
@@ -156,6 +155,13 @@ def build_document() -> dict:
                 "constant exact fixtures. It cannot activate a parameter "
                 "cell; interval activation requires the separately validated "
                 "affine-cell witnesses listed in activation."
+            ),
+            "affine_interval_adapter": (
+                "affine_adapter validates correlated center-plus-linear-plus-"
+                "remainder pullbacks, proves 3x3 rank by a determinant "
+                "enclosure, and certifies whole-cell Hermitian inertia by an "
+                "exact inverse-perturbation bound; it remains unexercised "
+                "until the typed global handoff exists."
             ),
         },
         "classification": {
