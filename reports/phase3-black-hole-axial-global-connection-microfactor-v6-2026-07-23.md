@@ -6,7 +6,29 @@ Dependency tags: `LORENTZIAN-CAUSAL`, `LOCAL-ALGEBRAIC`
 
 ## Result
 
-The first exact infinity-side radial microfactor on
+The first final-frequency child now has a complete exact
+\(r=32\)-to-\(r=4\) radial transport map on
+
+\[
+  \ell=2,\qquad M=1,\qquad
+  M\omega\in[1/2,2049/4096],\qquad
+  t=32-r\in[0,28].
+\]
+
+It is assembled from a certified prefix, an exact inherited-boundary
+crosswalk, and 66 child-specialized tail factors.  Every factor is rank
+twelve.  The exact block-to-standard state permutation is applied only after
+radial composition and before the six-state complex infinity projection.  A
+separate exact rank witness certifies the boundary crosswalk; the wide final
+interval hull is not misused as a direct numerical rank test.
+
+This advances the earlier first-factor result described below.  The
+canonical child-global artifact is
+`black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_maps/global_map_q00.json`.
+The remaining fifteen frequency children are being evaluated by the same
+frozen rail.
+
+The original first exact infinity-side radial microfactor was on
 
 \[
   \ell=2,\qquad M=1,\qquad
@@ -101,26 +123,26 @@ python -m unittest \
   black_hole_programme.phase3.axial_global_connection_matrix_v5.chunks.tests.test_handoff
 ```
 
-The artifact and provenance verifier pass.  Eighteen tests pass, including
-layout, exact-boundary, affine-hull, source-hash and upper-right-zero mutation
-tests.
+The artifact and provenance verifiers pass.  Fifty-five scoped chunk tests
+pass, including layout, exact-boundary, affine-hull, source-hash,
+upper-right-zero, false-restart, state-permutation, projection-order and
+prefix/tail provenance mutation tests.
 
 ## Next gate
 
-This result certifies one finite radial transport factor only.  It does not
-establish a horizon-to-infinity connection, endpoint flux, a populated
-additional channel, stability, CPT positivity, scattering or unitarity.
+This result certifies the complete \(r=32\)-to-\(r=4\) radial transport only
+on the first of sixteen final frequency cells.  It does not establish a
+horizon-to-infinity connection, endpoint flux, a populated additional
+channel, stability, CPT positivity, scattering or unitarity.
 
 The next steps are:
 
-1. produce the remaining 223 moving-frame factors with bounded concurrency;
-2. verify exact radial ordering and shared boundary hashes;
-3. compose them using the structured block recurrence with a 128-bit dyadic
-   rebase after every checked join;
-4. attach the separately certified future-horizon-regular map at \(r=4\);
-5. materialize endpoint action once, with the radial/outward orientation
+1. complete and emit the other fifteen child-specialized tails;
+2. compose and replay all sixteen \(r=32\)-to-\(r=4\) global maps;
+3. attach a separately certified future-horizon-regular map at \(r=4\);
+4. materialize endpoint action once, with the radial/outward orientation
    recorded explicitly;
-6. compute the populated pullback
+5. compute the populated pullback
    \(C_{\rm reg}^{\dagger}G_{\rm endpoint}C_{\rm reg}\).
 
 No physical-ghost or scattering-channel statement is licensed before that
