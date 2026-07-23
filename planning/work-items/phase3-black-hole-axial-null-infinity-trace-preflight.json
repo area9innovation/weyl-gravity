@@ -1,0 +1,38 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-null-infinity-trace-preflight",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-null-infinity-trace-preflight",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-null-infinity-trace-preflight.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-axial-nulltrace-1",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Derive the correct future/past null-infinity trace and flux polarizations for the repaired six-state axial Bach system, replacing the ambiguous raw-EF F^v admissibility test.",
+    "stop_condition": "For ell=2 and real nonzero omega in [1/2,3/4], import the all-row pure-Weyl Lee-Wald current and complete repaired infinity heads. Construct the exact six-state radial current matrix J6(r,omega), verify anti-Hermiticity, rank six, inertia (3,3) for H6=-iJ6, and the differential conservation identity. Transform the current to Schwarzschild t and null u=t-r*, v=t+r* pullbacks with all B and density factors explicit. Assign the rate-zero and rate-minus-2iomega formal blocks to their correct incoming/outgoing traces at I-minus and I-plus; never test opposite endpoints against each other in one local divergent map. For each endpoint, derive the leading phase-normalized trace amplitudes and action-derived Hermitian flux matrix, its radical and inertia, the omega-to-minus-omega reality map, and the precise falloff or wave-packet assumptions under which the limit exists. Compare three typed notions without conflating them: conserved radial shell flux, fixed-frequency Cauchy/improper integrability, and compact/Schwartz omega wave-packet flux. If a genuine null trace cannot yet be defined, certify the first missing asymptotic renormalization, density, or stationary-phase estimate and give the maximal internally consistent polarization(s) that are exact. Include the 28-entry r=4 J6 witness, an independent DAG evaluator, denominator/pivot isolation over the whole interval, and mutations for one orientation sign, one endpoint assignment and one current entry.",
+    "current_gate": "A noncircular four-endpoint radiation topology before any global connection is called scattering",
+    "forbid": "no raw ingoing-EF F^v density called radial scattering flux; no all-six local test class imposed across distinct endpoints; no conditional monochromatic integral called a wave-packet norm; no radial orientation sign called positivity; no arbitrary boundary counterterm; no global matching, pole, stability, CPT or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-boundary-flux-contract",
+      "sf:program/work/phase3-black-hole-axial-complete-reconstruction-repair"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_null_infinity_trace_preflight/",
+      "reports/phase3-black-hole-axial-null-infinity-trace-preflight-2026-07-23.md",
+      "residual_atlas/phase3-black-hole-axial-null-infinity-trace-preflight-fragment-v1.json",
+      "planning/forge-requests/phase3-black-hole-axial-null-infinity-trace-preflight.json"
+    ],
+    "resource_hint": "Use the exact jet-DAG recurrence for J6 rather than flattening the symbolic current. In the exp(+i omega v) convention, rate zero and rate -2iomega are distinct asymptotic propagation directions. Treat I-plus and I-minus as separate endpoint polarizations before forming any finite/radical quotient.",
+    "input_commit": "ed3d95901",
+    "notes": [
+      "The read-only audit found det(J6/(pi alpha_W))=195689447424/[15625(4 omega^2+1)] and Hermitian inertia (3,3) on the pilot.",
+      "The inherited F^v test has polarization-dependent kernels and is therefore not itself a frozen scattering phase space."
+    ]
+  },
+  "edges": []
+}
