@@ -1,0 +1,134 @@
+{
+  "affine_moving_frame_result": {
+    "carrier_max_local_correction_width": 0.009978474438174208,
+    "carrier_rank_certified": true,
+    "kernel_max_local_correction_width": 0.00332335609866979,
+    "kernel_rank_certified": true,
+    "landed_substrate_commit": "1a4e53b88",
+    "naive_full_frame": {
+      "certified": false,
+      "meaning": "the unstructured 12-real interval factor loses the exact zero upper-right block; this is a representation refusal, not singularity",
+      "refusal_code": 10,
+      "refusal_name": "IVLIN_AFFINE_FACTOR_RANK_UNCERTIFIED",
+      "refusal_reset": 0
+    }
+  },
+  "claim_flags": {
+    "all_local_checkpoint_solves_certified": true,
+    "endpoint_flux_or_scattering_claim": false,
+    "full_frequency_cover_certified": false,
+    "global_connection_certified": false,
+    "lower_lift_certified": false,
+    "radial_current_conservation_certified": false,
+    "required_first_cell_attempted": true,
+    "required_first_cell_diagonal_rank_certified": true
+  },
+  "declaration": {
+    "background": "Schwarzschild exterior with M=1",
+    "infinity_handoff_radius": 32,
+    "matching_radius": 4,
+    "sector": "axial ell=2, exp(+i omega v), repaired six-state chart",
+    "target_cells": 64,
+    "target_frequency_cover": [
+      "1/2",
+      "3/4"
+    ],
+    "tested_required_cell": [
+      "1/2",
+      "129/256"
+    ],
+    "theory": "strict four-dimensional pure Weyl-squared gravity"
+  },
+  "dependency_tags": [
+    "EXACT-ALGEBRAIC",
+    "NUMERIC-ENCLOSURE"
+  ],
+  "does_not_establish": [
+    "a global connection matrix",
+    "an endpoint trace or flux",
+    "the nonexistence of a global connection matrix",
+    "a scientific obstruction in the Bach system",
+    "scattering, stability, CPT, positivity or unitarity"
+  ],
+  "flattened_width_growth": [
+    {
+      "carrier_max_width": 0.013846707933141357,
+      "radius": 31
+    },
+    {
+      "carrier_max_width": 0.05664508765095389,
+      "radius": 30
+    },
+    {
+      "carrier_max_width": 0.6112034399810755,
+      "radius": 28
+    },
+    {
+      "carrier_max_width": 69.54826412879805,
+      "radius": 24
+    },
+    {
+      "carrier_max_width": 1615592.0908824624,
+      "radius": 16
+    },
+    {
+      "carrier_max_width": 2564827213010447.5,
+      "radius": 4
+    }
+  ],
+  "imports": {
+    "forge_ivlinode": {
+      "path": "/home/alstrup/area9/tango/forge/lib/math/ivlinode.forge",
+      "sha256": "cc60f08e8eb8f59774f818a5d6ee457a84a8f16f66100a8ea1f64a9627649a64"
+    },
+    "horizon_initializer": {
+      "path": "symplectic-reconstruction/black_hole_programme/phase3/axial_endpoint_remainder_enclosures/validated_horizon_initializer.forge",
+      "sha256": "558cc357a1a6d205c1d0ae156b7f16d4399fb39e1426d0f95ead2d914257c97a"
+    },
+    "practical_initializer": {
+      "path": "symplectic-reconstruction/black_hole_programme/phase3/axial_infinity_practical_transfer/validated_infinity_transfer.forge",
+      "sha256": "e2270831fa6c34628ec0d4a2073e4afda2ae8c5d3cc40192803a7a2fad90c8e5"
+    },
+    "reconstruction_certificate": {
+      "path": "symplectic-reconstruction/black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+      "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990"
+    }
+  },
+  "lifecycle": "NUMERIC-ENCLOSURE",
+  "method": {
+    "checkpoint_spacing": "1/64 in inward t=32-r",
+    "checkpoints": 1792,
+    "diagonal": "separate carrier 8-real and Einstein-kernel 4-real affine moving-frame Peano-Baker chains",
+    "local_steps_per_checkpoint": 2,
+    "lower_lift": "local block variation of constants with exact block-triangular frames [[Cc,0],[D,Ck]]; every 4x8 transformed lower column is solved by interval Krawczyk without flattening the global flow",
+    "moving_centres": "DOP853 midpoint scouts quantized to exact rationals (2^30 diagonal frames; 2^42 lower frames/corrections); every use is independently enclosed by a Krawczyk solve",
+    "peano_baker_order": 12,
+    "solve": "certified Krawczyk solves only; never an explicit consumer inverse"
+  },
+  "missing_dependency": "Validated parameter-dependent affine frames (or equivalent Taylor-model/affine-arithmetic parameter generators) plus rectangular correlated multi-column factor-coordinate apply/solve. The frame must retain the shared omega generator through the block-triangular VoC cancellation instead of replacing D(omega) by a fixed rational box.",
+  "missing_dependency_request": "planning/forge-requests/phase3-ivlinode-parametric-affine-rectangular.json",
+  "provenance": {
+    "forge_head_observed": "3c4dfd5b43f0177e7ee450778a73d7c33f9749ac",
+    "ivlinode_sha256": "cc60f08e8eb8f59774f818a5d6ee457a84a8f16f66100a8ea1f64a9627649a64"
+  },
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5",
+  "result_token": "BH_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5",
+  "schema": "phase3-black-hole-axial-global-connection-matrix-v5-v1",
+  "stop_condition_disposition": "SHORTFALL",
+  "structured_lower_lift_result": {
+    "all_1792_local_krawczyk_solves_closed": true,
+    "block_frame": "C_k=[[Cc_k,0],[D_k,Ck_k]] with exact rational Cc,Ck,D scouts",
+    "correction_formula": "Ck_(k+1)^-1*(G_k*Cc_k+Uk_k*D_k-D_(k+1)*Wc_k)",
+    "diagnosis": "fixed rational frames discard the common omega dependence of A, D and the local flow before the cancellation; interval decorrelation overwhelms a nearly zero structured correction",
+    "maximum_interval_width": 36880892.110833354,
+    "maximum_width_reset": 65,
+    "midpoint_correction_max_abs_at_reset_65": 2.9720385240453925e-11,
+    "midpoint_lower_frame_max_abs_at_reset_65": 520.7048486768947
+  },
+  "verification": {
+    "independent": "python3 -m black_hole_programme.phase3.axial_global_connection_matrix_v5.verify",
+    "mutations": "python3 -m black_hole_programme.phase3.axial_global_connection_matrix_v5.mutations",
+    "producer": "python3 -m black_hole_programme.phase3.axial_global_connection_matrix_v5.produce --check",
+    "tests": "python3 -m unittest black_hole_programme.phase3.axial_global_connection_matrix_v5.tests.test_global_connection -v"
+  }
+}
