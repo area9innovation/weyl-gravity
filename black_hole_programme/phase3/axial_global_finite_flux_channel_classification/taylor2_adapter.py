@@ -24,15 +24,35 @@ from __future__ import annotations
 
 from fractions import Fraction
 import math
+import re
 import struct
 from typing import Iterable
 
 
+IVTAYLOR_V2_SOURCE_COMMIT = "2e2461eada037d18794952d466ca584e07cc33f4"
+EXPECTED_GENERATOR = 7315
+_V2_FIELDS = {
+    "schema",
+    "generator",
+    "degree",
+    "rows",
+    "cols",
+    "refusal_code",
+    "coefficients",
+    "remainder_bits",
+}
+_HEX64 = re.compile(r"[0-9a-f]{16}")
+
+
 def _fraction(value: str | int | Fraction) -> Fraction:
+    if isinstance(value, bool) or not isinstance(value, (str, int, Fraction)):
+        raise ValueError("coefficient is not exact rational data")
     return value if isinstance(value, Fraction) else Fraction(value)
 
 
 def _float_from_bits(bits: str) -> float:
+    if not isinstance(bits, str) or _HEX64.fullmatch(bits) is None:
+        raise ValueError("endpoint bits are not fixed-width lowercase hexadecimal")
     value = struct.unpack(">d", int(bits, 16).to_bytes(8, "big"))[0]
     if not math.isfinite(value):
         raise ValueError("nonfinite interval endpoint")
@@ -68,7 +88,7 @@ def _rational_string(value: Fraction) -> str:
 
 
 def _interval_from_bits(pair: list[str]) -> tuple[Fraction, Fraction]:
-    if len(pair) != 2:
+    if not isinstance(pair, list) or len(pair) != 2:
         raise ValueError("interval must have two endpoints")
     lo = Fraction.from_float(_float_from_bits(pair[0]))
     hi = Fraction.from_float(_float_from_bits(pair[1]))
@@ -110,19 +130,27 @@ def flatten_taylor_scalar(
     }
 
 
-def flatten_taylor_matrix(
-    document: dict, *, expected_generator: int = 7315
-) -> list[list[dict]]:
-    """Validate and flatten one serialized ``ivtaylor-degree2-v1`` matrix."""
+def flatten_taylor_matrix(document: dict) -> list[list[dict]]:
+    """Validate and flatten one serialized ``ivtaylor-degree2-v2`` matrix."""
 
-    if document.get("schema") != "ivtaylor-degree2-v1":
+    if not isinstance(document, dict) or set(document) != _V2_FIELDS:
+        raise ValueError("wrong Taylor serialization fields")
+    if document.get("schema") != "ivtaylor-degree2-v2":
         raise ValueError("wrong Taylor serialization schema")
-    if document.get("degree") != 2 or document.get("refusal_code") != 0:
+    if (
+        type(document.get("degree")) is not int
+        or document["degree"] != 2
+        or type(document.get("refusal_code")) is not int
+        or document["refusal_code"] != 0
+    ):
         raise ValueError("Taylor input is not an accepted degree-two model")
-    if document.get("generator") != expected_generator:
+    if (
+        type(document.get("generator")) is not int
+        or document["generator"] != EXPECTED_GENERATOR
+    ):
         raise ValueError("Taylor input uses the wrong shared generator")
     rows, cols = document.get("rows"), document.get("cols")
-    if not isinstance(rows, int) or not isinstance(cols, int):
+    if type(rows) is not int or type(cols) is not int:
         raise ValueError("Taylor shape is not integral")
     if rows <= 0 or cols <= 0:
         raise ValueError("Taylor matrix is empty")
@@ -132,12 +160,30 @@ def flatten_taylor_matrix(
         raise ValueError("Taylor input needs exactly three coefficient matrices")
 
     def require_shape(matrix: list, name: str) -> None:
-        if len(matrix) != rows or any(len(row) != cols for row in matrix):
+        if (
+            not isinstance(matrix, list)
+            or len(matrix) != rows
+            or any(not isinstance(row, list) or len(row) != cols for row in matrix)
+        ):
             raise ValueError(f"{name} shape mismatch")
 
     for index, matrix in enumerate(coefficients):
         require_shape(matrix, f"coefficient {index}")
     require_shape(remainder, "remainder")
+    for matrix in coefficients:
+        for row in matrix:
+            for value in row:
+                if not isinstance(value, str):
+                    raise ValueError("Taylor coefficient is not a rational string")
+                try:
+                    parsed = Fraction(value)
+                except (ValueError, ZeroDivisionError) as error:
+                    raise ValueError("invalid Taylor rational string") from error
+                if str(parsed) != value:
+                    raise ValueError("Taylor rational string is not canonical")
+    for row in remainder:
+        for pair in row:
+            _interval_from_bits(pair)
     return [
         [
             flatten_taylor_scalar(
