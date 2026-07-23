@@ -1,0 +1,46 @@
+{
+  "schema": "phase3-axial-qnm-local-smith-dichotomy-receipt-v1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "result": "PASS_WITH_BETA_UNEVALUATED",
+  "files": {
+    "README.md": "78b65b1ec9783b78cfdd2c7873aca4eb374d3d4a11f710d5175c26e4b284cb3c",
+    "certificate.json": "10bfd3a7a06a0981237e25008f0200e9d583ceb917e22503ba5ee490c71cad56",
+    "produce.py": "24bfeec51af9a289e2b2074daf03bc9bc2ad91e82b8c5d5d83dc449934e20048",
+    "schema.json": "40089e3f4fd12fb1435dc3043d3b41914a998ee7fed076d11a53062631e65c84",
+    "test_local_smith.py": "6371c4988c8be0252666e99cd23b0e3ef1d9293c50d6fb5ee391272ee6c66bf9",
+    "verify.py": "e7dfbf0752048037c8f85f883aee3892c17e34da9d92b19c06d39bfc2e3b5dd7"
+  },
+  "tests": [
+    {
+      "tier": 0,
+      "command": "python3 -c \"import json,jsonschema,pathlib; p=pathlib.Path('black_hole_programme/phase3/axial_qnm_local_smith_dichotomy'); s=json.loads((p/'schema.json').read_text()); jsonschema.Draft202012Validator.check_schema(s); jsonschema.validate(json.loads((p/'certificate.json').read_text()),s)\"",
+      "elapsed_seconds": 0.093,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m black_hole_programme.phase3.axial_qnm_local_smith_dichotomy.produce && PYTHONPATH=. python3 -m black_hole_programme.phase3.axial_qnm_local_smith_dichotomy.verify && PYTHONPATH=. python3 -m unittest -v black_hole_programme.phase3.axial_qnm_local_smith_dichotomy.test_local_smith",
+      "elapsed_seconds": 1.965,
+      "status": "PASS",
+      "mutation_tests": 6
+    }
+  ],
+  "higher_tiers": {
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No imported scientific input, shared operator, or consumer schema changed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a scoped local-algebra classification, not a theorem promotion, freeze, or release."
+    }
+  },
+  "claim_boundary": {
+    "beta_n_evaluated": false,
+    "actual_QNM_smith_case_selected": false,
+    "double_resolvent_pole_established": false
+  }
+}

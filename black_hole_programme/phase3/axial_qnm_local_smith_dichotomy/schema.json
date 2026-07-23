@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase3-axial-qnm-local-smith-dichotomy-v1",
+  "title": "Phase-3 axial QNM local Smith dichotomy certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "scope",
+    "hypotheses",
+    "spin_one_elimination",
+    "local_dvr_proof",
+    "fredholm_invariant",
+    "boundary",
+    "claim_flags",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-qnm-local-smith-dichotomy-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle": {"const": "CLASSIFIED"},
+    "status": {"const": "EXACT_DICHOTOMY_BETA_UNEVALUATED"},
+    "scope": {"type": "object"},
+    "hypotheses": {"type": "object"},
+    "spin_one_elimination": {
+      "type": "object",
+      "required": [
+        "left_matrix",
+        "input_matrix",
+        "output_matrix",
+        "identity_verified",
+        "conclusion"
+      ],
+      "properties": {
+        "identity_verified": {"const": true}
+      }
+    },
+    "local_dvr_proof": {
+      "type": "object",
+      "required": [
+        "uniformizer_model",
+        "determinant_valuation",
+        "valuation_rule",
+        "nonzero_class_case",
+        "zero_class_case",
+        "frame_law",
+        "invariant_class"
+      ]
+    },
+    "fredholm_invariant": {
+      "type": "object",
+      "required": [
+        "definition",
+        "derivative_pairing",
+        "normalized_coupling",
+        "equivalence",
+        "gauge_law",
+        "gauge_invariance_identity",
+        "finite_normal_form"
+      ]
+    },
+    "boundary": {
+      "type": "object",
+      "required": [
+        "beta_n_evaluated",
+        "smith_case_selected_for_any_QNM",
+        "missing",
+        "does_not_establish"
+      ],
+      "properties": {
+        "beta_n_evaluated": {"const": false},
+        "smith_case_selected_for_any_QNM": {"const": false},
+        "missing": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string"}
+        },
+        "does_not_establish": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "spin_one_unit_elimination_exact",
+        "local_smith_dichotomy_exact",
+        "fredholm_commutator_invariance_exact",
+        "beta_n_evaluated",
+        "simple_QNM_smith_case_selected",
+        "double_resolvent_pole_established"
+      ],
+      "properties": {
+        "spin_one_unit_elimination_exact": {"const": true},
+        "local_smith_dichotomy_exact": {"const": true},
+        "fredholm_commutator_invariance_exact": {"const": true},
+        "beta_n_evaluated": {"const": false},
+        "simple_QNM_smith_case_selected": {"const": false},
+        "double_resolvent_pole_established": {"const": false}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "producer",
+        "verifier",
+        "schema",
+        "arithmetic",
+        "external_scientific_inputs"
+      ]
+    }
+  }
+}

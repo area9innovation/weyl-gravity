@@ -1,0 +1,242 @@
+{
+  "boundary": {
+    "beta_n_evaluated": false,
+    "does_not_establish": [
+      "that beta_n is nonzero at any QNM",
+      "that any doubled determinant zero is a double resolvent pole",
+      "an all-overtone generalized-resonance theorem",
+      "time-domain stability or boundedness"
+    ],
+    "missing": [
+      "a certified simple damped spin-two QNM germ",
+      "a compatible normalized adjoint QNM cokernel germ",
+      "a boundary-convergent or regularized Fredholm pairing",
+      "an exact or validated evaluation of beta_n"
+    ],
+    "smith_case_selected_for_any_QNM": false
+  },
+  "claim_flags": {
+    "beta_n_evaluated": false,
+    "double_resolvent_pole_established": false,
+    "fredholm_commutator_invariance_exact": true,
+    "local_smith_dichotomy_exact": true,
+    "simple_QNM_smith_case_selected": false,
+    "spin_one_unit_elimination_exact": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "fredholm_invariant": {
+    "definition": "beta_n=<u_n^#, E(omega_n) u_n> for normalized right QNM germ u_n and adjoint cokernel germ u_n^#",
+    "derivative_pairing": "alpha_n=<u_n^#, d_omega L(omega_n) u_n> != 0 at a simple QNM",
+    "equivalence": "[b]!=0 iff beta_n!=0, after compatible endpoint and left/right germ normalizations",
+    "finite_normal_form": {
+      "E": [
+        [
+          "e_11",
+          "e_12"
+        ],
+        [
+          "e_21",
+          "e_22"
+        ]
+      ],
+      "L": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "lambda_q"
+        ]
+      ],
+      "Q": [
+        [
+          "q_11",
+          "q_12"
+        ],
+        [
+          "q_21",
+          "q_22"
+        ]
+      ],
+      "beta": "e_11",
+      "beta_shift": "0",
+      "commutator": [
+        [
+          "0",
+          "-lambda_q*q_12"
+        ],
+        [
+          "lambda_q*q_21",
+          "0"
+        ]
+      ],
+      "left_germ": [
+        "1",
+        "0"
+      ],
+      "right_germ": [
+        "1",
+        "0"
+      ]
+    },
+    "gauge_invariance_identity": "<u#,L*Q*u>-<u#,Q*L*u>=0",
+    "gauge_law": "E -> E+L*Q-Q*L",
+    "normalized_coupling": "kappa_n=beta_n/alpha_n"
+  },
+  "hypotheses": {
+    "connection": "T=[[a,b,c],[0,a,d],[0,0,f]]",
+    "equivalence": "invertible analytic row and column transformations preserving the local connection problem",
+    "noncoincident_spin_one_factor": "f(omega_n)!=0",
+    "simple_spin_two_zero": "a(omega_n)=0 and a'(omega_n)!=0"
+  },
+  "lifecycle": "CLASSIFIED",
+  "local_dvr_proof": {
+    "determinant_valuation": 2,
+    "frame_law": "b -> u*b+a*h with u in O^times and h in O",
+    "invariant_class": "[b] in O/(a), defined up to a unit",
+    "nonzero_class_case": {
+      "algebraic_multiplicity": 2,
+      "condition": "[b]!=0 in O/(a), equivalently ord(b)=0",
+      "double_pole_entry": "-b/a**2",
+      "factor_ordered_full_valuations": [
+        0,
+        2,
+        0
+      ],
+      "geometric_multiplicity": 1,
+      "inverse_matrix": [
+        [
+          "1/(u_a*z)",
+          "-(b_0 + b_1*z)/(u_a**2*z**2)"
+        ],
+        [
+          "0",
+          "1/(u_a*z)"
+        ]
+      ],
+      "resonance_structure": "one length-two root chain",
+      "sorted_full_smith_valuations": [
+        0,
+        0,
+        2
+      ],
+      "spin_two_pair_valuations": [
+        0,
+        2
+      ],
+      "time_domain_term": "t*exp(+I*omega_n*t)"
+    },
+    "uniformizer_model": "a=u_a*z with u_a a unit",
+    "valuation_rule": "For a 2x2 full-rank matrix over a DVR, the first Smith valuation is the minimum valuation of its entries and the second is determinant valuation minus the first.",
+    "zero_class_case": {
+      "algebraic_multiplicity": 2,
+      "condition": "[b]=0 in O/(a), equivalently b=a*g",
+      "factor_ordered_full_valuations": [
+        1,
+        1,
+        0
+      ],
+      "geometric_multiplicity": 2,
+      "inverse_matrix": [
+        [
+          "1/(u_a*z)",
+          "-g_0/(u_a*z)"
+        ],
+        [
+          "0",
+          "1/(u_a*z)"
+        ]
+      ],
+      "pole_order": 1,
+      "resonance_structure": "two independent simple root vectors",
+      "sorted_full_smith_valuations": [
+        0,
+        1,
+        1
+      ],
+      "spin_two_pair_valuations": [
+        1,
+        1
+      ]
+    }
+  },
+  "provenance": {
+    "arithmetic": "exact SymPy rational/polynomial algebra",
+    "external_scientific_inputs": [],
+    "producer": "produce.py",
+    "schema": {
+      "path": "schema.json",
+      "sha256": "0a045391cfdafd6148a9b1926f41c688111c6c49ce1c7515dc0a01d4d8cf3b76"
+    },
+    "verifier": "verify.py"
+  },
+  "schema": "phase3-axial-qnm-local-smith-dichotomy-v1",
+  "scope": {
+    "background": "Schwarzschild exterior M=1",
+    "damped_QNM_half_plane": "Im(omega)>0",
+    "local_ring": "analytic germs O_{omega_n}, a DVR at a simple zero z=omega-omega_n",
+    "sector": "axial ell=2",
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity",
+    "time_phase": "exp(+I*omega*t)"
+  },
+  "spin_one_elimination": {
+    "conclusion": "Because f is a local unit, c and d are eliminated exactly; the Smith question reduces to [[a,b],[0,a]].",
+    "identity_verified": true,
+    "input_matrix": [
+      [
+        "u_a*z",
+        "b_0 + b_1*z",
+        "c_0"
+      ],
+      [
+        "0",
+        "u_a*z",
+        "d_0"
+      ],
+      [
+        "0",
+        "0",
+        "u_f"
+      ]
+    ],
+    "left_matrix": [
+      [
+        "1",
+        "0",
+        "-c_0/u_f"
+      ],
+      [
+        "0",
+        "1",
+        "-d_0/u_f"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "output_matrix": [
+      [
+        "u_a*z",
+        "b_0 + b_1*z",
+        "0"
+      ],
+      [
+        "0",
+        "u_a*z",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "u_f"
+      ]
+    ]
+  },
+  "status": "EXACT_DICHOTOMY_BETA_UNEVALUATED"
+}
