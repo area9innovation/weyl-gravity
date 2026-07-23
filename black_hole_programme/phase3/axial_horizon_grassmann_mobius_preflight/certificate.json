@@ -1,0 +1,606 @@
+{
+  "dependency_tag": "LORENTZIAN-CAUSAL",
+  "does_not_establish": [
+    "transport beyond the first dyadic horizon shell",
+    "horizon-labelled amplitude transport",
+    "a horizon-to-r4 map or horizon-to-infinity connection",
+    "scattering, flux-sign, stability, ghost, positivity, CPT or unitarity",
+    "other frequency cells, ell values or polar parity"
+  ],
+  "establishes": [
+    "The future-horizon-regular axial three-complex-plane has a certified exact-affine Grassmann/Mobius transport through the first dyadic horizon shell on the declared frequency cell.",
+    "The transported plane is invariant under the declared exact rational column gauge and intersects an independently propagated direct endpoint rechart."
+  ],
+  "gates": {
+    "backend_native_c_agreement": true,
+    "chart_norm_below_two_each_panel": true,
+    "column_gauge_invariance": true,
+    "direct_endpoint_intersection": true,
+    "generator_preserved": true,
+    "material_width_improvement": true,
+    "rank_six_each_panel": true
+  },
+  "method": {
+    "chart_norm_limit": 2.0,
+    "complex_chart": {
+      "graph": [
+        "P",
+        "Q_prime",
+        "rho_F"
+      ],
+      "graph_real_block_rows": [
+        0,
+        3,
+        9,
+        4,
+        7,
+        11
+      ],
+      "pivot": [
+        "P_prime",
+        "Q",
+        "H1"
+      ],
+      "pivot_real_block_rows": [
+        1,
+        2,
+        8,
+        5,
+        6,
+        10
+      ]
+    },
+    "dyadic_rebase_bits": 128,
+    "generator": 7315,
+    "local_order": 12,
+    "minimum_width_improvement": 2.0,
+    "mobius_formula": "(Phi_JI+Phi_JJ*Z)*(Phi_II+Phi_IJ*Z)^-1",
+    "omega_subcells": 4,
+    "panels": 16,
+    "right_solve": "X*A=B via A^T*X^T=B^T"
+  },
+  "proof_contract": {
+    "checked_right_solve": true,
+    "dyadic_rebase_after_every_panel": true,
+    "exact_rational_column_gauge": true,
+    "independent_direct_state_representation": true,
+    "mutations_rejected": [
+      "wrong-left-solve",
+      "drop-Phi_IJ-Z",
+      "wrong-standard-interleaved-row-crosswalk",
+      "break-generator",
+      "erase-column-gauge-invariance",
+      "omit-rebase128"
+    ],
+    "named_row_selection": true,
+    "right_solve_residual_enclosed": true,
+    "shared_parameter_generator": true
+  },
+  "provenance": {
+    "input_commit": "d6b349535",
+    "predecessor_certificate_used": false,
+    "producer_path": "black_hole_programme/phase3/axial_horizon_grassmann_mobius_preflight/produce.py",
+    "producer_sha256": "b9f83182f11dc6e472ff103b4ce81e03385e16cb0238344d9a1e6199a0533971",
+    "source_metadata_path": "black_hole_programme/phase3/axial_horizon_grassmann_mobius_preflight/source_metadata.json",
+    "source_metadata_sha256": "caf59ca6be0031ef0ce7f52b90fea38e16e3936c94c83412ec9e3120635ae94a",
+    "source_path": "black_hole_programme/phase3/axial_horizon_grassmann_mobius_preflight/mobius_first_shell.forge",
+    "source_sha256": "c794541e9c37cbf593ccb57e7651304442a7fa65fe9f290994d6a2587b0bc8bd"
+  },
+  "result": {
+    "first_failed_gate": null,
+    "panels": [
+      {
+        "chart_norm_upper": 1.0033906414381677,
+        "graph_width": 0.06957189782743854,
+        "index": 0,
+        "rank": 6,
+        "subcell": 0
+      },
+      {
+        "chart_norm_upper": 1.0053492966148414,
+        "graph_width": 0.13081073295100196,
+        "index": 1,
+        "rank": 6,
+        "subcell": 0
+      },
+      {
+        "chart_norm_upper": 1.0080102170220662,
+        "graph_width": 0.1878488141703816,
+        "index": 2,
+        "rank": 6,
+        "subcell": 0
+      },
+      {
+        "chart_norm_upper": 1.0112722355064103,
+        "graph_width": 0.24326221131841763,
+        "index": 3,
+        "rank": 6,
+        "subcell": 0
+      },
+      {
+        "chart_norm_upper": 1.015066975484669,
+        "graph_width": 0.2988403742068566,
+        "index": 4,
+        "rank": 6,
+        "subcell": 0
+      },
+      {
+        "chart_norm_upper": 1.0193491825875498,
+        "graph_width": 0.3558752078671671,
+        "index": 5,
+        "rank": 6,
+        "subcell": 0
+      },
+      {
+        "chart_norm_upper": 1.024090428233559,
+        "graph_width": 0.4153396915645865,
+        "index": 6,
+        "rank": 6,
+        "subcell": 0
+      },
+      {
+        "chart_norm_upper": 1.0292749367435234,
+        "graph_width": 0.4780016184864322,
+        "index": 7,
+        "rank": 6,
+        "subcell": 0
+      },
+      {
+        "chart_norm_upper": 1.0348967874156763,
+        "graph_width": 0.5444981727210098,
+        "index": 8,
+        "rank": 6,
+        "subcell": 0
+      },
+      {
+        "chart_norm_upper": 1.0409580182777118,
+        "graph_width": 0.6153861454938322,
+        "index": 9,
+        "rank": 6,
+        "subcell": 0
+      },
+      {
+        "chart_norm_upper": 1.0474673770449467,
+        "graph_width": 0.6911770444747641,
+        "index": 10,
+        "rank": 6,
+        "subcell": 0
+      },
+      {
+        "chart_norm_upper": 1.0544395192808897,
+        "graph_width": 0.7723625427817343,
+        "index": 11,
+        "rank": 6,
+        "subcell": 0
+      },
+      {
+        "chart_norm_upper": 1.0618945337481345,
+        "graph_width": 0.8594337587219928,
+        "index": 12,
+        "rank": 6,
+        "subcell": 0
+      },
+      {
+        "chart_norm_upper": 1.069857721546353,
+        "graph_width": 0.9528966868908061,
+        "index": 13,
+        "rank": 6,
+        "subcell": 0
+      },
+      {
+        "chart_norm_upper": 1.0783595808914324,
+        "graph_width": 1.0532853355245446,
+        "index": 14,
+        "rank": 6,
+        "subcell": 0
+      },
+      {
+        "chart_norm_upper": 1.0874359688626984,
+        "graph_width": 1.1611736675655908,
+        "index": 15,
+        "rank": 6,
+        "subcell": 0
+      },
+      {
+        "chart_norm_upper": 1.0053505512981542,
+        "graph_width": 0.06964380375671068,
+        "index": 0,
+        "rank": 6,
+        "subcell": 1
+      },
+      {
+        "chart_norm_upper": 1.007318280435374,
+        "graph_width": 0.13095784363934007,
+        "index": 1,
+        "rank": 6,
+        "subcell": 1
+      },
+      {
+        "chart_norm_upper": 1.00999190369442,
+        "graph_width": 0.18808493978704902,
+        "index": 2,
+        "rank": 6,
+        "subcell": 1
+      },
+      {
+        "chart_norm_upper": 1.0132699146306041,
+        "graph_width": 0.24360813336903234,
+        "index": 3,
+        "rank": 6,
+        "subcell": 1
+      },
+      {
+        "chart_norm_upper": 1.0170837711703986,
+        "graph_width": 0.29932184643256743,
+        "index": 4,
+        "rank": 6,
+        "subcell": 1
+      },
+      {
+        "chart_norm_upper": 1.0213881770887283,
+        "graph_width": 0.35652195505003814,
+        "index": 5,
+        "rank": 6,
+        "subcell": 1
+      },
+      {
+        "chart_norm_upper": 1.026154755188483,
+        "graph_width": 0.41618498117690783,
+        "index": 6,
+        "rank": 6,
+        "subcell": 1
+      },
+      {
+        "chart_norm_upper": 1.0313678537247521,
+        "graph_width": 0.4790821660052833,
+        "index": 7,
+        "rank": 6,
+        "subcell": 1
+      },
+      {
+        "chart_norm_upper": 1.037021735125475,
+        "graph_width": 0.5458542365398874,
+        "index": 8,
+        "rank": 6,
+        "subcell": 1
+      },
+      {
+        "chart_norm_upper": 1.0431186845970726,
+        "graph_width": 0.6170618551183575,
+        "index": 9,
+        "rank": 6,
+        "subcell": 1
+      },
+      {
+        "chart_norm_upper": 1.0496677568638004,
+        "graph_width": 0.6932208490226858,
+        "index": 10,
+        "rank": 6,
+        "subcell": 1
+      },
+      {
+        "chart_norm_upper": 1.0566839737977236,
+        "graph_width": 0.774827758651679,
+        "index": 11,
+        "rank": 6,
+        "subcell": 1
+      },
+      {
+        "chart_norm_upper": 1.0641878538858682,
+        "graph_width": 0.8623792324202045,
+        "index": 12,
+        "rank": 6,
+        "subcell": 1
+      },
+      {
+        "chart_norm_upper": 1.0722051977955214,
+        "graph_width": 0.9563875819241795,
+        "index": 13,
+        "rank": 6,
+        "subcell": 1
+      },
+      {
+        "chart_norm_upper": 1.0807670819145752,
+        "graph_width": 1.0573940595856521,
+        "index": 14,
+        "rank": 6,
+        "subcell": 1
+      },
+      {
+        "chart_norm_upper": 1.089910031382161,
+        "graph_width": 1.1659809631773095,
+        "index": 15,
+        "rank": 6,
+        "subcell": 1
+      },
+      {
+        "chart_norm_upper": 1.0073062899881655,
+        "graph_width": 0.06971769218473857,
+        "index": 0,
+        "rank": 6,
+        "subcell": 2
+      },
+      {
+        "chart_norm_upper": 1.0092828143514334,
+        "graph_width": 0.13110921197638412,
+        "index": 1,
+        "rank": 6,
+        "subcell": 2
+      },
+      {
+        "chart_norm_upper": 1.0119689375560454,
+        "graph_width": 0.18832778293855,
+        "index": 2,
+        "rank": 6,
+        "subcell": 2
+      },
+      {
+        "chart_norm_upper": 1.0152628097698457,
+        "graph_width": 0.24396335005842607,
+        "index": 3,
+        "rank": 6,
+        "subcell": 2
+      },
+      {
+        "chart_norm_upper": 1.0190957195488561,
+        "graph_width": 0.2998152692567189,
+        "index": 4,
+        "rank": 6,
+        "subcell": 2
+      },
+      {
+        "chart_norm_upper": 1.0234223253556842,
+        "graph_width": 0.35718337182635945,
+        "index": 5,
+        "rank": 6,
+        "subcell": 2
+      },
+      {
+        "chart_norm_upper": 1.028214298495549,
+        "graph_width": 0.4170477244349687,
+        "index": 6,
+        "rank": 6,
+        "subcell": 2
+      },
+      {
+        "chart_norm_upper": 1.033456111491314,
+        "graph_width": 0.4801830464022105,
+        "index": 7,
+        "rank": 6,
+        "subcell": 2
+      },
+      {
+        "chart_norm_upper": 1.0391422162696204,
+        "graph_width": 0.5472336991117264,
+        "index": 8,
+        "rank": 6,
+        "subcell": 2
+      },
+      {
+        "chart_norm_upper": 1.0452751477076572,
+        "graph_width": 0.6187642939334926,
+        "index": 9,
+        "rank": 6,
+        "subcell": 2
+      },
+      {
+        "chart_norm_upper": 1.0518642692244529,
+        "graph_width": 0.6952950519897577,
+        "index": 10,
+        "rank": 6,
+        "subcell": 2
+      },
+      {
+        "chart_norm_upper": 1.0589249720534883,
+        "graph_width": 0.7773274679984629,
+        "index": 11,
+        "rank": 6,
+        "subcell": 2
+      },
+      {
+        "chart_norm_upper": 1.066478208945226,
+        "graph_width": 0.865363821900257,
+        "index": 12,
+        "rank": 6,
+        "subcell": 2
+      },
+      {
+        "chart_norm_upper": 1.0745502863298066,
+        "graph_width": 0.9599228602815275,
+        "index": 13,
+        "rank": 6,
+        "subcell": 2
+      },
+      {
+        "chart_norm_upper": 1.0831728668473504,
+        "graph_width": 1.0615532172401334,
+        "index": 14,
+        "rank": 6,
+        "subcell": 2
+      },
+      {
+        "chart_norm_upper": 1.092383153960733,
+        "graph_width": 1.1708456861832877,
+        "index": 15,
+        "rank": 6,
+        "subcell": 2
+      },
+      {
+        "chart_norm_upper": 1.0092578577461413,
+        "graph_width": 0.06979356724547027,
+        "index": 0,
+        "rank": 6,
+        "subcell": 3
+      },
+      {
+        "chart_norm_upper": 1.0112428993152136,
+        "graph_width": 0.13126484025322607,
+        "index": 1,
+        "rank": 6,
+        "subcell": 3
+      },
+      {
+        "chart_norm_upper": 1.01394132081225,
+        "graph_width": 0.18857734183747996,
+        "index": 2,
+        "rank": 6,
+        "subcell": 3
+      },
+      {
+        "chart_norm_upper": 1.0172509248650825,
+        "graph_width": 0.24432785290711231,
+        "index": 3,
+        "rank": 6,
+        "subcell": 3
+      },
+      {
+        "chart_norm_upper": 1.0211028267186826,
+        "graph_width": 0.30032062475745525,
+        "index": 4,
+        "rank": 6,
+        "subcell": 3
+      },
+      {
+        "chart_norm_upper": 1.0254516360076038,
+        "graph_width": 0.35785942813124816,
+        "index": 5,
+        "rank": 6,
+        "subcell": 3
+      },
+      {
+        "chart_norm_upper": 1.0302690696030035,
+        "graph_width": 0.4179278766252504,
+        "index": 6,
+        "rank": 6,
+        "subcell": 3
+      },
+      {
+        "chart_norm_upper": 1.0355397254548593,
+        "graph_width": 0.4813042027667444,
+        "index": 7,
+        "rank": 6,
+        "subcell": 3
+      },
+      {
+        "chart_norm_upper": 1.041258251133304,
+        "graph_width": 0.5486364969644144,
+        "index": 8,
+        "rank": 6,
+        "subcell": 3
+      },
+      {
+        "chart_norm_upper": 1.0474274333063205,
+        "graph_width": 0.6204933942250662,
+        "index": 9,
+        "rank": 6,
+        "subcell": 3
+      },
+      {
+        "chart_norm_upper": 1.0540569458233575,
+        "graph_width": 0.697399584988907,
+        "index": 10,
+        "rank": 6,
+        "subcell": 3
+      },
+      {
+        "chart_norm_upper": 1.0611625524039672,
+        "graph_width": 0.7798616067990688,
+        "index": 11,
+        "rank": 6,
+        "subcell": 3
+      },
+      {
+        "chart_norm_upper": 1.068765644698975,
+        "graph_width": 0.8683874742651946,
+        "index": 12,
+        "rank": 6,
+        "subcell": 3
+      },
+      {
+        "chart_norm_upper": 1.076893041225993,
+        "graph_width": 0.9635024889927145,
+        "index": 13,
+        "rank": 6,
+        "subcell": 3
+      },
+      {
+        "chart_norm_upper": 1.0855769991252797,
+        "graph_width": 1.0657628066759957,
+        "index": 14,
+        "rank": 6,
+        "subcell": 3
+      },
+      {
+        "chart_norm_upper": 1.0948554106622663,
+        "graph_width": 1.1757678800880484,
+        "index": 15,
+        "rank": 6,
+        "subcell": 3
+      }
+    ],
+    "subcells": [
+      {
+        "column_gauge_invariance": true,
+        "direct_endpoint_intersection": true,
+        "direct_endpoint_rechart_width": 5.37885511838771,
+        "endpoint_rank": 6,
+        "graph_width": 1.1611736675655908,
+        "index": 0,
+        "initial_rank": 6,
+        "max_chart_norm_upper": 1.0874359688626984,
+        "width_improvement": 4.632257231310214
+      },
+      {
+        "column_gauge_invariance": true,
+        "direct_endpoint_intersection": true,
+        "direct_endpoint_rechart_width": 5.40413894188872,
+        "endpoint_rank": 6,
+        "graph_width": 1.1659809631773095,
+        "index": 1,
+        "initial_rank": 6,
+        "max_chart_norm_upper": 1.089910031382161,
+        "width_improvement": 4.634843202896202
+      },
+      {
+        "column_gauge_invariance": true,
+        "direct_endpoint_intersection": true,
+        "direct_endpoint_rechart_width": 5.429617729948798,
+        "endpoint_rank": 6,
+        "graph_width": 1.1708456861832877,
+        "index": 2,
+        "initial_rank": 6,
+        "max_chart_norm_upper": 1.092383153960733,
+        "width_improvement": 4.637346999712847
+      },
+      {
+        "column_gauge_invariance": true,
+        "direct_endpoint_intersection": true,
+        "direct_endpoint_rechart_width": 5.455292382273529,
+        "endpoint_rank": 6,
+        "graph_width": 1.1757678800880484,
+        "index": 3,
+        "initial_rank": 6,
+        "max_chart_norm_upper": 1.0948554106622663,
+        "width_improvement": 4.6397698684071935
+      }
+    ]
+  },
+  "result_id": "PHASE3_AXIAL_HORIZON_GRASSMANN_MOBIUS_ONE_SHELL_V1",
+  "schema": "phase3-axial-horizon-grassmann-mobius-preflight-v1",
+  "scope": {
+    "M": 1,
+    "background": "Schwarzschild",
+    "ell": 2,
+    "omega_cell": [
+      "1/2",
+      "129/256"
+    ],
+    "parity": "axial",
+    "rho_cell": [
+      "1/4194304",
+      "1/2097152"
+    ],
+    "theory": "strict four-dimensional pure Weyl gravity"
+  },
+  "status": "PREFLIGHT_PASS"
+}

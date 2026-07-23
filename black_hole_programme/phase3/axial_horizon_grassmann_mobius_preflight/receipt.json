@@ -1,0 +1,57 @@
+{
+  "backend_agreement": true,
+  "backend_stdout_sha256": {
+    "c": "3716026f1685a50daf91775ad6ef3d868d29e59c335e2b38273e9c1ee94ce1b8",
+    "native": "3716026f1685a50daf91775ad6ef3d868d29e59c335e2b38273e9c1ee94ce1b8"
+  },
+  "commands": {
+    "c_compile": [
+      "gcc",
+      "-O2",
+      "-w",
+      "-o",
+      "/tmp/phase3_horizon_grassmann_mobius/c",
+      "/tmp/phase3_horizon_grassmann_mobius/gate.c",
+      "-lm",
+      "-lgmp"
+    ],
+    "c_emit": [
+      "/home/alstrup/area9/tango/forge/forge",
+      "-incremental",
+      "-emit-c",
+      "/home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_horizon_grassmann_mobius_preflight/mobius_first_shell.forge"
+    ],
+    "c_run": [
+      "/tmp/phase3_horizon_grassmann_mobius/c"
+    ],
+    "native_compile": [
+      "/home/alstrup/area9/tango/forge/forge",
+      "-incremental",
+      "-o",
+      "/tmp/phase3_horizon_grassmann_mobius/native",
+      "/home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_horizon_grassmann_mobius_preflight/mobius_first_shell.forge"
+    ],
+    "native_run": [
+      "/tmp/phase3_horizon_grassmann_mobius/native"
+    ],
+    "produce": "python3 -m black_hole_programme.phase3.axial_horizon_grassmann_mobius_preflight.produce"
+  },
+  "elapsed_seconds": {
+    "c_compile": 35.368503666017205,
+    "c_emit": 3.783157781988848,
+    "c_run": 119.52044486399973,
+    "native_compile": 45.93917111499468,
+    "native_run": 281.6753538729972
+  },
+  "returncodes": {
+    "c_compile": 0,
+    "c_emit": 0,
+    "c_run": 42,
+    "native_compile": 0,
+    "native_run": 42
+  },
+  "schema": "phase3-axial-horizon-grassmann-mobius-receipt-v1",
+  "status": "PREFLIGHT_PASS",
+  "tier3_reason": "isolated method preflight; scoped both-backend and mutation rails are the falsifying suite",
+  "tier3_run": false
+}
