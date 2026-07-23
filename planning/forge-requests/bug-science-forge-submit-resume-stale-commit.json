@@ -1,0 +1,39 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:forge-request/bug-science-forge-submit-resume-stale-commit",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "bug-science-forge-submit-resume-stale-commit",
+  "source": {
+    "path": "planning/forge-requests/bug-science-forge-submit-resume-stale-commit.json",
+    "span": null
+  },
+  "body": {
+    "owner": "science-forge",
+    "state": "REQUESTED",
+    "stream": "forge-requests",
+    "priority": 0,
+    "objective": "Make `s-f work submit` and `work report` fail closed when an older WORK_COMMITTED/WORK_REPORTED checkpoint does not contain the paths named by a newer superseding WORK_INTENT. A resumable journal may reuse a commit only for the same intent transaction and exact materialized path set.",
+    "stop_condition": "Add a regression in which an item first has WORK_COMMITTED+WORK_REPORTED at commit A for an old or empty path set, then receives a newer superseding WORK_INTENT for new files, and those files land at commit B. `s-f work submit` must adopt B and append a new WORK_COMMITTED+WORK_REPORTED pair for the latest intent, or refuse visibly; it must never print RESUME and reuse A. On every normal, resume, adopt and corrective-report route, require that the selected resolvable current commit contains every reported path using `git ls-tree`; an unresolvable hash and a path absent from the commit both refuse. Bind resume identity to the intent transaction ID, base commit and canonical changed-path set. Surface the selected commit and intent transaction in `work show`. Provide a supported wrapper command for append-only corrective adoption of an already-landed commit so coordinators never need to invoke low-level `sfc work-commit-event`.",
+    "current_gate": "durable scientific provenance for new-file shortfalls and resumed submissions",
+    "forbid": "no resume solely because any historical WORK_COMMITTED exists; no report naming a commit that omits a reported path; no skip for unresolvable hashes; no rewrite or deletion of the superseded event; no low-level-only recovery; no inferred path narrowing; no shared-index reset or broad staging",
+    "depends_on": [],
+    "activates": [
+      "reliable two-phase scientific delivery after a preliminary registration or shortfall checkpoint"
+    ],
+    "allowed_paths": [
+      "forge/tools/science-forge/",
+      "forge/tools/science-forge-cli/",
+      "forge/tools/science-forge/fixtures/",
+      "forge/tools/science-forge/GUIDE.md",
+      "forge/tools/science-forge/WORKER-GUIDE.md"
+    ],
+    "resource_hint": "Live reproduction on 2026-07-23: `s-f work submit` for `phase3-black-hole-axial-horizon-grassmann-mobius-to-r4-v2` saw historical WORK_COMMITTED `1ca045a2d` (only the work-item registration), printed `RESUME`, skipped intent+content commit, and appended a report naming 1ca for a new 15-file scientific package. A newer superseding intent did not change that resume choice. The package was actually committed at b60c57716 plus its ignored refusal log at 630880a6c; recovery required an append-only low-level WORK_COMMITTED event and a new containment-gated report at 630.",
+    "notes": [
+      "This is the exact provenance chicken-and-egg surface the WORK_INTENT design was intended to remove; the remaining defect is transaction selection during resume.",
+      "Required mutation: make the resolver choose the oldest compatible agent commit instead of the latest intent-bound commit; the test must fail.",
+      "Required clean-clone test: after durable push, `work show` must surface the latest real containing checkpoint and retain the earlier false checkpoint only as superseded history."
+    ]
+  },
+  "edges": []
+}
