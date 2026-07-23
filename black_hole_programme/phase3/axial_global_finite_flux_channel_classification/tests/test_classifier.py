@@ -197,6 +197,25 @@ class AffineCellAdapterTest(unittest.TestCase):
         self.assertEqual(product.remainder.hi, 0)
         self.assertEqual(product.remainder.lo, -Fraction(1, 512**2))
 
+    def test_affine_containment_allows_rebased_center_and_linear(self) -> None:
+        inner = AffineScalar(
+            Fraction(1),
+            Fraction(2),
+            Interval(Fraction(-1, 100), Fraction(1, 100)),
+        )
+        outer = AffineScalar(
+            Fraction(1001, 1000),
+            Fraction(3),
+            Interval(Fraction(-2, 100), Fraction(2, 100)),
+        )
+        self.assertTrue(outer.contains_affine(inner))
+        narrow = AffineScalar(
+            outer.center,
+            outer.linear,
+            Interval(Fraction(-1, 1000), Fraction(1, 1000)),
+        )
+        self.assertFalse(narrow.contains_affine(inner))
+
     def test_whole_cell_rank_and_inertia(self) -> None:
         matrix = matrix_from_json(
             affine_diagonal(

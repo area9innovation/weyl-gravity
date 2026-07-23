@@ -143,11 +143,16 @@ class AffineScalar:
         return PARAMETER_INTERVAL.scale(self.linear) + self.remainder
 
     def contains_affine(self, other: "AffineScalar") -> bool:
-        return (
-            self.center == other.center
-            and self.linear == other.linear
-            and self.remainder.contains(other.remainder)
+        # Rebased producers may choose different dyadic center/linear
+        # representatives.  Compare the represented functions, not their
+        # serialization: the outer remainder must absorb that affine shift
+        # for every value of the shared parameter.
+        required_remainder = (
+            other.remainder
+            + Interval.point(other.center - self.center)
+            + PARAMETER_INTERVAL.scale(other.linear - self.linear)
         )
+        return self.remainder.contains(required_remainder)
 
 
 @dataclass(frozen=True)
