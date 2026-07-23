@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "phase3-axial-h4-plucker-correlated-functional-schema-v1",
+  "scope": {
+    "children": [0, 1],
+    "replayed_boundary": {"shell": 4, "segment": 3},
+    "no_later_shell": true
+  },
+  "witness": {
+    "kind": "midpoint-Hermitian real functional",
+    "formula": "Re sum_j conjugate(p_j(0)) q_j",
+    "success_condition": "the interval enclosure excludes zero"
+  },
+  "typed_refusals": {
+    "31": "Pluecker relation enclosure defect",
+    "32": "no raw real/imaginary Pluecker coordinate component excludes zero",
+    "33": "complex realification layout defect",
+    "34": "source or shape defect",
+    "35": "midpoint-Hermitian correlated functional enclosure contains zero"
+  }
+}

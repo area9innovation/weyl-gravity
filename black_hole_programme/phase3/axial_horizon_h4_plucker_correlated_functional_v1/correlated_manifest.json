@@ -1,0 +1,62 @@
+{
+  "children": [
+    {
+      "child_index": 0,
+      "compile_log_path": "children/q00_child_0_correlated_compile.txt",
+      "frequency_cell": [
+        "1/2",
+        "4097/8192"
+      ],
+      "metadata_path": "children/q00_child_0_correlated_metadata.json",
+      "process_exit": 3,
+      "run_log_path": "children/q00_child_0_correlated_run.txt",
+      "run_log_sha256": "cb62b53b955fefca6c9ef1d71e182eb79190bc4b7dd0d065a9f3282b631731d9",
+      "source_path": "children/q00_child_0_correlated.forge",
+      "source_sha256": "36704298be9587b916f72adeb910b519921ae3643a3bca4a532640b9f5e178e4",
+      "terminal_evidence": [
+        "CORRELATED_FUNCTIONAL_DEFECT lo=-2.8247010038695976e-07 hi=2.8248499631960077e-07 norm=0.7575348795807845",
+        "PLUCKER_REFUSE shell=4 segment=3 code=35"
+      ]
+    },
+    {
+      "child_index": 1,
+      "compile_log_path": "children/q00_child_1_correlated_compile.txt",
+      "frequency_cell": [
+        "4097/8192",
+        "2049/4096"
+      ],
+      "metadata_path": "children/q00_child_1_correlated_metadata.json",
+      "process_exit": 3,
+      "run_log_path": "children/q00_child_1_correlated_run.txt",
+      "run_log_sha256": "186d566f324650c0e55004162e7476e6d601ea684e1e72d5a100703d48a6c6f9",
+      "source_path": "children/q00_child_1_correlated.forge",
+      "source_sha256": "e97af1ea3c146cb3df2820aea6809d9184c78333cec4a31c038eb4957f3ee059",
+      "terminal_evidence": [
+        "CORRELATED_FUNCTIONAL_DEFECT lo=-2.832958532646906e-07 hi=2.8331075497301994e-07 norm=0.7597025238436113",
+        "PLUCKER_REFUSE shell=4 segment=3 code=35"
+      ]
+    }
+  ],
+  "does_not_establish": [
+    "transport beyond shell 4 segment 3",
+    "the complete 23-shell horizon transport",
+    "canonical endpoint amplitudes",
+    "a horizon-to-infinity scattering theorem"
+  ],
+  "payload_sha256": "d0904a5f2b239a203aeee83718f415846c966c9abf2c5cd68513d608ae3e67e1",
+  "schema": "phase3-axial-h4-plucker-correlated-functional-manifest-v1",
+  "scope": {
+    "children": [
+      0,
+      1
+    ],
+    "no_later_shell": true,
+    "replayed_boundary": {
+      "segment": 3,
+      "shell": 4
+    }
+  },
+  "split_certificate_sha256": "af08dcca5bd805a2fbcbd1817bf8342c685c9c2c82103609c782a8e4c4cf988a",
+  "split_manifest_sha256": "e8a253ad95687bbb5ed18701969a50bebe6a018ab154389a9d02182016ddc5f3",
+  "status": "CORRELATED_REFUSED"
+}

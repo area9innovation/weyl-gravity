@@ -1,0 +1,75 @@
+{
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "does_not_establish": [
+    "transport beyond shell 4 segment 3",
+    "the complete 23-shell horizon transport",
+    "canonical endpoint amplitudes",
+    "a horizon-to-infinity scattering theorem"
+  ],
+  "hashes": {
+    "README.md": "85d1279d7d0672b227f26cb488b4c4cc8de1c426eb2d2b93197f0876b1f4bb78",
+    "__init__.py": "e62b3df76baaadad1689625f7922c62deedb5d6c5f1c7724c8d35d36de1edae8",
+    "children/q00_child_0_correlated.forge": "36704298be9587b916f72adeb910b519921ae3643a3bca4a532640b9f5e178e4",
+    "children/q00_child_0_correlated_compile.txt": "e9ca62ab17c5b9410b6208884b6d306cfbaa44b534d5fed05a35ad129d439a5b",
+    "children/q00_child_0_correlated_metadata.json": "0bf27529c698aafa7295d7358585569ffb5b4beafc2d2c780a477bd007cda2ed",
+    "children/q00_child_0_correlated_run.txt": "cb62b53b955fefca6c9ef1d71e182eb79190bc4b7dd0d065a9f3282b631731d9",
+    "children/q00_child_1_correlated.forge": "e97af1ea3c146cb3df2820aea6809d9184c78333cec4a31c038eb4957f3ee059",
+    "children/q00_child_1_correlated_compile.txt": "dfc9acca81f7098b4ab29bbb31c411f15d57513f17beb8bc9e0f373f21b587c0",
+    "children/q00_child_1_correlated_metadata.json": "78b83c543950df2189b68d88c82aef97148d762d6872f43ab09ff8ce9c4d3325",
+    "children/q00_child_1_correlated_run.txt": "186d566f324650c0e55004162e7476e6d601ea684e1e72d5a100703d48a6c6f9",
+    "correlated_manifest.json": "7fbd0ef15ea0d1442ff03b93b06b24c05f2ac5c60e3dfb1784b0c6a28b7881e3",
+    "produce.py": "49d276ab191993a8cdfe2e06ce907bdf045a3ae3b0637549667a618b26b042e9",
+    "report.md": "029282ef10d1bb57f1228f6672bdd42d7d901b91de3844b55a95aee84f553e99",
+    "run_children.py": "403dfa88b15fe796d6bbbb4bd72a74be196adaf608135a484117fa51bebd42c7",
+    "schema.json": "3baa94e99327d4b2dc1cae6242f37d00fa7aa15a309aca3279482cbca53b6993",
+    "test_correlated.py": "586c08a45f9a743d8c9254768b4cbcfc8991776b38e8eb8a8205f9f1d12620e9",
+    "verify.py": "da4ce6abfec58fd8f86b1d7f18e7a9e7710bea7740b34cacdf23279c9c841d0f"
+  },
+  "interpretation": "On both exact q00 children, the validated enclosure of the midpoint-Hermitian functional contains zero at shell 4 segment 3. This is an enclosure obstruction, not a rank-loss theorem.",
+  "result": {
+    "children": [
+      {
+        "defect": {
+          "hi": "2.8248499631960077e-07",
+          "lo": "-2.8247010038695976e-07",
+          "norm": "0.7575348795807845"
+        },
+        "elapsed_milliseconds": 117178,
+        "prefix_heartbeats": 19,
+        "refusal": {
+          "code": 35,
+          "segment": 3,
+          "shell": 4
+        },
+        "status": "REFUSED"
+      },
+      {
+        "defect": {
+          "hi": "2.8331075497301994e-07",
+          "lo": "-2.832958532646906e-07",
+          "norm": "0.7597025238436113"
+        },
+        "elapsed_milliseconds": 117651,
+        "prefix_heartbeats": 19,
+        "refusal": {
+          "code": 35,
+          "segment": 3,
+          "shell": 4
+        },
+        "status": "REFUSED"
+      }
+    ],
+    "correlated_pass": false,
+    "target": {
+      "segment": 3,
+      "shell": 4
+    }
+  },
+  "schema": "phase3-axial-h4-plucker-correlated-functional-certificate-v1",
+  "split_certificate_sha256": "af08dcca5bd805a2fbcbd1817bf8342c685c9c2c82103609c782a8e4c4cf988a",
+  "split_manifest_sha256": "e8a253ad95687bbb5ed18701969a50bebe6a018ab154389a9d02182016ddc5f3",
+  "status": "CERTIFIED_CORRELATED_FUNCTIONAL_OBSTRUCTION"
+}
