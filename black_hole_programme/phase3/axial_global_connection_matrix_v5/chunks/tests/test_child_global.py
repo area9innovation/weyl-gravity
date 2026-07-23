@@ -32,6 +32,21 @@ class ChildGlobalTest(unittest.TestCase):
             verify_global(self.global_map, self.prefix, self.tail, 0)
         )
 
+    def test_all_emitted_global_maps_replay_without_scratch_files(self) -> None:
+        emitted = sorted((ARTIFACTS / "global_maps").glob("global_map_q*.json"))
+        self.assertGreaterEqual(len(emitted), 1)
+        for path in emitted:
+            child = int(path.stem.removeprefix("global_map_q"))
+            tail = _load(
+                ARTIFACTS
+                / "child_tail_joins"
+                / f"child_tail_join_q{child:02d}.json"
+            )
+            with self.subTest(child=child):
+                self.assertTrue(
+                    verify_global(_load(path), self.prefix, tail, child)
+                )
+
     def test_false_restart_is_rejected(self) -> None:
         payload = copy.deepcopy(self.global_map)
         payload["composition"]["physical_restart"] = True

@@ -53,17 +53,22 @@ def main() -> int:
     parser.add_argument("--scratch", type=Path, required=True)
     parser.add_argument("--summary", type=Path, required=True)
     parser.add_argument("--repo-root", type=Path, required=True)
+    parser.add_argument("--start-child", type=int, default=0)
+    parser.add_argument("--end-child", type=int, default=16)
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--run-timeout", type=float, default=900.0)
     args = parser.parse_args()
     if not 1 <= args.workers <= 4:
         raise SystemExit("workers must lie in [1,4]")
+    if not 0 <= args.start_child < args.end_child <= 16:
+        raise SystemExit("expected 0 <= start-child < end-child <= 16")
     args.output_dir.mkdir(parents=True, exist_ok=True)
     args.scratch.mkdir(parents=True, exist_ok=True)
     prefix = json.loads(args.prefix.read_text())
     prefix_context = build_microfactor_render_context()
     contexts, tails, sources, jobs = {}, {}, {}, []
-    for child in range(16):
+    child_range = range(args.start_child, args.end_child)
+    for child in child_range:
         context = build_microfactor_render_context(frequency_cell(child))
         contexts[child] = context
         tail_path = args.tail_join_dir / f"child_tail_join_q{child:02d}.json"
@@ -111,7 +116,7 @@ def main() -> int:
                 flush=True,
             )
     artifacts = []
-    for child in range(16):
+    for child in child_range:
         result = results[child]
         if result["status"] != "PASS":
             continue
@@ -157,12 +162,15 @@ def main() -> int:
         output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
         artifacts.append(str(output))
     all_passed = (
-        len(results) == 16
+        len(results) == len(child_range)
         and all(result["status"] == "PASS" for result in results.values())
-        and len(artifacts) == 16
+        and len(artifacts) == len(child_range)
     )
     summary = {
         "schema": "phase3-axial-final-frequency-child-global-maps-v1",
+        "frequency_child_range": [
+            args.start_child, args.end_child,
+        ],
         "all_passed": all_passed,
         "results": [
             {"frequency_child": child, **results[child]}
@@ -171,7 +179,10 @@ def main() -> int:
         "artifacts": artifacts,
     }
     args.summary.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n")
-    print(f"SUMMARY all_passed={all_passed} artifacts={len(artifacts)}/16")
+    print(
+        f"SUMMARY all_passed={all_passed} "
+        f"artifacts={len(artifacts)}/{len(child_range)}"
+    )
     return 0 if all_passed else 3
 
 
