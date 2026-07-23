@@ -3,6 +3,7 @@ from __future__ import annotations
 import copy
 import hashlib
 import unittest
+from pathlib import Path
 
 from jsonschema import ValidationError
 
@@ -11,6 +12,9 @@ from ..verify_channel_handoff_schema import _realify, load_validator, validate
 
 ZERO = "0000000000000000"
 HASH = "a" * 64
+ROOT = Path(__file__).resolve().parents[5]
+FIXTURE = Path(__file__).with_name("fixtures") / "current_identity.json"
+FIXTURE_VERIFIER = Path(__file__).with_name("fixtures") / "verify_current_identity.py"
 
 
 def scalar(value: int = 0) -> dict:
@@ -45,7 +49,8 @@ def valid_payload() -> dict:
         "method": "validated congruence pivots",
         "witness_sha256": HASH,
     }
-    structural_witness = "exact synthetic zero identity"
+    fixture_path = FIXTURE.relative_to(ROOT).as_posix()
+    verifier_path = FIXTURE_VERIFIER.relative_to(ROOT).as_posix()
     return {
         "connection": {
             "complex_6_by_3": connection,
@@ -60,10 +65,20 @@ def valid_payload() -> dict:
             "conservation": {
                 "identity": "GHplus+gplus-gminus=0",
                 "defect": zero_form, "zero_contained_entrywise": True,
-                "structural_identity_witness": structural_witness,
-                "witness_sha256": hashlib.sha256(
-                    structural_witness.encode("utf-8")
-                ).hexdigest(),
+                "structural_identity_witness": {
+                    "kind": "verified-action-current-identity",
+                    "path": fixture_path,
+                    "result_id": "SYNTHETIC_ACTION_CURRENT_IDENTITY_V1",
+                    "sha256": hashlib.sha256(FIXTURE.read_bytes()).hexdigest(),
+                    "verifier_path": verifier_path,
+                    "verifier_sha256": hashlib.sha256(
+                        FIXTURE_VERIFIER.read_bytes()
+                    ).hexdigest(),
+                    "replay_command": ["python", verifier_path],
+                    "certified_claim_path": [
+                        "claim_flags", "radial_current_conservation_certified",
+                    ],
+                },
             },
         },
         "classification_witnesses": {
@@ -236,10 +251,10 @@ class ChannelHandoffSchemaTest(unittest.TestCase):
 
     def test_structural_witness_hash_mismatch_is_rejected(self) -> None:
         document = valid_document()
-        document["cells"][0]["validated_payload"]["endpoint_forms"][
-            "conservation"
-        ]["structural_identity_witness"] += " mutated"
-        with self.assertRaisesRegex(ValueError, "witness hash mismatch"):
+        document["cells"][0]["validated_payload"]["endpoint_forms"]["conservation"][
+            "structural_identity_witness"
+        ]["sha256"] = HASH
+        with self.assertRaisesRegex(ValueError, "artifact hash mismatch"):
             validate(document)
 
     def test_gap_is_rejected(self) -> None:

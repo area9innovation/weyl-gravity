@@ -6,6 +6,8 @@ import json
 import hashlib
 import math
 import struct
+import subprocess
+import sys
 from fractions import Fraction
 from pathlib import Path
 
@@ -15,6 +17,7 @@ from jsonschema import Draft202012Validator
 HERE = Path(__file__).resolve().parent
 SCHEMA = HERE / "channel-handoff-v6.schema.json"
 HANDOFF = HERE / "channel-handoff-v6.json"
+ROOT = HERE.parents[3]
 
 
 def load_validator() -> Draft202012Validator:
@@ -39,6 +42,7 @@ def validate(document: dict) -> None:
     parent_lo, parent_hi = map(Fraction, document["parent_cell"]["omega_interval"])
     cursor = parent_lo
     unresolved = []
+    replayed_witnesses: set[str] = set()
     for index, cell in enumerate(cells):
         if cell["cell_id"] != f"q{index}":
             raise ValueError("cells: ids are not ordered q0,q1,...")
@@ -53,7 +57,7 @@ def validate(document: dict) -> None:
         if cell["disposition"] == "CERTIFIED":
             if cell["validated_payload"] is None or cell["shortfall"] is not None:
                 raise ValueError("cells: certified cell lacks a clean payload")
-            _validate_payload(cell["validated_payload"])
+            _validate_payload(cell["validated_payload"], replayed_witnesses)
         else:
             unresolved.append(cell["cell_id"])
             if cell["validated_payload"] is not None or cell["shortfall"] is None:
@@ -74,7 +78,7 @@ def validate(document: dict) -> None:
         raise ValueError("root: status does not match cell dispositions")
 
 
-def _validate_payload(payload: dict) -> None:
+def _validate_payload(payload: dict, replayed_witnesses: set[str]) -> None:
     full = payload["connection"]["complex_6_by_3"]
     for name, selector in (("Cminus_3_by_3", (0, 1, 4)), ("Cplus_3_by_3", (2, 3, 5))):
         if payload["connection"][name] != [full[i] for i in selector]:
@@ -88,11 +92,10 @@ def _validate_payload(payload: dict) -> None:
         _complex_matrix_neg(forms["gminus_pullback"]),
     )
     defect = forms["conservation"]["defect"]
-    witness = forms["conservation"]["structural_identity_witness"]
-    if hashlib.sha256(witness.encode("utf-8")).hexdigest() != (
-        forms["conservation"]["witness_sha256"]
-    ):
-        raise ValueError("endpoint_forms: structural witness hash mismatch")
+    _verify_structural_witness(
+        forms["conservation"]["structural_identity_witness"],
+        replayed_witnesses,
+    )
     for i in range(3):
         for j in range(3):
             for part in ("re", "im"):
@@ -106,6 +109,61 @@ def _validate_payload(payload: dict) -> None:
     for witness in payload["classification_witnesses"]["inertia"].values():
         if witness["positive"] + witness["negative"] + witness["zero"] != 3:
             raise ValueError("classification_witnesses: inertia does not sum to three")
+
+
+def _safe_path(relative: str) -> Path:
+    path = Path(relative)
+    if path.is_absolute() or ".." in path.parts:
+        raise ValueError("structural witness: unsafe path")
+    resolved = (ROOT / path).resolve()
+    if ROOT.resolve() not in resolved.parents:
+        raise ValueError("structural witness: path escapes root")
+    return resolved
+
+
+def _verify_structural_witness(reference: dict, replayed: set[str]) -> None:
+    artifact_path = _safe_path(reference["path"])
+    verifier_path = _safe_path(reference["verifier_path"])
+    if not artifact_path.is_file() or not verifier_path.is_file():
+        raise ValueError("structural witness: artifact or verifier missing")
+    if hashlib.sha256(artifact_path.read_bytes()).hexdigest() != reference["sha256"]:
+        raise ValueError("structural witness: artifact hash mismatch")
+    if hashlib.sha256(verifier_path.read_bytes()).hexdigest() != (
+        reference["verifier_sha256"]
+    ):
+        raise ValueError("structural witness: verifier hash mismatch")
+    artifact = json.loads(artifact_path.read_text())
+    if artifact.get("result_id") != reference["result_id"]:
+        raise ValueError("structural witness: result id mismatch")
+    claim = artifact
+    for key in reference["certified_claim_path"]:
+        if not isinstance(claim, dict) or key not in claim:
+            raise ValueError("structural witness: certified claim path missing")
+        claim = claim[key]
+    if claim is not True:
+        raise ValueError("structural witness: imported conservation claim is not true")
+    command = reference["replay_command"]
+    if command[0] != "python" or Path(command[1]).as_posix() != (
+        Path(reference["verifier_path"]).as_posix()
+    ):
+        raise ValueError("structural witness: replay command/verifier mismatch")
+    key = reference["verifier_sha256"] + ":" + reference["sha256"]
+    if key not in replayed:
+        completed = subprocess.run(
+            [sys.executable, *command[1:]],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            timeout=120,
+            check=False,
+        )
+        if completed.returncode != 0:
+            raise ValueError(
+                "structural witness: independent replay failed: "
+                + completed.stdout[-500:]
+                + completed.stderr[-500:]
+            )
+        replayed.add(key)
 
 
 def _float(bits: str) -> float:
