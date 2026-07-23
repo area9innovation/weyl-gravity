@@ -1,0 +1,37 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:forge-request/bug-forge-ivtaylor-valid-json-serialization",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "bug-forge-ivtaylor-valid-json-serialization",
+  "source": {
+    "path": "planning/forge-requests/bug-forge-ivtaylor-valid-json-serialization.json",
+    "span": null
+  },
+  "body": {
+    "owner": "science-forge",
+    "state": "REQUESTED",
+    "stream": "forge-requests",
+    "priority": 1,
+    "objective": "Provide a backward-compatible valid-JSON serialization surface for IvTaylorMat; the current ivtm_serialize envelope is JSON-shaped but emits exact p/q rational tokens without quotes, so standard JSON parsers reject passing transport artifacts.",
+    "stop_condition": "Add a versioned deterministic serializer, preferably ivtm_serialize_json_v2, whose output is accepted directly by a standards-compliant JSON parser. Preserve generator, degree, rows, columns, refusal code, all exact rational coefficient matrices, and every IEEE-754 remainder endpoint bit pattern. Encode exact rationals canonically as strings such as \"-3/7\" and endpoint bits as fixed-width hexadecimal strings, with no locale dependence. Keep the existing ivtm_serialize behavior available or provide an explicit migration path so pinned Phase-3 consumers at Tango commit 972aa4337 remain reproducible. Add C/native byte-equivalence tests, direct JSON parse tests, round-trip reconstruction, malformed/nonfinite refusal tests, deterministic-order tests, and mutations for an unquoted rational, reordered coefficient matrices, dropped refusal code, changed generator, and decimalized exact coefficient.",
+    "current_gate": "Valid machine-readable Taylor2 transport handoff without consumer-side token rewriting",
+    "forbid": "no silent change to the pinned v1 byte stream; no decimal approximation of exact rationals; no omission or normalization of signed endpoint bit patterns; no parser that accepts arbitrary non-JSON syntax; no physics-specific fields or Schwarzschild equations in mathlib",
+    "depends_on": [],
+    "activates": [],
+    "allowed_paths": [
+      "forge/lib/math/ivtaylor.forge",
+      "forge/examples/ivtaylor_degree2_gate.forge",
+      "forge/docs/math/validated-shared-taylor.md",
+      "forge/docs/math/validated-shared-taylor-certificate.json",
+      "forge/lib/math/COMPLETENESS.md"
+    ],
+    "resource_hint": "Reproduction: a passing Phase-3 q0 infinity-plane child prints coefficients such as 1/3 inside the object emitted by ivtm_serialize; json.loads rejects the unquoted token. The current physics wrapper uses a narrowly scoped regex that quotes only signed integer p/q tokens and pins the child source hash. That is an acceptable frozen-consumer workaround, not the desired reusable API.",
+    "notes": [
+      "This is a serialization/API papercut; it does not weaken the passing Taylor transport or request a rerun.",
+      "Prefer a new v2 function and schema over mutating v1 while active consumers pin 972aa4337.",
+      "The valid-JSON gate should parse the exact emitted bytes, not a separately constructed test object."
+    ]
+  },
+  "edges": []
+}
