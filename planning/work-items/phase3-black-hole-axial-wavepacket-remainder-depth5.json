@@ -1,0 +1,37 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-wavepacket-remainder-depth5",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-wavepacket-remainder-depth5",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-wavepacket-remainder-depth5.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-axial-wavepacket-depth5-1",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Repair the exact axial Schwarzschild null-infinity endpoint expansion to the minimum depth required for a three-fold wave-packet trace, and either establish the uniform differentiated Volterra bounds or freeze the first exact obstruction.",
+    "stop_condition": "For ell=2 and positive-frequency profiles compactly supported in (1/2,3/4), import the repaired six-state axial Bach system and the exact SHORTFALL certificate from phase3-black-hole-axial-wavepacket-null-trace. Extend each XI0..XI3 asymptotic metric reconstruction through inverse order 5 in H0 and H1, retain every differentiated-reconstruction contribution, and extend F through the forced order 6. Derive the recurrences exactly over Q(omega), audit all denominators uniformly on [1/2,3/4], and prove compatibility of the six-state equations and absence or explicit classification of logarithmic/Jordan forcing at every new order. Construct a phase-normalized Volterra remainder equation and certify uniform omega-derivative envelopes for k=0,1,2,3 with cross-rate decay p>=5, including exact interval or rational majorants and the limit-frequency interchange needed by the existing nonstationary-phase lemma. Independently verify the recurrence identities, derivative bounds and two-order improvement, with mutations deleting a new recurrence order, omitting the F derivative forcing, weakening p below 5 and dropping the third omega derivative. If the requested p>=5 envelope is impossible, report the first exact nonzero obstruction and the smallest mathematically justified successor; do not promote a physical flux Gram.",
+    "current_gate": "LORENTZIAN-CAUSAL depth-five endpoint remainder before physical null-infinity flux",
+    "forbid": "no numerical frequency samples called a uniform theorem; no hidden omission of differentiated reconstruction terms; no monochromatic generalized mode called finite energy; no physical flux Gram, global matching, pole, CPT, stability or unitarity promotion unless the p>=5 and k<=3 bounds pass exactly",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-wavepacket-null-trace"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_wavepacket_remainder_depth5/",
+      "reports/phase3-black-hole-axial-wavepacket-remainder-depth5-2026-07-23.md",
+      "residual_atlas/phase3-black-hole-axial-wavepacket-remainder-depth5-fragment-v1.json",
+      "planning/forge-requests/phase3-black-hole-axial-wavepacket-remainder-depth5.json"
+    ],
+    "resource_hint": "Reuse the exact formal heads, scalar three-fold integration-by-parts lemma and p-k>1 audit from the predecessor. The minimum target p=5 is forced by the r^2 reconstructed heads and k=3 frequency derivatives; preserve oscillatory cross-rate phases analytically rather than interval-enclosing them as arbitrary complex boxes.",
+    "input_commit": "f1313b364192d235b73c92befbf38b789df9e290",
+    "notes": [
+      "This item is a bounded two-order repair, not a new scattering calculation.",
+      "If the exact recurrence work naturally splits, use the Science Forge SHORTFALL split mechanism instead of silently reducing the requested theorem."
+    ]
+  },
+  "edges": []
+}
