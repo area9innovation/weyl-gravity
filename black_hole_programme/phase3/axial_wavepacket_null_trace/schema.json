@@ -1,22 +1,23 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "phase3-black-hole-axial-wavepacket-null-trace-v1",
+  "$id": "phase3-black-hole-axial-wavepacket-null-trace-v3",
   "type": "object",
   "required": [
     "schema", "result_id", "result_token", "dependency_tags", "declaration",
-    "scalar_nonstationary_phase_lemma", "formal_joint_symbol_bounds",
-    "matching_direction_formal_trace", "exact_remainder_derivative_audit",
-    "endpoint_flux_disposition", "disposition", "claim_flags",
-    "does_not_establish", "imports", "verification"
+    "scalar_nonstationary_phase_lemma", "depth_five_recurrence",
+    "kernel_depth_four_recurrence", "formal_joint_symbol_bounds",
+    "matching_direction_wavepacket_trace", "exact_remainder_derivative_audit",
+    "differentiated_volterra_envelope", "endpoint_flux_disposition",
+    "disposition", "claim_flags", "does_not_establish", "imports", "verification"
   ],
   "properties": {
-    "schema": {"const": "phase3-black-hole-axial-wavepacket-null-trace-v1"},
-    "result_id": {"const": "PURE_WEYL_PHASE3_AXIAL_WAVEPACKET_NULL_TRACE_SHORTFALL_V1"},
-    "result_token": {"const": "FORMAL_HEAD_NONSTATIONARY_SUPPRESSION_EXACT_REMAINDER_C2_MISSING"},
+    "schema": {"const": "phase3-black-hole-axial-wavepacket-null-trace-v3"},
+    "result_id": {"const": "PURE_WEYL_PHASE3_AXIAL_EXACT_WAVEPACKET_NULL_TRACES_V3"},
+    "result_token": {"const": "EXACT_IPLUS_IMINUS_WAVEPACKET_TRACES_FLUX_GRAM_OPEN"},
     "dependency_tags": {"contains": {"const": "REDUCED-MODE"}},
     "disposition": {
       "type": "object",
-      "required": ["status", "missing_dependency"],
+      "required": ["status", "what_is_proved", "missing_dependency"],
       "properties": {"status": {"const": "SHORTFALL"}}
     },
     "claim_flags": {
@@ -25,6 +26,7 @@
         "scalar_nonstationary_phase_lemma",
         "formal_head_wrong_endpoint_suppression",
         "formal_head_joint_symbol_bounds_through_order_three",
+        "full_six_column_p_at_least_five",
         "exact_solution_wrong_endpoint_suppression",
         "wavepacket_trace_constructed",
         "endpoint_flux_Gram_certified",
@@ -36,8 +38,9 @@
         "scalar_nonstationary_phase_lemma": {"const": true},
         "formal_head_wrong_endpoint_suppression": {"const": true},
         "formal_head_joint_symbol_bounds_through_order_three": {"const": true},
-        "exact_solution_wrong_endpoint_suppression": {"const": false},
-        "wavepacket_trace_constructed": {"const": false},
+        "full_six_column_p_at_least_five": {"const": true},
+        "exact_solution_wrong_endpoint_suppression": {"const": true},
+        "wavepacket_trace_constructed": {"const": true},
         "endpoint_flux_Gram_certified": {"const": false},
         "global_connection_constructed": {"const": false},
         "scattering_channels_classified": {"const": false},

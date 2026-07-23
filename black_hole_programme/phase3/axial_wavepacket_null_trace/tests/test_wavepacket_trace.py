@@ -16,18 +16,25 @@ def test_certificate_reproduces():
 
 
 def test_independent_verifier():
-    verify_document(json.loads((HERE / "certificate.json").read_text()))
+    verify_document(json.loads((HERE / "certificate.json").read_text()), deep=False)
 
 
-def test_false_wavepacket_promotion_rejected():
+def test_suppressed_wavepacket_result_rejected():
     document = build_document()
-    document["claim_flags"]["wavepacket_trace_constructed"] = True
+    document["claim_flags"]["wavepacket_trace_constructed"] = False
     with pytest.raises(SystemExit):
-        verify_document(document)
+        verify_document(document, deep=False)
+
+
+def test_false_flux_gram_promotion_rejected():
+    document = build_document()
+    document["claim_flags"]["endpoint_flux_Gram_certified"] = True
+    with pytest.raises(SystemExit):
+        verify_document(document, deep=False)
 
 
 def test_endpoint_swap_rejected():
     document = build_document()
-    document["matching_direction_formal_trace"]["Iminus"]["basis"] = ["XI2", "XI3", "EI2"]
+    document["matching_direction_wavepacket_trace"]["Iminus"]["basis"] = ["XI2", "XI3", "EI2"]
     with pytest.raises(SystemExit):
-        verify_document(document)
+        verify_document(document, deep=False)

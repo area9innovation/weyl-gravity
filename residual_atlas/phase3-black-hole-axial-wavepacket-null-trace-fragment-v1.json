@@ -2,9 +2,9 @@
   "description_axes": ["causal", "symplectic", "nonlinear", "observational", "quantum"],
   "entries": [
     {
-      "claim_boundary": "Three-fold nonstationary-phase suppression is exact for the displayed formal heads, but the exact Volterra remainder is certified only through one omega derivative. No exact wave-packet null trace, flux Gram, scattering channel, stability or CPT result is established.",
+      "claim_boundary": "Exact three-dimensional axial wave-packet radiation traces exist separately at Iminus and Iplus on the declared compact positive-frequency interval. The action-derived endpoint flux Gram, global connection, scattering channels, stability and CPT disposition remain open.",
       "descriptions": {
-        "causal": "OBSTRUCTED",
+        "causal": "CERTIFIED",
         "symplectic": "NO_CERTIFIED_MAP",
         "nonlinear": "NOT_APPLICABLE",
         "observational": "NO_CERTIFIED_MAP",
@@ -13,23 +13,23 @@
       "evidence": [
         {
           "path": "black_hole_programme/phase3/axial_wavepacket_null_trace/certificate.json",
-          "result_id": "PURE_WEYL_PHASE3_AXIAL_WAVEPACKET_NULL_TRACE_SHORTFALL_V1",
-          "sha256": "39313f7be23cf3dc974936ca48722bd115808bc5406484ed38d1b87a2a1961d8"
+          "result_id": "PURE_WEYL_PHASE3_AXIAL_EXACT_WAVEPACKET_NULL_TRACES_V3",
+          "sha256": "e2df2e47d85530f8984ee6ddf8f38313f35862d43e241e07e834ff02a9633670"
         }
       ],
-      "id": "black_hole.schwarzschild.phase3.axial_wavepacket_null_trace_shortfall",
+      "id": "black_hole.schwarzschild.phase3.axial_exact_wavepacket_null_traces",
       "mode_data": {
         "dispersion": {
-          "statement": "Rate-zero and rate-minus-2iomega packets are assigned separately to Iminus and Iplus. The displayed wrong-endpoint heads vanish after three integrations by parts.",
+          "statement": "The exact Volterra corrections have uniform omega derivatives through order three. Rate-zero and rate-minus-2iomega packets define bounded three-dimensional traces separately at Iminus and Iplus, and exact wrong-endpoint contributions vanish after three integrations by parts.",
           "status": "CERTIFIED"
         },
         "lee_wald": {
-          "statement": "The exact null-flux Gram, radical, quotient and inertia are not defined until the exact-solution trace estimate closes.",
+          "statement": "The exact traces are constructed, but the null-flux Gram, radical, quotient and inertia await an action-current asymptotic pullback and continuity theorem.",
           "status": "NO_CERTIFIED_MAP"
         },
         "resonance": {
-          "statement": "The first missing estimate is the second omega derivative of the p=3 cross-rate Volterra remainder. Two additional recurrence orders would raise the required decay to p>=5.",
-          "status": "OBSTRUCTED"
+          "statement": "The repaired six-column generator has cross-rate decay p>=5, and the differentiated Volterra envelope closes through omega order three.",
+          "status": "CERTIFIED"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {"statement": "No nonlinear source is evaluated.", "status": "NOT_APPLICABLE"},
@@ -41,7 +41,7 @@
       },
       "scope": {
         "background": "Schwarzschild exterior, M=1",
-        "boundaries": "separate formal Iplus and Iminus wave-packet heads; exact remainder trace open",
+        "boundaries": "separate exact Iplus and Iminus wave-packet traces; endpoint action-current flux form open",
         "carrier": "repaired six-state axial Bach reconstruction",
         "charge_sector": "small gauge quotient inherited from the frozen reconstruction",
         "degree": 1,
@@ -55,7 +55,7 @@
     }
   ],
   "generated_by": "black_hole_programme/phase3/axial_wavepacket_null_trace/produce.py",
-  "generated_by_sha256": "28ba8f88b600eecbd7a161e97d91ea31142c11305dd37877be2a9eaadec40f7d",
+  "generated_by_sha256": "ab5975da3ab8161e2add23bd0ac9e69d210160946b844f2930ee6d97629ff303",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": ["CERTIFIED", "OBSTRUCTED", "OPEN", "NOT_APPLICABLE", "NO_CERTIFIED_MAP"],
