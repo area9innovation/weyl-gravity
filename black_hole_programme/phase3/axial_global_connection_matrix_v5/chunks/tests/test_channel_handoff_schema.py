@@ -15,6 +15,13 @@ HASH = "a" * 64
 ROOT = Path(__file__).resolve().parents[5]
 FIXTURE = Path(__file__).with_name("fixtures") / "current_identity.json"
 FIXTURE_VERIFIER = Path(__file__).with_name("fixtures") / "verify_current_identity.py"
+DERIVATIVE_FIXTURE = (
+    Path(__file__).with_name("fixtures") / "frequency_derivative_bound.json"
+)
+DERIVATIVE_VERIFIER = (
+    Path(__file__).with_name("fixtures")
+    / "verify_frequency_derivative_bound.py"
+)
 
 
 def scalar(value: int = 0) -> dict:
@@ -51,6 +58,8 @@ def valid_payload() -> dict:
     }
     fixture_path = FIXTURE.relative_to(ROOT).as_posix()
     verifier_path = FIXTURE_VERIFIER.relative_to(ROOT).as_posix()
+    derivative_path = DERIVATIVE_FIXTURE.relative_to(ROOT).as_posix()
+    derivative_verifier_path = DERIVATIVE_VERIFIER.relative_to(ROOT).as_posix()
     return {
         "connection": {
             "complex_6_by_3": connection,
@@ -85,9 +94,26 @@ def valid_payload() -> dict:
             "rank": {"connection": rank, "Cminus": rank, "Cplus": rank},
             "inertia": {"GHplus": inertia, "gminus": inertia, "gplus": inertia},
             "multiplier_bounds": {
-                "connection_operator_norm_upper": "1.0",
-                "Cminus_inverse_norm_upper": "1.0",
-                "frequency_derivative_norm_upper": "1.0",
+                "connection_operator_norm_upper": "3.0",
+                "Cminus_inverse_norm_upper": "2.0",
+                "frequency_derivative_norm_upper": "0.0",
+                "frequency_derivative_witness": {
+                    "kind": "frequency-derivative-norm-bound",
+                    "path": derivative_path,
+                    "result_id": "SYNTHETIC_FREQUENCY_DERIVATIVE_BOUND_V1",
+                    "sha256": hashlib.sha256(
+                        DERIVATIVE_FIXTURE.read_bytes()
+                    ).hexdigest(),
+                    "verifier_path": derivative_verifier_path,
+                    "verifier_sha256": hashlib.sha256(
+                        DERIVATIVE_VERIFIER.read_bytes()
+                    ).hexdigest(),
+                    "replay_command": ["python", derivative_verifier_path],
+                    "certified_claim_path": [
+                        "claim_flags",
+                        "frequency_derivative_norm_bound_certified",
+                    ],
+                },
                 "whole_cell": True,
             },
         },
@@ -247,6 +273,30 @@ class ChannelHandoffSchemaTest(unittest.TestCase):
             "inertia"
         ]["gplus"]["positive"] = 1
         with self.assertRaisesRegex(ValueError, "sum to three"):
+            validate(document)
+
+    def test_underreported_connection_norm_is_rejected(self) -> None:
+        document = valid_document()
+        document["cells"][0]["validated_payload"]["classification_witnesses"][
+            "multiplier_bounds"
+        ]["connection_operator_norm_upper"] = "2.0"
+        with self.assertRaisesRegex(ValueError, "connection norm"):
+            validate(document)
+
+    def test_underreported_inverse_norm_is_rejected(self) -> None:
+        document = valid_document()
+        document["cells"][0]["validated_payload"]["classification_witnesses"][
+            "multiplier_bounds"
+        ]["Cminus_inverse_norm_upper"] = "1.0"
+        with self.assertRaisesRegex(ValueError, "Cminus inverse"):
+            validate(document)
+
+    def test_derivative_witness_hash_mismatch_is_rejected(self) -> None:
+        document = valid_document()
+        document["cells"][0]["validated_payload"]["classification_witnesses"][
+            "multiplier_bounds"
+        ]["frequency_derivative_witness"]["sha256"] = HASH
+        with self.assertRaisesRegex(ValueError, "artifact hash mismatch"):
             validate(document)
 
     def test_structural_witness_hash_mismatch_is_rejected(self) -> None:

@@ -8,6 +8,7 @@ import math
 import struct
 import subprocess
 import sys
+import sympy as sp
 from fractions import Fraction
 from pathlib import Path
 
@@ -109,6 +110,30 @@ def _validate_payload(payload: dict, replayed_witnesses: set[str]) -> None:
     for witness in payload["classification_witnesses"]["inertia"].values():
         if witness["positive"] + witness["negative"] + witness["zero"] != 3:
             raise ValueError("classification_witnesses: inertia does not sum to three")
+    bounds = payload["classification_witnesses"]["multiplier_bounds"]
+    connection_bound = _complex_affine_frobenius_upper(full)
+    if float(bounds["connection_operator_norm_upper"]) < connection_bound:
+        raise ValueError("multiplier_bounds: connection norm upper is underreported")
+    inverse_bound = _neumann_inverse_frobenius_upper(
+        payload["connection"]["Cminus_3_by_3"]
+    )
+    if float(bounds["Cminus_inverse_norm_upper"]) < inverse_bound:
+        raise ValueError("multiplier_bounds: Cminus inverse upper is underreported")
+    derivative_reference = bounds["frequency_derivative_witness"]
+    _verify_replay_witness(
+        derivative_reference,
+        replayed_witnesses,
+        expected_kind="frequency-derivative-norm-bound",
+        expected_claim="frequency_derivative_norm_bound_certified",
+    )
+    derivative_artifact = json.loads(
+        _safe_path(derivative_reference["path"]).read_text()
+    )
+    if (
+        derivative_artifact.get("frequency_derivative_norm_upper")
+        != bounds["frequency_derivative_norm_upper"]
+    ):
+        raise ValueError("multiplier_bounds: derivative witness/bound mismatch")
 
 
 def _safe_path(relative: str) -> Path:
@@ -122,6 +147,23 @@ def _safe_path(relative: str) -> Path:
 
 
 def _verify_structural_witness(reference: dict, replayed: set[str]) -> None:
+    _verify_replay_witness(
+        reference,
+        replayed,
+        expected_kind="verified-action-current-identity",
+        expected_claim="radial_current_conservation_certified",
+    )
+
+
+def _verify_replay_witness(
+    reference: dict,
+    replayed: set[str],
+    *,
+    expected_kind: str,
+    expected_claim: str,
+) -> None:
+    if reference["kind"] != expected_kind:
+        raise ValueError("structural witness: wrong typed witness kind")
     artifact_path = _safe_path(reference["path"])
     verifier_path = _safe_path(reference["verifier_path"])
     if not artifact_path.is_file() or not verifier_path.is_file():
@@ -142,6 +184,8 @@ def _verify_structural_witness(reference: dict, replayed: set[str]) -> None:
         claim = claim[key]
     if claim is not True:
         raise ValueError("structural witness: imported conservation claim is not true")
+    if reference["certified_claim_path"][-1] != expected_claim:
+        raise ValueError("structural witness: wrong certified claim")
     command = reference["replay_command"]
     if command[0] != "python" or Path(command[1]).as_posix() != (
         Path(reference["verifier_path"]).as_posix()
@@ -164,6 +208,65 @@ def _verify_structural_witness(reference: dict, replayed: set[str]) -> None:
                 + completed.stderr[-500:]
             )
         replayed.add(key)
+
+
+def _scalar_abs_upper(value: dict, *, include_center: bool = True) -> float:
+    lo, hi = _remainder(value)
+    total = abs(float(Fraction(value["linear"]))) + max(abs(lo), abs(hi))
+    if include_center:
+        total += abs(float(Fraction(value["center"])))
+    return math.nextafter(total, math.inf)
+
+
+def _complex_abs_upper(value: dict, *, include_center: bool = True) -> float:
+    return math.nextafter(
+        math.hypot(
+            _scalar_abs_upper(value["re"], include_center=include_center),
+            _scalar_abs_upper(value["im"], include_center=include_center),
+        ),
+        math.inf,
+    )
+
+
+def _complex_affine_frobenius_upper(matrix: list) -> float:
+    return math.nextafter(
+        math.sqrt(sum(
+            _complex_abs_upper(value) ** 2
+            for row in matrix for value in row
+        )),
+        math.inf,
+    )
+
+
+def _center_sympy(value: dict):
+    re = Fraction(value["re"]["center"])
+    im = Fraction(value["im"]["center"])
+    return (
+        sp.Rational(re.numerator, re.denominator)
+        + sp.I * sp.Rational(im.numerator, im.denominator)
+    )
+
+
+def _neumann_inverse_frobenius_upper(matrix: list) -> float:
+    center = sp.Matrix([[_center_sympy(value) for value in row] for row in matrix])
+    if center.rows != center.cols or center.det() == 0:
+        raise ValueError("multiplier_bounds: Cminus center is singular")
+    inverse = center.inv()
+    inverse_norm = math.nextafter(
+        math.sqrt(sum(float(abs(value)) ** 2 for value in inverse)),
+        math.inf,
+    )
+    perturbation = math.nextafter(
+        math.sqrt(sum(
+            _complex_abs_upper(value, include_center=False) ** 2
+            for row in matrix for value in row
+        )),
+        math.inf,
+    )
+    contraction = inverse_norm * perturbation
+    if not contraction < 1.0:
+        raise ValueError("multiplier_bounds: Neumann inverse gate not certified")
+    return math.nextafter(inverse_norm / (1.0 - contraction), math.inf)
 
 
 def _float(bits: str) -> float:
