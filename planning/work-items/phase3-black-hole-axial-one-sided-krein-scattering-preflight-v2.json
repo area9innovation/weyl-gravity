@@ -1,0 +1,38 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-one-sided-krein-scattering-preflight-v2",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-one-sided-krein-scattering-preflight-v2",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-one-sided-krein-scattering-preflight-v2.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-current-identity",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Record the exact typed conditional one-sided Krein theorem while failing closed on the missing outgoing connection and global Stokes defect.",
+    "stop_condition": "Distinguish the signature and null factor frames; certify the normalized conditional J-isometry, reflection-defect inertia and determinant, algebraic completion, raw endpoint normalizer ratio, and all-positive-real local horizon algebra; then record a typed shortfall for physical activation unless the full typed Tplus and global Stokes defect are present.",
+    "current_gate": "Conditional typed Krein theorem and physical activation disposition",
+    "forbid": "no dependence on successful horizon-to-r4 transport; no mixing of J_sigma and J0 component equations; no bare raw-det(Tminus) defect formula; no physical scattering or U(2,4) completion without typed Tplus and global Stokes defect; no alpha/gamma/mu reduction without exact same-frame triangular data; no CPT, particle, ghost or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-boundary-devissage-no-growth"
+    ],
+    "allowed_paths": [
+      "reports/phase3-axial-one-sided-krein-scattering-preflight-2026-07-23.md",
+      "planning/work-items/phase3-black-hole-axial-one-sided-krein-scattering-preflight-v2.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Import the already committed preflight at f81426fb23b1647b58c2e61782989ef44913adf8 and its exact horizon inputs by content hash: future_horizon_outward_gram.json sha256 3051f43f73e4649dede60176e12f13afc59bdd5b3e8e09970db842a1ede00fdb and future_horizon_factor_quotient.json sha256 d42e0a06c4e87aaa89962821e683dbd54a7f72aad239b42084777a246320f30c. The horizon transport work item is independently BLOCKED; its exact local Gram is a usable committed artifact and is not evidence that the transport stop condition passed.",
+    "input_commit": "f81426fb23b1647b58c2e61782989ef44913adf8",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "The conditional certificate sha256 is 01a159ce01f6de6f5fc0e01bd7636be4215c53511ca3acc01de6f382c459b79a.",
+      "The physical scattering theorem remains unactivated until typed Tplus and the global Stokes defect land."
+    ]
+  },
+  "edges": []
+}
