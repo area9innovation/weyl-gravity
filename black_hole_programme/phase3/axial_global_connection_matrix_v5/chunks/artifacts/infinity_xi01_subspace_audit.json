@@ -1,0 +1,149 @@
+{
+  "carrier_dimension_complex": 4,
+  "carrier_state": [
+    "P",
+    "P_prime",
+    "Q",
+    "Q_prime"
+  ],
+  "classification": {
+    "XI0_XI1": "a two-dimensional asymptotically selected solution plane inside the four-dimensional Ricci-carrier solution space",
+    "not": "a closed two-coordinate Ricci subsystem in the declared (P,P_prime,Q,Q_prime) first-order variables",
+    "radial_uniqueness_does_not_establish": "surjectivity of the horizon-regular boundary plane onto the XI0/XI1 infinity plane, or nonzero intersection of the two",
+    "radial_uniqueness_establishes": "injective transport of this plane onto its propagated image"
+  },
+  "coordinate_plane_audit": [
+    {
+      "defects": [
+        {
+          "coefficient": "-2/(r - 2)",
+          "column": "P_prime",
+          "row": "Q_prime"
+        }
+      ],
+      "invariant": false,
+      "selected": [
+        "P",
+        "P_prime"
+      ]
+    },
+    {
+      "defects": [
+        {
+          "coefficient": "2*(3*r - 2)/(r**2*(r - 2))",
+          "column": "P",
+          "row": "P_prime"
+        },
+        {
+          "coefficient": "-2*I*omega/(r*(r - 2))",
+          "column": "Q",
+          "row": "P_prime"
+        },
+        {
+          "coefficient": "-2*I*(omega*r**2 + 3*I*r - 2*I)/(r**2*(r - 2))",
+          "column": "Q",
+          "row": "Q_prime"
+        }
+      ],
+      "invariant": false,
+      "selected": [
+        "P",
+        "Q"
+      ]
+    },
+    {
+      "defects": [
+        {
+          "coefficient": "2*(3*r - 2)/(r**2*(r - 2))",
+          "column": "P",
+          "row": "P_prime"
+        },
+        {
+          "coefficient": "1",
+          "column": "Q_prime",
+          "row": "Q"
+        }
+      ],
+      "invariant": false,
+      "selected": [
+        "P",
+        "Q_prime"
+      ]
+    },
+    {
+      "defects": [
+        {
+          "coefficient": "1",
+          "column": "P_prime",
+          "row": "P"
+        },
+        {
+          "coefficient": "-2/(r - 2)",
+          "column": "P_prime",
+          "row": "Q_prime"
+        },
+        {
+          "coefficient": "-2*I*(omega*r**2 + 3*I*r - 2*I)/(r**2*(r - 2))",
+          "column": "Q",
+          "row": "Q_prime"
+        }
+      ],
+      "invariant": false,
+      "selected": [
+        "P_prime",
+        "Q"
+      ]
+    },
+    {
+      "defects": [
+        {
+          "coefficient": "1",
+          "column": "P_prime",
+          "row": "P"
+        },
+        {
+          "coefficient": "1",
+          "column": "Q_prime",
+          "row": "Q"
+        }
+      ],
+      "invariant": false,
+      "selected": [
+        "P_prime",
+        "Q_prime"
+      ]
+    },
+    {
+      "defects": [
+        {
+          "coefficient": "-2*I*omega/(r*(r - 2))",
+          "column": "Q",
+          "row": "P_prime"
+        }
+      ],
+      "invariant": false,
+      "selected": [
+        "Q",
+        "Q_prime"
+      ]
+    }
+  ],
+  "does_not_establish": [
+    "horizon-to-infinity matching",
+    "a globally populated finite-flux Ricci channel",
+    "invertibility of a boundary-to-boundary restricted map",
+    "flux, stability, ghost, CPT, or unitarity"
+  ],
+  "finite_rate_zero_boundary_basis": [
+    "XI0",
+    "XI1"
+  ],
+  "finite_rate_zero_dimension_complex": 2,
+  "payload_sha256": "4427da97a4489e94e08affe91d55af4f9bb886a0d172c6e7d57c5d23c680f11c",
+  "schema": "phase3-axial-infinity-xi01-subspace-audit-v1",
+  "source": {
+    "path": "symplectic-reconstruction/black_hole_programme/phase3/axial_endpoint_bases/repair-interface.json",
+    "sha256": "64328648237cff6f5a3de831da3981afa7f121ca14a5ba4120c7cc4aebcf678a"
+  },
+  "status": "CERTIFIED_STRUCTURAL_CLASSIFICATION"
+}
