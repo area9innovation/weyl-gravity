@@ -33,7 +33,7 @@ project was commissioned and coordinated by Asger Alstrup Palm
 (\texttt{asger@area9.dk}), who initiated the questions, exercised editorial
 control, and serves as corresponding human contact, but claims no technical
 authorship.}}
-\date{Working draft, 22 July 2026}
+\date{Working draft, 23 July 2026}
 
 \begin{document}
 \maketitle
@@ -79,12 +79,15 @@ pairing isolates the Einstein image.  Separately, on the same axial pilot,
 the exact three-dimensional \(L^2\) wave-packet trace spaces at
 \(\mathscr I^-\) and \(\mathscr I^+\) carry action-derived endpoint flux
 Grams of rank three, zero radical, and inertia \((1,2,0)\) for
-\(\alpha_{\rm W}>0\), with no frequency wall on the pilot interval.  The
-radial statements remain formal, and the endpoint theorem does not establish
-that any trace direction is populated by horizon-regular data: no
-horizon-to-infinity matching, global asymptotically flat phase space,
-scattering, stability, quasinormal spectrum, Hawking state, or quantum
-unitarity theorem is claimed.  The local Cauchy restriction
+\(\alpha_{\rm W}>0\), with no frequency wall on the pilot interval.  An
+exact differential-module reduction further gives two spin-two
+Regge--Wheeler factors and one spin-one Regge--Wheeler factor.  Their
+real-potential Wronskians prove that the global map from future-horizon-regular
+data to the incoming \(\mathscr I^-\) trace is invertible throughout the
+pilot interval.  Hence the complete indefinite incoming endpoint space is
+globally populated.  The outgoing reflection block, upper-half-plane poles,
+a complete asymptotically flat scattering operator, stability, quasinormal
+spectrum, Hawking state, and quantum unitarity remain open.  The local Cauchy restriction
 \(\psi|_\Sigma=\nabla_n\psi|_\Sigma=0\) still selects the Einstein kernel at
 the linear level.
 \end{abstract}
@@ -716,8 +719,31 @@ derivative or time-translation Jordan partner.  Indeed, the complete
 six-dimensional axial module is not conjugate by an endpoint-regular
 invertible change of variables to a scalar Regge--Wheeler square: the latter
 has only four local columns, whereas the certified exact sequence has
-dimensions \(2+4=6\).  A dimensionally consistent \(4+2\) triangular
-differential decomposition remains an open structural question.
+dimensions \(2+4=6\).  Exact cyclic elimination of the four-dimensional
+Ricci carrier instead gives
+\[
+ L_4=L_x\circ L_{\rm RW},
+\]
+and exact embedding and quotient maps certify
+\[
+ 0\longrightarrow M_{\rm RW}
+ \longrightarrow M_{A_4}
+ \longrightarrow M_x
+ \longrightarrow0.
+\]
+The carrier-zero metric kernel is independently equivalent to
+\(M_{\rm RW}\).  After the rational rescaling
+\(Z=y/[r^2(r-2)]\), the quotient equation is
+\[
+ D_{r_*}^2y+2i\omega D_{r_*}y
+ -\frac{6(r-2)}{r^3}y=0,
+\]
+the \(\ell=2\) spin-one Regge--Wheeler equation in the ingoing-EF
+convention.  Thus the full module has a certified triangular filtration
+with diagonal factors \(M_{\rm RW},M_{\rm RW},M_x\).  The natural exact
+gauge retains a nonzero extension term, so a direct
+\(\ker L_{\rm RW}^2\oplus\ker L_x\) splitting and a time-translation
+Jordan interpretation are not claimed.
 
 The \(L^2\) completion here uses the auxiliary positive coefficient norm,
 not the indefinite flux as a norm.  Exact Sturm counts applied to
@@ -741,9 +767,10 @@ future global relation \(a_{\rm out}=T a_{\rm in}\) must obey
  T^\dagger J_{\rm out}T=J_{\rm in};
 \end{equation}
 without horizon channels this would reduce to
-\(T^\dagger G_+T=G_-\).  No such map is constructed here.  The two negative
-endpoint indices are therefore not a mere orientation sign, but neither are
-they yet populated negative scattering channels.
+\(T^\dagger G_+T=G_-\).  No complete outgoing-plus-horizon scattering map is
+constructed here.  The theorem below does, however, prove that the full
+incoming \(\mathscr I^-\) form is globally populated by future-horizon-regular
+solutions.
 
 For the presymplectic ambiguity
 \(\theta\mapsto\theta+\delta Y+dZ\), the \(\delta Y\) term vanishes by
@@ -801,19 +828,74 @@ Choose countably many nonzero cutoffs with pairwise disjoint supports inside
 They therefore span an infinite-dimensional negative subspace.
 \end{proof}
 
-Proposition~\ref{prop:endpoint-index-pullback} lowers the first global
-decision gate considerably.  Positivity can survive global matching only if
-the populated endpoint image has rank at most one.  Certifying rank two at
-one interior frequency already produces a negative endpoint-flux wave
-packet; it does not require a uniform full-rank theorem on the entire pilot
-interval.  Nor can the resulting infinite negative index be removed by
-finitely many global charge conditions, a finite-dimensional residual
-quotient, or deletion of finitely many exceptional frequencies.
+The first global gate can in fact be closed analytically for the incoming
+endpoint.  Let
+\[
+ T_-(\omega):
+ \operatorname{span}\{\mathrm{XH0a},\mathrm{XH0b},\mathrm{EH0}\}
+ \longrightarrow
+ \operatorname{span}\{\mathrm{XI0},\mathrm{XI1},\mathrm{EI0}\}
+\]
+map future-horizon-regular coefficients to incoming
+\(\mathscr I^-\) coefficients.
 
-This is an endpoint flux theorem, not a global scattering theorem.  It does
-not show that any endpoint direction is reached by horizon-regular data, and
-it establishes no positive energy, particle norm, CPT metric, pole
-exclusion, stability, or invariance under unrestricted radial or corner
+\begin{theorem}[Global population of the axial incoming trace]
+\label{thm:axial-incoming-connection}
+For every real \(\omega\in[1/2,3/4]\),
+\[
+ T_-(\omega)\in GL(3,\mathbb C).
+\]
+In factor-adapted endpoint frames its determinant is
+\[
+ \det T_-(\omega)=
+ -\frac{(2\omega-i)(4\omega-i)^2}{4(\omega-i)}
+ A_{{\rm in},2}(\omega)^2A_{{\rm in},1}(\omega),
+\]
+where \(A_{{\rm in},2}\) and \(A_{{\rm in},1}\) are the incoming Jost
+coefficients for the spin-two and spin-one real short-range potentials
+\[
+ V_2=\frac{6(r-2)(r-1)}{r^4},
+ \qquad
+ V_1=\frac{6(r-2)}{r^3}.
+\]
+\end{theorem}
+
+\begin{proof}
+The exact module filtration and endpoint quotient maps give one
+horizon-ingoing and one incoming-infinity Jost line for each of the three
+diagonal factors.  The changes from the repository endpoint frames to these
+factor-adapted frames are triangular with determinant one.  The resulting
+connection is triangular and its diagonal entries are the two spin-two and
+one spin-one Jost connection coefficients, multiplied by the displayed
+nonzero endpoint normalizations.  For a unit horizon-ingoing solution of
+either real potential, Wronskian conservation gives
+\[
+ |A_{{\rm in},s}|^2-|A_{{\rm out},s}|^2=1,
+ \qquad s=1,2.
+\]
+Hence \(A_{{\rm in},s}\neq0\).  The rational prefactor is also nonzero,
+since its squared modulus is
+\[
+ \frac{(4\omega^2+1)(16\omega^2+1)^2}
+ {16(\omega^2+1)}.
+\]
+\end{proof}
+
+Congruence by the invertible \(T_-\) preserves inertia.  The
+horizon-regular pullback of the incoming endpoint form therefore has
+inertia \((1,2,0)\) at every pilot frequency, and its wave-packet completion
+has infinite positive and negative index.  In particular, the conditional
+conclusion of Proposition~\ref{prop:endpoint-index-pullback} is activated
+for \(\mathscr I^-\): the incoming indefinite directions are genuine
+globally populated radial channels and cannot be removed by finitely many
+global charge conditions, a finite-dimensional residual quotient, or
+deletion of finitely many exceptional frequencies.
+
+This is a one-sided global connection and flux theorem, not yet a complete
+scattering theorem.  It does not determine the rank of the outgoing
+\(\mathscr I^+\) reflection block \(T_+\), the reflection amplitudes,
+upper-half-plane poles, total canonical energy, a particle norm, CPT
+positivity, stability, or invariance under unrestricted radial or corner
 improvements of the presymplectic potential.
 
 For comparison, the Einstein problem admits a global finite-energy
@@ -1058,7 +1140,10 @@ axial quotient, phase space, norm, or global matching\\
 Null-endpoint wave-packet flux? & Exact three-dimensional axial
 $L^2$ trace spaces at both null ends; Grams have rank three, zero radical,
 and inertia $(1,2,0)$ for $\alpha_{\rm W}>0$ & $\ell=2$, $M=1$,
-$\omega\in[1/2,3/4]$; no global population or scattering claim\\
+$\omega\in[1/2,3/4]$\\
+Incoming global channels? & Exact RW/RW/spin-one triangular filtration and
+$T_-(\omega)\in GL(3,\mathbb C)$; the full incoming indefinite trace is
+populated & outgoing $T_+$, poles, stability, CPT and complete scattering open\\
 Polar exceptional wall? & generically nonradical finite line; exact wall
 $Q_{21}(\ell(\ell+1),\widehat\omega^2)=0$ with certified harmonic root counts &
 deeper filtration open on the wall\\
@@ -1093,10 +1178,9 @@ Stable/ringing? & not established & complex frequencies open; no QNM\\
 The paper does not establish:
 \begin{itemize}
 \item a complete exterior initial-boundary well-posedness theorem: the
-      complex-frequency Einstein connection is conditional on the
-      nonvanishing of an uncomputed confluent-Heun Wronskian, while no
-      outgoing function space has been constructed for the additional
-      directions;
+      real-frequency incoming connection is now exact and invertible on the
+      pilot interval, but the outgoing reflection block and the
+      complex-frequency connection remain unclassified;
 \item convergence or summability of the generic-\(\ell\) formal series,
       axial \(X_2\), the deeper polar filtration on the \(Q_{21}=0\) wall,
       the terminal-only polar prefixes, or a non-Einstein-background
@@ -1181,6 +1265,9 @@ Exact axial null-endpoint wave-packet traces and action-derived flux Grams &
 \cert{black_hole_programme/phase3/axial_wavepacket_null_trace/certificate.json};
 \cert{black_hole_programme/phase3/axial_null_flux_gram/certificate.json};
 \cert{reports/phase3-black-hole-axial-null-flux-gram-2026-07-23.md}\\
+Axial RW/RW/spin-one filtration and invertible incoming connection &
+\cert{black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json};
+\cert{black_hole_programme/phase3/axial_incoming_connection_analytic/certificate.json}\\
 Polar restriction-stable module and invariant current filtration &
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json}\\
 Generic-\(\ell\) two-parity formal-infinity phase diagram &
@@ -1204,10 +1291,10 @@ inputs, not active authorities for infinity selection.  Their unaffected
 Einstein, horizon, and leading-symbol components are represented above by
 independent certificates.  The exact superseded identifiers are recorded in
 the machine-readable claim map.  Exact axial endpoint trace spaces and flux
-Grams now supply one boundary ingredient, but a theorem about globally
-populated asymptotically flat radiation still requires the regular-tetrad
-falloff, differentiable phase-space, charge-algebra, and global connection
-constructions.
+Grams now combine with the invertible incoming connection to give globally
+populated incoming channels.  A complete asymptotically flat scattering
+theorem still requires the outgoing/horizon map, regular-tetrad falloff,
+differentiable phase space, charge algebra, and complex-frequency audit.
 
 \section{Outlook}
 
@@ -1221,28 +1308,23 @@ frequencies at each harmonic.  These facts neither establish a
 representative-independent axial quotient nor restore an Einstein-selection
 principle.
 
-The next decisive map is global:
+The first global map is now exact:
 \[
- \text{future-horizon data}
- \longrightarrow \text{exact exterior connection}
- \longrightarrow \text{differentiable asymptotic phase space}.
+ \text{future-horizon-regular data}
+ \xrightarrow[\cong]{\,T_-\,}
+ \text{incoming }\mathscr I^- \text{ trace}.
 \]
-It must include a regular tetrad or gauge, convergence or another completion
-of the formal series, a gauge-audited Lee--Wald charge algebra, and the
-connection matrix between the two ends.  That audit must also certify the
-permutation between the raw endpoint initializer order
-\((XH0a,XH0b,EH0,XHplus,EHout,XHminus)\) and its public labelled order before
-selecting raw future-regular columns \(0,1,2\).  The present exact endpoint
-Grams neither prove nor obstruct that global map.  A first validated
-global-connection attempt certified the diagonal carrier and kernel ranks
-and all local lower-lift solves on its required first frequency cell, but
-ended in \textsc{shortfall}: fixed interval frames discarded the shared
-\(\omega\)-dependence needed for the cumulative lower-block cancellation.
-That numerical-enclosure result is a method/substrate limitation, not
-evidence that the Bach connection fails to exist.  Complex-frequency work
-is likewise limited to the existing meromorphic axial continuation; no
-Wronskian zeros, quasinormal spectrum, or stability theorem have been
-computed.
+The remaining decisive map is the outgoing/horizon scattering relation.  It
+must include a regular tetrad or gauge, a gauge-audited Lee--Wald charge
+algebra, and the connection amplitudes at both future boundaries.  A first
+validated full-amplitude attempt certified its diagonal carrier and kernel
+ranks and all local lower-lift solves on the first frequency cell, but ended
+in \textsc{shortfall}: fixed interval frames discarded the shared
+\(\omega\)-dependence needed for cumulative lower-block cancellation.  The
+analytic triangular proof bypasses that limitation for \(T_-\), not for
+\(T_+\).  Complex-frequency work is likewise limited to the existing
+meromorphic axial continuation; no Wronskian zeros, quasinormal spectrum, or
+stability theorem has been computed.
 
 The present result already fixes an important baseline:
 \begin{center}
@@ -1250,8 +1332,11 @@ The present result already fixes an important baseline:
 Additional curvature directions occur in the future-horizon carrier, and
 independently the formal infinity modules contain finite non-Einstein or
 mixed directions.  Neither leading endpoint diagnostics nor formal radial
-pairing finiteness selects the Einstein kernel.  Whether one global solution
-realizes both endpoint properties remains open.}}
+pairing finiteness selects the Einstein kernel.  More strongly, the complete
+three-dimensional indefinite incoming trace is globally populated by
+future-horizon-regular solutions throughout the pilot interval.  The
+outgoing reflection block, complex-frequency poles, stability, CPT
+positivity, and a complete scattering operator remain open.}}
 \end{center}
 
 \appendix

@@ -24,7 +24,7 @@
 project was commissioned and coordinated by Asger Alstrup Palm
 (\texttt{asger@area9.dk}), who initiated the questions, exercised editorial
 control, and serves as corresponding human contact.}}
-\date{22 July 2026}
+\date{23 July 2026}
 
 \begin{document}
 \raggedbottom
@@ -67,8 +67,13 @@ Phase-3A endpoint construction gives three-dimensional \(L^2\) wave-packet trace
 spaces at both axial null endpoints on the same pilot interval.  Their
 action-derived flux Grams have rank three, zero radical, and inertia
 \((1,2,0)\) for \(\alpha_{\rm W}>0\), with no frequency wall.  This endpoint
-indefiniteness does not establish a globally populated negative scattering
-channel, CPT obstruction, or instability.
+module has an exact triangular filtration into two spin-two
+Regge--Wheeler factors and one spin-one Regge--Wheeler factor.  Their
+real-potential Wronskians prove that the map from future-horizon-regular data
+to the incoming \(\mathscr I^-\) trace is invertible throughout the pilot
+interval.  Thus the full indefinite incoming endpoint space is globally
+populated.  The outgoing reflection block, poles, stability, CPT positivity,
+and a complete scattering operator remain open.
 
 Strict fixed-field-content pure Weyl gravity has the established nonzero
 local Euclidean one-loop Weyl-anomaly coefficients, here reconstructed from
@@ -778,10 +783,11 @@ to satisfy \(T^\dagger J_{\rm out}T=J_{\rm in}\).  Stationary local
 finite-tangential-jet trace-only improvements have vanishing cut terms on
 the wave-packet core, but unrestricted radial/corner improvement invariance
 remains open.\par
-\textbf{Not claimed.} No horizon-to-infinity connection, population by
-horizon-regular data, scattering channel, positive energy, particle norm,
-CPT metric, pole exclusion, stability, or unrestricted improvement
-invariance follows.
+\textbf{Not claimed.} This endpoint theorem alone supplies no
+horizon-to-infinity connection, scattering channel, positive energy,
+particle norm, CPT metric, pole exclusion, stability, or unrestricted
+improvement invariance.  The one-sided incoming population theorem below is
+an independent global result.
 \end{resultcard}
 
 The endpoint signature admits an exact Witt decomposition.  At
@@ -806,8 +812,25 @@ split algebraically as
 \]
 This is a Witt decomposition, not yet a Jordan-chain theorem.  The full
 six-dimensional axial module is dimensionally incompatible with a scalar
-Regge--Wheeler square; a possible \(4+2\) triangular differential
-decomposition remains open.
+Regge--Wheeler square.  Exact cyclic elimination instead gives
+\[
+ 0\longrightarrow M_{\rm RW}
+ \longrightarrow M_{A_4}
+ \longrightarrow M_x
+ \longrightarrow0,
+\]
+while the metric Einstein kernel is another \(M_{\rm RW}\) factor.  Under
+\(Z=y/[r^2(r-2)]\), the quotient \(M_x\) has the real \(\ell=2\)
+spin-one Regge--Wheeler potential \(6(r-2)/r^3\).  The complete six-state
+system therefore has the certified triangular factors
+\[
+ M_{\rm RW}^{\rm metric},\qquad
+ M_{\rm RW}^{\rm carrier},\qquad
+ M_x^{\rm spin\text{-}one}.
+\]
+The natural gauge retains a nonzero extension term, so a direct
+\(\ker L_{\rm RW}^2\oplus\ker L_x\) splitting and a time-translation
+Jordan interpretation are not claimed.
 
 There is nevertheless a sharp conditional consequence of the endpoint
 inertia.  If a globally matched gauge-reduced trace map
@@ -831,6 +854,28 @@ statement about endpoint flux, not
 total canonical energy, a quantum ghost, or a complete scattering matrix;
 the horizon contribution to the global conservation law remains separate.
 
+The conditional rank gate is now activated at the incoming endpoint.  In
+factor-adapted future-horizon and \(\mathscr I^-\) frames, exact triangularity
+gives
+\[
+ \det T_-(\omega)=
+ -\frac{(2\omega-i)(4\omega-i)^2}{4(\omega-i)}
+ A_{{\rm in},2}(\omega)^2A_{{\rm in},1}(\omega).
+\]
+The spin-two and spin-one potentials are real and short range.  For their
+unit horizon-ingoing Jost solutions,
+\[
+ |A_{{\rm in},s}|^2-|A_{{\rm out},s}|^2=1,
+ \qquad s=1,2,
+\]
+so \(T_-(\omega)\in GL(3,\mathbb C)\) for every real
+\(\omega\in[1/2,3/4]\).  Congruence therefore preserves the incoming
+inertia \((1,2,0)\); its \(L^2\) wave-packet completion has infinite positive
+and negative index.  This proves globally populated indefinite incoming
+channels, not the rank of \(T_+\), nonzero reflection, absence of unstable
+poles, positive total energy, CPT obstruction, or a complete scattering
+theory.
+
 The full 282-term $Q_{21}$ is machine readable at
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/current_artifacts/q21-finite-line-factor.json}
 (SHA-256
@@ -842,10 +887,11 @@ it is superseded.  That point is not on the polar $R_2$ locus, but this does
 not restore its earlier Einstein-selection interpretation.  Existing AdS/Euclidean selection
 arguments operate in different boundary classes
 \cite{Maldacena,LuPangPope}.  A physical asymptotically flat theorem still
-requires a completed global Bach phase space, horizon-to-infinity matching,
-and a well-posed exterior problem.  The scoped axial endpoint wave-packet
-trace topology and flux forms are now exact, but their global population is
-not.  This is the endpoint analogue, not yet the counterpart, of the global
+requires a completed global Bach phase space, the outgoing/horizon map, and
+a well-posed exterior problem.  The scoped axial incoming trace is now
+globally populated by future-horizon-regular solutions, but the complete
+scattering map is not.  This is a one-sided counterpart, not yet the full
+analogue, of the global
 Hilbert-space isomorphisms available for linearized Einstein scattering on
 Schwarzschild \cite{MasaoodScattering}.  Flat-space conformal-higher-spin
 scattering separately admits conformal-gravity states beyond ordinary
@@ -1275,7 +1321,8 @@ classification; complete axial $\ell=2$ Schwarzschild pilot with a finite
 fixed-representative extra direction but divergent oscillatory Einstein
 shear, polar finite mixed line with exact $R_\ell$ degeneracy locus, and
 exact axial endpoint $L^2$ flux Grams of rank three, zero radical, and
-inertia $(1,2,0)$ & Universal globally matched asymptotic phase space,
+inertia $(1,2,0)$; exact RW/RW/spin-one filtration and invertible incoming
+Schwarzschild map \(T_-\) & Complete outgoing/horizon scattering map,
 positive energy theorem, and acceptable counterflow spectrum \\
 Nonlinear continuation & Five-charge necessary-and-sufficient finite
 exponential-polynomial cone; bounded resonance ledger and classified
@@ -1387,9 +1434,9 @@ prediction.
 The scoped Phase-2 results replace the earlier task list with sharper
 endpoint questions.  The most important are not ``finish quantum gravity.''  They are:
 \begin{enumerate}
-\item complete the asymptotically flat Bach phase space, match horizon data
-to the exact axial endpoint trace spaces and certified formal polar modules,
-and determine which endpoint directions are globally populated;
+\item complete the asymptotically flat Bach phase space, classify the
+outgoing axial block \(T_+\), horizon flux, and complex-frequency poles, and
+extend the global matching to the certified formal polar modules;
 \item classify the axial $X_2$ branch, terminal-only polar prefixes, and the
 deeper filtration at $R_\ell(\widehat\omega^2)=0$;
 \item construct independent $P,T,C$ data and prove BRST and causal-covariance
@@ -1468,8 +1515,10 @@ finite non-Einstein representative but also a divergent cross term under the
 true oscillatory Einstein shear; the generic-angular polar filtration has a
 mixed finite line with an exact exceptional wall.  On the axial pilot, exact
 three-dimensional wave-packet trace spaces at both null ends carry
-nondegenerate indefinite endpoint flux Grams, but their horizon-regular
-global population remains open.  Selected compact blocks
+nondegenerate indefinite endpoint flux Grams, and the full incoming trace is
+globally populated by future-horizon-regular solutions through an invertible
+RW/RW/spin-one connection.  The outgoing block and stability remain open.
+Selected compact blocks
 admit positive pseudo-Hermitian metrics, but neither a genuine
 BRST-compatible $C$ operator nor a full Hadamard covariance follows.  Strict
 pure Weyl gravity has a local Euclidean one-loop BV obstruction; a compensator
