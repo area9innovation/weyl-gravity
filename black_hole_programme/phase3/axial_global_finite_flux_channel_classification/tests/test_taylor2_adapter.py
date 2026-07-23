@@ -77,6 +77,9 @@ class Taylor2AdapterTests(unittest.TestCase):
         broken = dict(document, refusal_code=8)
         with self.assertRaisesRegex(ValueError, "accepted"):
             flatten_taylor_matrix(broken)
+        wrong_generator = dict(document, generator=99)
+        with self.assertRaisesRegex(ValueError, "generator"):
+            flatten_taylor_matrix(wrong_generator)
 
     def test_realified_round_trip(self) -> None:
         complex_matrix = [

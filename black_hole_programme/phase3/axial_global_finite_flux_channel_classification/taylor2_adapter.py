@@ -110,13 +110,17 @@ def flatten_taylor_scalar(
     }
 
 
-def flatten_taylor_matrix(document: dict) -> list[list[dict]]:
+def flatten_taylor_matrix(
+    document: dict, *, expected_generator: int = 7315
+) -> list[list[dict]]:
     """Validate and flatten one serialized ``ivtaylor-degree2-v1`` matrix."""
 
     if document.get("schema") != "ivtaylor-degree2-v1":
         raise ValueError("wrong Taylor serialization schema")
     if document.get("degree") != 2 or document.get("refusal_code") != 0:
         raise ValueError("Taylor input is not an accepted degree-two model")
+    if document.get("generator") != expected_generator:
+        raise ValueError("Taylor input uses the wrong shared generator")
     rows, cols = document.get("rows"), document.get("cols")
     if not isinstance(rows, int) or not isinstance(cols, int):
         raise ValueError("Taylor shape is not integral")
