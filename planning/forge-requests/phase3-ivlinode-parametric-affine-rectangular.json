@@ -1,0 +1,41 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:forge-request/phase3-ivlinode-parametric-affine-rectangular",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-ivlinode-parametric-affine-rectangular",
+  "source": {
+    "path": "planning/forge-requests/phase3-ivlinode-parametric-affine-rectangular.json",
+    "span": null
+  },
+  "body": {
+    "owner": "science-forge",
+    "state": "PROPOSED",
+    "stream": "forge-requests",
+    "priority": 0,
+    "objective": "Extend ivlinode's landed affine moving-frame flow with parameter-dependent generators and correlated rectangular multi-column transport, so block-triangular variation-of-constants cancellations remain rigorous over a nonzero parameter cell.",
+    "stop_condition": "Provide a generic validated representation in which an exact rational or polynomial frame C_k(p), with p an interval parameter carried as a shared generator, can be used in local affine corrections without replacing correlated occurrences of p by independent interval boxes. Support structured block-triangular factors [[Wc,0],[L,Wk]] and apply/solve on an n-by-m interval or affine column family while retaining correlations among its m columns. On the Phase-3 axial ell=2 fixture, omega in [1/2,129/256], r in [4,32], the API must: preserve the already-certified carrier/kernel ranks; certify all 1,792 lower VoC factors with useful widths; transport six correlated real horizon columns; and permit certified rank tests of the resulting 12x6 coordinate enclosure without flattening a global 12x12 interval product. Include explicit refusal codes, C/native parity, both sanitizers, coarse/fine overlap, and mutations that erase the parameter generator, decorrelate columns, or flatten before the rank test.",
+    "current_gate": "Certified lower-lift and six-column coordinate transport for the Schwarzschild axial global connection",
+    "forbid": "no sampled parameter grid called a uniform cell theorem; no point frame treated as parameter-dependent; no black-hole-shaped primitive in lib/math; no explicit interval inverse; no global flattened 12x12 flow; no independent vector propagation when a correlated rectangular family is required; no scattering, flux, stability or CPT claim from the substrate fixture",
+    "depends_on": [
+      "sf:forge-request/phase3-ivlinode-qr-lohner-reconditioning"
+    ],
+    "activates": [
+      "sf:program/work/phase3-black-hole-axial-global-connection-matrix-v5"
+    ],
+    "allowed_paths": [
+      "forge/lib/math/",
+      "forge/examples/",
+      "forge/tools/science-forge/program/",
+      "forge/docs/math/",
+      "forge/lib/math/COMPLETENESS.md"
+    ],
+    "resource_hint": "A first-order Taylor model in omega is sufficient for the fixture if its remainder is interval-certified. Preserve the generator through frame evaluation, block multiplication, local Peano-Baker remainder and rectangular apply/solve. The existing IvLinAffineFlow factor store and exact QMat centres should remain usable for parameter-independent consumers.",
+    "notes": [
+      "The landed affine API closes the full first-cell carrier and kernel chains with maximum local correction widths 0.009978474438174208 and 0.00332335609866979.",
+      "All 1,792 structured 4x8 lower Krawczyk solves close, but fixed frames inflate a midpoint correction of about 2.97e-11 at reset 65 to interval width 3.6880892110833354e7 because the common omega dependence of A, D and the local flow is lost.",
+      "The request is a correlation-preservation extension of the successful affine API, not a request for a new ODE integrator or a physics-specific solver."
+    ]
+  },
+  "edges": []
+}

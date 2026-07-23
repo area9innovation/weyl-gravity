@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase3-black-hole-axial-global-connection-matrix-v5-LEASE-RENEW-excl-4b3ff5739d1746ff",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/phase3-black-hole-axial-global-connection-matrix-v5-LEASE-RENEW-excl-4b3ff5739d1746ff.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "phase3-axial-global-5", "base_revision": "science-forge-ir-v0", "when": "2026-07-23T04:55:00Z", "seq": 2, "predecessor": "sf:program/event/phase3-black-hole-axial-global-connection-matrix-v5-LEASE-ACQUIRE-excl-272e5334f9f63d99", "payload": {"target": "sf:program/work/phase3-black-hole-axial-global-connection-matrix-v5", "agent": "phase3-axial-global-5", "lease_type": "exclusive", "action": "RENEW", "acquired": "2026-07-23T04:55:00Z", "expires": "2026-07-23T18:00:00Z"}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/phase3-black-hole-axial-global-connection-matrix-v5"}]
+}
