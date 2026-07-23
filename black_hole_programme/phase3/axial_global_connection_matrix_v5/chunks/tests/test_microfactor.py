@@ -92,6 +92,16 @@ def _artifact(j: int = 0) -> dict:
             "inputs": inputs,
             "input_sha256": canonical_sha256(inputs),
             "output_sha256": canonical_sha256(matrix),
+            "generated_source": {
+                "manifest_path": "manifest.json",
+                "manifest_file_sha256": HASH_A,
+                "renderer_path": "renderer.py",
+                "renderer_sha256": HASH_B,
+                "frame_table_sha256": HASH_A,
+                "micro": j,
+                "source_sha256": HASH_B,
+                "retained_in_git": False,
+            },
         },
         "proof": {
             "ok": True,
@@ -152,6 +162,12 @@ class MicrofactorVerifierTests(unittest.TestCase):
         bad = _artifact()
         bad["matrix"]["linear"][0][0] = "2/1"
         bad["integrity"]["output_sha256"] = canonical_sha256(bad["matrix"])
+        with self.assertRaises(HandoffError):
+            verify_microfactor(bad)
+
+    def test_generated_source_pin_mutation_refuses(self):
+        bad = _artifact()
+        bad["integrity"]["generated_source"]["micro"] = 7
         with self.assertRaises(HandoffError):
             verify_microfactor(bad)
         bad = copy.deepcopy(_artifact())

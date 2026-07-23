@@ -76,6 +76,14 @@ All 224 specialized runner source hashes are derived from one global table of
 byte-identical boundary-frame hashes.  The complete manifest was rendered in
 8.94 seconds after caching the common exact Taylor source.
 
+The scale runner keeps specialized Forge sources ephemeral.  Each artifact
+pins the committed renderer, complete source-hash manifest, global frame-table
+hash, microfactor id and specialized source hash.  A clean clone can therefore
+re-render any requested source without storing roughly 57 MB of mechanical
+generated text.  Bounded parallel execution retains the complete runner logs,
+which are converted to canonical artifacts only after their source hashes and
+trace envelopes pass.
+
 ## Verification
 
 ```text

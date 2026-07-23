@@ -139,7 +139,9 @@ def parse_trace(text: str, micro: int) -> tuple[dict, int, dict[str, str]]:
     return matrix, rank, block_widths
 
 
-def build_handoff(micro: int, trace: str, root: Path) -> dict:
+def build_handoff(
+    micro: int, trace: str, root: Path, runner_override: Path | None = None
+) -> dict:
     if not 0 <= micro < 224:
         raise TraceError("microfactor id out of range")
     manifest = json.loads((HERE / "manifest.json").read_text())
@@ -148,14 +150,14 @@ def build_handoff(micro: int, trace: str, root: Path) -> dict:
     entry = manifest["chunks"][micro]
     if entry["start"] != micro:
         raise TraceError("manifest microfactor ordering differs")
-    runner = HERE / entry["path"]
+    runner = runner_override if runner_override is not None else HERE / entry["path"]
     if not runner.is_file() or entry["sha256"] != _sha256(runner):
         raise TraceError("microfactor runner missing or hash differs")
     matrix, rank, block_widths = parse_trace(trace, micro)
     producer = Path(__file__)
     inputs = [
         {"path": _relative(path, root), "sha256": _sha256(path)}
-        for path in (*DEFAULT_INPUTS, runner)
+        for path in DEFAULT_INPUTS
     ]
     payload = {
         "schema": SCHEMA,
@@ -205,6 +207,16 @@ def build_handoff(micro: int, trace: str, root: Path) -> dict:
             "inputs": inputs,
             "input_sha256": canonical_sha256(inputs),
             "output_sha256": canonical_sha256(matrix),
+            "generated_source": {
+                "manifest_path": _relative(HERE / "manifest.json", root),
+                "manifest_file_sha256": _sha256(HERE / "manifest.json"),
+                "renderer_path": _relative(PACKAGE / "affine_rail.py", root),
+                "renderer_sha256": _sha256(PACKAGE / "affine_rail.py"),
+                "frame_table_sha256": manifest["frame_table_sha256"],
+                "micro": micro,
+                "source_sha256": entry["sha256"],
+                "retained_in_git": runner_override is None,
+            },
         },
         "proof": {
             "ok": True,
@@ -235,9 +247,15 @@ def main() -> int:
     parser.add_argument("--log", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--repo-root", type=Path, required=True)
+    parser.add_argument(
+        "--runner", type=Path,
+        help="ephemeral specialized source; hash must match the complete manifest",
+    )
     args = parser.parse_args()
     try:
-        payload = build_handoff(args.micro, args.log.read_text(), args.repo_root)
+        payload = build_handoff(
+            args.micro, args.log.read_text(), args.repo_root, args.runner
+        )
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(f"REFUSED: {exc}")
         return 3

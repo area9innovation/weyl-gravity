@@ -14,6 +14,7 @@ from .verify_handoff import (
     HandoffError,
     STANDARD_ORDER,
     _exact_keys,
+    _file_sha256,
     _rational,
     _require,
     _sha,
@@ -130,11 +131,11 @@ def verify_microfactor(data: Any, repo_root: Path | None = None) -> bool:
     _verify_affine_hull(data["matrix"])
     zero_bits = ["0000000000000000", "0000000000000000"]
     for i in range(8):
-        for j in range(8, 12):
+        for col in range(8, 12):
             _require(
-                data["matrix"]["center"][i][j] == "0/1"
-                and data["matrix"]["linear"][i][j] == "0/1"
-                and data["matrix"]["remainder"][i][j] == zero_bits,
+                data["matrix"]["center"][i][col] == "0/1"
+                and data["matrix"]["linear"][i][col] == "0/1"
+                and data["matrix"]["remainder"][i][col] == zero_bits,
                 "matrix: upper-right block is not exactly zero",
             )
 
@@ -190,7 +191,12 @@ def verify_microfactor(data: Any, repo_root: Path | None = None) -> bool:
 
     integrity = data["integrity"]
     _exact_keys(
-        integrity, {"producer", "inputs", "input_sha256", "output_sha256"}, "integrity"
+        integrity,
+        {
+            "producer", "inputs", "input_sha256", "output_sha256",
+            "generated_source",
+        },
+        "integrity",
     )
     _verify_path_hash(integrity["producer"], repo_root, "integrity.producer")
     _require(
@@ -213,6 +219,57 @@ def verify_microfactor(data: Any, repo_root: Path | None = None) -> bool:
         integrity["output_sha256"] == canonical_sha256(data["matrix"]),
         "integrity.output_sha256: matrix payload hash mismatch",
     )
+    generated = integrity["generated_source"]
+    _exact_keys(
+        generated,
+        {
+            "manifest_path", "manifest_file_sha256", "renderer_path",
+            "renderer_sha256", "frame_table_sha256", "micro",
+            "source_sha256", "retained_in_git",
+        },
+        "integrity.generated_source",
+    )
+    for key in (
+        "manifest_file_sha256", "renderer_sha256", "frame_table_sha256",
+        "source_sha256",
+    ):
+        _sha(generated[key], f"integrity.generated_source.{key}")
+    _require(generated["micro"] == j, "generated source: wrong micro id")
+    _require(
+        isinstance(generated["retained_in_git"], bool),
+        "generated source: retained flag must be boolean",
+    )
+    if repo_root is not None:
+        manifest_path = repo_root / generated["manifest_path"]
+        renderer_path = repo_root / generated["renderer_path"]
+        _require(manifest_path.is_file(), "generated source: manifest missing")
+        _require(renderer_path.is_file(), "generated source: renderer missing")
+        _require(
+            _file_sha256(manifest_path) == generated["manifest_file_sha256"],
+            "generated source: manifest file hash mismatch",
+        )
+        _require(
+            _file_sha256(renderer_path) == generated["renderer_sha256"],
+            "generated source: renderer hash mismatch",
+        )
+        manifest = json.loads(manifest_path.read_text())
+        _require(
+            manifest.get("schema")
+            == "axial-affine-microfactor-runner-manifest-v3",
+            "generated source: wrong manifest schema",
+        )
+        _require(
+            manifest.get("frame_table_sha256")
+            == generated["frame_table_sha256"],
+            "generated source: frame-table hash mismatch",
+        )
+        chunks = manifest.get("chunks", [])
+        _require(len(chunks) == COUNT, "generated source: incomplete manifest")
+        _require(
+            chunks[j].get("start") == j
+            and chunks[j].get("sha256") == generated["source_sha256"],
+            "generated source: specialized source pin mismatch",
+        )
     return True
 
 
