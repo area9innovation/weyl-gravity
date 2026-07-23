@@ -1,0 +1,35 @@
+{
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "expensive_run": {
+    "command": "forge -run black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4/transport_c00.forge",
+    "elapsed_seconds": 742.16,
+    "exit_code": 3,
+    "expected_disposition": "METHOD_SHORTFALL",
+    "higher_frequency_children_run": false
+  },
+  "higher_tiers_not_run": {
+    "tier_2": "No certified r4 handoff exists, so no downstream connection chain can legitimately run.",
+    "tier_3": "This is a method-shortfall checkpoint, not a theorem promotion or release."
+  },
+  "independent_rail": {
+    "command": "python3 black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4/verify.py",
+    "expected": "verified=true, status=METHOD_SHORTFALL"
+  },
+  "mutation_tests": {
+    "command": "python3 -m unittest black_hole_programme.phase3.axial_horizon_grassmann_mobius_to_r4.test_verify",
+    "expected_count": 8
+  },
+  "schema": "science-forge-receipt-v1",
+  "source_regeneration": {
+    "command": "PYTHONPATH=. python3 black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4/produce.py 0",
+    "note": "The exact symbolic producer is deterministic but was not rerun after the diagnostic-only source insertion because that regeneration is substantially slower than the compiled sentinel. Producer and rendered source are both content-hashed."
+  },
+  "tier_0": [
+    "python3 -m py_compile producer, analyzer, verifier and tests",
+    "jq empty certificate, receipt, source metadata and atlas fragment",
+    "git diff --check on scoped paths"
+  ],
+  "work_item": "sf:program/work/phase3-black-hole-axial-horizon-grassmann-mobius-to-r4-v2"
+}

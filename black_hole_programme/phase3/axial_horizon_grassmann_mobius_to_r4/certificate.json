@@ -1,0 +1,54 @@
+{
+  "claim_certified": false,
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "does_not_establish": [
+    "a horizon-to-r4 handoff",
+    "a horizon-to-infinity connection matrix",
+    "absence or existence of a global horizon-regular additional channel",
+    "scattering, flux sign, stability, ghost, positivity, CPT or unitarity",
+    "frequencies outside [1/2,2049/4096]",
+    "ell other than 2 or polar parity"
+  ],
+  "frequency_cell": [
+    "1/2",
+    "2049/4096"
+  ],
+  "generator": 7315,
+  "method": {
+    "amplitude_rank_cover_cells": 64,
+    "charts": 20,
+    "frequency_model": "one shared exact affine generator plus outward interval remainder",
+    "panels_per_shell": 256,
+    "radial_shells_declared": 23,
+    "right_action_covariance": "exact rational",
+    "stopping_rule": "q0 sentinel only; no 512/1024 radial-panel chase"
+  },
+  "noncertifying_center_diagnostic": {
+    "condition_2": 2.6241977478990197,
+    "exact_rank": 6,
+    "smallest_singular_value": 0.7341517013695913
+  },
+  "refusal": {
+    "exit_code": 3,
+    "gate": "uniform full-column rank of separately propagated amplitude",
+    "graph_chart": 11,
+    "graph_norm": 1.5016200852686385,
+    "graph_width": 3.003240069284962,
+    "shell": 2
+  },
+  "schema": "phase3-axial-horizon-grassmann-mobius-r4-shortfall-v1",
+  "sha256": {
+    "center_diagnostic.json": "0b20ace22ec42584d29b08516eece0e9ce98406d96b732cdff11c4b68803d55d",
+    "produce.py": "5d91c60a3f23c92d413013239f70f3e827eaeabe599874a0d8704e6e8cdf211c",
+    "sentinel_q00.exit": "1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2",
+    "sentinel_q00.log": "cc74f60e40c81f5a8a6c52729c91e32992ca3d95460cd485fd24ac7e13ff6022",
+    "sentinel_q00.time": "da473f3d37291522a9081326afc2f2e2cf9820d06914b7aedbaf19832d92ac4d",
+    "source_metadata.json": "72cfd038c73cc3684ad5bbcb8821b778ce3ee8af6c033e4096fc11568a29b67a",
+    "transport_c00.forge": "6978e7532e7f30944b746db91fb58d2254bd3267607947b2c3e7ea5e9ed527c3"
+  },
+  "status": "METHOD_SHORTFALL",
+  "successor_request": "sf:forge-request/phase3-validated-shared-taylor-grassmann-transport",
+  "work_item": "sf:program/work/phase3-black-hole-axial-horizon-grassmann-mobius-to-r4-v2"
+}
