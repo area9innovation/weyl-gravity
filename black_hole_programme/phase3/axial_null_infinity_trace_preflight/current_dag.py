@@ -183,4 +183,3 @@ def derive_rational_radius_current(r0: sp.Rational = sp.Integer(4)) -> sp.Matrix
 def real_conjugate(expr: sp.Expr, omega: sp.Symbol) -> sp.Expr:
     """Conjugate an expression while declaring ``omega`` real."""
     return sp.conjugate(expr).subs(sp.conjugate(omega), omega)
-
