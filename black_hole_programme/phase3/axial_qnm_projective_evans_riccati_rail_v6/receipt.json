@@ -1,0 +1,62 @@
+{
+  "artifact_sha256": {
+    "README.md": "ef889c15a1b905709cb598ad411a9be2c157e98b1d23110a1fcf110ff04af6c9",
+    "__init__.py": "639668881a6ea41798fa78223429c365875239e2c926a87a77c1ad9f0b229d80",
+    "aggregate.py": "a298b84815de4aef4def8255120ec20a429a0ae3a491b8024dcc46b1fbaa06a0",
+    "produce.py": "cd8b4d91e8524c3081c090945dade557293298c0cd4c31c8b14c2ebf4df02587",
+    "schema.json": "0223ffd4a6298278026ddf55a6a11b6e636d8b524b33e2f7cecfdb00d9a3dece",
+    "test_aggregate.py": "36313e0bcc81f2509e6585b910cc34e084b9840376f14c4f8d8ef1502df7c6c7",
+    "verify.py": "87cdc0670aa722521f04d046e5d576fdaa5b64534394822d097a26efc4d43d7e"
+  },
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v6/aggregate.py black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v6/produce.py black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v6/verify.py",
+      "elapsed_seconds": 0.02743,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v6/certificate.json black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v6/schema.json",
+      "elapsed_seconds": 0.094995,
+      "returncode": 0,
+      "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_projective_evans_riccati_rail_v6.test_aggregate",
+      "elapsed_seconds": 0.076531,
+      "returncode": 0,
+      "stderr": "test_completed_rows_pass (black_hole_programme.phase3.axial_qnm_projective_evans_riccati_rail_v6.test_aggregate.ProjectiveAggregateV6Test.test_completed_rows_pass) ... ok\ntest_contiguous_prefix (black_hole_programme.phase3.axial_qnm_projective_evans_riccati_rail_v6.test_aggregate.ProjectiveAggregateV6Test.test_contiguous_prefix) ... ok\ntest_next_missing_panel (black_hole_programme.phase3.axial_qnm_projective_evans_riccati_rail_v6.test_aggregate.ProjectiveAggregateV6Test.test_next_missing_panel) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.008s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_projective_evans_riccati_rail_v6.verify",
+      "elapsed_seconds": 0.069982,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "projective Evans/Riccati v6 verifier: PASS (contiguous typed prefix 0--63; next missing panel 64)\n"
+    }
+  ],
+  "elapsed_seconds": 0.281294,
+  "higher_tiers_not_run": "Incomplete contour; no theorem lifecycle, freeze or release.",
+  "input_sha256": {
+    "chunk_1_certificate": "1c37aa24a2159e9441ad79bfc193ec14ebe82d49b2df33ba29e8fe9ce2bdc58c",
+    "chunk_1_run": "27236920c529bf8a98f25df6843b37645f2702b687a42e993723e4511ca2ca9a",
+    "chunk_2_certificate": "4917408580bd3c3a7880a48cc649e3d8ba501f2581e19be886a05dcc52d2ce9a",
+    "chunk_2_run": "b0267f9fdd2f38beba05a34e3da1db1f5ec0675c62cc930c21d8788d4a18f0f6",
+    "chunk_3_certificate": "bb08a12e4fb4b21a90d728ff08972a9c5984624e4e78c6d2f73d2ab596424c0f",
+    "chunk_3_run": "0e7cc0727ff675702cb03ed9141a365ec7e25031af58407f31d33880c641cc20",
+    "chunk_4_certificate": "a843f32eea9e912508854d814210b053da8781162fc2d748ac14ea17dda059f6",
+    "chunk_4_run": "a146737720e4f2568054c947fcbaa16a8764cf6e3a8dd2f84df40cf2f073091b",
+    "projective_rail_v5": "2cd6347671accfbe00b2904f4cd773d8cfc12c432c7fa4e0da23474750ed021d"
+  },
+  "output_sha256": {
+    "certificate": "d96caf6e99334f198ceebcb950f553434b27f6a783884036f8158d06f59c1190",
+    "report": "52852ccaabf92e7b204ec550e8c0dc176d04db5c8a1d5d3d512a527be03cf0cd",
+    "run": "85603899f918e9752090a59dae0c74dc54b9a32c5f8021e0da0dfca1834c7d42"
+  },
+  "schema": "phase3-axial-qnm-projective-evans-riccati-rail-receipt-v6",
+  "tier_0": "py_compile and JSON Schema validation",
+  "tier_1": "scoped unit tests and independent aggregate verifier"
+}

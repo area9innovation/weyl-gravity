@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "model": {
+      "properties": {
+        "affine_generators": {
+          "minItems": 1,
+          "type": "array"
+        },
+        "content_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "dual_tau_state": {
+          "properties": {
+            "same_omega_parameter_for_both_rails": {
+              "const": true
+            }
+          },
+          "required": [
+            "same_omega_parameter_for_both_rails"
+          ],
+          "type": "object"
+        },
+        "omega_model": {
+          "properties": {
+            "degree": {
+              "const": 4
+            },
+            "omega_radius": {
+              "const": "1/4194304"
+            }
+          },
+          "required": [
+            "degree",
+            "omega_radius",
+            "shared_parameter"
+          ],
+          "type": "object"
+        },
+        "polynomial_coefficients": {
+          "maxItems": 5,
+          "minItems": 5,
+          "type": "array"
+        },
+        "residual_norm_ball": {
+          "properties": {
+            "componentwise_independent_boxes": {
+              "const": false
+            }
+          },
+          "required": [
+            "norm",
+            "radius",
+            "componentwise_independent_boxes"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "schema",
+        "stage",
+        "rho",
+        "state_order",
+        "omega_model",
+        "dual_tau_state",
+        "polynomial_coefficients",
+        "affine_generators",
+        "shared_noise_domain",
+        "residual_norm_ball",
+        "radial_taylor_coefficients",
+        "pivot_constraints",
+        "content_sha256"
+      ],
+      "type": "object"
+    }
+  },
+  "properties": {
+    "claim_flags": {
+      "properties": {
+        "H4_certified": {
+          "const": false
+        },
+        "content_addressed_model_chain": {
+          "const": true
+        },
+        "independent_component_remainders_used": {
+          "const": false
+        },
+        "one_radial_taylor_step_certified": {
+          "const": true
+        }
+      },
+      "required": [
+        "content_addressed_model_chain",
+        "independent_component_remainders_used",
+        "one_radial_taylor_step_certified",
+        "H4_certified"
+      ],
+      "type": "object"
+    },
+    "dependency_tags": {
+      "contains": {
+        "const": "REDUCED-MODE"
+      },
+      "type": "array"
+    },
+    "initial_model": {
+      "$ref": "#/$defs/model"
+    },
+    "lifecycle": {
+      "const": "COEFFICIENT_COMPUTED"
+    },
+    "result_id": {
+      "const": "PURE_WEYL_PHASE3_AXIAL_HORIZON_CORRELATED_AFFINE_SEED_SUCCESSOR"
+    },
+    "schema": {
+      "const": "phase3-axial-horizon-correlated-affine-seed-successor-v1"
+    },
+    "status": {
+      "const": "ONE_CORRELATED_RADIAL_SUCCESSOR_CERTIFIED"
+    },
+    "successor_model": {
+      "$ref": "#/$defs/model"
+    },
+    "terminal": {
+      "properties": {
+        "gate": {
+          "type": "null"
+        },
+        "one_radial_successor_certified": {
+          "const": true
+        }
+      },
+      "required": [
+        "gate",
+        "rho",
+        "one_radial_successor_certified"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema",
+    "result_id",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "frequency_domain",
+    "source",
+    "uniform_levelt_tail",
+    "initial_normalization",
+    "initial_model",
+    "radial_step",
+    "successor_normalization",
+    "successor_model",
+    "content_chain",
+    "numeric_summary",
+    "terminal",
+    "claim_flags",
+    "imports",
+    "run",
+    "does_not_establish"
+  ],
+  "type": "object"
+}

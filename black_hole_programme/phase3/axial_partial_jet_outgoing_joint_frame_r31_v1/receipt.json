@@ -1,0 +1,61 @@
+{
+  "artifacts": {
+    "README.md": "2fc56ea40dccf0d55c181e9d4f617eb91ad2df7569c534f8baa37bf38d50093f",
+    "__init__.py": "9bd18cf049eaebfa9b3c1ac7f0f956f6a0601f7ad18adbaac24a7ab405df5497",
+    "audit.py": "822b58b624c96e3247c2b3844833e15309c758b33f70c4999b0ed93a5cfdc7f6",
+    "certificate.json": "59610f70204de7c393f6ae2ff7114640c7e4d5944a44831ca7b0ecc1366595a3",
+    "produce.py": "f861c27108c1b246ab309fd9bbcb9bc5d248d68cf5f1618a2a62cb751024343b",
+    "report.md": "2fce57cbf7f2ddec3eeca95adc6b6fbcedf9e4ba509d1da74188f7180cc5ea9e",
+    "schema.json": "2bcf7ced54fe39f1890a76d726c3ff61241a762db69582320997ac80e53f5438",
+    "test_joint_frame.py": "1f7a0e56765abb110c5da073f7b49afd02354278d764da33569c95068d2ccf7e",
+    "verify.py": "c02df424e489c3e8a0ca84618d2a3cb2837a63aa30007111211f44ed05be3935"
+  },
+  "certificate": "black_hole_programme/phase3/axial_partial_jet_outgoing_joint_frame_r31_v1/certificate.json",
+  "certificate_sha256": "59610f70204de7c393f6ae2ff7114640c7e4d5944a44831ca7b0ecc1366595a3",
+  "claim_boundary": "A typed reduced E/R/S frame has complex rank three at r=31 on the first pilot child. Analytic K_plus, common amplitude normalization, T_plus, scattering, and flux remain open.",
+  "commands": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_outgoing_joint_frame_r31_v1.produce --check",
+      "elapsed_seconds": 0.33356783603085205,
+      "exit_code": 0,
+      "output_tail": "JOINT_REDUCED_FRAME_RANK3_KPLUS_ANALYTIC_OPEN\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_outgoing_joint_frame_r31_v1.verify",
+      "elapsed_seconds": 0.22380963299656287,
+      "exit_code": 0,
+      "output_tail": "PASS independent typed outgoing joint-frame verifier\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_partial_jet_outgoing_joint_frame_r31_v1.test_joint_frame",
+      "elapsed_seconds": 0.6413095910102129,
+      "exit_code": 0,
+      "output_tail": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.551s\n\nOK\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m py_compile /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_joint_frame_r31_v1/produce.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_joint_frame_r31_v1/verify.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_joint_frame_r31_v1/test_joint_frame.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_joint_frame_r31_v1/audit.py",
+      "elapsed_seconds": 0.033914597996044904,
+      "exit_code": 0,
+      "output_tail": "",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check -- black_hole_programme/phase3/axial_partial_jet_outgoing_joint_frame_r31_v1",
+      "elapsed_seconds": 0.0068896490265615284,
+      "exit_code": 0,
+      "output_tail": "",
+      "status": "PASS"
+    }
+  ],
+  "schema": "phase3-axial-partial-jet-outgoing-joint-frame-r31-receipt-v1",
+  "status": "PASS",
+  "test_tiers": {
+    "tier_0_edit_checks": "PASS",
+    "tier_1_scoped_tests": "PASS",
+    "tier_2_affected_chain": "NOT_RUN: imported content-addressed certificates and checkpoints were not changed",
+    "tier_3_full_suite": "NOT_RUN: no freeze, release, shared-core algebra change, or theorem promotion"
+  }
+}

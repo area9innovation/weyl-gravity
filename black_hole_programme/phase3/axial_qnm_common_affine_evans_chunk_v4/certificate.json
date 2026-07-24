@@ -1,0 +1,62 @@
+{
+  "claim_flags": {
+    "QNM_or_EP2_certified": false,
+    "argument_principle_certified": false,
+    "full_contour_nonzero_certified": false,
+    "requested_chunk_nonzero_certified": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "boundary nonvanishing outside the materialized panels",
+    "boundary nonvanishing on the complete closed contour",
+    "an argument-principle QNM count",
+    "a nonzero Delta_tau or Delta_omega selector",
+    "a QNM location, Smith selector, defective fibre or EP2",
+    "a physical outgoing Bach map T_plus",
+    "time-domain stability or any LORENTZIAN-CAUSAL claim"
+  ],
+  "imports": {
+    "predecessor_chunk": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v3/certificate.json",
+      "sha256": "bb08a12e4fb4b21a90d728ff08972a9c5984624e4e78c6d2f73d2ab596424c0f"
+    },
+    "transport_source": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/common_affine.py",
+      "sha256": "8ae5c434f7fe3757b79b6cafddd71057cf67d5fb31e1b7ac16754fcbcb20bc5b"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "method": {
+    "batch_size": 4,
+    "checkpoint_after_each_batch": true,
+    "endpoint_fields": [
+      "q",
+      "q_tau",
+      "q_omega"
+    ],
+    "ordered_stop_rule": "stop after the first non-PASS panel in ordered output",
+    "requested_panels": [
+      48,
+      63
+    ],
+    "shared_generator": "one zeta=omega-omega_center generator per horizon/outgoing/mismatch triple",
+    "worker_count": 4
+  },
+  "result": {
+    "argument_principle_status": "NOT_RUN",
+    "completed_panel_count": 16,
+    "minimum_modulus_lower": "[1.968137347697653166530450079402390042e-5 +/- 1.67e-42]",
+    "minimum_modulus_lower_panel": 63,
+    "passed_panel_count": 16,
+    "terminal": null
+  },
+  "run": {
+    "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v4/chunk-run.json",
+    "sha256": "a146737720e4f2568054c947fcbaa16a8764cf6e3a8dd2f84df40cf2f073091b"
+  },
+  "schema": "phase3-axial-qnm-common-affine-evans-chunk-v4",
+  "status": "PANELS_48_THROUGH_63_BOUNDARY_NONVANISHING_CERTIFIED"
+}

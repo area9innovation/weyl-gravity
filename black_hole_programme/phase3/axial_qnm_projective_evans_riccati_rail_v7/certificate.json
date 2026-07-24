@@ -1,0 +1,3056 @@
+{
+  "claim_flags": {
+    "QNM_or_EP2_certified": false,
+    "QNM_root_count_certified": false,
+    "full_contour_boundary_nonvanishing_certified": false,
+    "interval_newton_certified": false,
+    "panel_77_endpoint_export_certified": false,
+    "panels_0_through_76_delta_nonzero": true,
+    "panels_0_through_76_typed_two_sided_at_r32": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a certified endpoint export for boundary panel 77",
+    "projective mismatch data for boundary panels 77--511",
+    "boundary nonvanishing on the complete closed contour",
+    "an interval-Newton or argument-principle QNM count",
+    "a nonzero intrinsic QNM selector Delta_tau at a root",
+    "a simple-root denominator Delta_omega on a root enclosure",
+    "a Smith selector, defective QNM or EP2",
+    "a physical outgoing Bach map T_plus",
+    "time-domain stability or any LORENTZIAN-CAUSAL claim"
+  ],
+  "imports": {
+    "chunk_1_certificate": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v1/certificate.json",
+      "sha256": "1c37aa24a2159e9441ad79bfc193ec14ebe82d49b2df33ba29e8fe9ce2bdc58c"
+    },
+    "chunk_1_run": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v1/chunk-run.json",
+      "sha256": "27236920c529bf8a98f25df6843b37645f2702b687a42e993723e4511ca2ca9a"
+    },
+    "chunk_2_certificate": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v2/certificate.json",
+      "sha256": "4917408580bd3c3a7880a48cc649e3d8ba501f2581e19be886a05dcc52d2ce9a"
+    },
+    "chunk_2_run": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v2/chunk-run.json",
+      "sha256": "b0267f9fdd2f38beba05a34e3da1db1f5ec0675c62cc930c21d8788d4a18f0f6"
+    },
+    "chunk_3_certificate": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v3/certificate.json",
+      "sha256": "bb08a12e4fb4b21a90d728ff08972a9c5984624e4e78c6d2f73d2ab596424c0f"
+    },
+    "chunk_3_run": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v3/chunk-run.json",
+      "sha256": "0e7cc0727ff675702cb03ed9141a365ec7e25031af58407f31d33880c641cc20"
+    },
+    "chunk_4_certificate": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v4/certificate.json",
+      "sha256": "a843f32eea9e912508854d814210b053da8781162fc2d748ac14ea17dda059f6"
+    },
+    "chunk_4_run": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v4/chunk-run.json",
+      "sha256": "a146737720e4f2568054c947fcbaa16a8764cf6e3a8dd2f84df40cf2f073091b"
+    },
+    "chunk_5_certificate": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v5/certificate.json",
+      "sha256": "fa2327bf887800b75d84e15ccc201cbe042e0e1cccbdc03648d10bcd5013070f"
+    },
+    "chunk_5_run": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v5/chunk-run.json",
+      "sha256": "299ac54aef9030ea6f62b768758b9f0cf49bac36e4829da2ac636732e89fa433"
+    },
+    "projective_rail_v6": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v6/certificate.json",
+      "sha256": "d96caf6e99334f198ceebcb950f553434b27f6a783884036f8158d06f59c1190"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "result": {
+    "arithmetic": "python-flint acb/arb, 128 bits",
+    "local_qnm_gate": {
+      "argument_principle_run": false,
+      "first_obstruction": {
+        "code": "ENDPOINT_EXPORT_TRANSPORT_FAILED",
+        "completed_panels": 77,
+        "first_missing_panel": 77,
+        "missing_field": "certified shared-generator horizon/outgoing q,q_tau,q_omega exports at r=32 for panel 77/512",
+        "required_panels": 512,
+        "terminal_observation": {
+          "failure": "ENDPOINT_EXPORT_TRANSPORT_FAILED",
+          "panel": 77,
+          "source_terminal": {
+            "failure": "ENDPOINT_EXPORT_TRANSPORT_FAILED",
+            "panel": 77
+          }
+        }
+      },
+      "interval_newton_run": false,
+      "parallel_quantitative_obstruction": {
+        "code": "PROJECTIVE_SENSITIVITY_BALLS_CONTAIN_ZERO",
+        "completed_panel_count": 77,
+        "delta_omega_excludes_zero_panel_count": 0,
+        "delta_tau_excludes_zero_panel_count": 0
+      },
+      "status": "FAIL_CLOSED"
+    },
+    "rows": [
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.2532117244264900720884872285147054397e-5 +/- 3.92e-43]",
+          "modulus_lower": "[0.00017797152290985444570195903794139806007 +/- 5.45e-42]",
+          "polynomial_coefficients": [
+            "[0.00021238978909147629946241320197941604 +/- 4.72e-39] + [1.93900268071643330780595704254665e-5 +/- 3.17e-38]j",
+            "[0.0050348180609611258365387875812757556559 +/- 9.05e-41] + [0.0173375413280913541480554584950368735 +/- 3.97e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.181] + [+/- 0.193]j",
+          "center": "[0.0050348180609611258365387875812757556559 +/- 9.05e-41] + [0.0173375413280913541480554584950368735 +/- 3.97e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.17549400955127102898245446338903167090 +/- 3.11e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.23e-3] + [+/- 2.62e-3]j",
+          "center": "[-0.00027958732877400311721965975308989982295 +/- 6.19e-42] + [0.00066833802271801605028676146469379659720 +/- 8.79e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019418601248068285840685886733306578792 +/- 1.82e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0000-of-0512",
+        "panel": 0,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.2560153628799086896374398486061455330e-5 +/- 4.82e-44]",
+          "modulus_lower": "[0.00017292059213319264509348141244218765353 +/- 3.36e-42]",
+          "polynomial_coefficients": [
+            "[0.00020712501547126668972886864850124766 +/- 3.84e-39] + [2.08290511312242410113526602799538e-5 +/- 5.42e-38]j",
+            "[0.004768293337837371630161253932556064683 +/- 6.46e-40] + [0.0168682466620973074700184923813139903 +/- 5.63e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.181] + [+/- 0.193]j",
+          "center": "[0.004768293337837371630161253932556064683 +/- 6.46e-40] + [0.0168682466620973074700184923813139903 +/- 5.63e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.17579470015043268965346879995450874189 +/- 2.66e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.21e-3] + [+/- 2.59e-3]j",
+          "center": "[-0.00026893773295394879938383092543574548472 +/- 6.29e-42] + [0.00065186261532359692633369768755002837679 +/- 8.56e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019345492575804123834551613511903846788 +/- 4.09e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0001-of-0512",
+        "panel": 1,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.2597342361831778672067775643244897213e-5 +/- 4.01e-43]",
+          "modulus_lower": "[0.00016798752558270288449566845894065926461 +/- 5.88e-42]",
+          "polynomial_coefficients": [
+            "[0.00020198725323715611447428219804578476 +/- 8.53e-39] + [2.212742861790271270416852189555357e-5 +/- 5.55e-39]j",
+            "[0.004516782456321775940377705182982026600 +/- 7.36e-40] + [0.0164094158304977817686154395460107481 +/- 8.65e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.181] + [+/- 0.193]j",
+          "center": "[0.004516782456321775940377705182982026600 +/- 7.36e-40] + [0.0164094158304977817686154395460107481 +/- 8.65e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.17610679937465657189169610296623626177 +/- 4.64e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.19e-3] + [+/- 2.57e-3]j",
+          "center": "[-0.00025844560594837982076509008688702806467 +/- 5.10e-42] + [0.0006358927618415501076395632273907665422 +/- 5.05e-41]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019256794109946653421873572446394612594 +/- 7.64e-42]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0002-of-0512",
+        "panel": 2,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.2632713872405634788182102432024474483e-5 +/- 1.81e-43]",
+          "modulus_lower": "[0.00016318062256791484039726541754388653371 +/- 5.72e-42]",
+          "polynomial_coefficients": [
+            "[0.00019697576742880285559367248282569563 +/- 7.11e-39] + [2.32928767652353443939894361847109e-5 +/- 4.24e-38]j",
+            "[0.004279553935264504907487470575233601266 +/- 5.29e-40] + [0.0159610391416983889156799847341972054 +/- 1.32e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.181] + [+/- 0.193]j",
+          "center": "[0.004279553935264504907487470575233601266 +/- 5.29e-40] + [0.0159610391416983889156799847341972054 +/- 1.32e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.17643017148144381364887628649886444742 +/- 4.21e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.17e-3] + [+/- 2.54e-3]j",
+          "center": "[-0.0002481151245761438939221171784410557848 +/- 2.02e-41] + [0.00062041001980671165447808051984779353915 +/- 7.94e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019190868897769256559000566862989445177 +/- 2.56e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0003-of-0512",
+        "panel": 3,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.2671569210734050733591725214564734342e-5 +/- 2.35e-43]",
+          "modulus_lower": "[0.00015849193801571011990591883814270382226 +/- 5.04e-42]",
+          "polynomial_coefficients": [
+            "[0.0001920896167226311852804787605464298 +/- 5.10e-38] + [2.43328115136949574281999275626731e-5 +/- 1.62e-38]j",
+            "[0.004055903231080540578823434572086625849 +/- 1.39e-40] + [0.0155230864380426422655112617121631047 +/- 3.47e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.181] + [+/- 0.193]j",
+          "center": "[0.004055903231080540578823434572086625849 +/- 1.39e-40] + [0.0155230864380426422655112617121631047 +/- 3.47e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.17676460376093106100209904767900134795 +/- 1.75e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.15e-3] + [+/- 2.52e-3]j",
+          "center": "[-0.00023794988204243363422683843477756227003 +/- 2.49e-42] + [0.00060539648899933762001349113468506857316 +/- 9.18e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019119944702528628155069395683173072878 +/- 2.11e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0004-of-0512",
+        "panel": 4,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.2712661938489438751213387307727820267e-5 +/- 2.74e-43]",
+          "modulus_lower": "[0.00015392010210053642890853615849382070769 +/- 5.97e-42]",
+          "polynomial_coefficients": [
+            "[0.00018732767214304905413480017983829385 +/- 7.52e-39] + [2.52543517488025559547537568505504e-5 +/- 2.94e-38]j",
+            "[0.003845152375226955528131345118936224025 +/- 7.05e-40] + [0.0150955088143869819994336012314306572 +/- 6.90e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.181] + [+/- 0.193]j",
+          "center": "[0.003845152375226955528131345118936224025 +/- 7.05e-40] + [0.0150955088143869819994336012314306572 +/- 6.90e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.17710995158026804583066866456388051313 +/- 8.58e-40]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.14e-3] + [+/- 2.50e-3]j",
+          "center": "[-0.00022795292635113020536866135223874607618 +/- 3.44e-42] + [0.0005908348081980785719471288564008659705 +/- 1.24e-41]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019050680701851269517348739970756062634 +/- 2.59e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0005-of-0512",
+        "panel": 5,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.2754329856484874365305041867720917393e-5 +/- 4.79e-43]",
+          "modulus_lower": "[0.00014946418992102272799733375059367343561 +/- 3.60e-42]",
+          "polynomial_coefficients": [
+            "[0.0001826886348094670063646471902529811 +/- 1.11e-38] + [2.606432436217179238191476997599238e-5 +/- 9.46e-39]j",
+            "[0.003646649559925567787854738810437993379 +/- 6.94e-40] + [0.0146782402503548708994074445399746765 +/- 6.84e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.182] + [+/- 0.193]j",
+          "center": "[0.003646649559925567787854738810437993379 +/- 6.94e-40] + [0.0146782402503548708994074445399746765 +/- 6.84e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.17746601013212006926594603504841823541 +/- 4.24e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.12e-3] + [+/- 2.48e-3]j",
+          "center": "[-0.00021812679702770375604788111179033194275 +/- 7.78e-42] + [0.00057670815071820383571586654536389460191 +/- 9.23e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018986193862780460800574394383813636439 +/- 1.63e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0006-of-0512",
+        "panel": 6,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.2800858108517055002406683743217916373e-5 +/- 4.17e-44]",
+          "modulus_lower": "[0.00014511735968539731820345429185233415235 +/- 7.45e-42]",
+          "polynomial_coefficients": [
+            "[0.00017817105273338100165925190765392471 +/- 8.64e-39] + [2.67692698088612887619142099993042e-5 +/- 5.84e-38]j",
+            "[0.003459768678221944969430889926798045053 +/- 3.70e-40] + [0.014271199157677050273207441932754591 +/- 1.94e-37]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.182] + [+/- 0.193]j",
+          "center": "[0.003459768678221944969430889926798045053 +/- 3.70e-40] + [0.014271199157677050273207441932754591 +/- 1.94e-37]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.17783258522818018511079001636731321872 +/- 3.99e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.11e-3] + [+/- 2.46e-3]j",
+          "center": "[-0.00020847356017803387717018948066538541753 +/- 7.22e-42] + [0.0005630002188563187117678263127196203186 +/- 1.36e-41]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018929267629149124055649299176163418461 +/- 3.05e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0007-of-0512",
+        "panel": 7,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.2852007792749706876474418046209567125e-5 +/- 2.56e-43]",
+          "modulus_lower": "[0.00014087732528541353673273643323033960508 +/- 3.65e-42]",
+          "polynomial_coefficients": [
+            "[0.00017377333669297591323132934348905110 +/- 4.73e-39] + [2.73754480965993779451039813466195e-5 +/- 5.63e-38]j",
+            "[0.003283908824112360264058096959161048290 +/- 6.36e-40] + [0.0138742898446332571515959841690346365 +/- 8.59e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.182] + [+/- 0.193]j",
+          "center": "[0.003283908824112360264058096959161048290 +/- 6.36e-40] + [0.0138742898446332571515959841690346365 +/- 8.59e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.17820950276572967204928771260116506094 +/- 1.92e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.09e-3] + [+/- 2.44e-3]j",
+          "center": "[-0.00019899484191289760559931409922285183711 +/- 8.30e-42] + [0.00054969523735573784886145054517925245818 +/- 6.25e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018872011364394189670973163903511945783 +/- 1.30e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0008-of-0512",
+        "panel": 8,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.2894368296390667615412117634935169269e-5 +/- 2.95e-44]",
+          "modulus_lower": "[0.00013675500503761074208569548357720287648 +/- 5.91e-42]",
+          "polynomial_coefficients": [
+            "[0.00016949377519964682267672451132511924 +/- 5.08e-39] + [2.78888451376631957279172979724535e-5 +/- 4.75e-38]j",
+            "[0.003118493758133677323796106861664156895 +/- 8.70e-40] + [0.0134874038994506340038981306861387566 +/- 4.30e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.182] + [+/- 0.193]j",
+          "center": "[0.003118493758133677323796106861664156895 +/- 8.70e-40] + [0.0134874038994506340038981306861387566 +/- 4.30e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.17859657086137865360985316739234887815 +/- 9.93e-41]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.08e-3] + [+/- 2.42e-3]j",
+          "center": "[-0.00018969186017142152791623010976707064401 +/- 6.96e-42] + [0.0005367779460002982387005834863380471233 +/- 5.75e-41]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018811641746873488245114146778848825168 +/- 4.63e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0009-of-0512",
+        "panel": 9,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.2952105050060761293632073069811464343e-5 +/- 4.43e-43]",
+          "modulus_lower": "[0.00013272377490846253228102153075710145354 +/- 5.51e-42]",
+          "polynomial_coefficients": [
+            "[0.00016533054858761781456821804425771916 +/- 5.32e-39] + [2.83151794224709152381080912164180e-5 +/- 5.10e-38]j",
+            "[0.002962971343395192497238710416240792256 +/- 1.52e-40] + [0.0131104214949082052699136369255938916 +/- 6.24e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.182] + [+/- 0.193]j",
+          "center": "[0.002962971343395192497238710416240792256 +/- 1.52e-40] + [0.0131104214949082052699136369255938916 +/- 6.24e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.17899352206372548075136824757030213540 +/- 1.83e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.06e-3] + [+/- 2.41e-3]j",
+          "center": "[-0.00018056545498016805979812904325854105991 +/- 5.51e-42] + [0.0005242335914376651664426179366707003737 +/- 3.66e-41]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018766382497399421320476555957962511033 +/- 3.35e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0010-of-0512",
+        "panel": 10,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.2995227595437376625721391825014563511e-5 +/- 3.73e-44]",
+          "modulus_lower": "[0.00012881120132758378654655873785917254202 +/- 4.71e-42]",
+          "polynomial_coefficients": [
+            "[0.00016128174224856782828507739679935184 +/- 6.31e-39] + [2.86599089475755158806791200731823e-5 +/- 3.04e-38]j",
+            "[0.002816812956780254117994388707302277908 +/- 3.30e-40] + [0.0127432126164249252819882229914583150 +/- 6.95e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.183] + [+/- 0.193]j",
+          "center": "[0.002816812956780254117994388707302277908 +/- 3.30e-40] + [0.0127432126164249252819882229914583150 +/- 6.95e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.17940021626743391405303774248904074740 +/- 3.87e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.05e-3] + [+/- 2.39e-3]j",
+          "center": "[-0.00017161611718707669776637358971527191898 +/- 7.68e-42] + [0.0005120479183269821375637867455488105861 +/- 2.12e-41]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018708859001199787303150604565683367254 +/- 4.92e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0011-of-0512",
+        "panel": 11,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.3045311029003292151085459689222032087e-5 +/- 4.28e-43]",
+          "modulus_lower": "[0.00012499332053165899533708199446195405946 +/- 5.59e-42]",
+          "polynomial_coefficients": [
+            "[0.00015734535903819731744723853239520394 +/- 8.02e-39] + [2.892823836107144552798331460508052e-5 +/- 7.17e-39]j",
+            "[0.0026795128796363084505705032256628328469 +/- 7.59e-41] + [0.0123856382160271172310217480116989464 +/- 4.34e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.183] + [+/- 0.193]j",
+          "center": "[0.0026795128796363084505705032256628328469 +/- 7.59e-41] + [0.0123856382160271172310217480116989464 +/- 4.34e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.17981637671917203216066151190865654856 +/- 1.69e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.03e-3] + [+/- 2.37e-3]j",
+          "center": "[-0.00016284401571191672733820987595265705750 +/- 4.88e-42] + [0.0005002071598994605919992137432750212156 +/- 1.15e-41]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018668055763555907229388086783871125538 +/- 3.17e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0012-of-0512",
+        "panel": 12,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.3101678508911709459345981943753024520e-5 +/- 1.68e-43]",
+          "modulus_lower": "[0.00012126845675900832090554257474757197571 +/- 4.89e-42]",
+          "polynomial_coefficients": [
+            "[0.00015351933088763843396340469382721494 +/- 3.35e-39] + [2.91251262707686517372529522162949e-5 +/- 5.62e-38]j",
+            "[0.002550587671990423369039469037033995846 +/- 3.79e-40] + [0.0120375512947321246237653014077295666 +/- 4.82e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.183] + [+/- 0.193]j",
+          "center": "[0.002550587671990423369039469037033995846 +/- 3.79e-40] + [0.0120375512947321246237653014077295666 +/- 4.82e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18024179935246090476992846541151462294 +/- 1.57e-40]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.02e-3] + [+/- 2.36e-3]j",
+          "center": "[-0.00015424902335667073013936168024429207435 +/- 4.53e-42] + [0.00048869802801455134735018892566671411259 +/- 8.28e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018630217596834870888084591035065090590 +/- 4.26e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0013-of-0512",
+        "panel": 13,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.3151753342033622964348885945533948234e-5 +/- 2.12e-43]",
+          "modulus_lower": "[0.00011764687077826332980359374574041459017 +/- 6.09e-42]",
+          "polynomial_coefficients": [
+            "[0.0001498015296434132993114163312498022 +/- 4.27e-38] + [2.92552926844337132794571232352609e-5 +/- 5.31e-38]j",
+            "[0.0024295755340185930248875223469440243207 +/- 5.64e-41] + [0.0116987979159022849329208071367247612 +/- 5.05e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.184] + [+/- 0.193]j",
+          "center": "[0.0024295755340185930248875223469440243207 +/- 5.64e-41] + [0.0116987979159022849329208071367247612 +/- 5.05e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18067627705505339935261899839685780340 +/- 2.68e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.01e-3] + [+/- 2.34e-3]j",
+          "center": "[-0.00014583074122082040346981557377148419619 +/- 7.60e-42] + [0.00047750770278867321161180015121061614991 +/- 8.11e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018597872334420300093355276293337991076 +/- 4.02e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0014-of-0512",
+        "panel": 14,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.3234436788125271314038525004674278249e-5 +/- 4.82e-43]",
+          "modulus_lower": "[0.00011408738261808397838658527128712654004 +/- 9.49e-43]",
+          "polynomial_coefficients": [
+            "[0.00014618977716792237557530409475248234 +/- 9.12e-39] + [2.932322653080576824180525363772176e-5 +/- 4.28e-39]j",
+            "[0.002316035658162416202565658807088766479 +/- 9.17e-40] + [0.0113692181521366057761479595455966774 +/- 6.20e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.184] + [+/- 0.193]j",
+          "center": "[0.002316035658162416202565658807088766479 +/- 9.17e-40] + [0.0113692181521366057761479595455966774 +/- 6.20e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18111955036041059606958309203889650748 +/- 6.71e-40]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.00e-3] + [+/- 2.33e-3]j",
+          "center": "[-0.00013758852176761989828668308888381943688 +/- 8.03e-42] + [0.00046662382186770832385308560574799230380 +/- 5.49e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018563129416922108709725501226242748008 +/- 2.01e-42]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0015-of-0512",
+        "panel": 15,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.3263359146828412902378943565029888558e-5 +/- 1.0e-46]",
+          "modulus_lower": "[0.00011067412093726772798802429957321795643 +/- 3.10e-42]",
+          "polynomial_coefficients": [
+            "[0.00014268185472910126926349150267014920 +/- 7.36e-39] + [2.933319324042050341150300596382294e-5 +/- 9.54e-39]j",
+            "[0.002209547575068623870286899091297527776 +/- 8.85e-40] + [0.0110486469684163562954282156169938390 +/- 7.90e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.184] + [+/- 0.193]j",
+          "center": "[0.002209547575068623870286899091297527776 +/- 8.85e-40] + [0.0110486469684163562954282156169938390 +/- 7.90e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18157137568938732980953223529866673434 +/- 2.92e-40]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.99e-3] + [+/- 2.31e-3]j",
+          "center": "[-0.00012952149058826956150650144827807253023 +/- 2.38e-42] + [0.0004560344694094438828006407571358238329 +/- 4.49e-41]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018523997853352738331639690523903019382 +/- 4.72e-42]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0016-of-0512",
+        "panel": 16,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.3326749014485548894988787225315989049e-5 +/- 2.63e-43]",
+          "modulus_lower": "[0.00010731665415292918331760861900608176953 +/- 5.48e-42]",
+          "polynomial_coefficients": [
+            "[0.00013927551171276060862358470160415890 +/- 9.33e-39] + [2.92892423415297073474583555707795e-5 +/- 4.78e-38]j",
+            "[0.002109710496203677856930092104903451400 +/- 1.84e-40] + [0.0107369150441261468342801776998385321 +/- 4.68e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.185] + [+/- 0.193]j",
+          "center": "[0.002109710496203677856930092104903451400 +/- 1.84e-40] + [0.0107369150441261468342801776998385321 +/- 4.68e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18203150822805899100132037035860995099 +/- 3.71e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.98e-3] + [+/- 2.30e-3]j",
+          "center": "[-0.00012162856691148876296312830724843934149 +/- 3.30e-42] + [0.00044572816483680602805874521044060543317 +/- 9.18e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018490886717823765819861662681197857469 +/- 2.94e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0017-of-0512",
+        "panel": 17,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.3383847118698982326068571467914329166e-5 +/- 1.32e-43]",
+          "modulus_lower": "[0.00010405357691870988699434290337417017314 +/- 4.00e-42]",
+          "polynomial_coefficients": [
+            "[0.00013596847368160477377563299938856290 +/- 8.85e-39] + [2.919521505372058012284242067835293e-5 +/- 8.67e-39]j",
+            "[0.002016142655711117628869466500418639043 +/- 3.97e-40] + [0.0104338495365768578471143968044998473 +/- 6.44e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.185] + [+/- 0.193]j",
+          "center": "[0.002016142655711117628869466500418639043 +/- 3.97e-40] + [0.0104338495365768578471143968044998473 +/- 6.44e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18249970604363534646878990040022134805 +/- 4.62e-40]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.97e-3] + [+/- 2.29e-3]j",
+          "center": "[-0.00011390848290618093901702123638131070038 +/- 6.96e-42] + [0.00043569385141799305178906404067973312522 +/- 6.02e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018480861676771708743569292646726544215 +/- 4.74e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0018-of-0512",
+        "panel": 18,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.3453227177048317126936992999040061633e-5 +/- 4.56e-43]",
+          "modulus_lower": "[0.00010086418951440924873014389619579838137 +/- 4.87e-42]",
+          "polynomial_coefficients": [
+            "[0.00013275844981743651837535757920250035 +/- 7.44e-39] + [2.90547518422218722933259016372176e-5 +/- 1.31e-38]j",
+            "[0.001928480653993003626767155367360828677 +/- 2.85e-40] + [0.0101392747887607131973553009629540611 +/- 3.55e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.185] + [+/- 0.194]j",
+          "center": "[0.001928480653993003626767155367360828677 +/- 2.85e-40] + [0.0101392747887607131973553009629540611 +/- 3.55e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18297570530672808656631201770722870787 +/- 4.96e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.96e-3] + [+/- 2.28e-3]j",
+          "center": "[-0.0001063598018250165285272790249848640087 +/- 3.09e-41] + [0.00042592088472495514997299970172406347046 +/- 5.27e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018459529484397410076466632906494724876 +/- 1.80e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0019-of-0512",
+        "panel": 19,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.3516265029238172632113902034058958545e-5 +/- 3.38e-43]",
+          "modulus_lower": "[9.776502889762675832196490607126309835e-5 +/- 5.34e-42]",
+          "polynomial_coefficients": [
+            "[0.00012964313977104698245856884142312992 +/- 6.40e-39] + [2.88712999167353018270532061251288e-5 +/- 3.95e-38]j",
+            "[0.0018463788049716024775026568249813863076 +/- 9.75e-41] + [0.0098530129838681063114691482951457147 +/- 5.45e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.186] + [+/- 0.194]j",
+          "center": "[0.0018463788049716024775026568249813863076 +/- 9.75e-41] + [0.0098530129838681063114691482951457147 +/- 5.45e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18345923321527210784198955954619397767 +/- 5.64e-40]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.95e-3] + [+/- 2.27e-3]j",
+          "center": "[-9.898093503646289339353847580582623777e-5 +/- 4.88e-42] + [0.00041639902101725192627365568220909608499 +/- 4.28e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018438181870248449943030000520419987686 +/- 2.63e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0020-of-0512",
+        "panel": 20,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.3579161124556534071772258723533956086e-5 +/- 4.88e-43]",
+          "modulus_lower": "[9.474784634355505897820286422205154655e-5 +/- 5.66e-42]",
+          "polynomial_coefficients": [
+            "[0.00012662023995371708348645078956451471 +/- 6.04e-39] + [2.86481206540319457976018213685165e-5 +/- 5.11e-38]j",
+            "[0.001769508489135521514534765685766615206 +/- 3.77e-40] + [0.0095748847492122292346383716221680515 +/- 5.68e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.186] + [+/- 0.194]j",
+          "center": "[0.001769508489135521514534765685766615206 +/- 3.77e-40] + [0.0095748847492122292346383716221680515 +/- 5.68e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18395007302580658724713573585925567654 +/- 4.46e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.94e-3] + [+/- 2.25e-3]j",
+          "center": "[-9.177015799258626902595858965128172713e-5 +/- 2.21e-42] + [0.00040711840559421399077418002310224665053 +/- 6.53e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018416065276764426603330317878709429989 +/- 3.59e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0021-of-0512",
+        "panel": 21,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.3644936985220623730871435403927996479e-5 +/- 2.58e-43]",
+          "modulus_lower": "[9.180761104681312226577489179759472429e-5 +/- 3.26e-42]",
+          "polynomial_coefficients": [
+            "[0.00012368744929240377446177934217530492 +/- 5.97e-39] + [2.838829691531249976854667238512775e-5 +/- 6.76e-39]j",
+            "[0.0016975575139253993445231927239547076169 +/- 5.87e-41] + [0.0093047097121143583497993034825412906 +/- 3.65e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.187] + [+/- 0.194]j",
+          "center": "[0.0016975575139253993445231927239547076169 +/- 5.87e-41] + [0.0093047097121143583497993034825412906 +/- 3.65e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18444788649340925736744721540752439740 +/- 5.39e-40]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.93e-3] + [+/- 2.24e-3]j",
+          "center": "[-8.472562517927934369610376563741738210e-5 +/- 6.38e-42] + [0.00039806956115428020171690542960973857589 +/- 3.86e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018413197546951692640946225967431974215 +/- 4.73e-43]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0022-of-0512",
+        "panel": 22,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.3715635890385885217596575932800076546e-5 +/- 4.27e-43]",
+          "modulus_lower": "[8.894030945847175567364733931258221205e-5 +/- 4.98e-42]",
+          "polynomial_coefficients": [
+            "[0.0001208424744876632640072644520046197 +/- 3.94e-38] + [2.809474026093956161576059571416409e-5 +/- 8.10e-39]j",
+            "[0.0016302294830624446120292958539721439593 +/- 5.10e-41] + [0.0090423070101891753203027235485933488 +/- 5.90e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.187] + [+/- 0.194]j",
+          "center": "[0.0016302294830624446120292958539721439593 +/- 5.10e-41] + [0.0090423070101891753203027235485933488 +/- 5.90e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18495244691413002891555249653288244410 +/- 2.01e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.92e-3] + [+/- 2.24e-3]j",
+          "center": "[-7.784538409491022605338206297176384396e-5 +/- 4.41e-42] + [0.00038924337619677606904707023449674352377 +/- 8.23e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018407650132652587392656182166088626467 +/- 5.86e-42]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0023-of-0512",
+        "panel": 23,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.3784547420683163249048875318520428987e-5 +/- 3.86e-43]",
+          "modulus_lower": "[8.615072070147809741371651883458281226e-5 +/- 5.56e-42]",
+          "polynomial_coefficients": [
+            "[0.00011808303478722816624857383516200571 +/- 4.20e-39] + [2.77701980221081376476455204738158e-5 +/- 5.40e-38]j",
+            "[0.001567243176124026235451758282124501420 +/- 3.09e-40] + [0.0087874957585206518728693225739334594 +/- 4.79e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.188] + [+/- 0.195]j",
+          "center": "[0.001567243176124026235451758282124501420 +/- 3.09e-40] + [0.0087874957585206518728693225739334594 +/- 4.79e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18546344263178296215211265217374040721 +/- 2.68e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.92e-3] + [+/- 2.23e-3]j",
+          "center": "[-7.112738830268664760522745460491478298e-5 +/- 6.99e-42] + [0.00038063109349785592336323780671136773890 +/- 5.29e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018396589125202440672022269519545120856 +/- 3.03e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0024-of-0512",
+        "panel": 24,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.3857867376009174209801565117299271877e-5 +/- 4.57e-43]",
+          "modulus_lower": "[8.3430756576054625126720813089096545557e-5 +/- 9.11e-43]",
+          "polynomial_coefficients": [
+            "[0.00011540686631788307087154166197251470 +/- 6.99e-39] + [2.741726024360711250205113742595131e-5 +/- 8.64e-39]j",
+            "[0.0015083319395450718591877858898442354984 +/- 8.29e-41] + [0.0085400954761041709961677526052881148 +/- 7.82e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.188] + [+/- 0.195]j",
+          "center": "[0.0015083319395450718591877858898442354984 +/- 8.29e-41] + [0.0085400954761041709961677526052881148 +/- 7.82e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18598061343896942872288614223585014343 +/- 4.41e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.91e-3] + [+/- 2.22e-3]j",
+          "center": "[-6.45695096009405453477136838102978800e-5 +/- 3.71e-41] + [0.00037222429868899680035967264535301524120 +/- 4.50e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018399415104322326307531475257965374056 +/- 2.79e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0025-of-0512",
+        "panel": 25,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.3942864534727409381131953093584887132e-5 +/- 1.16e-45]",
+          "modulus_lower": "[8.077129467359498480103937435823962088e-5 +/- 5.91e-42]",
+          "polynomial_coefficients": [
+            "[0.00011281172598967526519986304123221999 +/- 7.07e-39] + [2.70383664667970743944458433816180e-5 +/- 3.49e-38]j",
+            "[0.0014532430900119006067505722512578358874 +/- 6.67e-41] + [0.0082999264738313552336457235014677280 +/- 6.24e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.188] + [+/- 0.195]j",
+          "center": "[0.0014532430900119006067505722512578358874 +/- 6.67e-41] + [0.0082999264738313552336457235014677280 +/- 6.24e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18650365401799638131672634405352541945 +/- 3.00e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.90e-3] + [+/- 2.21e-3]j",
+          "center": "[-5.816954935468555314484473406366760173e-5 +/- 3.96e-42] + [0.00036401490896344242532804702516813222246 +/- 1.85e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018386361170123839091776638411348546550 +/- 1.72e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0026-of-0512",
+        "panel": 26,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.4011257979239055131540937805033887839e-5 +/- 1.23e-43]",
+          "modulus_lower": "[7.819880088524651817208281742979964287e-5 +/- 3.93e-42]",
+          "polynomial_coefficients": [
+            "[0.00011029539500419607324366300105111804 +/- 7.55e-39] + [2.66358123529623555536538503929478e-5 +/- 3.53e-38]j",
+            "[0.0014017373311761335136216288788091333117 +/- 6.03e-41] + [0.0080668102062846705480048115077806870 +/- 5.97e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.189] + [+/- 0.196]j",
+          "center": "[0.0014017373311761335136216288788091333117 +/- 6.03e-41] + [0.0080668102062846705480048115077806870 +/- 5.97e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18703230276204877129261888329783964817 +/- 1.91e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.90e-3] + [+/- 2.20e-3]j",
+          "center": "[-5.192524903050371254745187776791226498e-5 +/- 8.76e-42] + [0.00035599516193303129736342366173929008256 +/- 9.87e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018392335146338240067357485878717861235 +/- 1.84e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0027-of-0512",
+        "panel": 27,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.4078494949327124730342127435874628497e-5 +/- 3.28e-43]",
+          "modulus_lower": "[7.569605134226024973806860965851375234e-5 +/- 4.03e-42]",
+          "polynomial_coefficients": [
+            "[0.00010785568198729803164603868737003722 +/- 5.42e-39] + [2.62117561381919328411527203570586e-5 +/- 4.01e-38]j",
+            "[0.0013535881843602676904980697258906729985 +/- 4.99e-41] + [0.0078405695895002666673256896956445417 +/- 6.08e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.189] + [+/- 0.196]j",
+          "center": "[0.0013535881843602676904980697258906729985 +/- 4.99e-41] + [0.0078405695895002666673256896956445417 +/- 6.08e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18756624027704174560552900743912258030 +/- 1.21e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.89e-3] + [+/- 2.19e-3]j",
+          "center": "[-4.583429997591430228240372279913117382e-5 +/- 6.07e-42] + [0.0003481576046552233049454633251329482846 +/- 2.06e-41]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018393463116034423295962876254195635066 +/- 1.12e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0028-of-0512",
+        "panel": 28,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.4153856525937418442413196299238547068e-5 +/- 3.44e-43]",
+          "modulus_lower": "[7.325202649430890133927364923639503354e-5 +/- 5.14e-42]",
+          "polynomial_coefficients": [
+            "[0.00010549042577713660558125230437553910 +/- 7.67e-39] + [2.57682249099220814225752462789387e-5 +/- 3.14e-38]j",
+            "[0.001308581433887422151851609442019253038 +/- 3.15e-40] + [0.0076210292867957378504240040228978614 +/- 4.64e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.190] + [+/- 0.196]j",
+          "center": "[0.001308581433887422151851609442019253038 +/- 3.15e-40] + [0.0076210292867957378504240040228978614 +/- 4.64e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18810515564765741414739606838083166914 +/- 2.66e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.88e-3] + [+/- 2.18e-3]j",
+          "center": "[-3.989435248287704141589848916282790015e-5 +/- 5.80e-42] + [0.00034049508284758516819291929156321430128 +/- 6.21e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018394934776507901198708103271746923010 +/- 1.33e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0029-of-0512",
+        "panel": 29,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.4218934965703175068523416755527858758e-5 +/- 3.77e-43]",
+          "modulus_lower": "[7.088343349832942486649923714669266444e-5 +/- 1.09e-42]",
+          "polynomial_coefficients": [
+            "[0.00010319749787874189089764698223916639 +/- 4.82e-39] + [2.53071207065927450408082677313359e-5 +/- 4.58e-38]j",
+            "[0.001266514587507264893995184706909640227 +/- 4.88e-40] + [0.0074080159646526221040030435460721492 +/- 6.63e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.190] + [+/- 0.197]j",
+          "center": "[0.001266514587507264893995184706909640227 +/- 4.88e-40] + [0.0074080159646526221040030435460721492 +/- 6.63e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18864876339484545040864616744604798884 +/- 3.22e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.88e-3] + [+/- 2.18e-3]j",
+          "center": "[-3.410302417401338574351465915412973118e-5 +/- 4.64e-42] + [0.00033300073030469195438721397017900471837 +/- 6.43e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018419030045425545544381294122377557908 +/- 3.91e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0030-of-0512",
+        "panel": 30,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.4299469340735246267677898949053400543e-5 +/- 1.08e-43]",
+          "modulus_lower": "[6.856287027417662561445744294910284956e-5 +/- 1.90e-42]",
+          "polynomial_coefficients": [
+            "[0.0001009748046170199156645885807392915 +/- 1.01e-38] + [2.48302264304741879263893622464821e-5 +/- 5.25e-38]j",
+            "[0.0012271963522657268474969072258318192325 +/- 8.11e-41] + [0.0072013585205975214065254874640231719 +/- 3.59e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.191] + [+/- 0.197]j",
+          "center": "[0.0012271963522657268474969072258318192325 +/- 8.11e-41] + [0.0072013585205975214065254874640231719 +/- 3.59e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18919676116435942904242078529125916580 +/- 3.02e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.87e-3] + [+/- 2.17e-3]j",
+          "center": "[-2.845790774874077397674221323597976152e-5 +/- 7.81e-42] + [0.00032566795853028805793772521015583265580 +/- 7.07e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018415006653605627794436099790368346236 +/- 8.28e-42]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0031-of-0512",
+        "panel": 31,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.4375808644884191194946734581033300510e-5 +/- 4.08e-43]",
+          "modulus_lower": "[6.630836206610708712718808293518612403e-5 +/- 4.34e-42]",
+          "polynomial_coefficients": [
+            "[9.882028900668328279255359092303479e-5 +/- 2.99e-39] + [2.433921157194048057181845479135518e-5 +/- 7.80e-39]j",
+            "[0.001190446126227815912268503950599551899 +/- 3.59e-40] + [0.0070008882849607878551267958755488507 +/- 5.73e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.191] + [+/- 0.197]j",
+          "center": "[0.001190446126227815912268503950599551899 +/- 3.59e-40] + [0.0070008882849607878551267958755488507 +/- 5.73e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.18974881367472600576546445257056125526 +/- 4.44e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.87e-3] + [+/- 2.17e-3]j",
+          "center": "[-2.295657812528486977146635616975345329e-5 +/- 4.35e-42] + [0.00031849044659549632376675104561414286763 +/- 6.67e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018430137575443749387364420333400580727 +/- 1.79e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0032-of-0512",
+        "panel": 32,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.4447257908320435216709963494055151886e-5 +/- 4.94e-43]",
+          "modulus_lower": "[6.411901496775681136640399621759983796e-5 +/- 5.68e-42]",
+          "polynomial_coefficients": [
+            "[9.67319323552937385124472768893611e-5 +/- 1.99e-38] + [2.38356377473625605234452962122304e-5 +/- 5.99e-38]j",
+            "[0.0011560935060658458772842038797534769401 +/- 8.27e-41] + [0.0068064391982424476967850068831467070 +/- 3.68e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.192] + [+/- 0.198]j",
+          "center": "[0.0011560935060658458772842038797534769401 +/- 8.27e-41] + [0.0068064391982424476967850068831467070 +/- 3.68e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.19030465520323736504047994997537506171 +/- 2.53e-40]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.87e-3] + [+/- 2.16e-3]j",
+          "center": "[-1.759659901301490261826820926671643975e-5 +/- 8.06e-42] + [0.00031146213123208464114421989421543912613 +/- 7.68e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018442888932879000448536170253176941511 +/- 2.78e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0033-of-0512",
+        "panel": 33,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.4529194010015034418550922810478878797e-5 +/- 1.75e-43]",
+          "modulus_lower": "[6.1977899725224932740472397461572443447e-5 +/- 6.47e-43]",
+          "polynomial_coefficients": [
+            "[9.470775562130150440620646179468167e-5 +/- 8.82e-39] + [2.332096404685825297153911606073962e-5 +/- 7.78e-39]j",
+            "[0.0011239778107788468003436221920310345013 +/- 7.04e-41] + [0.006617847965789687425530729569800314 +/- 5.02e-37]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.192] + [+/- 0.198]j",
+          "center": "[0.0011239778107788468003436221920310345013 +/- 7.04e-41] + [0.006617847965789687425530729569800314 +/- 5.02e-37]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.19086390206540235978901394960673180524 +/- 8.83e-40]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.86e-3] + [+/- 2.16e-3]j",
+          "center": "[-1.237552894846772472137175213902082760e-5 +/- 7.91e-42] + [0.00030457719716809163526538561939105420606 +/- 5.54e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018470662796690338874841995103816736960 +/- 7.03e-42]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0034-of-0512",
+        "panel": 34,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.4611939897107469992253390503336461258e-5 +/- 7.05e-44]",
+          "modulus_lower": "[5.989317711343497711965592900440886988e-5 +/- 5.59e-42]",
+          "polynomial_coefficients": [
+            "[9.274582054745483285229656900128247e-5 +/- 9.47e-39] + [2.27965521916832780657813373181853e-5 +/- 5.90e-38]j",
+            "[0.0010939476215267602415837089324668340851 +/- 8.17e-41] + [0.0064349541914382399343530494206788717 +/- 4.62e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.193] + [+/- 0.198]j",
+          "center": "[0.0010939476215267602415837089324668340851 +/- 8.17e-41] + [0.0064349541914382399343530494206788717 +/- 4.62e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.19142631743215175841993156132931989968 +/- 2.33e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.86e-3] + [+/- 2.15e-3]j",
+          "center": "[-7.29092682685741465958839668815016921e-6 +/- 8.68e-42] + [0.0002978300677115848873501013915898738560 +/- 1.11e-41]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018500755856180935759583932374040828495 +/- 2.45e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0035-of-0512",
+        "panel": 35,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.4687196940053349000244290291249546533e-5 +/- 1.64e-43]",
+          "modulus_lower": "[5.787166515409376813407884967793905075e-5 +/- 3.41e-42]",
+          "polynomial_coefficients": [
+            "[9.084423058201580164494615132753097e-5 +/- 7.41e-39] + [2.22636715016275368861364825079363e-5 +/- 2.79e-38]j",
+            "[0.001065860337533312135471774695361091290 +/- 3.93e-40] + [0.0062576004915884213264387625486051548 +/- 6.61e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.194] + [+/- 0.199]j",
+          "center": "[0.001065860337533312135471774695361091290 +/- 3.93e-40] + [0.0062576004915884213264387625486051548 +/- 6.61e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.19199151663116488874630011471293852562 +/- 3.86e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.86e-3] + [+/- 2.15e-3]j",
+          "center": "[-2.34035695969024874416031245516478521e-6 +/- 4.87e-42] + [0.00029121539558688385698932699074958918573 +/- 7.48e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018510161858964424197301694235469638279 +/- 2.90e-42]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0036-of-0512",
+        "panel": 36,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.4773370961715392042339350749722627333e-5 +/- 3.83e-43]",
+          "modulus_lower": "[5.589351264117470304807305330888623746e-5 +/- 1.17e-42]",
+          "polynomial_coefficients": [
+            "[8.90011316063894254713151354962974e-5 +/- 5.15e-38] + [2.17235036740169584756898757404997e-5 +/- 1.39e-38]j",
+            "[0.0010395817480831574114441551159870869014 +/- 5.37e-41] + [0.0060856325912468783867481647575914394 +/- 4.32e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.194] + [+/- 0.199]j",
+          "center": "[0.0010395817480831574114441551159870869014 +/- 5.37e-41] + [0.0060856325912468783867481647575914394 +/- 4.32e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.19255919664965932169714813658961209810 +/- 4.49e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.86e-3] + [+/- 2.14e-3]j",
+          "center": "[2.47860631232964690601194845953614276e-6 +/- 5.32e-42] + [0.00028472805402638102720020568670022953483 +/- 7.83e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018537566693469521454633584322021472968 +/- 1.91e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0037-of-0512",
+        "panel": 37,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.4854663368147204096023661666588926366e-5 +/- 3.52e-43]",
+          "modulus_lower": "[5.3973107553738071193735177030377318773e-5 +/- 7.56e-43]",
+          "polynomial_coefficients": [
+            "[8.721471248917416797807877770765117e-5 +/- 7.61e-39] + [2.11771473821280309390857610196690e-5 +/- 1.04e-38]j",
+            "[0.0010149856203222739486902170824578206521 +/- 5.44e-41] + [0.0059188994033534808592023068740672898 +/- 5.16e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.195] + [+/- 0.200]j",
+          "center": "[0.0010149856203222739486902170824578206521 +/- 5.44e-41] + [0.0059188994033534808592023068740672898 +/- 5.16e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.19312902615743088051035486069248014855 +/- 2.30e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.87e-3] + [+/- 2.14e-3]j",
+          "center": "[7.16837442312206075262226434574586165e-6 +/- 5.35e-42] + [0.00027836312811972838620559050903935371934 +/- 7.59e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018577961594931835253494365962897907583 +/- 2.45e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0038-of-0512",
+        "panel": 38,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.4935023532133360281766032332498667034e-5 +/- 3.72e-43]",
+          "modulus_lower": "[5.2105124193540155351362655690053231105e-5 +/- 7.72e-43]",
+          "polynomial_coefficients": [
+            "[8.548320547090192469963376709074509e-5 +/- 8.53e-39] + [2.06256226825528993229497132233519e-5 +/- 3.92e-38]j",
+            "[0.000991953302818522272832346686755045084 +/- 2.83e-40] + [0.0057572530927491975816234770491064410 +/- 4.05e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.195] + [+/- 0.200]j",
+          "center": "[0.000991953302818522272832346686755045084 +/- 2.83e-40] + [0.0057572530927491975816234770491064410 +/- 4.05e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.19370071037348959180731477905247729685 +/- 3.10e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.88e-3] + [+/- 2.14e-3]j",
+          "center": "[1.173134077515046187062397464728746854e-5 +/- 3.41e-42] + [0.0002721159064213908590100163276126465917 +/- 5.05e-41]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018611891248549201211670415412938386217 +/- 4.45e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0039-of-0512",
+        "panel": 39,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.5017130160110954749280155004126144537e-5 +/- 1.48e-43]",
+          "modulus_lower": "[5.028554133221123233693444401609155694e-5 +/- 1.98e-42]",
+          "polynomial_coefficients": [
+            "[8.380488640443686972070214125096754e-5 +/- 8.78e-39] + [2.00698752469323851710392148106621e-5 +/- 2.16e-38]j",
+            "[0.000970373344637325691008911121571145486 +/- 2.10e-40] + [0.0056005491260112533202786266883776989 +/- 2.55e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.196] + [+/- 0.200]j",
+          "center": "[0.000970373344637325691008911121571145486 +/- 2.10e-40] + [0.0056005491260112533202786266883776989 +/- 2.55e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.19427388092450456560283998708779129506 +/- 3.01e-40]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.88e-3] + [+/- 2.13e-3]j",
+          "center": "[1.616987729802314135638119374505095038e-5 +/- 4.18e-42] + [0.00026598187281635567592429775229945221326 +/- 7.80e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018637664204618651450918940031534775311 +/- 3.58e-42]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0040-of-0512",
+        "panel": 40,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.5087202664969801853937902902991265201e-5 +/- 4.65e-43]",
+          "modulus_lower": "[4.852683033980856580911174787852047693e-5 +/- 3.06e-42]",
+          "polynomial_coefficients": [
+            "[8.21780748578577850682602701226642e-5 +/- 2.40e-38] + [1.95107804164098078136824199191324e-5 +/- 4.53e-38]j",
+            "[0.0009501411296041744475315837803464091849 +/- 7.77e-41] + [0.0054486463083348417313356293334436487 +/- 5.41e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.196] + [+/- 0.201]j",
+          "center": "[0.0009501411296041744475315837803464091849 +/- 7.77e-41] + [0.0054486463083348417313356293334436487 +/- 5.41e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.19484821923956658897366060298672878961 +/- 2.91e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.89e-3] + [+/- 2.13e-3]j",
+          "center": "[2.048633134761796998485339216244938143e-5 +/- 7.26e-42] + [0.00025995669864302415935555096160314292320 +/- 8.85e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018665593064339994156981574782312404937 +/- 1.26e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0041-of-0512",
+        "panel": 41,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.5172140644194790253310912560999135029e-5 +/- 3.30e-43]",
+          "modulus_lower": "[4.680081519526529763894397421853711459e-5 +/- 2.52e-42]",
+          "polynomial_coefficients": [
+            "[8.06011340912721804125018465470021e-5 +/- 4.10e-38] + [1.89491470795506711244371444990975e-5 +/- 3.00e-38]j",
+            "[0.000931158525566964587194540570180834038 +/- 1.91e-40] + [0.0053014068085107356187446470130453236 +/- 6.21e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.197] + [+/- 0.201]j",
+          "center": "[0.000931158525566964587194540570180834038 +/- 1.91e-40] + [0.0053014068085107356187446470130453236 +/- 6.21e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.19542338847316175212214384194181372423 +/- 2.14e-40]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.90e-3] + [+/- 2.13e-3]j",
+          "center": "[2.468302292276709905202713990490792639e-5 +/- 3.89e-42] + [0.00025403623507163120595446492711033670275 +/- 6.21e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018709236571005102477543180906280697340 +/- 7.23e-42]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0042-of-0512",
+        "panel": 42,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.5260093591774709701067247030724743656e-5 +/- 1.14e-43]",
+          "modulus_lower": "[4.511810225919605692022646140399131325e-5 +/- 5.90e-42]",
+          "polynomial_coefficients": [
+            "[7.90724709256646930699563569078236e-5 +/- 4.82e-38] + [1.83857213824538748281334221701400e-5 +/- 5.81e-38]j",
+            "[0.0009133335482970385277301517135128960945 +/- 7.90e-41] + [0.0051586961731458561009056040802533971 +/- 7.65e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.197] + [+/- 0.202]j",
+          "center": "[0.0009133335482970385277301517135128960945 +/- 7.90e-41] + [0.0051586961731458561009056040802533971 +/- 7.65e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.19599905885912764958248913288976431114 +/- 1.95e-40]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.91e-3] + [+/- 2.13e-3]j",
+          "center": "[2.876224217764094441898703458093677909e-5 +/- 4.66e-42] + [0.00024821650573570672735149167387191937451 +/- 8.08e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018743658197242739604698318021905910981 +/- 1.96e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0043-of-0512",
+        "panel": 43,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.5344148196048001490200507807936205750e-5 +/- 4.43e-43]",
+          "modulus_lower": "[4.3484392450568901711017490060722603316e-5 +/- 7.80e-43]",
+          "polynomial_coefficients": [
+            "[7.759053550718784941775396646335139e-5 +/- 7.05e-39] + [1.78211902733668367537767096564494e-5 +/- 4.02e-38]j",
+            "[0.0008965800396928853832623218522712704726 +/- 8.40e-41] + [0.0050203833309780433735713955911705853 +/- 5.76e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.198] + [+/- 0.202]j",
+          "center": "[0.0008965800396928853832623218522712704726 +/- 8.40e-41] + [0.0050203833309780433735713955911705853 +/- 5.76e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.19657491108569616581535488147330525503 +/- 4.84e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.92e-3] + [+/- 2.13e-3]j",
+          "center": "[3.272624720924516500755729886407152662e-5 +/- 8.08e-42] + [0.00024249369961355840801930233707750517169 +/- 2.62e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018789920672391272252283903588010948085 +/- 3.23e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0044-of-0512",
+        "panel": 44,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.5423047665536717941233577150165231407e-5 +/- 1.43e-43]",
+          "modulus_lower": "[4.189976139028914304741224169524503691e-5 +/- 2.58e-42]",
+          "polynomial_coefficients": [
+            "[7.61538209812302920032056618993011e-5 +/- 6.17e-38] + [1.72561848852123903008681793380674e-5 +/- 3.35e-38]j",
+            "[0.0008808173599511685825103057823071139865 +/- 8.64e-41] + [0.0048863405883036621635273633046381292 +/- 6.40e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.199] + [+/- 0.203]j",
+          "center": "[0.0008808173599511685825103057823071139865 +/- 8.64e-41] + [0.0048863405883036621635273633046381292 +/- 6.40e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.19715056484341271784554698831642741684 +/- 1.34e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.92e-3] + [+/- 2.13e-3]j",
+          "center": "[3.657726210035567313352822260696939338e-5 +/- 4.09e-42] + [0.00023686416415630287741513060328912843033 +/- 5.76e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018831332478475000762771136291213832827 +/- 6.15e-42]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0045-of-0512",
+        "panel": 45,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.5515239590299576537715787940200438011e-5 +/- 3.34e-43]",
+          "modulus_lower": "[4.034461100419516913745163832058285604e-5 +/- 2.16e-42]",
+          "polynomial_coefficients": [
+            "[7.47608630841483084300547190537145e-5 +/- 1.09e-38] + [1.66912837622715942709206160543545e-5 +/- 5.46e-38]j",
+            "[0.0008659700933465203781524976989203423727 +/- 7.32e-41] + [0.0047564436162972935362436288642129512 +/- 4.92e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.199] + [+/- 0.203]j",
+          "center": "[0.0008659700933465203781524976989203423727 +/- 7.32e-41] + [0.0047564436162972935362436288642129512 +/- 4.92e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.19772572592751991608617968654742064473 +/- 1.65e-40]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.93e-3] + [+/- 2.12e-3]j",
+          "center": "[4.031747519941546219549022289641015959e-5 +/- 7.53e-42] + [0.00023132439865835068492586762411988843269 +/- 3.50e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018885712550091344003862038688959140614 +/- 5.00e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0046-of-0512",
+        "panel": 46,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.5597289366349729557530325788257564443e-5 +/- 2.43e-44]",
+          "modulus_lower": "[3.884125556074566436330245632851050331e-5 +/- 5.71e-42]",
+          "polynomial_coefficients": [
+            "[7.34102396639964294156044388728333e-5 +/- 3.03e-38] + [1.61270159324570713788027376267564e-5 +/- 2.64e-38]j",
+            "[0.000851967767199453621107529954770143377 +/- 5.21e-40] + [0.0046305714310824266921606806590716588 +/- 7.12e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.200] + [+/- 0.203]j",
+          "center": "[0.000851967767199453621107529954770143377 +/- 5.21e-40] + [0.0046305714310824266921606806590716588 +/- 7.12e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.19830004391002106016292863689399558733 +/- 5.88e-40]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.94e-3] + [+/- 2.12e-3]j",
+          "center": "[4.394903761988956658601779281525523402e-5 +/- 8.91e-42] + [0.00022587104786595778576231002832130911883 +/- 8.44e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018933770362911468982472665458813422521 +/- 8.84e-42]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0047-of-0512",
+        "panel": 47,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.5672112965135352911568429213946204266e-5 +/- 3.26e-43]",
+          "modulus_lower": "[3.7385688360092381578415131001741078710e-5 +/- 9.46e-43]",
+          "polynomial_coefficients": [
+            "[7.21005701350026489276912045056633e-5 +/- 3.72e-38] + [1.55638638346198426853916885193030e-5 +/- 3.22e-38]j",
+            "[0.0008387445837036468232472685713219107129 +/- 7.38e-41] + [0.0045086063672572784799541523170773871 +/- 5.26e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.200] + [+/- 0.204]j",
+          "center": "[0.0008387445837036468232472685713219107129 +/- 7.38e-41] + [0.0045086063672572784799541523170773871 +/- 5.26e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.19887318087526540557854905683635982608 +/- 3.13e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.95e-3] + [+/- 2.12e-3]j",
+          "center": "[4.747406194254233597132341948565681378e-5 +/- 4.52e-42] + [0.00022050089581914967423216522579565435080 +/- 5.75e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0018974425511645292293874283978845584986 +/- 1.29e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0048-of-0512",
+        "panel": 48,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.5747496609704063539627882316224603288e-5 +/- 8.35e-44]",
+          "modulus_lower": "[3.596906151455598038363954248616958405e-5 +/- 3.35e-42]",
+          "polynomial_coefficients": [
+            "[7.08305148746412108207159974426759e-5 +/- 3.69e-38] + [1.500226610357500989234580401898711e-5 +/- 7.63e-39]j",
+            "[0.000826239164159402530995812696801294805 +/- 5.75e-40] + [0.0043904340456228548028594360630449955 +/- 5.98e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.201] + [+/- 0.204]j",
+          "center": "[0.000826239164159402530995812696801294805 +/- 5.75e-40] + [0.0043904340456228548028594360630449955 +/- 5.98e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.19944480590463775970816456141976466401 +/- 2.27e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.96e-3] + [+/- 2.12e-3]j",
+          "center": "[5.089462110504738932142965168736736814e-5 +/- 6.01e-42] + [0.00021521085992185203590761066738679119225 +/- 8.26e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019032941532171181109653685725098826539 +/- 7.11e-42]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0049-of-0512",
+        "panel": 49,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.5851979698843438563004737836736829627e-5 +/- 7.59e-44]",
+          "modulus_lower": "[3.456180248246639769605251439969008442e-5 +/- 6.15e-42]",
+          "polynomial_coefficients": [
+            "[6.95987745737477320195907282140979e-5 +/- 1.21e-38] + [1.44426202131385864046997369314340e-5 +/- 2.82e-38]j",
+            "[0.000814394305259112660788645143838948570 +/- 2.88e-40] + [0.0042759433356924711477908829238003818 +/- 5.49e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.201] + [+/- 0.205]j",
+          "center": "[0.000814394305259112660788645143838948570 +/- 2.88e-40] + [0.0042759433356924711477908829238003818 +/- 5.49e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20001457425008550236164455550091055358 +/- 3.04e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.97e-3] + [+/- 2.12e-3]j",
+          "center": "[5.421274746430040404610029014520478086e-5 +/- 8.19e-42] + [0.0002099979852350741636604972151225467769 +/- 2.96e-41]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019091821662212788444050915657727488724 +/- 3.64e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0050-of-0512",
+        "panel": 50,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.5919803287582971267400420185030990819e-5 +/- 4.20e-43]",
+          "modulus_lower": "[3.322866504316138573893794098921552099e-5 +/- 1.46e-42]",
+          "polynomial_coefficients": [
+            "[6.840408953981825905532598852687442e-5 +/- 8.80e-39] + [1.38852849896255875483674913084542e-5 +/- 1.39e-38]j",
+            "[0.000803156746980280764058868214760877891 +/- 4.88e-40] + [0.0041650263136730897306492238385544625 +/- 9.25e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.202] + [+/- 0.205]j",
+          "center": "[0.000803156746980280764058868214760877891 +/- 4.88e-40] + [0.0041650263136730897306492238385544625 +/- 9.25e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20058212099564005602150468591868723903 +/- 2.50e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.98e-3] + [+/- 2.12e-3]j",
+          "center": "[5.743043201756025924534232451890147786e-5 +/- 7.82e-42] + [0.00020485943898756611778865649453607034047 +/- 6.17e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019135674989904405748020115553600129206 +/- 1.39e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0051-of-0512",
+        "panel": 51,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.6002071725439066993065602510244665603e-5 +/- 3.32e-43]",
+          "modulus_lower": "[3.191756711908774365867281064536048258e-5 +/- 1.56e-42]",
+          "polynomial_coefficients": [
+            "[6.72452389667728672034696657533459e-5 +/- 1.32e-38] + [1.33305829984730478399157505009498e-5 +/- 3.36e-38]j",
+            "[0.000792476951732599271815971064825134817 +/- 5.39e-40] + [0.0040575782164048897204811083838649211 +/- 5.42e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.202] + [+/- 0.206]j",
+          "center": "[0.000792476951732599271815971064825134817 +/- 5.39e-40] + [0.0040575782164048897204811083838649211 +/- 5.42e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20114713341496803095181164553502087828 +/- 5.58e-41]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.99e-3] + [+/- 2.13e-3]j",
+          "center": "[6.054962376953094711079517153962115117e-5 +/- 4.59e-42] + [0.00019979250529834010371814378981270010626 +/- 9.04e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019204724494146452424505087894406162184 +/- 2.30e-42]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0052-of-0512",
+        "panel": 52,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.6109966630772627100325836170701359336e-5 +/- 2.44e-43]",
+          "modulus_lower": "[3.061637625955598239611015304078878649e-5 +/- 5.19e-42]",
+          "polynomial_coefficients": [
+            "[6.61210401704098987146762667066469e-5 +/- 5.38e-38] + [1.27788028007830636867403484302486e-5 +/- 6.42e-38]j",
+            "[0.000782308894319412584383854891711962409 +/- 5.03e-40] + [0.0039534973918132175485506962786530494 +/- 3.14e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.203] + [+/- 0.206]j",
+          "center": "[0.000782308894319412584383854891711962409 +/- 5.03e-40] + [0.0039534973918132175485506962786530494 +/- 3.14e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20170929458353442518253047690025674089 +/- 3.71e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 1.99e-3] + [+/- 2.13e-3]j",
+          "center": "[6.357222923309601347527375558854600968e-5 +/- 5.25e-42] + [0.00019479458010531623321764244094467244395 +/- 3.60e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019260552283255752485189554084810370506 +/- 4.13e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0053-of-0512",
+        "panel": 53,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.6178193042488496765339145195203445877e-5 +/- 1.79e-43]",
+          "modulus_lower": "[2.938946295354744653394242091419780087e-5 +/- 5.49e-42]",
+          "polynomial_coefficients": [
+            "[6.503034779963261929891515933377377e-5 +/- 5.95e-39] + [1.22302011002928950889057091444556e-5 +/- 2.72e-38]j",
+            "[0.000772609862300018337966101000802154886 +/- 4.88e-40] + [0.0038526852463591811093213124195244745 +/- 4.72e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.204] + [+/- 0.207]j",
+          "center": "[0.000772609862300018337966101000802154886 +/- 4.88e-40] + [0.0038526852463591811093213124195244745 +/- 4.72e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20226823053037177194370005531966656281 +/- 2.08e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.00e-3] + [+/- 2.13e-3]j",
+          "center": "[6.650011205238808313297549368314776075e-5 +/- 8.07e-42] + [0.00018986316629418046046835766293980896080 +/- 8.53e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019322709765511358703420442333968713867 +/- 3.11e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0054-of-0512",
+        "panel": 54,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.6249452082796316937432901041577339478e-5 +/- 4.53e-43]",
+          "modulus_lower": "[2.819322743406163818675203320642392133e-5 +/- 2.13e-42]",
+          "polynomial_coefficients": [
+            "[6.397205302709728369503494604941806e-5 +/- 8.59e-39] + [1.16850047684633959188538199214236e-5 +/- 4.74e-38]j",
+            "[0.0007633402664342838622735243347960931715 +/- 5.96e-41] + [0.0037550461899042361646472443226230098 +/- 5.99e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.204] + [+/- 0.207]j",
+          "center": "[0.0007633402664342838622735243347960931715 +/- 5.96e-41] + [0.0037550461899042361646472443226230098 +/- 5.99e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20282362136748684578968932687383123120 +/- 2.81e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.01e-3] + [+/- 2.13e-3]j",
+          "center": "[6.933509273736261548787274122673807142e-5 +/- 7.83e-42] + [0.00018499586902161881216567068664247130982 +/- 5.93e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019386825395133516199239972662914348686 +/- 2.96e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0055-of-0512",
+        "panel": 55,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.6333304350643861072093801703300673341e-5 +/- 1.40e-43]",
+          "modulus_lower": "[2.701723575107857128009203334606912015e-5 +/- 2.72e-42]",
+          "polynomial_coefficients": [
+            "[6.29450827177640767629007712002931e-5 +/- 2.83e-38] + [1.11434127614846306686402499508404e-5 +/- 4.24e-38]j",
+            "[0.0007544634607434350798138567029127443675 +/- 7.07e-41] + [0.0036604875784172034858254818345812965 +/- 7.49e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.205] + [+/- 0.208]j",
+          "center": "[0.0007544634607434350798138567029127443675 +/- 7.07e-41] + [0.0036604875784172034858254818345812965 +/- 7.49e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20337513148413421036166800060881905527 +/- 1.46e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.02e-3] + [+/- 2.13e-3]j",
+          "center": "[7.207894849999658612449415784340089885e-5 +/- 7.17e-42] + [0.00018019039122694348157866645054880905264 +/- 6.11e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019452880393313964611901605602966076977 +/- 4.55e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0056-of-0512",
+        "panel": 56,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.6401063801734156016818282281001128050e-5 +/- 1.03e-43]",
+          "modulus_lower": "[2.588932537127386816869930868706252290e-5 +/- 2.89e-42]",
+          "polynomial_coefficients": [
+            "[6.19483985918720028024386792253608e-5 +/- 2.98e-38] + [1.06055979409540312996540478707175e-5 +/- 3.48e-38]j",
+            "[0.0007459455717986254036366844388794561382 +/- 8.25e-41] + [0.0035689196549064765295877776907218504 +/- 7.35e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.205] + [+/- 0.208]j",
+          "center": "[0.0007459455717986254036366844388794561382 +/- 8.25e-41] + [0.0035689196549064765295877776907218504 +/- 7.35e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20392243086719432945685995582480963490 +/- 2.49e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.03e-3] + [+/- 2.13e-3]j",
+          "center": "[7.473341318256905519909483182061649132e-5 +/- 7.86e-42] + [0.00017544452932616260950379055705283803945 +/- 4.77e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019520874657155169034614542679562500958 +/- 1.03e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0057-of-0512",
+        "panel": 57,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.6491618945004959548706574339608578790e-5 +/- 4.56e-43]",
+          "modulus_lower": "[2.476978345832872616592124458214930512e-5 +/- 4.17e-42]",
+          "polynomial_coefficients": [
+            "[6.09809963732564457028484383727118e-5 +/- 4.65e-38] + [1.00717087784365014191401144216798e-5 +/- 4.88e-38]j",
+            "[0.0007377553369679757527821450935334723908 +/- 5.54e-41] + [0.0034802554888882474004585532156852423 +/- 2.76e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.206] + [+/- 0.208]j",
+          "center": "[0.0007377553369679757527821450935334723908 +/- 5.54e-41] + [0.0034802554888882474004585532156852423 +/- 2.76e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20446518044857181750020875164199610441 +/- 4.38e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.04e-3] + [+/- 2.13e-3]j",
+          "center": "[7.730017726942215892591003800760063313e-5 +/- 7.91e-42] + [0.00017075616908261659029118900710031425660 +/- 4.46e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019592018352225925927354236412193634274 +/- 2.15e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0058-of-0512",
+        "panel": 58,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.6673110523987958216222455375690215564e-5 +/- 1.19e-43]",
+          "modulus_lower": "[2.358966867837221256392614928466987862e-5 +/- 5.81e-42]",
+          "polynomial_coefficients": [
+            "[6.004190493327354188890510044984694e-5 +/- 4.41e-39] + [9.54187098030443575646941667400824e-6 +/- 8.93e-39]j",
+            "[0.000729863951089941911942737817753368290 +/- 2.69e-40] + [0.0033944109147430456818739230584469624 +/- 2.59e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.206] + [+/- 0.209]j",
+          "center": "[0.000729863951089941911942737817753368290 +/- 2.69e-40] + [0.0033944109147430456818739230584469624 +/- 2.59e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20500307482824437677395973759435559913 +/- 2.95e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.05e-3] + [+/- 2.14e-3]j",
+          "center": "[7.978088797391981587189824232098089851e-5 +/- 7.83e-42] + [0.00016612328164819326092090795432554273248 +/- 4.45e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019662658479405405756696038614535818570 +/- 2.56e-42]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0059-of-0512",
+        "panel": 59,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.6643180506508320110111763740167362365e-5 +/- 4.23e-43]",
+          "modulus_lower": "[2.2650561700622212076653586316137366080e-5 +/- 8.61e-43]",
+          "polynomial_coefficients": [
+            "[5.913018543184317757366308399014088e-5 +/- 7.55e-39] + [9.0161890055374949159983088975423e-6 +/- 9.45e-39]j",
+            "[0.0007222449213646342514039133675396442413 +/- 6.63e-41] + [0.003311304469244873149857966154741007 +/- 9.71e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.207] + [+/- 0.209]j",
+          "center": "[0.0007222449213646342514039133675396442413 +/- 6.63e-41] + [0.003311304469244873149857966154741007 +/- 9.71e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20553577156306957232609659660221581313 +/- 4.10e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.06e-3] + [+/- 2.14e-3]j",
+          "center": "[8.217714939302958642233787323050364648e-5 +/- 6.73e-42] + [0.00016154391976938743810329746075638013281 +/- 4.14e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019717058352374665655104789506543017471 +/- 1.05e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0060-of-0512",
+        "panel": 60,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.6718373911801409777432867192624629991e-5 +/- 2.89e-43]",
+          "modulus_lower": "[2.163516286993764224608721686683292233e-5 +/- 5.59e-42]",
+          "polynomial_coefficients": [
+            "[5.824493045872508947824464087261731e-5 +/- 3.38e-39] + [8.4947475107411893335829233819822e-6 +/- 5.60e-38]j",
+            "[0.0007148739300237069022037061927221657243 +/- 8.17e-41] + [0.0032308573284748516585285216251577367 +/- 4.63e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.207] + [+/- 0.210]j",
+          "center": "[0.0007148739300237069022037061927221657243 +/- 8.17e-41] + [0.0032308573284748516585285216251577367 +/- 4.63e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20606291322801838041254476033004835243 +/- 3.96e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.07e-3] + [+/- 2.14e-3]j",
+          "center": "[8.449052272243548532618118152015540545e-5 +/- 3.24e-42] + [0.0001570162141523429017277505015393046506 +/- 3.93e-41]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019816660643198663565341204857586047820 +/- 1.38e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0061-of-0512",
+        "panel": 61,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.6802734528935565758039837685663108252e-5 +/- 3.17e-43]",
+          "modulus_lower": "[2.063869599150602052123436444314213422e-5 +/- 5.47e-42]",
+          "polynomial_coefficients": [
+            "[5.738526317564563057616044972064628e-5 +/- 6.77e-39] + [7.9776126991233653473756248786230e-6 +/- 6.32e-38]j",
+            "[0.0007077287044335925370042161830497207120 +/- 7.72e-41] + [0.0031529932444388890366848698931789840 +/- 7.21e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.208] + [+/- 0.210]j",
+          "center": "[0.0007077287044335925370042161830497207120 +/- 7.72e-41] + [0.0031529932444388890366848698931789840 +/- 7.21e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20658424825908253872962759926665374231 +/- 1.55e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.08e-3] + [+/- 2.15e-3]j",
+          "center": "[8.67225265255515799858732073346345715e-5 +/- 5.07e-41] + [0.00015253836998121339974410909379187728518 +/- 6.07e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019889621078637503732129617870965600433 +/- 4.79e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0062-of-0512",
+        "panel": 62,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.6875339284547958974945895860106151360e-5 +/- 2.42e-43]",
+          "modulus_lower": "[1.968137347697653166530450079402389932e-5 +/- 5.66e-42]",
+          "polynomial_coefficients": [
+            "[5.65503364655787522929930588588832e-5 +/- 4.73e-38] + [7.4648335954986128060184569221747e-6 +/- 5.59e-38]j",
+            "[0.0007007888943876602189098079520590545144 +/- 2.58e-41] + [0.0030776384815576554587757129866076866 +/- 2.80e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.208] + [+/- 0.211]j",
+          "center": "[0.0007007888943876602189098079520590545144 +/- 2.58e-41] + [0.0030776384815576554587757129866076866 +/- 2.80e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20709940457861806805539684379054100522 +/- 4.20e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.09e-3] + [+/- 2.15e-3]j",
+          "center": "[8.887463705030060334699726354301674291e-5 +/- 6.15e-42] + [0.00014810866358426393930326769865502001267 +/- 5.88e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0019969082853247265198561945980117263028 +/- 1.09e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0063-of-0512",
+        "panel": 63,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.6952847875028862781348036030362342465e-5 +/- 5.00e-43]",
+          "modulus_lower": "[1.8745846230175274952097478795867333377e-5 +/- 9.19e-43]",
+          "polynomial_coefficients": [
+            "[5.573933208520760219928380507781185e-5 +/- 5.99e-39] + [6.9564432440341605889955189923057e-6 +/- 3.84e-38]j",
+            "[0.000694035956133444084659167572226579068 +/- 2.78e-40] + [0.0030047217532126815897619565021159360 +/- 3.07e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.209] + [+/- 0.211]j",
+          "center": "[0.000694035956133444084659167572226579068 +/- 2.78e-40] + [0.0030047217532126815897619565021159360 +/- 3.07e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20760807341157340872540622787012061600 +/- 4.33e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.10e-3] + [+/- 2.15e-3]j",
+          "center": "[9.094828858798790875705986280763681861e-5 +/- 8.65e-42] + [0.00014372543924212491470854269337564801389 +/- 8.93e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0020051681801412390698487567789500017007 +/- 2.82e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0064-of-0512",
+        "panel": 64,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.7023896085648769813690137014516491373e-5 +/- 3.38e-43]",
+          "modulus_lower": "[1.7842809856230681754647048339120888336e-5 +/- 8.58e-43]",
+          "polynomial_coefficients": [
+            "[5.49514598281110495936463422594898e-5 +/- 4.43e-38] + [6.4524598348677728032463107865624e-6 +/- 1.55e-38]j",
+            "[0.000687453042928217600282536636768782046 +/- 4.94e-40] + [0.0029341741585675838732694131749667576 +/- 6.27e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.209] + [+/- 0.212]j",
+          "center": "[0.000687453042928217600282536636768782046 +/- 4.94e-40] + [0.0029341741585675838732694131749667576 +/- 6.27e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20810996343431309965848444334087801398 +/- 3.42e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.11e-3] + [+/- 2.16e-3]j",
+          "center": "[9.294487386895654984497738837490032893e-5 +/- 4.70e-42] + [0.00013938710613291617511962788844570582114 +/- 5.95e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0020131523493178473291348094070549170040 +/- 2.83e-42]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0065-of-0512",
+        "panel": 65,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.7103968454422050503094555613864093606e-5 +/- 3.43e-43]",
+          "modulus_lower": "[1.695613153393446877689386179623157386e-5 +/- 3.31e-42]",
+          "polynomial_coefficients": [
+            "[5.41859566982425423092850635953255e-5 +/- 4.14e-38] + [5.9528877577354200045789411888109e-6 +/- 5.58e-38]j",
+            "[0.000681024901801989546168414335625129752 +/- 2.68e-40] + [0.0028659291197924569027932761855481659 +/- 8.74e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.210] + [+/- 0.212]j",
+          "center": "[0.000681024901801989546168414335625129752 +/- 2.68e-40] + [0.0028659291197924569027932761855481659 +/- 8.74e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20860474175259469851825843352239489020 +/- 2.48e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.12e-3] + [+/- 2.16e-3]j",
+          "center": "[9.486574449010229176035280396206417208e-5 +/- 3.50e-42] + [0.00013509213540886929813544803380409575766 +/- 2.58e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0020218744619902292596949690438422333436 +/- 4.59e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0066-of-0512",
+        "panel": 66,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.7167127259680390990403138922157796965e-5 +/- 2.40e-43]",
+          "modulus_lower": "[1.611112056850859519135148306601660810e-5 +/- 4.38e-42]",
+          "polynomial_coefficients": [
+            "[5.34420860897430894526083378082149e-5 +/- 4.96e-38] + [5.4577185961066088104587379348231e-6 +/- 4.88e-38]j",
+            "[0.000674737776163801539208719759699306451 +/- 3.08e-40] + [0.0027999223198375833288054082004236988 +/- 8.80e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.210] + [+/- 0.212]j",
+          "center": "[0.000674737776163801539208719759699306451 +/- 3.08e-40] + [0.0027999223198375833288054082004236988 +/- 8.80e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20909211185675447965952139553520559056 +/- 4.15e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.13e-3] + [+/- 2.17e-3]j",
+          "center": "[9.671221136980630642132616969774971949e-5 +/- 9.05e-42] + [0.00013083905739932530885860639813245143159 +/- 6.98e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0020297272656859106543876309870756462595 +/- 2.43e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0067-of-0512",
+        "panel": 67,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.7242757210155679909380483124529761699e-5 +/- 3.76e-43]",
+          "modulus_lower": "[1.527778325751721010227356417069193229e-5 +/- 5.48e-42]",
+          "polynomial_coefficients": [
+            "[5.27191369873729505368675773979703e-5 +/- 2.39e-38] + [4.9669320510946357583037524818792e-6 +/- 2.17e-38]j",
+            "[0.000668579314079703959650125000280240783 +/- 5.33e-40] + [0.0027360916409016090844463775511030690 +/- 4.78e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.211] + [+/- 0.213]j",
+          "center": "[0.000668579314079703959650125000280240783 +/- 5.33e-40] + [0.0027360916409016090844463775511030690 +/- 4.78e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.20957177682553003675225503939545846429 +/- 4.93e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.14e-3] + [+/- 2.17e-3]j",
+          "center": "[9.84855452259487430810569463801584789e-5 +/- 4.89e-41] + [0.00012662645893509996881682450053929755995 +/- 4.50e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0020382694272128284125010478242262285360 +/- 2.99e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0068-of-0512",
+        "panel": 68,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.7317431575426012831267071570405078520e-5 +/- 3.43e-43]",
+          "modulus_lower": "[1.446895632015801262928867036407343711e-5 +/- 4.38e-42]",
+          "polynomial_coefficients": [
+            "[5.20164231745466176110026523815577e-5 +/- 2.68e-38] + [4.4804968152845070505918556591496e-6 +/- 1.93e-38]j",
+            "[0.000662538481851836918989917535327549558 +/- 2.68e-40] + [0.0026743771036903465909695398750045570 +/- 6.76e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.211] + [+/- 0.213]j",
+          "center": "[0.000662538481851836918989917535327549558 +/- 2.68e-40] + [0.0026743771036903465909695398750045570 +/- 6.76e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.21004340713972017117485325468240264235 +/- 2.15e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.15e-3] + [+/- 2.18e-3]j",
+          "center": "[0.0001001869770732856618038197904496655610 +/- 3.07e-41] + [0.00012245298078923975374637800328514458670 +/- 5.09e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0020478059761552725244223022502940849938 +/- 3.95e-42]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0069-of-0512",
+        "panel": 69,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.7375491746207733159980341644079360381e-5 +/- 2.59e-43]",
+          "modulus_lower": "[1.369972690557748050135558309543584087e-5 +/- 4.10e-42]",
+          "polynomial_coefficients": [
+            "[5.133328245674959044997365253948373e-5 +/- 7.44e-39] + [3.9983713823552730071142491397041e-6 +/- 6.00e-38]j",
+            "[0.0006566054827252133102577502654639829416 +/- 9.05e-41] + [0.0026147208075522482273456148504919839 +/- 9.82e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.212] + [+/- 0.214]j",
+          "center": "[0.0006566054827252133102577502654639829416 +/- 9.05e-41] + [0.0026147208075522482273456148504919839 +/- 9.82e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.21050674078092874477020110508171707655 +/- 3.08e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.17e-3] + [+/- 2.18e-3]j",
+          "center": "[0.00010181769873650531928882534415947702655 +/- 6.04e-42] + [0.00011831731522951588345474172037086191267 +/- 5.83e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0020582842823307241703125849153517170970 +/- 4.52e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0070-of-0512",
+        "panel": 70,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.7479141285075812548641875499295949821e-5 +/- 4.97e-43]",
+          "modulus_lower": "[1.2907338121313729479635957044072032708e-5 +/- 8.66e-43]",
+          "polynomial_coefficients": [
+            "[5.066907590128518802663482034631670e-5 +/- 7.72e-39] + [3.5205048088786383697623705302249e-6 +/- 3.80e-38]j",
+            "[0.0006507716803800245308764260698808357119 +/- 7.75e-41] + [0.0025570668716154119903816166470278403 +/- 7.83e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.212] + [+/- 0.214]j",
+          "center": "[0.0006507716803800245308764260698808357119 +/- 7.75e-41] + [0.0025570668716154119903816166470278403 +/- 7.83e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.21096150873372174058272609810879185493 +/- 2.79e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.18e-3] + [+/- 2.19e-3]j",
+          "center": "[0.00010337886337572827670852615433716437110 +/- 6.47e-42] + [0.00011421820367790278709981682814245118607 +/- 4.05e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0020677700654661661071599603021136147938 +/- 1.64e-42]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0071-of-0512",
+        "panel": 71,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.7515867843194897553938116043925428990e-5 +/- 1.56e-43]",
+          "modulus_lower": "[1.220376670517958326573533118977909081e-5 +/- 5.03e-42]",
+          "polynomial_coefficients": [
+            "[5.00231870937113513864158420574313e-5 +/- 2.46e-38] + [3.0468374210479085006930688450666e-6 +/- 1.77e-38]j",
+            "[0.0006450295270754337340068929051994928159 +/- 5.43e-41] + [0.0025013613769749969140132606071347254 +/- 4.86e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.213] + [+/- 0.214]j",
+          "center": "[0.0006450295270754337340068929051994928159 +/- 5.43e-41] + [0.0025013613769749969140132606071347254 +/- 4.86e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.21140737456417122647030839728048455807 +/- 4.19e-39]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.19e-3] + [+/- 2.19e-3]j",
+          "center": "[0.00010487158602139100629924151064642501296 +/- 6.09e-42] + [0.00011015443447262374739459983574718648924 +/- 5.79e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0020774135153469315632977223807603256892 +/- 1.25e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0072-of-0512",
+        "panel": 72,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.7585089661743619062139467727476539231e-5 +/- 4.26e-43]",
+          "modulus_lower": "[1.1489076119642883256841861915358674854e-5 +/- 7.03e-43]",
+          "polynomial_coefficients": [
+            "[4.939502140833954869914013130482999e-5 +/- 5.43e-39] + [2.5773014793893309071215469430172e-6 +/- 4.34e-38]j",
+            "[0.0006393724960851096539293791920499643311 +/- 4.88e-41] + [0.0024475523099929986925449298951207311 +/- 1.21e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.213] + [+/- 0.215]j",
+          "center": "[0.0006393724960851096539293791920499643311 +/- 4.88e-41] + [0.0024475523099929986925449298951207311 +/- 1.21e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.21184407526606591900633274744636047753 +/- 1.49e-40]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.20e-3] + [+/- 2.20e-3]j",
+          "center": "[0.00010629694411579295029376956982503088511 +/- 7.53e-42] + [0.00010612484072835034326891950895443983427 +/- 6.82e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0020865077757652998501070555415476847974 +/- 2.99e-42]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0073-of-0512",
+        "panel": 73,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.7642203950552800871892015328620577163e-5 +/- 1.76e-43]",
+          "modulus_lower": "[1.080736778063997380674819688322023633e-5 +/- 3.82e-42]",
+          "polynomial_coefficients": [
+            "[4.878400529859474622773607421777342e-5 +/- 9.20e-39] + [2.11182179021569133015034935851872e-6 +/- 7.85e-39]j",
+            "[0.0006337950183459718084266754090094764251 +/- 6.59e-41] + [0.0023955895067855996483086045145682874 +/- 9.74e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.213] + [+/- 0.215]j",
+          "center": "[0.0006337950183459718084266754090094764251 +/- 6.59e-41] + [0.0023955895067855996483086045145682874 +/- 9.74e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.21227132717136208103439487836126632968 +/- 9.46e-40]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.21e-3] + [+/- 2.20e-3]j",
+          "center": "[0.00010765597805864027432243279491785870050 +/- 4.19e-42] + [0.00010212829829037042665695889098742554779 +/- 4.10e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0020971171277960708733415512745078891312 +/- 2.93e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0074-of-0512",
+        "panel": 74,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.7701738456219223873452782941139831786e-5 +/- 2.61e-43]",
+          "modulus_lower": "[1.0143629104455607095696596295339396120e-5 +/- 9.33e-43]",
+          "polynomial_coefficients": [
+            "[4.81895856023451755328901313646384e-5 +/- 4.01e-38] + [1.6503162830307574471255804837710e-6 +/- 5.26e-38]j",
+            "[0.000628292422985496368248448106896830723 +/- 4.03e-40] + [0.0023454245989433068764196121946952189 +/- 6.23e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.214] + [+/- 0.216]j",
+          "center": "[0.000628292422985496368248448106896830723 +/- 4.03e-40] + [0.0023454245989433068764196121946952189 +/- 6.23e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.21268890168279896877169070655600036163 +/- 9.99e-40]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.22e-3] + [+/- 2.21e-3]j",
+          "center": "[0.00010894969175436473082102528664449891948 +/- 8.62e-42] + [9.816372377859669626914973505904526973e-5 +/- 6.34e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0021069335234264744973775083707107376612 +/- 2.64e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0075-of-0512",
+        "panel": 75,
+        "panel_count": 512
+      },
+      {
+        "delta": {
+          "excludes_zero": true,
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[3.7767606614964426049813490785176379738e-5 +/- 3.89e-44]",
+          "modulus_lower": "[9.49347797837540575801996512345989028e-6 +/- 3.68e-42]",
+          "polynomial_coefficients": [
+            "[4.76112288644097662176912777454163e-5 +/- 2.59e-38] + [1.1926965383110901819385674116347e-6 +/- 2.55e-38]j",
+            "[0.0006228608815944929738561697263321548235 +/- 9.31e-41] + [0.0022970109604910811385014568486440112 +/- 5.75e-38]j"
+          ]
+        },
+        "delta_omega": {
+          "ball": "[+/- 0.214] + [+/- 0.216]j",
+          "center": "[0.0006228608815944929738561697263321548235 +/- 9.31e-41] + [0.0022970109604910811385014568486440112 +/- 5.75e-38]j",
+          "equals_affine_slope": true,
+          "excludes_zero": false,
+          "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+          "independent_residual_radius": "[0.21309649126007978344289237702841534635 +/- 5.53e-40]"
+        },
+        "delta_tau": {
+          "ball": "[+/- 2.23e-3] + [+/- 2.22e-3]j",
+          "center": "[0.00011017905315899154854511476919753931725 +/- 3.77e-42] + [9.423007271747398029982517586589096936e-5 +/- 4.34e-42]j",
+          "excludes_zero": false,
+          "formula": "Delta_tau=q_H_tau-q_out_tau",
+          "independent_residual_radius": "[0.0021173301057719486129918299486454793831 +/- 4.49e-41]"
+        },
+        "interface_gates": {
+          "fixed_q_chart": true,
+          "opposite_moving_phases": true,
+          "post_normalization_finite": true,
+          "shared_center": true,
+          "shared_generator": true
+        },
+        "match_radius": 32,
+        "omega_generator_id": "qnm-boundary-omega-0076-of-0512",
+        "panel": 76,
+        "panel_count": 512
+      }
+    ],
+    "schema": "phase3-axial-qnm-projective-evans-riccati-run-v7",
+    "scope": {
+      "QNM_or_EP2": false,
+      "common_match_radius": 32,
+      "full_closed_contour": false
+    },
+    "status": "PANELS_0_THROUGH_76_AGGREGATED_ENDPOINT_EXPORT_FAIL_CLOSED",
+    "summary": {
+      "all_completed_deltas_exclude_zero": true,
+      "completed_panel_count": 77,
+      "contiguous_prefix": true,
+      "delta_omega_excludes_zero_panel_count": 0,
+      "delta_tau_excludes_zero_panel_count": 0,
+      "first_panel": 0,
+      "full_contour_panel_count": 512,
+      "last_panel": 76,
+      "minimum_delta_modulus_lower": "[9.49347797837540575801996512345989028e-6 +/- 3.68e-42]",
+      "minimum_delta_modulus_lower_panel": 76,
+      "two_sided_interface_gates_pass": true
+    }
+  },
+  "run": {
+    "path": "black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v7/rail-v7-run.json",
+    "sha256": "52b5c05cd4135c4f88f935891502854100e471e5a1a9e6e4d8acb652be379031"
+  },
+  "schema": "phase3-axial-qnm-projective-evans-riccati-rail-v7",
+  "status": "PANELS_0_THROUGH_76_AGGREGATED_ENDPOINT_EXPORT_FAIL_CLOSED"
+}

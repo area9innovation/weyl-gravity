@@ -1,0 +1,48 @@
+{
+  "claim_boundary": "one correlated mixed-horizon radial successor over a declared complex omega disk",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.correlated_affine_seed_successor",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.produce_correlated_affine_seed_successor --check",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.verify_correlated_affine_seed_successor",
+    "python3 -m unittest -v black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.test_correlated_affine_seed_successor"
+  ],
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "higher_tiers_not_run": "Tier 2/3 not required: local representation successor only; no shared operator or paper theorem changed",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_HORIZON_CORRELATED_AFFINE_SEED_SUCCESSOR",
+  "schema": "phase3-receipt-v1",
+  "status": "ONE_CORRELATED_RADIAL_SUCCESSOR_CERTIFIED",
+  "validation": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.correlated_affine_seed_successor",
+      "elapsed_seconds": 84.73,
+      "output_sha256": "04284b716621d5be284040cddb0289df0f754f2cac9990078e7212af20f7a46c",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.produce_correlated_affine_seed_successor --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.verify_correlated_affine_seed_successor",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.test_correlated_affine_seed_successor",
+      "status": "PASS_6_TESTS"
+    },
+    {
+      "command": "Draft202012Validator(schema).validate(certificate)",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m py_compile <four changed Python files>",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check -- black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1",
+      "status": "PASS"
+    }
+  ]
+}

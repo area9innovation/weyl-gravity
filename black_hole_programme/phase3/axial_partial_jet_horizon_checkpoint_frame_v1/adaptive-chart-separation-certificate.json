@@ -1,0 +1,296 @@
+{
+  "claim_flags": {
+    "H4_certified": false,
+    "T_plus_certified": false,
+    "finite_candidate_atlas_exhausted": true,
+    "midpoint_candidate_constructed": true,
+    "midpoint_candidate_denominator_excludes_zero": false,
+    "midpoint_only_mutant_killed": true,
+    "next_base_panel_completed": false,
+    "r4_reached": false,
+    "successor_substep_certified": false,
+    "universal_fixed_linear_obstruction_certified": true
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a chart obstruction for a stronger affine or Taylor-model enclosure",
+    "a successor checkpoint beyond the current obstruction",
+    "transport to r=4",
+    "a complete typed H4 frame, T_plus, Gram, or Stokes identity",
+    "any LORENTZIAN-CAUSAL theorem"
+  ],
+  "finite_candidate_atlas": {
+    "e2": {
+      "denominator": "[+/- 5.12] + [+/- 4.12]j",
+      "excludes_zero": false,
+      "midpoint": [
+        "[0.9999999999941758275507809794865814435126296950869001806220505351345031047693 +/- 4.08e-77]",
+        "[-1.745974298771030944877584650897072434307761344042090587000498058869781364121e-11 +/- 3.32e-87]"
+      ],
+      "midpoint_modulus_nonzero": true,
+      "modulus_lower": "0",
+      "row": [
+        "0",
+        "0",
+        "1",
+        "0"
+      ]
+    },
+    "e2+e3": {
+      "denominator": "[+/- 6.31e+3] + [+/- 6.29e+3]j",
+      "excludes_zero": false,
+      "midpoint": [
+        "[0.4999999641842179100411330593605495170651208429494752218225502744221719492713 +/- 7.43e-78]",
+        "[-1.073686462559219566817793278142337048197536151648088409719227900696533468437e-7 +/- 1.16e-83]"
+      ],
+      "midpoint_modulus_nonzero": true,
+      "modulus_lower": "0",
+      "row": [
+        "0",
+        "0",
+        "1",
+        "1"
+      ]
+    },
+    "e2-e3": {
+      "denominator": "[+/- 6.31e+3] + [+/- 6.29e+3]j",
+      "excludes_zero": false,
+      "midpoint": [
+        "[1.500000035804133745060428899612613369960138547224325139421550795846834260267 +/- 2.18e-76]",
+        "[1.073337267699465360628817761212157633710674599379279991601827801084759512164e-7 +/- 5.69e-84]"
+      ],
+      "midpoint_modulus_nonzero": true,
+      "modulus_lower": "0",
+      "row": [
+        "0",
+        "0",
+        "1",
+        "-1"
+      ]
+    },
+    "e3": {
+      "denominator": "[+/- 6.31e+3] + [+/- 6.29e+3]j",
+      "excludes_zero": false,
+      "midpoint": [
+        "[-0.5000000358099579175096479201260319264475088521374249587995002607123311554980 +/- 3.34e-77]",
+        "[-1.073511865129342463723305519677247340954105375513684200660527850890646490300e-7 +/- 4.76e-83]"
+      ],
+      "midpoint_modulus_nonzero": true,
+      "modulus_lower": "0",
+      "row": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    "midpoint_rounded_half_integer": {
+      "denominator": "[+/- 3.16e+3] + [+/- 3.15e+3]j",
+      "excludes_zero": false,
+      "midpoint": [
+        "[1.250000017899154786305604939549597406736384121155612660021800665490668682518 +/- 2.34e-76]",
+        "[5.365813351347941287671650013735339632336219116224378912715638756394362670138e-8 +/- 2.40e-84]"
+      ],
+      "midpoint_modulus_nonzero": true,
+      "modulus_lower": "0",
+      "row": [
+        "0",
+        "0",
+        "1",
+        "-1/2"
+      ]
+    }
+  },
+  "imports": {
+    "adaptive_chart_audit": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/adaptive_chart_separation.py",
+      "sha256": "4fca2f469ea667837af784c6d813d4eb4550341c03f6f59caa2fb01c957bca5f"
+    },
+    "checkpoint_transport": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/checkpoint_transport.py",
+      "sha256": "1ef4535ba150c90719d4fae596cd880e83856f69342837c509719fcbffcaef8c"
+    },
+    "multipanel_successor_certificate": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/shared-remainder-multipanel-successor-certificate.json",
+      "sha256": "9a11e583a4dffefb6d97f8962fff5e1e002df3943e84a1410c9206c09de5faf4"
+    },
+    "multipanel_successor_run": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/shared-remainder-multipanel-successor-run.json",
+      "sha256": "dc1fa96d0d3b23cdfe61fd53326e4d8bdbe41496fc24d2c39b3a175b71a4983a"
+    },
+    "shared_reciprocal_normalizer": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot_switch_shared_remainder_preflight.py",
+      "sha256": "bf568fdce8fc20d5b4c7442d99ee3565a3e63c25943333f091e9567aec11fa3e"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "midpoint_adaptive_chart": {
+    "candidate": {
+      "denominator": "[+/- 3.16e+3] + [+/- 3.15e+3]j",
+      "excludes_zero": false,
+      "midpoint": [
+        "[1.250000017899154786305604939549597406736384121155612660021800665490668682518 +/- 2.34e-76]",
+        "[5.365813351347941287671650013735339632336219116224378912715638756394362670138e-8 +/- 2.40e-84]"
+      ],
+      "midpoint_modulus_nonzero": true,
+      "modulus_lower": "0",
+      "row": [
+        "0",
+        "0",
+        "1",
+        "-1/2"
+      ]
+    },
+    "certified": false,
+    "determinant": "1",
+    "matrix": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "-1/2"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "rule": "round the terminal base midpoint direction to half-integers"
+  },
+  "mutation_witness": {
+    "correct_full_ball_gate_accepts": false,
+    "mutant_accepts": true,
+    "mutant_rule": "accept if the candidate midpoint is nonzero",
+    "mutation_killed": true
+  },
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_HORIZON_ADAPTIVE_CHART_SEPARATION",
+  "run": {
+    "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/adaptive-chart-separation-run.json",
+    "sha256": "80206e9e68175aa18d36844aa48abe0d84527cab2b6cdc7147dcce7996d34231"
+  },
+  "schema": "phase3-axial-horizon-adaptive-chart-separation-v1",
+  "source": {
+    "accepted_substeps": 9,
+    "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/shared-remainder-multipanel-successor-run.json",
+    "rho": "12297/34359738368",
+    "sha256": "dc1fa96d0d3b23cdfe61fd53326e4d8bdbe41496fc24d2c39b3a175b71a4983a"
+  },
+  "status": "UNIVERSAL_CARTESIAN_FIXED_CHART_OBSTRUCTION",
+  "terminal": {
+    "attempted_endpoint_rho": "6149/17179869184",
+    "gate": "UNIVERSAL_FIXED_LINEAR_CHART_SEPARATION_OBSTRUCTION",
+    "rho": "12297/34359738368",
+    "successor_substeps_accepted": 0
+  },
+  "terminal_raw_enclosure": {
+    "base_component_zero_membership": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "content_sha256": "d432af3aaf04c5658845f44a9fa1f27670e4058294fb81274ace276ef70ee0d0",
+    "payload": {
+      "base": [
+        {
+          "ball": "[+/- 0.229] + [+/- 0.229]j",
+          "modulus_upper": "[0.3230684013050051789681365528086707884712689644504963920416087500829215016875 +/- 2.40e-77]",
+          "radius_upper": "0.2284466798882931470870971679687500000000000000000000000000000000000000000000"
+        },
+        {
+          "ball": "[+/- 0.229] + [+/- 0.229]j",
+          "modulus_upper": "[0.3226201493902105620296081169688039449551679880070264315190252976054805420417 +/- 1.56e-77]",
+          "radius_upper": "0.2281270839739590883255004882812500000000000000000000000000000000000000000000"
+        },
+        {
+          "ball": "[+/- 5.12] + [+/- 4.12]j",
+          "modulus_upper": "[6.562240108503208815978612941636525762863695793468667510253926967467631596698 +/- 1.88e-76]",
+          "radius_upper": "4.113188363611698150634765625000000000000000000000000000000000000000000000000"
+        },
+        {
+          "ball": "[+/- 6.31e+3] + [+/- 6.29e+3]j",
+          "modulus_upper": "[8899.245218502350376178712114935278636079330649554461694889216692040973734537 +/- 2.52e-73]",
+          "radius_upper": "6303.973007202148437500000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "cumulative_chart": [
+        [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "tangent": [
+        {
+          "ball": "[+/- 19.7] + [+/- 19.7]j",
+          "modulus_upper": "[27.82223501938108058762704488935121669367773670047550645428130489370673569012 +/- 4.81e-75]",
+          "radius_upper": "19.67360511422157287597656250000000000000000000000000000000000000000000000000"
+        },
+        {
+          "ball": "[+/- 7.69] + [+/- 7.69]j",
+          "modulus_upper": "[10.86979939327059868374954313150717382609588110953081621133453645533315609431 +/- 2.87e-75]",
+          "radius_upper": "7.686111614108085632324218750000000000000000000000000000000000000000000000000"
+        },
+        {
+          "ball": "[+/- 4.12] + [+/- 4.12]j",
+          "modulus_upper": "[5.816925477684232815164920138160621684901702049783052917978915918493183815158 +/- 2.44e-76]",
+          "radius_upper": "4.113188363611698150634765625000000000000000000000000000000000000000000000000"
+        },
+        {
+          "ball": "[+/- 4.37e+7] + [+/- 4.37e+7]j",
+          "modulus_upper": "[61719951.46972934475243834121933113313198355524344205229159008355132480076853 +/- 1.02e-69]",
+          "radius_upper": "43642600.56250000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    "rho": "6149/17179869184",
+    "state_finite": true,
+    "taylor_gate": {
+      "gate": null,
+      "scaled_norm": "[0.002761350096989414119687931667433241602903216965605032344275058356442654473259 +/- 1.51e-79]",
+      "tail": "[0.01921344754902854596149219349372535948198862739023758101454714993756237138316 +/- 3.19e-78]"
+    },
+    "zero_vector_in_cartesian_base_enclosure": true
+  },
+  "universal_linear_separation": {
+    "certified": true,
+    "conclusion": "for every fixed complex row m, 0=m*0 belongs to the enclosure image m(B); no fixed GL/Mobius denominator can be certified nonzero from this enclosure",
+    "premise": "0 belongs to the Cartesian enclosure of the base vector",
+    "scope": "the current rectangular Cartesian enclosure only; a stronger affine/Taylor-model set may exclude the zero vector"
+  }
+}

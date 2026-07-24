@@ -1,0 +1,158 @@
+{
+  "claim_flags": {
+    "H4_certified": false,
+    "T_plus_certified": false,
+    "correlated_pivot_certified": false,
+    "earliest_restart_identified": true,
+    "last_checkpoint_affine_resumable": false,
+    "next_base_panel_completed": false,
+    "r4_reached": false,
+    "rerun_export_contract_emitted": true,
+    "shared_dual_tau_affine_remainder_present": false,
+    "shared_omega_taylor_model_present": false,
+    "successor_substep_certified": false,
+    "terminal_enclosure_affine_resumable": false
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "that the true transported line contains the zero vector",
+    "an obstruction for a correlated affine or Taylor-model enclosure",
+    "a correlated pivot or successor radial substep",
+    "transport to r=4",
+    "a complete typed H4 frame, T_plus, Gram, or Stokes identity",
+    "any LORENTZIAN-CAUSAL theorem"
+  ],
+  "imports": {
+    "adaptive_run": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/adaptive-chart-separation-run.json",
+      "sha256": "80206e9e68175aa18d36844aa48abe0d84527cab2b6cdc7147dcce7996d34231"
+    },
+    "audit": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated_affine_export_audit.py",
+      "sha256": "d304e91ade8c226deda507514ed581433f8d310fcc1ccf64d01f088918473736"
+    },
+    "checkpoint_transport": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/checkpoint_transport.py",
+      "sha256": "1ef4535ba150c90719d4fae596cd880e83856f69342837c509719fcbffcaef8c"
+    },
+    "multipanel_run": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/shared-remainder-multipanel-successor-run.json",
+      "sha256": "dc1fa96d0d3b23cdfe61fd53326e4d8bdbe41496fc24d2c39b3a175b71a4983a"
+    },
+    "run": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated-affine-export-audit-run.json",
+      "sha256": "8855e1c4e82c6c81f947723630afc464cd771953f3035dd4a13155982445bf7f"
+    }
+  },
+  "last_accepted_cartesian_checkpoint": {
+    "content_sha256": "aebaa463bddeedea5592448f4f8511efe195848ebd9e156c7b5209619966cee9",
+    "resumable_as_correlated_affine_state": false,
+    "rho": "12297/34359738368"
+  },
+  "lifecycle": "CLASSIFIED",
+  "representation_audit": {
+    "addressed_checkpoint_has_no_correlated_payload": true,
+    "dual_line_has_no_affine_generator_field": true,
+    "frequency_substituted_before_numeric_transport": true,
+    "last_checkpoint_has_no_correlated_export": true,
+    "line_payload_serializes_only_ball_coordinates": true,
+    "radial_coefficients_are_local_temporaries": true,
+    "seed_uses_componentwise_inflate": true,
+    "step_inflates_each_output_component": true,
+    "step_returns_only_result_and_metadata": true,
+    "step_state_type_is_cartesian_acb_list": true,
+    "terminal_payload_has_no_correlated_export": true
+  },
+  "rerun_export_contract": {
+    "acceptance_gates": {
+      "or_chart_denominator_excludes_zero": "certified positive lower modulus of one fixed row over the entire correlated set",
+      "state_excludes_zero": "certified separation of the correlated set from the zero vector",
+      "successor_attempt": "after a separating gate passes, apply the transformed chart and certify one radial successor substep without Cartesian collapse"
+    },
+    "earliest_required_restart": {
+      "r": "8388609/4194304",
+      "reason": "the seed tail is first converted into independent acb component balls and every later step repeats that collapse",
+      "rho": "1/4194304",
+      "stage": "levelt.exact_data(crosswalk), while omega remains symbolic, before seed_vector, initial projective normalization, or RationalFunction substitution of OMEGA"
+    },
+    "forbidden_substitutes": [
+      "a representation label without correlated_state data",
+      "independent complex balls with equal printed radii",
+      "midpoint-only chart selection",
+      "replay from panel 30 or panel 31 Cartesian checkpoints",
+      "claiming local radial Taylor temporaries are a serialized omega Taylor model"
+    ],
+    "required_frequency_model": {
+      "coordinate": "zeta=omega-omega_center",
+      "omega_center": "4097/8192",
+      "omega_order": "REQUIRED_EXPLICIT_INPUT",
+      "omega_radius": "REQUIRED_EXPLICIT_INPUT",
+      "phase_rule": "keep the complete moving Frobenius/Jost phase symbolic; Taylor-expand only the reduced amplitude"
+    },
+    "required_state_export": {
+      "affine_generators": "serialize one generator matrix acting on shared bounded noise symbols; do not issue a new independent symbol per coordinate or per dual rail",
+      "dual_tau_state": "base and intrinsic tau tangent share the same omega polynomial variables and affine noise symbols",
+      "keys": [
+        "affine_generators",
+        "dual_tau_state",
+        "omega_model",
+        "radial_taylor_coefficients",
+        "residual_norm_ball",
+        "shared_noise_domain"
+      ],
+      "radial_taylor_coefficients": "serialize accepted-step polynomial coefficients or a hash bound to a deterministic replay that reconstructs them without consuming Cartesian checkpoints",
+      "residual_norm_ball": "serialize a coupled vector remainder in a declared norm, separate from the affine generators"
+    },
+    "required_transport_invariants": [
+      "omega polynomial, tau tangent, and affine noise symbols survive every panel",
+      "base and tangent remainders are not independently re-inflated",
+      "chart transformations act on polynomial, generators, and residual together",
+      "projective reciprocal is evaluated as a correlated Taylor-model operation",
+      "each checkpoint hashes parent, generator, chart, polynomial, affine generators, noise domain, and residual"
+    ],
+    "restart_disposition": "REGENERATE_FROM_SYMBOLIC_MIXED_LEVELT_SEED",
+    "schema": "phase3-horizon-correlated-affine-checkpoint-contract-v1"
+  },
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_HORIZON_CORRELATED_AFFINE_EXPORT_AUDIT",
+  "run": {
+    "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated-affine-export-audit-run.json",
+    "sha256": "8855e1c4e82c6c81f947723630afc464cd771953f3035dd4a13155982445bf7f"
+  },
+  "schema": "phase3-axial-horizon-correlated-affine-export-audit-v1",
+  "sources": {
+    "adaptive_run": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/adaptive-chart-separation-run.json",
+      "sha256": "80206e9e68175aa18d36844aa48abe0d84527cab2b6cdc7147dcce7996d34231"
+    },
+    "checkpoint_transport": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/checkpoint_transport.py",
+      "sha256": "1ef4535ba150c90719d4fae596cd880e83856f69342837c509719fcbffcaef8c"
+    },
+    "levelt_symbolic_seed": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_spin_one_levelt_v1/produce.py",
+      "sha256": "580620b20aa7a526c0a5359d56227ffcee0c0384aa5853b96a40fead2dcbee4e"
+    },
+    "moving_phase": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_moving_phase_v1/produce.py",
+      "sha256": "accfe27b69a88821a5c529f805e758da29a31504ae8b4d9e12a96111b47c068f"
+    },
+    "multipanel_run": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/shared-remainder-multipanel-successor-run.json",
+      "sha256": "dc1fa96d0d3b23cdfe61fd53326e4d8bdbe41496fc24d2c39b3a175b71a4983a"
+    }
+  },
+  "status": "RERUN_FROM_SYMBOLIC_SEED_REQUIRED",
+  "terminal": {
+    "earliest_restart_rho": "1/4194304",
+    "gate": "CORRELATED_STATE_NOT_SERIALIZED",
+    "reason": "a rigorous affine/Taylor successor cannot be reconstructed from Cartesian checkpoint balls without inventing correlations",
+    "successor_substep_attempted": false
+  },
+  "terminal_cartesian_enclosure": {
+    "content_sha256": "d432af3aaf04c5658845f44a9fa1f27670e4058294fb81274ace276ef70ee0d0",
+    "resumable_as_correlated_affine_state": false,
+    "rho": "6149/17179869184"
+  }
+}

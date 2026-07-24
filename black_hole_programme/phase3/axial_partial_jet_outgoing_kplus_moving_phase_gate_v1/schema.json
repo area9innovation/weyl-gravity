@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "imports",
+    "domain",
+    "exact_asymptotic_audit",
+    "factor_phase_derivatives",
+    "common_gauge_reissue_at_r31",
+    "recurrence_and_normalization_audit",
+    "minimal_missing_object",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-partial-jet-outgoing-kplus-moving-phase-gate-v1"
+    },
+    "lifecycle": {"const": "CLASSIFIED"},
+    "status": {
+      "const": "KPLUS_ZERO_WITHHELD_NONSTATIC_REPHASING"
+    },
+    "domain": {
+      "type": "object",
+      "properties": {
+        "endpoint": {"const": "Iplus"},
+        "matching_radius": {"const": "31"}
+      },
+      "required": ["endpoint", "matching_radius", "omega_child"]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "joint_reduced_frame_rank_three_imported",
+        "outgoing_rate_derivative_exact",
+        "outgoing_power_derivative_exact",
+        "tau_zero_common_phase_factor_exact",
+        "relative_rephasing_tau_independent",
+        "formal_K_plus_zero_preserved",
+        "analytic_K_plus_zero_certified",
+        "T_plus_certified",
+        "stokes_or_scattering_certified"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

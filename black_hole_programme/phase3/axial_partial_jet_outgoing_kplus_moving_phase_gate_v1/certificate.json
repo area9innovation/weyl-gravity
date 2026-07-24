@@ -1,0 +1,175 @@
+{
+  "claim_flags": {
+    "T_plus_certified": false,
+    "analytic_K_plus_zero_certified": false,
+    "formal_K_plus_zero_preserved": true,
+    "joint_reduced_frame_rank_three_imported": true,
+    "outgoing_power_derivative_exact": true,
+    "outgoing_rate_derivative_exact": true,
+    "relative_rephasing_tau_independent": false,
+    "stokes_or_scattering_certified": false,
+    "tau_zero_common_phase_factor_exact": true
+  },
+  "common_gauge_reissue_at_r31": {
+    "R_moving_reduced_tangent": "R_tangent_fixed + diag(0,93/4)*R_base",
+    "S_in_R_moving_gauge_base": "h0*S_base, h0=(32/31)*exp(I*omega*(64+4*log(32)))",
+    "S_in_R_moving_gauge_tangent": "h0*(S_tangent_fixed + diag(0,93/4)*S_base_Y)",
+    "interpretation": "The tau-zero phase ratio is harmless, but the analytic moving spin-two phase and polynomial eigenvector gauge make the common R/S normalizer tau-dependent. The existing fixed-phase checkpoints are therefore not yet one analytic endpoint tau-frame.",
+    "relative_log_tau_derivative": "93/4",
+    "relative_rephasing_tau_independent": false,
+    "tau_zero_relative_S_over_R": "(32/31)*exp(I*omega*(64+4*log(32)))",
+    "tau_zero_relative_factor_analytic_nonzero": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "an analytic endpoint K_plus=0 theorem",
+    "a common moving-phase correlated E/R/S checkpoint",
+    "T_plus, Stokes conservation, reflection, scattering, or flux"
+  ],
+  "domain": {
+    "endpoint": "Iplus",
+    "frequency_excludes_zero": true,
+    "matching_radius": "31",
+    "omega_child": [
+      "1/2",
+      "4097/8192"
+    ]
+  },
+  "exact_asymptotic_audit": {
+    "E12_coefficient_of_r": "3/4",
+    "E22_constant_term": "-3/4",
+    "canonical_polynomial_eigenvector_gauge_B": [
+      [
+        "3/4",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "combined_scalar_and_matrix_moving_generator": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-3/4"
+      ]
+    ],
+    "fixed_phase": "exp(-2*I*omega*r)*r**(-4*I*omega)",
+    "fixed_power": "-4*I*omega",
+    "fixed_rate": "-2*I*omega",
+    "intrinsic_power_derivative": "0",
+    "intrinsic_rate_derivative": "-3/4",
+    "irregular_E_coefficient_matrix": [
+      [
+        "0",
+        "3/4"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "irregular_homological_identity": "E_minus1+[A0,B]=0",
+    "irregular_homological_residual": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "local_eigenvalue_derivative": "I*(-24*I*omega**3*z**2 + 6*I*omega**3 - 96*omega**2*z**3 - 6*omega**2*z**2 + 24*omega**2*z + 140*I*omega*z**4 - 8*I*omega*z**3 - 11*I*omega*z**2 + 32*z**5 - 32*z**4 + 24*z**3)/(8*(I*omega + 2*z)**2*(8*omega*z**2 - omega - I*z**2))",
+    "local_eigenvalue_derivative_series": "z**2*(-3 - 13/(8*omega**2)) + O(z**3)",
+    "method": "differentiate the exact characteristic polynomial of the phase-reduced A_RW+tau*E_RW pencil; the unperturbed outgoing reduced eigenvalue is O(r^-2), so lambda=0 determines the constant and r^-1 derivative coefficients exactly",
+    "phase_reduced_constant_matrix": [
+      [
+        "2*I*omega",
+        "1"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "factor_phase_derivatives": {
+    "spin_one_S": {
+      "power_derivative": "0",
+      "rate_derivative": "0",
+      "reason": "the exact partial jet holds Z and A_x tau-independent"
+    },
+    "spin_two_R_E": {
+      "moving_phase": "exp((-2*I*omega-3*tau/4)*r)*r**(-4*I*omega)+O(tau**2)",
+      "power_derivative": "0",
+      "rate_derivative": "-3/4"
+    }
+  },
+  "imports": {
+    "endpoint_frame_audit": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_endpoint_frames_v1/certificate.json",
+      "sha256": "001757321247ccc3f5a38c4925d09c5d6759b2f9335913be96d30e4fe64ffbe9"
+    },
+    "formal_frame_completion": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_frame_completion_v1/certificate.json",
+      "sha256": "def9952552a48374e97594517f9a434850ffc6251a34517085793a467bba17ed"
+    },
+    "joint_rank3_frame": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_joint_frame_r31_v1/certificate.json",
+      "sha256": "59610f70204de7c393f6ae2ff7114640c7e4d5944a44831ca7b0ecc1366595a3"
+    },
+    "metric_heads": {
+      "path": "black_hole_programme/phase3/axial_endpoint_remainder_enclosures/infinity-metric-heads.json",
+      "sha256": "969701a67581469459e66f6e82a161654f37cf8b29915790d2f92d0a2f7269c3"
+    },
+    "partial_jet_crosswalk": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json",
+      "sha256": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "minimal_missing_object": {
+    "name": "outgoing_moving_phase_correlated_checkpoint_r31",
+    "required_fields": [
+      "R_tangent_moving=R_tangent_fixed+diag(0,93/4)*R_base",
+      "S_base_common=h0*S_base",
+      "S_tangent_common=h0*(S_tangent_fixed+diag(0,93/4)*S_base_Y)",
+      "one shared analytic omega generator or a typed symbolic h0",
+      "independent containment/restart verification"
+    ],
+    "then_reaudit": "unit leading amplitudes and zero free EI2 constants in the moving factor phases before deciding analytic K_plus"
+  },
+  "next_gate": "apply the exact moving-phase tangent corrections at r=31, serialize the rephased R/E/S models with preserved correlation, and independently verify their endpoint normalization before reconsidering analytic K_plus",
+  "producer_elapsed_seconds": 0.0,
+  "recurrence_and_normalization_audit": {
+    "analytic_K_plus_promoted": false,
+    "canonical_free_EI2_XI2": "0",
+    "canonical_free_EI2_XI3": "0",
+    "forced_log_XI2": "0",
+    "forced_log_XI3": "0",
+    "formal_canonical_K_plus": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "free_EI2_constants_zero": true,
+    "leading_factor_amplitudes_tau_independent_in_formal_gauge": true,
+    "reason_not_promoted": "the exact nonzero rate derivative forces a tau-dependent relative R/S phase normalizer; the fixed-phase correlated checkpoint has not been reissued with the displayed moving-phase tangent corrections"
+  },
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_KPLUS_MOVING_PHASE_GATE_V1",
+  "schema": "phase3-axial-partial-jet-outgoing-kplus-moving-phase-gate-v1",
+  "status": "KPLUS_ZERO_WITHHELD_NONSTATIC_REPHASING"
+}

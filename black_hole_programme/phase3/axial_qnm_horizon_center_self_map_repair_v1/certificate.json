@@ -1,0 +1,95 @@
+{
+  "claim_flags": {
+    "QNM_or_EP2_certified": false,
+    "full_contour_boundary_nonvanishing_certified": false,
+    "panel_77_boundary_nonvanishing_certified": true,
+    "panel_77_horizon_center_self_map_repaired": true,
+    "threshold_lowered": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "boundary nonvanishing for panels 78--511",
+    "boundary nonvanishing on the complete closed contour",
+    "an argument-principle or interval-Newton QNM count",
+    "a nonzero Delta_tau or Delta_omega selector at a root",
+    "a Smith selector, defective QNM or EP2",
+    "a physical outgoing Bach map T_plus",
+    "time-domain stability or any LORENTZIAN-CAUSAL claim"
+  ],
+  "imports": {
+    "common_affine_source": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/common_affine.py",
+      "sha256": "8ae5c434f7fe3757b79b6cafddd71057cf67d5fb31e1b7ac16754fcbcb20bc5b"
+    },
+    "horizon_preflight_source": {
+      "path": "black_hole_programme/phase3/axial_qnm_horizon_projective_preflight_v1/horizon_preflight.py",
+      "sha256": "6a96c757038e98978e537c89098e83126de2df8e0dcc7994bb8d02963a99eea9"
+    },
+    "terminal_chunk": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v5/certificate.json",
+      "sha256": "fa2327bf887800b75d84e15ccc201cbe042e0e1cccbdc03648d10bcd5013070f"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "method": {
+    "diagnostic_grid_size": 5,
+    "reciprocal_pivot_audited": true,
+    "repair": "stable smaller root 2*qc/(-qb+sqrt(discriminant)) with exact rational strict enlargement 1000001/1000000",
+    "seed_radius": "2+2^-22",
+    "strict_candidate_factor": "1000001/1000000",
+    "target_panel": 77
+  },
+  "result": {
+    "baseline_candidate": "[-4.4408960099966658490355021000034536817e-16 +/- 1.11e-54]",
+    "baseline_failure": "HORIZON_Q_REMAINDER_SELF_MAP",
+    "baseline_self_map_rhs": "[-1.2136212391013794305302937788740707425e-17 +/- 5.84e-55]",
+    "horizon_transport_diagnostics": {
+      "box": {
+        "accepted_steps": 966,
+        "chart": "q",
+        "rejected_trials": 0,
+        "taylor_order": 26
+      },
+      "center": {
+        "accepted_steps": 966,
+        "chart": "q",
+        "rejected_trials": 0,
+        "taylor_order": 26
+      }
+    },
+    "minimum_modulus_lower": "[8.86835506935605363940896836025313349e-6 +/- 5.60e-42]",
+    "reciprocal_pivots": [
+      {
+        "chart": "p=1/q",
+        "label": "box_reciprocal_pivot",
+        "pivot_excludes_zero": true,
+        "q_full": "[4.2e-8 +/- 3.72e-10] + [1.08e-7 +/- 1.90e-10]j",
+        "q_modulus_lower": "[1.1576444526680076899496644418038371587e-7 +/- 1.96e-45]",
+        "reason": "stable direct-q self-map already proves the full repaired transport; reciprocal chart retained as a certified alternative",
+        "transport_attempted": false
+      },
+      {
+        "chart": "p=1/q",
+        "label": "center_reciprocal_pivot",
+        "pivot_excludes_zero": true,
+        "q_full": "[4.227103590643462e-8 +/- 4.40e-24] + [1.0791134723262744e-7 +/- 2.76e-24]j",
+        "q_modulus_lower": "[1.1589520843487781837656350032798085299e-7 +/- 9.68e-46]",
+        "reason": "stable direct-q self-map already proves the full repaired transport; reciprocal chart retained as a certified alternative",
+        "transport_attempted": false
+      }
+    ],
+    "repaired_boundary_status": "PASS",
+    "stable_candidate": "[8.868824841353188139723125016160879663e-25 +/- 1.15e-62]",
+    "stable_self_map_rhs": "[8.8688162149068673752017693539894347841e-25 +/- 6.65e-63]",
+    "stable_strict_margin": "[8.6264463207645213556621714448786287493e-31 +/- 7.51e-70]"
+  },
+  "run": {
+    "path": "black_hole_programme/phase3/axial_qnm_horizon_center_self_map_repair_v1/repair-run.json",
+    "sha256": "a821f34ed27e793979cb26a86700ea4a3d65fdd752816aa7dfd6b0e6980f17ba"
+  },
+  "schema": "phase3-axial-qnm-horizon-center-self-map-repair-v1",
+  "status": "PANEL_77_HORIZON_CENTER_SELF_MAP_REPAIRED"
+}

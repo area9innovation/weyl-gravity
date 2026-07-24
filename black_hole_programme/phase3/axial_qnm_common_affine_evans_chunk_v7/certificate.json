@@ -1,0 +1,76 @@
+{
+  "claim_flags": {
+    "QNM_or_EP2_certified": false,
+    "argument_principle_certified": false,
+    "full_contour_nonzero_certified": false,
+    "requested_chunk_nonzero_certified": false,
+    "stable_root_repair_applied": true,
+    "threshold_lowered": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "boundary nonvanishing outside the materialized panels",
+    "boundary nonvanishing on the complete closed contour",
+    "an argument-principle QNM count",
+    "a nonzero Delta_tau or Delta_omega selector",
+    "a QNM location, Smith selector, defective fibre or EP2",
+    "a physical outgoing Bach map T_plus",
+    "time-domain stability or any LORENTZIAN-CAUSAL claim"
+  ],
+  "imports": {
+    "predecessor_aggregate": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v9/certificate.json",
+      "sha256": "448a3d6a7b3a4d3d45b555070605edb56cc22f635e43a6f16721d68e1c73ac86"
+    },
+    "repair_certificate": {
+      "path": "black_hole_programme/phase3/axial_qnm_horizon_center_self_map_repair_v1/certificate.json",
+      "sha256": "86289b031584202aa147fb22b1deb8bec331088562047c5fa758a05c0f39a44f"
+    },
+    "repair_source": {
+      "path": "black_hole_programme/phase3/axial_qnm_horizon_center_self_map_repair_v1/repair.py",
+      "sha256": "8635a33a556926aabe6a2e01b7ee11814dabab7492ba9c66166c8db6fbf22635"
+    },
+    "transport_source": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/common_affine.py",
+      "sha256": "8ae5c434f7fe3757b79b6cafddd71057cf67d5fb31e1b7ac16754fcbcb20bc5b"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "method": {
+    "batch_size": 4,
+    "checkpoint_after_each_batch": true,
+    "endpoint_fields": [
+      "q",
+      "q_tau",
+      "q_omega"
+    ],
+    "horizon_remainder_root": "stable interval smaller root with exact 1000001/1000000 strict enlargement",
+    "ordered_stop_rule": "stop after the first boundary, pivot, or self-map non-PASS panel in ordered output",
+    "requested_panels": [
+      94,
+      109
+    ],
+    "shared_generator": "one zeta=omega-omega_center generator per horizon/outgoing/mismatch triple",
+    "worker_count": 4
+  },
+  "result": {
+    "argument_principle_status": "NOT_RUN",
+    "completed_panel_count": 5,
+    "minimum_modulus_lower": "[2.4737853874064623124053769570765231e-7 +/- 1.91e-42]",
+    "minimum_modulus_lower_panel": 97,
+    "passed_panel_count": 4,
+    "terminal": {
+      "failure": "COMMON_AFFINE_DELTA_ENCLOSURE_CONTAINS_ZERO",
+      "panel": 98
+    }
+  },
+  "run": {
+    "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v7/chunk-run.json",
+    "sha256": "825d8bbd76411798ce142bfe7a115a7aabe47f13d214d0f47022593489507565"
+  },
+  "schema": "phase3-axial-qnm-common-affine-evans-chunk-v7",
+  "status": "CHUNK_94_THROUGH_109_FAIL_CLOSED"
+}

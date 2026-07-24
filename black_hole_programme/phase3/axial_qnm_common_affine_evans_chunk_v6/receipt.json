@@ -1,0 +1,58 @@
+{
+  "artifact_sha256": {
+    "README.md": "74552a6dbf98258ba744a0d4bd16499fa94c721795461fc2d38cdaf2eee88e18",
+    "__init__.py": "6c7fd1dc7fac8155e29bc2fec56584e5bffb5600b76e80976a437e3141622d00",
+    "chunk.py": "cbfd478a2d8179fb16b861a333e3cc5408b8089c86968ea2fd92194a611d50a9",
+    "produce.py": "9eaf0295e5efb3a9770889c02ee41a3387b683773196f2eb4053c2d1e3b4c83c",
+    "schema.json": "4cde6c19d966a6df45f88e2fcb186067700a140f1c1b84e1f0dd218b4e81e2dd",
+    "test_chunk.py": "3fd9df28e314cff9dc52c4c797e76fa53eaf71b659b413ccb15bd177ad810cde",
+    "verify.py": "bacdce01482de95029c8f70575d8e0e621e124cb8b285474bec82c625aaf3fe4"
+  },
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v6/chunk.py black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v6/produce.py black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v6/verify.py",
+      "elapsed_seconds": 0.028062,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v6/certificate.json black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v6/schema.json",
+      "elapsed_seconds": 0.094518,
+      "returncode": 0,
+      "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_common_affine_evans_chunk_v6.test_chunk",
+      "elapsed_seconds": 0.09376,
+      "returncode": 0,
+      "stderr": "test_no_threshold_relaxation (black_hole_programme.phase3.axial_qnm_common_affine_evans_chunk_v6.test_chunk.EvansChunkV6Test.test_no_threshold_relaxation) ... ok\ntest_ordered_prefix (black_hole_programme.phase3.axial_qnm_common_affine_evans_chunk_v6.test_chunk.EvansChunkV6Test.test_ordered_prefix) ... ok\ntest_ordered_stop_and_nonzero (black_hole_programme.phase3.axial_qnm_common_affine_evans_chunk_v6.test_chunk.EvansChunkV6Test.test_ordered_stop_and_nonzero) ... ok\ntest_shared_correlated_exports (black_hole_programme.phase3.axial_qnm_common_affine_evans_chunk_v6.test_chunk.EvansChunkV6Test.test_shared_correlated_exports) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_common_affine_evans_chunk_v6.verify",
+      "elapsed_seconds": 0.090096,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "stable-root common-affine Evans panels 78--93 verifier: PASS (16 materialized rows; terminal=None)\n"
+    }
+  ],
+  "elapsed_seconds": 61.02824,
+  "higher_tiers_not_run": "Bounded contour chunk; no theorem lifecycle, freeze or release.",
+  "input_sha256": {
+    "predecessor_aggregate": "f6cf6e26530d25835bf66226588e50d695a6e247253cfb798c922688d2170937",
+    "repair_certificate": "86289b031584202aa147fb22b1deb8bec331088562047c5fa758a05c0f39a44f",
+    "repair_source": "8635a33a556926aabe6a2e01b7ee11814dabab7492ba9c66166c8db6fbf22635",
+    "transport_source": "8ae5c434f7fe3757b79b6cafddd71057cf67d5fb31e1b7ac16754fcbcb20bc5b"
+  },
+  "output_sha256": {
+    "certificate": "9eac4b23fd6d1603ba03948110c5c5aba5a002981e9eef16bceea00621a37a67",
+    "checkpoint": "60e34881f2e6a1f3725392c30c514ab5bfd4a6107804fd7b3d3943fa2a38402d",
+    "report": "f522bba8937c15093a556dbe367d01a3ffd857a9f92462f771f7b3e8060eb5d0",
+    "run": "fa983632b5069ff45268fc5a4ac8e310c9f7fa406ca746dad6cb0a85ec07bd4b"
+  },
+  "schema": "phase3-axial-qnm-common-affine-evans-chunk-receipt-v6",
+  "tier_0": "py_compile and JSON Schema validation",
+  "tier_1": "materialized scoped tests and independent verifier"
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "source",
+    "terminal_raw_enclosure",
+    "midpoint_adaptive_chart",
+    "finite_candidate_atlas",
+    "universal_linear_separation",
+    "mutation_witness",
+    "terminal",
+    "claim_flags",
+    "imports",
+    "run",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-horizon-adaptive-chart-separation-v1"
+    },
+    "result_id": {
+      "const": "PURE_WEYL_PHASE3_AXIAL_HORIZON_ADAPTIVE_CHART_SEPARATION"
+    },
+    "status": {"const": "UNIVERSAL_CARTESIAN_FIXED_CHART_OBSTRUCTION"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"contains": {"const": "REDUCED-MODE"}},
+    "source": {"type": "object"},
+    "terminal_raw_enclosure": {"type": "object"},
+    "midpoint_adaptive_chart": {"type": "object"},
+    "finite_candidate_atlas": {"type": "object"},
+    "universal_linear_separation": {"type": "object"},
+    "mutation_witness": {"type": "object"},
+    "terminal": {"type": "object"},
+    "claim_flags": {"type": "object"},
+    "imports": {"type": "object"},
+    "run": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 1}
+  },
+  "additionalProperties": false
+}

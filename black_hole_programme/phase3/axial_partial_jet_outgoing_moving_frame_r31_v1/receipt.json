@@ -1,0 +1,64 @@
+{
+  "artifacts": {
+    "README.md": "90762f169413a6ffbbe1d3613f8265a7de7d57f1f8fd55324ba1054df9c0344a",
+    "__init__.py": "a90a63c050afa99564883e17f7f930b766b17459fe514283111a6c93aa999387",
+    "audit.py": "e2890b4d76c1a6dcd88f99974d2d7be9fae8a85c2ae44363f0642851b6bf028b",
+    "certificate.json": "56a9005fb6d2828641ddb0045683d6820a6e011c8e85193ba7ebe14fc5e96c9f",
+    "checkpoint.json": "9905de85a0f2e789e8bb79fc1e05af4f6dd1ae186541687e61d932173a922656",
+    "model_ops.py": "d2af9d2cedbea9b84d867fb236adebdcc01575e45e6c261800db17707296158b",
+    "produce.py": "efa24ccfedba3a727b82d77967c4170cf0b18dbc6d276b57158b699d77a82b6f",
+    "report.md": "fc5b019cf542922c746237fa50eb4d513c0bea53b0bb48623de76badf791eda4",
+    "restart_manifest.json": "b8cd4bd023f5cbd3fed81c9978bd354bc00b9a6f54116fbc9b72a1f265652d9f",
+    "schema.json": "5d3ed9c147b906b203c1db4a302908f95e1433e8c2ed3586c84540859bb2beba",
+    "test_moving_frame.py": "f21066277fb741704312dc9270e9df61474c0eefa187a49c5c34b6de543ac260",
+    "verify.py": "2c12a4b84288f654d10ba3bf26593bc714cf52393b2a8ba3db82acbbe9b18653"
+  },
+  "certificate": "black_hole_programme/phase3/axial_partial_jet_outgoing_moving_frame_r31_v1/certificate.json",
+  "certificate_sha256": "56a9005fb6d2828641ddb0045683d6820a6e011c8e85193ba7ebe14fc5e96c9f",
+  "claim_boundary": "At r=31 on the first pilot child, the R/E/S checkpoint is reissued in one typed analytic moving gauge with exact componentwise tangent correction, shared Taylor generator, rank three, restart serialization, and analytic first-jet K_plus=0. T_plus and Stokes are not established.",
+  "commands": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_outgoing_moving_frame_r31_v1.produce --check",
+      "elapsed_seconds": 1.3404417940182611,
+      "exit_code": 0,
+      "output_tail": "MOVING_FRAME_R31_RANK3_ANALYTIC_KPLUS_ZERO\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_outgoing_moving_frame_r31_v1.verify",
+      "elapsed_seconds": 0.7935209519928321,
+      "exit_code": 0,
+      "output_tail": "PASS independent outgoing common moving-frame verifier\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_partial_jet_outgoing_moving_frame_r31_v1.test_moving_frame",
+      "elapsed_seconds": 2.9615427720127627,
+      "exit_code": 0,
+      "output_tail": "....\n----------------------------------------------------------------------\nRan 4 tests in 2.881s\n\nOK\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m py_compile /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_moving_frame_r31_v1/model_ops.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_moving_frame_r31_v1/produce.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_moving_frame_r31_v1/verify.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_moving_frame_r31_v1/test_moving_frame.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_moving_frame_r31_v1/audit.py",
+      "elapsed_seconds": 0.029896611988078803,
+      "exit_code": 0,
+      "output_tail": "",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check -- black_hole_programme/phase3/axial_partial_jet_outgoing_moving_frame_r31_v1",
+      "elapsed_seconds": 0.005540717043913901,
+      "exit_code": 0,
+      "output_tail": "",
+      "status": "PASS"
+    }
+  ],
+  "schema": "phase3-axial-partial-jet-outgoing-moving-frame-r31-receipt-v1",
+  "status": "PASS",
+  "test_tiers": {
+    "tier_0_edit_checks": "PASS",
+    "tier_1_scoped_tests": "PASS",
+    "tier_2_affected_chain": "NOT_RUN: source checkpoints and exact algebra certificates are imported by content hash and were not changed",
+    "tier_3_full_suite": "NOT_RUN: no freeze, release, shared-core algebra change, paper theorem edit, T_plus assembly, or Stokes promotion"
+  }
+}

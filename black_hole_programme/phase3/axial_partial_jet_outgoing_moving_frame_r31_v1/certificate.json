@@ -1,0 +1,244 @@
+{
+  "artifacts": {
+    "checkpoint": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_moving_frame_r31_v1/checkpoint.json",
+      "payload_sha256": "d5a60b372fa0d913b5cc2eed163be53a44f294863f5906a5e9742dcddfa7f9e3"
+    },
+    "restart_manifest": {
+      "model_canonical_sha256": {
+        "R_base": "b891442f3cbb69c1edc270114a65732b729ad56e5ad4c3804474b6b011a687e8",
+        "R_tangent_moving": "7fe6811a37d34077fcf6901c4220d656cbc1721c8f0c7b7aa759e63aef5ff105",
+        "S_base_core": "468597cea53a59e6de7ca311d871919e6a8ffa8efb8c92175fe2db3bfbe8e027",
+        "S_tangent_moving_core": "366cd179a8f12ada8b82a6d96e1fac7a81cea90f2b8a386c12a9f7603e9abbdd"
+      },
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_moving_frame_r31_v1/restart_manifest.json"
+    }
+  },
+  "claim_flags": {
+    "T_plus_certified": false,
+    "analytic_K_plus_zero_certified": true,
+    "common_tau_frame_supplied": true,
+    "correction_remainder_containment_certified": true,
+    "joint_moving_frame_rank_three_certified": true,
+    "moving_phase_correction_exact": true,
+    "restart_serialization_certified": true,
+    "shared_omega_generator_preserved": true,
+    "stokes_or_scattering_certified": false,
+    "typed_h0_analytic_zero_free": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "the outgoing trace map T_plus",
+    "a Stokes, scattering, reflection, or flux identity",
+    "an interval expansion or uniform modulus bound for h0",
+    "transport of the joint moving frame below r=31",
+    "higher-than-first-order dependence on the intrinsic tau"
+  ],
+  "domain": {
+    "degree": 4,
+    "endpoint": "Iplus",
+    "generator": 7315,
+    "matching_radius": "31",
+    "omega_child": [
+      "1/2",
+      "4097/8192"
+    ],
+    "parameter_domain": [
+      "-1",
+      "1"
+    ]
+  },
+  "endpoint_normalization_audit": {
+    "analytic_K_plus_zero_certified": true,
+    "analytic_first_jet_K_plus": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "canonical_free_EI2_XI2": "0",
+    "canonical_free_EI2_XI3": "0",
+    "combined_moving_generator": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-3/4"
+      ]
+    ],
+    "complete_moving_factor_extracted": true,
+    "forced_log_XI2": "0",
+    "forced_log_XI3": "0",
+    "forced_logs_zero": true,
+    "formal_K_plus": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "free_EI2_constants_zero": true,
+    "moving_polynomial_gauge": [
+      [
+        "3/4",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "moving_scalar_rate_derivative": "-3/4",
+    "reason": "the componentwise r=31 correction realizes the exact moving scalar-plus-polynomial factor; after extraction, the analytic recurrence has zero forced logs, unit residual leading amplitudes, and zero canonical Einstein shears",
+    "residual_leading_amplitude_derivative_zero": true,
+    "residual_unit_leading_amplitudes_force": "k2=0",
+    "scope": "first intrinsic tau jet in the complete moving factor gauge on the certified pilot child"
+  },
+  "imports": {
+    "R_certificate": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/certificate.json",
+      "sha256": "786e573bdc0a68adfa03161a3248029fec75f77c3cdbf7b36aac461326d89e2e"
+    },
+    "R_independent_restart_run": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/restart_run.txt",
+      "sha256": "3e102b7928d3cb4111e0947afaf090ed649c1f0e9d5ae0086b412bd0160314be"
+    },
+    "R_reference_run": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/export_run.txt",
+      "sha256": "5116fb63734128be47e4480c76c603823d0e19e0fff99a814fb17e0d6396e777"
+    },
+    "S_certificate": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/certificate.json",
+      "sha256": "b9c65de62d9c282947041050cd748055643d3724e1106d7f7885856349e6bee2"
+    },
+    "S_checkpoint": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/checkpoint.json",
+      "sha256": "99ce1f9cb224c3094641c38af333e5dea6781e4576d931f7e027eb157b04a88e"
+    },
+    "endpoint_frame_audit": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_endpoint_frames_v1/certificate.json",
+      "sha256": "001757321247ccc3f5a38c4925d09c5d6759b2f9335913be96d30e4fe64ffbe9"
+    },
+    "formal_frame_completion": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_frame_completion_v1/certificate.json",
+      "sha256": "def9952552a48374e97594517f9a434850ffc6251a34517085793a467bba17ed"
+    },
+    "joint_rank3_frame": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_joint_frame_r31_v1/certificate.json",
+      "sha256": "59610f70204de7c393f6ae2ff7114640c7e4d5944a44831ca7b0ecc1366595a3"
+    },
+    "moving_phase_gate": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_kplus_moving_phase_gate_v1/certificate.json",
+      "sha256": "a9ac0347070f778b85655211070288d9dd18bf8bfc03dc1f988e2a5a20da2810"
+    },
+    "partial_jet_crosswalk": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json",
+      "sha256": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a"
+    }
+  },
+  "lifecycle": "NUMERIC-ENCLOSURE",
+  "moving_frame_reissue": {
+    "Rdot_moving": "Rdot_fixed+diag(0,93/4)*Rbase",
+    "Sbase_common": "h0*Sbase_core",
+    "Sdot_common": "h0*(Sdot_fixed_core+diag(0,93/4)*Sbase_Y_core)",
+    "common_tau_frame_supplied": true,
+    "correction_enclosures": {
+      "R": [
+        {
+          "base_row": 1,
+          "emitted_remainder_contains_exact_sum": true,
+          "exact_coefficients_sha256": "0143538b3878674579da41c7615895e20ecaa47a98bb55179d1f29f4a48649d9",
+          "exact_remainder_pair_sha256": "233898297664ce72f5d84ed7fca014aed98e3cf2a6c8a045a59b8133608eb80a",
+          "scale": "93/4",
+          "tangent_row": 1
+        },
+        {
+          "base_row": 3,
+          "emitted_remainder_contains_exact_sum": true,
+          "exact_coefficients_sha256": "735df3410b677b050d76a91716063a90e8358002e64f194935a1092dea6cebb6",
+          "exact_remainder_pair_sha256": "b19f121da9c1e4f529e86ac7b3b0173bc7d80e8d3afb2c013b3e740fb10e9eb6",
+          "scale": "93/4",
+          "tangent_row": 3
+        }
+      ],
+      "S": [
+        {
+          "base_row": 1,
+          "emitted_remainder_contains_exact_sum": true,
+          "exact_coefficients_sha256": "6ab6a6335333f41b0be057c5a740708d14c651e26cc11a5fc19c98ab63a261f3",
+          "exact_remainder_pair_sha256": "c50e402fc30c5fcd08ad0506120601a42bc8cea3967283bef5a6152cae67cf0a",
+          "scale": "93/4",
+          "tangent_row": 1
+        },
+        {
+          "base_row": 5,
+          "emitted_remainder_contains_exact_sum": true,
+          "exact_coefficients_sha256": "27ba3eb0295b60a4946e1dc560e309ba083017f5a9a4893f04d28eb735d2a7be",
+          "exact_remainder_pair_sha256": "eb1f76eb50628c9c85375caeae0cdaa4a495348d349684ba174368f9a9546770",
+          "scale": "93/4",
+          "tangent_row": 5
+        }
+      ]
+    },
+    "h0_analytic_entire": true,
+    "h0_expression": "(32/31)*exp(I*omega*(64+4*log(32)))",
+    "h0_typed_not_interval_expanded": true,
+    "h0_zero_free": true,
+    "shared_omega_generator": 7315
+  },
+  "next_gate": "use this common moving endpoint checkpoint as the only allowed outgoing restart for T_plus transport; do not assemble T_plus or Stokes in this result",
+  "rank_three_minor": {
+    "R_base_component0_real_hull": {
+      "exact_pair_sha256": "ec721c84e09205554daf5f7c22d9955ea9d9386f247c2f66f28b29e08f99463a",
+      "excludes_zero": true,
+      "lower_decimal": 1.0030726580105427,
+      "lower_sign": 1,
+      "upper_decimal": 1.0050736611422721,
+      "upper_sign": 1
+    },
+    "S_base_Z_component0_real_hull": {
+      "exact_pair_sha256": "d785ad7e57a458612749588d35b41c9ea1ae5c22236967559b9217c1a38b2dff",
+      "excludes_zero": true,
+      "lower_decimal": 3.3163909318939435e-05,
+      "lower_sign": 1,
+      "upper_decimal": 0.0022081862292619536,
+      "upper_sign": 1
+    },
+    "complex_rank": 3,
+    "determinant_factorization": "h0*R_base[0]**2*S_base_Z_core[0]",
+    "determinant_nonzero": true,
+    "h0_zero_free": true,
+    "selected_columns": [
+      "E",
+      "R",
+      "S"
+    ],
+    "selected_complex_rows": [
+      "X[0]",
+      "Y[0]",
+      "Z[0]"
+    ]
+  },
+  "restart_serialization_audit": {
+    "independent_source_restart_imported": true,
+    "json_roundtrip_exact": true,
+    "model_hashes_recorded": true,
+    "payload_sha256_stable": true,
+    "restart_ready": true
+  },
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_MOVING_FRAME_R31_V1",
+  "schema": "phase3-axial-partial-jet-outgoing-moving-frame-r31-v1",
+  "status": "MOVING_FRAME_R31_RANK3_ANALYTIC_KPLUS_ZERO"
+}

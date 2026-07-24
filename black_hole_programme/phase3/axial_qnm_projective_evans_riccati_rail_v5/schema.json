@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema", "status", "lifecycle", "dependency_tags", "imports", "run",
+    "result", "claim_flags", "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-qnm-projective-evans-riccati-rail-v5"
+    },
+    "status": {
+      "const": "PANELS_0_THROUGH_47_AGGREGATED_LOCAL_QNM_GATE_FAIL_CLOSED"
+    },
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array"},
+    "imports": {"type": "object", "minProperties": 7},
+    "run": {"type": "object", "required": ["path", "sha256"]},
+    "result": {"type": "object"},
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 8}
+  },
+  "additionalProperties": false
+}

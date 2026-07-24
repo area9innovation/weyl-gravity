@@ -1,0 +1,65 @@
+{
+  "claim_flags": {
+    "QNM_or_EP2_certified": false,
+    "argument_principle_certified": false,
+    "full_contour_nonzero_certified": false,
+    "requested_chunk_nonzero_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "boundary nonvanishing outside the materialized panels",
+    "boundary nonvanishing on the complete closed contour",
+    "an argument-principle QNM count",
+    "a nonzero Delta_tau or Delta_omega selector",
+    "a QNM location, Smith selector, defective fibre or EP2",
+    "a physical outgoing Bach map T_plus",
+    "time-domain stability or any LORENTZIAN-CAUSAL claim"
+  ],
+  "imports": {
+    "predecessor_chunk": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v4/certificate.json",
+      "sha256": "a843f32eea9e912508854d814210b053da8781162fc2d748ac14ea17dda059f6"
+    },
+    "transport_source": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/common_affine.py",
+      "sha256": "8ae5c434f7fe3757b79b6cafddd71057cf67d5fb31e1b7ac16754fcbcb20bc5b"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "method": {
+    "batch_size": 4,
+    "checkpoint_after_each_batch": true,
+    "endpoint_fields": [
+      "q",
+      "q_tau",
+      "q_omega"
+    ],
+    "ordered_stop_rule": "stop after the first boundary, pivot, or self-map non-PASS panel in ordered output",
+    "requested_panels": [
+      64,
+      79
+    ],
+    "shared_generator": "one zeta=omega-omega_center generator per horizon/outgoing/mismatch triple",
+    "worker_count": 4
+  },
+  "result": {
+    "argument_principle_status": "NOT_RUN",
+    "completed_panel_count": 14,
+    "minimum_modulus_lower": "[9.49347797837540575801996512345989054e-6 +/- 1.36e-42]",
+    "minimum_modulus_lower_panel": 76,
+    "passed_panel_count": 13,
+    "terminal": {
+      "failure": "ENDPOINT_EXPORT_TRANSPORT_FAILED",
+      "panel": 77
+    }
+  },
+  "run": {
+    "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v5/chunk-run.json",
+    "sha256": "299ac54aef9030ea6f62b768758b9f0cf49bac36e4829da2ac636732e89fa433"
+  },
+  "schema": "phase3-axial-qnm-common-affine-evans-chunk-v5",
+  "status": "CHUNK_64_THROUGH_79_FAIL_CLOSED"
+}

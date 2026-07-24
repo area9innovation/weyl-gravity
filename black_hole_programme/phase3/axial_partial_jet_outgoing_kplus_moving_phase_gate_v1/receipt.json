@@ -1,0 +1,62 @@
+{
+  "artifacts": {
+    "README.md": "670439a02c8f6abeb69a8a30164e8b4a83243c74ee1093abc5071b1f2179ae73",
+    "__init__.py": "455a55398bc26db592ecd460d9fe8dd75f7362fe2b8f6f444d2ddcccf6855405",
+    "algebra.py": "91303c6f9ebda1a78e8c96acb5b4b996feea4755f2f3a1f723c55517fe553cdd",
+    "audit.py": "4cbb5e345225437361b8b0489e7de49f994d4aaf4ddb4ff5e04055f113467fc0",
+    "certificate.json": "a9ac0347070f778b85655211070288d9dd18bf8bfc03dc1f988e2a5a20da2810",
+    "produce.py": "faaba336cdc463965b3cfe77dc2889a2f90e45abd4377b6f7e8e46df6dfd15e3",
+    "report.md": "996c67796f81779618348bee55721b226c03e6cca92c3e74e6f06b38fbbf9ac4",
+    "schema.json": "b280059a849813ee56d5240f5570f8823e1ea9f7707a3ef01c241dd42592e64f",
+    "test_moving_phase_gate.py": "1e64d411ee5df871bff66a2f4cf9cf2ed14170e2c47d64b6f96e69c129e121f7",
+    "verify.py": "6d8df9ccbc0d42d658fe1e798346ed8ee3c3badd0dcdab47f75c14b22feef578"
+  },
+  "certificate": "black_hole_programme/phase3/axial_partial_jet_outgoing_kplus_moving_phase_gate_v1/certificate.json",
+  "certificate_sha256": "a9ac0347070f778b85655211070288d9dd18bf8bfc03dc1f988e2a5a20da2810",
+  "claim_boundary": "The outgoing intrinsic rate derivative is exactly -3/4 and forces a 93/4 relative normalizer derivative at r=31. Formal K_plus=0 is preserved; analytic K_plus, T_plus, Stokes, scattering, and flux remain unestablished.",
+  "commands": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_outgoing_kplus_moving_phase_gate_v1.produce --check",
+      "elapsed_seconds": 6.641553745022975,
+      "exit_code": 0,
+      "output_tail": "KPLUS_ZERO_WITHHELD_NONSTATIC_REPHASING\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_outgoing_kplus_moving_phase_gate_v1.verify",
+      "elapsed_seconds": 6.528128353995271,
+      "exit_code": 0,
+      "output_tail": "PASS independent outgoing moving-phase K-plus verifier\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_partial_jet_outgoing_kplus_moving_phase_gate_v1.test_moving_phase_gate",
+      "elapsed_seconds": 22.330376805970445,
+      "exit_code": 0,
+      "output_tail": "....\n----------------------------------------------------------------------\nRan 4 tests in 21.893s\n\nOK\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m py_compile /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_kplus_moving_phase_gate_v1/algebra.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_kplus_moving_phase_gate_v1/produce.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_kplus_moving_phase_gate_v1/verify.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_kplus_moving_phase_gate_v1/test_moving_phase_gate.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_kplus_moving_phase_gate_v1/audit.py",
+      "elapsed_seconds": 0.032007472997065634,
+      "exit_code": 0,
+      "output_tail": "",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check -- black_hole_programme/phase3/axial_partial_jet_outgoing_kplus_moving_phase_gate_v1",
+      "elapsed_seconds": 0.006701531994622201,
+      "exit_code": 0,
+      "output_tail": "",
+      "status": "PASS"
+    }
+  ],
+  "schema": "phase3-axial-partial-jet-outgoing-kplus-moving-phase-gate-receipt-v1",
+  "status": "PASS",
+  "test_tiers": {
+    "tier_0_edit_checks": "PASS",
+    "tier_1_scoped_tests": "PASS",
+    "tier_2_affected_chain": "NOT_RUN: no imported mathematical input changed",
+    "tier_3_full_suite": "NOT_RUN: fail-closed gate result; no theorem promotion, freeze, release, or shared-core change"
+  }
+}

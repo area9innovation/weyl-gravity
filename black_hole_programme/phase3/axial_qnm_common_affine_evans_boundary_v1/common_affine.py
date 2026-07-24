@@ -111,7 +111,7 @@ def _outgoing_transport(
                 break
             rejected_trials += 1
             step /= 2
-            if abs(step) < Fraction(1, 320):
+            if abs(step) < Fraction(1, 10240):
                 return {
                     "passed": False,
                     "radius": str(r),
@@ -277,7 +277,7 @@ def _horizon_transport(
                 break
             rejected_trials += 1
             step /= 2
-            if step < (r - 2) / 2**28:
+            if step < (r - 2) / 2**40:
                 return {
                     "passed": False,
                     "radius": str(r),

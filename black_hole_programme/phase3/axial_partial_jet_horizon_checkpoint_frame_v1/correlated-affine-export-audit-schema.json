@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "claim_flags": {
+      "properties": {
+        "correlated_pivot_certified": {
+          "const": false
+        },
+        "earliest_restart_identified": {
+          "const": true
+        },
+        "rerun_export_contract_emitted": {
+          "const": true
+        },
+        "successor_substep_certified": {
+          "const": false
+        }
+      },
+      "required": [
+        "earliest_restart_identified",
+        "rerun_export_contract_emitted",
+        "correlated_pivot_certified",
+        "successor_substep_certified"
+      ],
+      "type": "object"
+    },
+    "dependency_tags": {
+      "contains": {
+        "const": "REDUCED-MODE"
+      },
+      "type": "array"
+    },
+    "does_not_establish": {
+      "minItems": 1,
+      "type": "array"
+    },
+    "lifecycle": {
+      "const": "CLASSIFIED"
+    },
+    "representation_audit": {
+      "additionalProperties": {
+        "const": true
+      },
+      "minProperties": 10,
+      "type": "object"
+    },
+    "rerun_export_contract": {
+      "properties": {
+        "earliest_required_restart": {
+          "properties": {
+            "rho": {
+              "const": "1/4194304"
+            }
+          },
+          "required": [
+            "rho",
+            "stage",
+            "reason"
+          ],
+          "type": "object"
+        },
+        "restart_disposition": {
+          "const": "REGENERATE_FROM_SYMBOLIC_MIXED_LEVELT_SEED"
+        }
+      },
+      "required": [
+        "restart_disposition",
+        "earliest_required_restart",
+        "required_frequency_model",
+        "required_state_export",
+        "required_transport_invariants",
+        "acceptance_gates",
+        "forbidden_substitutes"
+      ],
+      "type": "object"
+    },
+    "result_id": {
+      "const": "PURE_WEYL_PHASE3_AXIAL_HORIZON_CORRELATED_AFFINE_EXPORT_AUDIT"
+    },
+    "schema": {
+      "const": "phase3-axial-horizon-correlated-affine-export-audit-v1"
+    },
+    "status": {
+      "const": "RERUN_FROM_SYMBOLIC_SEED_REQUIRED"
+    },
+    "terminal": {
+      "properties": {
+        "gate": {
+          "const": "CORRELATED_STATE_NOT_SERIALIZED"
+        },
+        "successor_substep_attempted": {
+          "const": false
+        }
+      },
+      "required": [
+        "gate",
+        "earliest_restart_rho",
+        "successor_substep_attempted",
+        "reason"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema",
+    "result_id",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "sources",
+    "representation_audit",
+    "last_accepted_cartesian_checkpoint",
+    "terminal_cartesian_enclosure",
+    "rerun_export_contract",
+    "terminal",
+    "claim_flags",
+    "imports",
+    "run",
+    "does_not_establish"
+  ],
+  "type": "object"
+}

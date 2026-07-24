@@ -2117,6 +2117,10 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot-switch-continuation-certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot-switch-subdivision-retry-certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot-switch-shared-remainder-preflight-certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/shared-remainder-multipanel-successor-certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/adaptive-chart-separation-certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated-affine-export-audit-certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated-affine-seed-successor-certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_multipanel_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/certificate.json};
@@ -2127,7 +2131,24 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume32_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_step_ladder_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_joint_frame_r31_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_kplus_moving_phase_gate_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_moving_frame_r31_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v2/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v3/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v4/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v5/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v6/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v7/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v4/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v5/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v6/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v7/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_horizon_center_self_map_repair_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v8/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v9/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v10/certificate.json};
 \cert{black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json}\\
 Polar restriction-stable module and invariant current filtration &
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json}\\
@@ -2271,7 +2292,39 @@ from the corrected panel-30 checkpoint, all post-normalization state and
 amplitude balls remain finite and panel 31 at
 \(\rho=3/8388608\) is certified.  A mutation test confirms that the eager
 squared-denominator implementation contains zero and fails.  This is one
-positive repaired panel, not yet a continuation to \(r=4\).
+positive repaired panel, not yet a continuation to \(r=4\).  Subdividing
+the same shared-reciprocal rail by 128 certifies nine more normalized
+substeps, reaching
+\[
+ \rho=\frac{12297}{34359738368}.
+\]
+The Taylor gate remains healthy at the terminal attempt, with scaled norm
+\(0.002761\) and finite tail \(0.01921\), but every member of the fixed
+projective atlas then has zero modulus lower bound.  A midpoint-derived
+M\"obius row also fails on the full ball.  In fact each Cartesian base
+component contains zero, so the product enclosure contains the zero vector;
+no fixed linear chart can certify a nonzero denominator from this
+representation.  The checkpoints cannot be upgraded after the fact:
+frequency was specialized before transport, seed coordinates were inflated
+independently, and the radial Taylor coefficients were discarded.  A
+correlation-preserving rerun must therefore restart at the symbolic mixed
+Levelt seed \(\rho=2^{-22}\), before fixed-frequency substitution and
+initial normalization, and serialize a shared \(\omega\)-Taylor/dual-\(\tau\)
+affine state.  This is a representation obstruction, not evidence that the
+true horizon line contains zero.  The required restart has now passed its
+first constructive gate.  On the disk
+\[
+ \left|\omega-\frac{4097}{8192}\right|\le 2^{-22},
+\]
+a degree-four seed carries one shared complex-frequency generator through
+both base and dual-\(\tau\) rails, uses one coupled
+\(\ell^\infty\) residual rather than independent component boxes, and
+certifies one radial successor.  The initial and successor pivot lower
+bounds are \(0.999874\) and \(0.997894\); the residual grows from
+\(0.00130228\) to \(0.00553187\), while the radial Cauchy scaled norm is
+\(0.480079\) and its tail \(0.000626096\).  This certifies the correlation
+format and one content-addressed step only.  A multipanel continuation and
+the horizon \(H_4\) gate remain open.
 
 At outgoing real infinity the corresponding reduced-phase representation
 has also passed its first local test.  Keeping \(e^{-2i\omega r_*}\)
@@ -2363,9 +2416,57 @@ of width \(1/128\) and one final panel of width \(1/256\), reaching
 All panelwise generator and direct/dual correlation gates pass.  At the
 common radius with the existing \(R_+\) checkpoint, the \(S_+\) base width
 is \(0.006021\), the normalized tangent width is \(1.564\), and the restored
-physical tangent width is \(800.528\).  This co-location is a prerequisite,
-not a joint-frame determinant: the typed \(E/R/S\) assembly, analytic
-\(K_+\), and \(T_+\) remain unproved.
+physical tangent width is \(800.528\).  The typed assembly has now been
+checked.  In complex factor order \((X,Y,Z)\),
+\[
+ E=(R_{\rm base},0,0),\qquad
+ R=(R_\tau,R_{\rm base},0),\qquad
+ S=(S_{\tau,Y},S_Y,S_Z).
+\]
+The minor on rows \((X_0,Y_0,Z_0)\) is
+\(R_{{\rm base},0}^{\,2}S_{Z,0}\).  Exact hulls give
+\[
+ \Re R_{{\rm base},0}\in[1.00307,1.00508],
+ \qquad
+ \Re S_{Z,0}\in[3.31\times10^{-5},2.209\times10^{-3}],
+\]
+so the reduced outgoing \(E/R/S\) frame has complex rank three throughout
+the frequency child.  The \(R/E\) and \(S\) artifacts still use different
+nonzero analytic phase gauges, however.  Formal canonical \(K_+=0\) is
+preserved, but its analytic endpoint-\(\tau\) promotion and \(T_+\) remain
+unproved.  The exact moving-phase audit explains why a static rephasing is
+insufficient.  For the outgoing spin-two pencil,
+\[
+ \dot q_+=-\frac34,\qquad \dot p_+=0,
+\]
+and the irregular coefficient is removed by
+\[
+ B=\operatorname{diag}\!\left(\frac34,0\right),
+ \qquad E_{-1}+[A_0,B]=0.
+\]
+The combined scalar and polynomial-eigenvector generator is therefore
+\(\operatorname{diag}(0,-3/4)\), whereas the spin-one phase is
+\(\tau\)-independent.  At \(r=31\), a common moving gauge requires the exact
+tangent correction
+\[
+ \operatorname{diag}\!\left(0,\frac{93}{4}\right).
+\]
+The checkpoint has now been reissued with this correction on the \(R\) and
+\(S\) spin-two rows, while retaining the shared generator 7315 and the
+entire zero-free scalar gauge
+\[
+ h_0=\frac{32}{31}\exp\!\bigl(i\omega(64+4\log32)\bigr).
+\]
+The independent verifier reconstructs the corrected rows from the original
+checkpoints.  The rank minor
+\(h_0R_{{\rm base},0}^{\,2}S_{Z,0}\) excludes zero throughout the child, and
+the analytic first-jet endpoint shear is now
+\[
+ K_+=0
+\]
+in the complete common moving factor gauge.  The next \(T_+\) dependency is
+the correlated transport of this sole admissible checkpoint from \(r=31\)
+to the common \(r=4\) section; \(T_+\) and Stokes remain open.
 Complex-frequency work has excluded the entire growth half-plane, but no
 damped QNM root, contour moment, or local Smith branch has been computed.
 At the QNM seed disk, the direct inverse-\(r\) forward recurrence also fails
@@ -2500,16 +2601,36 @@ lower bound
 \]
 on panel zero.  This is the first strict common-affine Evans-boundary gate,
 but only for one of 512 panels.  A checkpointed four-worker successor now
-certifies panels \(0\)--\(15\) under their panel-local shared generators.
-All 16 physical mismatch enclosures exclude zero; the smallest modulus
-lower bound is \(1.14087\times10^{-4}\), on panel 15.  This is a strict
-boundary segment, not a closed contour.  A typed Riccati audit independently
-emits \((\Delta,\Delta_\tau,\Delta_\omega)\) on the same 16 co-located
-panels.  Every current rectangular \(\Delta_\tau\) and \(\Delta_\omega\)
-ball contains zero, so neither the intrinsic selector nor the simple-root
-Newton denominator is certified.  Panel 16 is the first missing shared
-horizon/outgoing export.  The remaining 496 panels and the
-interval-Newton, argument-principle, and Smith/EP2 gates are not run.
+extends the same panel-local shared-generator construction through panel 76.
+All 77 physical mismatch enclosures on this contiguous prefix exclude zero;
+the smallest modulus lower bound is \(9.49348\times10^{-6}\), on panel 76.
+This remains a strict boundary segment, not a closed contour.  Typed Riccati
+audits independently emit \((\Delta,\Delta_\tau,\Delta_\omega)\) on every
+co-located panel.  Every current rectangular \(\Delta_\tau\) and
+\(\Delta_\omega\) ball contains zero, so neither the intrinsic selector nor
+the simple-root Newton denominator is certified.  The initial panel-77
+refusal was traced to cancellation in the subtractive binary64 formula for
+the smaller quadratic self-map root, not to a loss of the Riccati
+enclosure.  The stable formula
+\[
+ \frac{2q_c}{-q_b+\sqrt{q_b^2-4q_aq_c}}
+\]
+with an exact \(1000001/1000000\) outward enlargement proves the unchanged
+strict self-map margin \(8.62645\times10^{-31}\).  Both reciprocal pivots
+exclude zero, and panel 77 then has
+\[
+ |\Delta|\ge 8.86836\times10^{-6}.
+\]
+The repaired rail then certifies twenty further panels without changing any
+threshold.  The certified contiguous boundary prefix is therefore panels
+\(0\)--\(97\); its smallest modulus lower bound is
+\[
+ 2.47379\times10^{-7}
+\]
+at panel 97.  Panel 98 is the next honest enclosure obstruction: both
+endpoint transports pass, but the assembled common-affine \(\Delta\) ball
+contains zero.  Panels 98--511 are not admitted, and the interval-Newton,
+argument-principle, and Smith/EP2 gates are not run.
 Uniform time-domain boundedness, decay, and completeness remain open.
 
 The present result already fixes an important baseline:

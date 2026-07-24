@@ -1,0 +1,58 @@
+{
+  "artifact_sha256": {
+    "README.md": "24532c0618996b9597c39bd1418da7696734cc0cd48c80614820d6a83554e60e",
+    "__init__.py": "3f4cb9448657cda341f767769da1fce51f7bb1d087016b3f175fc775b5cf518f",
+    "chunk.py": "3661b0cc3ea4ec78e5648c2e35d9748f988c9aad0da3441544af1bc009266fd7",
+    "produce.py": "b6a214f8ab6be7c06d8428b99c84996444801fa0302b772d682aa4a5200db9af",
+    "schema.json": "0067f4819a60112855d48708816ad82ca8b1dc5345084f47ab608cbe314842e1",
+    "test_chunk.py": "fbb836245c58279247094448cb91a80341727e7104f39916b280dbf8d764e30d",
+    "verify.py": "caddf754ec858511633339bb0203adb70df8bc0a00491f992418cf19d9308984"
+  },
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v7/chunk.py black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v7/produce.py black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v7/verify.py",
+      "elapsed_seconds": 0.029538,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v7/certificate.json black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v7/schema.json",
+      "elapsed_seconds": 0.095853,
+      "returncode": 0,
+      "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_common_affine_evans_chunk_v7.test_chunk",
+      "elapsed_seconds": 0.105854,
+      "returncode": 0,
+      "stderr": "test_no_threshold_relaxation (black_hole_programme.phase3.axial_qnm_common_affine_evans_chunk_v7.test_chunk.EvansChunkV7Test.test_no_threshold_relaxation) ... ok\ntest_ordered_prefix (black_hole_programme.phase3.axial_qnm_common_affine_evans_chunk_v7.test_chunk.EvansChunkV7Test.test_ordered_prefix) ... ok\ntest_ordered_stop_and_nonzero (black_hole_programme.phase3.axial_qnm_common_affine_evans_chunk_v7.test_chunk.EvansChunkV7Test.test_ordered_stop_and_nonzero) ... ok\ntest_shared_correlated_exports (black_hole_programme.phase3.axial_qnm_common_affine_evans_chunk_v7.test_chunk.EvansChunkV7Test.test_shared_correlated_exports) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_common_affine_evans_chunk_v7.verify",
+      "elapsed_seconds": 0.09927,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "stable-root common-affine Evans panels 94--109 verifier: PASS (5 materialized rows; terminal={'failure': 'COMMON_AFFINE_DELTA_ENCLOSURE_CONTAINS_ZERO', 'panel': 98})\n"
+    }
+  ],
+  "elapsed_seconds": 31.418318,
+  "higher_tiers_not_run": "Bounded contour chunk; no theorem lifecycle, freeze or release.",
+  "input_sha256": {
+    "predecessor_aggregate": "448a3d6a7b3a4d3d45b555070605edb56cc22f635e43a6f16721d68e1c73ac86",
+    "repair_certificate": "86289b031584202aa147fb22b1deb8bec331088562047c5fa758a05c0f39a44f",
+    "repair_source": "8635a33a556926aabe6a2e01b7ee11814dabab7492ba9c66166c8db6fbf22635",
+    "transport_source": "8ae5c434f7fe3757b79b6cafddd71057cf67d5fb31e1b7ac16754fcbcb20bc5b"
+  },
+  "output_sha256": {
+    "certificate": "b05dec5232fbf3c02998b2fbd4099a159297f202d6bf0b746c7417209ca34050",
+    "checkpoint": "7118abb72591bdca3f49e56c17a8a3922cf9428f32adebe37870e9c25c88d52a",
+    "report": "7777996a8934333462d0de10af7274ea6fb716f8b61b3a98dc8d97282ea63e58",
+    "run": "825d8bbd76411798ce142bfe7a115a7aabe47f13d214d0f47022593489507565"
+  },
+  "schema": "phase3-axial-qnm-common-affine-evans-chunk-receipt-v7",
+  "tier_0": "py_compile and JSON Schema validation",
+  "tier_1": "materialized scoped tests and independent verifier"
+}

@@ -1,0 +1,56 @@
+{
+  "artifact_sha256": {
+    "README.md": "0e682234c812cb2905e58f894efa1ad248bd05321c37b07aac52d753f5a91841",
+    "__init__.py": "2151fe34f250bb2e97807be5fd9bb022d2fa3b14d1bd36aee71df6efd4d515f4",
+    "produce.py": "b21c441d33495da28a370aa5bb6a47982f2af36c1043b5ffdb3e4a39f2c6b873",
+    "repair.py": "8635a33a556926aabe6a2e01b7ee11814dabab7492ba9c66166c8db6fbf22635",
+    "schema.json": "1a7c5e85882136f0b196862140301a0435699d7993e716e3017547b3fd842951",
+    "test_repair.py": "e3a72cac11228ed0876242007ce35e1a701589acabc37c05d7e981a3ccf68499",
+    "verify.py": "9e747af9069534c44603573dab622d2da7bb8eb997cd28805e213281837d10fc"
+  },
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_horizon_center_self_map_repair_v1/repair.py black_hole_programme/phase3/axial_qnm_horizon_center_self_map_repair_v1/produce.py black_hole_programme/phase3/axial_qnm_horizon_center_self_map_repair_v1/verify.py",
+      "elapsed_seconds": 0.026963,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_horizon_center_self_map_repair_v1/certificate.json black_hole_programme/phase3/axial_qnm_horizon_center_self_map_repair_v1/schema.json",
+      "elapsed_seconds": 0.088971,
+      "returncode": 0,
+      "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_horizon_center_self_map_repair_v1.test_repair",
+      "elapsed_seconds": 0.08088,
+      "returncode": 0,
+      "stderr": "test_failure_is_cancellation_not_precision_or_order (black_hole_programme.phase3.axial_qnm_horizon_center_self_map_repair_v1.test_repair.HorizonCenterRepairTest.test_failure_is_cancellation_not_precision_or_order) ... ok\ntest_reciprocal_pivots_are_certified (black_hole_programme.phase3.axial_qnm_horizon_center_self_map_repair_v1.test_repair.HorizonCenterRepairTest.test_reciprocal_pivots_are_certified) ... ok\ntest_repaired_panel_is_nonzero (black_hole_programme.phase3.axial_qnm_horizon_center_self_map_repair_v1.test_repair.HorizonCenterRepairTest.test_repaired_panel_is_nonzero) ... ok\ntest_stable_root_proves_strict_self_map (black_hole_programme.phase3.axial_qnm_horizon_center_self_map_repair_v1.test_repair.HorizonCenterRepairTest.test_stable_root_proves_strict_self_map) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_horizon_center_self_map_repair_v1.verify",
+      "elapsed_seconds": 0.080045,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "panel-77 horizon center self-map verifier: PASS (stable interval root; strict unchanged self-map; Delta nonzero)\n"
+    }
+  ],
+  "elapsed_seconds": 12.409617,
+  "higher_tiers_not_run": "Single repaired boundary panel; no complete contour, theorem lifecycle, freeze or release.",
+  "input_sha256": {
+    "common_affine_source": "8ae5c434f7fe3757b79b6cafddd71057cf67d5fb31e1b7ac16754fcbcb20bc5b",
+    "horizon_preflight_source": "6a96c757038e98978e537c89098e83126de2df8e0dcc7994bb8d02963a99eea9",
+    "terminal_chunk": "fa2327bf887800b75d84e15ccc201cbe042e0e1cccbdc03648d10bcd5013070f"
+  },
+  "output_sha256": {
+    "certificate": "86289b031584202aa147fb22b1deb8bec331088562047c5fa758a05c0f39a44f",
+    "report": "5340c08c1332ae9a040c21e30bceeb4f48a2aedfb2f1d8804cbc7f1a500749c2",
+    "run": "a821f34ed27e793979cb26a86700ea4a3d65fdd752816aa7dfd6b0e6980f17ba"
+  },
+  "schema": "phase3-axial-qnm-horizon-center-self-map-repair-receipt-v1",
+  "tier_0": "py_compile and JSON Schema validation",
+  "tier_1": "scoped repair tests and independent verifier"
+}

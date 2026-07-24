@@ -1,0 +1,60 @@
+{
+  "artifact_sha256": {
+    "README.md": "d85165291718e2c2516ec692423d102e376f76ea285be4a68fb46f2409dbb33e",
+    "__init__.py": "af2b8aa2a942b9ef2c89f5cba75975f5e6a5ca36f299264ad117ed96e21a32be",
+    "aggregate.py": "32b27e7c6c34312f23d47a7828c67ac57150114dbebb9e8149620624c6eaab23",
+    "produce.py": "e34369a00852494aa7e9f2d037e6387e5b25306aff70ec40d2dde7047ff27467",
+    "schema.json": "052b64769a6dca76424f927bddbff1f23c0fe5e4db27bbb151dbae3bd8c8587a",
+    "test_aggregate.py": "1c61102df00a8017af2226866fba760d1a88916d2d877397ea1a367e698b0915",
+    "verify.py": "8fa4be88f881e6799d3ef0e600464e8fa0e0dcdb6631c47d605df756142d4134"
+  },
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v5/aggregate.py black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v5/produce.py black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v5/verify.py",
+      "elapsed_seconds": 0.027085,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v5/certificate.json black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v5/schema.json",
+      "elapsed_seconds": 0.094384,
+      "returncode": 0,
+      "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_projective_evans_riccati_rail_v5.test_aggregate",
+      "elapsed_seconds": 0.071761,
+      "returncode": 0,
+      "stderr": "test_completed_rows_pass (black_hole_programme.phase3.axial_qnm_projective_evans_riccati_rail_v5.test_aggregate.ProjectiveAggregateV5Test.test_completed_rows_pass) ... ok\ntest_contiguous_prefix (black_hole_programme.phase3.axial_qnm_projective_evans_riccati_rail_v5.test_aggregate.ProjectiveAggregateV5Test.test_contiguous_prefix) ... ok\ntest_next_missing_panel (black_hole_programme.phase3.axial_qnm_projective_evans_riccati_rail_v5.test_aggregate.ProjectiveAggregateV5Test.test_next_missing_panel) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.006s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_projective_evans_riccati_rail_v5.verify",
+      "elapsed_seconds": 0.0639,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "projective Evans/Riccati v5 verifier: PASS (contiguous typed prefix 0--47; next missing panel 48)\n"
+    }
+  ],
+  "elapsed_seconds": 0.266547,
+  "higher_tiers_not_run": "Incomplete contour; no theorem lifecycle, freeze or release.",
+  "input_sha256": {
+    "chunk_1_certificate": "1c37aa24a2159e9441ad79bfc193ec14ebe82d49b2df33ba29e8fe9ce2bdc58c",
+    "chunk_1_run": "27236920c529bf8a98f25df6843b37645f2702b687a42e993723e4511ca2ca9a",
+    "chunk_2_certificate": "4917408580bd3c3a7880a48cc649e3d8ba501f2581e19be886a05dcc52d2ce9a",
+    "chunk_2_run": "b0267f9fdd2f38beba05a34e3da1db1f5ec0675c62cc930c21d8788d4a18f0f6",
+    "chunk_3_certificate": "bb08a12e4fb4b21a90d728ff08972a9c5984624e4e78c6d2f73d2ab596424c0f",
+    "chunk_3_run": "0e7cc0727ff675702cb03ed9141a365ec7e25031af58407f31d33880c641cc20",
+    "projective_rail_v4": "1b39f908c51c4e98a04e02821edaa967c6fb404156af3ebdd645d84261ddee25"
+  },
+  "output_sha256": {
+    "certificate": "2cd6347671accfbe00b2904f4cd773d8cfc12c432c7fa4e0da23474750ed021d",
+    "report": "301afb178ad164f898bec21ad0d7df9b9415dcb4bc9e4d5afc2cce60c9f43cc4",
+    "run": "b27f130dcbceea7e34ced6510cbeab9aaacbd0f371777ca1bc1d33d58bde4690"
+  },
+  "schema": "phase3-axial-qnm-projective-evans-riccati-rail-receipt-v5",
+  "tier_0": "py_compile and JSON Schema validation",
+  "tier_1": "scoped unit tests and independent aggregate verifier"
+}

@@ -1,0 +1,54 @@
+{
+  "claim_boundary": "representation audit and exact regeneration/export contract only",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.correlated_affine_export_audit",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.produce_correlated_affine_export_audit --check",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.verify_correlated_affine_export_audit",
+    "python3 -m unittest -v black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.test_correlated_affine_export_audit"
+  ],
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "higher_tiers_not_run": "Tier 2/3 not required: no mathematical input or shared operator changed",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_HORIZON_CORRELATED_AFFINE_EXPORT_AUDIT",
+  "schema": "phase3-receipt-v1",
+  "status": "RERUN_FROM_SYMBOLIC_SEED_REQUIRED",
+  "validation": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.correlated_affine_export_audit",
+      "elapsed_seconds": 1.35,
+      "output_sha256": "8855e1c4e82c6c81f947723630afc464cd771953f3035dd4a13155982445bf7f",
+      "status": "PASS_DETERMINISTIC_FAIL_CLOSED_OUTPUT"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.produce_correlated_affine_export_audit --check",
+      "elapsed_seconds": 1.41,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.verify_correlated_affine_export_audit",
+      "elapsed_seconds": 1.14,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.test_correlated_affine_export_audit",
+      "elapsed_seconds": 1.38,
+      "status": "PASS_6_TESTS"
+    },
+    {
+      "command": "Draft202012Validator(schema).validate(certificate)",
+      "elapsed_seconds": 0.05,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m py_compile <four changed Python files>",
+      "elapsed_seconds": 0.04,
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check -- black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1",
+      "elapsed_seconds": 0.01,
+      "status": "PASS"
+    }
+  ]
+}

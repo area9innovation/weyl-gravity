@@ -1,0 +1,40 @@
+{
+  "claim_boundary": "nine content-addressed normalized substeps beyond panel 31; fail closed when all fixed-atlas pivot lower bounds reach zero",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.shared_remainder_multipanel_successor",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.produce_shared_remainder_multipanel_successor --check",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.verify_shared_remainder_multipanel_successor",
+    "python3 -m unittest -v black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.test_shared_remainder_multipanel_successor"
+  ],
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "higher_tiers_not_run": "Tier 2/3 not required: transport-only reduced-mode preflight",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_HORIZON_SHARED_REMAINDER_MULTIPANEL",
+  "schema": "phase3-receipt-v1",
+  "status": "NINE_SUBSTEPS_CONTENT_ADDRESSED_PIVOT_SHORTFALL",
+  "validation": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.shared_remainder_multipanel_successor",
+      "elapsed_seconds": 10.54,
+      "output_sha256": "dc1fa96d0d3b23cdfe61fd53326e4d8bdbe41496fc24d2c39b3a175b71a4983a",
+      "status": "PASS_DETERMINISTIC_FAIL_CLOSED_OUTPUT"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.produce_shared_remainder_multipanel_successor --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.verify_shared_remainder_multipanel_successor",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.test_shared_remainder_multipanel_successor",
+      "status": "PASS_5_TESTS"
+    },
+    {
+      "command": "Draft202012Validator(schema).validate(certificate)",
+      "status": "PASS"
+    }
+  ]
+}

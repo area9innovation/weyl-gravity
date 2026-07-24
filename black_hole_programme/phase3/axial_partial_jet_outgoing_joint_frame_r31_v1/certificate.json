@@ -1,0 +1,280 @@
+{
+  "K_plus_audit": {
+    "closed_by_this_result": "the prior missing correlated S all-order remainder and the common-radius reduced-frame rank gate",
+    "formal_canonical_K_plus_zero": true,
+    "promotion_blockers": [
+      "the imported endpoint audit still has analytic_tau_endpoint_family_constructed=false",
+      "the imported endpoint audit still has moving_exponent_derivatives_computed=false",
+      "R/E and S checkpoints use different nonzero analytic phase normalizations and no certified common amplitude gauge or endpoint derivative matrices have been applied"
+    ],
+    "validated_analytic_K_plus": false
+  },
+  "claim_flags": {
+    "T_plus_certified": false,
+    "common_amplitude_outgoing_frame_certified": false,
+    "common_generator_preserved": true,
+    "formal_K_plus_zero_preserved": true,
+    "joint_reduced_frame_rank_three_certified": true,
+    "scattering_or_flux_certified": false,
+    "typed_E_R_S_reduced_columns_constructed": true,
+    "validated_analytic_K_plus_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a common amplitude-normalized analytic outgoing endpoint frame",
+    "the analytic endpoint shear K_plus=0",
+    "the outgoing trace map T_plus",
+    "a Stokes, scattering, reflection, or flux identity",
+    "transport of the joint outgoing frame below r=31"
+  ],
+  "domain": {
+    "degree": 4,
+    "generator": 7315,
+    "omega_child": [
+      "1/2",
+      "4097/8192"
+    ],
+    "parameter_domain": [
+      "-1",
+      "1"
+    ],
+    "radius": "31"
+  },
+  "imports": {
+    "R_checkpoint_certificate": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/certificate.json",
+      "sha256": "786e573bdc0a68adfa03161a3248029fec75f77c3cdbf7b36aac461326d89e2e"
+    },
+    "R_independent_restart_run": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/restart_run.txt",
+      "sha256": "3e102b7928d3cb4111e0947afaf090ed649c1f0e9d5ae0086b412bd0160314be"
+    },
+    "R_reduced_phase_preflight": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/certificate.json",
+      "sha256": "b65c30b7620c10395b6bac3936a4715c767ad7d7e0efea50552c6c6f9da46f0b"
+    },
+    "R_reference_run": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/export_run.txt",
+      "sha256": "5116fb63734128be47e4480c76c603823d0e19e0fff99a814fb17e0d6396e777"
+    },
+    "S_r31_certificate": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/certificate.json",
+      "sha256": "b9c65de62d9c282947041050cd748055643d3724e1106d7f7885856349e6bee2"
+    },
+    "S_r31_checkpoint": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/checkpoint.json",
+      "sha256": "99ce1f9cb224c3094641c38af333e5dea6781e4576d931f7e027eb157b04a88e"
+    },
+    "endpoint_frame_audit": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_endpoint_frames_v1/certificate.json",
+      "sha256": "001757321247ccc3f5a38c4925d09c5d6759b2f9335913be96d30e4fe64ffbe9"
+    },
+    "formal_outgoing_frame": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_frame_completion_v1/certificate.json",
+      "sha256": "def9952552a48374e97594517f9a434850ffc6251a34517085793a467bba17ed"
+    },
+    "partial_jet_crosswalk": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json",
+      "sha256": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a"
+    }
+  },
+  "lifecycle": "NUMERIC-ENCLOSURE",
+  "next_gate": "construct and certify one common analytic endpoint phase/amplitude gauge for E,R,S, including the endpoint tau-family and its derivative matrices, before promoting formal K_plus=0 or assembling T_plus",
+  "phase_gauge_crosswalk": {
+    "R_and_E_reduced_phase": "exp(-2*I*omega*r)*r**(-4*I*omega)",
+    "S_reduced_phase": "exp(-2*I*omega*(r-32))*(r/32)**(-4*I*omega-1)",
+    "common_amplitude_gauge_applied": false,
+    "consequence": "The rank-three statement is a reduced/projective frame statement. No common amplitude-normalized outgoing frame is claimed.",
+    "rank_invariant_under_column_phase_rescaling": true,
+    "relative_S_over_R_at_r31": "(32/31)*exp(I*omega*(64+4*log(32)))",
+    "relative_factor_nonzero_on_domain": true
+  },
+  "producer_elapsed_seconds": 0.0,
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_JOINT_FRAME_R31_V1",
+  "schema": "phase3-axial-partial-jet-outgoing-joint-frame-r31-v1",
+  "source_layout_audit": {
+    "R_base_real_rows": [
+      "Re(Y0)",
+      "Re(Y1)",
+      "Im(Y0)",
+      "Im(Y1)"
+    ],
+    "R_tangent_real_rows": [
+      "Re(X0)",
+      "Re(X1)",
+      "Im(X0)",
+      "Im(X1)"
+    ],
+    "S_base_real_rows": [
+      "Re(Y0)",
+      "Re(Y1)",
+      "Re(Z0)",
+      "Re(Z1)",
+      "Im(Y0)",
+      "Im(Y1)",
+      "Im(Z0)",
+      "Im(Z1)"
+    ],
+    "S_spin_one_tangent_exact_coefficients_zero": true,
+    "S_spin_one_tangent_padding_contains_zero": true,
+    "S_spin_one_tangent_padding_hulls": {
+      "2": {
+        "exact_pair_sha256": "3b0b24a03fbf4d648baa1aa3133247faac0c1da8193efb44f2c4db796cb004f8",
+        "excludes_zero": false,
+        "lower_decimal": -0.4808127738622184,
+        "lower_sign": -1,
+        "upper_decimal": 0.4808127738622184,
+        "upper_sign": 1
+      },
+      "3": {
+        "exact_pair_sha256": "100d0e510fc8471da892d9877142d86773e4ec1c6ededb56160d71a75ff8247d",
+        "excludes_zero": false,
+        "lower_decimal": -0.24656820306388522,
+        "lower_sign": -1,
+        "upper_decimal": 0.24656820306388522,
+        "upper_sign": 1
+      },
+      "6": {
+        "exact_pair_sha256": "622082c1f83c9bd8d1ac4d7980023622d7c058378e11959f8a235805d5d15e5a",
+        "excludes_zero": false,
+        "lower_decimal": -0.48081277386220656,
+        "lower_sign": -1,
+        "upper_decimal": 0.48081277386220656,
+        "upper_sign": 1
+      },
+      "7": {
+        "exact_pair_sha256": "eb3ecb431a418c6bc9e7691d7ad2fbf5565b529899d7d567290c448e8186f913",
+        "excludes_zero": false,
+        "lower_decimal": -0.2465682030638775,
+        "lower_sign": -1,
+        "upper_decimal": 0.2465682030638775,
+        "upper_sign": 1
+      }
+    },
+    "S_tangent_real_rows": [
+      "Re(X0)",
+      "Re(X1)",
+      "Re(0_Z0)",
+      "Re(0_Z1)",
+      "Im(X0)",
+      "Im(X1)",
+      "Im(0_Z0)",
+      "Im(0_Z1)"
+    ],
+    "complex_six_state_factor_order": [
+      "X_tangent_spin2[0]",
+      "X_tangent_spin2[1]",
+      "Y_carrier_spin2[0]",
+      "Y_carrier_spin2[1]",
+      "Z_spin1[0]",
+      "Z_spin1[1]"
+    ],
+    "interpretation": "The four R rows and eight S rows are realifications, not complex row counts. Padding on S tangent Z placeholders is not promoted to a physical Z tangent; the exact partial-jet crosswalk freezes that block."
+  },
+  "status": "JOINT_REDUCED_FRAME_RANK3_KPLUS_ANALYTIC_OPEN",
+  "triangular_minor": {
+    "R_base_component0": {
+      "imag_hull": {
+        "exact_pair_sha256": "f248a115cf647a36c5ca07958e79e41d459c319871e273833446b2eed5b0cb09",
+        "excludes_zero": true,
+        "lower_decimal": -0.05894280332768851,
+        "lower_sign": -1,
+        "upper_decimal": -0.05573104536706249,
+        "upper_sign": -1
+      },
+      "nonzero": true,
+      "real_hull": {
+        "exact_pair_sha256": "ec721c84e09205554daf5f7c22d9955ea9d9386f247c2f66f28b29e08f99463a",
+        "excludes_zero": true,
+        "lower_decimal": 1.0030726580105427,
+        "lower_sign": 1,
+        "upper_decimal": 1.0050736611422721,
+        "upper_sign": 1
+      }
+    },
+    "S_base_Z_component0": {
+      "imag_hull": {
+        "exact_pair_sha256": "7ee047ec1917030288779bf41a1d207382370aba64f10edc3c43b45cbdbe87f5",
+        "excludes_zero": false,
+        "lower_decimal": -0.0011673492575080514,
+        "lower_sign": -1,
+        "upper_decimal": 0.0010429422923489736,
+        "upper_sign": 1
+      },
+      "nonzero": true,
+      "real_hull": {
+        "exact_pair_sha256": "d785ad7e57a458612749588d35b41c9ea1ae5c22236967559b9217c1a38b2dff",
+        "excludes_zero": true,
+        "lower_decimal": 3.3163909318939435e-05,
+        "lower_sign": 1,
+        "upper_decimal": 0.0022081862292619536,
+        "upper_sign": 1
+      }
+    },
+    "complex_rank": 3,
+    "determinant_factorization": "R_base[0]**2*S_base_Z[0]",
+    "determinant_nonzero": true,
+    "matrix_pattern": [
+      [
+        "R_base[0]",
+        "R_tangent[0]",
+        "S_tangent_X[0]"
+      ],
+      [
+        "0",
+        "R_base[0]",
+        "S_base_Y[0]"
+      ],
+      [
+        "0",
+        "0",
+        "S_base_Z[0]"
+      ]
+    ],
+    "proof": "The selected minor is block upper triangular. Its two complex pivot factors are nonzero because their exact real hulls exclude zero on the complete omega child.",
+    "selected_columns": [
+      "E",
+      "R",
+      "S"
+    ],
+    "selected_complex_rows": [
+      "X[0]",
+      "Y[0]",
+      "Z[0]"
+    ]
+  },
+  "typed_columns": {
+    "E": {
+      "complex_blocks": [
+        "R_base",
+        "0",
+        "0"
+      ],
+      "meaning": "epsilon-copy of the unit outgoing spin-two line"
+    },
+    "R": {
+      "complex_blocks": [
+        "R_tangent",
+        "R_base",
+        "0"
+      ],
+      "meaning": "repeated-spin-two partial-jet column"
+    },
+    "S": {
+      "complex_blocks": [
+        "S_tangent_X",
+        "S_base_Y",
+        "S_base_Z"
+      ],
+      "meaning": "unit spin-one quotient partial-jet lift"
+    },
+    "column_order": [
+      "E",
+      "R",
+      "S"
+    ]
+  }
+}

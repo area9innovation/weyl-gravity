@@ -1,0 +1,57 @@
+{
+  "artifact_sha256": {
+    "README.md": "a18b8cff7bde939d6f84134355c82c807150c712eba3e613942e1940b856885e",
+    "__init__.py": "db1614dd32698fccfff7510df58cafafcdef80ec603d33f56732074b41281192",
+    "aggregate.py": "e8578c5536640ae25b8000edbe7c7300b173bcfe3588da666f41a7632118f095",
+    "produce.py": "7a00cd180bf396e756bfab37f2894b83cae7037edc1ca777aea4abb8c00fab0c",
+    "schema.json": "27bb41267c11005b1db63e42b632ae4040733a5debc8447425fac7c4a6b8d52a",
+    "test_aggregate.py": "f02e4b0413b571df40d295a90e4697e3d1228c5074d25e0626fd53b283d4834a",
+    "verify.py": "1d748a8a8bae3c087698350e65c9201529e1cffd30e15d93fc6c7a45e01ae23f"
+  },
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v8/aggregate.py black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v8/produce.py black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v8/verify.py",
+      "elapsed_seconds": 0.027189,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v8/certificate.json black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v8/schema.json",
+      "elapsed_seconds": 0.090008,
+      "returncode": 0,
+      "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_projective_evans_riccati_rail_v8.test_aggregate",
+      "elapsed_seconds": 0.064448,
+      "returncode": 0,
+      "stderr": "test_completed_rows_pass (black_hole_programme.phase3.axial_qnm_projective_evans_riccati_rail_v8.test_aggregate.ProjectiveAggregateV8Test.test_completed_rows_pass) ... ok\ntest_contiguous_prefix (black_hole_programme.phase3.axial_qnm_projective_evans_riccati_rail_v8.test_aggregate.ProjectiveAggregateV8Test.test_contiguous_prefix) ... ok\ntest_repaired_panel_and_next_missing (black_hole_programme.phase3.axial_qnm_projective_evans_riccati_rail_v8.test_aggregate.ProjectiveAggregateV8Test.test_repaired_panel_and_next_missing) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.003s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_projective_evans_riccati_rail_v8.verify",
+      "elapsed_seconds": 0.054511,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "projective Evans/Riccati v8 verifier: PASS (contiguous typed prefix 0--77; next missing panel 78)\n"
+    }
+  ],
+  "elapsed_seconds": 0.242711,
+  "higher_tiers_not_run": "Incomplete contour; no theorem lifecycle, freeze or release.",
+  "input_sha256": {
+    "panel_77_repair_certificate": "86289b031584202aa147fb22b1deb8bec331088562047c5fa758a05c0f39a44f",
+    "panel_77_repair_run": "a821f34ed27e793979cb26a86700ea4a3d65fdd752816aa7dfd6b0e6980f17ba",
+    "projective_rail_v7_certificate": "86a54f0e2a34ecb25d97d02d9914faa6993fd2c6b87e2cd3e418f853340ccd75",
+    "projective_rail_v7_run": "52b5c05cd4135c4f88f935891502854100e471e5a1a9e6e4d8acb652be379031"
+  },
+  "output_sha256": {
+    "certificate": "f6cf6e26530d25835bf66226588e50d695a6e247253cfb798c922688d2170937",
+    "report": "78243c33fa1644a67fbcad8b0dc2ec492b1d452dce9c80301b999fd582bad823",
+    "run": "29aad1e05eae55ee839333afeff075390e8aa8736a320d86c06c5c33ee52bfa7"
+  },
+  "schema": "phase3-axial-qnm-projective-evans-riccati-rail-receipt-v8",
+  "tier_0": "py_compile and JSON Schema validation",
+  "tier_1": "scoped unit tests and independent aggregate verifier"
+}

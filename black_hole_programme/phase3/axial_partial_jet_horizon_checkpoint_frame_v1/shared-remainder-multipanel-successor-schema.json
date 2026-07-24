@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "source",
+    "controls",
+    "progress",
+    "obstruction",
+    "claim_flags",
+    "imports",
+    "run",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-horizon-shared-remainder-multipanel-successor-v1"
+    },
+    "result_id": {
+      "const": "PURE_WEYL_PHASE3_AXIAL_HORIZON_SHARED_REMAINDER_MULTIPANEL"
+    },
+    "status": {
+      "const": "NINE_SUBSTEPS_CONTENT_ADDRESSED_PIVOT_SHORTFALL"
+    },
+    "lifecycle": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"contains": {"const": "REDUCED-MODE"}},
+    "source": {"type": "object"},
+    "controls": {"type": "object"},
+    "progress": {"type": "object"},
+    "obstruction": {"type": "object"},
+    "claim_flags": {"type": "object"},
+    "imports": {"type": "object"},
+    "run": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 1}
+  },
+  "additionalProperties": false
+}
