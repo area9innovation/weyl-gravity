@@ -1,0 +1,23 @@
+{
+  "artifacts": {
+    "certificate": {
+      "path": "certificate.json",
+      "sha256": "272e55c2e24ce3f0c7be91b898279cde01b6cf6896c7f2e89b5c85a1f508d01d"
+    },
+    "producer": {
+      "path": "produce.py",
+      "sha256": "17abb4548465a0522b15992604f85af5fa0ea327cc373d0c068eef71df7d29d4"
+    },
+    "projective_import": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_cocycle_v1/certificate.json",
+      "sha256": "3f7c2fff23a70ab8c1f6e922d6799b168ca328f0fa9e68be8a0e8881f80310bb"
+    }
+  },
+  "schema": "axial-universal-hessian-intertwiner-receipt-v1",
+  "source_commit": "82b5173569840a1207826ba9f25c4d9d65f07c2c",
+  "status": "EXACT_UNIVERSAL_HESSIAN_AND_NO_RATIONAL_INTERTWINER_PASS",
+  "verification": {
+    "independent_verifier": "python3 verify.py",
+    "tests": "python3 -m unittest -v test_structure.py"
+  }
+}
