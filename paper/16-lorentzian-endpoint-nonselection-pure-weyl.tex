@@ -85,8 +85,11 @@ For every integer \(\ell\ge2\) and every real \(\omega>0\), the scalar
 spin-two Regge--Wheeler and spin-one Maxwell differential modules are simple
 over \(\C(r)[D]\), with rational endomorphism ring \(\C\).  Together with
 specialization-safe nonsplitting of the axial \(\ell=2\) self-extension, this
-implies that its only rational local dynamical involutions are \(\pm I\);
-neither can make the hyperbolic spin-two form positive.
+implies that its complete local commutant is the dual-number algebra and its
+only rational local dynamical involutions are \(\pm I\); neither can make the
+hyperbolic spin-two form positive.  A nonlocal spectral fundamental symmetry
+does exist on each positive-real-frequency fiber and on every compact band,
+but its natural all-frequency completion is threshold-weighted.
 
 On the certified cell
 \(\omega\in[0.49995,0.50005]\) the outgoing and future-horizon spaces are
@@ -161,11 +164,14 @@ space is totally isotropic but nonradical, and no nondegenerate semidefinite
 restriction can retain its line.
 \item The complete axial system has an exact RW/RW/spin-one filtration, with
 a nontrivial repeated-spin-two extension and no rational local
-spin-one/spin-two intertwiner.  Its associated graded pieces are the source
-Einstein graviton, the physical target Einstein carrier, and the Maxwell
-target-gauge vector.
+spin-one/spin-two intertwiner.  The repeated block has dual-number local
+commutant and no nontrivial semisimple local branch observable.  Its
+associated graded pieces are the source Einstein graviton, the physical
+target Einstein carrier, and the Maxwell target-gauge vector.
 \item Its incoming action-flux space has signature \((1,2)\) and is populated
-at every \(\omega>0\) by future-horizon-regular solutions.
+at every \(\omega>0\) by future-horizon-regular solutions.  A spectral
+fundamental symmetry gives a positive compact-band norm, with exact
+\(\omega,\omega,\omega^3\) factor weights at threshold.
 \item On a certified nonzero frequency cell the one-sided scattering map is
 pseudo-isometric between matching Krein spaces; outgoing population is
 generic on the positive real axis, and the filtered system has no
@@ -730,6 +736,66 @@ a^{-1}&-b/a^2&(bd-ac)/(a^2f)\\
 and the three apparently independent extension ratios are one base transfer
 and its intrinsic derivative.
 
+\begin{remark}[Critical Einstein--Weyl mass jet]
+\label{rem:critical-mass-jet}
+The second-order parent action admits the signed squared-mass deformation
+\[
+S_m^{(2)}
+=
+4\alpha_{\rm W}\int\sqrt{-g}\left[
+\phi^{ab}\mathcal E_{ab}[h]
+-\frac12\bigl(\phi_{ab}\phi^{ab}-\phi^2\bigr)
++\frac m2 h^{ab}\mathcal E_{ab}[h]
+\right].
+\]
+Its equations are
+\[
+\mathcal E h=\mathcal A\phi,
+\qquad
+\mathcal E\phi+m\mathcal E h=0,
+\qquad
+(\mathcal E+m\mathcal A)\phi=0.
+\]
+If \(\phi(m)\) is a smooth tensor branch through \(m=0\), then
+\[
+\mathcal E\dot\phi+\mathcal A\phi_0=0,
+\qquad
+\mathcal E(h+\dot\phi)=0,
+\]
+and hence \([h]=-[\partial_m\phi]_{m=0}\) modulo the Einstein kernel.
+On the transverse-traceless sector,
+\[
+\{\mathcal E(\mathcal E+m)\}^{-1}
+=
+\frac1m\{\mathcal E^{-1}-(\mathcal E+m)^{-1}\}
+\longrightarrow\mathcal E^{-2}.
+\]
+This is the exact covariant critical-mass jet underlying the coalescence of
+the massless and massive spin-two branches in Einstein--Weyl
+gravity~\cite{Antoniou2025}.  At infinity,
+\[
+k=\sqrt{\omega^2-m},
+\qquad
+\partial_m k|_0=-\frac1{2\omega},
+\]
+so the moving massive phase produces the generalized
+\(r_*e^{\pm i\omega r_*}\) partner, while the Schwarzschild Coulomb exponent
+has zero first \(m\)-derivative.  The finite-mass branch-sign involution is
+singular in the confluent basis and its renormalized residue is the
+nilpotent jet map.
+
+What is not yet proved is that the intrinsic radial parameter \(\tau\) in
+\eqref{eq:four-state} equals \(-m\).  That identification requires the exact
+projective comparison
+\[
+[\mathcal I_{\rm mass}]=[\mathcal I_{\rm Bach}]
+\quad\hbox{in}\quad
+\C(r)/\mathcal K_U\C(r).
+\]
+Accordingly no physical massive-QNM slope is inferred here from the
+intrinsic shear \(b\).
+\end{remark}
+
 \subsection{The spin-one quotient is not a rational spin-two transform}
 
 The distinct scalar labels in \eqref{eq:filtration} cannot be removed by a
@@ -973,6 +1039,46 @@ Lemma~\ref{lem:simple-extension-involution}.  Multiplication by either
 remaining scalar sign preserves the inertia of the hyperbolic plane.
 \end{proof}
 
+\begin{theorem}[Complete local commutant]
+\label{thm:local-commutant}
+For axial \(\ell=2\) and every real \(\omega>0\), the commutant of the
+nonsplit repeated-spin-two Bach module is
+\[
+\operatorname{End}(E_{\rm Bach})
+\simeq
+\C[\varepsilon]/(\varepsilon^2).
+\]
+More precisely, every endomorphism is uniquely
+\[
+\Phi=aI+bN,
+\qquad
+N^2=0.
+\]
+Consequently
+\[
+\operatorname{Aut}(E_{\rm Bach})
+=\{aI+bN:a\ne0\},
+\qquad
+\operatorname{Idem}(E_{\rm Bach})=\{0,I\},
+\]
+the only involutions are \(\pm I\), every diagonalizable local endomorphism
+is scalar, and every finite-order local automorphism is scalar.
+\end{theorem}
+
+\begin{proof}
+The embedded copy of \(M_{\rm RW}\) is the unique simple submodule: a second
+simple submodule mapping nontrivially to the quotient would split the
+extension.  Hence every endomorphism preserves it and induces scalars
+\(a,d\) on the submodule and quotient.  Naturality of the nonzero extension
+class \(e\) gives \(ae=ed\), so \(a=d\).  Then \(\Phi-aI\) vanishes on the
+submodule and quotient and factors through the quotient-to-submodule map,
+giving \(bN\), with \(N^2=0\).  The remaining assertions follow from
+\[
+(aI+bN)^k=a^kI+ka^{k-1}bN
+\]
+in characteristic zero.
+\end{proof}
+
 The endpoint Krein diagonalization is algebraic, but a bulk dynamical
 diagonalization would produce nontrivial differential-module projectors and
 split the extension.  The theorem excludes rational local involutions only;
@@ -1193,6 +1299,49 @@ dynamical construction cannot be a rational local involution.  A
 nonlocal, spectral, scattering-dependent, or BRST-level construction is not
 excluded.
 
+\begin{theorem}[Spectral fundamental symmetry on compact bands]
+\label{thm:spectral-c}
+For every real \(\omega>0\), define
+\[
+C_-(\omega)
+=
+\operatorname{sgn}G_-(\omega)
+=
+G_-(\omega)\{G_-(\omega)^2\}^{-1/2}.
+\]
+Then
+\[
+C_-^2=I,\qquad
+C_-^\dagger G_-=G_-C_-,
+\qquad
+G_-C_-=|G_-|>0.
+\]
+Its pullback to the horizon-regular solution fiber,
+\[
+C_{\rm sol}=T_-^{-1}C_-T_-,
+\]
+is a positive fundamental symmetry for
+\(G_{\rm sol}=T_-^\dagger G_-T_-\).  On every compact
+\(I\Subset(0,\infty)\), it defines a bounded involution on
+\(L^2(I;\C^3)\), and its positive norm is uniformly equivalent to the
+coefficient norm.
+\end{theorem}
+
+\begin{proof}
+The first three identities are the Hermitian functional calculus for an
+invertible Hermitian matrix.  Pullback gives
+\[
+G_{\rm sol}C_{\rm sol}
+=T_-^\dagger|G_-|T_->0.
+\]
+Continuity, compactness, and invertibility of \(G_-\) and \(T_-\) give the
+uniform band bounds.
+\end{proof}
+
+This proves existence of a nonlocal spectral \(C\), rather than a local
+branch observable.  It does not make \(C_{\rm sol}\) canonical, covariant,
+causal, holomorphic in complex frequency, or BRST compatible.
+
 The positive Hilbert majorant associated with this Krein form is
 \begin{equation}
 \label{eq:majorant}
@@ -1212,6 +1361,44 @@ s\in\dot H^{-1/2}.
 \]
 This identifies the canonical completion but does not itself prove global
 boundedness of the scattering multiplier.
+
+In the unrescaled incoming factor-Witt basis, after the exact second-null
+lift, the same construction reads
+\[
+G_-^{\rm fac}
+=
+\frac{384}{5}
+\begin{pmatrix}
+0&\omega&0\\
+\omega&0&0\\
+0&0&-\omega^3
+\end{pmatrix},
+\qquad
+C_-^{\rm fac}
+=
+\begin{pmatrix}
+0&1&0\\
+1&0&0\\
+0&0&-1
+\end{pmatrix}.
+\]
+Hence
+\[
+G_-^{\rm fac}C_-^{\rm fac}
+=
+\frac{384}{5}\operatorname{diag}(\omega,\omega,\omega^3).
+\]
+The natural factor-coefficient completion at threshold has norm
+\[
+\int_0^\epsilon
+\left[
+\omega(|u_E|^2+|u_X|^2)+\omega^3|u_1|^2
+\right]\dd\omega.
+\]
+Equation~\eqref{eq:majorant} uses the separately unit-normalized quotient
+coefficient and is related by a frequency-dependent factor-basis change.
+Neither presentation is uniformly equivalent to unweighted \(L^2\) at
+\(\omega=0\).
 
 \section{Every incoming channel is populated}
 
@@ -1338,6 +1525,44 @@ is a pseudo-isometric embedding
 \hookrightarrow
 (\C^3\oplus\C^3,G_+\oplus H_{\mathcal H^+}).
 \]
+
+\begin{proposition}[Exact positive-metric scattering test]
+\label{prop:c-scattering}
+Let
+\[
+J_{\rm out}=G_+\oplus H_{\mathcal H^+},
+\qquad
+C_{\rm out}=C_+\oplus C_H,
+\]
+where \(C_-,C_+,C_H\) are Krein-self-adjoint involutions with positive
+majorants.  Under \eqref{eq:pseudo}, the positive-metric identity
+\[
+\mathscr S^\dagger J_{\rm out}C_{\rm out}\mathscr S
+=G_-C_-
+\]
+is equivalent to
+\[
+C_{\rm out}\mathscr S=\mathscr S C_-.
+\]
+\end{proposition}
+
+\begin{proof}
+The intertwining equation and \eqref{eq:pseudo} immediately imply the
+positive identity.  Conversely set
+\(\Delta_C=C_{\rm out}\mathscr S-\mathscr S C_-\).  Expanding
+\(\Delta_C^\dagger J_{\rm out}C_{\rm out}\Delta_C\), the two norm terms
+and the two cross terms reduce, using the Krein and positive identities, to
+\[
+G_-C_-+G_-C_--G_-C_--G_-C_-=0.
+\]
+Positivity of \(J_{\rm out}C_{\rm out}\) forces \(\Delta_C=0\).
+\end{proof}
+
+Thus explicit \(T_+\) supplies a sharp finite-dimensional test of whether
+independently selected endpoint fundamental symmetries are dynamically
+compatible.  A transported symmetry always exists on
+\(\operatorname{ran}\mathscr S\), but it need not split as independent
+operators on \(\mathscr I^+\) and \(\mathcal H^+\).
 
 \begin{corollary}[Band-limited pseudo-isometry]
 Multiplication by \(T_+\) is a bounded isomorphism on
@@ -1768,6 +1993,10 @@ Parent resolvent identity and rank-one Laurent algebra &
 Exact algebra; QNM specialization conditional &
 Gauge-fixed invertible Einstein operator; a physical pole additionally
 requires the analytic Fredholm and bounded-insertion hypotheses\\
+Critical Einstein--Weyl parent mass jet and confluent branch-sign limit &
+Exact parent algebra with fail-closed radial crosswalk &
+Covariant parent and transverse-traceless sector; equality with the
+intrinsic radial \(\tau\)-jet requires a projective-cocycle comparison\\
 Euler cut current and Einstein packet isotropy &
 Exact symbolic and reduced-mode theorem with mutation tests &
 Finite-radius smooth compact-frequency core; endpoint interchange conditional\\
@@ -1784,10 +2013,17 @@ RW/Maxwell simplicity, scalar endomorphisms, and axial local-\(C\) obstruction &
 Exact symbolic theorem with independent certificate &
 Every integer \(\ell\ge2\) and real \(\omega>0\) for the scalar factors;
 the nonsplit Bach involution conclusion is axial \(\ell=2\)\\
+Complete dual-number commutant of the repeated-spin-two block &
+Exact categorical and symbolic theorem with independent certificate &
+Axial \(\ell=2\), every real \(\omega>0\); not the full six-state commutant\\
 Positive-graph obstruction and \(B_2/E\simeq E^*\) &
 Exact endpoint Krein theorem &
 Axial spin-two endpoint trace space; pointwise packet graph form only for
 decomposable frequency-invariant subspaces\\
+Spectral fundamental symmetry and weighted threshold completion &
+Exact finite-dimensional functional-calculus theorem &
+Each real-frequency incoming fiber and compact positive-frequency bands;
+no canonical, causal, holomorphic, or BRST claim\\
 Incoming factor Gram and \(T_-\in GL(3,\C)\) &
 Exact plus computer-assisted theorem &
 Every real \(\omega>0\), \(M=1\) normalization\\
@@ -1842,6 +2078,12 @@ Einstein line;
 \item neither the spin-one quotient nor the repeated spin-two partner can be
 reorganized into a positive local branch decomposition by the rational
 maps tested here;
+\item the complete local commutant of the repeated-spin-two block is the
+dual-number algebra, so it has no nontrivial local semisimple branch
+observable;
+\item a nonlocal spectral fundamental symmetry nevertheless exists on every
+positive-real-frequency solution fiber and on every compact band, with a
+weighted rather than unweighted threshold completion;
 \item it enters the current derived from the Weyl action;
 \item the complete incoming flux space is nondegenerate and indefinite;
 \item every incoming direction is populated by a future-horizon-regular
@@ -1857,9 +2099,14 @@ stability.  The remaining threat to time-domain control is quantitative
 resolvent or pseudospectral growth, not an exponentially growing separated
 frequency.
 
-The next two calculations are sharply defined.  First, compute the explicit
+The next three calculations are sharply defined.  First, compute the explicit
 typed \(T_+\) and reflection matrix over a substantial real-frequency band
-using the correlated partial-jet transport.  Second, construct the analytic
+using the correlated partial-jet transport and evaluate the exact
+\(C\)-intertwining defect of Proposition~\ref{prop:c-scattering}.  Second,
+derive the finite-mass axial carrier system and compare
+\([\mathcal I_{\rm mass}]\) with \([\mathcal I_{\rm Bach}]\); only that test
+can promote the intrinsic \(\tau\)-jet to a physical mass derivative.
+Third, construct the analytic
 Fredholm QNM realization needed to promote Theorem~\ref{thm:ep2} to a
 second-order Green-resolvent pole.  The parent formulation gives a cheaper
 audit inside that second task: compare
@@ -2134,6 +2381,8 @@ The principal machine authorities are:
 \item \cert{black_hole_programme/phase4/second_order_parent_flux_v1/certificate.json};
 \item \cert{black_hole_programme/phase4/parent_resolvent_krein_obstructions_v1/certificate.json};
 \item \cert{black_hole_programme/phase4/rw_maxwell_simplicity_endomorphisms_v1/certificate.json};
+\item \cert{black_hole_programme/phase4/einstein_weyl_critical_mass_jet_v1/certificate.json};
+\item \cert{black_hole_programme/phase4/axial_local_commutant_spectral_c_v1/certificate.json};
 \item \cert{black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json};
 \item \cert{black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/full_contour_winding_v1/certificate.json};
 \item \cert{black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/local_selector_v1/certificate.json};

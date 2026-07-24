@@ -1,24 +1,24 @@
 {
   "schema": "paper16-endpoint-nonselection-tier-receipt-v1",
   "status": "ACTIVE_CHECKPOINT",
-  "source_commit": "f36b4eaa2c773b6c51d1278972e8ada89daf2ca2",
+  "source_commit": "2331c76ecb285dd255cba057b33371d3c9d12d89",
   "artifacts": {
     "paper_tex": {
       "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl.tex",
-      "sha256": "7c050f107bc624496b26952f2720059169ca09b6cd8b956046d11bf3df9b78ef"
+      "sha256": "6a42dfc3dd65f0c0d596b12e93af98212f2712b3bea71f41c7da233d65f12467"
     },
     "paper_pdf": {
       "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl.pdf",
-      "sha256": "2ddb30406f92272fe50aafca7bfd8e789a55f81231daa40c4d8d31c3bcb8ecf7",
-      "pages": 29
+      "sha256": "8c974293d751383aaec2587280ef4816d35e8e173dfa07cd3546ab6445b55b62",
+      "pages": 32
     },
     "claim_map": {
       "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl-claim-map.json",
-      "sha256": "82fdd04f442791dcc444118ae9841ca24725dce6a125e36ff5b38ac05be63c81"
+      "sha256": "aa5e89463dffee465573e9758e826a7b4de2b7728a2c63b7992b6d8954dcec05"
     },
     "coverage": {
       "path": "planning/paper-coverage/phase4-paper16-endpoint-nonselection-overlay-2026-07-24.json",
-      "sha256": "d0c81f673805dd1054e1c5038a365c87dcf03a0cf08a8c704895d647294685d5"
+      "sha256": "9c43d16f1680a49b177cbc81bdcaea4babc93f131173362022007e94c2ffed63"
     },
     "computational_supplement": {
       "path": "paper/16-endpoint-nonselection-computational-supplement.tex",
@@ -34,14 +34,16 @@
     "tier1": [
       "claim-map generator --check passes",
       "independent semantic verifier passes",
-      "fifteen claim-boundary and mutation tests pass",
+      "eighteen claim-boundary and mutation tests pass",
       "exact all-ell threshold verifier and six tests pass",
       "universal Hessian/intertwiner verifier and five tests pass",
       "Schouten-Einstein/Maxwell carrier verifier and tests pass",
       "Euler transgression verifier and seven tests pass",
       "second-order parent-flux verifier and seven tests pass",
       "parent-resolvent/Krein-obstruction verifier and eight tests pass",
-      "RW/Maxwell simplicity/endomorphism verifier and nine tests pass"
+      "RW/Maxwell simplicity/endomorphism verifier and nine tests pass",
+      "critical Einstein-Weyl mass-jet producer, verifier, and five tests pass",
+      "local-commutant/spectral-C producer, verifier, and six tests pass"
     ],
     "tier2": "not triggered: no pre-existing operator or certificate was modified",
     "tier3": "not run: manuscript remains an active checkpoint pending explicit Tplus"
@@ -49,6 +51,8 @@
   "open_gates": [
     "the explicit typed Tplus band has not reached the r=4 matching section",
     "the Fredholm promotion of the connection EP2 remains open",
+    "the physical mass-deformation cocycle has not yet been compared with the intrinsic Bach cocycle",
+    "endpoint-block-diagonal spectral-C compatibility awaits explicit Tplus",
     "complete complex-frequency reducibility classification remains open",
     "the parent-overlap and retarded-convolution experiments are specified but not executed"
   ],
@@ -56,7 +60,8 @@
     "a submission freeze",
     "explicit Tplus amplitudes",
     "a Green-resolvent second-order pole",
-    "absence of nonlocal, spectral, scattering-dependent, or BRST C operators",
+    "a canonical, covariant, causal, endpoint-block-diagonal, or BRST-compatible spectral C operator",
+    "identification of the intrinsic radial tau with the physical squared-mass deformation",
     "a Schwarzschild retarded propagator",
     "time-domain stability or quantum unitarity"
   ]

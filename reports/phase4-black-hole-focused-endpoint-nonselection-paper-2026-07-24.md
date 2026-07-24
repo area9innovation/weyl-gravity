@@ -43,6 +43,16 @@ physical claim:
 11. fixed rank minors close the old \(\omega^2=3\) axial nonsplitting gap, so
     the only rational local dynamical involutions on the physical axial
     repeated-spin-two block are \(\pm I\).
+12. the complete local commutant of that block is
+    \(\mathbb C[\varepsilon]/(\varepsilon^2)\), excluding every nontrivial
+    local semisimple branch observable;
+13. a nonlocal spectral fundamental symmetry exists on each positive-real
+    solution fiber and on every compact band, while the exact factor-basis
+    threshold completion carries weights \(\omega,\omega,\omega^3\);
+14. the covariant parent system has an exact critical Einstein--Weyl mass
+    jet and singular branch-sign limit, but equality with the intrinsic
+    radial \(\tau\)-jet remains fail-closed pending the projective-cocycle
+    comparison.
 
 Two new experiment rails are explicit: compare the regularized parent QNM
 overlap with the radial extension overlap including projection, commutator,
@@ -64,7 +74,7 @@ main theorem chain. Paper 14 remains the provenance-rich source archive.
 
 ## Current size and gate
 
-The main PDF is 29 pages and lies inside the agreed 25–35 page target.
+The main PDF is 32 pages and lies inside the agreed 25–35 page target.
 The added length is theorem content rather than engineering chronology.  The
 explicit \(T_+\) band remains the correct final scientific addition; its
 first Phase-4 correlated successor passed but the common outgoing frame is
@@ -74,19 +84,21 @@ remains an active draft rather than a submission freeze.
 ## Verification
 
 The main paper compiles twice and the computational supplement compiles.  The
-generated claim map pins twenty source certificates, including the exact
+generated claim map pins twenty-two source certificates, including the exact
 all-\(\ell\) threshold, universal Hessian/intertwiner,
 Schouten-Einstein/Maxwell carrier, Euler transgression, second-order parent
 flux, parent-resolvent/Krein obstruction, RW/Maxwell simplicity and
-endomorphism, and static-control authorities.
+endomorphism, critical mass-jet, local-commutant/spectral-\(C\), and
+static-control authorities.
 An independent verifier checks the
 universal, parent, incoming, outgoing, no-growth, threshold, and EP2 flags.
-Fifteen tests reject Green-resolvent, all-frequency outgoing, generic
+Eighteen tests reject Green-resolvent, all-frequency outgoing, generic
 radial-to-time-Jordan, complete-polar-parent-Gram, time-domain,
 nonlocal-intertwiner, Euler-boundary, complex-frequency RW-simplicity,
 all-\(\ell\) Bach-nonsplitting, parent-overlap-shortcut, Schwarzschild
-retarded-propagator, and claim-map promotions.  The new exact package has a
-separate verifier and nine unit tests.
+retarded-propagator, premature physical mass crosswalk, canonical/causal
+spectral-\(C\), full-six-state-commutant, and claim-map promotions.  The two
+new exact packages have separate verifiers and eleven combined unit tests.
 
 Tier 3 is not run because the explicit \(T_+\) experiment and journal-length
 freeze are still open.

@@ -124,6 +124,21 @@ class Paper16ClaimMapTests(unittest.TestCase):
             "the parent overlap equals the radial overlap without endpoint terms"
         )
 
+    def test_physical_mass_crosswalk_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the intrinsic radial parameter \\(\\tau\\) equals the physical squared mass"
+        )
+
+    def test_canonical_causal_spectral_c_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the spectral fundamental symmetry is canonical and causal"
+        )
+
+    def test_full_six_state_commutant_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the full six-state commutant is the dual-number algebra"
+        )
+
     def test_claim_flag_promotion_rejected(self) -> None:
         claims = json.loads(CLAIM_MAP.read_text())
         claims["fail_closed_scope"]["green_resolvent_second_order_pole"] = True

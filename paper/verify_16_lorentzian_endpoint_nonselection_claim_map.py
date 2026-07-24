@@ -75,6 +75,11 @@ def main() -> None:
         "Involutions of a simple nonsplit self-extension",
         "Real-axis simplicity and scalar endomorphism rings",
         "Only scalar involutions on the physical axial block",
+        "Complete local commutant",
+        "Spectral fundamental symmetry on compact bands",
+        "Exact positive-metric scattering test",
+        "Critical Einstein--Weyl mass jet",
+        "[\\mathcal I_{\\rm mass}]=[\\mathcal I_{\\rm Bach}]",
         "Positive-graph and cotangent obstructions",
         "regularized parent overlap",
         "flat-space biwave kernel",
@@ -108,6 +113,9 @@ def main() -> None:
         "the Bach self-extension is nonsplit for every \\(\\ell\\ge2\\)",
         "the Schwarzschild retarded propagator is established",
         "the parent overlap equals the radial overlap without endpoint terms",
+        "the intrinsic radial parameter \\(\\tau\\) equals the physical squared mass",
+        "the spectral fundamental symmetry is canonical and causal",
+        "the full six-state commutant is the dual-number algebra",
     ]
     for phrase in forbidden_phrases:
         if phrase in text:
@@ -309,6 +317,58 @@ def main() -> None:
         "green_resolvent_double_pole_established",
     ]:
         require_flag(simplicity, key, False, "RW/Maxwell simplicity")
+    mass_jet = json.loads(
+        (
+            ROOT
+            / authorities["einstein_weyl_critical_mass_jet"]["path"]
+        ).read_text()
+    )
+    for key in [
+        "parent_mass_variation_exact",
+        "mass_derivative_modulo_einstein_kernel_exact",
+        "tt_difference_quotient_exact",
+        "finite_mass_branch_sign_singular_limit_exact",
+        "nilpotent_residue_exact",
+    ]:
+        require_flag(mass_jet, key, True, "critical mass jet")
+    for key in [
+        "physical_mass_jet_equals_intrinsic_radial_tau",
+        "physical_b_equals_minus_mass_derivative_of_jost",
+        "physical_massive_qnm_slope_certified",
+        "threshold_inverse_shear_asymptotic_certified",
+        "fredholm_double_pole_established",
+    ]:
+        require_flag(mass_jet, key, False, "critical mass jet")
+    if mass_jet.get("crosswalk_gate", {}).get("status") != "OPEN_NOT_ASSUMED":
+        fail("critical mass/radial crosswalk gate drift")
+
+    spectral_c = json.loads(
+        (
+            ROOT
+            / authorities["axial_local_commutant_spectral_c"]["path"]
+        ).read_text()
+    )
+    for key in [
+        "local_commutant_dual_numbers_exact",
+        "only_scalar_local_semisimple_observables",
+        "only_plus_minus_identity_local_involutions",
+        "nonlocal_spectral_c_exists_each_positive_real_fiber",
+        "compact_band_positive_norm_equivalence",
+        "threshold_weighted_completion_exact",
+        "scattering_positive_identity_equivalent_to_c_intertwining",
+    ]:
+        require_flag(spectral_c, key, True, "local commutant/spectral C")
+    for key in [
+        "spectral_c_canonical",
+        "spectral_c_covariant",
+        "spectral_c_causal",
+        "spectral_c_complex_holomorphic",
+        "endpoint_block_diagonal_scattering_c_established",
+        "whole_half_axis_unweighted_norm_equivalence",
+        "full_six_state_commutant_dual_numbers",
+        "brst_or_quantum_positive_state_space",
+    ]:
+        require_flag(spectral_c, key, False, "local commutant/spectral C")
     static = json.loads(
         (ROOT / authorities["static_normalized_control"]["path"]).read_text()
     )
@@ -324,7 +384,7 @@ def main() -> None:
     coverage = json.loads(coverage_path.read_text())
     if coverage.get("claim_map_sha256") != digest(claim_path):
         fail("coverage-to-claim-map hash drift")
-    if len(coverage.get("nodes", [])) != 14:
+    if len(coverage.get("nodes", [])) != 16:
         fail("coverage claim count drift")
     print("PASS: Paper 16 claim map and semantic boundaries")
 
