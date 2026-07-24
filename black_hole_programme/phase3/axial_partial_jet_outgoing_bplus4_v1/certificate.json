@@ -1,0 +1,96 @@
+{
+  "artifacts": {
+    "checkpoint": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_v1/checkpoint.json",
+      "payload_sha256": "2c20a479b67a2101e70ee6dd5f4d67493b661550bc66f747c450453a55de50fa"
+    },
+    "compile_log": {
+      "elapsed_seconds": null,
+      "exit_code": 0,
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_v1/probe_compile.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "run_log": {
+      "elapsed_seconds": null,
+      "exit_code": 0,
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_v1/probe_run.txt",
+      "sha256": "0c25e38c292795b95d9b60077f07dc3abf2627774acd12f6f3a70dd7654cd889"
+    },
+    "source": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_v1/probe.forge",
+      "sha256": "3dc2268dcebaf6040d53ea4c2418a126d6054e17eec8781b38e8044d9a95963a"
+    }
+  },
+  "claim_flags": {
+    "Bplus4_at_r4_certified": false,
+    "R_and_S_transported_in_one_correlated_state": true,
+    "T_plus_certified": false,
+    "exact_partial_jet_direct_gate_passed": true,
+    "first_panel_to_247_over_8_certified": true,
+    "rank_three_at_247_over_8_certified": true,
+    "shared_omega_generator_preserved": true,
+    "sole_admissible_common_moving_checkpoint_imported": true,
+    "stokes_or_scattering_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "diagnosis": {
+    "bounded_successor_passed": true,
+    "disposition": "SHORTFALL: retain the certified r=247/8 checkpoint and resume with content-addressed high-order chunks or a periodic direct gate; no r=4, Bplus4, Tplus, or Stokes promotion",
+    "first_obstruction": "throughput: repeating an independently expanded direct 16-state order-64 comparison on every panel did not finish a one-unit radial chunk inside the 180-second probe budget",
+    "full_r4_target_reached": false,
+    "scientific_refusal": false
+  },
+  "does_not_establish": [
+    "the complete outgoing Bplus4 frame at r=4",
+    "the outgoing trace map T_plus",
+    "a Stokes, scattering, reflection, or flux identity",
+    "bounded transport from r=247/8 to r=4"
+  ],
+  "imports": {
+    "common_moving_checkpoint": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_moving_frame_r31_v1/checkpoint.json",
+      "payload_sha256": "d5a60b372fa0d913b5cc2eed163be53a44f294863f5906a5e9742dcddfa7f9e3",
+      "sha256": "9905de85a0f2e789e8bb79fc1e05af4f6dd1ae186541687e61d932173a922656"
+    }
+  },
+  "lifecycle": "NUMERIC-ENCLOSURE",
+  "next_gate": "resume the exact 8x2 correlated state from r=247/8 in content-addressed high-order chunks, retaining generator 7315 and a fail-closed direct/jet comparison policy",
+  "rank_preservation": {
+    "flow_invertible_by_ODE_uniqueness": true,
+    "initial_rank_three_status": "MOVING_FRAME_R31_RANK3_ANALYTIC_KPLUS_ZERO",
+    "proof": "The certified r=31 E/R/S columns have rank three. The common radial fundamental solution is invertible, and the typed scalar h0 is zero-free, so the exact transported columns remain rank three at r=247/8.",
+    "rank_three_at_certified_radius": true,
+    "same_linear_flow_applied_to_all_columns": true,
+    "typed_h0_zero_free": true
+  },
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_BPLUS4_V1",
+  "schema": "phase3-axial-partial-jet-outgoing-bplus4-v1",
+  "status": "BPLUS4_CORRELATED_FIRST_PANEL_PASS_R4_OPEN",
+  "transport": {
+    "arithmetic": "IvTaylor4_omega tensor dual_tau, two columns in one 8x2 correlated state",
+    "certified_radius": "247/8",
+    "completed_panels": 1,
+    "direct_jet_coefficients_equal": true,
+    "direct_jet_interval_difference_contains_zero": true,
+    "direct_sixteen_state_gate_present": true,
+    "exponential_order": 96,
+    "frozen_spin_one_tangent_coefficients_zero": true,
+    "frozen_spin_one_tangent_padding_contains_zero": true,
+    "internal_tangent_normalization": "tangent/512",
+    "radial_box_radius": "1/16",
+    "shared_generator": 7315,
+    "start_radius": "31",
+    "step": "-1/8",
+    "summary": {
+      "final_r": "247/8",
+      "max_tail": "0.007426513552203137",
+      "max_width": "1.78453621449834",
+      "panels": "1",
+      "status": "PASS"
+    },
+    "target_radius": "4"
+  }
+}

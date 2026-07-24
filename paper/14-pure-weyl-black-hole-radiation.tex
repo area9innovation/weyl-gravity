@@ -2121,6 +2121,8 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/adaptive-chart-separation-certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated-affine-export-audit-certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated-affine-seed-successor-certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated-multipanel-throughput-shortfall-certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/joint-kernel-serialization-timeout-certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_multipanel_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/certificate.json};
@@ -2134,6 +2136,10 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_joint_frame_r31_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_kplus_moving_phase_gate_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_moving_frame_r31_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk01_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk02_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk03_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v2/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v3/certificate.json};
@@ -2149,6 +2155,10 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v8/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v9/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v10/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_panel98_contour_subdivision_repair_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v2/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v3/certificate.json};
 \cert{black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json}\\
 Polar restriction-stable module and invariant current filtration &
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json}\\
@@ -2324,7 +2334,20 @@ bounds are \(0.999874\) and \(0.997894\); the residual grows from
 \(0.00130228\) to \(0.00553187\), while the radial Cauchy scaled norm is
 \(0.480079\) and its tail \(0.000626096\).  This certifies the correlation
 format and one content-addressed step only.  A multipanel continuation and
-the horizon \(H_4\) gate remain open.
+the horizon \(H_4\) gate remain open.  A first 33-step continuation attempt
+was terminated after 344 seconds without producing an artifact and is
+recorded as a throughput shortfall, not a pass.  The replacement contract is
+to serialize and independently verify the joint derivative kernel once,
+then emit one durable content-addressed radial child per invocation bounded
+by 60 seconds.
+Two subsequent 58-second attempts to serialize the complete joint
+derivative kernel also time out, including a unique-expression cache
+variant.  They emit neither a kernel nor a radial child.  The exact resume
+state remains
+\(\rho=65/268435456\) with model hash
+\texttt{48683b91...1f250}; the next admissible implementation must shard the
+kernel by generator entry and derivative order, hash-assemble those shards,
+and only then attempt one radial child.
 
 At outgoing real infinity the corresponding reduced-phase representation
 has also passed its first local test.  Keeping \(e^{-2i\omega r_*}\)
@@ -2466,7 +2489,38 @@ the analytic first-jet endpoint shear is now
 \]
 in the complete common moving factor gauge.  The next \(T_+\) dependency is
 the correlated transport of this sole admissible checkpoint from \(r=31\)
-to the common \(r=4\) section; \(T_+\) and Stokes remain open.
+to the common \(r=4\) section.  Its first bounded chunk is now certified:
+one shared \(8\times2\)
+\(\operatorname{Taylor}_4(\omega)\otimes{\rm dual}_\tau\) state advances
+\[
+ r:31\longrightarrow \frac{247}{8}
+\]
+with generator 7315, order 96, tail \(0.00742651\), and width \(1.78454\).
+An independent direct 16-state calculation agrees coefficientwise, the
+frozen spin-one tangent stays exactly zero, and the typed rank-three frame is
+preserved.  A monolithic one-unit continuation did not finish within 180
+seconds.  Therefore \(B_+|_{r=4}\), \(T_+\), and Stokes remain open; the next
+rail must resume from this checkpoint in bounded high-order chunks.  The
+first such replay-free successor advances
+\[
+ \frac{247}{8}\longrightarrow\frac{123}{4}
+\]
+in 25.80 seconds with order 96, tail \(0.00167831\), and width \(2.51500\).
+Its direct 16-state boundary comparison agrees exactly in coefficients and
+by interval containment, and it emits the successor payload hash
+\texttt{42170721...e196}.  This validates the bounded checkpoint architecture
+but is still only one radial child, not \(B_+|_{r=4}\).  A second adaptive
+successor uses a larger certified step and advances
+\[
+ \frac{123}{4}\longrightarrow\frac{979}{32}
+\]
+in 38.20 seconds.  Its order is 120, tail \(2.80109\times10^{-4}\), and
+width \(3.69395\); the same direct boundary gate passes.  Thus the bounded
+driver is beginning to increase radial progress.  A proposed \(7/32\),
+order-168 successor then reaches the 42-second execution cap without output.
+It emits no checkpoint and proves no branch or tail bound; the last usable
+state remains the chunk-02 payload \texttt{047f7f...b7ff}.  The common
+section at \(r=4\) therefore remains distant.
 Complex-frequency work has excluded the entire growth half-plane, but no
 damped QNM root, contour moment, or local Smith branch has been computed.
 At the QNM seed disk, the direct inverse-\(r\) forward recurrence also fails
@@ -2627,10 +2681,19 @@ threshold.  The certified contiguous boundary prefix is therefore panels
 \[
  2.47379\times10^{-7}
 \]
-at panel 97.  Panel 98 is the next honest enclosure obstruction: both
-endpoint transports pass, but the assembled common-affine \(\Delta\) ball
-contains zero.  Panels 98--511 are not admitted, and the interval-Newton,
-argument-principle, and Smith/EP2 gates are not run.
+at panel 97.  The parent enclosure for panel \(98/512\) contains zero even
+though both endpoint transports pass.  Exact dyadic subdivision repairs this
+without changing any threshold: the children \(196/1024\) and \(197/1024\)
+have modulus lower bounds \(2.55042\times10^{-5}\) and
+\(2.53795\times10^{-5}\), respectively.  Two subsequent bounded adaptive
+chunks apply the same rule to parents \(99/512\) and \(100/512\).  Their four
+dyadic children all exclude zero.  A third bounded continuation repairs
+parents \(101/512\) and \(102/512\) with the four children
+\(202/1024,\ldots,205/1024\), extending the exact contiguous boundary
+coverage through \(103/512\).  Parent \(103/512\) is the next
+unmaterialized panel.
+The remaining boundary, interval-Newton, argument-principle, and Smith/EP2
+gates are not run.
 Uniform time-domain boundedness, decay, and completeness remain open.
 
 The present result already fixes an important baseline:

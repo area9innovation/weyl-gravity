@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v3/continuation.py black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v3/produce.py black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v3/verify.py",
+      "elapsed_seconds": 0.028775,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v3/certificate.json black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v3/schema.json",
+      "elapsed_seconds": 0.103454,
+      "returncode": 0,
+      "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_adaptive_dyadic_boundary_chunk_v3.test_continuation",
+      "elapsed_seconds": 0.1062,
+      "returncode": 0,
+      "stderr": "test_budget_and_imported_parent (black_hole_programme.phase3.axial_qnm_adaptive_dyadic_boundary_chunk_v3.test_continuation.AdaptiveContinuationV3Test.test_budget_and_imported_parent) ... ok\ntest_exact_contiguous_coverage (black_hole_programme.phase3.axial_qnm_adaptive_dyadic_boundary_chunk_v3.test_continuation.AdaptiveContinuationV3Test.test_exact_contiguous_coverage) ... ok\ntest_root_and_smith_closed (black_hole_programme.phase3.axial_qnm_adaptive_dyadic_boundary_chunk_v3.test_continuation.AdaptiveContinuationV3Test.test_root_and_smith_closed) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.003s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_adaptive_dyadic_boundary_chunk_v3.verify",
+      "elapsed_seconds": 0.098188,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "adaptive dyadic boundary v3 verifier: PASS (coverage 103/512; next 103/512)\n"
+    }
+  ],
+  "elapsed_seconds": 40.935218,
+  "higher_tiers_not_run": "No full contour, freeze or release.",
+  "input_sha256": {
+    "predecessor_aggregate": "471e335dbdb6d96aeb394adc835db2dce3ebbed64f76012fd9d64d8c82a80dee",
+    "predecessor_certificate": "86ebca3bac5fd3979be6e94d66b3b61d71a02aff8fd2935a740a1cfb7d0a8fc2",
+    "predecessor_raw": "756638c98d7349ee3f7fe59ccfd5acc4a5ad12a230252fbd60bdeeee7a07b8ce",
+    "stable_transport_source": "9afe681bc6f4a40d36ca3ecee9cf74f94fa3f4ca95dfba065136d24e0883cc3d"
+  },
+  "output_sha256": {
+    "aggregate": "c9a9811872d705160b52f844ab8872e639cf6101ef55e99fa9735552b4ea878d",
+    "certificate": "ce3a5f35c5f2397f214585db240194388ea55eee3ac5ebaeaa32b42a1fd0f077",
+    "raw": "09326ed48238c658ae78546c644e0821a3b8bd3ef8038bd54714f1bf41256155",
+    "report": "71a720c35905aebbb138cc9e8d9d5db2502f31d0c5784f126ce18d42f34b4b8d"
+  },
+  "schema": "phase3-axial-qnm-adaptive-dyadic-boundary-receipt-v3",
+  "tier_0": "py_compile and JSON Schema validation",
+  "tier_1": "bounded producer and independent hash-only verifier"
+}

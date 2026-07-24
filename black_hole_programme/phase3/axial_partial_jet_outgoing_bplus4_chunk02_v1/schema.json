@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "imports",
+    "artifacts",
+    "adaptive_chunk",
+    "boundary_gate",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-partial-jet-outgoing-bplus4-chunk02-v1"
+    },
+    "lifecycle": {"const": "NUMERIC-ENCLOSURE"},
+    "status": {
+      "enum": [
+        "BPLUS4_LARGER_STEP_SUCCESSOR_PASS",
+        "BPLUS4_LARGER_STEP_SUCCESSOR_REFUSED"
+      ]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "content_addressed_chunk_certified",
+        "larger_step_probed_first",
+        "adaptive_step_order_gate_certified",
+        "under_sixty_second_chunk_certified",
+        "boundary_direct_gate_certified",
+        "successor_checkpoint_serialized",
+        "shared_omega_generator_preserved",
+        "full_Bplus4_at_r4_certified",
+        "T_plus_certified",
+        "stokes_or_scattering_certified"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

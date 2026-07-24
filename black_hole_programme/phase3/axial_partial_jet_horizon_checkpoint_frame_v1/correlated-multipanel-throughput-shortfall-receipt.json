@@ -1,0 +1,35 @@
+{
+  "claim_boundary": "throughput diagnosis and restart split; the one-step certificate is retained but no multipanel result is promoted",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.correlated_multipanel_throughput_shortfall",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.produce_correlated_multipanel_throughput_shortfall --check",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.verify_correlated_multipanel_throughput_shortfall",
+    "python3 -m unittest -v black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.test_correlated_multipanel_throughput_shortfall"
+  ],
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "higher_tiers_not_run": "Tier 2/3 not required: no mathematical input or paper theorem changed",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_HORIZON_CORRELATED_MULTIPANEL_THROUGHPUT_SHORTFALL",
+  "schema": "phase3-receipt-v1",
+  "status": "THROUGHPUT_SHORTFALL_NO_MULTIPANEL_CLAIM",
+  "validation": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.correlated_affine_multipanel_successor",
+      "elapsed_seconds": 344,
+      "status": "TERMINATED_NOT_A_PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.produce_correlated_multipanel_throughput_shortfall --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.verify_correlated_multipanel_throughput_shortfall",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.test_correlated_multipanel_throughput_shortfall",
+      "status": "PASS_5_TESTS"
+    }
+  ]
+}

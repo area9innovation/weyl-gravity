@@ -1,0 +1,49 @@
+{
+  "schema": "phase3-axial-horizon-joint-kernel-serialization-timeout-v1",
+  "status": "JOINT_KERNEL_SERIALIZATION_TIMEOUT_NO_RADIAL_CHILD",
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "invocations": [
+    {
+      "command": "timeout 58s python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.correlated_joint_derivative_kernel",
+      "implementation": "direct full-matrix mixed differentiation",
+      "exit_code": 124,
+      "wall_cap_seconds": 58,
+      "status": "TIMEOUT_NOT_PASS"
+    },
+    {
+      "command": "timeout 58s python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.correlated_joint_derivative_kernel",
+      "implementation": "unique-expression derivative cache",
+      "exit_code": 124,
+      "wall_cap_seconds": 58,
+      "status": "TIMEOUT_NOT_PASS"
+    }
+  ],
+  "inputs": {
+    "certified_successor_run_sha256": "04284b716621d5be284040cddb0289df0f754f2cac9990078e7212af20f7a46c",
+    "certified_successor_certificate_sha256": "57b3217bdfc8ea3ca5514f3929d955e6ea4bb7f4c3e989b1277466cc013f62c8",
+    "throughput_shortfall_certificate_sha256": "02c4856766f956b690ac98865e88e019250582b7fe93911faeeb9ad69300b800",
+    "optimized_kernel_source_sha256": "b345afa326804d81dc8b92f68d2d26f46cefcfc983af70449f53ca29ddb53504"
+  },
+  "resume": {
+    "rho": "65/268435456",
+    "model_content_sha256": "48683b9103b786d0e39022a18b96f3e71a5e6ac0991e6f5bb1d45d074781f250"
+  },
+  "next_required_split": "serialize independently verifiable per-entry or per-order derivative-kernel shards in separate bounded invocations, assemble their hashes, then launch exactly one radial child",
+  "claim_flags": {
+    "joint_kernel_serialized": false,
+    "joint_kernel_verified": false,
+    "durable_radial_child_produced": false,
+    "multipanel_transport_certified": false,
+    "H4_certified": false,
+    "T_plus_certified": false
+  },
+  "does_not_establish": [
+    "a reusable joint derivative kernel",
+    "a radial successor beyond the certified one-step model",
+    "multipanel completion",
+    "the H4 witness",
+    "a physical outgoing map T_plus"
+  ]
+}

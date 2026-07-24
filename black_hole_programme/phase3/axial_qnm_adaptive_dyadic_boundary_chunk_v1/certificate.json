@@ -1,0 +1,109 @@
+{
+  "claim_flags": {
+    "QNM_location_certified": false,
+    "Smith_selector_certified": false,
+    "adaptive_ordered_chunk_materialized": true,
+    "argument_principle_certified": false,
+    "defective_fibre_or_EP2_certified": false,
+    "full_contour_nonzero_certified": false,
+    "materialized_prefix_nonzero_certified": true,
+    "root_count_certified": false,
+    "stable_root_reused": true,
+    "threshold_lowered": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "boundary nonvanishing beginning at the stated next gap",
+    "boundary nonvanishing on the complete closed contour",
+    "an argument-principle root count",
+    "a QNM location or simple-root certificate",
+    "a nonzero Delta_tau or Delta_omega selector",
+    "a local Smith branch, defective fibre or EP2",
+    "a physical outgoing Bach map T_plus",
+    "time-domain stability or any LORENTZIAN-CAUSAL claim"
+  ],
+  "imports": {
+    "predecessor_aggregate": {
+      "path": "black_hole_programme/phase3/axial_qnm_panel98_contour_subdivision_repair_v1/aggregate-run.json",
+      "sha256": "2aca3a5992db75dc6c72ced583df6f3de673ae77dd7663c3fc51a03a375dd443"
+    },
+    "predecessor_certificate": {
+      "path": "black_hole_programme/phase3/axial_qnm_panel98_contour_subdivision_repair_v1/certificate.json",
+      "sha256": "49d17e7f3a3136f789512e42f7986ed7f07cf41965ea4a9139c1bdfdfa59ca01"
+    },
+    "stable_root_certificate": {
+      "path": "black_hole_programme/phase3/axial_qnm_horizon_center_self_map_repair_v1/certificate.json",
+      "sha256": "86289b031584202aa147fb22b1deb8bec331088562047c5fa758a05c0f39a44f"
+    },
+    "stable_root_source": {
+      "path": "black_hole_programme/phase3/axial_qnm_horizon_center_self_map_repair_v1/repair.py",
+      "sha256": "8635a33a556926aabe6a2e01b7ee11814dabab7492ba9c66166c8db6fbf22635"
+    },
+    "transport_source": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/common_affine.py",
+      "sha256": "8ae5c434f7fe3757b79b6cafddd71057cf67d5fb31e1b7ac16754fcbcb20bc5b"
+    },
+    "typed_projective_source": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v3/rail_v3.py",
+      "sha256": "1599d4710223637577194f28e0277b72400c0a762288c65e9e4db402e4801db2"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "method": {
+    "compute_budget_seconds": 42.0,
+    "horizon_remainder_root": "stable interval smaller root with exact 1000001/1000000 strict enlargement",
+    "maximum_subdivision_depth": 1,
+    "parent_policy": "ordered sequential evaluation",
+    "requested_parent_range": [
+      99,
+      109
+    ],
+    "stop_policy": "stop before insufficient launch budget or at first unrepaired child failure",
+    "subdivision_policy": "split only a failing parent into its two dyadic children",
+    "threshold_policy": "unchanged; no threshold relaxation"
+  },
+  "result": {
+    "accepted_segments": [
+      {
+        "delta_modulus_lower": "[2.5270472745500063079793874178874325006e-5 +/- 7.74e-43]",
+        "kind": "repair_child",
+        "row_sha256": "9cc18a9266da7e7f0ad6ba92374e9272573908651365a10e73253b2b1012dc42",
+        "segment": "198/1024"
+      },
+      {
+        "delta_modulus_lower": "[2.5158613894168367999510541903837500543e-5 +/- 4.60e-43]",
+        "kind": "repair_child",
+        "row_sha256": "1965a9c17f760ce0a2c514ae33efe19744b7f2d96a00b5e35af6993c77f1d5d9",
+        "segment": "199/1024"
+      }
+    ],
+    "coverage_stop": "25/128",
+    "elapsed_compute_seconds": 40.171588742989115,
+    "new_accepted_segment_count": 2,
+    "next_honest_boundary_gap": {
+      "first_unmaterialized_parent_panel": 100,
+      "parent_panel_count": 512,
+      "start": "100/512"
+    },
+    "terminal": {
+      "code": "TIME_BUDGET_BEFORE_REQUIRED_CHILDREN",
+      "first_unmaterialized_parent_panel": 100,
+      "parent_failure": "COMMON_AFFINE_DELTA_ENCLOSURE_CONTAINS_ZERO"
+    }
+  },
+  "runs": {
+    "aggregate": {
+      "path": "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v1/adaptive-aggregate-run.json",
+      "sha256": "2e1e5491dd399ee9d272d1b207e6c7c8e2523e7fc05226c61eec1ccc5d14e6e8"
+    },
+    "raw": {
+      "path": "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v1/adaptive-raw-run.json",
+      "sha256": "f7c68910f62d3c4010753ae1857a07b3e8af60e3f0eb1faaee6951f64d1fe8b7"
+    }
+  },
+  "schema": "phase3-axial-qnm-adaptive-dyadic-boundary-chunk-v1",
+  "status": "BOUNDED_ADAPTIVE_BOUNDARY_PREFIX_EXTENDED_FAIL_CLOSED"
+}

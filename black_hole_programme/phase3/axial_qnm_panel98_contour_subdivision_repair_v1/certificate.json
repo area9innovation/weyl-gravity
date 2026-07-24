@@ -1,0 +1,104 @@
+{
+  "claim_flags": {
+    "QNM_location_certified": false,
+    "Smith_selector_certified": false,
+    "argument_principle_certified": false,
+    "both_child_deltas_exclude_zero": true,
+    "boundary_prefix_through_99_over_512_certified": true,
+    "defective_fibre_or_EP2_certified": false,
+    "full_contour_nonzero_certified": false,
+    "parent_98_subdivision_repaired": true,
+    "root_count_certified": false,
+    "stable_root_reused": true,
+    "threshold_lowered": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "boundary nonvanishing beginning with parent panel 99/512",
+    "boundary nonvanishing on the complete closed contour",
+    "an argument-principle root count",
+    "a QNM location or simple-root certificate",
+    "a nonzero Delta_tau or Delta_omega selector",
+    "a local Smith branch, defective fibre or EP2",
+    "a physical outgoing Bach map T_plus",
+    "time-domain stability or any LORENTZIAN-CAUSAL claim"
+  ],
+  "imports": {
+    "predecessor_certificate": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v10/certificate.json",
+      "sha256": "b3bfa88c71dc3d3cac0fddeeb02dbd58941ad8528aa830d7cdc8397a60917518"
+    },
+    "predecessor_run": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v10/rail-v10-run.json",
+      "sha256": "5d110f7fae4509d53a148396845f9e1befa38966b58f04aaaf6bc5c50d560d1b"
+    },
+    "stable_root_certificate": {
+      "path": "black_hole_programme/phase3/axial_qnm_horizon_center_self_map_repair_v1/certificate.json",
+      "sha256": "86289b031584202aa147fb22b1deb8bec331088562047c5fa758a05c0f39a44f"
+    },
+    "stable_root_source": {
+      "path": "black_hole_programme/phase3/axial_qnm_horizon_center_self_map_repair_v1/repair.py",
+      "sha256": "8635a33a556926aabe6a2e01b7ee11814dabab7492ba9c66166c8db6fbf22635"
+    },
+    "transport_source": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/common_affine.py",
+      "sha256": "8ae5c434f7fe3757b79b6cafddd71057cf67d5fb31e1b7ac16754fcbcb20bc5b"
+    },
+    "typed_projective_source": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v3/rail_v3.py",
+      "sha256": "1599d4710223637577194f28e0277b72400c0a762288c65e9e4db402e4801db2"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "method": {
+    "arithmetic": "python-flint acb/arb, 128 bits",
+    "children": [
+      "196/1024",
+      "197/1024"
+    ],
+    "horizon_remainder_root": "stable interval smaller root with exact 1000001/1000000 strict enlargement",
+    "parent": "98/512",
+    "reuse_policy": "raw child rows are persisted once and all verification reuses their content hashes without rerunning transport",
+    "threshold_policy": "unchanged; no threshold relaxation",
+    "worker_count": 2
+  },
+  "result": {
+    "aggregate_segment_count": 100,
+    "children": [
+      {
+        "delta_modulus_lower": "[2.5504207387775463391626732542212915568e-5 +/- 3.47e-43]",
+        "row_sha256": "b5516fb5737626fb40d853e76f9cedc3a8fa60c6cdcf45e9368c170a878ac6d9",
+        "segment": "196/1024"
+      },
+      {
+        "delta_modulus_lower": "[2.5379510759595570597226581027799986871e-5 +/- 7.84e-43]",
+        "row_sha256": "83dbf5b9d1be7c86c9932d386ceb132f0971b619f9f788eee506d580b648364f",
+        "segment": "197/1024"
+      }
+    ],
+    "coverage_stop": "99/512",
+    "minimum_delta_modulus_lower": "[2.4737853874064623124053769570765176e-7 +/- 1.28e-42]",
+    "minimum_delta_modulus_lower_segment": "97/512",
+    "next_honest_boundary_gap": {
+      "first_unmaterialized_parent_panel": 99,
+      "parent_panel_count": 512,
+      "reason": "no stable-root shared-generator endpoint export has been materialized for parent panel 99/512",
+      "start": "99/512"
+    }
+  },
+  "runs": {
+    "aggregate": {
+      "path": "black_hole_programme/phase3/axial_qnm_panel98_contour_subdivision_repair_v1/aggregate-run.json",
+      "sha256": "2aca3a5992db75dc6c72ced583df6f3de673ae77dd7663c3fc51a03a375dd443"
+    },
+    "children": {
+      "path": "black_hole_programme/phase3/axial_qnm_panel98_contour_subdivision_repair_v1/child-run.json",
+      "sha256": "1f577f2de19342493e5715f8809aba1bad216eb2242af1538f56a02afe48d7ef"
+    }
+  },
+  "schema": "phase3-axial-qnm-panel98-contour-subdivision-repair-v1",
+  "status": "PANEL_98_SUBDIVISION_REPAIRED_BOUNDARY_PREFIX_TO_99_OVER_512"
+}

@@ -1,0 +1,63 @@
+{
+  "artifacts": {
+    "README.md": "db2579720f22a9219a23a74e8dcb57c7d0a2017f702095b2649978f16c5c7bc4",
+    "__init__.py": "a446a7dada05f531c3ea5612f906497380de334f35a9546ab4c14f762d5826d1",
+    "audit.py": "dc0cb2c885de5fa80deb0442c06a59569fd59b61a4f18f0cd5271b1cedab202a",
+    "certificate.json": "df85bb6190809530127cd17596ad635120e57cce9c316355b873e57c01f2b502",
+    "produce.py": "881a6bf486cd3e4a8bc37e425746353c91f4d0bd4b8d6c5ae83277ceda029cc7",
+    "report.md": "00e7d3bce497d80debb7be4079e5a7dd24160551f2819bae3e9de02436dc79be",
+    "run_manifest.json": "f1fff62a7e198219b201a94f7b164cd62895ed4836c77d8a26b510869f09ffe3",
+    "schema.json": "8cef0cf6ff04e8f834119972de754e44b103e1627292d10fbe1bba1ae48247d2",
+    "test_chunk03.py": "b5258327147dac2667ecb6be95d9990b86f1c963cf762f880338b453db772b94",
+    "verify.py": "1114699bad5be71611022332a904f7705a62e84a9af9c912fc6def5def681431"
+  },
+  "certificate": "black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk03_v1/certificate.json",
+  "certificate_sha256": "df85bb6190809530127cd17596ad635120e57cce9c316355b873e57c01f2b502",
+  "claim_boundary": "The larger-step attempt compiled but timed out at its 42-second execution cap without a boundary record. No successor checkpoint or direct-gate claim is made.",
+  "commands": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_outgoing_bplus4_chunk03_v1.produce --check",
+      "elapsed_seconds": 0.3343137170304544,
+      "exit_code": 0,
+      "output_tail": "BPLUS4_MAXIMAL_STEP_RUNTIME_REFUSED\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_outgoing_bplus4_chunk03_v1.verify",
+      "elapsed_seconds": 0.10501322901109233,
+      "exit_code": 0,
+      "output_tail": "PASS independent Bplus4 chunk-03 runtime-refusal verifier\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_partial_jet_outgoing_bplus4_chunk03_v1.test_chunk03",
+      "elapsed_seconds": 0.11723135696956888,
+      "exit_code": 0,
+      "output_tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.030s\n\nOK\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m py_compile /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk03_v1/produce.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk03_v1/verify.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk03_v1/test_chunk03.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk03_v1/audit.py",
+      "elapsed_seconds": 0.029566314013209194,
+      "exit_code": 0,
+      "output_tail": "",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check -- black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk03_v1",
+      "elapsed_seconds": 0.006217133020982146,
+      "exit_code": 0,
+      "output_tail": "",
+      "status": "PASS"
+    }
+  ],
+  "schema": "phase3-axial-partial-jet-outgoing-bplus4-chunk03-receipt-v1",
+  "scientific_disposition": "SHORTFALL",
+  "status": "PASS",
+  "test_tiers": {
+    "tier_0_edit_checks": "PASS",
+    "tier_1_scoped_tests": "PASS",
+    "tier_2_affected_chain": "NOT_RUN: this package records a bounded timeout and emits no new checkpoint or mathematical input",
+    "tier_3_full_suite": "NOT_RUN: no r=4, Bplus4, T_plus, Stokes, paper, release, freeze, scattering, or flux promotion"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "artifacts": {
+    "README.md": "19148b8f0e499fb5d08a5afe97cbe5cd0b315e13b08ad1f053cc059482db02c8",
+    "__init__.py": "f7abf39e15905e0bd3a28a0cae4e8f6d8dc8bb38e2947f8eafa5549b9a62bf3a",
+    "audit.py": "6fadc2899f212e097f858a2c8aa0729233be76c2811e6d4a7f72cd8fe7d1a59c",
+    "certificate.json": "9f870720cc77277ae1612d0c8b35f9237665f8015ecfad7d7468443bb155eeea",
+    "checkpoint.json": "b70ea0dcc8158d46019b8b23305db9efebff368913a933aecbcf8f3be99a4746",
+    "produce.py": "e72eefac5b218ae5962e5968b7bc3a1ee2081251c1ff653b347b2a5c2ece2302",
+    "report.md": "9a09ba9370e5268c5adbef15b6876eed1a108993e05d2121334179f2b58fa193",
+    "run_manifest.json": "c017336f1d5cda49522711a7ebbc954746093a432da48d8386f91d59df7dce67",
+    "schema.json": "944c0882fd87a27b84b4dbcca7505a37abbcfbc335677c42c9a12d9cc7429740",
+    "test_chunk01.py": "85ffb0b0ef5f88ddd659aeb075628cc6e1ab7bfbb302bff396736d0c15bb243f",
+    "verify.py": "120f494f2b683c8a43a7223ee3ebf83a1742814dc62177a3addec70ad6532703"
+  },
+  "certificate": "black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk01_v1/certificate.json",
+  "certificate_sha256": "9f870720cc77277ae1612d0c8b35f9237665f8015ecfad7d7468443bb155eeea",
+  "claim_boundary": "One adaptive content-addressed successor from r=247/8 to r=123/4 completes in 25.8 seconds and passes the direct sixteen-state boundary comparison. Full r=4 remains open.",
+  "commands": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_outgoing_bplus4_chunk01_v1.produce --check",
+      "elapsed_seconds": 0.325303107034415,
+      "exit_code": 0,
+      "output_tail": "BPLUS4_CONTENT_ADDRESSED_SUCCESSOR_PASS\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_outgoing_bplus4_chunk01_v1.verify",
+      "elapsed_seconds": 0.14370670303469524,
+      "exit_code": 0,
+      "output_tail": "PASS independent Bplus4 content-addressed successor verifier\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_partial_jet_outgoing_bplus4_chunk01_v1.test_chunk01",
+      "elapsed_seconds": 0.37422694702399895,
+      "exit_code": 0,
+      "output_tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.287s\n\nOK\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m py_compile /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk01_v1/produce.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk01_v1/verify.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk01_v1/test_chunk01.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk01_v1/audit.py",
+      "elapsed_seconds": 0.030878613993991166,
+      "exit_code": 0,
+      "output_tail": "",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check -- black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk01_v1",
+      "elapsed_seconds": 0.00589353300165385,
+      "exit_code": 0,
+      "output_tail": "",
+      "status": "PASS"
+    }
+  ],
+  "schema": "phase3-axial-partial-jet-outgoing-bplus4-chunk01-receipt-v1",
+  "status": "PASS",
+  "test_tiers": {
+    "tier_0_edit_checks": "PASS",
+    "tier_1_scoped_tests": "PASS",
+    "tier_2_affected_chain": "NOT_RUN: predecessor/operator inputs are unchanged and content-addressed; one independent boundary gate was run",
+    "tier_3_full_suite": "NOT_RUN: no r=4, Bplus4, T_plus, Stokes, paper, freeze, release, scattering, or flux promotion"
+  }
+}

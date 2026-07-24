@@ -1,0 +1,60 @@
+{
+  "artifact_sha256": {
+    "README.md": "f0e9fef150dab2a5c7410e34d084411ee1ee8fc46941ddb05e3bf1d3a2b7cc58",
+    "__init__.py": "c47d79588e99539b864978f1b86f4205cc34c9c87fb510ac2807a645153b6d7d",
+    "produce.py": "19da977ab187f82d80f4336bfb6c205bec6302d18fca460e6f0b4fa1c4e11090",
+    "repair.py": "fdb7b5b1f572fd65f3b3c6ef3a5748644a1231970cc8e8d7db6af2a22e17d109",
+    "schema.json": "ea52c7a807320d45549d589c032a3aa3917ac530cb19edf3beb37a33c44bcfe1",
+    "test_repair.py": "9253ed1d8785113c78df0813676522f8213be8cc1a2480d9c652a20d719adf22",
+    "verify.py": "b815658e921dbcaf19f0591ac7b9edd21cfcb8e5e0fbcf697df91536fe3d3de0"
+  },
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_panel98_contour_subdivision_repair_v1/repair.py black_hole_programme/phase3/axial_qnm_panel98_contour_subdivision_repair_v1/produce.py black_hole_programme/phase3/axial_qnm_panel98_contour_subdivision_repair_v1/verify.py",
+      "elapsed_seconds": 0.02913,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_panel98_contour_subdivision_repair_v1/certificate.json black_hole_programme/phase3/axial_qnm_panel98_contour_subdivision_repair_v1/schema.json",
+      "elapsed_seconds": 0.093345,
+      "returncode": 0,
+      "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_panel98_contour_subdivision_repair_v1.test_repair",
+      "elapsed_seconds": 0.099325,
+      "returncode": 0,
+      "stderr": "test_children_are_content_addressed_and_nonzero (black_hole_programme.phase3.axial_qnm_panel98_contour_subdivision_repair_v1.test_repair.Panel98SubdivisionRepairTest.test_children_are_content_addressed_and_nonzero) ... ok\ntest_exact_parent_replacement (black_hole_programme.phase3.axial_qnm_panel98_contour_subdivision_repair_v1.test_repair.Panel98SubdivisionRepairTest.test_exact_parent_replacement) ... ok\ntest_no_threshold_change (black_hole_programme.phase3.axial_qnm_panel98_contour_subdivision_repair_v1.test_repair.Panel98SubdivisionRepairTest.test_no_threshold_change) ... ok\ntest_repaired_prefix_and_next_gap (black_hole_programme.phase3.axial_qnm_panel98_contour_subdivision_repair_v1.test_repair.Panel98SubdivisionRepairTest.test_repaired_prefix_and_next_gap) ... ok\ntest_root_and_smith_claims_fail_closed (black_hole_programme.phase3.axial_qnm_panel98_contour_subdivision_repair_v1.test_repair.Panel98SubdivisionRepairTest.test_root_and_smith_claims_fail_closed) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_panel98_contour_subdivision_repair_v1.verify",
+      "elapsed_seconds": 0.095774,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "panel-98 subdivision repair verifier: PASS (children 196/1024 and 197/1024 nonzero; next gap 99/512; root/Smith claims fail closed)\n"
+    }
+  ],
+  "elapsed_seconds": 14.462687,
+  "higher_tiers_not_run": "Local contour subdivision repair; no full contour, theorem lifecycle promotion, freeze or release.",
+  "input_sha256": {
+    "predecessor_certificate": "b3bfa88c71dc3d3cac0fddeeb02dbd58941ad8528aa830d7cdc8397a60917518",
+    "predecessor_run": "5d110f7fae4509d53a148396845f9e1befa38966b58f04aaaf6bc5c50d560d1b",
+    "stable_root_certificate": "86289b031584202aa147fb22b1deb8bec331088562047c5fa758a05c0f39a44f",
+    "stable_root_source": "8635a33a556926aabe6a2e01b7ee11814dabab7492ba9c66166c8db6fbf22635",
+    "transport_source": "8ae5c434f7fe3757b79b6cafddd71057cf67d5fb31e1b7ac16754fcbcb20bc5b",
+    "typed_projective_source": "1599d4710223637577194f28e0277b72400c0a762288c65e9e4db402e4801db2"
+  },
+  "output_sha256": {
+    "aggregate_run": "2aca3a5992db75dc6c72ced583df6f3de673ae77dd7663c3fc51a03a375dd443",
+    "certificate": "49d17e7f3a3136f789512e42f7986ed7f07cf41965ea4a9139c1bdfdfa59ca01",
+    "child_run": "1f577f2de19342493e5715f8809aba1bad216eb2242af1538f56a02afe48d7ef",
+    "report": "d944ae842f7533dc104c8da4416095d76eae32018cc4912604d8927e52cf90b5"
+  },
+  "schema": "phase3-axial-qnm-panel98-contour-subdivision-receipt-v1",
+  "tier_0": "py_compile and JSON Schema validation",
+  "tier_1": "two-child producer, materialized scoped tests and independent hash-only verifier"
+}

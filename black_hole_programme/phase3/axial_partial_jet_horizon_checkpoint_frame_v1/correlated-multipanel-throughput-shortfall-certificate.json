@@ -1,0 +1,126 @@
+{
+  "claim_flags": {
+    "H4_certified": false,
+    "T_plus_certified": false,
+    "cartesian_wrapping_obstruction_removed": false,
+    "former_cartesian_obstruction_crossed": false,
+    "joint_kernel_cache_required": true,
+    "multipanel_result_certified": false,
+    "one_step_correlated_successor_retained": true,
+    "per_step_durable_checkpoint_split_required": true,
+    "r4_reached": false,
+    "timeout_treated_as_pass": false
+  },
+  "code_audit": {
+    "cached_interval_kernel_exists": true,
+    "gaussian_exact_backend_exists": true,
+    "joint_kernel_is_not_serialized_as_a_reusable_artifact": true,
+    "joint_symbolic_kernel_exists": true,
+    "multipanel_output_absent": true,
+    "per_step_checkpoint_constructor_exists": true,
+    "per_step_checkpoint_is_not_written_durably": true,
+    "requested_steps_is_33": true,
+    "run_is_written_only_after_compute_returns": true
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "any certified multipanel correlated radius, pivot, or residual",
+    "crossing of the former Cartesian obstruction radius",
+    "removal of the Cartesian wrapping obstruction",
+    "transport to r=4",
+    "H4, T_plus, a Gram, or a Stokes identity",
+    "any LORENTZIAN-CAUSAL theorem"
+  ],
+  "imports": {
+    "audit": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated_multipanel_throughput_shortfall.py",
+      "sha256": "ef846fe73b2937092e4fc62041efe596809177542f0d06ce38b82bd4b1767d8b"
+    },
+    "multipanel_prototype": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated_affine_multipanel_successor.py",
+      "sha256": "cac9b0b75627eebc65f167cd5c5b568fdab62067414c95b9d63e6f4e6bfcfa7b"
+    },
+    "one_step_certificate": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated-affine-seed-successor-certificate.json",
+      "sha256": "57b3217bdfc8ea3ca5514f3929d955e6ea4bb7f4c3e989b1277466cc013f62c8"
+    },
+    "run": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated-multipanel-throughput-shortfall-run.json",
+      "sha256": "5f370e66529990574b76803388b232adb812a47090d1db8d2b3f936c3206470a"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "observed_attempt": {
+    "certified_multipanel_pivot": null,
+    "certified_multipanel_radius": null,
+    "certified_multipanel_residual": null,
+    "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.correlated_affine_multipanel_successor",
+    "elapsed_seconds": 344,
+    "process_exit": "TERMINATED",
+    "requested_steps": 33,
+    "run_artifact_written": false,
+    "termination": "FAST_RAIL_TIMEOUT"
+  },
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_HORIZON_CORRELATED_MULTIPANEL_THROUGHPUT_SHORTFALL",
+  "run": {
+    "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated-multipanel-throughput-shortfall-run.json",
+    "sha256": "5f370e66529990574b76803388b232adb812a47090d1db8d2b3f936c3206470a"
+  },
+  "schema": "phase3-axial-horizon-correlated-multipanel-throughput-shortfall-v1",
+  "source": {
+    "multipanel_prototype": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated_affine_multipanel_successor.py",
+      "sha256": "cac9b0b75627eebc65f167cd5c5b568fdab62067414c95b9d63e6f4e6bfcfa7b"
+    },
+    "one_step_certificate": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated-affine-seed-successor-certificate.json",
+      "sha256": "57b3217bdfc8ea3ca5514f3929d955e6ea4bb7f4c3e989b1277466cc013f62c8",
+      "status": "ONE_CORRELATED_RADIAL_SUCCESSOR_CERTIFIED"
+    }
+  },
+  "split_contract": {
+    "checkpoint_stage": {
+      "input": "one content-addressed parent model plus the verified joint kernel",
+      "output": "one atomic content-addressed correlated checkpoint written before the process exits",
+      "required_gates": [
+        "radial Cauchy scaled norm below one",
+        "one coupled residual propagated without component boxes",
+        "fixed chart denominator lower modulus positive",
+        "parent, kernel, polynomial, affine generator, residual, and step metadata hashed"
+      ],
+      "work_unit": "exactly one radial step per invocation"
+    },
+    "driver_stage": {
+      "role": "link already verified one-step checkpoints; never recompute the symbolic kernel or earlier steps",
+      "time_budget_seconds": 60,
+      "timeout_disposition": "emit a shortfall at the last durable checkpoint; timeout is not pass"
+    },
+    "kernel_stage": {
+      "contents": [
+        "joint rho/omega derivative matrices through radial degree 5 and omega degree 4",
+        "exact Gaussian-rational coefficients",
+        "symbolic generator source hash",
+        "frequency center and model orders",
+        "content hash over the complete kernel"
+      ],
+      "independent_gate": "verify exact derivative identities against the symbolic generator before any checkpoint consumes the kernel",
+      "output": "correlated-joint-generator-kernel.json"
+    },
+    "resume_source": {
+      "certificate": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated-affine-seed-successor-certificate.json",
+      "content_sha256": "48683b9103b786d0e39022a18b96f3e71a5e6ac0991e6f5bb1d45d074781f250",
+      "model_stage": "normalized_one_radial_step_successor",
+      "rho": "65/268435456"
+    },
+    "schema": "phase3-correlated-multipanel-split-contract-v1"
+  },
+  "status": "THROUGHPUT_SHORTFALL_NO_MULTIPANEL_CLAIM",
+  "terminal": {
+    "gate": "THROUGHPUT_SHORTFALL",
+    "last_certified_model_sha256": "48683b9103b786d0e39022a18b96f3e71a5e6ac0991e6f5bb1d45d074781f250",
+    "last_certified_rho": "65/268435456",
+    "multipanel_result_certified": false
+  }
+}

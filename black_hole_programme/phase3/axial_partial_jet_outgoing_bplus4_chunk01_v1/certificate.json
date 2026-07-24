@@ -1,0 +1,100 @@
+{
+  "adaptive_chunk": {
+    "candidates": [
+      {
+        "center": "493/16",
+        "choice": 0,
+        "denominator": 8,
+        "final_radius": "123/4",
+        "name": "PRIMARY",
+        "order": 96,
+        "radius": "1/16",
+        "step": "-1/8"
+      },
+      {
+        "center": "987/32",
+        "choice": 1,
+        "denominator": 16,
+        "final_radius": "493/16",
+        "name": "FALLBACK",
+        "order": 64,
+        "radius": "1/32",
+        "step": "-1/16"
+      }
+    ],
+    "raw_model_stdout_retained": false,
+    "selected": {
+      "center": "493/16",
+      "choice": 0,
+      "denominator": 8,
+      "final_radius": "123/4",
+      "name": "PRIMARY",
+      "order": 96,
+      "radius": "1/16",
+      "step": "-1/8"
+    },
+    "selection_rule": "accept primary iff its validated exponential pre-tail is finite, nonnegative, and <1/2; otherwise rebuild the coefficient enclosure and use the smaller fallback; refuse if the fallback pre-tail is not <1/2",
+    "source_content_addressed": true,
+    "summary": {
+      "choice": 0,
+      "coefficients": true,
+      "containment": true,
+      "order": 96,
+      "tail": "0.0016783057410934246",
+      "width": "2.51499998794968"
+    },
+    "total_elapsed_seconds": 25.801149628998246,
+    "under_sixty_seconds": true
+  },
+  "artifacts": {
+    "checkpoint": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk01_v1/checkpoint.json",
+      "payload_sha256": "42170721eecfcf03a89eaf21618cc88940e259b61e98bc21ef145fa5b479e196"
+    },
+    "run_manifest": {
+      "chunk_id": "cbfbfea907e067b53d9074177a08ab6e077130ac025d4b9adc022a0bd40a632b",
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk01_v1/run_manifest.json",
+      "source_sha256": "94b6921da314933f12af626791c6446c2d1baf45da9f4ec7afe8f3182e76e3e3"
+    }
+  },
+  "boundary_gate": {
+    "direct_sixteen_state_expanded_once": true,
+    "interval_difference_contains_zero": true,
+    "partial_jet_coefficients_equal_direct": true,
+    "rank_three_preserved_by_common_invertible_flow": true,
+    "shared_generator": 7315
+  },
+  "claim_flags": {
+    "T_plus_certified": false,
+    "adaptive_step_order_gate_certified": true,
+    "boundary_direct_gate_certified": true,
+    "content_addressed_chunk_certified": true,
+    "full_Bplus4_at_r4_certified": false,
+    "shared_omega_generator_preserved": true,
+    "stokes_or_scattering_certified": false,
+    "successor_checkpoint_serialized": true,
+    "under_sixty_second_chunk_certified": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "the complete outgoing Bplus4 frame at r=4",
+    "the outgoing trace map T_plus",
+    "a Stokes, scattering, reflection, or flux identity",
+    "bounded continuation beyond the successor radius"
+  ],
+  "imports": {
+    "predecessor_checkpoint": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_v1/checkpoint.json",
+      "payload_sha256": "2c20a479b67a2101e70ee6dd5f4d67493b661550bc66f747c450453a55de50fa",
+      "sha256": "524aa6fdc996dd790fd67e15693a3f596dd2d100d6bafcc822197eee9dc4b6c7"
+    }
+  },
+  "lifecycle": "NUMERIC-ENCLOSURE",
+  "next_gate": "resume only from this content-addressed checkpoint with the same adaptive one-panel contract; never replay the monolithic r=31 transport",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_BPLUS4_CHUNK01_V1",
+  "schema": "phase3-axial-partial-jet-outgoing-bplus4-chunk01-v1",
+  "status": "BPLUS4_CONTENT_ADDRESSED_SUCCESSOR_PASS"
+}

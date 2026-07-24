@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "claim_flags": {
+      "properties": {
+        "cartesian_wrapping_obstruction_removed": {
+          "const": false
+        },
+        "former_cartesian_obstruction_crossed": {
+          "const": false
+        },
+        "multipanel_result_certified": {
+          "const": false
+        },
+        "one_step_correlated_successor_retained": {
+          "const": true
+        },
+        "timeout_treated_as_pass": {
+          "const": false
+        }
+      },
+      "required": [
+        "one_step_correlated_successor_retained",
+        "multipanel_result_certified",
+        "former_cartesian_obstruction_crossed",
+        "cartesian_wrapping_obstruction_removed",
+        "timeout_treated_as_pass"
+      ],
+      "type": "object"
+    },
+    "dependency_tags": {
+      "contains": {
+        "const": "REDUCED-MODE"
+      },
+      "type": "array"
+    },
+    "lifecycle": {
+      "const": "CLASSIFIED"
+    },
+    "observed_attempt": {
+      "properties": {
+        "elapsed_seconds": {
+          "const": 344
+        },
+        "run_artifact_written": {
+          "const": false
+        },
+        "termination": {
+          "const": "FAST_RAIL_TIMEOUT"
+        }
+      },
+      "required": [
+        "command",
+        "requested_steps",
+        "elapsed_seconds",
+        "termination",
+        "run_artifact_written"
+      ],
+      "type": "object"
+    },
+    "result_id": {
+      "const": "PURE_WEYL_PHASE3_AXIAL_HORIZON_CORRELATED_MULTIPANEL_THROUGHPUT_SHORTFALL"
+    },
+    "schema": {
+      "const": "phase3-axial-horizon-correlated-multipanel-throughput-shortfall-v1"
+    },
+    "status": {
+      "const": "THROUGHPUT_SHORTFALL_NO_MULTIPANEL_CLAIM"
+    },
+    "terminal": {
+      "properties": {
+        "gate": {
+          "const": "THROUGHPUT_SHORTFALL"
+        },
+        "multipanel_result_certified": {
+          "const": false
+        }
+      },
+      "required": [
+        "gate",
+        "last_certified_rho",
+        "last_certified_model_sha256",
+        "multipanel_result_certified"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema",
+    "result_id",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "source",
+    "observed_attempt",
+    "code_audit",
+    "split_contract",
+    "terminal",
+    "claim_flags",
+    "imports",
+    "run",
+    "does_not_establish"
+  ],
+  "type": "object"
+}

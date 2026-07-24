@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "imports",
+    "artifacts",
+    "transport",
+    "rank_preservation",
+    "diagnosis",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-partial-jet-outgoing-bplus4-v1"
+    },
+    "lifecycle": {
+      "const": "NUMERIC-ENCLOSURE"
+    },
+    "status": {
+      "enum": [
+        "BPLUS4_CORRELATED_FIRST_PANEL_PASS_R4_OPEN",
+        "BPLUS4_CORRELATED_FIRST_PANEL_REFUSED"
+      ]
+    },
+    "transport": {
+      "type": "object",
+      "required": [
+        "start_radius",
+        "certified_radius",
+        "target_radius",
+        "completed_panels",
+        "shared_generator"
+      ],
+      "properties": {
+        "start_radius": {"const": "31"},
+        "certified_radius": {"const": "247/8"},
+        "target_radius": {"const": "4"},
+        "completed_panels": {"const": 1},
+        "shared_generator": {"const": 7315}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "sole_admissible_common_moving_checkpoint_imported",
+        "shared_omega_generator_preserved",
+        "R_and_S_transported_in_one_correlated_state",
+        "exact_partial_jet_direct_gate_passed",
+        "first_panel_to_247_over_8_certified",
+        "rank_three_at_247_over_8_certified",
+        "Bplus4_at_r4_certified",
+        "T_plus_certified",
+        "stokes_or_scattering_certified"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

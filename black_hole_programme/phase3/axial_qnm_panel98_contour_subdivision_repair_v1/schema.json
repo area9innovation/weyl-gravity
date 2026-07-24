@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "claim_flags",
+    "method",
+    "result",
+    "imports",
+    "runs",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-qnm-panel98-contour-subdivision-repair-v1"
+    },
+    "status": {
+      "const": "PANEL_98_SUBDIVISION_REPAIRED_BOUNDARY_PREFIX_TO_99_OVER_512"
+    },
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "contains": {"const": "REDUCED-MODE"}
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "parent_98_subdivision_repaired",
+        "both_child_deltas_exclude_zero",
+        "stable_root_reused",
+        "threshold_lowered",
+        "boundary_prefix_through_99_over_512_certified",
+        "full_contour_nonzero_certified",
+        "argument_principle_certified",
+        "root_count_certified",
+        "QNM_location_certified",
+        "Smith_selector_certified",
+        "defective_fibre_or_EP2_certified"
+      ]
+    },
+    "method": {"type": "object"},
+    "result": {"type": "object"},
+    "imports": {"type": "object", "minProperties": 6},
+    "runs": {
+      "type": "object",
+      "required": ["children", "aggregate"]
+    },
+    "does_not_establish": {"type": "array", "minItems": 8}
+  },
+  "additionalProperties": false
+}

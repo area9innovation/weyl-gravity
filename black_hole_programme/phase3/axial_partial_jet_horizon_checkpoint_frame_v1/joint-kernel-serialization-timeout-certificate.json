@@ -1,0 +1,47 @@
+{
+  "schema": "phase3-axial-horizon-joint-kernel-serialization-shortfall-v1",
+  "status": "JOINT_KERNEL_SERIALIZATION_TIMEOUT_NO_RADIAL_CHILD",
+  "lifecycle": "CLASSIFIED",
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "claim_flags": {
+    "joint_kernel_serialized": false,
+    "joint_kernel_verified": false,
+    "durable_radial_child_produced": false,
+    "multipanel_transport_certified": false,
+    "H4_certified": false,
+    "T_plus_certified": false
+  },
+  "evidence": {
+    "receipt": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/joint-kernel-serialization-timeout-receipt.json",
+      "sha256": "9d0351906f609eb96c48950137a1b7cefe2222fa08ce4c5f361637f29dcd0987"
+    },
+    "report": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/joint-kernel-serialization-timeout-report.md",
+      "sha256": "bce8a6b6d7682bbce00fdfecbf246602298f911d2a6c84f0e86313c24f62c37a"
+    },
+    "optimized_kernel_source": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/correlated_joint_derivative_kernel.py",
+      "sha256": "b345afa326804d81dc8b92f68d2d26f46cefcfc983af70449f53ca29ddb53504"
+    }
+  },
+  "resume": {
+    "rho": "65/268435456",
+    "model_content_sha256": "48683b9103b786d0e39022a18b96f3e71a5e6ac0991e6f5bb1d45d074781f250"
+  },
+  "required_split": {
+    "unit": "one generator entry and one derivative-order block per shard",
+    "shard_gate": "each shard invocation must terminate in at most 60 seconds and carry its own content hash",
+    "assembly_gate": "verify complete index coverage and all shard hashes before radial transport",
+    "child_gate": "after kernel assembly, produce exactly one content-addressed radial child from the certified resume model"
+  },
+  "does_not_establish": [
+    "a reusable joint derivative kernel",
+    "a radial successor beyond the certified one-step model",
+    "multipanel completion",
+    "the H4 witness",
+    "a physical outgoing map T_plus"
+  ]
+}

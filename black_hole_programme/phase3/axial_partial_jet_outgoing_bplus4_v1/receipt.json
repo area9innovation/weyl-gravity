@@ -1,0 +1,67 @@
+{
+  "artifacts": {
+    "README.md": "bc0de2806355686dd1bfb9cdf177864ab8b3c875d2669aee1ed5a68f2bfa3ca7",
+    "__init__.py": "15bdf6b9fe76bf8cc0d21cfcbb7dde321f270eed764c99e9f0bd75ef5d7dd441",
+    "_probe.py": "932ee1206ca1a26b203198e89afd65c46f2b10c23187c448a88cb6e8e542a444",
+    "audit.py": "30d4db5084e067ddc14bdcb70955ac538fd2100fdec0b147e6cba32000f297dc",
+    "certificate.json": "d8a57937051f09aa96f751982738c1d11deaee6a4145205dbb100d02d106745d",
+    "checkpoint.json": "524aa6fdc996dd790fd67e15693a3f596dd2d100d6bafcc822197eee9dc4b6c7",
+    "probe.forge": "3dc2268dcebaf6040d53ea4c2418a126d6054e17eec8781b38e8044d9a95963a",
+    "probe_compile.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "probe_run.txt": "0c25e38c292795b95d9b60077f07dc3abf2627774acd12f6f3a70dd7654cd889",
+    "produce.py": "016ccfd34ab5699a0c756d4c85a83ceaaa69e2f51436bf95d0ff427381c04baf",
+    "report.md": "4adfae4261d2b75109c27aba49161d4b2f9bc1964f45d129f35cfe54857a2a61",
+    "schema.json": "f4ae8201ec198051b836aea6ab9f0529cc97c17283090d22075989b2c998a923",
+    "test_bplus4.py": "fedf713708f7f5a7c31d310b580c3bd688e3022f1e6ce9b032c0d4ed7a22760f",
+    "verify.py": "b0a127608507692055b24434ba0f69ec78613076e9a7ed5de9597e9e2c10b5a3"
+  },
+  "certificate": "black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_v1/certificate.json",
+  "certificate_sha256": "d8a57937051f09aa96f751982738c1d11deaee6a4145205dbb100d02d106745d",
+  "claim_boundary": "A single correlated high-order panel from r=31 to r=247/8 passes direct/jet, tail, width, typing, and rank-preservation gates. Full Bplus4 at r=4 remains open due throughput.",
+  "commands": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_outgoing_bplus4_v1.produce --check",
+      "elapsed_seconds": 0.4708346090046689,
+      "exit_code": 0,
+      "output_tail": "BPLUS4_CORRELATED_FIRST_PANEL_PASS_R4_OPEN\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_outgoing_bplus4_v1.verify",
+      "elapsed_seconds": 0.18154819100163877,
+      "exit_code": 0,
+      "output_tail": "PASS independent bounded correlated Bplus4 verifier\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_partial_jet_outgoing_bplus4_v1.test_bplus4",
+      "elapsed_seconds": 0.46699187194462866,
+      "exit_code": 0,
+      "output_tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.375s\n\nOK\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m py_compile /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_v1/_probe.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_v1/produce.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_v1/verify.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_v1/test_bplus4.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_v1/audit.py",
+      "elapsed_seconds": 0.03399144497234374,
+      "exit_code": 0,
+      "output_tail": "",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check -- black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_v1",
+      "elapsed_seconds": 0.006609046016819775,
+      "exit_code": 0,
+      "output_tail": "",
+      "status": "PASS"
+    }
+  ],
+  "schema": "phase3-axial-partial-jet-outgoing-bplus4-receipt-v1",
+  "scientific_disposition": "SHORTFALL",
+  "status": "PASS",
+  "test_tiers": {
+    "tier_0_edit_checks": "PASS",
+    "tier_1_scoped_tests": "PASS",
+    "tier_2_affected_chain": "NOT_RUN: no source operator or imported certificate changed; the bounded successor imports them by content hash",
+    "tier_3_full_suite": "NOT_RUN: r=4 was not reached and no Bplus4, T_plus, paper, freeze, release, Stokes, or scattering theorem is promoted"
+  }
+}

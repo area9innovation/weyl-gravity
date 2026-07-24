@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema", "status", "lifecycle", "dependency_tags", "claim_flags",
+    "evidence", "resume", "required_split", "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-horizon-joint-kernel-serialization-shortfall-v1"
+    },
+    "status": {
+      "const": "JOINT_KERNEL_SERIALIZATION_TIMEOUT_NO_RADIAL_CHILD"
+    },
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"contains": {"const": "REDUCED-MODE"}},
+    "claim_flags": {"type": "object"},
+    "evidence": {"type": "object", "minProperties": 3},
+    "resume": {
+      "type": "object",
+      "required": ["rho", "model_content_sha256"]
+    },
+    "required_split": {"type": "object", "minProperties": 4},
+    "does_not_establish": {"type": "array", "minItems": 5}
+  },
+  "additionalProperties": false
+}

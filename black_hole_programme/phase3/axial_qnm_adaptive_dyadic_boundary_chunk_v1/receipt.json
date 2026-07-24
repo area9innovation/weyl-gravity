@@ -1,0 +1,60 @@
+{
+  "artifact_sha256": {
+    "README.md": "8dcfb5b240af17b283e2b1c62c8561a8d4b9535a8e75513547e27c3ce28e60e5",
+    "__init__.py": "b9b884e30f7a2e1bdfdf0ef13a844e25e01e7e6385d5bca777fa07a4533fe596",
+    "adaptive.py": "9afe681bc6f4a40d36ca3ecee9cf74f94fa3f4ca95dfba065136d24e0883cc3d",
+    "produce.py": "2092529e610d8e5b365036b533d061412ad25630a332d38d0f96074657c54615",
+    "schema.json": "e301ab8c2285156174a85d5cbbaf71bc07df290062cc6edb435f1232c0481b21",
+    "test_adaptive.py": "b21daeb1d1a8bbf1b8e9864d24dc361048f5f15247e0f9ecc61cfb9c29cad883",
+    "verify.py": "cc4a797bea03b6996bc4c931e1a26f75613d14bb607963f661e6b5cea1ba0de2"
+  },
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v1/adaptive.py black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v1/produce.py black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v1/verify.py",
+      "elapsed_seconds": 0.029781,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v1/certificate.json black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v1/schema.json",
+      "elapsed_seconds": 0.098279,
+      "returncode": 0,
+      "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_adaptive_dyadic_boundary_chunk_v1.test_adaptive",
+      "elapsed_seconds": 0.107569,
+      "returncode": 0,
+      "stderr": "test_budget_and_content_addresses (black_hole_programme.phase3.axial_qnm_adaptive_dyadic_boundary_chunk_v1.test_adaptive.AdaptiveDyadicBoundaryTest.test_budget_and_content_addresses) ... ok\ntest_closed_claims (black_hole_programme.phase3.axial_qnm_adaptive_dyadic_boundary_chunk_v1.test_adaptive.AdaptiveDyadicBoundaryTest.test_closed_claims) ... ok\ntest_contiguous_prefix (black_hole_programme.phase3.axial_qnm_adaptive_dyadic_boundary_chunk_v1.test_adaptive.AdaptiveDyadicBoundaryTest.test_contiguous_prefix) ... ok\ntest_only_failed_parents_are_subdivided (black_hole_programme.phase3.axial_qnm_adaptive_dyadic_boundary_chunk_v1.test_adaptive.AdaptiveDyadicBoundaryTest.test_only_failed_parents_are_subdivided) ... ok\ntest_ordered_parent_policy (black_hole_programme.phase3.axial_qnm_adaptive_dyadic_boundary_chunk_v1.test_adaptive.AdaptiveDyadicBoundaryTest.test_ordered_parent_policy) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_adaptive_dyadic_boundary_chunk_v1.verify",
+      "elapsed_seconds": 0.116506,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "adaptive dyadic boundary verifier: PASS (coverage 25/128; terminal TIME_BUDGET_BEFORE_REQUIRED_CHILDREN; root/Smith fail closed)\n"
+    }
+  ],
+  "elapsed_seconds": 40.53181,
+  "higher_tiers_not_run": "Bounded contour continuation; no full contour, theorem lifecycle promotion, freeze or release.",
+  "input_sha256": {
+    "predecessor_aggregate": "2aca3a5992db75dc6c72ced583df6f3de673ae77dd7663c3fc51a03a375dd443",
+    "predecessor_certificate": "49d17e7f3a3136f789512e42f7986ed7f07cf41965ea4a9139c1bdfdfa59ca01",
+    "stable_root_certificate": "86289b031584202aa147fb22b1deb8bec331088562047c5fa758a05c0f39a44f",
+    "stable_root_source": "8635a33a556926aabe6a2e01b7ee11814dabab7492ba9c66166c8db6fbf22635",
+    "transport_source": "8ae5c434f7fe3757b79b6cafddd71057cf67d5fb31e1b7ac16754fcbcb20bc5b",
+    "typed_projective_source": "1599d4710223637577194f28e0277b72400c0a762288c65e9e4db402e4801db2"
+  },
+  "output_sha256": {
+    "aggregate_run": "2e1e5491dd399ee9d272d1b207e6c7c8e2523e7fc05226c61eec1ccc5d14e6e8",
+    "certificate": "5800859e53b21877666a234127ca59e48d32733f4e91d72149e9e8a01f1b732a",
+    "raw_run": "f7c68910f62d3c4010753ae1857a07b3e8af60e3f0eb1faaee6951f64d1fe8b7",
+    "report": "b38ca7d08709f5873c2ae0c3ca559dee844ca74fa4a2b5bef07ccad1e2893f83"
+  },
+  "schema": "phase3-axial-qnm-adaptive-dyadic-boundary-receipt-v1",
+  "tier_0": "py_compile and JSON Schema validation",
+  "tier_1": "bounded producer, materialized tests and independent hash-only verifier"
+}

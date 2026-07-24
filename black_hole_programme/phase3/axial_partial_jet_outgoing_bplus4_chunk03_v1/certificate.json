@@ -1,0 +1,86 @@
+{
+  "adaptive_chunk": {
+    "candidates": [
+      {
+        "center": "1951/64",
+        "choice": 0,
+        "denominator": "32/7",
+        "final_radius": "243/8",
+        "name": "LARGER_PRIMARY",
+        "order": 168,
+        "radius": "7/64",
+        "step": "-7/32"
+      },
+      {
+        "center": "1953/64",
+        "choice": 1,
+        "denominator": "32/5",
+        "final_radius": "487/16",
+        "name": "PROVEN_FALLBACK",
+        "order": 120,
+        "radius": "5/64",
+        "step": "-5/32"
+      }
+    ],
+    "compile_exit_code": 0,
+    "completed_boundary_diagnostic_available": false,
+    "larger_step_probed_first": true,
+    "raw_model_stdout_retained": false,
+    "run_exit_code": 124,
+    "runtime_timeout_seconds": 42,
+    "selected_candidate_not_inferred": true,
+    "selection_rule": "try the 7/32 order-168 panel first; use the 5/32 order-120 fallback only when the primary pre-tail refuses",
+    "source_content_addressed": true,
+    "terminal_gate": "RUNTIME_TIMEOUT"
+  },
+  "artifacts": {
+    "run_manifest": {
+      "chunk_id": "8501bcb9181c6d7e7d74511192b823f1e8c6c219c8d612cd41f18199554133ce",
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk03_v1/run_manifest.json",
+      "source_sha256": "4087e09d50e389af00ec3f8a1e700c0ce343290a50d6db31fe093fdcf5d6420e"
+    }
+  },
+  "boundary_gate": {
+    "direct_sixteen_state_expanded_once": false,
+    "interval_difference_contains_zero": false,
+    "partial_jet_coefficients_equal_direct": false,
+    "rank_three_preserved_by_common_invertible_flow": false,
+    "shared_generator": 7315
+  },
+  "claim_flags": {
+    "T_plus_certified": false,
+    "boundary_direct_gate_certified": false,
+    "content_addressed_attempt_certified": true,
+    "full_Bplus4_at_r4_certified": false,
+    "larger_step_probed_first": true,
+    "runtime_refusal_certified": true,
+    "shared_omega_generator_preserved_at_successor": false,
+    "stokes_or_scattering_certified": false,
+    "successor_checkpoint_serialized": false,
+    "under_sixty_second_chunk_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "an admissible selected candidate or validated pre-tail",
+    "a direct sixteen-state boundary comparison",
+    "a successor checkpoint beyond r=979/32",
+    "the complete outgoing Bplus4 frame at r=4",
+    "the outgoing trace map T_plus",
+    "a Stokes, scattering, reflection, or flux identity"
+  ],
+  "imports": {
+    "predecessor_checkpoint": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk02_v1/checkpoint.json",
+      "payload_sha256": "047f7f3118a0ed49790d54c6d8b0549186224836c17f56ec03cd65114ed4b7ff",
+      "sha256": "0e7a053cf66a7625e0bc64c6e9835490d229346a9db425a5778d3ff56f2190f2"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "next_gate": "resume from the unchanged chunk-02 checkpoint with a candidate whose compile and direct-boundary execution can finish inside the bounded runtime; do not infer a successor from this timeout",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_BPLUS4_CHUNK03_V1",
+  "schema": "phase3-axial-partial-jet-outgoing-bplus4-chunk03-v1",
+  "status": "BPLUS4_MAXIMAL_STEP_RUNTIME_REFUSED"
+}
