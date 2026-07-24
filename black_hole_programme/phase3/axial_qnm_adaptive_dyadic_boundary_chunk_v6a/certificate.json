@@ -1,0 +1,97 @@
+{
+  "claim_flags": {
+    "QNM_location_certified": false,
+    "Smith_selector_certified": false,
+    "argument_principle_certified": false,
+    "children_launched": false,
+    "defective_fibre_or_EP2_certified": false,
+    "full_contour_nonzero_certified": false,
+    "parent_104_nonzero_certified": false,
+    "parent_104_observed": true,
+    "root_count_certified": false,
+    "stable_root_reused": true,
+    "threshold_lowered": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a repair of parent 104/512 when the parent observation fails",
+    "boundary nonvanishing beginning at the stated next gap",
+    "boundary nonvanishing on the complete closed contour",
+    "an argument-principle root count",
+    "a QNM location or simple-root certificate",
+    "a nonzero Delta_tau or Delta_omega selector",
+    "a local Smith branch, defective fibre or EP2",
+    "a physical outgoing Bach map T_plus",
+    "time-domain stability or any LORENTZIAN-CAUSAL claim"
+  ],
+  "imports": {
+    "generic_adaptive_source": {
+      "path": "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v1/adaptive.py",
+      "sha256": "20f2fca360a55a72a7b139c5d70b908e17f5369b3e83b360517feea75ca85ddd"
+    },
+    "generic_v4_runner": {
+      "path": "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v4/runner.py",
+      "sha256": "dc03c08906c846cd2ef6382b251a16a49a6c67b01f1a1690c3d2842304147fa9"
+    },
+    "predecessor_aggregate": {
+      "path": "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v5/adaptive-aggregate-run.json",
+      "sha256": "885cfe0e9c3969ed2a415b9422885ff2b4f5ff3aa9372aaadcca0432a7de8216"
+    },
+    "predecessor_certificate": {
+      "path": "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v5/certificate.json",
+      "sha256": "df44a41049d9f0e2ae26713fa37cc1a7e7511f284f1e654b04970c23667f06c8"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "method": {
+    "child_launch_guard": "MIN_CHILD_LAUNCH_SECONDS set above total compute budget; no child may launch after the parent observation",
+    "compute_budget_seconds": 42.0,
+    "generic_adaptive_source": "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v1/adaptive.py",
+    "generic_runner": "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v4/runner.py",
+    "horizon_remainder_root": "stable interval smaller root with exact 1000001/1000000 strict enlargement",
+    "maximum_subdivision_depth_executed": 0,
+    "requested_parent_range": [
+      "104/512",
+      "104/512"
+    ],
+    "scientific_threshold_policy": "unchanged stable remainder root and unchanged nonvanishing threshold; no relaxation"
+  },
+  "result": {
+    "coverage_disposition": {
+      "accepted_parent": false,
+      "children_launched": false,
+      "coverage_stop": "13/64",
+      "delta_modulus_lower": "0",
+      "next_honest_boundary_gap": {
+        "first_unmaterialized_parent_panel": 104,
+        "parent_panel_count": 512,
+        "start": "104/512"
+      },
+      "parent_failure": "COMMON_AFFINE_DELTA_ENCLOSURE_CONTAINS_ZERO",
+      "parent_row_sha256": "ba7ed5fa04e4fc5dfeb00cc613b918de48d5a9941cffcc1cc03cb25eebd34ac2",
+      "parent_segment": "104/512",
+      "parent_status": "FAIL_CLOSED"
+    },
+    "elapsed_compute_seconds": 14.241154489049222,
+    "terminal": {
+      "code": "TIME_BUDGET_BEFORE_REQUIRED_CHILDREN",
+      "first_unmaterialized_parent_panel": 104,
+      "parent_failure": "COMMON_AFFINE_DELTA_ENCLOSURE_CONTAINS_ZERO"
+    }
+  },
+  "runs": {
+    "aggregate": {
+      "path": "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v6a/adaptive-aggregate-run.json",
+      "sha256": "7d0f191a58e5e10bf407db52e752f76a10ecd185dac4224708d77b3cba813a0d"
+    },
+    "raw": {
+      "path": "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v6a/adaptive-raw-run.json",
+      "sha256": "4a979c363ce34de4318903a0f5578c99e9eba2ff2417c08508c035f760410a3a"
+    }
+  },
+  "schema": "phase3-axial-qnm-adaptive-dyadic-boundary-chunk-v6a",
+  "status": "PARENT_104_OBSERVED_CHILDREN_NOT_LAUNCHED_FAIL_CLOSED"
+}

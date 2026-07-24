@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "claim_flags",
+    "method",
+    "result",
+    "parent_hash_linkage",
+    "imports",
+    "runs",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-qnm-adaptive-dyadic-boundary-chunk-v6b"
+    },
+    "status": {
+      "enum": [
+        "CHILDREN_208_209_ACCEPTED_PREFIX_EXTENDED_FAIL_CLOSED",
+        "CHILDREN_208_209_FAILED_PREFIX_UNCHANGED_FAIL_CLOSED"
+      ]
+    },
+    "lifecycle": {
+      "const": "CLASSIFIED"
+    },
+    "dependency_tags": {
+      "type": "array",
+      "allOf": [
+        {"contains": {"const": "LOCAL-ALGEBRAIC"}},
+        {"contains": {"const": "REDUCED-MODE"}}
+      ]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "hashed_failed_parent_104_reused",
+        "only_children_208_209_evaluated",
+        "children_208_209_nonzero_certified",
+        "stable_root_reused",
+        "threshold_lowered",
+        "full_contour_nonzero_certified",
+        "argument_principle_certified",
+        "root_count_certified",
+        "QNM_location_certified",
+        "Smith_selector_certified",
+        "defective_fibre_or_EP2_certified"
+      ]
+    },
+    "result": {
+      "type": "object",
+      "required": [
+        "children",
+        "accepted_child_count",
+        "coverage_stop",
+        "next_honest_boundary_gap",
+        "terminal"
+      ]
+    },
+    "parent_hash_linkage": {
+      "type": "object",
+      "required": [
+        "source_raw_sha256",
+        "parent_row_sha256",
+        "canonical_parent_row_sha256"
+      ]
+    }
+  },
+  "additionalProperties": true
+}
