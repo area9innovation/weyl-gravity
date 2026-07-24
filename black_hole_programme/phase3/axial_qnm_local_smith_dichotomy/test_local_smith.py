@@ -70,6 +70,35 @@ class LocalSmithDichotomyTests(unittest.TestCase):
             "1",
         ))
 
+    def test_rejects_connection_minor_mutation(self) -> None:
+        self.assertTrue(self.mutate(
+            (
+                "local_dvr_proof",
+                "connection_minor_selector",
+                "minor_rows_one_three_columns_two_three",
+            ),
+            "b_0",
+        ))
+
+    def test_rejects_fredholm_principal_part_mutation(self) -> None:
+        self.assertTrue(self.mutate(
+            (
+                "fredholm_invariant",
+                "conditional_operator_resolvent",
+                "double_pole_principal_coefficient",
+            ),
+            "beta_n/alpha_n**2",
+        ))
+
+    def test_rejects_physical_fredholm_promotion(self) -> None:
+        self.assertTrue(self.mutate(
+            (
+                "claim_flags",
+                "physical_QNM_fredholm_realization_constructed",
+            ),
+            True,
+        ))
+
 
 if __name__ == "__main__":
     unittest.main()

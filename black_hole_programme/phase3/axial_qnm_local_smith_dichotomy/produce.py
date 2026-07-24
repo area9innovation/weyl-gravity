@@ -31,7 +31,8 @@ def matrix_strings(value: sp.Matrix) -> list[list[str]]:
 def produce() -> dict:
     z = sp.Symbol("z")
     unit_a, unit_f = sp.symbols("u_a u_f", nonzero=True)
-    b0, b1, g0 = sp.symbols("b_0 b_1 g_0")
+    b0 = sp.Symbol("b_0", nonzero=True)
+    b1, g0 = sp.symbols("b_1 g_0")
     c0, d0 = sp.symbols("c_0 d_0")
 
     a = unit_a * z
@@ -95,6 +96,36 @@ def produce() -> dict:
     if beta_shift != 0:
         raise RuntimeError("Fredholm commutator invariance failed")
 
+    # At the resonance, the single minor using rows (1,3) and columns (2,3)
+    # is b_0*u_f.  Since u_f is a unit, this minor selects the same branch as
+    # the Fredholm overlap.  If b_0=0, only the third column survives and the
+    # rank is exactly one.
+    resonance_nonzero = generic.subs(z, 0)
+    resonance_zero = resonance_nonzero.subs(b0, 0)
+    selector_minor = sp.factor(
+        resonance_nonzero.extract([0, 2], [1, 2]).det()
+    )
+    if sp.simplify(selector_minor - b0 * unit_f) != 0:
+        raise RuntimeError("connection-minor selector identity failed")
+    if resonance_nonzero.rank() != 2 or resonance_zero.rank() != 1:
+        raise RuntimeError("connection-rank dichotomy failed")
+
+    # Lyapunov--Schmidt effective block.  This is the finite-dimensional
+    # principal part obtained from an analytic Fredholm realization; it does
+    # not assert that such a realization has already been constructed for the
+    # physical QNM boundary problem.
+    alpha_n, beta_n = sp.symbols("alpha_n beta_n", nonzero=True)
+    effective = sp.Matrix([
+        [alpha_n * z, beta_n],
+        [0, alpha_n * z],
+    ])
+    effective_inverse = sp.simplify(effective.inv())
+    principal_coefficient = sp.simplify(
+        sp.limit(z**2 * effective_inverse[0, 1], z, 0)
+    )
+    if principal_coefficient != -beta_n / alpha_n**2:
+        raise RuntimeError("Fredholm double-pole coefficient drift")
+
     document = {
         "schema": "phase3-axial-qnm-local-smith-dichotomy-v1",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
@@ -150,7 +181,10 @@ def produce() -> dict:
                 "resonance_structure": "one length-two root chain",
                 "inverse_matrix": matrix_strings(inverse_unit),
                 "double_pole_entry": "-b/a**2",
-                "time_domain_term": "t*exp(+I*omega_n*t)",
+                "inverse_connection_time_domain_term": (
+                    "t*exp(+I*omega_n*t), conditional on a source/observable "
+                    "coupling to the rank-one principal part"
+                ),
             },
             "zero_class_case": {
                 "condition": "[b]=0 in O/(a), equivalently b=a*g",
@@ -165,6 +199,20 @@ def produce() -> dict:
             },
             "frame_law": "b -> u*b+a*h with u in O^times and h in O",
             "invariant_class": "[b] in O/(a), defined up to a unit",
+            "connection_minor_selector": {
+                "resonance_matrix_nonzero_branch": matrix_strings(
+                    resonance_nonzero
+                ),
+                "minor_rows_one_three_columns_two_three": encode(
+                    selector_minor
+                ),
+                "nonzero_class_rank": 2,
+                "zero_class_rank": 1,
+                "equivalence": (
+                    "beta_n!=0 iff b(omega_n)!=0 iff minor!=0 iff "
+                    "rank(T_-(omega_n))=2, assuming f(omega_n) is a unit"
+                ),
+            },
         },
         "fredholm_invariant": {
             "definition": (
@@ -194,6 +242,28 @@ def produce() -> dict:
                 "commutator": matrix_strings(commutator),
                 "beta_shift": encode(beta_shift),
             },
+            "conditional_operator_resolvent": {
+                "hypothesis": (
+                    "the repeated spin-two QNM boundary problem is realized "
+                    "as an analytic Fredholm pencil with a simple scalar "
+                    "Regge-Wheeler resonance"
+                ),
+                "effective_pencil": matrix_strings(effective),
+                "effective_inverse": matrix_strings(effective_inverse),
+                "double_pole_principal_coefficient": encode(
+                    principal_coefficient
+                ),
+                "operator_principal_part": (
+                    "-(beta_n/alpha_n**2) "
+                    "[[0,u_n tensor u_n_sharp],[0,0]]/(omega-omega_n)**2"
+                ),
+                "conclusion": (
+                    "Under the Fredholm hypothesis, beta_n!=0 gives a "
+                    "genuine second-order pole of the full repeated-block "
+                    "differential resolvent."
+                ),
+                "physical_realization_constructed": False,
+            },
         },
         "boundary": {
             "beta_n_evaluated": False,
@@ -203,10 +273,13 @@ def produce() -> dict:
                 "a compatible normalized adjoint QNM cokernel germ",
                 "a boundary-convergent or regularized Fredholm pairing",
                 "an exact or validated evaluation of beta_n",
+                "an analytic Fredholm realization of the physical QNM "
+                "boundary problem",
             ],
             "does_not_establish": [
                 "that beta_n is nonzero at any QNM",
-                "that any doubled determinant zero is a double resolvent pole",
+                "an actual second-order pole of the physical differential "
+                "or Green resolvent",
                 "an all-overtone generalized-resonance theorem",
                 "time-domain stability or boundedness",
             ],
@@ -215,7 +288,10 @@ def produce() -> dict:
             "spin_one_unit_elimination_exact": True,
             "local_smith_dichotomy_exact": True,
             "fredholm_commutator_invariance_exact": True,
+            "connection_minor_rank_selector_exact": True,
+            "conditional_fredholm_principal_part_exact": True,
             "beta_n_evaluated": False,
+            "physical_QNM_fredholm_realization_constructed": False,
             "simple_QNM_smith_case_selected": False,
             "double_resolvent_pole_established": False,
         },

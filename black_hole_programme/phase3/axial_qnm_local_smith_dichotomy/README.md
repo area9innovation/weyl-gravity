@@ -38,6 +38,33 @@ It is unchanged by
 \(\mathcal E\mapsto\mathcal E+LQ-QL\).  Compatible normalizations give
 \([b]\ne0\iff\beta_n\ne0\).
 
+There is also a direct connection test.  At the resonance, with the spin-one
+factor \(f(\omega_n)\ne0\),
+\[
+ \det T_-[\{1,3\},\{2,3\}]=b(\omega_n)f(\omega_n).
+\]
+Consequently
+\[
+ \beta_n\ne0
+ \iff b(\omega_n)\ne0
+ \iff \operatorname{rank}T_-(\omega_n)=2;
+\]
+the zero-class branch has rank one.
+
+Conditionally, if the physical QNM boundary problem is realized as an
+analytic Fredholm pencil, the block inverse identity
+\[
+ \begin{pmatrix}L&\mathcal E\\0&L\end{pmatrix}^{-1}
+ =
+ \begin{pmatrix}
+ L^{-1}&-L^{-1}\mathcal E L^{-1}\\0&L^{-1}
+ \end{pmatrix}
+\]
+promotes \(\beta_n\ne0\) to a genuine second-order pole of the repeated-block
+differential resolvent, with principal coefficient
+\(-\beta_n/\alpha_n^2\).  The certificate proves this conditional algebraic
+principal part; it does not construct the required Fredholm realization.
+
 This package does **not** evaluate \(\beta_n\).  A certified QNM germ, an
 adjoint cokernel germ, and a boundary-convergent or regularized pairing are
 still missing.  Therefore no actual QNM is promoted to a double pole.

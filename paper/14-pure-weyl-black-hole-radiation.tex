@@ -1082,11 +1082,10 @@ spin-one factor, the local connection is equivalent to
 If \([b]\ne0\) in \(\mathcal O_{\omega_n}/(a)\), its Smith valuations are
 \((0,2)\): the resonance has one root vector, a length-two chain, and a
 second-order pole of the inverse connection matrix.  A second-order pole of
-the bulk Green resolvent, and hence a \(t e^{i\omega_n t}\) ringdown term,
-follows only if the analytic bulk reconstruction and source/observable maps
-do not annihilate its rank-one principal part.  If \([b]=0\), the valuations
-are \((1,1)\): there are two independent root vectors and only simple poles
-of the inverse connection matrix.
+the full differential resolvent is a conditional corollary once the physical
+QNM boundary problem is realized as the corresponding analytic Fredholm
+pencil.  If \([b]=0\), the valuations are \((1,1)\): there are two independent
+root vectors and only simple poles of the inverse connection matrix.
 
 More explicitly, write \(z=\omega-\omega_n\),
 \(a=\alpha_n z+O(z^2)\), and \(b=\beta_n+O(z)\).  When
@@ -1096,6 +1095,21 @@ More explicitly, write \(z=\omega-\omega_n\),
 \]
 and the generalized root coefficient is controlled by
 \(\kappa_n=\beta_n/\alpha_n\).
+
+At the resonant frequency the full connection has the exact minor
+\[
+ \Delta_n=
+ \det T_-[\{1,3\},\{2,3\}]
+ =b(\omega_n)A_{{\rm in},1}(\omega_n).
+\]
+Since the spin-one factor is a unit,
+\[
+ \beta_n\ne0
+ \Longleftrightarrow \Delta_n\ne0
+ \Longleftrightarrow \operatorname{rank}T_-(\omega_n)=2;
+\]
+the zero-class branch has rank one.  This supplies a direct validated-minor
+test of the binary Smith case without first constructing an adjoint germ.
 
 Under compatible endpoint normalizations the selector is the invariant
 Fredholm overlap
@@ -1120,6 +1134,28 @@ For an endpoint-preserving analytic triangular change,
 Thus \(\beta_n\) represents the intrinsic extension class.  The present
 certificate proves this dichotomy and invariance, but does not evaluate
 \(\beta_n\) at any physical QNM.
+
+More precisely, on any analytic Fredholm realization for which the repeated
+spin-two operator has block form
+\[
+ \mathbb L(\omega)=
+ \begin{pmatrix}L(\omega)&\mathcal E(\omega)\\0&L(\omega)\end{pmatrix},
+\]
+the exact inverse identity gives
+\[
+ \mathbb L(\omega)^{-1}
+ =
+ -\frac{\beta_n}{\alpha_n^2}
+ \frac{1}{(\omega-\omega_n)^2}
+ \begin{pmatrix}
+ 0&u_n\otimes\widetilde u_n\\0&0
+ \end{pmatrix}
+O((\omega-\omega_n)^{-1}).
+\]
+Hence \(\beta_n\ne0\) implies a genuine second-order pole of that full
+differential resolvent.  Generic sources with nonzero adjoint-QNM projection
+then excite a \(t e^{i\omega_n t}\) term.  The analytic Fredholm realization
+of the physical QNM boundary problem is not constructed here.
 \end{proposition}
 
 \begin{theorem}[Exact future-horizon flux]

@@ -3,7 +3,7 @@
     "beta_n_evaluated": false,
     "does_not_establish": [
       "that beta_n is nonzero at any QNM",
-      "that any doubled determinant zero is a double resolvent pole",
+      "an actual second-order pole of the physical differential or Green resolvent",
       "an all-overtone generalized-resonance theorem",
       "time-domain stability or boundedness"
     ],
@@ -11,15 +11,19 @@
       "a certified simple damped spin-two QNM germ",
       "a compatible normalized adjoint QNM cokernel germ",
       "a boundary-convergent or regularized Fredholm pairing",
-      "an exact or validated evaluation of beta_n"
+      "an exact or validated evaluation of beta_n",
+      "an analytic Fredholm realization of the physical QNM boundary problem"
     ],
     "smith_case_selected_for_any_QNM": false
   },
   "claim_flags": {
     "beta_n_evaluated": false,
+    "conditional_fredholm_principal_part_exact": true,
+    "connection_minor_rank_selector_exact": true,
     "double_resolvent_pole_established": false,
     "fredholm_commutator_invariance_exact": true,
     "local_smith_dichotomy_exact": true,
+    "physical_QNM_fredholm_realization_constructed": false,
     "simple_QNM_smith_case_selected": false,
     "spin_one_unit_elimination_exact": true
   },
@@ -28,6 +32,33 @@
     "REDUCED-MODE"
   ],
   "fredholm_invariant": {
+    "conditional_operator_resolvent": {
+      "conclusion": "Under the Fredholm hypothesis, beta_n!=0 gives a genuine second-order pole of the full repeated-block differential resolvent.",
+      "double_pole_principal_coefficient": "-beta_n/alpha_n**2",
+      "effective_inverse": [
+        [
+          "1/(alpha_n*z)",
+          "-beta_n/(alpha_n**2*z**2)"
+        ],
+        [
+          "0",
+          "1/(alpha_n*z)"
+        ]
+      ],
+      "effective_pencil": [
+        [
+          "alpha_n*z",
+          "beta_n"
+        ],
+        [
+          "0",
+          "alpha_n*z"
+        ]
+      ],
+      "hypothesis": "the repeated spin-two QNM boundary problem is realized as an analytic Fredholm pencil with a simple scalar Regge-Wheeler resonance",
+      "operator_principal_part": "-(beta_n/alpha_n**2) [[0,u_n tensor u_n_sharp],[0,0]]/(omega-omega_n)**2",
+      "physical_realization_constructed": false
+    },
     "definition": "beta_n=<u_n^#, E(omega_n) u_n> for normalized right QNM germ u_n and adjoint cokernel germ u_n^#",
     "derivative_pairing": "alpha_n=<u_n^#, d_omega L(omega_n) u_n> != 0 at a simple QNM",
     "equivalence": "[b]!=0 iff beta_n!=0, after compatible endpoint and left/right germ normalizations",
@@ -95,6 +126,29 @@
   },
   "lifecycle": "CLASSIFIED",
   "local_dvr_proof": {
+    "connection_minor_selector": {
+      "equivalence": "beta_n!=0 iff b(omega_n)!=0 iff minor!=0 iff rank(T_-(omega_n))=2, assuming f(omega_n) is a unit",
+      "minor_rows_one_three_columns_two_three": "b_0*u_f",
+      "nonzero_class_rank": 2,
+      "resonance_matrix_nonzero_branch": [
+        [
+          "0",
+          "b_0",
+          "c_0"
+        ],
+        [
+          "0",
+          "0",
+          "d_0"
+        ],
+        [
+          "0",
+          "0",
+          "u_f"
+        ]
+      ],
+      "zero_class_rank": 1
+    },
     "determinant_valuation": 2,
     "frame_law": "b -> u*b+a*h with u in O^times and h in O",
     "invariant_class": "[b] in O/(a), defined up to a unit",
@@ -108,6 +162,7 @@
         0
       ],
       "geometric_multiplicity": 1,
+      "inverse_connection_time_domain_term": "t*exp(+I*omega_n*t), conditional on a source/observable coupling to the rank-one principal part",
       "inverse_matrix": [
         [
           "1/(u_a*z)",
@@ -127,8 +182,7 @@
       "spin_two_pair_valuations": [
         0,
         2
-      ],
-      "time_domain_term": "t*exp(+I*omega_n*t)"
+      ]
     },
     "uniformizer_model": "a=u_a*z with u_a a unit",
     "valuation_rule": "For a 2x2 full-rank matrix over a DVR, the first Smith valuation is the minimum valuation of its entries and the second is determinant valuation minus the first.",
@@ -170,7 +224,7 @@
     "producer": "produce.py",
     "schema": {
       "path": "schema.json",
-      "sha256": "0a045391cfdafd6148a9b1926f41c688111c6c49ce1c7515dc0a01d4d8cf3b76"
+      "sha256": "c6fd12821d2a270d25b066d84532ebba48e44fb97fad97ffcb841fd3dcf80d8e"
     },
     "verifier": "verify.py"
   },

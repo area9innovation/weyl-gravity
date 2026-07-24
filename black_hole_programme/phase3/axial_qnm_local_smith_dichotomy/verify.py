@@ -104,6 +104,22 @@ def verify_document(document: dict) -> list[str]:
     if zero["sorted_full_smith_valuations"] != [0, 1, 1]:
         errors.append("zero-class sorted Smith drift")
 
+    selector = proof["connection_minor_selector"]
+    resonance = matrix(selector["resonance_matrix_nonzero_branch"])
+    minor = sp.factor(resonance.extract([0, 2], [1, 2]).det())
+    if sp.simplify(minor - b_0 * u_f) != 0:
+        errors.append("connection-minor selector identity failed")
+    if parse(selector["minor_rows_one_three_columns_two_three"]) != minor:
+        errors.append("recorded connection minor drift")
+    if resonance.rank() != 2:
+        errors.append("nonzero-class resonance rank is not two")
+    if resonance.subs(b_0, 0).rank() != 1:
+        errors.append("zero-class resonance rank is not one")
+    if selector["nonzero_class_rank"] != 2:
+        errors.append("recorded nonzero-class rank drift")
+    if selector["zero_class_rank"] != 1:
+        errors.append("recorded zero-class rank drift")
+
     inverse_unit = matrix(nonzero["inverse_matrix"])
     inverse_divisible = matrix(zero["inverse_matrix"])
     if sp.simplify(matrix_unit * inverse_unit - sp.eye(2)) != sp.zeros(2):
@@ -139,6 +155,21 @@ def verify_document(document: dict) -> list[str]:
     if parse(normal["beta_shift"]) != 0:
         errors.append("recorded beta shift is nonzero")
 
+    conditional = fredholm["conditional_operator_resolvent"]
+    effective = matrix(conditional["effective_pencil"])
+    effective_inverse = matrix(conditional["effective_inverse"])
+    if sp.simplify(effective * effective_inverse - sp.eye(2)) != sp.zeros(2):
+        errors.append("conditional Fredholm effective inverse failed")
+    principal = sp.simplify(
+        sp.limit(z**2 * effective_inverse[0, 1], z, 0)
+    )
+    if parse(conditional["double_pole_principal_coefficient"]) != principal:
+        errors.append("conditional Fredholm principal coefficient drift")
+    if principal != -sp.Symbol("beta_n") / sp.Symbol("alpha_n")**2:
+        errors.append("conditional Fredholm double-pole formula failed")
+    if conditional["physical_realization_constructed"]:
+        errors.append("physical Fredholm realization falsely claimed")
+
     boundary = document["boundary"]
     if boundary["beta_n_evaluated"]:
         errors.append("beta evaluation falsely claimed")
@@ -154,11 +185,14 @@ def verify_document(document: dict) -> list[str]:
         "spin_one_unit_elimination_exact",
         "local_smith_dichotomy_exact",
         "fredholm_commutator_invariance_exact",
+        "connection_minor_rank_selector_exact",
+        "conditional_fredholm_principal_part_exact",
     ):
         if flags.get(flag) is not True:
             errors.append(f"exact claim demoted: {flag}")
     for flag in (
         "beta_n_evaluated",
+        "physical_QNM_fredholm_realization_constructed",
         "simple_QNM_smith_case_selected",
         "double_resolvent_pole_established",
     ):
