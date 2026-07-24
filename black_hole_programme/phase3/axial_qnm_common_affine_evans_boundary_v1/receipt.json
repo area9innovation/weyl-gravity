@@ -1,44 +1,44 @@
 {
   "artifact_sha256": {
-    "README.md": "1015ba89d57b5e0698d7ce72c40bb0aeeb9ab8931a75105e2c44680ed74fe880",
+    "README.md": "66633715f7f6ce37ce95e3db1fcb751bb949db474d7ae4fb748c971397bca5fc",
     "__init__.py": "9d1fa58857ecee4408bb5438cd94c4a5b859643486b3f9a40e48ac7a1fbbeaa9",
-    "common_affine.py": "89510b38176ed4d3e6beb26a80802dc7a2b25ceefc30c6d64de499ee5a95d6b2",
-    "produce.py": "85d72dd165e6d5af110a9054f99cca3ce0a930c7ac8db13bb5313fc2a82496eb",
+    "common_affine.py": "21af441c0bf54448c20f3cf487057e6748db83d931edcd353ebd5247d233d062",
+    "produce.py": "f0a2099fd36443014e21843356cec517e5dfaf119a6a876c35a12cbde708da21",
     "schema.json": "50d1bd67a7d5498ef15ffc312ce7ff862bc707b6780eb18c7ea12c7f13ba3913",
-    "test_common_affine.py": "176fd693cde7b9c157946c37719c82c50b1866da7e9c200d075e9b93a7c227b4",
-    "verify.py": "5b3551c41c9e4cc69875821c74237aa90e38d155d0218f617048e4521c32caf3"
+    "test_common_affine.py": "ed7bc38595feb1fb760def0f609672d22247d334033bee7987479d1ca9703006",
+    "verify.py": "8f3cac974e7c49c8060f60ebc2fc88080280c80cdc6cc3695f5acf2a2af99f7b"
   },
   "checks": [
     {
       "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/common_affine.py black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/produce.py black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/verify.py",
-      "elapsed_seconds": 0.03077,
+      "elapsed_seconds": 0.02666,
       "returncode": 0,
       "stderr": "",
       "stdout": ""
     },
     {
       "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/certificate.json black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/schema.json",
-      "elapsed_seconds": 0.096398,
+      "elapsed_seconds": 0.087434,
       "returncode": 0,
       "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
       "stdout": ""
     },
     {
       "command": "python3 -m unittest black_hole_programme.phase3.axial_qnm_common_affine_evans_boundary_v1.test_common_affine",
-      "elapsed_seconds": 12.751007,
+      "elapsed_seconds": 13.090729,
       "returncode": 0,
-      "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 12.664s\n\nOK\n",
+      "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 12.998s\n\nOK\n",
       "stdout": ""
     },
     {
       "command": "python3 -m black_hole_programme.phase3.axial_qnm_common_affine_evans_boundary_v1.verify",
-      "elapsed_seconds": 12.646317,
+      "elapsed_seconds": 13.175754,
       "returncode": 0,
       "stderr": "",
-      "stdout": "common-affine panel-0 verifier: PASS (endpoint exports repaired; boundary fail-closed)\n"
+      "stdout": "common-affine panel-0 verifier: PASS (endpoint exports repaired; tightened boundary excludes zero)\n"
     }
   ],
-  "elapsed_seconds": 41.027519,
+  "elapsed_seconds": 39.4724,
   "higher_tiers_not_run": "No shared operator, theorem lifecycle, freeze or release changed.",
   "input_sha256": {
     "contract": "7e76cc95eae0f32234a8b0032d85605526b85c7f8cfd9aead344a1846980f45d",
@@ -46,10 +46,10 @@
     "outgoing_transport": "8429b70f6ec21610eef3867ec60602503f87f6a9ac4c6d2524bb72029de8c326"
   },
   "output_sha256": {
-    "certificate": "2696749b67f8572934b49a5a8bd6ab83e68525ad4764a203a5110a28f43c715b",
-    "report": "dc43c2c56b4f546bb8ada4dcfca913ffd57e08df5432b398bc73258d90a3bf01",
-    "run": "075223dbf26d8d23f64253bb96f9aecf29250302c61a406a9cd7cfce96228d4a",
-    "top_report": "dc43c2c56b4f546bb8ada4dcfca913ffd57e08df5432b398bc73258d90a3bf01"
+    "certificate": "72c0d1bd6c7a0bae299d87791b89d265ec39f715f598576a0e1cca88db540fee",
+    "report": "4f278648cbc6530674cfce7d742c003fc18db8a6ba742a976e8f3339cf1ea51a",
+    "run": "7479aa17930e08d48d42c2658a2e344038cf37ec216787cd84aed6f8b043ed3e",
+    "top_report": "4f278648cbc6530674cfce7d742c003fc18db8a6ba742a976e8f3339cf1ea51a"
   },
   "schema": "phase3-axial-qnm-common-affine-evans-boundary-receipt-v1",
   "tier_0": "py_compile and JSON Schema validation",

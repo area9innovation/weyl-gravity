@@ -1,0 +1,94 @@
+{
+  "artifacts": {
+    "compile_exit": 0,
+    "compile_log": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_v1/compile.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "run_exit": 0,
+    "run_log": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_v1/run.txt",
+      "sha256": "de613cc3220dc5c63b10a777764ff62f44efc11c26bd6975f2ab43af99042c22"
+    },
+    "source": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_v1/splus_checkpoint.forge",
+      "sha256": "dc9973eed85ef33359ec04512aa9b0180f0b759a99711c681fa66068a1ade8b4"
+    }
+  },
+  "checkpoint": {
+    "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_v1/checkpoint.json",
+    "payload_sha256": "b31641fad9e899bb92584cc939b48a14c307aa95c6b6e50e8d4c01aaa6769101",
+    "sha256": "53f49b0b1c25da45b808cc23a3ad928755a945b3c21b4a5e9d4be74b30060712",
+    "written": true
+  },
+  "claim_flags": {
+    "K_plus_certified": false,
+    "S_checkpoint_serialized": true,
+    "S_common_endpoint_remainder_imported": true,
+    "S_one_panel_partial_jet_correlation_certified": true,
+    "S_reaches_interior_match": false,
+    "T_plus_certified": false,
+    "joint_E_R_S_frame_certified": false,
+    "scattering_or_flux_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "transport of S beyond r=8191/256",
+    "a joint E/R/S outgoing frame at an interior match",
+    "K_plus or T_plus",
+    "Stokes conservation, scattering, or flux"
+  ],
+  "imports": {
+    "crosswalk": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json",
+      "sha256": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a"
+    },
+    "predecessor_certificate": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_common_remainder_v1/certificate.json",
+      "sha256": "ab72fe1b740fe3f03c319dda91c8aaf62dfda59bea58249b2f2cddcc2caee30a"
+    },
+    "predecessor_source": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_common_remainder_v1/splus_common_remainder.forge",
+      "sha256": "c7fcfe45e86f5286b4defdac1cb367d40d114f62f8e62ab6e3995f1f1c29d69d"
+    }
+  },
+  "interpretation": {
+    "normalization_outcome": "The exact factor 512 reduces the internal tangent diameter but cannot reduce the physical checkpoint diameter after undoing the scale. A sharper physical enclosure requires a correlated upstream XI3 Volterra correction, not a coordinate recenter of the rectangular practical endpoint box.",
+    "short_chunk_purpose": "prove that the common generator and partial dual correlation survive a genuine inward radial panel"
+  },
+  "lifecycle": "NUMERIC-ENCLOSURE",
+  "next_gate": "either continue the serialized checkpoint in bounded chunks or replace the coarse tangent endpoint box by a direct correlated XI3 Volterra remainder before long transport",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_SPLUS_CHECKPOINT",
+  "schema": "phase3-axial-partial-jet-outgoing-splus-checkpoint-v1",
+  "status": "SPLUS_CORRELATED_ONE_PANEL_CHECKPOINT_PASS",
+  "transport": {
+    "arithmetic": "IvTaylor4_omega tensor partial dual_tau",
+    "exponential_order": 12,
+    "final_radius": "8191/256",
+    "generator": 7315,
+    "internal_tangent_normalization": "tangent/512",
+    "normalization_is_exactly_undone_at_checkpoint": true,
+    "panel_width": "1/256",
+    "panels": 1,
+    "start_radius": "32",
+    "summary": {
+      "alpha": "310.185331188881",
+      "coefficients": "true",
+      "final_base": "0.0013487396964318443",
+      "final_normalized": "0.7234081369263508",
+      "final_r": "31.99609375",
+      "final_tangent": "370.3849661062917",
+      "generator": "7315",
+      "initial_normalized": "0.7226486353987349",
+      "initial_tangent": "369.99610132415216",
+      "overlap": "true",
+      "panels": "1",
+      "scaled": "1.2116614499565663",
+      "status": "PASS",
+      "tail": "7.71776357464393e-10"
+    }
+  }
+}

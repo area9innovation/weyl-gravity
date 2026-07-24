@@ -19,7 +19,12 @@ horizon reciprocal rail caps its near-horizon step by `(r-2)/16`, so its
 Taylor disk remains inside the regular domain.  Both endpoint polynomial
 exports must complete before the panel-0 physical mismatch is tested.
 
-A failed panel-0 mismatch is not a root count, and success on panel 0 would
-not certify the other 511 panels.
+The tightened gate then reissues both endpoints in a direct `q` chart with
+Taylor order 26 and radial recentering.  This separates the centered
+frequency polynomial from the small validated remainder without expanding
+the scope beyond panel 0.
+
+A successful panel-0 mismatch is not a root count and does not certify the
+other 511 panels.
 
 Dependency tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`.

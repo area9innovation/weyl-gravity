@@ -1,0 +1,267 @@
+{
+  "claim_flags": {
+    "H4_certified": false,
+    "T_plus_certified": false,
+    "common_dual_correlation_preserved_at_every_switch": true,
+    "every_switch_serialized": true,
+    "next_dyadic_shell_reached": false,
+    "r4_reached": false
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "the next dyadic horizon shell checkpoint",
+    "continuation of the mixed line to r=4",
+    "a complete three-channel H4 frame",
+    "the outgoing T_plus map or global Stokes identity",
+    "any LORENTZIAN-CAUSAL theorem"
+  ],
+  "imports": {
+    "checkpoint_transport": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/checkpoint_transport.py",
+      "sha256": "1ef4535ba150c90719d4fae596cd880e83856f69342837c509719fcbffcaef8c"
+    },
+    "continuation_transport": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot_switch_continuation.py",
+      "sha256": "af09c3b33d9da07fa19199c27b284e8114f27302d0a3ee4c71acd63142f324a0"
+    },
+    "crosswalk": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json",
+      "sha256": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a"
+    },
+    "source_pivot_switch_certificate": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot-switch-certificate.json",
+      "sha256": "b8b98836058404d9cede5ae13aaed9ecba2dd1d988de838f58465de87dadd7b8"
+    },
+    "source_pivot_switch_run": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot-switch-run.json",
+      "sha256": "f027d51f4196c33aaa3f73da2227b5372be6f8abab967002af94545848af0f9c"
+    },
+    "spin_one_levelt": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_spin_one_levelt_v1/certificate.json",
+      "sha256": "b364d4df837e6c9cdc63a5878a01092b90f397eac6d60c28c97fd9e170b5959c"
+    }
+  },
+  "lifecycle": "COEFFICIENT_COMPUTED",
+  "obstruction": {
+    "attempted_endpoint_rho": "97/268435456",
+    "detail": {
+      "gate": null,
+      "scaled_norm": "[0.368970408264101435565561798553919674310606124669692830498 +/- 1.37e-58]",
+      "tail": "nan"
+    },
+    "gate": "NONFINITE_TAYLOR_ENCLOSURE",
+    "panel": 32,
+    "rho": "3/8388608"
+  },
+  "progress": {
+    "accepted_panels_from_switch_transition": 6,
+    "accepted_panels_total": 32,
+    "last_valid_checkpoint": {
+      "cumulative_chart": [
+        [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "line": {
+        "amplitude": {
+          "ball": "[+/- 14.7] + [+/- 12.5]j",
+          "modulus_upper": "[19.2193504576461180347907364825094709669602891845713128089 +/- 4.38e-56]",
+          "radius_upper": "12.6070946305990219116210937500000000000000000000000000000"
+        },
+        "amplitude_tangent": {
+          "ball": "[+/- 37.3] + [+/- 37.3]j",
+          "modulus_upper": "[52.6752904420267611747189961442571050693427691294709720220 +/- 1.45e-57]",
+          "radius_upper": "37.2480335235595703125000000000000000000000000000000000000"
+        },
+        "base": [
+          {
+            "ball": "[+/- 4.73e-4] + [+/- 4.71e-4]j",
+            "modulus_upper": "[0.000666737845558696664126760454913820559099967026993072076043 +/- 4.30e-61]",
+            "radius_upper": "0.000471941326395608484745025634765625000000000000000000000000"
+          },
+          {
+            "ball": "[+/- 4.65e-4] + [+/- 4.65e-4]j",
+            "modulus_upper": "[0.000656353200752725248630991074410336172312685911069391550743 +/- 2.58e-61]",
+            "radius_upper": "0.000464149499293853295966982841491699218750000000000000000000"
+          },
+          {
+            "ball": "1.00000000000000000000000000000000000000000000000000000000",
+            "modulus_upper": "1.00000000000000000000000000000000000000000000000000000000",
+            "radius_upper": "0"
+          },
+          {
+            "ball": "[+/- 83.5] + [+/- 78.6]j",
+            "modulus_upper": "[114.561864651039382568517145939238664142348703882216570014 +/- 4.21e-55]",
+            "radius_upper": "82.9008848667144775390625000000000000000000000000000000000"
+          }
+        ],
+        "pivot": 2,
+        "tangent": [
+          {
+            "ball": "nan + nanj",
+            "modulus_upper": "nan",
+            "radius_upper": "[+/- inf]"
+          },
+          {
+            "ball": "nan + nanj",
+            "modulus_upper": "nan",
+            "radius_upper": "[+/- inf]"
+          },
+          {
+            "ball": "0",
+            "modulus_upper": "0",
+            "radius_upper": "0"
+          },
+          {
+            "ball": "nan + nanj",
+            "modulus_upper": "nan",
+            "radius_upper": "[+/- inf]"
+          }
+        ]
+      },
+      "r": "16777219/8388608",
+      "rho": "3/8388608"
+    },
+    "last_valid_panel": {
+      "atlas_modulus_lowers": {
+        "e2": "[0.421201841160219003108950042802062043814996515554616667210 +/- 8.47e-59]",
+        "e2+e3": "0",
+        "e2-e3": "0",
+        "e3": "0"
+      },
+      "panel": 31,
+      "pivot": {
+        "correlation_identity": "base_pivot=s/s=1; tangent_pivot=(t*s-s*t)/s^2=0",
+        "exact_base_pivot": "1",
+        "exact_tangent_pivot": "0",
+        "passed": true,
+        "pivot": 2,
+        "pivot_modulus_lower": "[0.421201843954186726955385589677062043814996515554616667210 +/- 8.47e-59]"
+      },
+      "rho": "3/8388608",
+      "selected": "e2",
+      "step": {
+        "gate": null,
+        "scaled_norm": "[0.373025027234975342431442311491544570283817638027321009518 +/- 4.42e-58]",
+        "tail": "[3.48442014689933168345289535620776029840471907686253669373e-5 +/- 6.57e-62]"
+      }
+    },
+    "strictly_post_switch_panels": 5,
+    "switch_count": 1,
+    "switches": [
+      {
+        "atlas_modulus_lowers": {
+          "e2": "[0.688141854851565372322276321157739456527020634016251224619 +/- 3.13e-58]",
+          "e2+e3": "0",
+          "e2-e3": "[1.35224657550769771617105214856043453107123421171511892243 +/- 1.95e-57]",
+          "e3": "[0.664104721587454918464254343027695074544213577698867697813 +/- 4.14e-58]"
+        },
+        "cumulative_chart": [
+          [
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "-1"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "incremental_chart": [
+          [
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "-1"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "panel": 26,
+        "pivot": {
+          "correlation_identity": "base_pivot=s/s=1; tangent_pivot=(t*s-s*t)/s^2=0",
+          "exact_base_pivot": "1",
+          "exact_tangent_pivot": "0",
+          "passed": true,
+          "pivot": 2,
+          "pivot_modulus_lower": "[1.35224657550769771617105214856043453107123421171511892243 +/- 1.95e-57]"
+        },
+        "rho": "91/268435456",
+        "selected": "e2-e3"
+      }
+    ]
+  },
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_HORIZON_MIXED_PIVOT_SWITCH_CONTINUATION",
+  "run": {
+    "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot-switch-continuation-run.json",
+    "sha256": "254a4e41a1e19983a8112f2bf0729a26a3199e959104f101201773e938284ab8"
+  },
+  "schema": "phase3-axial-partial-jet-horizon-pivot-switch-continuation-v1",
+  "scope": {
+    "fixed_atlas": [
+      "e2",
+      "e3",
+      "e2-e3",
+      "e2+e3"
+    ],
+    "panels": 64,
+    "rho_start": "1/4194304",
+    "rho_target": "1/2097152",
+    "step": "1/268435456"
+  },
+  "status": "FIVE_POST_SWITCH_PANELS_NONFINITE_TAIL_SHORTFALL"
+}

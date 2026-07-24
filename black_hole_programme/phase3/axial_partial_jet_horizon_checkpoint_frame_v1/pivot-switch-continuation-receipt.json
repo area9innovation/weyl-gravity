@@ -1,0 +1,40 @@
+{
+  "claim_boundary": "five panels strictly beyond the certified switch, ending in a resumable checkpoint; the next Taylor tail is non-finite and the next dyadic shell remains fail closed",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.pivot_switch_continuation",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.produce_pivot_switch_continuation --check",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.verify_pivot_switch_continuation",
+    "python3 -m unittest -v black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.test_pivot_switch_continuation"
+  ],
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "higher_tiers_not_run": "Tier 2/3 not required: no shared operator or physical scattering theorem changed",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_HORIZON_MIXED_PIVOT_SWITCH_CONTINUATION",
+  "schema": "phase3-receipt-v1",
+  "status": "FIVE_POST_SWITCH_PANELS_NONFINITE_TAIL_SHORTFALL",
+  "validation": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.pivot_switch_continuation",
+      "elapsed_seconds": 10.46,
+      "output_sha256": "254a4e41a1e19983a8112f2bf0729a26a3199e959104f101201773e938284ab8",
+      "status": "PASS_DETERMINISTIC_FAIL_CLOSED_OUTPUT"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.produce_pivot_switch_continuation --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.verify_pivot_switch_continuation",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.test_pivot_switch_continuation",
+      "status": "PASS_4_TESTS"
+    },
+    {
+      "command": "Draft202012Validator(schema).validate(certificate)",
+      "status": "PASS"
+    }
+  ]
+}

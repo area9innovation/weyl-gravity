@@ -36,6 +36,7 @@ REFINEMENT = 32
 PANEL_COUNT = BASE_PANEL_COUNT * REFINEMENT
 PANEL_LIMIT = 1
 MATCH_RADIUS = Fraction(32)
+TIGHT_TAYLOR_ORDER = 26
 
 
 def _omega_lower() -> Fraction:
@@ -61,7 +62,10 @@ def _panel_geometry(panel: int, panel_count: int = PANEL_COUNT) -> tuple:
     return omega_box, omega_center, generator_radius
 
 
-def _outgoing_transport(omega_box: acb) -> dict:
+def _outgoing_transport(
+    omega_box: acb,
+    order: int = TIGHT_TAYLOR_ORDER,
+) -> dict:
     """Certify the outgoing q, q_tau and q_omega balls at r=32."""
     with patch.object(ci, "panel_box", return_value=omega_box):
         _, q_box, eta_box, xi_box = ci.certified_panel_state(0, 1)
@@ -80,7 +84,8 @@ def _outgoing_transport(omega_box: acb) -> dict:
         step = max(Fraction(-1, 20), MATCH_RADIUS - r)
         while True:
             reference, metadata = reference_step(
-                r, step, q_center, eta_center, xi_center, omega_center
+                r, step, q_center, eta_center, xi_center, omega_center,
+                order=order,
             )
             if reference is not None:
                 q1, eta1, xi1 = (midpoint(value) for value in reference)
@@ -128,11 +133,13 @@ def _outgoing_transport(omega_box: acb) -> dict:
         "q_omega": inflate(xi_center, xi_radius),
         "accepted_steps": accepted_steps,
         "rejected_trials": rejected_trials,
+        "chart": "q",
+        "taylor_order": order,
     }
 
 
-def _horizon_transport(omega_box: acb) -> dict:
-    """Certify the horizon q, q_tau and q_omega balls at r=32."""
+def _horizon_transport_reciprocal_baseline(omega_box: acb) -> dict:
+    """Earlier repaired reciprocal rail, retained as a diagnostic baseline."""
     with patch.object(hp, "panel_box", return_value=omega_box):
         obstruction = rc.first_obstruction(0)
     q_full = inflate(obstruction["q_center"], obstruction["q_radius"])
@@ -219,6 +226,81 @@ def _horizon_transport(omega_box: acb) -> dict:
         "q_omega": -p_omega / (p * p),
         "accepted_steps": accepted_steps,
         "rejected_trials": rejected_trials,
+        "chart": "p=1/q",
+        "taylor_order": 14,
+    }
+
+
+def _horizon_transport(
+    omega_box: acb,
+    order: int = TIGHT_TAYLOR_ORDER,
+) -> dict:
+    """Tight direct-q horizon export with adaptive high-order recentering."""
+    with patch.object(hp, "panel_box", return_value=omega_box):
+        _, q_box, eta_box, xi_box, *_ = hp.horizon_seed(0)
+    omega_center = midpoint(omega_box)
+    omega_radius = radius_from(omega_box, omega_center)
+    q_center = midpoint(q_box)
+    # hp.reference_step uses the infinity sign convention.  Under
+    # omega'=-omega its sensitivity variables are E=-q_tau, X=-q_omega.
+    eta_center = midpoint(-eta_box)
+    xi_center = midpoint(-xi_box)
+    q_radius = radius_from(q_box, q_center)
+    eta_radius = radius_from(-eta_box, eta_center)
+    xi_radius = radius_from(-xi_box, xi_center)
+    r = Fraction(2) + Fraction(1, 2**22)
+    accepted_steps = 0
+    rejected_trials = 0
+    while r < MATCH_RADIUS:
+        nominal = min(
+            (r - 2) / 16,
+            Fraction(1, 100) if r < 4 else Fraction(1, 20),
+            MATCH_RADIUS - r,
+        )
+        step = nominal
+        while True:
+            reference, metadata = reference_step(
+                r, step, q_center, eta_center, xi_center, -omega_center,
+                order=order,
+            )
+            if reference is not None:
+                q1, eta1, xi1 = (midpoint(value) for value in reference)
+                remainder, failure = hp.forward_remainder(
+                    q_radius, eta_radius, xi_radius, r, step,
+                    omega_radius, omega_center, q_center, q1,
+                    eta_center, eta1, xi_center, xi1, _omega_lower(),
+                )
+            else:
+                remainder = None
+                failure = metadata["failure"]
+            if remainder is not None:
+                break
+            rejected_trials += 1
+            step /= 2
+            if step < (r - 2) / 2**28:
+                return {
+                    "passed": False,
+                    "radius": str(r),
+                    "failure": failure,
+                    "accepted_steps": accepted_steps,
+                    "rejected_trials": rejected_trials,
+                }
+        q_radius, eta_radius, xi_radius = remainder
+        q_radius += radius_from(reference[0], q1)
+        eta_radius += radius_from(reference[1], eta1)
+        xi_radius += radius_from(reference[2], xi1)
+        q_center, eta_center, xi_center = q1, eta1, xi1
+        r += step
+        accepted_steps += 1
+    return {
+        "passed": True,
+        "q": inflate(q_center, q_radius),
+        "q_tau": inflate(-eta_center, eta_radius),
+        "q_omega": inflate(-xi_center, xi_radius),
+        "accepted_steps": accepted_steps,
+        "rejected_trials": rejected_trials,
+        "chart": "q",
+        "taylor_order": order,
     }
 
 
@@ -285,10 +367,14 @@ def _endpoint_export(
             "box": {
                 "accepted_steps": box_state["accepted_steps"],
                 "rejected_trials": box_state["rejected_trials"],
+                "chart": box_state["chart"],
+                "taylor_order": box_state["taylor_order"],
             },
             "center": {
                 "accepted_steps": center_state["accepted_steps"],
                 "rejected_trials": center_state["rejected_trials"],
+                "chart": center_state["chart"],
+                "taylor_order": center_state["taylor_order"],
             },
         },
         "residual_rule": (
@@ -377,6 +463,10 @@ def compute(panel_count: int = PANEL_COUNT, panel_limit: int = PANEL_LIMIT) -> d
             }
             break
     boundary = first_failure is None and len(rows) == panel_limit
+    endpoint_exports = all(
+        row["horizon"]["passed"] and row["outgoing"]["passed"]
+        for row in rows
+    )
     return {
         "schema": "phase3-axial-qnm-common-affine-evans-boundary-run-v1",
         "base_panel_count": BASE_PANEL_COUNT,
@@ -390,6 +480,18 @@ def compute(panel_count: int = PANEL_COUNT, panel_limit: int = PANEL_LIMIT) -> d
         ),
         "rows": rows,
         "gates": {
+            "endpoint_polynomial_exports": {
+                "status": "PASS" if endpoint_exports else "FAIL_CLOSED",
+                "scope": "panel 0 only",
+            },
+            "tightened_panel0_boundary_nonvanishing": {
+                "status": "PASS" if boundary else "FAIL_CLOSED",
+                "scope": "panel 0 only",
+                "method": (
+                    "order-26 direct-q endpoint transports with adaptive "
+                    "radial recentering and one shared omega generator"
+                ),
+            },
             "boundary_nonvanishing": {
                 "status": "PASS" if boundary else "FAIL_CLOSED",
                 "passed_panel_count": sum(

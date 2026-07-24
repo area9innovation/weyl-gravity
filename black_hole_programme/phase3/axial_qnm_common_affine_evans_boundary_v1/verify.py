@@ -6,6 +6,8 @@ import hashlib
 import json
 from pathlib import Path
 
+from flint import arb
+
 from .common_affine import RUN, compute
 
 HERE = Path(__file__).resolve().parent
@@ -22,7 +24,10 @@ def main() -> None:
     recorded = json.loads(RUN.read_text())
     reproduced = compute()
     assert reproduced == recorded
-    assert recorded["gates"]["boundary_nonvanishing"]["status"] == "FAIL_CLOSED"
+    assert recorded["gates"]["boundary_nonvanishing"]["status"] == "PASS"
+    assert recorded["gates"][
+        "tightened_panel0_boundary_nonvanishing"
+    ]["status"] == "PASS"
     assert recorded["gates"]["argument_principle_root_count"]["status"] == "NOT_RUN"
     assert len(recorded["rows"]) == 1
     assert recorded["panel_limit"] == 1
@@ -39,24 +44,20 @@ def main() -> None:
     assert row["outgoing"]["passed"]
     assert row["horizon"]["q_polynomial_coefficients"] is not None
     assert row["outgoing"]["q_polynomial_coefficients"] is not None
-    assert row["boundary_nonvanishing"]["failure"] == (
-        "COMMON_AFFINE_DELTA_ENCLOSURE_CONTAINS_ZERO"
-    )
-    assert row["physical_mismatch"]["modulus_lower"] == "0"
+    assert row["boundary_nonvanishing"]["failure"] is None
+    assert arb(row["physical_mismatch"]["modulus_lower"]).lower() > 0
     assert certificate["run"]["sha256"] == sha(RUN)
     for item in certificate["imports"].values():
         assert sha(ROOT / item["path"]) == item["sha256"]
     assert certificate["claim_flags"]["both_endpoint_polynomial_exports_completed"]
-    assert not certificate["claim_flags"][
-        "panel0_Evans_boundary_nonzero_certified"
-    ]
+    assert certificate["claim_flags"]["panel0_Evans_boundary_nonzero_certified"]
     assert not certificate["claim_flags"][
         "full_Evans_boundary_nonzero_certified"
     ]
     assert not certificate["claim_flags"]["argument_principle_root_count_certified"]
     print(
         "common-affine panel-0 verifier: PASS "
-        "(endpoint exports repaired; boundary fail-closed)"
+        "(endpoint exports repaired; tightened boundary excludes zero)"
     )
 
 

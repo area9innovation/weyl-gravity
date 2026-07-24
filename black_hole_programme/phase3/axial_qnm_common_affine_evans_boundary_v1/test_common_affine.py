@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import unittest
 
+from flint import arb
+
 from .common_affine import compute
 
 
@@ -29,7 +31,13 @@ class CommonAffineTest(unittest.TestCase):
         self.assertEqual(self.document["panel_limit"], 1)
         self.assertEqual(
             self.document["gates"]["boundary_nonvanishing"]["status"],
-            "FAIL_CLOSED",
+            "PASS",
+        )
+        self.assertEqual(
+            self.document["gates"][
+                "tightened_panel0_boundary_nonvanishing"
+            ]["status"],
+            "PASS",
         )
         self.assertEqual(
             self.document["gates"]["argument_principle_root_count"]["status"],
@@ -43,13 +51,12 @@ class CommonAffineTest(unittest.TestCase):
         self.assertEqual(len(row["horizon"]["q_polynomial_coefficients"]), 2)
         self.assertEqual(len(row["outgoing"]["q_polynomial_coefficients"]), 2)
 
-    def test_physical_mismatch_remains_fail_closed(self) -> None:
+    def test_tightened_physical_mismatch_excludes_zero(self) -> None:
         row = self.document["rows"][0]
-        self.assertEqual(
-            row["boundary_nonvanishing"]["failure"],
-            "COMMON_AFFINE_DELTA_ENCLOSURE_CONTAINS_ZERO",
+        self.assertIsNone(row["boundary_nonvanishing"]["failure"])
+        self.assertGreater(
+            arb(row["physical_mismatch"]["modulus_lower"]).lower(), 0
         )
-        self.assertEqual(row["physical_mismatch"]["modulus_lower"], "0")
 
 
 if __name__ == "__main__":

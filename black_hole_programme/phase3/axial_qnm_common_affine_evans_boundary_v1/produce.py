@@ -50,6 +50,22 @@ def _report(run: dict) -> str:
     gate = run["gates"]["boundary_nonvanishing"]
     row = run["rows"][0]
     mismatch = row["physical_mismatch"]
+    if gate["status"] == "PASS":
+        disposition = (
+            "The tightened physical mismatch is certified nonzero on panel "
+            "0.  Its independent residual radius is "
+            f"`{mismatch['independent_residual_radius']}`, and its modulus "
+            f"lower bound is `{mismatch['modulus_lower']}`.  This is a "
+            "panel-local boundary result only."
+        )
+    else:
+        disposition = (
+            "The independent post-polynomial residuals remain too wide for "
+            "the physical mismatch: the residual radius is "
+            f"`{mismatch['independent_residual_radius']}` and the modulus "
+            f"lower bound is `{mismatch['modulus_lower']}`.  The panel-0 "
+            "boundary gate therefore remains fail-closed."
+        )
     return (
         "# Common-affine projective Evans panel-0 repair\n\n"
         "Dependency tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`.\n\n"
@@ -58,23 +74,15 @@ def _report(run: dict) -> str:
         "`Delta=q_H-q_out+2*I*omega`.  Endpoint exports are required to "
         "subtract centered `q`, `q_tau`, and `q_omega` polynomials before "
         "adding independent residuals.\n\n"
-        "The bounded repair covers panel `0` only.  Adaptive outgoing "
-        "halving repairs the singleton `AFFINE_Q_REMAINDER_SELF_MAP`; a "
-        "horizon-distance-relative reciprocal step repairs "
-        "`RECIPROCAL_REFERENCE_P_MAJORANT_DISCRIMINANT`.  Both endpoint "
-        "box and singleton transports now reach `r=32`, and both centered "
-        "polynomial exports are emitted.\n\n"
-        "The independent post-polynomial residuals remain too wide for the "
-        "physical mismatch: the certified mismatch-center polynomial has "
-        f"coefficients `{mismatch['polynomial_coefficients']}`, while the "
-        "independent residual radius is "
-        f"`{mismatch['independent_residual_radius']}`.  Its modulus lower "
-        f"bound is `{mismatch['modulus_lower']}`, so the panel-0 boundary "
-        f"gate remains `{gate['status']}` with "
-        "`COMMON_AFFINE_DELTA_ENCLOSURE_CONTAINS_ZERO`.\n\n"
-        "This is a residual-dependency obstruction, not evidence for a zero "
-        "of the physical mismatch.  The other 511 panels and the "
-        "argument-principle count were not run.\n"
+        "The bounded repair covers panel `0` only.  The earlier adaptive "
+        "halving repairs are followed by order-26 direct-`q` transport with "
+        "radial recentering at both endpoints.  Both endpoint box and "
+        "singleton transports reach `r=32`, and both centered polynomial "
+        "exports are emitted.\n\n"
+        f"The mismatch polynomial coefficients are "
+        f"`{mismatch['polynomial_coefficients']}`.  {disposition}\n\n"
+        "The other 511 panels and the argument-principle count were not "
+        "run; no QNM or EP2 claim follows from this single-panel gate.\n"
     )
 
 
@@ -129,8 +137,12 @@ def main() -> None:
                 "adaptive radial halving; minimum attempted magnitude 1/320"
             ),
             "horizon_repair": (
-                "reciprocal reference steps capped by (r-2)/16 near the "
-                "regular singular point, with adaptive halving"
+                "order-26 direct-q transport with steps capped by (r-2)/16 "
+                "near the regular singular point and adaptive halving"
+            ),
+            "tightened_gate": (
+                "panel-0 physical mismatch after order-26 centered endpoint "
+                "exports"
             ),
             "bounded_stop": "panel 0 only"
         },
@@ -166,7 +178,6 @@ def main() -> None:
             "sha256": sha(RUN)
         },
         "does_not_establish": [
-            "boundary nonvanishing on panel 0 or any other contour panel",
             "nonvanishing of the physical Evans mismatch on the contour",
             "an argument-principle QNM count",
             "a QNM location, Smith selector, defective fibre or EP2",
