@@ -1,0 +1,46 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-axial-qnm-fredholm-promotion",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-axial-qnm-fredholm-promotion",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-axial-qnm-fredholm-promotion.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-axial-qnm-fredholm",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 1,
+    "objective": "Promote the certified full connection Smith type (0,0,2) at the enclosed axial spin-two QNM to a rigorously scoped second-order pole theorem for an analytic Fredholm realization of the repeated spin-two differential block.",
+    "stop_condition": "Choose a hyperboloidal compactification or exterior-complex-scaled scalar Regge-Wheeler QNM space with a fixed domain D and target Y. Prove that L(omega):D->Y is an analytic Fredholm family of index zero on the certified local disk and that the rational extension E(omega):D->Y is analytic and graph-norm bounded. Construct the triangular parametrix for the repeated block, import the certified nonzero connection selector and spin-one local-unit certificate by hash, and either prove the rank-one second-order Laurent principal part or emit the first exact domain/boundedness obstruction. State the inverse-transform t exp(i omega_n t) consequence only for sources with nonzero adjoint projection and only within the established Fredholm evolution convention.",
+    "current_gate": "Analytic scalar QNM Fredholm domain and graph-norm boundedness of the intrinsic extension on the certified local disk",
+    "forbid": "no connection EP2 called a Green-resolvent pole before the Fredholm domain is proved; no formal outgoing endpoint condition called a closed operator domain; no unregulated divergent QNM overlap; no one-pole result called time-domain stability, completeness or an all-overtone theorem; no particle, ghost, CPT or quantum-unitarity promotion",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-qnm-spin-one-local-unit",
+      "sf:program/work/black-hole-complex-frequency-analytic-continuation-gate"
+    ],
+    "activates": [
+      "a genuine second-order axial Bach Green-resolvent pole theorem at the certified QNM",
+      "a generalized damped ringdown term for generically coupled sources in the declared Fredholm realization"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase4/axial_qnm_fredholm_promotion_v1/",
+      "reports/phase4-black-hole-axial-qnm-fredholm-promotion-2026-07-24.md",
+      "residual_atlas/phase4-black-hole-axial-qnm-fredholm-promotion-fragment-v1.json",
+      "planning/work-items/phase4-black-hole-axial-qnm-fredholm-promotion.json",
+      "planning/events/"
+    ],
+    "resource_hint": "The repeated block needs no independent six-state Fredholm construction. A scalar parametrix S gives the triangular parametrix [[S,-S E S],[0,S]], and the certified nonzero selector supplies the double-pole coefficient after the analytic domain hypotheses are closed.",
+    "input_commit": "6c788306ab3cb7c3e05174569094bbdf3f93f977",
+    "notes": [
+      "REDUCED-MODE",
+      "LORENTZIAN-CAUSAL",
+      "Mathematical target: an analytic Fredholm pencil with a rank-one order-two Laurent coefficient.",
+      "Counterexample strategy: fail on the first endpoint-domain, compactness, graph-boundedness, or analytic-family defect rather than importing a formal connection argument.",
+      "The connection-level EP2 is already certified and remains valid if this promotion shortfalls."
+    ]
+  },
+  "edges": []
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "dependency_tags",
+    "verification_model",
+    "imports",
+    "finite_interval_pencil",
+    "initial_value_reduction",
+    "effective_boundary_operator",
+    "smith_transfer",
+    "physical_reconstruction",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "axial-qnm-fredholm-promotion-a-v1"
+    },
+    "status": {
+      "const": "CERTIFIED_FINITE_INTERVAL_RADIAL_GREEN_OPERATOR_DOUBLE_POLE"
+    }
+  },
+  "additionalProperties": true
+}

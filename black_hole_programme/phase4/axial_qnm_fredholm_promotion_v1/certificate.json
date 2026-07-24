@@ -1,0 +1,128 @@
+{
+  "claim_flags": {
+    "analytic_finite_interval_pencil_certified": true,
+    "connection_smith_transferred_to_operator": true,
+    "effective_boundary_schur_identity_certified": true,
+    "exterior_spacetime_causal_resolvent_certified": false,
+    "fredholm_index_zero_certified": true,
+    "nonpole_contour_control_certified": false,
+    "physical_metric_reconstruction_nonzero": true,
+    "principal_laurent_coefficient_rank_one": true,
+    "quantum_statement": false,
+    "radial_green_operator_second_order_pole_certified": true,
+    "retarded_inverse_transform_certified": false,
+    "t_exp_iomega_t_term_certified": false,
+    "time_domain_stability_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a causal exterior spacetime resolvent or a complete Lorentzian initial-value theory",
+    "a Laplace contour deformation across the QNM",
+    "control of the non-pole inverse-transform contour",
+    "a t*exp(i*omega_n*t) term for physical initial data or sources",
+    "time-domain boundedness, decay, completeness or stability",
+    "an all-overtone theorem, particle interpretation or quantum statement"
+  ],
+  "effective_boundary_operator": {
+    "audit": {
+      "analytic_unit_dressed_principal_rank": 1,
+      "boundary_matrix_det": "30030*z**2",
+      "inverse_pole_order": 2,
+      "principal_rank": 1,
+      "schur_reduction": "left*B=diag(D,M), with D an analytic unit",
+      "smith_model": "M=diag(7,11,13*z^2)"
+    },
+    "connection_bridge": "M equals the certified factor-adapted QNM connection matrix up to holomorphic invertible endpoint-frame units",
+    "formula": "M(omega)=B_I Phi(r_I,r_H;omega) H(omega)",
+    "horizon_complement": "choose analytic K with D=B_H K an analytic unit",
+    "horizon_frame": "H(omega):C3->C6 spans ker B_H(omega)",
+    "kernel": "ker L(omega)=ker M(omega), reconstructed by the horizon frame",
+    "schur_identity": "in c=H u+K v coordinates, B is analytically equivalent to diag(D,M); D is a unit"
+  },
+  "finite_interval_pencil": {
+    "analyticity": "A and the selected endpoint planes are holomorphic on the local QNM disk; fixed nonzero frame minors give holomorphic annihilators B_H and B_I after shrinking within that disk",
+    "boundedness": "multiplication H1->L2 and the two H1 traces are bounded; the Banach spaces are fixed",
+    "formula": "L(omega)Y=(Y'-A(r,omega)Y,B_H(omega)Y(r_H),B_I(omega)Y(r_I))",
+    "operator_kind": "bounded analytic Fredholm pencil with fixed domain and target",
+    "radii": "any fixed ordinary 2<r_H<r_I<infinity inside the certified continuation domains",
+    "spaces": "L(omega):H^1([r_H,r_I];C^6) -> L^2([r_H,r_I];C^6) direct_sum C^3 direct_sum C^3"
+  },
+  "imports": {
+    "analytic_continuation": {
+      "path": "black_hole_programme/certificates/BH3_ANALYTIC_CONTINUATION_GATE.json",
+      "sha256": "75e18d9a91d6827ad2fae645a05b0fe1cc9a50459f9b03dca280c884f917aca3"
+    },
+    "complete_metric_reconstruction": {
+      "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+      "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990"
+    },
+    "ecs_analytic_outgoing_germs": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_inverse_tortoise_v1/certificate.json",
+      "sha256": "25d7e306e5b4b314aa34f1a10f6a8a0461e8d6c4dd1c2e7f91508b2e6e0d6e92"
+    },
+    "evans_winding": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/full_contour_winding_v1/certificate.json",
+      "sha256": "8fca9295f3cafd281773b793a80a8a3adbcbb014d542e5a6fe51b1f22a11d305"
+    },
+    "intrinsic_selector": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/local_selector_v1/certificate.json",
+      "sha256": "aefc5b04fb7e33b72b7553dba69cedc6dff82d2838d4d11cb1a5a45c80f9c2a4"
+    },
+    "local_smith_theorem": {
+      "path": "black_hole_programme/phase3/axial_qnm_local_smith_dichotomy/certificate.json",
+      "sha256": "bbc34d5865a95c9fa8b74157d0ef6abcac8271cca067983e7b23e5850f16da41"
+    },
+    "spin_one_local_unit": {
+      "path": "black_hole_programme/phase3/axial_qnm_spin_one_local_unit_v1/certificate.json",
+      "sha256": "c0e8c6880ed4b142fe79738590eaede4637360d15eb31dc2203467eb66816e6a"
+    }
+  },
+  "initial_value_reduction": {
+    "analyticity": "the Volterra inverse and Phi are holomorphic in operator norm",
+    "boundary_matrix": "B(omega)c=(B_H c,B_I Phi(r_I,r_H) c)",
+    "equivalence": "analytic triangular changes of target reduce L to I_L2 direct_sum B(omega)",
+    "index": 0,
+    "inverse": "Y(r)=Phi(r,r_H)c+integral_[r_H,r] Phi(r,s)f(s) ds",
+    "invertible_witness": "the certified local disk contains exactly one simple spin-two zero and the spin-one factor is a unit, so every nearby nonroot frequency is an invertible witness",
+    "isomorphism": "Gamma_omega:Y -> (Y'-A Y,Y(r_H)) from H1 to L2 direct_sum C6"
+  },
+  "lifecycle": "COEFFICIENT_COMPUTED",
+  "next_gate": "Fredholm promotion B must declare a causal Laplace convention, justify contour deformation and prove source/observation nonannihilation before any t*exp(i*omega_n*t) statement",
+  "physical_reconstruction": {
+    "conclusion": "the rank-one order-two coefficient survives metric reconstruction",
+    "exact_metric_state": "(H1,F=H1_prime) in the complete six-state reconstruction",
+    "nonannihilation": "a nonzero source-Einstein kernel solution cannot have H1 identically zero, since then F=H1_prime and the two-state kernel solution both vanish",
+    "observation": "the physical axial metric component H1 on the finite interval",
+    "principal_range": "the unique source-Einstein connection root line"
+  },
+  "qnm_disk": {
+    "center_im": "8896231568893569828046093/100000000000000000000000000",
+    "center_re": "-93417921104510458948373/250000000000000000000000",
+    "radius": "1/10000000",
+    "simple": true,
+    "zero_count_with_multiplicity": 1
+  },
+  "schema": "axial-qnm-fredholm-promotion-a-v1",
+  "smith_transfer": {
+    "imported_connection_smith_valuations": [
+      0,
+      0,
+      2
+    ],
+    "laurent_form": "L(omega)^-1=Pi_-2/(omega-omega_n)^2+Pi_-1/(omega-omega_n)+O(1)",
+    "operator_local_equivalence": "L is analytically equivalent to I_L2 direct_sum units direct_sum M",
+    "principal_nonzero": true,
+    "principal_rank": 1,
+    "reason": "Smith diag(unit,unit,z^2) has a nonzero rank-one z^-2 coefficient; analytic invertible reconstruction maps preserve rank"
+  },
+  "source_commit": "a976622c47151857447790dd077ff131b7820094",
+  "status": "CERTIFIED_FINITE_INTERVAL_RADIAL_GREEN_OPERATOR_DOUBLE_POLE",
+  "verification_model": {
+    "arithmetic": "exact symbolic and exact imported content hashes",
+    "independence_level": "Level II: verifier uses direct block inversion rather than the producer's Schur row operation",
+    "numeric_replay_required": false
+  }
+}

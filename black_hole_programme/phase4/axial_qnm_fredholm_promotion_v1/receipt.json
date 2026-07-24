@@ -1,0 +1,31 @@
+{
+  "certificate": "black_hole_programme/phase4/axial_qnm_fredholm_promotion_v1/certificate.json",
+  "certificate_sha256": "e3f5e28d426305f0e68f7c11c7f63e1f0618cc63ad20fc1ff5b221fb38d34110",
+  "commands": [
+    "python3 -m black_hole_programme.phase4.axial_qnm_fredholm_promotion_v1.produce",
+    "python3 -m black_hole_programme.phase4.axial_qnm_fredholm_promotion_v1.verify",
+    "python3 -m unittest -v black_hole_programme.phase4.axial_qnm_fredholm_promotion_v1.test_fredholm"
+  ],
+  "higher_tiers_not_run": "No shared operator, schema, or generated classical input changed; Tier 3 is not triggered.",
+  "producer_sha256": "19c64da3a9dce4f32f0b1e222c737d5cbf61e2199efb4cd3ea11e4a9e4d6be15",
+  "recorded_tier_execution": [
+    {
+      "command": "python3 -m black_hole_programme.phase4.axial_qnm_fredholm_promotion_v1.produce",
+      "elapsed_seconds": "0.46",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase4.axial_qnm_fredholm_promotion_v1.verify",
+      "elapsed_seconds": "0.36",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase4.axial_qnm_fredholm_promotion_v1.test_fredholm",
+      "elapsed_seconds": "0.40",
+      "status": "PASS (6 tests)"
+    }
+  ],
+  "schema": "axial-qnm-fredholm-promotion-a-receipt-v1",
+  "source_commit": "a976622c47151857447790dd077ff131b7820094",
+  "verifier_sha256": "5aafead04173606e399b3ee2721fbeb4b60c4faceff6ce4cb68f8c882ed93b19"
+}
