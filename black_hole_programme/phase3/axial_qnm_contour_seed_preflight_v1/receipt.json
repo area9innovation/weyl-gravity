@@ -1,0 +1,64 @@
+{
+  "artifact_kind": "NONCERTIFYING_NUMERIC_PREFLIGHT_RECEIPT",
+  "status": "UNVALIDATED-NUMERIC",
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "date": "2026-07-24",
+  "source_head": "49dd1a70c",
+  "report": "reports/phase3-axial-qnm-contour-seed-preflight-2026-07-24.md",
+  "materialized_hashes": {
+    "README.md": "450b6e8a20888c64f4119616dfc1cf7206869d02869deef0ee37b94ff4d2ad31",
+    "__init__.py": "c00261f27aa188344d76661e0f2b2a0fbba5fa3994b29291bab52443f3dd1c59",
+    "qnm_contour_diagnostic.py": "5d785cbb7c9dbe7a382434e2fe1c08d7efa3667c3f72021225d4554a0ef9daa0",
+    "qnm_leaver_preflight.py": "de08d494dc3779b767fbb2b754b86a80981734752dac7ddb95e1ddc51c818434",
+    "qnm_mpmath_shooting_preflight.py": "90a280265f09b8edde045fc11293deb13daa20aa13d01aaf8179e849f42ae639",
+    "qnm_contour_diagnostic.json": "ead92864b8f8b0bfa40909c5f2d3e7e0c3788c9bfedb5694896746a0d5fef36f",
+    "qnm_leaver_preflight.json": "e4ad8e8eee8870a73d22ff6aba5240f1d3f8512cbd0c8fbe175a2dae0bb61e14",
+    "qnm_mpmath_shooting_preflight.json": "105a4e7f30ffdceb0db0e32ac9c936f3fe43d4197537fc14f7b2697100bd5796",
+    "phase3-axial-qnm-contour-seed-preflight-2026-07-24.md": "a2e8df05b8994bf3ddad93438c25760d0c610ad303ba1797ff9e648e7adfecfc"
+  },
+  "pre_materialization_hashes": {
+    "qnm_leaver_preflight.py": "5137ed8e82159f7af3cb6492952a2f6c5608f22a33f7383f70142656f71b61ed",
+    "qnm_leaver_preflight.json": "e4ad8e8eee8870a73d22ff6aba5240f1d3f8512cbd0c8fbe175a2dae0bb61e14",
+    "qnm_mpmath_shooting_preflight.py": "bc38643e1f15c7562ca9dc4bf5767b735a47f9a6246c9e01910f399e7ff18ad7",
+    "qnm_mpmath_shooting_preflight.json": "d36f64d86681a262568ea18ff75152b2a1c956eb74b58fed607170c4e094eca4",
+    "qnm_contour_diagnostic.py": "2be1187d40cbdce19c4ffe8482a9083f6c840854ffb1e906cbdd18a02f15c75f",
+    "qnm_contour_diagnostic.json": "ead92864b8f8b0bfa40909c5f2d3e7e0c3788c9bfedb5694896746a0d5fef36f",
+    "consolidated_report.md": "03d826a031ccd0a4606032d0c55c873584b40376d9fad97468b2d0276e2b2676"
+  },
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_contour_seed_preflight_v1/*.py",
+      "elapsed": "<0.01 s",
+      "outcome": "PASS"
+    },
+    {
+      "command": "python3 -m json.tool <each captured JSON>",
+      "elapsed": "<0.01 s",
+      "outcome": "PASS"
+    },
+    {
+      "command": "python3 black_hole_programme/phase3/axial_qnm_contour_seed_preflight_v1/qnm_leaver_preflight.py > /tmp/replay_qnm_leaver.json && cmp /tmp/replay_qnm_leaver.json black_hole_programme/phase3/axial_qnm_contour_seed_preflight_v1/qnm_leaver_preflight.json && python3 black_hole_programme/phase3/axial_qnm_contour_seed_preflight_v1/qnm_mpmath_shooting_preflight.py > /tmp/replay_qnm_shooting.json && cmp /tmp/replay_qnm_shooting.json black_hole_programme/phase3/axial_qnm_contour_seed_preflight_v1/qnm_mpmath_shooting_preflight.json",
+      "elapsed": "36.90 s",
+      "outcome": "PASS"
+    },
+    {
+      "command": "python3 black_hole_programme/phase3/axial_qnm_contour_seed_preflight_v1/qnm_contour_diagnostic.py > /tmp/replay_qnm_contour.json && cmp /tmp/replay_qnm_contour.json black_hole_programme/phase3/axial_qnm_contour_seed_preflight_v1/qnm_contour_diagnostic.json",
+      "elapsed": "36.37 s",
+      "outcome": "PASS"
+    }
+  ],
+  "higher_tiers_not_run": "No certificate, mathematical input, schema, shared operator or publishable theorem was changed. This package is explicitly noncertifying numerical reconnaissance.",
+  "does_not_establish": [
+    "a QNM existence, uniqueness, simplicity or enclosure theorem",
+    "a certified Evans or Jost boundary lower bound",
+    "an argument-principle root count",
+    "a normalized b/a or nonzero contour moment",
+    "a value of beta",
+    "a Smith branch",
+    "a connection-level or Fredholm exceptional point",
+    "a Green-resolvent pole or generalized ringdown term",
+    "a Lorentzian-causal result"
+  ]
+}

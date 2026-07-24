@@ -1,0 +1,758 @@
+{
+  "claim_flags": {
+    "EP2_established": false,
+    "T_plus_recovered_by_partial_jet": false,
+    "analytic_contour_domain_supplied": false,
+    "analytic_endpoint_scalar_frames_constructed": false,
+    "beta_n_evaluated": false,
+    "compatible_endpoint_partial_jet_frames_constructed": false,
+    "compatible_normalization_ratio_identity_exact": true,
+    "conditional_contour_moment_residue_identity_exact": true,
+    "conditional_extension_resolvent_hankel_recurrence_exact": true,
+    "conditional_finite_cluster_algebra_exact": true,
+    "conditional_generic_loewner_theorem_exact": true,
+    "conditional_jost_determinant_tangent_identity_exact": true,
+    "contour_moment_evaluated": false,
+    "dual_number_regular_representation_exact": true,
+    "flux_theorem_established": false,
+    "global_b_derivative_established": false,
+    "n3_cluster_model_independently_exact": true,
+    "operator_dual_number_jet_exact": true,
+    "partial_jet_extension_ratio_identities_exact": true,
+    "partial_jet_functor_exact": true,
+    "physical_QNM_fredholm_realization_constructed": false,
+    "physical_QNM_smith_case_selected": false,
+    "physical_QNM_supplied": false,
+    "physical_cluster_data_computed": false,
+    "physical_extension_resolvent_or_hankel_computed": false,
+    "physical_loewner_rank_or_spectrum_computed": false,
+    "physical_reality_symmetry_certified": false,
+    "scattering_identity_recovered_by_partial_jet": false,
+    "simple_zero_shift_identity_exact": true,
+    "zero_free_endpoint_renormalization_invariance_exact": true
+  },
+  "conditional_contour_moments": {
+    "analytic_domain_supplied": false,
+    "compatible_normalization_corollary": "If alpha_n=a'(omega_n) and beta_n=b(omega_n), then K_0=beta_n/alpha_n=-omega_n'(0).",
+    "contour_evaluated": false,
+    "domain_hypotheses": [
+      "D is a bounded domain with positively oriented boundary",
+      "a(omega,0) and b(omega) are analytic on a neighborhood of closure(D)",
+      "a has no zero on boundary(D)",
+      "the zeros omega_j in D are distinct and simple",
+      "k is a nonnegative integer"
+    ],
+    "endpoint_renormalization": {
+      "b_tilde": "u_tau*a+u*b",
+      "hypothesis": "u is analytic and zero-free on a neighborhood of closure(D)",
+      "invariance": "N_D and every K_k are unchanged by the declared zero-free analytic endpoint renormalization.",
+      "law": "a_tilde(omega,tau)=u(omega,tau)*a(omega,tau)",
+      "moment_difference": "(1/(2*pi*I))*integral_boundary(D) omega**k*(u_tau/u)*domega=0",
+      "quotient_shift": "u_tau/u_0",
+      "zero_count_difference": "(1/(2*pi*I))*integral_boundary(D) (partial_omega*u/u)*domega=0"
+    },
+    "identity_verified": true,
+    "local_model": {
+      "a": "z*(a_2*z + alpha)",
+      "b": "b_1*z + beta",
+      "omega": "omega_j+z"
+    },
+    "local_moment_residue": "beta*omega_j**k/alpha",
+    "local_zero_count_residue": "1",
+    "moment": "K_k=(1/(2*pi*I))*integral_boundary(D) omega**k*(b/a)*domega",
+    "moment_result": "K_k=sum_j omega_j**k*b(omega_j)/a'(omega_j)",
+    "physical_QNM_zero_count_certified": false,
+    "single_zero_corollary": "If N_D=1, K_0=b(omega_n)/a'(omega_n)",
+    "zero_count": "N_D=(1/(2*pi*I))*integral_boundary(D) (partial_omega*a/a)*domega",
+    "zero_count_result": "N_D=number of simple zeros in D"
+  },
+  "conditional_finite_cluster_algebra": {
+    "actual_N_computed": false,
+    "actual_P_D_computed": false,
+    "actual_Q_D_computed": false,
+    "actual_defective_count_computed": false,
+    "actual_hankel_rank_computed": false,
+    "actual_loewner_spectrum_computed": false,
+    "actual_resolvent_computed": false,
+    "analytic_cluster_supplied": false,
+    "cluster_polynomials": {
+      "P_D": "product_j(omega-omega_j)",
+      "Q_D": "partial_tau P_D|_0",
+      "Q_formula": "Q_D=sum_j kappa_j*product_{m!=j}(omega-omega_m)",
+      "Q_interpolation": "Q_D(omega_j)=kappa_j*P_D'(omega_j)"
+    },
+    "complete_moments": "K_k=sum_j omega_j**k*kappa_j for k=0,...,N-1",
+    "conditional_loewner_theorem": {
+      "conclusion": "rank(L)=D_def and, after a rank-D_def compression, the finite generalized eigenvalues of (Ls,L) are exactly the defective omega_j.",
+      "definitions": [
+        "L_pq=(R_D(mu_p)-R_D(lambda_q))/(lambda_q-mu_p)",
+        "Ls_pq=(mu_p*R_D(mu_p)-lambda_q*R_D(lambda_q))/(lambda_q-mu_p)"
+      ],
+      "factorizations": [
+        "L=C_mu*diag(kappa_j)*C_lambda**T",
+        "Ls=C_mu*diag(kappa_j*omega_j)*C_lambda**T"
+      ],
+      "hypotheses": [
+        "left and right nodes are distinct and avoid the poles",
+        "each node set contains at least D_def generic nodes",
+        "the corresponding Cauchy evaluation matrices have full column rank"
+      ],
+      "rank_or_eigenvalues_computed": false,
+      "sampling_nodes_supplied": false
+    },
+    "conditional_reality_symmetry": {
+      "consequences": [
+        "omega_j -> -conjugate(omega_j)",
+        "kappa_j -> -conjugate(kappa_j)",
+        "R_D(-conjugate(z))=conjugate(R_D(z))",
+        "K_k=(-1)**(k+1)*conjugate(K_k)",
+        "even K_k are purely imaginary and odd K_k are real"
+      ],
+      "hypotheses": [
+        "a(-conjugate(omega))=conjugate(a(omega))",
+        "b(-conjugate(omega))=conjugate(b(omega))",
+        "D is invariant under omega -> -conjugate(omega)"
+      ],
+      "hypotheses_certified_here": false,
+      "physical_reality_consequences_established": false
+    },
+    "defect_selectors": {
+      "all_defective": "Res(P_D,Q_D)!=0 iff every kappa_j is nonzero.",
+      "count": "N_defective=N-degree(gcd(P_D,Q_D)).",
+      "some_defective": "Q_D is not identically zero iff at least one kappa_j is nonzero."
+    },
+    "extension_resolvent": {
+      "definition": "R_D(z)=(1/(2*pi*I))*integral_boundary(D) b(omega)/((z-omega)*a(omega))*domega",
+      "laurent_expansion": "R_D(z)=sum_{k>=0} K_k*z**(-k-1) near infinity",
+      "partial_fraction": "R_D(z)=sum_j kappa_j/(z-omega_j)=Q_D(z)/P_D(z)",
+      "reduced_denominator": "P_D/gcd(P_D,Q_D)"
+    },
+    "hankel_theorem": {
+      "definition": "H_N=(K_{p+q})_{p,q=0}^{N-1}",
+      "determinant": "det(H_N)=disc(P_D)*product_j(kappa_j)",
+      "factorization": "H_N=V*diag(kappa_j)*V**T",
+      "radical_dimension": "dim(rad(H_N))=number of zero kappa_j",
+      "rank": "rank(H_N)=number of nonzero kappa_j",
+      "resultant_sign": "det(H_N)=(-1)**(N*(N-1)/2)*Res(P_D,Q_D)"
+    },
+    "hypotheses": [
+      "D satisfies the conditional contour hypotheses above",
+      "a has exactly N distinct simple zeros omega_j in D",
+      "P_D is the monic polynomial product_j(omega-omega_j)",
+      "kappa_j=b(omega_j)/a'(omega_j)"
+    ],
+    "joint_multiplication_operators": {
+      "identities": [
+        "[M_omega,M_kappa]=0",
+        "H1=G1*G**(-1)*H",
+        "the joint eigenpairs are (omega_j,kappa_j)",
+        "rank(M_kappa)=number of defective roots"
+      ],
+      "matrices": [
+        "G=V*V**T",
+        "G1=V*Omega*V**T",
+        "H=V*Kappa*V**T",
+        "H1=V*Kappa*Omega*V**T"
+      ],
+      "operators": [
+        "M_omega=G**(-1)*G1",
+        "M_kappa=G**(-1)*H"
+      ],
+      "organizing_class": "kappa_D=[b]*[a']**(-1) in A_D=O(D)/(a)"
+    },
+    "local_algebra": "A_D=O(D)/(a), identified by evaluation with C**N at the N distinct simple zeros",
+    "minimal_recurrence": {
+      "degree": "D_def=degree(P_D/gcd(P_D,Q_D))=rank(H_N)",
+      "statement": "If P_def(z)=z**D_def+c_1*z**(D_def-1)+...+c_D, then K_{m+D_def}+c_1*K_{m+D_def-1}+...+c_D*K_m=0.",
+      "zero_sequence_convention": "If D_def=0, P_def=1 and all K_m vanish."
+    },
+    "n3_exact_model": {
+      "G": [
+        [
+          "3",
+          "omega_1 + omega_2 + omega_3",
+          "omega_1**2 + omega_2**2 + omega_3**2"
+        ],
+        [
+          "omega_1 + omega_2 + omega_3",
+          "omega_1**2 + omega_2**2 + omega_3**2",
+          "omega_1**3 + omega_2**3 + omega_3**3"
+        ],
+        [
+          "omega_1**2 + omega_2**2 + omega_3**2",
+          "omega_1**3 + omega_2**3 + omega_3**3",
+          "omega_1**4 + omega_2**4 + omega_3**4"
+        ]
+      ],
+      "G1": [
+        [
+          "omega_1 + omega_2 + omega_3",
+          "omega_1**2 + omega_2**2 + omega_3**2",
+          "omega_1**3 + omega_2**3 + omega_3**3"
+        ],
+        [
+          "omega_1**2 + omega_2**2 + omega_3**2",
+          "omega_1**3 + omega_2**3 + omega_3**3",
+          "omega_1**4 + omega_2**4 + omega_3**4"
+        ],
+        [
+          "omega_1**3 + omega_2**3 + omega_3**3",
+          "omega_1**4 + omega_2**4 + omega_3**4",
+          "omega_1**5 + omega_2**5 + omega_3**5"
+        ]
+      ],
+      "H1": [
+        [
+          "kappa_1*omega_1 + kappa_2*omega_2 + kappa_3*omega_3",
+          "kappa_1*omega_1**2 + kappa_2*omega_2**2 + kappa_3*omega_3**2",
+          "kappa_1*omega_1**3 + kappa_2*omega_2**3 + kappa_3*omega_3**3"
+        ],
+        [
+          "kappa_1*omega_1**2 + kappa_2*omega_2**2 + kappa_3*omega_3**2",
+          "kappa_1*omega_1**3 + kappa_2*omega_2**3 + kappa_3*omega_3**3",
+          "kappa_1*omega_1**4 + kappa_2*omega_2**4 + kappa_3*omega_3**4"
+        ],
+        [
+          "kappa_1*omega_1**3 + kappa_2*omega_2**3 + kappa_3*omega_3**3",
+          "kappa_1*omega_1**4 + kappa_2*omega_2**4 + kappa_3*omega_3**4",
+          "kappa_1*omega_1**5 + kappa_2*omega_2**5 + kappa_3*omega_3**5"
+        ]
+      ],
+      "Hankel": [
+        [
+          "kappa_1 + kappa_2 + kappa_3",
+          "kappa_1*omega_1 + kappa_2*omega_2 + kappa_3*omega_3",
+          "kappa_1*omega_1**2 + kappa_2*omega_2**2 + kappa_3*omega_3**2"
+        ],
+        [
+          "kappa_1*omega_1 + kappa_2*omega_2 + kappa_3*omega_3",
+          "kappa_1*omega_1**2 + kappa_2*omega_2**2 + kappa_3*omega_3**2",
+          "kappa_1*omega_1**3 + kappa_2*omega_2**3 + kappa_3*omega_3**3"
+        ],
+        [
+          "kappa_1*omega_1**2 + kappa_2*omega_2**2 + kappa_3*omega_3**2",
+          "kappa_1*omega_1**3 + kappa_2*omega_2**3 + kappa_3*omega_3**3",
+          "kappa_1*omega_1**4 + kappa_2*omega_2**4 + kappa_3*omega_3**4"
+        ]
+      ],
+      "Hankel_determinant": "kappa_1*kappa_2*kappa_3*(omega_1 - omega_2)**2*(omega_1 - omega_3)**2*(omega_2 - omega_3)**2",
+      "Hankel_factor": [
+        [
+          "kappa_1 + kappa_2 + kappa_3",
+          "kappa_1*omega_1 + kappa_2*omega_2 + kappa_3*omega_3",
+          "kappa_1*omega_1**2 + kappa_2*omega_2**2 + kappa_3*omega_3**2"
+        ],
+        [
+          "kappa_1*omega_1 + kappa_2*omega_2 + kappa_3*omega_3",
+          "kappa_1*omega_1**2 + kappa_2*omega_2**2 + kappa_3*omega_3**2",
+          "kappa_1*omega_1**3 + kappa_2*omega_2**3 + kappa_3*omega_3**3"
+        ],
+        [
+          "kappa_1*omega_1**2 + kappa_2*omega_2**2 + kappa_3*omega_3**2",
+          "kappa_1*omega_1**3 + kappa_2*omega_2**3 + kappa_3*omega_3**3",
+          "kappa_1*omega_1**4 + kappa_2*omega_2**4 + kappa_3*omega_3**4"
+        ]
+      ],
+      "Hankel_ranks": {
+        "one_defective": 1,
+        "three_defective": 3,
+        "two_defective": 2,
+        "zero_defective": 0
+      },
+      "Loewner": [
+        [
+          "-(45*kappa_1 + 40*kappa_2 + 72*kappa_3)/360",
+          "-(6*kappa_1 + 5*kappa_2 + 6*kappa_3)/60",
+          "-(5*kappa_1 + 4*kappa_2 + 4*kappa_3)/60"
+        ],
+        [
+          "-(kappa_1 + kappa_2 + 2*kappa_3)/12",
+          "-(16*kappa_1 + 15*kappa_2 + 20*kappa_3)/240",
+          "-(10*kappa_1 + 9*kappa_2 + 10*kappa_3)/180"
+        ],
+        [
+          "-(105*kappa_1 + 112*kappa_2 + 240*kappa_3)/1680",
+          "-(7*kappa_1 + 7*kappa_2 + 10*kappa_3)/140",
+          "-(175*kappa_1 + 168*kappa_2 + 200*kappa_3)/4200"
+        ]
+      ],
+      "Loewner_left_nodes": [
+        "-1",
+        "-2",
+        "-3"
+      ],
+      "Loewner_right_nodes": [
+        "5",
+        "6",
+        "7"
+      ],
+      "M_kappa": [
+        [
+          "(8*kappa_1 - 6*kappa_2 + kappa_3)/3",
+          "4*(2*kappa_1 - 3*kappa_2 + kappa_3)/3",
+          "8*(kappa_1 - 3*kappa_2 + 2*kappa_3)/3"
+        ],
+        [
+          "-(4*kappa_1 - 5*kappa_2 + kappa_3)/2",
+          "-2*kappa_1 + 5*kappa_2 - 2*kappa_3",
+          "-2*(kappa_1 - 5*kappa_2 + 4*kappa_3)"
+        ],
+        [
+          "(2*kappa_1 - 3*kappa_2 + kappa_3)/6",
+          "(kappa_1 - 3*kappa_2 + 2*kappa_3)/3",
+          "(kappa_1 - 6*kappa_2 + 8*kappa_3)/3"
+        ]
+      ],
+      "M_omega": [
+        [
+          "0",
+          "0",
+          "8"
+        ],
+        [
+          "1",
+          "0",
+          "-14"
+        ],
+        [
+          "0",
+          "1",
+          "7"
+        ]
+      ],
+      "P": "(omega - omega_1)*(omega - omega_2)*(omega - omega_3)",
+      "Q": "kappa_1*omega**2 - kappa_1*omega*omega_2 - kappa_1*omega*omega_3 + kappa_1*omega_2*omega_3 + kappa_2*omega**2 - kappa_2*omega*omega_1 - kappa_2*omega*omega_3 + kappa_2*omega_1*omega_3 + kappa_3*omega**2 - kappa_3*omega*omega_1 - kappa_3*omega*omega_2 + kappa_3*omega_1*omega_2",
+      "Q_at_roots": [
+        "kappa_1*(omega_1 - omega_2)*(omega_1 - omega_3)",
+        "-kappa_2*(omega_1 - omega_2)*(omega_2 - omega_3)",
+        "kappa_3*(omega_1 - omega_3)*(omega_2 - omega_3)"
+      ],
+      "Q_from_moments": "kappa_1*omega**2 - kappa_1*omega*omega_2 - kappa_1*omega*omega_3 + kappa_1*omega_2*omega_3 + kappa_2*omega**2 - kappa_2*omega*omega_1 - kappa_2*omega*omega_3 + kappa_2*omega_1*omega_3 + kappa_3*omega**2 - kappa_3*omega*omega_1 - kappa_3*omega*omega_2 + kappa_3*omega_1*omega_2",
+      "centered_moments": {
+        "0": "kappa_1 + kappa_2 + kappa_3",
+        "1": "(2*kappa_1*omega_1 - kappa_1*omega_2 - kappa_1*omega_3 - kappa_2*omega_1 + 2*kappa_2*omega_2 - kappa_2*omega_3 - kappa_3*omega_1 - kappa_3*omega_2 + 2*kappa_3*omega_3)/3",
+        "2": "(4*kappa_1*omega_1**2 - 4*kappa_1*omega_1*omega_2 - 4*kappa_1*omega_1*omega_3 + kappa_1*omega_2**2 + 2*kappa_1*omega_2*omega_3 + kappa_1*omega_3**2 + kappa_2*omega_1**2 - 4*kappa_2*omega_1*omega_2 + 2*kappa_2*omega_1*omega_3 + 4*kappa_2*omega_2**2 - 4*kappa_2*omega_2*omega_3 + kappa_2*omega_3**2 + kappa_3*omega_1**2 + 2*kappa_3*omega_1*omega_2 - 4*kappa_3*omega_1*omega_3 + kappa_3*omega_2**2 - 4*kappa_3*omega_2*omega_3 + 4*kappa_3*omega_3**2)/9"
+      },
+      "centroid": "(omega_1 + omega_2 + omega_3)/3",
+      "discriminant": "(omega_1 - omega_2)**2*(omega_1 - omega_3)**2*(omega_2 - omega_3)**2",
+      "extension_resolvent": "-(kappa_1*omega_2*omega_3 - kappa_1*omega_2*zeta - kappa_1*omega_3*zeta + kappa_1*zeta**2 + kappa_2*omega_1*omega_3 - kappa_2*omega_1*zeta - kappa_2*omega_3*zeta + kappa_2*zeta**2 + kappa_3*omega_1*omega_2 - kappa_3*omega_1*zeta - kappa_3*omega_2*zeta + kappa_3*zeta**2)/((omega_1 - zeta)*(omega_2 - zeta)*(omega_3 - zeta))",
+      "gcd_degrees": {
+        "one_defective": 2,
+        "three_defective": 0,
+        "two_defective": 1,
+        "zero_defective": 3
+      },
+      "identities_verified": true,
+      "joint_eigenvectors": [
+        [
+          "8/3",
+          "-2",
+          "1/3"
+        ],
+        [
+          "-2",
+          "5/2",
+          "-1/2"
+        ],
+        [
+          "1/3",
+          "-1/2",
+          "1/6"
+        ]
+      ],
+      "joint_operator_root_specialization": [
+        "1",
+        "2",
+        "4"
+      ],
+      "laurent_through_K5": "inverse_zeta*(inverse_zeta**5*kappa_1*omega_1**5 + inverse_zeta**5*kappa_2*omega_2**5 + inverse_zeta**5*kappa_3*omega_3**5 + inverse_zeta**4*kappa_1*omega_1**4 + inverse_zeta**4*kappa_2*omega_2**4 + inverse_zeta**4*kappa_3*omega_3**4 + inverse_zeta**3*kappa_1*omega_1**3 + inverse_zeta**3*kappa_2*omega_2**3 + inverse_zeta**3*kappa_3*omega_3**3 + inverse_zeta**2*kappa_1*omega_1**2 + inverse_zeta**2*kappa_2*omega_2**2 + inverse_zeta**2*kappa_3*omega_3**2 + inverse_zeta*kappa_1*omega_1 + inverse_zeta*kappa_2*omega_2 + inverse_zeta*kappa_3*omega_3 + kappa_1 + kappa_2 + kappa_3)",
+      "multiplication_commutator": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "newton_P": "(omega - omega_1)*(omega - omega_2)*(omega - omega_3)",
+      "pencil_determinant_ratio": "-(zeta - 4)*(zeta - 2)*(zeta - 1)",
+      "power_sums": {
+        "0": "3",
+        "1": "omega_1 + omega_2 + omega_3",
+        "2": "omega_1**2 + omega_2**2 + omega_3**2",
+        "3": "omega_1**3 + omega_2**3 + omega_3**3"
+      },
+      "rational_resolvent": "-(kappa_1*omega_2*omega_3 - kappa_1*omega_2*zeta - kappa_1*omega_3*zeta + kappa_1*zeta**2 + kappa_2*omega_1*omega_3 - kappa_2*omega_1*zeta - kappa_2*omega_3*zeta + kappa_2*zeta**2 + kappa_3*omega_1*omega_2 - kappa_3*omega_1*zeta - kappa_3*omega_2*zeta + kappa_3*zeta**2)/((omega_1 - zeta)*(omega_2 - zeta)*(omega_3 - zeta))",
+      "recurrence_models": {
+        "one_defective": {
+          "coefficients": [
+            "1",
+            "-1"
+          ],
+          "degree": 1,
+          "reduced_denominator": "zeta - 1"
+        },
+        "three_defective": {
+          "coefficients": [
+            "1",
+            "-7",
+            "14",
+            "-8"
+          ],
+          "degree": 3,
+          "reduced_denominator": "(zeta - 4)*(zeta - 2)*(zeta - 1)"
+        },
+        "two_defective": {
+          "coefficients": [
+            "1",
+            "-3",
+            "2"
+          ],
+          "degree": 2,
+          "reduced_denominator": "(zeta - 2)*(zeta - 1)"
+        },
+        "zero_defective": {
+          "coefficients": [
+            "1"
+          ],
+          "degree": 0,
+          "reduced_denominator": "1"
+        }
+      },
+      "resultant": "-kappa_1*kappa_2*kappa_3*(omega_1 - omega_2)**2*(omega_1 - omega_3)**2*(omega_2 - omega_3)**2",
+      "resultant_product": "-kappa_1*kappa_2*kappa_3*(omega_1 - omega_2)**2*(omega_1 - omega_3)**2*(omega_2 - omega_3)**2",
+      "shifted_Loewner": [
+        [
+          "-(45*kappa_1 + 80*kappa_2 + 288*kappa_3)/360",
+          "-(3*kappa_1 + 5*kappa_2 + 12*kappa_3)/30",
+          "-(5*kappa_1 + 8*kappa_2 + 16*kappa_3)/60"
+        ],
+        [
+          "-(kappa_1 + 2*kappa_2 + 8*kappa_3)/12",
+          "-(8*kappa_1 + 15*kappa_2 + 40*kappa_3)/120",
+          "-(5*kappa_1 + 9*kappa_2 + 20*kappa_3)/90"
+        ],
+        [
+          "-(105*kappa_1 + 224*kappa_2 + 960*kappa_3)/1680",
+          "-(7*kappa_1 + 14*kappa_2 + 40*kappa_3)/140",
+          "-(175*kappa_1 + 336*kappa_2 + 800*kappa_3)/4200"
+        ]
+      ],
+      "vandermonde": [
+        [
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "omega_1",
+          "omega_2",
+          "omega_3"
+        ],
+        [
+          "omega_1**2",
+          "omega_2**2",
+          "omega_3**2"
+        ]
+      ],
+      "vandermonde_determinant": "-(omega_1 - omega_2)*(omega_1 - omega_3)*(omega_2 - omega_3)",
+      "weighted_moments": {
+        "0": "kappa_1 + kappa_2 + kappa_3",
+        "1": "kappa_1*omega_1 + kappa_2*omega_2 + kappa_3*omega_3",
+        "2": "kappa_1*omega_1**2 + kappa_2*omega_2**2 + kappa_3*omega_3**2"
+      }
+    },
+    "root_free_reconstruction": {
+      "Q_from_moments": "If P_D=omega**N+p_1*omega**(N-1)+... and Q_D=q_0*omega**(N-1)+..., then q_m=sum_{j=0}^m p_j*K_{m-j}, p_0=1.",
+      "center": "omega_bar=S_1/N",
+      "centered_from_raw": "Khat_k=sum_{m=0}^k binomial(k,m)*(-omega_bar)**(k-m)*K_m",
+      "centered_moments": "Khat_k=sum_j(omega_j-omega_bar)**k*kappa_j",
+      "root_power_sums": "S_k=(1/(2*pi*I))*integral omega**k*a'/a; Newton identities reconstruct monic P_D from S_1,...,S_N."
+    },
+    "vandermonde_completeness": "The moment vector is V*kappa; det(V)=product_{i<j}(omega_j-omega_i)!=0."
+  },
+  "conditional_flux_variation": {
+    "base_law": "|A_in(tau)|**2-|A_out(tau)|**2=1",
+    "flux_theorem_established": false,
+    "formal_derivative": "A_in*b_in_bar + A_in_bar*b_in - A_out*b_out_bar - A_out_bar*b_out",
+    "hypotheses": [
+      "tau and omega are real",
+      "L_tau has the required real/self-adjoint scalar flux structure",
+      "endpoint frames preserve the scalar Wronskian normalization"
+    ],
+    "hypotheses_certified_here": false,
+    "real_form": "2*Re(conjugate(A_in)*b_in-conjugate(A_out)*b_out)=0"
+  },
+  "conditional_global_connection": {
+    "global_b_derivative_established": false,
+    "hypotheses": [
+      "an analytic scalar family L_tau on a common radial domain",
+      "analytic horizon and infinity endpoint frames compatible with tau",
+      "a fixed endpoint normalization whose first jet is the repeated block"
+    ],
+    "hypotheses_certified_here": false,
+    "statement": "b(omega)=partial_tau a(omega,tau)|_{tau=0}, and the complete repeated scalar connection is the first variation of the scalar connection."
+  },
+  "conditional_jost_determinant_tangent": {
+    "column_family": "X_H(tau)=X_H+tau*Y_H and X_+(tau)=X_++tau*Y_+",
+    "determinant_family": "X_H0*X_p1 + X_H0*Y_p1*tau - X_H1*X_p0 - X_H1*Y_p0*tau - X_p0*Y_H1*tau + X_p1*Y_H0*tau + Y_H0*Y_p1*tau**2 - Y_H1*Y_p0*tau**2",
+    "formula": "E_tau=det(X_H,Y_+)+det(Y_H,X_+)",
+    "hypotheses": [
+      "analytic endpoint-compatible scalar horizon and infinity Jost columns",
+      "a fixed determinant normalization compatible with the repeated block"
+    ],
+    "hypotheses_certified_here": false,
+    "identity_verified": true,
+    "physical_jost_tangent_established": false,
+    "tangent": "X_H0*Y_p1 - X_H1*Y_p0 - X_p0*Y_H1 + X_p1*Y_H0"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "an analytic endpoint-compatible auxiliary scalar scattering family",
+    "the value or nonvanishing of b at any physical QNM",
+    "the value or nonvanishing of beta_n",
+    "a physical QNM Smith branch or exceptional point",
+    "a physical analytic Fredholm realization or resolvent pole",
+    "a real-axis or horizon flux theorem for the auxiliary family",
+    "an evaluated contour moment or a certified QNM zero count",
+    "analytic endpoint-compatible scalar Jost columns",
+    "an actual cluster size, cluster polynomial, resultant, gcd, or defective-mode count",
+    "an evaluated extension resolvent, Hankel rank, recurrence, or Loewner spectrum",
+    "the conditional reality symmetry hypotheses for the physical scalar frames",
+    "the outgoing map T_plus or a physical scattering identity from the partial jet alone",
+    "a new physical coupling or changed fundamental theory"
+  ],
+  "dual_number_connection": {
+    "analytic_endpoint_compatible_frames_constructed": false,
+    "basis": [
+      "epsilon",
+      "1"
+    ],
+    "connection_reading": "If analytic endpoint-compatible scalar connection frames exist for a(omega,tau), then b(omega)=partial_tau a(omega,tau)|_{tau=0} in the induced jet frame.",
+    "coordinate_action": "(u,v) -> (a*u+b*v,a*v), representing (a+epsilon*b)*(u*epsilon+v)",
+    "identity_verified": true,
+    "input_coefficients": [
+      "u",
+      "v"
+    ],
+    "output_coefficients": [
+      "a*u + b*v",
+      "a*v"
+    ],
+    "regular_matrix": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        "0",
+        "a"
+      ]
+    ],
+    "scalar_coefficient": "a_epsilon=a+epsilon*b"
+  },
+  "imports": {
+    "local_smith_dichotomy": {
+      "path": "black_hole_programme/phase3/axial_qnm_local_smith_dichotomy/certificate.json",
+      "schema": "phase3-axial-qnm-local-smith-dichotomy-v1",
+      "sha256": "bbc34d5865a95c9fa8b74157d0ef6abcac8271cca067983e7b23e5850f16da41",
+      "status": "EXACT_DICHOTOMY_BETA_UNEVALUATED"
+    },
+    "projective_cocycle": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_cocycle_v1/certificate.json",
+      "schema": "phase3-axial-qnm-projective-cocycle-v1",
+      "sha256": "3f7c2fff23a70ab8c1f6e922d6799b168ca328f0fa9e68be8a0e8881f80310bb",
+      "status": "EXACT_RATIONAL_COCYCLE_NONTRIVIAL_QNM_UNEVALUATED"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "operator_jet": {
+    "expanded_mod_tau_squared": "L*tau*x + L*y + S*tau*y",
+    "family": "L_tau=L+tau*S",
+    "first_order_equation": "L*x+S*y=0",
+    "identity_verified": true,
+    "interpretation": "The repeated scalar block is the first dual-number jet of the auxiliary intrinsic scalar family.",
+    "physical_parameter_tangent_claimed": false,
+    "section": "y_tau=y+tau*x",
+    "zeroth_order_equation": "L*y=0"
+  },
+  "partial_jet_functor": {
+    "T_plus_recovered": false,
+    "base_family": "C(tau)=[[a(tau),d(tau)],[0,f]] with partial_tau*f=0",
+    "compatible_endpoint_partial_jet_frames_constructed": false,
+    "conditional_endpoint_reading": "Applying J to T_minus, T_plus, or a scattering identity requires endpoint-compatible partial-jet frames induced by the same analytic tau-family.",
+    "definitions": [
+      "b=partial_tau*a|_0",
+      "c=partial_tau*d|_0"
+    ],
+    "extension_ratios": {
+      "M": "-d/(a*f)",
+      "partial_tau_M": "(b*d-a*c)/(a**2*f)",
+      "partial_tau_inverse_a": "-b/a**2"
+    },
+    "inverse": [
+      [
+        "1/a",
+        "-b/a**2",
+        "-(a*c - b*d)/(a**2*f)"
+      ],
+      [
+        "0",
+        "1/a",
+        "-d/(a*f)"
+      ],
+      [
+        "0",
+        "0",
+        "1/f"
+      ]
+    ],
+    "inverse_expected": [
+      [
+        "1/a",
+        "-b/a**2",
+        "-(a*c - b*d)/(a**2*f)"
+      ],
+      [
+        "0",
+        "1/a",
+        "-d/(a*f)"
+      ],
+      [
+        "0",
+        "0",
+        "1/f"
+      ]
+    ],
+    "inverse_identity": "J(C**(-1))=J(C)**(-1)",
+    "inverse_identity_verified": true,
+    "jet_matrix": [
+      [
+        "a",
+        "b",
+        "c"
+      ],
+      [
+        "0",
+        "a",
+        "d"
+      ],
+      [
+        "0",
+        "0",
+        "f"
+      ]
+    ],
+    "matching_tau_family_constructed": false,
+    "multiplicativity": {
+      "J_C1": [
+        [
+          "a_1",
+          "b_1",
+          "c_1"
+        ],
+        [
+          "0",
+          "a_1",
+          "d_1"
+        ],
+        [
+          "0",
+          "0",
+          "f_1"
+        ]
+      ],
+      "J_C1C2": [
+        [
+          "a_1*a_2p",
+          "a_1*b_2p + a_2p*b_1",
+          "a_1*c_2p + b_1*d_2p + c_1*f_2p"
+        ],
+        [
+          "0",
+          "a_1*a_2p",
+          "a_1*d_2p + d_1*f_2p"
+        ],
+        [
+          "0",
+          "0",
+          "f_1*f_2p"
+        ]
+      ],
+      "J_C2": [
+        [
+          "a_2p",
+          "b_2p",
+          "c_2p"
+        ],
+        [
+          "0",
+          "a_2p",
+          "d_2p"
+        ],
+        [
+          "0",
+          "0",
+          "f_2p"
+        ]
+      ],
+      "identity": "J(C1*C2)=J(C1)*J(C2)",
+      "verified": true
+    },
+    "ordered_basis": [
+      "epsilon*spin2",
+      "spin2",
+      "spin1"
+    ],
+    "ratio_identities_verified": true,
+    "scattering_identity_recovered": false
+  },
+  "provenance": {
+    "arithmetic": "exact SymPy polynomial and matrix algebra",
+    "external_scientific_inputs": [],
+    "producer": "produce.py",
+    "schema": {
+      "path": "schema.json",
+      "sha256": "db86972474787f595fd74a616ef319fb73a0ed38be2b636ca9d8d6edda75931b"
+    },
+    "verifier": "verify.py"
+  },
+  "schema": "phase3-axial-qnm-intrinsic-deformation-jet-v1",
+  "scope": {
+    "background": "Schwarzschild exterior M=1",
+    "claim_kind": "formal local algebra over the imported scalar block",
+    "coefficient_ring": "O[epsilon]/(epsilon**2)",
+    "ordering_convention": "column coordinates in the ordered dual-number basis (epsilon,1)",
+    "sector": "axial ell=2 repeated spin-two filtered block",
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity"
+  },
+  "simple_zero_shift": {
+    "beta_n_evaluated": false,
+    "chain_equation": "alpha*nu + beta",
+    "conditional_identification": "beta_n/alpha_n=-omega_n'(0)",
+    "hypotheses": [
+      "a(omega_n,0)=0",
+      "alpha=partial_omega*a(omega_n,0)!=0",
+      "beta=partial_tau*a(omega_n,0)",
+      "a local differentiable zero branch omega_n(tau) exists"
+    ],
+    "identity_verified": true,
+    "kappa": "beta/alpha",
+    "normalization_correspondence": "Under compatible operator/connection normalization, alpha corresponds to alpha_n and beta to beta_n.",
+    "omega_prime": "-beta/alpha",
+    "simple_QNM_supplied": false
+  },
+  "status": "EXACT_DUAL_NUMBER_JET_QNM_SHIFT_UNEVALUATED"
+}

@@ -242,6 +242,141 @@ resolve that coalescing divisor explicitly or use the reduced cocycle while
 retaining its full patch concomitant.  Dropping the endpoint term is not a
 gauge-invariant high-overtone approximation.
 
+## Addendum: exact tortoise-coordinate resonant coefficients
+
+The raw \(r\)-Laurent order is not the correct label for the local
+projective resonances.  Put
+
+\[
+x=r_*-r_*(0)
+=r+2\log(1-r/2),
+\qquad
+x=-\frac{t^2}{4}.
+\]
+
+The exact local inversion begins
+
+\[
+r=t-\frac{t^2}{6}+\frac{t^3}{144}
++\frac{t^4}{2160}+\frac{t^5}{69120}+O(t^6).
+\]
+
+In the exact \(x\)-coordinate,
+
+\[
+U=-\frac{3}{4x^2}+\text{less-singular Puiseux corrections}.
+\]
+
+Consequently the leading projective indicial polynomial is
+
+\[
+{\cal K}_U(x^p)
+\sim
+(p-3)(p-1)(p+1)x^{p-3}.
+\]
+
+The three resonant target powers are therefore
+
+\[
+x^{-4},\qquad x^{-2},\qquad x^0.
+\]
+
+Write their reduced coefficients as \(C_{-4},C_{-2},C_0\).  Exact
+substitution of the \(r(t)\) series gives no \(t^{-8}\) term
+(equivalently, no \(x^{-4}\) term) and gives
+
+\[
+{\cal I}_{\rm red}
+=
+-\frac{6i}{5}\left(\omega+\frac4\omega\right)t^{-4}
++O(t^{-3}).
+\]
+
+Since \(x^{-2}=16t^{-4}\), the first two resonant coefficients are
+
+\[
+\boxed{C_{-4}=0,}
+\qquad
+\boxed{
+C_{-2}
+=-\frac{3i}{40}
+\left(\omega+\frac4\omega\right).}
+\]
+
+The second formula is the exact tortoise-coordinate version of the raw
+\(r^{-4}\) residue.  It is nonzero for generic high damping; the finite
+zeros \(\omega=\pm2i\) remain specializations outside this generic
+conclusion.
+
+The \(x^0\) coefficient cannot be quoted invariantly without fixing the
+lower-resonance normalization.  In the convention that sets the resonant
+\(t^2\) gauge seed to zero, cancellation of the nonresonant
+\(t^{-3},t^{-2},t^{-1}\) coefficients gives the provisional value
+
+\[
+C_0^{(a_2=0)}
+=
+-\frac{i(7181\omega^2+5684)}{4320\omega}.
+\]
+
+If instead the triangular gauge begins with \(q=a_2t^2+\cdots\), and its
+\(t^3,t^4,t^5\) coefficients are adjusted to cancel the same nonresonant
+orders, the exact residual shifts as
+
+\[
+\boxed{
+C_0
+\longmapsto
+C_0-8a_2(\omega^2+4),}
+\]
+
+while \(C_{-4}\) and \(C_{-2}\) are unchanged.  Thus \(C_0\) is a
+secondary resonant coefficient that mixes with the normalization of the
+\(x^1\) symmetric-square channel.  A canonical \(C_0\) requires a fixed
+Frobenius/logarithmic normalization or a complete formal normal-form
+prescription; the provisional value above is not a gauge-independent
+observable.
+
+This calculation also verifies the \(j=2\) leading monodromy-derivative
+selection rule.  The scalar indicial exponents are
+
+\[
+\alpha_+=\frac32,
+\qquad
+\alpha_-=-\frac12,
+\]
+
+so the symmetric-square exponents are
+
+\[
+2\alpha_+=3,
+\qquad
+\alpha_++\alpha_-=1,
+\qquad
+2\alpha_-=-1.
+\]
+
+A local projective density contributes a logarithmic residue precisely
+when its power plus the relevant symmetric-square exponent is \(-1\).
+The three selectors are therefore
+
+\[
+\begin{array}{c|c}
+\text{symmetric-square channel} & \text{projective selector}\\
+\hline
+y_+^2\sim x^3 & C_{-4}\\
+y_+y_-\sim x^1 & C_{-2}\\
+y_-^2\sim x^{-1} & C_0 .
+\end{array}
+\]
+
+Because \(C_{-4}=0\) while \(C_{-2}\neq0\) generically, the first
+nonzero local monodromy derivative is selected by the mixed
+\(y_+y_-\) channel, not by the regular-square channel.  This is a local
+monodromy statement only.  The normalization-dependent \(C_0\), the
+endpoint concomitant and the sum over global Stokes legs can still alter or
+cancel the physical rapid-decay period.
+
 ## Missing global data
 
 The repository does not presently contain the objects needed to turn the

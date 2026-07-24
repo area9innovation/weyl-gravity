@@ -6,13 +6,21 @@
 
 Dependency tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`.
 
-The exact projective-cocycle reduction makes a one-QNM period computation
+The exact projective-cocycle reduction makes a one-QNM extension computation
 substantially smaller than the complete six-state transport problem.  The
 repository nevertheless does not yet contain a numerical or certified
-spin-two QNM disk, a complex-frequency Jost germ, or a hyperboloidal or
+spin-two QNM contour, a complex-frequency Jost germ, or a hyperboloidal or
 complex-scaled scalar Regge--Wheeler solver.  The smallest falsifiable
 successor is therefore a scalar, factorized complex-frequency rail, not
 another full Bach connection calculation.
+
+The primary rail should be root-free: certify that a contour \(D\) contains
+one scalar QNM by the argument principle and then certify a nonzero contour
+moment of the repeated-factor extension.  This avoids evaluating an interval
+extension coefficient at an interval root, where loss of the shared
+root/function correlation can make a decisive nonzero result artificially
+contain zero.  Direct projective-period and Fitting-minor computations remain
+necessary as independent rails.
 
 This report inventories reusable inputs, identifies the typed gaps, and
 specifies the proposed
@@ -161,19 +169,21 @@ reconnaissance rather than scientific evidence.
 
 A decisive one-QNM computation still needs all of the following.
 
-1. **Certified simple QNM disk.**  No repository artifact gives a numerical
-   or enclosed damped spin-two QNM, \(A_{{\rm in},2}'\), or a
-   multiplicity-one theorem.
+1. **Certified one-QNM contour.**  No repository artifact gives a numerical
+   or enclosed damped spin-two QNM contour on whose boundary the scalar Evans
+   function is nonzero, or an argument-principle multiplicity-one theorem.
 2. **Complex-frequency endpoint germs.**  Horizon-ingoing and
    infinity-outgoing scalar Jost initializers need analytic dependence on
-   \(\omega\) and certified tail bounds on the chosen disk.
+   \(\omega\) and certified tail bounds on the closure of the chosen contour.
 3. **A convergent QNM contour or Fredholm compactification.**  Direct
    real-axis QNM fields grow at the endpoints.  A hyperboloidal,
    exterior-complex-scaled, or equivalently renormalized realization must be
    fixed with its branches and domains.
-4. **Frequency-variational transport.**  Root certification needs a
-   validated enclosure of the scalar Evans function and its
-   \(\omega\)-derivative.
+4. **Frequency- and extension-tangent transport.**  The contour count needs
+   \(a'(\omega)\), while the extension moment needs the horizon and infinity
+   response columns \(X_H,X_+\) satisfying the inhomogeneous repeated-factor
+   transport.  Their endpoint initializers and tails must use the same
+   analytic normalization as the scalar columns \(Y_H,Y_+\).
 5. **Projective-period endpoint normalization.**  The endpoint term \(B_n\)
    and the exact identity
    \[
@@ -201,56 +211,136 @@ The successor should be implemented in eight fail-closed stages.
    QNM boundary classes and analytic frame-event ledger.  Derive the
    horizon/outgoing residual equations independently.
 
-2. **Produce a noncertifying seed.**  Locate a candidate fundamental
-   spin-two QNM with two independent high-precision methods, preferably
-   matched scalar shooting and hyperboloidal Chebyshev or a Leaver
-   recurrence.  Record the result only as `UNVALIDATED-NUMERIC`.
+2. **Produce a noncertifying seed and contour.**  Locate a candidate
+   fundamental spin-two QNM with two independent high-precision methods,
+   preferably matched scalar shooting and hyperboloidal Chebyshev or a Leaver
+   recurrence.  Choose a small enclosing disk \(D\), but record the seed and
+   disk only as `UNVALIDATED-NUMERIC`.
 
-3. **Certify endpoint initializers on a small complex disk.**  Construct
-   analytic horizon and infinity Jost heads with ball-valued recurrence
-   remainders.  The disk must exclude \(\omega=0\), all declared frame events,
-   and any coefficient pole.
+3. **Certify analytic endpoint initializers on \(\overline D\).**  Construct
+   horizon-ingoing and infinity-outgoing scalar columns \(Y_H,Y_+\), their
+   frequency tangents, and the corresponding extension-response columns
+   \(X_H,X_+\), all with ball-valued recurrence remainders.  The closure of
+   \(D\) must exclude \(\omega=0\), all declared frame events and every
+   coefficient or normalization pole.  Analyticity of these endpoint germs
+   is a prerequisite for both contour integrals; the existing real-frequency
+   endpoint packages do not supply it.
 
-4. **Certify one simple spin-two root.**  Match the two scalar Jost columns at
-   an interior radius, form their Wronskian \(W(\omega)\), propagate the
-   \(\omega\)-variational equations, and apply complex interval
-   Newton/Krawczyk or an argument-principle enclosure.  Establish exactly one
-   zero and \(0\notin W'\) on the isolating disk.
+4. **Propagate the four columns on the contour and form determinant
+   tangents.**  At a fixed interior match point propagate
+   \[
+   Y_H,\quad Y_+,\quad X_H,\quad X_+
+   \]
+   on each certified contour panel, with
+   \[
+   Y'=AY,\qquad X'=AX+\mathcal E Y.
+   \]
+   In a fixed analytic factor normalization define
+   \[
+   a(\omega)=\det(Y_H,Y_+)
+   \]
+   and obtain the repeated-spin-two tangent coefficient from
+   \[
+   b_{\rm tan}(\omega)
+   =
+   \det(X_H,Y_+)+\det(Y_H,X_+).
+   \]
+   The exact factor-frame derivation must identify
+   \(b_{\rm tan}\) with the triangular entry \(b\), possibly up to a declared
+   analytic unit and an \(a\)-multiple.  Likewise compute
+   \[
+   a'=
+   \det(\partial_\omega Y_H,Y_+)
+   +\det(Y_H,\partial_\omega Y_+)
+   \]
+   from the frequency-variational transport rather than finite differences.
 
-5. **Exclude a coincident spin-one zero.**  Enclose
-   \(A_{{\rm in},1}\) on the same disk and prove that it does not contain zero.
-   Otherwise the three-factor local Smith problem is a different case.
+5. **Certify the root count without enclosing the root.**  Prove
+   \(0\notin a(\partial D)\), then enclose
+   \[
+   N_D=
+   \frac{1}{2\pi i}
+   \oint_{\partial D}\frac{a'(\omega)}{a(\omega)}\,d\omega
+   \]
+   tightly enough to certify the exact integer \(N_D=1\).  This establishes
+   that \(D\) contains one spin-two zero counted with multiplicity and hence
+   one simple QNM.  On the same closure, certify that the spin-one incoming
+   coefficient has no zero; otherwise the full three-factor local Smith
+   problem replaces the two-factor dichotomy.
 
-6. **Evaluate the projective period.**  Transport the symmetric-square
-   state
+6. **Certify the root-free extension moment.**  In the same analytic
+   normalization enclose
+   \[
+   K_0=
+   \frac{1}{2\pi i}
+   \oint_{\partial D}\frac{b(\omega)}{a(\omega)}\,d\omega.
+   \]
+   With \(N_D=1\), no spin-one zero and no frame pole in \(D\),
+   \[
+   K_0=\operatorname*{Res}_{\omega=\omega_n}\frac{b}{a}
+      =\frac{b(\omega_n)}{a'(\omega_n)}.
+   \]
+   Therefore \(0\notin K_0\) proves \(b(\omega_n)\ne0\) and selects the
+   defective local Smith case without ever evaluating \(b\) on an
+   interval-valued root.  This is the primary falsifiable rail.
+
+   The zero/nonzero conclusion is normalization invariant.  Multiplying the
+   scalar endpoint columns by analytic nonvanishing units multiplies \(a\)
+   and \(b\) by their common unit, leaving \(b/a\) unchanged.  An admissible
+   triangular response-frame shear changes
+   \[
+   b\longmapsto b+a\,h
+   \]
+   with \(h\) analytic, so \(b/a\mapsto b/a+h\) and the closed-contour moment
+   is unchanged.  More general compatible factor-frame changes may multiply
+   the residue by a nonvanishing analytic unit; they preserve its
+   nonvanishing, while its numerical value remains tied to the frozen
+   normalization.  Similarly, \(a\mapsto u a\) adds \(u'/u\) to \(a'/a\);
+   its contour integral vanishes when \(u\) is a unit on \(D\).
+
+7. **Run two independent selector rails.**
+
+   - For the direct projective-period rail, transport the symmetric-square
+     state
    \[
    y^2,\qquad yDy,\qquad (Dy)^2
    \]
    together with a period accumulator.  This is a linear augmented system
    because the symmetric-square variables obey \(\mathcal K_Uz=0\).
-   Add the certified endpoint term \(B_n\) and enclose \(\beta_n\) over the
-   root disk on the chosen hyperboloidal or complex-scaled contour.
+   After separately isolating the root inside \(D\), add the certified
+   endpoint term \(B_n\) and enclose \(\beta_n\) on the chosen hyperboloidal
+   or complex-scaled realization.  This rail retains the harder
+   root/function correlation problem deliberately: it is an independent
+   check of the root-free contour decision, not the primary selector.
 
-7. **Compute the independent Fitting selector.**  Enclose the normalized
-   factor-frame minor \(\Delta=bf\) at the same disk and verify the exact
-   normalization relation between \(\Delta\) and the projective period.  The
-   two computations serve as independent end-to-end checks rather than
-   interchangeable definitions.
+   - For the Fitting rail, compute the normalized full-connection selector
+     \(\Delta=bf\) independently of the determinant-tangent construction.
+     Verify the exact normalization relations among \(K_0\), \(\Delta\) and
+     the projective period.  These are independent end-to-end checks, not
+     interchangeable definitions.
 
-8. **Apply the claim gate.**  Only if the root is simple, the spin-one factor
-   is a unit, the independent rails agree, and the \(\beta_n\) or normalized
-   Fitting-minor enclosure excludes zero may the connection Smith type be
+8. **Apply the claim gate.**  Only if \(N_D=1\), the spin-one factor is a unit,
+   \(0\notin K_0\), the independent period and Fitting rails agree, and every
+   endpoint and normalization audit passes may the connection Smith type be
    promoted to \((0,0,2)\).  A second-order differential Green-resolvent pole
    additionally requires the declared analytic Fredholm realization.
 
 ## Fail-closed outcomes
 
-- Failure of interval Newton or an argument-principle enclosure does not
-  disprove a QNM.
-- A disk containing zero or several roots does not prove nonsimplicity; it
-  requires subdivision or a better analytic frame.
+- Failure of the argument-principle enclosure, or of an optional interval
+  Newton refinement, does not disprove a QNM.
+- A contour on which \(a\) cannot be certified nonzero is invalid for the
+  argument principle; it is not evidence for a QNM on the contour.
+- A count enclosure that does not isolate the integer \(1\) is inconclusive.
+  A count different from one does not by itself classify multiplicities
+  until poles and frame events have also been excluded.
 - An endpoint recurrence refusal or noncontractive tail is a substrate
   shortfall, not a physical singularity.
+- A \(K_0\) enclosure containing zero is inconclusive.  It does not prove
+  \(b(\omega_n)=0\) or select the semisimple Smith case.
+- A nonzero \(K_0\) obtained without certified analytic endpoint germs,
+  boundary nonvanishing of \(a\), and exclusion of internal frame poles is
+  not a residue certificate.
 - A \(\beta_n\) enclosure containing zero is inconclusive.  It does not prove
   \(\beta_n=0\) or select the semisimple Smith case.
 - A Fitting-minor enclosure containing zero is likewise inconclusive.
@@ -266,12 +356,19 @@ The successor should be implemented in eight fail-closed stages.
 
 ## Recommended implementation order
 
-The cheapest binary selector remains the normalized factor-frame Fitting
-minor.  The projective period is nevertheless the cleanest invariant
-interpretation and the strongest independent verification rail.  The
-implementation should therefore certify the scalar QNM disk first, then
-compute both objects on the same disk and require their normalization
+The cheapest robust binary selector is the root-free contour moment.  The
+implementation should certify analytic endpoint germs on a candidate
+contour, establish \(N_D=1\), and then enclose \(K_0\) using the same
+contour-panel transport.  This preserves the correlation between \(a\) and
+\(b\) pointwise on the contour while avoiding the harder and unnecessary
+correlation between a two-dimensional interval root and a separately
+evaluated function at that root.
+
+The direct projective period remains the cleanest invariant interpretation,
+and the normalized full-connection Fitting minor remains the strongest
+independent algebraic selector.  Both should be run after the contour rail
+and must reproduce its zero/nonzero decision through an exact normalization
 crosswalk before promotion.
 
-CLOSE-OUT: SHORTFALL — the exact scalar target and smallest falsifiable successor are identified, but no QNM germ, period, nonzero selector or Smith case is computed.
-MISSING-DEP: certified complex-frequency scalar RW endpoint germs and a simple QNM disk with a convergent projective-period normalization
+CLOSE-OUT: SHORTFALL — the exact scalar target and root-free contour successor are identified, but no QNM contour, contour moment, period, nonzero selector or Smith case is computed.
+MISSING-DEP: certified analytic complex-frequency scalar and extension endpoint germs on a one-QNM contour, plus a convergent projective-period normalization

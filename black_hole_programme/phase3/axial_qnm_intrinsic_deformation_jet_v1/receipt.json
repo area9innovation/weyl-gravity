@@ -1,0 +1,66 @@
+{
+  "schema": "phase3-axial-qnm-intrinsic-deformation-jet-receipt-v1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "status": "EXACT_DUAL_NUMBER_JET_QNM_SHIFT_UNEVALUATED",
+  "artifacts": {
+    "__init__.py": "a86b11e4a5bd40830e14bb269eab94aadc487419bfe2a251189e792ccbf75cfa",
+    "produce.py": "4f5ce764213fe00811f00b857d42ad25ec3f8068f4d05bbec4c523654e04a14e",
+    "verify.py": "aa1f1cb6cdd5d7eaf29deeb5c94e016b7d39e05c726bf4fdfbf06b0540fd49b2",
+    "test_intrinsic_deformation_jet.py": "b1867194c4c9e76e5f341f1aa840a4e260ca50abbbaf9b3f30935807952aeeee",
+    "schema.json": "db86972474787f595fd74a616ef319fb73a0ed38be2b636ca9d8d6edda75931b",
+    "certificate.json": "da58955f60264985f29dbed6b72f64e48e6c7018259ff6b4222b55fffc4d90a5",
+    "README.md": "7cb7827862cfa0ff9d8df049fcbb88531ef8b966598dc90d1967b3608d576c79",
+    "report.md": "9914158544a18564c0b566ab1a3c7813724ec6b5dfe279918949bda9f4827187"
+  },
+  "tests": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_intrinsic_deformation_jet_v1/*.py",
+      "status": "PASS",
+      "exit": 0
+    },
+    {
+      "tier": 0,
+      "command": "Draft202012Validator(schema.json).iter_errors(certificate.json)",
+      "status": "PASS",
+      "errors": 0,
+      "exit": 0
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m black_hole_programme.phase3.axial_qnm_intrinsic_deformation_jet_v1.produce",
+      "elapsed_seconds": 2.62,
+      "status": "PASS",
+      "exit": 0
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m black_hole_programme.phase3.axial_qnm_intrinsic_deformation_jet_v1.verify",
+      "elapsed_seconds": 2.17,
+      "status": "PASS",
+      "exit": 0
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m unittest -v black_hole_programme.phase3.axial_qnm_intrinsic_deformation_jet_v1.test_intrinsic_deformation_jet",
+      "status": "PASS",
+      "elapsed_seconds": 14.66,
+      "tests": 8,
+      "exit": 0
+    }
+  ],
+  "higher_tiers": {
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No imported operator or transitive certificate-chain input changed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This scoped local-algebraic classification neither freezes nor promotes a physical QNM, scattering, Fredholm, or flux theorem."
+    }
+  },
+  "claim_boundary": "The repeated scalar block and partial spin-two jet are exact dual-number functors; the simple-zero sensitivity, conditional contour-residue, zero-free renormalization, determinant-tangent, finite-cluster, extension-resolvent, Hankel, recurrence, joint-multiplication, generic Loewner, partial inverse, and extension-ratio identities are exact. No analytic contour or compatible endpoint partial-jet frames are supplied, and no contour moment, QNM zero count, cluster polynomial, physical QNM, beta_n, Smith branch, EP2, Fredholm realization, resolvent pole, Hankel/Loewner rank, reality-symmetry consequence, T_plus map, scattering identity, or flux theorem is evaluated or established."
+}

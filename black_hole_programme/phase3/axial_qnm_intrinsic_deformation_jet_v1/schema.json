@@ -1,0 +1,337 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase3-axial-qnm-intrinsic-deformation-jet-v1",
+  "title": "Axial intrinsic scalar deformation dual-number jet certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "scope",
+    "imports",
+    "operator_jet",
+    "dual_number_connection",
+    "simple_zero_shift",
+    "conditional_global_connection",
+    "conditional_flux_variation",
+    "partial_jet_functor",
+    "conditional_contour_moments",
+    "conditional_jost_determinant_tangent",
+    "conditional_finite_cluster_algebra",
+    "claim_flags",
+    "does_not_establish",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-qnm-intrinsic-deformation-jet-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle": {"const": "CLASSIFIED"},
+    "status": {
+      "const": "EXACT_DUAL_NUMBER_JET_QNM_SHIFT_UNEVALUATED"
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background",
+        "sector",
+        "coefficient_ring",
+        "ordering_convention",
+        "claim_kind"
+      ]
+    },
+    "imports": {
+      "type": "object",
+      "required": ["projective_cocycle", "local_smith_dichotomy"]
+    },
+    "operator_jet": {
+      "type": "object",
+      "required": [
+        "family",
+        "section",
+        "expanded_mod_tau_squared",
+        "zeroth_order_equation",
+        "first_order_equation",
+        "identity_verified",
+        "interpretation",
+        "physical_parameter_tangent_claimed"
+      ],
+      "properties": {
+        "identity_verified": {"const": true},
+        "physical_parameter_tangent_claimed": {"const": false}
+      }
+    },
+    "dual_number_connection": {
+      "type": "object",
+      "required": [
+        "scalar_coefficient",
+        "basis",
+        "coordinate_action",
+        "regular_matrix",
+        "input_coefficients",
+        "output_coefficients",
+        "identity_verified",
+        "connection_reading",
+        "analytic_endpoint_compatible_frames_constructed"
+      ],
+      "properties": {
+        "basis": {"const": ["epsilon", "1"]},
+        "regular_matrix": {
+          "const": [["a", "b"], ["0", "a"]]
+        },
+        "identity_verified": {"const": true},
+        "analytic_endpoint_compatible_frames_constructed": {"const": false}
+      }
+    },
+    "simple_zero_shift": {
+      "type": "object",
+      "required": [
+        "hypotheses",
+        "chain_equation",
+        "omega_prime",
+        "kappa",
+        "normalization_correspondence",
+        "conditional_identification",
+        "identity_verified",
+        "simple_QNM_supplied",
+        "beta_n_evaluated"
+      ],
+      "properties": {
+        "omega_prime": {"const": "-beta/alpha"},
+        "kappa": {"const": "beta/alpha"},
+        "identity_verified": {"const": true},
+        "simple_QNM_supplied": {"const": false},
+        "beta_n_evaluated": {"const": false}
+      }
+    },
+    "conditional_global_connection": {
+      "type": "object",
+      "properties": {
+        "hypotheses_certified_here": {"const": false},
+        "global_b_derivative_established": {"const": false}
+      }
+    },
+    "conditional_flux_variation": {
+      "type": "object",
+      "properties": {
+        "hypotheses_certified_here": {"const": false},
+        "flux_theorem_established": {"const": false}
+      }
+    },
+    "partial_jet_functor": {
+      "type": "object",
+      "required": [
+        "base_family",
+        "ordered_basis",
+        "definitions",
+        "jet_matrix",
+        "inverse",
+        "inverse_expected",
+        "multiplicativity",
+        "inverse_identity",
+        "inverse_identity_verified",
+        "extension_ratios",
+        "ratio_identities_verified",
+        "conditional_endpoint_reading",
+        "compatible_endpoint_partial_jet_frames_constructed",
+        "matching_tau_family_constructed",
+        "T_plus_recovered",
+        "scattering_identity_recovered"
+      ],
+      "properties": {
+        "ordered_basis": {
+          "const": ["epsilon*spin2", "spin2", "spin1"]
+        },
+        "jet_matrix": {
+          "const": [["a", "b", "c"], ["0", "a", "d"], ["0", "0", "f"]]
+        },
+        "inverse_identity_verified": {"const": true},
+        "ratio_identities_verified": {"const": true},
+        "compatible_endpoint_partial_jet_frames_constructed": {"const": false},
+        "matching_tau_family_constructed": {"const": false},
+        "T_plus_recovered": {"const": false},
+        "scattering_identity_recovered": {"const": false}
+      }
+    },
+    "conditional_contour_moments": {
+      "type": "object",
+      "required": [
+        "domain_hypotheses",
+        "zero_count",
+        "zero_count_result",
+        "local_zero_count_residue",
+        "moment",
+        "moment_result",
+        "local_model",
+        "local_moment_residue",
+        "single_zero_corollary",
+        "compatible_normalization_corollary",
+        "endpoint_renormalization",
+        "identity_verified",
+        "analytic_domain_supplied",
+        "contour_evaluated",
+        "physical_QNM_zero_count_certified"
+      ],
+      "properties": {
+        "local_zero_count_residue": {"const": "1"},
+        "local_moment_residue": {"const": "beta*omega_j**k/alpha"},
+        "identity_verified": {"const": true},
+        "analytic_domain_supplied": {"const": false},
+        "contour_evaluated": {"const": false},
+        "physical_QNM_zero_count_certified": {"const": false}
+      }
+    },
+    "conditional_jost_determinant_tangent": {
+      "type": "object",
+      "required": [
+        "column_family",
+        "determinant_family",
+        "tangent",
+        "formula",
+        "identity_verified",
+        "hypotheses",
+        "hypotheses_certified_here",
+        "physical_jost_tangent_established"
+      ],
+      "properties": {
+        "formula": {
+          "const": "E_tau=det(X_H,Y_+)+det(Y_H,X_+)"
+        },
+        "identity_verified": {"const": true},
+        "hypotheses_certified_here": {"const": false},
+        "physical_jost_tangent_established": {"const": false}
+      }
+    },
+    "conditional_finite_cluster_algebra": {
+      "type": "object",
+      "required": [
+        "hypotheses",
+        "local_algebra",
+        "complete_moments",
+        "vandermonde_completeness",
+        "cluster_polynomials",
+        "defect_selectors",
+        "root_free_reconstruction",
+        "extension_resolvent",
+        "hankel_theorem",
+        "minimal_recurrence",
+        "joint_multiplication_operators",
+        "conditional_loewner_theorem",
+        "conditional_reality_symmetry",
+        "n3_exact_model",
+        "analytic_cluster_supplied",
+        "actual_N_computed",
+        "actual_P_D_computed",
+        "actual_Q_D_computed",
+        "actual_defective_count_computed",
+        "actual_resolvent_computed",
+        "actual_hankel_rank_computed",
+        "actual_loewner_spectrum_computed"
+      ],
+      "properties": {
+        "n3_exact_model": {
+          "type": "object",
+          "properties": {
+            "identities_verified": {"const": true}
+          }
+        },
+        "analytic_cluster_supplied": {"const": false},
+        "actual_N_computed": {"const": false},
+        "actual_P_D_computed": {"const": false},
+        "actual_Q_D_computed": {"const": false},
+        "actual_defective_count_computed": {"const": false},
+        "actual_resolvent_computed": {"const": false},
+        "actual_hankel_rank_computed": {"const": false},
+        "actual_loewner_spectrum_computed": {"const": false}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "operator_dual_number_jet_exact",
+        "dual_number_regular_representation_exact",
+        "simple_zero_shift_identity_exact",
+        "compatible_normalization_ratio_identity_exact",
+        "conditional_contour_moment_residue_identity_exact",
+        "zero_free_endpoint_renormalization_invariance_exact",
+        "conditional_jost_determinant_tangent_identity_exact",
+        "partial_jet_functor_exact",
+        "partial_jet_extension_ratio_identities_exact",
+        "conditional_finite_cluster_algebra_exact",
+        "n3_cluster_model_independently_exact",
+        "conditional_extension_resolvent_hankel_recurrence_exact",
+        "conditional_generic_loewner_theorem_exact",
+        "analytic_endpoint_scalar_frames_constructed",
+        "analytic_contour_domain_supplied",
+        "contour_moment_evaluated",
+        "physical_cluster_data_computed",
+        "physical_extension_resolvent_or_hankel_computed",
+        "physical_loewner_rank_or_spectrum_computed",
+        "physical_reality_symmetry_certified",
+        "compatible_endpoint_partial_jet_frames_constructed",
+        "T_plus_recovered_by_partial_jet",
+        "scattering_identity_recovered_by_partial_jet",
+        "global_b_derivative_established",
+        "physical_QNM_supplied",
+        "beta_n_evaluated",
+        "physical_QNM_smith_case_selected",
+        "EP2_established",
+        "physical_QNM_fredholm_realization_constructed",
+        "flux_theorem_established"
+      ],
+      "properties": {
+        "operator_dual_number_jet_exact": {"const": true},
+        "dual_number_regular_representation_exact": {"const": true},
+        "simple_zero_shift_identity_exact": {"const": true},
+        "compatible_normalization_ratio_identity_exact": {"const": true},
+        "conditional_contour_moment_residue_identity_exact": {"const": true},
+        "zero_free_endpoint_renormalization_invariance_exact": {"const": true},
+        "conditional_jost_determinant_tangent_identity_exact": {"const": true},
+        "partial_jet_functor_exact": {"const": true},
+        "partial_jet_extension_ratio_identities_exact": {"const": true},
+        "conditional_finite_cluster_algebra_exact": {"const": true},
+        "n3_cluster_model_independently_exact": {"const": true},
+        "conditional_extension_resolvent_hankel_recurrence_exact": {"const": true},
+        "conditional_generic_loewner_theorem_exact": {"const": true},
+        "analytic_endpoint_scalar_frames_constructed": {"const": false},
+        "analytic_contour_domain_supplied": {"const": false},
+        "contour_moment_evaluated": {"const": false},
+        "physical_cluster_data_computed": {"const": false},
+        "physical_extension_resolvent_or_hankel_computed": {"const": false},
+        "physical_loewner_rank_or_spectrum_computed": {"const": false},
+        "physical_reality_symmetry_certified": {"const": false},
+        "compatible_endpoint_partial_jet_frames_constructed": {"const": false},
+        "T_plus_recovered_by_partial_jet": {"const": false},
+        "scattering_identity_recovered_by_partial_jet": {"const": false},
+        "global_b_derivative_established": {"const": false},
+        "physical_QNM_supplied": {"const": false},
+        "beta_n_evaluated": {"const": false},
+        "physical_QNM_smith_case_selected": {"const": false},
+        "EP2_established": {"const": false},
+        "physical_QNM_fredholm_realization_constructed": {"const": false},
+        "flux_theorem_established": {"const": false}
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 7,
+      "items": {"type": "string"}
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "producer",
+        "verifier",
+        "schema",
+        "arithmetic",
+        "external_scientific_inputs"
+      ]
+    }
+  }
+}

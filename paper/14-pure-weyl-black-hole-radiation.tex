@@ -827,9 +827,30 @@ positive real axis, boundedness of the incoming-to-horizon population map
  \frac{d}{a_2a_1},\qquad
  \frac{bd-a_2c}{a_2^2a_1}.
 \]
-Threshold, high-frequency, and limiting-absorption estimates for these
-three extension ratios are the remaining quantitative gate between
-separated-mode no-growth and time-domain boundedness.
+These are not three unrelated functions.  Introduce the partially dualized
+two-channel family
+\[
+ C(\tau)=
+ \begin{pmatrix}a_2(\tau)&d(\tau)\\0&a_1\end{pmatrix},
+ \qquad
+ a_2'(0)=b,\qquad d'(0)=c,
+\]
+where the spin-one quotient is held \(\tau\)-constant.  In the ordered basis
+\((\epsilon\,{\rm spin}\text{-}2,{\rm spin}\text{-}2,{\rm spin}\text{-}1)\),
+its first jet is exactly \(T_-\), and
+\[
+ -\frac{b}{a_2^2}
+ =\left.\partial_\tau\frac1{a_2(\tau)}\right|_0,
+ \qquad
+ -\frac{d}{a_2a_1}=:{\cal M}(0),
+ \qquad
+ \frac{bd-a_2c}{a_2^2a_1}={\cal M}'(0),
+\]
+with \({\cal M}(\tau)=-d(\tau)/(a_2(\tau)a_1)\).
+Thus the quantitative gate is a bound for one base spin-two/spin-one
+transfer matrix and its intrinsic first variation.  This algebraic
+repackaging does not itself provide the analytic \(\tau\)-family or its
+uniform threshold, high-frequency, and limiting-absorption bounds.
 
 The normalized signature basis also defines the canonical classical
 fundamental symmetry \(C_{\rm fac}=\operatorname{diag}(1,-1,-1)\).
@@ -1272,6 +1293,170 @@ Equivalently, the repeated block defines an intrinsic class
 whose projective image is \([{\cal I}]\).  The results above show that this
 generic class is not the jet of the frequency, Schwarzschild-mass, or
 angular-barrier families.
+
+\begin{proposition}[Intrinsic deformation jet and contour selector]
+\label{prop:axial-qnm-intrinsic-jet}
+Let \(S=s_1D+s_0\) be the scalar source of the repeated spin-two block and
+introduce the auxiliary family
+\[
+ L_\tau=L+\tau S.
+\]
+The equations \(Ly=0\) and \(Lx+Sy=0\) are exactly the first jet of
+\(L_\tau(y+\tau x)=0\) at \(\tau=0\).  Over the dual numbers, multiplication
+by \(a+\epsilon b\) in the ordered column basis \((\epsilon,1)\) is
+\[
+ \begin{pmatrix}a&b\\0&a\end{pmatrix}.
+\]
+More generally, for
+\[
+ C(\tau)=\begin{pmatrix}a(\tau)&d(\tau)\\0&f\end{pmatrix},
+ \qquad f'(0)=0,
+\]
+the partial jet in the ordered basis
+\((\epsilon\,{\rm spin}\text{-}2,{\rm spin}\text{-}2,{\rm spin}\text{-}1)\)
+is
+\[
+ J(C)=
+ \begin{pmatrix}
+ a&a_\tau&d_\tau\\
+ 0&a&d\\
+ 0&0&f
+ \end{pmatrix}_{\tau=0}.
+\]
+On this partially dualized triangular category,
+\[
+ J(C_1C_2)=J(C_1)J(C_2),\qquad
+ J(C^{-1})=J(C)^{-1}.
+\]
+Consequently a typed identity \(T_\pm=J(C_\pm)\) would imply
+\[
+ T_+T_-^{-1}=J(C_+C_-^{-1})
+\]
+without reconstructing the cancellation between the jet coefficients after
+transport.  This last reading requires both endpoint frames to be induced
+by the same analytic \(\tau\)-family; that compatibility and the resulting
+typed \(T_+\) are not established here.
+Thus, conditional on analytic endpoint-compatible scalar Jost frames, the
+off-diagonal incoming coefficient is
+\[
+ b(\omega)=
+ \left.\partial_\tau a(\omega,\tau)\right|_{\tau=0}.
+\]
+For a simple zero branch \(a(\omega_n(\tau),\tau)=0\),
+\[
+ \omega_n'(0)
+ =-\frac{b(\omega_n)}{a'(\omega_n)}
+ =-\frac{\beta_n}{\alpha_n}
+\]
+under the compatible Fredholm normalization.
+
+Let \(D_\omega\) be a spectral disk whose boundary is zero-free and contains
+distinct simple zeros \(\omega_1,\ldots,\omega_N\).  The contour moments
+\[
+ K_k(D_\omega)=\frac1{2\pi i}
+ \oint_{\partial D_\omega}
+ \omega^k\frac{b(\omega)}{a(\omega)}\,d\omega
+\]
+obey
+\[
+ K_k(D_\omega)
+ =\sum_{j=1}^N
+ \omega_j^k\frac{b(\omega_j)}{a'(\omega_j)}.
+\]
+They are invariant under zero-free analytic endpoint renormalizations
+\(a\mapsto ua\).  In particular, if \(N=1\), then
+\[
+ K_0(D_\omega)=\frac{\beta_n}{\alpha_n};
+\]
+a certified nonzero contour moment would therefore select the defective
+Smith branch without evaluating the unknown root itself.
+
+For a cluster of \(N\) distinct simple zeros, the first \(N\) moments form a
+complete coordinate system for
+\(\mathscr A_D=\mathcal O(D_\omega)/(a)\).  If
+\[
+ P_D(z,\tau)=\prod_{j=1}^N(z-\omega_j(\tau)),
+ \qquad
+ Q_D(z)=\left.\partial_\tau P_D(z,\tau)\right|_{\tau=0},
+\]
+then
+\[
+ Q_D(\omega_j)
+ =\frac{b(\omega_j)}{a'(\omega_j)}P_D'(\omega_j).
+\]
+Consequently \(Q_D\not\equiv0\) selects at least one defective QNM in the
+cluster, while
+\(\operatorname{Res}(P_D,Q_D)\ne0\) selects every QNM in the cluster as
+defective.  Both polynomials can in principle be reconstructed from the
+ordinary argument-principle moments and the extension moments, without
+locating the individual roots.
+
+The intrinsic organizing element is the QNM-velocity class
+\[
+ \boldsymbol\kappa_D=[b]\,[a']^{-1}\in\mathscr A_D.
+\]
+The simple-root hypothesis makes \([a']\) a unit, and evaluation sends this
+class to
+\[
+ \left(
+ \frac{b(\omega_1)}{a'(\omega_1)},\ldots,
+ \frac{b(\omega_N)}{a'(\omega_N)}
+ \right).
+\]
+Multiplication by \(\boldsymbol\kappa_D\) therefore has rank equal to the
+number of defective QNMs in the cluster.  In the monomial basis define
+\[
+ G=(S_{p+q}),\quad G_1=(S_{p+q+1}),\quad
+ H=(K_{p+q}),\quad H_1=(K_{p+q+1}),
+\]
+where \(S_k=(2\pi i)^{-1}\oint\omega^ka'/a\,d\omega\).  Then
+\[
+ M_\omega=G^{-1}G_1,\qquad M_\kappa=G^{-1}H
+\]
+commute, obey
+\[
+ H_1=G_1G^{-1}H,
+\]
+and have joint eigenpairs
+\[
+ \left(\omega_j,\frac{b(\omega_j)}{a'(\omega_j)}\right).
+\]
+These are exact conditional cluster identities, not evaluated QNM data.
+
+Equivalently, the Cauchy transform
+\[
+ R_D(z)=\frac1{2\pi i}
+ \oint_{\partial D_\omega}
+ \frac{b(\omega)}
+ {(z-\omega)a(\omega)}\,d\omega
+ =\sum_{j=1}^N
+ \frac{\beta_j/\alpha_j}{z-\omega_j}
+\]
+has poles precisely at the defective QNMs; semisimple QNMs are removable.
+Its reduced denominator is
+\[
+ \frac{P_D}{\gcd(P_D,Q_D)}.
+\]
+If \(H_N=(K_{p+q})_{p,q=0}^{N-1}\), then
+\[
+ H_N=V\,
+ \operatorname{diag}\!\left(
+ \frac{\beta_1}{\alpha_1},\ldots,\frac{\beta_N}{\alpha_N}
+ \right)V^T,
+\]
+where \(V\) is the cluster Vandermonde matrix.  Thus
+\(\operatorname{rank}H_N\) is exactly the number of defective QNMs.
+A generic Loewner realization of \(R_D\) has the same rank, and its shifted
+pencil has precisely the defective QNM frequencies as finite generalized
+eigenvalues.
+\end{proposition}
+
+The auxiliary \(\tau\) is a bookkeeping coordinate on the intrinsic
+deformation class, not a physical parameter or a changed fundamental
+theory.  The analytic complex-frequency Jost frames and the contour moment
+have not been constructed here.  Likewise, differentiating a scalar flux
+identity requires an additional real/self-adjoint realization of
+\(L_\tau\), which is not supplied by the local algebra.
 
 The operator \({\cal K}_U\) is the symmetric-square Regge--Wheeler
 operator: if \(y_1,y_2\in\ker L\), then
@@ -1757,6 +1942,7 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_qnm_local_smith_dichotomy/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_parameter_deformation_cohomology_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_projective_cocycle_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_intrinsic_deformation_jet_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json}\\
 Polar restriction-stable module and invariant current filtration &
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json}\\
@@ -1812,7 +1998,13 @@ ranks and all local lower-lift solves on the first frequency cell, but ended
 in \textsc{shortfall}: fixed interval frames discarded the shared
 \(\omega\)-dependence needed for cumulative lower-block cancellation.  The
 analytic triangular proof bypasses that limitation for \(T_-\), not for
-\(T_+\).  Complex-frequency work is likewise limited to the existing
+\(T_+\).  The partial-jet identity above now gives a representation-level
+successor: propagate the base spin-two/spin-one connection and its intrinsic
+dual-number tangent in one correlated algebra, so that inversion and frame
+composition retain the \(bd-a_2c\) cancellation exactly.  This is an
+implementation route, not yet a recovered outgoing map; the endpoint
+recurrences and frame normalizers must first be shown to arise from the same
+analytic jet family.  Complex-frequency work is likewise limited to the existing
 meromorphic axial continuation; no Wronskian zeros, quasinormal spectrum, or
 stability theorem has been computed.
 
