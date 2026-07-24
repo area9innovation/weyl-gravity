@@ -1,0 +1,437 @@
+
+// expect: 0
+// backends: c native
+// One q00-child shell-0/panel-0 partial-jet microfactor only.
+import prelude;
+import math/rational;
+import math/interval;
+import math/qmat;
+import math/ivmat;
+import math/ivtaylor;
+import math/ivlinparam;
+import text/parse;
+import text/format;
+import text/strbuilder;
+
+fn big(s:string)->Rat{return match(parse<Rat>(bytes(s),0)){
+  ok(r)=>r,err(e)=>trap()};}
+
+fn rem_clone(a:borrow IvMat)->IvMat{
+  let z:IvMat=ivm_zeros(ivm_rows(a),ivm_cols(a));
+  let i:i64=0;while(i<ivm_rows(a)){let j:i64=0;while(j<ivm_cols(a)){
+    ivm_set(z,i,j,ivm_at(a,i,j));j=j+1;}i=i+1;}return z;
+}
+
+fn jt_expect(z:IvTaylor4Result)->IvTaylor4Mat{
+  if(!z.ok){
+    println(strfmt(system_allocator(),"ARITHMETIC_REFUSAL code={}",
+      [z.refusal_code]));
+    trap();
+  }
+  return ivtm4_clone(z.value);
+}
+
+fn jt_zero(rows:i64,cols:i64)->IvTaylor4Mat{
+  return ivtm4_constant(7315,qm_new(rows,cols));
+}
+
+fn jt_const(q:Rat)->IvTaylor4Mat{
+  let m:QMat=qm_new(1,1);m=qm_set(m,0,0,q);
+  return ivtm4_constant(7315,m);
+}
+
+fn jt_frequency()->IvTaylor4Mat{
+  let c0:QMat=qm_new(1,1);let c1:QMat=qm_new(1,1);
+  c0=qm_set(c0,0,0,big("8193/16384"));
+  c1=qm_set(c1,0,0,big("1/16384"));
+  return jt_expect(ivtm4_new(7315,c0,c1,qm_new(1,1),qm_new(1,1),
+    qm_new(1,1),ivm_zeros(1,1)));
+}
+
+fn jt_radius()->IvTaylor4Mat{
+  let c0:QMat=qm_new(1,1);
+  c0=qm_set(c0,0,0,big("4294967809/2147483648"));
+  let rem:IvMat=ivm_zeros(1,1);
+  let rad:Iv=iv_from_rat(big("1/2147483648"));
+  ivm_set(rem,0,0,iv(0.0-rad.hi,rad.hi));
+  return jt_expect(ivtm4_new(7315,c0,qm_new(1,1),qm_new(1,1),
+    qm_new(1,1),qm_new(1,1),rem));
+}
+
+fn jt_add(a:borrow IvTaylor4Mat,b:borrow IvTaylor4Mat)->IvTaylor4Mat{
+  return jt_expect(ivtm4_add_checked(a,b));
+}
+fn jt_sub(a:borrow IvTaylor4Mat,b:borrow IvTaylor4Mat)->IvTaylor4Mat{
+  return jt_expect(ivtm4_sub_checked(a,b));
+}
+fn jt_mul(a:borrow IvTaylor4Mat,b:borrow IvTaylor4Mat)->IvTaylor4Mat{
+  return jt_expect(ivtm4_mul_checked(a,b));
+}
+fn jt_scale(a:borrow IvTaylor4Mat,q:borrow Rat)->IvTaylor4Mat{
+  return jt_expect(ivtm4_scale_rat_checked(a,q));
+}
+fn jt_inv(a:borrow IvTaylor4Mat)->IvTaylor4Mat{
+  return jt_expect(ivtm4_solve_left(a,ivtm4_identity(7315,1)));
+}
+fn jt_pow(a:borrow IvTaylor4Mat,n:i64)->IvTaylor4Mat{
+  let z:IvTaylor4Mat=ivtm4_identity(7315,1);let k:i64=0;
+  while(k<n){z=jt_mul(z,a);k=k+1;}return z;
+}
+
+fn jt_put(a:borrow IvTaylor4Mat,row:i64,col:i64,
+x:borrow IvTaylor4Mat)->IvTaylor4Mat{
+  let c0:QMat=qm_clone(a.c0);let c1:QMat=qm_clone(a.c1);
+  let c2:QMat=qm_clone(a.c2);let c3:QMat=qm_clone(a.c3);
+  let c4:QMat=qm_clone(a.c4);let rem:IvMat=rem_clone(a.remainder);
+  c0=qm_set(c0,row,col,qm_get(x.c0,0,0));
+  c1=qm_set(c1,row,col,qm_get(x.c1,0,0));
+  c2=qm_set(c2,row,col,qm_get(x.c2,0,0));
+  c3=qm_set(c3,row,col,qm_get(x.c3,0,0));
+  c4=qm_set(c4,row,col,qm_get(x.c4,0,0));
+  ivm_set(rem,row,col,ivm_at(x.remainder,0,0));
+  return jt_expect(ivtm4_new(7315,c0,c1,c2,c3,c4,rem));
+}
+
+fn jt_scalar(a:borrow IvTaylor4Mat,row:i64,col:i64)->IvTaylor4Mat{
+  let c0:QMat=qm_new(1,1);let c1:QMat=qm_new(1,1);
+  let c2:QMat=qm_new(1,1);let c3:QMat=qm_new(1,1);
+  let c4:QMat=qm_new(1,1);let rem:IvMat=ivm_zeros(1,1);
+  c0=qm_set(c0,0,0,qm_get(a.c0,row,col));
+  c1=qm_set(c1,0,0,qm_get(a.c1,row,col));
+  c2=qm_set(c2,0,0,qm_get(a.c2,row,col));
+  c3=qm_set(c3,0,0,qm_get(a.c3,row,col));
+  c4=qm_set(c4,0,0,qm_get(a.c4,row,col));
+  ivm_set(rem,0,0,ivm_at(a.remainder,row,col));
+  return jt_expect(ivtm4_new(7315,c0,c1,c2,c3,c4,rem));
+}
+
+fn jt_series(a:borrow IvTaylor4Mat,h:borrow Rat,order:i64)->IvTaylor4Mat{
+  let sum:IvTaylor4Mat=ivtm4_identity(7315,a.rows);
+  let power:IvTaylor4Mat=ivtm4_identity(7315,a.rows);
+  let coeff:Rat=rat(1,1);let n:i64=1;
+  while(n<=order){
+    power=jt_mul(a,power);
+    coeff=(rat_clone(coeff)*rat_clone(h))/rat(n,1);
+    sum=jt_add(sum,jt_scale(power,coeff));
+    n=n+1;
+  }
+  return sum;
+}
+
+fn jt_pad(a:borrow IvTaylor4Mat,radius:f64)->IvTaylor4Mat{
+  if(radius<0.0 || !f64_is_finite(radius)){trap();}
+  let rem:IvMat=rem_clone(a.remainder);
+  let i:i64=0;while(i<a.rows){let j:i64=0;while(j<a.cols){
+    let old:Iv=ivm_at(rem,i,j);
+    let z:Iv=match(iv_add_checked(old,iv(0.0-radius,radius))){
+      some(x)=>x,none=>{trap();}};
+    ivm_set(rem,i,j,z);j=j+1;}i=i+1;}
+  return jt_expect(ivtm4_new(7315,a.c0,a.c1,a.c2,a.c3,a.c4,rem));
+}
+
+pub type DualT4=scoped struct{
+  pub base:IvTaylor4Mat,
+  pub tangent:IvTaylor4Mat,
+};
+
+fn dual_mul(a:borrow DualT4,b:borrow DualT4)->DualT4{
+  let base:IvTaylor4Mat=jt_mul(a.base,b.base);
+  let left:IvTaylor4Mat=jt_mul(a.tangent,b.base);
+  let right:IvTaylor4Mat=jt_mul(a.base,b.tangent);
+  return new DualT4(base,jt_add(left,right));
+}
+
+fn dual_series(base:borrow IvTaylor4Mat,tangent:borrow IvTaylor4Mat,
+h:borrow Rat,order:i64)->DualT4{
+  let sum:DualT4=new DualT4(ivtm4_identity(7315,base.rows),
+    jt_zero(base.rows,base.cols));
+  let power:DualT4=new DualT4(ivtm4_identity(7315,base.rows),
+    jt_zero(base.rows,base.cols));
+  let coefficient:DualT4=new DualT4(ivtm4_clone(base),
+    ivtm4_clone(tangent));
+  let coeff:Rat=rat(1,1);let n:i64=1;
+  while(n<=order){
+    power=dual_mul(coefficient,power);
+    coeff=(rat_clone(coeff)*rat_clone(h))/rat(n,1);
+    sum=new DualT4(jt_add(sum.base,jt_scale(power.base,coeff)),
+      jt_add(sum.tangent,jt_scale(power.tangent,coeff)));
+    n=n+1;
+  }
+  return sum;
+}
+
+fn dual_expand(a:borrow DualT4)->IvTaylor4Mat{
+  let out:IvTaylor4Mat=jt_zero(12,12);
+  let i:i64=0;while(i<6){let j:i64=0;while(j<6){
+    let kind:i64=if(i<2 && j<2){1}else{
+      if(i<2 && j>=2){2}else{
+      if(i>=2 && i<4 && j>=2){1}else{
+      if(i>=4 && j>=4){1}else{0}}}};
+    if(kind!=0){
+      let si:i64=if(i<2){i}else{i-2};
+      let sj:i64=if(j<2){j}else{j-2};
+      let pr:i64=0;while(pr<2){let pc:i64=0;while(pc<2){
+        let source:IvTaylor4Mat=if(kind==1){
+          jt_scalar(a.base,pr*4+si,pc*4+sj)
+        }else{
+          jt_scalar(a.tangent,pr*4+si,pc*4+sj)
+        };
+        out=jt_put(out,pr*6+i,pc*6+j,source);
+        pc=pc+1;}pr=pr+1;}
+    }
+    j=j+1;}i=i+1;}
+  return out;
+}
+
+fn qcoeff_equal(a:borrow QMat,b:borrow QMat)->bool{
+  let i:i64=0;while(i<qm_rows(a)){let j:i64=0;while(j<qm_cols(a)){
+    if(!(qm_get(a,i,j)==qm_get(b,i,j))){return false;}j=j+1;}i=i+1;}
+  return true;
+}
+
+fn coefficients_equal(a:borrow IvTaylor4Mat,b:borrow IvTaylor4Mat)->bool{
+  return qcoeff_equal(a.c0,b.c0)&&qcoeff_equal(a.c1,b.c1)&&
+    qcoeff_equal(a.c2,b.c2)&&qcoeff_equal(a.c3,b.c3)&&
+    qcoeff_equal(a.c4,b.c4);
+}
+
+fn difference_contains_zero(a:borrow IvTaylor4Mat,
+b:borrow IvTaylor4Mat)->bool{
+  let d:IvTaylor4Mat=jt_sub(a,b);
+  let h:IvMat=match(ivtm4_hull_checked(d)){some(x)=>x,none=>{return false;}};
+  let i:i64=0;while(i<ivm_rows(h)){let j:i64=0;while(j<ivm_cols(h)){
+    let x:Iv=ivm_at(h,i,j);
+    if(x.lo>0.0 || x.hi<0.0){return false;}j=j+1;}i=i+1;}
+  return true;
+}
+
+fn hull_width(a:borrow IvTaylor4Mat)->f64{
+  let h:IvMat=match(ivtm4_hull_checked(a)){some(x)=>x,none=>{trap();}};
+  let width:f64=0.0;let i:i64=0;
+  while(i<ivm_rows(h)){let j:i64=0;while(j<ivm_cols(h)){
+    let x:Iv=ivm_at(h,i,j);let w:f64=x.hi-x.lo;
+    if(w>width){width=w;}j=j+1;}i=i+1;}return width;
+}
+
+fn sl_inf_norm_hi(a:borrow IvMat)->f64{
+  let best:f64=0.0;let i:i64=0;
+  while(i<ivm_rows(a)){let s:Iv=iv_point(0.0);let j:i64=0;
+    while(j<ivm_cols(a)){s=iv_add(s,iv_abs(ivm_at(a,i,j)));j=j+1;}
+    if(!iv_finite(s)){return -1.0;}if(s.hi>best){best=s.hi;}i=i+1;}
+  return best;
+}
+
+fn sl_exp_tail(x:f64,first_power:i64)->f64{
+  if(x<0.0 || !f64_is_finite(x) || first_power<1){return -1.0;}
+  let fact:f64=1.0;let j:i64=1;
+  while(j<=first_power){fact=fact*f64(j);j=j+1;}
+  let xp:f64=1.0;j=0;while(j<first_power){xp=xp*x;j=j+1;}
+  let q:f64=x/f64(first_power+1);
+  if(!f64_is_finite(fact) || !f64_is_finite(xp) || q>=1.0){return -1.0;}
+  return (xp/fact)/(1.0-q);
+}
+
+pub type ModelTriple=scoped struct{
+  pub base:IvTaylor4Mat,
+  pub tangent:IvTaylor4Mat,
+  pub direct:IvTaylor4Mat,
+};
+
+fn build_seed(w_model:borrow IvTaylor4Mat)->ModelTriple{
+  let r_model:IvTaylor4Mat=jt_const(big("2/1"));
+  let t0:IvTaylor4Mat=jt_pow(ivtm4_clone(w_model),2);
+  let t1:IvTaylor4Mat=jt_pow(ivtm4_clone(w_model),4);
+  let t2:IvTaylor4Mat=jt_pow(ivtm4_clone(w_model),6);
+  let t3:IvTaylor4Mat=jt_pow(ivtm4_clone(w_model),8);
+  let t4:IvTaylor4Mat=jt_pow(ivtm4_clone(w_model),10);
+  let t5:IvTaylor4Mat=jt_add(t0,jt_const(big("1/1")));
+  let t6:IvTaylor4Mat=jt_mul(jt_const(big("4/1")),t0);
+  let t7:IvTaylor4Mat=jt_mul(jt_const(big("16/1")),t0);
+  let t8:IvTaylor4Mat=jt_mul(jt_mul(jt_mul(jt_inv(jt_pow(jt_add(t6,jt_const(big("1/1"))),1)),jt_inv(jt_pow(jt_add(t7,jt_const(big("1/1"))),1))),jt_inv(jt_pow(jt_add(t7,jt_const(big("9/1"))),1))),jt_inv(jt_pow(jt_add(t7,jt_const(big("25/1"))),1)));
+  let t9:IvTaylor4Mat=jt_mul(jt_inv(jt_pow(t5,1)),t8);
+  let t10:IvTaylor4Mat=jt_inv(jt_pow(jt_add(t6,jt_const(big("9/1"))),1));
+  let t11:IvTaylor4Mat=jt_mul(jt_const(big("3/166153499473114484112975882535043072")),t9);
+  let t12:IvTaylor4Mat=jt_pow(ivtm4_clone(w_model),12);
+  let t13:IvTaylor4Mat=jt_pow(ivtm4_clone(w_model),14);
+  let t14:IvTaylor4Mat=jt_pow(ivtm4_clone(w_model),16);
+  let t15:IvTaylor4Mat=jt_pow(ivtm4_clone(w_model),18);
+  let t16:IvTaylor4Mat=jt_mul(jt_inv(jt_pow(t5,6)),t8);
+  let t17:IvTaylor4Mat=jt_mul(jt_const(big("1/332306998946228968225951765070086144")),t16);
+  let t18:IvTaylor4Mat=jt_mul(jt_mul(jt_const(big("1/664613997892457936451903530140172288")),t10),t16);
+  let base:IvTaylor4Mat=jt_zero(4,1);
+  let tangent:IvTaylor4Mat=jt_zero(4,1);
+  let direct:IvTaylor4Mat=jt_zero(1,1);
+  base=jt_put(base,0,0,jt_mul(jt_mul(jt_const(big("1/166153499473114484112975882535043072")),t9),jt_add(jt_add(jt_add(jt_add(jt_add(jt_mul(jt_const(big("875462887897675778085600457020151951763/1")),t0),jt_mul(jt_const(big("5080974244204038758482455240673864060262/1")),t1)),jt_mul(jt_const(big("10878402122863071218454763254136801193184/1")),t2)),jt_mul(jt_const(big("9357765151173011168758627487913649031168/1")),t3)),jt_mul(jt_const(big("2722258935367507707706996859454145691648/1")),t4)),jt_const(big("37384550751204777006277842855945830400/1")))));
+  tangent=jt_put(tangent,0,0,jt_mul(jt_mul(jt_const(big("-1/1")),t17),jt_add(jt_add(jt_add(jt_add(jt_add(jt_add(jt_add(jt_add(jt_add(jt_mul(jt_const(big("279299059722352858887151029129590/1")),t0),jt_mul(jt_const(big("1674308469866526275369386384499347/1")),t1)),jt_mul(jt_const(big("1362540717200857892682026381152535/1")),t12)),jt_mul(jt_mul(jt_const(big("-1/1")),jt_const(big("1662288409360876857464035037262882/1"))),t13)),jt_mul(jt_mul(jt_const(big("-1/1")),jt_const(big("1254974559964494580500179437444640/1"))),t14)),jt_mul(jt_mul(jt_const(big("-1/1")),jt_const(big("263671346608127389319663237931008/1"))),t15)),jt_mul(jt_const(big("4981666532252312810054485032264058/1")),t2)),jt_mul(jt_const(big("7945351421551570713860925368897678/1")),t3)),jt_mul(jt_const(big("6410046555589703867069256656343242/1")),t4)),jt_const(big("17826342940904987815035745075200/1")))));
+  base=jt_put(base,1,0,jt_mul(jt_mul(t10,t11),jt_add(jt_add(jt_add(jt_add(jt_add(jt_mul(jt_const(big("1322664525936834796547526034808314540353/1")),t0),jt_mul(jt_const(big("3452667753836208132275627977037790428969/1")),t1)),jt_mul(jt_const(big("3872038411219470979126822249517423212052/1")),t2)),jt_mul(jt_const(big("1914086807961564351936801638055779611456/1")),t3)),jt_mul(jt_const(big("340282082967254787223547793233750609920/1")),t4)),jt_const(big("168230458325788078708740940556245401600/1")))));
+  tangent=jt_put(tangent,1,0,jt_mul(jt_mul(jt_const(big("-1/1")),t18),jt_add(jt_add(jt_add(jt_add(jt_add(jt_add(jt_add(jt_add(jt_add(jt_add(jt_mul(jt_mul(jt_const(big("-1/1")),jt_const(big("486777772459186913622724697554944/1"))),jt_pow(ivtm4_clone(w_model),20)),jt_mul(jt_const(big("820189325730327841374955156301508/1")),t0)),jt_mul(jt_mul(jt_const(big("-1/1")),jt_const(big("3785942650719577558236993619677847/1"))),t1)),jt_mul(jt_mul(jt_const(big("-1/1")),jt_const(big("171955245630528954285683333833867359/1"))),t12)),jt_mul(jt_mul(jt_const(big("-1/1")),jt_const(big("101746308210495575448775148307372656/1"))),t13)),jt_mul(jt_mul(jt_const(big("-1/1")),jt_const(big("35569638982774443677665011171333232/1"))),t14)),jt_mul(jt_mul(jt_const(big("-1/1")),jt_const(big("6612064761913414028145752735389440/1"))),t15)),jt_mul(jt_mul(jt_const(big("-1/1")),jt_const(big("35989767096557724322256589796263684/1"))),t2)),jt_mul(jt_mul(jt_const(big("-1/1")),jt_const(big("109300310247251597855045271678774338/1"))),t3)),jt_mul(jt_mul(jt_const(big("-1/1")),jt_const(big("177409527473154818257632435233616248/1"))),t4)),jt_const(big("160437067342556074818364086681600/1")))));
+  base=jt_put(base,2,0,jt_mul(jt_mul(jt_mul(jt_const(big("-1/1")),ivtm4_clone(w_model)),t11),jt_add(jt_add(jt_add(jt_add(jt_mul(jt_const(big("132231811696424640174862859492655/1")),t0),jt_mul(jt_const(big("307088356601911370001216862011528/1")),t1)),jt_mul(jt_const(big("273812518768963516867415566668160/1")),t2)),jt_mul(jt_const(big("81129633578903403237341025779712/1")),t3)),jt_const(big("17826340284573383803997991731320/1")))));
+  tangent=jt_put(tangent,2,0,jt_mul(jt_mul(ivtm4_clone(w_model),t17),jt_add(jt_add(jt_add(jt_add(jt_add(jt_add(jt_add(jt_add(jt_add(jt_mul(jt_const(big("899556901671786442838977733878180/1")),t0),jt_mul(jt_const(big("5303851227604103655549444772948273/1")),t1)),jt_mul(jt_const(big("26885203261391963535184854047909961/1")),t12)),jt_mul(jt_const(big("11640517219767409958863024514788120/1")),t13)),jt_mul(jt_const(big("2687418919477540942826760794908800/1")),t14)),jt_mul(jt_const(big("243388886229603833100368326213632/1")),t15)),jt_mul(jt_const(big("16792410734253432481933641252180780/1")),t2)),jt_mul(jt_const(big("31652404325346604480152669712506146/1")),t3)),jt_mul(jt_const(big("37015396212379269177369373797216208/1")),t4)),jt_const(big("62392220481289280391656295640860/1")))));
+  base=jt_put(base,3,0,jt_mul(jt_mul(jt_mul(jt_mul(jt_mul(jt_const(big("-1/1")),jt_const(big("3/41538374868278621028243970633760768"))),ivtm4_clone(w_model)),t10),t9),jt_add(jt_add(jt_add(jt_add(jt_add(jt_mul(jt_const(big("1322665123431171170106965623451031683313/1")),t0),jt_mul(jt_const(big("3452669765419459997662481393611666891691/1")),t1)),jt_mul(jt_const(big("3872040935428478350858354110889169253764/1")),t2)),jt_mul(jt_const(big("1914088131388571570156256146771603907904/1")),t3)),jt_mul(jt_const(big("340282326356119256161186680698275176448/1")),t4)),jt_const(big("168230488407737209313587494177787083855/1")))));
+  tangent=jt_put(tangent,3,0,jt_mul(jt_mul(ivtm4_clone(w_model),t18),jt_add(jt_add(jt_add(jt_add(jt_add(jt_add(jt_add(jt_add(jt_add(jt_mul(jt_const(big("9985959003559865706976628239123224/1")),t0),jt_mul(jt_const(big("43761004052025473211257543398740427/1")),t1)),jt_mul(jt_const(big("46117935656387113861373275393198071/1")),t12)),jt_mul(jt_const(big("8812856068342078546313378247277308/1")),t13)),jt_mul(jt_mul(jt_const(big("-1/1")),jt_const(big("390438044120918377622184618825024/1"))),t14)),jt_mul(jt_mul(jt_const(big("-1/1")),jt_const(big("283953826329471841576825814089728/1"))),t15)),jt_mul(jt_const(big("100367575149139360658395676295354588/1")),t2)),jt_mul(jt_const(big("133440679066853813106486839121414846/1")),t3)),jt_mul(jt_const(big("104929148292882856812713271259300648/1")),t4)),jt_const(big("882403956449208081326654934252120/1")))));
+  return new ModelTriple(base,tangent,direct);
+}
+fn build_panel_models(w_model:borrow IvTaylor4Mat,r_model:borrow IvTaylor4Mat)->ModelTriple{
+  let u0:IvTaylor4Mat=jt_pow(ivtm4_clone(r_model),2);
+  let u1:IvTaylor4Mat=jt_inv(jt_pow(u0,1));
+  let u2:IvTaylor4Mat=jt_inv(jt_pow(jt_add(ivtm4_clone(r_model),jt_const(big("-2/1"))),1));
+  let u3:IvTaylor4Mat=jt_mul(jt_mul(jt_mul(jt_const(big("6/1")),u1),u2),jt_add(ivtm4_clone(r_model),jt_const(big("-1/1"))));
+  let u4:IvTaylor4Mat=jt_inv(jt_pow(ivtm4_clone(r_model),1));
+  let u5:IvTaylor4Mat=jt_mul(jt_const(big("2/1")),u2);
+  let u6:IvTaylor4Mat=jt_mul(jt_mul(jt_const(big("-1/1")),u4),u5);
+  let u7:IvTaylor4Mat=jt_mul(ivtm4_clone(w_model),ivtm4_clone(r_model));
+  let u8:IvTaylor4Mat=jt_mul(u5,u7);
+  let u9:IvTaylor4Mat=jt_mul(jt_const(big("-1/1")),u8);
+  let u10:IvTaylor4Mat=jt_add(jt_mul(jt_const(big("3/1")),ivtm4_clone(r_model)),jt_const(big("-2/1")));
+  let u11:IvTaylor4Mat=jt_mul(u10,u4);
+  let u12:IvTaylor4Mat=jt_pow(ivtm4_clone(w_model),2);
+  let u13:IvTaylor4Mat=jt_mul(u0,u12);
+  let u14:IvTaylor4Mat=jt_inv(jt_pow(jt_add(u13,jt_const(big("4/1"))),2));
+  let u15:IvTaylor4Mat=jt_mul(u14,jt_add(u13,jt_const(big("8/1"))));
+  let u16:IvTaylor4Mat=jt_mul(jt_mul(jt_const(big("-1/1")),u11),u15);
+  let u17:IvTaylor4Mat=jt_mul(jt_pow(ivtm4_clone(r_model),3),u12);
+  let u18:IvTaylor4Mat=jt_mul(jt_const(big("1/4")),u14);
+  let u19:IvTaylor4Mat=jt_mul(u18,jt_add(jt_add(jt_add(jt_add(jt_mul(jt_mul(jt_const(big("3/1")),jt_pow(ivtm4_clone(w_model),4)),jt_pow(ivtm4_clone(r_model),5)),jt_mul(jt_mul(jt_const(big("-1/1")),jt_const(big("32/1"))),ivtm4_clone(r_model))),jt_mul(jt_const(big("8/1")),u13)),jt_mul(jt_const(big("8/1")),u17)),jt_const(big("64/1"))));
+  let u20:IvTaylor4Mat=jt_mul(ivtm4_clone(w_model),u18);
+  let u21:IvTaylor4Mat=jt_mul(u20,jt_add(jt_mul(jt_const(big("3/1")),u13),jt_const(big("20/1"))));
+  let u22:IvTaylor4Mat=jt_mul(u10,u21);
+  let u23:IvTaylor4Mat=jt_mul(jt_const(big("-1/1")),u22);
+  let u24:IvTaylor4Mat=jt_add(jt_add(jt_add(jt_mul(jt_const(big("44/1")),ivtm4_clone(r_model)),jt_mul(jt_mul(jt_const(big("-1/1")),jt_const(big("6/1"))),u13)),jt_mul(jt_const(big("9/1")),u17)),jt_const(big("-40/1")));
+  let u25:IvTaylor4Mat=jt_mul(jt_mul(u18,u24),u7);
+  let u26:IvTaylor4Mat=jt_mul(jt_const(big("-1/1")),u25);
+  let u27:IvTaylor4Mat=jt_mul(jt_mul(u1,u10),u15);
+  let u28:IvTaylor4Mat=jt_mul(jt_mul(jt_const(big("-1/1")),u19),u4);
+  let u29:IvTaylor4Mat=jt_mul(u11,u21);
+  let u30:IvTaylor4Mat=jt_mul(u20,u24);
+  let u31:IvTaylor4Mat=jt_mul(jt_const(big("-1/1")),u29);
+  let u32:IvTaylor4Mat=jt_mul(jt_const(big("-1/1")),u30);
+  let base:IvTaylor4Mat=jt_zero(4,4);
+  let tangent:IvTaylor4Mat=jt_zero(4,4);
+  let direct:IvTaylor4Mat=jt_zero(8,8);
+  base=jt_put(base,0,1,jt_const(big("1/1")));
+  base=jt_put(base,1,0,u3);
+  base=jt_put(base,1,1,u6);
+  base=jt_put(base,1,3,u8);
+  base=jt_put(base,2,3,jt_const(big("1/1")));
+  base=jt_put(base,3,1,u9);
+  base=jt_put(base,3,2,u3);
+  base=jt_put(base,3,3,u6);
+  tangent=jt_put(tangent,0,0,u16);
+  tangent=jt_put(tangent,0,1,u19);
+  tangent=jt_put(tangent,0,2,u23);
+  tangent=jt_put(tangent,0,3,u26);
+  tangent=jt_put(tangent,1,0,u27);
+  tangent=jt_put(tangent,1,1,u28);
+  tangent=jt_put(tangent,1,2,u29);
+  tangent=jt_put(tangent,1,3,u30);
+  tangent=jt_put(tangent,2,0,u22);
+  tangent=jt_put(tangent,2,1,u25);
+  tangent=jt_put(tangent,2,2,u16);
+  tangent=jt_put(tangent,2,3,u19);
+  tangent=jt_put(tangent,3,0,u31);
+  tangent=jt_put(tangent,3,1,u32);
+  tangent=jt_put(tangent,3,2,u27);
+  tangent=jt_put(tangent,3,3,u28);
+  direct=jt_put(direct,0,1,jt_const(big("1/1")));
+  direct=jt_put(direct,0,4,u16);
+  direct=jt_put(direct,0,5,u19);
+  direct=jt_put(direct,0,6,u23);
+  direct=jt_put(direct,0,7,u26);
+  direct=jt_put(direct,1,0,u3);
+  direct=jt_put(direct,1,1,u6);
+  direct=jt_put(direct,1,3,u8);
+  direct=jt_put(direct,1,4,u27);
+  direct=jt_put(direct,1,5,u28);
+  direct=jt_put(direct,1,6,u29);
+  direct=jt_put(direct,1,7,u30);
+  direct=jt_put(direct,2,3,jt_const(big("1/1")));
+  direct=jt_put(direct,2,4,u22);
+  direct=jt_put(direct,2,5,u25);
+  direct=jt_put(direct,2,6,u16);
+  direct=jt_put(direct,2,7,u19);
+  direct=jt_put(direct,3,1,u9);
+  direct=jt_put(direct,3,2,u3);
+  direct=jt_put(direct,3,3,u6);
+  direct=jt_put(direct,3,4,u31);
+  direct=jt_put(direct,3,5,u32);
+  direct=jt_put(direct,3,6,u27);
+  direct=jt_put(direct,3,7,u28);
+  direct=jt_put(direct,4,5,jt_const(big("1/1")));
+  direct=jt_put(direct,5,4,u3);
+  direct=jt_put(direct,5,5,u6);
+  direct=jt_put(direct,5,7,u8);
+  direct=jt_put(direct,6,7,jt_const(big("1/1")));
+  direct=jt_put(direct,7,5,u9);
+  direct=jt_put(direct,7,6,u3);
+  direct=jt_put(direct,7,7,u6);
+  return new ModelTriple(base,tangent,direct);
+}
+
+fn dual_expand_spin2(a:borrow DualT4)->IvTaylor4Mat{
+  let out:IvTaylor4Mat=jt_zero(8,8);
+  let i:i64=0;while(i<4){let j:i64=0;while(j<4){
+    out=jt_put(out,i,j,jt_scalar(a.base,i,j));
+    out=jt_put(out,i,j+4,jt_scalar(a.tangent,i,j));
+    out=jt_put(out,i+4,j+4,jt_scalar(a.base,i,j));
+    j=j+1;}i=i+1;}
+  return out;
+}
+
+fn dual_seed_vector(base:borrow IvTaylor4Mat,
+tangent:borrow IvTaylor4Mat)->IvTaylor4Mat{
+  let out:IvTaylor4Mat=jt_zero(8,1);
+  let i:i64=0;while(i<4){
+    out=jt_put(out,i,0,jt_scalar(tangent,i,0));
+    out=jt_put(out,i+4,0,jt_scalar(base,i,0));
+    i=i+1;}
+  return out;
+}
+
+
+pub fn main()->i64{
+  let w_model:IvTaylor4Mat=jt_frequency();
+  let seed:ModelTriple=build_seed(w_model);
+  let seed_base:IvTaylor4Mat=jt_pad(seed.base,3.548989660586722e-36);
+  let seed_tangent:IvTaylor4Mat=jt_pad(seed.tangent,1.1767796809448261e-34);
+  let base_width:f64=hull_width(seed_base);
+  let tangent_width:f64=hull_width(seed_tangent);
+  if(!f64_is_finite(base_width)||!f64_is_finite(tangent_width)){
+    println("MOVING_PHASE_SEED status=REFUSED");
+    return 3;
+  }
+  let r_model:IvTaylor4Mat=jt_radius();
+  let models:ModelTriple=build_panel_models(w_model,r_model);
+  let h:Rat=big("1/1073741824");
+  let order:i64=12;
+  let dual:DualT4=dual_series(models.base,models.tangent,h,order);
+  let expanded:IvTaylor4Mat=dual_expand_spin2(dual);
+  let direct:IvTaylor4Mat=jt_series(models.direct,h,order);
+  let hull:IvMat=match(ivtm4_hull_checked(models.direct)){
+    some(x)=>x,none=>{println("PANEL_COEFFICIENT_REFUSAL");return 3;}};
+  let alpha:f64=sl_inf_norm_hi(hull);
+  let scaled_norm:f64=rat_to_f64(h)*alpha;
+  let operator_tail:f64=sl_exp_tail(scaled_norm,order+1);
+  if(!f64_is_finite(operator_tail)||operator_tail<0.0){
+    println(strfmt(system_allocator(),
+      "PANEL_TAIL_REFUSAL alpha={} scaled_norm={} tail={}",
+      [alpha,scaled_norm,operator_tail]));return 3;}
+  let expanded_padded:IvTaylor4Mat=jt_pad(expanded,operator_tail);
+  let direct_padded:IvTaylor4Mat=jt_pad(direct,operator_tail);
+  let exact_coefficients:bool=coefficients_equal(expanded,direct);
+  let transport_overlap:bool=difference_contains_zero(
+    expanded_padded,direct_padded);
+  let initial_direct:IvTaylor4Mat=dual_seed_vector(
+    seed_base,seed_tangent);
+  let dual_out:IvTaylor4Mat=jt_mul(expanded_padded,initial_direct);
+  let direct_out:IvTaylor4Mat=jt_mul(direct_padded,initial_direct);
+  let seed_overlap:bool=difference_contains_zero(dual_out,direct_out);
+  if(!(exact_coefficients&&transport_overlap&&seed_overlap)){
+    println("PANEL_JET_COMPARISON status=REFUSED");
+    return 3;
+  }
+  println(strfmt(system_allocator(),
+    "MOVING_PHASE_SEED status=PASS base_width={} tangent_width={} alpha={} scaled_norm={} operator_tail={} transport_overlap={} seed_overlap={}",
+    [base_width,tangent_width,alpha,scaled_norm,operator_tail,
+     transport_overlap,seed_overlap]));
+  return 0;
+}

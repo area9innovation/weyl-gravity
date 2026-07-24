@@ -1,0 +1,121 @@
+{
+  "claim_flags": {
+    "Evans_boundary_nonzero_certified": false,
+    "QNM_or_EP2_certified": false,
+    "QNM_root_count_certified": false,
+    "b_over_a_on_contour_constructed": false,
+    "ecs_tangent_initializer_constructed": false,
+    "scalar_frequency_analyticity_preserved": true,
+    "scalar_inward_transport_to_r4_certified": true,
+    "tangent_source_regular_on_real_transport_path": true,
+    "transported_ball_quantitatively_evans_usable": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "an Evans-usable scalar outgoing enclosure at r=4",
+    "the intrinsic tangent Jost column or b/a on the contour",
+    "the mixed four-state or full six-state Bach outgoing frame",
+    "Evans-function boundary nonvanishing",
+    "an argument-principle QNM count",
+    "a defective Smith fibre, QNM or EP2"
+  ],
+  "imports": {
+    "ecs_initializer": {
+      "authority": "certified reduced scalar balls at r=45",
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_inverse_tortoise_v1/certificate.json",
+      "sha256": "25d7e306e5b4b314aa34f1a10f6a8a0461e8d6c4dd1c2e7f91508b2e6e0d6e92"
+    },
+    "frequency_tail_gate": {
+      "authority": "exact disk-wide omega upper bound",
+      "path": "black_hole_programme/phase3/axial_qnm_infinity_tail_gate_v1/certificate.json",
+      "sha256": "dbb01137cbf84567a0b671c7bf2f2f44cb485f12fcede932c7482f4f2a8e683a"
+    },
+    "projective_cocycle": {
+      "authority": "exact intrinsic tangent source and its rational divisors",
+      "path": "black_hole_programme/phase3/axial_qnm_projective_cocycle_v1/certificate.json",
+      "sha256": "3f7c2fff23a70ab8c1f6e922d6799b168ca328f0fa9e68be8a0e8881f80310bb"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "next_gates": [
+    "replace the global Gronwall ball by panelwise complex-ball Taylor or Lohner transport retaining a nontrivial center",
+    "differentiate the ECS scalar Volterra fixed point with respect to the intrinsic tau source to enclose the tangent initializer at r=45",
+    "propagate base and tangent columns in one correlated Taylor/dual-number rail and evaluate b/a on the contour"
+  ],
+  "scalar_transport": {
+    "analytic_frequency_dependence": true,
+    "analyticity_reason": "the compact real radial path avoids r=0,2; coefficients are rational in r and polynomial in omega; Picard iteration is uniform on the closed disk",
+    "channels": [
+      {
+        "channel": "spin_one",
+        "initial_derivative_radius": "32775138335295932564588248000000000000000000000000/2412816002005752704956104160101636708052456328843611",
+        "initial_infinity_norm_upper": "3480097627871177084725250221391636708052456328843611/2412816002005752704956104160101636708052456328843611",
+        "initial_state": "(v(45),v_x(45)) in Ball(1,value_radius) x Ball(0,derivative_radius)",
+        "initial_value_radius": "1067281625865424379769146061290000000000000000000000/2412816002005752704956104160101636708052456328843611",
+        "matching_state_ball": {
+          "center": [
+            "0",
+            "0"
+          ],
+          "common_radius": "2903741845039886154409991963013557782130043676812995543978340374627417910018780386913/2412816002005752704956104160101636708052456328843611",
+          "excludes_zero_vector": false,
+          "radius_decimal_order": 33
+        }
+      },
+      {
+        "channel": "spin_two",
+        "initial_derivative_radius": "301531272684722579594211881600000000000000000000000/21603176520953735222294856786915230372472106959592499",
+        "initial_infinity_norm_upper": "31320878650840593762527251992524730372472106959592499/21603176520953735222294856786915230372472106959592499",
+        "initial_state": "(v(45),v_x(45)) in Ball(1,value_radius) x Ball(0,derivative_radius)",
+        "initial_value_radius": "9717702129886858540232395205609500000000000000000000/21603176520953735222294856786915230372472106959592499",
+        "matching_state_ball": {
+          "center": [
+            "0",
+            "0"
+          ],
+          "common_radius": "26133676605358975389689927667122020039170393091316959895805063371646761190169023482217/21603176520953735222294856786915230372472106959592499",
+          "excludes_zero_vector": false,
+          "radius_decimal_order": 33
+        }
+      }
+    ],
+    "conclusion": "Both certified ECS scalar initializer sets transport analytically to r=4. The exact Gronwall enclosure has radius of order 10^33 and is therefore not useful for an Evans boundary nonvanishing test.",
+    "equation": "dX/dx=[[0,1],[V_s(r),2*I*omega]]*X",
+    "generator_infinity_norm_upper": "70013400010697753407395293/50000000000000000000000000",
+    "gronwall_exponent_upper": "3430656600524189916962369357/50000000000000000000000000",
+    "integer_exponent_ceiling": 69,
+    "omega_modulus_l1_upper": "51263400010697753407395293/100000000000000000000000000",
+    "potential_uniform_upper": "3/8",
+    "state": "X=(v,dv/dx)",
+    "transfer_norm_upper": "834385168331080533771857328695283"
+  },
+  "schema": "phase3-axial-qnm-ecs-inward-transport-v1",
+  "status": "UNIFORM_ANALYTIC_SCALAR_INWARD_TRANSPORT_EXISTS_BUT_COARSE_GRONWALL_BALL_IS_NOT_EVANS_USABLE_TANGENT_TAIL_OPEN",
+  "tangent_gate": {
+    "b_over_a_boundary_function_constructed": false,
+    "ecs_tangent_initializer_constructed": false,
+    "finite_path_source_analytic": true,
+    "quantified_blocker": "The exact tangent source is analytic on r in [4,45], with |r*omega-2*I|>=87167921104510458948373/62500000000000000000000. What remains is a correlated ECS tail enclosure for the tau-derivative column at r=45; the scalar base balls alone do not determine that inhomogeneous boundary datum.",
+    "real_path_apparent_divisor": "r*omega-2*I",
+    "real_path_apparent_divisor_modulus_lower": "87167921104510458948373/62500000000000000000000",
+    "s0": "-I*(r - 2)*(4*omega**2*r**3 - 7*omega**2*r**2 + 6*omega**2*r - 6*I*omega*r**2 + 30*I*omega*r - 20*I*omega + 24*r - 16)/(2*r**3*(omega*r - 2*I)**3)",
+    "s1": "I*(r - 2)*(3*omega**2*r - 10*I*omega*r - 10*I*omega - 24)/(2*r*(omega*r - 2*I)**3)",
+    "source_available_exactly": true,
+    "source_convention": "L*x=(s1*D+s0)*y"
+  },
+  "transport_interval": {
+    "coefficient_poles_avoided": [
+      "r=0",
+      "r=2"
+    ],
+    "length_witness": "exp(4)>1+4+4**2/2+4**3/6=71/3>43/2",
+    "matching_radius": 4,
+    "outer_radius": 45,
+    "radial_path": "real r from 45 down to 4",
+    "tortoise_length_exact": "41+2*log(43/2)",
+    "tortoise_length_upper": 49
+  }
+}

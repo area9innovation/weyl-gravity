@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "imports",
+    "disk",
+    "inverse_tortoise_branch",
+    "volterra",
+    "claim_flags",
+    "next_gates",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-qnm-ecs-inverse-tortoise-v1"
+    },
+    "dependency_tags": {
+      "contains": {
+        "const": "REDUCED-MODE"
+      }
+    },
+    "lifecycle": {
+      "const": "CLASSIFIED"
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "ecs_inverse_tortoise_branch_certified",
+        "ecs_branch_avoids_r0_and_r2",
+        "spin_one_ecs_volterra_contraction_certified",
+        "spin_two_ecs_volterra_contraction_certified",
+        "coarse_reduced_scalar_outgoing_initializer_constructed",
+        "full_bach_outgoing_frame_constructed",
+        "finite_interval_complex_transport_certified",
+        "Evans_boundary_nonzero_certified",
+        "QNM_root_count_certified",
+        "QNM_or_EP2_certified"
+      ],
+      "properties": {
+        "ecs_inverse_tortoise_branch_certified": {"const": true},
+        "ecs_branch_avoids_r0_and_r2": {"const": true},
+        "spin_one_ecs_volterra_contraction_certified": {"const": true},
+        "spin_two_ecs_volterra_contraction_certified": {"const": true},
+        "coarse_reduced_scalar_outgoing_initializer_constructed": {"const": true},
+        "full_bach_outgoing_frame_constructed": {"const": false},
+        "finite_interval_complex_transport_certified": {"const": false},
+        "Evans_boundary_nonzero_certified": {"const": false},
+        "QNM_root_count_certified": {"const": false},
+        "QNM_or_EP2_certified": {"const": false}
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 5
+    }
+  }
+}

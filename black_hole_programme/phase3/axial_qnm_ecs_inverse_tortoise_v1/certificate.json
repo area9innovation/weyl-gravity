@@ -1,0 +1,119 @@
+{
+  "claim_flags": {
+    "Evans_boundary_nonzero_certified": false,
+    "QNM_or_EP2_certified": false,
+    "QNM_root_count_certified": false,
+    "coarse_reduced_scalar_outgoing_initializer_constructed": true,
+    "ecs_branch_avoids_r0_and_r2": true,
+    "ecs_inverse_tortoise_branch_certified": true,
+    "finite_interval_complex_transport_certified": false,
+    "full_bach_outgoing_frame_constructed": false,
+    "spin_one_ecs_volterra_contraction_certified": true,
+    "spin_two_ecs_volterra_contraction_certified": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disk": {
+    "center_im": "8896231568893569828046093/100000000000000000000000000",
+    "center_re": "-93417921104510458948373/250000000000000000000000",
+    "omega_modulus_lower": "87167921104510458948373/250000000000000000000000",
+    "phase_decay_rate_lower": "164296558110374296259121749/500000000000000000000000000",
+    "phase_delta": "23470936872910613751303107/100000000000000000000000000",
+    "radius": "1/40"
+  },
+  "does_not_establish": [
+    "a full six-state or four-state Bach outgoing frame",
+    "validated finite-interval complex transport from r=45",
+    "nonvanishing of an Evans/Jost determinant on a contour",
+    "an argument-principle QNM root count",
+    "a defective Smith fibre, QNM or EP2",
+    "time-domain stability or a Lorentzian-causal theorem"
+  ],
+  "imports": {
+    "infinity_tail_gate": {
+      "authority": "exact seed-disk geometry, omega lower bound and pi/4 phase-damping margin",
+      "path": "black_hole_programme/phase3/axial_qnm_infinity_tail_gate_v1/certificate.json",
+      "sha256": "dbb01137cbf84567a0b671c7bf2f2f44cb485f12fcede932c7482f4f2a8e683a"
+    }
+  },
+  "inverse_tortoise_branch": {
+    "analytic_inverse_on_ray_neighbourhood": true,
+    "avoidance_of_r0_and_r2": true,
+    "distance_from_horizon_lower": "43",
+    "distance_from_zero_lower": "45",
+    "invariant_region": "Re(r)>=45 and Im(r)>=0",
+    "inverse_ode": "dr/dt=exp(I*pi/4)*(r-2)/r, r(0)=45",
+    "mass": 1,
+    "principal_log_domain": "Re(r-2)>=43",
+    "proof_note": "The ODE preserves the invariant region and has bounded holomorphic vector field there. Differentiating the principal-log tortoise map along the solution gives dx/dt=exp(I*pi/4). Since x'(r)=r/(r-2) has positive real part on Re(r)>2, the branch is locally univalent and continues analytically along the ray.",
+    "radial_growth": "abs(r(t))>=Re(r(t))>=45+(2/3)*t",
+    "ray": "x(t)=x0+exp(I*pi/4)*t, t>=0",
+    "real_part_slope_exact_lower": "(22*sqrt(2)-1)/45",
+    "real_part_slope_rational_lower": "2/3",
+    "starting_radius": 45,
+    "starting_tortoise": "45+2*log(43/2)",
+    "strict_slope_witness": "22*sqrt(2)>31 because 968>961",
+    "tortoise_map": "x(r)=r+2*Log(r/2-1)"
+  },
+  "lifecycle": "CLASSIFIED",
+  "next_gates": [
+    "transport the coarse reduced scalar balls from r=45 to a finite matching point with validated complex arithmetic",
+    "construct compatible endpoint tau-jets and the mixed spin-two/spin-one four-state outgoing frame",
+    "combine the outgoing column with a validated horizon column on the complete contour boundary"
+  ],
+  "schema": "phase3-axial-qnm-ecs-inverse-tortoise-v1",
+  "status": "EXACT_ECS_INVERSE_TORTOISE_BRANCH_AND_UNIFORM_SCALAR_VOLTERRA_CONTRACTION_WITH_COARSE_REDUCED_INITIALIZER",
+  "volterra": {
+    "analytic_frequency_dependence": "uniformly convergent Neumann series on the closed disk",
+    "channels": [
+      {
+        "channel": "spin_one",
+        "contraction_margin_lower": "2412816002005752704956104160101636708052456328843611/3480097627871177084725250221391636708052456328843611",
+        "exponentially_weighted_integral_upper": "376000000000000000000000000/39924063620820953990966585007",
+        "operator_norm_upper": "1067281625865424379769146061290000000000000000000000/3480097627871177084725250221391636708052456328843611",
+        "potential": "6*(r-2)/r**3",
+        "potential_integral_upper": "46/225",
+        "potential_point_upper_at_t0": "94/30375",
+        "reduced_value_ball": {
+          "center": "1",
+          "excludes_zero": true,
+          "radius": "1067281625865424379769146061290000000000000000000000/2412816002005752704956104160101636708052456328843611"
+        },
+        "reduced_x_derivative_ball": {
+          "center": "0",
+          "radius": "32775138335295932564588248000000000000000000000000/2412816002005752704956104160101636708052456328843611"
+        }
+      },
+      {
+        "channel": "spin_two",
+        "contraction_margin_lower": "21603176520953735222294856786915230372472106959592499/31320878650840593762527251992524730372472106959592499",
+        "exponentially_weighted_integral_upper": "3459200000000000000000000000/359316572587388585918699265063",
+        "operator_norm_upper": "9717702129886858540232395205609500000000000000000000/31320878650840593762527251992524730372472106959592499",
+        "potential": "6*(r-2)*(r-1)/r**4",
+        "potential_integral_upper": "12559/60750",
+        "potential_point_upper_at_t0": "4324/1366875",
+        "reduced_value_ball": {
+          "center": "1",
+          "excludes_zero": true,
+          "radius": "9717702129886858540232395205609500000000000000000000/21603176520953735222294856786915230372472106959592499"
+        },
+        "reduced_x_derivative_ball": {
+          "center": "0",
+          "radius": "301531272684722579594211881600000000000000000000000/21603176520953735222294856786915230372472106959592499"
+        }
+      }
+    ],
+    "equation": "v(x)=1+integral_x^infinity (1-exp(2*I*omega*(x-s)))/(2*I*omega)*V(r(s))*v(s) ds",
+    "factored_unknown": "y=exp(-I*omega*x)*v",
+    "initializer_scope": "coarse parameter-uniform balls for the reduced scalar Jost value v(x0) and derivative dv/dx(x0)",
+    "kernel_bound": "|K(t,u)|<=(1+exp(-kappa*(u-t)))/(2*|omega|)",
+    "potential_majorants": {
+      "R": "45+(2/3)*t",
+      "spin_one": "6*(R**-2+2*R**-3)",
+      "spin_two": "6*(R**-2+3*R**-3+2*R**-4)"
+    },
+    "uniform_contraction_on_closed_disk": true
+  }
+}

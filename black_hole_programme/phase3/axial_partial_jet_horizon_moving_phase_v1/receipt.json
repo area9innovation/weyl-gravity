@@ -1,0 +1,17 @@
+{
+  "certificate": "black_hole_programme/phase3/axial_partial_jet_horizon_moving_phase_v1/certificate.json",
+  "certificate_sha256": "6d9d70d6e6006bf8d05ed6f6de9fa4d574eb189ed7348c7c170768477f94905f",
+  "claim_boundary": "exact zero exponent derivative, coupled Frobenius tail and one pure-spin-two panel only; endpoint K shear, spin-one initializer, T_plus and H4 remain open",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_moving_phase_v1.produce --check",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_moving_phase_v1.verify",
+    "python3 -m unittest black_hole_programme.phase3.axial_partial_jet_horizon_moving_phase_v1.test_moving_phase"
+  ],
+  "schema": "phase3-axial-partial-jet-horizon-moving-phase-receipt-v1",
+  "tiers": {
+    "tier0": "required",
+    "tier1": "required",
+    "tier2": "not run: endpoint tail and global transport remain false",
+    "tier3": "not run: not a freeze or theorem promotion"
+  }
+}

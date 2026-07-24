@@ -1,0 +1,277 @@
+{
+  "all_order_tail_majorant": {
+    "M_A": "26755/3072",
+    "M_E": "33017860638199260970/493743712112492979",
+    "analytic_A_row_bounds": [
+      "1",
+      "26755/3072"
+    ],
+    "analytic_E_row_bounds": [
+      "41116823553335977151/987487424224985958",
+      "33017860638199260970/493743712112492979"
+    ],
+    "base_majorant": "(1-x)**(-p)",
+    "cauchy_disk_radius": "1/2",
+    "first_omitted_base_term": "9578853505832041723834271391725/2699038850146108210644688201689694165797932503605479370857555951616",
+    "first_omitted_tangent_term": "4254053209430012864560596874361246066441566075/36149996229572865965903227095720886390517609770105037637753442761213880540594176",
+    "p=(5/4)*M_A*R": "133775/24576",
+    "passed": true,
+    "pivot_inverse_bound": "||(n*I-R_H)^(-1)||_infinity<=5/(4*n)",
+    "q=(5/4)*M_E*R": "82544651595498152425/1974974848449971916",
+    "tail_base": "67051974540824292066839899742075/18893257223448549626571806613028603891580642931771051394816083492864",
+    "tail_ratio_base_upper": "281231/360777252864",
+    "tail_ratio_tangent_upper": "207503/180388626432",
+    "tail_tangent": "29778372466010090051924178120528722465090962525/253049682520871694998680519220105808440436969370016630650978402670079842036219904",
+    "tangent_majorant": "q*(-log(1-x))*(1-x)**(-p)",
+    "x=rho0/R": "1/2097152"
+  },
+  "claim_flags": {
+    "H4_pass_certified": false,
+    "T_plus_recovered": false,
+    "bounded_global_transport_certified": false,
+    "dot_lambda_H_exactly_zero": true,
+    "endpoint_partial_jet_frame_constructed": false,
+    "finite_mixed_seed_pass": true,
+    "first_panel_transport_certified": true,
+    "selected_reduced_frobenius_recurrence_exact": true,
+    "tau_log_horizon_phase_absent": true,
+    "uniform_frobenius_tail_enclosed": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "diagnosis_of_prior_refusal": {
+    "T_plus_contradicted": false,
+    "bulk_partial_jet_contradicted": false,
+    "classification": "endpoint representation failure: the old rail exponentiated the singular all-mode coefficient, including the A_x companion rho**(-2) entry, instead of initializing selected phase-reduced Frobenius/Levelt germs",
+    "prior_code": "ANALYTIC_TAIL_NONCONTRACTIVE"
+  },
+  "does_not_establish": [
+    "a complete tau-analytic horizon endpoint frame or its K_H shear",
+    "transport beyond the first pure-spin-two radial panel",
+    "the spin-one Levelt initializer and mixed spin-one input column",
+    "the outgoing map T_plus, H4, scattering, or global transport"
+  ],
+  "finite_seed_rail": {
+    "compile_exit": 0,
+    "compile_log_path": "black_hole_programme/phase3/axial_partial_jet_horizon_moving_phase_v1/compile.txt",
+    "compile_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "parsed_result": {
+      "alpha": "18876435.307203818",
+      "base_width": "0.00011717177041048465",
+      "operator_tail": "2.4633541895455324e-33",
+      "scaled_norm": "0.01758005032986758",
+      "seed_overlap": true,
+      "status": "PASS",
+      "tangent_width": "2.421227483122389e-11",
+      "transport_overlap": true
+    },
+    "passed": true,
+    "run_exit": 0,
+    "run_log_path": "black_hole_programme/phase3/axial_partial_jet_horizon_moving_phase_v1/run.txt",
+    "run_log_sha256": "1e018922ef19566c6ae59a0a247735328a7fd7548fb3ba5a327deed78c5a1bc1",
+    "source_path": "black_hole_programme/phase3/axial_partial_jet_horizon_moving_phase_v1/moving_phase_seed.forge",
+    "source_sha256": "f0bbed71843d04fc15ac23bdd9176e072fdba26e9ae9317bf869cf6c4dabc657",
+    "tail_base_exact": "67051974540824292066839899742075/18893257223448549626571806613028603891580642931771051394816083492864",
+    "tail_included": true,
+    "tail_tangent_exact": "29778372466010090051924178120528722465090962525/253049682520871694998680519220105808440436969370016630650978402670079842036219904"
+  },
+  "first_panel_transport": {
+    "direct_route": "8x8 real repeated-spin-two block [[A,E],[0,A]]",
+    "jet_route": "4x4 real A+epsilon*E dual transport",
+    "panel_width": "1/1073741824",
+    "passed": true,
+    "radial_interval": [
+      "2+1/4194304",
+      "2+1/4194304+1/1073741824"
+    ],
+    "series_order": 12,
+    "tail_enclosed_seed_outputs_overlap": true,
+    "transport_coefficients_equal": true,
+    "transport_hulls_overlap": true
+  },
+  "imports": {
+    "endpoint_frames": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_endpoint_frames_v1/certificate.json",
+      "sha256": "001757321247ccc3f5a38c4925d09c5d6759b2f9335913be96d30e4fe64ffbe9"
+    },
+    "endpoint_interval_evaluator": {
+      "path": "black_hole_programme/phase3/axial_endpoint_remainder_enclosures/produce.py",
+      "sha256": "72f849ed9dce1a9cf865ccc79d7ea2a754920d46f10b3143fcd04b766aff7f2b"
+    },
+    "mixed_transport_preflight_producer": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_preflight_v1/produce.py",
+      "sha256": "3400bdca2c7c3076cdb0acb4f042fa8909f0e11962d2492d68fb47da5b67f8fd"
+    },
+    "partial_jet_crosswalk": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json",
+      "sha256": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a"
+    },
+    "projective_cocycle": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_cocycle_v1/certificate.json",
+      "sha256": "3f7c2fff23a70ab8c1f6e922d6799b168ca328f0fa9e68be8a0e8881f80310bb"
+    },
+    "transport_preflight": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_preflight_v1/certificate.json",
+      "sha256": "dd1ce59b09c9cde39837b6d9f3d7855ff4a32182db212dae35aa52b5a1c37855"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "moving_phase": {
+    "dot_lambda_H": "0",
+    "exponent_derivative_formula": "l_H**T*E_minus1*r_H/(l_H**T*r_H)",
+    "imported_scalar_field_redefinition": "psi=exp(I*omega*rstar)*P",
+    "interpretation": "the certified A_RW factor is already in the selected ingoing-phase-reduced P variable",
+    "left_right_pairing": "1",
+    "other_exponent": "-1-4*I*omega",
+    "residue": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "3/2",
+        "-I*(4*omega - I)"
+      ]
+    ],
+    "selected_exponent": "0",
+    "selected_left_vector": [
+      "1",
+      "0"
+    ],
+    "selected_right_vector": [
+      "1",
+      "-3*I/(2*(4*omega - I))"
+    ],
+    "spin_one_companion_rho2_Ax_limit": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "-I*(4*omega - I)",
+        "0"
+      ]
+    ],
+    "tangent_residue": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "tau_log_rho_required": false
+  },
+  "reduced_frobenius_recurrence": {
+    "base_coefficients": [
+      [
+        "1",
+        "-3*I/(2*(4*omega - I))"
+      ],
+      [
+        "-3*I/(2*(4*omega - I))",
+        "3*I*(omega + I)/(2*(2*omega - I)*(4*omega - I))"
+      ],
+      [
+        "3*I*(omega + I)/(4*(2*omega - I)*(4*omega - I))",
+        "9*(7*omega + I)/(8*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))"
+      ],
+      [
+        "3*(7*omega + I)/(8*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))",
+        "-3*I*omega*(16*omega**2 - 43*I*omega + 8)/(16*(omega - I)*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))"
+      ],
+      [
+        "-3*I*omega*(16*omega**2 - 43*I*omega + 8)/(64*(omega - I)*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))",
+        "15*I*omega*(128*omega**3 - 272*I*omega**2 + 9*omega + 8*I)/(128*(omega - I)*(2*omega - I)*(4*omega - 5*I)*(4*omega - 3*I)*(4*omega - I))"
+      ],
+      [
+        "3*I*omega*(128*omega**3 - 272*I*omega**2 + 9*omega + 8*I)/(128*(omega - I)*(2*omega - I)*(4*omega - 5*I)*(4*omega - 3*I)*(4*omega - I))",
+        "-9*I*omega*(384*omega**4 - 880*I*omega**3 - 285*omega**2 + 181*I*omega + 28)/(128*(omega - I)*(2*omega - 3*I)*(2*omega - I)*(4*omega - 5*I)*(4*omega - 3*I)*(4*omega - I))"
+      ]
+    ],
+    "base_equation": "(n*I-R_H)*f_n=sum_(k=0)^(n-1) A_k*f_(n-1-k)",
+    "no_tau_log_through_computed_order": true,
+    "normalization": "f_0=r_H; g_0=0",
+    "pivot_determinants": [
+      "2*I*(2*omega - I)",
+      "2*I*(4*omega - 3*I)",
+      "12*I*(omega - I)",
+      "4*I*(4*omega - 5*I)",
+      "10*I*(2*omega - 3*I)"
+    ],
+    "regular_A_limit": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "-I*(4*omega + I)/2"
+      ]
+    ],
+    "regular_E_limit": [
+      [
+        "I*(3*omega - 4*I)/(4*(omega - I)**2)",
+        "3*omega/(2*(omega - I))"
+      ],
+      [
+        "-I*(3*omega - 4*I)/(8*(omega - I)**2)",
+        "-3*omega/(4*(omega - I))"
+      ]
+    ],
+    "tangent_coefficients": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "I*(3*omega**2 - 10*I*omega - 4)/(4*(omega - I)**2*(4*omega - I))",
+        "(3*omega**2 - 10*I*omega - 4)/(8*(omega - I)**2*(2*omega - I)*(4*omega - I))"
+      ],
+      [
+        "-I*(6*omega**4 - 18*I*omega**3 + 7*omega**2 - 28*I*omega - 12)/(8*(omega - I)**3*(2*omega - I)*(4*omega - I))",
+        "-(12*omega**4 - 35*I*omega**3 + 18*omega**2 - 62*I*omega - 24)/(16*(omega - I)**3*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))"
+      ],
+      [
+        "I*(24*omega**6 - 69*I*omega**5 + 75*omega**4 - 268*I*omega**3 - 147*omega**2 - 40*I*omega - 36)/(16*(omega - I)**4*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))",
+        "-(24*omega**5 - 156*I*omega**4 - 330*omega**3 + 245*I*omega**2 + 38*omega + 12*I)/(32*(omega - I)**4*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))"
+      ],
+      [
+        "-I*(48*omega**7 - 94*I*omega**6 + 293*omega**5 - 539*I*omega**4 + 91*omega**3 - 483*I*omega**2 - 162*omega - 24*I)/(64*(omega - I)**5*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))",
+        "omega*(960*omega**6 - 6020*I*omega**5 - 13317*omega**4 + 13179*I*omega**3 + 5399*omega**2 - 233*I*omega + 250)/(128*(omega - I)**5*(2*omega - I)*(4*omega - 5*I)*(4*omega - 3*I)*(4*omega - I))"
+      ],
+      [
+        "I*omega*(384*omega**8 - 864*I*omega**7 + 2273*omega**6 - 4869*I*omega**5 + 5701*omega**4 - 17891*I*omega**3 - 12336*omega**2 + 1446*I*omega - 804)/(256*(omega - I)**6*(2*omega - I)*(4*omega - 5*I)*(4*omega - 3*I)*(4*omega - I))",
+        "-omega*(9600*omega**8 - 68320*I*omega**7 - 186503*omega**6 + 257669*I*omega**5 + 196005*omega**4 - 84631*I*omega**3 - 22888*omega**2 + 5060*I*omega + 696)/(512*(omega - I)**6*(2*omega - 3*I)*(2*omega - I)*(4*omega - 5*I)*(4*omega - 3*I)*(4*omega - I))"
+      ]
+    ],
+    "tangent_equation": "(n*I-R_H)*g_n=sum_(k=0)^(n-1) (A_k*g_(n-1-k)+E_k*f_(n-1-k))"
+  },
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_PARTIAL_JET_HORIZON_MOVING_PHASE",
+  "schema": "phase3-axial-partial-jet-horizon-moving-phase-v1",
+  "schema_path": "black_hole_programme/phase3/axial_partial_jet_horizon_moving_phase_v1/schema.json",
+  "scope": {
+    "arithmetic": "exact rational recurrence plus IvTaylor4_omega tensor dual_tau finite seed",
+    "frequency_center": "8193/16384",
+    "frequency_child": [
+      "1/2",
+      "4097/8192"
+    ],
+    "frequency_radius": "1/16384",
+    "frobenius_order": 5,
+    "horizon_coordinate": "rho=r-2",
+    "seed_radius": "1/4194304",
+    "selected_sector": "regular spin-two RW germ and intrinsic tau tangent"
+  },
+  "shortfall": {
+    "code": "SPIN_ONE_LEVELT_AND_MULTIPANEL_TRANSPORT_OPEN",
+    "exact": true,
+    "next_bound": "construct the phase-reduced spin-one horizon germ, combine it with the certified partial-jet seed, and extend the dual-number Peano-Baker rail panel by panel",
+    "reason": "The certified initializer and first panel cover only the selected repeated spin-two base/tangent column. The A_x companion rho**(-2) block needs its own Levelt/phase initializer before the mixed spin-one input column can be transported."
+  },
+  "status": "CERTIFIED_MOVING_PHASE_TAIL_AND_FIRST_PANEL_PARTIAL_JET_PASS"
+}

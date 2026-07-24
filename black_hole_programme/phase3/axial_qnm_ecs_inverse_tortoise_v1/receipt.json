@@ -1,0 +1,25 @@
+{
+  "artifact_sha256": {
+    "README.md": "2bb2de5006bb42443dcff93d606b3fff3db9b18e53ba949bbb98ce5a91dbc1dc",
+    "produce.py": "6a349c17cda49712224bab2fcbea2bf6c4aeb20ce2ba0400d92bed1498ea4724",
+    "report.md": "9c07c62ba512ff8d800ec2f3720b2ed6bc820eb097e4d066c0590ea3a4ac8c48",
+    "schema.json": "9b5dcf1d0c12026167636d9599cdf6174719a89ee97e9abe0b94fadac8d4b65c",
+    "test_ecs_inverse_tortoise.py": "ba06170be42087d5266f5e16e8b0fcde3b07a3b1029c294f0a7eb6c7e6fd1818",
+    "verify.py": "dd4431e25f07fe7c1eb343a793a71510e25590e99cc84d47e548fc9a18812711"
+  },
+  "certificate": "certificate.json",
+  "certificate_sha256": "25d7e306e5b4b314aa34f1a10f6a8a0461e8d6c4dd1c2e7f91508b2e6e0d6e92",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_qnm_ecs_inverse_tortoise_v1.produce",
+    "python3 -m black_hole_programme.phase3.axial_qnm_ecs_inverse_tortoise_v1.verify",
+    "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_ecs_inverse_tortoise_v1.test_ecs_inverse_tortoise",
+    "python3 -m py_compile black_hole_programme/phase3/axial_qnm_ecs_inverse_tortoise_v1/produce.py black_hole_programme/phase3/axial_qnm_ecs_inverse_tortoise_v1/verify.py black_hole_programme/phase3/axial_qnm_ecs_inverse_tortoise_v1/test_ecs_inverse_tortoise.py"
+  ],
+  "input_sha256": {
+    "infinity_tail_gate": "dbb01137cbf84567a0b671c7bf2f2f44cb485f12fcede932c7482f4f2a8e683a"
+  },
+  "producer": "produce.py",
+  "schema": "phase3-axial-qnm-ecs-inverse-tortoise-receipt-v1",
+  "tier_2_not_run": "No shared operator changed; the package independently advances one imported exact infinity-tail gate.",
+  "tier_3_not_run": "Not a freeze, release or physical theorem promotion."
+}

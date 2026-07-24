@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "imports",
+    "transport_interval",
+    "scalar_transport",
+    "tangent_gate",
+    "claim_flags",
+    "next_gates",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-qnm-ecs-inward-transport-v1"
+    },
+    "dependency_tags": {
+      "contains": {
+        "const": "REDUCED-MODE"
+      }
+    },
+    "lifecycle": {
+      "const": "CLASSIFIED"
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "scalar_inward_transport_to_r4_certified",
+        "scalar_frequency_analyticity_preserved",
+        "transported_ball_quantitatively_evans_usable",
+        "tangent_source_regular_on_real_transport_path",
+        "ecs_tangent_initializer_constructed",
+        "b_over_a_on_contour_constructed",
+        "Evans_boundary_nonzero_certified",
+        "QNM_root_count_certified",
+        "QNM_or_EP2_certified"
+      ],
+      "properties": {
+        "scalar_inward_transport_to_r4_certified": {"const": true},
+        "scalar_frequency_analyticity_preserved": {"const": true},
+        "transported_ball_quantitatively_evans_usable": {"const": false},
+        "tangent_source_regular_on_real_transport_path": {"const": true},
+        "ecs_tangent_initializer_constructed": {"const": false},
+        "b_over_a_on_contour_constructed": {"const": false},
+        "Evans_boundary_nonzero_certified": {"const": false},
+        "QNM_root_count_certified": {"const": false},
+        "QNM_or_EP2_certified": {"const": false}
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 5
+    }
+  }
+}
