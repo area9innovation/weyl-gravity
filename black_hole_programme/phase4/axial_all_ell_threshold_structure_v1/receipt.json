@@ -1,0 +1,29 @@
+{
+  "artifacts": {
+    "certificate": {
+      "path": "certificate.json",
+      "sha256": "4c0ef500671231ddf8501d061921c3fc37f46c70d4d08bc2f5e80f915c560c4d"
+    },
+    "imports": {
+      "covariant_carrier": {
+        "path": "black_hole_programme/phase4/covariant_einstein_maxwell_carrier_v1/certificate.json",
+        "sha256": "ff86f50e88d07c0ec8fcdbca4788e60058db07f90a7a96a9be5164e033952908"
+      },
+      "ell2_threshold": {
+        "path": "black_hole_programme/phase4/axial_threshold_exact_structure_v1/certificate.json",
+        "sha256": "6b1518e989f82b7b19032060231c9c786f5ee258f3774245f42b3c367d4fbecc"
+      }
+    },
+    "producer": {
+      "path": "produce.py",
+      "sha256": "1b5a59035043762055247103eab1dd5e8a7bd0b22c033294d2585ea799efe5d4"
+    }
+  },
+  "schema": "axial-all-ell-threshold-structure-receipt-v1",
+  "source_commit": "d51f5185044f938e9e348de6829bd000b0057d4f",
+  "status": "EXACT_ALL_ELL_THRESHOLD_NONRESONANCE_PASS",
+  "verification": {
+    "independent_verifier": "python3 verify.py",
+    "tests": "python3 -m unittest -v test_threshold.py"
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "claim_flags": {
+    "all_ell_bach_lift": false,
+    "all_ell_endpoint_gram": false,
+    "all_ell_exact_static_solution": true,
+    "all_ell_no_zero_energy_resonance": true,
+    "ell2_controls_recovered": true,
+    "punctured_threshold_outgoing_invertibility": false,
+    "uniform_low_frequency_jost_asymptotics": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "uniform low-frequency Jost asymptotics",
+    "a punctured positive-real interval of outgoing invertibility",
+    "the omega=0 scattering map itself",
+    "the complete all-ell Bach lift or extension shear",
+    "an all-ell endpoint Gram, connection, or scattering theorem"
+  ],
+  "formal_low_frequency_matching": {
+    "absorption_prediction": "Gamma_s_ell~kappa_s_ell**(-2)*omega**(2ell+2)",
+    "jost_prediction": "|A_in|~|A_out|~kappa_s_ell*omega**(-(ell+1))",
+    "leading_coefficient": "kappa_s_ell=(2ell)!*(2ell+1)!!/(2**(ell+2)*(ell-s)!*(ell+s)!)",
+    "required_gate": "uniform two-region Volterra estimate controlling the difference from the far Riccati-Hankel problem",
+    "status": "FORMAL_NOT_CERTIFIED_SCATTERING"
+  },
+  "imports": {
+    "covariant_carrier": {
+      "path": "black_hole_programme/phase4/covariant_einstein_maxwell_carrier_v1/certificate.json",
+      "sha256": "ff86f50e88d07c0ec8fcdbca4788e60058db07f90a7a96a9be5164e033952908"
+    },
+    "ell2_threshold": {
+      "path": "black_hole_programme/phase4/axial_threshold_exact_structure_v1/certificate.json",
+      "sha256": "6b1518e989f82b7b19032060231c9c786f5ee258f3774245f42b3c367d4fbecc"
+    }
+  },
+  "operator": {
+    "D": "(1-2/r)*d/dr",
+    "equation": "(D**2-V_s_ell)*phi=0",
+    "potential": "V_s_ell=(1-2/r)*(ell*(ell+1)/r**2+2*(1-s**2)/r**3)"
+  },
+  "regular_solution": {
+    "all_ell_proof": "substitution z=2/r reduces the static equation to the Gauss hypergeometric equation with a=s-ell, b=-s-ell, c=-2ell",
+    "ell2_controls": {
+      "spin1": "r**2*(2*r-3)/4",
+      "spin2": "r**3/8"
+    },
+    "formula": "phi_s_ell=(2ell)!*r**(ell+1)/(2**(ell+1)*(ell-s)!*(ell+s)!)*2F1(s-ell,-s-ell;-2ell;2/r)",
+    "horizon_normalization": "phi_s_ell(2)=1 by Chu-Vandermonde",
+    "infinity": "phi_s_ell~C_s_ell*r**(ell+1), C_s_ell=(2ell)!/(2**(ell+1)*(ell-s)!*(ell+s)!)",
+    "termination": "s-ell is a nonpositive integer"
+  },
+  "sample_checks": {
+    "2": {
+      "1": {
+        "horizon_value": "1",
+        "infinity_leading_coefficient": "1/2"
+      },
+      "2": {
+        "horizon_value": "1",
+        "infinity_leading_coefficient": "1/8"
+      }
+    },
+    "3": {
+      "1": {
+        "horizon_value": "1",
+        "infinity_leading_coefficient": "15/16"
+      },
+      "2": {
+        "horizon_value": "1",
+        "infinity_leading_coefficient": "3/8"
+      }
+    },
+    "4": {
+      "1": {
+        "horizon_value": "1",
+        "infinity_leading_coefficient": "7/4"
+      },
+      "2": {
+        "horizon_value": "1",
+        "infinity_leading_coefficient": "7/8"
+      }
+    },
+    "5": {
+      "1": {
+        "horizon_value": "1",
+        "infinity_leading_coefficient": "105/32"
+      },
+      "2": {
+        "horizon_value": "1",
+        "infinity_leading_coefficient": "15/8"
+      }
+    },
+    "6": {
+      "1": {
+        "horizon_value": "1",
+        "infinity_leading_coefficient": "99/16"
+      },
+      "2": {
+        "horizon_value": "1",
+        "infinity_leading_coefficient": "495/128"
+      }
+    },
+    "7": {
+      "1": {
+        "horizon_value": "1",
+        "infinity_leading_coefficient": "3003/256"
+      },
+      "2": {
+        "horizon_value": "1",
+        "infinity_leading_coefficient": "1001/128"
+      }
+    },
+    "8": {
+      "1": {
+        "horizon_value": "1",
+        "infinity_leading_coefficient": "715/32"
+      },
+      "2": {
+        "horizon_value": "1",
+        "infinity_leading_coefficient": "1001/64"
+      }
+    }
+  },
+  "schema": "axial-all-ell-threshold-structure-v1",
+  "scope": {
+    "frequency": "omega=0 exact scalar diagonal factors",
+    "harmonics": "every integer ell>=2",
+    "mass": "M=1",
+    "spins": [
+      1,
+      2
+    ]
+  },
+  "second_solution": {
+    "conclusion": "no nonzero solution is both horizon regular and bounded/decaying at infinity",
+    "formula": "phi_tilde=phi*Integral[dr/((1-2/r)*phi**2)]",
+    "horizon": "logarithmically singular because phi(2)=1",
+    "infinity_normalization": "a decaying choice behaves as r**(-ell)"
+  },
+  "status": "EXACT_ALL_ELL_THRESHOLD_NONRESONANCE_PASS"
+}

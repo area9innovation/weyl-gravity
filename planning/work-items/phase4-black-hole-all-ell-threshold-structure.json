@@ -1,0 +1,42 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-all-ell-threshold-structure",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-all-ell-threshold-structure",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-all-ell-threshold-structure.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Certify the exact horizon-normalized zero-frequency spin-one and spin-two Regge-Wheeler solutions and absence of zero-energy resonances for every integer ell at least two.",
+    "stop_condition": "Produce an exact terminating-hypergeometric recurrence proof, endpoint classification, independent verifier and mutation tests, while leaving low-frequency Jost matching and a punctured outgoing-invertibility interval explicitly open pending a two-region Volterra estimate.",
+    "current_gate": "LOCAL-ALGEBRAIC exact all-ell static solution and reduction-of-order endpoint classification",
+    "forbid": "no promotion of formal matched Jost asymptotics to a uniform scattering theorem; no all-ell Bach lift; no all-ell endpoint Gram or connection theorem; no claim about threshold omega=0 itself",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-covariant-einstein-maxwell-carrier"
+    ],
+    "activates": [
+      "all-ell threshold section in the focused endpoint-nonselection paper",
+      "a two-region Volterra remainder certificate"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase4/axial_all_ell_threshold_structure_v1/",
+      "reports/phase4-black-hole-all-ell-threshold-structure-2026-07-24.md",
+      "planning/work-items/phase4-black-hole-all-ell-threshold-structure.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use the terminating hypergeometric formula with s in {1,2}, ell>=2; prove horizon value one, leading infinity coefficient, logarithmic singularity of the reduced-order solution, and fail closed on Jost matching.",
+    "input_commit": "d51f5185044f938e9e348de6829bd000b0057d4f",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "Formal low-frequency coefficient kappa_s_ell is recorded only as a predicted matching coefficient.",
+      "Mutation targets: hypergeometric normalization, potential coefficient, horizon regularity, and Jost promotion."
+    ]
+  },
+  "edges": []
+}
