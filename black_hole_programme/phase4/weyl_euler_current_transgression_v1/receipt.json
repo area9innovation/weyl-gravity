@@ -1,0 +1,33 @@
+{
+  "artifacts": {
+    "certificate": {
+      "path": "certificate.json",
+      "sha256": "6b45228e6f458aaa896bdf60fbb434a4adb93de8e24f224b323c054c0ed4a7ea"
+    },
+    "imports": {
+      "axial_flux_gram": {
+        "path": "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
+        "sha256": "59fb9b443ce0b92ce016f53c376cb367bcf004e00d1b241ad22ec925e99deed2"
+      },
+      "covariant_carrier": {
+        "path": "black_hole_programme/phase4/covariant_einstein_maxwell_carrier_v1/certificate.json",
+        "sha256": "ff86f50e88d07c0ec8fcdbca4788e60058db07f90a7a96a9be5164e033952908"
+      },
+      "universal_hessian": {
+        "path": "black_hole_programme/phase4/axial_universal_hessian_intertwiner_v1/certificate.json",
+        "sha256": "272e55c2e24ce3f0c7be91b898279cde01b6cf6896c7f2e89b5c85a1f508d01d"
+      }
+    },
+    "producer": {
+      "path": "produce.py",
+      "sha256": "c9db47323cccead5d3a9552f18b6b0e2818f626aff0c7530be08fd49348624e3"
+    }
+  },
+  "schema": "weyl-euler-current-transgression-receipt-v1",
+  "source_commit": "e8371371fc37776d536470eae2fd1f6fc2877f36",
+  "status": "EXACT_WEYL_EULER_CURRENT_TRANSGRESSION_PASS",
+  "verification": {
+    "independent_verifier": "python3 verify.py",
+    "tests": "python3 -m unittest -v test_transgression.py"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "axial_einstein_cut": {
+    "cut": "192*pi*i*alpha*(omega1-omega2)*Psi1*Psi2*exp(i*(omega1+omega2)*t)/(5*omega1*omega2*r)",
+    "flux": "-192*pi*alpha*(omega1**2-omega2**2)*Psi1*Psi2*exp(i*(omega1+omega2)*t)/(5*omega1*omega2*r)",
+    "fourier_convention": "exp(i*(omega1+omega2)*t)",
+    "identity": "F_EE^r=partial_t Q_EE",
+    "pointwise_flux_zero": false
+  },
+  "claim_flags": {
+    "axial_cut_identity_exact": true,
+    "einstein_wave_packet_total_isotropy": true,
+    "general_euler_transgression_explicit": true,
+    "literal_minus_ricci_current_exact": true,
+    "mixed_einstein_additional_pairing_euler_exact": false,
+    "monochromatic_current_pointwise_zero": false,
+    "quantum_statement": false,
+    "smooth_packet_finite_radius_integrated_flux_zero": true,
+    "unconditional_endpoint_limit_interchange": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "pointwise vanishing of the literal monochromatic C2 Einstein current",
+    "unconditional interchange of the null or horizon limit with time integration",
+    "Euler exactness or removability of the mixed Einstein/additional pairing",
+    "positivity of the inherited Weyl form",
+    "a quantum, BRST, ghost, or unitarity theorem"
+  ],
+  "euler_transgression": {
+    "current_convention": "omega(delta1,delta2)=delta1 Theta(delta2)-delta2 Theta(delta1)",
+    "cut_two_form": "k_E(delta1,delta2)=2*alpha*epsilon_abcd*delta1Gamma^ab wedge delta2Gamma^cd",
+    "derivation": "deltaR=D(deltaGamma), D epsilon=0, and graded antisymmetry give d(delta1Gamma wedge delta2Gamma)=delta2Gamma wedge D(delta1Gamma)-delta1Gamma wedge D(delta2Gamma)",
+    "identity": "omega_E(delta1,delta2)=d k_E(delta1,delta2)",
+    "literal_minus_ricci": "omega_C2-omega_Ric=d k_E",
+    "potential": "Theta_E(delta)=2*alpha*epsilon_abcd*deltaGamma^ab wedge R^cd"
+  },
+  "four_dimensional_decomposition": {
+    "bulk_hessian_mod_euler": "4*alpha*Integral(psi1_ab*psi2**ab-(1/3)*psi1*psi2)",
+    "einstein_bulk_block": "zero when deltaR_ab[h_E]=0",
+    "euler_form": "E4=epsilon_abcd*R^ab wedge R^cd",
+    "identity": "C2=E4+2*Ric2-(2/3)*R2"
+  },
+  "imports": {
+    "axial_flux_gram": {
+      "path": "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
+      "sha256": "59fb9b443ce0b92ce016f53c376cb367bcf004e00d1b241ad22ec925e99deed2"
+    },
+    "covariant_carrier": {
+      "path": "black_hole_programme/phase4/covariant_einstein_maxwell_carrier_v1/certificate.json",
+      "sha256": "ff86f50e88d07c0ec8fcdbca4788e60058db07f90a7a96a9be5164e033952908"
+    },
+    "universal_hessian": {
+      "path": "black_hole_programme/phase4/axial_universal_hessian_intertwiner_v1/certificate.json",
+      "sha256": "272e55c2e24ce3f0c7be91b898279cde01b6cf6896c7f2e89b5c85a1f508d01d"
+    }
+  },
+  "phase_space_interpretation": {
+    "conclusion": "Einstein wave packets form an isotropic but nonradical subspace",
+    "einstein_self_block": "Euler-exact cut contribution and zero integrated packet flux",
+    "mixed_block": "not established Euler-exact and certified nonzero in populated fixtures",
+    "positivity": "Einstein-only is degenerate; a nondegenerate restriction containing the Einstein line is indefinite"
+  },
+  "schema": "weyl-euler-current-transgression-v1",
+  "status": "EXACT_WEYL_EULER_CURRENT_TRANSGRESSION_PASS",
+  "wave_packet_theorem": {
+    "conclusion": "the complete Einstein wave-packet subspace is totally isotropic",
+    "core": "smooth compact frequency support bounded away from omega=0, with radial profiles obeying the declared packet bounds",
+    "endpoint_scope": "null and horizon limits only where the declared bounds justify interchanging the endpoint limit with the time integral",
+    "finite_radius_identity": "Integral_{-infinity}^{infinity} F_EE^r dt=Q_EE(+infinity)-Q_EE(-infinity)=0",
+    "time_regular": "inverse Fourier transforms and the cut bilinear are Schwartz in t"
+  }
+}
