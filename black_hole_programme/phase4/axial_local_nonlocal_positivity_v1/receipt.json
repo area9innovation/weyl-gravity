@@ -1,0 +1,13 @@
+{
+  "certificate": "black_hole_programme/phase4/axial_local_nonlocal_positivity_v1/certificate.json",
+  "certificate_sha256": "29cd53300a892424ec5b901ba08c994efc7d66a27cea5447e8d8200fe67c9356",
+  "commands": [
+    "python3 -m black_hole_programme.phase4.axial_local_nonlocal_positivity_v1.produce",
+    "python3 -m black_hole_programme.phase4.axial_local_nonlocal_positivity_v1.verify",
+    "python3 -m unittest -v black_hole_programme.phase4.axial_local_nonlocal_positivity_v1.test_positivity"
+  ],
+  "producer_sha256": "dad1dfc08c904b39dee3b46c5d21641196c49d45606c430f9260a9aff08e0700",
+  "schema": "axial-local-nonlocal-positivity-receipt-v1",
+  "source_commit": "d76cf4487265933fc4c3ded743af3e943bad8970",
+  "verifier_sha256": "e4cb19168fce3b2abe538f32d1d8d957ff061d094e66a8b7bc83a32b8eeb15a1"
+}

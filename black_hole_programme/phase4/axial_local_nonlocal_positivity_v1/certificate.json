@@ -1,0 +1,107 @@
+{
+  "claim_flags": {
+    "channel_factorized_c_automatic": false,
+    "combined_future_compatible_c_exists": true,
+    "complete_complex_reducibility_classification": false,
+    "complex_reducibility_quarter_lattice_confinement": true,
+    "mass_bach_local_equality_implies_global_jost_derivative": false,
+    "mass_bach_local_equality_implies_qnm_slope": false,
+    "matrix_sign_canonical_under_general_frames": false,
+    "no_local_positive_metric_operator_even_without_involution": true,
+    "quantum_statement": false,
+    "threshold_ir_variables_exact": true,
+    "unique_nilpotent_residue_direction": true,
+    "whole_axis_positive_scattering_bounded": false
+  },
+  "combined_future_c": {
+    "conclusion": "a scattering-compatible fundamental symmetry always exists on the combined future space",
+    "extension": "choose any fundamental symmetry on ran(S)^perp and take the orthogonal direct sum",
+    "factorization_question": "whether C_out=C_+ direct_sum C_H",
+    "premises": [
+      "S is an injective Krein isometry from a nondegenerate incoming space",
+      "ran(S) is nondegenerate",
+      "K_out=ran(S) direct_sum ran(S)^perp"
+    ],
+    "transport": "C_ran*S=S*C_-"
+  },
+  "complex_reducibility_confinement": {
+    "conclusion": "all remaining rational reducibility candidates lie on the quarter-integer imaginary lattice",
+    "ell2_controls": [
+      "i/4 excluded",
+      "i/2 excluded",
+      "i excluded",
+      "plus/minus 2*i algebraically special"
+    ],
+    "opposite_sign": "a rational prefactor must change the horizon exponent by 4*i*omega, hence 4*i*omega is integral",
+    "same_sign": "the existing terminal rational ansatz gives zero frequency or algebraically special controls",
+    "status": "CONFINEMENT_ONLY_NOT_COMPLETE_CLASSIFICATION"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a canonical, covariant, causal, holomorphic or BRST-compatible C",
+    "factorization of the combined-future C over null infinity and the horizon",
+    "whole-axis bounded positive scattering",
+    "the physical mass/Jost derivative or QNM-slope identities",
+    "the complete complex reducibility locus",
+    "a full six-state commutant theorem or quantum positivity"
+  ],
+  "imports": {
+    "commutant_and_spectral_c": {
+      "path": "black_hole_programme/phase4/axial_local_commutant_spectral_c_v1/certificate.json",
+      "sha256": "fd6c1d7cf24cf820cf0f76a82a71570e202504d94450f3af2d4e28076ec73de6"
+    },
+    "critical_mass_jet": {
+      "path": "black_hole_programme/phase4/einstein_weyl_critical_mass_jet_v1/certificate.json",
+      "sha256": "a0245456f2ac3eecb4fe4e8a05be4dabbf277875546c91248713477a5bb2f67e"
+    },
+    "rw_simplicity": {
+      "path": "black_hole_programme/phase4/rw_maxwell_simplicity_endomorphisms_v1/certificate.json",
+      "sha256": "a51e13fcae0f789c29e8cd1789df28b4c207611683c5f4cd0fc493a0d1781436"
+    }
+  },
+  "local_metric_obstruction": {
+    "commutant": "eta=a*I+b*N, N^2=0",
+    "conclusion": "a nonzero gives an indefinite form; a=0 gives a degenerate form",
+    "determinant": "-g^2*a^2",
+    "flux_metric": "G2*eta=[[0,g*a],[g*a,g*b]]",
+    "self_adjoint_condition": "a and b real in the canonical null basis",
+    "theorem": "no rational local dynamically compatible metric operator makes the spin-two form positive definite"
+  },
+  "mass_crosswalk_ladder": {
+    "gate_1": "[I_mass]=[I_Bach] modulo K_U proves local repeated-block equivalence up to rational gauge and parameter scale",
+    "gate_2": "complete filtered equivalence must also include the mixed Maxwell-to-spin-two deformation",
+    "gate_3": "moving endpoint phases and matched Jost germ normalizations are required for b=-partial_mass a",
+    "gate_4": "analytic Fredholm realization is required for beta/alpha=d omega_n/d mass",
+    "unique_nilpotent": "if the local extensions agree nontrivially, the critical branch-sign residue is proportional to the unique commutant nilpotent N"
+  },
+  "matrix_sign_noncanonicity": {
+    "conclusion": "matrix sign proves existence after choosing a positive coefficient norm, not canonical covariance",
+    "frame_law": "G -> M^dagger*G*M",
+    "reason": "transported_sign is non-Hermitian, whereas sign(transformed_G) is Hermitian",
+    "transformed_G": "[[1,1],[1,0]]",
+    "transported_sign": "[[1,2],[0,-1]]",
+    "witness_G": "diag(1,-1)",
+    "witness_M": "[[1,1],[0,1]]"
+  },
+  "schema": "axial-local-nonlocal-positivity-v1",
+  "source_commit": "d76cf4487265933fc4c3ded743af3e943bad8970",
+  "status": "EXACT_LOCAL_NONLOCAL_POSITIVITY_DICHOTOMY_PASS",
+  "threshold_variables": {
+    "W_half": "diag(omega^(1/2),omega^(1/2),omega^(3/2))",
+    "normalized_transfer": "T_hat=W_out^(1/2)*T*W_in^(-1/2)",
+    "renormalized": [
+      "u_E_hat=omega^(1/2)*u_E",
+      "u_X_hat=omega^(1/2)*u_X",
+      "u_1_hat=omega^(3/2)*u_1"
+    ],
+    "warning": "the conserved Krein identity alone does not prove boundedness in the positive weighted norm",
+    "weights": [
+      "omega",
+      "omega",
+      "omega^3"
+    ]
+  }
+}

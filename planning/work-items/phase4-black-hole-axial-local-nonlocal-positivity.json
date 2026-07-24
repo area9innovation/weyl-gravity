@@ -1,0 +1,45 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-axial-local-nonlocal-positivity",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-axial-local-nonlocal-positivity",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-axial-local-nonlocal-positivity.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Certify the local/nonlocal positivity dichotomy: exclude every rational local dynamically compatible positive metric operator on the axial spin-two block, construct a scattering-compatible fundamental symmetry on the combined future space, demonstrate noncanonicity of the matrix-sign choice under nonunitary frame changes, define infrared-normalized threshold variables, and sharpen the mass/Bach crosswalk ladder and complex reducibility confinement.",
+    "stop_condition": "Produce exact algebra for the local metric determinant obstruction, the Krein-orthogonal extension of a transported fundamental symmetry, a concrete matrix-sign noncovariance witness, exact threshold weight normalization, the staged mass/Bach implication ladder and unique-nilpotent corollary, the quarter-imaginary-lattice reducibility confinement, independent verification, mutation tests, and a fail-closed report.",
+    "current_gate": "LOCAL-ALGEBRAIC local/nonlocal positivity theorem with REDUCED-MODE scattering, threshold and complex-frequency consequences",
+    "forbid": "no claim of a canonical, covariant, causal, holomorphic, endpoint-factorized or BRST-compatible C; no claim that the positive scattering multiplier is bounded on the whole half-axis; no physical mass/Jost or QNM-slope theorem before the declared filtered, endpoint and Fredholm gates; no complete complex reducibility classification; no full six-state commutant theorem",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-axial-local-commutant-spectral-c",
+      "sf:program/work/phase4-black-hole-einstein-weyl-critical-mass-jet"
+    ],
+    "activates": [
+      "channel-factorized future C test from explicit Tplus",
+      "infrared-weighted scattering transport",
+      "opposite-sign quarter-lattice recurrence audit",
+      "complete filtered mass/Bach endpoint crosswalk"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase4/axial_local_nonlocal_positivity_v1/",
+      "reports/phase4-black-hole-axial-local-nonlocal-positivity-2026-07-24.md",
+      "planning/work-items/phase4-black-hole-axial-local-nonlocal-positivity.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use G2=[[0,g],[g,0]], N=[[0,1],[0,0]], eta=aI+bN. For the future-space theorem use nondegeneracy of ran(S) and its Krein-orthogonal complement. Exhibit matrix-sign noncanonicity with G=diag(1,-1) and a nonunitary shear. Normalize threshold coefficients with W^(1/2)=diag(omega^(1/2),omega^(1/2),omega^(3/2)). State the mass crosswalk as a four-gate ladder. For complex reducibility prove only that opposite endpoint signs require 4*i*omega integral.",
+    "input_commit": "d76cf4487265933fc4c3ded743af3e943bad8970",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "The combined-future existence theorem does not imply factorization over null infinity and the horizon."
+    ]
+  },
+  "edges": []
+}
