@@ -7,3 +7,4 @@ The intrinsic tangent enclosure is `[0.0010932 +/- 7.60e-8] + [-0.0002195 +/- 8.
 The corresponding full 3x3 Smith type `(0,0,2)` remains conditional on a separate certificate that the spin-one Jost factor is a local unit at this frequency. A physical Fredholm realization and any Green-resolvent pole statement also remain open.
 
 CLOSE-OUT: DONE — the complete contour, exact root count, local QNM enclosure, and reduced repeated-spin-two selector required by this work item are certified.
+EVIDENCE: black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/local_selector_v1/receipt.json
