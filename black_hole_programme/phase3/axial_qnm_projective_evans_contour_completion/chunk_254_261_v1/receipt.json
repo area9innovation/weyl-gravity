@@ -1,0 +1,42 @@
+{
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_254_261_v1/runner.py black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_254_261_v1/verify.py black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_254_261_v1/test_chunk.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_254_261_v1/certificate.json black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_254_261_v1/schema.json",
+      "returncode": 0,
+      "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.chunk_254_261_v1.verify",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Evans contour chunk 254--261 verifier: PASS (coverage 131/512; next 262/1024)\n"
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.chunk_254_261_v1.test_chunk",
+      "returncode": 0,
+      "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.014s\n\nOK\n",
+      "stdout": "Evans contour chunk 254--261 verifier: PASS (coverage 131/512; next 262/1024)\n"
+    }
+  ],
+  "elapsed_seconds": 29.634582912025508,
+  "higher_tiers_not_run": "No closed contour, theorem promotion, freeze or release. The eight-panel transport is the fast certificate-chain producer; replayless verification is the fast Tier 1 rail.",
+  "input_sha256": {
+    "generic_adaptive_source": "20f2fca360a55a72a7b139c5d70b908e17f5369b3e83b360517feea75ca85ddd",
+    "predecessor_aggregate": "32ac760f9327ce4d268268e86d0aad305f5ead2ae00ab50b159b75dd07603a3e",
+    "predecessor_certificate": "5392c028daa60abd67b1e53a2be8cecb1c2603d9400595bb617e6985d1784cb2"
+  },
+  "output_sha256": {
+    "aggregate": "9afb1981c51c906c32b65579a3d68808b9c96f9795bfaa31f244d2ed5969c9dd",
+    "certificate": "7061810bb7238acae66ef86970cfe5d8c85cd7eafc37b3ca2c8f3961d13d0240",
+    "raw": "d32cc05884959bd0ca8d564abb4ec6752854d4f94af0c0b78a5f0bf5dda31d32",
+    "report": "5e1c3f28f6a6f5de9e5fc5e70a2e1bf57e64a6c479397f0939f85a900d83ab32"
+  },
+  "schema": "phase3-axial-qnm-projective-evans-contour-receipt-254-261-v1"
+}
