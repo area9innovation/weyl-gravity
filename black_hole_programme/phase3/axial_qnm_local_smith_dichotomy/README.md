@@ -19,10 +19,10 @@ Because \(f\) is a local unit, the spin-one row and column eliminate exactly.
 The remaining \(2\times2\) problem has two and only two Smith types:
 
 - \([b]\ne0\) in \(\mathcal O_{\omega_n}/(a)\): spin-two valuations
-  \((0,2)\), one root vector, one length-two chain, and a double resolvent
-  pole through \(-b/a^2\);
+  \((0,2)\), one root vector, one length-two chain, and a double pole of
+  the inverse connection matrix through \(-b/a^2\);
 - \([b]=0\): spin-two valuations \((1,1)\), two independent root vectors,
-  and only simple poles.
+  and only simple poles of the inverse connection matrix.
 
 The certificate records both factor-ordered full valuations and conventionally
 sorted Smith valuations.  Thus `(0,2,0)` is never confused with its sorted
@@ -41,6 +41,10 @@ It is unchanged by
 This package does **not** evaluate \(\beta_n\).  A certified QNM germ, an
 adjoint cokernel germ, and a boundary-convergent or regularized pairing are
 still missing.  Therefore no actual QNM is promoted to a double pole.
+Promoting an inverse-connection double pole to a bulk Green-resolvent pole
+also requires analytic horizon-to-bulk and infinity-to-bulk reconstruction
+maps whose source/observable projections do not annihilate the rank-one
+principal part.
 
 Run:
 

@@ -1061,8 +1061,10 @@ zero residue.  It therefore forces \(q=0\) in that gauge class.  This does
 not exclude endpoint-analytic logarithmic spectral-phase gauges.
 
 At a simple damped spin-two zero, the invariant scattering datum remains
-\([c]\in\mathcal O/(A_{{\rm in},2})\).  The congruence
-\(c\equiv qA_{{\rm in},2}'\pmod{A_{{\rm in},2}}\) with unspecified \(q\)
+\([b]\in\mathcal O/(A_{{\rm in},2})\), where \(b\) is the off-diagonal
+entry between the repeated spin-two factors in the triangular connection.
+The congruence
+\(b\equiv qA_{{\rm in},2}'\pmod{A_{{\rm in},2}}\) with unspecified \(q\)
 is not predictive: \([A_{{\rm in},2}']\) is a unit, so such a class
 \([q]\) always exists.  Selecting the local Smith type requires a certified
 QNM and adjoint germ together with a convergent Fredholm pairing; no
@@ -1079,19 +1081,45 @@ spin-one factor, the local connection is equivalent to
 \]
 If \([b]\ne0\) in \(\mathcal O_{\omega_n}/(a)\), its Smith valuations are
 \((0,2)\): the resonance has one root vector, a length-two chain, and a
-second-order resolvent pole.  If \([b]=0\), the valuations are \((1,1)\):
-there are two independent root vectors and only simple poles.  Under
-compatible endpoint normalizations the selector is the invariant Fredholm
-overlap
+second-order pole of the inverse connection matrix.  A second-order pole of
+the bulk Green resolvent, and hence a \(t e^{i\omega_n t}\) ringdown term,
+follows only if the analytic bulk reconstruction and source/observable maps
+do not annihilate its rank-one principal part.  If \([b]=0\), the valuations
+are \((1,1)\): there are two independent root vectors and only simple poles
+of the inverse connection matrix.
+
+More explicitly, write \(z=\omega-\omega_n\),
+\(a=\alpha_n z+O(z^2)\), and \(b=\beta_n+O(z)\).  When
+\(\beta_n\ne0\), the double-pole coefficient is
 \[
+ P_{-2}=-\frac{\beta_n}{\alpha_n^2}E_{12},
+\]
+and the generalized root coefficient is controlled by
+\(\kappa_n=\beta_n/\alpha_n\).
+
+Under compatible endpoint normalizations the selector is the invariant
+Fredholm overlap
+\[
+ \alpha_n=\left\langle\widetilde u_n,\,
+ \partial_\omega L_{\rm RW}(\omega_n)u_n\right\rangle,\qquad
  \beta_n=
  \left\langle\widetilde u_n,\,
  \mathcal E_{\rm RW}(\omega_n)u_n\right\rangle,
  \qquad
  [b]\ne0\ \Longleftrightarrow\ \beta_n\ne0 .
 \]
-The present certificate proves this dichotomy and commutator invariance,
-but does not evaluate \(\beta_n\) at any physical QNM.
+For an endpoint-preserving analytic triangular change,
+\(\mathcal E_{\rm RW}\mapsto
+\mathcal E_{\rm RW}+L_{\rm RW}Q-QL_{\rm RW}\), its change in the overlap is
+\[
+ \left\langle\widetilde u_n,(L_{\rm RW}Q-QL_{\rm RW})u_n\right\rangle
+ =
+ \left\langle L_{\rm RW}^\dagger\widetilde u_n,Qu_n\right\rangle
+ -\left\langle\widetilde u_n,QL_{\rm RW}u_n\right\rangle=0.
+\]
+Thus \(\beta_n\) represents the intrinsic extension class.  The present
+certificate proves this dichotomy and invariance, but does not evaluate
+\(\beta_n\) at any physical QNM.
 \end{proposition}
 
 \begin{theorem}[Exact future-horizon flux]
