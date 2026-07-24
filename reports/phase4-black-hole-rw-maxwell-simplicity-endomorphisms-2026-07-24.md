@@ -23,3 +23,6 @@ The result does not classify the complete complex-frequency reducibility
 locus or address nonlocal `C` operators, all-`ell` Bach nonsplitting, QNM
 defectiveness, Green-resolvent poles, generalized ringdown, or quantum
 positivity.
+
+EVIDENCE: black_hole_programme/phase4/rw_maxwell_simplicity_endomorphisms_v1/receipt.json
+CLOSE-OUT: DONE — exact successor certificate and independent verification landed.
