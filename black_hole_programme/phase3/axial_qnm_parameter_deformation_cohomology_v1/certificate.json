@@ -1,0 +1,170 @@
+{
+  "schema": "phase3-axial-qnm-parameter-deformation-cohomology-v1",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_QNM_PARAMETER_DEFORMATION_COHOMOLOGY",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "lifecycle": "CLASSIFIED",
+  "status": "PARAMETER_SHORTCUT_REFUSED",
+  "declaration": {
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity",
+    "background": "Schwarzschild exterior",
+    "sector": "axial ell=2 repeated spin-two filtration",
+    "r_coordinate": "dimensionful areal radius held fixed for d_M",
+    "omega_coordinate": "dimensionful physical frequency held fixed for d_M",
+    "frozen_specialization": "M=1",
+    "differential_field": "Q(I,omega,M,r) with d/dr",
+    "genericity": "omega is a nonzero indeterminate; finite residue points are interpreted over the rational function field"
+  },
+  "imports": {
+    "triangular_factorization": {
+      "path": "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json",
+      "sha256": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579"
+    },
+    "complete_reconstruction": {
+      "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+      "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990"
+    },
+    "extension_preflight": {
+      "path": "black_hole_programme/phase3/axial_spin_two_scattering_extension_preflight/certificate.json",
+      "sha256": "863dcf40f9d94e5ceec8518639ade6ea27b5357d302719f7669c53caf4d7f10c"
+    }
+  },
+  "mass_family_derivation": {
+    "f": "(-2*M + r)/r",
+    "spin_two_potential": "6*(-2*M + r)*(-M + r)/r**4",
+    "scalar_a": "2*I*(-I*M + omega*r**2)/(r*(-2*M + r))",
+    "scalar_b": "-6*(-M + r)/(r**2*(-2*M + r))",
+    "companion_A_M": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "6*(-M + r)/(r**2*(-2*M + r))",
+        "-2*I*(-I*M + omega*r**2)/(r*(-2*M + r))"
+      ]
+    ],
+    "companion_A_M1": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "6*(r - 1)/(r**2*(r - 2))",
+        "-2*I*(omega*r**2 - I)/(r*(r - 2))"
+      ]
+    ],
+    "d_omega_A_M1": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-2*I*r/(r - 2)"
+      ]
+    ],
+    "d_M_A_M1": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "6/(r*(r - 2)**2)",
+        "-2*I*(2*omega*r - I)/(r - 2)**2"
+      ]
+    ]
+  },
+  "dimensionless_scaling_check": {
+    "coordinates": "x=r/M, Omega=M*omega",
+    "state": "(y,d_x y)",
+    "scalar_a": "2*I*(Omega*x**2 - I)/(x*(x - 2))",
+    "scalar_b": "-6*(x - 1)/(x**2*(x - 2))",
+    "d_M_scalar_a": "0",
+    "d_M_scalar_b": "0",
+    "interpretation": "Schwarzschild mass is a scale in the dimensionless operator; its fixed-(r,omega) variation combines coordinate dilation, state rescaling and spectral rescaling."
+  },
+  "extension": {
+    "definition": "E_RW=U_metric*(carrier_to_metric_source)*J_carrier_RW",
+    "matrix": [
+      [
+        "I*(3*r - 2)*(3*omega*r - 8*I)/(4*r*(omega*r - 2*I)**2)",
+        "(3*omega**2*r**3 - 3*I*omega*r**2 - 6*I*omega*r + 8*r - 16)/(4*(omega*r - 2*I)**2)"
+      ],
+      [
+        "-I*(3*r - 2)*(3*omega*r - 8*I)/(4*r**2*(omega*r - 2*I)**2)",
+        "-(3*omega**2*r**3 - 3*I*omega*r**2 - 6*I*omega*r + 8*r - 16)/(4*r*(omega*r - 2*I)**2)"
+      ]
+    ],
+    "rank": 1,
+    "source_hash_matches_preflight": true
+  },
+  "trace_residue_audit": {
+    "candidate": "E_RW-q_omega*d_omega(A_RW)-q_M*d_M(A_RW)=D_A(B)",
+    "D_A": "B_prime+B*A_RW-A_RW*B",
+    "residues": {
+      "r=0": "0",
+      "r=2": "4*I*(omega*q_M + q_omega)",
+      "r=2*I/omega": "0",
+      "r=infinity": "-4*I*(omega*q_M + q_omega)"
+    },
+    "necessary_relation": "q_omega+omega*q_M=0",
+    "reason": "the trace of D_A(B) is (tr B)' and every rational derivative has zero residue at every finite point and infinity"
+  },
+  "scale_coboundary": {
+    "deformation": "d_M(A_RW)-omega*d_omega(A_RW)",
+    "gauge_B_scale": [
+      [
+        "0",
+        "-r"
+      ],
+      [
+        "-6*(r - 1)/(r*(r - 2))",
+        "I*(2*omega*r**2 + I*r - 4*I)/(r - 2)"
+      ]
+    ],
+    "deformation_matrix": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "6/(r*(r - 2)**2)",
+        "2*I*(omega*r**2 - 4*omega*r + I)/(r - 2)**2"
+      ]
+    ],
+    "identity": "d_M(A_RW)-omega*d_omega(A_RW)=D_A(B_scale) at M=1",
+    "verified": true
+  },
+  "cohomology_conclusion": {
+    "class_relation": "[d_M A_RW]=omega*[d_omega A_RW]",
+    "parameter_span_dimension": 1,
+    "admissible_candidate_combination_is_exact": true,
+    "equivalence": "E_RW lies in the rational span of d_omega A_RW and d_M A_RW modulo D_A iff E_RW itself is a rational D_A-coboundary",
+    "pure_E_RW_coboundary_status": "NOT_DECIDED",
+    "result": "Mass variation adds no independent rational deformation class and cannot provide the proposed nontrivial parameter-derivative shortcut."
+  },
+  "scope_refusals": {
+    "Lambda": "UNDEFINED: the frozen input is Schwarzschild, not a certified Schwarzschild-(A)dS family. Varying cosmological Lambda changes the background, horizons and boundary problem.",
+    "ell": "REFUSED_AS_PHYSICAL_PARAMETER: ell=2 is a discrete harmonic label. An auxiliary analytic continuation in ell*(ell+1) would be a different algebraic experiment, not a physical Schwarzschild parameter derivative."
+  },
+  "claim_flags": {
+    "dimensionful_mass_family_derived": true,
+    "trace_residue_constraint_certified": true,
+    "mass_scaling_combination_rationally_exact": true,
+    "mass_adds_independent_deformation_class": false,
+    "pure_E_RW_coboundary_decided": false,
+    "beta_n_computed": false,
+    "QNM_Smith_type_selected": false
+  },
+  "does_not_establish": [
+    "that E_RW is or is not a pure rational D_A-coboundary",
+    "a value or nonvanishing theorem for beta_n",
+    "a local QNM Smith type or resolvent pole order",
+    "a Schwarzschild-(A)dS parameter deformation",
+    "a physical continuous deformation of the discrete ell label",
+    "a Lorentzian quantum, CPT, particle or unitarity theorem"
+  ]
+}

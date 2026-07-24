@@ -1,0 +1,55 @@
+{
+  "schema": "phase3-axial-qnm-parameter-deformation-cohomology-receipt-v1",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_QNM_PARAMETER_DEFORMATION_COHOMOLOGY",
+  "date": "2026-07-24",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "inputs": {
+    "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579",
+    "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+    "black_hole_programme/phase3/axial_spin_two_scattering_extension_preflight/certificate.json": "863dcf40f9d94e5ceec8518639ade6ea27b5357d302719f7669c53caf4d7f10c"
+  },
+  "outputs": {
+    "black_hole_programme/phase3/axial_qnm_parameter_deformation_cohomology_v1/__init__.py": "6979627403c48b08a667722d34e58a63272766ad75220f159a815c6c2529e220",
+    "black_hole_programme/phase3/axial_qnm_parameter_deformation_cohomology_v1/README.md": "2263f766ccb450ffdb989f60ebbfae950f544981881c598195036c71a6fecd0c",
+    "black_hole_programme/phase3/axial_qnm_parameter_deformation_cohomology_v1/certificate.json": "49076495092929787e48230f4b15e398ed03d1319c2c77cb1a4802c5cc746e51",
+    "black_hole_programme/phase3/axial_qnm_parameter_deformation_cohomology_v1/produce.py": "eecc283dabe234d9a3e2999dbdc34c298fdbc66141afe81ef6f306a0eab66a64",
+    "black_hole_programme/phase3/axial_qnm_parameter_deformation_cohomology_v1/verify.py": "45e0b161bb38d801c3390e4b58308df557ab91dc8201de32555bc408275d8265",
+    "black_hole_programme/phase3/axial_qnm_parameter_deformation_cohomology_v1/tests/__init__.py": "657ea6544b243422f09d9dbaac6cb7251ff373863fb171f88f953277f3f336ae",
+    "black_hole_programme/phase3/axial_qnm_parameter_deformation_cohomology_v1/tests/test_cohomology.py": "b03214f59ee415a95af5f534055eb639a6ab287ba45976db912327701f8d0e9a",
+    "reports/phase3-axial-qnm-parameter-deformation-cohomology-2026-07-24.md": "da58b7cb6525bb485f036d29291b9c2317508e6de724a5730bffd207ee70f460"
+  },
+  "tests": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_parameter_deformation_cohomology_v1.produce",
+      "elapsed_seconds": 3.34,
+      "status": "PASS",
+      "scope": "exact mass-family derivation, authoritative extension import, rational trace residues, dimensionless scale cancellation and B_scale identity"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_parameter_deformation_cohomology_v1.verify",
+      "elapsed_seconds": 2.37,
+      "status": "PASS",
+      "scope": "independent exact replay of imports, residues, scale coboundary, scope refusals and claim boundary"
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_parameter_deformation_cohomology_v1.tests.test_cohomology",
+      "elapsed_seconds": 8.10,
+      "status": "PASS",
+      "scope": "7 tests including mass-family, residue, scale-gauge, Lambda-scope and overpromotion mutations"
+    }
+  ],
+  "higher_tiers": {
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "All imported mathematical inputs are content-addressed and unchanged; the scoped exact verifier independently re-derives the new local-algebraic result."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a bounded classification of one proposed shortcut, not a freeze, release, shared-core change or theorem promotion."
+    }
+  },
+  "claim_boundary": "Schwarzschild mass adds no independent rational deformation class: the only residue-compatible mass/frequency combination is the exact scale coboundary. Whether E_RW itself is exact, beta_n, and every QNM Smith or pole claim remain undecided."
+}
