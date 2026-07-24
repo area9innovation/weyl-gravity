@@ -2097,14 +2097,19 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_qnm_ecs_centered_projective_initializer_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_ecs_affine_projective_transport_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_horizon_projective_preflight_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_horizon_reciprocal_chart_transport_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_horizon_reciprocal_checkpoint_transport_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_two_sided_projective_mismatch_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_endpoint_frames_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_transport_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_moving_phase_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_spin_one_levelt_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_multipanel_preflight_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_projective_multipanel_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_multipanel_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json}\\
 Polar restriction-stable module and invariant current filtration &
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json}\\
@@ -2196,7 +2201,15 @@ routes continue to overlap for 27 geometric panels.  They then refuse on
 cumulative rectangular width \(1.164\times10^6\), while the local
 order-24 operator tail is only \(5.56\times10^{-27}\).  Thus the remaining
 horizon obstruction is correlation-preserving multipanel reconditioning,
-not endpoint singularity or local truncation; \(K_H\) remains open.
+not endpoint singularity or local truncation.  A fixed projective pivot
+improves the local scaling and completes five finer panels, but its generic
+complex Krawczyk inversion then refuses because the rectangular enclosure of
+the pivot norm spans zero; the local scaled norm is only \(0.08741\) and the
+operator tail \(2.81\times10^{-24}\), so this is again a dependency failure
+rather than evidence of a physical pivot zero.  The permitted
+midpoint/Lohner alternate exceeded a bounded 240-second runtime before
+flushing a panel checkpoint.  It is recorded as a throughput shortfall, not
+as a transport obstruction.  Consequently \(K_H\) remains open.
 
 At outgoing real infinity the corresponding reduced-phase representation
 has also passed its first local test.  Keeping \(e^{-2i\omega r_*}\)
@@ -2214,7 +2227,16 @@ agreement; its final width is \(1.61820\) and its largest local tail is
 the scoped runtime budget and is recorded only as a throughput failure.
 Continuation must resume from a serialized correlated checkpoint rather than
 replay from \(r=32\).  The complementary columns, \(K_+\), and \(T_+\) remain
-open.
+open.  The required restart format is now certified: it serializes the full
+mixed base/tangent \(\operatorname{Taylor}_4(\omega)\) state at \(r=63/2\),
+including exact coefficients, IEEE-754 interval endpoints, the shared
+frequency generator and content hashes.  Its loader round-trips bit exactly,
+and a replay-free 16-panel continuation reaches \(r=31\) and agrees exactly
+with an independent 32-panel reference.  The timing also isolates the
+implementation bottleneck: about 60 seconds are spent in Python symbolic
+preparation, while native 32-panel transport takes 9.00 seconds and the
+restarted 16-panel chunk 5.66 seconds.  Checkpoint reuse, rather than a
+different ODE integrator, is therefore the immediate performance repair.
 Complex-frequency work has excluded the entire growth half-plane, but no
 damped QNM root, contour moment, or local Smith branch has been computed.
 At the QNM seed disk, the direct inverse-\(r\) forward recurrence also fails
@@ -2267,8 +2289,38 @@ certified \(q,\eta,\xi\) seeds on all 16 panels and again gives
 \(\dot\lambda_H=0\).  Its first affine outward continuation refuses at the
 reference-trajectory Riccati discriminant, at
 \(r\simeq2.672868\) on panels 0--7 and \(r\simeq2.714923\) on panels 8--15.
-It therefore does not reach \(r=32\), and no two-sided projective mismatch is
-assembled.
+At that obstruction the full-panel \(q\) enclosures nevertheless exclude
+zero, with certified modulus lower bounds between \(0.21078\) and \(0.24612\).
+The reciprocal chart
+\[
+ p=q^{-1},\qquad
+ p_\tau=-q_\tau/q^2,\qquad
+ p_\omega=-q_\omega/q^2
+\]
+is therefore admissible on every panel.  A logarithmic-norm successor carries
+all 16 horizon lines to \(r=4\), accepting 129 or 133 steps with no rejected
+trial.  A checkpointed continuation then reaches \(r=8,16,32\) on all
+panels, with 680 accepted steps per panel, no rejected trial, and no second
+chart change.  At \(r=32\) the reciprocal-base radii lie between \(0.104\)
+and \(0.205\), the \(\tau\)-sensitivity radii between \(1.06\) and \(7.65\),
+and the \(\omega\)-sensitivity radii between \(1.26\) and \(4.62\).  Thus the
+two selected endpoint lines now reach the same projective matching radius.
+Because their reduced amplitudes carry opposite oscillatory phases, the
+physical common-chart mismatch is
+\[
+ \Delta=q_H-q_++2i\omega,\qquad
+ \Delta_\tau=q_{H,\tau}-q_{+,\tau},\qquad
+ \Delta_\omega=q_{H,\omega}-q_{+,\omega}+2i.
+\]
+This corrected mismatch has now been assembled on all 16 panels.  Its
+midpoint magnitudes, \(4\times10^{-5}\) to \(2\times10^{-3}\), exhibit the
+expected near-resonant cancellation.  The separately serialized endpoint
+remainders do not retain a common cross-endpoint affine generator, however,
+so their rigorous radii must be added and lie between \(0.304\) and \(0.393\).
+Every boundary panel then contains zero.  The boundary-nonvanishing gate
+therefore refuses with
+\texttt{SERIALIZED\_CROSS\_ENDPOINT\_DEPENDENCY\_WIDTH\_CONTAINS\_ZERO};
+the argument-principle and defect-moment gates are deliberately not run.
 Uniform time-domain boundedness, decay, and completeness remain open.
 
 The present result already fixes an important baseline:

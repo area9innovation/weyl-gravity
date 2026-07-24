@@ -1,0 +1,471 @@
+{
+  "gates": {
+    "K0_or_interval_newton_defect": {
+      "prerequisite": "argument_principle_root_count certified",
+      "status": "NOT_RUN"
+    },
+    "argument_principle_root_count": {
+      "prerequisite": "boundary_nonvanishing=PASS",
+      "status": "NOT_RUN"
+    },
+    "boundary_nonvanishing": {
+      "failure": "SERIALIZED_CROSS_ENDPOINT_DEPENDENCY_WIDTH_CONTAINS_ZERO",
+      "passed_panel_count": 0,
+      "status": "FAIL_CLOSED"
+    }
+  },
+  "match_radius": 32,
+  "panel_count": 16,
+  "physical_mismatch": "Delta=q_H-q_out+2*I*omega",
+  "rows": [
+    {
+      "common_chart": "physical logarithmic derivative",
+      "delta": {
+        "center": "[0.00014442297720754508801033200171559656 +/- 8.61e-39] + [2.933519771084521637893871570668125e-5 +/- 8.07e-39]j",
+        "excludes_zero": false,
+        "modulus_lower": "0",
+        "radius": "[0.31197994468442966352774520914341026900 +/- 4.38e-39]"
+      },
+      "delta_omega": {
+        "center": "[0.002261935645359572713553042433431983227 +/- 2.98e-40] + [0.0112078169790922714532666049080944504 +/- 3.46e-38]j",
+        "formula": "q_H_omega-q_out_omega+2*I",
+        "radius": "[18.344834055019174373340569475164310001 +/- 5.94e-38]"
+      },
+      "delta_tau": {
+        "center": "[-0.00013353317058727572031948116482169552910 +/- 2.74e-42] + [0.00046129305718522189288816753860444919155 +/- 4.43e-42]j",
+        "formula": "q_H_tau-q_out_tau",
+        "radius": "[3.0218938933088718571774123741483528313 +/- 1.28e-38]"
+      },
+      "dependency_scope": {
+        "assembly_rule": "independent certified endpoint remainders are summed; no unrecorded cancellation is assumed",
+        "common_omega_center_used_for_phase": true,
+        "common_panel_index": true,
+        "serialized_cross_endpoint_affine_generator_available": false
+      },
+      "match_radius": 32,
+      "panel": 0,
+      "phase_formula": "Delta=q_H-q_out+2*I*omega"
+    },
+    {
+      "common_chart": "physical logarithmic derivative",
+      "delta": {
+        "center": "[7.27503703422879843820680889621144e-5 +/- 2.98e-38] + [1.584527200755581066715649285470135e-5 +/- 8.15e-39]j",
+        "excludes_zero": false,
+        "modulus_lower": "0",
+        "radius": "[0.33252181943230353890886746089643599493 +/- 4.39e-39]"
+      },
+      "delta_omega": {
+        "center": "[0.000845262719445301347054311236206558533 +/- 1.23e-40] + [0.0045691077342992665599741286541757290 +/- 8.57e-38]j",
+        "formula": "q_H_omega-q_out_omega+2*I",
+        "radius": "[20.336542211651872308313233752855550022 +/- 4.57e-37]"
+      },
+      "delta_tau": {
+        "center": "[4.572473654390781221817929846906736202e-5 +/- 5.48e-42] + [0.00022317576771937571908886732696686294730 +/- 3.00e-42]j",
+        "formula": "q_H_tau-q_out_tau",
+        "radius": "[2.9103401747572969868777832061647674716 +/- 2.58e-38]"
+      },
+      "dependency_scope": {
+        "assembly_rule": "independent certified endpoint remainders are summed; no unrecorded cancellation is assumed",
+        "common_omega_center_used_for_phase": true,
+        "common_panel_index": true,
+        "serialized_cross_endpoint_affine_generator_available": false
+      },
+      "match_radius": 32,
+      "panel": 1,
+      "phase_formula": "Delta=q_H-q_out+2*I*omega"
+    },
+    {
+      "common_chart": "physical logarithmic derivative",
+      "delta": {
+        "center": "[4.57062138114615497397341670193782e-5 +/- 3.56e-38] + [-3.797807843781281222916845763393e-7 +/- 2.42e-38]j",
+        "excludes_zero": false,
+        "modulus_lower": "0",
+        "radius": "[0.35748793907308603997124623726096828890 +/- 1.32e-39]"
+      },
+      "delta_omega": {
+        "center": "[0.000604372741079980957401573959941742942 +/- 3.03e-40] + [0.0021407203886538890558188796831018408 +/- 7.65e-38]j",
+        "formula": "q_H_omega-q_out_omega+2*I",
+        "radius": "[23.021202494090076347238164528957040025 +/- 4.48e-37]"
+      },
+      "delta_tau": {
+        "center": "[0.00011398819435914355965855371266570728039 +/- 5.35e-42] + [8.069158751312712775892455052684226757e-5 +/- 2.98e-42]j",
+        "formula": "q_H_tau-q_out_tau",
+        "radius": "[3.5251313447794735483399520193135140238 +/- 2.65e-38]"
+      },
+      "dependency_scope": {
+        "assembly_rule": "independent certified endpoint remainders are summed; no unrecorded cancellation is assumed",
+        "common_omega_center_used_for_phase": true,
+        "common_panel_index": true,
+        "serialized_cross_endpoint_affine_generator_available": false
+      },
+      "match_radius": 32,
+      "panel": 2,
+      "phase_formula": "Delta=q_H-q_out+2*I*omega"
+    },
+    {
+      "common_chart": "physical logarithmic derivative",
+      "delta": {
+        "center": "[3.435903612448911598198364458767173e-5 +/- 6.46e-39] + [-1.35431667900318478126031607189361e-5 +/- 4.46e-38]j",
+        "excludes_zero": false,
+        "modulus_lower": "0",
+        "radius": "[0.36720982172460643880801943937418475410 +/- 4.72e-39]"
+      },
+      "delta_omega": {
+        "center": "[0.0004879845708092040573733427777369797695 +/- 8.10e-41] + [0.0014440792944855965207473502687207656 +/- 1.09e-38]j",
+        "formula": "q_H_omega-q_out_omega+2*I",
+        "radius": "[23.546237822557544823623388523403195656 +/- 2.06e-37]"
+      },
+      "delta_tau": {
+        "center": "[0.00011746655396639162863975380801662140584 +/- 2.24e-42] + [-3.168232351938516299857950819784946362e-5 +/- 7.04e-42]j",
+        "formula": "q_H_tau-q_out_tau",
+        "radius": "[4.9213544531747737756303280364216694168 +/- 1.01e-38]"
+      },
+      "dependency_scope": {
+        "assembly_rule": "independent certified endpoint remainders are summed; no unrecorded cancellation is assumed",
+        "common_omega_center_used_for_phase": true,
+        "common_panel_index": true,
+        "serialized_cross_endpoint_affine_generator_available": false
+      },
+      "match_radius": 32,
+      "panel": 3,
+      "phase_formula": "Delta=q_H-q_out+2*I*omega"
+    },
+    {
+      "common_chart": "physical logarithmic derivative",
+      "delta": {
+        "center": "[2.93281044872160945313765978426090e-5 +/- 5.23e-38] + [-2.83030800591410960920235595494887e-5 +/- 2.03e-38]j",
+        "excludes_zero": false,
+        "modulus_lower": "0",
+        "radius": "[0.35311842066988874026763005342242086832 +/- 2.36e-39]"
+      },
+      "delta_omega": {
+        "center": "[0.0006342106773159234683889806660772592295 +/- 7.17e-41] + [0.0017230604045662956114171038279891945 +/- 5.44e-38]j",
+        "formula": "q_H_omega-q_out_omega+2*I",
+        "radius": "[20.932806789131621781920379544501510976 +/- 2.87e-37]"
+      },
+      "delta_tau": {
+        "center": "[6.774617198988434159032112624743149354e-5 +/- 2.53e-42] + [-0.00013528210692783572980041686961705238446 +/- 5.50e-42]j",
+        "formula": "q_H_tau-q_out_tau",
+        "radius": "[7.3995567101125787680834521319929773289 +/- 2.38e-38]"
+      },
+      "dependency_scope": {
+        "assembly_rule": "independent certified endpoint remainders are summed; no unrecorded cancellation is assumed",
+        "common_omega_center_used_for_phase": true,
+        "common_panel_index": true,
+        "serialized_cross_endpoint_affine_generator_available": false
+      },
+      "match_radius": 32,
+      "panel": 4,
+      "phase_formula": "Delta=q_H-q_out+2*I*omega"
+    },
+    {
+      "common_chart": "physical logarithmic derivative",
+      "delta": {
+        "center": "[2.96050453333378173897960650151617e-5 +/- 4.13e-38] + [-5.27760157106255470282896169464948e-5 +/- 3.48e-38]j",
+        "excludes_zero": false,
+        "modulus_lower": "0",
+        "radius": "[0.32725855413879524453137044282417615921 +/- 2.28e-39]"
+      },
+      "delta_omega": {
+        "center": "[0.001502750080282813996412905055422015721 +/- 1.12e-40] + [0.003132476434843888685177759612088266 +/- 4.01e-37]j",
+        "formula": "q_H_omega-q_out_omega+2*I",
+        "radius": "[17.323942524518274652629245558716802745 +/- 3.06e-37]"
+      },
+      "delta_tau": {
+        "center": "[-5.396554570161557094418181002026813075e-5 +/- 7.89e-42] + [-0.00024688986745490298024222758366263974494 +/- 6.02e-42]j",
+        "formula": "q_H_tau-q_out_tau",
+        "radius": "[11.314309235241522104676515538956499528 +/- 1.55e-37]"
+      },
+      "dependency_scope": {
+        "assembly_rule": "independent certified endpoint remainders are summed; no unrecorded cancellation is assumed",
+        "common_omega_center_used_for_phase": true,
+        "common_panel_index": true,
+        "serialized_cross_endpoint_affine_generator_available": false
+      },
+      "match_radius": 32,
+      "panel": 5,
+      "phase_formula": "Delta=q_H-q_out+2*I*omega"
+    },
+    {
+      "common_chart": "physical logarithmic derivative",
+      "delta": {
+        "center": "[4.69226694984439026553380003292659e-5 +/- 4.36e-38] + [-0.0001031692393808876853644740378967981 +/- 2.28e-38]j",
+        "excludes_zero": false,
+        "modulus_lower": "0",
+        "radius": "[0.30743857941328522121196359954581562000 +/- 3.62e-40]"
+      },
+      "delta_omega": {
+        "center": "[0.003872885094554957136070427736740384717 +/- 5.74e-40] + [0.0072761070097046125215722867096701521 +/- 5.11e-38]j",
+        "formula": "q_H_omega-q_out_omega+2*I",
+        "radius": "[15.050933925305077874281686362095020428 +/- 4.91e-37]"
+      },
+      "delta_tau": {
+        "center": "[-0.00031178701700502891062342231132120673465 +/- 6.57e-42] + [-0.00041445073009465554017549671073084027740 +/- 7.91e-42]j",
+        "formula": "q_H_tau-q_out_tau",
+        "radius": "[16.852805779939662262550706218677849176 +/- 4.35e-37]"
+      },
+      "dependency_scope": {
+        "assembly_rule": "independent certified endpoint remainders are summed; no unrecorded cancellation is assumed",
+        "common_omega_center_used_for_phase": true,
+        "common_panel_index": true,
+        "serialized_cross_endpoint_affine_generator_available": false
+      },
+      "match_radius": 32,
+      "panel": 6,
+      "phase_formula": "Delta=q_H-q_out+2*I*omega"
+    },
+    {
+      "common_chart": "physical logarithmic derivative",
+      "delta": {
+        "center": "[0.00014113425977893318159772650943750705 +/- 4.34e-39] + [-0.00019694446100858211540218789536993427 +/- 6.32e-39]j",
+        "excludes_zero": false,
+        "modulus_lower": "0",
+        "radius": "[0.30361026818422961957406390924040911663 +/- 4.61e-39]"
+      },
+      "delta_omega": {
+        "center": "[0.007021433236307434225254020532247523078 +/- 7.46e-40] + [0.0200402244684704140820219464558249456 +/- 7.58e-38]j",
+        "formula": "q_H_omega-q_out_omega+2*I",
+        "radius": "[15.093507448613579366339220190277259542 +/- 4.63e-37]"
+      },
+      "delta_tau": {
+        "center": "[-0.00082248119555162986287974447030535429803 +/- 6.92e-42] + [-0.0008410478697704828630801049405008029680 +/- 2.06e-41]j",
+        "formula": "q_H_tau-q_out_tau",
+        "radius": "[23.696210058631967839001462990519667962 +/- 2.25e-37]"
+      },
+      "dependency_scope": {
+        "assembly_rule": "independent certified endpoint remainders are summed; no unrecorded cancellation is assumed",
+        "common_omega_center_used_for_phase": true,
+        "common_panel_index": true,
+        "serialized_cross_endpoint_affine_generator_available": false
+      },
+      "match_radius": 32,
+      "panel": 7,
+      "phase_formula": "Delta=q_H-q_out+2*I*omega"
+    },
+    {
+      "common_chart": "physical logarithmic derivative",
+      "delta": {
+        "center": "[0.00047361190596379636272988955525420351 +/- 6.92e-39] + [-0.0002277047983566052313797456463362323 +/- 3.12e-38]j",
+        "excludes_zero": false,
+        "modulus_lower": "0",
+        "radius": "[0.31787314966691669320994058282022947751 +/- 2.07e-39]"
+      },
+      "delta_omega": {
+        "center": "[-0.0040019956616768032455280779124962009518 +/- 8.32e-41] + [0.0526620223520783657666921584450392402 +/- 2.46e-38]j",
+        "formula": "q_H_omega-q_out_omega+2*I",
+        "radius": "[17.904176298155725068207520048317350989 +/- 4.73e-37]"
+      },
+      "delta_tau": {
+        "center": "[-0.0014629770281877144946433566552457250509 +/- 3.33e-41] + [-0.0021832651702663512726602240698881018943 +/- 6.76e-41]j",
+        "formula": "q_H_tau-q_out_tau",
+        "radius": "[30.447629814073061518201198517601637809 +/- 4.58e-37]"
+      },
+      "dependency_scope": {
+        "assembly_rule": "independent certified endpoint remainders are summed; no unrecorded cancellation is assumed",
+        "common_omega_center_used_for_phase": true,
+        "common_panel_index": true,
+        "serialized_cross_endpoint_affine_generator_available": false
+      },
+      "match_radius": 32,
+      "panel": 8,
+      "phase_formula": "Delta=q_H-q_out+2*I*omega"
+    },
+    {
+      "common_chart": "physical logarithmic derivative",
+      "delta": {
+        "center": "[0.00097046525146315715422418168856211195 +/- 9.03e-39] + [0.00034190716733682735561927756862132810 +/- 6.90e-39]j",
+        "excludes_zero": false,
+        "modulus_lower": "0",
+        "radius": "[0.34672721596247623179662253169002640044 +/- 2.37e-39]"
+      },
+      "delta_omega": {
+        "center": "[-0.077473788783212304068226394804241863312 +/- 7.13e-40] + [0.0831434892173922822367071461258092313 +/- 2.11e-38]j",
+        "formula": "q_H_omega-q_out_omega+2*I",
+        "radius": "[23.738290846646320367083461470585073256 +/- 1.87e-37]"
+      },
+      "delta_tau": {
+        "center": "[-0.0006250526435072582950511210775346171431 +/- 1.23e-41] + [-0.005133066380886864561283299684957270870 +/- 3.95e-40]j",
+        "formula": "q_H_tau-q_out_tau",
+        "radius": "[35.398567727237822634173081473601190878 +/- 3.91e-38]"
+      },
+      "dependency_scope": {
+        "assembly_rule": "independent certified endpoint remainders are summed; no unrecorded cancellation is assumed",
+        "common_omega_center_used_for_phase": true,
+        "common_panel_index": true,
+        "serialized_cross_endpoint_affine_generator_available": false
+      },
+      "match_radius": 32,
+      "panel": 9,
+      "phase_formula": "Delta=q_H-q_out+2*I*omega"
+    },
+    {
+      "common_chart": "physical logarithmic derivative",
+      "delta": {
+        "center": "[0.00035888946584205854394011847574574859 +/- 9.68e-39] + [0.0016062059561162151527513586302120530 +/- 5.00e-38]j",
+        "excludes_zero": false,
+        "modulus_lower": "0",
+        "radius": "[0.37866148818707925470003037025308473686 +/- 2.39e-39]"
+      },
+      "delta_omega": {
+        "center": "[-0.19201800646044454813285429217728506046 +/- 7.04e-39] + [-0.012868869945615764305291151003984851 +/- 1.99e-37]j",
+        "formula": "q_H_omega-q_out_omega+2*I",
+        "radius": "[31.816893842604996792900264888820901250 +/- 1.98e-37]"
+      },
+      "delta_tau": {
+        "center": "[0.0043868232083378743855692216691011253715 +/- 6.42e-41] + [-0.0068553424740174002423439766906732018015 +/- 5.20e-41]j",
+        "formula": "q_H_tau-q_out_tau",
+        "radius": "[35.131294306296143589093396460975608674 +/- 1.74e-37]"
+      },
+      "dependency_scope": {
+        "assembly_rule": "independent certified endpoint remainders are summed; no unrecorded cancellation is assumed",
+        "common_omega_center_used_for_phase": true,
+        "common_panel_index": true,
+        "serialized_cross_endpoint_affine_generator_available": false
+      },
+      "match_radius": 32,
+      "panel": 10,
+      "phase_formula": "Delta=q_H-q_out+2*I*omega"
+    },
+    {
+      "common_chart": "physical logarithmic derivative",
+      "delta": {
+        "center": "[-0.00159731645234161782204163060328028223 +/- 7.57e-39] + [0.0012081653028483642017820720582221838 +/- 5.31e-38]j",
+        "excludes_zero": false,
+        "modulus_lower": "0",
+        "radius": "[0.39348705639833277226198447209584740851 +/- 4.06e-39]"
+      },
+      "delta_omega": {
+        "center": "[-0.11258083485888697788598888926969721069 +/- 5.59e-39] + [-0.2107159841739708154573218479299612226 +/- 9.05e-38]j",
+        "formula": "q_H_omega-q_out_omega+2*I",
+        "radius": "[37.990487592953497575654947813719071059 +/- 4.24e-37]"
+      },
+      "delta_tau": {
+        "center": "[0.009374243941810614995802791726831060259 +/- 5.68e-40] + [-0.0017836632230901897628694112440950192422 +/- 2.11e-41]j",
+        "formula": "q_H_tau-q_out_tau",
+        "radius": "[28.578890783771428990812308794721914189 +/- 3.47e-37]"
+      },
+      "dependency_scope": {
+        "assembly_rule": "independent certified endpoint remainders are summed; no unrecorded cancellation is assumed",
+        "common_omega_center_used_for_phase": true,
+        "common_panel_index": true,
+        "serialized_cross_endpoint_affine_generator_available": false
+      },
+      "match_radius": 32,
+      "panel": 11,
+      "phase_formula": "Delta=q_H-q_out+2*I*omega"
+    },
+    {
+      "common_chart": "physical logarithmic derivative",
+      "delta": {
+        "center": "[-0.00157536232940617461090876405549465744 +/- 3.04e-39] + [-0.0008808608238394651998581785790065624 +/- 4.19e-38]j",
+        "excludes_zero": false,
+        "modulus_lower": "0",
+        "radius": "[0.38207112672293040619062481263687590433 +/- 4.74e-40]"
+      },
+      "delta_omega": {
+        "center": "[0.10761565323397078233758072940418060170 +/- 5.28e-39] + [-0.1826847483366849655972430355177493766 +/- 5.42e-38]j",
+        "formula": "q_H_omega-q_out_omega+2*I",
+        "radius": "[36.463093844822056432955786533184192981 +/- 8.77e-38]"
+      },
+      "delta_tau": {
+        "center": "[0.0065988003965035916674637672674208488388 +/- 6.17e-41] + [0.0047576518623595902062958784561885750008 +/- 5.16e-41]j",
+        "formula": "q_H_tau-q_out_tau",
+        "radius": "[18.798873883026823164070043415401507256 +/- 3.42e-37]"
+      },
+      "dependency_scope": {
+        "assembly_rule": "independent certified endpoint remainders are summed; no unrecorded cancellation is assumed",
+        "common_omega_center_used_for_phase": true,
+        "common_panel_index": true,
+        "serialized_cross_endpoint_affine_generator_available": false
+      },
+      "match_radius": 32,
+      "panel": 12,
+      "phase_formula": "Delta=q_H-q_out+2*I*omega"
+    },
+    {
+      "common_chart": "physical logarithmic derivative",
+      "delta": {
+        "center": "[-1.77221589757351003641128173171637e-6 +/- 8.39e-39] + [-0.0012301362597451192398834152186282154 +/- 5.73e-38]j",
+        "excludes_zero": false,
+        "modulus_lower": "0",
+        "radius": "[0.35443274612093154544716132479898453341 +/- 4.81e-39]"
+      },
+      "delta_omega": {
+        "center": "[0.13710597081060750188075125777231733082 +/- 3.17e-39] + [-0.0153995480630885125949980363202485023 +/- 6.12e-38]j",
+        "formula": "q_H_omega-q_out_omega+2*I",
+        "radius": "[29.432836711326745156587651379246398456 +/- 3.99e-38]"
+      },
+      "delta_tau": {
+        "center": "[0.0012768785277697269095291410234693785242 +/- 6.51e-41] + [0.0050218556465481922521207520937469581668 +/- 9.10e-41]j",
+        "formula": "q_H_tau-q_out_tau",
+        "radius": "[10.874583226174565857605298998906218322 +/- 3.21e-37]"
+      },
+      "dependency_scope": {
+        "assembly_rule": "independent certified endpoint remainders are summed; no unrecorded cancellation is assumed",
+        "common_omega_center_used_for_phase": true,
+        "common_panel_index": true,
+        "serialized_cross_endpoint_affine_generator_available": false
+      },
+      "match_radius": 32,
+      "panel": 13,
+      "phase_formula": "Delta=q_H-q_out+2*I*omega"
+    },
+    {
+      "common_chart": "physical logarithmic derivative",
+      "delta": {
+        "center": "[0.00051029280137749244081191157818011561 +/- 2.42e-39] + [-0.0004347735006216850092708448016765033 +/- 3.57e-38]j",
+        "excludes_zero": false,
+        "modulus_lower": "0",
+        "radius": "[0.32545483616721204272267968674937071736 +/- 4.19e-39]"
+      },
+      "delta_omega": {
+        "center": "[0.055934142032359307136757387013403786113 +/- 5.06e-40] + [0.0410414225663668676136186519443072029 +/- 5.60e-38]j",
+        "formula": "q_H_omega-q_out_omega+2*I",
+        "radius": "[22.734453324092221611318958257871042017 +/- 5.26e-38]"
+      },
+      "delta_tau": {
+        "center": "[-0.00060951064471643685046924054926620328843 +/- 9.43e-42] + [0.0025364995021893883830887972408163477666 +/- 7.08e-41]j",
+        "formula": "q_H_tau-q_out_tau",
+        "radius": "[6.1964172278885343191167988695562352109 +/- 4.07e-38]"
+      },
+      "dependency_scope": {
+        "assembly_rule": "independent certified endpoint remainders are summed; no unrecorded cancellation is assumed",
+        "common_omega_center_used_for_phase": true,
+        "common_panel_index": true,
+        "serialized_cross_endpoint_affine_generator_available": false
+      },
+      "match_radius": 32,
+      "panel": 14,
+      "phase_formula": "Delta=q_H-q_out+2*I*omega"
+    },
+    {
+      "common_chart": "physical logarithmic derivative",
+      "delta": {
+        "center": "[0.00031695848997113809479564405791052195 +/- 7.65e-39] + [-3.286737941270677365590557883479051e-5 +/- 9.17e-39]j",
+        "excludes_zero": false,
+        "modulus_lower": "0",
+        "radius": "[0.30892471458864865637496112143469513964 +/- 4.55e-39]"
+      },
+      "delta_omega": {
+        "center": "[0.012369939436142837058119070547945739236 +/- 5.57e-40] + [0.0264751886454576354501533330676465994 +/- 3.38e-38]j",
+        "formula": "q_H_omega-q_out_omega+2*I",
+        "radius": "[18.926393843634548694909999477456544534 +/- 2.07e-37]"
+      },
+      "delta_tau": {
+        "center": "[-0.00047099561816419138200035237468155102647 +/- 6.90e-42] + [0.0010318959913696215257173510737587207586 +/- 6.43e-41]j",
+        "formula": "q_H_tau-q_out_tau",
+        "radius": "[3.9063540925327594268930450982101244189 +/- 3.01e-38]"
+      },
+      "dependency_scope": {
+        "assembly_rule": "independent certified endpoint remainders are summed; no unrecorded cancellation is assumed",
+        "common_omega_center_used_for_phase": true,
+        "common_panel_index": true,
+        "serialized_cross_endpoint_affine_generator_available": false
+      },
+      "match_radius": 32,
+      "panel": 15,
+      "phase_formula": "Delta=q_H-q_out+2*I*omega"
+    }
+  ],
+  "schema": "phase3-axial-qnm-two-sided-projective-mismatch-run-v1"
+}

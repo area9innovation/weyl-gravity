@@ -1,0 +1,37 @@
+{
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_horizon_reciprocal_chart_transport_v1/reciprocal_transport.py black_hole_programme/phase3/axial_qnm_horizon_reciprocal_chart_transport_v1/produce.py black_hole_programme/phase3/axial_qnm_horizon_reciprocal_chart_transport_v1/verify.py",
+      "elapsed_seconds": 0.028042,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_horizon_reciprocal_chart_transport_v1/certificate.json black_hole_programme/phase3/axial_qnm_horizon_reciprocal_chart_transport_v1/schema.json",
+      "elapsed_seconds": 0.086221,
+      "returncode": 0,
+      "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_qnm_horizon_reciprocal_chart_transport_v1.test_reciprocal_transport",
+      "elapsed_seconds": 0.592668,
+      "returncode": 0,
+      "stderr": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.531s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_horizon_reciprocal_chart_transport_v1.verify",
+      "elapsed_seconds": 0.022203,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "PASS\n"
+    }
+  ],
+  "elapsed_seconds": 9.267148,
+  "higher_tiers_not_run": "No shared operator, theorem lifecycle, freeze or release changed.",
+  "schema": "phase3-axial-qnm-horizon-reciprocal-chart-receipt-v1",
+  "tier_0": "py_compile and JSON Schema validation",
+  "tier_1": "scoped unit tests and verifier"
+}

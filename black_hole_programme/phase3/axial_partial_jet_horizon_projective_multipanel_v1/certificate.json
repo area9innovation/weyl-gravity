@@ -1,0 +1,106 @@
+{
+  "claim_flags": {
+    "H4_pass_certified": false,
+    "K_H_computed": false,
+    "T_plus_recovered": false,
+    "bounded_global_transport_certified": false,
+    "complete_bounded_horizon_column_at_matching_radius": false,
+    "horizon_to_r4_column_certified": false,
+    "projective_multipanel_transport_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a bounded projective or affine horizon-to-r4 column",
+    "K_H or the endpoint normalizer shear",
+    "T_plus, H4, scattering, or bounded global transport"
+  ],
+  "fixed_full_pivot_attempt": {
+    "gate": "pivot_solve",
+    "operator_tail": 2.8063072926175013e-24,
+    "panel": 5,
+    "pivot_hull": {
+      "imaginary": [
+        -0.002368228549123645,
+        0.0023682196089283582
+      ],
+      "real": [
+        0.3938702815041292,
+        1.6061297155150525
+      ],
+      "squared_norm": [
+        -0.5796582775285614,
+        2.579658271566925
+      ]
+    },
+    "provenance_note": "retained parsed diagnostics from the immediately preceding materialized fixed-full-pivot run; its sequential run log was replaced by the bounded midpoint attempt",
+    "refusal_code": 6,
+    "refusal_code_name": "IVTAY_KRAWCZYK_UNCERTIFIED",
+    "scaled_local_norm": 0.08740073002218199,
+    "shell": 0,
+    "status": "REFUSED",
+    "total_panels": 5
+  },
+  "imports": {
+    "levelt_producer": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_spin_one_levelt_v1/produce.py",
+      "sha256": "580620b20aa7a526c0a5359d56227ffcee0c0384aa5853b96a40fead2dcbee4e"
+    },
+    "multipanel_producer": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_multipanel_preflight_v1/produce.py",
+      "sha256": "c9db4af5b38db7c0888c102348a2d8ecd985f271cb1e3f488ef78081de4a5179"
+    },
+    "multipanel_shortfall": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_multipanel_preflight_v1/certificate.json",
+      "sha256": "3bc5330bd226036459e674346774c37f7facd4471986fff3a87373c47533388b"
+    },
+    "partial_jet_crosswalk": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json",
+      "sha256": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a"
+    },
+    "spin_one_levelt": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_spin_one_levelt_v1/certificate.json",
+      "sha256": "b364d4df837e6c9cdc63a5878a01092b90f397eac6d60c28c97fd9e170b5959c"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "method": {
+    "amplitude": "separate correlated complex dual scalar product",
+    "direct_control": "parallel direct regular-frame column in the same chart",
+    "fixed_full_pivot": "dual-complex projectivization using the full shared-frequency pivot",
+    "midpoint_lohner": "exact Taylor-centre complex scaling with frequency dependence retained in the affine state"
+  },
+  "midpoint_lohner_attempt": {
+    "compile_exit": 0,
+    "compile_log_path": "black_hole_programme/phase3/axial_partial_jet_horizon_projective_multipanel_v1/compile.txt",
+    "compile_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "completed_panel_diagnostics_available": false,
+    "run_exit": 124,
+    "run_log_path": "black_hole_programme/phase3/axial_partial_jet_horizon_projective_multipanel_v1/run.txt",
+    "run_log_sha256": "87ca8431c977ffb2f953e4279fcf6185739c2797c93493197cf970ca7cad1261",
+    "source_path": "black_hole_programme/phase3/axial_partial_jet_horizon_projective_multipanel_v1/projective_multipanel.forge",
+    "source_sha256": "63ba60819909eb1e712b4b592678e7e46a014d5574edfd929d801e79855c0654",
+    "status": "TIMEOUT",
+    "stdout_boundary": "the bounded executable emitted no flushed panel record before termination",
+    "timeout_marker": "TIMEOUT_240_SECONDS"
+  },
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_HORIZON_PROJECTIVE_MULTIPANEL",
+  "schema": "phase3-axial-partial-jet-horizon-projective-multipanel-v1",
+  "schema_path": "black_hole_programme/phase3/axial_partial_jet_horizon_projective_multipanel_v1/schema.json",
+  "scope": {
+    "frequency_child": [
+      "1/2",
+      "4097/8192"
+    ],
+    "panels_per_shell": 64,
+    "shells": 23,
+    "start_rho": "1/4194304",
+    "target_r": "4",
+    "target_rho": "2",
+    "timeout_seconds": 240,
+    "transport_order": 12
+  },
+  "status": "CERTIFIED_PROJECTIVE_THROUGHPUT_AND_PIVOT_SHORTFALL"
+}

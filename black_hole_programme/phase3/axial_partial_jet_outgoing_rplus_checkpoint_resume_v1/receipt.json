@@ -1,0 +1,40 @@
+{
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_PARTIAL_JET_OUTGOING_RPLUS_CHECKPOINT_RESUME",
+  "status": "PASS",
+  "certificate_path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/certificate.json",
+  "certificate_sha256": "786e573bdc0a68adfa03161a3248029fec75f77c3cdbf7b36aac461326d89e2e",
+  "commands": [
+    {
+      "command": "/home/alstrup/area9/tango/forge/forge -o /tmp/axial-rplus-checkpoint-export-v1 /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/export_reference.forge",
+      "elapsed_seconds": 1.1889761480269954,
+      "status": "PASS"
+    },
+    {
+      "command": "/tmp/axial-rplus-checkpoint-export-v1",
+      "elapsed_seconds": 8.995818734983914,
+      "status": "PASS"
+    },
+    {
+      "command": "/home/alstrup/area9/tango/forge/forge -o /tmp/axial-rplus-checkpoint-roundtrip-v1 /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/roundtrip_checkpoint.forge",
+      "elapsed_seconds": 0.8693758720182814,
+      "status": "PASS"
+    },
+    {
+      "command": "/tmp/axial-rplus-checkpoint-roundtrip-v1",
+      "elapsed_seconds": 0.027213960012886673,
+      "status": "PASS"
+    },
+    {
+      "command": "/home/alstrup/area9/tango/forge/forge -o /tmp/axial-rplus-checkpoint-restart-v1 /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/restart_chunk.forge",
+      "elapsed_seconds": 1.9176403229939751,
+      "status": "PASS"
+    },
+    {
+      "command": "/tmp/axial-rplus-checkpoint-restart-v1",
+      "elapsed_seconds": 5.659839718020521,
+      "status": "PASS"
+    }
+  ],
+  "producer_elapsed_seconds": 80.94623851199867,
+  "higher_tiers_not_run": "No T2/T3: selected Rplus checkpoint/restart only; Tplus stays false."
+}

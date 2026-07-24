@@ -1,0 +1,47 @@
+{
+  "chart_switch": {
+    "certified_panel_count": 16,
+    "from": "q=P_x/P",
+    "shared_derivative_rule": "p_tau=-q_tau/q^2; p_omega=-q_omega/q^2",
+    "to": "p=1/q"
+  },
+  "claim_flags": {
+    "Evans_boundary_nonzero_certified": false,
+    "QNM_or_EP2_certified": false,
+    "all_panels_reached_r4": true,
+    "full_panel_reciprocal_denominator_certified": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a horizon-to-infinity common checkpoint",
+    "an outgoing Bach frame or T_plus",
+    "an Evans/Jost boundary nonvanishing theorem",
+    "a QNM root count, defective Smith fibre or EP2",
+    "time-domain stability or any LORENTZIAN-CAUSAL claim"
+  ],
+  "imports": {
+    "ecs_disk": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_inverse_tortoise_v1/certificate.json",
+      "sha256": "25d7e306e5b4b314aa34f1a10f6a8a0461e8d6c4dd1c2e7f91508b2e6e0d6e92"
+    },
+    "predecessor": {
+      "path": "black_hole_programme/phase3/axial_qnm_horizon_projective_preflight_v1/certificate.json",
+      "sha256": "1507a19900007e528c3379e3892e768d55a50e3e6646b046e9b6567ac7712394"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "run": {
+    "path": "black_hole_programme/phase3/axial_qnm_horizon_reciprocal_chart_transport_v1/reciprocal-run.json",
+    "sha256": "4004013911d7731ec1953c85341da65f6fbe11e1d85378e0cf0f2135656e2d8c"
+  },
+  "schema": "phase3-axial-qnm-horizon-reciprocal-chart-transport-v1",
+  "status": "RECIPROCAL_CHART_REACHES_R4",
+  "transport": {
+    "failed_panel_count": 0,
+    "reached_panel_count": 16,
+    "target_radius": 4
+  }
+}

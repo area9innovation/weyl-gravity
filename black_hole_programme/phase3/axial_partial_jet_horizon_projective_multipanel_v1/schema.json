@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "imports",
+    "scope",
+    "fixed_full_pivot_attempt",
+    "midpoint_lohner_attempt",
+    "method",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-partial-jet-horizon-projective-multipanel-v1"
+    },
+    "status": {
+      "const": "CERTIFIED_PROJECTIVE_THROUGHPUT_AND_PIVOT_SHORTFALL"
+    },
+    "dependency_tags": {
+      "contains": {"const": "REDUCED-MODE"}
+    },
+    "fixed_full_pivot_attempt": {
+      "type": "object",
+      "properties": {
+        "status": {"const": "REFUSED"},
+        "gate": {"const": "pivot_solve"},
+        "shell": {"const": 0},
+        "panel": {"const": 5},
+        "total_panels": {"const": 5},
+        "refusal_code": {"const": 6}
+      },
+      "required": [
+        "status",
+        "gate",
+        "shell",
+        "panel",
+        "total_panels",
+        "refusal_code"
+      ]
+    },
+    "midpoint_lohner_attempt": {
+      "type": "object",
+      "properties": {
+        "compile_exit": {"const": 0},
+        "run_exit": {"const": 124},
+        "status": {"const": "TIMEOUT"},
+        "timeout_marker": {"const": "TIMEOUT_240_SECONDS"},
+        "completed_panel_diagnostics_available": {"const": false}
+      },
+      "required": [
+        "compile_exit",
+        "run_exit",
+        "status",
+        "timeout_marker",
+        "completed_panel_diagnostics_available"
+      ]
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": {"const": false}
+    }
+  }
+}

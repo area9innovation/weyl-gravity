@@ -1,0 +1,51 @@
+{
+  "claim_flags": {
+    "Evans_boundary_nonzero_certified": false,
+    "QNM_or_EP2_certified": false,
+    "all_panels_reached_r8_r16_r32": true,
+    "base_horizon_projective_line_at_r32_certified": true,
+    "outgoing_match_certified": false,
+    "shared_sensitivities_remain_valid": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "agreement with the outgoing projective line at r=32",
+    "an outgoing Bach frame or T_plus",
+    "an Evans/Jost boundary nonvanishing theorem",
+    "a QNM root count, defective Smith fibre or EP2",
+    "sharp shared-sensitivity enclosures",
+    "time-domain stability or any LORENTZIAN-CAUSAL claim"
+  ],
+  "imports": {
+    "parent_certificate": {
+      "path": "black_hole_programme/phase3/axial_qnm_horizon_reciprocal_chart_transport_v1/certificate.json",
+      "sha256": "c39d4fd19a67a535ae7a0b6784454ee502d2884b9ed016d311e0843b8273f165"
+    },
+    "parent_run": {
+      "path": "black_hole_programme/phase3/axial_qnm_horizon_reciprocal_chart_transport_v1/reciprocal-run.json",
+      "sha256": "4004013911d7731ec1953c85341da65f6fbe11e1d85378e0cf0f2135656e2d8c"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "run": {
+    "path": "black_hole_programme/phase3/axial_qnm_horizon_reciprocal_checkpoint_transport_v1/checkpoint-run.json",
+    "sha256": "dd8ee4869e09b219eae99ea4e8a666fa164031611bf6de277a4f2324d482ce69"
+  },
+  "schema": "phase3-axial-qnm-horizon-reciprocal-checkpoint-transport-v1",
+  "status": "HORIZON_PROJECTIVE_LINE_REACHES_R32",
+  "transport": {
+    "checkpoint_q_recovery_gate_count": 48,
+    "checkpoint_radii": [
+      8,
+      16,
+      32
+    ],
+    "failed_panel_count": 0,
+    "initial_radius": 4,
+    "mobius_recentering_count": 0,
+    "reached_panel_count": 16
+  }
+}

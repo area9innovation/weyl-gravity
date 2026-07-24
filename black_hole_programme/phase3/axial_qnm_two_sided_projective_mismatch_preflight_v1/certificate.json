@@ -1,0 +1,52 @@
+{
+  "claim_flags": {
+    "K0_or_interval_newton_defect_certified": false,
+    "QNM_or_EP2_certified": false,
+    "argument_principle_root_count_certified": false,
+    "boundary_nonvanishing_certified": false,
+    "physical_projective_mismatch_assembled": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "boundary nonvanishing of the physical projective mismatch",
+    "an argument-principle QNM root count",
+    "a K0, interval-Newton, defective Smith or EP2 gate",
+    "a complete outgoing Bach frame or T_plus",
+    "time-domain stability or any LORENTZIAN-CAUSAL claim"
+  ],
+  "gate_summary": {
+    "K0_or_interval_newton_defect": {
+      "prerequisite": "argument_principle_root_count certified",
+      "status": "NOT_RUN"
+    },
+    "argument_principle_root_count": {
+      "prerequisite": "boundary_nonvanishing=PASS",
+      "status": "NOT_RUN"
+    },
+    "boundary_nonvanishing": {
+      "failure": "SERIALIZED_CROSS_ENDPOINT_DEPENDENCY_WIDTH_CONTAINS_ZERO",
+      "passed_panel_count": 0,
+      "status": "FAIL_CLOSED"
+    }
+  },
+  "imports": {
+    "horizon_checkpoint_run": {
+      "path": "black_hole_programme/phase3/axial_qnm_horizon_reciprocal_checkpoint_transport_v1/checkpoint-run.json",
+      "sha256": "dd8ee4869e09b219eae99ea4e8a666fa164031611bf6de277a4f2324d482ce69"
+    },
+    "outgoing_affine_run": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_affine_projective_transport_v1/affine-run.json",
+      "sha256": "016c9e919db98ec8d69af3dd42075428cd239d8252760792d979733e5d0cddc0"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "run": {
+    "path": "black_hole_programme/phase3/axial_qnm_two_sided_projective_mismatch_preflight_v1/mismatch-run.json",
+    "sha256": "428ff965dbc3709d5bc054a2368b6284c9a610cfb53e18334a70c03527845f0f"
+  },
+  "schema": "phase3-axial-qnm-two-sided-projective-mismatch-preflight-v1",
+  "status": "FAIL_CLOSED_AT_BOUNDARY_NONVANISHING"
+}

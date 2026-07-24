@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "result_id", "dependency_tags", "lifecycle", "payload", "payload_sha256", "provenance"],
+  "properties": {
+    "schema": {"const": "phase3-axial-outgoing-rplus-mixed-checkpoint-v1"},
+    "payload_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "payload": {
+      "type": "object",
+      "required": ["arithmetic", "radial_state", "omega_model", "state_layout", "base", "tangent"]
+    }
+  }
+}

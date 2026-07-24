@@ -1,0 +1,97 @@
+{
+  "schema": "phase3-axial-partial-jet-outgoing-rplus-checkpoint-resume-v1",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_PARTIAL_JET_OUTGOING_RPLUS_CHECKPOINT_RESUME",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "lifecycle": "CLASSIFIED",
+  "status": "RPLUS_CHECKPOINT_RESTART_SECOND_CHUNK_PASS",
+  "imports": {
+    "predecessor_certificate": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_multipanel_v1/certificate.json",
+      "sha256": "58e3050ba818f85be50c3ec1ed43d5d59fc34f85e9bd5b2cf4536549570d7ec4"
+    },
+    "crosswalk": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json",
+      "sha256": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a"
+    }
+  },
+  "checkpoint": {
+    "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/checkpoint.json",
+    "sha256": "732a7200bd7e45f167ddd7e4eee9df34cd794fa1d6a908c89f2ec63d1ebf4e45",
+    "schema_path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/checkpoint.schema.json",
+    "schema_sha256": "e25b1ed19f11a0ea75b6cf9b70a05109ac5bbd94e3ec7c2afe2870bae28622fa",
+    "payload_sha256": "3f4abe0aea402c96fb39d2e5ceba22bb1a33215089ca7481c8e3e7eb55398c7f",
+    "radius": "63/2",
+    "shared_omega_generator": 7315,
+    "restart_source_is_replay_free": true
+  },
+  "transport": {
+    "reference": {
+      "start_radius": "32",
+      "end_radius": "31",
+      "panels": 32,
+      "summary": {
+        "panels": "32",
+        "max_width": "3.2277387828611133",
+        "final_width": "3.2277387828611133",
+        "max_tail": "1.950214997671813e-09",
+        "status": "PASS"
+      }
+    },
+    "restart": {
+      "start_radius": "63/2",
+      "end_radius": "31",
+      "panels": 16,
+      "summary": {
+        "panels": "16",
+        "max_width": "3.2277387828611133",
+        "final_width": "3.2277387828611133",
+        "max_tail": "1.6257312812884238e-09",
+        "status": "PASS"
+      }
+    },
+    "exact_serialized_checkpoint_roundtrip": true,
+    "exact_serialized_final_state_match": true,
+    "export_source_path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/export_reference.forge",
+    "export_source_sha256": "b76fc6b03a8062fa52cabb43511c0a1233a2d3135eb7d50f6085886bdb49e77a",
+    "export_compile_log_path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/export_compile.txt",
+    "export_compile_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "export_run_log_path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/export_run.txt",
+    "export_run_log_sha256": "5116fb63734128be47e4480c76c603823d0e19e0fff99a814fb17e0d6396e777",
+    "restart_source_path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/restart_chunk.forge",
+    "restart_source_sha256": "dbdfe7418c7dd6a554438d9e2ca9626aa83fde9305860d3043473c245e40ea1b",
+    "roundtrip_source_path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/roundtrip_checkpoint.forge",
+    "roundtrip_source_sha256": "3a6c065a10fb0df3244557c86acbe2faf24e290b55e470686b23823e8fe0caff",
+    "roundtrip_compile_log_path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/roundtrip_compile.txt",
+    "roundtrip_compile_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "roundtrip_run_log_path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/roundtrip_run.txt",
+    "roundtrip_run_log_sha256": "2323d1d28c41faa24856f7b6b820e920e106da3fac2b9a993af666ccdfdb3467",
+    "restart_compile_log_path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/restart_compile.txt",
+    "restart_compile_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "restart_run_log_path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/restart_run.txt",
+    "restart_run_log_sha256": "3e102b7928d3cb4111e0947afaf090ed649c1f0e9d5ae0086b412bd0160314be"
+  },
+  "claim_flags": {
+    "mixed_checkpoint_serialized": true,
+    "checkpoint_payload_content_addressed": true,
+    "restart_does_not_replay_from_r32": true,
+    "checkpoint_roundtrip_is_bit_exact": true,
+    "restart_matches_independent_reference_exactly": true,
+    "Rplus_reaches_r31": true,
+    "Rplus_reaches_r4": false,
+    "complementary_outgoing_columns_constructed": false,
+    "K_plus_computed": false,
+    "T_plus_recovered": false,
+    "scattering_claim": false
+  },
+  "shortfall": null,
+  "does_not_establish": [
+    "transport of Rplus from r=31 to r=4",
+    "any complementary outgoing column",
+    "the endpoint K_plus shear",
+    "T_plus, reflection, scattering, or flux"
+  ],
+  "producer_elapsed_seconds": 0.0
+}
