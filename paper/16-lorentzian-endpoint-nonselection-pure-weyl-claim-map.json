@@ -1,11 +1,25 @@
 {
   "authorities": {
+    "all_ell_threshold": {
+      "path": "black_hole_programme/phase4/axial_all_ell_threshold_structure_v1/certificate.json",
+      "result_id": null,
+      "result_token": null,
+      "sha256": "4c0ef500671231ddf8501d061921c3fc37f46c70d4d08bc2f5e80f915c560c4d",
+      "status": "EXACT_ALL_ELL_THRESHOLD_NONRESONANCE_PASS"
+    },
     "axial_operator": {
       "path": "black_hole_programme/certificates/BH2A_AXIAL_OPERATOR.json",
       "result_id": "PURE_WEYL_BH2A_AXIAL_OPERATOR",
       "result_token": "BH2A_AXIAL_L2_OPERATOR_AND_BRANCH_SPLIT_CLASSIFIED",
       "sha256": "58eead1536d9c14696dd3b21592aa22523681cad7b42f8179b322c5872391c2a",
       "status": null
+    },
+    "covariant_einstein_maxwell_carrier": {
+      "path": "black_hole_programme/phase4/covariant_einstein_maxwell_carrier_v1/certificate.json",
+      "result_id": null,
+      "result_token": null,
+      "sha256": "ff86f50e88d07c0ec8fcdbca4788e60058db07f90a7a96a9be5164e033952908",
+      "status": "EXACT_SCHOUTEN_EINSTEIN_MAXWELL_CARRIER_PASS"
     },
     "endpoint_flux": {
       "path": "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
@@ -77,25 +91,65 @@
       "sha256": "8fca9295f3cafd281773b793a80a8a3adbcbb014d542e5a6fe51b1f22a11d305",
       "status": "FULL_CLOSED_PROJECTIVE_EVANS_CONTOUR_NONZERO_WITH_WINDING_ONE"
     },
+    "second_order_parent_flux": {
+      "path": "black_hole_programme/phase4/second_order_parent_flux_v1/certificate.json",
+      "result_id": null,
+      "result_token": null,
+      "sha256": "7f889865c28c31aaa7b8fca283352173f707639409cacd9f133ad98ac55e2b71",
+      "status": "EXACT_SECOND_ORDER_PARENT_FLUX_PASS"
+    },
+    "static_normalized_control": {
+      "path": "black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json",
+      "result_id": "PURE_WEYL_BH1A_NORMALIZED_GENERATOR",
+      "result_token": "BH1_NONINTEGRABILITY_REMOVED_BY_FIELD_DEPENDENT_GENERATOR",
+      "sha256": "12cd1f0746645fffa4e2d9af35b638b7eda64fb10950884a4a0b3c703043ea0b",
+      "status": null
+    },
     "threshold": {
       "path": "black_hole_programme/phase4/axial_threshold_exact_structure_v1/certificate.json",
       "result_id": null,
       "result_token": null,
       "sha256": "6b1518e989f82b7b19032060231c9c786f5ee258f3774245f42b3c367d4fbecc",
       "status": "EXACT_THRESHOLD_IDENTITIES_PASS"
+    },
+    "universal_hessian_intertwiner": {
+      "path": "black_hole_programme/phase4/axial_universal_hessian_intertwiner_v1/certificate.json",
+      "result_id": null,
+      "result_token": null,
+      "sha256": "272e55c2e24ce3f0c7be91b898279cde01b6cf6896c7f2e89b5c85a1f508d01d",
+      "status": "EXACT_UNIVERSAL_HESSIAN_AND_NO_RATIONAL_INTERTWINER_PASS"
+    },
+    "weyl_euler_current_transgression": {
+      "path": "black_hole_programme/phase4/weyl_euler_current_transgression_v1/certificate.json",
+      "result_id": null,
+      "result_token": null,
+      "sha256": "6b45228e6f458aaa896bdf60fbb434a4adb93de8e24f224b323c054c0ed4a7ea",
+      "status": "EXACT_WEYL_EULER_CURRENT_TRANSGRESSION_PASS"
     }
   },
   "certified_scope": {
     "Tminus_invertible_all_positive_real": true,
+    "all_ell_spin_one_spin_two_threshold_nonresonance": true,
     "axial_l2_factor_filtration": true,
     "band_limited_pseudo_isometry": true,
+    "canonical_source_target_null_lift": true,
+    "einstein_subspace_isotropic_but_nonradical": true,
+    "einstein_wave_packet_total_isotropy": true,
     "exact_scalar_threshold_nonresonance": true,
     "generic_outgoing_population_off_discrete_set": true,
     "incoming_gram_inertia_1_2_0_all_positive_real": true,
+    "no_generic_rational_branch_resolving_C": true,
     "no_growing_separated_axial_mode": true,
+    "no_rational_spin_one_spin_two_intertwiner_positive_real": true,
+    "nondegenerate_einstein_containing_restriction_indefinite": true,
     "one_connection_level_smith_0_0_2": true,
     "outgoing_population_on_declared_cell": true,
-    "polar_local_horizon_nonselection": true
+    "polar_local_horizon_nonselection": true,
+    "qnm_divisor_count_2N2_plus_N1": true,
+    "schouten_einstein_carrier_factorization": true,
+    "second_order_parent_action_and_factorized_current": true,
+    "target_gauge_maxwell_equation_and_wrong_sign_action": true,
+    "universal_ricci_flat_bulk_hessian_factorization": true
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -103,20 +157,28 @@
     "LORENTZIAN-CAUSAL"
   ],
   "fail_closed_scope": {
+    "absence_of_nonlocal_spin_intertwiners": false,
     "all_positive_real_Tplus_invertibility": false,
+    "complete_polar_parent_gram": false,
     "explicit_Tplus_band": false,
     "generalized_ringdown": false,
+    "generic_radial_nonsplitting_is_time_jordan": false,
     "green_resolvent_second_order_pole": false,
+    "literal_endpoint_current_free_of_euler_corner_terms": false,
+    "mannheim_dynamical_C_constructed_or_excluded": false,
+    "mixed_einstein_additional_pairing_euler_exact": false,
+    "monochromatic_einstein_current_pointwise_zero": false,
     "physical_fredholm_realization": false,
     "polar_global_connection": false,
     "punctured_threshold_Tplus_interval": false,
     "quantum_positivity_or_unitarity": false,
-    "time_domain_stability": false
+    "time_domain_stability": false,
+    "unconditional_endpoint_packet_limit_interchange": false
   },
   "lifecycle_state": "DRAFT_ALLOWED",
   "manuscript": "paper/16-lorentzian-endpoint-nonselection-pure-weyl.tex",
   "paper_id": "PAPER_16_LORENTZIAN_ENDPOINT_NONSELECTION",
-  "paper_sha256": "01460dffaaa2b16b18b5a05d9ebbc8ed0455fbed59f38d83f03512bcf805cc93",
+  "paper_sha256": "fe0fdf99353e36facfa43b7cb4fac9253cdd12e924ebc54b28aad855360c9cec",
   "result_id": "PAPER16_FOCUSED_ENDPOINT_NONSELECTION_WITH_CONNECTION_EP2",
   "schema": "paper-draft-source-map-v1",
   "split": {

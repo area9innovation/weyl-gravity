@@ -10,20 +10,29 @@ explicit destinations:
 - Paper 18: static Bach-flat thermodynamics;
 - Paper 16 computational supplement: certificate and transport details.
 
-Paper 16 now leads with the populated indefinite incoming theorem and
-contains five front-door results:
+Paper 16 now leads with the universal Ricci-factorized Hessian and contains
+seven front-door results:
 
-1. exact RW/RW/spin-one filtration and partial jet;
-2. action-derived Krein anatomy and all-positive-real incoming population;
-3. certified outgoing cell, generic outgoing completeness, and band-limited
-   pseudo-isometry;
-4. no growing separated axial mode;
-5. one certified complete-connection Smith type \((0,0,2)\).
+1. universal bulk Ricci factorization, null Einstein kernel, and the
+   nondegenerate-semidefinite obstruction;
+2. the Schouten-Einstein/Maxwell carrier and wrong-sign Maxwell target-gauge
+   sector;
+3. the exact second-order auxiliary-tensor parent action, factorized
+   Einstein Green current, and canonical source/target null lift;
+4. exact RW/RW/spin-one filtration, partial jet, no rational spin-changing
+   intertwiner, and no rational branch-resolving \(C\);
+5. action-derived Krein anatomy and all-positive-real incoming population;
+6. certified outgoing cell, generic outgoing completeness, band-limited
+   pseudo-isometry, and no growing separated axial mode;
+7. one certified complete-connection Smith type \((0,0,2)\), together with
+   the exact cluster count \(N_B=2N_2+N_1\).
 
-The manuscript additionally includes the exact no-local-\(C\) obstruction,
-exact scalar threshold nonresonance, the reduced cocycle threshold identity,
-typed endpoint frames, explicit endpoint Grams, Krein defect identities, and
-the projective Evans proof architecture.
+The static Schwarzschild charge/entropy calculation appears only as a short
+null-sector consistency corollary; the general static classification remains
+in Paper 18.  The manuscript additionally includes exact scalar threshold
+nonresonance, the reduced cocycle threshold identity, typed endpoint frames,
+explicit endpoint Grams, Krein defect identities, and the projective Evans
+proof architecture.
 
 ## Split discipline
 
@@ -33,19 +42,24 @@ main theorem chain. Paper 14 remains the provenance-rich source archive.
 
 ## Current size and gate
 
-The main PDF is 18 pages. It is intentionally not padded to the 25–35 page
-target. The explicit \(T_+\) band remains the correct final scientific
-addition; its first Phase-4 correlated successor passed but the common
-outgoing frame is still at \(r=487/16\), not the \(r=4\) matching section.
-The paper therefore remains an active draft rather than a submission freeze.
+The main PDF is 26 pages and now lies inside the agreed 25–35 page target.
+The added length is theorem content rather than engineering chronology.  The
+explicit \(T_+\) band remains the correct final scientific addition; its
+first Phase-4 correlated successor passed but the common outgoing frame is
+still at \(r=487/16\), not the \(r=4\) matching section.  The paper therefore
+remains an active draft rather than a submission freeze.
 
 ## Verification
 
-The main and three companion/supplement sources compile. The generated claim
-map pins twelve source certificates, including the new exact threshold
-authority. An independent verifier checks the incoming, outgoing,
-no-growth, threshold, and EP2 flags. Five tests reject Green-resolvent,
-all-frequency outgoing, time-domain, and claim-map promotions.
+The main paper compiles twice and the computational supplement compiles.  The
+generated claim map pins eighteen source certificates, including the exact
+all-\(\ell\) threshold, universal Hessian/intertwiner,
+Schouten-Einstein/Maxwell carrier, Euler transgression, second-order parent
+flux, and static-control authorities.  An independent verifier checks the
+universal, parent, incoming, outgoing, no-growth, threshold, and EP2 flags.
+Eleven tests reject Green-resolvent, all-frequency outgoing, generic
+radial-to-time-Jordan, complete-polar-parent-Gram, time-domain,
+nonlocal-intertwiner, Euler-boundary, and claim-map promotions.
 
 Tier 3 is not run because the explicit \(T_+\) experiment and journal-length
 freeze are still open.

@@ -22,9 +22,11 @@ of Pure Weyl Gravity''}
 This supplement is the destination for verification details removed from the
 main narrative: recurrence bounds, interval cells, projective chart changes,
 contour panels, mutation tests, content hashes, and exact commands.  The
-authoritative objects remain the machine-readable certificates and receipts
-in the repository.  A timeout, skipped rail, or reproduced producer output
-is never recorded as an independent verification pass.
+theorem statements and proofs in the main paper are the mathematical
+authority.  The machine-readable certificates provide pinned reproducibility
+records, exact witnesses, validation margins, and independent implementation
+checks.  A timeout, skipped rail, or reproduced producer output is never
+recorded as an independent verification pass.
 
 \section{Evidence taxonomy}
 
@@ -45,17 +47,80 @@ Open computation & last valid checkpoint, failure mode, and
 \end{tabularx}
 \end{center}
 
+\subsection{Levels of independence}
+
+``Independent'' is recorded at one of four levels:
+\begin{center}
+\begin{tabularx}{0.96\textwidth}{@{}c Y@{}}
+\toprule
+Level & Meaning\\
+\midrule
+I & Separate executable using independently written formulas\\
+II & Different elimination, variable choice, or mathematical representation\\
+III & Different exact-arithmetic, interval, or CAS backend\\
+IV & Independently derived mathematical formulation\\
+\bottomrule
+\end{tabularx}
+\end{center}
+Rerunning a producer is reproduction, not verification.  The universal
+Hessian/intertwiner, Schouten--Einstein/Maxwell carrier, and Euler
+transgression chains have Level~II/IV checks.  The projective Evans selector
+has a different projective representation and local-unit rail (Level~II).
+The outgoing partial-jet checkpoint presently has a separately expanded
+direct boundary system (Level~II) but not a second arithmetic backend.
+
+Every publication record pins
+\[
+(\text{repository commit},\ \text{certificate SHA-256},\
+\text{producer SHA-256},\ \text{verifier SHA-256})
+\]
+together with dependency versions, arithmetic or interval backend,
+platform metadata where relevant, the canonical command, expected exit
+status, and deterministic generator definition.
+
 \section{Principal certificate chains}
 
 The final supplement will tabulate the independent chains for:
 \begin{enumerate}
+\item the established conformal detour context, the universal
+Ricci-factorized Hessian, the Schouten--Einstein/Maxwell carrier, and its
+Euler-current boundary;
+\item the second-order auxiliary-tensor parent action, its factorized
+Einstein Green current, canonical null lift, and QNM divisor count;
 \item axial operator extraction and Ricci reconstruction;
-\item RW/RW/spin-one factorization and partial-jet identities;
+\item RW/RW/spin-one factorization, partial-jet identities, and the exact
+no-rational-intertwiner test;
 \item incoming and horizon Lee--Wald Grams;
 \item global incoming population and the common scattering cell;
 \item boundary d\'evissage and the no-growing-mode theorem;
 \item projective Evans winding, local selector, and spin-one local-unit test.
 \end{enumerate}
+
+The primary local-structure reproducibility record is
+\path{black_hole_programme/phase4/
+axial_universal_hessian_intertwiner_v1/certificate.json}.
+Its independent verifier re-derives the curvature-invariant coefficients,
+the \(2\times2\) positivity determinant, the fourth-order intertwiner
+compatibility equation in both spin directions, the indicial factors, and
+the terminal \(A+B/r\) substitution.  Five mutation tests fail closed on
+the Hessian trace coefficient, horizon exponents, terminal residual, and a
+forbidden nonlocal promotion.
+
+The parent-current reproducibility record is
+\path{black_hole_programme/phase4/
+second_order_parent_flux_v1/certificate.json}.  Its Level~II verifier
+independently repeats the four-dimensional trace elimination and null-lift
+algebra, checks the imported Euler and physical connection-EP2 boundaries,
+and fails closed on generic radial-to-time-Jordan promotion,
+Green-resolvent promotion, all-frequency reflection-zero exclusion, and a
+complete polar Gram.  The principal future current audit is
+\[
+G_{\rm raw\ Weyl}-G_{\rm parent}=G_{\rm Euler\ cut}
+\]
+at the horizon, a finite matching section, and null infinity.  Until those
+endpoint comparisons are separately certified, the universal parent
+identity does not substitute for the existing raw-Weyl endpoint
+certificates.
 
 \section{New-experiment rail}
 
@@ -81,8 +146,35 @@ validated exponential tail is
 \]
 the joint hull width is \(5.12490045532877\), the partial-jet and independent
 direct sixteen-state Taylor coefficients agree exactly, and their interval
-difference contains zero.  Generator \(7315\) is preserved.  This is a
-transport checkpoint only: the common frame has not reached \(r=4\), so no
-\(T_+\), reflection, or Stokes claim follows.
+difference contains zero.  These statements have different force: the
+independently generated symbolic Taylor recurrences agree coefficientwise
+through the declared order, whereas the separately enclosed numerical
+transports merely overlap on the panel.  The overlap is a consistency check,
+not a proof of equality.
+
+The physical partial-jet equation has six complex components per selected
+column: two upper spin-two tangent components, two base spin-two components,
+and two spin-one components.  The direct boundary gate deliberately embeds
+this into the unreduced derivative system.  For the two selected outgoing
+columns it transports an \(8\times2\) array,
+\[
+16
+=
+8\ \hbox{base entries}
++8\ \hbox{full tangent entries},
+\]
+including the spin-one tangent rows that the exact partial jet proves to be
+zero.  ``Six-state'' therefore names the reduced physical system per column;
+``sixteen-state'' names the two-column unreduced computational audit.
+
+Generator \(7315\) is the deterministic affine-noise identifier for the
+single shared frequency generator; preserving it verifies that the base and
+tangent rails retain the same frequency dependency rather than receiving
+independent interval noise.  The hull width \(5.12490045532877\) is below
+the programmed fail-closed checkpoint threshold \(10\).  It is useful only
+as evidence that this short correlated successor remains bounded and
+restartable; it is too coarse to certify physical amplitudes or conditioning.
+This is a transport checkpoint only: the common frame has not reached
+\(r=4\), so no \(T_+\), reflection, or Stokes claim follows.
 
 \end{document}

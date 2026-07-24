@@ -1,43 +1,50 @@
 {
   "schema": "paper16-endpoint-nonselection-tier-receipt-v1",
   "status": "ACTIVE_CHECKPOINT",
-  "source_commit": "7d5a02a0c7fae42c3d4424329b2955476c91d256",
+  "source_commit": "909a06f4fff32a1bd718ec3010abd4e0feb2f7db",
   "artifacts": {
     "paper_tex": {
       "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl.tex",
-      "sha256": "01460dffaaa2b16b18b5a05d9ebbc8ed0455fbed59f38d83f03512bcf805cc93"
+      "sha256": "fe0fdf99353e36facfa43b7cb4fac9253cdd12e924ebc54b28aad855360c9cec"
     },
     "paper_pdf": {
       "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl.pdf",
-      "sha256": "5610db6c86cb9a8202fedd73d4bf73b628a89a8f1a708dd327e1c26b923c5620",
-      "pages": 18
+      "sha256": "e28c612503988912480cd49445509c7d6b9294f12190fc21c73a7b92f005d0c2",
+      "pages": 26
     },
     "claim_map": {
       "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl-claim-map.json",
-      "sha256": "4d2ebf23ad0f2f9e9df23258cd68439c2cacfcdb53d366c7d8ebb9abe54f3ef0"
+      "sha256": "aaada63159ddce2c3452ade5dacb6989b28c906fbb5b2f56451427660ce0a18d"
     },
     "coverage": {
       "path": "planning/paper-coverage/phase4-paper16-endpoint-nonselection-overlay-2026-07-24.json",
-      "sha256": "9ba25584f024a27b5dbbadd49098ba4e3663870b72330d342bd91ddb54584b63"
+      "sha256": "2bf520430a8ae01f9add94d5067e856c3e72fabffa9a8a3f5be26f13ff2a25d6"
+    },
+    "computational_supplement": {
+      "path": "paper/16-endpoint-nonselection-computational-supplement.tex",
+      "sha256": "0e90cb3cd0484280ed1dbbdfcf63d2c85a9baa2a049c40b43146a5d3c1550a9c"
     }
   },
   "tests": {
     "tier0": [
-      "all four TeX sources compile twice with pdflatex -halt-on-error",
+      "Paper 16 compiles twice and its computational supplement compiles with pdflatex -halt-on-error",
       "Python claim-map sources compile",
       "scoped git diff --check"
     ],
     "tier1": [
       "claim-map generator --check passes",
       "independent semantic verifier passes",
-      "five claim-boundary and mutation tests pass",
-      "exact threshold verifier and four tests pass"
+      "eleven claim-boundary and mutation tests pass",
+      "exact all-ell threshold verifier and six tests pass",
+      "universal Hessian/intertwiner verifier and five tests pass",
+      "Schouten-Einstein/Maxwell carrier verifier and tests pass",
+      "Euler transgression verifier and seven tests pass",
+      "second-order parent-flux verifier and seven tests pass"
     ],
     "tier2": "not triggered: no pre-existing operator or certificate was modified",
     "tier3": "not run: manuscript remains an active checkpoint pending explicit Tplus"
   },
   "open_gates": [
-    "the agreed 25-35 page freeze target is not yet met",
     "the explicit typed Tplus band has not reached the r=4 matching section",
     "the Fredholm promotion of the connection EP2 remains open"
   ],

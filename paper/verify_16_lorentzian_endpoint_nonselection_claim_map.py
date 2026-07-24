@@ -65,7 +65,19 @@ def main() -> None:
         "A second-order physical",
         "Green-resolvent pole remains conditional",
         "No branch-resolving rational involution",
-        "Exact scalar threshold nonresonance",
+        "Ricci-factorized pure-Weyl Hessian",
+        "Einstein-line positivity obstruction",
+        "No rational spin-one/spin-two intertwiner",
+        "Schouten--Einstein carrier factorization",
+        "Second-order parent system and factorized current",
+        "N_B(\\Gamma)=2N_2(\\Gamma)+N_1(\\Gamma)",
+        "not, by itself, a Jordan block of the time-translation generator",
+        "Euler cut current and Einstein wave-packet isotropy",
+        "totally isotropic",
+        "isotropic but nonradical",
+        "We therefore do not claim",
+        "conformal deformation detour",
+        "Exact all-\\(\\ell\\) scalar threshold nonresonance",
         "A two-region Volterra remainder",
     ]
     for phrase in required_phrases:
@@ -78,6 +90,12 @@ def main() -> None:
         "time-domain stability is established",
         "the theory is quantum unitary",
         "Every simple spin-two Regge--Wheeler quasinormal frequency",
+        "No nonlocal spin-one/spin-two intertwiner exists",
+        "the Euler term has no endpoint contribution",
+        "the literal monochromatic current vanishes pointwise",
+        "the polar associated graded is globally certified",
+        "generic radial nonsplitting is a time-Jordan block",
+        "the complete polar parent Gram is certified",
     ]
     for phrase in forbidden_phrases:
         if phrase in text:
@@ -130,6 +148,114 @@ def main() -> None:
         not in threshold.get("does_not_establish", [])
     ):
         fail("threshold scattering promotion gate missing")
+    all_ell_threshold = json.loads(
+        (ROOT / authorities["all_ell_threshold"]["path"]).read_text()
+    )
+    if (
+        all_ell_threshold.get("status")
+        != "EXACT_ALL_ELL_THRESHOLD_NONRESONANCE_PASS"
+    ):
+        fail("all-ell threshold certificate status drift")
+    require_flag(
+        all_ell_threshold,
+        "all_ell_exact_static_solution",
+        True,
+        "all-ell threshold",
+    )
+    require_flag(
+        all_ell_threshold,
+        "all_ell_no_zero_energy_resonance",
+        True,
+        "all-ell threshold",
+    )
+    require_flag(
+        all_ell_threshold,
+        "uniform_low_frequency_jost_asymptotics",
+        False,
+        "all-ell threshold",
+    )
+    universal = json.loads(
+        (ROOT / authorities["universal_hessian_intertwiner"]["path"]).read_text()
+    )
+    require_flag(
+        universal,
+        "universal_ricci_flat_bulk_hessian_factorization",
+        True,
+        "universal structure",
+    )
+    require_flag(
+        universal,
+        "nondegenerate_einstein_containing_restriction_indefinite",
+        True,
+        "universal structure",
+    )
+    require_flag(
+        universal,
+        "no_rational_spin_intertwiner_positive_real",
+        True,
+        "universal structure",
+    )
+    require_flag(
+        universal,
+        "nonlocal_intertwiner_excluded",
+        False,
+        "universal structure",
+    )
+    carrier = json.loads(
+        (
+            ROOT
+            / authorities["covariant_einstein_maxwell_carrier"]["path"]
+        ).read_text()
+    )
+    for key in [
+        "schouten_einstein_factorization",
+        "target_gauge_maxwell_equation",
+        "wrong_sign_maxwell_bulk_action_mod_boundary",
+    ]:
+        require_flag(carrier, key, True, "covariant carrier")
+    require_flag(carrier, "all_ell_lift_certified", False, "covariant carrier")
+
+    euler = json.loads(
+        (ROOT / authorities["weyl_euler_current_transgression"]["path"]).read_text()
+    )
+    for key in [
+        "general_euler_transgression_explicit",
+        "axial_cut_identity_exact",
+        "einstein_wave_packet_total_isotropy",
+    ]:
+        require_flag(euler, key, True, "Euler transgression")
+    for key in [
+        "monochromatic_current_pointwise_zero",
+        "unconditional_endpoint_limit_interchange",
+        "mixed_einstein_additional_pairing_euler_exact",
+    ]:
+        require_flag(euler, key, False, "Euler transgression")
+    parent = json.loads(
+        (ROOT / authorities["second_order_parent_flux"]["path"]).read_text()
+    )
+    for key in [
+        "parent_action_equivalent_mod_euler",
+        "parent_euler_lagrange_system",
+        "factorized_current_mod_euler",
+        "canonical_null_lift",
+        "qnm_count_identity",
+        "one_physical_connection_ep2",
+    ]:
+        require_flag(parent, key, True, "second-order parent")
+    for key in [
+        "generic_radial_nonsplitting_implies_time_jordan",
+        "physical_green_resolvent_double_pole",
+        "all_positive_frequency_reflection_zero_exclusion",
+        "complete_polar_parent_gram",
+    ]:
+        require_flag(parent, key, False, "second-order parent")
+    static = json.loads(
+        (ROOT / authorities["static_normalized_control"]["path"]).read_text()
+    )
+    if static.get("wald_entropy", {}).get("schwarzschild_value") != (
+        "64*pi**2*alpha, mass-independent, consistent with H = 0 on that ensemble"
+    ):
+        fail("static Schwarzschild null-control drift")
 
     fail_closed = claims.get("fail_closed_scope", {})
     if any(value is not False for value in fail_closed.values()):
@@ -138,7 +264,7 @@ def main() -> None:
     coverage = json.loads(coverage_path.read_text())
     if coverage.get("claim_map_sha256") != digest(claim_path):
         fail("coverage-to-claim-map hash drift")
-    if len(coverage.get("nodes", [])) != 5:
+    if len(coverage.get("nodes", [])) != 11:
         fail("coverage claim count drift")
     print("PASS: Paper 16 claim map and semantic boundaries")
 

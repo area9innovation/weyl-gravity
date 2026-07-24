@@ -76,6 +76,34 @@ class Paper16ClaimMapTests(unittest.TestCase):
     def test_time_domain_promotion_rejected(self) -> None:
         self.assert_promotion_rejected("time-domain stability is established")
 
+    def test_nonlocal_intertwiner_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "No nonlocal spin-one/spin-two intertwiner exists"
+        )
+
+    def test_euler_boundary_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected("the Euler term has no endpoint contribution")
+
+    def test_pointwise_einstein_current_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the literal monochromatic current vanishes pointwise"
+        )
+
+    def test_polar_global_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the polar associated graded is globally certified"
+        )
+
+    def test_generic_radial_time_jordan_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "generic radial nonsplitting is a time-Jordan block"
+        )
+
+    def test_complete_polar_parent_gram_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the complete polar parent Gram is certified"
+        )
+
     def test_claim_flag_promotion_rejected(self) -> None:
         claims = json.loads(CLAIM_MAP.read_text())
         claims["fail_closed_scope"]["green_resolvent_second_order_pole"] = True
