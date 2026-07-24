@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "imports",
+    "tier_A_transport_free_determinant",
+    "tier_B_abstract_pseudo_isometry",
+    "missing_object_ledger",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-transport-free-outgoing-defect-preflight-v1"
+    },
+    "status": {
+      "const": "ABSTRACT_RAW_PSEUDO_ISOMETRY_ACTIVE_DET_O_INPUT_OPEN"
+    },
+    "lifecycle": {"const": "CLASSIFIED"}
+  },
+  "additionalProperties": true
+}

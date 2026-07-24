@@ -1,0 +1,35 @@
+{
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v4/runner.py black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v4/verify.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v4/certificate.json black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v4/schema.json",
+      "returncode": 0,
+      "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_adaptive_dyadic_boundary_chunk_v4.verify",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "adaptive dyadic v4 verifier: PASS (coverage 103/512; next 103/512)\n"
+    }
+  ],
+  "elapsed_seconds": 31.349505726015195,
+  "higher_tiers_not_run": "No full contour, freeze or release.",
+  "input_sha256": {
+    "predecessor_aggregate": "c9a9811872d705160b52f844ab8872e639cf6101ef55e99fa9735552b4ea878d",
+    "predecessor_certificate": "ce3a5f35c5f2397f214585db240194388ea55eee3ac5ebaeaa32b42a1fd0f077"
+  },
+  "output_sha256": {
+    "aggregate": "b6e7756bde634907bd5521e099214cabe93b6d23a2c1a6e154f0224edf0a70fe",
+    "certificate": "a92aad7dca5b8e405d4cba3b31870b9acf76a5adaaa2ac8e6694949b90446691",
+    "raw": "26a14f6fadb6ee5085fa35f178987269fe801b3621b792296b78007ad553e45a",
+    "report": "62e56f0bf3cd3bd6276da153b8e688e4fa60fb8d6a1fee1a07e96363619b5cee"
+  },
+  "schema": "phase3-axial-qnm-adaptive-dyadic-boundary-receipt-v4"
+}

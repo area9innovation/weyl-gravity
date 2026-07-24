@@ -1,0 +1,61 @@
+{
+  "artifacts": {
+    "README.md": "a965a6ce2bee5a05a04997a14b9ecea28ae95673f26ee7ed48f7130ae129addc",
+    "__init__.py": "7845b3de7cfdecf4e92785bbacc390877e248598f4a883fa45627056a967eb7d",
+    "audit.py": "df1623a11fd1a2914a610992aa61cac1809db8d1c1aeba946caac5bc73dc223e",
+    "certificate.json": "833e0bdb3e1e443a5a351050b9b47fb4555a9b069db73b46e228f96245fa0aa9",
+    "produce.py": "dd04924becf5702473ce2eac310e628b4eb244a1cf032987765fc2f8b97ffdc3",
+    "report.md": "0971fe31f0d91b29379b498c91f26cf71b8850017fb95ad746d0c9b22c32d5c3",
+    "schema.json": "de23fe3ba3e2634222753d7c03c8ae9aab2e542c3f01e4f3549742f135fd7b2c",
+    "test_preflight.py": "db35979534894e56112d3002ec2b99e151d1ecf0cc8f03e883e7ad78184d5eb7",
+    "verify.py": "88f84a9fdff9f74affbde7900ca515c872e1ff9795a9c3df6e8f0199ca357a62"
+  },
+  "certificate": "black_hole_programme/phase3/axial_transport_free_outgoing_defect_preflight_v1/certificate.json",
+  "certificate_sha256": "833e0bdb3e1e443a5a351050b9b47fb4555a9b069db73b46e228f96245fa0aa9",
+  "claim_boundary": "The abstract raw one-sided pseudo-isometry is activated from exact trace/current inputs. The transport-free det(O) and outgoing rank remain open pending a full typed Tminus matrix.",
+  "commands": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_transport_free_outgoing_defect_preflight_v1.produce --check",
+      "elapsed_seconds": 1.6736124249873683,
+      "exit_code": 0,
+      "output_tail": "ABSTRACT_RAW_PSEUDO_ISOMETRY_ACTIVE_DET_O_INPUT_OPEN\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_transport_free_outgoing_defect_preflight_v1.verify",
+      "elapsed_seconds": 1.6375238880282268,
+      "exit_code": 0,
+      "output_tail": "PASS transport-free outgoing-defect preflight\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_transport_free_outgoing_defect_preflight_v1.test_preflight",
+      "elapsed_seconds": 1.9185756440274417,
+      "exit_code": 0,
+      "output_tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.381s\n\nOK\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m py_compile /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_transport_free_outgoing_defect_preflight_v1/produce.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_transport_free_outgoing_defect_preflight_v1/verify.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_transport_free_outgoing_defect_preflight_v1/test_preflight.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_transport_free_outgoing_defect_preflight_v1/audit.py",
+      "elapsed_seconds": 0.12750209000660107,
+      "exit_code": 0,
+      "output_tail": "",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check -- black_hole_programme/phase3/axial_transport_free_outgoing_defect_preflight_v1",
+      "elapsed_seconds": 0.014715633995365351,
+      "exit_code": 0,
+      "output_tail": "",
+      "status": "PASS"
+    }
+  ],
+  "schema": "phase3-axial-transport-free-outgoing-defect-receipt-v1",
+  "status": "PASS",
+  "test_tiers": {
+    "tier_0_edit_checks": "PASS",
+    "tier_1_scoped_tests": "PASS",
+    "tier_2_affected_chain": "NOT_RUN: imported certificates are content-hashed and the new result is a read-only exact assembly",
+    "tier_3_full_suite": "NOT_RUN: no determinant, Tplus rank, paper, release, freeze, time-domain or quantum promotion"
+  }
+}

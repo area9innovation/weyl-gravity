@@ -1656,9 +1656,35 @@ The oriented Stokes identity is therefore
 The horizon theorem independently reproduces the hyperbolic-spin-two plus
 negative-spin-one anatomy of the incoming endpoint.  Its indefiniteness
 also means that a semidefinite shortcut cannot determine
-\(\operatorname{rank}T_+\); the outgoing connection remains necessary.
+\(\operatorname{rank}T_+\).
 
-There is nevertheless an exact conditional Krein theorem.  Normalize the
+\begin{theorem}[Transport-free one-sided pseudo-isometry]
+\label{thm:axial-transport-free-pseudo-isometry}
+On the pilot band the selected future-regular horizon family defines exact
+global ODE solutions.  Unique expansion in the certified six-column
+infinity basis defines the typed maps \(T_-\) and \(T_+\), without requiring
+their entries to be assembled at a common finite radius.  Exact radial
+current conservation, the null trace-limit interchange, wrong-endpoint
+suppression, and the outward horizon orientation give
+\[
+ H_{\mathcal H^+}
+ +T_+^\dagger G_+T_+
+ -T_-^\dagger G_-T_-=0
+\]
+on the complete future-regular three-space.  Since \(T_-\) is invertible,
+\[
+ R=T_+T_-^{-1},\qquad A=T_-^{-1},\qquad
+ \mathsf S=\binom RA
+\]
+satisfy
+\[
+ \mathsf S^\dagger
+ (G_+\oplus H_{\mathcal H^+})\mathsf S=G_-.
+\]
+In particular, \(\mathsf S\) is injective because \(A\) is invertible.
+\end{theorem}
+
+Normalize the
 incoming, outgoing, and horizon forms either to
 \[
  J_\sigma=\operatorname{diag}(1,-1,-1)
@@ -1667,8 +1693,9 @@ incoming, outgoing, and horizon forms either to
 \]
 The signature frame \(J_\sigma\) carries the invariant sign
 decomposition; the null frame \(J_0\) carries factor triangularity.  They
-must not be conflated.  If a typed, same-frame \(T_+\) and the global Stokes
-defect are supplied, then with normalized maps
+must not be conflated.  Sylvester congruences to either common form exist,
+although their explicit matrices have not been computed.  In such
+normalized frames, with
 \[
  R=\widehat T_+\widehat T_-^{-1},\qquad
  A=\widehat T_-^{-1},\qquad
@@ -1688,7 +1715,7 @@ The determinant is normalization-sensitive:
 \]
 Using the raw \(T_-\) without the endpoint normalizer ratio is incorrect.
 Equivalently, with the Krein adjoint \(M^\sharp=J^{-1}M^\dagger J\),
-the conditional identity is
+the identity is
 \[
  R^\sharp R+A^\sharp A=I.
 \]
@@ -1697,11 +1724,41 @@ Because \(A\) is invertible, \(I-R^\sharp R\) is invertible and hence
 waves of zero scalar flux: a nondegenerate indefinite horizon form still
 has a null cone.
 
-This conditional theorem is not yet a physical scattering result.  The
-repository does not certify the typed full \(3\times3\) \(T_+\), its
-same-frame normalization, or the orientation-correct global Stokes defect.
-It likewise does not certify a three-parameter
-\((\alpha,\gamma,\mu)\) reduction of the null-frame extension entries.
+\begin{proposition}[Transport-free outgoing pullback test]
+\label{prop:axial-outgoing-pullback}
+In the raw horizon basis define
+\[
+ {\cal O}:=T_-^\dagger G_-T_- -H_{\mathcal H^+}.
+\]
+Then
+\[
+ {\cal O}=T_+^\dagger G_+T_+,\qquad
+ \det{\cal O}=\det(G_+)|\det T_+|^2.
+\]
+Since \(G_+\) is nondegenerate,
+\[
+ T_+\in GL(3,\mathbb C)
+ \quad\Longleftrightarrow\quad
+ \det{\cal O}\ne0.
+\]
+The zero/nonzero decision is invariant under every typed horizon and
+incoming basis change.
+\end{proposition}
+
+This reduces full outgoing population to one Hermitian determinant, but
+does not yet decide it.  The certified incoming result supplies
+\(\det T_-\), existence, and invertibility, not a full typed \(3\times3\)
+matrix in the horizon-to-\(\mathscr I^-\) raw bases.  Consequently the
+repository cannot yet form a certified enclosure of \({\cal O}\).
+An older point calculation at \(\omega=1/2\), after the exact incoming
+amplitude crosswalk, gives \(\det{\cal O}\simeq2.38117\), inertia
+\((1,2,0)\), and minimum absolute eigenvalue \(0.0298\); it is explicitly
+classified as unvalidated numerical evidence and proves no nonvanishing.
+An explicit \(T_+\) remains useful for amplitudes and an independent
+end-to-end audit, but is no longer a prerequisite for the abstract
+pseudo-isometry or the outgoing-rank test.  A three-parameter
+\((\alpha,\gamma,\mu)\) reduction of the null-frame extension entries also
+remains open.
 
 For comparison, the Einstein problem admits a global finite-energy
 Schwarzschild scattering theory relating initial data and radiation spaces
@@ -2159,6 +2216,9 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v2/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v3/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v4/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v5/certificate.json};
+\cert{black_hole_programme/phase3/axial_transport_free_outgoing_defect_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json}\\
 Polar restriction-stable module and invariant current filtration &
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json}\\
@@ -2691,7 +2751,12 @@ dyadic children all exclude zero.  A third bounded continuation repairs
 parents \(101/512\) and \(102/512\) with the four children
 \(202/1024,\ldots,205/1024\), extending the exact contiguous boundary
 coverage through \(103/512\).  Parent \(103/512\) is the next
-unmaterialized panel.
+gap.  Its coarse enclosure has now been evaluated and content-addressed,
+but it fails; the bounded invocation ended before the two required children
+\(206/1024\) and \(207/1024\) could be launched.  A child-only successor
+then certifies those two intervals with modulus lower bounds
+\(2.44667\times10^{-5}\) and \(2.43794\times10^{-5}\).  Exact coverage
+therefore reaches \(104/512=13/64\), with \(104/512\) the next gap.
 The remaining boundary, interval-Newton, argument-principle, and Smith/EP2
 gates are not run.
 Uniform time-domain boundedness, decay, and completeness remain open.

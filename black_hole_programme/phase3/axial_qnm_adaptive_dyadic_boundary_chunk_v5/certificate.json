@@ -1,0 +1,70 @@
+{
+  "claim_flags": {
+    "QNM_location_certified": false,
+    "Smith_selector_certified": false,
+    "argument_principle_certified": false,
+    "children_206_207_nonzero_certified": true,
+    "defective_fibre_or_EP2_certified": false,
+    "full_contour_nonzero_certified": false,
+    "root_count_certified": false,
+    "threshold_lowered": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "full contour",
+    "root count",
+    "QNM location",
+    "Smith selector",
+    "EP2",
+    "H4",
+    "T_plus",
+    "time-domain stability"
+  ],
+  "imports": {
+    "v4_aggregate": {
+      "path": "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v4/adaptive-aggregate-run.json",
+      "sha256": "b6e7756bde634907bd5521e099214cabe93b6d23a2c1a6e154f0224edf0a70fe"
+    },
+    "v4_raw": {
+      "path": "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v4/adaptive-raw-run.json",
+      "sha256": "26a14f6fadb6ee5085fa35f178987269fe801b3621b792296b78007ad553e45a"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "result": {
+    "children": [
+      {
+        "delta_lower": "[2.4466676702188621274267062871944995478e-5 +/- 4.13e-43]",
+        "row_sha256": "50744fe7e43f836ee55c1013c21e0da73a1f78c9769a17554d944fbcbe875453",
+        "segment": "206/1024"
+      },
+      {
+        "delta_lower": "[2.4379425653251733466654316143910949318e-5 +/- 6.78e-43]",
+        "row_sha256": "e1d265798da4f09f7d760d40ea05344cd71be762a5a1fa74a385d7448c3508a7",
+        "segment": "207/1024"
+      }
+    ],
+    "coverage_stop": "13/64",
+    "elapsed_seconds": 33.32975674502086,
+    "next_gap": {
+      "first_unmaterialized_parent_panel": 104,
+      "parent_panel_count": 512,
+      "start": "104/512"
+    }
+  },
+  "runs": {
+    "aggregate": {
+      "path": "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v5/adaptive-aggregate-run.json",
+      "sha256": "885cfe0e9c3969ed2a415b9422885ff2b4f5ff3aa9372aaadcca0432a7de8216"
+    },
+    "raw": {
+      "path": "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v5/adaptive-raw-run.json",
+      "sha256": "8bbedf6f5fe4182209f09767a7efddbbc4180f4cf5de58af375d2893420c84f0"
+    }
+  },
+  "schema": "phase3-axial-qnm-adaptive-dyadic-boundary-chunk-v5",
+  "status": "CHILD_ONLY_REPAIR_FAIL_CLOSED"
+}

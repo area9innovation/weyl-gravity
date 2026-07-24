@@ -1,0 +1,251 @@
+{
+  "claim_flags": {
+    "Tplus_rank_or_outgoing_population_certified": false,
+    "abstract_common_J_normalization_exists": true,
+    "abstract_stokes_on_horizon_regular_columns": true,
+    "abstract_typed_Tplus_exists": true,
+    "det_O_nonzero_certified": false,
+    "explicit_Tplus_matrix_certified": false,
+    "full_typed_Tminus_entries_certified": false,
+    "oriented_raw_basis_crosswalk_certified": true,
+    "physical_reflection_map_evaluated": false,
+    "raw_one_sided_pseudo_isometric_embedding_certified": true,
+    "time_domain_or_quantum_claim": false,
+    "transport_free_det_equivalence_certified": true
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a nonzero determinant enclosure for O",
+    "rank or invertibility of Tplus",
+    "a numerically evaluated outgoing trace or reflection map",
+    "uniform direct-integral bounds or time-domain stability",
+    "positivity, CPT, particles, ghosts or quantum unitarity"
+  ],
+  "imports": {
+    "boundary_contract": {
+      "path": "black_hole_programme/phase3/boundary_flux_contract/certificate.json",
+      "sha256": "3ee56677677f66df7ccba021a1e40cfd3af7e548aa24f991b8bae8f4689550ef"
+    },
+    "endpoint_existence": {
+      "path": "black_hole_programme/phase3/axial_endpoint_remainder_enclosures/certificate.json",
+      "sha256": "9886a02e9d49dbfca813e9520d9e488afce22fc82470b2ba6601b3092f9c64b9"
+    },
+    "endpoint_grams": {
+      "path": "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
+      "sha256": "59fb9b443ce0b92ce016f53c376cb367bcf004e00d1b241ad22ec925e99deed2"
+    },
+    "horizon_gram": {
+      "path": "black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/future_horizon_outward_gram.json",
+      "sha256": "3051f43f73e4649dede60176e12f13afc59bdd5b3e8e09970db842a1ede00fdb"
+    },
+    "incoming_connection": {
+      "path": "black_hole_programme/phase3/axial_incoming_connection_analytic/certificate.json",
+      "sha256": "c7d54c15cd7928227d62ede7825edba2b6ebc51ca6f6c617c7b0b56a74cdd040"
+    },
+    "numeric_preview": {
+      "path": "black_hole_programme/phase3/axial_global_connection_numeric_preview/pilot-diagnostic.json",
+      "sha256": "2cea07bee000064c0cd10a57ad6fd8dfdac5b7a8b0d260250cf52724faa0f5c7"
+    },
+    "old_krein_preflight": {
+      "path": "black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json",
+      "sha256": "01a159ce01f6de6f5fc0e01bd7636be4215c53511ca3acc01de6f382c459b79a"
+    },
+    "radial_current": {
+      "path": "black_hole_programme/phase3/axial_null_infinity_trace_preflight/certificate.json",
+      "sha256": "c048f60c3f8f3790f4243311476e6c049a663b67e00e8a401e4f574152dc4a63"
+    },
+    "wavepacket_traces": {
+      "path": "black_hole_programme/phase3/axial_wavepacket_null_trace/certificate.json",
+      "sha256": "e2df2e47d85530f8984ee6ddf8f38313f35862d43e241e07e834ff02a9633670"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "missing_object_ledger": [
+    {
+      "available_substitute": "determinant/existence/invertibility theorem plus an UNVALIDATED-NUMERIC point preview",
+      "needed_for": "forming O and certifying det(O) in the horizon basis",
+      "object": "certified_full_typed_Tminus_matrix",
+      "required_basis": "(XH0a,XH0b,EH0)->(XI0,XI1,EI0), or an explicitly conjugated equivalent with a certified basis map",
+      "status": "MISSING"
+    },
+    {
+      "needed_for": "evaluated outgoing trace, outgoing population, reflection matrix and numerical pseudo-isometry",
+      "not_needed_for": "abstract existence of the typed trace map and the raw one-sided Stokes identity",
+      "object": "certified_explicit_Tplus_matrix",
+      "status": "MISSING"
+    },
+    {
+      "needed_for": "a numerical signature-basis scattering matrix",
+      "not_needed_for": "the raw-basis pseudo-isometric embedding",
+      "object": "explicit_common_J_congruence_frames",
+      "status": "MISSING"
+    }
+  ],
+  "next_gate": "supply only the full typed Tminus enclosure and its basis crosswalk; form O in the horizon basis and certify a determinant enclosure excluding zero",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_TRANSPORT_FREE_OUTGOING_DEFECT",
+  "schema": "phase3-axial-transport-free-outgoing-defect-preflight-v1",
+  "status": "ABSTRACT_RAW_PSEUDO_ISOMETRY_ACTIVE_DET_O_INPUT_OPEN",
+  "tier_A_transport_free_determinant": {
+    "Tplus_rank_certified": false,
+    "available_Tminus_certificate_scope": "determinant formula, existence and invertibility only",
+    "basis_covariance": {
+      "O_law": "O'=M^dagger*O*M",
+      "basis_law": "for Bminus'=Bminus*N and H'=H*M, Tminus'=N^(-1)*Tminus*M, Gminus'=N^dagger*Gminus*N, Hout'=M^dagger*Hout*M",
+      "consequence": "zero/nonzero of det(O) is basis invariant",
+      "determinant_law": "det(O')=abs(det(M))^2*det(O)"
+    },
+    "certified_full_typed_Tminus_matrix_available": false,
+    "definition": "O=Tminus^dagger*Gminus*Tminus-Hout",
+    "det_O_nonzero_certified": false,
+    "determinant_equivalence": "det(O)=det(Gplus)*abs(det(Tplus))^2; because Gplus is nondegenerate, det(O)!=0 iff Tplus is invertible",
+    "diagnostic_only": {
+      "O_definition": "Tminus^dagger*Gminus_practical*Tminus-Hout",
+      "Tminus_source_basis": "R=32 phase-normalized practical incoming frame",
+      "Tminus_target_basis": [
+        "XH0a",
+        "XH0b",
+        "EH0"
+      ],
+      "certified_nonzero": false,
+      "classification": "OBSERVED",
+      "det_O": {
+        "imaginary": "-2.3188177e-70",
+        "real": "2.3811747236103498994888925362168"
+      },
+      "eigenvalues": [
+        "-90.19819900685052871062157756",
+        "-0.885471821214325782862164909442",
+        "0.0298138905504114011575100654967"
+      ],
+      "frequency": "1/2",
+      "hermitian_defect_max": "5.7956346e-69",
+      "incoming_amplitude_crosswalk": {
+        "applied": true,
+        "canonical_to_practical": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "32",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "law": "Gminus_practical=S^dagger*Gminus_canonical*S"
+      },
+      "minimum_absolute_eigenvalue": "0.0298138905504114011575100654967",
+      "old_preview_stokes_residual": {
+        "absolute_max_residual": "0.47662705844803531421",
+        "disposition": "NUMERICALLY_SMALL_BUT_NOT_ZERO_OR_CERTIFIED",
+        "relative_max_residual": "0.0012937693103499480625"
+      },
+      "reason": "the imported Tminus point matrix has no interval enclosure and the old Stokes residual is explicitly nonzero",
+      "source_lifecycle": "UNVALIDATED-NUMERIC"
+    },
+    "exact_audit": {
+      "abstract_trace_stokes_inputs": {
+        "Tminus_exists": true,
+        "Tminus_invertible": true,
+        "null_trace_limit_interchange": true,
+        "radial_current_conserved": true,
+        "six_column_horizon_initializer_exists": true,
+        "six_column_infinity_basis_exists": true,
+        "wavepacket_null_traces_exist": true,
+        "wrong_endpoint_terms_vanish": true
+      },
+      "form_determinants": {
+        "Gminus": "14155776*omega**3/125",
+        "Gplus": "3538944*omega/125",
+        "Hout": "884736*omega**3*(4*omega**2 + 1)*(16*omega**2 + 1)**2/(125*(omega**2 + 1))"
+      },
+      "form_inertias_for_alpha_W_positive": {
+        "Gminus": {
+          "negative": 2,
+          "positive": 1,
+          "zero": 0
+        },
+        "Gplus": {
+          "negative": 2,
+          "positive": 1,
+          "zero": 0
+        },
+        "Hout": [
+          1,
+          2,
+          0
+        ]
+      },
+      "normalization": "all three forms divided by pi*alpha_W",
+      "oriented_forms": {
+        "Gminus": "past-boundary Stokes Gram =- coordinate-radial incoming Gram",
+        "Gplus": "future-boundary Stokes Gram = coordinate-radial outgoing Gram",
+        "Hout": "future inner-boundary outward Gram =- horizon coordinate-radial Gram",
+        "boundary_identity": "J_Hplus + J_Iplus - J_Hminus - J_Iminus = 0",
+        "one_sided_identity": "Hout+Tplus^dagger*Gplus*Tplus-Tminus^dagger*Gminus*Tminus=0"
+      },
+      "typed_raw_bases": {
+        "Tminus_codomain_Iminus": [
+          "XI0",
+          "XI1",
+          "EI0"
+        ],
+        "Tminus_domain_horizon": [
+          "XH0a",
+          "XH0b",
+          "EH0"
+        ],
+        "Tplus_codomain_Iplus": [
+          "XI2",
+          "XI3",
+          "EI2"
+        ]
+      }
+    },
+    "missing_input": "one certified full 3x3 Tminus enclosure in the raw typed bases (XH0a,XH0b,EH0)->(XI0,XI1,EI0), or an explicitly conjugated equivalent with its basis map",
+    "stokes_equivalent": "O=Tplus^dagger*Gplus*Tplus"
+  },
+  "tier_B_abstract_pseudo_isometry": {
+    "abstract_Tplus_existence": {
+      "argument": "the certified six-column infinity basis exists; the future-regular horizon family defines exact global ODE solutions; unique expansion in that infinity basis defines both typed trace blocks Tminus and Tplus",
+      "certified": true
+    },
+    "abstract_stokes_identity": {
+      "argument": "the exact radial current is conserved, the null wave-packet traces exist with wrong-endpoint suppression, the null trace/current limit interchange passes, and the future-horizon outward sign is fixed",
+      "certified": true,
+      "identity": "Hout+Tplus^dagger*Gplus*Tplus-Tminus^dagger*Gminus*Tminus=0"
+    },
+    "normalized_embedding": {
+      "claim_scope": "abstract pseudo-isometric embedding only; no matrix entries, outgoing rank or determinant assertion",
+      "existence": true,
+      "explicit_normalizers_computed": false,
+      "reason": "Gminus, Gplus and Hout are nondegenerate Hermitian forms with the same inertia (1,2,0), so Sylvester congruences to a common J exist"
+    },
+    "packaging_gap_audited": {
+      "full_Tplus_entries_mathematically_necessary": false,
+      "old_activation_required_full_Tplus_entries": true,
+      "old_status": "METHOD_SHORTFALL"
+    },
+    "raw_embedding": {
+      "Araw": "Tminus^(-1)",
+      "Rraw": "Tplus*Tminus^(-1)",
+      "Sraw": "vertical_stack(Rraw,Araw)",
+      "certified": true,
+      "identity": "Sraw^dagger*(Gplus direct_sum Hout)*Sraw=Gminus",
+      "incoming_variable": "x=Tminus*h",
+      "injective": true,
+      "reason": "Araw=Tminus^(-1) is invertible",
+      "source_form": "Gminus",
+      "target_form": "Gplus direct_sum Hout"
+    }
+  }
+}
