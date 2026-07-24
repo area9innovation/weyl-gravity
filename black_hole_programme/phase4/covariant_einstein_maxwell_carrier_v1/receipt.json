@@ -1,0 +1,33 @@
+{
+  "artifacts": {
+    "certificate": {
+      "path": "certificate.json",
+      "sha256": "ff86f50e88d07c0ec8fcdbca4788e60058db07f90a7a96a9be5164e033952908"
+    },
+    "imports": {
+      "axial_filtration": {
+        "path": "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json",
+        "sha256": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579"
+      },
+      "axial_flux": {
+        "path": "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
+        "sha256": "59fb9b443ce0b92ce016f53c376cb367bcf004e00d1b241ad22ec925e99deed2"
+      },
+      "universal_hessian": {
+        "path": "black_hole_programme/phase4/axial_universal_hessian_intertwiner_v1/certificate.json",
+        "sha256": "272e55c2e24ce3f0c7be91b898279cde01b6cf6896c7f2e89b5c85a1f508d01d"
+      }
+    },
+    "producer": {
+      "path": "produce.py",
+      "sha256": "6a5ccd2ad2b8e1f0981629e87d05c2c2a6eda3907e1657c3c92158cfa4e6de0e"
+    }
+  },
+  "schema": "covariant-einstein-maxwell-carrier-receipt-v1",
+  "source_commit": "d1a17090f9730ec30fe3dd813dd39ac3bc1338aa",
+  "status": "EXACT_SCHOUTEN_EINSTEIN_MAXWELL_CARRIER_PASS",
+  "verification": {
+    "independent_verifier": "python3 verify.py",
+    "tests": "python3 -m unittest -v test_carrier.py"
+  }
+}

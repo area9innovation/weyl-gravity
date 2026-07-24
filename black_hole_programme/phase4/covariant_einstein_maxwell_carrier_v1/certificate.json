@@ -1,0 +1,98 @@
+{
+  "axial_associated_graded": {
+    "factors": [
+      "source Einstein kernel: spin-two Regge-Wheeler",
+      "target physical Einstein carrier: spin-two Regge-Wheeler",
+      "target Einstein gauge vector: spin-one Maxwell Regge-Wheeler"
+    ],
+    "signature_anatomy": "(1,2,0)=(1,1,0)_spin2_hyperbolic plus (0,1,0)_wrong_sign_Maxwell",
+    "spin_one_potential_l2": "6*(r-2)/r**3"
+  },
+  "claim_flags": {
+    "all_ell_lift_certified": false,
+    "axial_l2_spin_one_geometric_identification": true,
+    "carrier_constraint": true,
+    "complete_polar_phase_space_certified": false,
+    "quantum_ghost_or_unitarity_statement": false,
+    "schouten_einstein_factorization": true,
+    "source_weyl_becomes_maxwell_gauge": true,
+    "target_gauge_maxwell_equation": true,
+    "wrong_sign_maxwell_bulk_action_mod_boundary": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "that target Einstein gauge is gauge-trivial in the original Weyl perturbation",
+    "the all-ell image/lift theorem or all-ell non-split extension",
+    "a complete polar phase-space or polar scattering theorem",
+    "that Euler and divergence boundary terms vanish for every endpoint phase space",
+    "a particle, BRST physical-state, quantum ghost, positivity, or unitarity theorem",
+    "a global Mannheim C operator"
+  ],
+  "general_ell_prediction": {
+    "open_gate": "all-row image/lift and extension theorem for each ell",
+    "spin_one_potential": "B*ell*(ell+1)/r**2",
+    "spin_two_potential": "B*(ell*(ell+1)/r**2-6*M/r**3)",
+    "status": "PREDICTED_NOT_CERTIFIED"
+  },
+  "imports": {
+    "axial_filtration": {
+      "path": "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json",
+      "sha256": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579"
+    },
+    "axial_flux": {
+      "path": "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
+      "sha256": "59fb9b443ce0b92ce016f53c376cb367bcf004e00d1b241ad22ec925e99deed2"
+    },
+    "universal_hessian": {
+      "path": "black_hole_programme/phase4/axial_universal_hessian_intertwiner_v1/certificate.json",
+      "sha256": "272e55c2e24ce3f0c7be91b898279cde01b6cf6896c7f2e89b5c85a1f508d01d"
+    }
+  },
+  "quadratic_action": {
+    "bulk_mod_euler": "2*alpha*Integral(deltaRic_ab*deltaRic**ab-(1/3)*deltaR**2)",
+    "maxwell_convention": "S_Maxwell=-(1/4)*Integral(F_ab*F**ab)",
+    "pure_target_gauge_identity": "q_ab*q**ab-trace(q)**2=F_ab*F**ab+4*nabla_a(eta_b*nabla^b eta^a-eta^a*div(eta))",
+    "q_form": "2*alpha*Integral(q_ab*q**ab-trace(q)**2)",
+    "relative_sign": "S_spin1=-8*alpha*S_Maxwell modulo boundary terms",
+    "spin_one_bulk_action": "2*alpha*Integral(F_ab*F**ab)"
+  },
+  "schema": "covariant-einstein-maxwell-carrier-v1",
+  "schouten_carrier": {
+    "definition": "q_ab=deltaR_ab-(1/6)*g_ab*deltaR",
+    "divergence": "nabla^a q_ab=nabla_b q",
+    "exact_sequence": "0 -> H_E -> H_B -> K -> 0",
+    "expanded_coefficient_basis": {
+      "Box_psi_ab": "1/2",
+      "Hessian_psi": "-1/6",
+      "Riemann_psi": "1",
+      "g_ab_Box_psi": "-1/12"
+    },
+    "factorization": "deltaB_ab[h]=-deltaG_ab[q[h]]",
+    "kernel_equivalence": "q[h]=0 iff deltaR_ab[h]=0",
+    "target": "K={q: deltaG[q]=0, div(q)=d trace(q)} intersect image(Q)",
+    "trace": "q=deltaR/3"
+  },
+  "scope": {
+    "axial_realization": "certified Schwarzschild M=1 axial ell=2 factor filtration",
+    "universal": "linearized four-dimensional pure Weyl gravity about an arbitrary Ricci-flat background"
+  },
+  "source_weyl_to_maxwell_gauge": {
+    "F_invariant": true,
+    "deltaR": "-3*Box(Phi)",
+    "deltaRic": "-Hessian(Phi)-(1/2)*g*Box(Phi)",
+    "eta_shift": "eta -> eta-(1/2)dPhi",
+    "q_shift": "-Hessian(Phi)=L_{-(1/2)dPhi}g",
+    "source_shift": "h_ab -> h_ab+Phi*g_ab"
+  },
+  "status": "EXACT_SCHOUTEN_EINSTEIN_MAXWELL_CARRIER_PASS",
+  "target_gauge_maxwell": {
+    "constraint": "Box eta_b-nabla_b div(eta)=0",
+    "equation": "nabla^a F_ab=0",
+    "field_strength": "F_ab=2*nabla_[a eta_b]",
+    "interpretation": "pure gauge for target Einstein equation, not pure gauge for source Weyl perturbation h",
+    "target_gauge": "q_ab=L_eta g_ab=nabla_a eta_b+nabla_b eta_a"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-covariant-einstein-maxwell-carrier",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-covariant-einstein-maxwell-carrier",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-covariant-einstein-maxwell-carrier.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Certify the covariant factorization deltaB[h]=-deltaG[q[h]] with q=deltaRic-(1/6)g deltaR on four-dimensional Ricci-flat backgrounds, identify the pure-target-gauge carrier with Maxwell modulo source Weyl gauge, and derive its opposite-sign Maxwell quadratic action modulo a boundary term.",
+    "stop_condition": "Produce exact coefficient and local-jet derivations, an independently implemented verifier, mutation tests, a machine-readable certificate with LOCAL-ALGEBRAIC and REDUCED-MODE tags, and a report that distinguishes the universal Ricci-flat carrier theorem from the axial ell=2 realization and the unproved all-ell lift.",
+    "current_gate": "Covariant linearized and quadratic-action identities on Ricci-flat backgrounds; axial ell=2 interpretation imported from the certified filtration",
+    "forbid": "no all-ell lift or surjectivity theorem beyond the tautologically declared image; no complete polar phase-space theorem; no claim that target Einstein gauge is source Weyl gauge; no quantum ghost, particle, BRST positivity, unitarity, or full Mannheim-C theorem; no omission of the Euler and divergence boundary terms",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-universal-hessian-intertwiner-structure"
+    ],
+    "activates": [
+      "a covariant Einstein-Maxwell interpretation of the axial RW/RW/spin-one filtration",
+      "an action-level explanation of the exact negative spin-one endpoint norm",
+      "a simplified all-ell lift/extension experiment"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase4/covariant_einstein_maxwell_carrier_v1/",
+      "reports/phase4-black-hole-covariant-einstein-maxwell-carrier-2026-07-24.md",
+      "planning/work-items/phase4-black-hole-covariant-einstein-maxwell-carrier.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use the trace and divergence consequences of q_ab=psi_ab-g_ab psi/6, the Ricci-flat constrained formula for the linearized Einstein tensor, source Weyl covariance, and an explicit Lorentz-signature local-jet contraction for the quadratic divergence identity.",
+    "input_commit": "d1a17090f9730ec30fe3dd813dd39ac3bc1338aa",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "Universal target: arbitrary four-dimensional Ricci-flat background.",
+      "Axial interpretation: Schwarzschild M=1, ell=2 certified filtration only.",
+      "Counterexample strategy: mutate the Schouten coefficient, Bach coefficient vector, Weyl-gradient map, and Maxwell action sign."
+    ]
+  },
+  "edges": []
+}
