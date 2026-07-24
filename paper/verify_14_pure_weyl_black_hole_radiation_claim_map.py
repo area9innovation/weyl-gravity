@@ -32,6 +32,9 @@ ENDPOINT_LIFECYCLE_COMMIT = "0da46f3b0916e4e53f441df37077038892cf89c3"
 GLOBAL_V5_RESULT = "PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5"
 GLOBAL_V5_CONTENT_COMMIT = "54670c5e371200ee1f08b88843cb3e67b3f17b3b"
 GLOBAL_V5_LIFECYCLE_COMMIT = "b1eec02b2d04e585fddbf8f6f1c2ba1d0b96c6f1"
+OUTGOING_POINT_RESULT = (
+    "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF"
+)
 EXPECTED_AUTHORITY_HASHES = {
     "certificate_sha256": "8a9914400f0929f37a63570b95383ebc4131cbf2928b5f923db0d002d0783d33",
     "receipt_sha256": "0888efb8f14518d38e40bd1b0a3926b8fab37ad729dce798c221a01d24aeabee",
@@ -100,7 +103,10 @@ def main() -> None:
         fail("wrong source-map schema")
     if claim_map.get("paper_id") != "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION":
         fail("wrong paper identity")
-    if claim_map.get("result_id") != "PAPER_14_PHASE3_ENDPOINT_FLUX_UPDATE_V4":
+    if (
+        claim_map.get("result_id")
+        != "PAPER_14_PHASE3_OUTGOING_POPULATION_POINT_UPDATE_V5"
+    ):
         fail("wrong Phase-3 paper result identity")
     if claim_map.get("lifecycle_state") != "DRAFT_ALLOWED":
         fail("Paper 14 lifecycle overpromotion")
@@ -167,6 +173,41 @@ def main() -> None:
         path = ROOT / endpoint[key]
         if digest(path) != endpoint[hash_key]:
             fail(f"endpoint authority content drift: {key}")
+
+    outgoing_point = claim_map.get(
+        "phase3_outgoing_population_point_half_authority", {}
+    )
+    if outgoing_point.get("result_id") != OUTGOING_POINT_RESULT:
+        fail("pointwise outgoing-population result not authoritative")
+    for key, hash_key in [
+        ("certificate", "certificate_sha256"),
+        ("receipt", "receipt_sha256"),
+        ("report", "report_sha256"),
+    ]:
+        path = ROOT / outgoing_point[key]
+        if digest(path) != outgoing_point[hash_key]:
+            fail(f"outgoing-point authority content drift: {key}")
+    outgoing_result = json.loads(
+        (ROOT / outgoing_point["certificate"]).read_text()
+    )
+    if outgoing_result.get("result_id") != OUTGOING_POINT_RESULT:
+        fail("outgoing-point certificate identity drift")
+    point_flags = outgoing_result["claim_flags"]
+    for key in (
+        "Tplus_invertible_at_omega_half",
+        "full_outgoing_trace_space_populated_at_omega_half",
+        "det_O_nonzero_at_omega_half",
+        "O_inertia_1_2_0_at_omega_half",
+    ):
+        if point_flags.get(key) is not True:
+            fail(f"outgoing-point theorem flag drift: {key}")
+    for key in (
+        "explicit_Tplus_entries_certified",
+        "whole_pilot_interval_outgoing_population_certified",
+        "time_domain_or_quantum_claim",
+    ):
+        if point_flags.get(key) is not False:
+            fail(f"outgoing-point overclaim: {key}")
 
     global_v5 = claim_map.get("phase3_global_connection_shortfall", {})
     if global_v5.get("result_id") != GLOBAL_V5_RESULT:
@@ -336,6 +377,10 @@ def main() -> None:
         "axial_l2_endpoint_uniform_auxiliary_l2_bounds",
         "axial_l2_endpoint_scoped_trace_local_improvement_invariance",
         "axial_global_connection_v5_method_shortfall_recorded",
+        "axial_incoming_full_trace_globally_populated_all_positive_frequencies",
+        "axial_outgoing_full_trace_globally_populated_at_omega_half",
+        "axial_outgoing_pullback_nonzero_inertia_one_two_zero_at_omega_half",
+        "axial_scalar_spin_one_and_spin_two_reflection_nonzero_at_omega_half",
     }
     required_false = {
         "formal_radial_einstein_only_selection",
@@ -382,7 +427,6 @@ def main() -> None:
         "174226120816040380076641138108451235935620694016",
         "227373675443232059478759765625",
         "The previously recorded longer rational was \\(Q_{21}(6,81/625)\\)",
-        "Whether one global solution",
         "Local Cauchy selection remains available",
         "Normalized static generator",
         "Analytic ingoing curvature family",
@@ -396,11 +440,10 @@ def main() -> None:
         "T^\\dagger J_{\\rm out}T=J_{\\rm in}",
         "finite-tangential-jet",
         "Explicit axial endpoint Grams and uniform bounds",
-        "not a global scattering theorem",
-        "(XH0a,XH0b,EH0,XHplus,EHout,XHminus)",
-        "raw future-regular columns \\(0,1,2\\)",
-        "ended in \\textsc{shortfall}",
-        "evidence that the Bach connection fails to exist",
+        "one-sided global connection and flux theorem",
+        "Full outgoing population at \\(\\omega=1/2\\)",
+        "\\ker T_+(1/2)=0",
+        "\\det{\\cal O}(1/2)\\ne0",
     ]
     for phrase in required_phrases:
         if phrase not in text:
@@ -430,7 +473,10 @@ def main() -> None:
             fail(f"superseded or overbroad manuscript phrase present: {phrase}")
 
     coverage = json.loads(coverage_path.read_text())
-    if coverage.get("schema") != "paper14-phase3-endpoint-flux-overlay-v4":
+    if (
+        coverage.get("schema")
+        != "paper14-phase3-outgoing-population-point-overlay-v5"
+    ):
         fail("wrong coverage overlay schema")
     if coverage.get("append_only_parent_sha256") != digest(PARENT_COVERAGE):
         fail("coverage parent hash drift")
@@ -456,6 +502,11 @@ def main() -> None:
         "sf:coverage/edge/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1/paper-14/v2",
         "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1/paper-14/v1",
         "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5/paper-14/v1",
+        (
+            "sf:coverage/edge/"
+            "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF/"
+            "paper-14/v1"
+        ),
     }
     if set(new_edges) != expected_edges:
         fail("Paper 14 Phase-2/Phase-3 result edges missing or duplicated")
@@ -478,6 +529,17 @@ def main() -> None:
         or global_v5_edge.get("asserts_lifecycle") is not None
     ):
         fail("global v5 shortfall edge is mistyped")
+    outgoing_point_edge = new_edges[
+        "sf:coverage/edge/"
+        "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF/"
+        "paper-14/v1"
+    ]["body"]
+    if (
+        outgoing_point_edge.get("edge_kind")
+        != "PRIMARY_POINTWISE_SCATTERING_THEOREM"
+        or outgoing_point_edge.get("stale") is not False
+    ):
+        fail("outgoing-population point edge is mistyped")
 
     print(
         "PASS: corrected Paper 14 semantics, terminal hashes, source pins, "

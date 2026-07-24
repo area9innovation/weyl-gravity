@@ -2,7 +2,7 @@
   "append_only_parent": "planning/paper-coverage/phase1-paper-coverage-overlay-2026-07-22.json",
   "append_only_parent_sha256": "389d1033e9b40bd66cfc5237d3cd2df4ea2575e1d17847d4a519dba89f6b8be2",
   "claim_map": "paper/14-pure-weyl-black-hole-radiation-claim-map.json",
-  "claim_map_sha256": "0bed301f2164e8a4f0cad18745515d945d18d078c75a02c4826ae1800aa51343",
+  "claim_map_sha256": "4a7184b30ae818504d8d11d1ce048f38e38d7eeeccf236308d6d3a9f76eefaa0",
   "ir": "science-forge-ir-v0",
   "nodes": [
     {
@@ -61,6 +61,21 @@
     },
     {
       "body": {
+        "by": "Asger Alstrup Palm",
+        "materiality": "HEADLINE",
+        "native": {
+          "source_schema": "materiality-v0"
+        },
+        "rationale": "First certified frequency at which all three outgoing axial trace directions are globally populated.",
+        "result_id": "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF",
+        "stamp": "2026-07-24",
+        "version": 1
+      },
+      "id": "sf:coverage/materiality/PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF/v1",
+      "kind": "materiality"
+    },
+    {
+      "body": {
         "asserts_lifecycle": "CLASSIFIED",
         "boundary": "Generic-angular polar formal filtration; global matching and asymptotic phase space remain open.",
         "cites": [
@@ -109,6 +124,19 @@
         "paper": "paper:14-pure-weyl-black-hole-radiation"
       },
       "id": "paper:14-pure-weyl-black-hole-radiation/claim/phase3_axial_null_endpoint_flux_grams_v1",
+      "kind": "paper_claim"
+    },
+    {
+      "body": {
+        "asserts_lifecycle": "COEFFICIENT_COMPUTED",
+        "boundary": "Pointwise full outgoing population at omega=1/2; explicit amplitudes and interval-wide rank remain open.",
+        "cites": [
+          "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF"
+        ],
+        "material": true,
+        "paper": "paper:14-pure-weyl-black-hole-radiation"
+      },
+      "id": "paper:14-pure-weyl-black-hole-radiation/claim/phase3_axial_outgoing_population_point_half",
       "kind": "paper_claim"
     },
     {
@@ -182,6 +210,24 @@
     },
     {
       "body": {
+        "boundary": "Strict pure Weyl, M=1, axial ell=2, omega=1/2 only: both scalar outgoing factors are nonzero; boundary devissage proves Tplus invertible and the outgoing pullback nondegenerate with inertia (1,2,0). No explicit Tplus entries or interval-wide rank theorem.",
+        "lifecycle": "COEFFICIENT_COMPUTED",
+        "native": {
+          "certificate": "black_hole_programme/phase3/axial_outgoing_population_point_half_v1/certificate.json",
+          "certificate_sha256": "c4cf3f05aaeceaff695e73f1d6f147faa0034a9c3bd95e881abd963f0674228b",
+          "receipt": "black_hole_programme/phase3/axial_outgoing_population_point_half_v1/receipt.json",
+          "receipt_sha256": "4583d2a762b18aa846ff450c46b91e830daf98f1b11b5bff974a85678d8d9f68",
+          "source_kind": "phase3-point-certificate"
+        },
+        "result_id": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF"
+      },
+      "edges": [],
+      "id": "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF",
+      "kind": "result",
+      "title": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF"
+    },
+    {
+      "body": {
         "claim": "paper:14-pure-weyl-black-hole-radiation/claim/phase2_generic_l_parity_disposition_v1",
         "edge_kind": "SUPPORTING_POLAR_THEOREM",
         "from": "sf:coverage/result/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1",
@@ -243,7 +289,23 @@
       },
       "id": "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1/paper-14/v1",
       "kind": "result_paper_edge"
+    },
+    {
+      "body": {
+        "claim": "paper:14-pure-weyl-black-hole-radiation/claim/phase3_axial_outgoing_population_point_half",
+        "edge_kind": "PRIMARY_POINTWISE_SCATTERING_THEOREM",
+        "from": "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF",
+        "native": {
+          "source_schema": "result-paper-edge-v0"
+        },
+        "stale": false,
+        "stamp": "2026-07-24",
+        "to": "paper:14-pure-weyl-black-hole-radiation",
+        "version": 1
+      },
+      "id": "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF/paper-14/v1",
+      "kind": "result_paper_edge"
     }
   ],
-  "schema": "paper14-phase3-endpoint-flux-overlay-v4"
+  "schema": "paper14-phase3-outgoing-population-point-overlay-v5"
 }

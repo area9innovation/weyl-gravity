@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "scope",
+    "imports",
+    "certified_scalar_inputs",
+    "boundary_devissage_proof",
+    "transport_free_outgoing_defect",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-outgoing-population-point-half-v1"
+    },
+    "status": {
+      "const": "VALIDATED_POINTWISE_FULL_OUTGOING_POPULATION_AT_OMEGA_HALF"
+    },
+    "scope": {
+      "type": "object",
+      "required": ["frequency", "sector"],
+      "properties": {
+        "frequency": {"const": "1/2"},
+        "sector": {"const": "axial ell=2"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "Tplus_invertible_at_omega_half",
+        "full_outgoing_trace_space_populated_at_omega_half",
+        "det_O_nonzero_at_omega_half",
+        "O_inertia_1_2_0_at_omega_half",
+        "explicit_Tplus_entries_certified",
+        "whole_pilot_interval_outgoing_population_certified"
+      ],
+      "properties": {
+        "Tplus_invertible_at_omega_half": {"const": true},
+        "full_outgoing_trace_space_populated_at_omega_half": {"const": true},
+        "det_O_nonzero_at_omega_half": {"const": true},
+        "O_inertia_1_2_0_at_omega_half": {"const": true},
+        "explicit_Tplus_entries_certified": {"const": false},
+        "whole_pilot_interval_outgoing_population_certified": {"const": false}
+      }
+    }
+  }
+}

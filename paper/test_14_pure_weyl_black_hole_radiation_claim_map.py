@@ -90,7 +90,7 @@ class Paper14CorrectedClaimMapTest(unittest.TestCase):
         self.assertIn("axial_l2_unrestricted_representative_independence", completed.stdout + completed.stderr)
 
     def test_global_matching_promotion_is_rejected(self) -> None:
-        marker = "The next decisive map is global:"
+        marker = "This is a one-sided global connection and flux theorem"
         with tempfile.TemporaryDirectory() as directory:
             paper, claim_map = self.mutated_paper(
                 marker,
@@ -102,6 +102,26 @@ class Paper14CorrectedClaimMapTest(unittest.TestCase):
             )
         self.assertNotEqual(completed.returncode, 0)
         self.assertIn("superseded or overbroad", completed.stdout + completed.stderr)
+
+    def test_outgoing_point_interval_overclaim_is_rejected(self) -> None:
+        payload = json.loads(CLAIM_MAP.read_text())
+        authority = payload["phase3_outgoing_population_point_half_authority"]
+        certificate = json.loads((ROOT / authority["certificate"]).read_text())
+        certificate["claim_flags"][
+            "whole_pilot_interval_outgoing_population_certified"
+        ] = True
+        with tempfile.TemporaryDirectory() as directory:
+            mutated_certificate = Path(directory) / "certificate.json"
+            mutated_certificate.write_text(json.dumps(certificate))
+            authority["certificate"] = str(mutated_certificate)
+            authority["certificate_sha256"] = hashlib.sha256(
+                mutated_certificate.read_bytes()
+            ).hexdigest()
+            claim_map = Path(directory) / "claim-map.json"
+            claim_map.write_text(json.dumps(payload))
+            completed = self.run_verifier("--claim-map", str(claim_map))
+        self.assertNotEqual(completed.returncode, 0)
+        self.assertIn("outgoing-point overclaim", completed.stdout + completed.stderr)
 
 
 if __name__ == "__main__":

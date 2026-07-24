@@ -1,0 +1,66 @@
+{
+  "schema": "paper14-outgoing-population-point-half-tier-receipt-v1",
+  "result_id": "PAPER_14_PHASE3_OUTGOING_POPULATION_POINT_UPDATE_V5",
+  "status": "PASS",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "artifacts": {
+    "paper/14-pure-weyl-black-hole-radiation.tex": "d6abf595b0d4e66fa9c1ce96224efe484163b145497adfe99bf9094ff98672e2",
+    "paper/14-pure-weyl-black-hole-radiation.pdf": "e8dd69fd2315960593c65fb1b4c130704a786f24fd2b885d63901359cba26a9c",
+    "paper/14-pure-weyl-black-hole-radiation-claim-map.json": "4a7184b30ae818504d8d11d1ce048f38e38d7eeeccf236308d6d3a9f76eefaa0",
+    "paper/generate_14_pure_weyl_black_hole_radiation_claim_map.py": "07d6c7a2d619ceeeea93e5fc0feb41667fb8b25cf08cd4ad0336318ab8d7e759",
+    "paper/verify_14_pure_weyl_black_hole_radiation_claim_map.py": "1768833c0d136aab20f0c2a96004602d17ea4fdd172f8b7362f9110eff390059",
+    "paper/test_14_pure_weyl_black_hole_radiation_claim_map.py": "2d8ed9130b32c9e424a63df4a102a3241008f16587fdeb5d4da0020194519d9e",
+    "planning/paper-coverage/paper14-corrected-x0-supersession-overlay-2026-07-22.json": "d992a6012efb212959669ddaab6f4b9d6605eabfbd2877503e9cef9950f476e5",
+    "black_hole_programme/phase3/axial_outgoing_population_point_half_v1/certificate.json": "c4cf3f05aaeceaff695e73f1d6f147faa0034a9c3bd95e881abd963f0674228b",
+    "black_hole_programme/phase3/axial_outgoing_population_point_half_v1/receipt.json": "4583d2a762b18aa846ff450c46b91e830daf98f1b11b5bff974a85678d8d9f68",
+    "reports/phase3-axial-outgoing-population-point-half-2026-07-24.md": "07b5466059aa5dcdcb78dce95706fed03e70361ebc57edd7ec738e23c121d680"
+  },
+  "commands": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_outgoing_population_point_half_v1.produce --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_outgoing_population_point_half_v1.verify",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_outgoing_population_point_half_v1.test_point_half",
+      "status": "PASS",
+      "tests": 4
+    },
+    {
+      "command": "python3 paper/generate_14_pure_weyl_black_hole_radiation_claim_map.py --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 paper/verify_14_pure_weyl_black_hole_radiation_claim_map.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest -v paper/test_14_pure_weyl_black_hole_radiation_claim_map.py",
+      "status": "PASS",
+      "tests": 7
+    },
+    {
+      "command": "python3 paper/verify_13_14_draft_source_maps.py",
+      "status": "PASS"
+    },
+    {
+      "command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory paper paper/14-pure-weyl-black-hole-radiation.tex (two passes)",
+      "status": "PASS",
+      "pages": 43
+    }
+  ],
+  "test_tiers": {
+    "tier_0_edit_checks": "PASS",
+    "tier_1_scoped_tests": "PASS",
+    "tier_2_affected_certificate_chain": "PASS: scalar certificate, outgoing-population bridge, Paper 14 generator/verifier/mutations, and Paper 13/14 source-map cross-check",
+    "tier_3_full_suite": "NOT_RUN: no freeze, release, or shared-core algebra change"
+  },
+  "claim_boundary": "At M=1, axial ell=2, omega=1/2, Tplus is invertible and the outgoing pullback is nondegenerate with inertia (1,2,0). Explicit Tplus entries, interval-wide outgoing rank, QNM Smith selection, time-domain stability, and quantum claims remain open."
+}

@@ -1,0 +1,68 @@
+{
+  "artifacts": {
+    "README.md": "ad4911de2eefe2b354667c027f56cf2c997acc5e4f6633eaca5990f569519fc2",
+    "__init__.py": "2379f2554f54792f5a08e7202134e9aad0a75aa966e73e4ae3371928a74ed2d8",
+    "audit.py": "7b82b33ba807ec8fdfb82f5bdc9d3015207b8ed13fb6f9d414f6e6b61db04182",
+    "certificate.json": "c4cf3f05aaeceaff695e73f1d6f147faa0034a9c3bd95e881abd963f0674228b",
+    "produce.py": "70620e7af5601bd59e51d49ce2fc6e8eec8b3e86a4a0de34335c4447fa52b900",
+    "report.md": "ff19bcca1f70e58e58c74e2e747a9148d9c9fc4b5fe618ae710c12bf7acd5be3",
+    "schema.json": "2fcdab5c7d7d38ede8311b5b707390d3ba02526c8ef8f9614c447ef8279b8e4e",
+    "test_point_half.py": "135f989c42111e0af9e6cdc1275f36819712047b07223905df05d569970cc19b",
+    "verify.py": "c5abe57e79674ae4fdd8fb90ae9a30566dcca180156c66e07f8afe134f2dc9f4"
+  },
+  "certificate": "black_hole_programme/phase3/axial_outgoing_population_point_half_v1/certificate.json",
+  "certificate_sha256": "c4cf3f05aaeceaff695e73f1d6f147faa0034a9c3bd95e881abd963f0674228b",
+  "claim_boundary": "Full outgoing population and nondegenerate transport-free outgoing defect are certified only at omega=1/2. Explicit Tplus entries and interval-wide reflection nonvanishing remain open.",
+  "commands": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_outgoing_population_point_half_v1.produce --check",
+      "elapsed_seconds": 0.02978632098529488,
+      "exit_code": 0,
+      "output_tail": "PASS outgoing-population point-half reproduction\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_outgoing_population_point_half_v1.verify",
+      "elapsed_seconds": 0.08519100298872218,
+      "exit_code": 0,
+      "output_tail": "PASS point-half full outgoing-population theorem\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_outgoing_population_point_half_v1.test_point_half",
+      "elapsed_seconds": 0.0944422569591552,
+      "exit_code": 0,
+      "output_tail": "test_committed_certificate (black_hole_programme.phase3.axial_outgoing_population_point_half_v1.test_point_half.OutgoingPopulationTests.test_committed_certificate) ... ok\ntest_frequency_mutation (black_hole_programme.phase3.axial_outgoing_population_point_half_v1.test_point_half.OutgoingPopulationTests.test_frequency_mutation) ... ok\ntest_interval_overclaim_mutation (black_hole_programme.phase3.axial_outgoing_population_point_half_v1.test_point_half.OutgoingPopulationTests.test_interval_overclaim_mutation) ... ok\ntest_tplus_mutation (black_hole_programme.phase3.axial_outgoing_population_point_half_v1.test_point_half.OutgoingPopulationTests.test_tplus_mutation) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.011s\n\nOK\n",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m py_compile /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_outgoing_population_point_half_v1/produce.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_outgoing_population_point_half_v1/verify.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_outgoing_population_point_half_v1/test_point_half.py /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_outgoing_population_point_half_v1/audit.py",
+      "elapsed_seconds": 0.02995705301873386,
+      "exit_code": 0,
+      "output_tail": "",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m jsonschema -i /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_outgoing_population_point_half_v1/certificate.json /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_outgoing_population_point_half_v1/schema.json",
+      "elapsed_seconds": 0.09486839000601321,
+      "exit_code": 0,
+      "output_tail": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check -- black_hole_programme/phase3/axial_outgoing_population_point_half_v1",
+      "elapsed_seconds": 0.006072427029721439,
+      "exit_code": 0,
+      "output_tail": "",
+      "status": "PASS"
+    }
+  ],
+  "schema": "phase3-axial-outgoing-population-point-half-receipt-v1",
+  "status": "PASS",
+  "test_tiers": {
+    "tier_0_edit_checks": "PASS",
+    "tier_1_scoped_tests": "PASS",
+    "tier_2_affected_chain": "NOT_RUN: all mathematical inputs are content-hashed and independently replayed or exact imported certificates",
+    "tier_3_full_suite": "NOT_RUN: pointwise reduced-mode theorem; no release, freeze, shared core algebra, time-domain or quantum promotion"
+  }
+}

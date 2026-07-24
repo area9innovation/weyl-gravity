@@ -44,6 +44,9 @@ GLOBAL_V5_LIFECYCLE_COMMIT = "b1eec02b2d04e585fddbf8f6f1c2ba1d0b96c6f1"
 GLOBAL_V5_CERT = "black_hole_programme/phase3/axial_global_connection_matrix_v5/certificate.json"
 GLOBAL_V5_REPORT = "reports/phase3-black-hole-axial-global-connection-matrix-v5-2026-07-23.md"
 GLOBAL_V5_ATLAS = "residual_atlas/phase3-black-hole-axial-global-connection-matrix-v5-fragment-v1.json"
+OUTGOING_POINT_CERT = ROOT / "black_hole_programme/phase3/axial_outgoing_population_point_half_v1/certificate.json"
+OUTGOING_POINT_RECEIPT = ROOT / "black_hole_programme/phase3/axial_outgoing_population_point_half_v1/receipt.json"
+OUTGOING_POINT_REPORT = ROOT / "reports/phase3-axial-outgoing-population-point-half-2026-07-24.md"
 
 ACTIVE_SOURCES = [
     "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json",
@@ -124,12 +127,16 @@ def claim_map() -> dict:
     return {
         "schema": "paper-draft-source-map-v1",
         "paper_id": "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION",
-        "result_id": "PAPER_14_PHASE3_ENDPOINT_FLUX_UPDATE_V4",
+        "result_id": "PAPER_14_PHASE3_OUTGOING_POPULATION_POINT_UPDATE_V5",
         "lifecycle_state": "DRAFT_ALLOWED",
         "source_baseline": SOURCE_BASELINE,
         "manuscript": str(PAPER.relative_to(ROOT)),
         "paper_sha256": digest(PAPER),
-        "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+        "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "REDUCED-MODE",
+            "LORENTZIAN-CAUSAL",
+        ],
         "terminal_supersession_authority": {
             "result_id": generic["result_id"],
             "result_token": generic["result_token"],
@@ -166,6 +173,20 @@ def claim_map() -> dict:
             "report_sha256": digest(ENDPOINT_REPORT),
             "atlas": str(ENDPOINT_ATLAS.relative_to(ROOT)),
             "atlas_sha256": digest(ENDPOINT_ATLAS),
+        },
+        "phase3_outgoing_population_point_half_authority": {
+            "result_id": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF",
+            "scope": "M=1, axial ell=2, omega=1/2 only",
+            "certificate": str(OUTGOING_POINT_CERT.relative_to(ROOT)),
+            "certificate_sha256": digest(OUTGOING_POINT_CERT),
+            "receipt": str(OUTGOING_POINT_RECEIPT.relative_to(ROOT)),
+            "receipt_sha256": digest(OUTGOING_POINT_RECEIPT),
+            "report": str(OUTGOING_POINT_REPORT.relative_to(ROOT)),
+            "report_sha256": digest(OUTGOING_POINT_REPORT),
+            "does_not_establish": (
+                "explicit Tplus entries, interval-wide outgoing rank, "
+                "time-domain stability or a quantum claim"
+            ),
         },
         "phase3_global_connection_shortfall": {
             "result_id": "PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5",
@@ -230,6 +251,10 @@ def claim_map() -> dict:
             "axial_l2_endpoint_scoped_trace_local_improvement_invariance": True,
             "axial_l2_endpoint_unrestricted_improvement_invariance": False,
             "axial_l2_endpoint_direction_globally_populated": False,
+            "axial_incoming_full_trace_globally_populated_all_positive_frequencies": True,
+            "axial_outgoing_full_trace_globally_populated_at_omega_half": True,
+            "axial_outgoing_pullback_nonzero_inertia_one_two_zero_at_omega_half": True,
+            "axial_scalar_spin_one_and_spin_two_reflection_nonzero_at_omega_half": True,
             "axial_l2_endpoint_flux_positive_energy": False,
             "axial_l2_endpoint_flux_cpt_or_stability": False,
             "axial_global_connection_v5_method_shortfall_recorded": True,
@@ -303,7 +328,10 @@ def claim_map() -> dict:
         "sources": [
             {"path": path, "git_blob": git_blob(path)} for path in ACTIVE_SOURCES
         ],
-        "next_gate": "CORRELATED_PARAMETRIC_LOWER_LIFT_WITH_RAW_PUBLIC_BASIS_PERMUTATION_THEN_VALIDATED_GLOBAL_CONNECTION",
+        "next_gate": (
+            "INTERVAL_WIDE_SCALAR_REFLECTION_NONVANISHING_OR_TYPED_"
+            "PROJECTIVE_LOG_AMPLITUDE_TPLUS_AUDIT"
+        ),
     }
 
 
@@ -312,6 +340,10 @@ def coverage(claim_payload: dict) -> dict:
     phase3_result_id = "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR"
     endpoint_result_id = "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1"
     global_v5_result_id = "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5"
+    outgoing_point_result_id = (
+        "sf:coverage/result/"
+        "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF"
+    )
     paper_id = "paper:14-pure-weyl-black-hole-radiation"
     claim_id = f"{paper_id}/claim/phase2_generic_l_parity_disposition_v1"
     phase3_claim_id = f"{paper_id}/claim/phase3_axial_complete_reconstruction_repair"
@@ -321,6 +353,13 @@ def coverage(claim_payload: dict) -> dict:
     endpoint_edge_id = "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1/paper-14/v1"
     global_v5_claim_id = f"{paper_id}/claim/phase3_axial_global_connection_matrix_v5_shortfall"
     global_v5_edge_id = "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5/paper-14/v1"
+    outgoing_point_claim_id = (
+        f"{paper_id}/claim/phase3_axial_outgoing_population_point_half"
+    )
+    outgoing_point_edge_id = (
+        "sf:coverage/edge/"
+        "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF/paper-14/v1"
+    )
     nodes = [
         {
             "kind": "materiality",
@@ -517,6 +556,79 @@ def coverage(claim_payload: dict) -> dict:
                 "native": {"source_schema": "result-paper-edge-v0"},
             },
         },
+        {
+            "kind": "materiality",
+            "id": (
+                "sf:coverage/materiality/"
+                "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF/v1"
+            ),
+            "body": {
+                "result_id": outgoing_point_result_id,
+                "materiality": "HEADLINE",
+                "by": "Asger Alstrup Palm",
+                "stamp": "2026-07-24",
+                "version": 1,
+                "rationale": (
+                    "First certified frequency at which all three outgoing "
+                    "axial trace directions are globally populated."
+                ),
+                "native": {"source_schema": "materiality-v0"},
+            },
+        },
+        {
+            "kind": "result",
+            "id": outgoing_point_result_id,
+            "title": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF",
+            "body": {
+                "result_id": (
+                    "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF"
+                ),
+                "lifecycle": "COEFFICIENT_COMPUTED",
+                "boundary": (
+                    "Strict pure Weyl, M=1, axial ell=2, omega=1/2 only: "
+                    "both scalar outgoing factors are nonzero; boundary "
+                    "devissage proves Tplus invertible and the outgoing "
+                    "pullback nondegenerate with inertia (1,2,0). No explicit "
+                    "Tplus entries or interval-wide rank theorem."
+                ),
+                "native": {
+                    "source_kind": "phase3-point-certificate",
+                    "certificate": str(OUTGOING_POINT_CERT.relative_to(ROOT)),
+                    "certificate_sha256": digest(OUTGOING_POINT_CERT),
+                    "receipt": str(OUTGOING_POINT_RECEIPT.relative_to(ROOT)),
+                    "receipt_sha256": digest(OUTGOING_POINT_RECEIPT),
+                },
+            },
+            "edges": [],
+        },
+        {
+            "kind": "paper_claim",
+            "id": outgoing_point_claim_id,
+            "body": {
+                "paper": paper_id,
+                "material": True,
+                "asserts_lifecycle": "COEFFICIENT_COMPUTED",
+                "boundary": (
+                    "Pointwise full outgoing population at omega=1/2; "
+                    "explicit amplitudes and interval-wide rank remain open."
+                ),
+                "cites": [outgoing_point_result_id],
+            },
+        },
+        {
+            "kind": "result_paper_edge",
+            "id": outgoing_point_edge_id,
+            "body": {
+                "from": outgoing_point_result_id,
+                "to": paper_id,
+                "claim": outgoing_point_claim_id,
+                "edge_kind": "PRIMARY_POINTWISE_SCATTERING_THEOREM",
+                "stale": False,
+                "version": 1,
+                "stamp": "2026-07-24",
+                "native": {"source_schema": "result-paper-edge-v0"},
+            },
+        },
     ]
     for old_edge in SUPERSEDED_EDGES:
         old_name = old_edge.rsplit("/", 3)[-3]
@@ -536,7 +648,7 @@ def coverage(claim_payload: dict) -> dict:
         )
     return {
         "ir": "science-forge-ir-v0",
-        "schema": "paper14-phase3-endpoint-flux-overlay-v4",
+        "schema": "paper14-phase3-outgoing-population-point-overlay-v5",
         "append_only_parent": str(PARENT_COVERAGE.relative_to(ROOT)),
         "append_only_parent_sha256": digest(PARENT_COVERAGE),
         "claim_map": str(OUTPUT.relative_to(ROOT)),
