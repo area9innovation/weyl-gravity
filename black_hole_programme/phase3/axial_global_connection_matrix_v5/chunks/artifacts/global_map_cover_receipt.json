@@ -1,0 +1,63 @@
+{
+  "artifact_kind": "global-map-cover-verification-receipt",
+  "artifacts": {
+    "manifest": {
+      "path": "black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_map_cover_manifest.json",
+      "sha256": "d5b2e4ddef623136155b315be5ff847f14597440b21e5bd1c4beb800d2ba16d8"
+    },
+    "mutation_tests": {
+      "path": "black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/tests/test_global_cover_manifest.py",
+      "sha256": "974ff2e9dc1f81b79ef4eb95d5742790b71783bd3e442e35e3e7f9cd8f4a8991"
+    },
+    "producer": {
+      "path": "black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/build_global_cover_manifest.py",
+      "sha256": "dc91aef18984d0b0d9c8100a7dbeef225ff283783aa88e2312133c162eed4525"
+    },
+    "verifier": {
+      "path": "black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/verify_global_cover_manifest.py",
+      "sha256": "00bb86d09e35b7c17258b5c92797018b9763a25cc103c33ae4a21c752a74b04e"
+    }
+  },
+  "commands": [
+    {
+      "command": "git diff --check -- physics/symplectic-reconstruction/black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/build_global_cover_manifest.py physics/symplectic-reconstruction/black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/verify_global_cover_manifest.py physics/symplectic-reconstruction/black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/tests/test_global_cover_manifest.py physics/symplectic-reconstruction/black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_map_cover_manifest.json physics/symplectic-reconstruction/black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_map_cover_receipt.json",
+      "elapsed_seconds": "0.00",
+      "result": "PASS",
+      "tier": 0
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_global_connection_matrix_v5.chunks.verify_global_cover_manifest --repo-root /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction --manifest black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_map_cover_manifest.json --receipt black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_map_cover_receipt.json",
+      "elapsed_seconds": "0.07",
+      "result": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_global_connection_matrix_v5.chunks.tests.test_global_cover_manifest",
+      "elapsed_seconds": "0.18",
+      "result": "PASS",
+      "tier": 1
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_global_connection_matrix_v5.chunks.build_global_cover_manifest --repo-root /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction --artifact-dir black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts --output black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_map_cover_manifest.json --receipt black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_map_cover_receipt.json --verifier black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/verify_global_cover_manifest.py --tests black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/tests/test_global_cover_manifest.py --verifier-elapsed 0.07 --test-elapsed 0.18 --diff-elapsed 0.00",
+      "elapsed_seconds": "not-applicable-deterministic-emission",
+      "result": "PASS",
+      "tier": "producer"
+    }
+  ],
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "does_not_establish": [
+    "reproduction of the global maps by a second numerical method",
+    "a horizon-to-infinity physical connection"
+  ],
+  "higher_tiers_not_run": {
+    "criterion": "the change adds a manifest and independent cover verifier; it does not alter a mathematical input, operator, schema consumer, or promoted theorem",
+    "tiers": [
+      2,
+      3
+    ]
+  },
+  "schema": "phase3-axial-global-map-cover-receipt-v1",
+  "status": "PASS"
+}
