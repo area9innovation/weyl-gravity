@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phase 3 axial global finite-flux channel classification v3",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "scope",
+    "imports",
+    "radial_connection_pilot",
+    "finite_flux_spaces",
+    "factor_resolved_incoming_channels",
+    "population_and_scattering",
+    "claim_flags",
+    "does_not_establish",
+    "verification"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-global-finite-flux-channel-classification-v3"
+    },
+    "result_id": {
+      "const": "PURE_WEYL_PHASE3_AXIAL_GLOBAL_FINITE_FLUX_CHANNEL_CLASSIFICATION_V3"
+    },
+    "status": {
+      "const": "PASS"
+    },
+    "lifecycle": {
+      "const": "COEFFICIENT_COMPUTED"
+    },
+    "dependency_tags": {
+      "type": "array",
+      "contains": {
+        "const": "LORENTZIAN-CAUSAL"
+      }
+    },
+    "imports": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 9
+    }
+  },
+  "additionalProperties": true
+}

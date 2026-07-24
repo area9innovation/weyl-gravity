@@ -1,0 +1,193 @@
+{
+  "schema": "phase3-axial-global-finite-flux-channel-classification-v3",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_GLOBAL_FINITE_FLUX_CHANNEL_CLASSIFICATION_V3",
+  "status": "PASS",
+  "lifecycle": "COEFFICIENT_COMPUTED",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL",
+    "REDUCED-MODE"
+  ],
+  "scope": {
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity",
+    "background": "Schwarzschild exterior M=1",
+    "sector": "axial ell=2",
+    "coupling_sign": "alpha_W>0",
+    "joint_pilot_interval": [
+      "1/2",
+      "10001/20000"
+    ],
+    "joint_pilot_interval_decimal": [
+      "0.5",
+      "0.50005"
+    ],
+    "zero_frequency": "excluded"
+  },
+  "imports": [
+    {
+      "name": "boundary_contract",
+      "path": "black_hole_programme/phase3/boundary_flux_contract/certificate.json",
+      "sha256": "3ee56677677f66df7ccba021a1e40cfd3af7e548aa24f991b8bae8f4689550ef"
+    },
+    {
+      "name": "radial_cover",
+      "path": "black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_map_cover_manifest.json",
+      "sha256": "d5b2e4ddef623136155b315be5ff847f14597440b21e5bd1c4beb800d2ba16d8"
+    },
+    {
+      "name": "incoming",
+      "path": "black_hole_programme/phase3/axial_incoming_extended_domain_audit/certificate.json",
+      "sha256": "f223358ca9de0f6d819684ce61d62677d6e5f8c5d4edaa600e2bae02719af0ef"
+    },
+    {
+      "name": "null_grams",
+      "path": "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
+      "sha256": "59fb9b443ce0b92ce016f53c376cb367bcf004e00d1b241ad22ec925e99deed2"
+    },
+    {
+      "name": "horizon_gram",
+      "path": "black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/future_horizon_outward_gram.json",
+      "sha256": "3051f43f73e4649dede60176e12f13afc59bdd5b3e8e09970db842a1ede00fdb"
+    },
+    {
+      "name": "transport_free_stokes",
+      "path": "black_hole_programme/phase3/axial_transport_free_outgoing_defect_preflight_v1/certificate.json",
+      "sha256": "833e0bdb3e1e443a5a351050b9b47fb4555a9b069db73b46e228f96245fa0aa9"
+    },
+    {
+      "name": "outgoing_population",
+      "path": "black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/certificate.json",
+      "sha256": "de7e3a944e945b00fea9e2b5f7abffc8789c7449cae9eae222c047912a4f3d0f"
+    }
+  ],
+  "radial_connection_pilot": {
+    "certified": true,
+    "frequency_cover": [
+      "1/2",
+      "129/256"
+    ],
+    "radial_map": "r=32 to r=4",
+    "frequency_children": 16,
+    "rank_each_global_map": 12,
+    "interpretation": "content-addressed interior transport pilot only; physical endpoint population is established independently by boundary devissage and Stokes"
+  },
+  "finite_flux_spaces": {
+    "incoming_Iminus": {
+      "dimension": 3,
+      "rank": 3,
+      "radical_dimension": 0,
+      "inertia": [
+        1,
+        2,
+        0
+      ],
+      "population": "Tminus is invertible for every real omega>0"
+    },
+    "outgoing_Iplus": {
+      "dimension": 3,
+      "rank": 3,
+      "radical_dimension": 0,
+      "inertia": [
+        1,
+        2,
+        0
+      ],
+      "population": "Tplus is invertible throughout the joint pilot interval"
+    },
+    "future_horizon": {
+      "dimension": 3,
+      "rank": 3,
+      "radical_dimension": 0,
+      "inertia": [
+        1,
+        2,
+        0
+      ],
+      "orientation": "future inner-boundary outward"
+    },
+    "common_signature_basis": "each form is congruent to J=diag(1,-1,-1)"
+  },
+  "factor_resolved_incoming_channels": {
+    "spin_two_extension_plane": {
+      "basis": [
+        "EI",
+        "RI0"
+      ],
+      "inertia": [
+        1,
+        1,
+        0
+      ],
+      "canonical_gram_over_pi_alpha_W": [
+        [
+          "0",
+          "576*omega/5"
+        ],
+        [
+          "576*omega/5",
+          "0"
+        ]
+      ],
+      "classification": "one positive and one negative null-paired spin-two channel"
+    },
+    "spin_one_quotient": {
+      "basis": [
+        "SI_unit"
+      ],
+      "inertia": [
+        0,
+        1,
+        0
+      ],
+      "unit_quotient_norm_over_pi_alpha_W": "-32/(15*omega)",
+      "classification": "one strictly negative spin-one quotient channel"
+    },
+    "attribution_boundary": "this exact factor attribution is certified in the incoming factor frame; the outgoing and horizon theorem certifies matching inertia, not identical raw bases"
+  },
+  "population_and_scattering": {
+    "unique_outgoing_preimage": "for every omega in the joint pilot interval, each outgoing trace has one and only one future-horizon-regular coefficient vector",
+    "band_limited_Tplus": "multiplication by Tplus is a bounded isomorphism on L2([1/2,10001/20000];C^3)",
+    "raw_maps": {
+      "Rraw": "Tplus*Tminus^(-1)",
+      "Araw": "Tminus^(-1)",
+      "Sraw": "vertical_stack(Rraw,Araw)"
+    },
+    "oriented_stokes_identity": "Gminus=Rraw^dagger*Gplus*Rraw+Araw^dagger*Hout*Araw",
+    "pseudo_isometry": "Sraw^dagger*(Gplus direct_sum Hout)*Sraw=Gminus pointwise and after integration over the joint pilot interval",
+    "embedding": true,
+    "negative_flux_population": "because Tminus and Tplus are invertible, the negative classical Lee-Wald directions in both null trace spaces are populated on the joint pilot interval"
+  },
+  "generic_positive_real_corollary": {
+    "outgoing_exceptional_set": "locally finite scalar reflection-zero set",
+    "Tplus_invertible": "open dense full-measure subset of omega>0",
+    "compact_band_multiplier": "injective with dense range; a bounded isomorphism exactly when the band contains no exceptional frequency"
+  },
+  "claim_flags": {
+    "boundary_flux_contract_established": true,
+    "content_addressed_radial_pilot_established": true,
+    "matching_three_channel_Krein_spaces_on_joint_pilot": true,
+    "incoming_factor_resolved_signature_established": true,
+    "full_outgoing_population_on_joint_pilot": true,
+    "band_limited_pseudo_isometry_established": true,
+    "generic_positive_real_outgoing_population_established": true,
+    "explicit_Tplus_entries_established": false,
+    "whole_original_pilot_outgoing_population_established": false,
+    "full_positive_axis_inverse_bound_established": false,
+    "time_domain_or_quantum_claim": false
+  },
+  "does_not_establish": [
+    "that the radial microfactor cover alone is a physical endpoint connection",
+    "the explicit 3x3 Tplus entries or extension mixing amplitudes",
+    "Tplus invertibility on the whole original [1/2,3/4] pilot interval",
+    "absence or location of isolated positive-real reflection zeros outside the joint cell",
+    "a uniform inverse bound on the full positive real axis",
+    "limiting absorption, resolvent bounds, time-domain boundedness or decay",
+    "a Green-resolvent pole theorem",
+    "positive energy, particles, ghosts, CPT or quantum unitarity",
+    "polar parity or ell other than two"
+  ],
+  "verification": {
+    "producer": "python3 -m black_hole_programme.phase3.axial_global_finite_flux_channel_classification_v3.produce",
+    "verifier": "python3 -m black_hole_programme.phase3.axial_global_finite_flux_channel_classification_v3.verify",
+    "tests": "python3 -m unittest -v black_hole_programme.phase3.axial_global_finite_flux_channel_classification_v3.test_classification"
+  }
+}

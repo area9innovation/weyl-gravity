@@ -1,0 +1,69 @@
+{
+  "schema": "phase3-axial-global-finite-flux-channel-classification-v3-receipt",
+  "status": "PASS",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL",
+    "REDUCED-MODE"
+  ],
+  "artifacts": {
+    "certificate": {
+      "path": "black_hole_programme/phase3/axial_global_finite_flux_channel_classification_v3/certificate.json",
+      "sha256": "5a081bfdfc8f630c88d70c6cfbbe1687318c936634080c3265547569e70b9048"
+    },
+    "producer": {
+      "path": "black_hole_programme/phase3/axial_global_finite_flux_channel_classification_v3/produce.py",
+      "sha256": "8ed0e07113ab2eaa3fe8e72f3cb1f8202325b505f09d33d0a5dbb53a9282a1fb"
+    },
+    "audit_kernel": {
+      "path": "black_hole_programme/phase3/axial_global_finite_flux_channel_classification_v3/audit.py",
+      "sha256": "c082aad0c10f27fb6c3726700828450c2895ab4c0496db1c345b8da9145c9f71"
+    },
+    "independent_verifier": {
+      "path": "black_hole_programme/phase3/axial_global_finite_flux_channel_classification_v3/verify.py",
+      "sha256": "2157f146fdcedd9d04f2c6c667becb8b6eb1170d1d2d86bca66ce5b4d3693717"
+    },
+    "tests": {
+      "path": "black_hole_programme/phase3/axial_global_finite_flux_channel_classification_v3/test_classification.py",
+      "sha256": "759722b55864256d274c7b01b0590005bfbc8483f49669e2f63268356c7adf60"
+    },
+    "schema": {
+      "path": "black_hole_programme/phase3/axial_global_finite_flux_channel_classification_v3/schema.json",
+      "sha256": "861bb6a7b278d854add51371475c3c6daec1f71637de1495f8d15bd399f81936"
+    }
+  },
+  "commands": [
+    {
+      "tier": 0,
+      "command": "python3 -m json.tool black_hole_programme/phase3/axial_global_finite_flux_channel_classification_v3/certificate.json",
+      "result": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m black_hole_programme.phase3.axial_global_finite_flux_channel_classification_v3.verify",
+      "result": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_global_finite_flux_channel_classification_v3.test_classification",
+      "result": "PASS"
+    }
+  ],
+  "higher_tiers_not_run": {
+    "tiers": [
+      2,
+      3
+    ],
+    "criterion": "This synthesis changes no mathematical input, operator, shared schema or generated upstream artifact; every imported claim is pinned by content hash."
+  },
+  "does_not_establish": [
+    "that the radial microfactor cover alone is a physical endpoint connection",
+    "the explicit 3x3 Tplus entries or extension mixing amplitudes",
+    "Tplus invertibility on the whole original [1/2,3/4] pilot interval",
+    "absence or location of isolated positive-real reflection zeros outside the joint cell",
+    "a uniform inverse bound on the full positive real axis",
+    "limiting absorption, resolvent bounds, time-domain boundedness or decay",
+    "a Green-resolvent pole theorem",
+    "positive energy, particles, ghosts, CPT or quantum unitarity",
+    "polar parity or ell other than two"
+  ]
+}
