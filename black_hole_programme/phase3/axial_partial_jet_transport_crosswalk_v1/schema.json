@@ -14,8 +14,11 @@
     "declaration",
     "imports",
     "exact_blocks",
+    "common_scalar_forcing",
     "full_transform_crosswalk",
     "partial_jet",
+    "fundamental_map_partial_jet",
+    "conditional_endpoint_derivative",
     "transport_method_boundary",
     "endpoint_hypotheses",
     "claim_flags",
@@ -73,6 +76,7 @@
         "C_Lx_to_metric_RW",
         "E_rank",
         "C_rank",
+        "joint_E_C_rank",
         "C_00_witness"
       ],
       "properties": {
@@ -83,7 +87,33 @@
         "C_Lx_to_metric_RW": {"$ref": "#/$defs/matrix"},
         "E_rank": {"const": 1},
         "C_rank": {"const": 1},
+        "joint_E_C_rank": {"const": 1},
         "C_00_witness": {"type": "string"}
+      }
+    },
+    "common_scalar_forcing": {
+      "type": "object",
+      "required": [
+        "identity",
+        "U_times_S",
+        "joint_E_C",
+        "outer_column_ell",
+        "outer_row_rho",
+        "outer_factorization",
+        "scalar",
+        "forcing",
+        "rank"
+      ],
+      "properties": {
+        "identity": {"const": "[E C]=U*S*[J N]"},
+        "U_times_S": {"$ref": "#/$defs/matrix"},
+        "joint_E_C": {"$ref": "#/$defs/matrix"},
+        "outer_column_ell": {"$ref": "#/$defs/matrix"},
+        "outer_row_rho": {"$ref": "#/$defs/matrix"},
+        "outer_factorization": {"const": "U*S=ell*rho"},
+        "scalar": {"type": "string"},
+        "forcing": {"type": "string"},
+        "rank": {"const": 1}
       }
     },
     "full_transform_crosswalk": {
@@ -130,6 +160,48 @@
         "exact_identity_verified": {"const": true}
       }
     },
+    "fundamental_map_partial_jet": {
+      "type": "object",
+      "required": [
+        "base_map",
+        "expanded_map",
+        "matrix_template",
+        "determinant",
+        "determinant_identity",
+        "exact_determinant_verified",
+        "proof_scope"
+      ],
+      "properties": {
+        "base_map": {"type": "string"},
+        "expanded_map": {
+          "const": "Phi6=[[P,Pdot,Qdot],[0,P,Q],[0,0,R]]"
+        },
+        "matrix_template": {"$ref": "#/$defs/matrix"},
+        "determinant": {"type": "string"},
+        "determinant_identity": {
+          "const": "det(Phi6)=det(P)**2*det(R)"
+        },
+        "exact_determinant_verified": {"const": true},
+        "proof_scope": {"type": "string"}
+      }
+    },
+    "conditional_endpoint_derivative": {
+      "type": "object",
+      "required": [
+        "hypothesis",
+        "connection_formula",
+        "scattering_formula",
+        "derivative_formula",
+        "hypothesis_verified_here"
+      ],
+      "properties": {
+        "hypothesis": {"type": "string"},
+        "connection_formula": {"type": "string"},
+        "scattering_formula": {"type": "string"},
+        "derivative_formula": {"type": "string"},
+        "hypothesis_verified_here": {"const": false}
+      }
+    },
     "transport_method_boundary": {
       "type": "object",
       "required": [
@@ -167,7 +239,11 @@
         "missing_C_derived",
         "E_rank_one",
         "C_rank_one",
+        "joint_E_C_rank_one",
+        "common_scalar_forcing_certified",
         "partial_spin_two_row_jet_exact",
+        "fundamental_map_partial_jet_formula_exact",
+        "fundamental_map_determinant_exact",
         "tau_only_H4_repair_certified",
         "endpoint_partial_jet_frames_constructed",
         "T_plus_recovered",
@@ -180,7 +256,11 @@
         "missing_C_derived": {"const": true},
         "E_rank_one": {"const": true},
         "C_rank_one": {"const": true},
+        "joint_E_C_rank_one": {"const": true},
+        "common_scalar_forcing_certified": {"const": true},
         "partial_spin_two_row_jet_exact": {"const": true},
+        "fundamental_map_partial_jet_formula_exact": {"const": true},
+        "fundamental_map_determinant_exact": {"const": true},
         "tau_only_H4_repair_certified": {"const": false},
         "endpoint_partial_jet_frames_constructed": {"const": false},
         "T_plus_recovered": {"const": false},

@@ -1,0 +1,25 @@
+{
+  "artifact_sha256": {
+    "README.md": "6331fad4ccf896c7cc8fed481ee51c7c92d56a3cc96035aecb1fff06e32c5e28",
+    "produce.py": "cecd3457f4e0948916653655a2011b9d1f4c1728310b78fcf4a69a6b2a8f2abc",
+    "report.md": "1d5a97f0a95e3ee65c0477a60a50987e140f958eff63461fe061d461f7370f5e",
+    "schema.json": "d55f95236a7b82826d20eacb1af6217c1c690af67761aa39bfa6c2669098b246",
+    "test_endpoint_germs.py": "95571e4f838f9bfc6425fb4b59006259e6cde60b0ec5234f1547609d5b337ccf",
+    "verify.py": "8e6a95e00f1645ab6b53b226c45a6b5f55a13321f4ef7e6647888d90d78bc2e7"
+  },
+  "certificate": "certificate.json",
+  "certificate_sha256": "18ed475219790332aa01144bd8ae4bb1d03ed9ffb1f1b4f429ff341b70e1b6f7",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_qnm_endpoint_germ_divisor_v1.produce",
+    "python3 -m black_hole_programme.phase3.axial_qnm_endpoint_germ_divisor_v1.verify",
+    "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_endpoint_germ_divisor_v1.test_endpoint_germs"
+  ],
+  "input_sha256": {
+    "noncertifying_seed": "ead92864b8f8b0bfa40909c5f2d3e7e0c3788c9bfedb5694896746a0d5fef36f",
+    "rw_factor": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579"
+  },
+  "producer": "produce.py",
+  "schema": "phase3-axial-qnm-endpoint-germ-divisor-receipt-v1",
+  "tier_2_not_run": "No mathematical input or shared operator changed; this package audits an existing exact scalar factor and noncertifying disk.",
+  "tier_3_not_run": "Not a freeze, theorem promotion, or release."
+}

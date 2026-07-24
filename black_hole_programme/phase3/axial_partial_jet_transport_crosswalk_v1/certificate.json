@@ -5,12 +5,74 @@
     "H4_pass_certified": false,
     "T_plus_recovered": false,
     "bounded_transport_certified": false,
+    "common_scalar_forcing_certified": true,
     "endpoint_partial_jet_frames_constructed": false,
     "exact_full_six_state_factor_gauge_crosswalk": true,
+    "fundamental_map_determinant_exact": true,
+    "fundamental_map_partial_jet_formula_exact": true,
+    "joint_E_C_rank_one": true,
     "missing_C_derived": true,
     "partial_spin_two_row_jet_exact": true,
     "scattering_identity_certified": false,
     "tau_only_H4_repair_certified": false
+  },
+  "common_scalar_forcing": {
+    "U_times_S": [
+      [
+        "-omega*r*(3*r - 2)/(2*(r - 2)*(omega*r - 2*I))",
+        "I*omega*r**2*(2*omega**2*r**3 - 3*I*omega*r**2 - 2*I*omega*r + 4*r - 8)/(4*(r - 2)*(omega*r - 2*I)**2)",
+        "I*omega*r*(omega**2*r**3 + 2*I*omega*r**2 - 10*I*omega*r + 4*I*omega + 4*r - 8)/(4*(r - 2)*(omega*r - 2*I)**2)",
+        "I*omega*r*(omega**2*r**3 - I*omega*r**2 - 2*I*omega*r + 4*r - 8)/(4*(omega*r - 2*I)**2)"
+      ],
+      [
+        "omega*(3*r - 2)/(2*(r - 2)*(omega*r - 2*I))",
+        "-I*omega*r*(2*omega**2*r**3 - 3*I*omega*r**2 - 2*I*omega*r + 4*r - 8)/(4*(r - 2)*(omega*r - 2*I)**2)",
+        "-I*omega*(omega**2*r**3 + 2*I*omega*r**2 - 10*I*omega*r + 4*I*omega + 4*r - 8)/(4*(r - 2)*(omega*r - 2*I)**2)",
+        "-I*omega*(omega**2*r**3 - I*omega*r**2 - 2*I*omega*r + 4*r - 8)/(4*(omega*r - 2*I)**2)"
+      ]
+    ],
+    "forcing": "(U*u)*sigma=ell*sigma",
+    "identity": "[E C]=U*S*[J N]",
+    "joint_E_C": [
+      [
+        "I*(3*r - 2)*(3*omega*r - 8*I)/(4*r*(omega*r - 2*I)**2)",
+        "(3*omega**2*r**3 - 3*I*omega*r**2 - 6*I*omega*r + 8*r - 16)/(4*(omega*r - 2*I)**2)",
+        "-r*(3*omega**2*r**4 - 4*omega**2*r**3 - 10*I*omega*r**2 + 12*I*omega*r + 12*r**2 - 40*r + 32)/(8*(omega*r - 2*I)**2)",
+        "-r**2*(r - 2)*(omega**2*r**3 - I*omega*r**2 - 2*I*omega*r + 4*r - 8)/(8*(omega*r - 2*I)**2)"
+      ],
+      [
+        "-I*(3*r - 2)*(3*omega*r - 8*I)/(4*r**2*(omega*r - 2*I)**2)",
+        "-(3*omega**2*r**3 - 3*I*omega*r**2 - 6*I*omega*r + 8*r - 16)/(4*r*(omega*r - 2*I)**2)",
+        "(3*omega**2*r**4 - 4*omega**2*r**3 - 10*I*omega*r**2 + 12*I*omega*r + 12*r**2 - 40*r + 32)/(8*(omega*r - 2*I)**2)",
+        "r*(r - 2)*(omega**2*r**3 - I*omega*r**2 - 2*I*omega*r + 4*r - 8)/(8*(omega*r - 2*I)**2)"
+      ]
+    ],
+    "outer_column_ell": [
+      [
+        "-r"
+      ],
+      [
+        "1"
+      ]
+    ],
+    "outer_factorization": "U*S=ell*rho",
+    "outer_row_rho": [
+      [
+        "omega*(3*r - 2)/(2*(r - 2)*(omega*r - 2*I))",
+        "-I*omega*r*(2*omega**2*r**3 - 3*I*omega*r**2 - 2*I*omega*r + 4*r - 8)/(4*(r - 2)*(omega*r - 2*I)**2)",
+        "-I*omega*(omega**2*r**3 + 2*I*omega*r**2 - 10*I*omega*r + 4*I*omega + 4*r - 8)/(4*(r - 2)*(omega*r - 2*I)**2)",
+        "-I*omega*(omega**2*r**3 - I*omega*r**2 - 2*I*omega*r + 4*r - 8)/(4*(omega*r - 2*I)**2)"
+      ]
+    ],
+    "rank": 1,
+    "scalar": "sigma=rho*(J*Y+N*Z)"
+  },
+  "conditional_endpoint_derivative": {
+    "connection_formula": "T_pm=J_partial(C_pm)",
+    "derivative_formula": "d_tau(C_plus*C_minus_inverse)=C_plus_dot*C_minus_inverse-C_plus*C_minus_inverse*C_minus_dot*C_minus_inverse",
+    "hypothesis": "C_plus(tau) and C_minus(tau) are induced by compatible tau-analytic endpoint frames from the same family",
+    "hypothesis_verified_here": false,
+    "scattering_formula": "T_plus*T_minus_inverse=J_partial(C_plus*C_minus_inverse)"
   },
   "declaration": {
     "background": "Schwarzschild exterior M=1",
@@ -103,7 +165,8 @@
         "-(3*omega**2*r**3 - 3*I*omega*r**2 - 6*I*omega*r + 8*r - 16)/(4*r*(omega*r - 2*I)**2)"
       ]
     ],
-    "E_rank": 1
+    "E_rank": 1,
+    "joint_E_C_rank": 1
   },
   "full_transform_crosswalk": {
     "coordinate_map_old_to_new": [
@@ -258,6 +321,64 @@
         "-2*I*(omega*r**2 - 3*I*r + 3*I)/(r*(r - 2))"
       ]
     ]
+  },
+  "fundamental_map_partial_jet": {
+    "base_map": "Phi4(tau)=[[P(tau),Q(tau)],[0,R]]",
+    "determinant": "(p00*p11 - p01*p10)**2*(r00*r11 - r01*r10)",
+    "determinant_identity": "det(Phi6)=det(P)**2*det(R)",
+    "exact_determinant_verified": true,
+    "expanded_map": "Phi6=[[P,Pdot,Qdot],[0,P,Q],[0,0,R]]",
+    "matrix_template": [
+      [
+        "p00",
+        "p01",
+        "pd00",
+        "pd01",
+        "qd00",
+        "qd01"
+      ],
+      [
+        "p10",
+        "p11",
+        "pd10",
+        "pd11",
+        "qd10",
+        "qd11"
+      ],
+      [
+        "0",
+        "0",
+        "p00",
+        "p01",
+        "q00",
+        "q01"
+      ],
+      [
+        "0",
+        "0",
+        "p10",
+        "p11",
+        "q10",
+        "q11"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "r00",
+        "r01"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "r10",
+        "r11"
+      ]
+    ],
+    "proof_scope": "Exact partial-jet functor plus product rule and common identity initial data; no endpoint frame is asserted."
   },
   "imports": {
     "complete_reconstruction": {

@@ -14,9 +14,17 @@ A&E&C\\
 \]
 
 The previously published \(E=USJ\) block and the newly derived \(C=USN\)
-block both have rank one. The full matrix is obtained directly from the
-published six-state reconstruction by one exact rational coordinate change,
-not by assembling independently transformed blocks.
+block have a stronger common-source property:
+
+\[
+[E\ C]=US[J\ N],\qquad \operatorname{rank}[E\ C]=1.
+\]
+
+An explicit outer factorization \(US=\ell\rho\) shows that the complete
+upper-row forcing is \(\ell\sigma\), where
+\(\sigma=\rho(JY+NZ)\) is one scalar. The full matrix is obtained directly
+from the published six-state reconstruction by one exact rational coordinate
+change, not by assembling independently transformed blocks.
 
 The same matrix is the spin-two-row partial first jet of
 
@@ -31,6 +39,23 @@ A+\tau E&D+\tau C\\
 with the spin-one state held \(\tau\)-independent. This is deliberately called
 a **partial jet**: the full first jet of a four-state system would be
 eight-dimensional.
+
+Functoriality also gives the exact fundamental-map template
+
+\[
+\Phi_6=
+\begin{pmatrix}
+P&\dot P&\dot Q\\
+0&P&Q\\
+0&0&R
+\end{pmatrix},
+\qquad
+\det\Phi_6=(\det P)^2\det R.
+\]
+
+The corresponding endpoint and scattering derivative formulas are recorded
+only conditionally on construction of compatible \(\tau\)-analytic endpoint
+frames.
 
 The certificate does not construct compatible endpoint jet frames, recover
 \(T_+\), prove a scattering identity, run bounded transport, or repair the H4

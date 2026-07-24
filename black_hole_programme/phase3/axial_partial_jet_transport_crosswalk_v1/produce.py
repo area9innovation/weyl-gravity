@@ -117,6 +117,10 @@ def derive(documents: dict[str, dict]) -> dict[str, sp.Matrix]:
     ax = carrier_flow[2:4, 2:4]
     e = (metric_master * source * embedding).applyfunc(reduce_expr)
     c = (metric_master * source * right_inverse).applyfunc(reduce_expr)
+    common_source = (metric_master * source).applyfunc(reduce_expr)
+    joint_extension = e.row_join(c)
+    forcing_column = sp.Matrix([-R, 1])
+    forcing_row = common_source[1:2, :]
 
     # Old order is (carrier_4, metric_2); new order is
     # (metric_RW, carrier_RW, Lx).
@@ -151,6 +155,10 @@ def derive(documents: dict[str, dict]) -> dict[str, sp.Matrix]:
         "Ax": ax,
         "E": e,
         "C": c,
+        "common_source": common_source,
+        "joint_extension": joint_extension,
+        "forcing_column": forcing_column,
+        "forcing_row": forcing_row,
         "old_to_new": old_to_new,
         "transformed": transformed,
         "expected": expected,
@@ -198,6 +206,44 @@ def produce() -> dict:
         raise RuntimeError("C witness mismatch")
     if result["E"].rank() != 1 or result["C"].rank() != 1:
         raise RuntimeError("rank-one extension identity failed")
+    if result["joint_extension"].rank() != 1:
+        raise RuntimeError("joint extension rank-one identity failed")
+    assert_zero_matrix(
+        result["common_source"]
+        - result["forcing_column"] * result["forcing_row"],
+        "common-source outer factorization",
+    )
+    assert_zero_matrix(
+        result["joint_extension"]
+        - result["common_source"] * result["carrier_gauge"],
+        "joint common-source identity",
+    )
+
+    # Generic fundamental-map partial jet. P and R are 2x2 base diagonal
+    # blocks, Q is the base Lx-to-RW transfer, and dotted blocks are the
+    # intrinsic first variations. The determinant must be independent of
+    # Q and all tangent blocks.
+    symbols = sp.symbols(
+        "p00 p01 p10 p11 q00 q01 q10 q11 "
+        "r00 r01 r10 r11 pd00 pd01 pd10 pd11 "
+        "qd00 qd01 qd10 qd11"
+    )
+    p = sp.Matrix(2, 2, symbols[0:4])
+    q = sp.Matrix(2, 2, symbols[4:8])
+    rmap = sp.Matrix(2, 2, symbols[8:12])
+    pdot = sp.Matrix(2, 2, symbols[12:16])
+    qdot = sp.Matrix(2, 2, symbols[16:20])
+    phi6 = sp.zeros(6)
+    phi6[:2, :2] = p
+    phi6[:2, 2:4] = pdot
+    phi6[:2, 4:6] = qdot
+    phi6[2:4, 2:4] = p
+    phi6[2:4, 4:6] = q
+    phi6[4:6, 4:6] = rmap
+    determinant = sp.factor(phi6.det())
+    expected_determinant = sp.factor(p.det() ** 2 * rmap.det())
+    if sp.expand(determinant - expected_determinant) != 0:
+        raise RuntimeError("fundamental-map determinant identity failed")
 
     imports = {
         name: {
@@ -235,7 +281,19 @@ def produce() -> dict:
             "C_Lx_to_metric_RW": encode_matrix(result["C"]),
             "E_rank": int(result["E"].rank()),
             "C_rank": int(result["C"].rank()),
+            "joint_E_C_rank": int(result["joint_extension"].rank()),
             "C_00_witness": encode(result["C"][0, 0]),
+        },
+        "common_scalar_forcing": {
+            "identity": "[E C]=U*S*[J N]",
+            "U_times_S": encode_matrix(result["common_source"]),
+            "joint_E_C": encode_matrix(result["joint_extension"]),
+            "outer_column_ell": encode_matrix(result["forcing_column"]),
+            "outer_row_rho": encode_matrix(result["forcing_row"]),
+            "outer_factorization": "U*S=ell*rho",
+            "scalar": "sigma=rho*(J*Y+N*Z)",
+            "forcing": "(U*u)*sigma=ell*sigma",
+            "rank": int(result["joint_extension"].rank()),
         },
         "full_transform_crosswalk": {
             "coordinate_map_old_to_new": encode_matrix(result["old_to_new"]),
@@ -258,6 +316,37 @@ def produce() -> dict:
             ),
             "expanded_six_state_connection": encode_matrix(result["expected"]),
             "exact_identity_verified": True,
+        },
+        "fundamental_map_partial_jet": {
+            "base_map": "Phi4(tau)=[[P(tau),Q(tau)],[0,R]]",
+            "expanded_map": (
+                "Phi6=[[P,Pdot,Qdot],[0,P,Q],[0,0,R]]"
+            ),
+            "matrix_template": encode_matrix(phi6),
+            "determinant": encode(determinant),
+            "determinant_identity": "det(Phi6)=det(P)**2*det(R)",
+            "exact_determinant_verified": True,
+            "proof_scope": (
+                "Exact partial-jet functor plus product rule and common "
+                "identity initial data; no endpoint frame is asserted."
+            ),
+        },
+        "conditional_endpoint_derivative": {
+            "hypothesis": (
+                "C_plus(tau) and C_minus(tau) are induced by compatible "
+                "tau-analytic endpoint frames from the same family"
+            ),
+            "connection_formula": "T_pm=J_partial(C_pm)",
+            "scattering_formula": (
+                "T_plus*T_minus_inverse="
+                "J_partial(C_plus*C_minus_inverse)"
+            ),
+            "derivative_formula": (
+                "d_tau(C_plus*C_minus_inverse)="
+                "C_plus_dot*C_minus_inverse-"
+                "C_plus*C_minus_inverse*C_minus_dot*C_minus_inverse"
+            ),
+            "hypothesis_verified_here": False,
         },
         "transport_method_boundary": {
             "tau_dual_alone_cures_H4": False,
@@ -292,7 +381,11 @@ def produce() -> dict:
             "missing_C_derived": True,
             "E_rank_one": True,
             "C_rank_one": True,
+            "joint_E_C_rank_one": True,
+            "common_scalar_forcing_certified": True,
             "partial_spin_two_row_jet_exact": True,
+            "fundamental_map_partial_jet_formula_exact": True,
+            "fundamental_map_determinant_exact": True,
             "tau_only_H4_repair_certified": False,
             "endpoint_partial_jet_frames_constructed": False,
             "T_plus_recovered": False,

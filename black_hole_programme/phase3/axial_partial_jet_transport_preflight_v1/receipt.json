@@ -1,0 +1,76 @@
+{
+  "schema": "phase3-axial-partial-jet-transport-preflight-receipt-v1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "status": "CERTIFIED_BOUNDED_PREFLIGHT_SHORTFALL",
+  "artifacts": {
+    "README.md": "f0249bdacf02423bbf3ac2f86a5ab7c3608838b49bb30d236ed9c5532a75838e",
+    "__init__.py": "971081eed0b1c954f6d4395b3237f3a76627022f32e2abc2b8144582b9c69c97",
+    "certificate.json": "dd1ce59b09c9cde39837b6d9f3d7855ff4a32182db212dae35aa52b5a1c37855",
+    "compile.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "partial_jet_microfactor.forge": "122d625619e5dadedc3696efa3a0c15703fad5f338a9d07c85111ae5ef136a3c",
+    "produce.py": "3400bdca2c7c3076cdb0acb4f042fa8909f0e11962d2492d68fb47da5b67f8fd",
+    "report.md": "7af3176b1968b4b7442acc6bf2fdee65e4b13104a1582f83ffc498d6f6962537",
+    "run.txt": "8d22c55734b2c47401e28599785b9914da602bfd96ee98ac4a135ea8fd187c44",
+    "schema.json": "114de125affde392cd8f5d8257348cadd422abe9028310a054d8f1603eaed6f4",
+    "test_preflight.py": "090e04d232a78c44d5f4aed6d0be55007330214b11c5a0c3225073c12f34d10d",
+    "verify.py": "da7047402f09a2f0ae33d64bad6cf5ac50132a3ecc1b0c997a8640667d1e3cc3"
+  },
+  "tests": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_partial_jet_transport_preflight_v1/*.py",
+      "status": "PASS",
+      "exit": 0
+    },
+    {
+      "tier": 0,
+      "command": "python3 jsonschema.validate(certificate.json, schema.json)",
+      "status": "PASS",
+      "exit": 0
+    },
+    {
+      "tier": 0,
+      "command": "git diff --check -- black_hole_programme/phase3/axial_partial_jet_transport_preflight_v1",
+      "status": "PASS",
+      "exit": 0
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_transport_preflight_v1.produce",
+      "elapsed_seconds": 2.03,
+      "status": "PASS_EXPECTED_BOUNDED_SHORTFALL",
+      "exit": 0,
+      "attempt_compile_exit": 0,
+      "attempt_run_exit": 3
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_transport_preflight_v1.verify",
+      "elapsed_seconds": 1.03,
+      "status": "PASS",
+      "exit": 0
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_partial_jet_transport_preflight_v1.test_preflight",
+      "elapsed_seconds": 3.50,
+      "tests": 6,
+      "status": "PASS",
+      "exit": 0
+    }
+  ],
+  "higher_tiers": {
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "The bounded attempt refused on its first microfactor and changed no imported operator or transitive certificate input."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a scoped fail-closed preflight, not a freeze, release, shared-core change, or lifecycle promotion."
+    }
+  },
+  "claim_boundary": "The mixed shared-omega IvTaylor4/dual-tau arithmetic was exercised on q00 child 0 shell 0 panel 0. The existing factor-gauge analytic-tail enclosure refused because h*||A|| exceeded its contraction domain. No padded microfactor comparison, child transport, H4 pass, endpoint frame, T_plus, scattering, or global boundedness claim is certified."
+}

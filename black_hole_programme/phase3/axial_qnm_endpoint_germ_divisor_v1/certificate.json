@@ -1,0 +1,153 @@
+{
+  "claim_flags": {
+    "Evans_boundary_nonzero_certified": false,
+    "QNM_enclosed": false,
+    "QNM_root_count_certified": false,
+    "beta_or_EP2_established": false,
+    "complex_ball_endpoint_columns_constructed": false,
+    "endpoint_formal_recurrence_divisors_exact": true,
+    "endpoint_reduced_equations_exact": true,
+    "horizon_convergent_germ_remainder_enclosed": false,
+    "horizon_nonresonant_frobenius_germ_exists": true,
+    "infinity_asymptotic_remainder_enclosed": false,
+    "seed_disk_divisor_noncollision_exact": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "convergence or a tail bound for the horizon recurrence",
+    "an outgoing infinity germ with a validated asymptotic remainder",
+    "a complex-ball ODE transport or matching determinant",
+    "nonvanishing of an Evans function on the seed contour",
+    "an argument-principle root count or a simple QNM",
+    "the intrinsic tangent b, beta_n, a Smith branch or an EP2"
+  ],
+  "horizon_germ": {
+    "A": "q*(q - 1)**4",
+    "A_coefficients_low_to_high": [
+      "0",
+      "1",
+      "-4",
+      "6",
+      "-4",
+      "1"
+    ],
+    "B": "I*(q - 1)**3*(4*omega*q - 4*omega - 3*I*q + I)",
+    "B_coefficients_low_to_high": [
+      "I*(4*omega - I)",
+      "-2*I*(8*omega - 3*I)",
+      "12*I*(2*omega - I)",
+      "-2*I*(8*omega - 5*I)",
+      "I*(4*omega - 3*I)"
+    ],
+    "C": "-4*omega**2*q**3 + 16*omega**2*q**2 - 24*omega**2*q + 16*omega**2 + 4*I*omega*q**3 - 12*I*omega*q**2 + 12*I*omega*q - 4*I*omega - 3*q**3 + 3*q**2 + 3*q - 3",
+    "C_coefficients_low_to_high": [
+      "16*omega**2 - 4*I*omega - 3",
+      "-3*I*(omega*(2 - 2*I) - 1)*(omega*(2 - 2*I) - I)",
+      "16*omega**2 - 12*I*omega + 3",
+      "-(2*omega - 3*I)*(2*omega + I)"
+    ],
+    "analytic_status": "nonresonant local Frobenius germ exists uniquely after fixing h_0; no quantitative tail enclosure is supplied",
+    "branch": "real q>0 with the real logarithm",
+    "coefficient_rule": "sum_j A_j*(m-j+2)*(m-j+1)*h_(m-j+2)+sum_j B_j*(m-j+1)*h_(m-j+1)+sum_j C_j*h_(m-j)=0; h_k=0 for k<0",
+    "coordinate": "q=1-2/r",
+    "divisor": "(n + 1)*(n + 4*I*omega + 1)",
+    "factor": "q**(2*I*omega)",
+    "lower_bound_reason": "|n+1+4*I*omega|>=4*|Re(omega)|",
+    "reduced_equation": "A*P''+B*P'+C*P=0",
+    "solved_coefficient": "h_(m+1)",
+    "uniform_modulus_lower_bound": "(n+1)*4*(87167921104510458948373/250000000000000000000000)",
+    "zero_locus": "omega=I*(n+1)/4, n>=0"
+  },
+  "imports": {
+    "noncertifying_seed": {
+      "authority": "noncertifying contour geometry only",
+      "path": "black_hole_programme/phase3/axial_qnm_contour_seed_preflight_v1/qnm_contour_diagnostic.json",
+      "sha256": "ead92864b8f8b0bfa40909c5f2d3e7e0c3788c9bfedb5694896746a0d5fef36f"
+    },
+    "rw_factor": {
+      "authority": "exact input",
+      "path": "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json",
+      "sha256": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579"
+    }
+  },
+  "infinity_germ": {
+    "A": "q**2*(2*q - 1)**2",
+    "A_coefficients_low_to_high": [
+      "0",
+      "0",
+      "1",
+      "-4",
+      "4"
+    ],
+    "B": "2*I*(2*q - 1)*(4*omega*q**2 - omega - 3*I*q**2 + I*q)",
+    "B_coefficients_low_to_high": [
+      "2*I*omega",
+      "-2*I*(2*omega + I)",
+      "-2*I*(4*omega - 5*I)",
+      "4*I*(4*omega - 3*I)"
+    ],
+    "C": "-2*(8*omega**2*q**2 - 4*omega**2 - 8*I*omega*q**2 + 4*I*omega*q + 6*q**2 - 9*q + 3)",
+    "C_coefficients_low_to_high": [
+      "2*(4*omega**2 - 3)",
+      "-2*I*(4*omega + 9*I)",
+      "-4*(2*omega - 3*I)*(2*omega + I)"
+    ],
+    "branch": "real q>0 with the real logarithm",
+    "coefficient_rule": "sum_j A_j*(m-j+2)*(m-j+1)*g_(m-j+2)+sum_j B_j*(m-j+1)*g_(m-j+1)+sum_j C_j*g_(m-j)=0; g_k=0 for k<0",
+    "coordinate": "q=1/r",
+    "divisor": "2*I*omega*(n + 1)",
+    "factor": "exp(-I*omega/q)*q**(2*I*omega)",
+    "lower_bound_reason": "|2*I*omega*(n+1)|>=2*(n+1)*|Re(omega)|",
+    "reduced_equation": "A*P''+B*P'+C*P=0",
+    "series_kind": "formal outgoing inverse-r asymptotic series",
+    "solved_coefficient": "g_(m+1)",
+    "uniform_modulus_lower_bound": "2*(n+1)*(87167921104510458948373/250000000000000000000000)",
+    "zero_locus": "omega=0"
+  },
+  "lifecycle": "CLASSIFIED",
+  "noncollision_audit": {
+    "frame_factors": {
+      "2*omega-I": ">=2*(87167921104510458948373/250000000000000000000000)",
+      "4*omega-I": ">=4*(87167921104510458948373/250000000000000000000000)",
+      "omega-I": ">=(87167921104510458948373/250000000000000000000000)"
+    },
+    "moving_radial_divisor": "r*omega-2*I",
+    "moving_radial_divisor_domain": "real r>=2",
+    "moving_radial_divisor_lower_bound": "r*(87167921104510458948373/250000000000000000000000)",
+    "moving_radial_divisor_proof": "|r*omega-2*I|>=r*|Re(omega)|",
+    "projective_witness_events_excluded": [
+      "omega**2=3 because Im(omega)>0 and Re(omega)<0",
+      "omega**2=-4 because Re(omega)<0"
+    ],
+    "purely_imaginary_events_excluded_by_left_margin": [
+      "omega=0",
+      "omega=I*(n+1)/4 for every integer n>=0",
+      "omega=I/4",
+      "omega=I/2",
+      "omega=I",
+      "omega=2*I"
+    ]
+  },
+  "schema": "phase3-axial-qnm-endpoint-germ-divisor-v1",
+  "scope": {
+    "D": "((r-2)/r)*D_r",
+    "V2": "6*(r-2)*(r-1)/r**4",
+    "background": "Schwarzschild exterior M=1",
+    "operator": "D**2+(omega**2-V2)",
+    "sector": "axial ell=2 scalar spin-two Regge-Wheeler factor",
+    "time_convention": "exp(+I*omega*t)"
+  },
+  "seed_disk": {
+    "center_im": "8896231568893569828046093/100000000000000000000000000",
+    "center_re": "-93417921104510458948373/250000000000000000000000",
+    "closed_disk": "|omega-(center_re+I*center_im)|<=radius",
+    "proof": "Re(omega)<=center_re+radius=-left_margin<0 and Im(omega)>=center_im-radius=upper_margin>0",
+    "radius": "1/40",
+    "strict_left_half_plane_margin": "87167921104510458948373/250000000000000000000000",
+    "strict_upper_half_plane_margin": "6396231568893569828046093/100000000000000000000000000"
+  },
+  "status": "EXACT_RECURRENCES_AND_DIVISOR_CLEARANCE_NO_GERM_REMAINDER_NO_ROOT_COUNT"
+}

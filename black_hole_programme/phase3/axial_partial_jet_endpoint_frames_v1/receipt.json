@@ -1,0 +1,39 @@
+{
+  "certificate": "black_hole_programme/phase3/axial_partial_jet_endpoint_frames_v1/certificate.json",
+  "certificate_sha256": "001757321247ccc3f5a38c4925d09c5d6759b2f9335913be96d30e4fe64ffbe9",
+  "claim_boundary": "endpoint-only exact compatibility; K shears and T_plus remain open",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_endpoint_frames_v1.produce --check",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_endpoint_frames_v1.verify",
+    "python3 -m unittest black_hole_programme.phase3.axial_partial_jet_endpoint_frames_v1.test_endpoint_frames"
+  ],
+  "executed": [
+    {
+      "command": "producer --check",
+      "elapsed_seconds": 43.32,
+      "status": "PASS"
+    },
+    {
+      "command": "independent verifier",
+      "elapsed_seconds": 0.16,
+      "status": "PASS"
+    },
+    {
+      "command": "seven mutation tests",
+      "elapsed_seconds": 0.064,
+      "status": "PASS"
+    },
+    {
+      "command": "py_compile + schema + receipt hash + diff-check",
+      "elapsed_seconds": 0.185,
+      "status": "PASS"
+    }
+  ],
+  "schema": "phase3-axial-partial-jet-endpoint-frames-receipt-v1",
+  "tiers": {
+    "tier0": "required",
+    "tier1": "required",
+    "tier2": "not run: no shared operator or promoted theorem",
+    "tier3": "not run: not a freeze/release"
+  }
+}

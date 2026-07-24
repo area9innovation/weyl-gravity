@@ -6,14 +6,14 @@
   ],
   "status": "EXACT_LOCAL_PARTIAL_JET_CROSSWALK_ENDPOINT_OPEN",
   "artifacts": {
-    "README.md": "057fc4007ba6fad52a50cd5e19ccbfa13bcf150c25acea70f25a60020d8029bf",
+    "README.md": "febb3a95d66a6e67b78225c8d75ce1551b09eb9bd72e849586ff1de8c76fdf05",
     "__init__.py": "78a6e2cc9f7272e316069f34247a75dae5b1fa888be468f6154cd9e560fea673",
-    "certificate.json": "bc42171c9bbfbc3d14cfdc355ead7ee92ed936b4ee82fa9975f01aecbb5f6cb4",
-    "produce.py": "faeeaf5f00d03e54d3c6722b11a12ad505548cd5bb856f74d3a03f8b5e29ca43",
-    "report.md": "246480b2d0bf61c7c5738d8bb53c40254a6af3aaa38eb87c15f98307018e36f4",
-    "schema.json": "d9ff483afe71ae3ade823e86c90448e127241a177c9282892cb0f7a092d426d8",
-    "test_partial_jet_crosswalk.py": "639345be8279b8fe085b829686da3febcf45d4e31ff471a580750f2b344fb0e8",
-    "verify.py": "03d931110a719eb2422ae46750d7c187c5fc5f54c2821c9f7dd9b418beb449b0"
+    "certificate.json": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a",
+    "produce.py": "3ca7b1ffd1d46eb3ffd72da16e44ce8d8262a91c4ac112df6d6c06769676a106",
+    "report.md": "419de49e404e16648aebf10a0ac6fb05bc3be99272f2ae1ea70e9e293365e1aa",
+    "schema.json": "66024d244e58b75824f7fc485c03a7e23942fc13e2f5d30ab7c6303ae7f31cf1",
+    "test_partial_jet_crosswalk.py": "5deecced7918626525f78996900dcd58a7eeb1a2edfa97027af7459655400517",
+    "verify.py": "6713cd9ca6d00aa18b7a4cf91696afe614643a9995e72971e887486206d173b0"
   },
   "tests": [
     {
@@ -37,22 +37,22 @@
     {
       "tier": 1,
       "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_transport_crosswalk_v1.produce",
-      "elapsed_seconds": 5.54,
+      "elapsed_seconds": 7.82,
       "status": "PASS",
       "exit": 0
     },
     {
       "tier": 1,
       "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_transport_crosswalk_v1.verify",
-      "elapsed_seconds": 3.02,
+      "elapsed_seconds": 4.19,
       "status": "PASS",
       "exit": 0
     },
     {
       "tier": 1,
       "command": "python3 -m unittest black_hole_programme.phase3.axial_partial_jet_transport_crosswalk_v1.test_partial_jet_crosswalk",
-      "elapsed_seconds": 12.60,
-      "tests": 6,
+      "elapsed_seconds": 26.03,
+      "tests": 9,
       "status": "PASS",
       "exit": 0
     }
@@ -67,5 +67,5 @@
       "criterion": "This is a scoped LOCAL-ALGEBRAIC/REDUCED-MODE classification, not a freeze, release, shared-core change, or lifecycle promotion."
     }
   },
-  "claim_boundary": "The complete local six-state factor-gauge crosswalk, the missing rank-one C block, and the spin-two-row partial-jet identity are exact. Compatible endpoint jet frames, T_plus, scattering, bounded transport, and an H4 pass remain open."
+  "claim_boundary": "The complete local six-state factor-gauge crosswalk, the joint rank-one identity [E C]=U*S*[J N], its scalar forcing factorization, and the spin-two-row connection/fundamental-map partial-jet identities are exact. Endpoint derivative formulas remain conditional; compatible endpoint jet frames, T_plus, scattering, bounded transport, and an H4 pass remain open."
 }

@@ -1,0 +1,27 @@
+{
+  "artifact_sha256": {
+    "README.md": "7933ce01d0fe3cc056eb5f3aca463850e9f68353e9869cea4e31036967819a2c",
+    "produce.py": "c43f2979a24a8a6bd4878c1b412f921abcbeb521f3d8f956935690f6c342cbfc",
+    "report.md": "f9a35ea5d8f21d3a161d745f21e35ca8458619d1821bea4595fdaece87cb5419",
+    "schema.json": "8c6577be4a9cf37260547481836320a9773dbf8c5b7ef21f61960d5e3b97c3d4",
+    "test_infinity_tail_gate.py": "a39e30186997a47187eeffb8e4f89c504e499cc5ae1af8ed2cb907a9c4b62ad2",
+    "verify.py": "ba822439b6e86ae29c548b54e0bca2f862e4ab14ee0f0a301ee7b9932a2b68d9"
+  },
+  "certificate": "certificate.json",
+  "certificate_sha256": "dbb01137cbf84567a0b671c7bf2f2f44cb485f12fcede932c7482f4f2a8e683a",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_qnm_infinity_tail_gate_v1.produce",
+    "python3 -m black_hole_programme.phase3.axial_qnm_infinity_tail_gate_v1.verify",
+    "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_infinity_tail_gate_v1.test_infinity_tail_gate",
+    "python3 -m py_compile black_hole_programme/phase3/axial_qnm_infinity_tail_gate_v1/produce.py black_hole_programme/phase3/axial_qnm_infinity_tail_gate_v1/verify.py black_hole_programme/phase3/axial_qnm_infinity_tail_gate_v1/test_infinity_tail_gate.py"
+  ],
+  "input_sha256": {
+    "endpoint_germ_certificate": "18ed475219790332aa01144bd8ae4bb1d03ed9ffb1f1b4f429ff341b70e1b6f7",
+    "noncertifying_seed_geometry": "ead92864b8f8b0bfa40909c5f2d3e7e0c3788c9bfedb5694896746a0d5fef36f",
+    "noncertifying_shooting_source": "90a280265f09b8edde045fc11293deb13daa20aa13d01aaf8179e849f42ae639"
+  },
+  "producer": "produce.py",
+  "schema": "phase3-axial-qnm-infinity-tail-gate-receipt-v1",
+  "tier_2_not_run": "No shared operator changed; the package independently audits one imported exact recurrence and disk geometry.",
+  "tier_3_not_run": "Not a freeze, release or physical theorem promotion."
+}

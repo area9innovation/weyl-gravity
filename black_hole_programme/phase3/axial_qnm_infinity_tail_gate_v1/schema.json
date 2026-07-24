@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "imports",
+    "disk",
+    "formal_recurrence",
+    "scaled_tail_gate",
+    "ecs_replacement",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-qnm-infinity-tail-gate-v1"
+    },
+    "dependency_tags": {
+      "contains": {
+        "const": "REDUCED-MODE"
+      }
+    },
+    "lifecycle": {
+      "const": "CLASSIFIED"
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "formal_recurrence_rederived_exactly",
+        "R45_forward_tail_noncontractive_uniformly",
+        "pi_over_4_ecs_phase_uniformly_damped",
+        "infinity_asymptotic_remainder_enclosed",
+        "ecs_inverse_tortoise_branch_certified",
+        "ecs_volterra_contraction_certified",
+        "complex_ball_outgoing_initializer_constructed",
+        "Evans_boundary_nonzero_certified",
+        "QNM_root_count_certified"
+      ],
+      "properties": {
+        "formal_recurrence_rederived_exactly": {"const": true},
+        "R45_forward_tail_noncontractive_uniformly": {"const": true},
+        "pi_over_4_ecs_phase_uniformly_damped": {"const": true},
+        "infinity_asymptotic_remainder_enclosed": {"const": false},
+        "ecs_inverse_tortoise_branch_certified": {"const": false},
+        "ecs_volterra_contraction_certified": {"const": false},
+        "complex_ball_outgoing_initializer_constructed": {"const": false},
+        "Evans_boundary_nonzero_certified": {"const": false},
+        "QNM_root_count_certified": {"const": false}
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 5
+    }
+  }
+}

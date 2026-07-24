@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase3-axial-qnm-endpoint-germ-divisor-v1",
+  "title": "Exact scalar RW endpoint recurrence and seed-disk divisor audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "scope",
+    "imports",
+    "seed_disk",
+    "horizon_germ",
+    "infinity_germ",
+    "noncollision_audit",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-qnm-endpoint-germ-divisor-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle": {"const": "CLASSIFIED"},
+    "status": {
+      "const": "EXACT_RECURRENCES_AND_DIVISOR_CLEARANCE_NO_GERM_REMAINDER_NO_ROOT_COUNT"
+    },
+    "scope": {"type": "object"},
+    "imports": {"type": "object"},
+    "seed_disk": {"type": "object"},
+    "horizon_germ": {"type": "object"},
+    "infinity_germ": {
+      "type": "object",
+      "properties": {
+        "series_kind": {
+          "const": "formal outgoing inverse-r asymptotic series"
+        }
+      }
+    },
+    "noncollision_audit": {"type": "object"},
+    "claim_flags": {
+      "type": "object",
+      "properties": {
+        "endpoint_reduced_equations_exact": {"const": true},
+        "endpoint_formal_recurrence_divisors_exact": {"const": true},
+        "seed_disk_divisor_noncollision_exact": {"const": true},
+        "horizon_nonresonant_frobenius_germ_exists": {"const": true},
+        "horizon_convergent_germ_remainder_enclosed": {"const": false},
+        "infinity_asymptotic_remainder_enclosed": {"const": false},
+        "complex_ball_endpoint_columns_constructed": {"const": false},
+        "Evans_boundary_nonzero_certified": {"const": false},
+        "QNM_root_count_certified": {"const": false},
+        "QNM_enclosed": {"const": false},
+        "beta_or_EP2_established": {"const": false}
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string"}
+    }
+  }
+}

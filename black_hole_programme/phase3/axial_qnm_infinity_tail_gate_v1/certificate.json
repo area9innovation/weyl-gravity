@@ -1,0 +1,88 @@
+{
+  "claim_flags": {
+    "Evans_boundary_nonzero_certified": false,
+    "QNM_root_count_certified": false,
+    "R45_forward_tail_noncontractive_uniformly": true,
+    "complex_ball_outgoing_initializer_constructed": false,
+    "ecs_inverse_tortoise_branch_certified": false,
+    "ecs_volterra_contraction_certified": false,
+    "formal_recurrence_rederived_exactly": true,
+    "infinity_asymptotic_remainder_enclosed": false,
+    "pi_over_4_ecs_phase_uniformly_damped": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disk": {
+    "center_im": "8896231568893569828046093/100000000000000000000000000",
+    "center_re": "-93417921104510458948373/250000000000000000000000",
+    "omega_modulus_l1_upper": "51263400010697753407395293/100000000000000000000000000",
+    "omega_modulus_lower_from_real_part": "87167921104510458948373/250000000000000000000000",
+    "radius": "1/40"
+  },
+  "does_not_establish": [
+    "divergence of every particular formal coefficient orbit; the theorem is a noncontractivity result for the naive independent forward-tail enclosure",
+    "an infinity asymptotic remainder at R=45 or any other radius",
+    "an exterior-complex-scaled analytic branch or Volterra contraction",
+    "a complex-ball outgoing initializer or finite-interval transport",
+    "Evans-function nonvanishing, a root count, a QNM or an EP2"
+  ],
+  "ecs_replacement": {
+    "angle_uniformly_damped": true,
+    "contour": "x=r_* = x_0+exp(I*pi/4)*t, t>=0",
+    "delta": "23470936872910613751303107/100000000000000000000000000",
+    "factored_unknown": "y=exp(-I*omega*x)*v",
+    "remaining_validation_gates": [
+      "construct one analytic inverse-tortoise branch r(x) on the pi/4 ray from the selected finite matching point",
+      "prove that branch avoids r=0 and r=2",
+      "enclose the complex potential integral and certify the Volterra operator norm is below one",
+      "bound the truncated-contour tail and transport the resulting complex ball back to the matching radius"
+    ],
+    "uniform_phase_bound": "|exp(-2*I*omega*exp(I*pi/4)*t)|<=exp(-sqrt(2)*delta*t)",
+    "volterra_equation": "v(x)=1+integral_x^infinity (1-exp(2*I*omega*(x-s)))/(2*I*omega)*V(s)*v(s) ds"
+  },
+  "formal_recurrence": {
+    "equation": "2*I*omega*(m+1)*g_(m+1)+p_m*g_m+q_m*g_(m-1)+s_m*g_(m-2)=0",
+    "normalization": "g_0=1 and g_k=0 for k<0",
+    "p_m": "m**2 - 4*I*m*omega + m + 8*omega**2 - 6",
+    "q_m": "-2*(2*m**2 + 4*I*m*omega - m - 10)",
+    "s_m": "4*(m + 2*I*omega - 3)*(m + 2*I*omega + 1)",
+    "series_kind": "formal Gevrey-type inverse-r asymptotic recurrence"
+  },
+  "imports": {
+    "endpoint_germ_certificate": {
+      "authority": "exact formal recurrence input",
+      "path": "black_hole_programme/phase3/axial_qnm_endpoint_germ_divisor_v1/certificate.json",
+      "sha256": "18ed475219790332aa01144bd8ae4bb1d03ed9ffb1f1b4f429ff341b70e1b6f7"
+    },
+    "noncertifying_seed_geometry": {
+      "authority": "exact disk geometry only",
+      "path": "black_hole_programme/phase3/axial_qnm_contour_seed_preflight_v1/qnm_contour_diagnostic.json",
+      "sha256": "ead92864b8f8b0bfa40909c5f2d3e7e0c3788c9bfedb5694896746a0d5fef36f"
+    },
+    "noncertifying_shooting_source": {
+      "authority": "provenance for the practical R=45 initializer only; its numerical output is not evidence",
+      "path": "black_hole_programme/phase3/axial_qnm_contour_seed_preflight_v1/qnm_mpmath_shooting_preflight.py",
+      "sha256": "90a280265f09b8edde045fc11293deb13daa20aa13d01aaf8179e849f42ae639"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "scaled_tail_gate": {
+    "Omega": "51263400010697753407395293/100000000000000000000000000",
+    "all_later_orders_expansive": true,
+    "conclusion": "At R=45 the independent forward recurrence for the scaled tail has |alpha_m|>1 uniformly on the disk for every m>=49. It cannot supply an all-order geometric contraction tail.",
+    "direct_gain": "alpha_m=-p_m/(2*I*omega*(m+1)*R)",
+    "first_certified_expansive_order": 49,
+    "gain_excess_over_one": "43210483191385068561732523245682162398275817241444151/2883566250601748629165985231250000000000000000000000000",
+    "gain_lower_at_first_order": "2926776733793133697727717754495682162398275817241444151/2883566250601748629165985231250000000000000000000000000",
+    "monotonicity_identity": "L_(m+1)/(m+2)-L_m/(m+1)=(m**2+3*m+8+8*Omega**2-4*Omega)/((m+1)*(m+2))",
+    "monotonicity_numerator_lower_bound": "15/2",
+    "monotonicity_numerator_symbolic": "m**2 + 3*m + 8*omega**2 - 4*omega + 8",
+    "outer_radius": 45,
+    "p_modulus_lower_bound": "m**2+m-6-4*m*Omega-8*Omega**2",
+    "scaled_terms": "t_m=g_m/R**m"
+  },
+  "schema": "phase3-axial-qnm-infinity-tail-gate-v1",
+  "status": "EXACT_NAIVE_INFINITY_RECURRENCE_NONCONTRACTIVE_ECS_REPLACEMENT_SPECIFIED_NO_REMAINDER_BOUND"
+}

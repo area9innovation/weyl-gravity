@@ -100,6 +100,11 @@ def verify_document(document: dict) -> list[str]:
         errors.append("E rank-one identity failed")
     if result["C"].rank() != 1 or blocks["C_rank"] != 1:
         errors.append("C rank-one identity failed")
+    if (
+        result["joint_extension"].rank() != 1
+        or blocks["joint_E_C_rank"] != 1
+    ):
+        errors.append("joint [E C] rank-one identity failed")
     witness = parse(
         imported["triangular_factorization"][
             "complete_six_state_filtration"
@@ -107,6 +112,36 @@ def verify_document(document: dict) -> list[str]:
     )
     if reduce_expr(result["C"][0, 0] - witness) != 0:
         errors.append("C witness mismatch")
+
+    forcing = document["common_scalar_forcing"]
+    if not matrix_equal(
+        result["common_source"], matrix(forcing["U_times_S"])
+    ):
+        errors.append("common source U*S mismatch")
+    if not matrix_equal(
+        result["joint_extension"], matrix(forcing["joint_E_C"])
+    ):
+        errors.append("joint [E C] mismatch")
+    if not matrix_equal(
+        result["forcing_column"], matrix(forcing["outer_column_ell"])
+    ):
+        errors.append("forcing column mismatch")
+    if not matrix_equal(
+        result["forcing_row"], matrix(forcing["outer_row_rho"])
+    ):
+        errors.append("forcing row mismatch")
+    if not matrix_equal(
+        result["common_source"],
+        result["forcing_column"] * result["forcing_row"],
+    ):
+        errors.append("common-source outer factorization failed")
+    if not matrix_equal(
+        result["joint_extension"],
+        result["common_source"] * result["carrier_gauge"],
+    ):
+        errors.append("[E C]=U*S*[J N] failed")
+    if forcing["rank"] != 1 or "rho*" not in forcing["scalar"]:
+        errors.append("scalar forcing statement drift")
 
     jet = document["partial_jet"]
     if "not the full jet" not in jet["type"]:
@@ -126,6 +161,22 @@ def verify_document(document: dict) -> list[str]:
     if not jet["exact_identity_verified"]:
         errors.append("partial-jet identity flag demoted")
 
+    fmap = document["fundamental_map_partial_jet"]
+    template = matrix(fmap["matrix_template"])
+    if template.shape != (6, 6):
+        errors.append("fundamental-map template shape drift")
+    p = template[:2, :2]
+    rmap = template[4:6, 4:6]
+    if sp.expand(template.det() - p.det() ** 2 * rmap.det()) != 0:
+        errors.append("fundamental-map determinant identity failed")
+    if not fmap["exact_determinant_verified"]:
+        errors.append("fundamental-map determinant flag demoted")
+    endpoint = document["conditional_endpoint_derivative"]
+    if endpoint["hypothesis_verified_here"]:
+        errors.append("conditional endpoint hypothesis was promoted")
+    if "C_plus_dot" not in endpoint["derivative_formula"]:
+        errors.append("endpoint derivative formula drift")
+
     boundary = document["transport_method_boundary"]
     if boundary["tau_dual_alone_cures_H4"]:
         errors.append("tau-only H4 repair was promoted")
@@ -142,7 +193,11 @@ def verify_document(document: dict) -> list[str]:
         "missing_C_derived",
         "E_rank_one",
         "C_rank_one",
+        "joint_E_C_rank_one",
+        "common_scalar_forcing_certified",
         "partial_spin_two_row_jet_exact",
+        "fundamental_map_partial_jet_formula_exact",
+        "fundamental_map_determinant_exact",
     ):
         if flags.get(name) is not True:
             errors.append(f"proved flag demoted: {name}")

@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase3-axial-partial-jet-transport-preflight-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_path",
+    "result_id",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "imports",
+    "forge_substrate",
+    "scope",
+    "attempt",
+    "comparison",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-partial-jet-transport-preflight-v1"
+    },
+    "schema_path": {"type": "string"},
+    "result_id": {
+      "const": "PURE_WEYL_PHASE3_AXIAL_PARTIAL_JET_TRANSPORT_PREFLIGHT"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle": {"const": "CLASSIFIED"},
+    "status": {"const": "CERTIFIED_BOUNDED_PREFLIGHT_SHORTFALL"},
+    "imports": {"type": "object", "minProperties": 3},
+    "forge_substrate": {
+      "type": "object",
+      "required": ["executable", "ivtaylor_path", "ivtaylor_sha256"]
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "frequency_child",
+        "frequency_center",
+        "frequency_radius",
+        "shared_generator",
+        "radial_shell",
+        "radial_panel",
+        "radial_interval",
+        "radial_center",
+        "radial_radius",
+        "panel_width",
+        "series_order",
+        "arithmetic"
+      ]
+    },
+    "attempt": {
+      "type": "object",
+      "required": [
+        "source_path",
+        "source_sha256",
+        "compile_log_path",
+        "compile_log_sha256",
+        "run_log_path",
+        "run_log_sha256",
+        "compile_exit",
+        "run_exit",
+        "compile_elapsed_seconds",
+        "run_elapsed_seconds",
+        "parsed_result"
+      ],
+      "properties": {
+        "compile_exit": {"const": 0},
+        "run_exit": {"const": 3},
+        "parsed_result": {
+          "type": "object",
+          "required": [
+            "status",
+            "refusal",
+            "coefficient_equal",
+            "difference_contains_zero",
+            "alpha",
+            "scaled_norm",
+            "tail",
+            "direct_width",
+            "jet_width"
+          ],
+          "properties": {
+            "status": {"const": "REFUSED"},
+            "refusal": {"const": "ANALYTIC_TAIL_NONCONTRACTIVE"},
+            "coefficient_equal": {"type": "null"},
+            "difference_contains_zero": {"type": "null"},
+            "alpha": {"type": "string"},
+            "scaled_norm": {"type": "string"},
+            "tail": {"const": "-1"},
+            "direct_width": {"type": "null"},
+            "jet_width": {"type": "null"}
+          }
+        }
+      }
+    },
+    "comparison": {
+      "type": "object",
+      "required": [
+        "jet_route",
+        "reference_route",
+        "same_analytic_tail_padding",
+        "success_requires",
+        "passed"
+      ],
+      "properties": {
+        "same_analytic_tail_padding": {"const": true},
+        "passed": {"const": false}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "one_microfactor_bounded_partial_jet_pass",
+        "shared_omega_dual_tau_arithmetic_exercised",
+        "expanded_six_state_reference_compared",
+        "whole_q00_child_transport_certified",
+        "H4_pass_certified",
+        "endpoint_partial_jet_frames_constructed",
+        "T_plus_recovered",
+        "scattering_identity_certified",
+        "bounded_global_transport_certified"
+      ],
+      "properties": {
+        "one_microfactor_bounded_partial_jet_pass": {"const": false},
+        "shared_omega_dual_tau_arithmetic_exercised": {"const": true},
+        "expanded_six_state_reference_compared": {"const": false},
+        "whole_q00_child_transport_certified": {"const": false},
+        "H4_pass_certified": {"const": false},
+        "endpoint_partial_jet_frames_constructed": {"const": false},
+        "T_plus_recovered": {"const": false},
+        "scattering_identity_certified": {"const": false},
+        "bounded_global_transport_certified": {"const": false}
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string"}
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase3-axial-partial-jet-endpoint-frames-v1",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "result_id", "dependency_tags", "lifecycle",
+    "status", "imports", "endpoint_frames", "common_order",
+    "dual_number_solution", "endpoint_recurrence_audit",
+    "endpoint_frame_derivative_law", "shortfall", "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {"const": "phase3-axial-partial-jet-endpoint-frames-v1"},
+    "schema_path": {"type": "string"},
+    "result_id": {"const": "PURE_WEYL_PHASE3_AXIAL_PARTIAL_JET_ENDPOINT_FRAMES"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "status": {"const": "EXACT_ENDPOINT_FACTOR_COMPATIBILITY_K_SHEARS_OPEN"},
+    "imports": {"type": "object"},
+    "endpoint_frames": {"type": "object"},
+    "common_order": {"type": "object"},
+    "dual_number_solution": {"type": "object"},
+    "endpoint_recurrence_audit": {"type": "object"},
+    "endpoint_frame_derivative_law": {"type": "object"},
+    "shortfall": {"type": "object"},
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

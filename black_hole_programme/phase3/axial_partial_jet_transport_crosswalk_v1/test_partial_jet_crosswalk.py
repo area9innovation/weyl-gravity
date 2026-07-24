@@ -30,6 +30,23 @@ class PartialJetCrosswalkTests(unittest.TestCase):
         ][0][0] = "1"
         self.assertTrue(verify_document(changed))
 
+    def test_joint_rank_promotion_is_rejected(self) -> None:
+        changed = copy.deepcopy(self.document)
+        changed["exact_blocks"]["joint_E_C_rank"] = 2
+        self.assertTrue(verify_document(changed))
+
+    def test_outer_factorization_mutation_is_rejected(self) -> None:
+        changed = copy.deepcopy(self.document)
+        changed["common_scalar_forcing"]["outer_column_ell"][0][0] = "1"
+        self.assertTrue(verify_document(changed))
+
+    def test_endpoint_hypothesis_promotion_is_rejected(self) -> None:
+        changed = copy.deepcopy(self.document)
+        changed["conditional_endpoint_derivative"][
+            "hypothesis_verified_here"
+        ] = True
+        self.assertTrue(verify_document(changed))
+
     def test_T_plus_promotion_is_rejected(self) -> None:
         changed = copy.deepcopy(self.document)
         changed["claim_flags"]["T_plus_recovered"] = True

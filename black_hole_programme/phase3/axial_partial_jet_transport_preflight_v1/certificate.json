@@ -1,0 +1,103 @@
+{
+  "attempt": {
+    "compile_elapsed_seconds": 0.0,
+    "compile_exit": 0,
+    "compile_log_path": "black_hole_programme/phase3/axial_partial_jet_transport_preflight_v1/compile.txt",
+    "compile_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "parsed_result": {
+      "alpha": "52785779347826.3",
+      "coefficient_equal": null,
+      "difference_contains_zero": null,
+      "direct_width": null,
+      "jet_width": null,
+      "refusal": "ANALYTIC_TAIL_NONCONTRACTIVE",
+      "scaled_norm": "49160.58792530214",
+      "status": "REFUSED",
+      "tail": "-1"
+    },
+    "run_elapsed_seconds": 0.0,
+    "run_exit": 3,
+    "run_log_path": "black_hole_programme/phase3/axial_partial_jet_transport_preflight_v1/run.txt",
+    "run_log_sha256": "8d22c55734b2c47401e28599785b9914da602bfd96ee98ac4a135ea8fd187c44",
+    "source_path": "black_hole_programme/phase3/axial_partial_jet_transport_preflight_v1/partial_jet_microfactor.forge",
+    "source_sha256": "122d625619e5dadedc3696efa3a0c15703fad5f338a9d07c85111ae5ef136a3c"
+  },
+  "claim_flags": {
+    "H4_pass_certified": false,
+    "T_plus_recovered": false,
+    "bounded_global_transport_certified": false,
+    "endpoint_partial_jet_frames_constructed": false,
+    "expanded_six_state_reference_compared": false,
+    "one_microfactor_bounded_partial_jet_pass": false,
+    "scattering_identity_certified": false,
+    "shared_omega_dual_tau_arithmetic_exercised": true,
+    "whole_q00_child_transport_certified": false
+  },
+  "comparison": {
+    "jet_route": "transport the 8x8 real base/tangent pair in dual_tau, then expand to the 12x12 real six-state order",
+    "passed": false,
+    "reference_route": "transport the direct 12x12 real form of the exact six-state connection imported from the crosswalk",
+    "same_analytic_tail_padding": true,
+    "success_requires": [
+      "exact equality of IvTaylor4 omega coefficients C0..C4",
+      "zero contained in every entry of the difference hull",
+      "zero arithmetic refusal and process exit"
+    ]
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "transport of the complete q00 child",
+    "transport beyond one shell-0 radial panel",
+    "an H4 exterior-norm pass",
+    "compatible endpoint partial-jet frames",
+    "the outgoing map T_plus",
+    "a scattering identity or global bounded population map"
+  ],
+  "forge_substrate": {
+    "executable": "/home/alstrup/area9/tango/forge/forge",
+    "ivtaylor_path": "/home/alstrup/area9/tango/forge/lib/math/ivtaylor.forge",
+    "ivtaylor_sha256": "c11c0a7f43aa3896a8f59d71243be3fc01a6a84cb8db9f947ad18976409ec4e9"
+  },
+  "imports": {
+    "partial_jet_crosswalk": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json",
+      "sha256": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a"
+    },
+    "q00_child_source_metadata": {
+      "path": "black_hole_programme/phase3/axial_horizon_h4_resume_v1/children/h4_child_q00_source_metadata.json",
+      "sha256": "e0d8ae34587ff4a6263329ffebf23089d599fa822a34590ea38e1ad9afbce792"
+    },
+    "q00_split_certificate": {
+      "path": "black_hole_programme/phase3/axial_horizon_h4_plucker_q00_split_v1/certificate.json",
+      "sha256": "af08dcca5bd805a2fbcbd1817bf8342c685c9c2c82103609c782a8e4c4cf988a"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_PARTIAL_JET_TRANSPORT_PREFLIGHT",
+  "schema": "phase3-axial-partial-jet-transport-preflight-v1",
+  "schema_path": "black_hole_programme/phase3/axial_partial_jet_transport_preflight_v1/schema.json",
+  "scope": {
+    "arithmetic": "IvTaylor4_omega tensor dual_tau; radial uncertainty is an outward interval remainder",
+    "frequency_center": "8193/16384",
+    "frequency_child": [
+      "1/2",
+      "4097/8192"
+    ],
+    "frequency_radius": "1/16384",
+    "panel_width": "1/1073741824",
+    "radial_center": "4294967809/2147483648",
+    "radial_interval": [
+      "2+1/4194304",
+      "2+1/4194304+1/1073741824"
+    ],
+    "radial_panel": 0,
+    "radial_radius": "1/2147483648",
+    "radial_shell": 0,
+    "series_order": 12,
+    "shared_generator": 7315
+  },
+  "status": "CERTIFIED_BOUNDED_PREFLIGHT_SHORTFALL"
+}
