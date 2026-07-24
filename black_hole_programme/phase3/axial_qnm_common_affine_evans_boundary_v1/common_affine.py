@@ -34,6 +34,7 @@ RUN = HERE / "common-affine-run.json"
 BASE_PANEL_COUNT = 16
 REFINEMENT = 32
 PANEL_COUNT = BASE_PANEL_COUNT * REFINEMENT
+PANEL_LIMIT = 1
 MATCH_RADIUS = Fraction(32)
 
 
@@ -73,51 +74,60 @@ def _outgoing_transport(omega_box: acb) -> dict:
     eta_radius = radius_from(eta_box, eta_center)
     xi_radius = radius_from(xi_box, xi_center)
     r = Fraction(45)
+    accepted_steps = 0
+    rejected_trials = 0
     while r > MATCH_RADIUS:
         step = max(Fraction(-1, 20), MATCH_RADIUS - r)
-        reference, metadata = reference_step(
-            r, step, q_center, eta_center, xi_center, omega_center
-        )
-        if reference is None:
-            return {
-                "passed": False,
-                "radius": str(r),
-                "failure": metadata["failure"],
-            }
-        q1, eta1, xi1 = (midpoint(value) for value in reference)
-        remainder, metadata = remainder_step(
-            q_radius=q_radius,
-            eta_radius=eta_radius,
-            xi_radius=xi_radius,
-            r0=r,
-            step=step,
-            omega_radius=omega_radius,
-            omega_center=omega_center,
-            q0=q_center,
-            q1=q1,
-            eta0=eta_center,
-            eta1=eta1,
-            xi0=xi_center,
-            xi1=xi1,
-            omega_lower=_omega_lower(),
-        )
-        if remainder is None:
-            return {
-                "passed": False,
-                "radius": str(r),
-                "failure": metadata["failure"],
-            }
+        while True:
+            reference, metadata = reference_step(
+                r, step, q_center, eta_center, xi_center, omega_center
+            )
+            if reference is not None:
+                q1, eta1, xi1 = (midpoint(value) for value in reference)
+                remainder, metadata = remainder_step(
+                    q_radius=q_radius,
+                    eta_radius=eta_radius,
+                    xi_radius=xi_radius,
+                    r0=r,
+                    step=step,
+                    omega_radius=omega_radius,
+                    omega_center=omega_center,
+                    q0=q_center,
+                    q1=q1,
+                    eta0=eta_center,
+                    eta1=eta1,
+                    xi0=xi_center,
+                    xi1=xi1,
+                    omega_lower=_omega_lower(),
+                )
+            else:
+                remainder = None
+            if remainder is not None:
+                break
+            rejected_trials += 1
+            step /= 2
+            if abs(step) < Fraction(1, 320):
+                return {
+                    "passed": False,
+                    "radius": str(r),
+                    "failure": metadata["failure"],
+                    "accepted_steps": accepted_steps,
+                    "rejected_trials": rejected_trials,
+                }
         q_radius, eta_radius, xi_radius = remainder
         q_radius += radius_from(reference[0], q1)
         eta_radius += radius_from(reference[1], eta1)
         xi_radius += radius_from(reference[2], xi1)
         q_center, eta_center, xi_center = q1, eta1, xi1
         r += step
+        accepted_steps += 1
     return {
         "passed": True,
         "q": inflate(q_center, q_radius),
         "q_tau": inflate(eta_center, eta_radius),
         "q_omega": inflate(xi_center, xi_radius),
+        "accepted_steps": accepted_steps,
+        "rejected_trials": rejected_trials,
     }
 
 
@@ -125,53 +135,74 @@ def _horizon_transport(omega_box: acb) -> dict:
     """Certify the horizon q, q_tau and q_omega balls at r=32."""
     with patch.object(hp, "panel_box", return_value=omega_box):
         obstruction = rc.first_obstruction(0)
-    continuation = rc.reciprocal_continue(obstruction)
-    if not continuation["reached_r4"]:
+    q_full = inflate(obstruction["q_center"], obstruction["q_radius"])
+    e_full = inflate(obstruction["e_center"], obstruction["e_radius"])
+    x_full = inflate(obstruction["x_center"], obstruction["x_radius"])
+    if q_full.abs_lower() <= 0:
         return {
             "passed": False,
-            "radius": continuation["terminal"]["radius"],
-            "failure": continuation["terminal"]["failure"],
+            "radius": str(obstruction["radius"]),
+            "failure": "RECIPROCAL_DENOMINATOR_CONTAINS_ZERO",
         }
-    checkpoint = continuation["checkpoint_r4"]
-    p_center = parse_acb(checkpoint["p_center"])
-    eta_center = parse_acb(checkpoint["p_tau_center"])
-    xi_center = parse_acb(checkpoint["p_omega_center"])
-    dp = arb(checkpoint["p_radius"])
-    de = arb(checkpoint["p_tau_radius"])
-    dx = arb(checkpoint["p_omega_radius"])
-    r = Fraction(4)
+    # The predecessor variables are E=-q_tau and X=-q_omega, so the
+    # reciprocal sensitivities are E/q^2 and X/q^2.
+    p_full = 1 / q_full
+    eta_full = e_full / (q_full * q_full)
+    xi_full = x_full / (q_full * q_full)
+    p_center = midpoint(p_full)
+    eta_center = midpoint(eta_full)
+    xi_center = midpoint(xi_full)
+    dp = radius_from(p_full, p_center)
+    de = radius_from(eta_full, eta_center)
+    dx = radius_from(xi_full, xi_center)
+    r = obstruction["radius"]
     omega_center = obstruction["omega_center"]
     omega_radius = obstruction["omega_radius"]
+    accepted_steps = 0
+    rejected_trials = 0
     while r < MATCH_RADIUS:
-        nominal = Fraction(1, 50) if r < 8 else Fraction(1, 20)
+        if r < 4:
+            # An absolute step floor is invalid arbitrarily close to the
+            # regular singular point.  Keep the Taylor disk inside r>2.
+            nominal = min((r - 2) / 16, Fraction(1, 100))
+        else:
+            nominal = Fraction(1, 50) if r < 8 else Fraction(1, 20)
         step = min(nominal, MATCH_RADIUS - r)
-        reference, metadata = rc.p_reference_step(
-            r, step, p_center, eta_center, xi_center, omega_center
-        )
-        if reference is None:
-            return {
-                "passed": False,
-                "radius": str(r),
-                "failure": metadata["failure"],
-            }
-        p1, eta1, xi1 = (midpoint(value) for value in reference)
-        remainder, failure = rc.p_remainder_step(
-            dp, de, dx, r, step, omega_radius, omega_center,
-            p_center, p1, eta_center, eta1, xi_center, xi1,
-            _omega_lower(),
-        )
-        if remainder is None:
-            return {
-                "passed": False,
-                "radius": str(r),
-                "failure": failure,
-            }
+        while True:
+            reference, metadata = rc.p_reference_step(
+                r, step, p_center, eta_center, xi_center, omega_center
+            )
+            if reference is not None:
+                p1, eta1, xi1 = (midpoint(value) for value in reference)
+                remainder, failure = rc.p_remainder_step(
+                    dp, de, dx, r, step, omega_radius, omega_center,
+                    p_center, p1, eta_center, eta1, xi_center, xi1,
+                    _omega_lower(),
+                )
+            else:
+                remainder = None
+                failure = metadata["failure"]
+            if remainder is not None:
+                break
+            rejected_trials += 1
+            step /= 2
+            # Near r=2 an absolute floor is still too coarse: the singleton
+            # rail needs a step measured relative to the horizon distance.
+            if step < (r - 2) / 2**24:
+                return {
+                    "passed": False,
+                    "radius": str(r),
+                    "failure": failure,
+                    "accepted_steps": accepted_steps,
+                    "rejected_trials": rejected_trials,
+                }
         dp, de, dx = remainder
         dp += radius_from(reference[0], p1)
         de += radius_from(reference[1], eta1)
         dx += radius_from(reference[2], xi1)
         p_center, eta_center, xi_center = p1, eta1, xi1
         r += step
+        accepted_steps += 1
     p = inflate(p_center, dp)
     p_tau = inflate(eta_center, de)
     p_omega = inflate(xi_center, dx)
@@ -186,6 +217,8 @@ def _horizon_transport(omega_box: acb) -> dict:
         "q": 1 / p,
         "q_tau": -p_tau / (p * p),
         "q_omega": -p_omega / (p * p),
+        "accepted_steps": accepted_steps,
+        "rejected_trials": rejected_trials,
     }
 
 
@@ -248,6 +281,16 @@ def _endpoint_export(
             "q_omega": str(qw_residual.upper()),
         },
         "phase_convention": phase,
+        "transport_diagnostics": {
+            "box": {
+                "accepted_steps": box_state["accepted_steps"],
+                "rejected_trials": box_state["rejected_trials"],
+            },
+            "center": {
+                "accepted_steps": center_state["accepted_steps"],
+                "rejected_trials": center_state["rejected_trials"],
+            },
+        },
         "residual_rule": (
             "q residual follows from the certified q_omega enclosure and "
             "the fundamental theorem of calculus after subtracting the "
@@ -320,11 +363,11 @@ def compute_panel(panel: int, panel_count: int = PANEL_COUNT) -> dict:
     return row
 
 
-def compute(panel_count: int = PANEL_COUNT) -> dict:
+def compute(panel_count: int = PANEL_COUNT, panel_limit: int = PANEL_LIMIT) -> dict:
     ctx.prec = 128
     rows = []
     first_failure = None
-    for panel in range(panel_count):
+    for panel in range(min(panel_count, panel_limit)):
         row = compute_panel(panel, panel_count)
         rows.append(row)
         if row["boundary_nonvanishing"]["status"] != "PASS":
@@ -333,12 +376,13 @@ def compute(panel_count: int = PANEL_COUNT) -> dict:
                 "failure": row["boundary_nonvanishing"]["failure"],
             }
             break
-    boundary = first_failure is None and len(rows) == panel_count
+    boundary = first_failure is None and len(rows) == panel_limit
     return {
         "schema": "phase3-axial-qnm-common-affine-evans-boundary-run-v1",
         "base_panel_count": BASE_PANEL_COUNT,
         "refinement": panel_count // BASE_PANEL_COUNT,
         "panel_count": panel_count,
+        "panel_limit": panel_limit,
         "match_radius": int(MATCH_RADIUS),
         "shared_generator": (
             "one panel-local zeta=omega-omega_center generator is used by "
@@ -356,7 +400,10 @@ def compute(panel_count: int = PANEL_COUNT) -> dict:
             },
             "argument_principle_root_count": {
                 "status": "NOT_RUN",
-                "prerequisite": "boundary_nonvanishing=PASS",
+                "prerequisite": (
+                    "full-contour boundary_nonvanishing=PASS; this bounded "
+                    "repair run covers panel 0 only"
+                ),
             },
         },
     }

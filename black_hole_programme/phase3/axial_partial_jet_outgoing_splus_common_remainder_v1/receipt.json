@@ -1,0 +1,24 @@
+{
+  "certificate": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_common_remainder_v1/certificate.json",
+  "certificate_sha256": "ab72fe1b740fe3f03c319dda91c8aaf62dfda59bea58249b2f2cddcc2caee30a",
+  "commands": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_outgoing_splus_common_remainder_v1.produce",
+      "compile_elapsed_seconds": 6.09990818600636,
+      "elapsed_seconds": 31.75542223098455,
+      "run_elapsed_seconds": 0.16584716795478016,
+      "status": "PASS"
+    }
+  ],
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "schema": "phase3-axial-partial-jet-outgoing-splus-common-remainder-receipt-v1",
+  "tiers": {
+    "tier0": "Python/Forge compile, deterministic producer, JSON schema",
+    "tier1": "independent verifier and mutation tests",
+    "tier2": "not run; no shared operator changed",
+    "tier3": "not run; no scattering theorem promoted"
+  }
+}

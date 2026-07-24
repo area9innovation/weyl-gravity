@@ -1,0 +1,124 @@
+{
+  "artifacts": {
+    "compile_exit": 0,
+    "compile_log": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_common_remainder_v1/compile.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "run_exit": 0,
+    "run_log": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_common_remainder_v1/run.txt",
+      "sha256": "371242c47e3600764f4ff9b0c387fe39a3479839b0009de4888ae68e379bb209"
+    },
+    "source": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_common_remainder_v1/splus_common_remainder.forge",
+      "sha256": "c7fcfe45e86f5286b4defdac1cb367d40d114f62f8e62ab6e3995f1f1c29d69d"
+    }
+  },
+  "claim_flags": {
+    "S_common_omega_generator_certified": true,
+    "S_partial_dual_tau_remainder_certified": true,
+    "S_phase_factored_all_order_input_certified": true,
+    "T_plus_certified": false,
+    "all_three_correlated_outgoing_columns_certified": false,
+    "scattering_or_flux_certified": false,
+    "validated_analytic_K_plus_certified": false
+  },
+  "common_remainder": {
+    "all_order_actual_hull_contained": true,
+    "all_order_input": true,
+    "arithmetic": "IvTaylor4_omega tensor partial dual_tau",
+    "construction": "validated all-order old XI3 hull -> exact rational factor transform and unit quotient normalization -> exact degree-4 factor-head coefficients plus one common interval remainder",
+    "exact_head_coefficients_preserved": true,
+    "generator_id": 7315,
+    "runtime": {
+      "actual": "369.98665847006197",
+      "base": "0.0013484650772257953",
+      "coefficients": "true",
+      "common": "369.99610132415216",
+      "contained": "true",
+      "formal": "0.03107993322993252",
+      "generator": "7315",
+      "status": "PASS",
+      "tangent": "369.99610132415216"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "transport of S from r=32 to the interior matching section",
+    "a jointly propagated three-column outgoing endpoint frame",
+    "a validated analytic K_plus normalizer",
+    "T_plus, reflection, Stokes conservation, scattering, or flux"
+  ],
+  "domain": {
+    "exported_first_pilot_child": [
+      "1/2",
+      "4097/8192"
+    ],
+    "phase": "exp(-2*I*omega*(r-32))*(r/32)**(-4*I*omega-1)",
+    "phase_omega_taylor_expanded": false,
+    "practical_parent_omega_cell": [
+      "1/2",
+      "129/256"
+    ],
+    "radius": "32"
+  },
+  "factor_column": {
+    "dual_base_order": [
+      "Y_re",
+      "Z_re",
+      "Y_im",
+      "Z_im"
+    ],
+    "dual_tangent_order": [
+      "X_re",
+      "zero_Z_re",
+      "X_im",
+      "zero_Z_im"
+    ],
+    "factor_state_order": [
+      "X_tau",
+      "Y_base",
+      "Z_spin_one"
+    ],
+    "formal_complex_head_at_r32": [
+      "(256*omega**6 + 1088*I*omega**5 + 12592*omega**4 - 53848*I*omega**3 - 20241*omega**2 + 2544*I*omega + 513)/(96*omega*(16*omega - I))",
+      "(21760*omega**6 - 149184*I*omega**5 - 69392*omega**4 - 4080696*I*omega**3 - 221733*omega**2 - 7968*I*omega - 507)/(1024*omega*(16*omega - I))",
+      "-(1024*omega**5 - 13056*I*omega**4 - 102272*omega**3 + 399672*I*omega**2 + 25056*omega - 51*I)/(50331648*omega**3)",
+      "I*(69632*omega**6 - 892928*I*omega**5 - 7007488*omega**4 + 27489376*I*omega**3 + 2516376*omega**2 - 79116*I*omega - 255)/(1610612736*omega**3)",
+      "(32768*omega**7 - 572416*I*omega**6 - 6754560*omega**5 + 52598144*I*omega**4 + 206216008*omega**3 - 19030728*I*omega**2 - 608205*omega + 669*I)/(193273528320*omega**3)",
+      "-I*(4177920*omega**8 - 73404416*I*omega**7 - 867785728*omega**6 + 6771404544*I*omega**5 + 26699205440*omega**4 - 3630853552*I*omega**3 - 223255152*omega**2 + 5897133*I*omega + 9246)/(11596411699200*omega**3)"
+    ],
+    "formal_power": "-4*I*omega - 1",
+    "formal_rate": "-2*I*omega",
+    "normalized_line": "S=I*XI3/(2*omega)",
+    "old_line": "XI3",
+    "spin_one_tangent_is_exactly_zero": true
+  },
+  "imports": {
+    "outgoing_frame_preflight": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_frame_completion_v1/certificate.json",
+      "sha256": "def9952552a48374e97594517f9a434850ffc6251a34517085793a467bba17ed"
+    },
+    "partial_jet_crosswalk": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json",
+      "sha256": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a"
+    },
+    "practical_infinity_adapter": {
+      "path": "black_hole_programme/phase3/axial_infinity_practical_transfer/validated_infinity_transfer.forge",
+      "sha256": "e2270831fa6c34628ec0d4a2073e4afda2ae8c5d3cc40192803a7a2fad90c8e5"
+    },
+    "practical_infinity_certificate": {
+      "path": "black_hole_programme/phase3/axial_infinity_practical_transfer/certificate.json",
+      "sha256": "40cd67db3e0d0cac79a8097bd6c7e5a2b09a1de0498ef078c2ac50c927f11a8d"
+    }
+  },
+  "lifecycle": "NUMERIC-ENCLOSURE",
+  "next_gate": "transport this correlated S dual column with the same checkpointed partial-jet rail as R+, then certify the joint E/R/S endpoint frame",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_SPLUS_COMMON_REMAINDER",
+  "schema": "phase3-axial-partial-jet-outgoing-splus-common-remainder-v1",
+  "status": "SPLUS_COMMON_GENERATOR_REMAINDER_PASS"
+}

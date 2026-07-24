@@ -1,0 +1,41 @@
+{
+  "claim_boundary": "one certified mixed-line panel beyond the former pivot obstruction in a fixed GL chart; r=4/H4/T_plus remain open",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.pivot_switch",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.produce_pivot_switch --check",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.verify_pivot_switch",
+    "python3 -m unittest -v black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.test_pivot_switch"
+  ],
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "higher_tiers_not_run": "Tier 2/3 not required: this is a bounded representation repair and does not promote a physical scattering theorem",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_HORIZON_MIXED_PIVOT_SWITCH",
+  "schema": "phase3-receipt-v1",
+  "status": "ONE_POST_SWITCH_CHECKPOINT_CERTIFIED",
+  "validation": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.pivot_switch",
+      "elapsed_seconds": 10.42,
+      "output_sha256": "f027d51f4196c33aaa3f73da2227b5372be6f8abab967002af94545848af0f9c",
+      "status": "PASS_DETERMINISTIC_OUTPUT"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.produce_pivot_switch --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.verify_pivot_switch",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.test_pivot_switch",
+      "elapsed_seconds": 11.22,
+      "status": "PASS_4_TESTS"
+    },
+    {
+      "command": "Draft202012Validator(schema).validate(certificate)",
+      "status": "PASS"
+    }
+  ]
+}

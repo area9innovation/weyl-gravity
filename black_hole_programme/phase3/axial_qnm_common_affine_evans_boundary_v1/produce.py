@@ -49,25 +49,32 @@ def sha(path: Path) -> str:
 def _report(run: dict) -> str:
     gate = run["gates"]["boundary_nonvanishing"]
     row = run["rows"][0]
+    mismatch = row["physical_mismatch"]
     return (
-        "# Common-affine projective Evans boundary attempt\n\n"
+        "# Common-affine projective Evans panel-0 repair\n\n"
         "Dependency tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`.\n\n"
         "The consumer now has an explicit shared panel-local generator and "
         "the typed opposite-phase rule\n"
         "`Delta=q_H-q_out+2*I*omega`.  Endpoint exports are required to "
         "subtract centered `q`, `q_tau`, and `q_omega` polynomials before "
         "adding independent residuals.\n\n"
-        f"The bounded run stopped on panel `{row['panel']}` of "
-        f"`{run['panel_count']}`.  The outgoing box transport passed, but "
-        f"its singleton-center validation failed with "
-        f"`{row['outgoing']['failure']}` at `r={row['outgoing']['radius']}`. "
-        f"The horizon box validation failed with "
-        f"`{row['horizon']['failure']}` at `r={row['horizon']['radius']}`. "
-        "Accordingly no endpoint polynomial pair was emitted and the "
-        f"boundary gate is `{gate['status']}`.\n\n"
-        "This is a representation/majorant obstruction, not evidence for a "
-        "zero of the physical mismatch.  No argument-principle count was "
-        "run.\n"
+        "The bounded repair covers panel `0` only.  Adaptive outgoing "
+        "halving repairs the singleton `AFFINE_Q_REMAINDER_SELF_MAP`; a "
+        "horizon-distance-relative reciprocal step repairs "
+        "`RECIPROCAL_REFERENCE_P_MAJORANT_DISCRIMINANT`.  Both endpoint "
+        "box and singleton transports now reach `r=32`, and both centered "
+        "polynomial exports are emitted.\n\n"
+        "The independent post-polynomial residuals remain too wide for the "
+        "physical mismatch: the certified mismatch-center polynomial has "
+        f"coefficients `{mismatch['polynomial_coefficients']}`, while the "
+        "independent residual radius is "
+        f"`{mismatch['independent_residual_radius']}`.  Its modulus lower "
+        f"bound is `{mismatch['modulus_lower']}`, so the panel-0 boundary "
+        f"gate remains `{gate['status']}` with "
+        "`COMMON_AFFINE_DELTA_ENCLOSURE_CONTAINS_ZERO`.\n\n"
+        "This is a residual-dependency obstruction, not evidence for a zero "
+        "of the physical mismatch.  The other 511 panels and the "
+        "argument-principle count were not run.\n"
     )
 
 
@@ -80,9 +87,9 @@ def main() -> None:
     certificate = {
         "schema": "phase3-axial-qnm-common-affine-evans-boundary-v1",
         "status": (
-            "COMMON_AFFINE_EVANS_BOUNDARY_NONVANISHING_CERTIFIED"
+            "PANEL0_COMMON_AFFINE_EVANS_BOUNDARY_NONVANISHING_CERTIFIED"
             if gate["status"] == "PASS" else
-            "FAIL_CLOSED_AT_FIRST_COMMON_AFFINE_ENDPOINT_EXPORT"
+            "PANEL0_ENDPOINT_EXPORTS_CERTIFIED_BOUNDARY_FAIL_CLOSED"
         ),
         "lifecycle": "CLASSIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
@@ -90,9 +97,13 @@ def main() -> None:
             "shared_panel_local_omega_generator_implemented": True,
             "opposite_endpoint_phase_convention_explicit": True,
             "both_endpoint_polynomial_exports_completed": (
+                run["rows"][0]["horizon"]["passed"]
+                and run["rows"][0]["outgoing"]["passed"]
+            ),
+            "panel0_Evans_boundary_nonzero_certified": (
                 gate["status"] == "PASS"
             ),
-            "Evans_boundary_nonzero_certified": gate["status"] == "PASS",
+            "full_Evans_boundary_nonzero_certified": False,
             "argument_principle_root_count_certified": False,
             "QNM_or_EP2_certified": False
         },
@@ -114,15 +125,24 @@ def main() -> None:
                 "q(omega_center)+q_omega(omega_center)*zeta"
             ),
             "physical_mismatch": "Delta=q_H-q_out+2*I*omega",
-            "bounded_stop": "first failed endpoint export or boundary panel"
+            "outgoing_repair": (
+                "adaptive radial halving; minimum attempted magnitude 1/320"
+            ),
+            "horizon_repair": (
+                "reciprocal reference steps capped by (r-2)/16 near the "
+                "regular singular point, with adaptive halving"
+            ),
+            "bounded_stop": "panel 0 only"
         },
         "result": {
             "requested_panel_count": run["panel_count"],
+            "executed_panel_limit": run["panel_limit"],
             "completed_panel_count": len(run["rows"]),
             "passed_boundary_panel_count": gate["passed_panel_count"],
             "first_failure": first,
-            "horizon_failure": run["rows"][0]["horizon"],
-            "outgoing_failure": run["rows"][0]["outgoing"],
+            "horizon_export": run["rows"][0]["horizon"],
+            "outgoing_export": run["rows"][0]["outgoing"],
+            "physical_mismatch": run["rows"][0]["physical_mismatch"],
             "argument_principle_status": (
                 run["gates"]["argument_principle_root_count"]["status"]
             )
@@ -146,6 +166,7 @@ def main() -> None:
             "sha256": sha(RUN)
         },
         "does_not_establish": [
+            "boundary nonvanishing on panel 0 or any other contour panel",
             "nonvanishing of the physical Evans mismatch on the contour",
             "an argument-principle QNM count",
             "a QNM location, Smith selector, defective fibre or EP2",

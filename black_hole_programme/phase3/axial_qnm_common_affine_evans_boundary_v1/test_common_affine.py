@@ -24,8 +24,9 @@ class CommonAffineTest(unittest.TestCase):
         self.assertIn("+I*omega", row["horizon"]["phase_convention"])
         self.assertIn("-I*omega", row["outgoing"]["phase_convention"])
 
-    def test_first_failure_stops_before_root_count(self) -> None:
+    def test_bounded_panel0_repair_stops_before_root_count(self) -> None:
         self.assertEqual(len(self.document["rows"]), 1)
+        self.assertEqual(self.document["panel_limit"], 1)
         self.assertEqual(
             self.document["gates"]["boundary_nonvanishing"]["status"],
             "FAIL_CLOSED",
@@ -35,10 +36,20 @@ class CommonAffineTest(unittest.TestCase):
             "NOT_RUN",
         )
 
-    def test_polynomial_exports_are_not_faked_after_transport_failure(self) -> None:
+    def test_both_endpoint_polynomial_exports_are_emitted(self) -> None:
         row = self.document["rows"][0]
-        self.assertIsNone(row["horizon"]["q_polynomial_coefficients"])
-        self.assertIsNone(row["outgoing"]["q_polynomial_coefficients"])
+        self.assertTrue(row["horizon"]["passed"])
+        self.assertTrue(row["outgoing"]["passed"])
+        self.assertEqual(len(row["horizon"]["q_polynomial_coefficients"]), 2)
+        self.assertEqual(len(row["outgoing"]["q_polynomial_coefficients"]), 2)
+
+    def test_physical_mismatch_remains_fail_closed(self) -> None:
+        row = self.document["rows"][0]
+        self.assertEqual(
+            row["boundary_nonvanishing"]["failure"],
+            "COMMON_AFFINE_DELTA_ENCLOSURE_CONTAINS_ZERO",
+        )
+        self.assertEqual(row["physical_mismatch"]["modulus_lower"], "0")
 
 
 if __name__ == "__main__":

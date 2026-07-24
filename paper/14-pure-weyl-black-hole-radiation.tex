@@ -2110,10 +2110,12 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_multipanel_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_projective_multipanel_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot-switch-certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_multipanel_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_frame_completion_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_common_remainder_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json}\\
 Polar restriction-stable module and invariant current filtration &
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json}\\
@@ -2229,7 +2231,14 @@ This is the endpoint jet-frame shear, not the future-horizon Gram and not an
 spin-one projective pivot enclosure contains zero at
 \(\rho=91/268435456\), while the pure spin-two pivot still has certified
 modulus lower bound \(0.839407\).  Thus the canonical endpoint shear is
-fixed, but the complete three-column \(H_4\) handoff remains open.
+fixed, but the complete three-column \(H_4\) handoff remains open.  A
+pre-emptive chart repair now switches at the last nondegenerate checkpoint
+using the fixed row \(e_2-e_3\).  Its modulus lower bound is \(1.35225\);
+the exact dual normalization restores base pivot \(1\) and tangent pivot
+\(0\).  One post-switch panel passes with scaled norm \(0.39018\), local
+tail \(8.36\times10^{-8}\), and next-pivot lower bound \(0.920325\).
+This supplies a resumable correlation-preserving checkpoint beyond the
+former obstruction, not yet continuation to \(r=4\).
 
 At outgoing real infinity the corresponding reduced-phase representation
 has also passed its first local test.  Keeping \(e^{-2i\omega r_*}\)
@@ -2270,12 +2279,18 @@ with \(\pi_x(R)=0\) and \(\pi_x(S)=1\).  The \(E\) line is the unit
 \(\epsilon\)-copy of the already certified \(R\) scalar Jost column.
 The log-free formal recurrences, with the free \({\rm EI2}\) coefficient
 fixed to zero throughout the family, give
-\(K_+^{\rm formal}=0\).  This is not yet an analytic endpoint-frame theorem:
-the existing all-order six-state enclosure for \({\rm XI3}\) rectangularizes
-its base and tangent data and exports neither the common \(\omega\) generator
-nor the dual-\(\tau\) remainder required for the normalized \(S\) column.
-Consequently the correlated three-column outgoing frame, analytic \(K_+\),
-and \(T_+\) remain fail closed.
+\(K_+^{\rm formal}=0\).  This is not yet an analytic endpoint-frame theorem.
+The existing all-order six-state enclosure for \({\rm XI3}\) originally
+rectangularized its base and tangent data and exported neither the common
+\(\omega\) generator nor the dual-\(\tau\) remainder required for the
+normalized \(S\) column.  A new endpoint adapter now applies the exact
+factor transform \(S=i\,{\rm XI3}/(2\omega)\), preserves generator \(7315\)
+and the degree-four head, and encloses the transformed all-order hull in one
+partial dual-\(\tau\) remainder.  This closes the representation contract at
+\(r=32\), but the tangent width is \(369.996\), against base width
+\(1.35\times10^{-3}\).  No inward \(S\) transport or jointly propagated
+\((E,R,S)\) frame follows.  Consequently analytic \(K_+\) and \(T_+\)
+remain fail closed.
 Complex-frequency work has excluded the entire growth half-plane, but no
 damped QNM root, contour moment, or local Smith branch has been computed.
 At the QNM seed disk, the direct inverse-\(r\) forward recurrence also fails
@@ -2371,15 +2386,17 @@ first horizon Taylor reference but refuses immediately at the horizon
 therefore inferred.  A first implementation of the complete common-affine
 export contract has now made the phase rule
 \(\Delta=q_H-q_++2i\omega\) and one panel-local generator identity explicit.
-It remains fail closed at panel zero of the bounded 512-panel attempt:
-the outgoing box transport passes, but its singleton-center validation
-refuses at \(r=45\) with
-\texttt{AFFINE\_Q\_REMAINDER\_SELF\_MAP}; the horizon box refuses near
-\(r=2.00000025\) with
-\texttt{RECIPROCAL\_REFERENCE\_P\_MAJORANT\_DISCRIMINANT}.  No endpoint
-polynomial pair is emitted, and the argument-principle and Smith/EP2 gates
-are not run.  These are representation-majorant failures, not evidence for
-a zero of the physical mismatch.
+Adaptive halving repairs the outgoing singleton self-map, while scaling the
+reciprocal horizon step by \((r-2)/16\) repairs its near-horizon
+discriminant.  Both box and singleton endpoint polynomial exports then reach
+\(r=32\) on panel zero of the 512-panel contour under the common generator
+\texttt{qnm-boundary-omega-0000-of-0512}.  The physical boundary gate still
+refuses: the mismatch centre is approximately
+\(2.12\times10^{-4}+1.94\times10^{-5}i\), whereas the independent residual
+radius is \(0.0335412\), giving modulus lower bound zero.  The remaining 511
+panels and the argument-principle and Smith/EP2 gates are not run.  This is
+now a cross-endpoint remainder-width obstruction, not a failure to construct
+the typed panel-zero endpoint exports.
 Uniform time-domain boundedness, decay, and completeness remain open.
 
 The present result already fixes an important baseline:

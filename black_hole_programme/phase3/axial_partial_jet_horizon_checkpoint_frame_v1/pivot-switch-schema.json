@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "method",
+    "checkpoint",
+    "claim_flags",
+    "imports",
+    "run",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-partial-jet-horizon-pivot-switch-v1"
+    },
+    "result_id": {
+      "const": "PURE_WEYL_PHASE3_AXIAL_HORIZON_MIXED_PIVOT_SWITCH"
+    },
+    "status": {
+      "const": "ONE_POST_SWITCH_CHECKPOINT_CERTIFIED"
+    },
+    "lifecycle": {
+      "const": "COEFFICIENT_COMPUTED"
+    },
+    "dependency_tags": {
+      "contains": {
+        "const": "REDUCED-MODE"
+      }
+    },
+    "method": {
+      "type": "object"
+    },
+    "checkpoint": {
+      "type": "object"
+    },
+    "claim_flags": {
+      "type": "object"
+    },
+    "imports": {
+      "type": "object"
+    },
+    "run": {
+      "type": "object"
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false
+}

@@ -13,7 +13,13 @@ The physical mismatch is assembled with the opposite endpoint phases:
 Delta = q_H - q_out + 2*I*omega.
 ```
 
-The run is deliberately bounded.  It stops at the first panel whose endpoint
-export or boundary-nonvanishing gate fails.  A failure is not a root count.
+The repair run is deliberately bounded to panel 0.  The outgoing rail uses
+adaptive halving when the singleton remainder self-map is too coarse.  The
+horizon reciprocal rail caps its near-horizon step by `(r-2)/16`, so its
+Taylor disk remains inside the regular domain.  Both endpoint polynomial
+exports must complete before the panel-0 physical mismatch is tested.
+
+A failed panel-0 mismatch is not a root count, and success on panel 0 would
+not certify the other 511 panels.
 
 Dependency tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`.

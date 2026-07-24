@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "lifecycle",
+    "dependency_tags",
+    "status",
+    "imports",
+    "domain",
+    "factor_column",
+    "common_remainder",
+    "artifacts",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-partial-jet-outgoing-splus-common-remainder-v1"
+    },
+    "lifecycle": {
+      "const": "NUMERIC-ENCLOSURE"
+    },
+    "status": {
+      "enum": [
+        "SPLUS_COMMON_GENERATOR_REMAINDER_PASS",
+        "SPLUS_COMMON_GENERATOR_REMAINDER_REFUSED"
+      ]
+    },
+    "dependency_tags": {
+      "contains": {
+        "const": "REDUCED-MODE"
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "S_common_omega_generator_certified",
+        "S_partial_dual_tau_remainder_certified",
+        "T_plus_certified"
+      ]
+    }
+  },
+  "additionalProperties": true
+}
