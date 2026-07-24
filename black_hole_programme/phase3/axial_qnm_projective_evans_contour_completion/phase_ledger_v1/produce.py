@@ -26,7 +26,7 @@ else:
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[3]
-CURRENT = HERE.parent / "chunk_325_332_v1"
+CURRENT = HERE.parent / "chunk_341_348_v1"
 CURRENT_CERT = CURRENT / "certificate.json"
 AGGREGATE = CURRENT / "child-grid-aggregate-run.json"
 TYPED_SOURCE = ROOT / (
