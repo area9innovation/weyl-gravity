@@ -2,7 +2,7 @@
   "append_only_parent": "planning/paper-coverage/phase1-paper-coverage-overlay-2026-07-22.json",
   "append_only_parent_sha256": "389d1033e9b40bd66cfc5237d3cd2df4ea2575e1d17847d4a519dba89f6b8be2",
   "claim_map": "paper/14-pure-weyl-black-hole-radiation-claim-map.json",
-  "claim_map_sha256": "4a7184b30ae818504d8d11d1ce048f38e38d7eeeccf236308d6d3a9f76eefaa0",
+  "claim_map_sha256": "b56c75d7cf3e424dfb0fe222e06939d6adc30d115a4b2dc8d945820abf5a1c5b",
   "ir": "science-forge-ir-v0",
   "nodes": [
     {
@@ -57,6 +57,21 @@
         "version": 1
       },
       "id": "sf:coverage/materiality/PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1/v1",
+      "kind": "materiality"
+    },
+    {
+      "body": {
+        "by": "Asger Alstrup Palm",
+        "materiality": "HEADLINE",
+        "native": {
+          "source_schema": "materiality-v0"
+        },
+        "rationale": "First certified nonzero real-frequency interval on which all three outgoing axial trace directions are globally populated; holomorphy then gives generic positive-real population and compact-band dense range.",
+        "result_id": "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF",
+        "stamp": "2026-07-24",
+        "version": 1
+      },
+      "id": "sf:coverage/materiality/PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF/v1",
       "kind": "materiality"
     },
     {
@@ -124,6 +139,19 @@
         "paper": "paper:14-pure-weyl-black-hole-radiation"
       },
       "id": "paper:14-pure-weyl-black-hole-radiation/claim/phase3_axial_null_endpoint_flux_grams_v1",
+      "kind": "paper_claim"
+    },
+    {
+      "body": {
+        "asserts_lifecycle": "COEFFICIENT_COMPUTED",
+        "boundary": "Full outgoing population and bounded L2 multiplier isomorphism on [0.49995,0.50005]; generic positive-real population and compact-band dense range; isolated reflection-zero locations, explicit amplitudes and complete-pilot pointwise rank remain open.",
+        "cites": [
+          "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF"
+        ],
+        "material": true,
+        "paper": "paper:14-pure-weyl-black-hole-radiation"
+      },
+      "id": "paper:14-pure-weyl-black-hole-radiation/claim/phase3_axial_outgoing_population_cell_half",
       "kind": "paper_claim"
     },
     {
@@ -210,6 +238,24 @@
     },
     {
       "body": {
+        "boundary": "Strict pure Weyl, M=1, axial ell=2, real omega in [0.49995,0.50005]: both scalar outgoing factors are uniformly nonzero; boundary devissage proves Tplus invertible and the outgoing pullback nondegenerate with inertia (1,2,0). Holomorphy gives invertibility off a locally finite positive-real exceptional set, a bounded L2 multiplier isomorphism on the cell and dense range on every compact positive band. No absence theorem for reflection zeros, explicit Tplus entries or complete-pilot pointwise rank theorem.",
+        "lifecycle": "COEFFICIENT_COMPUTED",
+        "native": {
+          "certificate": "black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/certificate.json",
+          "certificate_sha256": "de7e3a944e945b00fea9e2b5f7abffc8789c7449cae9eae222c047912a4f3d0f",
+          "receipt": "black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/receipt.json",
+          "receipt_sha256": "de5c19bdffba44bc8eba7d88598ca50ee85602aa5b6cfa64a02aeae08d4b9fe1",
+          "source_kind": "phase3-real-cell-certificate"
+        },
+        "result_id": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF"
+      },
+      "edges": [],
+      "id": "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF",
+      "kind": "result",
+      "title": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF"
+    },
+    {
+      "body": {
         "boundary": "Strict pure Weyl, M=1, axial ell=2, omega=1/2 only: both scalar outgoing factors are nonzero; boundary devissage proves Tplus invertible and the outgoing pullback nondegenerate with inertia (1,2,0). No explicit Tplus entries or interval-wide rank theorem.",
         "lifecycle": "COEFFICIENT_COMPUTED",
         "native": {
@@ -292,6 +338,22 @@
     },
     {
       "body": {
+        "claim": "paper:14-pure-weyl-black-hole-radiation/claim/phase3_axial_outgoing_population_cell_half",
+        "edge_kind": "PRIMARY_REAL_CELL_SCATTERING_THEOREM",
+        "from": "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF",
+        "native": {
+          "source_schema": "result-paper-edge-v0"
+        },
+        "stale": false,
+        "stamp": "2026-07-24",
+        "to": "paper:14-pure-weyl-black-hole-radiation",
+        "version": 1
+      },
+      "id": "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF/paper-14/v1",
+      "kind": "result_paper_edge"
+    },
+    {
+      "body": {
         "claim": "paper:14-pure-weyl-black-hole-radiation/claim/phase3_axial_outgoing_population_point_half",
         "edge_kind": "PRIMARY_POINTWISE_SCATTERING_THEOREM",
         "from": "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF",
@@ -307,5 +369,5 @@
       "kind": "result_paper_edge"
     }
   ],
-  "schema": "paper14-phase3-outgoing-population-point-overlay-v5"
+  "schema": "paper14-phase3-generic-outgoing-completeness-overlay-v7"
 }

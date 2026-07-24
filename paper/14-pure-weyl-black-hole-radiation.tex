@@ -86,10 +86,14 @@ real-potential Wronskians prove that the global map from future-horizon-regular
 data to the incoming \(\mathscr I^-\) trace is invertible for every real
 \(\omega>0\).  Hence the complete indefinite incoming endpoint space is
 globally populated; its spin-two extension is hyperbolic and its orthogonal
-spin-one quotient line is negative.  At \(\omega=1/2\), certified nonzero
-spin-one and spin-two reflection amplitudes and boundary dévissage prove
-that the complete outgoing trace is also globally populated.  Its explicit
-reflection matrix, interval-wide outgoing rank, non-real poles, a complete
+spin-one quotient line is negative.  On the real-frequency cell
+\(0.49995\le\omega\le0.50005\), certified uniform nonzero spin-one and
+spin-two reflection amplitudes and boundary dévissage prove that the
+complete outgoing trace is also globally populated.  Holomorphy then gives
+outgoing population off a locally finite positive-real exceptional set and
+dense range on every compact positive-frequency band.  Its explicit
+reflection matrix, the exceptional set, complete-pilot pointwise outgoing
+rank, non-real poles, a complete
 asymptotically flat scattering operator, full
 time-domain stability, damped quasinormal spectrum, Hawking state, and
 quantum unitarity remain open.  The exact filtration does, however, exclude
@@ -140,8 +144,9 @@ open.
 The static family and local operator identities carry
 \textsc{local-algebraic}.  Harmonic branch, horizon, current, and asymptotic
 statements also carry \textsc{reduced-mode}.  The real-frequency incoming
-population, pointwise outgoing population, boundary dévissage, and
-separated-mode stability statements additionally carry
+population, real-cell and generic outgoing population, compact-band
+dense-range theorem, boundary dévissage, and separated-mode stability
+statements additionally carry
 \textsc{lorentzian-causal}, each with its declared reduced-mode scope.  This
 does not supply a complete exterior Green-hyperbolicity theorem,
 metric-falloff phase space, or classified set of local differential boundary
@@ -1037,10 +1042,12 @@ global charge conditions, a finite-dimensional residual quotient, or
 deletion of finitely many exceptional frequencies.
 
 This is a one-sided global connection and flux theorem, not yet a complete
-all-frequency scattering theorem.  Except for the certified point
-\(\omega=1/2\) below, it does not determine the rank of the outgoing
-\(\mathscr I^+\) reflection block \(T_+\); nor does it determine its entries,
-the reflection amplitudes,
+all-frequency scattering theorem.  The real cell certified below determines
+the rank of the outgoing \(\mathscr I^+\) reflection block \(T_+\), and
+analyticity determines it away from a locally finite positive-real
+exceptional set.  The locations and possible existence of those isolated
+reflection zeros remain open, as do the entries of \(T_+\), the reflection
+amplitudes,
 non-real complex-frequency poles, total canonical energy, a particle norm, CPT
 positivity, time-domain stability, or invariance under unrestricted radial
 or corner improvements of the presymplectic potential.
@@ -1753,35 +1760,40 @@ The zero/nonzero decision is invariant under every typed horizon and
 incoming basis change.
 \end{proposition}
 
-The following point certificate decides this criterion without assembling
-either raw matrix.
+The following real-cell certificate decides this criterion without
+assembling either raw matrix.
 
-\begin{theorem}[Full outgoing population at \(\omega=1/2\)]
-\label{thm:axial-outgoing-population-point-half}
-For Schwarzschild \(M=1\), axial \(\ell=2\), and \(\omega=1/2\), validated
-scalar transport gives
+\begin{theorem}[Full outgoing population on a real-frequency cell]
+\label{thm:axial-outgoing-population-cell-half}
+For Schwarzschild \(M=1\), axial \(\ell=2\), and every
 \[
- |A_{{\rm out},2}|>0.07331708402944288,\qquad
- |A_{{\rm out},1}|>0.45928736814965915.
+ 0.49995\le\omega\le0.50005,
+\]
+validated scalar transport with one real Arb frequency ball gives the
+uniform bounds
+\[
+ |A_{{\rm out},2}|>0.011326240435330133,\qquad
+ |A_{{\rm out},1}|>0.14680548488890086.
 \]
 The exact endpoint-compatible RW/RW/spin-one filtration then implies
 \[
- \ker T_+(1/2)=0,\qquad T_+(1/2)\in GL(3,\mathbb C).
+ \ker T_+(\omega)=0,\qquad T_+(\omega)\in GL(3,\mathbb C)
 \]
-Consequently the complete three-dimensional outgoing trace space is
-populated at this frequency, and
+throughout the declared cell.  Consequently the complete
+three-dimensional outgoing trace space is populated on a nonzero
+real-frequency interval, and
 \[
- \det{\cal O}(1/2)\ne0,\qquad
- \operatorname{inertia}{\cal O}(1/2)=(1,2,0)
- \quad(\alpha_{\rm W}>0).
+ \det{\cal O}(\omega)\ne0,\qquad
+ \operatorname{inertia}{\cal O}(\omega)=(1,2,0)
+\quad(\alpha_{\rm W}>0).
 \]
 \end{theorem}
 
 \begin{proof}
 If a future-horizon-regular datum belongs to \(\ker T_+\), its outgoing
-spin-one quotient vanishes.  The first strict bound forces that scalar
+spin-one quotient vanishes.  The spin-one strict bound forces that scalar
 quotient solution to vanish, leaving the carrier spin-two subfiltration.
-Its outgoing quotient then vanishes, and the second strict bound removes
+Its outgoing quotient then vanishes, and the spin-two strict bound removes
 it.  The remaining metric spin-two solution has the same nonzero scalar
 coefficient and therefore vanishes.  Thus the kernel is zero.  Since
 \(T_+\) is \(3\times3\), it is invertible.  The conclusions for \({\cal O}\)
@@ -1789,10 +1801,13 @@ follow from Proposition~\ref{prop:axial-outgoing-pullback} and Sylvester
 congruence.
 \end{proof}
 
-In the intrinsic factor normalization the scalar diagonal product obeys
+The frequency dependence is enclosed directly in the coefficient balls and
+accumulated into the spatial defect at every Taylor step; the theorem is not
+an inference from finitely many sampled frequencies.  In the intrinsic
+factor normalization the scalar diagonal product obeys uniformly
 \[
  |A_{{\rm out},2}|^2|A_{{\rm out},1}|
- >0.0024688509353168020731204620392524.
+ >0.00001883275407012474144974643389146.
 \]
 No raw six-state determinant lower bound is inferred, because the endpoint
 frame units have not been numerically normalized.  An older raw point
@@ -1804,6 +1819,112 @@ end-to-end audit, but is no longer a prerequisite for the abstract
 pseudo-isometry or the outgoing-rank test.  A three-parameter
 \((\alpha,\gamma,\mu)\) reduction of the null-frame extension entries also
 remains open.
+
+\begin{corollary}[Generic and band-limited outgoing completeness]
+\label{cor:axial-generic-outgoing-completeness}
+Assume the standard holomorphic dependence of the selected scalar Jost
+coefficients and typed factor connection on connected complex
+neighbourhoods of the positive real axis, with the threshold
+\(\omega=0\) excluded.  Let
+\[
+ Z_+=\{\omega>0:A_{{\rm out},2}(\omega)A_{{\rm out},1}(\omega)=0\}.
+\]
+Then \(Z_+\) is locally finite and
+\[
+ T_+(\omega)\in GL(3,\mathbb C)
+ \qquad(\omega\in(0,\infty)\setminus Z_+).
+\]
+Thus all three outgoing channels are populated on an open dense,
+full-measure subset of the positive real axis.
+
+On \(I_0=[0.49995,0.50005]\), multiplication by \(T_+(\omega)\) is a
+bounded isomorphism of \(L^2(I_0;\mathbb C^3)\).  Hence every
+square-integrable outgoing packet supported in \(I_0\) has a unique
+horizon-regular preimage.  The pointwise Stokes identity integrates to
+\[
+ \int_{I_0}x^\dagger G_-x\,d\omega
+ =
+ \int_{I_0}(Rx)^\dagger G_+(Rx)\,d\omega
+ +
+ \int_{I_0}(Ax)^\dagger H_{\mathcal H^+}(Ax)\,d\omega,
+\]
+where \(R=T_+T_-^{-1}\) and \(A=T_-^{-1}\).
+
+On every compact \(I\Subset(0,\infty)\), multiplication by \(T_+\) is
+injective with dense range.  It is a bounded isomorphism if
+\(I\cap Z_+=\varnothing\); if \(I\) contains an actual reflection zero,
+the range is dense and nonclosed.
+\end{corollary}
+
+\begin{proof}
+The cell theorem shows that neither scalar outgoing coefficient is
+identically zero.  Holomorphy makes each positive-real zero set locally
+finite, while the exact triangular determinant has only the diagonal zero
+divisor
+\[
+ \det T_+=\rho_+A_{{\rm out},2}^{\,2}A_{{\rm out},1},
+ \qquad \rho_+\ne0.
+\]
+Continuity and compactness then give a bounded inverse on \(I_0\), and the
+integrated identity follows from the pointwise Stokes theorem.
+
+For arbitrary compact \(I\), \(T_+\) is invertible almost everywhere.
+The multiplication operator and its adjoint consequently have zero kernel,
+so its range is dense.  If \(I\) meets \(Z_+\), continuity of the least
+singular value supplies unit vectors supported in shrinking neighbourhoods
+of a zero whose images tend to zero.  The multiplier is not bounded below,
+and its dense range cannot be closed.
+\end{proof}
+
+In the intrinsic factor normalization \(\rho_+=1\), the cell certificate
+also gives
+\[
+ |\det T_+|
+ =
+ |A_{{\rm out},2}|^2|A_{{\rm out},1}|
+ >
+ 1.8832754070124741\times10^{-5}.
+\]
+In any other typed raw frame the right-hand side is multiplied by the
+corresponding nonzero endpoint unit.  The diagonal inverse factors satisfy
+\[
+ |A_{{\rm out},2}^{-1}|<88.291,\qquad
+ |A_{{\rm out},1}^{-1}|<6.812.
+\]
+These are not bounds on the complete inverse: the uncomputed extension
+shears can still be large.  On any simply connected zero-free complex
+neighbourhood of the cell one may instead write
+\[
+ T_+=
+ \operatorname{diag}(a,a,f)
+ \begin{pmatrix}
+ 1&b/a&c/a\\
+ 0&1&d/a\\
+ 0&0&1
+ \end{pmatrix},
+ \qquad
+ a=A_{{\rm out},2},\quad f=A_{{\rm out},1}.
+\]
+The scalar diagonal therefore controls population and singularities, while
+the extension contributes a holomorphic unipotent shear.
+
+At an isolated pure spin-two reflection zero with
+\(m=\operatorname{ord}a\), \(q=\operatorname{ord}b\), and \(f\ne0\), the
+full local Smith valuations are
+\[
+ \bigl(0,\min(m,q),2m-\min(m,q)\bigr).
+\]
+For a simple zero this is \((0,0,2)\) when \(b(\omega_*)\ne0\) and
+\((0,1,1)\) when \(b(\omega_*)=0\).  At a pure spin-one zero of order \(n\)
+with \(a\ne0\), they are \((0,0,n)\).  At a simultaneous zero the complete
+classification is determined by
+\[
+ I_1=(a,b,c,d,f),\qquad
+ I_2=(a^2,ad,bd-ac,af,bf),\qquad
+ I_3=(a^2f).
+\]
+This classifies a reflection zero if one is found; it does not assert that
+such a positive-real exceptional frequency exists.
 
 For comparison, the Einstein problem admits a global finite-energy
 Schwarzschild scattering theory relating initial data and radiation spaces
@@ -2050,9 +2171,13 @@ and inertia $(1,2,0)$ for $\alpha_{\rm W}>0$ & $\ell=2$, $M=1$,
 $\omega\in[1/2,3/4]$\\
 Incoming global channels? & Exact RW/RW/spin-one triangular filtration and
 $T_-(\omega)\in GL(3,\mathbb C)$ for every real $\omega>0$; the full
-incoming indefinite trace is populated; at $\omega=1/2$,
-$T_+\in GL(3,\mathbb C)$ and the full outgoing trace is populated &
-outgoing amplitudes and interval-wide $T_+$ rank, non-real damped poles,
+incoming indefinite trace is populated; on
+$0.49995\le\omega\le0.50005$, $T_+\in GL(3,\mathbb C)$ and the full
+outgoing trace is populated; analyticity gives outgoing population off a
+locally finite positive-real exceptional set and dense range on every
+compact positive-frequency band &
+outgoing amplitudes, absence or location of isolated reflection zeros,
+complete-pilot pointwise $T_+$ rank, non-real damped poles,
 time-domain stability, CPT and complete scattering open\\
 Polar exceptional wall? & generically nonradical finite line; exact wall
 $Q_{21}(\ell(\ell+1),\widehat\omega^2)=0$ with certified harmonic root counts &
@@ -2091,7 +2216,11 @@ The paper does not establish:
 \begin{itemize}
 \item a complete exterior initial-boundary well-posedness theorem: the
       real-frequency incoming connection is now exact and invertible on the
-      entire positive real axis, but the outgoing reflection block and the
+      entire positive real axis, and a real cell around \(\omega=1/2\)
+      has full outgoing population and a bounded \(L^2\) multiplier inverse;
+      analyticity gives generic positive-real outgoing population off a
+      locally finite exceptional set, but explicit outgoing amplitudes,
+      pointwise classification at the exceptional frequencies and the
       complex-frequency connection remain unclassified;
 \item convergence or summability of the generic-\(\ell\) formal series,
       axial \(X_2\), the deeper polar filtration on the \(Q_{21}=0\) wall,
@@ -2265,6 +2394,10 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v3/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v4/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v5/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v6a/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v6b/certificate.json};
+\cert{black_hole_programme/phase3/axial_scalar_reflection_cell_half_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_transport_free_outgoing_defect_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json}\\
 Polar restriction-stable module and invariant current filtration &
@@ -2606,8 +2739,10 @@ with generator 7315, order 96, tail \(0.00742651\), and width \(1.78454\).
 An independent direct 16-state calculation agrees coefficientwise, the
 frozen spin-one tangent stays exactly zero, and the typed rank-three frame is
 preserved.  A monolithic one-unit continuation did not finish within 180
-seconds.  Therefore \(B_+|_{r=4}\), \(T_+\), and Stokes remain open; the next
-rail must resume from this checkpoint in bounded high-order chunks.  The
+seconds.  Therefore \(B_+|_{r=4}\), the explicit \(T_+\), and a
+common-section numerical Stokes audit remain open; the exact
+transport-free Stokes theorem above is unaffected.  The next rail must
+resume from this checkpoint in bounded high-order chunks.  The
 first such replay-free successor advances
 \[
  \frac{247}{8}\longrightarrow\frac{123}{4}
@@ -2803,7 +2938,11 @@ but it fails; the bounded invocation ended before the two required children
 \(206/1024\) and \(207/1024\) could be launched.  A child-only successor
 then certifies those two intervals with modulus lower bounds
 \(2.44667\times10^{-5}\) and \(2.43794\times10^{-5}\).  Exact coverage
-therefore reaches \(104/512=13/64\), with \(104/512\) the next gap.
+therefore reaches \(104/512=13/64\).  Parent \(104/512\) likewise fails
+closed at coarse resolution; its dyadic children \(208/1024\) and
+\(209/1024\) exclude zero with modulus lower bounds
+\(2.42977\times10^{-5}\) and \(2.42106\times10^{-5}\).  Exact contiguous
+coverage now reaches \(105/512\), with \(105/512\) the next gap.
 The remaining boundary, interval-Newton, argument-principle, and Smith/EP2
 gates are not run.
 Uniform time-domain boundedness, decay, and completeness remain open.
@@ -2817,8 +2956,11 @@ mixed directions.  Neither leading endpoint diagnostics nor formal radial
 pairing finiteness selects the Einstein kernel.  More strongly, the complete
 three-dimensional indefinite incoming trace is globally populated by
 future-horizon-regular solutions at every real positive frequency.  The
-complete outgoing trace is also populated at the certified point
-\(\omega=1/2\).  Explicit outgoing amplitudes, interval-wide outgoing rank,
+complete outgoing trace is also populated throughout the certified cell
+\(0.49995\le\omega\le0.50005\); analyticity extends population to an open
+dense full-measure positive-frequency set and gives dense outgoing range on
+every compact positive-frequency band.  Explicit outgoing amplitudes,
+the isolated reflection-zero set and complete-pilot pointwise outgoing rank,
 the damped QNM spectrum, time-domain stability, CPT positivity, and a
 complete scattering operator remain open; exponentially growing separated
 axial modes are already excluded.}}

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "scope",
+    "imports",
+    "method",
+    "certified_lower_bounds",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-scalar-reflection-cell-half-v1"
+    },
+    "scope": {
+      "type": "object",
+      "required": ["frequency_interval"],
+      "properties": {
+        "frequency_interval": {
+          "const": ["0.49995", "0.50005"]
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "spin_one_reflection_nonzero_on_cell",
+        "spin_two_reflection_nonzero_on_cell",
+        "full_declared_cell_certified",
+        "whole_pilot_interval_certified",
+        "explicit_full_Tplus_matrix_certified",
+        "extension_offdiagonal_entries_certified",
+        "time_domain_or_quantum_claim"
+      ],
+      "properties": {
+        "spin_one_reflection_nonzero_on_cell": {"const": true},
+        "spin_two_reflection_nonzero_on_cell": {"const": true},
+        "full_declared_cell_certified": {"const": true},
+        "whole_pilot_interval_certified": {"const": false},
+        "explicit_full_Tplus_matrix_certified": {"const": false},
+        "extension_offdiagonal_entries_certified": {"const": false},
+        "time_domain_or_quantum_claim": {"const": false}
+      }
+    }
+  }
+}

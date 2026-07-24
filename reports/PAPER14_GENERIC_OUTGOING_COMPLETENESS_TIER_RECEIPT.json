@@ -1,0 +1,131 @@
+{
+  "schema": "phase3-paper14-generic-outgoing-completeness-tier-receipt-v1",
+  "result_id": "PAPER_14_PHASE3_GENERIC_OUTGOING_COMPLETENESS_UPDATE_V7",
+  "stamp": "2026-07-24",
+  "dependency_tags": [
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": {
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity",
+    "background": "Schwarzschild exterior M=1",
+    "sector": "axial ell=2",
+    "certified_real_cell": [
+      "0.49995",
+      "0.50005"
+    ]
+  },
+  "establishes": [
+    "uniform nonvanishing of the spin-one and spin-two outgoing scalar coefficients on the certified real cell",
+    "Tplus in GL(3,C), full outgoing trace population and outgoing-pullback inertia (1,2,0) throughout the certified cell",
+    "under standard positive-real holomorphic Jost dependence, outgoing population off a locally finite exceptional set",
+    "a bounded L2 multiplier isomorphism on the certified cell and injective dense range on every compact positive-frequency band",
+    "the integrated band-limited pseudo-isometric Stokes identity"
+  ],
+  "does_not_establish": [
+    "absence or location of isolated positive-real reflection zeros",
+    "pointwise Tplus invertibility at every positive real frequency",
+    "explicit Tplus entries or extension mixing amplitudes",
+    "a uniform inverse bound on the full positive real axis",
+    "a QNM Smith selector, Green-resolvent pole, limiting absorption, full time-domain stability, decay or quantum unitarity"
+  ],
+  "artifacts": {
+    "scalar_certificate": {
+      "path": "black_hole_programme/phase3/axial_scalar_reflection_cell_half_v1/certificate.json",
+      "sha256": "43defaaafc3fdee3bc68ccf018ca6e0e7b2ea3338dc01c3e2fc798905d63b83d"
+    },
+    "scalar_receipt": {
+      "path": "black_hole_programme/phase3/axial_scalar_reflection_cell_half_v1/receipt.json",
+      "sha256": "7ed550aeb83989e40bd489bf9c2bba49e9307a6a4d508cf377b7778f1880fb01"
+    },
+    "population_certificate": {
+      "path": "black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/certificate.json",
+      "sha256": "de7e3a944e945b00fea9e2b5f7abffc8789c7449cae9eae222c047912a4f3d0f"
+    },
+    "population_receipt": {
+      "path": "black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/receipt.json",
+      "sha256": "de5c19bdffba44bc8eba7d88598ca50ee85602aa5b6cfa64a02aeae08d4b9fe1"
+    },
+    "report": {
+      "path": "reports/phase3-axial-outgoing-population-cell-half-2026-07-24.md",
+      "sha256": "7a61f3415fcb71059de10413a6e7cfc558349d1655aee33ae9f2ee4cb9f77225"
+    },
+    "paper_source": {
+      "path": "paper/14-pure-weyl-black-hole-radiation.tex",
+      "sha256": "eb2ad67d1982eeeddda7294235c2ba0db96a314fe8b3f1078a02450e793fbbe8"
+    },
+    "paper_pdf": {
+      "path": "paper/14-pure-weyl-black-hole-radiation.pdf",
+      "sha256": "15cd06105cb4a71cddb2c10e79a47c78374de10d80b65e1b6c1e5fb6431a6055"
+    },
+    "claim_map": {
+      "path": "paper/14-pure-weyl-black-hole-radiation-claim-map.json",
+      "sha256": "b56c75d7cf3e424dfb0fe222e06939d6adc30d115a4b2dc8d945820abf5a1c5b"
+    },
+    "coverage_overlay": {
+      "path": "planning/paper-coverage/paper14-corrected-x0-supersession-overlay-2026-07-22.json",
+      "sha256": "3ba5b09d2dfd7367292088db1e32878a595a2e310be6b5e46fb0aa991a236510"
+    }
+  },
+  "checks": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_scalar_reflection_cell_half_v1/*.py black_hole_programme/phase3/axial_scalar_reflection_cell_half_v1/tests/*.py black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/*.py paper/generate_14_pure_weyl_black_hole_radiation_claim_map.py paper/verify_14_pure_weyl_black_hole_radiation_claim_map.py paper/test_14_pure_weyl_black_hole_radiation_claim_map.py",
+      "elapsed_seconds": 0.103,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m black_hole_programme.phase3.axial_scalar_reflection_cell_half_v1.produce --check && python3 -m black_hole_programme.phase3.axial_scalar_reflection_cell_half_v1.verify && python3 -m unittest -v black_hole_programme.phase3.axial_scalar_reflection_cell_half_v1.tests.test_reflection_cell",
+      "elapsed_seconds": 28.357,
+      "status": "PASS",
+      "tests": 3
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m black_hole_programme.phase3.axial_outgoing_population_cell_half_v1.produce --check && python3 -m black_hole_programme.phase3.axial_outgoing_population_cell_half_v1.verify && python3 -m unittest -v black_hole_programme.phase3.axial_outgoing_population_cell_half_v1.test_population_cell",
+      "elapsed_seconds": 0.038,
+      "status": "PASS",
+      "tests": 5
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest -v paper.test_14_pure_weyl_black_hole_radiation_claim_map",
+      "elapsed_seconds": 1.447,
+      "status": "PASS",
+      "tests": 9
+    },
+    {
+      "tier": 2,
+      "command": "python3 paper/generate_14_pure_weyl_black_hole_radiation_claim_map.py --check && python3 paper/verify_14_pure_weyl_black_hole_radiation_claim_map.py && python3 paper/verify_13_14_draft_source_maps.py",
+      "elapsed_seconds": 1.5,
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_scalar_reflection_cell_half_v1/certificate.json black_hole_programme/phase3/axial_scalar_reflection_cell_half_v1/schema.json && python3 -m jsonschema -i black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/certificate.json black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/schema.json",
+      "elapsed_seconds": 0.103,
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "pdflatex -interaction=nonstopmode -halt-on-error -output-directory paper paper/14-pure-weyl-black-hole-radiation.tex (two passes)",
+      "elapsed_seconds": 1.757,
+      "status": "PASS",
+      "output": "45 pages"
+    },
+    {
+      "tier": 0,
+      "command": "latexmk -pdf -interaction=nonstopmode -halt-on-error 14-pure-weyl-black-hole-radiation.tex",
+      "elapsed_seconds": 0.0,
+      "status": "NOT_RUN_TOOL_UNAVAILABLE",
+      "note": "latexmk is absent; two direct pdflatex passes succeeded instead. This is not counted as a pass."
+    }
+  ],
+  "higher_tiers_not_run": [
+    {
+      "tier": 3,
+      "reason": "No freeze, release, shared core-algebra change or theorem-lifecycle promotion requiring the full repository suite."
+    }
+  ]
+}

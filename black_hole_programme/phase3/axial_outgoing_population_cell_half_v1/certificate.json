@@ -1,0 +1,93 @@
+{
+  "analytic_corollaries": {
+    "arbitrary_compact_band": "On every compact I contained in (0,infinity), multiplication by Tplus is injective with dense range. It is a bounded isomorphism when I contains no point of Zplus; if I contains an actual reflection zero, its range is dense and nonclosed.",
+    "band_limited_stokes": "On I0 the pointwise Stokes identity integrates to an exact pseudo-isometry of the band-limited coefficient spaces. This is not a full time-domain stability theorem.",
+    "certified_cell_multiplier": "On I0=[0.49995,0.50005], multiplication by Tplus is a bounded isomorphism of L2(I0;C^3). Thus every L2 outgoing packet in the cell has a unique horizon-regular preimage.",
+    "exceptional_set": "The positive-real zeros of A_out_2 and A_out_1 form a locally finite set Zplus. Tplus is invertible on (0,infinity) minus Zplus, an open dense full-measure set.",
+    "hypothesis": "The scalar outgoing Jost coefficients and the typed factor connection are holomorphic in connected complex neighbourhoods of every positive real frequency, away from the separate threshold omega=0."
+  },
+  "boundary_devissage_proof": {
+    "endpoint_units": "The metric and carrier outgoing frame factors are 1/2 and 1; the spin-one factor is -2*I*omega, which is nonzero throughout the positive real cell.",
+    "filtration": "0 subset F_metric subset F_carrier subset F_full, with successive pure-outgoing quotients RW_metric, RW_carrier, spin_one",
+    "finite_dimensional_conclusion": "Tplus(omega) is a 3x3 map with zero kernel at every frequency in the cell, hence belongs to GL(3,C) pointwise throughout the cell.",
+    "uniform_kernel_conclusion": "For every omega in [0.49995,0.50005], successive quotient projection removes spin one, carrier spin two and metric spin two, so ker(Tplus(omega))={0}."
+  },
+  "certified_scalar_inputs": {
+    "intrinsic_factor_diagonal_product_lower": "0.00001883275407012474144974643389146446286048185811254",
+    "intrinsic_factor_diagonal_product_squared_lower": "3.5467262586580001499083526710421144448417224627297357123550594206139328618064125E-10",
+    "normalization_scope": "The product bounds A_out_2^2*A_out_1 uniformly in the intrinsic triangular factor frame. It is not a raw six-state endpoint determinant bound.",
+    "spin_one_abs_A_out_lower": "0.14680548488890086",
+    "spin_two_abs_A_out_lower": "0.011326240435330133"
+  },
+  "claim_flags": {
+    "O_inertia_1_2_0_on_declared_cell": true,
+    "QNM_or_time_domain_claim": false,
+    "Tplus_invertible_on_declared_cell": true,
+    "absence_of_positive_real_reflection_zeros_certified": false,
+    "cell_L2_multiplier_bounded_isomorphism": true,
+    "compact_positive_band_dense_range": true,
+    "det_O_nonzero_on_declared_cell": true,
+    "explicit_Tplus_entries_certified": false,
+    "full_outgoing_trace_space_populated_on_declared_cell": true,
+    "generic_positive_real_outgoing_population_off_discrete_set": true,
+    "outgoing_extension_amplitudes_certified": false,
+    "uniform_full_positive_axis_inverse_bound_certified": false,
+    "whole_pilot_interval_outgoing_population_certified": false
+  },
+  "dependency_tags": [
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "does_not_establish": [
+    "absence or location of isolated reflection zeros outside the declared cell",
+    "pointwise invertibility of Tplus at every frequency of the complete pilot interval",
+    "the explicit 3x3 Tplus entries or extension mixing amplitudes",
+    "a raw-frame numerical determinant enclosure for O",
+    "a QNM Smith selector or Green-resolvent pole",
+    "a uniform inverse bound on the full positive real axis",
+    "limiting absorption, full time-domain boundedness or decay",
+    "positivity, particles, ghosts, CPT or quantum unitarity"
+  ],
+  "imports": {
+    "boundary_devissage": {
+      "path": "black_hole_programme/phase3/axial_boundary_devissage_no_growth/certificate.json",
+      "sha256": "5de2cdee18bcafc09c86b9273cfa87ea99d7dec1a081c903349435d2fc3ce2fe"
+    },
+    "outgoing_gram": {
+      "path": "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
+      "sha256": "59fb9b443ce0b92ce016f53c376cb367bcf004e00d1b241ad22ec925e99deed2"
+    },
+    "scalar_reflection_cell": {
+      "path": "black_hole_programme/phase3/axial_scalar_reflection_cell_half_v1/certificate.json",
+      "sha256": "43defaaafc3fdee3bc68ccf018ca6e0e7b2ea3338dc01c3e2fc798905d63b83d"
+    },
+    "transport_free_stokes": {
+      "path": "black_hole_programme/phase3/axial_transport_free_outgoing_defect_preflight_v1/certificate.json",
+      "sha256": "833e0bdb3e1e443a5a351050b9b47fb4555a9b069db73b46e228f96245fa0aa9"
+    },
+    "triangular_factorization": {
+      "path": "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json",
+      "sha256": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579"
+    }
+  },
+  "lifecycle": "COEFFICIENT_COMPUTED",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF",
+  "schema": "phase3-axial-outgoing-population-cell-half-v1",
+  "scope": {
+    "background": "Schwarzschild exterior M=1",
+    "coupling_sign": "alpha_W>0 for the stated inertia",
+    "frequency_interval": [
+      "0.49995",
+      "0.50005"
+    ],
+    "sector": "axial ell=2",
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity"
+  },
+  "status": "VALIDATED_FULL_OUTGOING_POPULATION_ON_REAL_CELL",
+  "transport_free_outgoing_defect": {
+    "definition": "O=Tminus^dagger*Gminus*Tminus-Hout",
+    "determinant_identity": "det(O)=det(Gplus)*abs(det(Tplus))^2",
+    "stokes_identity": "O=Tplus^dagger*Gplus*Tplus",
+    "uniform_conclusion": "det(O(omega)) is nonzero and inertia(O(omega))=(1,2,0) for every omega in the declared cell."
+  }
+}

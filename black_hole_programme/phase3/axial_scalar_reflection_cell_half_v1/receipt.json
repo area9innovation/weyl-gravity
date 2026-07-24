@@ -1,0 +1,12 @@
+{
+  "certificate": "certificate.json",
+  "certificate_sha256": "43defaaafc3fdee3bc68ccf018ca6e0e7b2ea3338dc01c3e2fc798905d63b83d",
+  "claim_boundary": "scalar diagonal reflection nonvanishing only on [0.49995,0.50005]; no whole-pilot, explicit-Tplus, off-diagonal, QNM or time-domain claim",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_scalar_reflection_cell_half_v1.produce --check",
+    "python3 -m black_hole_programme.phase3.axial_scalar_reflection_cell_half_v1.verify",
+    "python3 -m unittest -v black_hole_programme.phase3.axial_scalar_reflection_cell_half_v1.tests.test_reflection_cell"
+  ],
+  "producer": "produce.py",
+  "schema": "phase3-axial-scalar-reflection-cell-half-receipt-v1"
+}

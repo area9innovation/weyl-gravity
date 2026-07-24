@@ -47,6 +47,9 @@ GLOBAL_V5_ATLAS = "residual_atlas/phase3-black-hole-axial-global-connection-matr
 OUTGOING_POINT_CERT = ROOT / "black_hole_programme/phase3/axial_outgoing_population_point_half_v1/certificate.json"
 OUTGOING_POINT_RECEIPT = ROOT / "black_hole_programme/phase3/axial_outgoing_population_point_half_v1/receipt.json"
 OUTGOING_POINT_REPORT = ROOT / "reports/phase3-axial-outgoing-population-point-half-2026-07-24.md"
+OUTGOING_CELL_CERT = ROOT / "black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/certificate.json"
+OUTGOING_CELL_RECEIPT = ROOT / "black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/receipt.json"
+OUTGOING_CELL_REPORT = ROOT / "reports/phase3-axial-outgoing-population-cell-half-2026-07-24.md"
 
 ACTIVE_SOURCES = [
     "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json",
@@ -127,7 +130,7 @@ def claim_map() -> dict:
     return {
         "schema": "paper-draft-source-map-v1",
         "paper_id": "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION",
-        "result_id": "PAPER_14_PHASE3_OUTGOING_POPULATION_POINT_UPDATE_V5",
+        "result_id": "PAPER_14_PHASE3_GENERIC_OUTGOING_COMPLETENESS_UPDATE_V7",
         "lifecycle_state": "DRAFT_ALLOWED",
         "source_baseline": SOURCE_BASELINE,
         "manuscript": str(PAPER.relative_to(ROOT)),
@@ -186,6 +189,24 @@ def claim_map() -> dict:
             "does_not_establish": (
                 "explicit Tplus entries, interval-wide outgoing rank, "
                 "time-domain stability or a quantum claim"
+            ),
+        },
+        "phase3_outgoing_population_cell_half_authority": {
+            "result_id": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF",
+            "scope": (
+                "M=1, axial ell=2, real omega in "
+                "[0.49995,0.50005] only"
+            ),
+            "certificate": str(OUTGOING_CELL_CERT.relative_to(ROOT)),
+            "certificate_sha256": digest(OUTGOING_CELL_CERT),
+            "receipt": str(OUTGOING_CELL_RECEIPT.relative_to(ROOT)),
+            "receipt_sha256": digest(OUTGOING_CELL_RECEIPT),
+            "report": str(OUTGOING_CELL_REPORT.relative_to(ROOT)),
+            "report_sha256": digest(OUTGOING_CELL_REPORT),
+            "does_not_establish": (
+                "absence or location of isolated positive-real reflection "
+                "zeros, explicit Tplus entries, complete-pilot pointwise "
+                "outgoing rank, full time-domain stability or a quantum claim"
             ),
         },
         "phase3_global_connection_shortfall": {
@@ -255,6 +276,14 @@ def claim_map() -> dict:
             "axial_outgoing_full_trace_globally_populated_at_omega_half": True,
             "axial_outgoing_pullback_nonzero_inertia_one_two_zero_at_omega_half": True,
             "axial_scalar_spin_one_and_spin_two_reflection_nonzero_at_omega_half": True,
+            "axial_outgoing_full_trace_globally_populated_on_cell_half": True,
+            "axial_outgoing_pullback_nonzero_inertia_one_two_zero_on_cell_half": True,
+            "axial_scalar_spin_one_and_spin_two_reflection_nonzero_on_cell_half": True,
+            "axial_outgoing_generic_population_off_locally_finite_set": True,
+            "axial_outgoing_cell_half_L2_multiplier_isomorphism": True,
+            "axial_outgoing_compact_positive_band_dense_range": True,
+            "axial_positive_real_reflection_zero_set_empty": False,
+            "axial_outgoing_full_positive_axis_uniform_inverse_bound": False,
             "axial_l2_endpoint_flux_positive_energy": False,
             "axial_l2_endpoint_flux_cpt_or_stability": False,
             "axial_global_connection_v5_method_shortfall_recorded": True,
@@ -329,7 +358,7 @@ def claim_map() -> dict:
             {"path": path, "git_blob": git_blob(path)} for path in ACTIVE_SOURCES
         ],
         "next_gate": (
-            "INTERVAL_WIDE_SCALAR_REFLECTION_NONVANISHING_OR_TYPED_"
+            "COMPLETE_PILOT_SCALAR_REFLECTION_NONVANISHING_OR_TYPED_"
             "PROJECTIVE_LOG_AMPLITUDE_TPLUS_AUDIT"
         ),
     }
@@ -343,6 +372,10 @@ def coverage(claim_payload: dict) -> dict:
     outgoing_point_result_id = (
         "sf:coverage/result/"
         "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF"
+    )
+    outgoing_cell_result_id = (
+        "sf:coverage/result/"
+        "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF"
     )
     paper_id = "paper:14-pure-weyl-black-hole-radiation"
     claim_id = f"{paper_id}/claim/phase2_generic_l_parity_disposition_v1"
@@ -359,6 +392,13 @@ def coverage(claim_payload: dict) -> dict:
     outgoing_point_edge_id = (
         "sf:coverage/edge/"
         "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF/paper-14/v1"
+    )
+    outgoing_cell_claim_id = (
+        f"{paper_id}/claim/phase3_axial_outgoing_population_cell_half"
+    )
+    outgoing_cell_edge_id = (
+        "sf:coverage/edge/"
+        "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF/paper-14/v1"
     )
     nodes = [
         {
@@ -629,6 +669,89 @@ def coverage(claim_payload: dict) -> dict:
                 "native": {"source_schema": "result-paper-edge-v0"},
             },
         },
+        {
+            "kind": "materiality",
+            "id": (
+                "sf:coverage/materiality/"
+                "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF/v1"
+            ),
+            "body": {
+                "result_id": outgoing_cell_result_id,
+                "materiality": "HEADLINE",
+                "by": "Asger Alstrup Palm",
+                "stamp": "2026-07-24",
+                "version": 1,
+                "rationale": (
+                    "First certified nonzero real-frequency interval on "
+                    "which all three outgoing axial trace directions are "
+                    "globally populated; holomorphy then gives generic "
+                    "positive-real population and compact-band dense range."
+                ),
+                "native": {"source_schema": "materiality-v0"},
+            },
+        },
+        {
+            "kind": "result",
+            "id": outgoing_cell_result_id,
+            "title": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF",
+            "body": {
+                "result_id": (
+                    "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF"
+                ),
+                "lifecycle": "COEFFICIENT_COMPUTED",
+                "boundary": (
+                    "Strict pure Weyl, M=1, axial ell=2, real omega in "
+                    "[0.49995,0.50005]: both scalar outgoing factors are "
+                    "uniformly nonzero; boundary devissage proves Tplus "
+                    "invertible and the outgoing pullback nondegenerate "
+                    "with inertia (1,2,0). Holomorphy gives invertibility "
+                    "off a locally finite positive-real exceptional set, "
+                    "a bounded L2 multiplier isomorphism on the cell and "
+                    "dense range on every compact positive band. No "
+                    "absence theorem for reflection zeros, explicit Tplus "
+                    "entries or complete-pilot pointwise rank theorem."
+                ),
+                "native": {
+                    "source_kind": "phase3-real-cell-certificate",
+                    "certificate": str(OUTGOING_CELL_CERT.relative_to(ROOT)),
+                    "certificate_sha256": digest(OUTGOING_CELL_CERT),
+                    "receipt": str(OUTGOING_CELL_RECEIPT.relative_to(ROOT)),
+                    "receipt_sha256": digest(OUTGOING_CELL_RECEIPT),
+                },
+            },
+            "edges": [],
+        },
+        {
+            "kind": "paper_claim",
+            "id": outgoing_cell_claim_id,
+            "body": {
+                "paper": paper_id,
+                "material": True,
+                "asserts_lifecycle": "COEFFICIENT_COMPUTED",
+                "boundary": (
+                    "Full outgoing population and bounded L2 multiplier "
+                    "isomorphism on [0.49995,0.50005]; generic "
+                    "positive-real population and compact-band dense "
+                    "range; isolated reflection-zero locations, explicit "
+                    "amplitudes and complete-pilot pointwise rank remain open."
+                ),
+                "cites": [outgoing_cell_result_id],
+            },
+        },
+        {
+            "kind": "result_paper_edge",
+            "id": outgoing_cell_edge_id,
+            "body": {
+                "from": outgoing_cell_result_id,
+                "to": paper_id,
+                "claim": outgoing_cell_claim_id,
+                "edge_kind": "PRIMARY_REAL_CELL_SCATTERING_THEOREM",
+                "stale": False,
+                "version": 1,
+                "stamp": "2026-07-24",
+                "native": {"source_schema": "result-paper-edge-v0"},
+            },
+        },
     ]
     for old_edge in SUPERSEDED_EDGES:
         old_name = old_edge.rsplit("/", 3)[-3]
@@ -648,7 +771,7 @@ def coverage(claim_payload: dict) -> dict:
         )
     return {
         "ir": "science-forge-ir-v0",
-        "schema": "paper14-phase3-outgoing-population-point-overlay-v5",
+        "schema": "paper14-phase3-generic-outgoing-completeness-overlay-v7",
         "append_only_parent": str(PARENT_COVERAGE.relative_to(ROOT)),
         "append_only_parent_sha256": digest(PARENT_COVERAGE),
         "claim_map": str(OUTPUT.relative_to(ROOT)),

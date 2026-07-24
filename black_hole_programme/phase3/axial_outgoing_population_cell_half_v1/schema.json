@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "scope",
+    "imports",
+    "certified_scalar_inputs",
+    "boundary_devissage_proof",
+    "transport_free_outgoing_defect",
+    "analytic_corollaries",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-outgoing-population-cell-half-v1"
+    },
+    "result_id": {
+      "const": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF"
+    },
+    "scope": {
+      "type": "object",
+      "required": ["frequency_interval"],
+      "properties": {
+        "frequency_interval": {
+          "const": ["0.49995", "0.50005"]
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "Tplus_invertible_on_declared_cell",
+        "full_outgoing_trace_space_populated_on_declared_cell",
+        "det_O_nonzero_on_declared_cell",
+        "O_inertia_1_2_0_on_declared_cell",
+        "generic_positive_real_outgoing_population_off_discrete_set",
+        "cell_L2_multiplier_bounded_isomorphism",
+        "compact_positive_band_dense_range",
+        "whole_pilot_interval_outgoing_population_certified",
+        "absence_of_positive_real_reflection_zeros_certified",
+        "uniform_full_positive_axis_inverse_bound_certified",
+        "explicit_Tplus_entries_certified",
+        "outgoing_extension_amplitudes_certified",
+        "QNM_or_time_domain_claim"
+      ],
+      "properties": {
+        "Tplus_invertible_on_declared_cell": {"const": true},
+        "full_outgoing_trace_space_populated_on_declared_cell": {
+          "const": true
+        },
+        "det_O_nonzero_on_declared_cell": {"const": true},
+        "O_inertia_1_2_0_on_declared_cell": {"const": true},
+        "generic_positive_real_outgoing_population_off_discrete_set": {
+          "const": true
+        },
+        "cell_L2_multiplier_bounded_isomorphism": {"const": true},
+        "compact_positive_band_dense_range": {"const": true},
+        "whole_pilot_interval_outgoing_population_certified": {
+          "const": false
+        },
+        "absence_of_positive_real_reflection_zeros_certified": {
+          "const": false
+        },
+        "uniform_full_positive_axis_inverse_bound_certified": {
+          "const": false
+        },
+        "explicit_Tplus_entries_certified": {"const": false},
+        "outgoing_extension_amplitudes_certified": {"const": false},
+        "QNM_or_time_domain_claim": {"const": false}
+      }
+    }
+  }
+}

@@ -123,6 +123,43 @@ class Paper14CorrectedClaimMapTest(unittest.TestCase):
         self.assertNotEqual(completed.returncode, 0)
         self.assertIn("outgoing-point overclaim", completed.stdout + completed.stderr)
 
+    def test_outgoing_cell_pilot_overclaim_is_rejected(self) -> None:
+        payload = json.loads(CLAIM_MAP.read_text())
+        authority = payload["phase3_outgoing_population_cell_half_authority"]
+        certificate = json.loads((ROOT / authority["certificate"]).read_text())
+        certificate["claim_flags"][
+            "whole_pilot_interval_outgoing_population_certified"
+        ] = True
+        with tempfile.TemporaryDirectory() as directory:
+            mutated_certificate = Path(directory) / "certificate.json"
+            mutated_certificate.write_text(json.dumps(certificate))
+            authority["certificate"] = str(mutated_certificate)
+            authority["certificate_sha256"] = hashlib.sha256(
+                mutated_certificate.read_bytes()
+            ).hexdigest()
+            claim_map = Path(directory) / "claim-map.json"
+            claim_map.write_text(json.dumps(payload))
+            completed = self.run_verifier("--claim-map", str(claim_map))
+        self.assertNotEqual(completed.returncode, 0)
+        self.assertIn("outgoing-cell overclaim", completed.stdout + completed.stderr)
+
+    def test_positive_real_reflection_zero_absence_overclaim_is_rejected(
+        self,
+    ) -> None:
+        payload = json.loads(CLAIM_MAP.read_text())
+        payload["certified_scope"][
+            "axial_positive_real_reflection_zero_set_empty"
+        ] = True
+        with tempfile.TemporaryDirectory() as directory:
+            claim_map = Path(directory) / "mutated.json"
+            claim_map.write_text(json.dumps(payload))
+            completed = self.run_verifier("--claim-map", str(claim_map))
+        self.assertNotEqual(completed.returncode, 0)
+        self.assertIn(
+            "axial_positive_real_reflection_zero_set_empty",
+            completed.stdout + completed.stderr,
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

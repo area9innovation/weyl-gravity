@@ -1,0 +1,235 @@
+{
+  "certified_lower_bounds": {
+    "spin_1": {
+      "abs_A_out_lower": "0.14680548488890086",
+      "abs_A_out_squared_lower": "0.021551850393465292",
+      "both_rails_exclude_zero": true
+    },
+    "spin_2": {
+      "abs_A_out_lower": "0.011326240435330133",
+      "abs_A_out_squared_lower": "0.00012828372239890727",
+      "both_rails_exclude_zero": true
+    }
+  },
+  "claim_flags": {
+    "explicit_full_Tplus_matrix_certified": false,
+    "extension_offdiagonal_entries_certified": false,
+    "full_declared_cell_certified": true,
+    "spin_one_reflection_nonzero_on_cell": true,
+    "spin_two_reflection_nonzero_on_cell": true,
+    "time_domain_or_quantum_claim": false,
+    "whole_pilot_interval_certified": false
+  },
+  "dependency_tags": [
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "does_not_establish": [
+    "reflection nonvanishing outside the declared frequency cell",
+    "reflection nonvanishing on the complete pilot interval",
+    "the explicit full 3x3 outgoing Bach connection matrix",
+    "outgoing extension amplitudes or channel mixing",
+    "time-domain boundedness, limiting absorption or decay",
+    "a QNM Smith selector or Green-resolvent pole",
+    "positivity, particles, ghosts, CPT or quantum unitarity"
+  ],
+  "imports": {
+    "incoming_connection": {
+      "path": "black_hole_programme/phase3/axial_incoming_connection_analytic/certificate.json",
+      "sha256": "c7d54c15cd7928227d62ede7825edba2b6ebc51ca6f6c617c7b0b56a74cdd040"
+    },
+    "point_engine": {
+      "path": "black_hole_programme/phase3/axial_scalar_reflection_point_half_v1/rigorous.py",
+      "sha256": "b623839a7fd739f8a10cb5b67b8239ddd158639d4cdb976d1e8a112fd18715a7"
+    },
+    "triangular_factorization": {
+      "path": "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json",
+      "sha256": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579"
+    }
+  },
+  "lifecycle": "COEFFICIENT_COMPUTED",
+  "method": {
+    "backend": "python-flint Arb/Acb ball arithmetic",
+    "frequency_dependency_policy": "frequency-ball coefficient radii are accumulated into the validated spatial defect at every step; no midpoint-only or sampling inference",
+    "frequency_representation": "one real Arb ball 0.5 +/- 0.00005",
+    "independent_geometries": [
+      "h=1/8, Taylor order 24",
+      "h=1/16, Taylor order 20"
+    ],
+    "rails": {
+      "primary_h1_over_8_n24": {
+        "spin_1": {
+          "bounds": {
+            "abs_A_out_lower": "0.14680548488890086",
+            "abs_A_out_squared_lower": "0.021551850393465292",
+            "finite_A_out_centre_modulus_lower": "0.5224341188810591",
+            "zero_excluded": true
+          },
+          "endpoint_coordinates": {
+            "r_left": "[2.0000027419144137182659033254393820491371084690 +/- 2.61e-47]",
+            "r_right": "[240.43807509431024541056569649531837256853883825 +/- 2.75e-45]",
+            "x_left": "-25.0",
+            "x_right": "250.0"
+          },
+          "errors": {
+            "finite_transport_error_upper": "0.30240702665454294",
+            "horizon_potential_L1_upper": "4.112865982014141e-06",
+            "infinity_generator_L1_upper": "0.04991389226547447",
+            "infinity_potential_L1_upper": "0.024954450320094024",
+            "infinity_tail_error_upper": "0.0732216073376152",
+            "maximum_local_coefficient_tail_row_norm": "0.00028017928553427225",
+            "maximum_local_generator_row_norm": "0.47441964099462314",
+            "maximum_local_residual_sup_norm": "0.0003648351030960042",
+            "total_A_out_error_upper": "0.3756286339921582"
+          },
+          "finite_endpoint_centre": {
+            "A_in": "[-0.96780598252395651202037345674784157446218531058 +/- 4.65e-48] + [0.57990413569775674162025989969719816738072453868 +/- 3.78e-48]j",
+            "A_out": "[-0.20297110323754887305322236703756967255695839326 +/- 4.91e-48] + [-0.48139395490757982822672898974561379393030523956 +/- 4.19e-48]j"
+          },
+          "geometry": {
+            "cauchy_radius": "0.25",
+            "name": "primary_h1_over_8_n24",
+            "order": 24,
+            "precision_bits": 160,
+            "step": "0.125",
+            "steps": 2200
+          },
+          "spin": 1
+        },
+        "spin_2": {
+          "bounds": {
+            "abs_A_out_lower": "0.011326240435330133",
+            "abs_A_out_squared_lower": "0.00012828372239890727",
+            "finite_A_out_centre_modulus_lower": "0.12534563729701512",
+            "zero_excluded": true
+          },
+          "endpoint_coordinates": {
+            "r_left": "[2.0000027419144137182659033254393820491371084690 +/- 2.61e-47]",
+            "r_right": "[240.43807509431024541056569649531837256853883825 +/- 2.75e-45]",
+            "x_left": "-25.0",
+            "x_right": "250.0"
+          },
+          "errors": {
+            "finite_transport_error_upper": "0.05950906726897489",
+            "horizon_potential_L1_upper": "2.0564344006459526e-06",
+            "infinity_generator_L1_upper": "0.04981009445340603",
+            "infinity_potential_L1_upper": "0.024902556604195852",
+            "infinity_tail_error_upper": "0.05451032959271007",
+            "maximum_local_coefficient_tail_row_norm": "0.00022229025044875604",
+            "maximum_local_generator_row_norm": "0.32303882815396007",
+            "maximum_local_residual_sup_norm": "0.00023484266494953096",
+            "total_A_out_error_upper": "0.11401939686168498"
+          },
+          "finite_endpoint_centre": {
+            "A_in": "[-0.80638412129815150475614432256314243104002313113 +/- 7.99e-49] + [-0.60452968064078241571435304297997816087032669498 +/- 1.67e-48]j",
+            "A_out": "[0.00025262594038307823540669975859975960583616662925 +/- 4.37e-51] + [-0.12534538272121999588785546183760714663277721349 +/- 1.13e-48]j"
+          },
+          "geometry": {
+            "cauchy_radius": "0.25",
+            "name": "primary_h1_over_8_n24",
+            "order": 24,
+            "precision_bits": 160,
+            "step": "0.125",
+            "steps": 2200
+          },
+          "spin": 2
+        }
+      },
+      "secondary_h1_over_16_n20": {
+        "spin_1": {
+          "bounds": {
+            "abs_A_out_lower": "0.2628371642909772",
+            "abs_A_out_squared_lower": "0.06908337493252213",
+            "finite_A_out_centre_modulus_lower": "0.5224341187407539",
+            "zero_excluded": true
+          },
+          "endpoint_coordinates": {
+            "r_left": "[2.0000027419144137182659033254393820491371084690 +/- 2.61e-47]",
+            "r_right": "[240.43807509431024541056569649531837256853883825 +/- 2.75e-45]",
+            "x_left": "-25.0",
+            "x_right": "250.0"
+          },
+          "errors": {
+            "finite_transport_error_upper": "0.19202477456374994",
+            "horizon_potential_L1_upper": "4.112865982014141e-06",
+            "infinity_generator_L1_upper": "0.04991389226547447",
+            "infinity_potential_L1_upper": "0.024954450320094024",
+            "infinity_tail_error_upper": "0.0675721798860266",
+            "maximum_local_coefficient_tail_row_norm": "0.00020900745383063864",
+            "maximum_local_generator_row_norm": "0.4589306637059244",
+            "maximum_local_residual_sup_norm": "0.000267965750330746",
+            "total_A_out_error_upper": "0.2595969544497766"
+          },
+          "finite_endpoint_centre": {
+            "A_in": "[-0.96780598189484515667979418366818980016795883509 +/- 2.13e-48] + [0.57990413592396546837778595748262340321589311708 +/- 3.96e-48]j",
+            "A_out": "[-0.20297110421921737123249683165883982203985315778 +/- 4.08e-48] + [-0.48139395434141025751139969310379633253645870440 +/- 3.27e-49]j"
+          },
+          "geometry": {
+            "cauchy_radius": "0.25",
+            "name": "secondary_h1_over_16_n20",
+            "order": 20,
+            "precision_bits": 160,
+            "step": "0.0625",
+            "steps": 4400
+          },
+          "spin": 1
+        },
+        "spin_2": {
+          "bounds": {
+            "abs_A_out_lower": "0.03091611428611683",
+            "abs_A_out_squared_lower": "0.000955806122552237",
+            "finite_A_out_centre_modulus_lower": "0.1253456375015334",
+            "zero_excluded": true
+          },
+          "endpoint_coordinates": {
+            "r_left": "[2.0000027419144137182659033254393820491371084690 +/- 2.61e-47]",
+            "r_right": "[240.43807509431024541056569649531837256853883825 +/- 2.75e-45]",
+            "x_left": "-25.0",
+            "x_right": "250.0"
+          },
+          "errors": {
+            "finite_transport_error_upper": "0.04087106391848629",
+            "horizon_potential_L1_upper": "2.0564344006459526e-06",
+            "infinity_generator_L1_upper": "0.04981009445340603",
+            "infinity_potential_L1_upper": "0.024902556604195852",
+            "infinity_tail_error_upper": "0.053558459296930275",
+            "maximum_local_coefficient_tail_row_norm": "0.00016629411914960125",
+            "maximum_local_generator_row_norm": "0.3124861239675981",
+            "maximum_local_residual_sup_norm": "0.0001735978797590654",
+            "total_A_out_error_upper": "0.09442952321541657"
+          },
+          "finite_endpoint_centre": {
+            "A_in": "[-0.80638412119599797078367339492428069041594107428 +/- 5.69e-49] + [-0.60452968049405747732895989992801385584856078706 +/- 1.28e-48]j",
+            "A_out": "[0.00025262548051076424155334164508697314761802669332 +/- 2.56e-51] + [-0.12534538292666555777531120448857632197724732645 +/- 2.39e-48]j"
+          },
+          "geometry": {
+            "cauchy_radius": "0.25",
+            "name": "secondary_h1_over_16_n20",
+            "order": 20,
+            "precision_bits": 160,
+            "step": "0.0625",
+            "steps": 4400
+          },
+          "spin": 2
+        }
+      }
+    },
+    "spatial_engine": "Taylor recurrence, Cauchy coefficient tail and Gronwall defect enclosure imported from the independently tested point-frequency rail",
+    "tail_policy": "exact horizon and infinity potential integrals multiplied by the directed Arb upper bound of 1/omega"
+  },
+  "schema": "phase3-axial-scalar-reflection-cell-half-v1",
+  "scope": {
+    "background": "Schwarzschild M=1",
+    "channels": [
+      "spin_one",
+      "spin_two"
+    ],
+    "ell": 2,
+    "frequency_interval": [
+      "0.49995",
+      "0.50005"
+    ],
+    "parity": "axial"
+  },
+  "status": "VALIDATED_REAL_CELL_SPIN_ONE_AND_SPIN_TWO_OUTGOING_REFLECTION_NONVANISHING"
+}

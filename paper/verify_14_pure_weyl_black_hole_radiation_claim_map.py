@@ -35,6 +35,9 @@ GLOBAL_V5_LIFECYCLE_COMMIT = "b1eec02b2d04e585fddbf8f6f1c2ba1d0b96c6f1"
 OUTGOING_POINT_RESULT = (
     "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF"
 )
+OUTGOING_CELL_RESULT = (
+    "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF"
+)
 EXPECTED_AUTHORITY_HASHES = {
     "certificate_sha256": "8a9914400f0929f37a63570b95383ebc4131cbf2928b5f923db0d002d0783d33",
     "receipt_sha256": "0888efb8f14518d38e40bd1b0a3926b8fab37ad729dce798c221a01d24aeabee",
@@ -105,7 +108,7 @@ def main() -> None:
         fail("wrong paper identity")
     if (
         claim_map.get("result_id")
-        != "PAPER_14_PHASE3_OUTGOING_POPULATION_POINT_UPDATE_V5"
+        != "PAPER_14_PHASE3_GENERIC_OUTGOING_COMPLETENESS_UPDATE_V7"
     ):
         fail("wrong Phase-3 paper result identity")
     if claim_map.get("lifecycle_state") != "DRAFT_ALLOWED":
@@ -208,6 +211,51 @@ def main() -> None:
     ):
         if point_flags.get(key) is not False:
             fail(f"outgoing-point overclaim: {key}")
+
+    outgoing_cell = claim_map.get(
+        "phase3_outgoing_population_cell_half_authority", {}
+    )
+    if outgoing_cell.get("result_id") != OUTGOING_CELL_RESULT:
+        fail("real-cell outgoing-population result not authoritative")
+    for key, hash_key in [
+        ("certificate", "certificate_sha256"),
+        ("receipt", "receipt_sha256"),
+        ("report", "report_sha256"),
+    ]:
+        path = ROOT / outgoing_cell[key]
+        if digest(path) != outgoing_cell[hash_key]:
+            fail(f"outgoing-cell authority content drift: {key}")
+    outgoing_cell_result = json.loads(
+        (ROOT / outgoing_cell["certificate"]).read_text()
+    )
+    if outgoing_cell_result.get("result_id") != OUTGOING_CELL_RESULT:
+        fail("outgoing-cell certificate identity drift")
+    if outgoing_cell_result["scope"].get("frequency_interval") != [
+        "0.49995",
+        "0.50005",
+    ]:
+        fail("outgoing-cell frequency scope drift")
+    cell_flags = outgoing_cell_result["claim_flags"]
+    for key in (
+        "Tplus_invertible_on_declared_cell",
+        "full_outgoing_trace_space_populated_on_declared_cell",
+        "det_O_nonzero_on_declared_cell",
+        "O_inertia_1_2_0_on_declared_cell",
+        "generic_positive_real_outgoing_population_off_discrete_set",
+        "cell_L2_multiplier_bounded_isomorphism",
+        "compact_positive_band_dense_range",
+    ):
+        if cell_flags.get(key) is not True:
+            fail(f"outgoing-cell theorem flag drift: {key}")
+    for key in (
+        "whole_pilot_interval_outgoing_population_certified",
+        "absence_of_positive_real_reflection_zeros_certified",
+        "uniform_full_positive_axis_inverse_bound_certified",
+        "explicit_Tplus_entries_certified",
+        "QNM_or_time_domain_claim",
+    ):
+        if cell_flags.get(key) is not False:
+            fail(f"outgoing-cell overclaim: {key}")
 
     global_v5 = claim_map.get("phase3_global_connection_shortfall", {})
     if global_v5.get("result_id") != GLOBAL_V5_RESULT:
@@ -381,6 +429,12 @@ def main() -> None:
         "axial_outgoing_full_trace_globally_populated_at_omega_half",
         "axial_outgoing_pullback_nonzero_inertia_one_two_zero_at_omega_half",
         "axial_scalar_spin_one_and_spin_two_reflection_nonzero_at_omega_half",
+        "axial_outgoing_full_trace_globally_populated_on_cell_half",
+        "axial_outgoing_pullback_nonzero_inertia_one_two_zero_on_cell_half",
+        "axial_scalar_spin_one_and_spin_two_reflection_nonzero_on_cell_half",
+        "axial_outgoing_generic_population_off_locally_finite_set",
+        "axial_outgoing_cell_half_L2_multiplier_isomorphism",
+        "axial_outgoing_compact_positive_band_dense_range",
     }
     required_false = {
         "formal_radial_einstein_only_selection",
@@ -404,6 +458,8 @@ def main() -> None:
         "axial_l2_endpoint_flux_positive_energy",
         "axial_l2_endpoint_flux_cpt_or_stability",
         "axial_l2_endpoint_unrestricted_improvement_invariance",
+        "axial_positive_real_reflection_zero_set_empty",
+        "axial_outgoing_full_positive_axis_uniform_inverse_bound",
     }
     for key in required_true:
         if scope.get(key) is not True:
@@ -441,9 +497,14 @@ def main() -> None:
         "finite-tangential-jet",
         "Explicit axial endpoint Grams and uniform bounds",
         "one-sided global connection and flux theorem",
-        "Full outgoing population at \\(\\omega=1/2\\)",
-        "\\ker T_+(1/2)=0",
-        "\\det{\\cal O}(1/2)\\ne0",
+        "Full outgoing population on a real-frequency cell",
+        "0.49995\\le\\omega\\le0.50005",
+        "\\ker T_+(\\omega)=0",
+        "\\det{\\cal O}(\\omega)\\ne0",
+        "Generic and band-limited outgoing completeness",
+        "open dense,",
+        "injective with dense range",
+        "coverage now reaches \\(105/512\\)",
     ]
     for phrase in required_phrases:
         if phrase not in text:
@@ -475,7 +536,7 @@ def main() -> None:
     coverage = json.loads(coverage_path.read_text())
     if (
         coverage.get("schema")
-        != "paper14-phase3-outgoing-population-point-overlay-v5"
+        != "paper14-phase3-generic-outgoing-completeness-overlay-v7"
     ):
         fail("wrong coverage overlay schema")
     if coverage.get("append_only_parent_sha256") != digest(PARENT_COVERAGE):
@@ -505,6 +566,11 @@ def main() -> None:
         (
             "sf:coverage/edge/"
             "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF/"
+            "paper-14/v1"
+        ),
+        (
+            "sf:coverage/edge/"
+            "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF/"
             "paper-14/v1"
         ),
     }
@@ -540,6 +606,17 @@ def main() -> None:
         or outgoing_point_edge.get("stale") is not False
     ):
         fail("outgoing-population point edge is mistyped")
+    outgoing_cell_edge = new_edges[
+        "sf:coverage/edge/"
+        "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF/"
+        "paper-14/v1"
+    ]["body"]
+    if (
+        outgoing_cell_edge.get("edge_kind")
+        != "PRIMARY_REAL_CELL_SCATTERING_THEOREM"
+        or outgoing_cell_edge.get("stale") is not False
+    ):
+        fail("outgoing-population cell edge is mistyped")
 
     print(
         "PASS: corrected Paper 14 semantics, terminal hashes, source pins, "
