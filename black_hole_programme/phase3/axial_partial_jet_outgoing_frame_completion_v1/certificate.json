@@ -1,0 +1,138 @@
+{
+  "claim_flags": {
+    "E_all_order_remainder_certified": true,
+    "R_all_order_remainder_certified": true,
+    "S_correlated_dual_remainder_certified": false,
+    "S_six_state_all_order_existence_certified": true,
+    "T_plus_certified": false,
+    "all_three_correlated_outgoing_columns_certified": false,
+    "formal_E_R_S_columns_constructed": true,
+    "formal_K_plus_zero_in_canonical_gauge": true,
+    "scattering_or_flux_certified": false,
+    "validated_analytic_K_plus_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a correlated all-order omega/tau remainder for S",
+    "a validated analytic K_plus normalizer",
+    "all three outgoing columns in one validated endpoint algebra",
+    "T_plus, reflection, Stokes conservation, scattering, or flux"
+  ],
+  "exact_normalization_audit": {
+    "canonical_free_EI2_XI2": "0",
+    "canonical_free_EI2_XI3": "0",
+    "forced_log_XI2": "0",
+    "forced_log_XI3": "0",
+    "normalized_E_scalar_amplitude": "1",
+    "pi_x_R": "0",
+    "pi_x_S": "1",
+    "pi_x_XI2": "32*omega**2 - 8*I*omega - 10",
+    "pi_x_XI3": "-2*I*omega"
+  },
+  "formal_endpoint_jet": {
+    "K_plus_allowed_shape": [
+      [
+        "k2",
+        "h"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "K_plus_canonical_formal": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "K_plus_validated_analytic": false,
+    "analytic_formal_tau_recurrence": true,
+    "reason": "the real nonzero-frequency pivots are nonzero, XI2/XI3 have zero forced logs, the leading R and S amplitudes are tau-independent, and both canonical free EI2 constants are zero",
+    "unit_leading_amplitudes_force": "k2=0",
+    "zero_free_EI2_constants_force": "h=0"
+  },
+  "imports": {
+    "crosswalk": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json",
+      "sha256": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a"
+    },
+    "endpoint_frames": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_endpoint_frames_v1/certificate.json",
+      "sha256": "001757321247ccc3f5a38c4925d09c5d6759b2f9335913be96d30e4fe64ffbe9"
+    },
+    "metric_heads": {
+      "path": "black_hole_programme/phase3/axial_endpoint_remainder_enclosures/infinity-metric-heads.json",
+      "sha256": "969701a67581469459e66f6e82a161654f37cf8b29915790d2f92d0a2f7269c3"
+    },
+    "practical_infinity": {
+      "path": "black_hole_programme/phase3/axial_infinity_practical_transfer/certificate.json",
+      "sha256": "40cd67db3e0d0cac79a8097bd6c7e5a2b09a1de0498ef078c2ac50c927f11a8d"
+    },
+    "reduced_rplus": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/certificate.json",
+      "sha256": "b65c30b7620c10395b6bac3936a4715c767ad7d7e0efea50552c6c6f9da46f0b"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "next_gate": "reissue the normalized XI3/S infinity remainder in the common IvTaylor4_omega tensor dual_tau algebra; only then promote the formal K_plus=0 recurrence gauge to an analytic endpoint frame",
+  "normalized_columns": {
+    "E": {
+      "all_order_phase_factored_remainder": "REUSED_FROM_R_PLUS",
+      "line": "2*EI2",
+      "quotient": "0",
+      "role": "epsilon-copy of the unit outgoing spin-two Jost line"
+    },
+    "R": {
+      "all_order_phase_factored_remainder": "CERTIFIED",
+      "line": "XI2-I*(16*omega**2-4*I*omega-5)*XI3/omega",
+      "quotient": "0",
+      "role": "unit outgoing carrier spin-two base line"
+    },
+    "S": {
+      "all_order_correlated_omega_dual_tau_remainder": "OPEN",
+      "all_order_six_state_existence": "CERTIFIED_AT_R32",
+      "line": "I*XI3/(2*omega)",
+      "quotient": "1",
+      "role": "unit outgoing spin-one quotient line"
+    }
+  },
+  "remainder_contract": {
+    "E_R_common_omega_dual_tau": true,
+    "S_common_omega_dual_tau": false,
+    "S_six_state_all_order_existence": true,
+    "missing_object": "a phase-factored XI3/S remainder serialized in the same IvTaylor4_omega tensor dual_tau generator as R+",
+    "why_existing_initializer_is_insufficient": "the practical R=32 six-state box proves existence and rank but rectangularizes the base/tangent pieces and does not export their common omega generator or dual coefficient"
+  },
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_PARTIAL_JET_OUTGOING_FRAME_COMPLETION",
+  "schema": "phase3-axial-partial-jet-outgoing-frame-completion-v1",
+  "status": "FORMAL_FRAME_COMPLETE_CORRELATED_S_REMAINDER_OPEN",
+  "typed_conventions": {
+    "bounded_real_axis_conjugator": "(1-2/r)**(4*I*omega)",
+    "common_physical_phase": "exp(-2*I*omega*rstar)",
+    "formal_phase": "exp(-2*I*omega*r)*r**(-4*I*omega)",
+    "old_endpoint_line_order": [
+      "XI2",
+      "XI3",
+      "EI2"
+    ],
+    "outgoing_trace_order": [
+      "E",
+      "R",
+      "S"
+    ],
+    "phase_is_never_omega_taylor_expanded_at_infinity": true,
+    "six_state_factor_order": [
+      "X=metric_RW_tau_tangent",
+      "Y=carrier_RW_base",
+      "Z=Lx_spin_one"
+    ]
+  }
+}

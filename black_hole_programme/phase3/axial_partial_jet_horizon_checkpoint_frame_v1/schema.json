@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "status",
+    "dependency_tags",
+    "canonical_endpoint_frame",
+    "checkpoint_transport",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-partial-jet-horizon-checkpoint-frame-v1"
+    },
+    "status": {
+      "const": "CANONICAL_KH_ZERO_CHECKPOINT_PIVOT_SHORTFALL"
+    },
+    "canonical_endpoint_frame": {
+      "type": "object",
+      "required": ["K_H", "zero_residuals"],
+      "properties": {
+        "K_H": {
+          "const": [["0", "0"], ["0", "0"]]
+        },
+        "zero_residuals": {"const": true}
+      }
+    },
+    "checkpoint_transport": {
+      "type": "object",
+      "required": ["accepted_panels", "reached_r4", "first_obstruction"],
+      "properties": {
+        "accepted_panels": {"const": 27},
+        "reached_r4": {"const": false}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "K_H_computed",
+        "K_H_exactly_zero_in_canonical_frame",
+        "complete_three_channel_frame_at_r4",
+        "H4_pass_certified"
+      ],
+      "properties": {
+        "K_H_computed": {"const": true},
+        "K_H_exactly_zero_in_canonical_frame": {"const": true},
+        "complete_three_channel_frame_at_r4": {"const": false},
+        "H4_pass_certified": {"const": false}
+      }
+    }
+  }
+}

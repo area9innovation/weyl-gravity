@@ -1,0 +1,21 @@
+{
+  "certificate": "black_hole_programme/phase3/axial_partial_jet_outgoing_frame_completion_v1/certificate.json",
+  "certificate_sha256": "def9952552a48374e97594517f9a434850ffc6251a34517085793a467bba17ed",
+  "claim_boundary": "formal E/R/S frame and formal canonical K_plus only; correlated S remainder, analytic K_plus, T_plus, Stokes and flux remain open",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_outgoing_frame_completion_v1.produce --check",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_outgoing_frame_completion_v1.verify",
+    "python3 -m unittest black_hole_programme.phase3.axial_partial_jet_outgoing_frame_completion_v1.test_completion"
+  ],
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "schema": "phase3-axial-partial-jet-outgoing-frame-completion-receipt-v1",
+  "tiers": {
+    "tier0": "producer check, JSON schema, diff check",
+    "tier1": "independent verifier and mutation tests",
+    "tier2": "not run; no upstream operator or shared schema changed",
+    "tier3": "not run; no theorem promotion or release"
+  }
+}

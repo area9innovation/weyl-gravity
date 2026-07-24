@@ -1,0 +1,70 @@
+{
+  "base_panel_count": 16,
+  "gates": {
+    "argument_principle_root_count": {
+      "prerequisite": "boundary_nonvanishing=PASS",
+      "status": "NOT_RUN"
+    },
+    "boundary_nonvanishing": {
+      "first_failure": {
+        "failure": "ENDPOINT_EXPORT_TRANSPORT_FAILED",
+        "panel": 0
+      },
+      "passed_panel_count": 0,
+      "status": "FAIL_CLOSED"
+    }
+  },
+  "match_radius": 32,
+  "panel_count": 512,
+  "refinement": 32,
+  "rows": [
+    {
+      "boundary_nonvanishing": {
+        "failure": "ENDPOINT_EXPORT_TRANSPORT_FAILED",
+        "status": "FAIL_CLOSED"
+      },
+      "generator_modulus_upper": "[0.00015339783814829881350726827454599212595 +/- 2.26e-42]",
+      "horizon": {
+        "box_transport_passed": false,
+        "center_transport_passed": false,
+        "failed_transport": "box",
+        "failure": "RECIPROCAL_REFERENCE_P_MAJORANT_DISCRIMINANT",
+        "generator_modulus_upper": "[0.00015339783814829881350726827454599212595 +/- 2.26e-42]",
+        "independent_residual_radius": null,
+        "omega_center": "[-0.34867215503597681625080895173596218228 +/- 3.41e-39] + [0.089115712805164559728865469878655858338 +/- 1.21e-40]j",
+        "omega_generator_id": "qnm-boundary-omega-0000-of-0512",
+        "omega_polynomial_basis": "zeta=omega-omega_center",
+        "passed": false,
+        "phase_convention": "psi=exp(+I*omega*r_star)*P_H",
+        "q_omega_polynomial_coefficients": null,
+        "q_polynomial_coefficients": null,
+        "q_tau_polynomial_coefficients": null,
+        "radius": "134217745/67108864"
+      },
+      "omega_box": "[-0.349 +/- 4.82e-4] + [0.089 +/- 2.70e-4]j",
+      "omega_center": "[-0.34867215503597681625080895173596218228 +/- 3.41e-39] + [0.089115712805164559728865469878655858338 +/- 1.21e-40]j",
+      "omega_generator_id": "qnm-boundary-omega-0000-of-0512",
+      "outgoing": {
+        "box_transport_passed": true,
+        "center_transport_passed": false,
+        "failed_transport": "center",
+        "failure": "AFFINE_Q_REMAINDER_SELF_MAP",
+        "generator_modulus_upper": "[0.00015339783814829881350726827454599212595 +/- 2.26e-42]",
+        "independent_residual_radius": null,
+        "omega_center": "[-0.34867215503597681625080895173596218228 +/- 3.41e-39] + [0.089115712805164559728865469878655858338 +/- 1.21e-40]j",
+        "omega_generator_id": "qnm-boundary-omega-0000-of-0512",
+        "omega_polynomial_basis": "zeta=omega-omega_center",
+        "passed": false,
+        "phase_convention": "psi=exp(-I*omega*r_star)*P_out",
+        "q_omega_polynomial_coefficients": null,
+        "q_polynomial_coefficients": null,
+        "q_tau_polynomial_coefficients": null,
+        "radius": "45"
+      },
+      "panel": 0,
+      "panel_count": 512
+    }
+  ],
+  "schema": "phase3-axial-qnm-common-affine-evans-boundary-run-v1",
+  "shared_generator": "one panel-local zeta=omega-omega_center generator is used by both endpoint exports and the physical mismatch"
+}

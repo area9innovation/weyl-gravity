@@ -2101,6 +2101,7 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_qnm_horizon_reciprocal_checkpoint_transport_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_two_sided_projective_mismatch_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_common_affine_export_contract_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_endpoint_frames_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_transport_preflight_v1/certificate.json};
@@ -2108,9 +2109,11 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_spin_one_levelt_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_multipanel_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_projective_multipanel_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_multipanel_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_frame_completion_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json}\\
 Polar restriction-stable module and invariant current filtration &
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json}\\
@@ -2210,7 +2213,23 @@ operator tail \(2.81\times10^{-24}\), so this is again a dependency failure
 rather than evidence of a physical pivot zero.  The permitted
 midpoint/Lohner alternate exceeded a bounded 240-second runtime before
 flushing a panel checkpoint.  It is recorded as a throughput shortfall, not
-as a transport obstruction.  Consequently \(K_H\) remains open.
+as a transport obstruction.  The endpoint normalization question can,
+however, be separated from that radial transport.  In the canonical
+\(\tau\)-analytic Frobenius/Levelt frame, the spin-two leading pairing and
+spin-one quotient leading coefficient are fixed independently of \(\tau\),
+and the sole compatible order-one Levelt free coefficient is set to zero
+for the complete analytic family.  The exact recurrence audit then gives
+\[
+ K_H^{\rm canonical}=
+ \begin{pmatrix}0&0\\0&0\end{pmatrix}.
+\]
+This is the endpoint jet-frame shear, not the future-horizon Gram and not an
+\(r=4\) horizon frame.  A new correlation-preserving checkpoint rail accepts
+27 panels at \(\omega=4097/8192\); it then refuses because the mixed
+spin-one projective pivot enclosure contains zero at
+\(\rho=91/268435456\), while the pure spin-two pivot still has certified
+modulus lower bound \(0.839407\).  Thus the canonical endpoint shear is
+fixed, but the complete three-column \(H_4\) handoff remains open.
 
 At outgoing real infinity the corresponding reduced-phase representation
 has also passed its first local test.  Keeping \(e^{-2i\omega r_*}\)
@@ -2238,6 +2257,25 @@ implementation bottleneck: about 60 seconds are spent in Python symbolic
 preparation, while native 32-panel transport takes 9.00 seconds and the
 restarted 16-panel chunk 5.66 seconds.  Checkpoint reuse, rather than a
 different ODE integrator, is therefore the immediate performance repair.
+The outgoing endpoint algebra is now sharper.  In the typed factor order
+\((E,R,S)\), the exact formal frame is
+\[
+ \left(
+ 2\,{\rm EI2},\,
+ {\rm XI2}-\frac{i(16\omega^2-4i\omega-5)}{\omega}{\rm XI3},\,
+ \frac{i}{2\omega}{\rm XI3}
+ \right),
+\]
+with \(\pi_x(R)=0\) and \(\pi_x(S)=1\).  The \(E\) line is the unit
+\(\epsilon\)-copy of the already certified \(R\) scalar Jost column.
+The log-free formal recurrences, with the free \({\rm EI2}\) coefficient
+fixed to zero throughout the family, give
+\(K_+^{\rm formal}=0\).  This is not yet an analytic endpoint-frame theorem:
+the existing all-order six-state enclosure for \({\rm XI3}\) rectangularizes
+its base and tangent data and exports neither the common \(\omega\) generator
+nor the dual-\(\tau\) remainder required for the normalized \(S\) column.
+Consequently the correlated three-column outgoing frame, analytic \(K_+\),
+and \(T_+\) remain fail closed.
 Complex-frequency work has excluded the entire growth half-plane, but no
 damped QNM root, contour moment, or local Smith branch has been computed.
 At the QNM seed disk, the direct inverse-\(r\) forward recurrence also fails
@@ -2330,7 +2368,18 @@ convention tied to that generator.  The present serialized balls do not
 supply those fields.  A bounded singleton-frequency prototype passes its
 first horizon Taylor reference but refuses immediately at the horizon
 \(q\)-remainder self-map; no long joint rerun or downstream contour gate is
-therefore inferred.
+therefore inferred.  A first implementation of the complete common-affine
+export contract has now made the phase rule
+\(\Delta=q_H-q_++2i\omega\) and one panel-local generator identity explicit.
+It remains fail closed at panel zero of the bounded 512-panel attempt:
+the outgoing box transport passes, but its singleton-center validation
+refuses at \(r=45\) with
+\texttt{AFFINE\_Q\_REMAINDER\_SELF\_MAP}; the horizon box refuses near
+\(r=2.00000025\) with
+\texttt{RECIPROCAL\_REFERENCE\_P\_MAJORANT\_DISCRIMINANT}.  No endpoint
+polynomial pair is emitted, and the argument-principle and Smith/EP2 gates
+are not run.  These are representation-majorant failures, not evidence for
+a zero of the physical mismatch.
 Uniform time-domain boundedness, decay, and completeness remain open.
 
 The present result already fixes an important baseline:

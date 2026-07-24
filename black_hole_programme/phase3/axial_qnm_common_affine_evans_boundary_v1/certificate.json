@@ -1,0 +1,103 @@
+{
+  "claim_flags": {
+    "Evans_boundary_nonzero_certified": false,
+    "QNM_or_EP2_certified": false,
+    "argument_principle_root_count_certified": false,
+    "both_endpoint_polynomial_exports_completed": false,
+    "opposite_endpoint_phase_convention_explicit": true,
+    "shared_panel_local_omega_generator_implemented": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "nonvanishing of the physical Evans mismatch on the contour",
+    "an argument-principle QNM count",
+    "a QNM location, Smith selector, defective fibre or EP2",
+    "a physical outgoing Bach map T_plus",
+    "time-domain stability or any LORENTZIAN-CAUSAL claim"
+  ],
+  "imports": {
+    "contract": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_export_contract_v1/certificate.json",
+      "sha256": "7e76cc95eae0f32234a8b0032d85605526b85c7f8cfd9aead344a1846980f45d"
+    },
+    "horizon_transport": {
+      "path": "black_hole_programme/phase3/axial_qnm_horizon_reciprocal_checkpoint_transport_v1/certificate.json",
+      "sha256": "00aa9c04774ce801bba0e75e555f01255736184ab707885cfba35fc633a1fe8f"
+    },
+    "outgoing_transport": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_affine_projective_transport_v1/certificate.json",
+      "sha256": "8429b70f6ec21610eef3867ec60602503f87f6a9ac4c6d2524bb72029de8c326"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "method": {
+    "bounded_stop": "first failed endpoint export or boundary panel",
+    "endpoint_fields": [
+      "q_polynomial_coefficients",
+      "q_tau_polynomial_coefficients",
+      "q_omega_polynomial_coefficients",
+      "independent_residual_radius"
+    ],
+    "generator": "zeta=omega-omega_center",
+    "generator_identity_shared_by": [
+      "horizon endpoint",
+      "outgoing endpoint",
+      "physical mismatch"
+    ],
+    "physical_mismatch": "Delta=q_H-q_out+2*I*omega",
+    "q_remainder": "fundamental-theorem bound after subtracting q(omega_center)+q_omega(omega_center)*zeta"
+  },
+  "result": {
+    "argument_principle_status": "NOT_RUN",
+    "completed_panel_count": 1,
+    "first_failure": {
+      "failure": "ENDPOINT_EXPORT_TRANSPORT_FAILED",
+      "panel": 0
+    },
+    "horizon_failure": {
+      "box_transport_passed": false,
+      "center_transport_passed": false,
+      "failed_transport": "box",
+      "failure": "RECIPROCAL_REFERENCE_P_MAJORANT_DISCRIMINANT",
+      "generator_modulus_upper": "[0.00015339783814829881350726827454599212595 +/- 2.26e-42]",
+      "independent_residual_radius": null,
+      "omega_center": "[-0.34867215503597681625080895173596218228 +/- 3.41e-39] + [0.089115712805164559728865469878655858338 +/- 1.21e-40]j",
+      "omega_generator_id": "qnm-boundary-omega-0000-of-0512",
+      "omega_polynomial_basis": "zeta=omega-omega_center",
+      "passed": false,
+      "phase_convention": "psi=exp(+I*omega*r_star)*P_H",
+      "q_omega_polynomial_coefficients": null,
+      "q_polynomial_coefficients": null,
+      "q_tau_polynomial_coefficients": null,
+      "radius": "134217745/67108864"
+    },
+    "outgoing_failure": {
+      "box_transport_passed": true,
+      "center_transport_passed": false,
+      "failed_transport": "center",
+      "failure": "AFFINE_Q_REMAINDER_SELF_MAP",
+      "generator_modulus_upper": "[0.00015339783814829881350726827454599212595 +/- 2.26e-42]",
+      "independent_residual_radius": null,
+      "omega_center": "[-0.34867215503597681625080895173596218228 +/- 3.41e-39] + [0.089115712805164559728865469878655858338 +/- 1.21e-40]j",
+      "omega_generator_id": "qnm-boundary-omega-0000-of-0512",
+      "omega_polynomial_basis": "zeta=omega-omega_center",
+      "passed": false,
+      "phase_convention": "psi=exp(-I*omega*r_star)*P_out",
+      "q_omega_polynomial_coefficients": null,
+      "q_polynomial_coefficients": null,
+      "q_tau_polynomial_coefficients": null,
+      "radius": "45"
+    },
+    "passed_boundary_panel_count": 0,
+    "requested_panel_count": 512
+  },
+  "run": {
+    "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/common-affine-run.json",
+    "sha256": "e8ad99b7e448044fd7957281a17d4c3abd88fdfab18cf6522a665cc6a78af484"
+  },
+  "schema": "phase3-axial-qnm-common-affine-evans-boundary-v1",
+  "status": "FAIL_CLOSED_AT_FIRST_COMMON_AFFINE_ENDPOINT_EXPORT"
+}

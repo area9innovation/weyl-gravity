@@ -1,0 +1,57 @@
+{
+  "artifact_sha256": {
+    "README.md": "0329693e7ba0dcfe5bf2481333f9ffdefd2666afaea29271feffe5cdd54c6d35",
+    "__init__.py": "9d1fa58857ecee4408bb5438cd94c4a5b859643486b3f9a40e48ac7a1fbbeaa9",
+    "common_affine.py": "dc781923eb34f8194cdd4acb08a7bb54df087dec27f8cbe1f6702fb28bbf461f",
+    "produce.py": "de939f7c45f85ef9a09443ef5b6f2d74d4dc9400304dddc8466e99397d93043c",
+    "schema.json": "50d1bd67a7d5498ef15ffc312ce7ff862bc707b6780eb18c7ea12c7f13ba3913",
+    "test_common_affine.py": "44995214e45ab2a2f09546ec334ae271ef1161c7ab76d656ffaa9da9281e42c3",
+    "verify.py": "43bb494efe5adeaf44cfc667ef5730a14e8ddc110178ee38b5e3437380cbca8d"
+  },
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/common_affine.py black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/produce.py black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/verify.py",
+      "elapsed_seconds": 0.026985,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/certificate.json black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/schema.json",
+      "elapsed_seconds": 0.088412,
+      "returncode": 0,
+      "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_qnm_common_affine_evans_boundary_v1.test_common_affine",
+      "elapsed_seconds": 0.442928,
+      "returncode": 0,
+      "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.359s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_common_affine_evans_boundary_v1.verify",
+      "elapsed_seconds": 0.446159,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "common-affine Evans boundary verifier: PASS (fail-closed result)\n"
+    }
+  ],
+  "elapsed_seconds": 1.38297,
+  "higher_tiers_not_run": "No shared operator, theorem lifecycle, freeze or release changed.",
+  "input_sha256": {
+    "contract": "7e76cc95eae0f32234a8b0032d85605526b85c7f8cfd9aead344a1846980f45d",
+    "horizon_transport": "00aa9c04774ce801bba0e75e555f01255736184ab707885cfba35fc633a1fe8f",
+    "outgoing_transport": "8429b70f6ec21610eef3867ec60602503f87f6a9ac4c6d2524bb72029de8c326"
+  },
+  "output_sha256": {
+    "certificate": "7f0e62d2fed234f01a4aac9477fe224b9e1edf7ab2b99b46066311dc3f878764",
+    "report": "3c86a2a93185588e5b16cab353410d84453a6eac9805501eb41ac8a149bc25ad",
+    "run": "e8ad99b7e448044fd7957281a17d4c3abd88fdfab18cf6522a665cc6a78af484",
+    "top_report": "3c86a2a93185588e5b16cab353410d84453a6eac9805501eb41ac8a149bc25ad"
+  },
+  "schema": "phase3-axial-qnm-common-affine-evans-boundary-receipt-v1",
+  "tier_0": "py_compile and JSON Schema validation",
+  "tier_1": "scoped unit test and independent verifier"
+}

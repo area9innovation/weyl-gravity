@@ -1,0 +1,45 @@
+{
+  "claim_boundary": "canonical endpoint K_H only; radial frame/H4/T_plus remain fail closed at the first mixed projective pivot obstruction",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.checkpoint_transport",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.produce --check",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.verify",
+    "python3 -m unittest black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.test_checkpoint_frame"
+  ],
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "higher_tiers_not_run": "Tier 2/3 not required: no shared operator or promoted physical scattering theorem changed",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_HORIZON_CANONICAL_KH",
+  "schema": "phase3-receipt-v1",
+  "status": "CANONICAL_KH_ZERO_CHECKPOINT_PIVOT_SHORTFALL",
+  "validation": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.checkpoint_transport",
+      "elapsed_seconds": 12.4,
+      "output_sha256": "182103703f949733637da520fcbe2961276647b355bfa2205a1ce188b2a43329",
+      "status": "PASS_DETERMINISTIC_OUTPUT"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.produce --check",
+      "elapsed_seconds": 11.9,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.verify",
+      "elapsed_seconds": 0.1,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.test_checkpoint_frame",
+      "elapsed_seconds": 11.7,
+      "status": "PASS_3_TESTS"
+    },
+    {
+      "command": "Draft202012Validator(schema).validate(certificate)",
+      "elapsed_seconds": 0.1,
+      "status": "PASS"
+    }
+  ]
+}

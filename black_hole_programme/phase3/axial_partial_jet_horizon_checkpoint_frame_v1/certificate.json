@@ -1,0 +1,143 @@
+{
+  "canonical_endpoint_frame": {
+    "K_H": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "allowed_type": "upper triangular [[k2,h],[0,0]]",
+    "collision_divisors": {
+      "excluded_for_real_omega_positive": true,
+      "mixed_named_head": [
+        "2*omega-I",
+        "4*omega-I",
+        "4*omega-3*I",
+        "omega-I"
+      ],
+      "spin_two": "(n+1)*(n+1+4*I*omega)"
+    },
+    "frame": "tau-analytic horizon Frobenius/Levelt frame with tau-independent leading normalizations",
+    "spin_one_lift": {
+      "free_homogeneous_parameter": "0 for every tau",
+      "normalization_derivative_h": "0",
+      "only_resonant_order": 1,
+      "order_one_tangent": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "order_zero_tangent": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "quotient_leading_vector": [
+        "1",
+        "-1"
+      ],
+      "quotient_normalization_derivative": "0"
+    },
+    "spin_two": {
+      "leading_condition": "ell_H^T*f_0=1",
+      "leading_tangent_coefficient": [
+        "0",
+        "0"
+      ],
+      "normalization_derivative_k2": "0",
+      "tau_exponent_derivative": "0"
+    },
+    "zero_residuals": true
+  },
+  "checkpoint_transport": {
+    "accepted_panels": 27,
+    "first_obstruction": {
+      "gate": "PROJECTIVE_PIVOT",
+      "mixed": {
+        "gate": "PIVOT_CONTAINS_ZERO",
+        "passed": false,
+        "pivot": 2
+      },
+      "panel": 27,
+      "pure": {
+        "passed": true,
+        "pivot": 0,
+        "pivot_modulus_lower": "[0.839407050702284304994150012704786753860654813716137168228 +/- 3.75e-58]"
+      },
+      "rho": "91/268435456",
+      "shell": 0
+    },
+    "frequency": "4097/8192",
+    "mixed_projective_pivot_excludes_zero": false,
+    "pure_spin_two_pivot_still_excludes_zero": true,
+    "reached_r4": false,
+    "run_path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/checkpoint-run.json",
+    "run_sha256": "182103703f949733637da520fcbe2961276647b355bfa2205a1ce188b2a43329",
+    "scope": {
+      "cauchy_radius_over_step": 4,
+      "panels_per_shell": 64,
+      "precision_bits": 192,
+      "r_target": "4",
+      "rho_start": "1/4194304",
+      "rho_target": "2",
+      "shells": 23,
+      "taylor_order": 16
+    }
+  },
+  "claim_flags": {
+    "H4_pass_certified": false,
+    "K_H_computed": true,
+    "K_H_exactly_zero_in_canonical_frame": true,
+    "T_plus_recovered": false,
+    "canonical_tau_analytic_horizon_frame_constructed": true,
+    "complete_three_channel_frame_at_r4": false,
+    "horizon_to_r4_column_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a complete three-channel horizon frame at r=4",
+    "the physical H4 handoff, T_plus, or a Stokes identity",
+    "a canonical K_minus or K_plus",
+    "bounded all-frequency transport",
+    "any LORENTZIAN-CAUSAL theorem"
+  ],
+  "imports": {
+    "checkpoint_transport": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/checkpoint_transport.py",
+      "sha256": "1ef4535ba150c90719d4fae596cd880e83856f69342837c509719fcbffcaef8c"
+    },
+    "crosswalk": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json",
+      "sha256": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a"
+    },
+    "moving_phase": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_moving_phase_v1/certificate.json",
+      "sha256": "6d9d70d6e6006bf8d05ed6f6de9fa4d574eb189ed7348c7c170768477f94905f"
+    },
+    "moving_phase_producer": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_moving_phase_v1/produce.py",
+      "sha256": "accfe27b69a88821a5c529f805e758da29a31504ae8b4d9e12a96111b47c068f"
+    },
+    "spin_one_levelt": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_spin_one_levelt_v1/certificate.json",
+      "sha256": "b364d4df837e6c9cdc63a5878a01092b90f397eac6d60c28c97fd9e170b5959c"
+    },
+    "spin_one_levelt_producer": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_spin_one_levelt_v1/produce.py",
+      "sha256": "580620b20aa7a526c0a5359d56227ffcee0c0384aa5853b96a40fead2dcbee4e"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_HORIZON_CANONICAL_KH",
+  "schema": "phase3-axial-partial-jet-horizon-checkpoint-frame-v1",
+  "status": "CANONICAL_KH_ZERO_CHECKPOINT_PIVOT_SHORTFALL"
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "lifecycle",
+    "dependency_tags",
+    "status",
+    "imports",
+    "typed_conventions",
+    "normalized_columns",
+    "exact_normalization_audit",
+    "formal_endpoint_jet",
+    "remainder_contract",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-partial-jet-outgoing-frame-completion-v1"
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "formal_E_R_S_columns_constructed",
+        "E_all_order_remainder_certified",
+        "R_all_order_remainder_certified",
+        "S_six_state_all_order_existence_certified",
+        "S_correlated_dual_remainder_certified",
+        "formal_K_plus_zero_in_canonical_gauge",
+        "validated_analytic_K_plus_certified",
+        "all_three_correlated_outgoing_columns_certified",
+        "T_plus_certified",
+        "scattering_or_flux_certified"
+      ],
+      "properties": {
+        "formal_E_R_S_columns_constructed": {"const": true},
+        "E_all_order_remainder_certified": {"const": true},
+        "R_all_order_remainder_certified": {"const": true},
+        "S_six_state_all_order_existence_certified": {"const": true},
+        "S_correlated_dual_remainder_certified": {"const": false},
+        "formal_K_plus_zero_in_canonical_gauge": {"const": true},
+        "validated_analytic_K_plus_certified": {"const": false},
+        "all_three_correlated_outgoing_columns_certified": {"const": false},
+        "T_plus_certified": {"const": false},
+        "scattering_or_flux_certified": {"const": false}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}
