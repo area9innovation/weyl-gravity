@@ -80,3 +80,6 @@ Tier 1: producer, independently written verifier, and mutation tests.
 Tier 2 was not required because imported operators and certificates were
 content-addressed and unchanged.  Tier 3 was not required because no release
 or cross-programme freeze was promoted.
+
+EVIDENCE: black_hole_programme/phase4/axial_local_commutant_spectral_c_v1/certificate.json
+CLOSE-OUT: DONE — objective met; exact certificate and independent verifier are recorded in the package above.
