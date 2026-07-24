@@ -1,0 +1,57 @@
+{
+  "claim_flags": {
+    "connection_level_intrinsic_ep2": true,
+    "full_connection_smith_valuations_0_0_2": true,
+    "green_resolvent_second_order_pole_established": false,
+    "intrinsic_repeated_spin_two_selector_nonzero": true,
+    "physical_fredholm_realization_constructed": false,
+    "spin_one_jost_factor_unit_on_local_disk": true,
+    "unique_simple_spin_two_qnm_localized": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "an analytic Fredholm realization of the physical QNM problem",
+    "a second-order Green-resolvent pole",
+    "a generalized time-domain ringdown term",
+    "time-domain boundedness, decay, completeness, or stability",
+    "an all-overtone exceptional-point theorem"
+  ],
+  "inputs": {
+    "analytic_gate_sha256": "75e18d9a91d6827ad2fae645a05b0fe1cc9a50459f9b03dca280c884f917aca3",
+    "ecs_certificate_sha256": "25d7e306e5b4b314aa34f1a10f6a8a0461e8d6c4dd1c2e7f91508b2e6e0d6e92",
+    "local_smith_certificate_sha256": "bbc34d5865a95c9fa8b74157d0ef6abcac8271cca067983e7b23e5850f16da41",
+    "selector_certificate_sha256": "aefc5b04fb7e33b72b7553dba69cedc6dff82d2838d4d11cb1a5a45c80f9c2a4",
+    "selector_run_sha256": "11990f484293850c806eba78ecec0a59d3ac43472ac4fd48d4929814eb840389",
+    "transport_source_sha256": "8d4fca11e6b5c1073538505f649c6efd95e16e44a934d53aeeda3cb07f599240"
+  },
+  "lifecycle": "COEFFICIENT_COMPUTED",
+  "result": {
+    "algebraic_multiplicity": 2,
+    "full_connection_smith_valuations": [
+      0,
+      0,
+      2
+    ],
+    "geometric_multiplicity": 1,
+    "qnm_enclosure": {
+      "center_im": "8896231568893569828046093/100000000000000000000000000",
+      "center_re": "-93417921104510458948373/250000000000000000000000",
+      "radius": "1/10000000",
+      "simple": true,
+      "zero_count_with_multiplicity": 1
+    },
+    "root_chain_length": 2,
+    "spin_one_incoming_jost_factor_local_unit": true,
+    "spin_one_mismatch_modulus_lower": "1/2500",
+    "spin_one_projective_mismatch": "[+/- 9.22e-5] + [-0.0005 +/- 2.06e-5]j"
+  },
+  "run": {
+    "path": "black_hole_programme/phase3/axial_qnm_spin_one_local_unit_v1/spin-one-local-unit-run.json",
+    "sha256": "bef34427fc400e8f7fe57e76ba52c3fd7f4892bb05c0e452a28b0c53c53c75f9"
+  },
+  "schema": "phase3-axial-qnm-spin-one-local-unit-v1",
+  "status": "CERTIFIED_FULL_THREE_FACTOR_CONNECTION_EP2"
+}

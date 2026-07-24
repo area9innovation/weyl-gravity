@@ -1,0 +1,46 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-qnm-spin-one-local-unit",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-qnm-spin-one-local-unit",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-qnm-spin-one-local-unit.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-qnm-spin-one-unit",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Certify that the axial spin-one incoming Jost factor is a holomorphic unit on the exact local disk containing the newly certified simple spin-two QNM, and thereby promote the reduced repeated-spin-two Smith selector to the full three-factor connection classification.",
+    "stop_condition": "Import the completed projective-Evans contour and local-selector certificates by exact content hashes. Construct an independently verifiable spin-one horizon-regular versus infinity-outgoing projective mismatch on the same exact radius-1e-7 disk. Either certify that this mismatch excludes zero throughout the disk, or emit the first typed enclosure obstruction without assuming spectral noncoincidence. If the unit gate passes, combine it with the certified nonzero intrinsic spin-two tangent and the exact local Smith theorem to prove full connection Smith valuations (0,0,2), algebraic multiplicity two and geometric multiplicity one at the unique enclosed spin-two QNM.",
+    "current_gate": "Spin-one Jost nonvanishing on the exact local QNM disk; full 3x3 Smith promotion remains false until this gate passes",
+    "forbid": "no appeal to numerically separated tabulated QNM spectra without a disk certificate; no reduced (0,2) result called a full (0,0,2) theorem before the spin-one factor is proved a unit; no connection-level exceptional point promoted to a Green-resolvent double pole without the analytic Fredholm realization; no time-domain, ringdown, particle, quantum or all-overtone claim",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-qnm-projective-evans-contour-completion",
+      "sf:program/work/black-hole-complex-frequency-analytic-continuation-gate"
+    ],
+    "activates": [
+      "a full three-factor axial connection-level exceptional-point theorem at the certified QNM",
+      "the conditional repeated-block Fredholm principal-part theorem after its graph-norm realization is separately established"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_qnm_spin_one_local_unit_v1/",
+      "reports/phase3-axial-qnm-spin-one-local-unit-2026-07-24.md",
+      "residual_atlas/phase3-axial-qnm-spin-one-local-unit-fragment-v1.json",
+      "planning/work-items/phase3-black-hole-axial-qnm-spin-one-local-unit.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Reuse the exact local disk and the validated moving-phase/projective transport architecture, but solve the spin-one Regge-Wheeler factor independently. The disk is only radius 1e-7, so a center enclosure plus a rigorous spectral Cauchy/Taylor remainder may be cheaper than another boundary contour.",
+    "input_commit": "80eaab9862f98b5d7a9ec6fbde873b7296eb0250",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "The completed predecessor certifies one simple spin-two QNM and a nonzero repeated-spin-two extension selector on an exact radius-1e-7 disk.",
+      "The unresolved local gate is only A_in,1 != 0 on that disk.",
+      "The physical Fredholm/Green-resolvent promotion remains conditional."
+    ]
+  },
+  "edges": []
+}

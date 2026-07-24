@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "inputs",
+    "result",
+    "claim_flags",
+    "run",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-qnm-spin-one-local-unit-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle": {
+      "const": "COEFFICIENT_COMPUTED"
+    },
+    "status": {
+      "enum": [
+        "CERTIFIED_FULL_THREE_FACTOR_CONNECTION_EP2",
+        "SPIN_ONE_LOCAL_UNIT_GATE_REFUSED"
+      ]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "spin_one_jost_factor_unit_on_local_disk",
+        "full_connection_smith_valuations_0_0_2",
+        "physical_fredholm_realization_constructed",
+        "green_resolvent_second_order_pole_established"
+      ]
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string"}
+    }
+  },
+  "additionalProperties": true
+}
