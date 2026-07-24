@@ -39,7 +39,7 @@ OUTGOING_CELL_RESULT = (
     "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF"
 )
 EVANS_PREFIX_RESULT = (
-    "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_135_512_PHASE_LIFT"
+    "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_143_512_PHASE_LIFT"
 )
 EXPECTED_AUTHORITY_HASHES = {
     "certificate_sha256": "8a9914400f0929f37a63570b95383ebc4131cbf2928b5f923db0d002d0783d33",
@@ -111,7 +111,7 @@ def main() -> None:
         fail("wrong paper identity")
     if (
         claim_map.get("result_id")
-        != "PAPER_14_PHASE3_EVANS_PREFIX_135_512_PHASE_LIFT_V11"
+        != "PAPER_14_PHASE3_EVANS_PREFIX_143_512_PHASE_LIFT_V13"
     ):
         fail("wrong Phase-3 paper result identity")
     if claim_map.get("lifecycle_state") != "DRAFT_ALLOWED":
@@ -269,6 +269,8 @@ def main() -> None:
         ("v8_certificate", "v8_certificate_sha256"),
         ("v9_certificate", "v9_certificate_sha256"),
         ("v10_certificate", "v10_certificate_sha256"),
+        ("v11_certificate", "v11_certificate_sha256"),
+        ("v12_certificate", "v12_certificate_sha256"),
         ("certificate", "certificate_sha256"),
         ("receipt", "receipt_sha256"),
         ("report", "report_sha256"),
@@ -280,7 +282,7 @@ def main() -> None:
         if digest(path) != evans[hash_key]:
             fail(f"Evans-prefix authority content drift: {key}")
     evans_result = json.loads((ROOT / evans["certificate"]).read_text())
-    if evans_result["result"]["coverage_stop"] != "135/512":
+    if evans_result["result"]["coverage_stop"] != "143/512":
         fail("Evans-prefix coverage drift")
     evans_flags = evans_result["claim_flags"]
     if evans_flags.get("materialized_prefix_nonzero_certified") is not True:
@@ -492,7 +494,7 @@ def main() -> None:
         "axial_outgoing_generic_population_off_locally_finite_set",
         "axial_outgoing_cell_half_L2_multiplier_isomorphism",
         "axial_outgoing_compact_positive_band_dense_range",
-        "axial_qnm_projective_boundary_prefix_135_512",
+        "axial_qnm_projective_boundary_prefix_143_512",
         "axial_qnm_projective_prefix_continuous_phase_lift",
     }
     required_false = {
@@ -598,7 +600,7 @@ def main() -> None:
     coverage = json.loads(coverage_path.read_text())
     if (
         coverage.get("schema")
-        != "paper14-phase3-evans-prefix-135-512-phase-lift-overlay-v11"
+        != "paper14-phase3-evans-prefix-143-512-phase-lift-overlay-v13"
     ):
         fail("wrong coverage overlay schema")
     if coverage.get("append_only_parent_sha256") != digest(PARENT_COVERAGE):
@@ -637,7 +639,7 @@ def main() -> None:
         ),
         (
             "sf:coverage/edge/"
-            "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_135_512_PHASE_LIFT/"
+            "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_143_512_PHASE_LIFT/"
             "paper-14/v1"
         ),
     }
@@ -686,7 +688,7 @@ def main() -> None:
         fail("outgoing-population cell edge is mistyped")
     evans_prefix_edge = new_edges[
         "sf:coverage/edge/"
-        "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_135_512_PHASE_LIFT/"
+        "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_143_512_PHASE_LIFT/"
         "paper-14/v1"
     ]["body"]
     if (

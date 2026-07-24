@@ -56,8 +56,10 @@ EVANS_V8_CERT = ROOT / "black_hole_programme/phase3/axial_qnm_child_grid_boundar
 EVANS_V9_CERT = ROOT / "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v9/certificate.json"
 EVANS_V10_CERT = ROOT / "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_254_261_v1/certificate.json"
 EVANS_V11_CERT = ROOT / "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_262_269_v1/certificate.json"
-EVANS_V11_RECEIPT = ROOT / "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_262_269_v1/receipt.json"
-EVANS_V11_REPORT = ROOT / "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_262_269_v1/report.md"
+EVANS_V12_CERT = ROOT / "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_270_277_v1/certificate.json"
+EVANS_V13_CERT = ROOT / "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_278_285_v1/certificate.json"
+EVANS_V13_RECEIPT = ROOT / "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_278_285_v1/receipt.json"
+EVANS_V13_REPORT = ROOT / "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_278_285_v1/report.md"
 EVANS_PHASE_CERT = ROOT / "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/phase_ledger_v1/certificate.json"
 EVANS_PHASE_RECEIPT = ROOT / "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/phase_ledger_v1/receipt.json"
 EVANS_PHASE_LEDGER = ROOT / "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/phase_ledger_v1/phase-ledger.json"
@@ -141,7 +143,7 @@ def claim_map() -> dict:
     return {
         "schema": "paper-draft-source-map-v1",
         "paper_id": "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION",
-        "result_id": "PAPER_14_PHASE3_EVANS_PREFIX_135_512_PHASE_LIFT_V11",
+        "result_id": "PAPER_14_PHASE3_EVANS_PREFIX_143_512_PHASE_LIFT_V13",
         "lifecycle_state": "DRAFT_ALLOWED",
         "source_baseline": SOURCE_BASELINE,
         "manuscript": str(PAPER.relative_to(ROOT)),
@@ -221,9 +223,9 @@ def claim_map() -> dict:
             ),
         },
         "phase3_evans_boundary_prefix_authority": {
-            "result_id": "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_135_512_PHASE_LIFT",
+            "result_id": "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_143_512_PHASE_LIFT",
             "scope": (
-                "projective scalar Evans contour prefix through 135/512 "
+                "projective scalar Evans contour prefix through 143/512 "
                 "with a continuous lifted phase only; no closed contour "
                 "or root count"
             ),
@@ -237,12 +239,16 @@ def claim_map() -> dict:
             "v9_certificate_sha256": digest(EVANS_V9_CERT),
             "v10_certificate": str(EVANS_V10_CERT.relative_to(ROOT)),
             "v10_certificate_sha256": digest(EVANS_V10_CERT),
-            "certificate": str(EVANS_V11_CERT.relative_to(ROOT)),
-            "certificate_sha256": digest(EVANS_V11_CERT),
-            "receipt": str(EVANS_V11_RECEIPT.relative_to(ROOT)),
-            "receipt_sha256": digest(EVANS_V11_RECEIPT),
-            "report": str(EVANS_V11_REPORT.relative_to(ROOT)),
-            "report_sha256": digest(EVANS_V11_REPORT),
+            "v11_certificate": str(EVANS_V11_CERT.relative_to(ROOT)),
+            "v11_certificate_sha256": digest(EVANS_V11_CERT),
+            "v12_certificate": str(EVANS_V12_CERT.relative_to(ROOT)),
+            "v12_certificate_sha256": digest(EVANS_V12_CERT),
+            "certificate": str(EVANS_V13_CERT.relative_to(ROOT)),
+            "certificate_sha256": digest(EVANS_V13_CERT),
+            "receipt": str(EVANS_V13_RECEIPT.relative_to(ROOT)),
+            "receipt_sha256": digest(EVANS_V13_RECEIPT),
+            "report": str(EVANS_V13_REPORT.relative_to(ROOT)),
+            "report_sha256": digest(EVANS_V13_REPORT),
             "phase_certificate": str(EVANS_PHASE_CERT.relative_to(ROOT)),
             "phase_certificate_sha256": digest(EVANS_PHASE_CERT),
             "phase_receipt": str(EVANS_PHASE_RECEIPT.relative_to(ROOT)),
@@ -329,7 +335,7 @@ def claim_map() -> dict:
             "axial_outgoing_compact_positive_band_dense_range": True,
             "axial_positive_real_reflection_zero_set_empty": False,
             "axial_outgoing_full_positive_axis_uniform_inverse_bound": False,
-            "axial_qnm_projective_boundary_prefix_135_512": True,
+            "axial_qnm_projective_boundary_prefix_143_512": True,
             "axial_qnm_projective_prefix_continuous_phase_lift": True,
             "axial_qnm_complete_closed_contour_nonzero": False,
             "axial_qnm_argument_principle_root_count": False,
@@ -428,7 +434,7 @@ def coverage(claim_payload: dict) -> dict:
     )
     evans_prefix_result_id = (
         "sf:coverage/result/"
-        "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_135_512_PHASE_LIFT"
+        "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_143_512_PHASE_LIFT"
     )
     paper_id = "paper:14-pure-weyl-black-hole-radiation"
     claim_id = f"{paper_id}/claim/phase2_generic_l_parity_disposition_v1"
@@ -454,11 +460,11 @@ def coverage(claim_payload: dict) -> dict:
         "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF/paper-14/v1"
     )
     evans_prefix_claim_id = (
-        f"{paper_id}/claim/phase3_axial_qnm_evans_boundary_prefix_135_512_phase_lift"
+        f"{paper_id}/claim/phase3_axial_qnm_evans_boundary_prefix_143_512_phase_lift"
     )
     evans_prefix_edge_id = (
         "sf:coverage/edge/"
-        "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_135_512_PHASE_LIFT/"
+        "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_143_512_PHASE_LIFT/"
         "paper-14/v1"
     )
     nodes = [
@@ -817,7 +823,7 @@ def coverage(claim_payload: dict) -> dict:
             "kind": "materiality",
             "id": (
                 "sf:coverage/materiality/"
-                "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_135_512_PHASE_LIFT/v1"
+                "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_143_512_PHASE_LIFT/v1"
             ),
             "body": {
                 "result_id": evans_prefix_result_id,
@@ -827,7 +833,7 @@ def coverage(claim_payload: dict) -> dict:
                 "version": 1,
                 "rationale": (
                     "Extends the rigorously zero-free projective Evans "
-                    "boundary prefix to 135/512 and certifies its continuous "
+                    "boundary prefix to 143/512 and certifies its continuous "
                     "lifted phase while retaining fail-closed root, Smith "
                     "and EP2 gates."
                 ),
@@ -838,27 +844,27 @@ def coverage(claim_payload: dict) -> dict:
             "kind": "result",
             "id": evans_prefix_result_id,
             "title": (
-                "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_135_512_PHASE_LIFT"
+                "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_143_512_PHASE_LIFT"
             ),
             "body": {
                 "result_id": (
-                    "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_135_512_PHASE_LIFT"
+                    "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_143_512_PHASE_LIFT"
                 ),
                 "lifecycle": "CLASSIFIED",
                 "boundary": (
                     "Projective scalar Evans boundary is certified nonzero "
-                    "only on the exact contiguous prefix [0,135/512]. Its "
+                    "only on the exact contiguous prefix [0,143/512]. Its "
                     "continuous lifted phase and partial argument increment "
-                    "are certified, but the next gap starts at 270/1024. "
+                    "are certified, but the next gap starts at 286/1024. "
                     "No closed-contour, winding, root-count, QNM, Smith or "
                     "EP2 claim."
                 ),
                 "native": {
                     "source_kind": "phase3-evans-prefix-and-phase-certificate",
-                    "certificate": str(EVANS_V11_CERT.relative_to(ROOT)),
-                    "certificate_sha256": digest(EVANS_V11_CERT),
-                    "receipt": str(EVANS_V11_RECEIPT.relative_to(ROOT)),
-                    "receipt_sha256": digest(EVANS_V11_RECEIPT),
+                    "certificate": str(EVANS_V13_CERT.relative_to(ROOT)),
+                    "certificate_sha256": digest(EVANS_V13_CERT),
+                    "receipt": str(EVANS_V13_RECEIPT.relative_to(ROOT)),
+                    "receipt_sha256": digest(EVANS_V13_RECEIPT),
                     "phase_certificate": str(
                         EVANS_PHASE_CERT.relative_to(ROOT)
                     ),
@@ -876,7 +882,7 @@ def coverage(claim_payload: dict) -> dict:
                 "asserts_lifecycle": "CLASSIFIED",
                 "boundary": (
                     "Zero-free Evans boundary prefix and continuous phase "
-                    "lift through 135/512 only; the remaining contour and "
+                    "lift through 143/512 only; the remaining contour and "
                     "every winding/root/Smith gate remain open."
                 ),
                 "cites": [evans_prefix_result_id],
@@ -915,7 +921,7 @@ def coverage(claim_payload: dict) -> dict:
         )
     return {
         "ir": "science-forge-ir-v0",
-        "schema": "paper14-phase3-evans-prefix-135-512-phase-lift-overlay-v11",
+        "schema": "paper14-phase3-evans-prefix-143-512-phase-lift-overlay-v13",
         "append_only_parent": str(PARENT_COVERAGE.relative_to(ROOT)),
         "append_only_parent_sha256": digest(PARENT_COVERAGE),
         "claim_map": str(OUTPUT.relative_to(ROOT)),

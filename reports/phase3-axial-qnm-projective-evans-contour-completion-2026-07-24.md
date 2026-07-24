@@ -67,3 +67,30 @@ The partial increment is enclosed by
 
 The contour remains open. The phase enclosure is not a winding number, and
 argument-principle, root-count, QNM, Smith and EP2 claims remain false.
+
+## Checkpoint: exact prefix 143/512
+
+Two more bounded producers evaluated panels `270` through `285` at
+denominator `1024`. All sixteen panels pass the unchanged typed
+zero-exclusion and two-sided interface gates. The exact contiguous prefix is
+now
+
+\[
+[0,286/1024]=[0,143/512],
+\]
+
+with the next honest gap at `286/1024`. The phase ledger now contains `188`
+accepted affine segments. Their separating half-planes and overlapping
+argument sectors remain certified, and the partial lifted increment is
+enclosed by
+
+\[
+-1.3477818932
+<
+\Delta\arg\Delta\big|_{[0,143/512]}
+<
+-0.3410830218.
+\]
+
+The contour is still open. No winding, root count, QNM, Smith selector or EP2
+is certified.
