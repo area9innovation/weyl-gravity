@@ -79,6 +79,9 @@ def main() -> None:
         "Spectral fundamental symmetry on compact bands",
         "Exact positive-metric scattering test",
         "Critical Einstein--Weyl mass jet",
+        "No local positive metric operator",
+        "Combined-future existence and factorization problem",
+        "Complex reducibility confinement",
         "[\\mathcal I_{\\rm mass}]=[\\mathcal I_{\\rm Bach}]",
         "Positive-graph and cotangent obstructions",
         "regularized parent overlap",
@@ -116,6 +119,8 @@ def main() -> None:
         "the intrinsic radial parameter \\(\\tau\\) equals the physical squared mass",
         "the spectral fundamental symmetry is canonical and causal",
         "the full six-state commutant is the dual-number algebra",
+        "the combined-future fundamental symmetry automatically factorizes",
+        "the complete complex reducibility locus is the quarter-integer lattice",
     ]
     for phrase in forbidden_phrases:
         if phrase in text:
@@ -369,6 +374,29 @@ def main() -> None:
         "brst_or_quantum_positive_state_space",
     ]:
         require_flag(spectral_c, key, False, "local commutant/spectral C")
+    dichotomy = json.loads(
+        (
+            ROOT
+            / authorities["axial_local_nonlocal_positivity"]["path"]
+        ).read_text()
+    )
+    for key in [
+        "no_local_positive_metric_operator_even_without_involution",
+        "combined_future_compatible_c_exists",
+        "threshold_ir_variables_exact",
+        "unique_nilpotent_residue_direction",
+        "complex_reducibility_quarter_lattice_confinement",
+    ]:
+        require_flag(dichotomy, key, True, "local/nonlocal positivity")
+    for key in [
+        "channel_factorized_c_automatic",
+        "matrix_sign_canonical_under_general_frames",
+        "whole_axis_positive_scattering_bounded",
+        "mass_bach_local_equality_implies_global_jost_derivative",
+        "mass_bach_local_equality_implies_qnm_slope",
+        "complete_complex_reducibility_classification",
+    ]:
+        require_flag(dichotomy, key, False, "local/nonlocal positivity")
     static = json.loads(
         (ROOT / authorities["static_normalized_control"]["path"]).read_text()
     )
@@ -384,7 +412,7 @@ def main() -> None:
     coverage = json.loads(coverage_path.read_text())
     if coverage.get("claim_map_sha256") != digest(claim_path):
         fail("coverage-to-claim-map hash drift")
-    if len(coverage.get("nodes", [])) != 16:
+    if len(coverage.get("nodes", [])) != 17:
         fail("coverage claim count drift")
     print("PASS: Paper 16 claim map and semantic boundaries")
 

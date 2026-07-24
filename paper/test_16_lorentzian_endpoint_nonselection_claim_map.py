@@ -139,6 +139,16 @@ class Paper16ClaimMapTests(unittest.TestCase):
             "the full six-state commutant is the dual-number algebra"
         )
 
+    def test_factorized_future_c_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the combined-future fundamental symmetry automatically factorizes"
+        )
+
+    def test_complete_quarter_lattice_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the complete complex reducibility locus is the quarter-integer lattice"
+        )
+
     def test_claim_flag_promotion_rejected(self) -> None:
         claims = json.loads(CLAIM_MAP.read_text())
         claims["fail_closed_scope"]["green_resolvent_second_order_pole"] = True

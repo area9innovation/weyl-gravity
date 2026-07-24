@@ -53,6 +53,13 @@ physical claim:
     jet and singular branch-sign limit, but equality with the intrinsic
     radial \(\tau\)-jet remains fail-closed pending the projective-cocycle
     comparison.
+15. no rational local dynamically compatible metric operator can make the
+    spin-two form positive, even without an involution condition;
+16. a compatible fundamental symmetry always exists on the combined future
+    space, while factorization over null infinity and the horizon is the
+    sharp remaining scattering question;
+17. complex rational reducibility is confined to the quarter-integer
+    imaginary lattice, without claiming a complete classification.
 
 Two new experiment rails are explicit: compare the regularized parent QNM
 overlap with the radial extension overlap including projection, commutator,
@@ -84,7 +91,7 @@ remains an active draft rather than a submission freeze.
 ## Verification
 
 The main paper compiles twice and the computational supplement compiles.  The
-generated claim map pins twenty-two source certificates, including the exact
+generated claim map pins twenty-three source certificates, including the exact
 all-\(\ell\) threshold, universal Hessian/intertwiner,
 Schouten-Einstein/Maxwell carrier, Euler transgression, second-order parent
 flux, parent-resolvent/Krein obstruction, RW/Maxwell simplicity and
@@ -92,13 +99,13 @@ endomorphism, critical mass-jet, local-commutant/spectral-\(C\), and
 static-control authorities.
 An independent verifier checks the
 universal, parent, incoming, outgoing, no-growth, threshold, and EP2 flags.
-Eighteen tests reject Green-resolvent, all-frequency outgoing, generic
+Twenty tests reject Green-resolvent, all-frequency outgoing, generic
 radial-to-time-Jordan, complete-polar-parent-Gram, time-domain,
 nonlocal-intertwiner, Euler-boundary, complex-frequency RW-simplicity,
 all-\(\ell\) Bach-nonsplitting, parent-overlap-shortcut, Schwarzschild
 retarded-propagator, premature physical mass crosswalk, canonical/causal
-spectral-\(C\), full-six-state-commutant, and claim-map promotions.  The two
-new exact packages have separate verifiers and eleven combined unit tests.
+spectral-\(C\), full-six-state-commutant, and claim-map promotions.  The three
+new exact packages have separate verifiers and sixteen combined unit tests.
 
 Tier 3 is not run because the explicit \(T_+\) experiment and journal-length
 freeze are still open.

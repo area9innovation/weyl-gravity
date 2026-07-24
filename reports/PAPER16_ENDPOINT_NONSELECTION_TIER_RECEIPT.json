@@ -1,24 +1,24 @@
 {
   "schema": "paper16-endpoint-nonselection-tier-receipt-v1",
   "status": "ACTIVE_CHECKPOINT",
-  "source_commit": "2331c76ecb285dd255cba057b33371d3c9d12d89",
+  "source_commit": "facd4747d0378f69fb17c0f109e934fd7ab9c5ad",
   "artifacts": {
     "paper_tex": {
       "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl.tex",
-      "sha256": "6a42dfc3dd65f0c0d596b12e93af98212f2712b3bea71f41c7da233d65f12467"
+      "sha256": "e5d4969c962f68f8b0264e1312cd9b6d7aa02521cf2ee91b91756e76e2e680de"
     },
     "paper_pdf": {
       "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl.pdf",
-      "sha256": "8c974293d751383aaec2587280ef4816d35e8e173dfa07cd3546ab6445b55b62",
+      "sha256": "ca114fd91a49817cf4b0c37fbd5b33db397e1a73e360e1bc60ded6c31462426b",
       "pages": 32
     },
     "claim_map": {
       "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl-claim-map.json",
-      "sha256": "aa5e89463dffee465573e9758e826a7b4de2b7728a2c63b7992b6d8954dcec05"
+      "sha256": "05f112edb13ebf1fb3bd188098663f99e65c13cb6d8d136a4765de2fede24290"
     },
     "coverage": {
       "path": "planning/paper-coverage/phase4-paper16-endpoint-nonselection-overlay-2026-07-24.json",
-      "sha256": "9c43d16f1680a49b177cbc81bdcaea4babc93f131173362022007e94c2ffed63"
+      "sha256": "8d2ddb76ee319970f375bd9303f36818cb3a923d8cbc84c3b494039262f52b36"
     },
     "computational_supplement": {
       "path": "paper/16-endpoint-nonselection-computational-supplement.tex",
@@ -34,7 +34,7 @@
     "tier1": [
       "claim-map generator --check passes",
       "independent semantic verifier passes",
-      "eighteen claim-boundary and mutation tests pass",
+      "twenty claim-boundary and mutation tests pass",
       "exact all-ell threshold verifier and six tests pass",
       "universal Hessian/intertwiner verifier and five tests pass",
       "Schouten-Einstein/Maxwell carrier verifier and tests pass",
@@ -43,7 +43,8 @@
       "parent-resolvent/Krein-obstruction verifier and eight tests pass",
       "RW/Maxwell simplicity/endomorphism verifier and nine tests pass",
       "critical Einstein-Weyl mass-jet producer, verifier, and five tests pass",
-      "local-commutant/spectral-C producer, verifier, and six tests pass"
+      "local-commutant/spectral-C producer, verifier, and six tests pass",
+      "local/nonlocal-positivity producer, verifier, and five tests pass"
     ],
     "tier2": "not triggered: no pre-existing operator or certificate was modified",
     "tier3": "not run: manuscript remains an active checkpoint pending explicit Tplus"

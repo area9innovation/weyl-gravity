@@ -31,6 +31,7 @@ AUTHORITIES = {
     "rw_maxwell_simplicity_endomorphisms": "black_hole_programme/phase4/rw_maxwell_simplicity_endomorphisms_v1/certificate.json",
     "einstein_weyl_critical_mass_jet": "black_hole_programme/phase4/einstein_weyl_critical_mass_jet_v1/certificate.json",
     "axial_local_commutant_spectral_c": "black_hole_programme/phase4/axial_local_commutant_spectral_c_v1/certificate.json",
+    "axial_local_nonlocal_positivity": "black_hole_programme/phase4/axial_local_nonlocal_positivity_v1/certificate.json",
     "static_normalized_control": "black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json",
     "qnm_winding": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/full_contour_winding_v1/certificate.json",
     "qnm_selector": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/local_selector_v1/certificate.json",
@@ -117,6 +118,9 @@ def claim_map() -> dict:
             "compact_band_spectral_C_norm_equivalence": True,
             "threshold_weighted_C_completion_exact": True,
             "scattering_positive_identity_equivalent_to_C_intertwining": True,
+            "no_local_positive_metric_operator_without_involution": True,
+            "combined_future_compatible_C_exists": True,
+            "complex_reducibility_quarter_lattice_confinement": True,
             "no_uniformly_positive_einstein_containing_subspace": True,
             "cotangent_type_endpoint_duality_exact": True,
             "incoming_gram_inertia_1_2_0_all_positive_real": True,
@@ -144,6 +148,8 @@ def claim_map() -> dict:
             "full_six_state_commutant_dual_numbers": False,
             "physical_mass_jet_equals_intrinsic_radial_tau": False,
             "physical_massive_qnm_slope": False,
+            "channel_factorized_future_C": False,
+            "complete_complex_reducibility_classification": False,
             "complete_complex_frequency_reducibility_classification": False,
             "explicit_Tplus_band": False,
             "all_positive_real_Tplus_invertibility": False,
@@ -223,6 +229,11 @@ def coverage(claim_sha: str) -> dict:
         (
             "critical-mass-jet-and-spectral-c",
             "The covariant parent has an exact critical mass jet, while the physical radial crosswalk remains open; independently, the incoming Krein fibers admit a compact-band spectral fundamental symmetry with omega, omega, omega-cubed threshold weights.",
+            "REDUCED-MODE",
+        ),
+        (
+            "local-nonlocal-positivity-dichotomy",
+            "No local rational dynamically compatible metric operator makes the nonsplit spin-two form positive, while a compatible fundamental symmetry always exists on the combined future space; channel factorization remains open.",
             "REDUCED-MODE",
         ),
         (

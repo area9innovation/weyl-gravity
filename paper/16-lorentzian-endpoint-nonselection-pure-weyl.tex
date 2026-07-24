@@ -794,6 +794,17 @@ projective comparison
 \]
 Accordingly no physical massive-QNM slope is inferred here from the
 intrinsic shear \(b\).
+
+Even equality of these local cocycles would prove only equivalence of the
+repeated spin-two blocks up to rational triangular gauge and parameter
+rescaling.  The global identity \(b=-\partial_m a|_0\) additionally requires
+the complete mixed Maxwell deformation, compatible moving endpoint phases,
+and matched Jost-germ normalizations.  Identifying
+\(\beta_n/\alpha_n\) with a massive-QNM slope further requires the analytic
+Fredholm realization.  If the local classes do agree nontrivially, the
+critical residue of the finite-mass branch-sign operator must be
+proportional to the unique nilpotent \(N\) of
+Theorem~\ref{thm:local-commutant}.
 \end{remark}
 
 \subsection{The spin-one quotient is not a rational spin-two transform}
@@ -954,6 +965,22 @@ again \(q_0=0\).  The separately certified finite ans\"atze at the three
 imaginary frame events have zero kernel for both possible Jost signs.
 \end{proof}
 
+\begin{remark}[Complex reducibility confinement]
+For complex \(\omega\), a rational hyperexponential solution with opposite
+horizon and infinity Jost signs requires a rational prefactor carrying the
+horizon exponent difference \(4i\omega\).  Hence every remaining
+opposite-sign reducibility candidate obeys
+\[
+4i\omega\in\mathbb Z.
+\]
+The same-sign terminal ansatz gives only the static and algebraically special
+controls.  Thus rational reducibility is confined to the quarter-integer
+imaginary lattice.  This is a confinement theorem, not a complete
+classification: arbitrarily high integral horizon powers remain to be
+audited.  For \(\ell=2\), \(i/4,i/2,i\) are already excluded and
+\(\omega=\pm2i\) are the algebraically special controls.
+\end{remark}
+
 \begin{proposition}[No branch-resolving rational involution]
 \label{prop:no-local-c}
 Let
@@ -1077,6 +1104,33 @@ giving \(bN\), with \(N^2=0\).  The remaining assertions follow from
 (aI+bN)^k=a^kI+ka^{k-1}bN
 \]
 in characteristic zero.
+\end{proof}
+
+\begin{corollary}[No local positive metric operator]
+\label{cor:no-local-eta}
+No rational local dynamically compatible operator \(\eta\), even without
+the condition \(\eta^2=I\), makes the repeated-spin-two flux positive
+definite.
+\end{corollary}
+
+\begin{proof}
+In the canonical null basis,
+\[
+G_2=\begin{pmatrix}0&g\\g&0\end{pmatrix},
+\qquad
+N=\begin{pmatrix}0&1\\0&0\end{pmatrix},
+\qquad g>0.
+\]
+Theorem~\ref{thm:local-commutant} gives
+\(\eta=aI+bN\).  Krein self-adjointness forces \(a,b\in\mathbb R\), and
+\[
+G_2\eta
+=
+\begin{pmatrix}0&ga\\ga&gb\end{pmatrix},
+\qquad
+\det(G_2\eta)=-g^2a^2.
+\]
+For \(a\ne0\) the form is indefinite; for \(a=0\) it is degenerate.
 \end{proof}
 
 The endpoint Krein diagonalization is algebraic, but a bulk dynamical
@@ -1340,7 +1394,16 @@ uniform band bounds.
 
 This proves existence of a nonlocal spectral \(C\), rather than a local
 branch observable.  It does not make \(C_{\rm sol}\) canonical, covariant,
-causal, holomorphic in complex frequency, or BRST compatible.
+causal, holomorphic in complex frequency, or BRST compatible.  In
+particular, matrix sign uses the auxiliary positive coefficient inner
+product: for a nonunitary frame change \(G\mapsto M^\dagger GM\), generally
+\[
+\operatorname{sgn}(M^\dagger GM)
+\ne M^{-1}\operatorname{sgn}(G)M.
+\]
+For example, \(G=\operatorname{diag}(1,-1)\) and
+\(M=\left(\begin{smallmatrix}1&1\\0&1\end{smallmatrix}\right)\) make the
+right-hand side non-Hermitian, whereas the left-hand side is Hermitian.
 
 The positive Hilbert majorant associated with this Krein form is
 \begin{equation}
@@ -1399,6 +1462,20 @@ Equation~\eqref{eq:majorant} uses the separately unit-normalized quotient
 coefficient and is related by a frequency-dependent factor-basis change.
 Neither presentation is uniformly equivalent to unweighted \(L^2\) at
 \(\omega=0\).
+Equivalently, the infrared-regular coefficients are
+\[
+\widehat u_E=\omega^{1/2}u_E,\qquad
+\widehat u_X=\omega^{1/2}u_X,\qquad
+\widehat u_1=\omega^{3/2}u_1.
+\]
+Transfer matrices should be normalized as
+\[
+\widehat T=W_{\rm out}^{1/2}TW_{\rm in}^{-1/2},
+\qquad
+W^{1/2}=\operatorname{diag}
+(\omega^{1/2},\omega^{1/2},\omega^{3/2});
+\]
+this becomes an ordinary conjugation only when the endpoint weights agree.
 
 \section{Every incoming channel is populated}
 
@@ -1563,6 +1640,27 @@ independently selected endpoint fundamental symmetries are dynamically
 compatible.  A transported symmetry always exists on
 \(\operatorname{ran}\mathscr S\), but it need not split as independent
 operators on \(\mathscr I^+\) and \(\mathcal H^+\).
+
+\begin{proposition}[Combined-future existence and factorization problem]
+\label{prop:combined-future-c}
+For every incoming fundamental symmetry \(C_-\), there exists a fundamental
+symmetry \(C_{\rm out}\) on the combined future space satisfying
+\[
+C_{\rm out}\mathscr S=\mathscr S C_-.
+\]
+The nontrivial physical question is whether one may choose
+\(C_{\rm out}=C_+\oplus C_H\).
+\end{proposition}
+
+\begin{proof}
+The range of the injective Krein isometry \(\mathscr S\) is nondegenerate.
+Transport \(C_-\) to it by
+\(C_{\rm ran}\mathscr Sx=\mathscr S C_-x\).  The combined future space
+splits as the Krein-orthogonal direct sum of this range and its orthogonal
+complement.  Choose any fundamental symmetry on the complement and take the
+direct sum.  Factorization over the two future boundaries is additional
+structure and is exactly the test in Proposition~\ref{prop:c-scattering}.
+\end{proof}
 
 \begin{corollary}[Band-limited pseudo-isometry]
 Multiplication by \(T_+\) is a bounded isomorphism on
@@ -2383,6 +2481,7 @@ The principal machine authorities are:
 \item \cert{black_hole_programme/phase4/rw_maxwell_simplicity_endomorphisms_v1/certificate.json};
 \item \cert{black_hole_programme/phase4/einstein_weyl_critical_mass_jet_v1/certificate.json};
 \item \cert{black_hole_programme/phase4/axial_local_commutant_spectral_c_v1/certificate.json};
+\item \cert{black_hole_programme/phase4/axial_local_nonlocal_positivity_v1/certificate.json};
 \item \cert{black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json};
 \item \cert{black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/full_contour_winding_v1/certificate.json};
 \item \cert{black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/local_selector_v1/certificate.json};
