@@ -1,0 +1,105 @@
+{
+  "claim_flags": {
+    "Green_resolvent_double_pole_certified": false,
+    "QNM_location_certified": false,
+    "Smith_selector_certified": false,
+    "argument_principle_root_count_certified": true,
+    "closing_sector_compatibility_certified": true,
+    "defective_fibre_or_EP2_certified": false,
+    "full_closed_contour_nonzero_certified": true,
+    "intrinsic_tangent_selector_certified": false,
+    "unique_simple_spin_two_QNM_in_disk_certified": true,
+    "winding_number_certified": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a numerical enclosure of the unique QNM location",
+    "nonvanishing of the intrinsic tangent selector Delta_tau",
+    "a local Smith type (0,0,2) or defective fibre",
+    "an exceptional point or generalized QNM",
+    "a second-order Green-resolvent pole",
+    "a physical outgoing Bach connection T_plus",
+    "time-domain stability or decay",
+    "any LORENTZIAN-CAUSAL, particle or quantum claim"
+  ],
+  "domain": {
+    "center_im": "8896231568893569828046093/100000000000000000000000000",
+    "center_re": "-93417921104510458948373/250000000000000000000000",
+    "contour": "Gamma(t)=c+R*exp(2*pi*I*t), 0<=t<=1",
+    "coverage_start": "0",
+    "coverage_stop": "1",
+    "orientation": "counterclockwise",
+    "radius": "1/40"
+  },
+  "imports": {
+    "analytic_continuation_gate": {
+      "path": "black_hole_programme/certificates/BH3_ANALYTIC_CONTINUATION_GATE.json",
+      "sha256": "75e18d9a91d6827ad2fae645a05b0fe1cc9a50459f9b03dca280c884f917aca3"
+    },
+    "contour_geometry_implementation": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_centered_projective_initializer_v1/centered_initializer.py",
+      "sha256": "f292008ec7c49d77820ec08ac1f48825f1f98f7d8cac97845d95e90100b21c0d"
+    },
+    "ecs_analytic_volterra_gate": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_inverse_tortoise_v1/certificate.json",
+      "sha256": "25d7e306e5b4b314aa34f1a10f6a8a0461e8d6c4dd1c2e7f91508b2e6e0d6e92"
+    },
+    "final_aggregate": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_1021_1023_v1/child-grid-aggregate-run.json",
+      "sha256": "14eaea1c9531db20ab14599377f143e06c8061b4b754f0e35046f324a846ca3e"
+    },
+    "final_chunk_certificate": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_1021_1023_v1/certificate.json",
+      "sha256": "fd72a111f36cdc34c3ccb6c9a7e26421d3e5d68c38764e77f36bf3c554e86878"
+    },
+    "phase_ledger": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/phase_ledger_v1/phase-ledger.json",
+      "sha256": "85ce744e50aaea91a48922da92b0f84604a0edfffa200736aac6395a6a5dd58d"
+    },
+    "phase_ledger_certificate": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/phase_ledger_v1/certificate.json",
+      "sha256": "e9b90f2752cff448c2a8f7b0c5483d6023a8703a827670f59a71e34c8e572fb8"
+    },
+    "projective_mismatch_implementation": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/common_affine.py",
+      "sha256": "8ae5c434f7fe3757b79b6cafddd71057cf67d5fb31e1b7ac16754fcbcb20bc5b"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "method": {
+    "boundary_nonvanishing": "all contiguous projective mismatch panels exclude zero",
+    "closing_test": "the final unwrapped sector overlaps the initial sector shifted by 2*pi*w; the sum of their widths is <2*pi, so the integer w is unique",
+    "continuous_lift": "adjacent argument sectors overlap and each has width < pi",
+    "root_count": "argument principle for the certified holomorphic scalar projective Evans mismatch on the counterclockwise disk"
+  },
+  "result": {
+    "argument_principle_root_count_with_multiplicity": 1,
+    "closing_sector_overlap": {
+      "lower": "[6.3041648492480029454963656628040536769 +/- 3.80e-38]",
+      "upper": "[6.4301260632484693870080842830980984081 +/- 4.04e-38]",
+      "width_lower": "[0.12596121400046644151171862029404473112 +/- 1.73e-39]"
+    },
+    "closing_sector_total_width_upper": "[0.45853720698073981559914727388518383061 +/- 2.90e-39]",
+    "integer_phase_increment": "[6.2831853071795864769252867665590057684 +/- 2.12e-38]",
+    "minimum_adjacent_sector_overlap": {
+      "lower": "[0.0161400076694993598444691966780572989 +/- 3.48e-38]",
+      "segment_start": "750/1024"
+    },
+    "minimum_boundary_half_plane_margin": {
+      "lower": "[2.47293883088857233648806055628060692e-7 +/- 4.48e-43]",
+      "segment_start": "97/512"
+    },
+    "phase_increment_enclosure": {
+      "lower": "[6.0468346952062734978304203399385582155 +/- 2.06e-38]",
+      "upper": "[6.5053719021870133134295676138237420461 +/- 4.82e-38]"
+    },
+    "segment_count": 927,
+    "unique_simple_root": true,
+    "winding_number": 1
+  },
+  "schema": "phase3-axial-qnm-full-contour-winding-v1",
+  "status": "FULL_CLOSED_PROJECTIVE_EVANS_CONTOUR_NONZERO_WITH_WINDING_ONE"
+}

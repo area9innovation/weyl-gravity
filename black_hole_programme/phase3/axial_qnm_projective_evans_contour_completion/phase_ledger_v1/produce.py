@@ -26,7 +26,7 @@ else:
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[3]
-CURRENT = HERE.parent / "chunk_757_764_v1"
+CURRENT = HERE.parent / "chunk_1021_1023_v1"
 CURRENT_CERT = CURRENT / "certificate.json"
 AGGREGATE = CURRENT / "child-grid-aggregate-run.json"
 TYPED_SOURCE = ROOT / (
@@ -366,15 +366,18 @@ def main() -> None:
     REPORT.write_text(
         "# Axial QNM projective Evans lifted-phase ledger v1\n\n"
         "Dependency tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`.\n\n"
-        "All 172 accepted segments through the exact boundary prefix "
-        "`135/512` admit certified rational separating half-planes and "
+        f"All {ledger['summary']['segment_count']} accepted segments through "
+        f"the exact boundary prefix `{ledger['summary']['coverage_stop']}` "
+        "admit certified rational separating half-planes and "
         "argument sectors narrower than `pi`. Consecutive sectors overlap, "
         "so they define one continuous lifted argument branch on the "
         "prefix. The partial argument increment is enclosed by "
         f"`[{ledger['summary']['partial_argument_increment_enclosure']['lower']}, "
         f"{ledger['summary']['partial_argument_increment_enclosure']['upper']}]` "
-        "radians. This is not a winding number: the contour remains open, "
-        "and root-count, QNM, Smith and EP2 flags remain false.\n"
+        "radians. This ledger alone does not certify a winding number; "
+        "closing-sector compatibility and the integer phase increment are "
+        "checked by a separate independent winding rail. Root-count, QNM, "
+        "Smith and EP2 flags remain false here.\n"
     )
     commands = [
         [

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phase 3 axial QNM projective local selector v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "inputs",
+    "run",
+    "result",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-qnm-projective-local-selector-v1"
+    },
+    "dependency_tags": {
+      "const": ["REDUCED-MODE"]
+    },
+    "lifecycle": {
+      "const": "COEFFICIENT_COMPUTED"
+    },
+    "status": {
+      "enum": [
+        "CERTIFIED_INTRINSIC_REPEATED_SPIN_TWO_EP2",
+        "FAIL_CLOSED"
+      ]
+    },
+    "inputs": {"type": "object"},
+    "run": {
+      "type": "object",
+      "required": ["path", "sha256"]
+    },
+    "result": {
+      "type": "object",
+      "required": [
+        "qnm_enclosure",
+        "delta_tau_root_enclosure",
+        "delta_omega_root_enclosure",
+        "kappa_beta_over_alpha_enclosure",
+        "qnm_velocity_enclosure",
+        "connection_classification"
+      ]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "unique_simple_spin_two_qnm_localized",
+        "intrinsic_tangent_selector_nonzero",
+        "repeated_spin_two_smith_valuations_0_2",
+        "full_connection_smith_valuations_0_0_2",
+        "physical_fredholm_realization_constructed",
+        "green_resolvent_second_order_pole_established"
+      ]
+    },
+    "does_not_establish": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  }
+}

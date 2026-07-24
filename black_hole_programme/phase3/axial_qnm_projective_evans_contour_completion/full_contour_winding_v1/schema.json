@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "claim_flags",
+    "domain",
+    "method",
+    "result",
+    "imports",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-qnm-full-contour-winding-v1"
+    },
+    "status": {
+      "const": "FULL_CLOSED_PROJECTIVE_EVANS_CONTOUR_NONZERO_WITH_WINDING_ONE"
+    },
+    "lifecycle": {
+      "const": "CLASSIFIED"
+    },
+    "dependency_tags": {
+      "contains": {
+        "const": "REDUCED-MODE"
+      }
+    },
+    "claim_flags": {
+      "type": "object"
+    },
+    "domain": {
+      "type": "object"
+    },
+    "method": {
+      "type": "object"
+    },
+    "result": {
+      "type": "object",
+      "required": [
+        "winding_number",
+        "argument_principle_root_count_with_multiplicity",
+        "unique_simple_root"
+      ]
+    },
+    "imports": {
+      "type": "object",
+      "minProperties": 8
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 8
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,57 @@
+{
+  "claim_flags": {
+    "full_connection_smith_valuations_0_0_2": false,
+    "green_resolvent_second_order_pole_established": false,
+    "intrinsic_tangent_selector_nonzero": true,
+    "physical_fredholm_realization_constructed": false,
+    "repeated_spin_two_smith_valuations_0_2": true,
+    "unique_simple_spin_two_qnm_localized": true
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "that the spin-one incoming Jost factor is nonzero at this QNM",
+    "an unconditional full 3x3 Smith type without that unit gate",
+    "an analytic Fredholm realization of the physical QNM problem",
+    "a second-order Green-resolvent pole",
+    "time-domain boundedness, decay, or stability"
+  ],
+  "inputs": {
+    "aggregate_sha256": "14eaea1c9531db20ab14599377f143e06c8061b4b754f0e35046f324a846ca3e",
+    "analytic_gate_sha256": "75e18d9a91d6827ad2fae645a05b0fe1cc9a50459f9b03dca280c884f917aca3",
+    "ecs_certificate_sha256": "25d7e306e5b4b314aa34f1a10f6a8a0461e8d6c4dd1c2e7f91508b2e6e0d6e92",
+    "local_smith_certificate_sha256": "bbc34d5865a95c9fa8b74157d0ef6abcac8271cca067983e7b23e5850f16da41",
+    "tight_transport_source_sha256": "df1c766fc3e2eb0d67a8f611fb8013a36cf8f7fed263e7e7bdca2cbedfb9b73e",
+    "winding_certificate_sha256": "8fca9295f3cafd281773b793a80a8a3adbcbb014d542e5a6fe51b1f22a11d305"
+  },
+  "lifecycle": "COEFFICIENT_COMPUTED",
+  "result": {
+    "connection_classification": {
+      "algebraic_multiplicity": 2,
+      "full_3x3_classification": "conditional on the spin-one Jost factor being a local unit at the enclosed QNM",
+      "geometric_multiplicity": 1,
+      "repeated_spin_two_smith_valuations": [
+        0,
+        2
+      ]
+    },
+    "delta_omega_root_enclosure": "[+/- 4.88e-3] + [-0.01 +/- 1.82e-3]j",
+    "delta_tau_root_enclosure": "[0.0010932 +/- 7.60e-8] + [-0.0002195 +/- 8.89e-8]j",
+    "kappa_beta_over_alpha_enclosure": "[+/- 0.0468] + [0.1 +/- 0.0371]j",
+    "qnm_enclosure": {
+      "center_im": "8896231568893569828046093/100000000000000000000000000",
+      "center_re": "-93417921104510458948373/250000000000000000000000",
+      "radius": "1/10000000",
+      "simple": true,
+      "zero_count_with_multiplicity": 1
+    },
+    "qnm_velocity_enclosure": "[+/- 0.0468] + [-0.1 +/- 0.0371]j"
+  },
+  "run": {
+    "path": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/local_selector_v1/local-selector-run.json",
+    "sha256": "11990f484293850c806eba78ecec0a59d3ac43472ac4fd48d4929814eb840389"
+  },
+  "schema": "phase3-axial-qnm-projective-local-selector-v1",
+  "status": "CERTIFIED_INTRINSIC_REPEATED_SPIN_TWO_EP2"
+}

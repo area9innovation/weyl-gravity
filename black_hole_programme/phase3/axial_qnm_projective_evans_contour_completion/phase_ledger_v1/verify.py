@@ -55,10 +55,11 @@ def main() -> None:
     ] == sha(TYPED_SOURCE)
     assert len(ledger["segments"]) == len(aggregate["segments"])
     assert ledger["summary"]["segment_count"] == len(aggregate["segments"])
-    assert (
-        ledger["summary"]["coverage_stop"]
-        == aggregate["summary"]["coverage_stop"]
-        == certificate["result"]["coverage_stop"]
+    assert Fraction(ledger["summary"]["coverage_stop"]) == Fraction(
+        aggregate["summary"]["coverage_stop"]
+    )
+    assert Fraction(certificate["result"]["coverage_stop"]) == Fraction(
+        aggregate["summary"]["coverage_stop"]
     )
     assert ledger["summary"]["contiguous_from_zero"]
     assert arb(
@@ -114,7 +115,8 @@ def main() -> None:
     print(
         "Evans lifted-phase ledger verifier: PASS "
         f"({len(ledger['segments'])} segments; coverage "
-        f"{ledger['summary']['coverage_stop']}; contour remains open)"
+        f"{ledger['summary']['coverage_stop']}; winding intentionally "
+        "unpromoted in this ledger)"
     )
 
 
