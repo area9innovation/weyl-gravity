@@ -1,0 +1,92 @@
+{
+  "artifacts": {
+    "compile_exit": 0,
+    "compile_log": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_step_ladder_v1/compile.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "run_exit": 0,
+    "run_log": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_step_ladder_v1/run.txt",
+      "sha256": "098059c84fd9e6d85e597b7c66a0f0e4295b7a498f164df82241cd8fb3591b5a"
+    },
+    "source": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_step_ladder_v1/splus_step_ladder.forge",
+      "sha256": "eee244ef64ca0f3cd79f6af05ef0b72a51fdf6ea680eeb7b210af3d19a3948b5"
+    }
+  },
+  "claim_flags": {
+    "K_plus_certified": false,
+    "T_plus_certified": false,
+    "common_generator_preserved": true,
+    "joint_E_R_S_frame_certified": false,
+    "step_1_over_128_certified": true,
+    "step_1_over_128_operationally_admissible": true,
+    "step_1_over_32_certified": true,
+    "step_1_over_32_operationally_admissible": false,
+    "step_1_over_64_certified": true,
+    "step_1_over_64_operationally_admissible": false,
+    "transport_to_r31_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "multipanel transport to r=31",
+    "a joint outgoing E/R/S frame",
+    "K_plus, T_plus, Stokes conservation, scattering, or flux"
+  ],
+  "imports": {
+    "predecessor_certificate": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume32_v1/certificate.json",
+      "sha256": "849d5bece56c1cde9bf023089aac0174549c406031b47ff795d9d498b07d5ce8"
+    },
+    "predecessor_checkpoint": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume32_v1/checkpoint.json",
+      "payload_sha256": "04cda6ed69c5a01f65e6607ff59d51247984c23c43393668b0fc4cd4604be782",
+      "sha256": "e62ad806054c998231fe1b0fa799f5c6fa248ef62a0f67ab7fd9d0ffaed84e26"
+    }
+  },
+  "lifecycle": "NUMERIC-ENCLOSURE",
+  "next_gate": "resume the correlated checkpoint with 1/128 panels and an exact final fractional step to r=31",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_SPLUS_STEP_LADDER_V1",
+  "schema": "phase3-axial-outgoing-splus-step-ladder-v1",
+  "status": "FINITE_LADDER_1_OVER_128_ADMISSIBLE",
+  "transport": {
+    "admissibility_thresholds": {
+      "base_width_upper": 0.01,
+      "normalized_tangent_width_upper": 1.0,
+      "tail_upper": 0.001
+    },
+    "cases": {
+      "128": {
+        "base": "0.001496864474840114",
+        "operationally_admissible": true,
+        "status": "PASS",
+        "tail": "5.52152458668042e-06",
+        "tangent": "0.777940939234172"
+      },
+      "32": {
+        "base": "1863.558897569652",
+        "operationally_admissible": false,
+        "status": "PASS",
+        "tail": "931.7786914574936",
+        "tangent": "1864.343358324997"
+      },
+      "64": {
+        "base": "0.11436415297775482",
+        "operationally_admissible": false,
+        "status": "PASS",
+        "tail": "0.056434353083163406",
+        "tangent": "0.8935352701620385"
+      }
+    },
+    "generator": 7315,
+    "internal_tangent_normalization": "tangent/512",
+    "largest_finite_step": "1/32",
+    "largest_operationally_admissible_step": "1/128",
+    "start_radius": "8143/256",
+    "taylor_order": 12
+  }
+}

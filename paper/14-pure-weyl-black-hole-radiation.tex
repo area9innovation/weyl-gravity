@@ -2096,6 +2096,7 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_qnm_projective_sensitivity_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v2/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v3/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_ecs_centered_projective_initializer_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_ecs_affine_projective_transport_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_horizon_projective_preflight_v1/certificate.json};
@@ -2124,6 +2125,8 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume32_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_step_ladder_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json}\\
 Polar restriction-stable module and invariant current filtration &
@@ -2347,7 +2350,22 @@ with generator 7315 and all direct/dual gates preserved.  Its largest tail
 is \(7.10\times10^{-10}\), final base width \(0.00147618\), and normalized
 tangent width \(0.775139\) (physical width \(396.871\)).  Consequently
 analytic \(K_+\), the joint \((E,R,S)\) frame, and \(T_+\) remain fail
-closed.
+closed.  A one-step width ladder at this checkpoint distinguishes
+mathematical finiteness from an operational enclosure: width \(1/128\)
+has tail \(5.53\times10^{-6}\), base width \(0.001497\), and normalized
+tangent width \(0.7780\), while widths \(1/64\) and \(1/32\) remain finite
+but fail the declared tail/base thresholds.  Using the admissible width,
+a content-addressed replay-free continuation advances through 103 panels
+of width \(1/128\) and one final panel of width \(1/256\), reaching
+\[
+ r=31 .
+\]
+All panelwise generator and direct/dual correlation gates pass.  At the
+common radius with the existing \(R_+\) checkpoint, the \(S_+\) base width
+is \(0.006021\), the normalized tangent width is \(1.564\), and the restored
+physical tangent width is \(800.528\).  This co-location is a prerequisite,
+not a joint-frame determinant: the typed \(E/R/S\) assembly, analytic
+\(K_+\), and \(T_+\) remain unproved.
 Complex-frequency work has excluded the entire growth half-plane, but no
 damped QNM root, contour moment, or local Smith branch has been computed.
 At the QNM seed disk, the direct inverse-\(r\) forward recurrence also fails
@@ -2485,8 +2503,13 @@ but only for one of 512 panels.  A checkpointed four-worker successor now
 certifies panels \(0\)--\(15\) under their panel-local shared generators.
 All 16 physical mismatch enclosures exclude zero; the smallest modulus
 lower bound is \(1.14087\times10^{-4}\), on panel 15.  This is a strict
-boundary segment, not a closed contour.  The remaining 496 panels and the
-argument-principle and Smith/EP2 gates are not run.
+boundary segment, not a closed contour.  A typed Riccati audit independently
+emits \((\Delta,\Delta_\tau,\Delta_\omega)\) on the same 16 co-located
+panels.  Every current rectangular \(\Delta_\tau\) and \(\Delta_\omega\)
+ball contains zero, so neither the intrinsic selector nor the simple-root
+Newton denominator is certified.  Panel 16 is the first missing shared
+horizon/outgoing export.  The remaining 496 panels and the
+interval-Newton, argument-principle, and Smith/EP2 gates are not run.
 Uniform time-domain boundedness, decay, and completeness remain open.
 
 The present result already fixes an important baseline:

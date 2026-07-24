@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "lifecycle",
+    "dependency_tags",
+    "status",
+    "imports",
+    "transport",
+    "artifacts",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-outgoing-splus-step-ladder-v1"
+    },
+    "status": {
+      "enum": [
+        "FINITE_LADDER_1_OVER_128_ADMISSIBLE",
+        "STEP_LADDER_REFUSED"
+      ]
+    },
+    "lifecycle": {
+      "const": "NUMERIC-ENCLOSURE"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "lifecycle",
+    "dependency_tags",
+    "status",
+    "imports",
+    "transport",
+    "checkpoint",
+    "progress",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-partial-jet-outgoing-splus-r31-v1"
+    },
+    "status": {
+      "enum": ["SPLUS_REACHES_R31", "SPLUS_R31_REFUSED"]
+    },
+    "lifecycle": {
+      "const": "NUMERIC-ENCLOSURE"
+    },
+    "transport": {
+      "type": "object",
+      "properties": {
+        "generator": {"const": 7315},
+        "planned_panels": {"const": 104},
+        "target_radius": {"const": "31"}
+      },
+      "required": [
+        "generator",
+        "planned_panels",
+        "completed_panels",
+        "target_radius",
+        "chunk_count",
+        "chunks"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

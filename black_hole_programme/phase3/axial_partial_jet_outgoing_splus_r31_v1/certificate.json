@@ -1,0 +1,305 @@
+{
+  "checkpoint": {
+    "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/checkpoint.json",
+    "payload_sha256": "11df9724a863b65ddc943a331f0759835511b9b919ba5425f05ab24e19e93a91",
+    "sha256": "99ce1f9cb224c3094641c38af333e5dea6781e4576d931f7e027eb157b04a88e",
+    "written": true
+  },
+  "claim_flags": {
+    "K_plus_certified": false,
+    "S_checkpoint_serialized": true,
+    "S_reaches_r31": true,
+    "T_plus_certified": false,
+    "common_generator_preserved": true,
+    "dual_direct_gate_checked_each_completed_panel": true,
+    "joint_E_R_S_frame_certified": false,
+    "scattering_or_flux_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a joint E/R/S outgoing frame at r=31",
+    "K_plus or T_plus",
+    "Stokes conservation, scattering, or flux"
+  ],
+  "imports": {
+    "predecessor_certificate": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume32_v1/certificate.json",
+      "sha256": "849d5bece56c1cde9bf023089aac0174549c406031b47ff795d9d498b07d5ce8"
+    },
+    "predecessor_checkpoint": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume32_v1/checkpoint.json",
+      "payload_sha256": "04cda6ed69c5a01f65e6607ff59d51247984c23c43393668b0fc4cd4604be782",
+      "sha256": "e62ad806054c998231fe1b0fa799f5c6fa248ef62a0f67ab7fd9d0ffaed84e26"
+    }
+  },
+  "lifecycle": "NUMERIC-ENCLOSURE",
+  "next_gate": "assemble the co-located E/R/S frame at r=31 and certify its determinant",
+  "progress": {
+    "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/progress.json",
+    "sha256": "5a47dbd9d0739149b4902d829ba269eed771a7e4fa3b8c70039f0ee5293012f6"
+  },
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_SPLUS_R31_V1",
+  "schema": "phase3-axial-partial-jet-outgoing-splus-r31-v1",
+  "status": "SPLUS_REACHES_R31",
+  "transport": {
+    "arithmetic": "IvTaylor4_omega tensor partial dual_tau",
+    "chunk_count": 6,
+    "chunks": [
+      {
+        "compile_exit": 0,
+        "compile_log": {
+          "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/chunk_00_compile.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "compile_seconds": 3.640394316986203,
+        "completed_panels": 32,
+        "passed": true,
+        "run_exit": 0,
+        "run_log": {
+          "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/chunk_00_run.txt",
+          "sha256": "bd60ed094892aaf167404ef78c21875d773c80e25aa65b343b3f95f475be1b7f"
+        },
+        "run_seconds": 70.50861525000073,
+        "source": {
+          "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/chunk_00.forge",
+          "sha256": "056aa0a4a564975fc23930435f06c03dd3bac33dcde6e25c6c9a541a94787ce5"
+        },
+        "specification": {
+          "center": "4071/128",
+          "final": "8079/256",
+          "id": 0,
+          "regular_panels": 32,
+          "start": "8143/256",
+          "total_panels": 32
+        },
+        "summary": {
+          "final_base": "0.0022866860846723607",
+          "final_normalized": "0.9058439189907278",
+          "final_r": "8079/256",
+          "final_tangent": "463.7920865232528",
+          "generator": "7315",
+          "max_base": "0.0022866860846723607",
+          "max_normalized": "0.9058439189907278",
+          "max_tail": "5.52152458668042e-06",
+          "panels": "32",
+          "status": "PASS"
+        }
+      },
+      {
+        "compile_exit": 0,
+        "compile_log": {
+          "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/chunk_01_compile.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "compile_seconds": 3.243222073011566,
+        "completed_panels": 16,
+        "passed": true,
+        "run_exit": 0,
+        "run_log": {
+          "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/chunk_01_run.txt",
+          "sha256": "d5b88c800415731b18926334867f562ec7d91ccbdf1e953fab454f22af7373b2"
+        },
+        "run_seconds": 50.118850642989855,
+        "source": {
+          "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/chunk_01.forge",
+          "sha256": "2f47ff978a8565b3cd29127154d0032e07ef69a10d6aedf36301bf80c41a3fb5"
+        },
+        "specification": {
+          "center": "4039/128",
+          "final": "8047/256",
+          "id": 1,
+          "regular_panels": 16,
+          "start": "8079/256",
+          "total_panels": 16
+        },
+        "summary": {
+          "final_base": "0.0028280862205820913",
+          "final_normalized": "1.0050995902644788",
+          "final_r": "8047/256",
+          "final_tangent": "514.6109902154133",
+          "generator": "7315",
+          "max_base": "0.0028280862205820913",
+          "max_normalized": "1.0050995902644788",
+          "max_tail": "4.331921022177859e-06",
+          "panels": "16",
+          "status": "PASS"
+        }
+      },
+      {
+        "compile_exit": 0,
+        "compile_log": {
+          "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/chunk_02_compile.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "compile_seconds": 3.8246043229592033,
+        "completed_panels": 16,
+        "passed": true,
+        "run_exit": 0,
+        "run_log": {
+          "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/chunk_02_run.txt",
+          "sha256": "8ac6fcee136e507ad6c2430616d799529b004e740dd48af5617a540e2107a628"
+        },
+        "run_seconds": 61.137349327036645,
+        "source": {
+          "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/chunk_02.forge",
+          "sha256": "1f77266300b474c836949c2f2c090c33f1b8d0a7c6d4374413fa41a3c4277d09"
+        },
+        "specification": {
+          "center": "4023/128",
+          "final": "8015/256",
+          "id": 2,
+          "regular_panels": 16,
+          "start": "8047/256",
+          "total_panels": 16
+        },
+        "summary": {
+          "final_base": "0.003550147193751337",
+          "final_normalized": "1.1296079132512824",
+          "final_r": "8015/256",
+          "final_tangent": "578.3592515846568",
+          "generator": "7315",
+          "max_base": "0.003550147193751337",
+          "max_normalized": "1.1296079132512824",
+          "max_tail": "3.946563569101117e-06",
+          "panels": "16",
+          "status": "PASS"
+        }
+      },
+      {
+        "compile_exit": 0,
+        "compile_log": {
+          "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/chunk_03_compile.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "compile_seconds": 3.9316405879799277,
+        "completed_panels": 16,
+        "passed": true,
+        "run_exit": 0,
+        "run_log": {
+          "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/chunk_03_run.txt",
+          "sha256": "87eb328c8fc796624be941bd101129d9b2a58ff915d4dea40c9ea04186f47dbf"
+        },
+        "run_seconds": 72.01858050696319,
+        "source": {
+          "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/chunk_03.forge",
+          "sha256": "a2d9464436ff00196b0fdb68481e41827705d2492d975fded6765356da0d73d5"
+        },
+        "specification": {
+          "center": "4007/128",
+          "final": "7983/256",
+          "id": 3,
+          "regular_panels": 16,
+          "start": "8015/256",
+          "total_panels": 16
+        },
+        "summary": {
+          "final_base": "0.004446726815593975",
+          "final_normalized": "1.2820373237749374",
+          "final_r": "7983/256",
+          "final_tangent": "656.4031097727682",
+          "generator": "7315",
+          "max_base": "0.004446726815593975",
+          "max_normalized": "1.2820373237749374",
+          "max_tail": "3.639857059663649e-06",
+          "panels": "16",
+          "status": "PASS"
+        }
+      },
+      {
+        "compile_exit": 0,
+        "compile_log": {
+          "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/chunk_04_compile.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "compile_seconds": 3.9739214269793592,
+        "completed_panels": 16,
+        "passed": true,
+        "run_exit": 0,
+        "run_log": {
+          "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/chunk_04_run.txt",
+          "sha256": "993abc64d13986879703139131120bf95320c331f644a13f9fa2199458f9e841"
+        },
+        "run_seconds": 82.8365228830371,
+        "source": {
+          "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/chunk_04.forge",
+          "sha256": "b2d4a38da53f8ad10534ce5f06bf9bf4c10562aaf1e023c23154a3aac0a9ecd2"
+        },
+        "specification": {
+          "center": "3991/128",
+          "final": "7951/256",
+          "id": 4,
+          "regular_panels": 16,
+          "start": "7983/256",
+          "total_panels": 16
+        },
+        "summary": {
+          "final_base": "0.005482078165925086",
+          "final_normalized": "1.4656353735195995",
+          "final_r": "7951/256",
+          "final_tangent": "750.4053112420352",
+          "generator": "7315",
+          "max_base": "0.005482078165925086",
+          "max_normalized": "1.4656353735195995",
+          "max_tail": "3.38712873261215e-06",
+          "panels": "16",
+          "status": "PASS"
+        }
+      },
+      {
+        "compile_exit": 0,
+        "compile_log": {
+          "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/chunk_05_compile.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "compile_seconds": 4.14097174804192,
+        "completed_panels": 8,
+        "passed": true,
+        "run_exit": 0,
+        "run_log": {
+          "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/chunk_05_run.txt",
+          "sha256": "d727e9063196f4aa05dc3af05684b6cc22e46fc66150cd770510f33fde0bbbcb"
+        },
+        "run_seconds": 46.060835227021016,
+        "source": {
+          "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_r31_v1/chunk_05.forge",
+          "sha256": "47bed489fbe594de25bea526e06bfc5ee526d3dc7b8a090db18791cd26912e23"
+        },
+        "specification": {
+          "center": "3975/128",
+          "final": "31",
+          "final_step_center": "15873/512",
+          "id": 5,
+          "regular_panels": 7,
+          "start": "7951/256",
+          "total_panels": 8
+        },
+        "summary": {
+          "final_base": "0.006020078856805904",
+          "final_normalized": "1.5635304240639987",
+          "final_r": "31",
+          "final_tangent": "800.5275771207678",
+          "generator": "7315",
+          "max_base": "0.006020078856805904",
+          "max_normalized": "1.5635304240639987",
+          "max_tail": "3.1715151932354595e-06",
+          "panels": "8",
+          "status": "PASS"
+        }
+      }
+    ],
+    "completed_panels": 104,
+    "generator": 7315,
+    "internal_tangent_normalization": "tangent/512 throughout",
+    "planned_panels": 104,
+    "start_radius": "8143/256",
+    "supersedes_monolithic_timeout": {
+      "elapsed_seconds": 183.72787416400388,
+      "run_exit": 124,
+      "scientific_disposition": "throughput failure; no transport refusal"
+    },
+    "target_radius": "31"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "imports",
+    "run",
+    "result",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-qnm-projective-evans-riccati-rail-v3"
+    },
+    "status": {
+      "const": "BOUNDED_PROGRESS_FAIL_CLOSED_BEFORE_LOCAL_QNM_TEST"
+    },
+    "lifecycle": {
+      "const": "CLASSIFIED"
+    },
+    "dependency_tags": {
+      "type": "array",
+      "contains": {
+        "const": "LOCAL-ALGEBRAIC"
+      },
+      "minItems": 2
+    },
+    "imports": {
+      "type": "object",
+      "minProperties": 4
+    },
+    "run": {
+      "type": "object",
+      "required": ["path", "sha256"]
+    },
+    "result": {
+      "type": "object",
+      "required": [
+        "schema",
+        "status",
+        "rows",
+        "summary",
+        "local_qnm_gate"
+      ]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "panels_0_through_15_typed_two_sided_at_r32",
+        "panels_0_through_15_delta_nonzero",
+        "delta_tau_nonzero_certified",
+        "delta_omega_nonzero_certified",
+        "full_contour_boundary_nonvanishing_certified",
+        "interval_newton_certified",
+        "QNM_root_count_certified",
+        "QNM_or_EP2_certified"
+      ]
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 8
+    }
+  },
+  "additionalProperties": true
+}
