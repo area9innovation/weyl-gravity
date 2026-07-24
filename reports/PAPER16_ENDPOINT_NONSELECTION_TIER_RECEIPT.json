@@ -1,0 +1,50 @@
+{
+  "schema": "paper16-endpoint-nonselection-tier-receipt-v1",
+  "status": "ACTIVE_CHECKPOINT",
+  "source_commit": "7d5a02a0c7fae42c3d4424329b2955476c91d256",
+  "artifacts": {
+    "paper_tex": {
+      "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl.tex",
+      "sha256": "01460dffaaa2b16b18b5a05d9ebbc8ed0455fbed59f38d83f03512bcf805cc93"
+    },
+    "paper_pdf": {
+      "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl.pdf",
+      "sha256": "5610db6c86cb9a8202fedd73d4bf73b628a89a8f1a708dd327e1c26b923c5620",
+      "pages": 18
+    },
+    "claim_map": {
+      "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl-claim-map.json",
+      "sha256": "4d2ebf23ad0f2f9e9df23258cd68439c2cacfcdb53d366c7d8ebb9abe54f3ef0"
+    },
+    "coverage": {
+      "path": "planning/paper-coverage/phase4-paper16-endpoint-nonselection-overlay-2026-07-24.json",
+      "sha256": "9ba25584f024a27b5dbbadd49098ba4e3663870b72330d342bd91ddb54584b63"
+    }
+  },
+  "tests": {
+    "tier0": [
+      "all four TeX sources compile twice with pdflatex -halt-on-error",
+      "Python claim-map sources compile",
+      "scoped git diff --check"
+    ],
+    "tier1": [
+      "claim-map generator --check passes",
+      "independent semantic verifier passes",
+      "five claim-boundary and mutation tests pass",
+      "exact threshold verifier and four tests pass"
+    ],
+    "tier2": "not triggered: no pre-existing operator or certificate was modified",
+    "tier3": "not run: manuscript remains an active checkpoint pending explicit Tplus"
+  },
+  "open_gates": [
+    "the agreed 25-35 page freeze target is not yet met",
+    "the explicit typed Tplus band has not reached the r=4 matching section",
+    "the Fredholm promotion of the connection EP2 remains open"
+  ],
+  "does_not_establish": [
+    "a submission freeze",
+    "explicit Tplus amplitudes",
+    "a Green-resolvent second-order pole",
+    "time-domain stability or quantum unitarity"
+  ]
+}

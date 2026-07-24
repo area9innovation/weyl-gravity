@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,
+            citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\C}{\mathbb C}
+\newcommand{\coker}{\operatorname{coker}}
+
+\title{Differential-Module and Resonance Structure of\\
+Axial Schwarzschild Perturbations in Pure Weyl Gravity}
+\author{GPT-5.6.sol
+\and Claude Fable 5}
+\date{Companion-paper scaffold, 24 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This companion develops the mathematical structure behind the endpoint
+nonselection theorem proved in Paper~16.  The axial six-state Bach system is
+an exact RW/RW/spin-one filtration whose repeated spin-two sector is a
+non-split self-extension.  The extension is the partial first jet of a
+four-state spin-two/spin-one system and reduces projectively to a scalar
+cocycle paired with the symmetric-square Regge--Wheeler module.  At a simple
+spin-two quasinormal frequency the complete connection has precisely two
+local Smith branches.  A validated projective Evans calculation selects the
+defective branch at one physical damped mode.  The result is currently a
+connection-level exceptional point; promotion to a second-order
+Green-resolvent pole requires the analytic Fredholm construction stated
+here as a separate programme.
+\end{abstract}
+
+\section{Purpose and claim boundary}
+
+The focused physics paper contains the endpoint theorem, action-derived
+Krein form, global incoming population, outgoing band theorem, mode
+stability, and the final certified Smith type.  This companion is reserved
+for the machinery that would otherwise obscure that argument:
+\begin{enumerate}
+\item the rational differential-module extension;
+\item the exact partial-jet realization;
+\item the scalar projective cocycle and symmetric-square pairing;
+\item local Smith and Fitting-ideal classification;
+\item projective Evans, contour-moment, Hankel, and Loewner formulations;
+\item the conditional analytic Fredholm promotion.
+\end{enumerate}
+
+No statement in this draft promotes the certified connection root chain to a
+physical Green-resolvent pole or a time-domain generalized ringdown term.
+
+\section{Filtered module and exact partial jet}
+
+In a factor gauge the six-state system is
+\[
+\begin{aligned}
+ X'&=AX+EY+CZ,\\
+ Y'&=AY+DZ,\\
+ Z'&=A_1Z.
+\end{aligned}
+\]
+Introduce
+\[
+\mathcal B(\tau)=
+\begin{pmatrix}
+A+\tau E&D+\tau C\\
+0&A_1
+\end{pmatrix}.
+\]
+Then the six-state generator is exactly the first spin-two-row jet of
+\(\mathcal B(\tau)\) at \(\tau=0\).  Consequently every interior transport
+has the form
+\[
+\Phi_6=
+\begin{pmatrix}
+P&\dot P&\dot Q\\
+0&P&Q\\
+0&0&R
+\end{pmatrix}_{\tau=0}.
+\]
+The certified factorizations \(E=USJ\) and \(C=USN\) show that the complete
+upper-row forcing passes through one scalar source.
+
+\section{Projective cocycle}
+
+After Liouville reduction put
+\[
+L=D^2+U,\qquad
+Lx=(s_1D+s_0)y,\qquad Ly=0.
+\]
+The scalar extension density
+\[
+\mathcal I=s_0-\frac12s_1'
+\]
+transforms under a rational triangular gauge by
+\[
+\mathcal I\longmapsto
+\mathcal I-\frac12\mathcal K_Uq,
+\qquad
+\mathcal K_U=D^3+4UD+2U'.
+\]
+Thus the projective content is the class
+\[
+[\mathcal I]\in
+\C(r,\omega)/\mathcal K_U\C(r,\omega).
+\]
+The kernel of \(\mathcal K_U\) is the symmetric square of the scalar
+Regge--Wheeler solution space.  The three off-diagonal spin-two connection
+entries are therefore periods of one scalar cocycle against
+\(y_1^2,y_1y_2,y_2^2\).
+
+\section{Local Smith dichotomy}
+
+At a simple spin-two QNM with a spin-one local unit, the connection reduces
+analytically to
+\[
+\begin{pmatrix}a&b\\0&a\end{pmatrix},
+\qquad a(\omega_n)=0,\quad a'(\omega_n)\ne0.
+\]
+If \(b(\omega_n)\ne0\), the complete three-factor Smith valuations are
+\((0,0,2)\); if \(b(\omega_n)=0\), they are \((0,1,1)\).
+Equivalently, the second Fitting ideal is respectively the unit ideal or
+\((a)\).
+
+\section{Certified physical specialization}
+
+The current certificate encloses one simple damped spin-two QNM and proves
+that the intrinsic projective tangent is nonzero there.  It separately proves
+that the spin-one factor is a local unit.  Hence the complete connection has
+Smith valuations \((0,0,2)\), algebraic multiplicity two, geometric
+multiplicity one, and one length-two connection root chain.
+
+\section{Next theorem}
+
+Let \(L(\omega):D\to Y\) be an analytic Fredholm realization of the scalar
+QNM problem, and let the extension be analytic and bounded from \(D\) to
+\(Y\).  The triangular parametrix then makes the repeated block analytic
+Fredholm.  If
+\[
+\alpha_n=\langle\widetilde u_n,L'(\omega_n)u_n\rangle,\qquad
+\beta_n=\langle\widetilde u_n,\mathcal E(\omega_n)u_n\rangle
+\]
+and \(\beta_n\ne0\), its inverse has upper-right principal part
+\[
+-\frac{\beta_n}{\alpha_n^2(\omega-\omega_n)^2}
+u_n\otimes\widetilde u_n.
+\]
+Establishing the required endpoint domains and graph-norm bounds is the
+remaining hypothesis, not a result of the present connection certificate.
+
+\end{document}
