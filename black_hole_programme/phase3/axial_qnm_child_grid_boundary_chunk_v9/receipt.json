@@ -1,0 +1,42 @@
+{
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v9/runner.py black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v9/verify.py black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v9/test_v9.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v9/certificate.json black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v9/schema.json",
+      "returncode": 0,
+      "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_child_grid_boundary_chunk_v9.verify",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "child-grid v9 verifier: PASS (coverage 127/512; next 254/1024)\n"
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_qnm_child_grid_boundary_chunk_v9.test_v9",
+      "returncode": 0,
+      "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.013s\n\nOK\n",
+      "stdout": "child-grid v9 verifier: PASS (coverage 127/512; next 254/1024)\n"
+    }
+  ],
+  "elapsed_seconds": 27.828400774975307,
+  "higher_tiers_not_run": "No closed contour, theorem promotion, freeze or release. The eight-panel transport is the fast certificate-chain producer; replayless verification is the fast Tier 1 rail.",
+  "input_sha256": {
+    "generic_adaptive_source": "20f2fca360a55a72a7b139c5d70b908e17f5369b3e83b360517feea75ca85ddd",
+    "predecessor_aggregate": "c5b3a1c4b1387b2ad159bc6a049527ab9c61d9a1479b029cd7b2e30d1ad294c9",
+    "predecessor_certificate": "662f507353e0ee4986a34056adc08d0ffcfb25d9fe5772fec1128ecf87e8076c"
+  },
+  "output_sha256": {
+    "aggregate": "32ac760f9327ce4d268268e86d0aad305f5ead2ae00ab50b159b75dd07603a3e",
+    "certificate": "5392c028daa60abd67b1e53a2be8cecb1c2603d9400595bb617e6985d1784cb2",
+    "raw": "ee750c1f8852c32751884bd0775103835edec491ce1ae63754edbfc7e67862ca",
+    "report": "a423e9d4fbcced3e4f65844111e1117f66b5acc2800d40e8c5a42ddc3b4d224d"
+  },
+  "schema": "phase3-axial-qnm-child-grid-boundary-receipt-v9"
+}

@@ -53,8 +53,9 @@ OUTGOING_CELL_REPORT = ROOT / "reports/phase3-axial-outgoing-population-cell-hal
 EVANS_V7_CERT = ROOT / "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v7/certificate.json"
 EVANS_V7B_CERT = ROOT / "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v7b/certificate.json"
 EVANS_V8_CERT = ROOT / "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v8/certificate.json"
-EVANS_V8_RECEIPT = ROOT / "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v8/receipt.json"
-EVANS_V8_REPORT = ROOT / "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v8/report.md"
+EVANS_V9_CERT = ROOT / "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v9/certificate.json"
+EVANS_V9_RECEIPT = ROOT / "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v9/receipt.json"
+EVANS_V9_REPORT = ROOT / "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v9/report.md"
 
 ACTIVE_SOURCES = [
     "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json",
@@ -135,7 +136,7 @@ def claim_map() -> dict:
     return {
         "schema": "paper-draft-source-map-v1",
         "paper_id": "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION",
-        "result_id": "PAPER_14_PHASE3_EVANS_PREFIX_123_512_UPDATE_V8",
+        "result_id": "PAPER_14_PHASE3_EVANS_PREFIX_127_512_UPDATE_V9",
         "lifecycle_state": "DRAFT_ALLOWED",
         "source_baseline": SOURCE_BASELINE,
         "manuscript": str(PAPER.relative_to(ROOT)),
@@ -215,21 +216,23 @@ def claim_map() -> dict:
             ),
         },
         "phase3_evans_boundary_prefix_authority": {
-            "result_id": "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512",
+            "result_id": "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_127_512",
             "scope": (
-                "projective scalar Evans contour prefix through 123/512 "
+                "projective scalar Evans contour prefix through 127/512 "
                 "only; no closed contour or root count"
             ),
             "v7_certificate": str(EVANS_V7_CERT.relative_to(ROOT)),
             "v7_certificate_sha256": digest(EVANS_V7_CERT),
             "v7b_certificate": str(EVANS_V7B_CERT.relative_to(ROOT)),
             "v7b_certificate_sha256": digest(EVANS_V7B_CERT),
-            "certificate": str(EVANS_V8_CERT.relative_to(ROOT)),
-            "certificate_sha256": digest(EVANS_V8_CERT),
-            "receipt": str(EVANS_V8_RECEIPT.relative_to(ROOT)),
-            "receipt_sha256": digest(EVANS_V8_RECEIPT),
-            "report": str(EVANS_V8_REPORT.relative_to(ROOT)),
-            "report_sha256": digest(EVANS_V8_REPORT),
+            "v8_certificate": str(EVANS_V8_CERT.relative_to(ROOT)),
+            "v8_certificate_sha256": digest(EVANS_V8_CERT),
+            "certificate": str(EVANS_V9_CERT.relative_to(ROOT)),
+            "certificate_sha256": digest(EVANS_V9_CERT),
+            "receipt": str(EVANS_V9_RECEIPT.relative_to(ROOT)),
+            "receipt_sha256": digest(EVANS_V9_RECEIPT),
+            "report": str(EVANS_V9_REPORT.relative_to(ROOT)),
+            "report_sha256": digest(EVANS_V9_REPORT),
             "does_not_establish": (
                 "complete boundary nonvanishing, argument-principle root "
                 "count, QNM location, Smith selector or EP2"
@@ -310,7 +313,7 @@ def claim_map() -> dict:
             "axial_outgoing_compact_positive_band_dense_range": True,
             "axial_positive_real_reflection_zero_set_empty": False,
             "axial_outgoing_full_positive_axis_uniform_inverse_bound": False,
-            "axial_qnm_projective_boundary_prefix_123_512": True,
+            "axial_qnm_projective_boundary_prefix_127_512": True,
             "axial_qnm_complete_closed_contour_nonzero": False,
             "axial_qnm_argument_principle_root_count": False,
             "axial_l2_endpoint_flux_positive_energy": False,
@@ -408,7 +411,7 @@ def coverage(claim_payload: dict) -> dict:
     )
     evans_prefix_result_id = (
         "sf:coverage/result/"
-        "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512"
+        "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_127_512"
     )
     paper_id = "paper:14-pure-weyl-black-hole-radiation"
     claim_id = f"{paper_id}/claim/phase2_generic_l_parity_disposition_v1"
@@ -434,11 +437,11 @@ def coverage(claim_payload: dict) -> dict:
         "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF/paper-14/v1"
     )
     evans_prefix_claim_id = (
-        f"{paper_id}/claim/phase3_axial_qnm_evans_boundary_prefix_123_512"
+        f"{paper_id}/claim/phase3_axial_qnm_evans_boundary_prefix_127_512"
     )
     evans_prefix_edge_id = (
         "sf:coverage/edge/"
-        "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512/"
+        "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_127_512/"
         "paper-14/v1"
     )
     nodes = [
@@ -797,7 +800,7 @@ def coverage(claim_payload: dict) -> dict:
             "kind": "materiality",
             "id": (
                 "sf:coverage/materiality/"
-                "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512/v1"
+                "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_127_512/v1"
             ),
             "body": {
                 "result_id": evans_prefix_result_id,
@@ -807,7 +810,7 @@ def coverage(claim_payload: dict) -> dict:
                 "version": 1,
                 "rationale": (
                     "Extends the rigorously zero-free projective Evans "
-                    "boundary prefix to 123/512 while retaining fail-closed "
+                    "boundary prefix to 127/512 while retaining fail-closed "
                     "root, Smith and EP2 gates."
                 ),
                 "native": {"source_schema": "materiality-v0"},
@@ -817,25 +820,25 @@ def coverage(claim_payload: dict) -> dict:
             "kind": "result",
             "id": evans_prefix_result_id,
             "title": (
-                "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512"
+                "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_127_512"
             ),
             "body": {
                 "result_id": (
-                    "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512"
+                    "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_127_512"
                 ),
                 "lifecycle": "CLASSIFIED",
                 "boundary": (
                     "Projective scalar Evans boundary is certified nonzero "
-                    "only on the exact contiguous prefix [0,123/512]. The "
-                    "next gap starts at 246/1024. No closed-contour, "
+                    "only on the exact contiguous prefix [0,127/512]. The "
+                    "next gap starts at 254/1024. No closed-contour, "
                     "argument-principle, root-count, QNM, Smith or EP2 claim."
                 ),
                 "native": {
                     "source_kind": "phase3-evans-prefix-certificate",
-                    "certificate": str(EVANS_V8_CERT.relative_to(ROOT)),
-                    "certificate_sha256": digest(EVANS_V8_CERT),
-                    "receipt": str(EVANS_V8_RECEIPT.relative_to(ROOT)),
-                    "receipt_sha256": digest(EVANS_V8_RECEIPT),
+                    "certificate": str(EVANS_V9_CERT.relative_to(ROOT)),
+                    "certificate_sha256": digest(EVANS_V9_CERT),
+                    "receipt": str(EVANS_V9_RECEIPT.relative_to(ROOT)),
+                    "receipt_sha256": digest(EVANS_V9_RECEIPT),
                 },
             },
             "edges": [],
@@ -848,7 +851,7 @@ def coverage(claim_payload: dict) -> dict:
                 "material": True,
                 "asserts_lifecycle": "CLASSIFIED",
                 "boundary": (
-                    "Zero-free Evans boundary prefix through 123/512 only; "
+                    "Zero-free Evans boundary prefix through 127/512 only; "
                     "the remaining contour and every root/Smith gate remain "
                     "open."
                 ),
@@ -888,7 +891,7 @@ def coverage(claim_payload: dict) -> dict:
         )
     return {
         "ir": "science-forge-ir-v0",
-        "schema": "paper14-phase3-evans-prefix-123-512-overlay-v8",
+        "schema": "paper14-phase3-evans-prefix-127-512-overlay-v9",
         "append_only_parent": str(PARENT_COVERAGE.relative_to(ROOT)),
         "append_only_parent_sha256": digest(PARENT_COVERAGE),
         "claim_map": str(OUTPUT.relative_to(ROOT)),

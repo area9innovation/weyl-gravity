@@ -1,0 +1,123 @@
+{
+  "claim_flags": {
+    "QNM_location_certified": false,
+    "Smith_selector_certified": false,
+    "argument_principle_certified": false,
+    "defective_fibre_or_EP2_certified": false,
+    "fixed_child_grid_only": true,
+    "full_contour_nonzero_certified": false,
+    "materialized_prefix_nonzero_certified": true,
+    "root_count_certified": false,
+    "stable_root_reused": true,
+    "threshold_lowered": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "boundary nonvanishing beginning at the stated next gap",
+    "boundary nonvanishing on the complete closed contour",
+    "an argument-principle root count",
+    "a QNM location or simple-root certificate",
+    "a nonzero Delta_tau or Delta_omega selector",
+    "a local Smith branch, defective fibre or EP2",
+    "a physical outgoing Bach map T_plus",
+    "time-domain stability or any LORENTZIAN-CAUSAL claim"
+  ],
+  "imports": {
+    "generic_adaptive_source": {
+      "path": "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v1/adaptive.py",
+      "sha256": "20f2fca360a55a72a7b139c5d70b908e17f5369b3e83b360517feea75ca85ddd"
+    },
+    "predecessor_aggregate": {
+      "path": "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v8/child-grid-aggregate-run.json",
+      "sha256": "c5b3a1c4b1387b2ad159bc6a049527ab9c61d9a1479b029cd7b2e30d1ad294c9"
+    },
+    "predecessor_certificate": {
+      "path": "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v8/certificate.json",
+      "sha256": "662f507353e0ee4986a34056adc08d0ffcfb25d9fe5772fec1128ecf87e8076c"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "method": {
+    "acceptance_policy": "accept only the ordered contiguous prefix before the first typed zero-exclusion failure",
+    "child_panel_count": 1024,
+    "generic_adaptive_source": "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v1/adaptive.py",
+    "horizon_remainder_root": "stable interval smaller root with exact 1000001/1000000 strict enlargement",
+    "maximum_parallel_workers": 8,
+    "maximum_subdivision_depth": 1,
+    "performance_disposition": "The eight-panel scoped producer must remain below 60 seconds; the replayless verifier is the per-commit Tier 1 rail. Future transport chunks retain the same bounded size.",
+    "requested_stop": "254/1024",
+    "start": "246/1024",
+    "threshold_policy": "unchanged; no threshold relaxation"
+  },
+  "result": {
+    "accepted_segments": [
+      {
+        "delta_modulus_lower": "[2.3388322192951953596593215594648222160e-5 +/- 8.35e-43]",
+        "row_sha256": "a7b10d87d950e45959bf533baaf06c20274bf59e60b9bb63dce75ea4823fd15e",
+        "segment": "246/1024"
+      },
+      {
+        "delta_modulus_lower": "[2.3419810070912261440360135226496464276e-5 +/- 3.78e-43]",
+        "row_sha256": "8eaa7f8a1018cd0824a7efff62eeee31837660b24fccf91a96edff414eb2883e",
+        "segment": "247/1024"
+      },
+      {
+        "delta_modulus_lower": "[2.3455026962806652684810672061410062186e-5 +/- 8.43e-43]",
+        "row_sha256": "5dfe2aaabd3bb28c5c820da1251660a9775f43ce6bce5daa526edb3ccd73d19f",
+        "segment": "248/1024"
+      },
+      {
+        "delta_modulus_lower": "[2.3494809347253360045468959983878226655e-5 +/- 8.00e-43]",
+        "row_sha256": "ebb1e9db53b935af664a1b9159be3966a75053e4b99f7a76800d3eb1ca3353f8",
+        "segment": "249/1024"
+      },
+      {
+        "delta_modulus_lower": "[2.3541629135482907553796971429272831359e-5 +/- 4.01e-43]",
+        "row_sha256": "771410bd58df180c5b5a801abd68c0219027d96da80985349996b81a17fe2390",
+        "segment": "250/1024"
+      },
+      {
+        "delta_modulus_lower": "[2.3587328350364807466507833135432785327e-5 +/- 5.60e-43]",
+        "row_sha256": "016ec0516bd7a93caa5bdfbd0bcda3ba1d5a6a778b193d91c09a124fc4ca120a",
+        "segment": "251/1024"
+      },
+      {
+        "delta_modulus_lower": "[2.3632208265247727026570607318899227583e-5 +/- 4.51e-43]",
+        "row_sha256": "74874d315d3854ba008bb2d2c741189f9f16dd6862012aabecc3d494dedd5ec2",
+        "segment": "252/1024"
+      },
+      {
+        "delta_modulus_lower": "[2.3680703898285968507652628360888103224e-5 +/- 7.01e-43]",
+        "row_sha256": "77038d0e383c94557b6905671dd18221ba7ee0043eadb54db64a97c66be5e4d0",
+        "segment": "253/1024"
+      }
+    ],
+    "coverage_stop": "127/512",
+    "elapsed_compute_seconds": 27.423030120960902,
+    "new_accepted_segment_count": 8,
+    "next_honest_boundary_gap": {
+      "child_panel_count": 1024,
+      "first_unmaterialized_child_panel": 254,
+      "start": "254/1024"
+    },
+    "terminal": {
+      "code": "REQUESTED_CHILD_GRID_STOP_REACHED",
+      "first_unmaterialized_child_panel": 254
+    }
+  },
+  "runs": {
+    "aggregate": {
+      "path": "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v9/child-grid-aggregate-run.json",
+      "sha256": "32ac760f9327ce4d268268e86d0aad305f5ead2ae00ab50b159b75dd07603a3e"
+    },
+    "raw": {
+      "path": "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v9/child-grid-raw-run.json",
+      "sha256": "ee750c1f8852c32751884bd0775103835edec491ce1ae63754edbfc7e67862ca"
+    }
+  },
+  "schema": "phase3-axial-qnm-child-grid-boundary-chunk-v9",
+  "status": "FIXED_CHILD_GRID_BOUNDARY_PREFIX_EXTENDED_FAIL_CLOSED"
+}

@@ -39,7 +39,7 @@ OUTGOING_CELL_RESULT = (
     "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF"
 )
 EVANS_PREFIX_RESULT = (
-    "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512"
+    "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_127_512"
 )
 EXPECTED_AUTHORITY_HASHES = {
     "certificate_sha256": "8a9914400f0929f37a63570b95383ebc4131cbf2928b5f923db0d002d0783d33",
@@ -111,7 +111,7 @@ def main() -> None:
         fail("wrong paper identity")
     if (
         claim_map.get("result_id")
-        != "PAPER_14_PHASE3_EVANS_PREFIX_123_512_UPDATE_V8"
+        != "PAPER_14_PHASE3_EVANS_PREFIX_127_512_UPDATE_V9"
     ):
         fail("wrong Phase-3 paper result identity")
     if claim_map.get("lifecycle_state") != "DRAFT_ALLOWED":
@@ -266,6 +266,7 @@ def main() -> None:
     for key, hash_key in [
         ("v7_certificate", "v7_certificate_sha256"),
         ("v7b_certificate", "v7b_certificate_sha256"),
+        ("v8_certificate", "v8_certificate_sha256"),
         ("certificate", "certificate_sha256"),
         ("receipt", "receipt_sha256"),
         ("report", "report_sha256"),
@@ -274,7 +275,7 @@ def main() -> None:
         if digest(path) != evans[hash_key]:
             fail(f"Evans-prefix authority content drift: {key}")
     evans_result = json.loads((ROOT / evans["certificate"]).read_text())
-    if evans_result["result"]["coverage_stop"] != "123/512":
+    if evans_result["result"]["coverage_stop"] != "127/512":
         fail("Evans-prefix coverage drift")
     evans_flags = evans_result["claim_flags"]
     if evans_flags.get("materialized_prefix_nonzero_certified") is not True:
@@ -468,7 +469,7 @@ def main() -> None:
         "axial_outgoing_generic_population_off_locally_finite_set",
         "axial_outgoing_cell_half_L2_multiplier_isomorphism",
         "axial_outgoing_compact_positive_band_dense_range",
-        "axial_qnm_projective_boundary_prefix_123_512",
+        "axial_qnm_projective_boundary_prefix_127_512",
     }
     required_false = {
         "formal_radial_einstein_only_selection",
@@ -541,7 +542,7 @@ def main() -> None:
         "open dense,",
         "injective with dense range",
         "Exact contiguous coverage now reaches",
-        "\\frac{123}{512}",
+        "\\frac{127}{512}",
     ]
     for phrase in required_phrases:
         if phrase not in text:
@@ -573,7 +574,7 @@ def main() -> None:
     coverage = json.loads(coverage_path.read_text())
     if (
         coverage.get("schema")
-        != "paper14-phase3-evans-prefix-123-512-overlay-v8"
+        != "paper14-phase3-evans-prefix-127-512-overlay-v9"
     ):
         fail("wrong coverage overlay schema")
     if coverage.get("append_only_parent_sha256") != digest(PARENT_COVERAGE):
@@ -612,7 +613,7 @@ def main() -> None:
         ),
         (
             "sf:coverage/edge/"
-            "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512/"
+            "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_127_512/"
             "paper-14/v1"
         ),
     }
@@ -661,7 +662,7 @@ def main() -> None:
         fail("outgoing-population cell edge is mistyped")
     evans_prefix_edge = new_edges[
         "sf:coverage/edge/"
-        "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512/"
+        "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_127_512/"
         "paper-14/v1"
     ]["body"]
     if (
