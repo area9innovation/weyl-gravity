@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase4-black-hole-axial-explicit-tplus-band-ACTIVE-f2b604dc6c0de73d",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/phase4-black-hole-axial-explicit-tplus-band-ACTIVE-f2b604dc6c0de73d.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "tplus_interaction_restart", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-07-24T19:37:17Z", "seq": 3, "predecessor": "sf:program/event/phase4-black-hole-axial-explicit-tplus-band-ACTIVE-bddd6dda9f7a6ae2", "payload": {"target": "sf:program/work/phase4-black-hole-axial-explicit-tplus-band", "to_state": "ACTIVE", "note": "SHORTFALL: the exact interaction picture and a new validated micro-successor are closed, but explicit \\(T_+\\) remains open at the full projective-interval transport gate.", "evidence_basis": "black_hole_programme/phase4/axial_explicit_tplus_band_v1/interaction_receipt.json"}, "native": {"authored_by": "sfc close-out", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/phase4-black-hole-axial-explicit-tplus-band"}]
+}
