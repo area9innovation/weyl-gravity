@@ -1,0 +1,55 @@
+{
+  "artifact_sha256": {
+    "__init__.py": "2d5dca35fb588712828ef83cd7ec375fded90bb81101fe0a1a79bfe91edda6e0",
+    "produce.py": "6563319bef4bdec1d4d8dc66d7531d9652594ad15194a7fb819df79683ae2a18",
+    "repair.py": "44404bf3007252130435c2d14dde6173b145145f172a541f20c7e16cfde368b3",
+    "schema.json": "3131f4250baef04b3b3500cccea8d0d2fdf76b41cc336c2e96cd17695e6b6573",
+    "test_repair.py": "f56ca9b5b0fe3c67a486d8fae73221ead43505c70f923a93bcd931a53c8d23b9",
+    "verify.py": "c628b146a0878b606742ad11830b7330633dc2cc4da6e8c3128e996665540110"
+  },
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/panel_292_subdivision_repair_v1/repair.py black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/panel_292_subdivision_repair_v1/produce.py black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/panel_292_subdivision_repair_v1/verify.py",
+      "elapsed_seconds": 0.030164,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/panel_292_subdivision_repair_v1/certificate.json black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/panel_292_subdivision_repair_v1/schema.json",
+      "elapsed_seconds": 0.107719,
+      "returncode": 0,
+      "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.panel_292_subdivision_repair_v1.test_repair",
+      "elapsed_seconds": 0.120311,
+      "returncode": 0,
+      "stderr": "test_certificate (black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.panel_292_subdivision_repair_v1.test_repair.EvansPanel292SubdivisionRepairTest.test_certificate) ... ok\ntest_full_contour_promotion_rejected (black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.panel_292_subdivision_repair_v1.test_repair.EvansPanel292SubdivisionRepairTest.test_full_contour_promotion_rejected) ... ok\ntest_noncontiguous_aggregate_rejected (black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.panel_292_subdivision_repair_v1.test_repair.EvansPanel292SubdivisionRepairTest.test_noncontiguous_aggregate_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.013s\n\nOK\n",
+      "stdout": "Evans panel-292 dyadic repair verifier: PASS (children 584/2048 and 585/2048; next gap 293/1024)\n"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.panel_292_subdivision_repair_v1.verify",
+      "elapsed_seconds": 0.113252,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Evans panel-292 dyadic repair verifier: PASS (children 584/2048 and 585/2048; next gap 293/1024)\n"
+    }
+  ],
+  "elapsed_seconds": 16.092766,
+  "higher_tiers_not_run": "Local dyadic boundary repair; no full contour, theorem promotion, freeze or release.",
+  "input_sha256": {
+    "predecessor_aggregate": "ed053b942dd8502dd18267c5c9efa0fc2fdfed2a15c5acfc360d346cc98463c3",
+    "predecessor_certificate": "4302061730e8b6be7b3701e80403e507be2b122a841f69973891ee7c92e98b9e"
+  },
+  "output_sha256": {
+    "aggregate": "4f93a7bc8b543ab05d216317d032fabfb8a25da38ef661fb197f850988f17198",
+    "certificate": "f15f099cd584294dcb20aaea279d71400a2239839ea0441c21c1d4610f2e42eb",
+    "child_run": "92dbf787a19b40c21bd880796a37100111a6b255bc94fb56981242f28d2daa3c",
+    "report": "961c5fb3901784f26bc1278dffa4625d6e0e98df7cdb4ea6b8e24f82817259f4"
+  },
+  "schema": "phase3-axial-qnm-projective-evans-panel-292-subdivision-receipt-v1",
+  "tier_0": "py_compile and JSON Schema validation",
+  "tier_1": "two-child producer, scoped mutation tests and independent replayless verifier"
+}

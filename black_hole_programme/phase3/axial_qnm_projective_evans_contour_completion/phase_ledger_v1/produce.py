@@ -26,7 +26,7 @@ else:
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[3]
-CURRENT = HERE.parent / "chunk_278_285_v1"
+CURRENT = HERE.parent / "chunk_293_300_v1"
 CURRENT_CERT = CURRENT / "certificate.json"
 AGGREGATE = CURRENT / "child-grid-aggregate-run.json"
 TYPED_SOURCE = ROOT / (
@@ -330,7 +330,10 @@ def build() -> dict:
             "QNM_or_EP2_certified": False,
         },
         "does_not_establish": [
-            "boundary nonvanishing after 135/512",
+            (
+                "boundary nonvanishing after "
+                f"{Fraction(records[-1]['stop'])}"
+            ),
             "a closed Evans contour",
             "an integer winding number",
             "an argument-principle root count",

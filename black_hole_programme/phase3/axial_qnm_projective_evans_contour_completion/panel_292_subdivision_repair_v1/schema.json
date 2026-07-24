@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "claim_flags",
+    "method",
+    "result",
+    "imports",
+    "runs",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-qnm-projective-evans-panel-292-subdivision-repair-v1"
+    },
+    "status": {
+      "const": "PANEL_292_DYADIC_REPAIR_EXTENDS_PREFIX_TO_293_OVER_1024"
+    },
+    "lifecycle": {
+      "const": "CLASSIFIED"
+    },
+    "dependency_tags": {
+      "contains": {
+        "const": "REDUCED-MODE"
+      }
+    },
+    "claim_flags": {
+      "type": "object"
+    },
+    "method": {
+      "type": "object"
+    },
+    "result": {
+      "type": "object"
+    },
+    "imports": {
+      "type": "object",
+      "minProperties": 4
+    },
+    "runs": {
+      "type": "object",
+      "required": [
+        "children",
+        "aggregate"
+      ]
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 8
+    }
+  },
+  "additionalProperties": false
+}
