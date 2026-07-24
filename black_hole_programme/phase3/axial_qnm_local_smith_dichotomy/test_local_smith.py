@@ -80,6 +80,17 @@ class LocalSmithDichotomyTests(unittest.TestCase):
             "b_0",
         ))
 
+    def test_rejects_fitting_ideal_mutation(self) -> None:
+        self.assertTrue(self.mutate(
+            (
+                "local_dvr_proof",
+                "connection_minor_selector",
+                "second_fitting_ideal",
+                "zero_class",
+            ),
+            "O_{omega_n}",
+        ))
+
     def test_rejects_fredholm_principal_part_mutation(self) -> None:
         self.assertTrue(self.mutate(
             (

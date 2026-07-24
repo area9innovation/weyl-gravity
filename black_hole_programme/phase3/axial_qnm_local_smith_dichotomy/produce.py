@@ -109,6 +109,24 @@ def produce() -> dict:
         raise RuntimeError("connection-minor selector identity failed")
     if resonance_nonzero.rank() != 2 or resonance_zero.rank() != 1:
         raise RuntimeError("connection-rank dichotomy failed")
+    generic_divisible = generic.subs(b_unit, b_divisible)
+    pairs = [(0, 1), (0, 2), (1, 2)]
+    minors_nonzero = [
+        sp.factor(generic.extract(rows, cols).det())
+        for rows in pairs for cols in pairs
+    ]
+    minors_zero = [
+        sp.factor(generic_divisible.extract(rows, cols).det())
+        for rows in pairs for cols in pairs
+    ]
+    if selector_minor not in [
+        sp.factor(value.subs(z, 0)) for value in minors_nonzero
+    ]:
+        raise RuntimeError("selector minor missing from Fitting generators")
+    if any(sp.rem(value, a, z) != 0 for value in minors_zero):
+        raise RuntimeError("zero-class Fitting ideal is not contained in (a)")
+    if sp.simplify((a * f) / a - f) != 0:
+        raise RuntimeError("zero-class Fitting ideal lacks valuation-one unit")
 
     # Lyapunov--Schmidt effective block.  This is the finite-dimensional
     # principal part obtained from an analytic Fredholm realization; it does
@@ -206,8 +224,23 @@ def produce() -> dict:
                 "minor_rows_one_three_columns_two_three": encode(
                     selector_minor
                 ),
+                "frame_scope": "normalized triangular factor frame",
                 "nonzero_class_rank": 2,
                 "zero_class_rank": 1,
+                "second_fitting_ideal": {
+                    "generators_nonzero_branch": [
+                        encode(value) for value in minors_nonzero
+                    ],
+                    "generators_zero_branch": [
+                        encode(value) for value in minors_zero
+                    ],
+                    "nonzero_class": "O_{omega_n}",
+                    "zero_class": "(a)",
+                    "invariant_reading": (
+                        "The second Fitting ideal, not the selected bf "
+                        "minor, is invariant under analytic frame changes."
+                    ),
+                },
                 "equivalence": (
                     "beta_n!=0 iff b(omega_n)!=0 iff minor!=0 iff "
                     "rank(T_-(omega_n))=2, assuming f(omega_n) is a unit"

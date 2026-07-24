@@ -119,6 +119,52 @@ def verify_document(document: dict) -> list[str]:
         errors.append("recorded nonzero-class rank drift")
     if selector["zero_class_rank"] != 1:
         errors.append("recorded zero-class rank drift")
+    fitting = selector["second_fitting_ideal"]
+    full_nonzero = sp.Matrix([
+        [a, b_0 + b_1 * z, c_0],
+        [0, a, d_0],
+        [0, 0, f],
+    ])
+    full_zero = sp.Matrix([
+        [a, a * g_0, c_0],
+        [0, a, d_0],
+        [0, 0, f],
+    ])
+    pairs = [(0, 1), (0, 2), (1, 2)]
+    nonzero_minors = [
+        sp.factor(full_nonzero.extract(rows, cols).det())
+        for rows in pairs for cols in pairs
+    ]
+    zero_minors = [
+        sp.factor(full_zero.extract(rows, cols).det())
+        for rows in pairs for cols in pairs
+    ]
+    recorded_nonzero = [
+        parse(value) for value in fitting["generators_nonzero_branch"]
+    ]
+    recorded_zero = [
+        parse(value) for value in fitting["generators_zero_branch"]
+    ]
+    if any(sp.simplify(x - y) != 0
+           for x, y in zip(recorded_nonzero, nonzero_minors)):
+        errors.append("nonzero-class Fitting generators drift")
+    if any(sp.simplify(x - y) != 0
+           for x, y in zip(recorded_zero, zero_minors)):
+        errors.append("zero-class Fitting generators drift")
+    nonzero_vals = [
+        valuation_polynomial(value, z)
+        for value in nonzero_minors if value != 0
+    ]
+    zero_vals = [
+        valuation_polynomial(value, z)
+        for value in zero_minors if value != 0
+    ]
+    if min(nonzero_vals) != 0 or fitting["nonzero_class"] != "O_{omega_n}":
+        errors.append("nonzero-class second Fitting ideal is not the unit ideal")
+    if min(zero_vals) != 1 or fitting["zero_class"] != "(a)":
+        errors.append("zero-class second Fitting ideal is not (a)")
+    if selector["frame_scope"] != "normalized triangular factor frame":
+        errors.append("selected minor was made frame invariant")
 
     inverse_unit = matrix(nonzero["inverse_matrix"])
     inverse_divisible = matrix(zero["inverse_matrix"])
