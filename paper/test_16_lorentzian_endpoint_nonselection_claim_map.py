@@ -104,6 +104,26 @@ class Paper16ClaimMapTests(unittest.TestCase):
             "the complete polar parent Gram is certified"
         )
 
+    def test_unconditional_bach_involution_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the Bach spin-two block admits only \\(C=\\pm I\\)"
+        )
+
+    def test_generic_rw_simplicity_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the generic Regge--Wheeler differential module is simple"
+        )
+
+    def test_schwarzschild_retarded_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the Schwarzschild retarded propagator is established"
+        )
+
+    def test_parent_overlap_shortcut_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the parent overlap equals the radial overlap without endpoint terms"
+        )
+
     def test_claim_flag_promotion_rejected(self) -> None:
         claims = json.loads(CLAIM_MAP.read_text())
         claims["fail_closed_scope"]["green_resolvent_second_order_pole"] = True

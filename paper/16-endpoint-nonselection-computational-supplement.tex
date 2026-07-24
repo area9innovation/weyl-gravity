@@ -87,6 +87,9 @@ Ricci-factorized Hessian, the Schouten--Einstein/Maxwell carrier, and its
 Euler-current boundary;
 \item the second-order auxiliary-tensor parent action, its factorized
 Einstein Green current, canonical null lift, and QNM divisor count;
+\item the parent-Hessian inverse, conditional rank-one QNM Laurent algebra,
+simple-self-extension involution lemma, and endpoint Krein graph/cotangent
+obstructions;
 \item axial operator extraction and Ricci reconstruction;
 \item RW/RW/spin-one factorization, partial-jet identities, and the exact
 no-rational-intertwiner test;
@@ -121,6 +124,54 @@ at the horizon, a finite matching section, and null infinity.  Until those
 endpoint comparisons are separately certified, the universal parent
 identity does not substitute for the existing raw-Weyl endpoint
 certificates.
+
+\subsection{Parent-resolvent and Krein-obstruction chain}
+
+The exact record
+\path{black_hole_programme/phase4/
+parent_resolvent_krein_obstructions_v1/certificate.json}
+checks the auxiliary-tensor Hessian inverse by two-sided block
+multiplication and independently verifies the rank-one identity
+\[
+P\mathcal AP
+=\frac{\langle\widetilde u,\mathcal Au\rangle}{\alpha^2}
+u\otimes\widetilde u .
+\]
+It also certifies the characteristic-zero involution lemma for a nonsplit
+self-extension of a simple object, the endpoint positive-graph
+obstruction, and the quotient duality \(B_2/E\simeq E^*\).
+
+The record is deliberately fail-closed at three points.  It does not certify
+a physical Fredholm QNM pole, generic simplicity of the Regge--Wheeler
+differential module, or a Schwarzschild retarded propagator.  Consequently
+the stronger conclusion that every rational involution of the Bach
+spin-two block is \(\pm I\) remains conditional; only the earlier
+branch-resolving no-go is unconditional.
+
+\subsection{Parent-overlap and retarded-convolution experiments}
+
+The first experiment imports the certified simple axial QNM disk and
+computes the regularized parent overlap
+\[
+\operatorname{FP}\langle\widetilde f_n,\mathcal Af_n\rangle
+\]
+including endpoint terms.  A separate scalar-projection rail then compares
+it with the normalized radial extension overlap and must verify that the
+induced commutators vanish in the same regularized adjoint pairing.
+Numerical agreement without this projection audit is not a promotion gate.
+
+The second experiment implements the formal convolution
+\[
+G_{hh}^{\rm ret}
+=\frac1{4\alpha_{\rm W}}\,
+G_E^{\rm ret}*\mathcal A G_E^{\rm ret}.
+\]
+Its first control is the flat-space biwave kernel
+\(\theta(t-r)/(8\pi)\), up to the declared operator-sign convention.  Only
+after that control passes will the Schwarzschild rail compare direct
+six-state evolution with two sequential Einstein evolutions plus the
+homogeneous source-Einstein solution.  These are experiment specifications,
+not current time-domain theorems.
 
 \section{New-experiment rail}
 

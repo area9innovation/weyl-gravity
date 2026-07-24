@@ -27,6 +27,25 @@ seven front-door results:
 7. one certified complete-connection Smith type \((0,0,2)\), together with
    the exact cluster count \(N_B=2N_2+N_1\).
 
+The parent formulation now adds three exact refinements without widening the
+physical claim:
+
+8. the gauge-fixed parent Hessian has metric block
+   \(\mathcal E^{-1}\mathcal A\mathcal E^{-1}/(4\alpha_{\rm W})\), with an
+   exact rank-one Laurent coefficient and a physical QNM pole only
+   conditional on the analytic Fredholm gate;
+9. no uniformly positive closed endpoint subspace contains the pure Einstein
+   channel, and the hyperbolic spin-two quotient is canonically dual to the
+   Einstein line;
+10. a nonsplit self-extension of a simple module has only the involutions
+    \(\pm I\), while its Bach-module application remains fail-closed because
+    generic Regge--Wheeler simplicity has not been certified.
+
+Two new experiment rails are explicit: compare the regularized parent QNM
+overlap with the radial extension overlap including projection, commutator,
+and endpoint terms; and compare direct six-state evolution with the
+sequential Einstein retarded convolution after a flat-space biwave control.
+
 The static Schwarzschild charge/entropy calculation appears only as a short
 null-sector consistency corollary; the general static classification remains
 in Paper 18.  The manuscript additionally includes exact scalar threshold
@@ -42,7 +61,7 @@ main theorem chain. Paper 14 remains the provenance-rich source archive.
 
 ## Current size and gate
 
-The main PDF is 26 pages and now lies inside the agreed 25–35 page target.
+The main PDF is 27 pages and lies inside the agreed 25–35 page target.
 The added length is theorem content rather than engineering chronology.  The
 explicit \(T_+\) band remains the correct final scientific addition; its
 first Phase-4 correlated successor passed but the common outgoing frame is
@@ -52,14 +71,18 @@ remains an active draft rather than a submission freeze.
 ## Verification
 
 The main paper compiles twice and the computational supplement compiles.  The
-generated claim map pins eighteen source certificates, including the exact
+generated claim map pins nineteen source certificates, including the exact
 all-\(\ell\) threshold, universal Hessian/intertwiner,
 Schouten-Einstein/Maxwell carrier, Euler transgression, second-order parent
-flux, and static-control authorities.  An independent verifier checks the
+flux, parent-resolvent/Krein obstruction, and static-control authorities.
+An independent verifier checks the
 universal, parent, incoming, outgoing, no-growth, threshold, and EP2 flags.
-Eleven tests reject Green-resolvent, all-frequency outgoing, generic
+Fifteen tests reject Green-resolvent, all-frequency outgoing, generic
 radial-to-time-Jordan, complete-polar-parent-Gram, time-domain,
-nonlocal-intertwiner, Euler-boundary, and claim-map promotions.
+nonlocal-intertwiner, Euler-boundary, generic-Regge--Wheeler-simplicity,
+unconditional Bach-involution, parent-overlap-shortcut, Schwarzschild
+retarded-propagator, and claim-map promotions.  The new exact package has a
+separate verifier and eight unit tests.
 
 Tier 3 is not run because the explicit \(T_+\) experiment and journal-length
 freeze are still open.

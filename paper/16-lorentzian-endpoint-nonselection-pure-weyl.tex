@@ -1,7 +1,7 @@
 \documentclass[11pt]{article}
 
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,booktabs,tabularx,graphicx}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,booktabs,tabularx,longtable,graphicx}
 \usepackage{microtype,xurl}
 \usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue!55!black,
@@ -390,6 +390,112 @@ Einstein perturbation and the target carrier.  By contrast, the
 additional--additional entry depends on the choice of metric lift \(h_X\),
 as the direct calculation found.
 
+\begin{proposition}[Parent resolvent identity]
+\label{prop:parent-resolvent}
+Let \(\mathcal E(\omega)\) be the gauge-fixed linearized Einstein operator
+and let
+\[
+(\mathcal Af)_{ab}=f_{ab}-g_{ab}f.
+\]
+At every spectral point where \(\mathcal E(\omega)\) is invertible, the
+parent Hessian and its inverse are
+\[
+\mathbb H(\omega)
+=4\alpha_{\rm W}
+\begin{pmatrix}
+0&\mathcal E\\
+\mathcal E&-\mathcal A
+\end{pmatrix},
+\qquad
+\mathbb H(\omega)^{-1}
+=\frac1{4\alpha_{\rm W}}
+\begin{pmatrix}
+\mathcal E^{-1}\mathcal A\mathcal E^{-1}&\mathcal E^{-1}\\
+\mathcal E^{-1}&0
+\end{pmatrix}.
+\]
+In particular, the metric--metric block is
+\[
+G_{hh}
+=\frac1{4\alpha_{\rm W}}\,
+\mathcal E^{-1}\mathcal A\mathcal E^{-1}.
+\]
+\end{proposition}
+
+\begin{proof}
+Direct block multiplication on either side gives the identity.  No
+commutation of \(\mathcal A\) with \(\mathcal E\) is used.
+\end{proof}
+
+This explains the repeated spin-two divisor without cyclic elimination:
+the metric response is an Einstein resolvent, followed by an algebraic
+trace-reversal insertion, followed by a second Einstein resolvent.  It does
+not yet provide a physical QNM resolvent, because the required analytic
+Fredholm realization and its endpoint domains remain open.
+
+\begin{corollary}[Conditional simple-QNM Laurent coefficient]
+\label{cor:conditional-parent-pole}
+Assume such an analytic Fredholm realization, graph-norm boundedness of
+\(\mathcal A\), and a simple Einstein resonance \(\omega_n\), with
+\[
+\mathcal E(\omega)^{-1}
+=\frac{P_n}{\omega-\omega_n}+R_n(\omega),
+\qquad
+P_n=\frac{u_n\otimes\widetilde u_n}{\alpha_n}.
+\]
+Then the coefficient of the double pole in the metric block is
+\[
+\operatorname{Coeff}_{(\omega-\omega_n)^{-2}}G_{hh}
+=
+\frac1{4\alpha_{\rm W}}\,
+\frac{\beta_n^{\rm par}}{\alpha_n^2}\,
+u_n\otimes\widetilde u_n,
+\qquad
+\beta_n^{\rm par}
+=\langle\widetilde u_n,\mathcal Au_n\rangle .
+\]
+\end{corollary}
+
+\begin{proof}
+The double coefficient is \(P_n\mathcal AP_n/(4\alpha_{\rm W})\).
+Substitution of the rank-one projector gives the displayed formula.
+\end{proof}
+
+Projection to the scalar master system is expected to identify
+\(\beta_n^{\rm par}\) with the radial extension overlap after endpoint and
+commutator terms are included.  That equality is an experiment gate, not an
+identity silently assumed here.
+
+\begin{remark}[Parent-overlap and retarded-convolution rails]
+\label{rem:parent-experiments}
+The first new QNM audit is to evaluate the regularized parent overlap
+\[
+\beta_n^{\rm par}
+=\operatorname{FP}\langle\widetilde f_n,\mathcal Af_n\rangle
+\text{endpoint terms}
+\]
+on the already certified simple axial QNM disk and compare it with the
+normalized radial projective overlap.  The comparison must include the
+scalar projection and prove cancellation of the induced commutator terms;
+agreement is not inferred merely from the common connection Smith type.
+
+Formally, whenever compatible retarded Einstein inverses exist, the metric
+block has the convolution representation
+\[
+G_{hh}^{\rm ret}(t)
+=\frac1{4\alpha_{\rm W}}
+\int_0^t
+G_E^{\rm ret}(t-s)\,
+\mathcal A\,
+G_E^{\rm ret}(s)\,\dd s .
+\]
+This specifies a second experiment: compare direct six-state evolution with
+two sequential Einstein evolutions and use the flat-space biwave kernel
+\(\theta(t-r)/(8\pi)\), up to the wave-operator sign convention, as the
+first control.  The algebraic convolution identity does not certify a
+Schwarzschild retarded propagator, time-domain boundedness, or decay.
+\end{remark}
+
 The pure-target-gauge part of this carrier has a concrete geometric meaning.
 If \(q_{ab}=\mathcal L_\eta g_{ab}\) and
 \(F_{ab}=2\nabla_{[a}\eta_{b]}\), the carrier constraint is precisely
@@ -715,6 +821,38 @@ coboundary.  It would split the extension, contradicting the certified
 nonzero rational extension class.
 \end{proof}
 
+There is a stronger categorical statement, but its Bach-module application
+has one additional algebraic gate.
+
+\begin{lemma}[Involutions of a simple nonsplit self-extension]
+\label{lem:simple-extension-involution}
+Over a characteristic-zero differential field, let
+\[
+0\longrightarrow M\longrightarrow E\longrightarrow M\longrightarrow0
+\]
+be a nonsplit self-extension of a simple differential module \(M\).  Every
+differential-module involution of \(E\) is \(+I\) or \(-I\).
+\end{lemma}
+
+\begin{proof}
+For an involution \(C\), the operators
+\(P_\pm=(I\pm C)/2\) are complementary differential-module idempotents.
+If \(C\ne\pm I\), both images are nonzero.  Since \(E\) has composition
+length two with identical simple factors, both images have length one and
+give a direct-sum splitting of the extension, a contradiction.
+\end{proof}
+
+The repository certifies the generic nonsplit Bach self-extension, but it
+does not yet contain a generic simplicity or full endomorphism-ring
+certificate for \(M_{\rm RW}\).  Therefore
+Lemma~\ref{lem:simple-extension-involution} is exact, while the stronger
+conclusion that the Bach block admits only \(\pm I\) remains conditional on
+that gate.  Proposition~\ref{prop:no-local-c}, which excludes the
+branch-resolving involution directly from the cocycle equation, is
+unconditional.  This distinction also separates endpoint Krein
+diagonalization, which is algebraic, from invariant bulk diagonalization,
+which would require differential-module projectors.
+
 The endpoint form supplies a complementary positivity obstruction, stated
 after its exact Gram is displayed below.
 
@@ -883,6 +1021,38 @@ If \(G(E,w)=0\) for every \(w\in W\), then \(E\) lies in the radical of
 \]
 That plane has inertia \((1,1,0)\), independently of \(b\).
 \end{proof}
+
+\begin{corollary}[Positive-graph and cotangent obstructions]
+\label{cor:positive-graph}
+In the normalized endpoint space
+\(J=\operatorname{diag}(1,-1,-1)\), no closed uniformly positive subspace
+contains the pure Einstein channel.  A nonnegative subspace can contain it
+only as a null direction.  Moreover, if \(B_2\) is the two-dimensional
+spin-two trace space and \(E\subset B_2\) the Einstein line, then the flux
+pairing induces the canonical isomorphism
+\[
+B_2/E\cong E^*.
+\]
+\end{corollary}
+
+\begin{proof}
+A maximal uniformly positive line is the graph of
+\(K:\C\to\C^2\) with \(\|K\|<1\).  In the signature basis the Einstein
+vector is \((1,1,0)/\sqrt2\), whose inclusion requires
+\(K(1)=(1,0)\) and hence \(\|K\|=1\).  For the second statement, the
+spin-two plane is nondegenerate and hyperbolic, so \(E^\perp=E\).  The map
+\[
+[x]\longmapsto\bigl(e\mapsto G(e,x)\bigr)
+\]
+is therefore a well-defined nondegenerate duality from \(B_2/E\) to \(E^*\).
+\end{proof}
+
+For wave packets the global graph statement uses an operator contraction
+between the positive and negative Hilbert summands.  The pointwise
+\(K(\omega)\) formulation applies to decomposable,
+frequency-multiplication-invariant subspaces.  The endpoint duality is
+canonical, but choosing a metric lift is only an affine splitting and does
+not split the radial differential module.
 
 Thus the inherited pure-Weyl form presents a trilemma.  Retaining only the
 Einstein directions gives a null, degenerate sector.  Adding a symplectic
@@ -1449,11 +1619,16 @@ and the action current supplies
 H_{\mathcal H^+}+T_+^\dagger G_+T_+-T_-^\dagger G_-T_-=0.
 \]
 
-\begin{center}
-\begin{tabularx}{0.98\textwidth}{@{}Y Y Y@{}}
+\small
+\begin{longtable}{@{}p{0.30\textwidth}p{0.28\textwidth}p{0.36\textwidth}@{}}
 \toprule
 Statement & Evidence state & Boundary\\
 \midrule
+\endfirsthead
+\toprule
+Statement & Evidence state & Boundary\\
+\midrule
+\endhead
 Ricci-factorized Hessian and null Einstein kernel &
 Exact symbolic theorem &
 Every four-dimensional Ricci-flat background, modulo Euler boundary/corner terms\\
@@ -1463,6 +1638,10 @@ Every four-dimensional Ricci-flat background; boundary divergence retained\\
 Second-order parent system and factorized Einstein current &
 Exact symbolic theorem with independent certificate &
 Every four-dimensional Ricci-flat background modulo Euler boundary/corner terms\\
+Parent resolvent identity and rank-one Laurent algebra &
+Exact algebra; QNM specialization conditional &
+Gauge-fixed invertible Einstein operator; a physical pole additionally
+requires the analytic Fredholm and bounded-insertion hypotheses\\
 Euler cut current and Einstein packet isotropy &
 Exact symbolic and reduced-mode theorem with mutation tests &
 Finite-radius smooth compact-frequency core; endpoint interchange conditional\\
@@ -1475,6 +1654,14 @@ Axial \(\ell=2\)\\
 No rational spin-one/spin-two intertwiner &
 Exact symbolic theorem with mutation tests &
 Axial \(\ell=2\), fixed real \(\omega>0\)\\
+Simple-self-extension involution lemma &
+Exact categorical theorem; Bach application conditional &
+Characteristic zero and a simple composition factor; generic
+Regge--Wheeler simplicity is not certified\\
+Positive-graph obstruction and \(B_2/E\simeq E^*\) &
+Exact endpoint Krein theorem &
+Axial spin-two endpoint trace space; pointwise packet graph form only for
+decomposable frequency-invariant subspaces\\
 Incoming factor Gram and \(T_-\in GL(3,\C)\) &
 Exact plus computer-assisted theorem &
 Every real \(\omega>0\), \(M=1\) normalization\\
@@ -1500,8 +1687,8 @@ Time-domain boundedness and decay &
 Open &
 Requires threshold, limiting-absorption and resolvent bounds\\
 \bottomrule
-\end{tabularx}
-\end{center}
+\end{longtable}
+\normalsize
 
 \section{Conclusions}
 
@@ -1518,8 +1705,13 @@ curvature on Ricci-flat backgrounds;
 whose target-gauge sector is a wrong-sign Maxwell field;
 \item a second-order auxiliary-tensor parent action makes the source/target
 Einstein pairing and its canonical null lift explicit;
+\item its exact inverse expresses the metric response as two Einstein
+resolvents separated by one algebraic trace-reversal insertion;
 \item the Einstein packet self-current is an Euler cut contribution, so the
 Einstein wave-packet subspace is isotropic but nonradical;
+\item no uniformly positive closed endpoint subspace contains the pure
+Einstein channel, and the spin-two quotient is canonically dual to the
+Einstein line;
 \item the carrier belongs to an exact non-split filtered module;
 \item neither the spin-one quotient nor the repeated spin-two partner can be
 reorganized into a positive local branch decomposition by the rational
@@ -1543,10 +1735,15 @@ The next two calculations are sharply defined.  First, compute the explicit
 typed \(T_+\) and reflection matrix over a substantial real-frequency band
 using the correlated partial-jet transport.  Second, construct the analytic
 Fredholm QNM realization needed to promote Theorem~\ref{thm:ep2} to a
-second-order Green-resolvent pole.  In parallel, the polar problem should be
-reorganized around the standard Zerilli--Moncrief map and the target-gauge
-Maxwell scalar, so that only the lift, endpoint units, and extension shears
-are computed afresh.
+second-order Green-resolvent pole.  The parent formulation gives a cheaper
+audit inside that second task: compare
+\(\langle\widetilde f_n,\mathcal Af_n\rangle\) with the radial extension
+overlap before attempting a full resolvent promotion.  A separate
+time-domain control should compare direct six-state evolution with the
+sequential retarded convolution of Remark~\ref{rem:parent-experiments}.  In
+parallel, the polar problem should be reorganized around the standard
+Zerilli--Moncrief map and the target-gauge Maxwell scalar, so that only the
+lift, endpoint units, and extension shears are computed afresh.
 
 \appendix
 
@@ -1809,6 +2006,7 @@ The principal machine authorities are:
 \item \cert{black_hole_programme/phase4/covariant_einstein_maxwell_carrier_v1/certificate.json};
 \item \cert{black_hole_programme/phase4/weyl_euler_current_transgression_v1/certificate.json};
 \item \cert{black_hole_programme/phase4/second_order_parent_flux_v1/certificate.json};
+\item \cert{black_hole_programme/phase4/parent_resolvent_krein_obstructions_v1/certificate.json};
 \item \cert{black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json};
 \item \cert{black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/full_contour_winding_v1/certificate.json};
 \item \cert{black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/local_selector_v1/certificate.json};
@@ -1838,9 +2036,16 @@ pairing;
 \item a polar global connection theorem;
 \item a generic implication from radial nonsplitting to a time-translation
 Jordan block;
+\item generic simplicity or the complete differential endomorphism ring of
+the Regge--Wheeler module, and hence the unconditional claim that every
+rational involution of the Bach spin-two block is \(\pm I\);
 \item an analytic Fredholm realization of the damped QNM boundary problem;
 \item a physical second-order Green-resolvent pole or generalized ringdown
 term;
+\item equality of the parent QNM overlap with the normalized radial overlap
+before scalar-projection, commutator, and endpoint terms are audited;
+\item a Schwarzschild retarded-convolution evolution theorem or the
+flat-space biwave control in the curved implementation;
 \item limiting absorption, uniform resolvent bounds, threshold control,
 bounded time evolution, decay, or completeness;
 \item a positive quantum metric, particles, a BRST physical Hilbert space,

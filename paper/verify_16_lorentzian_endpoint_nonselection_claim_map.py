@@ -70,6 +70,12 @@ def main() -> None:
         "No rational spin-one/spin-two intertwiner",
         "Schouten--Einstein carrier factorization",
         "Second-order parent system and factorized current",
+        "Parent resolvent identity",
+        "Conditional simple-QNM Laurent coefficient",
+        "Involutions of a simple nonsplit self-extension",
+        "Positive-graph and cotangent obstructions",
+        "regularized parent overlap",
+        "flat-space biwave kernel",
         "N_B(\\Gamma)=2N_2(\\Gamma)+N_1(\\Gamma)",
         "not, by itself, a Jordan block of the time-translation generator",
         "Euler cut current and Einstein wave-packet isotropy",
@@ -96,6 +102,10 @@ def main() -> None:
         "the polar associated graded is globally certified",
         "generic radial nonsplitting is a time-Jordan block",
         "the complete polar parent Gram is certified",
+        "the Bach spin-two block admits only \\(C=\\pm I\\)",
+        "the generic Regge--Wheeler differential module is simple",
+        "the Schwarzschild retarded propagator is established",
+        "the parent overlap equals the radial overlap without endpoint terms",
     ]
     for phrase in forbidden_phrases:
         if phrase in text:
@@ -249,6 +259,29 @@ def main() -> None:
         "complete_polar_parent_gram",
     ]:
         require_flag(parent, key, False, "second-order parent")
+    parent_resolvent = json.loads(
+        (
+            ROOT
+            / authorities["parent_resolvent_krein_obstructions"]["path"]
+        ).read_text()
+    )
+    for key in [
+        "parent_block_inverse_exact",
+        "rank_one_double_coefficient_algebra_exact",
+        "simple_self_extension_involution_lemma_exact",
+        "branch_resolving_rational_involution_excluded",
+        "cotangent_type_endpoint_duality_exact",
+        "retarded_convolution_formal_identity",
+    ]:
+        require_flag(parent_resolvent, key, True, "parent resolvent")
+    for key in [
+        "physical_qnm_double_pole_established",
+        "generalized_ringdown_established",
+        "generic_rw_module_simplicity_certified",
+        "only_plus_minus_identity_on_bach_spin_two_certified",
+        "schwarzschild_retarded_evolution_certified",
+    ]:
+        require_flag(parent_resolvent, key, False, "parent resolvent")
     static = json.loads(
         (ROOT / authorities["static_normalized_control"]["path"]).read_text()
     )
@@ -264,7 +297,7 @@ def main() -> None:
     coverage = json.loads(coverage_path.read_text())
     if coverage.get("claim_map_sha256") != digest(claim_path):
         fail("coverage-to-claim-map hash drift")
-    if len(coverage.get("nodes", [])) != 11:
+    if len(coverage.get("nodes", [])) != 13:
         fail("coverage claim count drift")
     print("PASS: Paper 16 claim map and semantic boundaries")
 

@@ -1,28 +1,28 @@
 {
   "schema": "paper16-endpoint-nonselection-tier-receipt-v1",
   "status": "ACTIVE_CHECKPOINT",
-  "source_commit": "909a06f4fff32a1bd718ec3010abd4e0feb2f7db",
+  "source_commit": "98f276076d33b3b695f45d9ebda6770755bb711b",
   "artifacts": {
     "paper_tex": {
       "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl.tex",
-      "sha256": "fe0fdf99353e36facfa43b7cb4fac9253cdd12e924ebc54b28aad855360c9cec"
+      "sha256": "647cc06810e19070dcb858d361b9de3d51093116dec32c5ca7305fe32a2e5b69"
     },
     "paper_pdf": {
       "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl.pdf",
-      "sha256": "e28c612503988912480cd49445509c7d6b9294f12190fc21c73a7b92f005d0c2",
-      "pages": 26
+      "sha256": "c110c37555877d1115e4daeecc02c15505e3d9c687215165894a0641056b0fa1",
+      "pages": 27
     },
     "claim_map": {
       "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl-claim-map.json",
-      "sha256": "aaada63159ddce2c3452ade5dacb6989b28c906fbb5b2f56451427660ce0a18d"
+      "sha256": "2d7ae9764367ad4ceba779365b9ebf37f082a647fa3eb648d873f02a18a74ed9"
     },
     "coverage": {
       "path": "planning/paper-coverage/phase4-paper16-endpoint-nonselection-overlay-2026-07-24.json",
-      "sha256": "2bf520430a8ae01f9add94d5067e856c3e72fabffa9a8a3f5be26f13ff2a25d6"
+      "sha256": "ae2205f7c2bdd29ea8667969cbfe81de4bc49825b4dbb6eaa0676e55508bbbd6"
     },
     "computational_supplement": {
       "path": "paper/16-endpoint-nonselection-computational-supplement.tex",
-      "sha256": "0e90cb3cd0484280ed1dbbdfcf63d2c85a9baa2a049c40b43146a5d3c1550a9c"
+      "sha256": "e1e3effc684ef1bb65ee025f677e110368a71219dcc3c634a9ae9f45969b5526"
     }
   },
   "tests": {
@@ -34,24 +34,29 @@
     "tier1": [
       "claim-map generator --check passes",
       "independent semantic verifier passes",
-      "eleven claim-boundary and mutation tests pass",
+      "fifteen claim-boundary and mutation tests pass",
       "exact all-ell threshold verifier and six tests pass",
       "universal Hessian/intertwiner verifier and five tests pass",
       "Schouten-Einstein/Maxwell carrier verifier and tests pass",
       "Euler transgression verifier and seven tests pass",
-      "second-order parent-flux verifier and seven tests pass"
+      "second-order parent-flux verifier and seven tests pass",
+      "parent-resolvent/Krein-obstruction verifier and eight tests pass"
     ],
     "tier2": "not triggered: no pre-existing operator or certificate was modified",
     "tier3": "not run: manuscript remains an active checkpoint pending explicit Tplus"
   },
   "open_gates": [
     "the explicit typed Tplus band has not reached the r=4 matching section",
-    "the Fredholm promotion of the connection EP2 remains open"
+    "the Fredholm promotion of the connection EP2 remains open",
+    "generic Regge-Wheeler simplicity or a full endomorphism-ring certificate remains open",
+    "the parent-overlap and retarded-convolution experiments are specified but not executed"
   ],
   "does_not_establish": [
     "a submission freeze",
     "explicit Tplus amplitudes",
     "a Green-resolvent second-order pole",
+    "an unconditional only-plus-or-minus-identity theorem for the Bach spin-two block",
+    "a Schwarzschild retarded propagator",
     "time-domain stability or quantum unitarity"
   ]
 }
