@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phase 3 H4 Pluecker radial-refinement certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "dependency_tags",
+    "result",
+    "hashes",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-h4-plucker-radial-refinement-certificate-v1"
+    },
+    "status": {
+      "enum": [
+        "CERTIFIED_RADIAL_REFINEMENT_PASS",
+        "CERTIFIED_RADIAL_REFINEMENT_OBSTRUCTION"
+      ]
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
+    },
+    "result": {"type": "object"},
+    "hashes": {"type": "object"},
+    "does_not_establish": {"type": "array"}
+  },
+  "additionalProperties": true
+}

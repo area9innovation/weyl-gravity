@@ -1,0 +1,27 @@
+{
+  "certificate_sha256": "c68d59fb5a1287db791bbc1a751d19d874fc758097b35e9bd5558598632dadfa",
+  "commands": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_horizon_h4_plucker_radial_refinement_v1.run_refinement",
+      "elapsed_milliseconds": 548898,
+      "status": "PASS_EXPECTED_TYPED_OBSTRUCTION"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_horizon_h4_plucker_radial_refinement_v1.verify",
+      "elapsed_milliseconds": 40,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_horizon_h4_plucker_radial_refinement_v1.test_radial_refinement",
+      "elapsed_milliseconds": 898,
+      "status": "PASS"
+    }
+  ],
+  "schema": "phase3-axial-h4-plucker-radial-refinement-receipt-v1",
+  "tiers": {
+    "tier0": "source parse, exact artifact hashes, scoped diff check",
+    "tier1": "independent verifier and mutation tests",
+    "tier2": "not run: no promoted operator, schema, or downstream certificate input changed",
+    "tier3": "not run: bounded negative experiment, not a freeze or theorem promotion"
+  }
+}

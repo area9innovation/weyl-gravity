@@ -1,0 +1,279 @@
+{
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "does_not_establish": [
+    "rank loss when a refined interval still contains zero",
+    "transport beyond shell 4 segment 3",
+    "the complete 23-shell horizon transport",
+    "canonical endpoint amplitudes",
+    "a horizon-to-infinity scattering theorem"
+  ],
+  "hashes": {
+    "README.md": "bf05833df522e7f9c9662248df5f7b383d0b3dd45a098665a4ec3e9cd33f9e4b",
+    "__init__.py": "ada08ab052bb86b45c5359742858a536e6643ad9ce04442a6cc863ed580d8a29",
+    "attempts/q00_child_0_radial_2x.forge": "ed61632bc3ff95ef45f45ecf36ff8ee42f0d95bb94d3f18398f195a96ddf386a",
+    "attempts/q00_child_0_radial_2x_compile.txt": "f3af862f8ee674c0fb9010cbf0915f049fba8dca9403fd4d0be8a84800bc9310",
+    "attempts/q00_child_0_radial_2x_metadata.json": "9d870c95f94fb8ee6710792b3b0034511fc4c848514ecf567d4b7b859e9cba96",
+    "attempts/q00_child_0_radial_2x_run.txt": "dff66a7eaa8061df7e5e374bd9c5c9f87754c1bf9f2bf517fd876651d3a71005",
+    "attempts/q00_child_0_radial_4x.forge": "8d59ad80efa717f4ee14953d774ca14fd6e27070b8157912623d8176b17707c3",
+    "attempts/q00_child_0_radial_4x_compile.txt": "34093f48a535d036e5993027316b1f001b3879e68bd0291485632468c86a9662",
+    "attempts/q00_child_0_radial_4x_metadata.json": "5c13964347939d928255ecefc583a69dcc853c9f85cda6ad55eca5aeefc46d00",
+    "attempts/q00_child_0_radial_4x_run.txt": "5d1d0947dec9c36b5720196f218a198a483e5973b2a1ba032c51d78194b6a9e5",
+    "attempts/q00_child_1_radial_2x.forge": "1ba9646966b4ec26c28788bd2bcd587e42ebb2851776827ccccb470a5fc235df",
+    "attempts/q00_child_1_radial_2x_compile.txt": "86c42bff6f4f47b49ea4662bfeafbbf4181e6723805f513de8397f64364a8d71",
+    "attempts/q00_child_1_radial_2x_metadata.json": "92f6ea864096e657eb05777ce4c7aa529e7730ac83d1526bba0b8c2e590d586b",
+    "attempts/q00_child_1_radial_2x_run.txt": "7d4e02fbde6d2e2cadeb7eebcaefbe6c8565055bb24ec67c74210077c29fc22c",
+    "attempts/q00_child_1_radial_4x.forge": "06d6c03f5438fb7f57f1a8848ed9a0f7551a5d0e770db419d77e4228869d5eed",
+    "attempts/q00_child_1_radial_4x_compile.txt": "5857576691e0535b34e9a32f1c54f95d45066825a58b6218e8fc75fd832f3f06",
+    "attempts/q00_child_1_radial_4x_metadata.json": "6745c21cd7104335c6c34de0284e6b5bbb3cf2af3da4f61f5d64c118c97a5deb",
+    "attempts/q00_child_1_radial_4x_run.txt": "93f701aa9e9972b2a8f78b8407d30f388c051c63ec8f6ec153c4fbaad010aa9f",
+    "finalize.py": "d13140312e9b9e975276eeaa5db5902e60f44c68dab5f1ba202e57d4ae7d627e",
+    "produce.py": "630d85d9e1ef1d2d9498e1ffecdb079206710caf1187cf205f73b0aa3a5d2540",
+    "refinement_manifest.json": "196ddac39bd9a1f0ad1c2a74d88a68507debddfdb21acd3789d833201d9aabc5",
+    "report.md": "fa9b73fd25897bfb27957267e42724be101013e50664c3360531dbfed1ebed40",
+    "run_refinement.py": "c95c2d9f6724685957561ba84a7728e3fe632ef323b3bdaf217383c38d89948c",
+    "schema.json": "30bec08664154047f399069c70ccdb4b6db5ed46868d01d3769307552c4d7c6d",
+    "test_radial_refinement.py": "f45312fc2faa4c6b512b0e7ae1aedf6d8defd367117c419c61237dba4b878476",
+    "verify.py": "760bf278f3e0dd54337edb5e2d413c9d6caf89e52b6c0bc80d98f0a6f0487cbd"
+  },
+  "interpretation": "A PASS certifies a nonzero Pluecker witness only at the declared refined boundary. A refusal means the validated raw coordinates and midpoint-Hermitian functional still contain zero; it does not establish rank loss.",
+  "result": {
+    "attempts": [
+      {
+        "children": [
+          {
+            "child_index": 0,
+            "compile_log_path": "attempts/q00_child_0_radial_2x_compile.txt",
+            "defect": {
+              "hi": "3.6340097815461235e-07",
+              "interval_width": "7.267870603733542e-07",
+              "lo": "-3.6338608221874176e-07",
+              "norm": "0.9759420719980942"
+            },
+            "elapsed_milliseconds": 134898,
+            "factor": 2,
+            "frequency_cell": [
+              "1/2",
+              "4097/8192"
+            ],
+            "metadata_path": "attempts/q00_child_0_radial_2x_metadata.json",
+            "pass_witness": null,
+            "prefix_heartbeat_hashes": [
+              "c92308cbf836a82b6241e0819c6589461fde3fc1240ff6bc6acf1ab9432017dc",
+              "9f72011187f980e09eb47c1c452870f6beab2d83e054d9e12b3f40ed261f1f4b",
+              "a8ab1239108a4846e0df391d1ab0a1c030e517c76fe14275f35cd774e25966e7",
+              "c256e7c397ef64f7baa8bc973775c2ee15f5e95e5f32bffcfda583977d4bbff7",
+              "447184cac00abad6884cfedf6452fd07f1c45211f795762d9f90ce577d5a549f",
+              "c33e650718e68bdbec88227be3303d94bad753f16e8f4df91148e0a598eee706",
+              "6a4e42cff259f11373948c339fec3b19a951e30d70b8f364768c0346aea2ecf2",
+              "2b904d8946d141bea9977be1707aba459f41a2d661f3fdde92a0783265bebcb7",
+              "3c3405fb4f33f97f88ad3b3f50bac23fddabe075383b6664d63e97b338ae19a5",
+              "5fad9c29db799fca14e6ef542de223d05a0988df3b1587d885e88bed639097e4",
+              "9a270868a5e2b0e224297ec3727f56db2e29892ef293afaeb007fe174c9eedba",
+              "5037e350717c358901c89c677d34b55df1c7b3d8e8695c5ee8665ae9081ce351",
+              "48f1d0d46a10710c7efd24103da883f7ebf851e066c238fcc243a177aba1f0c6",
+              "18065b846209a0545f537d53a22332df60b2e07850873040436ef01e6163ca99",
+              "0ac91d93a76a97a29db177c35bd91164156936cd78bc3f3dd0a69dc8d4c0ed9b",
+              "9538e9cf360e85e5c49c348a71d910d0d19e880c33004a75f72d1c41fe2b3a48",
+              "10878f95ef85332bba57cbab865774cfd3f76b5aec7edbcc33f4eba3d27da26a",
+              "f5129562a37af2cd00365531ceabfdb99fc570aaa15b9393a0dc37862b02b220",
+              "e0bc2b8968733c74f4268e24b95954358227e61b125b9980363e8734e6970c14"
+            ],
+            "process_exit": 3,
+            "radial_panel_width": "1/134217728",
+            "refusal": {
+              "correlated_code": 35,
+              "panel": 213,
+              "raw_code": 32
+            },
+            "run_log_path": "attempts/q00_child_0_radial_2x_run.txt",
+            "run_log_sha256": "dff66a7eaa8061df7e5e374bd9c5c9f87754c1bf9f2bf517fd876651d3a71005",
+            "source_path": "attempts/q00_child_0_radial_2x.forge",
+            "source_sha256": "ed61632bc3ff95ef45f45ecf36ff8ee42f0d95bb94d3f18398f195a96ddf386a",
+            "status": "REFUSED"
+          },
+          {
+            "child_index": 1,
+            "compile_log_path": "attempts/q00_child_1_radial_2x_compile.txt",
+            "defect": {
+              "hi": "3.6447793139035106e-07",
+              "interval_width": "7.289409610691441e-07",
+              "lo": "-3.644630296787931e-07",
+              "norm": "0.978773917872688"
+            },
+            "elapsed_milliseconds": 131643,
+            "factor": 2,
+            "frequency_cell": [
+              "4097/8192",
+              "2049/4096"
+            ],
+            "metadata_path": "attempts/q00_child_1_radial_2x_metadata.json",
+            "pass_witness": null,
+            "prefix_heartbeat_hashes": [
+              "9b8b79144ee66467b52aa322300fdc02f8619f0c7d12f9ea9b77ef048f870345",
+              "ea2181fc06a1c69ffe586ccc7b02489d8818dc3f03f62565c99678992c61a28c",
+              "ccf5c7ed4dab7a83892d4a191c2a170e14bb8570c493dca244b7569da849d359",
+              "586349ef344b8771ce7a24af1c90e50aba84cadd346fcd2cc28d3389dc05f289",
+              "88a1a44beb503433970d2c841c42a53e4f59d9913b23b18daa2d3c88382a0b3d",
+              "cfbd4f2d06fdcda2d8a4f20e12d43ea3fe5a65a5152e366ecae3b18e177e924c",
+              "59a27d67404c016d45a205d30c5069757d0d91168597dbaaf9e0a5f021f8ebf7",
+              "427c862ae0e885da769fa731ed772103b65d9e55acb81c05fbcc280ea01bedc9",
+              "753ee561a3f3cfb5b9c76726d6a31640599a005d84f5e099f3b97588e46b6413",
+              "67995e9c5d476e5649b9f1b609f9ceee6fa937894fc79db0bca797fca3493e7c",
+              "49fc094b7f517417256d0b2d2ad4642385a921ef41cbf8186a9f935f07fe8c0a",
+              "7ff33f30c8be26cb299ec50740b284cc1649929c6d78232e013751b26729b7bc",
+              "dc5691ba8d7c4bef9973a3a99c4ddecd30b3e20345ae377cf21135ddf039b834",
+              "a4db4f002c6fad04b42b6aec8d93f0f2303cc958a409536561bd0ca916887da9",
+              "f09c4aea192b7c8ff795971f53adebfa85222d2221e07d0705f10b8a260d50ed",
+              "e7a301778dc40f99beac126793b2b0324a115f2fe30920ba53f833cc8c0fd186",
+              "cde451db25609b56e00ea378d58bca088f0a1b684d83a1d01f3e167a9bd5907c",
+              "c929537f9baf9b3de768ea5aa6c72432c3da4b0fdfbe4a2b19943097c499e127",
+              "bfcb2783de26f64e6f05151e702e07994780f0aef6f66a5774b0006f9cd3bcad"
+            ],
+            "process_exit": 3,
+            "radial_panel_width": "1/134217728",
+            "refusal": {
+              "correlated_code": 35,
+              "panel": 213,
+              "raw_code": 32
+            },
+            "run_log_path": "attempts/q00_child_1_radial_2x_run.txt",
+            "run_log_sha256": "7d4e02fbde6d2e2cadeb7eebcaefbe6c8565055bb24ec67c74210077c29fc22c",
+            "source_path": "attempts/q00_child_1_radial_2x.forge",
+            "source_sha256": "1ba9646966b4ec26c28788bd2bcd587e42ebb2851776827ccccb470a5fc235df",
+            "status": "REFUSED"
+          }
+        ],
+        "cover_pass": false,
+        "factor": 2,
+        "radial_panel_width": "1/134217728"
+      },
+      {
+        "children": [
+          {
+            "child_index": 0,
+            "compile_log_path": "attempts/q00_child_0_radial_4x_compile.txt",
+            "defect": {
+              "hi": "3.611161710261836e-07",
+              "interval_width": "7.222174461165777e-07",
+              "lo": "-3.611012750903941e-07",
+              "norm": "0.9697711349975546"
+            },
+            "elapsed_milliseconds": 141557,
+            "factor": 4,
+            "frequency_cell": [
+              "1/2",
+              "4097/8192"
+            ],
+            "metadata_path": "attempts/q00_child_0_radial_4x_metadata.json",
+            "pass_witness": null,
+            "prefix_heartbeat_hashes": [
+              "c92308cbf836a82b6241e0819c6589461fde3fc1240ff6bc6acf1ab9432017dc",
+              "9f72011187f980e09eb47c1c452870f6beab2d83e054d9e12b3f40ed261f1f4b",
+              "a8ab1239108a4846e0df391d1ab0a1c030e517c76fe14275f35cd774e25966e7",
+              "c256e7c397ef64f7baa8bc973775c2ee15f5e95e5f32bffcfda583977d4bbff7",
+              "447184cac00abad6884cfedf6452fd07f1c45211f795762d9f90ce577d5a549f",
+              "c33e650718e68bdbec88227be3303d94bad753f16e8f4df91148e0a598eee706",
+              "6a4e42cff259f11373948c339fec3b19a951e30d70b8f364768c0346aea2ecf2",
+              "2b904d8946d141bea9977be1707aba459f41a2d661f3fdde92a0783265bebcb7",
+              "3c3405fb4f33f97f88ad3b3f50bac23fddabe075383b6664d63e97b338ae19a5",
+              "5fad9c29db799fca14e6ef542de223d05a0988df3b1587d885e88bed639097e4",
+              "9a270868a5e2b0e224297ec3727f56db2e29892ef293afaeb007fe174c9eedba",
+              "5037e350717c358901c89c677d34b55df1c7b3d8e8695c5ee8665ae9081ce351",
+              "48f1d0d46a10710c7efd24103da883f7ebf851e066c238fcc243a177aba1f0c6",
+              "18065b846209a0545f537d53a22332df60b2e07850873040436ef01e6163ca99",
+              "0ac91d93a76a97a29db177c35bd91164156936cd78bc3f3dd0a69dc8d4c0ed9b",
+              "9538e9cf360e85e5c49c348a71d910d0d19e880c33004a75f72d1c41fe2b3a48",
+              "10878f95ef85332bba57cbab865774cfd3f76b5aec7edbcc33f4eba3d27da26a",
+              "f5129562a37af2cd00365531ceabfdb99fc570aaa15b9393a0dc37862b02b220",
+              "e0bc2b8968733c74f4268e24b95954358227e61b125b9980363e8734e6970c14"
+            ],
+            "process_exit": 3,
+            "radial_panel_width": "1/268435456",
+            "refusal": {
+              "correlated_code": 35,
+              "panel": 426,
+              "raw_code": 32
+            },
+            "run_log_path": "attempts/q00_child_0_radial_4x_run.txt",
+            "run_log_sha256": "5d1d0947dec9c36b5720196f218a198a483e5973b2a1ba032c51d78194b6a9e5",
+            "source_path": "attempts/q00_child_0_radial_4x.forge",
+            "source_sha256": "8d59ad80efa717f4ee14953d774ca14fd6e27070b8157912623d8176b17707c3",
+            "status": "REFUSED"
+          },
+          {
+            "child_index": 1,
+            "compile_log_path": "attempts/q00_child_1_radial_4x_compile.txt",
+            "defect": {
+              "hi": "3.621859881565942e-07",
+              "interval_width": "7.243570746017115e-07",
+              "lo": "-3.621710864451173e-07",
+              "norm": "0.9725840983426557"
+            },
+            "elapsed_milliseconds": 140800,
+            "factor": 4,
+            "frequency_cell": [
+              "4097/8192",
+              "2049/4096"
+            ],
+            "metadata_path": "attempts/q00_child_1_radial_4x_metadata.json",
+            "pass_witness": null,
+            "prefix_heartbeat_hashes": [
+              "9b8b79144ee66467b52aa322300fdc02f8619f0c7d12f9ea9b77ef048f870345",
+              "ea2181fc06a1c69ffe586ccc7b02489d8818dc3f03f62565c99678992c61a28c",
+              "ccf5c7ed4dab7a83892d4a191c2a170e14bb8570c493dca244b7569da849d359",
+              "586349ef344b8771ce7a24af1c90e50aba84cadd346fcd2cc28d3389dc05f289",
+              "88a1a44beb503433970d2c841c42a53e4f59d9913b23b18daa2d3c88382a0b3d",
+              "cfbd4f2d06fdcda2d8a4f20e12d43ea3fe5a65a5152e366ecae3b18e177e924c",
+              "59a27d67404c016d45a205d30c5069757d0d91168597dbaaf9e0a5f021f8ebf7",
+              "427c862ae0e885da769fa731ed772103b65d9e55acb81c05fbcc280ea01bedc9",
+              "753ee561a3f3cfb5b9c76726d6a31640599a005d84f5e099f3b97588e46b6413",
+              "67995e9c5d476e5649b9f1b609f9ceee6fa937894fc79db0bca797fca3493e7c",
+              "49fc094b7f517417256d0b2d2ad4642385a921ef41cbf8186a9f935f07fe8c0a",
+              "7ff33f30c8be26cb299ec50740b284cc1649929c6d78232e013751b26729b7bc",
+              "dc5691ba8d7c4bef9973a3a99c4ddecd30b3e20345ae377cf21135ddf039b834",
+              "a4db4f002c6fad04b42b6aec8d93f0f2303cc958a409536561bd0ca916887da9",
+              "f09c4aea192b7c8ff795971f53adebfa85222d2221e07d0705f10b8a260d50ed",
+              "e7a301778dc40f99beac126793b2b0324a115f2fe30920ba53f833cc8c0fd186",
+              "cde451db25609b56e00ea378d58bca088f0a1b684d83a1d01f3e167a9bd5907c",
+              "c929537f9baf9b3de768ea5aa6c72432c3da4b0fdfbe4a2b19943097c499e127",
+              "bfcb2783de26f64e6f05151e702e07994780f0aef6f66a5774b0006f9cd3bcad"
+            ],
+            "process_exit": 3,
+            "radial_panel_width": "1/268435456",
+            "refusal": {
+              "correlated_code": 35,
+              "panel": 426,
+              "raw_code": 32
+            },
+            "run_log_path": "attempts/q00_child_1_radial_4x_run.txt",
+            "run_log_sha256": "93f701aa9e9972b2a8f78b8407d30f388c051c63ec8f6ec153c4fbaad010aa9f",
+            "source_path": "attempts/q00_child_1_radial_4x.forge",
+            "source_sha256": "06d6c03f5438fb7f57f1a8848ed9a0f7551a5d0e770db419d77e4228869d5eed",
+            "status": "REFUSED"
+          }
+        ],
+        "cover_pass": false,
+        "factor": 4,
+        "radial_panel_width": "1/268435456"
+      }
+    ],
+    "common_refusal_left_boundary": "725/134217728",
+    "decisive_factor": null,
+    "factors": [
+      2,
+      4
+    ],
+    "rank_loss_established": false,
+    "target": {
+      "segment": 3,
+      "shell": 4
+    }
+  },
+  "schema": "phase3-axial-h4-plucker-radial-refinement-certificate-v1",
+  "status": "CERTIFIED_RADIAL_REFINEMENT_OBSTRUCTION",
+  "upstream_certificate_sha256": "14fb85004516b03e6ecfffa566ac2a2ee8080168ddd125b3754cedb6391f4003",
+  "upstream_manifest_sha256": "7fbd0ef15ea0d1442ff03b93b06b24c05f2ac5c60e3dfb1784b0c6a28b7881e3"
+}
