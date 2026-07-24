@@ -1,0 +1,411 @@
+{
+  "claim_flags": {
+    "C_rank_one": true,
+    "E_rank_one": true,
+    "H4_pass_certified": false,
+    "T_plus_recovered": false,
+    "bounded_transport_certified": false,
+    "endpoint_partial_jet_frames_constructed": false,
+    "exact_full_six_state_factor_gauge_crosswalk": true,
+    "missing_C_derived": true,
+    "partial_spin_two_row_jet_exact": true,
+    "scattering_identity_certified": false,
+    "tau_only_H4_repair_certified": false
+  },
+  "declaration": {
+    "background": "Schwarzschild exterior M=1",
+    "coefficient_field": "Q(I,omega,r)",
+    "derivative": "d/dr",
+    "new_state_order": [
+      "metric_RW_tangent",
+      "carrier_RW_base",
+      "Lx_spin_one"
+    ],
+    "old_state_order": [
+      "carrier_4",
+      "metric_2"
+    ],
+    "sector": "axial ell=2",
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "compatible endpoint partial-jet frames",
+    "the outgoing trace map T_plus",
+    "a global scattering identity",
+    "bounded interval or direct-integral transport",
+    "an H4 exterior-norm pass",
+    "time-domain stability or a Lorentzian causal theorem"
+  ],
+  "endpoint_hypotheses": {
+    "constructed_here": false,
+    "required_for_Tpm_equals_partial_jet": [
+      "endpoint frames induced by one common tau-analytic family",
+      "the same common horizon frame on base and tangent rows",
+      "tau-analytic preservation of declared boundary classes",
+      "tau-independent spin-one block in the selected normalization",
+      "explicit permutation from endpoint factor order to jet order"
+    ]
+  },
+  "exact_blocks": {
+    "A_RW": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "6*(r - 1)/(r**2*(r - 2))",
+        "-2*I*(omega*r**2 - I)/(r*(r - 2))"
+      ]
+    ],
+    "A_x": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "-2*I*(3*omega*r**2 - 4*omega*r - I)/(r*(r - 2)**2)",
+        "-2*I*(omega*r**2 - 3*I*r + 3*I)/(r*(r - 2))"
+      ]
+    ],
+    "C_00_witness": "-r*(3*omega**2*r**4 - 4*omega**2*r**3 - 10*I*omega*r**2 + 12*I*omega*r + 12*r**2 - 40*r + 32)/(8*(omega*r - 2*I)**2)",
+    "C_Lx_to_metric_RW": [
+      [
+        "-r*(3*omega**2*r**4 - 4*omega**2*r**3 - 10*I*omega*r**2 + 12*I*omega*r + 12*r**2 - 40*r + 32)/(8*(omega*r - 2*I)**2)",
+        "-r**2*(r - 2)*(omega**2*r**3 - I*omega*r**2 - 2*I*omega*r + 4*r - 8)/(8*(omega*r - 2*I)**2)"
+      ],
+      [
+        "(3*omega**2*r**4 - 4*omega**2*r**3 - 10*I*omega*r**2 + 12*I*omega*r + 12*r**2 - 40*r + 32)/(8*(omega*r - 2*I)**2)",
+        "r*(r - 2)*(omega**2*r**3 - I*omega*r**2 - 2*I*omega*r + 4*r - 8)/(8*(omega*r - 2*I)**2)"
+      ]
+    ],
+    "C_rank": 1,
+    "D_Lx_to_carrier_RW": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "E_RW_self_extension": [
+      [
+        "I*(3*r - 2)*(3*omega*r - 8*I)/(4*r*(omega*r - 2*I)**2)",
+        "(3*omega**2*r**3 - 3*I*omega*r**2 - 6*I*omega*r + 8*r - 16)/(4*(omega*r - 2*I)**2)"
+      ],
+      [
+        "-I*(3*r - 2)*(3*omega*r - 8*I)/(4*r**2*(omega*r - 2*I)**2)",
+        "-(3*omega**2*r**3 - 3*I*omega*r**2 - 6*I*omega*r + 8*r - 16)/(4*r*(omega*r - 2*I)**2)"
+      ]
+    ],
+    "E_rank": 1
+  },
+  "full_transform_crosswalk": {
+    "coordinate_map_old_to_new": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-I*omega*(omega*r**2 + I*r - 3*I)/(r*(omega*r - 2*I))",
+        "-omega*(r - 2)/(2*(omega*r - 2*I))"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-3*omega*(r - 1)/(r**2*(omega*r - 2*I))",
+        "omega*(r - 2)/(2*r*(omega*r - 2*I))"
+      ],
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "2/(r**2*(r - 2))",
+        "2/(r*(r - 2))",
+        "-2*I*omega/(r*(r - 2))",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "6/(r**2*(r - 2)**2)",
+        "-2*I*(2*omega*r - I)/(r*(r - 2)**2)",
+        "4*I*omega/(r**2*(r - 2))",
+        "-2*I*omega/(r*(r - 2))",
+        "0",
+        "0"
+      ]
+    ],
+    "exact_identity_verified": true,
+    "expected_block_matrix": [
+      [
+        "0",
+        "1",
+        "I*(3*r - 2)*(3*omega*r - 8*I)/(4*r*(omega*r - 2*I)**2)",
+        "(3*omega**2*r**3 - 3*I*omega*r**2 - 6*I*omega*r + 8*r - 16)/(4*(omega*r - 2*I)**2)",
+        "-r*(3*omega**2*r**4 - 4*omega**2*r**3 - 10*I*omega*r**2 + 12*I*omega*r + 12*r**2 - 40*r + 32)/(8*(omega*r - 2*I)**2)",
+        "-r**2*(r - 2)*(omega**2*r**3 - I*omega*r**2 - 2*I*omega*r + 4*r - 8)/(8*(omega*r - 2*I)**2)"
+      ],
+      [
+        "6*(r - 1)/(r**2*(r - 2))",
+        "-2*I*(omega*r**2 - I)/(r*(r - 2))",
+        "-I*(3*r - 2)*(3*omega*r - 8*I)/(4*r**2*(omega*r - 2*I)**2)",
+        "-(3*omega**2*r**3 - 3*I*omega*r**2 - 6*I*omega*r + 8*r - 16)/(4*r*(omega*r - 2*I)**2)",
+        "(3*omega**2*r**4 - 4*omega**2*r**3 - 10*I*omega*r**2 + 12*I*omega*r + 12*r**2 - 40*r + 32)/(8*(omega*r - 2*I)**2)",
+        "r*(r - 2)*(omega**2*r**3 - I*omega*r**2 - 2*I*omega*r + 4*r - 8)/(8*(omega*r - 2*I)**2)"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "6*(r - 1)/(r**2*(r - 2))",
+        "-2*I*(omega*r**2 - I)/(r*(r - 2))",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-2*I*(3*omega*r**2 - 4*omega*r - I)/(r*(r - 2)**2)",
+        "-2*I*(omega*r**2 - 3*I*r + 3*I)/(r*(r - 2))"
+      ]
+    ],
+    "transformation_law": "G_prime*G_inverse+G*flow6*G_inverse",
+    "transformed_full_6x6": [
+      [
+        "0",
+        "1",
+        "I*(3*r - 2)*(3*omega*r - 8*I)/(4*r*(omega*r - 2*I)**2)",
+        "(3*omega**2*r**3 - 3*I*omega*r**2 - 6*I*omega*r + 8*r - 16)/(4*(omega*r - 2*I)**2)",
+        "-r*(3*omega**2*r**4 - 4*omega**2*r**3 - 10*I*omega*r**2 + 12*I*omega*r + 12*r**2 - 40*r + 32)/(8*(omega*r - 2*I)**2)",
+        "-r**2*(r - 2)*(omega**2*r**3 - I*omega*r**2 - 2*I*omega*r + 4*r - 8)/(8*(omega*r - 2*I)**2)"
+      ],
+      [
+        "6*(r - 1)/(r**2*(r - 2))",
+        "-2*I*(omega*r**2 - I)/(r*(r - 2))",
+        "-I*(3*r - 2)*(3*omega*r - 8*I)/(4*r**2*(omega*r - 2*I)**2)",
+        "-(3*omega**2*r**3 - 3*I*omega*r**2 - 6*I*omega*r + 8*r - 16)/(4*r*(omega*r - 2*I)**2)",
+        "(3*omega**2*r**4 - 4*omega**2*r**3 - 10*I*omega*r**2 + 12*I*omega*r + 12*r**2 - 40*r + 32)/(8*(omega*r - 2*I)**2)",
+        "r*(r - 2)*(omega**2*r**3 - I*omega*r**2 - 2*I*omega*r + 4*r - 8)/(8*(omega*r - 2*I)**2)"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "6*(r - 1)/(r**2*(r - 2))",
+        "-2*I*(omega*r**2 - I)/(r*(r - 2))",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-2*I*(3*omega*r**2 - 4*omega*r - I)/(r*(r - 2)**2)",
+        "-2*I*(omega*r**2 - 3*I*r + 3*I)/(r*(r - 2))"
+      ]
+    ]
+  },
+  "imports": {
+    "complete_reconstruction": {
+      "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+      "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990"
+    },
+    "global_connection_v5": {
+      "path": "black_hole_programme/phase3/axial_global_connection_matrix_v5/certificate.json",
+      "sha256": "f8aac49a93f58dcaea9b8cd266cb20f8b4df6be819afe0f0264c41597e87752c"
+    },
+    "h4_exterior_norm": {
+      "path": "black_hole_programme/phase3/axial_horizon_h4_plucker_exterior_norm_v1/certificate.json",
+      "sha256": "b2974aee77213b90bddad27f15be12d08775fa7166a7e6a29d0c7464d2d9a600"
+    },
+    "h4_radial_refinement": {
+      "path": "black_hole_programme/phase3/axial_horizon_h4_plucker_radial_refinement_v1/certificate.json",
+      "sha256": "c68d59fb5a1287db791bbc1a751d19d874fc758097b35e9bd5558598632dadfa"
+    },
+    "spin_two_extension": {
+      "path": "black_hole_programme/phase3/axial_spin_two_scattering_extension_preflight/certificate.json",
+      "sha256": "863dcf40f9d94e5ceec8518639ade6ea27b5357d302719f7669c53caf4d7f10c"
+    },
+    "triangular_factorization": {
+      "path": "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json",
+      "sha256": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "partial_jet": {
+    "base_four_state_connection_B0": [
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "6*(r - 1)/(r**2*(r - 2))",
+        "-2*I*(omega*r**2 - I)/(r*(r - 2))",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "-2*I*(3*omega*r**2 - 4*omega*r - I)/(r*(r - 2)**2)",
+        "-2*I*(omega*r**2 - 3*I*r + 3*I)/(r*(r - 2))"
+      ]
+    ],
+    "differentiated_equations": "X0'=A*X0+E*X1+C*Z; X1'=A*X1+D*Z; Z'=A_x*Z",
+    "dual_number_ring": "Q(I,omega,r)[epsilon]/(epsilon**2)",
+    "exact_identity_verified": true,
+    "expanded_six_state_connection": [
+      [
+        "0",
+        "1",
+        "I*(3*r - 2)*(3*omega*r - 8*I)/(4*r*(omega*r - 2*I)**2)",
+        "(3*omega**2*r**3 - 3*I*omega*r**2 - 6*I*omega*r + 8*r - 16)/(4*(omega*r - 2*I)**2)",
+        "-r*(3*omega**2*r**4 - 4*omega**2*r**3 - 10*I*omega*r**2 + 12*I*omega*r + 12*r**2 - 40*r + 32)/(8*(omega*r - 2*I)**2)",
+        "-r**2*(r - 2)*(omega**2*r**3 - I*omega*r**2 - 2*I*omega*r + 4*r - 8)/(8*(omega*r - 2*I)**2)"
+      ],
+      [
+        "6*(r - 1)/(r**2*(r - 2))",
+        "-2*I*(omega*r**2 - I)/(r*(r - 2))",
+        "-I*(3*r - 2)*(3*omega*r - 8*I)/(4*r**2*(omega*r - 2*I)**2)",
+        "-(3*omega**2*r**3 - 3*I*omega*r**2 - 6*I*omega*r + 8*r - 16)/(4*r*(omega*r - 2*I)**2)",
+        "(3*omega**2*r**4 - 4*omega**2*r**3 - 10*I*omega*r**2 + 12*I*omega*r + 12*r**2 - 40*r + 32)/(8*(omega*r - 2*I)**2)",
+        "r*(r - 2)*(omega**2*r**3 - I*omega*r**2 - 2*I*omega*r + 4*r - 8)/(8*(omega*r - 2*I)**2)"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "6*(r - 1)/(r**2*(r - 2))",
+        "-2*I*(omega*r**2 - I)/(r*(r - 2))",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-2*I*(3*omega*r**2 - 4*omega*r - I)/(r*(r - 2)**2)",
+        "-2*I*(omega*r**2 - 3*I*r + 3*I)/(r*(r - 2))"
+      ]
+    ],
+    "family": "B(tau)=B0+tau*B1",
+    "held_tau_independent": "spin-one state Z and A_x",
+    "state_module": "(epsilon*M_RW direct_sum M_RW) direct_sum M_x",
+    "tangent_four_state_connection_B1": [
+      [
+        "I*(3*r - 2)*(3*omega*r - 8*I)/(4*r*(omega*r - 2*I)**2)",
+        "(3*omega**2*r**3 - 3*I*omega*r**2 - 6*I*omega*r + 8*r - 16)/(4*(omega*r - 2*I)**2)",
+        "-r*(3*omega**2*r**4 - 4*omega**2*r**3 - 10*I*omega*r**2 + 12*I*omega*r + 12*r**2 - 40*r + 32)/(8*(omega*r - 2*I)**2)",
+        "-r**2*(r - 2)*(omega**2*r**3 - I*omega*r**2 - 2*I*omega*r + 4*r - 8)/(8*(omega*r - 2*I)**2)"
+      ],
+      [
+        "-I*(3*r - 2)*(3*omega*r - 8*I)/(4*r**2*(omega*r - 2*I)**2)",
+        "-(3*omega**2*r**3 - 3*I*omega*r**2 - 6*I*omega*r + 8*r - 16)/(4*r*(omega*r - 2*I)**2)",
+        "(3*omega**2*r**4 - 4*omega**2*r**3 - 10*I*omega*r**2 + 12*I*omega*r + 12*r**2 - 40*r + 32)/(8*(omega*r - 2*I)**2)",
+        "r*(r - 2)*(omega**2*r**3 - I*omega*r**2 - 2*I*omega*r + 4*r - 8)/(8*(omega*r - 2*I)**2)"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "type": "spin-two-row partial first jet; not the full jet of a four-state module"
+  },
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_PARTIAL_JET_TRANSPORT_CROSSWALK",
+  "schema": "phase3-axial-partial-jet-transport-crosswalk-v1",
+  "schema_path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/schema.json",
+  "status": "EXACT_LOCAL_PARTIAL_JET_CROSSWALK_ENDPOINT_OPEN",
+  "transport_method_boundary": {
+    "bounded_transport_attempted": false,
+    "global_v5_relevance": "The partial jet targets the structured lower-lift decorrelation diagnosed in global connection v5, but no validated transport has been run here.",
+    "reason": "The H4 exterior-norm rail already retained a shared omega generator across all real coordinates; its refusal was a Taylor-product/exterior-norm conditioning failure, not independent-column tau decorrelation.",
+    "required_successor_algebra": "IvTaylor4_omega tensor Q(I,omega,r)[epsilon]/(epsilon**2)",
+    "tau_dual_alone_cures_H4": false
+  }
+}

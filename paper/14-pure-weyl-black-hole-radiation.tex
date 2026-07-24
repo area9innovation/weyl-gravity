@@ -1328,6 +1328,33 @@ On this partially dualized triangular category,
  J(C_1C_2)=J(C_1)J(C_2),\qquad
  J(C^{-1})=J(C)^{-1}.
 \]
+The exact factor gauge realizes this structure locally.  Use the state order
+\[
+ (x_0,x_1,z)
+ =({\rm metric\ RW},{\rm carrier\ RW},L_x).
+\]
+Direct transformation of the complete six-state connection gives
+\[
+ \frac{d}{dr}
+ \begin{pmatrix}x_0\\x_1\\z\end{pmatrix}
+ =
+ \begin{pmatrix}
+ A&E&C\\
+ 0&A&D\\
+ 0&0&A_x
+ \end{pmatrix}
+ \begin{pmatrix}x_0\\x_1\\z\end{pmatrix},
+ \qquad
+ E=USJ,\qquad C=USN,
+\]
+where both \(E\) and the newly extracted mixed block \(C\) have rank one.
+This is precisely the spin-two-row partial jet of
+\[
+ {\cal B}(\tau)=
+ \begin{pmatrix}A+\tau E&D+\tau C\\0&A_x\end{pmatrix},
+\]
+with \(z\) held \(\tau\)-independent.  It is not the full jet of all four
+base states, which would be eight-dimensional.
 Consequently a typed identity \(T_\pm=J(C_\pm)\) would imply
 \[
  T_+T_-^{-1}=J(C_+C_-^{-1})
@@ -1943,6 +1970,7 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_qnm_parameter_deformation_cohomology_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_projective_cocycle_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_intrinsic_deformation_jet_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json}\\
 Polar restriction-stable module and invariant current filtration &
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json}\\
@@ -2004,7 +2032,13 @@ dual-number tangent in one correlated algebra, so that inversion and frame
 composition retain the \(bd-a_2c\) cancellation exactly.  This is an
 implementation route, not yet a recovered outgoing map; the endpoint
 recurrences and frame normalizers must first be shown to arise from the same
-analytic jet family.  Complex-frequency work is likewise limited to the existing
+analytic jet family.  Moreover the dual-number coefficient ring must sit
+over a shared validated \(\omega\)-Taylor model.  Dual numbers over
+independent interval boxes would retain the \(\tau\)-jet but still lose the
+frequency correlations that caused the original refusal.  This construction
+does not repair the separate H4 exterior-norm witness, whose shared-frequency
+rail failed for a different sum-of-squares conditioning reason.
+Complex-frequency work is likewise limited to the existing
 meromorphic axial continuation; no Wronskian zeros, quasinormal spectrum, or
 stability theorem has been computed.
 

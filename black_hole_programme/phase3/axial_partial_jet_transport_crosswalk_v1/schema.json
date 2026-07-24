@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase3-axial-partial-jet-transport-crosswalk-v1",
+  "title": "Axial partial-jet transport crosswalk certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_path",
+    "result_id",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "declaration",
+    "imports",
+    "exact_blocks",
+    "full_transform_crosswalk",
+    "partial_jet",
+    "transport_method_boundary",
+    "endpoint_hypotheses",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-partial-jet-transport-crosswalk-v1"
+    },
+    "schema_path": {"type": "string"},
+    "result_id": {
+      "const": "PURE_WEYL_PHASE3_AXIAL_PARTIAL_JET_TRANSPORT_CROSSWALK"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle": {"const": "CLASSIFIED"},
+    "status": {
+      "const": "EXACT_LOCAL_PARTIAL_JET_CROSSWALK_ENDPOINT_OPEN"
+    },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background",
+        "sector",
+        "coefficient_field",
+        "derivative",
+        "old_state_order",
+        "new_state_order"
+      ]
+    },
+    "imports": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": {"type": "string"},
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "exact_blocks": {
+      "type": "object",
+      "required": [
+        "A_RW",
+        "A_x",
+        "D_Lx_to_carrier_RW",
+        "E_RW_self_extension",
+        "C_Lx_to_metric_RW",
+        "E_rank",
+        "C_rank",
+        "C_00_witness"
+      ],
+      "properties": {
+        "A_RW": {"$ref": "#/$defs/matrix"},
+        "A_x": {"$ref": "#/$defs/matrix"},
+        "D_Lx_to_carrier_RW": {"$ref": "#/$defs/matrix"},
+        "E_RW_self_extension": {"$ref": "#/$defs/matrix"},
+        "C_Lx_to_metric_RW": {"$ref": "#/$defs/matrix"},
+        "E_rank": {"const": 1},
+        "C_rank": {"const": 1},
+        "C_00_witness": {"type": "string"}
+      }
+    },
+    "full_transform_crosswalk": {
+      "type": "object",
+      "required": [
+        "coordinate_map_old_to_new",
+        "transformation_law",
+        "transformed_full_6x6",
+        "expected_block_matrix",
+        "exact_identity_verified"
+      ],
+      "properties": {
+        "coordinate_map_old_to_new": {"$ref": "#/$defs/matrix"},
+        "transformation_law": {"type": "string"},
+        "transformed_full_6x6": {"$ref": "#/$defs/matrix"},
+        "expected_block_matrix": {"$ref": "#/$defs/matrix"},
+        "exact_identity_verified": {"const": true}
+      }
+    },
+    "partial_jet": {
+      "type": "object",
+      "required": [
+        "type",
+        "state_module",
+        "dual_number_ring",
+        "base_four_state_connection_B0",
+        "tangent_four_state_connection_B1",
+        "family",
+        "held_tau_independent",
+        "differentiated_equations",
+        "expanded_six_state_connection",
+        "exact_identity_verified"
+      ],
+      "properties": {
+        "type": {"type": "string"},
+        "state_module": {"type": "string"},
+        "dual_number_ring": {"type": "string"},
+        "base_four_state_connection_B0": {"$ref": "#/$defs/matrix"},
+        "tangent_four_state_connection_B1": {"$ref": "#/$defs/matrix"},
+        "family": {"type": "string"},
+        "held_tau_independent": {"type": "string"},
+        "differentiated_equations": {"type": "string"},
+        "expanded_six_state_connection": {"$ref": "#/$defs/matrix"},
+        "exact_identity_verified": {"const": true}
+      }
+    },
+    "transport_method_boundary": {
+      "type": "object",
+      "required": [
+        "tau_dual_alone_cures_H4",
+        "reason",
+        "required_successor_algebra",
+        "global_v5_relevance",
+        "bounded_transport_attempted"
+      ],
+      "properties": {
+        "tau_dual_alone_cures_H4": {"const": false},
+        "reason": {"type": "string"},
+        "required_successor_algebra": {"type": "string"},
+        "global_v5_relevance": {"type": "string"},
+        "bounded_transport_attempted": {"const": false}
+      }
+    },
+    "endpoint_hypotheses": {
+      "type": "object",
+      "required": ["required_for_Tpm_equals_partial_jet", "constructed_here"],
+      "properties": {
+        "required_for_Tpm_equals_partial_jet": {
+          "type": "array",
+          "minItems": 5,
+          "items": {"type": "string"}
+        },
+        "constructed_here": {"const": false}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exact_full_six_state_factor_gauge_crosswalk",
+        "missing_C_derived",
+        "E_rank_one",
+        "C_rank_one",
+        "partial_spin_two_row_jet_exact",
+        "tau_only_H4_repair_certified",
+        "endpoint_partial_jet_frames_constructed",
+        "T_plus_recovered",
+        "scattering_identity_certified",
+        "bounded_transport_certified",
+        "H4_pass_certified"
+      ],
+      "properties": {
+        "exact_full_six_state_factor_gauge_crosswalk": {"const": true},
+        "missing_C_derived": {"const": true},
+        "E_rank_one": {"const": true},
+        "C_rank_one": {"const": true},
+        "partial_spin_two_row_jet_exact": {"const": true},
+        "tau_only_H4_repair_certified": {"const": false},
+        "endpoint_partial_jet_frames_constructed": {"const": false},
+        "T_plus_recovered": {"const": false},
+        "scattering_identity_certified": {"const": false},
+        "bounded_transport_certified": {"const": false},
+        "H4_pass_certified": {"const": false}
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string"}
+    }
+  },
+  "$defs": {
+    "matrix": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "items": {"type": "string"}
+      }
+    }
+  }
+}

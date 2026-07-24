@@ -1,0 +1,71 @@
+{
+  "schema": "phase3-axial-partial-jet-transport-crosswalk-receipt-v1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "status": "EXACT_LOCAL_PARTIAL_JET_CROSSWALK_ENDPOINT_OPEN",
+  "artifacts": {
+    "README.md": "057fc4007ba6fad52a50cd5e19ccbfa13bcf150c25acea70f25a60020d8029bf",
+    "__init__.py": "78a6e2cc9f7272e316069f34247a75dae5b1fa888be468f6154cd9e560fea673",
+    "certificate.json": "bc42171c9bbfbc3d14cfdc355ead7ee92ed936b4ee82fa9975f01aecbb5f6cb4",
+    "produce.py": "faeeaf5f00d03e54d3c6722b11a12ad505548cd5bb856f74d3a03f8b5e29ca43",
+    "report.md": "246480b2d0bf61c7c5738d8bb53c40254a6af3aaa38eb87c15f98307018e36f4",
+    "schema.json": "d9ff483afe71ae3ade823e86c90448e127241a177c9282892cb0f7a092d426d8",
+    "test_partial_jet_crosswalk.py": "639345be8279b8fe085b829686da3febcf45d4e31ff471a580750f2b344fb0e8",
+    "verify.py": "03d931110a719eb2422ae46750d7c187c5fc5f54c2821c9f7dd9b418beb449b0"
+  },
+  "tests": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/*.py",
+      "status": "PASS",
+      "exit": 0
+    },
+    {
+      "tier": 0,
+      "command": "python3 jsonschema.validate(certificate.json, schema.json)",
+      "status": "PASS",
+      "exit": 0
+    },
+    {
+      "tier": 0,
+      "command": "git diff --check -- black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1",
+      "status": "PASS",
+      "exit": 0
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_transport_crosswalk_v1.produce",
+      "elapsed_seconds": 5.54,
+      "status": "PASS",
+      "exit": 0
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_transport_crosswalk_v1.verify",
+      "elapsed_seconds": 3.02,
+      "status": "PASS",
+      "exit": 0
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_partial_jet_transport_crosswalk_v1.test_partial_jet_crosswalk",
+      "elapsed_seconds": 12.60,
+      "tests": 6,
+      "status": "PASS",
+      "exit": 0
+    }
+  ],
+  "higher_tiers": {
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No imported mathematical input or transitive certificate-chain artifact changed; this package audits a new exact crosswalk over immutable hashed inputs."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a scoped LOCAL-ALGEBRAIC/REDUCED-MODE classification, not a freeze, release, shared-core change, or lifecycle promotion."
+    }
+  },
+  "claim_boundary": "The complete local six-state factor-gauge crosswalk, the missing rank-one C block, and the spin-two-row partial-jet identity are exact. Compatible endpoint jet frames, T_plus, scattering, bounded transport, and an H4 pass remain open."
+}
