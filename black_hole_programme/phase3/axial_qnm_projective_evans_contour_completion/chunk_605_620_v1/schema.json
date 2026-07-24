@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "status", "lifecycle", "dependency_tags", "claim_flags", "method", "result", "imports", "runs", "does_not_establish"],
+  "properties": {
+    "schema": {"const": "phase3-axial-qnm-projective-evans-contour-chunk-605-620-v1"},
+    "status": {"const": "FIXED_CHILD_GRID_BOUNDARY_PREFIX_EXTENDED_FAIL_CLOSED"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"contains": {"const": "REDUCED-MODE"}},
+    "claim_flags": {"type": "object"},
+    "method": {"type": "object"},
+    "result": {"type": "object"},
+    "imports": {"type": "object", "minProperties": 4},
+    "runs": {"type": "object", "required": ["raw", "aggregate"]},
+    "does_not_establish": {"type": "array", "minItems": 8}
+  },
+  "additionalProperties": false
+}
