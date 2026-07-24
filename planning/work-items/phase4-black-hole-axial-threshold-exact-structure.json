@@ -1,0 +1,42 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-axial-threshold-exact-structure",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-axial-threshold-exact-structure",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-axial-threshold-exact-structure.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-threshold",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Certify the exact zero-frequency Regge-Wheeler solutions, absence of a bounded zero-energy scalar resonance, the threshold decomposition of the intrinsic projective cocycle, and its explicit spin-two primitive.",
+    "stop_condition": "Produce an exact rational/symbolic certificate and independent verifier proving the displayed spin-one and spin-two zero modes, reduction-of-order companions, cocycle identity and primitive. Record the low-frequency Jost matching and b/a^2 scaling only as conjectural targets until a two-region Volterra remainder is certified.",
+    "current_gate": "Exact symbolic threshold identities and a fail-closed separation between exact algebra and the still-open low-frequency matching remainder",
+    "forbid": "no punctured-neighbourhood Tplus invertibility theorem without the two-region Volterra estimate; no all-frequency outgoing theorem; no normalization-sensitive b/a^2 asymptotic promoted from formal matching; no time-domain or quantum claim",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-global-finite-flux-channel-classification-v3"
+    ],
+    "activates": [
+      "a two-region Volterra threshold estimate for the scalar Jost coefficients",
+      "an endpoint-compatible threshold estimate for the repeated-spin-two extension ratio"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase4/axial_threshold_exact_structure_v1/",
+      "reports/phase4-black-hole-axial-threshold-exact-structure-2026-07-24.md",
+      "planning/work-items/phase4-black-hole-axial-threshold-exact-structure.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use exact SymPy simplification as the producer and a separately written direct polynomial/rational verifier. Keep the scattering asymptotics in does_not_establish until an actual overlap estimate exists.",
+    "input_commit": "6c788306ab3cb7c3e05174569094bbdf3f93f977",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "Exact versus asymptotic matching is a mandatory type boundary."
+    ]
+  },
+  "edges": []
+}
