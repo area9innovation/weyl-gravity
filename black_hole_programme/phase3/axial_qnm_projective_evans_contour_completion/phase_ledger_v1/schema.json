@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "claim_flags",
+    "result",
+    "artifact",
+    "imports",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-qnm-projective-evans-phase-ledger-certificate-v1"
+    },
+    "status": {
+      "const": "PARTIAL_BOUNDARY_LIFTED_PHASE_CERTIFIED"
+    },
+    "lifecycle": {
+      "const": "CLASSIFIED"
+    },
+    "dependency_tags": {
+      "contains": {
+        "const": "REDUCED-MODE"
+      }
+    },
+    "claim_flags": {
+      "type": "object"
+    },
+    "result": {
+      "type": "object"
+    },
+    "artifact": {
+      "type": "object",
+      "required": ["path", "sha256"]
+    },
+    "imports": {
+      "type": "object",
+      "minProperties": 3
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 8
+    }
+  },
+  "additionalProperties": false
+}
