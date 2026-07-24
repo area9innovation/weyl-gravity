@@ -1,0 +1,175 @@
+{
+  "claim_flags": {
+    "QNM_or_EP2_certified": false,
+    "QNM_root_count_certified": false,
+    "full_contour_boundary_nonvanishing_certified": false,
+    "horizon_fixed_chart_one_panel_transport_certified": true,
+    "panel0_mismatch_excludes_zero": true,
+    "panel0_two_sided_projective_mismatch_certified": true,
+    "shared_omega_generator_certified": true,
+    "typed_horizon_projective_line_certified": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "projective mismatch nonvanishing on the other 511 panels",
+    "boundary nonvanishing on a closed contour",
+    "an interval-Newton or argument-principle QNM count",
+    "a Smith selector, defective QNM or EP2",
+    "a complete outgoing Bach frame or physical T_plus",
+    "time-domain stability or any LORENTZIAN-CAUSAL claim"
+  ],
+  "imports": {
+    "common_affine_certificate": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/certificate.json",
+      "sha256": "72c0d1bd6c7a0bae299d87791b89d265ec39f715f598576a0e1cca88db540fee"
+    },
+    "common_affine_run": {
+      "path": "black_hole_programme/phase3/axial_qnm_common_affine_evans_boundary_v1/common-affine-run.json",
+      "sha256": "7479aa17930e08d48d42c2658a2e344038cf37ec216787cd84aed6f8b043ed3e"
+    },
+    "horizon_moving_phase": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_moving_phase_v1/certificate.json",
+      "sha256": "6d9d70d6e6006bf8d05ed6f6de9fa4d574eb189ed7348c7c170768477f94905f"
+    },
+    "horizon_projective_preflight": {
+      "path": "black_hole_programme/phase3/axial_qnm_horizon_projective_preflight_v1/certificate.json",
+      "sha256": "1507a19900007e528c3379e3892e768d55a50e3e6646b046e9b6567ac7712394"
+    },
+    "outgoing_projective_rail_v1": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v1/certificate.json",
+      "sha256": "7a2e7e80d34494ec766589af1efa83e6abc264da96f8995d6d0da3ab1465e53f"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "result": {
+    "arithmetic": "python-flint acb/arb, 128 bits",
+    "common_match": {
+      "generator": {
+        "id": "qnm-boundary-omega-0000-of-0512",
+        "modulus_upper": "[0.00015339783814829881350726827454599212595 +/- 2.77e-42]",
+        "omega_center": "[-0.34867215503597681625080895173596218228 +/- 4.34e-39] + [0.089115712805164559728865469878655858338 +/- 3.63e-40]j",
+        "omega_center_source": "[-0.34867215503597681625080895173596218228 +/- 3.41e-39] + [0.089115712805164559728865469878655858338 +/- 1.21e-40]j",
+        "panel": 0,
+        "panel_count": 512,
+        "shared_by_both_endpoints": true,
+        "shared_center": true
+      },
+      "match_radius": 32,
+      "mismatch": {
+        "excludes_zero": true,
+        "formula": "Delta=q_H-q_out+2*I*omega",
+        "independent_residual_radius": "[3.2532117244264900720884872285147054397e-5 +/- 3.92e-43]",
+        "modulus_lower": "[0.00017797152290985444570195903794139806007 +/- 5.45e-42]",
+        "polynomial_coefficients": [
+          "[0.00021238978909147629946241320197941604 +/- 4.72e-39] + [1.93900268071643330780595704254665e-5 +/- 3.17e-38]j",
+          "[0.0050348180609611258365387875812757556559 +/- 9.05e-41] + [0.0173375413280913541480554584950368735 +/- 3.97e-38]j"
+        ]
+      },
+      "omega_sensitivity": {
+        "center": "[0.0050348180609611258365387875812757556559 +/- 9.05e-41] + [0.0173375413280913541480554584950368735 +/- 3.97e-38]j",
+        "equality_rule": "both endpoint q_omega source coefficients are byte-identical to their q affine-slope source coefficients",
+        "equals_affine_slope": true,
+        "formula": "Delta_omega=q_H_omega-q_out_omega+2*I",
+        "independent_residual_radius": "[0.17549400955127102898245446338903167090 +/- 3.11e-39]"
+      },
+      "passed": true,
+      "tau_sensitivity": {
+        "center": "[-0.00027958732877400311721965975308989982295 +/- 6.19e-42] + [0.00066833802271801605028676146469379659720 +/- 8.79e-42]j",
+        "formula": "Delta_tau=q_H_tau-q_out_tau",
+        "independent_residual_radius": "[0.0019418601248068285840685886733306578792 +/- 1.82e-41]"
+      },
+      "typed_endpoint_fields": {
+        "all_post_normalization_values_finite": true,
+        "horizon": [
+          "q_H",
+          "q_H_tau",
+          "q_H_omega"
+        ],
+        "outgoing": [
+          "q_out",
+          "q_out_tau",
+          "q_out_omega"
+        ]
+      }
+    },
+    "horizon": {
+      "chart_gate": {
+        "chart": "q_H=(partial_x P_H)/P_H",
+        "chart_switch_used": false,
+        "dot_lambda_H": "0",
+        "fixed_chart": true,
+        "phase": "psi=exp(+I*omega*r_star)*P_H",
+        "pivot": "P_H",
+        "pivot_ball": "[1.000000098 +/- 5.99e-10] + [2.11e-7 +/- 5.58e-10]j",
+        "pivot_excludes_zero": true,
+        "pivot_modulus_lower": "[1.0000000974012899387400050075267221306 +/- 1.01e-38]",
+        "tau_log_phase_absent": true
+      },
+      "failure": null,
+      "initial_state": {
+        "post_normalization_finite": true,
+        "q_H": "[4.9e-8 +/- 3.00e-10] + [1.057e-7 +/- 7.90e-11]j",
+        "q_H_omega": "[2.31e-7 +/- 8.43e-10] + [1.97e-7 +/- 7.74e-10]j",
+        "q_H_tau": "[-1.35e-7 +/- 3.96e-10] + [3.0e-8 +/- 6.40e-10]j",
+        "radius": "8388609/4194304"
+      },
+      "passed": true,
+      "spectral_panel": {
+        "omega_box": "[-0.349 +/- 4.82e-4] + [0.089 +/- 2.70e-4]j",
+        "omega_center": "[-0.34867215503597681625080895173596218228 +/- 3.41e-39] + [0.089115712805164559728865469878655858338 +/- 1.21e-40]j",
+        "omega_remainder_radius": "[0.00021693730383005486133376702851091470732 +/- 3.52e-42]",
+        "panel": 0,
+        "panel_count": 512
+      },
+      "stage": null,
+      "transport": {
+        "from_r": "8388609/4194304",
+        "post_normalization_finite": true,
+        "q_H": "[5.2e-8 +/- 2.91e-10] + [1.12e-7 +/- 4.26e-10]j",
+        "q_H_omega": "[2.45e-7 +/- 8.58e-10] + [2.09e-7 +/- 8.07e-10]j",
+        "q_H_tau": "[+/- 1.43e-4] + [+/- 1.43e-4]j",
+        "reference_gate": {
+          "failure": null,
+          "reference_tail_upper": [
+            "[6.8833956761369660729622701578825971010e-15 +/- 1.48e-53]",
+            "[1.8643059323721744281699905232407843414e-8 +/- 3.36e-47]",
+            "[1.6325719529569068008774194245498470960e-14 +/- 2.95e-52]"
+          ]
+        },
+        "remainder_gate": {
+          "failure": null,
+          "q_omega_radius": "[7.7829772805835515133218040029601161064e-10 +/- 1.47e-48]",
+          "q_radius": "[1.1366469799617730182133251733461958924e-10 +/- 3.42e-48]",
+          "q_tau_radius": "[0.00014246398806263173914205417515922524236 +/- 3.54e-42]"
+        },
+        "step": "1/67108864",
+        "taylor_order": 26,
+        "to_r": "134217745/67108864"
+      }
+    },
+    "interface_gates": {
+      "post_normalization_finiteness": true,
+      "same_omega_center": true,
+      "same_panel_count": true,
+      "same_refined_panel": true,
+      "shared_omega_generator": true
+    },
+    "passed": true,
+    "schema": "phase3-axial-qnm-projective-evans-riccati-run-v2",
+    "scope": {
+      "common_match_panel_count": 1,
+      "common_match_radius": 32,
+      "full_closed_contour": false,
+      "horizon_radial_panel_count": 1
+    }
+  },
+  "run": {
+    "path": "black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v2/rail-v2-run.json",
+    "sha256": "1b9d89fb6e23a667fceabaaf996db704c70d45e0f9cdf6137447a47360da1200"
+  },
+  "schema": "phase3-axial-qnm-projective-evans-riccati-rail-v2",
+  "status": "TYPED_TWO_SIDED_PANEL0_PROJECTIVE_MISMATCH_CERTIFIED"
+}

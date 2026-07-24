@@ -2095,6 +2095,7 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_qnm_ecs_riccati_transport_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_projective_sensitivity_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v2/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_ecs_centered_projective_initializer_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_ecs_affine_projective_transport_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_horizon_projective_preflight_v1/certificate.json};
@@ -2114,6 +2115,7 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot-switch-certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot-switch-continuation-certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot-switch-subdivision-retry-certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot-switch-shared-remainder-preflight-certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_multipanel_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/certificate.json};
@@ -2121,6 +2123,7 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_common_remainder_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume32_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json}\\
 Polar restriction-stable module and invariant current filtration &
@@ -2256,7 +2259,16 @@ the 30 attempted next panels: 20 stop at non-finite projective
 normalization and 10 because the sole admissible \(e_2\) pivot contains
 zero.  Thus the endpoint switch itself remains certified, but its radial
 continuation beyond panel 30 requires a correlation-preserving
-representation stronger than rectangular Taylor balls.
+representation stronger than rectangular Taylor balls.  A bounded
+shared-remainder repair now supplies exactly that representation for the
+next step.  It computes one certified reciprocal of the projective pivot and
+reuses it in every normalized base and tangent coordinate, rather than
+forming a dependency-destroying squared-denominator enclosure.  Starting
+from the corrected panel-30 checkpoint, all post-normalization state and
+amplitude balls remain finite and panel 31 at
+\(\rho=3/8388608\) is certified.  A mutation test confirms that the eager
+squared-denominator implementation contains zero and fails.  This is one
+positive repaired panel, not yet a continuation to \(r=4\).
 
 At outgoing real infinity the corresponding reduced-phase representation
 has also passed its first local test.  Keeping \(e^{-2i\omega r_*}\)
@@ -2326,8 +2338,16 @@ normalized \(S_+\) state through 16 further panels,
 All generator and direct/dual correlation gates pass; the largest local
 tail is \(7.68\times10^{-10}\), the final base width is \(0.00135325\), and
 the normalized tangent width is \(0.737306\) (physical width \(377.501\)
-after restoring the factor 512).  Consequently analytic \(K_+\), the joint
-\((E,R,S)\) frame, and \(T_+\) remain fail closed.
+after restoring the factor 512).  A second checkpointed successor adds
+32 panels,
+\[
+ r:8175/256\longrightarrow8143/256 ,
+\]
+with generator 7315 and all direct/dual gates preserved.  Its largest tail
+is \(7.10\times10^{-10}\), final base width \(0.00147618\), and normalized
+tangent width \(0.775139\) (physical width \(396.871\)).  Consequently
+analytic \(K_+\), the joint \((E,R,S)\) frame, and \(T_+\) remain fail
+closed.
 Complex-frequency work has excluded the entire growth half-plane, but no
 damped QNM root, contour moment, or local Smith branch has been computed.
 At the QNM seed disk, the direct inverse-\(r\) forward recurrence also fails
@@ -2360,9 +2380,21 @@ pivot lower bound \(0.958711\).  One correlated order-26 step
 passes with remainder radii \(9.61\times10^{-5}\),
 \(1.88\times10^{-5}\), and \(2.25\times10^{-3}\) for
 \(q,q_\tau,q_\omega\), respectively.  This removes the homogeneous
-amplitude from the propagated state but does not yet supply the horizon
-line or a two-sided mismatch.  The mixed four-state tangent frame, a closed
-Evans boundary enclosure, and a root count remain open.
+amplitude from the propagated state.  A typed successor constructs the
+moving-phase horizon chart \(q_H=(\partial_xP_H)/P_H\), certifies
+\(\dot\lambda_H=0\), a pivot lower bound \(1.0000000974\), and one finite
+correlated horizon step.  At \(r=32\), reassembly from the content-addressed
+common-affine exports with the identical panel-zero generator gives
+\[
+ \Delta=q_H-q_++2i\omega,\qquad
+ \Delta_\tau=q_{H,\tau}-q_{+,\tau},\qquad
+ \Delta_\omega=q_{H,\omega}-q_{+,\omega}+2i .
+\]
+The physical mismatch again has modulus lower bound
+\(1.7797152291\times10^{-4}\).  Its tangent enclosures are finite but do not
+exclude zero, so no sensitivity or Smith conclusion is drawn.  The mixed
+four-state tangent frame, the other 511 contour panels, a closed Evans
+boundary enclosure, and a root count remain open.
 The first two-chart Riccati rail correctly removes amplitudes, but its
 coarse norm-only seed loses chart separation near \(r\simeq43.3\): the
 \(v_x/v\) enclosure contains zero while the reciprocal chart cannot yet be

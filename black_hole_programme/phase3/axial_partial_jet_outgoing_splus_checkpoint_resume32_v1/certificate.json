@@ -1,0 +1,88 @@
+{
+  "artifacts": {
+    "compile_exit": 0,
+    "compile_log": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume32_v1/compile.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "run_exit": 0,
+    "run_log": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume32_v1/run.txt",
+      "sha256": "99126d360fca587e81e0cf20ad7b3e2f05cbc512a7195c2705a739604e4ed670"
+    },
+    "source": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume32_v1/splus_checkpoint_resume32.forge",
+      "sha256": "d58f60acca12f938ec655cb533091b937e1b13a87591224b0556591de4effd1e"
+    }
+  },
+  "checkpoint": {
+    "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume32_v1/checkpoint.json",
+    "payload_sha256": "04cda6ed69c5a01f65e6607ff59d51247984c23c43393668b0fc4cd4604be782",
+    "sha256": "e62ad806054c998231fe1b0fa799f5c6fa248ef62a0f67ab7fd9d0ffaed84e26",
+    "written": true
+  },
+  "claim_flags": {
+    "K_plus_certified": false,
+    "S_32_panel_successor_certified": true,
+    "S_checkpoint_serialized": true,
+    "S_reaches_r31": false,
+    "T_plus_certified": false,
+    "common_generator_preserved": true,
+    "dual_direct_gate_checked_each_completed_panel": true,
+    "joint_E_R_S_frame_certified": false,
+    "scattering_or_flux_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "transport of S to r=31",
+    "a joint E/R/S outgoing frame",
+    "K_plus or T_plus",
+    "Stokes conservation, scattering, or flux"
+  ],
+  "imports": {
+    "predecessor_certificate": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume_v1/certificate.json",
+      "sha256": "f1e5c5cef0082c182f2426b0735c89c6bbe790f0e7707d96aa926770ed02e9db"
+    },
+    "predecessor_checkpoint": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume_v1/checkpoint.json",
+      "payload_sha256": "a7447b01e01c2bb1a790db74b258af7b05de33eacde0a9b1a93f449191fcc3b6",
+      "sha256": "4495cac06539d9433329d257d87d741b18213e2065e8f1a1b6aac30a452f836a"
+    },
+    "predecessor_source": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume_v1/splus_checkpoint_resume.forge",
+      "sha256": "a025f95e429c1e70ac2a23303f35623559203e418ecbec7e6ce774b0501c32db"
+    }
+  },
+  "lifecycle": "NUMERIC-ENCLOSURE",
+  "next_gate": "resume from the r=8143/256 checkpoint in another bounded successor, stopping on the first honest transport refusal",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_OUTGOING_SPLUS_CHECKPOINT_RESUME32",
+  "schema": "phase3-axial-partial-jet-outgoing-splus-checkpoint-resume32-v1",
+  "status": "SPLUS_CORRELATED_32_PANEL_SUCCESSOR_PASS",
+  "transport": {
+    "arithmetic": "IvTaylor4_omega tensor partial dual_tau",
+    "completed_panels": 32,
+    "generator": 7315,
+    "internal_tangent_normalization": "tangent/512 throughout",
+    "panel_width": "1/256",
+    "physical_tangent_restored_only_at_serialization": true,
+    "planned_panels": 32,
+    "start_radius": "8175/256",
+    "summary": {
+      "final_base": "0.0014761823907718848",
+      "final_normalized": "0.775138612605364",
+      "final_r": "31.80859375",
+      "final_tangent": "396.87096965394653",
+      "generator": "7315",
+      "max_base": "0.0014761823907718848",
+      "max_normalized": "0.775138612605364",
+      "max_tail": "7.101587425667512e-10",
+      "panels": "32",
+      "status": "PASS"
+    },
+    "target_radius": "8143/256"
+  }
+}

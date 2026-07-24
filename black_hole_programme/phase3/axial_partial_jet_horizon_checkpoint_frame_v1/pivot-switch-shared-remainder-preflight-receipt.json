@@ -1,0 +1,40 @@
+{
+  "claim_boundary": "one finite normalized step from corrected panel 30 to panel 31 using one shared reciprocal; no shell/r4/H4/T_plus promotion",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.pivot_switch_shared_remainder_preflight",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.produce_pivot_switch_shared_remainder_preflight --check",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.verify_pivot_switch_shared_remainder_preflight",
+    "python3 -m unittest -v black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.test_pivot_switch_shared_remainder_preflight"
+  ],
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "higher_tiers_not_run": "Tier 2/3 not required: bounded representation preflight only",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_HORIZON_SHARED_REMAINDER_PREFLIGHT",
+  "schema": "phase3-receipt-v1",
+  "status": "ONE_SHARED_RECIPROCAL_STEP_CERTIFIED",
+  "validation": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.pivot_switch_shared_remainder_preflight",
+      "elapsed_seconds": 10.92,
+      "output_sha256": "2664cfcfeb3ded658e805f2136a96b77c912a1e2a7cc97c491127a1638c3241b",
+      "status": "PASS_DETERMINISTIC_OUTPUT"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.produce_pivot_switch_shared_remainder_preflight --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.verify_pivot_switch_shared_remainder_preflight",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.test_pivot_switch_shared_remainder_preflight",
+      "status": "PASS_5_TESTS"
+    },
+    {
+      "command": "Draft202012Validator(schema).validate(certificate)",
+      "status": "PASS"
+    }
+  ]
+}
