@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase3-black-hole-axial-global-map-cover-provenance-repair-INTENT-ce5e71cde33c1047",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work intent",
+  "source": {"path": "tools/science-forge/program/events/phase3-black-hole-axial-global-map-cover-provenance-repair-INTENT-ce5e71cde33c1047.json", "span": null},
+  "body": {"event_kind": "WORK_INTENT", "actor": "phase3-global-cover-repair", "base_revision": "science-forge-ir-v0", "when": "2026-07-24T13:57:44Z", "seq": 1, "payload": {"target": "sf:program/work/phase3-black-hole-axial-global-map-cover-provenance-repair", "agent": "phase3-global-cover-repair", "lease": "exclusive", "base_commit": "dd6a7ad4e3d6fa04cbbb49ce7a2f783df5a139d2", "transaction_id": "2660180d43d1ab50", "allowlist_verdict": "within-allowlist", "intended_paths": ["black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_map_cover_manifest.json", "black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_map_cover_receipt.json", "black_hole_programme/phase3/axial_global_map_cover_provenance_repair_v1/report.md"], "verify_commands": ["python3 -m black_hole_programme.phase3.axial_global_connection_matrix_v5.chunks.verify_global_cover_manifest --repo-root . --manifest black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_map_cover_manifest.json --receipt black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_map_cover_receipt.json", "python3 -m unittest -v black_hole_programme.phase3.axial_global_connection_matrix_v5.chunks.tests.test_global_cover_manifest"]}, "native": {"authored_by": "sfc work-intent", "policy": "append-only (SPEC 4.5); an uncommitted delivery manifest — NO current_commit, NO test-success. Superseded by a later intent; sealed by WORK_COMMITTED."}},
+  "edges": [{"rel": "INTENDS", "to": "sf:program/work/phase3-black-hole-axial-global-map-cover-provenance-repair"}]
+}
