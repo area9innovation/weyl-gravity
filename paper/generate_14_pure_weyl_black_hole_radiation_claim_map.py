@@ -50,6 +50,11 @@ OUTGOING_POINT_REPORT = ROOT / "reports/phase3-axial-outgoing-population-point-h
 OUTGOING_CELL_CERT = ROOT / "black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/certificate.json"
 OUTGOING_CELL_RECEIPT = ROOT / "black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/receipt.json"
 OUTGOING_CELL_REPORT = ROOT / "reports/phase3-axial-outgoing-population-cell-half-2026-07-24.md"
+EVANS_V7_CERT = ROOT / "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v7/certificate.json"
+EVANS_V7B_CERT = ROOT / "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v7b/certificate.json"
+EVANS_V8_CERT = ROOT / "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v8/certificate.json"
+EVANS_V8_RECEIPT = ROOT / "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v8/receipt.json"
+EVANS_V8_REPORT = ROOT / "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v8/report.md"
 
 ACTIVE_SOURCES = [
     "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json",
@@ -130,7 +135,7 @@ def claim_map() -> dict:
     return {
         "schema": "paper-draft-source-map-v1",
         "paper_id": "PAPER_14_PURE_WEYL_BLACK_HOLE_RADIATION",
-        "result_id": "PAPER_14_PHASE3_GENERIC_OUTGOING_COMPLETENESS_UPDATE_V7",
+        "result_id": "PAPER_14_PHASE3_EVANS_PREFIX_123_512_UPDATE_V8",
         "lifecycle_state": "DRAFT_ALLOWED",
         "source_baseline": SOURCE_BASELINE,
         "manuscript": str(PAPER.relative_to(ROOT)),
@@ -209,6 +214,27 @@ def claim_map() -> dict:
                 "outgoing rank, full time-domain stability or a quantum claim"
             ),
         },
+        "phase3_evans_boundary_prefix_authority": {
+            "result_id": "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512",
+            "scope": (
+                "projective scalar Evans contour prefix through 123/512 "
+                "only; no closed contour or root count"
+            ),
+            "v7_certificate": str(EVANS_V7_CERT.relative_to(ROOT)),
+            "v7_certificate_sha256": digest(EVANS_V7_CERT),
+            "v7b_certificate": str(EVANS_V7B_CERT.relative_to(ROOT)),
+            "v7b_certificate_sha256": digest(EVANS_V7B_CERT),
+            "certificate": str(EVANS_V8_CERT.relative_to(ROOT)),
+            "certificate_sha256": digest(EVANS_V8_CERT),
+            "receipt": str(EVANS_V8_RECEIPT.relative_to(ROOT)),
+            "receipt_sha256": digest(EVANS_V8_RECEIPT),
+            "report": str(EVANS_V8_REPORT.relative_to(ROOT)),
+            "report_sha256": digest(EVANS_V8_REPORT),
+            "does_not_establish": (
+                "complete boundary nonvanishing, argument-principle root "
+                "count, QNM location, Smith selector or EP2"
+            ),
+        },
         "phase3_global_connection_shortfall": {
             "result_id": "PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5",
             "lifecycle": "NUMERIC-ENCLOSURE",
@@ -284,6 +310,9 @@ def claim_map() -> dict:
             "axial_outgoing_compact_positive_band_dense_range": True,
             "axial_positive_real_reflection_zero_set_empty": False,
             "axial_outgoing_full_positive_axis_uniform_inverse_bound": False,
+            "axial_qnm_projective_boundary_prefix_123_512": True,
+            "axial_qnm_complete_closed_contour_nonzero": False,
+            "axial_qnm_argument_principle_root_count": False,
             "axial_l2_endpoint_flux_positive_energy": False,
             "axial_l2_endpoint_flux_cpt_or_stability": False,
             "axial_global_connection_v5_method_shortfall_recorded": True,
@@ -377,6 +406,10 @@ def coverage(claim_payload: dict) -> dict:
         "sf:coverage/result/"
         "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF"
     )
+    evans_prefix_result_id = (
+        "sf:coverage/result/"
+        "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512"
+    )
     paper_id = "paper:14-pure-weyl-black-hole-radiation"
     claim_id = f"{paper_id}/claim/phase2_generic_l_parity_disposition_v1"
     phase3_claim_id = f"{paper_id}/claim/phase3_axial_complete_reconstruction_repair"
@@ -399,6 +432,14 @@ def coverage(claim_payload: dict) -> dict:
     outgoing_cell_edge_id = (
         "sf:coverage/edge/"
         "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF/paper-14/v1"
+    )
+    evans_prefix_claim_id = (
+        f"{paper_id}/claim/phase3_axial_qnm_evans_boundary_prefix_123_512"
+    )
+    evans_prefix_edge_id = (
+        "sf:coverage/edge/"
+        "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512/"
+        "paper-14/v1"
     )
     nodes = [
         {
@@ -752,6 +793,82 @@ def coverage(claim_payload: dict) -> dict:
                 "native": {"source_schema": "result-paper-edge-v0"},
             },
         },
+        {
+            "kind": "materiality",
+            "id": (
+                "sf:coverage/materiality/"
+                "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512/v1"
+            ),
+            "body": {
+                "result_id": evans_prefix_result_id,
+                "materiality": "SUPPORTING",
+                "by": "Asger Alstrup Palm",
+                "stamp": "2026-07-24",
+                "version": 1,
+                "rationale": (
+                    "Extends the rigorously zero-free projective Evans "
+                    "boundary prefix to 123/512 while retaining fail-closed "
+                    "root, Smith and EP2 gates."
+                ),
+                "native": {"source_schema": "materiality-v0"},
+            },
+        },
+        {
+            "kind": "result",
+            "id": evans_prefix_result_id,
+            "title": (
+                "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512"
+            ),
+            "body": {
+                "result_id": (
+                    "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512"
+                ),
+                "lifecycle": "CLASSIFIED",
+                "boundary": (
+                    "Projective scalar Evans boundary is certified nonzero "
+                    "only on the exact contiguous prefix [0,123/512]. The "
+                    "next gap starts at 246/1024. No closed-contour, "
+                    "argument-principle, root-count, QNM, Smith or EP2 claim."
+                ),
+                "native": {
+                    "source_kind": "phase3-evans-prefix-certificate",
+                    "certificate": str(EVANS_V8_CERT.relative_to(ROOT)),
+                    "certificate_sha256": digest(EVANS_V8_CERT),
+                    "receipt": str(EVANS_V8_RECEIPT.relative_to(ROOT)),
+                    "receipt_sha256": digest(EVANS_V8_RECEIPT),
+                },
+            },
+            "edges": [],
+        },
+        {
+            "kind": "paper_claim",
+            "id": evans_prefix_claim_id,
+            "body": {
+                "paper": paper_id,
+                "material": True,
+                "asserts_lifecycle": "CLASSIFIED",
+                "boundary": (
+                    "Zero-free Evans boundary prefix through 123/512 only; "
+                    "the remaining contour and every root/Smith gate remain "
+                    "open."
+                ),
+                "cites": [evans_prefix_result_id],
+            },
+        },
+        {
+            "kind": "result_paper_edge",
+            "id": evans_prefix_edge_id,
+            "body": {
+                "from": evans_prefix_result_id,
+                "to": paper_id,
+                "claim": evans_prefix_claim_id,
+                "edge_kind": "SUPPORTING_EVANS_BOUNDARY_PREFIX",
+                "stale": False,
+                "version": 1,
+                "stamp": "2026-07-24",
+                "native": {"source_schema": "result-paper-edge-v0"},
+            },
+        },
     ]
     for old_edge in SUPERSEDED_EDGES:
         old_name = old_edge.rsplit("/", 3)[-3]
@@ -771,7 +888,7 @@ def coverage(claim_payload: dict) -> dict:
         )
     return {
         "ir": "science-forge-ir-v0",
-        "schema": "paper14-phase3-generic-outgoing-completeness-overlay-v7",
+        "schema": "paper14-phase3-evans-prefix-123-512-overlay-v8",
         "append_only_parent": str(PARENT_COVERAGE.relative_to(ROOT)),
         "append_only_parent_sha256": digest(PARENT_COVERAGE),
         "claim_map": str(OUTPUT.relative_to(ROOT)),

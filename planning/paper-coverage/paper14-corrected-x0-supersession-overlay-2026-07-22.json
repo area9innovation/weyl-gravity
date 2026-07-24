@@ -2,7 +2,7 @@
   "append_only_parent": "planning/paper-coverage/phase1-paper-coverage-overlay-2026-07-22.json",
   "append_only_parent_sha256": "389d1033e9b40bd66cfc5237d3cd2df4ea2575e1d17847d4a519dba89f6b8be2",
   "claim_map": "paper/14-pure-weyl-black-hole-radiation-claim-map.json",
-  "claim_map_sha256": "b56c75d7cf3e424dfb0fe222e06939d6adc30d115a4b2dc8d945820abf5a1c5b",
+  "claim_map_sha256": "628c438bda414e1acc1df5b2b00c8e7786d8ab4c7d3aabd644aed0fc48a6231f",
   "ir": "science-forge-ir-v0",
   "nodes": [
     {
@@ -91,6 +91,21 @@
     },
     {
       "body": {
+        "by": "Asger Alstrup Palm",
+        "materiality": "SUPPORTING",
+        "native": {
+          "source_schema": "materiality-v0"
+        },
+        "rationale": "Extends the rigorously zero-free projective Evans boundary prefix to 123/512 while retaining fail-closed root, Smith and EP2 gates.",
+        "result_id": "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512",
+        "stamp": "2026-07-24",
+        "version": 1
+      },
+      "id": "sf:coverage/materiality/PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512/v1",
+      "kind": "materiality"
+    },
+    {
+      "body": {
         "asserts_lifecycle": "CLASSIFIED",
         "boundary": "Generic-angular polar formal filtration; global matching and asymptotic phase space remain open.",
         "cites": [
@@ -165,6 +180,19 @@
         "paper": "paper:14-pure-weyl-black-hole-radiation"
       },
       "id": "paper:14-pure-weyl-black-hole-radiation/claim/phase3_axial_outgoing_population_point_half",
+      "kind": "paper_claim"
+    },
+    {
+      "body": {
+        "asserts_lifecycle": "CLASSIFIED",
+        "boundary": "Zero-free Evans boundary prefix through 123/512 only; the remaining contour and every root/Smith gate remain open.",
+        "cites": [
+          "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512"
+        ],
+        "material": true,
+        "paper": "paper:14-pure-weyl-black-hole-radiation"
+      },
+      "id": "paper:14-pure-weyl-black-hole-radiation/claim/phase3_axial_qnm_evans_boundary_prefix_123_512",
       "kind": "paper_claim"
     },
     {
@@ -274,6 +302,24 @@
     },
     {
       "body": {
+        "boundary": "Projective scalar Evans boundary is certified nonzero only on the exact contiguous prefix [0,123/512]. The next gap starts at 246/1024. No closed-contour, argument-principle, root-count, QNM, Smith or EP2 claim.",
+        "lifecycle": "CLASSIFIED",
+        "native": {
+          "certificate": "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v8/certificate.json",
+          "certificate_sha256": "662f507353e0ee4986a34056adc08d0ffcfb25d9fe5772fec1128ecf87e8076c",
+          "receipt": "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v8/receipt.json",
+          "receipt_sha256": "c4ec4d0f333291c6ac8ce1092171065ac2761a56b8a295c8a44aeaf6b597623f",
+          "source_kind": "phase3-evans-prefix-certificate"
+        },
+        "result_id": "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512"
+      },
+      "edges": [],
+      "id": "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512",
+      "kind": "result",
+      "title": "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512"
+    },
+    {
+      "body": {
         "claim": "paper:14-pure-weyl-black-hole-radiation/claim/phase2_generic_l_parity_disposition_v1",
         "edge_kind": "SUPPORTING_POLAR_THEOREM",
         "from": "sf:coverage/result/PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1",
@@ -367,7 +413,23 @@
       },
       "id": "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_POINT_HALF/paper-14/v1",
       "kind": "result_paper_edge"
+    },
+    {
+      "body": {
+        "claim": "paper:14-pure-weyl-black-hole-radiation/claim/phase3_axial_qnm_evans_boundary_prefix_123_512",
+        "edge_kind": "SUPPORTING_EVANS_BOUNDARY_PREFIX",
+        "from": "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512",
+        "native": {
+          "source_schema": "result-paper-edge-v0"
+        },
+        "stale": false,
+        "stamp": "2026-07-24",
+        "to": "paper:14-pure-weyl-black-hole-radiation",
+        "version": 1
+      },
+      "id": "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512/paper-14/v1",
+      "kind": "result_paper_edge"
     }
   ],
-  "schema": "paper14-phase3-generic-outgoing-completeness-overlay-v7"
+  "schema": "paper14-phase3-evans-prefix-123-512-overlay-v8"
 }

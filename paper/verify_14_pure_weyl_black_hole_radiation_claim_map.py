@@ -38,6 +38,9 @@ OUTGOING_POINT_RESULT = (
 OUTGOING_CELL_RESULT = (
     "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF"
 )
+EVANS_PREFIX_RESULT = (
+    "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512"
+)
 EXPECTED_AUTHORITY_HASHES = {
     "certificate_sha256": "8a9914400f0929f37a63570b95383ebc4131cbf2928b5f923db0d002d0783d33",
     "receipt_sha256": "0888efb8f14518d38e40bd1b0a3926b8fab37ad729dce798c221a01d24aeabee",
@@ -108,7 +111,7 @@ def main() -> None:
         fail("wrong paper identity")
     if (
         claim_map.get("result_id")
-        != "PAPER_14_PHASE3_GENERIC_OUTGOING_COMPLETENESS_UPDATE_V7"
+        != "PAPER_14_PHASE3_EVANS_PREFIX_123_512_UPDATE_V8"
     ):
         fail("wrong Phase-3 paper result identity")
     if claim_map.get("lifecycle_state") != "DRAFT_ALLOWED":
@@ -256,6 +259,36 @@ def main() -> None:
     ):
         if cell_flags.get(key) is not False:
             fail(f"outgoing-cell overclaim: {key}")
+
+    evans = claim_map.get("phase3_evans_boundary_prefix_authority", {})
+    if evans.get("result_id") != EVANS_PREFIX_RESULT:
+        fail("Evans-prefix result not authoritative")
+    for key, hash_key in [
+        ("v7_certificate", "v7_certificate_sha256"),
+        ("v7b_certificate", "v7b_certificate_sha256"),
+        ("certificate", "certificate_sha256"),
+        ("receipt", "receipt_sha256"),
+        ("report", "report_sha256"),
+    ]:
+        path = ROOT / evans[key]
+        if digest(path) != evans[hash_key]:
+            fail(f"Evans-prefix authority content drift: {key}")
+    evans_result = json.loads((ROOT / evans["certificate"]).read_text())
+    if evans_result["result"]["coverage_stop"] != "123/512":
+        fail("Evans-prefix coverage drift")
+    evans_flags = evans_result["claim_flags"]
+    if evans_flags.get("materialized_prefix_nonzero_certified") is not True:
+        fail("Evans-prefix nonvanishing gate lost")
+    for key in (
+        "full_contour_nonzero_certified",
+        "argument_principle_certified",
+        "root_count_certified",
+        "QNM_location_certified",
+        "Smith_selector_certified",
+        "defective_fibre_or_EP2_certified",
+    ):
+        if evans_flags.get(key) is not False:
+            fail(f"Evans-prefix overclaim: {key}")
 
     global_v5 = claim_map.get("phase3_global_connection_shortfall", {})
     if global_v5.get("result_id") != GLOBAL_V5_RESULT:
@@ -435,6 +468,7 @@ def main() -> None:
         "axial_outgoing_generic_population_off_locally_finite_set",
         "axial_outgoing_cell_half_L2_multiplier_isomorphism",
         "axial_outgoing_compact_positive_band_dense_range",
+        "axial_qnm_projective_boundary_prefix_123_512",
     }
     required_false = {
         "formal_radial_einstein_only_selection",
@@ -460,6 +494,8 @@ def main() -> None:
         "axial_l2_endpoint_unrestricted_improvement_invariance",
         "axial_positive_real_reflection_zero_set_empty",
         "axial_outgoing_full_positive_axis_uniform_inverse_bound",
+        "axial_qnm_complete_closed_contour_nonzero",
+        "axial_qnm_argument_principle_root_count",
     }
     for key in required_true:
         if scope.get(key) is not True:
@@ -504,7 +540,8 @@ def main() -> None:
         "Generic and band-limited outgoing completeness",
         "open dense,",
         "injective with dense range",
-        "coverage now reaches \\(105/512\\)",
+        "Exact contiguous coverage now reaches",
+        "\\frac{123}{512}",
     ]
     for phrase in required_phrases:
         if phrase not in text:
@@ -536,7 +573,7 @@ def main() -> None:
     coverage = json.loads(coverage_path.read_text())
     if (
         coverage.get("schema")
-        != "paper14-phase3-generic-outgoing-completeness-overlay-v7"
+        != "paper14-phase3-evans-prefix-123-512-overlay-v8"
     ):
         fail("wrong coverage overlay schema")
     if coverage.get("append_only_parent_sha256") != digest(PARENT_COVERAGE):
@@ -571,6 +608,11 @@ def main() -> None:
         (
             "sf:coverage/edge/"
             "PURE_WEYL_PHASE3_AXIAL_OUTGOING_POPULATION_CELL_HALF/"
+            "paper-14/v1"
+        ),
+        (
+            "sf:coverage/edge/"
+            "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512/"
             "paper-14/v1"
         ),
     }
@@ -617,6 +659,17 @@ def main() -> None:
         or outgoing_cell_edge.get("stale") is not False
     ):
         fail("outgoing-population cell edge is mistyped")
+    evans_prefix_edge = new_edges[
+        "sf:coverage/edge/"
+        "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_123_512/"
+        "paper-14/v1"
+    ]["body"]
+    if (
+        evans_prefix_edge.get("edge_kind")
+        != "SUPPORTING_EVANS_BOUNDARY_PREFIX"
+        or evans_prefix_edge.get("stale") is not False
+    ):
+        fail("Evans boundary-prefix edge is mistyped")
 
     print(
         "PASS: corrected Paper 14 semantics, terminal hashes, source pins, "

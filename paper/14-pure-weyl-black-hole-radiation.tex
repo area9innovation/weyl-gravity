@@ -2396,6 +2396,9 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v5/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v6a/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v6b/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v7/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v7b/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v8/certificate.json};
 \cert{black_hole_programme/phase3/axial_scalar_reflection_cell_half_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_transport_free_outgoing_defect_preflight_v1/certificate.json};
@@ -2943,6 +2946,17 @@ closed at coarse resolution; its dyadic children \(208/1024\) and
 \(209/1024\) exclude zero with modulus lower bounds
 \(2.42977\times10^{-5}\) and \(2.42106\times10^{-5}\).  Exact contiguous
 coverage now reaches \(105/512\), with \(105/512\) the next gap.
+The unchanged rail then repairs parents \(105/512\) and \(106/512\)
+through children \(210,\ldots,213\) at denominator \(1024\).  A fixed
+\(1/1024\) continuation evaluates and accepts the next 32 ordered panels
+\(214,\ldots,245\), with mismatch lower bounds remaining above
+\(2.32\times10^{-5}\).  Exact contiguous coverage now reaches
+\[
+ \frac{246}{1024}=\frac{123}{512},
+\]
+with \(246/1024\) the next gap.  The 32-panel producer took \(108.81\)
+seconds, so it is retained as an affected-chain exhaustive run with a fast
+replayless verifier; subsequent compute chunks must be smaller.
 The remaining boundary, interval-Newton, argument-principle, and Smith/EP2
 gates are not run.
 Uniform time-domain boundedness, decay, and completeness remain open.

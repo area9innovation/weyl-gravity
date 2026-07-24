@@ -1,0 +1,43 @@
+{
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v7b/runner.py black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v7b/verify.py black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v7b/test_v7b.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v7b/certificate.json black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v7b/schema.json",
+      "returncode": 0,
+      "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_adaptive_dyadic_boundary_chunk_v7b.verify",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "adaptive dyadic v7b verifier: PASS (coverage 107/512; next 107/512)\n"
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_qnm_adaptive_dyadic_boundary_chunk_v7b.test_v7b",
+      "returncode": 0,
+      "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.009s\n\nOK\n",
+      "stdout": "adaptive dyadic v7b verifier: PASS (coverage 107/512; next 107/512)\n"
+    }
+  ],
+  "elapsed_seconds": 15.270409840974025,
+  "higher_tiers_not_run": "No closed contour, theorem promotion, freeze or release; child-only Tier 1 repair.",
+  "input_sha256": {
+    "generic_adaptive_source": "20f2fca360a55a72a7b139c5d70b908e17f5369b3e83b360517feea75ca85ddd",
+    "predecessor_aggregate": "78a88a4737f231215e7830c753b71b93144a838646f0be5f9d4b85582dbc6e5e",
+    "predecessor_certificate": "9eacb1b54e0c5127d38d1f22590c5d4bd64cfcb29ed0456c8409e1ccf87d94da",
+    "predecessor_raw": "e56a88e1b11b5ca16ec5eec943b1136b856f336e3b2cac282784499227f92d6f"
+  },
+  "output_sha256": {
+    "aggregate": "d503068f3d521747463f9c85b5315eb17aaa20838e97091fd7265c61d9b9f387",
+    "certificate": "544d0bd92bb18161eed55ad1549517746a24b8b7efab44f97f89b6996d8b3689",
+    "raw": "38a59348b0d6c3b685702559a962c8e54a45871a618edc99d514664fec6a491a",
+    "report": "0c1917c365ae490f38aa75d7bc22064a6800355ee9dd7f8de47b810472d5fd4d"
+  },
+  "schema": "phase3-axial-qnm-adaptive-dyadic-boundary-receipt-v7b"
+}
