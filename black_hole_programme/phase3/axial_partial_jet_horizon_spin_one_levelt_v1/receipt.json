@@ -1,0 +1,17 @@
+{
+  "certificate": "black_hole_programme/phase3/axial_partial_jet_horizon_spin_one_levelt_v1/certificate.json",
+  "certificate_sha256": "b364d4df837e6c9cdc63a5878a01092b90f397eac6d60c28c97fd9e170b5959c",
+  "claim_boundary": "spin-one Levelt germ, coupled tail and first mixed panel only; multipanel/K_H/T_plus/H4/global remain open",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_spin_one_levelt_v1.produce --check",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_spin_one_levelt_v1.verify",
+    "python3 -m unittest black_hole_programme.phase3.axial_partial_jet_horizon_spin_one_levelt_v1.test_spin_one_levelt"
+  ],
+  "schema": "phase3-axial-partial-jet-horizon-spin-one-levelt-receipt-v1",
+  "tiers": {
+    "tier0": "required",
+    "tier1": "required",
+    "tier2": "not run: only one local panel changed",
+    "tier3": "not run: no freeze or theorem promotion"
+  }
+}

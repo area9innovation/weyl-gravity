@@ -1,0 +1,118 @@
+{
+  "claim_flags": {
+    "T_plus_recovered": false,
+    "direct_vs_jet_correlation_passed": true,
+    "finite_factor_head_seed_bounded": true,
+    "first_tiny_reduced_panel_bounded": true,
+    "outgoing_Jost_column_certified": false,
+    "scattering_claim": false,
+    "symbolic_outgoing_phase_factored": true,
+    "uniform_all_order_infinity_remainder_enclosed": false
+  },
+  "correlation_gate": {
+    "bd_minus_ac_or_T_plus_evaluated": false,
+    "coefficient_equal": true,
+    "identity": "direct [[Ahat,E],[0,Ahat]] transport equals dual_tau transport coefficientwise through order 12",
+    "interval_difference_contains_zero": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "an all-order outgoing infinity Jost germ",
+    "a complete analytic tau endpoint frame or K_plus shear",
+    "T_plus, reflection, scattering, flux, or H4",
+    "complex-frequency QNM or Evans data"
+  ],
+  "exact_endpoint_factor_seed": {
+    "XI3_relative_factor": "1/r",
+    "common_factor": "exp(-2*I*omega*r)*r**(-4*I*omega)",
+    "factor_state_order": [
+      "metric_RW_tau_tangent",
+      "carrier_RW_base",
+      "Lx_spin_one"
+    ],
+    "finite_head_only": true,
+    "line": "R_plus=XI2-I*(16*omega**2-4*I*omega-5)*XI3/omega",
+    "seed_radius": 32,
+    "spin_one_projection_zero": true
+  },
+  "imports": {
+    "endpoint_frames": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_endpoint_frames_v1/certificate.json",
+      "sha256": "001757321247ccc3f5a38c4925d09c5d6759b2f9335913be96d30e4fe64ffbe9"
+    },
+    "infinity_metric_heads": {
+      "path": "black_hole_programme/phase3/axial_endpoint_remainder_enclosures/infinity-metric-heads.json",
+      "sha256": "969701a67581469459e66f6e82a161654f37cf8b29915790d2f92d0a2f7269c3"
+    },
+    "infinity_practical_transfer": {
+      "path": "black_hole_programme/phase3/axial_infinity_practical_transfer/certificate.json",
+      "sha256": "40cd67db3e0d0cac79a8097bd6c7e5a2b09a1de0498ef078c2ac50c927f11a8d"
+    },
+    "partial_jet_crosswalk": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json",
+      "sha256": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "mixed_rail": {
+    "arithmetic": "IvTaylor4_omega tensor dual_tau",
+    "compile_elapsed_seconds": 0.0,
+    "compile_exit": 0,
+    "compile_log_path": "black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/compile.txt",
+    "compile_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exponential_order": 12,
+    "finite_seed_and_panel_passed": true,
+    "frequency_center": "8193/16384",
+    "frequency_child": [
+      "1/2",
+      "4097/8192"
+    ],
+    "frequency_radius": "1/16384",
+    "panel_midpoint": "67108863/2097152",
+    "panel_width": "1/1048576",
+    "parsed_result": {
+      "alpha": "30.081876607740035",
+      "direct": "0.005796614107886455",
+      "equal": "true",
+      "jet": "0.005796614107886455",
+      "overlap": "true",
+      "scaled": "2.868831311010364e-05",
+      "seednorm": "23.852535820100197",
+      "seedwidth": "0.005796614284442114",
+      "status": "PASS",
+      "tail": "3.415232614159369e-68"
+    },
+    "radial_panel": [
+      "32",
+      "33554431/1048576"
+    ],
+    "run_elapsed_seconds": 0.0,
+    "run_exit": 0,
+    "run_log_path": "black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/run.txt",
+    "run_log_sha256": "050430d735ea1753d5af98f9d88058a841f995704c828dff5fcfe3ca855ff51a",
+    "source_path": "black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/reduced_phase_panel.forge",
+    "source_sha256": "4ecdec7d850fee1328ddb49e552078034ebaa468fc464845c0935e682bd6da53"
+  },
+  "phase_factor": {
+    "asymptotic_form": "exp(-2*I*omega*r)*r**(-4*I*omega)",
+    "drstar_dr": "r/(r-2)",
+    "factor": "exp(-2*I*omega*rstar)",
+    "kept_symbolic": true,
+    "logarithmic_derivative": "-2*I*omega*r/(r - 2)",
+    "omega_phase_taylor_expanded": false
+  },
+  "producer_elapsed_seconds": 0.0,
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_PARTIAL_JET_INFINITY_REDUCED_PHASE_PREFLIGHT",
+  "schema": "phase3-axial-partial-jet-infinity-reduced-phase-preflight-v1",
+  "schema_path": "black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/schema.json",
+  "shortfall": {
+    "code": "INFINITY_JOST_REMAINDER_NOT_LIFTED_TO_SHARED_OMEGA_TAYLOR_DUAL_TAU",
+    "exact": true,
+    "next_gate": "derive a phase-reduced Volterra or asymptotic-tail majorant for the common R_plus factor head in IvTaylor4_omega tensor dual_tau, then repeat the panel with that tail attached",
+    "reason": "The imported endpoint heads are finite formal series.  The existing real-frequency Volterra envelope does not enclose their shared omega Taylor coefficients and intrinsic tau tangent, so the finite seed is not yet a certified all-order outgoing Jost germ."
+  },
+  "status": "FINITE_REDUCED_PHASE_SEED_PANEL_PASS_JOST_REMAINDER_OPEN"
+}

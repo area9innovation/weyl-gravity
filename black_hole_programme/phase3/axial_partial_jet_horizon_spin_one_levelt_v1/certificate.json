@@ -1,0 +1,410 @@
+{
+  "all_order_tail_majorant": {
+    "M_base": "16387/768",
+    "M_tangent": "94804726516564748219/987487424224985958",
+    "analytic_base_row_bounds": [
+      "1",
+      "29827/3072",
+      "0",
+      "16387/768"
+    ],
+    "analytic_tangent_row_bounds": [
+      "94804726516564748219/987487424224985958",
+      "41803662094207128148/493743712112492979",
+      "0",
+      "0"
+    ],
+    "cauchy_radius": "1/2",
+    "finite_pivot_checks_n_2_to_12": [
+      {
+        "n": 2,
+        "n_norm": "40965/16384",
+        "row_bounds": [
+          "1",
+          "40965/32768",
+          "2253037015949313/2252349636608000",
+          "1689812142675969/2252349636608000"
+        ]
+      },
+      {
+        "n": 3,
+        "n_norm": "215061/106496",
+        "row_bounds": [
+          "1/2",
+          "71687/106496",
+          "1754021803074219/2973526172631040",
+          "4804462388471809/8920578517893120"
+        ]
+      },
+      {
+        "n": 4,
+        "n_norm": "36867/20480",
+        "row_bounds": [
+          "1/3",
+          "36867/81920",
+          "11262091864338433/28150246785679360",
+          "2252411499242701/5630049357135872"
+        ]
+      },
+      {
+        "n": 5,
+        "n_norm": "788535/475136",
+        "row_bounds": [
+          "1/4",
+          "157707/475136",
+          "756621302798901/2551038796103680",
+          "22962656637913089/73980125087006720"
+        ]
+      },
+      {
+        "n": 6,
+        "n_norm": "127803/81920",
+        "row_bounds": [
+          "1/5",
+          "42601/163840",
+          "13137652341549739/56297744456744960",
+          "42228531450648577/168893233370234880"
+        ]
+      },
+      {
+        "n": 7,
+        "n_norm": "645155/434176",
+        "row_bounds": [
+          "1/6",
+          "92165/434176",
+          "66208235924785153/345927903210373120",
+          "71804166036563969/345927903210373120"
+        ]
+      },
+      {
+        "n": 8,
+        "n_norm": "20481/14336",
+        "row_bounds": [
+          "1/7",
+          "20481/114688",
+          "105283393276645377/650788840134410240",
+          "114856256962869249/650788840134410240"
+        ]
+      },
+      {
+        "n": 9,
+        "n_norm": "3852459/2785280",
+        "row_bounds": [
+          "1/8",
+          "428051/2785280",
+          "53338726780121771/381319395315548160",
+          "34994742652368077/228791637189328896"
+        ]
+      },
+      {
+        "n": 10,
+        "n_norm": "256167656430819329/190280658105401344",
+        "row_bounds": [
+          "1/9",
+          "172039/1277952",
+          "234206560841146369/1902806581054013440",
+          "256167656430819329/1902806581054013440"
+        ]
+      },
+      {
+        "n": 11,
+        "n_norm": "362871420432214017/274882202435584000",
+        "row_bounds": [
+          "1/10",
+          "4899/40960",
+          "332076710969255937/3023704226791424000",
+          "362871420432214017/3023704226791424000"
+        ]
+      },
+      {
+        "n": 12,
+        "n_norm": "499940551693498369/385344328978923520",
+        "row_bounds": [
+          "1/11",
+          "716825/6668288",
+          "152757006460009131/1541377315915694080",
+          "499940551693498369/4624131947747082240"
+        ]
+      }
+    ],
+    "large_n_neumann_start": 13,
+    "large_n_residue_norm_bound": "6145/1024",
+    "p": "16387/512",
+    "passed": true,
+    "pivot_bound_n_ge_2": "||(n*I-R_4)^(-1)||_infinity<=3/n",
+    "q": "94804726516564748219/658324949483323972",
+    "resonant_f1_bound": "704331867248641/439976470773760",
+    "tail_base": "4695307104244620163254283/171639056211973914291761658829847756281685039734698541056",
+    "tail_ratio_base_upper": "19459/7516192768",
+    "tail_ratio_tangent_upper": "17923/3758096384",
+    "tail_tangent": "378869397709391872394038320337309341152813/551728645783236509643851579938646519735137327641656913084571062076702720",
+    "x": "1/2097152"
+  },
+  "claim_flags": {
+    "H4_pass_certified": false,
+    "K_H_computed": false,
+    "T_plus_recovered": false,
+    "bounded_global_transport_certified": false,
+    "endpoint_partial_jet_frame_constructed": false,
+    "mixed_first_panel_transport_certified": true,
+    "multipanel_transport_certified": false,
+    "order_one_resonance_compatible_no_forced_log": true,
+    "spin_one_levelt_frame_exact": true,
+    "spin_one_mixed_tail_enclosed": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "transport beyond the first horizon panel",
+    "the endpoint normalizer shear K_H or a complete endpoint jet frame",
+    "T_plus, H4, scattering, or bounded global transport"
+  ],
+  "first_panel_transport": {
+    "compile_exit": 0,
+    "compile_log_path": "black_hole_programme/phase3/axial_partial_jet_horizon_spin_one_levelt_v1/compile.txt",
+    "compile_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "direct_route": "12x12 real regular-frame six-state transport",
+    "jet_route": "8x8 real four-state base/tangent dual transport",
+    "parsed_result": {
+      "alpha": "25202907.208143678",
+      "base_width": "5.587241780347085e-11",
+      "coefficient_equal": true,
+      "operator_tail": "1.0558651078627038e-31",
+      "scaled_norm": "0.02347203642888337",
+      "seed_overlap": true,
+      "status": "PASS",
+      "tangent_width": "3.922421224571493e-18",
+      "transport_overlap": true
+    },
+    "passed": true,
+    "run_exit": 0,
+    "run_log_path": "black_hole_programme/phase3/axial_partial_jet_horizon_spin_one_levelt_v1/run.txt",
+    "run_log_sha256": "857fde06bc9cf1c58fec4530f96586e1bf53a7bdb4c2bc0f4d44fe8c6a2c8209",
+    "source_path": "black_hole_programme/phase3/axial_partial_jet_horizon_spin_one_levelt_v1/spin_one_levelt_panel.forge",
+    "source_sha256": "0b7541e6cb490270a536aa071b51475b158b4d0ffb44316bfae8e9487cbcf6bd"
+  },
+  "imports": {
+    "endpoint_frames": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_endpoint_frames_v1/certificate.json",
+      "sha256": "001757321247ccc3f5a38c4925d09c5d6759b2f9335913be96d30e4fe64ffbe9"
+    },
+    "endpoint_interval_evaluator": {
+      "path": "black_hole_programme/phase3/axial_endpoint_remainder_enclosures/produce.py",
+      "sha256": "72f849ed9dce1a9cf865ccc79d7ea2a754920d46f10b3143fcd04b766aff7f2b"
+    },
+    "mixed_transport_preflight_producer": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_preflight_v1/produce.py",
+      "sha256": "3400bdca2c7c3076cdb0acb4f042fa8909f0e11962d2492d68fb47da5b67f8fd"
+    },
+    "moving_phase_spin_two": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_moving_phase_v1/certificate.json",
+      "sha256": "6d9d70d6e6006bf8d05ed6f6de9fa4d574eb189ed7348c7c170768477f94905f"
+    },
+    "partial_jet_crosswalk": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json",
+      "sha256": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a"
+    }
+  },
+  "levelt_frame": {
+    "characteristic": "lambda*(lambda - 1)*(lambda + 4*I*omega)**2",
+    "common_selected_column_scaling": "Xhat=rho*X; Yhat=rho*Y",
+    "original_spin_one_state": "Z",
+    "regular_C": [
+      [
+        "-(rho + 2)*(3*omega**2*rho**4 + 20*omega**2*rho**3 + 48*omega**2*rho**2 + 48*omega**2*rho + 16*omega**2 - 10*I*omega*rho**2 - 28*I*omega*rho - 16*I*omega + 12*rho**2 + 8*rho)/(8*(omega*rho + 2*omega - 2*I)**2)",
+        "-(rho + 2)**2*(omega**2*rho**3 + 6*omega**2*rho**2 + 12*omega**2*rho + 8*omega**2 - I*omega*rho**2 - 6*I*omega*rho - 8*I*omega + 4*rho)/(8*(omega*rho + 2*omega - 2*I)**2)"
+      ],
+      [
+        "(3*omega**2*rho**4 + 20*omega**2*rho**3 + 48*omega**2*rho**2 + 48*omega**2*rho + 16*omega**2 - 10*I*omega*rho**2 - 28*I*omega*rho - 16*I*omega + 12*rho**2 + 8*rho)/(8*(omega*rho + 2*omega - 2*I)**2)",
+        "(rho + 2)*(omega**2*rho**3 + 6*omega**2*rho**2 + 12*omega**2*rho + 8*omega**2 - I*omega*rho**2 - 6*I*omega*rho - 8*I*omega + 4*rho)/(8*(omega*rho + 2*omega - 2*I)**2)"
+      ]
+    ],
+    "regular_D": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "regular_spin_one_state": "Zhat=diag(rho,rho**2)*Z",
+    "residue": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "3/2",
+        "-4*I*omega",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "-I*(4*omega - I)",
+        "-I*(4*omega - I)"
+      ]
+    ],
+    "selected_exponent": "0",
+    "selected_vector_Y_then_Z": [
+      "0",
+      "0",
+      "1",
+      "-1"
+    ],
+    "spin_one_block": "T_prime*T_inverse+T*A_x*T_inverse",
+    "spin_two_block": "A+I/rho",
+    "tangent_residue": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "tau_moves_exponent": false
+  },
+  "lifecycle": "CLASSIFIED",
+  "remaining_shortfall": {
+    "code": "MULTIPANEL_AND_ENDPOINT_NORMALIZER_SHEARS_OPEN",
+    "next": "continue the regular-frame shared-omega dual rail across successive panels and construct the tau-analytic endpoint normalizer shear K_H"
+  },
+  "resonant_recurrence": {
+    "base_coefficients": [
+      [
+        "0",
+        "0",
+        "1",
+        "-1"
+      ],
+      [
+        "-2/3",
+        "0",
+        "-2*(2*omega + I)/(4*omega - I)",
+        "0"
+      ],
+      [
+        "0",
+        "I*(2*omega + I)/((2*omega - I)*(4*omega - I))",
+        "3*omega*(4*omega + 3*I)/(2*(2*omega - I)*(4*omega - I))",
+        "3*omega*(4*omega + 3*I)/(2*(2*omega - I)*(4*omega - I))"
+      ],
+      [
+        "I*(2*omega + I)/(2*(2*omega - I)*(4*omega - I))",
+        "-3*I*(8*omega**2 + 5*I*omega - 1)/(2*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))",
+        "-omega*(32*omega**2 + 24*I*omega + 5)/(2*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))",
+        "-omega*(32*omega**2 + 24*I*omega + 5)/((2*omega - I)*(4*omega - 3*I)*(4*omega - I))"
+      ],
+      [
+        "-I*(8*omega**2 + 5*I*omega - 1)/(2*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))",
+        "I*omega*(48*omega**2 + 29*I*omega - 13)/(4*(omega - I)*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))",
+        "5*omega*(64*omega**3 + 32*I*omega**2 + 28*omega - 7*I)/(32*(omega - I)*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))",
+        "15*omega*(64*omega**3 + 32*I*omega**2 + 28*omega - 7*I)/(32*(omega - I)*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))"
+      ],
+      [
+        "I*omega*(48*omega**2 + 29*I*omega - 13)/(16*(omega - I)*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))",
+        "-5*I*omega*(256*omega**3 + 112*I*omega**2 - 135*omega + 14*I)/(32*(omega - I)*(2*omega - I)*(4*omega - 5*I)*(4*omega - 3*I)*(4*omega - I))",
+        "-3*omega*(64*omega**4 + 40*omega**2 - 33*I*omega - 7)/(8*(omega - I)*(2*omega - I)*(4*omega - 5*I)*(4*omega - 3*I)*(4*omega - I))",
+        "-3*omega*(64*omega**4 + 40*omega**2 - 33*I*omega - 7)/(2*(omega - I)*(2*omega - I)*(4*omega - 5*I)*(4*omega - 3*I)*(4*omega - I))"
+      ]
+    ],
+    "base_equation": "(n*I-R_4)*f_n=sum B_k*f_(n-1-k)",
+    "interpretation": "the order-one free parameter is the regular spin-two shear; compatibility residual zero excludes a forced logarithm",
+    "normalization": "f_0=(0,0,1,-1); g_0=0",
+    "resonance_witnesses": [
+      {
+        "base_compatibility_residual": "0",
+        "base_free_parameters_set_to_zero": 1,
+        "order": 1,
+        "tangent_compatibility_residual": "0",
+        "tangent_free_parameters_set_to_zero": 1
+      }
+    ],
+    "tangent_coefficients": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "-I*(3*omega**2 - 2*I*omega - 2)/(3*(omega - I)**2*(4*omega - I))",
+        "-(3*omega**2 - 2*I*omega - 2)/(6*(omega - I)**2*(2*omega - I)*(4*omega - I))",
+        "0",
+        "0"
+      ],
+      [
+        "I*(6*omega**4 - 6*I*omega**3 - omega**2 - 8*I*omega - 6)/(6*(omega - I)**3*(2*omega - I)*(4*omega - I))",
+        "(12*omega**4 - 7*I*omega**3 + 6*omega**2 - 16*I*omega - 12)/(12*(omega - I)**3*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))",
+        "0",
+        "0"
+      ],
+      [
+        "-I*(24*omega**6 - 37*I*omega**5 + 23*omega**4 - 122*I*omega**3 - 101*omega**2 - 18)/(12*(omega - I)**4*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))",
+        "(24*omega**5 - 96*I*omega**4 - 126*omega**3 + 85*I*omega**2 + 22*omega + 6*I)/(24*(omega - I)**4*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))",
+        "0",
+        "0"
+      ],
+      [
+        "I*(48*omega**7 - 62*I*omega**6 + 139*omega**5 - 346*I*omega**4 - 82*omega**3 - 222*I*omega**2 - 105*omega - 12*I)/(48*(omega - I)**5*(2*omega - I)*(4*omega - 3*I)*(4*omega - I))",
+        "-omega*(960*omega**6 - 3940*I*omega**5 - 6447*omega**4 + 5160*I*omega**3 + 1822*omega**2 + 32*I*omega + 155)/(96*(omega - I)**5*(2*omega - I)*(4*omega - 5*I)*(4*omega - 3*I)*(4*omega - I))",
+        "0",
+        "0"
+      ]
+    ],
+    "tangent_equation": "(n*I-R_4)*g_n=sum(B_k*g+E_k*f)"
+  },
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_PARTIAL_JET_HORIZON_SPIN_ONE_LEVELT",
+  "schema": "phase3-axial-partial-jet-horizon-spin-one-levelt-v1",
+  "schema_path": "black_hole_programme/phase3/axial_partial_jet_horizon_spin_one_levelt_v1/schema.json",
+  "scope": {
+    "arithmetic": "exact Levelt recurrence plus IvTaylor4_omega tensor dual_tau",
+    "frequency_child": [
+      "1/2",
+      "4097/8192"
+    ],
+    "frobenius_order": 5,
+    "horizon_coordinate": "rho=r-2",
+    "panel_width": "1/1073741824",
+    "seed_radius": "1/4194304",
+    "transport_order": 12
+  },
+  "status": "CERTIFIED_SPIN_ONE_LEVELT_TAIL_AND_MIXED_FIRST_PANEL_PASS"
+}

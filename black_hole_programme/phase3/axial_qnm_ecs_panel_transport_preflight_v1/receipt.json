@@ -1,0 +1,23 @@
+{
+  "artifact_sha256": {
+    "README.md": "b4abcdd668b0a609cb09c3f42238330dc5d9aae28a8121b490bcd58c27f85dcb",
+    "panel-run.json": "d26707d9d555becc931f6801c196596583968316e16ea2a08d965443965b0288",
+    "panel_preflight.py": "78fc4eed6ade643d3dd0c97e1f5e2000e6b572fd585a5d63329ae186140166fb",
+    "produce.py": "cf70ed9e6e51a0c3fd457ee3b1ef6880864d528d90fc0fdb45f0ba325a37d294",
+    "report.md": "fa0f8dc58a72a5be812cbb67978e44aa77e7f8a6e65c0f85924e6178be6335f4",
+    "schema.json": "bc53fae9059175ee57600060adf8004d2ea5b0ed67b1d0ab88393ac4b7dbdeb5",
+    "test_panel_preflight.py": "61cabf0cb1b6eb85a7534745281f19d1907a44b009b7c823296e4d191ac24550",
+    "verify.py": "d119651b1ceb2e87cab07b174410103e62342851b1a7e16ab26cc17bc06cb4e4"
+  },
+  "certificate": "certificate.json",
+  "certificate_sha256": "a3dd3c2e8425198121a74fd658071311d4a3fd915a0e4e06f3d0f3e46903ffd1",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_qnm_ecs_panel_transport_preflight_v1.panel_preflight",
+    "python3 -m black_hole_programme.phase3.axial_qnm_ecs_panel_transport_preflight_v1.produce",
+    "python3 -m black_hole_programme.phase3.axial_qnm_ecs_panel_transport_preflight_v1.verify",
+    "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_ecs_panel_transport_preflight_v1.test_panel_preflight"
+  ],
+  "schema": "phase3-axial-qnm-ecs-panel-transport-preflight-receipt-v1",
+  "tier_2_not_run": "No shared operator changed; this is a reduced-mode numerical preflight.",
+  "tier_3_not_run": "Not a freeze or theorem promotion."
+}

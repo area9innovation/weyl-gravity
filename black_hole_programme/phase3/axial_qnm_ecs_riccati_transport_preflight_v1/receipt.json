@@ -1,0 +1,23 @@
+{
+  "artifact_sha256": {
+    "README.md": "0551f9cfc1f50b36f80aa108b3b134babdb078a8299cbaad43d9f6313082b080",
+    "produce.py": "ed6e8ad7427cc8878d9d7dd79d457e2a01327192663d78e34e6a7ba00e383e17",
+    "report.md": "65909545b4ce12550d5a3665d17586d55e315f30bc48a3b66edf68efc19e0550",
+    "riccati-run.json": "7ad3f154f474f981417d5a6d89e5ab5abf17f7e3e88681cbdb49985ea8e63965",
+    "riccati_preflight.py": "09ad034db65456ac17dd1c85ee9556052ecfaa8cee7600c629c9eedb2aecbdd9",
+    "schema.json": "0d7e8db6735091a1396df6bb2a55cb68e988e832257b6b326109b2bd4e188d04",
+    "test_riccati_preflight.py": "6947598fd3829560e4ea70662afc230358d52e2aeecace7dac2425796775c798",
+    "verify.py": "ff87d60fb1dc48f027a733a7c90d4cd46fe103e8979baee0c2f9f4d4a6066b80"
+  },
+  "certificate": "certificate.json",
+  "certificate_sha256": "b71fa6fa46bab00d54d74a70e039d6d1c1bdd68c158984d4ad88c9b510c5ddee",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_qnm_ecs_riccati_transport_preflight_v1.riccati_preflight",
+    "python3 -m black_hole_programme.phase3.axial_qnm_ecs_riccati_transport_preflight_v1.produce",
+    "python3 -m black_hole_programme.phase3.axial_qnm_ecs_riccati_transport_preflight_v1.verify",
+    "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_ecs_riccati_transport_preflight_v1.test_riccati_preflight"
+  ],
+  "schema": "phase3-axial-qnm-ecs-riccati-transport-preflight-receipt-v1",
+  "tier_2_not_run": "No shared operator changed; reduced-mode preflight only.",
+  "tier_3_not_run": "Not a freeze or theorem promotion."
+}

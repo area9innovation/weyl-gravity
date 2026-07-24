@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "imports",
+    "deformation",
+    "source_bounds",
+    "tangent_initializer",
+    "claim_flags",
+    "next_gates",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {"const": "phase3-axial-qnm-ecs-tangent-initializer-v1"},
+    "dependency_tags": {"contains": {"const": "REDUCED-MODE"}},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "claim_flags": {
+      "type": "object",
+      "properties": {
+        "canonical_projective_tangent_ecs_initializer_certified": {"const": true},
+        "tangent_initializer_frequency_analytic": {"const": true},
+        "manuscript_factor_frame_b_initializer_certified": {"const": false},
+        "b_over_a_on_contour_constructed": {"const": false},
+        "Evans_boundary_nonzero_certified": {"const": false},
+        "QNM_root_count_certified": {"const": false},
+        "QNM_or_EP2_certified": {"const": false}
+      }
+    }
+  }
+}

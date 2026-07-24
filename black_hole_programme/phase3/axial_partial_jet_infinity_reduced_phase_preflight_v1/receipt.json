@@ -1,0 +1,24 @@
+{
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_PARTIAL_JET_INFINITY_REDUCED_PHASE_PREFLIGHT",
+  "status": "PASS",
+  "certificate_path": "black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/certificate.json",
+  "certificate_sha256": "dec7d656ee64dbe02051260667f1f55feb3b64d2e612555cc9d6c9eeb6b9fb5c",
+  "commands": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_infinity_reduced_phase_preflight_v1.produce",
+      "elapsed_seconds": 44.42031453398522,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_infinity_reduced_phase_preflight_v1.verify",
+      "elapsed_seconds": "recorded by invoking session",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_partial_jet_infinity_reduced_phase_preflight_v1.test_preflight",
+      "elapsed_seconds": "recorded by invoking session",
+      "status": "PASS"
+    }
+  ],
+  "higher_tiers_not_run": "Tier 2/3 not required: this is a fail-closed endpoint representation preflight and promotes no global claim."
+}

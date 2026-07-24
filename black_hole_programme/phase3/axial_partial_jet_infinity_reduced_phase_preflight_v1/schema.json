@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "imports",
+    "phase_factor",
+    "exact_endpoint_factor_seed",
+    "mixed_rail",
+    "correlation_gate",
+    "claim_flags",
+    "shortfall",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-partial-jet-infinity-reduced-phase-preflight-v1"
+    },
+    "result_id": {
+      "const": "PURE_WEYL_PHASE3_AXIAL_PARTIAL_JET_INFINITY_REDUCED_PHASE_PREFLIGHT"
+    },
+    "dependency_tags": {
+      "contains": {"const": "REDUCED-MODE"}
+    },
+    "status": {
+      "enum": [
+        "FINITE_REDUCED_PHASE_SEED_PANEL_PASS_JOST_REMAINDER_OPEN",
+        "REDUCED_PHASE_MICROFACTOR_REFUSED"
+      ]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "symbolic_outgoing_phase_factored",
+        "uniform_all_order_infinity_remainder_enclosed",
+        "outgoing_Jost_column_certified",
+        "T_plus_recovered",
+        "scattering_claim"
+      ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "artifact_sha256": {
+    "README.md": "5b21c80950153508353798578e39e976f589cdfdd1f93a5fce8a854f4573f308",
+    "produce.py": "26539ebc06b2c0be2bc546f32d2ab8702cbdc7c0e142950a3a7a15fbfca87dbe",
+    "report.md": "bd349925af56feb1be6d0f7fd61bb9be05ddb7d8835ffd85c68024c3f859f994",
+    "schema.json": "b0a29c206de712a48a714d44f4daf4378be7d18881274340a07d435c0e97f8ae",
+    "test_projective_sensitivity.py": "0bb181d3e7ac0f5a127cd820c33c9e6025125fe410c849a787a3c7971e6caff2",
+    "verify.py": "8e4b79f23c5b5ae23ac973a903263892dafdc07f74c91a39f8eb6a65d27bd2b2"
+  },
+  "certificate": "certificate.json",
+  "certificate_sha256": "6ea14d391d41bc694d6ea4340381ba775c51d5b332200727cf9cdb81205c2d9b",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_qnm_projective_sensitivity_v1.produce",
+    "python3 -m black_hole_programme.phase3.axial_qnm_projective_sensitivity_v1.verify",
+    "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_projective_sensitivity_v1.test_projective_sensitivity"
+  ],
+  "schema": "phase3-axial-qnm-projective-sensitivity-receipt-v1",
+  "tier_2_not_run": "Exact local successor; no shared operator changed.",
+  "tier_3_not_run": "Not a freeze or physical theorem promotion."
+}

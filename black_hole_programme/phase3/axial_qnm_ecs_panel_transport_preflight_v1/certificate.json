@@ -1,0 +1,55 @@
+{
+  "claim_flags": {
+    "Evans_boundary_nonzero_certified": false,
+    "QNM_or_EP2_certified": false,
+    "QNM_root_count_certified": false,
+    "b_over_a_on_contour_constructed": false,
+    "cauchy_step_tails_enclosed": true,
+    "evans_usable_outgoing_column": false,
+    "panelwise_acb_transport_executed": true
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "an Evans-usable outgoing column",
+    "the factor-frame b/a boundary function",
+    "Evans-boundary nonvanishing",
+    "a QNM root count",
+    "a QNM, Smith selection or EP2"
+  ],
+  "imports": {
+    "ecs_base_initializer": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_inverse_tortoise_v1/certificate.json",
+      "sha256": "25d7e306e5b4b314aa34f1a10f6a8a0461e8d6c4dd1c2e7f91508b2e6e0d6e92"
+    },
+    "ecs_tangent_initializer": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_tangent_initializer_v1/certificate.json",
+      "sha256": "0b1b6a7601e2800b3c1c57264323ab3733a8458ab524e5e2c71b4880a6d3caa3"
+    },
+    "panel_run": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_panel_transport_preflight_v1/panel-run.json",
+      "sha256": "d26707d9d555becc931f6801c196596583968316e16ea2a08d965443965b0288"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "method": {
+    "arithmetic": "python-flint acb, 128 bits",
+    "cauchy_tail_per_step": true,
+    "centered_after_each_step": true,
+    "frequency_panels": 16,
+    "lohner_affine_reconditioning": false,
+    "radial_step": "-1/4",
+    "taylor_order": 16
+  },
+  "result": {
+    "all_panel_component_radii_exceed_one": true,
+    "conclusion": "Even after 16 frequency panels, order-16 Taylor steps and per-step recentering, rectangular dependency wrapping grows to at least order 10^16 by r=4. The rail cannot enclose an Evans boundary. Affine Lohner/Taylor-model correlation or a Riccati/Grassmannian representation is required.",
+    "representative_first_panel_radius_lower": [
+      "175447125897773056.00000000000000000000",
+      "180786717823860736.00000000000000000000"
+    ]
+  },
+  "schema": "phase3-axial-qnm-ecs-panel-transport-preflight-v1",
+  "status": "VALIDATED_ACB_PANEL_TAYLOR_WIDTH_SHORTFALL_NO_EVANS_BOUNDARY"
+}

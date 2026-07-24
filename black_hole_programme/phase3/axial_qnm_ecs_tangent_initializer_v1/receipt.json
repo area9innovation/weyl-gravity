@@ -1,0 +1,27 @@
+{
+  "artifact_sha256": {
+    "README.md": "47eb06e01dd472b14dfbb12ea1a777509c15445eca7813ed6b06b4dea9e8b0ca",
+    "produce.py": "ee11567a044a194634a35fdc435d4bbd37a64a71f8472a5896fae855221b2590",
+    "report.md": "24e934840396aa6f16cccd61829c6b279efd8332231b8d07fdf9c6698611e123",
+    "schema.json": "6ac5bf8dded976db4b9da51d887e2ccde4df7e5196c752b8448a59d9eb3b5b52",
+    "test_tangent_initializer.py": "1a2cd3aa8c6d0607151da276abf2b6a4068cc5e5e37887207bc1d441d456d757",
+    "verify.py": "181e3b7fe7dca9f27982a3ccd3c62f9db91e21d84586745bec90054e2ffaa1c7"
+  },
+  "certificate": "certificate.json",
+  "certificate_sha256": "0b1b6a7601e2800b3c1c57264323ab3733a8458ab524e5e2c71b4880a6d3caa3",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_qnm_ecs_tangent_initializer_v1.produce",
+    "python3 -m black_hole_programme.phase3.axial_qnm_ecs_tangent_initializer_v1.verify",
+    "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_ecs_tangent_initializer_v1.test_tangent_initializer",
+    "python3 -m py_compile black_hole_programme/phase3/axial_qnm_ecs_tangent_initializer_v1/produce.py black_hole_programme/phase3/axial_qnm_ecs_tangent_initializer_v1/verify.py black_hole_programme/phase3/axial_qnm_ecs_tangent_initializer_v1/test_tangent_initializer.py"
+  ],
+  "input_sha256": {
+    "ecs_base_initializer": "25d7e306e5b4b314aa34f1a10f6a8a0461e8d6c4dd1c2e7f91508b2e6e0d6e92",
+    "frequency_tail_gate": "dbb01137cbf84567a0b671c7bf2f2f44cb485f12fcede932c7482f4f2a8e683a",
+    "projective_cocycle": "3f7c2fff23a70ab8c1f6e922d6799b168ca328f0fa9e68be8a0e8881f80310bb"
+  },
+  "producer": "produce.py",
+  "schema": "phase3-axial-qnm-ecs-tangent-initializer-receipt-v1",
+  "tier_2_not_run": "No shared operator changed; this package bounds one exact content-addressed reduced representative.",
+  "tier_3_not_run": "Not a freeze, release or theorem promotion."
+}

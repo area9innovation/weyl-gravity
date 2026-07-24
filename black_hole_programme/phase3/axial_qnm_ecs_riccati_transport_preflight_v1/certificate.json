@@ -1,0 +1,81 @@
+{
+  "claim_flags": {
+    "Evans_boundary_nonzero_certified": false,
+    "QNM_or_EP2_certified": false,
+    "QNM_root_count_certified": false,
+    "b_over_a_on_contour_constructed": false,
+    "physical_projective_pole_established": false,
+    "tangent_sensitivity_transported_to_r4": false,
+    "usable_r4_projective_enclosure": false,
+    "validated_projective_preflight_executed": true
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a physical zero or pole of the scalar Jost line",
+    "a usable projective enclosure at r=4",
+    "transport of the tangent sensitivity to r=4",
+    "b/a or Evans nonvanishing on the contour",
+    "a QNM count, QNM, Smith selection or EP2"
+  ],
+  "imports": {
+    "ecs_base_initializer": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_inverse_tortoise_v1/certificate.json",
+      "sha256": "25d7e306e5b4b314aa34f1a10f6a8a0461e8d6c4dd1c2e7f91508b2e6e0d6e92"
+    },
+    "ecs_tangent_initializer": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_tangent_initializer_v1/certificate.json",
+      "sha256": "0b1b6a7601e2800b3c1c57264323ab3733a8458ab524e5e2c71b4880a6d3caa3"
+    },
+    "riccati_run": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_riccati_transport_preflight_v1/riccati-run.json",
+      "sha256": "7ad3f154f474f981417d5a6d89e5ab5abf17f7e3e88681cbdb49985ea8e63965"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "method": {
+    "cauchy_tail_and_majorant_self_map": true,
+    "chart_switch_rule": "switch only when the current acb enclosure excludes zero",
+    "charts": [
+      "q=v_x/v",
+      "p=v/v_x"
+    ],
+    "panel_count": 16,
+    "radial_step": "-1/20",
+    "taylor_order": 14
+  },
+  "next_gates": [
+    "replace the norm-only ECS base ball by a centered Picard/Neumann evaluation with a small residual correction",
+    "then rerun the q/p atlas and differentiate its M\u00f6bius updates using the certified intrinsic tangent initializer"
+  ],
+  "obstruction": {
+    "all_failure_balls_contain_zero": true,
+    "all_panels_failed_before_r4": true,
+    "conclusion": "The coarse norm-only ECS initializer loses projective separation after only 1.65--1.8 radial units. At failure the q enclosure contains zero, so p=1/q is not a certified chart, while the q-chart Cauchy majorant has no positive self-map discriminant. This is an enclosure obstruction, not evidence for a zero of the physical Jost solution.",
+    "failure_window": [
+      "216/5",
+      "867/20"
+    ],
+    "last_certified_radii": [
+      "173/4",
+      "173/4",
+      "433/10",
+      "433/10",
+      "867/20",
+      "867/20",
+      "867/20",
+      "867/20",
+      "433/10",
+      "433/10",
+      "173/4",
+      "173/4",
+      "216/5",
+      "216/5",
+      "216/5",
+      "216/5"
+    ]
+  },
+  "schema": "phase3-axial-qnm-ecs-riccati-transport-preflight-v1",
+  "status": "VALIDATED_RICCATI_CHART_ENCLOSURE_OBSTRUCTION_FROM_COARSE_ECS_BASE_BALL_NO_PHYSICAL_POLE_INFERRED"
+}

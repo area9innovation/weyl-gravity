@@ -1531,6 +1531,55 @@ pencil has precisely the defective QNM frequencies as finite generalized
 eigenvalues.
 \end{proposition}
 
+\begin{proposition}[Projective reduction of the intrinsic QNM shift]
+\label{prop:axial-qnm-projective-shift}
+Let \(Y_H(\omega,\tau)\) and \(Y_\infty(\omega,\tau)\) be analytic selected
+spin-two endpoint lines transported to a common interior point.  In a
+projective chart valid on a spectral domain, write
+\[
+ Y_\star=\gamma_\star\binom{1}{v_\star},
+ \qquad
+ \delta=v_\infty-v_H .
+\]
+Then the scalar Evans coefficient factors as
+\[
+ a(\omega,\tau)=g(\omega,\tau)\delta(\omega,\tau),
+ \qquad g=\gamma_H\gamma_\infty,
+\]
+up to the fixed orientation sign.  Whenever the chart is valid,
+\(g\) is analytic and nonzero.  At every simple QNM,
+\[
+ \frac{\partial_\tau a}{\partial_\omega a}
+ =
+ \frac{\partial_\tau\delta}{\partial_\omega\delta}.
+\]
+Moreover, on every contour contained in the chart domain,
+\[
+ \oint\omega^k\frac{\partial_\omega a}{a}\,d\omega
+ =
+ \oint\omega^k\frac{\partial_\omega\delta}{\delta}\,d\omega,
+ \qquad
+ \oint\omega^k\frac{\partial_\tau a}{a}\,d\omega
+ =
+ \oint\omega^k\frac{\partial_\tau\delta}{\delta}\,d\omega .
+\]
+Thus the QNM count, the local velocity
+\(\kappa_n=\delta_\tau/\delta_\omega\), and all finite-cluster extension
+moments depend only on the two transported projective endpoint lines.
+
+For a companion system \(Y_x=A Y\), the chart
+\(v=Y_2/Y_1\) obeys
+\[
+ v_x=A_{21}+(A_{22}-A_{11})v-A_{12}v^2,
+\]
+while \(v_\tau\) and \(v_\omega\) obey the corresponding linearized
+inhomogeneous equations.  A fixed \(GL(2,\mathbb C)\) chart change acts by a
+M\"obius transformation and preserves holomorphic parameter dependence.
+Consequently amplitude transport is unnecessary for the Evans/Smith
+selector; it is required only later for physically normalized \(T_+\) and
+fluxes.
+\end{proposition}
+
 The auxiliary \(\tau\) is a bookkeeping coordinate on the intrinsic
 deformation class, not a physical parameter or a changed fundamental
 theory.  The analytic complex-frequency Jost frames and the contour moment
@@ -2041,10 +2090,16 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_qnm_infinity_tail_gate_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_ecs_inverse_tortoise_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_ecs_inward_transport_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_ecs_tangent_initializer_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_ecs_panel_transport_preflight_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_ecs_riccati_transport_preflight_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_sensitivity_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_endpoint_frames_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_transport_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_moving_phase_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_spin_one_levelt_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json}\\
 Polar restriction-stable module and invariant current filtration &
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json}\\
@@ -2121,8 +2176,27 @@ successor must factor the endpoint singular structure before applying the
 Taylor tail bound.  The phase-factored horizon successor confirms this
 diagnosis: \(\dot\lambda_H=0\), so no new tangent logarithm occurs, and a
 tail-enclosed reduced Frobenius seed and first pure-spin-two panel pass.  The
-spin-one companion block must receive its own Levelt/phase reduction before
-a three-channel initializer and mixed column are bounded.
+spin-one companion block requires its own Levelt/phase reduction before
+a three-channel initializer and mixed column are bounded.  That reduction
+is now exact:
+\[
+ \widehat Z=\operatorname{diag}(\rho,\rho^2)Z,\qquad
+ \widehat X=\rho X,\qquad \widehat Y=\rho Y.
+\]
+The order-one resonance is compatible with no forced logarithm; its omitted
+base and tangent tails are below \(2.736\times10^{-32}\) and
+\(6.867\times10^{-31}\).  The complete mixed first panel passes, including
+agreement of the direct regular six-state and partial-jet routes.  Further
+panels and \(K_H\) remain open.
+
+At outgoing real infinity the corresponding reduced-phase representation
+has also passed its first local test.  Keeping \(e^{-2i\omega r_*}\)
+symbolic, the exact finite \(R_+\) factor head gives identical direct and
+dual-number Taylor coefficients through order \(12\) on a tiny inward panel
+from \(r=32\), with propagated operator tail below
+\(3.42\times10^{-68}\).  The all-order shared-\(\omega,\tau\) Jost
+remainder is not yet enclosed, so this is not yet an outgoing Jost column or
+\(T_+\).
 Complex-frequency work has excluded the entire growth half-plane, but no
 damped QNM root, contour moment, or local Smith branch has been computed.
 At the QNM seed disk, the direct inverse-\(r\) forward recurrence also fails
@@ -2137,8 +2211,22 @@ complex transport exists analytically, but a one-piece Gr\"onwall estimate
 from \(r=45\) to \(r=4\) grows to \(3^{69}\) and produces unusable
 \(10^{33}\)-scale matching balls.  The next quantitative rail must use
 panelwise centered/Lohner transport and construct the correlated
-\(\tau\)-derivative initializer.  The mixed four-state tangent frame, an
-Evans boundary enclosure, and a root count remain open.
+\(\tau\)-derivative initializer.  The canonical projective tangent
+initializer is now bounded by
+\(\lvert v_\tau(45)\rvert\le0.041595\) and
+\(\lvert\partial_xv_\tau(45)\rvert\le0.001458\), but its conversion to the
+factor-frame coefficient \(b\) still needs the analytic endpoint gauge.  A
+16-panel order-16 complex-ball transport improves the global bound but still
+widens past \(10^{17}\).  Affine Lohner/Taylor-model or
+Riccati/Grassmannian transport is therefore required.  The mixed four-state
+tangent frame, an Evans boundary enclosure, and a root count remain open.
+The first two-chart Riccati rail correctly removes amplitudes, but its
+coarse norm-only seed loses chart separation near \(r\simeq43.3\): the
+\(v_x/v\) enclosure contains zero while the reciprocal chart cannot yet be
+certified.  This is an enclosure obstruction, not a physical Jost zero.
+The next projective rail must center the ECS fixed point and retain shared
+Taylor/Lohner dependencies for
+\((v,v_\tau,v_\omega)\).
 Uniform time-domain boundedness, decay, and completeness remain open.
 
 The present result already fixes an important baseline:

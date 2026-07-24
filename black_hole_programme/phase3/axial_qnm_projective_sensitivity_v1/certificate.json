@@ -1,0 +1,67 @@
+{
+  "claim_flags": {
+    "QNM_or_EP2_certified": false,
+    "QNM_root_count_certified": false,
+    "contour_mismatch_enclosed": false,
+    "exact_correlated_mobius_switch": true,
+    "exact_omega_sensitivity_system": true,
+    "exact_tau_sensitivity_system": true,
+    "exact_two_chart_base_system": true,
+    "interval_newton_gate_passed": false,
+    "two_sided_endpoint_lines_constructed": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a centered ECS fixed-point evaluation",
+    "horizon or infinity projective lines at a match point",
+    "Delta, Delta_tau or Delta_omega on a contour",
+    "an interval-Newton or argument-principle root count",
+    "a QNM, Smith selection or EP2"
+  ],
+  "family": {
+    "calI_reduced": "I*(r - 2)*(2*omega**2*r + 3*omega**2 + 12)/(5*omega*r**4)",
+    "equation": "v_xx-2*I*omega*v_x-V*v+tau*calI_reduced*v=0",
+    "sign_convention": "tau enters with +calI in the differential equation, hence -tau*calI in the q Riccati equation"
+  },
+  "imports": {
+    "projective_cocycle": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_cocycle_v1/certificate.json",
+      "sha256": "3f7c2fff23a70ab8c1f6e922d6799b168ca328f0fa9e68be8a0e8881f80310bb"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "mobius_switch": {
+    "base": "p=1/q",
+    "omega_sensitivity": "xi_p=-xi_q/q**2",
+    "shared_remainder_requirement": "q, eta_q and xi_q must be switched by one correlated M\u00f6bius operation; independent rectangular division loses the derivative identities",
+    "tau_sensitivity": "eta_p=-eta_q/q**2"
+  },
+  "p_chart": {
+    "base": "p_x=1-2*I*omega*p-V*p**2+tau*calI*p**2",
+    "coordinate": "p=v/v_x=1/q",
+    "eta_symbolic_rhs": "eta_p*(-2*I*omega - 2*p*V(x)) + p**2*calI(x, omega)",
+    "omega_sensitivity": "xi_p_x=(-2*I*omega-2*V*p)*xi_p-2*I*p",
+    "tau_sensitivity": "eta_p_x=(-2*I*omega-2*V*p)*eta_p+calI*p**2",
+    "xi_symbolic_rhs": "-2*I*p + xi_p*(-2*I*omega - 2*p*V(x))"
+  },
+  "projective_mismatch": {
+    "at_match": "Delta=q_H-q_infinity",
+    "newton_velocity": "omega_tau=-Delta_tau/Delta_omega at a simple zero",
+    "omega_derivative": "Delta_omega=xi_H-xi_infinity",
+    "scope": "exact identities only; no endpoint line or contour value is evaluated here",
+    "tau_derivative": "Delta_tau=eta_H-eta_infinity"
+  },
+  "q_chart": {
+    "base": "q_x=2*I*omega*q+V-tau*calI-q**2",
+    "coordinate": "q=v_x/v",
+    "eta_symbolic_rhs": "(2*I*omega - 2*q(x))*eta(x) - calI(x, omega)",
+    "omega_sensitivity": "xi_x=(2*I*omega-2*q)*xi+2*I*q",
+    "tau_sensitivity": "eta_x=(2*I*omega-2*q)*eta-calI",
+    "xi_symbolic_rhs": "(2*I*omega - 2*q(x))*xi(x) + 2*I*q(x)"
+  },
+  "schema": "phase3-axial-qnm-projective-sensitivity-v1",
+  "status": "EXACT_TWO_CHART_PROJECTIVE_BASE_TAU_AND_OMEGA_SENSITIVITY_SYSTEM"
+}

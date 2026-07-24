@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema", "dependency_tags", "lifecycle", "status", "imports", "family", "q_chart", "p_chart", "mobius_switch", "projective_mismatch", "claim_flags", "does_not_establish"],
+  "properties": {
+    "schema": {"const": "phase3-axial-qnm-projective-sensitivity-v1"},
+    "dependency_tags": {"contains": {"const": "REDUCED-MODE"}},
+    "lifecycle": {"const": "CLASSIFIED"}
+  }
+}
