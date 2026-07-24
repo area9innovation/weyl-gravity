@@ -37,9 +37,12 @@ physical claim:
 9. no uniformly positive closed endpoint subspace contains the pure Einstein
    channel, and the hyperbolic spin-two quotient is canonically dual to the
    Einstein line;
-10. a nonsplit self-extension of a simple module has only the involutions
-    \(\pm I\), while its Bach-module application remains fail-closed because
-    generic Regge--Wheeler simplicity has not been certified.
+10. for every \(\ell\ge2\) and real \(\omega>0\), the scalar spin-two
+    Regge--Wheeler and spin-one Maxwell modules are simple with rational
+    endomorphism ring \(\mathbb C\);
+11. fixed rank minors close the old \(\omega^2=3\) axial nonsplitting gap, so
+    the only rational local dynamical involutions on the physical axial
+    repeated-spin-two block are \(\pm I\).
 
 Two new experiment rails are explicit: compare the regularized parent QNM
 overlap with the radial extension overlap including projection, commutator,
@@ -61,7 +64,7 @@ main theorem chain. Paper 14 remains the provenance-rich source archive.
 
 ## Current size and gate
 
-The main PDF is 27 pages and lies inside the agreed 25–35 page target.
+The main PDF is 29 pages and lies inside the agreed 25–35 page target.
 The added length is theorem content rather than engineering chronology.  The
 explicit \(T_+\) band remains the correct final scientific addition; its
 first Phase-4 correlated successor passed but the common outgoing frame is
@@ -71,18 +74,19 @@ remains an active draft rather than a submission freeze.
 ## Verification
 
 The main paper compiles twice and the computational supplement compiles.  The
-generated claim map pins nineteen source certificates, including the exact
+generated claim map pins twenty source certificates, including the exact
 all-\(\ell\) threshold, universal Hessian/intertwiner,
 Schouten-Einstein/Maxwell carrier, Euler transgression, second-order parent
-flux, parent-resolvent/Krein obstruction, and static-control authorities.
+flux, parent-resolvent/Krein obstruction, RW/Maxwell simplicity and
+endomorphism, and static-control authorities.
 An independent verifier checks the
 universal, parent, incoming, outgoing, no-growth, threshold, and EP2 flags.
 Fifteen tests reject Green-resolvent, all-frequency outgoing, generic
 radial-to-time-Jordan, complete-polar-parent-Gram, time-domain,
-nonlocal-intertwiner, Euler-boundary, generic-Regge--Wheeler-simplicity,
-unconditional Bach-involution, parent-overlap-shortcut, Schwarzschild
+nonlocal-intertwiner, Euler-boundary, complex-frequency RW-simplicity,
+all-\(\ell\) Bach-nonsplitting, parent-overlap-shortcut, Schwarzschild
 retarded-propagator, and claim-map promotions.  The new exact package has a
-separate verifier and eight unit tests.
+separate verifier and nine unit tests.
 
 Tier 3 is not run because the explicit \(T_+\) experiment and journal-length
 freeze are still open.

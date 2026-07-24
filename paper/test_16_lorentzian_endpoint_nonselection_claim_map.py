@@ -104,14 +104,14 @@ class Paper16ClaimMapTests(unittest.TestCase):
             "the complete polar parent Gram is certified"
         )
 
-    def test_unconditional_bach_involution_promotion_rejected(self) -> None:
+    def test_all_ell_bach_nonsplitting_promotion_rejected(self) -> None:
         self.assert_promotion_rejected(
-            "the Bach spin-two block admits only \\(C=\\pm I\\)"
+            "the Bach self-extension is nonsplit for every \\(\\ell\\ge2\\)"
         )
 
-    def test_generic_rw_simplicity_promotion_rejected(self) -> None:
+    def test_complex_frequency_rw_simplicity_promotion_rejected(self) -> None:
         self.assert_promotion_rejected(
-            "the generic Regge--Wheeler differential module is simple"
+            "the Regge--Wheeler differential module is simple at every complex frequency"
         )
 
     def test_schwarzschild_retarded_promotion_rejected(self) -> None:

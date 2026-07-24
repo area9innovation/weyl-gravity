@@ -81,6 +81,13 @@ invertible for every positive real frequency.  Negative-flux directions are
 therefore populated by regular exterior solutions, rather than being formal
 endpoint artefacts.
 
+For every integer \(\ell\ge2\) and every real \(\omega>0\), the scalar
+spin-two Regge--Wheeler and spin-one Maxwell differential modules are simple
+over \(\C(r)[D]\), with rational endomorphism ring \(\C\).  Together with
+specialization-safe nonsplitting of the axial \(\ell=2\) self-extension, this
+implies that its only rational local dynamical involutions are \(\pm I\);
+neither can make the hyperbolic spin-two form positive.
+
 On the certified cell
 \(\omega\in[0.49995,0.50005]\) the outgoing and future-horizon spaces are
 matching three-channel Krein spaces, the outgoing map is invertible, and the
@@ -779,11 +786,107 @@ a rational local spin-changing field redefinition.  This is a statement
 about rational differential modules; it does not exclude nonlocal,
 meromorphic, or scattering-dependent transforms.
 
-\subsection{A local branch-resolving \(C\) operator is obstructed}
+\subsection{Real-axis simplicity and the local \(C\) obstruction}
 
 The non-split extension also constrains possible positive-metric
 constructions.  The statement is local and classical; it is not a theorem
 about a quantum Hilbert space.
+
+\begin{theorem}[Real-axis simplicity and scalar endomorphism rings]
+\label{thm:rw-simple}
+Let \(\ell\ge2\), \(\Lambda=\ell(\ell+1)\), and
+\[
+L_{2,\ell}
+=D^2+\omega^2
+-f\left(\frac{\Lambda}{r^2}-\frac6{r^3}\right),
+\qquad
+L_{1,\ell}
+=D^2+\omega^2-f\frac{\Lambda}{r^2},
+\quad
+D=f\partial_r.
+\]
+For every real \(\omega>0\), both differential modules are simple over
+\(\C(r)[D]\), and
+\[
+\operatorname{End}_{\C(r)[D]}(M_{2,\ell})
+=
+\operatorname{End}_{\C(r)[D]}(M_{1,\ell})
+=\C.
+\]
+The spin-two equation has the exact same-sign algebraically-special controls
+\[
+\omega=\sigma i\,\frac{\Lambda(\Lambda-2)}{12},
+\qquad
+y=e^{\sigma i\omega r_*}
+\left(1+\frac{6}{(\Lambda-2)r}\right),
+\qquad \sigma=\pm1.
+\]
+For \(\ell=2\), a separate opposite-sign audit excludes
+\(\omega=i/4,i/2,i\) as rational reducibility points.
+\end{theorem}
+
+\begin{proof}
+Reducibility is equivalent to a rational solution of the Riccati equation
+\[
+Dw+w^2+\omega^2-V_{s,\ell}=0.
+\]
+At \(r=0\), the spin-two exponents are \(-1,3\), the Maxwell exponents are
+\(0,2\), and at the horizon both equations have exponents
+\(\pm2i\omega\).  A rational prefactor cannot connect opposite horizon and
+infinity Jost signs for real \(\omega\ne0\), because that would require the
+noninteger rational power \(4i\omega\).  Ordinary-point regularity and
+dominant balance at infinity therefore reduce a possible spin-two
+hyperexponential solution to
+\[
+y=e^{\sigma i\omega r_*}\left(A+\frac Br\right).
+\]
+Exact substitution gives
+\[
+L_{2,\ell}y=
+-\frac{i(r-2)e^{\sigma i\omega r_*}}{r^4}
+\left[
+(-i\Lambda A+2\sigma\omega B)r
++i\{6A+(2-\Lambda)B\}
+\right].
+\]
+A nonzero solution forces
+\[
+B=\frac{6A}{\Lambda-2},
+\qquad
+\omega=\sigma i\,\frac{\Lambda(\Lambda-2)}{12},
+\]
+which is not positive real.  In the Maxwell case the same local analysis
+leaves only a constant rational prefactor, and its residual
+\(-f\Lambda A/r^2\) is nonzero.
+
+For the endomorphism statement, remove the constant trace.  A trace-free
+horizontal endomorphism is determined by \(q\in\C(r)\) satisfying
+\[
+\mathcal K_Uq=0,
+\qquad
+\mathcal K_U=D^3+4UD+2D(U).
+\]
+The spin-two symmetric-square exponents at \(r=0\) are \(-2,2,6\), so
+rationality reduces the search to
+\[
+q=q_0+\frac{q_1}{r}+\frac{q_2}{r^2}.
+\]
+Three exact coefficient consequences are
+\[
+-4\omega^2q_1=0,\qquad
+4(\Lambda q_0-2\omega^2q_2)=0,\qquad
+-12(\Lambda+3)q_0=0,
+\]
+where the last follows after the preceding eliminations.  Hence
+\(q_0=q_1=q_2=0\).  For Maxwell the symmetric-square exponents are
+\(0,2,4\), so \(q=q_0\), while
+\[
+\mathcal K_{U_1}(q_0)
+=\frac{4\Lambda q_0(r-3)(r-2)}{r^5};
+\]
+again \(q_0=0\).  The separately certified finite ans\"atze at the three
+imaginary frame events have zero kernel for both possible Jost signs.
+\end{proof}
 
 \begin{proposition}[No branch-resolving rational involution]
 \label{prop:no-local-c}
@@ -821,8 +924,8 @@ coboundary.  It would split the extension, contradicting the certified
 nonzero rational extension class.
 \end{proof}
 
-There is a stronger categorical statement, but its Bach-module application
-has one additional algebraic gate.
+The scalar classification makes the stronger categorical statement directly
+applicable on the physical real axis.
 
 \begin{lemma}[Involutions of a simple nonsplit self-extension]
 \label{lem:simple-extension-involution}
@@ -842,16 +945,39 @@ length two with identical simple factors, both images have length one and
 give a direct-sum splitting of the extension, a contradiction.
 \end{proof}
 
-The repository certifies the generic nonsplit Bach self-extension, but it
-does not yet contain a generic simplicity or full endomorphism-ring
-certificate for \(M_{\rm RW}\).  Therefore
-Lemma~\ref{lem:simple-extension-involution} is exact, while the stronger
-conclusion that the Bach block admits only \(\pm I\) remains conditional on
-that gate.  Proposition~\ref{prop:no-local-c}, which excludes the
-branch-resolving involution directly from the cocycle equation, is
-unconditional.  This distinction also separates endpoint Krein
-diagonalization, which is algebraic, from invariant bulk diagonalization,
-which would require differential-module projectors.
+\begin{corollary}[Only scalar involutions on the physical axial block]
+\label{cor:only-scalar-c}
+For axial \(\ell=2\) and every real \(\omega>0\), the only rational
+differential-module involutions of the repeated-spin-two Bach block are
+\[
+C=+I,\qquad C=-I.
+\]
+Neither makes its hyperbolic flux form positive.
+\end{corollary}
+
+\begin{proof}
+The earlier cocycle reduction used a left-null witness proportional to
+\(\omega^2-3\), which did not classify that specialization.  The same
+exhaustive coefficient system has the fixed minors
+\[
+\det M_{[0,1,2]}=3456\omega^{10},
+\qquad
+\det[M\mid{\rm rhs}]_{[0,1,2,5]}
+=-645120i\omega^9.
+\]
+Thus its coefficient and augmented ranks are respectively three and four
+for every \(\omega>0\), including \(\omega^2=3\); the extension is nonsplit
+throughout the physical real axis.  Apply
+Theorem~\ref{thm:rw-simple} and
+Lemma~\ref{lem:simple-extension-involution}.  Multiplication by either
+remaining scalar sign preserves the inertia of the hyperbolic plane.
+\end{proof}
+
+The endpoint Krein diagonalization is algebraic, but a bulk dynamical
+diagonalization would produce nontrivial differential-module projectors and
+split the extension.  The theorem excludes rational local involutions only;
+nonlocal, spectral, scattering-dependent, and BRST constructions remain
+open.
 
 The endpoint form supplies a complementary positivity obstruction, stated
 after its exact Gram is displayed below.
@@ -1062,8 +1188,8 @@ symmetry preserved the Einstein line, \(CE=\pm E\), then
 \(G(E,CE)=0\); any positive fundamental symmetry must mix the two null
 spin-two directions.  The elementary endpoint exchange is a classical Krein
 fundamental symmetry, not Mannheim's dynamical \(C\).  Together with
-Proposition~\ref{prop:no-local-c}, this shows that any successful dynamical
-construction cannot be a local rational branch-resolving involution.  A
+Corollary~\ref{cor:only-scalar-c}, this shows that any successful positive
+dynamical construction cannot be a rational local involution.  A
 nonlocal, spectral, scattering-dependent, or BRST-level construction is not
 excluded.
 
@@ -1654,10 +1780,10 @@ Axial \(\ell=2\)\\
 No rational spin-one/spin-two intertwiner &
 Exact symbolic theorem with mutation tests &
 Axial \(\ell=2\), fixed real \(\omega>0\)\\
-Simple-self-extension involution lemma &
-Exact categorical theorem; Bach application conditional &
-Characteristic zero and a simple composition factor; generic
-Regge--Wheeler simplicity is not certified\\
+RW/Maxwell simplicity, scalar endomorphisms, and axial local-\(C\) obstruction &
+Exact symbolic theorem with independent certificate &
+Every integer \(\ell\ge2\) and real \(\omega>0\) for the scalar factors;
+the nonsplit Bach involution conclusion is axial \(\ell=2\)\\
 Positive-graph obstruction and \(B_2/E\simeq E^*\) &
 Exact endpoint Krein theorem &
 Axial spin-two endpoint trace space; pointwise packet graph form only for
@@ -2007,6 +2133,7 @@ The principal machine authorities are:
 \item \cert{black_hole_programme/phase4/weyl_euler_current_transgression_v1/certificate.json};
 \item \cert{black_hole_programme/phase4/second_order_parent_flux_v1/certificate.json};
 \item \cert{black_hole_programme/phase4/parent_resolvent_krein_obstructions_v1/certificate.json};
+\item \cert{black_hole_programme/phase4/rw_maxwell_simplicity_endomorphisms_v1/certificate.json};
 \item \cert{black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json};
 \item \cert{black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/full_contour_winding_v1/certificate.json};
 \item \cert{black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/local_selector_v1/certificate.json};
@@ -2036,9 +2163,9 @@ pairing;
 \item a polar global connection theorem;
 \item a generic implication from radial nonsplitting to a time-translation
 Jordan block;
-\item generic simplicity or the complete differential endomorphism ring of
-the Regge--Wheeler module, and hence the unconditional claim that every
-rational involution of the Bach spin-two block is \(\pm I\);
+\item a complete classification of the complex-frequency reducibility locus,
+or the absence of nonlocal, spectral, scattering-dependent, or BRST
+\(C\) operators;
 \item an analytic Fredholm realization of the damped QNM boundary problem;
 \item a physical second-order Green-resolvent pole or generalized ringdown
 term;

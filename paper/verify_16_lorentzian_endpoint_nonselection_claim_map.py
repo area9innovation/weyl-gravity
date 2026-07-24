@@ -73,6 +73,8 @@ def main() -> None:
         "Parent resolvent identity",
         "Conditional simple-QNM Laurent coefficient",
         "Involutions of a simple nonsplit self-extension",
+        "Real-axis simplicity and scalar endomorphism rings",
+        "Only scalar involutions on the physical axial block",
         "Positive-graph and cotangent obstructions",
         "regularized parent overlap",
         "flat-space biwave kernel",
@@ -102,8 +104,8 @@ def main() -> None:
         "the polar associated graded is globally certified",
         "generic radial nonsplitting is a time-Jordan block",
         "the complete polar parent Gram is certified",
-        "the Bach spin-two block admits only \\(C=\\pm I\\)",
-        "the generic Regge--Wheeler differential module is simple",
+        "the Regge--Wheeler differential module is simple at every complex frequency",
+        "the Bach self-extension is nonsplit for every \\(\\ell\\ge2\\)",
         "the Schwarzschild retarded propagator is established",
         "the parent overlap equals the radial overlap without endpoint terms",
     ]
@@ -282,6 +284,31 @@ def main() -> None:
         "schwarzschild_retarded_evolution_certified",
     ]:
         require_flag(parent_resolvent, key, False, "parent resolvent")
+    simplicity = json.loads(
+        (
+            ROOT
+            / authorities["rw_maxwell_simplicity_endomorphisms"]["path"]
+        ).read_text()
+    )
+    for key in [
+        "spin2_simple_all_ell_positive_real",
+        "maxwell_simple_all_ell_positive_real",
+        "spin2_endomorphism_ring_scalar_positive_real",
+        "maxwell_endomorphism_ring_scalar_positive_real",
+        "spin2_algebraically_special_controls_exact",
+        "axial_ell2_nonsplit_all_positive_real",
+        "only_plus_minus_identity_axial_ell2_positive_real",
+    ]:
+        require_flag(simplicity, key, True, "RW/Maxwell simplicity")
+    for key in [
+        "spin2_simple_at_algebraically_special_points",
+        "local_rational_positive_c_axial_ell2_exists",
+        "nonlocal_c_excluded",
+        "all_ell_bach_nonsplitting_established",
+        "physical_qnm_smith_case_selected",
+        "green_resolvent_double_pole_established",
+    ]:
+        require_flag(simplicity, key, False, "RW/Maxwell simplicity")
     static = json.loads(
         (ROOT / authorities["static_normalized_control"]["path"]).read_text()
     )
@@ -297,7 +324,7 @@ def main() -> None:
     coverage = json.loads(coverage_path.read_text())
     if coverage.get("claim_map_sha256") != digest(claim_path):
         fail("coverage-to-claim-map hash drift")
-    if len(coverage.get("nodes", [])) != 13:
+    if len(coverage.get("nodes", [])) != 14:
         fail("coverage claim count drift")
     print("PASS: Paper 16 claim map and semantic boundaries")
 
