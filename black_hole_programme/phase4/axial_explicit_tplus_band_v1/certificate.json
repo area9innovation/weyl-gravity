@@ -1,0 +1,49 @@
+{
+  "claim_flags": {
+    "common_frequency_generator_preserved": true,
+    "complete_outgoing_frame_at_r4": false,
+    "correlated_base_tangent_transport_certified": true,
+    "direct_sixteen_state_boundary_gate_certified": true,
+    "explicit_Tplus_certified": false,
+    "reflection_or_stokes_certified": false
+  },
+  "dependency_tags": [
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "does_not_establish": [
+    "the complete outgoing frame at r=4",
+    "the outgoing trace map T_plus",
+    "reflection amplitudes or a Stokes identity",
+    "a full radial continuation or a positive-real frequency band theorem"
+  ],
+  "imports": {
+    "checkpoint": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_bplus4_chunk02_v1/checkpoint.json",
+      "sha256": "0e7a053cf66a7625e0bc64c6e9835490d229346a9db425a5778d3ff56f2190f2"
+    }
+  },
+  "lifecycle": "NUMERIC-ENCLOSURE",
+  "next_gate": "resume only from the content-addressed r=487/16 checkpoint; retain the correlated partial-jet and direct boundary gates",
+  "result_id": "PURE_WEYL_PHASE4_AXIAL_EXPLICIT_TPLUS_BAND_V1_CHECKPOINT",
+  "schema": "phase4-axial-explicit-tplus-band-v1",
+  "status": "CORRELATED_OUTGOING_SUCCESSOR_PASS_R4_OPEN",
+  "successor": {
+    "checkpoint": "black_hole_programme/phase4/axial_explicit_tplus_band_v1/checkpoint.json",
+    "checkpoint_sha256": "b26d050c8cce5a94075552731dbbf195160983edb7e0d4ebc108014fd4826485",
+    "frequency_generator": 7315,
+    "payload_sha256": "b1240852cb5f60848ab7d6fb6a165f394bafb803472003fada34f6816373c04a",
+    "radial_end": "487/16",
+    "radial_start": "979/32",
+    "run_manifest": "black_hole_programme/phase4/axial_explicit_tplus_band_v1/run_manifest.json",
+    "run_manifest_sha256": "1457054f18dbd21b280228ede3df22aa123503aed20f547155969212a406d8f6",
+    "summary": {
+      "choice": 0,
+      "coefficients": true,
+      "containment": true,
+      "order": 120,
+      "tail": "4.4421679558528834e-05",
+      "width": "5.12490045532877"
+    }
+  }
+}

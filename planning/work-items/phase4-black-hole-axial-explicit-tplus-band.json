@@ -1,0 +1,47 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-axial-explicit-tplus-band",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-axial-explicit-tplus-band",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-axial-explicit-tplus-band.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-axial-tplus",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Compute the explicit typed outgoing connection and reflection matrices on a certified positive-real frequency band using the exact partial-jet four-state system and correlated dual-number endpoint frames.",
+    "stop_condition": "Reissue the phase-factored outgoing spin-one quotient remainder in the same omega-Taylor tensor dual-tau algebra as the spin-two carrier. Propagate the four-state triangular family over dual numbers, assemble typed Tplus and R=Tplus*Tminus^{-1} in compatible null factor and signature frames, and certify on the largest honestly reached compact band: determinants, singular-value lower bounds, normalized extension shears, reflection zeros or their absence, and the oriented Stokes defect. Compare the direct six-state and jet-derived entries on at least one exact fixture. If a wide band cannot be closed, emit the first correlated-remainder or transport obstruction and retain the largest certified sub-band.",
+    "current_gate": "Correlated phase-factored XI3/S remainder in the common omega-Taylor tensor dual-tau algebra",
+    "forbid": "no independent rectangular propagation of a,b,c,d that loses the bd-ac correlation; no fixed endpoint phase Taylor expansion; no raw frame mixing between null and signature bases; no scalar determinant bound called a full inverse bound; no finite band called all-positive-frequency scattering; no time-domain, particle, ghost, CPT or quantum-unitarity promotion",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-global-finite-flux-channel-classification-v3",
+      "sf:program/work/phase3-black-hole-axial-incoming-extended-domain-audit",
+      "sf:program/work/phase3-black-hole-axial-arbitrary-radius-current-conservation-provenance"
+    ],
+    "activates": [
+      "explicit reflection and horizon-transfer amplitude tables for the focused endpoint-nonselection paper",
+      "quantitative low/compact/high-frequency estimates for the base transfer matrix and its intrinsic derivative"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase4/axial_explicit_tplus_band_v1/",
+      "reports/phase4-black-hole-axial-explicit-tplus-band-2026-07-24.md",
+      "residual_atlas/phase4-black-hole-axial-explicit-tplus-band-fragment-v1.json",
+      "planning/work-items/phase4-black-hole-axial-explicit-tplus-band.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Represent the six-state system as the spin-two-row first jet of the four-state family B(tau)=[[A+tau E,D+tau C],[0,Ax]]. Keep endpoint phases symbolic. Transport the base transfer and tangent together so inversion creates -b/a^2, -d/(af), and (bd-ac)/(a^2 f) with shared dependencies.",
+    "input_commit": "6c788306ab3cb7c3e05174569094bbdf3f93f977",
+    "notes": [
+      "REDUCED-MODE",
+      "LORENTZIAN-CAUSAL",
+      "Mathematical target: one typed two-factor connection and its intrinsic first jet.",
+      "Independent rail: direct six-state exact-point fixture versus the dual-number four-state reconstruction.",
+      "The existing narrow outgoing-population cell and transport-free pseudo-isometry remain authoritative if this wider explicit matrix attempt shortfalls."
+    ]
+  },
+  "edges": []
+}
