@@ -1,0 +1,266 @@
+{
+  "claim_flags": {
+    "criterion_obstruction_fixtures_verified": true,
+    "criterion_positive_fixture_verified": true,
+    "physical_Gminus_imported": true,
+    "physical_Tplus_invertible_cell_imported": true,
+    "physical_channel_factorized_C_certified": false,
+    "physical_channel_factorized_C_obstructed": false,
+    "physical_full_typed_Tminus_available": false,
+    "physical_generalized_spectrum_certified": false,
+    "physical_horizon_gram_imported": true,
+    "spectral_criterion_exact": true
+  },
+  "dependency_tags": [
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "does_not_establish": [
+    "existence or obstruction of a channel-factorized C on the physical cell",
+    "the generalized eigenvalues of det(K_H-lambda*Gminus)",
+    "a full typed Tminus or explicit Tplus matrix",
+    "a canonical, covariant, causal, holomorphic or BRST-compatible C",
+    "whole-axis positive-norm boundedness",
+    "time-domain stability, particles, ghosts or quantum unitarity"
+  ],
+  "exact_fixtures": {
+    "jordan_inside_interval": {
+      "G_C_inertia": [
+        2,
+        1,
+        0
+      ],
+      "G_hermitian": true,
+      "KH_C_inertia": [
+        2,
+        1,
+        0
+      ],
+      "KH_hermitian": true,
+      "Kplus_C_inertia": [
+        2,
+        1,
+        0
+      ],
+      "Kplus_hermitian": true,
+      "L_G_self_adjoint": true,
+      "L_diagonalizable": false,
+      "spectrum": [
+        "1/2",
+        "3/4"
+      ]
+    },
+    "negative_eigenvalue": {
+      "G_C_inertia": [
+        3,
+        0,
+        0
+      ],
+      "G_hermitian": true,
+      "KH_C_inertia": [
+        2,
+        1,
+        0
+      ],
+      "KH_hermitian": true,
+      "Kplus_C_inertia": [
+        3,
+        0,
+        0
+      ],
+      "Kplus_hermitian": true,
+      "L_G_self_adjoint": true,
+      "L_diagonalizable": true,
+      "spectrum": [
+        "-1/4",
+        "1/2",
+        "3/4"
+      ]
+    },
+    "nonreal_pair": {
+      "G_C_inertia": [
+        2,
+        1,
+        0
+      ],
+      "G_hermitian": true,
+      "KH_C_inertia": [
+        2,
+        1,
+        0
+      ],
+      "KH_hermitian": true,
+      "Kplus_C_inertia": [
+        2,
+        1,
+        0
+      ],
+      "Kplus_hermitian": true,
+      "L_G_self_adjoint": true,
+      "L_diagonalizable": true,
+      "spectrum": [
+        "I",
+        "-I",
+        "1/2"
+      ]
+    },
+    "positive": {
+      "G_C_inertia": [
+        3,
+        0,
+        0
+      ],
+      "G_hermitian": true,
+      "KH_C_inertia": [
+        3,
+        0,
+        0
+      ],
+      "KH_hermitian": true,
+      "Kplus_C_inertia": [
+        3,
+        0,
+        0
+      ],
+      "Kplus_hermitian": true,
+      "L_G_self_adjoint": true,
+      "L_diagonalizable": true,
+      "spectrum": [
+        "1/4",
+        "1/2",
+        "3/4"
+      ]
+    }
+  },
+  "imports": {
+    "determinant_audit": {
+      "path": "black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json",
+      "sha256": "01a159ce01f6de6f5fc0e01bd7636be4215c53511ca3acc01de6f382c459b79a",
+      "source_commit": "f81426fb23b1647b58c2e61782989ef44913adf8"
+    },
+    "horizon_gram": {
+      "path": "black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/future_horizon_outward_gram.json",
+      "sha256": "3051f43f73e4649dede60176e12f13afc59bdd5b3e8e09970db842a1ede00fdb",
+      "source_commit": "57a2cdb2db48dcf194a39a45766dc5327c44b515"
+    },
+    "incoming_connection": {
+      "path": "black_hole_programme/phase3/axial_incoming_connection_analytic/certificate.json",
+      "sha256": "c7d54c15cd7928227d62ede7825edba2b6ebc51ca6f6c617c7b0b56a74cdd040",
+      "source_commit": "b3be2b0778d61ae6053ec39edb8542bc1e074044"
+    },
+    "incoming_connection_scope": {
+      "path": "black_hole_programme/phase3/axial_transport_free_outgoing_defect_preflight_v1/certificate.json",
+      "sha256": "833e0bdb3e1e443a5a351050b9b47fb4555a9b069db73b46e228f96245fa0aa9",
+      "source_commit": "491be085929553a45ba4df48b08f4ffbb1585f85"
+    },
+    "incoming_gram": {
+      "path": "black_hole_programme/phase3/axial_incoming_extended_domain_audit/certificate.json",
+      "sha256": "f223358ca9de0f6d819684ce61d62677d6e5f8c5d4edaa600e2bae02719af0ef",
+      "source_commit": "a6b67d0cab7bf1b4671c80bedcb7573b7be544bc"
+    },
+    "outgoing_population_cell": {
+      "path": "black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/certificate.json",
+      "sha256": "de7e3a944e945b00fea9e2b5f7abffc8789c7449cae9eae222c047912a4f3d0f",
+      "source_commit": "1d5f43e6a9b87462bc7125cf6259169c2ae5401c"
+    },
+    "scalar_reflection_cell": {
+      "path": "black_hole_programme/phase3/axial_scalar_reflection_cell_half_v1/certificate.json",
+      "sha256": "43defaaafc3fdee3bc68ccf018ca6e0e7b2ea3338dc01c3e2fc798905d63b83d",
+      "source_commit": "1d5f43e6a9b87462bc7125cf6259169c2ae5401c"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "physical_audit": {
+    "assembly": {
+      "K_H_defined_by_certified_numeric_or_exact_entries": false,
+      "disposition": "SHORTFALL_MISSING_FULL_TYPED_TMINUS_MATRIX",
+      "factorized_C_existence_certified": false,
+      "factorized_C_obstruction_certified": false,
+      "generalized_eigenvalues_certified": false,
+      "generalized_pencil_defined": false
+    },
+    "available": {
+      "Gminus_basis": [
+        "XI0",
+        "XI1",
+        "EI0"
+      ],
+      "Gminus_exact": true,
+      "Gminus_rank": 3,
+      "H_H_basis": [
+        "XH0a",
+        "XH0b",
+        "EH0"
+      ],
+      "H_H_exact": true,
+      "H_H_rank": 3,
+      "Kplus_nondegenerate_inertia": [
+        1,
+        2,
+        0
+      ],
+      "Tminus_determinant_formula": "-(2*omega-I)*(4*omega-I)**2*A_in_2**2*A_in_1/(4*(omega-I))",
+      "Tminus_exists_and_is_invertible": true,
+      "Tplus_invertible_on_cell": true
+    },
+    "minimal_missing_object": "A certified full 3x3 Tminus enclosure on the cell in (XH0a,XH0b,EH0)->(XI0,XI1,EI0), or an explicitly conjugated equivalent with a certified analytic basis crosswalk.",
+    "missing": {
+      "certified_availability_flag": false,
+      "diagnostic_point_matrix_rejected": true,
+      "full_typed_Tminus_entries": true,
+      "reason": "the imported Tminus point matrix has no interval enclosure and the old Stokes residual is explicitly nonzero",
+      "required_basis_map": "(XH0a,XH0b,EH0)->(XI0,XI1,EI0), or an explicitly conjugated equivalent with a certified basis map"
+    },
+    "partial_determinant_information": {
+      "cell_bound": "0<det(L_H)<0.9786517263238609335725310374971461730793380876447624135149423146204801",
+      "endpoint_normalizer_ratio_matches_Tminus_prefactor": true,
+      "general_identity": "det(L_H)=abs(det(A))^2*det(H_H)/det(G); no endpoint determinant ratio may be dropped",
+      "interpretation": "The product is positive and below one, but neither this product nor the endpoint inertias determines the three generalized eigenvalues or diagonalizability.",
+      "reduced_identity": "det(L_H)=1/(abs(A_in_2)^4*abs(A_in_1)^2) in the certified raw/factor normalization",
+      "wronskian": "abs(A_in_s)^2=1+abs(A_out_s)^2"
+    },
+    "scope": {
+      "background": "Schwarzschild M=1, axial ell=2",
+      "coupling_sign": "alpha_W>0",
+      "frequency_cell": [
+        "0.49995",
+        "0.50005"
+      ]
+    }
+  },
+  "result_id": "PURE_WEYL_PHASE4_CHANNEL_FACTORIZED_C_PULLBACK_TEST_V1",
+  "schema": "phase4-channel-factorized-c-pullback-test-v1",
+  "theorem": {
+    "boundary_cases": "lambda=0 or 1 makes a channel pullback degenerate; nonreal spectrum or a Jordan block obstructs a common positive metric.",
+    "channel_transport": {
+      "horizon": "C_H=A*C_-*A^(-1)",
+      "intertwining": [
+        "C_H*A=A*C_-",
+        "C_+*R=R*C_-"
+      ],
+      "outgoing": "C_+=R*C_-*R^(-1)"
+    },
+    "common_incoming_formulation": "There is an involution C_- self-adjoint for G,K_H,K_+ with G*C_->0, K_H*C_->0 and K_+*C_->0.",
+    "criterion": "A channel-factorized positive fundamental symmetry exists iff L_H is diagonalizable over C and spec(L_H) is contained in the open real interval (0,1).",
+    "determinant_audit": "det(L_H)=abs(det(A))^2*det(H_H)/det(G); no endpoint determinant ratio may be dropped",
+    "necessity": [
+      "Common self-adjointness gives [C_-,L_H]=0.",
+      "H0=G*C_->0 and K_H*C_-=H0*L_H>0.",
+      "K_+*C_-=H0*(I-L_H)>0.",
+      "Thus L_H is H0-self-adjoint with 0<L_H<I, hence diagonalizable with real spectrum in (0,1)."
+    ],
+    "setting": {
+      "forms": "G, H_H, G_+ are finite-dimensional nondegenerate Hermitian forms",
+      "maps": "A=Tminus^(-1) and R=Tplus*Tminus^(-1) are invertible",
+      "operator": "L_H=G^(-1)*K_H",
+      "pullbacks": "K_H=A^dagger*H_H*A; K_+=R^dagger*G_+*R=G-K_H",
+      "self_adjointness": "L_H^dagger*G=G*L_H"
+    },
+    "sufficiency": [
+      "For diagonalizable G-self-adjoint L_H with real spectrum, distinct eigenspaces are G-orthogonal.",
+      "Each eigenspace is G-nondegenerate because their orthogonal direct sum is the whole nondegenerate space.",
+      "Choose a fundamental symmetry of G on each eigenspace and take their direct sum.",
+      "It commutes with L_H; eigenvalues in (0,1) make both H0*L_H and H0*(I-L_H) positive."
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase4-black-hole-channel-factorized-c-pullback-test-v2-SCOPENARROW-e78eb4f0e8a00a9c",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work scope narrow",
+  "source": {"path": "tools/science-forge/program/events/phase4-black-hole-channel-factorized-c-pullback-test-v2-SCOPENARROW-e78eb4f0e8a00a9c.json", "span": null},
+  "body": {"event_kind": "WORK_SCOPE_NARROW", "actor": "channel-factor-c", "base_revision": "science-forge-ir-v0", "when": null, "seq": 1, "payload": {"target": "sf:program/work/phase4-black-hole-channel-factorized-c-pullback-test-v2", "narrowed_by": "channel-factor-c", "paths": "black_hole_programme/phase4/channel_factorized_c_pullback_test_v1/ planning/work-items/phase4-black-hole-channel-factorized-c-pullback-test-v2.json planning/events/", "reason": "Avoid the nonlinear stream broad reports/ scope; place the fail-closed report inside the owned certificate package."}, "native": {"authored_by": "sfc work-scope-narrow", "policy": "append-only (SPEC 4.5); narrows the EFFECTIVE write scope to a validated SUBSET of allowed_paths — never widens, never rewrites the base item. The overlap gate reads the narrowed scope."}},
+  "edges": [{"rel": "SCOPE_NARROW", "to": "sf:program/work/phase4-black-hole-channel-factorized-c-pullback-test-v2"}]
+}

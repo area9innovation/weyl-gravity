@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-channel-factorized-c-pullback-test-v2",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-channel-factorized-c-pullback-test-v2",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-channel-factorized-c-pullback-test-v2.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Prove the transport-free necessary-and-sufficient spectral criterion for a channel-factorized positive fundamental symmetry and evaluate, or fail closed on, the generalized eigenvalue pencil using the certified incoming Gram, incoming connection and future-horizon Gram on the outgoing-invertible cell around omega=1/2.",
+    "stop_condition": "Produce the exact pullback theorem with all nondegeneracy, invertibility, self-adjointness, diagonalizability and spectral hypotheses; independently verify it on exact positive and obstructed fixtures; import and hash the existing Gminus, Tminus and horizon-Gram authorities; determine whether the physical pencil det(K_H-lambda Gminus) can already be assembled and certified; record either a certified spectral disposition or the first exact missing-object obstruction, with mutation tests and a fail-closed report.",
+    "current_gate": "REDUCED-MODE channel-factorized positivity criterion and certified-data availability audit on omega in [0.49995,0.50005]",
+    "forbid": "no claim that a channel-factorized C exists or is obstructed on the physical cell without certified full typed Tminus entries and a certified generalized spectrum; no replacement of missing off-diagonal connection entries by zero, midpoint fixtures or determinant-only data; no claim that matrix-sign C is canonical; no explicit Tplus, whole-axis, time-domain, BRST or quantum positivity theorem",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-axial-local-nonlocal-positivity",
+      "sf:program/work/phase3-black-hole-axial-incoming-extended-domain-audit"
+    ],
+    "activates": [
+      "channel-factorized C spectral disposition on the outgoing-invertible cell",
+      "typed Tminus matrix producer if the physical pencil remains undefined"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase4/channel_factorized_c_pullback_test_v1/",
+      "reports/phase4-black-hole-channel-factorized-c-pullback-test-2026-07-24.md",
+      "planning/work-items/phase4-black-hole-channel-factorized-c-pullback-test-v2.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Import the committed outgoing-population cell as a content-addressed artifact rather than as a work-item dependency. Use G=Gminus, A=Tminus^(-1), K_H=A^dagger H_H A, K_+=G-K_H and L_H=G^(-1)K_H. Prove equivalence with a common G/K_H/K_+ fundamental symmetry only on a cell where Tminus, Tplus and hence A,R are invertible and all forms are nondegenerate. Audit the physical input before numerical eigensolving: the earlier transport-free certificate explicitly records whether full typed Tminus entries exist. The general determinant audit is det(L_H)=abs(det A)^2 det(H_H)/det(G); simplify only under an independently certified endpoint determinant normalization.",
+    "input_commit": "a976622c42e42df438623b1c7edfbbe93f2f7507",
+    "notes": [
+      "REDUCED-MODE",
+      "LORENTZIAN-CAUSAL",
+      "A missing full typed Tminus matrix is a valid fail-closed shortfall, not permission to infer the spectrum from determinants or inertia."
+    ]
+  },
+  "edges": []
+}

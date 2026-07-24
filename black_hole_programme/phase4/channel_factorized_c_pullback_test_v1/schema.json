@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phase-4 channel-factorized C pullback certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "lifecycle",
+    "dependency_tags",
+    "theorem",
+    "exact_fixtures",
+    "imports",
+    "physical_audit",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase4-channel-factorized-c-pullback-test-v1"
+    },
+    "result_id": {
+      "const": "PURE_WEYL_PHASE4_CHANNEL_FACTORIZED_C_PULLBACK_TEST_V1"
+    },
+    "lifecycle": {
+      "enum": ["CLASSIFIED", "COEFFICIENT_COMPUTED"]
+    },
+    "dependency_tags": {
+      "type": "array",
+      "items": {"type": "string"},
+      "contains": {"const": "REDUCED-MODE"}
+    },
+    "theorem": {"type": "object"},
+    "exact_fixtures": {"type": "object"},
+    "imports": {"type": "object"},
+    "physical_audit": {"type": "object"},
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  }
+}

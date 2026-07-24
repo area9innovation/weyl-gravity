@@ -1,0 +1,42 @@
+{
+  "arithmetic": "SymPy exact rational/complex algebra plus Decimal directed scalar bound assembled from certified lower bounds",
+  "certificate_sha256": "4e47de0f618c29d0e74f173a4cc0a6256e0fcd9bc7587243a9d4eee6a0726e4b",
+  "claim_boundary": "The exact spectral criterion is certified. The physical pencil and its eigenvalues remain undefined because the full typed Tminus entries are absent from committed authorities.",
+  "expected_exit_status": 0,
+  "independent_verifier": "python3 -m black_hole_programme.phase4.channel_factorized_c_pullback_test_v1.verify",
+  "producer": "python3 -m black_hole_programme.phase4.channel_factorized_c_pullback_test_v1.produce",
+  "result_id": "PURE_WEYL_PHASE4_CHANNEL_FACTORIZED_C_PULLBACK_TEST_V1",
+  "schema": "phase4-channel-factorized-c-pullback-receipt-v1",
+  "source_commit": "475e25ad70aa53f844b270118d458ece7cf0a53a",
+  "test_tiers": {
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile black_hole_programme/phase4/channel_factorized_c_pullback_test_v1/*.py",
+        "python3 -m json.tool black_hole_programme/phase4/channel_factorized_c_pullback_test_v1/certificate.json",
+        "python3 -m json.tool black_hole_programme/phase4/channel_factorized_c_pullback_test_v1/receipt.json",
+        "git diff --check -- black_hole_programme/phase4/channel_factorized_c_pullback_test_v1 planning/work-items/phase4-black-hole-channel-factorized-c-pullback-test-v2.json"
+      ],
+      "observed_elapsed_seconds": "<1",
+      "status": "PASS"
+    },
+    "tier_1": {
+      "commands": [
+        "python3 -m black_hole_programme.phase4.channel_factorized_c_pullback_test_v1.produce",
+        "python3 -m black_hole_programme.phase4.channel_factorized_c_pullback_test_v1.verify",
+        "python3 -m unittest -v black_hole_programme.phase4.channel_factorized_c_pullback_test_v1.test_pullback"
+      ],
+      "observed_elapsed_seconds": "<2",
+      "status": "PASS",
+      "tests": 7
+    },
+    "tier_2": {
+      "criterion": "No imported mathematical input, shared operator, schema, or upstream certificate was modified; every imported authority is content-hash checked.",
+      "status": "NOT_RUN"
+    },
+    "tier_3": {
+      "criterion": "This is a scoped theorem/availability certificate, not a freeze, release, shared-core change, or Tier-3 promotion.",
+      "status": "NOT_RUN"
+    }
+  },
+  "tests": "python3 -m unittest -v black_hole_programme.phase4.channel_factorized_c_pullback_test_v1.test_pullback"
+}
