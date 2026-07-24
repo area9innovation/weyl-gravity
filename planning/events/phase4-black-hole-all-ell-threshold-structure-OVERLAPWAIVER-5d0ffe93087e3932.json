@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase4-black-hole-all-ell-threshold-structure-OVERLAPWAIVER-5d0ffe93087e3932",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work overlap waiver",
+  "source": {"path": "tools/science-forge/program/events/phase4-black-hole-all-ell-threshold-structure-OVERLAPWAIVER-5d0ffe93087e3932.json", "span": null},
+  "body": {"event_kind": "WORK_OVERLAP_WAIVER", "actor": "root", "base_revision": "science-forge-ir-v0", "when": "2026-07-24T16:03:18Z", "seq": 1, "payload": {"item_a": "sf:program/work/phase4-black-hole-all-ell-threshold-structure", "item_b": "sf:program/work/phase4-black-hole-focused-endpoint-nonselection-paper", "paths": "planning/events/", "basis": "integration-owned", "integration_owner": "root", "waived_by": "root", "reason": "One coordinator owns both append-only event streams; exact threshold and manuscript paths are disjoint."}, "native": {"authored_by": "sfc work-overlap-waiver", "policy": "append-only (SPEC 4.5); a coordinator's explicit, path-exact acceptance of a write-scope overlap. basis=shared-read-only (both only READ the paths) or integration-owned (one named owner integrates). Not a lease, not a scientific promotion."}},
+  "edges": [{"rel": "OVERLAP_WAIVER_A", "to": "sf:program/work/phase4-black-hole-all-ell-threshold-structure"}, {"rel": "OVERLAP_WAIVER_B", "to": "sf:program/work/phase4-black-hole-focused-endpoint-nonselection-paper"}]
+}
