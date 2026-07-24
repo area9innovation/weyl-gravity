@@ -1,0 +1,402 @@
+{
+  "assumptions": [
+    "the partial jet differentiates only the spin-two row",
+    "the spin-one transport R is tau-independent",
+    "projective charts are changed only when the reciprocal denominator excludes zero",
+    "logarithmic amplitudes are compared after exponentiation, so branch shifts are harmless"
+  ],
+  "claim_flags": {
+    "complete_outgoing_frame_at_r4": false,
+    "explicit_Tplus_certified": false,
+    "interaction_picture_identity_exact": true,
+    "physical_point_interaction_direct_agreement": true,
+    "reciprocal_chart_transition_exact": true,
+    "reflection_or_stokes_certified": false,
+    "validated_correlated_successor_beyond_487_over_16": true,
+    "validated_projective_interval_transport_to_r4": false,
+    "wronskian_fixture_pass": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "does_not_establish": [
+    "a validated projective/log-amplitude enclosure on the full radial interval",
+    "the complete outgoing frame at r=4",
+    "the outgoing trace map T_plus or reflection matrix",
+    "a Stokes identity or channel-factorized C test",
+    "a positive-real frequency-band theorem beyond the inherited narrow cell"
+  ],
+  "equations": {
+    "interaction_J": "J'=P^{-1}EP",
+    "interaction_K": "K'=P^{-1}DR",
+    "interaction_dotK": "dotK'=P^{-1}CR-J P^{-1}DR",
+    "log_amplitude_q": "lambda'=a+bq",
+    "log_amplitude_q_tau": "lambda_tau'=a_tau+b_tau q+b q_tau",
+    "projective_q": "q'=c+(d-a)q-bq^2",
+    "projective_q_tau": "q_tau'=c_tau+(d_tau-a_tau)q-b_tau q^2+((d-a)-2bq)q_tau",
+    "reciprocal_transition": "p=1/q; mu=lambda+log(q); p_tau=-q_tau/q^2; mu_tau=lambda_tau+q_tau/q",
+    "six_state": "diag(P,P,R)[[I,J,JK+dotK],[0,I,K],[0,0,I]]=[[P,dotP,dotQ],[0,P,Q],[0,0,R]]",
+    "wronskian": "W'=(tr A)W"
+  },
+  "exact_interaction_picture": {
+    "all_zero": true,
+    "chart_fixture": {
+      "p": "2/3",
+      "p_tau": "20/63",
+      "q": "3/2",
+      "q_tau": "-5/7",
+      "z": "11/5",
+      "z2": "33/10",
+      "z2_tau": "1133/1190",
+      "z_tau": "143/85"
+    },
+    "derived": {
+      "F6": [
+        [
+          "2",
+          "1",
+          "3",
+          "1",
+          "2",
+          "5"
+        ],
+        [
+          "1",
+          "1",
+          "-2",
+          "4",
+          "1",
+          "-3"
+        ],
+        [
+          "0",
+          "0",
+          "2",
+          "1",
+          "1",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "1",
+          "2",
+          "3"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "2"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "3",
+          "7"
+        ]
+      ],
+      "J": [
+        [
+          "5",
+          "-3"
+        ],
+        [
+          "-7",
+          "7"
+        ]
+      ],
+      "K": [
+        [
+          "-1",
+          "-4"
+        ],
+        [
+          "3",
+          "7"
+        ]
+      ],
+      "dotK": [
+        [
+          "15",
+          "49"
+        ],
+        [
+          "-28",
+          "-88"
+        ]
+      ]
+    },
+    "inputs": {
+      "A": [
+        [
+          "1",
+          "2"
+        ],
+        [
+          "-1",
+          "3"
+        ]
+      ],
+      "Ax": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-3",
+          "2"
+        ]
+      ],
+      "C": [
+        [
+          "-2",
+          "1"
+        ],
+        [
+          "5",
+          "2"
+        ]
+      ],
+      "D": [
+        [
+          "1",
+          "3"
+        ],
+        [
+          "2",
+          "-2"
+        ]
+      ],
+      "E": [
+        [
+          "2",
+          "-1"
+        ],
+        [
+          "4",
+          "1"
+        ]
+      ],
+      "P": [
+        [
+          "2",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "Q": [
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "2",
+          "3"
+        ]
+      ],
+      "R": [
+        [
+          "1",
+          "2"
+        ],
+        [
+          "3",
+          "7"
+        ]
+      ],
+      "dotP": [
+        [
+          "3",
+          "1"
+        ],
+        [
+          "-2",
+          "4"
+        ]
+      ],
+      "dotQ": [
+        [
+          "2",
+          "5"
+        ],
+        [
+          "1",
+          "-3"
+        ]
+      ]
+    },
+    "residuals": {
+      "J_prime": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "K_prime": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "chart_base": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "chart_tangent": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "dotK_prime": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "six_state_reconstruction": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ]
+    }
+  },
+  "imports": {
+    "forge_model_source": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume_v1/splus_checkpoint_resume.forge",
+      "sha256": "a025f95e429c1e70ac2a23303f35623559203e418ecbec7e6ce774b0501c32db"
+    },
+    "predecessor": {
+      "path": "black_hole_programme/phase4/axial_explicit_tplus_band_v1/checkpoint.json",
+      "payload_sha256": "b1240852cb5f60848ab7d6fb6a165f394bafb803472003fada34f6816373c04a",
+      "sha256": "b26d050c8cce5a94075552731dbbf195160983edb7e0d4ebc108014fd4826485"
+    }
+  },
+  "lifecycle": {
+    "exact": "EXACT-ALGEBRAIC",
+    "micro_successor": "NUMERIC-ENCLOSURE",
+    "point_fixture": "NUMERIC-CONSISTENCY"
+  },
+  "next_gate": "replace the coarse direct audit after r=3895/128 by correlated interval enclosures for projective/log lines and J,K,dotK; retain reciprocal-chart and Wronskian gates",
+  "physical_center_fixture": {
+    "does_not_establish": "This high-precision center fixture is not a validated enclosure; the separate Forge micro-panel carries the interval claim.",
+    "forced_chart_switch": {
+      "radius": "7791/256",
+      "spin1_abs_q": 0.00042199768743653973,
+      "spin2_abs_q": 2.6191551198540163e-05
+    },
+    "frequency": "8193/16384",
+    "radial_end": "3895/128",
+    "radial_start": "487/16",
+    "residuals": {
+      "direct_vs_interaction_base": 2.220446049250313e-16,
+      "direct_vs_interaction_tangent": 1.4210854715202004e-14,
+      "projective_tau_vs_PJ": 2.0687034879272551e-19,
+      "projective_vs_P": 4.806325240785591e-15,
+      "projective_vs_R": 1.0838065833643602e-15,
+      "wronskian_spin1": 2.2215299868541707e-16,
+      "wronskian_spin2": 0.0
+    },
+    "status": "POINT_FIXTURE_PASS",
+    "threshold": 2e-10
+  },
+  "result_id": "PURE_WEYL_PHASE4_AXIAL_TPLUS_INTERACTION_PICTURE_V1",
+  "schema": "phase4-axial-explicit-tplus-interaction-picture-v1",
+  "status": "INTERACTION_PICTURE_EXACT_AND_MICRO_SUCCESSOR_PASS_R4_OPEN",
+  "validated_micro_successor": {
+    "checkpoint": "black_hole_programme/phase4/axial_explicit_tplus_band_v1/interaction_successor_checkpoint.json",
+    "checkpoint_sha256": "177b2d59a86b24bce1dfe8ed7b61812ffcdb7638277e616e442a0f854905532b",
+    "frequency_cell": [
+      "1/2",
+      "4097/8192"
+    ],
+    "frequency_generator": 7315,
+    "manifest": "black_hole_programme/phase4/axial_explicit_tplus_band_v1/interaction_run_manifest.json",
+    "manifest_sha256": "1102fcad7f5e285918cf0925a8dc4d020b59d62a8f0017278534ac01d7e6ba11",
+    "payload_sha256": "84dddf94dacdd2386198bf76d4b204ac29e6c4eda59e3d99bf89010b77c40a58",
+    "radial_end": "3895/128",
+    "radial_start": "487/16",
+    "summary": {
+      "choice": 0,
+      "coefficients": true,
+      "containment": true,
+      "order": 32,
+      "tail": "4.215517341618608e-27",
+      "width": "5.214992266499738"
+    }
+  }
+}
