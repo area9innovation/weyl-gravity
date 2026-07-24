@@ -1,0 +1,40 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-global-finite-flux-channel-classification-v3",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-global-finite-flux-channel-classification-v3",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-global-finite-flux-channel-classification-v3.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-axial-channel-v3",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Synthesize the certified boundary contract, content-addressed radial pilot, exact endpoint Grams, incoming population, outgoing-cell population and Stokes identity into a transport-free physical axial channel and flux-signature classification on their exact common real-frequency cell.",
+    "stop_condition": "Pin every imported certificate and the repaired radial-cover manifest by SHA-256. On the exact overlap Istar=[1/2,10001/20000], independently verify the boundary/quotient contract, the q00-q15 r=32-to-r=4 radial cover, Tminus invertibility, Tplus invertibility, the three nondegenerate endpoint inertias (1,2,0), the factor-resolved incoming hyperbolic spin-two plus negative spin-one decomposition, and the oriented one-sided Stokes identity. Emit a machine-readable theorem certificate and report proving that the incoming, outgoing and future-horizon coefficient spaces are matching three-channel Krein spaces, that every outgoing channel on Istar has a unique future-horizon-regular preimage, and that the band-limited scattering map is pseudo-isometric. Keep the explicit Tplus entries and all-axis/time-domain bounds open.",
+    "current_gate": "Transport-free finite-flux channel classification on the certified joint pilot cell",
+    "forbid": "no claim that the radial microfactor cover alone is a physical endpoint connection; no explicit Tplus entries; no whole-pilot outgoing invertibility; no all-positive-axis inverse bound; no Green-resolvent, time-domain decay, positivity, particle, ghost, CPT or quantum-unitarity promotion",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-boundary-flux-contract",
+      "sf:program/work/phase3-black-hole-axial-global-map-cover-provenance-repair",
+      "sf:program/work/phase3-black-hole-axial-incoming-extended-domain-audit",
+      "sf:program/work/phase3-black-hole-axial-null-flux-gram",
+      "sf:program/work/phase3-black-hole-axial-arbitrary-radius-current-conservation-provenance"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_global_finite_flux_channel_classification_v3/"
+    ],
+    "resource_hint": "Use the committed outgoing-population-cell and transport-free-defect certificates by content hash. Their proofs avoid the blocked full-amplitude horizon Taylor2 route. The common physical cell is the intersection of the radial pilot [1/2,129/256], outgoing population [0.49995,0.50005], and endpoint Gram pilot [1/2,3/4].",
+    "input_commit": "2ed36c733ac8d3f52468cf459ac7083093690a0b",
+    "notes": [
+      "LORENTZIAN-CAUSAL",
+      "REDUCED-MODE",
+      "This v3 successor replaces the blocked v2 composition route with already certified transport-free population and Stokes results.",
+      "A negative populated classical Lee-Wald flux direction is not by itself a quantum ghost."
+    ]
+  },
+  "edges": []
+}

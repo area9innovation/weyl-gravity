@@ -1,0 +1,37 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-global-map-cover-provenance-repair",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-global-map-cover-provenance-repair",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-global-map-cover-provenance-repair.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-global-cover-repair",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Land the exact global-map cover manifest and verification receipt already cited by the completed axial microfactor-v6 report, closing the committed-provenance gap without regenerating or changing any transport artifact.",
+    "stop_condition": "Verify that the worktree manifest hash equals the hash cited by the committed v6 report and residual-atlas fragment; independently replay the exact q00 through q15 cover verifier and its mutation suite against the committed global maps; commit only the pre-existing manifest, receipt and a scoped repair report; preserve the original scientific claim boundary.",
+    "current_gate": "Content-addressed cover seal for the completed sixteen-cell radial transport pilot",
+    "forbid": "no regeneration of child/global maps; no modification of transport artifacts; no horizon-to-infinity physical connection, populated channel, flux-sign, stability, CPT, positivity or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/phase3-black-hole-axial-global-connection-microfactor-v6"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_map_cover_manifest.json",
+      "black_hole_programme/phase3/axial_global_connection_matrix_v5/chunks/artifacts/global_map_cover_receipt.json",
+      "black_hole_programme/phase3/axial_global_map_cover_provenance_repair_v1/report.md"
+    ],
+    "resource_hint": "The two untracked files already exist in the shared worktree. Their manifest hash is d5b2e4ddef623136155b315be5ff847f14597440b21e5bd1c4beb800d2ba16d8, exactly as cited by the committed v6 report and atlas fragment.",
+    "input_commit": "dd6a7ad4e3d6fa04cbbb49ce7a2f783df5a139d2",
+    "notes": [
+      "LORENTZIAN-CAUSAL",
+      "This is a provenance repair, not a new numerical production or independent reproduction.",
+      "The physical horizon-to-infinity connection remains a successor gate."
+    ]
+  },
+  "edges": []
+}
