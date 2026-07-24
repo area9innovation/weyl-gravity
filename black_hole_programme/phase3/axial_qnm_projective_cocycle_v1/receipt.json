@@ -1,0 +1,65 @@
+{
+  "schema": "phase3-axial-qnm-projective-cocycle-receipt-v1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "status": "EXACT_RATIONAL_COCYCLE_NONTRIVIAL_QNM_UNEVALUATED",
+  "artifacts": {
+    "__init__.py": "447faa802275585fba809396200026983cf336c54c663446fba01e4611dd2800",
+    "produce.py": "2d4594d13b0c0b70ee6f3dd1f4f3b9268c58fcf04d823ea8b667b1bf35fe0508",
+    "verify.py": "93dc2fdab4fb368dad53055fd8753f1d609bb419071699e8a0e5643a0e1b682d",
+    "test_projective_cocycle.py": "7ea04b702e1b9e2e7d70b4e1b9041a8761fd7b8a744a480a7465e38a39bb4f70",
+    "schema.json": "7a6e41a3031314c7523d29109e25191c21ad22d4223d54982a9f576f208814b6",
+    "certificate.json": "3f7c2fff23a70ab8c1f6e922d6799b168ca328f0fa9e68be8a0e8881f80310bb",
+    "README.md": "be25dea5877a733c6ddd7af2d8b319c6b561df9395786703970c0a58d6e3ebb1",
+    "report.md": "08ec37cf71bf96b443c41d0df1b5ca35cb1eb8263c28a3a14d026c8c851ed0f4"
+  },
+  "tests": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_projective_cocycle_v1/*.py",
+      "status": "PASS",
+      "exit": 0
+    },
+    {
+      "tier": 0,
+      "command": "Draft202012Validator(schema.json).iter_errors(certificate.json)",
+      "status": "PASS",
+      "errors": 0,
+      "exit": 0
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m black_hole_programme.phase3.axial_qnm_projective_cocycle_v1.produce",
+      "elapsed_seconds": 7.53,
+      "status": "PASS",
+      "exit": 0
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m black_hole_programme.phase3.axial_qnm_projective_cocycle_v1.verify",
+      "status": "PASS",
+      "exit": 0
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=. python3 -m unittest -v black_hole_programme.phase3.axial_qnm_projective_cocycle_v1.test_projective_cocycle",
+      "elapsed_seconds": 59.69,
+      "tests": 8,
+      "status": "PASS",
+      "exit": 0
+    }
+  ],
+  "higher_tiers": {
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No imported operator or transitive certificate-chain input changed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This scoped local-algebraic certificate does not freeze or promote a physical QNM theorem."
+    }
+  },
+  "claim_boundary": "The generic rational projective cocycle is nontrivial and is not proportional to the algebraic angular derivative. No QNM period, Smith case, exceptional point, inverse-connection double pole, Green-resolvent pole, or generalized ringdown mode is established."
+}

@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phase3-axial-qnm-projective-cocycle-v1",
+  "title": "Axial repeated-spin-two projective cocycle certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "scope",
+    "imports",
+    "scalarization",
+    "projective_cocycle",
+    "local_pole_audit",
+    "rational_nonexactness",
+    "reduced_representative",
+    "angular_class_test",
+    "finite_specialization_corollary",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {"const": "phase3-axial-qnm-projective-cocycle-v1"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle": {"const": "CLASSIFIED"},
+    "status": {
+      "const": "EXACT_RATIONAL_COCYCLE_NONTRIVIAL_QNM_UNEVALUATED"
+    },
+    "scope": {"type": "object"},
+    "imports": {"type": "object"},
+    "scalarization": {"type": "object"},
+    "projective_cocycle": {
+      "type": "object",
+      "properties": {
+        "gauge_identity_verified": {"const": true}
+      }
+    },
+    "local_pole_audit": {"type": "object"},
+    "rational_nonexactness": {
+      "type": "object",
+      "properties": {
+        "matrix_rank": {"const": 3},
+        "augmented_rank": {"const": 4},
+        "solution": {"const": "EMPTY"}
+      }
+    },
+    "reduced_representative": {
+      "type": "object",
+      "properties": {
+        "canonical_under_all_analytic_gauges": {"const": false}
+      }
+    },
+    "angular_class_test": {
+      "type": "object",
+      "properties": {
+        "matrix_rank": {"const": 4},
+        "augmented_rank": {"const": 5},
+        "solution": {"const": "EMPTY"}
+      }
+    },
+    "finite_specialization_corollary": {"type": "object"},
+    "claim_flags": {
+      "type": "object",
+      "properties": {
+        "beta_n_evaluated": {"const": false},
+        "physical_QNM_fredholm_realization_constructed": {"const": false},
+        "simple_QNM_smith_case_selected": {"const": false},
+        "QNM_double_pole_established": {"const": false}
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string"}
+    }
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "schema": "phase3-axial-qnm-projective-cocycle-v1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "lifecycle": "CLASSIFIED",
+  "status": "EXACT_RATIONAL_COCYCLE_NONTRIVIAL_QNM_UNEVALUATED",
+  "scope": {
+    "theory": "strict linearized four-dimensional pure Weyl C^2 gravity",
+    "background": "Schwarzschild exterior M=1",
+    "sector": "axial ell=2 repeated spin-two filtered block",
+    "field": "C(I,omega)(r), generic omega",
+    "derivative": "D=D_rstar=((r-2)/r)*D_r",
+    "frequency_exclusions": [
+      "omega=0 threshold",
+      "special divisor collisions such as omega=I are not classified"
+    ]
+  },
+  "imports": {
+    "triangular_factorization": {
+      "path": "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json",
+      "sha256": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579"
+    },
+    "complete_reconstruction": {
+      "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+      "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990"
+    }
+  },
+  "scalarization": {
+    "f": "(r - 2)/r",
+    "field_redefinition": "psi=exp(I*omega*rstar)*P",
+    "operator": "L=D**2+U",
+    "U": "(omega**2*r**4 - 6*r**2 + 18*r - 12)/r**4",
+    "source_convention": "L*x=(s1*D+s0)*y",
+    "s1_r": "I*(3*omega**2*r - 10*I*omega*r - 10*I*omega - 24)/(2*(omega*r - 2*I)**3)",
+    "s0_r": "-(3*omega**3*r**3 - 6*I*omega**2*r**3 - 17*I*omega**2*r**2 + 6*I*omega**2*r - 18*omega*r**2 - 30*omega*r + 20*omega + 24*I*r - 16*I)/(2*r*(r - 2)*(omega*r - 2*I)**3)",
+    "s1": "I*(r - 2)*(3*omega**2*r - 10*I*omega*r - 10*I*omega - 24)/(2*r*(omega*r - 2*I)**3)",
+    "s0": "-I*(r - 2)*(4*omega**2*r**3 - 7*omega**2*r**2 + 6*omega**2*r - 6*I*omega*r**2 + 30*I*omega*r - 20*I*omega + 24*r - 16)/(2*r**3*(omega*r - 2*I)**3)",
+    "first_extension_row_included": true
+  },
+  "projective_cocycle": {
+    "definition": "calI=s0-(D*s1)/2",
+    "calI": "-I*(r - 2)*(4*omega**3*r**4 - 10*omega**3*r**3 + 15*omega**3*r**2 - 4*I*omega**2*r**3 + 26*I*omega**2*r**2 - 72*I*omega**2*r + 38*omega*r**2 - 52*omega*r - 60*omega - 48*I*r + 80*I)/(2*r**3*(omega*r - 2*I)**4)",
+    "numerator_factor": "-I*(r - 2)*(4*omega**3*r**4 - 10*omega**3*r**3 + 15*omega**3*r**2 - 4*I*omega**2*r**3 + 26*I*omega**2*r**2 - 72*I*omega**2*r + 38*omega*r**2 - 52*omega*r - 60*omega - 48*I*r + 80*I)",
+    "denominator_factor": "2*r**3*(omega*r - 2*I)**4",
+    "projective_operator": "K_U=D**3+4*U*D+2*(D*U)",
+    "gauge_change": "x -> x+(a*D+b)*y",
+    "gauge_law": "delta_calI=-(K_U*a)/2",
+    "gauge_identity_verified": true
+  },
+  "local_pole_audit": {
+    "singularities": {
+      "r=0": "calI has pole order 3",
+      "r=2": "calI has a zero; generic rational gauge has no pole",
+      "r=2*I/omega": "calI has pole order 4; gauge has at most a simple pole",
+      "r=infinity": "calI=O(r**-2); polynomial gauge part is constant"
+    },
+    "r0_indicial_factor": "-8*(m-6)*(m-2)*(m+2)",
+    "horizon_indicial_factor": "m*(m**2+16*omega**2)/8",
+    "infinity_leading_factor": "4*m*omega**2*r**(m-1)",
+    "apparent_pole_leading_calI": "-3*(omega-I)**3/omega**3",
+    "apparent_pole_leading_K_simple": "6*I*(omega-I)**3/omega",
+    "forced_apparent_gauge": "-I/(omega**2*(omega*r - 2*I))",
+    "exhaustive_generic_ansatz": "-I/(omega**2*(r*omega-2*I))+c_m2/r**2+c_m1/r+c_0"
+  },
+  "rational_nonexactness": {
+    "equation": "K_U*a+2*calI=0",
+    "coefficient_matrix": [
+      [
+        "0",
+        "-4*omega**4",
+        "0"
+      ],
+      [
+        "-8*omega**4",
+        "8*omega**4",
+        "24*omega**2"
+      ],
+      [
+        "16*omega**4",
+        "42*omega**2",
+        "-156*omega**2"
+      ],
+      [
+        "48*omega**2",
+        "-224*omega**2",
+        "312*omega**2"
+      ],
+      [
+        "-208*omega**2",
+        "364*omega**2",
+        "-192*omega**2"
+      ],
+      [
+        "224*omega**2",
+        "-168*omega**2",
+        "0"
+      ]
+    ],
+    "rhs": [
+      "0",
+      "-2*I*(5*omega - 6*I)",
+      "I*(35*omega - 78*I)",
+      "-6*I*(5*omega - 26*I)",
+      "96",
+      "0"
+    ],
+    "matrix_rank": 3,
+    "augmented_rank": 4,
+    "left_null_witness": [
+      "(104*omega**4 - 75*omega**2 + 126)/(9*omega**4)",
+      "26*(2*omega**2 + 3)/(9*omega**2)",
+      "2*(13*omega**2 + 6)/(9*omega**2)",
+      "1",
+      "0",
+      "0"
+    ],
+    "left_null_obstruction": "40*I*(omega**2 - 3)/(3*omega)",
+    "solution": "EMPTY",
+    "conclusion": "[calI] != 0 over the declared generic rational field"
+  },
+  "reduced_representative": {
+    "equivalence_convention": "calI_reduced=calI+(K_U*a_reducing)/2",
+    "a_reducing": "-I*(13*omega*r**3 + 12*omega*r**2 + 9*omega*r - 30*I*r**3 - 26*I*r**2 - 24*I*r - 18*I)/(60*omega*r**2*(omega*r - 2*I))",
+    "calI_reduced": "I*(r - 2)*(2*omega**2*r + 3*omega**2 + 12)/(5*omega*r**4)",
+    "reduction_rule": "match the apparent pole and cancel the three highest remaining r=0 pole coefficients",
+    "canonical_under_all_analytic_gauges": false
+  },
+  "angular_class_test": {
+    "classification": "algebraic angular spectral deformation, not a physical background tangent",
+    "angular_derivative": "-(r - 2)/r**3",
+    "equation": "calI+(K_U*a)/2=q*(-f/r**2)",
+    "coefficient_matrix": [
+      [
+        "0",
+        "-4*omega**4",
+        "0",
+        "2*omega**2"
+      ],
+      [
+        "-8*omega**4",
+        "8*omega**4",
+        "24*omega**2",
+        "-4*omega**2"
+      ],
+      [
+        "16*omega**4",
+        "42*omega**2",
+        "-156*omega**2",
+        "0"
+      ],
+      [
+        "48*omega**2",
+        "-224*omega**2",
+        "312*omega**2",
+        "0"
+      ],
+      [
+        "-208*omega**2",
+        "364*omega**2",
+        "-192*omega**2",
+        "0"
+      ],
+      [
+        "224*omega**2",
+        "-168*omega**2",
+        "0",
+        "0"
+      ]
+    ],
+    "rhs": [
+      "0",
+      "-2*I*(5*omega - 6*I)",
+      "I*(35*omega - 78*I)",
+      "-6*I*(5*omega - 26*I)",
+      "96",
+      "0"
+    ],
+    "matrix_rank": 4,
+    "augmented_rank": 5,
+    "left_null_witness": [
+      "40*(21*omega**2 - 41)/(3*(11*omega**2 - 6))",
+      "20*(21*omega**2 - 41)/(3*(11*omega**2 - 6))",
+      "10*(21*omega**2 - 26)/(3*(11*omega**2 - 6))",
+      "(31*omega**2 - 26)/(11*omega**2 - 6)",
+      "1",
+      "0"
+    ],
+    "left_null_obstruction": "120*I*omega*(omega**2 + 4)/(11*omega**2 - 6)",
+    "solution": "EMPTY",
+    "conclusion": "[calI] is not proportional to [-f/r**2] over the declared generic rational field"
+  },
+  "finite_specialization_corollary": {
+    "rational_nonexactness_witness": "40*I*(omega**2 - 3)/(3*omega)",
+    "rational_nonexactness_certified_when": "omega!=0, omega!=I, and omega**2!=3",
+    "angular_nonproportionality_witness": "120*I*omega*(omega**2 + 4)/(11*omega**2 - 6)",
+    "angular_nonproportionality_certified_when": "omega!=0, omega!=I, and omega**2!=-4",
+    "rank_change_locus_exactness_matrix": [
+      "omega=0"
+    ],
+    "rank_change_locus_angular_matrix": [
+      "omega=0"
+    ],
+    "maximal_minor_gcd_exactness": "384*omega**6",
+    "maximal_minor_gcd_angular": "5376*omega**8",
+    "reduction_denominator_exclusions": [
+      "omega=0: threshold and reducing-gauge denominators",
+      "omega=I: r*omega-2*I collides with the horizon r=2"
+    ],
+    "witness_zero_loci_not_classified": [
+      "omega**2=3 for the rational-nonexactness witness",
+      "omega**2=-4 for the angular witness"
+    ],
+    "safe_reading": "Splitting is excluded wherever the applicable witness is defined and nonzero. No splitting or nonsplitting statement is inferred at an excluded or witness-zero specialization."
+  },
+  "claim_flags": {
+    "exact_scalarization_rederived": true,
+    "projective_gauge_law_exact": true,
+    "generic_rational_ansatz_exhaustive": true,
+    "generic_rational_cocycle_nontrivial": true,
+    "declared_reduced_representative_exact": true,
+    "generic_angular_class_nonproportional": true,
+    "beta_n_evaluated": false,
+    "physical_QNM_fredholm_realization_constructed": false,
+    "simple_QNM_smith_case_selected": false,
+    "QNM_double_pole_established": false
+  },
+  "does_not_establish": [
+    "a value or nonzero theorem for any QNM period beta_n",
+    "a Smith case at any physical Regge-Wheeler QNM",
+    "a second-order inverse-connection or Green-resolvent pole",
+    "a generalized ringdown term",
+    "special-frequency rational cohomology at omega=0 or divisor collisions",
+    "a LORENTZIAN-CAUSAL quantum theorem"
+  ]
+}
