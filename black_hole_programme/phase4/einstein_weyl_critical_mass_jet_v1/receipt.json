@@ -1,0 +1,11 @@
+{
+  "certificate": "black_hole_programme/phase4/einstein_weyl_critical_mass_jet_v1/certificate.json",
+  "certificate_sha256": "a0245456f2ac3eecb4fe4e8a05be4dabbf277875546c91248713477a5bb2f67e",
+  "claim_boundary": "exact covariant parent mass jet; physical axial radial/Jost crosswalk remains open",
+  "commands": [
+    "python3 -m black_hole_programme.phase4.einstein_weyl_critical_mass_jet_v1.produce",
+    "python3 -m black_hole_programme.phase4.einstein_weyl_critical_mass_jet_v1.verify",
+    "python3 -m unittest -v black_hole_programme.phase4.einstein_weyl_critical_mass_jet_v1.test_mass_jet"
+  ],
+  "schema": "einstein-weyl-critical-mass-jet-receipt-v1"
+}

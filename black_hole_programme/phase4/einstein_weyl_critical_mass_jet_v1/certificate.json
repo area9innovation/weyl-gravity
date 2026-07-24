@@ -1,0 +1,188 @@
+{
+  "claim_flags": {
+    "coulomb_exponent_first_mass_derivative_zero": true,
+    "finite_mass_branch_sign_singular_limit_exact": true,
+    "fredholm_double_pole_established": false,
+    "intrinsic_horizon_dot_lambda_zero_imported": true,
+    "mass_derivative_modulo_einstein_kernel_exact": true,
+    "massive_momentum_derivative_exact": true,
+    "maxwell_stueckelberg_limit_certified": false,
+    "nilpotent_residue_exact": true,
+    "parent_mass_variation_exact": true,
+    "physical_b_equals_minus_mass_derivative_of_jost": false,
+    "physical_mass_jet_equals_intrinsic_radial_tau": false,
+    "physical_massive_qnm_slope_certified": false,
+    "quantum_statement": false,
+    "threshold_inverse_shear_asymptotic_certified": false,
+    "tt_difference_quotient_exact": true
+  },
+  "conditional_qnm_slope": {
+    "hypotheses": [
+      "the physical massive tensor branch reduces to the same scalar Jost family",
+      "compatible mass-analytic moving endpoint frames exist",
+      "b=-partial_mass a at mass=0 in the certified triangular normalization",
+      "the scalar QNM zero is simple"
+    ],
+    "identity": "d omega_n/d mass=b(omega_n)/a'(omega_n)",
+    "intrinsic_tau_identity": "d omega_n/d tau=-b/a'",
+    "status": "CONDITIONAL_PHYSICAL_MASS_CROSSWALK_OPEN"
+  },
+  "conditional_threshold_scaling": {
+    "ansatz": "a_ell(omega,mass)=omega^(-(ell+1))*F_ell(mass/omega^2)+lower terms",
+    "consequence": "b_ell/a_ell^2=O(omega^(ell-1))",
+    "ell_two": "O(omega)",
+    "status": "PREDICTION_NOT_UNIFORM_MATCHING_THEOREM"
+  },
+  "critical_mass_derivative": {
+    "branch_equation": "(E+mass*A)phi(mass)=0",
+    "derivative_at_zero": "E(phi_dot)+A(phi_0)=0",
+    "kernel_identity": "E(h+phi_dot)=0",
+    "metric_lift": "E(h)=A(phi_0)",
+    "quotient_identity": "[h]=-[partial_mass phi] in solutions modulo ker(E)",
+    "tau_form": "for tau=-mass, [h]=[partial_tau phi] at tau=0"
+  },
+  "crosswalk_gate": {
+    "decisive_test": "[I_mass]=[I_Bach] in C(r)/K_U C(r), after reducing the finite-mass axial helicity-two system to the certified RW companion gauge",
+    "existing_intrinsic_family": "B(tau)=B0+tau*B1",
+    "existing_scope": "exact local radial partial jet with compatible endpoint mass interpretation explicitly absent",
+    "required_steps": [
+      "derive the finite-mass axial first-order carrier system in the same conventions",
+      "differentiate it with respect to the signed mass coefficient at zero",
+      "reduce the helicity-two part to the certified RW companion frame",
+      "compute the projective cocycle",
+      "solve or obstruct the K_U coboundary equation for the difference",
+      "then construct compatible moving massive endpoint frames"
+    ],
+    "status": "OPEN_NOT_ASSUMED"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "that the certified intrinsic axial radial tau equals minus the physical spin-two squared mass",
+    "equality of the massive and Bach projective cocycle classes",
+    "a compatible massive horizon/infinity Jost family in the certified radial frame",
+    "b=-partial_mass a for the physical scalar Jost coefficient",
+    "a certified massive-spin-two QNM derivative or eikonal benchmark",
+    "a threshold O(omega) inverse-shear theorem",
+    "a smooth finite-mass Stueckelberg construction of the Maxwell quotient",
+    "a physical Fredholm double pole or generalized ringdown theorem",
+    "a nonlocal C classification or any quantum positivity statement"
+  ],
+  "endpoint_phase": {
+    "analytic_wedge": "|zeta|<1 on the selected square-root branch",
+    "branch": "k(omega,0)=omega",
+    "coulomb_values": {
+      "partial_mass_x_at_zero": "0",
+      "x_at_zero": "2*i*M*omega"
+    },
+    "horizon_import": "the independent intrinsic endpoint certificate has dot_lambda_H=0, but equality of its tau with -mass is not used",
+    "momentum": "k=sqrt(omega^2-mass)",
+    "new_endpoint_reading": "the first mass jet produces the linear-rstar generalized phase but no first-order Coulomb log(r) and no horizon-exponent shift",
+    "partial_mass_k_at_zero": "-1/(2*omega)",
+    "phase_derivatives": {
+      "exp(+i*k*rstar)": "-i*rstar/(2*omega) times the base phase",
+      "exp(-i*k*rstar)": "+i*rstar/(2*omega) times the base phase"
+    },
+    "schwarzschild_coulomb_exponent": "x=M*(mass-2*omega^2)/(i*sqrt(omega^2-mass))",
+    "uniform_variable": "zeta=mass/omega^2"
+  },
+  "finite_mass_branch_sign": {
+    "basis": "E=u_0, X=(u_mass-u_0)/mass",
+    "critical_pairing_limit": "(Omega_E(u0,u0')-Omega_E(u_mass,u_mass'))/mass tends to -Omega_E(u0,X')-Omega_E(X,u0')",
+    "finite_limit": false,
+    "involution": true,
+    "limit": "[[0,1],[0,0]]",
+    "matrix": "[[1,-2/mass],[0,-1]]",
+    "nilpotent_square": "N_0^2=0",
+    "renormalized_operator": "N_mass=-(mass/2)*(C_mass+I)"
+  },
+  "imports": {
+    "intrinsic_horizon_moving_phase": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_moving_phase_v1/certificate.json",
+      "sha256": "6d9d70d6e6006bf8d05ed6f6de9fa4d574eb189ed7348c7c170768477f94905f"
+    },
+    "intrinsic_infinity_reduced_phase": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/certificate.json",
+      "sha256": "b65c30b7620c10395b6bac3936a4715c767ad7d7e0efea50552c6c6f9da46f0b"
+    },
+    "intrinsic_radial_partial_jet": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json",
+      "sha256": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a"
+    },
+    "parent_resolvent": {
+      "path": "black_hole_programme/phase4/parent_resolvent_krein_obstructions_v1/certificate.json",
+      "sha256": "6bbc96eaf6773be8891e5efec32b510e4300ac44df40e5db948fec55948d62f7"
+    },
+    "physical_connection_ep2": {
+      "path": "black_hole_programme/phase3/axial_qnm_spin_one_local_unit_v1/certificate.json",
+      "sha256": "c0e8c6880ed4b142fe79738590eaede4637360d15eb31dc2203467eb66816e6a"
+    },
+    "second_order_parent": {
+      "path": "black_hole_programme/phase4/second_order_parent_flux_v1/certificate.json",
+      "sha256": "7f889865c28c31aaa7b8fca283352173f707639409cacd9f133ad98ac55e2b71"
+    }
+  },
+  "literature_context": {
+    "critical_gravity": {
+      "arxiv": "1106.4657v3",
+      "journal": "Phys. Rev. D 84, 064001 (2011)",
+      "scope_warning": "the present result is asymptotically flat Schwarzschild, not an AdS boundary-condition theorem",
+      "verified_context": [
+        "massive ghostlike and massless spin-two branches coalesce at criticality",
+        "the coalescence produces logarithmic modes in the AdS critical-gravity setting"
+      ]
+    },
+    "einstein_weyl_qnms": {
+      "arxiv": "2412.15037v3",
+      "journal": "Phys. Rev. D 111, 064059 (2025)",
+      "role": "context only; exact claims below are rederived locally",
+      "verified_context": [
+        "action convention R-alpha*C^2 with alpha=1/(2*mu_lit^2)",
+        "Schwarzschild carries unchanged GR modes and massive spin-two vector/tensor modes",
+        "massive infinity momentum k=sqrt(omega^2-mu_lit^2)",
+        "massive Coulomb exponent x=M*(mu_lit^2-2*omega^2)/(i*k)",
+        "the massive tensor QNM tends to the massless GR mode as mu_lit tends to zero"
+      ]
+    }
+  },
+  "maxwell_limit": {
+    "candidate_reading": "the certified Maxwell quotient is a Stueckelberg-rescaled helicity-one remnant",
+    "literature_observation": "the finite-mass axial vector polarizations become target-gauge at zero mass",
+    "status": "INTERPRETATION_NOT_EXACT_FINITE_MASS_SCALING_CERTIFICATE"
+  },
+  "normalization": {
+    "conventional_auxiliary_relation": "in the R-alpha*C^2 convention of arXiv:2412.15037, f_EW=-phi/mu_lit^2",
+    "intrinsic_parameter_candidate": "tau=-mass",
+    "mass_parameter": "mass denotes the signed squared-mass coefficient in the rescaled parent equations; its exact relation to a literature mu_lit^2 depends on the chosen sign and Einstein-operator normalization",
+    "regular_carrier": "phi=q=delta Ric-(1/6)g delta R"
+  },
+  "parent_mass_family": {
+    "action": "S=4*alpha_W*Integral[phi.E(h)-(1/2)phi.A(phi)+(mass/2)h.E(h)]",
+    "equations": [
+      "E(h)=A(phi)",
+      "E(phi)+mass*E(h)=0",
+      "(E+mass*A)(phi)=0"
+    ],
+    "hypotheses": [
+      "E is the formally self-adjoint linearized Einstein operator",
+      "A(phi)=phi-g*trace(phi) is algebraic and self-adjoint",
+      "Euler transgression is treated separately"
+    ],
+    "massive_constraint": {
+      "conclusion": "trace(phi)=0 and div(phi)=0 for mass nonzero",
+      "divergence": "div(A(phi))=0 for mass nonzero",
+      "trace": "trace(E(phi))=0 under the divergence constraint, so -3*mass*trace(phi)=0"
+    }
+  },
+  "schema": "einstein-weyl-critical-mass-jet-v1",
+  "status": "EXACT_CRITICAL_MASS_PARENT_JET_RADIAL_CROSSWALK_OPEN",
+  "tt_difference_quotient": {
+    "critical_limit": "E^-2",
+    "inverse": "(1/mass)*(E^-1-(E+mass)^-1)",
+    "operator": "E*(E+mass)",
+    "scope": "transverse-traceless spin-two subspace where A=I",
+    "scope_warning": "outside TT retain A and operator ordering"
+  }
+}

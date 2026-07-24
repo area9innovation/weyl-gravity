@@ -1,0 +1,45 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-einstein-weyl-critical-mass-jet",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-einstein-weyl-critical-mass-jet",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-einstein-weyl-critical-mass-jet.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Certify the exact critical Einstein-Weyl mass-jet interpretation of the second-order parent system, including the mass derivative modulo the Einstein kernel, the transverse-traceless propagator difference quotient, the singular branch-sign involution and nilpotent residue, and the moving massive asymptotic phase; audit—but do not assume—the identification of this covariant mass jet with the previously certified intrinsic axial radial tau family.",
+    "stop_condition": "Produce exact parent variations and eliminations, sign-controlled mass-derivative and difference-quotient identities, finite-mass C-limit algebra, exact dispersion and Coulomb-phase derivatives, pinned imports of the intrinsic radial and endpoint-jet certificates, an explicit missing-crosswalk ledger, independent verification, mutation tests, and a fail-closed report.",
+    "current_gate": "LOCAL-ALGEBRAIC critical-mass parent theorem with REDUCED-MODE endpoint and QNM consequences conditional on a physical-mass-to-radial-jet crosswalk",
+    "forbid": "no claim that the certified radial tau equals minus the physical spin-two mass squared before exact scalar projection; no massive-QNM slope theorem before compatible massive endpoint frames; no Fredholm double-pole promotion; no WKB or threshold-shear asymptotic theorem; no smooth Maxwell Stueckelberg-limit theorem; no nonlocal C exclusion or quantum claim",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-second-order-parent-flux",
+      "sf:program/work/phase4-black-hole-parent-resolvent-krein-obstructions",
+      "sf:program/work/phase4-black-hole-rw-maxwell-simplicity-endomorphisms"
+    ],
+    "activates": [
+      "exact massive-Fierz-Pauli-to-axial-partial-jet projection crosswalk",
+      "massive-tensor QNM slope versus certified Weyl Smith-selector audit",
+      "zeta-scaled massive endpoint transport"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase4/einstein_weyl_critical_mass_jet_v1/",
+      "reports/phase4-black-hole-einstein-weyl-critical-mass-jet-2026-07-24.md",
+      "planning/work-items/phase4-black-hole-einstein-weyl-critical-mass-jet.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use the rescaled auxiliary field phi=q, so the pure-Weyl limit is regular even though the conventional Einstein-Weyl auxiliary field scales as f_EW=-phi/mu^2. Verify E h=A phi and E phi+mu^2 E h=0; differentiate the tensor branch; restrict the propagator identity to the TT subspace where A=1. At infinity retain both k=sqrt(omega^2-mu^2) and the Schwarzschild Coulomb exponent. The existing intrinsic B(tau)=B0+tau B1 certificate is an import, not proof that tau=-mu^2.",
+    "input_commit": "ded4b68ad9bd31bb6caae080b1fb2e5b2f9a25d4",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "The cited Einstein-Weyl literature establishes the finite-mass auxiliary system and massive endpoint phases; the new certificate decides only the exact algebra reproduced locally."
+    ]
+  },
+  "edges": []
+}

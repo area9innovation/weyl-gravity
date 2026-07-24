@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Critical Einstein-Weyl mass-jet certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "dependency_tags",
+    "imports",
+    "parent_mass_family",
+    "critical_mass_derivative",
+    "tt_difference_quotient",
+    "endpoint_phase",
+    "finite_mass_branch_sign",
+    "crosswalk_gate",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "einstein-weyl-critical-mass-jet-v1"
+    },
+    "status": {
+      "const": "EXACT_CRITICAL_MASS_PARENT_JET_RADIAL_CROSSWALK_OPEN"
+    },
+    "claim_flags": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}
