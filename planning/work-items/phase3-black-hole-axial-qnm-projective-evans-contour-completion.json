@@ -1,0 +1,55 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase3-black-hole-axial-qnm-projective-evans-contour-completion",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase3-black-hole-axial-qnm-projective-evans-contour-completion",
+  "source": {
+    "path": "planning/work-items/phase3-black-hole-axial-qnm-projective-evans-contour-completion.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase3-qnm-evans-boundary",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 1,
+    "objective": "Complete the validated projective Evans contour from the certified exact boundary prefix 123/512, count its enclosed axial spin-two zeros by a fail-closed argument-principle rail, and evaluate the intrinsic tangent selector only after a root count is certified.",
+    "stop_condition": "Import commit 39cabf422 and its v7, v7b and v8 certificates by exact hashes. Continue from the honest next gap 246/1024 in bounded chunks, preserving the common projective mismatch section, moving endpoint phases and stable-root convention. Either certify nonvanishing on the complete closed contour and an exact winding/root count, or stop at the first irreparable panel with a typed enclosure obstruction. If exactly one simple QNM is certified, localize it and test the projective intrinsic tangent delta_tau without inferring nonvanishing from rational nonsplitting. Record separately the connection-level Smith conclusion and the still-conditional Fredholm/Green-resolvent promotion.",
+    "current_gate": "Validated continuation from 123/512 to a complete zero-free contour; argument principle and Smith selector remain unopened until that boundary gate passes",
+    "forbid": "no certified prefix called a closed contour; no sampled winding called an argument-principle count; no QNM inferred before the full boundary excludes zero; no nonzero differential extension called a nonzero QNM selector; no connection Smith branch promoted to a Green-resolvent pole without the analytic Fredholm realization; no mode-stability, time-domain, ringdown, particle or quantum claim",
+    "depends_on": [
+      "sf:program/work/black-hole-complex-frequency-analytic-continuation-gate",
+      "sf:program/work/phase3-black-hole-axial-boundary-devissage-no-growth"
+    ],
+    "activates": [
+      "a certified local axial QNM Smith test if and only if the contour count isolates a simple spin-two zero",
+      "the conditional repeated-block Fredholm principal-part theorem after its graph-norm realization is separately established"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v9/",
+      "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v9/",
+      "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/",
+      "reports/phase3-axial-qnm-projective-evans-contour-completion-2026-07-24.md",
+      "residual_atlas/phase3-axial-qnm-projective-evans-contour-completion-fragment-v1.json",
+      "paper/14-pure-weyl-black-hole-radiation.tex",
+      "paper/14-pure-weyl-black-hole-radiation.pdf",
+      "paper/14-pure-weyl-black-hole-radiation-claim-map.json",
+      "paper/generate_14_pure_weyl_black_hole_radiation_claim_map.py",
+      "paper/verify_14_pure_weyl_black_hole_radiation_claim_map.py",
+      "paper/test_14_pure_weyl_black_hole_radiation_claim_map.py",
+      "planning/paper-coverage/",
+      "planning/events/",
+      "planning/forge-requests/"
+    ],
+    "resource_hint": "Use projective Riccati/Grassmann transport with correlated parameter arithmetic. Keep producer chunks below the approximately 60-second scoped-loop target; the 32-panel v8 run is an affected-chain receipt, not the future fast-loop template.",
+    "input_commit": "39cabf422",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "Current certified boundary prefix: [0,123/512].",
+      "Next honest gap: 246/1024.",
+      "The complete-contour, argument-principle, QNM, Smith, beta_n and EP2 flags are false at activation."
+    ]
+  },
+  "edges": []
+}
