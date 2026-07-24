@@ -1,0 +1,1686 @@
+{
+  "accepted_segments": [
+    {
+      "kind": "fixed_child_grid_observation",
+      "panel": 349,
+      "panel_count": 1024,
+      "parent_panel": 174,
+      "row": {
+        "boundary_nonvanishing": {
+          "failure": null,
+          "status": "PASS"
+        },
+        "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+        "horizon": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[7.4373577446084983083246986164593015441e-6 +/- 1.47e-44]",
+            "q_omega": "[0.032480166409514226281733554301103575486 +/- 4.56e-40]",
+            "q_tau": "[0.0018483773118762309077938286379534644903 +/- 1.30e-41]"
+          },
+          "omega_center": "[-0.38724045403965473566287869289226364344 +/- 3.59e-39] + [0.10995966054383568555330441540718311444 +/- 7.52e-40]j",
+          "omega_generator_id": "qnm-boundary-omega-0349-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(+I*omega*r_star)*P_H",
+          "q_omega_polynomial_coefficients": [
+            "[0.0085572461847199399881391812527908768971 +/- 4.81e-41] + [-2.0127141084584669883383867272641509771 +/- 3.48e-38]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.22136548165403202581558161909924820065 +/- 4.99e-39] + [0.76781789138844280806495135038858279586 +/- 1.62e-39]j",
+            "[0.0085572461847199399881391812527908768971 +/- 4.81e-41] + [-2.0127141084584669883383867272641509771 +/- 3.48e-38]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00034782285093261524179866772676916752971 +/- 1.03e-43] + [-0.00015889038282824422161632060834790536319 +/- 9.44e-43]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            }
+          }
+        },
+        "omega_box": "[-0.387 +/- 3.18e-4] + [0.110 +/- 1.18e-4]j",
+        "omega_center": "[-0.38724045403965473566287869289226364344 +/- 3.59e-39] + [0.10995966054383568555330441540718311444 +/- 7.52e-40]j",
+        "omega_generator_id": "qnm-boundary-omega-0349-of-1024",
+        "outgoing": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[5.3170163661909166671785887296664362344e-6 +/- 3.17e-44]",
+            "q_omega": "[0.062551074819216874100801650556859804206 +/- 9.77e-41]",
+            "q_tau": "[0.00025626243768261718988289261655539754927 +/- 8.05e-43]"
+          },
+          "omega_center": "[-0.38724045403965473566287869289226364344 +/- 3.59e-39] + [0.10995966054383568555330441540718311444 +/- 7.52e-40]j",
+          "omega_generator_id": "qnm-boundary-omega-0349-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(-I*omega*r_star)*P_out",
+          "q_omega_polynomial_coefficients": [
+            "[0.0071109885538619306555307986172920209356 +/- 3.48e-41] + [-0.015758644258854745401343677713157376274 +/- 4.67e-40]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.0014167334657698761081479066348265405395 +/- 6.83e-42] + [-0.0066115408987776390706270213115658407332 +/- 3.76e-41]j",
+            "[0.0071109885538619306555307986172920209356 +/- 3.48e-41] + [-0.015758644258854745401343677713157376274 +/- 4.67e-40]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00039509474790006308356909991985617125465 +/- 6.90e-43] + [8.3128064227508085388095027123966929139e-5 +/- 1.29e-44]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 260,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 262,
+              "chart": "q",
+              "rejected_trials": 5,
+              "taylor_order": 26
+            }
+          }
+        },
+        "panel": 349,
+        "panel_count": 1024,
+        "physical_mismatch": {
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[1.2754374110799414975503287346125737779e-5 +/- 3.71e-43]",
+          "modulus_lower": "[4.6280540059586625992910119536250724413e-5 +/- 9.25e-43]",
+          "polynomial_coefficients": [
+            "[2.942710059077860082488165005543123e-5 +/- 7.73e-39] + [-5.14757920890241901790140843786503e-5 +/- 1.04e-38]j",
+            "[0.001446257630858009332608382635498855961 +/- 5.83e-40] + [0.0030445358003877570629569504490063992 +/- 6.67e-38]j"
+          ]
+        }
+      },
+      "row_sha256": "cc170921ced1e598d73cddfb649c586cbfa263fb715690e5a4b177a04a0a1eb3"
+    },
+    {
+      "kind": "fixed_child_grid_observation",
+      "panel": 350,
+      "panel_count": 1024,
+      "parent_panel": 175,
+      "row": {
+        "boundary_nonvanishing": {
+          "failure": null,
+          "status": "PASS"
+        },
+        "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+        "horizon": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[7.4469747022743010101366270367009359456e-6 +/- 1.92e-44]",
+            "q_omega": "[0.032536417346911617960546437348426022453 +/- 3.85e-41]",
+            "q_tau": "[0.0018591672060704394439084483990554831026 +/- 2.24e-41]"
+          },
+          "omega_center": "[-0.38736903589736931818876541910867672414 +/- 4.13e-39] + [0.10987600886952349210634594101065886207 +/- 7.51e-40]j",
+          "omega_generator_id": "qnm-boundary-omega-0350-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(+I*omega*r_star)*P_H",
+          "q_omega_polynomial_coefficients": [
+            "[0.0085667837598951291494531190551242616493 +/- 2.55e-41] + [-2.0126746029165545337491494137793779373 +/- 1.69e-38]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.22119601548480491426396099541307194158 +/- 4.35e-39] + [0.76807597114966452700457466562511399388 +/- 3.14e-39]j",
+            "[0.0085667837598951291494531190551242616493 +/- 2.55e-41] + [-2.0126746029165545337491494137793779373 +/- 1.69e-38]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00034510980591395099036436389106086153333 +/- 3.09e-42] + [-0.00016099289761399096791889828939048356915 +/- 9.22e-44]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            }
+          }
+        },
+        "omega_box": "[-0.387 +/- 4.46e-4] + [0.110 +/- 2.01e-4]j",
+        "omega_center": "[-0.38736903589736931818876541910867672414 +/- 4.13e-39] + [0.10987600886952349210634594101065886207 +/- 7.51e-40]j",
+        "omega_generator_id": "qnm-boundary-omega-0350-of-1024",
+        "outgoing": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[5.2956778506613699892226709737166874147e-6 +/- 1.89e-45]",
+            "q_omega": "[0.062340053615892852983762999839749609545 +/- 1.78e-40]",
+            "q_tau": "[0.00025542170046971279104287853032806797616 +/- 3.51e-42]"
+          },
+          "omega_center": "[-0.38736903589736931818876541910867672414 +/- 4.13e-39] + [0.10987600886952349210634594101065886207 +/- 7.51e-40]j",
+          "omega_generator_id": "qnm-boundary-omega-0350-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(-I*omega*r_star)*P_out",
+          "q_omega_polynomial_coefficients": [
+            "[0.0070982051426192035656348444661034591263 +/- 1.61e-41] + [-0.015753883048935841265647539444216818083 +/- 7.77e-41]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.0014145019057834938656231793530082541110 +/- 4.60e-41] + [-0.0066101092403719466025768802808215696132 +/- 1.90e-41]j",
+            "[0.0070982051426192035656348444661034591263 +/- 1.61e-41] + [-0.015753883048935841265647539444216818083 +/- 7.77e-41]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00039503573721159744710704209147422716342 +/- 3.21e-42] + [8.2966009985516650233720870044606954252e-5 +/- 2.32e-43]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 260,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 261,
+              "chart": "q",
+              "rejected_trials": 1,
+              "taylor_order": 26
+            }
+          }
+        },
+        "panel": 350,
+        "panel_count": 1024,
+        "physical_mismatch": {
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[1.2742652552935670999359298010417623360e-5 +/- 3.47e-43]",
+          "modulus_lower": "[4.6771187594282107890260749218069515047e-5 +/- 6.47e-43]",
+          "polynomial_coefficients": [
+            "[2.949583997443618564593403874596333e-5 +/- 5.59e-39] + [-5.199140470216277037929231141788478e-5 +/- 7.93e-39]j",
+            "[0.0014685786172759255838182745890208025230 +/- 8.25e-41] + [0.0030792801323813075164981256648388808 +/- 5.01e-38]j"
+          ]
+        }
+      },
+      "row_sha256": "a002a39cca86d79484d3ed9bb1f446bdbbac5d22f982a7f9e91babdfa10f29ce"
+    },
+    {
+      "kind": "fixed_child_grid_observation",
+      "panel": 351,
+      "panel_count": 1024,
+      "parent_panel": 175,
+      "row": {
+        "boundary_nonvanishing": {
+          "failure": null,
+          "status": "PASS"
+        },
+        "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+        "horizon": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[7.4566641454815316939543557942345910195e-6 +/- 3.46e-44]",
+            "q_omega": "[0.032593201705360475641949124221750226177 +/- 4.08e-40]",
+            "q_tau": "[0.0018700149467113316027093958927737319628 +/- 4.02e-41]"
+          },
+          "omega_center": "[-0.38749710205754250846865716084721498191 +/- 3.57e-39] + [0.10979156980648352437412995641352608800 +/- 6.57e-40]j",
+          "omega_generator_id": "qnm-boundary-omega-0351-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(+I*omega*r_star)*P_H",
+          "q_omega_polynomial_coefficients": [
+            "[0.0085766743909563066677881337795952276792 +/- 3.78e-41] + [-2.0126345946752963733672459056833758950 +/- 2.34e-38]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.22102497107109558838189400375995319337 +/- 3.48e-39] + [0.76833300031611129199404786049854010344 +/- 4.49e-39]j",
+            "[0.0085766743909563066677881337795952276792 +/- 3.78e-41] + [-2.0126345946752963733672459056833758950 +/- 2.34e-38]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00034236648966907198138320822522473463323 +/- 3.28e-43] + [-0.00016310635453390233753911964242888643639 +/- 1.63e-42]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            }
+          }
+        },
+        "omega_box": "[-0.3875 +/- 7.96e-5] + [0.1098 +/- 8.52e-5]j",
+        "omega_center": "[-0.38749710205754250846865716084721498191 +/- 3.57e-39] + [0.10979156980648352437412995641352608800 +/- 6.57e-40]j",
+        "omega_generator_id": "qnm-boundary-omega-0351-of-1024",
+        "outgoing": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[5.2794181177188791977466020943841609653e-6 +/- 3.01e-44]",
+            "q_omega": "[0.062128482280951496362731805466664291959 +/- 1.16e-40]",
+            "q_tau": "[0.00025457856606476593685240199735099066976 +/- 2.57e-42]"
+          },
+          "omega_center": "[-0.38749710205754250846865716084721498191 +/- 3.57e-39] + [0.10979156980648352437412995641352608800 +/- 6.57e-40]j",
+          "omega_generator_id": "qnm-boundary-omega-0351-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(-I*omega*r_star)*P_out",
+          "q_omega_polynomial_coefficients": [
+            "[0.0070854074282786696364899725608665903565 +/- 4.58e-41] + [-0.015749193397556170148643417405764921568 +/- 3.35e-40]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.0014122636403618483730976196355300089635 +/- 4.21e-41] + [-0.0066086908266551240911934606003796943696 +/- 2.16e-41]j",
+            "[0.0070854074282786696364899725608665903565 +/- 4.58e-41] + [-0.015749193397556170148643417405764921568 +/- 3.35e-40]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00039497762963507950352906594737589784927 +/- 3.24e-43] + [8.2803777535984626105916572846865619795e-5 +/- 3.02e-43]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 260,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 261,
+              "chart": "q",
+              "rejected_trials": 2,
+              "taylor_order": 26
+            }
+          }
+        },
+        "panel": 351,
+        "panel_count": 1024,
+        "physical_mismatch": {
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[1.2736082263200410891700957888618751985e-5 +/- 1.29e-43]",
+          "modulus_lower": "[4.7264043029310412849585964320752888770e-5 +/- 6.18e-43]",
+          "polynomial_coefficients": [
+            "[2.956781776669126053647129737100841e-5 +/- 6.49e-39] + [-5.251297231860085207300059551016602e-5 +/- 9.80e-39]j",
+            "[0.001491266962677637031298161218728637323 +/- 4.01e-40] + [0.0031145987222597967813975117223890266 +/- 6.14e-38]j"
+          ]
+        }
+      },
+      "row_sha256": "4796bdde142f4a525c97b384a6ffbce7dd093447f7712dd0ff7be9f90dce54fa"
+    },
+    {
+      "kind": "fixed_child_grid_observation",
+      "panel": 352,
+      "panel_count": 1024,
+      "parent_panel": 176,
+      "row": {
+        "boundary_nonvanishing": {
+          "failure": null,
+          "status": "PASS"
+        },
+        "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+        "horizon": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[7.4664261904558770032193476139044855710e-6 +/- 4.29e-44]",
+            "q_omega": "[0.032650521131222069282739731599551500722 +/- 2.77e-40]",
+            "q_tau": "[0.0018809204720603597608167417436653867935 +/- 2.62e-41]"
+          },
+          "omega_center": "[-0.38762464769855575763557453683461062610 +/- 1.50e-39] + [0.10970634653379877920809093438947456889 +/- 1.46e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0352-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(+I*omega*r_star)*P_H",
+          "q_omega_polynomial_coefficients": [
+            "[0.0085869222150820236766355364466107857879 +/- 2.52e-41] + [-2.0125940738120973172442518261959776282 +/- 3.11e-38]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.22085235492314483907172473209357121959 +/- 3.29e-39] + [0.76858896914169871905642139608971774578 +/- 9.45e-40]j",
+            "[0.0085869222150820236766355364466107857879 +/- 2.52e-41] + [-2.0125940738120973172442518261959776282 +/- 3.11e-38]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00033959254551141880313497312116055582010 +/- 2.79e-42] + [-0.00016523102747090061270807126447834889404 +/- 4.76e-42]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            }
+          }
+        },
+        "omega_box": "[-0.388 +/- 4.53e-4] + [0.1097 +/- 8.31e-5]j",
+        "omega_center": "[-0.38762464769855575763557453683461062610 +/- 1.50e-39] + [0.10970634653379877920809093438947456889 +/- 1.46e-39]j",
+        "omega_generator_id": "qnm-boundary-omega-0352-of-1024",
+        "outgoing": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[5.2630496751565471049837704137384274686e-6 +/- 4.86e-44]",
+            "q_omega": "[0.061916378677410770916149113643771822260 +/- 1.47e-40]",
+            "q_tau": "[0.00025373310713918907865917620832372867491 +/- 3.69e-42]"
+          },
+          "omega_center": "[-0.38762464769855575763557453683461062610 +/- 1.50e-39] + [0.10970634653379877920809093438947456889 +/- 1.46e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0352-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(-I*omega*r_star)*P_out",
+          "q_omega_polynomial_coefficients": [
+            "[0.0070725957554500810606223915044665773166 +/- 3.44e-41] + [-0.015744575236256646427746019867299764883 +/- 2.27e-40]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.0014100187436537688513010779800538330164 +/- 2.73e-41] + [-0.0066072856757045444683895674131690611830 +/- 1.89e-42]j",
+            "[0.0070725957554500810606223915044665773166 +/- 3.44e-41] + [-0.015744575236256646427746019867299764883 +/- 2.27e-40]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00039492042434254308498620122946931587649 +/- 4.23e-42] + [8.2641371190335084859907022192260228621e-5 +/- 3.08e-43]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 260,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 261,
+              "chart": "q",
+              "rejected_trials": 4,
+              "taylor_order": 26
+            }
+          }
+        },
+        "panel": 352,
+        "panel_count": 1024,
+        "physical_mismatch": {
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[1.2729475865612424108203118027642913040e-5 +/- 2.64e-43]",
+          "modulus_lower": "[4.7764390680249404272407125378858322178e-5 +/- 6.50e-43]",
+          "polynomial_coefficients": [
+            "[2.964311189351180424178533456824880e-5 +/- 7.58e-39] + [-5.304057970825174633811016633444524e-5 +/- 2.86e-39]j",
+            "[0.001514326459631942616013144942144208471 +/- 3.60e-40] + [0.0031505014241593291834941936713221367 +/- 4.87e-38]j"
+          ]
+        }
+      },
+      "row_sha256": "d3774be75e63e0d09d37e52917bf349f162b0420f5896e2b36367ff6d82fe0a8"
+    },
+    {
+      "kind": "fixed_child_grid_observation",
+      "panel": 353,
+      "panel_count": 1024,
+      "parent_panel": 176,
+      "row": {
+        "boundary_nonvanishing": {
+          "failure": null,
+          "status": "PASS"
+        },
+        "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+        "horizon": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[7.4762609534230235813730652205548384051e-6 +/- 3.24e-44]",
+            "q_omega": "[0.032708377270857668839716376160305160152 +/- 3.77e-42]",
+            "q_tau": "[0.0018918837152340973262355624616673879608 +/- 4.11e-41]"
+          },
+          "omega_center": "[-0.38775166801838767405286034772871062160 +/- 4.62e-39] + [0.10962034226007728865415202790245530196 +/- 4.66e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0353-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(+I*omega*r_star)*P_H",
+          "q_omega_polynomial_coefficients": [
+            "[0.0085975313641624348526271148784871911630 +/- 3.45e-42] + [-2.0125530301851770609289360436378046870 +/- 2.32e-38]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.22067817361229424832913537102285772562 +/- 2.70e-40] + [0.76884386791904235636252451513428241014 +/- 4.81e-39]j",
+            "[0.0085975313641624348526271148784871911630 +/- 3.45e-42] + [-2.0125530301851770609289360436378046870 +/- 2.32e-38]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00033678761209822200180241669187353181769 +/- 1.41e-42] + [-0.00016736719699562207044375716780137963724 +/- 2.67e-43]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            }
+          }
+        },
+        "omega_box": "[-0.388 +/- 3.26e-4] + [0.110 +/- 4.57e-4]j",
+        "omega_center": "[-0.38775166801838767405286034772871062160 +/- 4.62e-39] + [0.10962034226007728865415202790245530196 +/- 4.66e-39]j",
+        "omega_generator_id": "qnm-boundary-omega-0353-of-1024",
+        "outgoing": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[5.2439085226334893232188491120224761670e-6 +/- 2.01e-45]",
+            "q_omega": "[0.061703759927428458259770544087520149488 +/- 3.26e-40]",
+            "q_tau": "[0.00025288539443506706702790095789762403484 +/- 3.45e-42]"
+          },
+          "omega_center": "[-0.38775166801838767405286034772871062160 +/- 4.62e-39] + [0.10962034226007728865415202790245530196 +/- 4.66e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0353-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(-I*omega*r_star)*P_out",
+          "q_omega_polynomial_coefficients": [
+            "[0.0070597704668505529418398580787652463187 +/- 4.68e-41] + [-0.015740028495743716568933123767237702850 +/- 2.53e-40]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.0014077672896769621944251804634973268548 +/- 4.93e-41] + [-0.0066058938052521469150302202422153641237 +/- 5.41e-42]j",
+            "[0.0070597704668505529418398580787652463187 +/- 4.68e-41] + [-0.015740028495743716568933123767237702850 +/- 2.53e-40]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00039486412049586841607404230636291231349 +/- 1.23e-42] + [8.2478795236894746046273085848810069365e-5 +/- 1.56e-43]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 260,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 261,
+              "chart": "q",
+              "rejected_trials": 1,
+              "taylor_order": 26
+            }
+          }
+        },
+        "panel": 353,
+        "panel_count": 1024,
+        "physical_mismatch": {
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[1.2720169476056512904591914332577314572e-5 +/- 1.78e-43]",
+          "modulus_lower": "[4.8274992843257122023168990412845262250e-5 +/- 4.28e-43]",
+          "polynomial_coefficients": [
+            "[2.972180246270882640613475444979485e-5 +/- 6.07e-39] + [-5.357431248084482816596008092346893e-5 +/- 7.76e-39]j",
+            "[0.0015377608973118819107872567997219448443 +/- 5.90e-41] + [0.0031869983105666556399970801294330159 +/- 7.92e-38]j"
+          ]
+        }
+      },
+      "row_sha256": "8c1a3586e29eed24141867dedee8e27d4a694469bb641f77bc740baf3d7f5e89"
+    },
+    {
+      "kind": "fixed_child_grid_observation",
+      "panel": 354,
+      "panel_count": 1024,
+      "parent_panel": 177,
+      "row": {
+        "boundary_nonvanishing": {
+          "failure": null,
+          "status": "PASS"
+        },
+        "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+        "horizon": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[7.4861685613686470014460940370912779846e-6 +/- 1.83e-45]",
+            "q_omega": "[0.032766771976423703014276939167295932790 +/- 5.01e-41]",
+            "q_tau": "[0.0019029046042042387383559404420964404745 +/- 2.60e-41]"
+          },
+          "omega_center": "[-0.38787815823479510068949593915021978319 +/- 3.09e-39] + [0.10953356022333135544322146870399592444 +/- 3.01e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0354-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(+I*omega*r_star)*P_H",
+          "q_omega_polynomial_coefficients": [
+            "[0.0086085059626783352881851385518530150875 +/- 4.50e-41] + [-2.0125114534292714019159120653057470918 +/- 2.99e-38]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.22050243377079767337356486223143292591 +/- 2.43e-40] + [0.76909768697982172636073983085225336254 +/- 3.57e-39]j",
+            "[0.0086085059626783352881851385518530150875 +/- 4.50e-41] + [-2.0125114534292714019159120653057470918 +/- 2.99e-38]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00033395132340631835570279872804633214400 +/- 3.83e-42] + [-0.00016951515053383088972409342698455247955 +/- 2.81e-42]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            }
+          }
+        },
+        "omega_box": "[-0.388 +/- 1.99e-4] + [0.110 +/- 5.44e-4]j",
+        "omega_center": "[-0.38787815823479510068949593915021978319 +/- 3.09e-39] + [0.10953356022333135544322146870399592444 +/- 3.01e-39]j",
+        "omega_generator_id": "qnm-boundary-omega-0354-of-1024",
+        "outgoing": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[5.2243032967278755347218197091656738932e-6 +/- 2.77e-44]",
+            "q_omega": "[0.061490643729387911130300914497183951782 +/- 3.97e-40]",
+            "q_tau": "[0.00025203549805137910758638150994217809853 +/- 3.34e-42]"
+          },
+          "omega_center": "[-0.38787815823479510068949593915021978319 +/- 3.09e-39] + [0.10953356022333135544322146870399592444 +/- 3.01e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0354-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(-I*omega*r_star)*P_out",
+          "q_omega_polynomial_coefficients": [
+            "[0.0070469319033211186287246619031066074967 +/- 3.85e-41] + [-0.015735553105899063169870188971799507271 +/- 4.99e-40]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.0014055093523169456815047340114688267931 +/- 3.43e-41] + [-0.0066045152326872262962820236964489595266 +/- 5.91e-42]j",
+            "[0.0070469319033211186287246619031066074967 +/- 3.85e-41] + [-0.015735553105899063169870188971799507271 +/- 4.99e-40]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00039480871724705321858597817374914029642 +/- 2.42e-42] + [8.2316053941039558157662103798912767161e-5 +/- 2.00e-43]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 260,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 260,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            }
+          }
+        },
+        "panel": 354,
+        "panel_count": 1024,
+        "physical_mismatch": {
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[1.2710471858096522536167913746256951878e-5 +/- 1.26e-43]",
+          "modulus_lower": "[4.8793640656828261130736130024398148394e-5 +/- 5.16e-43]",
+          "polynomial_coefficients": [
+            "[2.980397181801680561719081197225023e-5 +/- 1.87e-39] + [-5.411425708124872197002375173724431e-5 +/- 6.37e-39]j",
+            "[0.001561574059357216659460476648746407591 +/- 2.86e-40] + [0.0032240996766276612539581236660524155 +/- 7.58e-38]j"
+          ]
+        }
+      },
+      "row_sha256": "cf8bb19b2921187418d19e98e925f3e8a4d3afb35dfd4f1c76f925804a1a5757"
+    },
+    {
+      "kind": "fixed_child_grid_observation",
+      "panel": 355,
+      "panel_count": 1024,
+      "parent_panel": 177,
+      "row": {
+        "boundary_nonvanishing": {
+          "failure": null,
+          "status": "PASS"
+        },
+        "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+        "horizon": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[7.4961491273615769474044562107339764650e-6 +/- 1.85e-45]",
+            "q_omega": "[0.032825706853122410014299584382037249848 +/- 4.07e-40]",
+            "q_tau": "[0.0019139831955644526519428109457751332554 +/- 2.06e-41]"
+          },
+          "omega_center": "[-0.38800411358549291573893924578442238271 +/- 2.37e-39] + [0.10944600369085562274751310951614868827 +/- 1.65e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0355-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(+I*omega*r_star)*P_H",
+          "q_omega_polynomial_coefficients": [
+            "[0.0086198501254806485227799583981322939508 +/- 3.37e-41] + [-2.0124693329512703954264907224569469690 +/- 3.23e-38]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.22032514209162756824156303991912864149 +/- 3.84e-39] + [0.76935041669514259154993851552717387676 +/- 2.40e-39]j",
+            "[0.0086198501254806485227799583981322939508 +/- 3.37e-41] + [-2.0124693329512703954264907224569469690 +/- 3.23e-38]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00033108330870930792813600085366942948895 +/- 4.25e-42] + [-0.00017167518253762716995240722450688508616 +/- 2.88e-42]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            }
+          }
+        },
+        "omega_box": "[-0.3880 +/- 8.09e-5] + [0.109 +/- 5.23e-4]j",
+        "omega_center": "[-0.38800411358549291573893924578442238271 +/- 2.37e-39] + [0.10944600369085562274751310951614868827 +/- 1.65e-39]j",
+        "omega_generator_id": "qnm-boundary-omega-0355-of-1024",
+        "outgoing": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[5.2092937748788660900437065666274180853e-6 +/- 2.74e-44]",
+            "q_omega": "[0.061277047123130038094664651720947248164 +/- 2.25e-40]",
+            "q_tau": "[0.00025118348808710004565926943498308599917 +/- 5.70e-43]"
+          },
+          "omega_center": "[-0.38800411358549291573893924578442238271 +/- 2.37e-39] + [0.10944600369085562274751310951614868827 +/- 1.65e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0355-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(-I*omega*r_star)*P_out",
+          "q_omega_polynomial_coefficients": [
+            "[0.0070340804038344388257608663650444213999 +/- 4.36e-41] + [-0.015731148995814334123899413953040493652 +/- 2.25e-40]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.0014032450053271592997627958965267680469 +/- 3.10e-42] + [-0.0066031499750597057174505977172884740867 +/- 2.80e-41]j",
+            "[0.0070340804038344388257608663650444213999 +/- 4.36e-41] + [-0.015731148995814334123899413953040493652 +/- 2.25e-40]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00039475421373847123952122162293676410627 +/- 8.58e-43] + [8.2153151545345402730763373355671319587e-5 +/- 3.10e-43]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 260,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 261,
+              "chart": "q",
+              "rejected_trials": 1,
+              "taylor_order": 26
+            }
+          }
+        },
+        "panel": 355,
+        "panel_count": 1024,
+        "physical_mismatch": {
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[1.2705442902240443037448162777361394550e-5 +/- 3.65e-43]",
+          "modulus_lower": "[4.9315375637318240246982093157606059782e-5 +/- 7.78e-43]",
+          "polynomial_coefficients": [
+            "[2.988970458916344677402499030449690e-5 +/- 5.82e-39] + [-5.466050078353421048937832438241458e-5 +/- 7.32e-39]j",
+            "[0.001585769721646209697019092033087872551 +/- 1.78e-40] + [0.0032618160445439386974086914960935247 +/- 8.63e-38]j"
+          ]
+        }
+      },
+      "row_sha256": "dc409cc69fd80c5a2b86726c6c1c351b7b2d981e2c9a42cec15601acdb984369"
+    },
+    {
+      "kind": "fixed_child_grid_observation",
+      "panel": 356,
+      "panel_count": 1024,
+      "parent_panel": 178,
+      "row": {
+        "boundary_nonvanishing": {
+          "failure": null,
+          "status": "PASS"
+        },
+        "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+        "horizon": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[7.5062027878580598707050588972607022581e-6 +/- 4.39e-44]",
+            "q_omega": "[0.032885183876587313787942051818699488202 +/- 1.79e-40]",
+            "q_tau": "[0.0019251194713076626768436945715326425560 +/- 1.47e-41]"
+          },
+          "omega_center": "[-0.38812952932833322261529929164680652320 +/- 3.85e-39] + [0.10935767595910404759163014887235476635 +/- 3.97e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0356-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(+I*omega*r_star)*P_H",
+          "q_omega_polynomial_coefficients": [
+            "[0.0086315679554850987392766725747605960350 +/- 4.84e-41] + [-2.0124266579257699127936120930826291442 +/- 8.26e-39]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.22014630532828607933915066041663521901 +/- 2.27e-39] + [0.76960204747589844309629825147567316890 +/- 2.38e-39]j",
+            "[0.0086315679554850987392766725747605960350 +/- 4.84e-41] + [-2.0124266579257699127936120930826291442 +/- 8.26e-39]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00032818319255609391168343469402657319733 +/- 4.08e-42] + [-0.00017384759466043670081067396004925740272 +/- 4.27e-42]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            }
+          }
+        },
+        "omega_box": "[-0.388 +/- 2.07e-4] + [0.109 +/- 4.35e-4]j",
+        "omega_center": "[-0.38812952932833322261529929164680652320 +/- 3.85e-39] + [0.10935767595910404759163014887235476635 +/- 3.97e-39]j",
+        "omega_generator_id": "qnm-boundary-omega-0356-of-1024",
+        "outgoing": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[5.1918950443527454401119263808484845784e-6 +/- 1.89e-44]",
+            "q_omega": "[0.061062987889354344290491925134206052121 +/- 3.52e-40]",
+            "q_tau": "[0.00025032943624898218335771970298043637357 +/- 1.91e-42]"
+          },
+          "omega_center": "[-0.38812952932833322261529929164680652320 +/- 3.85e-39] + [0.10935767595910404759163014887235476635 +/- 3.97e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0356-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(-I*omega*r_star)*P_out",
+          "q_omega_polynomial_coefficients": [
+            "[0.0070212163055061449501437209619325585663 +/- 3.19e-41] + [-0.015726816093804205087813841146271442994 +/- 4.76e-40]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.0014009743223282089714942788560847475310 +/- 1.44e-41] + [-0.0066017980490831662185313710722311952850 +/- 1.50e-41]j",
+            "[0.0070212163055061449501437209619325585663 +/- 3.19e-41] + [-0.015726816093804205087813841146271442994 +/- 4.76e-40]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00039470060910314872263879304448153106932 +/- 2.96e-42] + [8.1990092269736060837798108380525263783e-5 +/- 5.64e-44]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 260,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 261,
+              "chart": "q",
+              "rejected_trials": 1,
+              "taylor_order": 26
+            }
+          }
+        },
+        "panel": 356,
+        "panel_count": 1024,
+        "physical_mismatch": {
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[1.2698097832210805310816985278109186837e-5 +/- 3.93e-43]",
+          "modulus_lower": "[4.984728549137843335940893449270557226e-5 +/- 2.25e-42]",
+          "polynomial_coefficients": [
+            "[2.997908774977518439608381584093877e-5 +/- 3.38e-39] + [-5.521313168483591576896074570868222e-5 +/- 8.06e-39]j",
+            "[0.001610351649978953789132951612828037469 +/- 3.99e-40] + [0.0033001581680342922942017480636422988 +/- 2.72e-38]j"
+          ]
+        }
+      },
+      "row_sha256": "811b8f19792b5b1cb340bbef507341af29317c759acd6230d23805db23528000"
+    }
+  ],
+  "arithmetic": "python-flint acb/arb, 128 bits",
+  "child_panel_count": 1024,
+  "elapsed_compute_seconds": 26.548507220984902,
+  "horizon_remainder_root": "stable interval smaller root with exact 1000001/1000000 strict enlargement",
+  "maximum_parallel_workers": 8,
+  "maximum_subdivision_depth": 1,
+  "observations": [
+    {
+      "kind": "fixed_child_grid_observation",
+      "panel": 349,
+      "panel_count": 1024,
+      "parent_panel": 174,
+      "row": {
+        "boundary_nonvanishing": {
+          "failure": null,
+          "status": "PASS"
+        },
+        "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+        "horizon": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[7.4373577446084983083246986164593015441e-6 +/- 1.47e-44]",
+            "q_omega": "[0.032480166409514226281733554301103575486 +/- 4.56e-40]",
+            "q_tau": "[0.0018483773118762309077938286379534644903 +/- 1.30e-41]"
+          },
+          "omega_center": "[-0.38724045403965473566287869289226364344 +/- 3.59e-39] + [0.10995966054383568555330441540718311444 +/- 7.52e-40]j",
+          "omega_generator_id": "qnm-boundary-omega-0349-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(+I*omega*r_star)*P_H",
+          "q_omega_polynomial_coefficients": [
+            "[0.0085572461847199399881391812527908768971 +/- 4.81e-41] + [-2.0127141084584669883383867272641509771 +/- 3.48e-38]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.22136548165403202581558161909924820065 +/- 4.99e-39] + [0.76781789138844280806495135038858279586 +/- 1.62e-39]j",
+            "[0.0085572461847199399881391812527908768971 +/- 4.81e-41] + [-2.0127141084584669883383867272641509771 +/- 3.48e-38]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00034782285093261524179866772676916752971 +/- 1.03e-43] + [-0.00015889038282824422161632060834790536319 +/- 9.44e-43]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            }
+          }
+        },
+        "omega_box": "[-0.387 +/- 3.18e-4] + [0.110 +/- 1.18e-4]j",
+        "omega_center": "[-0.38724045403965473566287869289226364344 +/- 3.59e-39] + [0.10995966054383568555330441540718311444 +/- 7.52e-40]j",
+        "omega_generator_id": "qnm-boundary-omega-0349-of-1024",
+        "outgoing": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[5.3170163661909166671785887296664362344e-6 +/- 3.17e-44]",
+            "q_omega": "[0.062551074819216874100801650556859804206 +/- 9.77e-41]",
+            "q_tau": "[0.00025626243768261718988289261655539754927 +/- 8.05e-43]"
+          },
+          "omega_center": "[-0.38724045403965473566287869289226364344 +/- 3.59e-39] + [0.10995966054383568555330441540718311444 +/- 7.52e-40]j",
+          "omega_generator_id": "qnm-boundary-omega-0349-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(-I*omega*r_star)*P_out",
+          "q_omega_polynomial_coefficients": [
+            "[0.0071109885538619306555307986172920209356 +/- 3.48e-41] + [-0.015758644258854745401343677713157376274 +/- 4.67e-40]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.0014167334657698761081479066348265405395 +/- 6.83e-42] + [-0.0066115408987776390706270213115658407332 +/- 3.76e-41]j",
+            "[0.0071109885538619306555307986172920209356 +/- 3.48e-41] + [-0.015758644258854745401343677713157376274 +/- 4.67e-40]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00039509474790006308356909991985617125465 +/- 6.90e-43] + [8.3128064227508085388095027123966929139e-5 +/- 1.29e-44]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 260,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 262,
+              "chart": "q",
+              "rejected_trials": 5,
+              "taylor_order": 26
+            }
+          }
+        },
+        "panel": 349,
+        "panel_count": 1024,
+        "physical_mismatch": {
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[1.2754374110799414975503287346125737779e-5 +/- 3.71e-43]",
+          "modulus_lower": "[4.6280540059586625992910119536250724413e-5 +/- 9.25e-43]",
+          "polynomial_coefficients": [
+            "[2.942710059077860082488165005543123e-5 +/- 7.73e-39] + [-5.14757920890241901790140843786503e-5 +/- 1.04e-38]j",
+            "[0.001446257630858009332608382635498855961 +/- 5.83e-40] + [0.0030445358003877570629569504490063992 +/- 6.67e-38]j"
+          ]
+        }
+      },
+      "row_sha256": "cc170921ced1e598d73cddfb649c586cbfa263fb715690e5a4b177a04a0a1eb3"
+    },
+    {
+      "kind": "fixed_child_grid_observation",
+      "panel": 350,
+      "panel_count": 1024,
+      "parent_panel": 175,
+      "row": {
+        "boundary_nonvanishing": {
+          "failure": null,
+          "status": "PASS"
+        },
+        "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+        "horizon": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[7.4469747022743010101366270367009359456e-6 +/- 1.92e-44]",
+            "q_omega": "[0.032536417346911617960546437348426022453 +/- 3.85e-41]",
+            "q_tau": "[0.0018591672060704394439084483990554831026 +/- 2.24e-41]"
+          },
+          "omega_center": "[-0.38736903589736931818876541910867672414 +/- 4.13e-39] + [0.10987600886952349210634594101065886207 +/- 7.51e-40]j",
+          "omega_generator_id": "qnm-boundary-omega-0350-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(+I*omega*r_star)*P_H",
+          "q_omega_polynomial_coefficients": [
+            "[0.0085667837598951291494531190551242616493 +/- 2.55e-41] + [-2.0126746029165545337491494137793779373 +/- 1.69e-38]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.22119601548480491426396099541307194158 +/- 4.35e-39] + [0.76807597114966452700457466562511399388 +/- 3.14e-39]j",
+            "[0.0085667837598951291494531190551242616493 +/- 2.55e-41] + [-2.0126746029165545337491494137793779373 +/- 1.69e-38]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00034510980591395099036436389106086153333 +/- 3.09e-42] + [-0.00016099289761399096791889828939048356915 +/- 9.22e-44]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            }
+          }
+        },
+        "omega_box": "[-0.387 +/- 4.46e-4] + [0.110 +/- 2.01e-4]j",
+        "omega_center": "[-0.38736903589736931818876541910867672414 +/- 4.13e-39] + [0.10987600886952349210634594101065886207 +/- 7.51e-40]j",
+        "omega_generator_id": "qnm-boundary-omega-0350-of-1024",
+        "outgoing": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[5.2956778506613699892226709737166874147e-6 +/- 1.89e-45]",
+            "q_omega": "[0.062340053615892852983762999839749609545 +/- 1.78e-40]",
+            "q_tau": "[0.00025542170046971279104287853032806797616 +/- 3.51e-42]"
+          },
+          "omega_center": "[-0.38736903589736931818876541910867672414 +/- 4.13e-39] + [0.10987600886952349210634594101065886207 +/- 7.51e-40]j",
+          "omega_generator_id": "qnm-boundary-omega-0350-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(-I*omega*r_star)*P_out",
+          "q_omega_polynomial_coefficients": [
+            "[0.0070982051426192035656348444661034591263 +/- 1.61e-41] + [-0.015753883048935841265647539444216818083 +/- 7.77e-41]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.0014145019057834938656231793530082541110 +/- 4.60e-41] + [-0.0066101092403719466025768802808215696132 +/- 1.90e-41]j",
+            "[0.0070982051426192035656348444661034591263 +/- 1.61e-41] + [-0.015753883048935841265647539444216818083 +/- 7.77e-41]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00039503573721159744710704209147422716342 +/- 3.21e-42] + [8.2966009985516650233720870044606954252e-5 +/- 2.32e-43]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 260,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 261,
+              "chart": "q",
+              "rejected_trials": 1,
+              "taylor_order": 26
+            }
+          }
+        },
+        "panel": 350,
+        "panel_count": 1024,
+        "physical_mismatch": {
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[1.2742652552935670999359298010417623360e-5 +/- 3.47e-43]",
+          "modulus_lower": "[4.6771187594282107890260749218069515047e-5 +/- 6.47e-43]",
+          "polynomial_coefficients": [
+            "[2.949583997443618564593403874596333e-5 +/- 5.59e-39] + [-5.199140470216277037929231141788478e-5 +/- 7.93e-39]j",
+            "[0.0014685786172759255838182745890208025230 +/- 8.25e-41] + [0.0030792801323813075164981256648388808 +/- 5.01e-38]j"
+          ]
+        }
+      },
+      "row_sha256": "a002a39cca86d79484d3ed9bb1f446bdbbac5d22f982a7f9e91babdfa10f29ce"
+    },
+    {
+      "kind": "fixed_child_grid_observation",
+      "panel": 351,
+      "panel_count": 1024,
+      "parent_panel": 175,
+      "row": {
+        "boundary_nonvanishing": {
+          "failure": null,
+          "status": "PASS"
+        },
+        "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+        "horizon": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[7.4566641454815316939543557942345910195e-6 +/- 3.46e-44]",
+            "q_omega": "[0.032593201705360475641949124221750226177 +/- 4.08e-40]",
+            "q_tau": "[0.0018700149467113316027093958927737319628 +/- 4.02e-41]"
+          },
+          "omega_center": "[-0.38749710205754250846865716084721498191 +/- 3.57e-39] + [0.10979156980648352437412995641352608800 +/- 6.57e-40]j",
+          "omega_generator_id": "qnm-boundary-omega-0351-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(+I*omega*r_star)*P_H",
+          "q_omega_polynomial_coefficients": [
+            "[0.0085766743909563066677881337795952276792 +/- 3.78e-41] + [-2.0126345946752963733672459056833758950 +/- 2.34e-38]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.22102497107109558838189400375995319337 +/- 3.48e-39] + [0.76833300031611129199404786049854010344 +/- 4.49e-39]j",
+            "[0.0085766743909563066677881337795952276792 +/- 3.78e-41] + [-2.0126345946752963733672459056833758950 +/- 2.34e-38]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00034236648966907198138320822522473463323 +/- 3.28e-43] + [-0.00016310635453390233753911964242888643639 +/- 1.63e-42]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            }
+          }
+        },
+        "omega_box": "[-0.3875 +/- 7.96e-5] + [0.1098 +/- 8.52e-5]j",
+        "omega_center": "[-0.38749710205754250846865716084721498191 +/- 3.57e-39] + [0.10979156980648352437412995641352608800 +/- 6.57e-40]j",
+        "omega_generator_id": "qnm-boundary-omega-0351-of-1024",
+        "outgoing": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[5.2794181177188791977466020943841609653e-6 +/- 3.01e-44]",
+            "q_omega": "[0.062128482280951496362731805466664291959 +/- 1.16e-40]",
+            "q_tau": "[0.00025457856606476593685240199735099066976 +/- 2.57e-42]"
+          },
+          "omega_center": "[-0.38749710205754250846865716084721498191 +/- 3.57e-39] + [0.10979156980648352437412995641352608800 +/- 6.57e-40]j",
+          "omega_generator_id": "qnm-boundary-omega-0351-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(-I*omega*r_star)*P_out",
+          "q_omega_polynomial_coefficients": [
+            "[0.0070854074282786696364899725608665903565 +/- 4.58e-41] + [-0.015749193397556170148643417405764921568 +/- 3.35e-40]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.0014122636403618483730976196355300089635 +/- 4.21e-41] + [-0.0066086908266551240911934606003796943696 +/- 2.16e-41]j",
+            "[0.0070854074282786696364899725608665903565 +/- 4.58e-41] + [-0.015749193397556170148643417405764921568 +/- 3.35e-40]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00039497762963507950352906594737589784927 +/- 3.24e-43] + [8.2803777535984626105916572846865619795e-5 +/- 3.02e-43]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 260,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 261,
+              "chart": "q",
+              "rejected_trials": 2,
+              "taylor_order": 26
+            }
+          }
+        },
+        "panel": 351,
+        "panel_count": 1024,
+        "physical_mismatch": {
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[1.2736082263200410891700957888618751985e-5 +/- 1.29e-43]",
+          "modulus_lower": "[4.7264043029310412849585964320752888770e-5 +/- 6.18e-43]",
+          "polynomial_coefficients": [
+            "[2.956781776669126053647129737100841e-5 +/- 6.49e-39] + [-5.251297231860085207300059551016602e-5 +/- 9.80e-39]j",
+            "[0.001491266962677637031298161218728637323 +/- 4.01e-40] + [0.0031145987222597967813975117223890266 +/- 6.14e-38]j"
+          ]
+        }
+      },
+      "row_sha256": "4796bdde142f4a525c97b384a6ffbce7dd093447f7712dd0ff7be9f90dce54fa"
+    },
+    {
+      "kind": "fixed_child_grid_observation",
+      "panel": 352,
+      "panel_count": 1024,
+      "parent_panel": 176,
+      "row": {
+        "boundary_nonvanishing": {
+          "failure": null,
+          "status": "PASS"
+        },
+        "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+        "horizon": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[7.4664261904558770032193476139044855710e-6 +/- 4.29e-44]",
+            "q_omega": "[0.032650521131222069282739731599551500722 +/- 2.77e-40]",
+            "q_tau": "[0.0018809204720603597608167417436653867935 +/- 2.62e-41]"
+          },
+          "omega_center": "[-0.38762464769855575763557453683461062610 +/- 1.50e-39] + [0.10970634653379877920809093438947456889 +/- 1.46e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0352-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(+I*omega*r_star)*P_H",
+          "q_omega_polynomial_coefficients": [
+            "[0.0085869222150820236766355364466107857879 +/- 2.52e-41] + [-2.0125940738120973172442518261959776282 +/- 3.11e-38]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.22085235492314483907172473209357121959 +/- 3.29e-39] + [0.76858896914169871905642139608971774578 +/- 9.45e-40]j",
+            "[0.0085869222150820236766355364466107857879 +/- 2.52e-41] + [-2.0125940738120973172442518261959776282 +/- 3.11e-38]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00033959254551141880313497312116055582010 +/- 2.79e-42] + [-0.00016523102747090061270807126447834889404 +/- 4.76e-42]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            }
+          }
+        },
+        "omega_box": "[-0.388 +/- 4.53e-4] + [0.1097 +/- 8.31e-5]j",
+        "omega_center": "[-0.38762464769855575763557453683461062610 +/- 1.50e-39] + [0.10970634653379877920809093438947456889 +/- 1.46e-39]j",
+        "omega_generator_id": "qnm-boundary-omega-0352-of-1024",
+        "outgoing": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[5.2630496751565471049837704137384274686e-6 +/- 4.86e-44]",
+            "q_omega": "[0.061916378677410770916149113643771822260 +/- 1.47e-40]",
+            "q_tau": "[0.00025373310713918907865917620832372867491 +/- 3.69e-42]"
+          },
+          "omega_center": "[-0.38762464769855575763557453683461062610 +/- 1.50e-39] + [0.10970634653379877920809093438947456889 +/- 1.46e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0352-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(-I*omega*r_star)*P_out",
+          "q_omega_polynomial_coefficients": [
+            "[0.0070725957554500810606223915044665773166 +/- 3.44e-41] + [-0.015744575236256646427746019867299764883 +/- 2.27e-40]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.0014100187436537688513010779800538330164 +/- 2.73e-41] + [-0.0066072856757045444683895674131690611830 +/- 1.89e-42]j",
+            "[0.0070725957554500810606223915044665773166 +/- 3.44e-41] + [-0.015744575236256646427746019867299764883 +/- 2.27e-40]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00039492042434254308498620122946931587649 +/- 4.23e-42] + [8.2641371190335084859907022192260228621e-5 +/- 3.08e-43]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 260,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 261,
+              "chart": "q",
+              "rejected_trials": 4,
+              "taylor_order": 26
+            }
+          }
+        },
+        "panel": 352,
+        "panel_count": 1024,
+        "physical_mismatch": {
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[1.2729475865612424108203118027642913040e-5 +/- 2.64e-43]",
+          "modulus_lower": "[4.7764390680249404272407125378858322178e-5 +/- 6.50e-43]",
+          "polynomial_coefficients": [
+            "[2.964311189351180424178533456824880e-5 +/- 7.58e-39] + [-5.304057970825174633811016633444524e-5 +/- 2.86e-39]j",
+            "[0.001514326459631942616013144942144208471 +/- 3.60e-40] + [0.0031505014241593291834941936713221367 +/- 4.87e-38]j"
+          ]
+        }
+      },
+      "row_sha256": "d3774be75e63e0d09d37e52917bf349f162b0420f5896e2b36367ff6d82fe0a8"
+    },
+    {
+      "kind": "fixed_child_grid_observation",
+      "panel": 353,
+      "panel_count": 1024,
+      "parent_panel": 176,
+      "row": {
+        "boundary_nonvanishing": {
+          "failure": null,
+          "status": "PASS"
+        },
+        "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+        "horizon": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[7.4762609534230235813730652205548384051e-6 +/- 3.24e-44]",
+            "q_omega": "[0.032708377270857668839716376160305160152 +/- 3.77e-42]",
+            "q_tau": "[0.0018918837152340973262355624616673879608 +/- 4.11e-41]"
+          },
+          "omega_center": "[-0.38775166801838767405286034772871062160 +/- 4.62e-39] + [0.10962034226007728865415202790245530196 +/- 4.66e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0353-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(+I*omega*r_star)*P_H",
+          "q_omega_polynomial_coefficients": [
+            "[0.0085975313641624348526271148784871911630 +/- 3.45e-42] + [-2.0125530301851770609289360436378046870 +/- 2.32e-38]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.22067817361229424832913537102285772562 +/- 2.70e-40] + [0.76884386791904235636252451513428241014 +/- 4.81e-39]j",
+            "[0.0085975313641624348526271148784871911630 +/- 3.45e-42] + [-2.0125530301851770609289360436378046870 +/- 2.32e-38]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00033678761209822200180241669187353181769 +/- 1.41e-42] + [-0.00016736719699562207044375716780137963724 +/- 2.67e-43]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            }
+          }
+        },
+        "omega_box": "[-0.388 +/- 3.26e-4] + [0.110 +/- 4.57e-4]j",
+        "omega_center": "[-0.38775166801838767405286034772871062160 +/- 4.62e-39] + [0.10962034226007728865415202790245530196 +/- 4.66e-39]j",
+        "omega_generator_id": "qnm-boundary-omega-0353-of-1024",
+        "outgoing": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[5.2439085226334893232188491120224761670e-6 +/- 2.01e-45]",
+            "q_omega": "[0.061703759927428458259770544087520149488 +/- 3.26e-40]",
+            "q_tau": "[0.00025288539443506706702790095789762403484 +/- 3.45e-42]"
+          },
+          "omega_center": "[-0.38775166801838767405286034772871062160 +/- 4.62e-39] + [0.10962034226007728865415202790245530196 +/- 4.66e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0353-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(-I*omega*r_star)*P_out",
+          "q_omega_polynomial_coefficients": [
+            "[0.0070597704668505529418398580787652463187 +/- 4.68e-41] + [-0.015740028495743716568933123767237702850 +/- 2.53e-40]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.0014077672896769621944251804634973268548 +/- 4.93e-41] + [-0.0066058938052521469150302202422153641237 +/- 5.41e-42]j",
+            "[0.0070597704668505529418398580787652463187 +/- 4.68e-41] + [-0.015740028495743716568933123767237702850 +/- 2.53e-40]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00039486412049586841607404230636291231349 +/- 1.23e-42] + [8.2478795236894746046273085848810069365e-5 +/- 1.56e-43]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 260,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 261,
+              "chart": "q",
+              "rejected_trials": 1,
+              "taylor_order": 26
+            }
+          }
+        },
+        "panel": 353,
+        "panel_count": 1024,
+        "physical_mismatch": {
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[1.2720169476056512904591914332577314572e-5 +/- 1.78e-43]",
+          "modulus_lower": "[4.8274992843257122023168990412845262250e-5 +/- 4.28e-43]",
+          "polynomial_coefficients": [
+            "[2.972180246270882640613475444979485e-5 +/- 6.07e-39] + [-5.357431248084482816596008092346893e-5 +/- 7.76e-39]j",
+            "[0.0015377608973118819107872567997219448443 +/- 5.90e-41] + [0.0031869983105666556399970801294330159 +/- 7.92e-38]j"
+          ]
+        }
+      },
+      "row_sha256": "8c1a3586e29eed24141867dedee8e27d4a694469bb641f77bc740baf3d7f5e89"
+    },
+    {
+      "kind": "fixed_child_grid_observation",
+      "panel": 354,
+      "panel_count": 1024,
+      "parent_panel": 177,
+      "row": {
+        "boundary_nonvanishing": {
+          "failure": null,
+          "status": "PASS"
+        },
+        "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+        "horizon": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[7.4861685613686470014460940370912779846e-6 +/- 1.83e-45]",
+            "q_omega": "[0.032766771976423703014276939167295932790 +/- 5.01e-41]",
+            "q_tau": "[0.0019029046042042387383559404420964404745 +/- 2.60e-41]"
+          },
+          "omega_center": "[-0.38787815823479510068949593915021978319 +/- 3.09e-39] + [0.10953356022333135544322146870399592444 +/- 3.01e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0354-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(+I*omega*r_star)*P_H",
+          "q_omega_polynomial_coefficients": [
+            "[0.0086085059626783352881851385518530150875 +/- 4.50e-41] + [-2.0125114534292714019159120653057470918 +/- 2.99e-38]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.22050243377079767337356486223143292591 +/- 2.43e-40] + [0.76909768697982172636073983085225336254 +/- 3.57e-39]j",
+            "[0.0086085059626783352881851385518530150875 +/- 4.50e-41] + [-2.0125114534292714019159120653057470918 +/- 2.99e-38]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00033395132340631835570279872804633214400 +/- 3.83e-42] + [-0.00016951515053383088972409342698455247955 +/- 2.81e-42]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            }
+          }
+        },
+        "omega_box": "[-0.388 +/- 1.99e-4] + [0.110 +/- 5.44e-4]j",
+        "omega_center": "[-0.38787815823479510068949593915021978319 +/- 3.09e-39] + [0.10953356022333135544322146870399592444 +/- 3.01e-39]j",
+        "omega_generator_id": "qnm-boundary-omega-0354-of-1024",
+        "outgoing": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[5.2243032967278755347218197091656738932e-6 +/- 2.77e-44]",
+            "q_omega": "[0.061490643729387911130300914497183951782 +/- 3.97e-40]",
+            "q_tau": "[0.00025203549805137910758638150994217809853 +/- 3.34e-42]"
+          },
+          "omega_center": "[-0.38787815823479510068949593915021978319 +/- 3.09e-39] + [0.10953356022333135544322146870399592444 +/- 3.01e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0354-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(-I*omega*r_star)*P_out",
+          "q_omega_polynomial_coefficients": [
+            "[0.0070469319033211186287246619031066074967 +/- 3.85e-41] + [-0.015735553105899063169870188971799507271 +/- 4.99e-40]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.0014055093523169456815047340114688267931 +/- 3.43e-41] + [-0.0066045152326872262962820236964489595266 +/- 5.91e-42]j",
+            "[0.0070469319033211186287246619031066074967 +/- 3.85e-41] + [-0.015735553105899063169870188971799507271 +/- 4.99e-40]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00039480871724705321858597817374914029642 +/- 2.42e-42] + [8.2316053941039558157662103798912767161e-5 +/- 2.00e-43]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 260,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 260,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            }
+          }
+        },
+        "panel": 354,
+        "panel_count": 1024,
+        "physical_mismatch": {
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[1.2710471858096522536167913746256951878e-5 +/- 1.26e-43]",
+          "modulus_lower": "[4.8793640656828261130736130024398148394e-5 +/- 5.16e-43]",
+          "polynomial_coefficients": [
+            "[2.980397181801680561719081197225023e-5 +/- 1.87e-39] + [-5.411425708124872197002375173724431e-5 +/- 6.37e-39]j",
+            "[0.001561574059357216659460476648746407591 +/- 2.86e-40] + [0.0032240996766276612539581236660524155 +/- 7.58e-38]j"
+          ]
+        }
+      },
+      "row_sha256": "cf8bb19b2921187418d19e98e925f3e8a4d3afb35dfd4f1c76f925804a1a5757"
+    },
+    {
+      "kind": "fixed_child_grid_observation",
+      "panel": 355,
+      "panel_count": 1024,
+      "parent_panel": 177,
+      "row": {
+        "boundary_nonvanishing": {
+          "failure": null,
+          "status": "PASS"
+        },
+        "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+        "horizon": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[7.4961491273615769474044562107339764650e-6 +/- 1.85e-45]",
+            "q_omega": "[0.032825706853122410014299584382037249848 +/- 4.07e-40]",
+            "q_tau": "[0.0019139831955644526519428109457751332554 +/- 2.06e-41]"
+          },
+          "omega_center": "[-0.38800411358549291573893924578442238271 +/- 2.37e-39] + [0.10944600369085562274751310951614868827 +/- 1.65e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0355-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(+I*omega*r_star)*P_H",
+          "q_omega_polynomial_coefficients": [
+            "[0.0086198501254806485227799583981322939508 +/- 3.37e-41] + [-2.0124693329512703954264907224569469690 +/- 3.23e-38]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.22032514209162756824156303991912864149 +/- 3.84e-39] + [0.76935041669514259154993851552717387676 +/- 2.40e-39]j",
+            "[0.0086198501254806485227799583981322939508 +/- 3.37e-41] + [-2.0124693329512703954264907224569469690 +/- 3.23e-38]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00033108330870930792813600085366942948895 +/- 4.25e-42] + [-0.00017167518253762716995240722450688508616 +/- 2.88e-42]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            }
+          }
+        },
+        "omega_box": "[-0.3880 +/- 8.09e-5] + [0.109 +/- 5.23e-4]j",
+        "omega_center": "[-0.38800411358549291573893924578442238271 +/- 2.37e-39] + [0.10944600369085562274751310951614868827 +/- 1.65e-39]j",
+        "omega_generator_id": "qnm-boundary-omega-0355-of-1024",
+        "outgoing": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[5.2092937748788660900437065666274180853e-6 +/- 2.74e-44]",
+            "q_omega": "[0.061277047123130038094664651720947248164 +/- 2.25e-40]",
+            "q_tau": "[0.00025118348808710004565926943498308599917 +/- 5.70e-43]"
+          },
+          "omega_center": "[-0.38800411358549291573893924578442238271 +/- 2.37e-39] + [0.10944600369085562274751310951614868827 +/- 1.65e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0355-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(-I*omega*r_star)*P_out",
+          "q_omega_polynomial_coefficients": [
+            "[0.0070340804038344388257608663650444213999 +/- 4.36e-41] + [-0.015731148995814334123899413953040493652 +/- 2.25e-40]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.0014032450053271592997627958965267680469 +/- 3.10e-42] + [-0.0066031499750597057174505977172884740867 +/- 2.80e-41]j",
+            "[0.0070340804038344388257608663650444213999 +/- 4.36e-41] + [-0.015731148995814334123899413953040493652 +/- 2.25e-40]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00039475421373847123952122162293676410627 +/- 8.58e-43] + [8.2153151545345402730763373355671319587e-5 +/- 3.10e-43]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 260,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 261,
+              "chart": "q",
+              "rejected_trials": 1,
+              "taylor_order": 26
+            }
+          }
+        },
+        "panel": 355,
+        "panel_count": 1024,
+        "physical_mismatch": {
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[1.2705442902240443037448162777361394550e-5 +/- 3.65e-43]",
+          "modulus_lower": "[4.9315375637318240246982093157606059782e-5 +/- 7.78e-43]",
+          "polynomial_coefficients": [
+            "[2.988970458916344677402499030449690e-5 +/- 5.82e-39] + [-5.466050078353421048937832438241458e-5 +/- 7.32e-39]j",
+            "[0.001585769721646209697019092033087872551 +/- 1.78e-40] + [0.0032618160445439386974086914960935247 +/- 8.63e-38]j"
+          ]
+        }
+      },
+      "row_sha256": "dc409cc69fd80c5a2b86726c6c1c351b7b2d981e2c9a42cec15601acdb984369"
+    },
+    {
+      "kind": "fixed_child_grid_observation",
+      "panel": 356,
+      "panel_count": 1024,
+      "parent_panel": 178,
+      "row": {
+        "boundary_nonvanishing": {
+          "failure": null,
+          "status": "PASS"
+        },
+        "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+        "horizon": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[7.5062027878580598707050588972607022581e-6 +/- 4.39e-44]",
+            "q_omega": "[0.032885183876587313787942051818699488202 +/- 1.79e-40]",
+            "q_tau": "[0.0019251194713076626768436945715326425560 +/- 1.47e-41]"
+          },
+          "omega_center": "[-0.38812952932833322261529929164680652320 +/- 3.85e-39] + [0.10935767595910404759163014887235476635 +/- 3.97e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0356-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(+I*omega*r_star)*P_H",
+          "q_omega_polynomial_coefficients": [
+            "[0.0086315679554850987392766725747605960350 +/- 4.84e-41] + [-2.0124266579257699127936120930826291442 +/- 8.26e-39]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.22014630532828607933915066041663521901 +/- 2.27e-39] + [0.76960204747589844309629825147567316890 +/- 2.38e-39]j",
+            "[0.0086315679554850987392766725747605960350 +/- 4.84e-41] + [-2.0124266579257699127936120930826291442 +/- 8.26e-39]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00032818319255609391168343469402657319733 +/- 4.08e-42] + [-0.00017384759466043670081067396004925740272 +/- 4.27e-42]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 966,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            }
+          }
+        },
+        "omega_box": "[-0.388 +/- 2.07e-4] + [0.109 +/- 4.35e-4]j",
+        "omega_center": "[-0.38812952932833322261529929164680652320 +/- 3.85e-39] + [0.10935767595910404759163014887235476635 +/- 3.97e-39]j",
+        "omega_generator_id": "qnm-boundary-omega-0356-of-1024",
+        "outgoing": {
+          "generator_modulus_upper": "[7.6699009314238280615184857513203953998e-5 +/- 2.51e-43]",
+          "independent_residual_radius": {
+            "q": "[5.1918950443527454401119263808484845784e-6 +/- 1.89e-44]",
+            "q_omega": "[0.061062987889354344290491925134206052121 +/- 3.52e-40]",
+            "q_tau": "[0.00025032943624898218335771970298043637357 +/- 1.91e-42]"
+          },
+          "omega_center": "[-0.38812952932833322261529929164680652320 +/- 3.85e-39] + [0.10935767595910404759163014887235476635 +/- 3.97e-39]j",
+          "omega_generator_id": "qnm-boundary-omega-0356-of-1024",
+          "omega_polynomial_basis": "zeta=omega-omega_center",
+          "passed": true,
+          "phase_convention": "psi=exp(-I*omega*r_star)*P_out",
+          "q_omega_polynomial_coefficients": [
+            "[0.0070212163055061449501437209619325585663 +/- 3.19e-41] + [-0.015726816093804205087813841146271442994 +/- 4.76e-40]j"
+          ],
+          "q_polynomial_coefficients": [
+            "[0.0014009743223282089714942788560847475310 +/- 1.44e-41] + [-0.0066017980490831662185313710722311952850 +/- 1.50e-41]j",
+            "[0.0070212163055061449501437209619325585663 +/- 3.19e-41] + [-0.015726816093804205087813841146271442994 +/- 4.76e-40]j"
+          ],
+          "q_tau_polynomial_coefficients": [
+            "[0.00039470060910314872263879304448153106932 +/- 2.96e-42] + [8.1990092269736060837798108380525263783e-5 +/- 5.64e-44]j"
+          ],
+          "residual_rule": "q residual follows from the certified q_omega enclosure and the fundamental theorem of calculus after subtracting the centered affine polynomial",
+          "transport_diagnostics": {
+            "box": {
+              "accepted_steps": 260,
+              "chart": "q",
+              "rejected_trials": 0,
+              "taylor_order": 26
+            },
+            "center": {
+              "accepted_steps": 261,
+              "chart": "q",
+              "rejected_trials": 1,
+              "taylor_order": 26
+            }
+          }
+        },
+        "panel": 356,
+        "panel_count": 1024,
+        "physical_mismatch": {
+          "formula": "Delta=q_H-q_out+2*I*omega",
+          "independent_residual_radius": "[1.2698097832210805310816985278109186837e-5 +/- 3.93e-43]",
+          "modulus_lower": "[4.984728549137843335940893449270557226e-5 +/- 2.25e-42]",
+          "polynomial_coefficients": [
+            "[2.997908774977518439608381584093877e-5 +/- 3.38e-39] + [-5.521313168483591576896074570868222e-5 +/- 8.06e-39]j",
+            "[0.001610351649978953789132951612828037469 +/- 3.99e-40] + [0.0033001581680342922942017480636422988 +/- 2.72e-38]j"
+          ]
+        }
+      },
+      "row_sha256": "811b8f19792b5b1cb340bbef507341af29317c759acd6230d23805db23528000"
+    }
+  ],
+  "requested_child_range": [
+    349,
+    356
+  ],
+  "schema": "phase3-axial-qnm-projective-evans-contour-raw-run-349-356-v1",
+  "terminal": {
+    "code": "REQUESTED_CHILD_GRID_STOP_REACHED",
+    "first_unmaterialized_child_panel": 357
+  },
+  "threshold_lowered": false
+}
