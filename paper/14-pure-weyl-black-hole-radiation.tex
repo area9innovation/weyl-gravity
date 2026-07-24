@@ -2094,6 +2094,7 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_qnm_ecs_panel_transport_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_ecs_riccati_transport_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_projective_sensitivity_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_riccati_rail_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_ecs_centered_projective_initializer_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_ecs_affine_projective_transport_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_horizon_projective_preflight_v1/certificate.json};
@@ -2112,12 +2113,15 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot-switch-certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot-switch-continuation-certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_checkpoint_frame_v1/pivot-switch-subdivision-retry-certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_multipanel_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_checkpoint_resume_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_frame_completion_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_common_remainder_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_splus_checkpoint_resume_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_common_affine_evans_chunk_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json}\\
 Polar restriction-stable module and invariant current filtration &
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json}\\
@@ -2240,13 +2244,19 @@ the exact dual normalization restores base pivot \(1\) and tangent pivot
 \(0\).  One post-switch panel passes with scaled norm \(0.39018\), local
 tail \(8.36\times10^{-8}\), and next-pivot lower bound \(0.920325\).
 This supplies a resumable correlation-preserving checkpoint beyond the
-former obstruction.  The successor accepts five panels strictly beyond the
-switch, reaching \(\rho=3/8388608\).  The attempted sixth panel then refuses
-with \texttt{NONFINITE\_TAYLOR\_ENCLOSURE}.  At the last valid checkpoint
-only the current \(e_2\) chart excludes zero, with lower bound \(0.42120\);
-the other rows in the fixed atlas do not support a pre-emptive switch.
-Thus the switch repair is effective and resumable, but continuation to
-\(r=4\) still needs a stronger local Taylor majorant.
+former obstruction.  A subsequent audit found, however, that the first
+continuation rail tested finiteness before rather than after projective
+normalization.  Its advertised panel 31 is therefore superseded: the raw
+Taylor state and pivot pass, but normalization creates non-finite tangent
+balls.  A mutation test reproduces the old false acceptance and the
+corrected gate rejects it.  The last certified checkpoint is panel 30 at
+\(\rho=95/268435456\).  A bounded retry grid comprising Taylor orders
+\(16,20,24,32,40\) and subdivisions \(2,4,8,16,32,64\) completes none of
+the 30 attempted next panels: 20 stop at non-finite projective
+normalization and 10 because the sole admissible \(e_2\) pivot contains
+zero.  Thus the endpoint switch itself remains certified, but its radial
+continuation beyond panel 30 requires a correlation-preserving
+representation stronger than rectangular Taylor balls.
 
 At outgoing real infinity the corresponding reduced-phase representation
 has also passed its first local test.  Keeping \(e^{-2i\omega r_*}\)
@@ -2308,8 +2318,16 @@ difference contains zero, and the rigorous local tail is
 \(7.72\times10^{-10}\).  The normalized tangent width changes only from
 \(0.722649\) to \(0.723408\), although restoring the physical normalization
 gives width \(370.385\).  This is a valid correlated checkpoint, not yet a
-jointly propagated frame.  Consequently analytic \(K_+\) and \(T_+\) remain
-fail closed.
+jointly propagated frame.  A replay-free successor now advances the same
+normalized \(S_+\) state through 16 further panels,
+\[
+ r:8191/256\longrightarrow8175/256 .
+\]
+All generator and direct/dual correlation gates pass; the largest local
+tail is \(7.68\times10^{-10}\), the final base width is \(0.00135325\), and
+the normalized tangent width is \(0.737306\) (physical width \(377.501\)
+after restoring the factor 512).  Consequently analytic \(K_+\), the joint
+\((E,R,S)\) frame, and \(T_+\) remain fail closed.
 Complex-frequency work has excluded the entire growth half-plane, but no
 damped QNM root, contour moment, or local Smith branch has been computed.
 At the QNM seed disk, the direct inverse-\(r\) forward recurrence also fails
@@ -2331,8 +2349,20 @@ initializer is now bounded by
 factor-frame coefficient \(b\) still needs the analytic endpoint gauge.  A
 16-panel order-16 complex-ball transport improves the global bound but still
 widens past \(10^{17}\).  Affine Lohner/Taylor-model or
-Riccati/Grassmannian transport is therefore required.  The mixed four-state
-tangent frame, an Evans boundary enclosure, and a root count remain open.
+Riccati/Grassmannian transport is therefore required.  The corresponding
+typed projective rail has now been emitted explicitly.  It certifies the
+generic Riccati laws for \(v,v_\tau,v_\omega\), the outgoing reduced-phase
+chart \(q=(\partial_xP_{\rm out})/P_{\rm out}\), and the refined panel-zero
+pivot lower bound \(0.958711\).  One correlated order-26 step
+\[
+ r:45\longrightarrow899/20
+\]
+passes with remainder radii \(9.61\times10^{-5}\),
+\(1.88\times10^{-5}\), and \(2.25\times10^{-3}\) for
+\(q,q_\tau,q_\omega\), respectively.  This removes the homogeneous
+amplitude from the propagated state but does not yet supply the horizon
+line or a two-sided mismatch.  The mixed four-state tangent frame, a closed
+Evans boundary enclosure, and a root count remain open.
 The first two-chart Riccati rail correctly removes amplitudes, but its
 coarse norm-only seed loses chart separation near \(r\simeq43.3\): the
 \(v_x/v\) enclosure contains zero while the reciprocal chart cannot yet be
@@ -2419,7 +2449,11 @@ lower bound
  1.77972\times10^{-4}>0
 \]
 on panel zero.  This is the first strict common-affine Evans-boundary gate,
-but only for one of 512 panels.  The remaining panels and the
+but only for one of 512 panels.  A checkpointed four-worker successor now
+certifies panels \(0\)--\(15\) under their panel-local shared generators.
+All 16 physical mismatch enclosures exclude zero; the smallest modulus
+lower bound is \(1.14087\times10^{-4}\), on panel 15.  This is a strict
+boundary segment, not a closed contour.  The remaining 496 panels and the
 argument-principle and Smith/EP2 gates are not run.
 Uniform time-domain boundedness, decay, and completeness remain open.
 

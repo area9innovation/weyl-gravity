@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "supersession",
+    "corrected_last_valid_checkpoint",
+    "mutation_witness",
+    "retry_grid",
+    "target",
+    "claim_flags",
+    "imports",
+    "run",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-horizon-pivot-switch-subdivision-retry-v1"
+    },
+    "result_id": {
+      "const": "PURE_WEYL_PHASE3_AXIAL_HORIZON_PIVOT_SWITCH_SUBDIVISION_RETRY"
+    },
+    "status": {
+      "const": "PANEL30_SUPERSESSION_RETRY_GRID_EXHAUSTED"
+    },
+    "lifecycle": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"contains": {"const": "REDUCED-MODE"}},
+    "supersession": {"type": "object"},
+    "corrected_last_valid_checkpoint": {"type": "object"},
+    "mutation_witness": {"type": "object"},
+    "retry_grid": {"type": "object"},
+    "target": {"type": "object"},
+    "claim_flags": {"type": "object"},
+    "imports": {"type": "object"},
+    "run": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 1}
+  },
+  "additionalProperties": false
+}

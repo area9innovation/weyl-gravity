@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "imports",
+    "run",
+    "result",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-qnm-projective-evans-riccati-rail-v1"
+    },
+    "status": {
+      "enum": [
+        "OUTGOING_PROJECTIVE_Q_QTAU_QOMEGA_ONE_PANEL_CERTIFIED",
+        "FAIL_CLOSED_PROJECTIVE_RICCATI_PREFLIGHT"
+      ]
+    },
+    "lifecycle": {
+      "const": "CLASSIFIED"
+    },
+    "dependency_tags": {
+      "type": "array",
+      "contains": {
+        "const": "LOCAL-ALGEBRAIC"
+      },
+      "minItems": 2
+    },
+    "imports": {
+      "type": "object"
+    },
+    "run": {
+      "type": "object",
+      "required": ["path", "sha256"]
+    },
+    "result": {
+      "type": "object",
+      "required": ["schema", "passed"]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "typed_projective_chart_certified",
+        "joint_q_qtau_qomega_one_panel_transport_certified",
+        "two_sided_projective_mismatch_certified_here",
+        "QNM_root_count_certified",
+        "QNM_or_EP2_certified"
+      ]
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 6
+    }
+  },
+  "additionalProperties": true
+}

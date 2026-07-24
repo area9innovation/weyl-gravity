@@ -1,0 +1,40 @@
+{
+  "claim_boundary": "append-only supersession: panel 30 is the last finite normalized checkpoint; 30 order/subdivision retries do not complete panel 31",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.pivot_switch_subdivision_retry",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.produce_pivot_switch_subdivision_retry --check",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.verify_pivot_switch_subdivision_retry",
+    "python3 -m unittest -v black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.test_pivot_switch_subdivision_retry"
+  ],
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "higher_tiers_not_run": "Tier 2/3 not required: no shared operator or physical scattering claim was promoted",
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_HORIZON_PIVOT_SWITCH_SUBDIVISION_RETRY",
+  "schema": "phase3-receipt-v1",
+  "status": "PANEL30_SUPERSESSION_RETRY_GRID_EXHAUSTED",
+  "validation": [
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.pivot_switch_subdivision_retry",
+      "elapsed_seconds": 14.1,
+      "output_sha256": "9e59d8a25b28090c03dc01382ab1910d7e9de1a3f39a7f547ab4031ecc3d4026",
+      "status": "PASS_DETERMINISTIC_FAIL_CLOSED_OUTPUT"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.produce_pivot_switch_subdivision_retry --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.verify_pivot_switch_subdivision_retry",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest -v black_hole_programme.phase3.axial_partial_jet_horizon_checkpoint_frame_v1.test_pivot_switch_subdivision_retry",
+      "status": "PASS_5_TESTS"
+    },
+    {
+      "command": "Draft202012Validator(schema).validate(certificate)",
+      "status": "PASS"
+    }
+  ]
+}

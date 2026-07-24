@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "lifecycle",
+    "dependency_tags",
+    "status",
+    "imports",
+    "transport",
+    "checkpoint",
+    "artifacts",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-partial-jet-outgoing-splus-checkpoint-resume-v1"
+    },
+    "status": {
+      "enum": [
+        "SPLUS_CORRELATED_16_PANEL_RESUME_PASS",
+        "SPLUS_CORRELATED_RESUME_REFUSED"
+      ]
+    },
+    "lifecycle": {
+      "const": "NUMERIC-ENCLOSURE"
+    },
+    "transport": {
+      "type": "object",
+      "properties": {
+        "generator": {
+          "const": 7315
+        },
+        "planned_panels": {
+          "const": 16
+        }
+      },
+      "required": [
+        "generator",
+        "planned_panels",
+        "summary"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

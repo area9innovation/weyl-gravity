@@ -1,0 +1,73 @@
+{
+  "arithmetic": "python-flint acb/arb, 128 bits",
+  "chart_gate": {
+    "analytic_chart_through_step": true,
+    "chart": "q=(partial_x P_out)/P_out",
+    "pivot": "P_out",
+    "pivot_ball": "[0.94 +/- 5.86e-3] + [0.17 +/- 3.22e-3]j",
+    "pivot_excludes_zero": true,
+    "pivot_modulus_lower": "[0.95871078597484662313529154527084081411 +/- 3.87e-40]",
+    "reason": "the initial pivot excludes zero and the validated Riccati self-map encloses a finite analytic q solution on the complete Taylor disk",
+    "reciprocal_chart_used": false
+  },
+  "identities": {
+    "generic_F_v": "-A11 - 2*A12*v + A22",
+    "generic_base": "-A12*v**2 + A21 + v*(-A11 + A22)",
+    "generic_chart": "v=Y2/Y1",
+    "generic_omega": "-A12_omega*v**2 + A21_omega + v*(-A11_omega + A22_omega) + v_omega*(-A11 - 2*A12*v + A22)",
+    "generic_tau": "-A12_tau*v**2 + A21_tau + v*(-A11_tau + A22_tau) + v_tau*(-A11 - 2*A12*v + A22)",
+    "implemented_F_v": "2*I*omega - 2*q",
+    "implemented_base": "q_x=2*I*omega*q+V-tau*calI-q**2",
+    "implemented_chart": "q=(partial_x P_out)/P_out",
+    "implemented_omega": "q_omega_x=(2*I*omega-2*q)*q_omega+2*I*q",
+    "implemented_tau": "q_tau_x=(2*I*omega-2*q)*q_tau-calI",
+    "outgoing_phase": "psi=exp(-I*omega*r_star)*P_out"
+  },
+  "initial_state": {
+    "q": "[+/- 8.28e-4] + [-0.004 +/- 2.33e-4]j",
+    "q_omega": "[+/- 5.81e-3] + [-0.01 +/- 1.81e-3]j",
+    "q_tau": "[0.0002 +/- 2.25e-5] + [+/- 4.82e-5]j",
+    "radius": "45"
+  },
+  "passed": true,
+  "schema": "phase3-axial-qnm-projective-evans-riccati-run-v1",
+  "scope": {
+    "endpoint": "outgoing infinity",
+    "line": "phase-factored spin-two outgoing line",
+    "radial_panel_count": 1,
+    "two_sided": false
+  },
+  "spectral_panel": {
+    "omega_box": "[-0.349 +/- 4.82e-4] + [0.089 +/- 2.70e-4]j",
+    "omega_center": "[-0.34867215503597681625080895173596218228 +/- 3.41e-39] + [0.089115712805164559728865469878655858338 +/- 1.21e-40]j",
+    "omega_remainder_radius": "[0.00021693730383005486133376702851091470732 +/- 3.52e-42]",
+    "panel": 0,
+    "panel_count": 512
+  },
+  "transport": {
+    "from_r": "45",
+    "q": "[+/- 8.58e-4] + [-0.004 +/- 2.53e-4]j",
+    "q_omega": "[+/- 6.50e-3] + [-0.01 +/- 2.52e-3]j",
+    "q_tau": "[0.0002 +/- 2.76e-5] + [+/- 5.39e-5]j",
+    "reference_gate": {
+      "failure": null,
+      "reference_tail_upper": [
+        "[1.3588794522151527634466214760125806624e-10 +/- 3.03e-48]",
+        "[6.7603140977346389103939983326920908657e-12 +/- 1.94e-50]",
+        "[3.8846159552897062010302258174498056539e-10 +/- 1.68e-48]"
+      ]
+    },
+    "remainder_gate": {
+      "failure": null,
+      "logarithmic_norm_upper": "[0.18812436230185293200998984604231182996 +/- 1.30e-39]"
+    },
+    "remainder_radii": {
+      "q": "[9.6066217706905966027777237380349901395e-5 +/- 2.95e-43]",
+      "q_omega": "[0.0022459351776234236241976903382503489272 +/- 2.00e-41]",
+      "q_tau": "[1.8770177914186678268088424794278639548e-5 +/- 5.74e-44]"
+    },
+    "step": "-1/20",
+    "taylor_order": 26,
+    "to_r": "899/20"
+  }
+}
