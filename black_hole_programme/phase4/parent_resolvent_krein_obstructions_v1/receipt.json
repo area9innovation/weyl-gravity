@@ -1,0 +1,46 @@
+{
+  "artifacts": {
+    "certificate": {
+      "path": "certificate.json",
+      "sha256": "6bbc96eaf6773be8891e5efec32b510e4300ac44df40e5db948fec55948d62f7"
+    },
+    "imports": {
+      "axial_flux_gram": {
+        "path": "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
+        "sha256": "59fb9b443ce0b92ce016f53c376cb367bcf004e00d1b241ad22ec925e99deed2"
+      },
+      "generic_projective_cocycle": {
+        "path": "black_hole_programme/phase3/axial_qnm_projective_cocycle_v1/certificate.json",
+        "sha256": "3f7c2fff23a70ab8c1f6e922d6799b168ca328f0fa9e68be8a0e8881f80310bb"
+      },
+      "physical_connection_ep2": {
+        "path": "black_hole_programme/phase3/axial_qnm_spin_one_local_unit_v1/certificate.json",
+        "sha256": "c0e8c6880ed4b142fe79738590eaede4637360d15eb31dc2203467eb66816e6a"
+      },
+      "second_order_parent": {
+        "path": "black_hole_programme/phase4/second_order_parent_flux_v1/certificate.json",
+        "sha256": "7f889865c28c31aaa7b8fca283352173f707639409cacd9f133ad98ac55e2b71"
+      }
+    },
+    "producer": {
+      "path": "produce.py",
+      "sha256": "0447ee6d0abcb21ee8d7708a744807dad7575abece7c2c0324070fe97ee35b7c"
+    },
+    "tests": {
+      "path": "test_resolvent.py",
+      "sha256": "d7b782d367cf30a5b88dbf609098e2b04e6a025561c15ca6121500019d4415f9"
+    },
+    "verifier": {
+      "path": "verify.py",
+      "sha256": "e501e05dd3ddfd2569a79e9b80895e0dacc1f5c24be838538c20cd3114bef43a"
+    }
+  },
+  "schema": "parent-resolvent-krein-obstructions-receipt-v1",
+  "source_commit": "3212158362b6d96e273668ffff9b50665565933e",
+  "status": "EXACT_PARENT_RESOLVENT_KREIN_OBSTRUCTIONS_PASS",
+  "verification": {
+    "independence_level": "Level II: separately written block and module verifier",
+    "independent_verifier": "python3 verify.py",
+    "tests": "python3 -m unittest -v test_resolvent.py"
+  }
+}

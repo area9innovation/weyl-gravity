@@ -1,0 +1,110 @@
+{
+  "claim_flags": {
+    "branch_resolving_rational_involution_excluded": true,
+    "cotangent_type_endpoint_duality_exact": true,
+    "generalized_ringdown_established": false,
+    "generic_rw_module_simplicity_certified": false,
+    "only_plus_minus_identity_on_bach_spin_two_certified": false,
+    "parent_block_inverse_exact": true,
+    "physical_qnm_double_pole_established": false,
+    "quantum_statement": false,
+    "rank_one_double_coefficient_algebra_exact": true,
+    "retarded_convolution_formal_identity": true,
+    "schwarzschild_retarded_evolution_certified": false,
+    "simple_self_extension_involution_lemma_exact": true,
+    "uniform_positive_einstein_containing_subspace_exists": false
+  },
+  "conditional_qnm_laurent": {
+    "alpha": "<u_tilde_n,E'(omega_n)u_n>",
+    "beta_parent": "<u_tilde_n,A*u_n>",
+    "double_coefficient": "(1/(4*alpha_W))*(beta_parent/alpha_n^2)*(u_n tensor u_tilde_n)",
+    "einstein_resolvent": "E^-1=P_n/z+R_n, z=omega-omega_n",
+    "hypotheses": [
+      "an analytic Fredholm realization of the gauge-fixed Einstein QNM problem",
+      "a simple Einstein resonance omega_n",
+      "graph-norm boundedness of the algebraic insertion on the Fredholm spaces"
+    ],
+    "projector": "P_n=(u_n tensor u_tilde_n)/alpha_n",
+    "radial_overlap_agreement": "predicted after scalar projection; commutator terms must be checked in the regularized adjoint pairing",
+    "simple_coefficient": "(1/(4*alpha_W))*(P_n*A*R_n+R_n*A*P_n)",
+    "status": "CONDITIONAL_NOT_PHYSICAL_FREDHOLM_CERTIFIED"
+  },
+  "cotangent_type_duality": {
+    "canonical_map": "B_2/E -> E^*, [x] maps to (e -> G(e,x))",
+    "einstein_line": "E is isotropic and E^perp=E inside B_2",
+    "isomorphism": true,
+    "spin_two_space": "B_2 with hyperbolic nondegenerate form",
+    "splitting": "the endpoint duality is canonical; a radial differential-module splitting is not"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "the analytic Fredholm QNM realization or a physical Green-resolvent double pole",
+    "a generalized t exp(i omega_n t) ringdown term",
+    "defectiveness of every simple spin-two QNM",
+    "generic simplicity of the Regge-Wheeler differential module",
+    "the unconditional claim that every rational involution of the Bach spin-two block is plus or minus identity",
+    "absence of nonlocal, scattering-dependent, spectral, or BRST C operators",
+    "a Schwarzschild retarded propagator or time-domain stability theorem",
+    "a quantum positivity or unitarity theorem"
+  ],
+  "experiment_specs": {
+    "parent_overlap_audit": {
+      "compare": "the normalized radial projective/extension overlap beta_RW",
+      "compute": "regularized beta_parent=<f_tilde,A f> including endpoint terms",
+      "gate": "certify the scalar projection and commutator cancellation before declaring equality",
+      "input": "the certified simple axial spin-two QNM disk"
+    },
+    "retarded_convolution_control": {
+      "formal_identity": "G_hh_ret=G_E_ret*A*G_E_ret",
+      "minkowski_control": "for E=Box and A=1 compare with G_Box2_ret=theta(t-r)/(8*pi), up to sign convention",
+      "schwarzschild_algorithm": "evolve the target Einstein/Maxwell field, source a second Einstein evolution, and add the homogeneous Einstein solution",
+      "status": "EXPERIMENT_SPEC_NOT_SCHWARZSCHILD_TIME_DOMAIN_THEOREM"
+    }
+  },
+  "imports": {
+    "axial_flux_gram": {
+      "path": "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
+      "sha256": "59fb9b443ce0b92ce016f53c376cb367bcf004e00d1b241ad22ec925e99deed2"
+    },
+    "generic_projective_cocycle": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_cocycle_v1/certificate.json",
+      "sha256": "3f7c2fff23a70ab8c1f6e922d6799b168ca328f0fa9e68be8a0e8881f80310bb"
+    },
+    "physical_connection_ep2": {
+      "path": "black_hole_programme/phase3/axial_qnm_spin_one_local_unit_v1/certificate.json",
+      "sha256": "c0e8c6880ed4b142fe79738590eaede4637360d15eb31dc2203467eb66816e6a"
+    },
+    "second_order_parent": {
+      "path": "black_hole_programme/phase4/second_order_parent_flux_v1/certificate.json",
+      "sha256": "7f889865c28c31aaa7b8fca283352173f707639409cacd9f133ad98ac55e2b71"
+    }
+  },
+  "involution_lemma": {
+    "bach_application": "requires generic simplicity of the Regge-Wheeler differential module or an equivalent exact endomorphism-ring certificate",
+    "bach_application_status": "OPEN_SIMPLICITY_GATE",
+    "existing_unconditional_result": "no rational branch-resolving involution assigning opposite signs to the certified nonsplit layers",
+    "jordan_model": "End(E)=k[I,N], N^2=0; (aI+bN)^2=I gives a=\u00b11,b=0",
+    "proof": "a nontrivial involution gives complementary nonzero idempotents; their images are the two simple composition factors and split the length-two extension",
+    "statement": "over characteristic zero, a nonsplit self-extension of a simple object admits no involution except plus or minus identity"
+  },
+  "parent_resolvent": {
+    "domain": "a gauge-fixed space and spectral point where E(omega) is invertible",
+    "hessian": "H=4*alpha*[[0,E],[E,-A]]",
+    "interpretation": "the metric response is an Einstein resolvent, an algebraic trace-reversal insertion, and a second Einstein resolvent",
+    "inverse": "H^-1=(1/(4*alpha))*[[E^-1*A*E^-1,E^-1],[E^-1,0]]",
+    "metric_block": "G_hh=(1/(4*alpha))*E^-1*A*E^-1",
+    "normalization_note": "the common scalar factor 1/(4*alpha) may be stripped when discussing pole order and Smith structure"
+  },
+  "positive_subspace_obstruction": {
+    "conclusion": "no uniformly positive closed endpoint subspace contains the pure Einstein channel; nonnegative inclusion is degenerate",
+    "einstein_vector": "E=(1,1,0)/sqrt(2)",
+    "finite_fiber": "a maximal uniformly positive line in signature (1,2) is Graph(K) with ||K||<1",
+    "inclusion_requirement": "K(1)=(1,0), hence ||K||=1",
+    "wave_packet_scope": "for a general closed graph use an operator contraction; the pointwise K(omega) statement applies to decomposable frequency-multiplication-invariant subspaces"
+  },
+  "schema": "parent-resolvent-krein-obstructions-v1",
+  "status": "EXACT_PARENT_RESOLVENT_KREIN_OBSTRUCTIONS_PASS"
+}

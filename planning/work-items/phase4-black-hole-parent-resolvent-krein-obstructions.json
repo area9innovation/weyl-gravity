@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-parent-resolvent-krein-obstructions",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-parent-resolvent-krein-obstructions",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-parent-resolvent-krein-obstructions.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Certify the algebraic parent-Hessian inverse, the conditional simple-QNM Laurent coefficient, the characteristic-zero involution lemma for a nonsplit self-extension of a simple module, and the endpoint Krein graph/cotangent consequences, while leaving its Bach-module application fail-closed pending a Regge-Wheeler simplicity or endomorphism-ring certificate.",
+    "stop_condition": "Produce exact block multiplication, indecomposable-module involution proof, positive-graph and quotient-duality witnesses, fail-closed Fredholm boundaries, two experiment specifications, an independent verifier and mutation tests.",
+    "current_gate": "LOCAL-ALGEBRAIC exact results with REDUCED-MODE conditional spectral specialization",
+    "forbid": "no physical Green-resolvent pole without analytic Fredholm realization; no generalized-ringdown theorem; no claim that every simple spin-two QNM is defective; no nonlocal C exclusion; no Schwarzschild retarded propagator theorem; no quantum claim",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-second-order-parent-flux",
+      "sf:program/work/phase3-black-hole-axial-qnm-spin-one-local-unit"
+    ],
+    "activates": [
+      "parent-overlap versus radial-overlap QNM audit",
+      "sequential Einstein-convolution time-domain control"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase4/parent_resolvent_krein_obstructions_v1/",
+      "reports/phase4-black-hole-parent-resolvent-krein-obstructions-2026-07-24.md",
+      "planning/work-items/phase4-black-hole-parent-resolvent-krein-obstructions.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Verify H=[[0,E],[E,-A]], H^-1=[[E^-1 A E^-1,E^-1],[E^-1,0]], use characteristic-zero idempotents for the local-C obstruction, and retain the Fredholm/QNM statement as conditional.",
+    "input_commit": "3212158362b6d96e273668ffff9b50665565933e",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "The existing physical QNM result is connection-level; Green-resolvent promotion remains open."
+    ]
+  },
+  "edges": []
+}
