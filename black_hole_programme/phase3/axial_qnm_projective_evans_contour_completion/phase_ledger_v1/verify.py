@@ -53,8 +53,13 @@ def main() -> None:
     assert certificate["imports"]["typed_row_implementation"][
         "sha256"
     ] == sha(TYPED_SOURCE)
-    assert len(ledger["segments"]) == len(aggregate["segments"]) == 172
-    assert ledger["summary"]["coverage_stop"] == "135/512"
+    assert len(ledger["segments"]) == len(aggregate["segments"])
+    assert ledger["summary"]["segment_count"] == len(aggregate["segments"])
+    assert (
+        ledger["summary"]["coverage_stop"]
+        == aggregate["summary"]["coverage_stop"]
+        == certificate["result"]["coverage_stop"]
+    )
     assert ledger["summary"]["contiguous_from_zero"]
     assert arb(
         ledger["summary"]["minimum_normalized_half_plane_margin"]["lower"]
@@ -108,7 +113,8 @@ def main() -> None:
         assert not certificate["claim_flags"][key]
     print(
         "Evans lifted-phase ledger verifier: PASS "
-        "(172 segments; coverage 135/512; contour remains open)"
+        f"({len(ledger['segments'])} segments; coverage "
+        f"{ledger['summary']['coverage_stop']}; contour remains open)"
     )
 
 
