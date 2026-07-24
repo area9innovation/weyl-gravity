@@ -1,0 +1,41 @@
+{
+  "artifacts": {
+    "certificate": {
+      "path": "certificate.json",
+      "sha256": "a51e13fcae0f789c29e8cd1789df28b4c207611683c5f4cd0fc493a0d1781436"
+    },
+    "imports": {
+      "generic_projective_cocycle": {
+        "path": "black_hole_programme/phase3/axial_qnm_projective_cocycle_v1/certificate.json",
+        "sha256": "3f7c2fff23a70ab8c1f6e922d6799b168ca328f0fa9e68be8a0e8881f80310bb"
+      },
+      "parent_involution_lemma": {
+        "path": "black_hole_programme/phase4/parent_resolvent_krein_obstructions_v1/certificate.json",
+        "sha256": "6bbc96eaf6773be8891e5efec32b510e4300ac44df40e5db948fec55948d62f7"
+      }
+    },
+    "producer": {
+      "path": "produce.py",
+      "sha256": "056623888eb99d19af852910ed0311a06af4fb12cd451fc4d4de42bd59917d52"
+    },
+    "tests": {
+      "path": "test_simplicity.py",
+      "sha256": "f9be3a84bc2c5309eba7f7bcd8092f2b83b2578c48329c0232f214e5f87dabe0"
+    },
+    "verifier": {
+      "path": "verify.py",
+      "sha256": "7ab936aae4e0bb98d17b10c7efc403c9db20c66c9568734c900a87f09d1425b7"
+    }
+  },
+  "claim_boundary": "Exact LOCAL-ALGEBRAIC simplicity and scalar endomorphism rings on the positive real axis, plus the axial ell=2 local-C consequence. No nonlocal C, all-ell Bach, QNM Smith, resolvent-pole, or quantum claim.",
+  "schema": "rw-maxwell-simplicity-endomorphisms-receipt-v1",
+  "source_commit": "c010701670838e114af0e29a029020603ba327f1",
+  "status": "EXACT_RW_MAXWELL_SIMPLICITY_ENDOMORPHISMS_PASS",
+  "verification": {
+    "arithmetic": "SymPy exact rational/polynomial arithmetic",
+    "independence": "Level II: verifier rederives residuals, indicial polynomials, terminal equations, and rank minors from separately written formulas",
+    "independent_verifier": "python3 verify.py",
+    "producer": "python3 produce.py",
+    "tests": "python3 -m unittest -v test_simplicity.py"
+  }
+}

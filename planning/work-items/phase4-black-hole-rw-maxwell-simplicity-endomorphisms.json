@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-rw-maxwell-simplicity-endomorphisms",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-rw-maxwell-simplicity-endomorphisms",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-rw-maxwell-simplicity-endomorphisms.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Certify simplicity and scalar rational endomorphism rings for the spin-two Regge-Wheeler and spin-one Maxwell modules for every integer ell>=2 and real omega>0, identify the algebraically special spin-two exceptions, close the old omega^2=3 nonsplitting witness gap on the positive real axis, and promote the local rational C obstruction for the axial ell=2 Bach block.",
+    "stop_condition": "Produce exhaustive local-valuation reductions, exact Riccati and symmetric-square terminal identities, algebraically-special refusal controls, specialization-safe nonsplitting minors, the characteristic-zero involution consequence, independent verification, mutation tests, and a fail-closed report.",
+    "current_gate": "LOCAL-ALGEBRAIC exact classification over C(r)[D] in the positive-real scattering regime",
+    "forbid": "no nonlocal or scattering-dependent C exclusion; no statement at algebraically special frequencies; no all-ell Bach nonsplitting claim; no QNM Smith selection, Green-resolvent pole, generalized ringdown, or quantum positivity claim",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-parent-resolvent-krein-obstructions",
+      "sf:program/work/phase3-black-hole-axial-qnm-spin-one-local-unit"
+    ],
+    "activates": [
+      "unconditional positive-real local-C obstruction for the axial ell=2 Bach block",
+      "algebraically-special Evans and Fredholm implementation controls"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase4/rw_maxwell_simplicity_endomorphisms_v1/",
+      "reports/phase4-black-hole-rw-maxwell-simplicity-endomorphisms-2026-07-24.md",
+      "planning/work-items/phase4-black-hole-rw-maxwell-simplicity-endomorphisms.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Mathematical target: rational differential modules for L_2 and L_1. Candidate theorem: both are simple with End=C on omega>0, while spin-two reducibility occurs only at omega=plus/minus i Lambda(Lambda-2)/12. Proof obligations: local exponents, sign matching, exhaustive rational prefactors, symmetric-square kernel exhaustion, and specialization-safe Bach nonsplitting. Counterexample strategy: mutate the 6/r^3 term, terminal ansatz, algebraically-special frequency, or horizon sign rule. Certificate boundary: exact finite substitutions and minors are machine verified; nonlocal C, all-ell Bach lifts, and QNM consequences remain forbidden.",
+    "input_commit": "c010701670838e114af0e29a029020603ba327f1",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "Exact versus numeric result kinds remain separate.",
+      "The prior generic projective-cocycle certificate remains immutable; this successor supplies a specialization-safe positive-real rank refinement."
+    ]
+  },
+  "edges": []
+}

@@ -1,0 +1,213 @@
+{
+  "claim_flags": {
+    "all_ell_bach_nonsplitting_established": false,
+    "axial_ell2_nonsplit_all_positive_real": true,
+    "green_resolvent_double_pole_established": false,
+    "local_rational_positive_c_axial_ell2_exists": false,
+    "maxwell_endomorphism_ring_scalar_positive_real": true,
+    "maxwell_simple_all_ell_positive_real": true,
+    "nonlocal_c_excluded": false,
+    "only_plus_minus_identity_axial_ell2_positive_real": true,
+    "physical_qnm_smith_case_selected": false,
+    "quantum_statement": false,
+    "spin2_algebraically_special_controls_exact": true,
+    "spin2_endomorphism_ring_scalar_positive_real": true,
+    "spin2_simple_all_ell_positive_real": true,
+    "spin2_simple_at_algebraically_special_points": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "simplicity at the algebraically special imaginary frequencies",
+    "a complete classification of the complex-frequency reducibility locus",
+    "an all-ell Bach lift or all-ell nonsplit self-extension",
+    "absence of nonlocal, spectral, scattering-dependent, or BRST C operators",
+    "a Smith type or nonzero overlap at a physical QNM",
+    "a Green-resolvent double pole or generalized ringdown term",
+    "a quantum positivity or unitarity theorem"
+  ],
+  "ell2_frame_event_audit": {
+    "conclusion": "the selected-frame events I/4,I/2,I are not rational reducibility points of the ell=2 spin-two module",
+    "frequencies": [
+      "I/4",
+      "I/2",
+      "I"
+    ],
+    "opposite_sign_horizon_order": "-4*sigma*I*omega",
+    "results": {
+      "I": {
+        "-1": {
+          "ansatz": "(e1_-1_0 + e1_-1_1*r + e1_-1_2*r**2 + e1_-1_3*r**3 + e1_-1_4*r**4 + e1_-1_5*r**5)/(r*(r - 2)**4)",
+          "horizon_order_after_jost_factor": "-4",
+          "solution": "ZERO_ONLY"
+        },
+        "1": {
+          "ansatz": "e1_1_0 + e1_1_1/r",
+          "horizon_order_after_jost_factor": "4",
+          "solution": "ZERO_ONLY"
+        }
+      },
+      "I/2": {
+        "-1": {
+          "ansatz": "(e1/2_-1_0 + e1/2_-1_1*r + e1/2_-1_2*r**2 + e1/2_-1_3*r**3)/(r*(r - 2)**2)",
+          "horizon_order_after_jost_factor": "-2",
+          "solution": "ZERO_ONLY"
+        },
+        "1": {
+          "ansatz": "e1/2_1_0 + e1/2_1_1/r",
+          "horizon_order_after_jost_factor": "2",
+          "solution": "ZERO_ONLY"
+        }
+      },
+      "I/4": {
+        "-1": {
+          "ansatz": "(e1/4_-1_0 + e1/4_-1_1*r + e1/4_-1_2*r**2)/(r*(r - 2))",
+          "horizon_order_after_jost_factor": "-1",
+          "solution": "ZERO_ONLY"
+        },
+        "1": {
+          "ansatz": "e1/4_1_0 + e1/4_1_1/r",
+          "horizon_order_after_jost_factor": "1",
+          "solution": "ZERO_ONLY"
+        }
+      }
+    }
+  },
+  "endomorphism_rings": {
+    "conclusions": [
+      "End_C(r)[D](M_2,ell)=C for ell>=2 and real omega>0",
+      "End_C(r)[D](M_1,ell)=C for ell>=2 and real omega>0"
+    ],
+    "horizontal_trace_free_entries": {
+      "a": "-D(q)/2",
+      "c": "-D(D(q))/2-U*q"
+    },
+    "maxwell_constant_result": "4*Lambda*q0*(r - 3)*(r - 2)/r**5",
+    "projective_operator": "K_U=D^3+4*U*D+2*D(U)",
+    "spin2_terminal_chain": [
+      "-4*omega^2*q1=0",
+      "4*(Lambda*q0-2*omega^2*q2)=0 after q1=0",
+      "-12*(Lambda+3)*q0=0 after eliminating q2"
+    ]
+  },
+  "imports": {
+    "generic_projective_cocycle": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_cocycle_v1/certificate.json",
+      "sha256": "3f7c2fff23a70ab8c1f6e922d6799b168ca328f0fa9e68be8a0e8881f80310bb"
+    },
+    "parent_involution_lemma": {
+      "path": "black_hole_programme/phase4/parent_resolvent_krein_obstructions_v1/certificate.json",
+      "sha256": "6bbc96eaf6773be8891e5efec32b510e4300ac44df40e5db948fec55948d62f7"
+    }
+  },
+  "local_c_consequence": {
+    "conclusion": "the only rational differential-module involutions on the axial ell=2 Bach spin-two block are +I and -I",
+    "endomorphism_form": "C=a*I+N with N^2=0",
+    "involution_equations": "a^2=1 and 2*a*N=0",
+    "positivity_conclusion": "no rational local dynamically compatible involution makes the hyperbolic spin-two Weyl form positive on omega>0",
+    "premises": [
+      "M_2,2 is simple and End(M_2,2)=C for real omega>0",
+      "the axial ell=2 Bach self-extension is nonsplit there",
+      "the base field has characteristic zero"
+    ]
+  },
+  "local_exhaustion": {
+    "horizon_sign_rule": "opposite horizon and infinity Jost signs require a rational factor with exponent 4*i*omega; impossible for real omega!=0",
+    "indicial_polynomials": {
+      "common_horizon": "(4*omega**2 + rho**2)/4",
+      "common_symmetric_square_horizon": "rho*(16*omega**2 + rho**2)/8",
+      "maxwell_r0": "4*rho*(rho - 2)",
+      "maxwell_symmetric_square_r0": "-8*rho*(rho - 4)*(rho - 2)",
+      "spin2_r0": "4*(rho - 3)*(rho + 1)",
+      "spin2_symmetric_square_r0": "-8*(rho - 6)*(rho - 2)*(rho + 2)"
+    },
+    "maxwell_endomorphism_ansatz": "q=q0",
+    "maxwell_exponents": {
+      "horizon": [
+        "-2*I*omega",
+        "2*I*omega"
+      ],
+      "r0": [
+        0,
+        2
+      ]
+    },
+    "maxwell_prefactor": "F=A",
+    "maxwell_symmetric_square_exponents": {
+      "horizon": [
+        "-4*I*omega",
+        0,
+        "4*I*omega"
+      ],
+      "r0": [
+        0,
+        2,
+        4
+      ]
+    },
+    "ordinary_points": "a hyperexponential solution or rational symmetric-square solution has no poles at ordinary points",
+    "spin2_endomorphism_ansatz": "q=q0+q1/r+q2/r^2",
+    "spin2_exponents": {
+      "horizon": [
+        "-2*I*omega",
+        "2*I*omega"
+      ],
+      "r0": [
+        -1,
+        3
+      ]
+    },
+    "spin2_prefactor": "F=A+B/r",
+    "spin2_symmetric_square_exponents": {
+      "horizon": [
+        "-4*I*omega",
+        0,
+        "4*I*omega"
+      ],
+      "r0": [
+        -2,
+        2,
+        6
+      ]
+    }
+  },
+  "maxwell_simplicity": {
+    "constant_prefactor_residual": "-A*Lambda*(r - 2)/r**3",
+    "operator": "L_1=D^2+omega^2-f*Lambda/r^2",
+    "positive_real_conclusion": "M_1,ell is simple over C(r)[D] for every real omega>0"
+  },
+  "positive_real_nonsplitting_refinement": {
+    "augmented_maximal_minor_gcd": "15360*omega**7",
+    "augmented_minor_rows_0_1_2_5": "-645120*I*omega**9",
+    "coefficient_maximal_minor_gcd": "384*omega**6",
+    "coefficient_minor_rows_0_1_2": "3456*omega**10",
+    "conclusion": "the axial ell=2 projective self-extension is nonsplit for every real omega>0",
+    "imported_ansatz_scope": "the exhaustive projective-cocycle ansatz is valid for real omega>0; its apparent pole does not collide with the horizon",
+    "omega_squared_3": "nonsplit; the old left-null witness vanishes there but the fixed augmented minor remains nonzero",
+    "rank_conclusion": "rank(M)=3 and rank([M|rhs])=4 for omega!=0",
+    "sector": "axial ell=2 repeated spin-two Bach extension"
+  },
+  "schema": "rw-maxwell-simplicity-endomorphisms-v1",
+  "scope": {
+    "angular_range": "integer ell>=2, Lambda=ell*(ell+1)",
+    "background": "Schwarzschild M=1",
+    "derivative": "D=((r-2)/r)*d/dr",
+    "field": "C(r) with omega specialized to a positive real number"
+  },
+  "spin2_simplicity": {
+    "algebraically_special_frequency": "omega=sigma*I*Lambda*(Lambda-2)/12",
+    "algebraically_special_prefactor": "F=1+6/((Lambda-2)*r)",
+    "conjugated_residual": "-I*(r - 2)*(r*(-I*A*Lambda + 2*B*omega*sigma) + I*(6*A + B*(2 - Lambda)))/r**4",
+    "ell2_control": "omega=2*sigma*I, F=1+3/(2*r)",
+    "frame_event_note": "the separate exhaustive ell=2 audit excludes rational reducibility at omega=I/4,I/2,I",
+    "operator": "L_2=D^2+omega^2-f*(Lambda/r^2-6/r^3)",
+    "positive_real_conclusion": "M_2,ell is simple over C(r)[D] for every real omega>0",
+    "terminal_equations": [
+      "-I*Lambda*A+2*sigma*omega*B=0",
+      "6*A+(2-Lambda)*B=0"
+    ]
+  },
+  "status": "EXACT_RW_MAXWELL_SIMPLICITY_ENDOMORPHISMS_PASS"
+}
