@@ -1,0 +1,74 @@
+{
+  "claim_flags": {
+    "K_plus_computed": false,
+    "Rplus_Jost_remainder_imported": true,
+    "Rplus_reaches_63_over_2": true,
+    "Rplus_reaches_r4": false,
+    "T_plus_recovered": false,
+    "complementary_outgoing_columns_constructed": false,
+    "correlation_checked_each_completed_panel": true,
+    "scattering_claim": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "transport of Rplus from r=63/2 to r=4",
+    "the complementary outgoing spin-one factor column",
+    "the endpoint K_plus shear",
+    "T_plus, reflection, scattering, or flux"
+  ],
+  "imports": {
+    "crosswalk": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json",
+      "sha256": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a"
+    },
+    "seed_certificate": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/certificate.json",
+      "sha256": "b65c30b7620c10395b6bac3936a4715c767ad7d7e0efea50552c6c6f9da46f0b"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "producer_elapsed_seconds": 0.0,
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_PARTIAL_JET_OUTGOING_RPLUS_MULTIPANEL",
+  "schema": "phase3-axial-partial-jet-outgoing-rplus-multipanel-v1",
+  "shortfall": {
+    "code": "FULL_896_PANEL_MONOLITH_EXCEEDS_SCOPED_RUNTIME_BUDGET",
+    "detail": "The uncheckpointed 896-panel native attempt was terminated after more than 360 seconds without a terminal result; this is not a mathematical refusal.",
+    "first_failed_panel": null,
+    "next_gate": "serialize correlation-preserving chunk checkpoints and resume from r=63/2 rather than replaying from r=32"
+  },
+  "status": "RPLUS_CORRELATED_FIRST_CHUNK_PASS",
+  "transport": {
+    "arithmetic": "IvTaylor4_omega tensor dual_tau",
+    "chunk_target_radius": "63/2",
+    "compile_elapsed_seconds": 0.0,
+    "compile_exit": 0,
+    "compile_log_path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_multipanel_v1/compile.txt",
+    "compile_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "eventual_target_radius": "4",
+    "exponential_order": 12,
+    "frequency_child": [
+      "1/2",
+      "4097/8192"
+    ],
+    "panel_width": "1/32",
+    "parsed_result": {
+      "final_width": "1.6181993507662789",
+      "max_tail": "1.950214997671813e-09",
+      "max_width": "1.6181993507662789",
+      "panels": "16",
+      "radius": "31.5",
+      "status": "PASS"
+    },
+    "planned_panels": 16,
+    "run_elapsed_seconds": 0.0,
+    "run_exit": 0,
+    "run_log_path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_multipanel_v1/run.txt",
+    "run_log_sha256": "3e5788496d8f6062369754f82f2011e1cf27580554285378b1c03d56d76fc18e",
+    "source_path": "black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_multipanel_v1/rplus_multipanel.forge",
+    "source_sha256": "6d40fb2351262c47985fd5094e2532ffdff078a45cda5dbe730ace391c61c15c",
+    "start_radius": "32"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "claim_flags": {
+    "Evans_boundary_nonzero_certified": false,
+    "QNM_or_EP2_certified": false,
+    "QNM_root_count_certified": false,
+    "centered_omega_projective_initializer_certified": true,
+    "centered_tau_projective_initializer_certified": true,
+    "first_inward_projective_segment_certified": true,
+    "full_inward_projective_transport_certified": false,
+    "horizon_moving_phase_jet_certified": false,
+    "phase_factored_centered_base_initializer_certified": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a horizon moving-phase Frobenius jet or dot(lambda_H)",
+    "transport of q, eta and xi to the matching radius",
+    "a two-sided Evans boundary enclosure",
+    "an argument-principle QNM count",
+    "a QNM, Smith selector or exceptional point"
+  ],
+  "imports": {
+    "ecs": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_inverse_tortoise_v1/certificate.json",
+      "sha256": "25d7e306e5b4b314aa34f1a10f6a8a0461e8d6c4dd1c2e7f91508b2e6e0d6e92"
+    },
+    "tail": {
+      "path": "black_hole_programme/phase3/axial_qnm_infinity_tail_gate_v1/certificate.json",
+      "sha256": "dbb01137cbf84567a0b671c7bf2f2f44cb485f12fcede932c7482f4f2a8e683a"
+    },
+    "tangent": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_tangent_initializer_v1/certificate.json",
+      "sha256": "0b1b6a7601e2800b3c1c57264323ab3733a8458ab524e5e2c71b4880a6d3caa3"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "method": {
+    "expanded_object": "the reduced amplitude v, never the omega-dependent phase",
+    "finite_center": "order-16 z=1/r asymptotic recurrence",
+    "phase": "y=exp(-I*omega*r_star)*v",
+    "remainder": "the exact finite-center differential residual is inserted as an inhomogeneity into the already certified ECS Volterra contraction; only the correction is balled",
+    "sensitivities": "tau and omega coefficient recurrences share the same base acb panel and are converted together to q, eta=d_tau q and xi=d_omega q"
+  },
+  "panel_results": {
+    "all_first_q_segments_certified": true,
+    "all_q_eta_xi_initializers_constructed": true,
+    "all_reduced_value_balls_exclude_zero": true,
+    "first_segment": "r=45 to r=899/20",
+    "panel_count": 16,
+    "q_only_continuation_last_radius_range": [
+      "39.55",
+      "40.2"
+    ],
+    "q_only_terminal_statuses": [
+      "NONPOSITIVE_MAJORANT_DISCRIMINANT"
+    ],
+    "run_artifact": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_centered_projective_initializer_v1/centered-run.json",
+      "sha256": "1e5982bf080f2c91ee6d69f277ad1fd2ec282b4a16b562a1c0a9894bbcde6995"
+    }
+  },
+  "schema": "phase3-axial-qnm-ecs-centered-projective-initializer-v1",
+  "shortfall": "The centered q rail removes the immediate r approximately 43.2 failure of the coarse initializer and reaches r between about 39.55 and 40.2, depending on panel. Rectangular Taylor/Cauchy wrapping then makes the scalar Riccati majorant discriminant nonpositive. A QR/Lohner or recentered multi-chart rail is still required for full contour transport.",
+  "status": "PHASE_FACTORED_FINITE_ASYMPTOTIC_CENTER_WITH_RESIDUAL_ONLY_VOLTERRA_BALL_FOR_Q_ETA_XI_AND_FIRST_PROJECTIVE_SEGMENT"
+}

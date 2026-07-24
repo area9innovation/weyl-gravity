@@ -6,11 +6,15 @@ This package keeps the exact selected factor
 \(R_+=XI2-i(16\omega^2-4i\omega-5)XI3/\omega\) endpoint head, transformed
 to the certified factor coordinates.
 
-One tiny inward panel from \(r=32\) is bounded, and the direct repeated block
-agrees coefficientwise with its dual-number transport.  The finite endpoint
-head does not yet carry an all-order shared-\(\omega\), dual-\(\tau\) Jost
-remainder.  Consequently this package does not certify the outgoing Jost
-column, \(T_+\), reflection, scattering, flux, or QNM data.
+The finite head is corrected by an all-order scalar Regge--Wheeler Volterra
+remainder, uniformly on the first frequency child.  A first inward
+macropanel from \(r=32\) to \(r=1023/32\) is bounded, and the direct repeated
+block agrees coefficientwise with its dual-number transport.
+
+This certifies the selected repeated-spin-two outgoing Jost column at the
+seed and through that panel.  It does not construct the remaining outgoing
+factor columns, the endpoint shear, \(T_+\), reflection, scattering, flux,
+or QNM data.
 
 Run:
 

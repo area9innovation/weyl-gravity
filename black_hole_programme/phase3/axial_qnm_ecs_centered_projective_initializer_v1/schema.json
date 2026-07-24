@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phase 3 axial QNM ECS centered projective initializer v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "dependency_tags",
+    "status",
+    "method",
+    "panel_results",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-qnm-ecs-centered-projective-initializer-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "items": {"type": "string"}}
+  }
+}

@@ -1,13 +1,62 @@
 {
+  "all_order_jost_remainder": {
+    "base_error": {
+      "r_derivative": "624181190295432103967063441502798047308549436359477/35988016317636153457847535320805753076007682938241024000",
+      "value": "5906499903436245388940483184636184290891579401/183044516589539354745725175581897751241087254528000",
+      "x_derivative": "5906499903436245388940483184636184290891579401/366089033179078709491450351163795502482174509056000"
+    },
+    "base_seed_padding_applied": "5906499903436245388940483184636184290891579401/91522258294769677372862587790948875620543627264000",
+    "contraction": "189/512",
+    "contraction_strictly_below_one": true,
+    "domain": "r>=32, omega in [1/2,4097/8192]",
+    "dual_tau_model": "base and intrinsic tangent remainders are attached before the common dual-number transport",
+    "method": "residual-corrected outgoing scalar RW Volterra equation conjugated by (1-2/r)**(4*I*omega)",
+    "omega_min": "1/2",
+    "padding_safety_factor": 2,
+    "potential_integral": "189/1024",
+    "residuals": {
+      "base": {
+        "integral_bound": "100410498358416171611988214138815132945156849817/9865136051983594697874872620834910382677544665088000",
+        "scaled_bound": "100410498358416171611988214138815132945156849817/58800793003938166486471132164209546939596800",
+        "valuation": 6
+      },
+      "tangent": {
+        "integral_bound": "197913689271036598298365407008540948158268214261012657975810101948693777749353157238988199166743091/3929311047974944530763336023319306988577063281686087882166410877127486483346453136935382971475558400",
+        "scaled_bound": "197913689271036598298365407008540948158268214261012657975810101948693777749353157238988199166743091/39971018961333664253370524325757924281586337093974689556543079397862614780135631682692290969600",
+        "valuation": 4
+      }
+    },
+    "shared_omega_model": "exact rational finite head in IvTaylor4_omega plus one uniform interval remainder on the common omega child",
+    "source_coefficients": {
+      "s1": {
+        "integral_bound": "36188884879972121091/33515251867364360192",
+        "scaled_bound": "36188884879972121091/1047351620855136256",
+        "valuation": 2
+      },
+      "t0": {
+        "integral_bound": "200671272579297768080167/241309813445023393382400",
+        "scaled_bound": "200671272579297768080167/7540931670156981043200",
+        "valuation": 2
+      }
+    },
+    "tangent_error": {
+      "forcing": "1411410595239435061871329157704598233323160786045623477080619263591044447337326249980453991497462089071/27996341216821479781688769166150062293611575882013376160435677499533341193843478600664603671763353600000",
+      "r_derivative": "797613034615603096435168189298122072207976804208253220253735839136421412092334899033071852724477546453241/9284604796269523476690966356192311567917729892507708748479031956208875334103728175929497654053883084800000",
+      "value": "83024152661143238933607597512035190195480046237977851592977603740649673372783897057673764205733064063/519463362421492300636803334137549983963496036873295065476833859854622541682642669348269013440921600000",
+      "x_derivative": "83024152661143238933607597512035190195480046237977851592977603740649673372783897057673764205733064063/1038926724842984601273606668275099967926992073746590130953667719709245083365285338696538026881843200000"
+    },
+    "tangent_seed_padding_applied": "83024152661143238933607597512035190195480046237977851592977603740649673372783897057673764205733064063/259731681210746150318401667068774991981748018436647532738416929927311270841321334674134506720460800000"
+  },
   "claim_flags": {
     "T_plus_recovered": false,
     "direct_vs_jet_correlation_passed": true,
     "finite_factor_head_seed_bounded": true,
+    "first_macropanel_to_1023_over_32_bounded": true,
     "first_tiny_reduced_panel_bounded": true,
-    "outgoing_Jost_column_certified": false,
+    "outgoing_Jost_column_certified": true,
     "scattering_claim": false,
     "symbolic_outgoing_phase_factored": true,
-    "uniform_all_order_infinity_remainder_enclosed": false
+    "uniform_all_order_infinity_remainder_enclosed": true
   },
   "correlation_gate": {
     "bd_minus_ac_or_T_plus_evaluated": false,
@@ -20,7 +69,6 @@
     "REDUCED-MODE"
   ],
   "does_not_establish": [
-    "an all-order outgoing infinity Jost germ",
     "a complete analytic tau endpoint frame or K_plus shear",
     "T_plus, reflection, scattering, flux, or H4",
     "complex-frequency QNM or Evans data"
@@ -71,37 +119,39 @@
       "4097/8192"
     ],
     "frequency_radius": "1/16384",
-    "panel_midpoint": "67108863/2097152",
-    "panel_width": "1/1048576",
+    "panel_midpoint": "2047/64",
+    "panel_width": "1/32",
     "parsed_result": {
-      "alpha": "30.081876607740035",
-      "direct": "0.005796614107886455",
+      "alpha": "30.187218334307687",
+      "direct": "0.6885543301002404",
       "equal": "true",
-      "jet": "0.005796614107886455",
+      "jet": "0.6885543301002404",
       "overlap": "true",
-      "scaled": "2.868831311010364e-05",
-      "seednorm": "23.852535820100197",
-      "seedwidth": "0.005796614284442114",
+      "scaled": "0.9433505729471152",
+      "seednorm": "24.172189365151475",
+      "seedwidth": "0.6451037043869974",
       "status": "PASS",
-      "tail": "3.415232614159369e-68"
+      "tail": "1.950214997671813e-09"
     },
     "radial_panel": [
       "32",
-      "33554431/1048576"
+      "1023/32"
     ],
     "run_elapsed_seconds": 0.0,
     "run_exit": 0,
     "run_log_path": "black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/run.txt",
-    "run_log_sha256": "050430d735ea1753d5af98f9d88058a841f995704c828dff5fcfe3ca855ff51a",
+    "run_log_sha256": "b490146f251613aa426f91c6c0d5c6210abdb72ce994ebe204e6edececdb355d",
     "source_path": "black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/reduced_phase_panel.forge",
-    "source_sha256": "4ecdec7d850fee1328ddb49e552078034ebaa468fc464845c0935e682bd6da53"
+    "source_sha256": "e9a583368ef985cb19901df93386056be04d81630189924a3e1c74b1a25760d8"
   },
   "phase_factor": {
     "asymptotic_form": "exp(-2*I*omega*r)*r**(-4*I*omega)",
     "drstar_dr": "r/(r-2)",
-    "factor": "exp(-2*I*omega*rstar)",
+    "exact_tortoise_conjugator": "(1-2/r)**(4*I*omega)",
+    "exact_tortoise_conjugator_modulus_on_real_axis": "1",
+    "factor": "exp(-2*I*omega*r)*r**(-4*I*omega)",
     "kept_symbolic": true,
-    "logarithmic_derivative": "-2*I*omega*r/(r - 2)",
+    "logarithmic_derivative": "-2*I*omega - 4*I*omega/r",
     "omega_phase_taylor_expanded": false
   },
   "producer_elapsed_seconds": 0.0,
@@ -109,10 +159,10 @@
   "schema": "phase3-axial-partial-jet-infinity-reduced-phase-preflight-v1",
   "schema_path": "black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/schema.json",
   "shortfall": {
-    "code": "INFINITY_JOST_REMAINDER_NOT_LIFTED_TO_SHARED_OMEGA_TAYLOR_DUAL_TAU",
+    "code": "OUTGOING_COLUMN_ONLY_NOT_YET_JOINED_TO_GLOBAL_CONNECTION",
     "exact": true,
-    "next_gate": "derive a phase-reduced Volterra or asymptotic-tail majorant for the common R_plus factor head in IvTaylor4_omega tensor dual_tau, then repeat the panel with that tail attached",
-    "reason": "The imported endpoint heads are finite formal series.  The existing real-frequency Volterra envelope does not enclose their shared omega Taylor coefficients and intrinsic tau tangent, so the finite seed is not yet a certified all-order outgoing Jost germ."
+    "next_gate": "iterate phase-reduced partial-jet panels from 1023/32 to the common matching radius and construct the complementary outgoing factor columns with the same endpoint normalization",
+    "reason": "The selected repeated-spin-two R_plus Jost seed and first macropanel are enclosed, but the remaining infinity basis columns, endpoint K_plus shear, and transport to the common matching radius have not been assembled."
   },
-  "status": "FINITE_REDUCED_PHASE_SEED_PANEL_PASS_JOST_REMAINDER_OPEN"
+  "status": "PHASE_REDUCED_JOST_REMAINDER_AND_FIRST_MACROPANEL_PASS"
 }

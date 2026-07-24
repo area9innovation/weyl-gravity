@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phase 3 axial QNM horizon projective preflight v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "dependency_tags",
+    "status",
+    "horizon_germ",
+    "transport",
+    "mismatch",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-qnm-horizon-projective-preflight-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    }
+  }
+}

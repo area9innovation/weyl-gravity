@@ -269,6 +269,26 @@ tangent:borrow IvTaylor4Mat)->IvTaylor4Mat{
   return out;
 }
 
+
+fn jt_radius_box(center:borrow Rat,radius:borrow Rat)->IvTaylor4Mat{
+  let c0:QMat=qm_new(1,1);c0=qm_set(c0,0,0,rat_clone(center));
+  let rem:IvMat=ivm_zeros(1,1);let rad:Iv=iv_from_rat(radius);
+  ivm_set(rem,0,0,iv(0.0-rad.hi,rad.hi));
+  return jt_expect(ivtm4_new(7315,c0,qm_new(1,1),qm_new(1,1),
+    qm_new(1,1),qm_new(1,1),rem));
+}
+
+fn unstack_result(a:borrow IvTaylor4Mat)->DualT4{
+  let tangent:IvTaylor4Mat=jt_zero(4,1);
+  let base:IvTaylor4Mat=jt_zero(4,1);
+  let i:i64=0;while(i<4){
+    tangent=jt_put(tangent,i,0,jt_scalar(a,i,0));
+    base=jt_put(base,i,0,jt_scalar(a,4+i,0));
+    i=i+1;
+  }
+  return new DualT4(base,tangent);
+}
+
 fn build_seed(w_model:borrow IvTaylor4Mat)->DualT4{
   let r_model:IvTaylor4Mat=jt_const(big("32/1"));
   let s0:IvTaylor4Mat=jt_pow(ivtm4_clone(w_model),2);
@@ -399,45 +419,62 @@ fn build_models(w_model:borrow IvTaylor4Mat,r_model:borrow IvTaylor4Mat)->ModelT
 
 pub fn main()->i64{
   let w_model:IvTaylor4Mat=jt_frequency();
-  let r_model:IvTaylor4Mat=jt_infinity_radius();
   let seed:DualT4=build_seed(w_model);
-  let models:ModelTriple=build_models(w_model,r_model);
+  let center:Rat=big("2047/64");
+  let radial_step:Rat=big("1/32");
+  let radius:Rat=big("1/64");
   let h:Rat=big("-1/32");
   let order:i64=12;
-  let dual:DualT4=dual_series(models.base,models.tangent,h,order);
-  let base_out:IvTaylor4Mat=jt_mul(dual.base,seed.base);
-  let tangent_out:IvTaylor4Mat=jt_add(
-    jt_mul(dual.tangent,seed.base),
-    jt_mul(dual.base,seed.tangent));
-  let jet_out:IvTaylor4Mat=stack_result(base_out,tangent_out);
-  let direct_transport:IvTaylor4Mat=jt_series(models.direct,h,order);
-  let direct_seed:IvTaylor4Mat=stack_seed(seed);
-  let direct_out:IvTaylor4Mat=jt_mul(direct_transport,direct_seed);
-
-  let hull:IvMat=match(ivtm4_hull_checked(models.direct)){
-    some(x)=>x,none=>{println("COEFFICIENT_HULL_REFUSAL");return 3;}};
-  let alpha:f64=sl_inf_norm_hi(hull);
-  let scaled_norm:f64=(0.0-rat_to_f64(h))*alpha;
-  let tail:f64=sl_exp_tail(scaled_norm,order+1);
-  let seed_hull:IvMat=match(ivtm4_hull_checked(direct_seed)){
-    some(x)=>x,none=>{println("SEED_HULL_REFUSAL");return 3;}};
-  let seed_norm:f64=sl_inf_norm_hi(seed_hull);
-  let propagated_tail:f64=tail*seed_norm;
-  if(!f64_is_finite(propagated_tail)||propagated_tail<0.0){
-    println(strfmt(system_allocator(),
-      "TAIL_REFUSAL alpha={} scaled_norm={} tail={} seed_norm={}",
-      [alpha,scaled_norm,tail,seed_norm]));return 3;}
-  let jet_padded:IvTaylor4Mat=jt_pad(jet_out,propagated_tail);
-  let direct_padded:IvTaylor4Mat=jt_pad(direct_out,propagated_tail);
-  let exact_coefficients:bool=coefficients_equal(jet_padded,direct_padded);
-  let overlap:bool=difference_contains_zero(jet_padded,direct_padded);
-  let seed_width:f64=hull_width(direct_seed);
-  let direct_width:f64=hull_width(direct_padded);
-  let jet_width:f64=hull_width(jet_padded);
+  let panel:i64=0;
+  let max_width:f64=hull_width(stack_seed(seed));
+  let max_tail:f64=0.0;
+  while(panel<16){
+    let r_model:IvTaylor4Mat=jt_radius_box(center,radius);
+    let models:ModelTriple=build_models(w_model,r_model);
+    let dual:DualT4=dual_series(models.base,models.tangent,h,order);
+    let base_out:IvTaylor4Mat=jt_mul(dual.base,seed.base);
+    let tangent_out:IvTaylor4Mat=jt_add(
+      jt_mul(dual.tangent,seed.base),
+      jt_mul(dual.base,seed.tangent));
+    let jet_out:IvTaylor4Mat=stack_result(base_out,tangent_out);
+    let direct_transport:IvTaylor4Mat=jt_series(models.direct,h,order);
+    let direct_out:IvTaylor4Mat=jt_mul(direct_transport,stack_seed(seed));
+    let hull:IvMat=match(ivtm4_hull_checked(models.direct)){
+      some(x)=>x,none=>{
+        println(strfmt(system_allocator(),
+          "RPLUS_MULTIPANEL status=REFUSED panel={} code=COEFFICIENT_HULL",
+          [panel]));return 3;}};
+    let alpha:f64=sl_inf_norm_hi(hull);
+    let scaled_norm:f64=rat_to_f64(radial_step)*alpha;
+    let tail:f64=sl_exp_tail(scaled_norm,order+1);
+    let seed_hull:IvMat=match(ivtm4_hull_checked(stack_seed(seed))){
+      some(x)=>x,none=>{
+        println(strfmt(system_allocator(),
+          "RPLUS_MULTIPANEL status=REFUSED panel={} code=SEED_HULL",
+          [panel]));return 3;}};
+    let seed_norm:f64=sl_inf_norm_hi(seed_hull);
+    let propagated_tail:f64=tail*seed_norm;
+    if(!f64_is_finite(propagated_tail)||propagated_tail<0.0){
+      println(strfmt(system_allocator(),
+        "RPLUS_MULTIPANEL status=REFUSED panel={} code=TAIL alpha={} scaled_norm={}",
+        [panel,alpha,scaled_norm]));return 3;}
+    let jet_padded:IvTaylor4Mat=jt_pad(jet_out,propagated_tail);
+    let direct_padded:IvTaylor4Mat=jt_pad(direct_out,propagated_tail);
+    let exact:bool=coefficients_equal(jet_padded,direct_padded);
+    let overlap:bool=difference_contains_zero(jet_padded,direct_padded);
+    let width:f64=hull_width(jet_padded);
+    if(!exact||!overlap||!f64_is_finite(width)||width>1.0e100){
+      println(strfmt(system_allocator(),
+        "RPLUS_MULTIPANEL status=REFUSED panel={} code=CORRELATION_OR_WIDTH alpha={} scaled_norm={} tail={} width={}",
+        [panel,alpha,scaled_norm,propagated_tail,width]));return 3;}
+    if(width>max_width){max_width=width;}
+    if(propagated_tail>max_tail){max_tail=propagated_tail;}
+    seed=unstack_result(jet_padded);
+    center=rat_clone(center)-rat_clone(radial_step);
+    panel=panel+1;
+  }
   println(strfmt(system_allocator(),
-    "INFINITY_REDUCED_PHASE status={} coefficient_equal={} difference_contains_zero={} alpha={} scaled_norm={} tail={} seed_norm={} seed_width={} direct_width={} jet_width={}",
-    [if(exact_coefficients&&overlap){"PASS"}else{"REFUSED"},
-     exact_coefficients,overlap,alpha,scaled_norm,propagated_tail,seed_norm,
-     seed_width,direct_width,jet_width]));
-  return if(exact_coefficients&&overlap){0}else{3};
+    "RPLUS_MULTIPANEL status=PASS panels={} final_r=31.5 max_width={} final_width={} max_tail={}",
+    [panel,max_width,hull_width(stack_seed(seed)),max_tail]));
+  return 0;
 }

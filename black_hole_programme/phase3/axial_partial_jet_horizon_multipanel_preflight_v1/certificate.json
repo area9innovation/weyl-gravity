@@ -1,0 +1,129 @@
+{
+  "attempt": {
+    "compile_exit": 0,
+    "compile_log_path": "black_hole_programme/phase3/axial_partial_jet_horizon_multipanel_preflight_v1/compile.txt",
+    "compile_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "parsed": {
+      "panels": null,
+      "refusal": {
+        "details": {
+          "overlap": true,
+          "scaled": 0.9053473012862264,
+          "tail": 5.560665403823773e-27,
+          "total_panels": 27,
+          "width": 1164043.0305228343
+        },
+        "diagnostic": "total_panels=27 width=1164043.0305228343 overlap=true scaled=0.9053473012862264 tail=5.560665403823773e-27",
+        "gate": "state_width",
+        "panel": 3,
+        "shell": 6
+      },
+      "shell_records": [
+        {
+          "direct_width": "3.9195539066014957",
+          "rho": "4.76837158203125e-07",
+          "shell": 0,
+          "width": "3.9195539066014904"
+        },
+        {
+          "direct_width": "32.510125446079314",
+          "rho": "9.5367431640625e-07",
+          "shell": 1,
+          "width": "32.51012544607926"
+        },
+        {
+          "direct_width": "264.5401750599438",
+          "rho": "1.9073486328125e-06",
+          "shell": 2,
+          "width": "264.5401750599431"
+        },
+        {
+          "direct_width": "2153.6260165523117",
+          "rho": "3.814697265625e-06",
+          "shell": 3,
+          "width": "2153.626016552304"
+        },
+        {
+          "direct_width": "17541.2005173811",
+          "rho": "7.62939453125e-06",
+          "shell": 4,
+          "width": "17541.20051738102"
+        },
+        {
+          "direct_width": "142891.29186092142",
+          "rho": "1.52587890625e-05",
+          "shell": 5,
+          "width": "142891.29186092073"
+        }
+      ],
+      "shells": 6,
+      "status": "REFUSED"
+    },
+    "run_exit": 3,
+    "run_log_path": "black_hole_programme/phase3/axial_partial_jet_horizon_multipanel_preflight_v1/run.txt",
+    "run_log_sha256": "76843b4db491d90e3178a8ef85c0ac9acd684078c015ef276e2a85b593ea9f8b",
+    "source_path": "black_hole_programme/phase3/axial_partial_jet_horizon_multipanel_preflight_v1/multipanel_levelt.forge",
+    "source_sha256": "20221b4f3321b5423dec6d814d1b6f2e0da5078a49eeaa270776f800649fbda1"
+  },
+  "claim_flags": {
+    "H4_pass_certified": false,
+    "K_H_computed": false,
+    "T_plus_recovered": false,
+    "bounded_global_transport_certified": false,
+    "complete_bounded_horizon_column_at_matching_radius": false,
+    "horizon_to_r4_column_certified": false,
+    "multipanel_transport_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "K_H or a tau-analytic endpoint normalizer identification",
+    "T_plus, H4, scattering, or bounded global transport"
+  ],
+  "imports": {
+    "mixed_transport_preflight_producer": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_preflight_v1/produce.py",
+      "sha256": "3400bdca2c7c3076cdb0acb4f042fa8909f0e11962d2492d68fb47da5b67f8fd"
+    },
+    "partial_jet_crosswalk": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json",
+      "sha256": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a"
+    },
+    "spin_one_levelt": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_spin_one_levelt_v1/certificate.json",
+      "sha256": "b364d4df837e6c9cdc63a5878a01092b90f397eac6d60c28c97fd9e170b5959c"
+    },
+    "spin_one_levelt_producer": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_spin_one_levelt_v1/produce.py",
+      "sha256": "580620b20aa7a526c0a5359d56227ffcee0c0384aa5853b96a40fead2dcbee4e"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "method": {
+    "adaptive_panels": "four equal panels per rho-doubling shell",
+    "direct_control": "parallel regular-frame 12x12 six-state column",
+    "partial_jet_correlation": "base/tangent propagated in dual arithmetic",
+    "phase_frame": "spin-two moving phase plus spin-one Levelt frame",
+    "reconditioning": "phase/Levelt state scaling only; no nonlinear projective QR reset"
+  },
+  "result_id": "PURE_WEYL_PHASE3_AXIAL_PARTIAL_JET_HORIZON_MULTIPANEL",
+  "schema": "phase3-axial-partial-jet-horizon-multipanel-preflight-v1",
+  "schema_path": "black_hole_programme/phase3/axial_partial_jet_horizon_multipanel_preflight_v1/schema.json",
+  "scope": {
+    "arithmetic": "regular Levelt IvTaylor4_omega tensor dual_tau",
+    "frequency_child": [
+      "1/2",
+      "4097/8192"
+    ],
+    "geometric_shells": 23,
+    "panels_per_shell": 4,
+    "start_rho": "1/4194304",
+    "target_r": "4",
+    "target_rho": "2",
+    "transport_order": 24,
+    "width_refusal_threshold": 1000000
+  },
+  "status": "CERTIFIED_MULTIPANEL_REGULAR_PARTIAL_JET_SHORTFALL"
+}

@@ -1,0 +1,27 @@
+{
+  "artifact_sha256": {
+    "README.md": "79756e65df9e9e75942ddb59e04f99584c41b12c5c58d0d6759d94ba6777c658",
+    "horizon_preflight.py": "6a96c757038e98978e537c89098e83126de2df8e0dcc7994bb8d02963a99eea9",
+    "produce.py": "c66dfe9693dd8a3440df511d28f3ab6fd259aa5efa769a29d91b7748b5d18d1b",
+    "report.md": "9da409be2dbc542c75a8eaa48271d34263d9921874a9b2c06afd596add7c764c",
+    "schema.json": "e4be3e23ce86fbbd517eb68fe95f4eaa0ee3270772b2e2c8285b4f9398e88fb8",
+    "test_horizon_preflight.py": "43cf0d386efa4e05300536ef885177a46f1967f55fc778dbe697dbbe5f31cc0d",
+    "verify.py": "638bff1e60715e2c56c4a115e1fde216dd738d832556f0b16e7e010ec763a6fb"
+  },
+  "certificate": "certificate.json",
+  "certificate_sha256": "1507a19900007e528c3379e3892e768d55a50e3e6646b046e9b6567ac7712394",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_qnm_horizon_projective_preflight_v1.produce",
+    "python3 -m black_hole_programme.phase3.axial_qnm_horizon_projective_preflight_v1.verify",
+    "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_horizon_projective_preflight_v1.test_horizon_preflight",
+    "python3 -m py_compile black_hole_programme/phase3/axial_qnm_horizon_projective_preflight_v1/*.py"
+  ],
+  "input_sha256": {
+    "ecs_disk": "25d7e306e5b4b314aa34f1a10f6a8a0461e8d6c4dd1c2e7f91508b2e6e0d6e92",
+    "infinity_affine_run": "016c9e919db98ec8d69af3dd42075428cd239d8252760792d979733e5d0cddc0",
+    "moving_phase": "6d9d70d6e6006bf8d05ed6f6de9fa4d574eb189ed7348c7c170768477f94905f"
+  },
+  "schema": "phase3-axial-qnm-horizon-projective-preflight-receipt-v1",
+  "tier_2_not_run": "No shared operator changed; this is a fail-closed endpoint preflight over content-addressed moving-phase inputs.",
+  "tier_3_not_run": "Not a freeze or theorem promotion."
+}

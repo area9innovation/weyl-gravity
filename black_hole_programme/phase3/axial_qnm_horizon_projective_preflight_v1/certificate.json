@@ -1,0 +1,72 @@
+{
+  "claim_flags": {
+    "Evans_boundary_nonzero_certified": false,
+    "QNM_or_EP2_certified": false,
+    "QNM_root_count_certified": false,
+    "dot_lambda_H_exactly_zero": true,
+    "horizon_projective_line_at_r32_certified": false,
+    "projective_mismatch_at_r32_computed": false,
+    "qnm_band_horizon_moving_phase_seed_certified": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a horizon-selected line at r=32",
+    "Delta, Delta_tau or Delta_omega",
+    "a nonzero Evans boundary or argument-principle count",
+    "a QNM, Smith selector or exceptional point"
+  ],
+  "horizon_germ": {
+    "all_panel_seed_gates_pass": true,
+    "coefficient_majorant": "|base_n|,|tau_n|,|omega_n| <= 10^6*100^n",
+    "dot_lambda_H": "0",
+    "frobenius_order": 16,
+    "majorant_induction": "for n>=16 the base/tau recurrence multiplier is below 2 and the omega-differentiated multiplier is below 30; all coefficients through n=15 pass the stronger 100^n gate",
+    "phase": "psi=exp(I*omega*r_star)*P",
+    "seed_radius": "rho=2^-22",
+    "selected_exponent": "0",
+    "tau_log_required": false
+  },
+  "imports": {
+    "ecs_disk": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_inverse_tortoise_v1/certificate.json",
+      "sha256": "25d7e306e5b4b314aa34f1a10f6a8a0461e8d6c4dd1c2e7f91508b2e6e0d6e92"
+    },
+    "infinity_affine_run": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_affine_projective_transport_v1/affine-run.json",
+      "sha256": "016c9e919db98ec8d69af3dd42075428cd239d8252760792d979733e5d0cddc0"
+    },
+    "moving_phase": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_horizon_moving_phase_v1/certificate.json",
+      "sha256": "6d9d70d6e6006bf8d05ed6f6de9fa4d574eb189ed7348c7c170768477f94905f"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "mismatch": {
+    "assembled": false,
+    "reason": "no horizon panel reaches r=32 under the certified reference majorant, so Delta, Delta_tau and Delta_omega are intentionally not formed"
+  },
+  "schema": "phase3-axial-qnm-horizon-projective-preflight-v1",
+  "shortfall": "The selected moving-phase germ and its tau/omega jets are regular on every QNM panel. During outward transport, the absolute Cauchy majorant used for the singleton reference trajectory loses a positive Riccati discriminant while the affine remainder is still defined. The first refusal occurs at the exact radii in horizon-run.json. A phase-reduced reference logarithmic norm or direct Frobenius continuation must replace that absolute reference majorant.",
+  "status": "QNM_BAND_MOVING_PHASE_HORIZON_GERM_CERTIFIED_BUT_AFFINE_PROJECTIVE_REFERENCE_MAJORANT_REFUSES_BEFORE_R32",
+  "transport": {
+    "all_panels_reach_r32": false,
+    "failure_kinds": [
+      "REFERENCE_Q_MAJORANT_DISCRIMINANT"
+    ],
+    "first_refusal_radius_range": [
+      "2.6728683216200833",
+      "2.7149225917213387"
+    ],
+    "geometric_step": "min((r-2)/16,1/20,32-r)",
+    "panels_reaching_r32": [],
+    "run_artifact": {
+      "path": "black_hole_programme/phase3/axial_qnm_horizon_projective_preflight_v1/horizon-run.json",
+      "sha256": "a5b4dc27856190f797123b18317358ed37fa30561c0ed19ef917fbecc9770813"
+    },
+    "transformation": "with omega'=-omega, (q,-eta,-xi) uses the infinity reference Taylor equations",
+    "variables": "phase-reduced q=P_x/P, eta=d_tau q, xi=d_omega q"
+  }
+}

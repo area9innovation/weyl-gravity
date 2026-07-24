@@ -2094,12 +2094,17 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_qnm_ecs_panel_transport_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_ecs_riccati_transport_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_projective_sensitivity_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_ecs_centered_projective_initializer_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_ecs_affine_projective_transport_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_horizon_projective_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_endpoint_frames_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_transport_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_moving_phase_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_horizon_spin_one_levelt_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_horizon_multipanel_preflight_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_infinity_reduced_phase_preflight_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_partial_jet_outgoing_rplus_multipanel_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_one_sided_krein_scattering_preflight/certificate.json}\\
 Polar restriction-stable module and invariant current filtration &
 \cert{black_hole_programme/phase2/general_l_polar_extendible_current_closure/certificate.json}\\
@@ -2186,17 +2191,30 @@ is now exact:
 The order-one resonance is compatible with no forced logarithm; its omitted
 base and tangent tails are below \(2.736\times10^{-32}\) and
 \(6.867\times10^{-31}\).  The complete mixed first panel passes, including
-agreement of the direct regular six-state and partial-jet routes.  Further
-panels and \(K_H\) remain open.
+agreement of the direct regular six-state and partial-jet routes.  The two
+routes continue to overlap for 27 geometric panels.  They then refuse on
+cumulative rectangular width \(1.164\times10^6\), while the local
+order-24 operator tail is only \(5.56\times10^{-27}\).  Thus the remaining
+horizon obstruction is correlation-preserving multipanel reconditioning,
+not endpoint singularity or local truncation; \(K_H\) remains open.
 
 At outgoing real infinity the corresponding reduced-phase representation
 has also passed its first local test.  Keeping \(e^{-2i\omega r_*}\)
-symbolic, the exact finite \(R_+\) factor head gives identical direct and
-dual-number Taylor coefficients through order \(12\) on a tiny inward panel
-from \(r=32\), with propagated operator tail below
-\(3.42\times10^{-68}\).  The all-order shared-\(\omega,\tau\) Jost
-remainder is not yet enclosed, so this is not yet an outgoing Jost column or
-\(T_+\).
+symbolic, the exact \(R_+\) factor head has base and tangent residual
+valuations \(6\) and \(4\).  The exact RW potential integral from \(r=32\)
+is \(189/1024\), giving the uniform Volterra contraction
+\(189/512<1\) on the first frequency child.  The resulting all-order
+shared-\(\omega,\tau\) seed remainder is attached before transport, and the
+macropanel \(32\to1023/32\) passes with identical direct and dual-number
+Taylor coefficients.  This certifies one repeated-spin-two outgoing Jost
+column.  A checkpointed successor carries the same correlated column through
+16 further panels to \(r=63/2\), again with exact direct/dual coefficient
+agreement; its final width is \(1.61820\) and its largest local tail is
+\(1.951\times10^{-9}\).  The abandoned monolithic 896-panel attempt exceeded
+the scoped runtime budget and is recorded only as a throughput failure.
+Continuation must resume from a serialized correlated checkpoint rather than
+replay from \(r=32\).  The complementary columns, \(K_+\), and \(T_+\) remain
+open.
 Complex-frequency work has excluded the entire growth half-plane, but no
 damped QNM root, contour moment, or local Smith branch has been computed.
 At the QNM seed disk, the direct inverse-\(r\) forward recurrence also fails
@@ -2224,9 +2242,33 @@ The first two-chart Riccati rail correctly removes amplitudes, but its
 coarse norm-only seed loses chart separation near \(r\simeq43.3\): the
 \(v_x/v\) enclosure contains zero while the reciprocal chart cannot yet be
 certified.  This is an enclosure obstruction, not a physical Jost zero.
-The next projective rail must center the ECS fixed point and retain shared
-Taylor/Lohner dependencies for
-\((v,v_\tau,v_\omega)\).
+A centered order-16 reduced-amplitude initializer now constructs
+\((v,v_\tau,v_\omega)\) on all contour panels, proves the amplitude
+denominator nonzero, and certifies the first inward projective segment.  A
+rectangular Riccati continuation reaches \(r\simeq40\) before its quadratic
+majorant loses positivity.  A midpoint-recentered affine successor now
+retains the shared parameter dependence of
+\((q,\eta,\xi)=(v_x/v,\partial_\tau q,\partial_\omega q)\) and certifies all
+16 contour panels from \(r=45\) to the common radius \(r=32\).  At that
+radius the remainder radii lie in the ranges
+\[
+ 0.02603\le r_q\le0.18090,\qquad
+ 0.006735\le r_\eta\le0.07841,\qquad
+ 1.466\le r_\xi\le16.873 .
+\]
+The broad but valid \(\omega\)-sensitivity is not yet sufficient for a
+simple-root gate.  Continued inward, the scalar Riccati self-map first loses
+its positive discriminant between \(r=20.5\) and \(r=29.05\), depending on
+the contour panel.  Thus the outgoing projective line reaches a useful
+common match radius, while the complementary horizon line, the mismatch
+\(\delta\), and its root/Smith gates remain open.  On the horizon side, the
+moving-phase QNM-band Frobenius construction independently supplies
+certified \(q,\eta,\xi\) seeds on all 16 panels and again gives
+\(\dot\lambda_H=0\).  Its first affine outward continuation refuses at the
+reference-trajectory Riccati discriminant, at
+\(r\simeq2.672868\) on panels 0--7 and \(r\simeq2.714923\) on panels 8--15.
+It therefore does not reach \(r=32\), and no two-sided projective mismatch is
+assembled.
 Uniform time-domain boundedness, decay, and completeness remain open.
 
 The present result already fixes an important baseline:

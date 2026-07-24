@@ -1,0 +1,11 @@
+{
+  "certificate": "black_hole_programme/phase3/axial_partial_jet_horizon_multipanel_preflight_v1/certificate.json",
+  "certificate_sha256": "3bc5330bd226036459e674346774c37f7facd4471986fff3a87373c47533388b",
+  "claim_boundary": "multipanel preflight only; K_H/T_plus/H4/global remain open",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_multipanel_preflight_v1.produce --check",
+    "python3 -m black_hole_programme.phase3.axial_partial_jet_horizon_multipanel_preflight_v1.verify",
+    "python3 -m unittest black_hole_programme.phase3.axial_partial_jet_horizon_multipanel_preflight_v1.test_multipanel"
+  ],
+  "schema": "phase3-axial-partial-jet-horizon-multipanel-receipt-v1"
+}

@@ -17,7 +17,7 @@ def sha256(path: Path) -> str:
 def main() -> None:
     certificate = json.loads((HERE / "certificate.json").read_text())
     assert certificate["status"] == (
-        "FINITE_REDUCED_PHASE_SEED_PANEL_PASS_JOST_REMAINDER_OPEN"
+        "PHASE_REDUCED_JOST_REMAINDER_AND_FIRST_MACROPANEL_PASS"
     )
     assert certificate["phase_factor"]["kept_symbolic"] is True
     assert certificate["phase_factor"]["omega_phase_taylor_expanded"] is False
@@ -32,8 +32,9 @@ def main() -> None:
     assert gate["coefficient_equal"] is True
     assert gate["interval_difference_contains_zero"] is True
     flags = certificate["claim_flags"]
-    assert flags["uniform_all_order_infinity_remainder_enclosed"] is False
-    assert flags["outgoing_Jost_column_certified"] is False
+    assert flags["uniform_all_order_infinity_remainder_enclosed"] is True
+    assert flags["outgoing_Jost_column_certified"] is True
+    assert flags["first_macropanel_to_1023_over_32_bounded"] is True
     assert flags["T_plus_recovered"] is False
     assert flags["scattering_claim"] is False
     for item in certificate["imports"].values():

@@ -33,10 +33,10 @@ class ReducedPhaseInfinityPreflightTest(unittest.TestCase):
 
     def test_fail_closed_boundary(self) -> None:
         flags = self.doc["claim_flags"]
-        self.assertFalse(
+        self.assertTrue(
             flags["uniform_all_order_infinity_remainder_enclosed"]
         )
-        self.assertFalse(flags["outgoing_Jost_column_certified"])
+        self.assertTrue(flags["outgoing_Jost_column_certified"])
         self.assertFalse(flags["T_plus_recovered"])
 
 

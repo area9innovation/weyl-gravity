@@ -1,0 +1,64 @@
+{
+  "claim_flags": {
+    "QNM_or_EP2_certified": false,
+    "QNM_root_count_certified": false,
+    "affine_shared_omega_eta_transport_to_r32_certified": true,
+    "affine_shared_omega_q_transport_to_r32_certified": true,
+    "affine_shared_omega_xi_transport_to_r32_certified": true,
+    "transport_to_r4_certified": false,
+    "two_sided_Evans_boundary_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "transport to the intended near-horizon match point",
+    "a horizon moving-phase endpoint line",
+    "a nonzero two-sided Evans determinant on a contour",
+    "an argument-principle root count",
+    "a QNM, Smith selector or exceptional point"
+  ],
+  "imports": {
+    "centered_initializer": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_centered_projective_initializer_v1/certificate.json",
+      "sha256": "d777ff69914d07e367334ae9a8a70ae645f9ea93f51d23bcb3a189778bcb5849"
+    },
+    "ecs": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_inverse_tortoise_v1/certificate.json",
+      "sha256": "25d7e306e5b4b314aa34f1a10f6a8a0461e8d6c4dd1c2e7f91508b2e6e0d6e92"
+    },
+    "tail": {
+      "path": "black_hole_programme/phase3/axial_qnm_infinity_tail_gate_v1/certificate.json",
+      "sha256": "dbb01137cbf84567a0b671c7bf2f2f44cb485f12fcede932c7482f4f2a8e683a"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "method": {
+    "key_reconditioning": "the q remainder uses the backward scalar logarithmic norm Re[-c(2*i*omega-2*q)] rather than the absolute matrix norm",
+    "reference": "order-14 midpoint Taylor trajectory, recentered after each step of size 1/20",
+    "shared_parameter_remainder": "one omega-panel radius and simultaneous q, eta, xi radii",
+    "validation": "every proposed scalar majorant is accepted only after an arb self-map inequality passes"
+  },
+  "results": {
+    "all_panels_reach_common_match_radius": true,
+    "all_q_eta_xi_remainders_present_at_match": true,
+    "common_match_radius": 32,
+    "continued_inward_after_match": true,
+    "first_terminal_radius_range": [
+      "20.5",
+      "29.05"
+    ],
+    "panel_count": 16,
+    "run_artifact": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_affine_projective_transport_v1/affine-run.json",
+      "sha256": "016c9e919db98ec8d69af3dd42075428cd239d8252760792d979733e5d0cddc0"
+    },
+    "terminal_failure_kinds": [
+      "AFFINE_Q_REMAINDER_DISCRIMINANT"
+    ]
+  },
+  "schema": "phase3-axial-qnm-ecs-affine-projective-transport-v1",
+  "shortfall": "All panels reach r=32. Continued inward, the zero-centered q remainder grows until its Riccati self-map discriminant fails between the panel-dependent radii recorded in the run. The xi remainder is already broad at r=32 because the certified endpoint omega-sensitivity ball is broad; this is valid but not yet useful for a two-sided simple-root gate.",
+  "status": "AFFINE_MIDPOINT_RECENTERED_Q_ETA_XI_TRANSPORT_CERTIFIED_TO_R32_WITH_QUANTIFIED_INWARD_REMAINDER_BOTTLENECK"
+}

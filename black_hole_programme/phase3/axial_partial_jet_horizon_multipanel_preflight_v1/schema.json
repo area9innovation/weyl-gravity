@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "imports",
+    "scope",
+    "attempt",
+    "method",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-partial-jet-horizon-multipanel-preflight-v1"
+    },
+    "status": {
+      "const": "CERTIFIED_MULTIPANEL_REGULAR_PARTIAL_JET_SHORTFALL"
+    },
+    "dependency_tags": {
+      "contains": {"const": "REDUCED-MODE"}
+    },
+    "attempt": {
+      "type": "object",
+      "required": ["compile_exit", "run_exit", "parsed"],
+      "properties": {
+        "compile_exit": {"const": 0},
+        "run_exit": {"const": 3},
+        "parsed": {
+          "type": "object",
+          "required": ["status", "shells", "shell_records", "refusal"],
+          "properties": {
+            "status": {"const": "REFUSED"},
+            "shells": {"const": 6},
+            "shell_records": {
+              "type": "array",
+              "minItems": 6,
+              "maxItems": 6
+            },
+            "refusal": {
+              "type": "object",
+              "required": ["gate", "shell", "panel", "diagnostic", "details"],
+              "properties": {
+                "gate": {"const": "state_width"},
+                "shell": {"const": 6},
+                "panel": {"const": 3},
+                "details": {
+                  "type": "object",
+                  "required": [
+                    "total_panels",
+                    "width",
+                    "overlap",
+                    "scaled",
+                    "tail"
+                  ],
+                  "properties": {
+                    "total_panels": {"const": 27},
+                    "overlap": {"const": true}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": {"const": false}
+    }
+  }
+}

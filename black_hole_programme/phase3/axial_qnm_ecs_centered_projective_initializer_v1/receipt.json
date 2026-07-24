@@ -1,0 +1,27 @@
+{
+  "artifact_sha256": {
+    "README.md": "0b502c0127369eed4d2a66ae38989f68be9138b20e492834eb1a787de2ac2342",
+    "centered_initializer.py": "f292008ec7c49d77820ec08ac1f48825f1f98f7d8cac97845d95e90100b21c0d",
+    "produce.py": "c6b77eec4aac3d81a7ff03aabbc04eb7cbac8fcb6fe48481d9904f45536e44fc",
+    "report.md": "b4e153835c68d0e0e97f66daaaecc5025c7b33a8a7a69288ccad13f22e74efc2",
+    "schema.json": "9c3f5a4555563f5dee954e7cc36e7db3c18fe6d954345e2627644266ab85a451",
+    "test_centered_initializer.py": "4bb4f0748da37cf4d94041a5432e10c0c45fdfd8a5cf5d755fdb956627fb5b53",
+    "verify.py": "6ed336cda4a9d64a78cd42d4dc1d5ff58e7fbc1cc622be9c3fa622f96698fe8a"
+  },
+  "certificate": "certificate.json",
+  "certificate_sha256": "d777ff69914d07e367334ae9a8a70ae645f9ea93f51d23bcb3a189778bcb5849",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_qnm_ecs_centered_projective_initializer_v1.produce",
+    "python3 -m black_hole_programme.phase3.axial_qnm_ecs_centered_projective_initializer_v1.verify",
+    "python3 -m unittest -v black_hole_programme.phase3.axial_qnm_ecs_centered_projective_initializer_v1.test_centered_initializer",
+    "python3 -m py_compile black_hole_programme/phase3/axial_qnm_ecs_centered_projective_initializer_v1/*.py"
+  ],
+  "input_sha256": {
+    "ecs": "25d7e306e5b4b314aa34f1a10f6a8a0461e8d6c4dd1c2e7f91508b2e6e0d6e92",
+    "tail": "dbb01137cbf84567a0b671c7bf2f2f44cb485f12fcede932c7482f4f2a8e683a",
+    "tangent": "0b1b6a7601e2800b3c1c57264323ab3733a8458ab524e5e2c71b4880a6d3caa3"
+  },
+  "schema": "phase3-axial-qnm-ecs-centered-projective-receipt-v1",
+  "tier_2_not_run": "No shared operator changed; this successor recomputes one content-addressed endpoint rail and its first transport segment.",
+  "tier_3_not_run": "Not a freeze or theorem promotion."
+}
