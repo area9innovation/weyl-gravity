@@ -1,0 +1,43 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-second-order-parent-flux",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-second-order-parent-flux",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-second-order-parent-flux.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Certify the second-order auxiliary-tensor parent action for the Ricci-flat linearized pure-Weyl system and its factorized Einstein Green current modulo the Euler transgression.",
+    "stop_condition": "Produce the algebraic elimination, parent Euler-Lagrange equations, factorized current convention, canonical null-lift consequence, QNM determinant count boundary, independent verifier and mutation tests.",
+    "current_gate": "LOCAL-ALGEBRAIC parent Hessian and REDUCED-MODE current interpretation",
+    "forbid": "no claim that a generic radial extension is a time-Jordan block; no Green-resolvent promotion beyond the certified connection EP2; no all-frequency outgoing reflection-zero exclusion; no polar global lift theorem; no quantum claim",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-weyl-euler-current-transgression",
+      "sf:program/work/phase4-black-hole-covariant-einstein-maxwell-carrier"
+    ],
+    "activates": [
+      "parent-current construction for axial and polar endpoint Grams",
+      "raw-Weyl minus parent equals Euler-cut audit"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase4/second_order_parent_flux_v1/",
+      "reports/phase4-black-hole-second-order-parent-flux-2026-07-24.md",
+      "planning/work-items/phase4-black-hole-second-order-parent-flux.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use S_par=4 alpha Integral[f.Glin(h)-1/2(f^2-ftrace^2)], f=q[h], Glin(f)=0, and j_par=4 alpha[j_E(h1,f2)+j_E(f1,h2)] modulo Euler.",
+    "input_commit": "05d5b042a6d9ae347346cd879aa18f457ae7a38d",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "The certified physical QNM EP2 remains connection-level until Fredholm promotion."
+    ]
+  },
+  "edges": []
+}

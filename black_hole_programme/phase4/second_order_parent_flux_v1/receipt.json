@@ -1,0 +1,38 @@
+{
+  "artifacts": {
+    "certificate": {
+      "path": "certificate.json",
+      "sha256": "7f889865c28c31aaa7b8fca283352173f707639409cacd9f133ad98ac55e2b71"
+    },
+    "imports": {
+      "axial_flux_gram": {
+        "path": "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
+        "sha256": "59fb9b443ce0b92ce016f53c376cb367bcf004e00d1b241ad22ec925e99deed2"
+      },
+      "covariant_carrier": {
+        "path": "black_hole_programme/phase4/covariant_einstein_maxwell_carrier_v1/certificate.json",
+        "sha256": "ff86f50e88d07c0ec8fcdbca4788e60058db07f90a7a96a9be5164e033952908"
+      },
+      "euler_transgression": {
+        "path": "black_hole_programme/phase4/weyl_euler_current_transgression_v1/certificate.json",
+        "sha256": "6b45228e6f458aaa896bdf60fbb434a4adb93de8e24f224b323c054c0ed4a7ea"
+      },
+      "physical_connection_ep2": {
+        "path": "black_hole_programme/phase3/axial_qnm_spin_one_local_unit_v1/certificate.json",
+        "sha256": "c0e8c6880ed4b142fe79738590eaede4637360d15eb31dc2203467eb66816e6a"
+      }
+    },
+    "producer": {
+      "path": "produce.py",
+      "sha256": "092ee2178faaa270611f2a3d4246980c109bc23e602a3c3fc6d6539f21a60759"
+    }
+  },
+  "schema": "second-order-parent-flux-receipt-v1",
+  "source_commit": "05d5b042a6d9ae347346cd879aa18f457ae7a38d",
+  "status": "EXACT_SECOND_ORDER_PARENT_FLUX_PASS",
+  "verification": {
+    "independence_level": "Level II: separately written invariant verifier",
+    "independent_verifier": "python3 verify.py",
+    "tests": "python3 -m unittest -v test_parent.py"
+  }
+}

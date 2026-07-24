@@ -1,0 +1,103 @@
+{
+  "canonical_null_lift": {
+    "canonical_block": "[[0,a],[conj(a),0]]",
+    "condition": "b+c*conj(a)+conj(c)*a=0",
+    "determinant": "-abs(a)^2",
+    "full_factor_anatomy": "(1,2,0)=(1,1,0)_source_target_spin2+(0,1,0)_wrong_sign_Maxwell",
+    "inertia": [
+      1,
+      1,
+      0
+    ],
+    "lift": "X -> X+cE",
+    "phase_fixed_choice": "for a>0, c=-b/(2*a)",
+    "raw_block": "[[0,a],[conj(a),b]], a nonzero and b real"
+  },
+  "claim_flags": {
+    "all_positive_frequency_reflection_zero_exclusion": false,
+    "canonical_null_lift": true,
+    "complete_polar_parent_gram": false,
+    "factorized_current_mod_euler": true,
+    "generic_radial_nonsplitting_implies_time_jordan": false,
+    "one_physical_connection_ep2": true,
+    "parent_action_equivalent_mod_euler": true,
+    "parent_euler_lagrange_system": true,
+    "physical_green_resolvent_double_pole": false,
+    "qnm_count_identity": true,
+    "quantum_statement": false
+  },
+  "computational_reduction": {
+    "audit": "G_raw_Weyl-G_parent=G_Euler_cut",
+    "polar_status": "parent formula is universal, but a complete polar endpoint lift and Gram remain uncertified",
+    "primary": "reconstruct f=q[h], evaluate Einstein RW/Zerilli Green currents, and evaluate the wrong-sign Maxwell current"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "that generic radial differential-module nonsplitting is a time-Jordan block",
+    "an analytic Fredholm realization or a physical Green-resolvent double pole",
+    "a polynomially enhanced time-domain ringdown theorem",
+    "absence of all positive-real scalar reflection zeros",
+    "a complete polar lift, endpoint Gram, or polar scattering theorem",
+    "a quantum, BRST, ghost, positivity, or unitarity theorem"
+  ],
+  "factorized_current": {
+    "additional_additional": "depends on the choice of metric lift hX while fX is fixed",
+    "einstein_additional": "j_W((hE,0),(hX,fX))=4*alpha*j_E(hE,fX)+d k_Euler",
+    "einstein_einstein": "j_W((hE,0),(hEprime,0))=d k_Euler",
+    "green_convention": "<a,deltaG[b]>-<deltaG[a],b>=d j_E(a,b), with j_E(a,b)=-j_E(b,a)",
+    "literal_weyl": "j_W=j_par+d k_Euler",
+    "parent": "j_par((h1,f1),(h2,f2))=4*alpha*(j_E(h1,f2)+j_E(f1,h2))"
+  },
+  "imports": {
+    "axial_flux_gram": {
+      "path": "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
+      "sha256": "59fb9b443ce0b92ce016f53c376cb367bcf004e00d1b241ad22ec925e99deed2"
+    },
+    "covariant_carrier": {
+      "path": "black_hole_programme/phase4/covariant_einstein_maxwell_carrier_v1/certificate.json",
+      "sha256": "ff86f50e88d07c0ec8fcdbca4788e60058db07f90a7a96a9be5164e033952908"
+    },
+    "euler_transgression": {
+      "path": "black_hole_programme/phase4/weyl_euler_current_transgression_v1/certificate.json",
+      "sha256": "6b45228e6f458aaa896bdf60fbb434a4adb93de8e24f224b323c054c0ed4a7ea"
+    },
+    "physical_connection_ep2": {
+      "path": "black_hole_programme/phase3/axial_qnm_spin_one_local_unit_v1/certificate.json",
+      "sha256": "c0e8c6880ed4b142fe79738590eaede4637360d15eb31dc2203467eb66816e6a"
+    }
+  },
+  "parent_action": {
+    "definition": "S_par=4*alpha*Integral[f^ab*deltaG_ab[h]-(1/2)*(f_ab*f^ab-f^2)]",
+    "equivalence": "bulk quadratic Weyl action modulo the Euler density and the retained boundary/corner terms",
+    "f_equation": "deltaG_ab[h]=f_ab-g_ab*f",
+    "h_equation": "deltaG_ab[f]=0",
+    "on_shell_density": "2*alpha*(q_ab*q^ab-q^2)",
+    "tensor_solve": "f_ab=q_ab=deltaR_ab-(1/6)*g_ab*deltaR",
+    "trace_solve": "f=q=deltaR/3"
+  },
+  "qnm_determinant_count": {
+    "contour_count": "N_B(Gamma)=2*N_2(Gamma)+N_1(Gamma)",
+    "factorization": "D_B(omega)=u(omega)*D_2(omega)^2*D_1(omega)",
+    "interpretation": "the extension changes local Smith/Jordan structure but not the total algebraic zero count",
+    "simple_spin_two_options": {
+      "defective": "beta_n nonzero gives one length-two connection root chain",
+      "semisimple": "beta_n=0 gives two length-one root vectors"
+    },
+    "unit_condition": "u is analytic and nonvanishing on the contour domain"
+  },
+  "radial_vs_temporal_boundary": {
+    "certified_physical_specialization": "one axial spin-two QNM has connection Smith valuations (0,0,2)",
+    "generic_nonsplit_statement": "a nonzero rational radial extension class is not by itself a Jordan block of the time-translation generator",
+    "time_jordan_gate": "a discrete spectral specialization with nonzero Fredholm/Smith selector is required",
+    "uncertified_promotion": "the physical Green-resolvent double pole still requires an analytic Fredholm realization"
+  },
+  "schema": "second-order-parent-flux-v1",
+  "scope": {
+    "reduced_mode": "Schwarzschild factor filtration and its certified axial ell=2 connection-level QNM specialization",
+    "universal": "quadratic four-dimensional pure Weyl gravity about an arbitrary Ricci-flat background, modulo the Euler boundary/corner term"
+  },
+  "status": "EXACT_SECOND_ORDER_PARENT_FLUX_PASS"
+}
