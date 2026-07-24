@@ -45,3 +45,6 @@ certificate hashes, and enforces the fail-closed claim flags.  Mutation tests
 reject a changed curvature coefficient, a transgression-sign error, a
 cut-current-sign error, pointwise-vanishing promotion, unconditional endpoint
 interchange, and mixed-pairing promotion.
+
+CLOSE-OUT: DONE — objective met; exact certificate and independent verification are pinned in `black_hole_programme/phase4/weyl_euler_current_transgression_v1/`.
+EVIDENCE: `black_hole_programme/phase4/weyl_euler_current_transgression_v1/receipt.json`

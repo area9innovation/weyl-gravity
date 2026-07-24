@@ -43,3 +43,8 @@ python3 -m unittest -v black_hole_programme.phase4.axial_universal_hessian_inter
 `does_not_establish`: an Euler-free literal endpoint current, absence of
 nonlocal intertwiners, a BRST physical-state theorem, quantum positivity,
 unitarity, or a complete asymptotically flat phase space.
+
+CLOSE-OUT: DONE — the exact action, positivity, rational-intertwiner and
+local-\(C\) obstruction claims are independently certified with fail-closed
+boundaries.
+EVIDENCE: black_hole_programme/phase4/axial_universal_hessian_intertwiner_v1/certificate.json

@@ -59,3 +59,6 @@ python3 -m unittest -v \
 Higher tiers were not required because this package adds an isolated exact
 algebraic theorem and imports content-addressed certificates without
 changing their operators.
+
+EVIDENCE: black_hole_programme/phase4/second_order_parent_flux_v1/certificate.json
+CLOSE-OUT: DONE — objective met; exact certificate and independent verifier published.
