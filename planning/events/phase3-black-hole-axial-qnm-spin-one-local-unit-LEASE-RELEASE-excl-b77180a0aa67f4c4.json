@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase3-black-hole-axial-qnm-spin-one-local-unit-LEASE-RELEASE-excl-b77180a0aa67f4c4",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/phase3-black-hole-axial-qnm-spin-one-local-unit-LEASE-RELEASE-excl-b77180a0aa67f4c4.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "phase3-qnm-spin-one-unit-1", "base_revision": "science-forge-ir-v0", "when": "2026-07-24T13:48:20Z", "seq": 2, "predecessor": "sf:program/event/phase3-black-hole-axial-qnm-spin-one-local-unit-LEASE-ACQUIRE-excl-edcdbcaf62f0ee67", "payload": {"target": "sf:program/work/phase3-black-hole-axial-qnm-spin-one-local-unit", "agent": "phase3-qnm-spin-one-unit-1", "lease_type": "exclusive", "action": "RELEASE", "acquired": "2026-07-24T13:48:20Z", "expires": ""}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/phase3-black-hole-axial-qnm-spin-one-local-unit"}]
+}

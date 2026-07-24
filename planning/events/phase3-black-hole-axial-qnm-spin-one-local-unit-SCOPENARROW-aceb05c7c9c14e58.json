@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase3-black-hole-axial-qnm-spin-one-local-unit-SCOPENARROW-aceb05c7c9c14e58",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work scope narrow",
+  "source": {"path": "tools/science-forge/program/events/phase3-black-hole-axial-qnm-spin-one-local-unit-SCOPENARROW-aceb05c7c9c14e58.json", "span": null},
+  "body": {"event_kind": "WORK_SCOPE_NARROW", "actor": "phase3-coordinator", "base_revision": "science-forge-ir-v0", "when": "2026-07-24T13:34:16Z", "seq": 1, "payload": {"target": "sf:program/work/phase3-black-hole-axial-qnm-spin-one-local-unit", "narrowed_by": "phase3-coordinator", "paths": "black_hole_programme/phase3/axial_qnm_spin_one_local_unit_v1/ planning/work-items/phase3-black-hole-axial-qnm-spin-one-local-unit.json planning/events/", "reason": "avoid live broad reports/residual_atlas lease overlap; keep theorem report and receipt inside the unique certificate package"}, "native": {"authored_by": "sfc work-scope-narrow", "policy": "append-only (SPEC 4.5); narrows the EFFECTIVE write scope to a validated SUBSET of allowed_paths — never widens, never rewrites the base item. The overlap gate reads the narrowed scope."}},
+  "edges": [{"rel": "SCOPE_NARROW", "to": "sf:program/work/phase3-black-hole-axial-qnm-spin-one-local-unit"}]
+}
