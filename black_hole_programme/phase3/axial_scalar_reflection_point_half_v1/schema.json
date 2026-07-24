@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "lifecycle",
+    "dependency_tags",
+    "scope",
+    "convention_crosswalk",
+    "validated_method",
+    "certified_lower_bounds",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase3-axial-scalar-reflection-point-half-v1"
+    },
+    "scope": {
+      "type": "object",
+      "required": ["frequency", "channels"],
+      "properties": {
+        "frequency": {"const": "1/2"},
+        "channels": {"const": ["spin_one", "spin_two"]}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "spin_one_reflection_nonzero_at_omega_half",
+        "spin_two_reflection_nonzero_at_omega_half",
+        "strict_scalar_reflection_lower_bounds_certified",
+        "whole_frequency_cell_certified",
+        "explicit_full_Tplus_matrix_certified",
+        "extension_offdiagonal_entries_certified"
+      ],
+      "properties": {
+        "spin_one_reflection_nonzero_at_omega_half": {"const": true},
+        "spin_two_reflection_nonzero_at_omega_half": {"const": true},
+        "strict_scalar_reflection_lower_bounds_certified": {"const": true},
+        "whole_frequency_cell_certified": {"const": false},
+        "explicit_full_Tplus_matrix_certified": {"const": false},
+        "extension_offdiagonal_entries_certified": {"const": false}
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "certificate": "certificate.json",
+  "certificate_sha256": "8baec42251f22cc10bcf9495973c77b2b75e2b54a827b97af60046f07507fc59",
+  "claim_boundary": "pointwise scalar diagonal reflection nonvanishing at omega=1/2; no whole-cell, explicit Tplus, off-diagonal or time-domain claim",
+  "commands": [
+    "python3 -m black_hole_programme.phase3.axial_scalar_reflection_point_half_v1.produce --check",
+    "python3 -m black_hole_programme.phase3.axial_scalar_reflection_point_half_v1.verify",
+    "python3 -m unittest black_hole_programme.phase3.axial_scalar_reflection_point_half_v1.tests.test_reflection",
+    "python3 -m jsonschema -i black_hole_programme/phase3/axial_scalar_reflection_point_half_v1/certificate.json black_hole_programme/phase3/axial_scalar_reflection_point_half_v1/schema.json"
+  ],
+  "producer": "produce.py",
+  "schema": "phase3-axial-scalar-reflection-point-half-receipt-v1"
+}
