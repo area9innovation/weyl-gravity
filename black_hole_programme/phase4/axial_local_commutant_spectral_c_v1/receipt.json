@@ -1,0 +1,16 @@
+{
+  "certificate": "black_hole_programme/phase4/axial_local_commutant_spectral_c_v1/certificate.json",
+  "certificate_sha256": "fd6c1d7cf24cf820cf0f76a82a71570e202504d94450f3af2d4e28076ec73de6",
+  "claim_boundary": "exact local commutant, fiberwise/compact-band spectral C, threshold weights and scattering equivalence; physical canonical C remains open",
+  "commands": [
+    "python3 -m black_hole_programme.phase4.axial_local_commutant_spectral_c_v1.produce",
+    "python3 -m black_hole_programme.phase4.axial_local_commutant_spectral_c_v1.verify",
+    "python3 -m unittest -v black_hole_programme.phase4.axial_local_commutant_spectral_c_v1.test_commutant_spectral_c"
+  ],
+  "producer": "black_hole_programme/phase4/axial_local_commutant_spectral_c_v1/produce.py",
+  "producer_sha256": "4d11e558a452ae5a6cee4adca95987f1a28e1ce70ce598ccd897f8aa3fddc37a",
+  "schema": "axial-local-commutant-spectral-c-receipt-v1",
+  "source_commit": "e5d8e7df25cdf7375d2f9a1e75e1eb69e9426e0a",
+  "verifier": "black_hole_programme/phase4/axial_local_commutant_spectral_c_v1/verify.py",
+  "verifier_sha256": "89cb0549c580bde435a7496e81434adbb505f210cc45479e30a4c9a6f1c0201e"
+}

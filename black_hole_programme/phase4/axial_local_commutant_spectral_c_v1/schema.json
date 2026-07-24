@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Axial local commutant and spectral-C certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "dependency_tags",
+    "imports",
+    "local_commutant",
+    "spectral_fundamental_symmetry",
+    "threshold_completion",
+    "scattering_c_equivalence",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "axial-local-commutant-spectral-c-v1"
+    },
+    "status": {
+      "const": "EXACT_LOCAL_COMMUTANT_COMPACT_BAND_SPECTRAL_C_PASS"
+    },
+    "claim_flags": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

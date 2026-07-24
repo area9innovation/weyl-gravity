@@ -1,0 +1,118 @@
+{
+  "claim_flags": {
+    "brst_or_quantum_positive_state_space": false,
+    "compact_band_positive_norm_equivalence": true,
+    "endpoint_block_diagonal_scattering_c_established": false,
+    "full_six_state_commutant_dual_numbers": false,
+    "local_commutant_dual_numbers_exact": true,
+    "nonlocal_spectral_c_exists_each_positive_real_fiber": true,
+    "only_plus_minus_identity_local_involutions": true,
+    "only_scalar_local_semisimple_observables": true,
+    "scattering_positive_identity_equivalent_to_c_intertwining": true,
+    "spectral_c_canonical": false,
+    "spectral_c_causal": false,
+    "spectral_c_complex_holomorphic": false,
+    "spectral_c_covariant": false,
+    "threshold_weighted_completion_exact": true,
+    "whole_half_axis_unweighted_norm_equivalence": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a canonical, covariant, causal or complex-frequency-holomorphic C operator",
+    "compatibility of independently chosen endpoint fundamental symmetries with scattering",
+    "an endpoint-block-diagonal C on the two future boundaries",
+    "uniform equivalence to unweighted L2 at omega=0",
+    "the commutant of the complete six-state RW/RW/Maxwell module",
+    "nonsplitting of the mixed Maxwell extension",
+    "BRST compatibility, a quantum state space, or quantum unitarity"
+  ],
+  "imports": {
+    "incoming_witt_decomposition": {
+      "path": "black_hole_programme/phase3/axial_endpoint_witt_decomposition/certificate.json",
+      "sha256": "4c96f4e37f13993229b4815d5e24387bfb230c03eaf675c314c7d25777e0daee"
+    },
+    "parent_krein_obstructions": {
+      "path": "black_hole_programme/phase4/parent_resolvent_krein_obstructions_v1/certificate.json",
+      "sha256": "6bbc96eaf6773be8891e5efec32b510e4300ac44df40e5db948fec55948d62f7"
+    },
+    "rw_simplicity_and_nonsplitting": {
+      "path": "black_hole_programme/phase4/rw_maxwell_simplicity_endomorphisms_v1/certificate.json",
+      "sha256": "a51e13fcae0f789c29e8cd1789df28b4c207611683c5f4cd0fc493a0d1781436"
+    }
+  },
+  "local_commutant": {
+    "automorphisms": "a+b*N with a nonzero",
+    "diagonalizable_endomorphisms": "scalars only",
+    "endomorphism_ring": "End(E)=C[N]/(N^2)",
+    "factorization": "Phi-a*I factors as E -> E/M=M -> M -> E",
+    "finite_order_automorphisms": "scalar roots of unity only",
+    "hypotheses": [
+      "0 -> M -> E -> M -> 0 is the certified nonsplit axial ell=2 spin-two extension",
+      "M is simple and End(M)=C for every real omega>0",
+      "the base field has characteristic zero"
+    ],
+    "idempotents": [
+      "0",
+      "I"
+    ],
+    "interpretation": "there is no nontrivial local semisimple branch observable",
+    "involutions": [
+      "-I",
+      "+I"
+    ],
+    "multiplication": "(a+b*N)(c+d*N)=a*c+(a*d+b*c)*N",
+    "naturality": "the induced submodule and quotient scalars obey a*e=e*d, hence a=d",
+    "nilpotent": "N=iota o identification o projection, N^2=0",
+    "unique_simple_submodule": "any second simple submodule mapping nontrivially to E/M would split the extension"
+  },
+  "scattering_c_equivalence": {
+    "defect": "Delta_C=C_out*S-S*C_-",
+    "equivalence": true,
+    "forward_proof": "intertwining plus the Krein identity gives the positive identity",
+    "intertwining": "C_out*S=S*C_-",
+    "krein_identity": "S^dagger*J_out*S=G_-",
+    "notation": [
+      "S=(R,A)^T",
+      "J_out=G_+ direct_sum H_H+",
+      "C_out=C_+ direct_sum C_H",
+      "H_out=J_out*C_out",
+      "H_in=G_-*C_-"
+    ],
+    "physical_test": "explicit T_+ can test whether independently selected endpoint fundamental symmetries intertwine; a transported symmetry on ran(S) need not be endpoint block diagonal",
+    "positive_identity": "S^dagger*H_out*S=H_in",
+    "required_hypotheses": [
+      "the conserved Krein identity",
+      "C_in and C_out are genuine Krein-self-adjoint involutions",
+      "G_-*C_- and J_out*C_out are positive definite"
+    ],
+    "reverse_proof": "for A_C=C_out*S-S*C_-, expand A_C^dagger*H_out*A_C; the two norm terms and two cross terms all equal H_in, so the result is zero; positivity of H_out forces A_C=0"
+  },
+  "schema": "axial-local-commutant-spectral-c-v1",
+  "source_commit": "e5d8e7df25cdf7375d2f9a1e75e1eb69e9426e0a",
+  "spectral_fundamental_symmetry": {
+    "compact_band": "on every compact I contained in (0,infinity), continuity and invertibility make C_sol bounded and its positive norm uniformly equivalent to the coefficient norm",
+    "hypotheses": "G_- is Hermitian and invertible for every real omega>0",
+    "identities": [
+      "C_-^2=I",
+      "C_-^dagger*G_-=G_-*C_-",
+      "G_-*C_-=abs(G_-)>0"
+    ],
+    "incoming_definition": "C_-(omega)=sgn(G_-)=G_-(G_-^2)^(-1/2)",
+    "locality": "spectral/global; generally nonlocal in radius and time",
+    "positive_majorant": "G_sol*C_sol=T_-^dagger*abs(G_-)*T_->0",
+    "solution_gram": "G_sol=T_-^dagger*G_-*T_-",
+    "solution_pullback": "C_sol=T_-^(-1)*C_-*T_-"
+  },
+  "status": "EXACT_LOCAL_COMMUTANT_COMPACT_BAND_SPECTRAL_C_PASS",
+  "threshold_completion": {
+    "consequence": "the positive completion near zero is weighted and is not uniformly equivalent to unweighted whole-half-axis L2",
+    "endpoint": "Iminus incoming Witt basis after the exact second-null lift",
+    "fundamental_symmetry": "[[0,1,0],[1,0,0],[0,0,-1]]",
+    "gram": "[[0,(384/5)omega,0],[(384/5)omega,0,0],[0,0,-(384/5)omega^3]]",
+    "positive_majorant": "diag((384/5)omega,(384/5)omega,(384/5)omega^3)",
+    "weighted_norm": "Integral[omega*(|u_E|^2+|u_X|^2)+omega^3*|u_1|^2] d omega"
+  }
+}

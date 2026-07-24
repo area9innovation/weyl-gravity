@@ -1,0 +1,44 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-axial-local-commutant-spectral-c",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-axial-local-commutant-spectral-c",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-axial-local-commutant-spectral-c.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 0,
+    "objective": "Certify the complete local commutant of the nonsplit axial spin-two extension, construct the nonlocal spectral fundamental symmetry on compact positive-frequency bands, identify the exact threshold-weighted positive completion, and prove the exact equivalence between endpoint C-intertwining and positive-metric scattering under the conserved Krein identity.",
+    "stop_condition": "Produce exact dual-number commutant algebra and consequences, exact matrix-sign and pullback identities, a compact-band boundedness statement, the imported axial threshold Witt weights, a proof that endpoint C-intertwining is equivalent to equality of pulled-back positive forms when the Krein identity and fundamental-symmetry axioms hold, independent verification, mutation tests, and a fail-closed report.",
+    "current_gate": "LOCAL-ALGEBRAIC commutant theorem plus REDUCED-MODE compact-band spectral-C and threshold-weight theorem",
+    "forbid": "no claim that the spectral C is canonical, covariant, causal, holomorphic in complex frequency, endpoint-block-diagonal, BRST-compatible, or uniformly equivalent to unweighted L2 at threshold; no C-intertwining equivalence without both the conserved Krein identity and genuine fundamental-symmetry axioms; no full six-state commutant claim before the mixed Maxwell extension is certified nonsplit",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-rw-maxwell-simplicity-endomorphisms",
+      "sf:program/work/phase4-black-hole-parent-resolvent-krein-obstructions"
+    ],
+    "activates": [
+      "compact-band positive scattering C-defect experiment",
+      "weighted all-frequency Krein/Hilbert completion",
+      "mixed RW/Maxwell extension indecomposability audit"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase4/axial_local_commutant_spectral_c_v1/",
+      "reports/phase4-black-hole-axial-local-commutant-spectral-c-2026-07-24.md",
+      "planning/work-items/phase4-black-hole-axial-local-commutant-spectral-c.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Import the exact positive-real RW endomorphism-ring and nonsplitting claims and the exact incoming Witt Gram. Treat the matrix sign by functional calculus on an invertible Hermitian matrix. Pull back through T_minus only. For scattering, prove the equivalence by expanding the positive norm of C_out*S*x-S*C_in*x using both the Krein isometry and the positive-metric identity. Near threshold use the exact null-lift basis and weights omega, omega, omega^3.",
+    "input_commit": "e5d8e7df25cdf7375d2f9a1e75e1eb69e9426e0a",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "This item constructs an abstract spectral fundamental symmetry; it does not identify a physical Mannheim C operator."
+    ]
+  },
+  "edges": []
+}
