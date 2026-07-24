@@ -2100,6 +2100,7 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_qnm_horizon_reciprocal_chart_transport_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_horizon_reciprocal_checkpoint_transport_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_two_sided_projective_mismatch_preflight_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_common_affine_export_contract_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_endpoint_frames_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_partial_jet_transport_preflight_v1/certificate.json};
@@ -2321,6 +2322,15 @@ Every boundary panel then contains zero.  The boundary-nonvanishing gate
 therefore refuses with
 \texttt{SERIALIZED\_CROSS\_ENDPOINT\_DEPENDENCY\_WIDTH\_CONTAINS\_ZERO};
 the argument-principle and defect-moment gates are deliberately not run.
+An export audit makes the required repair contract explicit.  Both endpoint
+artifacts must carry the same frequency-generator identity, the centered
+polynomial coefficients of \(q,q_\tau,q_\omega\), residuals enclosed only
+after subtraction of those polynomials, and an explicit reduced-phase
+convention tied to that generator.  The present serialized balls do not
+supply those fields.  A bounded singleton-frequency prototype passes its
+first horizon Taylor reference but refuses immediately at the horizon
+\(q\)-remainder self-map; no long joint rerun or downstream contour gate is
+therefore inferred.
 Uniform time-domain boundedness, decay, and completeness remain open.
 
 The present result already fixes an important baseline:

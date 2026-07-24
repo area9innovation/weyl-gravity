@@ -1,0 +1,70 @@
+{
+  "bounded_joint_rerun_attempt": {
+    "attempted_step": "1/67108864",
+    "failure": "HORIZON_Q_REMAINDER_SELF_MAP",
+    "omega_is_singleton": true,
+    "omega_radius": "0",
+    "panel": 0,
+    "radius": "8388609/4194304",
+    "reference_q_width": "[4.0021088724974692504883225155462898339e-11 +/- 9.69e-50]",
+    "reference_step_passed": true,
+    "remainder_step_passed": false,
+    "seed_omega_radius": "[1.2842111665140996352936654890125874003e-23 +/- 2.85e-61]",
+    "seed_q_radius": "[2.4235846015490860868324281286122381942e-24 +/- 2.46e-62]",
+    "seed_tau_radius": "[1.2992558587369718161889847142697881451e-23 +/- 3.92e-61]"
+  },
+  "current_artifacts": {
+    "common_generator_available": false,
+    "horizon_missing_fields": [
+      "independent_residual_radius",
+      "omega_center",
+      "omega_generator_id",
+      "omega_polynomial_basis",
+      "phase_convention",
+      "q_omega_polynomial_coefficients",
+      "q_polynomial_coefficients",
+      "q_tau_polynomial_coefficients"
+    ],
+    "independent_residuals_after_polynomial_subtraction_available": false,
+    "outgoing_missing_fields": [
+      "independent_residual_radius",
+      "omega_center",
+      "omega_generator_id",
+      "omega_polynomial_basis",
+      "phase_convention",
+      "q_omega_polynomial_coefficients",
+      "q_polynomial_coefficients",
+      "q_tau_polynomial_coefficients"
+    ]
+  },
+  "gates": {
+    "K0_or_interval_newton_defect": {
+      "prerequisite": "argument_principle_root_count certified",
+      "status": "NOT_RUN"
+    },
+    "argument_principle_root_count": {
+      "prerequisite": "boundary_nonvanishing=PASS",
+      "status": "NOT_RUN"
+    },
+    "boundary_nonvanishing": {
+      "failure": "COMMON_AFFINE_EXPORT_CONTRACT_UNAVAILABLE",
+      "status": "NOT_RUN"
+    }
+  },
+  "physical_phase_rule": {
+    "mismatch": "Delta=q_H-q_out+2*I*omega",
+    "must_be_applied_symbolically": true,
+    "omega_derivative": "Delta_omega=q_H_omega-q_out_omega+2*I"
+  },
+  "required_common_export_contract": [
+    "omega_generator_id",
+    "omega_center",
+    "omega_polynomial_basis",
+    "q_polynomial_coefficients",
+    "q_tau_polynomial_coefficients",
+    "q_omega_polynomial_coefficients",
+    "independent_residual_radius",
+    "phase_convention"
+  ],
+  "schema": "phase3-axial-qnm-common-affine-export-audit-run-v1"
+}

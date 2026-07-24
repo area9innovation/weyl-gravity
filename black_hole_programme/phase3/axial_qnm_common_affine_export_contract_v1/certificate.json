@@ -1,0 +1,73 @@
+{
+  "bounded_attempt": {
+    "attempted_step": "1/67108864",
+    "failure": "HORIZON_Q_REMAINDER_SELF_MAP",
+    "omega_is_singleton": true,
+    "omega_radius": "0",
+    "panel": 0,
+    "radius": "8388609/4194304",
+    "reference_q_width": "[4.0021088724974692504883225155462898339e-11 +/- 9.69e-50]",
+    "reference_step_passed": true,
+    "remainder_step_passed": false,
+    "seed_omega_radius": "[1.2842111665140996352936654890125874003e-23 +/- 2.85e-61]",
+    "seed_q_radius": "[2.4235846015490860868324281286122381942e-24 +/- 2.46e-62]",
+    "seed_tau_radius": "[1.2992558587369718161889847142697881451e-23 +/- 3.92e-61]"
+  },
+  "claim_flags": {
+    "QNM_or_EP2_certified": false,
+    "argument_principle_root_count_certified": false,
+    "boundary_nonvanishing_certified": false,
+    "common_affine_endpoint_export_available": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a common centered-omega endpoint transport",
+    "boundary nonvanishing or an argument-principle root count",
+    "a K0, interval-Newton, QNM, defective Smith or EP2 gate",
+    "time-domain stability or any LORENTZIAN-CAUSAL claim"
+  ],
+  "gate_summary": {
+    "K0_or_interval_newton_defect": {
+      "prerequisite": "argument_principle_root_count certified",
+      "status": "NOT_RUN"
+    },
+    "argument_principle_root_count": {
+      "prerequisite": "boundary_nonvanishing=PASS",
+      "status": "NOT_RUN"
+    },
+    "boundary_nonvanishing": {
+      "failure": "COMMON_AFFINE_EXPORT_CONTRACT_UNAVAILABLE",
+      "status": "NOT_RUN"
+    }
+  },
+  "imports": {
+    "horizon_run": {
+      "path": "black_hole_programme/phase3/axial_qnm_horizon_reciprocal_checkpoint_transport_v1/checkpoint-run.json",
+      "sha256": "dd8ee4869e09b219eae99ea4e8a666fa164031611bf6de277a4f2324d482ce69"
+    },
+    "outgoing_run": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_affine_projective_transport_v1/affine-run.json",
+      "sha256": "016c9e919db98ec8d69af3dd42075428cd239d8252760792d979733e5d0cddc0"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "required_export_contract": [
+    "omega_generator_id",
+    "omega_center",
+    "omega_polynomial_basis",
+    "q_polynomial_coefficients",
+    "q_tau_polynomial_coefficients",
+    "q_omega_polynomial_coefficients",
+    "independent_residual_radius",
+    "phase_convention"
+  ],
+  "run": {
+    "path": "black_hole_programme/phase3/axial_qnm_common_affine_export_contract_v1/audit-run.json",
+    "sha256": "8e24ab1326827a1b5f5368d931fd7f01746726658b733405b8b0b24682f7d713"
+  },
+  "schema": "phase3-axial-qnm-common-affine-export-contract-v1",
+  "status": "FAIL_CLOSED_COMMON_AFFINE_EXPORT_CONTRACT_MISSING"
+}
