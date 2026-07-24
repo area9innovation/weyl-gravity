@@ -1,5 +1,40 @@
 # Phase-3 axial one-sided Krein scattering preflight
 
+## Pointwise activation addendum — 2026-07-24
+
+Commit `6389cd430` supersedes the original physical-activation shortfall at
+the single frequency \(M=1\), \(\ell=2\), \(\omega=1/2\), without supplying
+the still-missing explicit amplitude matrix.  Two independently replayed
+scalar certificates give
+\[
+ |A_{{\rm out},2}|>0.07331708402944288,\qquad
+ |A_{{\rm out},1}|>0.45928736814965915.
+\]
+Exact boundary dévissage through the outgoing spin-one, carrier spin-two,
+and metric spin-two quotients therefore proves
+\[
+ \ker T_+(1/2)=0,\qquad T_+(1/2)\in GL(3,\mathbb C).
+\]
+Together with the exact oriented Stokes identity and the nondegenerate
+outgoing endpoint form, this activates the physical one-sided
+pseudo-isometry at that frequency.  Equivalently,
+\[
+ {\cal O}
+ =T_-^\dagger G_-T_- -H_{\mathcal H^+}
+ =T_+^\dagger G_+T_+
+\]
+is nondegenerate with inertia \((1,2,0)\) for \(\alpha_{\rm W}>0\).
+
+This addendum does not certify the entries of \(T_+\), the extension mixing
+amplitudes, interval-wide outgoing population, a QNM Smith selector, or
+time-domain bounds.  The work item therefore remains blocked only for its
+explicit-amplitude and end-to-end audit scope.
+
+Pointwise machine authority:
+`black_hole_programme/phase3/axial_outgoing_population_point_half_v1/certificate.json`.
+
+## Original preflight disposition — 2026-07-23
+
 ## Disposition
 
 **METHOD_SHORTFALL** for a physical scattering claim; **PASS** for the
