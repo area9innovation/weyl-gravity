@@ -2,7 +2,7 @@
   "append_only_parent": "planning/paper-coverage/phase1-paper-coverage-overlay-2026-07-22.json",
   "append_only_parent_sha256": "389d1033e9b40bd66cfc5237d3cd2df4ea2575e1d17847d4a519dba89f6b8be2",
   "claim_map": "paper/14-pure-weyl-black-hole-radiation-claim-map.json",
-  "claim_map_sha256": "65edf824990c79eedd49a8f69aeab77441cccc097537e1f6571cf85280e61fc7",
+  "claim_map_sha256": "37804679e8bd834d2e5e95e77a8c6a0e4f51419c65925c57659bd74f386f23e6",
   "ir": "science-forge-ir-v0",
   "nodes": [
     {
@@ -96,12 +96,12 @@
         "native": {
           "source_schema": "materiality-v0"
         },
-        "rationale": "Extends the rigorously zero-free projective Evans boundary prefix to 127/512 while retaining fail-closed root, Smith and EP2 gates.",
-        "result_id": "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_127_512",
+        "rationale": "Extends the rigorously zero-free projective Evans boundary prefix to 135/512 and certifies its continuous lifted phase while retaining fail-closed root, Smith and EP2 gates.",
+        "result_id": "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_135_512_PHASE_LIFT",
         "stamp": "2026-07-24",
         "version": 1
       },
-      "id": "sf:coverage/materiality/PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_127_512/v1",
+      "id": "sf:coverage/materiality/PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_135_512_PHASE_LIFT/v1",
       "kind": "materiality"
     },
     {
@@ -185,14 +185,14 @@
     {
       "body": {
         "asserts_lifecycle": "CLASSIFIED",
-        "boundary": "Zero-free Evans boundary prefix through 127/512 only; the remaining contour and every root/Smith gate remain open.",
+        "boundary": "Zero-free Evans boundary prefix and continuous phase lift through 135/512 only; the remaining contour and every winding/root/Smith gate remain open.",
         "cites": [
-          "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_127_512"
+          "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_135_512_PHASE_LIFT"
         ],
         "material": true,
         "paper": "paper:14-pure-weyl-black-hole-radiation"
       },
-      "id": "paper:14-pure-weyl-black-hole-radiation/claim/phase3_axial_qnm_evans_boundary_prefix_127_512",
+      "id": "paper:14-pure-weyl-black-hole-radiation/claim/phase3_axial_qnm_evans_boundary_prefix_135_512_phase_lift",
       "kind": "paper_claim"
     },
     {
@@ -302,21 +302,23 @@
     },
     {
       "body": {
-        "boundary": "Projective scalar Evans boundary is certified nonzero only on the exact contiguous prefix [0,127/512]. The next gap starts at 254/1024. No closed-contour, argument-principle, root-count, QNM, Smith or EP2 claim.",
+        "boundary": "Projective scalar Evans boundary is certified nonzero only on the exact contiguous prefix [0,135/512]. Its continuous lifted phase and partial argument increment are certified, but the next gap starts at 270/1024. No closed-contour, winding, root-count, QNM, Smith or EP2 claim.",
         "lifecycle": "CLASSIFIED",
         "native": {
-          "certificate": "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v9/certificate.json",
-          "certificate_sha256": "5392c028daa60abd67b1e53a2be8cecb1c2603d9400595bb617e6985d1784cb2",
-          "receipt": "black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v9/receipt.json",
-          "receipt_sha256": "2c2d5ce70172bcde9fa2f024a3a572acc25f0cf5134bc82dd07545107216eebc",
-          "source_kind": "phase3-evans-prefix-certificate"
+          "certificate": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_262_269_v1/certificate.json",
+          "certificate_sha256": "574be430f3cf44122d73ea301f3c223c29a949e97438da24ceaba6d5a2ee3e6a",
+          "phase_certificate": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/phase_ledger_v1/certificate.json",
+          "phase_certificate_sha256": "6030faa87c52f7ce4378fb2f1923a9cd2aa9fb764cf9e70e001800d3f0a6a7bd",
+          "receipt": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_262_269_v1/receipt.json",
+          "receipt_sha256": "51d4f496dfa33e728977c86dc1da7b273caf49dc85dd455b02c48688af7a2a31",
+          "source_kind": "phase3-evans-prefix-and-phase-certificate"
         },
-        "result_id": "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_127_512"
+        "result_id": "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_135_512_PHASE_LIFT"
       },
       "edges": [],
-      "id": "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_127_512",
+      "id": "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_135_512_PHASE_LIFT",
       "kind": "result",
-      "title": "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_127_512"
+      "title": "PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_135_512_PHASE_LIFT"
     },
     {
       "body": {
@@ -416,9 +418,9 @@
     },
     {
       "body": {
-        "claim": "paper:14-pure-weyl-black-hole-radiation/claim/phase3_axial_qnm_evans_boundary_prefix_127_512",
+        "claim": "paper:14-pure-weyl-black-hole-radiation/claim/phase3_axial_qnm_evans_boundary_prefix_135_512_phase_lift",
         "edge_kind": "SUPPORTING_EVANS_BOUNDARY_PREFIX",
-        "from": "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_127_512",
+        "from": "sf:coverage/result/PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_135_512_PHASE_LIFT",
         "native": {
           "source_schema": "result-paper-edge-v0"
         },
@@ -427,9 +429,9 @@
         "to": "paper:14-pure-weyl-black-hole-radiation",
         "version": 1
       },
-      "id": "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_127_512/paper-14/v1",
+      "id": "sf:coverage/edge/PURE_WEYL_PHASE3_AXIAL_QNM_EVANS_BOUNDARY_PREFIX_135_512_PHASE_LIFT/paper-14/v1",
       "kind": "result_paper_edge"
     }
   ],
-  "schema": "paper14-phase3-evans-prefix-127-512-overlay-v9"
+  "schema": "paper14-phase3-evans-prefix-135-512-phase-lift-overlay-v11"
 }

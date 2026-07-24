@@ -175,6 +175,29 @@ class Paper14CorrectedClaimMapTest(unittest.TestCase):
             completed.stdout + completed.stderr,
         )
 
+    def test_evans_phase_winding_overclaim_is_rejected(self) -> None:
+        payload = json.loads(CLAIM_MAP.read_text())
+        authority = payload["phase3_evans_boundary_prefix_authority"]
+        certificate = json.loads(
+            (ROOT / authority["phase_certificate"]).read_text()
+        )
+        certificate["claim_flags"]["winding_number_certified"] = True
+        with tempfile.TemporaryDirectory() as directory:
+            mutated = Path(directory) / "phase-certificate.json"
+            mutated.write_text(json.dumps(certificate))
+            authority["phase_certificate"] = str(mutated)
+            authority["phase_certificate_sha256"] = hashlib.sha256(
+                mutated.read_bytes()
+            ).hexdigest()
+            claim_map = Path(directory) / "claim-map.json"
+            claim_map.write_text(json.dumps(payload))
+            completed = self.run_verifier("--claim-map", str(claim_map))
+        self.assertNotEqual(completed.returncode, 0)
+        self.assertIn(
+            "Evans phase-lift overclaim",
+            completed.stdout + completed.stderr,
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

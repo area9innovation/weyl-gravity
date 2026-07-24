@@ -2400,6 +2400,9 @@ Axial RW/RW/spin-one filtration and invertible incoming connection &
 \cert{black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v7b/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v8/certificate.json};
 \cert{black_hole_programme/phase3/axial_qnm_child_grid_boundary_chunk_v9/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_254_261_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_262_269_v1/certificate.json};
+\cert{black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/phase_ledger_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_scalar_reflection_cell_half_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/certificate.json};
 \cert{black_hole_programme/phase3/axial_transport_free_outgoing_defect_preflight_v1/certificate.json};
@@ -2964,7 +2967,24 @@ contiguous coverage therefore reaches
 \[
  \frac{254}{1024}=\frac{127}{512},
 \]
-with \(254/1024\) the next gap.
+The next two bounded successors accept panels \(254,\ldots,269\), extending
+the exact contiguous coverage to
+\[
+ \frac{270}{1024}=\frac{135}{512},
+\]
+with \(270/1024\) the next gap.  A separate replayless phase ledger places
+all \(172\) accepted affine segments in certified rational separating
+half-planes.  Their argument sectors have width strictly below \(\pi\) and
+overlap consecutively, so the open prefix admits a single continuous lifted
+argument.  Its current partial increment is enclosed by
+\[
+ -1.2739656266
+ <
+ \Delta\arg\Delta\big|_{[0,135/512]}
+ <
+ -0.2264558028 .
+\]
+This is an open-path phase enclosure, not a winding number.
 The remaining boundary, interval-Newton, argument-principle, and Smith/EP2
 gates are not run.
 Uniform time-domain boundedness, decay, and completeness remain open.
