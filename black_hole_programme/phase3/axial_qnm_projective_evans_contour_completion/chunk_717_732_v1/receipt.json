@@ -1,0 +1,43 @@
+{
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_717_732_v1/runner.py black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_717_732_v1/verify.py black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_717_732_v1/test_chunk.py black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/continuation.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_717_732_v1/certificate.json black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_717_732_v1/schema.json",
+      "returncode": 0,
+      "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.chunk_717_732_v1.verify",
+      "returncode": 1,
+      "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_717_732_v1/verify.py\", line 12, in <module>\n    main()\n  File \"/home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_717_732_v1/verify.py\", line 8, in main\n    verify(CONFIG)\n  File \"/home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/continuation.py\", line 371, in verify\n    assert 0 < raw[\"elapsed_compute_seconds\"] < 60\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.chunk_717_732_v1.test_chunk",
+      "returncode": 1,
+      "stderr": "F..\n======================================================================\nFAIL: test_certificate (black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.chunk_717_732_v1.test_chunk.EvansContourChunk717732Test.test_certificate)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_717_732_v1/test_chunk.py\", line 14, in test_certificate\n    verify.main()\n  File \"/home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_717_732_v1/verify.py\", line 8, in main\n    verify(CONFIG)\n  File \"/home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/continuation.py\", line 371, in verify\n    assert 0 < raw[\"elapsed_compute_seconds\"] < 60\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n----------------------------------------------------------------------\nRan 3 tests in 0.122s\n\nFAILED (failures=1)\n",
+      "stdout": ""
+    }
+  ],
+  "elapsed_seconds": 73.256396864017,
+  "higher_tiers_not_run": "No closed contour, theorem promotion, freeze or release. The bounded transport is the producer; replayless verification is the fast Tier 1 rail.",
+  "input_sha256": {
+    "continuation_source": "bd0ca18aaf88f0e7bdf3f1d852d3be6115fd3245aa08666396b13ea5e7f2c5e3",
+    "generic_adaptive_source": "20f2fca360a55a72a7b139c5d70b908e17f5369b3e83b360517feea75ca85ddd",
+    "predecessor_aggregate": "0e00bed8fb46f3f6f5a13f57205fae4a4e0e55a47aadd9128a399cb9cf272d8f",
+    "predecessor_certificate": "b85c74e1be07f29365dfdd5e9db78cd3b543c19972bb3564f988552a6c13e97b"
+  },
+  "output_sha256": {
+    "aggregate": "acc8924c0da5f7645d6ba806cb1693e3e87c21a43ed159aeb6b7bba9b38b3fab",
+    "certificate": "23510d607c6ac1f3875e09ba44d32bdd762343e650226cc3f8e264cda3cb6757",
+    "raw": "aa362d4cda3cba0b7e9ad47c2d648412185ce83e54c2a57d1219d8e2a625a0b2",
+    "report": "4c5ce52a39b6b059971e7c7c74aab8790e9a705b220dd33c126061198b518229"
+  },
+  "schema": "phase3-axial-qnm-projective-evans-contour-receipt-717-732-v1"
+}

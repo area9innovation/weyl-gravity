@@ -1,0 +1,128 @@
+{
+  "claim_flags": {
+    "QNM_location_certified": false,
+    "Smith_selector_certified": false,
+    "argument_principle_certified": false,
+    "defective_fibre_or_EP2_certified": false,
+    "fixed_child_grid_only": true,
+    "full_contour_nonzero_certified": false,
+    "materialized_prefix_nonzero_certified": true,
+    "root_count_certified": false,
+    "stable_root_reused": true,
+    "threshold_lowered": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "boundary nonvanishing beginning at the stated next gap",
+    "boundary nonvanishing on the complete closed contour",
+    "an argument-principle root count",
+    "a QNM location or simple-root certificate",
+    "a nonzero Delta_tau or Delta_omega selector",
+    "a local Smith branch, defective fibre or EP2",
+    "a physical outgoing Bach map T_plus",
+    "time-domain stability or any LORENTZIAN-CAUSAL claim"
+  ],
+  "imports": {
+    "continuation_source": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/continuation.py",
+      "sha256": "bd0ca18aaf88f0e7bdf3f1d852d3be6115fd3245aa08666396b13ea5e7f2c5e3"
+    },
+    "generic_adaptive_source": {
+      "path": "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v1/adaptive.py",
+      "sha256": "20f2fca360a55a72a7b139c5d70b908e17f5369b3e83b360517feea75ca85ddd"
+    },
+    "predecessor_aggregate": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_717_724_v1/child-grid-aggregate-run.json",
+      "sha256": "96916267863eee0e9889c004d9f1fa68e25d9eeec9bd9d0d590c57bf5d453601"
+    },
+    "predecessor_certificate": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_717_724_v1/certificate.json",
+      "sha256": "ad745688d1c82bf6654fd58191f52367f13c94fe1b73b7e9f6c3d9669012b6bc"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "method": {
+    "acceptance_policy": "accept only the ordered contiguous prefix before the first typed zero-exclusion failure",
+    "child_panel_count": 1024,
+    "continuation_source": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/continuation.py",
+    "generic_adaptive_source": "black_hole_programme/phase3/axial_qnm_adaptive_dyadic_boundary_chunk_v1/adaptive.py",
+    "horizon_remainder_root": "stable interval smaller root with exact 1000001/1000000 strict enlargement",
+    "maximum_parallel_workers": 8,
+    "maximum_subdivision_depth": 1,
+    "performance_disposition": "The eight-panel scoped producer must remain below 60 seconds; the replayless verifier is the per-commit Tier 1 rail.",
+    "requested_stop": "733/1024",
+    "start": "725/1024",
+    "threshold_policy": "unchanged; no threshold relaxation"
+  },
+  "result": {
+    "accepted_segments": [
+      {
+        "delta_modulus_lower": "[0.0019451558505193788400749892401411784962 +/- 5.15e-41]",
+        "row_sha256": "492675ed2d3422142183ac41a7606f2472c775b26739fff3847a652aa14624ec",
+        "segment": "725/1024"
+      },
+      {
+        "delta_modulus_lower": "[0.0019480287855310475988369326024021373380 +/- 4.33e-41]",
+        "row_sha256": "070c485d572ac0bdaa3214851d10802aeca6484e9fb74642958351bbec94a0c5",
+        "segment": "726/1024"
+      },
+      {
+        "delta_modulus_lower": "[0.0019507612323771854514775228539720216754 +/- 6.35e-41]",
+        "row_sha256": "fa68cc248722e584772ce02f82d7523172535197af2905e1e72e04feef193683",
+        "segment": "727/1024"
+      },
+      {
+        "delta_modulus_lower": "[0.0019533504853163980306170449722172006280 +/- 4.06e-41]",
+        "row_sha256": "755f7598cc78b931c8b30d614a9cb9cd23aecd3c3133a3154d960c6f4a46a1fe",
+        "segment": "728/1024"
+      },
+      {
+        "delta_modulus_lower": "[0.0019557977697292603123523064693025580483 +/- 5.63e-41]",
+        "row_sha256": "dcd40e8e1629476c0397eaf8ea71b3a92d4861471143e8f265e606d83c046809",
+        "segment": "729/1024"
+      },
+      {
+        "delta_modulus_lower": "[0.0019581022296818321160422709997216473458 +/- 3.70e-41]",
+        "row_sha256": "064525eaad8f280c0c27e2cf3a40b4669c2599168245b8fca4c2cbeb00b2515b",
+        "segment": "730/1024"
+      },
+      {
+        "delta_modulus_lower": "[0.0019602608055472646070080423903219831650 +/- 3.37e-41]",
+        "row_sha256": "acdb266b8b595c2d7fa17230102b9a7661b159f559a5e45ec3d2512c7448f95a",
+        "segment": "731/1024"
+      },
+      {
+        "delta_modulus_lower": "[0.0019622754146192269639599994688851695976 +/- 4.37e-41]",
+        "row_sha256": "d76dd1d0e4ecaed31726af5219f2682c1271004b49d2ebdaac03deee35e548a5",
+        "segment": "732/1024"
+      }
+    ],
+    "coverage_stop": "733/1024",
+    "elapsed_compute_seconds": 35.80902776599396,
+    "new_accepted_segment_count": 8,
+    "next_honest_boundary_gap": {
+      "child_panel_count": 1024,
+      "first_unmaterialized_child_panel": 733,
+      "start": "733/1024"
+    },
+    "terminal": {
+      "code": "REQUESTED_CHILD_GRID_STOP_REACHED",
+      "first_unmaterialized_child_panel": 733
+    }
+  },
+  "runs": {
+    "aggregate": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_725_732_v1/child-grid-aggregate-run.json",
+      "sha256": "7a8bb327c64820148a39b3217981d0de752e0391acb55fcc1f7cf684335136c2"
+    },
+    "raw": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_725_732_v1/child-grid-raw-run.json",
+      "sha256": "03f26480b33e7bdd0289f0c9c419eb7625ef82b63405faaf1a6388c97fc04794"
+    }
+  },
+  "schema": "phase3-axial-qnm-projective-evans-contour-chunk-725-732-v1",
+  "status": "FIXED_CHILD_GRID_BOUNDARY_PREFIX_EXTENDED_FAIL_CLOSED"
+}

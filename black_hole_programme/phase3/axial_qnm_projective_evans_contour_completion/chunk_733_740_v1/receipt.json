@@ -1,0 +1,43 @@
+{
+  "checks": [
+    {
+      "command": "python3 -m py_compile black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_733_740_v1/runner.py black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_733_740_v1/verify.py black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_733_740_v1/test_chunk.py black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/continuation.py",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m jsonschema -i black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_733_740_v1/certificate.json black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/chunk_733_740_v1/schema.json",
+      "returncode": 0,
+      "stderr": "/home/alstrup/.local/lib/python3.12/site-packages/jsonschema/__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main\n",
+      "stdout": ""
+    },
+    {
+      "command": "python3 -m black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.chunk_733_740_v1.verify",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Evans contour chunk 733-740 verifier: PASS (coverage 741/1024; next 741/1024)\n"
+    },
+    {
+      "command": "python3 -m unittest black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.chunk_733_740_v1.test_chunk",
+      "returncode": 0,
+      "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.047s\n\nOK\n",
+      "stdout": "Evans contour chunk 733-740 verifier: PASS (coverage 741/1024; next 741/1024)\n"
+    }
+  ],
+  "elapsed_seconds": 25.578342404041905,
+  "higher_tiers_not_run": "No closed contour, theorem promotion, freeze or release. The bounded transport is the producer; replayless verification is the fast Tier 1 rail.",
+  "input_sha256": {
+    "continuation_source": "bd0ca18aaf88f0e7bdf3f1d852d3be6115fd3245aa08666396b13ea5e7f2c5e3",
+    "generic_adaptive_source": "20f2fca360a55a72a7b139c5d70b908e17f5369b3e83b360517feea75ca85ddd",
+    "predecessor_aggregate": "7a8bb327c64820148a39b3217981d0de752e0391acb55fcc1f7cf684335136c2",
+    "predecessor_certificate": "ee99265220292a2a9f66bcaa7dc777ef67df1df53b5916ffa4e6ced06fb5e217"
+  },
+  "output_sha256": {
+    "aggregate": "73ccd1a3c4d3dc63383c6efeade7be60fd02bea9aa6da5b87e2d29e8eea4e631",
+    "certificate": "b67605814f22ad796699153ece09884df3d5a6c7d8014bdab5d79f3c9d2b6bd9",
+    "raw": "0358d8794ee9791f4bbbe1e36b76294c2ece20321fb10e2c6c65b3f648a0234c",
+    "report": "d0c0b4ec84839523af2e0e567492b2d374238299e4231bd75ddc66c2b3e35aae"
+  },
+  "schema": "phase3-axial-qnm-projective-evans-contour-receipt-733-740-v1"
+}
