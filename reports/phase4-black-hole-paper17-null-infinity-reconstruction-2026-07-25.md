@@ -167,3 +167,8 @@ Not established:
 
 The exact certificate is
 `black_hole_programme/phase4/axial_qnm_null_infinity_reconstruction_v1/certificate.json`.
+
+CLOSE-OUT: DONE — exact null-infinity reconstruction, corrected QNM tangent,
+Paper 17 revision, certificate, claim map, mutation tests, PDF, and receipts
+are complete; physical-source overlap and global causal promotion remain
+explicit successor gates.
