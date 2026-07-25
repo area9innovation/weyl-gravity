@@ -125,3 +125,7 @@ Tier 2 was not rerun because no upstream mathematical input, operator,
 certificate, or schema changed. Tier 3 was not run because this is a paper
 promotion using unchanged content-addressed authorities, not a programme
 freeze or release.
+
+CLOSE-OUT: DONE — Paper 17 promoted with pinned claim map, exact verifier,
+mutation tests, compiled PDF, and fail-closed resonance scope.
+EVIDENCE: reports/PAPER17_EXTENSION_RESONANCE_TIER_RECEIPT.json
