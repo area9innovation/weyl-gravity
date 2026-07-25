@@ -59,6 +59,10 @@ AUTHORITIES = {
         "black_hole_programme/phase3/"
         "axial_complete_reconstruction_repair/certificate.json"
     ),
+    "null_infinity_reconstruction": (
+        "black_hole_programme/phase4/"
+        "axial_qnm_null_infinity_reconstruction_v1/certificate.json"
+    ),
 }
 
 
@@ -167,17 +171,26 @@ def payload() -> dict:
                 "qnm_velocity": "2*I*kappa/omega",
             },
             "quasinormal_logarithmic_partner": {
-                "spacetime_mode": "Psi_m=exp(I*omega_n(m)*t)*y_sigma(m,r)",
-                "canonical_tangent_class": "[partial_m(Psi_m)|0] mod C*Psi_0",
+                "spacetime_mode": (
+                    "Psi_m=exp(I*omega_n(m)*t)"
+                    "*y_sigma(omega_n(m),m;r)"
+                ),
+                "canonical_tangent_class": "[d_m(Psi_m)|0] mod C*Psi_0",
+                "fixed_omega_jost_tangent": (
+                    "-sigma*I*r/(2*omega_n)+O(1)"
+                ),
+                "fixed_omega_coulomb_log_coefficient": "0",
+                "total_coulomb_log_coefficient": "2*sigma*I*nu_n",
+                "phase_adapted_null_time": "u_sigma=t+sigma*rstar",
                 "relative_tangent": (
-                    "I*nu_n*t-sigma*I*r/(2*omega_n)+O(1)"
+                    "I*nu_n*u_sigma-sigma*I*r/(2*omega_n)+O(1)"
                 ),
                 "bach_relative_tangent": (
-                    "-I*kappa_n*t+sigma*r/4+O(1)"
+                    "-I*kappa_n*u_sigma+sigma*r/4+O(1)"
                 ),
+                "outgoing_specialization": "-I*kappa_n*u-r/4+O(1)",
                 "bach_scale": "I*omega_n/2",
                 "mass_velocity": "2*I*kappa_n/omega_n",
-                "coulomb_log_coefficient": "rho_sigma_prime(0)=0",
                 "literal_radial_logarithm": False,
                 "linear_r_is_scalar_jost_tangent": True,
                 "normalization_changes_only_O1": True,
@@ -192,17 +205,29 @@ def payload() -> dict:
                 "polynomial_spatial_profile": "V0",
                 "constant_generalized_profile": "V1",
             },
-            "asymptotic_reconstruction_gate": {
-                "proved_object": "reduced_scalar_Jost_tangent",
-                "candidate_realizations": [
-                    "enlarged_differentiated_Jost_tangent_domain",
-                    "augmented_boundary_pencil",
-                ],
-                "conditional_enhanced_profile": "t*exp(I*omega_n*t)/r",
-                "condition": "O_scri(omega_n)*V0 != 0",
-                "metric_falloff_certified": False,
+            "null_infinity_reconstruction": {
+                "Einstein_metric_heads": "H0=-r+O(1), H1=2*r+O(1)",
+                "generalized_metric_heads": (
+                    "H0=3*r**2/4-3*r/2+O(1), "
+                    "H1=-3*r**2/2+O(1)"
+                ),
+                "odd_radiation_gauge": "xi=h_u/(I*omega), h2=2*I*h_u/omega",
+                "Einstein_Bondi_shear": "-2*I*X_AB/omega",
+                "Einstein_Bondi_shear_nonzero": True,
+                "generalized_strain_leading": "3*I*X_AB/(2*omega)",
+                "generalized_standard_falloff": False,
                 "scalar_linear_r_cancellation_certified": False,
-                "null_infinity_overlap_certified": False,
+                "double_pole_scri_coefficient": (
+                    "I*nu_n*X_AB tensor tilde_u/"
+                    "(2*alpha_W*alpha_n*omega_n)"
+                ),
+                "enhanced_strain_profile": (
+                    "-nu_n*u*exp(I*omega_n*u)*X_AB/"
+                    "(2*alpha_W*alpha_n*omega_n*r)"
+                ),
+                "null_infinity_spatial_overlap_certified": True,
+                "specified_source_overlap_certified": False,
+                "global_retarded_contour_certified": False,
             },
             "forced_gauge_asymptotic": {
                 "q_slope_at_infinity": "-I/(8*omega)",
@@ -650,7 +675,11 @@ def payload() -> dict:
             "scalar_spacetime_tangent_polynomial_exact": True,
             "first_order_radial_logarithm_absent": True,
             "qnm_jordan_time_law_exact": True,
-            "asymptotic_reconstruction_gate_explicit": True,
+            "asymptotic_reconstruction_exact": True,
+            "null_infinity_E_bondi_shear_nonzero": True,
+            "null_infinity_generalized_standard_falloff_excluded": True,
+            "null_infinity_double_pole_spatial_overlap_nonzero": True,
+            "null_infinity_source_overlap_open": True,
             "critical_mass_qnm_velocity_nonzero": True,
             "filtered_critical_unfolding_exact": True,
             "two_parameter_unfolding_discriminant_exact": True,
@@ -737,7 +766,7 @@ def payload() -> dict:
             "validated_multi_qnm_acceleration_contour": False,
             "numerical_qnm_acceleration_computed": False,
             "global_positive_metric_no_go": False,
-            "asymptotic_strain_or_np_overlap_certified": False,
+            "specified_physical_source_to_strain_transfer_certified": False,
             "generalized_metric_standard_asymptotic_falloff_certified": False,
             "scalar_linear_r_tangent_cancellation_certified": False,
             "literal_schwarzschild_radial_log_mode_established": False,

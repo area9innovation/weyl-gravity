@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Axial QNM null-infinity reconstruction certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "dependency_tags",
+    "imports",
+    "exact_asymptotic_reconstruction",
+    "radiation_gauge",
+    "qnm_tangent",
+    "observable_double_pole",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "axial-qnm-null-infinity-reconstruction-v1"
+    },
+    "status": {
+      "const": "EXACT_NULL_INFINITY_RECONSTRUCTION_SOURCE_OVERLAP_OPEN"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

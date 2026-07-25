@@ -42,6 +42,13 @@
       "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
       "status": null
     },
+    "null_infinity_reconstruction": {
+      "path": "black_hole_programme/phase4/axial_qnm_null_infinity_reconstruction_v1/certificate.json",
+      "result_id": null,
+      "result_token": null,
+      "sha256": "be3f26e22dec378b6ab7bc2d05b91301539bc1ccc4b5b24946accc96ba254d18",
+      "status": "EXACT_NULL_INFINITY_RECONSTRUCTION_SOURCE_OVERLAP_OPEN"
+    },
     "projective_cocycle": {
       "path": "black_hole_programme/phase3/axial_qnm_projective_cocycle_v1/certificate.json",
       "result_id": null,
@@ -80,7 +87,7 @@
   },
   "certified_scope": {
     "analytic_observable_transfer_exact": true,
-    "asymptotic_reconstruction_gate_explicit": true,
+    "asymptotic_reconstruction_exact": true,
     "augmented_qnm_hellmann_feynman_exact": true,
     "axial_l2_nonsplit_all_positive_real": true,
     "axial_l2_rw_rw_maxwell_filtration": true,
@@ -131,6 +138,10 @@
     "lower_left_mutation_controls_exact": true,
     "matched_finite_window_drive_exact": true,
     "near_critical_linewidth_ratio_exact": true,
+    "null_infinity_E_bondi_shear_nonzero": true,
+    "null_infinity_double_pole_spatial_overlap_nonzero": true,
+    "null_infinity_generalized_standard_falloff_excluded": true,
+    "null_infinity_source_overlap_open": true,
     "null_rank_one_pole_geometry_exact": true,
     "opposite_signature_confluence_criterion_exact": true,
     "parent_double_and_simple_laurent_coefficients_exact": true,
@@ -181,18 +192,6 @@
     "REDUCED-MODE"
   ],
   "exact_identities": {
-    "asymptotic_reconstruction_gate": {
-      "candidate_realizations": [
-        "enlarged_differentiated_Jost_tangent_domain",
-        "augmented_boundary_pencil"
-      ],
-      "condition": "O_scri(omega_n)*V0 != 0",
-      "conditional_enhanced_profile": "t*exp(I*omega_n*t)/r",
-      "metric_falloff_certified": false,
-      "null_infinity_overlap_certified": false,
-      "proved_object": "reduced_scalar_Jost_tangent",
-      "scalar_linear_r_cancellation_certified": false
-    },
     "augmented_hellmann_feynman": {
       "evans_parameter_derivative": "integral(yminus*Qp*yplus)+B_p",
       "frequency_potential_derivative": "2*omega",
@@ -424,6 +423,21 @@
       "maximum": "abs(C)*sqrt(E)*sqrt(1-exp(-2*gamma*T)*(1+2*gamma*T+2*gamma**2*T**2))/(2*gamma**(3/2))",
       "optimizer": "conjugate(g_W(T-s))"
     },
+    "null_infinity_reconstruction": {
+      "Einstein_Bondi_shear": "-2*I*X_AB/omega",
+      "Einstein_Bondi_shear_nonzero": true,
+      "Einstein_metric_heads": "H0=-r+O(1), H1=2*r+O(1)",
+      "double_pole_scri_coefficient": "I*nu_n*X_AB tensor tilde_u/(2*alpha_W*alpha_n*omega_n)",
+      "enhanced_strain_profile": "-nu_n*u*exp(I*omega_n*u)*X_AB/(2*alpha_W*alpha_n*omega_n*r)",
+      "generalized_metric_heads": "H0=3*r**2/4-3*r/2+O(1), H1=-3*r**2/2+O(1)",
+      "generalized_standard_falloff": false,
+      "generalized_strain_leading": "3*I*X_AB/(2*omega)",
+      "global_retarded_contour_certified": false,
+      "null_infinity_spatial_overlap_certified": true,
+      "odd_radiation_gauge": "xi=h_u/(I*omega), h2=2*I*h_u/omega",
+      "scalar_linear_r_cancellation_certified": false,
+      "specified_source_overlap_certified": false
+    },
     "observable_transfer": {
       "analytic_frequency_dependence_changes_leading_coefficient": false,
       "observation_gate": "O0*u != 0",
@@ -510,16 +524,20 @@
       "polynomial_spatial_profile": "V0"
     },
     "quasinormal_logarithmic_partner": {
-      "bach_relative_tangent": "-I*kappa_n*t+sigma*r/4+O(1)",
+      "bach_relative_tangent": "-I*kappa_n*u_sigma+sigma*r/4+O(1)",
       "bach_scale": "I*omega_n/2",
-      "canonical_tangent_class": "[partial_m(Psi_m)|0] mod C*Psi_0",
-      "coulomb_log_coefficient": "rho_sigma_prime(0)=0",
+      "canonical_tangent_class": "[d_m(Psi_m)|0] mod C*Psi_0",
+      "fixed_omega_coulomb_log_coefficient": "0",
+      "fixed_omega_jost_tangent": "-sigma*I*r/(2*omega_n)+O(1)",
       "linear_r_is_scalar_jost_tangent": true,
       "literal_radial_logarithm": false,
       "mass_velocity": "2*I*kappa_n/omega_n",
       "normalization_changes_only_O1": true,
-      "relative_tangent": "I*nu_n*t-sigma*I*r/(2*omega_n)+O(1)",
-      "spacetime_mode": "Psi_m=exp(I*omega_n(m)*t)*y_sigma(m,r)"
+      "outgoing_specialization": "-I*kappa_n*u-r/4+O(1)",
+      "phase_adapted_null_time": "u_sigma=t+sigma*rstar",
+      "relative_tangent": "I*nu_n*u_sigma-sigma*I*r/(2*omega_n)+O(1)",
+      "spacetime_mode": "Psi_m=exp(I*omega_n(m)*t)*y_sigma(omega_n(m),m;r)",
+      "total_coulomb_log_coefficient": "2*sigma*I*nu_n"
     },
     "real_detector_normal_form": {
       "critical_equation": "Q**2*h=0",
@@ -688,7 +706,6 @@
     "all_ell_bach_nonsplitting": false,
     "all_ell_bach_reduction_coefficient_computed": false,
     "arbitrarily_large_response_established": false,
-    "asymptotic_strain_or_np_overlap_certified": false,
     "causal_exterior_spacetime_resolvent": false,
     "coefficient_l2_budget_equals_gravitational_energy": false,
     "complete_complex_reducibility_locus": false,
@@ -712,6 +729,7 @@
     "quantum_positivity_or_unitarity": false,
     "retarded_inverse_transform": false,
     "scalar_linear_r_tangent_cancellation_certified": false,
+    "specified_physical_source_to_strain_transfer_certified": false,
     "threshold_uniform_jost_shear_estimate": false,
     "time_domain_stability": false,
     "validated_multi_qnm_acceleration_contour": false,
@@ -721,7 +739,7 @@
   "lifecycle_state": "DRAFT_ALLOWED",
   "manuscript": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
   "paper_id": "PAPER_17_PURE_WEYL_EXTENSION_RESONANCE",
-  "paper_sha256": "bdcd38c9fa2b5ef77f7655f9e10aa6947bac68d44f15cbd7689bda314ad7f9ce",
+  "paper_sha256": "6a8357e18c3949b028701240c6f9884cab610b32d17ccd145a5d14cd355261c9",
   "result_id": "PAPER17_NONSPLIT_RW_EXTENSION_DEFECTIVE_RESONANCE",
   "schema": "paper-draft-source-map-v1"
 }

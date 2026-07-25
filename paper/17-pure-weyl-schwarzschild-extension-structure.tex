@@ -67,8 +67,10 @@ differentiated Jost classes modulo scalar normalization.
 The resulting generalized Schwarzschild QNM is the asymptotically flat
 quasinormal analogue of a critical-gravity logarithmic partner.  Its
 canonical scalar mass-tangent class has a polynomial spacetime prefactor:
-relative to the ordinary QNM it is linear in \(t\) and \(r\), while the
-coefficient of \(\log r\) vanishes.
+relative to the ordinary QNM it is linear in a phase-adapted null time and
+in \(r\).  The fixed-frequency Jost derivative has no Coulomb
+\(\log r\) term; the total derivative along the moving QNM branch is
+instead organized by the null coordinate.
 
 At the covariant parent-operator level, the pure-Weyl metric Green
 function is exactly the first mass derivative of the Einstein--Weyl
@@ -119,6 +121,12 @@ damped sinusoid,
 \]
 with a divided-difference continuation that remains regular when the two
 finite-mass resonances separate.
+For the exact axial reconstruction, the outgoing Einstein root has
+nonzero Bondi shear.  The \(u\)-weighted double-pole term therefore has
+standard \(u/r\) strain falloff at future null infinity.  By contrast, the
+time-independent generalized carrier component has \(O(1)\) strain in
+the standard odd radiation gauge; it is not an ordinary asymptotically
+flat radiative mode.
 For the isolated critical kernel, a switched-on phase-locked drive has
 quadratic early-time buildup and a finite \(1/(\gamma^2+\Delta^2)\)
 steady amplitude.  Phase-matched impulses show the corresponding
@@ -128,8 +136,8 @@ time-reversed conjugate kernel.
 
 Promotion to a global physical resolvent and to a full retarded generalized
 ringdown expansion requires a separate analytic Fredholm realization,
-weighted endpoint domains, asymptotic observable and physical-source
-overlaps, and bounded metric reconstruction.
+weighted endpoint domains, a physical-source overlap, and control of the
+weakened generalized endpoint component.
 \end{abstract}
 
 \section{Introduction and main results}
@@ -171,10 +179,12 @@ This paper establishes ten central results.
   the Coulomb tail cancels the apparent logarithmic derivative of the
   massive Jost phase.
 \item The massive-QNM tangent is a quasinormal logarithmic partner in the
-  critical-gravity sense.  In the scalar infinity Jost frame its canonical
-  class has relative asymptotics
-  \(i\nu_nt-\sigma i r/(2\omega_n)+O(1)\), with no first-order radial
-  logarithm, and time translation acts by a length-two Jordan block.
+  critical-gravity sense.  At fixed frequency its infinity Jost derivative
+  has no Coulomb logarithm.  Along the moving QNM branch its canonical
+  spacetime class is
+  \(i\nu_nu_\sigma-\sigma i r/(2\omega_n)+O(1)\), where
+  \(u_\sigma=t+\sigma r_*\), and time translation acts by a length-two
+  Jordan block.
 \item At a certified damped Schwarzschild quasinormal frequency the
   connection is defective.  The associated generalized root vector has a
   nonzero carrier quotient, and the exterior cut-off outgoing Green
@@ -206,7 +216,10 @@ This paper establishes ten central results.
   reflected pair has the real repeated-root damped-sinusoid form displayed
   above.  A divided-difference basis gives a uniform, finite-amplitude
   continuation between the critical Jordan regime and two resolved simple
-  modes.
+  modes.  Exact odd-parity reconstruction proves that the Einstein root has
+  nonzero Bondi shear and that the enhanced term has standard \(u/r\)
+  strain, while the constant generalized carrier has weakened \(O(1)\)
+  strain.
 \item The isolated causal critical kernel has an exact coherent-forcing
   law.  A phase-locked switched-on drive builds quadratically at early
   times and saturates with a squared Lorentzian denominator.  Finite
@@ -215,7 +228,7 @@ This paper establishes ten central results.
   time-reversed conjugate kernel.
 \end{enumerate}
 
-The fourth result is stronger than a statement about a finite connection
+The fifth result is stronger than a statement about a finite connection
 matrix.  It is a meromorphic differential-response theorem for compact
 radial sources and local radial observations.  It is deliberately weaker
 than a causal spacetime resolvent theorem.  No global retarded
@@ -1581,50 +1594,89 @@ descriptions of the reduced-mode result below.
 partner]\label{thm:qnm-logarithmic-partner}
 Let
 \[
- \Psi_m(t,r)=e^{i\omega_n(m)t}y_\sigma(m,r),
+ \Psi_m(t,r)=e^{i\omega_n(m)t}
+ y_\sigma(\omega_n(m),m;r),
  \qquad
  \nu_n=\omega_n'(0)=\frac{2i}{\omega_n}\kappa_n,
 \]
 where \(y_\sigma\) is a normalized massive infinity Jost germ and
-\(\sigma=\pm1\) labels its phase.  Then the normalization-independent
+\(\sigma=\pm1\) labels its phase.  Put
+\[
+ u_\sigma=t+\sigma r_*.
+\]
+Then the normalization-independent
 tangent class
 \[
- [\partial_m\Psi_m|_0]\in
+ [d_m\Psi_m|_0]\in
  \mathcal D/\C\Psi_0
 \]
 has the relative infinity asymptotics
 \begin{equation}\label{eq:qnm-log-partner-asymptotic}
  \boxed{\;
- \frac{\partial_m\Psi_m|_0}{\Psi_0}
- =i\nu_nt-\frac{\sigma i}{2\omega_n}r+O(1).
+ \frac{d_m\Psi_m|_0}{\Psi_0}
+ =i\nu_nu_\sigma-\frac{\sigma i}{2\omega_n}r+O(1).
  \;}
 \end{equation}
 In the Bach normalization \(c(\omega_n)=i\omega_n/2\),
 \begin{equation}\label{eq:qnm-log-partner-bach-asymptotic}
  \boxed{\;
- \frac{c(\omega_n)\partial_m\Psi_m|_0}{\Psi_0}
- =-i\kappa_nt+\frac{\sigma}{4}r+O(1).
+ \frac{c(\omega_n)d_m\Psi_m|_0}{\Psi_0}
+ =-i\kappa_nu_\sigma+\frac{\sigma}{4}r+O(1).
  \;}
 \end{equation}
-The \(O(1)\) term changes under analytic normalization of the QNM family,
-but the displayed coefficients of \(t\) and \(r\) do not.  Moreover,
+For the outgoing branch \(\sigma=-1\),
 \[
- \rho_\sigma'(0)=0,
+ u_\sigma=u=t-r_*,
+ \qquad
+ \frac{c(\omega_n)d_m\Psi_m|_0}{\Psi_0}
+ =-i\kappa_nu-\frac14r+O(1).
 \]
-so the normalized scalar Jost tangent has no first-order
-\(\log r\) term.
+The \(O(1)\) term changes under analytic normalization of the QNM family,
+but the displayed coefficients of \(u_\sigma\) and \(r\) do not.
+At fixed \(\omega\),
+\[
+ \left.\partial_m\rho_\sigma(\omega,m)\right|_{m=0}=0,
+\]
+whereas along the moving QNM branch
+\[
+ \left.\frac{d}{dm}\rho_\sigma(\omega_n(m),m)\right|_{m=0}
+ =2\sigma i\nu_n.
+\]
+Thus the fixed-frequency Jost tangent has no first-order Coulomb
+\(\log r\) term; the total derivative is absorbed into the
+phase-adapted null coordinate in the full spacetime expression.
 \end{theorem}
 
 \begin{proof}
-Differentiating the separated spacetime mode gives
+\emph{Fixed-frequency versus total mass derivatives.}
+The fixed-frequency endpoint calculation of
+Theorem~\ref{thm:jost-mass-jet} gives
 \[
- \frac{\partial_m\Psi_m|_0}{\Psi_0}
- =i\omega_n'(0)t+
- \frac{\partial_my_\sigma(0,r)}{y_\sigma(0,r)}.
+ \left.\partial_m\log y_\sigma(\omega,m;r)\right|_{m=0}
+ =-\frac{\sigma i}{2\omega}r+O(1),
+ \qquad
+ \left.\partial_m\rho_\sigma\right|_\omega=0.
 \]
-Theorem~\ref{thm:jost-mass-jet} supplies the second term and proves
-\(\rho_\sigma'(0)=0\), yielding
-\eqref{eq:qnm-log-partner-asymptotic}.  Multiplication by
+Along the QNM branch, however, both arguments of \(y_\sigma\) vary.
+Since the massless Coulomb exponent is
+\(\rho_\sigma(\omega,0)=2\sigma i\omega\), the total radial derivative is
+\[
+ \left.\frac{d}{dm}\log
+ y_\sigma(\omega_n(m),m;r)\right|_0
+ =
+ \sigma i\left(\nu_n-\frac1{2\omega_n}\right)r
+ +2\sigma i\nu_n\log r+O(1).
+\]
+Using \(r_*=r+2\log r+O(1)\) and differentiating the temporal phase gives
+\[
+ i\nu_nt+
+ \sigma i\left(\nu_n-\frac1{2\omega_n}\right)r
+ +2\sigma i\nu_n\log r
+ =
+ i\nu_n(t+\sigma r_*)
+ -\frac{\sigma i}{2\omega_n}r+O(1),
+\]
+which proves \eqref{eq:qnm-log-partner-asymptotic}.  Multiplication by
 \(c=i\omega_n/2\), followed by
 \(\nu_n=2i\kappa_n/\omega_n\), gives
 \eqref{eq:qnm-log-partner-bach-asymptotic}.  Replacing
@@ -1673,35 +1725,139 @@ produces explicit logarithmic falloff.  Here the two terms in
 \[
  \rho_\sigma(m)=\sigma i\left(2k+\frac{m}{k}\right)
 \]
-cancel at first order.  The surviving linear \(r\) term comes from
-differentiating \(e^{\sigma ikr}\).  Thus the logarithmic terminology
-refers to the critical mass-derivative/Jordan ancestry, not to the
-presence of \(\log r\) in the normalized Schwarzschild scalar Jost germ.
+cancel at first order at fixed \(\omega\).  The total QNM derivative does
+differentiate the massless Coulomb exponent because \(\omega_n\) moves,
+but its logarithm combines with the temporal phase into
+\(u_\sigma=t+\sigma r_*\).  At fixed phase-adapted null time, the remaining
+endpoint polynomial is linear in \(r\), not logarithmic.  Thus the
+logarithmic terminology refers to the critical mass-derivative/Jordan
+ancestry, not to an independent \(\log r\) falloff in the normalized
+Schwarzschild spacetime tangent.
 \end{remark}
 
-\begin{remark}[Asymptotic reconstruction gate]
-The linear \(r\) factor is proved for the reduced scalar Jost tangent.  It
-does not by itself imply that a reconstructed metric, curvature scalar,
-Newman--Penrose quantity, or strain has \(O(1)\) rather than \(O(r^{-1})\)
-falloff.  Schwarzschild radiative observables require specific
-gauge-invariant reconstruction maps~\cite{martelpoisson2005}.  A global
-realization may either enlarge the endpoint domain to include
-differentiated-Jost tangents or retain a standard bulk domain and place the
-tangent data in an augmented boundary pencil.
-
-The leading double-pole term is nevertheless Einstein-shaped:
+\begin{theorem}[Exact null-infinity reconstruction]
+\label{thm:null-infinity-reconstruction}
+Let \(E=2\,\mathrm{EI2}\) be the unit outgoing Einstein line and let
 \[
- e^{i\omega_nt}(V_1+itV_0).
+ R=\mathrm{XI2}
+ -\frac{i(16\omega^2-4i\omega-5)}{\omega}\,\mathrm{XI3}
 \]
-Consequently, if a subsequently constructed null-infinity map satisfies
-\(\mathcal O_{\mathscr I^+}(\omega_n)V_0\ne0\), its enhanced term has the
-ordinary outgoing spatial profile with a linear time envelope,
-schematically \(t e^{i\omega_nt}/r\).  Neither that overlap nor cancellation
-of the scalar \(O(r)\) tangent in the time-independent generalized
-component is claimed here.  On the source side, dynamical QNM excitation
-from generic Schwarzschild plunges provides a concrete methodology for a
-future adjoint-overlap calculation~\cite{deamicis2026}; no such Weyl source
-calculation is performed in this paper.
+be the unit outgoing carrier line in the exact factor frame.  After
+factoring their common retarded phase \(e^{i\omega u}\), their
+Regge--Wheeler-gauge metric heads are
+\[
+ (H_0,H_1)_E=(-r,\,2r)+O(1),
+\]
+\[
+ (H_0,H_1)_R=
+ \left(\frac34r^2-\frac32r,\,-\frac32r^2\right)+O(1).
+\]
+In particular,
+\[
+ (H_0,H_1)_R=-\frac34r\,(H_0,H_1)_E+O(E).
+\]
+
+Under the standard odd gauge transformation
+\[
+ h_u\mapsto h_u-i\omega\xi,
+ \qquad
+ h_2\mapsto h_2-2\xi,
+\]
+the radiation-gauge choice \(\xi=h_u/(i\omega)\) gives
+\[
+ h_2=\frac{2i}{\omega}h_u.
+\]
+Writing \(h_{AB}=h_2X_{AB}\), the Bondi-shear map
+\(\mathcal O_{\mathscr I^+}h=\lim_{r\to\infty}h_{AB}/r\) therefore satisfies
+\begin{equation}\label{eq:E-bondi-shear}
+ \boxed{\;
+ \mathcal O_{\mathscr I^+}E=-\frac{2i}{\omega}X_{AB}\ne0.
+ \;}
+\end{equation}
+The corresponding strains are
+\[
+ \frac{h^E_{AB}}{r^2}
+ =-\frac{2i}{\omega r}e^{i\omega u}X_{AB}
+ +O(r^{-2}),
+\]
+and
+\begin{equation}\label{eq:R-weakened-strain}
+ \boxed{\;
+ \frac{h^R_{AB}}{r^2}
+ =\frac{3i}{2\omega}e^{i\omega u}X_{AB}
+ +O(r^{-1}).
+ \;}
+\end{equation}
+Thus the linear scalar tangent does not cancel in the reconstructed
+time-independent generalized component: any root-chain representative
+with nonzero carrier quotient has weakened \(O(1)\) strain.  The odd
+trace-free tensor \(X_{AB}\) cannot be removed by a Weyl rescaling, and
+removing its leading term by an odd diffeomorphism would require a large
+boundary transformation rather than a standard small gauge change.
+\end{theorem}
+
+\begin{proof}
+The displayed \(E\) head follows by substituting the exact EI2 series into
+the algebraic \(C=0\) reconstruction row.  The \(R\) head follows by the
+displayed exact linear combination of the XI2 and XI3 metric heads.  The
+odd gauge law and radiation-gauge reconstruction are the standard
+Schwarzschild formulas~\cite{martelpoisson2005}; substituting the exact
+heads gives \eqref{eq:E-bondi-shear} and
+\eqref{eq:R-weakened-strain}.  Since the Einstein line is one power lower
+in \(r\), adding an Einstein representative cannot cancel the carrier
+\(r^2\) coefficient.
+\end{proof}
+
+\begin{corollary}[Enhanced null-infinity coefficient]
+\label{cor:enhanced-null-infinity}
+Normalize the resonant Einstein state by the line \(E\).  For the parent
+principal coefficient
+\[
+ G_{-2}
+ =-\frac{\nu_n}{4\alpha_{\rm W}\alpha_n}
+ E\otimes\widetilde u_n,
+\]
+the Bondi-shear principal coefficient is
+\[
+ \boxed{\;
+ \mathcal O_{\mathscr I^+}G_{-2}
+ =\frac{i\nu_n}
+ {2\alpha_{\rm W}\alpha_n\omega_n}
+ X_{AB}\otimes\widetilde u_n\ne0.
+ \;}
+\]
+Consequently the isolated local contour contribution to strain from a
+source \(F\) contains
+\[
+ \boxed{\;
+ -\frac{\nu_n}
+ {2\alpha_{\rm W}\alpha_n\omega_n}
+ \frac{u}{r}e^{i\omega_nu}X_{AB}\,
+ \langle\widetilde u_n,S(\omega_n)F\rangle
+ \;}
+\]
+or, using \(\nu_n=2i\kappa_n/\omega_n\),
+\[
+ -\frac{i\kappa_n}
+ {\alpha_{\rm W}\alpha_n\omega_n^2}
+ \frac{u}{r}e^{i\omega_nu}X_{AB}\,
+ \langle\widetilde u_n,S(\omega_n)F\rangle .
+\]
+The spatial observation overlap is therefore nonzero.  The coefficient
+for a specified physical source remains conditional on its adjoint
+overlap, and no global retarded contour deformation is asserted.
+\end{corollary}
+
+\begin{remark}[Endpoint domain and source gate]
+Theorem~\ref{thm:null-infinity-reconstruction} shows that the full
+time-independent generalized component is not contained in the standard
+fixed-boundary asymptotically flat radiative class.  A global realization
+must either enlarge the endpoint domain to differentiated-Jost tangents or
+encode those tangents in an augmented boundary pencil.  The \(u\)-weighted
+Einstein component is nevertheless an ordinary radiative field.  On the
+source side, dynamical QNM excitation from generic Schwarzschild plunges
+provides a methodology for a future adjoint-overlap calculation
+~\cite{deamicis2026}; no such Weyl source calculation is performed here.
 \end{remark}
 
 \begin{theorem}[Critical-mass Evans derivative and QNM velocity]
@@ -4099,6 +4255,10 @@ Spin-one local unit
 Fredholm promotion
 & Finite-interval rank-one radial Green pole and transparent-cut input
 & Exact reduction plus validated inputs\\
+Null-infinity reconstruction
+& Exact \(E/R\) metric heads, odd radiation gauge, nonzero Einstein
+  Bondi shear, and weakened generalized falloff
+& Exact symbolic\\
 Observable transfer
 & Analytic source/reconstruction maps and rank-one resonant overlaps
 & Exact conditional reduced-mode\\
@@ -4106,7 +4266,8 @@ Coherent forcing and matched drive
 & Isolated critical kernel and coefficient-space \(L^2\) budget
 & Exact conditional reduced-mode\\
 Quasinormal logarithmic partner
-& Scalar mass tangent, vanishing Coulomb-log derivative, and Jordan law
+& Fixed-frequency Coulomb cancellation, total null-time tangent, and
+  Jordan law
 & Exact reduced-mode\\
 \bottomrule
 \end{tabular}
@@ -4129,18 +4290,20 @@ threshold-uniform estimate for \(b/a^2\), a validated multi-QNM contour
 sum, a validated acceleration contour or numerical acceleration, an
 overtone EP2 tower, a global positive-metric or quantum no-go theorem, or
 a quantum positivity statement.  It also does not establish nonzero
-overlap for a specified asymptotic strain or Newman--Penrose observable,
-nonzero excitation by a specified astrophysical source, detector
+excitation by a specified astrophysical source, detector
 detectability, or parameter-estimation sensitivity.  The polynomial
 \(t e^{i\omega_nt}\) is proved only for the isolated local two-pole
 contour contribution.  The coherent-drive and pulse-train laws likewise
 apply only to that isolated kernel; no physical matched-source
 construction, invariant energy-budget identity, or nonlinear saturation
-calculation is claimed.  The quasinormal logarithmic-partner theorem is a
-reduced scalar statement: it does not prove a literal Schwarzschild radial
-logarithm, standard asymptotic-flatness falloff for the generalized metric,
-cancellation of the scalar \(O(r)\) tangent in a strain or
-Newman--Penrose observable, or a nonzero null-infinity overlap.
+calculation is claimed.  The exact null-infinity reconstruction proves
+that the generalized constant component does \emph{not} have standard
+asymptotic-flatness falloff in the declared odd radiation gauge.  It does
+not establish finite Bondi flux for that component, a large-gauge
+completion that removes it, or a full Newman--Penrose reconstruction.  The
+nonzero asymptotic observation overlap of the Einstein-shaped enhanced
+term is proved, but its coefficient remains conditional on the source
+overlap and on a global retarded contour theorem.
 
 \section{Conclusion}
 
@@ -4165,12 +4328,16 @@ slope.
 The generalized state is therefore the asymptotically flat quasinormal
 analogue of critical gravity's logarithmic partner: modulo the Einstein
 mode it is the mass derivative of the massive QNM.  Unlike the familiar
-anti-de Sitter examples, its normalized scalar Jost tangent contains no
-first-order radial logarithm.  Its universal endpoint polynomial is
-linear in \(t\) and \(r\), and the normalized Jordan chain evolves as
-\(e^{i\omega_nt}(V_1+itV_0)\).  Whether the linear radial tangent cancels
-in a gauge-invariant null-infinity observable remains an explicit
-reconstruction problem.
+anti-de Sitter examples, its fixed-frequency Jost derivative contains no
+Coulomb logarithm.  Along the moving QNM branch the total derivative is
+organized by the phase-adapted null time \(u_\sigma=t+\sigma r_*\), and
+the normalized Jordan chain evolves as
+\(e^{i\omega_nt}(V_1+itV_0)\).
+The exact axial metric reconstruction settles the falloff question:
+the Einstein root has nonzero Bondi shear, but the time-independent
+generalized carrier has \(O(1)\), rather than \(O(r^{-1})\), strain in
+standard odd radiation gauge.  The enhanced \(uV_0\) component remains
+ordinary outgoing radiation and has an explicit \(u/r\) coefficient.
 At the covariant level, the metric response is the mass derivative of the
 massive spin-two resolvent: QNM motion controls its double coefficient,
 while projector motion controls its accompanying simple coefficient.  The

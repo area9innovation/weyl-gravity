@@ -471,16 +471,25 @@ def verify_mass_jost_and_confluence(claims: dict) -> None:
 
 
 def verify_quasinormal_logarithmic_partner(claims: dict) -> None:
-    omega, nu, kappa, sigma, r, t = sp.symbols(
-        "omega nu kappa sigma r t", nonzero=True
+    omega, nu, kappa, sigma, r, t, log_r = sp.symbols(
+        "omega nu kappa sigma r t log_r", nonzero=True
     )
     I = sp.I
-    relative = I * nu * t - sigma * I * r / (2 * omega)
+    rstar = r + 2 * log_r
+    u_sigma = t + sigma * rstar
+    total_radial = (
+        sigma * I * (nu - 1 / (2 * omega)) * r
+        + 2 * sigma * I * nu * log_r
+    )
+    relative = sp.expand(I * nu * t + total_radial)
+    phase_adapted = I * nu * u_sigma - sigma * I * r / (2 * omega)
+    if sp.simplify(relative - phase_adapted) != 0:
+        fail("quasinormal logarithmic-partner total derivative failed")
     bach_scale = I * omega / 2
     normalized = sp.simplify(
-        (bach_scale * relative).subs(nu, 2 * I * kappa / omega)
+        (bach_scale * phase_adapted).subs(nu, 2 * I * kappa / omega)
     )
-    expected = -I * kappa * t + sigma * r / 4
+    expected = -I * kappa * u_sigma + sigma * r / 4
     if sp.simplify(normalized - expected) != 0:
         fail("quasinormal logarithmic-partner normalization failed")
 
@@ -501,13 +510,23 @@ def verify_quasinormal_logarithmic_partner(claims: dict) -> None:
 
     partner = claims["exact_identities"]["quasinormal_logarithmic_partner"]
     if partner != {
-        "spacetime_mode": "Psi_m=exp(I*omega_n(m)*t)*y_sigma(m,r)",
-        "canonical_tangent_class": "[partial_m(Psi_m)|0] mod C*Psi_0",
-        "relative_tangent": "I*nu_n*t-sigma*I*r/(2*omega_n)+O(1)",
-        "bach_relative_tangent": "-I*kappa_n*t+sigma*r/4+O(1)",
+        "spacetime_mode": (
+            "Psi_m=exp(I*omega_n(m)*t)*y_sigma(omega_n(m),m;r)"
+        ),
+        "canonical_tangent_class": "[d_m(Psi_m)|0] mod C*Psi_0",
+        "fixed_omega_jost_tangent": "-sigma*I*r/(2*omega_n)+O(1)",
+        "fixed_omega_coulomb_log_coefficient": "0",
+        "total_coulomb_log_coefficient": "2*sigma*I*nu_n",
+        "phase_adapted_null_time": "u_sigma=t+sigma*rstar",
+        "relative_tangent": (
+            "I*nu_n*u_sigma-sigma*I*r/(2*omega_n)+O(1)"
+        ),
+        "bach_relative_tangent": (
+            "-I*kappa_n*u_sigma+sigma*r/4+O(1)"
+        ),
+        "outgoing_specialization": "-I*kappa_n*u-r/4+O(1)",
         "bach_scale": "I*omega_n/2",
         "mass_velocity": "2*I*kappa_n/omega_n",
-        "coulomb_log_coefficient": "rho_sigma_prime(0)=0",
         "literal_radial_logarithm": False,
         "linear_r_is_scalar_jost_tangent": True,
         "normalization_changes_only_O1": True,
@@ -525,20 +544,31 @@ def verify_quasinormal_logarithmic_partner(claims: dict) -> None:
     }:
         fail("quasinormal logarithmic-partner Jordan declaration drift")
 
-    gate = claims["exact_identities"]["asymptotic_reconstruction_gate"]
+    gate = claims["exact_identities"]["null_infinity_reconstruction"]
     if gate != {
-        "proved_object": "reduced_scalar_Jost_tangent",
-        "candidate_realizations": [
-            "enlarged_differentiated_Jost_tangent_domain",
-            "augmented_boundary_pencil",
-        ],
-        "conditional_enhanced_profile": "t*exp(I*omega_n*t)/r",
-        "condition": "O_scri(omega_n)*V0 != 0",
-        "metric_falloff_certified": False,
+        "Einstein_metric_heads": "H0=-r+O(1), H1=2*r+O(1)",
+        "generalized_metric_heads": (
+            "H0=3*r**2/4-3*r/2+O(1), H1=-3*r**2/2+O(1)"
+        ),
+        "odd_radiation_gauge": "xi=h_u/(I*omega), h2=2*I*h_u/omega",
+        "Einstein_Bondi_shear": "-2*I*X_AB/omega",
+        "Einstein_Bondi_shear_nonzero": True,
+        "generalized_strain_leading": "3*I*X_AB/(2*omega)",
+        "generalized_standard_falloff": False,
         "scalar_linear_r_cancellation_certified": False,
-        "null_infinity_overlap_certified": False,
+        "double_pole_scri_coefficient": (
+            "I*nu_n*X_AB tensor tilde_u/"
+            "(2*alpha_W*alpha_n*omega_n)"
+        ),
+        "enhanced_strain_profile": (
+            "-nu_n*u*exp(I*omega_n*u)*X_AB/"
+            "(2*alpha_W*alpha_n*omega_n*r)"
+        ),
+        "null_infinity_spatial_overlap_certified": True,
+        "specified_source_overlap_certified": False,
+        "global_retarded_contour_certified": False,
     }:
-        fail("asymptotic reconstruction gate declaration drift")
+        fail("null-infinity reconstruction declaration drift")
 
 
 def verify_period_matrix(claims: dict) -> None:
@@ -1253,12 +1283,17 @@ def main() -> None:
         "\\rho_\\sigma'(0)=0",
         "Quasinormal logarithmic partner",
         "Polynomial spacetime tangent of the quasinormal logarithmic",
-        "i\\nu_nt-\\frac{\\sigma i}{2\\omega_n}r+O(1)",
-        "-i\\kappa_nt+\\frac{\\sigma}{4}r+O(1)",
+        "u_\\sigma=t+\\sigma r_*",
+        "i\\nu_nu_\\sigma-\\frac{\\sigma i}{2\\omega_n}r+O(1)",
+        "-i\\kappa_nu_\\sigma+\\frac{\\sigma}{4}r+O(1)",
+        "Fixed-frequency versus total mass derivatives",
         "Jordan time law",
         "e^{iHt}V_1=e^{i\\omega_nt}(V_1+itV_0)",
         "Not a literal Schwarzschild radial log mode",
-        "Asymptotic reconstruction gate",
+        "Exact null-infinity reconstruction",
+        "\\mathcal O_{\\mathscr I^+}E=-\\frac{2i}{\\omega}X_{AB}",
+        "\\frac{h^R_{AB}}{r^2}",
+        "Enhanced null-infinity coefficient",
         "Critical-mass Evans derivative and QNM velocity",
         "\\frac{2i}{\\omega_n}\\kappa_n\\ne0",
         "Reflected EP2 pair",
@@ -1297,7 +1332,7 @@ def main() -> None:
         "G_{-2}=-\\frac{\\nu_n}{4\\alpha_{\\rm W}}P_n",
         "Isolated parent-resonance contribution",
         "Einstein-shaped",
-        "The fourth result is stronger",
+        "The fifth result is stronger",
         "No global retarded",
         "Invariant two-parameter unfolding",
         "\\nu_n=-\\frac{2F_{\\omega m}}{F_{\\omega\\omega}}",
@@ -1385,7 +1420,7 @@ def main() -> None:
         "the generalized Schwarzschild QNM contains a radial logarithm",
         "the generalized Weyl metric has standard asymptotic-flatness falloff",
         "the scalar linear-r tangent cancels in the asymptotic strain",
-        "the null-infinity QNM overlap is certified nonzero",
+        "the plunging-particle source overlap is certified nonzero",
         "this is the first asymptotically flat black-hole logarithmic graviton",
     ]
     for phrase in forbidden:
@@ -1507,6 +1542,27 @@ def main() -> None:
         True,
         "reconstruction",
     )
+    null_infinity = json.loads(
+        (ROOT / authorities["null_infinity_reconstruction"]["path"]).read_text()
+    )
+    for key in [
+        "exact_E_metric_heads_reconstructed",
+        "exact_R_metric_heads_reconstructed",
+        "odd_radiation_gauge_reconstruction_exact",
+        "einstein_bondi_shear_nonzero",
+        "double_pole_observable_spatial_overlap_nonzero",
+        "enhanced_local_contour_profile_standard_radiative",
+    ]:
+        require_flag(null_infinity, key, True, "null-infinity reconstruction")
+    for key in [
+        "generalized_constant_component_standard_falloff",
+        "scalar_linear_r_tangent_cancellation",
+        "specified_physical_source_overlap_nonzero",
+        "full_generalized_mode_finite_bondi_flux",
+        "global_causal_contour_theorem",
+        "detector_observability",
+    ]:
+        require_flag(null_infinity, key, False, "null-infinity reconstruction")
 
     root = claims["exact_identities"]["generalized_root"]
     if root["carrier_quotient"] != "-a1/b0":

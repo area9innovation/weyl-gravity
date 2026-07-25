@@ -1011,7 +1011,7 @@ class Paper17ClaimMapTests(unittest.TestCase):
             ].update(
                 {
                     "bach_relative_tangent": (
-                        "-I*kappa_n*t-sigma*r/4+O(1)"
+                        "-I*kappa_n*u_sigma-sigma*r/4+O(1)"
                     )
                 }
             )
@@ -1070,9 +1070,41 @@ class Paper17ClaimMapTests(unittest.TestCase):
             "asymptotic-flatness falloff"
         )
 
-    def test_log_partner_null_infinity_overlap_promotion_rejected(self) -> None:
+    def test_log_partner_physical_source_overlap_promotion_rejected(self) -> None:
         self.assert_promotion_rejected(
-            "the null-infinity QNM overlap is certified nonzero"
+            "the plunging-particle source overlap is certified nonzero"
+        )
+
+    def test_null_infinity_bondi_shear_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "null_infinity_reconstruction"
+            ].update({"Einstein_Bondi_shear": "2*I*X_AB/omega"})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "null-infinity reconstruction declaration drift",
+            result.stdout + result.stderr,
+        )
+
+    def test_total_coulomb_derivative_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "quasinormal_logarithmic_partner"
+            ].update({"total_coulomb_log_coefficient": "0"})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "logarithmic-partner declaration drift",
+            result.stdout + result.stderr,
         )
 
     def test_log_partner_absolute_priority_promotion_rejected(self) -> None:
