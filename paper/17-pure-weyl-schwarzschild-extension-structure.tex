@@ -104,10 +104,21 @@ hyperbolic compatible nondegenerate Hermitian form up to chain equivalence
 and scale.  The Einstein root is null, the full double-pole coefficient is
 its null rank-one square-zero operator, and a nondegenerate first-order
 branch-form limit occurs exactly for opposite Krein signatures.
+Finally, arbitrary analytic source, reconstruction, and observation maps
+preserve the leading pole precisely when their two resonant overlaps are
+nonzero.  The resulting real isolated-resonance signal is a repeated-root
+damped sinusoid,
+\[
+ e^{-\gamma t}
+ \bigl[(a_0+a_1t)\cos\Omega t+(b_0+b_1t)\sin\Omega t\bigr],
+\]
+with a divided-difference continuation that remains regular when the two
+finite-mass resonances separate.
 
 Promotion to a global physical resolvent and to a full retarded generalized
 ringdown expansion requires a separate analytic Fredholm realization,
-weighted endpoint domains, and bounded metric reconstruction.
+weighted endpoint domains, asymptotic observable and physical-source
+overlaps, and bounded metric reconstruction.
 \end{abstract}
 
 \section{Introduction and main results}
@@ -132,7 +143,7 @@ differential field.  The two spin-two layers therefore share scalar
 characteristics without defining two rationally separable radial
 branches.
 
-This paper establishes seven central results.
+This paper establishes eight central results.
 \begin{enumerate}
 \item The repeated spin-two block is a non-split Regge--Wheeler
   self-extension, realized exactly as a parameter jet.
@@ -174,6 +185,12 @@ This paper establishes seven central results.
   functional of ordinary Regge--Wheeler data.  The second critical jet
   separates squared velocity, acceleration, and first and second projector
   motion in its three singular coefficients.
+\item Analytic source and observation maps carry the leading pole to the
+  measured channel by a rank-one overlap formula.  A visible isolated
+  reflected pair has the real repeated-root damped-sinusoid form displayed
+  above.  A divided-difference basis gives a uniform, finite-amplitude
+  continuation between the critical Jordan regime and two resolved simple
+  modes.
 \end{enumerate}
 
 The fourth result is stronger than a statement about a finite connection
@@ -232,6 +249,9 @@ Spectral acceleration and second critical jet
 Canonical Krein--Jordan geometry
 & Nonzero length-two nilpotent and nondegenerate compatible Hermitian form
 & Exact finite-dimensional theorem\\
+Observable transfer and detector normal form
+& Analytic source/reconstruction maps and isolated reflected QNM pair
+& Exact conditional reduced-mode theorem\\
 Two-parameter EP2 phase diagram
 & Exact Einstein filtration and a declared transverse mixing direction
 & Exact local theorem\\
@@ -2448,6 +2468,264 @@ normalization.  Explicitly,
 As before, this is an isolated local contour theorem, not a global
 retarded contour deformation.
 
+\subsection{Analytic observable transfer and detector normal form}
+\label{sec:detector-normal-form}
+
+Let \(\mathcal F\) be a source space, \(X\) the reduced equation space,
+\(Y\) the reconstructed response space, and \(\mathcal H\) an observable
+coefficient space.  Consider analytic maps
+\[
+ S(\omega):\mathcal F\longrightarrow X,
+ \qquad
+ \mathcal O(\omega):Y\longrightarrow\mathcal H.
+\]
+The map \(S\) inserts a declared source into the reduced equations, while
+\(\mathcal O\) may include metric or curvature reconstruction followed by
+an observation functional.  The following statement is algebraic in the
+local meromorphic germ.  It does not assume that either map has already
+been identified with an asymptotic detector channel.
+
+\begin{theorem}[Observable transfer]\label{thm:observable-transfer}
+Suppose
+\[
+ G(\omega)=\frac{G_{-2}}{z^2}+\frac{G_{-1}}z+G_0(\omega),
+ \qquad z=\omega-\omega_n,
+\]
+and \(S,\mathcal O\) are analytic at \(\omega_n\).  For
+\[
+ \mathcal H(\omega)=\mathcal O(\omega)G(\omega)S(\omega)
+\]
+the two singular coefficients are
+\[
+ \boxed{\;
+ \mathcal H_{-2}=\mathcal O_0G_{-2}S_0,
+ \;}
+\]
+\[
+ \boxed{\;
+ \mathcal H_{-1}
+ =\mathcal O_0G_{-1}S_0
+ +\mathcal O_1G_{-2}S_0
+ +\mathcal O_0G_{-2}S_1.
+ \;}
+\]
+For the parent pure-Weyl metric response,
+\[
+ G_{-2}
+ =-\frac{\nu_n}{4\alpha_{\rm W}\alpha_n}
+ u_n\otimes\widetilde u_n,
+\]
+and hence
+\begin{equation}\label{eq:observable-principal}
+ \boxed{\;
+ \mathcal H_{-2}
+ =-\frac{\nu_n}{4\alpha_{\rm W}\alpha_n}
+ \bigl(\mathcal O_0u_n\bigr)
+ \otimes
+ \bigl(\widetilde u_nS_0\bigr).
+ \;}
+\end{equation}
+Because \(\nu_n\ne0\) at the certified QNM, the measured channel retains
+the order-two pole if and only if
+\[
+ \mathcal O(\omega_n)u_n\ne0,
+ \qquad
+ \widetilde u_nS(\omega_n)\ne0.
+\]
+\end{theorem}
+
+\begin{proof}
+Write
+\[
+ \mathcal O=\mathcal O_0+z\mathcal O_1+O(z^2),
+ \qquad
+ S=S_0+zS_1+O(z^2),
+\]
+and multiply the three Laurent series.  Only the zeroth-order endpoint
+values can multiply \(G_{-2}\) into the \(z^{-2}\) coefficient.  The three
+ways to obtain \(z^{-1}\) give the displayed simple coefficient.
+Equation~\eqref{eq:observable-principal} follows from the rank-one parent
+coefficient.  A rank-one tensor is nonzero exactly when both of its
+factors are nonzero.
+\end{proof}
+
+Thus analytic frequency dependence in source insertion, reconstruction,
+or measurement changes the accompanying simple pole but cannot cancel the
+leading pole except by resonant source or observation annihilation.  The
+corollary after Theorem~\ref{thm:exterior-cutoff-pole} certifies
+nonannihilation for at least one local reconstructed metric/curvature
+observable.  It does not yet certify a particular strain or
+Newman--Penrose observable at \(\mathscr I^+\), nor a specified
+astrophysical source.
+
+\begin{theorem}[Real repeated-root waveform]\label{thm:real-detector-template}
+Write the certified member of a reflected pair as
+\[
+ \omega_n=-\Omega+i\gamma,
+ \qquad \gamma>0.
+\]
+The real form of an arbitrary isolated critical pair contribution is
+\begin{equation}\label{eq:real-detector-template}
+ \boxed{\;
+ h(t)=e^{-\gamma t}
+ \left[
+ (a_0+a_1t)\cos(\Omega t)
+ +(b_0+b_1t)\sin(\Omega t)
+ \right],
+ \;}
+\end{equation}
+with real coefficients \(a_j,b_j\).  If
+\[
+ Q=\partial_t^2+2\gamma\partial_t+(\gamma^2+\Omega^2),
+\]
+then
+\[
+ Q^2h=0,
+\]
+while \(Qh\ne0\) unless \(a_1=b_1=0\).  Thus the Jordan contribution is a
+repeated-root damped oscillation.
+\end{theorem}
+
+\begin{proof}
+A complex local contribution has the form
+\[
+ e^{(-\gamma-i\Omega)t}(A+Ct).
+\]
+Adding its reflected conjugate and resolving the real and imaginary parts
+of \(A\) and \(C\) gives \eqref{eq:real-detector-template}.  The
+characteristic polynomial of \(Q\) is
+\[
+ (\lambda+\gamma)^2+\Omega^2,
+\]
+so its two roots are \(-\gamma\pm i\Omega\).  Multiplication by \(t\)
+creates the length-two generalized solutions.  Hence \(Q^2\) annihilates
+the four-dimensional real span, while \(Q\) removes only the ordinary
+part and leaves an ordinary damped sinusoid when the generalized
+coefficient is nonzero.
+\end{proof}
+
+\begin{theorem}[Uniform divided-difference template]
+\label{thm:uniform-detector-template}
+Let two nearby resonances be separated by
+\[
+ \delta=\omega_m-\omega_0.
+\]
+Define
+\[
+ \Phi_0(t;\delta)=e^{i\omega_0t},
+ \qquad
+ \Phi_1(t;\delta)=
+ e^{i\omega_0t}\frac{e^{i\delta t}-1}{\delta},
+\]
+where \(\Phi_1(t;0)=it\,e^{i\omega_0t}\) by analytic continuation.  Every
+two-mode expression
+\[
+ r_0e^{i\omega_0t}+r_1e^{i(\omega_0+\delta)t}
+\]
+has the exact form
+\[
+ \boxed{\;
+ A\Phi_0+B\Phi_1,
+ \qquad
+ A=r_0+r_1,\quad B=\delta r_1.
+ \;}
+\]
+For a filtered confluence the physical coefficients \(A,B\) remain finite
+as \(\delta\to0\), even though \(r_0,r_1=O(\delta^{-1})\).  The limiting
+signal is
+\[
+ e^{i\omega_0t}\bigl[A(0)+iB(0)t\bigr].
+\]
+\end{theorem}
+
+\begin{proof}
+Substitution of \(A=r_0+r_1\) and \(B=\delta r_1\) gives the separated
+two-mode expression identically.  The apparent singularity at
+\(\delta=0\) is removable because
+\[
+ \frac{e^{i\delta t}-1}{\delta}\longrightarrow it.
+\]
+The confluent-projector theorem supplies the \(O(\delta^{-1})\) separated
+residues and the finite combined coefficients.
+\end{proof}
+
+The dimensionless crossover parameter is
+\[
+ \eta=\frac{|\delta|}{\gamma}
+ \simeq\frac{|\nu_nm|}{\gamma}.
+\]
+When \(\eta\ll1\), the separation is below the damping width and
+\(\Phi_1\simeq it\,e^{i\omega_0t}\) over the useful ringdown lifetime.
+When \(\eta=O(1)\), the divided-difference template is the regular
+crossover description.  When \(\eta\gg1\), the two simple modes are
+spectrally resolved.  These are local linewidth comparisons, not a
+detector-sensitivity theorem.
+
+\begin{proposition}[Finite norm of the Jordan component]
+\label{prop:jordan-finite-energy}
+For
+\[
+ g(t)=Ct\,e^{(-\gamma-i\Omega)t},
+ \qquad \gamma>0,
+\]
+one has
+\[
+ \boxed{\;
+ \int_0^\infty |g(t)|^2\,dt
+ =\frac{|C|^2}{4\gamma^3},
+ \qquad
+ \int_0^\infty |\dot g(t)|^2\,dt
+ =\frac{|C|^2(\gamma^2+\Omega^2)}{4\gamma^3}.
+ \;}
+\]
+Thus the isolated polynomial mode has finite integrated amplitude and
+finite derivative norm.
+\end{proposition}
+
+\begin{proof}
+Use
+\[
+ \int_0^\infty t^k e^{-2\gamma t}\,dt
+ =\frac{k!}{(2\gamma)^{k+1}},
+ \qquad k=0,1,2,
+\]
+and
+\[
+ \dot g=C\bigl[1-(\gamma+i\Omega)t\bigr]
+ e^{(-\gamma-i\Omega)t}.
+\]
+The constant and linear terms in the derivative norm cancel after
+integration, leaving the displayed result.
+\end{proof}
+
+\begin{remark}[Observational degeneracy and remaining bridge]
+Since
+\[
+ \partial_\omega e^{i\omega t}=it\,e^{i\omega t},
+\]
+the Jordan quadrature is tangent to changes in oscillation frequency and
+damping.  On a finite noisy interval it can also be covariant with two
+nearby ordinary modes or a change in ringdown start time.  The uniform
+template provides a well-conditioned parameterization, but no
+detectability or parameter-estimation claim is made here.
+
+A true asymptotic gravitational-wave statement requires analytic maps
+\[
+ S_{\rm phys}(\omega),\qquad
+ \mathcal O_{\mathscr I^+}(\omega)
+\]
+and separate proofs that
+\[
+ \widetilde u_nS_{\rm phys}(\omega_n)\ne0,
+ \qquad
+ \mathcal O_{\mathscr I^+}(\omega_n)u_n\ne0.
+\]
+It also requires the global causal contour control excluded in
+Section~\ref{sec:fredholm}.  Theorem~\ref{thm:observable-transfer} isolates
+these as the only source/observation annihilation gates for the principal
+local pole.
+\end{remark}
+
 \begin{theorem}[Spectral contact controls critical pole order]
 \label{thm:contact-order}
 Let
@@ -3425,6 +3703,9 @@ Spin-one local unit
 Fredholm promotion
 & Finite-interval rank-one radial Green pole and transparent-cut input
 & Exact reduction plus validated inputs\\
+Observable transfer
+& Analytic source/reconstruction maps and rank-one resonant overlaps
+& Exact conditional reduced-mode\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -3445,7 +3726,10 @@ filtration-breaking perturbation, a numerical value of \(\xi_n\), a
 threshold-uniform estimate for \(b/a^2\), a validated multi-QNM contour
 sum, a validated acceleration contour or numerical acceleration, an
 overtone EP2 tower, a global positive-metric or quantum no-go theorem, or
-a quantum positivity statement.  The polynomial
+a quantum positivity statement.  It also does not establish nonzero
+overlap for a specified asymptotic strain or Newman--Penrose observable,
+nonzero excitation by a specified astrophysical source, detector
+detectability, or parameter-estimation sensitivity.  The polynomial
 \(t e^{i\omega_nt}\) is proved only for the isolated local two-pole
 contour contribution.
 
@@ -3491,6 +3775,20 @@ velocity, acceleration, and projector motion among its triple, double, and
 simple coefficients.  For the isolated certified damped mode, the Jordan
 envelope peaks at \(t=1/\operatorname{Im}\omega_n\) and subsequently
 decays.
+Any analytic chain of source insertion, reconstruction, and observation
+carries the leading rank-one pole by its resonant values alone.  The
+critical pair therefore has the exact real repeated-root template
+\[
+ e^{-\gamma t}
+ \bigl[(a_0+a_1t)\cos\Omega t+(b_0+b_1t)\sin\Omega t\bigr],
+\]
+provided the source and observation overlaps are nonzero.  The associated
+divided-difference basis remains finite across the critical confluence and
+separates the Jordan-like, crossover, and resolved regimes by
+\(|\delta|/\gamma\).  The isolated polynomial component has finite
+integrated amplitude and derivative norm.  Proving the two overlaps for a
+specific null-infinity observable and physical source, and embedding the
+local contour in the global causal evolution, remain separate tasks.
 
 The physical mass deformation is filtration-preserving rather than a
 generic square-root unfolding.  In the two-parameter phase diagram, the

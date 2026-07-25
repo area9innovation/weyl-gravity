@@ -739,6 +739,129 @@ class Paper17ClaimMapTests(unittest.TestCase):
             "the Bach self-extension is nonsplit for every \\(\\ell\\ge2\\)"
         )
 
+    def test_observable_simple_coefficient_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"]["observable_transfer"].update(
+                {
+                    "simple_coefficient": (
+                        "O0*G_minus_1*S0+O1*G_minus_2*S0"
+                    )
+                }
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("observable-transfer declaration", result.stdout + result.stderr)
+
+    def test_observable_parent_sign_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"]["observable_transfer"].update(
+                {
+                    "parent_principal": (
+                        "nu*(O0*u) tensor (tilde_u*S0)"
+                        "/(4*alpha_W*alpha)"
+                    )
+                }
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("observable-transfer declaration", result.stdout + result.stderr)
+
+    def test_detector_oscillator_power_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "real_detector_normal_form"
+            ].update({"critical_equation": "Q*h=0"})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "real detector normal-form declaration",
+            result.stdout + result.stderr,
+        )
+
+    def test_divided_difference_sign_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "uniform_divided_difference_template"
+            ].update(
+                {
+                    "phi_1": (
+                        "exp(I*omega_0*t)"
+                        "*(1-exp(I*delta*t))/delta"
+                    )
+                }
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "uniform detector-template declaration",
+            result.stdout + result.stderr,
+        )
+
+    def test_detector_crossover_ratio_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "uniform_divided_difference_template"
+            ].update({"crossover_ratio": "eta=abs(delta)*gamma"})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "uniform detector-template declaration",
+            result.stdout + result.stderr,
+        )
+
+    def test_jordan_derivative_norm_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "jordan_integrated_norms"
+            ].update(
+                {
+                    "derivative_integral": (
+                        "abs(C)**2*(gamma**2+Omega**2)/(2*gamma**3)"
+                    )
+                }
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "Jordan integrated-norm declaration",
+            result.stdout + result.stderr,
+        )
+
+    def test_asymptotic_overlap_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected("the asymptotic strain overlap is nonzero")
+
+    def test_physical_source_overlap_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "an astrophysical source excites the adjoint QNM"
+        )
+
+    def test_detector_detectability_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected("detector detectability is established")
+
     def test_fail_closed_claim_flag_rejected(self) -> None:
         path = self.mutated_claims(
             lambda data: data["fail_closed_scope"].update(

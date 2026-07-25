@@ -846,6 +846,143 @@ def verify_spectral_acceleration_and_krein_jordan(claims: dict) -> None:
         fail("opposite-sign confluence declaration drift")
 
 
+def verify_detector_normal_form(claims: dict) -> None:
+    z = sp.symbols("z", nonzero=True)
+    O0, O1, G2, G1, S0, S1 = sp.symbols(
+        "O0 O1 G2 G1 S0 S1"
+    )
+    transfer = sp.expand(
+        (O0 + z * O1)
+        * (G2 / z**2 + G1 / z)
+        * (S0 + z * S1)
+    )
+    if sp.expand(transfer).coeff(z, -2) != O0 * G2 * S0:
+        fail("observable-transfer principal coefficient failed")
+    expected_simple = O0 * G1 * S0 + O1 * G2 * S0 + O0 * G2 * S1
+    if sp.expand(transfer).coeff(z, -1) != expected_simple:
+        fail("observable-transfer simple coefficient failed")
+
+    t = sp.symbols("t", real=True)
+    gamma = sp.symbols("gamma", positive=True)
+    Omega = sp.symbols("Omega", real=True)
+    a0, a1, b0, b1 = sp.symbols("a0 a1 b0 b1", real=True)
+    h = sp.exp(-gamma * t) * (
+        (a0 + a1 * t) * sp.cos(Omega * t)
+        + (b0 + b1 * t) * sp.sin(Omega * t)
+    )
+
+    def Q(expr: sp.Expr) -> sp.Expr:
+        return sp.simplify(
+            sp.diff(expr, t, 2)
+            + 2 * gamma * sp.diff(expr, t)
+            + (gamma**2 + Omega**2) * expr
+        )
+
+    qh = sp.simplify(sp.expand_trig(Q(h)))
+    if sp.simplify(sp.expand_trig(Q(qh))) != 0:
+        fail("repeated damped-oscillator equation failed")
+    sample_qh = sp.simplify(
+        qh.subs({a0: 0, a1: 1, b0: 0, b1: 0})
+    )
+    if sample_qh == 0:
+        fail("generalized detector mode incorrectly annihilated by Q")
+    ordinary = h.subs({a1: 0, b1: 0})
+    if sp.simplify(sp.expand_trig(Q(ordinary))) != 0:
+        fail("ordinary damped mode equation failed")
+
+    delta, omega0 = sp.symbols("delta omega0")
+    r0, r1 = sp.symbols("r0 r1")
+    phi0 = sp.exp(sp.I * omega0 * t)
+    phi1 = phi0 * (sp.exp(sp.I * delta * t) - 1) / delta
+    A = r0 + r1
+    B = delta * r1
+    separated = r0 * phi0 + r1 * sp.exp(sp.I * (omega0 + delta) * t)
+    if sp.simplify(A * phi0 + B * phi1 - separated) != 0:
+        fail("divided-difference detector identity failed")
+    if sp.simplify(
+        sp.limit(phi1, delta, 0) - sp.I * t * phi0
+    ) != 0:
+        fail("divided-difference critical limit failed")
+
+    C2 = sp.symbols("C2", positive=True)
+    amplitude_integral = sp.integrate(
+        C2 * t**2 * sp.exp(-2 * gamma * t), (t, 0, sp.oo)
+    )
+    if sp.simplify(amplitude_integral - C2 / (4 * gamma**3)) != 0:
+        fail("Jordan amplitude integral failed")
+    derivative_density = C2 * (
+        1 - 2 * gamma * t + (gamma**2 + Omega**2) * t**2
+    ) * sp.exp(-2 * gamma * t)
+    derivative_integral = sp.integrate(
+        derivative_density, (t, 0, sp.oo)
+    )
+    if sp.simplify(
+        derivative_integral
+        - C2 * (gamma**2 + Omega**2) / (4 * gamma**3)
+    ) != 0:
+        fail("Jordan derivative integral failed")
+
+    observable = claims["exact_identities"]["observable_transfer"]
+    if observable != {
+        "principal_coefficient": "O0*G_minus_2*S0",
+        "simple_coefficient": (
+            "O0*G_minus_1*S0"
+            "+O1*G_minus_2*S0"
+            "+O0*G_minus_2*S1"
+        ),
+        "parent_principal": (
+            "-nu*(O0*u) tensor (tilde_u*S0)"
+            "/(4*alpha_W*alpha)"
+        ),
+        "source_gate": "tilde_u*S0 != 0",
+        "observation_gate": "O0*u != 0",
+        "analytic_frequency_dependence_changes_leading_coefficient": False,
+    }:
+        fail("observable-transfer declaration drift")
+
+    real_form = claims["exact_identities"]["real_detector_normal_form"]
+    if real_form != {
+        "waveform": (
+            "exp(-gamma*t)*((a0+a1*t)*cos(Omega*t)"
+            "+(b0+b1*t)*sin(Omega*t))"
+        ),
+        "oscillator": (
+            "Q=partial_t**2+2*gamma*partial_t"
+            "+gamma**2+Omega**2"
+        ),
+        "critical_equation": "Q**2*h=0",
+        "generic_first_equation": "Q*h!=0",
+        "ordinary_equation": "Q*h_GR=0",
+    }:
+        fail("real detector normal-form declaration drift")
+
+    divided = claims["exact_identities"]["uniform_divided_difference_template"]
+    if divided != {
+        "phi_0": "exp(I*omega_0*t)",
+        "phi_1": (
+            "exp(I*omega_0*t)*(exp(I*delta*t)-1)/delta"
+        ),
+        "critical_phi_1": "I*t*exp(I*omega_0*t)",
+        "finite_amplitudes": ["A=r0+r1", "B=delta*r1"],
+        "critical_signal": "exp(I*omega_0*t)*(A0+I*B0*t)",
+        "crossover_ratio": "eta=abs(delta)/gamma",
+        "jordan_like": "eta<<1",
+        "resolved": "eta>>1",
+    }:
+        fail("uniform detector-template declaration drift")
+
+    norms = claims["exact_identities"]["jordan_integrated_norms"]
+    if norms != {
+        "component": "C*t*exp((-gamma-I*Omega)*t)",
+        "amplitude_integral": "abs(C)**2/(4*gamma**3)",
+        "derivative_integral": (
+            "abs(C)**2*(gamma**2+Omega**2)/(4*gamma**3)"
+        ),
+        "gamma_domain": "gamma>0",
+    }:
+        fail("Jordan integrated-norm declaration drift")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--paper", type=Path, default=DEFAULT_PAPER)
@@ -971,6 +1108,16 @@ def main() -> None:
         "Critical singularity of positive branch metrics",
         "Renormalized Krein limit",
         "Canonical pseudospectral scale",
+        "Analytic observable transfer and detector normal form",
+        "Observable transfer",
+        "\\mathcal H_{-2}=\\mathcal O_0G_{-2}S_0",
+        "Real repeated-root waveform",
+        "Q^2h=0",
+        "Uniform divided-difference template",
+        "\\Phi_1(t;0)=it\\,e^{i\\omega_0t}",
+        "Finite norm of the Jordan component",
+        "\\frac{|C|^2(\\gamma^2+\\Omega^2)}{4\\gamma^3}",
+        "Observational degeneracy and remaining bridge",
         "does not establish a causal spacetime resolvent",
     ]
     for phrase in required:
@@ -1000,6 +1147,11 @@ def main() -> None:
         "a validated multi-QNM acceleration contour has been computed",
         "a numerical QNM acceleration has been computed",
         "the Krein--Jordan theorem proves a global quantum no-go",
+        "the asymptotic strain overlap is nonzero",
+        "an astrophysical source excites the adjoint QNM",
+        "detector detectability is established",
+        "parameter-estimation sensitivity is established",
+        "the repeated-root template is the complete retarded waveform",
     ]
     for phrase in forbidden:
         if phrase in text:
@@ -1346,12 +1498,14 @@ def main() -> None:
     verify_mass_jost_and_confluence(claims)
     verify_spectral_velocity_and_contact_order(claims)
     verify_spectral_acceleration_and_krein_jordan(claims)
+    verify_detector_normal_form(claims)
 
     print("PASS paper/17-pure-weyl-schwarzschild-extension-structure.tex")
     print(
         "PASS exact cocycle, endpoint-compatible mass jet, filtered "
         "unfolding, spectral velocity and acceleration, contact-order, "
-        "Krein-Jordan, confluent metrics, and nilpotent root-space identities"
+        "Krein-Jordan, detector transfer, confluent metrics, and nilpotent "
+        "root-space identities"
     )
     print("PASS authority provenance and fail-closed claim boundary")
 

@@ -1,0 +1,51 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-paper17-detector-normal-form",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-paper17-detector-normal-form",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-paper17-detector-normal-form.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper17-detector-normal-form",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 1,
+    "objective": "Carry the certified rank-one double pole through arbitrary analytic source, reconstruction, and detector maps; derive the exact real repeated-root damped-sinusoid template and its ordinary-differential characterization; give the divided-difference template that remains regular across the filtered critical confluence; and prove the finite integrated amplitude and derivative norms of the Jordan component.",
+    "stop_condition": "Paper 17 proves the analytic observable-transfer Laurent formulas, the rank-one source-observer nonannihilation criterion, the real critical waveform and Q-squared characterization, the uniform divided-difference basis with finite confluent amplitudes, the linewidth crossover ratio, and the exact finite-energy integrals. The generated claim map, independent exact verifier, mutation tests, PDF, report, and tier receipt are updated, while asymptotic null-infinity overlap, physical-source overlap, full retarded contour deformation, detector detectability, and data-analysis sensitivity remain explicitly unproved.",
+    "current_gate": "analytic detector transfer and uniform near-critical waveform normal form",
+    "forbid": "no claim that a specific asymptotic strain or Newman-Penrose observable has certified nonzero overlap; no claim that an astrophysical source excites the adjoint mode; no global retarded inverse-Laplace deformation; no full detector waveform, detectability, parameter-estimation, instability, or quantum claim",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-paper17-spectral-acceleration-krein-jordan"
+    ],
+    "activates": [
+      "null-infinity observable-overlap certificate",
+      "physical-source adjoint-overlap certificate",
+      "near-critical ringdown-template data-analysis study"
+    ],
+    "allowed_paths": [
+      "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "paper/test_17_pure_weyl_extension_claim_map.py",
+      "reports/phase4-black-hole-paper17-detector-normal-form-2026-07-25.md",
+      "reports/PAPER17_DETECTOR_NORMAL_FORM_TIER_RECEIPT.json",
+      "planning/work-items/phase4-black-hole-paper17-detector-normal-form.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use exact Laurent multiplication for analytic source and observation maps, reflected-pair realification, exact annihilation by the repeated damped-oscillator polynomial, the divided-difference basis (exp(i delta t)-1)/delta, and exact Laplace integrals. Keep the theorem conditional on nonzero source and observable overlaps and distinguish the local isolated-contour template from a global causal waveform.",
+    "input_commit": "8782b9db75f916a92bd24066ed08dca69baaa27b",
+    "notes": [
+      "REDUCED-MODE",
+      "The observable-transfer theorem is exact for analytic source and observation maps.",
+      "The waveform is the isolated reflected resonance-pair contribution, not the complete retarded detector signal.",
+      "The divided-difference amplitudes remain finite at confluence; divergent separated residues are basis singularities.",
+      "The finite integrals establish bounded isolated-mode amplitude and schematic derivative flux only."
+    ]
+  },
+  "edges": []
+}

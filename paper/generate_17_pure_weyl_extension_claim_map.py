@@ -303,6 +303,57 @@ def payload() -> dict:
                 "observation_gate": "Lambda(u) != 0",
                 "polynomial_profile": "Einstein_QNM",
             },
+            "observable_transfer": {
+                "principal_coefficient": "O0*G_minus_2*S0",
+                "simple_coefficient": (
+                    "O0*G_minus_1*S0"
+                    "+O1*G_minus_2*S0"
+                    "+O0*G_minus_2*S1"
+                ),
+                "parent_principal": (
+                    "-nu*(O0*u) tensor (tilde_u*S0)"
+                    "/(4*alpha_W*alpha)"
+                ),
+                "source_gate": "tilde_u*S0 != 0",
+                "observation_gate": "O0*u != 0",
+                "analytic_frequency_dependence_changes_leading_coefficient": False,
+            },
+            "real_detector_normal_form": {
+                "waveform": (
+                    "exp(-gamma*t)*((a0+a1*t)*cos(Omega*t)"
+                    "+(b0+b1*t)*sin(Omega*t))"
+                ),
+                "oscillator": (
+                    "Q=partial_t**2+2*gamma*partial_t"
+                    "+gamma**2+Omega**2"
+                ),
+                "critical_equation": "Q**2*h=0",
+                "generic_first_equation": "Q*h!=0",
+                "ordinary_equation": "Q*h_GR=0",
+            },
+            "uniform_divided_difference_template": {
+                "phi_0": "exp(I*omega_0*t)",
+                "phi_1": (
+                    "exp(I*omega_0*t)"
+                    "*(exp(I*delta*t)-1)/delta"
+                ),
+                "critical_phi_1": "I*t*exp(I*omega_0*t)",
+                "finite_amplitudes": ["A=r0+r1", "B=delta*r1"],
+                "critical_signal": (
+                    "exp(I*omega_0*t)*(A0+I*B0*t)"
+                ),
+                "crossover_ratio": "eta=abs(delta)/gamma",
+                "jordan_like": "eta<<1",
+                "resolved": "eta>>1",
+            },
+            "jordan_integrated_norms": {
+                "component": "C*t*exp((-gamma-I*Omega)*t)",
+                "amplitude_integral": "abs(C)**2/(4*gamma**3)",
+                "derivative_integral": (
+                    "abs(C)**2*(gamma**2+Omega**2)/(4*gamma**3)"
+                ),
+                "gamma_domain": "gamma>0",
+            },
             "universal_critical_resonance": {
                 "critical_response": "R*A*R",
                 "double_coefficient": "beta/alpha**2*u tensor tilde_u",
@@ -528,6 +579,13 @@ def payload() -> dict:
             "parent_metric_green_mass_derivative_exact": True,
             "parent_double_and_simple_laurent_coefficients_exact": True,
             "parent_local_contour_selection_rule_exact": True,
+            "analytic_observable_transfer_exact": True,
+            "detector_rank_one_overlap_rule_exact": True,
+            "real_repeated_root_waveform_exact": True,
+            "repeated_damped_oscillator_equation_exact": True,
+            "uniform_divided_difference_template_exact": True,
+            "near_critical_linewidth_ratio_exact": True,
+            "jordan_integrated_norms_exact": True,
             "universal_critical_resonance_criterion_exact": True,
             "canonical_mass_tangent_class_exact": True,
             "canonical_simple_pole_with_frequency_derivative_exact": True,
@@ -571,6 +629,10 @@ def payload() -> dict:
             "validated_multi_qnm_acceleration_contour": False,
             "numerical_qnm_acceleration_computed": False,
             "global_positive_metric_no_go": False,
+            "asymptotic_strain_or_np_overlap_certified": False,
+            "physical_source_adjoint_overlap_certified": False,
+            "detector_detectability_certified": False,
+            "parameter_estimation_sensitivity_certified": False,
         },
     }
 

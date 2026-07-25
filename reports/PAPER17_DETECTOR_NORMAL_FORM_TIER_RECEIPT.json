@@ -1,0 +1,101 @@
+{
+  "schema": "tier-receipt-v1",
+  "result_id": "PAPER17_DETECTOR_NORMAL_FORM",
+  "timestamp_utc": "2026-07-25T08:38:47Z",
+  "input_commit": "8782b9db75f916a92bd24066ed08dca69baaa27b",
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "environment": {
+    "python": "3.12.13",
+    "sympy": "1.14.0",
+    "pdflatex": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian)"
+  },
+  "artifacts": {
+    "paper_tex": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "sha256": "9ce1ab4226b870fd2d20ef575f2a739a9f85d35a4c9a9e35139891b8806a61b7"
+    },
+    "paper_pdf": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "sha256": "587e8a7a63915f83dd502d67d0accf48c0303a75b5bb92a013c9f00045cd84ad",
+      "pages": 45,
+      "bytes": 457861
+    },
+    "claim_map": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "sha256": "814aaba69202b65e814b92a5f92eb718f44e303151345b4bf3d78560377cc885"
+    },
+    "generator": {
+      "path": "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "sha256": "7f56bb5677365f1563b42cfecf20c4eceedf29abffdd0a4463305ed39ee7ccd1"
+    },
+    "verifier": {
+      "path": "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "sha256": "7d7d91df33ac9a42b986de4183b193cf3a61169cb93d12b938b8c01f3ba1bc26"
+    },
+    "tests": {
+      "path": "paper/test_17_pure_weyl_extension_claim_map.py",
+      "sha256": "486e1bfdbc4b7f281a12bb7e45541d2933045ecd3272bae2651a33d04265d95d"
+    },
+    "report": {
+      "path": "reports/phase4-black-hole-paper17-detector-normal-form-2026-07-25.md",
+      "sha256": "131e4ad0a6e1fba03668ce2edc7d3c19a5bded81af89fb65224e8cb5ef42fbba"
+    },
+    "work_item": {
+      "path": "planning/work-items/phase4-black-hole-paper17-detector-normal-form.json",
+      "sha256": "1a921471df063fafda5011016f9a58d21a5040fe4788e1a0cedd15c818b0b770"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "two-pass pdflatex compilation with no undefined references or overfull boxes",
+        "Python bytecode compilation",
+        "JSON parse and deterministic claim-map regeneration",
+        "scoped git diff --check",
+        "visual inspection of detector-normal-form pages 30 through 32",
+        "receipt artifact hash audit"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "checks": [
+        "67 regression and mutation tests in 66.190 seconds",
+        "independent analytic observable-transfer Laurent multiplication",
+        "independent repeated damped-oscillator verification",
+        "independent divided-difference identity and critical limit",
+        "independent symbolic integrated-norm verification",
+        "nine new fail-closed mutations for coefficients, signs, oscillator order, confluence, norms, and physical promotions"
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "No upstream operator, content-addressed authority, certificate schema, or validated numerical input changed."
+    },
+    "tier_3": {
+      "status": "PASS",
+      "checks": [
+        "python3 -m unittest discover: 149 tests passed in 1.26 seconds"
+      ]
+    }
+  },
+  "claim_boundary": {
+    "analytic_observable_transfer_exact": true,
+    "rank_one_source_observer_rule_exact": true,
+    "real_repeated_root_waveform_exact": true,
+    "repeated_damped_oscillator_equation_exact": true,
+    "uniform_divided_difference_template_exact": true,
+    "near_critical_linewidth_ratio_exact": true,
+    "jordan_integrated_norms_exact": true,
+    "asymptotic_strain_or_np_overlap_certified": false,
+    "physical_source_adjoint_overlap_certified": false,
+    "global_retarded_inverse_laplace": false,
+    "complete_detector_waveform": false,
+    "detector_detectability": false,
+    "parameter_estimation_sensitivity": false,
+    "time_domain_instability": false,
+    "quantum_statement": false
+  }
+}
