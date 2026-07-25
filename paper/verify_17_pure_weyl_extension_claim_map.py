@@ -67,6 +67,20 @@ def verify_cocycle(claims: dict) -> None:
     if sp.simplify(4 * omega**2 * slope + I * omega / 2) != 0:
         fail("forced equivalence-gauge constant matching failed")
 
+    q_minus_one = sp.sympify(
+        claims["exact_identities"]["threshold_static_exactness"]["q_minus_one"],
+        locals={"I": I, "r": r},
+    )
+    U0 = sp.simplify(U - omega**2)
+    K0q = D(D(D(q_minus_one))) + 4 * U0 * D(q_minus_one)
+    K0q += 2 * D(U0) * q_minus_one
+    threshold_expansion = K0q / omega
+    threshold_expansion += omega * (4 * D(q_minus_one) + I * f / 2)
+    if sp.cancel(cocycle - threshold_expansion) != 0:
+        fail("threshold static-exact cocycle decomposition failed")
+    if sp.cancel(sp.limit(omega * cocycle, omega, 0) - K0q) != 0:
+        fail("threshold cocycle residue identity failed")
+
 
 def verify_commutator() -> None:
     x = sp.symbols("x")
@@ -90,6 +104,166 @@ def verify_commutator() -> None:
     ) * y / 2
     if sp.simplify(on_kernel - expected) != 0:
         fail("triangular-gauge commutator identity failed")
+
+    def Q_direct(expr: sp.Expr) -> sp.Expr:
+        return 2 * q * sp.diff(expr, x) - sp.diff(q, x) * expr
+
+    direct = sp.expand(L(Q_direct(y)) - Q_direct(L(y)))
+    direct = direct.subs(sp.diff(y, x, 2), -U * y)
+    direct = direct.subs(
+        sp.diff(y, x, 3), -sp.diff(U, x) * y - U * sp.diff(y, x)
+    )
+    direct_expected = -(
+        sp.diff(q, x, 3) + 4 * U * sp.diff(q, x) + 2 * sp.diff(U, x) * q
+    ) * y
+    if sp.simplify(direct - direct_expected) != 0:
+        fail("direct field-redefinition factor-of-two identity failed")
+
+
+def verify_mass_jost_and_confluence(claims: dict) -> None:
+    omega, m, sigma, nu, t = sp.symbols(
+        "omega m sigma nu t", nonzero=True
+    )
+    I = sp.I
+
+    kprime = -1 / (2 * omega)
+    rho_prime = sp.simplify(sigma * I * (2 * kprime + 1 / omega))
+    if rho_prime != 0:
+        fail("Coulomb exponent mass-derivative cancellation failed")
+    mass_phase_slope = -sigma * I / (2 * omega)
+    bach_scale = I * omega / 2
+    if sp.simplify(bach_scale * mass_phase_slope - sigma / 4) != 0:
+        fail("moving massive phase and rational-gauge slope mismatch")
+
+    z, a, b, c, d = sp.symbols("z a b c d")
+    T0 = sp.Matrix([[z, -1], [0, z]])
+    perturbation = sp.Matrix([[a, b], [c, d]])
+    determinant = sp.expand((T0 + m * perturbation).det())
+    leading = z**2 + m * (a + d) * z + m * c
+    if sp.expand(determinant - leading - m**2 * (a * d - b * c)) != 0:
+        fail("generic-versus-filtered determinant expansion failed")
+
+    S = sp.Matrix([[1, 1], [0, m]])
+    P0 = sp.simplify(S * sp.diag(1, 0) * S.inv())
+    Pm = sp.simplify(S * sp.diag(0, 1) * S.inv())
+    if P0 != sp.Matrix([[1, -1 / m], [0, 0]]):
+        fail("massless confluent projector identity failed")
+    if Pm != sp.Matrix([[0, 1 / m], [0, 1]]):
+        fail("massive confluent projector identity failed")
+    N = sp.Matrix([[0, 1], [0, 0]])
+    if sp.simplify(m * P0).applyfunc(lambda x: sp.limit(x, m, 0)) != -N:
+        fail("massless projector residue failed")
+    if sp.simplify(m * Pm).applyfunc(lambda x: sp.limit(x, m, 0)) != N:
+        fail("massive projector residue failed")
+
+    C = sp.simplify(S * sp.diag(1, -1) * S.inv())
+    if C != sp.Matrix([[1, -2 / m], [0, -1]]):
+        fail("confluent branch involution identity failed")
+    if (m * C).applyfunc(lambda x: sp.limit(x, m, 0)) != -2 * N:
+        fail("confluent involution residue failed")
+
+    J = sp.simplify(S.inv().T * sp.diag(1, -1) * S.inv())
+    if J != sp.Matrix([[1, -1 / m], [-1 / m, 0]]):
+        fail("confluent Krein form identity failed")
+    H = sp.simplify(J * C)
+    if H != sp.Matrix([[1, -1 / m], [-1 / m, 2 / m**2]]):
+        fail("singular positive C-metric identity failed")
+    if (m * J).applyfunc(lambda x: sp.limit(x, m, 0)) != sp.Matrix(
+        [[0, -1], [-1, 0]]
+    ):
+        fail("renormalized hyperbolic Krein limit failed")
+    if (m**2 * H).applyfunc(lambda x: sp.limit(x, m, 0)) != sp.Matrix(
+        [[0, 0], [0, 2]]
+    ):
+        fail("rank-one positive-metric limit failed")
+
+    contour_quotient = (
+        sp.exp(I * (omega + nu * m) * t) - sp.exp(I * omega * t)
+    ) / m
+    if sp.simplify(
+        sp.limit(contour_quotient, m, 0)
+        - I * nu * t * sp.exp(I * omega * t)
+    ) != 0:
+        fail("local two-pole contour Jordan limit failed")
+
+    e11, e12, e21, e22, a11, a12, a21, a22 = sp.symbols(
+        "e11 e12 e21 e22 a11 a12 a21 a22"
+    )
+    E = sp.Matrix([[e11, e12], [e21, e22]])
+    A = sp.Matrix([[a11, a12], [a21, a22]])
+    resolvent = (E + m * A).inv()
+    mass_derivative = resolvent.diff(m).subs(m, 0)
+    expected_derivative = -E.inv() * A * E.inv()
+    if sp.simplify(mass_derivative - expected_derivative) != sp.zeros(2):
+        fail("parent inverse mass-derivative identity failed")
+    secant = sp.simplify(
+        (E.inv() - (E + m * A).inv()) / m
+        - E.inv() * A * (E + m * A).inv()
+    )
+    if secant != sp.zeros(2):
+        fail("finite-mass noncommutative secant identity failed")
+    second_derivative = resolvent.diff(m, 2).subs(m, 0)
+    expected_second = 2 * E.inv() * A * E.inv() * A * E.inv()
+    if sp.simplify(second_derivative - expected_second) != sp.zeros(2):
+        fail("second critical-jet derivative identity failed")
+
+    w, w0, P, Pdot = sp.symbols("w w0 P Pdot")
+    pole_family = (P + m * Pdot) / (w - w0 - nu * m)
+    pole_derivative = sp.diff(pole_family, m).subs(m, 0)
+    expected_pole_derivative = (
+        nu * P / (w - w0) ** 2 + Pdot / (w - w0)
+    )
+    if sp.simplify(pole_derivative - expected_pole_derivative) != 0:
+        fail("massive-pole Laurent derivative identity failed")
+
+    zeta = sp.symbols("zeta")
+    matrix_symbols = sp.symbols(
+        "p11 p12 p21 p22 h11 h12 h21 h22 "
+        "a011 a012 a021 a022 a111 a112 a121 a122"
+    )
+    (
+        p11,
+        p12,
+        p21,
+        p22,
+        h11,
+        h12,
+        h21,
+        h22,
+        a011,
+        a012,
+        a021,
+        a022,
+        a111,
+        a112,
+        a121,
+        a122,
+    ) = matrix_symbols
+    Pmtrx = sp.Matrix([[p11, p12], [p21, p22]])
+    Hmtrx = sp.Matrix([[h11, h12], [h21, h22]])
+    A0mtrx = sp.Matrix([[a011, a012], [a021, a022]])
+    A1mtrx = sp.Matrix([[a111, a112], [a121, a122]])
+    scaled_critical = sp.expand(
+        zeta**2
+        * (Pmtrx / zeta + Hmtrx)
+        * (A0mtrx + zeta * A1mtrx)
+        * (Pmtrx / zeta + Hmtrx)
+    )
+    double_coefficient = scaled_critical.subs(zeta, 0)
+    simple_coefficient = scaled_critical.diff(zeta).subs(zeta, 0)
+    if sp.simplify(double_coefficient - Pmtrx * A0mtrx * Pmtrx) != sp.zeros(2):
+        fail("canonical critical double coefficient failed")
+    expected_simple = (
+        Pmtrx * A0mtrx * Hmtrx
+        + Hmtrx * A0mtrx * Pmtrx
+        + Pmtrx * A1mtrx * Pmtrx
+    )
+    if sp.simplify(simple_coefficient - expected_simple) != sp.zeros(2):
+        fail("canonical simple-pole frequency-derivative term failed")
+
+    root = claims["exact_identities"]["root_polarization"]
+    if root["principal_coefficient_square"] != "0":
+        fail("nilpotent principal coefficient declaration drift")
 
 
 def verify_period_matrix(claims: dict) -> None:
@@ -133,6 +307,9 @@ def main() -> None:
 
     required = [
         "Mass-direction normal form",
+        "Static exactness and the threshold lattice",
+        "\\operatorname*{Res}_{\\omega=0}\\mathcal I_{\\rm Bach}",
+        "Bulk class versus spectral frame",
         "\\mathcal I_{\\rm Bach}",
         "\\mathcal K_{U_2}q+\\frac{i\\omega}{2}f",
         "Explicit triangular gauge",
@@ -153,10 +330,38 @@ def main() -> None:
         "Exact local critical-mass-jet identification",
         "[\\mathcal I_{\\rm mass}]=[f]",
         "m=\\frac{i\\omega}{2}\\tau",
-        "No bounded rational mass-equivalence gauge",
-        "\\widehat Q=-2Q(q)",
-        "Finite-cut boundary transgression",
-        "remains to be computed or",
+        "Forced moving-phase gauge",
+        "Q_q=2qD-D(q)",
+        "Coulomb cancellation and differentiated Jost classes",
+        "\\rho_\\sigma'(0)=0",
+        "Critical-mass Evans derivative and QNM velocity",
+        "\\frac{2i}{\\omega_n}\\kappa_n\\ne0",
+        "Reflected EP2 pair",
+        "\\omega_n^\\sharp",
+        "Boundary transgression as an audit",
+        "Universal critical resonance and the covariant parent",
+        "Universal critical-resonance criterion",
+        "C_{-2}=-\\nu_nP_n",
+        "Canonical simple pole and tangent state",
+        "P_nA_n'P_n",
+        "[-H_ng_n]",
+        "Augmented QNM Hellmann--Feynman formula",
+        "-\\frac{\\partial_ma}{\\partial_\\omega a}",
+        "[\\dot u_n]\\in D/\\C u_n",
+        "exact finite-mass secant identity",
+        "Higher critical jets",
+        "Critical mass derivative of the metric Green operator",
+        "G_{-2}=-\\frac{\\nu_n}{4\\alpha_{\\rm W}}P_n",
+        "Isolated parent-resonance contribution",
+        "Einstein-shaped",
+        "Generic versus filtration-preserving splitting",
+        "Filtered critical-mass unfolding normal form",
+        "Root-space polarization and nilpotent pole",
+        "R_{-2}^2=0",
+        "Confluent projectors and local contour",
+        "Critical singularity of positive branch metrics",
+        "Renormalized Krein limit",
+        "Canonical pseudospectral scale",
         "does not establish a causal spacetime resolvent",
     ]
     for phrase in required:
@@ -172,8 +377,11 @@ def main() -> None:
         "the complete complex reducibility locus is known",
         "time-domain stability is established",
         "quantum unitarity is established",
-        "the physical massive QNM slope is certified",
         "the endpoint transgression vanishes",
+        "the off-resonance normalization function \\(h(\\omega)\\) vanishes",
+        "the physical mass deformation is a miniversal unfolding",
+        "the local two-pole contour is the full retarded solution",
+        "the projected metric Green coefficient is nilpotent",
     ]
     for phrase in forbidden:
         if phrase in text:
@@ -298,15 +506,25 @@ def main() -> None:
     verify_cocycle(claims)
     verify_commutator()
     verify_period_matrix(claims)
+    verify_mass_jost_and_confluence(claims)
 
     root = claims["exact_identities"]["generalized_root"]
     if root["carrier_quotient"] != "-a1/b0":
         fail("generalized root carrier quotient identity failed")
+    triangular = claims["exact_identities"]["triangular_gauge"]
+    if triangular != {
+        "operator": "q*D - D(q)/2",
+        "commutator_on_kernel": "-K_U(q)/2",
+        "direct_field_gauge": "Q_q=2*q*D-D(q)",
+        "direct_commutator_on_kernel": "-K_U(q)",
+    }:
+        fail("triangular gauge factor normalization drift")
     resonant = claims["exact_identities"]["resonant_evaluation"]
     if resonant != {
         "selector": "b0/a1",
         "normalized_overlap": "beta/alpha",
         "resonance_velocity": "-kappa",
+        "physical_mass_velocity": "2*I*kappa/omega",
         "carrier_quotient": "-1/kappa",
         "fredholm_principal_coefficient": "-kappa/alpha",
     }:
@@ -317,17 +535,110 @@ def main() -> None:
         "mass_cocycle_class": "[f]",
         "bach_to_mass_class": "I*omega/2",
         "parameter_relation": "m = I*omega*tau/2",
+        "coulomb_exponent": "sigma*I*(2*k+m/k)",
+        "coulomb_exponent_mass_derivative_at_zero": "0",
+        "evans_derivative_at_qnm": "b_B=I*omega*partial_m(a)/2",
+        "qnm_velocity": "2*I*kappa/omega",
     }:
         fail("critical mass-jet declaration drift")
     transgression = claims["exact_identities"]["boundary_transgression"]
     if transgression != {
         "base_gauge": "Q(q)=q*D-D(q)/2",
-        "commutator_gauge": "Qhat=-2*Q(q)",
-        "bulk_identity": "K_Bach-I*omega*K_mass/2=[L,Qhat]",
-        "finite_cut_term": "[W(tilde_u,Qhat*u)]_xminus^xplus",
-        "physical_endpoint_target": "[W(tilde_u,Qhat*u)]_H^I",
+        "field_redefinition_gauge": "Q_q=2*Q(q)",
+        "bulk_identity": "K_Bach-I*omega*K_mass/2=-[L,Q_q]",
+        "finite_cut_term": "-[W(tilde_u,Q_q*u)]_xminus^xplus",
+        "qnm_endpoint_effect": "h(omega)*a(omega)",
     }:
         fail("boundary-transgression normalization drift")
+    unfolding = claims["exact_identities"]["filtered_unfolding"]
+    if unfolding != {
+        "normal_form": [["z", "-1"], ["0", "z-mu"]],
+        "generic_determinant_leading": "z**2+m*(a+d)*z+m*c",
+        "generic_split": "sqrt(m) if c != 0",
+        "filtered_split": "mu=dz_domega*nu*m+O(m**2)",
+        "projector_scale": "1/abs(m)",
+        "positive_metric_condition_scale": "1/abs(m)**2",
+        "pseudospectral_radius": "sqrt(epsilon)",
+    }:
+        fail("filtered unfolding declaration drift")
+    confluent = claims["exact_identities"]["confluent_limits"]
+    if confluent != {
+        "m_times_C": "-2*N",
+        "tau_times_C": "4*I*N/omega",
+        "m_times_J": [["0", "-1"], ["-1", "0"]],
+        "m2_times_H": [["0", "0"], ["0", "2"]],
+        "local_contour": "exp(I*omega*t)*(I+I*nu*t*N)",
+    }:
+        fail("confluent limit declaration drift")
+    parent = claims["exact_identities"]["parent_mass_derivative"]
+    if parent != {
+        "metric_green": "-partial_m(E_m_inverse)/(4*alpha_W)",
+        "finite_mass_secant": "(E_inverse-E_m_inverse)/m",
+        "double_coefficient": "-nu*P/(4*alpha_W)",
+        "simple_coefficient": "-Pdot/(4*alpha_W)",
+        "overlap_velocity": "nu=-beta/alpha",
+        "selector_coefficient": "-I*kappa*P/(2*alpha_W*omega)",
+        "local_contour": (
+            "-exp(I*omega*t)*(Pdot+I*t*nu*P)/(4*alpha_W)"
+        ),
+    }:
+        fail("parent mass-derivative declaration drift")
+    universal = claims["exact_identities"]["universal_critical_resonance"]
+    if universal != {
+        "critical_response": "R*A*R",
+        "double_coefficient": "beta/alpha**2*u tensor tilde_u",
+        "double_pole_iff": "beta != 0",
+        "mass_velocity": "-beta/alpha",
+        "canonical_tangent_class": "[u_dot] in D/(C*u)",
+        "projected_coefficient_intrinsically_nilpotent": False,
+        "full_extension_coefficient_nilpotent": True,
+    }:
+        fail("universal critical-resonance declaration drift")
+    threshold = claims["exact_identities"]["threshold_static_exactness"]
+    if threshold != {
+        "q_minus_one": "-I*(15*r + 13 + 12/r + 9/r**2)/120",
+        "symmetric_square_decomposition": "K_U=K_U0+4*omega**2*D",
+        "cocycle_residue": "K_U0(q_minus_one)",
+        "renormalized_class_limit": "I*[f]/2",
+        "continuous_cokernel_identification_required": True,
+    }:
+        fail("threshold static-exactness declaration drift")
+    simple_pole = claims["exact_identities"]["canonical_simple_pole"]
+    if simple_pole != {
+        "double_coefficient": "P*A0*P=-nu*P",
+        "simple_coefficient": "P*A0*H+H*A0*P+P*A1*P=-Pdot",
+        "frequency_derivative_term": "P*A1*P",
+        "tangent_class": "-H*(A0+nu*L1)*u mod C*u",
+        "left_tangent_class": "-tilde_u*(A0+nu*L1)*H mod C*tilde_u",
+    }:
+        fail("canonical simple-pole declaration drift")
+    hellmann = claims["exact_identities"]["augmented_hellmann_feynman"]
+    if hellmann != {
+        "evans_parameter_derivative": "integral(yminus*Qp*yplus)+B_p",
+        "velocity": "-a_m/a_omega=-beta/alpha",
+        "mass_potential_derivative": "-f",
+        "frequency_potential_derivative": "2*omega",
+        "pairing": "bilinear_augmented_qnm",
+    }:
+        fail("augmented Hellmann-Feynman declaration drift")
+    reflection = claims["exact_identities"]["reflection_pair"]
+    if reflection != {
+        "frequency": "-conjugate(omega)",
+        "velocity": "-conjugate(nu)",
+        "selector": "-conjugate(kappa)",
+        "simple_residue": "-conjugate(P)",
+        "double_coefficient": "conjugate(C_minus_2)",
+        "simple_coefficient": "-conjugate(C_minus_1)",
+    }:
+        fail("reflection-pair declaration drift")
+    higher = claims["exact_identities"]["higher_critical_jets"]
+    if higher != {
+        "operator": "R*(A*R)**p",
+        "mass_derivative": "(-1)**p*partial_m**p(R_m)/factorial(p)",
+        "pole_order_if_beta_nonzero": "p+1",
+        "leading_coefficient": "beta**p/alpha**(p+1)*u tensor tilde_u",
+    }:
+        fail("higher critical-jet declaration drift")
     green = claims["exact_identities"]["green_principal_coefficient"]
     if green != {
         "connection": "-b0/a1**2",
@@ -338,8 +649,8 @@ def main() -> None:
 
     print("PASS paper/17-pure-weyl-schwarzschild-extension-structure.tex")
     print(
-        "PASS exact cocycle, mass jet, forced gauge slope, boundary "
-        "transgression, period matrix, and root-chain identities"
+        "PASS exact cocycle, endpoint-compatible mass jet, filtered "
+        "unfolding, confluent metrics, and nilpotent root-space identities"
     )
     print("PASS authority provenance and fail-closed claim boundary")
 

@@ -1,0 +1,49 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-paper17-jost-mass-slope",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-paper17-jost-mass-slope",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-paper17-jost-mass-slope.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper17-jost-mass-slope",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 1,
+    "objective": "Promote the local critical-mass bridge in Paper 17 to an endpoint-compatible differentiated-Jost theorem, a nonzero physical critical-mass QNM velocity, and the exact confluent residue of the finite-mass branch involution.",
+    "stop_condition": "Paper 17 uses the direct field-redefinition gauge Q_q=2qD-D(q), verifies [L,Q_q]|ker L=-K_U(q), proves cancellation of the first mass derivative of the Coulomb exponent, proves b_B(omega)=i omega partial_m a(omega,0)/2+h(omega)a(omega), and hence proves d omega_n/dm=2i kappa_n/omega_n is nonzero at the certified simple QNM. It also proves m C_m tends to -2N and records the tau-normalized residue. The generated claim map, independent verifier, mutation tests, PDF, report, and tier receipt are updated.",
+    "current_gate": "endpoint-compatible critical-mass Jost jet and confluent branch observable",
+    "forbid": "no unknown normalization function h set to zero away from resonance; no compactly cut-off radial pole called an uncut causal spacetime resolvent; no inverse-Laplace or t exp(i omega t) theorem; no time-domain stability, particle, ghost, quantum, or unitarity promotion",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-paper17-exterior-mass-bridge"
+    ],
+    "activates": [
+      "direct massive-spin-two QNM continuation as an independent numerical audit of the exact slope identity"
+    ],
+    "allowed_paths": [
+      "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "paper/test_17_pure_weyl_extension_claim_map.py",
+      "reports/phase4-black-hole-paper17-jost-mass-slope-2026-07-25.md",
+      "reports/PAPER17_JOST_MASS_SLOPE_TIER_RECEIPT.json",
+      "planning/work-items/phase4-black-hole-paper17-jost-mass-slope.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use the exact cocycle primitive, the critical massive Regge-Wheeler family L_m=L-mf, analytic horizon/infinity Jost germs, the simple certified QNM, and the nonzero intrinsic selector. Preserve the distinction between equality at the zero divisor and the off-divisor analytic normalization term h(omega)a(omega).",
+    "input_commit": "ed6a38bf0e5c268102b2fa3c7465f2b8988915d3",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "The physical mass parameter m has dimensions of squared mass.",
+      "The Jost normalization function h remains unspecified away from the resonance.",
+      "The causal spacetime and retarded time-domain claims remain open."
+    ]
+  },
+  "edges": []
+}

@@ -53,9 +53,16 @@ For axial \(\ell=2\) we prove the exact normal form
 The class in brackets is exactly the transverse-traceless critical
 spin-two mass jet.  Thus the local parameter relation is
 \(m=(i\omega/2)\tau\), modulo rational triangular gauge.  The required
-gauge grows linearly at infinity; an explicit boundary transgression
-therefore remains before the globally normalized Jost slopes can be
-identified.
+gauge grows linearly at infinity, precisely matching the derivative of the
+moving massive Jost phase.  The long-range Coulomb tail cancels the
+apparent logarithmic phase derivative, so the gauge preserves the
+differentiated Jost classes modulo scalar normalization.
+
+At the covariant parent-operator level, the pure-Weyl metric Green
+function is exactly the first mass derivative of the Einstein--Weyl
+spin-two resolvent.  This determines both leading Laurent coefficients and
+the isolated-resonance time contribution directly from the massive QNM
+velocity and projector derivative.
 
 At a simple spin-two quasinormal frequency the complete connection admits
 two possible local Smith types.  A validated projective Evans calculation
@@ -64,11 +71,15 @@ The geometric root vector is Einstein, whereas its generalized root vector
 has nonzero projection to the Ricci-carrier quotient.  We further show that
 the compact-source, compact-observation outgoing Green operator on the
 Schwarzschild exterior has a nonzero rank-one pole of order two at this
-frequency.
+frequency.  The same selector is the nonzero critical-mass velocity of the
+massive spin-two QNM.  The resulting transverse confluence has projectors
+of size \(m^{-1}\), positive branch metrics of condition number \(m^{-2}\),
+a local contour limit with a Jordan polynomial, and a hyperbolic
+renormalized Krein form.
 
-Promotion to a global physical resolvent and to a time-domain generalized
-ringdown term requires a separate analytic Fredholm realization, weighted
-endpoint domains, and bounded metric reconstruction.
+Promotion to a global physical resolvent and to a full retarded generalized
+ringdown expansion requires a separate analytic Fredholm realization,
+weighted endpoint domains, and bounded metric reconstruction.
 \end{abstract}
 
 \section{Introduction and main results}
@@ -93,7 +104,7 @@ differential field.  The two spin-two layers therefore share scalar
 characteristics without defining two rationally separable radial
 branches.
 
-This paper establishes four central results.
+This paper establishes six central results.
 \begin{enumerate}
 \item The repeated spin-two block is a non-split Regge--Wheeler
   self-extension, realized exactly as a parameter jet.
@@ -103,13 +114,21 @@ This paper establishes four central results.
     =\frac{i\omega}{2}\left[1-\frac2r\right].
   \]
 \item The class \([1-2/r]\) is exactly the transverse-traceless critical
-  mass jet.  The local equivalence gauge has forced linear growth at
-  infinity, and its failure to preserve Jost frames is an explicit
-  boundary Wronskian.
+  mass jet.  Its linearly growing equivalence gauge is endpoint-compatible:
+  the Coulomb tail cancels the apparent logarithmic derivative of the
+  massive Jost phase.
 \item At a certified damped Schwarzschild quasinormal frequency the
   connection is defective.  The associated generalized root vector has a
   nonzero carrier quotient, and the exterior cut-off outgoing Green
   operator has a genuine rank-one double pole.
+\item The selector equals the normalized critical-mass QNM velocity and is
+  nonzero.  The finite-mass pair is a transverse unfolding of the EP2;
+  its singular projectors, local two-pole contour, positive metrics, and
+  Krein form have exact confluent limits.
+\item The covariant pure-Weyl metric Green function is the mass derivative
+  of the massive spin-two resolvent.  Its double coefficient is controlled
+  by QNM motion, its simple coefficient by projector motion, and its local
+  polynomial signal obeys an exact rank-one excitation/observation rule.
 \end{enumerate}
 
 The third result is stronger than a statement about a finite connection
@@ -134,9 +153,9 @@ Non-split spin-two extension
 Cocycle and local critical-mass normal form
 & Exact substitution in \(\C(r,\omega)\)
 & Exact for \(\omega\ne0\)\\
-Endpoint normalization of the mass comparison
-& Explicit horizon/infinity Wronskian transgression
-& Open\\
+Endpoint-compatible mass comparison
+& Moving massive/Coulomb Jost germs and analytic normalization
+& Exact at the simple QNM\\
 Defective physical specialization
 & Winding-one contour, local selector, spin-one unit
 & Validated theorem\\
@@ -149,9 +168,15 @@ Exterior cut-off outgoing Green double pole
 Causal spacetime pole and generalized ringdown
 & Global weighted Fredholm and contour theory
 & Not claimed\\
-Physical Einstein--Weyl mass identification
-& Finite-mass cocycle and endpoint normalization
-& Open\\
+Critical-mass unfolding and QNM velocity
+& Endpoint-compatible jet and nonzero certified selector
+& Exact/validated theorem\\
+Parent mass-derivative Green identity
+& Fixed-domain parent inverse and analytic massive QNM branch
+& Exact operator theorem\\
+Local two-pole contour limit
+& Analytic normal form and residue calculus
+& Exact local theorem\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -370,11 +395,52 @@ formula.  The quotient identity follows immediately.  If \([f]=0\), then
 \([\mathcal I_{\rm Bach}]=0\), which would split the extension.
 \end{proof}
 
-\begin{remark}[Threshold scope]
-The displayed \(1/\omega\) singularity of
-\(\mathcal I_{\rm Bach}\) is cohomologically removable: its intrinsic
-class has the representative \((i\omega/2)f\).  The removing gauge
-\(Q(2q)\), however, is itself \(O(\omega^{-1})\).  The theorem therefore
+\begin{proposition}[Static exactness and the threshold lattice]
+\label{prop:threshold-lattice}
+Write
+\[
+ q(r,\omega)=\frac{q_{-1}(r)}{\omega},
+ \qquad
+ q_{-1}(r)=
+ -\frac{i}{120}
+ \left(15r+13+\frac{12}{r}+\frac9{r^2}\right),
+\]
+and \(U_2(\omega)=U_{2,0}+\omega^2\).  Then
+\[
+ \mathcal K_{U_2}=\mathcal K_{U_{2,0}}+4\omega^2D
+\]
+and
+\[
+ \boxed{\;
+ \mathcal I_{\rm Bach}
+ =
+ \frac1\omega\mathcal K_{U_{2,0}}q_{-1}
+ +\omega\left(4Dq_{-1}+\frac{i}{2}f\right).
+ \;}
+\]
+In particular,
+\[
+ \operatorname*{Res}_{\omega=0}\mathcal I_{\rm Bach}
+ =\mathcal K_{U_{2,0}}q_{-1}.
+\]
+Thus the entire \(1/\omega\) part is already exact for the static
+symmetric-square operator.  If the projective cokernels are identified
+continuously at threshold, then
+\[
+ \boxed{\;
+ \lim_{\omega\to0}
+ \frac{[\mathcal I_{\rm Bach}]}{\omega}
+ =\frac{i}{2}[f].
+ \;}
+\]
+\end{proposition}
+
+\begin{remark}[Bulk class versus spectral frame]
+The intrinsic extension class vanishes linearly at threshold in the
+meromorphic projective frame.  The gauge producing this representative is
+itself \(O(\omega^{-1})\), so it is singular in a holomorphic physical
+Jost frame.  The threshold issue is therefore a spectral-frame or lattice
+problem, not a divergence of the bulk projective class.  This proposition
 does not construct a threshold-uniform splitting or justify commuting the
 limits \(\omega\to0\) and \(\tau\to0\).
 \end{remark}
@@ -1074,10 +1140,10 @@ equations yields the parameter relation.
 \end{proof}
 
 This theorem closes the local transverse-traceless differential-module
-comparison.  It does not identify independently normalized global Jost
-connections, because the equivalence gauge is not bounded at infinity.
+comparison.  We next show that the same gauge matches the differentiated
+physical Jost classes.
 
-\subsection{Forced asymptotics of the equivalence gauge}
+\subsection{Endpoint-compatible mass gauge}
 
 The rational representative in Theorem~\ref{thm:mass-normal} satisfies
 \[
@@ -1085,7 +1151,7 @@ The rational representative in Theorem~\ref{thm:mass-normal} satisfies
  \qquad r\to\infty.
 \]
 
-\begin{proposition}[No bounded rational mass-equivalence gauge]
+\begin{proposition}[Forced moving-phase gauge]
 \label{prop:unbounded-gauge}
 Every rational \(q\) satisfying
 \[
@@ -1096,8 +1162,8 @@ has the forced leading behavior
 \[
  q(r,\omega)=-\frac{i}{8\omega}r+O(1).
 \]
-In particular, no bounded rational triangular gauge identifies the Bach
-jet with the critical mass jet at infinity.
+Thus the equivalence gauge is necessarily unbounded in a fixed massless
+phase frame.
 \end{proposition}
 
 \begin{proof}
@@ -1118,90 +1184,1002 @@ If \(q\sim cr\), then \(Dq\to c\), while \(D^3q\to0\) and
 Matching the constant gives \(c=-i/(8\omega)\), uniquely.
 \end{proof}
 
-\subsection{Boundary transgression}
-
-The normalization in Lemma~\ref{lem:gauge} must be retained here.  Put
+\paragraph{Factor normalization.}
+The normalization in Lemma~\ref{lem:gauge} must be retained.  Define the
+field-redefinition operator
 \[
- Q(q)=qD-\frac12D(q),
-\qquad
- \widehat Q=-2Q(q)=-2qD+D(q).
+ \boxed{\;
+ Q_q=2qD-D(q).
+ \;}
 \]
-Because \([L_2,Q(q)]|_{\ker L_2}
-=-\frac12\mathcal K_{U_2}(q)\), the bulk extension operators obey
-\begin{equation}\label{eq:bulk-commutator}
- K_{\rm Bach}-\frac{i\omega}{2}K_{\rm mass}
- =[L_2,\widehat Q]
+Then
+\[
+ [L_2,Q_q]y=-\mathcal K_{U_2}(q)y,
+ \qquad L_2y=0.
+\]
+Consequently, if
+\[
+ L_2x=\mathcal I_{\rm Bach}y,
+\qquad
+ \widehat x=x+Q_qy,
+\]
+then
+\begin{equation}\label{eq:mass-gauged-extension}
+ \boxed{\;
+ L_2\widehat x=\frac{i\omega}{2}fy.
+ \;}
 \end{equation}
-in the scalarized companion convention.  The factor \(-2\) is essential:
-using \(Q(q)\) itself would be inconsistent with the cocycle normalization
-of Theorem~\ref{thm:mass-normal}.
+The factor \(2\) in \(Q_q\) is essential.
 
-\begin{theorem}[Finite-cut boundary transgression]
-\label{thm:boundary-transgression}
-Let \(u_n,\widetilde u_n\) be resonant right and left states, with the
-finite-cut pairing defined by Green's formula.  Then
+\begin{theorem}[Coulomb cancellation and differentiated Jost classes]
+\label{thm:jost-mass-jet}
+Let \(y_\sigma(m,r)\), \(\sigma=\pm1\), be a massive spin-two Jost germ at
+infinity, with \(k=(\omega^2-m)^{1/2}\) on the branch through
+\(k(0)=\omega\).  It has the form
+\[
+ y_\sigma(m,r)
+ =e^{\sigma ikr}r^{\rho_\sigma(m)}
+ \left(1+O(r^{-1})\right),
+\qquad
+ \rho_\sigma(m)=
+ \sigma i\left(2k+\frac{m}{k}\right).
+\]
+In particular,
+\[
+ \rho_\sigma'(0)=0,
+\qquad
+ \frac{\partial_my_\sigma(0,r)}{y_\sigma(0,r)}
+ =-\frac{\sigma i}{2\omega}r+O(1).
+\]
+Writing \(c(\omega)=i\omega/2\), the rational gauge satisfies
+\[
+ \frac{Q_qy_\sigma}{y_\sigma}
+ =\frac{\sigma r}{4}+O(1)
+ =c(\omega)
+ \frac{\partial_my_\sigma(0,r)}{y_\sigma(0,r)}+O(1).
+\]
+At the horizon the mass perturbation is multiplied by \(f=O(r-2)\);
+the indicial exponent is unchanged, \(q\) is regular, and \(Q_q\)
+preserves the phase-factored analytic ingoing germ.  Hence, at either
+endpoint \(e\in\{\mathcal H^+,\mathcal I^+\}\),
+\[
+ \boxed{\;
+ \widehat x_e-c(\omega)\partial_my_e(0)
+ =\lambda_e(\omega)y_e
+ \;}
+\]
+for an analytic scalar \(\lambda_e\).
+\end{theorem}
+
+\begin{proof}
+At infinity the massive equation is
+\[
+ D^2y+
+ \left(k^2+\frac{2m}{r}+O(r^{-2})\right)y=0.
+\]
+Substitution of the displayed ansatz at order \(r^{-1}\) gives
+\[
+ 2\sigma ik\rho_\sigma+4k^2+2m=0,
+\]
+and therefore the stated \(\rho_\sigma\).  Since
+\[
+ k'(0)=-\frac1{2\omega},
+\qquad
+ \left.\frac{d}{dm}\left(2k+\frac{m}{k}\right)\right|_{m=0}
+ =-\frac1\omega+\frac1\omega=0,
+\]
+the logarithmic derivative cancels.  The remaining phase derivative gives
+the linear term in \(\partial_my_\sigma/y_\sigma\).  Using
+\(q=-ir/(8\omega)+O(1)\) and
+\(Dy_\sigma/y_\sigma=\sigma i\omega+O(r^{-1})\) gives
+\[
+ 2q\frac{Dy_\sigma}{y_\sigma}-D(q)
+ =\frac{\sigma r}{4}+O(1).
+\]
+Equation~\eqref{eq:mass-gauged-extension} shows that
+\(\widehat x-c\,\partial_my\) is homogeneous.  The asymptotic calculation
+places it in the endpoint Jost line, proving the infinity statement.
+Regular Frobenius dependence and the unchanged indicial exponent prove
+the horizon statement.
+\end{proof}
+
+\begin{theorem}[Critical-mass Evans derivative and QNM velocity]
+\label{thm:mass-qnm-slope}
+Let \(a(\omega,m)\) be the massive spin-two Evans coefficient in analytic
+horizon and infinity Jost normalizations, and let \(b_{\rm B}(\omega)\)
+be the Bach connection shear.  There is an analytic scalar \(h(\omega)\)
+such that
+\[
+ \boxed{\;
+ b_{\rm B}(\omega)
+ =\frac{i\omega}{2}\,\partial_ma(\omega,0)
+ +h(\omega)a(\omega,0).
+ \;}
+\]
+At the certified simple QNM,
+\[
+ b_{\rm B}(\omega_n)
+ =\frac{i\omega_n}{2}\partial_ma(\omega_n,0).
+\]
+The massive QNM branch supplied by the implicit-function theorem therefore
+satisfies
+\begin{equation}\label{eq:mass-qnm-velocity}
+ \boxed{\;
+ \left.\frac{d\omega_n}{dm}\right|_{m=0}
+ =\frac{2i}{\omega_n}\kappa_n\ne0.
+ \;}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The endpoint corrections in
+Theorem~\ref{thm:jost-mass-jet} are scalar changes of the differentiated
+Jost normalizations.  Their contribution to the differentiated connection
+coefficient is therefore an analytic multiple \(h(\omega)a(\omega,0)\).
+At a zero of \(a\) that term vanishes.  Differentiating
+\(a(\omega_n(m),m)=0\) and using
+\(\kappa_n=b_{\rm B}(\omega_n)/a'(\omega_n)\) gives
+\[
+ \kappa_n
+ =-\frac{i\omega_n}{2}
+ \left.\frac{d\omega_n}{dm}\right|_{m=0}.
+\]
+The displayed formula follows, and it is nonzero because the certified
+selector satisfies \(\kappa_n\ne0\).
+\end{proof}
+
+\begin{corollary}[Unified resonance invariant]
+At the certified mode,
+\[
+ \boxed{\;
+ \kappa_n
+ =\frac{b_n}{a_n'}
+ =\frac{\beta_n}{\alpha_n}
+ =-\frac{i\omega_n}{2}
+ \left.\frac{d\omega_n}{dm}\right|_0.
+ \;}
+\]
+Consequently
+\[
+ (c_1)_Y
+ =-\frac1{\kappa_n}
+ =\frac{2}{i\omega_n\,\omega_n'(0)}
+\]
+and, for the upper-right triangular Green block,
+\[
+ R^{(12)}_{-2}
+ =-\frac{\kappa_n}{\alpha_n}u_n\otimes\widetilde u_n
+ =\frac{i\omega_n}{2\alpha_n}\omega_n'(0)
+ u_n\otimes\widetilde u_n.
+\]
+\end{corollary}
+
+\begin{corollary}[Reflected EP2 pair]
+\label{cor:reflected-ep2}
+With the \(e^{i\omega t}\) convention, the real Schwarzschild coefficients
+and QNM endpoint conditions obey
+\[
+ L(-\overline\omega,m)=\overline{L(\omega,m)}.
+\]
+Hence the certified defective resonance near
+\[
+ \omega_n=
+ -0.3736716844180418+0.0889623156889357\,i
+\]
+has a reflected defective partner near
+\[
+ \boxed{\;
+ \omega_n^\sharp=
+ +0.3736716844180418+0.0889623156889357\,i.
+ \;}
+\]
+Their velocities and projective selectors satisfy
+\[
+ \nu_n^\sharp=-\overline{\nu_n},
+ \qquad
+ \kappa_n^\sharp=-\overline{\kappa_n}.
+\]
+In particular, nonvanishing of the certified selector supplies a
+symmetry-related pair of EP2s.  If \(P_n\), \(C_{-2}\), and \(C_{-1}\)
+denote respectively the ordinary residue and the two singular
+coefficients of the critical response, then
+\[
+ P_n^\sharp=-\overline{P_n},
+ \qquad
+ C_{-2}^\sharp=\overline{C_{-2}},
+ \qquad
+ C_{-1}^\sharp=-\overline{C_{-1}}.
+\]
+The even/odd signs follow from the pole order under
+\(\omega\mapsto-\overline\omega\), and allow the pair to combine into a
+real perturbation.
+\end{corollary}
+
+\subsection{Boundary transgression as an audit}
+
+For finite cuts, the direct field-redefinition convention gives
 \[
  \boxed{\;
  \beta_{n,[x_-,x_+]}^{\rm Bach}
  -\frac{i\omega_n}{2}\beta_{n,[x_-,x_+]}^{\rm mass}
- =
+ =-
  \left[
- W(\widetilde u_n,\widehat Q u_n)
+ W(\widetilde u_n,Q_q u_n)
  \right]_{x_-}^{x_+}.
  \;}
 \]
-In an augmented boundary pencil, the same term is absorbed into the
-derivatives of the horizon and infinity boundary maps, restoring
-splitting-gauge invariance of the complete overlap.
+In the augmented Jost pencil, the endpoint-map derivatives absorb this
+term.  Theorem~\ref{thm:mass-qnm-slope} shows that an explicit evaluation
+of the individual endpoint constants is unnecessary at the zero divisor:
+their net effect is the term \(h(\omega)a(\omega,0)\).
+
+\section{Universal critical resonance and the covariant parent}
+\label{sec:parent-mass-derivative}
+
+\begin{theorem}[Universal critical-resonance criterion]
+\label{thm:universal-critical-resonance}
+Let \(L(\omega):D\to Y\) be an analytic Fredholm pencil with fixed domain,
+and suppose \(\omega_n\) is a simple resonance.  Let
+\[
+ L_nu_n=0,\qquad L_n^*\widetilde u_n=0,
+\qquad
+ \alpha_n=\langle\widetilde u_n,L_n'u_n\rangle\ne0.
+\]
+For an analytic deformation \(L_m=L+mA\), put
+\[
+ \beta_n=\langle\widetilde u_n,A(\omega_n)u_n\rangle
+\]
+in the augmented endpoint pairing.  If \(R=L^{-1}\), then
+\[
+ C(\omega)=R(\omega)A(\omega)R(\omega)
+\]
+has expansion
+\[
+ \boxed{\;
+ C(\omega)=
+ \frac{\beta_n}{\alpha_n^2}
+ \frac{u_n\otimes\widetilde u_n}{(\omega-\omega_n)^2}
+ +\frac{C_{-1}}{\omega-\omega_n}
+ +C_{\rm hol}(\omega).
+ \;}
+\]
+Consequently \(C\) has an exact pole of order two if and only if
+\(\beta_n\ne0\); at a simple resonance it cannot have a pole of order
+three.  If \(\omega_n(m)\) is the deformed resonance branch, then
+\[
+ \boxed{\;
+ \nu_n:=\omega_n'(0)=-\frac{\beta_n}{\alpha_n},
+ \qquad
+ C_{-2}=-\nu_nP_n,
+ \qquad
+ P_n=\frac{u_n\otimes\widetilde u_n}{\alpha_n}.
+ \;}
+\]
 \end{theorem}
 
 \begin{proof}
-On finite cuts, use \eqref{eq:bulk-commutator}, \(L_2u_n=0\), and
-\(L_2^\dagger\widetilde u_n=0\):
+Write
 \[
-\begin{aligned}
- \left\langle\widetilde u_n,
- \left(K_{\rm Bach}-\frac{i\omega_n}{2}K_{\rm mass}\right)
- u_n\right\rangle
- &=
- \left\langle\widetilde u_n,[L_2,\widehat Q]u_n\right\rangle\\
- &=
- \left[W(\widetilde u_n,\widehat Q u_n)\right]_{x_-}^{x_+}.
-\end{aligned}
+ R(\omega)=\frac{P_n}{\omega-\omega_n}+H_n+O(\omega-\omega_n).
 \]
-This proves the finite-cut identity.  Equivalently, include the boundary
-functionals in the augmented operator and its duality before
-differentiation.
+The only second-order term in \(RAR\) is
+\[
+ P_nA_nP_n=
+ \frac{\beta_n}{\alpha_n^2}u_n\otimes\widetilde u_n.
+\]
+Differentiating
+\(L_m(\omega_n(m))u_n(m)=0\) and pairing with
+\(\widetilde u_n\) gives
+\(\beta_n+\nu_n\alpha_n=0\).
 \end{proof}
 
-Theorem~\ref{thm:mass-jet} and
-Proposition~\ref{prop:resonant-functional} give
+\begin{proposition}[Canonical simple pole and tangent state]
+\label{prop:canonical-simple-pole}
+Let \(z=\omega-\omega_n\) and expand
 \[
- \beta_n^{\rm Bach}
- =\frac{i\omega_n}{2}\mathfrak M_n([f]),
-\qquad
- \mathfrak M_n([f])\ne0.
+ R(\omega)=\frac{P_n}{z}+H_n+O(z),
+ \qquad
+ A(\omega)=A_n+zA_n'+O(z^2).
 \]
-After the boundary transgression has been evaluated in matched physical
-Jost frames, the predicted mass slope is
-\[
- \boxed{\;
- \left.\frac{d\omega_n}{dm}\right|_{m=0}
- =\frac{2i}{\omega_n}\kappa_n^{\rm Bach}.
- \;}
-\]
-This final equality is not yet claimed: the local bulk comparison is exact,
-but the remaining physical normalization is exactly the endpoint limit
+Then the critical response \(C=RAR=-\partial_mR_m|_{m=0}\) has
 \[
  \boxed{\;
- \left[
- W(\widetilde u_n,\widehat Q u_n)
- \right]_{\mathcal H^+}^{\mathcal I^+},
+ C_{-2}=P_nA_nP_n=-\nu_nP_n
  \;}
 \]
-which remains to be computed or regularized in matched Jost frames.
+and
+\[
+ \boxed{\;
+ C_{-1}
+ =P_nA_nH_n+H_nA_nP_n+P_nA_n'P_n
+ =-\dot P_n.
+ \;}
+\]
+The term \(P_nA_n'P_n\) is absent only when the deformation operator is
+frequency independent in the fixed-domain pencil.
 
-\subsection*{Exact parent/radial comparison target}
+Let
+\[
+ g_n=(A_n+\nu_nL_n')u_n.
+\]
+Then the right and left tangent classes are
+\[
+ \boxed{\;
+ [\dot u_n]
+ =
+ [-H_ng_n]\in D/\C u_n,
+ \qquad
+ [\dot{\widetilde u}_n]
+ =
+ [-\widetilde u_n(A_n+\nu_nL_n')H_n]
+ \bmod\C\widetilde u_n.
+ \;}
+\]
+\end{proposition}
+
+\begin{proof}
+Direct multiplication of the two displayed expansions gives both Laurent
+coefficients, including the \(A_n'\) term.  Differentiating the moving
+simple pole gives \(C_{-1}=-\dot P_n\).
+
+The differentiated QNM equation is
+\[
+ L_n\dot u_n+g_n=0,
+ \qquad
+ \langle\widetilde u_n,g_n\rangle
+ =\beta_n+\nu_n\alpha_n=0.
+\]
+The Laurent identities imply
+\[
+ L_nH_n=I-L_n'P_n.
+\]
+Since \(P_ng_n=0\), the vector \(-H_ng_n\) solves the equation; the
+remaining freedom is a multiple of \(u_n\).  The left formula follows
+from the corresponding right Laurent identity.
+\end{proof}
+
+The tangent vector \(\dot u_n\) depends on normalization, but its class
+\[
+ \boxed{\;[\dot u_n]\in D/\C u_n\;}
+\]
+is canonical and obeys
+\[
+ L_n\dot u_n=-(A_n+\nu_nL_n')u_n.
+\]
+In the axial Bach filtration its carrier projection is
+\(-\alpha_n/\beta_n=-1/\kappa_n\).  Thus the generalized QNM is the
+normalization-independent tangent class of the massive QNM branch.
+Proposition~\ref{prop:canonical-simple-pole} also shows that it can be
+reconstructed from the scalar QNM, its adjoint, and the finite part of the
+ordinary Regge--Wheeler resolvent; the six-state integration remains an
+independent certificate rather than an analytic necessity.
+
+\begin{proposition}[Augmented QNM Hellmann--Feynman formula]
+\label{prop:qnm-hellmann-feynman}
+For a scalar realization
+\[
+ L(\omega,m)y=
+ [\partial_x^2+Q(x,\omega,m)]y=0,
+\]
+let \(y_-\) and \(y_+\) be the left and right Jost solutions and choose
+the Evans orientation \(a=W(y_-,y_+)\).  For any parameter \(p\),
+\[
+ \boxed{\;
+ \partial_pa
+ =
+ \int_{x_-}^{x_+}
+ y_-(x)\,\partial_pQ(x,\omega,m)\,y_+(x)\,dx+B_p,
+ \;}
+\]
+where \(B_p\) is the transparent-boundary contribution (equivalently, the
+endpoint-normalization term) in the augmented pairing.  At a simple QNM,
+\[
+ \boxed{\;
+ \nu_n
+ =-\frac{\partial_ma}{\partial_\omega a}
+ =-\frac{
+ \langle\widetilde u_n,A_nu_n\rangle_{\rm aug}}
+ {\langle\widetilde u_n,L_n'u_n\rangle_{\rm aug}}.
+ \;}
+\]
+For \(Q=\omega^2-V_2-mf\), this is
+\[
+ \boxed{\;
+ \nu_n
+ =-
+ \frac{-\displaystyle\int f\,u_n^2\,dx+B_m}
+ {2\omega_n\displaystyle\int u_n^2\,dx+B_\omega}.
+ \;}
+\]
+The integrals are bilinear QNM integrals, not positive \(L^2\) norms.
+\end{proposition}
+
+\begin{proof}
+Differentiate the two scalar equations, apply the Lagrange identity, and
+integrate between the endpoint cuts.  The bulk term is the displayed
+integral; differentiating the analytic transparent maps supplies \(B_p\).
+At a QNM the two Jost solutions are proportional, and the proportionality
+cancels from \(-a_m/a_\omega\).  The augmented formula is the same
+identity written invariantly.
+\end{proof}
+
+On a fixed gauge-reduced domain, let
+\[
+ \mathcal E_m(\omega)=\mathcal E(\omega)+m\mathcal A.
+\]
+The metric--metric block of the inverse parent Hessian is
+\[
+ G_{hh}^{\rm W}(\omega)
+ =\frac1{4\alpha_{\rm W}}
+ \mathcal E(\omega)^{-1}\mathcal A\mathcal E(\omega)^{-1}.
+\]
+
+\begin{theorem}[Critical mass derivative of the metric Green operator]
+\label{thm:parent-mass-derivative}
+Where the inverses exist,
+\[
+ \boxed{\;
+ G_{hh}^{\rm W}(\omega)
+ =-\frac1{4\alpha_{\rm W}}
+ \left.\partial_m\mathcal E_m(\omega)^{-1}\right|_{m=0}.
+ \;}
+\]
+No commutativity between \(\mathcal E\) and \(\mathcal A\) is required.
+If, on a fixed-domain meromorphic realization,
+\[
+ \mathcal E_m(\omega)^{-1}
+ =\frac{P_n(m)}{\omega-\omega_n(m)}+H_n(\omega,m),
+\]
+then
+\[
+ \boxed{\;
+ G_{-2}=-\frac{\nu_n}{4\alpha_{\rm W}}P_n,
+ \qquad
+ G_{-1}=-\frac1{4\alpha_{\rm W}}\dot P_n.
+ \;}
+\]
+\end{theorem}
+
+\begin{proof}
+Differentiate
+\(\mathcal E_m\mathcal E_m^{-1}=I\):
+\[
+ \partial_m\mathcal E_m^{-1}
+ =-\mathcal E_m^{-1}\mathcal A\mathcal E_m^{-1}.
+\]
+Differentiating the simple-pole expansion gives
+\[
+ \left.\partial_m\mathcal E_m^{-1}\right|_0
+ =\frac{\nu_nP_n}{(\omega-\omega_n)^2}
+ +\frac{\dot P_n}{\omega-\omega_n}
+ +\dot H_n(\omega,0).
+\]
+\end{proof}
+
+The corresponding exact finite-mass secant identity is
+\[
+ \boxed{\;
+ \frac{\mathcal E^{-1}-\mathcal E_m^{-1}}{m}
+ =\mathcal E^{-1}\mathcal A\mathcal E_m^{-1}
+ \longrightarrow
+ \mathcal E^{-1}\mathcal A\mathcal E^{-1}.
+ \;}
+\]
+It follows from the noncommutative resolvent identity and makes the Weyl
+metric propagator the confluent difference quotient of the massless and
+massive second-order propagators.
+
+For
+\[
+ P_n=\frac{u_n\otimes\widetilde u_n}{\alpha_n},
+\qquad
+ \alpha_n=
+ \langle\widetilde u_n,\partial_\omega\mathcal E(\omega_n)u_n\rangle,
+\qquad
+ \beta_n=\langle\widetilde u_n,\mathcal A u_n\rangle,
+\]
+the differentiated eigenvalue equation gives
+\[
+ \alpha_n\nu_n+\beta_n=0.
+\]
+Hence
+\[
+ G_{-2}
+ =\frac1{4\alpha_{\rm W}}
+ \frac{\beta_n}{\alpha_n^2}
+ u_n\otimes\widetilde u_n
+ =-\frac{i}{2\alpha_{\rm W}\omega_n}\kappa_nP_n.
+\]
+Thus parent block inversion, mass differentiation, the resonant overlap,
+and the projective selector give the same nonzero double coefficient.
+This metric--metric block should not be confused with the full triangular
+root-space coefficient in Theorem~\ref{thm:root-polarization}: the latter
+is nilpotent under composition on the two-layer extension space.  The
+projected rank-one coefficient \(C_{-2}\) or \(G_{-2}\) need not itself
+square to zero on the projected source/response space.
+
+\begin{theorem}[Isolated parent-resonance contribution]
+\label{thm:parent-local-contour}
+For a small contour enclosing only the massive QNM branch,
+\[
+ \boxed{\;
+ \mathcal U_n^{\rm W}(t)
+ =-\frac{e^{i\omega_nt}}{4\alpha_{\rm W}}
+ \left[\dot P_n+it\,\nu_nP_n\right].
+ \;}
+\]
+For a compact source \(F\) and an observation functional \(\Lambda\), the
+coefficient of \(t e^{i\omega_nt}\) is
+\[
+ \boxed{\;
+ A_t(F,\Lambda)=
+ -\frac{i\nu_n}{4\alpha_{\rm W}\alpha_n}
+ \Lambda(u_n)\langle\widetilde u_n,F\rangle.
+ \;}
+\]
+It is present exactly when the source excites the adjoint resonant channel
+and the observable sees the Einstein QNM profile.
+\end{theorem}
+
+\begin{proof}
+Differentiate the ordinary isolated-pole contribution
+\(e^{i\omega_n(m)t}P_n(m)\) and apply
+Theorem~\ref{thm:parent-mass-derivative}.  The second formula follows from
+the rank-one expression for \(P_n\).
+\end{proof}
+
+The polynomial term is Einstein-shaped even though the generalized vector
+has a nonzero carrier quotient:
+\[
+ e^{i\omega_nt}(V_1+itV_0).
+\]
+The simple-pole coefficient contains the deformation of the mode shape and
+normalization.  Explicitly,
+\[
+ \dot P_n=
+ \frac{\dot u_n\otimes\widetilde u_n+
+ u_n\otimes\dot{\widetilde u}_n}{\alpha_n}
+ -\frac{\dot\alpha_n}{\alpha_n}P_n.
+\]
+As before, this is an isolated local contour theorem, not a global
+retarded contour deformation.
+
+\begin{corollary}[Higher critical jets]
+For \(p\ge1\), define
+\[
+ C_p=R(AR)^p.
+\]
+Then
+\[
+ \boxed{\;
+ C_p=\frac{(-1)^p}{p!}
+ \left.\partial_m^p(L+mA)^{-1}\right|_{m=0}.
+ \;}
+\]
+If \(\beta_n\ne0\), its pole order at \(\omega_n\) is \(p+1\), with leading
+coefficient
+\[
+ \frac{\beta_n^p}{\alpha_n^{p+1}}
+ u_n\otimes\widetilde u_n.
+\]
+The leading isolated-contour polynomial is
+\[
+ \frac{(it)^p}{p!}e^{i\omega_nt}
+ \frac{\beta_n^p}{\alpha_n^{p+1}}
+ u_n\otimes\widetilde u_n.
+\]
+Pure Weyl gravity is the first-jet case \(p=1\).
+\end{corollary}
+
+For further Schwarzschild overtones, the universal criterion replaces a
+full six-state Smith calculation by two validated scalar tasks: certify a
+simple Regge--Wheeler QNM and enclose the augmented overlap
+\(\beta_n=\langle\widetilde u_n,A_nu_n\rangle\) away from zero.  The
+Hellmann--Feynman identity
+\[
+ \omega_n'(0)=-
+ \frac{\langle\widetilde u_n,A_nu_n\rangle_{\rm aug}}
+ {\langle\widetilde u_n,L_n'u_n\rangle_{\rm aug}}
+\]
+then supplies the mass velocity, pole order, and generalized root length.
+Proposition~\ref{prop:qnm-hellmann-feynman} reduces the overlap to a
+bilinear scalar Wronskian integral plus explicit endpoint terms.  A
+validated evaluation for several overtones would decide whether the
+certified reflected EP2 pair is the first member of a defective tower;
+no such tower is claimed here.
+
+\section{Transverse unfolding of the defective resonance}
+\label{sec:unfolding}
+
+Put
+\[
+ \nu_n=\left.\frac{d\omega_n}{dm}\right|_{m=0}
+ =\frac{2i}{\omega_n}\kappa_n\ne0.
+\]
+The massless divisor remains at \(\omega_n\), while the massive divisor is
+\[
+ \omega_m=\omega_n+\nu_nm+O(m^2).
+\]
+
+\begin{proposition}[Generic versus filtration-preserving splitting]
+\label{prop:generic-filtered-splitting}
+Put the critical block in the form
+\[
+ T_0(z)=\begin{pmatrix}z&-1\\0&z\end{pmatrix}.
+\]
+For a general first-order perturbation,
+\[
+ T(z,m)=T_0(z)+m
+ \begin{pmatrix}a&b\\c&d\end{pmatrix}
+ +O(z^2,mz,m^2),
+\]
+one has
+\[
+ \det T=z^2+m(a+d)z+mc+O(z^3,mz^2,m^2).
+\]
+If \(c\ne0\), the two roots have the Newton--Puiseux expansion
+\[
+ z_\pm(m)=\pm\sqrt{-cm}-\frac{a+d}{2}m+O(m^{3/2}).
+\]
+If the perturbation preserves the Einstein submodule, then \(c=0\)
+identically and the two roots are analytic and split linearly.  The
+Einstein--Weyl mass deformation is of this filtered type: the Einstein
+branch remains massless while the carrier branch obeys the massive
+equation.
+
+For a generic square-root unfolding, the branch separation is
+\(O(|m|^{1/2})\), the projectors are \(O(|m|^{-1/2})\), and a positive
+branch metric typically has condition number \(O(|m|^{-1})\).  The
+filtration-protected linear splitting below instead produces the stronger
+exponents \(O(|m|^{-1})\) and \(O(|m|^{-2})\).
+\end{proposition}
+
+\begin{theorem}[Filtered critical-mass unfolding normal form]
+\label{thm:unfolding-normal-form}
+Near \((\omega_n,0)\), the two-channel connection pencil is analytically
+left--right equivalent to
+\[
+ \boxed{\;
+ \mathcal T(z,\mu)=
+ \begin{pmatrix}
+ z&-1\\
+ 0&z-\mu
+ \end{pmatrix},
+ \;}
+\]
+where \(z=z(\omega,m)\) and \(\mu=\mu(m)\) are analytic local coordinates,
+\[
+ z(\omega_n,0)=0,\qquad
+ \partial_\omega z(\omega_n,0)\ne0,
+\]
+and
+\[
+ \mu(m)=\partial_\omega z(\omega_n,0)\,\nu_nm+O(m^2).
+\]
+Thus the pure-Weyl EP2 is a filtration-preserving transverse confluence of
+the massless and massive QNM divisors, not a generic miniversal
+perturbation of a Jordan block.
+\end{theorem}
+
+\begin{proof}
+In a finite-mass branch frame the two diagonal divisors are scalar Evans
+functions \(a_0(\omega)\) and \(a_m(\omega,m)\).  Both have a simple zero at
+\((\omega_n,0)\), while Theorem~\ref{thm:mass-qnm-slope} says that their
+zero loci have distinct nonzero tangents in the mass direction.  Take
+\(z\) to be an analytic unit multiple of \(a_0\), and take \(\mu\) to be
+the normalized difference of the two divisors.  The off-diagonal entry in
+the confluent frame is a unit because the certified Smith type is
+\((0,0,2)\).  Analytic invertible row and column operations normalize that
+unit to \(-1\) and remove the remaining divisible entries.
+\end{proof}
+
+\begin{theorem}[Root-space polarization and nilpotent pole]
+\label{thm:root-polarization}
+Let
+\[
+ \mathbb L(\omega)=
+ \begin{pmatrix}L(\omega)&K(\omega)\\0&L(\omega)\end{pmatrix},
+\]
+with
+\[
+ L_nu_n=0,\qquad L_n^*\widetilde u_n=0,
+\qquad
+ \alpha_n=\langle\widetilde u_n,L_n'u_n\rangle\ne0,
+\qquad
+ \beta_n=\langle\widetilde u_n,K_nu_n\rangle\ne0.
+\]
+The right and left geometric root vectors are
+\[
+ \boxed{\;
+ V_0=(u_n,0),\qquad
+ W_0=(0,\widetilde u_n).
+ \;}
+\]
+They are self-orthogonal in the full-pencil duality:
+\[
+ \langle W_0,V_0\rangle=0,
+\qquad
+ \langle W_0,\mathbb L_n'V_0\rangle=0.
+\]
+The first generalized right vector has carrier component
+\[
+ -\frac{\alpha_n}{\beta_n}u_n=-\frac1{\kappa_n}u_n.
+\]
+A left generalized vector can be chosen with Einstein-dual component
+\(-(\alpha_n/\beta_n)\widetilde u_n\); both chains cross the filtration at
+first generalized order.
+The second-order Laurent coefficient is
+\[
+ \boxed{\;
+ R_{-2}=
+ -\frac{\beta_n}{\alpha_n^2}V_0\otimes W_0,
+ \qquad
+ R_{-2}^2=0.
+ \;}
+\]
+Its range is the Einstein resonant line and that line lies in its kernel.
+Consequently \(R_{-2}\) is, up to its nonzero scalar normalization, the
+nilpotent generator \(N\) of the dual-number commutant.
+\end{theorem}
+
+\begin{proof}
+If \((x,cu_n)\in\ker\mathbb L_n\), then
+\(L_nx+cK_nu_n=0\).  Pairing with \(\widetilde u_n\) gives
+\(c\beta_n=0\), hence \(c=0\).  The adjoint argument gives the stated left
+root.  For a right chain
+\(\mathbb L_nV_1+\mathbb L_n'V_0=0\), write the carrier component of
+\(V_1\) as \(\gamma u_n\).  The scalar solvability condition is
+\(\gamma\beta_n+\alpha_n=0\).  The Laurent coefficient follows from the
+block inverse.  Its square vanishes because
+\((V_0\otimes W_0)^2=\langle W_0,V_0\rangle V_0\otimes W_0=0\).
+\end{proof}
+
+\begin{corollary}[Spectral cotangent realization]
+On the resonant fiber,
+\[
+ R_{-2}:(B_2/E)^*\longrightarrow E
+\]
+is a nonzero map between one-dimensional spaces and hence an isomorphism,
+up to the scalar \(-\beta_n/\alpha_n^2\).  The double pole is the spectral
+realization of the endpoint cotangent-type duality \(B_2/E\simeq E^*\).
+\end{corollary}
+
+The inverse is
+\[
+ \mathcal T(z,\mu)^{-1}
+ =
+ \begin{pmatrix}
+ z^{-1}&[z(z-\mu)]^{-1}\\
+ 0&(z-\mu)^{-1}
+ \end{pmatrix},
+\]
+and
+\begin{equation}\label{eq:difference-quotient-poles}
+ \frac1{z(z-\mu)}
+ =\frac1\mu\left(\frac1{z-\mu}-\frac1z\right)
+ \longrightarrow\frac1{z^2}.
+\end{equation}
+The critical double pole is therefore the confluent difference quotient
+of the two finite-mass simple poles.
+
+\begin{theorem}[Confluent projectors and local contour]
+\label{thm:confluent-projectors}
+Normalize the massive vector by
+\[
+ u_m=u_0+mv+O(m^2)
+\]
+and use the confluent basis \((u_0,v)\).  The branch-to-confluent matrix and
+the two spectral projectors are
+\[
+ S_m=\begin{pmatrix}1&1\\0&m\end{pmatrix},
+\]
+\[
+ P_0(m)=
+ \begin{pmatrix}1&-1/m\\0&0\end{pmatrix},
+ \qquad
+ P_m(m)=
+ \begin{pmatrix}0&1/m\\0&1\end{pmatrix}.
+\]
+Hence
+\[
+ P_0+P_m=I,\qquad
+ mP_0\longrightarrow-N,\qquad
+ mP_m\longrightarrow N,
+ \qquad
+ N=\begin{pmatrix}0&1\\0&0\end{pmatrix},
+\]
+and \(\|P_0\|,\|P_m\|\asymp |m|^{-1}\).
+Equivalently, after normalizing the confluent coordinate by the spectral
+separation \(\delta_m=\nu_nm+O(m^2)\), the projector scale is
+\(O(|\delta_m|^{-1})=O(|\nu_nm|^{-1})\).
+
+For a small contour enclosing only the two resonances, the local
+meromorphic evolution contribution satisfies
+\[
+ \boxed{\;
+ \mathcal U_m(t)
+ \longrightarrow
+ e^{i\omega_nt}\left(I+i\nu_ntN\right).
+ \;}
+\]
+\end{theorem}
+
+\begin{proof}
+The projector formulas are
+\[
+ P_0=S_m\diag(1,0)S_m^{-1},
+ \qquad
+ P_m=S_m\diag(0,1)S_m^{-1}.
+\]
+Residue calculus on the local contour gives
+\[
+ \mathcal U_m(t)
+ =e^{i\omega_nt}P_0(m)+e^{i\omega_m t}P_m(m)
+ =
+ \begin{pmatrix}
+ e^{i\omega_nt}&
+ \dfrac{e^{i\omega_mt}-e^{i\omega_nt}}{m}\\[3mm]
+ 0&e^{i\omega_mt}
+ \end{pmatrix}.
+\]
+Since \(\omega_m-\omega_n=\nu_nm+O(m^2)\), the off-diagonal entry tends to
+\(i\nu_nt e^{i\omega_nt}\).
+\end{proof}
+
+Equation~\eqref{eq:difference-quotient-poles} is the divided difference of
+the simple resolvent.  More generally,
+\[
+ \frac{F(\omega_n+\nu_nm)-F(\omega_n)}{\nu_nm}
+ \longrightarrow F'(\omega_n)
+\]
+for analytic \(F\).  Taking \(F(\omega)=e^{i\omega t}\) gives the local
+Jordan polynomial, while differentiating the massive eigenvector shows
+\[
+ V_1\equiv\left.\partial_mV_m\right|_{m=0}
+ \quad\pmod{\C V_0}.
+\]
+
+\begin{remark}[Time-domain boundary]
+Theorem~\ref{thm:confluent-projectors} proves the Jordan polynomial for the
+isolated local two-pole contour contribution.  It does not supply a global
+retarded inverse-Laplace deformation or control the non-pole contour.
+\end{remark}
+
+\begin{remark}[Higher filtered jets]
+If \(k+1\) filtered branches coalesce linearly and the branch basis is
+replaced by its confluent divided-difference basis, the limiting connection
+has a chain of length \(k+1\).  Its local resolvent has poles through order
+\(k+1\), and the local contour contribution is
+\[
+ e^{i\omega_nt}\sum_{j=0}^{k}\frac{(it)^j}{j!}N^j.
+\]
+The present Bach self-extension is the first nontrivial case \(k=1\).
+\end{remark}
+
+\begin{theorem}[Confluent branch involution]
+\label{thm:confluent-involution}
+Let \(C_m\) act by \(+1\) on \(u_0\) and by \(-1\) on \(u_m\).  In the
+confluent basis,
+\[
+ C_m=
+ \begin{pmatrix}
+ 1&-2/m\\
+ 0&-1
+ \end{pmatrix}.
+\]
+It has no finite critical limit, but
+\[
+ \boxed{\;
+ \lim_{m\to0}mC_m=-2N.
+ \;}
+\]
+The projectors \((I\pm C_m)/2\) have residues \(\mp N\).  Since
+\(m=(i\omega/2)\tau\),
+\[
+ \boxed{\;
+ \lim_{\tau\to0}\tau C_\tau=\frac{4i}{\omega}N.
+ \;}
+\]
+Thus the unique nilpotent in the dual-number commutant is exactly the
+renormalized residue of the finite-mass branch-sign observable.
+\end{theorem}
+
+\begin{proof}
+The equation \(C_m(u_0+mv)=-(u_0+mv)\) gives
+\(C_mv=-2u_0/m-v\).  This proves the matrix and the stated limits.
+\end{proof}
+
+\begin{theorem}[Critical singularity of positive branch metrics]
+\label{thm:critical-positive-metric}
+For real signed \(m\ne0\), suppose a positive branch metric is
+\[
+ H_{\rm br}(m)=\diag(h_0(m),h_1(m)),
+ \qquad
+ 0<c\le h_0,h_1\le C.
+\]
+In the confluent basis,
+\[
+ H_m=(S_m^{-1})^\dagger H_{\rm br}S_m^{-1}
+ =
+ \begin{pmatrix}
+ h_0&-h_0/m\\
+ -h_0/m&(h_0+h_1)/m^2
+ \end{pmatrix}.
+\]
+Its condition number satisfies
+\[
+ \boxed{\;\operatorname{cond}(H_m)\asymp |m|^{-2}.\;}
+\]
+In the spectral-separation normalization this is
+\(O(|\nu_nm|^{-2})\).
+No scalar rescaling of \(H_m\) has a bounded, positive-definite,
+nondegenerate critical limit.
+\end{theorem}
+
+\begin{proof}
+One has
+\[
+ \det H_m=\frac{h_0h_1}{m^2},
+\qquad
+ \lambda_{\max}(H_m)=\frac{h_0+h_1}{m^2}+O(1),
+\]
+and therefore
+\[
+ \lambda_{\min}(H_m)\longrightarrow
+ \frac{h_0h_1}{h_0+h_1}>0.
+\]
+Scaling slower than \(m^2\) leaves the largest eigenvalue unbounded;
+scaling like \(m^2\) gives a rank-one limit; and scaling faster gives zero.
+\end{proof}
+
+\begin{theorem}[Renormalized Krein limit]
+\label{thm:krein-limit}
+Let \(J_{\rm br}=\diag(1,-1)\).  In the confluent basis,
+\[
+ J_m=(S_m^{-1})^\dagger J_{\rm br}S_m^{-1}
+ =
+ \begin{pmatrix}
+ 1&-1/m\\
+ -1/m&0
+ \end{pmatrix},
+\]
+so
+\[
+ \boxed{\;
+ mJ_m\longrightarrow
+ \begin{pmatrix}0&-1\\-1&0\end{pmatrix}.
+ \;}
+\]
+Moreover
+\[
+ H_m=J_mC_m=
+ \begin{pmatrix}1&-1/m\\-1/m&2/m^2\end{pmatrix}>0,
+\qquad
+ m^2H_m\longrightarrow
+ \begin{pmatrix}0&0\\0&2\end{pmatrix}.
+\]
+Thus the pure-Weyl hyperbolic plane is the renormalized critical limit of
+the opposite-sign finite-mass branch form, whereas its positive
+\(C\)-majorant becomes rank-one.
+\end{theorem}
+
+\begin{proposition}[Canonical pseudospectral scale]
+\label{prop:pseudospectrum}
+In the normalized chart at \(m=0\),
+\[
+ \left\|\mathcal T(z,0)^{-1}\right\|\asymp |z|^{-2}.
+\]
+Hence the local \(\varepsilon\)-pseudospectral radius is
+\[
+ \boxed{\;|z|\asymp\sqrt{\varepsilon}\;}
+\]
+rather than the simple-pole scale \(O(\varepsilon)\).  For \(m\ne0\), the
+crossover occurs at \(|z|\asymp|\mu|\asymp|\nu_nm|\): outside that scale
+the pair resembles the critical double pole, while inside it the two
+simple poles resolve and their projectors have size \(O(|\nu_nm|^{-1})\).
+\end{proposition}
+
+\subsection*{Remaining scalar/tensor projection audit}
 
 Let \(R\) reconstruct the tensor carrier from the scalar master field and
 let \(P\) project the tensor equation back to the scalar equation.  The
@@ -1210,8 +2188,11 @@ corresponding exact target is
  K_{\rm radial}-P\mathcal A R=LQ_0-Q_0L
 \]
 in the augmented pencil, with its endpoint component recorded explicitly.
-Once proved, Proposition~\ref{prop:resonant-functional} identifies the
-parent and radial overlaps without a separate numerical equality test.
+Section~\ref{sec:parent-mass-derivative} already identifies the tensor
+parent coefficient through the massive resolvent.  Proving this commutator
+identity would additionally identify every scalar reconstruction
+normalization and endpoint term coefficientwise; it is no longer needed
+to establish the nonzero parent double pole.
 
 \section{Computational certificates and claim boundary}
 
@@ -1261,10 +2242,12 @@ acceptance.
 
 \paragraph{Explicit non-results.}
 This paper does not establish a causal spacetime resolvent, a complete QNM
-expansion, a late-time asymptotic formula, a \(t e^{i\omega_nt}\) term, a
-time-domain instability, equality of the globally normalized Bach and
-massive Jost slopes, an evaluated endpoint transgression, an all-\(\ell\)
-Bach nonsplitting theorem, or a quantum positivity statement.
+expansion, a global late-time asymptotic formula, a retarded
+inverse-Laplace deformation, a time-domain instability, the off-resonance
+normalization function \(h(\omega)\), an all-\(\ell\) Bach nonsplitting
+theorem, or a quantum positivity statement.  The polynomial
+\(t e^{i\omega_nt}\) is proved only for the isolated local two-pole contour
+contribution.
 
 \section{Conclusion}
 
@@ -1273,19 +2256,28 @@ Regge--Wheeler factor, but the repetition is not a rational direct sum.  It
 is a non-split self-extension whose projective class is represented by the
 elementary direction \((i\omega/2)(1-2/r)\).  That direction is exactly
 the transverse-traceless critical mass jet.  The equivalence gauge has
-forced linear growth at infinity, so the remaining global normalization
-question is one explicit endpoint Wronskian.  At the certified damped mode,
-the scalar zero is simple while the extension selector is nonzero.  The
-resulting defect has concrete differential content: the generalized root
-has a nonzero Ricci-carrier quotient, and the compactly cut-off exterior
-outgoing Green operator has a genuine rank-one double pole.
+forced linear growth at infinity, but this is the derivative of the moving
+massive phase rather than an obstruction: the Coulomb tail cancels its
+apparent logarithmic shear.  At the certified damped mode, the scalar zero
+is simple while the extension selector is nonzero.  The resulting defect
+has concrete differential content: the generalized root has a nonzero
+Ricci-carrier quotient, the compactly cut-off exterior outgoing Green
+operator has a genuine rank-one double pole, its full two-layer coefficient
+is nilpotent, and the massive spin-two QNM moves with nonzero critical
+slope.
+At the covariant level, the metric response is the mass derivative of the
+massive spin-two resolvent: QNM motion controls its double coefficient,
+while projector motion controls its accompanying simple coefficient.
 
-This separates three notions that should not be conflated.  A repeated
-scalar divisor fixes algebraic multiplicity; the extension selector decides
-whether that multiplicity is semisimple or defective; and a causal
-time-domain interpretation requires a further global Fredholm theory.  The
-first two questions are settled here at one physical Schwarzschild
-resonance.  The third remains a sharply delimited next problem.
+The physical mass deformation is filtration-preserving rather than a
+generic square-root unfolding.  The protected Einstein branch stays fixed,
+forcing linear confluence, \(m^{-1}\) projector growth, and \(m^{-2}\)
+positive-metric conditioning.  The local two-pole contour converges to the
+Jordan polynomial, the branch-sign residue converges to the unique
+nilpotent commutant generator, and the renormalized opposite-sign branch
+form becomes the pure-Weyl hyperbolic plane.  A global causal time-domain
+interpretation still requires the separate retarded contour theory stated
+above.
 
 \begin{thebibliography}{9}
 

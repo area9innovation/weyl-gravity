@@ -1,0 +1,95 @@
+{
+  "schema": "tier-receipt-v1",
+  "result_id": "PAPER17_ENDPOINT_MASS_JET_FILTERED_CRITICAL_RESONANCE",
+  "timestamp_utc": "2026-07-25T05:05:15Z",
+  "input_commit": "ed6a38bf0e5c268102b2fa3c7465f2b8988915d3",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "environment": {
+    "python": "3.12.13",
+    "sympy": "1.14.0",
+    "pdflatex": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian)"
+  },
+  "artifacts": {
+    "paper_tex": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "sha256": "e243facbe92abcc942ceb61e8b0fbc92937e27edd6ce61cfaf647a6d57654bf6"
+    },
+    "paper_pdf": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "sha256": "90f4a48fb4b0d3d5dc8bf3d608543f39a46dd280449cf8c8f3beedda269a28d7",
+      "pages": 28,
+      "bytes": 357121
+    },
+    "claim_map": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "sha256": "41e8af961d1756e8c4f5552448e0e6412589c9531691c8f4db6af6f80e8ea799"
+    },
+    "generator": {
+      "path": "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "sha256": "0db6ed8b298d902a784c520b238419b766aec193d54dac4d315d99602d45c351"
+    },
+    "verifier": {
+      "path": "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "sha256": "5fb5fda20c4846b321e979d05f3f6ecb6579eda34c2384f45aadff8e5928b5dc"
+    },
+    "tests": {
+      "path": "paper/test_17_pure_weyl_extension_claim_map.py",
+      "sha256": "cca49f0e2f709fa5aecb2b12ecf95b88972cf405d7fc3994afc10f5a9b168d68"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "two-pass pdflatex compilation with no undefined references",
+        "Python bytecode compilation",
+        "JSON parse and deterministic regeneration",
+        "scoped git diff --check",
+        "visual inspection of abstract, theorem, metric, and conclusion pages"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "checks": [
+        "25 regression and mutation tests",
+        "claim-map deterministic drift check",
+        "independent semantic, symbolic, matrix-algebra, and provenance verifier"
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "No upstream operator, content-addressed authority, certificate, or schema changed."
+    },
+    "tier_3": {
+      "status": "PASS",
+      "checks": [
+        "python3 -m unittest discover: 149 tests passed in 0.193 seconds"
+      ]
+    }
+  },
+  "claim_boundary": {
+    "endpoint_compatible_massive_jost_classes": true,
+    "critical_mass_qnm_velocity_nonzero": true,
+    "universal_critical_resonance_criterion": true,
+    "canonical_simple_pole_frequency_derivative_exact": true,
+    "finite_part_tangent_reconstruction_exact": true,
+    "augmented_qnm_hellmann_feynman_exact": true,
+    "reflected_ep2_pair_exact": true,
+    "threshold_static_cocycle_residue_exact": true,
+    "covariant_parent_mass_derivative": true,
+    "finite_mass_secant_identity": true,
+    "filtered_linear_unfolding": true,
+    "full_extension_residue_nilpotent": true,
+    "projected_residue_intrinsically_nilpotent": false,
+    "isolated_local_contour_jordan_polynomial": true,
+    "confluent_positive_metric_singularity": true,
+    "renormalized_krein_hyperbolic_limit": true,
+    "global_retarded_inverse_laplace": false,
+    "global_late_time_ringdown_expansion": false,
+    "time_domain_stability": false,
+    "quantum_statement": false
+  }
+}
