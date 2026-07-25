@@ -1,0 +1,104 @@
+{
+  "accumulated_frame_chart_diagnostic": {
+    "interpretation": "failure to exclude zero is an enclosure obstruction only; it does not assert that the physical endpoint line is singular",
+    "spin_one_S_column": {
+      "imaginary_hull": [
+        -0.021266899291461482,
+        0.021135891642117516
+      ],
+      "name": "Z0",
+      "real_hull": [
+        -0.019997969394969478,
+        0.022334548556083276
+      ],
+      "rectangular_enclosure_excludes_zero": false
+    },
+    "spin_two_R_column": {
+      "imaginary_hull": [
+        -0.08246111292534664,
+        -0.03194426640097596
+      ],
+      "name": "Y0",
+      "real_hull": [
+        0.9621056993501748,
+        1.0088908165763952
+      ],
+      "rectangular_enclosure_excludes_zero": true
+    }
+  },
+  "claim_flags": {
+    "complete_outgoing_frame_at_r4": false,
+    "correlated_successor_applied_to_outgoing_frame": true,
+    "explicit_Tplus_certified": false,
+    "local_interaction_variables_interval_enclosed": true,
+    "local_projective_multiplicative_charts_interval_enclosed": true,
+    "local_wronskian_laws_interval_certified": true,
+    "reciprocal_chart_denominators_exclude_zero": true,
+    "reflection_or_stokes_certified": false
+  },
+  "conventions": {
+    "amplitude_chart": "multiplicative amplitude plus logarithmic tau derivative; no interval branch of the complex logarithm is asserted",
+    "intrinsic_tangent_normalization": "the pinned outgoing rail transports the column tangent divided by 512; its coefficient-source block is therefore multiplied by 512 when compared with the unscaled point ODE"
+  },
+  "dependency_tags": [
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "does_not_establish": [
+    "validated projective/multiplicative-amplitude propagation over the remaining interval to r=4",
+    "the complete outgoing frame at r=4",
+    "the typed outgoing map T_plus or reflection matrix",
+    "the scattering Stokes audit"
+  ],
+  "imports": {
+    "predecessor_checkpoint": {
+      "path": "black_hole_programme/phase4/axial_explicit_tplus_band_v1/interaction_successor_checkpoint.json",
+      "payload_sha256": "84dddf94dacdd2386198bf76d4b204ac29e6c4eda59e3d99bf89010b77c40a58",
+      "sha256": "177b2d59a86b24bce1dfe8ed7b61812ffcdb7638277e616e442a0f854905532b"
+    }
+  },
+  "lifecycle": "NUMERIC-ENCLOSURE",
+  "next_gate": "iterate the certified near-identity projective/interaction microfactor with adaptive panel sizing, reprojecting only local factors before their action on the accumulated outgoing frame",
+  "result_id": "PURE_WEYL_PHASE4_AXIAL_TPLUS_PROJECTIVE_MICRO_V1",
+  "schema": "phase4-axial-tplus-projective-micro-certificate-v1",
+  "status": "PROJECTIVE_INTERACTION_MICRO_PASS_R4_OPEN",
+  "successor": {
+    "checkpoint": "black_hole_programme/phase4/axial_explicit_tplus_band_v1/projective_micro_checkpoint.json",
+    "checkpoint_sha256": "6fa328cf1d3e108d5ffca738797a624790c938d3c772175e849dca6aa0b495ee",
+    "frequency_cell": [
+      "1/2",
+      "4097/8192"
+    ],
+    "frequency_generator": 7315,
+    "manifest": "black_hole_programme/phase4/axial_explicit_tplus_band_v1/projective_micro_manifest.json",
+    "manifest_sha256": "76f1723e82de3894061e2913accf73d442c818532b51555278534fa263ca5fbd",
+    "payload_sha256": "21007685de79c3fa408a2b02bda0b27cb2d301d2f165d60a2a00e3a8f17b8ed5",
+    "radial_end": "1947/64",
+    "radial_start": "3895/128"
+  },
+  "validated_gates": {
+    "chart_width": "8.984613794147528e-07",
+    "direct_boundary_summary": {
+      "choice": 0,
+      "coefficients": true,
+      "containment": true,
+      "order": 32,
+      "tail": "4.164988829113825e-27",
+      "width": "5.305999286535014"
+    },
+    "interaction_reconstruction": true,
+    "interaction_width": "0.004656765521382944",
+    "inverse_and_chart_margins": {
+      "p00": "0.9994868611772476",
+      "p11": "0.999522913096035",
+      "pinv_margin": "0.9990092001324291",
+      "r00": "0.9994864654610867",
+      "r11": "1.0026786139883375"
+    },
+    "operator_tail": "1.067792064599965e-27",
+    "projective_multiplicative_reconstruction": true,
+    "spin_one_wronskian": true,
+    "spin_two_wronskian": true,
+    "wronskian_width": "6.217860142460063e-06"
+  }
+}

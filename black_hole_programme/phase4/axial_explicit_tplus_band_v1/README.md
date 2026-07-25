@@ -40,6 +40,21 @@ sixteen-state coefficient/containment gates.  That micro-step is the
 interval claim.  The projective/log center calculation is a numerical
 consistency fixture, not an interval enclosure.
 
+The successor `projective_micro_certificate.json` now closes the first
+validated interaction/projective step.  On the next near-identity
+microfactor, it encloses \(J,K,\dot K\), uses complementary projective
+charts for both spin-two and spin-one columns, encloses the multiplicative
+amplitudes and their logarithmic \(\tau\)-derivatives, and verifies both
+Wronskian laws.  The certified inverse determinant margin is greater than
+\(0.9990\), while the projective-chart width is below \(9.0\times10^{-7}\).
+Applying that factor to the correlated outgoing frame advances the sealed
+checkpoint to \(r=1947/64\), with the direct sixteen-state transport retained
+as a boundary audit.
+
+This is the first interval proof that the proposed low-wrapping variables
+are well conditioned on a physical outgoing panel.  It is not yet a
+multi-panel projective checkpoint, and it does not assemble \(T_+\).
+
 Run:
 
 ```bash
@@ -49,4 +64,7 @@ python3 -m unittest -v black_hole_programme.phase4.axial_explicit_tplus_band_v1.
 python3 -m black_hole_programme.phase4.axial_explicit_tplus_band_v1.produce_interaction --reproduce
 python3 -m black_hole_programme.phase4.axial_explicit_tplus_band_v1.verify_interaction
 python3 -m unittest -v black_hole_programme.phase4.axial_explicit_tplus_band_v1.test_interaction_picture
+python3 -m black_hole_programme.phase4.axial_explicit_tplus_band_v1.produce_projective_micro --reproduce
+python3 -m black_hole_programme.phase4.axial_explicit_tplus_band_v1.verify_projective_micro
+python3 -m unittest -v black_hole_programme.phase4.axial_explicit_tplus_band_v1.test_projective_micro
 ```
