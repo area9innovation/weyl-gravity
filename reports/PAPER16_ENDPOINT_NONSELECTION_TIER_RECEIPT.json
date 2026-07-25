@@ -1,28 +1,36 @@
 {
   "schema": "paper16-endpoint-nonselection-tier-receipt-v1",
-  "status": "ACTIVE_CHECKPOINT_SCOPE_CLOSED_TPLUS_SHORTFALL",
-  "source_commit": "26d919af582aaff9408eb013a496083357f15bad",
+  "status": "ACTIVE_CHECKPOINT_RADIAL_GREEN_POLE_IMPORTED_TPLUS_SHORTFALL",
+  "source_commit": "e5b969d1302de197377107e79b70f79649b6efb1",
   "artifacts": {
     "paper_tex": {
       "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl.tex",
-      "sha256": "086f50dcd5a1a5cb758b57dc5dc0a138db9fa768052d22ea95a6320f9a4b90e4"
+      "sha256": "55dd11cace2cbab2a70425fd4250442dfd93b095fde4a15e4a3af67b43ecedd4"
     },
     "paper_pdf": {
       "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl.pdf",
-      "sha256": "e4cec359bf1df19b80b02f887ffc468ceaf3284858b8bf621ee47d9f8d101849",
-      "pages": 34
+      "sha256": "0c01644ec17390cc18259e942f8172c923cde79409c491a25fb3b5b504ec90b5",
+      "pages": 36
     },
     "claim_map": {
       "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl-claim-map.json",
-      "sha256": "e7ff40e117410bad523dde1f19fc0a920d6ce108ab06fa96a51f9d8323deec1f"
+      "sha256": "4c0a81aba927c035861242465d948c4bff9fb6c74af0888acfed3cf110cead46"
     },
     "coverage": {
       "path": "planning/paper-coverage/phase4-paper16-endpoint-nonselection-overlay-2026-07-24.json",
-      "sha256": "047b237256129787f8ff3662302852f2e9e180c1612d45cfbee679733c2fce7c"
+      "sha256": "b810159d12ff95e830be12163b96c7c9b39856efbfb0cef4bf3380f159383b00"
     },
     "computational_supplement": {
       "path": "paper/16-endpoint-nonselection-computational-supplement.tex",
-      "sha256": "7cf8608867a8f8fad76053b88060b724def1f4ace8d02c09719803d2f6fa7b4d"
+      "sha256": "cea835bbf89f49dcda324207c83909dc0372ebf86135d808eb89bfb5f806b07d"
+    },
+    "mathematical_companion": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "sha256": "15a1e04e784d8d91372eece9b5201673259d817d7be2d18f9f5b48d826a48d4a"
+    },
+    "qnm_fredholm_promotion": {
+      "path": "black_hole_programme/phase4/axial_qnm_fredholm_promotion_v1/certificate.json",
+      "sha256": "e3f5e28d426305f0e68f7c11c7f63e1f0618cc63ad20fc1ff5b221fb38d34110"
     },
     "tplus_shortfall_certificate": {
       "path": "black_hole_programme/phase4/axial_explicit_tplus_band_v1/amplitude_certificate.json",
@@ -38,7 +46,8 @@
     "tier1": [
       "claim-map generator --check passes",
       "independent semantic verifier passes",
-      "twenty-one claim-boundary and mutation tests pass",
+      "twenty-three claim-boundary, exact-identity, and mutation tests pass",
+      "finite-interval QNM Fredholm verifier and six mutation tests pass",
       "Tplus amplitude-shortfall producer, independent structural verifier, and three tests pass",
       "exact all-ell threshold verifier and six tests pass",
       "universal Hessian/intertwiner verifier and five tests pass",
@@ -57,7 +66,6 @@
   "open_gates": [
     "the amplitude-preserving Tplus enclosure reaches r=4 but cannot certify terminal rank because rectangular remainders dominate by more than 10^6",
     "a simultaneous future-horizon-regular and pure-outgoing non-Einstein separated mode is not established",
-    "the separately completed radial Fredholm promotion is not imported into this focused paper",
     "the physical mass-deformation cocycle has not yet been compared with the intrinsic Bach cocycle",
     "endpoint-block-diagonal spectral-C compatibility awaits explicit Tplus",
     "complete complex-frequency reducibility classification remains open",
@@ -66,7 +74,7 @@
   "does_not_establish": [
     "a submission freeze",
     "explicit Tplus amplitudes",
-    "a Green-resolvent second-order pole",
+    "a causal exterior spacetime Green-resolvent theorem, inverse-Laplace deformation, or generalized ringdown term",
     "a canonical, covariant, causal, endpoint-block-diagonal, or BRST-compatible spectral C operator",
     "identification of the intrinsic radial tau with the physical squared-mass deformation",
     "a Schwarzschild retarded propagator",

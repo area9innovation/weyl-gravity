@@ -105,6 +105,13 @@
       "sha256": "c2639050b9d735d73daa756aed99c86e6882d354c99e13eb7a806a7a8d3ea977",
       "status": null
     },
+    "qnm_fredholm_promotion": {
+      "path": "black_hole_programme/phase4/axial_qnm_fredholm_promotion_v1/certificate.json",
+      "result_id": null,
+      "result_token": null,
+      "sha256": "e3f5e28d426305f0e68f7c11c7f63e1f0618cc63ad20fc1ff5b221fb38d34110",
+      "status": "CERTIFIED_FINITE_INTERVAL_RADIAL_GREEN_OPERATOR_DOUBLE_POLE"
+    },
     "qnm_selector": {
       "path": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/local_selector_v1/certificate.json",
       "result_id": null,
@@ -174,6 +181,7 @@
     "all_ell_spin_one_spin_two_threshold_nonresonance": true,
     "axial_ell2_nonsplit_all_positive_real": true,
     "axial_l2_factor_filtration": true,
+    "bach_cocycle_redshift_representative_exact": true,
     "band_limited_pseudo_isometry": true,
     "canonical_source_target_null_lift": true,
     "combined_future_compatible_C_exists": true,
@@ -185,6 +193,7 @@
     "einstein_wave_packet_total_isotropy": true,
     "exact_scalar_threshold_nonresonance": true,
     "explicit_Tplus_amplitude_attempt_fails_closed": true,
+    "finite_interval_radial_fredholm_pencil": true,
     "generic_outgoing_population_off_discrete_set": true,
     "global_one_ended_nonselection_with_nonzero_carrier": true,
     "incoming_gram_inertia_1_2_0_all_positive_real": true,
@@ -197,6 +206,7 @@
     "no_local_rational_positive_C_axial_ell2_positive_real": true,
     "no_rational_spin_one_spin_two_intertwiner_positive_real": true,
     "no_uniformly_positive_einstein_containing_subspace": true,
+    "non_einstein_generalized_qnm_chain_vector": true,
     "nondegenerate_einstein_containing_restriction_indefinite": true,
     "nonlocal_spectral_C_positive_real_fibers": true,
     "one_connection_level_smith_0_0_2": true,
@@ -207,6 +217,8 @@
     "physical_mass_radial_tau_crosswalk_open": true,
     "polar_local_horizon_nonselection": true,
     "qnm_divisor_count_2N2_plus_N1": true,
+    "radial_green_operator_second_order_pole": true,
+    "radial_green_principal_metric_reconstruction_nonzero": true,
     "rank_one_double_coefficient_algebra_exact": true,
     "scattering_positive_identity_equivalent_to_C_intertwining": true,
     "schouten_einstein_carrier_factorization": true,
@@ -223,9 +235,23 @@
     "REDUCED-MODE",
     "LORENTZIAN-CAUSAL"
   ],
+  "exact_identities": {
+    "bach_cocycle_redshift": {
+      "parameter_domain": "omega != 0",
+      "q": "-I*(15*r + 13 + 12/r + 9/r**2)/(120*omega)",
+      "representative": "I*omega*(r-2)/(2*r)"
+    },
+    "generalized_root_chain": {
+      "assumptions": "a1 != 0 and b0 != 0",
+      "geometric_root": "[1,0]",
+      "quotient_component": "-a1/b0"
+    }
+  },
   "fail_closed_scope": {
     "absence_of_nonlocal_spin_intertwiners": false,
     "all_positive_real_Tplus_invertibility": false,
+    "causal_exterior_spacetime_fredholm_realization": false,
+    "causal_spacetime_green_resolvent_second_order_pole": false,
     "channel_factorized_future_C": false,
     "complete_complex_frequency_reducibility_classification": false,
     "complete_complex_reducibility_classification": false,
@@ -235,13 +261,11 @@
     "full_six_state_commutant_dual_numbers": false,
     "generalized_ringdown": false,
     "generic_radial_nonsplitting_is_time_jordan": false,
-    "green_resolvent_second_order_pole": false,
     "literal_endpoint_current_free_of_euler_corner_terms": false,
     "mannheim_dynamical_C_constructed_or_excluded": false,
     "mixed_einstein_additional_pairing_euler_exact": false,
     "monochromatic_einstein_current_pointwise_zero": false,
     "parent_overlap_equals_radial_overlap": false,
-    "physical_fredholm_realization": false,
     "physical_mass_jet_equals_intrinsic_radial_tau": false,
     "physical_massive_qnm_slope": false,
     "polar_global_connection": false,
@@ -257,8 +281,8 @@
   "lifecycle_state": "DRAFT_ALLOWED",
   "manuscript": "paper/16-lorentzian-endpoint-nonselection-pure-weyl.tex",
   "paper_id": "PAPER_16_LORENTZIAN_ENDPOINT_NONSELECTION",
-  "paper_sha256": "086f50dcd5a1a5cb758b57dc5dc0a138db9fa768052d22ea95a6320f9a4b90e4",
-  "result_id": "PAPER16_FOCUSED_ENDPOINT_NONSELECTION_WITH_CONNECTION_EP2",
+  "paper_sha256": "55dd11cace2cbab2a70425fd4250442dfd93b095fde4a15e4a3af67b43ecedd4",
+  "result_id": "PAPER16_FOCUSED_ENDPOINT_NONSELECTION_WITH_RADIAL_GREEN_POLE",
   "schema": "paper-draft-source-map-v1",
   "split": {
     "computational_supplement": "paper/16-endpoint-nonselection-computational-supplement.tex",

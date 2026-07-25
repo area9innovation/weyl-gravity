@@ -32,9 +32,9 @@ recorded as an independent verification pass.
 \section{Logical dependency of the title theorem}
 
 The title theorem is computer-assisted but has a closed proof chain.  It does
-not use an explicit \(T_+\) matrix, a retarded convolution, a Fredholm
-resolvent, or a raw-Weyl/current comparison not already cited as an endpoint
-authority.
+not use an explicit \(T_+\) matrix, a retarded convolution, the separately
+certified finite-interval radial Fredholm pole, or a raw-Weyl/current
+comparison not already cited as an endpoint authority.
 
 \begin{center}
 \small
@@ -60,10 +60,14 @@ Outgoing realization &
 Triangular determinant and nonzero scalar outgoing factors &
 Validated; \([1/2,10001/20000]\) &
 Required only for outgoing clause\\
-Explicit \(T_+\), simultaneous pure-outgoing non-Einstein mode,
-retarded/Fredholm extensions &
+Finite-interval radial QNM Green pole &
+Analytic initial-value reduction and certified Smith transfer &
+Exact reduced-mode theorem; no causal inverse transform &
+Not required\\
+Explicit \(T_+\), simultaneous pure-outgoing non-Einstein mode, and
+retarded/causal extensions &
 Separate programme items &
-Not established or not imported &
+Not established &
 Not required\\
 \bottomrule
 \end{tabularx}
@@ -163,6 +167,11 @@ Outgoing cell &
 \(|A_{\rm out,2}|>0.0113262\),
 \(|A_{\rm out,1}|>0.146805\) &
 code, representation, interval verifier\\
+Radial QNM Green pole &
+\path{phase4/axial_qnm_fredholm_promotion_v1/certificate.json}\\
+\path{e3f5e28d426305f0e68f7c11c7f63e1f0618cc63ad20fc1ff5b221fb38d34110} &
+One certified QNM disk; rank-one order-two finite-interval radial inverse &
+code, representation\\
 \bottomrule
 \end{tabularx}
 \normalsize
@@ -182,7 +191,7 @@ Ricci-factorized Hessian, the Schouten--Einstein/Maxwell carrier, and its
 Euler-current boundary;
 \item the second-order auxiliary-tensor parent action, its factorized
 Einstein Green current, canonical null lift, and QNM divisor count;
-\item the parent-Hessian inverse, conditional rank-one QNM Laurent algebra,
+\item the parent-Hessian inverse, rank-one QNM Laurent algebra,
 simple-self-extension involution lemma, and endpoint Krein graph/cotangent
 obstructions;
 \item axial operator extraction and Ricci reconstruction;
@@ -191,7 +200,8 @@ no-rational-intertwiner test;
 \item incoming and horizon Lee--Wald Grams;
 \item global incoming population and the common scattering cell;
 \item boundary d\'evissage and the no-growing-mode theorem;
-\item projective Evans winding, local selector, and spin-one local-unit test.
+\item projective Evans winding, local selector, spin-one local-unit test,
+and finite-interval radial Fredholm promotion.
 \end{enumerate}
 
 The primary local-structure reproducibility record is
@@ -237,8 +247,16 @@ It also certifies the characteristic-zero involution lemma for a nonsplit
 self-extension of a simple object, the endpoint positive-graph
 obstruction, and the quotient duality \(B_2/E\simeq E^*\).
 
-The record is deliberately fail-closed at the physical Fredholm QNM pole and
-Schwarzschild retarded propagator.  Real-axis simplicity and scalar
+That algebraic record is deliberately fail-closed at a differential QNM pole.
+The separate
+\path{black_hole_programme/phase4/
+axial_qnm_fredholm_promotion_v1/certificate.json}
+closes the fixed-finite-interval radial gate by exact variation of constants,
+boundary Schur reduction, and Smith transfer.  It certifies a nonzero
+rank-one second-order radial inverse pole and survival under exact metric
+reconstruction.  It remains fail-closed at the causal exterior spacetime
+resolvent, inverse-Laplace deformation, and generalized ringdown statement.
+Real-axis simplicity and scalar
 endomorphism rings are independently certified in
 \path{black_hole_programme/phase4/
 rw_maxwell_simplicity_endomorphisms_v1/certificate.json}.  Consequently the
@@ -271,7 +289,8 @@ Neither the main paper nor this supplement establishes:
 \item a non-Einstein separated solution that is simultaneously
 future-horizon regular and purely outgoing at infinity;
 \item explicit \(T_+\) entries or reflection amplitudes;
-\item a causal time-domain resolvent or retarded convolution on
+\item a causal exterior spacetime resolvent, inverse-Laplace deformation,
+generalized ringdown term, or retarded convolution on
 Schwarzschild;
 \item a complete polar global connection;
 \item a canonical positive quantum metric or unitarity.

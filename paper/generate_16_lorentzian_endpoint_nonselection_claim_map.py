@@ -37,6 +37,7 @@ AUTHORITIES = {
     "qnm_winding": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/full_contour_winding_v1/certificate.json",
     "qnm_selector": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/local_selector_v1/certificate.json",
     "qnm_spin_one_unit": "black_hole_programme/phase3/axial_qnm_spin_one_local_unit_v1/certificate.json",
+    "qnm_fredholm_promotion": "black_hole_programme/phase4/axial_qnm_fredholm_promotion_v1/certificate.json",
     "polar_reach": "black_hole_programme/certificates/BH2B_POLAR_REACH.json",
 }
 
@@ -79,7 +80,7 @@ def claim_map() -> dict:
     return {
         "schema": "paper-draft-source-map-v1",
         "paper_id": "PAPER_16_LORENTZIAN_ENDPOINT_NONSELECTION",
-        "result_id": "PAPER16_FOCUSED_ENDPOINT_NONSELECTION_WITH_CONNECTION_EP2",
+        "result_id": "PAPER16_FOCUSED_ENDPOINT_NONSELECTION_WITH_RADIAL_GREEN_POLE",
         "lifecycle_state": "DRAFT_ALLOWED",
         "manuscript": str(PAPER.relative_to(ROOT)),
         "paper_sha256": digest(PAPER),
@@ -89,6 +90,18 @@ def claim_map() -> dict:
             "LORENTZIAN-CAUSAL",
         ],
         "authorities": authority_map(),
+        "exact_identities": {
+            "bach_cocycle_redshift": {
+                "q": "-I*(15*r + 13 + 12/r + 9/r**2)/(120*omega)",
+                "representative": "I*omega*(r-2)/(2*r)",
+                "parameter_domain": "omega != 0",
+            },
+            "generalized_root_chain": {
+                "geometric_root": "[1,0]",
+                "quotient_component": "-a1/b0",
+                "assumptions": "a1 != 0 and b0 != 0",
+            },
+        },
         "certified_scope": {
             "universal_ricci_flat_bulk_hessian_factorization": True,
             "schouten_einstein_carrier_factorization": True,
@@ -135,6 +148,11 @@ def claim_map() -> dict:
             "exact_scalar_threshold_nonresonance": True,
             "all_ell_spin_one_spin_two_threshold_nonresonance": True,
             "one_connection_level_smith_0_0_2": True,
+            "bach_cocycle_redshift_representative_exact": True,
+            "non_einstein_generalized_qnm_chain_vector": True,
+            "finite_interval_radial_fredholm_pencil": True,
+            "radial_green_operator_second_order_pole": True,
+            "radial_green_principal_metric_reconstruction_nonzero": True,
             "qnm_divisor_count_2N2_plus_N1": True,
             "polar_local_horizon_nonselection": True,
         },
@@ -158,8 +176,8 @@ def claim_map() -> dict:
             "simultaneous_horizon_regular_pure_outgoing_non_einstein_mode": False,
             "all_positive_real_Tplus_invertibility": False,
             "punctured_threshold_Tplus_interval": False,
-            "physical_fredholm_realization": False,
-            "green_resolvent_second_order_pole": False,
+            "causal_exterior_spacetime_fredholm_realization": False,
+            "causal_spacetime_green_resolvent_second_order_pole": False,
             "parent_overlap_equals_radial_overlap": False,
             "generic_radial_nonsplitting_is_time_jordan": False,
             "complete_polar_parent_gram": False,
@@ -201,8 +219,8 @@ def coverage(claim_sha: str) -> dict:
             "LOCAL-ALGEBRAIC",
         ),
         (
-            "parent-resolvent-and-conditional-pole",
-            "The parent Hessian has an exact block inverse and exact rank-one Laurent algebra; a physical QNM double pole remains conditional on the analytic Fredholm and bounded-insertion gates.",
+            "parent-resolvent-and-radial-pole",
+            "The parent Hessian has an exact block inverse and rank-one Laurent algebra; an independent finite-interval Fredholm reduction proves a nonzero rank-one second-order radial Green-operator pole while the causal spacetime promotion remains open.",
             "LOCAL-ALGEBRAIC",
         ),
         (
@@ -231,8 +249,8 @@ def coverage(claim_sha: str) -> dict:
             "LOCAL-ALGEBRAIC",
         ),
         (
-            "critical-mass-jet-and-spectral-c",
-            "The covariant parent has an exact critical mass jet, while the physical radial crosswalk remains open; independently, the incoming Krein fibers admit a compact-band spectral fundamental symmetry with omega, omega, omega-cubed threshold weights.",
+            "critical-mass-jet-cocycle-and-spectral-c",
+            "The Bach cocycle has an exact regular redshift representative and the covariant parent has an exact critical mass jet, while the physical radial crosswalk remains open; independently, the incoming Krein fibers admit a compact-band spectral fundamental symmetry with omega, omega, omega-cubed threshold weights.",
             "REDUCED-MODE",
         ),
         (
@@ -256,8 +274,8 @@ def coverage(claim_sha: str) -> dict:
             "LORENTZIAN-CAUSAL",
         ),
         (
-            "connection-ep2",
-            "One enclosed damped QNM has complete connection Smith valuations (0,0,2).",
+            "connection-ep2-and-radial-green-pole",
+            "One enclosed damped QNM has complete connection Smith valuations (0,0,2); its generalized root vector has nonzero carrier quotient and its finite-interval radial Green inverse has a nonzero rank-one second-order pole.",
             "REDUCED-MODE",
         ),
         (

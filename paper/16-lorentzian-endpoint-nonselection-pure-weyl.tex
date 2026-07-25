@@ -105,9 +105,11 @@ spin-two quasinormal frequency and certifies a nonzero intrinsic extension
 selector.  The spin-one factor is a local unit there.  The complete connection
 therefore has Smith valuations \((0,0,2)\), algebraic multiplicity two,
 geometric multiplicity one, and one length-two connection root chain.  This is
-a connection-level intrinsic exceptional point.  A second-order physical
-Green-resolvent pole remains conditional on a separate analytic Fredholm
-realization.
+an intrinsic exceptional point: its generalized root vector has a nonzero
+Ricci-carrier quotient.  Exact finite-radius boundary reduction further
+promotes it to a nonzero rank-one second-order pole of the reduced radial
+Green operator.  No causal spacetime resolvent, inverse-Laplace deformation,
+or \(t e^{i\omega t}\) ringdown theorem is inferred.
 \end{abstract}
 
 \section{Question, answer, and scope}
@@ -199,7 +201,9 @@ surjectivity statement, not a pure-outgoing quasinormal statement.  Outgoing
 surjectivity is generic on the positive real axis, and the filtered system
 has no exponentially growing separated axial mode.
 \item One enclosed damped spin-two quasinormal frequency is a certified
-connection-level exceptional point with Smith valuations \((0,0,2)\).
+exceptional point with Smith valuations \((0,0,2)\).  Its generalized root
+vector has nonzero carrier quotient, and the corresponding finite-interval
+radial Green operator has a nonzero rank-one second-order pole.
 \end{enumerate}
 
 \subsection{Controlled vocabulary}
@@ -479,8 +483,10 @@ commutation of \(\mathcal A\) with \(\mathcal E\) is used.
 This explains the repeated spin-two divisor without cyclic elimination:
 the metric response is an Einstein resolvent, followed by an algebraic
 trace-reversal insertion, followed by a second Einstein resolvent.  It does
-not yet provide a physical QNM resolvent, because the required analytic
-Fredholm realization and its endpoint domains remain open.
+not by itself provide a causal spacetime QNM resolvent: that requires a
+declared global evolution domain and inverse-transform control.  A
+finite-interval radial Fredholm realization is established below in
+Theorem~\ref{thm:radial-green-pole}.
 
 \begin{corollary}[Conditional simple-QNM Laurent coefficient]
 \label{cor:conditional-parent-pole}
@@ -828,6 +834,9 @@ projective comparison
 \quad\hbox{in}\quad
 \C(r)/\mathcal K_U\C(r).
 \]
+Proposition~\ref{prop:redshift-cocycle} below reduces the Bach side to the
+single nonzero class \([(r-2)/r]\); the finite-mass reduction need only
+determine its coefficient modulo \(\mathcal K_U\).
 Accordingly no physical massive-QNM slope is inferred here from the
 intrinsic shear \(b\).
 
@@ -836,8 +845,9 @@ repeated spin-two blocks up to rational triangular gauge and parameter
 rescaling.  The global identity \(b=-\partial_m a|_0\) additionally requires
 the complete mixed Maxwell deformation, compatible moving endpoint phases,
 and matched Jost-germ normalizations.  Identifying
-\(\beta_n/\alpha_n\) with a massive-QNM slope further requires the analytic
-Fredholm realization.  If the local classes do agree nontrivially, the
+\(\beta_n/\alpha_n\) with a massive-QNM slope further requires compatible
+global endpoint normalizations and a common analytic Fredholm realization
+of the two deformations.  If the local classes do agree nontrivially, the
 critical residue of the finite-mass branch-sign operator must be
 proportional to the unique nilpotent \(N\) of
 Theorem~\ref{thm:local-commutant}.
@@ -1874,6 +1884,51 @@ p_H=p+\frac{25}{12}\phi_{0,2}
 \]
 satisfies \(p_H(2)=0\).
 
+\begin{proposition}[Regular redshift representative of the extension class]
+\label{prop:redshift-cocycle}
+Let
+\[
+U=\omega^2-V_2,\qquad
+\mathcal K_U=D^3+4UD+2D(U),
+\]
+and, for \(\omega\ne0\), set
+\[
+q(r,\omega)
+=-\frac{i}{120\omega}
+\left(15r+13+\frac{12}{r}+\frac9{r^2}\right).
+\]
+Then the exact rational identity
+\begin{equation}
+\label{eq:redshift-cocycle}
+\mathcal I_{\rm red}
+=\mathcal K_Uq+\frac{i\omega}{2}\frac{r-2}{r}
+\end{equation}
+holds.  Consequently
+\[
+[\mathcal I_{\rm red}]
+=\frac{i\omega}{2}\left[\frac{r-2}{r}\right]
+\quad\hbox{in}\quad
+\C(r)/\mathcal K_U\C(r).
+\]
+For real \(\omega>0\), the redshift class on the right is nonzero.
+\end{proposition}
+
+\begin{proof}
+Apply \(D=(r-2)r^{-1}\partial_r\) three times to the displayed \(q\) and
+collect the rational numerator.  The difference between the two sides of
+\eqref{eq:redshift-cocycle} is identically zero.  If the class of
+\((r-2)/r\) vanished at a positive real frequency, so would the certified
+nonsplit Bach extension class, a contradiction.
+\end{proof}
+
+Thus the apparent \(1/\omega\) pole in the displayed cocycle is
+coboundary-exact at every fixed nonzero frequency.  The removing gauge
+\(q\) itself is \(O(\omega^{-1})\), so this is not a threshold-uniform
+splitting.  It reduces the open Einstein--Weyl comparison to determining
+the coefficient of the redshift class in the finite-mass axial reduction;
+it does not yet identify the intrinsic \(\tau\) with a physical mass
+parameter.
+
 \begin{remark}[Open matching estimate]
 Formal two-region matching to the far spherical equation predicts, for all
 \(\ell\ge2\),
@@ -2045,23 +2100,108 @@ Consequently the complete axial connection has Smith valuations
 length-two connection root chain at the unique enclosed QNM.
 \end{theorem}
 
+\begin{corollary}[The generalized QNM chain is non-Einstein]
+\label{cor:non-einstein-root-chain}
+In the factor basis \((X,Y)\), with \(X\) the source-Einstein submodule and
+\(Y\) the carrier quotient, the root vector at the certified QNM is
+\(c_0=(1,0)\).  Every length-two root polynomial
+\[
+c(z)=c_0+zc_1+O(z^2),\qquad z=\omega-\omega_n,
+\]
+has quotient component
+\[
+(c_1)_Y=-\frac{a'(\omega_n)}{b(\omega_n)}
+=-\frac1{\kappa_n}\ne0,
+\qquad
+\kappa_n=\frac{b(\omega_n)}{a'(\omega_n)}.
+\]
+Thus the geometric resonant vector is Einstein, whereas its associated
+generalized vector is intrinsically non-Einstein.
+\end{corollary}
+
+\begin{proof}
+Write \(a=a_1z+O(z^2)\), \(b=b_0+O(z)\), with \(a_1b_0\ne0\).
+The coefficient of \(z\) in
+\(T_2(z)(c_0+zc_1)\) is
+\((a_1+b_0(c_1)_Y,0)^T\), which must vanish.
+\end{proof}
+
 The exceptional point is intrinsic: the rational self-extension is not a
 frequency, mass, or angular-eigenvalue tangent modulo admissible rational
 gauge.  A generic non-split \emph{radial} differential-module extension is
 not, by itself, a Jordan block of the time-translation generator and does
 not imply a \(t e^{i\omega t}\) term.  Such a temporal interpretation
 requires a discrete spectral obstruction.  Theorem~\ref{thm:ep2} supplies
-that obstruction at one physical QNM at the connection level.
+that obstruction at one physical QNM, and the following result promotes it
+from connection algebra to a declared radial differential boundary problem.
 
-What is certified there is a pole of order two of the inverse
-\emph{connection} block.  To infer the rank-one principal part
+\begin{theorem}[Finite-interval radial Green pole]
+\label{thm:radial-green-pole}
+Choose ordinary radii \(2<r_H<r_I<\infty\) inside the certified analytic
+continuation domains, and let \(B_H(\omega)\) and \(B_I(\omega)\) annihilate
+the transported horizon-regular and infinity-outgoing three-planes there.
+The phase-factored operator
 \[
--\frac{\beta_n}{\alpha_n^2}
-\frac{u_n\otimes\widetilde u_n}{(\omega-\omega_n)^2}
+\mathscr L(\omega)Y
+=\bigl(
+Y'-\mathbb A(r,\omega)Y,\,
+B_H(\omega)Y(r_H),\,
+B_I(\omega)Y(r_I)
+\bigr)
 \]
-for the physical differential resolvent, one must still construct an analytic
-Fredholm realization with the QNM endpoint conditions and prove graph-norm
-boundedness of the extension.
+is an analytic Fredholm pencil of index zero from
+\[
+H^1([r_H,r_I];\C^6)
+\longrightarrow
+L^2([r_H,r_I];\C^6)\oplus\C^3\oplus\C^3 .
+\]
+At the QNM enclosed by Theorem~\ref{thm:ep2},
+\[
+\mathscr L(\omega)^{-1}
+=\frac{\Pi_{-2}}{(\omega-\omega_n)^2}
++\frac{\Pi_{-1}}{\omega-\omega_n}+O(1),
+\qquad
+\operatorname{rank}\Pi_{-2}=1,
+\qquad
+\Pi_{-2}\ne0.
+\]
+The principal range is the source-Einstein root line and survives the exact
+axial metric reconstruction.  Equivalently, compactly supported radial
+sources and local metric observations detect a genuine second-order pole.
+\end{theorem}
+
+\begin{proof}
+The initial-value map
+\[
+Y\longmapsto(Y'-\mathbb A Y,Y(r_H))
+\]
+is an analytic isomorphism by variation of constants.  If
+\(H(\omega):\C^3\to\C^6\) spans \(\ker B_H(\omega)\), analytic boundary
+elimination reduces \(\mathscr L(\omega)\) to the identity on \(L^2\) and
+the effective matrix
+\[
+M(\omega)
+=B_I(\omega)\Phi(r_I,r_H;\omega)H(\omega).
+\]
+This matrix is the certified factor-adapted QNM connection up to analytic
+invertible endpoint units.  Its Smith valuations \((0,0,2)\) therefore give
+a nonzero rank-one coefficient at order \((\omega-\omega_n)^{-2}\), and
+analytic reconstruction preserves its rank.
+
+For the source statement, multiply an arbitrary selected incoming Jost
+solution by a cutoff that vanishes near \(r_H\) and equals one near \(r_I\).
+Applying the radial operator produces a compactly supported source whose
+zero-horizon particular solution has the prescribed incoming trace.  Hence
+the source-to-trace map is onto.  The horizon Poisson map is injective, and
+the exact reconstruction maps its source-Einstein range to the nonzero
+metric kernel state \((H_1,H_1')\); the principal coefficient cannot be
+annihilated.
+\end{proof}
+
+This is a \emph{finite-interval reduced radial} Green-operator theorem.  It
+does not construct a causal exterior spacetime resolvent, justify a
+Laplace-contour deformation, control the nonpole inverse-transform contour,
+or establish a \(t e^{i\omega_n t}\) term for physical initial data.
 
 \section{Polar endpoint reach}
 
@@ -2109,8 +2249,9 @@ axial only.
 The title theorem has the following closed dependency chain.  Here
 \emph{fail closed} means that missing data, a timeout, an unsupported domain,
 or an unverifiable claim is rejected rather than counted as a partial pass.
-The unfinished explicit \(T_+\), Fredholm, and retarded-convolution
-calculations are absent from this chain.
+The unfinished explicit \(T_+\) and retarded-convolution calculations are
+absent from this chain.  The finite-interval radial Fredholm theorem is
+independently certified but is not required for the title theorem.
 
 \scriptsize
 \begin{tabularx}{\textwidth}{@{}p{0.20\textwidth}Y Y
@@ -2137,8 +2278,13 @@ Triangular determinant and certified nonzero scalar outgoing factors;
 \cert{black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/certificate.json} &
 Validated interval theorem; \(M=1\), axial \(\ell=2\),
 \(I_*=[1/2,10001/20000]\) & Yes, for the outgoing clause only\\
-Explicit \(T_+\) entries, QNM Fredholm pole, retarded convolution &
-Separate open computations & Not established and not imported & No\\
+Finite-interval radial QNM Green pole &
+Analytic initial-value reduction and certified Smith transfer;
+\cert{black_hole_programme/phase4/axial_qnm_fredholm_promotion_v1/certificate.json} &
+Exact reduced-mode theorem on fixed ordinary radii; no causal
+inverse-transform statement & No\\
+Explicit \(T_+\) entries and retarded convolution &
+Separate open computations & Not established & No\\
 \bottomrule
 \end{tabularx}
 \normalsize
@@ -2195,12 +2341,15 @@ Exact symbolic theorem with independent certificate &
 Every four-dimensional Ricci-flat background modulo Euler boundary/corner terms\\
 Parent resolvent identity and rank-one Laurent algebra &
 Exact algebra; QNM specialization conditional &
-Gauge-fixed invertible Einstein operator; a physical pole additionally
-requires the analytic Fredholm and bounded-insertion hypotheses\\
+Gauge-fixed invertible Einstein operator; identification with the parent
+overlap requires the common Fredholm and bounded-insertion hypotheses\\
 Critical Einstein--Weyl parent mass jet and confluent branch-sign limit &
 Exact parent algebra with fail-closed radial crosswalk &
 Covariant parent and transverse-traceless sector; equality with the
 intrinsic radial \(\tau\)-jet requires a projective-cocycle comparison\\
+Regular redshift representative of the Bach cocycle &
+Exact rational identity independently checked against the certified cocycle &
+Axial \(\ell=2\), \(\omega\ne0\); does not identify \(\tau\) with physical mass\\
 Euler cut current and Einstein packet isotropy &
 Exact symbolic and reduced-mode theorem with mutation tests &
 Finite-radius smooth compact-frequency core; endpoint interchange conditional\\
@@ -2243,12 +2392,17 @@ Axial \(\ell=2\), declared complex boundary classes\\
 Connection Smith valuations \((0,0,2)\) &
 Validated projective Evans and local-unit theorem &
 One enclosed simple damped QNM\\
+Non-Einstein generalized root-chain vector &
+Exact local root-polynomial algebra plus the nonzero selector &
+The generalized vector, not the geometric resonant vector, has nonzero
+carrier quotient\\
 QNM divisor count \(N_B=2N_2+N_1\) &
 Exact triangular determinant theorem &
 Contours avoiding scalar zeros, poles, and endpoint-normalization singularities\\
 Second-order Green-resolvent pole &
-Open conditional corollary &
-Requires analytic Fredholm realization\\
+Exact finite-interval radial Fredholm theorem &
+Reduced six-state boundary problem; rank-one principal part survives metric
+reconstruction, but no causal spacetime or inverse-transform claim\\
 Time-domain boundedness and decay &
 Open &
 Requires threshold, limiting-absorption and resolvent bounds\\
@@ -2295,7 +2449,10 @@ solution at every positive real frequency;
 \item outgoing population holds on a certified band and generically on the
 positive axis;
 \item the full filtered system has no growing separated mode;
-\item one physical spin-two QNM is a defective connection-level double root.
+\item one physical spin-two QNM is a defective connection-level double root
+whose generalized chain vector is non-Einstein;
+\item the corresponding finite-interval radial Green operator has a nonzero
+rank-one second-order pole.
 \end{itemize}
 
 Thus negative classical flux directions coexist with separated-mode
@@ -2315,12 +2472,13 @@ nonzero carrier reconstruction.  Further work should derive the finite-mass
 axial carrier system and compare
 \([\mathcal I_{\rm mass}]\) with \([\mathcal I_{\rm Bach}]\); only that test
 can promote the intrinsic \(\tau\)-jet to a physical mass derivative.
-Finally, construct the analytic
-Fredholm QNM realization needed to promote Theorem~\ref{thm:ep2} to a
-second-order Green-resolvent pole.  The parent formulation gives a cheaper
-audit inside that task: compare
+The reduced radial Fredholm promotion is now complete.  The remaining
+spectral task is to construct a causal exterior evolution framework, justify
+the inverse-Laplace deformation, and prove that admissible initial data
+couple to the principal coefficient before inferring generalized ringdown.
+The parent formulation gives an independent audit inside that task: compare
 \(\langle\widetilde f_n,\mathcal Af_n\rangle\) with the radial extension
-overlap before attempting a full resolvent promotion.  A separate
+overlap.  A separate
 time-domain control should compare direct six-state evolution with the
 sequential retarded convolution of Remark~\ref{rem:parent-experiments}.  In
 parallel, the polar problem should be reorganized around the standard
@@ -2629,9 +2787,8 @@ Jordan block;
 \item a complete classification of the complex-frequency reducibility locus,
 or the absence of nonlocal, spectral, scattering-dependent, or BRST
 \(C\) operators;
-\item an analytic Fredholm realization of the damped QNM boundary problem;
-\item a physical second-order Green-resolvent pole or generalized ringdown
-term;
+\item a causal exterior spacetime resolvent, inverse-Laplace contour
+deformation, or generalized ringdown term;
 \item equality of the parent QNM overlap with the normalized radial overlap
 before scalar-projection, commutator, and endpoint terms are audited;
 \item a Schwarzschild retarded-convolution evolution theorem or the

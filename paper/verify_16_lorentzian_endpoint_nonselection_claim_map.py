@@ -8,6 +8,8 @@ import hashlib
 import json
 from pathlib import Path
 
+import sympy as sp
+
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PAPER = ROOT / "paper/16-lorentzian-endpoint-nonselection-pure-weyl.tex"
 DEFAULT_MAP = ROOT / "paper/16-lorentzian-endpoint-nonselection-pure-weyl-claim-map.json"
@@ -61,9 +63,12 @@ def main() -> None:
         "T_-(\\omega)\\in GL(3,\\C)",
         "\\operatorname{diag}(1,-1,-1)",
         "Smith valuations \\((0,0,2)\\)",
-        "connection-level intrinsic exceptional point",
-        "A second-order physical",
-        "Green-resolvent pole remains conditional",
+        "nonzero rank-one second-order pole of the reduced radial",
+        "Regular redshift representative of the extension class",
+        "15r+13+\\frac{12}{r}+\\frac9{r^2}",
+        "The generalized QNM chain is non-Einstein",
+        "Finite-interval radial Green pole",
+        "causal exterior spacetime resolvent",
         "No branch-resolving rational involution",
         "Ricci-factorized pure-Weyl Hessian",
         "Einstein-line positivity obstruction",
@@ -174,6 +179,25 @@ def main() -> None:
     ep2 = json.loads((ROOT / authorities["qnm_spin_one_unit"]["path"]).read_text())
     require_flag(ep2, "full_connection_smith_valuations_0_0_2", True, "EP2")
     require_flag(ep2, "green_resolvent_second_order_pole_established", False, "EP2")
+    fredholm = json.loads(
+        (ROOT / authorities["qnm_fredholm_promotion"]["path"]).read_text()
+    )
+    for key in [
+        "analytic_finite_interval_pencil_certified",
+        "fredholm_index_zero_certified",
+        "connection_smith_transferred_to_operator",
+        "radial_green_operator_second_order_pole_certified",
+        "principal_laurent_coefficient_rank_one",
+        "physical_metric_reconstruction_nonzero",
+    ]:
+        require_flag(fredholm, key, True, "radial Fredholm promotion")
+    for key in [
+        "exterior_spacetime_causal_resolvent_certified",
+        "retarded_inverse_transform_certified",
+        "t_exp_iomega_t_term_certified",
+        "time_domain_stability_certified",
+    ]:
+        require_flag(fredholm, key, False, "radial Fredholm promotion")
     threshold = json.loads((ROOT / authorities["threshold"]["path"]).read_text())
     if threshold.get("status") != "EXACT_THRESHOLD_IDENTITIES_PASS":
         fail("threshold certificate status drift")
@@ -356,6 +380,51 @@ def main() -> None:
     if mass_jet.get("crosswalk_gate", {}).get("status") != "OPEN_NOT_ASSUMED":
         fail("critical mass/radial crosswalk gate drift")
 
+    # Independently check the new exact cocycle representative against the
+    # certified reduced cocycle.  This uses direct rational simplification,
+    # not the threshold producer's decomposition.
+    r, omega = sp.symbols("r omega", nonzero=True)
+    f = (r - 2) / r
+    v2 = f * (6 / r**2 - 6 / r**3)
+    u = omega**2 - v2
+
+    def d(expr: sp.Expr) -> sp.Expr:
+        return sp.factor(f * sp.diff(expr, r))
+
+    def k_u(expr: sp.Expr) -> sp.Expr:
+        return sp.factor(d(d(d(expr))) + 4 * u * d(expr) + 2 * d(u) * expr)
+
+    identities = claims.get("exact_identities", {})
+    cocycle_identity = identities.get("bach_cocycle_redshift", {})
+    q = sp.sympify(
+        cocycle_identity.get("q", ""),
+        locals={"I": sp.I, "r": r, "omega": omega},
+    )
+    representative = sp.sympify(
+        cocycle_identity.get("representative", ""),
+        locals={"I": sp.I, "r": r, "omega": omega},
+    )
+    i_red = sp.I * (r - 2) * (
+        2 * r * omega**2 + 3 * omega**2 + 12
+    ) / (5 * r**4 * omega)
+    if sp.factor(i_red - k_u(q) - representative) != 0:
+        fail("regular redshift cocycle representative identity failed")
+
+    # Check the root-polynomial quotient coefficient without importing the
+    # producer's Smith reduction.
+    a1, b0, x, y, z = sp.symbols("a1 b0 x y z", nonzero=True)
+    t0 = sp.Matrix([[0, b0], [0, 0]])
+    t1 = sp.Matrix([[a1, 0], [0, a1]])
+    c0 = sp.Matrix([1, 0])
+    chain_identity = identities.get("generalized_root_chain", {})
+    quotient = sp.sympify(
+        chain_identity.get("quotient_component", ""),
+        locals={"a1": a1, "b0": b0},
+    )
+    c1 = sp.Matrix([x, quotient])
+    if sp.simplify(t1 * c0 + t0 * c1) != sp.zeros(2, 1):
+        fail("generalized root-vector carrier quotient identity failed")
+
     spectral_c = json.loads(
         (
             ROOT
@@ -417,6 +486,17 @@ def main() -> None:
     fail_closed = claims.get("fail_closed_scope", {})
     if any(value is not False for value in fail_closed.values()):
         fail("claim map contains a fail-closed promotion")
+
+    certified = claims.get("certified_scope", {})
+    for key in [
+        "bach_cocycle_redshift_representative_exact",
+        "non_einstein_generalized_qnm_chain_vector",
+        "finite_interval_radial_fredholm_pencil",
+        "radial_green_operator_second_order_pole",
+        "radial_green_principal_metric_reconstruction_nonzero",
+    ]:
+        if certified.get(key) is not True:
+            fail(f"certified radial/QNM claim missing: {key}")
 
     coverage = json.loads(coverage_path.read_text())
     if coverage.get("claim_map_sha256") != digest(claim_path):

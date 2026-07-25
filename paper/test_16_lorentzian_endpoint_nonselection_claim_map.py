@@ -63,7 +63,7 @@ class Paper16ClaimMapTests(unittest.TestCase):
         subprocess.run(["python3", str(GENERATOR), "--check"], cwd=ROOT, check=True)
         subprocess.run(["python3", str(VERIFIER)], cwd=ROOT, check=True)
 
-    def test_green_resolvent_promotion_rejected(self) -> None:
+    def test_full_spacetime_green_resolvent_promotion_rejected(self) -> None:
         self.assert_promotion_rejected(
             "the full Bach resolvent has a genuine second-order pole"
         )
@@ -157,13 +157,69 @@ class Paper16ClaimMapTests(unittest.TestCase):
 
     def test_claim_flag_promotion_rejected(self) -> None:
         claims = json.loads(CLAIM_MAP.read_text())
-        claims["fail_closed_scope"]["green_resolvent_second_order_pole"] = True
+        claims["fail_closed_scope"][
+            "causal_spacetime_green_resolvent_second_order_pole"
+        ] = True
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "claims.json"
             path.write_text(json.dumps(claims))
             result = self.run_verifier("--claim-map", str(path))
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("fail-closed promotion", result.stdout + result.stderr)
+
+    def test_redshift_cocycle_mutation_rejected(self) -> None:
+        claims = json.loads(CLAIM_MAP.read_text())
+        claims["exact_identities"]["bach_cocycle_redshift"]["q"] = (
+            "-I*(15*r + 13 + 12/r + 8/r**2)/(120*omega)"
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            claim_path = Path(directory) / "claims.json"
+            claim_path.write_text(json.dumps(claims))
+            coverage = json.loads(COVERAGE.read_text())
+            coverage["claim_map"] = str(claim_path)
+            coverage["claim_map_sha256"] = hashlib.sha256(
+                claim_path.read_bytes()
+            ).hexdigest()
+            coverage_path = Path(directory) / "coverage.json"
+            coverage_path.write_text(json.dumps(coverage))
+            result = self.run_verifier(
+                "--claim-map",
+                str(claim_path),
+                "--coverage",
+                str(coverage_path),
+            )
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "redshift cocycle representative identity failed",
+            result.stdout + result.stderr,
+        )
+
+    def test_generalized_root_quotient_mutation_rejected(self) -> None:
+        claims = json.loads(CLAIM_MAP.read_text())
+        claims["exact_identities"]["generalized_root_chain"][
+            "quotient_component"
+        ] = "a1/b0"
+        with tempfile.TemporaryDirectory() as directory:
+            claim_path = Path(directory) / "claims.json"
+            claim_path.write_text(json.dumps(claims))
+            coverage = json.loads(COVERAGE.read_text())
+            coverage["claim_map"] = str(claim_path)
+            coverage["claim_map_sha256"] = hashlib.sha256(
+                claim_path.read_bytes()
+            ).hexdigest()
+            coverage_path = Path(directory) / "coverage.json"
+            coverage_path.write_text(json.dumps(coverage))
+            result = self.run_verifier(
+                "--claim-map",
+                str(claim_path),
+                "--coverage",
+                str(coverage_path),
+            )
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "generalized root-vector carrier quotient identity failed",
+            result.stdout + result.stderr,
+        )
 
 
 if __name__ == "__main__":

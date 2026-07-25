@@ -160,3 +160,47 @@ CLOSE-OUT: ACTIVE CHECKPOINT — the focused one-ended theorem and its evidence
 chain are closed; explicit \(T_+\) remains an optional scattering
 strengthening, while the simultaneous two-ended non-Einstein mode remains a
 separate open spectral question.
+
+## 25 July cocycle and radial-pole promotion
+
+Three further results are now incorporated without widening the causal claim.
+
+1. The certified axial projective cocycle has the exact rational
+   representative
+   \[
+   \mathcal I_{\rm red}
+   =\mathcal K_U\!\left[
+   -\frac{i}{120\omega}
+   \left(15r+13+\frac{12}{r}+\frac9{r^2}\right)\right]
+   +\frac{i\omega}{2}\frac{r-2}{r}.
+   \]
+   Thus the Bach extension class is proportional to the elementary redshift
+   class.  The removing gauge is \(O(\omega^{-1})\), so no threshold-uniform
+   frame or physical mass-parameter identification is claimed.
+2. Exact root-polynomial algebra shows that the generalized vector of the
+   certified \((0,0,2)\) QNM chain has carrier quotient
+   \(-a'(\omega_n)/b(\omega_n)\ne0\).  The geometric resonant vector remains
+   Einstein; the associated generalized vector is intrinsically
+   non-Einstein.
+3. The previously completed finite-interval Fredholm authority is now
+   imported.  Variation of constants and boundary Schur reduction transfer
+   the certified Smith type to a nonzero rank-one second-order pole of the
+   reduced radial Green inverse, and exact axial reconstruction does not
+   annihilate its principal range.
+
+The manuscript remains fail-closed at the causal exterior spacetime
+resolvent, inverse-Laplace deformation, nonpole contour control, and any
+\(t e^{i\omega_nt}\) statement.  The simultaneous future-horizon-regular
+and purely outgoing non-Einstein separated mode also remains unproved: the
+new non-Einstein object is the generalized root-chain vector.
+
+The main PDF is now 36 pages.  The claim map pins the finite-interval
+Fredholm certificate and records the cocycle and root-chain identities
+explicitly.  Its independent verifier redoes both rational identities;
+twenty-three mutation and boundary tests pass, including mutations of the
+redshift representative and generalized quotient sign.
+
+CLOSE-OUT: ACTIVE CHECKPOINT — Paper 16 now contains the exact Bach
+redshift-class reduction, the non-Einstein generalized QNM chain, and the
+rank-one finite-interval radial Green pole.  Explicit \(T_+\), the physical
+mass/Bach crosswalk, and causal/time-domain promotion remain open.
