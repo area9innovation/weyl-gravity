@@ -112,3 +112,51 @@ freeze are still open.
 
 CLOSE-OUT: ACTIVE CHECKPOINT — focused split and current theorem imports are complete; final freeze awaits the explicit \(T_+\) transport or an honestly scoped terminal shortfall.
 EVIDENCE: reports/PAPER16_ENDPOINT_NONSELECTION_TIER_RECEIPT.json
+
+## 25 July scope-closure update
+
+The referee dependency audit exposed an important distinction.  Existing
+real-frequency certificates prove one-sided trace surjectivity:
+
+- every incoming trace is realized by a future-horizon-regular exterior
+  solution for every \(\omega>0\);
+- every outgoing trace is realized on the certified cell.
+
+They do not prove a non-Einstein separated mode that is simultaneously
+future-horizon regular and pure outgoing at infinity.  The title and theorem
+have therefore been narrowed to
+**future-horizon regularity and one-sided radiative traces**.  The
+simultaneous two-ended statement is explicitly fail-closed as a QNM
+strengthening.
+
+The new gauge-invariant theorem chooses a nonzero Maxwell quotient trace and
+uses the exact Schouten carrier:
+\[
+\mathfrak q[h]
+=
+\left[\delta R_{ab}[h]-\frac16g_{ab}\delta R[h]\right].
+\]
+Nonzero carrier Maxwell two-form proves that the resulting global exterior
+solution is outside the Einstein conformal sector modulo source
+diffeomorphism and Weyl gauge.
+
+The explicit-\(T_+\) experiment now has an honest terminal result.  An
+amplitude-preserving Grassmann cocycle reaches the dense fixed-frame
+crosswalk, and a raw physical-frame tail reaches \(r=4\).  Its rectangular
+remainders exceed the physical coefficient scale by factors
+\(6.14\times10^6\) and \(1.28\times10^6\), so terminal rank and the explicit
+matrix are not certified.  This is recorded as
+`FAIL_CLOSED_REPRESENTATION_WRAPPING`; it does not challenge the separately
+certified scalar-diagonal invertibility of \(T_+\).
+
+The paper now contains a compact title-theorem dependency table.  Explicit
+\(T_+\), Fredholm, and retarded-convolution work are excluded from that
+chain.  The supplement now contains concrete authority hashes, a
+four-dimensional independence profile, the trusted computing base, and a
+short excluded-programme ledger; checkpoint chronology and future
+experiments have been removed.
+
+CLOSE-OUT: ACTIVE CHECKPOINT — the focused one-ended theorem and its evidence
+chain are closed; explicit \(T_+\) remains an optional scattering
+strengthening, while the simultaneous two-ended non-Einstein mode remains a
+separate open spectral question.

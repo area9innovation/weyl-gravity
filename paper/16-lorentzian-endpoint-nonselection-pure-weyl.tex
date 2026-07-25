@@ -26,7 +26,7 @@
 \newcommand{\cert}[1]{\nolinkurl{#1}}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
-\title{Lorentzian Endpoint Conditions Do Not Select\\
+\title{Future-Horizon Regularity and One-Sided Radiative Traces Do Not Select\\
 the Einstein Sector of Pure Weyl Gravity}
 \author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
 \and Claude Fable 5\thanks{Anthropic model and computational coauthor. The
@@ -34,7 +34,7 @@ project was commissioned and coordinated by Asger Alstrup Palm
 (\texttt{asger@area9.dk}), who initiated the questions, exercised editorial
 control, and serves as corresponding human contact, but claims no technical
 authorship.}}
-\date{Focused working draft, 24 July 2026}
+\date{Focused working draft, 25 July 2026}
 
 \begin{document}
 \maketitle
@@ -42,7 +42,8 @@ authorship.}}
 \begin{abstract}
 Maldacena-type boundary selection isolates an Einstein sector of conformal
 gravity in Euclidean anti-de Sitter or late-time de Sitter settings.  We ask
-whether physically familiar one-ended Lorentzian conditions do the same for
+whether future-horizon regularity and one-sided Lorentzian radiative trace
+conditions do the same for
 linear perturbations of a Schwarzschild black hole in four-dimensional pure
 Weyl gravity.  They do not.
 
@@ -124,15 +125,34 @@ additional local solutions.  The question addressed here is deliberately
 narrow:
 
 \begin{quote}
-Do future-horizon regularity and the ordinary incoming or outgoing
-real-frequency conditions at null infinity force a Schwarzschild
-perturbation of pure Weyl gravity into the linearized Einstein kernel?
+Do future-horizon regularity and standard one-ended incoming or outgoing
+real-frequency trace conditions at null infinity force a Schwarzschild
+perturbation of pure Weyl gravity into the Einstein conformal sector?
 \end{quote}
 
 For the complete axial \(\ell=2\) system the answer is no.  The extra
-curvature carrier survives the endpoint conditions, participates in the
+curvature carrier survives these one-ended conditions, participates in the
 action-derived current, and supplies populated negative directions in a
-nondegenerate Krein space.
+nondegenerate Krein space.  The title theorem is a scattering statement:
+at real frequency, future-horizon-regular solutions generally have both
+incoming and outgoing null-infinity traces.  It does \emph{not} assert a
+non-Einstein separated solution that is simultaneously future-horizon
+regular and purely outgoing at infinity.  That two-ended condition is the
+quasinormal boundary problem and is kept logically separate below.
+
+\begin{definition}[Radiative endpoint class tested here]
+\label{def:radiative-class}
+The tested class consists of phase-factored solutions that are analytic
+future-horizon ingoing germs, extend through the Schwarzschild exterior, and
+have finite factor-normalized Regge--Wheeler/Maxwell traces at null infinity.
+On the real axis we study either one-sided trace map \(T_-\) or \(T_+\).
+``Outgoing population'' means surjectivity onto the outgoing trace; it does
+not mean that the incoming trace vanishes.  The complex-frequency theorem
+uses its separately declared future-horizon-regular/pure-outgoing
+quasinormal class.  We do not rule out stronger curvature conditions, mixed
+field/normal-derivative conditions, or the direct carrier constraint
+\(q_{ab}=0\).
+\end{definition}
 
 This is not a statement that no boundary condition can select the Einstein
 sector.  The local Cauchy restriction
@@ -168,14 +188,16 @@ spin-one/spin-two intertwiner.  The repeated block has dual-number local
 commutant and no nontrivial semisimple local branch observable.  Its
 associated graded pieces are the source Einstein graviton, the physical
 target Einstein carrier, and the Maxwell target-gauge vector.
-\item Its incoming action-flux space has signature \((1,2)\) and is populated
-at every \(\omega>0\) by future-horizon-regular solutions.  A spectral
+\item Its incoming action-flux space has signature \((1,2)\), and every
+incoming trace is realized at every \(\omega>0\) by a
+future-horizon-regular solution.  A spectral
 fundamental symmetry gives a positive compact-band norm, with exact
 \(\omega,\omega,\omega^3\) factor weights at threshold.
-\item On a certified nonzero frequency cell the one-sided scattering map is
-pseudo-isometric between matching Krein spaces; outgoing population is
-generic on the positive real axis, and the filtered system has no
-exponentially growing separated axial mode.
+\item On a certified nonzero frequency cell every outgoing trace is likewise
+realized by a future-horizon-regular solution; this is a one-ended
+surjectivity statement, not a pure-outgoing quasinormal statement.  Outgoing
+surjectivity is generic on the positive real axis, and the filtered system
+has no exponentially growing separated axial mode.
 \item One enclosed damped spin-two quasinormal frequency is a certified
 connection-level exceptional point with Smith valuations \((0,0,2)\).
 \end{enumerate}
@@ -183,12 +205,26 @@ connection-level exceptional point with Smith valuations \((0,0,2)\).
 \subsection{Controlled vocabulary}
 
 \begin{definition}
-The \emph{Einstein kernel} is the kernel of the linearized Ricci map
-\(h\mapsto\delta R_{ab}[h]\).  The \emph{Ricci carrier} is its image on
-linearized Bach solutions.  The \emph{Schouten carrier} is
-\(q_{ab}=\delta R_{ab}-g_{ab}\delta R/6\).  \emph{Population} of an endpoint
-trace space means surjectivity of the relevant horizon-to-endpoint connection
-map.
+In a fixed conformal gauge, the \emph{Einstein kernel} is the kernel of the
+linearized Ricci map \(h\mapsto\delta R_{ab}[h]\).  Gauge-invariantly, the
+\emph{Einstein conformal sector} is the kernel of the carrier class
+\[
+\mathfrak q[h]
+=
+\left[
+\delta R_{ab}[h]-\frac16g_{ab}\delta R[h]
+\right],
+\]
+where the brackets quotient target Einstein gauge transformations induced by
+source Weyl transformations.  Source diffeomorphisms leave this carrier zero
+on a Ricci-flat background, while \(h\mapsto h+2\sigma g\) sends
+\(q_{ab}\mapsto q_{ab}-2\nabla_a\nabla_b\sigma\).  Thus
+\(\mathfrak q[h]\) is invariant under the allowed source
+diffeomorphism/Weyl gauge.  Its target-gauge part is represented by
+\(F_{ab}=2\nabla_{[a}\eta_{b]}\); \(F\ne0\) is a direct gauge-invariant
+witness that \(\mathfrak q[h]\ne0\).
+\emph{Population} of an endpoint trace space means surjectivity of the
+relevant horizon-to-endpoint connection map.
 \emph{Factor frame} means a basis adapted to the differential-module
 filtration.  A \emph{signature frame} diagonalizes a Hermitian flux form.
 These two frames are not identified.
@@ -1579,6 +1615,34 @@ the incoming, outgoing, and future-horizon coefficient spaces are
 nondegenerate three-channel Krein spaces of inertia \((1,2,0)\).
 \end{theorem}
 
+\begin{theorem}[Global one-ended radiative nonselection]
+\label{thm:radiative-nonselection}
+For \(M=1\), axial \(\ell=2\):
+\begin{enumerate}
+\item for every real \(\omega>0\), there is a global
+future-horizon-regular exterior Bach solution with finite incoming
+null-infinity trace and \(\mathfrak q[h]\ne0\);
+\item for every \(\omega\in I_*\), there is such a solution with any
+prescribed nonzero outgoing Maxwell-quotient trace, and again
+\(\mathfrak q[h]\ne0\).
+\end{enumerate}
+Consequently the standard one-ended radiative conditions of
+Definition~\ref{def:radiative-class} do not imply the linearized Einstein
+constraint, even modulo
+source diffeomorphism and Weyl gauge.
+\end{theorem}
+
+\begin{proof}
+For the first statement choose a nonzero incoming Maxwell factor trace.
+Theorem~\ref{thm:incoming} gives a unique future-horizon-regular exterior
+solution realizing it.  The factor inclusion and quotient maps preserve the
+declared endpoint classes.  If \(\mathfrak q[h]\) vanished, its Maxwell
+two-form and hence its Maxwell quotient trace would vanish, a contradiction.
+For the second statement use Theorem~\ref{thm:outgoing-cell} to invert
+\(T_+\) on \(I_*\), and apply the same gauge-invariant quotient argument.
+No simultaneous pure-outgoing condition is used.
+\end{proof}
+
 In incoming coordinates define
 \[
 R=T_+T_-^{-1},
@@ -2042,6 +2106,48 @@ axial only.
 
 \section{Logical map and evidence states}
 
+The title theorem has the following closed dependency chain.  Here
+\emph{fail closed} means that missing data, a timeout, an unsupported domain,
+or an unverifiable claim is rejected rather than counted as a partial pass.
+The unfinished explicit \(T_+\), Fredholm, and retarded-convolution
+calculations are absent from this chain.
+
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}p{0.20\textwidth}Y Y
+>{\centering\arraybackslash}p{0.09\textwidth}@{}}
+\toprule
+Statement & Mathematical dependency and primary reproducibility record &
+Status and scope & Required for title theorem\\
+\midrule
+Gauge-invariant non-Einstein discriminator &
+Schouten carrier and Maxwell quotient;
+\cert{black_hole_programme/phase4/covariant_einstein_maxwell_carrier_v1/certificate.json} &
+Exact symbolic; Ricci-flat backgrounds, with source diffeomorphism/Weyl
+quotient stated above & Yes\\
+Axial filtered carrier with a nonzero Maxwell quotient &
+RW/RW/Maxwell filtration;
+\cert{black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json} &
+Exact symbolic; Schwarzschild, axial \(\ell=2\) & Yes\\
+Global future-horizon-regular realization of every incoming trace &
+Scalar Wronskians, boundary d\'evissage, and \(T_-\) invertibility;
+\cert{black_hole_programme/phase3/axial_incoming_extended_domain_audit/certificate.json} &
+Analytic plus computer-assisted; every real \(\omega>0\) & Yes\\
+Outgoing realization on \(I_*\) &
+Triangular determinant and certified nonzero scalar outgoing factors;
+\cert{black_hole_programme/phase3/axial_outgoing_population_cell_half_v1/certificate.json} &
+Validated interval theorem; \(M=1\), axial \(\ell=2\),
+\(I_*=[1/2,10001/20000]\) & Yes, for the outgoing clause only\\
+Explicit \(T_+\) entries, QNM Fredholm pole, retarded convolution &
+Separate open computations & Not established and not imported & No\\
+\bottomrule
+\end{tabularx}
+\normalsize
+
+The theorem statements and proofs are the mathematical authority.  The
+machine-readable records are proof objects where a computer-assisted lemma
+is used and reproducibility evidence elsewhere; rerunning a producer is
+reproduction, not independent verification.
+
 The core structure is
 \[
 \begin{array}{ccccccccc}
@@ -2197,17 +2303,22 @@ stability.  The remaining threat to time-domain control is quantitative
 resolvent or pseudospectral growth, not an exponentially growing separated
 frequency.
 
-The next three calculations are sharply defined.  First, compute the explicit
+The publication theorem above is closed without any of the following
+strengthenings.  The first scattering extension is to compute the explicit
 typed \(T_+\) and reflection matrix over a substantial real-frequency band
-using the correlated partial-jet transport and evaluate the exact
-\(C\)-intertwining defect of Proposition~\ref{prop:c-scattering}.  Second,
-derive the finite-mass axial carrier system and compare
+using a better-conditioned correlated partial-jet transport and then
+evaluate the exact \(C\)-intertwining defect of
+Proposition~\ref{prop:c-scattering}.  A separate spectral extension is to
+certify a global non-Einstein solution satisfying the simultaneous
+future-horizon-regular and pure-outgoing quasinormal conditions, including a
+nonzero carrier reconstruction.  Further work should derive the finite-mass
+axial carrier system and compare
 \([\mathcal I_{\rm mass}]\) with \([\mathcal I_{\rm Bach}]\); only that test
 can promote the intrinsic \(\tau\)-jet to a physical mass derivative.
-Third, construct the analytic
+Finally, construct the analytic
 Fredholm QNM realization needed to promote Theorem~\ref{thm:ep2} to a
 second-order Green-resolvent pole.  The parent formulation gives a cheaper
-audit inside that second task: compare
+audit inside that task: compare
 \(\langle\widetilde f_n,\mathcal Af_n\rangle\) with the radial extension
 overlap before attempting a full resolvent promotion.  A separate
 time-domain control should compare direct six-state evolution with the
@@ -2498,6 +2609,10 @@ It does not establish:
 \begin{itemize}
 \item explicit \(T_+\) entries or reflection amplitudes over a substantial
 frequency band;
+\item a non-Einstein separated mode that is simultaneously
+future-horizon regular and purely outgoing (or no-incoming) at infinity;
+the real-frequency title theorem concerns the one-sided trace maps of
+Definition~\ref{def:radiative-class};
 \item absence of isolated positive-real reflection zeros;
 \item a punctured threshold interval of outgoing invertibility or the formal
 low-frequency Jost and extension-ratio asymptotics in

@@ -1,28 +1,32 @@
 {
   "schema": "paper16-endpoint-nonselection-tier-receipt-v1",
-  "status": "ACTIVE_CHECKPOINT",
-  "source_commit": "facd4747d0378f69fb17c0f109e934fd7ab9c5ad",
+  "status": "ACTIVE_CHECKPOINT_SCOPE_CLOSED_TPLUS_SHORTFALL",
+  "source_commit": "26d919af582aaff9408eb013a496083357f15bad",
   "artifacts": {
     "paper_tex": {
       "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl.tex",
-      "sha256": "e5d4969c962f68f8b0264e1312cd9b6d7aa02521cf2ee91b91756e76e2e680de"
+      "sha256": "086f50dcd5a1a5cb758b57dc5dc0a138db9fa768052d22ea95a6320f9a4b90e4"
     },
     "paper_pdf": {
       "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl.pdf",
-      "sha256": "ca114fd91a49817cf4b0c37fbd5b33db397e1a73e360e1bc60ded6c31462426b",
-      "pages": 32
+      "sha256": "e4cec359bf1df19b80b02f887ffc468ceaf3284858b8bf621ee47d9f8d101849",
+      "pages": 34
     },
     "claim_map": {
       "path": "paper/16-lorentzian-endpoint-nonselection-pure-weyl-claim-map.json",
-      "sha256": "05f112edb13ebf1fb3bd188098663f99e65c13cb6d8d136a4765de2fede24290"
+      "sha256": "e7ff40e117410bad523dde1f19fc0a920d6ce108ab06fa96a51f9d8323deec1f"
     },
     "coverage": {
       "path": "planning/paper-coverage/phase4-paper16-endpoint-nonselection-overlay-2026-07-24.json",
-      "sha256": "8d2ddb76ee319970f375bd9303f36818cb3a923d8cbc84c3b494039262f52b36"
+      "sha256": "047b237256129787f8ff3662302852f2e9e180c1612d45cfbee679733c2fce7c"
     },
     "computational_supplement": {
       "path": "paper/16-endpoint-nonselection-computational-supplement.tex",
-      "sha256": "e1e3effc684ef1bb65ee025f677e110368a71219dcc3c634a9ae9f45969b5526"
+      "sha256": "7cf8608867a8f8fad76053b88060b724def1f4ace8d02c09719803d2f6fa7b4d"
+    },
+    "tplus_shortfall_certificate": {
+      "path": "black_hole_programme/phase4/axial_explicit_tplus_band_v1/amplitude_certificate.json",
+      "sha256": "d8322b37a637e12cd078872d22c083c0b109ede0dcfc71b3ba6b230551aafd43"
     }
   },
   "tests": {
@@ -34,7 +38,8 @@
     "tier1": [
       "claim-map generator --check passes",
       "independent semantic verifier passes",
-      "twenty claim-boundary and mutation tests pass",
+      "twenty-one claim-boundary and mutation tests pass",
+      "Tplus amplitude-shortfall producer, independent structural verifier, and three tests pass",
       "exact all-ell threshold verifier and six tests pass",
       "universal Hessian/intertwiner verifier and five tests pass",
       "Schouten-Einstein/Maxwell carrier verifier and tests pass",
@@ -47,15 +52,16 @@
       "local/nonlocal-positivity producer, verifier, and five tests pass"
     ],
     "tier2": "not triggered: no pre-existing operator or certificate was modified",
-    "tier3": "not run: manuscript remains an active checkpoint pending explicit Tplus"
+    "tier3": "not run: no submission freeze or release was requested"
   },
   "open_gates": [
-    "the explicit typed Tplus band has not reached the r=4 matching section",
-    "the Fredholm promotion of the connection EP2 remains open",
+    "the amplitude-preserving Tplus enclosure reaches r=4 but cannot certify terminal rank because rectangular remainders dominate by more than 10^6",
+    "a simultaneous future-horizon-regular and pure-outgoing non-Einstein separated mode is not established",
+    "the separately completed radial Fredholm promotion is not imported into this focused paper",
     "the physical mass-deformation cocycle has not yet been compared with the intrinsic Bach cocycle",
     "endpoint-block-diagonal spectral-C compatibility awaits explicit Tplus",
     "complete complex-frequency reducibility classification remains open",
-    "the parent-overlap and retarded-convolution experiments are specified but not executed"
+    "parent-overlap and retarded-convolution experiments are outside this publication proof"
   ],
   "does_not_establish": [
     "a submission freeze",

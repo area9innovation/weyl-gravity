@@ -73,6 +73,12 @@ class Paper16ClaimMapTests(unittest.TestCase):
             "T_+(\\omega)\\in GL(3,\\C) for every real \\(\\omega>0\\)"
         )
 
+    def test_simultaneous_two_ended_mode_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "a non-Einstein separated mode is simultaneously "
+            "future-horizon regular and purely outgoing"
+        )
+
     def test_time_domain_promotion_rejected(self) -> None:
         self.assert_promotion_rejected("time-domain stability is established")
 

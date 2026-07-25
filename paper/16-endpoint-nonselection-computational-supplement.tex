@@ -3,16 +3,17 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb,booktabs,tabularx}
 \usepackage{microtype,xurl}
+\usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue!55!black,
             citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
 \title{Computational Supplement to\\
-``Lorentzian Endpoint Conditions Do Not Select the Einstein Sector
+``Future-Horizon Regularity and One-Sided Radiative Traces Do Not Select the Einstein Sector
 of Pure Weyl Gravity''}
 \author{GPT-5.6.sol
 \and Claude Fable 5}
-\date{Working supplement, 24 July 2026}
+\date{Working supplement, 25 July 2026}
 
 \begin{document}
 \maketitle
@@ -25,8 +26,49 @@ contour panels, mutation tests, content hashes, and exact commands.  The
 theorem statements and proofs in the main paper are the mathematical
 authority.  The machine-readable certificates provide pinned reproducibility
 records, exact witnesses, validation margins, and independent implementation
-checks.  A timeout, skipped rail, or reproduced producer output is never
+checks.  A timeout, skipped verification, or reproduced producer output is never
 recorded as an independent verification pass.
+
+\section{Logical dependency of the title theorem}
+
+The title theorem is computer-assisted but has a closed proof chain.  It does
+not use an explicit \(T_+\) matrix, a retarded convolution, a Fredholm
+resolvent, or a raw-Weyl/current comparison not already cited as an endpoint
+authority.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.19\textwidth}Y
+p{0.19\textwidth}p{0.11\textwidth}@{}}
+\toprule
+Result & Proof dependency & Status and domain & Title theorem\\
+\midrule
+Gauge-invariant carrier discriminator &
+Schouten carrier modulo source diffeomorphism/Weyl gauge; nonzero Maxwell
+two-form witness &
+Exact; Ricci-flat background &
+Required\\
+Axial carrier filtration &
+RW/RW/Maxwell exact filtered system and quotient maps &
+Exact; Schwarzschild, axial \(\ell=2\) &
+Required\\
+Incoming realization &
+Scalar Wronskians, boundary d\'evissage, \(T_-\in GL(3,\mathbb C)\) &
+Analytic plus certified computation; every real \(\omega>0\) &
+Required\\
+Outgoing realization &
+Triangular determinant and nonzero scalar outgoing factors &
+Validated; \([1/2,10001/20000]\) &
+Required only for outgoing clause\\
+Explicit \(T_+\), simultaneous pure-outgoing non-Einstein mode,
+retarded/Fredholm extensions &
+Separate programme items &
+Not established or not imported &
+Not required\\
+\bottomrule
+\end{tabularx}
+\normalsize
+\end{center}
 
 \section{Evidence taxonomy}
 
@@ -47,27 +89,25 @@ Open computation & last valid checkpoint, failure mode, and
 \end{tabularx}
 \end{center}
 
-\subsection{Levels of independence}
+\subsection{Independence profile}
 
-``Independent'' is recorded at one of four levels:
+Independence is recorded as four separate Boolean dimensions, not as a
+hierarchy:
 \begin{center}
-\begin{tabularx}{0.96\textwidth}{@{}c Y@{}}
+\begin{tabularx}{0.96\textwidth}{@{}p{0.26\textwidth} Y@{}}
 \toprule
-Level & Meaning\\
+Dimension & Meaning\\
 \midrule
-I & Separate executable using independently written formulas\\
-II & Different elimination, variable choice, or mathematical representation\\
-III & Different exact-arithmetic, interval, or CAS backend\\
-IV & Independently derived mathematical formulation\\
+Independent code & Separate executable rather than a producer rerun\\
+Independent representation & Different elimination, variables, or
+mathematical representation\\
+Independent backend & Different exact-arithmetic, interval, or CAS backend\\
+Independent derivation & Independently derived mathematical formulation\\
 \bottomrule
 \end{tabularx}
 \end{center}
-Rerunning a producer is reproduction, not verification.  The universal
-Hessian/intertwiner, Schouten--Einstein/Maxwell carrier, and Euler
-transgression chains have Level~II/IV checks.  The projective Evans selector
-has a different projective representation and local-unit rail (Level~II).
-The outgoing partial-jet checkpoint presently has a separately expanded
-direct boundary system (Level~II) but not a second arithmetic backend.
+Rerunning a producer is reproduction, not verification.  Each manifest
+records its independence profile and all shared dependencies.
 
 Every publication record pins
 \[
@@ -78,9 +118,64 @@ together with dependency versions, arithmetic or interval backend,
 platform metadata where relevant, the canonical command, expected exit
 status, and deterministic generator definition.
 
+\section{Trusted computing base}
+
+Exact symbolic certificates rely on Python integer/rational arithmetic or on
+the exact backend named in their manifests; every denominator assumption and
+parameter domain is part of the corresponding certificate.  Validated
+numerical certificates use outward-rounded interval endpoints, retain the
+complete enclosing interval in machine-readable form, and state the
+subdivision and refusal policy.  JSON parsing, the Python runtime, the
+declared exact/interval kernel, and the operating system are inside the
+trusted computing base unless an independent-backend check explicitly
+removes one of them.
+
+The publication release must contain an immutable archive identifier in
+addition to the Git commit and file hashes.  No DOI has yet been assigned, so
+this working draft does not claim that archival gate.
+
+\section{Concrete title-theorem records}
+
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}p{0.17\textwidth}Y
+p{0.19\textwidth}p{0.12\textwidth}@{}}
+\toprule
+Claim & Primary record and SHA-256 & Domain/margin & Independence profile\\
+\midrule
+Carrier discriminator &
+\path{phase4/covariant_einstein_maxwell_carrier_v1/certificate.json}\\
+\path{ff86f50e88d07c0ec8fcdbca4788e60058db07f90a7a96a9be5164e033952908} &
+Exact Ricci-flat identities; declared gauge quotient &
+code, representation, derivation\\
+Axial filtration &
+\path{phase3/axial_rw_lx_triangular_preflight/certificate.json}\\
+\path{1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579} &
+Exact, \(M=1,\ell=2\); denominators listed in record &
+code, representation\\
+Incoming realization &
+\path{phase3/axial_incoming_extended_domain_audit/certificate.json}\\
+\path{f223358ca9de0f6d819684ce61d62677d6e5f8c5d4edaa600e2bae02719af0ef} &
+Every real \(\omega>0\); Wronskian/d\'evissage margins in record &
+code, representation\\
+Outgoing cell &
+\path{phase3/axial_outgoing_population_cell_half_v1/certificate.json}\\
+\path{de7e3a944e945b00fea9e2b5f7abffc8789c7449cae9eae222c047912a4f3d0f} &
+\(|A_{\rm out,2}|>0.0113262\),
+\(|A_{\rm out,1}|>0.146805\) &
+code, representation, interval verifier\\
+\bottomrule
+\end{tabularx}
+\normalsize
+
+The paths above are relative to \path{black_hole_programme/}.  The
+machine-readable records contain the complete intervals, producer/verifier
+commands, expected exit status, dependencies, and mutation results; the
+decimals in the table are readability-only lower bounds.
+
 \section{Principal certificate chains}
 
-The final supplement will tabulate the independent chains for:
+The publication dependency set consists of the following independently
+audited chains:
 \begin{enumerate}
 \item the established conformal detour context, the universal
 Ricci-factorized Hessian, the Schouten--Einstein/Maxwell carrier, and its
@@ -111,7 +206,8 @@ forbidden nonlocal promotion.
 
 The parent-current reproducibility record is
 \path{black_hole_programme/phase4/
-second_order_parent_flux_v1/certificate.json}.  Its Level~II verifier
+second_order_parent_flux_v1/certificate.json}.  Its
+independent-representation verifier
 independently repeats the four-dimensional trace elimination and null-lift
 algebra, checks the imported Euler and physical connection-EP2 boundaries,
 and fails closed on generic radial-to-time-Jordan promotion,
@@ -141,91 +237,44 @@ It also certifies the characteristic-zero involution lemma for a nonsplit
 self-extension of a simple object, the endpoint positive-graph
 obstruction, and the quotient duality \(B_2/E\simeq E^*\).
 
-The record is deliberately fail-closed at three points.  It does not certify
-a physical Fredholm QNM pole, generic simplicity of the Regge--Wheeler
-differential module, or a Schwarzschild retarded propagator.  Consequently
-the stronger conclusion that every rational involution of the Bach
-spin-two block is \(\pm I\) remains conditional; only the earlier
-branch-resolving no-go is unconditional.
+The record is deliberately fail-closed at the physical Fredholm QNM pole and
+Schwarzschild retarded propagator.  Real-axis simplicity and scalar
+endomorphism rings are independently certified in
+\path{black_hole_programme/phase4/
+rw_maxwell_simplicity_endomorphisms_v1/certificate.json}.  Consequently the
+statement that every rational involution of the nonsplit axial spin-two
+block is \(\pm I\) is unconditional for real \(\omega>0\), while the
+complex-frequency classification remains open.
 
-\subsection{Parent-overlap and retarded-convolution experiments}
+\section{Computations excluded from the publication proof}
 
-The first experiment imports the certified simple axial QNM disk and
-computes the regularized parent overlap
-\[
-\operatorname{FP}\langle\widetilde f_n,\mathcal Af_n\rangle
-\]
-including endpoint terms.  A separate scalar-projection rail then compares
-it with the normalized radial extension overlap and must verify that the
-induced commutators vanish in the same regularized adjoint pairing.
-Numerical agreement without this projection audit is not a promotion gate.
+The explicit-\(T_+\), parent-overlap, retarded-convolution, and Schwarzschild
+time-domain calculations are maintained in the programme reports rather than
+in this paper-specific supplement.  They are not dependencies of the title
+theorem.
 
-The second experiment implements the formal convolution
-\[
-G_{hh}^{\rm ret}
-=\frac1{4\alpha_{\rm W}}\,
-G_E^{\rm ret}*\mathcal A G_E^{\rm ret}.
-\]
-Its first control is the flat-space biwave kernel
-\(\theta(t-r)/(8\pi)\), up to the declared operator-sign convention.  Only
-after that control passes will the Schwarzschild rail compare direct
-six-state evolution with two sequential Einstein evolutions plus the
-homogeneous source-Einstein solution.  These are experiment specifications,
-not current time-domain theorems.
+The most recent explicit-\(T_+\) attempt has the concrete fail-closed record
+\path{black_hole_programme/phase4/
+axial_explicit_tplus_band_v1/amplitude_certificate.json}.
+It preserves the physical endpoint-amplitude cocycle and reaches \(r=4\),
+but its rectangular terminal remainders exceed the coefficient scale by
+more than \(10^6\) in both frames.  It therefore certifies neither the
+terminal inverse nor \(T_+\).  This is a shortfall of that enclosure
+representation, not evidence that \(T_+\) is singular.  Its certificate
+SHA-256 is
+\path{d8322b37a637e12cd078872d22c083c0b109ede0dcfc71b3ba6b230551aafd43}.
 
-\section{New-experiment rail}
+\section{Explicit non-results}
 
-The explicit outgoing experiment uses the four-state dual-number family
-\[
-\begin{pmatrix}
-A+\varepsilon E&D+\varepsilon C\\
-0&A_1
-\end{pmatrix},
-\qquad \varepsilon^2=0,
-\]
-with phase-factored endpoint amplitudes.  It transports correlated base and
-tangent data so that the combination \(bd-ac\) is formed inside the
-dual-number algebra rather than reconstructed from independent interval
-boxes.  The paper will not promote an explicit \(T_+\) band until this rail
-has an independent certificate and a Stokes-identity audit.
-
-The first Phase-4 successor resumes the last certified common-moving
-checkpoint at \(r=979/32\) and reaches \(r=487/16\).  On that panel the
-validated exponential tail is
-\[
-4.4421679558528834\times10^{-5},
-\]
-the joint hull width is \(5.12490045532877\), the partial-jet and independent
-direct sixteen-state Taylor coefficients agree exactly, and their interval
-difference contains zero.  These statements have different force: the
-independently generated symbolic Taylor recurrences agree coefficientwise
-through the declared order, whereas the separately enclosed numerical
-transports merely overlap on the panel.  The overlap is a consistency check,
-not a proof of equality.
-
-The physical partial-jet equation has six complex components per selected
-column: two upper spin-two tangent components, two base spin-two components,
-and two spin-one components.  The direct boundary gate deliberately embeds
-this into the unreduced derivative system.  For the two selected outgoing
-columns it transports an \(8\times2\) array,
-\[
-16
-=
-8\ \hbox{base entries}
-+8\ \hbox{full tangent entries},
-\]
-including the spin-one tangent rows that the exact partial jet proves to be
-zero.  ``Six-state'' therefore names the reduced physical system per column;
-``sixteen-state'' names the two-column unreduced computational audit.
-
-Generator \(7315\) is the deterministic affine-noise identifier for the
-single shared frequency generator; preserving it verifies that the base and
-tangent rails retain the same frequency dependency rather than receiving
-independent interval noise.  The hull width \(5.12490045532877\) is below
-the programmed fail-closed checkpoint threshold \(10\).  It is useful only
-as evidence that this short correlated successor remains bounded and
-restartable; it is too coarse to certify physical amplitudes or conditioning.
-This is a transport checkpoint only: the common frame has not reached
-\(r=4\), so no \(T_+\), reflection, or Stokes claim follows.
+Neither the main paper nor this supplement establishes:
+\begin{itemize}
+\item a non-Einstein separated solution that is simultaneously
+future-horizon regular and purely outgoing at infinity;
+\item explicit \(T_+\) entries or reflection amplitudes;
+\item a causal time-domain resolvent or retarded convolution on
+Schwarzschild;
+\item a complete polar global connection;
+\item a canonical positive quantum metric or unitarity.
+\end{itemize}
 
 \end{document}

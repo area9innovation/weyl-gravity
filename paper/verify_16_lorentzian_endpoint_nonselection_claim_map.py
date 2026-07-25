@@ -95,6 +95,8 @@ def main() -> None:
         "conformal deformation detour",
         "Exact all-\\(\\ell\\) scalar threshold nonresonance",
         "A two-region Volterra remainder",
+        "Global one-ended radiative nonselection",
+        "No simultaneous pure-outgoing condition is used",
     ]
     for phrase in required_phrases:
         if phrase not in text:
@@ -121,6 +123,7 @@ def main() -> None:
         "the full six-state commutant is the dual-number algebra",
         "the combined-future fundamental symmetry automatically factorizes",
         "the complete complex reducibility locus is the quarter-integer lattice",
+        "a non-Einstein separated mode is simultaneously future-horizon regular and purely outgoing",
     ]
     for phrase in forbidden_phrases:
         if phrase in text:
@@ -154,6 +157,12 @@ def main() -> None:
         False,
         "outgoing",
     )
+    amplitude = json.loads(
+        (ROOT / authorities["explicit_tplus_amplitude_shortfall"]["path"]).read_text()
+    )
+    if amplitude.get("status") != "FAIL_CLOSED_REPRESENTATION_WRAPPING":
+        fail("explicit T+ shortfall status drift")
+    require_flag(amplitude, "explicit_Tplus_certified", False, "T+ shortfall")
     growth = json.loads((ROOT / authorities["no_growth"]["path"]).read_text())
     require_flag(
         growth,
