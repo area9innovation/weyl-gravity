@@ -106,7 +106,32 @@ def payload() -> dict:
                 "symmetric_square_decomposition": "K_U=K_U0+4*omega**2*D",
                 "cocycle_residue": "K_U0(q_minus_one)",
                 "renormalized_class_limit": "I*[f]/2",
-                "continuous_cokernel_identification_required": True,
+                "continuous_cokernel_identification_required": False,
+                "exact_threshold_valuation": 1,
+                "holomorphic_improvement_to_order_two": False,
+            },
+            "static_mass_direction_nontriviality": {
+                "field": "C(r)",
+                "multipole_domain": "ell>=2, Lambda=ell*(ell+1)",
+                "static_potential": "-f*(Lambda/r**2-6/r**3)",
+                "target": "(r-2)/r",
+                "zero_indicial": "-8*(k-6)*(k-2)*(k+2)",
+                "infinity_indicial": (
+                    "(k-1)*(k-2*ell-2)*(k+2*ell)"
+                ),
+                "exceptional_zero_compatibility": (
+                    "Lambda**2*(Lambda-2)**2*a_minus_2/9"
+                ),
+                "static_rw_recurrence": (
+                    "c_k=((k-1)*(k-2)-Lambda)"
+                    "*c_(k-1)/(2*(k-3)*(k+1))"
+                ),
+                "homogeneous_symmetric_square": "y_ell**2",
+                "terminal_polynomial_degree": 3,
+                "cubic_obstruction": "Lambda**2+2*Lambda+12",
+                "rational_preimage_exists": False,
+                "dipole_preimage": "r**2/6+r**3/15+r**4/36",
+                "dipole_class_exact": True,
             },
             "triangular_gauge": {
                 "operator": "q*D - D(q)/2",
@@ -263,6 +288,25 @@ def payload() -> dict:
                     "-tilde_u*(A0+nu*L1)*H mod C*tilde_u"
                 ),
             },
+            "second_order_qnm_curvature": {
+                "B": "A0+nu*L1",
+                "curvature": (
+                    "(2*pair(tilde_u,B*H*B*u)"
+                    "-nu**2*pair(tilde_u,L2*u)"
+                    "-2*nu*pair(tilde_u,A1*u))/alpha"
+                ),
+                "normalization_independent": True,
+                "augmented_endpoint_derivatives_required": True,
+                "scalar_bulk_A1": "0",
+                "scalar_bulk_L2": "2",
+            },
+            "refined_filtered_confluence": {
+                "gap": "nu*m+xi*m**2/2+O(m**3)",
+                "inverse_gap": "1/(nu*m)-xi/(2*nu**2)+O(m)",
+                "divided_exponential_order_m": (
+                    "exp(I*omega*t)*(I*xi*t/2-nu**2*t**2/2)"
+                ),
+            },
             "augmented_hellmann_feynman": {
                 "evans_parameter_derivative": "integral(yminus*Qp*yplus)+B_p",
                 "velocity": "-a_m/a_omega=-beta/alpha",
@@ -298,7 +342,11 @@ def payload() -> dict:
             "axial_l2_nonsplit_all_positive_real": True,
             "bach_cocycle_normal_form_exact": True,
             "threshold_static_cocycle_residue_exact": True,
-            "threshold_renormalized_class_limit_conditional": True,
+            "static_mass_direction_class_nonzero_all_ell_ge_2": True,
+            "static_dipole_preimage_exact": True,
+            "threshold_renormalized_class_limit_exact": True,
+            "threshold_projective_valuation_one_exact": True,
+            "threshold_holomorphic_order_two_improvement_excluded": True,
             "triangular_gauge_commutator_exact": True,
             "symmetric_square_period_matrix_exact": True,
             "spin2_local_commutant_dual_numbers": True,
@@ -344,6 +392,8 @@ def payload() -> dict:
             "canonical_mass_tangent_class_exact": True,
             "canonical_simple_pole_with_frequency_derivative_exact": True,
             "finite_part_tangent_reconstruction_exact": True,
+            "second_order_qnm_curvature_formula_exact": True,
+            "refined_filtered_gap_and_contour_expansion_exact": True,
             "augmented_qnm_hellmann_feynman_exact": True,
             "reflected_ep2_pair_exact": True,
             "finite_mass_secant_identity_exact": True,
@@ -357,11 +407,14 @@ def payload() -> dict:
             "global_t_exp_iomega_t_ringdown_term": False,
             "time_domain_stability": False,
             "all_ell_bach_nonsplitting": False,
+            "all_ell_bach_reduction_coefficient_computed": False,
             "full_six_state_commutant_dual_numbers": False,
             "complete_complex_reducibility_locus": False,
             "quantum_positivity_or_unitarity": False,
             "overtone_ep2_tower_certified": False,
             "physical_filtration_breaking_coefficient_computed": False,
+            "numerical_qnm_curvature_computed": False,
+            "threshold_uniform_jost_shear_estimate": False,
         },
     }
 

@@ -1,0 +1,100 @@
+{
+  "schema": "tier-receipt-v1",
+  "result_id": "PAPER17_STATIC_THRESHOLD_QNM_CURVATURE",
+  "timestamp_utc": "2026-07-25T07:28:09Z",
+  "input_commit": "6fcaaa5a56c3d91899ccb5d573a897002083bce1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "environment": {
+    "python": "3.12.13",
+    "sympy": "1.14.0",
+    "pdflatex": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian)"
+  },
+  "artifacts": {
+    "paper_tex": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "sha256": "6b8152fe16af87a5fc8ff82f0eb825b90bc72939f5dadabe23ceb9a1f8fc4ae2"
+    },
+    "paper_pdf": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "sha256": "3d35276be353a5768ff6dd6fdc8f0065d5be653879d6d073469449fc2d38bd24",
+      "pages": 34,
+      "bytes": 395757
+    },
+    "claim_map": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "sha256": "7a7e342dcae2301927fb1406a93c659e9651c27731322546744bac74d908e4ba"
+    },
+    "generator": {
+      "path": "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "sha256": "95c7988b1dd5c95fa2cb5f9968ff13252474571f488d2b66c5405f668ba76d16"
+    },
+    "verifier": {
+      "path": "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "sha256": "176ef9f0e79c46531512cb2fb2c115b9e749158e9752e3c17818990c2f08927e"
+    },
+    "tests": {
+      "path": "paper/test_17_pure_weyl_extension_claim_map.py",
+      "sha256": "1b89677a95d3ec3b3950b3e35885e3c4029dd60befbbeb5f7c0533f2bb3fe08e"
+    },
+    "report": {
+      "path": "reports/phase4-black-hole-paper17-static-threshold-and-qnm-curvature-2026-07-25.md",
+      "sha256": "d2fa14e1c84a3e0ab3037c23403c8fbf1a2141d6467f23f0885573cba1eb697b"
+    },
+    "work_item": {
+      "path": "planning/work-items/phase4-black-hole-paper17-static-threshold-and-qnm-curvature.json",
+      "sha256": "e7668871ef16795d0338efc116419af7e32402225e1d5291e0653a9cb6cb5932"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "two-pass pdflatex compilation with no undefined references or overfull boxes",
+        "Python bytecode compilation",
+        "JSON parse and deterministic claim-map regeneration",
+        "scoped git diff --check",
+        "visual inspection of the all-multipole static theorem, threshold corollary, and curvature theorem pages",
+        "receipt artifact hash audit"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "checks": [
+        "42 regression and mutation tests in 44.537 seconds",
+        "independent exact zero and infinity indicial-factor verification",
+        "independent exceptional Laurent-compatibility verification",
+        "independent static Regge-Wheeler recurrence and endpoint-termination verification",
+        "independent cubic-obstruction and dipole-preimage verification",
+        "independent QNM-curvature, inverse-gap, and divided-exponential verification"
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "No upstream operator, content-addressed authority, certificate schema, or validated numerical input changed."
+    },
+    "tier_3": {
+      "status": "PASS",
+      "checks": [
+        "python3 -m unittest discover: 149 tests passed in 0.319 seconds"
+      ]
+    }
+  },
+  "claim_boundary": {
+    "static_mass_direction_nonzero_all_ell_ge_2": true,
+    "static_dipole_preimage_exact": true,
+    "axial_ell2_bach_threshold_valuation_one_exact": true,
+    "threshold_holomorphic_order_two_improvement_excluded": true,
+    "second_order_qnm_curvature_formula_exact": true,
+    "refined_gap_and_local_contour_expansion_exact": true,
+    "all_ell_bach_reduction_coefficient_computed": false,
+    "all_ell_bach_nonsplitting": false,
+    "threshold_uniform_jost_shear_estimate": false,
+    "numerical_qnm_curvature_computed": false,
+    "global_retarded_inverse_laplace": false,
+    "time_domain_stability": false,
+    "quantum_statement": false
+  }
+}

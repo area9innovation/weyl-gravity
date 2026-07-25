@@ -119,14 +119,20 @@
     "parent_local_contour_selection_rule_exact": true,
     "parent_metric_green_mass_derivative_exact": true,
     "physical_mass_reverse_coupling_zero": true,
+    "refined_filtered_gap_and_contour_expansion_exact": true,
     "reflected_ep2_pair_exact": true,
     "renormalized_krein_hyperbolic_limit_exact": true,
     "resonant_evaluation_identity_exact": true,
     "resonant_functional_descends_to_extension_class": true,
     "root_space_polarization_exact": true,
+    "second_order_qnm_curvature_formula_exact": true,
     "spin2_local_commutant_dual_numbers": true,
+    "static_dipole_preimage_exact": true,
+    "static_mass_direction_class_nonzero_all_ell_ge_2": true,
     "symmetric_square_period_matrix_exact": true,
-    "threshold_renormalized_class_limit_conditional": true,
+    "threshold_holomorphic_order_two_improvement_excluded": true,
+    "threshold_projective_valuation_one_exact": true,
+    "threshold_renormalized_class_limit_exact": true,
     "threshold_static_cocycle_residue_exact": true,
     "transversality_meanings_distinguished": true,
     "triangular_gauge_commutator_exact": true,
@@ -296,6 +302,11 @@
         "-y1*y2"
       ]
     ],
+    "refined_filtered_confluence": {
+      "divided_exponential_order_m": "exp(I*omega*t)*(I*xi*t/2-nu**2*t**2/2)",
+      "gap": "nu*m+xi*m**2/2+O(m**3)",
+      "inverse_gap": "1/(nu*m)-xi/(2*nu**2)+O(m)"
+    },
     "reflection_pair": {
       "double_coefficient": "conjugate(C_minus_2)",
       "frequency": "-conjugate(omega)",
@@ -319,9 +330,35 @@
       "right_root": "(u,0)",
       "self_pairing": "0"
     },
+    "second_order_qnm_curvature": {
+      "B": "A0+nu*L1",
+      "augmented_endpoint_derivatives_required": true,
+      "curvature": "(2*pair(tilde_u,B*H*B*u)-nu**2*pair(tilde_u,L2*u)-2*nu*pair(tilde_u,A1*u))/alpha",
+      "normalization_independent": true,
+      "scalar_bulk_A1": "0",
+      "scalar_bulk_L2": "2"
+    },
+    "static_mass_direction_nontriviality": {
+      "cubic_obstruction": "Lambda**2+2*Lambda+12",
+      "dipole_class_exact": true,
+      "dipole_preimage": "r**2/6+r**3/15+r**4/36",
+      "exceptional_zero_compatibility": "Lambda**2*(Lambda-2)**2*a_minus_2/9",
+      "field": "C(r)",
+      "homogeneous_symmetric_square": "y_ell**2",
+      "infinity_indicial": "(k-1)*(k-2*ell-2)*(k+2*ell)",
+      "multipole_domain": "ell>=2, Lambda=ell*(ell+1)",
+      "rational_preimage_exists": false,
+      "static_potential": "-f*(Lambda/r**2-6/r**3)",
+      "static_rw_recurrence": "c_k=((k-1)*(k-2)-Lambda)*c_(k-1)/(2*(k-3)*(k+1))",
+      "target": "(r-2)/r",
+      "terminal_polynomial_degree": 3,
+      "zero_indicial": "-8*(k-6)*(k-2)*(k+2)"
+    },
     "threshold_static_exactness": {
       "cocycle_residue": "K_U0(q_minus_one)",
-      "continuous_cokernel_identification_required": true,
+      "continuous_cokernel_identification_required": false,
+      "exact_threshold_valuation": 1,
+      "holomorphic_improvement_to_order_two": false,
       "q_minus_one": "-I*(15*r + 13 + 12/r + 9/r**2)/120",
       "renormalized_class_limit": "I*[f]/2",
       "symmetric_square_decomposition": "K_U=K_U0+4*omega**2*D"
@@ -373,22 +410,25 @@
   },
   "fail_closed_scope": {
     "all_ell_bach_nonsplitting": false,
+    "all_ell_bach_reduction_coefficient_computed": false,
     "causal_exterior_spacetime_resolvent": false,
     "complete_complex_reducibility_locus": false,
     "full_six_state_commutant_dual_numbers": false,
     "global_t_exp_iomega_t_ringdown_term": false,
+    "numerical_qnm_curvature_computed": false,
     "off_resonance_jost_normalization_function_computed": false,
     "overtone_ep2_tower_certified": false,
     "parent_radial_overlap_operator_identity": false,
     "physical_filtration_breaking_coefficient_computed": false,
     "quantum_positivity_or_unitarity": false,
     "retarded_inverse_transform": false,
+    "threshold_uniform_jost_shear_estimate": false,
     "time_domain_stability": false
   },
   "lifecycle_state": "DRAFT_ALLOWED",
   "manuscript": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
   "paper_id": "PAPER_17_PURE_WEYL_EXTENSION_RESONANCE",
-  "paper_sha256": "154419c678d12f1a6f6331b4c16de22684eb683c881db7cbee8b1d5fca66ce21",
+  "paper_sha256": "6b8152fe16af87a5fc8ff82f0eb825b90bc72939f5dadabe23ceb9a1f8fc4ae2",
   "result_id": "PAPER17_NONSPLIT_RW_EXTENSION_DEFECTIVE_RESONANCE",
   "schema": "paper-draft-source-map-v1"
 }

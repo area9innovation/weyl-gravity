@@ -1,0 +1,50 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-paper17-static-threshold-and-qnm-curvature",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-paper17-static-threshold-and-qnm-curvature",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-paper17-static-threshold-and-qnm-curvature.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper17-static-threshold-and-qnm-curvature",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 1,
+    "objective": "Promote the exact all-radiative-multipole nontriviality of the static mass-direction class, the exact ell=2 Bach threshold valuation-one corollary, and the normalization-independent second-order massive-QNM curvature formula in Paper 17.",
+    "stop_condition": "Paper 17 proves that f=1-2/r is not in the rational image of the static symmetric-square operator for every ell>=2, verifies the exact ell=1 preimage control, removes the conditional threshold-cokernel wording for the reduced ell=2 Bach class, proves exact projective threshold valuation one and the holomorphic no-improvement corollary, derives the augmented fixed-domain formula for omega_n''(0), records the refined gap and isolated-contour expansion, and preserves the boundary that all-ell Bach cocycle reduction, a numerical curvature, and a threshold-uniform Jost estimate are not claimed. The generated claim map, independent exact verifier, mutation tests, PDF, report, and tier receipt are updated.",
+    "current_gate": "static projective cokernel and second-order QNM curvature",
+    "forbid": "no all-ell Bach nonsplitting claim without computing c_ell(omega); no claim that the singular rational gauge is threshold-uniform; no promotion of b/a^2=O(omega^2); no numerical value for xi_n without a validated augmented calculation; no global retarded contour, stability, quantum, or overtone-tower claim",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-paper17-two-parameter-filtered-unfolding"
+    ],
+    "activates": [
+      "validated augmented second-order massive-QNM curvature experiment"
+    ],
+    "allowed_paths": [
+      "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "paper/test_17_pure_weyl_extension_claim_map.py",
+      "reports/phase4-black-hole-paper17-static-threshold-and-qnm-curvature-2026-07-25.md",
+      "reports/PAPER17_STATIC_THRESHOLD_QNM_CURVATURE_TIER_RECEIPT.json",
+      "planning/work-items/phase4-black-hole-paper17-static-threshold-and-qnm-curvature.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use exact rational Laurent recurrence, the static Regge-Wheeler polynomial and symmetric square, the cubic obstruction, and the dipole primitive for the all-ell static cokernel theorem. Treat the QNM curvature formula in the fixed-domain augmented Fredholm pencil so endpoint-map derivatives are included.",
+    "input_commit": "6fcaaa5a56c3d91899ccb5d573a897002083bce1",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "The static cokernel result is exact over C(r) for ell>=2, with an exact ell=1 preimage control.",
+      "This does not establish the general-ell Bach reduction coefficient c_ell(omega).",
+      "The second-order curvature formula is an analytic fixed-domain identity, not a validated numerical value.",
+      "The physical endpoint and global causal claims remain open."
+    ]
+  },
+  "edges": []
+}

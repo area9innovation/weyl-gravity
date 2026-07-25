@@ -308,6 +308,139 @@ class Paper17ClaimMapTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("threshold static-exact", result.stdout + result.stderr)
 
+    def test_static_laurent_compatibility_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "static_mass_direction_nontriviality"
+            ].update(
+                {
+                    "exceptional_zero_compatibility": (
+                        "Lambda**2*(Lambda-2)*a_minus_2/9"
+                    )
+                }
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "static mass-direction nontriviality declaration",
+            result.stdout + result.stderr,
+        )
+
+    def test_static_dipole_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "static_mass_direction_nontriviality"
+            ].update({"dipole_preimage": "r**2/6+r**3/15+r**4/35"})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "static mass-direction nontriviality declaration",
+            result.stdout + result.stderr,
+        )
+
+    def test_static_cubic_obstruction_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "static_mass_direction_nontriviality"
+            ].update({"cubic_obstruction": "Lambda**2+2*Lambda-12"})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "static mass-direction nontriviality declaration",
+            result.stdout + result.stderr,
+        )
+
+    def test_static_preimage_promotion_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "static_mass_direction_nontriviality"
+            ].update({"rational_preimage_exists": True})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "static mass-direction nontriviality declaration",
+            result.stdout + result.stderr,
+        )
+
+    def test_threshold_valuation_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "threshold_static_exactness"
+            ].update({"exact_threshold_valuation": 2})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("threshold static-exactness", result.stdout + result.stderr)
+
+    def test_qnm_curvature_sign_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "second_order_qnm_curvature"
+            ].update(
+                {
+                    "curvature": (
+                        "(2*pair(tilde_u,B*H*B*u)"
+                        "+nu**2*pair(tilde_u,L2*u)"
+                        "-2*nu*pair(tilde_u,A1*u))/alpha"
+                    )
+                }
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("second-order QNM curvature", result.stdout + result.stderr)
+
+    def test_refined_inverse_gap_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "refined_filtered_confluence"
+            ].update({"inverse_gap": "1/(nu*m)+xi/(2*nu**2)+O(m)"})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("refined filtered-confluence", result.stdout + result.stderr)
+
+    def test_numerical_curvature_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "a numerical value of \\(\\xi_n\\) has been computed"
+        )
+
+    def test_threshold_uniform_shear_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "a threshold-uniform estimate for \\(b/a^2\\) is established"
+        )
+
+    def test_all_ell_bach_coefficient_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the general-\\(\\ell\\) Bach coefficient "
+            "\\(c_\\ell(\\omega)\\) has been computed"
+        )
+
     def test_two_parameter_discriminant_mutation_rejected(self) -> None:
         path = self.mutated_claims(
             lambda data: data["exact_identities"]["two_parameter_unfolding"].update(

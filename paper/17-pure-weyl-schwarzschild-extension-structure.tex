@@ -50,6 +50,13 @@ For axial \(\ell=2\) we prove the exact normal form
  [\mathcal I_{\rm Bach}]
  =\frac{i\omega}{2}\left[1-\frac2r\right].
 \]
+For every radiative multipole \(\ell\ge2\), the static class
+\([1-2/r]\) is nonzero in the rational cokernel of the corresponding
+static symmetric-square operator; the dipole is an explicit exact
+exception.  Hence the axial \(\ell=2\) Bach extension has exact threshold
+valuation one: its original \(1/\omega\) singularity is exact, but the
+surviving order-\(\omega\) class cannot be removed by a gauge holomorphic
+at threshold.
 The class in brackets is exactly the transverse-traceless critical
 spin-two mass jet.  Thus the local parameter relation is
 \(m=(i\omega/2)\tau\), modulo rational triangular gauge.  The required
@@ -62,7 +69,9 @@ At the covariant parent-operator level, the pure-Weyl metric Green
 function is exactly the first mass derivative of the Einstein--Weyl
 spin-two resolvent.  This determines both leading Laurent coefficients and
 the isolated-resonance time contribution directly from the massive QNM
-velocity and projector derivative.
+velocity and projector derivative.  The second mass derivative of the QNM
+frequency is likewise determined by the ordinary Regge--Wheeler finite
+resolvent part and augmented left/right resonant data.
 
 At a simple spin-two quasinormal frequency the complete connection admits
 two possible local Smith types.  A validated projective Evans calculation
@@ -115,6 +124,9 @@ This paper establishes six central results.
     [\mathcal I_{\rm Bach}]
     =\frac{i\omega}{2}\left[1-\frac2r\right].
   \]
+  The static class in brackets is nonzero for every \(\ell\ge2\), with an
+  explicit exact dipole control, so the \(\ell=2\) Bach threshold valuation
+  is exactly one.
 \item The class \([1-2/r]\) is exactly the transverse-traceless critical
   mass jet.  Its linearly growing equivalence gauge is endpoint-compatible:
   the Coulomb tail cancels the apparent logarithmic derivative of the
@@ -132,6 +144,8 @@ This paper establishes six central results.
   of the massive spin-two resolvent.  Its double coefficient is controlled
   by QNM motion, its simple coefficient by projector motion, and its local
   polynomial signal obeys an exact rank-one excitation/observation rule.
+  The curvature \(\omega_n''(0)\) is an exact augmented finite-part
+  functional of ordinary Regge--Wheeler data.
 \end{enumerate}
 
 The fourth result is stronger than a statement about a finite connection
@@ -157,6 +171,9 @@ Non-split spin-two extension
 Cocycle and local critical-mass normal form
 & Exact substitution in \(\C(r,\omega)\)
 & Exact for \(\omega\ne0\)\\
+Static class and threshold valuation
+& Exact all-\(\ell\) Laurent recurrence, static polynomial, and cubic obstruction
+& Exact\\
 Endpoint-compatible mass comparison
 & Moving massive/Coulomb Jost germs and analytic normalization
 & Exact at the simple QNM\\
@@ -181,6 +198,9 @@ Two-parameter EP2 phase diagram
 Parent mass-derivative Green identity
 & Fixed-domain parent inverse and analytic massive QNM branch
 & Exact operator theorem\\
+Second-order massive-QNM curvature
+& Ordinary finite resolvent part and augmented resonant pairing
+& Exact fixed-domain theorem\\
 Local two-pole contour limit
 & Analytic normal form and residue calculus
 & Exact local theorem\\
@@ -402,7 +422,148 @@ formula.  The quotient identity follows immediately.  If \([f]=0\), then
 \([\mathcal I_{\rm Bach}]=0\), which would split the extension.
 \end{proof}
 
-\begin{proposition}[Static exactness and the threshold lattice]
+\begin{theorem}[All-radiative-multipole static mass direction]
+\label{thm:static-mass-nontrivial}
+Let
+\[
+ \Lambda=\ell(\ell+1),\qquad
+ U_{\ell,0}=-f\left(\frac{\Lambda}{r^2}-\frac6{r^3}\right),
+ \qquad \ell\ge2.
+\]
+Then
+\[
+ \boxed{\;
+ [f]\ne0
+ \quad\hbox{in}\quad
+ \C(r)/\mathcal K_{U_{\ell,0}}\C(r),
+ \qquad f=1-\frac2r.
+ \;}
+\]
+Equivalently, no rational function \(p\) satisfies
+\(\mathcal K_{U_{\ell,0}}p=f\).
+\end{theorem}
+
+\begin{proof}
+A rational solution can have poles only at \(0\), \(2\), and infinity.
+At an ordinary finite point, a pole of order \(N\) would produce an
+uncancelled pole of order \(N+3\), because the coefficient of
+\(\partial_r^3\) is nonzero there.
+
+Put \(s=r-2\).  Since
+\[
+ D=\frac{s}{2+s}\partial_s
+   =\frac{s}{2}\partial_s+O(s^2\partial_s),
+ \qquad U_{\ell,0}=O(s),
+\]
+a putative leading term \(p\sim s^{-N}\), \(N>0\), gives
+\[
+ D^3p=-\frac{N^3}{8}s^{-N}+O(s^{1-N}),
+\]
+whereas the potential terms are \(O(s^{1-N})\) and \(f=O(s)\).
+Thus \(p\) has no pole at \(r=2\).
+
+At \(r=0\), the indicial leading term is
+\[
+ \mathcal K_{U_{\ell,0}}(r^k)
+ =
+ -8(k-6)(k-2)(k+2)r^{k-6}+\cdots.
+\]
+For \(k<0\), only \(k=-2\) is exceptional.  Write
+\[
+ p=a_{-2}r^{-2}+a_{-1}r^{-1}+a_0+a_1r+\cdots.
+\]
+The first three Laurent equations give
+\[
+\begin{aligned}
+ a_{-1}&=\frac{\Lambda-2}{3}a_{-2},\\
+ a_0&=\frac{(\Lambda-2)(5\Lambda-4)}{72}a_{-2},\\
+ a_1&=\frac{\Lambda(\Lambda-2)(\Lambda-1)}{72}a_{-2}.
+\end{aligned}
+\]
+The first resonant compatibility condition is
+\[
+ \boxed{\;
+ \frac{\Lambda^2(\Lambda-2)^2}{9}a_{-2}=0.
+ \;}
+\]
+For \(\ell\ge2\), \(\Lambda\ge6\), so
+\(a_{-2}=a_{-1}=a_0=a_1=0\).
+In particular, the exceptional exponent does not produce an admissible
+pole.  Hence a rational solution would be a polynomial.
+
+If \(p\sim a_Mr^M\) at infinity, then
+\[
+ \mathcal K_{U_{\ell,0}}p
+ =(M-1)(M-2\ell-2)(M+2\ell)a_Mr^{M-3}+\cdots.
+\]
+The static Regge--Wheeler equation has a polynomial solution
+\[
+ y_\ell(r)=\sum_{k=3}^{\ell+1}c_kr^k,
+ \qquad
+ c_k=
+ \frac{(k-1)(k-2)-\Lambda}{2(k-3)(k+1)}c_{k-1}
+ \quad(4\le k\le\ell+1).
+\]
+Direct coefficient substitution proves
+\((D^2+U_{\ell,0})y_\ell=0\), so the symmetric-square identity gives
+\[
+ \mathcal K_{U_{\ell,0}}(y_\ell^2)=0.
+\]
+For \(M>3\), the leading coefficient above can vanish only at
+\(M=2\ell+2=\deg y_\ell^2\).  Subtracting the appropriate multiple of
+\(y_\ell^2\) therefore leaves a polynomial of degree at most three:
+\[
+ p=a_0+a_1r+a_2r^2+a_3r^3.
+\]
+The preceding Laurent recurrence gives \(a_0=a_1=0\).  Exact substitution
+then yields
+\[
+ (\Lambda+4)a_2=15a_3,
+ \qquad
+ (3\Lambda+4)a_2=(6\Lambda+33)a_3.
+\]
+The inhomogeneous equation forces \(a_3\ne0\).  Eliminating \(a_2\)
+would require
+\[
+ 15(3\Lambda+4)=(\Lambda+4)(6\Lambda+33),
+ \qquad\hbox{or}\qquad
+ \Lambda^2+2\Lambda+12=0.
+\]
+This has no real root and hence no value
+\(\Lambda=\ell(\ell+1)\), \(\ell\ge2\).
+\end{proof}
+
+\begin{proposition}[Exceptional dipole control]
+\label{prop:static-dipole-control}
+For \(\ell=1\), \(\Lambda=2\), the class is instead exact:
+\[
+ \boxed{\;
+ q_1(r)=\frac{r^2}{6}+\frac{r^3}{15}+\frac{r^4}{36},
+ \qquad
+ \mathcal K_{U_{1,0}}q_1=f.
+ \;}
+\]
+Thus the rational static mass-direction obstruction distinguishes the
+radiative multipoles \(\ell\ge2\) from the dipole.  This cohomological
+control is not by itself a complete physical analysis of the
+\(\ell=1\) gravitational sector.
+\end{proposition}
+
+\begin{remark}[What remains for all-\(\ell\) Bach nonsplitting]
+Theorem~\ref{thm:static-mass-nontrivial} proves nontriviality of the mass
+direction, not the reduction of the Bach cocycle for every multipole.  If
+a future calculation establishes
+\[
+ [\mathcal I_{{\rm Bach},\ell}]
+ =c_\ell(\omega)[f],
+ \qquad c_\ell(\omega)\ne0,
+\]
+then all-\(\ell\) nonsplitting follows immediately.  The remaining
+symbolic target is therefore the scalar coefficient \(c_\ell(\omega)\);
+it is not claimed here.
+\end{remark}
+
+\begin{corollary}[Static exactness and exact threshold valuation]
 \label{prop:threshold-lattice}
 Write
 \[
@@ -431,25 +592,49 @@ In particular,
  =\mathcal K_{U_{2,0}}q_{-1}.
 \]
 Thus the entire \(1/\omega\) part is already exact for the static
-symmetric-square operator.  If the projective cokernels are identified
-continuously at threshold, then
+symmetric-square operator.  In the meromorphically saturated rational
+projective lattice,
 \[
  \boxed{\;
- \lim_{\omega\to0}
+ \ord_{\omega=0}[\mathcal I_{\rm Bach}]=1,
+ \qquad
+ \left.
  \frac{[\mathcal I_{\rm Bach}]}{\omega}
- =\frac{i}{2}[f].
+ \right|_{\omega=0}
+ =\frac{i}{2}[f]\ne0.
  \;}
 \]
-\end{proposition}
+Moreover, no rational triangular gauge holomorphic in \(\omega\) can
+improve the representative \((i\omega/2)f\) to \(O(\omega^2)\).
+\end{corollary}
+
+\begin{proof}
+The decomposition follows by inserting
+\(\mathcal K_{U_2}=\mathcal K_{U_{2,0}}+4\omega^2D\) in
+Theorem~\ref{thm:mass-normal}.  The same theorem supplies the meromorphic
+representative \((i\omega/2)f\).  Its coefficient at order \(\omega\) is
+nonzero in the static cokernel by
+Theorem~\ref{thm:static-mass-nontrivial}, proving exact valuation one.
+
+If a holomorphic residual gauge removed that coefficient, its first
+relevant term \(\omega q_1(r)\) would require
+\[
+ \mathcal K_{U_{2,0}}q_1=\frac{i}{2}f
+\]
+up to the fixed gauge-factor convention.  This contradicts
+\([f]\ne0\).
+\end{proof}
 
 \begin{remark}[Bulk class versus spectral frame]
-The intrinsic extension class vanishes linearly at threshold in the
-meromorphic projective frame.  The gauge producing this representative is
-itself \(O(\omega^{-1})\), so it is singular in a holomorphic physical
-Jost frame.  The threshold issue is therefore a spectral-frame or lattice
-problem, not a divergence of the bulk projective class.  This proposition
-does not construct a threshold-uniform splitting or justify commuting the
-limits \(\omega\to0\) and \(\tau\to0\).
+The original \(1/\omega\) singularity is gauge-exact, while the surviving
+order-\(\omega\) class is genuinely cohomological.  The gauge producing
+the regular representative is itself \(O(\omega^{-1})\) and grows at
+infinity, so it is singular in a holomorphic physical Jost frame.  The
+remaining threshold problem is therefore entirely one of physical
+endpoint frames and Jost normalization.  The corollary does not construct
+a threshold-uniform splitting, justify commuting the limits
+\(\omega\to0\) and \(\tau\to0\), or prove a physical estimate for
+\(b(\omega)/a(\omega)^2\).
 \end{remark}
 
 \begin{remark}[Forward reference to the physical mass jet]
@@ -1544,6 +1729,105 @@ remaining freedom is a multiple of \(u_n\).  The left formula follows
 from the corresponding right Laurent identity.
 \end{proof}
 
+\begin{theorem}[Second-order massive-QNM curvature]
+\label{thm:qnm-curvature}
+Let
+\[
+ L_m(\omega)=L(\omega)+mA(\omega),
+ \qquad
+ \omega_n(m)=\omega_n+\nu_nm+\frac12\xi_nm^2+O(m^3),
+\]
+be a fixed-domain analytic Fredholm realization of the massive QNM
+branch, with all endpoint-map derivatives included in the augmented
+operator.  Put
+\[
+ B_n=A_n+\nu_nL_n',
+ \qquad
+ \alpha_n=\langle\widetilde u_n,L_n'u_n\rangle.
+\]
+Then
+\[
+ \boxed{\;
+ \xi_n=\omega_n''(0)=
+ \frac{
+ 2\langle\widetilde u_n,B_nH_nB_nu_n\rangle
+ -\nu_n^2\langle\widetilde u_n,L_n''u_n\rangle
+ -2\nu_n\langle\widetilde u_n,A_n'u_n\rangle
+ }{\alpha_n}.
+ \;}
+\]
+The formula is independent of the analytic normalization chosen for
+\(u_n(m)\).
+\end{theorem}
+
+\begin{proof}
+The first differentiated equation and the finite-part reconstruction are
+\[
+ L_n\dot u_n+B_nu_n=0,
+ \qquad
+ \dot u_n=-H_nB_nu_n+c\,u_n.
+ \]
+Differentiating the moving QNM equation a second time gives
+\[
+ L_n\ddot u_n+2B_n\dot u_n+
+ \left(\xi_nL_n'+\nu_n^2L_n''+2\nu_nA_n'\right)u_n=0.
+\]
+Pairing with \(\widetilde u_n\), substituting the finite-part formula, and
+using
+\[
+ \langle\widetilde u_n,B_nu_n\rangle
+ =\beta_n+\nu_n\alpha_n=0
+\]
+eliminates both \(L_n\ddot u_n\) and the normalization term \(c\,u_n\).
+Solving the remaining scalar equation for \(\xi_n\) gives the result.
+\end{proof}
+
+\begin{corollary}[Refined filtered confluence]
+\label{cor:refined-confluence}
+Because the Einstein QNM branch stays fixed while the massive branch
+moves, their gap satisfies
+\[
+ \boxed{\;
+ \delta_m=\nu_nm+\frac12\xi_nm^2+O(m^3),
+ \qquad
+ \frac1{\delta_m}
+ =\frac1{\nu_nm}-\frac{\xi_n}{2\nu_n^2}+O(m).
+ \;}
+\]
+The corresponding divided exponential has the expansion
+\[
+ \boxed{\;
+ \frac{e^{i\omega_n(m)t}-e^{i\omega_nt}}{m}
+ =
+ e^{i\omega_nt}
+ \left[
+ i\nu_nt
+ +m\left(\frac{i\xi_nt}{2}-\frac{\nu_n^2t^2}{2}\right)
+ +O(m^2)
+ \right].
+ \;}
+\]
+\end{corollary}
+
+\begin{remark}[Scalar mass specialization]
+For the bulk scalar operator
+\[
+ L_m=D^2+\omega^2-V_2-mf,
+\]
+one has \(A=-f\), \(A'=0\), \(L'=2\omega\), and \(L''=2\).
+Accordingly, the bulk part of Theorem~\ref{thm:qnm-curvature} reduces to
+\[
+ \xi_n=
+ \frac{
+ 2\langle\widetilde u_n,B_nH_nB_nu_n\rangle
+ -2\nu_n^2\langle\widetilde u_n,u_n\rangle
+ }{\alpha_n}.
+\]
+For a physical QNM theorem these expressions remain augmented by the
+derivatives of the transparent endpoint maps.  No numerical value of
+\(\xi_n\) is asserted here.
+\end{remark}
+
 The tangent vector \(\dot u_n\) depends on normalization, but its class
 \[
  \boxed{\;[\dot u_n]\in D/\C u_n\;}
@@ -2497,7 +2781,7 @@ Axial triangular preflight
 & Exact RW/RW/Maxwell filtration and reconstruction
 & Exact rational\\
 Projective cocycle
-& Gauge law, nontrivial extension class, mass normal form
+& Gauge law, nontrivial extension class, mass normal form, static cokernel
 & Exact rational\\
 Critical parent mass jet
 & TT mass variation and difference quotient
@@ -2536,9 +2820,10 @@ expansion, a global late-time asymptotic formula, a retarded
 inverse-Laplace deformation, a time-domain instability, the off-resonance
 normalization function \(h(\omega)\), an all-\(\ell\) Bach nonsplitting
 theorem, a certified value of \(c_n\) for a concrete physical
-filtration-breaking perturbation, or a quantum positivity statement.  The polynomial
-\(t e^{i\omega_nt}\) is proved only for the isolated local two-pole contour
-contribution.
+filtration-breaking perturbation, a numerical value of \(\xi_n\), a
+threshold-uniform estimate for \(b/a^2\), or a quantum positivity
+statement.  The polynomial \(t e^{i\omega_nt}\) is proved only for the
+isolated local two-pole contour contribution.
 
 \section{Conclusion}
 
@@ -2546,7 +2831,11 @@ The axial Schwarzschild Bach equation contains a repeated
 Regge--Wheeler factor, but the repetition is not a rational direct sum.  It
 is a non-split self-extension whose projective class is represented by the
 elementary direction \((i\omega/2)(1-2/r)\).  That direction is exactly
-the transverse-traceless critical mass jet.  The equivalence gauge has
+the transverse-traceless critical mass jet.  The static mass-direction
+class is nonzero for every radiative \(\ell\ge2\), while the dipole is
+exact.  For the explicitly reduced \(\ell=2\) Bach cocycle this proves
+exact threshold valuation one: the singular leading frame term is exact,
+but the surviving linear class is not.  The equivalence gauge has
 forced linear growth at infinity, but this is the derivative of the moving
 massive phase rather than an obstruction: the Coulomb tail cancels its
 apparent logarithmic shear.  At the certified damped mode, the scalar zero
@@ -2558,7 +2847,10 @@ is nilpotent, and the massive spin-two QNM moves with nonzero critical
 slope.
 At the covariant level, the metric response is the mass derivative of the
 massive spin-two resolvent: QNM motion controls its double coefficient,
-while projector motion controls its accompanying simple coefficient.
+while projector motion controls its accompanying simple coefficient.  The
+second derivative of the massive QNM is fixed by the ordinary finite
+Regge--Wheeler resolvent and the augmented resonant pairing, furnishing the
+first finite correction to the confluent projector and contour limits.
 
 The physical mass deformation is filtration-preserving rather than a
 generic square-root unfolding.  In the two-parameter phase diagram, the

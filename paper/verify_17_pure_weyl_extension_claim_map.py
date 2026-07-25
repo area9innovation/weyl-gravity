@@ -82,6 +82,138 @@ def verify_cocycle(claims: dict) -> None:
         fail("threshold cocycle residue identity failed")
 
 
+def verify_static_nontriviality_and_curvature(claims: dict) -> None:
+    r, k, Lambda, ell = sp.symbols("r k Lambda ell")
+    f = (r - 2) / r
+    U0 = -f * (Lambda / r**2 - 6 / r**3)
+
+    def D(expr: sp.Expr) -> sp.Expr:
+        return sp.cancel(f * sp.diff(expr, r))
+
+    def K0(expr: sp.Expr) -> sp.Expr:
+        return sp.factor(
+            D(D(D(expr))) + 4 * U0 * D(expr) + 2 * D(U0) * expr
+        )
+
+    monomial = sp.factor(K0(r**k))
+    scaled_monomial = sp.Poly(
+        sp.expand(sp.powsimp(monomial * r ** (6 - k), force=True)), r
+    )
+    zero_indicial = sp.factor(scaled_monomial.coeff_monomial(1))
+    expected_zero = -8 * (k - 6) * (k - 2) * (k + 2)
+    if sp.factor(zero_indicial - expected_zero) != 0:
+        fail("static symmetric-square zero indicial polynomial failed")
+    infinity_indicial = sp.factor(
+        scaled_monomial.coeff_monomial(r**3).subs(
+            Lambda, ell * (ell + 1)
+        )
+    )
+    expected_infinity = (k - 1) * (k - 2 * ell - 2) * (k + 2 * ell)
+    if sp.factor(infinity_indicial - expected_infinity) != 0:
+        fail("static symmetric-square infinity degree polynomial failed")
+
+    am2, am1, a0, a1 = sp.symbols("am2 am1 a0 a1")
+    laurent = am2 / r**2 + am1 / r + a0 + a1 * r
+    series = sp.expand(K0(laurent) - f)
+    recurrence = {
+        am1: am2 * (Lambda - 2) / 3,
+        a0: am2 * (Lambda - 2) * (5 * Lambda - 4) / 72,
+        a1: Lambda * am2 * (Lambda - 2) * (Lambda - 1) / 72,
+    }
+    for exponent in [-7, -6, -5]:
+        if sp.factor(series.coeff(r, exponent).subs(recurrence)) != 0:
+            fail("static exceptional-exponent Laurent recurrence failed")
+    compatibility = sp.factor(series.coeff(r, -4).subs(recurrence))
+    expected_compatibility = Lambda**2 * (Lambda - 2) ** 2 * am2 / 9
+    if sp.factor(compatibility - expected_compatibility) != 0:
+        fail("static exceptional-exponent resonant compatibility failed")
+
+    scalar_monomial = sp.factor(
+        (D(D(r**k)) + U0 * r**k) / f
+    )
+    scalar_scaled = sp.Poly(
+        sp.expand(sp.powsimp(scalar_monomial * r ** (3 - k), force=True)), r
+    )
+    low_scalar = sp.factor(scalar_scaled.coeff_monomial(1))
+    high_scalar = sp.factor(scalar_scaled.coeff_monomial(r))
+    if sp.factor(low_scalar + 2 * (k - 3) * (k + 1)) != 0:
+        fail("static RW recurrence denominator failed")
+    if sp.factor(high_scalar - (k * (k - 1) - Lambda)) != 0:
+        fail("static RW recurrence numerator failed")
+    if low_scalar.subs(k, 3) != 0:
+        fail("static RW polynomial lower termination failed")
+    if sp.factor(
+        high_scalar.subs({k: ell + 1, Lambda: ell * (ell + 1)})
+    ) != 0:
+        fail("static RW polynomial upper termination failed")
+
+    a2, a3 = sp.symbols("a2 a3")
+    cubic_one = (Lambda + 4) * a2 - 15 * a3
+    cubic_two = (3 * Lambda + 4) * a2 - (6 * Lambda + 33) * a3
+    obstruction = sp.factor(
+        cubic_two.subs(a2, 15 * a3 / (Lambda + 4))
+        * (Lambda + 4)
+        / (-6 * a3)
+    )
+    if sp.factor(obstruction - (Lambda**2 + 2 * Lambda + 12)) != 0:
+        fail("all-multipole static cubic obstruction failed")
+
+    q1 = r**2 / 6 + r**3 / 15 + r**4 / 36
+    if sp.factor(K0(q1).subs(Lambda, 2) - f) != 0:
+        fail("static dipole rational preimage control failed")
+
+    declared = claims["exact_identities"]["static_mass_direction_nontriviality"]
+    if declared != {
+        "field": "C(r)",
+        "multipole_domain": "ell>=2, Lambda=ell*(ell+1)",
+        "static_potential": "-f*(Lambda/r**2-6/r**3)",
+        "target": "(r-2)/r",
+        "zero_indicial": "-8*(k-6)*(k-2)*(k+2)",
+        "infinity_indicial": "(k-1)*(k-2*ell-2)*(k+2*ell)",
+        "exceptional_zero_compatibility": (
+            "Lambda**2*(Lambda-2)**2*a_minus_2/9"
+        ),
+        "static_rw_recurrence": (
+            "c_k=((k-1)*(k-2)-Lambda)"
+            "*c_(k-1)/(2*(k-3)*(k+1))"
+        ),
+        "homogeneous_symmetric_square": "y_ell**2",
+        "terminal_polynomial_degree": 3,
+        "cubic_obstruction": "Lambda**2+2*Lambda+12",
+        "rational_preimage_exists": False,
+        "dipole_preimage": "r**2/6+r**3/15+r**4/36",
+        "dipole_class_exact": True,
+    }:
+        fail("static mass-direction nontriviality declaration drift")
+
+    alpha, nu, xi, bhb, l2, a_prime = sp.symbols(
+        "alpha nu xi bhb l2 a_prime", nonzero=True
+    )
+    second_solvability = (
+        -2 * bhb + xi * alpha + nu**2 * l2 + 2 * nu * a_prime
+    )
+    solved_xi = sp.solve(second_solvability, xi)[0]
+    expected_xi = (2 * bhb - nu**2 * l2 - 2 * nu * a_prime) / alpha
+    if sp.simplify(solved_xi - expected_xi) != 0:
+        fail("second-order QNM curvature solvability formula failed")
+
+    m, t, omega = sp.symbols("m t omega", nonzero=True)
+    delta = nu * m + xi * m**2 / 2
+    inverse_finite = sp.limit(1 / delta - 1 / (nu * m), m, 0)
+    if sp.simplify(inverse_finite + xi / (2 * nu**2)) != 0:
+        fail("refined inverse-gap coefficient failed")
+    divided = (
+        sp.exp(sp.I * (omega + delta) * t) - sp.exp(sp.I * omega * t)
+    ) / m
+    leading = sp.I * nu * t * sp.exp(sp.I * omega * t)
+    order_m = sp.limit((divided - leading) / m, m, 0)
+    expected_order_m = sp.exp(sp.I * omega * t) * (
+        sp.I * xi * t / 2 - nu**2 * t**2 / 2
+    )
+    if sp.simplify(order_m - expected_order_m) != 0:
+        fail("refined divided-exponential coefficient failed")
+
+
 def verify_commutator() -> None:
     x = sp.symbols("x")
     y = sp.Function("y")(x)
@@ -379,7 +511,15 @@ def main() -> None:
 
     required = [
         "Mass-direction normal form",
-        "Static exactness and the threshold lattice",
+        "All-radiative-multipole static mass direction",
+        "\\frac{\\Lambda^2(\\Lambda-2)^2}{9}a_{-2}=0",
+        "\\Lambda^2+2\\Lambda+12=0",
+        "Exceptional dipole control",
+        "\\mathcal K_{U_{1,0}}q_1=f",
+        "What remains for all-\\(\\ell\\) Bach nonsplitting",
+        "Static exactness and exact threshold valuation",
+        "\\ord_{\\omega=0}[\\mathcal I_{\\rm Bach}]=1",
+        "no rational triangular gauge holomorphic in \\(\\omega\\)",
         "\\operatorname*{Res}_{\\omega=0}\\mathcal I_{\\rm Bach}",
         "Bulk class versus spectral frame",
         "\\mathcal I_{\\rm Bach}",
@@ -415,6 +555,9 @@ def main() -> None:
         "Universal critical-resonance criterion",
         "C_{-2}=-\\nu_nP_n",
         "Canonical simple pole and tangent state",
+        "Second-order massive-QNM curvature",
+        "\\xi_n=\\omega_n''(0)",
+        "Refined filtered confluence",
         "P_nA_n'P_n",
         "[-H_ng_n]",
         "Augmented QNM Hellmann--Feynman formula",
@@ -470,6 +613,9 @@ def main() -> None:
         "the local two-pole contour is the full retarded solution",
         "the projected metric Green coefficient is nilpotent",
         "the physical filtration-breaking coefficient \\(c_n\\) has been computed",
+        "the general-\\(\\ell\\) Bach coefficient \\(c_\\ell(\\omega)\\) has been computed",
+        "a numerical value of \\(\\xi_n\\) has been computed",
+        "a threshold-uniform estimate for \\(b/a^2\\) is established",
     ]
     for phrase in forbidden:
         if phrase in text:
@@ -590,11 +736,6 @@ def main() -> None:
         True,
         "reconstruction",
     )
-
-    verify_cocycle(claims)
-    verify_commutator()
-    verify_period_matrix(claims)
-    verify_mass_jost_and_confluence(claims)
 
     root = claims["exact_identities"]["generalized_root"]
     if root["carrier_quotient"] != "-a1/b0":
@@ -742,7 +883,9 @@ def main() -> None:
         "symmetric_square_decomposition": "K_U=K_U0+4*omega**2*D",
         "cocycle_residue": "K_U0(q_minus_one)",
         "renormalized_class_limit": "I*[f]/2",
-        "continuous_cokernel_identification_required": True,
+        "continuous_cokernel_identification_required": False,
+        "exact_threshold_valuation": 1,
+        "holomorphic_improvement_to_order_two": False,
     }:
         fail("threshold static-exactness declaration drift")
     simple_pole = claims["exact_identities"]["canonical_simple_pole"]
@@ -754,6 +897,29 @@ def main() -> None:
         "left_tangent_class": "-tilde_u*(A0+nu*L1)*H mod C*tilde_u",
     }:
         fail("canonical simple-pole declaration drift")
+    curvature = claims["exact_identities"]["second_order_qnm_curvature"]
+    if curvature != {
+        "B": "A0+nu*L1",
+        "curvature": (
+            "(2*pair(tilde_u,B*H*B*u)"
+            "-nu**2*pair(tilde_u,L2*u)"
+            "-2*nu*pair(tilde_u,A1*u))/alpha"
+        ),
+        "normalization_independent": True,
+        "augmented_endpoint_derivatives_required": True,
+        "scalar_bulk_A1": "0",
+        "scalar_bulk_L2": "2",
+    }:
+        fail("second-order QNM curvature declaration drift")
+    refined = claims["exact_identities"]["refined_filtered_confluence"]
+    if refined != {
+        "gap": "nu*m+xi*m**2/2+O(m**3)",
+        "inverse_gap": "1/(nu*m)-xi/(2*nu**2)+O(m)",
+        "divided_exponential_order_m": (
+            "exp(I*omega*t)*(I*xi*t/2-nu**2*t**2/2)"
+        ),
+    }:
+        fail("refined filtered-confluence declaration drift")
     hellmann = claims["exact_identities"]["augmented_hellmann_feynman"]
     if hellmann != {
         "evans_parameter_derivative": "integral(yminus*Qp*yplus)+B_p",
@@ -788,6 +954,12 @@ def main() -> None:
         "rank": 1,
     }:
         fail("Green principal coefficient declaration drift")
+
+    verify_cocycle(claims)
+    verify_static_nontriviality_and_curvature(claims)
+    verify_commutator()
+    verify_period_matrix(claims)
+    verify_mass_jost_and_confluence(claims)
 
     print("PASS paper/17-pure-weyl-schwarzschild-extension-structure.tex")
     print(
