@@ -1,0 +1,50 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-extension-resonance-paper",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-extension-resonance-paper",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-extension-resonance-paper.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-extension-paper",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 1,
+    "objective": "Develop Paper 17 into a theorem-first mathematical paper on the nonsplit axial Regge-Wheeler self-extension, its projective cocycle normal form, defective QNM root chain and reduced radial Green pole.",
+    "stop_condition": "Produce a self-contained manuscript with precise differential-module conventions, the exact RW/RW/Maxwell filtration and partial jet, explicit triangular gauge and symmetric-square period formula, the certified nonsplitting and commutant results, the mass-direction cocycle normal form, local Smith/Fitting classification, the certified non-Einstein generalized root chain, and the finite-interval reduced radial Green-pole theorem. Keep the physical mass crosswalk, causal spacetime resolvent, inverse-Laplace deformation and generalized ringdown fail-closed. Add a pinned claim map, independent verifier, mutation tests, PDF, receipt and report.",
+    "current_gate": "theorem-first Paper 17 expansion from the certified exact and reduced-mode authorities",
+    "forbid": "no mass-direction normal form called a physical Einstein-Weyl mass equality; no reduced radial pole called a causal spacetime or global physical resolvent; no generalized root polynomial called a second ordinary QNM eigenvector; no t exp(i omega t), completeness, stability, particle, ghost, CPT or quantum-unitarity promotion",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-axial-qnm-fredholm-promotion",
+      "sf:program/work/phase3-black-hole-axial-qnm-spin-one-local-unit"
+    ],
+    "activates": [
+      "a publishable mathematical companion to the focused endpoint-nonselection paper",
+      "the finite-mass cocycle comparison and causal Fredholm promotion as separate successors"
+    ],
+    "allowed_paths": [
+      "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "paper/test_17_pure_weyl_extension_claim_map.py",
+      "reports/phase4-black-hole-extension-resonance-paper-2026-07-25.md",
+      "reports/PAPER17_EXTENSION_RESONANCE_TIER_RECEIPT.json",
+      "planning/work-items/phase4-black-hole-extension-resonance-paper.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use Paper 16 only as a source draft. The theorem authorities are the exact factor/jet/cocycle/simplicity packages, the validated QNM selector and spin-one local-unit packages, and the finite-interval Fredholm promotion.",
+    "input_commit": "35f081832",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "Mathematical target: three central theorems—nonsplit self-extension, mass-direction cocycle normal form, and defective reduced radial resonance.",
+      "Claim boundary: the reduced ODE pole is certified; causal spacetime and time-domain promotion remain open."
+    ]
+  },
+  "edges": []
+}

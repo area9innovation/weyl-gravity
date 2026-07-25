@@ -2,172 +2,1095 @@
 
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
-\usepackage{microtype,xurl,xcolor}
+\usepackage{booktabs,microtype,xurl,xcolor}
 \usepackage[colorlinks=true,linkcolor=blue!55!black,
             citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
-\newcommand{\C}{\mathbb C}
-\newcommand{\coker}{\operatorname{coker}}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
 
-\title{Differential-Module and Resonance Structure of\\
-Axial Schwarzschild Perturbations in Pure Weyl Gravity}
+\newcommand{\C}{\mathbb C}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\Smith}{\operatorname{Smith}}
+\newcommand{\spec}{\operatorname{spec}}
+
+\title{A Non-Split Regge--Wheeler Self-Extension and a\\
+Defective Schwarzschild Resonance in Pure Weyl Gravity}
 \author{GPT-5.6.sol
 \and Claude Fable 5}
-\date{Companion-paper scaffold, 24 July 2026}
+\date{25 July 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-This companion develops the mathematical structure behind the endpoint
-nonselection theorem proved in Paper~16.  The axial six-state Bach system is
-an exact RW/RW/spin-one filtration whose repeated spin-two sector is a
-non-split self-extension.  The extension is the partial first jet of a
-four-state spin-two/spin-one system and reduces projectively to a scalar
-cocycle paired with the symmetric-square Regge--Wheeler module.  At a simple
-spin-two quasinormal frequency the complete connection has precisely two
-local Smith branches.  A validated projective Evans calculation selects the
-defective branch at one physical damped mode.  Its generalized root vector
-has nonzero carrier quotient, and an exact finite-interval Fredholm
-reduction promotes the connection singularity to a nonzero rank-one
-second-order radial Green-operator pole.
+We determine the differential-module and resonance structure of axial
+Schwarzschild perturbations in four-dimensional pure Weyl gravity.  The
+six-state Bach system has an exact filtration with successive quotients
+given by two spin-two Regge--Wheeler modules and one spin-one Maxwell
+module.  The repeated spin-two block is a non-split self-extension and is
+the first jet of a four-state spin-two/spin-one family.
+
+After Liouville reduction, the extension is represented by a scalar
+projective cocycle modulo the symmetric-square operator
+\[
+ \mathcal K_U=D^3+4UD+2D(U).
+\]
+For axial \(\ell=2\) we prove the exact normal form
+\[
+ [\mathcal I_{\rm Bach}]
+ =\frac{i\omega}{2}\left[1-\frac2r\right].
+\]
+Thus the Bach extension is locally cohomologous to an elementary
+mass-shaped direction, up to parameter normalization and endpoint frames.
+
+At a simple spin-two quasinormal frequency the complete connection admits
+two possible local Smith types.  A validated projective Evans calculation
+selects the defective type \((0,0,2)\) at one damped Schwarzschild mode.
+The geometric root vector is Einstein, whereas its generalized root vector
+has nonzero projection to the Ricci-carrier quotient.  We further show that
+the compact-source, locally observed outgoing Green operator for the
+reduced axial system has a nonzero rank-one pole of order two at this
+frequency.
+
+Promotion to a global physical resolvent and to a time-domain generalized
+ringdown term requires a separate analytic Fredholm realization, weighted
+endpoint domains, and bounded metric reconstruction.
 \end{abstract}
 
-\section{Purpose and claim boundary}
+\section{Introduction and main results}
 
-The focused physics paper contains the endpoint theorem, action-derived
-Krein form, global incoming population, outgoing band theorem, mode
-stability, and the final certified Smith type.  This companion is reserved
-for the machinery that would otherwise obscure that argument:
+Pure Weyl gravity has a fourth-order metric equation, but its Schwarzschild
+perturbations are not best understood as an unstructured fourth-order
+system.  In the axial \(\ell=2\) sector the six-dimensional radial system
+has the filtered form
+\[
+ 0\subset M_2\subset E_2\subset M_{\rm Bach},
+ \qquad
+ \operatorname{gr}M_{\rm Bach}\simeq M_2\oplus M_2\oplus M_1,
+\]
+where \(M_2\) is the spin-two Regge--Wheeler module and \(M_1\) is the
+spin-one Maxwell module.  The middle object \(E_2\) is a self-extension
+\[
+ 0\longrightarrow M_2\longrightarrow E_2
+ \longrightarrow M_2\longrightarrow0.
+\]
+The decisive point is that this extension is non-split over the rational
+differential field.  The two spin-two layers therefore share scalar
+characteristics without defining two rationally separable radial
+branches.
+
+This paper establishes three central results.
 \begin{enumerate}
-\item the rational differential-module extension;
-\item the exact partial-jet realization;
-\item the scalar projective cocycle and symmetric-square pairing;
-\item local Smith and Fitting-ideal classification;
-\item projective Evans, contour-moment, Hankel, and Loewner formulations;
-\item the finite-interval analytic Fredholm promotion and its causal claim
-boundary.
+\item The repeated spin-two block is a non-split Regge--Wheeler
+  self-extension, realized exactly as a parameter jet.
+\item Its projective extension class has the elementary normal form
+  \[
+    [\mathcal I_{\rm Bach}]
+    =\frac{i\omega}{2}\left[1-\frac2r\right].
+  \]
+\item At a certified damped Schwarzschild quasinormal frequency the
+  connection is defective.  The associated generalized root vector has a
+  nonzero carrier quotient, and the reduced outgoing Green operator has a
+  genuine rank-one double pole.
 \end{enumerate}
 
-No statement in this draft promotes the certified radial pole to a causal
-spacetime resolvent or a time-domain generalized ringdown term.
+The third result is stronger than a statement about a finite connection
+matrix.  It is a meromorphic differential-response theorem for compact
+radial sources and local radial observations.  It is deliberately weaker
+than a causal spacetime resolvent theorem: no inverse-Laplace deformation,
+late-time expansion, or \(t e^{i\omega_nt}\) assertion is made here.
 
-\section{Filtered module and exact partial jet}
+\subsection*{Logical status}
 
-In a factor gauge the six-state system is
+\begin{center}
+\begin{tabular}{p{0.33\linewidth}p{0.37\linewidth}p{0.20\linewidth}}
+\toprule
+Result & Required input & Status\\
+\midrule
+RW/RW/Maxwell filtration and partial jet
+& Exact rational identities and reconstruction rank
+& Exact\\
+Non-split spin-two extension
+& Exhaustive rational coboundary obstruction
+& Exact for real \(\omega>0\)\\
+Cocycle mass-direction normal form
+& Exact substitution in \(\C(r,\omega)\)
+& Exact for \(\omega\ne0\)\\
+Defective physical specialization
+& Winding-one contour, local selector, spin-one unit
+& Validated theorem\\
+Non-Einstein generalized root
+& Defective Smith type and exact filtration
+& Exact consequence\\
+Reduced outgoing Green double pole
+& Analytic endpoint maps and finite-interval reduction
+& Exact/validated theorem\\
+Causal spacetime pole and generalized ringdown
+& Global weighted Fredholm and contour theory
+& Not claimed\\
+Physical Einstein--Weyl mass identification
+& Finite-mass cocycle and endpoint normalization
+& Open\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Differential-module conventions}
+
+We work over
 \[
+ K=\C(r,\omega),\qquad D=f\partial_r,\qquad f=1-\frac2r,
+\]
+with \(\omega\ne0\) unless a threshold limit is stated explicitly.  All
+rational gauges and module morphisms are over the differential field
+\((K,D)\).  We use \(D(q)\), \(D(U)\), and \(D^3q\), rather than primes, to
+avoid confusing the tortoise derivative with \(\partial_r\).
+
+The axial spin-two and spin-one scalar operators are
+\[
+ L_2=D^2+U_2,\qquad
+ U_2=\omega^2-f\left(\frac6{r^2}-\frac6{r^3}\right),
+\]
+\[
+ L_1=D^2+U_1,\qquad
+ U_1=\omega^2-f\frac6{r^2}.
+\]
+The latter is the \(\ell=2\) Maxwell Regge--Wheeler equation.  A
+rank-two scalar module is represented by its companion system on
+\((y,Dy)^T\).
+
+The source Einstein layer is the kernel of the linearized Ricci/Schouten
+carrier map.  The target spin-two quotient is its physical
+Regge--Wheeler carrier.  The third quotient is the Maxwell class of the
+target Einstein gauge vector.  Consequently, ``non-Einstein'' below means
+nonzero projection to the gauge-invariant carrier quotient, not failure of
+a coordinate gauge condition.
+
+\section{Exact axial RW/RW/Maxwell filtration}
+
+In the certified factor gauge the six-state system is
+\begin{equation}\label{eq:six-state}
 \begin{aligned}
- X'&=AX+EY+CZ,\\
- Y'&=AY+DZ,\\
- Z'&=A_1Z.
+ DX&=AX+EY+CZ,\\
+ DY&=AY+DZ,\\
+ DZ&=A_1Z,
 \end{aligned}
-\]
-Introduce
+\end{equation}
+where \(X,Y,Z\in K^2\), the companion matrices \(A\) and \(A_1\) represent
+\(L_2\) and \(L_1\), and the forcing blocks factor through a single scalar
+source:
 \[
-\mathcal B(\tau)=
-\begin{pmatrix}
-A+\tau E&D+\tau C\\
-0&A_1
-\end{pmatrix}.
+ E=USJ,\qquad C=USN.
 \]
-Then the six-state generator is exactly the first spin-two-row jet of
-\(\mathcal B(\tau)\) at \(\tau=0\).  Consequently every interior transport
-has the form
-\[
-\Phi_6=
-\begin{pmatrix}
-P&\dot P&\dot Q\\
-0&P&Q\\
-0&0&R
-\end{pmatrix}_{\tau=0}.
-\]
-The certified factorizations \(E=USJ\) and \(C=USN\) show that the complete
-upper-row forcing passes through one scalar source.
+The rational reconstruction has full row rank on the declared domain.
 
-\section{Projective cocycle}
+\begin{theorem}[Filtered axial Bach module]\label{thm:filtration}
+For axial \(\ell=2\) Schwarzschild perturbations, the reduced six-state
+Bach module has a filtration whose successive simple factors are
+\[
+ M_2,\qquad M_2,\qquad M_1.
+\]
+The middle two-spin-two block is an extension \(E_2\) of \(M_2\) by
+\(M_2\).  The quotient \(M_1\) is the Maxwell module of the carrier gauge
+vector.  The filtration is exact but is not asserted to be a direct sum.
+\end{theorem}
 
-After Liouville reduction put
+The theorem is an exact rational statement.  It is independent of endpoint
+normalization, scattering conventions, and the later QNM specialization.
+
+\section{Partial-jet realization}
+
+Introduce the four-state family
 \[
-L=D^2+U,\qquad
-Lx=(s_1D+s_0)y,\qquad Ly=0.
+ \mathcal B(\tau)=
+ \begin{pmatrix}
+ A+\tau E&D+\tau C\\
+ 0&A_1
+ \end{pmatrix}.
 \]
-The scalar extension density
+Let its fundamental matrix be
 \[
-\mathcal I=s_0-\frac12s_1'
+ \Phi_4(\tau)=
+ \begin{pmatrix}P(\tau)&Q(\tau)\\0&R\end{pmatrix}.
 \]
-transforms under a rational triangular gauge by
+
+\begin{theorem}[Exact partial jet]\label{thm:partial-jet}
+The six-state generator in \eqref{eq:six-state} is the first
+spin-two-row jet of \(\mathcal B(\tau)\) at \(\tau=0\).  Its fundamental
+matrix is
 \[
-\mathcal I\longmapsto
-\mathcal I-\frac12\mathcal K_Uq,
+ \Phi_6=
+ \begin{pmatrix}
+ P&\dot P&\dot Q\\
+ 0&P&Q\\
+ 0&0&R
+ \end{pmatrix}_{\tau=0},
 \qquad
-\mathcal K_U=D^3+4UD+2D(U).
+ \det\Phi_6=(\det P)^2\det R.
 \]
-Thus the projective content is the class
+Consequently any factor-adapted endpoint connection has the triangular
+form
 \[
-[\mathcal I]\in
-\C(r,\omega)/\mathcal K_U\C(r,\omega).
+ T(\omega)=
+ \begin{pmatrix}
+ a&b&c\\
+ 0&a&d\\
+ 0&0&g
+ \end{pmatrix},
+\qquad
+ \det T=a^2g.
 \]
-The kernel of \(\mathcal K_U\) is the symmetric square of the scalar
-Regge--Wheeler solution space.  The three off-diagonal spin-two connection
-entries are therefore periods of one scalar cocycle against
-\(y_1^2,y_1y_2,y_2^2\).
+\end{theorem}
 
-For the axial \(\ell=2\) cocycle, exact rational reduction gives
+\begin{proof}
+Differentiate \(D\Phi_4(\tau)=\mathcal B(\tau)\Phi_4(\tau)\) at
+\(\tau=0\).  The equations for \(P,\dot P,Q,\dot Q,R\) reproduce the
+three rows of \eqref{eq:six-state} column by column.  The determinant
+identity follows from block triangularity.  The same identity applied to
+endpoint transition matrices gives the displayed connection form.
+\end{proof}
+
+The parameter \(\tau\) is intrinsic at this stage.  Identifying it with a
+physical Fierz--Pauli mass requires an additional finite-mass reduction and
+compatible endpoint germs; Section~\ref{sec:mass} records the exact
+remaining gate.
+
+\section{Projective gauge and symmetric-square cohomology}
+
+Consider a scalar self-extension
+\begin{equation}\label{eq:scalar-extension}
+ Lx=(s_1D+s_0)y,\qquad Ly=0,\qquad L=D^2+U.
+\end{equation}
+Set
 \[
-\mathcal I_{\rm red}
-=\mathcal K_U\!\left[
--\frac{i}{120\omega}
-\left(15r+13+\frac{12}{r}+\frac9{r^2}\right)
-\right]
-+\frac{i\omega}{2}\frac{r-2}{r}.
+ \mathcal I=s_0-\frac12D(s_1),\qquad
+ \mathcal K_U=D^3+4UD+2D(U).
 \]
-Thus its class has the regular representative
-\(\frac{i\omega}{2}[(r-2)/r]\) at fixed \(\omega\ne0\).  The removing gauge
-is itself singular as \(\omega\to0\), so this is not a threshold-uniform
-splitting.
 
-\section{Local Smith dichotomy}
-
-At a simple spin-two QNM with a spin-one local unit, the connection reduces
-analytically to
+\begin{lemma}[Explicit triangular gauge]\label{lem:gauge}
+For \(q\in K\), define
 \[
-\begin{pmatrix}a&b\\0&a\end{pmatrix},
-\qquad a(\omega_n)=0,\quad a'(\omega_n)\ne0.
+ Q(q)=qD-\frac12D(q).
 \]
-If \(b(\omega_n)\ne0\), the complete three-factor Smith valuations are
-\((0,0,2)\); if \(b(\omega_n)=0\), they are \((0,1,1)\).
-Equivalently, the second Fitting ideal is respectively the unit ideal or
-\((a)\).
-
-\section{Certified physical specialization}
-
-The current certificate encloses one simple damped spin-two QNM and proves
-that the intrinsic projective tangent is nonzero there.  It separately proves
-that the spin-one factor is a local unit.  Hence the complete connection has
-Smith valuations \((0,0,2)\), algebraic multiplicity two, geometric
-multiplicity one, and one length-two connection root chain.
-
-\section{Generalized chain and radial Green pole}
-
-Writing \(z=\omega-\omega_n\), \(a=a_1z+O(z^2)\), and
-\(b=b_0+O(z)\), the root vector is the source-Einstein vector
-\((1,0)\).  The root-polynomial equation forces the quotient component of
-the generalized vector to be
+On every solution \(Ly=0\),
 \[
-(c_1)_Y=-\frac{a_1}{b_0}\ne0.
+ [L,Q(q)]y=-\frac12\mathcal K_U(q)y.
 \]
-It is therefore intrinsically non-Einstein.
+Thus the change of lift \(x\mapsto x+Q(q)y\) changes the scalar
+extension density by
+\[
+ \mathcal I\longmapsto
+ \mathcal I-\frac12\mathcal K_U(q).
+\]
+\end{lemma}
 
-On any fixed ordinary interval inside the certified endpoint continuation
-domains, variation of constants reduces the phase-factored
-\(H^1\)-to-\(L^2\oplus\C^3\oplus\C^3\) boundary pencil to the identity plus
-the factor-adapted connection matrix, up to analytic units.  The Smith type
-\((0,0,2)\) consequently gives a nonzero rank-one second-order Laurent
-coefficient of the radial inverse.  Exact reconstruction does not annihilate
-its source-Einstein range.  What remains open is the causal exterior
-spacetime realization, inverse-Laplace deformation, and any
-\(t e^{i\omega_nt}\) conclusion.
+\begin{proof}
+Expand \(LQ(q)-Q(q)L\), use the Leibniz rule for \(D\), and then set
+\(D^2y=-Uy\).  The coefficient of \(Dy\) cancels, while the coefficient
+of \(y\) is
+\(-\frac12[D^3q+4UDq+2D(U)q]\).
+\end{proof}
+
+The extension is therefore represented by
+\[
+ [\mathcal I]\in K/\mathcal K_UK.
+\]
+Because Lemma~\ref{lem:gauge} contains the factor \(1/2\), removal of a
+term \(\mathcal K_Uq\) uses the triangular gauge \(Q(2q)\).  This factor
+does not alter the cohomology quotient but matters in an explicit frame
+calculation.
+
+The equation \(\mathcal K_Uq=0\) is the symmetric-square equation of
+\(L\).  If \(y_1,y_2\) span the scalar solution space, then its solution
+space is spanned by \(y_1^2,y_1y_2,y_2^2\).  The same operator controls
+both the projective obstruction and trace-free horizontal endomorphisms.
+
+\section{Mass-direction normal form of the Bach cocycle}
+
+For the axial \(\ell=2\) Bach extension, rational reduction gives
+\[
+ \mathcal I_{\rm Bach}
+ =
+ \frac{i(r-2)(2r\omega^2+3\omega^2+12)}
+ {5r^4\omega}.
+\]
+
+\begin{theorem}[Mass-direction normal form]\label{thm:mass-normal}
+Let
+\[
+ q(r,\omega)=
+ -\frac{i}{120\omega}
+ \left(15r+13+\frac{12}{r}+\frac9{r^2}\right).
+\]
+For \(\omega\ne0\),
+\[
+ \mathcal I_{\rm Bach}
+ =\mathcal K_{U_2}q+\frac{i\omega}{2}f.
+\]
+Consequently
+\[
+ [\mathcal I_{\rm Bach}]
+ =\frac{i\omega}{2}[f]
+ \quad\hbox{in}\quad K/\mathcal K_{U_2}K.
+\]
+In particular, \([f]\ne0\) wherever the Bach self-extension is
+non-split.
+\end{theorem}
+
+\begin{proof}
+Apply \(D=f\partial_r\) three times to \(q\) and substitute
+\[
+ U_2=\omega^2-f\left(\frac6{r^2}-\frac6{r^3}\right)
+\]
+in \(\mathcal K_{U_2}q=D^3q+4U_2Dq+2D(U_2)q\).  Clearing the common
+denominator \(120r^4\omega\) reduces the claim to a polynomial identity
+in \(r\) and \(\omega\).  Exact coefficient comparison gives the displayed
+formula.  The quotient identity follows immediately.  If \([f]=0\), then
+\([\mathcal I_{\rm Bach}]=0\), which would split the extension.
+\end{proof}
+
+\begin{remark}[Threshold scope]
+The displayed \(1/\omega\) singularity of
+\(\mathcal I_{\rm Bach}\) is cohomologically removable: its intrinsic
+class has the representative \((i\omega/2)f\).  The removing gauge
+\(Q(2q)\), however, is itself \(O(\omega^{-1})\).  The theorem therefore
+does not construct a threshold-uniform splitting or justify commuting the
+limits \(\omega\to0\) and \(\tau\to0\).
+\end{remark}
+
+\begin{remark}[Mass-shaped is not yet physical mass]
+The representative \(f=1-2/r\) is the radial direction expected from a
+mass term after a helicity-two reduction.  The theorem proves a local
+cohomology normal form, not equality with a particular Einstein--Weyl mass
+parameter.  If a finite-mass reduction gives
+\[
+ \mathcal I_{\rm mass}=c(\omega)f+\mathcal K_{U_2}p,
+\]
+then the two extensions are locally equivalent precisely when
+\(c(\omega)\ne0\); their parameter normalization is
+\(2c(\omega)/(i\omega)\).
+\end{remark}
+
+\section{Period formula for the connection shear}
+
+Let \(y_1,y_2\) be a scalar basis and set
+\[
+ Y=
+ \begin{pmatrix}y_1&y_2\\Dy_1&Dy_2\end{pmatrix},
+\qquad
+ W=y_1Dy_2-y_2Dy_1.
+\]
+Because the companion matrix has zero trace, \(D(W)=0\).
+
+\begin{theorem}[Symmetric-square period matrix]\label{thm:period}
+For the family
+\[
+ (D^2+U+\tau V)y=0,
+\]
+the interaction-picture variation satisfies
+\[
+ Y^{-1}\partial_\tau A\,Y
+ =
+ \frac{V}{W}
+ \begin{pmatrix}
+ y_1y_2&y_2^2\\
+ -y_1^2&-y_1y_2
+ \end{pmatrix}.
+\]
+Consequently the spin-two connection shear is determined by the three
+periods
+\[
+ \int\frac{V}{W}y_1^2\,dr_*,
+ \qquad
+ \int\frac{V}{W}y_1y_2\,dr_*,
+ \qquad
+ \int\frac{V}{W}y_2^2\,dr_*.
+\]
+\end{theorem}
+
+\begin{proof}
+In the basis \((y,Dy)^T\),
+\[
+ A(\tau)=
+ \begin{pmatrix}0&1\\-(U+\tau V)&0\end{pmatrix},
+\qquad
+ \partial_\tau A=
+ \begin{pmatrix}0&0\\-V&0\end{pmatrix}.
+\]
+Insert
+\[
+ Y^{-1}=\frac1W
+ \begin{pmatrix}Dy_2&-y_2\\-Dy_1&y_1\end{pmatrix}
+\]
+and multiply.  Integration of the interaction-picture equation gives the
+three entries.
+\end{proof}
+
+A coboundary \(\mathcal K_Uq\) changes these periods by endpoint terms.
+This is the connection-level form of Lemma~\ref{lem:gauge}: rational
+triangular gauges alter Jost frames but not the intrinsic divisor or Smith
+selector once the endpoint units are tracked.
+
+\section{Nonsplitting, endomorphisms, and Fitting ideals}
+
+\begin{theorem}[Non-split physical-axis extension]\label{thm:nonsplit}
+For every real \(\omega>0\), the axial \(\ell=2\) spin-two block
+\[
+ 0\longrightarrow M_2\longrightarrow E_2
+ \longrightarrow M_2\longrightarrow0
+\]
+is non-split over \(\C(r)[D]\).
+\end{theorem}
+
+\begin{proof}[Certificate-supported exact proof]
+The rational splitting equation reduces, after exhaustive pole and degree
+bounds, to a finite coefficient system.  Fixed minors of its coefficient
+and augmented matrices are
+\[
+ \det M_{[0,1,2]}=3456\,\omega^{10},
+\qquad
+ \det[M\mid{\rm rhs}]_{[0,1,2,5]}
+ =-645120\,i\,\omega^9.
+\]
+They are simultaneously nonzero for every real \(\omega>0\), so the
+inhomogeneous coboundary equation is inconsistent.  The fixed-minor
+argument also covers the former frame event \(\omega^2=3\).
+\end{proof}
+
+The scalar Regge--Wheeler module is simple on the positive real axis and
+has scalar rational endomorphism ring.  The only nonzero complex
+reducibility points allowed by the terminal Riccati ansatz with matching
+horizon and infinity signs are the algebraically special frequencies
+\[
+ \omega=\pm i\frac{(\ell-1)\ell(\ell+1)(\ell+2)}{12}.
+\]
+For \(\ell=2\), these are \(\omega=\pm2i\), away from the physical axis.
+
+\begin{theorem}[Local commutant]\label{thm:commutant}
+For real \(\omega>0\),
+\[
+ \End_{\C(r)[D]}(E_2)
+ \simeq\C[\varepsilon]/(\varepsilon^2).
+\]
+Every endomorphism is \(aI+bN\), where \(N^2=0\).  Hence the only
+idempotents are \(0,I\), the only involutions are \(\pm I\), and every
+diagonalizable local endomorphism is scalar.
+\end{theorem}
+
+\begin{proof}
+The submodule \(M_2\) is the unique simple submodule: a second simple
+submodule mapping nontrivially to the quotient would split the extension.
+An endomorphism therefore induces scalars \(a,d\) on the submodule and
+quotient.  Naturality of the nonzero extension class gives \(a=d\).
+Subtracting \(aI\) leaves a map that vanishes on the submodule and quotient,
+so it factors through the quotient back into the submodule and is a scalar
+multiple of the canonical nilpotent \(N\).  The corollaries follow from
+\((aI+bN)^k=a^kI+ka^{k-1}bN\).
+\end{proof}
+
+For the triangular connection
+\[
+ T=
+ \begin{pmatrix}a&b&c\\0&a&d\\0&0&g\end{pmatrix},
+\]
+the Fitting ideals are
+\[
+ I_1=(a,b,c,d,g),\qquad
+ I_2=(a^2,ad,bd-ac,ag,bg),\qquad
+ I_3=(a^2g).
+\]
+They give a normalization-independent local classification of all
+specializations.
+
+\section{Analytic Jost connections and Smith dichotomy}
+
+The moving Frobenius/Jost phases define analytic endpoint-selected planes
+on the certified spectral domains.  Transport to a common ordinary radius
+and change to a factor-adapted frame.  At a simple spin-two QNM
+\(\omega_n\), assume the spin-one coefficient \(g(\omega_n)\ne0\).  Analytic
+row and column operations remove the spin-one row and column, leaving
+\[
+ T_2(\omega)=
+ \begin{pmatrix}a(\omega)&b(\omega)\\0&a(\omega)\end{pmatrix},
+\qquad
+ a(\omega_n)=0,\quad a'(\omega_n)\ne0.
+\]
+
+\begin{proposition}[Local Smith dichotomy]\label{prop:smith}
+At \(\omega_n\),
+\[
+ \Smith(T)=
+ \begin{cases}
+ (0,0,2),&b(\omega_n)\ne0,\\
+ (0,1,1),&b(\omega_n)=0.
+ \end{cases}
+\]
+The first case has geometric multiplicity one and one length-two root
+chain; the second has two independent length-one roots.
+\end{proposition}
+
+\begin{proof}
+Let \(z=\omega-\omega_n\).  Since \(a=a_1z+O(z^2)\) with
+\(a_1\ne0\), the determinant valuation of the two-spin-two block is two.
+If \(b(0)\ne0\), its first Fitting ideal is the unit ideal, so its exponents
+are \((0,2)\).  If \(b(0)=0\), all entries vanish to first order and the
+exponents are \((1,1)\).  Appending the spin-one unit adds a zero exponent.
+\end{proof}
+
+Projectively, write the selected endpoint lines in a common chart as
+\[
+ v_H(\omega,\tau),\qquad v_\infty(\omega,\tau),
+\qquad
+ \delta=v_\infty-v_H.
+\]
+At a simple root,
+\[
+ \frac{b(\omega_n)}{a'(\omega_n)}
+ =
+ \frac{\delta_\tau(\omega_n,0)}
+ {\delta_\omega(\omega_n,0)}.
+\]
+This ratio is invariant under analytic nonzero endpoint units and under
+moving the matching section.
+
+\section{Certified QNM specialization}
+
+The validated contour is oriented positively and encloses the disk
+\[
+ \Omega_n=
+ \left\{\omega:
+ \left|\omega-
+ \bigl(-0.3736716844180418+0.0889623156889357\,i\bigr)
+ \right|\le10^{-7}\right\}.
+\]
+Panelwise projective enclosures exclude zero on the contour, include all
+chart-transition units, and give winding number \(+1\).  Thus the disk
+contains exactly one simple spin-two zero.
+
+On the localized disk, the intrinsic tangent is enclosed by
+\[
+ \delta_\tau(\Omega_n)
+ \subset
+ [0.0010932\pm7.60\times10^{-8}]
+ +i[-0.0002195\pm8.89\times10^{-8}],
+\]
+which excludes zero.  An independent local calculation gives a spin-one
+mismatch modulus greater than \(1/2500\).
+
+\begin{theorem}[Certified defective Schwarzschild resonance]
+\label{thm:certified-ep2}
+The complete axial connection has Smith valuations
+\[
+ (0,0,2)
+\]
+at the unique QNM in \(\Omega_n\).  The algebraic multiplicity of its
+spin-two divisor is two, its geometric multiplicity is one, and it has one
+length-two connection root chain.
+\end{theorem}
+
+\begin{proof}
+The winding certificate gives one simple spin-two zero.  The local
+tangent enclosure proves \(b(\omega_n)\ne0\), while the spin-one enclosure
+proves \(g(\omega_n)\ne0\).  Proposition~\ref{prop:smith} applies.
+\end{proof}
+
+\section{Resonant evaluation of the self-extension}
+\label{sec:resonant-evaluation}
+
+The projective selector, adjoint overlap, root-chain coefficient, and
+Green-pole residue are different representations of one resonant
+functional.  This is the finite-interval Evans/Melnikov mechanism; compare
+the general relation between Evans derivatives and adjoint generalized
+eigenfunctions in \cite{kapitula1999}.
+
+Let
+\[
+ L(\omega):X\longrightarrow Y
+\]
+denote the analytic finite-interval spin-two boundary pencil, with the
+endpoint conditions included either in its domain or as finite-dimensional
+components of an augmented range.  At a simple resonance choose right and
+left states
+\[
+ L_nu_n=0,\qquad L_n^*\widetilde u_n=0,
+\qquad L_n=L(\omega_n),
+\]
+and define, using the bilinear duality of the augmented boundary problem,
+\[
+ \alpha_n=
+ \left\langle\widetilde u_n,L'(\omega_n)u_n\right\rangle,
+ \qquad \alpha_n\ne0.
+\]
+Let the repeated block be
+\[
+ \mathbb L(\omega)=
+ \begin{pmatrix}L(\omega)&K(\omega)\\0&L(\omega)\end{pmatrix},
+\qquad
+ \beta_n=
+ \left\langle\widetilde u_n,K(\omega_n)u_n\right\rangle.
+\]
+All endpoint components of the augmented pencil and its duality are
+included in these pairings.
+
+\begin{theorem}[Resonant evaluation theorem]
+\label{thm:resonant-evaluation}
+In endpoint frames compatible with the partial jet,
+\[
+ \boxed{\;
+ \kappa_n:=
+ \frac{b(\omega_n)}{a'(\omega_n)}
+ =
+ \frac{\beta_n}{\alpha_n}
+ =
+ -\omega_n'(0).
+ \;}
+\]
+Here \(\omega_n(\tau)\) is the resonance branch of
+\[
+ L(\omega,\tau)=L(\omega)+\tau K(\omega)
+\]
+through \(\omega_n\).  The equality is invariant under a common analytic
+nonzero Evans unit.
+\end{theorem}
+
+\begin{proof}
+Differentiate
+\[
+ L(\omega_n(\tau),\tau)u(\tau)=0
+\]
+at \(\tau=0\):
+\[
+ L_n\dot u+\omega_n'(0)L_n'u_n+K_nu_n=0.
+\]
+Pairing with \(\widetilde u_n\) removes the first term and gives
+\[
+ \omega_n'(0)\alpha_n+\beta_n=0.
+\]
+On the connection side, differentiation of
+\[
+ a(\omega_n(\tau),\tau)=0
+\]
+gives
+\[
+ a'(\omega_n)\omega_n'(0)
+ +\partial_\tau a(\omega_n,0)=0.
+\]
+The exact partial-jet construction identifies
+\(\partial_\tau a(\omega_n,0)=b(\omega_n)\).  Multiplication of the Evans
+coefficient by an analytic unit \(u(\omega,\tau)\) multiplies both
+\(a'\) and \(b\) at the root by \(u(\omega_n,0)\), so the ratio is
+unchanged.
+\end{proof}
+
+\begin{proposition}[Resonant functional on the extension class]
+\label{prop:resonant-functional}
+The assignment
+\[
+ \mathfrak M_n([K])
+ :=
+ \left\langle\widetilde u_n,K(\omega_n)u_n\right\rangle
+\]
+is a well-defined linear functional on the local self-extension class.
+Thus nonsplitting is the statement \([K]\ne0\), while defectiveness at
+\(\omega_n\) is the sharper statement
+\(\mathfrak M_n([K])\ne0\).
+\end{proposition}
+
+\begin{proof}
+Under a triangular change of splitting,
+\[
+ K\longmapsto K+LQ-QL.
+\]
+At the resonance,
+\[
+ \left\langle\widetilde u_n,(L_nQ-QL_n)u_n\right\rangle
+ =
+ \left\langle L_n^*\widetilde u_n,Qu_n\right\rangle
+ -
+ \left\langle\widetilde u_n,QL_nu_n\right\rangle
+ =0.
+\]
+When endpoint conditions are encoded in an augmented pencil, the same
+calculation includes the corresponding boundary terms by definition.
+\end{proof}
+
+The theorem and proposition separate a global module property from its
+evaluation at one resonance.  A nonzero extension class need not be
+defective at every QNM: the linear functional \(\mathfrak M_n\) may vanish
+at isolated modes.
+
+\section{The generalized root vector is non-Einstein}
+
+\begin{proposition}[Nonzero carrier in the generalized root]
+\label{prop:carrier-root}
+Assume
+\[
+ a(\omega_n)=0,\qquad a'(\omega_n)\ne0,\qquad
+ b(\omega_n)\ne0.
+\]
+The geometric root vector belongs to the source Einstein submodule, while
+every length-two root polynomial has first generalized coefficient with
+nonzero projection to the carrier quotient.  In the normalized triangular
+frame that projection is
+\[
+ -\frac{a'(\omega_n)}{b(\omega_n)}
+ =
+ -\frac{\alpha_n}{\beta_n}
+ =
+ -\frac1{\kappa_n}.
+\]
+Thus the defective doubled resonance is not two copies of an Einstein
+quasinormal mode: its generalized member is intrinsically non-Einstein.
+\end{proposition}
+
+\begin{proof}
+Put \(z=\omega-\omega_n\) and write
+\[
+ a=a_1z+O(z^2),\qquad b=b_0+O(z),
+\qquad a_1b_0\ne0.
+\]
+For
+\[
+ c(z)=c_0+zc_1+O(z^2),\qquad T_2(z)c(z)=O(z^2),
+\]
+the order-zero equation gives \(c_0=e_X\), the source Einstein vector.
+Write \(c_1=xe_X+ye_Y\).  The \(e_X\) component at order \(z\) is
+\[
+ a_1+b_0y=0,
+\]
+so \(y=-a_1/b_0\ne0\).  By Theorem~\ref{thm:filtration}, \(e_Y\) projects
+nontrivially to the Ricci-carrier quotient.  Adding a multiple of \(e_X\)
+changes \(x\), but cannot remove \(y\).
+\end{proof}
+
+\section{Reduced outgoing Green double pole}
+
+Fix ordinary radii \(2<r_H<r_I<\infty\) inside the certified analytic
+continuation domains.  Let
+\[
+ H(\omega):\C^3\longrightarrow
+ C^\infty([r_H,r_I];\C^6)
+\]
+be the analytic Poisson operator for horizon-selected homogeneous data,
+let \(\Gamma_-(\omega)\) be the unwanted incoming trace at \(r_I\), and
+set
+\[
+ T(\omega)=\Gamma_-(\omega)H(\omega).
+\]
+For a compactly supported source \(F\), let \(P_H(\omega)F\) denote the
+inhomogeneous solution with zero horizon data.  The outgoing solution is
+\begin{equation}\label{eq:green}
+ R_{\rm out}(\omega)F
+ =
+ P_H(\omega)F-
+ H(\omega)T(\omega)^{-1}
+ \Gamma_-(\omega)P_H(\omega)F.
+\end{equation}
+
+\begin{theorem}[Reduced outgoing Green pole]\label{thm:green-pole}
+On a neighborhood of the certified frequency \(\omega_n\), the operator
+\[
+ R_{\rm out}(\omega):
+ C_c^\infty((r_H,r_I);\C^6)
+ \longrightarrow
+ C^\infty_{\rm loc}((r_H,r_I);\C^6)
+\]
+is meromorphic and has a nonzero rank-one pole of order two.  Up to the
+endpoint trace sign convention, its principal coefficient is
+\[
+ \operatorname{Coeff}_{(\omega-\omega_n)^{-2}}R_{\rm out}
+ =
+ \frac{b(\omega_n)}{a'(\omega_n)^2}
+ H(\omega_n)e_X
+ \otimes
+ \left[e_Y^*\Gamma_-(\omega_n)P_H(\omega_n)\right].
+\]
+\end{theorem}
+
+\begin{proof}
+All factors in \eqref{eq:green} except \(T^{-1}\) are analytic.  After
+analytic elimination of the spin-one unit, the singular block is
+\[
+ T_2^{-1}=
+ \begin{pmatrix}
+ a^{-1}&-ba^{-2}\\
+ 0&a^{-1}
+ \end{pmatrix},
+\]
+and therefore
+\[
+ \operatorname{Coeff}_{z^{-2}}T_2^{-1}
+ =-\frac{b(\omega_n)}{a'(\omega_n)^2}
+ e_X\otimes e_Y^*.
+\]
+The minus sign in \eqref{eq:green} gives the displayed convention.
+
+The range vector is nonzero because the homogeneous Poisson map is
+injective, so \(H(\omega_n)e_X\ne0\).  The covector is nonzero by a cutoff
+Jost construction.  Given any incoming coefficient \(q\), choose the
+corresponding incoming Jost solution \(J_-q\) near \(r_I\), multiply it by
+a smooth cutoff \(\chi\) that vanishes near \(r_H\) and equals one near
+\(r_I\), and set
+\[
+ F=(D-\mathbb A(\omega_n))(\chi J_-q).
+\]
+Then \(F\) is compactly supported, \(P_H(\omega_n)F=\chi J_-q\), and
+\(\Gamma_-P_H(\omega_n)F=q\).  Hence the incoming trace map from compact
+sources is onto.  Taking \(q=e_Y\) shows that the covector does not vanish.
+The tensor product is therefore nonzero and rank one.
+\end{proof}
+
+\begin{corollary}[Non-annihilation by certified reconstruction]
+The certified rational reconstruction into the axial metric/curvature
+variables does not annihilate the range
+\(H(\omega_n)e_X\).  Hence at least one reconstructed local observable has
+the same order-two radial response pole.
+\end{corollary}
+
+In the finite-interval Fredholm normalization of
+Section~\ref{sec:resonant-evaluation}, the scalar resolvent has
+\[
+ L(\omega)^{-1}
+ =
+ \frac{u_n\otimes\widetilde u_n}
+ {\alpha_n(\omega-\omega_n)}
+ +O(1).
+\]
+The upper-right block of \(\mathbb L^{-1}\) is
+\(-L^{-1}KL^{-1}\), and Theorem~\ref{thm:resonant-evaluation} therefore
+gives the invariant principal coefficient
+\begin{equation}\label{eq:invariant-double-pole}
+ \boxed{\;
+ \operatorname{Coeff}_{(\omega-\omega_n)^{-2}}
+ (\mathbb L^{-1})_{12}
+ =
+ -\frac{\beta_n}{\alpha_n^2}
+ u_n\otimes\widetilde u_n
+ =
+ -\frac{\kappa_n}{\alpha_n}
+ u_n\otimes\widetilde u_n.
+ \;}
+\end{equation}
+The Poisson/trace coefficient in Theorem~\ref{thm:green-pole} is the same
+rank-one residue expressed in endpoint coordinates.
+
+\section{Conditional global Fredholm promotion}
+\label{sec:fredholm}
+
+Theorem~\ref{thm:green-pole} is a differential Green-operator theorem on a
+finite ordinary interval.  A global physical resolvent requires a separate
+closed-operator realization.  The correct abstract block notation is
+\[
+ \mathbb L(\omega)=
+ \begin{pmatrix}
+ L(\omega)&K(\omega)\\
+ 0&L(\omega)
+ \end{pmatrix},
+\]
+where \(L(\omega):D\subset X\to Y\) is an analytic Fredholm pencil of
+index zero and \(K(\omega):D\to Y\) is graph-norm bounded.  Suppose
+\[
+ u_n\in\ker L(\omega_n),\qquad
+ \widetilde u_n\in\ker L(\omega_n)^*,
+\]
+and define using the \(Y^*\)-\(Y\) bilinear duality
+\[
+ \alpha_n=
+ \langle\widetilde u_n,L'(\omega_n)u_n\rangle,
+\qquad
+ \beta_n=
+ \langle\widetilde u_n,K(\omega_n)u_n\rangle.
+\]
+
+\begin{proposition}[Conditional global pole formula]
+If \(L^{-1}\) is meromorphic near \(\omega_n\), its zero is simple,
+\(\alpha_n\ne0\), and \(\beta_n\ne0\), then
+\[
+ \mathbb L^{-1}=
+ \begin{pmatrix}
+ L^{-1}&-L^{-1}KL^{-1}\\
+ 0&L^{-1}
+ \end{pmatrix}
+\]
+has an order-two pole with principal coefficient
+\[
+ -\frac{\beta_n}{\alpha_n^2}
+ u_n\otimes\widetilde u_n
+\]
+in the upper-right block.
+\end{proposition}
+
+This proposition is standard block algebra once the Fredholm spaces and
+pairing exist.  What remains open is not the finite-interval pole proved
+above, but the construction of:
+\begin{enumerate}
+\item closed weighted horizon and null-infinity domains;
+\item a physical gauge quotient and bounded metric reconstruction;
+\item a causal exterior resolvent on a Laplace contour;
+\item a justified contour deformation and control of the non-pole part.
+\end{enumerate}
+Only after these steps could the double pole be promoted to a rigorous
+\(t e^{i\omega_nt}\) contribution to retarded ringdown.
+
+\section{Critical Einstein--Weyl mass comparison}
+\label{sec:mass}
+
+Theorem~\ref{thm:mass-normal} reduces the local mass-comparison problem to
+one scalar.  Starting from the covariant Einstein--Weyl parent system, one
+must:
+\begin{enumerate}
+\item derive the finite-mass axial first-order system;
+\item eliminate its constraints in a gauge compatible with the massless
+  Regge--Wheeler companion frame;
+\item differentiate at \(m^2=0\);
+\item compute its projective cocycle
+  \(\mathcal I_{\rm mass}\);
+\item determine the coefficient \(c(\omega)\) in
+  \[
+    [\mathcal I_{\rm mass}]=c(\omega)[f].
+  \]
+\end{enumerate}
+Nonzero \(c(\omega)\) proves local equivalence of the repeated blocks.
+The stronger scattering identity
+\[
+ b=-\left.\partial_{m^2}a\right|_{m^2=0}
+\]
+additionally requires equality of the complete filtered deformation,
+moving massive horizon and infinity phases, and endpoint normalization.
+The QNM-slope identity requires, in addition, the global Fredholm
+realization of Section~\ref{sec:fredholm}.  None of these stronger
+identifications is inferred solely from the normal form.
+
+The resonant functional makes the remaining local calculation especially
+small.  From Theorem~\ref{thm:mass-normal},
+\[
+ \beta_n^{\rm Bach}
+ =\frac{i\omega_n}{2}\,\mathfrak M_n([f]).
+\]
+The certified inequality \(\kappa_n\ne0\) implies
+\[
+ \mathfrak M_n([f])\ne0.
+\]
+If a finite-mass deformation has
+\[
+ [\mathcal I_{\rm mass}]=c_m(\omega)[f],
+ \qquad c_m(\omega_n)\ne0,
+\]
+then its local resonance velocity is necessarily nonzero and is related to
+the Bach selector by
+\[
+ \left.\frac{d\omega_n}{dm}\right|_{m=0}
+ =
+ -\frac{2c_m(\omega_n)}{i\omega_n}\,\kappa_n,
+\]
+with \(m\) denoting the declared deformation parameter.  Endpoint
+compatibility is still required before this local formula is identified
+with a physical massive Jost branch.
+
+\subsection*{Exact parent/radial comparison target}
+
+Let \(R\) reconstruct the tensor carrier from the scalar master field and
+let \(P\) project the tensor equation back to the scalar equation.  The
+desired comparison is the augmented-pencil identity
+\[
+ K_{\rm radial}-P\mathcal A R=LQ-QL,
+\]
+possibly with an explicitly recorded endpoint coboundary.  If this identity
+is proved, Proposition~\ref{prop:resonant-functional} gives immediately
+\[
+ \beta_n^{\rm radial}
+ =
+ \left\langle\widetilde u_n,P\mathcal A Ru_n\right\rangle
+ =
+ \beta_n^{\rm parent}.
+\]
+Accordingly, a separate numerical equality test is not the primary target:
+the correct promotion gate is an exact cohomological projection theorem.
+
+\section{Computational certificates and claim boundary}
+
+The computer-assisted inputs are separated from the exact derivations
+above.
+\begin{center}
+\begin{tabular}{p{0.27\linewidth}p{0.43\linewidth}p{0.20\linewidth}}
+\toprule
+Certificate family & Claim used here & Evidence type\\
+\midrule
+Axial triangular preflight
+& Exact RW/RW/Maxwell filtration and reconstruction
+& Exact rational\\
+Projective cocycle
+& Gauge law and nontrivial extension class
+& Exact rational\\
+RW/Maxwell simplicity
+& Physical-axis simplicity and scalar endomorphisms
+& Exact rational\\
+Full Evans contour
+& Zero-free boundary and winding \(+1\)
+& Validated interval\\
+Local selector
+& \(\delta_\tau\ne0\) on the root disk
+& Validated interval\\
+Spin-one local unit
+& Full three-factor Smith type \((0,0,2)\)
+& Validated interval\\
+Fredholm promotion
+& Finite-interval rank-one radial Green pole
+& Exact reduction plus validated inputs\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The theorem statements and proofs are the mathematical authority.  The
+machine-readable records pin exact witnesses, interval margins, source
+hashes, and independently executable checks.  A missing input, unsupported
+domain, timeout, or failed mutation causes rejection rather than partial
+acceptance.
+
+\paragraph{Explicit non-results.}
+This paper does not establish a causal spacetime resolvent, a complete QNM
+expansion, a late-time asymptotic formula, a \(t e^{i\omega_nt}\) term, a
+time-domain instability, a physical Einstein--Weyl mass identification, an
+all-\(\ell\) Bach nonsplitting theorem, or a quantum positivity statement.
+
+\section{Conclusion}
+
+The axial Schwarzschild Bach equation contains a repeated
+Regge--Wheeler factor, but the repetition is not a rational direct sum.  It
+is a non-split self-extension whose projective class is represented by the
+elementary direction \((i\omega/2)(1-2/r)\).  At the certified damped mode,
+the scalar zero is simple while the extension selector is nonzero.  The
+resulting defect has concrete differential content: the generalized root
+has a nonzero Ricci-carrier quotient, and the reduced outgoing Green
+operator has a genuine rank-one double pole.
+
+This separates three notions that should not be conflated.  A repeated
+scalar divisor fixes algebraic multiplicity; the extension selector decides
+whether that multiplicity is semisimple or defective; and a causal
+time-domain interpretation requires a further global Fredholm theory.  The
+first two questions are settled here at one physical Schwarzschild
+resonance.  The third remains a sharply delimited next problem.
+
+\begin{thebibliography}{9}
+
+\bibitem{kapitula1999}
+T.~Kapitula,
+\newblock The Evans function and generalized Melnikov integrals,
+\newblock \emph{SIAM Journal on Mathematical Analysis} \textbf{30} (1999),
+273--297,
+\newblock \href{https://doi.org/10.1137/S0036141097327963}
+{doi:10.1137/S0036141097327963}.
+
+\end{thebibliography}
 
 \end{document}

@@ -1,0 +1,146 @@
+{
+  "authorities": {
+    "factor_filtration": {
+      "path": "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json",
+      "result_id": "PURE_WEYL_PHASE3_AXIAL_RW_LX_TRIANGULAR_PREFLIGHT",
+      "result_token": "BH_PHASE3_AXIAL_RW_RW_LX_FACTOR_FILTRATION",
+      "sha256": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579",
+      "status": null
+    },
+    "fredholm_promotion": {
+      "path": "black_hole_programme/phase4/axial_qnm_fredholm_promotion_v1/certificate.json",
+      "result_id": null,
+      "result_token": null,
+      "sha256": "e3f5e28d426305f0e68f7c11c7f63e1f0618cc63ad20fc1ff5b221fb38d34110",
+      "status": "CERTIFIED_FINITE_INTERVAL_RADIAL_GREEN_OPERATOR_DOUBLE_POLE"
+    },
+    "local_commutant": {
+      "path": "black_hole_programme/phase4/axial_local_commutant_spectral_c_v1/certificate.json",
+      "result_id": null,
+      "result_token": null,
+      "sha256": "fd6c1d7cf24cf820cf0f76a82a71570e202504d94450f3af2d4e28076ec73de6",
+      "status": "EXACT_LOCAL_COMMUTANT_COMPACT_BAND_SPECTRAL_C_PASS"
+    },
+    "metric_reconstruction": {
+      "path": "black_hole_programme/phase3/axial_complete_reconstruction_repair/certificate.json",
+      "result_id": "PURE_WEYL_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_REPAIR",
+      "result_token": "BH_PHASE3_AXIAL_COMPLETE_RECONSTRUCTION_SIX_COLUMN_BASES",
+      "sha256": "13a4077ee8c77cc5b99e379d35aa15afa09ebeea78c0df9a4771b4845c00c990",
+      "status": null
+    },
+    "projective_cocycle": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_cocycle_v1/certificate.json",
+      "result_id": null,
+      "result_token": null,
+      "sha256": "3f7c2fff23a70ab8c1f6e922d6799b168ca328f0fa9e68be8a0e8881f80310bb",
+      "status": "EXACT_RATIONAL_COCYCLE_NONTRIVIAL_QNM_UNEVALUATED"
+    },
+    "qnm_selector": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/local_selector_v1/certificate.json",
+      "result_id": null,
+      "result_token": null,
+      "sha256": "aefc5b04fb7e33b72b7553dba69cedc6dff82d2838d4d11cb1a5a45c80f9c2a4",
+      "status": "CERTIFIED_INTRINSIC_REPEATED_SPIN_TWO_EP2"
+    },
+    "qnm_winding": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/full_contour_winding_v1/certificate.json",
+      "result_id": null,
+      "result_token": null,
+      "sha256": "8fca9295f3cafd281773b793a80a8a3adbcbb014d542e5a6fe51b1f22a11d305",
+      "status": "FULL_CLOSED_PROJECTIVE_EVANS_CONTOUR_NONZERO_WITH_WINDING_ONE"
+    },
+    "simplicity_endomorphisms": {
+      "path": "black_hole_programme/phase4/rw_maxwell_simplicity_endomorphisms_v1/certificate.json",
+      "result_id": null,
+      "result_token": null,
+      "sha256": "a51e13fcae0f789c29e8cd1789df28b4c207611683c5f4cd0fc493a0d1781436",
+      "status": "EXACT_RW_MAXWELL_SIMPLICITY_ENDOMORPHISMS_PASS"
+    },
+    "spin_one_unit": {
+      "path": "black_hole_programme/phase3/axial_qnm_spin_one_local_unit_v1/certificate.json",
+      "result_id": null,
+      "result_token": null,
+      "sha256": "c0e8c6880ed4b142fe79738590eaede4637360d15eb31dc2203467eb66816e6a",
+      "status": "CERTIFIED_FULL_THREE_FACTOR_CONNECTION_EP2"
+    }
+  },
+  "certified_scope": {
+    "axial_l2_nonsplit_all_positive_real": true,
+    "axial_l2_rw_rw_maxwell_filtration": true,
+    "bach_cocycle_normal_form_exact": true,
+    "exact_partial_jet_realization": true,
+    "finite_interval_radial_green_double_pole": true,
+    "full_connection_smith_0_0_2": true,
+    "generalized_root_carrier_nonzero": true,
+    "green_principal_coefficient_rank_one": true,
+    "local_metric_reconstruction_nonzero": true,
+    "resonant_evaluation_identity_exact": true,
+    "resonant_functional_descends_to_extension_class": true,
+    "spin2_local_commutant_dual_numbers": true,
+    "symmetric_square_period_matrix_exact": true,
+    "triangular_gauge_commutator_exact": true,
+    "unique_simple_spin_two_qnm_in_disk": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_identities": {
+    "bach_cocycle_normal_form": {
+      "parameter_domain": "omega != 0",
+      "q": "-I*(15*r + 13 + 12/r + 9/r**2)/(120*omega)",
+      "representative": "I*omega*(r-2)/(2*r)"
+    },
+    "generalized_root": {
+      "assumptions": "a1 != 0 and b0 != 0",
+      "carrier_quotient": "-a1/b0",
+      "geometric_root": "[1,0]"
+    },
+    "green_principal_coefficient": {
+      "connection": "-b0/a1**2",
+      "outgoing_green": "b0/a1**2",
+      "rank": 1
+    },
+    "period_matrix": [
+      [
+        "y1*y2",
+        "y2**2"
+      ],
+      [
+        "-y1**2",
+        "-y1*y2"
+      ]
+    ],
+    "resonant_evaluation": {
+      "carrier_quotient": "-1/kappa",
+      "fredholm_principal_coefficient": "-kappa/alpha",
+      "normalized_overlap": "beta/alpha",
+      "resonance_velocity": "-kappa",
+      "selector": "b0/a1"
+    },
+    "triangular_gauge": {
+      "commutator_on_kernel": "-K_U(q)/2",
+      "gauge_for_K_U_q": "Q(2*q)",
+      "operator": "q*D - D(q)/2"
+    }
+  },
+  "fail_closed_scope": {
+    "all_ell_bach_nonsplitting": false,
+    "causal_exterior_spacetime_resolvent": false,
+    "complete_complex_reducibility_locus": false,
+    "full_six_state_commutant_dual_numbers": false,
+    "massive_qnm_slope_identified": false,
+    "parent_radial_overlap_operator_identity": false,
+    "physical_mass_parameter_identified": false,
+    "quantum_positivity_or_unitarity": false,
+    "retarded_inverse_transform": false,
+    "t_exp_iomega_t_ringdown_term": false,
+    "time_domain_stability": false
+  },
+  "lifecycle_state": "DRAFT_ALLOWED",
+  "manuscript": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+  "paper_id": "PAPER_17_PURE_WEYL_EXTENSION_RESONANCE",
+  "paper_sha256": "a4d5fbf9528930363293fe76d299c1b56a3993de698f6f850265b964d755323a",
+  "result_id": "PAPER17_NONSPLIT_RW_EXTENSION_DEFECTIVE_RESONANCE",
+  "schema": "paper-draft-source-map-v1"
+}
