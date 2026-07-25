@@ -1,0 +1,102 @@
+{
+  "schema": "tier-receipt-v1",
+  "result_id": "PAPER17_COHERENT_FORCING",
+  "timestamp_utc": "2026-07-25T11:00:17Z",
+  "input_commit": "c55cf5e349e098000fc963e61cb4490e28a00f0f",
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "environment": {
+    "python": "3.12.13",
+    "sympy": "1.14.0",
+    "pdflatex": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian)"
+  },
+  "artifacts": {
+    "paper_tex": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "sha256": "1a4272b5e961f16fa704598347da016ea8a710b6911c8c052ea09cd43ec26181"
+    },
+    "paper_pdf": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "sha256": "1dd25fbaff3d90b03bf1f957ceae59378eb4e0eed7356de46fa4b8a2af554726",
+      "pages": 48,
+      "bytes": 471523
+    },
+    "claim_map": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "sha256": "31b3b6416ceea8bdea8f215561724666a17d8d7fea7a581c4f52099cd8778312"
+    },
+    "generator": {
+      "path": "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "sha256": "9f07d0f3152d2f7e0d2a78756edd3a672a6d3eb530709c029c1063e27dee2313"
+    },
+    "verifier": {
+      "path": "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "sha256": "28c851ead20cc5bc16a3ad9de0fcc16bfe009461000ac9d590a5ae8349c8ac61"
+    },
+    "tests": {
+      "path": "paper/test_17_pure_weyl_extension_claim_map.py",
+      "sha256": "2fe371245edc9ff78e1cd5f3d443d275a303b59bf342d8655260e9e997788ef8"
+    },
+    "report": {
+      "path": "reports/phase4-black-hole-paper17-coherent-forcing-2026-07-25.md",
+      "sha256": "3b90b13dfb0aaa99c56017ffe928f8f98df2ccb052917e3a96fb2232a8df9dc6"
+    },
+    "work_item": {
+      "path": "planning/work-items/phase4-black-hole-paper17-coherent-forcing.json",
+      "sha256": "d673ad6ddefbc06b0de1265c5306427ae7630cb0fa472957598b0c12cc26a702"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "two-pass pdflatex compilation with no warnings, undefined references, or overfull boxes",
+        "Python bytecode compilation",
+        "JSON parse and deterministic claim-map regeneration",
+        "scoped git diff --check",
+        "visual inspection of coherent-forcing pages 33 through 35",
+        "receipt artifact hash audit"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "checks": [
+        "77 regression and mutation tests in 100.852 seconds",
+        "independent coherent-convolution differential and initial-value checks",
+        "independent early-time and half-power-width checks",
+        "independent arithmetic-geometric pulse-sum check",
+        "independent finite-window matched-kernel norm and long-window limit",
+        "independent certified mode-timescale audit",
+        "ten new fail-closed mutations for coefficients, scaling, damping, matching, and physical promotions"
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "No upstream operator, content-addressed authority, certificate schema, or validated numerical input changed."
+    },
+    "tier_3": {
+      "status": "PASS",
+      "checks": [
+        "python3 -m unittest discover: 149 tests passed in 1.34 seconds"
+      ]
+    }
+  },
+  "claim_boundary": {
+    "coherent_drive_convolution_exact": true,
+    "quadratic_early_buildup_exact": true,
+    "damped_steady_saturation_exact": true,
+    "critical_half_power_width_exact": true,
+    "phase_matched_pulse_sum_exact": true,
+    "coherent_n_squared_window_exact": true,
+    "certified_mode_timescales_exact": true,
+    "matched_finite_window_drive_exact": true,
+    "complete_global_causal_coherent_response": false,
+    "physical_matched_spacetime_source_constructed": false,
+    "coefficient_l2_budget_equals_gravitational_energy": false,
+    "nonlinear_saturation_computed": false,
+    "detector_feasibility": false,
+    "arbitrarily_large_response": false,
+    "quantum_statement": false
+  }
+}

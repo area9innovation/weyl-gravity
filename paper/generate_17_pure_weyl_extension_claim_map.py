@@ -354,6 +354,63 @@ def payload() -> dict:
                 ),
                 "gamma_domain": "gamma>0",
             },
+            "coherent_forcing": {
+                "detuning": "Delta=Omega-Omega_d",
+                "lambda": "gamma+I*Delta",
+                "critical_response": (
+                    "C*F0*exp(-I*Omega_d*t)"
+                    "*(1-(1+lambda*t)*exp(-lambda*t))/lambda**2"
+                ),
+                "ordinary_response": (
+                    "A*F0*exp(-I*Omega_d*t)"
+                    "*(1-exp(-lambda*t))/lambda"
+                ),
+                "critical_early_tuned": "C*F0*t**2/2",
+                "ordinary_early_tuned": "A*F0*t",
+                "critical_steady_amplitude": (
+                    "abs(C*F0)/(gamma**2+Delta**2)"
+                ),
+                "ordinary_steady_amplitude": (
+                    "abs(A*F0)/sqrt(gamma**2+Delta**2)"
+                ),
+                "critical_half_power_detuning": (
+                    "gamma*sqrt(sqrt(2)-1)"
+                ),
+            },
+            "phase_matched_pulses": {
+                "period": "2*pi/Omega",
+                "q": "exp(-gamma*T)",
+                "critical_sum": (
+                    "T*q*(1-(N+1)*q**N+N*q**(N+1))/(1-q)**2"
+                ),
+                "coherent_critical_scaling": "N**2",
+                "coherent_ordinary_scaling": "N",
+                "coherent_window": "N*T<<1/gamma",
+            },
+            "certified_mode_timescales": {
+                "Omega": "0.3736716844",
+                "gamma": "0.0889623157",
+                "damping_time_approx": "11.24",
+                "period_approx": "16.81",
+                "one_cycle_retention_approx": "0.224",
+                "quality_factor_approx": "2.10",
+            },
+            "matched_finite_window_drive": {
+                "budget": "integral_0_T(abs(F)**2)<=E",
+                "kernel_norm_squared": (
+                    "abs(C)**2*(1-exp(-2*gamma*T)"
+                    "*(1+2*gamma*T+2*gamma**2*T**2))"
+                    "/(4*gamma**3)"
+                ),
+                "maximum": (
+                    "abs(C)*sqrt(E)*sqrt(1-exp(-2*gamma*T)"
+                    "*(1+2*gamma*T+2*gamma**2*T**2))"
+                    "/(2*gamma**(3/2))"
+                ),
+                "optimizer": "conjugate(g_W(T-s))",
+                "long_window_limit": "abs(C)*sqrt(E)/(2*gamma**(3/2))",
+                "budget_is_invariant_gravitational_energy": False,
+            },
             "universal_critical_resonance": {
                 "critical_response": "R*A*R",
                 "double_coefficient": "beta/alpha**2*u tensor tilde_u",
@@ -586,6 +643,14 @@ def payload() -> dict:
             "uniform_divided_difference_template_exact": True,
             "near_critical_linewidth_ratio_exact": True,
             "jordan_integrated_norms_exact": True,
+            "coherent_drive_convolution_exact": True,
+            "quadratic_early_buildup_exact": True,
+            "damped_steady_saturation_exact": True,
+            "critical_half_power_width_exact": True,
+            "phase_matched_pulse_sum_exact": True,
+            "coherent_n_squared_window_exact": True,
+            "certified_mode_timescales_exact": True,
+            "matched_finite_window_drive_exact": True,
             "universal_critical_resonance_criterion_exact": True,
             "canonical_mass_tangent_class_exact": True,
             "canonical_simple_pole_with_frequency_derivative_exact": True,
@@ -633,6 +698,11 @@ def payload() -> dict:
             "physical_source_adjoint_overlap_certified": False,
             "detector_detectability_certified": False,
             "parameter_estimation_sensitivity_certified": False,
+            "complete_global_causal_coherent_response": False,
+            "physical_matched_spacetime_source_constructed": False,
+            "coefficient_l2_budget_equals_gravitational_energy": False,
+            "nonlinear_saturation_computed": False,
+            "arbitrarily_large_response_established": False,
         },
     }
 

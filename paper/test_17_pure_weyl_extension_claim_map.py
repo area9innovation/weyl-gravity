@@ -862,6 +862,153 @@ class Paper17ClaimMapTests(unittest.TestCase):
     def test_detector_detectability_promotion_rejected(self) -> None:
         self.assert_promotion_rejected("detector detectability is established")
 
+    def test_coherent_kernel_factor_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"]["coherent_forcing"].update(
+                {
+                    "critical_response": (
+                        "C*F0*exp(-I*Omega_d*t)"
+                        "*(1-lambda*t*exp(-lambda*t))/lambda**2"
+                    )
+                }
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("coherent-forcing declaration", result.stdout + result.stderr)
+
+    def test_quadratic_buildup_factor_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"]["coherent_forcing"].update(
+                {"critical_early_tuned": "C*F0*t**2"}
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("coherent-forcing declaration", result.stdout + result.stderr)
+
+    def test_critical_half_power_width_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"]["coherent_forcing"].update(
+                {"critical_half_power_detuning": "gamma"}
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("coherent-forcing declaration", result.stdout + result.stderr)
+
+    def test_pulse_sum_terminal_power_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "phase_matched_pulses"
+            ].update(
+                {
+                    "critical_sum": (
+                        "T*q*(1-(N+1)*q**N+N*q**N)/(1-q)**2"
+                    )
+                }
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "phase-matched pulse declaration",
+            result.stdout + result.stderr,
+        )
+
+    def test_pulse_scaling_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "phase_matched_pulses"
+            ].update({"coherent_critical_scaling": "N"})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "phase-matched pulse declaration",
+            result.stdout + result.stderr,
+        )
+
+    def test_mode_retention_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "certified_mode_timescales"
+            ].update({"one_cycle_retention_approx": "0.500"})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "certified mode-timescale declaration",
+            result.stdout + result.stderr,
+        )
+
+    def test_matched_drive_gamma_power_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "matched_finite_window_drive"
+            ].update(
+                {
+                    "long_window_limit": (
+                        "abs(C)*sqrt(E)/(2*gamma**2)"
+                    )
+                }
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "matched finite-window drive declaration",
+            result.stdout + result.stderr,
+        )
+
+    def test_matched_drive_conjugation_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "matched_finite_window_drive"
+            ].update({"optimizer": "g_W(T-s)"})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "matched finite-window drive declaration",
+            result.stdout + result.stderr,
+        )
+
+    def test_global_coherent_kernel_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the isolated critical kernel is the complete causal "
+            "Schwarzschild Green function"
+        )
+
+    def test_energy_budget_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the coefficient-space budget is invariant gravitational energy"
+        )
+
     def test_fail_closed_claim_flag_rejected(self) -> None:
         path = self.mutated_claims(
             lambda data: data["fail_closed_scope"].update(

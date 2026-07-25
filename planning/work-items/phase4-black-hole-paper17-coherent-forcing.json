@@ -1,0 +1,51 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-paper17-coherent-forcing",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-paper17-coherent-forcing",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-paper17-coherent-forcing.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper17-coherent-forcing",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 1,
+    "objective": "Derive the exact response of the isolated critical Weyl kernel to coherent monochromatic forcing and phase-matched impulse trains, prove quadratic early-time buildup with damped saturation, classify its detuning width, and solve the finite-window fixed-L2-budget matched-drive problem.",
+    "stop_condition": "Paper 17 proves the switched-on coherent-drive convolution formulas for simple and double poles, their early-time and steady-state limits, the critical half-power width, the exact finite pulse-train sum and its coherent N-squared regime, the certified mode damping/period/quality-factor scales, and the Cauchy-Schwarz optimal finite-window source with its exact attainable bound. The claim map, independent exact verifier, mutation tests, PDF, report, and tier receipt are updated while global causal response, physical source realization, energy-flux normalization, nonlinear saturation, and detector feasibility remain unproved.",
+    "current_gate": "finite-time coherent forcing of the isolated critical resonance",
+    "forbid": "no claim that the local kernel is the complete causal Schwarzschild Green function; no physical realization of the optimal spacetime source; no identification of the L2 source budget with invariant gravitational energy; no nonlinear saturation calculation; no detector feasibility or arbitrarily large response claim",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-paper17-detector-normal-form"
+    ],
+    "activates": [
+      "physical-source realization of the adjoint matched drive",
+      "global retarded coherent-forcing theorem",
+      "nonlinear saturation and backreaction study"
+    ],
+    "allowed_paths": [
+      "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "paper/test_17_pure_weyl_extension_claim_map.py",
+      "reports/phase4-black-hole-paper17-coherent-forcing-2026-07-25.md",
+      "reports/PAPER17_COHERENT_FORCING_TIER_RECEIPT.json",
+      "planning/work-items/phase4-black-hole-paper17-coherent-forcing.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use exact causal convolution of Theta(t)*t*exp(-(gamma+i Omega)t), symbolic series and limits, the finite geometric derivative sum, and the Riesz/Cauchy-Schwarz optimizer in L2[0,T]. Treat E as a declared coefficient-space L2 budget, not invariant gravitational energy. Keep all time statements scoped to the isolated local resonance contribution.",
+    "input_commit": "c55cf5e349e098000fc963e61cb4490e28a00f0f",
+    "notes": [
+      "REDUCED-MODE",
+      "The forcing formulas apply to the isolated resonance kernel after declared source and observation projection.",
+      "Quadratic buildup is an early-time coherent law and saturates for gamma>0.",
+      "The matched source is the time-reversed conjugate kernel in the declared coefficient-space L2 norm.",
+      "The physical spacetime source and invariant energy norm remain open."
+    ]
+  },
+  "edges": []
+}

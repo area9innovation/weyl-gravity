@@ -90,13 +90,18 @@
     "canonical_mass_tangent_class_exact": true,
     "canonical_simple_pole_with_frequency_derivative_exact": true,
     "centered_resolvent_crossover_exact": true,
+    "certified_mode_timescales_exact": true,
+    "coherent_drive_convolution_exact": true,
+    "coherent_n_squared_window_exact": true,
     "complex_exceptional_parabola_qualified": true,
     "confluent_positive_metric_singularity_exact": true,
     "confluent_projector_scale_exact": true,
     "critical_determinant_insufficient_for_smith_type": true,
+    "critical_half_power_width_exact": true,
     "critical_mass_qnm_velocity_nonzero": true,
     "critical_pseudospectral_scale_exact": true,
     "damped_jordan_envelope_exact": true,
+    "damped_steady_saturation_exact": true,
     "detector_rank_one_overlap_rule_exact": true,
     "endpoint_compatible_massive_jost_classes": true,
     "equivalence_gauge_forced_linear_infinity_growth": true,
@@ -122,14 +127,17 @@
     "local_tt_critical_mass_jet_identified": true,
     "local_two_pole_contour_jordan_limit": true,
     "lower_left_mutation_controls_exact": true,
+    "matched_finite_window_drive_exact": true,
     "near_critical_linewidth_ratio_exact": true,
     "null_rank_one_pole_geometry_exact": true,
     "opposite_signature_confluence_criterion_exact": true,
     "parent_double_and_simple_laurent_coefficients_exact": true,
     "parent_local_contour_selection_rule_exact": true,
     "parent_metric_green_mass_derivative_exact": true,
+    "phase_matched_pulse_sum_exact": true,
     "physical_mass_reverse_coupling_zero": true,
     "positive_self_adjoint_nilpotent_excluded": true,
+    "quadratic_early_buildup_exact": true,
     "real_repeated_root_waveform_exact": true,
     "refined_filtered_gap_and_contour_expansion_exact": true,
     "reflected_ep2_pair_exact": true,
@@ -193,6 +201,25 @@
       "left_tangent_class": "-tilde_u*(A0+nu*L1)*H mod C*tilde_u",
       "simple_coefficient": "P*A0*H+H*A0*P+P*A1*P=-Pdot",
       "tangent_class": "-H*(A0+nu*L1)*u mod C*u"
+    },
+    "certified_mode_timescales": {
+      "Omega": "0.3736716844",
+      "damping_time_approx": "11.24",
+      "gamma": "0.0889623157",
+      "one_cycle_retention_approx": "0.224",
+      "period_approx": "16.81",
+      "quality_factor_approx": "2.10"
+    },
+    "coherent_forcing": {
+      "critical_early_tuned": "C*F0*t**2/2",
+      "critical_half_power_detuning": "gamma*sqrt(sqrt(2)-1)",
+      "critical_response": "C*F0*exp(-I*Omega_d*t)*(1-(1+lambda*t)*exp(-lambda*t))/lambda**2",
+      "critical_steady_amplitude": "abs(C*F0)/(gamma**2+Delta**2)",
+      "detuning": "Delta=Omega-Omega_d",
+      "lambda": "gamma+I*Delta",
+      "ordinary_early_tuned": "A*F0*t",
+      "ordinary_response": "A*F0*exp(-I*Omega_d*t)*(1-exp(-lambda*t))/lambda",
+      "ordinary_steady_amplitude": "abs(A*F0)/sqrt(gamma**2+Delta**2)"
     },
     "confluent_limits": {
       "local_contour": "exp(I*omega*t)*(I+I*nu*t*N)",
@@ -372,6 +399,14 @@
       "mass_reverse_coupling": "0",
       "reverse_numerator": "pair(W0,B*V0)"
     },
+    "matched_finite_window_drive": {
+      "budget": "integral_0_T(abs(F)**2)<=E",
+      "budget_is_invariant_gravitational_energy": false,
+      "kernel_norm_squared": "abs(C)**2*(1-exp(-2*gamma*T)*(1+2*gamma*T+2*gamma**2*T**2))/(4*gamma**3)",
+      "long_window_limit": "abs(C)*sqrt(E)/(2*gamma**(3/2))",
+      "maximum": "abs(C)*sqrt(E)*sqrt(1-exp(-2*gamma*T)*(1+2*gamma*T+2*gamma**2*T**2))/(2*gamma**(3/2))",
+      "optimizer": "conjugate(g_W(T-s))"
+    },
     "observable_transfer": {
       "analytic_frequency_dependence_changes_leading_coefficient": false,
       "observation_gate": "O0*u != 0",
@@ -441,6 +476,14 @@
         "-y1*y2"
       ]
     ],
+    "phase_matched_pulses": {
+      "coherent_critical_scaling": "N**2",
+      "coherent_ordinary_scaling": "N",
+      "coherent_window": "N*T<<1/gamma",
+      "critical_sum": "T*q*(1-(N+1)*q**N+N*q**(N+1))/(1-q)**2",
+      "period": "2*pi/Omega",
+      "q": "exp(-gamma*T)"
+    },
     "real_detector_normal_form": {
       "critical_equation": "Q**2*h=0",
       "generic_first_equation": "Q*h!=0",
@@ -607,13 +650,17 @@
   "fail_closed_scope": {
     "all_ell_bach_nonsplitting": false,
     "all_ell_bach_reduction_coefficient_computed": false,
+    "arbitrarily_large_response_established": false,
     "asymptotic_strain_or_np_overlap_certified": false,
     "causal_exterior_spacetime_resolvent": false,
+    "coefficient_l2_budget_equals_gravitational_energy": false,
     "complete_complex_reducibility_locus": false,
+    "complete_global_causal_coherent_response": false,
     "detector_detectability_certified": false,
     "full_six_state_commutant_dual_numbers": false,
     "global_positive_metric_no_go": false,
     "global_t_exp_iomega_t_ringdown_term": false,
+    "nonlinear_saturation_computed": false,
     "numerical_qnm_acceleration_computed": false,
     "numerical_qnm_curvature_computed": false,
     "off_resonance_jost_normalization_function_computed": false,
@@ -621,6 +668,7 @@
     "parameter_estimation_sensitivity_certified": false,
     "parent_radial_overlap_operator_identity": false,
     "physical_filtration_breaking_coefficient_computed": false,
+    "physical_matched_spacetime_source_constructed": false,
     "physical_source_adjoint_overlap_certified": false,
     "quantum_positivity_or_unitarity": false,
     "retarded_inverse_transform": false,
@@ -633,7 +681,7 @@
   "lifecycle_state": "DRAFT_ALLOWED",
   "manuscript": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
   "paper_id": "PAPER_17_PURE_WEYL_EXTENSION_RESONANCE",
-  "paper_sha256": "9ce1ab4226b870fd2d20ef575f2a739a9f85d35a4c9a9e35139891b8806a61b7",
+  "paper_sha256": "1a4272b5e961f16fa704598347da016ea8a710b6911c8c052ea09cd43ec26181",
   "result_id": "PAPER17_NONSPLIT_RW_EXTENSION_DEFECTIVE_RESONANCE",
   "schema": "paper-draft-source-map-v1"
 }

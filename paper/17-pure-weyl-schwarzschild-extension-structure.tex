@@ -114,6 +114,12 @@ damped sinusoid,
 \]
 with a divided-difference continuation that remains regular when the two
 finite-mass resonances separate.
+For the isolated critical kernel, a switched-on phase-locked drive has
+quadratic early-time buildup and a finite \(1/(\gamma^2+\Delta^2)\)
+steady amplitude.  Phase-matched impulses show the corresponding
+finite-train \(N^2\) law before damping resolves the sum, while a
+finite-window fixed-\(L^2\)-budget optimization selects the
+time-reversed conjugate kernel.
 
 Promotion to a global physical resolvent and to a full retarded generalized
 ringdown expansion requires a separate analytic Fredholm realization,
@@ -143,7 +149,7 @@ differential field.  The two spin-two layers therefore share scalar
 characteristics without defining two rationally separable radial
 branches.
 
-This paper establishes eight central results.
+This paper establishes nine central results.
 \begin{enumerate}
 \item The repeated spin-two block is a non-split Regge--Wheeler
   self-extension, realized exactly as a parameter jet.
@@ -191,6 +197,12 @@ This paper establishes eight central results.
   above.  A divided-difference basis gives a uniform, finite-amplitude
   continuation between the critical Jordan regime and two resolved simple
   modes.
+\item The isolated causal critical kernel has an exact coherent-forcing
+  law.  A phase-locked switched-on drive builds quadratically at early
+  times and saturates with a squared Lorentzian denominator.  Finite
+  phase-matched pulse trains have an exact damped arithmetic--geometric
+  sum, and the fixed-\(L^2\)-budget optimal finite-window drive is the
+  time-reversed conjugate kernel.
 \end{enumerate}
 
 The fourth result is stronger than a statement about a finite connection
@@ -251,6 +263,9 @@ Canonical Krein--Jordan geometry
 & Exact finite-dimensional theorem\\
 Observable transfer and detector normal form
 & Analytic source/reconstruction maps and isolated reflected QNM pair
+& Exact conditional reduced-mode theorem\\
+Finite-time coherent forcing
+& Isolated critical kernel and declared coefficient-space \(L^2\) budget
 & Exact conditional reduced-mode theorem\\
 Two-parameter EP2 phase diagram
 & Exact Einstein filtration and a declared transverse mixing direction
@@ -2726,6 +2741,232 @@ these as the only source/observation annihilation gates for the principal
 local pole.
 \end{remark}
 
+\subsection{Finite-time coherent forcing of the isolated resonance}
+\label{sec:coherent-forcing}
+
+The previous results determine a causal local kernel after source and
+observation projection.  Write its critical and ordinary parts as
+\[
+ g_{\rm W}(t)=\Theta(t)C\,t\,e^{-\gamma t}e^{-i\Omega t},
+ \qquad
+ g_{\rm E}(t)=\Theta(t)A\,e^{-\gamma t}e^{-i\Omega t}.
+\]
+The constants \(C\) and \(A\) include the relevant residues and declared
+source/observation overlaps.  These kernels represent only the isolated
+resonance contribution.
+
+\begin{theorem}[Switched-on coherent drive]\label{thm:coherent-drive}
+Let
+\[
+ F(t)=F_0\Theta(t)e^{-i\Omega_dt},
+ \qquad
+ \Delta=\Omega-\Omega_d,
+ \qquad
+ \lambda=\gamma+i\Delta.
+\]
+The causal convolutions with the critical and ordinary kernels are
+\[
+ \boxed{\;
+ x_{\rm W}(t)
+ =CF_0e^{-i\Omega_dt}
+ \frac{1-(1+\lambda t)e^{-\lambda t}}{\lambda^2},
+ \;}
+\]
+\[
+ \boxed{\;
+ x_{\rm E}(t)
+ =AF_0e^{-i\Omega_dt}
+ \frac{1-e^{-\lambda t}}{\lambda}.
+ \;}
+\]
+At real-frequency tuning, \(\Omega_d=\Omega\),
+\[
+ x_{\rm W}(t)
+ =\frac12CF_0t^2e^{-i\Omega t}+O(t^3),
+ \qquad
+ x_{\rm E}(t)
+ =AF_0t e^{-i\Omega t}+O(t^2).
+\]
+For \(\gamma>0\), both responses saturate:
+\[
+ x_{\rm W}(t)\longrightarrow
+ \frac{CF_0}{(\gamma+i\Delta)^2}e^{-i\Omega_dt},
+ \qquad
+ x_{\rm E}(t)\longrightarrow
+ \frac{AF_0}{\gamma+i\Delta}e^{-i\Omega_dt}.
+\]
+\end{theorem}
+
+\begin{proof}
+With \(\tau=t-s\),
+\[
+ x_{\rm W}(t)
+ =CF_0e^{-i\Omega_dt}\int_0^t
+ \tau e^{-\lambda\tau}\,d\tau,
+\]
+and
+\[
+ x_{\rm E}(t)
+ =AF_0e^{-i\Omega_dt}\int_0^t
+ e^{-\lambda\tau}\,d\tau.
+\]
+The two elementary integrals give the displayed formulas.  Taylor
+expansion at \(t=0\) gives the quadratic and linear buildup laws, and
+\(\Re\lambda=\gamma>0\) gives the long-time limits.
+\end{proof}
+
+The critical steady-state amplitude is
+\[
+ |H_{\rm W}(\Omega_d)|
+ =\frac{|C|}{\gamma^2+\Delta^2},
+\]
+whereas the ordinary amplitude is
+\[
+ |H_{\rm E}(\Omega_d)|
+ =\frac{|A|}{\sqrt{\gamma^2+\Delta^2}}.
+\]
+Absolute amplitudes cannot be compared without fixing the dimensions and
+normalizations of \(A\) and \(C\), but the critical damping dependence has
+one additional inverse power.  The half-power detuning of the critical
+channel is
+\[
+ \boxed{\;
+ |\Delta|_{\rm hp}
+ =\gamma\sqrt{\sqrt2-1}
+ \simeq0.644\,\gamma,
+ \;}
+\]
+instead of \(|\Delta|_{\rm hp}=\gamma\) for the ordinary Lorentzian.
+
+\begin{proposition}[Phase-matched impulse train]
+\label{prop:phase-matched-pulses}
+Let \(N\) equal impulses be separated by
+\[
+ T=\frac{2\pi}{\Omega},
+ \qquad q=e^{-\gamma T},
+\]
+and observe immediately one period after the last pulse, so their ages are
+\(T,2T,\ldots,NT\).  The phase-aligned critical coefficient is
+proportional to
+\[
+ T\sum_{j=1}^Njq^j
+ =
+ \boxed{\;
+ T\frac{q[1-(N+1)q^N+Nq^{N+1}]}{(1-q)^2}.
+ \;}
+\]
+If \(NT\ll1/\gamma\), this becomes
+\[
+ T\frac{N(N+1)}2+O(\gamma T^2N^3),
+\]
+whereas the corresponding ordinary dimensionless sum is
+\(N+O(\gamma TN^2)\).  Thus the coherent undamped window has critical
+\(N^2\) buildup and ordinary \(N\) buildup, with their separate
+single-pulse normalizations understood.
+\end{proposition}
+
+\begin{proof}
+Phase matching gives \(e^{-i\Omega jT}=1\).  The age-\(jT\) critical
+kernel contributes \(CjTq^j\).  Differentiating the finite geometric sum
+\(\sum_{j=0}^Nq^j\) gives the closed form.  Expanding \(q^j\) uniformly
+when \(\gamma NT\ll1\) gives the stated asymptotics.
+\end{proof}
+
+For the certified mode,
+\[
+ \Omega\simeq0.3736716844\,M^{-1},
+ \qquad
+ \gamma\simeq0.0889623157\,M^{-1}.
+\]
+Consequently,
+\[
+ \tau_{\rm damp}=\gamma^{-1}\simeq11.24M,
+ \qquad
+ T_{\rm osc}=\frac{2\pi}{\Omega}\simeq16.81M,
+\]
+\[
+ e^{-\gamma T_{\rm osc}}\simeq0.224,
+ \qquad
+ Q_{\rm mode}=\frac{\Omega}{2\gamma}\simeq2.10.
+\]
+The certified mode is therefore strongly damped: a long pulse train loses
+most of each contribution before the next full cycle.  In the local model,
+useful matched forcing is concentrated within one or a few damping times,
+not over a large number of cycles.
+
+\begin{theorem}[Optimal finite-window coefficient-space drive]
+\label{thm:matched-drive}
+Fix a target time \(T>0\) and the declared source-coefficient budget
+\[
+ \int_0^T|F(s)|^2\,ds\le E.
+\]
+For
+\[
+ x(T)=\int_0^Tg_{\rm W}(T-s)F(s)\,ds,
+\]
+one has
+\[
+ \boxed{\;
+ |x(T)|\le
+ \frac{|C|\sqrt E}{2\gamma^{3/2}}
+ \sqrt{
+ 1-e^{-2\gamma T}
+ (1+2\gamma T+2\gamma^2T^2)
+ }.
+ \;}
+\]
+Equality is attained by
+\[
+ \boxed{\;
+ F_{\rm opt}(s)
+ =c_T\,\overline{g_{\rm W}(T-s)}
+ \propto
+ (T-s)e^{-\gamma(T-s)}e^{+i\Omega(T-s)},
+ \;}
+\]
+with \(c_T\) chosen to saturate the budget.  As \(T\to\infty\), the bound
+tends to
+\[
+ \frac{|C|\sqrt E}{2\gamma^{3/2}}.
+\]
+\end{theorem}
+
+\begin{proof}
+Cauchy--Schwarz gives
+\[
+ |x(T)|\le
+ \sqrt E
+ \left[\int_0^T|g_{\rm W}(T-s)|^2\,ds\right]^{1/2}.
+\]
+After \(\tau=T-s\), the remaining integral is
+\[
+ |C|^2\int_0^T\tau^2e^{-2\gamma\tau}\,d\tau
+ =
+ \frac{|C|^2}{4\gamma^3}
+ \left[
+ 1-e^{-2\gamma T}
+ (1+2\gamma T+2\gamma^2T^2)
+ \right].
+\]
+Equality in Cauchy--Schwarz holds precisely for the displayed conjugate
+matched kernel, up to an overall phase and normalization.
+\end{proof}
+
+\begin{remark}[Physical and nonlinear boundary]
+The optimizer is exact in the declared one-dimensional coefficient-space
+\(L^2\) norm.  A spacetime realization would additionally have to match
+the adjoint radial profile, axial parity, and \(\ell=2\) angular pattern,
+and would require a physical stress-energy or incident-wave source map.
+The budget \(E\) has not been identified with invariant gravitational
+energy.  Precision improves coupling efficiency but does not remove the
+physical source scale.
+
+All formulas in this subsection are linear.  Frequency shifts,
+backreaction, additional modes, and nonlinear mode coupling lie outside
+the result.  Most importantly, the isolated kernel has not yet been
+promoted to the complete global retarded Schwarzschild response.
+\end{remark}
+
 \begin{theorem}[Spectral contact controls critical pole order]
 \label{thm:contact-order}
 Let
@@ -3706,6 +3947,9 @@ Fredholm promotion
 Observable transfer
 & Analytic source/reconstruction maps and rank-one resonant overlaps
 & Exact conditional reduced-mode\\
+Coherent forcing and matched drive
+& Isolated critical kernel and coefficient-space \(L^2\) budget
+& Exact conditional reduced-mode\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -3731,7 +3975,10 @@ overlap for a specified asymptotic strain or Newman--Penrose observable,
 nonzero excitation by a specified astrophysical source, detector
 detectability, or parameter-estimation sensitivity.  The polynomial
 \(t e^{i\omega_nt}\) is proved only for the isolated local two-pole
-contour contribution.
+contour contribution.  The coherent-drive and pulse-train laws likewise
+apply only to that isolated kernel; no physical matched-source
+construction, invariant energy-budget identity, or nonlinear saturation
+calculation is claimed.
 
 \section{Conclusion}
 
@@ -3789,6 +4036,15 @@ separates the Jordan-like, crossover, and resolved regimes by
 integrated amplitude and derivative norm.  Proving the two overlaps for a
 specific null-infinity observable and physical source, and embedding the
 local contour in the global causal evolution, remain separate tasks.
+Within the same local boundary, phase-locked forcing integrates the
+critical kernel once more: its early response is quadratic rather than
+linear, and its steady amplitude has a squared Lorentzian denominator.
+Finite phase-matched pulse trains exhibit the corresponding damped
+arithmetic--geometric sum.  For a fixed coefficient-space \(L^2\) budget,
+the unique optimal temporal profile is the time-reversed conjugate
+critical kernel and its attainable amplitude saturates at
+\(|C|\sqrt E/(2\gamma^{3/2})\).  The low quality factor of the certified
+mode confines useful coherent preparation to one or a few damping times.
 
 The physical mass deformation is filtration-preserving rather than a
 generic square-root unfolding.  In the two-parameter phase diagram, the

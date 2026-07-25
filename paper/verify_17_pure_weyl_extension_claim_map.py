@@ -983,6 +983,143 @@ def verify_detector_normal_form(claims: dict) -> None:
         fail("Jordan integrated-norm declaration drift")
 
 
+def verify_coherent_forcing(claims: dict) -> None:
+    t, tau = sp.symbols("t tau", nonnegative=True)
+    lam = sp.symbols("lambda", nonzero=True)
+    critical_integral = (
+        1 - (1 + lam * t) * sp.exp(-lam * t)
+    ) / lam**2
+    ordinary_integral = (1 - sp.exp(-lam * t)) / lam
+    if sp.simplify(sp.diff(critical_integral, t) - t * sp.exp(-lam * t)) != 0:
+        fail("critical coherent convolution derivative failed")
+    if sp.simplify(critical_integral.subs(t, 0)) != 0:
+        fail("critical coherent convolution initial value failed")
+    if sp.simplify(sp.diff(ordinary_integral, t) - sp.exp(-lam * t)) != 0:
+        fail("ordinary coherent convolution derivative failed")
+    if sp.simplify(ordinary_integral.subs(t, 0)) != 0:
+        fail("ordinary coherent convolution initial value failed")
+    if sp.series(critical_integral, t, 0, 3).removeO() != t**2 / 2:
+        fail("critical quadratic buildup failed")
+    if sp.series(ordinary_integral, t, 0, 2).removeO() != t:
+        fail("ordinary linear buildup failed")
+
+    gamma = sp.symbols("gamma", positive=True)
+    detuning_hp = gamma * sp.sqrt(sp.sqrt(2) - 1)
+    half_power_equation = sp.simplify(
+        (gamma**2 + detuning_hp**2) ** 2 - 2 * gamma**4
+    )
+    if half_power_equation != 0:
+        fail("critical half-power width failed")
+
+    q = sp.symbols("q", nonzero=True)
+    N = sp.symbols("N", integer=True, positive=True)
+    finite_geometric = (1 - q ** (N + 1)) / (1 - q)
+    arithmetic_geometric = sp.factor(q * sp.diff(finite_geometric, q))
+    expected_sum = (
+        q * (1 - (N + 1) * q**N + N * q ** (N + 1))
+        / (1 - q) ** 2
+    )
+    if sp.simplify(arithmetic_geometric - expected_sum) != 0:
+        fail("phase-matched pulse sum failed")
+
+    finite_kernel_norm = sp.integrate(
+        tau**2 * sp.exp(-2 * gamma * tau), (tau, 0, t)
+    )
+    expected_kernel_norm = (
+        1
+        - sp.exp(-2 * gamma * t)
+        * (1 + 2 * gamma * t + 2 * gamma**2 * t**2)
+    ) / (4 * gamma**3)
+    if sp.simplify(finite_kernel_norm - expected_kernel_norm) != 0:
+        fail("finite-window matched-drive norm failed")
+    if sp.simplify(
+        sp.limit(expected_kernel_norm, t, sp.oo) - 1 / (4 * gamma**3)
+    ) != 0:
+        fail("long-window matched-drive norm failed")
+
+    Omega_value = sp.Float("0.3736716844", 20)
+    gamma_value = sp.Float("0.0889623157", 20)
+    damping_time = 1 / gamma_value
+    period = 2 * sp.pi / Omega_value
+    retention = sp.exp(-gamma_value * period)
+    quality = Omega_value / (2 * gamma_value)
+    if abs(float(damping_time) - 11.24) > 0.01:
+        fail("certified damping-time audit failed")
+    if abs(float(period) - 16.81) > 0.01:
+        fail("certified oscillation-period audit failed")
+    if abs(float(retention) - 0.224) > 0.001:
+        fail("certified one-cycle retention audit failed")
+    if abs(float(quality) - 2.10) > 0.01:
+        fail("certified quality-factor audit failed")
+
+    forcing = claims["exact_identities"]["coherent_forcing"]
+    if forcing != {
+        "detuning": "Delta=Omega-Omega_d",
+        "lambda": "gamma+I*Delta",
+        "critical_response": (
+            "C*F0*exp(-I*Omega_d*t)"
+            "*(1-(1+lambda*t)*exp(-lambda*t))/lambda**2"
+        ),
+        "ordinary_response": (
+            "A*F0*exp(-I*Omega_d*t)"
+            "*(1-exp(-lambda*t))/lambda"
+        ),
+        "critical_early_tuned": "C*F0*t**2/2",
+        "ordinary_early_tuned": "A*F0*t",
+        "critical_steady_amplitude": (
+            "abs(C*F0)/(gamma**2+Delta**2)"
+        ),
+        "ordinary_steady_amplitude": (
+            "abs(A*F0)/sqrt(gamma**2+Delta**2)"
+        ),
+        "critical_half_power_detuning": "gamma*sqrt(sqrt(2)-1)",
+    }:
+        fail("coherent-forcing declaration drift")
+
+    pulses = claims["exact_identities"]["phase_matched_pulses"]
+    if pulses != {
+        "period": "2*pi/Omega",
+        "q": "exp(-gamma*T)",
+        "critical_sum": (
+            "T*q*(1-(N+1)*q**N+N*q**(N+1))/(1-q)**2"
+        ),
+        "coherent_critical_scaling": "N**2",
+        "coherent_ordinary_scaling": "N",
+        "coherent_window": "N*T<<1/gamma",
+    }:
+        fail("phase-matched pulse declaration drift")
+
+    scales = claims["exact_identities"]["certified_mode_timescales"]
+    if scales != {
+        "Omega": "0.3736716844",
+        "gamma": "0.0889623157",
+        "damping_time_approx": "11.24",
+        "period_approx": "16.81",
+        "one_cycle_retention_approx": "0.224",
+        "quality_factor_approx": "2.10",
+    }:
+        fail("certified mode-timescale declaration drift")
+
+    matched = claims["exact_identities"]["matched_finite_window_drive"]
+    if matched != {
+        "budget": "integral_0_T(abs(F)**2)<=E",
+        "kernel_norm_squared": (
+            "abs(C)**2*(1-exp(-2*gamma*T)"
+            "*(1+2*gamma*T+2*gamma**2*T**2))"
+            "/(4*gamma**3)"
+        ),
+        "maximum": (
+            "abs(C)*sqrt(E)*sqrt(1-exp(-2*gamma*T)"
+            "*(1+2*gamma*T+2*gamma**2*T**2))"
+            "/(2*gamma**(3/2))"
+        ),
+        "optimizer": "conjugate(g_W(T-s))",
+        "long_window_limit": "abs(C)*sqrt(E)/(2*gamma**(3/2))",
+        "budget_is_invariant_gravitational_energy": False,
+    }:
+        fail("matched finite-window drive declaration drift")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--paper", type=Path, default=DEFAULT_PAPER)
@@ -1118,6 +1255,15 @@ def main() -> None:
         "Finite norm of the Jordan component",
         "\\frac{|C|^2(\\gamma^2+\\Omega^2)}{4\\gamma^3}",
         "Observational degeneracy and remaining bridge",
+        "Finite-time coherent forcing of the isolated resonance",
+        "Switched-on coherent drive",
+        "1-(1+\\lambda t)e^{-\\lambda t}",
+        "Phase-matched impulse train",
+        "\\sum_{j=1}^Njq^j",
+        "Q_{\\rm mode}=\\frac{\\Omega}{2\\gamma}",
+        "Optimal finite-window coefficient-space drive",
+        "F_{\\rm opt}(s)",
+        "Physical and nonlinear boundary",
         "does not establish a causal spacetime resolvent",
     ]
     for phrase in required:
@@ -1152,6 +1298,11 @@ def main() -> None:
         "detector detectability is established",
         "parameter-estimation sensitivity is established",
         "the repeated-root template is the complete retarded waveform",
+        "the isolated critical kernel is the complete causal Schwarzschild Green function",
+        "the coefficient-space budget is invariant gravitational energy",
+        "a physical matched spacetime source has been constructed",
+        "nonlinear saturation has been computed",
+        "arbitrarily large Weyl response is established",
     ]
     for phrase in forbidden:
         if phrase in text:
@@ -1499,13 +1650,14 @@ def main() -> None:
     verify_spectral_velocity_and_contact_order(claims)
     verify_spectral_acceleration_and_krein_jordan(claims)
     verify_detector_normal_form(claims)
+    verify_coherent_forcing(claims)
 
     print("PASS paper/17-pure-weyl-schwarzschild-extension-structure.tex")
     print(
         "PASS exact cocycle, endpoint-compatible mass jet, filtered "
         "unfolding, spectral velocity and acceleration, contact-order, "
-        "Krein-Jordan, detector transfer, confluent metrics, and nilpotent "
-        "root-space identities"
+        "Krein-Jordan, detector transfer, coherent forcing, confluent "
+        "metrics, and nilpotent root-space identities"
     )
     print("PASS authority provenance and fail-closed claim boundary")
 
