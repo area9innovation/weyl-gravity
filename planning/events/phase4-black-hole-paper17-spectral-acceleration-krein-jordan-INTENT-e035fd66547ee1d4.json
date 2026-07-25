@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase4-black-hole-paper17-spectral-acceleration-krein-jordan-INTENT-e035fd66547ee1d4",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work intent",
+  "source": {"path": "tools/science-forge/program/events/phase4-black-hole-paper17-spectral-acceleration-krein-jordan-INTENT-e035fd66547ee1d4.json", "span": null},
+  "body": {"event_kind": "WORK_INTENT", "actor": "codex", "base_revision": "science-forge-ir-v0", "when": null, "seq": 1, "payload": {"target": "sf:program/work/phase4-black-hole-paper17-spectral-acceleration-krein-jordan", "agent": "codex", "lease": "exclusive", "base_commit": "8f92964cbfffe5c895ee024eab6c0c2a703f2b63", "transaction_id": "5679fc98d7df6225", "allowlist_verdict": "within-allowlist", "intended_paths": ["paper/17-pure-weyl-schwarzschild-extension-structure.tex", "paper/17-pure-weyl-schwarzschild-extension-structure.pdf", "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json", "paper/generate_17_pure_weyl_extension_claim_map.py", "paper/verify_17_pure_weyl_extension_claim_map.py", "paper/test_17_pure_weyl_extension_claim_map.py", "reports/phase4-black-hole-paper17-spectral-acceleration-krein-jordan-2026-07-25.md", "reports/PAPER17_SPECTRAL_ACCELERATION_KREIN_JORDAN_TIER_RECEIPT.json", "planning/work-items/phase4-black-hole-paper17-spectral-acceleration-krein-jordan.json"], "verify_commands": ["python3 paper/verify_17_pure_weyl_extension_claim_map.py", "python3 -m unittest paper.test_17_pure_weyl_extension_claim_map", "python3 -m unittest discover"]}, "native": {"authored_by": "sfc work-intent", "policy": "append-only (SPEC 4.5); an uncommitted delivery manifest — NO current_commit, NO test-success. Superseded by a later intent; sealed by WORK_COMMITTED."}},
+  "edges": [{"rel": "INTENDS", "to": "sf:program/work/phase4-black-hole-paper17-spectral-acceleration-krein-jordan"}]
+}
