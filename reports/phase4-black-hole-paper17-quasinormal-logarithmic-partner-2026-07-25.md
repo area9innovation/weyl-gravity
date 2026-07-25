@@ -186,5 +186,4 @@ precisely as a quasinormal logarithmic partner: a mass-derivative Jordan
 state with polynomial \(t\)- and \(r\)-behavior, but no first-order radial
 logarithm in the normalized scalar Jost frame.
 
-EVIDENCE:
-`reports/PAPER17_QUASINORMAL_LOGARITHMIC_PARTNER_TIER_RECEIPT.json`
+EVIDENCE: `reports/PAPER17_QUASINORMAL_LOGARITHMIC_PARTNER_TIER_RECEIPT.json`
