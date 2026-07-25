@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/phase4-black-hole-axial-explicit-tplus-band-LEASE-ACQUIRE-excl-b79b6c0ce996b386",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work lease",
+  "source": {"path": "tools/science-forge/program/events/phase4-black-hole-axial-explicit-tplus-band-LEASE-ACQUIRE-excl-b79b6c0ce996b386.json", "span": null},
+  "body": {"event_kind": "LEASE", "actor": "root", "base_revision": "science-forge-ir-v0", "when": "2026-07-25T09:02:00Z", "seq": 4, "predecessor": "sf:program/event/phase4-black-hole-axial-explicit-tplus-band-LEASE-RELEASE-excl-d1fe1352491ef5c4", "payload": {"target": "sf:program/work/phase4-black-hole-axial-explicit-tplus-band", "agent": "root", "lease_type": "exclusive", "action": "ACQUIRE", "acquired": "2026-07-25T09:02:00Z", "expires": "2026-07-25T15:00:00Z"}, "native": {"authored_by": "sfc work-pull/report", "policy": "append-only (SPEC 4.5); one content-addressed lease file per acquire/renew/release; the durable, crash-recoverable lease state is the max-seq fold of these events."}},
+  "edges": [{"rel": "LEASES", "to": "sf:program/work/phase4-black-hole-axial-explicit-tplus-band"}]
+}
