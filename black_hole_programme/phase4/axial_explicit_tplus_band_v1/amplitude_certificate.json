@@ -1,0 +1,54 @@
+{
+  "claim_flags": {
+    "explicit_Tplus_certified": false,
+    "reflection_matrix_certified": false,
+    "terminal_frame_invertibility_certified": false,
+    "title_theorem_dependency": false
+  },
+  "dependency_tag": "REDUCED-MODE",
+  "does_not_establish": [
+    "the entries of T_plus",
+    "a reflection matrix",
+    "terminal frame invertibility",
+    "failure of T_plus to exist",
+    "failure of a better-conditioned representation"
+  ],
+  "frequency_interval": [
+    "1/2",
+    "10001/20000"
+  ],
+  "independence_profile": {
+    "independent_arithmetic_backend": false,
+    "independent_code": false,
+    "independent_mathematical_derivation": false,
+    "independent_representation": false,
+    "role": "producer-output integrity and fail-closed status audit"
+  },
+  "interpretation": "The amplitude cocycle reaches r=4, but rectangular Taylor remainders exceed the coefficient scale by more than 10^6 in both endpoint frames.  This representation cannot certify the terminal inverse or explicit T_plus.",
+  "manifest_sha256": "0a0913b24ac207254a0191825efe4d2077bceaed0d5714ebff2e9db738cf41c1",
+  "payload_sha256": "706ff66c3fc1563637ce19631f417fc7d5bb08f49fcbc1c6f17cdd538dbdcc3a",
+  "schema": "phase4-tplus-amplitude-shortfall-certificate-v1",
+  "status": "FAIL_CLOSED_REPRESENTATION_WRAPPING",
+  "validated_result": {
+    "dense_crosswalk_applied_without_frame_inversion": true,
+    "diagnostics": {
+      "Iminus": {
+        "max_center_abs_exact": "1440645760547150592698451488415803879551703302027959/1461501637330902918203684832716283019655932542976",
+        "max_linear_abs_exact": "530505202284257631214249634907424180137846164567/1461501637330902918203684832716283019655932542976",
+        "max_remainder_abs_exact": "1587793111299475/262144",
+        "remainder_to_center_ratio_exact": "8852242400767941603749387449764824338583664471929415270400/1440645760547150592698451488415803879551703302027959",
+        "remainder_to_center_ratio_lower_integer": 6144635
+      },
+      "Iplus": {
+        "max_center_abs_exact": "786754829271409998051926930327842071785542816940538981/1461501637330902918203684832716283019655932542976",
+        "max_linear_abs_exact": "271968193331450108527915629670500651729120140592815/365375409332725729550921208179070754913983135744",
+        "max_remainder_abs_exact": "5628513597713689/8192",
+        "remainder_to_center_ratio_exact": "1004160380712622986504086141264177129395762437972464072916992/786754829271409998051926930327842071785542816940538981",
+        "remainder_to_center_ratio_lower_integer": 1276332
+      }
+    },
+    "physical_endpoint_normalization_preserved_through_stage4": true,
+    "raw_frame_enclosures_reached_r4": true,
+    "terminal_rank_certified": false
+  }
+}

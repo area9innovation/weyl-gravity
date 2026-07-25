@@ -55,6 +55,26 @@ This is the first interval proof that the proposed low-wrapping variables
 are well conditioned on a physical outgoing panel.  It is not yet a
 multi-panel projective checkpoint, and it does not assemble \(T_+\).
 
+## Amplitude-preserving cover audit
+
+`amplitude_taylor_transport.py` reuses the complete certified Phase-3
+infinity-plane factor cover while preserving the physical amplitude cocycle
+\(Y=G_{\rm chart}(Z)A\).  It restricts the parent frequency cell exactly to
+\(I_*=[1/2,10001/20000]\).
+
+Stages 0--4 certify the separate and combined plane ranks while preserving
+the endpoint normalization.  The dense fixed-frame crosswalk cannot certify
+a Grassmann pivot because of a representation-dependent remainder floor.
+A fail-closed raw-frame continuation nevertheless reaches \(r=4\), where the
+remainders exceed the coefficient scales by more than \(10^6\) for both
+frames.  Consequently this representation does **not** certify the terminal
+inverse or explicit \(T_+\).
+
+This is a negative result about the enclosure representation, not about the
+existence or invertibility of \(T_+\).  The scalar diagonal certificate
+remains valid.  See `amplitude_certificate.json` and
+`reports/axial-tplus-amplitude-continuation-2026-07-25.md`.
+
 Run:
 
 ```bash
@@ -67,4 +87,7 @@ python3 -m unittest -v black_hole_programme.phase4.axial_explicit_tplus_band_v1.
 python3 -m black_hole_programme.phase4.axial_explicit_tplus_band_v1.produce_projective_micro --reproduce
 python3 -m black_hole_programme.phase4.axial_explicit_tplus_band_v1.verify_projective_micro
 python3 -m unittest -v black_hole_programme.phase4.axial_explicit_tplus_band_v1.test_projective_micro
+python3 -m black_hole_programme.phase4.axial_explicit_tplus_band_v1.produce_amplitude_summary
+python3 -m black_hole_programme.phase4.axial_explicit_tplus_band_v1.verify_amplitude_taylor
+python3 -m unittest -v black_hole_programme.phase4.axial_explicit_tplus_band_v1.test_amplitude_taylor
 ```

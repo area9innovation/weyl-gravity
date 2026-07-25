@@ -136,3 +136,63 @@ not reached the matching section, and no paper theorem is promoted.
 
 CLOSE-OUT: SHORTFALL — the exact interaction picture and a new validated micro-successor are closed, but explicit \(T_+\) remains open at the full projective-interval transport gate.
 EVIDENCE: black_hole_programme/phase4/axial_explicit_tplus_band_v1/interaction_receipt.json
+
+## 25 July amplitude-preserving terminal audit
+
+The complete certified Phase-3 infinity-plane cover was replayed while
+retaining the exact amplitude cocycle
+\[
+Y=G_{\rm chart}(Z)A
+\]
+instead of resetting \(A\) after propagation or chart changes.  The
+frequency variable was restricted exactly to
+\[
+I_*=[1/2,10001/20000],\qquad
+\epsilon_{\rm parent}
+=-\frac{497}{625}+\frac{128}{625}\epsilon_{I_*}.
+\]
+
+Stages 0--4 preserved the endpoint normalization and certified ranks
+\((6,6,12)\).  At the dense fixed-frame crosswalk, the Grassmann pivot
+retained a remainder floor.  The producer therefore reconstructed the
+physical frame, applied the crosswalk without inversion, and continued the
+remaining factors as a raw Taylor frame.
+
+Both physical frame enclosures reached \(r=4\), but neither terminal inverse
+was certifiable:
+
+| frame | maximum coefficient scale | maximum remainder | remainder/scale |
+|---|---:|---:|---:|
+| incoming | \(9.8573\times10^2\) | \(6.0570\times10^9\) | \(6.1446\times10^6\) |
+| outgoing | \(5.3832\times10^5\) | \(6.8707\times10^{11}\) | \(1.2763\times10^6\) |
+
+The certificate stores exact rational values decoded from the rational
+Taylor coefficients and binary64 interval endpoints.  This establishes a
+representation-specific shortfall:
+
+> The amplitude-preserving Grassmann continuation followed by a rectangular
+> raw-frame tail cannot certify the terminal inverse or explicit \(T_+\) on
+> \(I_*\).
+
+It does not establish singularity of \(T_+\), nor failure of a
+better-conditioned representation.  The separately certified scalar
+diagonal factors continue to prove invertibility on \(I_*\); the unresolved
+data are the normalized extension shears and complete matrix inverse.
+
+Future attempts should retain normalized interaction variables
+\(J,K,\dot K\), projective/logarithmic amplitudes, or an affine equivalent
+through the dense crosswalk.  Repeating the rectangular raw tail is not
+recommended.
+
+Verification:
+
+```text
+python3 -m black_hole_programme.phase4.axial_explicit_tplus_band_v1.produce_amplitude_summary
+python3 -m black_hole_programme.phase4.axial_explicit_tplus_band_v1.verify_amplitude_taylor
+python3 -m unittest -v black_hole_programme.phase4.axial_explicit_tplus_band_v1.test_amplitude_taylor
+```
+
+CLOSE-OUT: SHORTFALL — the physical amplitude enclosure reaches \(r=4\), but
+rectangular wrapping prevents terminal rank and explicit-\(T_+\)
+certification.
+EVIDENCE: black_hole_programme/phase4/axial_explicit_tplus_band_v1/amplitude_certificate.json
