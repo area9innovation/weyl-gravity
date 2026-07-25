@@ -166,6 +166,44 @@ def payload() -> dict:
                 "evans_derivative_at_qnm": "b_B=I*omega*partial_m(a)/2",
                 "qnm_velocity": "2*I*kappa/omega",
             },
+            "quasinormal_logarithmic_partner": {
+                "spacetime_mode": "Psi_m=exp(I*omega_n(m)*t)*y_sigma(m,r)",
+                "canonical_tangent_class": "[partial_m(Psi_m)|0] mod C*Psi_0",
+                "relative_tangent": (
+                    "I*nu_n*t-sigma*I*r/(2*omega_n)+O(1)"
+                ),
+                "bach_relative_tangent": (
+                    "-I*kappa_n*t+sigma*r/4+O(1)"
+                ),
+                "bach_scale": "I*omega_n/2",
+                "mass_velocity": "2*I*kappa_n/omega_n",
+                "coulomb_log_coefficient": "rho_sigma_prime(0)=0",
+                "literal_radial_logarithm": False,
+                "linear_r_is_scalar_jost_tangent": True,
+                "normalization_changes_only_O1": True,
+            },
+            "qnm_jordan_time_law": {
+                "geometric": "H*V0=omega_n*V0",
+                "generalized": "H*V1=omega_n*V1+V0",
+                "evolution": (
+                    "exp(I*H*t)*V1=exp(I*omega_n*t)*(V1+I*t*V0)"
+                ),
+                "mass_tangent_polynomial_coefficient": "I*nu_n*t",
+                "polynomial_spatial_profile": "V0",
+                "constant_generalized_profile": "V1",
+            },
+            "asymptotic_reconstruction_gate": {
+                "proved_object": "reduced_scalar_Jost_tangent",
+                "candidate_realizations": [
+                    "enlarged_differentiated_Jost_tangent_domain",
+                    "augmented_boundary_pencil",
+                ],
+                "conditional_enhanced_profile": "t*exp(I*omega_n*t)/r",
+                "condition": "O_scri(omega_n)*V0 != 0",
+                "metric_falloff_certified": False,
+                "scalar_linear_r_cancellation_certified": False,
+                "null_infinity_overlap_certified": False,
+            },
             "forced_gauge_asymptotic": {
                 "q_slope_at_infinity": "-I/(8*omega)",
                 "reason": "4*omega**2*q_slope = -I*omega/2",
@@ -608,6 +646,11 @@ def payload() -> dict:
             "equivalence_gauge_forced_linear_infinity_growth": True,
             "boundary_transgression_identity_exact": True,
             "endpoint_compatible_massive_jost_classes": True,
+            "quasinormal_logarithmic_partner_exact": True,
+            "scalar_spacetime_tangent_polynomial_exact": True,
+            "first_order_radial_logarithm_absent": True,
+            "qnm_jordan_time_law_exact": True,
+            "asymptotic_reconstruction_gate_explicit": True,
             "critical_mass_qnm_velocity_nonzero": True,
             "filtered_critical_unfolding_exact": True,
             "two_parameter_unfolding_discriminant_exact": True,
@@ -695,6 +738,9 @@ def payload() -> dict:
             "numerical_qnm_acceleration_computed": False,
             "global_positive_metric_no_go": False,
             "asymptotic_strain_or_np_overlap_certified": False,
+            "generalized_metric_standard_asymptotic_falloff_certified": False,
+            "scalar_linear_r_tangent_cancellation_certified": False,
+            "literal_schwarzschild_radial_log_mode_established": False,
             "physical_source_adjoint_overlap_certified": False,
             "detector_detectability_certified": False,
             "parameter_estimation_sensitivity_certified": False,

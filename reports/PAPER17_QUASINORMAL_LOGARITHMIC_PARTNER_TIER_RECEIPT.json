@@ -1,0 +1,98 @@
+{
+  "schema": "tier-receipt-v1",
+  "result_id": "PAPER17_QUASINORMAL_LOGARITHMIC_PARTNER",
+  "timestamp_utc": "2026-07-25T11:17:55Z",
+  "input_commit": "587937ffec94a318d191aef22ed237137b2a9b74",
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "environment": {
+    "python": "3.12.13",
+    "sympy": "1.14.0",
+    "pdflatex": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian)"
+  },
+  "artifacts": {
+    "paper_tex": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "sha256": "bdcd38c9fa2b5ef77f7655f9e10aa6947bac68d44f15cbd7689bda314ad7f9ce"
+    },
+    "paper_pdf": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "sha256": "72f249be671383c6c87c81dd893bb7feeb5d51c0448a5636da3089b55a9b0bdf",
+      "pages": 51,
+      "bytes": 522411
+    },
+    "claim_map": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "sha256": "4f765c987644fa44a4ff6be8a75afb059cfa6651dc24542b9a49f0c0c83daa1c"
+    },
+    "generator": {
+      "path": "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "sha256": "f1b8f1d4064f1fbe9a02870d9008c7c5f53715231cd78170e79a8197a481d947"
+    },
+    "verifier": {
+      "path": "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "sha256": "97f4327b1d03032c4a0540c59b76e6c63480dbdd19c9183b8a53e09465df2bae"
+    },
+    "tests": {
+      "path": "paper/test_17_pure_weyl_extension_claim_map.py",
+      "sha256": "466b9196c71d56820f6d0723ea31d0304fab8f3572c3c81fb2a4fd09b97567d5"
+    },
+    "report": {
+      "path": "reports/phase4-black-hole-paper17-quasinormal-logarithmic-partner-2026-07-25.md",
+      "sha256": "8ac7797d1ebe6c86f74b9384732acd282ca7ad3fda9d0ac40d4554c0e853de92"
+    },
+    "work_item": {
+      "path": "planning/work-items/phase4-black-hole-paper17-quasinormal-logarithmic-partner.json",
+      "sha256": "be73c778dbfcd10121708bcb2f56eb94f10ee102694b6a764f12406f72a5a43c"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "two-pass pdflatex compilation with no warnings, undefined references, or overfull boxes",
+        "Python bytecode compilation",
+        "JSON parse and deterministic claim-map regeneration",
+        "scoped git diff --check",
+        "visual inspection of quasinormal-logarithmic-partner pages 20 and 21",
+        "receipt artifact hash audit"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "checks": [
+        "83 regression and mutation tests in 134.988 seconds",
+        "independent Bach-normalized spacetime-tangent calculation",
+        "independent Coulomb-exponent derivative cancellation",
+        "independent square-zero Jordan exponential",
+        "six new fail-closed mutations for signs, literal-log, falloff, overlap, and priority promotions"
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "No upstream operator, content-addressed authority, certificate schema, or validated numerical input changed."
+    },
+    "tier_3": {
+      "status": "PASS",
+      "checks": [
+        "python3 -m unittest discover: 149 tests passed in 0.280 seconds (2.26 seconds wall time)"
+      ]
+    }
+  },
+  "claim_boundary": {
+    "quasinormal_logarithmic_partner_exact": true,
+    "scalar_spacetime_tangent_polynomial_exact": true,
+    "first_order_radial_logarithm_absent": true,
+    "qnm_jordan_time_law_exact": true,
+    "asymptotic_reconstruction_gate_explicit": true,
+    "literal_schwarzschild_radial_log_mode": false,
+    "generalized_metric_standard_asymptotic_falloff": false,
+    "scalar_linear_r_tangent_cancellation": false,
+    "null_infinity_overlap": false,
+    "physical_source_adjoint_overlap": false,
+    "global_retarded_ringdown": false,
+    "absolute_priority": false,
+    "lorentzian_quantum_statement": false
+  }
+}

@@ -470,6 +470,77 @@ def verify_mass_jost_and_confluence(claims: dict) -> None:
         fail("nilpotent principal coefficient declaration drift")
 
 
+def verify_quasinormal_logarithmic_partner(claims: dict) -> None:
+    omega, nu, kappa, sigma, r, t = sp.symbols(
+        "omega nu kappa sigma r t", nonzero=True
+    )
+    I = sp.I
+    relative = I * nu * t - sigma * I * r / (2 * omega)
+    bach_scale = I * omega / 2
+    normalized = sp.simplify(
+        (bach_scale * relative).subs(nu, 2 * I * kappa / omega)
+    )
+    expected = -I * kappa * t + sigma * r / 4
+    if sp.simplify(normalized - expected) != 0:
+        fail("quasinormal logarithmic-partner normalization failed")
+
+    m = sp.symbols("m")
+    k = sp.sqrt(omega**2 - m)
+    rho = sigma * I * (2 * k + m / k)
+    if sp.simplify(sp.diff(rho, m).subs(m, 0)) != 0:
+        fail("quasinormal logarithmic-partner Coulomb-log cancellation failed")
+
+    N = sp.Matrix([[0, 1], [0, 0]])
+    if N**2 != sp.zeros(2):
+        fail("Jordan nilpotent control failed")
+    jordan_exponential = sp.eye(2) + I * t * N
+    V1 = sp.Matrix([0, 1])
+    V0 = sp.Matrix([1, 0])
+    if sp.simplify(jordan_exponential * V1 - (V1 + I * t * V0)) != sp.zeros(2, 1):
+        fail("quasinormal logarithmic-partner Jordan time law failed")
+
+    partner = claims["exact_identities"]["quasinormal_logarithmic_partner"]
+    if partner != {
+        "spacetime_mode": "Psi_m=exp(I*omega_n(m)*t)*y_sigma(m,r)",
+        "canonical_tangent_class": "[partial_m(Psi_m)|0] mod C*Psi_0",
+        "relative_tangent": "I*nu_n*t-sigma*I*r/(2*omega_n)+O(1)",
+        "bach_relative_tangent": "-I*kappa_n*t+sigma*r/4+O(1)",
+        "bach_scale": "I*omega_n/2",
+        "mass_velocity": "2*I*kappa_n/omega_n",
+        "coulomb_log_coefficient": "rho_sigma_prime(0)=0",
+        "literal_radial_logarithm": False,
+        "linear_r_is_scalar_jost_tangent": True,
+        "normalization_changes_only_O1": True,
+    }:
+        fail("quasinormal logarithmic-partner declaration drift")
+
+    jordan = claims["exact_identities"]["qnm_jordan_time_law"]
+    if jordan != {
+        "geometric": "H*V0=omega_n*V0",
+        "generalized": "H*V1=omega_n*V1+V0",
+        "evolution": "exp(I*H*t)*V1=exp(I*omega_n*t)*(V1+I*t*V0)",
+        "mass_tangent_polynomial_coefficient": "I*nu_n*t",
+        "polynomial_spatial_profile": "V0",
+        "constant_generalized_profile": "V1",
+    }:
+        fail("quasinormal logarithmic-partner Jordan declaration drift")
+
+    gate = claims["exact_identities"]["asymptotic_reconstruction_gate"]
+    if gate != {
+        "proved_object": "reduced_scalar_Jost_tangent",
+        "candidate_realizations": [
+            "enlarged_differentiated_Jost_tangent_domain",
+            "augmented_boundary_pencil",
+        ],
+        "conditional_enhanced_profile": "t*exp(I*omega_n*t)/r",
+        "condition": "O_scri(omega_n)*V0 != 0",
+        "metric_falloff_certified": False,
+        "scalar_linear_r_cancellation_certified": False,
+        "null_infinity_overlap_certified": False,
+    }:
+        fail("asymptotic reconstruction gate declaration drift")
+
+
 def verify_period_matrix(claims: dict) -> None:
     y1, y2, dy1, dy2, V = sp.symbols("y1 y2 dy1 dy2 V")
     Y = sp.Matrix([[y1, y2], [dy1, dy2]])
@@ -1180,6 +1251,14 @@ def main() -> None:
         "Q_q=2qD-D(q)",
         "Coulomb cancellation and differentiated Jost classes",
         "\\rho_\\sigma'(0)=0",
+        "Quasinormal logarithmic partner",
+        "Polynomial spacetime tangent of the quasinormal logarithmic",
+        "i\\nu_nt-\\frac{\\sigma i}{2\\omega_n}r+O(1)",
+        "-i\\kappa_nt+\\frac{\\sigma}{4}r+O(1)",
+        "Jordan time law",
+        "e^{iHt}V_1=e^{i\\omega_nt}(V_1+itV_0)",
+        "Not a literal Schwarzschild radial log mode",
+        "Asymptotic reconstruction gate",
         "Critical-mass Evans derivative and QNM velocity",
         "\\frac{2i}{\\omega_n}\\kappa_n\\ne0",
         "Reflected EP2 pair",
@@ -1303,6 +1382,11 @@ def main() -> None:
         "a physical matched spacetime source has been constructed",
         "nonlinear saturation has been computed",
         "arbitrarily large Weyl response is established",
+        "the generalized Schwarzschild QNM contains a radial logarithm",
+        "the generalized Weyl metric has standard asymptotic-flatness falloff",
+        "the scalar linear-r tangent cancels in the asymptotic strain",
+        "the null-infinity QNM overlap is certified nonzero",
+        "this is the first asymptotically flat black-hole logarithmic graviton",
     ]
     for phrase in forbidden:
         if phrase in text:
@@ -1647,6 +1731,7 @@ def main() -> None:
     verify_commutator()
     verify_period_matrix(claims)
     verify_mass_jost_and_confluence(claims)
+    verify_quasinormal_logarithmic_partner(claims)
     verify_spectral_velocity_and_contact_order(claims)
     verify_spectral_acceleration_and_krein_jordan(claims)
     verify_detector_normal_form(claims)
@@ -1656,8 +1741,9 @@ def main() -> None:
     print(
         "PASS exact cocycle, endpoint-compatible mass jet, filtered "
         "unfolding, spectral velocity and acceleration, contact-order, "
-        "Krein-Jordan, detector transfer, coherent forcing, confluent "
-        "metrics, and nilpotent root-space identities"
+        "Krein-Jordan, quasinormal logarithmic partner, detector transfer, "
+        "coherent forcing, confluent metrics, and nilpotent root-space "
+        "identities"
     )
     print("PASS authority provenance and fail-closed claim boundary")
 

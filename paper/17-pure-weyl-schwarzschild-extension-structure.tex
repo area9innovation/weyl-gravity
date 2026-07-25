@@ -64,6 +64,11 @@ gauge grows linearly at infinity, precisely matching the derivative of the
 moving massive Jost phase.  The long-range Coulomb tail cancels the
 apparent logarithmic phase derivative, so the gauge preserves the
 differentiated Jost classes modulo scalar normalization.
+The resulting generalized Schwarzschild QNM is the asymptotically flat
+quasinormal analogue of a critical-gravity logarithmic partner.  Its
+canonical scalar mass-tangent class has a polynomial spacetime prefactor:
+relative to the ordinary QNM it is linear in \(t\) and \(r\), while the
+coefficient of \(\log r\) vanishes.
 
 At the covariant parent-operator level, the pure-Weyl metric Green
 function is exactly the first mass derivative of the Einstein--Weyl
@@ -149,7 +154,7 @@ differential field.  The two spin-two layers therefore share scalar
 characteristics without defining two rationally separable radial
 branches.
 
-This paper establishes nine central results.
+This paper establishes ten central results.
 \begin{enumerate}
 \item The repeated spin-two block is a non-split Regge--Wheeler
   self-extension, realized exactly as a parameter jet.
@@ -165,6 +170,11 @@ This paper establishes nine central results.
   mass jet.  Its linearly growing equivalence gauge is endpoint-compatible:
   the Coulomb tail cancels the apparent logarithmic derivative of the
   massive Jost phase.
+\item The massive-QNM tangent is a quasinormal logarithmic partner in the
+  critical-gravity sense.  In the scalar infinity Jost frame its canonical
+  class has relative asymptotics
+  \(i\nu_nt-\sigma i r/(2\omega_n)+O(1)\), with no first-order radial
+  logarithm, and time translation acts by a length-two Jordan block.
 \item At a certified damped Schwarzschild quasinormal frequency the
   connection is defective.  The associated generalized root vector has a
   nonzero carrier quotient, and the exterior cut-off outgoing Green
@@ -215,6 +225,7 @@ is proved only for the isolated local resonance contour.
 \subsection*{Logical status}
 
 \begin{center}
+\footnotesize
 \begin{tabular}{p{0.33\linewidth}p{0.37\linewidth}p{0.20\linewidth}}
 \toprule
 Result & Required input & Status\\
@@ -234,6 +245,9 @@ Static class and threshold valuation
 Endpoint-compatible mass comparison
 & Moving massive/Coulomb Jost germs and analytic normalization
 & Exact at the simple QNM\\
+Quasinormal logarithmic partner
+& Massive-QNM tangent class, Coulomb cancellation, and Jordan chain
+& Exact reduced-mode theorem\\
 Defective physical specialization
 & Winding-one contour, local selector, spin-one unit
 & Validated theorem\\
@@ -1548,6 +1562,147 @@ places it in the endpoint Jost line, proving the infinity statement.
 Regular Frobenius dependence and the unchanged indicial exponent prove
 the horizon statement.
 \end{proof}
+
+\subsection{Quasinormal logarithmic partner}
+\label{sec:qnm-logarithmic-partner}
+
+Critical gravity on anti-de Sitter backgrounds is known to acquire
+generalized spin-two modes when the massive and massless operators
+coalesce.  These are conventionally called logarithmic modes, and they
+arise as limits of the massive spin-two modes of the noncritical
+theory~\cite{lupope2011,bergshoeff2011}.  The Schwarzschild construction
+above has the same mass-derivative and Jordan-chain mechanism, but its
+endpoint polynomial is adapted to asymptotically flat QNM conditions.
+Accordingly, we use the qualified term \emph{quasinormal logarithmic
+partner}; \emph{Jordan QNM} or \emph{polynomial QNM partner} are equivalent
+descriptions of the reduced-mode result below.
+
+\begin{theorem}[Polynomial spacetime tangent of the quasinormal logarithmic
+partner]\label{thm:qnm-logarithmic-partner}
+Let
+\[
+ \Psi_m(t,r)=e^{i\omega_n(m)t}y_\sigma(m,r),
+ \qquad
+ \nu_n=\omega_n'(0)=\frac{2i}{\omega_n}\kappa_n,
+\]
+where \(y_\sigma\) is a normalized massive infinity Jost germ and
+\(\sigma=\pm1\) labels its phase.  Then the normalization-independent
+tangent class
+\[
+ [\partial_m\Psi_m|_0]\in
+ \mathcal D/\C\Psi_0
+\]
+has the relative infinity asymptotics
+\begin{equation}\label{eq:qnm-log-partner-asymptotic}
+ \boxed{\;
+ \frac{\partial_m\Psi_m|_0}{\Psi_0}
+ =i\nu_nt-\frac{\sigma i}{2\omega_n}r+O(1).
+ \;}
+\end{equation}
+In the Bach normalization \(c(\omega_n)=i\omega_n/2\),
+\begin{equation}\label{eq:qnm-log-partner-bach-asymptotic}
+ \boxed{\;
+ \frac{c(\omega_n)\partial_m\Psi_m|_0}{\Psi_0}
+ =-i\kappa_nt+\frac{\sigma}{4}r+O(1).
+ \;}
+\end{equation}
+The \(O(1)\) term changes under analytic normalization of the QNM family,
+but the displayed coefficients of \(t\) and \(r\) do not.  Moreover,
+\[
+ \rho_\sigma'(0)=0,
+\]
+so the normalized scalar Jost tangent has no first-order
+\(\log r\) term.
+\end{theorem}
+
+\begin{proof}
+Differentiating the separated spacetime mode gives
+\[
+ \frac{\partial_m\Psi_m|_0}{\Psi_0}
+ =i\omega_n'(0)t+
+ \frac{\partial_my_\sigma(0,r)}{y_\sigma(0,r)}.
+\]
+Theorem~\ref{thm:jost-mass-jet} supplies the second term and proves
+\(\rho_\sigma'(0)=0\), yielding
+\eqref{eq:qnm-log-partner-asymptotic}.  Multiplication by
+\(c=i\omega_n/2\), followed by
+\(\nu_n=2i\kappa_n/\omega_n\), gives
+\eqref{eq:qnm-log-partner-bach-asymptotic}.  Replacing
+\(\Psi_m\) by \(v(m)\Psi_m\), with \(v(0)\ne0\), adds only
+\(v'(0)\Psi_0/v(0)\), which changes the \(O(1)\) representative but not
+the tangent class or either polynomial coefficient.
+\end{proof}
+
+\begin{proposition}[Jordan time law]\label{prop:qnm-jordan-time-law}
+Normalize a length-two root chain by
+\[
+ HV_0=\omega_nV_0,
+ \qquad
+ HV_1=\omega_nV_1+V_0.
+\]
+Then
+\[
+ \boxed{\;
+ e^{iHt}V_1=e^{i\omega_nt}(V_1+itV_0).
+ \;}
+\]
+The physical mass tangent is the same generalized class with the chain
+scale fixed by \(\nu_n\); hence its polynomial coefficient is
+\(i\nu_nt\).  The \(t\)-weighted spatial profile is the ordinary Einstein
+QNM \(V_0\), while the time-independent generalized component \(V_1\)
+has nonzero carrier quotient.
+\end{proposition}
+
+\begin{proof}
+On the root space, \(H=\omega_nI+N\) with \(N^2=0\) and
+\(NV_1=V_0\).  Therefore
+\[
+ e^{iHt}=e^{i\omega_nt}(I+itN).
+\]
+\end{proof}
+
+Independent black-hole exceptional-point analyses likewise identify a
+linear-in-time contribution as the correct local resonant ansatz
+~\cite{yangberti2025,cheng2026}.  Here that time law is tied additionally
+to the exact Bach self-extension, its mass tangent, its certified Smith
+type, and the nonzero exterior cut-off Green double pole.
+
+\begin{remark}[Not a literal Schwarzschild radial log mode]
+In the anti-de Sitter examples, differentiating a radial scaling exponent
+produces explicit logarithmic falloff.  Here the two terms in
+\[
+ \rho_\sigma(m)=\sigma i\left(2k+\frac{m}{k}\right)
+\]
+cancel at first order.  The surviving linear \(r\) term comes from
+differentiating \(e^{\sigma ikr}\).  Thus the logarithmic terminology
+refers to the critical mass-derivative/Jordan ancestry, not to the
+presence of \(\log r\) in the normalized Schwarzschild scalar Jost germ.
+\end{remark}
+
+\begin{remark}[Asymptotic reconstruction gate]
+The linear \(r\) factor is proved for the reduced scalar Jost tangent.  It
+does not by itself imply that a reconstructed metric, curvature scalar,
+Newman--Penrose quantity, or strain has \(O(1)\) rather than \(O(r^{-1})\)
+falloff.  Schwarzschild radiative observables require specific
+gauge-invariant reconstruction maps~\cite{martelpoisson2005}.  A global
+realization may either enlarge the endpoint domain to include
+differentiated-Jost tangents or retain a standard bulk domain and place the
+tangent data in an augmented boundary pencil.
+
+The leading double-pole term is nevertheless Einstein-shaped:
+\[
+ e^{i\omega_nt}(V_1+itV_0).
+\]
+Consequently, if a subsequently constructed null-infinity map satisfies
+\(\mathcal O_{\mathscr I^+}(\omega_n)V_0\ne0\), its enhanced term has the
+ordinary outgoing spatial profile with a linear time envelope,
+schematically \(t e^{i\omega_nt}/r\).  Neither that overlap nor cancellation
+of the scalar \(O(r)\) tangent in the time-independent generalized
+component is claimed here.  On the source side, dynamical QNM excitation
+from generic Schwarzschild plunges provides a concrete methodology for a
+future adjoint-overlap calculation~\cite{deamicis2026}; no such Weyl source
+calculation is performed in this paper.
+\end{remark}
 
 \begin{theorem}[Critical-mass Evans derivative and QNM velocity]
 \label{thm:mass-qnm-slope}
@@ -3950,6 +4105,9 @@ Observable transfer
 Coherent forcing and matched drive
 & Isolated critical kernel and coefficient-space \(L^2\) budget
 & Exact conditional reduced-mode\\
+Quasinormal logarithmic partner
+& Scalar mass tangent, vanishing Coulomb-log derivative, and Jordan law
+& Exact reduced-mode\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -3978,7 +4136,11 @@ detectability, or parameter-estimation sensitivity.  The polynomial
 contour contribution.  The coherent-drive and pulse-train laws likewise
 apply only to that isolated kernel; no physical matched-source
 construction, invariant energy-budget identity, or nonlinear saturation
-calculation is claimed.
+calculation is claimed.  The quasinormal logarithmic-partner theorem is a
+reduced scalar statement: it does not prove a literal Schwarzschild radial
+logarithm, standard asymptotic-flatness falloff for the generalized metric,
+cancellation of the scalar \(O(r)\) tangent in a strain or
+Newman--Penrose observable, or a nonzero null-infinity overlap.
 
 \section{Conclusion}
 
@@ -4000,6 +4162,15 @@ Ricci-carrier quotient, the compactly cut-off exterior outgoing Green
 operator has a genuine rank-one double pole, its full two-layer coefficient
 is nilpotent, and the massive spin-two QNM moves with nonzero critical
 slope.
+The generalized state is therefore the asymptotically flat quasinormal
+analogue of critical gravity's logarithmic partner: modulo the Einstein
+mode it is the mass derivative of the massive QNM.  Unlike the familiar
+anti-de Sitter examples, its normalized scalar Jost tangent contains no
+first-order radial logarithm.  Its universal endpoint polynomial is
+linear in \(t\) and \(r\), and the normalized Jordan chain evolves as
+\(e^{i\omega_nt}(V_1+itV_0)\).  Whether the linear radial tangent cancels
+in a gauge-invariant null-infinity observable remains an explicit
+reconstruction problem.
 At the covariant level, the metric response is the mass derivative of the
 massive spin-two resolvent: QNM motion controls its double coefficient,
 while projector motion controls its accompanying simple coefficient.  The
@@ -4068,6 +4239,48 @@ opposite signatures; no positive-definite form or bounded commuting
 involution survives the critical Jordan limit.
 
 \begin{thebibliography}{9}
+
+\bibitem{lupope2011}
+H.~L\"u and C.~N.~Pope,
+\newblock Critical gravity in four dimensions,
+\newblock \emph{Physical Review Letters} \textbf{106} (2011), 181302,
+\newblock \href{https://doi.org/10.1103/PhysRevLett.106.181302}
+{doi:10.1103/PhysRevLett.106.181302}.
+
+\bibitem{bergshoeff2011}
+E.~A.~Bergshoeff, O.~Hohm, J.~Rosseel, and P.~K.~Townsend,
+\newblock Modes of log gravity,
+\newblock \emph{Physical Review D} \textbf{83} (2011), 104038,
+\newblock \href{https://doi.org/10.1103/PhysRevD.83.104038}
+{doi:10.1103/PhysRevD.83.104038}.
+
+\bibitem{yangberti2025}
+Y.~Yang, E.~Berti, and N.~Franchini,
+\newblock Black hole quasinormal mode resonances,
+\newblock \emph{Physical Review Letters} \textbf{135} (2025), 201401,
+\newblock \href{https://doi.org/10.1103/hfv8-n444}
+{doi:10.1103/hfv8-n444}.
+
+\bibitem{cheng2026}
+L.~Cheng, X.~Guo, Y.~Li, J.~Tao, and P.~Wang,
+\newblock Exceptional points in quasinormal spectra of hairy black holes,
+\newblock arXiv:2603.22261 [gr-qc] (2026),
+\newblock \href{https://arxiv.org/abs/2603.22261}{arXiv:2603.22261}.
+
+\bibitem{martelpoisson2005}
+K.~Martel and E.~Poisson,
+\newblock Gravitational perturbations of the Schwarzschild spacetime: A
+practical covariant and gauge-invariant formalism,
+\newblock \emph{Physical Review D} \textbf{71} (2005), 104003,
+\newblock \href{https://doi.org/10.1103/PhysRevD.71.104003}
+{doi:10.1103/PhysRevD.71.104003}.
+
+\bibitem{deamicis2026}
+M.~De~Amicis, E.~Cannizzaro, G.~Carullo, and L.~Sberna,
+\newblock Dynamical quasinormal mode excitation,
+\newblock \emph{Physical Review D} \textbf{113} (2026), 024048,
+\newblock \href{https://doi.org/10.1103/bgjv-lvyd}
+{doi:10.1103/bgjv-lvyd}.
 
 \bibitem{kapitula1999}
 T.~Kapitula,

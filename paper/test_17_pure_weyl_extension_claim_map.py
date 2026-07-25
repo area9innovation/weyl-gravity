@@ -1004,6 +1004,83 @@ class Paper17ClaimMapTests(unittest.TestCase):
             "Schwarzschild Green function"
         )
 
+    def test_log_partner_radial_sign_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "quasinormal_logarithmic_partner"
+            ].update(
+                {
+                    "bach_relative_tangent": (
+                        "-I*kappa_n*t-sigma*r/4+O(1)"
+                    )
+                }
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "logarithmic-partner declaration drift",
+            result.stdout + result.stderr,
+        )
+
+    def test_log_partner_literal_log_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "quasinormal_logarithmic_partner"
+            ].update({"literal_radial_logarithm": True})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "logarithmic-partner declaration drift",
+            result.stdout + result.stderr,
+        )
+
+    def test_log_partner_jordan_sign_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "qnm_jordan_time_law"
+            ].update(
+                {
+                    "evolution": (
+                        "exp(I*H*t)*V1=exp(I*omega_n*t)*(V1-I*t*V0)"
+                    )
+                }
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "Jordan declaration drift",
+            result.stdout + result.stderr,
+        )
+
+    def test_log_partner_metric_falloff_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the generalized Weyl metric has standard "
+            "asymptotic-flatness falloff"
+        )
+
+    def test_log_partner_null_infinity_overlap_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the null-infinity QNM overlap is certified nonzero"
+        )
+
+    def test_log_partner_absolute_priority_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "this is the first asymptotically flat black-hole "
+            "logarithmic graviton"
+        )
+
     def test_energy_budget_promotion_rejected(self) -> None:
         self.assert_promotion_rejected(
             "the coefficient-space budget is invariant gravitational energy"
