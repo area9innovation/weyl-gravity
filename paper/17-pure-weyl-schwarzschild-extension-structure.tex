@@ -2,7 +2,7 @@
 
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
-\usepackage{microtype,xurl}
+\usepackage{microtype,xurl,xcolor}
 \usepackage[colorlinks=true,linkcolor=blue!55!black,
             citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
 
@@ -29,10 +29,10 @@ four-state spin-two/spin-one system and reduces projectively to a scalar
 cocycle paired with the symmetric-square Regge--Wheeler module.  At a simple
 spin-two quasinormal frequency the complete connection has precisely two
 local Smith branches.  A validated projective Evans calculation selects the
-defective branch at one physical damped mode.  The result is currently a
-connection-level exceptional point; promotion to a second-order
-Green-resolvent pole requires the analytic Fredholm construction stated
-here as a separate programme.
+defective branch at one physical damped mode.  Its generalized root vector
+has nonzero carrier quotient, and an exact finite-interval Fredholm
+reduction promotes the connection singularity to a nonzero rank-one
+second-order radial Green-operator pole.
 \end{abstract}
 
 \section{Purpose and claim boundary}
@@ -47,11 +47,12 @@ for the machinery that would otherwise obscure that argument:
 \item the scalar projective cocycle and symmetric-square pairing;
 \item local Smith and Fitting-ideal classification;
 \item projective Evans, contour-moment, Hankel, and Loewner formulations;
-\item the conditional analytic Fredholm promotion.
+\item the finite-interval analytic Fredholm promotion and its causal claim
+boundary.
 \end{enumerate}
 
-No statement in this draft promotes the certified connection root chain to a
-physical Green-resolvent pole or a time-domain generalized ringdown term.
+No statement in this draft promotes the certified radial pole to a causal
+spacetime resolvent or a time-domain generalized ringdown term.
 
 \section{Filtered module and exact partial jet}
 
@@ -101,7 +102,7 @@ transforms under a rational triangular gauge by
 \mathcal I\longmapsto
 \mathcal I-\frac12\mathcal K_Uq,
 \qquad
-\mathcal K_U=D^3+4UD+2U'.
+\mathcal K_U=D^3+4UD+2D(U).
 \]
 Thus the projective content is the class
 \[
@@ -112,6 +113,20 @@ The kernel of \(\mathcal K_U\) is the symmetric square of the scalar
 Regge--Wheeler solution space.  The three off-diagonal spin-two connection
 entries are therefore periods of one scalar cocycle against
 \(y_1^2,y_1y_2,y_2^2\).
+
+For the axial \(\ell=2\) cocycle, exact rational reduction gives
+\[
+\mathcal I_{\rm red}
+=\mathcal K_U\!\left[
+-\frac{i}{120\omega}
+\left(15r+13+\frac{12}{r}+\frac9{r^2}\right)
+\right]
++\frac{i\omega}{2}\frac{r-2}{r}.
+\]
+Thus its class has the regular representative
+\(\frac{i\omega}{2}[(r-2)/r]\) at fixed \(\omega\ne0\).  The removing gauge
+is itself singular as \(\omega\to0\), so this is not a threshold-uniform
+splitting.
 
 \section{Local Smith dichotomy}
 
@@ -134,22 +149,25 @@ that the spin-one factor is a local unit.  Hence the complete connection has
 Smith valuations \((0,0,2)\), algebraic multiplicity two, geometric
 multiplicity one, and one length-two connection root chain.
 
-\section{Next theorem}
+\section{Generalized chain and radial Green pole}
 
-Let \(L(\omega):D\to Y\) be an analytic Fredholm realization of the scalar
-QNM problem, and let the extension be analytic and bounded from \(D\) to
-\(Y\).  The triangular parametrix then makes the repeated block analytic
-Fredholm.  If
+Writing \(z=\omega-\omega_n\), \(a=a_1z+O(z^2)\), and
+\(b=b_0+O(z)\), the root vector is the source-Einstein vector
+\((1,0)\).  The root-polynomial equation forces the quotient component of
+the generalized vector to be
 \[
-\alpha_n=\langle\widetilde u_n,L'(\omega_n)u_n\rangle,\qquad
-\beta_n=\langle\widetilde u_n,\mathcal E(\omega_n)u_n\rangle
+(c_1)_Y=-\frac{a_1}{b_0}\ne0.
 \]
-and \(\beta_n\ne0\), its inverse has upper-right principal part
-\[
--\frac{\beta_n}{\alpha_n^2(\omega-\omega_n)^2}
-u_n\otimes\widetilde u_n.
-\]
-Establishing the required endpoint domains and graph-norm bounds is the
-remaining hypothesis, not a result of the present connection certificate.
+It is therefore intrinsically non-Einstein.
+
+On any fixed ordinary interval inside the certified endpoint continuation
+domains, variation of constants reduces the phase-factored
+\(H^1\)-to-\(L^2\oplus\C^3\oplus\C^3\) boundary pencil to the identity plus
+the factor-adapted connection matrix, up to analytic units.  The Smith type
+\((0,0,2)\) consequently gives a nonzero rank-one second-order Laurent
+coefficient of the radial inverse.  Exact reconstruction does not annihilate
+its source-Einstein range.  What remains open is the causal exterior
+spacetime realization, inverse-Laplace deformation, and any
+\(t e^{i\omega_nt}\) conclusion.
 
 \end{document}
