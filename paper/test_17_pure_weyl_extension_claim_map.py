@@ -111,6 +111,45 @@ class Paper17ClaimMapTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("resonant evaluation chain", result.stdout + result.stderr)
 
+    def test_mass_parameter_relation_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"]["critical_mass_jet"].update(
+                {"parameter_relation": "m = -I*omega*tau/2"}
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("mass-jet declaration drift", result.stdout + result.stderr)
+
+    def test_forced_gauge_slope_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"]["forced_gauge_asymptotic"].update(
+                {"q_slope_at_infinity": "-I/(4*omega)"}
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("gauge slope identity failed", result.stdout + result.stderr)
+
+    def test_boundary_gauge_factor_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"]["boundary_transgression"].update(
+                {"commutator_gauge": "Qhat=Q(q)"}
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("boundary-transgression normalization", result.stdout + result.stderr)
+
     def test_causal_resolvent_promotion_rejected(self) -> None:
         self.assert_promotion_rejected(
             "the causal spacetime resolvent has a second-order pole"
@@ -125,6 +164,14 @@ class Paper17ClaimMapTests(unittest.TestCase):
         self.assert_promotion_rejected(
             "the intrinsic radial parameter \\(\\tau\\) is the physical squared mass"
         )
+
+    def test_physical_mass_slope_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the physical massive QNM slope is certified"
+        )
+
+    def test_endpoint_transgression_vanishing_rejected(self) -> None:
+        self.assert_promotion_rejected("the endpoint transgression vanishes")
 
     def test_all_ell_nonsplitting_promotion_rejected(self) -> None:
         self.assert_promotion_rejected(

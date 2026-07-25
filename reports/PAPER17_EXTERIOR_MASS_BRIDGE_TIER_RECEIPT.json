@@ -1,0 +1,84 @@
+{
+  "schema": "tier-receipt-v1",
+  "result_id": "PAPER17_EXTERIOR_CUTOFF_POLE_LOCAL_MASS_BRIDGE",
+  "timestamp_utc": "2026-07-25T04:30:25Z",
+  "input_commit": "33c10f0ec37b0d4092148579e82c48e7535e5bad",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "environment": {
+    "python": "3.12.13",
+    "sympy": "1.14.0",
+    "pdflatex": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian)"
+  },
+  "artifacts": {
+    "paper_tex": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "sha256": "f89ba375d85b45b3bae832f4fd97d0fcee8e5934659a52f389bed56f228b0ea6"
+    },
+    "paper_pdf": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "sha256": "8f4ef49a01cc62cd4dc246543bd8469a8b034dcaefb14700a4d54425b9c6e98d",
+      "pages": 17,
+      "bytes": 297098
+    },
+    "claim_map": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "sha256": "33e0aa1405fb7327662b965d6d442eb08d11304a0a2d5fb1f9f12adf54c40357"
+    },
+    "generator": {
+      "path": "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "sha256": "fd8e10b2a2d3f38c60edfb6f1c12913da38674ad31b4ca933964966e948dd07b"
+    },
+    "verifier": {
+      "path": "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "sha256": "df762ee934a341ad059cc06d211c46edd5cc8ea865e55f8a45eb28141a714d51"
+    },
+    "tests": {
+      "path": "paper/test_17_pure_weyl_extension_claim_map.py",
+      "sha256": "6fbc57adfb15c9bd2ed7de1dea39cb78df2b477404b832dbbdcd53c15cc0ca14"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "two-pass pdflatex compilation",
+        "Python bytecode compilation",
+        "scoped git diff --check",
+        "generated JSON parse"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "checks": [
+        "15 regression and mutation tests",
+        "claim-map deterministic drift check",
+        "independent semantic, symbolic, and provenance verifier"
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "No upstream mathematical input, operator, certificate, or schema changed."
+    },
+    "tier_3": {
+      "status": "PASS",
+      "checks": [
+        "python3 -m unittest discover: 149 tests passed in 0.316 seconds (2.86 seconds wall)"
+      ]
+    }
+  },
+  "claim_boundary": {
+    "exterior_cutoff_radial_green_double_pole": true,
+    "local_tt_critical_mass_jet_identified": true,
+    "forced_unbounded_equivalence_gauge": true,
+    "finite_cut_boundary_transgression": true,
+    "endpoint_transgression_evaluated": false,
+    "global_jost_mass_slope_identified": false,
+    "causal_spacetime_resolvent": false,
+    "retarded_ringdown_term": false,
+    "time_domain_stability": false,
+    "quantum_statement": false
+  }
+}

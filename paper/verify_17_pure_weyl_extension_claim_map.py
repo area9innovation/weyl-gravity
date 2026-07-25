@@ -55,6 +55,17 @@ def verify_cocycle(claims: dict) -> None:
     cocycle /= 5 * r**4 * omega
     if sp.cancel(cocycle - Kq - representative) != 0:
         fail("Bach cocycle normal-form identity failed")
+    slope = sp.limit(q / r, r, sp.oo)
+    declared_slope = sp.sympify(
+        claims["exact_identities"]["forced_gauge_asymptotic"][
+            "q_slope_at_infinity"
+        ],
+        locals={"I": I, "omega": omega},
+    )
+    if sp.simplify(slope - declared_slope) != 0:
+        fail("forced equivalence-gauge slope identity failed")
+    if sp.simplify(4 * omega**2 * slope + I * omega / 2) != 0:
+        fail("forced equivalence-gauge constant matching failed")
 
 
 def verify_commutator() -> None:
@@ -133,10 +144,19 @@ def main() -> None:
         "\\mathfrak M_n([K])",
         "-\\frac{\\kappa_n}{\\alpha_n}",
         "Nonzero carrier in the generalized root",
-        "Reduced outgoing Green pole",
+        "Finite-interval outgoing Green pole",
+        "Exterior cut-off Green pole",
+        "exact transparent boundary conditions",
+        "\\chi_{\\rm o}R_{\\rm ext}(\\omega)\\chi_{\\rm s}",
         "C_c^\\infty((r_H,r_I);\\C^6)",
         "Conditional global Fredholm promotion",
-        "Physical Einstein--Weyl mass identification",
+        "Exact local critical-mass-jet identification",
+        "[\\mathcal I_{\\rm mass}]=[f]",
+        "m=\\frac{i\\omega}{2}\\tau",
+        "No bounded rational mass-equivalence gauge",
+        "\\widehat Q=-2Q(q)",
+        "Finite-cut boundary transgression",
+        "remains to be computed or",
         "does not establish a causal spacetime resolvent",
     ]
     for phrase in required:
@@ -152,6 +172,8 @@ def main() -> None:
         "the complete complex reducibility locus is known",
         "time-domain stability is established",
         "quantum unitarity is established",
+        "the physical massive QNM slope is certified",
+        "the endpoint transgression vanishes",
     ]
     for phrase in forbidden:
         if phrase in text:
@@ -236,6 +258,33 @@ def main() -> None:
     ]:
         require_flag(fredholm, key, False, "Fredholm promotion")
 
+    mass = json.loads(
+        (ROOT / authorities["critical_mass_parent"]["path"]).read_text()
+    )
+    for key in [
+        "parent_mass_variation_exact",
+        "mass_derivative_modulo_einstein_kernel_exact",
+        "tt_difference_quotient_exact",
+    ]:
+        require_flag(mass, key, True, "critical mass parent")
+    for key in [
+        "physical_b_equals_minus_mass_derivative_of_jost",
+        "physical_mass_jet_equals_intrinsic_radial_tau",
+        "physical_massive_qnm_slope_certified",
+    ]:
+        require_flag(mass, key, False, "critical mass parent")
+
+    continuation = json.loads(
+        (ROOT / authorities["analytic_continuation"]["path"]).read_text()
+    )
+    for key in [
+        "axial_mode_series_omega_poles_exact_certified",
+        "domain_declared_excludes_poles",
+        "no_branch_points_axial_certified",
+    ]:
+        require_flag(continuation, key, True, "analytic continuation")
+    require_flag(continuation, "stability_qnm_scattering_claimed", False, "continuation")
+
     reconstruction = json.loads(
         (ROOT / authorities["metric_reconstruction"]["path"]).read_text()
     )
@@ -262,6 +311,23 @@ def main() -> None:
         "fredholm_principal_coefficient": "-kappa/alpha",
     }:
         fail("resonant evaluation chain declaration drift")
+    mass_jet = claims["exact_identities"]["critical_mass_jet"]
+    if mass_jet != {
+        "mass_operator": "L - m*f",
+        "mass_cocycle_class": "[f]",
+        "bach_to_mass_class": "I*omega/2",
+        "parameter_relation": "m = I*omega*tau/2",
+    }:
+        fail("critical mass-jet declaration drift")
+    transgression = claims["exact_identities"]["boundary_transgression"]
+    if transgression != {
+        "base_gauge": "Q(q)=q*D-D(q)/2",
+        "commutator_gauge": "Qhat=-2*Q(q)",
+        "bulk_identity": "K_Bach-I*omega*K_mass/2=[L,Qhat]",
+        "finite_cut_term": "[W(tilde_u,Qhat*u)]_xminus^xplus",
+        "physical_endpoint_target": "[W(tilde_u,Qhat*u)]_H^I",
+    }:
+        fail("boundary-transgression normalization drift")
     green = claims["exact_identities"]["green_principal_coefficient"]
     if green != {
         "connection": "-b0/a1**2",
@@ -271,7 +337,10 @@ def main() -> None:
         fail("Green principal coefficient declaration drift")
 
     print("PASS paper/17-pure-weyl-schwarzschild-extension-structure.tex")
-    print("PASS exact cocycle, triangular gauge, period matrix, and root-chain identities")
+    print(
+        "PASS exact cocycle, mass jet, forced gauge slope, boundary "
+        "transgression, period matrix, and root-chain identities"
+    )
     print("PASS authority provenance and fail-closed claim boundary")
 
 

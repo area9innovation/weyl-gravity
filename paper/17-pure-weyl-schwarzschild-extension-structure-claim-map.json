@@ -1,5 +1,19 @@
 {
   "authorities": {
+    "analytic_continuation": {
+      "path": "black_hole_programme/certificates/BH3_ANALYTIC_CONTINUATION_GATE.json",
+      "result_id": "PURE_WEYL_BH3_ANALYTIC_CONTINUATION_GATE",
+      "result_token": "BH3_AXIAL_ANALYTIC_CONTINUATION_MEROMORPHIC_POLAR_NOT_ACTIVATED",
+      "sha256": "75e18d9a91d6827ad2fae645a05b0fe1cc9a50459f9b03dca280c884f917aca3",
+      "status": null
+    },
+    "critical_mass_parent": {
+      "path": "black_hole_programme/phase4/einstein_weyl_critical_mass_jet_v1/certificate.json",
+      "result_id": null,
+      "result_token": null,
+      "sha256": "a0245456f2ac3eecb4fe4e8a05be4dabbf277875546c91248713477a5bb2f67e",
+      "status": "EXACT_CRITICAL_MASS_PARENT_JET_RADIAL_CROSSWALK_OPEN"
+    },
     "factor_filtration": {
       "path": "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json",
       "result_id": "PURE_WEYL_PHASE3_AXIAL_RW_LX_TRIANGULAR_PREFLIGHT",
@@ -68,12 +82,17 @@
     "axial_l2_nonsplit_all_positive_real": true,
     "axial_l2_rw_rw_maxwell_filtration": true,
     "bach_cocycle_normal_form_exact": true,
+    "bach_mass_parameter_relation_exact_local": true,
+    "boundary_transgression_identity_exact": true,
+    "equivalence_gauge_forced_linear_infinity_growth": true,
     "exact_partial_jet_realization": true,
+    "exterior_cutoff_radial_green_double_pole": true,
     "finite_interval_radial_green_double_pole": true,
     "full_connection_smith_0_0_2": true,
     "generalized_root_carrier_nonzero": true,
     "green_principal_coefficient_rank_one": true,
     "local_metric_reconstruction_nonzero": true,
+    "local_tt_critical_mass_jet_identified": true,
     "resonant_evaluation_identity_exact": true,
     "resonant_functional_descends_to_extension_class": true,
     "spin2_local_commutant_dual_numbers": true,
@@ -90,6 +109,23 @@
       "parameter_domain": "omega != 0",
       "q": "-I*(15*r + 13 + 12/r + 9/r**2)/(120*omega)",
       "representative": "I*omega*(r-2)/(2*r)"
+    },
+    "boundary_transgression": {
+      "base_gauge": "Q(q)=q*D-D(q)/2",
+      "bulk_identity": "K_Bach-I*omega*K_mass/2=[L,Qhat]",
+      "commutator_gauge": "Qhat=-2*Q(q)",
+      "finite_cut_term": "[W(tilde_u,Qhat*u)]_xminus^xplus",
+      "physical_endpoint_target": "[W(tilde_u,Qhat*u)]_H^I"
+    },
+    "critical_mass_jet": {
+      "bach_to_mass_class": "I*omega/2",
+      "mass_cocycle_class": "[f]",
+      "mass_operator": "L - m*f",
+      "parameter_relation": "m = I*omega*tau/2"
+    },
+    "forced_gauge_asymptotic": {
+      "q_slope_at_infinity": "-I/(8*omega)",
+      "reason": "4*omega**2*q_slope = -I*omega/2"
     },
     "generalized_root": {
       "assumptions": "a1 != 0 and b0 != 0",
@@ -128,10 +164,11 @@
     "all_ell_bach_nonsplitting": false,
     "causal_exterior_spacetime_resolvent": false,
     "complete_complex_reducibility_locus": false,
+    "endpoint_transgression_evaluated": false,
     "full_six_state_commutant_dual_numbers": false,
+    "global_jost_mass_parameter_identified": false,
     "massive_qnm_slope_identified": false,
     "parent_radial_overlap_operator_identity": false,
-    "physical_mass_parameter_identified": false,
     "quantum_positivity_or_unitarity": false,
     "retarded_inverse_transform": false,
     "t_exp_iomega_t_ringdown_term": false,
@@ -140,7 +177,7 @@
   "lifecycle_state": "DRAFT_ALLOWED",
   "manuscript": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
   "paper_id": "PAPER_17_PURE_WEYL_EXTENSION_RESONANCE",
-  "paper_sha256": "a4d5fbf9528930363293fe76d299c1b56a3993de698f6f850265b964d755323a",
+  "paper_sha256": "f89ba375d85b45b3bae832f4fd97d0fcee8e5934659a52f389bed56f228b0ea6",
   "result_id": "PAPER17_NONSPLIT_RW_EXTENSION_DEFECTIVE_RESONANCE",
   "schema": "paper-draft-source-map-v1"
 }

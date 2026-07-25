@@ -50,16 +50,20 @@ For axial \(\ell=2\) we prove the exact normal form
  [\mathcal I_{\rm Bach}]
  =\frac{i\omega}{2}\left[1-\frac2r\right].
 \]
-Thus the Bach extension is locally cohomologous to an elementary
-mass-shaped direction, up to parameter normalization and endpoint frames.
+The class in brackets is exactly the transverse-traceless critical
+spin-two mass jet.  Thus the local parameter relation is
+\(m=(i\omega/2)\tau\), modulo rational triangular gauge.  The required
+gauge grows linearly at infinity; an explicit boundary transgression
+therefore remains before the globally normalized Jost slopes can be
+identified.
 
 At a simple spin-two quasinormal frequency the complete connection admits
 two possible local Smith types.  A validated projective Evans calculation
 selects the defective type \((0,0,2)\) at one damped Schwarzschild mode.
 The geometric root vector is Einstein, whereas its generalized root vector
 has nonzero projection to the Ricci-carrier quotient.  We further show that
-the compact-source, locally observed outgoing Green operator for the
-reduced axial system has a nonzero rank-one pole of order two at this
+the compact-source, compact-observation outgoing Green operator on the
+Schwarzschild exterior has a nonzero rank-one pole of order two at this
 frequency.
 
 Promotion to a global physical resolvent and to a time-domain generalized
@@ -89,7 +93,7 @@ differential field.  The two spin-two layers therefore share scalar
 characteristics without defining two rationally separable radial
 branches.
 
-This paper establishes three central results.
+This paper establishes four central results.
 \begin{enumerate}
 \item The repeated spin-two block is a non-split Regge--Wheeler
   self-extension, realized exactly as a parameter jet.
@@ -98,10 +102,14 @@ This paper establishes three central results.
     [\mathcal I_{\rm Bach}]
     =\frac{i\omega}{2}\left[1-\frac2r\right].
   \]
+\item The class \([1-2/r]\) is exactly the transverse-traceless critical
+  mass jet.  The local equivalence gauge has forced linear growth at
+  infinity, and its failure to preserve Jost frames is an explicit
+  boundary Wronskian.
 \item At a certified damped Schwarzschild quasinormal frequency the
   connection is defective.  The associated generalized root vector has a
-  nonzero carrier quotient, and the reduced outgoing Green operator has a
-  genuine rank-one double pole.
+  nonzero carrier quotient, and the exterior cut-off outgoing Green
+  operator has a genuine rank-one double pole.
 \end{enumerate}
 
 The third result is stronger than a statement about a finite connection
@@ -123,17 +131,20 @@ RW/RW/Maxwell filtration and partial jet
 Non-split spin-two extension
 & Exhaustive rational coboundary obstruction
 & Exact for real \(\omega>0\)\\
-Cocycle mass-direction normal form
+Cocycle and local critical-mass normal form
 & Exact substitution in \(\C(r,\omega)\)
 & Exact for \(\omega\ne0\)\\
+Endpoint normalization of the mass comparison
+& Explicit horizon/infinity Wronskian transgression
+& Open\\
 Defective physical specialization
 & Winding-one contour, local selector, spin-one unit
 & Validated theorem\\
 Non-Einstein generalized root
 & Defective Smith type and exact filtration
 & Exact consequence\\
-Reduced outgoing Green double pole
-& Analytic endpoint maps and finite-interval reduction
+Exterior cut-off outgoing Green double pole
+& Analytic Jost maps, transparent cuts, finite-interval reduction
 & Exact/validated theorem\\
 Causal spacetime pole and generalized ringdown
 & Global weighted Fredholm and contour theory
@@ -773,7 +784,7 @@ nontrivially to the Ricci-carrier quotient.  Adding a multiple of \(e_X\)
 changes \(x\), but cannot remove \(y\).
 \end{proof}
 
-\section{Reduced outgoing Green double pole}
+\section{Exterior cut-off outgoing Green double pole}
 
 Fix ordinary radii \(2<r_H<r_I<\infty\) inside the certified analytic
 continuation domains.  Let
@@ -797,7 +808,7 @@ inhomogeneous solution with zero horizon data.  The outgoing solution is
  \Gamma_-(\omega)P_H(\omega)F.
 \end{equation}
 
-\begin{theorem}[Reduced outgoing Green pole]\label{thm:green-pole}
+\begin{theorem}[Finite-interval outgoing Green pole]\label{thm:green-pole}
 On a neighborhood of the certified frequency \(\omega_n\), the operator
 \[
  R_{\rm out}(\omega):
@@ -850,6 +861,75 @@ sources is onto.  Taking \(q=e_Y\) shows that the covector does not vanish.
 The tensor product is therefore nonzero and rank one.
 \end{proof}
 
+\subsection{Exact transparent cuts}
+
+Put \(x=r_*\).  On the certified QNM neighborhood, let
+\[
+ u_H(x,\omega),\qquad u_\infty(x,\omega)
+\]
+be analytic spin-two Jost solutions satisfying the future-horizon and
+outgoing-infinity conditions.  The scalar Evans coefficient is, up to an
+analytic unit,
+\[
+ a(\omega)=W(u_H,u_\infty).
+\]
+Let \(\chi_{\rm s}\) and \(\chi_{\rm o}\) be nontrivial smooth source and
+observation cutoffs with compact support.  Choose finite cuts
+\[
+ x_-<
+ \operatorname{supp}\chi_{\rm s}\cup
+ \operatorname{supp}\chi_{\rm o}
+ <x_+.
+\]
+At the two cuts impose the exact transparent boundary conditions
+\[
+ W(u,u_H)|_{x_-}=0,\qquad
+ W(u,u_\infty)|_{x_+}=0.
+\]
+Their coefficients are analytic in \(\omega\).  Uniqueness of the exterior
+Jost problems shows that the resulting finite-interval inverse agrees
+exactly, between the cutoffs, with the meromorphically continued exterior
+outgoing inverse.
+
+\begin{theorem}[Exterior cut-off Green pole]
+\label{thm:exterior-cutoff-pole}
+For any nontrivial compactly supported source and observation cutoffs,
+\[
+ \chi_{\rm o}R_{\rm ext}(\omega)\chi_{\rm s}
+\]
+has a genuine nonzero rank-one pole of order two at the certified
+Schwarzschild QNM.  In the augmented Fredholm normalization its principal
+coefficient is
+\[
+ \boxed{\;
+ \operatorname{Coeff}_{(\omega-\omega_n)^{-2}}
+ \bigl(\chi_{\rm o}R_{\rm ext}\chi_{\rm s}\bigr)
+ =
+ -\frac{\beta_n}{\alpha_n^2}
+ (\chi_{\rm o}u_n)
+ \otimes
+ (\widetilde u_n\chi_{\rm s}).
+ \;}
+\]
+\end{theorem}
+
+\begin{proof}
+The transparent conditions select exactly the restrictions of the
+exterior horizon and infinity Jost solutions.  Hence
+\[
+ \chi_{\rm o}R_{\rm ext}(\omega)\chi_{\rm s}
+ =
+ \chi_{\rm o}R_{[x_-,x_+]}(\omega)\chi_{\rm s}.
+\]
+Theorem~\ref{thm:green-pole} and
+\eqref{eq:invariant-double-pole} give the displayed principal
+coefficient.  It is nonzero: \(\beta_n\ne0\), while a nonzero solution of
+a second-order ODE cannot vanish on a nonempty open interval.  Thus
+\(\chi_{\rm o}u_n\) and
+\(\widetilde u_n\chi_{\rm s}\) are nonzero for every nontrivial smooth
+cutoff.
+\end{proof}
+
 \begin{corollary}[Non-annihilation by certified reconstruction]
 The certified rational reconstruction into the axial metric/curvature
 variables does not annihilate the range
@@ -881,14 +961,16 @@ gives the invariant principal coefficient
  u_n\otimes\widetilde u_n.
  \;}
 \end{equation}
-The Poisson/trace coefficient in Theorem~\ref{thm:green-pole} is the same
-rank-one residue expressed in endpoint coordinates.
+The Poisson/trace coefficient in Theorem~\ref{thm:green-pole} and the
+exterior coefficient in Theorem~\ref{thm:exterior-cutoff-pole} are the same
+rank-one residue expressed in endpoint and augmented Fredholm coordinates.
 
 \section{Conditional global Fredholm promotion}
 \label{sec:fredholm}
 
-Theorem~\ref{thm:green-pole} is a differential Green-operator theorem on a
-finite ordinary interval.  A global physical resolvent requires a separate
+Theorem~\ref{thm:exterior-cutoff-pole} is an exterior differential
+Green-operator theorem after compact source and observation localization.
+A global physical resolvent without cutoffs requires a separate
 closed-operator realization.  The correct abstract block notation is
 \[
  \mathbb L(\omega)=
@@ -931,7 +1013,7 @@ in the upper-right block.
 \end{proposition}
 
 This proposition is standard block algebra once the Fredholm spaces and
-pairing exist.  What remains open is not the finite-interval pole proved
+pairing exist.  What remains open is not the exterior cut-off pole proved
 above, but the construction of:
 \begin{enumerate}
 \item closed weighted horizon and null-infinity domains;
@@ -945,77 +1027,191 @@ Only after these steps could the double pole be promoted to a rigorous
 \section{Critical Einstein--Weyl mass comparison}
 \label{sec:mass}
 
-Theorem~\ref{thm:mass-normal} reduces the local mass-comparison problem to
-one scalar.  Starting from the covariant Einstein--Weyl parent system, one
-must:
-\begin{enumerate}
-\item derive the finite-mass axial first-order system;
-\item eliminate its constraints in a gauge compatible with the massless
-  Regge--Wheeler companion frame;
-\item differentiate at \(m^2=0\);
-\item compute its projective cocycle
-  \(\mathcal I_{\rm mass}\);
-\item determine the coefficient \(c(\omega)\) in
-  \[
-    [\mathcal I_{\rm mass}]=c(\omega)[f].
-  \]
-\end{enumerate}
-Nonzero \(c(\omega)\) proves local equivalence of the repeated blocks.
-The stronger scattering identity
+On the transverse-traceless spin-two sector, the quadratic
+Einstein--Weyl parent equation is
 \[
- b=-\left.\partial_{m^2}a\right|_{m^2=0}
+ (\mathcal E+m\mathcal A)\phi=0,
 \]
-additionally requires equality of the complete filtered deformation,
-moving massive horizon and infinity phases, and endpoint normalization.
-The QNM-slope identity requires, in addition, the global Fredholm
-realization of Section~\ref{sec:fredholm}.  None of these stronger
-identifications is inferred solely from the normal form.
+where the parameter \(m\) has the dimensions of squared mass.  Its
+Schwarzschild axial scalar reduction is
+\begin{equation}\label{eq:massive-rw}
+ L_m(\omega)y=
+ \left[D^2+\omega^2-V_2-mf\right]y=0,
+ \qquad f=1-\frac2r.
+\end{equation}
+For a differentiable family \(y(m)\), differentiation at \(m=0\) gives
+\[
+ L_2\,\partial_my=f\,y.
+\]
 
-The resonant functional makes the remaining local calculation especially
-small.  From Theorem~\ref{thm:mass-normal},
+\begin{theorem}[Exact local critical-mass-jet identification]
+\label{thm:mass-jet}
+The projective cocycle of the transverse-traceless critical mass jet is
+\[
+ [\mathcal I_{\rm mass}]=[f].
+\]
+Consequently
+\[
+ \boxed{\;
+ [\mathcal I_{\rm Bach}]
+ =\frac{i\omega}{2}[\mathcal I_{\rm mass}].
+ \;}
+\]
+With the convention \(L_m=L_2-mf\), the local first-order parameter
+relation is
+\[
+ \boxed{\;m=\frac{i\omega}{2}\tau\;}
+\]
+modulo rational triangular gauge.
+\end{theorem}
+
+\begin{proof}
+Equation~\eqref{eq:massive-rw} gives the extension equation
+\(L_2\partial_my=fy\), so its scalar projective density is \(f\).
+Theorem~\ref{thm:mass-normal} gives
+\([\mathcal I_{\rm Bach}]=(i\omega/2)[f]\).  Comparing the two tangent
+equations yields the parameter relation.
+\end{proof}
+
+This theorem closes the local transverse-traceless differential-module
+comparison.  It does not identify independently normalized global Jost
+connections, because the equivalence gauge is not bounded at infinity.
+
+\subsection{Forced asymptotics of the equivalence gauge}
+
+The rational representative in Theorem~\ref{thm:mass-normal} satisfies
+\[
+ q(r,\omega)=-\frac{i}{8\omega}r+O(1),
+ \qquad r\to\infty.
+\]
+
+\begin{proposition}[No bounded rational mass-equivalence gauge]
+\label{prop:unbounded-gauge}
+Every rational \(q\) satisfying
+\[
+ \mathcal I_{\rm Bach}
+ =\mathcal K_{U_2}q+\frac{i\omega}{2}f
+\]
+has the forced leading behavior
+\[
+ q(r,\omega)=-\frac{i}{8\omega}r+O(1).
+\]
+In particular, no bounded rational triangular gauge identifies the Bach
+jet with the critical mass jet at infinity.
+\end{proposition}
+
+\begin{proof}
+At infinity,
+\[
+ \mathcal I_{\rm Bach}-\frac{i\omega}{2}f
+ \longrightarrow-\frac{i\omega}{2},
+\qquad
+ U_2\longrightarrow\omega^2.
+\]
+A rational \(q=o(r)\) is \(O(1)\) and gives
+\(\mathcal K_{U_2}q=o(1)\), so it cannot produce the nonzero constant.
+If \(q\sim cr\), then \(Dq\to c\), while \(D^3q\to0\) and
+\(D(U_2)q\to0\).  Therefore
+\[
+ \mathcal K_{U_2}q\longrightarrow4\omega^2c.
+\]
+Matching the constant gives \(c=-i/(8\omega)\), uniquely.
+\end{proof}
+
+\subsection{Boundary transgression}
+
+The normalization in Lemma~\ref{lem:gauge} must be retained here.  Put
+\[
+ Q(q)=qD-\frac12D(q),
+\qquad
+ \widehat Q=-2Q(q)=-2qD+D(q).
+\]
+Because \([L_2,Q(q)]|_{\ker L_2}
+=-\frac12\mathcal K_{U_2}(q)\), the bulk extension operators obey
+\begin{equation}\label{eq:bulk-commutator}
+ K_{\rm Bach}-\frac{i\omega}{2}K_{\rm mass}
+ =[L_2,\widehat Q]
+\end{equation}
+in the scalarized companion convention.  The factor \(-2\) is essential:
+using \(Q(q)\) itself would be inconsistent with the cocycle normalization
+of Theorem~\ref{thm:mass-normal}.
+
+\begin{theorem}[Finite-cut boundary transgression]
+\label{thm:boundary-transgression}
+Let \(u_n,\widetilde u_n\) be resonant right and left states, with the
+finite-cut pairing defined by Green's formula.  Then
+\[
+ \boxed{\;
+ \beta_{n,[x_-,x_+]}^{\rm Bach}
+ -\frac{i\omega_n}{2}\beta_{n,[x_-,x_+]}^{\rm mass}
+ =
+ \left[
+ W(\widetilde u_n,\widehat Q u_n)
+ \right]_{x_-}^{x_+}.
+ \;}
+\]
+In an augmented boundary pencil, the same term is absorbed into the
+derivatives of the horizon and infinity boundary maps, restoring
+splitting-gauge invariance of the complete overlap.
+\end{theorem}
+
+\begin{proof}
+On finite cuts, use \eqref{eq:bulk-commutator}, \(L_2u_n=0\), and
+\(L_2^\dagger\widetilde u_n=0\):
+\[
+\begin{aligned}
+ \left\langle\widetilde u_n,
+ \left(K_{\rm Bach}-\frac{i\omega_n}{2}K_{\rm mass}\right)
+ u_n\right\rangle
+ &=
+ \left\langle\widetilde u_n,[L_2,\widehat Q]u_n\right\rangle\\
+ &=
+ \left[W(\widetilde u_n,\widehat Q u_n)\right]_{x_-}^{x_+}.
+\end{aligned}
+\]
+This proves the finite-cut identity.  Equivalently, include the boundary
+functionals in the augmented operator and its duality before
+differentiation.
+\end{proof}
+
+Theorem~\ref{thm:mass-jet} and
+Proposition~\ref{prop:resonant-functional} give
 \[
  \beta_n^{\rm Bach}
- =\frac{i\omega_n}{2}\,\mathfrak M_n([f]).
-\]
-The certified inequality \(\kappa_n\ne0\) implies
-\[
+ =\frac{i\omega_n}{2}\mathfrak M_n([f]),
+\qquad
  \mathfrak M_n([f])\ne0.
 \]
-If a finite-mass deformation has
+After the boundary transgression has been evaluated in matched physical
+Jost frames, the predicted mass slope is
 \[
- [\mathcal I_{\rm mass}]=c_m(\omega)[f],
- \qquad c_m(\omega_n)\ne0,
-\]
-then its local resonance velocity is necessarily nonzero and is related to
-the Bach selector by
-\[
+ \boxed{\;
  \left.\frac{d\omega_n}{dm}\right|_{m=0}
- =
- -\frac{2c_m(\omega_n)}{i\omega_n}\,\kappa_n,
+ =\frac{2i}{\omega_n}\kappa_n^{\rm Bach}.
+ \;}
 \]
-with \(m\) denoting the declared deformation parameter.  Endpoint
-compatibility is still required before this local formula is identified
-with a physical massive Jost branch.
+This final equality is not yet claimed: the local bulk comparison is exact,
+but the remaining physical normalization is exactly the endpoint limit
+\[
+ \boxed{\;
+ \left[
+ W(\widetilde u_n,\widehat Q u_n)
+ \right]_{\mathcal H^+}^{\mathcal I^+},
+ \;}
+\]
+which remains to be computed or regularized in matched Jost frames.
 
 \subsection*{Exact parent/radial comparison target}
 
 Let \(R\) reconstruct the tensor carrier from the scalar master field and
 let \(P\) project the tensor equation back to the scalar equation.  The
-desired comparison is the augmented-pencil identity
+corresponding exact target is
 \[
- K_{\rm radial}-P\mathcal A R=LQ-QL,
+ K_{\rm radial}-P\mathcal A R=LQ_0-Q_0L
 \]
-possibly with an explicitly recorded endpoint coboundary.  If this identity
-is proved, Proposition~\ref{prop:resonant-functional} gives immediately
-\[
- \beta_n^{\rm radial}
- =
- \left\langle\widetilde u_n,P\mathcal A Ru_n\right\rangle
- =
- \beta_n^{\rm parent}.
-\]
-Accordingly, a separate numerical equality test is not the primary target:
-the correct promotion gate is an exact cohomological projection theorem.
+in the augmented pencil, with its endpoint component recorded explicitly.
+Once proved, Proposition~\ref{prop:resonant-functional} identifies the
+parent and radial overlaps without a separate numerical equality test.
 
 \section{Computational certificates and claim boundary}
 
@@ -1030,8 +1226,14 @@ Axial triangular preflight
 & Exact RW/RW/Maxwell filtration and reconstruction
 & Exact rational\\
 Projective cocycle
-& Gauge law and nontrivial extension class
+& Gauge law, nontrivial extension class, mass normal form
 & Exact rational\\
+Critical parent mass jet
+& TT mass variation and difference quotient
+& Exact covariant/reduced\\
+Analytic continuation
+& Analytic Jost germs on the declared QNM domain
+& Exact continuation gate\\
 RW/Maxwell simplicity
 & Physical-axis simplicity and scalar endomorphisms
 & Exact rational\\
@@ -1045,7 +1247,7 @@ Spin-one local unit
 & Full three-factor Smith type \((0,0,2)\)
 & Validated interval\\
 Fredholm promotion
-& Finite-interval rank-one radial Green pole
+& Finite-interval rank-one radial Green pole and transparent-cut input
 & Exact reduction plus validated inputs\\
 \bottomrule
 \end{tabular}
@@ -1060,19 +1262,23 @@ acceptance.
 \paragraph{Explicit non-results.}
 This paper does not establish a causal spacetime resolvent, a complete QNM
 expansion, a late-time asymptotic formula, a \(t e^{i\omega_nt}\) term, a
-time-domain instability, a physical Einstein--Weyl mass identification, an
-all-\(\ell\) Bach nonsplitting theorem, or a quantum positivity statement.
+time-domain instability, equality of the globally normalized Bach and
+massive Jost slopes, an evaluated endpoint transgression, an all-\(\ell\)
+Bach nonsplitting theorem, or a quantum positivity statement.
 
 \section{Conclusion}
 
 The axial Schwarzschild Bach equation contains a repeated
 Regge--Wheeler factor, but the repetition is not a rational direct sum.  It
 is a non-split self-extension whose projective class is represented by the
-elementary direction \((i\omega/2)(1-2/r)\).  At the certified damped mode,
+elementary direction \((i\omega/2)(1-2/r)\).  That direction is exactly
+the transverse-traceless critical mass jet.  The equivalence gauge has
+forced linear growth at infinity, so the remaining global normalization
+question is one explicit endpoint Wronskian.  At the certified damped mode,
 the scalar zero is simple while the extension selector is nonzero.  The
 resulting defect has concrete differential content: the generalized root
-has a nonzero Ricci-carrier quotient, and the reduced outgoing Green
-operator has a genuine rank-one double pole.
+has a nonzero Ricci-carrier quotient, and the compactly cut-off exterior
+outgoing Green operator has a genuine rank-one double pole.
 
 This separates three notions that should not be conflated.  A repeated
 scalar divisor fixes algebraic multiplicity; the extension selector decides

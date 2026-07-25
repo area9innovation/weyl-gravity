@@ -47,6 +47,14 @@ AUTHORITIES = {
         "black_hole_programme/phase4/"
         "axial_qnm_fredholm_promotion_v1/certificate.json"
     ),
+    "critical_mass_parent": (
+        "black_hole_programme/phase4/"
+        "einstein_weyl_critical_mass_jet_v1/certificate.json"
+    ),
+    "analytic_continuation": (
+        "black_hole_programme/certificates/"
+        "BH3_ANALYTIC_CONTINUATION_GATE.json"
+    ),
     "metric_reconstruction": (
         "black_hole_programme/phase3/"
         "axial_complete_reconstruction_repair/certificate.json"
@@ -114,6 +122,23 @@ def payload() -> dict:
                 "carrier_quotient": "-1/kappa",
                 "fredholm_principal_coefficient": "-kappa/alpha",
             },
+            "critical_mass_jet": {
+                "mass_operator": "L - m*f",
+                "mass_cocycle_class": "[f]",
+                "bach_to_mass_class": "I*omega/2",
+                "parameter_relation": "m = I*omega*tau/2",
+            },
+            "forced_gauge_asymptotic": {
+                "q_slope_at_infinity": "-I/(8*omega)",
+                "reason": "4*omega**2*q_slope = -I*omega/2",
+            },
+            "boundary_transgression": {
+                "base_gauge": "Q(q)=q*D-D(q)/2",
+                "commutator_gauge": "Qhat=-2*Q(q)",
+                "bulk_identity": "K_Bach-I*omega*K_mass/2=[L,Qhat]",
+                "finite_cut_term": "[W(tilde_u,Qhat*u)]_xminus^xplus",
+                "physical_endpoint_target": "[W(tilde_u,Qhat*u)]_H^I",
+            },
             "green_principal_coefficient": {
                 "connection": "-b0/a1**2",
                 "outgoing_green": "b0/a1**2",
@@ -136,11 +161,17 @@ def payload() -> dict:
             "finite_interval_radial_green_double_pole": True,
             "green_principal_coefficient_rank_one": True,
             "local_metric_reconstruction_nonzero": True,
+            "exterior_cutoff_radial_green_double_pole": True,
+            "local_tt_critical_mass_jet_identified": True,
+            "bach_mass_parameter_relation_exact_local": True,
+            "equivalence_gauge_forced_linear_infinity_growth": True,
+            "boundary_transgression_identity_exact": True,
         },
         "fail_closed_scope": {
-            "physical_mass_parameter_identified": False,
+            "global_jost_mass_parameter_identified": False,
             "parent_radial_overlap_operator_identity": False,
             "massive_qnm_slope_identified": False,
+            "endpoint_transgression_evaluated": False,
             "causal_exterior_spacetime_resolvent": False,
             "retarded_inverse_transform": False,
             "t_exp_iomega_t_ringdown_term": False,
