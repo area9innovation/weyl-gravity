@@ -322,6 +322,52 @@ def payload() -> dict:
                 "double_coefficient": "conjugate(C_minus_2)",
                 "simple_coefficient": "-conjugate(C_minus_1)",
             },
+            "spectral_velocity_generator": {
+                "function": "S=b_B/a",
+                "logarithmic_derivative": (
+                    "S=I*omega*partial_m(log(a))/2+h"
+                ),
+                "simple_qnm_residue": "kappa=-I*omega_n*nu_n/2",
+                "contour_sum": "integral_Gamma(S)/(2*pi*I)=sum(kappa_n)",
+                "weighted_velocity_sum": (
+                    "sum(omega_n*nu_n)=2*I*integral_Gamma(S)/(2*pi*I)"
+                ),
+                "reflection_symmetric_sum": "purely_imaginary",
+                "zero_sum_implies_all_zero": False,
+            },
+            "simple_qnm_first_jet_dichotomy": {
+                "nonzero_velocity": (
+                    "nu_n!=0 iff b_B(omega_n)!=0 iff Smith=(0,0,2)"
+                ),
+                "zero_velocity": (
+                    "nu_n=0 iff b_B(omega_n)=0 iff Smith=(0,1,1)"
+                ),
+                "zero_velocity_double_coefficient": "0",
+                "zero_velocity_simple_coefficient": "-Pdot",
+                "shape_sensitive": "nu_n=0 and Pdot!=0",
+                "first_jet_invisible": "nu_n=0 and Pdot=0",
+            },
+            "critical_contact_order": {
+                "branch": (
+                    "omega_n(m)=omega_n+nu_n_q*m**q/factorial(q)"
+                    "+O(m**(q+1))"
+                ),
+                "jet": (
+                    "J_p=(-1)**p*partial_m**p(R_m)/factorial(p)"
+                ),
+                "pole_order_bound": "floor(p/q)+1",
+                "p_less_q": (
+                    "no_pole_enhancement_from_motion;"
+                    "projector_derivatives_may_leave_simple_pole"
+                ),
+                "first_visible_double_coefficient": (
+                    "(-1)**q*nu_n_q*P/factorial(q)"
+                ),
+                "multiple_top_coefficient": (
+                    "(-1)**(k*q)*(nu_n_q/factorial(q))**k*P"
+                ),
+                "q1_specialization": "pole_order=p+1",
+            },
             "higher_critical_jets": {
                 "operator": "R*(A*R)**p",
                 "mass_derivative": "(-1)**p*partial_m**p(R_m)/factorial(p)",
@@ -396,6 +442,11 @@ def payload() -> dict:
             "refined_filtered_gap_and_contour_expansion_exact": True,
             "augmented_qnm_hellmann_feynman_exact": True,
             "reflected_ep2_pair_exact": True,
+            "spectral_velocity_generator_exact": True,
+            "selector_contour_sum_rule_exact": True,
+            "simple_qnm_first_jet_dichotomy_exact": True,
+            "spectral_contact_order_pole_law_exact": True,
+            "critical_determinant_insufficient_for_smith_type": True,
             "finite_mass_secant_identity_exact": True,
             "higher_critical_jet_identity_exact": True,
         },
@@ -415,6 +466,8 @@ def payload() -> dict:
             "physical_filtration_breaking_coefficient_computed": False,
             "numerical_qnm_curvature_computed": False,
             "threshold_uniform_jost_shear_estimate": False,
+            "validated_multi_qnm_selector_contour": False,
+            "validated_overtone_augmented_overlap_tower": False,
         },
     }
 

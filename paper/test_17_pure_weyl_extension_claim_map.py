@@ -289,6 +289,103 @@ class Paper17ClaimMapTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("reflection-pair declaration", result.stdout + result.stderr)
 
+    def test_spectral_velocity_residue_sign_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "spectral_velocity_generator"
+            ].update({"simple_qnm_residue": "kappa=I*omega_n*nu_n/2"})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("spectral-velocity declaration", result.stdout + result.stderr)
+
+    def test_selector_weighted_sum_factor_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "spectral_velocity_generator"
+            ].update(
+                {
+                    "weighted_velocity_sum": (
+                        "sum(omega_n*nu_n)=-2*I*"
+                        "integral_Gamma(S)/(2*pi*I)"
+                    )
+                }
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("spectral-velocity declaration", result.stdout + result.stderr)
+
+    def test_semisimple_smith_branch_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "simple_qnm_first_jet_dichotomy"
+            ].update(
+                {
+                    "zero_velocity": (
+                        "nu_n=0 iff b_B(omega_n)=0 iff Smith=(0,0,2)"
+                    )
+                }
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "simple-QNM first-jet dichotomy",
+            result.stdout + result.stderr,
+        )
+
+    def test_contact_order_bound_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "critical_contact_order"
+            ].update({"pole_order_bound": "p+1"})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("critical contact-order", result.stdout + result.stderr)
+
+    def test_contact_order_factorial_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "critical_contact_order"
+            ].update(
+                {
+                    "first_visible_double_coefficient": (
+                        "(-1)**q*nu_n_q*P"
+                    )
+                }
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("critical contact-order", result.stdout + result.stderr)
+
+    def test_validated_multi_qnm_contour_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "a validated multi-QNM selector contour has been computed"
+        )
+
+    def test_overtone_tower_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "every Schwarzschild overtone is an EP2"
+        )
+
     def test_threshold_static_residue_mutation_rejected(self) -> None:
         path = self.mutated_claims(
             lambda data: data["exact_identities"][

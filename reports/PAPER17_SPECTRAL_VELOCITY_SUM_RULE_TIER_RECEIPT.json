@@ -1,0 +1,99 @@
+{
+  "schema": "tier-receipt-v1",
+  "result_id": "PAPER17_SPECTRAL_VELOCITY_SUM_RULE",
+  "timestamp_utc": "2026-07-25T08:07:48Z",
+  "input_commit": "5a942f3e9c068eafbb58b791611b71d83fe72731",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "environment": {
+    "python": "3.12.13",
+    "sympy": "1.14.0",
+    "pdflatex": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian)"
+  },
+  "artifacts": {
+    "paper_tex": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "sha256": "7b20893144eb4d4a0ce38a379aaa24e3b7ccfba73dae86f3e2de4068fcfd2223"
+    },
+    "paper_pdf": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "sha256": "de7330b61255998c0a61d75056571f895aa3d4ab2d4e3d032df13486e1a5460c",
+      "pages": 38,
+      "bytes": 414056
+    },
+    "claim_map": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "sha256": "decfe00f9b732b987ea1e2b8923727180348037a166da5f74fdb7cc16949e0c0"
+    },
+    "generator": {
+      "path": "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "sha256": "280685f48bdd7ed802bb2fe83b153c6910677ceef308e17f7cb8527c1553ef00"
+    },
+    "verifier": {
+      "path": "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "sha256": "e8d5014f53c62b6860004e2ba0989e994189384577e20e85ab01c2ea6996430d"
+    },
+    "tests": {
+      "path": "paper/test_17_pure_weyl_extension_claim_map.py",
+      "sha256": "3ff1071ed1541d0fe174e2bb7312b95fe0b6b5e7a1908a428514d100aa87e038"
+    },
+    "report": {
+      "path": "reports/phase4-black-hole-paper17-spectral-velocity-sum-rule-2026-07-25.md",
+      "sha256": "89d3a34a0c126c6656e9c3d1087fe9ae27b8ef5f977131787168f4ba5b7842be"
+    },
+    "work_item": {
+      "path": "planning/work-items/phase4-black-hole-paper17-spectral-velocity-sum-rule.json",
+      "sha256": "e5f1776d02bf5677615091c7345e51d2312435cd6694c0c1ce66f5ad0008a141"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "two-pass pdflatex compilation with no undefined references or overfull boxes",
+        "Python bytecode compilation",
+        "JSON parse and deterministic claim-map regeneration",
+        "scoped git diff --check",
+        "visual inspection of the spectral-flow, first-jet dichotomy, and contact-order theorem pages",
+        "receipt artifact hash audit"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "checks": [
+        "49 regression and mutation tests in 36.107 seconds",
+        "independent simple-zero spectral-velocity residue verification",
+        "independent weighted velocity-sum and reflection audit",
+        "independent stationary first-jet pole decomposition",
+        "independent contact-order coefficient extraction for q=1..4 and p=0..12",
+        "seven new fail-closed mutations for signs, factors, Smith type, contact order, and numerical promotions"
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "No upstream operator, content-addressed authority, certificate schema, or validated numerical input changed."
+    },
+    "tier_3": {
+      "status": "PASS",
+      "checks": [
+        "python3 -m unittest discover: 149 tests passed in 1.42 seconds"
+      ]
+    }
+  },
+  "claim_boundary": {
+    "spectral_velocity_generator_exact": true,
+    "selector_contour_sum_rule_exact": true,
+    "reflection_symmetric_sum_audit_exact": true,
+    "simple_qnm_first_jet_dichotomy_exact": true,
+    "shape_sensitive_and_first_jet_invisible_cases_exact": true,
+    "spectral_contact_order_pole_law_exact": true,
+    "transverse_q1_higher_jet_specialization_exact": true,
+    "validated_multi_qnm_selector_contour": false,
+    "validated_overtone_augmented_overlap_tower": false,
+    "global_retarded_inverse_laplace": false,
+    "time_domain_stability": false,
+    "quantum_statement": false
+  }
+}

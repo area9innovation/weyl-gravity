@@ -486,6 +486,140 @@ def verify_period_matrix(claims: dict) -> None:
         fail("symmetric-square period matrix identity failed")
 
 
+def verify_spectral_velocity_and_contact_order(claims: dict) -> None:
+    omega, omega_n, m, nu = sp.symbols(
+        "omega omega_n m nu", nonzero=True
+    )
+    local_evans = omega - omega_n - nu * m
+    spectral_response = (
+        sp.I * omega * sp.diff(sp.log(local_evans), m) / 2
+    ).subs(m, 0)
+    residue = sp.simplify(
+        sp.limit((omega - omega_n) * spectral_response, omega, omega_n)
+    )
+    kappa = -sp.I * omega_n * nu / 2
+    if sp.simplify(residue - kappa) != 0:
+        fail("spectral-velocity residue identity failed")
+    if sp.simplify(omega_n * nu - 2 * sp.I * kappa) != 0:
+        fail("selector weighted-velocity identity failed")
+
+    kappa_re, kappa_im = sp.symbols("kappa_re kappa_im", real=True)
+    reflected_pair_sum = (
+        kappa_re + sp.I * kappa_im
+        - (kappa_re - sp.I * kappa_im)
+    )
+    if sp.simplify(sp.re(reflected_pair_sum)) != 0:
+        fail("reflection-symmetric selector sum failed")
+
+    z, pdot = sp.symbols("z pdot")
+    moving_pole = (1 + m * pdot) / (z - nu * m)
+    first_jet = -sp.diff(moving_pole, m).subs(m, 0)
+    if sp.simplify(first_jet + nu / z**2 + pdot / z) != 0:
+        fail("first-jet moving-pole decomposition failed")
+    stationary = sp.simplify(first_jet.subs(nu, 0))
+    if sp.simplify(stationary + pdot / z) != 0:
+        fail("stationary first-jet simple-pole classification failed")
+
+    # Independent coefficient extraction for the contact-order law.
+    for q in range(1, 5):
+        coefficient = sp.Rational(2, sp.factorial(q))
+        delta = coefficient * m**q
+        for p in range(0, 13):
+            series = sum(
+                delta**j / z ** (j + 1)
+                for j in range(0, p // q + 1)
+            )
+            jet = sp.expand(
+                (-1) ** p
+                * sp.diff(series, m, p).subs(m, 0)
+                / sp.factorial(p)
+            )
+            terms = sp.Add.make_args(jet)
+            observed = max(
+                [
+                    -term.as_powers_dict().get(z, 0)
+                    for term in terms
+                    if term != 0
+                ]
+                or [0]
+            )
+            expected_bound = p // q + 1
+            if observed > expected_bound:
+                fail("contact-order pole bound failed")
+        first_visible = sp.expand(
+            (-1) ** q
+            * sp.diff(1 / z + delta / z**2, m, q).subs(m, 0)
+            / sp.factorial(q)
+        ).coeff(z, -2)
+        expected_first = (-1) ** q * coefficient
+        if sp.simplify(first_visible - expected_first) != 0:
+            fail("contact-order first-visible coefficient failed")
+        for multiple in range(1, 4):
+            p = multiple * q
+            top = sp.expand(
+                (-1) ** p
+                * sp.diff(delta**multiple / z ** (multiple + 1), m, p).subs(
+                    m, 0
+                )
+                / sp.factorial(p)
+            ).coeff(z, -(multiple + 1))
+            expected_top = (-1) ** p * coefficient**multiple
+            if sp.simplify(top - expected_top) != 0:
+                fail("contact-order repeated-multiple coefficient failed")
+
+    declared_spectral = claims["exact_identities"]["spectral_velocity_generator"]
+    if declared_spectral != {
+        "function": "S=b_B/a",
+        "logarithmic_derivative": "S=I*omega*partial_m(log(a))/2+h",
+        "simple_qnm_residue": "kappa=-I*omega_n*nu_n/2",
+        "contour_sum": "integral_Gamma(S)/(2*pi*I)=sum(kappa_n)",
+        "weighted_velocity_sum": (
+            "sum(omega_n*nu_n)=2*I*integral_Gamma(S)/(2*pi*I)"
+        ),
+        "reflection_symmetric_sum": "purely_imaginary",
+        "zero_sum_implies_all_zero": False,
+    }:
+        fail("spectral-velocity declaration drift")
+
+    declared_dichotomy = claims["exact_identities"][
+        "simple_qnm_first_jet_dichotomy"
+    ]
+    if declared_dichotomy != {
+        "nonzero_velocity": (
+            "nu_n!=0 iff b_B(omega_n)!=0 iff Smith=(0,0,2)"
+        ),
+        "zero_velocity": (
+            "nu_n=0 iff b_B(omega_n)=0 iff Smith=(0,1,1)"
+        ),
+        "zero_velocity_double_coefficient": "0",
+        "zero_velocity_simple_coefficient": "-Pdot",
+        "shape_sensitive": "nu_n=0 and Pdot!=0",
+        "first_jet_invisible": "nu_n=0 and Pdot=0",
+    }:
+        fail("simple-QNM first-jet dichotomy declaration drift")
+
+    declared_contact = claims["exact_identities"]["critical_contact_order"]
+    if declared_contact != {
+        "branch": (
+            "omega_n(m)=omega_n+nu_n_q*m**q/factorial(q)+O(m**(q+1))"
+        ),
+        "jet": "J_p=(-1)**p*partial_m**p(R_m)/factorial(p)",
+        "pole_order_bound": "floor(p/q)+1",
+        "p_less_q": (
+            "no_pole_enhancement_from_motion;"
+            "projector_derivatives_may_leave_simple_pole"
+        ),
+        "first_visible_double_coefficient": (
+            "(-1)**q*nu_n_q*P/factorial(q)"
+        ),
+        "multiple_top_coefficient": (
+            "(-1)**(k*q)*(nu_n_q/factorial(q))**k*P"
+        ),
+        "q1_specialization": "pole_order=p+1",
+    }:
+        fail("critical contact-order declaration drift")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--paper", type=Path, default=DEFAULT_PAPER)
@@ -550,6 +684,11 @@ def main() -> None:
         "\\frac{2i}{\\omega_n}\\kappa_n\\ne0",
         "Reflected EP2 pair",
         "\\omega_n^\\sharp",
+        "Spectral-velocity generating function",
+        "Spectral-velocity residues and contour sum",
+        "\\operatorname*{Res}_{\\omega=\\omega_j}\\mathscr S(\\omega)",
+        "Complete first-jet dichotomy at a simple QNM",
+        "C_{-1}=-\\dot P_j",
         "Boundary transgression as an audit",
         "Universal critical resonance and the covariant parent",
         "Universal critical-resonance criterion",
@@ -564,7 +703,9 @@ def main() -> None:
         "-\\frac{\\partial_ma}{\\partial_\\omega a}",
         "[\\dot u_n]\\in D/\\C u_n",
         "exact finite-mass secant identity",
-        "Higher critical jets",
+        "Spectral contact controls critical pole order",
+        "\\left\\lfloor\\frac pq\\right\\rfloor+1",
+        "Transverse higher jets",
         "Critical mass derivative of the metric Green operator",
         "G_{-2}=-\\frac{\\nu_n}{4\\alpha_{\\rm W}}P_n",
         "Isolated parent-resonance contribution",
@@ -616,6 +757,8 @@ def main() -> None:
         "the general-\\(\\ell\\) Bach coefficient \\(c_\\ell(\\omega)\\) has been computed",
         "a numerical value of \\(\\xi_n\\) has been computed",
         "a threshold-uniform estimate for \\(b/a^2\\) is established",
+        "a validated multi-QNM selector contour has been computed",
+        "every Schwarzschild overtone is an EP2",
     ]
     for phrase in forbidden:
         if phrase in text:
@@ -960,11 +1103,13 @@ def main() -> None:
     verify_commutator()
     verify_period_matrix(claims)
     verify_mass_jost_and_confluence(claims)
+    verify_spectral_velocity_and_contact_order(claims)
 
     print("PASS paper/17-pure-weyl-schwarzschild-extension-structure.tex")
     print(
         "PASS exact cocycle, endpoint-compatible mass jet, filtered "
-        "unfolding, confluent metrics, and nilpotent root-space identities"
+        "unfolding, spectral-flow, contact-order, confluent metrics, and "
+        "nilpotent root-space identities"
     )
     print("PASS authority provenance and fail-closed claim boundary")
 

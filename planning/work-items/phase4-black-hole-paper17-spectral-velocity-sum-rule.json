@@ -1,0 +1,50 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-paper17-spectral-velocity-sum-rule",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-paper17-spectral-velocity-sum-rule",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-paper17-spectral-velocity-sum-rule.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper17-spectral-velocity-sum-rule",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 1,
+    "objective": "Promote the Bach projective shear to a meromorphic spectral-velocity generating function, prove its QNM residue and contour sum rules, classify the defective and semisimple first-jet alternatives at every simple QNM, and replace the transverse higher-jet statement by the exact contact-order pole law.",
+    "stop_condition": "Paper 17 proves that b_B/a=(i omega/2) partial_m log(a)+h has simple-QNM residues kappa_n, proves the analytic-contour sum rule and its reflection audit, states the exact equivalence between nonzero first mass velocity and the defective Smith branch, distinguishes projector motion when the velocity vanishes, proves poleord J_p <= floor(p/q)+1 with the exact first-visible and repeated-multiple coefficients, explains why the critical determinant alone cannot distinguish the Smith branches, and preserves the boundary that no validated multi-QNM contour integral or overtone tower is claimed. The generated claim map, independent exact verifier, mutation tests, PDF, report, and tier receipt are updated.",
+    "current_gate": "spectral-flow residue calculus and contact-order classification",
+    "forbid": "no claim that a zero contour sum implies every enclosed selector vanishes; no validated multi-QNM selector sum without interval contour transport; no overtone EP2 tower; no claim that p<q removes projector-motion simple poles; no global retarded contour, stability, quantum, or all-ell Bach nonsplitting claim",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-paper17-static-threshold-and-qnm-curvature"
+    ],
+    "activates": [
+      "validated multi-QNM selector contour experiment",
+      "validated overtone augmented-overlap tower test"
+    ],
+    "allowed_paths": [
+      "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "paper/test_17_pure_weyl_extension_claim_map.py",
+      "reports/phase4-black-hole-paper17-spectral-velocity-sum-rule-2026-07-25.md",
+      "reports/PAPER17_SPECTRAL_VELOCITY_SUM_RULE_TIER_RECEIPT.json",
+      "planning/work-items/phase4-black-hole-paper17-spectral-velocity-sum-rule.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use the endpoint-normalized mass-Evans identity, simple-zero residue calculus, the existing Smith dichotomy, the canonical moving-pole expansion, and exact coefficient extraction from (omega-omega_n(m))^{-1}. Treat the contour theorem only on analytic Evans domains with simple zeros and no contour zeros.",
+    "input_commit": "5a942f3e9c068eafbb58b791611b71d83fe72731",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "The contour sum rule is exact, but no numerical multi-QNM contour integral is certified by this item.",
+      "The contact-order theorem distinguishes enhanced poles from simple poles caused by projector motion.",
+      "The physical endpoint and global causal claims remain open."
+    ]
+  },
+  "edges": []
+}

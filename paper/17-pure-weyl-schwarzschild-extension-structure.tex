@@ -1,7 +1,7 @@
 \documentclass[11pt]{article}
 
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
 \usepackage{booktabs,microtype,xurl,xcolor}
 \usepackage[colorlinks=true,linkcolor=blue!55!black,
             citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
@@ -72,6 +72,13 @@ the isolated-resonance time contribution directly from the massive QNM
 velocity and projector derivative.  The second mass derivative of the QNM
 frequency is likewise determined by the ordinary Regge--Wheeler finite
 resolvent part and augmented left/right resonant data.
+The quotient of the Bach shear by the scalar Evans function is a
+meromorphic spectral-velocity generating function: its QNM residues are
+the projective selectors, and its contour integral sums those selectors.
+At any simple QNM the first mass velocity decides exactly between the
+defective and semisimple Weyl doublings.  More generally, the order of
+contact of the massive QNM branch controls the maximal pole order of every
+higher critical mass jet.
 
 At a simple spin-two quasinormal frequency the complete connection admits
 two possible local Smith types.  A validated projective Evans calculation
@@ -115,7 +122,7 @@ differential field.  The two spin-two layers therefore share scalar
 characteristics without defining two rationally separable radial
 branches.
 
-This paper establishes six central results.
+This paper establishes seven central results.
 \begin{enumerate}
 \item The repeated spin-two block is a non-split Regge--Wheeler
   self-extension, realized exactly as a parameter jet.
@@ -140,6 +147,11 @@ This paper establishes six central results.
   filtration protects linear mass splitting, while reverse mixing produces
   generic square-root splitting.  Its discriminant, projectors, positive
   metrics, local contour, and Krein form have exact gap-controlled limits.
+\item The meromorphic function \(b_{\rm B}/a\) generates infinitesimal
+  spectral flow: its residue at each simple nonzero QNM is the selector,
+  and its contour integral is the sum of the enclosed selectors.  Vanishing
+  first velocity is exactly the semisimple Smith branch, while the order of
+  spectral contact controls the pole order of higher critical jets.
 \item The covariant pure-Weyl metric Green function is the mass derivative
   of the massive spin-two resolvent.  Its double coefficient is controlled
   by QNM motion, its simple coefficient by projector motion, and its local
@@ -192,6 +204,12 @@ Causal spacetime pole and generalized ringdown
 Critical-mass unfolding and QNM velocity
 & Endpoint-compatible jet and nonzero certified selector
 & Exact/validated theorem\\
+Spectral-velocity residues and contour sum
+& Analytic Evans domain, simple zeros, and endpoint-normalized mass derivative
+& Exact local/contour theorem\\
+Contact-order pole hierarchy
+& Analytic moving simple pole and residue projector
+& Exact fixed-domain theorem\\
 Two-parameter EP2 phase diagram
 & Exact Einstein filtration and a declared transverse mixing direction
 & Exact local theorem\\
@@ -1586,6 +1604,137 @@ The even/odd signs follow from the pole order under
 real perturbation.
 \end{corollary}
 
+\subsection{Spectral-velocity generating function}
+
+The endpoint-normalized mass comparison also packages the selectors of
+many QNMs into one meromorphic function.
+
+\begin{theorem}[Spectral-velocity residues and contour sum]
+\label{thm:spectral-velocity}
+Let \(\Omega\) be a domain on which \(a(\omega,m)\), \(b_{\rm B}(\omega)\),
+and the endpoint Jost normalizations in
+Theorem~\ref{thm:mass-qnm-slope} are analytic.  Away from the zeros of
+\(a(\omega,0)\), define
+\[
+ \mathscr S(\omega)=\frac{b_{\rm B}(\omega)}{a(\omega,0)}.
+\]
+Then
+\[
+ \boxed{\;
+ \mathscr S(\omega)
+ =\frac{i\omega}{2}\,\partial_m\log a(\omega,0)+h(\omega).
+ \;}
+\]
+If \(\omega_j\ne0\) is a simple zero of \(a(\omega,0)\), then
+\[
+ \boxed{\;
+ \operatorname*{Res}_{\omega=\omega_j}\mathscr S(\omega)
+ =\kappa_j
+ =-\frac{i\omega_j}{2}\omega_j'(0).
+ \;}
+\]
+Consequently, if a positively oriented contour
+\(\Gamma\Subset\Omega\) contains only simple zeros of \(a\) and no zero
+lies on \(\Gamma\), then
+\begin{equation}\label{eq:selector-contour-sum}
+ \boxed{\;
+ \frac{1}{2\pi i}\oint_\Gamma
+ \frac{b_{\rm B}(\omega)}{a(\omega,0)}\,d\omega
+ =\sum_{\omega_j\in\operatorname{int}\Gamma}\kappa_j.
+ \;}
+\end{equation}
+Equivalently,
+\[
+ \boxed{\;
+ \sum_{\omega_j\in\operatorname{int}\Gamma}
+ \omega_j\omega_j'(0)
+ =2i\,\frac{1}{2\pi i}\oint_\Gamma
+ \frac{b_{\rm B}}a\,d\omega.
+ \;}
+\]
+\end{theorem}
+
+\begin{proof}
+Divide the identity in
+Theorem~\ref{thm:mass-qnm-slope} by \(a(\omega,0)\).
+Near a simple moving zero,
+\[
+ a(\omega,m)
+ =u(\omega,m)\bigl(\omega-\omega_j(m)\bigr),
+ \qquad u(\omega_j,0)\ne0,
+\]
+and therefore
+\[
+ \partial_m\log a(\omega,0)
+ =-\frac{\omega_j'(0)}{\omega-\omega_j}
+ +\text{holomorphic}.
+\]
+Multiplication by \(i\omega/2\) gives residue
+\(-i\omega_j\omega_j'(0)/2=\kappa_j\).  The analytic normalization
+term \(h\) has zero contour integral, so the residue theorem proves
+\eqref{eq:selector-contour-sum}; the weighted form follows from
+\(\omega_j\omega_j'(0)=2i\kappa_j\).
+\end{proof}
+
+\begin{corollary}[Reflection audit]
+If \(\Gamma\) and its enclosed zero set are invariant under
+\(\omega\mapsto-\overline\omega\), then the selector sum in
+\eqref{eq:selector-contour-sum} is purely imaginary.  Indeed, a reflected
+pair contributes
+\[
+ \kappa_j+\kappa_j^\sharp
+ =\kappa_j-\overline{\kappa_j}
+ =2i\,\operatorname{Im}\kappa_j.
+\]
+A fixed zero on the imaginary axis has purely imaginary selector by the
+same symmetry.  This is an exact audit for a future validated multi-QNM
+contour calculation; no such calculation is claimed here.
+\end{corollary}
+
+\begin{proposition}[Complete first-jet dichotomy at a simple QNM]
+\label{prop:first-jet-dichotomy}
+Let \(\omega_j\ne0\) be a simple scalar QNM and assume the spin-one factor
+is a local unit.  Then exactly one of the following alternatives holds:
+\[
+ \begin{aligned}
+ \omega_j'(0)\ne0
+ &\Longleftrightarrow b_{\rm B}(\omega_j)\ne0
+ \Longleftrightarrow \Smith(T)=(0,0,2),\\
+ \omega_j'(0)=0
+ &\Longleftrightarrow b_{\rm B}(\omega_j)=0
+ \Longleftrightarrow \Smith(T)=(0,1,1).
+ \end{aligned}
+\]
+In the first case the first critical jet has a double pole and a
+length-two generalized root.  In the second case it has two semisimple
+length-one roots and no double pole.  Its projected critical response can
+nevertheless retain the simple coefficient
+\[
+ C_{-1}=-\dot P_j.
+\]
+Thus the semisimple case splits further into a shape-sensitive alternative
+\(\dot P_j\ne0\), with a simple pole, and a first-jet-invisible alternative
+\(\dot P_j=0\), in which the projected first mass derivative is
+holomorphic at \(\omega_j\).
+\end{proposition}
+
+\begin{proof}
+At a nonzero simple QNM,
+Theorem~\ref{thm:mass-qnm-slope} identifies
+\(b_{\rm B}(\omega_j)\) with
+\((i\omega_j/2)\partial_ma(\omega_j,0)\), while implicit
+differentiation gives
+\(\omega_j'(0)=-\partial_ma/\partial_\omega a\).
+Proposition~\ref{prop:smith} gives the two Smith types.  Finally,
+Proposition~\ref{prop:canonical-simple-pole} gives
+\(C_{-2}=-\omega_j'(0)P_j\) and \(C_{-1}=-\dot P_j\).
+\end{proof}
+
+The critical determinant alone cannot make this distinction:
+\(\det T_2=a^2\) has algebraic multiplicity two in both Smith branches.
+The shear \(b_{\rm B}\), equivalently the transverse mass derivative of
+the Evans divisor, supplies the missing unfolding information.
+
 \subsection{Boundary transgression as an audit}
 
 For finite cuts, the direct field-redefinition convention gives
@@ -2034,32 +2183,96 @@ normalization.  Explicitly,
 As before, this is an isolated local contour theorem, not a global
 retarded contour deformation.
 
-\begin{corollary}[Higher critical jets]
-For \(p\ge1\), define
+\begin{theorem}[Spectral contact controls critical pole order]
+\label{thm:contact-order}
+Let
 \[
- C_p=R(AR)^p.
+ R_m(\omega)=
+ \frac{P_n(m)}{\omega-\omega_n(m)}+H_n(\omega,m)
+\]
+be an analytic family of simple-pole resolvents and suppose the first
+nonzero mass derivative of the resonance occurs at order \(q\):
+\[
+ \omega_n(m)=\omega_n+
+ \frac{\nu_{n,q}}{q!}m^q+O(m^{q+1}),
+ \qquad \nu_{n,q}\ne0.
+\]
+For \(p\ge0\), define the normalized critical jet
+\[
+ J_p(\omega)=\frac{(-1)^p}{p!}
+ \left.\partial_m^pR_m(\omega)\right|_{m=0}.
 \]
 Then
 \[
  \boxed{\;
- C_p=\frac{(-1)^p}{p!}
- \left.\partial_m^p(L+mA)^{-1}\right|_{m=0}.
+ \operatorname{poleord}_{\omega_n}J_p
+ \le \left\lfloor\frac pq\right\rfloor+1.
  \;}
 \]
-If \(\beta_n\ne0\), its pole order at \(\omega_n\) is \(p+1\), with leading
+For \(p<q\), resonance motion produces no pole enhancement, although
+derivatives of \(P_n(m)\) may retain a simple pole.  The first enhanced
+pole appears at \(p=q\), is second order, and has coefficient
+\[
+ \boxed{\;
+ \operatorname{Coeff}_{(\omega-\omega_n)^{-2}}J_q
+ =\frac{(-1)^q}{q!}\nu_{n,q}P_n.
+ \;}
+\]
+More generally, for \(p=kq\) the highest possible pole has order \(k+1\)
+and coefficient
+\[
+ \boxed{\;
+ \operatorname{Coeff}_{(\omega-\omega_n)^{-(k+1)}}J_{kq}
+ =(-1)^{kq}
+ \left(\frac{\nu_{n,q}}{q!}\right)^kP_n.
+ \;}
+\]
+\end{theorem}
+
+\begin{proof}
+Put \(z=\omega-\omega_n\) and
+\(\delta(m)=\omega_n(m)-\omega_n\).  The moving denominator has the
+formal expansion
+\[
+ \frac1{z-\delta(m)}
+ =\sum_{k\ge0}\frac{\delta(m)^k}{z^{k+1}}.
+\]
+Because \(\ord_{m=0}\delta=q\), a term of pole order \(k+1\) can enter the
+\(p\)-th derivative only if \(kq\le p\).  This proves the bound.
+At \(p=q\), the coefficient of \(m^qz^{-2}\) is
+\((\nu_{n,q}/q!)P_n\); at \(p=kq\), the coefficient of
+\(m^{kq}z^{-(k+1)}\) is
+\((\nu_{n,q}/q!)^kP_n\).  Multiplication by the normalization
+\((-1)^p\) of \(J_p\) gives the two displayed coefficients.
+\end{proof}
+
+\begin{corollary}[Transverse higher jets]
+For the linear pencil \(L+mA\), repeated differentiation gives
+\[
+ R(AR)^p=\frac{(-1)^p}{p!}
+ \left.\partial_m^p(L+mA)^{-1}\right|_{m=0}.
+\]
+If \(\beta_n\ne0\), then \(q=1\),
+\(\nu_n=-\beta_n/\alpha_n\), and the pole order is \(p+1\), with leading
 coefficient
 \[
  \frac{\beta_n^p}{\alpha_n^{p+1}}
  u_n\otimes\widetilde u_n.
 \]
-The leading isolated-contour polynomial is
+Its leading isolated-contour polynomial is
 \[
  \frac{(it)^p}{p!}e^{i\omega_nt}
  \frac{\beta_n^p}{\alpha_n^{p+1}}
  u_n\otimes\widetilde u_n.
 \]
-Pure Weyl gravity is the first-jet case \(p=1\).
+Pure Weyl gravity is the transverse first-jet case \(p=q=1\).
 \end{corollary}
+
+The contact order \(q\) classifies the critical response.  Transverse
+criticality (\(q=1\)) is visible in the first jet.  Tangential criticality
+(\(q=2\)) has no first-jet double pole but acquires one in the second jet,
+not automatically a triple pole.  Higher contact \(q\ge3\) is invisible
+to pole enhancement in the first \(q-1\) mass derivatives.
 
 For further Schwarzschild overtones, the universal criterion replaces a
 full six-state Smith calculation by two validated scalar tasks: certify a
@@ -2076,7 +2289,13 @@ Proposition~\ref{prop:qnm-hellmann-feynman} reduces the overlap to a
 bilinear scalar Wronskian integral plus explicit endpoint terms.  A
 validated evaluation for several overtones would decide whether the
 certified reflected EP2 pair is the first member of a defective tower;
-no such tower is claimed here.
+no such tower is claimed here.  Complementarily,
+Theorem~\ref{thm:spectral-velocity} permits a validated contour integral
+of \(b_{\rm B}/a\) to sum many selectors at once.  A nonzero sum proves
+that at least one enclosed QNM is defective, but a zero sum is
+inconclusive because nonzero selectors may cancel.  Nested contours can
+therefore guide, but do not replace, the mode-by-mode augmented-overlap
+certificates.
 
 \section{Two-parameter filtration-protected unfolding}
 \label{sec:unfolding}
@@ -2821,9 +3040,10 @@ inverse-Laplace deformation, a time-domain instability, the off-resonance
 normalization function \(h(\omega)\), an all-\(\ell\) Bach nonsplitting
 theorem, a certified value of \(c_n\) for a concrete physical
 filtration-breaking perturbation, a numerical value of \(\xi_n\), a
-threshold-uniform estimate for \(b/a^2\), or a quantum positivity
-statement.  The polynomial \(t e^{i\omega_nt}\) is proved only for the
-isolated local two-pole contour contribution.
+threshold-uniform estimate for \(b/a^2\), a validated multi-QNM contour
+sum, an overtone EP2 tower, or a quantum positivity statement.  The
+polynomial \(t e^{i\omega_nt}\) is proved only for the isolated local
+two-pole contour contribution.
 
 \section{Conclusion}
 
@@ -2851,6 +3071,14 @@ while projector motion controls its accompanying simple coefficient.  The
 second derivative of the massive QNM is fixed by the ordinary finite
 Regge--Wheeler resolvent and the augmented resonant pairing, furnishing the
 first finite correction to the confluent projector and contour limits.
+The ratio \(b_{\rm B}/a\) is the corresponding spectral-velocity
+generating function: its residues are the selectors and its contour
+integral sums their infinitesimal QNM motion.  At every simple nonzero QNM,
+nonzero first velocity is equivalent to the defective Smith branch;
+vanishing velocity gives the semisimple branch, while projector motion may
+still leave a simple pole.  For higher mass jets, the exact pole hierarchy
+is controlled by the order of spectral contact rather than merely by the
+number of derivatives.
 
 The physical mass deformation is filtration-preserving rather than a
 generic square-root unfolding.  In the two-parameter phase diagram, the
