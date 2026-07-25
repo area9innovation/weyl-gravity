@@ -243,6 +243,39 @@ def payload() -> dict:
                 "principal_coefficient": "-beta/alpha**2*V0 tensor W0",
                 "principal_coefficient_square": "0",
             },
+            "krein_jordan_geometry": {
+                "nilpotent": [["0", "1"], ["0", "0"]],
+                "self_adjoint_equation": "N_dagger*G=G*N",
+                "general_form": [["0", "b"], ["b", "d"]],
+                "nondegeneracy": "b!=0",
+                "chain_shift": "V1->V1-d*V0/(2*b)",
+                "normal_form": [["0", "1"], ["1", "0"]],
+                "geometric_root_null": True,
+                "positive_compatible_form_exists": False,
+                "null_rank_one_pole": "gamma*V0 tensor flat(V0)",
+                "pole_square": "0",
+                "left_root": "W0 proportional flat(V0)",
+                "trace_pole": "0",
+                "det_I_plus_s_pole": "1",
+            },
+            "opposite_signature_confluence": {
+                "branch_form": "diag(sigma_0,sigma_1)",
+                "pulled_back": [
+                    ["sigma_0", "-sigma_0/m"],
+                    ["-sigma_0/m", "(sigma_0+sigma_1)/m**2"],
+                ],
+                "nondegenerate_first_order_iff": "sigma_1=-sigma_0",
+                "opposite_limit": [
+                    ["0", "-sigma_0"],
+                    ["-sigma_0", "0"],
+                ],
+                "same_sign_m2_limit": [
+                    ["0", "0"],
+                    ["0", "2*sigma_0"],
+                ],
+                "same_sign_limit_rank": 1,
+                "bounded_positive_critical_involution_exists": False,
+            },
             "confluent_limits": {
                 "m_times_C": "-2*N",
                 "tau_times_C": "4*I*N/omega",
@@ -335,6 +368,63 @@ def payload() -> dict:
                 "reflection_symmetric_sum": "purely_imaginary",
                 "zero_sum_implies_all_zero": False,
             },
+            "spectral_flow_forms": {
+                "theta_1": "-partial_m(log(a))*domega",
+                "theta_1_principal": "nu_n*domega/(omega-omega_n)",
+                "theta_1_residue": "nu_n",
+                "theta_2": "-partial_m**2(log(a))*domega",
+                "theta_2_principal": (
+                    "(nu_n**2/(omega-omega_n)**2"
+                    "+xi_n/(omega-omega_n))*domega"
+                ),
+                "theta_2_residue": "xi_n",
+                "unit_change": "holomorphic_one_form",
+                "bach_representative": (
+                    "-2*b_B*domega/(I*omega*a)=theta_1+holomorphic"
+                ),
+                "velocity_moment": (
+                    "integral(phi*theta_1)/(2*pi*I)="
+                    "sum(phi(omega_n)*nu_n)"
+                ),
+                "acceleration_moment": (
+                    "integral(phi*theta_2)/(2*pi*I)="
+                    "sum(phi(omega_n)*xi_n+phi_prime(omega_n)*nu_n**2)"
+                ),
+            },
+            "evans_acceleration": {
+                "velocity": "-a_m/a_omega",
+                "acceleration": (
+                    "-(a_mm+2*nu*a_omega_m"
+                    "+nu**2*a_omega_omega)/a_omega"
+                ),
+                "unit_invariant": True,
+                "operator_formula": (
+                    "(2*pair(tilde_u,B*H*B*u)"
+                    "-nu**2*pair(tilde_u,L2*u)"
+                    "-2*nu*pair(tilde_u,A1*u))/alpha"
+                ),
+                "reflected_acceleration": "-conjugate(xi)",
+            },
+            "second_critical_jet": {
+                "definition": "partial_m**2(R_m)/2",
+                "triple_coefficient": "nu**2*P",
+                "double_coefficient": "nu*Pdot+xi*P/2",
+                "simple_coefficient": "Pddot/2",
+                "stationary_accelerating_double": "xi*P/2",
+                "local_contour": (
+                    "exp(I*omega*t)*(Pddot/2+I*t*nu*Pdot"
+                    "+(I*t*xi/2-t**2*nu**2/2)*P)"
+                ),
+            },
+            "damped_jordan_envelope": {
+                "envelope": "t*exp(-gamma*t)",
+                "maximum_time": "1/gamma",
+                "maximum_value": "1/(E*gamma)",
+                "certified_gamma": "0.0889623156889357",
+                "certified_t_max_approx": "11.241",
+                "certified_envelope_max_approx": "4.135",
+                "global_stability_claim": False,
+            },
             "simple_qnm_first_jet_dichotomy": {
                 "nonzero_velocity": (
                     "nu_n!=0 iff b_B(omega_n)!=0 iff Smith=(0,0,2)"
@@ -426,6 +516,10 @@ def payload() -> dict:
             "centered_resolvent_crossover_exact": True,
             "root_space_polarization_exact": True,
             "full_extension_green_principal_coefficient_nilpotent": True,
+            "canonical_krein_jordan_geometry_exact": True,
+            "null_rank_one_pole_geometry_exact": True,
+            "opposite_signature_confluence_criterion_exact": True,
+            "positive_self_adjoint_nilpotent_excluded": True,
             "local_two_pole_contour_jordan_limit": True,
             "confluent_projector_scale_exact": True,
             "confluent_positive_metric_singularity_exact": True,
@@ -444,6 +538,12 @@ def payload() -> dict:
             "reflected_ep2_pair_exact": True,
             "spectral_velocity_generator_exact": True,
             "selector_contour_sum_rule_exact": True,
+            "spectral_flow_one_forms_exact": True,
+            "weighted_velocity_and_acceleration_moments_exact": True,
+            "evans_acceleration_formula_exact": True,
+            "second_critical_jet_laurent_exact": True,
+            "second_critical_jet_local_contour_exact": True,
+            "damped_jordan_envelope_exact": True,
             "simple_qnm_first_jet_dichotomy_exact": True,
             "spectral_contact_order_pole_law_exact": True,
             "critical_determinant_insufficient_for_smith_type": True,
@@ -468,6 +568,9 @@ def payload() -> dict:
             "threshold_uniform_jost_shear_estimate": False,
             "validated_multi_qnm_selector_contour": False,
             "validated_overtone_augmented_overlap_tower": False,
+            "validated_multi_qnm_acceleration_contour": False,
+            "numerical_qnm_acceleration_computed": False,
+            "global_positive_metric_no_go": False,
         },
     }
 

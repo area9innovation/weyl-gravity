@@ -75,6 +75,11 @@ resolvent part and augmented left/right resonant data.
 The quotient of the Bach shear by the scalar Evans function is a
 meromorphic spectral-velocity generating function: its QNM residues are
 the projective selectors, and its contour integral sums those selectors.
+The normalization-invariant first and second logarithmic spectral-flow
+forms have residues equal to the QNM velocity and acceleration; their
+weighted contour moments sum the corresponding spectral kinematics.  The
+second critical jet separates velocity, acceleration, and projector
+motion in its three Laurent coefficients.
 At any simple QNM the first mass velocity decides exactly between the
 defective and semisimple Weyl doublings.  More generally, the order of
 contact of the massive QNM branch controls the maximal pole order of every
@@ -94,6 +99,11 @@ has linear splitting, whereas a transverse filtration-breaking
 perturbation has square-root splitting.  The spectral gap controls the
 projector norm, positive-metric condition number, resolvent crossover, and
 precision required to certify the physical slope.
+On the critical root fiber, the Jordan nilpotent uniquely forces a
+hyperbolic compatible nondegenerate Hermitian form up to chain equivalence
+and scale.  The Einstein root is null, the full double-pole coefficient is
+its null rank-one square-zero operator, and a nondegenerate first-order
+branch-form limit occurs exactly for opposite Krein signatures.
 
 Promotion to a global physical resolvent and to a full retarded generalized
 ringdown expansion requires a separate analytic Fredholm realization,
@@ -147,17 +157,23 @@ This paper establishes seven central results.
   filtration protects linear mass splitting, while reverse mixing produces
   generic square-root splitting.  Its discriminant, projectors, positive
   metrics, local contour, and Krein form have exact gap-controlled limits.
+  The critical nilpotent forces the compatible root-space form to be
+  hyperbolic, excluding a positive self-adjoint Jordan realization.
 \item The meromorphic function \(b_{\rm B}/a\) generates infinitesimal
   spectral flow: its residue at each simple nonzero QNM is the selector,
   and its contour integral is the sum of the enclosed selectors.  Vanishing
   first velocity is exactly the semisimple Smith branch, while the order of
-  spectral contact controls the pole order of higher critical jets.
+  spectral contact controls the pole order of higher critical jets.  The
+  second logarithmic spectral-flow form has residue
+  \(\omega_n''(0)\) and exact weighted acceleration moments.
 \item The covariant pure-Weyl metric Green function is the mass derivative
   of the massive spin-two resolvent.  Its double coefficient is controlled
   by QNM motion, its simple coefficient by projector motion, and its local
   polynomial signal obeys an exact rank-one excitation/observation rule.
   The curvature \(\omega_n''(0)\) is an exact augmented finite-part
-  functional of ordinary Regge--Wheeler data.
+  functional of ordinary Regge--Wheeler data.  The second critical jet
+  separates squared velocity, acceleration, and first and second projector
+  motion in its three singular coefficients.
 \end{enumerate}
 
 The fourth result is stronger than a statement about a finite connection
@@ -210,6 +226,12 @@ Spectral-velocity residues and contour sum
 Contact-order pole hierarchy
 & Analytic moving simple pole and residue projector
 & Exact fixed-domain theorem\\
+Spectral acceleration and second critical jet
+& Twice-differentiated Evans divisor and moving residue projector
+& Exact local/contour theorem\\
+Canonical Krein--Jordan geometry
+& Nonzero length-two nilpotent and nondegenerate compatible Hermitian form
+& Exact finite-dimensional theorem\\
 Two-parameter EP2 phase diagram
 & Exact Einstein filtration and a declared transverse mixing direction
 & Exact local theorem\\
@@ -2042,6 +2064,249 @@ cancels from \(-a_m/a_\omega\).  The augmented formula is the same
 identity written invariantly.
 \end{proof}
 
+\subsection{Spectral acceleration and the second critical jet}
+
+The shear quotient of Theorem~\ref{thm:spectral-velocity} is a convenient
+representative of a canonical meromorphic one-form.
+
+\begin{theorem}[First and second spectral-flow forms]
+\label{thm:spectral-flow-forms}
+On an analytic massive Evans domain, define
+\[
+ \Theta_1(\omega)=
+ -\left.\partial_m\log a(\omega,m)\right|_{m=0}\,d\omega,
+ \qquad
+ \Theta_2(\omega)=
+ -\left.\partial_m^2\log a(\omega,m)\right|_{m=0}\,d\omega.
+\]
+At a simple QNM branch
+\[
+ \omega_n(m)=\omega_n+\nu_nm+\frac12\xi_nm^2+O(m^3),
+\]
+their singular parts are
+\[
+ \boxed{\;
+ \Theta_1=
+ \left[\frac{\nu_n}{\omega-\omega_n}
+ +\text{\rm holomorphic}\right]d\omega,
+ \;}
+\]
+and
+\[
+ \boxed{\;
+ \Theta_2=
+ \left[
+ \frac{\nu_n^2}{(\omega-\omega_n)^2}
+ +\frac{\xi_n}{\omega-\omega_n}
+ +\text{\rm holomorphic}
+ \right]d\omega.
+ \;}
+\]
+In particular,
+\[
+ \operatorname*{Res}_{\omega=\omega_n}\Theta_1=\nu_n,
+ \qquad
+ \operatorname*{Res}_{\omega=\omega_n}\Theta_2=\xi_n.
+\]
+Multiplication \(a\mapsto v(\omega,m)a\) by an analytic nonzero Evans
+unit changes each \(\Theta_j\) only by a holomorphic one-form.  Away from
+\(\omega=0\),
+\[
+ \boxed{\;
+ -\frac{2}{i\omega}\frac{b_{\rm B}}a\,d\omega
+ =\Theta_1+\text{\rm holomorphic one-form}.
+ \;}
+\]
+\end{theorem}
+
+\begin{proof}
+Factor the simple divisor as
+\[
+ a(\omega,m)=u(\omega,m)\bigl(\omega-\omega_n(m)\bigr),
+ \qquad u(\omega_n,0)\ne0.
+\]
+One and two mass derivatives of the logarithm of the second factor give
+respectively
+\[
+ -\partial_m\log(\omega-\omega_n(m))\big|_0
+ =\frac{\nu_n}{\omega-\omega_n},
+\]
+and
+\[
+ -\partial_m^2\log(\omega-\omega_n(m))\big|_0
+ =\frac{\nu_n^2}{(\omega-\omega_n)^2}
+ +\frac{\xi_n}{\omega-\omega_n}.
+\]
+The factor \(u\), and any further Evans unit \(v\), contributes only
+holomorphic one-forms.  The final identity follows by multiplying
+Theorem~\ref{thm:spectral-velocity} by \(-2/(i\omega)\).
+\end{proof}
+
+\begin{corollary}[Weighted velocity and acceleration moments]
+\label{cor:spectral-flow-moments}
+Let \(\varphi\) be analytic on and inside a positively oriented contour
+\(\Gamma\) containing only simple QNMs and no boundary zero.  Then
+\[
+ \boxed{\;
+ \frac1{2\pi i}\oint_\Gamma\varphi(\omega)\Theta_1(\omega)
+ =\sum_{\omega_n\in\operatorname{int}\Gamma}
+ \varphi(\omega_n)\nu_n,
+ \;}
+\]
+and
+\[
+ \boxed{\;
+ \frac1{2\pi i}\oint_\Gamma\varphi(\omega)\Theta_2(\omega)
+ =\sum_{\omega_n\in\operatorname{int}\Gamma}
+ \left[
+ \varphi(\omega_n)\xi_n+\varphi'(\omega_n)\nu_n^2
+ \right].
+ \;}
+\]
+Thus the zeroth moments sum respectively the velocities and accelerations,
+while the first acceleration moment is
+\[
+ \frac1{2\pi i}\oint_\Gamma\omega\Theta_2
+ =\sum_n(\omega_n\xi_n+\nu_n^2).
+\]
+\end{corollary}
+
+\begin{proof}
+Apply the residue theorem to the principal parts in
+Theorem~\ref{thm:spectral-flow-forms}.  For the second-order pole,
+\(\operatorname{Res}[\varphi(\omega)(\omega-\omega_n)^{-2}d\omega]
+=\varphi'(\omega_n)\).
+\end{proof}
+
+\begin{theorem}[Evans acceleration and second-jet Laurent coefficients]
+\label{thm:evans-acceleration}
+At a simple moving QNM,
+\[
+ \boxed{\;
+ \xi_n=
+ -\left.
+ \frac{
+ a_{mm}+2\nu_na_{\omega m}+\nu_n^2a_{\omega\omega}
+ }{a_\omega}
+ \right|_{(\omega_n,0)}.
+ \;}
+\]
+The quotient is invariant under multiplication of \(a\) by an analytic
+nonzero unit.  It equals the augmented finite-part expression in
+Theorem~\ref{thm:qnm-curvature}.
+
+For
+\[
+ J_2(\omega)=\frac12\left.\partial_m^2R_m(\omega)\right|_{m=0},
+\qquad
+ R_m(\omega)=
+ \frac{P_n(m)}{\omega-\omega_n(m)}+H_n(\omega,m),
+\]
+the singular part is
+\[
+ \boxed{\;
+ J_2(\omega)=
+ \frac{\nu_n^2P_n}{(\omega-\omega_n)^3}
+ +\frac{\nu_n\dot P_n+\frac12\xi_nP_n}
+ {(\omega-\omega_n)^2}
+ +\frac{\frac12\ddot P_n}{\omega-\omega_n}
+ +\text{\rm holomorphic}.
+ \;}
+\]
+If \(\nu_n=0\) but \(\xi_n\ne0\), the first jet has no double pole from
+resonance motion, whereas \(J_2\) has the double coefficient
+\(\xi_nP_n/2\).
+\end{theorem}
+
+\begin{proof}
+Differentiate \(a(\omega_n(m),m)=0\) twice:
+\[
+ a_\omega\xi_n+a_{\omega\omega}\nu_n^2
+ +2a_{\omega m}\nu_n+a_{mm}=0.
+\]
+Under \(a\mapsto va\), every extra term in the numerator contains either
+\(a\) or \(a_\omega\nu_n+a_m\); both vanish on the moving zero.  The
+remaining numerator and \(a_\omega\) acquire the same factor \(v\).
+The operator expression follows from the twice-differentiated QNM
+equation, as proved in Theorem~\ref{thm:qnm-curvature}.
+
+For the Laurent formula, expand
+\[
+ P_n(m)=P_n+m\dot P_n+\frac12m^2\ddot P_n+O(m^3)
+\]
+and
+\[
+ \frac1{\omega-\omega_n(m)}
+ =\frac1z+\frac{\nu_nm+\frac12\xi_nm^2}{z^2}
+ +\frac{\nu_n^2m^2}{z^3}+O(m^3),
+ \qquad z=\omega-\omega_n.
+\]
+The coefficient of \(m^2\) is precisely \(J_2\).
+\end{proof}
+
+\begin{corollary}[Second-order isolated resonance contribution]
+\label{cor:second-jet-local-contour}
+The isolated QNM contour contribution to \(J_2\) is
+\[
+ \boxed{\;
+ e^{i\omega_nt}
+ \left[
+ \frac12\ddot P_n
+ +it\,\nu_n\dot P_n
+ +\left(\frac{it\,\xi_n}{2}
+ -\frac{t^2\nu_n^2}{2}\right)P_n
+ \right].
+ \;}
+\]
+The \(t^2e^{i\omega_nt}\) coefficient records \(\nu_n^2\), while the
+\(te^{i\omega_nt}\) coefficient mixes acceleration with first projector
+motion.
+\end{corollary}
+
+\begin{proof}
+Take one half of the second mass derivative of
+\(e^{i\omega_n(m)t}P_n(m)\) at \(m=0\).
+\end{proof}
+
+\begin{corollary}[Damped Jordan envelope]
+\label{cor:damped-jordan-envelope}
+With the convention of this paper, a damped QNM has
+\(\omega_n=\omega_R+i\gamma\), \(\gamma>0\).  Hence the first-jet
+polynomial has envelope
+\[
+ t|e^{i\omega_nt}|=te^{-\gamma t},
+\]
+and
+\[
+ \boxed{\;
+ t_{\max}=\frac1\gamma,
+ \qquad
+ \max_{t\ge0}te^{-\gamma t}=\frac1{e\gamma}.
+ \;}
+\]
+For the certified mode, \(\gamma=0.0889623156889357\) in the \(M=1\)
+normalization, giving \(t_{\max}\simeq11.241M\) and maximal envelope
+factor \(4.135M\).  Thus the isolated Jordan contribution is transiently
+enhanced but decays; this is not a global retarded stability theorem.
+\end{corollary}
+
+\begin{corollary}[Second-order reflection audit]
+The reflected branch satisfies
+\[
+ \nu_n^\sharp=-\overline{\nu_n},
+ \qquad
+ \xi_n^\sharp=-\overline{\xi_n}.
+\]
+Consequently a reflected pair has purely imaginary acceleration sum,
+whereas
+\[
+ (\omega_n\xi_n+\nu_n^2)
+ +(\omega_n^\sharp\xi_n^\sharp+(\nu_n^\sharp)^2)
+\]
+is real.  These are exact audits for future symmetric-contour moment
+calculations; no numerical acceleration contour is claimed here.
+\end{corollary}
+
 On a fixed gauge-reduced domain, let
 \[
  \mathcal E_m(\omega)=\mathcal E(\omega)+m\mathcal A.
@@ -2702,6 +2967,143 @@ up to the scalar \(-\beta_n/\alpha_n^2\).  The double pole is the spectral
 realization of the endpoint cotangent-type duality \(B_2/E\simeq E^*\).
 \end{corollary}
 
+\begin{theorem}[Canonical Krein--Jordan geometry]
+\label{thm:krein-jordan}
+Let a length-two critical root space have chain basis
+\((V_0,V_1)\) and nilpotent generator
+\[
+ NV_0=0,\qquad NV_1=V_0,\qquad
+ N=\begin{pmatrix}0&1\\0&0\end{pmatrix}.
+\]
+Every nondegenerate Hermitian form \(G\) satisfying
+\[
+ N^\dagger G=GN
+\]
+has, in this chain basis, the form
+\[
+ G=\begin{pmatrix}0&b\\b&d\end{pmatrix},
+ \qquad b\in\mathbb R\setminus\{0\},\quad d\in\mathbb R.
+\]
+The permitted chain change
+\[
+ V_1\longmapsto V_1-\frac{d}{2b}V_0
+\]
+followed by a nonzero real rescaling puts the pair into the normal form
+\[
+ \boxed{\;
+ N=\begin{pmatrix}0&1\\0&0\end{pmatrix},
+ \qquad
+ G\sim\begin{pmatrix}0&1\\1&0\end{pmatrix}.
+ \;}
+\]
+Thus the geometric root is necessarily null.  In the normalized chain
+basis the generalized root is also null, and
+\[
+ G(V_0,V_1)\ne0.
+\]
+No positive-definite Hermitian form can make a nonzero nilpotent
+self-adjoint.
+\end{theorem}
+
+\begin{proof}
+Write
+\[
+ G=\begin{pmatrix}a&b\\\overline b&d\end{pmatrix}.
+\]
+The equation \(N^\dagger G=GN\) gives \(a=0\) and
+\(b=\overline b\).  Nondegeneracy gives
+\(\det G=-b^2\ne0\).  The displayed chain shift preserves
+\(NV_1=V_0\) and changes the lower-right entry to zero.
+
+Alternatively, a self-adjoint operator in a positive-definite
+finite-dimensional space is diagonalizable.  A nilpotent self-adjoint
+operator has only the eigenvalue zero and must therefore vanish, contrary
+to \(N\ne0\).
+\end{proof}
+
+\begin{corollary}[Null rank-one pole and determinant invisibility]
+\label{cor:null-rank-one-pole}
+Let \(V_0^\flat=G(V_0,\cdot)\).  On the critical root space the full
+double-pole coefficient is
+\[
+ \boxed{\;
+ R_{-2}=\gamma_nV_0\otimes V_0^\flat,
+ \qquad \gamma_n\ne0,
+ \qquad R_{-2}^2=0.
+ \;}
+\]
+Equivalently, the left geometric root covector satisfies
+\[
+ W_0\propto V_0^\flat.
+\]
+Moreover,
+\[
+ \operatorname{tr}R_{-2}=0,\qquad
+ \det(I+sR_{-2})=1,\qquad
+ e^{sR_{-2}}=I+sR_{-2}.
+\]
+Thus the nonzero enhanced response is invisible to ordinary eigenvalue,
+trace, and determinant invariants.
+\end{corollary}
+
+\begin{proof}
+Both \(W_0\) from Theorem~\ref{thm:root-polarization} and
+\(V_0^\flat\) are nonzero covectors whose kernel is the Einstein line
+\(\mathbb CV_0\), so they are proportional.  Nullness gives
+\[
+ (V_0\otimes V_0^\flat)^2
+ =V_0^\flat(V_0)V_0\otimes V_0^\flat=0.
+\]
+The remaining identities follow from square-zero nilpotency.
+\end{proof}
+
+\begin{theorem}[Opposite-sign confluence criterion]
+\label{thm:opposite-sign-confluence}
+Let the two separated branches have signatures
+\(\sigma_0,\sigma_1\in\{+1,-1\}\), and use the confluent basis defined by
+\[
+ S_m=\begin{pmatrix}1&1\\0&m\end{pmatrix}.
+\]
+The pulled-back branch form is
+\[
+ J_m=(S_m^{-1})^\dagger
+ \begin{pmatrix}\sigma_0&0\\0&\sigma_1\end{pmatrix}
+ S_m^{-1}
+ =
+ \begin{pmatrix}
+ \sigma_0&-\sigma_0/m\\
+ -\sigma_0/m&(\sigma_0+\sigma_1)/m^2
+ \end{pmatrix}.
+\]
+A scalar-renormalized finite nondegenerate critical limit exists if and
+only if the signatures are opposite.  In that case,
+\[
+ \boxed{\;
+ \sigma_1=-\sigma_0
+ \quad\Longrightarrow\quad
+ mJ_m\longrightarrow
+ \begin{pmatrix}0&-\sigma_0\\-\sigma_0&0\end{pmatrix}.
+ \;}
+\]
+For equal signatures, every scalar normalization that removes the
+\(m^{-2}\) divergence has a degenerate limit; in particular,
+\[
+ m^2J_m\longrightarrow
+ \begin{pmatrix}0&0\\0&2\sigma_0\end{pmatrix}.
+\]
+\end{theorem}
+
+\begin{corollary}[No finite positive critical branch observable]
+Every endomorphism commuting with the nonzero critical Jordan generator
+is \(C=aI+bN\).  If \(C^2=I\), then \(C=\pm I\), and \(GC=\pm G\) remains
+indefinite.  Hence no bounded critical involution commuting with the
+dynamics converts the canonical hyperbolic form into a positive metric.
+The divergence of the finite-mass branch-sign involution is therefore
+forced by the loss of the semisimple branch decomposition, not by an
+unfortunate basis choice.  This is a local critical-root obstruction, not
+a full quantum no-go theorem.
+\end{corollary}
+
 The inverse is
 \[
  \mathcal T(z,\mu)^{-1}
@@ -3041,9 +3443,11 @@ normalization function \(h(\omega)\), an all-\(\ell\) Bach nonsplitting
 theorem, a certified value of \(c_n\) for a concrete physical
 filtration-breaking perturbation, a numerical value of \(\xi_n\), a
 threshold-uniform estimate for \(b/a^2\), a validated multi-QNM contour
-sum, an overtone EP2 tower, or a quantum positivity statement.  The
-polynomial \(t e^{i\omega_nt}\) is proved only for the isolated local
-two-pole contour contribution.
+sum, a validated acceleration contour or numerical acceleration, an
+overtone EP2 tower, a global positive-metric or quantum no-go theorem, or
+a quantum positivity statement.  The polynomial
+\(t e^{i\omega_nt}\) is proved only for the isolated local two-pole
+contour contribution.
 
 \section{Conclusion}
 
@@ -3079,6 +3483,14 @@ vanishing velocity gives the semisimple branch, while projector motion may
 still leave a simple pole.  For higher mass jets, the exact pole hierarchy
 is controlled by the order of spectral contact rather than merely by the
 number of derivatives.
+The canonical logarithmic forms \(\Theta_1\) and \(\Theta_2\) sharpen this
+to local spectral kinematics: their residues are the QNM velocity and
+acceleration, and their weighted contour moments sum both quantities over
+analytic QNM cells.  The second critical jet then separates squared
+velocity, acceleration, and projector motion among its triple, double, and
+simple coefficients.  For the isolated certified damped mode, the Jordan
+envelope peaks at \(t=1/\operatorname{Im}\omega_n\) and subsequently
+decays.
 
 The physical mass deformation is filtration-preserving rather than a
 generic square-root unfolding.  In the two-parameter phase diagram, the
@@ -3093,6 +3505,13 @@ converges to the Jordan polynomial and the renormalized opposite-sign
 branch form becomes the pure-Weyl hyperbolic plane.  A global causal
 time-domain interpretation still requires the separate retarded contour
 theory stated above.
+On the critical root fiber these facts are one geometry: a nonzero
+self-adjoint length-two nilpotent forces the nondegenerate compatible form
+to be hyperbolic, makes the Einstein root null, and realizes the full
+double-pole coefficient as a null rank-one square-zero map.  A finite
+nondegenerate first-order confluence of branch forms exists precisely for
+opposite signatures; no positive-definite form or bounded commuting
+involution survives the critical Jordan limit.
 
 \begin{thebibliography}{9}
 

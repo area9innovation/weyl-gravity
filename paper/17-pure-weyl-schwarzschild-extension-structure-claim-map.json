@@ -85,6 +85,7 @@
     "bach_cocycle_normal_form_exact": true,
     "bach_mass_parameter_relation_exact_local": true,
     "boundary_transgression_identity_exact": true,
+    "canonical_krein_jordan_geometry_exact": true,
     "canonical_mass_tangent_class_exact": true,
     "canonical_simple_pole_with_frequency_derivative_exact": true,
     "centered_resolvent_crossover_exact": true,
@@ -94,8 +95,10 @@
     "critical_determinant_insufficient_for_smith_type": true,
     "critical_mass_qnm_velocity_nonzero": true,
     "critical_pseudospectral_scale_exact": true,
+    "damped_jordan_envelope_exact": true,
     "endpoint_compatible_massive_jost_classes": true,
     "equivalence_gauge_forced_linear_infinity_growth": true,
+    "evans_acceleration_formula_exact": true,
     "exact_partial_jet_realization": true,
     "exceptional_parabola_and_monodromy_exact": true,
     "exterior_cutoff_radial_green_double_pole": true,
@@ -116,20 +119,26 @@
     "local_tt_critical_mass_jet_identified": true,
     "local_two_pole_contour_jordan_limit": true,
     "lower_left_mutation_controls_exact": true,
+    "null_rank_one_pole_geometry_exact": true,
+    "opposite_signature_confluence_criterion_exact": true,
     "parent_double_and_simple_laurent_coefficients_exact": true,
     "parent_local_contour_selection_rule_exact": true,
     "parent_metric_green_mass_derivative_exact": true,
     "physical_mass_reverse_coupling_zero": true,
+    "positive_self_adjoint_nilpotent_excluded": true,
     "refined_filtered_gap_and_contour_expansion_exact": true,
     "reflected_ep2_pair_exact": true,
     "renormalized_krein_hyperbolic_limit_exact": true,
     "resonant_evaluation_identity_exact": true,
     "resonant_functional_descends_to_extension_class": true,
     "root_space_polarization_exact": true,
+    "second_critical_jet_laurent_exact": true,
+    "second_critical_jet_local_contour_exact": true,
     "second_order_qnm_curvature_formula_exact": true,
     "selector_contour_sum_rule_exact": true,
     "simple_qnm_first_jet_dichotomy_exact": true,
     "spectral_contact_order_pole_law_exact": true,
+    "spectral_flow_one_forms_exact": true,
     "spectral_velocity_generator_exact": true,
     "spin2_local_commutant_dual_numbers": true,
     "static_dipole_preimage_exact": true,
@@ -144,7 +153,8 @@
     "two_parameter_coefficients_unit_invariant": true,
     "two_parameter_unfolding_discriminant_exact": true,
     "unique_simple_spin_two_qnm_in_disk": true,
-    "universal_critical_resonance_criterion_exact": true
+    "universal_critical_resonance_criterion_exact": true,
+    "weighted_velocity_and_acceleration_moments_exact": true
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -221,6 +231,22 @@
       "parameter_relation": "m = I*omega*tau/2",
       "qnm_velocity": "2*I*kappa/omega"
     },
+    "damped_jordan_envelope": {
+      "certified_envelope_max_approx": "4.135",
+      "certified_gamma": "0.0889623156889357",
+      "certified_t_max_approx": "11.241",
+      "envelope": "t*exp(-gamma*t)",
+      "global_stability_claim": false,
+      "maximum_time": "1/gamma",
+      "maximum_value": "1/(E*gamma)"
+    },
+    "evans_acceleration": {
+      "acceleration": "-(a_mm+2*nu*a_omega_m+nu**2*a_omega_omega)/a_omega",
+      "operator_formula": "(2*pair(tilde_u,B*H*B*u)-nu**2*pair(tilde_u,L2*u)-2*nu*pair(tilde_u,A1*u))/alpha",
+      "reflected_acceleration": "-conjugate(xi)",
+      "unit_invariant": true,
+      "velocity": "-a_m/a_omega"
+    },
     "filtered_unfolding": {
       "filtered_split": "mu=dz_domega*nu*m+O(m**2)",
       "generic_determinant_leading": "z**2+m*(a+d)*z+m*c",
@@ -284,12 +310,90 @@
       "operator": "R*(A*R)**p",
       "pole_order_if_beta_nonzero": "p+1"
     },
+    "krein_jordan_geometry": {
+      "chain_shift": "V1->V1-d*V0/(2*b)",
+      "det_I_plus_s_pole": "1",
+      "general_form": [
+        [
+          "0",
+          "b"
+        ],
+        [
+          "b",
+          "d"
+        ]
+      ],
+      "geometric_root_null": true,
+      "left_root": "W0 proportional flat(V0)",
+      "nilpotent": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "nondegeneracy": "b!=0",
+      "normal_form": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "null_rank_one_pole": "gamma*V0 tensor flat(V0)",
+      "pole_square": "0",
+      "positive_compatible_form_exists": false,
+      "self_adjoint_equation": "N_dagger*G=G*N",
+      "trace_pole": "0"
+    },
     "lidskii_reverse_coupling": {
       "c_n": "pair(W0,B*V0)/d_n",
       "chain_denominator": "pair(W0,L1*V1+L2*V0/2)",
       "forward_extension_overlap": "beta_n",
       "mass_reverse_coupling": "0",
       "reverse_numerator": "pair(W0,B*V0)"
+    },
+    "opposite_signature_confluence": {
+      "bounded_positive_critical_involution_exists": false,
+      "branch_form": "diag(sigma_0,sigma_1)",
+      "nondegenerate_first_order_iff": "sigma_1=-sigma_0",
+      "opposite_limit": [
+        [
+          "0",
+          "-sigma_0"
+        ],
+        [
+          "-sigma_0",
+          "0"
+        ]
+      ],
+      "pulled_back": [
+        [
+          "sigma_0",
+          "-sigma_0/m"
+        ],
+        [
+          "-sigma_0/m",
+          "(sigma_0+sigma_1)/m**2"
+        ]
+      ],
+      "same_sign_limit_rank": 1,
+      "same_sign_m2_limit": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "2*sigma_0"
+        ]
+      ]
     },
     "parent_excitation_rule": {
       "coefficient": "-I*nu*Lambda(u)*pair(tilde_u,F)/(4*alpha_W*alpha)",
@@ -344,6 +448,14 @@
       "right_root": "(u,0)",
       "self_pairing": "0"
     },
+    "second_critical_jet": {
+      "definition": "partial_m**2(R_m)/2",
+      "double_coefficient": "nu*Pdot+xi*P/2",
+      "local_contour": "exp(I*omega*t)*(Pddot/2+I*t*nu*Pdot+(I*t*xi/2-t**2*nu**2/2)*P)",
+      "simple_coefficient": "Pddot/2",
+      "stationary_accelerating_double": "xi*P/2",
+      "triple_coefficient": "nu**2*P"
+    },
     "second_order_qnm_curvature": {
       "B": "A0+nu*L1",
       "augmented_endpoint_derivatives_required": true,
@@ -359,6 +471,18 @@
       "zero_velocity": "nu_n=0 iff b_B(omega_n)=0 iff Smith=(0,1,1)",
       "zero_velocity_double_coefficient": "0",
       "zero_velocity_simple_coefficient": "-Pdot"
+    },
+    "spectral_flow_forms": {
+      "acceleration_moment": "integral(phi*theta_2)/(2*pi*I)=sum(phi(omega_n)*xi_n+phi_prime(omega_n)*nu_n**2)",
+      "bach_representative": "-2*b_B*domega/(I*omega*a)=theta_1+holomorphic",
+      "theta_1": "-partial_m(log(a))*domega",
+      "theta_1_principal": "nu_n*domega/(omega-omega_n)",
+      "theta_1_residue": "nu_n",
+      "theta_2": "-partial_m**2(log(a))*domega",
+      "theta_2_principal": "(nu_n**2/(omega-omega_n)**2+xi_n/(omega-omega_n))*domega",
+      "theta_2_residue": "xi_n",
+      "unit_change": "holomorphic_one_form",
+      "velocity_moment": "integral(phi*theta_1)/(2*pi*I)=sum(phi(omega_n)*nu_n)"
     },
     "spectral_velocity_generator": {
       "contour_sum": "integral_Gamma(S)/(2*pi*I)=sum(kappa_n)",
@@ -445,7 +569,9 @@
     "causal_exterior_spacetime_resolvent": false,
     "complete_complex_reducibility_locus": false,
     "full_six_state_commutant_dual_numbers": false,
+    "global_positive_metric_no_go": false,
     "global_t_exp_iomega_t_ringdown_term": false,
+    "numerical_qnm_acceleration_computed": false,
     "numerical_qnm_curvature_computed": false,
     "off_resonance_jost_normalization_function_computed": false,
     "overtone_ep2_tower_certified": false,
@@ -455,13 +581,14 @@
     "retarded_inverse_transform": false,
     "threshold_uniform_jost_shear_estimate": false,
     "time_domain_stability": false,
+    "validated_multi_qnm_acceleration_contour": false,
     "validated_multi_qnm_selector_contour": false,
     "validated_overtone_augmented_overlap_tower": false
   },
   "lifecycle_state": "DRAFT_ALLOWED",
   "manuscript": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
   "paper_id": "PAPER_17_PURE_WEYL_EXTENSION_RESONANCE",
-  "paper_sha256": "7b20893144eb4d4a0ce38a379aaa24e3b7ccfba73dae86f3e2de4068fcfd2223",
+  "paper_sha256": "7d442e189eed5f8521ee2e1dc9bab2d1ff6e15f3e3ebc808976319f0540322f1",
   "result_id": "PAPER17_NONSPLIT_RW_EXTENSION_DEFECTIVE_RESONANCE",
   "schema": "paper-draft-source-map-v1"
 }

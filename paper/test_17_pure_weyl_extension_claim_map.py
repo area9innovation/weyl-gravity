@@ -386,6 +386,119 @@ class Paper17ClaimMapTests(unittest.TestCase):
             "every Schwarzschild overtone is an EP2"
         )
 
+    def test_second_spectral_form_sign_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "spectral_flow_forms"
+            ].update(
+                {
+                    "theta_2_principal": (
+                        "(-nu_n**2/(omega-omega_n)**2"
+                        "+xi_n/(omega-omega_n))*domega"
+                    )
+                }
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("spectral-flow form declaration", result.stdout + result.stderr)
+
+    def test_evans_acceleration_sign_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"]["evans_acceleration"].update(
+                {
+                    "acceleration": (
+                        "(a_mm+2*nu*a_omega_m"
+                        "+nu**2*a_omega_omega)/a_omega"
+                    )
+                }
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Evans acceleration declaration", result.stdout + result.stderr)
+
+    def test_second_jet_double_coefficient_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"]["second_critical_jet"].update(
+                {"double_coefficient": "nu*Pdot+xi*P"}
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("second critical-jet declaration", result.stdout + result.stderr)
+
+    def test_damped_envelope_maximum_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"]["damped_jordan_envelope"].update(
+                {"maximum_value": "1/gamma"}
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("damped Jordan envelope declaration", result.stdout + result.stderr)
+
+    def test_krein_jordan_positive_form_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"]["krein_jordan_geometry"].update(
+                {"positive_compatible_form_exists": True}
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Krein-Jordan declaration", result.stdout + result.stderr)
+
+    def test_krein_jordan_chain_shift_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"]["krein_jordan_geometry"].update(
+                {"chain_shift": "V1->V1-d*V0/b"}
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Krein-Jordan declaration", result.stdout + result.stderr)
+
+    def test_same_sign_limit_rank_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "opposite_signature_confluence"
+            ].update({"same_sign_limit_rank": 2})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("opposite-sign confluence declaration", result.stdout + result.stderr)
+
+    def test_acceleration_contour_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "a validated multi-QNM acceleration contour has been computed"
+        )
+
+    def test_global_quantum_no_go_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the Krein--Jordan theorem proves a global quantum no-go"
+        )
+
     def test_threshold_static_residue_mutation_rejected(self) -> None:
         path = self.mutated_claims(
             lambda data: data["exact_identities"][

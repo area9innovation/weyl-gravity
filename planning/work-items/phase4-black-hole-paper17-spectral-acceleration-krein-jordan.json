@@ -1,0 +1,50 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-paper17-spectral-acceleration-krein-jordan",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-paper17-spectral-acceleration-krein-jordan",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-paper17-spectral-acceleration-krein-jordan.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper17-spectral-acceleration-krein-jordan",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 1,
+    "objective": "Extend Paper 17 from spectral velocity to spectral acceleration, including normalization-invariant first and second spectral-flow one-forms, weighted contour moment rules, the exact second critical-jet Laurent and local-contour coefficients, and the canonical Krein-Jordan geometry of the critical root fiber.",
+    "stop_condition": "Paper 17 proves that Theta_1=-partial_m log(a) d omega and Theta_2=-partial_m^2 log(a) d omega have residues nu_n and xi_n, proves their analytic-test-function contour moment identities, gives the unit-invariant Evans acceleration formula and its existing augmented finite-part operator realization, derives all three singular coefficients and isolated-contour polynomial of J_2, proves the bounded damped Jordan envelope, and proves that every nondegenerate Hermitian form making the nonzero length-two nilpotent self-adjoint is hyperbolic, with null geometric root, null rank-one square-zero pole coefficient, no compatible positive metric, and a nondegenerate first-order branch-form limit exactly for opposite Krein signatures. The generated claim map, independent exact verifier, mutation tests, PDF, report, and tier receipt are updated.",
+    "current_gate": "second spectral-flow residue calculus and canonical Krein-Jordan classification",
+    "forbid": "no validated numerical acceleration or multi-QNM acceleration contour; no global retarded waveform or stability theorem; no full quantum no-go; no assertion that the projected metric Green coefficient is intrinsically nilpotent; no same-sign nondegenerate critical limit; no all-ell Bach nonsplitting claim",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-paper17-spectral-velocity-sum-rule"
+    ],
+    "activates": [
+      "validated massive-QNM acceleration and contour-moment experiment",
+      "critical-root Krein pairing comparison with the covariant Lee-Wald form"
+    ],
+    "allowed_paths": [
+      "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "paper/test_17_pure_weyl_extension_claim_map.py",
+      "reports/phase4-black-hole-paper17-spectral-acceleration-krein-jordan-2026-07-25.md",
+      "reports/PAPER17_SPECTRAL_ACCELERATION_KREIN_JORDAN_TIER_RECEIPT.json",
+      "planning/work-items/phase4-black-hole-paper17-spectral-acceleration-krein-jordan.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use analytic factorization a=u(omega-omega_n(m)), exact differentiation of log(a), implicit differentiation of a(omega_n(m),m)=0, exact coefficient extraction from the moving pole and isolated exponential, and the 2x2 equation N^dagger G=GN. Keep projected rank-one and full graded nilpotency distinct.",
+    "input_commit": "8f92964cbfffe5c895ee024eab6c0c2a703f2b63",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "The spectral-flow contour identities are exact; no validated acceleration contour or numerical xi_n is promoted.",
+      "The Krein-Jordan theorem is a finite-dimensional critical-root statement, not a full quantum positivity theorem.",
+      "The damped polynomial bound concerns the isolated local QNM contour, not the complete retarded waveform."
+    ]
+  },
+  "edges": []
+}

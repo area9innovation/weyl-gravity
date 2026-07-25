@@ -620,6 +620,232 @@ def verify_spectral_velocity_and_contact_order(claims: dict) -> None:
         fail("critical contact-order declaration drift")
 
 
+def verify_spectral_acceleration_and_krein_jordan(claims: dict) -> None:
+    z, m, nu, xi = sp.symbols("z m nu xi")
+    moving_divisor = z - nu * m - xi * m**2 / 2
+    theta_1 = -sp.diff(sp.log(moving_divisor), m).subs(m, 0)
+    theta_2 = -sp.diff(sp.log(moving_divisor), m, 2).subs(m, 0)
+    if sp.simplify(theta_1 - nu / z) != 0:
+        fail("first spectral-flow principal part failed")
+    if sp.simplify(theta_2 - nu**2 / z**2 - xi / z) != 0:
+        fail("second spectral-flow principal part failed")
+
+    phi0, phi1 = sp.symbols("phi0 phi1")
+    weighted_second = sp.expand((phi0 + phi1 * z) * theta_2)
+    if sp.simplify(weighted_second.coeff(z, -1) - (phi0 * xi + phi1 * nu**2)) != 0:
+        fail("weighted acceleration residue failed")
+
+    omega, omega0 = sp.symbols("omega omega0")
+    u0, u_omega, u_m = sp.symbols("u0 u_omega u_m", nonzero=True)
+    local_unit = u0 + u_omega * (omega - omega0) + u_m * m
+    evans = local_unit * (
+        omega - omega0 - nu * m - xi * m**2 / 2
+    )
+    subs0 = {omega: omega0, m: 0}
+    a_omega = sp.diff(evans, omega).subs(subs0)
+    a_mm = sp.diff(evans, m, 2).subs(subs0)
+    a_omega_m = sp.diff(evans, omega, m).subs(subs0)
+    a_omega_omega = sp.diff(evans, omega, 2).subs(subs0)
+    recovered_xi = sp.simplify(
+        -(a_mm + 2 * nu * a_omega_m + nu**2 * a_omega_omega)
+        / a_omega
+    )
+    if sp.simplify(recovered_xi - xi) != 0:
+        fail("Evans acceleration formula failed")
+
+    v_omega, v_m = sp.symbols("v_omega v_m")
+    renormalized = (
+        1 + v_omega * (omega - omega0) + v_m * m
+    ) * evans
+    rw = sp.diff(renormalized, omega).subs(subs0)
+    rmm = sp.diff(renormalized, m, 2).subs(subs0)
+    rwm = sp.diff(renormalized, omega, m).subs(subs0)
+    rww = sp.diff(renormalized, omega, 2).subs(subs0)
+    renormalized_xi = sp.simplify(
+        -(rmm + 2 * nu * rwm + nu**2 * rww) / rw
+    )
+    if sp.simplify(renormalized_xi - xi) != 0:
+        fail("Evans acceleration unit invariance failed")
+
+    P, Pdot, Pddot = sp.symbols("P Pdot Pddot")
+    projector = P + m * Pdot + m**2 * Pddot / 2
+    moving_resolvent = projector / moving_divisor
+    second_jet = sp.expand(sp.diff(moving_resolvent, m, 2).subs(m, 0) / 2)
+    expected_second_jet = (
+        nu**2 * P / z**3
+        + (nu * Pdot + xi * P / 2) / z**2
+        + Pddot / (2 * z)
+    )
+    if sp.simplify(second_jet - expected_second_jet) != 0:
+        fail("second critical-jet Laurent coefficients failed")
+
+    t = sp.symbols("t", real=True)
+    local_signal = sp.exp(
+        sp.I * (omega0 + nu * m + xi * m**2 / 2) * t
+    ) * projector
+    second_signal = sp.simplify(
+        sp.diff(local_signal, m, 2).subs(m, 0) / 2
+    )
+    expected_signal = sp.exp(sp.I * omega0 * t) * (
+        Pddot / 2
+        + sp.I * t * nu * Pdot
+        + (sp.I * t * xi / 2 - t**2 * nu**2 / 2) * P
+    )
+    if sp.simplify(second_signal - expected_signal) != 0:
+        fail("second critical-jet local contour failed")
+
+    gamma = sp.symbols("gamma", positive=True)
+    envelope = t * sp.exp(-gamma * t)
+    if sp.simplify(sp.diff(envelope, t).subs(t, 1 / gamma)) != 0:
+        fail("damped Jordan envelope maximizer failed")
+    if sp.simplify(envelope.subs(t, 1 / gamma) - 1 / (sp.E * gamma)) != 0:
+        fail("damped Jordan envelope maximum failed")
+
+    # Canonical Krein-Jordan classification.
+    a, b, d = sp.symbols("a b d", real=True, nonzero=True)
+    N = sp.Matrix([[0, 1], [0, 0]])
+    G = sp.Matrix([[a, b], [b, d]])
+    relation = N.T * G - G * N
+    if relation != sp.Matrix([[0, -a], [a, 0]]):
+        fail("Krein-Jordan self-adjointness equation failed")
+    G0 = G.subs(a, 0)
+    chain = sp.Matrix([[1, -d / (2 * b)], [0, 1]])
+    normalized = sp.simplify(chain.T * G0 * chain)
+    if normalized != sp.Matrix([[0, b], [b, 0]]):
+        fail("Krein-Jordan chain normalization failed")
+    if sp.factor(G0.det() + b**2) != 0:
+        fail("Krein-Jordan hyperbolic determinant failed")
+    pole = sp.Matrix([[0, b], [0, 0]])
+    if pole**2 != sp.zeros(2) or sp.trace(pole) != 0:
+        fail("null rank-one pole geometry failed")
+    s = sp.symbols("s")
+    if sp.expand((sp.eye(2) + s * pole).det()) != 1:
+        fail("nilpotent determinant invisibility failed")
+
+    sigma0, sigma1 = sp.symbols("sigma0 sigma1", real=True)
+    S = sp.Matrix([[1, 1], [0, m]])
+    pulled = sp.simplify(
+        S.inv().T * sp.diag(sigma0, sigma1) * S.inv()
+    )
+    expected_pulled = sp.Matrix(
+        [
+            [sigma0, -sigma0 / m],
+            [-sigma0 / m, (sigma0 + sigma1) / m**2],
+        ]
+    )
+    if pulled != expected_pulled:
+        fail("branch-sign pullback failed")
+    opposite_limit = pulled.subs(sigma1, -sigma0).applyfunc(
+        lambda entry: sp.limit(m * entry, m, 0)
+    )
+    if opposite_limit != sp.Matrix([[0, -sigma0], [-sigma0, 0]]):
+        fail("opposite-sign hyperbolic limit failed")
+    same_limit = pulled.subs(sigma1, sigma0).applyfunc(
+        lambda entry: sp.limit(m**2 * entry, m, 0)
+    )
+    if same_limit != sp.Matrix([[0, 0], [0, 2 * sigma0]]):
+        fail("same-sign degenerate limit failed")
+
+    spectral = claims["exact_identities"]["spectral_flow_forms"]
+    if spectral != {
+        "theta_1": "-partial_m(log(a))*domega",
+        "theta_1_principal": "nu_n*domega/(omega-omega_n)",
+        "theta_1_residue": "nu_n",
+        "theta_2": "-partial_m**2(log(a))*domega",
+        "theta_2_principal": (
+            "(nu_n**2/(omega-omega_n)**2+xi_n/(omega-omega_n))*domega"
+        ),
+        "theta_2_residue": "xi_n",
+        "unit_change": "holomorphic_one_form",
+        "bach_representative": (
+            "-2*b_B*domega/(I*omega*a)=theta_1+holomorphic"
+        ),
+        "velocity_moment": (
+            "integral(phi*theta_1)/(2*pi*I)=sum(phi(omega_n)*nu_n)"
+        ),
+        "acceleration_moment": (
+            "integral(phi*theta_2)/(2*pi*I)="
+            "sum(phi(omega_n)*xi_n+phi_prime(omega_n)*nu_n**2)"
+        ),
+    }:
+        fail("spectral-flow form declaration drift")
+
+    acceleration = claims["exact_identities"]["evans_acceleration"]
+    if acceleration != {
+        "velocity": "-a_m/a_omega",
+        "acceleration": (
+            "-(a_mm+2*nu*a_omega_m+nu**2*a_omega_omega)/a_omega"
+        ),
+        "unit_invariant": True,
+        "operator_formula": (
+            "(2*pair(tilde_u,B*H*B*u)"
+            "-nu**2*pair(tilde_u,L2*u)"
+            "-2*nu*pair(tilde_u,A1*u))/alpha"
+        ),
+        "reflected_acceleration": "-conjugate(xi)",
+    }:
+        fail("Evans acceleration declaration drift")
+
+    second = claims["exact_identities"]["second_critical_jet"]
+    if second != {
+        "definition": "partial_m**2(R_m)/2",
+        "triple_coefficient": "nu**2*P",
+        "double_coefficient": "nu*Pdot+xi*P/2",
+        "simple_coefficient": "Pddot/2",
+        "stationary_accelerating_double": "xi*P/2",
+        "local_contour": (
+            "exp(I*omega*t)*(Pddot/2+I*t*nu*Pdot"
+            "+(I*t*xi/2-t**2*nu**2/2)*P)"
+        ),
+    }:
+        fail("second critical-jet declaration drift")
+
+    damped = claims["exact_identities"]["damped_jordan_envelope"]
+    if damped != {
+        "envelope": "t*exp(-gamma*t)",
+        "maximum_time": "1/gamma",
+        "maximum_value": "1/(E*gamma)",
+        "certified_gamma": "0.0889623156889357",
+        "certified_t_max_approx": "11.241",
+        "certified_envelope_max_approx": "4.135",
+        "global_stability_claim": False,
+    }:
+        fail("damped Jordan envelope declaration drift")
+
+    krein = claims["exact_identities"]["krein_jordan_geometry"]
+    if krein != {
+        "nilpotent": [["0", "1"], ["0", "0"]],
+        "self_adjoint_equation": "N_dagger*G=G*N",
+        "general_form": [["0", "b"], ["b", "d"]],
+        "nondegeneracy": "b!=0",
+        "chain_shift": "V1->V1-d*V0/(2*b)",
+        "normal_form": [["0", "1"], ["1", "0"]],
+        "geometric_root_null": True,
+        "positive_compatible_form_exists": False,
+        "null_rank_one_pole": "gamma*V0 tensor flat(V0)",
+        "pole_square": "0",
+        "left_root": "W0 proportional flat(V0)",
+        "trace_pole": "0",
+        "det_I_plus_s_pole": "1",
+    }:
+        fail("Krein-Jordan declaration drift")
+
+    opposite = claims["exact_identities"]["opposite_signature_confluence"]
+    if opposite != {
+        "branch_form": "diag(sigma_0,sigma_1)",
+        "pulled_back": [
+            ["sigma_0", "-sigma_0/m"],
+            ["-sigma_0/m", "(sigma_0+sigma_1)/m**2"],
+        ],
+        "nondegenerate_first_order_iff": "sigma_1=-sigma_0",
+        "opposite_limit": [["0", "-sigma_0"], ["-sigma_0", "0"]],
+        "same_sign_m2_limit": [["0", "0"], ["0", "2*sigma_0"]],
+        "same_sign_limit_rank": 1,
+        "bounded_positive_critical_involution_exists": False,
+    }:
+        fail("opposite-sign confluence declaration drift")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--paper", type=Path, default=DEFAULT_PAPER)
@@ -701,6 +927,14 @@ def main() -> None:
         "[-H_ng_n]",
         "Augmented QNM Hellmann--Feynman formula",
         "-\\frac{\\partial_ma}{\\partial_\\omega a}",
+        "Spectral acceleration and the second critical jet",
+        "First and second spectral-flow forms",
+        "\\operatorname*{Res}_{\\omega=\\omega_n}\\Theta_2=\\xi_n",
+        "Weighted velocity and acceleration moments",
+        "Evans acceleration and second-jet Laurent coefficients",
+        "Second-order isolated resonance contribution",
+        "Damped Jordan envelope",
+        "Second-order reflection audit",
         "[\\dot u_n]\\in D/\\C u_n",
         "exact finite-mass secant identity",
         "Spectral contact controls critical pole order",
@@ -729,6 +963,10 @@ def main() -> None:
         "Filtered critical-mass unfolding normal form",
         "Root-space polarization and nilpotent pole",
         "R_{-2}^2=0",
+        "Canonical Krein--Jordan geometry",
+        "Null rank-one pole and determinant invisibility",
+        "Opposite-sign confluence criterion",
+        "No finite positive critical branch observable",
         "Confluent projectors and local contour",
         "Critical singularity of positive branch metrics",
         "Renormalized Krein limit",
@@ -759,6 +997,9 @@ def main() -> None:
         "a threshold-uniform estimate for \\(b/a^2\\) is established",
         "a validated multi-QNM selector contour has been computed",
         "every Schwarzschild overtone is an EP2",
+        "a validated multi-QNM acceleration contour has been computed",
+        "a numerical QNM acceleration has been computed",
+        "the Krein--Jordan theorem proves a global quantum no-go",
     ]
     for phrase in forbidden:
         if phrase in text:
@@ -1104,12 +1345,13 @@ def main() -> None:
     verify_period_matrix(claims)
     verify_mass_jost_and_confluence(claims)
     verify_spectral_velocity_and_contact_order(claims)
+    verify_spectral_acceleration_and_krein_jordan(claims)
 
     print("PASS paper/17-pure-weyl-schwarzschild-extension-structure.tex")
     print(
         "PASS exact cocycle, endpoint-compatible mass jet, filtered "
-        "unfolding, spectral-flow, contact-order, confluent metrics, and "
-        "nilpotent root-space identities"
+        "unfolding, spectral velocity and acceleration, contact-order, "
+        "Krein-Jordan, confluent metrics, and nilpotent root-space identities"
     )
     print("PASS authority provenance and fail-closed claim boundary")
 
