@@ -1,0 +1,49 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-paper17-two-parameter-filtered-unfolding",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-paper17-two-parameter-filtered-unfolding",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-paper17-two-parameter-filtered-unfolding.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper17-two-parameter-filtered-unfolding",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 1,
+    "objective": "Promote the local two-parameter filtered-versus-generic EP2 unfolding in Paper 17, including the discriminant phase diagram, gap-controlled projector and metric laws, the filtration-error threshold, and a fail-closed algebraic mutation certificate.",
+    "stop_condition": "Paper 17 derives the invariant determinant coefficients nu_n=-2F_omega_m/F_omega_omega and c_n=2F_epsilon/F_omega_omega, proves the Lidskii root-chain formula for c_n, derives Delta^2=nu_n^2 m^2-4c_n epsilon, distinguishes physical linear and generic square-root splitting, records the complex exceptional parabola and branch monodromy, proves the projector and positive-metric gap laws, states the epsilon/m^2 certification threshold and centered resolvent crossover, and preserves the boundary that c_n is nonzero only for a declared filtration-breaking direction. The generated claim map, independent verifier, mutation tests, PDF, report, and tier receipt are updated.",
+    "current_gate": "two-parameter filtration-protected EP2 phase diagram",
+    "forbid": "no claim that every perturbation has nonzero c_n; no claim that the physical mass deformation is miniversal; no numerical value for c_n without a certified perturbation; no global retarded contour, time-domain stability, quantum positivity, or overtone-tower promotion",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-paper17-jost-mass-slope"
+    ],
+    "activates": [
+      "validated lower-left mutation experiment near the certified reflected EP2 pair"
+    ],
+    "allowed_paths": [
+      "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "paper/test_17_pure_weyl_extension_claim_map.py",
+      "reports/phase4-black-hole-paper17-two-parameter-filtered-unfolding-2026-07-25.md",
+      "reports/PAPER17_TWO_PARAMETER_UNFOLDING_TIER_RECEIPT.json",
+      "planning/work-items/phase4-black-hole-paper17-two-parameter-filtered-unfolding.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use the certified nonzero mass velocity nu_n, the exact Einstein filtration, and a declared lower-left perturbation. Certify the invariant determinant and root-chain formulas in z,m,epsilon without assigning a physical value to c_n.",
+    "input_commit": "46c79f83749a8f93cd02aaf95411af1621a327b8",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "The physical mass axis has epsilon identically zero.",
+      "The generic square-root law requires a declared filtration-breaking direction with c_n nonzero.",
+      "The full causal and quantum claims remain open."
+    ]
+  },
+  "edges": []
+}

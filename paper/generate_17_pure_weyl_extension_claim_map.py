@@ -162,6 +162,55 @@ def payload() -> dict:
                 "positive_metric_condition_scale": "1/abs(m)**2",
                 "pseudospectral_radius": "sqrt(epsilon)",
             },
+            "two_parameter_unfolding": {
+                "nu_invariant": "-2*F_omega_m/F_omega_omega",
+                "c_invariant": "2*F_epsilon/F_omega_omega",
+                "normal_form": [["z", "-1"], ["c_n*epsilon", "z-nu*m"]],
+                "determinant": "z**2-nu*m*z+c_n*epsilon",
+                "gap_squared": "nu**2*m**2-4*c_n*epsilon",
+                "exceptional_curve": "epsilon=nu**2*m**2/(4*c_n)",
+                "exceptional_curve_derivatives": (
+                    "F_omega_m**2/(2*F_omega_omega*F_epsilon)"
+                ),
+                "physical_gap": "nu*m",
+                "mixing_gap_squared": "-4*c_n*epsilon",
+                "c_n_nonzero_requires_declared_transverse_direction": True,
+                "complexified_parameter_space": True,
+            },
+            "lidskii_reverse_coupling": {
+                "chain_denominator": (
+                    "pair(W0,L1*V1+L2*V0/2)"
+                ),
+                "reverse_numerator": "pair(W0,B*V0)",
+                "c_n": "pair(W0,B*V0)/d_n",
+                "mass_reverse_coupling": "0",
+                "forward_extension_overlap": "beta_n",
+            },
+            "gap_controlled_confluence": {
+                "right_vectors": ["(1,z_plus)", "(1,z_minus)"],
+                "left_vectors": [
+                    "(z_plus-nu*m,1)",
+                    "(z_minus-nu*m,1)",
+                ],
+                "left_right_pairings": ["Delta", "-Delta"],
+                "projector_scale": "1/abs(Delta)",
+                "nilpotent_limit": "Delta*(P_plus-P_minus)/2=N",
+                "metric_condition_scale": "1/abs(Delta)**2",
+            },
+            "filtration_error_threshold": {
+                "required": "abs(c_n*epsilon_error)<<abs(nu**2*m**2)",
+                "scaling_variable": "chi=4*c_n*epsilon/(nu**2*m**2)",
+                "p_less_than_2": "mixing_dominated",
+                "p_equal_2": "linear_coefficient_changed",
+                "p_greater_than_2": "physical_velocity_recovered",
+            },
+            "two_parameter_resolvent": {
+                "inverse_denominator": "z**2-nu*m*z+c_n*epsilon",
+                "centered_frequency": "zeta=z-nu*m/2",
+                "centered_denominator": "zeta**2-Delta**2/4",
+                "unresolved_response": "zeta**(-2)*(1+O(Delta**2/zeta**2))",
+                "resolved_projector_scale": "1/abs(Delta)",
+            },
             "root_polarization": {
                 "right_root": "(u,0)",
                 "left_root": "(0,tilde_u)",
@@ -269,6 +318,18 @@ def payload() -> dict:
             "endpoint_compatible_massive_jost_classes": True,
             "critical_mass_qnm_velocity_nonzero": True,
             "filtered_critical_unfolding_exact": True,
+            "two_parameter_unfolding_discriminant_exact": True,
+            "two_parameter_coefficients_unit_invariant": True,
+            "lidskii_reverse_coupling_formula_exact": True,
+            "physical_mass_reverse_coupling_zero": True,
+            "complex_exceptional_parabola_qualified": True,
+            "transversality_meanings_distinguished": True,
+            "exceptional_parabola_and_monodromy_exact": True,
+            "gap_controlled_projector_and_metric_laws_exact": True,
+            "gap_renormalized_nilpotent_limit_exact": True,
+            "filtration_error_threshold_exact": True,
+            "lower_left_mutation_controls_exact": True,
+            "centered_resolvent_crossover_exact": True,
             "root_space_polarization_exact": True,
             "full_extension_green_principal_coefficient_nilpotent": True,
             "local_two_pole_contour_jordan_limit": True,
@@ -300,6 +361,7 @@ def payload() -> dict:
             "complete_complex_reducibility_locus": False,
             "quantum_positivity_or_unitarity": False,
             "overtone_ep2_tower_certified": False,
+            "physical_filtration_breaking_coefficient_computed": False,
         },
     }
 

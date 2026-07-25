@@ -1,0 +1,102 @@
+{
+  "schema": "tier-receipt-v1",
+  "result_id": "PAPER17_TWO_PARAMETER_FILTRATION_PROTECTED_EP2",
+  "timestamp_utc": "2026-07-25T07:00:09Z",
+  "input_commit": "46c79f83749a8f93cd02aaf95411af1621a327b8",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "environment": {
+    "python": "3.12.13",
+    "sympy": "1.14.0",
+    "pdflatex": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian)"
+  },
+  "artifacts": {
+    "paper_tex": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "sha256": "154419c678d12f1a6f6331b4c16de22684eb683c881db7cbee8b1d5fca66ce21"
+    },
+    "paper_pdf": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "sha256": "654399d63cacff780c8322cba6b5af73343e913c1645e896e5751dfcc1d05827",
+      "pages": 31,
+      "bytes": 381496
+    },
+    "claim_map": {
+      "path": "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "sha256": "205b6a9ddc38dbf0f48f8c200877b201975794f1935af9268f1eeb1e66aeba83"
+    },
+    "generator": {
+      "path": "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "sha256": "925db557af0f0c68626d9248651ddb4cbaaaa711f7cc84e91426499ae085b910"
+    },
+    "verifier": {
+      "path": "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "sha256": "38ef9c3018989451cccbc1144e9ad10911fb8c11eef30033533f245501aeadcb"
+    },
+    "tests": {
+      "path": "paper/test_17_pure_weyl_extension_claim_map.py",
+      "sha256": "15a9d34593e78e537708d2fba700aeb70669d0216f71278c35c5945471a3153b"
+    },
+    "report": {
+      "path": "reports/phase4-black-hole-paper17-two-parameter-filtered-unfolding-2026-07-25.md",
+      "sha256": "9274243fc975302d62ddabd41bccc8f2d2dfa4e580af64c3d57de31ac34cfb15"
+    },
+    "work_item": {
+      "path": "planning/work-items/phase4-black-hole-paper17-two-parameter-filtered-unfolding.json",
+      "sha256": "64910fa93d71a42ea0b7bf53810c3781e734e19de2ce7fa0f2869b1aa4fb5557"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        "two-pass pdflatex compilation with no undefined references or overfull boxes",
+        "Python bytecode compilation",
+        "JSON parse and deterministic regeneration",
+        "scoped git diff --check",
+        "visual inspection of abstract, phase-diagram, gap-law, crossover, and conclusion pages"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "checks": [
+        "32 regression and mutation tests",
+        "claim-map deterministic drift check",
+        "independent symbolic determinant, unit-invariance, Lidskii-chain, matrix, discriminant, projector, nilpotent, centered-resolvent, semantic, and provenance verifier"
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "No upstream operator, content-addressed authority, certificate, or schema changed."
+    },
+    "tier_3": {
+      "status": "PASS",
+      "checks": [
+        "python3 -m unittest discover: 149 tests passed in 0.138 seconds"
+      ]
+    }
+  },
+  "claim_boundary": {
+    "two_parameter_discriminant_exact": true,
+    "determinant_derivative_invariants_exact": true,
+    "lidskii_reverse_coupling_exact": true,
+    "physical_reverse_coupling_zero_exact": true,
+    "physical_linear_splitting_exact": true,
+    "generic_square_root_splitting_exact": true,
+    "exceptional_parabola_and_monodromy_exact": true,
+    "complex_exceptional_curve_qualification_recorded": true,
+    "two_transversality_notions_distinguished": true,
+    "gap_controlled_projector_law_exact": true,
+    "gap_controlled_metric_condition_law_exact": true,
+    "gap_renormalized_nilpotent_exact": true,
+    "filtration_error_threshold_exact": true,
+    "centered_resolvent_crossover_exact": true,
+    "physical_c_n_for_concrete_perturbation_computed": false,
+    "global_retarded_inverse_laplace": false,
+    "overtone_ep2_tower": false,
+    "time_domain_stability": false,
+    "quantum_statement": false
+  }
+}

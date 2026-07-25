@@ -308,6 +308,89 @@ class Paper17ClaimMapTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("threshold static-exact", result.stdout + result.stderr)
 
+    def test_two_parameter_discriminant_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"]["two_parameter_unfolding"].update(
+                {"gap_squared": "nu**2*m**2+4*c*epsilon"}
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("two-parameter unfolding declaration", result.stdout + result.stderr)
+
+    def test_invariant_reverse_coefficient_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"]["two_parameter_unfolding"].update(
+                {"c_invariant": "-2*F_epsilon/F_omega_omega"}
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("two-parameter unfolding declaration", result.stdout + result.stderr)
+
+    def test_lidskii_chain_denominator_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "lidskii_reverse_coupling"
+            ].update({"chain_denominator": "pair(W0,L1*V1)"})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Lidskii reverse-coupling declaration", result.stdout + result.stderr)
+
+    def test_gap_nilpotent_factor_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "gap_controlled_confluence"
+            ].update({"nilpotent_limit": "Delta*(P_plus-P_minus)=N"})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("gap-controlled confluence declaration", result.stdout + result.stderr)
+
+    def test_filtration_error_scale_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "filtration_error_threshold"
+            ].update({"required": "abs(c*epsilon_error)<<abs(nu*m)"})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("filtration-error threshold declaration", result.stdout + result.stderr)
+
+    def test_centered_resolvent_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"]["two_parameter_resolvent"].update(
+                {"centered_frequency": "zeta=z"}
+            )
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("two-parameter resolvent declaration", result.stdout + result.stderr)
+
+    def test_physical_mixing_coefficient_promotion_rejected(self) -> None:
+        self.assert_promotion_rejected(
+            "the physical filtration-breaking coefficient \\(c_n\\) has been computed"
+        )
+
     def test_all_ell_nonsplitting_promotion_rejected(self) -> None:
         self.assert_promotion_rejected(
             "the Bach self-extension is nonsplit for every \\(\\ell\\ge2\\)"

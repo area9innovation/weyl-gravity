@@ -87,6 +87,8 @@
     "boundary_transgression_identity_exact": true,
     "canonical_mass_tangent_class_exact": true,
     "canonical_simple_pole_with_frequency_derivative_exact": true,
+    "centered_resolvent_crossover_exact": true,
+    "complex_exceptional_parabola_qualified": true,
     "confluent_positive_metric_singularity_exact": true,
     "confluent_projector_scale_exact": true,
     "critical_mass_qnm_velocity_nonzero": true,
@@ -94,22 +96,29 @@
     "endpoint_compatible_massive_jost_classes": true,
     "equivalence_gauge_forced_linear_infinity_growth": true,
     "exact_partial_jet_realization": true,
+    "exceptional_parabola_and_monodromy_exact": true,
     "exterior_cutoff_radial_green_double_pole": true,
     "filtered_critical_unfolding_exact": true,
+    "filtration_error_threshold_exact": true,
     "finite_interval_radial_green_double_pole": true,
     "finite_mass_secant_identity_exact": true,
     "finite_part_tangent_reconstruction_exact": true,
     "full_connection_smith_0_0_2": true,
     "full_extension_green_principal_coefficient_nilpotent": true,
+    "gap_controlled_projector_and_metric_laws_exact": true,
+    "gap_renormalized_nilpotent_limit_exact": true,
     "generalized_root_carrier_nonzero": true,
     "green_principal_coefficient_rank_one": true,
     "higher_critical_jet_identity_exact": true,
+    "lidskii_reverse_coupling_formula_exact": true,
     "local_metric_reconstruction_nonzero": true,
     "local_tt_critical_mass_jet_identified": true,
     "local_two_pole_contour_jordan_limit": true,
+    "lower_left_mutation_controls_exact": true,
     "parent_double_and_simple_laurent_coefficients_exact": true,
     "parent_local_contour_selection_rule_exact": true,
     "parent_metric_green_mass_derivative_exact": true,
+    "physical_mass_reverse_coupling_zero": true,
     "reflected_ep2_pair_exact": true,
     "renormalized_krein_hyperbolic_limit_exact": true,
     "resonant_evaluation_identity_exact": true,
@@ -119,7 +128,10 @@
     "symmetric_square_period_matrix_exact": true,
     "threshold_renormalized_class_limit_conditional": true,
     "threshold_static_cocycle_residue_exact": true,
+    "transversality_meanings_distinguished": true,
     "triangular_gauge_commutator_exact": true,
+    "two_parameter_coefficients_unit_invariant": true,
+    "two_parameter_unfolding_discriminant_exact": true,
     "unique_simple_spin_two_qnm_in_disk": true,
     "universal_critical_resonance_criterion_exact": true
   },
@@ -207,10 +219,34 @@
       "projector_scale": "1/abs(m)",
       "pseudospectral_radius": "sqrt(epsilon)"
     },
+    "filtration_error_threshold": {
+      "p_equal_2": "linear_coefficient_changed",
+      "p_greater_than_2": "physical_velocity_recovered",
+      "p_less_than_2": "mixing_dominated",
+      "required": "abs(c_n*epsilon_error)<<abs(nu**2*m**2)",
+      "scaling_variable": "chi=4*c_n*epsilon/(nu**2*m**2)"
+    },
     "forced_gauge_asymptotic": {
       "interpretation": "moving_massive_phase_derivative",
       "q_slope_at_infinity": "-I/(8*omega)",
       "reason": "4*omega**2*q_slope = -I*omega/2"
+    },
+    "gap_controlled_confluence": {
+      "left_right_pairings": [
+        "Delta",
+        "-Delta"
+      ],
+      "left_vectors": [
+        "(z_plus-nu*m,1)",
+        "(z_minus-nu*m,1)"
+      ],
+      "metric_condition_scale": "1/abs(Delta)**2",
+      "nilpotent_limit": "Delta*(P_plus-P_minus)/2=N",
+      "projector_scale": "1/abs(Delta)",
+      "right_vectors": [
+        "(1,z_plus)",
+        "(1,z_minus)"
+      ]
     },
     "generalized_root": {
       "assumptions": "a1 != 0 and b0 != 0",
@@ -227,6 +263,13 @@
       "mass_derivative": "(-1)**p*partial_m**p(R_m)/factorial(p)",
       "operator": "R*(A*R)**p",
       "pole_order_if_beta_nonzero": "p+1"
+    },
+    "lidskii_reverse_coupling": {
+      "c_n": "pair(W0,B*V0)/d_n",
+      "chain_denominator": "pair(W0,L1*V1+L2*V0/2)",
+      "forward_extension_overlap": "beta_n",
+      "mass_reverse_coupling": "0",
+      "reverse_numerator": "pair(W0,B*V0)"
     },
     "parent_excitation_rule": {
       "coefficient": "-I*nu*Lambda(u)*pair(tilde_u,F)/(4*alpha_W*alpha)",
@@ -289,6 +332,35 @@
       "direct_field_gauge": "Q_q=2*q*D-D(q)",
       "operator": "q*D - D(q)/2"
     },
+    "two_parameter_resolvent": {
+      "centered_denominator": "zeta**2-Delta**2/4",
+      "centered_frequency": "zeta=z-nu*m/2",
+      "inverse_denominator": "z**2-nu*m*z+c_n*epsilon",
+      "resolved_projector_scale": "1/abs(Delta)",
+      "unresolved_response": "zeta**(-2)*(1+O(Delta**2/zeta**2))"
+    },
+    "two_parameter_unfolding": {
+      "c_invariant": "2*F_epsilon/F_omega_omega",
+      "c_n_nonzero_requires_declared_transverse_direction": true,
+      "complexified_parameter_space": true,
+      "determinant": "z**2-nu*m*z+c_n*epsilon",
+      "exceptional_curve": "epsilon=nu**2*m**2/(4*c_n)",
+      "exceptional_curve_derivatives": "F_omega_m**2/(2*F_omega_omega*F_epsilon)",
+      "gap_squared": "nu**2*m**2-4*c_n*epsilon",
+      "mixing_gap_squared": "-4*c_n*epsilon",
+      "normal_form": [
+        [
+          "z",
+          "-1"
+        ],
+        [
+          "c_n*epsilon",
+          "z-nu*m"
+        ]
+      ],
+      "nu_invariant": "-2*F_omega_m/F_omega_omega",
+      "physical_gap": "nu*m"
+    },
     "universal_critical_resonance": {
       "canonical_tangent_class": "[u_dot] in D/(C*u)",
       "critical_response": "R*A*R",
@@ -308,6 +380,7 @@
     "off_resonance_jost_normalization_function_computed": false,
     "overtone_ep2_tower_certified": false,
     "parent_radial_overlap_operator_identity": false,
+    "physical_filtration_breaking_coefficient_computed": false,
     "quantum_positivity_or_unitarity": false,
     "retarded_inverse_transform": false,
     "time_domain_stability": false
@@ -315,7 +388,7 @@
   "lifecycle_state": "DRAFT_ALLOWED",
   "manuscript": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
   "paper_id": "PAPER_17_PURE_WEYL_EXTENSION_RESONANCE",
-  "paper_sha256": "e243facbe92abcc942ceb61e8b0fbc92937e27edd6ce61cfaf647a6d57654bf6",
+  "paper_sha256": "154419c678d12f1a6f6331b4c16de22684eb683c881db7cbee8b1d5fca66ce21",
   "result_id": "PAPER17_NONSPLIT_RW_EXTENSION_DEFECTIVE_RESONANCE",
   "schema": "paper-draft-source-map-v1"
 }

@@ -72,10 +72,12 @@ has nonzero projection to the Ricci-carrier quotient.  We further show that
 the compact-source, compact-observation outgoing Green operator on the
 Schwarzschild exterior has a nonzero rank-one pole of order two at this
 frequency.  The same selector is the nonzero critical-mass velocity of the
-massive spin-two QNM.  The resulting transverse confluence has projectors
-of size \(m^{-1}\), positive branch metrics of condition number \(m^{-2}\),
-a local contour limit with a Jordan polynomial, and a hyperbolic
-renormalized Krein form.
+massive spin-two QNM.  The resulting filtration-protected confluence sits
+inside an exact local two-parameter phase diagram.  The physical mass axis
+has linear splitting, whereas a transverse filtration-breaking
+perturbation has square-root splitting.  The spectral gap controls the
+projector norm, positive-metric condition number, resolvent crossover, and
+precision required to certify the physical slope.
 
 Promotion to a global physical resolvent and to a full retarded generalized
 ringdown expansion requires a separate analytic Fredholm realization,
@@ -122,20 +124,22 @@ This paper establishes six central results.
   nonzero carrier quotient, and the exterior cut-off outgoing Green
   operator has a genuine rank-one double pole.
 \item The selector equals the normalized critical-mass QNM velocity and is
-  nonzero.  The finite-mass pair is a transverse unfolding of the EP2;
-  its singular projectors, local two-pole contour, positive metrics, and
-  Krein form have exact confluent limits.
+  nonzero.  A two-parameter unfolding proves that the exact Einstein
+  filtration protects linear mass splitting, while reverse mixing produces
+  generic square-root splitting.  Its discriminant, projectors, positive
+  metrics, local contour, and Krein form have exact gap-controlled limits.
 \item The covariant pure-Weyl metric Green function is the mass derivative
   of the massive spin-two resolvent.  Its double coefficient is controlled
   by QNM motion, its simple coefficient by projector motion, and its local
   polynomial signal obeys an exact rank-one excitation/observation rule.
 \end{enumerate}
 
-The third result is stronger than a statement about a finite connection
+The fourth result is stronger than a statement about a finite connection
 matrix.  It is a meromorphic differential-response theorem for compact
 radial sources and local radial observations.  It is deliberately weaker
-than a causal spacetime resolvent theorem: no inverse-Laplace deformation,
-late-time expansion, or \(t e^{i\omega_nt}\) assertion is made here.
+than a causal spacetime resolvent theorem.  No global retarded
+\(t e^{i\omega_nt}\) ringdown assertion is made here; the polynomial term
+is proved only for the isolated local resonance contour.
 
 \subsection*{Logical status}
 
@@ -171,6 +175,9 @@ Causal spacetime pole and generalized ringdown
 Critical-mass unfolding and QNM velocity
 & Endpoint-compatible jet and nonzero certified selector
 & Exact/validated theorem\\
+Two-parameter EP2 phase diagram
+& Exact Einstein filtration and a declared transverse mixing direction
+& Exact local theorem\\
 Parent mass-derivative Green identity
 & Fixed-domain parent inverse and analytic massive QNM branch
 & Exact operator theorem\\
@@ -296,10 +303,10 @@ identity follows from block triangularity.  The same identity applied to
 endpoint transition matrices gives the displayed connection form.
 \end{proof}
 
-The parameter \(\tau\) is intrinsic at this stage.  Identifying it with a
-physical Fierz--Pauli mass requires an additional finite-mass reduction and
-compatible endpoint germs; Section~\ref{sec:mass} records the exact
-remaining gate.
+At this stage \(\tau\) is intrinsic.
+Section~\ref{sec:mass} proves its exact identification with the critical
+Einstein--Weyl mass jet and establishes compatibility with differentiated
+physical Jost germs.
 
 \section{Projective gauge and symmetric-square cohomology}
 
@@ -445,17 +452,16 @@ does not construct a threshold-uniform splitting or justify commuting the
 limits \(\omega\to0\) and \(\tau\to0\).
 \end{remark}
 
-\begin{remark}[Mass-shaped is not yet physical mass]
-The representative \(f=1-2/r\) is the radial direction expected from a
-mass term after a helicity-two reduction.  The theorem proves a local
-cohomology normal form, not equality with a particular Einstein--Weyl mass
-parameter.  If a finite-mass reduction gives
+\begin{remark}[Forward reference to the physical mass jet]
+At this stage the representative \(f=1-2/r\) is an intrinsic
+mass-shaped direction.  Section~\ref{sec:mass} proves the exact identity
 \[
- \mathcal I_{\rm mass}=c(\omega)f+\mathcal K_{U_2}p,
+ [\mathcal I_{\rm Bach}]
+ =\frac{i\omega}{2}[\mathcal I_{\rm mass}],
+ \qquad
+ m=\frac{i\omega}{2}\tau,
 \]
-then the two extensions are locally equivalent precisely when
-\(c(\omega)\ne0\); their parameter normalization is
-\(2c(\omega)/(i\omega)\).
+and establishes compatibility with differentiated physical Jost germs.
 \end{remark}
 
 \section{Period formula for the connection shear}
@@ -1788,7 +1794,7 @@ validated evaluation for several overtones would decide whether the
 certified reflected EP2 pair is the first member of a defective tower;
 no such tower is claimed here.
 
-\section{Transverse unfolding of the defective resonance}
+\section{Two-parameter filtration-protected unfolding}
 \label{sec:unfolding}
 
 Put
@@ -1803,35 +1809,208 @@ The massless divisor remains at \(\omega_n\), while the massive divisor is
 
 \begin{proposition}[Generic versus filtration-preserving splitting]
 \label{prop:generic-filtered-splitting}
-Put the critical block in the form
+For a general first-order perturbation of
 \[
- T_0(z)=\begin{pmatrix}z&-1\\0&z\end{pmatrix}.
+ T_0(z)=\begin{pmatrix}z&-1\\0&z\end{pmatrix},
 \]
-For a general first-order perturbation,
-\[
- T(z,m)=T_0(z)+m
- \begin{pmatrix}a&b\\c&d\end{pmatrix}
- +O(z^2,mz,m^2),
-\]
-one has
-\[
- \det T=z^2+m(a+d)z+mc+O(z^3,mz^2,m^2).
-\]
-If \(c\ne0\), the two roots have the Newton--Puiseux expansion
-\[
- z_\pm(m)=\pm\sqrt{-cm}-\frac{a+d}{2}m+O(m^{3/2}).
-\]
-If the perturbation preserves the Einstein submodule, then \(c=0\)
-identically and the two roots are analytic and split linearly.  The
-Einstein--Weyl mass deformation is of this filtered type: the Einstein
-branch remains massless while the carrier branch obeys the massive
-equation.
+a nonzero lower-left entry produces Newton--Puiseux splitting
+\(\Delta=O(m^{1/2})\).  If the perturbation preserves the Einstein
+submodule, that entry vanishes identically and the two roots are analytic.
+The physical Einstein--Weyl mass deformation is of the latter type: the
+Einstein root remains fixed and the carrier root moves with nonzero
+velocity \(\nu_n\).
+\end{proposition}
 
-For a generic square-root unfolding, the branch separation is
-\(O(|m|^{1/2})\), the projectors are \(O(|m|^{-1/2})\), and a positive
-branch metric typically has condition number \(O(|m|^{-1})\).  The
-filtration-protected linear splitting below instead produces the stronger
-exponents \(O(|m|^{-1})\) and \(O(|m|^{-2})\).
+\begin{theorem}[Invariant two-parameter unfolding]
+\label{thm:two-parameter-unfolding}
+Let \(F(\omega,m,\epsilon)\) be the determinant of the reduced
+two-spin-two connection block, or the complete determinant divided by the
+local spin-one unit, and put \(z=\omega-\omega_n\).  At the critical point,
+\[
+ F=F_\omega=0,\qquad F_{\omega\omega}\ne0.
+\]
+The exact Einstein branch gives \(F(\omega_n,m,0)=0\), hence \(F_m=0\)
+at the origin.  Define
+\[
+ \boxed{\;
+ \nu_n=-\frac{2F_{\omega m}}{F_{\omega\omega}},
+ \qquad
+ c_n=\frac{2F_\epsilon}{F_{\omega\omega}}.
+ \;}
+\]
+For a declared filtration-breaking direction with \(F_\epsilon\ne0\),
+the Weierstrass-reduced characteristic equation is
+\[
+ \boxed{\;
+ z^2-\nu_nmz+c_n\epsilon
+ +O(z^3,z^2m,zm^2,z\epsilon,m\epsilon,m^3,\epsilon^2)=0.
+ \;}
+\]
+Consequently,
+\[
+ \boxed{\;
+ z_\pm=
+ \frac{\nu_nm}{2}
+ \pm\frac12\sqrt{\nu_n^2m^2-4c_n\epsilon}
+ +\cdots,
+ \qquad
+ \Delta^2=\nu_n^2m^2-4c_n\epsilon+\cdots.
+ \;}
+\]
+The pair \((\nu_n,c_n)\) is invariant under multiplication
+\(F\mapsto uF\) by an analytic nonzero unit.
+\end{theorem}
+
+\begin{proof}
+Taylor expansion gives
+\[
+ F=
+ \frac12F_{\omega\omega}z^2+F_{\omega m}zm
+ +F_\epsilon\epsilon+\text{higher terms}.
+\]
+Division by \(F_{\omega\omega}/2\) gives the displayed characteristic
+equation.  If \(\widetilde F=uF\), the identities
+\(F=F_\omega=F_m=0\) imply
+\[
+ \widetilde F_{\omega\omega}=uF_{\omega\omega},
+ \qquad
+ \widetilde F_{\omega m}=uF_{\omega m},
+ \qquad
+ \widetilde F_\epsilon=uF_\epsilon
+\]
+at the critical point, so both ratios are unchanged.
+\end{proof}
+
+\begin{theorem}[Lidskii reverse-coupling coefficient]
+\label{thm:lidskii-coefficient}
+Let the critical full pencil have chains
+\[
+ \mathbb L_nV_0=0,\qquad
+ \mathbb L_nV_1+\mathbb L_n'V_0=0,\qquad
+ \mathbb L_n^*W_0=0,
+\]
+and set
+\[
+ d_n=
+ \left\langle W_0,
+ \mathbb L_n'V_1+\frac12\mathbb L_n''V_0
+ \right\rangle.
+\]
+For a genuine length-two root \(d_n\ne0\).  If
+\(\mathbb L\mapsto\mathbb L+\epsilon B\), then
+\[
+ \boxed{\;
+ c_n=
+ \frac{\langle W_0,BV_0\rangle}{d_n}.
+ \;}
+\]
+This ratio is unchanged by a common scaling of the root chain or by
+\(V_1\mapsto V_1+\lambda V_0\).
+\end{theorem}
+
+\begin{proof}
+Use \(z=O(\epsilon^{1/2})\) and
+\(V=V_0+zV_1+z^2V_2+\cdots\).  At order \(z^2\sim\epsilon\), pairing the
+expanded equation with \(W_0\) gives
+\[
+ d_nz^2+\epsilon\langle W_0,BV_0\rangle=0.
+\]
+Thus \(z^2=-c_n\epsilon\), agreeing with
+Theorem~\ref{thm:two-parameter-unfolding} at \(m=0\).  The shift of
+\(V_1\) changes \(d_n\) by
+\(\lambda\langle W_0,\mathbb L_n'V_0\rangle=0\).
+\end{proof}
+
+The forward overlap
+\[
+ \beta_n=\langle\widetilde u_n,K_nu_n\rangle\ne0
+\]
+creates the non-split carrier-to-Einstein chain.  The reverse functional
+\[
+ \gamma_n(B)=\langle W_0,BV_0\rangle
+\]
+measures Einstein-to-carrier mixing.  The physical mass deformation
+preserves the filtration and has \(\gamma_n(B_{\rm mass})=0\); a declared
+generic mixing direction has \(\gamma_n(B)\ne0\).
+
+\begin{corollary}[Exceptional parabola and branch monodromy]
+\label{cor:exceptional-parabola}
+To leading order, the defective locus is
+\[
+ \boxed{\;
+ \epsilon_{\rm EP}(m)=\frac{\nu_n^2}{4c_n}m^2
+ =
+ \frac{F_{\omega m}^2}
+ {2F_{\omega\omega}F_\epsilon}m^2.
+ \;}
+\]
+This is an analytic parabola in the complexified deformation space.  A
+chosen real two-parameter slice contains a real exceptional curve only
+when the coefficient is compatible with its reality structure.  In
+deformation space the parabola is tangent at the origin to the physical
+mass axis \(\epsilon=0\).
+A generic path \(\epsilon=\lambda m+O(m^2)\), \(\lambda\ne0\), instead
+has \(\Delta=O(m^{1/2})\).  Encircling the discriminant changes the sign
+of the square root and exchanges \(z_+\) and \(z_-\).  No such exchange
+occurs on the physical mass axis, where the exact filtration labels the
+Einstein and carrier branches analytically.
+\end{corollary}
+
+\begin{remark}[Two meanings of transverse]
+The massless and massive resonance divisors intersect transversely in the
+\((\omega,m)\)-plane because their QNM velocities differ by
+\(\nu_n\ne0\).  By contrast, the physical mass direction
+\(\epsilon=0\) is tangent to the exceptional discriminant curve in the
+enlarged \((m,\epsilon)\)-deformation space.
+\end{remark}
+
+\begin{proposition}[Filtration-error threshold]
+\label{prop:filtration-error-threshold}
+If an intended mass deformation \(m\) contains a lower-left numerical or
+gauge contamination \(\epsilon_{\rm err}\), recovery of the physical
+linear coefficient requires
+\[
+ \boxed{\;
+ |c_n\epsilon_{\rm err}|\ll|\nu_n^2m^2|,
+ \qquad
+ |\epsilon_{\rm err}|
+ \ll\frac{|\nu_n|^2}{|c_n|}|m|^2.
+ \;}
+\]
+If \(\epsilon_{\rm err}=O(m^p)\), then \(p<2\) is mixing dominated,
+\(p=2\) changes the linear coefficient, and \(p>2\) recovers \(\nu_n\)
+asymptotically.  The natural dimensionless crossover variable is
+\[
+ \boxed{\;
+ \chi=\frac{4c_n\epsilon}{\nu_n^2m^2},
+ \qquad
+ \Delta=\nu_nm\sqrt{1-\chi}
+ \;}
+\]
+in a chosen analytic square-root branch.
+\end{proposition}
+
+\begin{proposition}[Lower-left mutation certificate]
+\label{prop:lower-left-mutation}
+For the exact leading mutation
+\[
+ T_{\rm mut}(z;m,\epsilon)=
+ \begin{pmatrix}z&-1\\c_n\epsilon&z-\nu_nm\end{pmatrix},
+\]
+the following three limits distinguish filtered from generic splitting:
+\[
+ \boxed{\;
+ \left.\frac{\Delta}{m}\right|_{\epsilon=0}=\nu_n,
+ \qquad
+ \left.\frac{\Delta^2}{\epsilon}\right|_{m=0}=-4c_n,
+ \qquad
+ \epsilon_{\rm EP}(m)=\frac{\nu_n^2}{4c_n}m^2.
+ \;}
+\]
+For an analytic full pencil the equalities acquire respectively
+\(O(m)\), \(O(\epsilon)\), and \(O(m^3)\) remainders.  These are
+algebraic mutation controls; no numerical value of \(c_n\) is claimed until
+a concrete filtration-breaking perturbation is specified and certified.
 \end{proposition}
 
 \begin{theorem}[Filtered critical-mass unfolding normal form]
@@ -1856,9 +2035,10 @@ and
 \[
  \mu(m)=\partial_\omega z(\omega_n,0)\,\nu_nm+O(m^2).
 \]
-Thus the pure-Weyl EP2 is a filtration-preserving transverse confluence of
-the massless and massive QNM divisors, not a generic miniversal
-perturbation of a Jordan block.
+Thus the pure-Weyl EP2 is a filtration-preserving confluence whose two QNM
+divisors are transverse in the \((\omega,m)\)-plane.  This is distinct
+from transversality to the exceptional discriminant in deformation space,
+and it is not a generic miniversal perturbation of a Jordan block.
 \end{theorem}
 
 \begin{proof}
@@ -1871,6 +2051,81 @@ the normalized difference of the two divisors.  The off-diagonal entry in
 the confluent frame is a unit because the certified Smith type is
 \((0,0,2)\).  Analytic invertible row and column operations normalize that
 unit to \(-1\) and remove the remaining divisible entries.
+\end{proof}
+
+\begin{theorem}[Gap-controlled projectors, nilpotent, and metrics]
+\label{thm:gap-controlled-confluence}
+For the leading two-parameter normal form, choose right and left vectors
+\[
+ v_\pm=\begin{pmatrix}1\\z_\pm\end{pmatrix},
+ \qquad
+ w_\pm^{\mathsf T}=
+ \begin{pmatrix}z_\pm-\nu_nm&1\end{pmatrix}.
+\]
+Then
+\[
+ w_\pm^{\mathsf T}v_\pm
+ =2z_\pm-\nu_nm=\pm\Delta
+\]
+and the spectral projectors are
+\[
+ \boxed{\;
+ P_\pm=\frac{v_\pm w_\pm^{\mathsf T}}{\pm\Delta},
+ \qquad
+ \|P_\pm\|\asymp|\Delta|^{-1}.
+ \;}
+\]
+In the normalized critical basis,
+\[
+ \boxed{\;
+ N=
+ \lim_{(m,\epsilon)\to(0,0)}
+ \frac{\Delta}{2}(P_+-P_-)
+ =
+ \begin{pmatrix}0&1\\0&0\end{pmatrix}.
+ \;}
+\]
+This limit is independent of the approach path through points with
+\(\Delta\ne0\), provided no additional spectral degeneracy is introduced.
+
+Let
+\[
+ S=\begin{pmatrix}1&1\\z_+&z_-\end{pmatrix}.
+\]
+Since \(\det S=-\Delta\), one has
+\[
+ \operatorname{cond}S\asymp|\Delta|^{-1}.
+\]
+For any uniformly bounded and boundedly invertible positive diagonal
+branch metric \(H_{\rm br}\), its pullback
+\[
+ H=(S^{-1})^\dagger H_{\rm br}S^{-1}
+\]
+satisfies
+\[
+ \boxed{\;
+ \operatorname{cond}H\asymp|\Delta|^{-2}.
+ \;}
+\]
+Thus the physical mass axis gives projector growth \(O(|m|^{-1})\) and
+metric conditioning \(O(|m|^{-2})\), whereas the transverse mixing axis
+gives \(O(|\epsilon|^{-1/2})\) and \(O(|\epsilon|^{-1})\).
+\end{theorem}
+
+\begin{proof}
+Direct multiplication gives
+\(T(z_\pm;m,\epsilon)v_\pm=0\) and
+\(w_\pm^{\mathsf T}T(z_\pm;m,\epsilon)=0\) to leading order.  The
+biorthogonal projector formula gives \(P_\pm\).  Moreover,
+\[
+ \frac{\Delta}{2}(P_+-P_-)
+ =\frac12
+ \left(v_+w_+^{\mathsf T}+v_-w_-^{\mathsf T}\right)
+ \longrightarrow N.
+\]
+The smallest singular value of \(S\) is comparable to \(|\Delta|\), while
+the largest remains bounded above and below.  Pullback of a uniformly
+positive branch metric squares this singular-value ratio.
 \end{proof}
 
 \begin{theorem}[Root-space polarization and nilpotent pole]
@@ -2095,7 +2350,7 @@ For real signed \(m\ne0\), suppose a positive branch metric is
 \[
  H_{\rm br}(m)=\diag(h_0(m),h_1(m)),
  \qquad
- 0<c\le h_0,h_1\le C.
+ 0<h_*\le h_0,h_1\le h^*.
 \]
 In the confluent basis,
 \[
@@ -2112,6 +2367,9 @@ Its condition number satisfies
 \]
 In the spectral-separation normalization this is
 \(O(|\nu_nm|^{-2})\).
+It is the physical-axis specialization of the universal gap law
+\(\operatorname{cond}H\asymp|\Delta|^{-2}\) in
+Theorem~\ref{thm:gap-controlled-confluence}.
 No scalar rescaling of \(H_m\) has a bounded, positive-definite,
 nondegenerate critical limit.
 \end{theorem}
@@ -2165,7 +2423,38 @@ the opposite-sign finite-mass branch form, whereas its positive
 
 \begin{proposition}[Canonical pseudospectral scale]
 \label{prop:pseudospectrum}
-In the normalized chart at \(m=0\),
+For the leading two-parameter normal form,
+\[
+ T(z;m,\epsilon)^{-1}
+ =
+ \frac1{z^2-\nu_nmz+c_n\epsilon}
+ \begin{pmatrix}
+ z-\nu_nm&1\\
+ -c_n\epsilon&z
+ \end{pmatrix}.
+\]
+Put
+\[
+ \zeta=z-\frac{\nu_nm}{2}.
+\]
+Then
+\[
+ z^2-\nu_nmz+c_n\epsilon
+ =\zeta^2-\frac{\Delta^2}{4}.
+\]
+In the unresolved regime \(|\zeta|\gg|\Delta|\), the upper-right response
+is
+\[
+ \boxed{\;
+ (T^{-1})_{12}
+ =\frac1{\zeta^2}
+ \left[1+O\left(\frac{\Delta^2}{\zeta^2}\right)\right].
+ \;}
+\]
+When \(|\zeta|\lesssim|\Delta|\), the two simple poles must be resolved
+separately and their projectors have size \(O(|\Delta|^{-1})\).
+
+At the exact critical point,
 \[
  \left\|\mathcal T(z,0)^{-1}\right\|\asymp |z|^{-2}.
 \]
@@ -2174,9 +2463,10 @@ Hence the local \(\varepsilon\)-pseudospectral radius is
  \boxed{\;|z|\asymp\sqrt{\varepsilon}\;}
 \]
 rather than the simple-pole scale \(O(\varepsilon)\).  For \(m\ne0\), the
-crossover occurs at \(|z|\asymp|\mu|\asymp|\nu_nm|\): outside that scale
-the pair resembles the critical double pole, while inside it the two
-simple poles resolve and their projectors have size \(O(|\nu_nm|^{-1})\).
+crossover is controlled by the actual gap.  Centering at \(\zeta\), rather
+than comparing raw \(z\) only with \(\Delta\), is essential near the
+exceptional parabola, where the common pole location can move even as the
+gap vanishes.
 \end{proposition}
 
 \subsection*{Remaining scalar/tensor projection audit}
@@ -2245,7 +2535,8 @@ This paper does not establish a causal spacetime resolvent, a complete QNM
 expansion, a global late-time asymptotic formula, a retarded
 inverse-Laplace deformation, a time-domain instability, the off-resonance
 normalization function \(h(\omega)\), an all-\(\ell\) Bach nonsplitting
-theorem, or a quantum positivity statement.  The polynomial
+theorem, a certified value of \(c_n\) for a concrete physical
+filtration-breaking perturbation, or a quantum positivity statement.  The polynomial
 \(t e^{i\omega_nt}\) is proved only for the isolated local two-pole contour
 contribution.
 
@@ -2270,14 +2561,18 @@ massive spin-two resolvent: QNM motion controls its double coefficient,
 while projector motion controls its accompanying simple coefficient.
 
 The physical mass deformation is filtration-preserving rather than a
-generic square-root unfolding.  The protected Einstein branch stays fixed,
-forcing linear confluence, \(m^{-1}\) projector growth, and \(m^{-2}\)
-positive-metric conditioning.  The local two-pole contour converges to the
-Jordan polynomial, the branch-sign residue converges to the unique
-nilpotent commutant generator, and the renormalized opposite-sign branch
-form becomes the pure-Weyl hyperbolic plane.  A global causal time-domain
-interpretation still requires the separate retarded contour theory stated
-above.
+generic square-root unfolding.  In the two-parameter phase diagram, the
+protected Einstein branch stays fixed and the mass axis splits linearly,
+whereas reverse Einstein-to-carrier mixing produces square-root branching
+and resonance exchange.  The actual spectral gap controls projector
+growth and positive-metric conditioning, and recovering the physical slope
+requires filtration-breaking error \(o(m^2)\).  The gap-renormalized
+projector difference converges path-independently to the unique nilpotent
+commutant generator.  Along the physical axis, the local two-pole contour
+converges to the Jordan polynomial and the renormalized opposite-sign
+branch form becomes the pure-Weyl hyperbolic plane.  A global causal
+time-domain interpretation still requires the separate retarded contour
+theory stated above.
 
 \begin{thebibliography}{9}
 
