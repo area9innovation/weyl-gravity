@@ -154,5 +154,4 @@ Not established:
 CLOSE-OUT: DONE — the Bach shear is now an exact spectral-flow generator,
 and the higher-jet pole hierarchy is classified by spectral contact order.
 
-EVIDENCE:
-`reports/PAPER17_SPECTRAL_VELOCITY_SUM_RULE_TIER_RECEIPT.json`
+EVIDENCE: `reports/PAPER17_SPECTRAL_VELOCITY_SUM_RULE_TIER_RECEIPT.json`
