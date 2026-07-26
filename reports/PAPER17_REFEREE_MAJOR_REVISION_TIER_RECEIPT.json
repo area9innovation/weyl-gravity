@@ -1,0 +1,106 @@
+{
+  "schema": "tier-receipt-v1",
+  "result_id": "PAPER17_REFEREE_MAJOR_REVISION",
+  "date": "2026-07-26",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "work_item": "sf:program/work/phase4-black-hole-paper17-referee-major-revision",
+  "input_commit": "b4a4f7ed4aca66f83971ec17fdf79e1378467ac8",
+  "outcome": {
+    "status": "PASS",
+    "scientific_promotion": false,
+    "claim_boundary_correction": true,
+    "pages": 18,
+    "words": 4314,
+    "retained_central_results": 5,
+    "physical_mass_crosswalk_certified": false
+  },
+  "artifacts": {
+    "paper/17-pure-weyl-schwarzschild-extension-structure.tex": "656ff615f7e590b527acf3ceb5b9487d06959f10b200ced9d541dea9f0639127",
+    "paper/17-pure-weyl-schwarzschild-extension-structure.pdf": "2b309c293585f5cc8885fd43d39b652acf9cbe4807817bc3ad02212104bb3247",
+    "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json": "d1524f126245f20c085f9e06c2e7dc53f63001f98793a488070c54e369682756",
+    "paper/generate_17_pure_weyl_extension_claim_map.py": "5fa3ca15bf3251dc7f04b72a34d0303c2ae3acb24ae4805a6ce65e2e63627f0c",
+    "paper/verify_17_pure_weyl_extension_claim_map.py": "a2b36a7c2ceb584c13b435b49ea18ce9bc4db081550d4f8cff5f07f6751a19e1",
+    "paper/test_17_pure_weyl_extension_claim_map.py": "4898b8a44eaac70f70a863d9e7c1e80e89e16824f39af433fec9ab3fbfdfea6f"
+  },
+  "tiers": [
+    {
+      "tier": 0,
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile paper/generate_17_pure_weyl_extension_claim_map.py paper/verify_17_pure_weyl_extension_claim_map.py paper/test_17_pure_weyl_extension_claim_map.py",
+        "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 17-pure-weyl-schwarzschild-extension-structure.tex",
+        "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 17-pure-weyl-schwarzschild-extension-structure.tex",
+        "git diff --check -- <scoped publication paths>"
+      ],
+      "notes": "The final 18-page PDF has no LaTeX warnings, overfull boxes, underfull boxes, undefined citations, or undefined references. Selected pages were inspected visually."
+    },
+    {
+      "tier": 1,
+      "status": "PASS",
+      "commands": [
+        "python3 paper/generate_17_pure_weyl_extension_claim_map.py --check",
+        "python3 paper/verify_17_pure_weyl_extension_claim_map.py",
+        "python3 -m unittest paper/test_17_pure_weyl_extension_claim_map.py"
+      ],
+      "tests": 15,
+      "elapsed_seconds": 7.814,
+      "mutation_targets": [
+        "cocycle primitive",
+        "graded tangent normalization",
+        "complete massive-system crosswalk",
+        "physical mass velocity",
+        "Smith type",
+        "Green rank",
+        "generalized falloff",
+        "complexified source trace",
+        "real causal source",
+        "global outgoing trace",
+        "causal resolvent",
+        "global ringdown",
+        "specified astrophysical source",
+        "removed programme sections"
+      ]
+    },
+    {
+      "tier": 2,
+      "status": "PASS",
+      "verifiers": [
+        "python3 -m black_hole_programme.phase3.axial_qnm_projective_cocycle_v1.verify",
+        "python3 -m black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.full_contour_winding_v1.verify",
+        "python3 -m black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.local_selector_v1.verify",
+        "python3 -m black_hole_programme.phase3.axial_qnm_spin_one_local_unit_v1.verify",
+        "python3 -m black_hole_programme.phase4.axial_qnm_fredholm_promotion_v1.verify",
+        "python3 -m black_hole_programme.phase4.axial_qnm_null_infinity_reconstruction_v1.verify",
+        "python3 -m black_hole_programme.phase4.axial_qnm_conserved_source_overlap_v1.verify",
+        "python3 -m black_hole_programme.phase4.einstein_weyl_critical_mass_jet_v1.verify"
+      ],
+      "unit_test_packages": 8,
+      "tests": 41,
+      "notes": "All authority verifiers and tests passed. The critical-parent verifier returned EXACT_CRITICAL_MASS_PARENT_JET_VERIFIED_RADIAL_CROSSWALK_OPEN. The cocycle suite's first 30-second sample was unfinished and was not counted; its completed rerun passed 8 tests in 63.006 seconds."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "reason": "Paper, bibliography, and claim-binding revision only; no source operator, authority certificate, schema, shared algebra, release, freeze, or scientific lifecycle state changed. The full affected authority chain was replayed."
+    }
+  ],
+  "does_not_establish": [
+    "full coupled massive axial-system crosswalk",
+    "exact physical massive Jost derivative or physical massive-QNM slope",
+    "LORENTZIAN-CAUSAL resolvent or retarded contour theorem",
+    "complete QNM expansion or late-time asymptotics",
+    "standard falloff or finite Bondi flux for the generalized constant component",
+    "real causal temporally compact source or specified astrophysical source",
+    "detector sensitivity",
+    "all-multipole Bach nonsplitting",
+    "quantum positivity or unitarity"
+  ],
+  "submission_gates": [
+    "immutable DOI-bearing archive",
+    "complete massive axial/Jost crosswalk if the physical mass-slope interpretation is retained",
+    "global causal domain and retarded contour control for a time-domain theorem"
+  ]
+}

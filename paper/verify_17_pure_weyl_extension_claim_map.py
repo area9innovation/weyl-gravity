@@ -97,19 +97,23 @@ def verify_gauge_and_mass(claims: dict) -> None:
     )) - expected) != 0:
         fail("triangular-gauge commutator failed")
 
-    mass = claims["exact_identities"]["critical_mass_jet"]
+    mass = claims["exact_identities"]["graded_mass_squared_tangent"]
     expected_mass = {
-        "mass_operator": "L-m*f",
+        "graded_mass_operator": "L-m*f",
         "mass_class": "[f]",
         "bach_to_mass_class": "I*omega/2",
-        "parameter_relation": "m=I*omega*tau/2",
+        "fixed_frequency_tangent_relation": "m=I*omega*tau/2",
+        "spectral_global_reparameterization": False,
+        "complete_coupled_massive_axial_system": False,
         "coulomb_exponent": "sigma*I*(2*k+m/k)",
         "coulomb_exponent_mass_derivative_at_zero": "0",
         "q_slope_at_infinity": "-I/(8*omega)",
-        "physical_mass_velocity": "2*I*kappa/omega",
+        "endpoint_comparison_status": "FORMAL_ASYMPTOTIC_ONLY",
+        "opposite_jost_admixture_excluded": False,
+        "physical_mass_velocity_certified": False,
     }
     if mass != expected_mass:
-        fail("critical mass-jet declaration drift")
+        fail("graded mass-squared declaration drift")
     omega, sigma = sp.symbols("omega sigma", nonzero=True)
     kprime = -1 / (2 * omega)
     rho_prime = sigma * sp.I * (2 * kprime + 1 / omega)
@@ -125,9 +129,14 @@ def verify_resonance_and_green(claims: dict) -> None:
         "semisimple_smith_type": [0, 1, 1],
         "selector": "kappa=b/a_prime=beta/alpha",
         "carrier_quotient": "-1/kappa",
-        "mass_velocity_relation": "kappa=-I*omega*nu/2",
+        "intrinsic_tau_velocity": "-kappa",
+        "physical_mass_velocity_relation": "CONDITIONAL_CROSSWALK_ONLY",
+        "kappa_re_enclosure": ["-0.047", "0.022"],
+        "kappa_im_enclosure": ["0.064", "0.138"],
     }:
         fail("Smith/root declaration drift")
+    if float(smith["kappa_im_enclosure"][0]) <= 0:
+        fail("selector enclosure no longer excludes zero")
 
     alpha, beta, u, v = sp.symbols("alpha beta u v", nonzero=True)
     P = sp.Matrix([[u * v / alpha]])
@@ -150,8 +159,19 @@ def verify_resonance_and_green(claims: dict) -> None:
         "identity": "G_W=-(partial_m inverse(E+m*A)|0)/(4*alpha_W)",
         "double_coefficient": "-nu*P/(4*alpha_W)",
         "isolated_contour_only": True,
+        "certified_scalar_selector_identified_with_parent_nu": False,
     }:
         fail("parent mass-derivative declaration drift")
+
+    trace = identities["outgoing_trace_bridge"]
+    if trace != {
+        "principal_coefficient": (
+            "-beta*O_scri(u) tensor (tilde_u*chi_s)/alpha**2"
+        ),
+        "analytic_on_local_jost_family": True,
+        "global_causal_trace": False,
+    }:
+        fail("outgoing-trace declaration drift")
 
 
 def verify_reconstruction_and_source(claims: dict) -> None:
@@ -182,6 +202,8 @@ def verify_reconstruction_and_source(claims: dict) -> None:
         "traceless": True,
         "adjoint_choice": "F=eta*conjugate(tilde_u)",
         "adjoint_overlap": "integral(eta*abs(tilde_u)**2,drstar)>0",
+        "source_domain": "COMPLEXIFIED_FREQUENCY_DOMAIN",
+        "real_causal_temporally_compact": False,
         "specified_trajectory": False,
     }
     if source != expected:
@@ -213,6 +235,9 @@ def verify_authority_flags(claims: dict) -> None:
         ("conserved_source_overlap", "stress_energy_conserved", True),
         ("conserved_source_overlap", "stress_energy_traceless", True),
         ("conserved_source_overlap", "constructed_source_adjoint_overlap_nonzero", True),
+        ("critical_mass_parent", "physical_mass_jet_equals_intrinsic_radial_tau", False),
+        ("critical_mass_parent", "physical_b_equals_minus_mass_derivative_of_jost", False),
+        ("critical_mass_parent", "physical_massive_qnm_slope_certified", False),
     ]
     for authority, flag, expected in checks:
         actual = certificate(authority).get("claim_flags", {}).get(flag)
@@ -229,8 +254,12 @@ def verify_manuscript(claims: dict, paper: Path) -> None:
         "\\texttt{REDUCED-MODE}",
         "Global retarded ringdown expansion",
         "Not established",
-        "The polynomially weighted term is proved only for the isolated",
-        "It does not identify a specified material trajectory",
+        "The polynomially weighted term",
+        "isolated local resonance contour",
+        "specified material trajectory",
+        "This is \\emph{not} asserted to be the complete coupled massive axial",
+        "The proposition is deliberately formal.",
+        "complexified frequency-domain conserved and traceless",
     ]
     for phrase in required:
         if phrase not in text:
@@ -263,6 +292,10 @@ def verify_manuscript(claims: dict, paper: Path) -> None:
 
     flags = claims["claim_flags"]
     required_false = [
+        "complete_coupled_massive_axial_crosswalk",
+        "endpoint_compatible_physical_mass_jet_exact",
+        "physical_massive_qnm_slope_certified",
+        "real_causal_source_overlap_nonzero",
         "global_causal_resolvent",
         "complete_retarded_qnm_expansion",
         "generalized_constant_component_standard_falloff",
@@ -273,6 +306,19 @@ def verify_manuscript(claims: dict, paper: Path) -> None:
     for key in required_false:
         if flags.get(key) is not False:
             fail(f"fail-closed claim flag drift: {key}")
+
+    required_true = [
+        "graded_mass_squared_direction_exact",
+        "outgoing_trace_bridge_exact",
+        "complexified_conserved_traceless_source_overlap_nonzero",
+    ]
+    for key in required_true:
+        if flags.get(key) is not True:
+            fail(f"required scoped claim flag drift: {key}")
+
+    tcb = claims.get("trusted_computing_base", {})
+    if tcb.get("immutable_doi_archive_available") is not False:
+        fail("archive submission gate drift")
 
 
 def main() -> None:

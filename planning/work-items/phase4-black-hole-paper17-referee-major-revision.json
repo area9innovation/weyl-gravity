@@ -1,0 +1,51 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-paper17-referee-major-revision",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-paper17-referee-major-revision",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-paper17-referee-major-revision.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper17-referee-major-revision",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 1,
+    "objective": "Revise Paper 17 against the external major-revision report by clarifying the graded massive-spin-two tangent, exposing the selector and certificate definitions, strengthening endpoint and Bondi-trace bridges, qualifying the complexified source theorem, repairing compression errors, and expanding the primary literature positioning without promoting any global causal claim.",
+    "stop_condition": "The manuscript answers every referee point that can be closed from existing exact or validated evidence; unresolved immutable-archive, numerical-kappa, full massive-system, and global-causal requirements are explicitly listed as non-results or release gates. The claim map and verifier bind the revised wording, mutation tests fail closed, the PDF builds cleanly, and a referee-response report and tier receipt document the evidence boundary.",
+    "current_gate": "major revision with no unsupported promotion beyond LOCAL-ALGEBRAIC and REDUCED-MODE",
+    "forbid": "no claim that the scalar mass equation is the complete coupled massive axial system; no global retarded QNM expansion; no real causal or astrophysical source claim; no detector-sensitivity claim; no invented numerical enclosure for kappa_n; no modification of source certificates; no inclusion of unrelated shared-worktree changes",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-paper17-publication-consolidation"
+    ],
+    "activates": [
+      "external resubmission of Paper 17",
+      "immutable computational archive release",
+      "numerical selector-ratio certification",
+      "full massive-system intertwiner and global Fredholm follow-up"
+    ],
+    "allowed_paths": [
+      "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "paper/test_17_pure_weyl_extension_claim_map.py",
+      "reports/phase4-black-hole-paper17-referee-major-revision-2026-07-26.md",
+      "reports/PAPER17_REFEREE_MAJOR_REVISION_TIER_RECEIPT.json",
+      "planning/work-items/phase4-black-hole-paper17-referee-major-revision.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use the existing exact and validated certificate families as authority. Revise wording and proof bridges, add primary citations, and expose reproducibility metadata. Record requests for genuinely new certificates rather than inferring them.",
+    "input_commit": "b4a4f7ed4",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "LORENTZIAN-CAUSAL remains fail-closed",
+      "Referee-driven major revision; no new theorem promotion without an existing authority."
+    ]
+  },
+  "edges": []
+}

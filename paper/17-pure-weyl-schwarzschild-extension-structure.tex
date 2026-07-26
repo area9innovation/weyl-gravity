@@ -17,8 +17,8 @@
 \newcommand{\End}{\operatorname{End}}
 \newcommand{\Smith}{\operatorname{Smith}}
 
-\title{A Non-Split Regge--Wheeler Self-Extension and a\\
-Defective Schwarzschild Resonance in Pure Weyl Gravity}
+\title{An Axial \(\ell=2\) Non-Split Regge--Wheeler Self-Extension\\
+and a Defective Schwarzschild Resonance in Pure Weyl Gravity}
 \author{Authors withheld for review}
 \date{26 July 2026}
 
@@ -26,42 +26,39 @@ Defective Schwarzschild Resonance in Pure Weyl Gravity}
 \maketitle
 
 \begin{abstract}
-We determine the axial Schwarzschild spin-two extension and one of its
-quasinormal resonances in four-dimensional pure Weyl gravity.  The reduced
-six-state Bach system has an exact filtration with two spin-two
-Regge--Wheeler factors and one spin-one Maxwell factor.  The repeated
-spin-two block is not a rational direct sum: it is a non-split
-self-extension and the first parameter jet of a lower-dimensional family.
-After Liouville reduction, its projective class is represented by
+We show that an axial \(\ell=2\) Schwarzschild quasinormal mode becomes a
+defective resonance in four-dimensional pure Weyl gravity.  The reduced
+six-state Bach system has two spin-two Regge--Wheeler layers and one
+spin-one Maxwell layer.  The repeated spin-two block is not a rational
+direct sum: it is a non-split self-extension.  At a validated simple
+Regge--Wheeler quasinormal frequency, its connection has Smith type
+\((0,0,2)\), hence one length-two root chain.  The geometric root is
+Einstein, while the generalized root has nonzero gauge-invariant
+traceless-Ricci carrier.
+
+The algebraic mechanism is an exact projective cocycle.  After Liouville
+reduction,
 \[
  [\mathcal I_{\rm Bach}]
  =\frac{i\omega}{2}\left[1-\frac2r\right].
 \]
-The class in brackets is exactly the transverse-traceless critical
-Einstein--Weyl mass direction.  The required rational gauge has the
-linearly growing asymptotics of the differentiated massive Jost phase;
-the long-range Coulomb contribution cancels the apparent logarithmic
-phase derivative.  Thus the local Bach jet and the differentiated
-physical Jost germs agree, up to endpoint normalization.
+The class in brackets is the scalar spin-two graded projection of the
+first signed mass-squared jet of Einstein--Weyl gravity.  Its rational
+primitive has the same linear asymptotics as the derivative of the moving
+massive phase; the Coulomb exponent has zero first mass derivative.  We do
+not identify this scalar tangent with the complete coupled massive axial
+system without an additional intertwining certificate.
 
-At a validated simple Schwarzschild quasinormal frequency, the connection
-shear is nonzero and the spin-one factor is a local unit.  The complete
-connection therefore has Smith type \((0,0,2)\).  Its geometric root is
-Einstein, while the generalized root has a nonzero gauge-invariant
-Ricci-carrier component.  The same invariant is the nonzero velocity of
-the massive spin-two quasinormal branch.  We prove that the compact-source,
-compact-observation outgoing radial Green operator on the Schwarzschild
-exterior has a nonzero rank-one second-order pole.
-
-Exact axial reconstruction shows that the Einstein range of the leading
-pole has nonzero Bondi shear, and an explicit conserved, traceless,
-compactly supported odd source has nonzero adjoint overlap.  Hence both
-source and observation channels can be nonvanishing.  The isolated
-resonance contour contains the expected polynomially weighted Einstein
-profile.  We do not claim a global retarded quasinormal expansion: the
-time-independent generalized component has weakened \(O(1)\) strain, and
-a closed weighted Fredholm realization with causal contour control remains
-open.
+The associated finite-interval radial Green operator, and equivalently
+its compactly cut-off exterior realization, has a nonzero rank-one
+second-order pole.  Exact axial reconstruction shows that the Einstein
+range of the principal coefficient has nonzero Bondi shear.  A
+complexified conserved, traceless, radially compact odd source has
+nonzero adjoint overlap.  Thus the isolated local resonance contour
+contains the expected \(t e^{i\omega_n t}\) Einstein profile.  We do not
+claim a global retarded quasinormal expansion, a real causal source
+construction, or standard asymptotic falloff for the time-independent
+generalized component.
 \end{abstract}
 
 \section{Introduction}
@@ -72,31 +69,43 @@ layers may form a direct sum, or they may form a non-semisimple extension.
 Only the second possibility carries an intrinsic generalized state and can
 turn a simple resonance of the repeated factor into a defective resonance
 of the full system.
+We use the standard Regge--Wheeler and Schwarzschild QNM conventions of
+Refs.~\cite{reggewheeler1957,leaver1985}, translated to our
+\(e^{+i\omega t}\) Fourier sign.
 
-This distinction is realized by axial Schwarzschild perturbations of pure
-Weyl gravity.  In the factor-adapted radial variables, the Bach equation
+This distinction is realized by axial \(\ell=2\) Schwarzschild
+perturbations of pure Weyl gravity.  In the factor-adapted radial variables,
+the Bach equation
 contains two spin-two Regge--Wheeler layers and one spin-one Maxwell layer,
 but the two spin-two layers cannot be separated by a rational local field
 redefinition.  The extension is also the critical limit of the massless
-and massive spin-two branches of Einstein--Weyl gravity.  At a
+and massive spin-two directions at the level of its graded scalar tangent.
+At a
 Schwarzschild quasinormal frequency, this confluence produces a
 length-two root chain rather than two independent Einstein roots.
+
+We use \(M=1\), the Fourier convention \(e^{+i\omega t}\), and the
+negative-real-frequency representative of the reflected Schwarzschild
+pair.  Thus damping means \(\operatorname{Im}\omega>0\), and the familiar
+fundamental axial frequency is written near
+\(-0.37367+0.08896i\).  The parameter \(m\) below is a signed
+\emph{squared-mass coefficient}; it is not the positive square root usually
+called the graviton mass.
 
 The paper has five results.
 \begin{enumerate}
 \item The axial spin-two Bach block is a non-split rational
   Regge--Wheeler self-extension and an exact first parameter jet.
-\item Its projective cocycle has the elementary mass-direction normal form
+\item Its projective cocycle has the elementary normal form
   \[
     [\mathcal I_{\rm Bach}]
     =\frac{i\omega}{2}\left[1-\frac2r\right],
   \]
-  and the equivalence extends to differentiated horizon and infinity Jost
-  germs.
+  equal to the scalar spin-two graded projection of the formal critical
+  mass-squared jet.
 \item A validated QNM calculation selects the defective Smith type
   \((0,0,2)\).  The generalized root necessarily crosses the Einstein
-  filtration and is the normalization-independent tangent class of the
-  massive QNM.
+  filtration.
 \item The compact-source, compact-observation exterior outgoing radial
   Green operator has a genuine rank-one pole of order two.
 \item Exact metric reconstruction and an explicit conserved, traceless odd
@@ -119,10 +128,10 @@ selector, and spin-one local-unit condition are interval-validated.
 Result & Input & Status\\
 \midrule
 Filtration, partial jet, and nonsplitting
-& Rational identities and exhaustive coboundary obstruction
+& Exact identities and exhaustive rational splitting test
 & \texttt{LOCAL-ALGEBRAIC}\\
-Mass-direction and Jost-germ comparison
-& Exact cocycle primitive and moving massive phases
+Graded mass-direction comparison
+& Exact cocycle primitive and formal moving massive phases
 & \texttt{LOCAL-ALGEBRAIC}\\
 Defective QNM and non-Einstein root
 & Validated Evans winding, selector, spin-one unit
@@ -136,6 +145,9 @@ Bondi-shear and compact-source nonannihilation
 Global retarded ringdown expansion
 & Weighted Fredholm domains and contour deformation
 & Not established\\
+Full coupled massive-system crosswalk
+& Parameter-dependent axial intertwiner and matched endpoint maps
+& Not established\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -146,6 +158,15 @@ the polynomial contribution of an isolated local resonance contour.  It
 does not prove a complete causal quasinormal expansion, late-time
 asymptotics, detector sensitivity, or excitation by a specified
 astrophysical matter model.
+
+The nearby quadratic-gravity problem has been studied directly as a
+coupled massive spin-two system \cite{britocardosopani2013,antoniou2025}.
+That literature separates the general-relativistic and massive QNM
+families at nonzero squared mass.  Our distinct result concerns their
+singular pure-Weyl confluence and proves non-semisimplicity of the critical
+Bach response.  We do \emph{not} replace the complete massive axial system
+by a scalar equation; the scalar mass equation used below is only its
+spin-two graded tangent target.
 
 \section{The filtered axial Bach module}
 \label{sec:filtration}
@@ -247,6 +268,13 @@ Every factor-adapted endpoint connection consequently has the form
 \end{equation}
 \end{theorem}
 
+Although each scalar factor is second order, its chosen horizon or infinity
+condition selects a one-dimensional endpoint line.  The matrix
+\eqref{eq:triangular-connection} records one unwanted scalar endpoint
+coefficient for each of the three admissible factor lines; it is therefore
+\(3\times3\), rather than the \(6\times6\) fundamental matrix of the
+first-order radial system.
+
 \begin{proof}
 Differentiate
 \(D\Phi_4(\tau)=\mathcal B(\tau)\Phi_4(\tau)\) at \(\tau=0\).
@@ -336,17 +364,48 @@ For every real \(\omega>0\), the extension \(E_2\) is non-split over
 \end{theorem}
 
 \begin{proof}[Certificate-supported exact proof]
-The rational splitting equation has exhaustive pole and degree bounds and
-reduces to a finite coefficient system.  Fixed minors of its coefficient
-and augmented matrices are
+The local pole audit permits poles only at \(r=0\) and at the apparent
+divisor \(r\omega=2i\).  Its indicial bounds force the exhaustive ansatz
+\[
+ a(r)=-\frac{i}{\omega^2(r\omega-2i)}
+ +\frac{c_{-2}}{r^2}+\frac{c_{-1}}r+c_0 .
+\]
+After substitution in
+\(\mathcal K_{U_2}a+2\mathcal I_{\rm Bach}=0\) and clearing the declared
+denominators, coefficient comparison gives
+\[
+ M(\omega)c=b(\omega),\qquad M\in\C^{6\times3},
+\]
+with
+\[
+M=
+\left(\begin{smallmatrix}
+0&-4\omega^4&0\\
+-8\omega^4&8\omega^4&24\omega^2\\
+16\omega^4&42\omega^2&-156\omega^2\\
+48\omega^2&-224\omega^2&312\omega^2\\
+-208\omega^2&364\omega^2&-192\omega^2\\
+224\omega^2&-168\omega^2&0
+\end{smallmatrix}\right),
+\quad
+b=
+\left(\begin{smallmatrix}
+0\\-2i(5\omega-6i)\\i(35\omega-78i)\\
+-6i(5\omega-26i)\\96\\0
+\end{smallmatrix}\right).
+\]
+Fixed minors of the coefficient and augmented matrices are
 \[
  \det M_{[0,1,2]}=3456\,\omega^{10},
  \qquad
  \det[M\mid{\rm rhs}]_{[0,1,2,5]}
  =-645120\,i\,\omega^9.
 \]
-They are simultaneously nonzero for every real \(\omega>0\), so the
-inhomogeneous coboundary equation is inconsistent.
+They are simultaneously nonzero for every real \(\omega>0\).  Hence
+\(\operatorname{rank}M=3\), whereas
+\(\operatorname{rank}[M\mid b]\ge4\), so the inhomogeneous coboundary
+equation is inconsistent.  The pole audit and displayed ansatz are what
+make this finite inconsistency exhaustive rather than a truncated search.
 \end{proof}
 
 Theorem~\ref{thm:nonsplit} is a statement about the differential module;
@@ -355,114 +414,100 @@ class.  Neither theorem asserts that every QNM of the repeated scalar
 factor must be defective.  Defectiveness is a resonant evaluation of the
 nonzero extension class.
 
-\section{Critical-mass interpretation}
+\section{Graded mass-squared tangent and crosswalk boundary}
 \label{sec:mass}
 
-\subsection{The transverse-traceless mass jet}
+\subsection{The scalar graded target}
 
-On the transverse-traceless spin-two sector, introduce the
-Einstein--Weyl family
+The covariant parent family contains the second-order tensor pencil
 \[
- (\mathcal E+m\mathcal A)\phi=0.
+ (\mathcal E+m\mathcal A)\phi=0,
 \]
-Its axial scalar equation is
+where \(m\) is the signed squared-mass coefficient.  On the
+transverse-traceless spin-two graded quotient, the scalar target is
 \begin{equation}\label{eq:massive-rw}
- L_m(\omega)y=
+ L_m^{\rm gr}(\omega)y=
  \left[D^2+\omega^2-V_2-mf\right]y=0.
 \end{equation}
-For a differentiable solution family,
-\[
- L_2\,\partial_my=f\,y
- \qquad (m=0).
-\]
+This is \emph{not} asserted to be the complete coupled massive axial
+system of Refs.~\cite{britocardosopani2013,antoniou2025}.  It is the
+spin-two graded projection used to compare first parameter jets.
 
-\begin{theorem}[Exact critical-mass jet]\label{thm:mass-jet}
-The projective class of the transverse-traceless mass jet is
+\begin{proposition}[Exact graded mass direction]\label{thm:mass-jet}
+Differentiating \eqref{eq:massive-rw} at \(m=0\) gives
 \[
- [\mathcal I_{\rm mass}]=[f].
+ L_2\,\partial_my=f\,y,\qquad
+ [\mathcal I_{\rm mass}^{\rm gr}]=[f].
 \]
 Consequently,
 \[
  \boxed{\;
  [\mathcal I_{\rm Bach}]
- =\frac{i\omega}{2}[\mathcal I_{\rm mass}],
- \qquad
- m=\frac{i\omega}{2}\tau.
+ =\frac{i\omega}{2}[\mathcal I_{\rm mass}^{\rm gr}].
  \;}
 \]
-The parameter identity is understood to first order and modulo rational
-triangular gauge.
-\end{theorem}
+Equivalently, at each fixed \(\omega\ne0\), the two tangent cocycles are
+related by \(m=(i\omega/2)\tau\), modulo rational triangular gauge.
+Because this factor depends on the spectral variable, it is not a global
+reparametrization of two operator families.
+\end{proposition}
 
 \begin{proof}
 Differentiating \eqref{eq:massive-rw} gives the extension density \(f\).
 The result follows from Theorem~\ref{thm:mass-normal}.
 \end{proof}
 
-\subsection{Endpoint-compatible gauge}
+\subsection{Formal endpoint comparison}
 
 Because Lemma~\ref{lem:triangular-gauge} contains a factor \(1/2\), the
 field redefinition that removes \(\mathcal K_{U_2}q\) is
 \[
- Q_q=2qD-D(q).
+ Q_q=2qD-D(q),\qquad
+ [L_2,Q_q]|_{\ker L_2}=-\mathcal K_{U_2}(q).
 \]
-On \(\ker L_2\),
+Thus \(L_2x=\mathcal I_{\rm Bach}y\) implies
 \[
- [L_2,Q_q]=-\mathcal K_{U_2}(q).
+ L_2(x+Q_qy)=\frac{i\omega}{2}fy.
 \]
-Thus, if \(L_2x=\mathcal I_{\rm Bach}y\), then
-\[
- \widehat x=x+Q_qy
- \quad\Longrightarrow\quad
- L_2\widehat x=\frac{i\omega}{2}fy.
-\]
-
-The primitive has the forced infinity behavior
+The primitive has the forced behavior
 \[
  q(r,\omega)=-\frac{i}{8\omega}r+O(1).
 \]
-This growth is not an endpoint obstruction.  It is the derivative of the
-moving massive phase.
 
-\begin{theorem}[Differentiated Jost compatibility]
-\label{thm:jost-compatibility}
-Let \(y_\sigma(m,r)\), \(\sigma=\pm1\), be a massive Jost germ at infinity
-with
+\begin{proposition}[Formal differentiated endpoint asymptotics]
+\label{prop:formal-jost-comparison}
+Choose the square-root branch
 \[
- k=(\omega^2-m)^{1/2},\qquad
- y_\sigma(m,r)=
- e^{\sigma ikr}r^{\rho_\sigma(m)}
- \left(1+O(r^{-1})\right),
+ k=(\omega^2-m)^{1/2},\qquad k(\omega,0)=\omega,
 \]
+and the formal infinity branches
 \[
- \rho_\sigma(m)
- =\sigma i\left(2k+\frac{m}{k}\right).
+ y_\sigma^{\rm gr}(m,r)=
+ e^{\sigma ikr}r^{\rho_\sigma(m)}
+ \left(1+O(r^{-1})\right),\qquad
+ \rho_\sigma(m)=\sigma i\left(2k+\frac{m}{k}\right).
 \]
 Then
 \[
  \rho_\sigma'(0)=0,\qquad
- \frac{\partial_my_\sigma(0,r)}{y_\sigma(0,r)}
- =-\frac{\sigma i}{2\omega}r+O(1).
+ \frac{\partial_my_\sigma^{\rm gr}(0,r)}
+ {y_\sigma^{\rm gr}(0,r)}
+ =-\frac{\sigma i}{2\omega}r+O(1),
 \]
-With \(c(\omega)=i\omega/2\),
+and, with \(c(\omega)=i\omega/2\),
 \[
  \frac{Q_qy_\sigma}{y_\sigma}
  =\frac{\sigma r}{4}+O(1)
  =c(\omega)
- \frac{\partial_my_\sigma(0,r)}{y_\sigma(0,r)}+O(1).
+ \frac{\partial_my_\sigma^{\rm gr}(0,r)}
+ {y_\sigma^{\rm gr}(0,r)}+O(1).
 \]
-At the horizon, the mass perturbation is multiplied by \(f=O(r-2)\),
-so the indicial exponent is unchanged and \(Q_q\) preserves the analytic
-ingoing germ.  At each endpoint \(e\),
-\[
- \widehat x_e-c(\omega)\partial_my_e(0)
- =\lambda_e(\omega)y_e
-\]
-for an analytic scalar normalization \(\lambda_e\).
-\end{theorem}
+At the horizon, \(f=O(r-2)\), so the graded mass term does not change the
+ingoing Frobenius exponent.
+\end{proposition}
 
 \begin{proof}
-The infinity equation is
+The infinity equation has
 \[
  D^2y+\left(k^2+\frac{2m}{r}+O(r^{-2})\right)y=0.
 \]
@@ -472,60 +517,43 @@ The coefficient of \(r^{-1}\) gives
 \]
 Since \(k'(0)=-1/(2\omega)\),
 \[
- \left.\frac{d}{dm}\left(2k+\frac{m}{k}\right)\right|_{m=0}
- =-\frac1\omega+\frac1\omega=0.
+ \left.\frac{d}{dm}\left(2k+\frac{m}{k}\right)\right|_{m=0}=0.
 \]
-The Coulomb-power derivative therefore cancels, while differentiation of
-the plane-wave phase gives the linear term.  Finally,
-\(Dy_\sigma/y_\sigma=\sigma i\omega+O(r^{-1})\) and
-\(q=-ir/(8\omega)+O(1)\) give the stated asymptotics of \(Q_qy_\sigma\).
-The difference between \(\widehat x\) and
-\(c\,\partial_my\) is homogeneous and belongs to the same one-dimensional
-endpoint Jost class.  At the horizon the claim follows from regular
-Frobenius dependence and the unchanged indicial exponent.
+The Coulomb logarithm therefore cancels at first order, while the moving
+plane-wave phase supplies the linear term.  The formula for \(Q_q\) follows
+from \(Dy_\sigma/y_\sigma=\sigma i\omega+O(r^{-1})\).
 \end{proof}
 
-\begin{corollary}[Evans derivative and mass velocity]
-\label{cor:mass-velocity}
-Let \(a(\omega,m)\) be the massive spin-two Evans coefficient in analytic
-Jost normalizations, and let \(b_{\rm B}(\omega)\) be the Bach connection
-shear.  There is an analytic \(h(\omega)\) such that
+The proposition is deliberately formal.  It verifies the endpoint
+asymptotic target but does not exclude an opposite-Jost admixture in an
+exact massive solution.  Promotion to a physical mass-velocity theorem
+requires (i) a displayed parameter-dependent map from the complete
+coupled massive axial variables to the certified filtration, and
+(ii) a Volterra or equivalent uniqueness construction for the
+mass-differentiated horizon and infinity maps.  Neither object is imported
+as a certificate here.
+
+\begin{remark}[Conditional physical crosswalk]\label{rem:mass-crosswalk}
+If those two objects are supplied, scalar endpoint normalizations can only
+add an analytic multiple of the unperturbed Evans coefficient.  One would
+then obtain
 \[
  b_{\rm B}(\omega)
- =\frac{i\omega}{2}\partial_ma(\omega,0)
- +h(\omega)a(\omega,0).
+ =\frac{i\omega}{2}\partial_ma(\omega,0)+h(\omega)a(\omega,0),
 \]
-At a simple QNM \(\omega_n\),
+and, at a simple QNM,
 \[
- b_{\rm B}(\omega_n)
- =\frac{i\omega_n}{2}\partial_ma(\omega_n,0).
+ \omega_n'(0)=\frac{2i}{\omega_n}\kappa_n,\qquad
+ \kappa_n=\frac{b_{\rm B}(\omega_n)}{a_\omega(\omega_n,0)}.
 \]
-Writing
-\[
- \kappa_n=\frac{b_{\rm B}(\omega_n)}
- {a_\omega(\omega_n,0)},
-\]
-the massive QNM branch satisfies
-\begin{equation}\label{eq:mass-velocity}
- \boxed{\;
- \omega_n'(0)=\frac{2i}{\omega_n}\kappa_n.
- \;}
-\end{equation}
-\end{corollary}
+These formulas are the precise remaining crosswalk target, not a theorem
+of the present paper.
+\end{remark}
 
-\begin{proof}
-The endpoint corrections in
-Theorem~\ref{thm:jost-compatibility} are scalar changes of differentiated
-Jost normalizations, hence contribute an analytic multiple of \(a\).
-At a zero of \(a\), this term vanishes.  Differentiate
-\(a(\omega_n(m),m)=0\) and solve for \(\omega_n'(0)\).
-\end{proof}
-
-This is the asymptotically flat QNM analogue of the mass-derivative
-construction of logarithmic partners in critical gravity
-\cite{lupope2011,bergshoeff2011}.  The terminology must be used with care:
-the Schwarzschild endpoint tangent is polynomial, not an independent
-radial \(\log r\) mode.
+The graded construction is the asymptotically flat analogue of the
+mass-derivative mechanism behind logarithmic partners in critical gravity
+\cite{lupope2011,bergshoeff2011}.  Here the formal endpoint tangent is
+polynomial rather than an independent radial \(\log r\) mode.
 
 \section{The defective Schwarzschild resonance}
 \label{sec:qnm}
@@ -543,6 +571,18 @@ reduces \eqref{eq:triangular-connection} to
 \qquad
  a(\omega_n)=0,\quad a'(\omega_n)\ne0.
 \]
+
+All Smith forms in this section are taken over the discrete valuation ring
+\[
+ \mathcal O_{\omega_n}
+ =\{\text{holomorphic germs at }\omega_n\},
+\]
+whose uniformizer is \(z=\omega-\omega_n\).  The listed integers are the
+valuations of the invariant factors.  Their sum is the algebraic
+multiplicity; the number of positive invariant factors is the geometric
+root-space dimension only after the unit factors have been removed.
+This is the local analytic-matrix setting underlying Keldysh root chains
+and nonlinear eigenvalue pencils \cite{keldysh1951,gohberglancasterrodman}.
 
 \begin{proposition}[Local Smith dichotomy]\label{prop:smith}
 If \(g(\omega_n)\ne0\), then
@@ -568,7 +608,40 @@ The spin-one unit contributes a zero exponent.
 
 \subsection{Validated specialization}
 
-The positively oriented validated contour encloses
+Transport the horizon-ingoing and infinity-outgoing spin-two lines to the
+same ordinary matching section.  In the Riccati chart \(v=Y_2/Y_1\), define
+\[
+ \delta(\omega,\tau)
+ =v_\infty(\omega,\tau)-v_H(\omega,\tau),\qquad
+ \delta_\tau=\left.\partial_\tau\delta\right|_{\tau=0}.
+\]
+The scalar Evans coefficient is \(a=u\delta\) for a holomorphic unit
+\(u\).  At a simple zero,
+\[
+ \frac{b(\omega_n)}{a'(\omega_n)}
+ =\frac{\delta_\tau(\omega_n)}{\delta_\omega(\omega_n)}.
+\]
+This definition removes arbitrary homogeneous amplitudes; a projective
+chart change multiplies numerator and denominator by the same nonzero
+value at the root.
+
+The certified complex-scaled Volterra construction makes both selected
+lines holomorphic throughout the closed disk bounded by \(\Gamma\).  The
+disk lies inside the declared continuation strip and avoids every listed
+Frobenius and normalization pole.  Endpoint series are initialized with
+outward remainder bounds; a failed remainder, chart transition, or panel
+overlap is a rejection.  Consequently \(\delta\) is holomorphic, not
+meromorphic, on the argument-principle domain.
+
+The counterclockwise contour
+\[
+ \Gamma(t)=\omega_c+\frac1{40}e^{2\pi it},
+ \qquad 0\le t\le1,
+\]
+is split into \(927\) validated panels.  Every panel excludes zero, the
+overlapping argument sectors have width below \(\pi\), and their unique
+continuous lift changes by \(2\pi\).  A local Rouch\'e calculation then
+encloses the unique root in
 \[
  \Omega_n=
  \left\{\omega:
@@ -587,6 +660,31 @@ zero.  On the localized disk,
 \]
 which excludes zero.  An independent local calculation bounds the
 spin-one mismatch modulus below by \(1/2500\).
+
+The local transport uses outward-rounded \texttt{python-flint}
+\texttt{acb}/\texttt{arb} balls at \(60\) decimal digits, order-\(48\)
+Taylor transport, \(966\) accepted horizon steps, and \(260\) accepted
+outgoing steps.  The frequency derivative obeys
+\[
+ \delta_\omega(\Omega_n)
+ \subset
+ [\pm4.88\times10^{-3}]
+ +i[-0.0100\pm1.82\times10^{-3}],
+\]
+and therefore excludes zero.  Direct interval division gives the
+dimensionless intrinsic selector
+\begin{equation}\label{eq:kappa-enclosure}
+ \boxed{\;
+ \operatorname{Re}\kappa_n\in[-0.047,0.022],
+ \qquad
+ \operatorname{Im}\kappa_n\in[0.064,0.138].
+ \;}
+\end{equation}
+The enclosure is deliberately reported as an inequality rather than a
+long decimal approximation.
+This is an interval-validated Evans/argument-principle computation, not a
+floating-point winding inferred from sampled phases; compare the general
+Evans-function methodology in Ref.~\cite{barker2018}.
 
 \begin{theorem}[Certified defective resonance]\label{thm:certified-ep2}
 At the unique QNM in \(\Omega_n\), the complete axial connection has
@@ -610,6 +708,9 @@ Encode the endpoint conditions in an analytic finite-interval pencil
 \[
  L(\omega):X\longrightarrow Y.
 \]
+Such holomorphic boundary pencils and their contour/root-chain reductions
+fit the analytic Fredholm framework of
+Refs.~\cite{beyn2012,beynlatushkin2014}.
 Choose right and left states at the simple scalar resonance,
 \[
  L_nu_n=0,\qquad L_n^*\widetilde u_n=0,
@@ -636,9 +737,7 @@ In endpoint frames compatible with the partial jet,
  \kappa_n
  =\frac{b(\omega_n)}{a'(\omega_n)}
  =\frac{\beta_n}{\alpha_n}
- =-\left.\frac{d\omega_n}{d\tau}\right|_0
- =-\frac{i\omega_n}{2}
- \left.\frac{d\omega_n}{dm}\right|_0.
+ =-\left.\frac{d\omega_n}{d\tau}\right|_0.
  \;}
 \end{equation}
 The ratio is invariant under a common analytic nonzero Evans unit and
@@ -652,17 +751,27 @@ Differentiate
 \]
 along the resonance branch.  Pairing with \(\widetilde u_n\) gives
 \[
- \omega_n'(0)\alpha_n+\beta_n=0.
+ \dot\omega_{n,\tau}\alpha_n+\beta_n=0,
+ \qquad
+ \dot\omega_{n,\tau}:=\left.\frac{d\omega_n}{d\tau}\right|_0.
 \]
 Differentiating the connection divisor gives
 \[
- a'(\omega_n)\omega_n'(0)+b(\omega_n)=0,
+ a'(\omega_n)\dot\omega_{n,\tau}+b(\omega_n)=0,
 \]
 because the partial jet identifies \(b=\partial_\tau a\).  The mass
-identity follows from \eqref{eq:mass-velocity}.  A triangular change
+crosswalk is not used.  A triangular change
 \(K\mapsto K+LQ-QL\) has zero resonant pairing, and an Evans unit
 multiplies numerator and denominator by the same nonzero value.
 \end{proof}
+
+Under the additional hypotheses of
+Remark~\ref{rem:mass-crosswalk}, the last member of
+\eqref{eq:unified-invariant} may also be written
+\(-i\omega_n\omega_n'(0)/2\), where the derivative is with respect to the
+physical signed squared-mass coefficient.  The certified enclosure
+\eqref{eq:kappa-enclosure} is intrinsic; it is not advertised here as a
+massive-QNM slope.
 
 \begin{proposition}[Non-Einstein generalized root]
 \label{prop:non-einstein-root}
@@ -711,6 +820,10 @@ Put \(x=r_*\).  On the certified QNM neighborhood, let
 be analytic spin-two Jost solutions satisfying the future-horizon and
 outgoing-infinity conditions.  Their Wronskian is the scalar Evans
 coefficient, up to an analytic unit.
+Our cut-off exterior terminology is consistent with rigorous
+asymptotically flat resonance definitions through meromorphically continued
+cut-off resolvents \cite{stucker2024,gajicwarnick2024}; the present theorem
+is only the local radial realization described below.
 
 Choose nontrivial smooth source and observation cutoffs
 \(\chi_{\rm s},\chi_{\rm o}\) and finite cuts
@@ -781,15 +894,37 @@ square-zero on that graded space.  Its projection to a single metric or
 radial block is rank one but is not intrinsically a nilpotent operator
 after the grading has been forgotten.
 
-\subsection{Mass derivative of the parent response}
+\subsection{Parent normalization and isolated contour}
 
-At points where the inverses exist,
+Our normalization of \(\alpha_{\rm W}\) is fixed by the quadratic parent
+action
+\[
+ S_m^{(2)}
+ =4\alpha_{\rm W}\!
+ \int\!\left[
+ \phi\cdot\mathcal E(h)
+ -\frac12\phi\cdot\mathcal A(\phi)
+ +\frac m2 h\cdot\mathcal E(h)
+ \right].
+\]
+The equations are
+\[
+ \mathcal E(h)=\mathcal A(\phi),\qquad
+ \mathcal E(\phi)+m\mathcal E(h)=0.
+\]
+Eliminating the auxiliary field and inverting the \(m=0\) block gives
+\[
+ G_{hh}^{\rm W}
+ =\frac1{4\alpha_{\rm W}}
+ \mathcal E^{-1}\mathcal A\mathcal E^{-1}.
+\]
+At points where the second-order tensor inverses exist,
 \[
  \partial_m(\mathcal E+m\mathcal A)^{-1}
  =-(\mathcal E+m\mathcal A)^{-1}
  \mathcal A(\mathcal E+m\mathcal A)^{-1}.
 \]
-The metric--metric block of the pure-Weyl parent inverse is therefore
+Consequently
 \begin{equation}\label{eq:parent-mass-derivative}
  \boxed{\;
  G_{hh}^{\rm W}(\omega)
@@ -801,7 +936,7 @@ The metric--metric block of the pure-Weyl parent inverse is therefore
 \end{equation}
 No commutativity assumption is used.
 
-If the massive second-order inverse has the local simple-pole form
+If a fixed-domain massive tensor pencil has the local simple-pole form
 \[
  R_m(\omega)=
  \frac{P_n(m)}{\omega-\omega_n(m)}+H_n(\omega,m),
@@ -813,26 +948,35 @@ then \eqref{eq:parent-mass-derivative} gives
  \left[
  \frac{\omega_n'(0)P_n(0)}
  {(\omega-\omega_n)^2}
- \frac{P_n'(0)}
+ +\frac{P_n'(0)}
  {\omega-\omega_n}
- \partial_mH_n(\omega,0)
+ +\partial_mH_n(\omega,0)
  \right].
 \]
 Thus the double pole measures QNM motion; the accompanying simple pole
-measures motion of the residue projector.
+measures motion of the residue projector.  This exact parent identity does
+not, by itself, identify the certified scalar \(\kappa_n\) with the
+physical massive-QNM velocity; that is the crosswalk left open in
+Remark~\ref{rem:mass-crosswalk}.
 
 \begin{corollary}[Isolated resonance contour]
 \label{cor:isolated-contour}
-For a contour enclosing only the certified local resonance,
+Write the certified radial inverse as
+\[
+ R_{\rm ext}(\omega)
+ =\frac{\Pi_{-2}}{(\omega-\omega_n)^2}
+ +\frac{\Pi_{-1}}{\omega-\omega_n}+O(1)
+\]
+between compact source and observation cutoffs.  For a contour enclosing
+only this local resonance,
 \[
  \frac1{2\pi i}\oint
- e^{i\omega t}G_{hh}^{\rm W}(\omega)\,d\omega
+ e^{i\omega t}R_{\rm ext}(\omega)\,d\omega
  =
- -\frac{e^{i\omega_nt}}{4\alpha_{\rm W}}
- \left[P_n'(0)+it\,\omega_n'(0)P_n(0)\right].
+ e^{i\omega_nt}\left(\Pi_{-1}+it\,\Pi_{-2}\right).
 \]
-The \(t\)-weighted spatial profile is the ordinary Einstein QNM.  The
-constant generalized component contains the non-Einstein mass tangent.
+The \(t\)-weighted spatial profile is the ordinary Einstein QNM, while
+the constant generalized component crosses the carrier quotient.
 \end{corollary}
 
 This is a local residue theorem, not a global retarded expansion.  The
@@ -840,7 +984,7 @@ latter would require a Laplace contour, a closed weighted realization,
 control of thresholds and non-pole contributions, and a justified contour
 deformation.
 
-\section{Physical source and observation channels}
+\section{Source and observation channels}
 \label{sec:channels}
 
 \subsection{Metric reconstruction at null infinity}
@@ -913,9 +1057,48 @@ removed by a Weyl rescaling; its removal would require a large boundary
 diffeomorphism rather than a standard small gauge transformation.
 \end{proof}
 
-Combining Theorems~\ref{thm:exterior-green-pole} and
-\ref{thm:null-infinity}, the principal Bondi-shear coefficient is
-nonzero.  In the parent normalization it is
+\begin{proposition}[Outgoing-trace bridge]\label{prop:bondi-trace}
+On the local QNM disk, coefficient extraction from the selected outgoing
+Jost family defines a holomorphic trace
+\[
+ \mathcal T_{\mathscr I^+}:u\longmapsto
+ \text{outgoing asymptotic coefficient}.
+\]
+The algebraic reconstruction followed by
+\(\mathcal T_{\mathscr I^+}\) is therefore an analytic observation map.
+For compactly supported forcing,
+\[
+ \operatorname{Coeff}_{(\omega-\omega_n)^{-2}}
+ \bigl(\mathcal O_{\mathscr I^+}R_{\rm ext}\chi_{\rm s}\bigr)
+ =
+ -\frac{\beta_n}{\alpha_n^2}
+ \mathcal O_{\mathscr I^+}(u_n)
+ \otimes(\widetilde u_n\chi_{\rm s}).
+\]
+In particular, Theorem~\ref{thm:null-infinity} implies that the first
+factor is nonzero.
+\end{proposition}
+
+\begin{proof}
+The outgoing coefficients and reconstruction matrices are holomorphic on
+the local disk.  Applying a holomorphic map to a Laurent expansion acts
+coefficientwise on its principal part.  Substitute
+\eqref{eq:green-principal} and then
+\eqref{eq:einstein-shear}.
+\end{proof}
+
+The gauge parameter used above is allowed only as an algebraic
+reconstruction into the chosen odd radiation gauge.  For the Einstein
+line it preserves the standard Bondi falloff.  For the carrier line it is
+large relative to the usual asymptotically flat phase space, and
+\eqref{eq:carrier-falloff} is consequently not claimed to define finite
+Bondi flux or an admissible asymptotic state.
+
+Combining Theorem~\ref{thm:exterior-green-pole} with
+Proposition~\ref{prop:bondi-trace}, the principal Bondi-shear coefficient
+is nonzero.  If the additional physical mass crosswalk of
+Remark~\ref{rem:mass-crosswalk} is imposed, its parent-normalized form may
+be written
 \[
  \mathcal O_{\mathscr I^+}G_{-2}
  =
@@ -926,13 +1109,13 @@ nonzero.  In the parent normalization it is
 The isolated contour therefore contains an ordinary \(u/r\) radiative
 profile multiplied by the adjoint source overlap.
 
-\subsection{A conserved, traceless source with nonzero overlap}
+\subsection{A complexified conserved, traceless source}
 
 Let \(\ell\ge2\), \(\mu=(\ell-1)(\ell+2)\), and \(\omega\ne0\).  Use the
 Martel--Poisson odd source projections and orientation
 \(\epsilon_{tr}=1\), \(\epsilon^{tr}=-1\) \cite{martelpoisson2005}.
 
-\begin{theorem}[Conserved source nonannihilation]
+\begin{theorem}[Complexified conserved-source nonannihilation]
 \label{thm:source}
 For any
 \[
@@ -983,8 +1166,8 @@ Then the augmented pairing has no endpoint term and
  =\int\eta|\widetilde u_n|^2\,dr_*>0.
  \;}
 \]
-Thus a smooth compact conserved and traceless odd source excites the
-certified double pole.
+Thus the space of complexified frequency-domain conserved and traceless
+odd sources does not annihilate the certified double pole.
 \end{theorem}
 
 \begin{proof}
@@ -1003,12 +1186,16 @@ the adjoint pairing, and the final integral is strictly positive.
 \end{proof}
 
 \begin{remark}[What the source theorem does not say]
-The theorem constructs a conformally admissible external source and proves
-nonannihilation.  It does not identify a specified material trajectory or
-an energy-condition-satisfying matter model.  In particular, a standard
-massive point-particle stress tensor is not trace-free and cannot be
-coupled directly to the Bach equation without a conformal completion or a
-compensator.
+The choice \(F=\eta\overline{\widetilde u_n}\) depends on the complex QNM
+frequency.  It is an existence proof in the complexified
+frequency-domain source space, not a real, causal, temporally compact
+matter source.  A real formal perturbation can be assembled by adjoining
+the reflected frequency and harmonic sector, but causality and temporal
+support still require an inverse-Laplace construction.  The theorem also
+does not identify a specified material trajectory or an
+energy-condition-satisfying model.  A standard massive point-particle
+stress tensor is not trace-free and cannot be coupled directly to the
+Bach equation without a conformal completion or compensator.
 \end{remark}
 
 \section{Scope, evidence, and open problem}
@@ -1031,7 +1218,8 @@ but substantive.  A global realization must provide:
 
 The weakened falloff in \eqref{eq:carrier-falloff} explains why this is
 not routine.  A standard outgoing asymptotically flat function space may
-contain the Einstein root but exclude its mass tangent.  One may instead
+contain the Einstein root but exclude its intrinsic generalized tangent.
+One may instead
 use an enlarged tangent domain or keep the bulk space fixed and encode the
 differentiated endpoint germ as a finite-dimensional boundary component.
 This paper uses the latter construction locally but does not complete its
@@ -1051,9 +1239,9 @@ Axial triangular preflight
 Projective cocycle
 & Cocycle, primitive, and rational nonsplitting obstruction
 & Exact\\
-Critical mass jet
-& Scalar mass direction and parent inverse identity
-& Exact\\
+Critical parent jet
+& Covariant mass derivative; physical scalar crosswalk remains open
+& Exact with gate\\
 Analytic continuation
 & Analytic horizon and infinity Jost germs on the QNM disk
 & Exact gate\\
@@ -1081,10 +1269,53 @@ Conserved source
 
 The generated claim map pins the authority files and their hashes.  Its
 verifier independently checks the displayed cocycle identity, the
-mass-parameter normalization, the Smith and Green formulas, the
+fixed-frequency graded tangent normalization, the Smith and Green formulas, the
 reconstruction falloffs, the source conservation law, and explicit
 non-results.  Missing data, a stale hash, an unsupported domain, or a
 failed mutation is a rejection rather than a partial pass.
+
+\subsection{Reproduction and trust boundary}
+
+The exact certificates use Python integer/rational arithmetic and
+SymPy~1.14.0 for polynomial reduction.  Validated complex numerics use
+\texttt{python-flint}~0.9.0 \texttt{arb}/\texttt{acb} balls with directed
+outward rounding.  The reviewed environment uses Python~3.12.13 and
+\texttt{jsonschema}~4.26.0.  Certificate parsing, these arithmetic
+libraries, the Python runtime, and the operating system form the trusted
+computing base.  Displayed decimal intervals are outward enclosures; the
+machine records retain midpoint and radius strings that round-trip through
+\texttt{arb}.
+
+The principal independent verification commands are:
+\begin{center}
+\scriptsize
+\begin{tabular}{p{0.26\linewidth}p{0.66\linewidth}}
+\toprule
+Claim & Command\\
+\midrule
+Projective cocycle and nonsplitting
+& \nolinkurl{python3 -m black_hole_programme.phase3.axial_qnm_projective_cocycle_v1.verify}\\
+Evans winding
+& \nolinkurl{python3 -m black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.full_contour_winding_v1.verify}\\
+Local selector
+& \nolinkurl{python3 -m black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.local_selector_v1.verify}\\
+Spin-one unit
+& \nolinkurl{python3 -m black_hole_programme.phase3.axial_qnm_spin_one_local_unit_v1.verify}\\
+Radial Green pole
+& \nolinkurl{python3 -m black_hole_programme.phase4.axial_qnm_fredholm_promotion_v1.verify}\\
+Null-infinity reconstruction
+& \nolinkurl{python3 -m black_hole_programme.phase4.axial_qnm_null_infinity_reconstruction_v1.verify}\\
+Complexified source overlap
+& \nolinkurl{python3 -m black_hole_programme.phase4.axial_qnm_conserved_source_overlap_v1.verify}\\
+\bottomrule
+\end{tabular}
+\end{center}
+The accompanying claim-map JSON records exact paths, SHA-256 hashes,
+producer and verifier commands, and mutation tests.  A Git commit is
+content-addressed but is not an archival preservation service.  An
+immutable DOI-bearing release of the claim map, certificates, source
+systems, and environment lockfile is therefore an explicit submission
+gate rather than a completed claim of this draft.
 
 \paragraph{Explicit non-results.}
 This paper does not establish a global causal spacetime resolvent, a
@@ -1094,8 +1325,9 @@ for the generalized constant component, a standard asymptotically flat
 domain containing that component, excitation by a specified
 astrophysical source, detector sensitivity, an overtone tower, an
 all-multipole Bach nonsplitting theorem, or a quantum positivity/no-go
-theorem.  The polynomially weighted term is proved only for the isolated
-local resonance contour.
+theorem.  It also does not establish the full coupled massive-system
+crosswalk or a physical massive-QNM slope.  The polynomially weighted term
+is proved only for the isolated local resonance contour.
 
 \section{Conclusion}
 
@@ -1106,32 +1338,67 @@ elementary projective class
  [\mathcal I_{\rm Bach}]
  =\frac{i\omega}{2}[1-2/r].
 \]
-That direction is exactly the critical transverse-traceless mass jet.
-The linearly growing rational equivalence gauge is compatible with the
-differentiated physical Jost germs because the massive Coulomb exponent
-has vanishing first derivative.
+That direction equals the scalar spin-two graded projection of the formal
+critical mass-squared jet.  Its linearly growing rational primitive matches
+the differentiated massive phase, and the Coulomb exponent has vanishing
+first derivative.  A full coupled-system and exact-Jost crosswalk remains
+an explicit gate.
 
 At the certified damped Schwarzschild mode, the scalar QNM is simple but
 the extension selector is nonzero.  The full connection is therefore
 defective.  Its geometric root is Einstein; its generalized root has a
-nonzero Ricci-carrier quotient and is the massive-QNM tangent modulo the
-ordinary root.  The same invariant controls the nonzero rank-one
+nonzero Ricci-carrier quotient.  The same intrinsic invariant controls the
+nonzero rank-one
 second-order pole of the exterior cut-off outgoing Green operator.
 
-The leading pole survives the two physically relevant channel tests.
-Its Einstein range has nonzero Bondi shear, and a smooth compact
-conserved, traceless odd source can have strictly nonzero adjoint overlap.
+The leading pole survives an asymptotic observation test and a
+complexified source-space test.  Its Einstein range has nonzero Bondi
+shear, and a radially compact conserved, traceless odd source can have
+strictly nonzero adjoint overlap.
 The enhanced isolated-contour profile is therefore an ordinary outgoing
 Einstein QNM multiplied by time, even though the constant generalized
 component has weakened asymptotic falloff.
 
 This gives a Schwarzschild counterpart, in asymptotically flat spacetime,
-of the critical-gravity logarithmic-partner mechanism.  The open step is not the
-existence of the defective radial response; it is the construction of a
-global causal domain that accommodates the differentiated endpoint state
-and supports a justified retarded contour deformation.
+of the critical-gravity logarithmic-partner mechanism at the level of the
+filtered Bach resonance.  The remaining work separates cleanly into two
+problems: the complete massive axial/Jost crosswalk, and a global causal
+domain supporting the differentiated endpoint state and a justified
+retarded contour deformation.
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
+
+\bibitem{reggewheeler1957}
+T.~Regge and J.~A.~Wheeler,
+\newblock Stability of a Schwarzschild singularity,
+\newblock \emph{Physical Review} \textbf{108} (1957), 1063--1069,
+\newblock \href{https://doi.org/10.1103/PhysRev.108.1063}
+{doi:10.1103/PhysRev.108.1063}.
+
+\bibitem{leaver1985}
+E.~W.~Leaver,
+\newblock An analytic representation for the quasinormal modes of Kerr black
+holes,
+\newblock \emph{Proceedings of the Royal Society of London A}
+\textbf{402} (1985), 285--298,
+\newblock \href{https://doi.org/10.1098/rspa.1985.0119}
+{doi:10.1098/rspa.1985.0119}.
+
+\bibitem{britocardosopani2013}
+R.~Brito, V.~Cardoso, and P.~Pani,
+\newblock Massive spin-2 fields on black hole spacetimes:
+Instability of the Schwarzschild and Kerr solutions and bounds on the graviton
+mass,
+\newblock \emph{Physical Review D} \textbf{88} (2013), 023514,
+\newblock \href{https://doi.org/10.1103/PhysRevD.88.023514}
+{doi:10.1103/PhysRevD.88.023514}.
+
+\bibitem{antoniou2025}
+G.~Antoniou, E.~Gualtieri, and P.~Pani,
+\newblock Gravitational quasinormal modes of black holes in quadratic gravity,
+\newblock \emph{Physical Review D} \textbf{111} (2025), 064059,
+\newblock \href{https://doi.org/10.1103/PhysRevD.111.064059}
+{doi:10.1103/PhysRevD.111.064059}.
 
 \bibitem{lupope2011}
 H.~L\"u and C.~N.~Pope,
@@ -1154,6 +1421,58 @@ practical covariant and gauge-invariant formalism,
 \newblock \emph{Physical Review D} \textbf{71} (2005), 104003,
 \newblock \href{https://doi.org/10.1103/PhysRevD.71.104003}
 {doi:10.1103/PhysRevD.71.104003}.
+
+\bibitem{keldysh1951}
+M.~V.~Keldysh,
+\newblock On the characteristic values and characteristic functions of
+certain classes of non-self-adjoint equations,
+\newblock \emph{Doklady Akademii Nauk SSSR} \textbf{77} (1951), 11--14.
+
+\bibitem{gohberglancasterrodman}
+I.~Gohberg, P.~Lancaster, and L.~Rodman,
+\newblock \emph{Matrix Polynomials},
+\newblock Classics in Applied Mathematics 58, SIAM, Philadelphia, 2009,
+\newblock \href{https://doi.org/10.1137/1.9780898719024}
+{doi:10.1137/1.9780898719024}.
+
+\bibitem{barker2018}
+B.~Barker, J.~Humpherys, G.~Lyng, and J.~Lytle,
+\newblock Evans function computation for the stability of travelling waves,
+\newblock \emph{Philosophical Transactions of the Royal Society A}
+\textbf{376} (2018), 20170184,
+\newblock \href{https://doi.org/10.1098/rsta.2017.0184}
+{doi:10.1098/rsta.2017.0184}.
+
+\bibitem{beyn2012}
+W.-J.~Beyn,
+\newblock An integral method for solving nonlinear eigenvalue problems,
+\newblock \emph{Linear Algebra and its Applications} \textbf{436} (2012),
+3839--3863,
+\newblock \href{https://doi.org/10.1016/j.laa.2011.03.030}
+{doi:10.1016/j.laa.2011.03.030}.
+
+\bibitem{beynlatushkin2014}
+W.-J.~Beyn, Y.~Latushkin, and J.~Rottmann-Matthes,
+\newblock Finding eigenvalues of holomorphic Fredholm operator pencils using
+boundary value problems and contour integrals,
+\newblock \emph{Integral Equations and Operator Theory} \textbf{78} (2014),
+155--211,
+\newblock \href{https://doi.org/10.1007/s00020-013-2117-6}
+{doi:10.1007/s00020-013-2117-6}.
+
+\bibitem{stucker2024}
+M.~Stucker,
+\newblock Quasinormal modes for the Kerr black hole,
+\newblock arXiv:2407.04612 (2024),
+\newblock \href{https://doi.org/10.48550/arXiv.2407.04612}
+{doi:10.48550/arXiv.2407.04612}.
+
+\bibitem{gajicwarnick2024}
+D.~Gajic and C.~Warnick,
+\newblock Quasinormal modes on Kerr spacetimes,
+\newblock arXiv:2407.04098 (2024),
+\newblock \href{https://doi.org/10.48550/arXiv.2407.04098}
+{doi:10.48550/arXiv.2407.04098}.
 
 \end{thebibliography}
 

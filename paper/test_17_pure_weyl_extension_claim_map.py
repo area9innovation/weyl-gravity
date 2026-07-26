@@ -75,10 +75,28 @@ class Paper17ConsolidatedClaimMapTests(unittest.TestCase):
 
     def test_mass_normalization_mutation_rejected(self) -> None:
         self.assert_mutation_rejected(
-            lambda data: data["exact_identities"]["critical_mass_jet"].update(
-                {"parameter_relation": "m=-I*omega*tau/2"}
+            lambda data: data["exact_identities"][
+                "graded_mass_squared_tangent"
+            ].update(
+                {"fixed_frequency_tangent_relation": "m=-I*omega*tau/2"}
             ),
-            "critical mass-jet declaration drift",
+            "graded mass-squared declaration drift",
+        )
+
+    def test_physical_mass_crosswalk_promotion_rejected(self) -> None:
+        self.assert_mutation_rejected(
+            lambda data: data["claim_flags"].update(
+                {"complete_coupled_massive_axial_crosswalk": True}
+            ),
+            "fail-closed claim flag drift",
+        )
+
+    def test_physical_mass_velocity_promotion_rejected(self) -> None:
+        self.assert_mutation_rejected(
+            lambda data: data["exact_identities"][
+                "graded_mass_squared_tangent"
+            ].update({"physical_mass_velocity_certified": True}),
+            "graded mass-squared declaration drift",
         )
 
     def test_smith_mutation_rejected(self) -> None:
@@ -111,6 +129,22 @@ class Paper17ConsolidatedClaimMapTests(unittest.TestCase):
                 "conserved_traceless_source"
             ].update({"traceless": False}),
             "conserved-source declaration drift",
+        )
+
+    def test_real_causal_source_promotion_rejected(self) -> None:
+        self.assert_mutation_rejected(
+            lambda data: data["exact_identities"][
+                "conserved_traceless_source"
+            ].update({"real_causal_temporally_compact": True}),
+            "conserved-source declaration drift",
+        )
+
+    def test_outgoing_trace_mutation_rejected(self) -> None:
+        self.assert_mutation_rejected(
+            lambda data: data["exact_identities"][
+                "outgoing_trace_bridge"
+            ].update({"global_causal_trace": True}),
+            "outgoing-trace declaration drift",
         )
 
     def test_causal_promotion_rejected(self) -> None:

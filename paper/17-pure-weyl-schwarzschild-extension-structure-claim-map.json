@@ -74,17 +74,22 @@
   "claim_flags": {
     "bach_mass_direction_normal_form_exact": true,
     "certified_qnm_smith_type_0_0_2": true,
+    "complete_coupled_massive_axial_crosswalk": false,
     "complete_retarded_qnm_expansion": false,
-    "conserved_traceless_source_overlap_nonzero": true,
+    "complexified_conserved_traceless_source_overlap_nonzero": true,
     "detector_sensitivity": false,
     "einstein_bondi_shear_nonzero": true,
-    "endpoint_compatible_mass_jet_exact": true,
+    "endpoint_compatible_physical_mass_jet_exact": false,
     "exterior_cutoff_green_double_pole": true,
     "generalized_constant_component_standard_falloff": false,
     "generalized_root_carrier_nonzero": true,
     "global_causal_resolvent": false,
+    "graded_mass_squared_direction_exact": true,
     "non_split_rw_self_extension_exact_on_positive_real_axis": true,
+    "outgoing_trace_bridge_exact": true,
+    "physical_massive_qnm_slope_certified": false,
     "quantum_positivity_statement": false,
+    "real_causal_source_overlap_nonzero": false,
     "specified_astrophysical_source_overlap": false
   },
   "dependency_tags": [
@@ -94,8 +99,10 @@
   "does_not_establish": [
     "LORENTZIAN-CAUSAL resolvent or retarded contour theorem",
     "complete quasinormal expansion or late-time asymptotics",
+    "full coupled massive axial-system crosswalk",
+    "exact physical massive Jost derivative or physical massive-QNM slope",
     "standard asymptotic-flatness falloff for the generalized constant component",
-    "specified astrophysical matter source or detector sensitivity",
+    "real causal temporally compact source, specified astrophysical matter source, or detector sensitivity",
     "all-multipole Bach nonsplitting",
     "quantum positivity, unitarity, or no-go theorem"
   ],
@@ -113,18 +120,24 @@
       "adjoint_overlap": "integral(eta*abs(tilde_u)**2,drstar)>0",
       "conserved": true,
       "master_source": "f*S_odd=F",
+      "real_causal_temporally_compact": false,
+      "source_domain": "COMPLEXIFIED_FREQUENCY_DOMAIN",
       "specified_trajectory": false,
       "traceless": true
     },
-    "critical_mass_jet": {
+    "graded_mass_squared_tangent": {
       "bach_to_mass_class": "I*omega/2",
+      "complete_coupled_massive_axial_system": false,
       "coulomb_exponent": "sigma*I*(2*k+m/k)",
       "coulomb_exponent_mass_derivative_at_zero": "0",
+      "endpoint_comparison_status": "FORMAL_ASYMPTOTIC_ONLY",
+      "fixed_frequency_tangent_relation": "m=I*omega*tau/2",
+      "graded_mass_operator": "L-m*f",
       "mass_class": "[f]",
-      "mass_operator": "L-m*f",
-      "parameter_relation": "m=I*omega*tau/2",
-      "physical_mass_velocity": "2*I*kappa/omega",
-      "q_slope_at_infinity": "-I/(8*omega)"
+      "opposite_jost_admixture_excluded": false,
+      "physical_mass_velocity_certified": false,
+      "q_slope_at_infinity": "-I/(8*omega)",
+      "spectral_global_reparameterization": false
     },
     "green_principal_coefficient": {
       "coefficient": "-beta*u tensor tilde_u/alpha**2",
@@ -141,7 +154,13 @@
       "einstein_bondi_shear_nonzero": true,
       "einstein_metric_heads": "H0=-r+O(1),H1=2*r+O(1)"
     },
+    "outgoing_trace_bridge": {
+      "analytic_on_local_jost_family": true,
+      "global_causal_trace": false,
+      "principal_coefficient": "-beta*O_scri(u) tensor (tilde_u*chi_s)/alpha**2"
+    },
     "parent_mass_derivative": {
+      "certified_scalar_selector_identified_with_parent_nu": false,
       "double_coefficient": "-nu*P/(4*alpha_W)",
       "identity": "G_W=-(partial_m inverse(E+m*A)|0)/(4*alpha_W)",
       "isolated_contour_only": true
@@ -153,7 +172,16 @@
         0,
         2
       ],
-      "mass_velocity_relation": "kappa=-I*omega*nu/2",
+      "intrinsic_tau_velocity": "-kappa",
+      "kappa_im_enclosure": [
+        "0.064",
+        "0.138"
+      ],
+      "kappa_re_enclosure": [
+        "-0.047",
+        "0.022"
+      ],
+      "physical_mass_velocity_relation": "CONDITIONAL_CROSSWALK_ONLY",
       "selector": "kappa=b/a_prime=beta/alpha",
       "semisimple_smith_type": [
         0,
@@ -179,7 +207,15 @@
   "lifecycle_state": "DRAFT_ALLOWED",
   "manuscript": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
   "paper_id": "PAPER_17_PURE_WEYL_EXTENSION_RESONANCE",
-  "paper_sha256": "ad24d9ab328102688a07dddeb4296313861072983c840649fd5b689de81f9914",
-  "result_id": "PAPER17_PUBLICATION_CONSOLIDATED_SPINE",
-  "schema": "paper-draft-source-map-v1"
+  "paper_sha256": "656ff615f7e590b527acf3ceb5b9487d06959f10b200ced9d541dea9f0639127",
+  "result_id": "PAPER17_REFEREE_MAJOR_REVISION",
+  "schema": "paper-draft-source-map-v1",
+  "trusted_computing_base": {
+    "immutable_doi_archive_available": false,
+    "jsonschema": "4.26.0",
+    "python": "3.12.13",
+    "python_flint": "0.9.0",
+    "sympy": "1.14.0",
+    "validated_arithmetic": "arb/acb directed outward rounding"
+  }
 }
