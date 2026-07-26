@@ -294,8 +294,11 @@ The vulnerable interfaces are now explicit:
   Lorentzian endpoint non-selection theorem.
 - **[Paper 17](17-pure-weyl-schwarzschild-extension-structure.pdf):**
   non-split self-extension, defective QNM, and cut-off Green double pole.
-- **[Paper 18](18-static-bach-flat-black-hole-thermodynamics.pdf):** static
-  thermodynamics companion scaffold; not yet a finished theorem paper.
+- **[Paper 18](18-static-bach-flat-black-hole-thermodynamics.pdf):**
+  residual-basic charge normalization and simultaneous signed first laws at
+  every simple horizon of the certified Mannheim--Kazanas family. This is an
+  exact static and linear-spherical charge theorem, not a physical-process
+  or radiative thermodynamics theorem.
 
 ## Research priorities
 
@@ -307,7 +310,8 @@ The next work with the highest scientific leverage is:
    deformation;
 4. compute a real source overlap and detector-level asymptotic coefficient;
 5. complete the polar and broader multipole analysis;
-6. finish or withdraw the Paper 18 static companion;
+6. independently audit Paper 18's residual-basic normalization against the
+   conformal-gravity thermodynamics literature;
 7. construct, or rule out under explicit assumptions, a positive
    BRST-compatible Lorentzian quantum state.
 

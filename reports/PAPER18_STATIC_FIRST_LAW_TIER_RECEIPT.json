@@ -1,0 +1,69 @@
+{
+  "schema": "paper18-static-first-law-tier-receipt-v1",
+  "date": "2026-07-26",
+  "base_commit": "a015a539983270f088e6403e56bbbf0d3a7b7ed0",
+  "result": "PASS",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "paper": "paper/18-static-bach-flat-black-hole-thermodynamics.tex",
+  "claim_map": "paper/18-static-bach-flat-black-hole-thermodynamics-claim-map.json",
+  "checks": {
+    "independent_verifiers": [
+      {
+        "command": "python3 black_hole_programme/verify_bh0_background.py",
+        "result": "PASS"
+      },
+      {
+        "command": "python3 black_hole_programme/verify_bh1_lee_wald_preflight.py",
+        "result": "PASS"
+      },
+      {
+        "command": "python3 black_hole_programme/verify_bh1a_normalized_generator.py",
+        "result": "PASS"
+      },
+      {
+        "command": "python3 black_hole_programme/verify_bh1b_dynamical.py",
+        "result": "PASS"
+      }
+    ],
+    "affected_tests": {
+      "command": "python3 -m pytest -q black_hole_programme/tests/test_bh0_background.py black_hole_programme/tests/test_bh1_lee_wald_preflight.py black_hole_programme/tests/test_bh1a_normalized_generator.py black_hole_programme/tests/test_bh1b_dynamical.py",
+      "result": "21 passed",
+      "elapsed_seconds": 30.22
+    },
+    "black_hole_fast_suite": {
+      "command": "python3 -m pytest -q black_hole_programme/tests/",
+      "result": "173 passed",
+      "elapsed_seconds": 64.90
+    },
+    "claim_map": {
+      "generator_check": "PASS",
+      "independent_verifier": "PASS",
+      "python_compile": "PASS"
+    },
+    "latex": {
+      "paper18": "PASS, three pdflatex passes, 11 pages",
+      "paper00": "PASS, three pdflatex passes, 9 pages"
+    }
+  },
+  "evidence_sha256": {
+    "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json": "d08a76dd21b1c32270f6b8082c382e23561e7865c4454139fffc890ac14911e4",
+    "black_hole_programme/certificates/BH1_LEE_WALD_PREFLIGHT.json": "74ff9ba44a51272472dcb2eaf50aab9759383af44ea115c6c5d11d11a08ec1f6",
+    "black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json": "12cd1f0746645fffa4e2d9af35b638b7eda64fb10950884a4a0b3c703043ea0b",
+    "black_hole_programme/certificates/BH1B_DYNAMICAL_EXTENSION.json": "8b7b0625e02dc171632de22d91734defd5e79d3ba9fee9a0772b1d12c1194b30"
+  },
+  "tiers_not_run": {
+    "certificate_producers": "Mathematical inputs and existing content-addressed certificates are unchanged; all independent verifiers were run.",
+    "unrelated_repository_suites": "The theorem depends only on the complete black-hole programme chain; unrelated compact, observer, and quantum suites were not run."
+  },
+  "does_not_establish": [
+    "completeness beyond the Laurent ansatz",
+    "a preferred physical mass or asymptotic clock",
+    "a nonlinear or second-order physical-process first law",
+    "the bilinear radiative symplectic flux matrix",
+    "stability, quasinormal ringing, Hawking radiation, or a quantum theorem",
+    "expert peer review or immutable archival publication"
+  ]
+}

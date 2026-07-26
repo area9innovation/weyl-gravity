@@ -1,0 +1,135 @@
+{
+  "claims": [
+    {
+      "evidence": [
+        "BH0"
+      ],
+      "id": "P18-C1",
+      "statement": "Within the declared Laurent ansatz, Bach-flatness is equivalent to c2=c3=0 and w^2+3*u*gamma=1.",
+      "status": "UNCONDITIONAL_WITHIN_DECLARED_LAURENT_CLASS",
+      "used_in_main_theorem": true
+    },
+    {
+      "evidence": [
+        "BH0",
+        "manuscript scalar-curvature calculation"
+      ],
+      "id": "P18-C2",
+      "statement": "On the full Laurent locus the Einstein sheet requires gamma=0 and w=1; gamma=0 alone is sufficient only on the Mannheim-Kazanas component through w=1.",
+      "status": "EXACT_MANUSCRIPT_CORRECTION_TO_LEGACY_CERTIFICATE_WORDING",
+      "used_in_main_theorem": true
+    },
+    {
+      "evidence": [
+        "BH1"
+      ],
+      "id": "P18-C3",
+      "statement": "The bare chart-normalized Iyer-Wald one-form is radially constant but non-closed on the static parameter family.",
+      "status": "EXACT_STATIC_PARAMETER_SLICE",
+      "used_in_main_theorem": true
+    },
+    {
+      "evidence": [
+        "BH1A"
+      ],
+      "id": "P18-C4",
+      "statement": "Residual basicness forces N=u*f(J); for N=u the corrected charge is exact with the displayed Hamiltonian.",
+      "status": "EXACT_STATIC_PARAMETER_SLICE",
+      "used_in_main_theorem": true
+    },
+    {
+      "evidence": [
+        "BH1A"
+      ],
+      "id": "P18-C5",
+      "statement": "The displayed Hamiltonian, Wald entropy, and signed temperature obey dH=T_h*dS_h at every simple horizon simultaneously.",
+      "status": "EXACT_STATIC_PARAMETER_SLICE",
+      "used_in_main_theorem": true
+    },
+    {
+      "evidence": [
+        "BH1B"
+      ],
+      "id": "P18-C6",
+      "statement": "Arbitrary linear spherical Weyl and diffeomorphism directions have zero corrected charge; conformal directions also have zero entropy variation and zero corrected pairing with parameter modes.",
+      "status": "EXACT_LINEAR_CHARGE_LEVEL_L0",
+      "used_in_main_theorem": true
+    }
+  ],
+  "does_not_establish": [
+    "completeness beyond the Laurent ansatz",
+    "a preferred physical mass or asymptotic clock",
+    "a nonlinear or second-order physical-process first law",
+    "the bilinear radiative symplectic flux matrix",
+    "stability, quasinormal ringing, Hawking radiation, or a quantum theorem"
+  ],
+  "evidence": {
+    "BH0": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json",
+      "result_token": "PURE_WEYL_STATIC_SPHERICAL_BACKGROUND_CLASSIFIED",
+      "sha256": "d08a76dd21b1c32270f6b8082c382e23561e7865c4454139fffc890ac14911e4",
+      "verification_command": "python3 black_hole_programme/verify_bh0_background.py"
+    },
+    "BH1": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "PREFLIGHT",
+      "path": "black_hole_programme/certificates/BH1_LEE_WALD_PREFLIGHT.json",
+      "result_token": "BH1_PREFLIGHT_COMPLETE_BARE_FORM_NONINTEGRABLE",
+      "sha256": "74ff9ba44a51272472dcb2eaf50aab9759383af44ea115c6c5d11d11a08ec1f6",
+      "verification_command": "python3 black_hole_programme/verify_bh1_lee_wald_preflight.py"
+    },
+    "BH1A": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "PREFLIGHT",
+      "path": "black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json",
+      "result_token": "BH1_NONINTEGRABILITY_REMOVED_BY_FIELD_DEPENDENT_GENERATOR",
+      "sha256": "12cd1f0746645fffa4e2d9af35b638b7eda64fb10950884a4a0b3c703043ea0b",
+      "verification_command": "python3 black_hole_programme/verify_bh1a_normalized_generator.py"
+    },
+    "BH1B": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "PREFLIGHT",
+      "path": "black_hole_programme/certificates/BH1B_DYNAMICAL_EXTENSION.json",
+      "result_token": "BH1_DYNAMICAL_HORIZON_PHASE_SPACE_CERTIFIED",
+      "sha256": "8b7b0625e02dc171632de22d91734defd5e79d3ba9fee9a0772b1d12c1194b30",
+      "verification_command": "python3 black_hole_programme/verify_bh1b_dynamical.py"
+    }
+  },
+  "independence_profile": {
+    "arithmetic_backend": "shared exact SymPy backend",
+    "curvature_representation": "verifier uses an independent Schouten/Kulkarni-Nomizu Weyl construction",
+    "mathematical_derivation": "independent recomputation of tensor identities, entropy, reductions, and mutations where recorded by each certificate",
+    "producer_and_verifier_code": "separate implementations"
+  },
+  "paper": "paper/18-static-bach-flat-black-hole-thermodynamics.tex",
+  "release_boundary": {
+    "certificate_lifecycle_note": "BH1, BH1A, and BH1B retain their historical PREFLIGHT lifecycle labels; this map promotes no broader phase-space claim.",
+    "expert_peer_review": false,
+    "immutable_archive": false,
+    "paper_status": "WORKING_DRAFT"
+  },
+  "schema": "paper18-static-weyl-thermodynamics-claim-map-v1",
+  "scope": {
+    "arithmetic": "exact symbolic rational and polynomial identities",
+    "background": "static spherical pure-Weyl gravity; Laurent-class background theorem and Mannheim-Kazanas charge component",
+    "dependency_tags": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE"
+    ],
+    "phase_space": "static parameter slice plus the complete linear l=0 conformal/diffeomorphism gauge sector at charge level"
+  },
+  "title": "Residual-Basic Charges and Simultaneous Horizon First Laws in Static Weyl Gravity"
+}

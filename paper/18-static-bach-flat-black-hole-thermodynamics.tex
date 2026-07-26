@@ -1,63 +1,772 @@
 \documentclass[11pt]{article}
 
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,tabularx}
+\usepackage{microtype,xurl}
+\usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue!55!black,
             citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
 
 \newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
 
-\title{Residual-Basic Thermodynamics of Static Bach-Flat Black Holes}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\Lie}{\mathcal L}
+\newcommand{\Diff}{\operatorname{Diff}}
+\newcommand{\Weyl}{\operatorname{Weyl}}
+\newcommand{\cert}[1]{\nolinkurl{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{Residual-Basic Charges and Simultaneous Horizon First Laws\\
+\large in Static Weyl Gravity}
 \author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
 \and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
-\date{Companion-paper scaffold, 24 July 2026}
+\date{Working draft, 26 July 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-This companion isolates the static material removed from the Lorentzian
-endpoint-nonselection paper.  It treats the local Laurent classification of
-static spherically symmetric Bach-flat metrics, the corrected Einstein
-sheet, the residual-basic normalization of the horizon generator, and
-simultaneous first laws on multiple horizons.  The separation prevents
-static normalization questions from obscuring the dynamical perturbation
-theorem.
+Static spherical solutions of four-dimensional Weyl gravity possess a
+residual local \(\Diff\times\Weyl\) freedom that changes the normalization of
+the chart Killing vector.  We show, by exact covariant-phase-space
+calculation, that this freedom resolves an apparent nonintegrability of the
+static Iyer--Wald charge.  On the Mannheim--Kazanas component of a
+Laurent-complete Bach-flat family, the bare charge associated with
+\(\partial_t\) is not closed.  Requiring the field-dependent generator and
+its charge to descend to the residual quotient forces
+\[
+ \chi=u f(J)\partial_t,\qquad
+ u=\beta(2-3\beta\gamma),
+\]
+where \(J\) is the single continuous residual invariant.  For the canonical
+choice \(f=1\), the corrected charge is exact, with Hamiltonian
+\[
+ H=-16\pi\alpha\beta^2
+ \bigl(9\beta^2\gamma^2k-\beta\gamma^3-12\beta\gamma k
+       +\gamma^2+4k\bigr).
+\]
+At every simple root \(r_h\) of the metric function, the Wald entropy and
+signed temperature
+\[
+ S_h=64\pi^2\alpha\beta
+ \frac{2-3\beta\gamma+\gamma r_h}{r_h},
+ \qquad
+ T_h=\frac{uB'(r_h)}{4\pi}
+\]
+obey \(\dd H=T_h\dd S_h\).  The same one-form \(\dd H\) therefore gives
+simultaneous first laws at all simple horizons, including an exact
+non-Einstein three-horizon example.  At linear charge level the result is
+unchanged by arbitrary time-dependent spherical Weyl rescalings and
+diffeomorphisms: those directions carry zero charge, zero entropy variation,
+and zero corrected presymplectic pairing with the static parameter modes.
+
+The theorem is deliberately scoped.  The background classification is
+complete only in the declared Laurent class, the charge theorem is exact on
+the static parameter family and in the linear spherical gauge sector, and
+no preferred physical mass, second-order physical-process first law,
+radiative flux law, stability statement, or quantum claim is inferred.
 \end{abstract}
 
-\section{Scope}
+\section*{AI authorship and computational accountability}
 
-The source material for this draft is the static sector of the former unified
-pure-Weyl manuscript.  Its claims are independent of the axial scattering
-and QNM computations.  The final paper will retain:
+GPT-5.6.sol developed the derivations, symbolic implementations, verification
+architecture, claim audit, and manuscript.  Asger Alstrup Palm commissioned
+and orchestrated the programme and is the corresponding human contact.  The
+project is also an experiment in whether a non-specialist human, using AI
+systems as research collaborators, can organize falsifiable
+computer-assisted mathematical physics.  Every promoted identity in this
+paper is bound to a machine-readable exact certificate and to a separately
+implemented verifier.  The human orchestrator has not independently checked
+every tensor calculation; the manuscript therefore remains subject to
+expert review.
+
+\tableofcontents
+
+\section{Question, contribution, and claim boundary}
+
+For a stationary black hole in an asymptotically flat theory, the
+normalization of the horizon generator is usually fixed by the asymptotic
+clock.  Generic static spherical solutions of pure Weyl gravity are not
+asymptotically flat, and their Schwarzschild-gauge representatives retain a
+local radial-diffeomorphism/Weyl freedom.  The chart vector
+\(\partial_t\) is consequently not a residual-basic object.
+
+This matters already on the three-dimensional static parameter family.  The
+Iyer--Wald surface form for \(\partial_t\) is radially conserved but not
+integrable in parameter space.  Adding a parameter-local corner function
+cannot cure this, because it cannot change the exterior derivative of the
+charge one-form.  Our central observation is that the obstruction disappears
+when the generator is normalized as an object on the residual quotient.
+Basicness determines the normalization up to a function of the sole quotient
+invariant, and the resulting charge is closed.
+
+The static Bach-flat family itself is classical
+\cite{Riegert,MannheimKazanas}; conformal-gravity black-hole thermodynamics
+and additional spin-two hair have also been studied in asymptotically AdS
+and Einstein--Weyl settings \cite{LuPangPopeVP}.  The contribution here is
+not a new solution family.  It is:
 \begin{enumerate}
-\item the complete local Laurent branch classification;
-\item the corrected identification of the Einstein sheet;
-\item the quotient-basic horizon generator;
-\item the simultaneous horizon first laws;
-\item the residual normalization freedom in the absence of a preferred
-asymptotic clock.
+\item an exact residual-quotient derivation of the field-dependent
+      normalization;
+\item an exact Hamiltonian and Wald entropy in that normalization;
+\item one first-law identity holding simultaneously at every simple horizon;
+\item a linear spherical audit showing that the charge is not selected by a
+      conformal frame or by a spherical coordinate gauge.
 \end{enumerate}
+L\"u, Pang, Pope, and V\'azquez-Poritz use an AdS ensemble with an
+independent thermodynamic pair for massive spin-two hair
+\cite{LuPangPopeVP}.  Our one-term identity is instead a quotient statement
+on a restricted static family with no preferred asymptotic clock.  The two
+constructions therefore answer different normalization and ensemble
+questions.
 
-\section{Central normalization issue}
+\subsection{Dependency closure}
 
-For a static Killing generator \(\xi=\partial_t\), replacement by
+Table~\ref{tab:dependencies} separates the exact theorem chain from open
+extensions.  The dependency tags are those used in the computational
+archive.  In the compact status column, LA means
+\textsc{local-algebraic} and RM means \textsc{reduced-mode}; the abbreviated
+certificate names are expanded in Section~9.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.29\textwidth}p{0.10\textwidth}p{0.18\textwidth}Y@{}}
+\toprule
+Result & Evidence & Status & Role in main theorem\\
+\midrule
+Laurent Bach-flat locus, residual action, horizon fixture
+& BH0
+& LA, exact
+& Background and quotient geometry\\
+Bare static Iyer--Wald form
+& BH1
+& LA+RM, exact
+& Exhibits the normalization obstruction\\
+Basic generator, \(H,S,T\), simultaneous first law
+& BH1A
+& LA+RM, exact
+& Main static theorem\\
+Spherical conformal/diffeomorphism audit
+& BH1B
+& LA+RM, exact at linear charge level
+& Frame and gauge independence\\
+Radiative flux, physical-process law, stability
+& none
+& open
+& Not used and not claimed\\
+\bottomrule
+\end{tabularx}
+\caption{Logical dependency of the paper.  ``Exact'' means symbolic rational
+or polynomial identity, not floating-point evidence.}
+\label{tab:dependencies}
+\end{table}
+
+\section{Conventions and the static Laurent family}
+
+We use signature \((-+++)\) and action
+\begin{equation}\label{eq:action}
+ S_W[g]=\alpha\int_M\sqrt{-g}\,
+ C_{abcd}C^{abcd}\,\dd^4x.
+\end{equation}
+Our Bach-tensor convention is
+\begin{equation}
+ B_{ab}=\nabla^c\nabla^dC_{acbd}
+       +\frac12R^{cd}C_{acbd}.
+\end{equation}
+The field equation is \(B_{ab}=0\).
+
+Start from the areal-radius ansatz
+\begin{equation}
+ \dd s^2=-a(r)\dd t^2+b(r)\dd r^2+r^2\dd\Omega_2^2.
+\end{equation}
+Before conformal gauge fixing, the exact Bach tensor is diagonal,
+trace-free, divergence-free, and has two independent components.  We then
+choose \(b=1/a\), write \(a=B\), and restrict to
+\begin{equation}\label{eq:laurent}
+ B(r)=w-\frac{u}{r}+\gamma r-kr^2
+      +\frac{c_2}{r^2}+c_3r^3.
+\end{equation}
+
+\begin{theorem}[Bach-flat locus in the declared Laurent class]
+\label{thm:laurent}
+The metric \eqref{eq:laurent} is Bach-flat if and only if
+\begin{equation}\label{eq:laurent-locus}
+ c_2=c_3=0,\qquad w^2+3u\gamma=1.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Substitution of \eqref{eq:laurent} into the two independent Bach rows,
+clearing the declared denominators and equating Laurent coefficients, gives
+an exact polynomial ideal.  Its reduced Gr\"obner basis is
 \[
-\xi\longmapsto f(J)\xi
+ \{c_2,\ c_3,\ w^2+3u\gamma-1\}.
 \]
-with \(J\) a residual invariant changes surface gravity and Hamiltonian
-normalization together.  A thermodynamic statement is therefore basic on the
-residual quotient only after its generator prescription is declared.  The
-final companion will formulate all first-law identities in that quotient
-language and will not use the perturbative endpoint problem to fix an
-otherwise absent asymptotic clock.
+This proves necessity and sufficiency within the ansatz.  The producer and
+independent curvature implementation both recompute the vanishing tensor;
+mutating the correlated constant term or adding an \(r^{-2}\) tail produces
+explicit nonzero Bach components.
+\end{proof}
 
-\section{Separation from the radiation paper}
+\begin{remark}[Scope of completeness]
+Theorem~\ref{thm:laurent} is not presented as a new proof of the full
+Birkhoff--Riegert theorem \cite{Riegert}.  Generalized Birkhoff statements
+and nonstandard spherical branches require additional global and
+nondegeneracy hypotheses \cite{JizbaLeheckova}.  Here ``complete'' always
+means complete in \eqref{eq:laurent}.
+\end{remark}
 
-The static classification supports the broader pure-Weyl programme, but it
-is not needed for the theorem that ordinary Lorentzian black-hole endpoint
-conditions fail to select the Einstein perturbation sector.  It is therefore
-developed here as a logically independent paper.
+The Mannheim--Kazanas chart is
+\begin{equation}\label{eq:mk}
+ B(r)=1-3\beta\gamma
+      -\frac{\beta(2-3\beta\gamma)}{r}
+      +\gamma r-kr^2,
+\end{equation}
+so
+\begin{equation}\label{eq:uw}
+ u=\beta(2-3\beta\gamma),\qquad
+ w=1-3\beta\gamma.
+\end{equation}
+It parametrizes the component through \(w=1\) used in the charge theorem.
+
+\begin{proposition}[Correct Einstein locus]
+\label{prop:einstein}
+On the full Laurent locus \eqref{eq:laurent-locus}, the metric is Einstein
+in the areal-radius Schwarzschild chart if and only if
+\begin{equation}
+ \gamma=0,\qquad w=1.
+\end{equation}
+On the Mannheim--Kazanas component \eqref{eq:mk}, this reduces to
+\(\gamma=0\).
+\end{proposition}
+
+\begin{proof}
+On the full locus the scalar curvature is
+\begin{equation}
+ R=12k-\frac{6\gamma}{r}+\frac{2(1-w)}{r^2}.
+\end{equation}
+An Einstein metric has constant scalar curvature, forcing
+\(\gamma=0\) and \(w=1\).  Direct substitution then gives
+\(R_{ab}=3k g_{ab}\).  In the MK chart, the trace-free Ricci defect contains
+\[
+ E_{\theta\theta}=-\frac{\gamma}{2}(r-3\beta),
+\]
+so \(\gamma=0\) is necessary and sufficient there.  The allowed Laurent
+point \((\gamma,w)=(0,-1)\) is therefore Bach-flat but not Einstein; it
+belongs to a complementary Kantowski--Sachs-type chart rather than to the
+MK component through \(w=1\).
+\end{proof}
+
+\section{Residual quotient and its invariant}
+
+Put \(x=1/r\) and
+\begin{equation}
+ Q(x)=-ux^3+wx^2+\gamma x-k.
+\end{equation}
+The roots of \(Q\) encode the nonzero roots of \(B\).  The form-preserving
+local transformation
+\begin{equation}
+ r=\frac{\rho}{1-c\rho},\qquad
+ g\longmapsto(1-c\rho)^2g
+\end{equation}
+acts as the translation \(Q(x)\mapsto Q(x-c)\).  Equivalently,
+\begin{align}
+ u&\longmapsto u,&
+ w&\longmapsto w+3cu,\nonumber\\
+ \gamma&\longmapsto\gamma-2cw-3c^2u,&
+ k&\longmapsto k+c\gamma-c^2w-c^3u.
+\label{eq:c-action}
+\end{align}
+A dilation acts by
+\begin{equation}
+ (\beta,\gamma,k)\longmapsto
+ (\beta/\lambda,\lambda\gamma,\lambda^2k),
+ \qquad
+ Q(x)\longmapsto\lambda^2Q(x/\lambda).
+\end{equation}
+The conformal factor in the \(c\)-map may vanish at finite radius, so
+\eqref{eq:c-action} is used as a local quotient statement, not as a global
+identification of black-hole exteriors.
+
+On the MK parameters the infinitesimal generators are
+\begin{align}
+ X_c&=-3\beta^2\partial_\beta
+ +(6\beta\gamma-2)\partial_\gamma+\gamma\partial_k,
+\label{eq:Xc}\\
+ X_\lambda&=-\beta\partial_\beta
+ +\gamma\partial_\gamma+2k\partial_k.
+\label{eq:Xl}
+\end{align}
+They have generic rank two.  A continuous invariant is
+\begin{equation}\label{eq:J}
+ J=u^2\operatorname{disc}(Q).
+\end{equation}
+Translation invariance of the discriminant and its scaling weight prove
+\(X_cJ=X_\lambda J=0\).  Moreover,
+\(\operatorname{disc}(Q)=0\) is precisely the multiple-root, hence
+degenerate-horizon, locus.  Locally on a regular orbit component, every
+continuous invariant is therefore a function of \(J\).
+
+\section{The bare charge is not integrable}
+
+For a diffeomorphism-covariant Lagrangian depending algebraically on the
+Riemann tensor, define
+\[
+ E^{abcd}=\frac{\partial(\alpha C_{efgh}C^{efgh})}
+                 {\partial R_{abcd}}
+          =2\alpha C^{abcd}.
+\]
+We use the Iyer--Wald representative \cite{LeeWald,IyerWald}
+\begin{align}
+ \theta^a(g;\delta g)
+ &=2\left(E^{abcd}\nabla_d\delta g_{bc}
+          -\delta g_{bc}\nabla_dE^{abcd}\right),\\
+ Q^{ab}_\xi
+ &=-E^{abcd}\nabla_c\xi_d+2\xi_d\nabla_cE^{abcd}.
+\end{align}
+The sphere conventions are
+\[
+ (Q_\xi)_{\theta\phi}=2\sqrt{-g}\,Q^{tr}_\xi,\qquad
+ (i_\xi\theta)_{\theta\phi}=-\sqrt{-g}\,\xi^t\theta^r.
+\]
+With \(\xi=\partial_t\), integration over any sphere gives the
+parameter-space one-form
+\begin{equation}\label{eq:F}
+ \mathcal F=F_\beta\dd\beta+F_\gamma\dd\gamma+F_k\dd k,
+\end{equation}
+where
+\begin{align}
+ F_\beta&=16\pi\alpha(12\beta\gamma k-\gamma^2-4k),\nonumber\\
+ F_\gamma&=16\pi\alpha\beta(6\beta k-\gamma),\label{eq:Fcomponents}\\
+ F_k&=-16\pi\alpha\beta(2-3\beta\gamma).\nonumber
+\end{align}
+Each component is exactly independent of the sphere radius.  As a
+normalization control, replacing \(E^{abcd}\) by the Einstein--Hilbert
+tensor reproduces \(16\pi\,\delta m\) on Schwarzschild and
+Schwarzschild--de Sitter in the convention \(16\pi G=1\).
+
+\begin{proposition}[Bare nonintegrability]
+\label{prop:bare}
+The chart-normalized form \(\mathcal F\) is not closed:
+\begin{equation}\label{eq:dF}
+ \dd\mathcal F=16\pi\alpha\left[
+ \gamma\,\dd\beta\wedge\dd\gamma
+ +2(1-3\beta\gamma)\,\dd\beta\wedge\dd k
+ -3\beta^2\,\dd\gamma\wedge\dd k\right].
+\end{equation}
+It obeys
+\begin{align}
+ i_{X_c}\mathcal F&=0,&i_{X_c}\dd\mathcal F&=0,\label{eq:c-horizontal}\\
+ i_{X_\lambda}\mathcal F&=0,&
+ i_{X_\lambda}\dd\mathcal F&=\mathcal F.\label{eq:l-euler}
+\end{align}
+Consequently no parameter-local boundary function can make
+\(\mathcal F\) integrable.
+\end{proposition}
+
+\begin{proof}
+Equations \eqref{eq:dF}--\eqref{eq:l-euler} follow by exact
+differentiation of \eqref{eq:Fcomponents}.  If a boundary function \(W\)
+were added, the one-form would change by \(\dd W\), leaving
+\(\dd\mathcal F\) unchanged.  The kernel of \(\dd\mathcal F\) is the
+\(X_c\) direction at generic points.  Thus quotienting only the
+translation leaves a nondegenerate two-form on the remaining
+two-dimensional parameter quotient; the obstruction is not removed merely
+by discarding that proper-gauge direction.
+\end{proof}
+
+\section{Basicness fixes the field-dependent generator}
+
+For a field-dependent generator \(\chi=N(\beta,\gamma,k)\partial_t\), we
+use the corrected surface form
+\begin{equation}\label{eq:fdcharge}
+ k_\chi(g;\delta g)
+ =\delta Q_\chi-Q_{\delta\chi}-i_\chi\theta(g;\delta g).
+\end{equation}
+Because \(N\) is spacetime-constant on each static solution and the Noether
+charge is linear in \(\chi\), the \(Q_{\delta\chi}\) term cancels all
+\(\dd N\) contributions.  The corrected charge is therefore
+\begin{equation}
+ \delta H_\chi=N\mathcal F.
+\end{equation}
+
+\begin{definition}
+A parameter-space form is \emph{residual-basic} if it is horizontal and
+invariant under both vector fields \eqref{eq:Xc} and \eqref{eq:Xl}.
+\end{definition}
+
+\begin{theorem}[Residual-basic normalization]
+\label{thm:normalization}
+On a connected regular component with \(u\neq0\), the corrected charge
+\(N\mathcal F\) is residual-basic only if
+\begin{equation}\label{eq:N}
+ N=u f(J)
+\end{equation}
+for a function \(f\) of the quotient invariant.  Conversely, every
+normalization \eqref{eq:N} is basic and integrable.  For \(f=1\),
+\begin{equation}\label{eq:H}
+ u\mathcal F=\dd H,\qquad
+ H=-16\pi\alpha\beta^2D_2,
+\end{equation}
+where
+\begin{equation}\label{eq:D2}
+ D_2=9\beta^2\gamma^2k-\beta\gamma^3
+     -12\beta\gamma k+\gamma^2+4k.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Cartan's identity and \eqref{eq:c-horizontal} give
+\(\Lie_{X_c}\mathcal F=0\).  Hence invariance of \(N\mathcal F\) requires
+\(X_cN=0\).  Similarly, \eqref{eq:l-euler} gives
+\(\Lie_{X_\lambda}\mathcal F=\mathcal F\), so invariance requires
+\(X_\lambda N=-N\).  Directly,
+\[
+ X_cu=0,\qquad X_\lambda u=-u.
+\]
+Since the residual orbit has codimension one and \(J\) is its local
+invariant, the general local solution is \(N=uf(J)\).
+
+Exact differentiation of \eqref{eq:H} gives
+\(\dd H=u\mathcal F\), proving closure for \(f=1\).  The same form is
+horizontal under both residual fields.  For general \(f(J)\),
+\(f(J)\dd H\) is closed because the exact identity
+\(\dd H\wedge\dd J=0\) holds.  It is therefore locally the differential of
+a reparametrized quotient Hamiltonian.
+\end{proof}
+
+The discriminant factorization sharpens the quotient interpretation.  Put
+\begin{equation}
+ D_1=27\beta^2k-3\beta\gamma-1.
+\end{equation}
+Then
+\begin{equation}\label{eq:Jfactor}
+ J=-u^2D_1D_2.
+\end{equation}
+The Hamiltonian vanishes on the \(D_2=0\) component of the degenerate-horizon
+locus.  On the Einstein control family \(\gamma=0\),
+\begin{equation}
+ H=-64\pi\alpha\beta^2k.
+\end{equation}
+On the Schwarzschild subfamily \(k=\gamma=0\), it vanishes identically.
+
+\begin{remark}[Normalization versus physical mass]
+Equation \eqref{eq:H} defines the Hamiltonian of the residual-basic
+generator on the declared static phase-space slice.  We do not call it a
+universal physical mass.  Multiplication by \(f(J)\), component orientation,
+and any future choice of physical asymptotic clock change the normalization.
+On a fixed-falloff ensemble with \(\gamma\) and \(k\) fixed, the nontrivial
+residual transformations are generically frozen, but this does not create a
+preferred clock on the full family.
+\end{remark}
+
+\section{Entropy and simultaneous first laws}
+
+Let \(r_h\) be any simple positive root of \(B\).  The Wald entropy is
+\begin{equation}\label{eq:wald}
+ S_h=-2\pi\int_{S_{r_h}}E^{abcd}\epsilon_{ab}\epsilon_{cd}\,\dd A.
+\end{equation}
+With \(E^{abcd}=2\alpha C^{abcd}\) and \(\epsilon_{tr}=1\), exact evaluation
+gives
+\begin{equation}\label{eq:S}
+ S_h=64\pi^2\alpha\beta
+ \frac{2-3\beta\gamma+\gamma r_h}{r_h}.
+\end{equation}
+For the algebraic orientation \(\chi=u\partial_t\), define the signed
+surface-gravity temperature
+\begin{equation}\label{eq:T}
+ T_h=\frac{\kappa_\chi}{2\pi}
+     =\frac{uB'(r_h)}{4\pi}.
+\end{equation}
+This is the signed quantity entering the oriented first law; a positive
+Hawking temperature would use \(|uB'(r_h)|/(4\pi)\).
+
+\begin{theorem}[Simultaneous horizon first laws]
+\label{thm:firstlaw}
+For every simple root \(r_h\) of \eqref{eq:mk}, the functions
+\eqref{eq:H}, \eqref{eq:S}, and \eqref{eq:T} satisfy
+\begin{equation}\label{eq:firstlaw}
+ \boxed{\dd H=T_h\,\dd S_h}
+\end{equation}
+in all three parameter directions.  If one solution has simple roots
+\(r_1,\ldots,r_n\), then
+\begin{equation}\label{eq:simultaneous}
+ T_1\dd S_1=\cdots=T_n\dd S_n=\dd H.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Along the horizon locus \(B(r_h)=0\), any parameter \(p\in
+\{\beta,\gamma,k\}\) obeys
+\begin{equation}
+ \frac{\dd r_h}{\dd p}=-\frac{\partial_pB(r_h)}{B'(r_h)}.
+\end{equation}
+Use this in the total derivative of \eqref{eq:S}, subtract it from
+\(\partial_pH/T_h\), clear denominators, and reduce the numerator modulo
+\begin{equation}
+ r_hB(r_h)=0.
+\end{equation}
+The remainder is identically zero for each of the three parameters.  This
+calculation uses no choice of root beyond simplicity, proving the result at
+all roots simultaneously.
+\end{proof}
+
+For Schwarzschild, \(r_h=2\beta\), so
+\[
+ S_h=64\pi^2\alpha
+\]
+is independent of \(\beta\), consistently with \(H=0\) on that
+subensemble.  No pressure--volume or extra source term is needed for
+\eqref{eq:firstlaw} on the declared residual-basic static family.  This
+does not exclude such terms in a different ensemble with independently
+varied boundary data.
+
+\subsection{Exact non-Einstein three-horizon fixture}
+
+Consider
+\begin{equation}\label{eq:fixture}
+ (\beta,\gamma,k)=\left(\frac32,\frac{12}{19},\frac1{19}\right).
+\end{equation}
+Then
+\begin{equation}
+ rB(r)=-\frac1{19}(r-1)(r-3)(r-8),\qquad
+ u=-\frac{24}{19},
+\end{equation}
+and the trace-free Ricci witness is
+\[
+ E_{\theta\theta}=-\frac{3(2r-9)}{19}\neq0.
+\]
+The metric is smooth at all three roots in ingoing
+Eddington--Finkelstein coordinates, and all certified scalar curvature
+invariants are finite there.  In the algebraic \(N=u\) orientation,
+\begin{equation}
+ H=-\frac{14400\pi\alpha}{6859}
+\end{equation}
+and
+\begin{center}
+\begin{tabular}{c|cc}
+\toprule
+\(r_h\) & \(S_h\) & \(T_h\)\\
+\midrule
+\(1\) & \(-384\pi^2\alpha/19\) & \(84/(361\pi)\)\\
+\(3\) & \(640\pi^2\alpha/19\) & \(-20/(361\pi)\)\\
+\(8\) & \(960\pi^2\alpha/19\) & \(105/(1444\pi)\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+The three identities \(T_h\dd S_h=\dd H\) hold exactly in every parameter
+direction.  Since \(u<0\) on this component, choosing the opposite
+future-directed orientation flips \(H\) and every signed \(T_h\), leaving
+the first laws unchanged.
+
+\section{Linear spherical frame and gauge audit}
+
+The preceding derivation lives on the static parameter slice.  It is
+nevertheless important to decide whether its normalization secretly
+selects a conformal frame.  We therefore consider the complete linear
+spherical gauge sector around both symbolic Schwarzschild and the
+non-Einstein fixture:
+\begin{align}
+ \delta_\omega g_{ab}&=2\omega(t,r)g_{ab},\\
+ \delta_\xi g_{ab}&=\Lie_\xi g_{ab},\qquad
+ \xi=a(t,r)\partial_t+b(t,r)\partial_r.
+\end{align}
+
+\begin{theorem}[Linear spherical gauge independence]
+\label{thm:l0}
+At linear charge level:
+\begin{enumerate}
+\item \(k_\chi(2\omega g)=0\) componentwise for arbitrary \(\omega(t,r)\);
+\item the entropy variation under \(2\omega g\) vanishes on the symbolic
+      MK family;
+\item the corrected presymplectic current between a conformal variation and
+      any static parameter mode vanishes;
+\item \(k_\chi(\Lie_\xi g)=0\) for arbitrary spherical \(\xi\);
+\item the extension of \(N=u\) is uniquely fixed by
+      \(\delta N=\dd u\) on parameter directions and \(\delta N=0\) on
+      spherical conformal and diffeomorphism directions.
+\end{enumerate}
+Thus no boundary clock or preferred conformal representative is needed for
+the static theorem at this linear charge level.
+\end{theorem}
+
+\begin{proof}
+The conformal statements follow from direct substitution in
+\eqref{eq:fdcharge}, exact conformal covariance of the Bach equation, and
+the literal variation of the density \(\sqrt{-g}\theta^a\).  The density
+variation is essential: omitting the trace contribution spoils current
+conservation.  The diffeomorphism statement is verified through the
+on-shell Noether identity
+\begin{equation}
+ \theta(\Lie_\xi g)-i_\xi(L\epsilon)=\dd Q_\xi
+\end{equation}
+and the background identity obtained from its commutator with \(\chi\).
+Both routes are independently evaluated in the certificate.
+
+For uniqueness, the bare Noether aperture is nonzero on the fixture.  Any
+nonzero \(\delta N\) on a certified gauge direction would therefore assign
+that direction a nonzero charge, contradicting the componentwise
+annihilation above.  The parameter variation of \(N\) is already fixed by
+Theorem~\ref{thm:normalization}.
+\end{proof}
+
+The theorem is complete for the \(\ell=0\) dynamical gauge sector at linear
+charge level.  It does not compute the bilinear radiative flux for
+\(\ell\ge2\), and it does not imply a second-order physical-process first
+law.
+
+\section{Ensembles, interpretation, and non-results}
+
+The \(c\)-transformation preserves the fixed-falloff data
+\(\{\gamma,k\}\) only for \(c=0\), away from the algebraic locus
+\[
+ u(w^2-3)=0.
+\]
+The \(u=0\) component is excluded because the basic normalization
+degenerates.  The dilation preserves the same ensemble only at
+\(\lambda=1\), except on the Schwarzschild subensemble
+\(\gamma=k=0\), where it acts freely and consistently with \(H=0\) and
+constant entropy.  On a finite exterior \([r_h,r_{\rm out}]\), the
+\(c\)-map conformal factor is smooth and positive precisely when
+\(1+cr>0\) throughout that interval.
+
+These observations support a precise interpretation:
+\begin{quote}
+The nonintegrability of the chart-normalized charge is a normalization
+artifact.  Requiring the generator and charge to descend to the complete
+local residual quotient selects an integrable class of generators.  It does
+not, by itself, choose a unique physical clock.
+\end{quote}
+
+The following statements are not established:
+\begin{itemize}
+\item completeness of static Bach vacua beyond the Laurent ansatz;
+\item a preferred physical matter or clock conformal frame;
+\item a universal physical mass valid across inequivalent boundary
+      ensembles;
+\item a nonlinear or second-order physical-process first law;
+\item the bilinear radiative symplectic flux through a horizon or infinity;
+\item stability, quasinormal ringing, Hawking radiation, or any quantum
+      property.
+\end{itemize}
+
+\section{Computational evidence and reproduction}
+
+The calculations are computer-assisted but exact.  Tensor components,
+polynomial reductions, and charge identities are represented by symbolic
+rational functions.  No theorem in this paper is inferred from a decimal
+approximation.  Producer and verifier use separately written curvature
+pipelines; the verifier constructs the Weyl tensor through an independent
+Schouten/Kulkarni--Nomizu route.  Mutation tests ensure that certificate-like
+but false inputs are rejected.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.22\textwidth}Y@{}}
+\toprule
+Certificate & Reproduction and independent verification\\
+\midrule
+\cert{BH0_STATIC_SPHERICAL_BACKGROUND.json}
+& \texttt{python3 black\_hole\_programme/bh0\_background.py}\\
+& \texttt{python3 black\_hole\_programme/verify\_bh0\_background.py}\\[1mm]
+\cert{BH1_LEE_WALD_PREFLIGHT.json}
+& \texttt{python3 black\_hole\_programme/bh1\_lee\_wald\_preflight.py}\\
+& \texttt{python3 black\_hole\_programme/verify\_bh1\_lee\_wald\_preflight.py}\\[1mm]
+\cert{BH1A_NORMALIZED_GENERATOR.json}
+& \texttt{python3 black\_hole\_programme/bh1a\_normalized\_generator.py}\\
+& \texttt{python3 black\_hole\_programme/verify\_bh1a\_normalized\_generator.py}\\[1mm]
+\cert{BH1B_DYNAMICAL_EXTENSION.json}
+& \texttt{python3 black\_hole\_programme/bh1b\_dynamical.py}\\
+& \texttt{python3 black\_hole\_programme/verify\_bh1b\_dynamical.py}\\
+\bottomrule
+\end{tabularx}
+\caption{Authoritative certificate families.  Re-running a producer is
+reproduction; the separately implemented verifier is the independent
+check.}
+\end{table}
+
+The BH0 mutations (i) remove the correlated \(-3\beta\gamma\) constant and
+(ii) add an \(r^{-2}\) tail to the three-horizon fixture; both yield nonzero
+Bach components.  The bare-charge computation includes Einstein
+normalization controls and retains \(\dd\mathcal F\neq0\) as a negative
+control.  The BH1A verifier independently recomputes entropy and reduces the
+first-law polynomial at all three fixture roots.  The BH1B verifier
+recomputes the conformal and diffeomorphism annihilation identities.
+
+\section{Conclusion}
+
+Static Weyl gravity does not supply a preferred Killing normalization merely
+by presenting a Schwarzschild-gauge metric.  On the certified
+Mannheim--Kazanas family, treating \(\partial_t\) as fixed produces a
+radially conserved but nonintegrable Iyer--Wald form.  Treating the generator
+as field dependent and demanding residual basicness instead forces
+\(\chi=u f(J)\partial_t\).  Its charge is integrable, its Wald entropy is
+explicit, and one Hamiltonian variation satisfies a signed first law at
+every simple horizon simultaneously.
+
+The result is stronger than a coordinate identity and weaker than a complete
+black-hole thermodynamics.  It is invariant under the complete linear
+spherical conformal and diffeomorphism gauge sector, but it does not fix a
+physical asymptotic clock or control nonlinear radiative flux.  Those
+boundaries are part of the theorem, not deferred qualifications.
+
+\begingroup
+\raggedright
+\begin{thebibliography}{99}
+
+\bibitem{Bach}
+R.~Bach,
+\emph{Zur Weylschen Relativit\"atstheorie und der Weylschen Erweiterung des
+Kr\"ummungstensorbegriffs},
+Math. Z. \textbf{9} (1921) 110--135.
+
+\bibitem{Riegert}
+R.~J.~Riegert,
+\emph{Birkhoff's theorem in conformal gravity},
+Phys. Rev. Lett. \textbf{53} (1984) 315--318.
+
+\bibitem{MannheimKazanas}
+P.~D.~Mannheim and D.~Kazanas,
+\emph{Exact vacuum solution to conformal Weyl gravity and galactic rotation
+curves},
+Astrophys. J. \textbf{342} (1989) 635--638.
+
+\bibitem{LeeWald}
+J.~Lee and R.~M.~Wald,
+\emph{Local symmetries and constraints},
+J. Math. Phys. \textbf{31} (1990) 725--743.
+
+\bibitem{IyerWald}
+V.~Iyer and R.~M.~Wald,
+\emph{Some properties of Noether charge and a proposal for dynamical black
+hole entropy},
+Phys. Rev. D \textbf{50} (1994) 846--864,
+\href{https://arxiv.org/abs/gr-qc/9403028}{arXiv:gr-qc/9403028}.
+
+\bibitem{LuPangPopeVP}
+H.~L\"u, Y.~Pang, C.~N.~Pope, and J.~F.~V\'azquez-Poritz,
+\emph{AdS and Lifshitz black holes in conformal and Einstein--Weyl
+gravities},
+Phys. Rev. D \textbf{86} (2012) 044011,
+\href{https://arxiv.org/abs/1204.1062}{arXiv:1204.1062}.
+
+\bibitem{JizbaLeheckova}
+P.~Jizba and T.~Lehe\v{c}kov\'a,
+\emph{Generalized Birkhoff theorems and \(2+2\) direct product spacetimes in
+Weyl conformal gravity},
+Phys. Rev. D \textbf{113} (2026) 044060,
+\href{https://doi.org/10.1103/9g8r-lrjk}{doi:10.1103/9g8r-lrjk},
+\href{https://arxiv.org/abs/2512.18482}{arXiv:2512.18482}.
+
+\end{thebibliography}
+\endgroup
 
 \end{document}
