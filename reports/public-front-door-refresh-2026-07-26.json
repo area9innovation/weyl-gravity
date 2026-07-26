@@ -1,0 +1,75 @@
+{
+  "schema": "public-release-receipt-v1",
+  "date": "2026-07-26",
+  "kind": "editorial-release-refresh",
+  "dependency_tags": [],
+  "scientific_claim_change": false,
+  "lifecycle_promotion": false,
+  "artifacts": [
+    {
+      "path": "paper/00-ghosts-geometry-reality.tex",
+      "sha256": "1c17a62ab92d377dafb4d197ad7a006a6610670d6d1d508cc407906d3542920e"
+    },
+    {
+      "path": "paper/00-ghosts-geometry-reality.pdf",
+      "sha256": "5674aa1bd1ac8da22627d02b53f97d59fa67d90d8c403f76656742caa4fb199c"
+    },
+    {
+      "path": "paper/98-physicist-executive-summary.md",
+      "sha256": "d8b64ee26bf0a0d0f98466f559d0f9a0c67bba6e16a7b83b947c45b7045e8e6e"
+    },
+    {
+      "path": "paper/98-physicist-executive-summary.pdf",
+      "sha256": "a70cae76e26eb9fe2129561eed809c3a11a8e1693d91126f0d30e1c25fbdb2ff"
+    },
+    {
+      "path": "paper/99-how-to-build-a-universe.md",
+      "sha256": "7c61e134e4366f3e1e6bec4762a7d9dc22a775977d2d5fefd0403585c3c37ed7"
+    },
+    {
+      "path": "paper/99-how-to-build-a-universe.pdf",
+      "sha256": "49c48ee1dd8bb40efed2b8fa6edbe3c91d006aa5073ebeffc06c705f01c4829c"
+    }
+  ],
+  "checks": {
+    "paper00_build": {
+      "result": "PASS",
+      "elapsed_seconds": 0.75
+    },
+    "paper98_build": {
+      "result": "PASS",
+      "elapsed_seconds": 2.12
+    },
+    "paper99_build": {
+      "result": "PASS",
+      "elapsed_seconds": 2.13
+    },
+    "paper98_local_links": {
+      "result": "PASS",
+      "checked": 11,
+      "missing": 0
+    },
+    "paper99_local_links": {
+      "result": "PASS",
+      "checked": 5,
+      "missing": 0
+    },
+    "pdf_pages": {
+      "paper00": 9,
+      "paper98": 5,
+      "paper99": 4
+    },
+    "git_diff_check": "PASS"
+  },
+  "tiers_not_run": {
+    "tier1": "No code, certificate, or mathematical input changed.",
+    "tier2": "No affected scientific certificate chain.",
+    "tier3": "Not a scientific freeze or theorem promotion."
+  },
+  "does_not_establish": [
+    "independent verification of the summarized scientific claims",
+    "peer-review status",
+    "completion of Paper 18",
+    "a global causal Schwarzschild ringdown theorem"
+  ]
+}
