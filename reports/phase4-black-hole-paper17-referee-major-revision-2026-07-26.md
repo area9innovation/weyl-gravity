@@ -189,7 +189,6 @@ the six publication artifacts themselves are final.
 3. Keep the global causal resolvent, real-source construction, and retarded
    contour theorem outside the present result until independently certified.
 
-CLOSE-OUT: READY FOR SCOPED COMMIT — the referee’s mathematical boundary
+CLOSE-OUT: DONE — the referee’s mathematical boundary
 objections are resolved without weakening the certified self-extension,
 defective-resonance, or exterior Green-pole theorems.
-
