@@ -130,4 +130,6 @@ Tier 3 was not run because no shared core operator, release, or freeze was
 changed. The exact affected Paper 17 chain and its imported hashes were
 replayed.
 
+EVIDENCE: `black_hole_programme/phase4/axial_qnm_conserved_source_overlap_v1/receipt.json`
+
 CLOSE-OUT: DONE — exact conserved-traceless source realization, nonzero adjoint overlap, Paper 17 revision, certificate, independent verifier, mutation tests, PDF, and receipts are complete; specified conformal-matter trajectories and global causal promotion remain explicit successor gates.
