@@ -1091,6 +1091,22 @@ class Paper17ClaimMapTests(unittest.TestCase):
             result.stdout + result.stderr,
         )
 
+    def test_conserved_source_sign_mutation_rejected(self) -> None:
+        path = self.mutated_claims(
+            lambda data: data["exact_identities"][
+                "conserved_traceless_source"
+            ].update({"P_r": "-mu*F/(2*I*omega*r*f)"})
+        )
+        try:
+            result = self.run_verifier("--claim-map", str(path))
+        finally:
+            path.unlink()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(
+            "conserved-source declaration drift",
+            result.stdout + result.stderr,
+        )
+
     def test_total_coulomb_derivative_mutation_rejected(self) -> None:
         path = self.mutated_claims(
             lambda data: data["exact_identities"][

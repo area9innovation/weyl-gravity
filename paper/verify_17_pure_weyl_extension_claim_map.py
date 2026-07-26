@@ -1084,6 +1084,52 @@ def verify_detector_normal_form(claims: dict) -> None:
         fail("Jordan integrated-norm declaration drift")
 
 
+def verify_conserved_source_overlap(claims: dict) -> None:
+    """Recompute the conserved/traceless odd-source realization."""
+    r, mass, mu, omega = sp.symbols("r M mu omega", nonzero=True)
+    f = 1 - 2 * mass / r
+    source = sp.Function("F")(r)
+    p_r = mu * source / (2 * sp.I * omega * r * f)
+    p_up = sp.simplify(f * p_r)
+    p_tensor = sp.diff(r * source, r) / (2 * sp.I * omega)
+
+    reduced_source = sp.simplify(
+        f * (2 * r / mu) * sp.I * omega * p_r
+    )
+    if sp.simplify(reduced_source - source) != 0:
+        fail("conserved-source master realization failed")
+    conservation = sp.simplify(
+        sp.diff(p_up, r) + 2 * p_up / r - mu * p_tensor / r**2
+    )
+    if conservation != 0:
+        fail("conserved-source divergence identity failed")
+
+    declared = claims["exact_identities"]["conserved_traceless_source"]
+    expected = {
+        "domain": "complexified odd ell>=2 smooth compact radial forcing",
+        "mu": "(ell-1)*(ell+2)",
+        "orientation": "epsilon_(tr)=+1, epsilon^(tr)=-1",
+        "P_t": "0",
+        "P_r": "mu*F/(2*I*omega*r*f)",
+        "P_tensor": "d_r(r*F)/(2*I*omega)",
+        "master_source": "f*S_odd=F",
+        "conservation": (
+            "nabla_a(P^a)+2*r_a*P^a/r-mu*P/r**2=0"
+        ),
+        "stress_vector": "T^(aB)=P^a*X^B/(16*pi*r**2)",
+        "stress_tensor": "T^(AB)=P*X^AB/(8*pi*r**4)",
+        "trace": "0",
+        "adjoint_choice": "F=eta*conjugate(tilde_u_n)",
+        "adjoint_overlap": (
+            "integral(eta*abs(tilde_u_n)**2,drstar)>0"
+        ),
+        "specified_trajectory": False,
+        "positive_energy_matter_model": False,
+    }
+    if declared != expected:
+        fail("conserved-source declaration drift")
+
+
 def verify_coherent_forcing(claims: dict) -> None:
     t, tau = sp.symbols("t tau", nonnegative=True)
     lam = sp.symbols("lambda", nonzero=True)
@@ -1294,6 +1340,9 @@ def main() -> None:
         "\\mathcal O_{\\mathscr I^+}E=-\\frac{2i}{\\omega}X_{AB}",
         "\\frac{h^R_{AB}}{r^2}",
         "Enhanced null-infinity coefficient",
+        "Conserved traceless source realization",
+        "\\nabla_\\mu T^{\\mu\\nu}=0",
+        "\\left\\langle\\widetilde u_n,F\\right\\rangle_{\\rm aug}",
         "Critical-mass Evans derivative and QNM velocity",
         "\\frac{2i}{\\omega_n}\\kappa_n\\ne0",
         "Reflected EP2 pair",
@@ -1563,6 +1612,23 @@ def main() -> None:
         "detector_observability",
     ]:
         require_flag(null_infinity, key, False, "null-infinity reconstruction")
+    source_overlap = json.loads(
+        (ROOT / authorities["conserved_source_overlap"]["path"]).read_text()
+    )
+    for key in [
+        "arbitrary_compact_reduced_source_realized",
+        "stress_energy_conserved",
+        "stress_energy_traceless",
+        "constructed_source_adjoint_overlap_nonzero",
+    ]:
+        require_flag(source_overlap, key, True, "conserved-source overlap")
+    for key in [
+        "specified_geodesic_plunge_overlap_nonzero",
+        "positive_energy_matter_realization",
+        "global_causal_contour_theorem",
+        "detector_observability",
+    ]:
+        require_flag(source_overlap, key, False, "conserved-source overlap")
 
     root = claims["exact_identities"]["generalized_root"]
     if root["carrier_quotient"] != "-a1/b0":
@@ -1791,6 +1857,7 @@ def main() -> None:
     verify_spectral_velocity_and_contact_order(claims)
     verify_spectral_acceleration_and_krein_jordan(claims)
     verify_detector_normal_form(claims)
+    verify_conserved_source_overlap(claims)
     verify_coherent_forcing(claims)
 
     print("PASS paper/17-pure-weyl-schwarzschild-extension-structure.tex")

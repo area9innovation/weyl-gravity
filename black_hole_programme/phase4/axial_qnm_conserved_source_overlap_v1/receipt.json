@@ -1,0 +1,67 @@
+{
+  "schema": "science-forge-tiered-test-receipt-v1",
+  "result_id": "PURE_WEYL_PHASE4_AXIAL_QNM_CONSERVED_SOURCE_OVERLAP_V1",
+  "date": "2026-07-26",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "outputs": {
+    "certificate.json": "914312759dfb77c59c188a4e2c1d7d75357993fc7f18e9d76d8afa8aeb3b99fc",
+    "paper/17-pure-weyl-schwarzschild-extension-structure.tex": "cfbde1cee11bba4789d355ce5bb2382220dac180b71b4d57a020ffbd32678fe8",
+    "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json": "cc5257c327850c82b26b4a84e202a7f436dbcba24a9c03d6362c7b4544c90f4a",
+    "paper/17-pure-weyl-schwarzschild-extension-structure.pdf": "3f69076d7344d49a183ec113b28c0a6581af911b2cd92408fac5a21ac241eb23"
+  },
+  "tests": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile black_hole_programme/phase4/axial_qnm_conserved_source_overlap_v1/produce.py black_hole_programme/phase4/axial_qnm_conserved_source_overlap_v1/verify.py black_hole_programme/phase4/axial_qnm_conserved_source_overlap_v1/test_source_overlap.py paper/generate_17_pure_weyl_extension_claim_map.py paper/verify_17_pure_weyl_extension_claim_map.py paper/test_17_pure_weyl_extension_claim_map.py",
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "python3 -m json.tool black_hole_programme/phase4/axial_qnm_conserved_source_overlap_v1/certificate.json",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 black_hole_programme/phase4/axial_qnm_conserved_source_overlap_v1/verify.py",
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest black_hole_programme.phase4.axial_qnm_conserved_source_overlap_v1.test_source_overlap",
+      "elapsed_seconds": 1.986,
+      "status": "PASS",
+      "tests": 5
+    },
+    {
+      "tier": 2,
+      "command": "python3 paper/verify_17_pure_weyl_extension_claim_map.py",
+      "elapsed_seconds": 4.57,
+      "status": "PASS"
+    },
+    {
+      "tier": 2,
+      "command": "python3 -m unittest paper.test_17_pure_weyl_extension_claim_map",
+      "status": "PASS"
+    },
+    {
+      "tier": 2,
+      "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 17-pure-weyl-schwarzschild-extension-structure.tex (twice)",
+      "status": "PASS",
+      "pages": 54
+    }
+  ],
+  "higher_tiers": {
+    "tier_3": "NOT_RUN",
+    "criterion": "No shared core algebra or release/freeze was changed; the exact affected Paper 17 chain and content-addressed imports were replayed."
+  },
+  "claim_boundary": {
+    "constructed_conserved_traceless_source_overlap_nonzero": true,
+    "specified_geodesic_plunge_overlap_nonzero": false,
+    "positive_energy_matter_realization": false,
+    "global_causal_contour_theorem": false,
+    "detector_observability": false
+  }
+}

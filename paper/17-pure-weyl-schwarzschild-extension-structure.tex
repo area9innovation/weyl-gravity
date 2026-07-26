@@ -121,6 +121,12 @@ damped sinusoid,
 \]
 with a divided-difference continuation that remains regular when the two
 finite-mass resonances separate.
+The odd stress-energy source map is onto the smooth compact radial
+Regge--Wheeler forcings: every such forcing is realized by a conserved,
+traceless odd source.  Choosing the forcing from the adjoint QNM therefore
+gives an exact nonzero source overlap.  This is an existence theorem for a
+conformally admissible external source, not a calculation for a specified
+matter trajectory.
 For the exact axial reconstruction, the outgoing Einstein root has
 nonzero Bondi shear.  The \(u\)-weighted double-pole term therefore has
 standard \(u/r\) strain falloff at future null infinity.  By contrast, the
@@ -136,8 +142,8 @@ time-reversed conjugate kernel.
 
 Promotion to a global physical resolvent and to a full retarded generalized
 ringdown expansion requires a separate analytic Fredholm realization,
-weighted endpoint domains, a physical-source overlap, and control of the
-weakened generalized endpoint component.
+weighted endpoint domains, a specified conformal-matter source model, and
+control of the weakened generalized endpoint component.
 \end{abstract}
 
 \section{Introduction and main results}
@@ -219,7 +225,9 @@ This paper establishes ten central results.
   modes.  Exact odd-parity reconstruction proves that the Einstein root has
   nonzero Bondi shear and that the enhanced term has standard \(u/r\)
   strain, while the constant generalized carrier has weakened \(O(1)\)
-  strain.
+  strain.  Every smooth compact radial forcing is realized by a conserved,
+  traceless odd stress tensor, and an adjoint-matched choice has exact
+  nonzero source overlap.
 \item The isolated causal critical kernel has an exact coherent-forcing
   law.  A phase-locked switched-on drive builds quadratically at early
   times and saturates with a squared Lorentzian denominator.  Finite
@@ -291,6 +299,9 @@ Canonical Krein--Jordan geometry
 Observable transfer and detector normal form
 & Analytic source/reconstruction maps and isolated reflected QNM pair
 & Exact conditional reduced-mode theorem\\
+Conserved traceless source nonannihilation
+& Odd stress projections, conservation identity, and adjoint-matched compact forcing
+& Exact existence theorem\\
 Finite-time coherent forcing
 & Isolated critical kernel and declared coefficient-space \(L^2\) budget
 & Exact conditional reduced-mode theorem\\
@@ -1848,16 +1859,112 @@ for a specified physical source remains conditional on its adjoint
 overlap, and no global retarded contour deformation is asserted.
 \end{corollary}
 
-\begin{remark}[Endpoint domain and source gate]
+\begin{theorem}[Conserved traceless source realization]
+\label{thm:conserved-source-overlap}
+Let \(\ell\ge2\), \(\mu=(\ell-1)(\ell+2)\), and
+\(\omega\ne0\).  In Schwarzschild coordinates, use the
+Martel--Poisson orientation
+\(\epsilon_{tr}=1\), hence \(\epsilon^{tr}=-1\), and write the reduced
+odd master equation as
+\[
+ \left(\partial_{r_*}^2+\omega^2-fV_{\rm odd}\right)\Psi=F,
+ \qquad F\in C_c^\infty((2M,\infty)).
+\]
+Define the odd stress projections
+\[
+ P_t=0,\qquad
+ P_r=\frac{\mu F}{2i\omega rf},\qquad
+ P=\frac{\partial_r(rF)}{2i\omega}.
+\]
+Then
+\[
+ \nabla_aP^a+\frac2r r_aP^a-\frac{\mu}{r^2}P=0
+\]
+and the Cunningham--Price--Moncrief source is
+\[
+ S_{\rm odd}
+ =-\frac{2r}{\mu}\epsilon^{ab}\nabla_aP_b
+ =\frac{F}{f}.
+\]
+Consequently the stress tensor
+\[
+ T^{aB}=\frac{P^a}{16\pi r^2}X^B,
+ \qquad
+ T^{AB}=\frac{P}{8\pi r^4}X^{AB},
+\]
+with all other harmonic components zero, is smooth and radially compact,
+and satisfies
+\[
+ \boxed{\qquad
+ \nabla_\mu T^{\mu\nu}=0,\qquad
+ T^\mu{}_\mu=0.
+ \qquad}
+\]
+The complexified conserved-traceless odd source map is therefore onto
+the smooth compact reduced radial forcings.
+
+Let \(\widetilde u_n\) be the nonzero adjoint state at the certified
+QNM.  Choose a nonnegative nonzero
+\(\eta\in C_c^\infty((2M,\infty))\) supported where
+\(\widetilde u_n\ne0\), and set
+\[
+ F=\eta\,\overline{\widetilde u_n}.
+\]
+Because the support is away from both endpoints, the augmented source
+pairing has no boundary term and
+\[
+ \boxed{\;
+ \left\langle\widetilde u_n,F\right\rangle_{\rm aug}
+ =\int \eta\,|\widetilde u_n|^2\,dr_*>0.
+ \;}
+\]
+Thus a smooth compact conserved and traceless odd source excites the
+certified double pole.  Together with
+Corollary~\ref{cor:enhanced-null-infinity}, this source produces a
+nonzero isolated-contour \(u e^{i\omega_nu}/r\) coefficient at future
+null infinity.
+\end{theorem}
+
+\begin{proof}
+The harmonic norms are
+\[
+ \int X_A\overline{X^A}\,d\Omega=\ell(\ell+1),
+ \qquad
+ \int X_{AB}\overline{X^{AB}}\,d\Omega
+ =\frac12\mu\ell(\ell+1).
+\]
+They show that the displayed \(T^{aB}\) and \(T^{AB}\) invert the
+standard odd source projections.  Since
+\(\sqrt{-\det g_{ab}}=1\), one has
+\[
+ P^r=fP_r=\frac{\mu F}{2i\omega r},
+ \qquad
+ \nabla_aP^a=\partial_rP^r.
+\]
+Direct substitution gives both the conservation identity and
+\(fS_{\rm odd}=F\).  The remaining spacetime conservation equations
+vanish by the divergence-free odd vector harmonic, while tracelessness
+follows from \(T^{ab}=0\) and
+\(\Omega_{AB}X^{AB}=0\).  The adjoint-overlap statement is immediate
+from the declared choice of \(F\).
+\end{proof}
+
+\begin{remark}[Endpoint domain and matter-source gate]
 Theorem~\ref{thm:null-infinity-reconstruction} shows that the full
 time-independent generalized component is not contained in the standard
 fixed-boundary asymptotically flat radiative class.  A global realization
 must either enlarge the endpoint domain to differentiated-Jost tangents or
 encode those tangents in an augmented boundary pencil.  The \(u\)-weighted
 Einstein component is nevertheless an ordinary radiative field.  On the
-source side, dynamical QNM excitation from generic Schwarzschild plunges
-provides a methodology for a future adjoint-overlap calculation
-~\cite{deamicis2026}; no such Weyl source calculation is performed here.
+source side, Theorem~\ref{thm:conserved-source-overlap} proves
+nonannihilation for an explicit class of conformally admissible external
+sources, but not for a specified matter trajectory or an
+energy-condition-satisfying material model.  In particular, the standard
+massive point-particle stress tensor has nonzero trace and cannot be
+coupled directly to the trace-free Bach equation without a conformal
+completion or compensator.  Dynamical QNM excitation from generic
+Schwarzschild plunges supplies a useful methodology only after that matter
+model is fixed~\cite{deamicis2026}.
 \end{remark}
 
 \begin{theorem}[Critical-mass Evans derivative and QNM velocity]

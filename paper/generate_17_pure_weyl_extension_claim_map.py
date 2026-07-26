@@ -63,6 +63,10 @@ AUTHORITIES = {
         "black_hole_programme/phase4/"
         "axial_qnm_null_infinity_reconstruction_v1/certificate.json"
     ),
+    "conserved_source_overlap": (
+        "black_hole_programme/phase4/"
+        "axial_qnm_conserved_source_overlap_v1/certificate.json"
+    ),
 }
 
 
@@ -228,6 +232,29 @@ def payload() -> dict:
                 "null_infinity_spatial_overlap_certified": True,
                 "specified_source_overlap_certified": False,
                 "global_retarded_contour_certified": False,
+            },
+            "conserved_traceless_source": {
+                "domain": (
+                    "complexified odd ell>=2 smooth compact radial forcing"
+                ),
+                "mu": "(ell-1)*(ell+2)",
+                "orientation": "epsilon_(tr)=+1, epsilon^(tr)=-1",
+                "P_t": "0",
+                "P_r": "mu*F/(2*I*omega*r*f)",
+                "P_tensor": "d_r(r*F)/(2*I*omega)",
+                "master_source": "f*S_odd=F",
+                "conservation": (
+                    "nabla_a(P^a)+2*r_a*P^a/r-mu*P/r**2=0"
+                ),
+                "stress_vector": "T^(aB)=P^a*X^B/(16*pi*r**2)",
+                "stress_tensor": "T^(AB)=P*X^AB/(8*pi*r**4)",
+                "trace": "0",
+                "adjoint_choice": "F=eta*conjugate(tilde_u_n)",
+                "adjoint_overlap": (
+                    "integral(eta*abs(tilde_u_n)**2,drstar)>0"
+                ),
+                "specified_trajectory": False,
+                "positive_energy_matter_model": False,
             },
             "forced_gauge_asymptotic": {
                 "q_slope_at_infinity": "-I/(8*omega)",
@@ -679,7 +706,10 @@ def payload() -> dict:
             "null_infinity_E_bondi_shear_nonzero": True,
             "null_infinity_generalized_standard_falloff_excluded": True,
             "null_infinity_double_pole_spatial_overlap_nonzero": True,
-            "null_infinity_source_overlap_open": True,
+            "specified_matter_source_overlap_open": True,
+            "conserved_traceless_external_source_overlap_nonzero": True,
+            "odd_compact_radial_source_map_surjective": True,
+            "massive_point_particle_direct_source_excluded": True,
             "critical_mass_qnm_velocity_nonzero": True,
             "filtered_critical_unfolding_exact": True,
             "two_parameter_unfolding_discriminant_exact": True,

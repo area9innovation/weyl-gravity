@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Axial QNM conserved source overlap certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "dependency_tags",
+    "imports",
+    "source_realization",
+    "adjoint_overlap",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "axial-qnm-conserved-source-overlap-v1"
+    },
+    "status": {
+      "const": "EXACT_CONSERVED_TRACELESS_SOURCE_OVERLAP"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

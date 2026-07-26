@@ -1,0 +1,51 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-paper17-conserved-source-overlap",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-paper17-conserved-source-overlap",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-paper17-conserved-source-overlap.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper17-conserved-source-overlap",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 1,
+    "objective": "Determine analytically whether the certified axial Weyl double pole is excitable by a genuine conserved and traceless odd-parity stress-energy source, distinguish this exact existence result from a specified plunging-particle overlap, and carry the result into Paper 17 with an auditable exact certificate.",
+    "stop_condition": "An exact construction maps arbitrary smooth compact reduced Regge--Wheeler forcing at nonzero frequency to odd-parity stress-energy projections satisfying the Martel--Poisson conservation identity and tracelessness; the adjoint QNM is used to exhibit a source with nonzero overlap; the result is independently verified and mutation-tested; Paper 17, its claim map, PDF, report, and tier receipt are updated while a specified astrophysical plunge, positive-energy matter realization, global retarded contour deformation, and detector sensitivity remain unclaimed.",
+    "current_gate": "exact conserved-traceless odd-source realization and nonzero adjoint-overlap theorem",
+    "forbid": "no claim that a massive point particle directly supplies a conformally admissible pure-Weyl source; no nonzero overlap for a specified geodesic plunge without evaluating it; no positive-energy or energy-condition claim; no global retarded contour theorem; no detector sensitivity; no promotion beyond REDUCED-MODE and LOCAL-ALGEBRAIC",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-paper17-null-infinity-reconstruction"
+    ],
+    "activates": [
+      "conformal-matter source models with specified trajectories",
+      "global weighted Fredholm and causal contour realization",
+      "detector-level source-observer coefficient"
+    ],
+    "allowed_paths": [
+      "black_hole_programme/phase4/axial_qnm_conserved_source_overlap_v1/",
+      "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "paper/test_17_pure_weyl_extension_claim_map.py",
+      "reports/phase4-black-hole-paper17-conserved-source-overlap-2026-07-26.md",
+      "reports/PAPER17_CONSERVED_SOURCE_OVERLAP_TIER_RECEIPT.json",
+      "planning/work-items/phase4-black-hole-paper17-conserved-source-overlap.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use the Martel--Poisson odd source variables P_a and P, conservation identity nabla_a P^a+2 r_a P^a/r-mu P/r^2=0, and Cunningham--Price--Moncrief source S_odd=-2r epsilon^{ab}nabla_a P_b/mu. Work in the complexified frequency-domain source space first, and preserve the distinction between a conserved traceless external source and a specified matter model.",
+    "input_commit": "4c67a82b5",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "The Bach tensor requires a conserved traceless source; a standard massive point-particle stress tensor is not automatically admissible.",
+      "Compact radial support removes endpoint terms from the adjoint source pairing."
+    ]
+  },
+  "edges": []
+}

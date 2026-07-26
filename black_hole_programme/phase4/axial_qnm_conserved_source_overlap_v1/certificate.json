@@ -1,0 +1,92 @@
+{
+  "adjoint_overlap": {
+    "choice": "F=eta*conjugate(tilde_u)",
+    "conclusion": "there exists a smooth compact conserved traceless odd stress-energy source with nonzero adjoint QNM overlap",
+    "endpoint_terms": "0 because F is compactly supported",
+    "eta": "any nonnegative nonzero C_c^infinity bump supported where tilde_u is nonzero",
+    "pairing_for_compact_source": "integral(tilde_u*F,dx)",
+    "real_source_note": "a real source is obtained by adjoining the reflected frequency and spherical-harmonic sector",
+    "value": "integral(eta*abs(tilde_u)**2,dx)>0"
+  },
+  "claim_flags": {
+    "arbitrary_compact_reduced_source_realized": true,
+    "constructed_source_adjoint_overlap_nonzero": true,
+    "detector_observability": false,
+    "global_causal_contour_theorem": false,
+    "positive_energy_matter_realization": false,
+    "specified_geodesic_plunge_overlap_nonzero": false,
+    "stress_energy_conserved": true,
+    "stress_energy_traceless": true
+  },
+  "conformal_source_audit": {
+    "bach_identity": "B_mu^mu=0 and nabla^mu B_munu=0 require T_mu^mu=0 and nabla^mu T_munu=0",
+    "constructed_source_conserved": true,
+    "constructed_source_traceless": true,
+    "massive_point_particle_directly_admissible": false,
+    "point_particle_reason": "the standard massive point-particle stress tensor has nonzero trace and requires a conformal completion or compensator before coupling to pure Weyl gravity"
+  },
+  "conventions": {
+    "background": "Schwarzschild exterior r>2M",
+    "domain": "complexified smooth compact radial sources",
+    "fourier_phase": "exp(+I*omega*t)",
+    "mu": "(ell-1)*(ell+2)",
+    "orientation": "epsilon_(tr)=+1, epsilon^(tr)=-1",
+    "reduced_scalar_equation": "(d_x**2+omega**2-f*V_odd)*Psi=F, x=rstar",
+    "sector": "odd parity, ell>=2"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a nonzero overlap for a specified geodesic plunge",
+    "a positive-energy or energy-condition-satisfying matter model",
+    "direct admissibility of the standard massive point-particle stress tensor",
+    "a global retarded inverse-Laplace contour deformation",
+    "detector sensitivity or parameter-estimation bounds"
+  ],
+  "imports": {
+    "fredholm_promotion": {
+      "path": "black_hole_programme/phase4/axial_qnm_fredholm_promotion_v1/certificate.json",
+      "sha256": "e3f5e28d426305f0e68f7c11c7f63e1f0618cc63ad20fc1ff5b221fb38d34110"
+    },
+    "local_selector": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/local_selector_v1/certificate.json",
+      "sha256": "aefc5b04fb7e33b72b7553dba69cedc6dff82d2838d4d11cb1a5a45c80f9c2a4"
+    },
+    "null_infinity_reconstruction": {
+      "path": "black_hole_programme/phase4/axial_qnm_null_infinity_reconstruction_v1/certificate.json",
+      "sha256": "be3f26e22dec378b6ab7bc2d05b91301539bc1ccc4b5b24946accc96ba254d18"
+    }
+  },
+  "observable_consequence": {
+    "isolated_transfer_double_pole_visible": true,
+    "local_contour_u_exp_iomega_u_term_visible": true,
+    "observation_overlap_nonzero_imported": true,
+    "source_overlap_nonzero_for_constructed_source": true
+  },
+  "primary_reference": {
+    "arxiv": "gr-qc/0502028",
+    "citation": "Martel--Poisson, Phys. Rev. D 71 (2005) 104003",
+    "equations": [
+      "(3.4)",
+      "(3.9)",
+      "(5.10)--(5.16)"
+    ]
+  },
+  "schema": "axial-qnm-conserved-source-overlap-v1",
+  "source_realization": {
+    "P_r_contravariant": "mu*F/(2*I*omega*r)",
+    "P_r_covariant": "mu*F/(2*I*omega*r*f)",
+    "P_t": "0",
+    "P_tensor": "d_r(r*F)/(2*I*omega)",
+    "S_odd": "F/f",
+    "conservation": "nabla_a(P^a)+2*r_a*P^a/r-mu*P/r**2=0",
+    "f": "1-2*M/r",
+    "reduced_RW_source": "f*S_odd=F",
+    "stress_tensor": "T^(AB)=P*X^AB/(8*pi*r**4)",
+    "stress_vector": "T^(aB)=P^a*X^B/(16*pi*r**2)",
+    "trace": "0"
+  },
+  "status": "EXACT_CONSERVED_TRACELESS_SOURCE_OVERLAP"
+}

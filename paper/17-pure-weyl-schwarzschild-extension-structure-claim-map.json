@@ -7,6 +7,13 @@
       "sha256": "75e18d9a91d6827ad2fae645a05b0fe1cc9a50459f9b03dca280c884f917aca3",
       "status": null
     },
+    "conserved_source_overlap": {
+      "path": "black_hole_programme/phase4/axial_qnm_conserved_source_overlap_v1/certificate.json",
+      "result_id": null,
+      "result_token": null,
+      "sha256": "914312759dfb77c59c188a4e2c1d7d75357993fc7f18e9d76d8afa8aeb3b99fc",
+      "status": "EXACT_CONSERVED_TRACELESS_SOURCE_OVERLAP"
+    },
     "critical_mass_parent": {
       "path": "black_hole_programme/phase4/einstein_weyl_critical_mass_jet_v1/certificate.json",
       "result_id": null,
@@ -104,6 +111,7 @@
     "complex_exceptional_parabola_qualified": true,
     "confluent_positive_metric_singularity_exact": true,
     "confluent_projector_scale_exact": true,
+    "conserved_traceless_external_source_overlap_nonzero": true,
     "critical_determinant_insufficient_for_smith_type": true,
     "critical_half_power_width_exact": true,
     "critical_mass_qnm_velocity_nonzero": true,
@@ -136,13 +144,14 @@
     "local_tt_critical_mass_jet_identified": true,
     "local_two_pole_contour_jordan_limit": true,
     "lower_left_mutation_controls_exact": true,
+    "massive_point_particle_direct_source_excluded": true,
     "matched_finite_window_drive_exact": true,
     "near_critical_linewidth_ratio_exact": true,
     "null_infinity_E_bondi_shear_nonzero": true,
     "null_infinity_double_pole_spatial_overlap_nonzero": true,
     "null_infinity_generalized_standard_falloff_excluded": true,
-    "null_infinity_source_overlap_open": true,
     "null_rank_one_pole_geometry_exact": true,
+    "odd_compact_radial_source_map_surjective": true,
     "opposite_signature_confluence_criterion_exact": true,
     "parent_double_and_simple_laurent_coefficients_exact": true,
     "parent_local_contour_selection_rule_exact": true,
@@ -167,6 +176,7 @@
     "second_order_qnm_curvature_formula_exact": true,
     "selector_contour_sum_rule_exact": true,
     "simple_qnm_first_jet_dichotomy_exact": true,
+    "specified_matter_source_overlap_open": true,
     "spectral_contact_order_pole_law_exact": true,
     "spectral_flow_one_forms_exact": true,
     "spectral_velocity_generator_exact": true,
@@ -261,6 +271,23 @@
         ]
       ],
       "tau_times_C": "4*I*N/omega"
+    },
+    "conserved_traceless_source": {
+      "P_r": "mu*F/(2*I*omega*r*f)",
+      "P_t": "0",
+      "P_tensor": "d_r(r*F)/(2*I*omega)",
+      "adjoint_choice": "F=eta*conjugate(tilde_u_n)",
+      "adjoint_overlap": "integral(eta*abs(tilde_u_n)**2,drstar)>0",
+      "conservation": "nabla_a(P^a)+2*r_a*P^a/r-mu*P/r**2=0",
+      "domain": "complexified odd ell>=2 smooth compact radial forcing",
+      "master_source": "f*S_odd=F",
+      "mu": "(ell-1)*(ell+2)",
+      "orientation": "epsilon_(tr)=+1, epsilon^(tr)=-1",
+      "positive_energy_matter_model": false,
+      "specified_trajectory": false,
+      "stress_tensor": "T^(AB)=P*X^AB/(8*pi*r**4)",
+      "stress_vector": "T^(aB)=P^a*X^B/(16*pi*r**2)",
+      "trace": "0"
     },
     "critical_contact_order": {
       "branch": "omega_n(m)=omega_n+nu_n_q*m**q/factorial(q)+O(m**(q+1))",
@@ -739,7 +766,7 @@
   "lifecycle_state": "DRAFT_ALLOWED",
   "manuscript": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
   "paper_id": "PAPER_17_PURE_WEYL_EXTENSION_RESONANCE",
-  "paper_sha256": "6a8357e18c3949b028701240c6f9884cab610b32d17ccd145a5d14cd355261c9",
+  "paper_sha256": "cfbde1cee11bba4789d355ce5bb2382220dac180b71b4d57a020ffbd32678fe8",
   "result_id": "PAPER17_NONSPLIT_RW_EXTENSION_DEFECTIVE_RESONANCE",
   "schema": "paper-draft-source-map-v1"
 }
