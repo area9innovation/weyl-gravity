@@ -211,7 +211,7 @@ need to be restarted for every task.
 
 ```bash
 source /home/alstrup/.bashrc
-cd /home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction
+cd /path/to/weyl-gravity
 
 s-f git status
 git fetch origin master
@@ -230,7 +230,7 @@ Expected tool paths:
 From this repository or any descendant directory, `s-f` automatically selects:
 
 ```text
-/home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction/planning/work-items
+<weyl-gravity-repository>/planning/work-items
 ```
 
 Do not set `SF_PROGRAM` for the normal resident workflow. It remains available

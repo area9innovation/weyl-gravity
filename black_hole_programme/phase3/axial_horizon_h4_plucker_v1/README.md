@@ -29,7 +29,7 @@ as decomposable.
 This does not establish the remaining 22 shells, canonical endpoint
 amplitudes, or a horizon-to-infinity scattering theorem.
 
-From `physics/symplectic-reconstruction`:
+From the standalone `weyl-gravity` repository root:
 
 ```bash
 PYTHONPATH=. python3 -m \

@@ -21,7 +21,7 @@ The cover counts only if the independent verifier confirms:
 - all 20 ordered segment checkpoints in each child;
 - a nonzero pivot and all 45 relation checks at the target.
 
-From `physics/symplectic-reconstruction`:
+From the standalone `weyl-gravity` repository root:
 
 ```bash
 PYTHONPATH=. python3 -m \

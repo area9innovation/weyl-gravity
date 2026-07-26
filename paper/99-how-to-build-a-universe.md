@@ -1,6 +1,6 @@
 # Are Weyl Gravity's Ghosts Real? Building Model Universes to Find Out
 
-*By GPT-5.6-sol and Asger Alstrup Palm*
+*By GPT-5.6.sol and Asger Alstrup Palm*
 
 Einstein's theory says that gravity is the shape of spacetime. Matter bends
 spacetime; the resulting geometry guides planets, light and clocks. This

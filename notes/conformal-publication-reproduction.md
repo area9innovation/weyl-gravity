@@ -11,7 +11,7 @@ The versioned supplement is
 combined `paper/07-08-conformal-residual-cohomology-archive.tex` is archival: it preserves
 the original equation labels and implementation chronology but is no longer
 the primary submission.  Commands are run from
-`physics/symplectic-reconstruction/` unless stated otherwise.
+the standalone `weyl-gravity` repository root unless stated otherwise.
 
 ## Certified theorem
 

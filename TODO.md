@@ -1,4 +1,4 @@
-# TODO — symplectic-reconstruction
+# TODO — weyl-gravity
 
 Working list. Completed work is recorded in
 `reports/variational-and-field-theory.md` and git history; this file
@@ -6,29 +6,25 @@ holds only open items.
 
 ## Release / freeze
 
-1. [x] Freeze tags created and pushed 2026-07-13. Current set (after
-   the series-wide framing pass, same day): `paper1-v1.2`,
-   `paper2-v1.3`, `paper3-v1.3`, `paper4-v1.1`, `paper5-v1.1` (each
-   referenced in its paper's Verification paragraph; earlier tags
-   remain for history).
+1. [ ] Recreate and verify public paper-release tags in this standalone
+   repository. The old monorepo carried the historical `paper1-v1.2`,
+   `paper2-v1.3`, `paper3-v1.3`, `paper4-v1.1`, and `paper5-v1.1` tags,
+   but they were intentionally not copied because they also retained
+   unrelated monorepo history.
 1b. [ ] Mint a DOI for the archived commit (team asked for "immutable
    commit + DOI"): needs Asger's Zenodo (or similar) account; natural
    to do together with the repo extraction (item 2).
-2. [ ] Extract `physics/symplectic-reconstruction/` into a standalone
-   shareable repo (deferred by Asger, 2026-07-12: "we will move it
-   later"). Plan: intended for sharing directly with Mannheim, Bateman,
-   et al. DO NOT share the monorepo link — `area9innovation/
-   bp2transformer` is private, contains all unrelated company work,
-   and (per project memory) a Hetzner token elsewhere in the tree.
-   The symplectic-reconstruction directory itself scanned clean of
-   secrets (2026-07-12). Extraction also resolves the referees'
-   citable-artifact requirement (papers 1, 3, 4); create the paper
-   tags in the new repo.
+2. [x] Extract the former `physics/symplectic-reconstruction/` subtree
+   with relevant history into the standalone
+   `area9innovation/weyl-gravity` repository (completed 2026-07-26).
+   The source and split trees were verified identical before the
+   standalone LFS/ignore metadata commit. Historical receipt paths and
+   monorepo commit pins still need an explicit replay crosswalk.
 3. [ ] Before submission (all papers): replace "companion paper, 2026"
    citations with arXiv IDs once public, check "to appear" references
-   (ABHT in paper 3). (Author metadata DONE: GPT-5.6.sol + Claude
-   Fable 5 as authors with role footnotes; Asger as commissioning /
-   corresponding human — all six technical papers.)
+   (ABHT in paper 3). (Authorship metadata now uses GPT-5.6.sol and
+   Asger Alstrup Palm throughout; Claude Fable 5 is additionally
+   credited only on Paper 00.)
 
 ## Known weak spots (not yet raised by referees)
 

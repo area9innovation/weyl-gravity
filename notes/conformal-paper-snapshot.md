@@ -53,7 +53,7 @@ The Python dependency is frozen in
 
 ## Required and exhaustive reproduction
 
-From `physics/symplectic-reconstruction`:
+From the standalone `weyl-gravity` repository root:
 
 ```bash
 python3 symbolic/verify_conformal_paper_free.py --required --timeout 180

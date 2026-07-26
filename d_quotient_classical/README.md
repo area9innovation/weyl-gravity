@@ -846,7 +846,7 @@ An untested setting does not receive a fifth pseudo-verdict.  It has
 
 ## Verification
 
-From `physics/symplectic-reconstruction/` run:
+From the standalone `weyl-gravity` repository root run:
 
 ```bash
 python3 d_quotient_classical/verify_classical_status.py --guards

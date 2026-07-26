@@ -96,7 +96,7 @@ The machine receipts are:
 
 ## Verification receipt
 
-Run from `physics/symplectic-reconstruction/`:
+Run from the standalone `weyl-gravity` repository root:
 
 | Tier | Command/rail | Elapsed | Result |
 |---|---|---:|---|

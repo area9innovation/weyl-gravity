@@ -198,7 +198,7 @@ change the verdict or lifecycle rules in this dossier.
 
 ## Verification
 
-From `physics/symplectic-reconstruction/`:
+From the standalone `weyl-gravity` repository root:
 
 ```bash
 python3 d_quotient_programme/verify_programme_status.py --check --guards

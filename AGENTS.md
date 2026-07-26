@@ -2,8 +2,8 @@
 
 ## Scope
 
-These instructions apply to `physics/symplectic-reconstruction/` and all of
-its descendants.  The workspace is shared by the classical and quantum
+These instructions apply to this standalone `weyl-gravity` repository and all
+of its descendants.  The workspace is shared by the classical and quantum
 teams.  Both teams work directly on `master`.
 
 ## Scientific frame

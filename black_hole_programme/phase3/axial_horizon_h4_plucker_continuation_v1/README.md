@@ -20,7 +20,7 @@ The bounded chain consists of:
 Execution stops at the first typed refusal. No failing chunk emits a shared
 output state.
 
-From `physics/symplectic-reconstruction`:
+From the standalone `weyl-gravity` repository root:
 
 ```bash
 PYTHONPATH=. python3 -m \

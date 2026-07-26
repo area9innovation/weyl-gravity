@@ -1,6 +1,6 @@
 # Verification report: Symplectic reconstruction of the Pais–Uhlenbeck PT metric
 
-**Status of the audit** (spec: `physics/Symplectic Reconstruction.md`).
+**Status of the audit** against the original pre-project specification.
 Symbolic engine: SymPy 1.14 (`symbolic/verify_sympy.py`, 51 machine-checked claims,
 `reports/verification.json`). Numerics: mpmath at 50–80 significant digits
 (`numeric/regression.py`, `reports/regression.json`), four parameter triples

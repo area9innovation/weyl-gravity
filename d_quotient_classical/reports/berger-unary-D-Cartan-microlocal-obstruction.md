@@ -30,7 +30,7 @@ This does not obstruct a residual/BFV or causal Cartan extension. It proves
 that the next construction must enlarge or derive-reduce the complex rather
 than attempting the arity-two equation on the bare local rows.
 
-Reproduce from `physics/symplectic-reconstruction/` with:
+Reproduce from the standalone `weyl-gravity` repository root with:
 
 ```bash
 python3 -m d_quotient_classical.backreacted_clock.berger_unary_d_cartan_obstruction --check --guards

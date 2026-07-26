@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Read-only Phase-2 polar per-order recurrence prototype.
 
-This lives in /tmp and imports only frozen/active inputs from the repository.
-It deliberately does not write programme artifacts.
+This imports only frozen/active inputs from the repository and deliberately
+does not write programme artifacts.
 """
 
 from __future__ import annotations
@@ -23,7 +23,7 @@ from black_hole_programme.phase2.general_l_polar.sourced_lift import (
 )
 
 
-ROOT = Path("/home/alstrup/area9/bp2transformer/physics/symplectic-reconstruction")
+ROOT = Path(__file__).resolve().parents[3]
 V1_IMPORT = {
     "commit": "e5e372f0feabb5faaf91888241d04efab66d46c1",
     "certificate": {

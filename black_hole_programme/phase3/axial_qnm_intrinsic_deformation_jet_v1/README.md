@@ -78,7 +78,7 @@ realization, resolvent pole, or flux theorem is established.
 
 ## Reproduce and verify
 
-From `physics/symplectic-reconstruction`:
+From the standalone `weyl-gravity` repository root:
 
 ```bash
 PYTHONPATH=. python3 -m black_hole_programme.phase3.axial_qnm_intrinsic_deformation_jet_v1.produce

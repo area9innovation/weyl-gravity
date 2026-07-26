@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Symbolic audit of the symplectic reconstruction of the Pais-Uhlenbeck PT metric.
 
-Implements Required Verifications A-L of the spec
-(physics/Symplectic Reconstruction.md).  This is an AUDIT: every candidate
+Implements Required Verifications A--L of the original pre-project audit
+specification.  This is an AUDIT: every candidate
 formula is tested against independently constructed objects, all convention
 variants are tried, and failures are reported as failures.
 

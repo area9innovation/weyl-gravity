@@ -25,7 +25,7 @@ consumer; it is not Green/Hadamard existence, QME restoration, or a Ward-map
 construction.
 
 The shared programme dossier consumes this record directly.  Its evidence
-path is relative to the `symplectic-reconstruction` project root, matching the
+path is relative to the standalone `weyl-gravity` project root, matching the
 portable convention used by the other registered team contributions.
 
 Reproduce it from the repository root:
