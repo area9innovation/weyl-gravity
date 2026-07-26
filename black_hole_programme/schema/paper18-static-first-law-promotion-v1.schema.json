@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "claim_flags": {
+      "additionalProperties": {"type": "boolean"},
+      "required": [
+        "laurent_classification_certified",
+        "residual_basic_normalization_certified",
+        "simultaneous_static_first_law_certified",
+        "linear_spherical_gauge_audit_certified",
+        "physical_process_first_law_certified",
+        "radiative_flux_certified"
+      ],
+      "type": "object"
+    },
+    "declaration": {
+      "additionalProperties": false,
+      "properties": {
+        "expert_peer_reviewed": {"const": false},
+        "historical_certificates_unchanged": {"const": true},
+        "lifecycle": {"const": "CLASSIFIED"},
+        "scope": {"type": "string"}
+      },
+      "required": [
+        "lifecycle",
+        "scope",
+        "historical_certificates_unchanged",
+        "expert_peer_reviewed"
+      ],
+      "type": "object"
+    },
+    "dependency_tags": {
+      "contains": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+      "items": {"type": "string"},
+      "minItems": 2,
+      "type": "array"
+    },
+    "does_not_establish": {
+      "items": {"type": "string"},
+      "minItems": 4,
+      "type": "array"
+    },
+    "evidence": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "path": {"type": "string"},
+          "result_token": {"type": "string"},
+          "sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}
+        },
+        "required": ["path", "sha256", "result_token"],
+        "type": "object"
+      },
+      "required": ["BH0", "BH1", "BH1A", "BH1B", "P18_STDLIB"],
+      "type": "object"
+    },
+    "independence_profile": {
+      "additionalProperties": false,
+      "properties": {
+        "arithmetic_backend": {"type": "string"},
+        "code": {"type": "string"},
+        "derivation": {"type": "string"},
+        "representation": {"type": "string"}
+      },
+      "required": ["code", "representation", "arithmetic_backend", "derivation"],
+      "type": "object"
+    },
+    "paper_artifacts": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "path": {"type": "string"},
+          "sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}
+        },
+        "required": ["path", "sha256"],
+        "type": "object"
+      },
+      "required": ["source", "pdf"],
+      "type": "object"
+    },
+    "promoted_claims": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string"},
+          "statement": {"type": "string"}
+        },
+        "required": ["id", "statement"],
+        "type": "object"
+      },
+      "minItems": 4,
+      "type": "array"
+    },
+    "provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "engine_path": {"type": "string"},
+        "engine_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}
+      },
+      "required": ["engine_path", "engine_sha256"],
+      "type": "object"
+    },
+    "result_id": {"const": "PAPER18_STATIC_FIRST_LAW_PROMOTION"},
+    "result_token": {"const": "PAPER18_STATIC_FIRST_LAW_CLASSIFIED"},
+    "schema": {"const": "paper18-static-first-law-promotion-v1"},
+    "schema_path": {"type": "string"},
+    "schema_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "verification_command": {"type": "string"}
+  },
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "declaration",
+    "dependency_tags",
+    "promoted_claims",
+    "evidence",
+    "paper_artifacts",
+    "independence_profile",
+    "claim_flags",
+    "does_not_establish",
+    "provenance",
+    "verification_command"
+  ],
+  "type": "object"
+}

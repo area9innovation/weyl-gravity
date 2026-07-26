@@ -75,14 +75,31 @@ def main() -> None:
         not evidence["BH1B"]["claim_flags"]["radiative_bilinear_flux_matrix_certified"],
         "BH1B unexpectedly claims radiative bilinear flux",
     )
+    for flag in (
+        "laurent_classification_certified",
+        "residual_basic_normalization_certified",
+        "simultaneous_static_first_law_certified",
+        "linear_spherical_gauge_audit_certified",
+    ):
+        require(evidence["P18"]["claim_flags"][flag], f"P18 promotion flag is false: {flag}")
+    require(
+        evidence["P18"]["declaration"]["historical_certificates_unchanged"],
+        "P18 promotion is not append-only",
+    )
 
     paper = PAPER.read_text(encoding="utf-8")
     required_fragments = (
         r"\title{Residual-Basic Charges and Simultaneous Horizon First Laws",
+        r"\large on the Mannheim--Kazanas Family",
         r"\gamma=0,\qquad w=1",
+        r"\dd J\neq0",
+        r"\mathcal F\neq0",
         r"N=u f(J)",
         r"u\mathcal F=\dd H",
         r"\boxed{\dd H=T_h\,\dd S_h}",
+        r"\mathcal E_\beta",
+        r"Q_{\delta\chi}",
+        "Jacobson--Kang--Myers",
         "no preferred physical mass",
         "does not compute the bilinear radiative flux",
         "stability, quasinormal ringing, Hawking radiation, or any quantum",

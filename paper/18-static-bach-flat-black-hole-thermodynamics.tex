@@ -23,7 +23,7 @@
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
 \title{Residual-Basic Charges and Simultaneous Horizon First Laws\\
-\large in Static Weyl Gravity}
+\large on the Mannheim--Kazanas Family}
 \author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
 \and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
 \date{Working draft, 26 July 2026}
@@ -45,14 +45,15 @@ its charge to descend to the residual quotient forces
  u=\beta(2-3\beta\gamma),
 \]
 where \(J\) is the single continuous residual invariant.  For the canonical
-choice \(f=1\), the corrected charge is exact, with Hamiltonian
+choice \(f=1\), the corrected charge is exact, with residual-basic
+Hamiltonian
 \[
  H=-16\pi\alpha\beta^2
  \bigl(9\beta^2\gamma^2k-\beta\gamma^3-12\beta\gamma k
        +\gamma^2+4k\bigr).
 \]
-At every simple root \(r_h\) of the metric function, the Wald entropy and
-signed temperature
+At every locally labelled simple root \(r_h\) of the metric function, the
+Wald entropy and signed horizon temperature
 \[
  S_h=64\pi^2\alpha\beta
  \frac{2-3\beta\gamma+\gamma r_h}{r_h},
@@ -114,7 +115,8 @@ not a new solution family.  It is:
 \begin{enumerate}
 \item an exact residual-quotient derivation of the field-dependent
       normalization;
-\item an exact Hamiltonian and Wald entropy in that normalization;
+\item an exact residual-basic Hamiltonian and Wald entropy in that
+      normalization;
 \item one first-law identity holding simultaneously at every simple horizon;
 \item a linear spherical audit showing that the charge is not selected by a
       conformal frame or by a spherical coordinate gauge.
@@ -126,13 +128,18 @@ on a restricted static family with no preferred asymptotic clock.  The two
 constructions therefore answer different normalization and ensemble
 questions.
 
+The phrase ``first law'' below means an exact variational identity on this
+finite-dimensional static solution family.  It does not assert that all
+roots are simultaneous equilibrium boundaries of one thermal ensemble, and
+it does not identify \(H\) with a preferred asymptotic mass.
+
 \subsection{Dependency closure}
 
 Table~\ref{tab:dependencies} separates the exact theorem chain from open
 extensions.  The dependency tags are those used in the computational
 archive.  In the compact status column, LA means
 \textsc{local-algebraic} and RM means \textsc{reduced-mode}; the abbreviated
-certificate names are expanded in Section~9.
+certificate names are expanded in Section~\ref{sec:reproduction}.
 
 \begin{table}[ht]
 \centering
@@ -150,7 +157,7 @@ Bare static Iyer--Wald form
 & LA+RM, exact
 & Exhibits the normalization obstruction\\
 Basic generator, \(H,S,T\), simultaneous first law
-& BH1A
+& BH1A, P18
 & LA+RM, exact
 & Main static theorem\\
 Spherical conformal/diffeomorphism audit
@@ -214,6 +221,11 @@ independent curvature implementation both recompute the vanishing tensor;
 mutating the correlated constant term or adding an \(r^{-2}\) tail produces
 explicit nonzero Bach components.
 \end{proof}
+
+The two reduced Bach rows and the exact coefficient-ideal construction are
+displayed in Section~\ref{app:audit-algebra}.  They make the Laurent
+classification reconstructible from the manuscript rather than only from
+the machine-readable certificate.
 
 \begin{remark}[Scope of completeness]
 Theorem~\ref{thm:laurent} is not presented as a new proof of the full
@@ -311,8 +323,11 @@ They have generic rank two.  A continuous invariant is
 Translation invariance of the discriminant and its scaling weight prove
 \(X_cJ=X_\lambda J=0\).  Moreover,
 \(\operatorname{disc}(Q)=0\) is precisely the multiple-root, hence
-degenerate-horizon, locus.  Locally on a regular orbit component, every
-continuous invariant is therefore a function of \(J\).
+degenerate-horizon, locus.  On an open set where the orbit rank is two and
+\(\dd J\neq0\), \(J\) is a local coordinate on the one-dimensional
+quotient.  Every smooth local invariant is therefore a function of \(J\).
+This statement neither identifies distinct connected components nor
+follows a labelled horizon through a multiple-root collision.
 
 \section{The bare charge is not integrable}
 
@@ -396,6 +411,19 @@ charge is linear in \(\chi\), the \(Q_{\delta\chi}\) term cancels all
 \begin{equation}
  \delta H_\chi=N\mathcal F.
 \end{equation}
+Here the variation acts on both the dynamical fields and the
+field-dependent vector \(\chi[g]\); the explicit \(Q_{\delta\chi}\)
+subtraction removes the latter contribution.  This is the
+field-dependent-generator extension of the Iyer--Wald form used in
+field-dependent asymptotic symmetry algebras
+\cite{BarnichTroessaert,WaldZoupas}.  We fix the Lagrangian
+\eqref{eq:action}, the displayed \(\theta\), and the displayed \(Q_\chi\).
+The standard Jacobson--Kang--Myers shifts of the Lagrangian or
+presymplectic potential can change a surface representative by boundary
+terms \cite{JacobsonKangMyers}; no such shift is made here.  The result is
+therefore a theorem about this explicit representative on closed symmetry
+spheres, not a uniqueness assertion over every covariant-phase-space
+ambiguity.
 
 \begin{definition}
 A parameter-space form is \emph{residual-basic} if it is horizontal and
@@ -404,13 +432,17 @@ invariant under both vector fields \eqref{eq:Xc} and \eqref{eq:Xl}.
 
 \begin{theorem}[Residual-basic normalization]
 \label{thm:normalization}
-On a connected regular component with \(u\neq0\), the corrected charge
-\(N\mathcal F\) is residual-basic only if
+Let \(\mathcal U\) be a connected open subset of the MK parameter space on
+which \(u\neq0\), the residual orbit rank is two, \(\dd J\neq0\), and
+\(\mathcal F\neq0\).  If \(N\) is a smooth nowhere-zero normalization on
+\(\mathcal U\), then the corrected charge \(N\mathcal F\) is
+residual-basic only if
 \begin{equation}\label{eq:N}
  N=u f(J)
 \end{equation}
-for a function \(f\) of the quotient invariant.  Conversely, every
-normalization \eqref{eq:N} is basic and integrable.  For \(f=1\),
+for a function \(f\) of the quotient invariant.  Conversely, every smooth
+normalization \eqref{eq:N} that remains nowhere zero on \(\mathcal U\) is
+basic and integrable.  For \(f=1\),
 \begin{equation}\label{eq:H}
  u\mathcal F=\dd H,\qquad
  H=-16\pi\alpha\beta^2D_2,
@@ -431,8 +463,8 @@ Cartan's identity and \eqref{eq:c-horizontal} give
 \[
  X_cu=0,\qquad X_\lambda u=-u.
 \]
-Since the residual orbit has codimension one and \(J\) is its local
-invariant, the general local solution is \(N=uf(J)\).
+Since the residual orbit has codimension one and \(J\) is a local quotient
+coordinate on \(\mathcal U\), the general local solution is \(N=uf(J)\).
 
 Exact differentiation of \eqref{eq:H} gives
 \(\dd H=u\mathcal F\), proving closure for \(f=1\).  The same form is
@@ -441,6 +473,17 @@ horizontal under both residual fields.  For general \(f(J)\),
 \(\dd H\wedge\dd J=0\) holds.  It is therefore locally the differential of
 a reparametrized quotient Hamiltonian.
 \end{proof}
+
+\begin{remark}[Local uniqueness and exceptional loci]
+The hypotheses in Theorem~\ref{thm:normalization} are essential.  At a zero
+of \(\mathcal F\), invariance of \(N\mathcal F\) alone need not determine
+\(N\); where \(\dd J=0\), \(J\) is not a quotient coordinate; and at
+\(u=0\) the canonical normalization degenerates.  A normalization obtained
+on a regular component may extend continuously to such a locus, but that
+extension is not another local uniqueness theorem.  Discrete component data
+and permutations of horizon roots are likewise outside the local
+classification.
+\end{remark}
 
 The discriminant factorization sharpens the quotient interpretation.  Put
 \begin{equation}
@@ -458,7 +501,7 @@ locus.  On the Einstein control family \(\gamma=0\),
 On the Schwarzschild subfamily \(k=\gamma=0\), it vanishes identically.
 
 \begin{remark}[Normalization versus physical mass]
-Equation \eqref{eq:H} defines the Hamiltonian of the residual-basic
+Equation \eqref{eq:H} defines the residual-basic Hamiltonian of the
 generator on the declared static phase-space slice.  We do not call it a
 universal physical mass.  Multiplication by \(f(J)\), component orientation,
 and any future choice of physical asymptotic clock change the normalization.
@@ -480,18 +523,21 @@ gives
  \frac{2-3\beta\gamma+\gamma r_h}{r_h}.
 \end{equation}
 For the algebraic orientation \(\chi=u\partial_t\), define the signed
-surface-gravity temperature
+horizon temperature
 \begin{equation}\label{eq:T}
  T_h=\frac{\kappa_\chi}{2\pi}
      =\frac{uB'(r_h)}{4\pi}.
 \end{equation}
-This is the signed quantity entering the oriented first law; a positive
-Hawking temperature would use \(|uB'(r_h)|/(4\pi)\).
+This is the signed surface-gravity quantity entering the oriented
+variational identity; a positive Hawking temperature would use
+\(|uB'(r_h)|/(4\pi)\).  We do not infer a common thermal-equilibrium
+interpretation when several simple roots are present.
 
 \begin{theorem}[Simultaneous horizon first laws]
 \label{thm:firstlaw}
-For every simple root \(r_h\) of \eqref{eq:mk}, the functions
-\eqref{eq:H}, \eqref{eq:S}, and \eqref{eq:T} satisfy
+For every locally labelled simple root \(r_h\) of \eqref{eq:mk}, the
+residual-basic Hamiltonian \eqref{eq:H}, entropy \eqref{eq:S}, and signed
+horizon temperature \eqref{eq:T} satisfy
 \begin{equation}\label{eq:firstlaw}
  \boxed{\dd H=T_h\,\dd S_h}
 \end{equation}
@@ -513,9 +559,11 @@ Use this in the total derivative of \eqref{eq:S}, subtract it from
 \begin{equation}
  r_hB(r_h)=0.
 \end{equation}
-The remainder is identically zero for each of the three parameters.  This
-calculation uses no choice of root beyond simplicity, proving the result at
-all roots simultaneously.
+The three exact remainders are displayed in
+Section~\ref{app:audit-algebra}.  They are proportional to \(B(r_h)\), or
+vanish before imposing the horizon equation.  The calculation uses no
+choice of root beyond local simplicity, proving the result at all locally
+labelled roots simultaneously.
 \end{proof}
 
 For Schwarzschild, \(r_h=2\beta\), so
@@ -564,7 +612,7 @@ and
 The three identities \(T_h\dd S_h=\dd H\) hold exactly in every parameter
 direction.  Since \(u<0\) on this component, choosing the opposite
 future-directed orientation flips \(H\) and every signed \(T_h\), leaving
-the first laws unchanged.
+the variational identities unchanged.
 
 \section{Linear spherical frame and gauge audit}
 
@@ -657,15 +705,87 @@ The following statements are not established:
       property.
 \end{itemize}
 
+\section{Exact audit algebra and reconstructible proofs}
+\label{app:audit-algebra}
+
+This section exposes the shortest load-bearing symbolic identities used in
+the theorem.  Write \(B^{(j)}=\dd^jB/\dd r^j\).  In the gauge \(a=B\),
+\(b=B^{-1}\), two independent Bach rows are
+\begin{equation}
+ B_{tt}=\frac{B}{24r^4}\,\mathcal R_t,\qquad
+ B_{rr}=\frac{1}{24r^4B}\,\mathcal R_r,
+\end{equation}
+where
+\begin{align}
+\mathcal R_t={}&
+ 4r^4BB^{(4)}+2r^4B'B'''-r^4(B'')^2
++12r^3BB'''+4r^3B'B'' \nonumber\\
+&-4r^2BB''-4r^2(B')^2+8rBB'-4B^2+4,\label{eq:Rt}\\
+\mathcal R_r={}&
+-2r^4B'B'''+r^4(B'')^2+4r^3BB'''-4r^3B'B'' \nonumber\\
+&+4r^2BB''+4r^2(B')^2-8rBB'+4B^2-4.\label{eq:Rr}
+\end{align}
+The angular row follows from tracelessness.  Substituting
+\eqref{eq:laurent} into \eqref{eq:Rt}--\eqref{eq:Rr}, clearing powers of
+\(r\), and collecting every coefficient generates the ideal
+\[
+ I_{\mathrm{Laurent}}
+ =\left\langle [r^j]\mathcal R_t,\ [r^j]\mathcal R_r
+   \ \middle|\ j\in\mathbb Z\right\rangle
+ \subset\mathbb Q[c_2,c_3,u,w,\gamma,k].
+\]
+With lexicographic order \(c_2>c_3>u>w>\gamma>k\), its reduced
+Gr\"obner basis is
+\begin{equation}
+ \operatorname{GB}(I_{\mathrm{Laurent}})
+ =\{c_2,\ c_3,\ w^2+3u\gamma-1\}.
+\end{equation}
+This is the finite algebraic input to
+Theorem~\ref{thm:laurent}; the complete coefficient list is retained in the
+BH0 producer rather than typeset as 48 redundant multiples.
+
+The first-law reduction is shorter still.  Scale out the universal
+constants by putting
+\begin{equation}
+ h=\frac{H}{16\pi\alpha}=-\beta^2D_2,\qquad
+ s=\frac{S_h}{64\pi^2\alpha}
+   =\frac{\beta(2-3\beta\gamma+\gamma r_h)}{r_h}.
+\end{equation}
+For \(p\in\{\beta,\gamma,k\}\), define
+\begin{equation}
+ \mathcal E_p
+ =\partial_ph-u\left[B'(r_h)\partial_ps
+       -(\partial_{r_h}s)\partial_pB(r_h)\right].
+\end{equation}
+This is exactly
+\(\partial_pH-T_h\,\dd S_h/\dd p\), divided by \(16\pi\alpha\), after
+implicit differentiation of the horizon equation.  Direct reduction gives
+the rational identities
+\begin{align}
+ \mathcal E_\beta
+ &=B(r_h)\frac{2\beta\gamma(3\beta\gamma-2)}{r_h},\\
+ \mathcal E_\gamma
+ &=B(r_h)\frac{2\beta^2(3\beta\gamma-2)}{r_h},\\
+ \mathcal E_k&=0.
+\end{align}
+They prove the three parameter components of
+\eqref{eq:firstlaw} immediately on \(B(r_h)=0\).  The standard-library
+verifier cited below represents these expressions as sparse Laurent
+polynomials with exact rational coefficients and checks them
+coefficientwise without SymPy.
+
 \section{Computational evidence and reproduction}
+\label{sec:reproduction}
 
 The calculations are computer-assisted but exact.  Tensor components,
 polynomial reductions, and charge identities are represented by symbolic
 rational functions.  No theorem in this paper is inferred from a decimal
-approximation.  Producer and verifier use separately written curvature
-pipelines; the verifier constructs the Weyl tensor through an independent
-Schouten/Kulkarni--Nomizu route.  Mutation tests ensure that certificate-like
-but false inputs are rejected.
+approximation.  Programme producer and verifier use separately written
+curvature pipelines; the verifier constructs the Weyl tensor through an
+independent Schouten/Kulkarni--Nomizu route.  A further Paper~18 rail uses
+only the Python standard library and an independently implemented sparse
+Laurent-polynomial ring over \texttt{fractions.Fraction}.  Mutation tests
+ensure that certificate-like but false inputs are rejected.
 
 \begin{table}[ht]
 \centering
@@ -685,13 +805,25 @@ Certificate & Reproduction and independent verification\\
 & \texttt{python3 black\_hole\_programme/verify\_bh1a\_normalized\_generator.py}\\[1mm]
 \cert{BH1B_DYNAMICAL_EXTENSION.json}
 & \texttt{python3 black\_hole\_programme/bh1b\_dynamical.py}\\
-& \texttt{python3 black\_hole\_programme/verify\_bh1b\_dynamical.py}\\
+& \texttt{python3 black\_hole\_programme/verify\_bh1b\_dynamical.py}\\[1mm]
+\cert{PAPER18_STATIC_FIRST_LAW_PROMOTION.json}
+& \texttt{python3 black\_hole\_programme/paper18\_static\_first\_law\_promotion.py}\\
+& \texttt{python3 black\_hole\_programme/verify\_paper18\_static\_first\_law\_promotion.py}\\[1mm]
+Independent algebra rail
+& \texttt{python3 paper/verify\_18\_static\_weyl\_thermodynamics\_stdlib.py}\\
 \bottomrule
 \end{tabularx}
 \caption{Authoritative certificate families.  Re-running a producer is
 reproduction; the separately implemented verifier is the independent
 check.}
 \end{table}
+
+The paper-specific promotion certificate is append-only.  It leaves the
+historical BH1, BH1A, and BH1B \textsc{preflight} lifecycle labels untouched
+and records a narrower \textsc{classified} successor for exactly the static
+MK theorem and linear spherical charge audit stated here.  It does not
+promote a physical-process law, a radiative flux law, or a peer-review
+status.
 
 The BH0 mutations (i) remove the correlated \(-3\beta\gamma\) constant and
 (ii) add an \(r^{-2}\) tail to the three-horizon fixture; both yield nonzero
@@ -709,8 +841,9 @@ Mannheim--Kazanas family, treating \(\partial_t\) as fixed produces a
 radially conserved but nonintegrable Iyer--Wald form.  Treating the generator
 as field dependent and demanding residual basicness instead forces
 \(\chi=u f(J)\partial_t\).  Its charge is integrable, its Wald entropy is
-explicit, and one Hamiltonian variation satisfies a signed first law at
-every simple horizon simultaneously.
+explicit, and one residual-basic Hamiltonian variation satisfies a signed
+horizon first-law identity at every locally labelled simple horizon
+simultaneously.
 
 The result is stronger than a coordinate identity and weaker than a complete
 black-hole thermodynamics.  It is invariant under the complete linear
@@ -750,6 +883,25 @@ V.~Iyer and R.~M.~Wald,
 hole entropy},
 Phys. Rev. D \textbf{50} (1994) 846--864,
 \href{https://arxiv.org/abs/gr-qc/9403028}{arXiv:gr-qc/9403028}.
+
+\bibitem{JacobsonKangMyers}
+T.~Jacobson, G.~Kang, and R.~C.~Myers,
+\emph{On black hole entropy},
+Phys. Rev. D \textbf{49} (1994) 6587--6598,
+\href{https://arxiv.org/abs/gr-qc/9312023}{arXiv:gr-qc/9312023}.
+
+\bibitem{WaldZoupas}
+R.~M.~Wald and A.~Zoupas,
+\emph{A general definition of ``conserved quantities'' in general
+relativity and other theories of gravity},
+Phys. Rev. D \textbf{61} (2000) 084027,
+\href{https://arxiv.org/abs/gr-qc/9911095}{arXiv:gr-qc/9911095}.
+
+\bibitem{BarnichTroessaert}
+G.~Barnich and C.~Troessaert,
+\emph{BMS charge algebra},
+JHEP \textbf{12} (2011) 105,
+\href{https://arxiv.org/abs/1106.0213}{arXiv:1106.0213}.
 
 \bibitem{LuPangPopeVP}
 H.~L\"u, Y.~Pang, C.~N.~Pope, and J.~F.~V\'azquez-Poritz,

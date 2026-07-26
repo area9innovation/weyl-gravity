@@ -1,0 +1,31 @@
+{
+  "backend": "Python standard library fractions.Fraction sparse Laurent polynomials",
+  "checks": [
+    "dH=uF (beta)",
+    "dH=uF (gamma)",
+    "dH=uF (k)",
+    "d(uF)=0 (beta,gamma)",
+    "d(uF)=0 (beta,k)",
+    "d(uF)=0 (gamma,k)",
+    "X_c(u)=0",
+    "X_lambda(u)=-u",
+    "uF horizontal under X_c",
+    "uF horizontal under X_lambda",
+    "J=-u^2 D1 D2",
+    "X_c(J)=0",
+    "X_lambda(J)=0",
+    "dH wedge dJ=0 (beta,gamma)",
+    "dH wedge dJ=0 (beta,k)",
+    "dH wedge dJ=0 (gamma,k)",
+    "first-law quotient (beta)",
+    "first-law quotient (gamma)",
+    "first-law quotient (k)",
+    "three-horizon fixture factorization",
+    "mutation control rejects H+beta"
+  ],
+  "result_token": "PAPER18_STDLIB_EXACT_ALGEBRA_PASS",
+  "schema": "paper18-stdlib-algebra-receipt-v1",
+  "sympy_imported": false,
+  "verifier": "paper/verify_18_static_weyl_thermodynamics_stdlib.py",
+  "verifier_sha256": "1e26c2139e284d8090ec726f5ea0bd0b125011ac2536d5e83198a40df85c9a6a"
+}

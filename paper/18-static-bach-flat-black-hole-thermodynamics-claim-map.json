@@ -30,16 +30,18 @@
     },
     {
       "evidence": [
-        "BH1A"
+        "BH1A",
+        "P18"
       ],
       "id": "P18-C4",
       "statement": "Residual basicness forces N=u*f(J); for N=u the corrected charge is exact with the displayed Hamiltonian.",
-      "status": "EXACT_STATIC_PARAMETER_SLICE",
+      "status": "EXACT_ON_DECLARED_REGULAR_LOCAL_QUOTIENT_CHARTS",
       "used_in_main_theorem": true
     },
     {
       "evidence": [
-        "BH1A"
+        "BH1A",
+        "P18"
       ],
       "id": "P18-C5",
       "statement": "The displayed Hamiltonian, Wald entropy, and signed temperature obey dH=T_h*dS_h at every simple horizon simultaneously.",
@@ -48,7 +50,8 @@
     },
     {
       "evidence": [
-        "BH1B"
+        "BH1B",
+        "P18"
       ],
       "id": "P18-C6",
       "statement": "Arbitrary linear spherical Weyl and diffeomorphism directions have zero corrected charge; conformal directions also have zero entropy variation and zero corrected pairing with parameter modes.",
@@ -106,17 +109,28 @@
       "result_token": "BH1_DYNAMICAL_HORIZON_PHASE_SPACE_CERTIFIED",
       "sha256": "8b7b0625e02dc171632de22d91734defd5e79d3ba9fee9a0772b1d12c1194b30",
       "verification_command": "python3 black_hole_programme/verify_bh1b_dynamical.py"
+    },
+    "P18": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "black_hole_programme/certificates/PAPER18_STATIC_FIRST_LAW_PROMOTION.json",
+      "result_token": "PAPER18_STATIC_FIRST_LAW_CLASSIFIED",
+      "sha256": "e092b571aeacc4172f0dca3d0804fcea0ab0abe59b2b8335c5a77745b4273463",
+      "verification_command": "python3 black_hole_programme/verify_paper18_static_first_law_promotion.py"
     }
   },
   "independence_profile": {
-    "arithmetic_backend": "shared exact SymPy backend",
+    "arithmetic_backend": "exact SymPy certificate backends plus an independent Python-standard-library fractions.Fraction sparse Laurent-polynomial rail",
     "curvature_representation": "verifier uses an independent Schouten/Kulkarni-Nomizu Weyl construction",
     "mathematical_derivation": "independent recomputation of tensor identities, entropy, reductions, and mutations where recorded by each certificate",
     "producer_and_verifier_code": "separate implementations"
   },
   "paper": "paper/18-static-bach-flat-black-hole-thermodynamics.tex",
   "release_boundary": {
-    "certificate_lifecycle_note": "BH1, BH1A, and BH1B retain their historical PREFLIGHT lifecycle labels; this map promotes no broader phase-space claim.",
+    "certificate_lifecycle_note": "BH1, BH1A, and BH1B retain their historical PREFLIGHT lifecycle labels; P18 is an append-only CLASSIFIED successor scoped only to the paper's static theorem and linear spherical charge audit.",
     "expert_peer_review": false,
     "immutable_archive": false,
     "paper_status": "WORKING_DRAFT"
@@ -129,7 +143,7 @@
       "LOCAL-ALGEBRAIC",
       "REDUCED-MODE"
     ],
-    "phase_space": "static parameter slice plus the complete linear l=0 conformal/diffeomorphism gauge sector at charge level"
+    "phase_space": "regular local quotient charts of the Mannheim-Kazanas static parameter slice plus the complete linear l=0 conformal/diffeomorphism gauge sector at charge level"
   },
-  "title": "Residual-Basic Charges and Simultaneous Horizon First Laws in Static Weyl Gravity"
+  "title": "Residual-Basic Charges and Simultaneous Horizon First Laws on the Mannheim-Kazanas Family"
 }

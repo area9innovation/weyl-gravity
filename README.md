@@ -167,7 +167,7 @@ sources.
 | [15](paper/15-four-level-ghost-classification-phase1-synthesis.pdf) | Phase-1 four-level ghost classification |
 | [16](paper/16-lorentzian-endpoint-nonselection-pure-weyl.pdf) | Lorentzian endpoint conditions and non-selection of the Einstein subsector |
 | [17](paper/17-pure-weyl-schwarzschild-extension-structure.pdf) | Non-split Regge–Wheeler self-extension and defective Schwarzschild resonance |
-| [18](paper/18-static-bach-flat-black-hole-thermodynamics.pdf) | Residual-basic charges and simultaneous horizon first laws in static Weyl gravity |
+| [18](paper/18-static-bach-flat-black-hole-thermodynamics.pdf) | Residual-basic charges and simultaneous horizon first laws on the Mannheim–Kazanas family |
 
 Computational supplements accompany Papers 07–09, 12, and 16. The `paper/90`,
 `91`, and `92` documents are technical bridge notes rather than numbered

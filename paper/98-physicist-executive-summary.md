@@ -295,10 +295,10 @@ The vulnerable interfaces are now explicit:
 - **[Paper 17](17-pure-weyl-schwarzschild-extension-structure.pdf):**
   non-split self-extension, defective QNM, and cut-off Green double pole.
 - **[Paper 18](18-static-bach-flat-black-hole-thermodynamics.pdf):**
-  residual-basic charge normalization and simultaneous signed first laws at
-  every simple horizon of the certified Mannheim--Kazanas family. This is an
-  exact static and linear-spherical charge theorem, not a physical-process
-  or radiative thermodynamics theorem.
+  residual-basic charge normalization and simultaneous signed horizon
+  first-law identities on regular local quotient charts of the certified
+  Mannheim--Kazanas family. This is an exact static and linear-spherical
+  charge theorem, not a physical-process or radiative thermodynamics theorem.
 
 ## Research priorities
 

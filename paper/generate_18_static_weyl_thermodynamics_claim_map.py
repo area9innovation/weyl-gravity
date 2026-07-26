@@ -19,6 +19,7 @@ CERTIFICATES = {
     "BH1": CERT_DIR / "BH1_LEE_WALD_PREFLIGHT.json",
     "BH1A": CERT_DIR / "BH1A_NORMALIZED_GENERATOR.json",
     "BH1B": CERT_DIR / "BH1B_DYNAMICAL_EXTENSION.json",
+    "P18": CERT_DIR / "PAPER18_STATIC_FIRST_LAW_PROMOTION.json",
 }
 
 
@@ -39,10 +40,10 @@ def build() -> dict:
     return {
         "schema": "paper18-static-weyl-thermodynamics-claim-map-v1",
         "paper": rel(PAPER),
-        "title": "Residual-Basic Charges and Simultaneous Horizon First Laws in Static Weyl Gravity",
+        "title": "Residual-Basic Charges and Simultaneous Horizon First Laws on the Mannheim-Kazanas Family",
         "scope": {
             "background": "static spherical pure-Weyl gravity; Laurent-class background theorem and Mannheim-Kazanas charge component",
-            "phase_space": "static parameter slice plus the complete linear l=0 conformal/diffeomorphism gauge sector at charge level",
+            "phase_space": "regular local quotient charts of the Mannheim-Kazanas static parameter slice plus the complete linear l=0 conformal/diffeomorphism gauge sector at charge level",
             "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
             "arithmetic": "exact symbolic rational and polynomial identities",
         },
@@ -71,21 +72,21 @@ def build() -> dict:
             {
                 "id": "P18-C4",
                 "statement": "Residual basicness forces N=u*f(J); for N=u the corrected charge is exact with the displayed Hamiltonian.",
-                "evidence": ["BH1A"],
-                "status": "EXACT_STATIC_PARAMETER_SLICE",
+                "evidence": ["BH1A", "P18"],
+                "status": "EXACT_ON_DECLARED_REGULAR_LOCAL_QUOTIENT_CHARTS",
                 "used_in_main_theorem": True,
             },
             {
                 "id": "P18-C5",
                 "statement": "The displayed Hamiltonian, Wald entropy, and signed temperature obey dH=T_h*dS_h at every simple horizon simultaneously.",
-                "evidence": ["BH1A"],
+                "evidence": ["BH1A", "P18"],
                 "status": "EXACT_STATIC_PARAMETER_SLICE",
                 "used_in_main_theorem": True,
             },
             {
                 "id": "P18-C6",
                 "statement": "Arbitrary linear spherical Weyl and diffeomorphism directions have zero corrected charge; conformal directions also have zero entropy variation and zero corrected pairing with parameter modes.",
-                "evidence": ["BH1B"],
+                "evidence": ["BH1B", "P18"],
                 "status": "EXACT_LINEAR_CHARGE_LEVEL_L0",
                 "used_in_main_theorem": True,
             },
@@ -111,14 +112,14 @@ def build() -> dict:
         "independence_profile": {
             "producer_and_verifier_code": "separate implementations",
             "curvature_representation": "verifier uses an independent Schouten/Kulkarni-Nomizu Weyl construction",
-            "arithmetic_backend": "shared exact SymPy backend",
+            "arithmetic_backend": "exact SymPy certificate backends plus an independent Python-standard-library fractions.Fraction sparse Laurent-polynomial rail",
             "mathematical_derivation": "independent recomputation of tensor identities, entropy, reductions, and mutations where recorded by each certificate",
         },
         "release_boundary": {
             "paper_status": "WORKING_DRAFT",
             "immutable_archive": False,
             "expert_peer_review": False,
-            "certificate_lifecycle_note": "BH1, BH1A, and BH1B retain their historical PREFLIGHT lifecycle labels; this map promotes no broader phase-space claim.",
+            "certificate_lifecycle_note": "BH1, BH1A, and BH1B retain their historical PREFLIGHT lifecycle labels; P18 is an append-only CLASSIFIED successor scoped only to the paper's static theorem and linear spherical charge audit.",
         },
     }
 

@@ -1,0 +1,99 @@
+{
+  "claim_flags": {
+    "laurent_classification_certified": true,
+    "linear_spherical_gauge_audit_certified": true,
+    "physical_process_first_law_certified": false,
+    "radiative_flux_certified": false,
+    "residual_basic_normalization_certified": true,
+    "simultaneous_static_first_law_certified": true
+  },
+  "declaration": {
+    "expert_peer_reviewed": false,
+    "historical_certificates_unchanged": true,
+    "lifecycle": "CLASSIFIED",
+    "scope": "Paper 18 exact Mannheim-Kazanas static parameter theorem and linear spherical charge audit"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "completeness of static Bach vacua beyond the Laurent ansatz",
+    "a preferred physical mass or asymptotic clock",
+    "a nonlinear or second-order physical-process first law",
+    "a bilinear radiative flux law",
+    "stability, Hawking radiation, or a quantum theorem",
+    "expert peer review or journal acceptance"
+  ],
+  "evidence": {
+    "BH0": {
+      "path": "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json",
+      "result_token": "PURE_WEYL_STATIC_SPHERICAL_BACKGROUND_CLASSIFIED",
+      "sha256": "d08a76dd21b1c32270f6b8082c382e23561e7865c4454139fffc890ac14911e4"
+    },
+    "BH1": {
+      "path": "black_hole_programme/certificates/BH1_LEE_WALD_PREFLIGHT.json",
+      "result_token": "BH1_PREFLIGHT_COMPLETE_BARE_FORM_NONINTEGRABLE",
+      "sha256": "74ff9ba44a51272472dcb2eaf50aab9759383af44ea115c6c5d11d11a08ec1f6"
+    },
+    "BH1A": {
+      "path": "black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json",
+      "result_token": "BH1_NONINTEGRABILITY_REMOVED_BY_FIELD_DEPENDENT_GENERATOR",
+      "sha256": "12cd1f0746645fffa4e2d9af35b638b7eda64fb10950884a4a0b3c703043ea0b"
+    },
+    "BH1B": {
+      "path": "black_hole_programme/certificates/BH1B_DYNAMICAL_EXTENSION.json",
+      "result_token": "BH1_DYNAMICAL_HORIZON_PHASE_SPACE_CERTIFIED",
+      "sha256": "8b7b0625e02dc171632de22d91734defd5e79d3ba9fee9a0772b1d12c1194b30"
+    },
+    "P18_STDLIB": {
+      "path": "reports/PAPER18_STDLIB_ALGEBRA_RECEIPT.json",
+      "result_token": "PAPER18_STDLIB_EXACT_ALGEBRA_PASS",
+      "sha256": "319622a71f97a51faf34abe530f7ccc8f3bf1037816297ef7416dac0d893fded"
+    }
+  },
+  "independence_profile": {
+    "arithmetic_backend": "SymPy exact algebra for programme certificates; Python fractions.Fraction only for the Paper 18 independent algebra rail",
+    "code": "separate programme producers, certificate verifiers, claim-map verifier, and Paper 18 standard-library verifier",
+    "derivation": "the paper prints the reduced Bach rows and exact first-law quotients; verifiers recompute rather than parse expected prose",
+    "representation": "independent curvature construction plus an independent sparse Laurent-polynomial representation for the charge and first-law core"
+  },
+  "paper_artifacts": {
+    "pdf": {
+      "path": "paper/18-static-bach-flat-black-hole-thermodynamics.pdf",
+      "sha256": "ce5b8a0ed5ac3c73f17c475e995c43d86106157fc44a5a87613688bbdfadb4bb"
+    },
+    "source": {
+      "path": "paper/18-static-bach-flat-black-hole-thermodynamics.tex",
+      "sha256": "18f79cca422e2de7b2fe8b2605b2934d7a88648d57bb64347b09ffc8b2ea9029"
+    }
+  },
+  "promoted_claims": [
+    {
+      "id": "P18-C1",
+      "statement": "The Bach-flat locus is complete within the declared six-term Laurent ansatz."
+    },
+    {
+      "id": "P18-C4",
+      "statement": "On each declared regular local quotient chart, residual basicness fixes N=u*f(J), and u*F=dH."
+    },
+    {
+      "id": "P18-C5",
+      "statement": "The residual-basic Hamiltonian obeys dH=T_h*dS_h at every locally labelled simple horizon."
+    },
+    {
+      "id": "P18-C6",
+      "statement": "The complete linear spherical conformal/diffeomorphism gauge sector does not change the charge theorem."
+    }
+  ],
+  "provenance": {
+    "engine_path": "black_hole_programme/paper18_static_first_law_promotion.py",
+    "engine_sha256": "e0d3ca49ca5873dd11cbd11abe8be005166c1546736a8527a13df931f46488a1"
+  },
+  "result_id": "PAPER18_STATIC_FIRST_LAW_PROMOTION",
+  "result_token": "PAPER18_STATIC_FIRST_LAW_CLASSIFIED",
+  "schema": "paper18-static-first-law-promotion-v1",
+  "schema_path": "black_hole_programme/schema/paper18-static-first-law-promotion-v1.schema.json",
+  "schema_sha256": "9530aa88197814333cbf1c0b2da2e6371b9f6a0a29e062c65c3248e7994c4957",
+  "verification_command": "python3 black_hole_programme/verify_paper18_static_first_law_promotion.py"
+}

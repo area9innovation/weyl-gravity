@@ -1,0 +1,58 @@
+{
+  "artifacts": {
+    "black_hole_programme/certificates/PAPER18_STATIC_FIRST_LAW_PROMOTION.json": "e092b571aeacc4172f0dca3d0804fcea0ab0abe59b2b8335c5a77745b4273463",
+    "black_hole_programme/paper18_static_first_law_promotion.py": "e0d3ca49ca5873dd11cbd11abe8be005166c1546736a8527a13df931f46488a1",
+    "black_hole_programme/schema/paper18-static-first-law-promotion-v1.schema.json": "9530aa88197814333cbf1c0b2da2e6371b9f6a0a29e062c65c3248e7994c4957",
+    "black_hole_programme/verify_paper18_static_first_law_promotion.py": "f63d2da572789304432394f4baeae441f57724ff58d586ee504a90d0f163b01f",
+    "paper/18-static-bach-flat-black-hole-thermodynamics-claim-map.json": "d27eb5434a4b69595ae67c78052c47fae46eb0c2363cccb5ca0b4863054f5f08",
+    "paper/18-static-bach-flat-black-hole-thermodynamics.pdf": "ce5b8a0ed5ac3c73f17c475e995c43d86106157fc44a5a87613688bbdfadb4bb",
+    "paper/18-static-bach-flat-black-hole-thermodynamics.tex": "18f79cca422e2de7b2fe8b2605b2934d7a88648d57bb64347b09ffc8b2ea9029",
+    "paper/verify_18_static_weyl_thermodynamics_stdlib.py": "1e26c2139e284d8090ec726f5ea0bd0b125011ac2536d5e83198a40df85c9a6a",
+    "reports/PAPER18_STDLIB_ALGEBRA_RECEIPT.json": "319622a71f97a51faf34abe530f7ccc8f3bf1037816297ef7416dac0d893fded"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "higher_tiers_not_run": {},
+  "result_token": "PAPER18_PUBLICATION_HARDENING_PASS",
+  "schema": "paper18-publication-hardening-tier-receipt-v1",
+  "tests": [
+    {
+      "command": "python3 paper/verify_18_static_weyl_thermodynamics_stdlib.py --out reports/PAPER18_STDLIB_ALGEBRA_RECEIPT.json",
+      "elapsed_seconds": 0.05,
+      "result": "PASS 21 independent exact algebra checks",
+      "tier": 1
+    },
+    {
+      "command": "python3 black_hole_programme/verify_paper18_static_first_law_promotion.py",
+      "elapsed_seconds": 0.12,
+      "result": "PASS append-only promotion certificate and independent rail",
+      "tier": 2
+    },
+    {
+      "command": "python3 paper/verify_18_static_weyl_thermodynamics_claim_map.py",
+      "elapsed_seconds": 0.02,
+      "result": "PASS claim map, hashes, flags, and manuscript boundary",
+      "tier": 2
+    },
+    {
+      "command": "python3 -m pytest -q black_hole_programme/tests/test_paper18_static_first_law_promotion.py",
+      "elapsed_seconds": 0.66,
+      "result": "2 passed",
+      "tier": 1
+    },
+    {
+      "command": "python3 -m pytest black_hole_programme/tests/ -q --junitxml=/tmp/paper18-full-suite.xml",
+      "elapsed_seconds": 85.54,
+      "result": "175 passed",
+      "tier": 3
+    },
+    {
+      "command": "pdflatex -interaction=nonstopmode -halt-on-error 18-static-bach-flat-black-hole-thermodynamics.tex (two passes); scan log for undefined references, overfull boxes, LaTeX errors, and fatal errors",
+      "elapsed_seconds": 4.9,
+      "result": "PASS; 13 pages; no scanned warnings or errors",
+      "tier": 0
+    }
+  ]
+}
