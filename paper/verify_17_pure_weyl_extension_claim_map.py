@@ -249,7 +249,8 @@ def verify_manuscript(claims: dict, paper: Path) -> None:
     text = paper.read_text()
     required = [
         "The paper has five results.",
-        "Authors withheld for review",
+        "GPT-5.6.sol",
+        "Asger Alstrup Palm",
         "\\texttt{LOCAL-ALGEBRAIC}",
         "\\texttt{REDUCED-MODE}",
         "Global retarded ringdown expansion",

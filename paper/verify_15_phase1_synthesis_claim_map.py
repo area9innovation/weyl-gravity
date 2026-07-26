@@ -18,10 +18,7 @@ COVERAGE_SOURCE = ROOT / "planning/paper-coverage/phase1-paper-coverage-overlay-
 COVERAGE = ROOT / "planning/paper-coverage/paper15-phase1-synthesis-overlay-2026-07-22.json"
 
 AUTHOR_BLOCK = r"""\author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
-\and Claude Fable 5\thanks{Anthropic model and computational coauthor. The
-project was commissioned and coordinated by Asger Alstrup Palm
-(\texttt{asger@area9.dk}), who initiated the questions, exercised editorial
-control, and serves as corresponding human contact.}}"""
+\and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}"""
 
 EXPECTED_PHASE2 = {
     "PURE_WEYL_PHASE2_GENERIC_L_PARITY_DISPOSITION_V1": (

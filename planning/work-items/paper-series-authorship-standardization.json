@@ -1,0 +1,44 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/paper-series-authorship-standardization",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "paper-series-authorship-standardization",
+  "source": {
+    "path": "planning/work-items/paper-series-authorship-standardization.json",
+    "span": null
+  },
+  "body": {
+    "owner": "paper-series-authorship-standardization",
+    "state": "PROPOSED",
+    "stream": "programme",
+    "priority": 1,
+    "objective": "Standardize the authored LaTeX papers, supplements, and archives in paper/ to GPT-5.6.sol as principal programme author and Asger Alstrup Palm as programme orchestrator, corresponding human contact, and Honorary Professor at DTU Compute, while retaining Claude Fable 5 as computational coauthor on Paper 00 only; rebuild PDFs and refresh manuscript-bound claim maps.",
+    "stop_condition": "Twenty-three authored TeX documents contain the identical GPT-5.6.sol and Asger Alstrup Palm block; Paper 00 contains the same block with Claude Fable 5 retained as computational coauthor; no other Claude or Authors withheld line remains; all affected PDFs build, manuscript-bound hashes are refreshed, current authorship checks pass, and a scoped receipt records any unrelated pre-existing verifier drift.",
+    "current_gate": "mechanical authorship and provenance update only; no scientific claim changes",
+    "forbid": "no changes to theorem statements, equations, scientific lifecycle states, certificate contents, unauthored include fragments, or unrelated shared-worktree files",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-paper17-referee-major-revision"
+    ],
+    "activates": [
+      "consistent public programme attribution",
+      "new standalone GitHub repository preparation"
+    ],
+    "allowed_paths": [
+      "paper/",
+      "planning/paper-coverage/paper10-polar-extra-publication-boundary-repair-2026-07-22.json",
+      "reports/paper-series-authorship-standardization-2026-07-26.md",
+      "reports/PAPER_SERIES_AUTHORSHIP_STANDARDIZATION_TIER_RECEIPT.json",
+      "planning/work-items/paper-series-authorship-standardization.json",
+      "planning/events/"
+    ],
+    "resource_hint": "This is a bulk mechanical authorship rewrite. Preserve Claude Fable 5 on Paper 00 only, preserve all mathematical content, refresh only hashes invalidated by the rewrite, and use exact-path commit intent.",
+    "input_commit": "6a3210d92",
+    "notes": [
+      "LOCAL-ALGEBRAIC documentation-only update",
+      "No scientific promotion",
+      "Fragments without an author block remain unchanged"
+    ]
+  },
+  "edges": []
+}
