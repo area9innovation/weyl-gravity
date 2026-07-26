@@ -1,0 +1,50 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/work/phase4-black-hole-paper17-publication-consolidation",
+  "kind": "work",
+  "schema": "work-v0",
+  "title": "phase4-black-hole-paper17-publication-consolidation",
+  "source": {
+    "path": "planning/work-items/phase4-black-hole-paper17-publication-consolidation.json",
+    "span": null
+  },
+  "body": {
+    "owner": "phase4-black-hole-paper17-publication-consolidation",
+    "state": "PROPOSED",
+    "stream": "black-hole",
+    "priority": 1,
+    "objective": "Consolidate Paper 17 into a theorem-first publication manuscript whose main line contains only the non-split Regge--Wheeler self-extension, exact critical-mass jet, certified defective QNM, exterior cut-off Green double pole, and exact source/observable nonannihilation results.",
+    "stop_condition": "Paper 17 has a concise abstract, a five-result dependency table, proofs or precise proof reductions for every retained theorem, an explicit distinction between LOCAL-ALGEBRAIC, REDUCED-MODE, and unproved LORENTZIAN-CAUSAL claims, and no publication-weight treatment of higher mass jets, detector templates, coherent forcing, generic two-parameter unfoldings, pseudospectra, or positive-metric limits. The generated claim map and independent verifier bind only the retained scientific spine, mutation tests fail closed, the PDF builds cleanly, and a consolidation report and tier receipt record the omitted programme material and verification.",
+    "current_gate": "publication-level scientific compression without loss or promotion of the certified central claims",
+    "forbid": "no new scientific promotion; no global retarded contour theorem; no detector sensitivity or astrophysical-source claim; no claim that the generalized constant component satisfies standard asymptotic-flatness falloff; no deletion or modification of source certificates; no inclusion of unrelated shared-worktree changes",
+    "depends_on": [
+      "sf:program/work/phase4-black-hole-paper17-conserved-source-overlap"
+    ],
+    "activates": [
+      "external referee review of Paper 17",
+      "separate spectral-kinematics and critical-response follow-up manuscript",
+      "global weighted Fredholm and causal contour realization"
+    ],
+    "allowed_paths": [
+      "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
+      "paper/17-pure-weyl-schwarzschild-extension-structure.pdf",
+      "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json",
+      "paper/generate_17_pure_weyl_extension_claim_map.py",
+      "paper/verify_17_pure_weyl_extension_claim_map.py",
+      "paper/test_17_pure_weyl_extension_claim_map.py",
+      "reports/phase4-black-hole-paper17-publication-consolidation-2026-07-26.md",
+      "reports/PAPER17_PUBLICATION_CONSOLIDATION_TIER_RECEIPT.json",
+      "planning/work-items/phase4-black-hole-paper17-publication-consolidation.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Treat the existing manuscript and certificates as the source corpus. Preserve the central exact and validated results, but move programme-level consequences to the reports and git history rather than presenting them as coequal theorems.",
+    "input_commit": "6657a4d6e",
+    "notes": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE",
+      "LORENTZIAN-CAUSAL remains fail-closed",
+      "This is a publication consolidation, not a new theorem promotion."
+    ]
+  },
+  "edges": []
+}

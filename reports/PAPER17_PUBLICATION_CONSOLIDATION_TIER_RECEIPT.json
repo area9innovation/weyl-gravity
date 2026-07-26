@@ -1,0 +1,89 @@
+{
+  "schema": "tier-receipt-v1",
+  "result_id": "PAPER17_PUBLICATION_CONSOLIDATION",
+  "date": "2026-07-26",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "work_item": "sf:program/work/phase4-black-hole-paper17-publication-consolidation",
+  "input_commit": "6657a4d6e",
+  "outcome": {
+    "status": "PASS",
+    "scientific_promotion": false,
+    "previous_pages": 54,
+    "current_pages": 15,
+    "previous_words": 15754,
+    "current_words": 4049,
+    "retained_central_results": 5
+  },
+  "artifacts": {
+    "paper/17-pure-weyl-schwarzschild-extension-structure.tex": "ad24d9ab328102688a07dddeb4296313861072983c840649fd5b689de81f9914",
+    "paper/17-pure-weyl-schwarzschild-extension-structure.pdf": "5b7335cdd264f1d7d25b2354d94641bcab20e786babc769aab7a2ed7fbac13c0",
+    "paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json": "756065db4062102fe3c3cc3573451eea7be5db9a3adaacbe191ce523843026c1",
+    "paper/generate_17_pure_weyl_extension_claim_map.py": "8aae450969975b3e5cacab35f54dbce00f9b848c74b5ee672e62d660a084ae84",
+    "paper/verify_17_pure_weyl_extension_claim_map.py": "a09c4c87ff060260bc1b04a870c8dbfd7c0fe1f9481535962ccd3288df385fbe",
+    "paper/test_17_pure_weyl_extension_claim_map.py": "660109e275fd18f5d06272c1574c5cb86ba3158ba65467d2e5a463d785ea3af7"
+  },
+  "tiers": [
+    {
+      "tier": 0,
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile paper/generate_17_pure_weyl_extension_claim_map.py paper/verify_17_pure_weyl_extension_claim_map.py paper/test_17_pure_weyl_extension_claim_map.py",
+        "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 17-pure-weyl-schwarzschild-extension-structure.tex",
+        "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 17-pure-weyl-schwarzschild-extension-structure.tex",
+        "git diff --check -- <scoped paths>"
+      ],
+      "notes": "Two-pass PDF build produced 15 pages. The only layout message was one harmless underfull table cell; inspected pages were visually clean."
+    },
+    {
+      "tier": 1,
+      "status": "PASS",
+      "commands": [
+        "python3 paper/generate_17_pure_weyl_extension_claim_map.py --check",
+        "python3 paper/verify_17_pure_weyl_extension_claim_map.py",
+        "python3 -m unittest paper.test_17_pure_weyl_extension_claim_map"
+      ],
+      "tests": 11,
+      "elapsed_seconds": 6.728
+    },
+    {
+      "tier": 2,
+      "status": "PASS",
+      "commands": [
+        "python3 black_hole_programme/phase4/axial_qnm_conserved_source_overlap_v1/verify.py",
+        "python3 -m unittest black_hole_programme.phase4.axial_qnm_conserved_source_overlap_v1.test_source_overlap",
+        "python3 black_hole_programme/phase4/axial_qnm_null_infinity_reconstruction_v1/verify.py",
+        "python3 -m unittest black_hole_programme.phase4.axial_qnm_null_infinity_reconstruction_v1.test_reconstruction",
+        "python3 black_hole_programme/phase4/axial_qnm_fredholm_promotion_v1/verify.py",
+        "python3 -m unittest black_hole_programme.phase4.axial_qnm_fredholm_promotion_v1.test_fredholm",
+        "python3 black_hole_programme/phase4/einstein_weyl_critical_mass_jet_v1/verify.py",
+        "python3 -m unittest black_hole_programme.phase4.einstein_weyl_critical_mass_jet_v1.test_mass_jet",
+        "python3 black_hole_programme/phase3/axial_qnm_projective_cocycle_v1/verify.py",
+        "python3 -m unittest black_hole_programme.phase3.axial_qnm_projective_cocycle_v1.test_projective_cocycle",
+        "python3 -m black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.full_contour_winding_v1.verify",
+        "python3 -m unittest black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.full_contour_winding_v1.test_winding",
+        "python3 -m black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.local_selector_v1.verify",
+        "python3 -m unittest black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.local_selector_v1.test_selector",
+        "python3 -m black_hole_programme.phase3.axial_qnm_spin_one_local_unit_v1.verify",
+        "python3 -m unittest black_hole_programme.phase3.axial_qnm_spin_one_local_unit_v1.test_local_unit"
+      ],
+      "tests": 41,
+      "notes": "The directly affected exact and validated authority chain replayed successfully. Two relative-import verifiers were rerun in module mode after direct-path invocation correctly failed."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "reason": "Publication consolidation only: no source operator, shared algebra, certificate schema, release, freeze, or scientific lifecycle promotion changed."
+    }
+  ],
+  "does_not_establish": [
+    "LORENTZIAN-CAUSAL resolvent or retarded contour theorem",
+    "complete QNM expansion or late-time asymptotics",
+    "standard falloff for the generalized constant component",
+    "specified astrophysical source overlap or detector sensitivity",
+    "all-multipole Bach nonsplitting",
+    "quantum positivity or unitarity"
+  ]
+}
