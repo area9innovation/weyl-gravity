@@ -192,3 +192,6 @@ the six publication artifacts themselves are final.
 CLOSE-OUT: DONE — the referee’s mathematical boundary
 objections are resolved without weakening the certified self-extension,
 defective-resonance, or exterior Green-pole theorems.
+
+EVIDENCE: `reports/PAPER17_REFEREE_MAJOR_REVISION_TIER_RECEIPT.json`;
+`paper/17-pure-weyl-schwarzschild-extension-structure-claim-map.json`.
