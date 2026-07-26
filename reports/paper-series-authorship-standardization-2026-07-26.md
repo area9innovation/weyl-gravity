@@ -52,6 +52,6 @@ This work establishes consistent public attribution and buildable publication
 artifacts. It does not establish publication-policy compliance, human
 technical authorship, journal eligibility, or any new scientific claim.
 
-CLOSE-OUT: DONE
+CLOSE-OUT: DONE — The 24 authored papers now carry the declared consistent programme attribution, all publication PDFs compile, and affected manuscript provenance is refreshed.
 
 EVIDENCE: `reports/PAPER_SERIES_AUTHORSHIP_STANDARDIZATION_TIER_RECEIPT.json`
