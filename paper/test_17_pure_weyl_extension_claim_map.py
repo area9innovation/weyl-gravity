@@ -76,17 +76,17 @@ class Paper17ConsolidatedClaimMapTests(unittest.TestCase):
     def test_mass_normalization_mutation_rejected(self) -> None:
         self.assert_mutation_rejected(
             lambda data: data["exact_identities"][
-                "graded_mass_squared_tangent"
+                "complete_massive_first_jet"
             ].update(
-                {"fixed_frequency_tangent_relation": "m=-I*omega*tau/2"}
+                {"fixed_frequency_tangent_relation": "m=I*omega*tau/2"}
             ),
-            "graded mass-squared declaration drift",
+            "complete massive first-jet declaration drift",
         )
 
     def test_physical_mass_crosswalk_promotion_rejected(self) -> None:
         self.assert_mutation_rejected(
             lambda data: data["claim_flags"].update(
-                {"complete_coupled_massive_axial_crosswalk": True}
+                {"all_order_differentiated_massive_jost_crosswalk": True}
             ),
             "fail-closed claim flag drift",
         )
@@ -94,9 +94,9 @@ class Paper17ConsolidatedClaimMapTests(unittest.TestCase):
     def test_physical_mass_velocity_promotion_rejected(self) -> None:
         self.assert_mutation_rejected(
             lambda data: data["exact_identities"][
-                "graded_mass_squared_tangent"
+                "complete_massive_first_jet"
             ].update({"physical_mass_velocity_certified": True}),
-            "graded mass-squared declaration drift",
+            "complete massive first-jet declaration drift",
         )
 
     def test_smith_mutation_rejected(self) -> None:

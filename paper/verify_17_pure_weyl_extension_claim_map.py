@@ -97,28 +97,65 @@ def verify_gauge_and_mass(claims: dict) -> None:
     )) - expected) != 0:
         fail("triangular-gauge commutator failed")
 
-    mass = claims["exact_identities"]["graded_mass_squared_tangent"]
+    mass = claims["exact_identities"]["complete_massive_first_jet"]
     expected_mass = {
-        "graded_mass_operator": "L-m*f",
-        "mass_class": "[f]",
-        "bach_to_mass_class": "I*omega/2",
-        "fixed_frequency_tangent_relation": "m=I*omega*tau/2",
+        "mass_parameter": "m=mu**2",
+        "physical_system": "coupled_QZ",
+        "massless_factorization": "RW_spin2 direct_sum Maxwell_spin1",
+        "factor_transform_determinant": "omega**(-4)",
+        "naive_graded_mass_operator": "L-m*f",
+        "naive_graded_mass_class": "[f]",
+        "physical_tensor_mass_class": "(1/3)*[f]",
+        "bach_to_physical_mass_class": "3*I*omega/2",
+        "fixed_frequency_tangent_relation": "m=3*I*omega*tau/2",
         "spectral_global_reparameterization": False,
-        "complete_coupled_massive_axial_system": False,
+        "complete_coupled_massive_axial_first_jet": True,
+        "reverse_tensor_to_vector_multiplier": "-16/(27*omega**2)",
+        "physical_mass_primitive": "r/(6*omega**2)",
         "coulomb_exponent": "sigma*I*(2*k+m/k)",
         "coulomb_exponent_mass_derivative_at_zero": "0",
-        "q_slope_at_infinity": "-I/(8*omega)",
-        "endpoint_comparison_status": "FORMAL_ASYMPTOTIC_ONLY",
+        "reduced_physical_r_slope": "-sigma*I/(6*omega)",
+        "scaled_bach_r_slope": "sigma/4",
+        "endpoint_comparison_status": "EXACT_LEADING_ASYMPTOTIC",
+        "all_order_differentiated_jost_certified": False,
         "opposite_jost_admixture_excluded": False,
         "physical_mass_velocity_certified": False,
     }
     if mass != expected_mass:
-        fail("graded mass-squared declaration drift")
+        fail("complete massive first-jet declaration drift")
     omega, sigma = sp.symbols("omega sigma", nonzero=True)
     kprime = -1 / (2 * omega)
     rho_prime = sigma * sp.I * (2 * kprime + 1 / omega)
     if sp.simplify(rho_prime) != 0:
         fail("Coulomb exponent derivative did not cancel")
+
+    r = sp.symbols("r", nonzero=True)
+    f = (r - 2) / r
+    u2 = omega**2 - f * (6 / r**2 - 6 / r**3)
+
+    def Dr(expr: sp.Expr) -> sp.Expr:
+        return sp.cancel(f * sp.diff(expr, r))
+
+    def KU(expr: sp.Expr) -> sp.Expr:
+        return sp.cancel(
+            Dr(Dr(Dr(expr))) + 4 * u2 * Dr(expr) + 2 * Dr(u2) * expr
+        )
+
+    physical_density = (
+        (r - 2) * (3 * r**4 * omega**2 - 20 * r + 30)
+        / (3 * r**5 * omega**2)
+    )
+    if sp.cancel(
+        physical_density - KU(r / (6 * omega**2)) - f / 3
+    ) != 0:
+        fail("complete physical tensor mass normal form failed")
+    reduced_slope = -sigma * sp.I / (2 * omega) + sigma * sp.I / (
+        3 * omega
+    )
+    if sp.simplify(
+        (3 * sp.I * omega / 2) * reduced_slope - sigma / 4
+    ) != 0:
+        fail("factor-three endpoint slope failed")
 
 
 def verify_resonance_and_green(claims: dict) -> None:
@@ -130,7 +167,9 @@ def verify_resonance_and_green(claims: dict) -> None:
         "selector": "kappa=b/a_prime=beta/alpha",
         "carrier_quotient": "-1/kappa",
         "intrinsic_tau_velocity": "-kappa",
-        "physical_mass_velocity_relation": "CONDITIONAL_CROSSWALK_ONLY",
+        "physical_mass_velocity_relation": (
+            "CONDITIONAL_nu=2*I*kappa/(3*omega)"
+        ),
         "kappa_re_enclosure": ["-0.047", "0.022"],
         "kappa_im_enclosure": ["0.064", "0.138"],
     }:
@@ -235,6 +274,26 @@ def verify_authority_flags(claims: dict) -> None:
         ("conserved_source_overlap", "stress_energy_conserved", True),
         ("conserved_source_overlap", "stress_energy_traceless", True),
         ("conserved_source_overlap", "constructed_source_adjoint_overlap_nonzero", True),
+        (
+            "complete_massive_axial_jet",
+            "complete_first_mass_squared_jet_transformed",
+            True,
+        ),
+        (
+            "complete_massive_axial_jet",
+            "factor_three_Bach_mass_crosswalk_exact",
+            True,
+        ),
+        (
+            "complete_massive_axial_jet",
+            "all_order_differentiated_Jost_map_certified",
+            False,
+        ),
+        (
+            "complete_massive_axial_jet",
+            "physical_QNM_velocity_certified",
+            False,
+        ),
         ("critical_mass_parent", "physical_mass_jet_equals_intrinsic_radial_tau", False),
         ("critical_mass_parent", "physical_b_equals_minus_mass_derivative_of_jost", False),
         ("critical_mass_parent", "physical_massive_qnm_slope_certified", False),
@@ -258,8 +317,8 @@ def verify_manuscript(claims: dict, paper: Path) -> None:
         "The polynomially weighted term",
         "isolated local resonance contour",
         "specified material trajectory",
-        "This is \\emph{not} asserted to be the complete coupled massive axial",
-        "The proposition is deliberately formal.",
+        "The complete coupled-system map and its leading differentiated endpoint",
+        "all-order parameter dependence",
         "complexified frequency-domain conserved and traceless",
     ]
     for phrase in required:
@@ -293,7 +352,7 @@ def verify_manuscript(claims: dict, paper: Path) -> None:
 
     flags = claims["claim_flags"]
     required_false = [
-        "complete_coupled_massive_axial_crosswalk",
+        "all_order_differentiated_massive_jost_crosswalk",
         "endpoint_compatible_physical_mass_jet_exact",
         "physical_massive_qnm_slope_certified",
         "real_causal_source_overlap_nonzero",
@@ -310,6 +369,7 @@ def verify_manuscript(claims: dict, paper: Path) -> None:
 
     required_true = [
         "graded_mass_squared_direction_exact",
+        "complete_coupled_massive_axial_first_jet_crosswalk_exact",
         "outgoing_trace_bridge_exact",
         "complexified_conserved_traceless_source_overlap_nonzero",
     ]

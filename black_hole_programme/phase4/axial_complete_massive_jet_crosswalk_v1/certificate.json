@@ -1,0 +1,311 @@
+{
+  "bach_crosswalk": {
+    "bach_density": "I*(r - 2)*(2*omega**2*r + 3*omega**2 + 12)/(5*omega*r**4)",
+    "bach_primitive": "-I*(15*r**3 + 13*r**2 + 12*r + 9)/(120*omega*r**2)",
+    "combined_primitive": "-I*(45*r**3 + 13*r**2 + 12*r + 9)/(120*omega*r**2)",
+    "identity": "I_Bach=(3*I*omega/2)*I_phys+K_U(q_combined)",
+    "not_a_global_parameter_redefinition": true,
+    "physical_scaling": "3*I*omega/2",
+    "residual": "0",
+    "tangent_parameter_relation": "m=(3*I*omega/2)*tau at fixed omega, modulo rational gauge"
+  },
+  "claim_flags": {
+    "all_order_differentiated_Jost_map_certified": false,
+    "complete_coupled_massive_axial_equations_imported": true,
+    "complete_first_mass_squared_jet_transformed": true,
+    "exact_massless_Maxwell_RW_factorization": true,
+    "factor_three_Bach_mass_crosswalk_exact": true,
+    "global_causal_resolvent_certified": false,
+    "leading_differentiated_Jost_phase_match": true,
+    "naive_unit_mass_class_rejected": true,
+    "physical_QNM_velocity_certified": false,
+    "physical_tensor_projective_class_computed": true,
+    "reverse_tensor_to_vector_tangent_rationally_removed": true
+  },
+  "complete_first_mass_jet": {
+    "factor_tangent": [
+      [
+        "-(r - 2)*(7*r - 6)/(3*omega**2*r**3)",
+        "-(r - 2)/(omega**2*r)",
+        "-(r - 2)/(omega**2*r**2)",
+        "0"
+      ],
+      [
+        "(r - 2)**2*(11*r - 6)/(3*omega**2*r**5)",
+        "(r - 2)*(7*r - 6)/(3*omega**2*r**3)",
+        "-(r - 2)**2/(omega**2*r**4)",
+        "(r - 2)/(omega**2*r**2)"
+      ],
+      [
+        "16*(r - 2)/(9*omega**2*r**2)",
+        "0",
+        "2*(r - 2)*(5*r - 6)/(3*omega**2*r**3)",
+        "-(r - 2)/(omega**2*r)"
+      ],
+      [
+        "16*(r - 2)**2/(9*omega**2*r**4)",
+        "-16*(r - 2)/(9*omega**2*r**2)",
+        "4*(r - 2)**2*(7*r - 6)/(3*omega**2*r**5)",
+        "-2*(r - 2)*(5*r - 6)/(3*omega**2*r**3)"
+      ]
+    ],
+    "reverse_scalar_source": {
+      "exact": true,
+      "identity": "L1*(P*phi2)=s0*phi2 on ker(L2)",
+      "removing_multiplier_P": "-16/(27*omega**2)",
+      "s0": "32*(r - 2)/(9*omega**2*r**4)",
+      "s1": "0"
+    },
+    "tensor_to_tensor": [
+      [
+        "-(r - 2)*(7*r - 6)/(3*omega**2*r**3)",
+        "-(r - 2)/(omega**2*r)"
+      ],
+      [
+        "(r - 2)**2*(11*r - 6)/(3*omega**2*r**5)",
+        "(r - 2)*(7*r - 6)/(3*omega**2*r**3)"
+      ]
+    ],
+    "tensor_to_vector": [
+      [
+        "16*(r - 2)/(9*omega**2*r**2)",
+        "0"
+      ],
+      [
+        "16*(r - 2)**2/(9*omega**2*r**4)",
+        "-16*(r - 2)/(9*omega**2*r**2)"
+      ]
+    ],
+    "vector_to_tensor": [
+      [
+        "-(r - 2)/(omega**2*r**2)",
+        "0"
+      ],
+      [
+        "-(r - 2)**2/(omega**2*r**4)",
+        "(r - 2)/(omega**2*r**2)"
+      ]
+    ],
+    "vector_to_vector": [
+      [
+        "2*(r - 2)*(5*r - 6)/(3*omega**2*r**3)",
+        "-(r - 2)/(omega**2*r)"
+      ],
+      [
+        "4*(r - 2)**2*(7*r - 6)/(3*omega**2*r**5)",
+        "-2*(r - 2)*(5*r - 6)/(3*omega**2*r**3)"
+      ]
+    ]
+  },
+  "complete_massive_axial_system": {
+    "mass_tangent": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "(r - 2)/r",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "(r - 2)/r",
+        "0"
+      ]
+    ],
+    "massless_flow": [
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "-(omega**2*r**4 - 10*r**2 + 36*r - 32)/r**4",
+        "0",
+        "8*(r - 3)*(r - 2)/r**4",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "2*(r - 2)/r**3",
+        "0",
+        "-(omega**2*r**4 - 4*r**2 + 6*r + 4)/r**4",
+        "0"
+      ]
+    ],
+    "state_order": [
+      "Q",
+      "D(Q)",
+      "Z",
+      "D(Z)"
+    ],
+    "statement": "The complete axial massive-spin-two equations are the coupled Q,Z system, not a single shifted RW equation."
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a convergent all-order differentiated massive Jost construction",
+    "absence of opposite-Jost admixture beyond the formal endpoint class",
+    "the physical massive-QNM velocity at the certified Weyl QNM",
+    "a common global Fredholm domain for the massive and Bach pencils",
+    "a global retarded contour deformation or causal ringdown theorem"
+  ],
+  "endpoint_leading_crosswalk": {
+    "bach_tangent_r_coefficient": "sigma/4",
+    "coulomb_power_first_derivative": "0",
+    "leading_match_exact": true,
+    "mass_reduction_gauge_r_coefficient": "I*sigma/(3*omega)",
+    "raw_physical_mass_tangent_r_coefficient": "-I*sigma/(2*omega)",
+    "reduced_physical_tangent_r_coefficient": "-I*sigma/(6*omega)",
+    "scaled_physical_tangent_r_coefficient": "sigma/4"
+  },
+  "imports": {
+    "bach_projective_cocycle": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_cocycle_v1/certificate.json",
+      "sha256": "3f7c2fff23a70ab8c1f6e922d6799b168ca328f0fa9e68be8a0e8881f80310bb"
+    },
+    "partial_jet_crosswalk": {
+      "path": "black_hole_programme/phase3/axial_partial_jet_transport_crosswalk_v1/certificate.json",
+      "sha256": "cb14869716885ad4613c2247bc0c484b6d870d05cc40294eca025a86ac630d3a"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "massless_factorization": {
+    "determinant": "omega**(-4)",
+    "exact": true,
+    "factor_state_order": [
+      "phi_2",
+      "D(phi_2)",
+      "phi_1",
+      "D(phi_1)"
+    ],
+    "intertwining_residual": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "transform_factor_to_QZ": [
+      [
+        "4*(r - 2)/(3*omega**2*r**2)",
+        "4/(3*omega**2)",
+        "-2*(r - 2)/(omega**2*r**2)",
+        "omega**(-2)"
+      ],
+      [
+        "-4*(omega**2*r**4 - 5*r**2 + 12*r - 4)/(3*omega**2*r**4)",
+        "4*(r - 2)/(3*omega**2*r**2)",
+        "-(omega**2*r**4 - 8*r**2 + 24*r - 16)/(omega**2*r**4)",
+        "-2*(r - 2)/(omega**2*r**2)"
+      ],
+      [
+        "-(7*r - 6)/(3*omega**2*r**2)",
+        "-1/omega**2",
+        "-1/(omega**2*r)",
+        "0"
+      ],
+      [
+        "(3*omega**2*r**4 - 11*r**2 + 28*r - 12)/(3*omega**2*r**4)",
+        "-(7*r - 6)/(3*omega**2*r**2)",
+        "(r - 2)/(omega**2*r**3)",
+        "-1/(omega**2*r)"
+      ]
+    ]
+  },
+  "naive_single_scalar_equality_obstruction": {
+    "augmented_rank": 4,
+    "conclusion": "The complete tensor branch carries one third of the naive single shifted-RW projective class.",
+    "exhaustive_trial": "c_m2/r**2+c_m1/r+c_0",
+    "left_null_witness": [
+      "(104*omega**4 - 75*omega**2 + 126)/(9*omega**4)",
+      "26*(2*omega**2 + 3)/(9*omega**2)",
+      "2*(13*omega**2 + 6)/(9*omega**2)",
+      "1",
+      "0",
+      "0"
+    ],
+    "matrix_rank": 3,
+    "obstruction": "80*(omega**2 - 3)/(3*omega**2)",
+    "tested_false_identity": "[I_phys]=[f]"
+  },
+  "physical_tensor_projective_class": {
+    "class": "[I_phys]=(1/3)[f]",
+    "density": "(r - 2)*(3*omega**2*r**4 - 20*r + 30)/(3*omega**2*r**5)",
+    "normal_form_identity": "I_phys=K_U(q_mass)+(1/3)*f",
+    "normal_form_residual": "0",
+    "primitive": "r/(6*omega**2)",
+    "s0": "(r - 2)*(3*omega**2*r**4 - 14*r + 12)/(3*omega**2*r**5)",
+    "s1": "-2*(r - 2)/(omega**2*r**3)"
+  },
+  "result_id": "PURE_WEYL_PHASE4_AXIAL_COMPLETE_MASSIVE_JET_CROSSWALK",
+  "schema": "phase4-axial-complete-massive-jet-crosswalk-v1",
+  "schema_path": "black_hole_programme/phase4/axial_complete_massive_jet_crosswalk_v1/schema.json",
+  "scope": {
+    "background": "Schwarzschild exterior M=1",
+    "derivative": "D=((r-2)/r)*d/dr",
+    "field": "C(I,omega)(r), generic omega",
+    "frequency_exclusions": [
+      "omega=0",
+      "omega**2=3 for the displayed equality-obstruction witness"
+    ],
+    "mass_parameter": "m=mu**2, the signed squared-mass coefficient",
+    "sector": "axial ell=2"
+  },
+  "sources": {
+    "antoniou_gualtieri_pani": {
+      "arxiv": "2412.15037",
+      "doi": "10.1103/PhysRevD.111.064059",
+      "used_result": "Einstein-Weyl auxiliary-field equations and Schwarzschild massive axial/Jost normalization"
+    },
+    "brito_cardoso_pani": {
+      "arxiv": "1304.6725",
+      "doi": "10.1103/PhysRevD.88.023514",
+      "used_result": "complete Schwarzschild axial massive-spin-two Q,Z system and its massless Berndtson Maxwell/RW transformation"
+    }
+  },
+  "status": "EXACT_COMPLETE_MASSIVE_FIRST_JET_FACTOR_THREE_PASS",
+  "vector_diagonal_tangent": {
+    "density": "(r - 2)*(3*omega**2*r**4 + 14*r - 6)/(3*omega**2*r**5)",
+    "s0": "(r - 2)*(3*omega**2*r**4 + 20*r - 24)/(3*omega**2*r**5)",
+    "s1": "-2*(r - 2)/(omega**2*r**3)"
+  }
+}

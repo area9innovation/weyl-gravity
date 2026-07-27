@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Complete massive axial first-jet crosswalk certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "scope",
+    "sources",
+    "imports",
+    "complete_massive_axial_system",
+    "massless_factorization",
+    "complete_first_mass_jet",
+    "physical_tensor_projective_class",
+    "bach_crosswalk",
+    "naive_single_scalar_equality_obstruction",
+    "endpoint_leading_crosswalk",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase4-axial-complete-massive-jet-crosswalk-v1"
+    },
+    "status": {
+      "const": "EXACT_COMPLETE_MASSIVE_FIRST_JET_FACTOR_THREE_PASS"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "complete_coupled_massive_axial_equations_imported",
+        "exact_massless_Maxwell_RW_factorization",
+        "complete_first_mass_squared_jet_transformed",
+        "factor_three_Bach_mass_crosswalk_exact",
+        "all_order_differentiated_Jost_map_certified",
+        "physical_QNM_velocity_certified",
+        "global_causal_resolvent_certified"
+      ]
+    }
+  }
+}

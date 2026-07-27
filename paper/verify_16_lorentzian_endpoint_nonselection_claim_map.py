@@ -87,7 +87,7 @@ def main() -> None:
         "No local positive metric operator",
         "Combined-future existence and factorization problem",
         "Complex reducibility confinement",
-        "[\\mathcal I_{\\rm mass}]=[\\mathcal I_{\\rm Bach}]",
+        "[\\mathcal I_{\\rm Bach}]=(3i\\omega/2)[\\mathcal I_{\\rm phys}]",
         "Positive-graph and cotangent obstructions",
         "regularized parent overlap",
         "flat-space biwave kernel",
@@ -380,6 +380,30 @@ def main() -> None:
     if mass_jet.get("crosswalk_gate", {}).get("status") != "OPEN_NOT_ASSUMED":
         fail("critical mass/radial crosswalk gate drift")
 
+    complete_mass_jet = json.loads(
+        (ROOT / authorities["complete_massive_axial_jet"]["path"]).read_text()
+    )
+    if (
+        complete_mass_jet.get("result_id")
+        != "PURE_WEYL_PHASE4_AXIAL_COMPLETE_MASSIVE_JET_CROSSWALK"
+    ):
+        fail("complete massive axial first-jet result identity drift")
+    for key in [
+        "complete_coupled_massive_axial_equations_imported",
+        "complete_first_mass_squared_jet_transformed",
+        "reverse_tensor_to_vector_tangent_rationally_removed",
+        "physical_tensor_projective_class_computed",
+        "factor_three_Bach_mass_crosswalk_exact",
+        "leading_differentiated_Jost_phase_match",
+    ]:
+        require_flag(complete_mass_jet, key, True, "complete massive axial jet")
+    for key in [
+        "all_order_differentiated_Jost_map_certified",
+        "physical_QNM_velocity_certified",
+        "global_causal_resolvent_certified",
+    ]:
+        require_flag(complete_mass_jet, key, False, "complete massive axial jet")
+
     # Independently check the new exact cocycle representative against the
     # certified reduced cocycle.  This uses direct rational simplification,
     # not the threshold producer's decomposition.
@@ -490,6 +514,7 @@ def main() -> None:
     certified = claims.get("certified_scope", {})
     for key in [
         "bach_cocycle_redshift_representative_exact",
+        "complete_coupled_massive_first_jet_crosswalk_exact",
         "non_einstein_generalized_qnm_chain_vector",
         "finite_interval_radial_fredholm_pencil",
         "radial_green_operator_second_order_pole",

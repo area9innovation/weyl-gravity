@@ -30,6 +30,7 @@ AUTHORITIES = {
     "parent_resolvent_krein_obstructions": "black_hole_programme/phase4/parent_resolvent_krein_obstructions_v1/certificate.json",
     "rw_maxwell_simplicity_endomorphisms": "black_hole_programme/phase4/rw_maxwell_simplicity_endomorphisms_v1/certificate.json",
     "einstein_weyl_critical_mass_jet": "black_hole_programme/phase4/einstein_weyl_critical_mass_jet_v1/certificate.json",
+    "complete_massive_axial_jet": "black_hole_programme/phase4/axial_complete_massive_jet_crosswalk_v1/certificate.json",
     "axial_local_commutant_spectral_c": "black_hole_programme/phase4/axial_local_commutant_spectral_c_v1/certificate.json",
     "axial_local_nonlocal_positivity": "black_hole_programme/phase4/axial_local_nonlocal_positivity_v1/certificate.json",
     "explicit_tplus_amplitude_shortfall": "black_hole_programme/phase4/axial_explicit_tplus_band_v1/amplitude_certificate.json",
@@ -96,6 +97,12 @@ def claim_map() -> dict:
                 "representative": "I*omega*(r-2)/(2*r)",
                 "parameter_domain": "omega != 0",
             },
+            "complete_massive_axial_first_jet": {
+                "physical_class": "(1/3)*[f]",
+                "bach_to_physical_factor": "3*I*omega/2",
+                "parameter_domain": "omega != 0",
+                "all_order_differentiated_Jost_map_certified": False,
+            },
             "generalized_root_chain": {
                 "geometric_root": "[1,0]",
                 "quotient_component": "-a1/b0",
@@ -127,7 +134,8 @@ def claim_map() -> dict:
             "local_commutant_dual_numbers_exact": True,
             "only_scalar_local_semisimple_observables": True,
             "critical_parent_mass_jet_exact": True,
-            "physical_mass_radial_tau_crosswalk_open": True,
+            "complete_coupled_massive_first_jet_crosswalk_exact": True,
+            "physical_mass_radial_tau_crosswalk_open": False,
             "nonlocal_spectral_C_positive_real_fibers": True,
             "compact_band_spectral_C_norm_equivalence": True,
             "threshold_weighted_C_completion_exact": True,
@@ -168,6 +176,7 @@ def claim_map() -> dict:
             "whole_half_axis_unweighted_C_norm_equivalence": False,
             "full_six_state_commutant_dual_numbers": False,
             "physical_mass_jet_equals_intrinsic_radial_tau": False,
+            "all_order_differentiated_massive_jost_crosswalk": False,
             "physical_massive_qnm_slope": False,
             "channel_factorized_future_C": False,
             "complete_complex_reducibility_classification": False,
@@ -250,7 +259,7 @@ def coverage(claim_sha: str) -> dict:
         ),
         (
             "critical-mass-jet-cocycle-and-spectral-c",
-            "The Bach cocycle has an exact regular redshift representative and the covariant parent has an exact critical mass jet, while the physical radial crosswalk remains open; independently, the incoming Krein fibers admit a compact-band spectral fundamental symmetry with omega, omega, omega-cubed threshold weights.",
+            "The Bach cocycle has an exact regular redshift representative, the covariant parent has an exact critical mass jet, and the complete coupled axial first jet obeys [I_Bach]=(3 i omega/2)[I_phys]; all-orders differentiated Jost promotion remains open. Independently, the incoming Krein fibers admit a compact-band spectral fundamental symmetry with omega, omega, omega-cubed threshold weights.",
             "REDUCED-MODE",
         ),
         (

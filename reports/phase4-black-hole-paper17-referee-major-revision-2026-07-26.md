@@ -4,6 +4,25 @@ Date: 2026-07-26
 Work item: `sf:program/work/phase4-black-hole-paper17-referee-major-revision`  
 Dependency tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`
 
+## Successor correction — 2026-07-27
+
+The open coupled-system item recorded below has now been solved at exact
+first-jet order.  Factoring the complete massive axial \(Q,Z\) equations
+through the massless Maxwell/Regge--Wheeler variables gives
+
+\[
+[\mathcal I_{\rm phys}]=\frac13[f],
+\qquad
+[\mathcal I_{\rm Bach}]
+=\frac{3i\omega}{2}[\mathcal I_{\rm phys}].
+\]
+
+This supersedes the scalar graded normalization
+\((i\omega/2)[f]\) as a physical coupled-system crosswalk.  The all-orders
+analytic differentiated-Jost construction, and hence the physical
+massive-QNM slope, remain open.  The exact certificate is
+`black_hole_programme/phase4/axial_complete_massive_jet_crosswalk_v1/`.
+
 ## Outcome
 
 Paper 17 has been revised against the external major-revision report.  The

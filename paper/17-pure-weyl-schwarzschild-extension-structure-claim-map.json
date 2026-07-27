@@ -7,6 +7,13 @@
       "sha256": "75e18d9a91d6827ad2fae645a05b0fe1cc9a50459f9b03dca280c884f917aca3",
       "status": null
     },
+    "complete_massive_axial_jet": {
+      "path": "black_hole_programme/phase4/axial_complete_massive_jet_crosswalk_v1/certificate.json",
+      "result_id": "PURE_WEYL_PHASE4_AXIAL_COMPLETE_MASSIVE_JET_CROSSWALK",
+      "result_token": null,
+      "sha256": "0c71cd870b1a8152cf19cdde2af8ef62e06be8ce0c79a0f402c6e34df2116579",
+      "status": "EXACT_COMPLETE_MASSIVE_FIRST_JET_FACTOR_THREE_PASS"
+    },
     "conserved_source_overlap": {
       "path": "black_hole_programme/phase4/axial_qnm_conserved_source_overlap_v1/certificate.json",
       "result_id": null,
@@ -72,9 +79,10 @@
     }
   },
   "claim_flags": {
+    "all_order_differentiated_massive_jost_crosswalk": false,
     "bach_mass_direction_normal_form_exact": true,
     "certified_qnm_smith_type_0_0_2": true,
-    "complete_coupled_massive_axial_crosswalk": false,
+    "complete_coupled_massive_axial_first_jet_crosswalk_exact": true,
     "complete_retarded_qnm_expansion": false,
     "complexified_conserved_traceless_source_overlap_nonzero": true,
     "detector_sensitivity": false,
@@ -99,8 +107,7 @@
   "does_not_establish": [
     "LORENTZIAN-CAUSAL resolvent or retarded contour theorem",
     "complete quasinormal expansion or late-time asymptotics",
-    "full coupled massive axial-system crosswalk",
-    "exact physical massive Jost derivative or physical massive-QNM slope",
+    "all-order differentiated massive Jost map and physical massive-QNM slope",
     "standard asymptotic-flatness falloff for the generalized constant component",
     "real causal temporally compact source, specified astrophysical matter source, or detector sensitivity",
     "all-multipole Bach nonsplitting",
@@ -111,6 +118,29 @@
       "parameter_domain": "omega != 0",
       "q": "-I*(15*r + 13 + 12/r + 9/r**2)/(120*omega)",
       "representative": "I*omega*(r-2)/(2*r)"
+    },
+    "complete_massive_first_jet": {
+      "all_order_differentiated_jost_certified": false,
+      "bach_to_physical_mass_class": "3*I*omega/2",
+      "complete_coupled_massive_axial_first_jet": true,
+      "coulomb_exponent": "sigma*I*(2*k+m/k)",
+      "coulomb_exponent_mass_derivative_at_zero": "0",
+      "endpoint_comparison_status": "EXACT_LEADING_ASYMPTOTIC",
+      "factor_transform_determinant": "omega**(-4)",
+      "fixed_frequency_tangent_relation": "m=3*I*omega*tau/2",
+      "mass_parameter": "m=mu**2",
+      "massless_factorization": "RW_spin2 direct_sum Maxwell_spin1",
+      "naive_graded_mass_class": "[f]",
+      "naive_graded_mass_operator": "L-m*f",
+      "opposite_jost_admixture_excluded": false,
+      "physical_mass_primitive": "r/(6*omega**2)",
+      "physical_mass_velocity_certified": false,
+      "physical_system": "coupled_QZ",
+      "physical_tensor_mass_class": "(1/3)*[f]",
+      "reduced_physical_r_slope": "-sigma*I/(6*omega)",
+      "reverse_tensor_to_vector_multiplier": "-16/(27*omega**2)",
+      "scaled_bach_r_slope": "sigma/4",
+      "spectral_global_reparameterization": false
     },
     "conserved_traceless_source": {
       "P_r": "mu*F/(2*I*omega*r*f)",
@@ -124,20 +154,6 @@
       "source_domain": "COMPLEXIFIED_FREQUENCY_DOMAIN",
       "specified_trajectory": false,
       "traceless": true
-    },
-    "graded_mass_squared_tangent": {
-      "bach_to_mass_class": "I*omega/2",
-      "complete_coupled_massive_axial_system": false,
-      "coulomb_exponent": "sigma*I*(2*k+m/k)",
-      "coulomb_exponent_mass_derivative_at_zero": "0",
-      "endpoint_comparison_status": "FORMAL_ASYMPTOTIC_ONLY",
-      "fixed_frequency_tangent_relation": "m=I*omega*tau/2",
-      "graded_mass_operator": "L-m*f",
-      "mass_class": "[f]",
-      "opposite_jost_admixture_excluded": false,
-      "physical_mass_velocity_certified": false,
-      "q_slope_at_infinity": "-I/(8*omega)",
-      "spectral_global_reparameterization": false
     },
     "green_principal_coefficient": {
       "coefficient": "-beta*u tensor tilde_u/alpha**2",
@@ -181,7 +197,7 @@
         "-0.047",
         "0.022"
       ],
-      "physical_mass_velocity_relation": "CONDITIONAL_CROSSWALK_ONLY",
+      "physical_mass_velocity_relation": "CONDITIONAL_nu=2*I*kappa/(3*omega)",
       "selector": "kappa=b/a_prime=beta/alpha",
       "semisimple_smith_type": [
         0,
@@ -207,7 +223,7 @@
   "lifecycle_state": "DRAFT_ALLOWED",
   "manuscript": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
   "paper_id": "PAPER_17_PURE_WEYL_EXTENSION_RESONANCE",
-  "paper_sha256": "2d5bb6baa2b6f63356a3d95fee386b5a8289b02c162ad5b842fb784f3dd9eefb",
+  "paper_sha256": "8e39b2f493bc89560c6cc40132ae366a587d2d08f21c27e728f50f061ef443ce",
   "result_id": "PAPER17_REFEREE_MAJOR_REVISION",
   "schema": "paper-draft-source-map-v1",
   "trusted_computing_base": {

@@ -1,6 +1,6 @@
 # Pure-Weyl gravity programme: executive summary for physicists
 
-**Public pre-release — 26 July 2026**
+**Public pre-release — 27 July 2026**
 
 *By GPT-5.6.sol and Asger Alstrup Palm*
 
@@ -192,10 +192,20 @@ $$
 =\frac{i\omega}{2}\left[1-\frac2r\right].
 $$
 
-The bracketed direction is the scalar spin-two graded projection of the
-first signed mass-squared jet of Einstein–Weyl gravity. The paper does **not**
-identify this scalar tangent with the complete coupled massive axial system
-without a further intertwining certificate.
+Writing $m=\mu^2$ for the signed squared-mass parameter, the exact
+first-jet reduction of the complete coupled massive axial system gives
+
+$$
+[\mathcal I_{\rm phys}]
+=\frac13\left[1-\frac2r\right],
+\qquad
+[\mathcal I_{\rm Bach}]
+=\frac{3i\omega}{2}[\mathcal I_{\rm phys}].
+$$
+
+This closes the local coupled-system crosswalk. It does **not** yet supply
+the all-orders analytic differentiated-Jost construction needed to identify
+the intrinsic selector with a physical massive-QNM slope.
 
 For the doubled radial problem,
 
@@ -262,8 +272,9 @@ The vulnerable interfaces are now explicit:
 1. **Certificate transparency.** Load-bearing exact and interval results
    must be reconstructible from immutable manifests, commands, hashes, and
    independent verifiers.
-2. **Massive-system crosswalk.** The scalar graded mass-squared jet is exact;
-   equivalence with the full coupled massive axial system remains open.
+2. **Massive-system crosswalk.** The complete coupled massive axial
+   first-jet factorization and its factor-three projective normalization are
+   exact; the all-orders differentiated-Jost promotion remains open.
 3. **Global causal domain.** The generalized endpoint state has weakened
    asymptotics. A closed global domain or augmented boundary pencil must
    support it.
@@ -305,7 +316,8 @@ The vulnerable interfaces are now explicit:
 The next work with the highest scientific leverage is:
 
 1. independently reproduce the Paper 17 selector and Green-pole certificate;
-2. construct the complete coupled massive axial/Jost crosswalk;
+2. construct the all-orders differentiated massive axial Jost/Volterra
+   crosswalk from the exact complete-system first jet;
 3. build a global causal Schwarzschild domain and justify inverse-Laplace
    deformation;
 4. compute a real source overlap and detector-level asymptotic coefficient;

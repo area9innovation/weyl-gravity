@@ -21,7 +21,7 @@
 and a Defective Schwarzschild Resonance in Pure Weyl Gravity}
 \author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
 \and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
-\date{26 July 2026}
+\date{27 July 2026}
 
 \begin{document}
 \maketitle
@@ -43,12 +43,19 @@ reduction,
  [\mathcal I_{\rm Bach}]
  =\frac{i\omega}{2}\left[1-\frac2r\right].
 \]
-The class in brackets is the scalar spin-two graded projection of the
-first signed mass-squared jet of Einstein--Weyl gravity.  Its rational
-primitive has the same linear asymptotics as the derivative of the moving
-massive phase; the Coulomb exponent has zero first mass derivative.  We do
-not identify this scalar tangent with the complete coupled massive axial
-system without an additional intertwining certificate.
+The class in brackets is also the direction selected by the complete
+coupled axial massive-spin-two system.  Transforming that system into its
+massless Maxwell/Regge--Wheeler basis gives
+\[
+ [\mathcal I_{\rm phys}]=\frac13\left[1-\frac2r\right],
+ \qquad
+ [\mathcal I_{\rm Bach}]
+ =\frac{3i\omega}{2}[\mathcal I_{\rm phys}].
+\]
+Thus the isolated shifted-Regge--Wheeler target has the correct direction
+but not the physical normalization.  The rational primitives reproduce
+the differentiated moving massive phase, while the Coulomb exponent has
+zero first mass derivative.
 
 The associated finite-interval radial Green operator, and equivalently
 its compactly cut-off exterior realization, has a nonzero rank-one
@@ -79,9 +86,9 @@ perturbations of pure Weyl gravity.  In the factor-adapted radial variables,
 the Bach equation
 contains two spin-two Regge--Wheeler layers and one spin-one Maxwell layer,
 but the two spin-two layers cannot be separated by a rational local field
-redefinition.  The extension is also the critical limit of the massless
-and massive spin-two directions at the level of its graded scalar tangent.
-At a
+redefinition.  The extension is also the critical first jet of the
+massless and massive spin-two directions after exact reduction of the
+complete coupled axial system.  At a
 Schwarzschild quasinormal frequency, this confluence produces a
 length-two root chain rather than two independent Einstein roots.
 
@@ -102,8 +109,8 @@ The paper has five results.
     [\mathcal I_{\rm Bach}]
     =\frac{i\omega}{2}\left[1-\frac2r\right],
   \]
-  equal to the scalar spin-two graded projection of the formal critical
-  mass-squared jet.
+  and the complete coupled massive axial tensor branch represents one
+  third of the same class.
 \item A validated QNM calculation selects the defective Smith type
   \((0,0,2)\).  The generalized root necessarily crosses the Einstein
   filtration.
@@ -131,8 +138,8 @@ Result & Input & Status\\
 Filtration, partial jet, and nonsplitting
 & Exact identities and exhaustive rational splitting test
 & \texttt{LOCAL-ALGEBRAIC}\\
-Graded mass-direction comparison
-& Exact cocycle primitive and formal moving massive phases
+Complete massive first-jet comparison
+& Exact coupled-system factorization, cocycle primitives, and moving phases
 & \texttt{LOCAL-ALGEBRAIC}\\
 Defective QNM and non-Einstein root
 & Validated Evans winding, selector, spin-one unit
@@ -146,8 +153,8 @@ Bondi-shear and compact-source nonannihilation
 Global retarded ringdown expansion
 & Weighted Fredholm domains and contour deformation
 & Not established\\
-Full coupled massive-system crosswalk
-& Parameter-dependent axial intertwiner and matched endpoint maps
+All-order physical massive Jost crosswalk
+& Differentiated matrix-Volterra construction and matched endpoint maps
 & Not established\\
 \bottomrule
 \end{tabular}
@@ -165,9 +172,10 @@ coupled massive spin-two system \cite{britocardosopani2013,antoniou2025}.
 That literature separates the general-relativistic and massive QNM
 families at nonzero squared mass.  Our distinct result concerns their
 singular pure-Weyl confluence and proves non-semisimplicity of the critical
-Bach response.  We do \emph{not} replace the complete massive axial system
-by a scalar equation; the scalar mass equation used below is only its
-spin-two graded tangent target.
+Bach response.  We use the complete coupled massive axial equations for
+the physical first-jet comparison; a single shifted Regge--Wheeler
+equation is retained only as a convenient graded reference and is not the
+complete tensor branch.
 
 \section{The filtered axial Bach module}
 \label{sec:filtration}
@@ -415,146 +423,189 @@ class.  Neither theorem asserts that every QNM of the repeated scalar
 factor must be defective.  Defectiveness is a resonant evaluation of the
 nonzero extension class.
 
-\section{Graded mass-squared tangent and crosswalk boundary}
+\section{Complete massive axial first jet and Jost boundary}
 \label{sec:mass}
 
-\subsection{The scalar graded target}
+\subsection{The coupled physical system}
 
 The covariant parent family contains the second-order tensor pencil
 \[
  (\mathcal E+m\mathcal A)\phi=0,
 \]
-where \(m\) is the signed squared-mass coefficient.  On the
-transverse-traceless spin-two graded quotient, the scalar target is
-\begin{equation}\label{eq:massive-rw}
- L_m^{\rm gr}(\omega)y=
- \left[D^2+\omega^2-V_2-mf\right]y=0.
-\end{equation}
-This is \emph{not} asserted to be the complete coupled massive axial
-system of Refs.~\cite{britocardosopani2013,antoniou2025}.  It is the
-spin-two graded projection used to compare first parameter jets.
+where \(m=\mu^2\) is the signed squared-mass coefficient.  For axial
+\(\ell=2\) Schwarzschild perturbations, the complete massive tensor
+equations of Refs.~\cite{britocardosopani2013,antoniou2025} are
+\begin{align}
+ D^2Q+
+ \left[\omega^2-f\left(m+\frac{10}{r^2}-\frac{16}{r^3}\right)\right]Q
+ &=\frac{8f(r-3)}{r^3}Z,
+ \label{eq:massive-Q}\\
+ D^2Z+
+ \left[\omega^2-f\left(m+\frac4{r^2}+\frac2{r^3}\right)\right]Z
+ &=\frac{2f}{r^2}Q.
+ \label{eq:massive-Z}
+\end{align}
+This is a coupled tensor/vector system, not a single shifted
+Regge--Wheeler equation.
 
-\begin{proposition}[Exact graded mass direction]\label{thm:mass-jet}
-Differentiating \eqref{eq:massive-rw} at \(m=0\) gives
+At \(m=0\), introduce the tensor and vector master fields
+\((\phi_2,\phi_1)\), satisfying \(L_2\phi_2=0\) and \(L_1\phi_1=0\).
+The massless Berndtson transformation specializes to
+\begin{align}
+ Q={}&\frac1{\omega^2}\left(
+ \frac{4f}{3r}\phi_2+\frac43D\phi_2
+ -\frac{2f}{r}\phi_1+D\phi_1\right),\label{eq:berndtson-Q}\\
+ Z={}&-\frac1{\omega^2}\left(
+ \frac{7r-6}{3r^2}\phi_2+D\phi_2+\frac1r\phi_1\right).
+\label{eq:berndtson-Z}
+\end{align}
+The induced \(4\times4\) first-order state map has determinant
+\(\omega^{-4}\), and direct differentiation verifies its exact
+intertwining with \eqref{eq:massive-Q}--\eqref{eq:massive-Z} at \(m=0\).
+
+\begin{theorem}[Complete massive tensor first jet]\label{thm:mass-jet}
+Transform the full \(m\)-derivative of
+\eqref{eq:massive-Q}--\eqref{eq:massive-Z} through
+\eqref{eq:berndtson-Q}--\eqref{eq:berndtson-Z}.  The reverse
+tensor-to-vector source is rationally removable.  The tensor-led diagonal
+tangent scalarizes to
 \[
- L_2\,\partial_my=f\,y,\qquad
- [\mathcal I_{\rm mass}^{\rm gr}]=[f].
+ L_2\dot\phi_2=(s_1D+s_0)\phi_2,
 \]
-Consequently,
+where
 \[
+ s_1=-\frac{2(r-2)}{r^3\omega^2},\qquad
+ s_0=\frac{(r-2)(3r^4\omega^2-14r+12)}
+ {3r^5\omega^2}.
+\]
+Its projective density is
+\[
+ \mathcal I_{\rm phys}
+ =\frac{(r-2)(3r^4\omega^2-20r+30)}
+ {3r^5\omega^2},
+\]
+and obeys the exact normal form
+\begin{equation}\label{eq:physical-mass-normal}
+ \boxed{\;
+ \mathcal I_{\rm phys}
+ =\mathcal K_{U_2}\!\left(\frac{r}{6\omega^2}\right)
+ +\frac13f.
+ \;}
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:complete-mass-crosswalk}
  \boxed{\;
  [\mathcal I_{\rm Bach}]
- =\frac{i\omega}{2}[\mathcal I_{\rm mass}^{\rm gr}].
+ =\frac{3i\omega}{2}[\mathcal I_{\rm phys}].
  \;}
-\]
-Equivalently, at each fixed \(\omega\ne0\), the two tangent cocycles are
-related by \(m=(i\omega/2)\tau\), modulo rational triangular gauge.
-Because this factor depends on the spectral variable, it is not a global
-reparametrization of two operator families.
-\end{proposition}
+\end{equation}
+\end{theorem}
 
 \begin{proof}
-Differentiating \eqref{eq:massive-rw} gives the extension density \(f\).
-The result follows from Theorem~\ref{thm:mass-normal}.
+In the factor-state order
+\((\phi_2,D\phi_2,\phi_1,D\phi_1)\), conjugating the full mass tangent
+through the state map defined by
+\eqref{eq:berndtson-Q}--\eqref{eq:berndtson-Z} gives four rational
+\(2\times2\) blocks.  The reverse block scalarizes to
+\[
+ L_1\dot\phi_1=
+ \frac{32f}{9r^3\omega^2}\phi_2.
+\]
+Since
+\[
+ P=-\frac{16}{27\omega^2},\qquad
+ L_1(P\phi_2)=\frac{32f}{9r^3\omega^2}\phi_2
+ \quad\text{on }\ker L_2,
+\]
+the change \(\widehat\phi_1=\phi_1-mP\phi_2\) removes it.  Scalarizing
+the tensor diagonal block gives the displayed \(s_1,s_0\).  Exact
+substitution proves \eqref{eq:physical-mass-normal}; combining it with
+Theorem~\ref{thm:mass-normal} proves
+\eqref{eq:complete-mass-crosswalk}.
 \end{proof}
 
-\subsection{Formal endpoint comparison}
+The factor \(1/3\) is intrinsic.  If one tests the stronger but false
+identity \([\mathcal I_{\rm phys}]=[f]\), the local pole audit leaves the
+exhaustive gauge \(c_{-2}/r^2+c_{-1}/r+c_0\).  Its coefficient matrix has
+rank \(3\), the augmented matrix has rank \(4\), and a left-null
+obstruction is
+\[
+ \frac{80(\omega^2-3)}{3\omega^2}.
+\]
+Thus the isolated scalar pencil \(L_2-mf\) has the correct projective
+direction but is three times the complete tensor-branch tangent.  At
+fixed \(\omega\ne0\), the corrected tangent relation is
+\[
+ m=\frac{3i\omega}{2}\tau
+\]
+modulo rational triangular gauge.  Its spectral dependence means that it
+is not a global reparametrization of the two operator families.
+
+\subsection{Differentiated endpoint asymptotics}
 
 Because Lemma~\ref{lem:triangular-gauge} contains a factor \(1/2\), the
-field redefinition that removes \(\mathcal K_{U_2}q\) is
+field operator associated with a primitive \(q\) is
 \[
- Q_q=2qD-D(q),\qquad
- [L_2,Q_q]|_{\ker L_2}=-\mathcal K_{U_2}(q).
+ Q(q)=2qD-D(q),\qquad
+ [L_2,Q(q)]|_{\ker L_2}=-\mathcal K_{U_2}(q).
 \]
-Thus \(L_2x=\mathcal I_{\rm Bach}y\) implies
+For the complete physical tangent take
 \[
- L_2(x+Q_qy)=\frac{i\omega}{2}fy.
+ q_m=\frac{r}{6\omega^2}.
 \]
-The primitive has the forced behavior
-\[
- q(r,\omega)=-\frac{i}{8\omega}r+O(1).
-\]
-
-\begin{proposition}[Formal differentiated endpoint asymptotics]
-\label{prop:formal-jost-comparison}
-Choose the square-root branch
+Choose
 \[
  k=(\omega^2-m)^{1/2},\qquad k(\omega,0)=\omega,
 \]
-and the formal infinity branches
+and the common massive infinity phase
 \[
- y_\sigma^{\rm gr}(m,r)=
- e^{\sigma ikr}r^{\rho_\sigma(m)}
- \left(1+O(r^{-1})\right),\qquad
+ e^{\sigma ikr}r^{\rho_\sigma(m)},\qquad
  \rho_\sigma(m)=\sigma i\left(2k+\frac{m}{k}\right).
 \]
 Then
 \[
  \rho_\sigma'(0)=0,\qquad
- \frac{\partial_my_\sigma^{\rm gr}(0,r)}
- {y_\sigma^{\rm gr}(0,r)}
- =-\frac{\sigma i}{2\omega}r+O(1),
+ \frac{\partial_m\phi_{2,\sigma}}{\phi_{2,\sigma}}
+ =-\frac{\sigma i}{2\omega}r+O(1).
 \]
-and, with \(c(\omega)=i\omega/2\),
+The gauge \(Q(q_m)\) adds \(\sigma ir/(3\omega)+O(1)\), so the
+normal-form physical tangent has
 \[
- \frac{Q_qy_\sigma}{y_\sigma}
- =\frac{\sigma r}{4}+O(1)
- =c(\omega)
- \frac{\partial_my_\sigma^{\rm gr}(0,r)}
- {y_\sigma^{\rm gr}(0,r)}+O(1).
+ \frac{\partial_m\widehat\phi_{2,\sigma}}{\phi_{2,\sigma}}
+ =-\frac{\sigma i}{6\omega}r+O(1).
 \]
-At the horizon, \(f=O(r-2)\), so the graded mass term does not change the
-ingoing Frobenius exponent.
-\end{proposition}
+Multiplication by \(3i\omega/2\) gives \(\sigma r/4+O(1)\), exactly the
+leading Bach tangent produced by the primitive in
+Theorem~\ref{thm:mass-normal}.  At the horizon, the mass term is
+\(O(r-2)\), so the ingoing indicial exponent is unchanged.
 
-\begin{proof}
-The infinity equation has
-\[
- D^2y+\left(k^2+\frac{2m}{r}+O(r^{-2})\right)y=0.
-\]
-The coefficient of \(r^{-1}\) gives
-\[
- 2\sigma ik\rho_\sigma+4k^2+2m=0.
-\]
-Since \(k'(0)=-1/(2\omega)\),
-\[
- \left.\frac{d}{dm}\left(2k+\frac{m}{k}\right)\right|_{m=0}=0.
-\]
-The Coulomb logarithm therefore cancels at first order, while the moving
-plane-wave phase supplies the linear term.  The formula for \(Q_q\) follows
-from \(Dy_\sigma/y_\sigma=\sigma i\omega+O(r^{-1})\).
-\end{proof}
+The complete coupled-system map and its leading differentiated endpoint
+class are therefore exact.  What remains is analytic rather than
+algebraic: a matrix-Volterra, or equivalent, construction must prove
+all-order parameter dependence of the selected massive horizon and
+infinity Jost bases and exclude an opposite-Jost admixture.
 
-The proposition is deliberately formal.  It verifies the endpoint
-asymptotic target but does not exclude an opposite-Jost admixture in an
-exact massive solution.  Promotion to a physical mass-velocity theorem
-requires (i) a displayed parameter-dependent map from the complete
-coupled massive axial variables to the certified filtration, and
-(ii) a Volterra or equivalent uniqueness construction for the
-mass-differentiated horizon and infinity maps.  Neither object is imported
-as a certificate here.
-
-\begin{remark}[Conditional physical crosswalk]\label{rem:mass-crosswalk}
-If those two objects are supplied, scalar endpoint normalizations can only
-add an analytic multiple of the unperturbed Evans coefficient.  One would
-then obtain
+\begin{remark}[Conditional physical QNM velocity]\label{rem:mass-crosswalk}
+Once that differentiated-Jost construction is supplied, endpoint
+normalizations can only add an analytic multiple of the unperturbed Evans
+coefficient.  Equation~\eqref{eq:complete-mass-crosswalk} then gives
 \[
  b_{\rm B}(\omega)
- =\frac{i\omega}{2}\partial_ma(\omega,0)+h(\omega)a(\omega,0),
+ =\frac{3i\omega}{2}\partial_ma(\omega,0)+h(\omega)a(\omega,0),
 \]
 and, at a simple QNM,
 \[
- \omega_n'(0)=\frac{2i}{\omega_n}\kappa_n,\qquad
+ \omega_n'(0)=\frac{2i}{3\omega_n}\kappa_n,\qquad
  \kappa_n=\frac{b_{\rm B}(\omega_n)}{a_\omega(\omega_n,0)}.
 \]
-These formulas are the precise remaining crosswalk target, not a theorem
-of the present paper.
+These are the remaining analytic promotion targets, not theorems of this
+paper.
 \end{remark}
 
-The graded construction is the asymptotically flat analogue of the
+The construction is the asymptotically flat analogue of the
 mass-derivative mechanism behind logarithmic partners in critical gravity
-\cite{lupope2011,bergshoeff2011}.  Here the formal endpoint tangent is
-polynomial rather than an independent radial \(\log r\) mode.
+\cite{lupope2011,bergshoeff2011}.  Here the endpoint tangent is polynomial
+rather than an independent radial \(\log r\) mode.
 
 \section{The defective Schwarzschild resonance}
 \label{sec:qnm}
@@ -769,7 +820,7 @@ multiplies numerator and denominator by the same nonzero value.
 Under the additional hypotheses of
 Remark~\ref{rem:mass-crosswalk}, the last member of
 \eqref{eq:unified-invariant} may also be written
-\(-i\omega_n\omega_n'(0)/2\), where the derivative is with respect to the
+\(-3i\omega_n\omega_n'(0)/2\), where the derivative is with respect to the
 physical signed squared-mass coefficient.  The certified enclosure
 \eqref{eq:kappa-enclosure} is intrinsic; it is not advertised here as a
 massive-QNM slope.
@@ -957,8 +1008,8 @@ then \eqref{eq:parent-mass-derivative} gives
 Thus the double pole measures QNM motion; the accompanying simple pole
 measures motion of the residue projector.  This exact parent identity does
 not, by itself, identify the certified scalar \(\kappa_n\) with the
-physical massive-QNM velocity; that is the crosswalk left open in
-Remark~\ref{rem:mass-crosswalk}.
+physical massive-QNM velocity; that requires the differentiated-Jost
+promotion left open in Remark~\ref{rem:mass-crosswalk}.
 
 \begin{corollary}[Isolated resonance contour]
 \label{cor:isolated-contour}
@@ -1097,7 +1148,7 @@ Bondi flux or an admissible asymptotic state.
 
 Combining Theorem~\ref{thm:exterior-green-pole} with
 Proposition~\ref{prop:bondi-trace}, the principal Bondi-shear coefficient
-is nonzero.  If the additional physical mass crosswalk of
+is nonzero.  If the additional differentiated-Jost promotion of
 Remark~\ref{rem:mass-crosswalk} is imposed, its parent-normalized form may
 be written
 \[
@@ -1240,8 +1291,11 @@ Axial triangular preflight
 Projective cocycle
 & Cocycle, primitive, and rational nonsplitting obstruction
 & Exact\\
-Critical parent jet
-& Covariant mass derivative; physical scalar crosswalk remains open
+Complete massive axial first jet
+& Coupled \(Q,Z\) factorization and factor-three Bach crosswalk
+& Exact\\
+Differentiated massive Jost map
+& Leading phase matches; all-order matrix-Volterra uniqueness remains open
 & Exact with gate\\
 Analytic continuation
 & Analytic horizon and infinity Jost germs on the QNM disk
@@ -1270,7 +1324,7 @@ Conserved source
 
 The generated claim map pins the authority files and their hashes.  Its
 verifier independently checks the displayed cocycle identity, the
-fixed-frequency graded tangent normalization, the Smith and Green formulas, the
+complete-system factor-three tangent normalization, the Smith and Green formulas, the
 reconstruction falloffs, the source conservation law, and explicit
 non-results.  Missing data, a stale hash, an unsupported domain, or a
 failed mutation is a rejection rather than a partial pass.
@@ -1296,6 +1350,8 @@ Claim & Command\\
 \midrule
 Projective cocycle and nonsplitting
 & \nolinkurl{python3 -m black_hole_programme.phase3.axial_qnm_projective_cocycle_v1.verify}\\
+Complete massive first jet
+& \nolinkurl{python3 -m black_hole_programme.phase4.axial_complete_massive_jet_crosswalk_v1.verify}\\
 Evans winding
 & \nolinkurl{python3 -m black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.full_contour_winding_v1.verify}\\
 Local selector
@@ -1327,8 +1383,10 @@ domain containing that component, excitation by a specified
 astrophysical source, detector sensitivity, an overtone tower, an
 all-multipole Bach nonsplitting theorem, or a quantum positivity/no-go
 theorem.  It also does not establish the full coupled massive-system
-crosswalk or a physical massive-QNM slope.  The polynomially weighted term
-is proved only for the isolated local resonance contour.
+Jost crosswalk or a physical massive-QNM slope.  The complete local
+coupled-system first jet is exact; the missing part is the all-order
+analytic endpoint identification.  The polynomially weighted term is
+proved only for the isolated local resonance contour.
 
 \section{Conclusion}
 
@@ -1339,11 +1397,18 @@ elementary projective class
  [\mathcal I_{\rm Bach}]
  =\frac{i\omega}{2}[1-2/r].
 \]
-That direction equals the scalar spin-two graded projection of the formal
-critical mass-squared jet.  Its linearly growing rational primitive matches
-the differentiated massive phase, and the Coulomb exponent has vanishing
-first derivative.  A full coupled-system and exact-Jost crosswalk remains
-an explicit gate.
+Transforming the complete coupled massive axial system into its massless
+Maxwell/Regge--Wheeler basis gives
+\[
+ [\mathcal I_{\rm phys}]=\frac13[1-2/r],
+ \qquad
+ [\mathcal I_{\rm Bach}]
+ =\frac{3i\omega}{2}[\mathcal I_{\rm phys}].
+\]
+The corrected rational primitive matches the differentiated massive
+phase, and the Coulomb exponent has vanishing first derivative.  Only the
+all-order analytic Jost identification remains an explicit mass-velocity
+gate.
 
 At the certified damped Schwarzschild mode, the scalar QNM is simple but
 the extension selector is nonzero.  The full connection is therefore
@@ -1363,9 +1428,9 @@ component has weakened asymptotic falloff.
 This gives a Schwarzschild counterpart, in asymptotically flat spacetime,
 of the critical-gravity logarithmic-partner mechanism at the level of the
 filtered Bach resonance.  The remaining work separates cleanly into two
-problems: the complete massive axial/Jost crosswalk, and a global causal
-domain supporting the differentiated endpoint state and a justified
-retarded contour deformation.
+problems: the differentiated massive Jost/Fredholm crosswalk, and a global
+causal domain supporting the endpoint tangent and a justified retarded
+contour deformation.
 
 \begin{thebibliography}{99}
 
@@ -1395,7 +1460,7 @@ mass,
 {doi:10.1103/PhysRevD.88.023514}.
 
 \bibitem{antoniou2025}
-G.~Antoniou, E.~Gualtieri, and P.~Pani,
+G.~Antoniou, L.~Gualtieri, and P.~Pani,
 \newblock Gravitational quasinormal modes of black holes in quadratic gravity,
 \newblock \emph{Physical Review D} \textbf{111} (2025), 064059,
 \newblock \href{https://doi.org/10.1103/PhysRevD.111.064059}
