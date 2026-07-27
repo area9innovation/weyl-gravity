@@ -203,9 +203,16 @@ $$
 =\frac{3i\omega}{2}[\mathcal I_{\rm phys}].
 $$
 
-This closes the local coupled-system crosswalk. It does **not** yet supply
-the all-orders analytic differentiated-Jost construction needed to identify
-the intrinsic selector with a physical massive-QNM slope.
+This closes the local coupled-system crosswalk, and the result is no longer
+only a leading-phase comparison: matrix Frobenius and sectorial Volterra
+constructions identify the complete endpoint-normalized Jost planes and
+exclude an opposite-Jost component. Consequently,
+
+$$
+\omega_n'(0)=\frac{2i}{3\omega_n}\kappa_n\ne0
+$$
+
+for the signed squared-mass parameter.
 
 For the doubled radial problem,
 
@@ -273,8 +280,9 @@ The vulnerable interfaces are now explicit:
    must be reconstructible from immutable manifests, commands, hashes, and
    independent verifiers.
 2. **Massive-system crosswalk.** The complete coupled massive axial
-   first-jet factorization and its factor-three projective normalization are
-   exact; the all-orders differentiated-Jost promotion remains open.
+   first-jet factorization, factor-three normalization, endpoint-analytic
+   Jost planes, and nonzero signed squared-mass QNM velocity are established
+   at `REDUCED-MODE` level.
 3. **Global causal domain.** The generalized endpoint state has weakened
    asymptotics. A closed global domain or augmented boundary pencil must
    support it.
@@ -316,15 +324,13 @@ The vulnerable interfaces are now explicit:
 The next work with the highest scientific leverage is:
 
 1. independently reproduce the Paper 17 selector and Green-pole certificate;
-2. construct the all-orders differentiated massive axial Jost/Volterra
-   crosswalk from the exact complete-system first jet;
-3. build a global causal Schwarzschild domain and justify inverse-Laplace
+2. build a global causal Schwarzschild domain and justify inverse-Laplace
    deformation;
-4. compute a real source overlap and detector-level asymptotic coefficient;
-5. complete the polar and broader multipole analysis;
-6. independently audit Paper 18's residual-basic normalization against the
+3. compute a real source overlap and detector-level asymptotic coefficient;
+4. complete the polar and broader multipole analysis;
+5. independently audit Paper 18's residual-basic normalization against the
    conformal-gravity thermodynamics literature;
-7. construct, or rule out under explicit assumptions, a positive
+6. construct, or rule out under explicit assumptions, a positive
    BRST-compatible Lorentzian quantum state.
 
 ## Method and release status

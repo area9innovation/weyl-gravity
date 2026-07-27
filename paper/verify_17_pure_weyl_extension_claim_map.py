@@ -116,10 +116,13 @@ def verify_gauge_and_mass(claims: dict) -> None:
         "coulomb_exponent_mass_derivative_at_zero": "0",
         "reduced_physical_r_slope": "-sigma*I/(6*omega)",
         "scaled_bach_r_slope": "sigma/4",
-        "endpoint_comparison_status": "EXACT_LEADING_ASYMPTOTIC",
-        "all_order_differentiated_jost_certified": False,
-        "opposite_jost_admixture_excluded": False,
-        "physical_mass_velocity_certified": False,
+        "endpoint_comparison_status": "ANALYTIC_FROBENIUS_VOLTERRA",
+        "all_order_differentiated_jost_certified": True,
+        "opposite_jost_admixture_excluded": True,
+        "physical_mass_velocity_certified": True,
+        "physical_mass_velocity_formula": "2*I*kappa/(3*omega)",
+        "physical_mass_velocity_re_enclosure": ["0.087", "0.251"],
+        "physical_mass_velocity_im_enclosure": ["-0.054", "0.135"],
     }
     if mass != expected_mass:
         fail("complete massive first-jet declaration drift")
@@ -167,9 +170,7 @@ def verify_resonance_and_green(claims: dict) -> None:
         "selector": "kappa=b/a_prime=beta/alpha",
         "carrier_quotient": "-1/kappa",
         "intrinsic_tau_velocity": "-kappa",
-        "physical_mass_velocity_relation": (
-            "CONDITIONAL_nu=2*I*kappa/(3*omega)"
-        ),
+        "physical_mass_velocity_relation": "nu=2*I*kappa/(3*omega)",
         "kappa_re_enclosure": ["-0.047", "0.022"],
         "kappa_im_enclosure": ["0.064", "0.138"],
     }:
@@ -198,7 +199,7 @@ def verify_resonance_and_green(claims: dict) -> None:
         "identity": "G_W=-(partial_m inverse(E+m*A)|0)/(4*alpha_W)",
         "double_coefficient": "-nu*P/(4*alpha_W)",
         "isolated_contour_only": True,
-        "certified_scalar_selector_identified_with_parent_nu": False,
+        "certified_scalar_selector_identified_with_parent_nu": True,
     }:
         fail("parent mass-derivative declaration drift")
 
@@ -294,6 +295,31 @@ def verify_authority_flags(claims: dict) -> None:
             "physical_QNM_velocity_certified",
             False,
         ),
+        (
+            "complete_massive_axial_jost",
+            "parameter_analytic_horizon_jost_plane",
+            True,
+        ),
+        (
+            "complete_massive_axial_jost",
+            "parameter_analytic_infinity_jost_plane",
+            True,
+        ),
+        (
+            "complete_massive_axial_jost",
+            "opposite_jost_admixture_excluded",
+            True,
+        ),
+        (
+            "complete_massive_axial_jost",
+            "physical_squared_mass_qnm_velocity_nonzero",
+            True,
+        ),
+        (
+            "complete_massive_axial_jost",
+            "global_causal_resolvent_certified",
+            False,
+        ),
         ("critical_mass_parent", "physical_mass_jet_equals_intrinsic_radial_tau", False),
         ("critical_mass_parent", "physical_b_equals_minus_mass_derivative_of_jost", False),
         ("critical_mass_parent", "physical_massive_qnm_slope_certified", False),
@@ -317,8 +343,9 @@ def verify_manuscript(claims: dict, paper: Path) -> None:
         "The polynomially weighted term",
         "isolated local resonance contour",
         "specified material trajectory",
-        "The complete coupled-system map and its leading differentiated endpoint",
-        "all-order parameter dependence",
+        "Endpoint-compatible complete mass jet",
+        "Volterra normalization excludes the opposite",
+        "Nonzero complete massive QNM velocity",
         "complexified frequency-domain conserved and traceless",
     ]
     for phrase in required:
@@ -352,9 +379,6 @@ def verify_manuscript(claims: dict, paper: Path) -> None:
 
     flags = claims["claim_flags"]
     required_false = [
-        "all_order_differentiated_massive_jost_crosswalk",
-        "endpoint_compatible_physical_mass_jet_exact",
-        "physical_massive_qnm_slope_certified",
         "real_causal_source_overlap_nonzero",
         "global_causal_resolvent",
         "complete_retarded_qnm_expansion",
@@ -370,6 +394,9 @@ def verify_manuscript(claims: dict, paper: Path) -> None:
     required_true = [
         "graded_mass_squared_direction_exact",
         "complete_coupled_massive_axial_first_jet_crosswalk_exact",
+        "all_order_differentiated_massive_jost_crosswalk",
+        "endpoint_compatible_physical_mass_jet_exact",
+        "physical_massive_qnm_slope_certified",
         "outgoing_trace_bridge_exact",
         "complexified_conserved_traceless_source_overlap_nonzero",
     ]

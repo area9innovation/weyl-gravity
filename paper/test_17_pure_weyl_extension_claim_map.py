@@ -83,19 +83,19 @@ class Paper17ConsolidatedClaimMapTests(unittest.TestCase):
             "complete massive first-jet declaration drift",
         )
 
-    def test_physical_mass_crosswalk_promotion_rejected(self) -> None:
+    def test_physical_mass_crosswalk_demotion_rejected(self) -> None:
         self.assert_mutation_rejected(
             lambda data: data["claim_flags"].update(
-                {"all_order_differentiated_massive_jost_crosswalk": True}
+                {"all_order_differentiated_massive_jost_crosswalk": False}
             ),
-            "fail-closed claim flag drift",
+            "required scoped claim flag drift",
         )
 
-    def test_physical_mass_velocity_promotion_rejected(self) -> None:
+    def test_physical_mass_velocity_demotion_rejected(self) -> None:
         self.assert_mutation_rejected(
             lambda data: data["exact_identities"][
                 "complete_massive_first_jet"
-            ].update({"physical_mass_velocity_certified": True}),
+            ].update({"physical_mass_velocity_certified": False}),
             "complete massive first-jet declaration drift",
         )
 

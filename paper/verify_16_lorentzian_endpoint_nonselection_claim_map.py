@@ -404,6 +404,27 @@ def main() -> None:
     ]:
         require_flag(complete_mass_jet, key, False, "complete massive axial jet")
 
+    complete_mass_jost = json.loads(
+        (ROOT / authorities["complete_massive_axial_jost"]["path"]).read_text()
+    )
+    for key in [
+        "parameter_analytic_horizon_jost_plane",
+        "parameter_analytic_infinity_jost_plane",
+        "opposite_jost_admixture_excluded",
+        "complete_massive_jost_crosswalk",
+        "physical_squared_mass_qnm_velocity_identified",
+        "physical_squared_mass_qnm_velocity_nonzero",
+    ]:
+        require_flag(
+            complete_mass_jost, key, True, "complete massive axial Jost"
+        )
+    require_flag(
+        complete_mass_jost,
+        "global_causal_resolvent_certified",
+        False,
+        "complete massive axial Jost",
+    )
+
     # Independently check the new exact cocycle representative against the
     # certified reduced cocycle.  This uses direct rational simplification,
     # not the threshold producer's decomposition.
@@ -515,6 +536,8 @@ def main() -> None:
     for key in [
         "bach_cocycle_redshift_representative_exact",
         "complete_coupled_massive_first_jet_crosswalk_exact",
+        "all_order_differentiated_massive_jost_crosswalk",
+        "physical_massive_qnm_slope",
         "non_einstein_generalized_qnm_chain_vector",
         "finite_interval_radial_fredholm_pencil",
         "radial_green_operator_second_order_pole",

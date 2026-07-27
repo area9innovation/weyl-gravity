@@ -55,7 +55,11 @@ massless Maxwell/Regge--Wheeler basis gives
 Thus the isolated shifted-Regge--Wheeler target has the correct direction
 but not the physical normalization.  The rational primitives reproduce
 the differentiated moving massive phase, while the Coulomb exponent has
-zero first mass derivative.
+zero first mass derivative.  Matrix Frobenius and sectorial Volterra
+constructions promote this comparison to the complete endpoint-normalized
+Jost planes.  The certified selector therefore equals the velocity of the
+complete massive axial QNM branch, up to the displayed normalization, and
+that velocity is nonzero.
 
 The associated finite-interval radial Green operator, and equivalently
 its compactly cut-off exterior realization, has a nonzero rank-one
@@ -113,7 +117,8 @@ The paper has five results.
   third of the same class.
 \item A validated QNM calculation selects the defective Smith type
   \((0,0,2)\).  The generalized root necessarily crosses the Einstein
-  filtration.
+  filtration.  The same certificate gives a nonzero velocity of the
+  complete massive axial QNM branch.
 \item The compact-source, compact-observation exterior outgoing radial
   Green operator has a genuine rank-one pole of order two.
 \item Exact metric reconstruction and an explicit conserved, traceless odd
@@ -141,6 +146,9 @@ Filtration, partial jet, and nonsplitting
 Complete massive first-jet comparison
 & Exact coupled-system factorization, cocycle primitives, and moving phases
 & \texttt{LOCAL-ALGEBRAIC}\\
+Endpoint-compatible massive QNM slope
+& Matrix Frobenius/Volterra Jost planes, spin-one Schur unit, selector
+& \texttt{REDUCED-MODE}\\
 Defective QNM and non-Einstein root
 & Validated Evans winding, selector, spin-one unit
 & \texttt{REDUCED-MODE}\\
@@ -152,9 +160,6 @@ Bondi-shear and compact-source nonannihilation
 & \texttt{REDUCED-MODE}\\
 Global retarded ringdown expansion
 & Weighted Fredholm domains and contour deformation
-& Not established\\
-All-order physical massive Jost crosswalk
-& Differentiated matrix-Volterra construction and matched endpoint maps
 & Not established\\
 \bottomrule
 \end{tabular}
@@ -541,7 +546,7 @@ fixed \(\omega\ne0\), the corrected tangent relation is
 modulo rational triangular gauge.  Its spectral dependence means that it
 is not a global reparametrization of the two operator families.
 
-\subsection{Differentiated endpoint asymptotics}
+\subsection{Endpoint-analytic massive Jost crosswalk}
 
 Because Lemma~\ref{lem:triangular-gauge} contains a factor \(1/2\), the
 field operator associated with a primitive \(q\) is
@@ -576,31 +581,136 @@ normal-form physical tangent has
 \]
 Multiplication by \(3i\omega/2\) gives \(\sigma r/4+O(1)\), exactly the
 leading Bach tangent produced by the primitive in
-Theorem~\ref{thm:mass-normal}.  At the horizon, the mass term is
-\(O(r-2)\), so the ingoing indicial exponent is unchanged.
+Theorem~\ref{thm:mass-normal}.
 
-The complete coupled-system map and its leading differentiated endpoint
-class are therefore exact.  What remains is analytic rather than
-algebraic: a matrix-Volterra, or equivalent, construction must prove
-all-order parameter dependence of the selected massive horizon and
-infinity Jost bases and exclude an opposite-Jost admixture.
+\begin{theorem}[Endpoint-compatible complete mass jet]
+\label{thm:mass-jost}
+On a neighborhood of the certified QNM and \(m=0\), the complete coupled
+system \eqref{eq:massive-Q}--\eqref{eq:massive-Z} has holomorphic
+two-dimensional future-horizon-ingoing and infinity-outgoing Jost planes.
+The Bach and complete massive first jets identify these planes modulo
+holomorphic same-sign changes of basis.  In particular, no opposite-Jost
+component occurs.
 
-\begin{remark}[Conditional physical QNM velocity]\label{rem:mass-crosswalk}
-Once that differentiated-Jost construction is supplied, endpoint
-normalizations can only add an analytic multiple of the unperturbed Evans
-coefficient.  Equation~\eqref{eq:complete-mass-crosswalk} then gives
-\[
+Let \(a_{\rm phys}(\omega,m)\) be the spin-two Schur divisor after
+eliminating the locally invertible spin-one channel.  Then
+\begin{equation}\label{eq:jost-mass-crosswalk}
+ \boxed{\;
  b_{\rm B}(\omega)
- =\frac{3i\omega}{2}\partial_ma(\omega,0)+h(\omega)a(\omega,0),
-\]
-and, at a simple QNM,
+ =\frac{3i\omega}{2}\,
+   \partial_m a_{\rm phys}(\omega,0)
+   +h(\omega)a_{\rm phys}(\omega,0),
+ \;}
+\end{equation}
+where \(h\) is holomorphic.
+\end{theorem}
+
+\begin{proof}
+Write \(\Psi=(Q,Z)^{\mathsf T}\).  The complete equations have the form
 \[
- \omega_n'(0)=\frac{2i}{3\omega_n}\kappa_n,\qquad
- \kappa_n=\frac{b_{\rm B}(\omega_n)}{a_\omega(\omega_n,0)}.
+ D^2\Psi+\bigl[(\omega^2-mf)I_2+B(r)\bigr]\Psi=0,
+ \qquad B(r)=O(r^{-2}),
 \]
-These are the remaining analytic promotion targets, not theorems of this
-paper.
-\end{remark}
+with
+\[
+ B=
+ \begin{pmatrix}
+ -f(10/r^2-16/r^3)&-8f(r-3)/r^3\\
+ -2f/r^2&-f(4/r^2+2/r^3)
+ \end{pmatrix}.
+\]
+At infinity use the exact common phase
+\[
+ \Phi_\sigma=e^{\sigma ikx}r^{\sigma im/k},
+ \qquad k^2=\omega^2-m,\qquad k(\omega,0)=\omega.
+\]
+Its logarithmic derivative is
+\[
+ D\log\Phi_\sigma
+ =\sigma i\left(k+\frac{mf}{kr}\right),
+\]
+and direct substitution leaves the scalar residual
+\[
+ \frac{m}{k^2r^4}
+ \left(
+ 4k^2r^2-\sigma ikr^2+6\sigma ikr-8\sigma ik
+ {}-mr^2+4mr-4m
+ \right)=O(r^{-2}).
+\]
+On the certified \(\pi/4\) exterior-complex-scaled ray, the selected
+exponential has a uniform decay margin.  A scalar Volterra equation for
+the displayed residual, followed by a matrix Volterra equation for
+\(B\), has an integrable \(O(r^{-2})\) majorant.  After moving the outer
+cut sufficiently far out, both Neumann series converge uniformly on a
+smaller \((\omega,m)\)-polydisc.  They define a holomorphic outgoing
+Jost matrix.  Its Volterra normalization excludes the opposite
+exponential.
+
+At the horizon set \(z=f\).  Then
+\[
+ D=\frac{z(1-z)^2}{2}\partial_z,
+\]
+while \(mf\) and \(B\) are \(O(z)\).  The indicial exponents are
+\(\lambda=\pm2i\omega\), each twice, and the order-\(n\) recursion
+denominators are
+\[
+ \frac{n(n+4i\omega)}4,\qquad
+ \frac{n(n-4i\omega)}4.
+\]
+The certified disk has nonzero real part and avoids every such resonance.
+The regular-singular majorant theorem therefore gives holomorphic matrix
+Frobenius solutions.  The selected exponent fixes the ingoing plane up to
+a holomorphic right \(GL(2)\) factor.
+
+The differentiated Coulomb exponent vanishes, and the rational gauges
+match the remaining linear term exactly as computed above.  At the
+horizon they are regular and preserve the selected exponent.  The
+difference between the two first jets is consequently homogeneous in the
+same endpoint class.  Volterra and Frobenius uniqueness allow only
+same-sign holomorphic basis changes.
+
+It remains to remove same-sign spin-one mixing.  Locally write the
+two-channel connection as
+\[
+ \begin{pmatrix}
+ a+ma_1&mb_1\\ mc_1&g+mg_1
+ \end{pmatrix},
+ \qquad g(\omega_n)\ne0.
+\]
+The spin-two Schur complement is
+\[
+ a+ma_1-\frac{m^2b_1c_1}{g+mg_1},
+\]
+whose \(m\)-derivative at zero is \(a_1\).  Thus the off-diagonal mixing
+does not enter the first divisor derivative.  Holomorphic endpoint
+normalizations contribute only \(h(\omega)a(\omega,0)\), proving
+\eqref{eq:jost-mass-crosswalk}.
+\end{proof}
+
+\begin{corollary}[Nonzero complete massive QNM velocity]
+\label{cor:mass-velocity}
+Let \(\omega_n(m)\) denote the simple complete massive axial QNM branch
+through the certified root.  For the signed squared-mass coefficient
+\(m=\mu^2\),
+\begin{equation}\label{eq:physical-mass-velocity}
+ \boxed{\;
+ \omega_n'(0)=\frac{2i}{3\omega_n}\kappa_n\ne0.
+ \;}
+\end{equation}
+A conservative propagated enclosure is
+\[
+ \operatorname{Re}\omega_n'(0)\in[0.087,0.251],
+ \qquad
+ \operatorname{Im}\omega_n'(0)\in[-0.054,0.135].
+\]
+\end{corollary}
+
+\begin{proof}
+Differentiate
+\(a_{\rm phys}(\omega_n(m),m)=0\) and use
+\eqref{eq:jost-mass-crosswalk}.  The certified selector and QNM disk give
+the displayed interval division; its real part excludes zero.
+\end{proof}
 
 The construction is the asymptotically flat analogue of the
 mass-derivative mechanism behind logarithmic partners in critical gravity
@@ -789,7 +899,8 @@ In endpoint frames compatible with the partial jet,
  \kappa_n
  =\frac{b(\omega_n)}{a'(\omega_n)}
  =\frac{\beta_n}{\alpha_n}
- =-\left.\frac{d\omega_n}{d\tau}\right|_0.
+ =-\left.\frac{d\omega_n}{d\tau}\right|_0
+ =-\frac{3i\omega_n}{2}\omega_n'(0).
  \;}
 \end{equation}
 The ratio is invariant under a common analytic nonzero Evans unit and
@@ -811,19 +922,17 @@ Differentiating the connection divisor gives
 \[
  a'(\omega_n)\dot\omega_{n,\tau}+b(\omega_n)=0,
 \]
-because the partial jet identifies \(b=\partial_\tau a\).  The mass
-crosswalk is not used.  A triangular change
+because the partial jet identifies \(b=\partial_\tau a\).  The first three
+equalities do not use the mass crosswalk; the last follows from
+Theorem~\ref{thm:mass-jost}.  A triangular change
 \(K\mapsto K+LQ-QL\) has zero resonant pairing, and an Evans unit
 multiplies numerator and denominator by the same nonzero value.
 \end{proof}
 
-Under the additional hypotheses of
-Remark~\ref{rem:mass-crosswalk}, the last member of
-\eqref{eq:unified-invariant} may also be written
-\(-3i\omega_n\omega_n'(0)/2\), where the derivative is with respect to the
-physical signed squared-mass coefficient.  The certified enclosure
-\eqref{eq:kappa-enclosure} is intrinsic; it is not advertised here as a
-massive-QNM slope.
+The certified enclosure \eqref{eq:kappa-enclosure} is intrinsic.  Its
+conversion to the complete massive slope uses the endpoint theorem and
+the fixed-frequency factor \(3i\omega/2\), rather than treating that
+spectral factor as a global parameter redefinition.
 
 \begin{proposition}[Non-Einstein generalized root]
 \label{prop:non-einstein-root}
@@ -1006,10 +1115,9 @@ then \eqref{eq:parent-mass-derivative} gives
  \right].
 \]
 Thus the double pole measures QNM motion; the accompanying simple pole
-measures motion of the residue projector.  This exact parent identity does
-not, by itself, identify the certified scalar \(\kappa_n\) with the
-physical massive-QNM velocity; that requires the differentiated-Jost
-promotion left open in Remark~\ref{rem:mass-crosswalk}.
+measures motion of the residue projector.  Theorem~\ref{thm:mass-jost}
+supplies the endpoint-normalized identification between the certified
+scalar selector and the complete massive axial QNM velocity.
 
 \begin{corollary}[Isolated resonance contour]
 \label{cor:isolated-contour}
@@ -1148,9 +1256,8 @@ Bondi flux or an admissible asymptotic state.
 
 Combining Theorem~\ref{thm:exterior-green-pole} with
 Proposition~\ref{prop:bondi-trace}, the principal Bondi-shear coefficient
-is nonzero.  If the additional differentiated-Jost promotion of
-Remark~\ref{rem:mass-crosswalk} is imposed, its parent-normalized form may
-be written
+is nonzero.  Using Corollary~\ref{cor:mass-velocity}, its
+parent-normalized form may be written
 \[
  \mathcal O_{\mathscr I^+}G_{-2}
  =
@@ -1294,9 +1401,9 @@ Projective cocycle
 Complete massive axial first jet
 & Coupled \(Q,Z\) factorization and factor-three Bach crosswalk
 & Exact\\
-Differentiated massive Jost map
-& Leading phase matches; all-order matrix-Volterra uniqueness remains open
-& Exact with gate\\
+Complete massive Jost crosswalk
+& Matrix Frobenius/Volterra endpoint planes and nonzero QNM velocity
+& Analytic and validated\\
 Analytic continuation
 & Analytic horizon and infinity Jost germs on the QNM disk
 & Exact gate\\
@@ -1352,6 +1459,8 @@ Projective cocycle and nonsplitting
 & \nolinkurl{python3 -m black_hole_programme.phase3.axial_qnm_projective_cocycle_v1.verify}\\
 Complete massive first jet
 & \nolinkurl{python3 -m black_hole_programme.phase4.axial_complete_massive_jet_crosswalk_v1.verify}\\
+Complete massive Jost crosswalk
+& \nolinkurl{python3 -m black_hole_programme.phase4.axial_massive_jost_crosswalk_v1.verify}\\
 Evans winding
 & \nolinkurl{python3 -m black_hole_programme.phase3.axial_qnm_projective_evans_contour_completion.full_contour_winding_v1.verify}\\
 Local selector
@@ -1382,11 +1491,8 @@ for the generalized constant component, a standard asymptotically flat
 domain containing that component, excitation by a specified
 astrophysical source, detector sensitivity, an overtone tower, an
 all-multipole Bach nonsplitting theorem, or a quantum positivity/no-go
-theorem.  It also does not establish the full coupled massive-system
-Jost crosswalk or a physical massive-QNM slope.  The complete local
-coupled-system first jet is exact; the missing part is the all-order
-analytic endpoint identification.  The polynomially weighted term is
-proved only for the isolated local resonance contour.
+theorem.  The polynomially weighted term is proved only for the isolated
+local resonance contour.
 
 \section{Conclusion}
 
@@ -1406,9 +1512,12 @@ Maxwell/Regge--Wheeler basis gives
  =\frac{3i\omega}{2}[\mathcal I_{\rm phys}].
 \]
 The corrected rational primitive matches the differentiated massive
-phase, and the Coulomb exponent has vanishing first derivative.  Only the
-all-order analytic Jost identification remains an explicit mass-velocity
-gate.
+phase, and the Coulomb exponent has vanishing first derivative.  The
+matrix Frobenius/Volterra construction promotes the comparison to the
+complete endpoint-normalized Jost planes and proves
+\[
+ \omega_n'(0)=\frac{2i}{3\omega_n}\kappa_n\ne0.
+\]
 
 At the certified damped Schwarzschild mode, the scalar QNM is simple but
 the extension selector is nonzero.  The full connection is therefore
@@ -1427,10 +1536,10 @@ component has weakened asymptotic falloff.
 
 This gives a Schwarzschild counterpart, in asymptotically flat spacetime,
 of the critical-gravity logarithmic-partner mechanism at the level of the
-filtered Bach resonance.  The remaining work separates cleanly into two
-problems: the differentiated massive Jost/Fredholm crosswalk, and a global
-causal domain supporting the endpoint tangent and a justified retarded
-contour deformation.
+filtered Bach resonance.  The remaining work is genuinely global:
+construct a closed weighted causal domain supporting the endpoint tangent,
+bounded metric reconstruction, and a justified retarded contour
+deformation.
 
 \begin{thebibliography}{99}
 

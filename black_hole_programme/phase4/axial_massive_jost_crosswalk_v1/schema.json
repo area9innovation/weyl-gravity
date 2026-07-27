@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Complete massive axial Jost crosswalk certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "lifecycle",
+    "status",
+    "scope",
+    "imports",
+    "infinity_jost",
+    "horizon_jost",
+    "endpoint_crosswalk",
+    "schur_reduction",
+    "mass_velocity",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase4-axial-massive-jost-crosswalk-v1"
+    },
+    "status": {
+      "const": "ANALYTIC_COMPLETE_MASSIVE_JOST_CROSSWALK_AND_NONZERO_QNM_VELOCITY"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "parameter_analytic_horizon_jost_plane",
+        "parameter_analytic_infinity_jost_plane",
+        "opposite_jost_admixture_excluded",
+        "complete_massive_jost_crosswalk",
+        "physical_squared_mass_qnm_velocity_identified",
+        "physical_squared_mass_qnm_velocity_nonzero",
+        "global_causal_resolvent_certified"
+      ]
+    }
+  }
+}

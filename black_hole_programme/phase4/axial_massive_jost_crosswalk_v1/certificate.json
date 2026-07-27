@@ -1,0 +1,165 @@
+{
+  "claim_flags": {
+    "complete_massive_jost_crosswalk": true,
+    "global_causal_resolvent_certified": false,
+    "opposite_jost_admixture_excluded": true,
+    "parameter_analytic_horizon_jost_plane": true,
+    "parameter_analytic_infinity_jost_plane": true,
+    "physical_squared_mass_qnm_velocity_identified": true,
+    "physical_squared_mass_qnm_velocity_nonzero": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a global weighted exterior Fredholm domain",
+    "a retarded inverse-Laplace contour deformation",
+    "a complete causal quasinormal expansion or late-time theorem",
+    "standard asymptotic falloff of the constant generalized metric component",
+    "a real causal or specified astrophysical source"
+  ],
+  "endpoint_crosswalk": {
+    "bach_to_complete_mass_tangent": "3*I*omega/2",
+    "horizon_statement": "the rational gauges are regular and preserve the selected Frobenius exponent",
+    "infinity_linear_term": "(3*I*omega/2)*(-sigma*I*r/(6*omega))=sigma*r/4",
+    "normalization_freedom": "analytic right GL(2) endpoint changes add an analytic multiple of the unperturbed reduced Evans divisor",
+    "opposite_jost_exclusion": "after the exact leading phase match, the difference is homogeneous in the same Volterra/Frobenius class; endpoint uniqueness permits only same-sign analytic basis changes"
+  },
+  "horizon_jost": {
+    "analyticity": "convergent nonresonant matrix Frobenius series in (z,omega,m)",
+    "coordinate": "z=f=(r-2)/r",
+    "coupling_over_f_at_horizon": [
+      [
+        "-1/2",
+        "1"
+      ],
+      [
+        "-1/2",
+        "-5/4"
+      ]
+    ],
+    "derivative": "D=(z*(1-z)**2/2)*d/dz",
+    "indicial_polynomial": "(lam**2 + 4*omega**2)/4",
+    "indicial_roots": [
+      "2*I*omega",
+      "-2*I*omega"
+    ],
+    "mass_and_coupling_order": "O(z)",
+    "minus_recursion_denominator": "n*(n - 4*I*omega)/4",
+    "multiplicity_each": 2,
+    "plus_recursion_denominator": "n*(n + 4*I*omega)/4",
+    "qnm_disk_real_axis_margin": "93417896104510458948373/250000000000000000000000",
+    "uniqueness": "the selected exponent defines a two-dimensional ingoing plane up to analytic right GL(2)"
+  },
+  "imports": {
+    "complete_massive_first_jet": {
+      "path": "black_hole_programme/phase4/axial_complete_massive_jet_crosswalk_v1/certificate.json",
+      "sha256": "0c71cd870b1a8152cf19cdde2af8ef62e06be8ce0c79a0f402c6e34df2116579"
+    },
+    "ecs_inverse_tortoise": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_inverse_tortoise_v1/certificate.json",
+      "sha256": "25d7e306e5b4b314aa34f1a10f6a8a0461e8d6c4dd1c2e7f91508b2e6e0d6e92"
+    },
+    "intrinsic_qnm_selector": {
+      "path": "black_hole_programme/phase3/axial_qnm_projective_evans_contour_completion/local_selector_v1/certificate.json",
+      "sha256": "aefc5b04fb7e33b72b7553dba69cedc6dff82d2838d4d11cb1a5a45c80f9c2a4"
+    },
+    "spin_one_local_unit": {
+      "path": "black_hole_programme/phase3/axial_qnm_spin_one_local_unit_v1/certificate.json",
+      "sha256": "c0e8c6880ed4b142fe79738590eaede4637360d15eb31dc2203467eb66816e6a"
+    }
+  },
+  "infinity_jost": {
+    "analyticity": "uniform Neumann series on a smaller parameter polydisc",
+    "binomial_parameter_abs_upper": "62500000000000000000000000000000000000000/8726903312593110380825192596015558069079347129",
+    "coulomb_exponent": "sigma*I*(2*k+m/k)",
+    "coulomb_exponent_mass_derivative_at_zero": "0",
+    "coupling_matrix_B": [
+      [
+        "-2*(r - 2)*(5*r - 8)/r**4",
+        "-8*(r - 3)*(r - 2)/r**4"
+      ],
+      [
+        "-2*(r - 2)/r**3",
+        "-2*(r - 2)*(2*r + 1)/r**4"
+      ]
+    ],
+    "decay_at_m_zero_lower": "28470916872910613751303107*sqrt(2)/200000000000000000000000000",
+    "decay_on_declared_mass_disk_lower": "(-50000000000000000000000000000000000000000000 + 2659693154433717521784268397925515304557587494911*sqrt(2))/18683579220902091789674600000000000000000000000000",
+    "ecs_ray": "x=x(45)+exp(I*pi/4)*t",
+    "equation": "D**2 Psi+(((omega**2-m*f)*I_2)+B(r))*Psi=0",
+    "phase": "phi_sigma=exp(sigma*I*k*x)*r**(sigma*I*m/k)",
+    "phase_log_derivative": "I*sigma*(k**2*r**2 + m*r - 2*m)/(k*r**2)",
+    "phase_residual": "m*(4*k**2*r**2 - I*k*r**2*sigma + 6*I*k*r*sigma - 8*I*k*sigma - m*r**2 + 4*m*r - 4*m)/(k**2*r**4)",
+    "r_squared_coupling_limit": [
+      [
+        "-10",
+        "-8"
+      ],
+      [
+        "-2",
+        "-4"
+      ]
+    ],
+    "r_squared_phase_residual_limit": "m*(4*k**2 - I*k*sigma - m)/k**2",
+    "row_sum_majorant": "(1+2/R)*(18/R**2+40/R**3), R>=45",
+    "two_stage_construction": [
+      "scalar Coulomb Volterra equation with O(r**-2) residual",
+      "matrix Volterra equation with B(r)=O(r**-2)"
+    ],
+    "uniqueness": "the sectorial Volterra normalization excludes the opposite exponential and defines a two-dimensional outgoing Jost plane up to analytic right GL(2)",
+    "wave_number": "k=sqrt(omega**2-m), k(omega,0)=omega"
+  },
+  "lifecycle": "CLASSIFIED",
+  "mass_velocity": {
+    "certified_outer_enclosure": {
+      "im": [
+        "-0.054",
+        "0.135"
+      ],
+      "re": [
+        "0.087",
+        "0.251"
+      ]
+    },
+    "excludes_zero": true,
+    "formula": "nu_n=2*I*kappa_n/(3*omega_n)",
+    "identity_at_qnm": "b_B(omega_n)=(3*I*omega_n/2)*partial_m a_phys(omega_n,0)",
+    "parameter": "signed squared mass m=mu**2"
+  },
+  "result_id": "PURE_WEYL_PHASE4_AXIAL_MASSIVE_JOST_CROSSWALK",
+  "schema": "phase4-axial-massive-jost-crosswalk-v1",
+  "schema_path": "black_hole_programme/phase4/axial_massive_jost_crosswalk_v1/schema.json",
+  "schur_reduction": {
+    "conclusion": "same-sign spin-one mixing is off-diagonal O(m) and does not enter the first derivative of the reduced spin-two divisor",
+    "connection_model": [
+      [
+        "a + a1*eps",
+        "b1*eps"
+      ],
+      [
+        "c1*eps",
+        "eps*g1 + g"
+      ]
+    ],
+    "determinant_derivative_at_spin_two_root": "a1*g",
+    "mass_derivative_at_zero": "a1",
+    "spin_one_unit": true,
+    "spin_two_schur_complement": "(a*eps*g1 + a*g + a1*eps**2*g1 + a1*eps*g - b1*c1*eps**2)/(eps*g1 + g)"
+  },
+  "scope": {
+    "background": "Schwarzschild exterior M=1",
+    "claim_kind": "REDUCED-MODE analytic endpoint and QNM branch",
+    "frequency_convention": "exp(+I*omega*t)",
+    "local_mass_radius": "1/1000000",
+    "mass_parameter": "m=mu**2, signed squared-mass coefficient",
+    "qnm_center": {
+      "im": "8896231568893569828046093/100000000000000000000000000",
+      "radius": "1/10000000",
+      "re": "-93417921104510458948373/250000000000000000000000"
+    },
+    "sector": "axial ell=2 complete coupled Q,Z tensor system"
+  },
+  "status": "ANALYTIC_COMPLETE_MASSIVE_JOST_CROSSWALK_AND_NONZERO_QNM_VELOCITY"
+}

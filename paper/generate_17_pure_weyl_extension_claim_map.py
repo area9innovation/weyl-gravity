@@ -51,6 +51,10 @@ AUTHORITIES = {
         "black_hole_programme/phase4/"
         "axial_complete_massive_jet_crosswalk_v1/certificate.json"
     ),
+    "complete_massive_axial_jost": (
+        "black_hole_programme/phase4/"
+        "axial_massive_jost_crosswalk_v1/certificate.json"
+    ),
     "null_infinity_reconstruction": (
         "black_hole_programme/phase4/"
         "axial_qnm_null_infinity_reconstruction_v1/certificate.json"
@@ -89,7 +93,7 @@ def payload() -> dict:
     return {
         "schema": "paper-draft-source-map-v1",
         "paper_id": "PAPER_17_PURE_WEYL_EXTENSION_RESONANCE",
-        "result_id": "PAPER17_REFEREE_MAJOR_REVISION",
+        "result_id": "PAPER17_ENDPOINT_ANALYTIC_MASS_SLOPE_REVISION",
         "lifecycle_state": "DRAFT_ALLOWED",
         "manuscript": str(PAPER.relative_to(ROOT)),
         "paper_sha256": digest(PAPER),
@@ -125,10 +129,13 @@ def payload() -> dict:
                 "coulomb_exponent_mass_derivative_at_zero": "0",
                 "reduced_physical_r_slope": "-sigma*I/(6*omega)",
                 "scaled_bach_r_slope": "sigma/4",
-                "endpoint_comparison_status": "EXACT_LEADING_ASYMPTOTIC",
-                "all_order_differentiated_jost_certified": False,
-                "opposite_jost_admixture_excluded": False,
-                "physical_mass_velocity_certified": False,
+                "endpoint_comparison_status": "ANALYTIC_FROBENIUS_VOLTERRA",
+                "all_order_differentiated_jost_certified": True,
+                "opposite_jost_admixture_excluded": True,
+                "physical_mass_velocity_certified": True,
+                "physical_mass_velocity_formula": "2*I*kappa/(3*omega)",
+                "physical_mass_velocity_re_enclosure": ["0.087", "0.251"],
+                "physical_mass_velocity_im_enclosure": ["-0.054", "0.135"],
             },
             "smith_and_root": {
                 "defective_smith_type": [0, 0, 2],
@@ -136,9 +143,7 @@ def payload() -> dict:
                 "selector": "kappa=b/a_prime=beta/alpha",
                 "carrier_quotient": "-1/kappa",
                 "intrinsic_tau_velocity": "-kappa",
-                "physical_mass_velocity_relation": (
-                    "CONDITIONAL_nu=2*I*kappa/(3*omega)"
-                ),
+                "physical_mass_velocity_relation": "nu=2*I*kappa/(3*omega)",
                 "kappa_re_enclosure": ["-0.047", "0.022"],
                 "kappa_im_enclosure": ["0.064", "0.138"],
             },
@@ -153,7 +158,7 @@ def payload() -> dict:
                 "identity": "G_W=-(partial_m inverse(E+m*A)|0)/(4*alpha_W)",
                 "double_coefficient": "-nu*P/(4*alpha_W)",
                 "isolated_contour_only": True,
-                "certified_scalar_selector_identified_with_parent_nu": False,
+                "certified_scalar_selector_identified_with_parent_nu": True,
             },
             "outgoing_trace_bridge": {
                 "principal_coefficient": (
@@ -191,9 +196,9 @@ def payload() -> dict:
             "bach_mass_direction_normal_form_exact": True,
             "graded_mass_squared_direction_exact": True,
             "complete_coupled_massive_axial_first_jet_crosswalk_exact": True,
-            "all_order_differentiated_massive_jost_crosswalk": False,
-            "endpoint_compatible_physical_mass_jet_exact": False,
-            "physical_massive_qnm_slope_certified": False,
+            "all_order_differentiated_massive_jost_crosswalk": True,
+            "endpoint_compatible_physical_mass_jet_exact": True,
+            "physical_massive_qnm_slope_certified": True,
             "certified_qnm_smith_type_0_0_2": True,
             "generalized_root_carrier_nonzero": True,
             "exterior_cutoff_green_double_pole": True,
@@ -219,7 +224,6 @@ def payload() -> dict:
         "does_not_establish": [
             "LORENTZIAN-CAUSAL resolvent or retarded contour theorem",
             "complete quasinormal expansion or late-time asymptotics",
-            "all-order differentiated massive Jost map and physical massive-QNM slope",
             "standard asymptotic-flatness falloff for the generalized constant component",
             "real causal temporally compact source, specified astrophysical matter source, or detector sensitivity",
             "all-multipole Bach nonsplitting",
