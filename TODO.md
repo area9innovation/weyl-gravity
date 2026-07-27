@@ -39,11 +39,19 @@ Consequences that are now closed rather than open:
   authors, exact titles, programme paper numbers, in-repo paths, and the
   repository URL.
 
-1. [ ] **Give the ABHT reference a real citation or mark it unpublished.**
-   `paper/03-fourth-order-vacuum.tex:951` still reads "2026, to appear".
-   This is a genuine third-party reference, not a programme companion, so it
-   cannot be resolved to an in-repo path. Either locate the published
-   version or state plainly that it is unpublished.
+1. [ ] **Disposition 54 uncited bibliography entries across 17 manuscripts.**
+   Found 2026-07-27. Every `\cite` in the series resolves — there are zero
+   cited-but-undefined keys — but 54 `\bibitem`s are never cited and render
+   in reference lists with nothing pointing at them. Worst offenders:
+   `07-08-archive` (6), `06` (6), `13` (6), `14` (6), `11` (5), `00` (4),
+   `03` (4).
+
+   Many are foundational works the paper plainly rests on but never
+   explicitly cites (Bach, Regge–Wheeler, Lee–Wald, Stelle, BV). Those want
+   a citation in the text, not deletion. Deciding which need citing and
+   where is an editorial judgement per paper. Once dispositioned, add a
+   bibliography-hygiene rail; one is not added now because the tree would
+   fail it immediately, and a rail that is expected to fail is not a rail.
 
 2. [ ] **Repair the 22 verifiers broken by the subtree extraction.** Found
    and quantified 2026-07-27 while building the crosswalk; see
@@ -154,6 +162,13 @@ the Einstein–Weyl calculation.
   disclosure in the 2026-07-14 standardization commit `181125aa`, which had
   been failing `symbolic/verify_conformal_split_publications.py` on `master`
   ever since. Restored 2026-07-27 in the same pass.
+- ABHT reference checked 2026-07-27 and found **genuine, not fabricated**.
+  `ABHT` is Anderson, Bateman, Herzog and Turok; both titles are cited as
+  "to appear" in refs. [25] and [27] of Bateman–Turok, *Escape from
+  Ostrogradsky via hidden ghost parity*, arXiv:2607.00096 — which this
+  programme already cites as `BT2026`. Still unpublished as of July 2026,
+  so the entry now says so and names the corroborating source instead of
+  the bare "to appear".
 - Subtree extraction into the standalone repository — completed 2026-07-26.
 - Standalone-history replay crosswalk — completed 2026-07-27. 858 provenance
   pins swept; 244 of 245 dangling commits resolved to their standalone image
