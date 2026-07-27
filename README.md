@@ -35,8 +35,11 @@ This is a **pre-release research archive**.
 - The repository does not establish that pure Weyl gravity is a viable theory
   of nature, that its quantum theory is unitary, or that its extra modes are
   observable particles.
-- No repository-wide software/content license or archival DOI has yet been
-  assigned. Those are release gates, not implied permissions.
+- The repository is licensed: manuscripts, certificates, data, and
+  documentation under CC BY 4.0, and code under MIT. See [LICENSE](LICENSE).
+  A license is permission to use and redistribute, not an endorsement of any
+  claim the licensed file makes.
+- No archival DOI has yet been assigned. That remains an open release gate.
 
 The most useful external contribution at this stage is a technically specific
 critique: identify a claim, assumption, equation, certificate, or verifier and
