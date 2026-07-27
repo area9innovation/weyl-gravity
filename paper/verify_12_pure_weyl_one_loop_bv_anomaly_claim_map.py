@@ -16,7 +16,7 @@ COVERAGE = (
     / "paper/12-pure-weyl-one-loop-bv-anomaly-science-forge-paper-coverage.json"
 )
 EXPECTED_MANUSCRIPT_SHA256 = (
-    "7e01f75beab8b0d259795d83dd309df054352497f11271b30e9f58299d5490f1"
+    "326c1e5ef84cafa38341d4aff400fe13166cfe497090983d5374dbf0c9763ea3"
 )
 ALL_LOOP_INPUT_SHA256 = (
     "3649925e44d99bea0020f3d1c20a16c54a44f6c9714a3c273c20a6e6d8f84dbc"
