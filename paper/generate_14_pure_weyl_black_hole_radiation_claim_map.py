@@ -17,7 +17,7 @@ REPO = Path(
     ).strip()
 )
 PREFIX = ROOT.relative_to(REPO).as_posix()
-SOURCE_BASELINE = "936d76dbd2a9149243e57a082fa3519f0cfa8724"
+SOURCE_BASELINE = "7fc9d8ca3fbd0e63ad011ad6d6b2825f029f8586"
 
 PAPER = ROOT / "paper/14-pure-weyl-black-hole-radiation.tex"
 OUTPUT = ROOT / "paper/14-pure-weyl-black-hole-radiation-claim-map.json"
@@ -32,15 +32,15 @@ PHASE3_CERT = ROOT / "black_hole_programme/phase3/axial_complete_reconstruction_
 PHASE3_RECEIPT = ROOT / "black_hole_programme/phase3/axial_complete_reconstruction_repair/receipt.json"
 PHASE3_REPORT = ROOT / "reports/phase3-black-hole-axial-complete-reconstruction-repair-2026-07-22.md"
 PHASE3_ATLAS = ROOT / "residual_atlas/phase3-black-hole-axial-complete-reconstruction-repair-fragment-v1.json"
-PHASE3_COMMIT = "d5d5d6de648795203604d62ce7bc4f4ce6fea510"
+PHASE3_COMMIT = "20f37b8068879dc9cda7107c71427bf2df23882e"
 ENDPOINT_CERT = ROOT / "black_hole_programme/phase3/axial_null_flux_gram/certificate.json"
 ENDPOINT_RECEIPT = ROOT / "black_hole_programme/phase3/axial_null_flux_gram/receipt.json"
 ENDPOINT_REPORT = ROOT / "reports/phase3-black-hole-axial-null-flux-gram-2026-07-23.md"
 ENDPOINT_ATLAS = ROOT / "residual_atlas/phase3-black-hole-axial-null-flux-gram-fragment-v1.json"
-ENDPOINT_CONTENT_COMMIT = "332564286df69b0638aa8c618aa64e39581ab090"
-ENDPOINT_LIFECYCLE_COMMIT = "0da46f3b0916e4e53f441df37077038892cf89c3"
-GLOBAL_V5_CONTENT_COMMIT = "54670c5e371200ee1f08b88843cb3e67b3f17b3b"
-GLOBAL_V5_LIFECYCLE_COMMIT = "b1eec02b2d04e585fddbf8f6f1c2ba1d0b96c6f1"
+ENDPOINT_CONTENT_COMMIT = "3ae5b4ea3bf2a010d8d52c23982ecf250a889123"
+ENDPOINT_LIFECYCLE_COMMIT = "fd0e82df32cf49300b73aa3c7b9ef32efed328a0"
+GLOBAL_V5_CONTENT_COMMIT = "1766ed380352327b11032e53daa9732a8878f195"
+GLOBAL_V5_LIFECYCLE_COMMIT = "7a71f94c057aff37eedd514b15a4f0187527fa54"
 GLOBAL_V5_CERT = "black_hole_programme/phase3/axial_global_connection_matrix_v5/certificate.json"
 GLOBAL_V5_REPORT = "reports/phase3-black-hole-axial-global-connection-matrix-v5-2026-07-23.md"
 GLOBAL_V5_ATLAS = "residual_atlas/phase3-black-hole-axial-global-connection-matrix-v5-fragment-v1.json"

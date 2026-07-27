@@ -134,9 +134,9 @@ def main() -> None:
         if item["dependency_tags"] != expected_tags or source.get("dependency_tags") != expected_tags:
             fail(f"Phase-2 dependency-tag drift for {result_id}")
     endpoint = updates["PURE_WEYL_PHASE3_AXIAL_NULL_ENDPOINT_FLUX_GRAMS_V1"]
-    if endpoint.get("content_commit") != "332564286df69b0638aa8c618aa64e39581ab090":
+    if endpoint.get("content_commit") != "3ae5b4ea3bf2a010d8d52c23982ecf250a889123":
         fail("endpoint content commit drift")
-    if endpoint.get("lifecycle_commit") != "0da46f3b0916e4e53f441df37077038892cf89c3":
+    if endpoint.get("lifecycle_commit") != "fd0e82df32cf49300b73aa3c7b9ef32efed328a0":
         fail("endpoint lifecycle commit drift")
     for commit in [endpoint["content_commit"], endpoint["lifecycle_commit"]]:
         kind = subprocess.check_output(
@@ -172,9 +172,9 @@ def main() -> None:
     ):
         fail("endpoint flux source overpromotes a global/physical claim")
     global_v5 = updates["PURE_WEYL_PHASE3_AXIAL_GLOBAL_CONNECTION_MATRIX_V5"]
-    if global_v5.get("content_commit") != "54670c5e371200ee1f08b88843cb3e67b3f17b3b":
+    if global_v5.get("content_commit") != "1766ed380352327b11032e53daa9732a8878f195":
         fail("global v5 content commit drift")
-    if global_v5.get("lifecycle_commit") != "b1eec02b2d04e585fddbf8f6f1c2ba1d0b96c6f1":
+    if global_v5.get("lifecycle_commit") != "7a71f94c057aff37eedd514b15a4f0187527fa54":
         fail("global v5 lifecycle commit drift")
     if global_v5.get("lifecycle") != "NUMERIC-ENCLOSURE":
         fail("global v5 lifecycle drift")

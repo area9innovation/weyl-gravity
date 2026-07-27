@@ -1,0 +1,72 @@
+{
+  "schema": "paper-series-release-touchup-tier-receipt-v1",
+  "date": "2026-07-27",
+  "base_commit": "f9a80a59d00cd154d551b9168867be0f96de8fd8",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "lifecycle": "PUBLIC_RELEASE_MAINTENANCE",
+  "scientific_promotion": false,
+  "scope": [
+    "Papers 01-06 release metadata and accountability disclosure",
+    "Paper 11 release-language correction",
+    "Papers 14-16 successor/status reconciliation",
+    "Paper 14-15 standalone-history provenance repair",
+    "affected PDFs, claim maps, and coverage overlays"
+  ],
+  "manuscript_sha256": {
+    "paper/01-symplectic-diagonalization.tex": "9d2d5d36a9a7021ccb90198c8e3c9c88ce1ff3beb3779009791226723648504c",
+    "paper/02-variational-fock.tex": "117053372762bc1bec8c1fe2bc27d6cb9a02d3a6dc91bad8e59a235c16ac8d01",
+    "paper/03-fourth-order-vacuum.tex": "25dfc29b260d16ea98729d2b5ddfd23bbd7ff227f83b92d9a975546e1baeb765",
+    "paper/04-fourth-order-gravity.tex": "5c7b7f90ba7a918b6bb7f57223dd5b5a06e0d4bd8d01b9861a5b8162ad9fe702",
+    "paper/05-interaction-obstructions.tex": "71f11408e86be9c71dc4dae9369c93c4b15192b0615d555bb2c15d0c6d0a8c9d",
+    "paper/06-einstein-weyl-interaction-obstructions.tex": "8521e5c0c00cd2e22d17d916d0e4fbbddd1a86f8f4d2cd9e4bc174e18d742943",
+    "paper/11-gravity-light-cyclic-causal-ell3.tex": "e4ed0a803ff78588d7b2a5c34248bdf5d085cc592dd3543002f93ec9e5d00cee",
+    "paper/14-pure-weyl-black-hole-radiation.tex": "128754d7fdcb024661499cdd3e5523ff82e373fff09a91bbe6b2b9ccf3980a22",
+    "paper/15-four-level-ghost-classification-phase1-synthesis.tex": "fb8f7181a24b18a775d4e0bbac82e344502b37ef39a624c897ce8736e3c5502f",
+    "paper/16-lorentzian-endpoint-nonselection-pure-weyl.tex": "d6e35afd3c4cb7b068bda47212356de25437f5d4df89ccc2dfb7ef091d4bf8bd"
+  },
+  "verification": [
+    {
+      "command": "two pdflatex passes for Papers 01-06, 11, and 14-16",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 paper/verify_11_gravity_light_claim_map.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 paper/verify_14_pure_weyl_black_hole_radiation_claim_map.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 paper/verify_15_phase1_synthesis_claim_map.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 paper/verify_16_lorentzian_endpoint_nonselection_claim_map.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest paper.test_14_pure_weyl_black_hole_radiation_claim_map paper.test_15_phase1_synthesis_claim_map paper.test_16_lorentzian_endpoint_nonselection_claim_map",
+      "status": "PASS",
+      "tests": 38
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    }
+  ],
+  "higher_tiers_not_run": {
+    "full_repository_certificate_suite": "No mathematical operator, certificate payload, schema, or shared algebra changed; affected paper chains were run."
+  },
+  "does_not_establish": [
+    "new mathematical theorem",
+    "physical massive-QNM scalar crosswalk",
+    "explicit typed T_plus",
+    "global causal inverse-Laplace theorem",
+    "journal readiness without expert review"
+  ]
+}
