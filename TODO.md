@@ -39,7 +39,16 @@ Consequences that are now closed rather than open:
   authors, exact titles, programme paper numbers, in-repo paths, and the
   repository URL.
 
-1. [ ] **Disposition 54 uncited bibliography entries across 17 manuscripts.**
+1. [ ] **Supply titles for 11 abbreviated bibliography entries.** Found
+   2026-07-27 during the reference review. They give only author, journal,
+   volume and page, so a reader cannot tell what is cited and no automated
+   check can validate them: `02:BM2008PRL`, `02:BM2008PRD`, `03:BM2008PRL`,
+   `03:Mostafazadeh2010`, `03:vN1939`, `03:Holdom`, `04:Stelle`,
+   `04:Holdom`, `04:Riegert`, `17:stucker2024`, `17:gajicwarnick2024`.
+   Each is cited *with* its full title elsewhere in the series, so this is
+   transcription, not research.
+
+2. [ ] **Disposition 54 uncited bibliography entries across 17 manuscripts.**
    Found 2026-07-27. Every `\cite` in the series resolves — there are zero
    cited-but-undefined keys — but 54 `\bibitem`s are never cited and render
    in reference lists with nothing pointing at them. Worst offenders:
@@ -53,7 +62,7 @@ Consequences that are now closed rather than open:
    bibliography-hygiene rail; one is not added now because the tree would
    fail it immediately, and a rail that is expected to fail is not a rail.
 
-2. [ ] **Repair the 22 verifiers broken by the subtree extraction.** Found
+3. [ ] **Repair the 22 verifiers broken by the subtree extraction.** Found
    and quantified 2026-07-27 while building the crosswalk; see
    `reports/standalone-history-crosswalk-2026-07-27.md`.
 
@@ -75,7 +84,7 @@ Consequences that are now closed rather than open:
    crosswalk at lookup time, leaving the historical pin as written. This
    changes scientific verification code and needs an explicit decision.
 
-3. [ ] **Decide whether five superseded input pins invalidate their results.**
+4. [ ] **Decide whether five superseded input pins invalidate their results.**
    Separate from the extraction, and not a provenance repair.
    `closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json`
    now hashes to `78cdd185…`, but five older certificates still pin the
@@ -86,46 +95,46 @@ Consequences that are now closed rather than open:
 
 ## Known weak spots in Papers 01–06 (not yet raised by referees)
 
-4. [ ] `04-fourth-order-gravity`: referee 2 suggested a full section reorder
+5. [ ] `04-fourth-order-gravity`: referee 2 suggested a full section reorder
    (reduced complex theory → real forms → Cartan → kernel → degeneration);
    applied as insertions only. Revisit if raised again.
 
-5. [ ] `03-fourth-order-vacuum`: the □²-anchor infrared question is
+6. [ ] `03-fourth-order-vacuum`: the □²-anchor infrared question is
    explicitly open (Remark "anchor is an infrared question"). A proper IR
    Shale/Araki–Yamagami analysis would close it — a new result, not a repair.
 
-6. [ ] `02-variational-fock`: invariant Sobolev classification of the
+7. [ ] `02-variational-fock`: invariant Sobolev classification of the
    original field variables (pullback D(k)†M_obs(k)D(k) in a fixed
    trivialization) — withdrawn claim, recoverable with one computation.
 
 ## Receipts / verification backlog (2026-07-12 audit)
 
-7. [ ] Lean: Schur no-hybrid (commutant of so(3) spin-2 5-dim irrep = ℝ·I) —
+8. [ ] Lean: Schur no-hybrid (commutant of so(3) spin-2 5-dim irrep = ℝ·I) —
    Paper 04's central obstruction, finite-dim matrix algebra.
 
-8. [ ] Lean: orbit-constancy eigenvector lemma (ℓᵀX = −iℓᵀ ⇒
+9. [ ] Lean: orbit-constancy eigenvector lemma (ℓᵀX = −iℓᵀ ⇒
    metric-independence) — load-bearing for Papers 03 AND 04.
 
-9. [ ] Lean: trilemma coset {T: TA₊T⁻¹ = −A₊} = T₀·SO(2,ℂ) + quarter-turn
+10. [ ] Lean: trilemma coset {T: TA₊T⁻¹ = −A₊} = T₀·SO(2,ℂ) + quarter-turn
    congruence (4×4, reuses `NormalForm.lean` patterns).
 
-10. [ ] Lean: pointed-unitary Gaussian identity ψ₀ = ρ⁻¹φ₀ at the covector
+11. [ ] Lean: pointed-unitary Gaussian identity ψ₀ = ρ⁻¹φ₀ at the covector
     level (finite-dim, cheap) — formalizes the corrected central claim of
     Paper 02.
 
-11. [ ] mpmath regression rail for Papers 03–04 kernels (bridge Wightman,
+12. [ ] mpmath regression rail for Papers 03–04 kernels (bridge Wightman,
     sector kernels, conformal limits) — second independent rail; the Wolfram
     rail has never run (no Mathematica available).
 
-12. [ ] Lean (cheap): Paper 02 discrete counterexample {Aⁿ}; fidelity √3/2
+13. [ ] Lean (cheap): Paper 02 discrete counterexample {Aⁿ}; fidelity √3/2
     and occupation 1/3 identities.
 
-13. [ ] Lean (expensive, optional): Paper 02 minimum-distortion scalar
+14. [ ] Lean (expensive, optional): Paper 02 minimum-distortion scalar
     inequality with arccosh closed form.
 
 ## Research continuations (from the papers' own outlooks)
 
-14. [ ] **ON5 — boundary Born-trace evaluation** (Paper 05 capstone, the
+15. [ ] **ON5 — boundary Born-trace evaluation** (Paper 05 capstone, the
     obstruction-to-null theorem). Build the mapped process operator
     A_s = Σ(T_s)_xy|x_s⟩⟨y_s| on a truncated charge-Fock space with the
     squeezed vacuum; charge-decompose; verify the obstruction coefficient
@@ -137,10 +146,10 @@ Consequences that are now closed rather than open:
     cross-paired Gram + graded trace from ON1, map from ON2, squeezing
     from ON3.
 
-15. [ ] Paper 02 outlook (i): classify quadratic PT Hamiltonians whose
+16. [ ] Paper 02 outlook (i): classify quadratic PT Hamiltonians whose
     positive diagonalizer direction is inter-mode for some splitting.
 
-16. [ ] Λ ≠ 0 phase diagram (critical gravity / partial masslessness loci) —
+17. [ ] Λ ≠ 0 phase diagram (critical gravity / partial masslessness loci) —
     flagged out of scope in Paper 04.
 
 ## Deferred (explicitly not in the active queue)
@@ -169,6 +178,18 @@ the Einstein–Weyl calculation.
   programme already cites as `BT2026`. Still unpublished as of July 2026,
   so the entry now says so and names the corroborating source instead of
   the bare "to appear".
+- Literature and reference review — completed 2026-07-27, see
+  `reports/literature-and-reference-review-2026-07-27.md`. Bibliography link
+  coverage 65% → 93% (98 DOI links over 73 works, each verified against
+  CrossRef on title+year+volume+page, with two book-*review* false matches
+  rejected on a type check). All 115 existing arXiv ids checked against the
+  arXiv API: 114 correct, one wrong and fixed (Paper 07 cited Altaş–Tekin
+  arXiv:1804.05602 "Chiral Gravity" for the "generic gravity in AdS" paper,
+  which is arXiv:1705.10234, PRD 97 024028 — a split-out transcription slip;
+  the archive and Paper 13 were already correct).
+  **Hazard recorded there: a bibliography-only edit silently breaks five
+  claim-map rails. Re-run the claim-map generators after any manuscript
+  touch-up.**
 - Subtree extraction into the standalone repository — completed 2026-07-26.
 - Standalone-history replay crosswalk — completed 2026-07-27. 858 provenance
   pins swept; 244 of 245 dangling commits resolved to their standalone image
