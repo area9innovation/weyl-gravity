@@ -289,25 +289,6 @@ The detailed contribution statement in each paper controls that paper.
 
 Contact: **Asger Alstrup Palm** — `asger@area9.dk`
 
-## Migration note
-
-This project was extracted with its relevant history from
-`area9innovation/bp2transformer` on 26 July 2026. The standalone repository
-root is now the former `physics/symplectic-reconstruction/` subtree.
-
-Current commands and documentation should use paths relative to the
-`weyl-gravity` root. Historical receipts, append-only planning events, and
-content-addressed certificate payloads may still contain the former monorepo
-path or absolute working directory. Those strings record where a historical
-calculation ran; changing them would falsify the receipt or invalidate hashes.
-They are not instructions to clone or use the old monorepo.
-
-The extraction preserved relevant authors, dates, messages, changes, and
-ancestry, but necessarily rewrote commit hashes when the subtree prefix was
-removed. Historical certificates pinned to old monorepo commit IDs therefore
-require an explicit migration crosswalk before they can be replayed solely
-from those old IDs in the standalone repository.
-
 ## What would count as success?
 
 The project succeeds methodologically if expert reviewers can efficiently
