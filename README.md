@@ -132,12 +132,15 @@ with the [physicist executive summary](paper/98-physicist-executive-summary.md).
 
 ## Start here
 
+- **General introduction (Paper 99):** [Are Weyl Gravity's Ghosts Real?
+  Building Model Universes to Find
+  Out](paper/99-how-to-build-a-universe.md)
+- **Programme introduction (Paper 00):** [Ghosts, Geometry, and
+  Reality](paper/00-ghosts-geometry-reality.pdf)
+- **Physicist introduction (Paper 98):** [Pure-Weyl gravity programme:
+  executive summary for physicists](paper/98-physicist-executive-summary.md)
 - **External reviewers:** [Review Paper 17 and its evidence
   chain](REVIEWING.md)
-- **General audience:** [Are Weyl Gravity's Ghosts Real? Building Model
-  Universes to Find Out](paper/99-how-to-build-a-universe.md)
-- **Physicists:** [Pure-Weyl gravity programme: executive summary for
-  physicists](paper/98-physicist-executive-summary.md)
 - **Stable Phase-1 synthesis:** [What Survives the Ghost
   Test?](paper/15-four-level-ghost-classification-phase1-synthesis.pdf)
 - **Black-hole endpoint theorem:** [Future-Horizon Regularity and One-Sided
