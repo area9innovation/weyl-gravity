@@ -123,6 +123,14 @@ class Paper17ConsolidatedClaimMapTests(unittest.TestCase):
             "Green-principal declaration drift",
         )
 
+    def test_causal_bridge_demotion_rejected(self) -> None:
+        self.assert_mutation_rejected(
+            lambda data: data["exact_identities"][
+                "causal_laplace_bridge"
+            ].update({"mode_reduced_tt_scope": False}),
+            "causal Laplace-bridge declaration drift",
+        )
+
     def test_generalized_falloff_promotion_rejected(self) -> None:
         self.assert_mutation_rejected(
             lambda data: data["exact_identities"][

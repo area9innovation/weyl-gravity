@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "lifecycle",
+    "dependency_tags",
+    "imports",
+    "causal_problem",
+    "mass_derivative_identity",
+    "laplace_bridge",
+    "meromorphic_continuation",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase4-axial-qnm-causal-laplace-bridge-v1"
+    },
+    "status": {
+      "const": "CERTIFIED_CAUSAL_RETARDED_TRANSFER_MEROMORPHIC_DOUBLE_POLE"
+    },
+    "lifecycle": {
+      "const": "LORENTZIAN_CERTIFIED"
+    }
+  },
+  "additionalProperties": true
+}

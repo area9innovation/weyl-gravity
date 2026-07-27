@@ -7,6 +7,13 @@
       "sha256": "75e18d9a91d6827ad2fae645a05b0fe1cc9a50459f9b03dca280c884f917aca3",
       "status": null
     },
+    "causal_laplace_bridge": {
+      "path": "black_hole_programme/phase4/axial_qnm_causal_laplace_bridge_v1/certificate.json",
+      "result_id": null,
+      "result_token": null,
+      "sha256": "7d2b1147b5b6f0f5242b1de293098eb578097f00543cc1e7b451a8a6e4fefbe4",
+      "status": "CERTIFIED_CAUSAL_RETARDED_TRANSFER_MEROMORPHIC_DOUBLE_POLE"
+    },
     "complete_massive_axial_jet": {
       "path": "black_hole_programme/phase4/axial_complete_massive_jet_crosswalk_v1/certificate.json",
       "result_id": "PURE_WEYL_PHASE4_AXIAL_COMPLETE_MASSIVE_JET_CROSSWALK",
@@ -95,6 +102,7 @@
   "claim_flags": {
     "all_order_differentiated_massive_jost_crosswalk": true,
     "bach_mass_direction_normal_form_exact": true,
+    "causal_laplace_transfer_meromorphic_double_pole": true,
     "certified_qnm_smith_type_0_0_2": true,
     "complete_coupled_massive_axial_first_jet_crosswalk_exact": true,
     "complete_retarded_qnm_expansion": false,
@@ -109,6 +117,7 @@
     "global_ecs_fixed_domain_fredholm": true,
     "global_ecs_green_double_pole": true,
     "graded_mass_squared_direction_exact": true,
+    "mode_reduced_retarded_green_operator": true,
     "non_split_rw_self_extension_exact_on_positive_real_axis": true,
     "outgoing_trace_bridge_exact": true,
     "physical_massive_qnm_slope_certified": true,
@@ -118,10 +127,11 @@
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
-    "REDUCED-MODE"
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
   ],
   "does_not_establish": [
-    "LORENTZIAN-CAUSAL resolvent or retarded contour theorem",
+    "full off-shell metric/BV retarded propagator or global contour theorem",
     "complete quasinormal expansion or late-time asymptotics",
     "standard asymptotic-flatness falloff for the generalized constant component",
     "real causal temporally compact source, specified astrophysical matter source, or detector sensitivity",
@@ -133,6 +143,14 @@
       "parameter_domain": "omega != 0",
       "q": "-I*(15*r + 13 + 12/r + 9/r**2)/(120*omega)",
       "representative": "I*omega*(r-2)/(2*r)"
+    },
+    "causal_laplace_bridge": {
+      "continued_principal_coefficient": "-nu_n*P_n/(4*alpha_W)",
+      "global_contour_deformation": false,
+      "initial_frequency_half_plane": "Im(omega)<-c",
+      "mode_reduced_tt_scope": true,
+      "retarded_mass_derivative": "G_hh,W^ret=-(partial_m G_m^ret|0)/(4*alpha_W)",
+      "sequential_retarded_response": "G_0^ret*A*G_0^ret/(4*alpha_W)"
     },
     "complete_massive_first_jet": {
       "all_order_differentiated_jost_certified": true,
@@ -180,6 +198,7 @@
       "traceless": true
     },
     "green_principal_coefficient": {
+      "causal_cutoff_laplace_continuation": true,
       "coefficient": "-beta*u tensor tilde_u/alpha**2",
       "cutoff_exterior": true,
       "global_causal_resolvent": false,
@@ -250,8 +269,8 @@
   "lifecycle_state": "DRAFT_ALLOWED",
   "manuscript": "paper/17-pure-weyl-schwarzschild-extension-structure.tex",
   "paper_id": "PAPER_17_PURE_WEYL_EXTENSION_RESONANCE",
-  "paper_sha256": "2954375e3d3612ad3895eb93ac4a4e731f1fa399848acdc1b14aa12be675d7d5",
-  "result_id": "PAPER17_ENDPOINT_ANALYTIC_MASS_SLOPE_REVISION",
+  "paper_sha256": "cff76a9cf8fcc455b33c4b383e9049cd5e3615dbc0731e9a9063ea7525563d66",
+  "result_id": "PAPER17_CAUSAL_LAPLACE_RESONANCE_REVISION",
   "schema": "paper-draft-source-map-v1",
   "trusted_computing_base": {
     "immutable_doi_archive_available": false,

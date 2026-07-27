@@ -65,7 +65,10 @@ The complete radial pencil also admits a fixed-domain, two-ended
 \(\pi/4\) exterior-complex-scaled realization that is Fredholm of index
 zero.  Its inverse has a nonzero rank-one second-order pole, and its
 compactly supported matrix elements agree with the exterior outgoing
-cut-off inverse.  Exact axial reconstruction shows that the Einstein
+cut-off inverse.  This outgoing inverse is the meromorphic continuation
+of the Laplace transform of the mode-reduced retarded parent response, so
+the pole belongs to an actual causal transfer operator.  Exact axial
+reconstruction shows that the Einstein
 range of the principal coefficient has nonzero Bondi shear.  A
 complexified conserved, traceless, radially compact odd source has
 nonzero adjoint overlap.  Thus the isolated local resonance contour
@@ -124,7 +127,8 @@ The paper has five results.
 \item A fixed-domain global exterior-complex-scaled radial pencil is
   Fredholm of index zero and has a genuine rank-one pole of order two.
   Its compactly supported matrix elements equal the exterior outgoing
-  cut-off Green operator.
+  cut-off Green operator and meromorphically continue a mode-reduced
+  retarded causal transfer.
 \item Exact metric reconstruction and an explicit conserved, traceless odd
   source show that the range and source covectors of this pole can both be
   nonzero.
@@ -162,6 +166,9 @@ Exterior cut-off Green double pole
 Global ECS radial Fredholm pole
 & Two-ended exponential dichotomy and connection reduction
 & \texttt{REDUCED-MODE}\\
+Causal Laplace-to-resonance bridge
+& Normally hyperbolic parent, retarded mass derivative, ECS continuation
+& \texttt{LORENTZIAN-CAUSAL}\\
 Bondi-shear and compact-source nonannihilation
 & Exact reconstruction and conserved-source identities
 & \texttt{REDUCED-MODE}\\
@@ -174,9 +181,11 @@ Global retarded ringdown expansion
 
 The last row is essential.  The paper proves a fixed-domain meromorphic
 radial response on a global complex-scaled contour, its compactly
-localized exterior matrix elements, and the polynomial contribution of an
-isolated local resonance contour.  It does not prove an uncut real-axis
-causal inverse, a complete causal quasinormal expansion, late-time
+localized exterior matrix elements, and their origin as the meromorphic
+continuation of a mode-reduced retarded causal transfer.  It also proves
+the polynomial contribution of an isolated local resonance contour.  It
+does not prove a full off-shell metric/BV retarded propagator, a complete
+causal quasinormal expansion, late-time
 asymptotics, detector sensitivity, or excitation by a specified
 astrophysical matter model.
 
@@ -1212,6 +1221,87 @@ Consequently
 \end{equation}
 No commutativity assumption is used.
 
+\begin{theorem}[Causal Laplace-to-resonance bridge]
+\label{thm:causal-laplace}
+Restrict the parent family
+\(\mathcal E_m=\mathcal E+m\mathcal A\) to the gauge-invariant axial
+\(\ell=2\) transverse-traceless spin-two sector on the Schwarzschild
+domain of outer communications.  Let \(G_m^{\rm ret}\) denote its retarded
+Green operator.  Then
+\[
+ \boxed{\;
+ G_{hh,{\rm W}}^{\rm ret}
+ =-\frac1{4\alpha_{\rm W}}
+ \left.\partial_mG_m^{\rm ret}\right|_{m=0}
+ =\frac1{4\alpha_{\rm W}}
+ G_0^{\rm ret}\mathcal A G_0^{\rm ret}.
+ \;}
+\]
+This operator is retarded.  For compact radial source and observation
+cutoffs, its Laplace transform, initially defined in a lower half-plane,
+has a unique meromorphic continuation to \(\Omega_n\).  That continuation
+has a nonzero rank-one pole of order two with
+\[
+ \boxed{\;
+ G_{-2}
+ =-\frac{\omega_n'(0)}{4\alpha_{\rm W}}P_n,
+ \qquad
+ \omega_n'(0)=\frac{2i}{3\omega_n}\kappa_n\ne0.
+ \;}
+\]
+\end{theorem}
+
+\begin{proof}
+After axial transverse-traceless reduction,
+\(\mathcal E_m\) is normally hyperbolic with a smooth zeroth-order
+parameter perturbation.  It therefore has unique retarded Green operators
+on the globally hyperbolic domain of outer communications
+\cite{baergreenhyperbolic}.  Duhamel differentiation on every finite
+causal slab gives
+\[
+ \left.\partial_mG_m^{\rm ret}\right|_0
+ =-G_0^{\rm ret}\mathcal A G_0^{\rm ret}.
+\]
+The composition is retarded because the composition of two future-causal
+support relations remains future-causal.
+
+With the convention \(e^{+i\omega t}\), use the forward transform
+\[
+ \widehat F(\omega)
+ =\int_0^\infty e^{-i\omega t}F(t)\,dt.
+\]
+It converges below the energy-growth bound.  Integration by parts changes
+the reduced wave equation
+\(\partial_t^2\psi+H_m\psi=F\), with zero past data, into
+\[
+ (H_m-\omega^2)\widehat\psi=\widehat F.
+\]
+In that lower half-plane the square-integrable radial solutions are
+precisely horizon-ingoing and infinity-outgoing, so compactly cut-off
+matrix elements equal the outgoing radial transfer.
+
+The complete parameter-analytic Jost construction and
+Theorem~\ref{thm:ecs-fredholm} continue this same transfer meromorphically
+to \(\Omega_n\).  Equality in the initial half-plane makes the continuation
+unique.  Differentiating the moving simple-pole expansion of the massive
+resolvent gives
+\[
+ -\left.\partial_m
+ \frac{P_n(m)}{\omega-\omega_n(m)}\right|_0
+ =
+ -\frac{\omega_n'(0)P_n}{(\omega-\omega_n)^2}
+ -\frac{P_n'(0)}{\omega-\omega_n}.
+\]
+The complete Jost crosswalk proves \(\omega_n'(0)\ne0\), which gives the
+stated nonzero rank-one principal coefficient.
+\end{proof}
+
+The theorem is \texttt{LORENTZIAN-CAUSAL} only at the declared
+mode-reduced transverse-traceless level.  It is not a full off-shell
+metric/BV propagator and does not identify a specified real matter source.
+Most importantly, meromorphic continuation is not yet a deformation of
+the complete inverse-Laplace contour.
+
 If a fixed-domain massive tensor pencil has the local simple-pole form
 \[
  R_m(\omega)=
@@ -1255,11 +1345,11 @@ the constant generalized component crosses the carrier quotient.
 \end{corollary}
 
 This is a local residue theorem, not a global retarded expansion.  The
-latter would require a physical Laplace contour, a causal real-axis
-weighted realization with bounded reconstruction, control of thresholds
-and non-pole contributions, and a justified contour deformation.  The
-complex-scaled Fredholm pencil of Theorem~\ref{thm:ecs-fredholm} settles
-the local resonance realization but not those causal steps.
+latter would require deformation of the physical Laplace contour, bounded
+asymptotic reconstruction, and control of thresholds, high frequencies,
+and non-pole contributions.  Theorems~\ref{thm:ecs-fredholm}
+and~\ref{thm:causal-laplace} settle the local resonance realization and
+its causal origin, but not that global contour shift.
 
 \section{Source and observation channels}
 \label{sec:channels}
@@ -1479,19 +1569,19 @@ Bach equation without a conformal completion or compensator.
 
 \subsection{The remaining analytic problem}
 
-The exterior cut-off theorem and Theorem~\ref{thm:ecs-fredholm} give,
-respectively, the physical compact matrix elements and a global
-fixed-domain complex-scaled realization of the reduced radial resonance.
-The remaining causal problem is narrower but substantive.  It must
+The exterior cut-off theorem and Theorems~\ref{thm:ecs-fredholm}
+and~\ref{thm:causal-laplace} give the compact outgoing matrix elements, a
+global fixed-domain complex-scaled realization, and their origin as the
+meromorphic continuation of a retarded mode-reduced transfer.  The
+remaining time-domain problem is narrower but substantive.  It must
 provide:
 \begin{enumerate}
-\item a causal real-axis weighted realization compatible with the
-  horizon and null-infinity trace maps;
-\item bounded reconstruction through the physical gauge quotient on that
-  realization;
+\item bounded reconstruction through the physical gauge quotient and
+  null-infinity trace on the causal solution;
 \item a causal Laplace contour and a justified deformation through the
   QNM disk;
-\item control of threshold, branch-cut, and non-pole contributions.
+\item control of threshold, branch-cut, high-frequency, and non-pole
+  contributions.
 \end{enumerate}
 
 The weakened falloff in \eqref{eq:carrier-falloff} explains why this is
@@ -1541,6 +1631,9 @@ Fredholm promotion
 Global ECS Fredholm realization
 & Fixed \(H^1\) domain, index zero, and connection Smith transfer
 & Exact analytic reduction\\
+Causal Laplace bridge
+& Retarded parent derivative and meromorphic continuation
+& Exact causal reduction\\
 Null-infinity reconstruction
 & Metric heads, radiation gauge, and Bondi shear
 & Exact\\
@@ -1591,6 +1684,8 @@ Spin-one unit
 & \nolinkurl{python3 -m black_hole_programme.phase3.axial_qnm_spin_one_local_unit_v1.verify}\\
 Radial Green pole
 & \nolinkurl{python3 -m black_hole_programme.phase4.axial_qnm_fredholm_promotion_v1.verify}\\
+Causal Laplace bridge
+& \nolinkurl{python3 -m black_hole_programme.phase4.axial_qnm_causal_laplace_bridge_v1.verify}\\
 Null-infinity reconstruction
 & \nolinkurl{python3 -m black_hole_programme.phase4.axial_qnm_null_infinity_reconstruction_v1.verify}\\
 Complexified source overlap
@@ -1606,9 +1701,9 @@ systems, and environment lockfile is therefore an explicit submission
 gate rather than a completed claim of this draft.
 
 \paragraph{Explicit non-results.}
-This paper does not establish a global causal spacetime resolvent, a
-complete QNM expansion, a late-time asymptotic formula, a retarded
-inverse-Laplace deformation, a time-domain instability, finite Bondi flux
+This paper does not establish a full off-shell metric/BV retarded
+propagator, a complete QNM expansion, a late-time asymptotic formula, a
+retarded inverse-Laplace deformation, a time-domain instability, finite Bondi flux
 for the generalized constant component, a standard asymptotically flat
 domain containing that component, excitation by a specified
 astrophysical source, detector sensitivity, an overtone tower, an
@@ -1659,10 +1754,10 @@ component has weakened asymptotic falloff.
 This gives a Schwarzschild counterpart, in asymptotically flat spacetime,
 of the critical-gravity logarithmic-partner mechanism at the level of the
 filtered Bach resonance.  The remaining work is genuinely global:
-construct a causal real-axis weighted realization with bounded metric
-reconstruction and justify the retarded contour deformation.  The
-fixed-domain complex-scaled Fredholm realization of the reduced radial
-resonance is complete.
+prove bounded causal metric/Bondi reconstruction and justify the retarded
+contour deformation with threshold and high-frequency control.  The
+fixed-domain complex-scaled Fredholm realization and the causal
+Laplace-to-resonance bridge of the reduced radial response are complete.
 
 \begin{thebibliography}{99}
 
@@ -1719,6 +1814,14 @@ practical covariant and gauge-invariant formalism,
 \newblock \emph{Physical Review D} \textbf{71} (2005), 104003,
 \newblock \href{https://doi.org/10.1103/PhysRevD.71.104003}
 {doi:10.1103/PhysRevD.71.104003}.
+
+\bibitem{baergreenhyperbolic}
+C.~B\"ar,
+\newblock Green-hyperbolic operators on globally hyperbolic spacetimes,
+\newblock \emph{Communications in Mathematical Physics}
+\textbf{333} (2015), 1585--1615,
+\newblock \href{https://doi.org/10.1007/s00220-014-2097-7}
+{doi:10.1007/s00220-014-2097-7}.
 
 \bibitem{keldysh1951}
 M.~V.~Keldysh,

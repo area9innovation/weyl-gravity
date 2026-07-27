@@ -1,0 +1,107 @@
+{
+  "audit": {
+    "causal_convolution_support": "[0,infinity)+[0,infinity)=[0,infinity)",
+    "mass_multiplier": "f=(r-2)/r with 0<f<1 for r>2",
+    "moving_pole_derivative": "-partial_m[P/(z-nu*m)]|0=-nu*P/z**2",
+    "resolvent_derivative": "partial_m(L+m*A)^-1|0=-L^-1*A*L^-1",
+    "rw_potential": "6*(r-2)*(r-1)/r**4 > 0 for r>2"
+  },
+  "causal_problem": {
+    "background": "Schwarzschild domain of outer communications, restricted to the gauge-invariant axial ell=2 spin-two sector",
+    "existence_reason": "P_m is a normally hyperbolic operator with a smooth zeroth-order m*A perturbation; the axial constraints are preserved by the reduced parent equations",
+    "mass_parameter": "m=mu^2, a signed squared-mass coefficient",
+    "retarded_operator": "G_m^ret with support in J^+(support F)",
+    "scope": "mode-reduced TT causal Green operator, not a full metric BV propagator or unrestricted matter coupling",
+    "second_order_family": "P_m=E+m*A on the transverse-traceless parent sector; after axial separation its principal part is partial_t^2-partial_x^2",
+    "source_space": "smooth compactly supported axial TT sources"
+  },
+  "claim_flags": {
+    "bondi_trace_of_full_causal_solution_certified": false,
+    "causal_cutoff_transfer_meromorphic_continuation_certified": true,
+    "causal_transfer_principal_coefficient_rank_one_nonzero": true,
+    "causal_transfer_second_order_resonance_pole_certified": true,
+    "complete_retarded_qnm_expansion_certified": false,
+    "full_metric_bv_retarded_propagator_certified": false,
+    "global_inverse_laplace_contour_deformation_certified": false,
+    "global_t_exp_iomega_t_ringdown_certified": false,
+    "lower_half_plane_laplace_resolvent_bridge": true,
+    "mode_reduced_retarded_green_operator_exists": true,
+    "quantum_statement": false,
+    "real_causal_source_nonannihilation_certified": false,
+    "retarded_mass_derivative_identity_exact": true,
+    "sequential_retarded_convolution_causal": true,
+    "threshold_branch_cut_high_frequency_control_certified": false,
+    "time_domain_stability_certified": false
+  },
+  "dependency_tags": [
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "does_not_establish": [
+    "a full off-shell metric BV retarded propagator",
+    "nonzero excitation by a real causal temporally compact physical source",
+    "bounded Bondi reconstruction of the complete causal generalized component",
+    "a global inverse-Laplace contour deformation across the QNM",
+    "threshold, branch-cut, high-frequency or non-pole remainder control",
+    "a complete retarded QNM expansion or global t*exp(i*omega_n*t) ringdown term",
+    "time-domain stability, detector sensitivity or a quantum statement"
+  ],
+  "imports": {
+    "critical_parent": {
+      "path": "black_hole_programme/phase4/einstein_weyl_critical_mass_jet_v1/certificate.json",
+      "sha256": "a0245456f2ac3eecb4fe4e8a05be4dabbf277875546c91248713477a5bb2f67e"
+    },
+    "global_ecs_fredholm": {
+      "path": "black_hole_programme/phase4/axial_qnm_ecs_fredholm_v1/certificate.json",
+      "sha256": "5452533f4e0e4b762eef9c1b650831de1ebb9ec0e7fd95249ce2c3df08653c64"
+    },
+    "massive_jost": {
+      "path": "black_hole_programme/phase4/axial_massive_jost_crosswalk_v1/certificate.json",
+      "sha256": "4d9a227cbc0833aab43f07b4eaa363b421814b725cd7ebb0e9451237751e1a23"
+    },
+    "null_infinity_reconstruction": {
+      "path": "black_hole_programme/phase4/axial_qnm_null_infinity_reconstruction_v1/certificate.json",
+      "sha256": "be3f26e22dec378b6ab7bc2d05b91301539bc1ccc4b5b24946accc96ba254d18"
+    }
+  },
+  "laplace_bridge": {
+    "cutoff_transfer": "chi_o Laplace(G_hh,W^ret) chi_s equals the physical outgoing radial transfer in the initial half-plane",
+    "endpoint_selection": "in the lower half-plane the L2 radial solution is horizon-ingoing and infinity-outgoing",
+    "forward_transform": "Fhat(omega)=integral_0^infinity exp(-i*omega*t)F(t)dt",
+    "fourier_convention": "exp(+i*omega*t)",
+    "initial_half_plane": "Im(omega)<-c, below the energy growth bound",
+    "second_order_identity": "Laplace(G_m^ret)(omega)=(H_m-omega^2)^-1",
+    "uniqueness": "equality on the initial half-plane fixes the unique meromorphic continuation"
+  },
+  "lifecycle": "LORENTZIAN_CERTIFIED",
+  "mass_derivative_identity": {
+    "causal_support": "composition of two retarded kernels remains retarded",
+    "operator_identity": "partial_m G_m^ret|0=-G_0^ret*A*G_0^ret",
+    "parameter_differentiability": "Duhamel/resolvent differentiation for a smooth bounded zeroth-order perturbation on every finite causal slab",
+    "sequential_form": "G_hh,W^ret=(G_0^ret*A*G_0^ret)/(4*alpha_W)",
+    "weyl_metric_response": "G_hh,W^ret=-(partial_m G_m^ret|0)/(4*alpha_W)"
+  },
+  "meromorphic_continuation": {
+    "continuation_mechanism": "the fixed-domain global ECS pencil and the complete parameter-analytic massive Jost family",
+    "interpretation": "the certified double pole is a resonance pole of the meromorphic continuation of an actual causal retarded compact-source/compact-observation transfer operator",
+    "laurent_form": "chi_o G_hh,W(omega) chi_s=G_-2/(omega-omega_n)^2+G_-1/(omega-omega_n)+O(1)",
+    "principal_coefficient": "G_-2=-nu_n*chi_o*P_n*chi_s/(4*alpha_W)",
+    "principal_nonzero": true,
+    "principal_rank": 1,
+    "qnm_velocity": "nu_n=2*i*kappa_n/(3*omega_n) != 0"
+  },
+  "next_gate": "prove the global contour shift from the lower-half-plane Laplace line, including high-frequency bounds, the omega=0 threshold/branch cut, and bounded asymptotic reconstruction",
+  "schema": "phase4-axial-qnm-causal-laplace-bridge-v1",
+  "source_commit": "85c1ad94769783edf6cda38b745fffc2ab8008bb",
+  "status": "CERTIFIED_CAUSAL_RETARDED_TRANSFER_MEROMORPHIC_DOUBLE_POLE",
+  "verification_model": {
+    "arithmetic": "exact symbolic identities and content-addressed imports",
+    "independence_profile": {
+      "independent_backend": false,
+      "independent_code": true,
+      "independent_derivation": true,
+      "independent_representation": true
+    },
+    "numeric_replay_required": false
+  }
+}

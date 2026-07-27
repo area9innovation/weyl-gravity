@@ -47,6 +47,10 @@ AUTHORITIES = {
         "black_hole_programme/phase4/"
         "axial_qnm_ecs_fredholm_v1/certificate.json"
     ),
+    "causal_laplace_bridge": (
+        "black_hole_programme/phase4/"
+        "axial_qnm_causal_laplace_bridge_v1/certificate.json"
+    ),
     "critical_mass_parent": (
         "black_hole_programme/phase4/"
         "einstein_weyl_critical_mass_jet_v1/certificate.json"
@@ -97,11 +101,15 @@ def payload() -> dict:
     return {
         "schema": "paper-draft-source-map-v1",
         "paper_id": "PAPER_17_PURE_WEYL_EXTENSION_RESONANCE",
-        "result_id": "PAPER17_ENDPOINT_ANALYTIC_MASS_SLOPE_REVISION",
+        "result_id": "PAPER17_CAUSAL_LAPLACE_RESONANCE_REVISION",
         "lifecycle_state": "DRAFT_ALLOWED",
         "manuscript": str(PAPER.relative_to(ROOT)),
         "paper_sha256": digest(PAPER),
-        "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+        "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "REDUCED-MODE",
+            "LORENTZIAN-CAUSAL",
+        ],
         "authorities": authority_map(),
         "exact_identities": {
             "bach_cocycle_normal_form": {
@@ -159,7 +167,20 @@ def payload() -> dict:
                 "global_ecs_fixed_domain": True,
                 "global_ecs_fredholm_index": 0,
                 "global_ecs_tangent_in_H1": True,
+                "causal_cutoff_laplace_continuation": True,
                 "global_causal_resolvent": False,
+            },
+            "causal_laplace_bridge": {
+                "retarded_mass_derivative": (
+                    "G_hh,W^ret=-(partial_m G_m^ret|0)/(4*alpha_W)"
+                ),
+                "sequential_retarded_response": (
+                    "G_0^ret*A*G_0^ret/(4*alpha_W)"
+                ),
+                "initial_frequency_half_plane": "Im(omega)<-c",
+                "continued_principal_coefficient": "-nu_n*P_n/(4*alpha_W)",
+                "mode_reduced_tt_scope": True,
+                "global_contour_deformation": False,
             },
             "parent_mass_derivative": {
                 "identity": "G_W=-(partial_m inverse(E+m*A)|0)/(4*alpha_W)",
@@ -211,6 +232,8 @@ def payload() -> dict:
             "exterior_cutoff_green_double_pole": True,
             "global_ecs_fixed_domain_fredholm": True,
             "global_ecs_green_double_pole": True,
+            "mode_reduced_retarded_green_operator": True,
+            "causal_laplace_transfer_meromorphic_double_pole": True,
             "outgoing_trace_bridge_exact": True,
             "einstein_bondi_shear_nonzero": True,
             "complexified_conserved_traceless_source_overlap_nonzero": True,
@@ -231,7 +254,7 @@ def payload() -> dict:
             "detector templates and coherent forcing",
         ],
         "does_not_establish": [
-            "LORENTZIAN-CAUSAL resolvent or retarded contour theorem",
+            "full off-shell metric/BV retarded propagator or global contour theorem",
             "complete quasinormal expansion or late-time asymptotics",
             "standard asymptotic-flatness falloff for the generalized constant component",
             "real causal temporally compact source, specified astrophysical matter source, or detector sensitivity",

@@ -30,7 +30,11 @@ def resolve(path: Path) -> Path:
 def verify_provenance(claims: dict, paper: Path) -> None:
     if claims.get("paper_sha256") != digest(paper):
         fail("paper hash drift")
-    if claims.get("dependency_tags") != ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]:
+    if claims.get("dependency_tags") != [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL",
+    ]:
         fail("dependency-tag drift")
     for name, authority in claims.get("authorities", {}).items():
         path = resolve(Path(authority["path"]))
@@ -193,9 +197,25 @@ def verify_resonance_and_green(claims: dict) -> None:
         "global_ecs_fixed_domain": True,
         "global_ecs_fredholm_index": 0,
         "global_ecs_tangent_in_H1": True,
+        "causal_cutoff_laplace_continuation": True,
         "global_causal_resolvent": False,
     }:
         fail("Green-principal declaration drift")
+
+    causal = identities["causal_laplace_bridge"]
+    if causal != {
+        "retarded_mass_derivative": (
+            "G_hh,W^ret=-(partial_m G_m^ret|0)/(4*alpha_W)"
+        ),
+        "sequential_retarded_response": (
+            "G_0^ret*A*G_0^ret/(4*alpha_W)"
+        ),
+        "initial_frequency_half_plane": "Im(omega)<-c",
+        "continued_principal_coefficient": "-nu_n*P_n/(4*alpha_W)",
+        "mode_reduced_tt_scope": True,
+        "global_contour_deformation": False,
+    }:
+        fail("causal Laplace-bridge declaration drift")
 
     parent = identities["parent_mass_derivative"]
     if parent != {
@@ -278,6 +298,11 @@ def verify_authority_flags(claims: dict) -> None:
         ("global_ecs_fredholm", "generalized_jost_tangent_in_fixed_domain", True),
         ("global_ecs_fredholm", "global_ecs_second_order_pole_certified", True),
         ("global_ecs_fredholm", "lorentzian_causal_resolvent_certified", False),
+        ("causal_laplace_bridge", "mode_reduced_retarded_green_operator_exists", True),
+        ("causal_laplace_bridge", "retarded_mass_derivative_identity_exact", True),
+        ("causal_laplace_bridge", "causal_cutoff_transfer_meromorphic_continuation_certified", True),
+        ("causal_laplace_bridge", "causal_transfer_second_order_resonance_pole_certified", True),
+        ("causal_laplace_bridge", "global_inverse_laplace_contour_deformation_certified", False),
         ("null_infinity_reconstruction", "einstein_bondi_shear_nonzero", True),
         ("null_infinity_reconstruction", "generalized_constant_component_standard_falloff", False),
         ("conserved_source_overlap", "stress_energy_conserved", True),
@@ -346,6 +371,7 @@ def verify_manuscript(claims: dict, paper: Path) -> None:
         "Asger Alstrup Palm",
         "\\texttt{LOCAL-ALGEBRAIC}",
         "\\texttt{REDUCED-MODE}",
+        "\\texttt{LORENTZIAN-CAUSAL}",
         "Global retarded ringdown expansion",
         "Not established",
         "The polynomially weighted term",
@@ -355,6 +381,7 @@ def verify_manuscript(claims: dict, paper: Path) -> None:
         "Volterra normalization excludes the opposite",
         "Nonzero complete massive QNM velocity",
         "complexified frequency-domain conserved and traceless",
+        "Causal Laplace-to-resonance bridge",
     ]
     for phrase in required:
         if phrase not in text:
@@ -407,6 +434,8 @@ def verify_manuscript(claims: dict, paper: Path) -> None:
         "physical_massive_qnm_slope_certified",
         "global_ecs_fixed_domain_fredholm",
         "global_ecs_green_double_pole",
+        "mode_reduced_retarded_green_operator",
+        "causal_laplace_transfer_meromorphic_double_pole",
         "outgoing_trace_bridge_exact",
         "complexified_conserved_traceless_source_overlap_nonzero",
     ]

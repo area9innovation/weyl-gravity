@@ -42,7 +42,9 @@ radial Green operator has a nonzero rank-one second-order pole.
 
 The isolated local resonance contour consequently contains a
 $t e^{i\omega_n t}$ Einstein-profile term. This is **not** yet a theorem
-about the complete retarded Schwarzschild waveform.
+about the complete retarded Schwarzschild waveform. The compactly cut-off
+frequency-domain transfer is, however, now identified as the unique
+meromorphic continuation of an actual retarded mode-reduced response.
 
 The stable Phase-1 synthesis is
 [Paper 15](15-four-level-ghost-classification-phase1-synthesis.pdf). The
@@ -63,7 +65,9 @@ and [Paper 17](17-pure-weyl-schwarzschild-extension-structure.pdf).
   incoming trace space;
 - one validated defective axial $\ell=2$ Schwarzschild QNM, a cut-off
   exterior double Green pole, and a fixed-domain global complex-scaled
-  radial Fredholm realization.
+  radial Fredholm realization;
+- a causal Laplace-to-resonance bridge identifying that cut-off pole with
+  the meromorphic continuation of a retarded mode-reduced parent transfer.
 
 **Partial or local**
 
@@ -83,7 +87,8 @@ and [Paper 17](17-pure-weyl-schwarzschild-extension-structure.pdf).
 - the complete bounded nonlinear cone and stability;
 - the Lorentzian QME and interacting observables;
 - the complete Schwarzschild scattering operator and polar analogue;
-- global causal contour deformation and real astrophysical excitation.
+- inverse-Laplace contour deformation, full metric/Bondi causal
+  reconstruction, and real astrophysical excitation.
 
 ## The claim architecture
 
@@ -229,8 +234,10 @@ The result holds for a finite-interval problem with exact transparent
 conditions, for the compactly cut-off exterior radial Green operator, and
 for a fixed-domain two-ended $\pi/4$ complex-scaled
 $H^1\to L^2$ Fredholm pencil of index zero. The differentiated Jost tangent
-belongs to that same fixed Sobolev domain. This still does not construct a
-causal uncut real-axis inverse or justify a retarded contour deformation.
+belongs to that same fixed Sobolev domain. Compactly cut-off matrix elements
+are the unique meromorphic continuation of a retarded mode-reduced transfer
+initially defined by Laplace transform in the lower half-plane. This still
+does not justify a global retarded contour deformation.
 The geometric root is Einstein; the generalized root has nonzero
 traceless-Ricci carrier. Exact reconstruction gives nonzero Bondi shear for
 the Einstein range of $R_{-2}$, and a complexified conserved, traceless,
@@ -288,9 +295,10 @@ The vulnerable interfaces are now explicit:
    first-jet factorization, factor-three normalization, endpoint-analytic
    Jost planes, and nonzero signed squared-mass QNM velocity are established
    at `REDUCED-MODE` level.
-3. **Global causal domain.** The generalized endpoint state has weakened
-   asymptotics. A closed global domain or augmented boundary pencil must
-   support it.
+3. **Full physical causal reconstruction.** The mode-reduced retarded bridge
+   is established, but the generalized endpoint state has weakened
+   asymptotics. Bounded full metric/Bondi reconstruction must still support
+   it.
 4. **Retarded contour control.** High-frequency estimates, thresholds,
    branch cuts, and real causal data are needed before claiming observable
    ringdown.
@@ -318,7 +326,8 @@ The vulnerable interfaces are now explicit:
   Lorentzian endpoint non-selection theorem.
 - **[Paper 17](17-pure-weyl-schwarzschild-extension-structure.pdf):**
   non-split self-extension, defective QNM, cut-off Green double pole, and
-  global complex-scaled radial Fredholm realization.
+  global complex-scaled radial Fredholm realization, together with its
+  causal Laplace-to-resonance bridge.
 - **[Paper 18](18-static-bach-flat-black-hole-thermodynamics.pdf):**
   residual-basic charge normalization and simultaneous signed horizon
   first-law identities on regular local quotient charts of the certified
@@ -330,8 +339,8 @@ The vulnerable interfaces are now explicit:
 The next work with the highest scientific leverage is:
 
 1. independently reproduce the Paper 17 selector and Green-pole certificate;
-2. build a global causal Schwarzschild domain and justify inverse-Laplace
-   deformation;
+2. extend the causal bridge to bounded full metric/Bondi reconstruction and
+   justify inverse-Laplace deformation;
 3. compute a real source overlap and detector-level asymptotic coefficient;
 4. complete the polar and broader multipole analysis;
 5. independently audit Paper 18's residual-basic normalization against the
