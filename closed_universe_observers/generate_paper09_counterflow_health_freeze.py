@@ -146,12 +146,6 @@ def main() -> None:
         "d_quotient_classical/receipts/PAPER_09_LEGACY_CLAIM_BINDING_REPIN_V1_TIER_RECEIPT.json": (
             "terminal Classical Paper 9 source-binding repin receipt", [f"P09-C{i}" for i in range(1, 11)]
         ),
-        "planning/events/classical-paper09-legacy-claim-binding-supersession-REPORT-a003ff65a37d1cf4.json": (
-            "terminal Classical source-binding work report", [f"P09-C{i}" for i in range(1, 11)]
-        ),
-        "planning/events/classical-paper09-legacy-claim-binding-supersession-DONE-91e8ad26b9ef4cdf.json": (
-            "terminal Classical source-binding lifecycle disposition", [f"P09-C{i}" for i in range(1, 11)]
-        ),
         "closed_universe_observers/receipts/PAPER09_COUNTERFLOW_HEALTH_NONACTIVATION_FREEZE_V1_TIER_RECEIPT.json": (
             "predecessor Paper 9 DRAFT_ALLOWED evidence receipt", all_claim_ids
         ),
@@ -167,12 +161,6 @@ def main() -> None:
         "reports/observer-legacy-receiver-historical-base-binding-repair-v1-closeout-2026-07-21.md": (
             "historical-base repair closeout", ["P09-O6", "P09-O7"]
         ),
-        "planning/events/observer-legacy-receiver-historical-base-binding-repair-v1-REPORT-0df58f792b4ac7a9.json": (
-            "terminal historical-base repair work report", ["P09-O6", "P09-O7"]
-        ),
-        "planning/events/observer-legacy-receiver-historical-base-binding-repair-v1-DONE-314f6acccb592080.json": (
-            "terminal historical-base repair lifecycle disposition", ["P09-O6", "P09-O7"]
-        ),
         "closed_universe_observers/receipts/OBSERVER_TIER3_FIXED_POINT_AFTER_HISTORICAL_BASE_BINDING_REPAIR_V1_OBSTRUCTION.json": (
             "fresh post-repair Observer Tier-3 obstruction", all_claim_ids
         ),
@@ -182,11 +170,9 @@ def main() -> None:
         "reports/observer-tier3-fixed-point-after-historical-base-binding-repair-v1-closeout-2026-07-21.md": (
             "fresh post-repair Observer Tier-3 closeout", all_claim_ids
         ),
-        "planning/events/observer-tier3-fixed-point-after-historical-base-binding-repair-v1-REPORT-91b858271c4ba6de.json": (
-            "fresh post-repair Observer Tier-3 work report", all_claim_ids
-        ),
-        "planning/events/observer-tier3-fixed-point-after-historical-base-binding-repair-v1-OBSTRUCTED-1dc881aa4aaca801.json": (
-            "terminal post-repair Observer Tier-3 lifecycle disposition", all_claim_ids
+        "closed_universe_observers/receipts/OBSERVER_SUPERSEDED_INPUT_REVALIDATION_2026_07_27_V1.json": (
+            "standalone current-input revalidation with unchanged scientific projections",
+            ["P09-O10", "P09-O12"],
         ),
     }
     for path, (materiality, edge) in final_dependency_imports.items():

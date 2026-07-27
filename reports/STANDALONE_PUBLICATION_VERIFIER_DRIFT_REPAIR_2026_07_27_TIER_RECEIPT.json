@@ -1,0 +1,62 @@
+{
+  "schema": "science-forge-tier-receipt-v1",
+  "result_id": "STANDALONE_PUBLICATION_VERIFIER_DRIFT_REPAIR_2026_07_27",
+  "recorded_at": "2026-07-27",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "status": "PASS",
+  "artifacts": {
+    "ci/standalone_provenance.py": "e19fa7a838c756cc58cf6fbcf52181a6a22bb1b16911a50367d993fbfa281e05",
+    "ci/test_standalone_provenance.py": "b0ac0c98feb40b243b7366aa2c1174425945c45575ce600cd89ef98b7642d85f",
+    "planning/paper-coverage/verify_phase1_closure.py": "ee5e2c1178d4d0d3f33db6a21b94bb2f6d93ef63bb3b8468e5bdade82b4a84ea",
+    "paper/verify_13_14_draft_source_maps.py": "e3ad1714e3b90709513e90b4def11a37db7ad651810aec8ae11893b5cec5b758",
+    "paper/test_13_14_draft_source_maps.py": "9722c1b290dd1aa7fa9f7336d8b3163c09fd2f076374e3bb2cd09e30d09076ee",
+    "closed_universe_observers/generate_paper09_counterflow_health_freeze.py": "627116677bf63fbcc9c1461a96e6bea65268f5c127ad5a7b35baac5382add5af",
+    "paper/verify_09_relational_clocks_claim_map.py": "a1d300d8e11b6ff25800526054ed422a7e3bc0dca408184fd4bbcb101d2f85c1",
+    "paper/09-relational-clocks-berger-d-cartan-claim-map.json": "86cba62625dc09c70bc0dc93c9ada410d1fa6b97bc16802e000fd3cfc5c72290",
+    "planning/paper-coverage/observer-phase1-relational-observable-dispositions-2026-07-21.json": "4bbdd126cc5eb61f061d186542e54b1db3d7cee2b197ee517b4e3f7b272fedbc"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile ci/standalone_provenance.py ci/test_standalone_provenance.py planning/paper-coverage/verify_phase1_closure.py paper/verify_13_14_draft_source_maps.py paper/test_13_14_draft_source_maps.py closed_universe_observers/generate_paper09_counterflow_health_freeze.py paper/verify_09_relational_clocks_claim_map.py",
+        "git diff --check -- <explicit repair paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 paper/verify_09_relational_clocks_claim_map.py",
+        "python3 paper/verify_13_14_draft_source_maps.py",
+        "python3 planning/paper-coverage/verify_phase1_closure.py",
+        "PYTHONPATH=ci:. python3 -m unittest -v ci.test_standalone_provenance paper.test_13_14_draft_source_maps",
+        "PYTHONPATH=. pytest -q closed_universe_observers/tests/test_paper09_counterflow_health_freeze.py"
+      ],
+      "result": "three inherited verifiers PASS; 12 provenance/source-map tests PASS; 7 Paper 09 mutation tests PASS"
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        "python3 closed_universe_observers/verify_superseded_input_revalidation_2026_07_27.py",
+        "python3 closed_universe_observers/verify_paper09_final_freeze_after_historical_base_tier3_v2.py",
+        "python3 ci/verify_paper_manuscript_pins.py"
+      ],
+      "result": "three current-input scientific projections survive; Paper 09 remains DRAFT_ALLOWED; 7 manuscript/PDF pins PASS"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No mathematical operator, certificate payload, schema, theorem, lifecycle state, or release freeze changed."
+    }
+  },
+  "does_not_establish": [
+    "a new mathematical or physical claim",
+    "a theorem-frozen Paper 09",
+    "a green Observer Tier-3 traversal",
+    "a rewritten historical baseline",
+    "a lifecycle promotion"
+  ]
+}

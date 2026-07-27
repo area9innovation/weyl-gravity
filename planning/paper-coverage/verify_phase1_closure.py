@@ -6,10 +6,17 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+import sys
 
 
 ROOT = Path(__file__).resolve().parents[2]
 STAMP = "2026-07-22"
+sys.path.insert(0, str(ROOT / "ci"))
+
+from standalone_provenance import (  # noqa: E402
+    read_attached_blob,
+    read_path_blob_by_sha256,
+)
 
 
 def digest(path: Path) -> str:
@@ -41,10 +48,13 @@ def main() -> int:
     assert all(row["source"] in snapshot["dependencies"] for row in ledger["claims"])
 
     for role, ref in snapshot["dependencies"].items():
-        path = ROOT / ref["path"]
-        assert path.is_file(), (role, "missing")
-        assert digest(path) == ref["sha256"], (role, "hash drift")
-        doc = json.loads(path.read_text())
+        _, payload = read_attached_blob(
+            ref["commit"],
+            ref["path"],
+            ref["sha256"],
+            root=ROOT,
+        )
+        doc = json.loads(payload)
         assert (doc.get("result_id") or doc.get("paper_id")) == ref["result_id"]
         if ref["result_state"] is not None:
             assert doc.get("result_state") == ref["result_state"]
@@ -59,8 +69,11 @@ def main() -> int:
     assert counts["review_queue"] == 1400
     assert counts["scoped_followup_papers"] == 3
     for row in audit["papers"]:
-        path = ROOT / row["path"]
-        assert digest(path) == row["sha256"]
+        read_path_blob_by_sha256(
+            row["path"],
+            row["sha256"],
+            root=ROOT,
+        )
         if "FOLLOWUP" in row["audit_status"] or "REPAIR" in row["audit_status"]:
             assert row["scoped_followup_work_items"]
             for work_id in row["scoped_followup_work_items"]:

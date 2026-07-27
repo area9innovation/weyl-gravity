@@ -91,15 +91,12 @@ def verify_document(doc: dict, root: Path = ROOT) -> dict:
 
     required_final_paths = {
         "d_quotient_classical/receipts/PAPER_09_LEGACY_CLAIM_BINDING_REPIN_V1_TIER_RECEIPT.json",
-        "planning/events/classical-paper09-legacy-claim-binding-supersession-REPORT-a003ff65a37d1cf4.json",
-        "planning/events/classical-paper09-legacy-claim-binding-supersession-DONE-91e8ad26b9ef4cdf.json",
         "closed_universe_observers/receipts/PAPER09_COUNTERFLOW_HEALTH_NONACTIVATION_FREEZE_V1_TIER_RECEIPT.json",
         "planning/events/observer-paper09-counterflow-health-nonactivation-freeze-OBSTRUCTED-c004263fe35d9f83.json",
         "closed_universe_observers/receipts/OBSERVER_LEGACY_RECEIVER_HISTORICAL_BASE_BINDING_REPAIR_V1_MANIFEST.json",
-        "planning/events/observer-legacy-receiver-historical-base-binding-repair-v1-DONE-314f6acccb592080.json",
         "closed_universe_observers/receipts/OBSERVER_TIER3_FIXED_POINT_AFTER_HISTORICAL_BASE_BINDING_REPAIR_V1_OBSTRUCTION.json",
         "closed_universe_observers/receipts/OBSERVER_TIER3_FIXED_POINT_AFTER_HISTORICAL_BASE_BINDING_REPAIR_V1_TIER_RECEIPT.json",
-        "planning/events/observer-tier3-fixed-point-after-historical-base-binding-repair-v1-OBSTRUCTED-1dc881aa4aaca801.json",
+        "closed_universe_observers/receipts/OBSERVER_SUPERSEDED_INPUT_REVALIDATION_2026_07_27_V1.json",
     }
     imported_paths = {row["path"] for row in doc["exact_hash_imports"]}
     if not required_final_paths.issubset(imported_paths):
@@ -152,10 +149,7 @@ def verify_document(doc: dict, root: Path = ROOT) -> dict:
             raise VerificationError("DONE lifecycle evidence is invalid")
 
     terminal_states = {
-        "planning/events/classical-paper09-legacy-claim-binding-supersession-DONE-91e8ad26b9ef4cdf.json": "DONE",
         "planning/events/observer-paper09-counterflow-health-nonactivation-freeze-OBSTRUCTED-c004263fe35d9f83.json": "OBSTRUCTED",
-        "planning/events/observer-legacy-receiver-historical-base-binding-repair-v1-DONE-314f6acccb592080.json": "DONE",
-        "planning/events/observer-tier3-fixed-point-after-historical-base-binding-repair-v1-OBSTRUCTED-1dc881aa4aaca801.json": "OBSTRUCTED",
     }
     for path, expected_state in terminal_states.items():
         event = json.loads((root / path).read_text())
@@ -175,6 +169,32 @@ def verify_document(doc: dict, root: Path = ROOT) -> dict:
         raise VerificationError("immutable historical base was replaced by a mutable current path")
     if historical["scientific_disposition"]["original_five_dispositions_unchanged"] is not True:
         raise VerificationError("historical-base repair changed the source-derived receiver census")
+    revalidation = json.loads((
+        root
+        / "closed_universe_observers/receipts/"
+        "OBSERVER_SUPERSEDED_INPUT_REVALIDATION_2026_07_27_V1.json"
+    ).read_text())
+    if {
+        row["result_id"]: (
+            row["current_input_rebuild"],
+            row["disposition"],
+        )
+        for row in revalidation["revalidated_results"]
+    } != {
+        "POSITIVE_BERGER_RECEIVER_PHYSICAL_DESCENT_FREQUENCY_RATIO_NOT_ACTIVATED_V1": (
+            "SCIENTIFIC_PROJECTION_IDENTICAL",
+            "RESULT_SURVIVES_CURRENT_INPUT_WITH_NEW_PROVENANCE",
+        ),
+        "PHASE1_RELATIONAL_OBSERVABLE_DISPOSITION_SYNTHESIS_V1": (
+            "SCIENTIFIC_PROJECTION_IDENTICAL",
+            "RESULT_SURVIVES_CURRENT_INPUT_WITH_NEW_PROVENANCE",
+        ),
+        "COUNTERFLOW_CHARGED_TIME_PHYSICAL_INSTANTIATION_AFTER_REPAIRED_Q70_HEALTH_NOT_ACTIVATED_V1": (
+            "SCIENTIFIC_PROJECTION_IDENTICAL",
+            "RESULT_SURVIVES_CURRENT_INPUT_WITH_NEW_PROVENANCE",
+        ),
+    }:
+        raise VerificationError("standalone current-input revalidation is incomplete")
 
     hd = doc["health_disposition"]
     if hd != {

@@ -200,6 +200,39 @@ def _resolve_blob_by_content(
     )
 
 
+def read_path_blob_by_sha256(
+    path: str,
+    expected_sha256: str,
+    *,
+    root: Path = ROOT,
+) -> bytes:
+    """Read a current or historical path by exact content hash.
+
+    This is for frozen manifests that recorded a repository path and SHA-256
+    but no source commit.  Prefer the current file when it still matches;
+    otherwise search the filtered Git history for the exact path/content
+    pair.  Missing history and hash mismatches fail closed.
+    """
+    if not HEX64.fullmatch(expected_sha256):
+        raise ProvenanceResolutionError(
+            f"expected sha256 must be lowercase 64-hex: {expected_sha256!r}"
+        )
+    root = root.resolve()
+    normalized = normalize_repository_path(path)
+    current = root / normalized
+    if current.is_file():
+        payload = current.read_bytes()
+        if hashlib.sha256(payload).hexdigest() == expected_sha256:
+            return payload
+    _, payload = _resolve_blob_by_content(
+        "0" * 40,
+        normalized,
+        expected_sha256,
+        root=root,
+    )
+    return payload
+
+
 def resolve_attached_ref(
     historical_commit: str,
     historical_path: str,

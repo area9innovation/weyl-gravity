@@ -16,6 +16,7 @@ from standalone_provenance import (
     ROOT,
     normalize_repository_path,
     read_attached_blob,
+    read_path_blob_by_sha256,
     resolve_attached_ref,
     resolve_historical_commit,
 )
@@ -85,6 +86,20 @@ class StandaloneProvenanceTests(unittest.TestCase):
             self.row["witness_sha256"],
         )
         self.assertNotEqual(ref.commit, self.old_commit[:9])
+
+    def test_path_hash_pin_resolves_from_filtered_history(self) -> None:
+        payload = read_path_blob_by_sha256(
+            self.row["witness_old_path"],
+            self.row["witness_sha256"],
+        )
+        self.assertEqual(
+            hashlib.sha256(payload).hexdigest(),
+            self.row["witness_sha256"],
+        )
+
+    def test_unknown_path_hash_pin_fails_closed(self) -> None:
+        with self.assertRaises(ProvenanceResolutionError):
+            read_path_blob_by_sha256("README.md", "0" * 64)
 
     def test_crosswalk_with_unresolved_rows_fails_closed(self) -> None:
         broken = dict(self.crosswalk)
