@@ -1,0 +1,59 @@
+name: Paper 17 reproduction report
+description: Report a successful or failed replay of a Paper 17 certificate.
+title: "[Paper 17 reproduction]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you. A failed reproduction is as useful as a successful one.
+        Please identify the first divergence and avoid including secrets or private data.
+  - type: input
+    id: commit
+    attributes:
+      label: Commit
+      description: Full commit hash that you tested.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, architecture, Python version, and relevant package versions.
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Exact command
+      render: shell
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Outcome
+      options:
+        - Passed as documented
+        - Failed
+        - Inconclusive
+    validations:
+      required: true
+  - type: textarea
+    id: divergence
+    attributes:
+      label: First divergence
+      description: Expected result, actual result, and the earliest relevant error or differing value.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Minimal logs or artifact links
+      description: Include only the portion needed to reproduce the finding.
+  - type: checkboxes
+    id: conduct
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have not included credentials, private correspondence, or sensitive data.
+          required: true

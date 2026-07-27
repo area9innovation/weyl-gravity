@@ -132,6 +132,8 @@ with the [physicist executive summary](paper/98-physicist-executive-summary.md).
 
 ## Start here
 
+- **External reviewers:** [Review Paper 17 and its evidence
+  chain](REVIEWING.md)
 - **General audience:** [Are Weyl Gravity's Ghosts Real? Building Model
   Universes to Find Out](paper/99-how-to-build-a-universe.md)
 - **Physicists:** [Pure-Weyl gravity programme: executive summary for

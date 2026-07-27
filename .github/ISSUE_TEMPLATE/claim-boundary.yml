@@ -1,0 +1,30 @@
+name: Paper 17 claim-boundary question
+description: Flag wording that appears stronger or weaker than the evidence.
+title: "[Paper 17 scope]: "
+body:
+  - type: input
+    id: commit
+    attributes:
+      label: Commit
+      description: Full commit hash or release tested.
+    validations:
+      required: true
+  - type: textarea
+    id: wording
+    attributes:
+      label: Wording under review
+      description: Quote the sentence and give its file and location.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence boundary
+      description: Explain what the cited proof or certificate does and does not establish.
+    validations:
+      required: true
+  - type: textarea
+    id: revision
+    attributes:
+      label: Suggested revision
+      description: Propose narrower or clearer wording if possible.

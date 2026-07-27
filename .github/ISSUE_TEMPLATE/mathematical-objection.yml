@@ -1,0 +1,49 @@
+name: Paper 17 mathematical objection
+description: Challenge a theorem, hypothesis, derivation, or certificate.
+title: "[Paper 17 objection]: "
+body:
+  - type: input
+    id: commit
+    attributes:
+      label: Commit
+      description: Full commit hash or release tested.
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: Claim or theorem
+      description: Section, equation, claim-map field, or certificate identifier.
+    validations:
+      required: true
+  - type: textarea
+    id: objection
+    attributes:
+      label: Objection
+      description: State the missing hypothesis, incorrect step, counterexample, or mismatch.
+    validations:
+      required: true
+  - type: textarea
+    id: minimal
+    attributes:
+      label: Smallest reproducible demonstration
+      description: Calculation, script, or argument that exposes the issue.
+    validations:
+      required: true
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Estimated impact
+      options:
+        - Load-bearing for the central result
+        - Narrows the central result
+        - Affects an interpretation only
+        - Expository or notation issue
+        - Unsure
+    validations:
+      required: true
+  - type: textarea
+    id: repair
+    attributes:
+      label: Possible repair
+      description: Optional hypothesis, corrected statement, or alternative derivation.
