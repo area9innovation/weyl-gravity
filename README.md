@@ -288,15 +288,3 @@ journals or archives may require a different formal authorship declaration.
 The detailed contribution statement in each paper controls that paper.
 
 Contact: **Asger Alstrup Palm** — `asger@area9.dk`
-
-## What would count as success?
-
-The project succeeds methodologically if expert reviewers can efficiently
-separate correct new results from errors because the assumptions, derivations,
-code, evidence, and failures are exposed. A decisive refutation with a
-reproducible counterexample would be scientific progress too.
-
-The stronger claim—that a non-expert AI orchestrator can repeatedly originate
-reliable research of independent value—cannot be established by the
-repository declaring itself successful. It requires external technical review,
-reproduction, correction, and eventual use by domain experts.
