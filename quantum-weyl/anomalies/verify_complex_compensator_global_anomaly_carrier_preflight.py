@@ -6,7 +6,6 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
-import subprocess
 import sys
 from typing import Any
 
@@ -19,7 +18,11 @@ except ImportError:
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-REPO = ROOT.parents[1]
+sys.path.insert(0, str(ROOT))
+
+from ci.standalone_provenance import read_attached_blob
+
+
 OUTPUT = HERE / "certificates/COMPLEX_COMPENSATOR_GLOBAL_ANOMALY_CARRIER_NONDEFINITION.json"
 SCHEMA = HERE / "schema/complex-compensator-global-anomaly-carrier-preflight-v1.schema.json"
 RECEIVER = HERE / "schema/complex-compensator-global-anomaly-audit-input-v1.schema.json"
@@ -36,19 +39,11 @@ def verify_payload(value: dict[str, Any]) -> None:
         raise ValueError(f"global-anomaly carrier schema failed: {errors}")
 
     for pin in value["input_pins"].values():
-        data = subprocess.run(
-            [
-                "git",
-                "show",
-                f"{pin['source_commit']}:physics/symplectic-reconstruction/"
-                f"{pin['path']}",
-            ],
-            cwd=REPO,
-            check=True,
-            capture_output=True,
-        ).stdout
-        if hashlib.sha256(data).hexdigest() != pin["sha256"]:
-            raise ValueError("independent global-anomaly historical pin failed")
+        read_attached_blob(
+            pin["source_commit"],
+            pin["path"],
+            pin["sha256"],
+        )
 
     # Independent cellular replay: S1 has cells in degrees 0,1 and S3 in
     # degrees 0,3. Their product has one cell in degrees 0,1,3,4 and zero

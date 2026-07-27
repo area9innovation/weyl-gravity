@@ -5,15 +5,19 @@ from __future__ import annotations
 
 import hashlib
 import json
-import subprocess
 from pathlib import Path
+import sys
 from typing import Any
 
 from jsonschema import Draft202012Validator
 
 
 ROOT = Path(__file__).resolve().parents[1]
-REPO = ROOT.parents[1]
+sys.path.insert(0, str(ROOT))
+
+from ci.standalone_provenance import read_attached_blob
+
+
 PREFIX = "physics/symplectic-reconstruction/"
 MANIFEST = ROOT / "residual_atlas/residual-branch-manifest-v1.json"
 SCHEMA = ROOT / "residual_atlas/schema/residual-branch-manifest-v1.schema.json"
@@ -37,8 +41,11 @@ def verify(manifest_path: Path = MANIFEST) -> None:
     fragments: dict[str, dict[str, Any]] = {}
     inventory: list[str] = []
     for record in manifest["fragments"]:
-        raw = subprocess.check_output(["git", "show", f"{commit}:{PREFIX}{record['path']}"], cwd=REPO)
-        assert _sha256(raw) == record["sha256"]
+        _, raw = read_attached_blob(
+            commit,
+            PREFIX + record["path"],
+            record["sha256"],
+        )
         payload = json.loads(raw)
         ids = [entry["id"] for entry in payload["entries"]]
         assert len(ids) == record["entry_count"]

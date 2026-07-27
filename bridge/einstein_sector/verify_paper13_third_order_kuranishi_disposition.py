@@ -8,9 +8,15 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import sys
 
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+
+from ci.standalone_provenance import read_attached_blob
+
+
 MAP = ROOT / "paper/13-compact-weyl-maxwell-second-order-tangent-cone-claim-map.json"
 TEX = ROOT / "paper/13-compact-weyl-maxwell-second-order-tangent-cone.tex"
 ATLAS = ROOT / "residual_atlas/einstein-weyl-compact-cauchy-third-order-kuranishi-evaluation-fragment-v1.json"
@@ -64,15 +70,14 @@ def main() -> None:
     claim_map = json.loads(MAP.read_text(encoding="utf-8"))
     audit_claim_map(claim_map)
 
-    repo = Path(git("rev-parse", "--show-toplevel"))
-    prefix = ROOT.relative_to(repo).as_posix()
     map_sources = {row["path"]: row["git_blob"] for row in claim_map["sources"]}
     for rel, expected_sha in PINNED_SHA256.items():
-        baseline_bytes = subprocess.check_output(
-            ["git", "show", f"{BASELINE}:{prefix}/{rel}"], cwd=ROOT
+        ref, baseline_bytes = read_attached_blob(
+            BASELINE,
+            rel,
+            expected_sha,
         )
-        assert hashlib.sha256(baseline_bytes).hexdigest() == expected_sha, rel
-        expected_blob = git("rev-parse", f"{BASELINE}:{prefix}/{rel}")
+        expected_blob = git("rev-parse", ref.object_spec)
         assert map_sources[rel] == expected_blob, rel
 
     cert = json.loads((ROOT / next(iter(PINNED_SHA256))).read_text(encoding="utf-8"))

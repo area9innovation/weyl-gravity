@@ -6,7 +6,7 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
-import subprocess
+import sys
 from typing import Any
 
 from jsonschema import Draft202012Validator
@@ -14,7 +14,11 @@ from jsonschema import Draft202012Validator
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-REPO = ROOT.parents[1]
+sys.path.insert(0, str(ROOT))
+
+from ci.standalone_provenance import read_attached_blob
+
+
 OUTPUT = HERE / "certificates/BERGER_COMPLEX_CLOCK_ONE_LOOP_BREAKING_NONDEFINITION_V1.json"
 SCHEMA = HERE / "schema/berger-complex-clock-one-loop-breaking-nondefinition-v1.schema.json"
 RECEIVER_SCHEMA = HERE / "schema/berger-complex-clock-euclidean-bv-integration-slice-v1.schema.json"
@@ -28,18 +32,11 @@ def _load(path: Path) -> dict[str, Any]:
 
 
 def _historical(pin: dict[str, str]) -> dict[str, Any]:
-    data = subprocess.run(
-        [
-            "git",
-            "show",
-            f"{pin['source_commit']}:physics/symplectic-reconstruction/{pin['path']}",
-        ],
-        cwd=REPO,
-        check=True,
-        capture_output=True,
-    ).stdout
-    if hashlib.sha256(data).hexdigest() != pin["sha256"]:
-        raise ValueError("independent historical pin replay failed")
+    _, data = read_attached_blob(
+        pin["source_commit"],
+        pin["path"],
+        pin["sha256"],
+    )
     return json.loads(data)
 
 

@@ -6,11 +6,16 @@ from __future__ import annotations
 import copy
 import hashlib
 import json
-import subprocess
 from pathlib import Path
+import sys
 
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+
+from ci.standalone_provenance import read_attached_blob
+
+
 RECEIPT = ROOT / "quantum-weyl/lorentzian/receipts/TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1_TIER_RECEIPT.json"
 REPO_PREFIX = "physics/symplectic-reconstruction/"
 OUTPUT_PATHS = {
@@ -26,26 +31,19 @@ OUTPUT_PATHS = {
 }
 
 
-def git_blob(commit: str, path: str) -> bytes:
-    return subprocess.check_output(
-        ["git", "show", f"{commit}:{REPO_PREFIX}{path}"], cwd=ROOT
-    )
-
-
 def verify(receipt: dict[str, object]) -> None:
     assert receipt["result_id"] == "TWO_PHASE_COUNTERFLOW_FULL_BV_HADAMARD_NONACTIVATION_V1_TIER_RECEIPT"
     commit = str(receipt["scientific_result_commit"])
-    subprocess.run(
-        ["git", "cat-file", "-e", f"{commit}^{{commit}}"],
-        cwd=ROOT,
-        check=True,
-        stdout=subprocess.DEVNULL,
-    )
     recorded = receipt["output_hashes"]
     assert isinstance(recorded, dict)
     assert set(recorded) == set(OUTPUT_PATHS)
     for name, path in OUTPUT_PATHS.items():
-        actual = hashlib.sha256(git_blob(commit, path)).hexdigest()
+        _, payload = read_attached_blob(
+            commit,
+            REPO_PREFIX + path,
+            recorded[name],
+        )
+        actual = hashlib.sha256(payload).hexdigest()
         assert recorded[name] == actual, (name, recorded[name], actual)
 
 

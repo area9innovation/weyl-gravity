@@ -3,14 +3,19 @@
 
 import hashlib
 import json
-import subprocess
 from pathlib import Path
+import sys
 
 import sympy as sp
 from jsonschema import Draft202012Validator
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from ci.standalone_provenance import read_attached_blob
+
+
 C = ROOT / "closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json"
 I = ROOT / "closed_universe_observers/generated/CHARGED_TIME_PHYSICAL_RECEIVER_CROSSWALK_INTERFACE_V1.json"
 S = ROOT / "closed_universe_observers/schema/charged-time-receiver-admissibility-crosswalk-v1.schema.json"
@@ -97,21 +102,11 @@ def verify_value(v, i):
         assert ref["sha256"] == old_contract_sha
     shortfall = json.loads((ROOT / v["dependency_refs"]["tier3_shortfall"]["path"]).read_text())
     assert shortfall["baseline_commit"] == HISTORICAL_COMMIT
-    object_spec = f"{HISTORICAL_COMMIT}:{REPO_PREFIX}{CONTRACT_PATH}"
-    object_type = subprocess.run(
-        ["git", "cat-file", "-t", object_spec],
-        cwd=ROOT,
-        check=True,
-        capture_output=True,
-        text=True,
-    ).stdout.strip()
-    assert object_type == "blob"
-    old_contract_bytes = subprocess.run(
-        ["git", "show", object_spec],
-        cwd=ROOT,
-        check=True,
-        capture_output=True,
-    ).stdout
+    _, old_contract_bytes = read_attached_blob(
+        HISTORICAL_COMMIT,
+        REPO_PREFIX + CONTRACT_PATH,
+        old_contract_sha,
+    )
     assert hashlib.sha256(old_contract_bytes).hexdigest() == old_contract_sha
     old_contract = json.loads(old_contract_bytes)
     stable_fields = (

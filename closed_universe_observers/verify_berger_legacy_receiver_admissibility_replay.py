@@ -3,15 +3,19 @@
 
 import hashlib
 import json
-import subprocess
 from pathlib import Path
+import sys
 
 import sympy as sp
 from jsonschema import Draft202012Validator
 
 
 ROOT = Path(__file__).resolve().parents[1]
-REPO_ROOT = ROOT.parents[1]
+sys.path.insert(0, str(ROOT))
+
+from ci.standalone_provenance import read_attached_blob
+
+
 CERT = ROOT / "closed_universe_observers/certificates/BERGER_LEGACY_RECEIVER_ADMISSIBILITY_REPLAY_V1.json"
 SCHEMA = ROOT / "closed_universe_observers/schema/berger-legacy-receiver-admissibility-replay-v1.schema.json"
 HISTORICAL_COMMIT = "aa5ca7814798dfbcc92ee52e462d25af74806515"
@@ -49,30 +53,11 @@ def resolve_historical_ref(ref: dict) -> dict:
     assert ref["sha256"] == HISTORICAL_SHA256
     assert ref["object_type"] == "blob"
     assert ref["resolution"] == "IMMUTABLE_GIT_BLOB"
-    resolved = subprocess.run(
-        ["git", "rev-parse", "--verify", f"{ref['source_commit']}^{{commit}}"],
-        cwd=REPO_ROOT,
-        check=True,
-        capture_output=True,
-        text=True,
-    ).stdout.strip()
-    assert resolved == HISTORICAL_COMMIT
-    object_spec = f"{resolved}:{ref['repository_path']}"
-    object_type = subprocess.run(
-        ["git", "cat-file", "-t", object_spec],
-        cwd=REPO_ROOT,
-        check=True,
-        capture_output=True,
-        text=True,
-    ).stdout.strip()
-    assert object_type == "blob"
-    payload = subprocess.run(
-        ["git", "show", object_spec],
-        cwd=REPO_ROOT,
-        check=True,
-        capture_output=True,
-    ).stdout
-    assert hashlib.sha256(payload).hexdigest() == HISTORICAL_SHA256
+    _, payload = read_attached_blob(
+        ref["source_commit"],
+        ref["repository_path"],
+        ref["sha256"],
+    )
     document = json.loads(payload)
     dispositions = {
         row["atlas_id"]: row["admissibility_status"]

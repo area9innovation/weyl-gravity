@@ -6,7 +6,7 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
-import subprocess
+import sys
 import sys
 from typing import Any
 
@@ -19,7 +19,11 @@ except ImportError:
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-REPO = ROOT.parents[1]
+sys.path.insert(0, str(ROOT))
+
+from ci.standalone_provenance import read_attached_blob
+
+
 OUTPUT = (
     HERE
     / "certificates/STRICT_ANOMALY_ZERO_CHARGE_RESTRICTION_NONDEFINITION.json"
@@ -57,19 +61,11 @@ def verify_payload(value: dict[str, Any]) -> None:
         if hashlib.sha256(path.read_bytes()).hexdigest() != pin["sha256"]:
             raise ValueError("restriction dependency hash failed")
     local_pin = value["input_pins"]["local_anomaly_audit"]
-    historical = subprocess.run(
-        [
-            "git",
-            "show",
-            f"{local_pin['source_commit']}:physics/symplectic-reconstruction/"
-            f"{local_pin['path']}",
-        ],
-        cwd=REPO,
-        check=True,
-        capture_output=True,
-    ).stdout
-    if hashlib.sha256(historical).hexdigest() != local_pin["sha256"]:
-        raise ValueError("requested local anomaly commit pin failed")
+    read_attached_blob(
+        local_pin["source_commit"],
+        local_pin["path"],
+        local_pin["sha256"],
+    )
     rows = {
         (row["sector_id"], row["class_id"]): row
         for row in value["pullback_dispositions"]

@@ -1,0 +1,64 @@
+{
+  "schema": "observer-superseded-input-revalidation-v1",
+  "result_id": "OBSERVER_SUPERSEDED_INPUT_REVALIDATION_2026_07_27_V1",
+  "recorded_at": "2026-07-27",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "current_receiver_admissibility": {
+    "path": "closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json",
+    "sha256": "78cdd1853698a82866b8e7891a9817c3fae6279d9afbab6bb2c0f4dc84252fde"
+  },
+  "historical_only_results": [
+    {
+      "path": "closed_universe_observers/certificates/BERGER_LEGACY_RECEIVER_ADMISSIBILITY_REPLAY_V1.json",
+      "result_id": "BERGER_LEGACY_RECEIVER_ADMISSIBILITY_REPLAY_V1",
+      "sha256": "3851a46dc9ab2b2f1ca092a67ffd17c7ecdb21b18b8a238f72c8de091835fde5",
+      "disposition": "PRESERVED_HISTORICAL_BASE_REPLAY"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_LEGACY_RECEIVER_OPERATIONAL_FREQUENCY_RATIO_NONACTIVATION_V1.json",
+      "result_id": "BERGER_LEGACY_RECEIVER_OPERATIONAL_FREQUENCY_RATIO_NONACTIVATION_V1",
+      "sha256": "e0deee0fdfadd1d3ea61ce11718c302ba7954756745974e126c457982a26637c",
+      "disposition": "PRESERVED_HISTORICAL_BASE_REPLAY"
+    }
+  ],
+  "revalidated_results": [
+    {
+      "path": "closed_universe_observers/certificates/POSITIVE_BERGER_RECEIVER_PHYSICAL_DESCENT_FREQUENCY_RATIO_NOT_ACTIVATED_V1.json",
+      "result_id": "POSITIVE_BERGER_RECEIVER_PHYSICAL_DESCENT_FREQUENCY_RATIO_NOT_ACTIVATED_V1",
+      "sha256": "8705fb653a0dd041bcd71c82acbc577323b3b9de93a6d16e23d038891c982589",
+      "current_input_rebuild": "SCIENTIFIC_PROJECTION_IDENTICAL",
+      "disposition": "RESULT_SURVIVES_CURRENT_INPUT_WITH_NEW_PROVENANCE"
+    },
+    {
+      "path": "closed_universe_observers/certificates/PHASE1_RELATIONAL_OBSERVABLE_DISPOSITION_SYNTHESIS_V1.json",
+      "result_id": "PHASE1_RELATIONAL_OBSERVABLE_DISPOSITION_SYNTHESIS_V1",
+      "sha256": "2b6c7e23ff00d32a10d5fb7fd9ac6c6a07eefdd72c5c6f1e31056821bac4f830",
+      "current_input_rebuild": "SCIENTIFIC_PROJECTION_IDENTICAL",
+      "disposition": "RESULT_SURVIVES_CURRENT_INPUT_WITH_NEW_PROVENANCE"
+    },
+    {
+      "path": "closed_universe_observers/certificates/COUNTERFLOW_CHARGED_TIME_PHYSICAL_INSTANTIATION_AFTER_REPAIRED_Q70_HEALTH_NOT_ACTIVATED_V1.json",
+      "result_id": "COUNTERFLOW_CHARGED_TIME_PHYSICAL_INSTANTIATION_AFTER_REPAIRED_Q70_HEALTH_NOT_ACTIVATED_V1",
+      "sha256": "702282ce2e5b6292728d3c3aab312e73ec92b16548fe6c1884fbf7ddfc614612",
+      "current_input_rebuild": "SCIENTIFIC_PROJECTION_IDENTICAL",
+      "disposition": "RESULT_SURVIVES_CURRENT_INPUT_WITH_NEW_PROVENANCE"
+    }
+  ],
+  "paper09_disposition": {
+    "status": "DRAFT_ALLOWED",
+    "claim_map_current": false,
+    "reason": "Paper 09 also pins later append-only planning events whose hashes drifted; this receipt does not regenerate or promote that claim map."
+  },
+  "verification_command": "python3 closed_universe_observers/verify_superseded_input_revalidation_2026_07_27.py",
+  "does_not_establish": [
+    "a current Paper 09 claim map",
+    "a green Observer Tier-3 traversal",
+    "an operational receiver or redshift",
+    "a theorem-freeze or lifecycle promotion",
+    "a Lorentzian causal quantum construction"
+  ]
+}

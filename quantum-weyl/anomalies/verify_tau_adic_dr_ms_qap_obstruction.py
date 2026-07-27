@@ -8,7 +8,7 @@ from fractions import Fraction
 import hashlib
 import json
 from pathlib import Path
-import subprocess
+import sys
 import sys
 from typing import Any
 
@@ -21,7 +21,11 @@ except ImportError:
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-REPO = ROOT.parents[1]
+sys.path.insert(0, str(ROOT))
+
+from ci.standalone_provenance import read_attached_blob
+
+
 OUTPUT = HERE / "certificates/TAU_ADIC_DR_MS_QAP_EVANESCENT_CLOSURE_OBSTRUCTION.json"
 SCHEMA = HERE / "schema/tau-adic-dr-ms-qap-obstruction-v1.schema.json"
 
@@ -36,19 +40,11 @@ def verify_payload(value: dict[str, Any]) -> None:
         raise ValueError(f"tau-adic DR/MS obstruction schema failed: {errors}")
 
     for pin in value["historical_input_pins"].values():
-        data = subprocess.run(
-            [
-                "git",
-                "show",
-                f"{pin['source_commit']}:physics/symplectic-reconstruction/"
-                f"{pin['path']}",
-            ],
-            cwd=REPO,
-            check=True,
-            capture_output=True,
-        ).stdout
-        if hashlib.sha256(data).hexdigest() != pin["sha256"]:
-            raise ValueError("independent historical pin failed")
+        read_attached_blob(
+            pin["source_commit"],
+            pin["path"],
+            pin["sha256"],
+        )
 
     residue = value["first_incompatibility"]["nonzero_Euler_residue"]
     a = Fraction(residue["numerator"], residue["denominator"])

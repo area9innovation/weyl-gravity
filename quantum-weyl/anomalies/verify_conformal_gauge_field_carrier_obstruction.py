@@ -6,7 +6,7 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
-import subprocess
+import sys
 import sys
 from typing import Any
 
@@ -19,7 +19,11 @@ except ImportError:
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-REPO = ROOT.parents[1]
+sys.path.insert(0, str(ROOT))
+
+from ci.standalone_provenance import read_attached_blob
+
+
 OUTPUT = (
     HERE
     / "certificates/FIRST_NEW_CONFORMAL_GAUGE_FIELD_CARRIER_OBSTRUCTION.json"
@@ -80,14 +84,11 @@ def verify_payload(value: dict[str, Any]) -> None:
     current = ROOT / pin["path"]
     if hashlib.sha256(current.read_bytes()).hexdigest() != PANEITZ_SHA:
         raise ValueError("current Paneitz input hash failed")
-    historical = subprocess.run(
-        ["git", "show", f"{pin['source_commit']}:{PANEITZ_PATH}"],
-        cwd=REPO,
-        check=True,
-        capture_output=True,
-    ).stdout
-    if hashlib.sha256(historical).hexdigest() != PANEITZ_SHA:
-        raise ValueError("historical Paneitz input hash failed")
+    read_attached_blob(
+        pin["source_commit"],
+        PANEITZ_PATH,
+        PANEITZ_SHA,
+    )
 
     audits = {row["candidate_id"]: row for row in value["candidate_audits"]}
     gravitino = audits[

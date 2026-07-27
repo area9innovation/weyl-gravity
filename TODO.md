@@ -39,7 +39,7 @@ Consequences that are now closed rather than open:
   authors, exact titles, programme paper numbers, in-repo paths, and the
   repository URL.
 
-1. [ ] **Supply titles for 11 abbreviated bibliography entries.** Found
+1. [x] **Supply titles for 11 abbreviated bibliography entries.** Found
    2026-07-27 during the reference review. They give only author, journal,
    volume and page, so a reader cannot tell what is cited and no automated
    check can validate them: `02:BM2008PRL`, `02:BM2008PRD`, `03:BM2008PRL`,
@@ -47,6 +47,10 @@ Consequences that are now closed rather than open:
    `04:Holdom`, `04:Riegert`, `17:stucker2024`, `17:gajicwarnick2024`.
    Each is cited *with* its full title elsewhere in the series, so this is
    transcription, not research.
+
+   Completed 2026-07-27. Papers 02--04 now carry the missing titles; the two
+   Holdom volume/article pairs were also corrected. The Paper 17 entries
+   already contained plain-text titles and required no edit.
 
 2. [ ] **Disposition 54 uncited bibliography entries across 17 manuscripts.**
    Found 2026-07-27. Every `\cite` in the series resolves — there are zero
@@ -62,7 +66,7 @@ Consequences that are now closed rather than open:
    bibliography-hygiene rail; one is not added now because the tree would
    fail it immediately, and a rail that is expected to fail is not a rail.
 
-3. [ ] **Repair the 22 verifiers broken by the subtree extraction.** Found
+3. [x] **Repair the 22 verifiers broken by the subtree extraction.** Found
    and quantified 2026-07-27 while building the crosswalk; see
    `reports/standalone-history-crosswalk-2026-07-27.md`.
 
@@ -71,20 +75,22 @@ Consequences that are now closed rather than open:
    git-attached lookups, 2 on content supersession, 3 on an import path that
    masks the same git-attached failure. They are live scientific rails in
    `quantum-weyl/`, `closed_universe_observers/`, `d_quotient_classical/`,
-   `bridge/`, `paper/`, and `residual_atlas/`. **Any claim resting on them is
-   currently unverifiable in this repository.**
+   `bridge/`, `paper/`, and `residual_atlas/`.
 
-   The repair is mechanically determined — `reports/standalone-history-
+   The repair was mechanically determined — `reports/standalone-history-
    crosswalk.json` supplies every missing commit id and the path fix is
-   prefix stripping — but it was deliberately not applied. Rewriting the
+   prefix stripping. Rewriting the
    pinned ids in place would edit historical provenance records, which the
    append-only law forbids, and some pins sit inside certificates whose own
-   hashes are pinned downstream, so an in-place rewrite could cascade. The
-   intended repair is for verifiers to translate an old id through the
-   crosswalk at lookup time, leaving the historical pin as written. This
-   changes scientific verification code and needs an explicit decision.
+   hashes are pinned downstream, so no pin was rewritten.
 
-4. [ ] **Decide whether five superseded input pins invalidate their results.**
+   Completed 2026-07-27 with the fail-closed runtime resolver
+   `ci/standalone_provenance.py`, two append-only successor rails for
+   self-hashing V1 verifiers, and explicit retirement of four obsolete
+   monorepo-materialization process rails. See
+   `reports/standalone-provenance-runtime-repair-2026-07-27.md`.
+
+4. [x] **Decide whether five superseded input pins invalidate their results.**
    Separate from the extraction, and not a provenance repair.
    `closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json`
    now hashes to `78cdd185…`, but five older certificates still pin the
@@ -92,6 +98,12 @@ Consequences that are now closed rather than open:
    is genuinely in history, so this is the fail-closed machinery working:
    an input changed and the dependents were never revisited. Whether those
    five results survive the change is a scientific question.
+
+   Completed 2026-07-27 without repinning V1 records. Two are intentionally
+   historical-base replays. Rebuilding the other three against the current
+   input gives identical scientific projections and changed provenance only.
+   See
+   `closed_universe_observers/receipts/OBSERVER_SUPERSEDED_INPUT_REVALIDATION_2026_07_27_V1.json`.
 
 ## Known weak spots in Papers 01–06 (not yet raised by referees)
 

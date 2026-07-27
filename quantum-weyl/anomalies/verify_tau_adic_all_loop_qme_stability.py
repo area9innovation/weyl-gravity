@@ -7,7 +7,7 @@ from fractions import Fraction
 import hashlib
 import json
 from pathlib import Path
-import subprocess
+import sys
 import sys
 from typing import Any
 
@@ -20,7 +20,11 @@ except ImportError:
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-REPO = ROOT.parents[1]
+sys.path.insert(0, str(ROOT))
+
+from ci.standalone_provenance import read_attached_blob
+
+
 OUTPUT = HERE / "certificates/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY.json"
 SCHEMA = HERE / "schema/tau-adic-all-loop-local-qme-stability-v1.schema.json"
 
@@ -65,19 +69,11 @@ def verify_payload(value: dict[str, Any]) -> None:
         current = ROOT / pin["path"]
         if hashlib.sha256(current.read_bytes()).hexdigest() != pin["sha256"]:
             raise ValueError("tau-adic all-loop current pin failed")
-        historical = subprocess.run(
-            [
-                "git",
-                "show",
-                f"{pin['source_commit']}:physics/symplectic-reconstruction/"
-                f"{pin['path']}",
-            ],
-            cwd=REPO,
-            check=True,
-            capture_output=True,
-        ).stdout
-        if hashlib.sha256(historical).hexdigest() != pin["sha256"]:
-            raise ValueError("tau-adic all-loop historical pin failed")
+        read_attached_blob(
+            pin["source_commit"],
+            pin["path"],
+            pin["sha256"],
+        )
 
     extended = _load(
         ROOT / value["input_pins"]["extended_local_BV"]["path"]
