@@ -11,29 +11,41 @@ to this file.
 
 ## Release / freeze
 
-1. [ ] **Mint the archive tag and DOI.** Create one repository-wide tag on
-   the release commit (proposed: `v1.0-preprint`) and register it with
-   Zenodo as the archival DOI anchor. Needs Asger's Zenodo account.
+**Publication model (decided 2026-07-27): GitHub only.** The programme
+publishes as an open repository. There is no arXiv submission, no journal
+submission, no release tag, and no DOI.
 
-   The monorepo-era per-paper tags (`paper1-v1.2`, `paper2-v1.3`,
-   `paper3-v1.3`, `paper4-v1.1`, `paper5-v1.1`) are **obsolete and will not
-   be recreated**: they name a five-paper series that no longer matches the
-   renumbered 00–18 programme, and they retained unrelated monorepo history.
-   Citation granularity below the repository level is served by manuscript
-   content hashes in the claim maps.
+The reason is authorship, and it is deliberate rather than a gap to close.
+The manuscripts name GPT-5.6.sol as principal author and Asger Alstrup Palm
+as non-technical orchestrator and corresponding human contact, which is an
+accurate description of how the work was produced. arXiv and every major
+journal require that a human author take authorship and accountability, and
+prohibit listing an AI as an author. Rather than restate the authorship to
+fit those venues, the programme publishes where the honest attribution can
+stand. Reconsider only if the attribution itself is reconsidered.
 
-2. [ ] **Replace pre-publication citations with arXiv IDs.** Blocked until
-   the papers are posted; do this in one pass afterwards.
+A DOI was also declined (2026-07-27): the tree is still too fluid for an
+archival snapshot to be worth minting. Tags were declined for the same
+reason — a tag asserts a snapshot worth pointing at.
 
-   - 31 `companion paper` citations across nine manuscripts: `01` (5),
-     `02` (4), `03` (5), `04` (5), `05` (4), `06` (5), `07-08-archive` (1),
-     `08` (1), `11` (1).
-   - One `to appear` reference: ABHT, `paper/03-fourth-order-vacuum.tex:951`.
-   - Authorship metadata is already standardized (GPT-5.6.sol and Asger
-     Alstrup Palm throughout; Claude Fable 5 additionally on Paper 00) and
-     does not need revisiting.
+Consequences that are now closed rather than open:
 
-3. [ ] **Finish the standalone-history replay crosswalk.** The subtree
+- The monorepo-era per-paper tags (`paper1-v1.2`, `paper2-v1.3`,
+  `paper3-v1.3`, `paper4-v1.1`, `paper5-v1.1`) are obsolete and will not be
+  recreated. All five in-manuscript references to them are removed;
+  manuscripts now tell readers to cite the repository commit hash.
+- The 22 dead `companion paper, 2026` bibliography entries in Papers 01–06,
+  plus the unlocated companion entries in Papers 08 and 11, now carry
+  authors, exact titles, programme paper numbers, in-repo paths, and the
+  repository URL.
+
+1. [ ] **Give the ABHT reference a real citation or mark it unpublished.**
+   `paper/03-fourth-order-vacuum.tex:951` still reads "2026, to appear".
+   This is a genuine third-party reference, not a programme companion, so it
+   cannot be resolved to an in-repo path. Either locate the published
+   version or state plainly that it is unpublished.
+
+2. [ ] **Finish the standalone-history replay crosswalk.** The subtree
    extraction into `area9innovation/weyl-gravity` is complete and the source
    and split trees were verified identical (2026-07-26). Paper 14 and 15
    claim-map commit pins were repaired on 2026-07-27
@@ -44,46 +56,46 @@ to this file.
 
 ## Known weak spots in Papers 01–06 (not yet raised by referees)
 
-4. [ ] `04-fourth-order-gravity`: referee 2 suggested a full section reorder
+3. [ ] `04-fourth-order-gravity`: referee 2 suggested a full section reorder
    (reduced complex theory → real forms → Cartan → kernel → degeneration);
    applied as insertions only. Revisit if raised again.
 
-5. [ ] `03-fourth-order-vacuum`: the □²-anchor infrared question is
+4. [ ] `03-fourth-order-vacuum`: the □²-anchor infrared question is
    explicitly open (Remark "anchor is an infrared question"). A proper IR
    Shale/Araki–Yamagami analysis would close it — a new result, not a repair.
 
-6. [ ] `02-variational-fock`: invariant Sobolev classification of the
+5. [ ] `02-variational-fock`: invariant Sobolev classification of the
    original field variables (pullback D(k)†M_obs(k)D(k) in a fixed
    trivialization) — withdrawn claim, recoverable with one computation.
 
 ## Receipts / verification backlog (2026-07-12 audit)
 
-7. [ ] Lean: Schur no-hybrid (commutant of so(3) spin-2 5-dim irrep = ℝ·I) —
+6. [ ] Lean: Schur no-hybrid (commutant of so(3) spin-2 5-dim irrep = ℝ·I) —
    Paper 04's central obstruction, finite-dim matrix algebra.
 
-8. [ ] Lean: orbit-constancy eigenvector lemma (ℓᵀX = −iℓᵀ ⇒
+7. [ ] Lean: orbit-constancy eigenvector lemma (ℓᵀX = −iℓᵀ ⇒
    metric-independence) — load-bearing for Papers 03 AND 04.
 
-9. [ ] Lean: trilemma coset {T: TA₊T⁻¹ = −A₊} = T₀·SO(2,ℂ) + quarter-turn
+8. [ ] Lean: trilemma coset {T: TA₊T⁻¹ = −A₊} = T₀·SO(2,ℂ) + quarter-turn
    congruence (4×4, reuses `NormalForm.lean` patterns).
 
-10. [ ] Lean: pointed-unitary Gaussian identity ψ₀ = ρ⁻¹φ₀ at the covector
+9. [ ] Lean: pointed-unitary Gaussian identity ψ₀ = ρ⁻¹φ₀ at the covector
     level (finite-dim, cheap) — formalizes the corrected central claim of
     Paper 02.
 
-11. [ ] mpmath regression rail for Papers 03–04 kernels (bridge Wightman,
+10. [ ] mpmath regression rail for Papers 03–04 kernels (bridge Wightman,
     sector kernels, conformal limits) — second independent rail; the Wolfram
     rail has never run (no Mathematica available).
 
-12. [ ] Lean (cheap): Paper 02 discrete counterexample {Aⁿ}; fidelity √3/2
+11. [ ] Lean (cheap): Paper 02 discrete counterexample {Aⁿ}; fidelity √3/2
     and occupation 1/3 identities.
 
-13. [ ] Lean (expensive, optional): Paper 02 minimum-distortion scalar
+12. [ ] Lean (expensive, optional): Paper 02 minimum-distortion scalar
     inequality with arccosh closed form.
 
 ## Research continuations (from the papers' own outlooks)
 
-14. [ ] **ON5 — boundary Born-trace evaluation** (Paper 05 capstone, the
+13. [ ] **ON5 — boundary Born-trace evaluation** (Paper 05 capstone, the
     obstruction-to-null theorem). Build the mapped process operator
     A_s = Σ(T_s)_xy|x_s⟩⟨y_s| on a truncated charge-Fock space with the
     squeezed vacuum; charge-decompose; verify the obstruction coefficient
@@ -95,10 +107,10 @@ to this file.
     cross-paired Gram + graded trace from ON1, map from ON2, squeezing
     from ON3.
 
-15. [ ] Paper 02 outlook (i): classify quadratic PT Hamiltonians whose
+14. [ ] Paper 02 outlook (i): classify quadratic PT Hamiltonians whose
     positive diagonalizer direction is inter-mode for some splitting.
 
-16. [ ] Λ ≠ 0 phase diagram (critical gravity / partial masslessness loci) —
+15. [ ] Λ ≠ 0 phase diagram (critical gravity / partial masslessness loci) —
     flagged out of scope in Paper 04.
 
 ## Deferred (explicitly not in the active queue)
@@ -113,6 +125,13 @@ the Einstein–Weyl calculation.
 
 - Repository license (CC BY 4.0 for manuscripts, data, and documentation;
   MIT for code) — assigned 2026-07-27, see `LICENSE`.
+- Dead companion-paper citations and dangling release-tag references —
+  repaired 2026-07-27, see
+  `reports/publication-model-and-citation-repair-2026-07-27.md`.
+- Papers 07 and the 07–08 computational supplement lost their authorship
+  disclosure in the 2026-07-14 standardization commit `181125aa`, which had
+  been failing `symbolic/verify_conformal_split_publications.py` on `master`
+  ever since. Restored 2026-07-27 in the same pass.
 - Subtree extraction into the standalone repository — completed 2026-07-26.
 - The interaction-deformation, gravity-rail, and conformal residual logs that
   formerly filled item 14 are archived verbatim in

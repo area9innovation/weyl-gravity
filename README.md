@@ -39,7 +39,12 @@ This is a **pre-release research archive**.
   documentation under CC BY 4.0, and code under MIT. See [LICENSE](LICENSE).
   A license is permission to use and redistribute, not an endorsement of any
   claim the licensed file makes.
-- No archival DOI has yet been assigned. That remains an open release gate.
+- The programme publishes here, as an open repository. There is no arXiv or
+  journal submission, and no release tag or archival DOI. This follows from
+  the authorship: the manuscripts name a model as principal author and
+  Asger Alstrup Palm as non-technical orchestrator, which is what actually
+  happened, and which the major venues do not accept. The attribution is
+  not restated to fit them. Cite a commit hash to fix a version.
 
 The most useful external contribution at this stage is a technically specific
 critique: identify a claim, assumption, equation, certificate, or verifier and
