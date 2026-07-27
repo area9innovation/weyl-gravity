@@ -190,6 +190,9 @@ def verify_resonance_and_green(claims: dict) -> None:
         "pole_order": 2,
         "coefficient": "-beta*u tensor tilde_u/alpha**2",
         "cutoff_exterior": True,
+        "global_ecs_fixed_domain": True,
+        "global_ecs_fredholm_index": 0,
+        "global_ecs_tangent_in_H1": True,
         "global_causal_resolvent": False,
     }:
         fail("Green-principal declaration drift")
@@ -270,6 +273,11 @@ def verify_authority_flags(claims: dict) -> None:
         ("qnm_selector", "intrinsic_tangent_selector_nonzero", True),
         ("spin_one_unit", "full_connection_smith_valuations_0_0_2", True),
         ("fredholm_promotion", "radial_green_operator_second_order_pole_certified", True),
+        ("global_ecs_fredholm", "fixed_domain_global_ecs_pencil_certified", True),
+        ("global_ecs_fredholm", "ecs_pencil_fredholm_index_zero", True),
+        ("global_ecs_fredholm", "generalized_jost_tangent_in_fixed_domain", True),
+        ("global_ecs_fredholm", "global_ecs_second_order_pole_certified", True),
+        ("global_ecs_fredholm", "lorentzian_causal_resolvent_certified", False),
         ("null_infinity_reconstruction", "einstein_bondi_shear_nonzero", True),
         ("null_infinity_reconstruction", "generalized_constant_component_standard_falloff", False),
         ("conserved_source_overlap", "stress_energy_conserved", True),
@@ -397,6 +405,8 @@ def verify_manuscript(claims: dict, paper: Path) -> None:
         "all_order_differentiated_massive_jost_crosswalk",
         "endpoint_compatible_physical_mass_jet_exact",
         "physical_massive_qnm_slope_certified",
+        "global_ecs_fixed_domain_fredholm",
+        "global_ecs_green_double_pole",
         "outgoing_trace_bridge_exact",
         "complexified_conserved_traceless_source_overlap_nonzero",
     ]

@@ -115,6 +115,14 @@ class Paper17ConsolidatedClaimMapTests(unittest.TestCase):
             "Green-principal declaration drift",
         )
 
+    def test_ecs_domain_demotion_rejected(self) -> None:
+        self.assert_mutation_rejected(
+            lambda data: data["exact_identities"][
+                "green_principal_coefficient"
+            ].update({"global_ecs_tangent_in_H1": False}),
+            "Green-principal declaration drift",
+        )
+
     def test_generalized_falloff_promotion_rejected(self) -> None:
         self.assert_mutation_rejected(
             lambda data: data["exact_identities"][

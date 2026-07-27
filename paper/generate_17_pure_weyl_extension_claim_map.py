@@ -43,6 +43,10 @@ AUTHORITIES = {
         "black_hole_programme/phase4/"
         "axial_qnm_fredholm_promotion_v1/certificate.json"
     ),
+    "global_ecs_fredholm": (
+        "black_hole_programme/phase4/"
+        "axial_qnm_ecs_fredholm_v1/certificate.json"
+    ),
     "critical_mass_parent": (
         "black_hole_programme/phase4/"
         "einstein_weyl_critical_mass_jet_v1/certificate.json"
@@ -152,6 +156,9 @@ def payload() -> dict:
                 "pole_order": 2,
                 "coefficient": "-beta*u tensor tilde_u/alpha**2",
                 "cutoff_exterior": True,
+                "global_ecs_fixed_domain": True,
+                "global_ecs_fredholm_index": 0,
+                "global_ecs_tangent_in_H1": True,
                 "global_causal_resolvent": False,
             },
             "parent_mass_derivative": {
@@ -202,6 +209,8 @@ def payload() -> dict:
             "certified_qnm_smith_type_0_0_2": True,
             "generalized_root_carrier_nonzero": True,
             "exterior_cutoff_green_double_pole": True,
+            "global_ecs_fixed_domain_fredholm": True,
+            "global_ecs_green_double_pole": True,
             "outgoing_trace_bridge_exact": True,
             "einstein_bondi_shear_nonzero": True,
             "complexified_conserved_traceless_source_overlap_nonzero": True,

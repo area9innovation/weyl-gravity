@@ -61,8 +61,9 @@ and [Paper 17](17-pure-weyl-schwarzschild-extension-structure.pdf).
 - a nonzero strict local Euclidean one-loop BV anomaly;
 - axial Schwarzschild endpoint non-selection and a populated indefinite
   incoming trace space;
-- one validated defective axial $\ell=2$ Schwarzschild QNM and a cut-off
-  exterior double Green pole.
+- one validated defective axial $\ell=2$ Schwarzschild QNM, a cut-off
+  exterior double Green pole, and a fixed-domain global complex-scaled
+  radial Fredholm realization.
 
 **Partial or local**
 
@@ -225,7 +226,11 @@ R(\omega)
 $$
 
 The result holds for a finite-interval problem with exact transparent
-conditions and for the compactly cut-off exterior radial Green operator.
+conditions, for the compactly cut-off exterior radial Green operator, and
+for a fixed-domain two-ended $\pi/4$ complex-scaled
+$H^1\to L^2$ Fredholm pencil of index zero. The differentiated Jost tangent
+belongs to that same fixed Sobolev domain. This still does not construct a
+causal uncut real-axis inverse or justify a retarded contour deformation.
 The geometric root is Einstein; the generalized root has nonzero
 traceless-Ricci carrier. Exact reconstruction gives nonzero Bondi shear for
 the Einstein range of $R_{-2}$, and a complexified conserved, traceless,
@@ -312,7 +317,8 @@ The vulnerable interfaces are now explicit:
 - **[Paper 16](16-lorentzian-endpoint-nonselection-pure-weyl.pdf):**
   Lorentzian endpoint non-selection theorem.
 - **[Paper 17](17-pure-weyl-schwarzschild-extension-structure.pdf):**
-  non-split self-extension, defective QNM, and cut-off Green double pole.
+  non-split self-extension, defective QNM, cut-off Green double pole, and
+  global complex-scaled radial Fredholm realization.
 - **[Paper 18](18-static-bach-flat-black-hole-thermodynamics.pdf):**
   residual-basic charge normalization and simultaneous signed horizon
   first-law identities on regular local quotient charts of the certified

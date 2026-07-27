@@ -61,9 +61,11 @@ Jost planes.  The certified selector therefore equals the velocity of the
 complete massive axial QNM branch, up to the displayed normalization, and
 that velocity is nonzero.
 
-The associated finite-interval radial Green operator, and equivalently
-its compactly cut-off exterior realization, has a nonzero rank-one
-second-order pole.  Exact axial reconstruction shows that the Einstein
+The complete radial pencil also admits a fixed-domain, two-ended
+\(\pi/4\) exterior-complex-scaled realization that is Fredholm of index
+zero.  Its inverse has a nonzero rank-one second-order pole, and its
+compactly supported matrix elements agree with the exterior outgoing
+cut-off inverse.  Exact axial reconstruction shows that the Einstein
 range of the principal coefficient has nonzero Bondi shear.  A
 complexified conserved, traceless, radially compact odd source has
 nonzero adjoint overlap.  Thus the isolated local resonance contour
@@ -119,8 +121,10 @@ The paper has five results.
   \((0,0,2)\).  The generalized root necessarily crosses the Einstein
   filtration.  The same certificate gives a nonzero velocity of the
   complete massive axial QNM branch.
-\item The compact-source, compact-observation exterior outgoing radial
-  Green operator has a genuine rank-one pole of order two.
+\item A fixed-domain global exterior-complex-scaled radial pencil is
+  Fredholm of index zero and has a genuine rank-one pole of order two.
+  Its compactly supported matrix elements equal the exterior outgoing
+  cut-off Green operator.
 \item Exact metric reconstruction and an explicit conserved, traceless odd
   source show that the range and source covectors of this pole can both be
   nonzero.
@@ -155,20 +159,24 @@ Defective QNM and non-Einstein root
 Exterior cut-off Green double pole
 & Analytic Jost maps and exact transparent cuts
 & \texttt{REDUCED-MODE}\\
+Global ECS radial Fredholm pole
+& Two-ended exponential dichotomy and connection reduction
+& \texttt{REDUCED-MODE}\\
 Bondi-shear and compact-source nonannihilation
 & Exact reconstruction and conserved-source identities
 & \texttt{REDUCED-MODE}\\
 Global retarded ringdown expansion
-& Weighted Fredholm domains and contour deformation
+& Real-axis causal weights, reconstruction, and contour deformation
 & Not established\\
 \bottomrule
 \end{tabular}
 \end{center}
 
-The last row is essential.  The paper proves a meromorphic exterior radial
-response after compact source and observation localization, and it proves
-the polynomial contribution of an isolated local resonance contour.  It
-does not prove a complete causal quasinormal expansion, late-time
+The last row is essential.  The paper proves a fixed-domain meromorphic
+radial response on a global complex-scaled contour, its compactly
+localized exterior matrix elements, and the polynomial contribution of an
+isolated local resonance contour.  It does not prove an uncut real-axis
+causal inverse, a complete causal quasinormal expansion, late-time
 asymptotics, detector sensitivity, or excitation by a specified
 astrophysical matter model.
 
@@ -1055,6 +1063,113 @@ square-zero on that graded space.  Its projection to a single metric or
 radial block is rank one but is not intrinsically a nilpotent operator
 after the grading has been forgotten.
 
+\subsection{A fixed-domain global complex-scaled pencil}
+
+The finite transparent cuts can be replaced by a single global Sobolev
+domain on a deformed radial contour.  Put \(\theta=\pi/4\), choose finite
+matching points \(x_H<x_I\), and parameterize a two-ended contour by
+\[
+ x_\theta(s)=
+ \begin{cases}
+ x_H+e^{i\theta}(s+1),&s\le-1,\\
+ x_{\rm c}(s),&-1\le s\le1,\\
+ x_I+e^{i\theta}(s-1),&s\ge1,
+ \end{cases}
+\]
+where \(x_{\rm c}\) is a fixed compact connector.  On the right tail use
+the certified inverse-tortoise branch.  On the left tail use
+\(z=f\) and
+\[
+ \frac{dz}{dx}=\frac{z(1-z)^2}{2};
+\]
+then \(z\to0\) exponentially as \(s\to-\infty\).
+
+Let \(\mathbb A_x\) be the complete six-state matrix after passage to
+tortoise coordinate and define
+\[
+ \mathscr L_\theta(\omega)Y
+ =
+ \frac{dY}{ds}
+ -x_\theta'(s)\mathbb A_x(x_\theta(s),\omega)Y
+ :
+ H^1(\mathbb R;\mathbb C^6)
+ \longrightarrow L^2(\mathbb R;\mathbb C^6).
+\]
+The contour and both Banach spaces are independent of \(\omega\).
+
+\begin{theorem}[Global ECS Fredholm pole]
+\label{thm:ecs-fredholm}
+After shrinking to a neighborhood of \(\Omega_n\),
+\(\mathscr L_\theta(\omega)\) is a holomorphic Fredholm pencil of index
+zero.  Its inverse is meromorphic and has a nonzero rank-one pole of order
+two at \(\omega_n\):
+\[
+ \boxed{\;
+ \mathscr L_\theta(\omega)^{-1}
+ =
+ \frac{\Pi_{-2}^{\theta}}{(\omega-\omega_n)^2}
+ +\frac{\Pi_{-1}^{\theta}}{\omega-\omega_n}
+ +O(1),
+ \qquad
+ \operatorname{rank}\Pi_{-2}^{\theta}=1.
+ \;}
+\]
+The ordinary resonant state and its differentiated Jost tangent belong to
+the same fixed \(H^1\) domain.  For sources and observations supported on
+the undeformed compact core, the corresponding matrix elements agree
+with the exterior cut-off inverse of
+Theorem~\ref{thm:exterior-green-pole}.
+\end{theorem}
+
+\begin{proof}
+At either end the limiting first-order matrix has characteristic rates
+\[
+ \pm i e^{i\theta}\omega
+\]
+with multiplicity three; nontrivial Jordan blocks within a repeated sign
+do not affect hyperbolicity.  On the certified frequency disk,
+\[
+ \operatorname{Re}(-i e^{i\theta}\omega)<-\rho<0,
+ \qquad
+ \operatorname{Re}(+i e^{i\theta}\omega)>\rho>0.
+\]
+Thus the infinity-outgoing space has forward stable dimension three,
+while the horizon-ingoing space has forward unstable dimension three and
+decays as \(s\to-\infty\).  The asymptotic first-order operator has index
+\[
+ \dim E_-^u+\dim E_+^s-6=3+3-6=0.
+\]
+The coefficient remainder decays exponentially in the horizon chart and
+tends to zero algebraically at infinity.  Its multiplication map
+\(H^1\to L^2\) is compact: Rellich compactness handles a fixed finite
+interval, while the tail operator norm tends to zero.  Hence the full
+pencil is Fredholm of the same index and is holomorphic on the fixed
+domain.
+
+The differentiated outgoing germ is bounded by a constant times
+\((1+|s|)e^{-\rho|s|}\), together with the same type of bound for its
+derivative.  In particular,
+\[
+ \int_0^\infty(1+t)^2e^{-2\rho t}\,dt
+ =\frac{2\rho^2+2\rho+1}{4\rho^3}<\infty.
+\]
+It therefore lies in the same domain as the ordinary selected germ.
+
+Finally, analytic exponential-dichotomy Green operators eliminate the two
+tails while retaining their selected finite-cut trace spaces.  The
+remaining compact-core pencil has exactly the Jost transparent planes
+used above, so it is analytically equivalent to invertible factors direct
+sum the certified \(3\times3\) connection matrix.  Smith valuations
+\((0,0,2)\) give the stated Laurent order and principal rank.  Uniqueness
+of the analytic tail solutions gives equality with the exterior outgoing
+inverse on compactly supported source and observation channels.
+\end{proof}
+
+Theorem~\ref{thm:ecs-fredholm} closes the fixed-domain Fredholm problem for
+the reduced complex-scaled radial pencil.  Complex scaling selects and
+regularizes resonances; it does not by itself supply a causal real-axis
+inverse or authorize deformation of a physical inverse-Laplace contour.
+
 \subsection{Parent normalization and isolated contour}
 
 Our normalization of \(\alpha_{\rm W}\) is fixed by the quadratic parent
@@ -1140,9 +1255,11 @@ the constant generalized component crosses the carrier quotient.
 \end{corollary}
 
 This is a local residue theorem, not a global retarded expansion.  The
-latter would require a Laplace contour, a closed weighted realization,
-control of thresholds and non-pole contributions, and a justified contour
-deformation.
+latter would require a physical Laplace contour, a causal real-axis
+weighted realization with bounded reconstruction, control of thresholds
+and non-pole contributions, and a justified contour deformation.  The
+complex-scaled Fredholm pencil of Theorem~\ref{thm:ecs-fredholm} settles
+the local resonance realization but not those causal steps.
 
 \section{Source and observation channels}
 \label{sec:channels}
@@ -1362,14 +1479,16 @@ Bach equation without a conformal completion or compensator.
 
 \subsection{The remaining analytic problem}
 
-The exterior cut-off theorem is already a differential-response result on
-the Schwarzschild exterior.  The remaining causal problem is narrower
-but substantive.  A global realization must provide:
+The exterior cut-off theorem and Theorem~\ref{thm:ecs-fredholm} give,
+respectively, the physical compact matrix elements and a global
+fixed-domain complex-scaled realization of the reduced radial resonance.
+The remaining causal problem is narrower but substantive.  It must
+provide:
 \begin{enumerate}
-\item closed weighted domains implementing horizon-ingoing and
-  differentiated outgoing Jost conditions;
-\item a Fredholm pencil of index zero with a fixed analytic domain;
-\item bounded reconstruction through the physical gauge quotient;
+\item a causal real-axis weighted realization compatible with the
+  horizon and null-infinity trace maps;
+\item bounded reconstruction through the physical gauge quotient on that
+  realization;
 \item a causal Laplace contour and a justified deformation through the
   QNM disk;
 \item control of threshold, branch-cut, and non-pole contributions.
@@ -1378,11 +1497,11 @@ but substantive.  A global realization must provide:
 The weakened falloff in \eqref{eq:carrier-falloff} explains why this is
 not routine.  A standard outgoing asymptotically flat function space may
 contain the Einstein root but exclude its intrinsic generalized tangent.
-One may instead
-use an enlarged tangent domain or keep the bulk space fixed and encode the
-differentiated endpoint germ as a finite-dimensional boundary component.
-This paper uses the latter construction locally but does not complete its
-global causal implementation.
+On the ECS contour the differentiated germ is exponentially damped and
+belongs to the same fixed \(H^1\) domain as the ordinary QNM.  This solves
+the reduced Fredholm-domain issue without deciding whether a standard
+real-axis asymptotic phase space contains the constant generalized metric
+component.
 
 \subsection{Certificate dependency}
 
@@ -1419,6 +1538,9 @@ Spin-one local unit
 Fredholm promotion
 & Finite-interval Poisson/trace reduction
 & Exact reduction\\
+Global ECS Fredholm realization
+& Fixed \(H^1\) domain, index zero, and connection Smith transfer
+& Exact analytic reduction\\
 Null-infinity reconstruction
 & Metric heads, radiation gauge, and Bondi shear
 & Exact\\
@@ -1537,9 +1659,10 @@ component has weakened asymptotic falloff.
 This gives a Schwarzschild counterpart, in asymptotically flat spacetime,
 of the critical-gravity logarithmic-partner mechanism at the level of the
 filtered Bach resonance.  The remaining work is genuinely global:
-construct a closed weighted causal domain supporting the endpoint tangent,
-bounded metric reconstruction, and a justified retarded contour
-deformation.
+construct a causal real-axis weighted realization with bounded metric
+reconstruction and justify the retarded contour deformation.  The
+fixed-domain complex-scaled Fredholm realization of the reduced radial
+resonance is complete.
 
 \begin{thebibliography}{99}
 

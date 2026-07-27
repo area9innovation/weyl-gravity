@@ -1,0 +1,126 @@
+{
+  "asymptotic_dichotomy": {
+    "audit": {
+      "asymptotic_selected_dimensions": {
+        "left_forward_unstable": 3,
+        "right_forward_stable": 3,
+        "state_dimension": 6
+      },
+      "fredholm_index": 0,
+      "left_ingoing_forward_real_exponent": "(a-b)/sqrt(2), for omega=-a+i*b",
+      "polynomial_tangent_l2_integral": "1/(2*rho) + 1/(2*rho**2) + 1/(4*rho**3)",
+      "right_outgoing_real_exponent": "(-a+b)/sqrt(2), for omega=-a+i*b",
+      "rotation_angle": "pi/4",
+      "smith_principal_rank": 1
+    },
+    "coefficient_remainders": "exponentially decaying in the horizon chart and tending to zero algebraically at infinity",
+    "compact_perturbation": "multiplication by a bounded matrix tending to zero is compact H1(R)->L2(R), by Rellich on compact intervals and a small tail norm",
+    "index_formula": "dim E^u_left + dim E^s_right - 6 = 3+3-6 = 0",
+    "left_selected_space": "the three-dimensional horizon-ingoing forward-unstable space, which decays as s->-infinity",
+    "limit_spectrum": "spec(x_theta' A_+/-)={+i*exp(i*pi/4)*omega,-i*exp(i*pi/4)*omega}, each with multiplicity three; Jordan blocks within a repeated sign are allowed",
+    "right_selected_space": "the three-dimensional infinity-outgoing stable space",
+    "uniform_hyperbolicity": true
+  },
+  "claim_flags": {
+    "compact_cutoff_exterior_bridge_certified": true,
+    "complete_qnm_expansion_certified": false,
+    "ecs_pencil_fredholm_index_zero": true,
+    "fixed_domain_global_ecs_pencil_certified": true,
+    "generalized_jost_tangent_in_fixed_domain": true,
+    "global_ecs_inverse_meromorphic_near_qnm": true,
+    "global_ecs_principal_coefficient_rank_one": true,
+    "global_ecs_second_order_pole_certified": true,
+    "lorentzian_causal_resolvent_certified": false,
+    "quantum_statement": false,
+    "real_axis_uncut_resolvent_certified": false,
+    "retarded_contour_deformation_certified": false,
+    "threshold_branch_cut_control_certified": false,
+    "time_domain_stability_certified": false
+  },
+  "contour": {
+    "angle": "theta=pi/4",
+    "frequency_independent": true,
+    "horizon_chart": "z=f solves dz/dx=z*(1-z)^2/2 and tends to zero exponentially on the left ray",
+    "infinity_chart": "the certified inverse-tortoise branch r(x) on the right ray",
+    "parameterization": "x_theta(s)=x_H+exp(i*theta)*(s+1) for s<=-1; a fixed compact connector for -1<=s<=1; x_I+exp(i*theta)*(s-1) for s>=1",
+    "uniform_phase_decay_rate_lower": "164296558110374296259121749/500000000000000000000000000"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "an uncut real-axis outgoing inverse on standard asymptotically flat spaces",
+    "a Lorentzian-causal or retarded spacetime resolvent",
+    "a deformation of a physical inverse-Laplace contour through the QNM disk",
+    "threshold, branch-cut, high-frequency or non-pole contour control",
+    "a complete QNM expansion or a global retarded t*exp(i*omega_n*t) term",
+    "time-domain stability, a particle interpretation or a quantum statement"
+  ],
+  "finite_connection_reduction": {
+    "analytic_equivalence": "L_theta is locally analytically equivalent to invertible tail/core factors direct_sum the 3x3 QNM connection matrix",
+    "compact_core": "the remaining core problem is the existing finite-interval pencil with exact Jost transparent boundary planes",
+    "principal_pole_order": 2,
+    "principal_rank": 1,
+    "smith_valuations": [
+      0,
+      0,
+      2
+    ],
+    "tail_elimination": "analytic exponential-dichotomy Green operators eliminate both half-line tails after retaining their three selected finite-cut traces"
+  },
+  "fixed_domain_pencil": {
+    "analyticity": "omega enters the rational radial coefficients analytically; the contour and H1 domain are fixed",
+    "closedness": "the differential expression is bounded H1->L2 and its unbounded L2 realization with domain H1 is closed",
+    "domain_independent_of_frequency": true,
+    "formula": "L_theta(omega)Y=dY/ds-x_theta'(s)A(x_theta(s),omega)Y",
+    "spaces": "L_theta(omega):H^1(R_s;C^6) -> L^2(R_s;C^6)"
+  },
+  "imports": {
+    "ecs_inverse_tortoise": {
+      "path": "black_hole_programme/phase3/axial_qnm_ecs_inverse_tortoise_v1/certificate.json",
+      "sha256": "25d7e306e5b4b314aa34f1a10f6a8a0461e8d6c4dd1c2e7f91508b2e6e0d6e92"
+    },
+    "finite_interval_fredholm": {
+      "path": "black_hole_programme/phase4/axial_qnm_fredholm_promotion_v1/certificate.json",
+      "sha256": "e3f5e28d426305f0e68f7c11c7f63e1f0618cc63ad20fc1ff5b221fb38d34110"
+    },
+    "massive_jost_crosswalk": {
+      "path": "black_hole_programme/phase4/axial_massive_jost_crosswalk_v1/certificate.json",
+      "sha256": "4d9a227cbc0833aab43f07b4eaa363b421814b725cd7ebb0e9451237751e1a23"
+    },
+    "spin_one_local_unit": {
+      "path": "black_hole_programme/phase3/axial_qnm_spin_one_local_unit_v1/certificate.json",
+      "sha256": "c0e8c6880ed4b142fe79738590eaede4637360d15eb31dc2203467eb66816e6a"
+    }
+  },
+  "jost_tangent_domain": {
+    "conclusion": "the Einstein root and its generalized Jost tangent both belong to the same fixed H1 ECS domain",
+    "generalized_growth": "the differentiated infinity Jost germ is at most (1+|s|) times the selected exponential",
+    "integrability": "positive uniform decay rho gives integral_0^infinity (1+t)^2 exp(-2*rho*t) dt < infinity; the differentiated germ and its derivative lie in L2",
+    "ordinary_selected_phases": "horizon exp(+i*omega*x), infinity exp(-i*omega*x)"
+  },
+  "lifecycle": "COEFFICIENT_COMPUTED",
+  "next_gate": "prove bounded physical reconstruction on a causal weighted real-axis realization and justify the global inverse-Laplace contour deformation; the reduced ECS Fredholm gate is closed",
+  "resolvent_statement": {
+    "compact_cutoff_bridge": "for source and observation supported on the undeformed compact core, this inverse agrees with the previously certified outgoing exterior cut-off inverse",
+    "laurent_form": "L_theta^-1=Pi_-2/(omega-omega_n)^2+Pi_-1/(omega-omega_n)+O(1)",
+    "meromorphic_near_qnm": true,
+    "operator": "the full two-ended ECS radial inverse L_theta(omega)^-1:L2(C_theta;C6)->H1(C_theta;C6)",
+    "principal_nonzero": true,
+    "principal_rank": 1
+  },
+  "schema": "phase4-axial-qnm-ecs-fredholm-v1",
+  "source_commit": "25872ff70c43813368afaf67d7c199f83144828b",
+  "status": "CERTIFIED_GLOBAL_ECS_RADIAL_FREDHOLM_DOUBLE_POLE",
+  "verification_model": {
+    "arithmetic": "exact symbolic identities and content-addressed imports",
+    "independence_profile": {
+      "independent_backend": false,
+      "independent_code": true,
+      "independent_derivation": true,
+      "independent_representation": true
+    },
+    "numeric_replay_required": false
+  }
+}

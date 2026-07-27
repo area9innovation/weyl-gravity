@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "dependency_tags",
+    "imports",
+    "contour",
+    "fixed_domain_pencil",
+    "asymptotic_dichotomy",
+    "jost_tangent_domain",
+    "finite_connection_reduction",
+    "resolvent_statement",
+    "claim_flags",
+    "does_not_establish"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phase4-axial-qnm-ecs-fredholm-v1"
+    },
+    "status": {
+      "const": "CERTIFIED_GLOBAL_ECS_RADIAL_FREDHOLM_DOUBLE_POLE"
+    }
+  },
+  "additionalProperties": true
+}
