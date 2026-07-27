@@ -45,57 +45,79 @@ Consequences that are now closed rather than open:
    cannot be resolved to an in-repo path. Either locate the published
    version or state plainly that it is unpublished.
 
-2. [ ] **Finish the standalone-history replay crosswalk.** The subtree
-   extraction into `area9innovation/weyl-gravity` is complete and the source
-   and split trees were verified identical (2026-07-26). Paper 14 and 15
-   claim-map commit pins were repaired on 2026-07-27
-   (`reports/paper-series-release-touchup-2026-07-27.md`). Remaining: sweep
-   the other receipts and reports for monorepo commit identifiers and paths
-   that no longer resolve in the filtered history, and record the crosswalk
-   explicitly.
+2. [ ] **Repair the 22 verifiers broken by the subtree extraction.** Found
+   and quantified 2026-07-27 while building the crosswalk; see
+   `reports/standalone-history-crosswalk-2026-07-27.md`.
+
+   Of 30 verifier/test scripts that reference a dangling commit or the old
+   `physics/symplectic-reconstruction/` path prefix, 22 fail: 17 on
+   git-attached lookups, 2 on content supersession, 3 on an import path that
+   masks the same git-attached failure. They are live scientific rails in
+   `quantum-weyl/`, `closed_universe_observers/`, `d_quotient_classical/`,
+   `bridge/`, `paper/`, and `residual_atlas/`. **Any claim resting on them is
+   currently unverifiable in this repository.**
+
+   The repair is mechanically determined — `reports/standalone-history-
+   crosswalk.json` supplies every missing commit id and the path fix is
+   prefix stripping — but it was deliberately not applied. Rewriting the
+   pinned ids in place would edit historical provenance records, which the
+   append-only law forbids, and some pins sit inside certificates whose own
+   hashes are pinned downstream, so an in-place rewrite could cascade. The
+   intended repair is for verifiers to translate an old id through the
+   crosswalk at lookup time, leaving the historical pin as written. This
+   changes scientific verification code and needs an explicit decision.
+
+3. [ ] **Decide whether five superseded input pins invalidate their results.**
+   Separate from the extraction, and not a provenance repair.
+   `closed_universe_observers/certificates/CHARGED_TIME_RECEIVER_ADMISSIBILITY_CROSSWALK_V1.json`
+   now hashes to `78cdd185…`, but five older certificates still pin the
+   superseded `e2c9aad2…` (listed in the crosswalk report). The old content
+   is genuinely in history, so this is the fail-closed machinery working:
+   an input changed and the dependents were never revisited. Whether those
+   five results survive the change is a scientific question.
 
 ## Known weak spots in Papers 01–06 (not yet raised by referees)
 
-3. [ ] `04-fourth-order-gravity`: referee 2 suggested a full section reorder
+4. [ ] `04-fourth-order-gravity`: referee 2 suggested a full section reorder
    (reduced complex theory → real forms → Cartan → kernel → degeneration);
    applied as insertions only. Revisit if raised again.
 
-4. [ ] `03-fourth-order-vacuum`: the □²-anchor infrared question is
+5. [ ] `03-fourth-order-vacuum`: the □²-anchor infrared question is
    explicitly open (Remark "anchor is an infrared question"). A proper IR
    Shale/Araki–Yamagami analysis would close it — a new result, not a repair.
 
-5. [ ] `02-variational-fock`: invariant Sobolev classification of the
+6. [ ] `02-variational-fock`: invariant Sobolev classification of the
    original field variables (pullback D(k)†M_obs(k)D(k) in a fixed
    trivialization) — withdrawn claim, recoverable with one computation.
 
 ## Receipts / verification backlog (2026-07-12 audit)
 
-6. [ ] Lean: Schur no-hybrid (commutant of so(3) spin-2 5-dim irrep = ℝ·I) —
+7. [ ] Lean: Schur no-hybrid (commutant of so(3) spin-2 5-dim irrep = ℝ·I) —
    Paper 04's central obstruction, finite-dim matrix algebra.
 
-7. [ ] Lean: orbit-constancy eigenvector lemma (ℓᵀX = −iℓᵀ ⇒
+8. [ ] Lean: orbit-constancy eigenvector lemma (ℓᵀX = −iℓᵀ ⇒
    metric-independence) — load-bearing for Papers 03 AND 04.
 
-8. [ ] Lean: trilemma coset {T: TA₊T⁻¹ = −A₊} = T₀·SO(2,ℂ) + quarter-turn
+9. [ ] Lean: trilemma coset {T: TA₊T⁻¹ = −A₊} = T₀·SO(2,ℂ) + quarter-turn
    congruence (4×4, reuses `NormalForm.lean` patterns).
 
-9. [ ] Lean: pointed-unitary Gaussian identity ψ₀ = ρ⁻¹φ₀ at the covector
+10. [ ] Lean: pointed-unitary Gaussian identity ψ₀ = ρ⁻¹φ₀ at the covector
     level (finite-dim, cheap) — formalizes the corrected central claim of
     Paper 02.
 
-10. [ ] mpmath regression rail for Papers 03–04 kernels (bridge Wightman,
+11. [ ] mpmath regression rail for Papers 03–04 kernels (bridge Wightman,
     sector kernels, conformal limits) — second independent rail; the Wolfram
     rail has never run (no Mathematica available).
 
-11. [ ] Lean (cheap): Paper 02 discrete counterexample {Aⁿ}; fidelity √3/2
+12. [ ] Lean (cheap): Paper 02 discrete counterexample {Aⁿ}; fidelity √3/2
     and occupation 1/3 identities.
 
-12. [ ] Lean (expensive, optional): Paper 02 minimum-distortion scalar
+13. [ ] Lean (expensive, optional): Paper 02 minimum-distortion scalar
     inequality with arccosh closed form.
 
 ## Research continuations (from the papers' own outlooks)
 
-13. [ ] **ON5 — boundary Born-trace evaluation** (Paper 05 capstone, the
+14. [ ] **ON5 — boundary Born-trace evaluation** (Paper 05 capstone, the
     obstruction-to-null theorem). Build the mapped process operator
     A_s = Σ(T_s)_xy|x_s⟩⟨y_s| on a truncated charge-Fock space with the
     squeezed vacuum; charge-decompose; verify the obstruction coefficient
@@ -107,10 +129,10 @@ Consequences that are now closed rather than open:
     cross-paired Gram + graded trace from ON1, map from ON2, squeezing
     from ON3.
 
-14. [ ] Paper 02 outlook (i): classify quadratic PT Hamiltonians whose
+15. [ ] Paper 02 outlook (i): classify quadratic PT Hamiltonians whose
     positive diagonalizer direction is inter-mode for some splitting.
 
-15. [ ] Λ ≠ 0 phase diagram (critical gravity / partial masslessness loci) —
+16. [ ] Λ ≠ 0 phase diagram (critical gravity / partial masslessness loci) —
     flagged out of scope in Paper 04.
 
 ## Deferred (explicitly not in the active queue)
@@ -133,6 +155,14 @@ the Einstein–Weyl calculation.
   been failing `symbolic/verify_conformal_split_publications.py` on `master`
   ever since. Restored 2026-07-27 in the same pass.
 - Subtree extraction into the standalone repository — completed 2026-07-26.
+- Standalone-history replay crosswalk — completed 2026-07-27. 858 provenance
+  pins swept; 244 of 245 dangling commits resolved to their standalone image
+  by content, the one remainder correctly classified as the external
+  tango/forge substrate. Artifact
+  `reports/standalone-history-crosswalk.json`, rail
+  `ci/standalone_history_crosswalk.py --check`, receipt
+  `reports/standalone-history-crosswalk-2026-07-27.md`. The extraction damage
+  the sweep exposed is item 2 above.
 - The interaction-deformation, gravity-rail, and conformal residual logs that
   formerly filled item 14 are archived verbatim in
   `reports/todo-interaction-conformal-log-archive-2026-07-27.md`. The
