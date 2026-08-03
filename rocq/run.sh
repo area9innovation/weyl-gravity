@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # run.sh — the reverse-physics torus GATE.
 #
-# Fifteen developments, all zero-axiom, in dependency order.  The first four are the
+# Sixteen developments, all zero-axiom, in dependency order.  The first four are the
 # torus chain, the next four an INDEPENDENT stochastic carrier, and the last two
 # engage Carcassi-Aidala directly: a BRIDGE restating the torus results in their
 # notation, and a PARITY OBSTRUCTION on their degree-of-freedom counting.
@@ -80,6 +80,14 @@
 #                                  coprime-ratio-hierarchy for the order clause.
 #   CoprimeHierarchyKernelParity.v which kernel appears: an involution fixing the
 #                                  vertex forces symmetric iff q even.
+#   CoprimeHierarchyChargeBound.v  an AUDIT of the physics gloss on those two:
+#                                  J = p n1 + q n2 has the resonant sector as its
+#                                  exact commutant, so EVERY possible obstruction
+#                                  conserves it -- and J is positive, so it BOUNDS
+#                                  both occupations.  The obstruction is the
+#                                  benign conversion channel, not the ghost's
+#                                  escape route.  Pair creation, which does run
+#                                  away, is proved to break J.
 #
 # Print Assumptions must say "Closed under the global context" for every
 # theorem, and coqchk must list NO axioms.
@@ -94,7 +102,7 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
 
-MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount ReversePhysicsNoConformalCount ReversePhysicsRelationalCount ReversePhysicsExponentAdditivity CoprimeHierarchyOrderLaw CoprimeHierarchyKernelParity)
+MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount ReversePhysicsNoConformalCount ReversePhysicsRelationalCount ReversePhysicsExponentAdditivity CoprimeHierarchyOrderLaw CoprimeHierarchyKernelParity CoprimeHierarchyChargeBound)
 pass=0
 fail=0
 
@@ -406,8 +414,43 @@ Proof.
 Qed.
 NEG
 
+# (p) The conversion kernel and pair creation must NOT carry the same charge --
+#     that distinction is the entire content of the audit.
+cat > _neg_p.v <<'NEG'
+Require Import ZArith.
+Require Import CoprimeHierarchyOrderLaw.
+Require Import CoprimeHierarchyChargeBound.
+Open Scope Z_scope.
+(* FALSE on purpose: pair creation has charge (+q,+p) and breaks J.  If it
+   conserved J too, the contrast between a conversion channel and an
+   instability would collapse and the audit would be vacuous. *)
+Theorem bogus_pair_creation_conserves_charge :
+  forall p q, conserves_charge p q (pair_creation p q).
+Proof.
+  intros p q. apply kernel_conserves_charge.
+Qed.
+NEG
+
+# (q) A positive charge is what does the bounding -- an indefinite one must not.
+cat > _neg_q.v <<'NEG'
+Require Import QArith.
+Require Import CoprimeHierarchyChargeBound.
+Open Scope Q_scope.
+(* FALSE on purpose: the level set of p n1 - q n2 is an unbounded ray of
+   physical states.  If the indefinite charge bounded n1 as well, positivity of
+   J would be doing no work. *)
+Theorem bogus_indefinite_charge_bounds :
+  forall p q n1 n2 J : Q,
+    0 < p -> 0 < q -> 0 <= n1 -> 0 <= n2 ->
+    p * n1 - q * n2 == J ->
+    p * n1 <= J.
+Proof.
+  intros p q n1 n2 J Hp Hq H1 H2 Heq. lra.
+Qed.
+NEG
+
 neg_ok=0
-for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _neg_k _neg_l _neg_m _neg_n _neg_o; do
+for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _neg_k _neg_l _neg_m _neg_n _neg_o _neg_p _neg_q; do
   if coqc "$n.v" >/tmp/rp_neg.log 2>&1; then
     echo "  $n: FALSE claim was ACCEPTED — REJECT"; neg_ok=1
   else
@@ -415,7 +458,7 @@ for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _
   fi
 done
 if [ "$neg_ok" -eq 0 ]; then pass=$((pass+1)); else fail=$((fail+1)); fi
-rm -f _neg_[a-o].v _neg_[a-o].vo _neg_[a-o].vok _neg_[a-o].vos _neg_[a-o].glob ._neg_[a-o].aux
+rm -f _neg_[a-q].v _neg_[a-q].vo _neg_[a-q].vok _neg_[a-q].vos _neg_[a-q].glob ._neg_[a-q].aux
 
 echo
 if [ "$fail" -eq 0 ]; then

@@ -2,7 +2,7 @@
 
 **Certificate** `REVERSE_PHYSICS_COPRIME_HIERARCHY_ROCQ_V1`
 **Proofs** `rocq/CoprimeHierarchyOrderLaw.v`, `rocq/CoprimeHierarchyKernelParity.v` — zero axioms
-**Gate** `rocq/run.sh` — `RESULT: 20 green (0 red)`
+**Gate** `rocq/run.sh` — `RESULT: 21 green (0 red)`
 **Upstream** tango `5be183077` — gates, results document, conjecture event
 **Preregistration** tango `02d92f069`, committed **before** any computation
 
@@ -91,29 +91,58 @@ odd order, symmetric kernel.
 `√(w1·w2·sqfree(w1²−w2²))` for `q` even. Nine of nine — and it *predicted* the
 absence of a radical at 9:1, where `√(w1w2) = 3`.
 
-## 5. The physics reading — interpretation, not theorem
+## 5. The physics reading — RETRACTED
 
-Flagged as such, and separable from everything above.
+> **This section previously claimed the opposite of what is now certified.** The
+> retracted text and the audit are in
+> [`REVERSE_PHYSICS_COPRIME_CHARGE_BOUND_ROCQ_V1`](../certificates/REVERSE_PHYSICS_COPRIME_CHARGE_BOUND_ROCQ_V1.json)
+> and [`coprime-charge-bound.md`](coprime-charge-bound.md). Nothing in §§1–4
+> changes; the mathematics was never in question, only the gloss on it.
 
-The Pais–Uhlenbeck oscillator is the higher-derivative sector in miniature — the
-toy model for the fourth-order dynamics that makes Weyl gravity hard. Its two
-modes are the healthy one and the ghost.
+What this section used to say: that an obstruction at `p:q` is a genuine on-shell
+`q ↔ p` quanta conversion, that this conversion is *"the channel through which
+the ghost sector talks to the healthy one — the perturbative mechanism of the
+instability"*, and therefore that **"the ghost-conversion channel is closed at
+every even-`p` resonance."**
 
-An obstruction at a `p:q` resonance means the cubic interaction **cannot** be
-removed by a canonical transformation: there is a genuine on-shell `q ↔ p` quanta
-conversion between the modes. That conversion is the channel through which the
-ghost sector talks to the healthy one — the perturbative mechanism of the
-instability.
+That is wrong twice over, and both grounds are now proved.
 
-On that reading, the result says: **the ghost-conversion channel is closed at
-every even-`p` resonance.** A parity selection rule protects the sector at half
-the resonances.
+**There is no ghost.** `moyal.model` returns
+`h0 = ½(w1w2·p² + (w1/w2)·x² + (w2/w1)·q² + w1w2·y²)` — four pure squares with
+four positive coefficients whenever `w1 > w2 > 0`, which the model already
+requires (`disc > 0`). In mode variables it is exactly `w1·a1a1b + w2·a2a2b`,
+both frequencies entering with a plus sign — which is also what `ker_split`'s
+resonance `Ω = (a−b)w1 + (c−d)w2` encodes. Whatever this model is a deformation
+*of*, the object the obstruction is computed in is bounded below.
 
-The caveats are severe and I do not want them lost. This is one specific cubic
-vertex, in one toy model, perturbatively, and "zero through order 6 or 7" is not
-"zero to all orders". PU is a toy for Weyl gravity, not Weyl gravity. Whether
-any of this survives to the real theory is exactly the open question, and
-nothing here touches the certified BV–BFV complex or the residual classes.
+**And the obstruction bounds rather than destabilises.** The kernel `a1^q·a2b^p`
+has charge `(+q, −p)`, so with `J = p·n₁ + q·n₂`,
+
+```
+{ J , M }  =  i [ (n₁−m₁)p + (n₂−m₂)q ] M
+```
+
+— the bracket eigenvalue **is** the resonance frequency. `J`'s commutant is
+exactly the resonant sector, so every possible obstruction at the critical
+degree conserves `J` automatically, kernel and diagonal alike. And `J` is a
+positive combination of nonnegative occupations, so conserving it gives
+`n₁ ≤ J/p` and `n₂ ≤ J/q` — for all time, at any coupling. The derivation never
+refers to the sign of either frequency, so the bound would survive a genuine
+ghost.
+
+The structure that *does* run away is pair creation `a1^q·a2^p`, charge
+`(+q, +p)`. It provably breaks `J` and conserves only the indefinite
+combination `p·n₁ − q·n₂`, whose level sets are unbounded. That is the
+difference between a conversion channel and an instability, and the obstruction
+is on the wrong side of it for the old reading to hold.
+
+**What survives.** "The channel is closed at even `p`" is still true as a
+statement about the obstruction. It just does not mean the ghost sector is
+protected: there is no ghost sector here, and the channel would not be the
+danger if there were. The remaining caveats stand — one cubic vertex, one toy
+model, perturbatively, and "zero through order 6 or 7" is not "zero to all
+orders". Nothing here touches the certified BV–BFV complex or the residual
+classes.
 
 ## 6. What is open — and it is sharper than before
 
@@ -133,7 +162,7 @@ and 6:5 were computed only to order 6, below their predicted 9.
 ## Verification
 
 ```bash
-cd rocq && ./run.sh                                   # 20 green (0 red)
+cd rocq && ./run.sh                                   # 21 green (0 red)
 PYTHONPATH=. python3 -m reverse_physics.coprime_hierarchy_rocq --check
 
 # upstream, in tango at 5be183077:
@@ -147,8 +176,8 @@ cd forge && FORGE_LIB=$PWD/lib /tmp/forgebin -run -I tools/physics-moyal \
 
 ## Tier receipt
 
-- **Tier 0/1** — fifteen Rocq modules compile; gate 20 green / 0 red; `coqchk`
-  empty axiom section; 109/109 `Print Assumptions` closed; fourteen provenance
+- **Tier 0/1** — sixteen Rocq modules compile; gate 21 green / 0 red; `coqchk`
+  empty axiom section; 126/126 `Print Assumptions` closed; fifteen provenance
   records hash-verified; 30-test Python suite green.
 - **Upstream** — fast rail 17/17 with `verify -full` (`c==native`, ASan-clean on
   both backends); certificate-tier rail 10/10. Gates split per AGENTS.md because

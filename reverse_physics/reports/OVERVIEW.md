@@ -5,11 +5,13 @@ for the pure-Weyl programme carry **reverse physics** in the Carcassi–Aidala
 sense — not deriving laws from axioms, but finding the minimal physical
 assumptions a law is equivalent to?
 
-The answer is yes, with texture. Of the seven findings, **four are negative
+The answer is yes, with texture. Of the eight findings, **five are negative
 results** — the more useful outcome. The fifth is the only place a *lattice*
 appeared: two laws that constrain each other rather than a list of independent
 results. The sixth turned outward, and engages the Carcassi–Aidala programme's
-own open conjecture for general relativity.
+own open conjecture for general relativity. The eighth is the discipline turned
+on this document: an interpretation published here in §3.7 was **retracted**,
+with proof, after an audit found it backwards.
 
 ---
 
@@ -258,6 +260,40 @@ mentions `p`'s parity.
 
 [Full report](coprime-hierarchy-rocq.md).
 
+### 3.8 …and then the ledger caught this stream's own overreach
+
+§3.7 came with a physics reading, flagged as interpretation: that the
+obstruction is the `q ↔ p` conversion through which a ghost mode talks to the
+healthy one — the mechanism of the instability — so that even-`p` vanishing
+**closes the ghost channel**. Auditing it, exactly, refuted it twice over.
+
+**There is no ghost.** `moyal.model` returns a free Hamiltonian that is four
+pure squares with four positive coefficients whenever `w1 > w2 > 0`, which the
+model already requires. In mode variables it is exactly `w1·a1a1b + w2·a2a2b`:
+both frequencies positive, bounded below.
+
+**And the obstruction bounds rather than destabilises.** With
+`J = p·n̂₁ + q·n̂₂`, the bracket `{J, M} = i[(n₁−m₁)p + (n₂−m₂)q]·M` — its
+eigenvalue *is* the resonance frequency. So `J`'s commutant is exactly the
+resonant sector, every possible obstruction at the critical degree conserves `J`
+automatically, and `J` positive with nonnegative occupations gives `n₁ ≤ J/p`,
+`n₂ ≤ J/q` for all time at any coupling. The derivation never sees the sign of
+either frequency, so **a real ghost would not break it**. The structure that
+does run away is pair creation `a1^q·a2^p`, which provably breaks `J` and
+conserves only the indefinite `p·n₁ − q·n₂`, whose level sets are unbounded.
+
+Nothing mathematical changes: the order law, the selection rule, the kernel
+clause and the even-`p` refutation all stand. Only the gloss does. The first
+attempt at this audit was a numerical integration that ran ten minutes without
+finishing and produced two integrator artefacts; as an exact polynomial identity
+in Forge it runs in two seconds and proves something stronger.
+
+That the honest-ledger discipline caught a claim *this stream published* is the
+strongest evidence in this document that it is load-bearing rather than
+decorative.
+
+[Full report](coprime-charge-bound.md).
+
 ---
 
 ## 4. The reversal
@@ -381,9 +417,10 @@ Stated plainly, because the certificates each carry their own version:
 | `..._RELATIONAL_COUNT_ROCQ_V1` | flat space | what replaces it: a single scaling exponent |
 | `..._EXPONENT_ADDITIVITY_ROCQ_V1` | products | and DOF-independence becomes additivity of that exponent |
 | `..._COPRIME_HIERARCHY_ROCQ_V1` | all coprime p:q | the programme's own conjecture: order law proved, even `p` unobstructed, four new instances |
+| `..._COPRIME_CHARGE_BOUND_ROCQ_V1` | all p,q > 0 | and the physics reading of it **retracted**: the obstruction conserves a positive charge, so it bounds rather than destabilises |
 
-Fifteen zero-axiom Rocq modules, `coqchk` axiom section `<none>`, fifteen
-fail-closed negative controls, one Forge gate on both backends under ASan, two
+Sixteen zero-axiom Rocq modules, `coqchk` axiom section `<none>`, seventeen
+fail-closed negative controls, two Forge gates on both backends under ASan, two
 independent Python rails. `rocq/ReversePhysicsAOPBridge.v` additionally proves
 that the ω used throughout **is** their `J ⊗ Iₙ`, so the engagement in §3.6 is
 bridged rather than asserted.
@@ -428,6 +465,11 @@ The directions that would still yield something:
   plus an involution. There are 9,000+ certificates here; that queue is long,
   and it is the answer to the objection that this stream tests carriers built
   to demonstrate the method.
+- **This stream's own `does_not_establish` lines.** §3.8 came from auditing an
+  interpretation published here, and it was backwards. Every remaining
+  interpretation flagged as such is a candidate for the same treatment — and
+  `GHOST_MODEL_OBSTRUCTION`, redoing the deformation with a genuinely indefinite
+  `h0 = w1·n̂₁ − w2·n̂₂`, is the one that follows directly.
 - **Someone reading this and disagreeing.** Three of the five findings are
   negative claims about a live research programme. They should be argued with —
   [`AOP-CONNECTION.md`](AOP-CONNECTION.md) puts two of them in front of that

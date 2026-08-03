@@ -110,18 +110,18 @@ def build() -> dict[str, object]:
         },
         "theorems": THEOREMS,
         "ledger": {
-            "print_assumptions_closed": "10/10 across the two modules; 109/109 across the fifteen modules the shared gate drives",
+            "print_assumptions_closed": "10/10 across the two modules; 126/126 across the sixteen modules the shared gate drives",
             "coqchk_axiom_section": "<none>",
             "declared_assumptions_in_source": "none \u2014 no Axiom, Parameter, Hypothesis, Conjecture, Admitted or admit",
         },
-        "gate_result": "RESULT: 20 green (0 red) \u2014 GATE: PASS",
+        "gate_result": "RESULT: 21 green (0 red) \u2014 GATE: PASS",
         "upstream_gates": {
             "fast": "tango forge/tools/physics-moyal/coprime_parity_gate.forge \u2014 17/17, 8 s, forge verify -full: c==native, ASan-clean on both backends",
             "certificate_tier": "tango forge/tools/physics-moyal/coprime_parity_deep.forge \u2014 10/10, 42 s, order 7 and order 8",
             "split_rationale": "AGENTS.md: split a fast invariant rail from the expensive exhaustive certificate rather than normalising a slow commit loop. The combined gate exceeded the ten-minute verify budget.",
         },
         "gate_negative_controls": [
-            "thirteen inherited from the earlier modules, all rejected",
+            "fifteen inherited from the earlier modules, all rejected",
             "a FALSE claim that the kernel can appear below the critical order is REJECTED",
             "a FALSE claim that both kernel combinations survive is REJECTED",
         ],
@@ -162,6 +162,20 @@ def build() -> dict[str, object]:
             "8:3 and 6:5 at their predicted orders. Both were computed only to order 6, below their predicted 9, so they confirm the selection rule without reaching the critical order",
             "any quantum, causal, or field-theoretic claim about Weyl gravity itself \u2014 see the report's physics section, which is interpretation",
         ],
+        "interpretation_superseded_by": {
+            "certificate": "REVERSE_PHYSICS_COPRIME_CHARGE_BOUND_ROCQ_V1",
+            "what": (
+                "The PHYSICS READING in the report's \u00a75 \u2014 that the obstruction is the ghost's "
+                "escape route and that even p closes it \u2014 is RETRACTED. The obstruction conserves a "
+                "positive-definite charge and therefore bounds both occupations, and the free "
+                "Hamiltonian as coded is positive definite in the first place."
+            ),
+            "what_is_unaffected": (
+                "Every mathematical claim in this certificate. The order law, the selection rule, the "
+                "kernel-parity clause, the even-p refutation and the four new instances all stand."
+            ),
+            "note": "appended, not rewritten \u2014 the record of what was claimed is preserved",
+        },
         "next_gate": "COPRIME_HIERARCHY_EVEN_p_MECHANISM: find what makes the even-p coefficient vanish. Six loci of evidence, no argument. That is the successor question and it is sharper than the one the conjecture started with.",
         "verification_commands": [
             "cd rocq && ./run.sh",
