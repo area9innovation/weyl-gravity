@@ -77,8 +77,15 @@ THEOREMS = [
     {"name": "A3_is_independent", "statement": "A1 and A2 hold, A3 fails, the law fails"},
     {
         "name": "marginal_depends_on_the_dof_split",
-        "statement": "the SAME field is marginal for the split {(q1,p1),(q2,p2)} and not marginal for {(q1,q2),(p1,p2)}",
+        "statement": "the SAME field is marginal for the pairing {(q1,p1),(q2,p2)} and not marginal for {(q1,q2),(p1,p2)}",
         "role": "the degree-of-freedom split has been a DECLARED ASSUMPTION throughout this stream; here it is a theorem that A1 is relative to it",
+        "CORRECTED_BY": (
+            "REVERSE_PHYSICS_TORUS_SPLIT_ROCQ_V1. The theorem is true but this billing was too generous: "
+            "{(q1,q2),(p1,p2)} is ISOTROPIC (omega vanishes on both blocks), so it is not a degree-of-freedom "
+            "split at all and what was shown is dependence on an arbitrary COORDINATE PAIRING. The honest and "
+            "strictly stronger replacement is marginal_not_invariant_under_admissible_splits, which witnesses "
+            "the dependence between two genuinely symplectic splits."
+        ),
     },
 ]
 
@@ -198,6 +205,10 @@ def build() -> dict[str, object]:
             "a reproduction, confirmation or refutation of Carcassi--Aidala's own derivation",
             "any quantum, causal, or field-theoretic claim",
         ],
+        "superseded_in_part_by": {
+            "result_id": "REVERSE_PHYSICS_TORUS_SPLIT_ROCQ_V1",
+            "respect": "the split-dependence theorem's interpretation (corrected and strengthened) and the explanation of why A2 resists a physical reading",
+        },
         "next_gate": "REVERSE_PHYSICS_PARAMETERISED_BASE: quantify over degree-of-freedom splits and symplectic forms so the base becomes a system that can be weakened, which is what would turn this scoped equivalence into a reverse-mathematics reversal proper.",
         "verification_commands": [
             "cd rocq && ./run.sh",

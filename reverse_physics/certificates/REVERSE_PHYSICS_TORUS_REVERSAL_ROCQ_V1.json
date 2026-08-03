@@ -109,6 +109,10 @@
   "result_id": "REVERSE_PHYSICS_TORUS_REVERSAL_ROCQ_V1",
   "result_state": "LAW_PROVED_EQUIVALENT_TO_THREE_MUTUALLY_INDEPENDENT_ASSUMPTIONS",
   "schema": "reverse-physics-torus-reversal-rocq-v1",
+  "superseded_in_part_by": {
+    "respect": "the split-dependence theorem's interpretation (corrected and strengthened) and the explanation of why A2 resists a physical reading",
+    "result_id": "REVERSE_PHYSICS_TORUS_SPLIT_ROCQ_V1"
+  },
   "theorems": [
     {
       "name": "marginal_iff_intra_dof_closed",
@@ -145,9 +149,10 @@
       "statement": "A1 and A2 hold, A3 fails, the law fails"
     },
     {
+      "CORRECTED_BY": "REVERSE_PHYSICS_TORUS_SPLIT_ROCQ_V1. The theorem is true but this billing was too generous: {(q1,q2),(p1,p2)} is ISOTROPIC (omega vanishes on both blocks), so it is not a degree-of-freedom split at all and what was shown is dependence on an arbitrary COORDINATE PAIRING. The honest and strictly stronger replacement is marginal_not_invariant_under_admissible_splits, which witnesses the dependence between two genuinely symplectic splits.",
       "name": "marginal_depends_on_the_dof_split",
       "role": "the degree-of-freedom split has been a DECLARED ASSUMPTION throughout this stream; here it is a theorem that A1 is relative to it",
-      "statement": "the SAME field is marginal for the split {(q1,p1),(q2,p2)} and not marginal for {(q1,q2),(p1,p2)}"
+      "statement": "the SAME field is marginal for the pairing {(q1,p1),(q2,p2)} and not marginal for {(q1,q2),(p1,p2)}"
     }
   ],
   "verification_commands": [

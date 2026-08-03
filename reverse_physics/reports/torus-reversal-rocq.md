@@ -51,9 +51,17 @@ rejected.
 
 ## The degree-of-freedom split is now a theorem, not an assumption
 
+> **Corrected by `REVERSE_PHYSICS_TORUS_SPLIT_ROCQ_V1`.** The theorem below is
+> true, but this billing was too generous: `{(q₁,q₂),(p₁,p₂)}` is **isotropic**
+> — ω vanishes on both blocks — so it is not a degree-of-freedom split, and what
+> was shown is dependence on an arbitrary *coordinate pairing*. The honest and
+> strictly stronger replacement is `marginal_not_invariant_under_admissible_splits`,
+> which witnesses the dependence between two genuinely symplectic splits. See
+> [that report](torus-split-rocq.md).
+
 The whole stream — since the G0 certificate — has carried "the DOF split is an
 input, not derived" as a *declared assumption*. `marginal_depends_on_the_dof_split`
-proves it: the **same field** is marginal for the split `{(q₁,p₁), (q₂,p₂)}` and
+proves it: the **same field** is marginal for the pairing `{(q₁,p₁), (q₂,p₂)}` and
 not marginal for `{(q₁,q₂), (p₁,p₂)}`.
 
 So A1 is not a property of the dynamics alone. It is a property of the dynamics
@@ -71,6 +79,11 @@ A reverse-physics programme wants the law equivalent to a set of *physical*
 assumptions. Here a third of the decomposition resists that reading. Whether A2
 has an honest physical formulation is open; if it does not, this is a bound on
 how much of Hamiltonian structure is physically axiomatizable at all.
+
+**Resolved by `REVERSE_PHYSICS_TORUS_SPLIT_ROCQ_V1`:** A2 is the *remainder* of a
+bookkeeping choice. A1's split-dependence cancels against it exactly — for every
+pairing, `intra_P ∧ inter_P` is the same proposition — so the physical/geometric
+division is not canonical. See [that report](torus-split-rocq.md).
 
 ## How far this is, and is not, reverse mathematics
 

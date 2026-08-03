@@ -101,6 +101,7 @@ schema/  certificates/  tests/  reports/
 ../rocq/ReversePhysicsTorus.v          the topological step, all modes
 ../rocq/ReversePhysicsTorusChain.v     the four-level chain, both inclusions strict
 ../rocq/ReversePhysicsTorusReversal.v  the reversal: law <-> A1 /\ A2 /\ A3
+../rocq/ReversePhysicsTorusSplit.v     why A2 is the remainder of a split choice
 ../rocq/run.sh                         the zero-axiom gate (coqc, coqchk, controls)
 ```
 
@@ -113,7 +114,8 @@ schema/  certificates/  tests/  reports/
 | `..._TORUS_G1_V1` | `G1` (T⁴, N ≤ 3) | on a manifold the chain has **four** levels; the symplectic→Hamiltonian gap is `b₁ = 4` at every truncation and entirely in the zero mode, while the local gaps grow — so part of the missing assumption is topological, not physical — [report](reports/hamiltonian-privilege-torus-g1.md) |
 | `..._TORUS_ALL_MODES_ROCQ_V1` | `G4` (all modes) | the topological step **proved**, not computed: at every mode with a nonzero frequency closed = exact, so the gap is carried by the zero mode for *every* truncation — zero-axiom Rocq, kernel-rechecked — [report](reports/torus-all-modes-rocq.md) |
 | `..._TORUS_FULL_CHAIN_ROCQ_V1` | `G4` (all modes) | the rest of the chain proved, both inclusions **strict**; and the marginal condition is exactly the *intra*-DOF content of symplecticity — the same localisation G0 found on the linear carrier — [report](reports/torus-full-chain-rocq.md) |
-| `..._TORUS_REVERSAL_ROCQ_V1` | `G4` (all modes) | **the reversal**: law ⟺ A1 ∧ A2 ∧ A3, each derived *from* the law, each independent by witness; and the DOF split is proved to be an input — [report](reports/torus-reversal-rocq.md) |
+| `..._TORUS_REVERSAL_ROCQ_V1` | `G4` (all modes) | **the reversal**: law ⟺ A1 ∧ A2 ∧ A3, each derived *from* the law, each independent by witness — [report](reports/torus-reversal-rocq.md) |
+| `..._TORUS_SPLIT_ROCQ_V1` | `G4` (all modes) | **why A2 isn't physical**: A1's split-dependence cancels against it exactly, so the physical/geometric division is *not canonical*; corrects the earlier split-dependence theorem, which used an isotropic pairing — [report](reports/torus-split-rocq.md) |
 
 The G1 computation lives **in Forge** (`math/qmat` exact rational rank), gated at
 `forge/examples/reverse_physics_torus_gate.forge` in tango and pinned here by

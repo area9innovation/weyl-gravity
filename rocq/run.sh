@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # run.sh — the reverse-physics torus GATE.
 #
-# Three developments, all zero-axiom, in dependency order:
+# Four developments, all zero-axiom, in dependency order:
 #
 #   ReversePhysicsTorus.v          the TOPOLOGICAL step: at every mode with a
 #                                  nonzero frequency closed = exact, so the
@@ -17,6 +17,13 @@
 #                                  independent assumptions, each derived FROM the
 #                                  law, with an independence witness per
 #                                  assumption.
+#   ReversePhysicsTorusSplit.v     WHY the third assumption is not physical: the
+#                                  split-dependence of the first cancels against
+#                                  it exactly, so the decomposition into a
+#                                  "physical" and a "geometric" part is NOT
+#                                  canonical.  Also corrects the earlier
+#                                  split-dependence theorem, which had used an
+#                                  ISOTROPIC pairing.
 #
 # Print Assumptions must say "Closed under the global context" for every
 # theorem, and coqchk must list NO axioms.
@@ -31,7 +38,7 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
 
-MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal)
+MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit)
 pass=0
 fail=0
 
@@ -130,8 +137,24 @@ Proof.
 Qed.
 NEG
 
+
+# (d) marginal is NOT invariant across admissible symplectic splits.
+cat > _neg_d.v <<'NEG'
+Require Import ReversePhysicsTorus.
+Require Import ReversePhysicsTorusChain.
+Require Import ReversePhysicsTorusReversal.
+Require Import ReversePhysicsTorusSplit.
+(* FALSE on purpose: if marginal were split-invariant the whole point of
+   ReversePhysicsTorusSplit.v would collapse. *)
+Theorem bogus_marginal_is_split_invariant :
+  forall k a b, marginal k a b -> marginal_rot k a b.
+Proof.
+  intros k a b H. exact H.
+Qed.
+NEG
+
 neg_ok=0
-for n in _neg_a _neg_b _neg_c; do
+for n in _neg_a _neg_b _neg_c _neg_d; do
   if coqc "$n.v" >/tmp/rp_neg.log 2>&1; then
     echo "  $n: FALSE claim was ACCEPTED — REJECT"; neg_ok=1
   else
@@ -139,7 +162,7 @@ for n in _neg_a _neg_b _neg_c; do
   fi
 done
 if [ "$neg_ok" -eq 0 ]; then pass=$((pass+1)); else fail=$((fail+1)); fi
-rm -f _neg_[abc].v _neg_[abc].vo _neg_[abc].vok _neg_[abc].vos _neg_[abc].glob ._neg_[abc].aux
+rm -f _neg_[abcd].v _neg_[abcd].vo _neg_[abcd].vok _neg_[abcd].vos _neg_[abcd].glob ._neg_[abcd].aux
 
 echo
 if [ "$fail" -eq 0 ]; then
