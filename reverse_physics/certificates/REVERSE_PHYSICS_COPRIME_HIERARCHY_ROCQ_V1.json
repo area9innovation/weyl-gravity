@@ -1,0 +1,137 @@
+{
+  "assumption_tags": {
+    "consumed": [],
+    "namespace_note": "This certificate is not an RP-* assumption test. It closes a proof obligation on an EXISTING Science Forge conjecture, and is the first result in this stream to engage the programme's own open corpus rather than a carrier built to demonstrate the method.",
+    "under_test": []
+  },
+  "claim_boundary": "In a zero-axiom Rocq development, the coprime-ratio obstruction can be carried only at order p+q-2 and not below, and exactly one of the two kernel combinations can carry it, determined by the parity of q. Six even-p loci are computed unobstructed past their predicted order, and four new odd-p instances confirm the order law.",
+  "claim_flags": {
+    "CONJECTURE_FULLY_PROVED": false,
+    "EVEN_p_SHOWN_UNOBSTRUCTED_ON_SIX_LOCI": true,
+    "EVEN_p_VANISHING_EXPLAINED": false,
+    "FORMALLY_VERIFIED_IN_A_PROOF_ASSISTANT": true,
+    "KERNEL_CLAUSE_PROVED": true,
+    "NON_VANISHING_AT_ODD_p_PROVED": false,
+    "ORDER_CLAUSE_PROVED": true,
+    "QUANTUM_CLAIM": false,
+    "WORD_GENERATOR_DERIVED_FROM_THE_IMPLEMENTATION": false,
+    "ZERO_AXIOM_DEVELOPMENT": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "that an obstruction DOES occur at odd p. The order law says where one CAN appear, never that one does; non-vanishing remains observational, now on nine instances",
+    "why the even-p coefficient vanishes. Neither the degree count nor the involution explains it -- both go through unchanged at even p -- so the vanishing is DYNAMICAL and is now the sharp open question",
+    "the word-generator model from the implementation. That a word at order n is n cubic vertices joined by n-1 Moyal brackets is a MODELLING INPUT stated as a recurrence, not derived from moyal_hi.forge",
+    "the conjecture as a whole. It stays at VERIFIED_ON_FIXTURES; the order and kernel clauses are proved, the non-vanishing clause is not",
+    "8:3 and 6:5 at their predicted orders. Both were computed only to order 6, below their predicted 9, so they confirm the selection rule without reaching the critical order",
+    "any quantum, causal, or field-theoretic claim about Weyl gravity itself \u2014 see the report's physics section, which is interpretation"
+  ],
+  "engages": {
+    "conjecture": "sf:program/conjecture/coprime-ratio-hierarchy (tango repo)",
+    "prior_fixtures": [
+      "3:1",
+      "3:2",
+      "5:1",
+      "5:3",
+      "7:1"
+    ],
+    "prior_lifecycle": "VERIFIED_ON_FIXTURES, with does_not_establish reading 'No ansatz proof exists'",
+    "prior_scope": "p odd, explicitly 'pending evidence'; 7:3, 5:7 and higher named as unchecked"
+  },
+  "exact_checks": {
+    "control_loci_reproduce_published_values": true,
+    "kernel_rechecked_by_coqchk": true,
+    "preregistered_before_computation": true,
+    "zero_axiom_development": true
+  },
+  "gate_negative_controls": [
+    "thirteen inherited from the earlier modules, all rejected",
+    "a FALSE claim that the kernel can appear below the critical order is REJECTED",
+    "a FALSE claim that both kernel combinations survive is REJECTED"
+  ],
+  "gate_result": "RESULT: 20 green (0 red) \u2014 GATE: PASS",
+  "generality_level": "G4_ALL_COPRIME_p_q_ORDER_AND_KERNEL_CLAUSES",
+  "ledger": {
+    "coqchk_axiom_section": "<none>",
+    "declared_assumptions_in_source": "none \u2014 no Axiom, Parameter, Hypothesis, Conjecture, Admitted or admit",
+    "print_assumptions_closed": "10/10 across the two modules; 109/109 across the fifteen modules the shared gate drives"
+  },
+  "lifecycle_ladder": "reverse-physics-v0",
+  "lifecycle_state": "NECESSITY_CERTIFIED",
+  "method_note": {
+    "outcome": "The preregistered reading was FALSIFIED -- the preregistration had named that as the better outcome, and it fired. Nothing the conjecture claimed was refuted; what was refuted was the guess that its p-odd scoping was over-cautious.",
+    "preregistered": "PREREG-EVEN-P.md, committed to tango at 02d92f069 BEFORE any computation"
+  },
+  "next_gate": "COPRIME_HIERARCHY_EVEN_p_MECHANISM: find what makes the even-p coefficient vanish. Six loci of evidence, no argument. That is the successor question and it is sharper than the one the conjecture started with.",
+  "provenance": {
+    "gate_script_not_pinned": "rocq/run.sh is harness, deliberately not hash-pinned",
+    "source_manifest": {
+      "rocq/CoprimeHierarchyKernelParity.v": "a3bbb80fc822594b08866a93472c9bd839ad358b3d92abaab8c8ddfcd05eafde",
+      "rocq/CoprimeHierarchyOrderLaw.v": "03ab08fe2da19d045bc65237e77d7144dd28993880068589305d31b62825e78f"
+    },
+    "upstream_commit": "tango 5be183077 (the physics side: gates, results document, conjecture event)"
+  },
+  "record_kind": "PROVENANCE_IMPORT \u2014 the mathematics is in rocq/CoprimeHierarchy*.v; this file computes nothing",
+  "result_id": "REVERSE_PHYSICS_COPRIME_HIERARCHY_ROCQ_V1",
+  "result_state": "COPRIME_RATIO_ORDER_LAW_AND_KERNEL_CLAUSE_PROVED_EVEN_p_SHOWN_UNOBSTRUCTED",
+  "schema": "reverse-physics-coprime-hierarchy-rocq-v1",
+  "theorems": [
+    {
+      "name": "word_degree_is_order_plus_two",
+      "role": "the cubic vertex contributes 3 and each Moyal bracket removes 2, so n vertices and n-1 brackets give 3n-2(n-1); EXACTLY, not at most",
+      "statement": "a word at order n is homogeneous of degree exactly n+2"
+    },
+    {
+      "name": "resonant_at_critical_degree",
+      "role": "coprimality forces n1-m1 = kq and n2-m2 = -kp, and the degree budget forces |k| <= 1; this is where the coprimality does its work",
+      "statement": "at total degree p+q with p,q coprime, a nonnegative resonant monomial is diagonal, the conversion kernel, or its conjugate"
+    },
+    {
+      "name": "order_law",
+      "role": "THE ORDER CLAUSE, previously OBSERVED with 'no ansatz proof exists'",
+      "statement": "the kernel can be carried only at order n = p+q-2"
+    },
+    {
+      "name": "selection_rule_below_the_critical_order",
+      "role": "the selection rule -- the vanishing of every lower order, which the five original fixtures had verified case by case",
+      "statement": "and below that order the kernel cannot appear at all"
+    },
+    {
+      "name": "symmetric_kernel_iff_q_even",
+      "role": "THE KERNEL CLAUSE, refined: the symmetry follows q parity, NOT order parity",
+      "statement": "the symmetric combination survives exactly when q is even"
+    },
+    {
+      "name": "antisymmetric_kernel_iff_q_odd",
+      "statement": "and the antisymmetric combination exactly when q is odd"
+    },
+    {
+      "name": "exactly_one_kernel_survives",
+      "role": "what makes the rule a constraint rather than a description: the other combination is FORBIDDEN, not merely unobserved",
+      "statement": "the two are exclusive"
+    },
+    {
+      "name": "all_nine_computed_loci_agree",
+      "role": "a non-vacuity check against the corpus, including the four instances computed for this result",
+      "statement": "the rule matches all nine computed loci"
+    }
+  ],
+  "upstream_gates": {
+    "certificate_tier": "tango forge/tools/physics-moyal/coprime_parity_deep.forge \u2014 10/10, 42 s, order 7 and order 8",
+    "fast": "tango forge/tools/physics-moyal/coprime_parity_gate.forge \u2014 17/17, 8 s, forge verify -full: c==native, ASan-clean on both backends",
+    "split_rationale": "AGENTS.md: split a fast invariant rail from the expensive exhaustive certificate rather than normalising a slow commit loop. The combined gate exceeded the ten-minute verify budget."
+  },
+  "verification_commands": [
+    "cd rocq && ./run.sh",
+    "PYTHONPATH=. python3 -m reverse_physics.coprime_hierarchy_rocq --check"
+  ],
+  "what_changed": {
+    "kernel_clause": "PROVED AND REFINED. The symmetry follows q parity, not order parity; the corpus could not distinguish these because every fixture had p odd, and 3:2 is the locus that separates them.",
+    "new_fixtures": "5:2 (order 5), 7:2 (order 7), 7:3 (order 8), 9:1 (order 8) -- 7:3 and 9:1 were named unchecked, and order 8 is deeper than anything previously computed in that corpus.",
+    "new_sublaw": "The radical is sqrt(w1 w2) for q odd and sqrt(w1 w2 sqfree(w1^2-w2^2)) for q even; nine of nine, and it predicted the ABSENCE of a radical at 9:1.",
+    "order_clause": "PROVED. Previously observed on five fixtures with no mechanism recorded.",
+    "scope": "The p-odd scoping is LOAD-BEARING. Six even-p loci computed past their predicted order are unobstructed entirely; 8:1 was computed AT its predicted order and is zero."
+  }
+}

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # run.sh — the reverse-physics torus GATE.
 #
-# Thirteen developments, all zero-axiom, in dependency order.  The first four are the
+# Fifteen developments, all zero-axiom, in dependency order.  The first four are the
 # torus chain, the next four an INDEPENDENT stochastic carrier, and the last two
 # engage Carcassi-Aidala directly: a BRIDGE restating the torus results in their
 # notation, and a PARITY OBSTRUCTION on their degree-of-freedom counting.
@@ -71,6 +71,15 @@
 #                                  OF THAT EXPONENT.  Stated without logarithms:
 #                                  2^(dA+dB) = 2^dA * 2^dB, so the multiplicative
 #                                  statement IS the additive one, exactly.
+#   CoprimeHierarchyOrderLaw.v     the COPRIME-RATIO ORDER LAW, proved: a word at
+#                                  order n has degree exactly n+2, and at degree
+#                                  p+q coprimality leaves only the conversion
+#                                  kernel, so the obstruction can appear only at
+#                                  order p+q-2.  Closes the "no ansatz proof
+#                                  exists" line on sf:program/conjecture/
+#                                  coprime-ratio-hierarchy for the order clause.
+#   CoprimeHierarchyKernelParity.v which kernel appears: an involution fixing the
+#                                  vertex forces symmetric iff q even.
 #
 # Print Assumptions must say "Closed under the global context" for every
 # theorem, and coqchk must list NO axioms.
@@ -85,7 +94,7 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
 
-MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount ReversePhysicsNoConformalCount ReversePhysicsRelationalCount ReversePhysicsExponentAdditivity)
+MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount ReversePhysicsNoConformalCount ReversePhysicsRelationalCount ReversePhysicsExponentAdditivity CoprimeHierarchyOrderLaw CoprimeHierarchyKernelParity)
 pass=0
 fail=0
 
@@ -369,8 +378,36 @@ Proof.
 Qed.
 NEG
 
+
+# (n) The obstruction must NOT be able to appear below the critical order.
+cat > _neg_n.v <<'NEG'
+Require Import ZArith.
+Require Import CoprimeHierarchyOrderLaw.
+Open Scope Z_scope.
+(* FALSE on purpose: the degree count forbids the kernel below order p+q-2.
+   If this compiled the selection rule would be vacuous. *)
+Theorem bogus_kernel_below_critical_order :
+  word_degree 2 = total_degree (kernel 5 3).
+Proof.
+  reflexivity.
+Qed.
+NEG
+
+# (o) The two kernel combinations must not BOTH survive.
+cat > _neg_o.v <<'NEG'
+Require Import Bool Arith.
+Require Import CoprimeHierarchyKernelParity.
+(* FALSE on purpose: exactly one combination can carry the obstruction. *)
+Theorem bogus_both_kernels_survive :
+  forall p q,
+    symmetric_kernel_parity p = antisymmetric_kernel_parity p.
+Proof.
+  intros p q. reflexivity.
+Qed.
+NEG
+
 neg_ok=0
-for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _neg_k _neg_l _neg_m; do
+for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _neg_k _neg_l _neg_m _neg_n _neg_o; do
   if coqc "$n.v" >/tmp/rp_neg.log 2>&1; then
     echo "  $n: FALSE claim was ACCEPTED — REJECT"; neg_ok=1
   else
@@ -378,7 +415,7 @@ for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _
   fi
 done
 if [ "$neg_ok" -eq 0 ]; then pass=$((pass+1)); else fail=$((fail+1)); fi
-rm -f _neg_[a-m].v _neg_[a-m].vo _neg_[a-m].vok _neg_[a-m].vos _neg_[a-m].glob ._neg_[a-m].aux
+rm -f _neg_[a-o].v _neg_[a-o].vo _neg_[a-o].vok _neg_[a-o].vos _neg_[a-o].glob ._neg_[a-o].aux
 
 echo
 if [ "$fail" -eq 0 ]; then

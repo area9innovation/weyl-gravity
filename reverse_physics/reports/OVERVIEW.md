@@ -5,7 +5,7 @@ for the pure-Weyl programme carry **reverse physics** in the Carcassi–Aidala
 sense — not deriving laws from axioms, but finding the minimal physical
 assumptions a law is equivalent to?
 
-The answer is yes, with texture. Of the six findings, **four are negative
+The answer is yes, with texture. Of the seven findings, **four are negative
 results** — the more useful outcome. The fifth is the only place a *lattice*
 appeared: two laws that constrain each other rather than a list of independent
 results. The sixth turned outward, and engages the Carcassi–Aidala programme's
@@ -225,6 +225,39 @@ nonzero precisely because no conformally invariant reference exists**.
 The full engagement, written to be read by them, is
 [`AOP-CONNECTION.md`](AOP-CONNECTION.md).
 
+### 3.7 The method finally earned its keep on a real open problem
+
+Every finding above tests a carrier built to demonstrate the method. A reviewer
+would call that bookkeeping. This one does not.
+
+`sf:program/conjecture/coprime-ratio-hierarchy` — a live conjecture in this
+programme's own corpus — stood at `VERIFIED_ON_FIXTURES` with the line *"No
+ansatz proof exists"*, five fixtures, and a scoping to `p` odd marked *"pending
+evidence"*. That `does_not_establish` line was the work queue.
+
+A **preregistered** attack (committed to git before computing) predicted that
+the `p`-odd scoping was over-cautious. **Falsified** — and the preregistration
+had named that as the better outcome. Six even-`p` loci computed past their
+predicted order are not obstructed at a different order; they are **unobstructed
+entirely**, 8:1 decisively so at its own predicted order.
+
+Then the order clause, previously observed with no mechanism, **proved**: a word
+at order `n` has degree exactly `n+2`, and at degree `p+q` coprimality leaves
+only the conversion kernel, so it can appear only at `n = p+q−2` and nowhere
+below. And the kernel clause **proved and refined** — the symmetry follows `q`
+parity, not order parity, via an involution under which the cubic vertex is odd.
+
+Four new instances (5:2, 7:2, 7:3, 9:1), two of them the loci the conjecture
+names as unchecked, at an order deeper than the corpus had reached. Plus a
+sub-law nobody had stated, which *predicted* a missing radical at 9:1.
+
+What is now open is sharper than what was open before: not *"does the law hold
+at even `p`?"* but *"what makes the even-`p` coefficient vanish?"* — six loci of
+evidence and no argument, since neither the degree count nor the involution
+mentions `p`'s parity.
+
+[Full report](coprime-hierarchy-rocq.md).
+
 ---
 
 ## 4. The reversal
@@ -347,8 +380,9 @@ Stated plainly, because the certificates each carry their own version:
 | `..._NO_CONFORMAL_COUNT_ROCQ_V1` | flat space | and none non-additive either: every ball ties |
 | `..._RELATIONAL_COUNT_ROCQ_V1` | flat space | what replaces it: a single scaling exponent |
 | `..._EXPONENT_ADDITIVITY_ROCQ_V1` | products | and DOF-independence becomes additivity of that exponent |
+| `..._COPRIME_HIERARCHY_ROCQ_V1` | all coprime p:q | the programme's own conjecture: order law proved, even `p` unobstructed, four new instances |
 
-Thirteen zero-axiom Rocq modules, `coqchk` axiom section `<none>`, thirteen
+Fifteen zero-axiom Rocq modules, `coqchk` axiom section `<none>`, fifteen
 fail-closed negative controls, one Forge gate on both backends under ASan, two
 independent Python rails. `rocq/ReversePhysicsAOPBridge.v` additionally proves
 that the ω used throughout **is** their `J ⊗ Iₙ`, so the engagement in §3.6 is
@@ -388,6 +422,12 @@ The directions that would still yield something:
   carrier*. Reverse mathematics compares against a base one can weaken; this
   probe never built one, and `marginal_depends_on_the_dof_split` is the only
   result that gestures at it.
+- **The corpus's own `does_not_establish` lines.** That is where the seventh
+  finding came from — `sf:program/conjecture/coprime-ratio-hierarchy` carried
+  the line *"No ansatz proof exists"*, and it turned out to be a degree count
+  plus an involution. There are 9,000+ certificates here; that queue is long,
+  and it is the answer to the objection that this stream tests carriers built
+  to demonstrate the method.
 - **Someone reading this and disagreeing.** Three of the five findings are
   negative claims about a live research programme. They should be argued with —
   [`AOP-CONNECTION.md`](AOP-CONNECTION.md) puts two of them in front of that
