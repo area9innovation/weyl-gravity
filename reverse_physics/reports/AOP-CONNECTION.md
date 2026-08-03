@@ -256,11 +256,23 @@ And the two results are one phenomenon: if a region could serve as an absolute
 reference, `f(2) = 1` and the exponent collapses. **The exponent is nonzero
 precisely because there is no conformally invariant reference.**
 
-**So your assumption transposes rather than dies.** `#states = ∏ #confDOF` is a
-product of counts; products of ratios are sums of exponents, so DOF-independence
-should become **additivity of the exponent** over independent subsystems. That
-last step is stated, not proved — no product structure on regions is formalised
-here, and it is the obvious next thing to do.
+**And your assumption transposes rather than dies.** `#states = ∏ #confDOF` is a
+product of counts, and counts do not exist here. But with composite regions as
+products, the composite dilation acting diagonally, and the relative count
+factorising across independent subsystems — the direct translation of your
+assumption — the generating numbers multiply:
+
+```
+f_AB(t) = f_A(t)·f_B(t)      hence     g_AB = g_A·g_B      i.e.    d_AB = d_A + d_B
+```
+
+**Additivity of the exponent**, proved, and with no logarithm anywhere:
+`2^{d_A+d_B} = 2^{d_A}·2^{d_B}` means the multiplicative statement *is* the
+additive one. A control asserting the composite keeps only one subsystem's
+exponent is rejected, so independence genuinely adds.
+
+The factorisation itself is a hypothesis — it is what is being transposed, not
+what is being proved.
 
 **Two honest limits.** The obstruction is for densities built from the **metric
 alone**. Introducing a compensator or dilaton of nonzero weight evades it — but
@@ -298,14 +310,15 @@ condition, so it is unaffected.
 ## 4. Reproducing our side
 
 ```bash
-cd rocq && ./run.sh     # 17 green (0 red); coqchk axiom section <none>
+cd rocq && ./run.sh     # 18 green (0 red); coqchk axiom section <none>
 ```
 
-Twelve zero-axiom Rocq modules, twelve fail-closed negative controls. The bridge
+Thirteen zero-axiom Rocq modules, thirteen fail-closed negative controls. The bridge
 is `rocq/ReversePhysicsAOPBridge.v`, the parity obstruction
 `rocq/ReversePhysicsConformalCount.v`, the refutation
 `rocq/ReversePhysicsNoConformalCount.v`, the positive answer
-`rocq/ReversePhysicsRelationalCount.v`, and the underlying results are in
+`rocq/ReversePhysicsRelationalCount.v`, the transposed assumption
+`rocq/ReversePhysicsExponentAdditivity.v`, and the underlying results are in
 `ReversePhysicsTorus*.v`. Certificates and their boundaries are in
 `reverse_physics/certificates/`, and
 [`OVERVIEW.md`](OVERVIEW.md) is the narrative account of the whole probe.
