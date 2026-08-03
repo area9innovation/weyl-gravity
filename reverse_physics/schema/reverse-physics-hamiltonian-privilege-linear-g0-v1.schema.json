@@ -1,0 +1,270 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-hamiltonian-privilege-linear-g0-v1.schema.json",
+  "title": "Reverse-physics G0 separation: Hamiltonian privilege on the linear carrier",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "generality_level",
+    "lifecycle_ladder",
+    "lifecycle_state",
+    "dependency_tags",
+    "assumption_tags",
+    "scope",
+    "assumptions",
+    "theorem",
+    "dimensions",
+    "witnesses",
+    "finite_flow_strengthening",
+    "exact_checks",
+    "claim_flags",
+    "claim_boundary",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "reverse-physics-hamiltonian-privilege-linear-g0-v1"},
+    "result_id": {"const": "REVERSE_PHYSICS_HAMILTONIAN_PRIVILEGE_LINEAR_G0_V1"},
+    "generality_level": {"type": "string", "pattern": "^G0_"},
+    "lifecycle_ladder": {"const": "reverse-physics-v0"},
+    "lifecycle_state": {
+      "description": "The reverse-physics ladder. Distinct from the quantum lifecycle states; never promote across ladders.",
+      "enum": [
+        "CARRIER_DECLARED",
+        "SEPARATION_CERTIFIED",
+        "NECESSITY_CERTIFIED",
+        "SUFFICIENCY_CERTIFIED",
+        "EQUIVALENCE_CERTIFIED"
+      ]
+    },
+    "dependency_tags": {
+      "description": "Computational-regime tags only. Physical postulates belong in assumption_tags.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "enum": [
+          "LOCAL-ALGEBRAIC",
+          "EUCLIDEAN-SPECTRAL",
+          "REDUCED-MODE",
+          "LORENTZIAN-CAUSAL"
+        ]
+      }
+    },
+    "assumption_tags": {
+      "type": "object",
+      "required": ["consumed", "under_test", "gloss", "namespace_note"],
+      "properties": {
+        "consumed": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^RP-"}
+        },
+        "under_test": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^RP-"}
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "carrier",
+        "state_space",
+        "degrees_of_freedom",
+        "symplectic_form",
+        "dof_split",
+        "arithmetic"
+      ]
+    },
+    "assumptions": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "theorem": {
+      "type": "object",
+      "required": [
+        "inclusion_chain",
+        "one_dof_degeneracy",
+        "two_dof_separation",
+        "necessity",
+        "insufficiency",
+        "residual_obstruction",
+        "minimal_separating_carrier"
+      ]
+    },
+    "dimensions": {
+      "type": "object",
+      "required": ["dof_1", "dof_2"],
+      "properties": {
+        "dof_1": {"$ref": "#/$defs/dimensionBlock"},
+        "dof_2": {"$ref": "#/$defs/dimensionBlock"}
+      }
+    },
+    "witnesses": {
+      "type": "object",
+      "required": [
+        "marginal_not_hamiltonian",
+        "global_not_marginal",
+        "hamiltonian_control"
+      ],
+      "properties": {
+        "marginal_not_hamiltonian": {
+          "allOf": [
+            {"$ref": "#/$defs/witness"},
+            {
+              "properties": {
+                "satisfies_marginal": {"const": true},
+                "satisfies_liouville": {"const": true},
+                "satisfies_hamiltonian": {"const": false}
+              }
+            }
+          ]
+        },
+        "global_not_marginal": {
+          "allOf": [
+            {"$ref": "#/$defs/witness"},
+            {
+              "properties": {
+                "satisfies_liouville": {"const": true},
+                "satisfies_marginal": {"const": false}
+              }
+            }
+          ]
+        },
+        "hamiltonian_control": {
+          "allOf": [
+            {"$ref": "#/$defs/witness"},
+            {"properties": {"satisfies_hamiltonian": {"const": true}}}
+          ]
+        }
+      }
+    },
+    "finite_flow_strengthening": {
+      "type": "object",
+      "required": [
+        "flow_map_at_t_equals_one",
+        "nilpotent_A_squared_is_zero",
+        "determinant_of_flow_map",
+        "volume_preserving",
+        "symplectic_defect_M_transpose_Omega_M_minus_Omega",
+        "flow_map_is_symplectic"
+      ],
+      "properties": {
+        "nilpotent_A_squared_is_zero": {"const": true},
+        "volume_preserving": {"const": true},
+        "flow_map_is_symplectic": {"const": false}
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "required": [
+        "all_dimensions_from_exact_rank",
+        "inclusion_chain_checked_by_rank",
+        "no_floating_point",
+        "witness_predicates_evaluated_directly",
+        "control_witness_is_hamiltonian",
+        "finite_flow_defect_exact"
+      ],
+      "properties": {
+        "all_dimensions_from_exact_rank": {"const": true},
+        "inclusion_chain_checked_by_rank": {"const": true},
+        "no_floating_point": {"const": true},
+        "witness_predicates_evaluated_directly": {"const": true},
+        "control_witness_is_hamiltonian": {"const": true},
+        "finite_flow_defect_exact": {"const": true}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "MARGINAL_CONDITION_NECESSARY",
+        "MARGINAL_CONDITION_SUFFICIENT",
+        "SEPARATION_EXHIBITED_BY_EXPLICIT_WITNESS",
+        "NONLINEAR_CARRIER_COVERED",
+        "INFINITE_DIMENSIONAL_CARRIER_COVERED",
+        "GENERAL_N_DOF_COVERED",
+        "CARCASSI_AIDALA_DERIVATION_REPRODUCED",
+        "EQUIVALENCE_OVER_A_BASE_THEORY_ESTABLISHED",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "MARGINAL_CONDITION_NECESSARY": {"const": true},
+        "MARGINAL_CONDITION_SUFFICIENT": {"const": false},
+        "SEPARATION_EXHIBITED_BY_EXPLICIT_WITNESS": {"const": true},
+        "NONLINEAR_CARRIER_COVERED": {"const": false},
+        "INFINITE_DIMENSIONAL_CARRIER_COVERED": {"const": false},
+        "GENERAL_N_DOF_COVERED": {"const": false},
+        "CARCASSI_AIDALA_DERIVATION_REPRODUCED": {"const": false},
+        "EQUIVALENCE_OVER_A_BASE_THEORY_ESTABLISHED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "does_not_establish": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_manifest",
+        "generator_path",
+        "independent_rail",
+        "independence_argument"
+      ],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string"}
+    }
+  },
+  "$defs": {
+    "dimensionBlock": {
+      "type": "object",
+      "required": [
+        "ambient_gl_dimension",
+        "hamiltonian_sp_dimension",
+        "marginal_dimension",
+        "liouville_sl_dimension",
+        "codimension_sp_in_liouville",
+        "codimension_sp_in_marginal",
+        "codimension_marginal_in_liouville",
+        "liouville_implies_hamiltonian",
+        "marginal_implies_hamiltonian"
+      ],
+      "properties": {
+        "ambient_gl_dimension": {"type": "integer", "minimum": 1},
+        "hamiltonian_sp_dimension": {"type": "integer", "minimum": 1},
+        "marginal_dimension": {"type": "integer", "minimum": 1},
+        "liouville_sl_dimension": {"type": "integer", "minimum": 1},
+        "codimension_sp_in_liouville": {"type": "integer", "minimum": 0},
+        "codimension_sp_in_marginal": {"type": "integer", "minimum": 0},
+        "codimension_marginal_in_liouville": {"type": "integer", "minimum": 0}
+      }
+    },
+    "witness": {
+      "type": "object",
+      "required": [
+        "matrix",
+        "satisfies_liouville",
+        "satisfies_marginal",
+        "satisfies_hamiltonian"
+      ],
+      "properties": {
+        "matrix": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,23 @@
+{
+ "id": "sf:program/work/reverse-physics-hamiltonian-privilege-necessity",
+ "kind": "work",
+ "schema": "work-v0",
+ "body": {
+  "owner": "reverse-physics",
+  "state": "PROPOSED",
+  "objective": "Open a reverse-physics stream in the Carcassi--Aidala sense (which physical assumptions are minimally sufficient for a law, rather than which laws follow from axioms) and test whether this programme's certificate substrate carries it. The stream's mechanizable half is NECESSITY: exhibiting, over a declared carrier and with exact witnesses, systems that satisfy every assumption but one and in which the law fails. The entry certificate REVERSE_PHYSICS_HAMILTONIAN_PRIVILEGE_LINEAR_G0_V1 (reverse_physics/certificates/) is landed as the G0 probe: on linear vector fields with a fixed degree-of-freedom split, dim sp(4)=10, marginal=14, sl(4)=15, so global information conservation leaves a codimension-5 gap to Hamiltonian structure; per-degree-of-freedom information conservation is necessary and non-vacuous (15 -> 14) but still insufficient (gap 4), and the residual obstruction is exactly the inter-DOF block condition J A_12 = -(A_21)^T J, which no per-DOF condition can express. At n=1 all three spaces coincide, so n=2 is the minimal separating carrier. The stream is PROPOSED pending programme acceptance; the G0 certificate stands on its own rails either way.",
+  "depends_on": [
+   "programme acceptance of a reverse-physics stream and of the RP-* assumption-tag namespace as disjoint from the four computational-regime tags",
+   "no classical or quantum Weyl certificate; this stream imports nothing from the BV--BFV complex and must not be used as evidence for it"
+  ],
+  "activates": [
+   "a general-n necessity theorem replacing the n=2 datum (dim sp = n(2n+1), marginal = 4n^2-n, sl = 4n^2-1, codimension 2n^2-2n)",
+   "a nonlinear-carrier G1 gate: whether the linear codimension count has any analogue for divergence-free non-Hamiltonian vector fields on a symplectic manifold",
+   "a second assumption pair on the same rails (determinism/reversibility separated from information conservation, rather than assumed jointly by the carrier)",
+   "an assumption lattice rendered by certificate_graph/build_certificate_dag.py, with implication edges certified and non-edges bounded by the generality_level of their separating witness"
+  ],
+  "current_gate": "GENERAL_N_NOT_ESTABLISHED (fail-closed): only n=1 and n=2 are computed. The codimension-4 insufficiency claim is an n=2 datum, not a theorem in n.",
+  "stop_condition": "EITHER the general-n dimension count is proved and independently railed, so the necessity/insufficiency statement holds for all n; OR the nonlinear G1 gate returns an exact first obstruction showing the linear count has no analogue, which is itself the deliverable; OR the programme declines the stream, in which case the G0 certificate is retired in place with an append-only event and no further work is done.",
+  "forbid": "promoting any linear-carrier result to a nonlinear, infinite-dimensional or field-theoretic claim; mixing RP-* assumption tags with the LOCAL-ALGEBRAIC / EUCLIDEAN-SPECTRAL / REDUCED-MODE / LORENTZIAN-CAUSAL namespace in one field; asserting that Carcassi--Aidala's own derivation has been reproduced, confirmed or refuted (this stream tests candidate assumptions on declared carriers and does not reconstruct their argument); reading a codimension count as an equivalence in the reverse-mathematics sense, which would require a reversal over a base theory that no rail here provides; using any certificate in this stream as evidence inside the Weyl classical or quantum chains, or vice versa; treating the degree-of-freedom split as derived when it is an input to the carrier."
+ }
+}

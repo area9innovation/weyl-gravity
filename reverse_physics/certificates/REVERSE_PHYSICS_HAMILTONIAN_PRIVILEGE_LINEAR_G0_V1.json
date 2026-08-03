@@ -1,0 +1,281 @@
+{
+  "assumption_tags": {
+    "consumed": [
+      "RP-DETERMINISTIC",
+      "RP-REVERSIBLE",
+      "RP-LINEAR-CARRIER"
+    ],
+    "gloss": {
+      "RP-DETERMINISTIC": "the state at one time fixes the state at every other time",
+      "RP-INFORMATION-CONSERVING": "the flow preserves the total phase-space volume (global Liouville)",
+      "RP-LINEAR-CARRIER": "SCOPE RESTRICTION, not a physical postulate: the vector field is linear, so the flow is exp(tA)",
+      "RP-MARGINAL-INFORMATION-CONSERVING": "each degree of freedom independently preserves its own 2-dimensional phase-space area",
+      "RP-REVERSIBLE": "the evolution map is invertible; distinct states stay distinct"
+    },
+    "namespace_note": "RP-* names physical postulates and is disjoint from the programme's computational-regime tags (LOCAL-ALGEBRAIC / EUCLIDEAN-SPECTRAL / REDUCED-MODE / LORENTZIAN-CAUSAL). The two namespaces are never mixed in one field.",
+    "under_test": [
+      "RP-INFORMATION-CONSERVING",
+      "RP-MARGINAL-INFORMATION-CONSERVING"
+    ]
+  },
+  "assumptions": [
+    "The degree-of-freedom split is given, fixed, and not itself derived.",
+    "Determinism and reversibility are imposed at the level of the carrier: the evolution is the one-parameter group exp(tA), which is deterministic and invertible for every A.",
+    "'Conserves information' is read as preservation of Liouville measure, globally for RP-INFORMATION-CONSERVING and per degree of freedom for RP-MARGINAL-INFORMATION-CONSERVING.",
+    "Hamiltonian means: A generates a flow preserving the fixed Omega above, equivalently A = Omega S for a symmetric S."
+  ],
+  "claim_boundary": "This is a complete exact separation on the declared G0 carrier: linear vector fields on R^2 and R^4 with a fixed degree-of-freedom split and a fixed symplectic form. It establishes that global information conservation does not entail Hamiltonian structure once there are two degrees of freedom, that per-degree-of-freedom information conservation is a necessary and non-vacuous strengthening, and that it is still not sufficient, with the residual obstruction located exactly in the inter-DOF block.",
+  "claim_flags": {
+    "CARCASSI_AIDALA_DERIVATION_REPRODUCED": false,
+    "EQUIVALENCE_OVER_A_BASE_THEORY_ESTABLISHED": false,
+    "GENERAL_N_DOF_COVERED": false,
+    "INFINITE_DIMENSIONAL_CARRIER_COVERED": false,
+    "MARGINAL_CONDITION_NECESSARY": true,
+    "MARGINAL_CONDITION_SUFFICIENT": false,
+    "NONLINEAR_CARRIER_COVERED": false,
+    "QUANTUM_CLAIM": false,
+    "SEPARATION_EXHIBITED_BY_EXPLICIT_WITNESS": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "dimensions": {
+    "dof_1": {
+      "ambient_gl_dimension": 4,
+      "codimension_marginal_in_liouville": 0,
+      "codimension_sp_in_liouville": 0,
+      "codimension_sp_in_marginal": 0,
+      "hamiltonian_sp_dimension": 3,
+      "liouville_implies_hamiltonian": true,
+      "liouville_sl_dimension": 3,
+      "marginal_dimension": 3,
+      "marginal_implies_hamiltonian": true
+    },
+    "dof_2": {
+      "ambient_gl_dimension": 16,
+      "codimension_marginal_in_liouville": 1,
+      "codimension_sp_in_liouville": 5,
+      "codimension_sp_in_marginal": 4,
+      "hamiltonian_sp_dimension": 10,
+      "liouville_implies_hamiltonian": false,
+      "liouville_sl_dimension": 15,
+      "marginal_dimension": 14,
+      "marginal_implies_hamiltonian": false
+    }
+  },
+  "does_not_establish": [
+    "any statement about nonlinear vector fields, where the dimension count has no direct analogue",
+    "any statement at n >= 3 or at general n; only n = 1 and n = 2 were computed",
+    "any statement about infinite-dimensional or field-theoretic state spaces",
+    "that Carcassi--Aidala's own derivation is correct or incorrect; this certificate does not reproduce their argument, it tests one candidate assumption on one carrier",
+    "an equivalence over a base theory in the reverse-mathematics sense; there is no reversal here, only implication and separation",
+    "that the degree-of-freedom split is itself physically forced; it is an input to the carrier",
+    "any quantum, causal, or field-theoretic claim of any kind"
+  ],
+  "exact_checks": {
+    "all_dimensions_from_exact_rank": true,
+    "control_witness_is_hamiltonian": true,
+    "finite_flow_defect_exact": true,
+    "inclusion_chain_checked_by_rank": true,
+    "no_floating_point": true,
+    "witness_predicates_evaluated_directly": true
+  },
+  "finite_flow_strengthening": {
+    "determinant_of_flow_map": "1",
+    "flow_map_at_t_equals_one": [
+      [
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "flow_map_is_symplectic": false,
+    "nilpotent_A_squared_is_zero": true,
+    "symplectic_defect_M_transpose_Omega_M_minus_Omega": [
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "-1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "-1",
+        "0",
+        "-1",
+        "0"
+      ]
+    ],
+    "volume_preserving": true
+  },
+  "generality_level": "G0_LINEAR_VECTOR_FIELDS_ONE_AND_TWO_DEGREES_OF_FREEDOM",
+  "lifecycle_ladder": "reverse-physics-v0",
+  "lifecycle_state": "SEPARATION_CERTIFIED",
+  "next_gate": "REVERSE_PHYSICS_HAMILTONIAN_PRIVILEGE_GENERAL_N_DOF: prove dim sp(2n) = n(2n+1), dim marginal = 4n^2 - n, dim sl = 4n^2 - 1 for all n, so that the codimension 2n^2 - 2n survives as a general-n statement rather than an n = 2 datum.",
+  "provenance": {
+    "generator_path": "reverse_physics/hamiltonian_privilege_linear_g0.py",
+    "independence_argument": "Rail A derives each dimension as ambient minus the rank of the defining constraint rows, eliminated over Q. Rail B derives the same dimensions as the rank of an explicit spanning set built from an independent parametrisation (S -> Omega S for sp; explicit generators for marginal and sl), eliminated fraction-free over Z by Bareiss. The two rails share only the declarations in carriers.py, which compute nothing.",
+    "independent_rail": "reverse_physics/verify_hamiltonian_privilege_linear_g0.py",
+    "source_manifest": {
+      "reverse_physics/carriers.py": "cff8d2a8323d3c6e2b40c41f1af0d91856ee3d5e9a947f8a113bd9d6c1578c4f",
+      "reverse_physics/exact_linalg.py": "e2915c65618c4dade3d01bfe39d3868369be63614962c80075d8d778d7148b40",
+      "reverse_physics/hamiltonian_privilege_linear_g0.py": "3fc782bdebea0ef33f50ae6b7dbe688d61f113912bb443551f7f53f77ad97a26",
+      "reverse_physics/schema/reverse-physics-hamiltonian-privilege-linear-g0-v1.schema.json": "08e6ea15b3234e14ff3edd75410783e7082c7f37872d64d37d2aacdde16b7bb1",
+      "reverse_physics/tests/test_hamiltonian_privilege_linear_g0.py": "4b98abaf9823c2863dc988967dd89b79e5496f71a36de9e5efb4d8730ed7680f",
+      "reverse_physics/verify_hamiltonian_privilege_linear_g0.py": "c5aaf55abfcbd7c725cf913a45295768f2d0d219bcee352e96d44c95864e2bf5"
+    }
+  },
+  "result_id": "REVERSE_PHYSICS_HAMILTONIAN_PRIVILEGE_LINEAR_G0_V1",
+  "result_state": "MARGINAL_INFORMATION_CONSERVATION_IS_NECESSARY_BUT_NOT_SUFFICIENT_ON_THE_LINEAR_CARRIER",
+  "schema": "reverse-physics-hamiltonian-privilege-linear-g0-v1",
+  "scope": {
+    "arithmetic": "exact rational (fractions.Fraction); no floating point anywhere",
+    "carrier": "linear vector fields dx/dt = A x with A in gl(2n, Q)",
+    "degrees_of_freedom": [
+      1,
+      2
+    ],
+    "dof_split": "fixed and part of the carrier; the marginal condition is only statable relative to it",
+    "state_space": "R^{2n} with coordinates (q_1, p_1, ..., q_n, p_n)",
+    "symplectic_form": "Omega = diag(J, ..., J), J = [[0, 1], [-1, 0]]"
+  },
+  "theorem": {
+    "inclusion_chain": "sp(2n, Q) <= marginal(2n, Q) <= sl(2n, Q), each inclusion checked by rank, not assumed",
+    "insufficiency": "Marginal information conservation is NOT SUFFICIENT: a 4-dimensional gap survives at n = 2, exhibited by the explicit witness marginal_not_hamiltonian.",
+    "minimal_separating_carrier": "n = 2 is the smallest number of degrees of freedom at which the separation exists at all.",
+    "necessity": "Marginal information conservation is NECESSARY: it is implied by Hamiltonian structure (sp <= marginal) and it strictly cuts the Liouville space (15 -> 14), so it is not a vacuous strengthening.",
+    "one_dof_degeneracy": "At n = 1 all three spaces have dimension 3: global volume preservation is equivalent to Hamiltonian structure, so the assumption under test is INVISIBLE on a one-degree-of-freedom carrier.",
+    "residual_obstruction": "The surviving 4 dimensions are exactly the inter-DOF block condition J A_12 = -(A_21)^T J. It couples distinct degrees of freedom, so NO condition formulated per degree of freedom can close the gap.",
+    "two_dof_separation": "At n = 2 the dimensions are 10 (sp), 14 (marginal), 15 (sl). Global information conservation leaves a 5-dimensional gap to Hamiltonian structure."
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m reverse_physics.hamiltonian_privilege_linear_g0 --check",
+    "PYTHONPATH=. python3 -m reverse_physics.verify_hamiltonian_privilege_linear_g0",
+    "PYTHONPATH=. python3 -m unittest reverse_physics.tests.test_hamiltonian_privilege_linear_g0 -v"
+  ],
+  "witnesses": {
+    "global_not_marginal": {
+      "matrix": [
+        [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1"
+        ]
+      ],
+      "satisfies_hamiltonian": false,
+      "satisfies_liouville": true,
+      "satisfies_marginal": false
+    },
+    "hamiltonian_control": {
+      "matrix": [
+        [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "-1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "-1",
+          "0"
+        ]
+      ],
+      "satisfies_hamiltonian": true,
+      "satisfies_liouville": true,
+      "satisfies_marginal": true
+    },
+    "marginal_not_hamiltonian": {
+      "matrix": [
+        [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "satisfies_hamiltonian": false,
+      "satisfies_liouville": true,
+      "satisfies_marginal": true
+    }
+  }
+}
