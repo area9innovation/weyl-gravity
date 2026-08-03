@@ -1,19 +1,22 @@
 #!/usr/bin/env bash
 # run.sh — the reverse-physics torus GATE.
 #
-# Two developments, both zero-axiom:
+# Three developments, all zero-axiom, in dependency order:
 #
-#   ReversePhysicsTorus.v       the TOPOLOGICAL step: at every mode with a
-#                               nonzero frequency closed = exact, so the
-#                               symplectic-to-Hamiltonian gap is carried
-#                               entirely by the zero mode -- for every
-#                               truncation, with no induction.
-#   ReversePhysicsTorusChain.v  the REST of the chain: Hamiltonian <= symplectic
-#                               <= marginal <= volume-preserving at every mode,
-#                               with both remaining inclusions proved STRICT by
-#                               explicit witnesses, and the marginal condition
-#                               localised as exactly the intra-DOF content of
-#                               symplecticity.
+#   ReversePhysicsTorus.v          the TOPOLOGICAL step: at every mode with a
+#                                  nonzero frequency closed = exact, so the
+#                                  symplectic-to-Hamiltonian gap is carried
+#                                  entirely by the zero mode -- for every
+#                                  truncation, with no induction.
+#   ReversePhysicsTorusChain.v     the REST of the chain: Hamiltonian <=
+#                                  symplectic <= marginal <= volume-preserving at
+#                                  every mode, both remaining inclusions proved
+#                                  STRICT, and the marginal condition localised
+#                                  as exactly the intra-DOF content.
+#   ReversePhysicsTorusReversal.v  the REVERSAL: the law is EQUIVALENT to three
+#                                  independent assumptions, each derived FROM the
+#                                  law, with an independence witness per
+#                                  assumption.
 #
 # Print Assumptions must say "Closed under the global context" for every
 # theorem, and coqchk must list NO axioms.
@@ -28,7 +31,7 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
 
-MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain)
+MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal)
 pass=0
 fail=0
 
@@ -112,8 +115,23 @@ Proof.
 Qed.
 NEG
 
+
+# (c) The law is strictly stronger than A1 alone: a proof that marginal
+#     information conservation suffices would contradict A2/A3 independence.
+cat > _neg_c.v <<'NEG'
+Require Import ReversePhysicsTorus.
+Require Import ReversePhysicsTorusChain.
+Require Import ReversePhysicsTorusReversal.
+(* FALSE on purpose: dropping A2 and A3 must not still give the law. *)
+Theorem bogus_marginal_suffices :
+  forall k a b, marginal k a b -> hamiltonian k a b.
+Proof.
+  intros k a b Hm. exact Hm.
+Qed.
+NEG
+
 neg_ok=0
-for n in _neg_a _neg_b; do
+for n in _neg_a _neg_b _neg_c; do
   if coqc "$n.v" >/tmp/rp_neg.log 2>&1; then
     echo "  $n: FALSE claim was ACCEPTED — REJECT"; neg_ok=1
   else
@@ -121,8 +139,7 @@ for n in _neg_a _neg_b; do
   fi
 done
 if [ "$neg_ok" -eq 0 ]; then pass=$((pass+1)); else fail=$((fail+1)); fi
-rm -f _neg_a.v _neg_b.v _neg_a.vo _neg_b.vo _neg_a.vok _neg_b.vok \
-      _neg_a.vos _neg_b.vos _neg_a.glob _neg_b.glob ._neg_a.aux ._neg_b.aux
+rm -f _neg_[abc].v _neg_[abc].vo _neg_[abc].vok _neg_[abc].vos _neg_[abc].glob ._neg_[abc].aux
 
 echo
 if [ "$fail" -eq 0 ]; then

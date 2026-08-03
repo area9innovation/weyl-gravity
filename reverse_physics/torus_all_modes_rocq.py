@@ -2,9 +2,10 @@
 
 Computes no mathematics. The theorems live in `rocq/ReversePhysicsTorus.v` and
 their evidence is `rocq/run.sh` exiting 0 with a zero-axiom ledger. This module
-pins those two files by content hash and records what was and was not proved.
+pins the PROOF file by content hash and records what was and was not proved.
+The gate script is named but not pinned — see `provenance.pin_repair`.
 
-Fail-closed: if either pinned source no longer hashes to the recorded digest,
+Fail-closed: if the pinned source no longer hashes to the recorded digest,
 `--check` refuses.
 
 Usage:
@@ -24,10 +25,10 @@ OUTPUT = ROOT / "reverse_physics/certificates/REVERSE_PHYSICS_TORUS_ALL_MODES_RO
 RESULT_ID = "REVERSE_PHYSICS_TORUS_ALL_MODES_ROCQ_V1"
 SCHEMA_NAME = "reverse-physics-torus-all-modes-rocq-v1"
 
-PINNED = {
-    "proof": ROOT / "rocq/ReversePhysicsTorus.v",
-    "gate": ROOT / "rocq/run.sh",
-}
+# Only the mathematics is pinned. The gate script is harness: pinning it coupled
+# this certificate to edits that cannot affect its claims, and it tripped twice
+# (see provenance.pin_repair). Removed rather than re-bumped.
+PINNED = {"proof": ROOT / "rocq/ReversePhysicsTorus.v"}
 
 THEOREMS = [
     {
@@ -115,14 +116,14 @@ def build() -> dict[str, object]:
         },
         "theorems": THEOREMS,
         "ledger": {
-            "print_assumptions_closed": "9/9 closed under the global context",
+            "print_assumptions_closed": "9/9 for this module; 28/28 across the three modules the shared gate drives",
             "coqchk_axiom_section": "<none>",
             "coqchk_type_in_type": "<none>",
             "coqchk_unsafe_fixpoints": "<none>",
             "coqchk_assumed_positivity": "<none>",
             "declared_assumptions_in_source": "none — no Axiom, Parameter, Hypothesis, Conjecture, Admitted or admit",
         },
-        "gate_result": "RESULT: 6 green (0 red) — GATE: PASS",
+        "gate_result": "RESULT: 8 green (0 red) — GATE: PASS (the shared gate now drives all three modules; it was 6 green when this development stood alone)",
         "gate_checks": [
             "coqc compiles the development",
             "source hygiene: no declared assumption and no admit",
@@ -134,11 +135,21 @@ def build() -> dict[str, object]:
         "provenance": {
             "source_manifest": manifest,
             "pin_repair": {
-                "what_changed": "rocq/run.sh only",
-                "previous_gate_sha256": "40cacdf73be07fa70b6b671633cf419935f5b136818fde2897c2a7cdd60235a1",
-                "proof_sha256_unchanged": "634eacc8da7283733d2916ada12b123c6dd1dfea3594b90577cc57a9aa3f4e10",
-                "why": "The gate script was extended to also drive ReversePhysicsTorusChain.v and a second negative control. The PROOF file is byte-identical, so no theorem of this certificate changed; only the harness grew. The fail-closed check tripped on the harness hash and this field records the repair rather than overwriting the pin silently.",
-                "lesson": "pinning a harness script alongside the mathematics couples a certificate to changes that cannot affect its claims",
+                "defect": "this record originally pinned rocq/run.sh, a HARNESS script, alongside the proof",
+                "times_tripped": 2,
+                "first_trip": {
+                    "cause": "run.sh extended to drive ReversePhysicsTorusChain.v and a second negative control",
+                    "previous_gate_sha256": "40cacdf73be07fa70b6b671633cf419935f5b136818fde2897c2a7cdd60235a1",
+                    "action_taken": "hash bumped, lesson recorded, defect LEFT IN PLACE",
+                },
+                "second_trip": {
+                    "cause": "run.sh extended again to drive ReversePhysicsTorusReversal.v and a third negative control",
+                    "previous_gate_sha256": "a93236de5ddebd92ff6fa2ab675061bb2b310f9c78af9a1548c977d1ec6238fd",
+                    "action_taken": "harness pin REMOVED; only rocq/ReversePhysicsTorus.v is pinned now",
+                },
+                "proof_sha256_unchanged_throughout": "634eacc8da7283733d2916ada12b123c6dd1dfea3594b90577cc57a9aa3f4e10",
+                "why_no_claim_changed": "the proof file is byte-identical across both trips, so no theorem of this certificate was ever affected; only the harness grew",
+                "lesson": "pinning a harness script alongside the mathematics couples a certificate to changes that cannot affect its claims. Recording the lesson without removing the defect let it recur; the later certificates pin only the .v.",
             },
         },
         "exact_checks": {

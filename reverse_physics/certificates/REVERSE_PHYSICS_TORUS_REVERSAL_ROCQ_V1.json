@@ -1,0 +1,157 @@
+{
+  "assumption_tags": {
+    "consumed": [
+      "RP-DETERMINISTIC",
+      "RP-REVERSIBLE"
+    ],
+    "namespace_note": "RP-* names physical postulates; disjoint from the computational-regime tags in dependency_tags.",
+    "under_test": [
+      "RP-MARGINAL-INFORMATION-CONSERVING"
+    ]
+  },
+  "assumptions_decomposition": [
+    {
+      "independence_witness": "X = cos(2 pi q1) d/dq1 at mode e_{q1}: satisfies A2 and A3, violates A1",
+      "label": "A1",
+      "name": "marginal",
+      "statement": "each degree of freedom independently conserves its own phase-space area",
+      "vocabulary": "PHYSICAL \u2014 a postulate about information conservation per degree of freedom"
+    },
+    {
+      "independence_witness": "X = cos(2 pi q2) d/dq1 at mode e_{q2}: satisfies A1 and A3, violates A2",
+      "label": "A2",
+      "name": "inter_dof_closed",
+      "statement": "the four cross-degree-of-freedom closedness equations",
+      "vocabulary": "GEOMETRIC \u2014 no physical reading is offered here; see the honest finding below"
+    },
+    {
+      "independence_witness": "uniform translation X = d/dq1 at the zero mode: satisfies A1 and A2, violates A3",
+      "label": "A3",
+      "name": "no_uniform_drift",
+      "statement": "at the zero mode the field vanishes; equivalently, no uniform translation component",
+      "vocabulary": "TOPOLOGICAL \u2014 it removes exactly the obstruction carried by the constants, i.e. b_1(T^4)"
+    }
+  ],
+  "base_theory": {
+    "content": [
+      "state space T^4 with coordinates ordered (q1, p1, q2, p2)",
+      "the symplectic form omega = dq1^dp1 + dq2^dp2 is fixed",
+      "the degree-of-freedom split into (q1,p1) and (q2,p2) is fixed and part of the structure",
+      "fields are trigonometric polynomials, treated one Fourier mode at a time",
+      "coefficients are rational, so every statement is exact"
+    ],
+    "honesty": "This is DEFINITIONAL CONTEXT, not an axiom schema. A genuine reverse-mathematics base is a system one can weaken and compare against; this is a carrier declaration. Turning it into a parameterised base -- quantifying over DOF splits and over symplectic forms -- is NOT done. The one result that gestures at it is marginal_depends_on_the_dof_split.",
+    "role": "what RCA_0 plays in reverse mathematics"
+  },
+  "claim_boundary": "Over the declared carrier, in a zero-axiom Rocq development kernel-rechecked by coqchk, a vector field on T^4 is Hamiltonian if and only if it satisfies three assumptions, each of which is derived from the law and none of which is redundant. This is the first reversal in the stream: previously every theorem ran assumptions-to-law only.",
+  "claim_flags": {
+    "ALL_ASSUMPTIONS_STATED_IN_PHYSICAL_VOCABULARY": false,
+    "ASSUMPTIONS_MUTUALLY_INDEPENDENT": true,
+    "EQUIVALENCE_OVER_A_WEAKENABLE_AXIOMATIC_BASE": false,
+    "EQUIVALENCE_OVER_THE_DECLARED_CARRIER": true,
+    "FORMALLY_VERIFIED_IN_A_PROOF_ASSISTANT": true,
+    "GENERAL_MANIFOLD_COVERED": false,
+    "QUANTUM_CLAIM": false,
+    "REVERSAL_ESTABLISHED": true,
+    "ZERO_AXIOM_DEVELOPMENT": true
+  },
+  "closes_gate": {
+    "gate": "REVERSE_PHYSICS_REVERSAL",
+    "how": "Every earlier theorem in the stream was an implication. hamiltonian_iff_three_assumptions derives each assumption FROM the law and back, and the three independence theorems show no assumption is redundant."
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "an equivalence over a WEAKENABLE AXIOMATIC BASE. The base here is a carrier declaration, not a system one can vary and compare against, so this is not yet reverse mathematics in the strict sense",
+    "that the three assumptions are the ONLY such decomposition; minimality among alternative decompositions is not addressed",
+    "a physical reading of A2; two of three assumptions are physical or topological, the third is geometric and unexplained",
+    "anything about general symplectic manifolds, non-polynomial fields, or dimensions above four",
+    "the per-mode dimension counts, which remain the Forge gate's computation",
+    "a reproduction, confirmation or refutation of Carcassi--Aidala's own derivation",
+    "any quantum, causal, or field-theoretic claim"
+  ],
+  "exact_checks": {
+    "dof_split_dependence_proved": true,
+    "each_assumption_independent_by_explicit_witness": true,
+    "equivalence_proved_in_both_directions": true,
+    "kernel_rechecked_by_coqchk": true,
+    "zero_axiom_development": true
+  },
+  "gate_negative_controls": [
+    "a FALSE claim that uniform translation is exact at the zero mode is REJECTED",
+    "a FALSE claim that marginal implies symplectic is REJECTED",
+    "a FALSE claim that marginal alone gives the law -- which would contradict A2/A3 independence -- is REJECTED"
+  ],
+  "gate_result": "RESULT: 8 green (0 red) \u2014 GATE: PASS",
+  "generality_level": "G4_ALL_FOURIER_MODES_HENCE_ALL_TRUNCATIONS",
+  "honest_finding": {
+    "detail": "A1 is a physical postulate (per-degree-of-freedom information conservation) and A3 is a clean topological one (no uniform drift, removing exactly the b_1(T^4) obstruction). A2 is neither: it is a geometric consistency condition between degrees of freedom, and no physical reading of it is offered here.",
+    "statement": "The law decomposes into three independent pieces, only TWO of which this stream can state in physical vocabulary.",
+    "why_it_matters": "A reverse-physics programme wants the law to be equivalent to a set of PHYSICAL assumptions. Here a third of the decomposition resists that reading. Whether A2 has an honest physical formulation is open; if it does not, this is a bound on how much of Hamiltonian structure is physically axiomatisable at all."
+  },
+  "ledger": {
+    "coqchk_axiom_section": "<none>",
+    "declared_assumptions_in_source": "none \u2014 no Axiom, Parameter, Hypothesis, Conjecture, Admitted or admit",
+    "print_assumptions_closed": "28/28 across all three modules, closed under the global context"
+  },
+  "lifecycle_ladder": "reverse-physics-v0",
+  "lifecycle_note": "This is the first result in the stream to reach EQUIVALENCE_CERTIFIED, and the promotion is scoped: it is an equivalence over the DECLARED CARRIER, not over a weakenable axiomatic base. See base_theory.honesty below before citing it as a reverse-mathematics reversal.",
+  "lifecycle_state": "EQUIVALENCE_CERTIFIED",
+  "next_gate": "REVERSE_PHYSICS_PARAMETERISED_BASE: quantify over degree-of-freedom splits and symplectic forms so the base becomes a system that can be weakened, which is what would turn this scoped equivalence into a reverse-mathematics reversal proper.",
+  "provenance": {
+    "gate_script_not_pinned": "rocq/run.sh is harness, deliberately not hash-pinned",
+    "source_manifest": {
+      "rocq/ReversePhysicsTorusReversal.v": "1954b29e0b1ad799c95dfaa87d977e8cd6c4dc195554a87f531aa9432ccb8a0d"
+    }
+  },
+  "record_kind": "PROVENANCE_IMPORT \u2014 the mathematics is in rocq/ReversePhysicsTorusReversal.v; this file computes nothing",
+  "result_id": "REVERSE_PHYSICS_TORUS_REVERSAL_ROCQ_V1",
+  "result_state": "LAW_PROVED_EQUIVALENT_TO_THREE_MUTUALLY_INDEPENDENT_ASSUMPTIONS",
+  "schema": "reverse-physics-torus-reversal-rocq-v1",
+  "theorems": [
+    {
+      "name": "marginal_iff_intra_dof_closed",
+      "role": "this is what licenses calling A1 a physical postulate rather than a geometric one",
+      "statement": "the marginal condition and the intra-DOF closedness equations are the SAME statement"
+    },
+    {
+      "name": "closed_of_intra_and_inter",
+      "statement": "the intra-DOF and inter-DOF equations together are exactly closedness"
+    },
+    {
+      "name": "inter_of_closed",
+      "statement": "closedness yields its inter-DOF equations"
+    },
+    {
+      "name": "alpha_vanishes_iff",
+      "statement": "the induced 1-form vanishes iff the vector field does"
+    },
+    {
+      "name": "hamiltonian_iff_three_assumptions",
+      "role": "THE REVERSAL. The forward direction derives each assumption FROM the law; that is the half this stream previously lacked.",
+      "statement": "hamiltonian k a b <-> (A1 /\\ A2 /\\ A3), at every mode"
+    },
+    {
+      "name": "A1_is_independent",
+      "statement": "A2 and A3 hold, A1 fails, the law fails"
+    },
+    {
+      "name": "A2_is_independent",
+      "statement": "A1 and A3 hold, A2 fails, the law fails"
+    },
+    {
+      "name": "A3_is_independent",
+      "statement": "A1 and A2 hold, A3 fails, the law fails"
+    },
+    {
+      "name": "marginal_depends_on_the_dof_split",
+      "role": "the degree-of-freedom split has been a DECLARED ASSUMPTION throughout this stream; here it is a theorem that A1 is relative to it",
+      "statement": "the SAME field is marginal for the split {(q1,p1),(q2,p2)} and not marginal for {(q1,q2),(p1,p2)}"
+    }
+  ],
+  "verification_commands": [
+    "cd rocq && ./run.sh",
+    "PYTHONPATH=. python3 -m reverse_physics.torus_reversal_rocq --check"
+  ]
+}

@@ -1,24 +1,24 @@
 # reverse_physics/ — assumption-necessity certificates
 
-A probe, not an established stream. It asks whether this programme's certificate
-substrate can carry **reverse physics** in the Carcassi–Aidala sense: not
-deriving laws from axioms, but finding the minimal physical assumptions a law is
-equivalent to.
+It asks whether this programme's certificate substrate can carry **reverse
+physics** in the Carcassi–Aidala sense: not deriving laws from axioms, but
+finding the minimal physical assumptions a law is equivalent to.
 
-## What transfers, and what does not
+## What transfers
 
-Reverse physics needs three things. This substrate supplies two of them.
+Reverse physics needs three things. All three now have an instance here.
 
-| | |
-|---|---|
-| **Sufficiency** — assumptions ⊢ law | a derivation. **Not supplied by the rails in this directory.** But see *The Rocq route* below — it is reachable, and this directory is not where it should be built. |
-| **Necessity** — a system satisfying every assumption but one, in which the law fails | a no-go with an exact witness over a declared carrier. **This is exactly what the substrate already does.** |
-| **An honest ledger** of what each derivation consumed | `assumption_tags`, `claim_boundary`, `does_not_establish`, `generality_level`. **Already load-bearing.** |
+| | | where |
+|---|---|---|
+| **Necessity** — a system satisfying every assumption but one, in which the law fails | an exact witness over a declared carrier | the shape the substrate already had |
+| **Sufficiency** — assumptions ⊢ law | a derivation | `rocq/`, zero-axiom |
+| **An honest ledger** of what each derivation consumed | `assumption_tags`, `claim_boundary`, `does_not_establish`, `generality_level` | load-bearing throughout |
 
-So the deliverable shape is an implication *digraph* — certified edges, plus
-non-edges bounded by the `generality_level` of their separating witness — not
-the equivalence lattice of reverse mathematics. That gap is stated in every
-certificate's `does_not_establish` and is not to be papered over.
+The deliverable started as an implication *digraph* — certified edges plus
+non-edges bounded by the `generality_level` of their separating witness. With
+`REVERSE_PHYSICS_TORUS_REVERSAL_ROCQ_V1` there is now one genuine **equivalence
+with independence**, which is the reverse-mathematics shape. Read the scoping
+note under *Lifecycle ladder* before treating it as more than that.
 
 ## Tag namespace
 
@@ -40,18 +40,23 @@ CARRIER_DECLARED → SEPARATION_CERTIFIED → NECESSITY_CERTIFIED
                  → SUFFICIENCY_CERTIFIED → EQUIVALENCE_CERTIFIED
 ```
 
-Only the first three are reached. `SUFFICIENCY_CERTIFIED` and
-`EQUIVALENCE_CERTIFIED` require a derivation and a reversal over a base theory.
+`EQUIVALENCE_CERTIFIED` is now reached, once, by
+`REVERSE_PHYSICS_TORUS_REVERSAL_ROCQ_V1` — and the promotion is **scoped**.
 
-The Rocq proof in `rocq/` shows the proof half is *reachable* — it proves one
-implication for all modes with zero axioms. But proving an implication is **not**
-a reversal, so it does not move the ladder toward `EQUIVALENCE_CERTIFIED`. That
-still needs a base theory and a derivation of the assumption *from* the law, and
-nothing in this tree has one.
+That certificate proves `law ⟺ A1 ∧ A2 ∧ A3` with each assumption derived *from*
+the law and each independent by an explicit witness. That is a genuine reversal,
+and it was the missing half.
+
+What it is **not** is a reversal over a *weakenable* base. The base theory here
+is the carrier declaration — fixed `ω`, fixed DOF split, trigonometric-polynomial
+fields — which is definitional context, not an axiom schema one can weaken and
+compare against. Reverse mathematics needs the latter. Do not cite this as a
+reverse-mathematics result without that qualifier; the certificate's
+`base_theory.honesty` field states it, and `next_gate` names what would close it.
 
 ## The Rocq route
 
-That is a limit of these rails, not of the substrate. `tango/forge` carries
+The exact-rational rails in this directory cannot prove; `tango/forge` carries
 `tools/conflux-proof`: a Conflux (Datalog/eq-sat) engine that **saturates** a
 finite universe emitting a verdict certificate per cell, a *verified* checker
 that validates engine-emitted certificates against hand-audited theories, and
@@ -63,11 +68,12 @@ implication edge is a step to induct over.
 
 Consequences for this directory:
 
-- The **general-n certificate is the one that most wants to be a theorem.** Its
-  derivation is uniform in n and its seven steps are already isolated; Rocq would
-  replace "machine-checked at n = 1…7 plus a polynomial-identity argument" with a
-  proof for all n, and the Python rail would remain as an independent numeric
-  check rather than the whole evidence.
+- The **general-n certificate is now the one that most wants to be a theorem.**
+  The torus results have been proved; general-n is still "machine-checked at
+  n = 1…7 plus a polynomial-identity argument". Its derivation is uniform in n
+  and its seven steps are already isolated, so Rocq would replace that with a
+  proof for all n, leaving the Python rail as an independent numeric check
+  rather than the whole evidence.
 - **Conflux is opt-in and gated.** Per `AGENTS.md` and
   `planning/SCIENCE-FORGE-ADOPTION.md`, a stream may not run Conflux against
   physics without a declared importer, an independent replay, and a
@@ -75,9 +81,9 @@ Consequences for this directory:
   item does **not** currently enable one. Structure-seeking work is also
   proof-first there: state the candidate theorem, proof obligations,
   counterexample strategy and exact finite remainder *before* an exploratory run.
-- Nothing here may claim a Rocq-backed status until a gate exits 0 with its
-  ledger printed. `FORMALLY_VERIFIED_IN_A_PROOF_ASSISTANT` is `false` in every
-  certificate in this tree.
+- Nothing may claim a Rocq-backed status until a gate exits 0 with its ledger
+  printed. `FORMALLY_VERIFIED_IN_A_PROOF_ASSISTANT` is `true` only on the three
+  `rocq/`-backed certificates and `false` on every Python-rail one.
 
 ## Contents
 
@@ -91,6 +97,11 @@ hamiltonian_privilege_general_n.py     general-n rail A: the structural derivati
 verify_hamiltonian_privilege_general_n.py
                                        general-n rail B: brute-force ranks, n = 1…6
 schema/  certificates/  tests/  reports/
+
+../rocq/ReversePhysicsTorus.v          the topological step, all modes
+../rocq/ReversePhysicsTorusChain.v     the four-level chain, both inclusions strict
+../rocq/ReversePhysicsTorusReversal.v  the reversal: law <-> A1 /\ A2 /\ A3
+../rocq/run.sh                         the zero-axiom gate (coqc, coqchk, controls)
 ```
 
 ## Results
@@ -100,9 +111,9 @@ schema/  certificates/  tests/  reports/
 | `..._LINEAR_G0_V1` | `G0` (n = 1, 2) | marginal information conservation is necessary but not sufficient; gap 4 at n = 2; obstruction localised in the inter-DOF block; survives to finite time — [report](reports/hamiltonian-privilege-linear-g0.md) |
 | `..._GENERAL_N_V1` | `G2` (all n) | the separation threshold is exactly n = 2 and the gap `2n(n−1)` grows quadratically — [report](reports/hamiltonian-privilege-general-n.md) |
 | `..._TORUS_G1_V1` | `G1` (T⁴, N ≤ 3) | on a manifold the chain has **four** levels; the symplectic→Hamiltonian gap is `b₁ = 4` at every truncation and entirely in the zero mode, while the local gaps grow — so part of the missing assumption is topological, not physical — [report](reports/hamiltonian-privilege-torus-g1.md) |
-
 | `..._TORUS_ALL_MODES_ROCQ_V1` | `G4` (all modes) | the topological step **proved**, not computed: at every mode with a nonzero frequency closed = exact, so the gap is carried by the zero mode for *every* truncation — zero-axiom Rocq, kernel-rechecked — [report](reports/torus-all-modes-rocq.md) |
 | `..._TORUS_FULL_CHAIN_ROCQ_V1` | `G4` (all modes) | the rest of the chain proved, both inclusions **strict**; and the marginal condition is exactly the *intra*-DOF content of symplecticity — the same localisation G0 found on the linear carrier — [report](reports/torus-full-chain-rocq.md) |
+| `..._TORUS_REVERSAL_ROCQ_V1` | `G4` (all modes) | **the reversal**: law ⟺ A1 ∧ A2 ∧ A3, each derived *from* the law, each independent by witness; and the DOF split is proved to be an input — [report](reports/torus-reversal-rocq.md) |
 
 The G1 computation lives **in Forge** (`math/qmat` exact rational rank), gated at
 `forge/examples/reverse_physics_torus_gate.forge` in tango and pinned here by
