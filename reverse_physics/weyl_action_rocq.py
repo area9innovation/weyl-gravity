@@ -347,7 +347,7 @@ def build() -> dict[str, object]:
         "verification_commands": [
             "cd rocq && ./run.sh",
             "PYTHONPATH=. python3 -m reverse_physics.weyl_action_rocq --check",
-            "cd forge && FORGE_LIB=$PWD/lib forge -run examples/weyl_action_classification_gate.forge   # exit 37",
+            "cd forge && FORGE_LIB=$PWD/lib forge -run examples/weyl_action_classification_gate.forge   # exit 40",
             "cd forge && FORGE_LIB=$PWD/lib forge verify -full examples/weyl_action_classification_gate.forge",
             "sha256sum forge/examples/weyl_action_classification_gate.forge   # must match upstream_gate.sha256",
         ],
