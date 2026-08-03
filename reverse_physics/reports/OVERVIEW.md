@@ -326,7 +326,17 @@ one-dimensional after the topological quotient. Rational linear algebra in `ℚ�
 proved in Rocq and independently re-derived by exact Gaussian elimination in
 Forge.
 
-**Three things came out of it that were not put in.**
+**Both sides are done, and the ledgers differ.** A physicist writes the field
+equation, not the action. `RP-WEYL` on the action is `RP-TRACELESS` on the
+equations — proved equivalent in both directions via Noether. But `RP-TOPO-INERT`
+is an assumption *with an independence witness* on the action side and
+**invisible** on the field-equation side, since the variation of a topological
+term vanishes identically; and divergence-freedom, always quoted as a property of
+the Bach tensor, is **free** from `RP-DIFF` and has no independence witness at
+all. So an assumption *count* is vocabulary-dependent: six on one side, five on
+the other, for the same theory.
+
+**Three more things came out that were not put in.**
 
 *The derivative order is not an assumption.* "Quadratic in curvature" is
 normally listed as an input. A density `√−g X` of curvature degree `k` has
@@ -347,12 +357,22 @@ exactly the parity eigenbasis of this sector*, since `C² = W₊² + W₋²` and
 `P = W₊² − W₋²`. `RP-PARITY` is precisely the assumption that ties them
 together, and classically it is free of charge.
 
+**And a prediction, cheap to check.** The conformally invariant curvature degree
+in `D` dimensions is `k = D/2`, so **no conformally invariant local curvature
+action exists in any odd-dimensional spacetime**, at any derivative order, and
+each even dimension admits exactly one degree. Weyl gravity is a
+four-dimensional accident in a precise sense, and `D = 6` selects the *cubic*
+sector — which is what makes the successor gate well-posed.
+
 **This closes a loop with §3.6.** That section found, without looking for it,
 that the parity balance excluded in odd dimension *is* achievable in dimension
 four at exactly the weight of `C_abcd C^abcd`. The counting argument predicted
 that a conformal density exists there. This section proves it is, modulo
 topology, the only one. Two independent lines meet on the same object and
-neither was set up to find the other.
+neither was set up to find the other — and the odd-dimension results meet too:
+no conformal DOF *density* on an odd-dimensional slice, no conformal curvature
+*action* in an odd-dimensional spacetime. Different parity obstructions,
+different objects, the same shape.
 
 [Full report](weyl-action-reverse-physics.md) ·
 [separation ledger](PHYSICS-VS-MATH.md).
@@ -481,9 +501,9 @@ Stated plainly, because the certificates each carry their own version:
 | `..._EXPONENT_ADDITIVITY_ROCQ_V1` | products | and DOF-independence becomes additivity of that exponent |
 | `..._COPRIME_HIERARCHY_ROCQ_V1` | all coprime p:q | the programme's own conjecture: order law proved, even `p` unobstructed, four new instances |
 | `..._COPRIME_CHARGE_BOUND_ROCQ_V1` | all p,q > 0 | and the physics reading of it **retracted**: the obstruction conserves a positive charge, so it bounds rather than destabilises |
-| `..._WEYL_ACTION_V1` | all quadratic curvature actions, all dimensions | **the subject itself**: the Weyl action is *equivalent* to five assumptions; the derivative order is derived, not assumed; parity is independent on actions and redundant on field equations |
+| `..._WEYL_ACTION_V1` | all quadratic curvature actions, all dimensions | **the subject itself**: the Weyl action is *equivalent* to five assumptions on the action side and five on the field-equation side; the derivative order is derived, not assumed; parity is independent on actions and redundant on field equations; and odd dimensions admit no conformal curvature action at all |
 
-Eighteen zero-axiom Rocq modules, `coqchk` axiom section `<none>`, twenty-one
+Nineteen zero-axiom Rocq modules, `coqchk` axiom section `<none>`, twenty-three
 fail-closed negative controls, three Forge gates on both backends under ASan, two
 independent Python rails. `rocq/ReversePhysicsAOPBridge.v` additionally proves
 that the ω used throughout **is** their `J ⊗ Iₙ`, so the engagement in §3.6 is

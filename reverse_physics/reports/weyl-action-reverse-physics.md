@@ -1,9 +1,10 @@
 # Reverse physics on Weyl gravity itself
 
 **Certificate** `REVERSE_PHYSICS_WEYL_ACTION_V1`
-**Proofs** `rocq/WeylActionClassification.v`, `rocq/WeylParityAndTopology.v` — zero axioms, 37/37 closed
-**Gate** `rocq/run.sh` — `RESULT: 23 green (0 red)`, 21 fail-closed negative controls
-**Second rail** tango `forge/examples/weyl_action_classification_gate.forge` — 37/37,
+**Proofs** `rocq/WeylActionClassification.v`, `rocq/WeylParityAndTopology.v`,
+`rocq/WeylFieldEquations.v` — zero axioms, 47/47 closed
+**Gate** `rocq/run.sh` — `RESULT: 24 green (0 red)`, 23 fail-closed negative controls
+**Second rail** tango `forge/examples/weyl_action_classification_gate.forge` — 40/40,
 `verify -full`: `c==native`, ASan-clean on both backends
 **Separation ledger** [`PHYSICS-VS-MATH.md`](PHYSICS-VS-MATH.md)
 
@@ -143,7 +144,79 @@ boundary explicitly does not reach.
 Stated in the repository's own terms: `RP-PARITY` is precisely the assumption
 that ties `[W₊²]` and `[W₋²]` together, and classically it is free of charge.
 
-## 5. A consistency check the formula was not fitted to
+## 5. The other half: the same law from the field-equation side
+
+A physicist works with the field equation, not the action, and the assumption
+list looks different there. Doing both sides is what makes this an
+investigation rather than a calculation.
+
+| on the **action** | on the **field equations** |
+|---|---|
+| `RP-LOCAL` | `RP-LOCAL` |
+| `RP-METRIC` | `RP-METRIC` |
+| `RP-DIFF` | `RP-DIFF` |
+| `RP-WEYL` — the action is Weyl invariant | `RP-TRACELESS` — the equations are traceless |
+| `RP-DIM4` | `RP-DIM4` |
+| `RP-TOPO-INERT` | *— nothing to assume —* |
+| | *`RP-DIVFREE` — not an assumption* |
+
+The bridge is Noether's theorem for the Weyl symmetry: the trace of the metric
+variation is proportional to the conformal anomaly of the action, with a nonzero
+constant. So `RP-TRACELESS` on the equations **is** `RP-WEYL` on the action —
+proved in both directions, so neither vocabulary is privileged. And the constant
+is load-bearing: if it vanished, every action would have traceless field
+equations and `RP-TRACELESS` would select nothing. That is a theorem, not a
+caveat.
+
+Two entries move, and both movements are the point.
+
+**`RP-TOPO-INERT` disappears.** On the action side it is an assumption with an
+independence witness — drop it and the Euler density survives, taking the answer
+from one dimension to two. On the field-equation side there is nothing to drop:
+the variation of a topological term vanishes identically, so the quotient has
+already been taken by the time you write down an equation. *An assumption in one
+vocabulary can be invisible in the other.*
+
+**Divergence-freedom is free.** It is always quoted as a property of the Bach
+tensor, and it is a consequence of `RP-DIFF` via Noether's second theorem — so it
+cannot be dropped while keeping `RP-DIFF`, has no independence witness, and does
+not belong in the ledger as an assumption at all.
+
+So an assumption *count* is vocabulary-dependent. Six on one side, five on the
+other, for the same theory. That is not a defect of the method; it is something
+the method makes visible and prose does not.
+
+What is **not** done: nothing here evaluates a metric variation. The Bach tensor
+never appears. What is proved is that the space of field equations reachable
+from this action space is one-dimensional and that the two vocabularies pick out
+the same line; calling its generator *the Bach tensor* is an identification made
+in this paragraph, on the strength of Noether, not a theorem.
+
+## 5b. A prediction, and it is cheap to check
+
+The weight argument says the conformally invariant curvature degree in `D`
+dimensions is `k = D/2`. Therefore:
+
+> **No conformally invariant local action built polynomially from curvature
+> exists in any odd-dimensional spacetime — at any derivative order.**
+
+and each even dimension admits exactly one degree. Checked on both rails: in
+Rocq over all `D` and `k`, and in Forge exhaustively over `D ∈ 3..15`,
+`k ∈ 0..9`.
+
+Weyl gravity is a four-dimensional accident in a precise sense. And `D = 6`
+selects the **cubic** sector, which is what makes the successor gate well-posed
+rather than speculative.
+
+This meets §3.6 of the [`OVERVIEW`](OVERVIEW.md) from the other end. There, no
+conformally invariant degree-of-freedom *density* exists on an odd-dimensional
+slice, because curvature weights are always even while the volume weight is the
+dimension. Here, no conformally invariant curvature *action* exists in an
+odd-dimensional spacetime, because the weight is `D − 2k`. Two different parity
+obstructions, two different objects, the same shape of conclusion — and four
+dimensions is where both are satisfied at once, by `C_abcd C^abcd`.
+
+## 6. A consistency check the formula was not fitted to
 
 The `D`-dependent Weyl vector `C²_D = (1, −4/(D−2), 2/((D−1)(D−2)))` degenerates
 to `E₄ = (1,−4,1)` **exactly at `D = 3`** — checked over `D ∈ 3..12`, true there
@@ -151,7 +224,7 @@ and false everywhere else. That is the coordinate shadow of the Weyl tensor
 vanishing identically in three dimensions. Nothing in the setup was arranged to
 produce it.
 
-## 6. Two rails, two methods
+## 7. Two rails, two methods
 
 | | method |
 |---|---|
@@ -167,7 +240,7 @@ Coq's `exists!` carries **Leibniz** equality, which is the wrong equality on `Q`
 the proof failing rather than by inspection, which is the argument for
 mechanising this at all.
 
-## 7. What this does **not** establish
+## 8. What this does **not** establish
 
 - **The theorem's novelty.** That conformal gravity is the unique conformally
   invariant quadratic gravity in four dimensions is **classical and textbook**.
@@ -185,10 +258,9 @@ mechanising this at all.
   classical differential geometry (`G1`–`G8` in the certificate), entered as
   coordinate vectors and weight formulas. A reader who rejects them rejects the
   result — they are listed precisely so that is possible.
-- **The field equations.** That the variation of `∫√−g C²` is the Bach tensor is
-  *not* derived here. Only the space of actions is classified; "same field
+- **The Bach tensor.** Nothing here evaluates a metric variation. "Same field
   equations" is *defined* as "differ by a topological term", which is
-  `RP-TOPO-INERT`, not a computation.
+  `RP-TOPO-INERT`, not a computation — see §5.
 - **Nonlocal, non-polynomial, or higher-degree actions, or matter couplings.**
 - **That `RP-PARITY` is redundant quantum-mechanically.** It is not.
 - **Anything about the BV–BFV complex, the residual cohomology, or the physical
@@ -198,7 +270,7 @@ mechanising this at all.
   states, and nothing here changes that. The two scoped Lorentzian no-go
   theorems are untouched.
 
-## 8. The successor question
+## 9. The successor question
 
 The weight argument says the conformally invariant curvature degree in `D`
 dimensions is `k = D/2`. So:
@@ -215,25 +287,25 @@ analogue. That is the declared next gate.
 ## Verification
 
 ```bash
-cd rocq && ./run.sh                                   # 23 green (0 red)
+cd rocq && ./run.sh                                   # 24 green (0 red)
 PYTHONPATH=. python3 -m reverse_physics.weyl_action_rocq --check
 
 # upstream, in tango:
 cd forge && FORGE_LIB=$PWD/lib forge -run \
-    examples/weyl_action_classification_gate.forge    # exit 37
+    examples/weyl_action_classification_gate.forge    # exit 40
 cd forge && FORGE_LIB=$PWD/lib forge verify -full \
     examples/weyl_action_classification_gate.forge    # c==native, asan clean
 ```
 
 ## Tier receipt
 
-- **Tier 0/1** — eighteen Rocq modules compile; gate 23 green / 0 red; `coqchk`
-  axiom section `<none>`; 163/163 `Print Assumptions` closed; twenty-one
-  fail-closed negative controls, four of them new for this result; sixteen
+- **Tier 0/1** — nineteen Rocq modules compile; gate 24 green / 0 red; `coqchk`
+  axiom section `<none>`; 173/173 `Print Assumptions` closed; twenty-three
+  fail-closed negative controls, six of them new for this result; sixteen
   provenance records hash-verified; 30-test Python suite green.
-- **Upstream** — `weyl_action_classification_gate.forge` 37/37, `verify -full`
+- **Upstream** — `weyl_action_classification_gate.forge` 40/40, `verify -full`
   `c==native`, ASan-clean on both backends.
-- **Tier 2/3 — not run, and not required.** This adds two modules, a gate and a
+- **Tier 2/3 — not run, and not required.** This adds three modules, a gate and a
   provenance record; it changes no shared operator, schema, or generated
   artifact that another certificate chain consumes, and touches nothing in the
   classical BV–BFV pipeline.

@@ -94,6 +94,9 @@ having a column for it.
 | `G6` | the parity-odd quadratic invariants are spanned by `P`; `P = C·C̃` in `D = 4` | the fourth coordinate |
 | `G7` | `∫√−g P` is topological | the θ-angle direction |
 | `G8` | `W±² = (C² ± P)/2` | the link to the certified residual classes |
+| `N1` | Noether/diff: the metric variation of a local diff-invariant action is divergence-free | why `RP-DIVFREE` is not an assumption |
+| `N2` | Noether/Weyl: the trace of the variation is a **nonzero** multiple of the anomaly | the bridge between the two ledgers; the non-vanishing is proved load-bearing |
+| `N3` | a topological term has identically vanishing variation | why `RP-TOPO-INERT` disappears on the field-equation side |
 
 `G5` deserves its place in the list. It is the assumption that keeps the theorem
 from being about nothing, and it is exactly the kind of thing that goes missing
@@ -102,6 +105,29 @@ when a ledger has only two columns. So it is not merely listed: the development
 by `False`, every action comes out Weyl invariant. An imported result that
 cannot be shown to be load-bearing does not belong in the middle column at all;
 it belongs in a footnote, or nowhere.
+
+### 3.2b The same law, the other vocabulary
+
+A physicist writes the field equation, not the action, and the ledger changes:
+
+| on the **action** | on the **field equations** |
+|---|---|
+| `RP-WEYL` | `RP-TRACELESS` — proved equivalent, both directions, via `N2` |
+| `RP-TOPO-INERT` | *— nothing to assume —* |
+| — | *`RP-DIVFREE` — free from `RP-DIFF` via `N1`* |
+
+Two entries move, and both movements are findings.
+
+`RP-TOPO-INERT` is an assumption **with an independence witness** on the action
+side and **invisible** on the field-equation side: the variation of a
+topological term vanishes identically, so the quotient has already been taken by
+the time an equation exists. Divergence-freedom runs the other way — always
+quoted as a property of the Bach tensor, it has no independence witness at all,
+because it cannot be dropped while `RP-DIFF` is kept.
+
+**So an assumption count is vocabulary-dependent.** Six on one side, five on the
+other, for the same theory. A ledger that does not say which side it is counting
+on is not saying anything. This is `T5` again, at a different level than §4.4.
 
 ### 3.3 MATHEMATICS — what is actually proved
 
@@ -115,7 +141,12 @@ independently a rank computation in exact rational Gaussian elimination:
 - modulo the topological subspace, the answer is **one-dimensional**;
 - with parity adjoined: invariant subspace 3-dimensional, topological subspace
   2-dimensional, quotient `3 − 2 = 1`;
-- `α W₊² + β W₋²` differs from `((α+β)/2)C²` by exactly `((α−β)/2)P`.
+- `α W₊² + β W₋²` differs from `((α+β)/2)C²` by exactly `((α−β)/2)P`;
+- tracelessness of the field equations is equivalent to Weyl invariance of the
+  action, in both directions, and the two conditions pick out the same line;
+- the constant-Weyl weight `D − 2k` vanishes iff `D = 2k`, so **odd dimensions
+  admit no conformally invariant curvature action at any derivative order**, and
+  each even dimension admits exactly one degree.
 
 No floating point appears anywhere on either rail.
 
@@ -248,9 +279,11 @@ Honest limits, because a separation ledger that claims to be clean is not one.
   bulk of the intellectual content and none of them is machine-checked here.
   Deriving even `G1` from a formalised Riemann tensor would move a large block
   from the middle column to the right one.
-- **The field equations are never computed.** "Same field equations" is *defined*
-  as "differ by a topological term". That is `RP-TOPO-INERT`, not a variational
-  calculation, and the Bach tensor does not appear anywhere in the development.
+- **The Bach tensor is never computed.** "Same field equations" is *defined* as
+  "differ by a topological term". That is `RP-TOPO-INERT`, not a variational
+  calculation. §3.2b classifies the *space* of field equations and proves the two
+  vocabularies agree; naming the generator is done in prose, on the strength of
+  Noether.
 - **No reversal over a weakenable base.** Reverse mathematics compares against a
   base theory one can weaken. Every equivalence here is over a *declared
   carrier*. This is the stream's oldest open problem and it is not closed.
@@ -283,10 +316,15 @@ The most efficient objections, in order of how much they would cost us:
 4. **Point out the theorem is textbook.** True, and stated in the certificate's
    `does_not_establish`. The claim is about the ledger, the witnesses, the
    derived derivative order and the parity result — not about the classification.
-5. **Ask what any of this predicts.** Fair. The sharpest thing on offer is
-   negative and cheap to check: the conformally invariant curvature degree in
-   `D` dimensions is `k = D/2`, so **odd dimensions have no such sector at all**,
-   and `D = 6` selects the cubic sector. That is the declared next gate.
+5. **Ask what any of this predicts.** The sharpest thing on offer is negative
+   and cheap to check: the conformally invariant curvature degree in `D`
+   dimensions is `k = D/2`, so **odd dimensions have no conformally invariant
+   local curvature action at all**, at any derivative order, and each even
+   dimension admits exactly one degree. Proved on both rails. `D = 6` selects
+   the cubic sector, which is the declared next gate. Note this meets §4.6 from
+   the other end: two different parity obstructions, on two different objects,
+   with the same shape of conclusion, and four dimensions is where both are
+   satisfied at once.
 
 ---
 
@@ -297,8 +335,9 @@ one. Three columns — physics, imported geometry, proved mathematics — with a
 mechanised test for the boundary between the second and third, and an
 independence witness required for every entry in the first. Applied to Weyl
 gravity it yields five assumptions instead of six, an equivalence rather than an
-implication, and one assumption that is independent and redundant at the same
-time depending on what you are classifying.
+implication, one assumption that is independent and redundant at the same time
+depending on what you are classifying — and the discovery that the *count itself*
+depends on whether you write the theory as an action or as a field equation.
 
 Applied to this stream's own earlier work, it retracted a published claim.
 
@@ -307,11 +346,11 @@ Applied to this stream's own earlier work, it retracted a published claim.
 ## Verification
 
 ```bash
-cd rocq && ./run.sh                                   # 23 green (0 red), 163/163 closed
+cd rocq && ./run.sh                                   # 24 green (0 red), 173/173 closed
 PYTHONPATH=. python3 -m reverse_physics.weyl_action_rocq --check
 PYTHONPATH=. python3 -m unittest discover -s reverse_physics/tests -t .
 
 # the second rail, in tango:
 cd forge && FORGE_LIB=$PWD/lib forge verify -full \
-    examples/weyl_action_classification_gate.forge    # 37/37, c==native, asan clean
+    examples/weyl_action_classification_gate.forge    # 40/40, c==native, asan clean
 ```

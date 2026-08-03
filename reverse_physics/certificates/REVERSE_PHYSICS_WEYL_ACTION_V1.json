@@ -8,6 +8,7 @@
       "RP-METRIC": "the metric is the only field",
       "RP-PARITY": "parity invariance",
       "RP-TOPO-INERT": "a topological term is physically inert",
+      "RP-TRACELESS": "the field equations are traceless -- the field-equation-side counterpart of RP-WEYL",
       "RP-WEYL": "local Weyl (conformal) invariance"
     },
     "namespace_note": "RP-* is the physical-postulate namespace and is disjoint from the computational-regime tags. Every assumption here is UNDER TEST: each has an independence witness, and RP-PARITY is shown redundant at the level of field equations.",
@@ -18,19 +19,22 @@
       "RP-METRIC",
       "RP-PARITY",
       "RP-TOPO-INERT",
+      "RP-TRACELESS",
       "RP-WEYL"
     ]
   },
-  "claim_boundary": "In a zero-axiom Rocq development over Q, and independently by exact rational Gaussian elimination in Forge: the space of parity-even quadratic curvature actions is three-dimensional; local Weyl invariance cuts it to exactly span{C^2, E4}; the quotient by topological terms leaves exactly the one-dimensional span of the Weyl action; each of RP-WEYL, RP-DIM4 and RP-TOPO-INERT has an explicit independence witness; the curvature degree is forced by the dimension rather than assumed; and adjoining the parity-odd sector leaves the classical theory unchanged, so RP-PARITY is independent on actions and redundant on field equations.",
+  "claim_boundary": "In a zero-axiom Rocq development over Q, and independently by exact rational Gaussian elimination in Forge: the space of parity-even quadratic curvature actions is three-dimensional; local Weyl invariance cuts it to exactly span{C^2, E4}; the quotient by topological terms leaves exactly the one-dimensional span of the Weyl action; each of RP-WEYL, RP-DIM4 and RP-TOPO-INERT has an explicit independence witness; the curvature degree is forced by the dimension rather than assumed; and adjoining the parity-odd sector leaves the classical theory unchanged, so RP-PARITY is independent on actions and redundant on field equations. On the field-equation side the same law is equivalent to RP-LOCAL, RP-METRIC, RP-DIFF, RP-TRACELESS and RP-DIM4, and no conformally invariant local curvature action exists in any odd dimension.",
   "claim_flags": {
     "ACTION_CLASSIFIED_MODULO_TOPOLOGICAL": true,
     "CONFORMAL_TRANSFORMATION_LAWS_DERIVED": false,
     "DERIVATIVE_ORDER_DERIVED_NOT_ASSUMED": true,
     "EVERY_ASSUMPTION_HAS_AN_INDEPENDENCE_WITNESS": true,
     "FIELD_EQUATIONS_DERIVED": false,
+    "FIELD_EQUATION_LEDGER_PROVED_EQUIVALENT": true,
     "FORMALLY_VERIFIED_IN_A_PROOF_ASSISTANT": true,
     "MATTER_COUPLINGS_COVERED": false,
     "NON_POLYNOMIAL_OR_NONLOCAL_ACTIONS_COVERED": false,
+    "ODD_DIMENSIONS_ADMIT_NO_CONFORMAL_CURVATURE_ACTION": true,
     "PARITY_REDUNDANT_ON_FIELD_EQUATIONS": true,
     "QUANTUM_CLAIM": false,
     "THEOREM_IS_NOVEL": false,
@@ -42,7 +46,7 @@
   "does_not_establish": [
     "the theorem's novelty. That conformal gravity is the unique conformally invariant quadratic gravity in four dimensions is CLASSICAL AND TEXTBOOK. What is new here is the machine-checked zero-axiom derivation with the geometric inputs isolated, the independence witness per assumption, the derived derivative order, and the parity result",
     "the conformal transformation laws (G2, G3) or the Gauss-Bonnet and Pontryagin theorems (G4, G7). These are asserted classical differential geometry, entered as coordinate vectors and weight formulas. A reader who rejects them rejects the result, and they are listed precisely so that is possible",
-    "the field equations. That the variation of Integral sqrt(-g) C^2 is the Bach tensor is NOT derived here; only the space of actions is classified. 'Same field equations' is defined as 'differ by a topological term', which is RP-TOPO-INERT, not a computation",
+    "the Bach tensor. Nothing here evaluates a metric variation. What is proved is that the space of field equations reachable from this action space is one-dimensional, and that the two assumption vocabularies pick out the same line; calling its generator the Bach tensor is an identification made in prose on the strength of N1-N3, not a theorem. 'Same field equations' is DEFINED as 'differ by a topological term', which is RP-TOPO-INERT",
     "anything about non-polynomial, nonlocal, or higher-derivative-than-quadratic actions, or about matter couplings. The classification is of polynomial curvature scalars in the pure-metric sector",
     "that RP-PARITY is redundant in the QUANTUM theory. It is not: the coefficient of the Pontryagin density is a gravitational theta-angle. Everything called redundant here is redundant modulo RP-TOPO-INERT, which is a classical statement, and this programme's claim boundary does not reach the quantum theory",
     "any claim about the BV-BFV complex, the residual cohomology, or the physical spectrum. The identification of W_+^2 and W_-^2 as the parity eigenbasis is an identity between coordinate vectors, not a statement about the certified residual classes as cohomology",
@@ -79,13 +83,15 @@
   ],
   "gate_negative_controls": [
     "seventeen inherited from the earlier modules, all rejected",
+    "a FALSE claim that the Weyl action has the field equations of zero is REJECTED \u2014 otherwise conformal gravity is empty and both ledgers describe nothing",
+    "a FALSE claim that a conformally invariant curvature action exists at D = 3 is REJECTED \u2014 otherwise the odd-dimension prediction is empty",
     "a FALSE claim that R^2 is Weyl invariant is REJECTED \u2014 otherwise RP-WEYL cuts nothing",
     "a FALSE claim that E4 is a multiple of C^2 is REJECTED \u2014 otherwise the topological quotient is empty",
     "a FALSE claim that C^2 is topological is REJECTED \u2014 otherwise conformal gravity has no field equations and every theorem here is about an empty theory",
     "a FALSE claim that W_+^2 is parity-even is REJECTED \u2014 otherwise 'parity is independent on actions' says nothing",
     "the Forge rail carries its own non-vacuity clauses: in_row_span is asserted TRUE on a vector that is in the span, and the anomaly test is asserted NONZERO on R^2, so neither predicate can be constantly false"
   ],
-  "gate_result": "RESULT: 23 green (0 red) \u2014 GATE: PASS",
+  "gate_result": "RESULT: 24 green (0 red) \u2014 GATE: PASS",
   "generality_level": "G4_ALL_QUADRATIC_CURVATURE_ACTIONS_ALL_DIMENSIONS",
   "geometry_asserted_not_derived": {
     "G1": "E4 = Riem^2 - 4 Ric^2 + R^2 (Gauss-Bonnet), and C^2 = Riem^2 - 4/(D-2) Ric^2 + 2/((D-1)(D-2)) R^2 (Weyl decomposition)",
@@ -95,12 +101,15 @@
     "G5": "NON-DEGENERACY: there is a metric with Box R not identically zero -- matter-dominated FRW, a(t) = t^(2/3), has R = 4/(3 t^2). That this input is load-bearing is PROVED (without_non_degeneracy_the_classification_is_vacuous), not asserted; the witness metric itself is named, not formalised.",
     "G6": "the parity-odd quadratic curvature invariants are spanned by the Pontryagin density P, and in D = 4, P = C_abcd Cdual^abcd",
     "G7": "Integral sqrt(-g) P is topological (the first Pontryagin number)",
-    "G8": "W_+^2 = (C^2 + P)/2 and W_-^2 = (C^2 - P)/2"
+    "G8": "W_+^2 = (C^2 + P)/2 and W_-^2 = (C^2 - P)/2",
+    "N1": "NOETHER, DIFFEOMORPHISMS: the metric variation of a local diff-invariant action is identically divergence-free. This is why RP-DIVFREE is not an assumption and has no independence witness.",
+    "N2": "NOETHER, WEYL: the trace of the metric variation is proportional to the conformal anomaly of the action, with a NONZERO constant. This is the bridge between the two ledgers, and the non-vanishing is load-bearing (with_zero_kappa_tracelessness_is_vacuous).",
+    "N3": "a topological term has identically vanishing metric variation. This is RP-TOPO-INERT, and it is what makes the topological quotient DISAPPEAR on the field-equation side."
   },
   "ledger": {
     "coqchk_axiom_section": "<none>",
     "declared_assumptions_in_source": "none \u2014 no Axiom, Parameter, Hypothesis, Conjecture, Admitted or admit",
-    "print_assumptions_closed": "37/37 across the two modules; 163/163 across the eighteen modules the shared gate drives",
+    "print_assumptions_closed": "47/47 across the three modules; 173/173 across the nineteen modules the shared gate drives",
     "rationals_not_reals": "everything is over Q. Coq's R is axiomatised; importing it would put axioms in the ledger for statements that are rational-linear."
   },
   "lifecycle_ladder": "reverse-physics-v0",
@@ -110,6 +119,7 @@
     "gate_script_not_pinned": "rocq/run.sh is harness, deliberately not hash-pinned",
     "source_manifest": {
       "rocq/WeylActionClassification.v": "9815c14aabe2b785500c10565f18b31a2328b692c31b6010060ba97f136ca7a5",
+      "rocq/WeylFieldEquations.v": "130bb611a9ca02b2fefc759fcd2aa4754e5f9cfdc0a6dcd4a6fcfd50914f088c",
       "rocq/WeylParityAndTopology.v": "e856c834f0f5af6ff492f0589eafadaf3668f67826e6e147276349b9a2055d01"
     },
     "upstream_repo": "tango (forge/examples)"
@@ -123,6 +133,11 @@
     "mathematics": "Everything proved: the sector is Q^3 (Q^4 with parity), the change of basis is invertible over Q, the Weyl-invariance condition is the single linear equation a + b + 3c = 0, its solution space is exactly span{C^2, E4}, and the quotient by the topological subspace is one-dimensional. Exact rational arithmetic on both rails; no floating point anywhere.",
     "physics": "The seven RP-* assumptions. These are the content: they are what the law is being shown equivalent to, and they are the only place a physical commitment enters.",
     "why_three_categories_not_two": "The usual split is 'assumptions' versus 'derivation'. That hides the geometry: identities like Gauss-Bonnet are neither a physical postulate nor something this development proves. Naming them separately is what makes the ledger checkable \u2014 a reader who doubts the result knows whether to attack a postulate, a textbook identity, or a rational-arithmetic computation."
+  },
+  "the_two_ledgers": {
+    "on_the_action": "RP-LOCAL, RP-METRIC, RP-DIFF, RP-WEYL, RP-DIM4, RP-TOPO-INERT",
+    "on_the_field_equations": "RP-LOCAL, RP-METRIC, RP-DIFF, RP-TRACELESS, RP-DIM4",
+    "what_the_translation_costs": "Two things move. RP-TOPO-INERT is an assumption with an independence witness on the action side and DISAPPEARS on the field-equation side, because the variation of a topological term vanishes identically. And divergence-freedom, always quoted as a property of the Bach tensor, is FREE from RP-DIFF via Noether's second theorem, so it has no independence witness and is not an assumption at all. An assumption COUNT is therefore vocabulary-dependent, which is itself worth recording."
   },
   "theorems": [
     {
@@ -174,6 +189,24 @@
       "statement": "sqrt(-g) C^2 is Weyl invariant iff D = 4"
     },
     {
+      "module": "WeylFieldEquations",
+      "name": "traceless_iff_action_is_weyl_invariant + the_two_ledgers_agree",
+      "role": "THE VOCABULARY SWAP. RP-WEYL on the action IS RP-TRACELESS on the field equations, via N2. Proved in both directions, so neither ledger is privileged.",
+      "statement": "the field equations are traceless iff the action is Weyl invariant, and the two conditions pick out the same one-dimensional space"
+    },
+    {
+      "module": "WeylFieldEquations",
+      "name": "topological_terms_have_the_field_equations_of_zero + the_weyl_action_has_nontrivial_field_equations",
+      "role": "AN ASSUMPTION THAT EXISTS IN ONE VOCABULARY AND NOT THE OTHER. RP-TOPO-INERT has an independence witness on the action side; on the field-equation side there is nothing to drop, because the quotient has already been taken by the time an equation is written. The second clause is the non-vacuity control.",
+      "statement": "a topological term and zero have the same field equations, and the Weyl action does not"
+    },
+    {
+      "module": "WeylFieldEquations",
+      "name": "no_conformal_curvature_action_in_odd_dimension / exactly_one_degree_in_even_dimension",
+      "role": "THE PREDICTION, and it is cheap to check. Weyl gravity is a four-dimensional accident in a precise sense, and D = 6 selects the CUBIC sector -- which is the declared next gate.",
+      "statement": "in ODD dimension no conformally invariant local curvature action exists at any derivative order; in even dimension exactly one degree survives, k = D/2"
+    },
+    {
       "module": "WeylParityAndTopology",
       "name": "parity_is_independent_on_actions",
       "role": "INDEPENDENCE WITNESS for RP-PARITY at the level of ACTIONS.",
@@ -201,8 +234,8 @@
   "upstream_gate": {
     "not_verified_here": "the digest is recorded, not re-checked \u2014 the file is in another repository. Re-derive it with sha256sum before trusting this line.",
     "path": "tango forge/examples/weyl_action_classification_gate.forge",
-    "result": "exit 37, 37/37 checks; forge verify -full: c==native, ASan-clean on both backends",
-    "sha256": "daa0bce655087dff374a8792119c152f8da9fc1058594d64a4121acdd9acc45a",
+    "result": "exit 40, 40/40 checks; forge verify -full: c==native, ASan-clean on both backends",
+    "sha256": "df6662545b0404eab644bac2ed821ad280e9410e75029e22ca2c281a97cd256e",
     "why_it_is_a_second_rail": "Different METHOD, not a rerun. The Rocq rail argues by an explicit change of basis plus linear arithmetic over Q; the Forge rail runs Gaussian elimination over Q (math/qmat ranks, determinants, nullspace dimensions, solvability). Neither computes the other's answer."
   },
   "verification_commands": [

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # run.sh — the reverse-physics torus GATE.
 #
-# Eighteen developments, all zero-axiom, in dependency order.  The first four are the
+# Nineteen developments, all zero-axiom, in dependency order.  The first four are the
 # torus chain, the next four an INDEPENDENT stochastic carrier, and the last two
 # engage Carcassi-Aidala directly: a BRIDGE restating the torus results in their
 # notation, and a PARITY OBSTRUCTION on their degree-of-freedom counting.
@@ -91,6 +91,15 @@
 #                                  The gap is a gravitational theta-angle, and
 #                                  W_+^2, W_-^2 -- the programme's own certified
 #                                  residual classes -- are its eigenbasis.
+#   WeylFieldEquations.v           THE OTHER HALF: the same law from the FIELD
+#                                  EQUATION side.  RP-WEYL on the action IS
+#                                  RP-TRACELESS on the equations; the topological
+#                                  quotient DISAPPEARS in that vocabulary; and
+#                                  divergence-freedom is free from RP-DIFF, so it
+#                                  is not an assumption at all.  Plus the
+#                                  prediction: no conformally invariant local
+#                                  curvature action exists in ODD dimension, at
+#                                  any derivative order.
 #   CoprimeHierarchyChargeBound.v  an AUDIT of the physics gloss on those two:
 #                                  J = p n1 + q n2 has the resonant sector as its
 #                                  exact commutant, so EVERY possible obstruction
@@ -113,7 +122,7 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
 
-MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount ReversePhysicsNoConformalCount ReversePhysicsRelationalCount ReversePhysicsExponentAdditivity CoprimeHierarchyOrderLaw CoprimeHierarchyKernelParity CoprimeHierarchyChargeBound WeylActionClassification WeylParityAndTopology)
+MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount ReversePhysicsNoConformalCount ReversePhysicsRelationalCount ReversePhysicsExponentAdditivity CoprimeHierarchyOrderLaw CoprimeHierarchyKernelParity CoprimeHierarchyChargeBound WeylActionClassification WeylParityAndTopology WeylFieldEquations)
 pass=0
 fail=0
 
@@ -511,8 +520,37 @@ Proof. unfold q4eq, q4add, q4scale, w_plus, weyl_sq4, euler4. cbn.
   repeat split; reflexivity. Qed.
 NEG
 
+# (v) The Weyl action must NOT have the field equations of zero -- otherwise
+#     conformal gravity is an empty theory and both ledgers describe nothing.
+cat > _neg_v.v <<'NEG'
+Require Import QArith.
+Require Import WeylParityAndTopology.
+Require Import WeylFieldEquations.
+Open Scope Q_scope.
+(* FALSE on purpose: the_weyl_action_has_nontrivial_field_equations.  If C^2 had
+   the field equations of zero, "topological terms have the field equations of
+   zero" would be a statement about everything. *)
+Theorem bogus_weyl_action_is_trivial :
+  same_field_equations weyl_sq4 (q4scale 0 weyl_sq4).
+Proof. apply topological_terms_have_the_field_equations_of_zero. Qed.
+NEG
+
+# (w) A conformally invariant curvature action must NOT exist in odd dimension --
+#     that negative prediction is the sharpest thing this line offers.
+cat > _neg_w.v <<'NEG'
+Require Import ZArith.
+Require Import WeylActionClassification.
+Require Import WeylFieldEquations.
+Open Scope Z_scope.
+(* FALSE on purpose: D - 2k is odd when D is.  If some degree survived at D = 3
+   the prediction would be empty. *)
+Theorem bogus_conformal_action_in_three_dimensions :
+  constant_weyl_weight 3 1 = 0.
+Proof. reflexivity. Qed.
+NEG
+
 neg_ok=0
-for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _neg_k _neg_l _neg_m _neg_n _neg_o _neg_p _neg_q _neg_r _neg_s _neg_t _neg_u; do
+for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _neg_k _neg_l _neg_m _neg_n _neg_o _neg_p _neg_q _neg_r _neg_s _neg_t _neg_u _neg_v _neg_w; do
   if coqc "$n.v" >/tmp/rp_neg.log 2>&1; then
     echo "  $n: FALSE claim was ACCEPTED — REJECT"; neg_ok=1
   else
@@ -520,7 +558,7 @@ for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _
   fi
 done
 if [ "$neg_ok" -eq 0 ]; then pass=$((pass+1)); else fail=$((fail+1)); fi
-rm -f _neg_[a-u].v _neg_[a-u].vo _neg_[a-u].vok _neg_[a-u].vos _neg_[a-u].glob ._neg_[a-u].aux
+rm -f _neg_[a-w].v _neg_[a-w].vo _neg_[a-w].vok _neg_[a-w].vos _neg_[a-w].glob ._neg_[a-w].aux
 
 echo
 if [ "$fail" -eq 0 ]; then

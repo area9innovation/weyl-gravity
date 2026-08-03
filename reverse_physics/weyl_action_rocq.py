@@ -27,12 +27,13 @@ SCHEMA_NAME = "reverse-physics-weyl-action-v1"
 PINNED = {
     "classification": ROOT / "rocq/WeylActionClassification.v",
     "parity": ROOT / "rocq/WeylParityAndTopology.v",
+    "field_equations": ROOT / "rocq/WeylFieldEquations.v",
 }
 
 UPSTREAM_GATE = {
     "path": "tango forge/examples/weyl_action_classification_gate.forge",
-    "sha256": "daa0bce655087dff374a8792119c152f8da9fc1058594d64a4121acdd9acc45a",
-    "result": "exit 37, 37/37 checks; forge verify -full: c==native, ASan-clean on both backends",
+    "sha256": "df6662545b0404eab644bac2ed821ad280e9410e75029e22ca2c281a97cd256e",
+    "result": "exit 40, 40/40 checks; forge verify -full: c==native, ASan-clean on both backends",
     "why_it_is_a_second_rail": (
         "Different METHOD, not a rerun. The Rocq rail argues by an explicit change of basis "
         "plus linear arithmetic over Q; the Forge rail runs Gaussian elimination over Q "
@@ -54,6 +55,7 @@ ASSUMPTIONS = {
     "RP-DIM4": "spacetime is four-dimensional",
     "RP-PARITY": "parity invariance",
     "RP-TOPO-INERT": "a topological term is physically inert",
+    "RP-TRACELESS": "the field equations are traceless -- the field-equation-side counterpart of RP-WEYL",
 }
 
 # Classical differential geometry, ASSERTED and isolated, never re-derived here.
@@ -66,6 +68,9 @@ GEOMETRY_INPUTS = {
     "G6": "the parity-odd quadratic curvature invariants are spanned by the Pontryagin density P, and in D = 4, P = C_abcd Cdual^abcd",
     "G7": "Integral sqrt(-g) P is topological (the first Pontryagin number)",
     "G8": "W_+^2 = (C^2 + P)/2 and W_-^2 = (C^2 - P)/2",
+    "N1": "NOETHER, DIFFEOMORPHISMS: the metric variation of a local diff-invariant action is identically divergence-free. This is why RP-DIVFREE is not an assumption and has no independence witness.",
+    "N2": "NOETHER, WEYL: the trace of the metric variation is proportional to the conformal anomaly of the action, with a NONZERO constant. This is the bridge between the two ledgers, and the non-vanishing is load-bearing (with_zero_kappa_tracelessness_is_vacuous).",
+    "N3": "a topological term has identically vanishing metric variation. This is RP-TOPO-INERT, and it is what makes the topological quotient DISAPPEAR on the field-equation side.",
 }
 
 THEOREMS = [
@@ -116,6 +121,24 @@ THEOREMS = [
         "module": "WeylActionClassification",
         "statement": "sqrt(-g) C^2 is Weyl invariant iff D = 4",
         "role": "INDEPENDENCE WITNESS for RP-DIM4. The Forge rail adds the sharper fact that C^2_D degenerates to E4 exactly at D = 3, where the Weyl tensor vanishes identically.",
+    },
+    {
+        "name": "traceless_iff_action_is_weyl_invariant + the_two_ledgers_agree",
+        "module": "WeylFieldEquations",
+        "statement": "the field equations are traceless iff the action is Weyl invariant, and the two conditions pick out the same one-dimensional space",
+        "role": "THE VOCABULARY SWAP. RP-WEYL on the action IS RP-TRACELESS on the field equations, via N2. Proved in both directions, so neither ledger is privileged.",
+    },
+    {
+        "name": "topological_terms_have_the_field_equations_of_zero + the_weyl_action_has_nontrivial_field_equations",
+        "module": "WeylFieldEquations",
+        "statement": "a topological term and zero have the same field equations, and the Weyl action does not",
+        "role": "AN ASSUMPTION THAT EXISTS IN ONE VOCABULARY AND NOT THE OTHER. RP-TOPO-INERT has an independence witness on the action side; on the field-equation side there is nothing to drop, because the quotient has already been taken by the time an equation is written. The second clause is the non-vacuity control.",
+    },
+    {
+        "name": "no_conformal_curvature_action_in_odd_dimension / exactly_one_degree_in_even_dimension",
+        "module": "WeylFieldEquations",
+        "statement": "in ODD dimension no conformally invariant local curvature action exists at any derivative order; in even dimension exactly one degree survives, k = D/2",
+        "role": "THE PREDICTION, and it is cheap to check. Weyl gravity is a four-dimensional accident in a precise sense, and D = 6 selects the CUBIC sector -- which is the declared next gate.",
     },
     {
         "name": "parity_is_independent_on_actions",
@@ -232,7 +255,7 @@ def build() -> dict[str, object]:
         "findings": FINDINGS,
         "theorems": THEOREMS,
         "ledger": {
-            "print_assumptions_closed": "37/37 across the two modules; 163/163 across the eighteen modules the shared gate drives",
+            "print_assumptions_closed": "47/47 across the three modules; 173/173 across the nineteen modules the shared gate drives",
             "coqchk_axiom_section": "<none>",
             "declared_assumptions_in_source": "none — no Axiom, Parameter, Hypothesis, Conjecture, Admitted or admit",
             "rationals_not_reals": (
@@ -240,10 +263,12 @@ def build() -> dict[str, object]:
                 "ledger for statements that are rational-linear."
             ),
         },
-        "gate_result": "RESULT: 23 green (0 red) — GATE: PASS",
+        "gate_result": "RESULT: 24 green (0 red) — GATE: PASS",
         "upstream_gate": UPSTREAM_GATE,
         "gate_negative_controls": [
             "seventeen inherited from the earlier modules, all rejected",
+            "a FALSE claim that the Weyl action has the field equations of zero is REJECTED — otherwise conformal gravity is empty and both ledgers describe nothing",
+            "a FALSE claim that a conformally invariant curvature action exists at D = 3 is REJECTED — otherwise the odd-dimension prediction is empty",
             "a FALSE claim that R^2 is Weyl invariant is REJECTED — otherwise RP-WEYL cuts nothing",
             "a FALSE claim that E4 is a multiple of C^2 is REJECTED — otherwise the topological quotient is empty",
             "a FALSE claim that C^2 is topological is REJECTED — otherwise conformal gravity has no field equations and every theorem here is about an empty theory",
@@ -264,6 +289,8 @@ def build() -> dict[str, object]:
         },
         "claim_flags": {
             "ACTION_CLASSIFIED_MODULO_TOPOLOGICAL": True,
+            "FIELD_EQUATION_LEDGER_PROVED_EQUIVALENT": True,
+            "ODD_DIMENSIONS_ADMIT_NO_CONFORMAL_CURVATURE_ACTION": True,
             "EVERY_ASSUMPTION_HAS_AN_INDEPENDENCE_WITNESS": True,
             "DERIVATIVE_ORDER_DERIVED_NOT_ASSUMED": True,
             "PARITY_REDUNDANT_ON_FIELD_EQUATIONS": True,
@@ -276,6 +303,18 @@ def build() -> dict[str, object]:
             "MATTER_COUPLINGS_COVERED": False,
             "QUANTUM_CLAIM": False,
         },
+        "the_two_ledgers": {
+            "on_the_action": "RP-LOCAL, RP-METRIC, RP-DIFF, RP-WEYL, RP-DIM4, RP-TOPO-INERT",
+            "on_the_field_equations": "RP-LOCAL, RP-METRIC, RP-DIFF, RP-TRACELESS, RP-DIM4",
+            "what_the_translation_costs": (
+                "Two things move. RP-TOPO-INERT is an assumption with an independence witness on the "
+                "action side and DISAPPEARS on the field-equation side, because the variation of a "
+                "topological term vanishes identically. And divergence-freedom, always quoted as a "
+                "property of the Bach tensor, is FREE from RP-DIFF via Noether's second theorem, so "
+                "it has no independence witness and is not an assumption at all. An assumption COUNT "
+                "is therefore vocabulary-dependent, which is itself worth recording."
+            ),
+        },
         "claim_boundary": (
             "In a zero-axiom Rocq development over Q, and independently by exact rational Gaussian "
             "elimination in Forge: the space of parity-even quadratic curvature actions is "
@@ -284,12 +323,14 @@ def build() -> dict[str, object]:
             "RP-WEYL, RP-DIM4 and RP-TOPO-INERT has an explicit independence witness; the curvature "
             "degree is forced by the dimension rather than assumed; and adjoining the parity-odd "
             "sector leaves the classical theory unchanged, so RP-PARITY is independent on actions and "
-            "redundant on field equations."
+            "redundant on field equations. On the field-equation side the same law is "
+            "equivalent to RP-LOCAL, RP-METRIC, RP-DIFF, RP-TRACELESS and RP-DIM4, and no "
+            "conformally invariant local curvature action exists in any odd dimension."
         ),
         "does_not_establish": [
             "the theorem's novelty. That conformal gravity is the unique conformally invariant quadratic gravity in four dimensions is CLASSICAL AND TEXTBOOK. What is new here is the machine-checked zero-axiom derivation with the geometric inputs isolated, the independence witness per assumption, the derived derivative order, and the parity result",
             "the conformal transformation laws (G2, G3) or the Gauss-Bonnet and Pontryagin theorems (G4, G7). These are asserted classical differential geometry, entered as coordinate vectors and weight formulas. A reader who rejects them rejects the result, and they are listed precisely so that is possible",
-            "the field equations. That the variation of Integral sqrt(-g) C^2 is the Bach tensor is NOT derived here; only the space of actions is classified. 'Same field equations' is defined as 'differ by a topological term', which is RP-TOPO-INERT, not a computation",
+            "the Bach tensor. Nothing here evaluates a metric variation. What is proved is that the space of field equations reachable from this action space is one-dimensional, and that the two assumption vocabularies pick out the same line; calling its generator the Bach tensor is an identification made in prose on the strength of N1-N3, not a theorem. 'Same field equations' is DEFINED as 'differ by a topological term', which is RP-TOPO-INERT",
             "anything about non-polynomial, nonlocal, or higher-derivative-than-quadratic actions, or about matter couplings. The classification is of polynomial curvature scalars in the pure-metric sector",
             "that RP-PARITY is redundant in the QUANTUM theory. It is not: the coefficient of the Pontryagin density is a gravitational theta-angle. Everything called redundant here is redundant modulo RP-TOPO-INERT, which is a classical statement, and this programme's claim boundary does not reach the quantum theory",
             "any claim about the BV-BFV complex, the residual cohomology, or the physical spectrum. The identification of W_+^2 and W_-^2 as the parity eigenbasis is an identity between coordinate vectors, not a statement about the certified residual classes as cohomology",
