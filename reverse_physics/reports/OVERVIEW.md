@@ -6,7 +6,8 @@ sense — not deriving laws from axioms, but finding the minimal physical
 assumptions a law is equivalent to?
 
 The answer is yes, with texture. Three of the four findings are **negative
-results about the programme's own shape**, which is the more useful outcome.
+results about the programme's own shape**, which is the more useful outcome —
+and a second law later landed on top, giving the lattice its first structure.
 
 ---
 
@@ -33,7 +34,7 @@ Three things are needed. The substrate already supplied one and a half.
 
 ## 2. The carriers
 
-Two, deliberately unlike each other.
+Three, deliberately unlike each other.
 
 **The linear carrier.** Linear vector fields `ẋ = Ax` on `ℝ^{2n}` with a fixed
 degree-of-freedom split and symplectic form. Everything is a rank computation
@@ -45,7 +46,8 @@ rational problem — and, unlike a vector space, the manifold has cohomology.
 
 **The stochastic carrier** (added last). Four states, column-stochastic evolution
 on distributions — the ensemble picture. Added because it is the only one of the
-three in which determinism and reversibility *can fail*.
+three in which determinism and reversibility *can fail*, and it later turned out
+to be where the second law lives too.
 
 ---
 
@@ -234,8 +236,9 @@ Stated plainly, because the certificates each carry their own version:
 | `..._TORUS_REVERSAL_ROCQ_V1` | `T⁴`, all modes | the reversal: law ⟺ A1 ∧ A2 ∧ A3, each independent |
 | `..._TORUS_SPLIT_ROCQ_V1` | `T⁴`, all modes | the decomposition is not canonical; corrects the split-dependence claim |
 | `..._STOCHASTIC_ROCQ_V1` | 4 states | reversibility is not an independent assumption |
+| `..._SECOND_LAW_ROCQ_V1` | 4 states | a second law: information conservation entails that disorder never decreases |
 
-Five zero-axiom Rocq modules, `coqchk` axiom section `<none>`, five fail-closed
+Six zero-axiom Rocq modules, `coqchk` axiom section `<none>`, six fail-closed
 negative controls, one Forge gate on both backends under ASan, two independent
 Python rails.
 
@@ -256,8 +259,19 @@ The Hamiltonian-privilege line is well mined. The remaining declared gates —
 `SP4_ORBIT`, `STOCHASTIC_GENERAL_N`, `PARAMETERISED_BASE` — are refinements of
 things already known and would add certificates without adding findings.
 
-The direction with genuine yield is a **second law**. Reverse physics pays off as
-a *lattice* of law/assumption pairs, and this probe has one law plus a
-side-result. The stochastic carrier is the natural home for a second, and
-majorization gives an exactly-rational route to it that avoids the logarithms
-which would otherwise break exact arithmetic.
+The direction with genuine yield was a **second law**, and it has since landed
+(`..._SECOND_LAW_ROCQ_V1`): on the stochastic carrier, information conservation
+entails that disorder never decreases. Exactness is kept by using purity —
+`Σpᵢ²`, the exact rational content of the Rényi-2 entropy — instead of Shannon
+entropy, so no logarithm appears; the entire analytic content is one polynomial
+identity settled by `ring`.
+
+**That gives the lattice its first structure.** `conserves_information` is now
+load-bearing for both laws: it makes reversibility redundant, and it entails the
+arrow of disorder. Two laws, one assumption.
+
+The open end is the **equality case** — proving that reversible evolution
+*preserves* purity exactly would give "reversible ⟺ no entropy production" and
+close the loop between the two laws. That is `REVERSE_PHYSICS_ENTROPY_EQUALITY`,
+and it is the one remaining gate that would add a finding rather than a
+refinement.

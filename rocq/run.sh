@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # run.sh — the reverse-physics torus GATE.
 #
-# Five developments, all zero-axiom, in dependency order.  The first four are
-# the torus chain; the fifth is an INDEPENDENT carrier (it imports none of them).
+# Six developments, all zero-axiom, in dependency order.  The first four are the
+# torus chain; the last two are an INDEPENDENT carrier (importing none of them).
 #
 #   ReversePhysicsTorus.v          the TOPOLOGICAL step: at every mode with a
 #                                  nonzero frequency closed = exact, so the
@@ -32,6 +32,11 @@
 #                                  can finally be tested.  Result: reversibility
 #                                  is NOT independent; it is exactly determinism
 #                                  plus information conservation.
+#   ReversePhysicsSecondLaw.v      a SECOND LAW on that carrier: information
+#                                  conservation entails that disorder never
+#                                  decreases.  Exactly rational -- purity
+#                                  (Renyi-2) rather than Shannon entropy, so no
+#                                  logarithms.
 #
 # Print Assumptions must say "Closed under the global context" for every
 # theorem, and coqchk must list NO axioms.
@@ -46,7 +51,7 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
 
-MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic)
+MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw)
 pass=0
 fail=0
 
@@ -175,8 +180,25 @@ Proof.
 Qed.
 NEG
 
+
+# (f) Disorder is not merely conserved -- the mixer strictly increases it.
+cat > _neg_f.v <<'NEG'
+Require Import QArith.
+Require Import ReversePhysicsStochastic.
+Require Import ReversePhysicsSecondLaw.
+Open Scope Q_scope.
+(* FALSE on purpose: a doubly stochastic evolution can strictly DECREASE purity,
+   so claiming conservation would make the second law vacuous. *)
+Theorem bogus_purity_is_conserved :
+  forall M p, nonneg M -> (forall j, col_sum M j == 1) -> conserves_information M ->
+    purity (evolve M p) == purity p.
+Proof.
+  intros. reflexivity.
+Qed.
+NEG
+
 neg_ok=0
-for n in _neg_a _neg_b _neg_c _neg_d _neg_e; do
+for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f; do
   if coqc "$n.v" >/tmp/rp_neg.log 2>&1; then
     echo "  $n: FALSE claim was ACCEPTED — REJECT"; neg_ok=1
   else
@@ -184,7 +206,7 @@ for n in _neg_a _neg_b _neg_c _neg_d _neg_e; do
   fi
 done
 if [ "$neg_ok" -eq 0 ]; then pass=$((pass+1)); else fail=$((fail+1)); fi
-rm -f _neg_[abcde].v _neg_[abcde].vo _neg_[abcde].vok _neg_[abcde].vos _neg_[abcde].glob ._neg_[abcde].aux
+rm -f _neg_[a-f].v _neg_[a-f].vo _neg_[a-f].vok _neg_[a-f].vos _neg_[a-f].glob ._neg_[a-f].aux
 
 echo
 if [ "$fail" -eq 0 ]; then

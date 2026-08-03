@@ -116,6 +116,8 @@ schema/  certificates/  tests/  reports/
 ../rocq/ReversePhysicsTorusSplit.v     why A2 is the remainder of a split choice
 ../rocq/ReversePhysicsStochastic.v     a finite-state carrier: reversibility is
                                        not an independent assumption
+../rocq/ReversePhysicsSecondLaw.v      a second law on that carrier: disorder
+                                       never decreases
 ../rocq/run.sh                         the zero-axiom gate (coqc, coqchk, controls)
 ```
 
@@ -131,6 +133,7 @@ schema/  certificates/  tests/  reports/
 | `..._TORUS_REVERSAL_ROCQ_V1` | `G4` (all modes) | **the reversal**: law ⟺ A1 ∧ A2 ∧ A3, each derived *from* the law, each independent by witness — [report](reports/torus-reversal-rocq.md) |
 | `..._TORUS_SPLIT_ROCQ_V1` | `G4` (all modes) | **why A2 isn't physical**: A1's split-dependence cancels against it exactly, so the physical/geometric division is *not canonical*; corrects the earlier split-dependence theorem, which used an isotropic pairing — [report](reports/torus-split-rocq.md) |
 | `..._STOCHASTIC_ROCQ_V1` | `G1` (4 states) | a **different carrier** where determinism and reversibility can fail: reversible ⟺ deterministic ∧ information-conserving, so **reversibility was never an independent assumption** — [report](reports/stochastic-rocq.md) |
+| `..._SECOND_LAW_ROCQ_V1` | `G1` (4 states) | **a second law**: information conservation entails that disorder never decreases (purity/Rényi-2, no logarithms). The same assumption carries both laws — [report](reports/second-law-rocq.md) |
 
 The G1 computation lives **in Forge** (`math/qmat` exact rational rank), gated at
 `forge/examples/reverse_physics_torus_gate.forge` in tango and pinned here by
