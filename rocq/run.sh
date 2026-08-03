@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # run.sh — the reverse-physics torus GATE.
 #
-# Sixteen developments, all zero-axiom, in dependency order.  The first four are the
+# Eighteen developments, all zero-axiom, in dependency order.  The first four are the
 # torus chain, the next four an INDEPENDENT stochastic carrier, and the last two
 # engage Carcassi-Aidala directly: a BRIDGE restating the torus results in their
 # notation, and a PARITY OBSTRUCTION on their degree-of-freedom counting.
@@ -80,6 +80,17 @@
 #                                  coprime-ratio-hierarchy for the order clause.
 #   CoprimeHierarchyKernelParity.v which kernel appears: an involution fixing the
 #                                  vertex forces symmetric iff q even.
+#   WeylActionClassification.v     REVERSE PHYSICS ON THE SUBJECT ITSELF: the
+#                                  conformal-gravity action is EQUIVALENT to
+#                                  five assumptions, modulo topological terms,
+#                                  and each is independent.  The derivative
+#                                  order is DERIVED, not assumed.
+#   WeylParityAndTopology.v        and the sharper half: parity invariance is
+#                                  INDEPENDENT on the space of actions and
+#                                  REDUNDANT on the space of field equations.
+#                                  The gap is a gravitational theta-angle, and
+#                                  W_+^2, W_-^2 -- the programme's own certified
+#                                  residual classes -- are its eigenbasis.
 #   CoprimeHierarchyChargeBound.v  an AUDIT of the physics gloss on those two:
 #                                  J = p n1 + q n2 has the resonant sector as its
 #                                  exact commutant, so EVERY possible obstruction
@@ -102,7 +113,7 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
 
-MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount ReversePhysicsNoConformalCount ReversePhysicsRelationalCount ReversePhysicsExponentAdditivity CoprimeHierarchyOrderLaw CoprimeHierarchyKernelParity CoprimeHierarchyChargeBound)
+MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount ReversePhysicsNoConformalCount ReversePhysicsRelationalCount ReversePhysicsExponentAdditivity CoprimeHierarchyOrderLaw CoprimeHierarchyKernelParity CoprimeHierarchyChargeBound WeylActionClassification WeylParityAndTopology)
 pass=0
 fail=0
 
@@ -449,8 +460,59 @@ Proof.
 Qed.
 NEG
 
+# (r) R^2 must NOT be Weyl invariant -- if it were, RP-WEYL would cut nothing
+#     and the classification would be vacuous.
+cat > _neg_r.v <<'NEG'
+Require Import QArith.
+Require Import WeylActionClassification.
+Open Scope Q_scope.
+(* FALSE on purpose: the anomaly of R^2 is 3, not 0.  A gate that accepted this
+   would be accepting a three-dimensional answer as one-dimensional. *)
+Theorem bogus_r_sq_is_weyl_invariant : anomaly r_sq == 0.
+Proof. apply weyl_sq_is_invariant. Qed.
+NEG
+
+# (s) The Euler density must NOT be a multiple of the Weyl square -- otherwise
+#     the topological quotient removes nothing and cannot be load-bearing.
+cat > _neg_s.v <<'NEG'
+Require Import QArith.
+Require Import WeylActionClassification.
+Open Scope Q_scope.
+(* FALSE on purpose: E4 and C^2 are independent.  If E4 were a multiple of C^2
+   the "modulo topological terms" clause would be empty. *)
+Theorem bogus_euler_is_a_multiple_of_weyl_sq : qeq euler (qscale 1 weyl_sq).
+Proof. unfold qeq, qscale, euler, weyl_sq. cbn. repeat split; reflexivity. Qed.
+NEG
+
+# (t) The Weyl square must NOT be topological -- otherwise conformal gravity has
+#     no field equations at all and every theorem about it is empty.
+cat > _neg_t.v <<'NEG'
+Require Import QArith.
+Require Import WeylParityAndTopology.
+Open Scope Q_scope.
+(* FALSE on purpose: weyl_sq_is_not_topological.  If C^2 were topological the
+   entire parity result would be about an empty theory. *)
+Theorem bogus_weyl_sq_is_topological : topological weyl_sq4.
+Proof. exists 1, 0. unfold q4eq, q4add, q4scale, weyl_sq4, euler4, pont. cbn.
+  repeat split; reflexivity. Qed.
+NEG
+
+# (u) W_+^2 must NOT lie in the parity-even span -- otherwise parity invariance
+#     is vacuous as an assumption on actions.
+cat > _neg_u.v <<'NEG'
+Require Import QArith.
+Require Import WeylParityAndTopology.
+Open Scope Q_scope.
+(* FALSE on purpose: W_+^2 has a nonzero Pontryagin component.  If it were
+   parity-even, "parity is independent on actions" would say nothing. *)
+Theorem bogus_w_plus_is_parity_even :
+  q4eq w_plus (q4add (q4scale (1#2) weyl_sq4) (q4scale 0 euler4)).
+Proof. unfold q4eq, q4add, q4scale, w_plus, weyl_sq4, euler4. cbn.
+  repeat split; reflexivity. Qed.
+NEG
+
 neg_ok=0
-for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _neg_k _neg_l _neg_m _neg_n _neg_o _neg_p _neg_q; do
+for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _neg_k _neg_l _neg_m _neg_n _neg_o _neg_p _neg_q _neg_r _neg_s _neg_t _neg_u; do
   if coqc "$n.v" >/tmp/rp_neg.log 2>&1; then
     echo "  $n: FALSE claim was ACCEPTED — REJECT"; neg_ok=1
   else
@@ -458,7 +520,7 @@ for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _
   fi
 done
 if [ "$neg_ok" -eq 0 ]; then pass=$((pass+1)); else fail=$((fail+1)); fi
-rm -f _neg_[a-q].v _neg_[a-q].vo _neg_[a-q].vok _neg_[a-q].vos _neg_[a-q].glob ._neg_[a-q].aux
+rm -f _neg_[a-u].v _neg_[a-u].vo _neg_[a-u].vok _neg_[a-u].vos _neg_[a-u].glob ._neg_[a-u].aux
 
 echo
 if [ "$fail" -eq 0 ]; then

@@ -5,13 +5,22 @@ for the pure-Weyl programme carry **reverse physics** in the Carcassi–Aidala
 sense — not deriving laws from axioms, but finding the minimal physical
 assumptions a law is equivalent to?
 
-The answer is yes, with texture. Of the eight findings, **five are negative
+The answer is yes, with texture. Of the nine findings, **five are negative
 results** — the more useful outcome. The fifth is the only place a *lattice*
 appeared: two laws that constrain each other rather than a list of independent
 results. The sixth turned outward, and engages the Carcassi–Aidala programme's
 own open conjecture for general relativity. The eighth is the discipline turned
 on this document: an interpretation published here in §3.7 was **retracted**,
 with proof, after an audit found it backwards.
+
+The ninth (§3.9) is the one a reviewer should read first, because it answers the
+objection the other eight invite: **it does reverse physics on Weyl gravity
+itself**, not on a carrier. The action turns out to be *equivalent* to five
+assumptions rather than implied by six — one of the usual inputs is derivable —
+and one assumption is independent and redundant at the same time, depending on
+whether you are classifying actions or field equations. The separation of
+physics from mathematics that made that visible is written up on its own in
+[`PHYSICS-VS-MATH.md`](PHYSICS-VS-MATH.md).
 
 ---
 
@@ -294,6 +303,60 @@ decorative.
 
 [Full report](coprime-charge-bound.md).
 
+### 3.9 And then the method was pointed at Weyl gravity itself
+
+Every finding above tests a carrier, a toy, or another programme's conjecture.
+This one is about the theory this repository is named for.
+
+The law is `S[g] = α ∫ √−g C_abcd C^abcd`, and modulo topological terms it is
+the **unique** action satisfying `RP-LOCAL`, `RP-METRIC`, `RP-DIFF`, `RP-WEYL`,
+`RP-DIM4` — an equivalence, with an independence witness for each.
+
+The computation is small enough to state here. In coordinates
+`X = a·Riem² + b·Ric² + c·R²`, the Gauss–Bonnet density is `(1,−4,1)` and the
+Weyl square is `(1,−2,⅓)`. The whole conformal anomaly of the sector is carried
+by the `R²` coordinate, so Weyl invariance is the single linear equation
+
+```
+a + b + 3c = 0
+```
+
+whose solution space is exactly `span{C², E₄}` — two-dimensional, and
+one-dimensional after the topological quotient. Rational linear algebra in `ℚ³`,
+proved in Rocq and independently re-derived by exact Gaussian elimination in
+Forge.
+
+**Three things came out of it that were not put in.**
+
+*The derivative order is not an assumption.* "Quadratic in curvature" is
+normally listed as an input. A density `√−g X` of curvature degree `k` has
+constant-Weyl weight `D − 2k`, so invariance forces `k = D/2`; at `D = 4` only
+`k = 2` survives, and the same line excludes the cosmological term and
+Einstein–Hilbert. The standard motivation uses one more physical input than it
+needs.
+
+*Parity is independent on actions and redundant on field equations.* Adjoining
+the parity-odd Pontryagin density gives a genuine two-parameter family of
+actions `α W₊² + β W₋²` — but a **one**-parameter family of field equations,
+since the difference from `((α+β)/2)C²` is `((α−β)/2)P`, which is topological.
+The fibre is a gravitational θ-angle: real, but visible only in the quantum
+theory, which this programme's claim boundary does not reach.
+
+*And `[W₊²]`, `[W₋²]` — the programme's own certified residual classes — are
+exactly the parity eigenbasis of this sector*, since `C² = W₊² + W₋²` and
+`P = W₊² − W₋²`. `RP-PARITY` is precisely the assumption that ties them
+together, and classically it is free of charge.
+
+**This closes a loop with §3.6.** That section found, without looking for it,
+that the parity balance excluded in odd dimension *is* achievable in dimension
+four at exactly the weight of `C_abcd C^abcd`. The counting argument predicted
+that a conformal density exists there. This section proves it is, modulo
+topology, the only one. Two independent lines meet on the same object and
+neither was set up to find the other.
+
+[Full report](weyl-action-reverse-physics.md) ·
+[separation ledger](PHYSICS-VS-MATH.md).
+
 ---
 
 ## 4. The reversal
@@ -418,9 +481,10 @@ Stated plainly, because the certificates each carry their own version:
 | `..._EXPONENT_ADDITIVITY_ROCQ_V1` | products | and DOF-independence becomes additivity of that exponent |
 | `..._COPRIME_HIERARCHY_ROCQ_V1` | all coprime p:q | the programme's own conjecture: order law proved, even `p` unobstructed, four new instances |
 | `..._COPRIME_CHARGE_BOUND_ROCQ_V1` | all p,q > 0 | and the physics reading of it **retracted**: the obstruction conserves a positive charge, so it bounds rather than destabilises |
+| `..._WEYL_ACTION_V1` | all quadratic curvature actions, all dimensions | **the subject itself**: the Weyl action is *equivalent* to five assumptions; the derivative order is derived, not assumed; parity is independent on actions and redundant on field equations |
 
-Sixteen zero-axiom Rocq modules, `coqchk` axiom section `<none>`, seventeen
-fail-closed negative controls, two Forge gates on both backends under ASan, two
+Eighteen zero-axiom Rocq modules, `coqchk` axiom section `<none>`, twenty-one
+fail-closed negative controls, three Forge gates on both backends under ASan, two
 independent Python rails. `rocq/ReversePhysicsAOPBridge.v` additionally proves
 that the ω used throughout **is** their `J ⊗ Iₙ`, so the engagement in §3.6 is
 bridged rather than asserted.
@@ -470,6 +534,11 @@ The directions that would still yield something:
   interpretation flagged as such is a candidate for the same treatment — and
   `GHOST_MODEL_OBSTRUCTION`, redoing the deformation with a genuinely indefinite
   `h0 = w1·n̂₁ − w2·n̂₂`, is the one that follows directly.
+- **Six derivatives in six dimensions.** The weight argument in §3.9 says the
+  conformally invariant curvature degree is `k = D/2`, so odd dimensions have no
+  such sector at all and `D = 6` selects the *cubic* one. Running the same exact
+  linear algebra there tests whether the method scales and whether the parity
+  result has an analogue. Declared as `WEYL_ACTION_SIX_DERIVATIVE_D6`.
 - **Someone reading this and disagreeing.** Three of the five findings are
   negative claims about a live research programme. They should be argued with —
   [`AOP-CONNECTION.md`](AOP-CONNECTION.md) puts two of them in front of that
