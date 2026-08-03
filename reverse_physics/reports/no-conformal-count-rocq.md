@@ -75,6 +75,10 @@ it cannot exist.
   count must handle — but nothing is claimed about curved or
   non-conformally-flat cases.
 - **Constant conformal factors only.**
+- **Conformal invariants on 3-manifolds do exist** — the gravitational
+  Chern–Simons invariant, for one. It is global rather than local, real-valued
+  modulo framing, and neither monotone nor region-additive, so it is not a
+  count and is not reached by this argument.
 - **Extra structure is untouched.** A compensator or dilaton breaks
   naturality-plus-Weyl-invariance by choosing a scale — which is what conformal
   invariance forbids. That fork is stated, not resolved.

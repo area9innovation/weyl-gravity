@@ -87,6 +87,12 @@ theory this repository studies sits on the other side of the same parity.
   result needs only the necessary condition and is unaffected; the
   dimension-four statement is about weights, not a constructed invariant.
 - **Constant `Ω` only.** A full treatment carries derivative-of-`Ω` terms.
+- **There ARE conformal invariants on a 3-manifold.** The gravitational
+  Chern–Simons invariant (Chern–Simons, *Ann. Math.* 1974) is a global conformal
+  invariant of oriented Riemannian 3-manifolds. Parity does not reach it — it is
+  not a local density — and it is real-valued modulo a framing ambiguity,
+  neither monotone nor region-additive, so it is not a count. It bounds this
+  result rather than contradicting it.
 - **No claim about GR or its dynamics.** Conformal weights are kinematic.
 - Not a reproduction, confirmation, or refutation of Carcassi–Aidala's derivation.
 

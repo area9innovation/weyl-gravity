@@ -5,10 +5,11 @@ for the pure-Weyl programme carry **reverse physics** in the Carcassi–Aidala
 sense — not deriving laws from axioms, but finding the minimal physical
 assumptions a law is equivalent to?
 
-The answer is yes, with texture. Of the five findings, **three are negative
-results about the programme's own shape** — the more useful outcome — and the
-fifth is the only place a *lattice* appeared: two laws that constrain each other
-rather than a list of independent results.
+The answer is yes, with texture. Of the six findings, **four are negative
+results** — the more useful outcome. The fifth is the only place a *lattice*
+appeared: two laws that constrain each other rather than a list of independent
+results. The sixth turned outward, and engages the Carcassi–Aidala programme's
+own open conjecture for general relativity.
 
 ---
 
@@ -180,6 +181,50 @@ point; two laws that constrain each other is structure, and structure is what
 reverse physics is for. Everything in §3.1–3.4 is about a single law; this is
 the finding that needed a second.
 
+### 3.6 Counting degrees of freedom is impossible in a conformally invariant theory
+
+The only finding that engages their programme rather than our carriers, and the
+one place this being a *Weyl-gravity* repository mattered.
+
+Their unpublished GR conjecture — *GR ⟺ det/rev + DOF independence for
+infinitely many dense DOFs* — needs a degree-of-freedom count, proposed as a
+spatial volume. They also present a **trilemma** for such counts (every point a
+single DOF · finite volume finitely many · additive) with three resolutions:
+a density, the counting measure, or a non-additive "quantum measure". They drop
+additivity for quantum mechanics and conjecture quantum gravity does the same.
+
+Conformal invariance is **not a fourth item** in that trilemma — it is a *filter*
+on which resolutions are admissible. Applying it closes all three:
+
+| branch | status |
+|---|---|
+| density `∫ρ dvol` | **excluded by parity**: curvature scalars have weight `−(2m+D)`, always even; the volume element has weight `+d`; invariance needs `2m+D = d`, impossible for odd `d`. A Cauchy surface is 3-dimensional. |
+| counting measure | invariant but **uninformative** |
+| non-additive | **refuted**: on flat space a dilation is conformal, so every ball ties — a unit ball and one of radius 10¹⁰⁰ get the same value. *Additivity is never used*, which is why dropping it buys nothing. |
+
+So *"how many degrees of freedom are in this region"* is not a well-posed
+question in a conformally invariant theory.
+
+**But the assumption survives the loss of the count.** A *relative* count
+`ν(U,V)` does survive — dilation invariance acts on both arguments, so it sees
+only the ratio of scales, which is what conformal invariance always says. With
+the chain rule it is multiplicative, hence `f(2ⁿ) = f(2)ⁿ`: **what replaces the
+count is a single scaling exponent**. And `#states = ∏ #confDOF`, a product of
+counts, transposes to **additivity of that exponent** — proved without
+logarithms, since `2^{d_A+d_B} = 2^{d_A}·2^{d_B}` makes the multiplicative
+statement the additive one.
+
+Two things fell out that were not planted. In dimension **four** the parity
+balance *is* achievable, at `(m,D) = (2,0)` — exactly the weight of
+`C_{abcd}C^{abcd}`, the Weyl action. Conformal gravity is the even-dimensional
+case where a conformal density exists; a Cauchy surface is the odd case where it
+cannot. And the refutation and the replacement are one phenomenon: assuming an
+absolute reference region forces the exponent to zero, so **the exponent is
+nonzero precisely because no conformally invariant reference exists**.
+
+The full engagement, written to be read by them, is
+[`AOP-CONNECTION.md`](AOP-CONNECTION.md).
+
 ---
 
 ## 4. The reversal
@@ -224,7 +269,9 @@ the results.**
   which truncations were covered, which turned "constant in N" into a question.
 
 A looser process would have produced four positive-sounding certificates and none
-of the findings in §3.1–3.4.
+of the findings in §3.1–3.4. And §3.6 exists only because a `does_not_establish`
+line — "no physical reading of A2" — was left standing as a problem instead of
+being smoothed away.
 
 Three other pieces of discipline paid.
 
@@ -255,6 +302,16 @@ Stated plainly, because the certificates each carry their own version:
 - **No `Sp(4)`-orbit statement.** Split-dependence is witnessed between two
   admissible splits and cancellation proved for three coordinate pairings; the
   continuum is not quantified over.
+- **The conformal results are for CONSTANT rescalings**, and the parity argument
+  only for densities built from the metric alone. There *are* conformal
+  invariants on a 3-manifold — the gravitational Chern–Simons invariant is one
+  (Chern–Simons, *Ann. Math.* 1974) — but it is global rather than a local
+  density, real-valued modulo a framing ambiguity, and neither monotone nor
+  region-additive, so it is not a count. It bounds the claims rather than
+  contradicting them.
+- **§3.6 formalises a reading of an unpublished talk.** Their DOF count appears
+  on a slide with a question mark. We have attacked one interpretation of it,
+  and they may mean something else.
 - **No physical reading of A2** — §3.3 explains why it resists one; it does not
   supply one.
 - **Nothing transfers between carriers.** The stochastic equivalence is four
@@ -286,10 +343,16 @@ Stated plainly, because the certificates each carry their own version:
 | `..._SECOND_LAW_ROCQ_V1` | 4 states | a second law: information conservation entails that disorder never decreases |
 | `..._ENTROPY_EQUALITY_ROCQ_V1` | 4 states | reversible evolution is exactly entropy-neutral |
 | `..._ENTROPY_CONVERSE_ROCQ_V1` | 4 states | the biconditional: reversible iff no entropy production |
+| `..._CONFORMAL_COUNT_ROCQ_V1` | all dimensions | no conformally invariant DOF density in odd dimension, by parity |
+| `..._NO_CONFORMAL_COUNT_ROCQ_V1` | flat space | and none non-additive either: every ball ties |
+| `..._RELATIONAL_COUNT_ROCQ_V1` | flat space | what replaces it: a single scaling exponent |
+| `..._EXPONENT_ADDITIVITY_ROCQ_V1` | products | and DOF-independence becomes additivity of that exponent |
 
-Eight zero-axiom Rocq modules, `coqchk` axiom section `<none>`, eight fail-closed
-negative controls, one Forge gate on both backends under ASan, two independent
-Python rails.
+Thirteen zero-axiom Rocq modules, `coqchk` axiom section `<none>`, thirteen
+fail-closed negative controls, one Forge gate on both backends under ASan, two
+independent Python rails. `rocq/ReversePhysicsAOPBridge.v` additionally proves
+that the ω used throughout **is** their `J ⊗ Iₙ`, so the engagement in §3.6 is
+bridged rather than asserted.
 
 ```bash
 cd rocq && ./run.sh                                          # the proofs
@@ -319,6 +382,8 @@ The directions that would still yield something:
 - **A third law.** The lattice has one cycle. Two cycles, or a law that
   *conflicts* with the assumption set, is where the method starts discriminating
   between accounts rather than describing one.
+- **Non-constant conformal factors.** Everything in §3.6 uses constant `Ω`. The
+  no-go should strengthen under the full local group, but that is not shown.
 - **A weakenable base** (§4). Everything here is an equivalence over a *declared
   carrier*. Reverse mathematics compares against a base one can weaken; this
   probe never built one, and `marginal_depends_on_the_dof_split` is the only

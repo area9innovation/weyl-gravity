@@ -274,8 +274,14 @@ exponent is rejected, so independence genuinely adds.
 The factorisation itself is a hypothesis — it is what is being transposed, not
 what is being proved.
 
-**Two honest limits.** The obstruction is for densities built from the **metric
-alone**. Introducing a compensator or dilaton of nonzero weight evades it — but
+**Three honest limits.** There *are* conformal invariants on a 3-manifold — the
+gravitational Chern–Simons invariant is one (Chern–Simons, *Ann. Math.* 1974),
+and you will think of it immediately. It is not reached by any of the above: it
+is **global rather than a local density**, so parity does not apply; and it is
+real-valued modulo a framing ambiguity, neither monotone nor region-additive, so
+it is not a *count*. It bounds what we claim rather than contradicting it.
+
+The obstruction is for densities built from the **metric alone**. Introducing a compensator or dilaton of nonzero weight evades it — but
 only by choosing a scale, which is what conformal invariance forbids. That fork
 is real physics, not a loophole. And *realisability* is not addressed: the
 arithmetic says which weights are available, not which `(m, D)` are actually

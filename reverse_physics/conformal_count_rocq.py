@@ -162,6 +162,7 @@ def build() -> dict[str, object]:
             "anything about densities built with EXTRA STRUCTURE. A compensator or dilaton of nonzero weight evades the parity argument -- by choosing a scale, which is what conformal invariance forbids. That fork is stated, not resolved",
             "REALISABILITY. The arithmetic says which weights are available, not which (m, D) are realised by an actual invariant. The negative result needs only the necessary condition and is unaffected; the dimension-four positive statement is about weights, not about a constructed invariant",
             "anything about non-constant conformal factors. The weight bookkeeping is for constant Omega; a full treatment carries derivative-of-Omega terms",
+            "that there are NO conformal invariants on a 3-manifold. There are: the gravitational Chern-Simons invariant is a global conformal invariant of oriented Riemannian 3-manifolds (Chern and Simons, Ann. Math. 1974). It is not a local density, so the parity argument does not reach it; and it is real-valued modulo a framing ambiguity, not monotone, not positive and not region-additive, so it is not a COUNT. It bounds what these results claim rather than contradicting them",
             "any claim about general relativity or its dynamics. Conformal weights are kinematic",
             "a reproduction, confirmation or refutation of Carcassi--Aidala's own derivation",
             "any quantum, causal, or field-theoretic claim",
