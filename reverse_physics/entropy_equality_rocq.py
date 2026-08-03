@@ -154,7 +154,11 @@ def build() -> dict[str, object]:
             "a reproduction, confirmation or refutation of Carcassi--Aidala's own derivation",
             "any quantum, causal, or field-theoretic claim",
         ],
-        "next_gate": "REVERSE_PHYSICS_ENTROPY_CONVERSE: steps (a) and (b) of partial_closure, which would give the biconditional and close the loop between the two laws.",
+        "superseded_in_part_by": {
+            "result_id": "REVERSE_PHYSICS_ENTROPY_CONVERSE_ROCQ_V1",
+            "respect": "the converse and hence the biconditional, both of which this certificate recorded as not established, are now proved",
+        },
+        "next_gate": "REVERSE_PHYSICS_ENTROPY_CONVERSE (NOW CLOSED by REVERSE_PHYSICS_ENTROPY_CONVERSE_ROCQ_V1): steps (a) and (b) of partial_closure, which would give the biconditional and close the loop between the two laws.",
         "verification_commands": [
             "cd rocq && ./run.sh",
             "PYTHONPATH=. python3 -m reverse_physics.entropy_equality_rocq --check",

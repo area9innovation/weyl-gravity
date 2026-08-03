@@ -54,7 +54,7 @@
   },
   "lifecycle_ladder": "reverse-physics-v0",
   "lifecycle_state": "NECESSITY_CERTIFIED",
-  "next_gate": "REVERSE_PHYSICS_ENTROPY_CONVERSE: steps (a) and (b) of partial_closure, which would give the biconditional and close the loop between the two laws.",
+  "next_gate": "REVERSE_PHYSICS_ENTROPY_CONVERSE (NOW CLOSED by REVERSE_PHYSICS_ENTROPY_CONVERSE_ROCQ_V1): steps (a) and (b) of partial_closure, which would give the biconditional and close the loop between the two laws.",
   "partial_closure": {
     "established": "reversible ==> purity preserved exactly, and the strict mechanism of the converse (spreading over states of differing probability strictly produces entropy)",
     "not_established": "the converse itself: purity preserved ==> reversible",
@@ -74,6 +74,10 @@
   "result_id": "REVERSE_PHYSICS_ENTROPY_EQUALITY_ROCQ_V1",
   "result_state": "REVERSIBLE_EVOLUTION_PRESERVES_PURITY_EXACTLY_CONVERSE_NOT_ESTABLISHED",
   "schema": "reverse-physics-entropy-equality-rocq-v1",
+  "superseded_in_part_by": {
+    "respect": "the converse and hence the biconditional, both of which this certificate recorded as not established, are now proved",
+    "result_id": "REVERSE_PHYSICS_ENTROPY_CONVERSE_ROCQ_V1"
+  },
   "the_finding": {
     "detail": "sparse_square is the mechanism: with the underlying map injective at most one term of each row survives, so squaring the sum is the same as summing the squares. Nothing is lost because nothing is mixed. Conversely row_deficit shows the loss is exactly a sum of weighted squared differences, and spreading_produces_entropy shows any genuine spreading makes it strictly positive.",
     "lattice_status": "The two laws of this stream are now linked in one direction: reversibility (the first carrier's redundant assumption) implies no entropy production (the second law's equality case). The reverse link is open.",

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # run.sh — the reverse-physics torus GATE.
 #
-# Seven developments, all zero-axiom, in dependency order.  The first four are
-# the torus chain; the last three are an INDEPENDENT carrier (importing none of
+# Eight developments, all zero-axiom, in dependency order.  The first four are
+# the torus chain; the last four are an INDEPENDENT carrier (importing none of
 # them).
 #
 #   ReversePhysicsTorus.v          the TOPOLOGICAL step: at every mode with a
@@ -41,8 +41,11 @@
 #   ReversePhysicsEntropyEquality.v  the EQUALITY case, forward half: reversible
 #                                  evolution preserves purity EXACTLY, and
 #                                  spreading over states of differing probability
-#                                  strictly produces entropy.  The converse is
-#                                  explicitly not established.
+#                                  strictly produces entropy.
+#   ReversePhysicsEntropyConverse.v  the CONVERSE, and so the BICONDITIONAL:
+#                                  preserving purity on one distribution with
+#                                  distinct entries forces reversibility.  The
+#                                  loop between the stream's two laws is closed.
 #
 # Print Assumptions must say "Closed under the global context" for every
 # theorem, and coqchk must list NO axioms.
@@ -57,7 +60,7 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
 
-MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality)
+MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse)
 pass=0
 fail=0
 
@@ -220,8 +223,31 @@ Proof.
 Qed.
 NEG
 
+
+# (h) The test distribution must have DISTINCT entries.  Every doubly stochastic
+#     map preserves the uniform distribution, so a uniform test detects nothing.
+cat > _neg_h.v <<'NEG'
+Require Import QArith.
+Require Import ReversePhysicsStochastic.
+Require Import ReversePhysicsSecondLaw.
+Require Import ReversePhysicsEntropyEquality.
+Require Import ReversePhysicsEntropyConverse.
+Open Scope Q_scope.
+Definition p_unif : St -> Q := fun _ => 1 # 4.
+(* FALSE on purpose: the mixer preserves the uniform distribution exactly and is
+   not reversible, so a uniform test distribution proves nothing.  This is why
+   p_test has pairwise distinct entries. *)
+Theorem bogus_uniform_test_suffices :
+  forall M, (forall a b, 0 <= M a b) -> (forall j, col_sum M j == 1) ->
+    conserves_information M ->
+    purity (evolve M p_unif) == purity p_unif -> reversible M.
+Proof.
+  intros M Hnn Hcol Hrow Heq. exact Heq.
+Qed.
+NEG
+
 neg_ok=0
-for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g; do
+for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h; do
   if coqc "$n.v" >/tmp/rp_neg.log 2>&1; then
     echo "  $n: FALSE claim was ACCEPTED — REJECT"; neg_ok=1
   else
@@ -229,7 +255,7 @@ for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g; do
   fi
 done
 if [ "$neg_ok" -eq 0 ]; then pass=$((pass+1)); else fail=$((fail+1)); fi
-rm -f _neg_[a-g].v _neg_[a-g].vo _neg_[a-g].vok _neg_[a-g].vos _neg_[a-g].glob ._neg_[a-g].aux
+rm -f _neg_[a-h].v _neg_[a-h].vo _neg_[a-h].vok _neg_[a-h].vos _neg_[a-h].glob ._neg_[a-h].aux
 
 echo
 if [ "$fail" -eq 0 ]; then

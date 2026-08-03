@@ -120,6 +120,8 @@ schema/  certificates/  tests/  reports/
                                        never decreases
 ../rocq/ReversePhysicsEntropyEquality.v
                                        the equality case, forward half
+../rocq/ReversePhysicsEntropyConverse.v
+                                       the converse, and the biconditional
 ../rocq/run.sh                         the zero-axiom gate (coqc, coqchk, controls)
 ```
 
@@ -136,7 +138,8 @@ schema/  certificates/  tests/  reports/
 | `..._TORUS_SPLIT_ROCQ_V1` | `G4` (all modes) | **why A2 isn't physical**: A1's split-dependence cancels against it exactly, so the physical/geometric division is *not canonical*; corrects the earlier split-dependence theorem, which used an isotropic pairing — [report](reports/torus-split-rocq.md) |
 | `..._STOCHASTIC_ROCQ_V1` | `G1` (4 states) | a **different carrier** where determinism and reversibility can fail: reversible ⟺ deterministic ∧ information-conserving, so **reversibility was never an independent assumption** — [report](reports/stochastic-rocq.md) |
 | `..._SECOND_LAW_ROCQ_V1` | `G1` (4 states) | **a second law**: information conservation entails that disorder never decreases (purity/Rényi-2, no logarithms). The same assumption carries both laws — [report](reports/second-law-rocq.md) |
-| `..._ENTROPY_EQUALITY_ROCQ_V1` | `G1` (4 states) | reversible evolution preserves purity **exactly**, and spreading strictly produces entropy. The converse is **not** proved — [report](reports/entropy-equality-rocq.md) |
+| `..._ENTROPY_EQUALITY_ROCQ_V1` | `G1` (4 states) | reversible evolution preserves purity **exactly**, and spreading strictly produces entropy — [report](reports/entropy-equality-rocq.md) |
+| `..._ENTROPY_CONVERSE_ROCQ_V1` | `G1` (4 states) | **the biconditional**: reversible ⟺ no entropy production. The lattice's first closed loop — [report](reports/entropy-converse-rocq.md) |
 
 The G1 computation lives **in Forge** (`math/qmat` exact rational rank), gated at
 `forge/examples/reverse_physics_torus_gate.forge` in tango and pinned here by
