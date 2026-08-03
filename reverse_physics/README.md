@@ -40,9 +40,14 @@ CARRIER_DECLARED → SEPARATION_CERTIFIED → NECESSITY_CERTIFIED
                  → SUFFICIENCY_CERTIFIED → EQUIVALENCE_CERTIFIED
 ```
 
-Only the first three are reachable with the **rails in this directory**.
-`SUFFICIENCY_CERTIFIED` and `EQUIVALENCE_CERTIFIED` require a derivation and a
-reversal over a base theory, which exact rational computation cannot supply.
+Only the first three are reached. `SUFFICIENCY_CERTIFIED` and
+`EQUIVALENCE_CERTIFIED` require a derivation and a reversal over a base theory.
+
+The Rocq proof in `rocq/` shows the proof half is *reachable* — it proves one
+implication for all modes with zero axioms. But proving an implication is **not**
+a reversal, so it does not move the ladder toward `EQUIVALENCE_CERTIFIED`. That
+still needs a base theory and a derivation of the assumption *from* the law, and
+nothing in this tree has one.
 
 ## The Rocq route
 
@@ -95,6 +100,8 @@ schema/  certificates/  tests/  reports/
 | `..._LINEAR_G0_V1` | `G0` (n = 1, 2) | marginal information conservation is necessary but not sufficient; gap 4 at n = 2; obstruction localised in the inter-DOF block; survives to finite time — [report](reports/hamiltonian-privilege-linear-g0.md) |
 | `..._GENERAL_N_V1` | `G2` (all n) | the separation threshold is exactly n = 2 and the gap `2n(n−1)` grows quadratically — [report](reports/hamiltonian-privilege-general-n.md) |
 | `..._TORUS_G1_V1` | `G1` (T⁴, N ≤ 3) | on a manifold the chain has **four** levels; the symplectic→Hamiltonian gap is `b₁ = 4` at every truncation and entirely in the zero mode, while the local gaps grow — so part of the missing assumption is topological, not physical — [report](reports/hamiltonian-privilege-torus-g1.md) |
+
+| `..._TORUS_ALL_MODES_ROCQ_V1` | `G4` (all modes) | the topological step **proved**, not computed: at every mode with a nonzero frequency closed = exact, so the gap is carried by the zero mode for *every* truncation — zero-axiom Rocq, kernel-rechecked — [report](reports/torus-all-modes-rocq.md) |
 
 The G1 computation lives **in Forge** (`math/qmat` exact rational rank), gated at
 `forge/examples/reverse_physics_torus_gate.forge` in tango and pinned here by
