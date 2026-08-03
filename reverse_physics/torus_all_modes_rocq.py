@@ -131,7 +131,16 @@ def build() -> dict[str, object]:
             "coqchk axiom section is empty",
             "fail-closed negative control: a deliberately FALSE claim (that uniform translation is exact at the zero mode) is REJECTED by coqc",
         ],
-        "provenance": {"source_manifest": manifest},
+        "provenance": {
+            "source_manifest": manifest,
+            "pin_repair": {
+                "what_changed": "rocq/run.sh only",
+                "previous_gate_sha256": "40cacdf73be07fa70b6b671633cf419935f5b136818fde2897c2a7cdd60235a1",
+                "proof_sha256_unchanged": "634eacc8da7283733d2916ada12b123c6dd1dfea3594b90577cc57a9aa3f4e10",
+                "why": "The gate script was extended to also drive ReversePhysicsTorusChain.v and a second negative control. The PROOF file is byte-identical, so no theorem of this certificate changed; only the harness grew. The fail-closed check tripped on the harness hash and this field records the repair rather than overwriting the pin silently.",
+                "lesson": "pinning a harness script alongside the mathematics couples a certificate to changes that cannot affect its claims",
+            },
+        },
         "exact_checks": {
             "zero_axiom_development": True,
             "kernel_rechecked_by_coqchk": True,

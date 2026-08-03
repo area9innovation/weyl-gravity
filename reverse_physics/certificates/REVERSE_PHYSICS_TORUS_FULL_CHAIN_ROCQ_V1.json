@@ -1,0 +1,130 @@
+{
+  "assumption_tags": {
+    "consumed": [
+      "RP-DETERMINISTIC",
+      "RP-REVERSIBLE"
+    ],
+    "namespace_note": "RP-* names physical postulates; disjoint from the computational-regime tags in dependency_tags.",
+    "under_test": [
+      "RP-INFORMATION-CONSERVING",
+      "RP-MARGINAL-INFORMATION-CONSERVING"
+    ]
+  },
+  "builds_on": {
+    "relation": "this development Requires ReversePhysicsTorus and reuses exact_implies_closed and closed",
+    "result_id": "REVERSE_PHYSICS_TORUS_ALL_MODES_ROCQ_V1"
+  },
+  "claim_boundary": "In a zero-axiom Rocq development kernel-rechecked by coqchk, the four-level chain Hamiltonian <= symplectic <= marginal <= volume-preserving holds at every Fourier mode on T^4, and both inclusions above the topological step are strict, witnessed explicitly. Together with REVERSE_PHYSICS_TORUS_ALL_MODES_ROCQ_V1 the entire inclusion structure of the G1 result is now proved rather than computed.",
+  "claim_flags": {
+    "DIMENSION_ARITHMETIC_FORMALISED": false,
+    "EQUIVALENCE_OVER_A_BASE_THEORY_ESTABLISHED": false,
+    "FORMALLY_VERIFIED_IN_A_PROOF_ASSISTANT": true,
+    "FULL_CHAIN_PROVED_FOR_ALL_MODES": true,
+    "GENERAL_MANIFOLD_COVERED": false,
+    "INCLUSIONS_PROVED_STRICT": true,
+    "QUANTUM_CLAIM": false,
+    "RANK_COMPUTATIONS_FORMALISED": false,
+    "ZERO_AXIOM_DEVELOPMENT": true
+  },
+  "closes_gate": {
+    "gate": "REVERSE_PHYSICS_TORUS_FULL_CHAIN_ROCQ",
+    "how": "The topological step was already proved for all modes. This adds the other two inclusions, also for all modes, and proves both of them STRICT by explicit witnesses -- an inclusion chain that silently collapsed would make the whole separation vacuous.",
+    "opened_by": "REVERSE_PHYSICS_TORUS_ALL_MODES_ROCQ_V1"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "the per-mode DIMENSIONS. The inclusion structure and its strictness are proved; the dimension counts (4, 2, 6, 8-2d per mode) and the totals tabulated in the G1 report remain the Forge gate's exact-rational computation at N <= 3",
+    "anything about a general symplectic manifold; the model is the flat T^4 with its standard form",
+    "anything about non-polynomial vector fields",
+    "a reproduction, confirmation or refutation of Carcassi--Aidala's own derivation",
+    "an equivalence in the reverse-mathematics sense; every theorem here is an IMPLICATION, and no reversal over a base theory exists anywhere in this stream",
+    "any quantum, causal, or field-theoretic claim"
+  ],
+  "exact_checks": {
+    "both_inclusions_proved_strict": true,
+    "kernel_rechecked_by_coqchk": true,
+    "negative_controls_rejected": true,
+    "quantified_over_all_modes": true,
+    "zero_axiom_development": true
+  },
+  "gate_negative_controls": [
+    "a FALSE claim that uniform translation is exact at the zero mode is REJECTED by coqc",
+    "a FALSE claim that marginal implies symplectic -- which would collapse the chain -- is REJECTED by coqc"
+  ],
+  "gate_result": "RESULT: 7 green (0 red) \u2014 GATE: PASS",
+  "generality_level": "G4_ALL_FOURIER_MODES_HENCE_ALL_TRUNCATIONS",
+  "ledger": {
+    "coqchk_axiom_section": "<none>",
+    "declared_assumptions_in_source": "none \u2014 no Axiom, Parameter, Hypothesis, Conjecture, Admitted or admit",
+    "print_assumptions_closed": "18/18 across both modules, closed under the global context"
+  },
+  "lifecycle_ladder": "reverse-physics-v0",
+  "lifecycle_state": "NECESSITY_CERTIFIED",
+  "next_gate": "REVERSE_PHYSICS_REVERSAL: the whole stream proves implications. A reverse-mathematics result needs a base theory and a derivation of an assumption FROM the law. Nothing in this tree has one; that is the standing gap.",
+  "proof_assistant": {
+    "system": "Rocq (Coq) 8.20.1",
+    "theory": "Set is predicative; rewrite rules not allowed"
+  },
+  "provenance": {
+    "gate_script_not_pinned": "rocq/run.sh is harness, deliberately not hash-pinned here",
+    "source_manifest": {
+      "rocq/ReversePhysicsTorusChain.v": "608605dc46d459f4dc2d13854e181a50a76de824362b7dee0bd2348e3689179a"
+    }
+  },
+  "record_kind": "PROVENANCE_IMPORT \u2014 the mathematics is in rocq/ReversePhysicsTorusChain.v; this file computes nothing",
+  "result_id": "REVERSE_PHYSICS_TORUS_FULL_CHAIN_ROCQ_V1",
+  "result_state": "FULL_FOUR_LEVEL_CHAIN_PROVED_AT_EVERY_MODE_WITH_BOTH_INCLUSIONS_STRICT",
+  "schema": "reverse-physics-torus-full-chain-rocq-v1",
+  "structural_result": {
+    "statement": "The marginal condition is EXACTLY the intra-degree-of-freedom content of symplecticity: it is implied by the two closedness equations for the pairs (q1,p1) and (q2,p2), and the four inter-DOF equations it drops are not recoverable from it.",
+    "why_it_matters": "This is the torus counterpart of the linear-carrier finding in the G0 certificate, where the residual obstruction sat precisely in the inter-DOF block J A_12 = -(A_21)^T J. Two structurally different carriers, the same localisation: what a per-degree-of-freedom condition cannot express is inter-degree-of-freedom coupling."
+  },
+  "theorems": [
+    {
+      "name": "hamiltonian_implies_symplectic",
+      "statement": "at every mode, a globally Hamiltonian field preserves omega"
+    },
+    {
+      "name": "closed_implies_intra_dof_closed",
+      "statement": "closedness implies its two intra-degree-of-freedom equations"
+    },
+    {
+      "name": "intra_dof_closed_implies_marginal",
+      "role": "the sharp form: marginality consumes only 2 of the 6 closedness equations",
+      "statement": "the two intra-DOF equations ALONE imply the marginal condition"
+    },
+    {
+      "name": "symplectic_implies_marginal",
+      "statement": "at every mode, preserving omega implies each DOF preserves its own area"
+    },
+    {
+      "name": "marginal_implies_volume",
+      "statement": "at every mode, per-DOF area preservation implies total volume preservation"
+    },
+    {
+      "name": "the_chain",
+      "statement": "Hamiltonian <= symplectic <= marginal <= volume-preserving, at every mode"
+    },
+    {
+      "name": "marginal_not_symplectic",
+      "role": "strictness of the symplectic <= marginal inclusion",
+      "statement": "X = cos(2 pi q2) d/dq1 is marginal and volume preserving but does NOT preserve omega"
+    },
+    {
+      "name": "volume_not_marginal",
+      "role": "strictness of the marginal <= volume inclusion; the torus form of the G0 witness diag(I, -I)",
+      "statement": "X = cos(2 pi (q1+q2)) (d/dq1 - d/dq2) preserves total volume but no degree of freedom preserves its own area"
+    },
+    {
+      "name": "marginal_is_exactly_the_intra_dof_content",
+      "role": "THE STRUCTURAL RESULT: the marginal condition is precisely the intra-DOF content of symplecticity, and the four inter-DOF equations it drops are not recoverable",
+      "statement": "symplectic implies intra-DOF closed implies marginal, and the shear witness is intra-DOF closed but not symplectic"
+    }
+  ],
+  "verification_commands": [
+    "cd rocq && ./run.sh",
+    "PYTHONPATH=. python3 -m reverse_physics.torus_full_chain_rocq --check"
+  ]
+}

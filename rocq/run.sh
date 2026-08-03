@@ -1,17 +1,26 @@
 #!/usr/bin/env bash
 # run.sh — the reverse-physics torus GATE.
 #
-# Closes the REVERSE_PHYSICS_TORUS_ALL_TRUNCATIONS gate: the Forge gate
-# (tango forge/examples/reverse_physics_torus_gate.forge) computes the
-# symplectic-minus-Hamiltonian gap on T^4 at truncations N = 0..3; this proves the
-# per-mode statement for EVERY mode, which subsumes every truncation.
+# Two developments, both zero-axiom:
 #
-# Zero axioms, zero parameters: Print Assumptions must say "Closed under the
-# global context" for every theorem, and coqchk must list NO axioms.
+#   ReversePhysicsTorus.v       the TOPOLOGICAL step: at every mode with a
+#                               nonzero frequency closed = exact, so the
+#                               symplectic-to-Hamiltonian gap is carried
+#                               entirely by the zero mode -- for every
+#                               truncation, with no induction.
+#   ReversePhysicsTorusChain.v  the REST of the chain: Hamiltonian <= symplectic
+#                               <= marginal <= volume-preserving at every mode,
+#                               with both remaining inclusions proved STRICT by
+#                               explicit witnesses, and the marginal condition
+#                               localised as exactly the intra-DOF content of
+#                               symplecticity.
+#
+# Print Assumptions must say "Closed under the global context" for every
+# theorem, and coqchk must list NO axioms.
 #
 # Gates: [1] coqc  [2] source hygiene (no Axiom/Parameter/Admitted/admit)
 #        [3] Print Assumptions all closed  [4] coqchk + empty axiom section
-#        [5] fail-closed negative control (a FALSE claim must be REJECTED)
+#        [5] fail-closed negative controls (FALSE claims must be REJECTED)
 #
 #   cd weyl-gravity/rocq && ./run.sh
 set -u
@@ -19,8 +28,7 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
 
-SRC=ReversePhysicsTorus.v
-MOD=ReversePhysicsTorus
+MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain)
 pass=0
 fail=0
 
@@ -28,22 +36,34 @@ echo "=== reverse-physics torus gate (Rocq) ==="
 command -v coqc >/dev/null || { echo "coqc not found"; exit 1; }
 coqc --version | head -1
 
-echo; echo "[1] coqc $SRC"
-if coqc "$SRC" >/tmp/rp_coqc.log 2>&1; then
-  echo "  coqc OK"; pass=$((pass+1))
-else
-  echo "  coqc FAILED:"; sed -n '1,40p' /tmp/rp_coqc.log; fail=$((fail+1))
-fi
+echo; echo "[1] coqc (in dependency order)"
+: > /tmp/rp_coqc.log
+for m in "${MODULES[@]}"; do
+  if coqc "$m.v" >>/tmp/rp_coqc.log 2>&1; then
+    echo "  coqc $m.v OK"; pass=$((pass+1))
+  else
+    echo "  coqc $m.v FAILED:"; sed -n '1,40p' /tmp/rp_coqc.log; fail=$((fail+1))
+  fi
+done
 
 echo; echo "[2] source hygiene"
-if command grep -nE '^[[:space:]]*(Axiom|Parameter|Hypothesis|Conjecture|Admitted)\b|\badmit\b' "$SRC"; then
-  echo "  declared assumption or admit present — REJECT"; fail=$((fail+1))
+hyg=0
+for m in "${MODULES[@]}"; do
+  if command grep -nE '^[[:space:]]*(Axiom|Parameter|Hypothesis|Conjecture|Admitted)\b|\badmit\b' "$m.v"; then
+    echo "  $m.v declares an assumption or admits — REJECT"; hyg=1
+  fi
+done
+if [ "$hyg" -eq 0 ]; then
+  echo "  no Axiom/Parameter/Hypothesis/Conjecture/Admitted/admit in any module"; pass=$((pass+1))
 else
-  echo "  no Axiom/Parameter/Hypothesis/Conjecture/Admitted/admit"; pass=$((pass+1))
+  fail=$((fail+1))
 fi
 
 echo; echo "[3] Print Assumptions all closed"
-want_n=$(command grep -c "^Print Assumptions" "$SRC")
+want_n=0
+for m in "${MODULES[@]}"; do
+  want_n=$((want_n + $(command grep -c "^Print Assumptions" "$m.v")))
+done
 closed_n=$(command grep -c "^Closed under the global context" /tmp/rp_coqc.log)
 if [ "$want_n" -gt 0 ] && [ "$closed_n" -eq "$want_n" ]; then
   echo "  $closed_n/$want_n closed under the global context"; pass=$((pass+1))
@@ -52,8 +72,8 @@ else
 fi
 
 echo; echo "[4] coqchk (standalone kernel) + empty axiom section"
-if coqchk -silent -o "$MOD" >/tmp/rp_chk.log 2>&1; then
-  echo "  coqchk OK"; pass=$((pass+1))
+if coqchk -silent -o "${MODULES[@]}" >/tmp/rp_chk.log 2>&1; then
+  echo "  coqchk OK (${MODULES[*]})"; pass=$((pass+1))
 else
   echo "  coqchk FAILED:"; cat /tmp/rp_chk.log; fail=$((fail+1))
 fi
@@ -63,10 +83,10 @@ else
   echo "  coqchk REPORTS AXIOMS — REJECT:"; sed -n '/Axioms/,/^$/p' /tmp/rp_chk.log; fail=$((fail+1))
 fi
 
-echo; echo "[5] fail-closed negative control"
-# The zero mode DOES carry classes, so 'closed implies exact' is FALSE there.
-# If this compiled, the development would be inconsistent or the theorems vacuous.
-cat > _neg_control.v <<'NEG'
+echo; echo "[5] fail-closed negative controls"
+
+# (a) The zero mode DOES carry classes, so 'closed implies exact' is FALSE there.
+cat > _neg_a.v <<'NEG'
 Require Import ReversePhysicsTorus.
 (* FALSE on purpose: uniform translation is closed but NOT exact at the zero
    mode. A gate that accepts this proves nothing. *)
@@ -78,12 +98,31 @@ Proof.
   intros j. destruct j; split; reflexivity.
 Qed.
 NEG
-if coqc _neg_control.v >/tmp/rp_neg.log 2>&1; then
-  echo "  FALSE claim was ACCEPTED — REJECT"; fail=$((fail+1))
-else
-  echo "  false claim -> coqc REJECTS (fail-closed)"; pass=$((pass+1))
-fi
-rm -f _neg_control.v _neg_control.vo _neg_control.vok _neg_control.vos _neg_control.glob ._neg_control.aux
+
+# (b) The chain must not collapse: marginal does NOT imply symplectic.
+cat > _neg_b.v <<'NEG'
+Require Import ReversePhysicsTorus.
+Require Import ReversePhysicsTorusChain.
+(* FALSE on purpose: the shear witness is marginal and not symplectic, so a
+   proof that marginal implies symplectic would collapse the chain. *)
+Theorem bogus_marginal_implies_symplectic :
+  forall k a b, marginal k a b -> symplectic k a b.
+Proof.
+  intros k a b Hm. exact Hm.
+Qed.
+NEG
+
+neg_ok=0
+for n in _neg_a _neg_b; do
+  if coqc "$n.v" >/tmp/rp_neg.log 2>&1; then
+    echo "  $n: FALSE claim was ACCEPTED — REJECT"; neg_ok=1
+  else
+    echo "  $n: false claim -> coqc REJECTS (fail-closed)"
+  fi
+done
+if [ "$neg_ok" -eq 0 ]; then pass=$((pass+1)); else fail=$((fail+1)); fi
+rm -f _neg_a.v _neg_b.v _neg_a.vo _neg_b.vo _neg_a.vok _neg_b.vok \
+      _neg_a.vos _neg_b.vos _neg_a.glob _neg_b.glob ._neg_a.aux ._neg_b.aux
 
 echo
 if [ "$fail" -eq 0 ]; then
