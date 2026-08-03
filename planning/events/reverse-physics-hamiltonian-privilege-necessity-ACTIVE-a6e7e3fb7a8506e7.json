@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-physics-hamiltonian-privilege-necessity-ACTIVE-a6e7e3fb7a8506e7",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/reverse-physics-hamiltonian-privilege-necessity-ACTIVE-a6e7e3fb7a8506e7.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "reverse-physics", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-08-03", "seq": 9, "predecessor": "sf:program/event/reverse-physics-hamiltonian-privilege-necessity-ACTIVE-a55939e555460678", "payload": {"target": "sf:program/work/reverse-physics-hamiltonian-privilege-necessity", "to_state": "ACTIVE", "note": "REVERSE_PHYSICS_ENTROPY_EQUALITY_ROCQ_V1 PARTIALLY closes REVERSE_PHYSICS_ENTROPY_EQUALITY. Proved: reversible evolution preserves purity EXACTLY (the piece the second-law certificate named as missing), via sparse_square - with the map injective at most one term per row survives, so nothing is lost because nothing is mixed. Also row_deficit (the loss is exactly a sum of weighted squared differences) and spreading_produces_entropy (strict). NOT proved: the converse, hence not the biconditional. Step (a) of the converse exhausted memory (coqc killed at 2m40s) and was CUT, not fudged; recorded in partial_closure and the module header. Two laws now linked in one direction only. Gate 12 green 0 red, 61/61 closed, 7 negative controls. New gate: REVERSE_PHYSICS_ENTROPY_CONVERSE."}, "native": {"authored_by": "sfc work-event", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/reverse-physics-hamiltonian-privilege-necessity"}]
+}

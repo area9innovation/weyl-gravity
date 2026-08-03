@@ -237,8 +237,9 @@ Stated plainly, because the certificates each carry their own version:
 | `..._TORUS_SPLIT_ROCQ_V1` | `T⁴`, all modes | the decomposition is not canonical; corrects the split-dependence claim |
 | `..._STOCHASTIC_ROCQ_V1` | 4 states | reversibility is not an independent assumption |
 | `..._SECOND_LAW_ROCQ_V1` | 4 states | a second law: information conservation entails that disorder never decreases |
+| `..._ENTROPY_EQUALITY_ROCQ_V1` | 4 states | reversible evolution is exactly entropy-neutral; converse not proved |
 
-Six zero-axiom Rocq modules, `coqchk` axiom section `<none>`, six fail-closed
+Seven zero-axiom Rocq modules, `coqchk` axiom section `<none>`, seven fail-closed
 negative controls, one Forge gate on both backends under ASan, two independent
 Python rails.
 
@@ -270,8 +271,10 @@ identity settled by `ring`.
 load-bearing for both laws: it makes reversibility redundant, and it entails the
 arrow of disorder. Two laws, one assumption.
 
-The open end is the **equality case** — proving that reversible evolution
-*preserves* purity exactly would give "reversible ⟺ no entropy production" and
-close the loop between the two laws. That is `REVERSE_PHYSICS_ENTROPY_EQUALITY`,
-and it is the one remaining gate that would add a finding rather than a
-refinement.
+The **equality case** is now half closed (`..._ENTROPY_EQUALITY_ROCQ_V1`):
+reversible evolution preserves purity *exactly*, so reversibility implies no
+entropy production, and spreading over states of differing probability strictly
+produces it. The converse — that preserving purity forces reversibility — is
+**not** proved; the extraction step exhausted memory and was cut rather than
+fudged. So the two laws are linked in one direction only, and
+`REVERSE_PHYSICS_ENTROPY_CONVERSE` is what would close the loop.

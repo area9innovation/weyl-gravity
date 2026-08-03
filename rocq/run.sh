@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # run.sh — the reverse-physics torus GATE.
 #
-# Six developments, all zero-axiom, in dependency order.  The first four are the
-# torus chain; the last two are an INDEPENDENT carrier (importing none of them).
+# Seven developments, all zero-axiom, in dependency order.  The first four are
+# the torus chain; the last three are an INDEPENDENT carrier (importing none of
+# them).
 #
 #   ReversePhysicsTorus.v          the TOPOLOGICAL step: at every mode with a
 #                                  nonzero frequency closed = exact, so the
@@ -37,6 +38,11 @@
 #                                  decreases.  Exactly rational -- purity
 #                                  (Renyi-2) rather than Shannon entropy, so no
 #                                  logarithms.
+#   ReversePhysicsEntropyEquality.v  the EQUALITY case, forward half: reversible
+#                                  evolution preserves purity EXACTLY, and
+#                                  spreading over states of differing probability
+#                                  strictly produces entropy.  The converse is
+#                                  explicitly not established.
 #
 # Print Assumptions must say "Closed under the global context" for every
 # theorem, and coqchk must list NO axioms.
@@ -51,7 +57,7 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
 
-MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw)
+MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality)
 pass=0
 fail=0
 
@@ -197,8 +203,25 @@ Proof.
 Qed.
 NEG
 
+
+# (g) Preserving purity must NOT be automatic for doubly stochastic maps.
+cat > _neg_g.v <<'NEG'
+Require Import QArith.
+Require Import ReversePhysicsStochastic.
+Require Import ReversePhysicsSecondLaw.
+Require Import ReversePhysicsEntropyEquality.
+Open Scope Q_scope.
+(* FALSE on purpose: the mixer is doubly stochastic and strictly loses purity,
+   so preservation cannot follow from double stochasticity alone. *)
+Theorem bogus_all_doubly_stochastic_preserve_purity :
+  forall M p, conserves_information M -> purity (evolve M p) == purity p.
+Proof.
+  intros M p H. reflexivity.
+Qed.
+NEG
+
 neg_ok=0
-for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f; do
+for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g; do
   if coqc "$n.v" >/tmp/rp_neg.log 2>&1; then
     echo "  $n: FALSE claim was ACCEPTED — REJECT"; neg_ok=1
   else
@@ -206,7 +229,7 @@ for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f; do
   fi
 done
 if [ "$neg_ok" -eq 0 ]; then pass=$((pass+1)); else fail=$((fail+1)); fi
-rm -f _neg_[a-f].v _neg_[a-f].vo _neg_[a-f].vok _neg_[a-f].vos _neg_[a-f].glob ._neg_[a-f].aux
+rm -f _neg_[a-g].v _neg_[a-g].vo _neg_[a-g].vok _neg_[a-g].vos _neg_[a-g].glob ._neg_[a-g].aux
 
 echo
 if [ "$fail" -eq 0 ]; then
