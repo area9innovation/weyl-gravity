@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-physics-hamiltonian-privilege-necessity-ACTIVE-ca254dd8577392e2",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/reverse-physics-hamiltonian-privilege-necessity-ACTIVE-ca254dd8577392e2.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "reverse-physics", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-08-03", "seq": 2, "predecessor": "sf:program/event/reverse-physics-hamiltonian-privilege-necessity-ACTIVE-0a89d0d8f738a45f", "payload": {"target": "sf:program/work/reverse-physics-hamiltonian-privilege-necessity", "to_state": "ACTIVE", "note": "Torus G1 landed in Forge (tango a6945d0e5, forge verify -full: c==native, asan clean). Four-level chain on T^4; symplectic-to-Hamiltonian gap = b_1(T^4) = 4 at every truncation N<=3 and carried entirely by the zero mode, while the local gaps grow. Part of the missing assumption is topological, not physical. New gate: REVERSE_PHYSICS_TORUS_ALL_TRUNCATIONS (Rocq induction over N)."}, "native": {"authored_by": "sfc work-event", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/reverse-physics-hamiltonian-privilege-necessity"}]
+}

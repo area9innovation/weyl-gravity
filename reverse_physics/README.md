@@ -94,6 +94,12 @@ schema/  certificates/  tests/  reports/
 |---|---|---|
 | `..._LINEAR_G0_V1` | `G0` (n = 1, 2) | marginal information conservation is necessary but not sufficient; gap 4 at n = 2; obstruction localised in the inter-DOF block; survives to finite time — [report](reports/hamiltonian-privilege-linear-g0.md) |
 | `..._GENERAL_N_V1` | `G2` (all n) | the separation threshold is exactly n = 2 and the gap `2n(n−1)` grows quadratically — [report](reports/hamiltonian-privilege-general-n.md) |
+| `..._TORUS_G1_V1` | `G1` (T⁴, N ≤ 3) | on a manifold the chain has **four** levels; the symplectic→Hamiltonian gap is `b₁ = 4` at every truncation and entirely in the zero mode, while the local gaps grow — so part of the missing assumption is topological, not physical — [report](reports/hamiltonian-privilege-torus-g1.md) |
+
+The G1 computation lives **in Forge** (`math/qmat` exact rational rank), gated at
+`forge/examples/reverse_physics_torus_gate.forge` in tango and pinned here by
+content hash. `torus_g1_provenance.py` computes no physics — it is the import
+gate, and it fails closed on drift.
 
 ## Rails
 

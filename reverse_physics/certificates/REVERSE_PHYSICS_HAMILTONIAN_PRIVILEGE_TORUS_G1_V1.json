@@ -1,0 +1,139 @@
+{
+  "assumption_tags": {
+    "consumed": [
+      "RP-DETERMINISTIC",
+      "RP-REVERSIBLE"
+    ],
+    "namespace_note": "RP-* names physical postulates; disjoint from the computational-regime tags in dependency_tags.",
+    "note": "RP-LINEAR-CARRIER is NOT consumed here -- that is the point of the G1 carrier.",
+    "under_test": [
+      "RP-INFORMATION-CONSERVING",
+      "RP-MARGINAL-INFORMATION-CONSERVING"
+    ]
+  },
+  "carrier": {
+    "fields": "trigonometric-polynomial vector fields, real Fourier basis, |k|_inf <= N",
+    "manifold": "T^4 = R^4/Z^4, coordinates (q1, p1, q2, p2)",
+    "symplectic_form": "omega = dq1^dp1 + dq2^dp2",
+    "truncations": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "why_a_manifold_matters": "on a vector space H^1 vanishes, which collapses the symplectic and Hamiltonian conditions into one; the torus separates them"
+  },
+  "claim_boundary": "On T^4 with trigonometric-polynomial vector fields truncated at |k|_inf <= N for N = 0,1,2,3, the symplectic-to-Hamiltonian gap is exactly 4, carried entirely by the zero mode, while the two local gaps grow strictly with N. Every dimension is an exact rational rank computed upstream in Forge and gated on both backends under ASan.",
+  "claim_flags": {
+    "ALL_TRUNCATIONS_PROVED": false,
+    "EQUIVALENCE_OVER_A_BASE_THEORY_ESTABLISHED": false,
+    "FORMALLY_VERIFIED_IN_A_PROOF_ASSISTANT": false,
+    "GENERAL_MANIFOLD_COVERED": false,
+    "NONLINEAR_CARRIER_COVERED": true,
+    "QUANTUM_CLAIM": false,
+    "TOPOLOGICAL_OBSTRUCTION_EXHIBITED": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "the gap for ALL truncations N: four values of N were computed, and constancy in N is not proved. This is the open gate and it is the natural Rocq target.",
+    "anything about a general symplectic manifold; only T^4 with its flat structure was computed",
+    "anything about non-polynomial (general smooth) vector fields; the carrier is a finite-dimensional truncation at each N",
+    "that the G0/G2 linear-carrier witnesses descend to the torus -- they do not, and no claim here depends on them",
+    "a reproduction, confirmation or refutation of Carcassi--Aidala's own derivation",
+    "an equivalence in the reverse-mathematics sense; still no reversal over a base theory",
+    "any quantum, causal, or field-theoretic claim"
+  ],
+  "exact_checks": {
+    "betti_number_reproduced_not_assumed": true,
+    "gap_constant_and_local_gaps_strictly_growing": true,
+    "no_floating_point": true,
+    "per_mode_closed_forms_checked_at_every_mode": true,
+    "positive_control_present": true,
+    "upstream_uses_exact_rational_rank": true,
+    "witnesses_decided_by_residual_not_rank": true
+  },
+  "generality_level": "G1_TRIGONOMETRIC_POLYNOMIAL_VECTOR_FIELDS_ON_T4_TRUNCATION_0_TO_3",
+  "lifecycle_ladder": "reverse-physics-v0",
+  "lifecycle_state": "SEPARATION_CERTIFIED",
+  "next_gate": "REVERSE_PHYSICS_TORUS_ALL_TRUNCATIONS: prove in Rocq that the symplectic/Hamiltonian gap is b_1 for every N, replacing four computed values with an induction over the truncation.",
+  "pinned_gate_check": {
+    "hash_matches": true,
+    "reason": "",
+    "state": "VERIFIED_LOCALLY"
+  },
+  "record_kind": "PROVENANCE_IMPORT \u2014 the computation is upstream in Forge; this file computes no physics",
+  "result_id": "REVERSE_PHYSICS_HAMILTONIAN_PRIVILEGE_TORUS_G1_V1",
+  "result_state": "SYMPLECTIC_TO_HAMILTONIAN_OBSTRUCTION_IS_TOPOLOGICAL_AND_LOCALLY_INVISIBLE",
+  "schema": "reverse-physics-hamiltonian-privilege-torus-g1-v1",
+  "sweep": [
+    {
+      "N": 0,
+      "gap_symp_minus_ham": 4,
+      "ham": 0,
+      "local_gap_marg_minus_symp": 0,
+      "local_gap_vol_minus_marg": 0,
+      "marg": 4,
+      "modes": 1,
+      "symp": 4,
+      "vol": 4
+    },
+    {
+      "N": 1,
+      "gap_symp_minus_ham": 4,
+      "ham": 80,
+      "local_gap_marg_minus_symp": 96,
+      "local_gap_vol_minus_marg": 64,
+      "marg": 180,
+      "modes": 41,
+      "symp": 84,
+      "vol": 244
+    },
+    {
+      "N": 2,
+      "gap_symp_minus_ham": 4,
+      "ham": 624,
+      "local_gap_marg_minus_symp": 672,
+      "local_gap_vol_minus_marg": 576,
+      "marg": 1300,
+      "modes": 313,
+      "symp": 628,
+      "vol": 1876
+    },
+    {
+      "N": 3,
+      "gap_symp_minus_ham": 4,
+      "ham": 2400,
+      "local_gap_marg_minus_symp": 2496,
+      "local_gap_vol_minus_marg": 2304,
+      "marg": 4900,
+      "modes": 1201,
+      "symp": 2404,
+      "vol": 7204
+    }
+  ],
+  "theorem": {
+    "four_level_chain": "Hamiltonian <= symplectic <= marginal <= volume-preserving. The linear carrier of the G0/G2 certificates has only THREE levels because H^1(R^4) = 0.",
+    "identification": "4 = b_1(T^4). The gate compares against math/comb::binom(4,1); nothing in the gate mentions cohomology, so the Betti number is reproduced rather than assumed.",
+    "local_gaps_grow": "marginal - symplectic = 0, 96, 672, 2496 and volume - marginal = 0, 64, 576, 2304 across N = 0..3: strictly increasing, hence genuinely local.",
+    "reverse_physics_payload": "The gap between information conservation and Hamiltonian structure SPLITS. One part is local and visible to differential conditions. The other is topological: it is invisible to any assumption formulated pointwise, per degree of freedom, or differentially, at any resolution.",
+    "topological_gap": "dim symplectic - dim Hamiltonian = 4 at every truncation computed, and the contribution from every nonzero Fourier mode is 0. The whole obstruction sits in the zero mode.",
+    "witness": "Uniform translation X = d/dq1 on T^4: deterministic, reversible, volume preserving globally and per degree of freedom, preserves omega -- and admits no global Hamiltonian."
+  },
+  "upstream_computation": {
+    "commit": "a6945d0e50c06ab970f5957fb56f18146c72e4d9",
+    "expect_exit_code": 37,
+    "kernel": "math/qmat exact rational rank (no floating point)",
+    "path": "forge/examples/reverse_physics_torus_gate.forge",
+    "repo": "https://github.com/area9innovation/tango",
+    "sha256": "3e9261a958eb720ea4c9415d10435bb280a5c27dec35ea60bf3f51c04550bdc7",
+    "verify_result": "forge verify -full: exit 37, c==native, asan clean (c+native)"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m reverse_physics.torus_g1_provenance --check",
+    "# upstream, in the tango repo at the pinned commit:",
+    "cd forge && FORGE_LIB=$PWD/lib /tmp/forgebin -run examples/reverse_physics_torus_gate.forge   # exit 37",
+    "cd forge && FORGE_LIB=$PWD/lib /tmp/forgebin verify -full examples/reverse_physics_torus_gate.forge"
+  ]
+}
