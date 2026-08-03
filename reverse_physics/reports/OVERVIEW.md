@@ -324,4 +324,7 @@ The directions that would still yield something:
   probe never built one, and `marginal_depends_on_the_dof_split` is the only
   result that gestures at it.
 - **Someone reading this and disagreeing.** Three of the five findings are
-  negative claims about a live research programme. They should be argued with.
+  negative claims about a live research programme. They should be argued with —
+  [`AOP-CONNECTION.md`](AOP-CONNECTION.md) puts two of them in front of that
+  programme directly, in its own notation, and adds an observation about
+  conformal invariance that its open conjecture for GR has to face.

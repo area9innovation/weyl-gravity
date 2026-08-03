@@ -7,6 +7,10 @@ finding the minimal physical assumptions a law is equivalent to.
 > **Start here: [`reports/OVERVIEW.md`](reports/OVERVIEW.md)** — the narrative
 > account of what was asked, what was found, and what the negative results mean.
 > The rest of this file is the index.
+>
+> **[`reports/AOP-CONNECTION.md`](reports/AOP-CONNECTION.md)** — where these
+> results bear on Carcassi and Aidala's own programme, and where conformal
+> gravity bears on their open conjecture for general relativity.
 
 ## What transfers
 
@@ -122,6 +126,8 @@ schema/  certificates/  tests/  reports/
                                        the equality case, forward half
 ../rocq/ReversePhysicsEntropyConverse.v
                                        the converse, and the biconditional
+../rocq/ReversePhysicsAOPBridge.v      our omega proved to be their J (x) I_n,
+                                       and the three findings in their notation
 ../rocq/run.sh                         the zero-axiom gate (coqc, coqchk, controls)
 ```
 

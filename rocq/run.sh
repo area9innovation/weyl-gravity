@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # run.sh — the reverse-physics torus GATE.
 #
-# Eight developments, all zero-axiom, in dependency order.  The first four are
-# the torus chain; the last four are an INDEPENDENT carrier (importing none of
-# them).
+# Nine developments, all zero-axiom, in dependency order.  The first four are the
+# torus chain, the next four an INDEPENDENT stochastic carrier, and the last a
+# BRIDGE restating the torus results in Carcassi-Aidala notation.
 #
 #   ReversePhysicsTorus.v          the TOPOLOGICAL step: at every mode with a
 #                                  nonzero frequency closed = exact, so the
@@ -46,6 +46,12 @@
 #                                  preserving purity on one distribution with
 #                                  distinct entries forces reversibility.  The
 #                                  loop between the stream's two laws is closed.
+#   ReversePhysicsAOPBridge.v      the BRIDGE: our omega is proved to be their
+#                                  J (x) I_n, their two tensor factors are shown
+#                                  to be bookkeeping rather than physics, and
+#                                  their open GR conjecture is shown to need a
+#                                  topological term the finite-dimensional
+#                                  theorem does not have.
 #
 # Print Assumptions must say "Closed under the global context" for every
 # theorem, and coqchk must list NO axioms.
@@ -60,7 +66,7 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
 
-MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse)
+MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge)
 pass=0
 fail=0
 
@@ -246,8 +252,25 @@ Proof.
 Qed.
 NEG
 
+
+# (i) Preserving omega must NOT give a global Hamiltonian on a state space with
+#     b_1 =/= 0 -- this is exactly the term the AoP GR conjecture would need.
+cat > _neg_i.v <<'NEG'
+Require Import ReversePhysicsTorus.
+Require Import ReversePhysicsTorusChain.
+Require Import ReversePhysicsAOPBridge.
+(* FALSE on purpose: uniform translation on T^4 preserves omega and admits no
+   global Hamiltonian.  If this compiled, finding 3 of the bridge would be
+   vacuous. *)
+Theorem bogus_omega_preservation_suffices :
+  forall k a b, symplectic k a b -> hamiltonian k a b.
+Proof.
+  intros k a b H. exact H.
+Qed.
+NEG
+
 neg_ok=0
-for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h; do
+for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i; do
   if coqc "$n.v" >/tmp/rp_neg.log 2>&1; then
     echo "  $n: FALSE claim was ACCEPTED — REJECT"; neg_ok=1
   else
@@ -255,7 +278,7 @@ for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h; do
   fi
 done
 if [ "$neg_ok" -eq 0 ]; then pass=$((pass+1)); else fail=$((fail+1)); fi
-rm -f _neg_[a-h].v _neg_[a-h].vo _neg_[a-h].vok _neg_[a-h].vos _neg_[a-h].glob ._neg_[a-h].aux
+rm -f _neg_[a-i].v _neg_[a-i].vo _neg_[a-i].vok _neg_[a-i].vos _neg_[a-i].glob ._neg_[a-i].aux
 
 echo
 if [ "$fail" -eq 0 ]; then
