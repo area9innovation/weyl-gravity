@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # run.sh — the reverse-physics torus GATE.
 #
-# Ten developments, all zero-axiom, in dependency order.  The first four are the
+# Eleven developments, all zero-axiom, in dependency order.  The first four are the
 # torus chain, the next four an INDEPENDENT stochastic carrier, and the last two
 # engage Carcassi-Aidala directly: a BRIDGE restating the torus results in their
 # notation, and a PARITY OBSTRUCTION on their degree-of-freedom counting.
@@ -58,6 +58,11 @@
 #                                  excludes the density branch in ODD dimension
 #                                  by parity.  A Cauchy surface is
 #                                  three-dimensional.
+#   ReversePhysicsNoConformalCount.v  the LAST BRANCH: on flat space a dilation
+#                                  is conformal, so every ball has the count of
+#                                  the unit ball.  Additivity is never used, so
+#                                  the non-additive resolution does not escape
+#                                  either.  All three branches are closed.
 #
 # Print Assumptions must say "Closed under the global context" for every
 # theorem, and coqchk must list NO axioms.
@@ -72,7 +77,7 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
 
-MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount)
+MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount ReversePhysicsNoConformalCount)
 pass=0
 fail=0
 
@@ -290,8 +295,32 @@ Proof.
 Qed.
 NEG
 
+
+# (k) A conformally invariant count cannot grow with the radius.
+cat > _neg_k.v <<'NEG'
+Require Import QArith.
+Require Import ReversePhysicsNoConformalCount.
+Open Scope Q_scope.
+(* FALSE on purpose: no_informative_conformal_count says all balls tie.  If a
+   count could grow with radius the refutation would be vacuous. *)
+Theorem bogus_count_grows_with_radius :
+  forall (Metric Region : Type)
+         (mu : Metric -> Region -> Q)
+         (scale : Q -> Metric -> Metric)
+         (dil : Q -> Region -> Region)
+         (flat : Metric)
+         (ball : Q -> Region),
+    (forall lam U, 0 < lam -> mu flat (dil lam U) == mu (scale lam flat) U) ->
+    (forall lam m U, 0 < lam -> mu (scale lam m) U == mu m U) ->
+    (forall r, 0 < r -> ball r = dil r (ball 1)) ->
+    mu flat (ball 1) < mu flat (ball 2).
+Proof.
+  intros. reflexivity.
+Qed.
+NEG
+
 neg_ok=0
-for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j; do
+for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _neg_k; do
   if coqc "$n.v" >/tmp/rp_neg.log 2>&1; then
     echo "  $n: FALSE claim was ACCEPTED — REJECT"; neg_ok=1
   else
@@ -299,7 +328,7 @@ for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j; 
   fi
 done
 if [ "$neg_ok" -eq 0 ]; then pass=$((pass+1)); else fail=$((fail+1)); fi
-rm -f _neg_[a-j].v _neg_[a-j].vo _neg_[a-j].vok _neg_[a-j].vos _neg_[a-j].glob ._neg_[a-j].aux
+rm -f _neg_[a-k].v _neg_[a-k].vo _neg_[a-k].vok _neg_[a-k].vos _neg_[a-k].glob ._neg_[a-k].aux
 
 echo
 if [ "$fail" -eq 0 ]; then

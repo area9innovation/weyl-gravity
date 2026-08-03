@@ -192,16 +192,37 @@ The gate carries a control asserting such a density exists; it is rejected.
 
 So the failure of `∫√h d³x` is not a bad choice of density. **No choice works.**
 
-**The consequence, and it is a convergence rather than a collision.** An
-*informative* and *conformally invariant* degree-of-freedom count must be
-**non-additive** — the density branch is closed by parity and the counting
-branch carries no information. That is the same branch you were driven to for
-quantum mechanics, reached here by a purely classical symmetry with no quantum
-input at all.
+**And the last branch falls too.** We first concluded that an informative
+conformally invariant count must be *non-additive*. It cannot be that either.
+
+On flat space a dilation `φ_λ(x) = λx` pulls the flat metric back to a
+**constant** rescaling, `φ_λ*δ = λ²δ`. So for any count natural under
+diffeomorphisms and invariant under constant Weyl rescaling,
+`μ(φ_λ U) = μ_{λ²δ}(U) = μ(U)` — and **every ball has the count of the unit
+ball, whatever its radius**. A ball of radius 1 and a ball of radius 10¹⁰⁰ tie.
+
+**Additivity is never used** in that argument — it is a group action on regions,
+not a decomposition of them — which is exactly why dropping additivity buys
+nothing.
+
+| branch | status under conformal invariance |
+|---|---|
+| drop 1 → density | excluded by parity in odd dimension |
+| drop 2 → counting measure | invariant but uninformative |
+| drop 3 → non-additive | excluded, and equally uninformative |
+
+`no_informative_conformal_count` — machine-checked, zero axioms, with a control
+asserting the count grows with radius, rejected.
+
+**So the reading is not that the count is hard to construct.** In a conformally
+invariant theory, *"how many degrees of freedom are in this region"* is not a
+well-posed question. Your conjecture is stated in terms of such a count, so it
+cannot be transported to conformal gravity as written — not because the count is
+unknown, but because it cannot exist.
 
 Your talk asks: *"Does lower bound on DOF count require an equally severe
-revisitation of space-time?"* This says the revisitation is forced twice over,
-and once of the two reasons is not quantum.
+revisitation of space-time?"* On this evidence the revisitation is not optional,
+and one of the reasons forcing it is entirely classical.
 
 **The even-dimensional counterpart.** In dimension four the balance *is*
 achievable: `2m + D = 4` admits `(m, D) = (2, 0)` — a quadratic curvature
@@ -231,9 +252,11 @@ condition, so it is unaffected.
 - **No reproduction of their derivation.** We test candidate assumptions on
   declared carriers; we do not reconstruct their argument, and have not checked
   it.
-- **§2.2 excludes one branch, not all counting.** The parity theorem closes the
-  density branch in odd dimension for metric-built densities. It does not
-  construct the non-additive count it points at, and does not rule one out.
+- **§2.2 closes all three branches, but under stated hypotheses.** The parity
+  theorem needs densities built from the metric alone; the dilation argument
+  needs naturality, monotonicity and flat space, all explicit. Counts using
+  extra structure — a compensator or dilaton — are untouched, and evade by
+  choosing a scale. What replaces a count is not proposed.
 - **The physics on our side is modest.** `symplectic/Hamiltonian ≅ H¹` is
   classical symplectic geometry. What is new is the assumption analysis and the
   mechanization, not the underlying mathematics.
@@ -244,12 +267,13 @@ condition, so it is unaffected.
 ## 4. Reproducing our side
 
 ```bash
-cd rocq && ./run.sh     # 15 green (0 red); coqchk axiom section <none>
+cd rocq && ./run.sh     # 16 green (0 red); coqchk axiom section <none>
 ```
 
-Ten zero-axiom Rocq modules, ten fail-closed negative controls. The bridge is
-`rocq/ReversePhysicsAOPBridge.v`, the parity obstruction is
-`rocq/ReversePhysicsConformalCount.v`, and the underlying results are in
+Eleven zero-axiom Rocq modules, eleven fail-closed negative controls. The bridge
+is `rocq/ReversePhysicsAOPBridge.v`, the parity obstruction
+`rocq/ReversePhysicsConformalCount.v`, the refutation
+`rocq/ReversePhysicsNoConformalCount.v`, and the underlying results are in
 `ReversePhysicsTorus*.v`. Certificates and their boundaries are in
 `reverse_physics/certificates/`, and
 [`OVERVIEW.md`](OVERVIEW.md) is the narrative account of the whole probe.

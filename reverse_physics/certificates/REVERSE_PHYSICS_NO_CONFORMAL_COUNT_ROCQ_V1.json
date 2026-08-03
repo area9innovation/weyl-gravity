@@ -1,0 +1,117 @@
+{
+  "assumption_tags": {
+    "consumed": [],
+    "namespace_note": "RP-* names physical postulates; disjoint from the computational-regime tags in dependency_tags.",
+    "under_test": [
+      "RP-CONFORMAL-INVARIANCE"
+    ]
+  },
+  "claim_boundary": "In a zero-axiom Rocq development, any region-count on flat space that is natural under diffeomorphisms and invariant under constant Weyl rescaling assigns the same value to every ball regardless of radius; with monotonicity and unit value on points, every nonempty bounded region is squeezed into a fixed interval. Additivity is never used, so the non-additive branch is refuted along with the additive ones.",
+  "claim_flags": {
+    "ALL_THREE_BRANCHES_CLOSED": true,
+    "CLAIM_ABOUT_GR_OR_ITS_DYNAMICS": false,
+    "CURVED_OR_NON_CONFORMALLY_FLAT_CASE_ADDRESSED": false,
+    "EXTRA_STRUCTURE_CASE_ADDRESSED": false,
+    "FORMALLY_VERIFIED_IN_A_PROOF_ASSISTANT": true,
+    "GEOMETRIC_INPUTS_DERIVED_FROM_DIFFERENTIAL_GEOMETRY": false,
+    "NON_ADDITIVE_BRANCH_REFUTED": true,
+    "NON_CONSTANT_RESCALINGS_ADDRESSED": false,
+    "QUANTUM_CLAIM": false,
+    "ZERO_AXIOM_DEVELOPMENT": true
+  },
+  "closes_gate": {
+    "gate": "REVERSE_PHYSICS_NONADDITIVE_CONFORMAL_COUNT",
+    "how": "That certificate closed the density branch by parity and left the non-additive branch as the only place an answer could live. This REFUTES it. Additivity is never used in the argument, which is exactly why the non-additive resolution does not escape.",
+    "opened_by": "REVERSE_PHYSICS_CONFORMAL_COUNT_ROCQ_V1",
+    "outcome": "REFUTED rather than constructed. The gate asked to construct or refute; the answer is refute."
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "the geometric inputs from differential geometry. That a dilation pulls the flat metric back to a constant multiple, that balls are dilations of the unit ball, that a bounded region contains a point and sits inside a ball -- all are explicit HYPOTHESES of the theorems, not derived here",
+    "anything about curved or non-conformally-flat configurations. The argument runs on flat space, which suffices because flat space is a physical configuration any count must handle",
+    "anything about non-constant conformal factors",
+    "anything about counts using EXTRA STRUCTURE. A compensator or dilaton breaks naturality-plus-Weyl-invariance by choosing a scale, which is what conformal invariance forbids; that fork is stated, not resolved",
+    "any claim about general relativity or its dynamics",
+    "a reproduction, confirmation or refutation of Carcassi--Aidala's own derivation. It engages one conjecture from one talk",
+    "any quantum, causal, or field-theoretic claim"
+  ],
+  "exact_checks": {
+    "additivity_never_used": true,
+    "geometric_inputs_are_explicit_hypotheses": true,
+    "kernel_rechecked_by_coqchk": true,
+    "only_constant_rescalings_used": true,
+    "zero_axiom_development": true
+  },
+  "gate_negative_controls": [
+    "ten inherited from the earlier modules, all rejected",
+    "a FALSE claim that a conformally invariant count grows with the radius is REJECTED"
+  ],
+  "gate_result": "RESULT: 16 green (0 red) \u2014 GATE: PASS",
+  "generality_level": "G3_ANY_NATURAL_WEYL_INVARIANT_COUNT_ON_FLAT_SPACE",
+  "ledger": {
+    "coqchk_axiom_section": "<none>",
+    "declared_assumptions_in_source": "none \u2014 no Axiom, Parameter, Hypothesis, Conjecture, Admitted or admit; every geometric input is an explicit hypothesis of the theorem statements",
+    "print_assumptions_closed": "5/5 for this module; 84/84 across the eleven modules the shared gate drives"
+  },
+  "lifecycle_ladder": "reverse-physics-v0",
+  "lifecycle_state": "NECESSITY_CERTIFIED",
+  "next_gate": "REVERSE_PHYSICS_WHAT_REPLACES_A_COUNT: if a region-count cannot exist in a conformally invariant theory, what does the DOF-independence assumption become? A relational or ratio-valued notion is the obvious candidate and is not explored here.",
+  "provenance": {
+    "gate_script_not_pinned": "rocq/run.sh is harness, deliberately not hash-pinned",
+    "source_manifest": {
+      "rocq/ReversePhysicsNoConformalCount.v": "0511e22efeaa9499f1d3d9c5b09b36c8da1bbf8aee5f0b465f668dae6390174e"
+    }
+  },
+  "record_kind": "PROVENANCE_IMPORT \u2014 the mathematics is in rocq/ReversePhysicsNoConformalCount.v; this file computes nothing",
+  "result_id": "REVERSE_PHYSICS_NO_CONFORMAL_COUNT_ROCQ_V1",
+  "result_state": "NO_INFORMATIVE_CONFORMALLY_INVARIANT_DOF_COUNT_EXISTS_ADDITIVE_OR_NOT",
+  "schema": "reverse-physics-no-conformal-count-rocq-v1",
+  "the_argument": {
+    "conclusion": "mu(ball of radius lam) = mu(unit ball) for every lam > 0",
+    "step": "a dilation phi_lam(x) = lam x pulls the flat metric back to a CONSTANT rescaling, phi_lam^* delta = lam^2 delta. Naturality then turns a dilation of the region into a rescaling of the metric, and constant Weyl invariance kills it.",
+    "where": "flat space -- a Minkowski slice, certainly a physical configuration, so any proposed count must behave sensibly there",
+    "why_additivity_is_irrelevant": "it is never used; the argument is a group action on regions, not a decomposition of them"
+  },
+  "the_finding": {
+    "consequence_for_their_conjecture": "Their conjecture 'GR <=> det/rev + DOF independence for infinitely many dense DOFs' is stated in terms of a DOF count. In a conformally invariant setting no such count exists, so the conjecture cannot be transported to conformal gravity as written -- not because the count is unknown but because it cannot exist.",
+    "reading": "The honest reading is not that the count is hard to construct. It is that in a conformally invariant theory, 'how many degrees of freedom are in this region' is not a well-posed question. A quantity assigning the same value to a unit ball and a ball of radius 10^100 is not counting anything.",
+    "statement": "All three branches of the Carcassi-Aidala degree-of-freedom trilemma are closed under conformal invariance.",
+    "table": [
+      "drop 1, a density measure: excluded by parity in odd dimension (REVERSE_PHYSICS_CONFORMAL_COUNT_ROCQ_V1)",
+      "drop 2, the counting measure: invariant but uninformative, every infinite region alike",
+      "drop 3, a non-additive count: excluded here, and equally uninformative -- every ball ties"
+    ]
+  },
+  "theorems": [
+    {
+      "name": "dilation_invariance",
+      "role": "a dilation pulls the flat metric back to a constant multiple of itself, so the two hypotheses compose",
+      "statement": "naturality plus constant Weyl invariance imply invariance under dilations of flat space"
+    },
+    {
+      "name": "every_ball_has_the_same_count",
+      "statement": "on flat space every ball has the count of the unit ball, whatever its radius"
+    },
+    {
+      "name": "count_is_bounded_independently_of_the_region",
+      "role": "the count is bounded by a universal constant that does not depend on the region",
+      "statement": "with monotonicity and mu(point) = 1, every nonempty bounded region has count between 1 and the unit ball's"
+    },
+    {
+      "name": "no_informative_conformal_count",
+      "role": "THE REFUTATION. Additivity appears nowhere, which is exactly why the non-additive branch does not escape.",
+      "statement": "any two balls have equal count"
+    },
+    {
+      "name": "a_unit_ball_and_a_cosmological_ball_count_the_same",
+      "role": "the concrete form, to make the failure legible",
+      "statement": "the unit ball and a ball of radius 10^100 receive the same count"
+    }
+  ],
+  "verification_commands": [
+    "cd rocq && ./run.sh",
+    "PYTHONPATH=. python3 -m reverse_physics.no_conformal_count_rocq --check"
+  ]
+}

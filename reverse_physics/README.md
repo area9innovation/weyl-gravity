@@ -130,6 +130,8 @@ schema/  certificates/  tests/  reports/
                                        and the three findings in their notation
 ../rocq/ReversePhysicsConformalCount.v the parity obstruction to a conformally
                                        invariant degree-of-freedom count
+../rocq/ReversePhysicsNoConformalCount.v
+                                       and the refutation of the last branch
 ../rocq/run.sh                         the zero-axiom gate (coqc, coqchk, controls)
 ```
 
@@ -149,6 +151,7 @@ schema/  certificates/  tests/  reports/
 | `..._ENTROPY_EQUALITY_ROCQ_V1` | `G1` (4 states) | reversible evolution preserves purity **exactly**, and spreading strictly produces entropy — [report](reports/entropy-equality-rocq.md) |
 | `..._ENTROPY_CONVERSE_ROCQ_V1` | `G1` (4 states) | **the biconditional**: reversible ⟺ no entropy production. The lattice's first closed loop — [report](reports/entropy-converse-rocq.md) |
 | `..._CONFORMAL_COUNT_ROCQ_V1` | `G3` (all dims) | **the fourth desideratum**: no conformally invariant DOF density exists in odd dimension, by parity. A Cauchy surface is 3-dimensional — [report](reports/conformal-count-rocq.md) |
+| `..._NO_CONFORMAL_COUNT_ROCQ_V1` | `G3` (flat space) | **the last branch falls**: every ball ties, additivity never used. No informative conformally invariant DOF count exists at all — [report](reports/no-conformal-count-rocq.md) |
 
 The G1 computation lives **in Forge** (`math/qmat` exact rational rank), gated at
 `forge/examples/reverse_physics_torus_gate.forge` in tango and pinned here by
