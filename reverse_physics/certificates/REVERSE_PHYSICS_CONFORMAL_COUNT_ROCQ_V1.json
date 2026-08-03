@@ -1,0 +1,125 @@
+{
+  "assumption_tags": {
+    "consumed": [],
+    "namespace_note": "RP-* names physical postulates; disjoint from the computational-regime tags in dependency_tags.",
+    "new_tag_note": "RP-CONFORMAL-INVARIANCE is introduced by this certificate: physically equivalent configurations, related by a Weyl rescaling, must receive the same count.",
+    "under_test": [
+      "RP-CONFORMAL-INVARIANCE"
+    ]
+  },
+  "claim_boundary": "In a zero-axiom Rocq development, no polynomial curvature scalar balances the volume weight in odd dimension, so no conformally invariant degree-of-freedom density built from the metric alone exists on a Cauchy surface. In dimension four the balance is achievable and is the Weyl-squared weight.",
+  "claim_flags": {
+    "CAUCHY_SURFACE_CASE_SETTLED": true,
+    "CLAIM_ABOUT_GR_OR_ITS_DYNAMICS": false,
+    "DENSITY_BRANCH_EXCLUDED_IN_ODD_DIMENSION": true,
+    "EXTRA_STRUCTURE_CASE_ADDRESSED": false,
+    "FORMALLY_VERIFIED_IN_A_PROOF_ASSISTANT": true,
+    "NON_ADDITIVE_COUNT_CONSTRUCTED": false,
+    "NON_ADDITIVE_COUNT_RULED_OUT": false,
+    "NON_CONSTANT_RESCALINGS_ADDRESSED": false,
+    "QUANTUM_CLAIM": false,
+    "REALISABILITY_OF_WEIGHTS_ADDRESSED": false,
+    "ZERO_AXIOM_DEVELOPMENT": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "that a non-additive conformally invariant count exists. The density branch is closed; the non-additive branch is neither constructed nor ruled out",
+    "anything about densities built with EXTRA STRUCTURE. A compensator or dilaton of nonzero weight evades the parity argument -- by choosing a scale, which is what conformal invariance forbids. That fork is stated, not resolved",
+    "REALISABILITY. The arithmetic says which weights are available, not which (m, D) are realised by an actual invariant. The negative result needs only the necessary condition and is unaffected; the dimension-four positive statement is about weights, not about a constructed invariant",
+    "anything about non-constant conformal factors. The weight bookkeeping is for constant Omega; a full treatment carries derivative-of-Omega terms",
+    "any claim about general relativity or its dynamics. Conformal weights are kinematic",
+    "a reproduction, confirmation or refutation of Carcassi--Aidala's own derivation",
+    "any quantum, causal, or field-theoretic claim"
+  ],
+  "exact_checks": {
+    "even_dimensional_counterpart_exhibited": true,
+    "kernel_rechecked_by_coqchk": true,
+    "obstruction_is_a_parity_argument_not_a_case_check": true,
+    "zero_axiom_development": true
+  },
+  "gate_negative_controls": [
+    "nine inherited from the earlier modules, all rejected",
+    "a FALSE claim that a conformally invariant density exists in dimension three is REJECTED"
+  ],
+  "gate_result": "RESULT: 15 green (0 red) \u2014 GATE: PASS",
+  "generality_level": "G3_ALL_POLYNOMIAL_CURVATURE_SCALARS_ALL_DIMENSIONS_CONSTANT_RESCALING",
+  "ledger": {
+    "coqchk_axiom_section": "<none>",
+    "declared_assumptions_in_source": "none \u2014 no Axiom, Parameter, Hypothesis, Conjecture, Admitted or admit",
+    "print_assumptions_closed": "8/8 for this module; 79/79 across the ten modules the shared gate drives"
+  },
+  "lifecycle_ladder": "reverse-physics-v0",
+  "lifecycle_state": "NECESSITY_CERTIFIED",
+  "next_gate": "REVERSE_PHYSICS_NONADDITIVE_CONFORMAL_COUNT: the density branch is closed and the counting branch is uninformative, so construct or refute a non-additive conformally invariant DOF count. That is the constructive half and it is open.",
+  "provenance": {
+    "gate_script_not_pinned": "rocq/run.sh is harness, deliberately not hash-pinned",
+    "source_manifest": {
+      "rocq/ReversePhysicsConformalCount.v": "4d937d9af7f6ba5f04260d0248c4d0977177f12e7992f1cb4dc77187876ac662"
+    }
+  },
+  "record_kind": "PROVENANCE_IMPORT \u2014 the mathematics is in rocq/ReversePhysicsConformalCount.v; this file computes nothing",
+  "result_id": "REVERSE_PHYSICS_CONFORMAL_COUNT_ROCQ_V1",
+  "result_state": "CONFORMAL_INVARIANCE_EXCLUDES_THE_DENSITY_BRANCH_OF_THE_DOF_COUNTING_TRILEMMA_IN_ODD_DIMENSION",
+  "schema": "reverse-physics-conformal-count-rocq-v1",
+  "the_finding": {
+    "consequence": "An informative and conformally invariant DOF count must be NON-ADDITIVE: the density branch is closed by parity and the counting branch carries no information. That is the same branch quantum mechanics forced them to, reached here by a purely classical symmetry with no quantum input.",
+    "statement": "In odd dimension there is no conformally invariant density built from the metric alone. A Cauchy surface is three-dimensional.",
+    "the_weyl_connection": "In dimension four the balance IS achievable: 2m + D = 4 admits (m, D) = (2, 0), a quadratic curvature invariant -- exactly the weight of C_abcd C^abcd, the conformally invariant action of Weyl gravity. Conformal gravity is the even-dimensional case where a conformal density exists; a Cauchy surface is the odd-dimensional case where it cannot.",
+    "why_parity": "Under g -> Omega^2 g with constant Omega, a polynomial curvature scalar with m curvature factors and D derivative indices has weight -(2m + D), and D is even because every index is contracted in a pair. So every such weight is even. The volume element has weight +d. Invariance requires 2m + D = d, which has no solution for odd d."
+  },
+  "theorems": [
+    {
+      "name": "curvature_scalar_weight_is_even",
+      "role": "the structural fact the whole obstruction rests on; D is even because every index is contracted in a pair",
+      "statement": "every polynomial curvature scalar has EVEN conformal weight, namely -(2m + D)"
+    },
+    {
+      "name": "conformal_density_iff_balance",
+      "role": "the volume element carries weight +d, so invariance is weight cancellation",
+      "statement": "a density is conformally invariant exactly when 2m + D = d"
+    },
+    {
+      "name": "conformal_density_forces_even_dimension",
+      "statement": "a conformally invariant density forces the dimension to be even"
+    },
+    {
+      "name": "no_conformal_density_in_odd_dimension",
+      "role": "THE OBSTRUCTION, by parity rather than by accident",
+      "statement": "in odd dimension no curvature scalar balances the volume weight"
+    },
+    {
+      "name": "no_conformal_dof_density_on_a_cauchy_surface",
+      "role": "a Cauchy surface is three-dimensional, and three is odd; this is the case the Carcassi-Aidala GR conjecture needs",
+      "statement": "no conformally invariant degree-of-freedom density exists on a three-manifold"
+    },
+    {
+      "name": "dimension_four_balance",
+      "statement": "in dimension four the balance requires 2m + D = 4"
+    },
+    {
+      "name": "weyl_squared_is_a_conformal_density_in_dimension_four",
+      "role": "that is the weight carried by C_abcd C^abcd, the conformally invariant action of Weyl gravity",
+      "statement": "(m, D) = (2, 0) balances in dimension four"
+    },
+    {
+      "name": "weyl_squared_is_not_one_in_dimension_three",
+      "statement": "and the same weights do not balance on a Cauchy surface"
+    }
+  ],
+  "verification_commands": [
+    "cd rocq && ./run.sh",
+    "PYTHONPATH=. python3 -m reverse_physics.conformal_count_rocq --check"
+  ],
+  "what_it_engages": {
+    "our_addition": "conformal invariance is not a fourth item in the trilemma but a FILTER on which resolutions are admissible, and it is not idle: it closes the density branch in odd dimension.",
+    "target": "the degree-of-freedom counting trilemma in Carcassi and Aidala, Reverse Physics for GR (Michigan, 16 Nov 2024)",
+    "their_resolutions": "drop 1 -> a density measure; drop 2 -> the counting measure; drop 3 -> a non-additive quantum measure. They drop 3 for quantum mechanics and conjecture quantum gravity does the same for the DOF count.",
+    "their_trilemma": [
+      "every point is a single DOF",
+      "finite volume carries finitely many DOFs",
+      "the count is additive for disjoint regions"
+    ]
+  }
+}

@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 # run.sh — the reverse-physics torus GATE.
 #
-# Nine developments, all zero-axiom, in dependency order.  The first four are the
-# torus chain, the next four an INDEPENDENT stochastic carrier, and the last a
-# BRIDGE restating the torus results in Carcassi-Aidala notation.
+# Ten developments, all zero-axiom, in dependency order.  The first four are the
+# torus chain, the next four an INDEPENDENT stochastic carrier, and the last two
+# engage Carcassi-Aidala directly: a BRIDGE restating the torus results in their
+# notation, and a PARITY OBSTRUCTION on their degree-of-freedom counting.
 #
 #   ReversePhysicsTorus.v          the TOPOLOGICAL step: at every mode with a
 #                                  nonzero frequency closed = exact, so the
@@ -52,6 +53,11 @@
 #                                  their open GR conjecture is shown to need a
 #                                  topological term the finite-dimensional
 #                                  theorem does not have.
+#   ReversePhysicsConformalCount.v  the FOURTH DESIDERATUM: adding conformal
+#                                  invariance to their DOF-counting trilemma
+#                                  excludes the density branch in ODD dimension
+#                                  by parity.  A Cauchy surface is
+#                                  three-dimensional.
 #
 # Print Assumptions must say "Closed under the global context" for every
 # theorem, and coqchk must list NO axioms.
@@ -66,7 +72,7 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
 
-MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge)
+MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount)
 pass=0
 fail=0
 
@@ -269,8 +275,23 @@ Proof.
 Qed.
 NEG
 
+
+# (j) There is no conformally invariant DOF density on a 3-manifold.
+cat > _neg_j.v <<'NEG'
+Require Import ZArith.
+Require Import ReversePhysicsConformalCount.
+(* FALSE on purpose: the parity obstruction says no curvature scalar balances
+   the volume weight in odd dimension.  If this compiled, the fourth
+   desideratum would be vacuous. *)
+Theorem bogus_conformal_density_in_three :
+  exists c, is_conformal_density 3 c.
+Proof.
+  exists weyl_squared_weights. reflexivity.
+Qed.
+NEG
+
 neg_ok=0
-for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i; do
+for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j; do
   if coqc "$n.v" >/tmp/rp_neg.log 2>&1; then
     echo "  $n: FALSE claim was ACCEPTED — REJECT"; neg_ok=1
   else
@@ -278,7 +299,7 @@ for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i; do
   fi
 done
 if [ "$neg_ok" -eq 0 ]; then pass=$((pass+1)); else fail=$((fail+1)); fi
-rm -f _neg_[a-i].v _neg_[a-i].vo _neg_[a-i].vok _neg_[a-i].vos _neg_[a-i].glob ._neg_[a-i].aux
+rm -f _neg_[a-j].v _neg_[a-j].vo _neg_[a-j].vok _neg_[a-j].vos _neg_[a-j].glob ._neg_[a-j].aux
 
 echo
 if [ "$fail" -eq 0 ]; then

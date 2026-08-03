@@ -148,56 +148,92 @@ conjecture needs a third ingredient — a cohomological condition — with no
 counterpart in the finite-dimensional theorem. Their slide asks
 `δ∫L dⁿs = ???`; whatever the answer, it must carry such a term.
 
-### 2.2 The proposed DOF count is not conformally invariant
+### 2.2 The fourth desideratum: a parity obstruction
 
 The talk proposes counting degrees of freedom by a spatial volume. Under a
-conformal rescaling `g → Ω²g`, the induced 3-metric goes `h → Ω²h`, so
-`√h → Ω³√h` and
+conformal rescaling `g → Ω²g` the induced 3-metric goes `h → Ω²h`, so
+`√h → Ω³√h` and the count is not invariant. That much is elementary. The
+question is whether *any* repair exists — and the answer is sharper than the
+observation.
+
+**Conformal invariance is not a fourth item in your trilemma.** It is a *filter
+on which resolutions are admissible*: if `g` and `Ω²g` are the same physical
+configuration, they must receive the same count. Applying the filter to the
+three branches of
+
+> 1. every point is a single DOF · 2. finite volume carries finitely many ·
+> 3. the count is additive — **"Pick two!"**
+
+gives:
+
+| branch | conformally invariant? | informative? |
+|---|---|---|
+| drop 1 → a density measure `∫_U ρ dvol` | **no** — theorem below | yes |
+| drop 2 → the counting measure | yes (it never sees the metric) | **no** — every infinite region gets the same value |
+| drop 3 → a non-additive count | not excluded | not excluded |
+
+**The theorem.** Under `g → Ω²g` with constant `Ω`, a local scalar built
+polynomially from the metric, its inverse, the Riemann tensor and covariant
+derivatives is fixed — *for weight purposes* — by `m` curvature factors and `D`
+derivative indices. Every index is contracted in a pair, so `D` is even, and
 
 ```
-∫_U √h d³x  ⟼  ∫_U Ω³ √h d³x
+weight = 2m − 2·(4m+D)/2 = −(2m + D)     — always even
 ```
 
-**The count is not conformally invariant.**
+The volume element on a `d`-manifold has weight `+d`. A density is conformally
+invariant exactly when the weights cancel, `2m + D = d`. **For odd `d` there is
+no solution.**
 
-For general relativity that is arguably harmless — GR has a preferred conformal
-frame. But it is not harmless in general, and the theory where it bites is the
-one this repository studies.
+A Cauchy surface is three-dimensional. Three is odd.
 
-**Weyl (conformal) gravity** is invariant under exactly that rescaling. Its
-action `∫√−g C_{abcd}C^{abcd}` is conformally invariant in four dimensions, so
-`g` and `Ω²g` describe the *same* physical configuration. The proposed measure
-assigns them **different degree-of-freedom counts**.
+`no_conformal_dof_density_on_a_cauchy_surface` — machine-checked, zero axioms.
+The gate carries a control asserting such a density exists; it is rejected.
 
-So conformal gravity is a clean carrier on which the proposal is ill-defined —
-and not for exotic reasons. No Planck scale, no quantum gravity, no discreteness.
-Just a classical field theory with a gauge symmetry the measure does not respect.
+So the failure of `∫√h d³x` is not a bad choice of density. **No choice works.**
 
-Their talk asks: *"Does lower bound on DOF count require an equally severe
-revisitation of space-time?"* Conformal invariance is a concrete, non-Planckian
-reason the answer may be yes — the difficulty appears already at the classical
-level, in a theory that has been studied for fifty years.
+**The consequence, and it is a convergence rather than a collision.** An
+*informative* and *conformally invariant* degree-of-freedom count must be
+**non-additive** — the density branch is closed by parity and the counting
+branch carries no information. That is the same branch you were driven to for
+quantum mechanics, reached here by a purely classical symmetry with no quantum
+input at all.
 
-**The constructive question**, which we have *not* answered: what is a
-degree-of-freedom count in a theory with no preferred volume? Conformal gravity
-forces it, and this repository has the certified conformal-weight bookkeeping —
-a classical BV–BFV complex, certified residual cohomology, an explicit physical
-spectrum — to attack it. That is an offer, not a result.
+Your talk asks: *"Does lower bound on DOF count require an equally severe
+revisitation of space-time?"* This says the revisitation is forced twice over,
+and once of the two reasons is not quantum.
+
+**The even-dimensional counterpart.** In dimension four the balance *is*
+achievable: `2m + D = 4` admits `(m, D) = (2, 0)` — a quadratic curvature
+invariant. That is exactly the weight carried by `C_{abcd}C^{abcd}`, the
+conformally invariant action of Weyl gravity. So conformal gravity is the
+even-dimensional case where a conformal density exists, and a Cauchy surface is
+the odd-dimensional case where it cannot.
+
+**Two honest limits.** The obstruction is for densities built from the **metric
+alone**. Introducing a compensator or dilaton of nonzero weight evades it — but
+only by choosing a scale, which is what conformal invariance forbids. That fork
+is real physics, not a loophole. And *realisability* is not addressed: the
+arithmetic says which weights are available, not which `(m, D)` are actually
+realised by some invariant. The negative result needs only the necessary
+condition, so it is unaffected.
 
 ---
 
 ## 3. What is not claimed
 
 - **No claim about GR.** Our carrier is `T⁴` with a flat structure and
-  polynomial fields. Nothing here transfers to a dynamical spacetime.
+  polynomial fields. Nothing here transfers to a dynamical spacetime. §2.2 is
+  about conformal weights, which are kinematic, and says nothing about dynamics.
 - **No refutation of their classical theorem.** §1 concerns the interpretation of
   its factors; §2.1 concerns the *conjecture*, and is consistent with the theorem
   because `H¹` vanishes in the finite-dimensional case.
 - **No reproduction of their derivation.** We test candidate assumptions on
   declared carriers; we do not reconstruct their argument, and have not checked
   it.
-- **§2.2 is an observation, not a theorem.** The non-invariance is elementary.
-  What would be a result — a conformally invariant replacement — is open.
+- **§2.2 excludes one branch, not all counting.** The parity theorem closes the
+  density branch in odd dimension for metric-built densities. It does not
+  construct the non-additive count it points at, and does not rule one out.
 - **The physics on our side is modest.** `symplectic/Hamiltonian ≅ H¹` is
   classical symplectic geometry. What is new is the assumption analysis and the
   mechanization, not the underlying mathematics.
@@ -208,11 +244,12 @@ spectrum — to attack it. That is an offer, not a result.
 ## 4. Reproducing our side
 
 ```bash
-cd rocq && ./run.sh     # 14 green (0 red); coqchk axiom section <none>
+cd rocq && ./run.sh     # 15 green (0 red); coqchk axiom section <none>
 ```
 
-Nine zero-axiom Rocq modules, nine fail-closed negative controls. The bridge
-module is `rocq/ReversePhysicsAOPBridge.v`; the underlying results are in
+Ten zero-axiom Rocq modules, ten fail-closed negative controls. The bridge is
+`rocq/ReversePhysicsAOPBridge.v`, the parity obstruction is
+`rocq/ReversePhysicsConformalCount.v`, and the underlying results are in
 `ReversePhysicsTorus*.v`. Certificates and their boundaries are in
 `reverse_physics/certificates/`, and
 [`OVERVIEW.md`](OVERVIEW.md) is the narrative account of the whole probe.

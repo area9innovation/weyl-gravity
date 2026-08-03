@@ -128,6 +128,8 @@ schema/  certificates/  tests/  reports/
                                        the converse, and the biconditional
 ../rocq/ReversePhysicsAOPBridge.v      our omega proved to be their J (x) I_n,
                                        and the three findings in their notation
+../rocq/ReversePhysicsConformalCount.v the parity obstruction to a conformally
+                                       invariant degree-of-freedom count
 ../rocq/run.sh                         the zero-axiom gate (coqc, coqchk, controls)
 ```
 
@@ -146,6 +148,7 @@ schema/  certificates/  tests/  reports/
 | `..._SECOND_LAW_ROCQ_V1` | `G1` (4 states) | **a second law**: information conservation entails that disorder never decreases (purity/Rényi-2, no logarithms). The same assumption carries both laws — [report](reports/second-law-rocq.md) |
 | `..._ENTROPY_EQUALITY_ROCQ_V1` | `G1` (4 states) | reversible evolution preserves purity **exactly**, and spreading strictly produces entropy — [report](reports/entropy-equality-rocq.md) |
 | `..._ENTROPY_CONVERSE_ROCQ_V1` | `G1` (4 states) | **the biconditional**: reversible ⟺ no entropy production. The lattice's first closed loop — [report](reports/entropy-converse-rocq.md) |
+| `..._CONFORMAL_COUNT_ROCQ_V1` | `G3` (all dims) | **the fourth desideratum**: no conformally invariant DOF density exists in odd dimension, by parity. A Cauchy surface is 3-dimensional — [report](reports/conformal-count-rocq.md) |
 
 The G1 computation lives **in Forge** (`math/qmat` exact rational rank), gated at
 `forge/examples/reverse_physics_torus_gate.forge` in tango and pinned here by
