@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-physics-hamiltonian-privilege-necessity-ACTIVE-286cbb7279ec4b0b",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/reverse-physics-hamiltonian-privilege-necessity-ACTIVE-286cbb7279ec4b0b.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "reverse-physics", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-08-03", "seq": 7, "predecessor": "sf:program/event/reverse-physics-hamiltonian-privilege-necessity-ACTIVE-806c0f23ce630923", "payload": {"target": "sf:program/work/reverse-physics-hamiltonian-privilege-necessity", "to_state": "ACTIVE", "note": "REVERSE_PHYSICS_STOCHASTIC_ROCQ_V1: first certificate to put RP-DETERMINISTIC and RP-REVERSIBLE UNDER TEST rather than consumed. New independent carrier (4-state column-stochastic evolution over Q, imports none of the torus modules). Result: reversible <-> deterministic /\\ conserves_information, both conjuncts necessary by witness (collapse, mixer). So reversibility was never an independent assumption and the stream's vocabulary was redundant; noted at the definition site, existing listings left intact because the equivalence is not proved for continuous carriers. Gate 10 green 0 red, 45/45 closed, 5 negative controls. New gate: REVERSE_PHYSICS_STOCHASTIC_GENERAL_N."}, "native": {"authored_by": "sfc work-event", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/reverse-physics-hamiltonian-privilege-necessity"}]
+}

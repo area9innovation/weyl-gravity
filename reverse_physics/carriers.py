@@ -33,6 +33,14 @@ RP_INFORMATION_CONSERVING = "RP-INFORMATION-CONSERVING"
 RP_MARGINAL_INFORMATION_CONSERVING = "RP-MARGINAL-INFORMATION-CONSERVING"
 RP_LINEAR_CARRIER = "RP-LINEAR-CARRIER"
 
+# NOTE (REVERSE_PHYSICS_STOCHASTIC_ROCQ_V1): RP-REVERSIBLE is NOT independent of
+# {RP-DETERMINISTIC, RP-INFORMATION-CONSERVING} on the finite-state stochastic
+# carrier -- there it is exactly their conjunction.  Certificates on the
+# Hamiltonian carriers list determinism and reversibility as two separate
+# consumed assumptions, which on that evidence overstates how many are in play.
+# The equivalence is NOT proved for the continuous carriers, so the listings are
+# left as they are rather than silently merged.
+
 ASSUMPTION_GLOSS = {
     RP_DETERMINISTIC: "the state at one time fixes the state at every other time",
     RP_REVERSIBLE: "the evolution map is invertible; distinct states stay distinct",

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # run.sh — the reverse-physics torus GATE.
 #
-# Four developments, all zero-axiom, in dependency order:
+# Five developments, all zero-axiom, in dependency order.  The first four are
+# the torus chain; the fifth is an INDEPENDENT carrier (it imports none of them).
 #
 #   ReversePhysicsTorus.v          the TOPOLOGICAL step: at every mode with a
 #                                  nonzero frequency closed = exact, so the
@@ -24,6 +25,13 @@
 #                                  canonical.  Also corrects the earlier
 #                                  split-dependence theorem, which had used an
 #                                  ISOTROPIC pairing.
+#   ReversePhysicsStochastic.v     a DIFFERENT carrier -- finite-state stochastic
+#                                  evolution -- where determinism and
+#                                  reversibility can actually FAIL, so the two
+#                                  assumptions the stream had only ever consumed
+#                                  can finally be tested.  Result: reversibility
+#                                  is NOT independent; it is exactly determinism
+#                                  plus information conservation.
 #
 # Print Assumptions must say "Closed under the global context" for every
 # theorem, and coqchk must list NO axioms.
@@ -38,7 +46,7 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
 
-MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit)
+MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic)
 pass=0
 fail=0
 
@@ -153,8 +161,22 @@ Proof.
 Qed.
 NEG
 
+
+# (e) Determinism alone must NOT give reversibility: the collapse map is
+#     deterministic and destroys information.
+cat > _neg_e.v <<'NEG'
+Require Import ReversePhysicsStochastic.
+(* FALSE on purpose: if determinism sufficed, the collapse witness would be
+   contradictory and the stochastic result vacuous. *)
+Theorem bogus_determinism_suffices :
+  forall M, deterministic M -> reversible M.
+Proof.
+  intros M H. exact H.
+Qed.
+NEG
+
 neg_ok=0
-for n in _neg_a _neg_b _neg_c _neg_d; do
+for n in _neg_a _neg_b _neg_c _neg_d _neg_e; do
   if coqc "$n.v" >/tmp/rp_neg.log 2>&1; then
     echo "  $n: FALSE claim was ACCEPTED — REJECT"; neg_ok=1
   else
@@ -162,7 +184,7 @@ for n in _neg_a _neg_b _neg_c _neg_d; do
   fi
 done
 if [ "$neg_ok" -eq 0 ]; then pass=$((pass+1)); else fail=$((fail+1)); fi
-rm -f _neg_[abcd].v _neg_[abcd].vo _neg_[abcd].vok _neg_[abcd].vos _neg_[abcd].glob ._neg_[abcd].aux
+rm -f _neg_[abcde].v _neg_[abcde].vo _neg_[abcde].vok _neg_[abcde].vos _neg_[abcde].glob ._neg_[abcde].aux
 
 echo
 if [ "$fail" -eq 0 ]; then

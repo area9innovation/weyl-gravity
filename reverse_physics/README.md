@@ -31,6 +31,14 @@ takes `RP-*`. A test enforces this.
 `RP-LINEAR-CARRIER` is a *scope restriction*, not a postulate, and is labelled as
 such in `carriers.ASSUMPTION_GLOSS`.
 
+**The vocabulary is redundant.** `REVERSE_PHYSICS_STOCHASTIC_ROCQ_V1` proves that
+on a finite-state stochastic carrier `RP-REVERSIBLE` is exactly
+`RP-DETERMINISTIC ∧ RP-INFORMATION-CONSERVING`. Certificates on the Hamiltonian
+carriers list determinism and reversibility as two separate consumed assumptions,
+which on that evidence overstates how many are in play. The equivalence is *not*
+proved for the continuous carriers, so those listings are left alone rather than
+silently merged — but do not read them as a count of independent postulates.
+
 ## Lifecycle ladder
 
 Separate from the quantum ladder; never promote across ladders.
@@ -102,6 +110,8 @@ schema/  certificates/  tests/  reports/
 ../rocq/ReversePhysicsTorusChain.v     the four-level chain, both inclusions strict
 ../rocq/ReversePhysicsTorusReversal.v  the reversal: law <-> A1 /\ A2 /\ A3
 ../rocq/ReversePhysicsTorusSplit.v     why A2 is the remainder of a split choice
+../rocq/ReversePhysicsStochastic.v     a finite-state carrier: reversibility is
+                                       not an independent assumption
 ../rocq/run.sh                         the zero-axiom gate (coqc, coqchk, controls)
 ```
 
@@ -116,6 +126,7 @@ schema/  certificates/  tests/  reports/
 | `..._TORUS_FULL_CHAIN_ROCQ_V1` | `G4` (all modes) | the rest of the chain proved, both inclusions **strict**; and the marginal condition is exactly the *intra*-DOF content of symplecticity — the same localisation G0 found on the linear carrier — [report](reports/torus-full-chain-rocq.md) |
 | `..._TORUS_REVERSAL_ROCQ_V1` | `G4` (all modes) | **the reversal**: law ⟺ A1 ∧ A2 ∧ A3, each derived *from* the law, each independent by witness — [report](reports/torus-reversal-rocq.md) |
 | `..._TORUS_SPLIT_ROCQ_V1` | `G4` (all modes) | **why A2 isn't physical**: A1's split-dependence cancels against it exactly, so the physical/geometric division is *not canonical*; corrects the earlier split-dependence theorem, which used an isotropic pairing — [report](reports/torus-split-rocq.md) |
+| `..._STOCHASTIC_ROCQ_V1` | `G1` (4 states) | a **different carrier** where determinism and reversibility can fail: reversible ⟺ deterministic ∧ information-conserving, so **reversibility was never an independent assumption** — [report](reports/stochastic-rocq.md) |
 
 The G1 computation lives **in Forge** (`math/qmat` exact rational rank), gated at
 `forge/examples/reverse_physics_torus_gate.forge` in tango and pinned here by
