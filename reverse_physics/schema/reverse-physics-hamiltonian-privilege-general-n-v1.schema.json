@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-hamiltonian-privilege-general-n-v1.schema.json",
+  "title": "Reverse-physics: the general-n closed forms on the linear carrier",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "generality_level",
+    "lifecycle_ladder",
+    "lifecycle_state",
+    "dependency_tags",
+    "assumption_tags",
+    "supersedes",
+    "closed_forms",
+    "derivation_steps",
+    "polynomial_identity_argument",
+    "steps_rechecked_concretely_for_n_in",
+    "dimension_table",
+    "theorem",
+    "exact_checks",
+    "claim_flags",
+    "claim_boundary",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "reverse-physics-hamiltonian-privilege-general-n-v1"},
+    "result_id": {"const": "REVERSE_PHYSICS_HAMILTONIAN_PRIVILEGE_GENERAL_N_V1"},
+    "generality_level": {"type": "string", "pattern": "^G2_"},
+    "lifecycle_ladder": {"const": "reverse-physics-v0"},
+    "lifecycle_state": {
+      "enum": [
+        "CARRIER_DECLARED",
+        "SEPARATION_CERTIFIED",
+        "NECESSITY_CERTIFIED",
+        "SUFFICIENCY_CERTIFIED",
+        "EQUIVALENCE_CERTIFIED"
+      ]
+    },
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "enum": [
+          "LOCAL-ALGEBRAIC",
+          "EUCLIDEAN-SPECTRAL",
+          "REDUCED-MODE",
+          "LORENTZIAN-CAUSAL"
+        ]
+      }
+    },
+    "assumption_tags": {
+      "type": "object",
+      "required": ["consumed", "under_test", "gloss", "namespace_note"],
+      "properties": {
+        "consumed": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^RP-"}},
+        "under_test": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^RP-"}}
+      }
+    },
+    "supersedes": {
+      "type": "object",
+      "required": ["result_id", "in_what_respect"],
+      "properties": {
+        "result_id": {"const": "REVERSE_PHYSICS_HAMILTONIAN_PRIVILEGE_LINEAR_G0_V1"}
+      }
+    },
+    "closed_forms": {
+      "type": "object",
+      "required": ["dim_sp", "dim_marginal", "dim_sl", "codim_sp_in_marginal", "codim_sp_in_sl"],
+      "properties": {
+        "dim_sp": {"const": "n(2n + 1)"},
+        "dim_marginal": {"const": "4n^2 - n"},
+        "dim_sl": {"const": "4n^2 - 1"},
+        "codim_sp_in_marginal": {"const": "2n(n - 1)"},
+        "codim_sp_in_sl": {"const": "(2n + 1)(n - 1)"}
+      }
+    },
+    "derivation_steps": {
+      "type": "object",
+      "required": [
+        "step_1_omega_properties",
+        "step_2_two_characterisations",
+        "step_3_bijection",
+        "step_4_symmetric_dimension",
+        "step_5_marginal_independence",
+        "step_6_liouville",
+        "step_7_polynomial_identities"
+      ]
+    },
+    "polynomial_identity_argument": {
+      "type": "object",
+      "required": [
+        "identity_degree_bound",
+        "evaluation_points",
+        "points_required_for_a_degree_2_identity",
+        "points_used",
+        "argument"
+      ],
+      "properties": {
+        "points_used": {"type": "integer", "minimum": 4}
+      }
+    },
+    "steps_rechecked_concretely_for_n_in": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "integer", "minimum": 1}
+    },
+    "dimension_table": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "hamiltonian_sp_dimension",
+          "marginal_dimension",
+          "liouville_sl_dimension",
+          "codimension_sp_in_marginal",
+          "codimension_sp_in_liouville",
+          "separation_exists"
+        ]
+      }
+    },
+    "theorem": {
+      "type": "object",
+      "required": ["separation_threshold", "growth", "necessity_unchanged"]
+    },
+    "exact_checks": {
+      "type": "object",
+      "required": [
+        "all_steps_rechecked_on_the_declared_range",
+        "codimension_identities_proved_not_sampled",
+        "no_floating_point"
+      ],
+      "properties": {
+        "all_steps_rechecked_on_the_declared_range": {"const": true},
+        "codimension_identities_proved_not_sampled": {"const": true},
+        "no_floating_point": {"const": true}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "GENERAL_N_COVERED",
+        "CLOSED_FORMS_PROVED_AS_POLYNOMIAL_IDENTITIES",
+        "MARGINAL_CONDITION_SUFFICIENT_AT_ANY_N_ABOVE_ONE",
+        "NONLINEAR_CARRIER_COVERED",
+        "FORMALLY_VERIFIED_IN_A_PROOF_ASSISTANT",
+        "EQUIVALENCE_OVER_A_BASE_THEORY_ESTABLISHED",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "GENERAL_N_COVERED": {"const": true},
+        "CLOSED_FORMS_PROVED_AS_POLYNOMIAL_IDENTITIES": {"const": true},
+        "MARGINAL_CONDITION_SUFFICIENT_AT_ANY_N_ABOVE_ONE": {"const": false},
+        "NONLINEAR_CARRIER_COVERED": {"const": false},
+        "FORMALLY_VERIFIED_IN_A_PROOF_ASSISTANT": {"const": false},
+        "EQUIVALENCE_OVER_A_BASE_THEORY_ESTABLISHED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "does_not_establish": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "provenance": {
+      "type": "object",
+      "required": ["source_manifest", "generator_path", "independent_rail", "independence_argument"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

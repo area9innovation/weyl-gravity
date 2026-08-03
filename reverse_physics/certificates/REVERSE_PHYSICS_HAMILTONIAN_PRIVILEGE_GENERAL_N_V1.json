@@ -1,0 +1,176 @@
+{
+  "assumption_tags": {
+    "consumed": [
+      "RP-DETERMINISTIC",
+      "RP-REVERSIBLE",
+      "RP-LINEAR-CARRIER"
+    ],
+    "gloss": {
+      "RP-DETERMINISTIC": "the state at one time fixes the state at every other time",
+      "RP-INFORMATION-CONSERVING": "the flow preserves the total phase-space volume (global Liouville)",
+      "RP-LINEAR-CARRIER": "SCOPE RESTRICTION, not a physical postulate: the vector field is linear, so the flow is exp(tA)",
+      "RP-MARGINAL-INFORMATION-CONSERVING": "each degree of freedom independently preserves its own 2-dimensional phase-space area",
+      "RP-REVERSIBLE": "the evolution map is invertible; distinct states stay distinct"
+    },
+    "namespace_note": "RP-* names physical postulates and is disjoint from the programme's computational-regime tags.",
+    "under_test": [
+      "RP-INFORMATION-CONSERVING",
+      "RP-MARGINAL-INFORMATION-CONSERVING"
+    ]
+  },
+  "claim_boundary": "This establishes the three dimensions and the two codimensions as closed forms in n on the linear carrier, with each derivation step re-checked concretely for n = 1..7 and the codimension identities proved as polynomial identities rather than sampled. It closes the GENERAL_N_NOT_ESTABLISHED gate.",
+  "claim_flags": {
+    "CLOSED_FORMS_PROVED_AS_POLYNOMIAL_IDENTITIES": true,
+    "EQUIVALENCE_OVER_A_BASE_THEORY_ESTABLISHED": false,
+    "FORMALLY_VERIFIED_IN_A_PROOF_ASSISTANT": false,
+    "GENERAL_N_COVERED": true,
+    "MARGINAL_CONDITION_SUFFICIENT_AT_ANY_N_ABOVE_ONE": false,
+    "NONLINEAR_CARRIER_COVERED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "closed_forms": {
+    "codim_sp_in_marginal": "2n(n - 1)",
+    "codim_sp_in_sl": "(2n + 1)(n - 1)",
+    "dim_marginal": "4n^2 - n",
+    "dim_sl": "4n^2 - 1",
+    "dim_sp": "n(2n + 1)"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "derivation_steps": {
+    "step_1_omega_properties": "Omega^T = -Omega and Omega^2 = -I, by construction",
+    "step_2_two_characterisations": "A in sp <=> Omega A symmetric <=> Omega A + A^T Omega = 0",
+    "step_3_bijection": "S -> Omega S is a linear bijection Sym(2n) -> sp(2n), with explicit inverse A -> -Omega A",
+    "step_4_symmetric_dimension": "dim Sym(2n) = n(2n + 1), counted over the symmetric basis",
+    "step_5_marginal_independence": "the n marginal functionals have pairwise disjoint support, hence are independent",
+    "step_6_liouville": "the trace functional is nonzero, hence has rank 1",
+    "step_7_polynomial_identities": "the two codimension identities hold as polynomials in n"
+  },
+  "dimension_table": {
+    "n_1": {
+      "codimension_sp_in_liouville": 0,
+      "codimension_sp_in_marginal": 0,
+      "hamiltonian_sp_dimension": 3,
+      "liouville_sl_dimension": 3,
+      "marginal_dimension": 3,
+      "separation_exists": false
+    },
+    "n_2": {
+      "codimension_sp_in_liouville": 5,
+      "codimension_sp_in_marginal": 4,
+      "hamiltonian_sp_dimension": 10,
+      "liouville_sl_dimension": 15,
+      "marginal_dimension": 14,
+      "separation_exists": true
+    },
+    "n_3": {
+      "codimension_sp_in_liouville": 14,
+      "codimension_sp_in_marginal": 12,
+      "hamiltonian_sp_dimension": 21,
+      "liouville_sl_dimension": 35,
+      "marginal_dimension": 33,
+      "separation_exists": true
+    },
+    "n_4": {
+      "codimension_sp_in_liouville": 27,
+      "codimension_sp_in_marginal": 24,
+      "hamiltonian_sp_dimension": 36,
+      "liouville_sl_dimension": 63,
+      "marginal_dimension": 60,
+      "separation_exists": true
+    },
+    "n_5": {
+      "codimension_sp_in_liouville": 44,
+      "codimension_sp_in_marginal": 40,
+      "hamiltonian_sp_dimension": 55,
+      "liouville_sl_dimension": 99,
+      "marginal_dimension": 95,
+      "separation_exists": true
+    },
+    "n_6": {
+      "codimension_sp_in_liouville": 65,
+      "codimension_sp_in_marginal": 60,
+      "hamiltonian_sp_dimension": 78,
+      "liouville_sl_dimension": 143,
+      "marginal_dimension": 138,
+      "separation_exists": true
+    },
+    "n_7": {
+      "codimension_sp_in_liouville": 90,
+      "codimension_sp_in_marginal": 84,
+      "hamiltonian_sp_dimension": 105,
+      "liouville_sl_dimension": 195,
+      "marginal_dimension": 189,
+      "separation_exists": true
+    }
+  },
+  "does_not_establish": [
+    "a formally verified induction; the steps are machine-checked and the identities are proved, but the assembly of the steps into a derivation is human-authored and unverified by a proof assistant",
+    "anything about nonlinear carriers, where the dimension count has no direct analogue",
+    "anything about infinite-dimensional or field-theoretic state spaces",
+    "an equivalence in the reverse-mathematics sense; there is still no reversal over a base theory",
+    "a reproduction, confirmation or refutation of Carcassi--Aidala's own derivation",
+    "any quantum, causal, or field-theoretic claim"
+  ],
+  "exact_checks": {
+    "all_steps_rechecked_on_the_declared_range": true,
+    "closed_forms_agree_with_brute_force_rank": "verified by the independent rail",
+    "codimension_identities_proved_not_sampled": true,
+    "no_floating_point": true
+  },
+  "generality_level": "G2_ALL_n_LINEAR_VECTOR_FIELDS",
+  "lifecycle_ladder": "reverse-physics-v0",
+  "lifecycle_state": "NECESSITY_CERTIFIED",
+  "next_gate": "REVERSE_PHYSICS_HAMILTONIAN_PRIVILEGE_TORUS_G1: whether any of this survives on a carrier that is a manifold rather than a vector space.",
+  "polynomial_identity_argument": {
+    "argument": "Both sides of each identity are polynomials in n of degree at most 2; agreement at 4 > 2 + 1 distinct points forces equality as polynomials.",
+    "evaluation_points": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "identity_degree_bound": 2,
+    "points_required_for_a_degree_2_identity": 3,
+    "points_used": 4
+  },
+  "provenance": {
+    "generator_path": "reverse_physics/hamiltonian_privilege_general_n.py",
+    "independence_argument": "Rail A derives the closed forms structurally (an explicit bijection onto Sym(2n), a support argument for functional independence, and polynomial identities). Rail B never uses the structural argument at all: it builds the defining constraint systems for each n and computes brute-force exact ranks, then compares. A structural slip and an elimination slip would have to coincide to survive.",
+    "independent_rail": "reverse_physics/verify_hamiltonian_privilege_general_n.py",
+    "source_manifest": {
+      "reverse_physics/carriers.py": "cff8d2a8323d3c6e2b40c41f1af0d91856ee3d5e9a947f8a113bd9d6c1578c4f",
+      "reverse_physics/exact_linalg.py": "e2915c65618c4dade3d01bfe39d3868369be63614962c80075d8d778d7148b40",
+      "reverse_physics/hamiltonian_privilege_general_n.py": "b898e2edbd3e3a08cb2d2b52f926d360d415cfce3b0b87165d3100c1cf011a71",
+      "reverse_physics/schema/reverse-physics-hamiltonian-privilege-general-n-v1.schema.json": "54b0e2336350f411c4f23109e15ecbfad2baa7211c858185d32598b8699c7764",
+      "reverse_physics/verify_hamiltonian_privilege_general_n.py": "2df81b4bea9753aefcab61a506abafbd07438e227e29d9eaa0445da36e97a714"
+    }
+  },
+  "result_id": "REVERSE_PHYSICS_HAMILTONIAN_PRIVILEGE_GENERAL_N_V1",
+  "result_state": "GENERAL_N_CLOSED_FORMS_DERIVED_AND_CODIMENSIONS_PROVED_AS_POLYNOMIAL_IDENTITIES",
+  "schema": "reverse-physics-hamiltonian-privilege-general-n-v1",
+  "steps_rechecked_concretely_for_n_in": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "supersedes": {
+    "in_what_respect": "the n-dependence only; the G0 witnesses, the finite-flow strengthening and the inter-DOF localisation of the obstruction are not restated here and remain the G0 certificate's content",
+    "result_id": "REVERSE_PHYSICS_HAMILTONIAN_PRIVILEGE_LINEAR_G0_V1"
+  },
+  "theorem": {
+    "growth": "the insufficiency gap grows quadratically in n, so the assumption becomes less adequate, not more, as the system gets larger",
+    "necessity_unchanged": "sp <= marginal <= sl holds for every n, so marginal information conservation remains necessary throughout",
+    "separation_threshold": "codim(sp in marginal) = 2n(n - 1) vanishes exactly at n in {0, 1} and is strictly positive for every n >= 2. Marginal information conservation is therefore insufficient at EVERY number of degrees of freedom above one, and the n = 2 datum of the G0 certificate was not an accident of the smallest case."
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m reverse_physics.hamiltonian_privilege_general_n --check",
+    "PYTHONPATH=. python3 -m reverse_physics.verify_hamiltonian_privilege_general_n",
+    "PYTHONPATH=. python3 -m unittest reverse_physics.tests.test_hamiltonian_privilege_general_n -v"
+  ]
+}
