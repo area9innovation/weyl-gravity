@@ -5,9 +5,10 @@ for the pure-Weyl programme carry **reverse physics** in the Carcassi–Aidala
 sense — not deriving laws from axioms, but finding the minimal physical
 assumptions a law is equivalent to?
 
-The answer is yes, with texture. Three of the four findings are **negative
-results about the programme's own shape**, which is the more useful outcome —
-and a second law later landed on top, giving the lattice its first structure.
+The answer is yes, with texture. Of the five findings, **three are negative
+results about the programme's own shape** — the more useful outcome — and the
+fifth is the only place a *lattice* appeared: two laws that constrain each other
+rather than a list of independent results.
 
 ---
 
@@ -18,9 +19,13 @@ mathematics proves `T ⟺ A` over a weak base theory and then shows `A` is
 independent. Reverse physics asks the same of a physical law: which assumptions
 is it *equivalent* to, not merely implied by?
 
-The test case throughout is **Hamiltonian privilege**: deterministic and
-reversible evolution is standardly said to conserve information, and Hamiltonian
-structure standardly said to follow. Which assumption does the work?
+The first test case is **Hamiltonian privilege**: deterministic and reversible
+evolution is standardly said to conserve information, and Hamiltonian structure
+standardly said to follow. Which assumption does the work?
+
+A second law — the arrow of disorder — joined later, on a third carrier, and
+turned out to consume the same assumption (§3.5). That is what makes this a
+lattice rather than a sequence.
 
 Three things are needed. The substrate already supplied one and a half.
 
@@ -150,11 +155,37 @@ equivalence is proved for four states and one step, not for the continuous
 carriers those certificates use. But they should not be read as a count of
 independent postulates.
 
+### 3.5 The two laws close a loop
+
+A second law landed on the stochastic carrier: **information conservation entails
+that disorder never decreases.** Exactness survived because purity `Σpᵢ²` is the
+exact rational content of the Rényi-2 entropy `−log(Σp²)` — and since `−log` is
+monotone, *entropy does not decrease* **is** *purity does not increase*, with no
+logarithm anywhere. The whole analytic content is one polynomial identity settled
+by `ring`.
+
+Then the equality case, both directions:
+
+```
+reversible  ⟺  no entropy production
+```
+
+So `conserves_information` is load-bearing for **both** laws — it makes
+reversibility redundant (§3.4) and it entails the arrow of disorder — and
+reversibility *is* the absence of entropy production. **A cycle, not a directed
+edge.**
+
+This is the only place in the probe where a lattice appeared. One law is a data
+point; two laws that constrain each other is structure, and structure is what
+reverse physics is for. Everything in §3.1–3.4 is about a single law; this is
+the finding that needed a second.
+
 ---
 
 ## 4. The reversal
 
-The one positive structural result. Over the declared carrier:
+The positive structural result on the Hamiltonian side (§3.5 is the other one).
+Over the declared carrier:
 
 ```
 hamiltonian  ⟺  A1 ∧ A2 ∧ A3
@@ -193,12 +224,23 @@ the results.**
   which truncations were covered, which turned "constant in N" into a question.
 
 A looser process would have produced four positive-sounding certificates and none
-of the four findings.
+of the findings in §3.1–3.4.
 
-Two other pieces of discipline paid: **negative controls** caught a wrong witness
-during development (a candidate control that was itself non-symplectic), and
-**fail-closed hash pinning** caught its own misuse twice — a harness script pinned
+Three other pieces of discipline paid.
+
+**Negative controls** caught a wrong witness during development — a candidate
+control that was itself non-symplectic — and later showed that a *uniform* test
+distribution would prove nothing, which is why the entropy converse uses one with
+distinct entries.
+
+**Fail-closed hash pinning** caught its own misuse twice: a harness script pinned
 alongside the mathematics, recorded and then removed rather than re-bumped.
+
+**Recording why a proof attempt failed** made the retry cheap. The entropy
+converse was cut once on cost — a case analysis expanded the test distribution's
+values and `coqc` was killed after 2m40s. The certificate recorded the cause *and
+the cheaper route*; taking that route compiled in 2.2 seconds. Had the failure
+been recorded only as "not done", the second attempt would have been guesswork.
 
 ---
 
@@ -220,6 +262,11 @@ Stated plainly, because the certificates each carry their own version:
 - **Not a reproduction, confirmation, or refutation of Carcassi–Aidala's own
   derivation.** This tests candidate assumptions on declared carriers; it does not
   reconstruct their argument.
+- **No Shannon entropy.** The second law is Rényi-2 purity only; the logarithmic
+  quantity is never formalised, and nothing here is about equilibration or the
+  approach to uniformity.
+- **The stochastic results are four states and one step.** The case analyses are
+  sized to that; a general finite state space is not covered.
 - No quantum, causal, or field-theoretic claim anywhere.
 
 ---
@@ -261,37 +308,20 @@ The Hamiltonian-privilege line is well mined. The remaining declared gates —
 `SP4_ORBIT`, `STOCHASTIC_GENERAL_N`, `PARAMETERISED_BASE` — are refinements of
 things already known and would add certificates without adding findings.
 
-The direction with genuine yield was a **second law**, and it has since landed
-(`..._SECOND_LAW_ROCQ_V1`): on the stochastic carrier, information conservation
-entails that disorder never decreases. Exactness is kept by using purity —
-`Σpᵢ²`, the exact rational content of the Rényi-2 entropy — instead of Shannon
-entropy, so no logarithm appears; the entire analytic content is one polynomial
-identity settled by `ring`.
+The second law and its equality case have since landed, closing the loop
+described in §3.5. Everything declared open after that — `SP4_ORBIT`,
+`STOCHASTIC_GENERAL_N`, `PARAMETERISED_BASE` — is a **refinement that would add
+certificates without adding findings**, and should be skipped unless something
+else needs them.
 
-**That gives the lattice its first structure.** `conserves_information` is now
-load-bearing for both laws: it makes reversibility redundant, and it entails the
-arrow of disorder. Two laws, one assumption.
+The directions that would still yield something:
 
-The **equality case is now fully closed**. Reversible evolution preserves purity
-exactly (`..._ENTROPY_EQUALITY_ROCQ_V1`), and preserving purity on one
-distribution with distinct entries forces reversibility
-(`..._ENTROPY_CONVERSE_ROCQ_V1`):
-
-```
-reversible  ⟺  no entropy production
-```
-
-So the two laws are linked in **both** directions: `conserves_information` makes
-reversibility redundant and entails the arrow of disorder, and reversibility *is*
-the absence of entropy production. **That is the lattice's first closed loop**
-rather than a directed edge.
-
-Worth recording how it closed. The converse was cut once, for cost — a case
-analysis expanded the test distribution's values and exhausted memory. The
-certificate recorded the cause *and the cheaper route*; taking that route (keep
-the deficit terms opaque, split the sum once) compiled in 2.2 seconds. The
-failure was never mathematical, and writing down why it failed is what made the
-second attempt quick.
-
-What remains — `SP4_ORBIT`, `STOCHASTIC_GENERAL_N`, `PARAMETERISED_BASE` — are
-refinements that would add certificates without adding findings.
+- **A third law.** The lattice has one cycle. Two cycles, or a law that
+  *conflicts* with the assumption set, is where the method starts discriminating
+  between accounts rather than describing one.
+- **A weakenable base** (§4). Everything here is an equivalence over a *declared
+  carrier*. Reverse mathematics compares against a base one can weaken; this
+  probe never built one, and `marginal_depends_on_the_dof_split` is the only
+  result that gestures at it.
+- **Someone reading this and disagreeing.** Three of the five findings are
+  negative claims about a live research programme. They should be argued with.
