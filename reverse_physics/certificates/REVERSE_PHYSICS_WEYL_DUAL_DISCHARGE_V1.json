@@ -1,0 +1,178 @@
+{
+  "certificate": "REVERSE_PHYSICS_WEYL_DUAL_DISCHARGE_V1",
+  "checks": {
+    "failures": [],
+    "negative_controls_rejected": "3/3",
+    "ok": true,
+    "passed": 18,
+    "total": 18
+  },
+  "citations": [
+    {
+      "boundary": "The computable half of G6 -- that the Pontryagin density depends only on the Weyl tensor -- IS discharged here.  The spanning half is not.",
+      "claim": "the parity-odd quadratic curvature invariants are spanned by P",
+      "entry": "G6 (spanning clause)",
+      "sources": [],
+      "status": "CITED",
+      "why_not_discharged": "a representation-theory dimension count, not a pointwise identity; no evaluation at metrics can establish it"
+    },
+    {
+      "boundary": "This establishes the VARIATIONAL content the classification actually uses -- the integrated variation vanishes on a closed manifold.  It is NOT an index theorem and NOT a global triviality claim.  The source certificate's own not_computed list includes the antifield/Koszul-Tate completion and relative cohomology nontriviality of the Euler anomaly.",
+      "checks_relied_on": [
+        "delta_E4_minus_dTheta",
+        "closed_manifold_integrated_variation"
+      ],
+      "claim": "int sqrt(-g) E4 is topological in D = 4, so it contributes nothing to the field equations",
+      "entry": "G4",
+      "source_dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "source_state": "INTRINSIC_EULER_TOWER_VERIFIED",
+      "sources": [
+        "quantum-weyl/local_bv/certificates/EULER_TRANSGRESSION_CERTIFICATE.json",
+        "quantum-weyl/local_bv/euler_transgression_certificate.py"
+      ],
+      "status": "CITED"
+    },
+    {
+      "boundary": "Quoted verbatim from the source: \"Global triviality of the Pontryagin class is explicitly not claimed.\"  The transgression is LOCAL.  G7 is therefore available only in its local form, which is what the classification uses (P contributes no field equations), and NOT as a statement about topological sectors.",
+      "checks_relied_on": [
+        "Chern-Weil transgression Tr(R^R) = d Tr(Gamma dGamma + 2/3 Gamma^3)"
+      ],
+      "claim": "int sqrt(-g) P is topological -- the theta-angle direction",
+      "entry": "G7",
+      "sources": [
+        "symbolic/verify_conformal_dynamical_topological.py"
+      ],
+      "status": "CITED"
+    },
+    {
+      "boundary": "N3 is the SAME content as G4's variational check, so it is discharged by the same citation rather than by separate work.  This is why RP-TOPO-INERT disappears on the field-equation side of the ledger.",
+      "checks_relied_on": [
+        "delta_E4_minus_dTheta"
+      ],
+      "claim": "a topological term has identically vanishing variation",
+      "entry": "N3",
+      "sources": [
+        "quantum-weyl/local_bv/certificates/EULER_TRANSGRESSION_CERTIFICATE.json"
+      ],
+      "status": "CITED"
+    }
+  ],
+  "conventions": {
+    "contraction": "all four indices raised with g before summing",
+    "dual": "(*T)_{abcd} = (1/2) eps_{ab}^{ef} T_{efcd}",
+    "epsilon": "eps_{abcd} = sqrt(|det g|) * [abcd], all indices down",
+    "lorentzian_projectors": "hodge.py eigenvalues +-i give W_pm = (C -+ i *C)/2, complex conjugates of each other",
+    "note": "hodge.py fixes star_square_sign, the eigenvalues and the projectors, but NOT the epsilon index placement on a rank-four tensor.  The placement above is chosen because it reproduces star_square_sign; that reproduction is a checked row, not an assumption.",
+    "source": "quantum-weyl/local_bv/hodge.py",
+    "star_square_sign": {
+      "EUCLIDEAN": 1,
+      "LORENTZIAN": -1
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "any of these identities for ALL metrics -- this is a DISCHARGE, exact verification at specific metrics and points, strictly stronger than an unverified import and strictly weaker than a theorem",
+    "the spanning clause of G6, which is a dimension count and is cited rather than discharged",
+    "global triviality of the Pontryagin class, which the G7 source explicitly does not claim",
+    "an index theorem for E4; the G4 citation supplies the variational content only",
+    "anything about the residual classes [W_+^2] and [W_-^2] beyond the algebraic split; their cohomological status is a separate result kind"
+  ],
+  "establishes": "G8 in BOTH signatures, as two different statements: Euclidean W_pm^2 = (C^2 +- P)/2 with real projectors, and Lorentzian W_pm^2 = (C^2 -+ i P)/2 with the complex projectors hodge.py specifies, the textbook Euclidean form being checked FALSE in Lorentzian signature.  The computable clause of G6 -- that the Pontryagin density depends only on the Weyl tensor -- verified non-vacuously on a non-Einstein metric.  The star-square convention (*C).(*C) = star_square_sign * C^2 reproducing hodge.py, which is the check the previous attempt failed.",
+  "inputs": {
+    "black_hole_programme/weyl_geometry.py": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "quantum-weyl/local_bv/hodge.py": "efe0d476154eb38f41c3857d4f5c69a97b723a8e8422df672332ac0fb5e2c247"
+  },
+  "kind": "geometry-discharge",
+  "negative_controls": [
+    {
+      "control": "eps_without_volume_factor",
+      "rejected": true,
+      "star_square_still_holds": false
+    },
+    {
+      "control": "dual_prefactor_one_instead_of_one_half",
+      "rejected": true,
+      "star_square_still_holds": false
+    },
+    {
+      "control": "real_split_in_lorentzian_signature",
+      "euclidean_form_still_holds": false,
+      "rejected": true
+    }
+  ],
+  "non_degeneracy": {
+    "metrics_where_G6_is_non_vacuous": [
+      "taub_nut/EUCLIDEAN",
+      "deformed_taub_nut/LORENTZIAN",
+      "deformed_taub_nut/EUCLIDEAN"
+    ],
+    "metrics_with_P_nonzero": [
+      "taub_nut/LORENTZIAN",
+      "taub_nut/EUCLIDEAN",
+      "deformed_taub_nut/LORENTZIAN",
+      "deformed_taub_nut/EUCLIDEAN"
+    ],
+    "note": "Taub-NUT is a vacuum solution, so Riem = C there and the G6 check is VACUOUS on it however cleanly it passes.  Bianchi IX with three distinct scale factors is not Einstein and is what carries G6."
+  },
+  "report": "reverse_physics/reports/weyl-dual-discharge.md",
+  "rows": [
+    {
+      "C2_is_nonzero": true,
+      "G6_is_non_vacuous_here": false,
+      "G6_pontryagin_depends_only_on_weyl": true,
+      "G8_euclidean_form_is_false_in_lorentzian_signature": true,
+      "G8_lorentzian_Wminus_sq_eq_C2_plus_iP_over_2": true,
+      "G8_lorentzian_Wplus_sq_eq_C2_minus_iP_over_2": true,
+      "P_is_nonzero": true,
+      "metric": "taub_nut",
+      "ricci_is_nonzero": false,
+      "signature": "LORENTZIAN",
+      "star_square_matches_hodge": true,
+      "star_square_sign": -1
+    },
+    {
+      "C2_is_nonzero": true,
+      "G6_is_non_vacuous_here": true,
+      "G6_pontryagin_depends_only_on_weyl": true,
+      "G8_euclidean_Wminus_sq_eq_C2_minus_P_over_2": true,
+      "G8_euclidean_Wplus_sq_eq_C2_plus_P_over_2": true,
+      "P_is_nonzero": true,
+      "metric": "taub_nut",
+      "ricci_is_nonzero": true,
+      "signature": "EUCLIDEAN",
+      "star_square_matches_hodge": true,
+      "star_square_sign": 1
+    },
+    {
+      "C2_is_nonzero": true,
+      "G6_is_non_vacuous_here": true,
+      "G6_pontryagin_depends_only_on_weyl": true,
+      "G8_euclidean_form_is_false_in_lorentzian_signature": true,
+      "G8_lorentzian_Wminus_sq_eq_C2_plus_iP_over_2": true,
+      "G8_lorentzian_Wplus_sq_eq_C2_minus_iP_over_2": true,
+      "P_is_nonzero": true,
+      "metric": "deformed_taub_nut",
+      "ricci_is_nonzero": true,
+      "signature": "LORENTZIAN",
+      "star_square_matches_hodge": true,
+      "star_square_sign": -1
+    },
+    {
+      "C2_is_nonzero": true,
+      "G6_is_non_vacuous_here": true,
+      "G6_pontryagin_depends_only_on_weyl": true,
+      "G8_euclidean_Wminus_sq_eq_C2_minus_P_over_2": true,
+      "G8_euclidean_Wplus_sq_eq_C2_plus_P_over_2": true,
+      "P_is_nonzero": true,
+      "metric": "deformed_taub_nut",
+      "ricci_is_nonzero": true,
+      "signature": "EUCLIDEAN",
+      "star_square_matches_hodge": true,
+      "star_square_sign": 1
+    }
+  ]
+}

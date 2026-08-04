@@ -305,13 +305,20 @@ Honest limits, because a separation ledger that claims to be clean is not one.
   bulk of the intellectual content and none of them is machine-checked here.
   Deriving even `G1` from a formalised Riemann tensor would move a large block
   from the middle column to the right one.
-  **Half done** ([report](weyl-geometry-discharge.md)): `G1`, `G2`, `G3` and `G5`
-  are now computed exactly against this repository's own curvature engine
-  (`black_hole_programme/weyl_geometry.py`) rather than imported. `G4`, `G6`, `G7`,
-  `G8` and the Noether facts remain — `G4`/`G7` are global and unreachable
-  pointwise, `G6`/`G8` need a dual, and `N1`–`N3` need the metric *variation*.
+  ~~**Half done**~~ **Now closed except for `N2`**
+  ([discharge](weyl-geometry-discharge.md), [dual](weyl-dual-discharge.md)):
+  `G1`, `G2`, `G3`, `G5` and `N1` are computed exactly against this
+  repository's own curvature engine (`black_hole_programme/weyl_geometry.py`);
+  `G6`'s computable clause and `G8` in **both signatures** are discharged
+  against `local_bv/hodge.py`'s conventions; `G4`, `G7`, `N3` and `G6`'s
+  spanning clause are **cited** to existing certificates, each carrying its
+  source's own boundary. **`N2` alone remains open** — it needs the metric
+  *variation*, and it is the bridge between the two ledgers.
   Note what the discharge is: exact verification **at specific metrics**, stronger
-  than an import and weaker than a theorem for all metrics.
+  than an import and weaker than a theorem for all metrics. And note what `G8`
+  turned out to be: **two** statements, not one. `W±² = (C² ± P)/2` is
+  *Euclidean*; the Lorentzian form is `W±² = (C² ∓ iP)/2` with complex
+  projectors, and the textbook form is checked **false** there.
 - **The Bach tensor is never computed *by this stream*.** "Same field equations" is
   *defined* as "differ by a topological term". That is `RP-TOPO-INERT`, not a
   variational calculation. §3.2b classifies the *space* of field equations and

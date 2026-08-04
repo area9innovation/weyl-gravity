@@ -99,12 +99,32 @@ Honest, because the point of the middle column is that it is visible:
 
 - `G4`, `G7` — `∫√−g E₄` and `∫√−g P` are topological. **Global** statements; a
   pointwise curvature engine cannot reach them.
+  **Now cited** ([report](weyl-dual-discharge.md)) to this repository's existing
+  transgression work, each with its source's own boundary: `G4` to
+  `EULER_TRANSGRESSION_CERTIFICATE` for the *variational* content only (not an
+  index theorem), and `G7` to the Chern–Weil transgression in
+  `symbolic/verify_conformal_dynamical_topological.py`, whose docstring states
+  that global triviality of the Pontryagin class is explicitly not claimed.
 - `G6`, `G8` — `P = C·C̃` spans the parity-odd invariants, and `W±² = (C² ± P)/2`.
-  The engine has no dual yet; adding one makes both reachable.
+  ~~The engine has no dual yet; adding one makes both reachable.~~
+  **Done** ([report](weyl-dual-discharge.md), certificate
+  `REVERSE_PHYSICS_WEYL_DUAL_DISCHARGE_V1`). `G8` splits into **two different
+  statements**: Euclidean `W±² = (C² ± P)/2` with real projectors, and
+  Lorentzian `W±² = (C² ∓ iP)/2` with the complex projectors `hodge.py`
+  specifies — the textbook form being *checked false* in Lorentzian signature.
+  `G6`'s computable clause (`Riem·⋆Riem = C·⋆C`) is discharged; its spanning
+  clause is a dimension count and is cited. Note the trap: the `G6` check is
+  **vacuous on a Ricci-flat metric**, where `Riem = C` identically, so it is
+  carried by non-Einstein metrics and the certificate records
+  `ricci_is_nonzero` per row.
 - `N2`, `N3` — the remaining Noether facts. `N2` (the trace of the variation is a
   nonzero multiple of the anomaly) is a quantum statement; `N3` (a topological term
   has identically vanishing variation) needs the variation of `E₄`, not curvature at
   a point. `N1` is discharged above.
+  **`N3` is now cited**: it is the *same content* as `G4`'s
+  `delta_E4_minus_dTheta`, so the same certificate carries it.
+  **`N2` is the one entry still genuinely open**, and it is the bridge between
+  the action ledger and the field-equation ledger.
 
 ## What this is, and is not
 
