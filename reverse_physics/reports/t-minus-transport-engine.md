@@ -391,13 +391,29 @@ the intermediate value theorem) and `flint_eig_clusters` (FLINT Acb balls) — t
 **exact rational** matrix. `L_H` assembled from an interval transport is an *interval*
 matrix, and nothing across the 89 math modules encloses the eigenvalues of one.
 
-That gap is on the critical path, and it is bigger than it looks, because the
+That gap was on the critical path, and it was bigger than it looks, because the
 criterion also demands `L_H` be **diagonalizable** — a separate clause with its own
-failure mode (see [[scattering-c-factorisation]]). A Rump-style verified eigenpair
-routine settles both at once: an interval-Newton/Krawczyk operator on
-`(A − λI)x = 0, xₖ = 1` certifies existence *and local uniqueness* of an eigenpair in
-a ball, and `n` such balls that are pairwise **disjoint** prove the eigenvalues are
-simple, hence that the matrix is diagonalizable.
+failure mode (see [[scattering-c-factorisation]]).
+
+**Now closed** — `math/ivcomplex`, tango `fb4a3abfc`. Not, in the end, by the
+Rump-style verified eigenpair this note first proposed. What the consumer needs is
+narrower than a general eigensolver, and the narrower thing is much simpler: for a
+Hermitian pencil `(K, G)`, prove a **certified sign alternation** of `det(K − tG)`
+across `n+1` supplied sample points. The intermediate value theorem then puts one
+root strictly inside each of the `n` brackets — and `n` distinct real roots *is* the
+entire spectrum of a degree-`n` polynomial, each one simple, hence the pencil is
+diagonalizable. Both clauses, from one test, with no approximate inverse anywhere in
+it and no Sturm sequence (whose remainders divide by leading coefficients and lose
+catastrophically under interval arithmetic).
+
+It fails closed: an undecided sign is a **refusal**, and a short count is "not
+established", never "the remaining roots are complex". The control that proves this
+had to be built twice — the obvious one (put a sample point exactly on a root)
+passes whether the code refuses *or guesses*, because the guess collides with the
+previous sign there. Measured: replacing the refusal with `s = 1` left the whole gate
+green. The replacement fattens one eigenvalue so `det` straddles zero at an interior
+point while the others stay certified, where refusing certifies nothing and guessing
+manufactures an alternation and certifies a spectrum never proved.
 
 Nearer term, `|A_in₂|²` still straddles 1, so spin-two reflection is undecided. Same
 lever again: the enclosure is now integration-limited rather than domain-limited, so
