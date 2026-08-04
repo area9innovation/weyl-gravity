@@ -381,8 +381,23 @@ that cannot bound the reciprocal must still say so.
 **The criterion is about eigenvalues.** `spec(L_H) ⊂ (0,1)` is not decided by a
 determinant. `det(L_H) ∈ (0,1)` is a necessary condition and a cross-check on the
 programme's own bound, nothing more. Closing the ghost question needs the spectrum —
-`T₋` assembled, `L_H = G⁻¹T₋⁻†H_H T₋⁻¹` formed, and `ivmat`'s validated eigenvalue
-enclosures applied — not a sharper `det`.
+`T₋` assembled, `L_H = G⁻¹T₋⁻†H_H T₋⁻¹` formed, and the eigenvalues enclosed — not a
+sharper `det`.
+
+**Correction: the last step has no rail yet.** An earlier version of this note said
+`ivmat`'s validated eigenvalue enclosures would decide it. They cannot, as written.
+Both eigenvalue routes in the library — `ivm_eig_bisect` (sign of `det(A−tI)` plus
+the intermediate value theorem) and `flint_eig_clusters` (FLINT Acb balls) — take an
+**exact rational** matrix. `L_H` assembled from an interval transport is an *interval*
+matrix, and nothing across the 89 math modules encloses the eigenvalues of one.
+
+That gap is on the critical path, and it is bigger than it looks, because the
+criterion also demands `L_H` be **diagonalizable** — a separate clause with its own
+failure mode (see [[scattering-c-factorisation]]). A Rump-style verified eigenpair
+routine settles both at once: an interval-Newton/Krawczyk operator on
+`(A − λI)x = 0, xₖ = 1` certifies existence *and local uniqueness* of an eigenpair in
+a ball, and `n` such balls that are pairwise **disjoint** prove the eigenvalues are
+simple, hence that the matrix is diagonalizable.
 
 Nearer term, `|A_in₂|²` still straddles 1, so spin-two reflection is undecided. Same
 lever again: the enclosure is now integration-limited rather than domain-limited, so
