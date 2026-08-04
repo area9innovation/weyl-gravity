@@ -4,7 +4,12 @@ It asks whether this programme's certificate substrate can carry **reverse
 physics** in the Carcassi–Aidala sense: not deriving laws from axioms, but
 finding the minimal physical assumptions a law is equivalent to.
 
-> **Start here: [`reports/OVERVIEW.md`](reports/OVERVIEW.md)** — the narrative
+> **Start here: [`reports/WEYL-CHARACTERIZATION.md`](reports/WEYL-CHARACTERIZATION.md)**
+> — the consolidated answer to the stream's standing question: what the Weyl
+> action is *equivalent* to, layer by layer, with every assumption's witness and
+> every open edge in one place.
+>
+> **[`reports/OVERVIEW.md`](reports/OVERVIEW.md)** — the narrative
 > account of what was asked, what was found, and what the negative results mean.
 > The rest of this file is the index.
 >

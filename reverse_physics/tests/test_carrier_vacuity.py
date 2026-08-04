@@ -243,3 +243,57 @@ class TestTheAOPConnectionCitationsResolve(unittest.TestCase):
     def test_the_ambiguous_reading_is_left_open(self):
         """Where a slide is terse we must present both readings, not pick one."""
         self.assertIn("we do not claim to know which is theirs", self.text)
+
+
+class TestTheConsolidatedCharacterization(unittest.TestCase):
+    """WEYL-CHARACTERIZATION.md is the stream's front door and asserts a
+    verification result.  If it names a module that does not exist, or claims a
+    witness for an assumption that has none, the front door lies."""
+
+    ROOT = os.path.dirname(os.path.dirname(os.path.dirname(
+        os.path.abspath(__file__))))
+    DOC = os.path.join(ROOT, "reverse_physics", "reports",
+                       "WEYL-CHARACTERIZATION.md")
+
+    def setUp(self):
+        with open(self.DOC) as fh:
+            self.text = fh.read()
+
+    def test_every_module_it_names_for_verification_exists(self):
+        import re
+        block = self.text.split("## 8. Verification")[1]
+        names = set(re.findall(r"`([a-z0-9_]+)`", block))
+        named = [n for n in names
+                 if os.path.exists(os.path.join(
+                     self.ROOT, "reverse_physics", n + ".py"))
+                 or n.endswith("_rocq") or n.startswith("weyl_")]
+        self.assertGreaterEqual(len(named), 10,
+                                "the verification section names too few modules")
+        for n in named:
+            self.assertTrue(
+                os.path.exists(os.path.join(self.ROOT, "reverse_physics",
+                                            n + ".py")),
+                "verification section names missing module %s" % n)
+
+    def test_every_assumption_row_has_a_witness(self):
+        """The point of the document is that all seven now do.  An empty cell
+        would be the regression that matters most."""
+        table = self.text.split("## 3. The assumptions")[1].split("## 4.")[0]
+        for tag in ("RP-LOCAL", "RP-METRIC", "RP-DIFF", "RP-WEYL",
+                    "RP-DIM4", "RP-TOPO-INERT", "RP-PARITY"):
+            row = [l for l in table.splitlines() if l.startswith("| `%s`" % tag)]
+            self.assertEqual(len(row), 1, "no row for %s" % tag)
+            cells = [c.strip() for c in row[0].strip("|").split("|")]
+            self.assertEqual(len(cells), 3, tag)
+            self.assertTrue(cells[2], "%s has an empty witness cell" % tag)
+            self.assertNotIn("not tested here", cells[2], tag)
+
+    def test_the_open_edges_are_still_declared(self):
+        openings = self.text.split("## 7. What is open")[1]
+        for phrase in ("dynamical consequence", "weakenable base",
+                       "derivative order zero", "specific metrics"):
+            self.assertIn(phrase, openings,
+                          "the open section dropped: %s" % phrase)
+
+    def test_it_does_not_claim_the_ghost_is_removed(self):
+        self.assertIn("not that the ghost is removed", self.text)

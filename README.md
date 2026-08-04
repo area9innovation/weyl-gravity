@@ -126,6 +126,7 @@ validated numerical results, but not a completed physical theory.
 | Schwarzschild black holes | The axial programme contains exact factorization and endpoint results, a validated defective \(\ell=2\) resonance, an endpoint-analytic nonzero complete massive-spin-two QNM velocity, and a fixed-domain global complex-scaled radial Fredholm double pole. Compactly cut-off matrix elements are the meromorphic continuation of an actual retarded mode-reduced transfer. Full metric/Bondi reconstruction, inverse-Laplace contour control, global waveform completeness, and the polar problem remain open. | [Papers 14, 16–18](paper/) |
 | Quantum programme | Local algebraic, Euclidean-spectral, and reduced-mode results exist. A Lorentzian full-BV quantum theory, physical Hilbert space, scattering theory, and unitarity theorem do not. | [Paper 12](paper/12-pure-weyl-one-loop-bv-anomaly.pdf), [quantum ledger](quantum-weyl/README.md) |
 | Phase-1 synthesis | The completed first phase is a classification with constructive results and obstructions—not a rescue of Weyl gravity and not a universal no-go theorem. | [Paper 15](paper/15-four-level-ghost-classification-phase1-synthesis.pdf) |
+| Reverse physics | Which minimal assumptions the Weyl action is *equivalent* to, rather than implied by. Every assumption now carries an independence witness; the derived derivative order is shown to require three of them; the geometry column is discharged or cited with stated boundaries; and Lovelock's \(D=4\) conclusion is computed in the same carrier, so the Einstein/Weyl comparison rests on two computed uniqueness theorems. This is assumption-necessity work about the theory's logical structure, not a new physical claim about the world. | [reverse_physics/](reverse_physics/README.md) |
 
 For the most detailed live claims table, assumptions, and non-claims, start
 with the [physicist executive summary](paper/98-physicist-executive-summary.md).
@@ -153,6 +154,10 @@ with the [physicist executive summary](paper/98-physicist-executive-summary.md).
   graph](certificate_graph/certificate-dag.svg)
 - **Forward programme:** [universe-building
   roadmap](notes/universe-building-roadmap.md)
+- **Reverse physics:** [what the Weyl action is equivalent
+  to](reverse_physics/reports/WEYL-CHARACTERIZATION.md), and the
+  [physics/geometry/mathematics separation
+  ledger](reverse_physics/reports/PHYSICS-VS-MATH.md) it rests on
 
 ## Manuscript series
 
@@ -236,6 +241,7 @@ default and reports drift rather than silently certifying the entire corpus.
 | `bridge/`, `field_bv_identification/`, `nonlinear/` | Cross-background maps, BV identifications, and nonlinear tests |
 | `quantum-weyl/` | Local BV, Euclidean, reduced-mode, Lorentzian, and transfer ledgers |
 | `certificate_graph/`, `residual_atlas/` | Evidence dependencies and branch passports |
+| `reverse_physics/` | Assumption-necessity certificates: which assumptions each law is equivalent to, with independence witnesses |
 | `planning/`, `reports/`, `notes/` | Append-only work coordination, receipts, audits, and roadmap |
 
 ## Clone and reproduce
