@@ -179,6 +179,13 @@ outcomes are reachable, so an explicit `T₋` is logically unavoidable. Its gate
 passes `forge -run` 25/25 but **fails `verify -full`** on a residual leak, so it
 is reported as a finding and **not** promoted to a certificate.
 
+And one further Forge-only piece, this one **fully verified** (`c==native`,
+ASan-clean): [`t-minus-transport-engine.md`](reports/t-minus-transport-engine.md)
+lands the validated transport for the exact Weyl axial factor equations with an
+independent Wronskian conservation rail — the engine `T₋` needs. What remains is
+the horizon Frobenius start, the Jost match at infinity, and the extension
+coefficient.
+
 The G1 computation lives **in Forge** (`math/qmat` exact rational rank), gated at
 `forge/examples/reverse_physics_torus_gate.forge` in tango and pinned here by
 content hash. `torus_g1_provenance.py` computes no physics — it is the import
