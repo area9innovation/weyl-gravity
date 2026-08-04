@@ -1,7 +1,7 @@
 # Toward `T₋`: the transport engine and the horizon start, landed
 
-**Gates** tango `forge/examples/weyl_rw_factor_transport_gate.forge` — 17/17, and
-`forge/examples/weyl_horizon_frobenius_gate.forge` — 23/23.
+**Gates** tango `forge/examples/weyl_rw_factor_transport_gate.forge` — 20/20, and
+`forge/examples/weyl_horizon_frobenius_gate.forge` — 34/34.
 Both `verify -full`: **`c==native`, ASan-clean on both backends**
 **Engine** `math/ivlinode` (rigorous linear IVPs) + `math/interval`
 
@@ -105,6 +105,40 @@ spin-two majorant must **reject** `K = 0.9` and spin-one must **reject** `K = 0.
 so the accepted values are binding; a 40-term truncation must **meet** the
 60-term one with its larger tail allowed for, and that tail is asserted strictly
 wider.
+
+## The review pass — and what it caught
+
+Before moving to the Jost match I audited both gates. Five gaps, one of them an
+honesty defect, and fixing that one immediately found an error.
+
+**The header claimed a test that did not exist.** The Frobenius gate advertised
+an "independent ODE-residual test on the series itself". There wasn't one. It now
+exists — and **on its first run it failed**: my hand-typed residual had dropped
+the `2x` from spin two's `B = 2iωx³ + 12iωx² + 24iωx + 16iω + 2x + 4`, writing
+the real part as `4` rather than `2x + 4`. The *recurrence* was correct — it came
+from the symbolic extraction — so the error was in the test. That is still
+exactly why the test needed writing.
+
+**The majorant ran in raw `f64`.** A rigorous bound cannot rest on unrounded
+arithmetic however wide the margin. It is now interval-rounded, with the verdict
+taken from the low end of the slack.
+
+**The horizon-side transport had no conservation rail** — the leg with the
+largest coefficients, hence the one most in need of a check, was the one without.
+
+**Nothing compared the series against the solver.** Now: evaluate at `x = 1/16`,
+transport to `x = 1/8`, and require it to meet the direct evaluation. Two
+entirely different pieces of machinery have to agree.
+
+**The majorant's conclusion was never checked against reality.** `|aₙ| ≤ CKⁿ` is
+now asserted for every computed `n ≥ n₀`.
+
+And in the transport gate: the companion entries are checked against the
+*certified* potentials `V₁ = 6(r−2)/r³`, `V₂ = 6(r−2)(r−1)/r⁴`, written
+independently of the reduced `V/f²` forms the solver uses.
+
+The numbers did not change — which is the point. The enclosures were right; the
+*argument* for them wasn't fully rigorous, and one advertised check was absent.
 
 ## What remains, precisely
 
