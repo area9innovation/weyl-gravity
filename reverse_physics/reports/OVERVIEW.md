@@ -847,6 +847,15 @@ The directions that would still yield something:
   complete contractions of three Weyl tensors and the third is not, so the `D = 6`
   row above stays `CITED` at 3 — not contradicted, its **boundary located**. The
   derivative sector is the open edge; the parity half is still untouched.
+- **That open edge is now closed too** ([report](derivative-conformal-count.md),
+  certificate `REVERSE_PHYSICS_DERIVATIVE_CONFORMAL_COUNT_V1`, Forge rail 33/33).
+  Adding the weight-6 shapes that carry derivatives — `∇R ∇R` and `R ∇∇R` — the
+  counts become **2, 2, 3** across `D = 4, 5, 6`, so the cited `3` is **matched by
+  computation** rather than referenced. The derivative sector supplies **exactly
+  one more invariant in every dimension**, which was not predicted, and the `D = 4`
+  and `D = 5` values were not either. It remains a **lower bound** — `□²R` is not
+  among the candidates — and **no basis is exhibited**, so the third invariant is
+  counted but not written down. The parity half is *still* untouched.
 - **Six derivatives in six dimensions.** The weight argument in §3.9 says the
   conformally invariant curvature degree is `k = D/2`, so odd dimensions have no
   such sector at all and `D = 6` selects the *cubic* one. Running the same exact

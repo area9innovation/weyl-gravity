@@ -141,6 +141,34 @@ class, together with the `D = 4` and `D = 5` values that make the shape visible:
 The second invariant appears **exactly at six dimensions** — also not what was
 expected, since `D = 5` was predicted to have two as well.
 
+### And the derivative sector closes the remaining gap
+
+**Done:** [`derivative-conformal-count.md`](derivative-conformal-count.md),
+certificate `REVERSE_PHYSICS_DERIVATIVE_CONFORMAL_COUNT_V1`, Forge rail 33/33.
+
+Adding the two derivative shapes at weight 6 — `∇R ∇R` and `R ∇∇R` — the count
+in `D = 6` reaches **3**:
+
+| | cubic span | cubic invariants | with derivatives |
+|---|---|---|---|
+| `D = 4` | 6 | 1 | **2** |
+| `D = 5` | 7 | 1 | **2** |
+| `D = 6` | 8 | 2 | **3** |
+
+So the cited `3` below is now **matched by an independent computation** rather
+than merely referenced. Two caveats keep it honest, and both are in the
+certificate:
+
+- it is a **lower bound**. The shape *linear* in the curvature with four
+  derivatives (`□²R`) is not among the candidates, and adding candidates can only
+  raise the count — so a fourth invariant, if there is one, hides there;
+- **no basis is exhibited.** The count is a dimension; the third invariant is not
+  written down.
+
+The unexpected part is the **uniform `+1`**: the derivative sector supplies exactly
+one more invariant in *every* dimension examined, and the `D = 4` and `D = 5`
+counts — 2 and 2 — were not predicted at all.
+
 ---
 
 ```bash
