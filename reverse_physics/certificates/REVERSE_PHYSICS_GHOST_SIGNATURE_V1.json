@@ -1,0 +1,110 @@
+{
+  "cases": [
+    {
+      "H": "[[1, 0, 0], [0, -2, 0], [0, 0, -3]]",
+      "case": "diagonalizable_real",
+      "diagonalizable": true,
+      "eta_signature_of_eigenbasis": [
+        1,
+        -1,
+        -1
+      ],
+      "expected_harmless": true,
+      "harmless": true,
+      "intertwiner_free_parameters": 3,
+      "is_pseudo_hermitian": true,
+      "matches_criterion": true,
+      "positive_definite_witness": {
+        "J": "[[1, 0, 0], [0, 1, 0], [0, 0, 1]]",
+        "minors": [
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      "real_spectrum": true,
+      "spectrum": [
+        "1",
+        "-2",
+        "-3"
+      ]
+    },
+    {
+      "H": "[[0, 1, 0], [-1, 0, 0], [0, 0, -1]]",
+      "case": "complex_pair",
+      "diagonalizable": true,
+      "expected_harmless": false,
+      "harmless": false,
+      "intertwiner_free_parameters": 3,
+      "is_pseudo_hermitian": true,
+      "matches_criterion": true,
+      "positive_definite_witness": null,
+      "real_spectrum": false,
+      "spectrum": [
+        "-1",
+        "-I",
+        "I"
+      ]
+    },
+    {
+      "H": "[[1, 1, 0], [-1, -1, 0], [0, 0, -1]]",
+      "case": "degenerate",
+      "diagonalizable": false,
+      "expected_harmless": false,
+      "harmless": false,
+      "intertwiner_free_parameters": 3,
+      "is_pseudo_hermitian": true,
+      "matches_criterion": true,
+      "positive_definite_witness": null,
+      "real_spectrum": true,
+      "spectrum": [
+        "-1",
+        "0"
+      ]
+    }
+  ],
+  "certificate": "REVERSE_PHYSICS_GHOST_SIGNATURE_V1",
+  "checks": {
+    "detail": {
+      "both_outcomes_occur": true,
+      "each_case_is_the_expected_one": true,
+      "every_case_is_pseudo_hermitian": true,
+      "the_criterion_holds_at_inertia_1_2": true,
+      "the_criterion_is_blind_to_the_ghost_count": true,
+      "the_eta_inertia_is_preserved_in_the_eigenbasis": true,
+      "the_harmless_case_exhibits_a_positive_charge": true,
+      "two_negative_norm_directions_survive_in_the_harmless_case": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 8,
+    "total": 8
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "whether replacing eta by J is physically legitimate.  That is the Bender--Mannheim question and it is a PHYSICS question this module does not answer -- but it is now visibly the question, rather than hidden by a dimension in which it could not be asked",
+    "anything about Weyl gravity's field-theoretic ghost.  Still finite-dimensional linear algebra, now on a three-dimensional Krein space.  C-GHOST-DYNAMICS stays OPEN",
+    "the NEGATIVE direction by exhaustion.  A positive J is EXHIBITED where one exists, which is constructive; where none exists the argument is that a positive J would conjugate H to a Hermitian operator, forcing diagonalizability and real spectrum, and the grid search is reported as corroboration rather than proof",
+    "inertia beyond (1,2), or the infinite-dimensional case where quasi-Hermiticity additionally needs the metric bounded with bounded inverse"
+  ],
+  "establishes": "The harmlessness criterion -- diagonalizable AND real spectrum -- survives at inertia (1,2), which is where this repository's black-hole programme actually works (lh_assembly records inertia (1,2,0); scattering_c_factorisation states the pencil criterion there).  So the (1,1) result was not a small-dimension accident.  AND THE NEW CONTENT: in the harmless case the eta-norms of the eigenvectors are [+1,-1,-1] -- TWO NEGATIVE-NORM DIRECTIONS SURVIVE.  Quasi-Hermiticity says a positive inner product EXISTS; it says nothing about how many directions were negative in the original one.  So 'harmless' means a positive-definite inner product exists, NOT that the ghost is gone, and the ghost COUNT is an eta-invariant no amount of quasi-Hermiticity removes.  At (1,1) the distinction was invisible because 'a ghost' and 'one ghost' coincide; at (1,2) they come apart.",
+  "imports": "none",
+  "kind": "extension",
+  "report": "reverse_physics/reports/ghost-signature.md",
+  "setting": {
+    "krein_metric": "eta = diag(1,-1,-1), inertia (1,2)",
+    "parameterisation": "eta-pseudo-Hermiticity says exactly that eta H is Hermitian, so H = eta M with M Hermitian covers every case with no further conditions",
+    "why_this_inertia": "lh_assembly records inertia(G_-) = inertia(H_out) = (1,2,0), and scattering_c_factorisation states the pencil criterion there.  Cited as context; this module imports nothing"
+  },
+  "the_finding": {
+    "eta_signature_in_the_harmless_case": [
+      1,
+      -1,
+      -1
+    ],
+    "reading": "'harmless' means A POSITIVE-DEFINITE INNER PRODUCT EXISTS.  It does NOT mean THE GHOST IS GONE.  The ghost count is an eta-invariant the criterion cannot see",
+    "why_it_was_invisible_at_1_1": "with one negative direction, 'a ghost' and 'one ghost' coincide"
+  }
+}

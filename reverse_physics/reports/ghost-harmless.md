@@ -134,9 +134,12 @@ Stated first in the certificate, because the gap is larger than the result.
 - **Not the infinite-dimensional case.** Quasi-Hermiticity there needs the metric
   operator bounded with bounded inverse, a genuine analytic condition with no
   finite-dimensional counterpart.
-- **Not higher inertia.** `(1,1)` is the minimal ghost; `(1,2)` and beyond aren't
-  computed here, though it is the same criterion `scattering_c_factorisation`
-  applies at `(1,2)`.
+- ~~**Not higher inertia.**~~ **`(1,2)` is now done**
+  ([report](ghost-signature.md)) — the criterion survives, and the extension
+  sharpens what it means: in the harmless case the `η`-norms of the eigenvectors
+  are `[+1,−1,−1]`, so **two negative-norm directions survive**. "Harmless" means
+  a positive-definite inner product *exists*, **not** that the ghost is gone.
+  Inertia beyond `(1,2)` is still not computed.
 - **Showing the three routes coincide is not showing the condition holds.**
 
 ---

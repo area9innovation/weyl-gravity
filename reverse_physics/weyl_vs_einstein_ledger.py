@@ -613,7 +613,8 @@ ROWS = [
         traces_to=["RP-WEYL"],
         sources=["reverse_physics/reports/ghost-model-obstruction.md",
                  "reverse_physics/reports/coprime-charge-bound.md",
-                 "reverse_physics/reports/ghost-harmless.md"],
+                 "reverse_physics/reports/ghost-harmless.md",
+                 "reverse_physics/reports/ghost-signature.md"],
         contingent_on="Whether a stable regime exists observationally, and on "
                       "any construction exhibiting decay or its absence; "
                       "nothing here bounds it.",
@@ -623,7 +624,14 @@ ROWS = [
              "conserved positive charge, quasi-Hermiticity/PT, and a positive "
              "invariant subspace -- are THE SAME CONDITION, namely "
              "diagonalizable with real spectrum "
-             "(REVERSE_PHYSICS_GHOST_HARMLESS_V1).  That says what harmless "
+             "(REVERSE_PHYSICS_GHOST_HARMLESS_V1), and the extension to "
+             "inertia (1,2) -- where this repository's black-hole programme "
+             "actually works -- shows the criterion survives AND that it is "
+             "weaker than 'no ghost': in the harmless case the eta-norms of "
+             "the eigenvectors are [+1,-1,-1], so TWO negative-norm "
+             "directions survive.  Harmless means a positive-definite inner "
+             "product EXISTS, not that the ghost is gone "
+             "(REVERSE_PHYSICS_GHOST_SIGNATURE_V1).  That says what harmless "
              "REQUIRES; it does not say whether Weyl gravity satisfies it, "
              "which is finite-dimensional linear algebra away from a "
              "field-theoretic question.  This stream published a dynamical reading "
