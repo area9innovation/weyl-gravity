@@ -1,0 +1,244 @@
+{
+  "always_live": [
+    "RP-WEYL",
+    "RP-DIM4",
+    "RP-TOPO-INERT",
+    "RP-PARITY"
+  ],
+  "axioms": [
+    {
+      "axiom": "locality",
+      "certificate": "REVERSE_PHYSICS_CARRIER_ENLARGEMENTS_V1",
+      "migrated": true,
+      "pairs_with": "RP-LOCAL",
+      "statement": "the action is an integral of a local density, polynomial in finitely many jets",
+      "witness": "k - j = D/2 has infinitely many solutions once inverse boxes are allowed"
+    },
+    {
+      "axiom": "metric-only",
+      "certificate": "REVERSE_PHYSICS_CARRIER_ENLARGEMENTS_V1",
+      "migrated": true,
+      "pairs_with": "RP-METRIC",
+      "statement": "built from the metric alone",
+      "witness": "sqrt(-g) phi^{2D/(D-2)}, diffeomorphism AND Weyl invariant at derivative order zero"
+    },
+    {
+      "axiom": "indices-contract",
+      "certificate": "REVERSE_PHYSICS_DIFF_INDEPENDENCE_V1",
+      "migrated": true,
+      "pairs_with": "RP-DIFF",
+      "statement": "every index is contracted into a scalar",
+      "witness": "sqrt(-g) (g^00)^2; the diff-invariant subspace of the lowest weight-zero degree is exactly 0 of 55"
+    }
+  ],
+  "certificate": "REVERSE_PHYSICS_WEAKENABLE_BASE_V1",
+  "checks": {
+    "detail": {
+      "all_three_migrations_are_done": true,
+      "every_assumption_is_live_at_the_weakest_base": true,
+      "every_migration_cites_an_existing_certificate": true,
+      "every_migration_has_a_witness": true,
+      "the_fourth_candidate_is_excluded_with_a_reason": true,
+      "the_lattice_is_the_full_powerset": true,
+      "the_migration_invariant_is_constant": true,
+      "the_strongest_base_hides_three_assumptions": true,
+      "the_weakest_base_hides_none": true,
+      "vacuity_is_monotone_in_the_base": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 10,
+    "total": 10
+  },
+  "correspondence": {
+    "carrier": "the base",
+    "carrier_enlargement": "weakening the base until it no longer proves the assumption",
+    "carrier_inclusion": "C subset of C' means T(C) proves T(C'), so C' is the WEAKER base",
+    "construction_constraints": "the axioms of the base",
+    "vacuous_assumption": "one the base proves outright"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "that the equivalence survives an ARBITRARY migration.  It is verified for the three that were actually done, each with its own certificate and witness, and is a declared structure for the rest.  A base one CAN weaken is not the same as having weakened it everywhere it matters",
+    "reverse mathematics.  There is no proof system here, no notion of what a base PROVES beyond 'which assumptions hold identically on the objects it admits', and no independence results in the logical sense.  The correspondence is STRUCTURAL",
+    "that the weakest base is well posed as a mathematical object.  'A real-valued functional of some field content, with the field content unconstrained' is a description, not a construction, and no computation in this stream is carried out over it",
+    "that the constraint list is complete.  These are the constraints this stream declared for its own carrier; another reading of the same carrier might find more"
+  ],
+  "establishes": "A shape for the stream's oldest open problem.  A carrier is presented by CONSTRUCTION CONSTRAINTS, and a set of constraints IS a theory, so carrier = base, constraints = axioms, enlarging the carrier = weakening the base, and an assumption vacuous on a carrier is one the base proves outright.  The lattice of bases is the powerset of the constraints; the vacuity profile is MONOTONE in it, so a weaker base can only make more assumptions testable; and the quantity (axioms in the base) + (live assumptions) is CONSTANT across the lattice, so content is conserved and only its visibility moves.  MIGRATION -- removing a constraint and adding the paired assumption -- is therefore the operation, and all three migratable constraints of the classification carrier have been migrated, each with a witness and a certificate.  A fourth candidate, curvature degree two, is excluded because the derived derivative order obtains it from other assumptions.",
+  "kind": "method",
+  "lattice": [
+    {
+      "axiom_count": 3,
+      "base": [
+        "indices-contract",
+        "locality",
+        "metric-only"
+      ],
+      "live": [
+        "RP-DIM4",
+        "RP-PARITY",
+        "RP-TOPO-INERT",
+        "RP-WEYL"
+      ],
+      "testable_count": 4,
+      "vacuous": [
+        "RP-DIFF",
+        "RP-LOCAL",
+        "RP-METRIC"
+      ]
+    },
+    {
+      "axiom_count": 2,
+      "base": [
+        "locality",
+        "metric-only"
+      ],
+      "live": [
+        "RP-DIFF",
+        "RP-DIM4",
+        "RP-PARITY",
+        "RP-TOPO-INERT",
+        "RP-WEYL"
+      ],
+      "testable_count": 5,
+      "vacuous": [
+        "RP-LOCAL",
+        "RP-METRIC"
+      ]
+    },
+    {
+      "axiom_count": 2,
+      "base": [
+        "indices-contract",
+        "locality"
+      ],
+      "live": [
+        "RP-DIM4",
+        "RP-METRIC",
+        "RP-PARITY",
+        "RP-TOPO-INERT",
+        "RP-WEYL"
+      ],
+      "testable_count": 5,
+      "vacuous": [
+        "RP-DIFF",
+        "RP-LOCAL"
+      ]
+    },
+    {
+      "axiom_count": 2,
+      "base": [
+        "indices-contract",
+        "metric-only"
+      ],
+      "live": [
+        "RP-DIM4",
+        "RP-LOCAL",
+        "RP-PARITY",
+        "RP-TOPO-INERT",
+        "RP-WEYL"
+      ],
+      "testable_count": 5,
+      "vacuous": [
+        "RP-DIFF",
+        "RP-METRIC"
+      ]
+    },
+    {
+      "axiom_count": 1,
+      "base": [
+        "locality"
+      ],
+      "live": [
+        "RP-DIFF",
+        "RP-DIM4",
+        "RP-METRIC",
+        "RP-PARITY",
+        "RP-TOPO-INERT",
+        "RP-WEYL"
+      ],
+      "testable_count": 6,
+      "vacuous": [
+        "RP-LOCAL"
+      ]
+    },
+    {
+      "axiom_count": 1,
+      "base": [
+        "metric-only"
+      ],
+      "live": [
+        "RP-DIFF",
+        "RP-DIM4",
+        "RP-LOCAL",
+        "RP-PARITY",
+        "RP-TOPO-INERT",
+        "RP-WEYL"
+      ],
+      "testable_count": 6,
+      "vacuous": [
+        "RP-METRIC"
+      ]
+    },
+    {
+      "axiom_count": 1,
+      "base": [
+        "indices-contract"
+      ],
+      "live": [
+        "RP-DIM4",
+        "RP-LOCAL",
+        "RP-METRIC",
+        "RP-PARITY",
+        "RP-TOPO-INERT",
+        "RP-WEYL"
+      ],
+      "testable_count": 6,
+      "vacuous": [
+        "RP-DIFF"
+      ]
+    },
+    {
+      "axiom_count": 0,
+      "base": [],
+      "live": [
+        "RP-DIFF",
+        "RP-DIM4",
+        "RP-LOCAL",
+        "RP-METRIC",
+        "RP-PARITY",
+        "RP-TOPO-INERT",
+        "RP-WEYL"
+      ],
+      "testable_count": 7,
+      "vacuous": []
+    }
+  ],
+  "migration_invariant": {
+    "constant": true,
+    "quantity": "axioms in the base + live assumptions",
+    "reading": "content is conserved; only its visibility moves.  A base is BETTER when it is WEAKER, because more of the content has become testable",
+    "values_across_the_lattice": [
+      7
+    ]
+  },
+  "monotonicity_violations": [],
+  "not_an_axiom": {
+    "candidate": "curvature degree exactly two",
+    "certificate": "REVERSE_PHYSICS_WEYL_ACTION_V1",
+    "why_not": "the derived derivative order theorem obtains it from RP-WEYL and RP-DIM4 (D - 2k = 0 forces k = D/2), so including it in the base would be redundant.  The stream's own best result is what removes it"
+  },
+  "report": "reverse_physics/reports/weakenable-base.md",
+  "where_this_stream_is": {
+    "base": [],
+    "migrated": [
+      "locality",
+      "metric-only",
+      "indices-contract"
+    ],
+    "note": "the last three certificates reached the weakest base without announcing it; this module is the recognition, not the work",
+    "remaining_migratable": []
+  }
+}

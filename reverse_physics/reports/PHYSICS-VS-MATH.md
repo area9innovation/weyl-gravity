@@ -444,9 +444,16 @@ Honest limits, because a separation ledger that claims to be clean is not one.
   **construction constraint** of the carrier is vacuous, so the enlargement that
   makes it testable is the removal of that constraint. §4.2 and §4.7 are both
   instances. Auditing this ledger against it finds that **three** assumptions
-  are vacuous on the carrier the classification used — `RP-LOCAL`, `RP-METRIC`
-  and `RP-DIFF` — of which only the last has been enlarged. What §6 records
-  above as two different kinds of caveat is one phenomenon with one cure.
+  were vacuous on the carrier the classification used — `RP-LOCAL`, `RP-METRIC`
+  and `RP-DIFF` — one phenomenon where §6 above recorded two kinds of caveat.
+  **All three are now migrated** ([report](weakenable-base.md)), and the
+  structure is a lattice: bases are subsets of the construction constraints,
+  vacuity is **monotone** in it, and `(axioms) + (live assumptions)` is
+  **constant**, so content is conserved and only its visibility moves. This
+  stream therefore already sits at the weakest base it can state. **The problem
+  is still not closed** — there is no proof system, no notion of what a base
+  *proves* beyond identical satisfaction, and the weakest base is a description
+  rather than a construction. It is no longer shapeless.
 - **Nothing transfers between carriers.** The stochastic equivalence is four
   states and one step; the torus results are flat `T⁴` and polynomial fields.
 

@@ -144,6 +144,18 @@ carrier_enlargements.py                RP-METRIC and RP-LOCAL, the two the audit
 einstein_classification.py             Lovelock in D = 4 at degree <= 2, from the
                                        forced head plus divergence-freedom; the
                                        Lanczos tensor derived, not imported
+ghost_harmless.py                      the three ghost-escape routes shown to be
+                                       one condition: diagonalizable + real
+operational_witness.py                 one witness given states, evolution and a
+                                       measurement -- the bridge to an
+                                       experimental-verifiability framework
+chain_imports.py                       the four conditions replacing the blanket
+                                       cross-chain ban, and their enforcement
+aop_vacuity_audit.py                   the vacuity instrument turned on the
+                                       Assumptions of Physics framework
+weakenable_base.py                     carrier = base, constraints = axioms:
+                                       the lattice, its monotonicity, and the
+                                       migration invariant
 
 schema/  certificates/  tests/  reports/
 
@@ -213,6 +225,12 @@ schema/  certificates/  tests/  reports/
 | `..._CARRIER_ENLARGEMENTS_V1` | `D` general, order 0 | **the last two vacuous assumptions, witnessed.** `RP-METRIC`: a compensator gives `√−g φ^{2D/(D−2)}`, diff- *and* Weyl-invariant at derivative order **zero** — the exponent falls out and reproduces `φ⁶,φ⁴,φ³` in `D = 3,4,6`. `RP-LOCAL`: `k − j = D/2` has one solution locally and one per inverse box otherwise, so locality is what makes the classification **unique**. Jointly: the derived derivative order requires **all three** of `RP-DIFF`, `RP-METRIC`, `RP-LOCAL`, each failing differently — [report](reports/carrier-enlargements.md) |
 
 | `..._EINSTEIN_CLASSIFICATION_V1` | `D = 4`, degree ≤ 2 | **Lovelock computed in our own carrier**, closing the one citation the comparison ledger's central claim rested on. No field-equation formula imported: the forced head plus divergence-freedom (`N1`) leaves a two-parameter family, `RP-2ND-ORDER` picks out a unique tensor — **the Lanczos tensor, derived not looked up** — and it vanishes identically in `D = 4`, so degree two contributes nothing and the field equations are `aG_mn + bg_mn`. Also upgrades the Lanczos citation in the trace law — [report](reports/einstein-classification.md) |
+
+| `..._GHOST_HARMLESS_V1` | Krein `(1,1)` | **three ghost escapes are one condition.** A conserved positive charge, quasi-Hermiticity/PT, and a positive invariant subspace all reduce to *diagonalizable ∧ real spectrum* — a positive-definite conserved charge **is** a metric operator. 1014-point scan, 0 mismatches. `C-GHOST-DYNAMICS` stays **OPEN** — [report](reports/ghost-harmless.md) |
+| `..._OPERATIONAL_WITNESS_V1` | Krein `(1,1)` | **one witness with states, evolution and a measurement**, to test whether the bridge to an experimental-verifiability framework is buildable. It is, once: the three regimes are bounded / secular / exponential, and **no verification modality confirms all three** — harmlessness needs the parameters, the exceptional point needs the trajectory — [report](reports/operational-witness.md) |
+| `..._AOP_VACUITY_AUDIT_V1` | audit | **the instrument turned outward.** Three of the four Assumptions-of-Physics assumptions are `LIVE`, two with witnesses the authors supply themselves. What it flags is a *derived step*: closedness of `ω` imposes **zero** conditions at one degree of freedom, since a 3-form does not exist on a 2-manifold — [report](reports/AOP-CONNECTION.md) §2.1e |
+| `..._CHAIN_IMPORTS_V1` | discipline | the four conditions replacing this stream's blanket cross-chain ban — no cycles, tags travel, pinned, middle-column only — with the scan confirming the dependency is one-way |
+| `..._WEAKENABLE_BASE_V1` | method | **the stream's oldest open problem, given a shape** — and the shape was already there. Construction constraints **are** a theory: carrier = base, enlarging = weakening, vacuous = proved outright. Vacuity is **monotone** and `(axioms) + (live assumptions)` is **constant**. All three migratable constraints are migrated. **Not closed** — no proof system — [report](reports/weakenable-base.md) |
 
 There is one further Forge-only result with **no certificate**, deliberately:
 [`c-factorisation-not-determined.md`](reports/c-factorisation-not-determined.md)

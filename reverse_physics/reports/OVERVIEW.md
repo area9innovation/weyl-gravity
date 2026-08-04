@@ -771,7 +771,13 @@ The directions that would still yield something:
   correspondence is exact: the carrier is the base, and a vacuous assumption is
   an axiom the base already proves. Auditing the Weyl ledger against it finds
   **three** vacuous assumptions, not one.
-  **All three are now enlarged** ([report](carrier-enlargements.md)), and the
+  **All three are now enlarged** ([report](carrier-enlargements.md)) and the
+  structure they sit in is now stated ([report](weakenable-base.md)): bases are
+  subsets of the construction constraints, vacuity is monotone in that lattice,
+  and `(axioms) + (live assumptions)` is constant — content conserved, only
+  visibility moving. This stream already sits at the weakest base it can state,
+  though the problem is not closed: no proof system, and the weakest base is a
+  description rather than a construction. And the
   joint statement is the finding: §3.9's derived derivative order requires
   `RP-DIFF`, `RP-METRIC` *and* `RP-LOCAL`, each failing in a different way —
   order zero via non-covariance, order zero via `√−g φ^{2D/(D−2)}`, and loss of
