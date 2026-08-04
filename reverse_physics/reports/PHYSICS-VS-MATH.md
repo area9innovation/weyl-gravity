@@ -9,7 +9,7 @@ The short version: **two categories are not enough.** Splitting a derivation
 into "assumptions" and "the derivation" hides a third thing — the classical
 results the derivation leans on, which are neither physical postulates nor
 things the development proves. Naming that third category is what makes the
-ledger checkable, and in this stream it changed the answer six times.
+ledger checkable, and in this stream it changed the answer seven times.
 
 ---
 
@@ -37,7 +37,8 @@ forced rather than chosen — see
 
 A **direction**: OPENS, CHALLENGES, or SHARED. The third is the one people get
 wrong, by charging Weyl gravity for a bill Einstein gravity also owes —
-`RP-DIFF`'s missing witness is *shared*, not a Weyl defect.
+`RP-DIFF` is *shared*, so neither its cost nor its now-established witness
+(§4.7) belongs to Weyl gravity alone.
 
 A **level**: `L0` action, `L1` field equations, `L2` solution locus, `L3`
 symplectic/dynamical, `L4` quantum. §3.2b below already shows the assumption
@@ -98,7 +99,7 @@ report [`weyl-action-reverse-physics.md`](weyl-action-reverse-physics.md).
 |---|---|---|---|
 | `RP-LOCAL` | the action is `∫` of a local density | nonlocal conformal actions exist | assumed, not tested here |
 | `RP-METRIC` | the metric is the only field | conformally coupled matter | assumed, not tested here |
-| `RP-DIFF` | diffeomorphism invariance | — | assumed; the coordinate space is built from it |
+| `RP-DIFF` | diffeomorphism invariance | `√−g (g⁰⁰)²` — Weyl-invariant, not a scalar | **independent given `RP-METRIC`** (§4.7) |
 | `RP-WEYL` | local Weyl invariance | `R²` — Weyl-variant, and outside `span{C², E₄}` | **independent; cuts 3 → 2** |
 | `RP-DIM4` | `D = 4` | the weight `D − 4` | **independent; `√−g C²` invariant iff `D = 4`** |
 | `RP-TOPO-INERT` | topological terms are physically inert | `E₄` — invariant, not a multiple of `C²` | **independent; cuts 2 → 1** |
@@ -178,7 +179,7 @@ No floating point appears anywhere on either rail.
 
 ---
 
-## 4. Six times the separation changed the answer
+## 4. Seven times the separation changed the answer
 
 This is the case for the method. Each row is a claim that looked like one
 category and turned out to be another.
@@ -269,6 +270,40 @@ group rather than by experiment.
 
 ---
 
+### 4.7 An assumption believed untestable in principle, witnessed
+
+`RP-DIFF` was recorded in §6 as having no independence witness *at all* — the
+one entry where the ledger's own `T4` could not be applied, because
+diffeomorphism invariance is what makes "the space of curvature scalars" the
+right space to begin with.
+
+That was true of the **carrier**, not the assumption, and §4.2 is the precedent:
+`RP-REVERSIBLE` was unwitnessable on the Hamiltonian carriers for exactly the
+same structural reason, and moving to a carrier where it *could* fail resolved
+it immediately.
+
+Enlarging to local metric densities at derivative order zero — dropping the
+requirement that indices contract into scalars — the lowest weight-zero degree
+`√−g h^ab h^cd` is **55-dimensional and entirely Weyl-invariant**, while its
+diffeomorphism-invariant subspace is **exactly 0** (exact rank over ℚ, two
+independent routines, with a control space whose known one-dimensional invariant
+is found). Every element is a witness; `√−g (g⁰⁰)²` is the explicit one.
+
+**Test T4**, applied by building a carrier where the witness could exist.
+Verdict: independent — **given `RP-METRIC`**, since the Stückelberg escape is
+blocked by the field content rather than refuted.
+
+And the consequence is the reason it matters. The witness has **zero**
+derivatives, while §4.3's derived order says `k = D/2 = 2`. That derivation runs
+through `G3`, the conformal weight of the *Weyl tensor* — already diff-covariant.
+So **the derived derivative order requires `RP-DIFF`**: the stream's best result
+was silently using the one assumption the ledger had marked as carrying no
+weight. §4.3 still stands; what changes is that its input is now named.
+
+[`diff-independence.md`](diff-independence.md)
+
+---
+
 ## 5. The loop that closed
 
 §4.6 found, without looking for it, that the parity balance excluded in odd
@@ -294,9 +329,18 @@ Honest limits, because a separation ledger that claims to be clean is not one.
 - **`RP-LOCAL` and `RP-METRIC` are not tested.** They bound the coordinate space
   rather than living inside it. To test them one would need a carrier containing
   nonlocal or multi-field actions, and this stream has not built one.
-- **`RP-DIFF` is invisible.** It is what makes "the space of curvature scalars"
-  the right space at all, so it never appears as a row in a matrix. That is a
-  real gap: an assumption doing structural work should still get a witness.
+- ~~**`RP-DIFF` is invisible.** It is what makes "the space of curvature
+  scalars" the right space at all, so it never appears as a row in a matrix.
+  That is a real gap: an assumption doing structural work should still get a
+  witness.~~
+  **Closed** ([report](diff-independence.md), §4.7). The diagnosis was right and
+  it was about the *carrier*, not the assumption — exactly as in §4.2. On the
+  enlarged carrier of local metric densities at derivative order zero, the
+  lowest weight-zero degree is 55-dimensional and its diff-invariant subspace is
+  **exactly 0**, so every element is a witness; `√−g (g⁰⁰)²` is the explicit
+  one. The conditional is real and is recorded: this is independence **given
+  `RP-METRIC`**, because the Stückelberg escape is blocked by the field content
+  rather than refuted.
 - **The conformal results are for constant rescalings** where the weight
   argument is used. The full local group is used only through `G2`, and the
   no-go on conformal densities should strengthen under it — but that is not

@@ -297,7 +297,13 @@ ROWS = [
         paid_for_by="C-GHOST-FORCED",
         note="This is the OPENS half of the trade.  The standard motivation "
              "for conformal gravity lists 'quadratic in curvature' as an "
-             "assumption; it is a consequence.  One fewer physical input.",
+             "assumption; it is a consequence.  One fewer physical input.  "
+             "BUT the derivation is NOT free of assumptions: it runs through "
+             "the conformal weight of the WEYL TENSOR, a curvature scalar and "
+             "so already diff-covariant, and S-DIFF-WITNESSED exhibits a "
+             "Weyl-invariant local metric density with ZERO derivatives, which "
+             "k = D/2 forbids.  So the derived derivative order REQUIRES "
+             "RP-DIFF.  The result stands; its input is now named.",
     ),
 
     row(
@@ -609,24 +615,32 @@ ROWS = [
     # ---------------- SHARED ----------------------------------------------
 
     row(
-        id="S-DIFF-INVISIBLE",
+        id="S-DIFF-WITNESSED",
         direction="SHARED",
         level="L0",
-        column="PHYSICS",
-        status="OPEN",
-        claim="RP-DIFF has no independence witness in either theory.  It is "
-              "what makes 'the space of curvature scalars' the right space at "
-              "all, so it never appears as a row in a matrix.  This is the "
-              "largest genuine hole in the ledger, and it is NOT a Weyl-"
-              "specific one.",
-        traces_to=["RP-DIFF"],
-        sources=["reverse_physics/reports/PHYSICS-VS-MATH.md"],
-        contingent_on="Any observation distinguishing a preferred coordinate "
-                      "system; the assumption is shared with essentially all "
-                      "of classical gravity, so a witness would be a result "
-                      "about both theories at once.",
-        note="Recorded as SHARED so it cannot be charged to Weyl gravity's "
-             "account in a comparison.",
+        column="MATHEMATICS",
+        status="PROVED",
+        claim="RP-DIFF is independent given RP-METRIC, in BOTH theories.  On "
+              "the enlarged carrier of local metric densities at derivative "
+              "order zero, the lowest weight-zero degree sqrt(-g) h^ab h^cd is "
+              "55-dimensional and entirely Weyl invariant while its "
+              "diffeomorphism-invariant subspace is exactly ZERO, so every "
+              "element is a witness; sqrt(-g) (g^00)^2 is the explicit one.  "
+              "The same witness satisfies RP-2ND-ORDER (it has no derivatives "
+              "at all), so it witnesses RP-DIFF on the Einstein side too.",
+        traces_to=["RP-DIFF", "RP-METRIC"],
+        sources=["reverse_physics/reports/diff-independence.md",
+                 "reverse_physics/certificates/REVERSE_PHYSICS_DIFF_INDEPENDENCE_V1.json"],
+        note="SUPERSEDES the earlier row S-DIFF-INVISIBLE, which recorded "
+             "RP-DIFF as having no independence witness and called it the "
+             "largest genuine hole in the ledger.  That was true of the "
+             "CARRIER, not the assumption: the classification's carrier is "
+             "diff-invariant by construction, so no witness could exist inside "
+             "it.  Kept SHARED, because the witness works for both theories "
+             "and neither the cost nor the resolution belongs to Weyl gravity "
+             "alone.  The conditional is real: the Stuckelberg escape is "
+             "blocked by RP-METRIC rather than refuted, which is why this row "
+             "traces to both.  Consequence recorded in O-DERIVED-ORDER.",
     ),
 
     row(

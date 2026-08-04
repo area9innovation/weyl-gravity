@@ -134,8 +134,8 @@ successor row `C-GHOST-DYNAMICS` is **OPEN** and says so.
 
 ## 4. The ledger
 
-18 rows. `PROVED` 9, `DISCHARGED` 1, `REFUTED` 1, `CITED` 3, `OPEN` 4.
-By column: MATHEMATICS 11, PHYSICS 6, GEOMETRY 1.
+18 rows. `PROVED` 10, `DISCHARGED` 1, `REFUTED` 1, `CITED` 3, `OPEN` 3.
+By column: MATHEMATICS 12, PHYSICS 5, GEOMETRY 1.
 
 ### 4.1 OPENS
 
@@ -171,7 +171,7 @@ between "Weyl gravity gets this number wrong" and "this number does not exist".
 
 | row | level | status | claim |
 |---|---|---|---|
-| `S-DIFF-INVISIBLE` | `L0` | **open** | `RP-DIFF` has no independence witness **in either theory**. The largest genuine hole in the ledger, and not a Weyl-specific one. |
+| `S-DIFF-WITNESSED` | `L0` | **proved** | `RP-DIFF` is independent **given `RP-METRIC`**, in both theories. Supersedes `S-DIFF-INVISIBLE`, which called it the largest hole — that was true of the *carrier*, not the assumption. See [`diff-independence.md`](diff-independence.md). |
 | `S-LOCAL-METRIC-UNTESTED` | `L0` | **open** | `RP-LOCAL` and `RP-METRIC` bound the coordinate space of both theories rather than being tested inside it. |
 | `S-PARITY-CLASSICALLY-FREE` | `L1` | **proved** | At field-equation level the parity direction costs and distinguishes nothing — the chiral family collapses because `P` is topological. |
 
@@ -217,7 +217,7 @@ is the specific failure this document exists to prevent.
   evidence for `LORENTZIAN-CAUSAL` claims and are not used as such.
 - **Not complete.** The row set is open by construction and is not claimed to
   exhaust the comparison.
-- **`OPEN` means open.** Four rows are unresolved, and the certificate reports
+- **`OPEN` means open.** Three rows are unresolved, and the certificate reports
   the open count as a first-class number rather than burying it. In particular
   the dynamical consequence of the ghost is open, and nothing here settles it.
 

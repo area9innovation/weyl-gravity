@@ -1,0 +1,122 @@
+{
+  "carrier": {
+    "new": "local densities built algebraically from the metric components at derivative order zero, with no requirement that indices contract into scalars",
+    "old": "quadratic curvature scalars -- diffeomorphism-invariant BY CONSTRUCTION, so RP-DIFF cannot fail inside it and no witness can exist there",
+    "precedent": "section 4.2 -- RP-REVERSIBLE was unwitnessable on the Hamiltonian carriers for the same structural reason, and the fix was to move to a carrier where it could fail"
+  },
+  "certificate": "REVERSE_PHYSICS_DIFF_INDEPENDENCE_V1",
+  "checks": {
+    "detail": {
+      "control_finds_its_known_invariant": true,
+      "degree_one_is_not_weyl_invariant": true,
+      "derived_order_at_D4_is_four": true,
+      "diff_invariant_subspace_is_zero": true,
+      "exactly_one_degree_is_weyl_invariant": true,
+      "rank_rails_agree_on_control": true,
+      "rank_rails_agree_on_main_space": true,
+      "weyl_invariant_space_is_the_full_55": true,
+      "witness_contradicts_the_derived_order": true,
+      "witness_has_zero_derivative_order": true,
+      "witness_is_moved_by_a_generator": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 11,
+    "total": 11
+  },
+  "consequence": {
+    "claim": "the derived derivative order requires RP-DIFF",
+    "derived_order_at_D4": 4,
+    "why": "the derivation k = D/2 runs through G3, the conformal weight of the WEYL TENSOR, which is a curvature scalar and therefore already diff-covariant.  Without RP-DIFF the derivation has nothing to run on, and this witness is an explicit Weyl-invariant local metric density with zero derivatives, which k = 2 forbids.",
+    "witness_derivative_order": 0
+  },
+  "control_space": {
+    "basis_dimension": 100,
+    "column_count": 984,
+    "invariant_dimension": 1,
+    "purpose": "GL-invariants of h^{ab} g_{cd} are known to be one-dimensional, spanned by the trace h^{ab} g_{ab} = 4.  A zero-dimensional answer from an invariance computation is exactly the kind of result that can be a bug, so the identical machinery must find this one.",
+    "rails_agree": true,
+    "rank_rail_a_gauss_jordan": 99,
+    "rank_rail_b_bareiss": 99
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "anything beyond derivative order zero and the LOWEST weight-zero degree (2,0); the degrees (3,1), (4,2), ... are also weight zero and are not classified here",
+    "that any witness is a sensible physical theory -- a witness need not be, exactly as R^2 witnesses RP-WEYL without anyone proposing R^2 gravity",
+    "independence of RP-DIFF unconditionally.  The Stuckelberg escape -- promote the coordinates to fields and any non-covariant theory becomes covariant -- is BLOCKED BY RP-METRIC, not refuted.  What is established is independence of RP-DIFF GIVEN RP-METRIC, and the entanglement is recorded rather than hidden",
+    "any quantum statement.  The vanishing of pure-Diff anomaly cohomology in D = 4 is a separate result at a different level in this repository's quantum chain; it is not used as evidence here and this is not evidence for it",
+    "that section 4.3 is wrong.  The derived derivative order stands; what is established is which input it was silently using"
+  ],
+  "establishes": "RP-DIFF has an independence witness, given the other assumptions of the Weyl-action ledger.  On the enlarged carrier of local metric densities at derivative order zero, the lowest weight-zero degree sqrt(-g) h^{ab} h^{cd} is 55-dimensional and entirely Weyl-invariant, while its diffeomorphism-invariant subspace is exactly ZERO -- computed as the kernel of the sixteen GL(4) generators by two independent exact rational rank routines, with a control space whose invariant subspace is known to be one-dimensional and is found to be.  Every one of the 55 is therefore a witness.  The consequence is the reverse-physics content: the witness sits at DERIVATIVE ORDER ZERO, so the derived derivative order k = D/2 -- section 4.3's result that four derivatives is a consequence rather than an assumption -- REQUIRES RP-DIFF.  An assumption previously recorded as carrying no witness turns out to be load-bearing for the stream's best result.",
+  "inputs": {
+    "reverse_physics/exact_linalg.py": "e2915c65618c4dade3d01bfe39d3868369be63614962c80075d8d778d7148b40"
+  },
+  "kind": "independence-witness",
+  "main_space": {
+    "basis_dimension": 55,
+    "column_count": 556,
+    "invariant_dimension": 0,
+    "rails_agree": true,
+    "rank_rail_a_gauss_jordan": 55,
+    "rank_rail_b_bareiss": 55
+  },
+  "report": "reverse_physics/reports/diff-independence.md",
+  "weyl_weights": [
+    {
+      "inverse_metric_degree": 0,
+      "is_weyl_invariant": false,
+      "metric_degree": 0,
+      "weyl_weight": 2
+    },
+    {
+      "inverse_metric_degree": 1,
+      "is_weyl_invariant": false,
+      "metric_degree": 0,
+      "weyl_weight": 1
+    },
+    {
+      "inverse_metric_degree": 2,
+      "is_weyl_invariant": true,
+      "metric_degree": 0,
+      "weyl_weight": 0
+    },
+    {
+      "inverse_metric_degree": 3,
+      "is_weyl_invariant": false,
+      "metric_degree": 0,
+      "weyl_weight": -1
+    },
+    {
+      "inverse_metric_degree": 4,
+      "is_weyl_invariant": false,
+      "metric_degree": 0,
+      "weyl_weight": -2
+    }
+  ],
+  "witness": {
+    "basis_element": "h^{(0,0)} h^{(0,0)}",
+    "density": "sqrt(-g) (g^{00})^2",
+    "derivative_order": 0,
+    "generator_count": 7,
+    "generators_that_move_it": [
+      "E^0_0",
+      "E^0_1",
+      "E^0_2",
+      "E^0_3",
+      "E^1_1",
+      "E^2_2"
+    ],
+    "is_moved": true,
+    "satisfies": {
+      "RP-DIM4": "D = 4",
+      "RP-LOCAL": "an integral of a local density",
+      "RP-METRIC": "built from the metric alone",
+      "RP-PARITY": "no epsilon tensor; parity even",
+      "RP-TOPO-INERT": "not a topological term, so the assumption does not constrain it",
+      "RP-WEYL": "Weyl weight 2 - 2 + 0 = 0, hence invariant"
+    },
+    "violates": "RP-DIFF -- it is not a scalar; g^{00} singles out a coordinate"
+  }
+}
