@@ -207,12 +207,21 @@ entirely and drives the spin-two one as a source. The extension coefficient is
 therefore `X = ∫ Φ_RW(r,s) C Φ_x(s,r₀) ds`, and by triangularity it is simply the
 **upper-right block of the transported fundamental matrix**.
 
-**The cross-check that licenses this.** The certificate's gauged block and this
-stream's factor companion came from completely different routes — theirs by a
-rational gauge `T = [J,N]` on the six-state system, ours by clearing denominators
-in `D_r*²u + 2iω D_r*u − Vu = 0`. They agree entrywise at 30 radii:
-`6(r−1)/(r²(r−2))` is our `V₂/f²`, and `−2i(ωr²−i)/(r(r−2))` expands to
-`−(2+2iωr²)/(r²−2r)`, exactly our `−P`.
+**The cross-check that licenses this — and a correction to it.** The first
+version of that check was partly vacuous: `ours_q` and `theirs_10` were defined
+by the *same typed expression*, so it compared a function to itself. Each side is
+now built from the quantities its own derivation starts from — ours from
+`f = (r−2)/r`, `f′ = 2/r²`, `V₂ = 6(r−2)(r−1)/r⁴` as `V₂/f²` and
+`−(f′/f + 2iω/f)`; theirs as the certificate writes it, with
+`(−2i)(ωr²−i)/(r(r−2))` evaluated as a *complex product* rather than
+pre-simplified. So the check now verifies the algebraic reduction rather than
+restating it. The computed value moved only in its last digit — which is what
+agreement between two genuinely different arithmetic paths looks like.
+
+The RW diagonal sub-block of the carrier flow is also now checked against a
+standalone spin-two flow built from our primitives. The `L_x` sub-block had been
+checked that way; the RW one — the block the *certified gauge data* supplies —
+had not, which was the wrong way round.
 
 **Result:**
 
@@ -220,9 +229,11 @@ in `D_r*²u + 2iω D_r*u − Vu = 0`. They agree entrywise at 30 radii:
 X(2.4 → 3.0), entry (1,0) ∈ [0.07592875168485574, 0.07718132970732572]
 ```
 
-**Nonzero** — the extension genuinely does not split. The corpus certifies
-`axial_ell2_nonsplit_all_positive_real` abstractly; this is that fact as a
-number.
+**Nonzero** over this range: the coupling genuinely contributes. That is
+*consistent with* and exhibits the corpus's abstract
+`axial_ell2_nonsplit_all_positive_real`, but does not re-prove it — nonsplitness
+is a statement about the module, not about one sub-range, and an earlier draft of
+this report overstated it.
 
 ## What remains — quantitative, not structural
 
