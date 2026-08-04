@@ -162,12 +162,14 @@ only once the assumptions are laid out:
 4. and the consequent picture — ghost forced, locally incurable, dynamically
    survivable, positivity nonlocal — which neither programme states.
 
-That is not a theorem. It is an orientation, and it says where the next
-theorem should be: **whether the nonlocal `C` factorises over `ℐ⁺ ⊕ ℋ⁺`.** The
-black-hole package flags that as an open scattering condition, and the assumption
-lattice explains why it is *the* question: a `C` that factorises is a positivity
-statement you could plausibly call physical, and one that does not is a formal
-device. Everything else about the ghost is settled.
+That is not a theorem. It is an orientation, and it said where the next theorem
+should be: **whether the nonlocal `C` factorises over `ℐ⁺ ⊕ ℋ⁺`.**
+
+> **That question has since been reduced to a finite test** —
+> [`scattering-c-factorisation.md`](scattering-c-factorisation.md). It is a 3×3
+> generalised eigenvalue problem; the single missing input is explicit `T₊`; and
+> two witnesses matching every certified inertia answer oppositely, so nothing
+> weaker can settle it. Which is the orientation paying off.
 
 ## What this does not establish
 

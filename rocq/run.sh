@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # run.sh — the reverse-physics torus GATE.
 #
-# Twenty-one developments, all zero-axiom, in dependency order.  The first four are the
+# Twenty-two developments, all zero-axiom, in dependency order.  The first four are the
 # torus chain, the next four an INDEPENDENT stochastic carrier, and the last two
 # engage Carcassi-Aidala directly: a BRIDGE restating the torus results in their
 # notation, and a PARITY OBSTRUCTION on their degree-of-freedom counting.
@@ -119,6 +119,13 @@
 #                                  black-hole programme had already computed this
 #                                  on Schwarzschild in the spin-two sector; this
 #                                  module abstracts it into the chain.
+#   WeylScatteringCFactorisation.v THE OPEN QUESTION, REDUCED.  Whether the
+#                                  scattering fundamental symmetry factorises
+#                                  over the future boundary is decided by a 3x3
+#                                  generalised eigenvalue problem -- and two
+#                                  witnesses with IDENTICAL certified inertia
+#                                  give opposite answers, so nothing weaker than
+#                                  explicit T_+ can settle it.
 #   CoprimeHierarchyChargeBound.v  an AUDIT of the physics gloss on those two:
 #                                  J = p n1 + q n2 has the resonant sector as its
 #                                  exact commutant, so EVERY possible obstruction
@@ -141,7 +148,7 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
 
-MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount ReversePhysicsNoConformalCount ReversePhysicsRelationalCount ReversePhysicsExponentAdditivity CoprimeHierarchyOrderLaw CoprimeHierarchyKernelParity CoprimeHierarchyChargeBound WeylActionClassification WeylParityAndTopology WeylFieldEquations WeylGhostForced WeylGhostDipole)
+MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount ReversePhysicsNoConformalCount ReversePhysicsRelationalCount ReversePhysicsExponentAdditivity CoprimeHierarchyOrderLaw CoprimeHierarchyKernelParity CoprimeHierarchyChargeBound WeylActionClassification WeylParityAndTopology WeylFieldEquations WeylGhostForced WeylGhostDipole WeylScatteringCFactorisation)
 pass=0
 fail=0
 
@@ -609,8 +616,21 @@ Theorem bogus_dipole_admits_a_positive_metric :
 Proof. intros g. rewrite (flux_determinant g 1 1). nra. Qed.
 NEG
 
+# (aa) The NO witness must really have no real pencil root -- if it did, the two
+#      witnesses would not differ and the no-shortcut theorem is empty.
+cat > _neg_aa.v <<'NEG'
+Require Import QArith.
+Require Import WeylScatteringCFactorisation.
+Open Scope Q_scope.
+(* FALSE on purpose: x^2 + 3 >= 3 everywhere.  If it had a root the NO witness
+   would admit a common fundamental decomposition after all, both witnesses would
+   answer YES, and the inertia data would not have been shown insufficient. *)
+Theorem bogus_no_witness_has_a_root : no_witness_factor 0 == 0.
+Proof. unfold no_witness_factor. ring. Qed.
+NEG
+
 neg_ok=0
-for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _neg_k _neg_l _neg_m _neg_n _neg_o _neg_p _neg_q _neg_r _neg_s _neg_t _neg_u _neg_v _neg_w _neg_x _neg_y _neg_z; do
+for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _neg_k _neg_l _neg_m _neg_n _neg_o _neg_p _neg_q _neg_r _neg_s _neg_t _neg_u _neg_v _neg_w _neg_x _neg_y _neg_z _neg_aa; do
   if coqc "$n.v" >/tmp/rp_neg.log 2>&1; then
     echo "  $n: FALSE claim was ACCEPTED — REJECT"; neg_ok=1
   else
@@ -619,6 +639,7 @@ for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _
 done
 if [ "$neg_ok" -eq 0 ]; then pass=$((pass+1)); else fail=$((fail+1)); fi
 rm -f _neg_[a-z].v _neg_[a-z].vo _neg_[a-z].vok _neg_[a-z].vos _neg_[a-z].glob ._neg_[a-z].aux
+rm -f _neg_aa.v _neg_aa.vo _neg_aa.vok _neg_aa.vos _neg_aa.glob ._neg_aa.aux
 
 echo
 if [ "$fail" -eq 0 ]; then
