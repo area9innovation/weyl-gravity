@@ -832,6 +832,21 @@ The directions that would still yield something:
   empty*. The parity half is **not** answered, and what blocks it is named: no
   basis of cubic curvature invariants modulo total derivatives and
   dimension-dependent identities. The original text follows.
+- **That named blocker is now gone — and the count it was blocking came out
+  differently** ([report](cubic-conformal-count.md), certificate
+  `REVERSE_PHYSICS_CUBIC_CONFORMAL_COUNT_V1`, Forge rail 26/26). The basis is
+  needed only by the *symbolic* route: evaluate candidate contractions at exact
+  metrics and take the **rank over ℚ**, and every identity — Riemann symmetries,
+  both Bianchis, the dimension-dependent ones — appears as a linear *dependence
+  among the evaluations*, so the rank quotients by all of them without any being
+  built. The cubic curvature span is **6, 7, 8** across `D = 4, 5, 6`, and the
+  pointwise conformal invariants **1, 1, 2** — the second one appears **exactly
+  at six dimensions**, not merely lost in four. **Two, not the three predicted:**
+  *type-B* means *pointwise conformal invariant*, it does **not** mean *carrying
+  no derivatives of the curvature*. Two of the three cited invariants are
+  complete contractions of three Weyl tensors and the third is not, so the `D = 6`
+  row above stays `CITED` at 3 — not contradicted, its **boundary located**. The
+  derivative sector is the open edge; the parity half is still untouched.
 - **Six derivatives in six dimensions.** The weight argument in §3.9 says the
   conformally invariant curvature degree is `k = D/2`, so odd dimensions have no
   such sector at all and `D = 6` selects the *cubic* one. Running the same exact

@@ -105,12 +105,41 @@ without any being written down.
 
 And the total-derivative quotient is not needed for *this* question: the three
 `D = 6` invariants are **type-B**, i.e. *pointwise* conformal invariants, while
-`E₆` is type-A and is not. So the pointwise route returns exactly the number
-wanted, with `E₆` correctly absent.
+`E₆` is type-A and is not. ~~So the pointwise route returns exactly the number
+wanted, with `E₆` correctly absent.~~
 
 What remains is one genuine substrate gap — Forge's curvature layer inverts only
 **diagonal** metrics, and diagonal metrics in `D = 6` are too special — plus the
 controls. The brief has both.
+
+### It has now been run, and that last prediction was wrong
+
+**Done:** [`cubic-conformal-count.md`](cubic-conformal-count.md), certificate
+`REVERSE_PHYSICS_CUBIC_CONFORMAL_COUNT_V1`, Forge rail 26/26.
+
+The method worked and the substrate gap was closed. The **prediction struck out
+above did not survive**: the pointwise route returns **2**, not 3.
+
+The reasoning behind the strike-out conflated two senses of *pointwise*. Type-B
+does mean the invariant is a pointwise conformal invariant — but "pointwise" there
+does **not** mean "carries no derivatives of the curvature". What the route
+actually counts is the invariants that are *cubic in Riemann with no derivatives*,
+and in `D = 6` there are exactly **two** of those: the two complete contractions of
+three Weyl tensors, which the rail builds and shows span the whole invariant space.
+The third cited invariant is **not in that class**.
+
+So the `D = 6` row below stays `CITED` at **3** — that count is not contradicted,
+its **boundary is located**. What is now `COMPUTED` is a smaller, exactly stated
+class, together with the `D = 4` and `D = 5` values that make the shape visible:
+
+| | cubic curvature span | pointwise conformal invariants, no derivatives |
+|---|---|---|
+| `D = 4` | 6 | **1** |
+| `D = 5` | 7 | **1** |
+| `D = 6` | 8 | **2** |
+
+The second invariant appears **exactly at six dimensions** — also not what was
+expected, since `D = 5` was predicted to have two as well.
 
 ---
 
