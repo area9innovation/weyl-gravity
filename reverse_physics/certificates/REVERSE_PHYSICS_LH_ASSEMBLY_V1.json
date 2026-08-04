@@ -1,0 +1,92 @@
+{
+  "assembly": {
+    "D": "diag(r_R A_in2, r_S A_in1, r_E A_in2) with r_* the endpoint ratios",
+    "L_H": "G_-^{-1} A^dagger H_out A,  A = T_-^{-1}",
+    "M_H": "columns (RH, SH, EH); RH = XH0a - (4w^2-3iw+4)/(4(w-i)(2w-i)) XH0b",
+    "M_I": "columns (RI, SI, EI); RI = XI0 - (i/w) XI1",
+    "N": "the strictly triangular block -- NOT CERTIFIED, and decisive",
+    "T_minus": "M_I (D + N) M_H^{-1}",
+    "criterion": "L_H diagonalizable and spec(L_H) subset (0,1)"
+  },
+  "claim_flags": {
+    "assembly_reproduces_committed_determinant": true,
+    "full_typed_Tminus_offdiagonal_certified": false,
+    "inertia_necessary_condition_satisfied": true,
+    "sharper_A_in_can_close_the_question": false,
+    "spec_criterion_decided": false,
+    "spec_criterion_excluded_a_priori": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "that spec(L_H) is contained in (0,1) for the physical cell",
+    "that spec(L_H) is NOT contained in (0,1) for the physical cell",
+    "any certified value for the strictly triangular block of T_-",
+    "diagonalizability of L_H, which the criterion needs separately",
+    "anything Lorentzian-causal; the tag is absent deliberately"
+  ],
+  "exact_checks": {
+    "C_modulus_squared_matches_report": true,
+    "assembly_reproduces_committed_det_LH": true,
+    "det_ratio_of_grams_equals_C_modulus_squared": true,
+    "endpoint_ratio_product_is_C": true,
+    "horizon_gram_inertia_is_1_2_0": true,
+    "horizon_gram_is_hermitian": true,
+    "incoming_gram_inertia_is_1_2_0": true,
+    "incoming_gram_is_hermitian": true
+  },
+  "exact_expressions": {
+    "C_of_omega": "Mul(Add(Mul(Integer(-1), Rational(1, 2), Symbol('omega', positive=True)), Mul(Rational(1, 4), I)), Pow(Add(Symbol('omega', positive=True), Mul(Integer(-1), I)), Integer(-1)), Pow(Add(Mul(Integer(4), Symbol('omega', positive=True)), Mul(Integer(-1), I)), Integer(2)))",
+    "det_horizon_gram": "Mul(Pow(Add(Mul(Integer(125), Pow(Symbol('omega', positive=True), Integer(2))), Integer(125)), Integer(-1)), Add(Mul(Integer(905969664), Pow(Symbol('omega', positive=True), Integer(9))), Mul(Integer(339738624), Pow(Symbol('omega', positive=True), Integer(7))), Mul(Integer(31850496), Pow(Symbol('omega', positive=True), Integer(5))), Mul(Integer(884736), Pow(Symbol('omega', positive=True), Integer(3)))))",
+    "det_incoming_gram": "Mul(Rational(14155776, 125), Pow(Symbol('omega', positive=True), Integer(3)))"
+  },
+  "imports": {
+    "criterion": {
+      "path": "black_hole_programme/phase4/channel_factorized_c_pullback_test_v1/certificate.json",
+      "sha256": "4e47de0f618c29d0e74f173a4cc0a6256e0fcd9bc7587243a9d4eee6a0726e4b"
+    },
+    "horizon_gram": {
+      "path": "black_hole_programme/phase3/axial_horizon_grassmann_mobius_to_r4_taylor2/future_horizon_outward_gram.json",
+      "sha256": "3051f43f73e4649dede60176e12f13afc59bdd5b3e8e09970db842a1ede00fdb"
+    },
+    "incoming_connection_report": {
+      "path": "reports/phase3-axial-incoming-connection-analytic-2026-07-23.md",
+      "sha256": "ab5aa3b50990961a9b5a389b5bb0e7ea3260263cc9e46144875153434a068ee5"
+    },
+    "incoming_gram": {
+      "path": "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
+      "sha256": "59fb9b443ce0b92ce016f53c376cb367bcf004e00d1b241ad22ec925e99deed2"
+    }
+  },
+  "lifecycle": "CLASSIFIED",
+  "missing_object_ledger": [
+    {
+      "object": "certified_strictly_triangular_block_of_typed_Tminus",
+      "route": "transport the coupled three-frame of the triangular module, not the two decoupled scalar RW factor equations",
+      "why_decisive": "det L_H is independent of it, so the committed determinant bound could be derived without it; spec(L_H) is not, and both verdicts are attainable as N varies"
+    }
+  ],
+  "numeric_diagnostic": {
+    "A_in_moduli_source": "tango forge/examples/weyl_ain_endtoend_gate.forge, |A_in,1|^2 in [1.172, 1.378] and |A_in,2|^2 in [0.983, 1.049]",
+    "generic_offdiagonal_verdict": "complex-conjugate pair and an eigenvalue above 1",
+    "note": "NUMERIC, not a certificate claim -- floating point, sampled at one frequency.  Recorded because it is what establishes that the missing block is decisive rather than a formality.",
+    "omega": "1/2",
+    "witness_offdiagonal_verdict": "three real eigenvalues in (0,1)",
+    "witness_product": 0.756826,
+    "witness_product_must_equal_det_LH": true,
+    "witness_spectrum": [
+      0.80043,
+      0.950254,
+      0.995022
+    ]
+  },
+  "result_id": "REVERSE_PHYSICS_LH_ASSEMBLY_V1",
+  "schema": "reverse-physics-lh-assembly-v1",
+  "status": "PASS",
+  "verification": {
+    "command": "PYTHONPATH=. python3 -m reverse_physics.lh_assembly --check",
+    "interpreter_note": "needs sympy; on this workstation that is the mise interpreter, ~/.local/share/mise/installs/python/3.12.13/bin/python3"
+  }
+}

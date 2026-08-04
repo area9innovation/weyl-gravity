@@ -754,6 +754,17 @@ The directions that would still yield something:
   cell in the basis map `(XH0a,XH0b,EH0) → (XI0,XI1,EI0)`. It is the black-hole
   package's own stated `minimal_missing_object`. With it, `L_H` is assembled and
   the criterion is a few lines of exact linear algebra.
+  **Now sharpened to the concrete matrix** ([report](lh-assembly.md)): `L_H` is
+  assembled from the committed Grams and endpoint ratios, and the assembly is
+  validated by an exact identity in ω — `det H_out / det G₋ = |C(ω)|²`, hence the
+  programme's own `det L_H = 1/(|A_in,2|⁴|A_in,1|²)` — between two certificates
+  that were derived independently of each other. `inertia(G₋) = inertia(H_out) =
+  (1,2,0)` makes the criterion *not excluded*; and `det L_H` is blind to the
+  strictly-triangular part of `T₋` while the *spectrum* is not, so both verdicts
+  remain reachable. The consequence for our own work is a scope statement:
+  **sharpening `|A_in|` cannot close the ghost question**, since it fixes only the
+  product of the eigenvalues. The route to the missing block is transporting the
+  coupled three-frame of the triangular module, not the decoupled scalar factors.
 - **Search the corpus before deriving.** §3.12 re-derived a `CLASSIFIED` result.
   The import gates fail closed on drift, but they only help once wired — which
   should come before the derivation, not after.
