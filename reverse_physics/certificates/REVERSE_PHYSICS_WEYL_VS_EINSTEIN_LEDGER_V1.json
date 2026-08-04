@@ -1,0 +1,592 @@
+{
+  "certificate": "REVERSE_PHYSICS_WEYL_VS_EINSTEIN_LEDGER_V1",
+  "checks": {
+    "failures": [],
+    "negative_control_detail": [
+      {
+        "control": "C1 bad status",
+        "expects": "C1",
+        "rejected": true
+      },
+      {
+        "control": "C2 dangling source",
+        "expects": "C2",
+        "rejected": true
+      },
+      {
+        "control": "C3 cited maths",
+        "expects": "C3",
+        "rejected": true
+      },
+      {
+        "control": "C3 maths with no in-repo source",
+        "expects": "C3",
+        "rejected": true
+      },
+      {
+        "control": "C4 physics with no counterfactual",
+        "expects": "C4",
+        "rejected": true
+      },
+      {
+        "control": "C5 cited with no literature",
+        "expects": "C5",
+        "rejected": true
+      },
+      {
+        "control": "C6 unknown assumption",
+        "expects": "C6",
+        "rejected": true
+      },
+      {
+        "control": "C7 dangling flip",
+        "expects": "C7",
+        "rejected": true
+      },
+      {
+        "control": "C7 flip within one level",
+        "expects": "C7",
+        "rejected": true
+      },
+      {
+        "control": "C7 flip with same direction",
+        "expects": "C7",
+        "rejected": true
+      },
+      {
+        "control": "C8 trade not mutual",
+        "expects": "C8",
+        "rejected": true
+      },
+      {
+        "control": "C8 buys on an OPENS row",
+        "expects": "C8",
+        "rejected": true
+      },
+      {
+        "control": "C9 SHARED differentiator",
+        "expects": "C9",
+        "rejected": true
+      }
+    ],
+    "negative_controls_all_rejected": true,
+    "negative_controls_rejected": "13/13",
+    "passed": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "any new physical result -- every row points at content that already exists elsewhere, or is marked OPEN",
+    "the phenomenological claims in rows with status CITED, which are imported and not assessed here",
+    "any LORENTZIAN-CAUSAL statement; rows carrying REDUCED-MODE or LOCAL-ALGEBRAIC tags are not evidence for one",
+    "the dynamical consequence of the ghost, which is recorded OPEN",
+    "completeness -- the ledger is open by construction and the row set is not claimed to exhaust the comparison"
+  ],
+  "establishes": "A checked comparison ledger for Weyl gravity against Einstein gravity, organised as a single assumption swap over a shared base, with each row carrying a direction (OPENS / CHALLENGES / SHARED), a level of description (L0 action ... L4 quantum), a column (PHYSICS / GEOMETRY / MATHEMATICS) and a status.  The rails enforce that no row cites its way into the MATHEMATICS column, that every PHYSICS row names a counterfactual, that every in-repository citation resolves, that level flips and trade pairs are mutual, and that SHARED rows are not used as differentiators.",
+  "kind": "comparison-ledger",
+  "report": "reverse_physics/reports/OPENS-AND-CHALLENGES.md",
+  "rows": [
+    {
+      "buys": "",
+      "claim": "The action carries no dimensionful constant.  Einstein's assumption set admits two (Newton's constant and Lambda); the Weyl Lagrangian sqrt(-g) C^2 has conformal weight zero at D = 4, so its coefficient alpha is dimensionless, and the invariant quotient is one-dimensional so there is no second coefficient to carry a scale.",
+      "column": "MATHEMATICS",
+      "contingent_on": "",
+      "direction": "OPENS",
+      "flips_with": "",
+      "id": "O-SCALE",
+      "level": "L0",
+      "literature": [],
+      "note": "Weight zero at D = 4, k = 2 is exactly the equation D - 2k = 0. The absence of a scale is the same fact as the derived derivative order, read dimensionally.",
+      "paid_for_by": "",
+      "sources": [
+        "reverse_physics/reports/weyl-action-reverse-physics.md",
+        "reverse_physics/certificates/REVERSE_PHYSICS_WEYL_ACTION_V1.json"
+      ],
+      "status": "PROVED",
+      "traces_to": [
+        "RP-WEYL",
+        "RP-DIM4"
+      ]
+    },
+    {
+      "buys": "",
+      "claim": "The derivative order is DERIVED, not assumed.  Einstein gravity must posit RP-2ND-ORDER as an input (it is the hypothesis of Lovelock's theorem).  Weyl gravity posits nothing about derivative order: D - 2k = 0 forces k = D/2, hence k = 2 and fourth order at D = 4, and the same line excludes the cosmological term (k = 0) and Einstein-Hilbert (k = 1).",
+      "column": "MATHEMATICS",
+      "contingent_on": "",
+      "direction": "OPENS",
+      "flips_with": "",
+      "id": "O-DERIVED-ORDER",
+      "level": "L0",
+      "literature": [],
+      "note": "This is the OPENS half of the trade.  The standard motivation for conformal gravity lists 'quadratic in curvature' as an assumption; it is a consequence.  One fewer physical input.",
+      "paid_for_by": "C-GHOST-FORCED",
+      "sources": [
+        "reverse_physics/reports/weyl-action-reverse-physics.md",
+        "reverse_physics/reports/PHYSICS-VS-MATH.md"
+      ],
+      "status": "PROVED",
+      "traces_to": [
+        "RP-WEYL",
+        "RP-DIM4"
+      ]
+    },
+    {
+      "buys": "",
+      "claim": "Every four-dimensional Einstein vacuum solution is a Weyl solution: Ric(g) = Lambda g implies B_mn(g) = 0.  The Einstein solution locus embeds in the Bach-flat locus, and the inclusion is generally PROPER -- Bach-flat metrics need not be conformally Einstein.",
+      "column": "MATHEMATICS",
+      "contingent_on": "",
+      "direction": "OPENS",
+      "flips_with": "C-NOT-A-SUBSYSTEM",
+      "id": "O-EINSTEIN-SOLUTIONS",
+      "level": "L2",
+      "literature": [],
+      "note": "Dependency tag LOCAL-ALGEBRAIC.  This is a statement about equations and solution loci only.  It does NOT by itself identify actions, symplectic forms, gauge quotients, observables or boundary-value problems -- and the L3 partner row shows that one of those identifications actually fails.",
+      "paid_for_by": "",
+      "sources": [
+        "notes/conformal-einstein-sector-theorem.md",
+        "bridge/certificates/einstein_sector_theorem.json"
+      ],
+      "status": "PROVED",
+      "traces_to": [
+        "RP-WEYL"
+      ]
+    },
+    {
+      "buys": "",
+      "claim": "The Weyl solution space is strictly larger in a structured way: the certified linear cylinder solution space carries the A and L towers in addition to the Einstein-root E tower, and these are dynamical extra content of the fourth-order equation, not Weyl gauge copies of the Einstein tower.",
+      "column": "MATHEMATICS",
+      "contingent_on": "",
+      "direction": "OPENS",
+      "flips_with": "",
+      "id": "O-EXTRA-TOWERS",
+      "level": "L2",
+      "literature": [],
+      "note": "Dependency tag REDUCED-MODE.  A REDUCED-MODE result is not evidence for a LORENTZIAN-CAUSAL claim and is not used as one here.",
+      "paid_for_by": "",
+      "sources": [
+        "notes/conformal-einstein-sector-theorem.md"
+      ],
+      "status": "PROVED",
+      "traces_to": [
+        "RP-WEYL"
+      ]
+    },
+    {
+      "buys": "",
+      "claim": "A parity direction exists that Einstein gravity has no analogue of at this level: alpha W_+^2 + beta W_-^2 is a genuine two-parameter family of ACTIONS, the map is injective, and W_+^2 is provably not parity-even.",
+      "column": "MATHEMATICS",
+      "contingent_on": "",
+      "direction": "OPENS",
+      "flips_with": "S-PARITY-CLASSICALLY-FREE",
+      "id": "O-PARITY-DIRECTION",
+      "level": "L0",
+      "literature": [],
+      "note": "Honest boundary: this is an opening at L0 only.  At L1 the family collapses to one parameter because the difference is ((alpha-beta)/2) P and P is topological.  It becomes physical again at L4 as a gravitational theta-angle, which is outside this programme's claim boundary.",
+      "paid_for_by": "",
+      "sources": [
+        "reverse_physics/reports/PHYSICS-VS-MATH.md",
+        "reverse_physics/certificates/REVERSE_PHYSICS_WEYL_ACTION_V1.json"
+      ],
+      "status": "PROVED",
+      "traces_to": [
+        "RP-PARITY"
+      ]
+    },
+    {
+      "buys": "",
+      "claim": "Weyl gravity admits an exact static vacuum family strictly larger than Schwarzschild-de Sitter -- the Mannheim-Kazanas family -- on which this repository establishes residual-basic charges and simultaneous horizon first laws.",
+      "column": "MATHEMATICS",
+      "contingent_on": "",
+      "direction": "OPENS",
+      "flips_with": "",
+      "id": "O-STATIC-FAMILY",
+      "level": "L2",
+      "literature": [],
+      "note": "This is the exact static and linear-spherical CHARGE theorem, not a physical-process or radiative thermodynamics theorem.  It is the mathematical half of the pair whose physical half is O-ROTATION-CURVES; the two must not be conflated.",
+      "paid_for_by": "",
+      "sources": [
+        "paper/18-static-bach-flat-black-hole-thermodynamics.tex",
+        "paper/98-physicist-executive-summary.md"
+      ],
+      "status": "DISCHARGED",
+      "traces_to": [
+        "RP-WEYL"
+      ]
+    },
+    {
+      "buys": "",
+      "claim": "The extra term in the static family has been argued in the literature to fit galactic rotation curves without dark matter, which Einstein gravity cannot do without additional matter content.",
+      "column": "PHYSICS",
+      "contingent_on": "Galactic rotation-curve data, and in particular whether a single scale-free potential term fits samples across morphology without per-galaxy tuning; also cluster and lensing data, where the same term is separately constrained.",
+      "direction": "OPENS",
+      "flips_with": "",
+      "id": "O-ROTATION-CURVES",
+      "level": "L2",
+      "literature": [
+        "Mannheim & Kazanas, ApJ 342 (1989) 635",
+        "Mannheim, Prog. Part. Nucl. Phys. 56 (2006) 340"
+      ],
+      "note": "THE SEPARATION ROW.  The metric family is certified in this repository (O-STATIC-FAMILY, MATHEMATICS).  This phenomenological reading of it is NOT, is not established by it, and is not assessed here.  A ledger that merged the two would report a citation's risk as a theorem's.",
+      "paid_for_by": "",
+      "sources": [],
+      "status": "CITED",
+      "traces_to": [
+        "RP-WEYL"
+      ]
+    },
+    {
+      "buys": "",
+      "claim": "Because the coupling is dimensionless, the theory is power-counting renormalizable, which Einstein gravity is not.",
+      "column": "PHYSICS",
+      "contingent_on": "Whether power-counting survives as an actual renormalizability statement in a construction that also handles the ghost; the two are quoted together in the literature precisely because Stelle's theory is renormalizable AND ghost-ridden.",
+      "direction": "OPENS",
+      "flips_with": "",
+      "id": "O-RENORMALIZABILITY",
+      "level": "L4",
+      "literature": [
+        "Stelle, Phys. Rev. D16 (1977) 953",
+        "Fradkin & Tseytlin, Nucl. Phys. B201 (1982) 469"
+      ],
+      "note": "Explicitly NOT established here.  This programme's claim boundary states that no Lorentzian off-shell BV propagator, renormalized Lorentzian time-ordered products, or causal perturbative AQFT construction exists in this repository.  The row is CITED and carries no dependency tag of ours.",
+      "paid_for_by": "C-GHOST-FORCED",
+      "sources": [
+        "reverse_physics/reports/weyl-ghost-forced.md"
+      ],
+      "status": "CITED",
+      "traces_to": [
+        "RP-WEYL"
+      ]
+    },
+    {
+      "buys": "O-DERIVED-ORDER",
+      "claim": "The Ostrogradsky ghost is FORCED by the same equation that makes the action unique.  D - 2k = 0 pins the propagator's pole count at D/2, and for simple poles the partial-fraction residues alternate in sign, so two or more poles always include a negative residue -- a negative-norm state.  Einstein gravity avoids this precisely by assuming RP-2ND-ORDER, which is the assumption Weyl gravity gave up.",
+      "column": "MATHEMATICS",
+      "contingent_on": "",
+      "direction": "CHALLENGES",
+      "flips_with": "",
+      "id": "C-GHOST-FORCED",
+      "level": "L3",
+      "literature": [],
+      "note": "THE TRADE ROW.  This and O-DERIVED-ORDER are the same theorem read twice.  The ghost is therefore MATHEMATICS here, not a PHYSICS defect awaiting a model fix -- which is how it is usually filed, and filing it there is what makes people look for fixes that provably do not exist.",
+      "paid_for_by": "",
+      "sources": [
+        "reverse_physics/reports/weyl-ghost-forced.md",
+        "rocq/WeylGhostForced.v",
+        "reverse_physics/certificates/REVERSE_PHYSICS_WEYL_GHOST_FORCED_V1.json"
+      ],
+      "status": "PROVED",
+      "traces_to": [
+        "RP-WEYL",
+        "RP-DIM4"
+      ]
+    },
+    {
+      "buys": "",
+      "claim": "The ghost cannot be tuned away by choosing a different conformal action, because there is no other conformal action.  Every proposal of the form 'take conformal gravity but modify the curvature terms' is excluded.  Of the assumptions one might drop instead, two provably do not help: dropping RP-WEYL keeps curvature degree 2 and hence the pole count, and D = 6 is worse, forcing degree 3 and three poles.",
+      "column": "MATHEMATICS",
+      "contingent_on": "",
+      "direction": "CHALLENGES",
+      "flips_with": "",
+      "id": "C-NO-CHEAP-FIX",
+      "level": "L0",
+      "literature": [],
+      "note": "The remaining escapes -- drop RP-LOCAL (infinite-derivative gravity) or RP-METRIC (a compensator scalar) -- are CITATIONS, not theorems here, and both take you outside the theory this repository is about.  RP-DIFF is not analysed.",
+      "paid_for_by": "",
+      "sources": [
+        "reverse_physics/reports/weyl-ghost-forced.md",
+        "rocq/WeylGhostForced.v"
+      ],
+      "status": "PROVED",
+      "traces_to": [
+        "RP-WEYL",
+        "RP-DIM4"
+      ]
+    },
+    {
+      "buys": "",
+      "claim": "Containment of solutions does NOT upgrade to containment of dynamics.  For the reduced flat TT sector the action-derived pure-Weyl current restricts to zero on Einstein wave tangents: the restricted pure-Weyl and Einstein-Hilbert Cauchy matrices have ranks zero and two, so no nonzero normalization identifies them, and local finite-jet improvements integrate to zero on the Schwartz domain.  Verdict REDUCED_FLAT_EINSTEIN_SYMPLECTIC_EMBEDDING_REFUTED.",
+      "column": "MATHEMATICS",
+      "contingent_on": "",
+      "direction": "CHALLENGES",
+      "flips_with": "O-EINSTEIN-SOLUTIONS",
+      "id": "C-NOT-A-SUBSYSTEM",
+      "level": "L3",
+      "literature": [],
+      "note": "THE LEVEL ROW.  'Einstein gravity is contained in Weyl gravity' is TRUE at L2 and FALSE at L3, and both halves are established here.  Dependency tags REDUCED-MODE and LORENTZIAN-CAUSAL.  The receipt's own boundary: this is not a full metric BV theorem, not a null-infinity current, not a complete Einstein scattering no-go, and leaves compensators and symmetry breaking open.",
+      "paid_for_by": "",
+      "sources": [
+        "reports/flat-einstein-symplectic-restriction.md",
+        "notes/conformal-flat-einstein-symplectic-restriction.md"
+      ],
+      "status": "REFUTED",
+      "traces_to": [
+        "RP-WEYL"
+      ]
+    },
+    {
+      "buys": "O-EXTRA-TOWERS",
+      "claim": "Fourth-order field equations need twice the initial data: Einstein gravity's Cauchy problem is posed with (g, K) on a slice, Weyl gravity's needs two further derivative orders.  The extra data is what the A and L towers (O-EXTRA-TOWERS) are made of, and it is the same doubling that Ostrogradsky's theorem converts into the ghost.",
+      "column": "GEOMETRY",
+      "contingent_on": "",
+      "direction": "CHALLENGES",
+      "flips_with": "",
+      "id": "C-CAUCHY-DATA",
+      "level": "L3",
+      "literature": [
+        "Ostrogradsky, Mem. Ac. St. Petersbourg VI 4 (1850) 385",
+        "Woodard, Scholarpedia 10 (2015) 32243"
+      ],
+      "note": "Filed GEOMETRY, not MATHEMATICS: the well-posedness statement for higher-derivative systems is imported and not re-derived here.  What IS established here is narrower and sits in C-NOT-A-SUBSYSTEM -- that on the reduced flat TT sector the pure-Weyl and Einstein-Hilbert Cauchy matrices have ranks zero and two, so the extra data is not a rescaling of the Einstein data.",
+      "paid_for_by": "",
+      "sources": [
+        "reports/flat-einstein-symplectic-restriction.md"
+      ],
+      "status": "CITED",
+      "traces_to": [
+        "RP-WEYL"
+      ]
+    },
+    {
+      "buys": "O-SCALE",
+      "claim": "Having no dimensionful constant in the action (O-SCALE) means the observed gravitational scale cannot be read off the action and must instead be generated -- by a solution, by a boundary condition, or by symmetry breaking.  Recovery of a Newtonian regime with the measured constant is not established in this repository.",
+      "column": "PHYSICS",
+      "contingent_on": "Solar-system and laboratory tests of the Newtonian and post-Newtonian regime, which fix both the constant and the allowed size of any additional scale-free term.",
+      "direction": "CHALLENGES",
+      "flips_with": "",
+      "id": "C-NO-NEWTON-CONSTANT",
+      "level": "L2",
+      "literature": [],
+      "note": "OPEN means open.  The compensator and asymptotic-bootstrap notes are the in-repository direction of attack, not a result; they are cited here so the row points somewhere rather than nowhere.",
+      "paid_for_by": "",
+      "sources": [
+        "notes/conformal-compensator-einstein-phase.md",
+        "notes/conformal-asymptotically-flat-einstein-bootstrap.md"
+      ],
+      "status": "OPEN",
+      "traces_to": [
+        "RP-WEYL"
+      ]
+    },
+    {
+      "buys": "",
+      "claim": "'How many degrees of freedom are in this region' is not a well-posed question in a conformally invariant theory -- a standard Einstein-side notion that does not survive the swap.  All three branches close: the density branch by a parity obstruction in odd dimension, the counting measure as uninformative, and the non-additive branch because on flat space a dilation is conformal, so a unit ball and one of radius 10^100 tie and additivity is never used.",
+      "column": "MATHEMATICS",
+      "contingent_on": "",
+      "direction": "CHALLENGES",
+      "flips_with": "",
+      "id": "C-DOF-NOT-WELL-POSED",
+      "level": "L3",
+      "literature": [],
+      "note": "What survives is a RELATIVE count generated by a single scaling exponent, with degree-of-freedom independence transposing to additivity of that exponent.  So this row is a challenge to the QUESTION, not a deficiency in the answer -- which is a distinction only a column-separated ledger can record.",
+      "paid_for_by": "",
+      "sources": [
+        "reverse_physics/reports/relational-count-rocq.md",
+        "reverse_physics/reports/no-conformal-count-rocq.md",
+        "reverse_physics/reports/PHYSICS-VS-MATH.md"
+      ],
+      "status": "PROVED",
+      "traces_to": [
+        "RP-WEYL"
+      ]
+    },
+    {
+      "buys": "",
+      "claim": "The DYNAMICAL consequence of the ghost -- whether and how it destabilises the physical sector, and whether any sector or boundary condition survives it -- is not characterized.",
+      "column": "PHYSICS",
+      "contingent_on": "Whether a stable regime exists observationally, and on any construction exhibiting decay or its absence; nothing here bounds it.",
+      "direction": "CHALLENGES",
+      "flips_with": "",
+      "id": "C-GHOST-DYNAMICS",
+      "level": "L3",
+      "literature": [],
+      "note": "THE RETRACTION ROW.  This stream published a dynamical reading of a ghost obstruction and retracted it with proof: the coded free Hamiltonian is positive definite, and the obstruction conserves a positive charge that BOUNDS both occupations regardless of any ghost sign.  GHOST_MODEL_OBSTRUCTION then showed the coprime obstruction does not decide the question in EITHER direction.  The row stays OPEN, and the toy-model results must not be read as statements about Weyl gravity.",
+      "paid_for_by": "",
+      "sources": [
+        "reverse_physics/reports/ghost-model-obstruction.md",
+        "reverse_physics/reports/coprime-charge-bound.md"
+      ],
+      "status": "OPEN",
+      "traces_to": [
+        "RP-WEYL"
+      ]
+    },
+    {
+      "buys": "",
+      "claim": "RP-DIFF has no independence witness in either theory.  It is what makes 'the space of curvature scalars' the right space at all, so it never appears as a row in a matrix.  This is the largest genuine hole in the ledger, and it is NOT a Weyl-specific one.",
+      "column": "PHYSICS",
+      "contingent_on": "Any observation distinguishing a preferred coordinate system; the assumption is shared with essentially all of classical gravity, so a witness would be a result about both theories at once.",
+      "direction": "SHARED",
+      "flips_with": "",
+      "id": "S-DIFF-INVISIBLE",
+      "level": "L0",
+      "literature": [],
+      "note": "Recorded as SHARED so it cannot be charged to Weyl gravity's account in a comparison.",
+      "paid_for_by": "",
+      "sources": [
+        "reverse_physics/reports/PHYSICS-VS-MATH.md"
+      ],
+      "status": "OPEN",
+      "traces_to": [
+        "RP-DIFF"
+      ]
+    },
+    {
+      "buys": "",
+      "claim": "RP-LOCAL and RP-METRIC bound the coordinate space of BOTH theories rather than being tested inside it.  Neither theory's ledger tests them, and testing them needs a carrier containing nonlocal or multi-field actions, which this stream has not built.",
+      "column": "PHYSICS",
+      "contingent_on": "Any evidence for nonlocality or for a second gravitational field; both are live in the literature and neither is settled by either theory's uniqueness theorem.",
+      "direction": "SHARED",
+      "flips_with": "",
+      "id": "S-LOCAL-METRIC-UNTESTED",
+      "level": "L0",
+      "literature": [],
+      "note": "Both are also the two escapes from C-NO-CHEAP-FIX, which is why their untested status is load-bearing rather than pedantic: the only surviving routes out of the ghost run through assumptions neither theory tests.",
+      "paid_for_by": "",
+      "sources": [
+        "reverse_physics/reports/PHYSICS-VS-MATH.md"
+      ],
+      "status": "OPEN",
+      "traces_to": [
+        "RP-LOCAL",
+        "RP-METRIC"
+      ]
+    },
+    {
+      "buys": "",
+      "claim": "At the level of field equations the parity direction costs nothing and distinguishes nothing: the chiral family collapses to one parameter because alpha W_+^2 + beta W_-^2 differs from ((alpha+beta)/2) C^2 by exactly ((alpha-beta)/2) P, and P is topological.",
+      "column": "MATHEMATICS",
+      "contingent_on": "",
+      "direction": "SHARED",
+      "flips_with": "O-PARITY-DIRECTION",
+      "id": "S-PARITY-CLASSICALLY-FREE",
+      "level": "L1",
+      "literature": [],
+      "note": "Filed SHARED at L1 because at this level it is not an opening relative to Einstein gravity at all -- the same physical content is reached with or without it.  The row exists so that O-PARITY-DIRECTION cannot be quoted without its level.",
+      "paid_for_by": "",
+      "sources": [
+        "reverse_physics/reports/PHYSICS-VS-MATH.md",
+        "reverse_physics/certificates/REVERSE_PHYSICS_WEYL_ACTION_V1.json"
+      ],
+      "status": "PROVED",
+      "traces_to": [
+        "RP-PARITY",
+        "RP-TOPO-INERT"
+      ]
+    }
+  ],
+  "rows_sha256": "07bda73d1d64a8c26b171a34fdd24282be365db82672681192f44eec266ced9c",
+  "stats": {
+    "by_column": {
+      "GEOMETRY": 1,
+      "MATHEMATICS": 11,
+      "PHYSICS": 6
+    },
+    "by_direction": {
+      "CHALLENGES": 7,
+      "OPENS": 8,
+      "SHARED": 3
+    },
+    "by_level": {
+      "L0": 6,
+      "L1": 1,
+      "L2": 5,
+      "L3": 5,
+      "L4": 1
+    },
+    "by_status": {
+      "CITED": 3,
+      "DISCHARGED": 1,
+      "OPEN": 4,
+      "PROVED": 9,
+      "REFUTED": 1
+    },
+    "level_flips": [
+      "C-NOT-A-SUBSYSTEM",
+      "O-EINSTEIN-SOLUTIONS",
+      "O-PARITY-DIRECTION",
+      "S-PARITY-CLASSICALLY-FREE"
+    ],
+    "open_rows": [
+      "C-GHOST-DYNAMICS",
+      "C-NO-NEWTON-CONSTANT",
+      "S-DIFF-INVISIBLE",
+      "S-LOCAL-METRIC-UNTESTED"
+    ],
+    "rows": 18,
+    "trade_pairs": [
+      "C-CAUCHY-DATA buys O-EXTRA-TOWERS",
+      "C-GHOST-FORCED buys O-DERIVED-ORDER",
+      "C-NO-NEWTON-CONSTANT buys O-SCALE",
+      "O-DERIVED-ORDER paid for by C-GHOST-FORCED",
+      "O-RENORMALIZABILITY paid for by C-GHOST-FORCED"
+    ]
+  },
+  "swap": {
+    "einstein_adds": [
+      "RP-2ND-ORDER"
+    ],
+    "einstein_uniqueness": {
+      "column": "GEOMETRY",
+      "literature": [
+        "Lovelock, J. Math. Phys. 12 (1971) 498",
+        "Lovelock, J. Math. Phys. 13 (1972) 874"
+      ],
+      "statement": "In D = 4 the only symmetric, divergence-free 2-tensor built from the metric and at most its second derivatives, linear in the second derivatives, is a G_ab + b g_ab.  This is what makes RP-2ND-ORDER a uniqueness hypothesis rather than a preference, and it is the exact counterpart of D - 2k = 0 on the Weyl side.",
+      "status": "CITED"
+    },
+    "jointly_unsatisfiable": [
+      "RP-WEYL",
+      "RP-2ND-ORDER"
+    ],
+    "shared_base": [
+      "RP-DIFF",
+      "RP-DIM4",
+      "RP-LOCAL",
+      "RP-METRIC"
+    ],
+    "source": "reverse_physics/reports/weyl-action-reverse-physics.md",
+    "weyl_adds": [
+      "RP-PARITY",
+      "RP-TOPO-INERT",
+      "RP-WEYL"
+    ],
+    "why": "The conformal weight law D - 2k = 0 admits a Weyl-invariant local curvature action of degree k only when D = 2k, and curvature degree k gives derivative order 2k.  At D = 4 that is k = 2 and fourth order.  Einstein-Hilbert is k = 1, which is Weyl invariant only at D = 2.  So no local metric action in four dimensions is both Weyl invariant and second order, and the comparison is a forced trade rather than a menu."
+  },
+  "vocabulary": {
+    "assumptions": {
+      "RP-2ND-ORDER": "the field equations are at most second order in derivatives of the metric (Lovelock's hypothesis)",
+      "RP-DIFF": "diffeomorphism invariance",
+      "RP-DIM4": "D = 4",
+      "RP-LOCAL": "the action is an integral of a local density",
+      "RP-METRIC": "the metric is the only field",
+      "RP-PARITY": "parity invariance",
+      "RP-TOPO-INERT": "topological terms are physically inert",
+      "RP-WEYL": "local Weyl invariance"
+    },
+    "columns": [
+      "PHYSICS",
+      "GEOMETRY",
+      "MATHEMATICS"
+    ],
+    "directions": [
+      "OPENS",
+      "CHALLENGES",
+      "SHARED"
+    ],
+    "levels": {
+      "L0": "the action",
+      "L1": "the field equations",
+      "L2": "the solution locus",
+      "L3": "symplectic / dynamical structure (Cauchy data, energy, counting)",
+      "L4": "the quantum theory"
+    },
+    "statuses": {
+      "CITED": "imported from the literature or from another stream; trusted, not re-derived",
+      "DISCHARGED": "verified exactly at specific metrics -- stronger than an import, weaker than a theorem for all metrics",
+      "OPEN": "unresolved; recorded so it cannot be quietly assumed",
+      "PROVED": "a theorem of this development, machine-checked, zero axioms",
+      "REFUTED": "an exact negative result established here"
+    }
+  }
+}

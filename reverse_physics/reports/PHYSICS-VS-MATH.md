@@ -29,6 +29,32 @@ assumptions that are exactly what is under discussion; and everything in between
 **imported**. A reader who wants to attack the result needs to know which of the
 three they are attacking.
 
+### 1.1 Three columns say what a theory *is*, not what it *does*
+
+Comparing Weyl gravity to Einstein gravity needs two further axes, and they are
+forced rather than chosen — see
+[`OPENS-AND-CHALLENGES.md`](OPENS-AND-CHALLENGES.md).
+
+A **direction**: OPENS, CHALLENGES, or SHARED. The third is the one people get
+wrong, by charging Weyl gravity for a bill Einstein gravity also owes —
+`RP-DIFF`'s missing witness is *shared*, not a Weyl defect.
+
+A **level**: `L0` action, `L1` field equations, `L2` solution locus, `L3`
+symplectic/dynamical, `L4` quantum. §3.2b below already shows the assumption
+*count* changes between `L0` and `L1`. The comparison ledger shows something
+stronger: the *truth value* changes too. `Ric(g) = Λg ⟹ B_mn(g) = 0` makes
+"Einstein gravity is contained in Weyl gravity" true at `L2`, and
+`REDUCED_FLAT_EINSTEIN_SYMPLECTIC_EMBEDDING_REFUTED` makes it false at `L3`.
+Both are established in this repository.
+
+And it yields the organising claim that the three columns alone cannot state:
+Einstein and Weyl sit over the *same base* and differ by *one swap* —
+`RP-2ND-ORDER` for `RP-WEYL` — which is **forced**, because no four-dimensional
+local metric action is both Weyl invariant and second order. So OPENS and
+CHALLENGES are two halves of one trade, and the sharpest pair is a single
+theorem read twice: `D − 2k = 0` both *derives* the derivative order (§4.3) and
+*forces* the ghost (§7.5).
+
 ## 2. Five operational tests
 
 These are what the stream actually uses, not a philosophy.
@@ -374,6 +400,12 @@ assumption set that makes the Weyl action unique is *incompatible* with
 `RP-NO-GHOST`, which is a no-go in exactly the currency reverse physics deals
 in.
 
+Extended to a *comparison* between theories it needs two more axes — a direction
+and a level ([`OPENS-AND-CHALLENGES.md`](OPENS-AND-CHALLENGES.md)) — and then
+says something the three columns cannot: Einstein and Weyl differ by one forced
+assumption swap, so what Weyl gravity opens and what it challenges are two sides
+of a single trade rather than two lists.
+
 ---
 
 ## Verification
@@ -381,6 +413,7 @@ in.
 ```bash
 cd rocq && ./run.sh                                   # 24 green (0 red), 173/173 closed
 PYTHONPATH=. python3 -m reverse_physics.weyl_action_rocq --check
+PYTHONPATH=. python3 -m reverse_physics.weyl_vs_einstein_ledger --check   # 18 rows, 13/13 controls
 PYTHONPATH=. python3 -m unittest discover -s reverse_physics/tests -t .
 
 # the second rail, in tango:
