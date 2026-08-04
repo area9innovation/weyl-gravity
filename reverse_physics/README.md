@@ -156,6 +156,10 @@ aop_vacuity_audit.py                   the vacuity instrument turned on the
 weakenable_base.py                     carrier = base, constraints = axioms:
                                        the lattice, its monotonicity, and the
                                        migration invariant
+ghost_signature.py                     inertia (1,2): the criterion survives, and
+                                       "harmless" is weaker than "no ghost"
+weyl_action_d6.py                      the declared D = 6 gate: the method
+                                       scales, the uniqueness does not
 
 schema/  certificates/  tests/  reports/
 
@@ -231,6 +235,9 @@ schema/  certificates/  tests/  reports/
 | `..._AOP_VACUITY_AUDIT_V1` | audit | **the instrument turned outward.** Three of the four Assumptions-of-Physics assumptions are `LIVE`, two with witnesses the authors supply themselves. What it flags is a *derived step*: closedness of `ω` imposes **zero** conditions at one degree of freedom, since a 3-form does not exist on a 2-manifold — [report](reports/AOP-CONNECTION.md) §2.1e |
 | `..._CHAIN_IMPORTS_V1` | discipline | the four conditions replacing this stream's blanket cross-chain ban — no cycles, tags travel, pinned, middle-column only — with the scan confirming the dependency is one-way |
 | `..._WEAKENABLE_BASE_V1` | method | **the stream's oldest open problem, given a shape** — and the shape was already there. Construction constraints **are** a theory: carrier = base, enlarging = weakening, vacuous = proved outright. Vacuity is **monotone** and `(axioms) + (live assumptions)` is **constant**. All three migratable constraints are migrated. **Not closed** — no proof system — [report](reports/weakenable-base.md) |
+
+| `..._GHOST_SIGNATURE_V1` | Krein `(1,2)` | **the criterion survives where the black-hole programme works** (`lh_assembly` records inertia `(1,2,0)`), so `(1,1)` was no accident — and it sharpens the meaning: in the harmless case the `η`-norms are `[+1,−1,−1]`, so **two negative-norm directions survive**. "Harmless" means a positive inner product *exists*, **not** that the ghost is gone — [report](reports/ghost-signature.md) |
+| `..._WEYL_ACTION_D6_V1` | `D = 2…12` | **the declared `D = 6` gate.** `D − 2k = 0` selects exactly one degree per even dimension and none in odd — that scales. **The uniqueness does not**: the quotient at the selected degree is 1 at `D = 4` (computed) and 3 at `D = 6` (cited), so *"one degree"* ≠ *"one action"* and the ledger's uniqueness is **special to four dimensions**. Blocker named: no cubic invariant basis — [report](reports/weyl-action-d6.md) |
 
 There is one further Forge-only result with **no certificate**, deliberately:
 [`c-factorisation-not-determined.md`](reports/c-factorisation-not-determined.md)

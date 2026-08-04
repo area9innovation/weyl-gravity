@@ -818,6 +818,20 @@ The directions that would still yield something:
   runs through the conformal weight of the *Weyl tensor*, already diff-covariant.
   **The derived derivative order requires `RP-DIFF`.** An assumption the ledger
   had marked as carrying no weight was load-bearing for §3.9 all along.
+- ~~**Six derivatives in six dimensions.**~~ **Answered, partly**
+  ([report](weyl-action-d6.md)). The method scales — `D − 2k = 0` selects exactly
+  one degree in each even dimension and none in odd, derivative order equal to
+  the dimension, computed to `D = 12`. **The uniqueness does not.** At `D = 4`
+  the quotient at the selected degree is one-dimensional (computed here); at
+  `D = 6` it is three-dimensional (cited: the type-B invariants `I₁, I₂, I₃`
+  alongside the type-A Euler density). So *"exactly one degree"* does not mean
+  *"exactly one action"*, and the uniqueness this ledger rests on is **special to
+  four dimensions** — which costs `weyl-ghost-forced.md` its second step in
+  `D = 6`, though not its first. `D = 2` is a degenerate hit: `√−g R` is the
+  two-dimensional Euler density, so the sector is nonempty but *dynamically
+  empty*. The parity half is **not** answered, and what blocks it is named: no
+  basis of cubic curvature invariants modulo total derivatives and
+  dimension-dependent identities. The original text follows.
 - **Six derivatives in six dimensions.** The weight argument in §3.9 says the
   conformally invariant curvature degree is `k = D/2`, so odd dimensions have no
   such sector at all and `D = 6` selects the *cubic* one. Running the same exact

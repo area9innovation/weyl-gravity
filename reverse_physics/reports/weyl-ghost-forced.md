@@ -27,7 +27,16 @@ That is not a fact about a particular Lagrangian. It is a fact about the
 ## The consequence, which is the point
 
 Because the action is **unique**, the ghost cannot be tuned away by choosing a
-better conformal action. There is no other conformal action. Every proposal of
+better conformal action. There is no other conformal action.
+
+> **This step is `D = 4`-specific**, and the qualification is worth stating
+> because it is not obvious. In `D = 6` there *are* other conformal actions — a
+> three-parameter family at the selected degree
+> ([report](weyl-action-d6.md)) — so uniqueness does not travel. The verdict in
+> the table below is unaffected: dropping `RP-DIM4` still does not help, because
+> the **pole count** is dimension-general and `D = 6` is worse for it. What
+> changes is that at `D = 6` the argument survives on the pole count alone,
+> without uniqueness. Every proposal of
 the form *"take conformal gravity but modify the curvature terms"* is dead on
 arrival, and it is dead for the same reason the theory is canonical in the first
 place.

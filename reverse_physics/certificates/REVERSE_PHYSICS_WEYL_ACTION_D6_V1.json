@@ -1,0 +1,190 @@
+{
+  "at_the_selected_degree": [
+    {
+      "coordinate_basis": "{Riem^2, Ric^2, R^2}",
+      "degree": 2,
+      "dimension": 4,
+      "invariance_condition": "a + b + 3c = 0, a single linear equation",
+      "invariant_basis": "span{C^2, E4}",
+      "invariant_subspace": 2,
+      "parity_even_coordinate_space": 3,
+      "quotient": 1,
+      "source": "REVERSE_PHYSICS_WEYL_ACTION_V1",
+      "status": "COMPUTED",
+      "topological_subspace": 1
+    },
+    {
+      "coordinate_basis": "a basis of cubic curvature invariants modulo total derivatives and dimension-dependent identities -- NOT held by this stream",
+      "degree": 3,
+      "dimension": 6,
+      "invariance_condition": null,
+      "invariant_basis": "the three type-B invariants I_1, I_2, I_3",
+      "invariant_subspace": null,
+      "literature": [
+        "Bonora, Pasti & Bregola, Class. Quantum Grav. 3 (1986) 635",
+        "Deser & Schwimmer, Phys. Lett. B309 (1993) 279"
+      ],
+      "parity_even_coordinate_space": null,
+      "quotient": 3,
+      "status": "CITED",
+      "topological_basis": "the type-A Euler density E_6",
+      "topological_subspace": 1
+    }
+  ],
+  "blocker": {
+    "consequence": "until it exists the D = 6 count is a CITATION and is marked so throughout",
+    "what": "a basis of cubic curvature invariants modulo total derivatives and dimension-dependent identities",
+    "why_it_is_needed": "the D = 4 classification is a rank computation over a three-dimensional coordinate space whose basis this stream wrote down; the cubic analogue needs the same thing one degree up",
+    "why_it_is_not_cheap": "the Bianchi reductions are the bulk of the work, and dimension-dependent identities enter at cubic order in a way they do not at quadratic"
+  },
+  "certificate": "REVERSE_PHYSICS_WEYL_ACTION_D6_V1",
+  "checks": {
+    "detail": {
+      "D4_is_computed_in_this_stream": true,
+      "D4_quotient_is_one": true,
+      "D6_carries_literature": true,
+      "D6_is_cited_not_computed": true,
+      "a_degree_exists_exactly_in_even_dimension": true,
+      "einstein_hilbert_is_excluded_except_in_D2": true,
+      "the_blocker_is_named": true,
+      "the_cosmological_term_is_excluded_everywhere_scanned": true,
+      "the_degree_is_D_over_2": true,
+      "the_derivative_order_equals_the_dimension": true,
+      "the_scan_is_non_trivial": true,
+      "uniqueness_does_not_scale": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 12,
+    "total": 12
+  },
+  "consequence_for_the_ghost_argument": {
+    "not_a_correction": "the existing argument is stated at D = 4 and is correct there.  What is added is that its uniqueness step does not travel",
+    "what_changes_at_D6": "there ARE other conformal actions, a three-parameter family, so that second step fails.  The first step, the pole count, is dimension-general and unaffected",
+    "what_weyl_ghost_forced_says": "the ghost cannot be tuned away BECAUSE the action is unique -- 'there is no other conformal action' -- so every proposal to modify the curvature terms is dead on arrival"
+  },
+  "degenerate_hit": {
+    "dimension": 2,
+    "reading": "the invariant sector is nonempty but DYNAMICALLY EMPTY.  'The law selects a degree' and 'there is an action' are different statements, and D = 2 is where they first come apart",
+    "what": "k = 1, so the selected Lagrangian is sqrt(-g) R, which in two dimensions is the Euler density and hence topological"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "the D = 6 count.  It is CITED to the literature, not computed here, and is marked CITED throughout.  What blocks it is named: this stream has no basis of cubic curvature invariants modulo total derivatives and dimension-dependent identities",
+    "anything about the D = 6 PARITY sector.  The gate asked whether the parity result has an analogue and that is not answered -- it needs the same missing basis",
+    "that the ghost-forcing argument fails in D = 6.  What is established is that its SECOND step -- 'there is no other conformal action' -- is a D = 4 statement.  The first step, the pole count from D - 2k = 0, is dimension-general and the existing table already records D = 6 as worse for it",
+    "any classification in D > 6, where the same blocker applies a fortiori"
+  ],
+  "establishes": "The declared D = 6 gate, answered partly and honestly.  COMPUTED and dimension-general: D - 2k = 0 selects exactly one curvature degree k = D/2 in each EVEN dimension and none in odd, the derivative order there equals the dimension, and the same line excludes the cosmological term everywhere and Einstein-Hilbert everywhere but D = 2.  D = 2 is a DEGENERATE HIT: the selected Lagrangian sqrt(-g) R is the two-dimensional Euler density, so the sector is nonempty but dynamically empty.  THE FINDING: the weight law fixes the DEGREE and says nothing about how many independent invariants sit at it.  At D = 4 the quotient is ONE-dimensional (computed in this stream); at D = 6 it is THREE-dimensional (the type-B invariants I_1, I_2, I_3 alongside the type-A Euler density, CITED).  So 'exactly one DEGREE' does not mean 'exactly one ACTION', and THE UNIQUENESS THIS LEDGER RESTS ON IS SPECIAL TO FOUR DIMENSIONS.  The method scales; the conclusion does not.",
+  "kind": "scaling-test",
+  "report": "reverse_physics/reports/weyl-action-d6.md",
+  "the_gate": {
+    "answered": "the method scales and the UNIQUENESS does not; the parity question is not answered and needs the same missing basis",
+    "asked": "whether the method scales, and whether the parity result has an analogue",
+    "declared_in": "reverse_physics/reports/OVERVIEW.md section 8",
+    "name": "WEYL_ACTION_SIX_DERIVATIVE_D6"
+  },
+  "weight_law_scan": [
+    {
+      "degree_is_an_integer": true,
+      "derivative_order": "2",
+      "dimension": 2,
+      "excludes_cosmological_term": true,
+      "excludes_einstein_hilbert": false,
+      "has_a_conformal_curvature_sector": true,
+      "selected_degree": "1"
+    },
+    {
+      "degree_is_an_integer": false,
+      "derivative_order": null,
+      "dimension": 3,
+      "excludes_cosmological_term": true,
+      "excludes_einstein_hilbert": true,
+      "has_a_conformal_curvature_sector": false,
+      "selected_degree": "3/2"
+    },
+    {
+      "degree_is_an_integer": true,
+      "derivative_order": "4",
+      "dimension": 4,
+      "excludes_cosmological_term": true,
+      "excludes_einstein_hilbert": true,
+      "has_a_conformal_curvature_sector": true,
+      "selected_degree": "2"
+    },
+    {
+      "degree_is_an_integer": false,
+      "derivative_order": null,
+      "dimension": 5,
+      "excludes_cosmological_term": true,
+      "excludes_einstein_hilbert": true,
+      "has_a_conformal_curvature_sector": false,
+      "selected_degree": "5/2"
+    },
+    {
+      "degree_is_an_integer": true,
+      "derivative_order": "6",
+      "dimension": 6,
+      "excludes_cosmological_term": true,
+      "excludes_einstein_hilbert": true,
+      "has_a_conformal_curvature_sector": true,
+      "selected_degree": "3"
+    },
+    {
+      "degree_is_an_integer": false,
+      "derivative_order": null,
+      "dimension": 7,
+      "excludes_cosmological_term": true,
+      "excludes_einstein_hilbert": true,
+      "has_a_conformal_curvature_sector": false,
+      "selected_degree": "7/2"
+    },
+    {
+      "degree_is_an_integer": true,
+      "derivative_order": "8",
+      "dimension": 8,
+      "excludes_cosmological_term": true,
+      "excludes_einstein_hilbert": true,
+      "has_a_conformal_curvature_sector": true,
+      "selected_degree": "4"
+    },
+    {
+      "degree_is_an_integer": false,
+      "derivative_order": null,
+      "dimension": 9,
+      "excludes_cosmological_term": true,
+      "excludes_einstein_hilbert": true,
+      "has_a_conformal_curvature_sector": false,
+      "selected_degree": "9/2"
+    },
+    {
+      "degree_is_an_integer": true,
+      "derivative_order": "10",
+      "dimension": 10,
+      "excludes_cosmological_term": true,
+      "excludes_einstein_hilbert": true,
+      "has_a_conformal_curvature_sector": true,
+      "selected_degree": "5"
+    },
+    {
+      "degree_is_an_integer": false,
+      "derivative_order": null,
+      "dimension": 11,
+      "excludes_cosmological_term": true,
+      "excludes_einstein_hilbert": true,
+      "has_a_conformal_curvature_sector": false,
+      "selected_degree": "11/2"
+    },
+    {
+      "degree_is_an_integer": true,
+      "derivative_order": "12",
+      "dimension": 12,
+      "excludes_cosmological_term": true,
+      "excludes_einstein_hilbert": true,
+      "has_a_conformal_curvature_sector": true,
+      "selected_degree": "6"
+    }
+  ]
+}

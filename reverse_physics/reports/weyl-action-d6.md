@@ -1,0 +1,101 @@
+# `D = 6`: the method scales, the uniqueness does not
+
+**Certificate** `REVERSE_PHYSICS_WEYL_ACTION_D6_V1`
+**Rail** `reverse_physics/weyl_action_d6.py` — 12/12 checks
+**Answers** the gate declared in [`OVERVIEW.md`](OVERVIEW.md) §8 —
+`WEYL_ACTION_SIX_DERIVATIVE_D6`
+**Dependency tag** `LOCAL-ALGEBRAIC`
+
+---
+
+## 1. The gate
+
+> *"Six derivatives in six dimensions. The weight argument says the conformally
+> invariant curvature degree is `k = D/2`, so odd dimensions have no such sector
+> at all and `D = 6` selects the **cubic** one. Running the same exact linear
+> algebra there tests whether the method scales and whether the parity result has
+> an analogue."*
+
+The last item this stream said it would do and hadn't. The answer is more
+interesting than *"it scales"*, and it is partly a negative.
+
+## 2. What scales — computed, dimension-general
+
+| `D` | `k = D/2` | order | sector? |
+|---|---|---|---|
+| 2 | 1 | 2 | ✅ |
+| 3 | 3/2 | — | ❌ |
+| 4 | **2** | **4** | ✅ |
+| 5 | 5/2 | — | ❌ |
+| 6 | **3** | **6** | ✅ |
+| 7 | 7/2 | — | ❌ |
+| 8 | 4 | 8 | ✅ |
+
+Exactly **one** degree in each even dimension, **none** in odd, derivative order
+equal to the dimension — and the same line excludes the cosmological term
+everywhere and Einstein–Hilbert everywhere except `D = 2`. All computed, all
+dimension-general.
+
+### `D = 2` is a degenerate hit
+
+There `k = 1`, so the selected Lagrangian is `√−g R` — which in two dimensions is
+the **Euler density**, hence topological. The invariant sector is nonempty but
+**dynamically empty**.
+
+*"The law selects a degree"* and *"there is an action"* are different statements,
+and `D = 2` is where they first come apart.
+
+## 3. What does not scale — the finding
+
+The weight law fixes the **degree**. It says **nothing** about how many
+independent invariants sit at that degree.
+
+| | | quotient | |
+|---|---|---|---|
+| `D = 4`, `k = 2` | `{Riem², Ric², R²}` is 3-dim; `a + b + 3c = 0`; invariant `span{C², E₄}`; `E₄` topological | **1** | **computed here** |
+| `D = 6`, `k = 3` | the three type-B invariants `I₁, I₂, I₃`, alongside the type-A Euler density `E₆` | **3** | **cited** |
+
+> **"Exactly one degree" does not mean "exactly one action". The uniqueness this
+> entire ledger rests on is special to four dimensions.**
+
+The method scales. The conclusion does not.
+
+## 4. What that costs the ghost argument
+
+[`weyl-ghost-forced.md`](weyl-ghost-forced.md) argues the ghost cannot be tuned
+away **because the action is unique** — *"there is no other conformal action"*, so
+every proposal to modify the curvature terms is dead on arrival.
+
+**That is a `D = 4` argument.** In `D = 6` there *are* other conformal actions — a
+three-parameter family — so the **second** step fails there.
+
+The **first** step is unaffected: the pole count from `D − 2k = 0` is
+dimension-general, and the existing table already records `D = 6` as *worse* for
+it (degree 3, sixth order, three poles). So the verdict *"dropping `RP-DIM4` does
+not help"* stands. What changes is the **reasoning**: at `D = 6` it survives on
+the pole count alone, not on uniqueness.
+
+This is a qualification, not a correction. The argument is stated at `D = 4` and
+is correct there.
+
+## 5. What blocks the rest, named rather than glossed
+
+The `D = 4` classification is a rank computation over a **three-dimensional**
+coordinate space whose basis this stream wrote down. The cubic analogue needs
+
+> a basis of cubic curvature invariants modulo total derivatives and
+> dimension-dependent identities
+
+which this stream does not have. The Bianchi reductions are the bulk of the work,
+and dimension-dependent identities enter at cubic order in a way they do not at
+quadratic. Until that exists the `D = 6` count is a **citation**, and is marked
+`CITED` throughout.
+
+**The parity half of the gate is therefore not answered either** — whether the
+`D = 4` parity result has a `D = 6` analogue needs the same missing basis.
+
+---
+
+```bash
+PYTHONPATH=. python3 -m reverse_physics.weyl_action_d6 --check
+```
