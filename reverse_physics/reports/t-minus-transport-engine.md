@@ -235,17 +235,69 @@ X(2.4 → 3.0), entry (1,0) ∈ [0.07592875168485574, 0.07718132970732572]
 is a statement about the module, not about one sub-range, and an earlier draft of
 this report overstated it.
 
-## What remains — quantitative, not structural
+## End to end — the chain runs, and the Wronskian validates it
 
-All three `T₋` objects now exist. What is left is sharpening:
+`weyl_ain_endtoend_gate.forge` (21/21, ASan-clean) runs horizon Frobenius →
+interaction-picture transport → `A_in`, in one chain.
 
-1. **Tighten the enclosures.** The interaction picture's saturated width `~2.2`
-   is bounded but not sharp, and is dominated by the `[3,30]` leg where the
-   coefficient is largest — starting further out and refining steps is the lever.
-2. **Push the amplitudes through** the matching layer already validated, giving
-   `|A_in_s|`, then `det(L_H) = 1/(|A_in₂|⁴|A_in₁|²)` as a number rather than the
-   programme's current bound `0 < det(L_H) < 0.9786…`, and finally `spec(L_H)`
-   against `(0,1)` — which closes the ghost question either way.
+**No matching matrix is needed.** With `u = a + b e^{−2iωr*}` and the
+variation-of-parameters constraint, `ψ = a e^{+iωr*} + b e^{−iωr*}` holds at
+*every* radius — so `a → A_in` directly. And the normalisation lines up with the
+certificate's `exp(+iωv)` convention: the horizon-regular branch is the analytic
+one, exponent 0, which is the Frobenius series with `a₀ = 1`.
+
+**Two bugs, both caught by checks written to be able to fail.**
+
+*`iv_mul(a,a)` is not a square.* It's the product of two independent intervals,
+so an enclosure straddling zero gets a negative lower bound and `iv_sqrt` traps.
+Compounding it, `iv_add` rounds outward — so even a sum of clamped squares comes
+back with `lo = f64_pred(0) < 0`, and the clamp has to sit immediately before the
+square root.
+
+*The derivative was in the wrong measure.* The relation `bE = iu′/(2ω)` is in
+**tortoise** measure, but the Frobenius series differentiates in `x = r−2`.
+Omitting `u′_{r*} = f·u′_r` scales the derivative by ~17 at `r₀ = 17/8`. It was
+caught by using the *sharp* form of the check: `|a|² − |b|²` is **conserved**
+along the flow — it *is* the Wronskian — so it must already equal 1 **at `r₀`**,
+where the enclosure is still tight. Checking it only at infinity would have been
+far weaker: the spin-one enclosure there is wide enough to contain 1 regardless,
+and did. **Test a conserved quantity where the arithmetic is sharp, not where the
+answer lives.**
+
+After the fix, at `r = 60`:
+
+```
+spin two  |A_in|² − |A_out|² ∈ [−0.751,  3.231]   contains 1
+spin one                     ∈ [−18.97, 24.33]    contains 1
+```
+
+## Precision — reported, not claimed
+
+The Wronskian forces `|A_in_s|² ≥ 1`, hence `det(L_H) ≤ 1` at any precision. A
+*lower* bound needs `|A_in|²` bounded above, and the spin-one enclosure still
+reaches zero at this step budget. The gate therefore prints
+
+```
+det(L_H) >= 0.0039 ; NO upper bound at this step budget
+```
+
+rather than a number it hasn't earned.
+
+The step budget is sized so `verify -full` — two backends under ASan — fits the
+ten-minute budget rather than timing out, since a timeout is not a pass. A
+100000-step/`r=100` run gives a much tighter spin-two Wronskian `[0.247, 1.820]`
+but blows that budget. **Validation and precision are separate axes**: the
+identity holds at this budget; precision is bought by step count, first order in
+step size (widths `31.0, 6.52, 1.34, 0.34` at `4e3, 2e4, 1e5, 4e5` steps).
+
+## What remains
+
+Sharpening only, and the lever is named: `ivlin_affine_fundamental`'s
+exact-rational **reset frames**, which re-precondition periodically and exist for
+exactly this. Brute-force step count converges first order and will not get there
+economically. With a sharp `|A_in_s|`, `det(L_H) = 1/(|A_in₂|⁴|A_in₁|²)` becomes a
+number rather than the programme's `0 < det < 0.9787`, and then `spec(L_H)`
+against `(0,1)` closes the ghost question either way.
 
 With all three, `T₋` assembles, `L_H = G⁻¹T₋⁻†H_H T₋⁻¹` follows, and
 `ivmat`'s validated eigenvalue enclosures decide `spec(L_H) ⊂ (0,1)` — closing
