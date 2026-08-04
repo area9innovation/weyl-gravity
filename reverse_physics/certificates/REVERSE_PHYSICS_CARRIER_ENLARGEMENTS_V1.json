@@ -1,0 +1,202 @@
+{
+  "certificate": "REVERSE_PHYSICS_CARRIER_ENLARGEMENTS_V1",
+  "checks": {
+    "detail": {
+      "all_three_vacuous_assumptions_are_load_bearing": true,
+      "conformal_power_is_phi3_in_D6": true,
+      "conformal_power_is_phi4_in_D4": true,
+      "conformal_power_is_phi6_in_D3": true,
+      "control_index_carrying_compensator_rejected": true,
+      "integer_conformal_power_exactly_in_D_3_4_6": true,
+      "locality_gives_exactly_one_solution": true,
+      "net_derivative_order_is_unchanged_by_nonlocality": true,
+      "nonlocal_solution_count_is_max_j_plus_one": true,
+      "nonlocality_gives_more_than_one": true,
+      "odd_dimension_gets_a_witness_it_could_not_have": true,
+      "phi_is_gl_inert": true,
+      "witness_has_weight_zero_in_D3": true,
+      "witness_has_weight_zero_in_D4": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 14,
+    "total": 14
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "that dropping RP-DIFF, RP-METRIC or RP-LOCAL removes the Ostrogradsky ghost.  What is established is that the DERIVATION of the ghost -- via the derived derivative order and the pole count -- no longer runs.  A non-covariant theory is not thereby ghost-free, and neither is a nonlocal or multi-field one without a separate argument",
+    "anything at nonzero derivative order for Part A.  The compensator analysis is at derivative order zero, where the Weyl transformation is multiplicative; the conformally coupled kinetic term is a separate, standard object and is not computed here",
+    "a classification of nonlocal invariants.  Part B is weight bookkeeping over (k, j) and counts SOLUTIONS OF A WEIGHT CONDITION, not independent invariants at each (k, j); the actual dimension at each point is not computed",
+    "that infinite-derivative gravity is ghost-free.  The net derivative order is shown UNCHANGED by finitely many inverse boxes; the mechanism cited in the literature is an entire form factor and a different pole structure, which is outside this computation",
+    "that any witness is a sensible theory.  A witness need not be"
+  ],
+  "establishes": "Independence witnesses for the two assumptions left vacuous by REVERSE_PHYSICS_CARRIER_VACUITY_V1, by the same operation -- remove the construction constraint that made each vacuous.  RP-METRIC: admitting a compensator scalar makes sqrt(-g) phi^{2D/(D-2)} a local, diffeomorphism-invariant, Weyl-invariant density at DERIVATIVE ORDER ZERO, where the metric-only carrier provably has none; the exponent falls out of two independent conditions and reproduces the standard conformal potential (phi^4, phi^6, phi^3 in D = 4, 3, 6).  RP-LOCAL: with j inverse boxes the invariance condition is k - j = D/2, which has exactly ONE solution when j = 0 and one per j otherwise, so locality is what makes the classification unique rather than merely finite.  Jointly: the derived derivative order of section 4.3 requires ALL THREE of RP-DIFF, RP-METRIC and RP-LOCAL, each failing in a different way.",
+  "ghost_table_row": {
+    "assumption": "RP-DIFF",
+    "new_status": "ANALYSED, and the statement is narrow",
+    "previous_status": "not analysed -- it is what makes the coordinate space the right space; no witness in this framework",
+    "what_is_NOT_established": "that the ghost is removed.  A non-covariant theory is not thereby ghost-free.  What fails is the DERIVATION, which is exactly the status the RP-LOCAL and RP-METRIC rows already carry",
+    "what_is_established": "dropping RP-DIFF makes weight-zero densities available at derivative order zero, so the pole-count argument -- which runs through the derived derivative order -- no longer applies"
+  },
+  "inputs": {
+    "reverse_physics/carrier_vacuity.py": "b9d3af4e560e884f32e9c67a91e58e1c8c23bc2a6b3236dec3c35d03a12c7ae1"
+  },
+  "joint_consequence": {
+    "claim": "the derived derivative order k = D/2 requires all three of RP-DIFF, RP-METRIC and RP-LOCAL",
+    "each_fails_differently": [
+      {
+        "assumption": "RP-DIFF",
+        "how_it_fails": "derivative order 0 becomes available; F3 of carrier-vacuity says diff-invariance and Weyl invariance cannot both hold there, and without RP-DIFF only the second is required",
+        "report": "reverse_physics/reports/diff-independence.md"
+      },
+      {
+        "assumption": "RP-METRIC",
+        "how_it_fails": "derivative order 0 becomes available via sqrt(-g) phi^{2D/(D-2)}, which is diffeomorphism AND Weyl invariant",
+        "report": "reverse_physics/reports/carrier-enlargements.md"
+      },
+      {
+        "assumption": "RP-LOCAL",
+        "how_it_fails": "k - j = D/2 has one solution when j = 0 and infinitely many when j is unbounded, so uniqueness is destroyed rather than merely weakened",
+        "report": "reverse_physics/reports/carrier-enlargements.md"
+      }
+    ],
+    "relation_to_section_4_3": "section 4.3 said the standard motivation for conformal gravity 'uses one more physical input than it needs'.  That stands.  What is added is which inputs it DOES need -- and all three were untested until carrier-vacuity and this"
+  },
+  "kind": "independence-witness",
+  "part_a_rp_metric": {
+    "breaks": [
+      "F3 -- diff and Weyl invariance ARE simultaneously satisfiable at derivative order zero once a compensator is admitted",
+      "F2 -- odd dimension has a weight-zero density after all: phi^6 in D = 3"
+    ],
+    "condition": "n = m (diffeomorphism) AND D/2 = k (D-2)/4 (Weyl)",
+    "constraint_removed": "built from the metric alone",
+    "enlargement": "admit a compensator scalar",
+    "gl_inertness": {
+      "basis_size_per_scalar_power": 100,
+      "blocks_are_identical_over_k": true,
+      "reason": "the GL generators act trivially on phi, so the variation matrix is block-diagonal over the scalar exponent and every block is the untagged one",
+      "untagged_invariant_dimension": 1
+    },
+    "integer_dimensions": [
+      3,
+      4,
+      6
+    ],
+    "integer_dimensions_note": "2D/(D-2) = 2 + 4/(D-2) is an integer exactly when (D-2) divides 4, so D in {3, 4, 6} -- the classical trio admitting a polynomial conformal scalar potential (phi^6, phi^4, phi^3).  Reproduced here, not assumed",
+    "negative_control": {
+      "control": "an index-carrying compensator changes the answer",
+      "index_carrying_case_invariants": 1,
+      "inert_case_invariants": 0,
+      "rejected": true,
+      "they_differ": true
+    },
+    "rows": [
+      {
+        "conformal_power": "6",
+        "conformal_power_is_an_integer": true,
+        "dimension": 3,
+        "metric_factor_is_diff_invariant": true,
+        "metric_only_carrier_has_none_here": true,
+        "scalar_weight": "-1/4",
+        "witness": "sqrt(-g) phi^6",
+        "witness_weight": "0",
+        "witness_weight_is_zero": true
+      },
+      {
+        "conformal_power": "4",
+        "conformal_power_is_an_integer": true,
+        "dimension": 4,
+        "metric_factor_is_diff_invariant": true,
+        "metric_only_carrier_has_none_here": false,
+        "scalar_weight": "-1/2",
+        "witness": "sqrt(-g) phi^4",
+        "witness_weight": "0",
+        "witness_weight_is_zero": true
+      },
+      {
+        "conformal_power": "10/3",
+        "conformal_power_is_an_integer": false,
+        "dimension": 5,
+        "metric_factor_is_diff_invariant": true,
+        "metric_only_carrier_has_none_here": true,
+        "scalar_weight": "-3/4",
+        "witness": null,
+        "witness_weight": null,
+        "witness_weight_is_zero": false
+      },
+      {
+        "conformal_power": "3",
+        "conformal_power_is_an_integer": true,
+        "dimension": 6,
+        "metric_factor_is_diff_invariant": true,
+        "metric_only_carrier_has_none_here": false,
+        "scalar_weight": "-1",
+        "witness": "sqrt(-g) phi^3",
+        "witness_weight": "0",
+        "witness_weight_is_zero": true
+      }
+    ],
+    "scalar_weight_convention": "phi -> lambda^{-(D-2)/4} phi under g -> lambda g, i.e. the conformally coupled weight Omega^{-(D-2)/2} with Omega^2 = lambda",
+    "solution": "k = 2D/(D-2)"
+  },
+  "part_b_rp_local": {
+    "condition": "k - j = D/2",
+    "constraint_removed": "polynomial in finitely many jets",
+    "enlargement": "admit inverse box operators",
+    "note": "the NET derivative order 2(k - j) = D is unchanged by finitely many inverse boxes.  Nonlocality does not buy a different derivative count; it buys a different pole structure, which is the actual mechanism cited for infinite-derivative gravity and is not computed here",
+    "rows": [
+      {
+        "derivative_order_is_unchanged": true,
+        "dimension": 4,
+        "local_solution_count": 1,
+        "local_solutions": [
+          2
+        ],
+        "net_derivative_orders": [
+          4
+        ],
+        "nonlocal_solution_count": 7,
+        "nonlocal_solutions": [
+          "k=2,j=0",
+          "k=3,j=1",
+          "k=4,j=2",
+          "k=5,j=3",
+          "k=6,j=4",
+          "k=7,j=5",
+          "k=8,j=6"
+        ],
+        "nonlocal_solutions_up_to_j": 6,
+        "witness": "k = 3 with one inverse box",
+        "witness_weight": "0"
+      },
+      {
+        "derivative_order_is_unchanged": true,
+        "dimension": 6,
+        "local_solution_count": 1,
+        "local_solutions": [
+          3
+        ],
+        "net_derivative_orders": [
+          6
+        ],
+        "nonlocal_solution_count": 7,
+        "nonlocal_solutions": [
+          "k=3,j=0",
+          "k=4,j=1",
+          "k=5,j=2",
+          "k=6,j=3",
+          "k=7,j=4",
+          "k=8,j=5",
+          "k=9,j=6"
+        ],
+        "nonlocal_solutions_up_to_j": 6,
+        "witness": "k = 4 with one inverse box",
+        "witness_weight": "0"
+      }
+    ],
+    "weight": "D/2 - k + j, since box carries one inverse metric so box^{-1} carries weight +1"
+  },
+  "report": "reverse_physics/reports/carrier-enlargements.md"
+}

@@ -770,10 +770,15 @@ The directions that would still yield something:
   enlargement is the removal of that constraint. The reverse-mathematics
   correspondence is exact: the carrier is the base, and a vacuous assumption is
   an axiom the base already proves. Auditing the Weyl ledger against it finds
-  **three** vacuous assumptions, not one, with `RP-LOCAL` and `RP-METRIC`
-  untreated — and those are precisely the two escapes left open by the ghost
-  no-go, so the only surviving routes out of the ghost run through the two
-  assumptions whose carriers have never been enlarged.
+  **three** vacuous assumptions, not one.
+  **All three are now enlarged** ([report](carrier-enlargements.md)), and the
+  joint statement is the finding: §3.9's derived derivative order requires
+  `RP-DIFF`, `RP-METRIC` *and* `RP-LOCAL`, each failing in a different way —
+  order zero via non-covariance, order zero via `√−g φ^{2D/(D−2)}`, and loss of
+  uniqueness via inverse boxes. The compensator exponent is the check worth
+  quoting: it is not put in, and it reproduces `φ⁶`, `φ⁴`, `φ³` in `D = 3, 4, 6`,
+  integer exactly when `(D−2) | 4`. Every assumption in the Weyl ledger now has
+  an independence witness.
 - **The corpus's own `does_not_establish` lines.** That is where the seventh
   finding came from — `sf:program/conjecture/coprime-ratio-hierarchy` carried
   the line *"No ansatz proof exists"*, and it turned out to be a degree count

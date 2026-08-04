@@ -133,6 +133,9 @@ weyl_vs_einstein_ledger.py             the OPENS / CHALLENGES comparison ledger 
 carrier_vacuity.py                     the VACUOUS / LIVE / EMPTY trichotomy, the
                                        enlargement operation behind 4.2 and 4.7,
                                        and an audit of this ledger against it
+carrier_enlargements.py                RP-METRIC and RP-LOCAL, the two the audit
+                                       found still vacuous -- witnessed by the
+                                       same operation
 
 schema/  certificates/  tests/  reports/
 
@@ -198,6 +201,8 @@ schema/  certificates/  tests/  reports/
 | `..._WEYL_VS_EINSTEIN_LEDGER_V1` | comparison | **what Weyl gravity opens and challenges**: one *forced* assumption swap over a shared base, so OPENS and CHALLENGES are two halves of one trade. Adds a **direction** and a **level** axis, the latter forced because "Einstein gravity is contained in Weyl gravity" is *true at `L2` and false at `L3`* — both established here — [report](reports/OPENS-AND-CHALLENGES.md) |
 
 | `..._CARRIER_VACUITY_V1` | `D = 2,3,4`, order 0 | **the operation behind both carrier enlargements**, and the stream's oldest open problem given a shape: the carrier *is* the base, and an assumption vacuous on it is an axiom the base already proves. `RP-DIFF ∧ RP-WEYL` is shown **never simultaneously satisfiable at derivative order zero in any dimension**, which is the sharp form of why the derived order needs `RP-DIFF`. Audit: **three** ledger assumptions are vacuous, not one — [report](reports/carrier-vacuity.md) |
+
+| `..._CARRIER_ENLARGEMENTS_V1` | `D` general, order 0 | **the last two vacuous assumptions, witnessed.** `RP-METRIC`: a compensator gives `√−g φ^{2D/(D−2)}`, diff- *and* Weyl-invariant at derivative order **zero** — the exponent falls out and reproduces `φ⁶,φ⁴,φ³` in `D = 3,4,6`. `RP-LOCAL`: `k − j = D/2` has one solution locally and one per inverse box otherwise, so locality is what makes the classification **unique**. Jointly: the derived derivative order requires **all three** of `RP-DIFF`, `RP-METRIC`, `RP-LOCAL`, each failing differently — [report](reports/carrier-enlargements.md) |
 
 There is one further Forge-only result with **no certificate**, deliberately:
 [`c-factorisation-not-determined.md`](reports/c-factorisation-not-determined.md)

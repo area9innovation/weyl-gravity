@@ -9,7 +9,7 @@ The short version: **two categories are not enough.** Splitting a derivation
 into "assumptions" and "the derivation" hides a third thing — the classical
 results the derivation leans on, which are neither physical postulates nor
 things the development proves. Naming that third category is what makes the
-ledger checkable, and in this stream it changed the answer seven times.
+ledger checkable, and in this stream it changed the answer eight times.
 
 ---
 
@@ -97,17 +97,20 @@ report [`weyl-action-reverse-physics.md`](weyl-action-reverse-physics.md).
 
 | tag | assumption | independence witness | verdict |
 |---|---|---|---|
-| `RP-LOCAL` | the action is `∫` of a local density | nonlocal conformal actions exist | assumed, not tested here |
-| `RP-METRIC` | the metric is the only field | conformally coupled matter | assumed, not tested here |
+| `RP-LOCAL` | the action is `∫` of a local density | `k − j = D/2` has infinitely many solutions once inverse boxes are allowed | **independent** (§4.8) — locality is what makes the classification unique |
+| `RP-METRIC` | the metric is the only field | `√−g φ⁴` — diff- and Weyl-invariant at derivative order **zero** | **independent** (§4.8) |
 | `RP-DIFF` | diffeomorphism invariance | `√−g (g⁰⁰)²` — Weyl-invariant, not a scalar | **independent given `RP-METRIC`** (§4.7) |
 | `RP-WEYL` | local Weyl invariance | `R²` — Weyl-variant, and outside `span{C², E₄}` | **independent; cuts 3 → 2** |
 | `RP-DIM4` | `D = 4` | the weight `D − 4` | **independent; `√−g C²` invariant iff `D = 4`** |
 | `RP-TOPO-INERT` | topological terms are physically inert | `E₄` — invariant, not a multiple of `C²` | **independent; cuts 2 → 1** |
 | `RP-PARITY` | parity invariance | `W₊²` — invariant, not parity-even | **independent on actions, REDUNDANT on field equations** |
 
-Two of these are honest about their status: `RP-LOCAL` and `RP-METRIC` bound the
-coordinate space rather than being tested inside it. Saying so is the point of
-having a column for it.
+~~Two of these are honest about their status: `RP-LOCAL` and `RP-METRIC` bound
+the coordinate space rather than being tested inside it.~~ **All seven now have
+witnesses.** `RP-LOCAL`, `RP-METRIC` and `RP-DIFF` were *vacuous on the
+carrier* — one phenomenon filed as two kinds of caveat — and all three have been
+enlarged (§4.7, §4.8). Saying which is which is still the point of having a
+column for it.
 
 ### 3.2 GEOMETRY — imported, isolated, never re-derived
 
@@ -179,7 +182,7 @@ No floating point appears anywhere on either rail.
 
 ---
 
-## 4. Seven times the separation changed the answer
+## 4. Eight times the separation changed the answer
 
 This is the case for the method. Each row is a claim that looked like one
 category and turned out to be another.
@@ -303,6 +306,42 @@ was silently using the one assumption the ledger had marked as carrying no
 weight. §4.3 still stands; what changes is that its input is now named.
 
 [`diff-independence.md`](diff-independence.md)
+
+### 4.8 And then the other two — the derived order needs all three
+
+The vacuity audit ([report](carrier-vacuity.md)) found that `RP-DIFF` was not
+alone: **`RP-LOCAL` and `RP-METRIC` are vacuous on the same carrier for the same
+reason**, and §3.1's "assumed, not tested here" was recording that fact without
+naming it. The same operation treats them
+([report](carrier-enlargements.md)).
+
+**`RP-METRIC`** — admit a compensator scalar. Weight bookkeeping gives
+`k = 2D/(D−2)`, so `√−g φ⁴` is local, diffeomorphism-invariant, Weyl-invariant
+and parity-even at **derivative order zero**. The exponent is not put in: it
+falls out of two independent conditions and reproduces `φ⁶`, `φ⁴`, `φ³` in
+`D = 3, 4, 6` — integer exactly when `(D−2) | 4`, which is the classical trio.
+
+**`RP-LOCAL`** — admit inverse boxes. Invariance becomes `k − j = D/2`, with
+**one** solution at `j = 0` and one per `j` otherwise. Locality is what makes
+the classification *unique*, not merely finite.
+
+**The joint statement is the finding.** §4.3's derived derivative order requires
+**all three**, and each fails differently:
+
+| drop | what becomes available |
+|---|---|
+| `RP-DIFF` | derivative order `0` — F3 forbids it only while `RP-DIFF` holds |
+| `RP-METRIC` | derivative order `0` via `√−g φ^{2D/(D−2)}` |
+| `RP-LOCAL` | every `k ≥ D/2`; uniqueness destroyed |
+
+§4.3 said the standard motivation *"uses one more physical input than it needs"*.
+That stands. What is now sayable is **which inputs it does need** — and all three
+were untested until §4.7 and this.
+
+It also fills in a row of the ghost table (§7.5) that read *"not analysed"*:
+dropping `RP-DIFF` makes the pole-count argument **not run**. That is not the
+same as removing the ghost, and is recorded at exactly the strength the
+`RP-LOCAL` and `RP-METRIC` rows already carry.
 
 ---
 

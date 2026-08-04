@@ -146,16 +146,21 @@ the coordinate space rather than being tested inside it"*, and separately that
 `RP-DIFF` *"is invisible"*. **Those are one phenomenon with one cure, filed as
 two different kinds of caveat.**
 
-Only `RP-DIFF` has been enlarged. The other two now have a named shape of task
-instead of a permanent-looking limitation:
+~~Only `RP-DIFF` has been enlarged.~~ **All three are now enlarged**
+([report](carrier-enlargements.md)):
 
-- `RP-LOCAL` → admit nonlocal densities (an entire form factor)
-- `RP-METRIC` → admit a second field (a compensator scalar)
+- `RP-METRIC` → admit a compensator scalar. `√−g φ^{2D/(D−2)}` is diff- **and**
+  Weyl-invariant at derivative order zero, which **breaks F2 and F3 above**. The
+  exponent falls out rather than being put in, and reproduces `φ⁶`, `φ⁴`, `φ³`
+  in `D = 3, 4, 6` — the classical trio, integer exactly when `(D−2) | 4`.
+- `RP-LOCAL` → admit inverse boxes. `k − j = D/2` has **one** solution when
+  `j = 0` and one per `j` otherwise, so locality is what makes the
+  classification *unique*.
 
 Both are exactly the two escapes left open by `C-NO-CHEAP-FIX` in the comparison
-ledger. That is not a coincidence worth stating loudly, but it is worth noting
-that the only surviving routes out of the ghost run through the two assumptions
-whose carriers have never been enlarged.
+ledger — and with all three now enlarged, the joint statement is that **the
+derived derivative order requires all three**, each failing differently. See
+[`carrier-enlargements.md`](carrier-enlargements.md) §4.
 
 **These assignments are declarations** — judgement about which construction
 constraints define the carrier — recorded so they can be disputed. Only the
