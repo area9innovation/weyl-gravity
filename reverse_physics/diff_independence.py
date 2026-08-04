@@ -180,10 +180,26 @@ def h2_key(p, q):
 
 
 def variation_row_h2(basis_element):
-    """Row of the GL-variation matrix for sqrt(-g) h^p h^q.
+    """Row of the GL-variation matrix for the SCALAR FACTOR M = h^p h^q.
 
-    Columns are indexed by (generator, monomial).  A density is
-    diffeomorphism-invariant iff its row is zero.
+    THE CONDITION IS delta M = 0, NOT delta(sqrt(-g) M) = 0, and the difference
+    matters enough to write out.  Under x' = x + eps A x the condition for the
+    INTEGRAL to be invariant is delta_alg D = -tr(A) D.  With D = sqrt(-g) M and
+    delta(sqrt(-g)) = -tr(A) sqrt(-g),
+
+        delta_alg D = -tr(A) sqrt(-g) M + sqrt(-g) delta M  ==  -tr(A) sqrt(-g) M
+
+    so the sqrt(-g) contribution CANCELS on both sides and what is left is
+    delta M = 0.  That is just the statement that sqrt(-g) is already a scalar
+    density of weight one, so the integral is invariant exactly when M is a
+    scalar.
+
+    An earlier version of this function carried the -tr(A) term into the
+    condition, which imposes delta M = tr(A) M instead -- a different operator,
+    and inconsistent with `variation_row_control` below, which never had it.
+    Both operators return invariant dimension 0 on this space (the rank is 55
+    either way), so the result was unaffected; the implementation was still
+    wrong and the two spaces were being tested against different conditions.
     """
     p, q = basis_element
     row = {}
@@ -195,9 +211,7 @@ def variation_row_h2(basis_element):
                 if coeff:
                     acc[mon] = acc.get(mon, 0) + coeff
 
-            # -tr(A) from sqrt(-g)
-            add(h2_key(p, q), -trace_of_generator(a, b))
-            # product rule on the two inverse metrics
+            # product rule on the two inverse metrics; no sqrt(-g) term
             for r, c in d_inverse(p, a, b).items():
                 add(h2_key(r, q), c)
             for s, c in d_inverse(q, a, b).items():

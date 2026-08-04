@@ -74,9 +74,18 @@ weight `2`, not `0`.
 ```
 
 local ✓, metric-only ✓, `D = 4` ✓, parity-even ✓, Weyl-invariant (weight
-`2−2+0 = 0`) ✓, not topological ✓ — and **not** diffeomorphism-invariant. Seven
+`2−2+0 = 0`) ✓, not topological ✓ — and **not** diffeomorphism-invariant. Four
 of the sixteen `GL(4)` generators move it, so it is not accidentally in the
 kernel.
+
+> **Operator correction.** An earlier version of this rail imposed
+> `δ(√−g M) = 0` rather than `δM = 0`. The right condition is the latter: `√−g`
+> is already a scalar density of weight one, so `∫√−g M` is invariant exactly
+> when `M` is a scalar, and the `√−g` contribution cancels from both sides of
+> `δ_alg D = −tr(A)·D`. Both operators give rank 55 and invariant dimension 0,
+> so **the result was unaffected** — but the control space had always used the
+> correct condition, so the two were being tested against different operators.
+> Fixed; the generator count moved from seven to four.
 
 ### Why the zero isn't a bug
 
@@ -103,6 +112,13 @@ metric density with **zero** derivatives, which `k = 2` forbids.
 
 > **The derived derivative order requires `RP-DIFF`.**
 
+[`carrier-vacuity.md`](carrier-vacuity.md) sharpens this to the exact
+mechanism (F3): diff-invariance needs `n = m` while Weyl invariance needs
+`n − m = D/2`, so the two are **never simultaneously satisfiable at derivative
+order zero, in any dimension**. `RP-DIFF` is not merely *used* by the
+derivation — it is what makes derivative order zero impossible, and only then
+does `D − 2k = 0` pin the order at `D/2`.
+
 An assumption the ledger recorded as carrying *no witness at all* turns out to
 be load-bearing for the stream's best result. This does not weaken §4.3 — the
 derived order stands. It **names the input §4.3 was silently using.**
@@ -111,6 +127,12 @@ derived order stands. It **names the input §4.3 was silently using.**
 
 Written out because the temptations are obvious.
 
+- **The carrier is `EMPTY` for `RP-DIFF`, not `LIVE`.** By F3 of
+  [`carrier-vacuity.md`](carrier-vacuity.md) *nothing* at derivative order zero
+  is diffeomorphism-invariant. The witness stands — `T4` asks only for an element
+  satisfying the others and failing `A` — but on an empty carrier the law itself
+  is absent, so the **union** carrier (order zero plus the quadratic curvature
+  scalars) is the one to quote, and it is `LIVE` at 3 of 58.
 - **Only derivative order zero, and only the lowest weight-zero degree `(2,0)`.**
   The degrees `(3,1)`, `(4,2)`, … are also weight zero and are *not* classified
   here. The order-zero space is infinite-dimensional as a polynomial algebra;

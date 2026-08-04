@@ -291,7 +291,9 @@ is found). Every element is a witness; `√−g (g⁰⁰)²` is the explicit one
 
 **Test T4**, applied by building a carrier where the witness could exist.
 Verdict: independent — **given `RP-METRIC`**, since the Stückelberg escape is
-blocked by the field content rather than refuted.
+blocked by the field content rather than refuted. The carrier is `EMPTY` rather
+than `LIVE` for `RP-DIFF`; the witness stands, but the union with the curvature
+scalars is the carrier to quote ([report](carrier-vacuity.md)).
 
 And the consequence is the reason it matters. The witness has **zero**
 derivatives, while §4.3's derived order says `k = D/2 = 2`. That derivation runs
@@ -395,6 +397,17 @@ Honest limits, because a separation ledger that claims to be clean is not one.
 - **No reversal over a weakenable base.** Reverse mathematics compares against a
   base theory one can weaken. Every equivalence here is over a *declared
   carrier*. This is the stream's oldest open problem and it is not closed.
+  **But it now has an operation and two worked instances**
+  ([report](carrier-vacuity.md)). The correspondence is exact: *the carrier is
+  the base, and an assumption vacuous on the carrier is an axiom the base
+  already proves.* An assumption is `VACUOUS`, `LIVE` or `EMPTY` on a carrier;
+  it can be witnessed iff it is not vacuous; and an assumption that is also a
+  **construction constraint** of the carrier is vacuous, so the enlargement that
+  makes it testable is the removal of that constraint. §4.2 and §4.7 are both
+  instances. Auditing this ledger against it finds that **three** assumptions
+  are vacuous on the carrier the classification used — `RP-LOCAL`, `RP-METRIC`
+  and `RP-DIFF` — of which only the last has been enlarged. What §6 records
+  above as two different kinds of caveat is one phenomenon with one cure.
 - **Nothing transfers between carriers.** The stochastic equivalence is four
   states and one step; the torus results are flat `T⁴` and polynomial fields.
 

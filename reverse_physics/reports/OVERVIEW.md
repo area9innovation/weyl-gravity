@@ -763,6 +763,17 @@ The directions that would still yield something:
   *carrier enlargement is the mechanism a weakenable base would systematise* —
   and it turns "build a weakenable base" from an abstract wish into a question
   with two worked examples to generalise from.
+  **The operation is now stated and its central test mechanised**
+  ([report](carrier-vacuity.md)): an assumption is `VACUOUS`, `LIVE` or `EMPTY`
+  on a carrier, it can be witnessed iff it is not vacuous, and an assumption
+  that is also a *construction constraint* of the carrier is vacuous — so the
+  enlargement is the removal of that constraint. The reverse-mathematics
+  correspondence is exact: the carrier is the base, and a vacuous assumption is
+  an axiom the base already proves. Auditing the Weyl ledger against it finds
+  **three** vacuous assumptions, not one, with `RP-LOCAL` and `RP-METRIC`
+  untreated — and those are precisely the two escapes left open by the ghost
+  no-go, so the only surviving routes out of the ghost run through the two
+  assumptions whose carriers have never been enlarged.
 - **The corpus's own `does_not_establish` lines.** That is where the seventh
   finding came from — `sf:program/conjecture/coprime-ratio-hierarchy` carried
   the line *"No ansatz proof exists"*, and it turned out to be a degree count

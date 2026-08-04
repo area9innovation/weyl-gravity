@@ -130,6 +130,9 @@ diff_independence.py                   RP-DIFF's independence witness, on a carr
                                        where the assumption can fail
 weyl_vs_einstein_ledger.py             the OPENS / CHALLENGES comparison ledger and
                                        the rails that keep its citations honest
+carrier_vacuity.py                     the VACUOUS / LIVE / EMPTY trichotomy, the
+                                       enlargement operation behind 4.2 and 4.7,
+                                       and an audit of this ledger against it
 
 schema/  certificates/  tests/  reports/
 
@@ -193,6 +196,8 @@ schema/  certificates/  tests/  reports/
 | `..._WEYL_TRACE_LAW_V1` | metrics, exact | **N2, and the bridge between the two ledgers**: `g^mn E_mn = 2(a + b + 3c)□R`, where `a + b + 3c = 0` is exactly the classification's Weyl equation — so the kernel of the trace map is `span{C², E₄}` and `RP-WEYL ⟺ RP-TRACELESS` gets its reverse direction. `N2` and `G5` need the **same witness**. The variational link `E^(C²) = 4B` is now *computed*, not cited — [report](reports/weyl-trace-law.md) |
 | `..._DIFF_INDEPENDENCE_V1` | `D = 4`, order 0 | **an assumption believed untestable in principle, witnessed**: on a carrier where `RP-DIFF` *can* fail, the lowest weight-zero degree is 55-dimensional and its diff-invariant subspace is exactly **0**. Consequence: the **derived derivative order requires `RP-DIFF`** — §4.3 was silently using it. Independence is *given* `RP-METRIC` — [report](reports/diff-independence.md) |
 | `..._WEYL_VS_EINSTEIN_LEDGER_V1` | comparison | **what Weyl gravity opens and challenges**: one *forced* assumption swap over a shared base, so OPENS and CHALLENGES are two halves of one trade. Adds a **direction** and a **level** axis, the latter forced because "Einstein gravity is contained in Weyl gravity" is *true at `L2` and false at `L3`* — both established here — [report](reports/OPENS-AND-CHALLENGES.md) |
+
+| `..._CARRIER_VACUITY_V1` | `D = 2,3,4`, order 0 | **the operation behind both carrier enlargements**, and the stream's oldest open problem given a shape: the carrier *is* the base, and an assumption vacuous on it is an axiom the base already proves. `RP-DIFF ∧ RP-WEYL` is shown **never simultaneously satisfiable at derivative order zero in any dimension**, which is the sharp form of why the derived order needs `RP-DIFF`. Audit: **three** ledger assumptions are vacuous, not one — [report](reports/carrier-vacuity.md) |
 
 There is one further Forge-only result with **no certificate**, deliberately:
 [`c-factorisation-not-determined.md`](reports/c-factorisation-not-determined.md)
