@@ -187,15 +187,54 @@ limit) rather than typed in. Its gate validates almost entirely by identities �
 `sin²+cos²=1`, double-angle, `exp∘log = id` both ways, `exp(a+b)=exp a·exp b` —
 and feeds the module's own `π` back through its own sine. 34/34, ASan-clean.
 
-## What remains
+## The extension coefficient — and it is a single constant
 
-1. **Tighten the enclosure.** The saturated width `~2.2` is bounded but not sharp,
-   and is dominated by the `[3,30]` leg where the coefficient is largest —
-   starting the interaction picture further out and refining steps is the lever.
-   Then feed the amplitudes through the matching layer, already validated.
-2. **The extension coefficient** coupling the two spin-two copies. The Wronskian
-   does not constrain it — it is the one genuinely free transport integral, and
-   the reason `det L_H` is known while `spec L_H` is not.
+The last object, and it turned out far more tractable than expected once the
+certified gauge data was read properly. `axial_rw_lx_triangular_preflight`
+gauges the four-state carrier module into `transformed_A4`, which is **block
+triangular**:
+
+```
+[ 0                    1                      0     0   ]
+[ 6(r-1)/(r²(r-2))   -2i(ωr² - i)/(r(r-2))    1     0   ]  ← the coupling
+[ 0                    0                      0     1   ]
+[ 0                    0                   L_x entries  ]
+```
+
+So with `y = (y_RW, y_x)`: `y_x′ = A_x y_x` and `y_RW′ = A_RW y_RW + C y_x`, with
+`C` carrying a **single entry equal to 1**. The spin-one factor decouples
+entirely and drives the spin-two one as a source. The extension coefficient is
+therefore `X = ∫ Φ_RW(r,s) C Φ_x(s,r₀) ds`, and by triangularity it is simply the
+**upper-right block of the transported fundamental matrix**.
+
+**The cross-check that licenses this.** The certificate's gauged block and this
+stream's factor companion came from completely different routes — theirs by a
+rational gauge `T = [J,N]` on the six-state system, ours by clearing denominators
+in `D_r*²u + 2iω D_r*u − Vu = 0`. They agree entrywise at 30 radii:
+`6(r−1)/(r²(r−2))` is our `V₂/f²`, and `−2i(ωr²−i)/(r(r−2))` expands to
+`−(2+2iωr²)/(r²−2r)`, exactly our `−P`.
+
+**Result:**
+
+```
+X(2.4 → 3.0), entry (1,0) ∈ [0.07592875168485574, 0.07718132970732572]
+```
+
+**Nonzero** — the extension genuinely does not split. The corpus certifies
+`axial_ell2_nonsplit_all_positive_real` abstractly; this is that fact as a
+number.
+
+## What remains — quantitative, not structural
+
+All three `T₋` objects now exist. What is left is sharpening:
+
+1. **Tighten the enclosures.** The interaction picture's saturated width `~2.2`
+   is bounded but not sharp, and is dominated by the `[3,30]` leg where the
+   coefficient is largest — starting further out and refining steps is the lever.
+2. **Push the amplitudes through** the matching layer already validated, giving
+   `|A_in_s|`, then `det(L_H) = 1/(|A_in₂|⁴|A_in₁|²)` as a number rather than the
+   programme's current bound `0 < det(L_H) < 0.9786…`, and finally `spec(L_H)`
+   against `(0,1)` — which closes the ghost question either way.
 
 With all three, `T₋` assembles, `L_H = G⁻¹T₋⁻†H_H T₋⁻¹` follows, and
 `ivmat`'s validated eigenvalue enclosures decide `spec(L_H) ⊂ (0,1)` — closing
