@@ -137,7 +137,7 @@ protected.
   check, not a derivation from `mpoly`.
 - **Anything about Weyl gravity**, the BV–BFV complex, or the residual classes.
 
-## The successor question
+## The successor question — since ANSWERED
 
 `GHOST_MODEL_OBSTRUCTION` — redo the deformation with a genuinely indefinite free
 Hamiltonian `h0 = w1·n̂₁ − w2·n̂₂` and ask whether the obstruction structure
@@ -145,6 +145,17 @@ changes. Under `a2 ↔ a2b` the conversion kernel becomes pair creation, so the
 two models plausibly see **mirror-image obstruction loci**. If that is right, the
 coprime hierarchy is a statement about *which channel is resonant* — not about
 stability at all, in either model.
+
+**Answered in [`ghost-model-obstruction.md`](ghost-model-obstruction.md)**
+(`rocq/GhostModelObstruction.v`). The conclusion holds; the phrasing above does
+not. The loci do **not** mirror — they *coincide*, because `a₂ ↔ a₂b` acts on
+monomials and not on `(p,q)`, so the hierarchy transports unchanged and it is the
+*channel* that mirrors. And the sharper consequence: the only diagonal quadratic
+charge surviving in the ghost model is `p·n̂₁ − q·n̂₂`, which is indefinite and
+bounds nothing. **So the bound established above is a consequence of the
+definiteness of `h0`, not of the obstruction** — this report showed the
+obstruction does not destabilise, and its successor shows the obstruction is not
+what stabilises either.
 
 ## Verification
 

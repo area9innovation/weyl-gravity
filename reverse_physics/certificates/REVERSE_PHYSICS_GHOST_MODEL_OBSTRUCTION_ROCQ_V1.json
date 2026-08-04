@@ -1,0 +1,99 @@
+{
+  "answers": {
+    "confirmed": "the coprime hierarchy is a statement about WHICH CHANNEL IS RESONANT, not about stability, in either model",
+    "corrected": "the successor question guessed MIRROR-IMAGE obstruction loci. The loci COINCIDE: the relabelling acts on monomials, not on (p, q), so the set of ratios admitting an obstruction is literally the same. It is the CHANNEL that mirrors.",
+    "declared_by": "REVERSE_PHYSICS_COPRIME_CHARGE_BOUND_ROCQ_V1",
+    "question": "GHOST_MODEL_OBSTRUCTION",
+    "verdict": "CONFIRMED_WITH_A_CORRECTION"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "that the ghost model is unstable -- only that the charge argument bounding the healthy model has no counterpart here; an unbounded level set permits growth without producing it",
+    "that the ghost model's cubic vertex actually contains the pair-creation monomial with nonzero coefficient, which is a computation in the deformation rather than a statement about the resonant sector",
+    "that no conserved quantity of HIGHER degree bounds the ghost model; only diagonal quadratic charges al n1 + be n2 are considered",
+    "the bracket action on monomials, which is the DEFINITION ghost_freq here as it is in the predecessor, certified in Forge as a polynomial identity rather than derived from the implementation inside Rocq",
+    "anything about Weyl gravity, the BV-BFV complex, or the residual classes -- the Weyl ghost is a genuinely indefinite system, which is why the question was asked, but this is a two-mode toy"
+  ],
+  "gate_negative_controls": [
+    "twenty-seven inherited, all rejected",
+    "a FALSE claim that the conversion kernel is resonant in the ghost model is REJECTED \u2014 without it the two models would obstruct through the same channel and the separation would be vacuous",
+    "a FALSE claim that the surviving ghost charge can be positive is REJECTED \u2014 without it the sign of h0 would be doing no work, which is the entire content of the module"
+  ],
+  "gate_result": "RESULT: 28 green (0 red) \u2014 GATE: PASS",
+  "generality_level": "G4_ALL_p_q_POSITIVE",
+  "ledger": {
+    "coqchk_axiom_section": "<none>",
+    "declared_assumptions_in_source": "none \u2014 no Axiom, Parameter, Hypothesis, Conjecture, Admitted or admit",
+    "print_assumptions_closed": "17/17 in GhostModelObstruction.v; 234/234 across the twenty-three modules the shared gate drives",
+    "rationals_not_reals": "the unboundedness argument is over Q. Coq's R is axiomatised, and importing it would put axioms in the ledger for a statement that does not need them."
+  },
+  "lifecycle_ladder": "reverse-physics-v0",
+  "lifecycle_state": "NECESSITY_CERTIFIED",
+  "record_kind": "PROVENANCE_IMPORT \u2014 the mathematics is in rocq/GhostModelObstruction.v; this file computes nothing",
+  "result_id": "REVERSE_PHYSICS_GHOST_MODEL_OBSTRUCTION_ROCQ_V1",
+  "result_state": "SUCCESSOR_QUESTION_ANSWERED",
+  "schema": "reverse-physics-ghost-model-obstruction-rocq-v1",
+  "source_manifest": {
+    "rocq/CoprimeHierarchyChargeBound.v": "1b1da981e5fdb4dac4d83a067be2ee1f8aed32c8a14410ad3aa695facd73e076",
+    "rocq/CoprimeHierarchyOrderLaw.v": "03ab08fe2da19d045bc65237e77d7144dd28993880068589305d31b62825e78f",
+    "rocq/GhostModelObstruction.v": "c2c360bb4c207796a0260675cccc63d1f213a3db7d5aad6ed81fd13246cc86b4"
+  },
+  "the_separation": {
+    "mathematics": "the obstruction \u2014 a statement about a critical degree p+q and a coprimality condition, identical in both models",
+    "physics": "the boundedness \u2014 a consequence of the free Hamiltonian being positive-definite, and absent as soon as it is not",
+    "why_it_matters": "conflating the two produced the original wrong gloss. The predecessor showed the obstruction does not destabilise; this shows the thing that bounds is not the obstruction either."
+  },
+  "theorems": [
+    {
+      "name": "ghost_resonant_iff_resonant_of_conj2",
+      "role": "THE MIRROR. Everything else follows by transporting the healthy model's classification across this bijection.",
+      "statement": "a monomial is resonant for h0 = p n1 - q n2 exactly when its a2 <-> a2b relabelling is resonant for h0 = p n1 + q n2"
+    },
+    {
+      "name": "conj2_kernel_is_pair_creation",
+      "role": "the single fact the successor question was built on, now proved rather than conjectured",
+      "statement": "the relabelling carries the conversion kernel a1^q a2b^p to pair creation a1^q a2^p"
+    },
+    {
+      "name": "kernel_is_not_ghost_resonant",
+      "role": "the channels genuinely differ; without this the two models would obstruct identically and the separation would be vacuous",
+      "statement": "the healthy model's obstructing monomial is NOT resonant in the ghost model"
+    },
+    {
+      "name": "ghost_resonant_at_critical_degree",
+      "role": "the classification transports with IDENTICAL hypotheses -- same positivity, same coprimality, same critical degree. Only the two named monomials change.",
+      "statement": "a nonnegative ghost-resonant monomial at total degree p+q is diagonal, pair creation, or pair annihilation"
+    },
+    {
+      "name": "obstruction_ratios_are_unchanged",
+      "role": "CORRECTS the successor question. The loci do not mirror -- they coincide, because the involution acts on monomials and not on (p, q).",
+      "statement": "the ghost and healthy critical sectors are in degree- and nonnegativity-preserving bijection at every (p, q)"
+    },
+    {
+      "name": "surviving_ghost_charge_is_indefinite",
+      "role": "WHERE THE MODELS PART. The only diagonal quadratic charge surviving in the ghost model is indefinite.",
+      "statement": "q*al + p*be = 0 with p, q > 0 forces al*be < 0 unless the charge is trivial"
+    },
+    {
+      "name": "healthy_charge_is_not_conserved_on_pair_creation",
+      "role": "the contrast made exact, and a non-vacuity check on the previous line",
+      "statement": "the positive charge (p, q) is NOT conserved on pair creation"
+    },
+    {
+      "name": "ghost_model_charge_does_not_bound_occupations",
+      "role": "an unbounded level set. Note the boundary: this PERMITS growth, it does not produce it.",
+      "statement": "for any bound B there is a physical state on the surviving charge's level set with n1 > B"
+    },
+    {
+      "name": "healthy_model_charge_does_bound_occupations",
+      "role": "restated in the ghost module so the dichotomy is readable in one place: same p, same q, same nonnegativity, only the sign of h0 differs",
+      "statement": "the same conservation law with the opposite sign bounds both occupations"
+    }
+  ],
+  "verification_commands": [
+    "cd rocq && ./run.sh   # RESULT: 28 green (0 red)",
+    "PYTHONPATH=. python3 -m reverse_physics.ghost_model_obstruction_rocq --check"
+  ]
+}

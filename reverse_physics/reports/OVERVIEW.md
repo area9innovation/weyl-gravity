@@ -737,9 +737,18 @@ The directions that would still yield something:
   to demonstrate the method.
 - **This stream's own `does_not_establish` lines.** §3.8 came from auditing an
   interpretation published here, and it was backwards. Every remaining
-  interpretation flagged as such is a candidate for the same treatment — and
-  `GHOST_MODEL_OBSTRUCTION`, redoing the deformation with a genuinely indefinite
-  `h0 = w1·n̂₁ − w2·n̂₂`, is the one that follows directly.
+  interpretation flagged as such is a candidate for the same treatment.
+  `GHOST_MODEL_OBSTRUCTION` was the one that followed directly, and it is now
+  **answered** ([report](ghost-model-obstruction.md)): the obstruction loci do not
+  mirror between the healthy and ghost models, they *coincide* — the relabelling
+  `a₂ ↔ a₂b` acts on monomials, not on `(p,q)` — so the coprime hierarchy
+  transports unchanged and it is the *channel* that mirrors. The only diagonal
+  quadratic charge surviving in the indefinite model is `p·n̂₁ − q·n̂₂`, which
+  bounds nothing. **The bound in §3.8 was carried by the definiteness of `h0`, not
+  by the obstruction** — so §3.8 showed the obstruction does not destabilise, and
+  its successor shows it is not what stabilises either. Both readings had given the
+  obstruction a stability role it never had, in opposite directions. That queue
+  keeps paying, and this is the second finding from it.
 - **Six derivatives in six dimensions.** The weight argument in §3.9 says the
   conformally invariant curvature degree is `k = D/2`, so odd dimensions have no
   such sector at all and `D = 6` selects the *cubic* one. Running the same exact

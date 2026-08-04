@@ -126,6 +126,12 @@
 #                                  witnesses with IDENTICAL certified inertia
 #                                  give opposite answers, so nothing weaker than
 #                                  explicit T_+ can settle it.
+#   GhostModelObstruction.v        the successor the audit declared: the same
+#                                  obstruction in a genuinely INDEFINITE model.
+#                                  The loci coincide, the channel mirrors, and the
+#                                  surviving charge goes from definite to
+#                                  indefinite -- so the bound was carried by the
+#                                  sign of h0, not by the obstruction.
 #   CoprimeHierarchyChargeBound.v  an AUDIT of the physics gloss on those two:
 #                                  J = p n1 + q n2 has the resonant sector as its
 #                                  exact commutant, so EVERY possible obstruction
@@ -148,7 +154,7 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
 
-MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount ReversePhysicsNoConformalCount ReversePhysicsRelationalCount ReversePhysicsExponentAdditivity CoprimeHierarchyOrderLaw CoprimeHierarchyKernelParity CoprimeHierarchyChargeBound WeylActionClassification WeylParityAndTopology WeylFieldEquations WeylGhostForced WeylGhostDipole WeylScatteringCFactorisation)
+MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount ReversePhysicsNoConformalCount ReversePhysicsRelationalCount ReversePhysicsExponentAdditivity CoprimeHierarchyOrderLaw CoprimeHierarchyKernelParity CoprimeHierarchyChargeBound GhostModelObstruction WeylActionClassification WeylParityAndTopology WeylFieldEquations WeylGhostForced WeylGhostDipole WeylScatteringCFactorisation)
 pass=0
 fail=0
 
@@ -629,8 +635,39 @@ Theorem bogus_no_witness_has_a_root : no_witness_factor 0 == 0.
 Proof. unfold no_witness_factor. ring. Qed.
 NEG
 
+# (ab) The conversion kernel must NOT be resonant in the ghost model.  If it were
+#      resonant in both, the two models would obstruct through the SAME channel and
+#      the whole separation of the obstruction from the bound would be vacuous.
+cat > _neg_ab.v <<'NEG'
+Require Import ZArith.
+Require Import CoprimeHierarchyOrderLaw.
+Require Import CoprimeHierarchyChargeBound.
+Require Import GhostModelObstruction.
+Open Scope Z_scope.
+(* FALSE on purpose: a1^q a2b^p is resonant for h0 = p n1 + q n2 and NOT for
+   h0 = p n1 - q n2.  The channel mirrors; that is the result. *)
+Theorem bogus_kernel_is_ghost_resonant :
+  forall p q, ghost_resonant p q (kernel p q).
+Proof. intros p q. apply pair_creation_is_ghost_resonant. Qed.
+NEG
+
+# (ac) The charge surviving in the ghost model must NOT be able to be definite.
+#      If a positive charge survived there, it would bound the occupations exactly
+#      as in the healthy model and the SIGN of h0 would be doing no work -- which
+#      is the entire content of this module.
+cat > _neg_ac.v <<'NEG'
+Require Import ZArith.
+Require Import GhostModelObstruction.
+Open Scope Z_scope.
+(* FALSE on purpose: q*al + p*be = 0 with p, q > 0 and al > 0 forces be < 0. *)
+Theorem bogus_ghost_charge_can_be_definite :
+  forall al be p q,
+    0 < p -> 0 < q -> q * al + p * be = 0 -> 0 < al -> 0 < be.
+Proof. intros al be p q Hp Hq H Hal. nia. Qed.
+NEG
+
 neg_ok=0
-for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _neg_k _neg_l _neg_m _neg_n _neg_o _neg_p _neg_q _neg_r _neg_s _neg_t _neg_u _neg_v _neg_w _neg_x _neg_y _neg_z _neg_aa; do
+for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _neg_k _neg_l _neg_m _neg_n _neg_o _neg_p _neg_q _neg_r _neg_s _neg_t _neg_u _neg_v _neg_w _neg_x _neg_y _neg_z _neg_aa _neg_ab _neg_ac; do
   if coqc "$n.v" >/tmp/rp_neg.log 2>&1; then
     echo "  $n: FALSE claim was ACCEPTED — REJECT"; neg_ok=1
   else
@@ -640,6 +677,8 @@ done
 if [ "$neg_ok" -eq 0 ]; then pass=$((pass+1)); else fail=$((fail+1)); fi
 rm -f _neg_[a-z].v _neg_[a-z].vo _neg_[a-z].vok _neg_[a-z].vos _neg_[a-z].glob ._neg_[a-z].aux
 rm -f _neg_aa.v _neg_aa.vo _neg_aa.vok _neg_aa.vos _neg_aa.glob ._neg_aa.aux
+rm -f _neg_ab.v _neg_ab.vo _neg_ab.vok _neg_ab.vos _neg_ab.glob ._neg_ab.aux
+rm -f _neg_ac.v _neg_ac.vo _neg_ac.vok _neg_ac.vos _neg_ac.glob ._neg_ac.aux
 
 echo
 if [ "$fail" -eq 0 ]; then
