@@ -74,6 +74,12 @@ SCHEMA_NAME = "reverse-physics-weyl-geometry-discharge-v1"
 PINNED = {
     "curvature_engine": ROOT / "black_hole_programme/weyl_geometry.py",
     "weyl_action_witnesses": ROOT / "rocq/WeylActionClassification.v",
+    # The VARIATIONAL link itself is not re-derived here.  It is checked elsewhere
+    # in this repository on the Nariai product family, and cited rather than
+    # repeated -- see `variational_link_is_imported` below.
+    "nariai_action_derived_bach": ROOT / (
+        "d_quotient_classical/reports/nariai-action-derived-bach-endpoint.md"
+    ),
 }
 
 T, R_, TH, PH, MM = sp.symbols("t r theta phi M", positive=True)
@@ -196,6 +202,58 @@ def check_g2_g3_conformal(name, coords, g, sigma, sigma_name):
     }
 
 
+def check_field_equations():
+    """The FIELD-EQUATION layer, which the ledger records as never computed.
+
+    It is computed -- `weyl_geometry.py` has had a Bach tensor all along.  What can
+    be checked pointwise, and is:
+
+      N1   nabla^a B_ab = 0.  This IS the Noether/diff content: the metric
+           variation of a local diff-invariant action is divergence-free.  Stated
+           in the ledger as an imported fact; here it is computed for the actual
+           tensor.
+      -    g^ab B_ab = 0, the trace-free property that makes the field equations
+           conformally invariant, and B_ab[e^{2s}g] = e^{-2s} B_ab, which is that
+           invariance directly.
+      -    B_ab = 0 on an Einstein metric.  Not decoration: it is why Schwarzschild
+           solves Weyl gravity at all, which the entire black-hole programme rests
+           on, and it is checked here rather than assumed.
+      -    B_ab != 0 on a non-Einstein metric, so none of the above is vacuous.
+    """
+    f = 1 - 2 * MM / R_
+    sph = R_**2 * sp.sin(TH) ** 2
+    coords = [T, R_, TH, PH]
+    einstein = sp.diag(-f, 1 / f, R_**2, sph)
+    generic = sp.diag(-(1 + MM * R_**2), 1 / f, R_**2, sph)
+
+    Ge = Geometry(coords, einstein)
+    Be = Ge.bach()
+    einstein_flat = all(sp.simplify(Be[a, b]) == 0 for a in range(4) for b in range(4))
+
+    G = Geometry(coords, generic)
+    B = G.bach()
+    ginv = generic.inv()
+    nonzero = any(sp.simplify(B[a, b]) != 0 for a in range(4) for b in range(4))
+    trace = sp.simplify(sum(ginv[a, b] * B[a, b] for a in range(4) for b in range(4)))
+    symmetric = all(sp.simplify(B[a, b] - B[b, a]) == 0 for a in range(4) for b in range(4))
+    div = [sp.simplify(sum(ginv[a, e] * G.covd2(B, e, a, b)
+                           for a in range(4) for e in range(4) if ginv[a, e] != 0))
+           for b in range(4)]
+    sigma = R_**2 / 8
+    Bt = Geometry(coords, sp.exp(2 * sigma) * generic).bach()
+    weight = all(sp.simplify(Bt[a, b] - sp.exp(-2 * sigma) * B[a, b]) == 0
+                 for a in range(4) for b in range(4))
+
+    return {
+        "N1_bach_is_divergence_free": all(d == 0 for d in div),
+        "bach_is_trace_free": trace == 0,
+        "bach_is_symmetric": symmetric,
+        "bach_has_conformal_weight_minus_two": weight,
+        "bach_vanishes_on_an_einstein_metric": einstein_flat,
+        "bach_is_nonzero_on_a_non_einstein_metric": nonzero,
+    }
+
+
 def check_g5_witness_is_a_real_choice():
     """Schwarzschild is Ricci-flat, so R = 0 and box R = 0: it does NOT witness G5.
 
@@ -228,8 +286,10 @@ def build() -> dict:
     g23 = [check_g2_g3_conformal(base[0], base[1], base[2], s, nm)
            for (nm, s) in [("r^2/8", R_**2 / 8), ("log(r)/3", sp.log(R_) / 3)]]
     control = check_g5_witness_is_a_real_choice()
+    fe = check_field_equations()
 
     checks = {
+        **fe,
         "G5_R_matches_named_value": g5["R_matches_the_named_value_4_over_3tsq"],
         "G5_box_R_nonzero": g5["box_R_is_nonzero"],
         "G5_witness_is_a_real_choice": (control["R_is_identically_zero"]
@@ -270,6 +330,7 @@ def build() -> dict:
             "theorem for all metrics. A discharge, not a proof."
         ),
         "discharged": {
+            "N1": "the Noether/diff fact, computed as nabla^a B_ab = 0 for the actual Bach tensor rather than imported",
             "G5": "the non-degeneracy witness, previously NAMED and not formalised — the report's own sharpest self-identified attack",
             "G1": "C^2 = Riem^2 - 2Ric^2 + R^2/3, the coordinate vectors of the classification",
             "G2": "the conformal law for R, which makes the R^2 component carry the anomaly",
@@ -280,7 +341,28 @@ def build() -> dict:
             "G6": "the parity-odd quadratic invariants are spanned by P; P = C.Cdual in D = 4 — the engine has no dual yet",
             "G7": "int sqrt(-g) P is topological — global, as G4",
             "G8": "W±^2 = (C^2 ± P)/2 — follows from G6 once the dual exists",
-            "N1_N2_N3": "the Noether facts — these need the metric VARIATION of the action, not curvature at a point",
+            "N2_N3": "the remaining Noether facts. N2 (the trace of the variation is a nonzero multiple of the anomaly) is a quantum statement; N3 (a topological term has vanishing variation) needs the variation of E4, not curvature at a point",
+        },
+        "variational_link_is_imported": {
+            "identity": "delta int sqrt(-g) C^2 = 4 int sqrt(-g) B_mn delta g^mn",
+            "status": "NOT re-derived here — cited",
+            "where_it_is_checked_in_this_repository": (
+                "d_quotient_classical/reports/nariai-action-derived-bach-endpoint.md: an "
+                "independent product-family calculation for g(x,y) = x g_dS2 + y g_S2 gives "
+                "the standard variation diag(2/3, -2/3, 2/3, 2/3) along d_x - d_y, and the "
+                "normal-frame operator reproduces its action-normalized value exactly, with "
+                "B_action = -2 B_standard"
+            ),
+            "also": (
+                "black_hole_programme/bh1b_dynamical.py records the Lee-Wald form "
+                "delta(sqrt(-g) alpha C^2) = div(sqrt(-g) theta) exactly on shell; "
+                "symbolic/verify_conformal_dynamical_topological.py states the same "
+                "variation as a DECLARED field-theory identity and does not re-derive it"
+            ),
+            "what_is_computed_here_instead": (
+                "the consequences of that link that are visible pointwise -- N1, "
+                "trace-freeness, conformal weight, and Einstein => Bach-flat"
+            ),
         },
         "checks": checks,
         "status": "PASS" if all(checks.values()) else "FAIL",
@@ -288,6 +370,7 @@ def build() -> dict:
         "G1_detail": g1,
         "G2_G3_detail": g23,
         "G5_negative_control_detail": control,
+        "field_equation_detail": fe,
         "does_not_establish": [
             "any of these identities FOR ALL METRICS — they are verified at three static metrics and one FRW metric",
             "the R^2 or Ric^2 coefficients of G1 from a Ricci-flat metric alone: both terms VANISH there, so Schwarzschild cannot discriminate them and the certificate records which metric sees which term",

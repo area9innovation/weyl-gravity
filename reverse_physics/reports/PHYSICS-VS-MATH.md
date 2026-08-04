@@ -286,11 +286,21 @@ Honest limits, because a separation ledger that claims to be clean is not one.
   pointwise, `G6`/`G8` need a dual, and `N1`–`N3` need the metric *variation*.
   Note what the discharge is: exact verification **at specific metrics**, stronger
   than an import and weaker than a theorem for all metrics.
-- **The Bach tensor is never computed.** "Same field equations" is *defined* as
-  "differ by a topological term". That is `RP-TOPO-INERT`, not a variational
-  calculation. §3.2b classifies the *space* of field equations and proves the two
-  vocabularies agree; naming the generator is done in prose, on the strength of
-  Noether.
+- **The Bach tensor is never computed *by this stream*.** "Same field equations" is
+  *defined* as "differ by a topological term". That is `RP-TOPO-INERT`, not a
+  variational calculation. §3.2b classifies the *space* of field equations and
+  proves the two vocabularies agree; naming the generator was done in prose, on
+  the strength of Noether.
+  **Corrected** ([report](weyl-geometry-discharge.md)): the repository has computed
+  it all along — `black_hole_programme/weyl_geometry.py` carries an exact Bach
+  tensor. Wiring the ledger to it discharges `N1` directly (`∇^a B_ab = 0`, the
+  Noether/diff content, computed rather than imported) along with trace-freeness,
+  conformal weight `−2`, and `B_ab = 0` on an Einstein metric — the last being why
+  Schwarzschild solves Weyl gravity at all. The **variational link itself**,
+  `δ∫√−g C² = 4∫√−g B_mn δg^mn`, is still not re-derived here; it is checked
+  elsewhere in this repository on the Nariai product family
+  (`d_quotient_classical/reports/nariai-action-derived-bach-endpoint.md`) and is
+  cited rather than repeated.
 - **No reversal over a weakenable base.** Reverse mathematics compares against a
   base theory one can weaken. Every equivalence here is over a *declared
   carrier*. This is the stream's oldest open problem and it is not closed.

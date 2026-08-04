@@ -1,6 +1,6 @@
 # Four imported facts, discharged — and the search that should have come first
 
-**Certificate** `REVERSE_PHYSICS_WEYL_GEOMETRY_DISCHARGE_V1` — 15 exact checks
+**Certificate** `REVERSE_PHYSICS_WEYL_GEOMETRY_DISCHARGE_V1` — 21 exact checks
 **Engine** `black_hole_programme/weyl_geometry.py`, pinned by hash
 **Verifier** `PYTHONPATH=. python3 -m reverse_physics.weyl_geometry_discharge --check`
 
@@ -68,6 +68,31 @@ The same point makes `G5`'s witness a real choice rather than a formality:
 Schwarzschild has `R ≡ 0`, hence `□R ≡ 0`, so **it cannot witness `G5`**. That is
 asserted as its own control.
 
+## The field-equation layer, which the ledger said was never computed
+
+It was — by the repository, not by this stream. Wiring to the same engine
+discharges:
+
+| check | why |
+|---|---|
+| `∇^a B_ab = 0` | **this is `N1`'s content** — the metric variation of a local diff-invariant action is divergence-free, computed for the actual tensor rather than imported |
+| `g^ab B_ab = 0` | trace-freeness, which is what makes the field equations conformally invariant |
+| `B_ab[e^{2σ}g] = e^{−2σ}B_ab` | that invariance, directly |
+| `B_ab = 0` on Schwarzschild | **why Schwarzschild solves Weyl gravity at all** — the fact the entire black-hole programme rests on, checked rather than assumed |
+| `B_ab ≠ 0` on a non-Einstein metric | so none of the above is vacuous |
+
+**The variational link itself is cited, not re-derived.**
+`δ∫√−g C² = 4∫√−g B_mn δg^mn` is checked elsewhere in this repository, on the
+Nariai product family `g(x,y) = x·g_{dS₂} + y·g_{S²}`, where the standard
+variation `diag(2/3, −2/3, 2/3, 2/3)` along `∂ₓ−∂_y` is reproduced exactly with
+`B_action = −2B_standard`. `bh1b_dynamical.py` records the Lee–Wald form
+`δ(√−g αC²) = div(√−g θ)` on shell. `verify_conformal_dynamical_topological.py`
+states the same variation as a **declared field-theory identity and does not
+re-derive it** — which is the honest status, now recorded in one place instead of
+three.
+
+What is computed here is everything about that link visible *pointwise*.
+
 ## What remains imported
 
 Honest, because the point of the middle column is that it is visible:
@@ -76,11 +101,10 @@ Honest, because the point of the middle column is that it is visible:
   pointwise curvature engine cannot reach them.
 - `G6`, `G8` — `P = C·C̃` spans the parity-odd invariants, and `W±² = (C² ± P)/2`.
   The engine has no dual yet; adding one makes both reachable.
-- `N1`–`N3` — the Noether facts. These need the **metric variation** of the
-  action, not curvature at a point. The engine computes the Bach tensor, so the
-  ingredient exists; connecting it to the variation is the next step and it is
-  the one that would turn the field-equation layer from a *definition* into a
-  calculation.
+- `N2`, `N3` — the remaining Noether facts. `N2` (the trace of the variation is a
+  nonzero multiple of the anomaly) is a quantum statement; `N3` (a topological term
+  has identically vanishing variation) needs the variation of `E₄`, not curvature at
+  a point. `N1` is discharged above.
 
 ## What this is, and is not
 
@@ -96,8 +120,8 @@ symmetries, which is a different and much larger build.
 
 ```bash
 PYTHONPATH=. python3 -m reverse_physics.weyl_geometry_discharge --check
-# REVERSE_PHYSICS_WEYL_GEOMETRY_DISCHARGE_V1: PASS — 15 exact checks, engine pinned
+# REVERSE_PHYSICS_WEYL_GEOMETRY_DISCHARGE_V1: PASS — 21 exact checks, engine pinned
 ```
 
 Needs sympy; on this workstation that is the mise interpreter,
-`~/.local/share/mise/installs/python/3.12.13/bin/python3`. Runs in ~5 s.
+`~/.local/share/mise/installs/python/3.12.13/bin/python3`. Runs in ~13 s.

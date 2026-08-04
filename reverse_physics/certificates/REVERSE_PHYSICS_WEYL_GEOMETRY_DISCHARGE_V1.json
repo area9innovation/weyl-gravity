@@ -81,7 +81,13 @@
     "G3_wrong_weight_is_rejected": true,
     "G5_R_matches_named_value": true,
     "G5_box_R_nonzero": true,
-    "G5_witness_is_a_real_choice": true
+    "G5_witness_is_a_real_choice": true,
+    "N1_bach_is_divergence_free": true,
+    "bach_has_conformal_weight_minus_two": true,
+    "bach_is_nonzero_on_a_non_einstein_metric": true,
+    "bach_is_symmetric": true,
+    "bach_is_trace_free": true,
+    "bach_vanishes_on_an_einstein_metric": true
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC"
@@ -90,7 +96,8 @@
     "G1": "C^2 = Riem^2 - 2Ric^2 + R^2/3, the coordinate vectors of the classification",
     "G2": "the conformal law for R, which makes the R^2 component carry the anomaly",
     "G3": "the Weyl tensor's conformal weight, which the DERIVED derivative order k = D/2 rests on",
-    "G5": "the non-degeneracy witness, previously NAMED and not formalised \u2014 the report's own sharpest self-identified attack"
+    "G5": "the non-degeneracy witness, previously NAMED and not formalised \u2014 the report's own sharpest self-identified attack",
+    "N1": "the Noether/diff fact, computed as nabla^a B_ab = 0 for the actual Bach tensor rather than imported"
   },
   "does_not_establish": [
     "any of these identities FOR ALL METRICS \u2014 they are verified at three static metrics and one FRW metric",
@@ -99,6 +106,14 @@
     "that the curvature engine's BH-0 conventions are the right ones; they are pinned by hash and adopted, not re-derived",
     "anything about the quantum theory, the BV-BFV complex, or the residual classes"
   ],
+  "field_equation_detail": {
+    "N1_bach_is_divergence_free": true,
+    "bach_has_conformal_weight_minus_two": true,
+    "bach_is_nonzero_on_a_non_einstein_metric": true,
+    "bach_is_symmetric": true,
+    "bach_is_trace_free": true,
+    "bach_vanishes_on_an_einstein_metric": true
+  },
   "lifecycle_ladder": "reverse-physics-v0",
   "record_kind": "DISCHARGE \u2014 moves four facts from the GEOMETRY column (imported, unverified) toward the MATHEMATICS column, by computing them in this repository's own exact curvature engine",
   "result_id": "REVERSE_PHYSICS_WEYL_GEOMETRY_DISCHARGE_V1",
@@ -106,6 +121,7 @@
   "schema": "reverse-physics-weyl-geometry-discharge-v1",
   "source_manifest": {
     "black_hole_programme/weyl_geometry.py": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "d_quotient_classical/reports/nariai-action-derived-bach-endpoint.md": "340fa306461b46e4385db00f823a5e4f087d26712eefe6e1ec323f8ba0ae07ec",
     "rocq/WeylActionClassification.v": "9815c14aabe2b785500c10565f18b31a2328b692c31b6010060ba97f136ca7a5"
   },
   "status": "PASS",
@@ -114,7 +130,14 @@
     "G6": "the parity-odd quadratic invariants are spanned by P; P = C.Cdual in D = 4 \u2014 the engine has no dual yet",
     "G7": "int sqrt(-g) P is topological \u2014 global, as G4",
     "G8": "W\u00b1^2 = (C^2 \u00b1 P)/2 \u2014 follows from G6 once the dual exists",
-    "N1_N2_N3": "the Noether facts \u2014 these need the metric VARIATION of the action, not curvature at a point"
+    "N2_N3": "the remaining Noether facts. N2 (the trace of the variation is a nonzero multiple of the anomaly) is a quantum statement; N3 (a topological term has vanishing variation) needs the variation of E4, not curvature at a point"
+  },
+  "variational_link_is_imported": {
+    "also": "black_hole_programme/bh1b_dynamical.py records the Lee-Wald form delta(sqrt(-g) alpha C^2) = div(sqrt(-g) theta) exactly on shell; symbolic/verify_conformal_dynamical_topological.py states the same variation as a DECLARED field-theory identity and does not re-derive it",
+    "identity": "delta int sqrt(-g) C^2 = 4 int sqrt(-g) B_mn delta g^mn",
+    "status": "NOT re-derived here \u2014 cited",
+    "what_is_computed_here_instead": "the consequences of that link that are visible pointwise -- N1, trace-freeness, conformal weight, and Einstein => Bach-flat",
+    "where_it_is_checked_in_this_repository": "d_quotient_classical/reports/nariai-action-derived-bach-endpoint.md: an independent product-family calculation for g(x,y) = x g_dS2 + y g_S2 gives the standard variation diag(2/3, -2/3, 2/3, 2/3) along d_x - d_y, and the normal-frame operator reproduces its action-normalized value exactly, with B_action = -2 B_standard"
   },
   "verification_commands": [
     "PYTHONPATH=. python3 -m reverse_physics.weyl_geometry_discharge --check"
