@@ -69,7 +69,17 @@
           diagonalisable pair -- which is worse than the generic case, not
           better.  (Riegert 1984; the 6 = 2 + 4 degree-of-freedom count.)  The
           theorems below cover the generic split; the degenerate case is its
-          limit and is asserted, not proved, to be no improvement.
+          limit.
+
+          UPDATE -- O3 IS NO LONGER A CITATION.  [WeylGhostDipole.v] proves it:
+          the commutant of a rank-two Jordan block is [a I + b N], the resulting
+          flux metric has determinant [- g^2 a^2], and it is therefore
+          indefinite when [a] is nonzero and degenerate when it is not -- never
+          positive.  The statement was not invented for that module: the
+          black-hole programme had already computed exactly this on the
+          Schwarzschild exterior in the odd-parity spin-two sector
+          ([phase4/axial_local_nonlocal_positivity_v1]).  See
+          [reverse_physics/reports/ghost-and-the-black-hole.md].
       O4  in two dimensions [sqrt(-g) R] is the Euler density, hence topological.
           This is what makes the single-pole case empty rather than interesting.
 

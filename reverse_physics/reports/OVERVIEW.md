@@ -13,7 +13,12 @@ own open conjecture for general relativity. The eighth is the discipline turned
 on this document: an interpretation published here in §3.7 was **retracted**,
 with proof, after an audit found it backwards.
 
-The tenth (§3.10) is the one a reviewer should read first. §3.9 did reverse
+The eleventh (§3.11) is the one a reviewer should read first — it is where the
+reverse-physics line and the black-hole programme turn out to have proved the
+same thing from opposite ends, and where the apparent contradiction between "the
+ghost is forced" and "the scattering analysis works fine" is resolved.
+
+The tenth (§3.10) is what set it up. §3.9 did reverse
 physics on Weyl gravity itself and honestly reported that the physics content was
 textbook — the value was the ledger. §3.10 is what the ledger then pointed at,
 and it *is* about the subject: **the uniqueness theorem and the ghost theorem are
@@ -436,6 +441,57 @@ answer is not checking the object.
 
 [Full report](weyl-ghost-forced.md).
 
+### 3.11 …and the black-hole programme had already found the same thing
+
+§3.10 ended on an honest gap: its theorems cover two *distinct* poles, while Weyl
+gravity's operator is `□²` — a **double** pole — and that the degenerate case is
+no better was a citation. The declared successor gate was to prove that the
+2×2 Jordan block admits no positive-definite inner product.
+
+**That computation was already in this repository.**
+`black_hole_programme/phase4/axial_local_nonlocal_positivity_v1` had done it on
+the Schwarzschild exterior in the odd-parity spin-two sector: the dynamically
+compatible commutant is `η = a·I + b·N` with `N² = 0`, the flux metric is
+`[[0, ga],[ga, gb]]` with `det = −g²a²`, and its conclusion is *"no rational
+local dynamically compatible metric operator makes the spin-two form positive
+definite."*
+
+So the two lines converge, and that is the finding:
+
+| | reverse physics | black-hole programme |
+|---|---|---|
+| object | the space of actions | on-shell scattering data on Schwarzschild |
+| conclusion | ghost forced; **only `RP-LOCAL`/`RP-METRIC` can remove it** | **no *local* positive metric** — but a nonlocal `C` does exist |
+
+The assumption lattice named which of the five had to give *before* anyone looked
+at the scattering data. The scattering analysis found exactly that one giving.
+An assumption ledger is worth something only if its load-bearing verdicts survive
+contact with hard analysis; here one did. `rocq/WeylGhostDipole.v` now abstracts
+the black-hole computation into the chain, discharging the citation.
+
+**And this resolves the tension a reader would rightly raise.** The black-hole
+scattering analysis *works* — certified invertible connection matrices, a
+genuine pseudo-isometric scattering map, and **no zero-energy resonance for every
+`ℓ ≥ 2`**, proved exactly by hypergeometric reduction. How, in a theory with a
+certified ghost?
+
+Because an indefinite metric makes *norms* indefinite; it does not make the
+*dynamics* ill-posed. Invertibility, analyticity and transport do not care about
+the sign of a Gram form.
+
+> **The ghost is unavoidable and locally incurable, and it is not fatal to the
+> dynamics. What it costs is that positivity becomes nonlocal.**
+
+Which is precisely what the lattice says it should cost: the theory is fine
+except along `RP-LOCAL`, and `RP-LOCAL` is where the price is paid.
+
+The tags are **not** merged — the black-hole certificates carry `REDUCED-MODE`,
+and this is recorded as a convergence, not a promotion. And the black-hole side
+was **not re-run** here (its verifiers need `sympy`); it is imported by content
+hash, and the provenance record fails closed if any of those hashes drift.
+
+[Full report](ghost-and-the-black-hole.md).
+
 ---
 
 ## 4. The reversal
@@ -560,12 +616,14 @@ Stated plainly, because the certificates each carry their own version:
 | `..._EXPONENT_ADDITIVITY_ROCQ_V1` | products | and DOF-independence becomes additivity of that exponent |
 | `..._COPRIME_HIERARCHY_ROCQ_V1` | all coprime p:q | the programme's own conjecture: order law proved, even `p` unobstructed, four new instances |
 | `..._COPRIME_CHARGE_BOUND_ROCQ_V1` | all p,q > 0 | and the physics reading of it **retracted**: the obstruction conserves a positive charge, so it bounds rather than destabilises |
+| `..._WEYL_GHOST_DIPOLE_V1` | all rank-two Jordan blocks | **the degenerate case closed, and the cross-programme join**: the dipole admits no positive inner product — a computation the black-hole programme had already done on Schwarzschild, converging on `RP-LOCAL` from the opposite end |
 | `..._WEYL_GHOST_FORCED_V1` | all even dimensions | **the uniqueness theorem IS the ghost theorem**: one equation gives both, so the ghost cannot be tuned away — and dropping `RP-WEYL` or `RP-DIM4` provably does not help |
 | `..._WEYL_ACTION_V1` | all quadratic curvature actions, all dimensions | **the subject itself**: the Weyl action is *equivalent* to five assumptions on the action side and five on the field-equation side; the derivative order is derived, not assumed; parity is independent on actions and redundant on field equations; and odd dimensions admit no conformal curvature action at all |
 
-Twenty zero-axiom Rocq modules, `coqchk` axiom section `<none>`, twenty-five
+Twenty-one zero-axiom Rocq modules, `coqchk` axiom section `<none>`, twenty-six
 fail-closed negative controls, four Forge gates on both backends under ASan, two
-independent Python rails. `rocq/ReversePhysicsAOPBridge.v` additionally proves
+independent Python rails, and one cross-programme import gate that fails closed
+on drift in the black-hole certificates it reads. `rocq/ReversePhysicsAOPBridge.v` additionally proves
 that the ω used throughout **is** their `J ⊗ Iₙ`, so the engagement in §3.6 is
 bridged rather than asserted.
 
@@ -619,12 +677,13 @@ The directions that would still yield something:
   such sector at all and `D = 6` selects the *cubic* one. Running the same exact
   linear algebra there tests whether the method scales and whether the parity
   result has an analogue. Declared as `WEYL_ACTION_SIX_DERIVATIVE_D6`.
-- **The degenerate dipole.** §3.10's load-bearing citation is that `1/k⁴` — a
-  double pole, which is the case that actually occurs — is no better than two
-  distinct poles. Proving it is exact linear algebra on a 2×2 nilpotent block
-  over ℚ: show the Jordan block admits no positive-definite inner product. In
-  range, and it converts the weakest link in that argument into a theorem.
-  Declared as `WEYL_GHOST_DEGENERATE_LIMIT`.
+- **Does the nonlocal `C` factorise?** §3.11 leaves exactly one question. The
+  black-hole package constructs a compatible fundamental symmetry on the combined
+  future space but flags whether `C_out = C₊ ⊕ C_H` as a *separate* scattering
+  condition. The assumption lattice explains why that is now **the** question: a
+  `C` that factorises is a positivity statement one could plausibly call
+  physical; one that does not is a formal device. Everything else about the ghost
+  is settled. Declared as `C_FACTORISATION_OVER_THE_FUTURE_BOUNDARY`.
 - **Someone reading this and disagreeing.** Three of the five findings are
   negative claims about a live research programme. They should be argued with —
   [`AOP-CONNECTION.md`](AOP-CONNECTION.md) puts two of them in front of that

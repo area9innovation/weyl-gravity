@@ -2,7 +2,7 @@
 
 **Certificate** `REVERSE_PHYSICS_WEYL_GHOST_FORCED_V1`
 **Proof** `rocq/WeylGhostForced.v` — zero axioms, 14/14 closed
-**Gate** `rocq/run.sh` — `RESULT: 25 green (0 red)`, 25 fail-closed negative controls
+**Gate** `rocq/run.sh` — `RESULT: 26 green (0 red)`, 26 fail-closed negative controls
 **Second rail** tango `forge/examples/weyl_ghost_forced_gate.forge` — 26/26,
 `verify -full`: `c==native`, ASan-clean on both backends
 **Builds on** [`weyl-action-reverse-physics.md`](weyl-action-reverse-physics.md)
@@ -123,8 +123,9 @@ it is why the identity clause is in the gate at all.
   kinetic operator is `□²`: a **double** pole at `k² = 0`, not two distinct
   simple poles. That this is a dipole ghost and therefore no better is `O3`,
   cited to Riegert 1984 (and the `6 = 2 + 4` count), *not proved here*. The
-  theorems cover the generic split of which it is the limit. **This is the
-  load-bearing citation and the next gate targets it.**
+  theorems cover the generic split of which it is the limit. **This was the
+  load-bearing citation; it is now discharged by `rocq/WeylGhostDipole.v` — see
+  the note above.**
 - **That dropping `RP-LOCAL` or `RP-METRIC` actually works.** Citations, recorded
   as such.
 - **Novelty of the ingredients.** Ostrogradsky, Stelle, and the uniqueness
@@ -134,7 +135,15 @@ it is why the identity clause is in the gate at all.
   physical spectrum. This is the linearised classical propagator. The two scoped
   Lorentzian no-go theorems are neither used nor affected.
 
-## The next gate
+## The next gate — now CLOSED
+
+> **Closed by [`ghost-and-the-black-hole.md`](ghost-and-the-black-hole.md) and
+> `rocq/WeylGhostDipole.v`.** And the interesting part is where the statement
+> came from: the black-hole programme had already computed it, on Schwarzschild,
+> in the odd-parity spin-two sector. The commutant is `a·I + b·N` with `N²=0`,
+> the flux metric has `det = −g²a²`, and it is indefinite or degenerate — never
+> positive. The abstract lattice and the concrete scattering analysis had
+> converged on the same object without either knowing it.
 
 `WEYL_GHOST_DEGENERATE_LIMIT` — prove the dipole case instead of citing it. The
 object is `1/k⁴`, a double pole, and the statement is that the Jordan block
@@ -147,7 +156,7 @@ left in this line.
 ## Verification
 
 ```bash
-cd rocq && ./run.sh                                   # 25 green (0 red)
+cd rocq && ./run.sh                                   # 26 green (0 red)
 PYTHONPATH=. python3 -m reverse_physics.weyl_ghost_forced --check
 
 # upstream, in tango:
@@ -159,10 +168,10 @@ cd forge && FORGE_LIB=$PWD/lib forge verify -full \
 
 ## Tier receipt
 
-- **Tier 0/1** — twenty Rocq modules compile; gate 25 green / 0 red; `coqchk`
-  axiom section `<none>`; 187/187 `Print Assumptions` closed; twenty-five
-  fail-closed negative controls, two of them new; seventeen provenance records
-  hash-verified; 30-test Python suite green.
+- **Tier 0/1** — twenty-one Rocq modules compile; gate 26 green / 0 red; `coqchk`
+  axiom section `<none>`; 198/198 `Print Assumptions` closed; twenty-six
+  fail-closed negative controls; eighteen provenance records hash-verified;
+  30-test Python suite green.
 - **Upstream** — `weyl_ghost_forced_gate.forge` 26/26, `verify -full`
   `c==native`, ASan-clean on both backends.
 - **Tier 2/3 — not run, and not required.** This adds one module, one gate and

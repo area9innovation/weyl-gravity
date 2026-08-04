@@ -1,0 +1,128 @@
+{
+  "attribution": "THE MATHEMATICS IS NOT NEW AND IS NOT THIS STREAM'S. The black-hole programme computed exactly this commutant, flux metric and determinant on the Schwarzschild exterior in the odd-parity spin-two sector, with the physics attached, at commit e72fd8b3. What this record adds is that the computation is now abstracted into the reverse-physics chain as a machine-checked zero-axiom theorem, and that its abstract form is visibly the object the assumption lattice had pointed at.",
+  "claim_boundary": "In a zero-axiom Rocq development over Q: the commutant of a rank-two Jordan block is a*I + b*N; the resulting flux metric has determinant -g^2 a^2 and a null first basis vector; it is therefore indefinite when a is nonzero -- with explicit rational witnesses of both signs -- and degenerate when a is zero, and never positive definite for any (a, b). Separately, and NOT as a theorem, this record documents that the black-hole programme reached the same conclusion independently on the Schwarzschild exterior, and that the two lines therefore agree on which assumption is load-bearing.",
+  "claim_flags": {
+    "BLACK_HOLE_CERTIFICATES_INDEPENDENTLY_VERIFIED": false,
+    "BLACK_HOLE_CERTIFICATES_REPRODUCED": true,
+    "CROSS_PROGRAMME_CONVERGENCE_RECORDED": true,
+    "DEGENERATE_CASE_PROVED": true,
+    "JORDAN_STRUCTURE_DERIVED_FROM_WEYL_GRAVITY": false,
+    "LORENTZIAN_CLAIM": false,
+    "MATHEMATICS_IS_NOVEL": false,
+    "NONLOCAL_C_SHOWN_PHYSICAL": false,
+    "O3_CITATION_DISCHARGED": true,
+    "QUANTUM_CLAIM": false
+  },
+  "closes": {
+    "declared_in": "REVERSE_PHYSICS_WEYL_GHOST_FORCED_V1",
+    "gate": "WEYL_GHOST_DEGENERATE_LIMIT",
+    "what_it_was": "O3, the load-bearing citation: that the DEGENERATE double pole 1/k^4 -- the case that actually occurs in Weyl gravity -- is no better than two distinct simple poles. It is now a theorem."
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "that a dipole ghost IS a rank-two Jordan block for Weyl gravity. That is the standing input; the black-hole package is where it was computed for a real background",
+    "independent verification of the black-hole certificates. Their verifiers were RE-RUN and pass, but re-running a producer is reproduction, not verification. The independent route is rocq/WeylGhostDipole.v reaching the same conclusion differently",
+    "novelty. The mathematics is the black-hole programme's, and the physical content is Ostrogradsky's. What is added is the abstraction into the chain and the recorded convergence",
+    "that the nonlocal C is physical. Its existence is an extension-by-direct-sum argument, and whether it factorises over null infinity and the horizon is an open scattering condition the black-hole package explicitly does not claim",
+    "any LORENTZIAN-CAUSAL statement. The black-hole certificates carry REDUCED-MODE and nothing is promoted. None of the five objects the quantum claim boundary lists as non-existent is asserted",
+    "anything about the BV-BFV complex, the residual classes, the physical spectrum, or the quantum theory. The two scoped Lorentzian no-go theorems are neither used nor affected"
+  ],
+  "exact_checks": {
+    "black_hole_side_rerun": true,
+    "indefiniteness_shown_by_explicit_witnesses": true,
+    "kernel_rechecked_by_coqchk": true,
+    "no_floating_point": true,
+    "zero_axiom_development": true
+  },
+  "gate_negative_controls": [
+    "twenty-five inherited from the earlier modules, all rejected",
+    "a FALSE claim that a dipole admits a positive-definite metric is REJECTED -- if it did, the case Weyl gravity actually has would be curable by redefining the norm and the whole line collapses"
+  ],
+  "gate_result": "RESULT: 26 green (0 red) -- GATE: PASS",
+  "generality_level": "G4_ALL_RANK_TWO_JORDAN_BLOCKS",
+  "imported_side": {
+    "consequence": "this record INHERITS whatever those certificates got wrong. If a hash no longer matches, the reading is stale -- --check fails closed on that.",
+    "content_hashes": {
+      "black_hole_programme/phase3/axial_global_finite_flux_channel_classification_v3/report.md": "cbe6aa1cf769e1db10e38b91506f4e37c369ee8f35e50b4b7456298fc4c707bf",
+      "black_hole_programme/phase4/axial_all_ell_threshold_structure_v1/certificate.json": "4c0ef500671231ddf8501d061921c3fc37f46c70d4d08bc2f5e80f915c560c4d",
+      "black_hole_programme/phase4/axial_local_nonlocal_positivity_v1/certificate.json": "29cd53300a892424ec5b901ba08c994efc7d66a27cea5447e8d8200fe67c9356",
+      "black_hole_programme/phase4/axial_qnm_conserved_source_overlap_v1/certificate.json": "914312759dfb77c59c188a4e2c1d7d75357993fc7f18e9d76d8afa8aeb3b99fc"
+    },
+    "interpreter_note": "the verifiers need sympy, which lives under the mise Python 3.12 toolchain and NOT under /usr/bin/python3 (3.14). The first attempt used the system interpreter and failed with ModuleNotFoundError -- recorded because that is exactly how a step quietly becomes 'not verified' in a report.",
+    "producing_commit": "e72fd8b3 (axial local/nonlocal positivity dichotomy)",
+    "rerun_is_not_verification": "re-running a producer is REPRODUCTION. It establishes that the package still computes what it computed, not that the computation is right. The independent check on this side is rocq/WeylGhostDipole.v, which reaches the same conclusion by a different route.",
+    "reruns": {
+      "axial_all_ell_threshold_structure_v1": "PASS: independent all-ell threshold verification",
+      "axial_local_nonlocal_positivity_v1": "EXACT_LOCAL_NONLOCAL_POSITIVITY_DICHOTOMY_VERIFIED",
+      "axial_qnm_conserved_source_overlap_v1": "AXIAL_QNM_CONSERVED_SOURCE_OVERLAP_VERIFIED"
+    }
+  },
+  "ledger": {
+    "coqchk_axiom_section": "<none>",
+    "declared_assumptions_in_source": "none -- no Axiom, Parameter, Hypothesis, Conjecture, Admitted or admit",
+    "print_assumptions_closed": "11/11 in WeylGhostDipole.v; 198/198 across the twenty-one modules the shared gate drives"
+  },
+  "lifecycle_ladder": "reverse-physics-v0",
+  "lifecycle_state": "NECESSITY_CERTIFIED",
+  "next_gate": "C_FACTORISATION_OVER_THE_FUTURE_BOUNDARY: whether the compatible fundamental symmetry on the combined future space factorises as C_out = C_+ direct-sum C_H. The black-hole package flags it as open; the assumption lattice explains why it is the decisive one. A C that factorises is a positivity statement one could call physical; one that does not is a formal device. Everything else about the ghost is settled.",
+  "provenance": {
+    "gate_script_not_pinned": "rocq/run.sh is harness, deliberately not hash-pinned",
+    "source_manifest": {
+      "rocq/WeylGhostDipole.v": "c931a4a77c4cc45bedb380c9ad4707d9d375f4ebb0e3b1cbb211f3d4c7f6548d",
+      "rocq/WeylGhostForced.v": "751be765a9d2456331bd3a1c02272452d163dbeae5bb39ba2746aefedc33d70f"
+    }
+  },
+  "record_kind": "PROVENANCE_IMPORT -- the mathematics is in rocq/WeylGhostDipole.v; the black-hole side is imported by content hash and NOT re-run; this file computes nothing",
+  "result_id": "REVERSE_PHYSICS_WEYL_GHOST_DIPOLE_V1",
+  "result_state": "DEGENERATE_GHOST_CASE_CLOSED_AND_CROSS_PROGRAMME_JOIN_RECORDED",
+  "schema": "reverse-physics-weyl-ghost-dipole-v1",
+  "the_join": {
+    "tags_are_not_merged": "The black-hole certificates carry REDUCED-MODE. Per this programme's claim boundary a REDUCED-MODE computation is never evidence for a LORENTZIAN-CAUSAL claim. What is recorded is a CONVERGENCE -- evidence about where to look, not a theorem about the Lorentzian theory. Neither result is promoted by the other.",
+    "the_question_this_leaves": "Whether the nonlocal C factorises over null infinity direct-sum the horizon. The black-hole package flags that as an open scattering condition; the assumption lattice explains why it is THE question -- a C that factorises is a positivity statement one could plausibly call physical, and one that does not is a formal device. Everything else about the ghost is settled.",
+    "the_resolution_of_the_apparent_tension": "An indefinite metric makes NORMS indefinite; it does not make the DYNAMICS ill-posed. The black-hole analysis is about invertibility, analyticity and transport, none of which care about the sign of a Gram form. Concretely: no zero-energy resonance for EVERY ell >= 2 and spins 1 and 2, proved exactly by hypergeometric reduction -- clean threshold behaviour in a theory with a certified ghost sector. The ghost is unavoidable and locally incurable, and it is not fatal to the dynamics. What it costs is that positivity becomes NONLOCAL.",
+    "what_converged": "REVERSE_PHYSICS_WEYL_GHOST_FORCED_V1 argues at the level of ACTIONS, kinematically, in every even dimension, and concludes that the ghost is forced and that only RP-LOCAL and RP-METRIC can remove it. The black-hole package argues at the level of on-shell SCATTERING DATA on Schwarzschild and concludes that no LOCAL positive metric exists while a compatible fundamental symmetry DOES exist on the combined future space -- a nonlocal one. Different objects, different methods, different tags, same verdict: LOCALITY is the load-bearing assumption.",
+    "why_it_matters": "An assumption ledger is worth something only if its 'load-bearing' verdicts survive contact with hard analysis. The lattice named which of the five assumptions had to give BEFORE looking at the scattering data, and the scattering analysis found exactly that one giving."
+  },
+  "theorems": [
+    {
+      "name": "commutant_of_the_jordan_block",
+      "role": "WHY THE OBSTRUCTION CANNOT BE EVADED. A redefinition of the inner product must commute with the dynamics, so this exhausts the available freedom.",
+      "statement": "the commutant of a rank-two nilpotent is a*I + b*N -- TWO parameters, not four"
+    },
+    {
+      "name": "flux_determinant / flux_determinant_is_never_positive",
+      "role": "THE OBSTRUCTION. A 2x2 symmetric form with nonpositive determinant is never positive definite, for ANY (a, b).",
+      "statement": "det(G*eta) = -g^2 a^2, which is never positive"
+    },
+    {
+      "name": "first_basis_vector_is_null / never_definite",
+      "role": "kills definiteness of EITHER sign before any case analysis, without needing the determinant at all",
+      "statement": "the first basis vector is null for every admissible eta"
+    },
+    {
+      "name": "indefinite_when_a_is_nonzero",
+      "role": "INDEFINITENESS WITH WITNESSES, not merely a determinant sign. x = (1 - g b)/(2 g a) and x = (-1 - g b)/(2 g a) at y = 1.",
+      "statement": "explicit rational vectors giving the values +1 and -1"
+    },
+    {
+      "name": "degenerate_when_a_is_zero / the_bilinear_form_is_not_trivial",
+      "role": "the other half of the dichotomy, with its own non-vacuity control so 'degenerate' is a statement about a direction and not about a form that vanishes anyway",
+      "statement": "at a = 0 the first basis vector lies in the radical, and the form is not identically zero"
+    },
+    {
+      "name": "a_dipole_admits_no_positive_inner_product / indefinite_or_degenerate",
+      "role": "THE DIPOLE GHOST THEOREM -- the statement WeylGhostForced.v had to cite as O3.",
+      "statement": "indefinite when a != 0, degenerate when a = 0; never positive"
+    }
+  ],
+  "verification_commands": [
+    "cd rocq && ./run.sh",
+    "PYTHONPATH=. python3 -m reverse_physics.weyl_ghost_dipole --check",
+    "sha256sum black_hole_programme/phase4/axial_local_nonlocal_positivity_v1/certificate.json",
+    "# NOTE the interpreter: sympy is under the mise toolchain, not /usr/bin/python3",
+    "P=~/.local/share/mise/installs/python/3.12.13/bin/python3",
+    "PYTHONPATH=. $P -m black_hole_programme.phase4.axial_local_nonlocal_positivity_v1.verify"
+  ]
+}

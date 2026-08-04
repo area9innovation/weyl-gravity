@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # run.sh — the reverse-physics torus GATE.
 #
-# Twenty developments, all zero-axiom, in dependency order.  The first four are the
+# Twenty-one developments, all zero-axiom, in dependency order.  The first four are the
 # torus chain, the next four an INDEPENDENT stochastic carrier, and the last two
 # engage Carcassi-Aidala directly: a BRIDGE restating the torus results in their
 # notation, and a PARITY OBSTRUCTION on their degree-of-freedom counting.
@@ -109,6 +109,16 @@
 #                                  cannot be tuned away -- and dropping RP-WEYL
 #                                  or RP-DIM4 provably does not help, which
 #                                  leaves RP-LOCAL and RP-METRIC.
+#   WeylGhostDipole.v              CLOSES the one citation the previous module
+#                                  leaned on -- the DEGENERATE case, which is the
+#                                  one that actually occurs.  A dipole is a
+#                                  rank-two Jordan block; its commutant is only
+#                                  two-parameter; the resulting flux metric has
+#                                  determinant -g^2 a^2 and is therefore
+#                                  indefinite or degenerate, never positive.  The
+#                                  black-hole programme had already computed this
+#                                  on Schwarzschild in the spin-two sector; this
+#                                  module abstracts it into the chain.
 #   CoprimeHierarchyChargeBound.v  an AUDIT of the physics gloss on those two:
 #                                  J = p n1 + q n2 has the resonant sector as its
 #                                  exact commutant, so EVERY possible obstruction
@@ -131,7 +141,7 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
 
-MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount ReversePhysicsNoConformalCount ReversePhysicsRelationalCount ReversePhysicsExponentAdditivity CoprimeHierarchyOrderLaw CoprimeHierarchyKernelParity CoprimeHierarchyChargeBound WeylActionClassification WeylParityAndTopology WeylFieldEquations WeylGhostForced)
+MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount ReversePhysicsNoConformalCount ReversePhysicsRelationalCount ReversePhysicsExponentAdditivity CoprimeHierarchyOrderLaw CoprimeHierarchyKernelParity CoprimeHierarchyChargeBound WeylActionClassification WeylParityAndTopology WeylFieldEquations WeylGhostForced WeylGhostDipole)
 pass=0
 fail=0
 
@@ -585,8 +595,22 @@ Theorem bogus_single_pole_is_a_ghost :
 Proof. intros d A Hd HA. apply (negative_residue d); lra. Qed.
 NEG
 
+# (z) A dipole must NOT admit a positive-definite metric.  If it did, the
+#     degenerate case -- the one Weyl gravity actually has -- would be curable
+#     by redefining the norm, and the whole line collapses.
+cat > _neg_z.v <<'NEG'
+Require Import QArith.
+Require Import WeylGhostDipole.
+Open Scope Q_scope.
+(* FALSE on purpose: the determinant is -g^2, never positive.  a and b EXHAUST
+   the commutant, so this is not "no choice we found" but "no choice exists". *)
+Theorem bogus_dipole_admits_a_positive_metric :
+  forall g : Q, 0 < flux_det g 1 1.
+Proof. intros g. rewrite (flux_determinant g 1 1). nra. Qed.
+NEG
+
 neg_ok=0
-for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _neg_k _neg_l _neg_m _neg_n _neg_o _neg_p _neg_q _neg_r _neg_s _neg_t _neg_u _neg_v _neg_w _neg_x _neg_y; do
+for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _neg_k _neg_l _neg_m _neg_n _neg_o _neg_p _neg_q _neg_r _neg_s _neg_t _neg_u _neg_v _neg_w _neg_x _neg_y _neg_z; do
   if coqc "$n.v" >/tmp/rp_neg.log 2>&1; then
     echo "  $n: FALSE claim was ACCEPTED — REJECT"; neg_ok=1
   else
@@ -594,7 +618,7 @@ for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _
   fi
 done
 if [ "$neg_ok" -eq 0 ]; then pass=$((pass+1)); else fail=$((fail+1)); fi
-rm -f _neg_[a-y].v _neg_[a-y].vo _neg_[a-y].vok _neg_[a-y].vos _neg_[a-y].glob ._neg_[a-y].aux
+rm -f _neg_[a-z].v _neg_[a-z].vo _neg_[a-z].vok _neg_[a-z].vos _neg_[a-z].glob ._neg_[a-z].aux
 
 echo
 if [ "$fail" -eq 0 ]; then
