@@ -708,6 +708,31 @@ The question that opened the probe is answered: the substrate carries reverse
 physics, and the discipline is what makes it worth doing rather than an
 elaborate way to restate known geometry.
 
+**The Weyl-gravity ledger itself has since been closed out**, and it is now the
+stream's centre of gravity rather than one result among many:
+
+- **The GEOMETRY column is discharged or cited throughout.** `G1`, `G2`, `G3`,
+  `G5`, `N1` computed against this repository's own curvature engine
+  ([report](weyl-geometry-discharge.md)); `G6`'s computable clause and `G8` in
+  **both signatures** ([report](weyl-dual-discharge.md)); `N2` as a trace law
+  ([report](weyl-trace-law.md)); `G4`, `G7`, `N3` cited to existing certificates
+  with their own boundaries. The column was called *"the bulk of the
+  intellectual content"* and was entirely imported. It no longer is.
+- **`G8` turned out to be two statements.** `W±² = (C² ± P)/2` is *Euclidean*;
+  the Lorentzian form is `W±² = (C² ∓ iP)/2` with complex projectors, and the
+  textbook form is **checked false** there.
+- **`N2` is sharper than the ledger stated it**: `g^mn E_mn = 2(a + b + 3c)□R`,
+  where `a + b + 3c = 0` is exactly the classification's Weyl equation — so the
+  anomaly *factorises*, the kernel of the trace map is `span{C², E₄}`, and
+  `RP-WEYL ⟺ RP-TRACELESS` finally has its reverse direction. **`N2` and `G5`
+  need the same witness.**
+- **`RP-DIFF` has a witness** ([report](diff-independence.md)) — see below.
+- **A comparison ledger** ([report](OPENS-AND-CHALLENGES.md)) states what Weyl
+  gravity opens and challenges relative to Einstein gravity as **one forced
+  assumption swap**, with a level axis forced by this repository holding both
+  halves of a sentence that flips: Einstein containment is *true at `L2` and
+  false at `L3`*.
+
 The Hamiltonian-privilege line is well mined. The remaining declared gates —
 `SP4_ORBIT`, `STOCHASTIC_GENERAL_N`, `PARAMETERISED_BASE` — are refinements of
 things already known and would add certificates without adding findings.
@@ -729,6 +754,15 @@ The directions that would still yield something:
   carrier*. Reverse mathematics compares against a base one can weaken; this
   probe never built one, and `marginal_depends_on_the_dof_split` is the only
   result that gestures at it.
+  **This is now the stream's most promising open direction, not merely its
+  oldest.** Twice the move that resolved a stuck assumption was *enlarging the
+  carrier so the assumption could fail*: `RP-REVERSIBLE` in §3.4, and `RP-DIFF`
+  ([report](diff-independence.md)), where the enlargement was dropping the
+  requirement that indices contract into scalars. Two instances of the same move
+  working on assumptions that looked structurally untestable is evidence that
+  *carrier enlargement is the mechanism a weakenable base would systematise* —
+  and it turns "build a weakenable base" from an abstract wish into a question
+  with two worked examples to generalise from.
 - **The corpus's own `does_not_establish` lines.** That is where the seventh
   finding came from — `sf:program/conjecture/coprime-ratio-hierarchy` carried
   the line *"No ansatz proof exists"*, and it turned out to be a degree count
@@ -749,6 +783,19 @@ The directions that would still yield something:
   its successor shows it is not what stabilises either. Both readings had given the
   obstruction a stability role it never had, in opposite directions. That queue
   keeps paying, and this is the second finding from it.
+  **The third came from the same queue and is the sharpest.**
+  [`PHYSICS-VS-MATH.md`](PHYSICS-VS-MATH.md) §6 recorded `RP-DIFF` as having no
+  independence witness *at all* — the one assumption where the ledger's own test
+  `T4` could not be applied, "because it is what makes the space of curvature
+  scalars the right space at all". Enlarging the carrier to local metric
+  densities at derivative order zero, the lowest weight-zero degree is
+  55-dimensional and its diffeomorphism-invariant subspace is **exactly zero**,
+  so every element is a witness ([report](diff-independence.md)). And the
+  consequence lands on the stream's best result: the witness has **zero**
+  derivatives, while the derived order says `k = D/2 = 2` — a derivation that
+  runs through the conformal weight of the *Weyl tensor*, already diff-covariant.
+  **The derived derivative order requires `RP-DIFF`.** An assumption the ledger
+  had marked as carrying no weight was load-bearing for §3.9 all along.
 - **Six derivatives in six dimensions.** The weight argument in §3.9 says the
   conformally invariant curvature degree is `k = D/2`, so odd dimensions have no
   such sector at all and `D = 6` selects the *cubic* one. Running the same exact

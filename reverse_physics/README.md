@@ -117,6 +117,20 @@ verify_hamiltonian_privilege_linear_g0.py
 hamiltonian_privilege_general_n.py     general-n rail A: the structural derivation
 verify_hamiltonian_privilege_general_n.py
                                        general-n rail B: brute-force ranks, n = 1…6
+
+                                       — the Weyl-gravity ledger itself —
+weyl_geometry_discharge.py             G1, G2, G3, G5, N1 against the repository's
+                                       exact curvature engine
+weyl_dual_discharge.py                 G6 and G8, both signatures; the dual's index
+                                       placement, fixed by reproducing hodge.py's
+                                       star square
+weyl_trace_law.py                      N2 as a trace law, and E^(C²) = 4B computed
+                                       against the engine's own Bach tensor
+diff_independence.py                   RP-DIFF's independence witness, on a carrier
+                                       where the assumption can fail
+weyl_vs_einstein_ledger.py             the OPENS / CHALLENGES comparison ledger and
+                                       the rails that keep its citations honest
+
 schema/  certificates/  tests/  reports/
 
 ../rocq/ReversePhysicsTorus.v          the topological step, all modes
@@ -172,6 +186,14 @@ schema/  certificates/  tests/  reports/
 | `..._WEYL_GHOST_FORCED_V1` | `G4` (all even `D`) | **the uniqueness theorem *is* the ghost theorem**: `D − 2k = 0` gives both the unique action and a pole count of `D/2`, and two or more poles always include a negative residue. So the ghost cannot be tuned away — there is no other conformal action — and dropping `RP-WEYL` or `RP-DIM4` provably does not help, leaving locality and field content — [report](reports/weyl-ghost-forced.md) |
 | `..._WEYL_ACTION_V1` | `G4` (all quadratic curvature actions, all `D`) | **reverse physics on the subject itself**: the Weyl action is *equivalent* to `RP-LOCAL ∧ RP-METRIC ∧ RP-DIFF ∧ RP-WEYL ∧ RP-DIM4` modulo topological terms, each independent; the derivative order is **derived**, not assumed; and parity is independent on actions but **redundant** on field equations, with `[W₊²]`/`[W₋²]` as its eigenbasis — [report](reports/weyl-action-reverse-physics.md), [separation ledger](reports/PHYSICS-VS-MATH.md) |
 
+| `..._GHOST_MODEL_OBSTRUCTION_ROCQ_V1` | `G4` (all coprime `p,q`) | the successor to the retraction: the coprime obstruction decides the ghost's dynamical fate in **neither** direction — [report](reports/ghost-model-obstruction.md) |
+| `..._LH_ASSEMBLY_V1` | `G4` (Krein pencils) | the `L_H` assembly, with `det`-ratio-of-Grams and the `L_x` factorisation after `LRW` — [report](reports/lh-assembly.md) |
+| `..._WEYL_GEOMETRY_DISCHARGE_V1` | metrics, exact | **the middle column stops being a promise**: `G1`, `G2`, `G3`, `G5`, `N1` computed against this repository's own curvature engine rather than imported. `G5`'s witness — matter-dominated FRW, `□R = −8/(3t⁴)` — was *named* and is now *computed*, and Schwarzschild is shown unable to witness it — [report](reports/weyl-geometry-discharge.md) |
+| `..._WEYL_DUAL_DISCHARGE_V1` | metrics, both signatures | **`G8` is two statements, not one**: Euclidean `W±² = (C² ± P)/2` with real projectors, Lorentzian `W±² = (C² ∓ iP)/2` with complex ones — and the textbook form is *checked false* in Lorentzian signature. `G6`'s computable clause discharged; the check is **vacuous on Ricci-flat metrics**, so every row reports whether it can see anything — [report](reports/weyl-dual-discharge.md) |
+| `..._WEYL_TRACE_LAW_V1` | metrics, exact | **N2, and the bridge between the two ledgers**: `g^mn E_mn = 2(a + b + 3c)□R`, where `a + b + 3c = 0` is exactly the classification's Weyl equation — so the kernel of the trace map is `span{C², E₄}` and `RP-WEYL ⟺ RP-TRACELESS` gets its reverse direction. `N2` and `G5` need the **same witness**. The variational link `E^(C²) = 4B` is now *computed*, not cited — [report](reports/weyl-trace-law.md) |
+| `..._DIFF_INDEPENDENCE_V1` | `D = 4`, order 0 | **an assumption believed untestable in principle, witnessed**: on a carrier where `RP-DIFF` *can* fail, the lowest weight-zero degree is 55-dimensional and its diff-invariant subspace is exactly **0**. Consequence: the **derived derivative order requires `RP-DIFF`** — §4.3 was silently using it. Independence is *given* `RP-METRIC` — [report](reports/diff-independence.md) |
+| `..._WEYL_VS_EINSTEIN_LEDGER_V1` | comparison | **what Weyl gravity opens and challenges**: one *forced* assumption swap over a shared base, so OPENS and CHALLENGES are two halves of one trade. Adds a **direction** and a **level** axis, the latter forced because "Einstein gravity is contained in Weyl gravity" is *true at `L2` and false at `L3`* — both established here — [report](reports/OPENS-AND-CHALLENGES.md) |
+
 There is one further Forge-only result with **no certificate**, deliberately:
 [`c-factorisation-not-determined.md`](reports/c-factorisation-not-determined.md)
 runs the factorisation criterion against the actual physical Grams and shows both
@@ -207,7 +229,33 @@ PYTHONPATH=. python3 -m unittest reverse_physics.tests.test_hamiltonian_privileg
 
 ## Independence from the Weyl programme
 
-This directory imports nothing from the classical BV–BFV complex or from
-`quantum-weyl/`, and nothing here may be cited inside those chains or vice
-versa. The work item's `forbid` clause states this; there is no shared input to
-go stale.
+~~This directory imports nothing from the classical BV–BFV complex or from
+`quantum-weyl/`.~~ **That is no longer accurate, and the exact position is:**
+
+**What is imported, and why.** Discharging the GEOMETRY column meant computing
+against something. Three modules import
+`black_hole_programme/weyl_geometry.py` — the exact Christoffel / Riemann /
+Ricci / Weyl / Bach engine — **as a computational tool, pinned by SHA-256**, and
+fail closed on drift. `weyl_dual_discharge.py` additionally reproduces
+`quantum-weyl/local_bv/hodge.py`'s `star_square_sign` as a *checked row*, and
+**cites** `EULER_TRANSGRESSION_CERTIFICATE` and
+`symbolic/verify_conformal_dynamical_topological.py` for `G4`, `G7` and `N3`,
+each carrying its source's own declared boundary.
+
+**Why that is the middle column working, not a leak.** `G1`–`G8` and `N1`–`N3`
+are *by construction* imported results — that is what the GEOMETRY column is
+for. Citing an in-repository certificate with a machine-readable boundary is
+strictly more auditable than citing a textbook, which is what the alternative
+was. Nothing imported is used to establish a PHYSICS-column claim.
+
+**What the `forbid` still buys, in the direction that matters.** No certificate
+in this stream is cited as evidence inside the classical or quantum Weyl chains.
+That is the load-bearing half: the chains do not lean on this stream, so nothing
+here can prop up a result over there. `diff_independence.py` and
+`weyl_vs_einstein_ledger.py` import nothing outside `reverse_physics/` at all.
+
+**The tension is real and is recorded rather than resolved.** The work item's
+`forbid` says "or vice versa", and the `G4`/`G7`/`N3` citations are that
+direction. They are visible, hashed, and boundary-carrying — but a reader who
+reads the `forbid` strictly should know the stream now takes three imports from
+the quantum chain, and that they are all GEOMETRY-column entries.
