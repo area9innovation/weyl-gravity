@@ -612,11 +612,21 @@ ROWS = [
               "boundary condition survives it -- is not characterized.",
         traces_to=["RP-WEYL"],
         sources=["reverse_physics/reports/ghost-model-obstruction.md",
-                 "reverse_physics/reports/coprime-charge-bound.md"],
+                 "reverse_physics/reports/coprime-charge-bound.md",
+                 "reverse_physics/reports/ghost-harmless.md"],
         contingent_on="Whether a stable regime exists observationally, and on "
                       "any construction exhibiting decay or its absence; "
                       "nothing here bounds it.",
-        note="THE RETRACTION ROW.  This stream published a dynamical reading "
+        note="THE RETRACTION ROW, AND IT STAYS OPEN.  What IS now characterized "
+             "is the CONDITION rather than the fact: on a Krein space the three "
+             "routes usually offered as alternative ghost escapes -- a "
+             "conserved positive charge, quasi-Hermiticity/PT, and a positive "
+             "invariant subspace -- are THE SAME CONDITION, namely "
+             "diagonalizable with real spectrum "
+             "(REVERSE_PHYSICS_GHOST_HARMLESS_V1).  That says what harmless "
+             "REQUIRES; it does not say whether Weyl gravity satisfies it, "
+             "which is finite-dimensional linear algebra away from a "
+             "field-theoretic question.  This stream published a dynamical reading "
              "of a ghost obstruction and retracted it with proof: the coded "
              "free Hamiltonian is positive definite, and the obstruction "
              "conserves a positive charge that BOUNDS both occupations "

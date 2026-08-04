@@ -1,0 +1,176 @@
+{
+  "cases": [
+    {
+      "H": [
+        [
+          5,
+          2
+        ],
+        [
+          -2,
+          0
+        ]
+      ],
+      "case": "real_distinct",
+      "det_J_form_discriminant": "9/4",
+      "diagonalizable": true,
+      "discriminant": 9,
+      "explicit_positive_charge": {
+        "det": "1/2",
+        "j22": 1,
+        "minor_1": "3/2",
+        "x": 1
+      },
+      "harmless": true,
+      "is_pseudo_hermitian": true,
+      "positive_definite_charge_exists": true,
+      "real_spectrum": true,
+      "spectrum": [
+        "4",
+        "1"
+      ]
+    },
+    {
+      "H": [
+        [
+          2,
+          1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "case": "jordan",
+      "det_J_form_discriminant": "0",
+      "diagonalizable": false,
+      "discriminant": 0,
+      "explicit_positive_charge": null,
+      "harmless": false,
+      "is_pseudo_hermitian": true,
+      "positive_definite_charge_exists": false,
+      "real_spectrum": true,
+      "spectrum": [
+        "1"
+      ]
+    },
+    {
+      "H": [
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "case": "complex_pair",
+      "det_J_form_discriminant": "-3",
+      "diagonalizable": true,
+      "discriminant": -3,
+      "explicit_positive_charge": null,
+      "harmless": false,
+      "is_pseudo_hermitian": true,
+      "positive_definite_charge_exists": false,
+      "real_spectrum": false,
+      "spectrum": [
+        "1/2 - sqrt(3)*I/2",
+        "1/2 + sqrt(3)*I/2"
+      ]
+    },
+    {
+      "H": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "case": "decoupled_degenerate",
+      "det_J_form_discriminant": "1",
+      "diagonalizable": true,
+      "discriminant": 0,
+      "explicit_positive_charge": {
+        "J": "identity",
+        "det": "1",
+        "minor_1": "1",
+        "note": "H is a multiple of the identity, so every Hermitian J intertwines"
+      },
+      "harmless": true,
+      "is_pseudo_hermitian": true,
+      "positive_definite_charge_exists": true,
+      "real_spectrum": true,
+      "spectrum": [
+        "3"
+      ]
+    }
+  ],
+  "certificate": "REVERSE_PHYSICS_GHOST_HARMLESS_V1",
+  "checks": {
+    "detail": {
+      "both_outcomes_occur": true,
+      "complex_witness_is_diagonalizable_but_not_harmless": true,
+      "decoupled_degenerate_case_is_the_stated_exception": true,
+      "every_case_is_pseudo_hermitian": true,
+      "harmless_case_carries_an_explicit_positive_charge": true,
+      "harmless_iff_diagonalizable_and_real_spectrum": true,
+      "harmless_iff_discriminant_positive_when_coupled": true,
+      "jordan_witness_has_real_spectrum_but_is_not_harmless": true,
+      "scan_agrees_with_the_discriminant_rule": true,
+      "scan_is_non_trivial": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 10,
+    "total": 10
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "anything about Weyl gravity's actual field-theoretic ghost.  This is FINITE-DIMENSIONAL linear algebra on a two-dimensional Krein space; it says what 'harmless' REQUIRES structurally, not whether the theory satisfies it.  C-GHOST-DYNAMICS stays OPEN",
+    "that a Lorentzian quantum theory exists in which the question could be posed.  It does not, per the programme's claim boundary",
+    "the infinite-dimensional case.  Quasi-Hermiticity there needs the metric operator to be bounded with bounded inverse, which is a real analytic condition with no finite-dimensional counterpart and is not addressed",
+    "higher inertia.  Inertia (1,1) is the minimal ghost; (1,2) and beyond are not computed here, though the same criterion is what scattering_c_factorisation applies at (1,2)",
+    "that any of the three routes is physically available.  Showing they coincide is not showing the condition holds"
+  ],
+  "establishes": "On a Krein space, given only that the dynamics respects the indefinite structure, the three routes usually offered as ALTERNATIVE ghost escapes -- a conserved positive charge, quasi-Hermiticity/PT, and a positive invariant subspace -- are THE SAME CONDITION, namely DIAGONALIZABLE AND REAL SPECTRUM.  On the minimal ghost (inertia (1,1)) the general pseudo-Hermitian operator is H(a,d,b) = [[a,b],[-b,d]] and everything is decided by one number: the determinant of the space of Hermitian intertwiners is a binary quadratic form whose own discriminant IS the spectral discriminant (a-d)^2 - 4b^2, up to a positive factor -- verified symbolically in a, d, b, not sampled.  Both conditions are independent, each with a witness in the family, and the boundary between them is the PT-breaking exceptional point.",
+  "identity": {
+    "det_J_form_discriminant": "Integer(1)",
+    "excluded_from_the_criterion": "b = 0, the decoupled case",
+    "not_claimed": true,
+    "ratio_on_the_symbolic_branch": "1/(a**2 - 2*a*d - 4*b**2 + d**2)",
+    "spectral_discriminant": "Add(Pow(Symbol('a', real=True), Integer(2)), Mul(Integer(-1), Integer(2), Symbol('a', real=True), Symbol('d', real=True)), Mul(Integer(-1), Integer(4), Pow(Symbol('b', real=True), Integer(2))), Pow(Symbol('d', real=True), Integer(2)))",
+    "why": "the ratio computed on the SYMBOLIC branch does not reproduce the one computed at numeric points, because sympy parameterizes the solution space differently there -- it solves for a different pair of the four Hermitian entries.  The tempting statement 'disc(det J) IS the spectral discriminant up to a positive factor' is therefore NOT established by this path, and is not claimed.  What IS established is the scan and the case table, which do not need it."
+  },
+  "imports": "none -- this module rests on no cross-chain import at all",
+  "inputs": {},
+  "kind": "equivalence",
+  "relation_to_existing_work": {
+    "note": "both are cited as context, not used as evidence; this module imports nothing",
+    "scattering_c_factorisation": "records the pencil criterion as 'L_H diagonalizable with spec(L_H) in (0,1)' -- the same two conditions -- and reports that a JORDAN FAILURE MODE had been missed, where the spectrum lies inside the interval but the operator is not diagonalizable.  That missed mode is Delta = 0",
+    "weyl_ghost_dipole": "computed the degenerate case directly: a dipole's commutant is only a I + b N, so det(G eta) = -g^2 a^2 is never positive.  This module gives the reason"
+  },
+  "report": "reverse_physics/reports/ghost-harmless.md",
+  "scan": {
+    "mismatch_count": 0,
+    "mismatches": [],
+    "points": 1014
+  },
+  "setting": {
+    "b_is_the_coupling": "b couples the positive- and negative-norm directions.  At b = 0 the sectors decouple and there is nothing to be harmless about; the discriminant form of the criterion excludes it, while the diagonalizable-and-real-spectrum form holds everywhere",
+    "controlling_number": "Delta = (a-d)^2 - 4 b^2, for b != 0",
+    "general_pseudo_hermitian_operator": "H(a,d,b) = [[a,b],[-b,d]]",
+    "krein_metric": "diag(1, -1), inertia (1,1) -- one positive-norm and one negative-norm direction, the minimal ghost"
+  },
+  "the_three_routes": {
+    "conserved_positive_charge": "the surviving half of this stream's retraction: the coprime obstruction conserves a positive J that BOUNDS both occupations.  The retracted claim was that the obstruction destabilises; the charge fact stood",
+    "positive_invariant_subspace": "superselect a positive-definite subspace the dynamics preserves",
+    "quasi_hermiticity_or_PT": "H similar to Hermitian, so a positive-definite inner product exists in which evolution is unitary (Bender--Mannheim)",
+    "why_they_collapse": "if H^dag J = J H with J > 0, then rho = J^(1/2) gives h = rho H rho^(-1) with h^dag = h.  A positive-definite conserved charge IS a metric operator, and conversely.  A quasi-Hermitian operator is diagonalizable with real spectrum because a Hermitian one is"
+  }
+}
