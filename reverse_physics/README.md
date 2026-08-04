@@ -172,6 +172,13 @@ schema/  certificates/  tests/  reports/
 | `..._WEYL_GHOST_FORCED_V1` | `G4` (all even `D`) | **the uniqueness theorem *is* the ghost theorem**: `D − 2k = 0` gives both the unique action and a pole count of `D/2`, and two or more poles always include a negative residue. So the ghost cannot be tuned away — there is no other conformal action — and dropping `RP-WEYL` or `RP-DIM4` provably does not help, leaving locality and field content — [report](reports/weyl-ghost-forced.md) |
 | `..._WEYL_ACTION_V1` | `G4` (all quadratic curvature actions, all `D`) | **reverse physics on the subject itself**: the Weyl action is *equivalent* to `RP-LOCAL ∧ RP-METRIC ∧ RP-DIFF ∧ RP-WEYL ∧ RP-DIM4` modulo topological terms, each independent; the derivative order is **derived**, not assumed; and parity is independent on actions but **redundant** on field equations, with `[W₊²]`/`[W₋²]` as its eigenbasis — [report](reports/weyl-action-reverse-physics.md), [separation ledger](reports/PHYSICS-VS-MATH.md) |
 
+There is one further Forge-only result with **no certificate**, deliberately:
+[`c-factorisation-not-determined.md`](reports/c-factorisation-not-determined.md)
+runs the factorisation criterion against the actual physical Grams and shows both
+outcomes are reachable, so an explicit `T₋` is logically unavoidable. Its gate
+passes `forge -run` 25/25 but **fails `verify -full`** on a residual leak, so it
+is reported as a finding and **not** promoted to a certificate.
+
 The G1 computation lives **in Forge** (`math/qmat` exact rational rank), gated at
 `forge/examples/reverse_physics_torus_gate.forge` in tango and pinned here by
 content hash. `torus_g1_provenance.py` computes no physics — it is the import

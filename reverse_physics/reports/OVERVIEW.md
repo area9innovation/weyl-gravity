@@ -745,8 +745,12 @@ The directions that would still yield something:
   such sector at all and `D = 6` selects the *cubic* one. Running the same exact
   linear algebra there tests whether the method scales and whether the parity
   result has an analogue. Declared as `WEYL_ACTION_SIX_DERIVATIVE_D6`.
-- **A certified `T₋` enclosure.** §3.12's comparison shows this is the single
-  missing input for the ghost question — a full 3×3 interval enclosure on the
+- **A certified `T₋` enclosure.** Now known to be *logically unavoidable*, not
+  merely convenient: running the criterion against the actual `G` and `H_H` shows
+  both outcomes are reachable inside the admissible set — a YES witness
+  (`K_H = G/2`) and 528 NO witnesses
+  ([report](c-factorisation-not-determined.md)). §3.12's comparison shows this is
+  the single missing input for the ghost question — a full 3×3 interval enclosure on the
   cell in the basis map `(XH0a,XH0b,EH0) → (XI0,XI1,EI0)`. It is the black-hole
   package's own stated `minimal_missing_object`. With it, `L_H` is assembled and
   the criterion is a few lines of exact linear algebra.

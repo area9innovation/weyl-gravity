@@ -21,6 +21,13 @@
 > operator **not diagonalizable**. Their `jordan_inside_interval` fixture. It is
 > proved below.
 
+> **Follow-up, and it settles the prior question.**
+> [`c-factorisation-not-determined.md`](c-factorisation-not-determined.md) runs
+> the criterion against the **actual** `G` and `H_H` and shows both outcomes are
+> reachable inside the admissible set — a YES witness (`K_H = G/2`, spectrum
+> `{½,½,½}`) and 528 NO witnesses. So the certified data does not determine the
+> answer: **an explicit `T₋` is logically unavoidable.**
+
 ## Their criterion, which is the answer
 
 ```
