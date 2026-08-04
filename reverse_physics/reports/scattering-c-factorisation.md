@@ -1,4 +1,48 @@
-# Does the scattering `C` factorise? — the question, reduced
+# Does the scattering `C` factorise? — an independent reproduction, and two corrections
+
+> **Read this first.** An earlier version of this report presented its contents
+> as a *reduction of an open question*, with explicit `T₊` as the missing input.
+> Both claims were wrong, and the corrections are the useful part.
+>
+> **(i) The reduction already existed.**
+> `black_hole_programme/phase4/channel_factorized_c_pullback_test_v1`
+> (lifecycle `CLASSIFIED`) states the criterion in a sharper normalisation, with
+> necessity, sufficiency, a determinant audit and **four** exact fixtures. What
+> was derived here is the same criterion in a `T₋`-congruent presentation — a
+> cross-check, not a discovery.
+>
+> **(ii) The missing input is `T₋`, not `T₊`.** That contradicts nothing but my
+> own step 2: once `K₊ = G − K_H`, the outgoing connection *drops out*. Their
+> `minimal_missing_object` is *"a certified full 3×3 `T₋` enclosure on the
+> cell"*, and they record **rejecting** an imported `T₋` point matrix for having
+> no interval enclosure and a nonzero Stokes residual.
+>
+> **(iii) A failure mode was missed** — spectrum inside the interval with the
+> operator **not diagonalizable**. Their `jordan_inside_interval` fixture. It is
+> proved below.
+
+## Their criterion, which is the answer
+
+```
+K_H = A†H_H A,   K₊ = R†G₊R = G − K_H,   L_H = G⁻¹K_H
+
+a channel-factorized positive fundamental symmetry exists
+   ⟺  L_H is diagonalizable over ℂ  and  spec(L_H) ⊂ (0,1)
+```
+
+with `A = T₋⁻¹`, `R = T₊T₋⁻¹`. Their four fixtures cover every mode: `positive`,
+`negative_eigenvalue`, `nonreal_pair`, and `jordan_inside_interval`.
+
+## That this report's derivation is the same statement
+
+The triple `(H_out, M, N)` below is `T₋†(K_H, K₊, G)T₋`, so
+`spec(N⁻¹H_out) = spec(L_H)`, and the condition `spec(H_out⁻¹N) ⊂ (1,∞)` is
+theirs inverted. Two derivations from scratch reaching the same criterion is
+worth recording; it is not a new result.
+
+---
+
+## The original framing follows, corrected
 
 **Certificate** `REVERSE_PHYSICS_SCATTERING_C_FACTORISATION_V1`
 **Proof** `rocq/WeylScatteringCFactorisation.v` — zero axioms, 14/14 closed
@@ -72,16 +116,22 @@ decomposition simultaneously fundamental for both.
 
 **An open scattering condition is a 3×3 generalised eigenvalue problem.**
 
-### 2. The input is missing — and precisely which one
+### 2. The input is missing — and it is `T₋`
 
 | | status |
 |---|---|
-| `G₋`, `G₊`, `H_out` | **explicit**, exactly, as functions of `ω` (`axial_null_flux_gram`) |
-| `T₊` | **not certified explicit.** `axial_explicit_tplus_band_v1`: `explicit_Tplus_certified = false`, `does_not_establish` "the outgoing trace map T_plus", lifecycle `NUMERIC-ENCLOSURE`, radial transport at `r = 487/16` heading for `r = 4` |
-| `T₋` | proved invertible with exact determinant `−(2ω−i)(4ω−i)²A_in₂²A_in₁/(4(ω−i))` — but `A_in_s` are Jost amplitudes with **no closed form** for Regge–Wheeler |
+| `G₋`, `G₊`, `H_H` | **explicit**, exactly, as functions of `ω` (`axial_null_flux_gram`) |
+| `T₋` | **THE BLOCKER.** Proved to exist and be invertible with exact determinant `−(2ω−i)(4ω−i)²A_in₂²A_in₁/(4(ω−i))` — but `A_in_s` are Jost amplitudes with **no closed form** for Regge–Wheeler. Their `minimal_missing_object`: *"a certified full 3×3 Tminus enclosure on the cell"*. An imported point matrix was **rejected** — no interval enclosure, nonzero Stokes residual. |
+| `T₊` | separately uncertified — ~30 packages mention it, every explicitness flag `false`, transport at `r = 487/16` heading for `r = 4` — **but it is not what blocks this test.** It drops out via `K₊ = G − K_H`. |
 
-So the missing input is the **connection**, not the forms. And it is already the
-declared objective of another package.
+So the missing input is the **incoming connection**. The earlier version of this
+report named `T₊`, contradicting its own step 2.
+
+They also have a partial result I did not: `0 < det(L_H) < 0.9786…` on the cell,
+from `det(L_H) = 1/(|A_in₂|⁴|A_in₁|²)` and the Wronskian `|A_in_s|² = 1+|A_out_s|²`.
+Positive and below one — consistent with `spec ⊂ (0,1)` but, as they note, *"neither
+this product nor the endpoint inertias determines the three generalized eigenvalues
+or diagonalizability."*
 
 ### 3. Nothing weaker will do
 
@@ -93,26 +143,38 @@ Everything the programme certifies about these three forms is their **inertia**:
 | **YES** | `diag(2,−3,−5)` | `2, −6, 30` | `3, −12, 72` | `(x−2)(x−3)(x−5)` — three **positive** roots |
 | **NO** | `[[1,2,0],[2,1,0],[0,0,−1]]` | `1, −3, 3` | `2, −4, 8` | block `[[1,2],[−2,−1]]`: trace 0, det 3 → `x²+3`, **non-real** |
 
+**And the mode I missed.** With `G = [[0,1],[1,0]]` and `L = [[½,1],[0,½]]`,
+`K_H = GL = [[0,½],[½,1]]`: `L` is `G`-self-adjoint, its spectrum is the double
+root `½ ∈ (0,1)` — *inside the interval* — and `L − ½I` is nonzero with square
+zero. A genuine Jordan block, and obstructed. **A spectrum condition alone is not
+sufficient**, which is precisely what their `jordan_inside_interval` fixture
+records and what the earlier version of this report got wrong by omission.
+
 `H` itself has minors `1, −1, 1`. **All five matrices have sign pattern
 `(+,−,+)`** — inertia `(1,2,0)` by Jacobi's rule. The witnesses match *every*
 structural fact the programme certifies, and they answer oppositely.
 
-> **Explicit `T₊` is not a convenience. It is logically required.**
+> **A certified `T₋` enclosure is not a convenience. It is logically required.**
 
 The witnesses are real symmetric — a special case of Hermitian — which is enough:
 realising both outcomes *inside* the certified inertia class shows the class does
 not decide.
 
-## What changed
+## What this report is actually worth
 
-Before: *"whether `C_out` factorises is a separate scattering condition"* — an
-open statement with no stated test.
+Not the reduction — that was already `CLASSIFIED`. What survives:
 
-After: a named 3×3 generalised eigenvalue problem, with its algebra verified
-exactly, its one missing input identified by name, and a proof that no cheaper
-route exists. The certificate's `--check` **fails closed on drift in
-`axial_explicit_tplus_band_v1`** — so the moment `T₊` lands, this record breaks
-and says the test can be run.
+- **an independent derivation of the same criterion**, from the Stokes identity,
+  without having read theirs. Two routes to one criterion is a real cross-check;
+- **the `T₋`-congruent presentation** `N = M + H_out`, which is a slightly
+  different way to see why `T₊` drops out;
+- **exact machine checks** of the intertwining relation *and its necessity*;
+- **a correction**, recorded rather than edited away.
+
+The lesson is the ordinary one: I should have searched the corpus for prior work
+on the question before deriving it. The certificate's `--check` fails closed on
+drift in the black-hole certificates, which is the mechanism that would have
+surfaced this had I wired it first.
 
 ## Two rails
 

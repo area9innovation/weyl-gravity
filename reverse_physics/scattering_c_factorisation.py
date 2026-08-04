@@ -1,4 +1,5 @@
-"""Provenance record: THE OPEN SCATTERING QUESTION, REDUCED TO A FINITE TEST.
+"""Provenance record: an INDEPENDENT REPRODUCTION of the channel-factorisation
+criterion -- and the correction of two errors in the first version of this record.
 
 The black-hole programme certifies that a compatible fundamental symmetry C_out
 exists on the combined future space and flags as OPEN whether it FACTORISES,
@@ -8,11 +9,19 @@ ghost.
 
 This record answers it as far as it can be answered today:
 
-  1. THE QUESTION IS FINITE. It reduces to a 3x3 generalised eigenvalue problem.
-  2. THE INPUT IS MISSING. Explicit T_+ is not certified; T_-'s determinant
-     involves Jost amplitudes with no closed form.
-  3. NOTHING WEAKER WILL DO. Two witnesses matching every certified inertia give
-     opposite answers, so the structural data cannot settle it.
+CORRECTION, and it is the useful part of this record:
+
+  (i)   THE REDUCTION ALREADY EXISTED. black_hole_programme/phase4/
+        channel_factorized_c_pullback_test_v1 (lifecycle CLASSIFIED) states the
+        criterion in a sharper normalisation, with necessity, sufficiency and
+        FOUR exact fixtures. What was derived here is the same criterion in a
+        T_--congruent presentation. That is a cross-check, not a new result.
+  (ii)  THE MISSING INPUT IS T_-, NOT T_+. The first version named T_+, which
+        contradicts its own pullback identity: once K_+ = G - K_H the outgoing
+        connection drops out.
+  (iii) A FAILURE MODE WAS MISSED -- spectrum inside the interval with the
+        operator NOT diagonalizable. Their jordan_inside_interval fixture. It is
+        added here.
 
 Computes no mathematics. The witnesses live in
 `rocq/WeylScatteringCFactorisation.v`; the matrix algebra lives in tango
@@ -42,7 +51,7 @@ PINNED = {
 
 UPSTREAM_GATE = {
     "path": "tango forge/examples/weyl_scattering_c_factorisation_gate.forge",
-    "sha256": "a737f18a49d1273313bb18f2a74dfa6e140be5e1ebb05bd2ab5c8afa8a04d027",
+    "sha256": "30c055141d1583a434f3bf8b8a1eb941c8c527b4710eebbf40600fa9adb8d668",
     "result": "exit 28, 28/28 checks; forge verify -full: 1 verified, 0 failed",
     "what_it_certifies": (
         "the matrix algebra of the reduction, in exact rational arithmetic: the pullback identity "
@@ -96,16 +105,20 @@ THE_REDUCTION = {
 }
 
 WHY_IT_CANNOT_BE_RUN = {
-    "T_plus": (
-        "phase4/axial_explicit_tplus_band_v1 carries explicit_Tplus_certified = false, "
-        "does_not_establish 'the outgoing trace map T_plus', lifecycle NUMERIC-ENCLOSURE, and status "
-        "CORRELATED_OUTGOING_SUCCESSOR_PASS_R4_OPEN -- the radial transport has reached r = 487/16 "
-        "and is still heading for r = 4."
-    ),
-    "T_minus": (
+    "THE_BLOCKER_IS_T_MINUS": (
         "phase3/axial_incoming_connection_analytic proves T_- exists globally and is invertible, "
         "with determinant -(2w-i)(4w-i)^2 A_in_2^2 A_in_1 / (4(w-i)). The Jost amplitudes A_in_s "
-        "have no closed form for the Regge-Wheeler potential, so this is not an explicit matrix."
+        "have no closed form for the Regge-Wheeler potential. The black-hole package's "
+        "minimal_missing_object is 'a certified full 3x3 Tminus enclosure on the cell in "
+        "(XH0a,XH0b,EH0)->(XI0,XI1,EI0)', and it records rejecting an imported point matrix for "
+        "having no interval enclosure and a nonzero Stokes residual."
+    ),
+    "T_plus_is_NOT_the_blocker": (
+        "T_+ drops out of the criterion via K_+ = G - K_H. It is separately uncertified -- roughly "
+        "thirty packages mention it and every explicitness flag is false, with the transport in "
+        "axial_explicit_tplus_band_v1 standing at r = 487/16 heading for r = 4 -- but that is not "
+        "what blocks this test. The first version of this record said it was, contradicting its own "
+        "step 2."
     ),
     "the_grams_ARE_explicit": (
         "phase3/axial_null_flux_gram gives the endpoint Grams exactly as functions of omega. The "
@@ -153,7 +166,7 @@ def build() -> dict[str, object]:
     return {
         "schema": SCHEMA_NAME,
         "result_id": RESULT_ID,
-        "result_state": "OPEN_QUESTION_REDUCED_TO_A_FINITE_TEST_INPUT_STILL_MISSING",
+        "result_state": "INDEPENDENT_REPRODUCTION_OF_AN_EXISTING_CRITERION_TWO_ERRORS_CORRECTED",
         "generality_level": "G4_ALL_HERMITIAN_PAIRS_OF_INERTIA_ONE_TWO",
         "lifecycle_ladder": "reverse-physics-v0",
         "lifecycle_state": "NECESSITY_CERTIFIED",
@@ -172,10 +185,48 @@ def build() -> dict[str, object]:
                 "about the ghost is settled."
             ),
             "answer_today": (
-                "NOT YET DECIDABLE, and now precisely so. The question is a 3x3 generalised "
-                "eigenvalue problem whose single missing input is explicit T_+; and no weaker data "
-                "can answer it, because two witnesses matching every certified inertia give opposite "
-                "answers."
+                "NOT YET DECIDABLE. The criterion is known and CLASSIFIED in the black-hole "
+                "programme; the single missing input is a certified full 3x3 T_- enclosure on the "
+                "cell. T_+ is NOT needed -- it drops out of the pullback identity."
+            ),
+            "already_answered_by": (
+                "black_hole_programme/phase4/channel_factorized_c_pullback_test_v1: 'a "
+                "channel-factorized positive fundamental symmetry exists iff L_H is diagonalizable "
+                "over C and spec(L_H) is contained in the open real interval (0,1)', with "
+                "L_H = G^{-1} K_H, K_H = A^dag H_H A, K_+ = R^dag G_+ R = G - K_H. Necessity, "
+                "sufficiency, a determinant audit and four exact fixtures are all there."
+            ),
+        },
+        "the_correction": {
+            "what_was_claimed": "that this record reduced an open question to a finite test, with explicit T_+ as the missing input",
+            "error_1_not_new": (
+                "The reduction already existed, CLASSIFIED, in "
+                "black_hole_programme/phase4/channel_factorized_c_pullback_test_v1. This record is an "
+                "INDEPENDENT REPRODUCTION. The presentations are T_--congruent: the triple "
+                "(H_out, M, N) here is T_-^dag (K_H, K_+, G) T_- there, so "
+                "spec(N^{-1} H_out) = spec(L_H) and the condition spec(H_out^{-1} N) in "
+                "(1, infinity) is theirs inverted. Two derivations from scratch reaching the same "
+                "criterion is worth recording as a cross-check; it is not a discovery."
+            ),
+            "error_2_wrong_missing_input": (
+                "The missing input is T_-, not T_+. This record's own step 2 shows why: with "
+                "K_+ = G - K_H the outgoing connection drops out and only A = T_-^{-1} is needed. "
+                "The black-hole package states it correctly -- minimal_missing_object is 'a certified "
+                "full 3x3 Tminus enclosure on the cell', and it RECORDS REJECTING an imported T_- "
+                "point matrix for having no interval enclosure and a nonzero Stokes residual. "
+                "(T_+ is separately uncertified: about thirty packages mention it and every "
+                "T_+-explicitness flag is false. That is true but irrelevant to this test.)"
+            ),
+            "error_3_missed_failure_mode": (
+                "The no-shortcut witnesses covered positive spectrum and non-real spectrum. They "
+                "missed the subtle mode: spectrum INSIDE the interval with the operator NOT "
+                "diagonalizable. That is their jordan_inside_interval fixture (spectrum {1/2, 3/4}, "
+                "L_diagonalizable false). A spectrum condition alone is therefore not sufficient, and "
+                "a witness for it is now proved here."
+            ),
+            "why_this_is_recorded_rather_than_edited_away": (
+                "append-only history: the record of what was claimed is preserved, and the "
+                "correction is the finding."
             ),
         },
         "the_reduction": THE_REDUCTION,
@@ -211,11 +262,13 @@ def build() -> dict[str, object]:
             "intertwining_necessity_checked": True,
         },
         "claim_flags": {
-            "QUESTION_REDUCED_TO_A_FINITE_TEST": True,
+            "CRITERION_INDEPENDENTLY_REPRODUCED": True,
             "NO_INERTIA_LEVEL_SHORTCUT_EXISTS": True,
             "REDUCTION_ALGEBRA_VERIFIED_EXACTLY": True,
+            "JORDAN_FAILURE_MODE_WITNESSED": True,
+            "CRITERION_IS_NOVEL": False,
             "FACTORISATION_DECIDED": False,
-            "EXPLICIT_T_PLUS_AVAILABLE": False,
+            "CERTIFIED_T_MINUS_ENCLOSURE_AVAILABLE": False,
             "GENERAL_PENCIL_EQUIVALENCE_FORMALISED_IN_ROCQ": False,
             "LORENTZIAN_CLAIM": False,
             "QUANTUM_CLAIM": False,
@@ -230,17 +283,19 @@ def build() -> dict[str, object]:
             "opposite answers, so the certified structural data does not decide the question."
         ),
         "does_not_establish": [
-            "the answer. Explicit T_+ is not available, so the test cannot be run",
+            "the answer. A certified T_- enclosure is not available, so the test cannot be run",
+            "novelty of the criterion. It is CLASSIFIED in black_hole_programme/phase4/channel_factorized_c_pullback_test_v1, with necessity, sufficiency, a determinant audit and four fixtures. This record reproduces it independently and corrects its own earlier overclaim",
             "the general equivalence 'common fundamental decomposition iff the pencil is diagonalisable with positive spectrum' as a formal Rocq theorem. It is argued in the module header and its consequences are computed exactly on the Forge rail; the Rocq module proves the WITNESSES, which is the part the no-shortcut conclusion rests on",
             "any claim about the physical meaning of a factorising C. That a factorising C would be 'physical' is the assumption lattice's reading, not a theorem",
             "any LORENTZIAN-CAUSAL statement. The black-hole certificates read here carry REDUCED-MODE and none is promoted",
             "anything about the BV-BFV complex, the residual classes, the physical spectrum, or the quantum theory. The two scoped Lorentzian no-go theorems are neither used nor affected",
         ],
         "next_gate": (
-            "EXPLICIT_T_PLUS: the single missing input. It is already the declared objective of "
-            "black_hole_programme/phase4/axial_explicit_tplus_band_v1, whose radial transport stands "
-            "at r = 487/16 heading for r = 4. When that lands, the test in the_reduction.step_3 is a "
-            "few lines of exact linear algebra and the question is settled either way."
+            "CERTIFIED_T_MINUS_ENCLOSURE: a full 3x3 T_- interval enclosure on the cell in the basis "
+            "map (XH0a,XH0b,EH0)->(XI0,XI1,EI0). That is the black-hole package's own stated "
+            "minimal_missing_object. With it, L_H = G^{-1} A^dag H_H A is assembled and the "
+            "criterion -- diagonalizable with spectrum in (0,1) -- is a few lines of exact linear "
+            "algebra."
         ),
         "verification_commands": [
             "cd rocq && ./run.sh",

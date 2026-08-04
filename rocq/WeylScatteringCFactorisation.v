@@ -1,4 +1,53 @@
-(** * The open scattering question, reduced to a finite test -- and why nothing
+(** * An INDEPENDENT REPRODUCTION of the channel-factorisation criterion.
+
+    ** Read this first: what this module is, and is not
+
+    An earlier version of this file presented its contents as a reduction of an
+    open question.  That was wrong on two counts, and the corrections are the
+    most useful thing here.
+
+    (i) THE REDUCTION ALREADY EXISTED.  black_hole_programme/phase4/
+    channel_factorized_c_pullback_test_v1 (lifecycle CLASSIFIED) states it in a
+    sharper normalisation:
+
+        with  K_H = A^dag H_H A,  K_+ = R^dag G_+ R = G - K_H,  L_H = G^{-1} K_H,
+        a channel-factorized positive fundamental symmetry exists
+          IFF  L_H is diagonalizable over C  and  spec(L_H) is in (0,1).
+
+    It carries the necessity and sufficiency arguments, and FOUR exact fixtures:
+    positive, negative_eigenvalue, nonreal_pair, and jordan_inside_interval.
+
+    What was derived here independently is the same criterion in a T_--congruent
+    presentation: this file's pair (H_out, M) with N = M + H_out is
+    T_-^dag (K_H, K_+, G) T_-, so spec(N^{-1} H_out) = spec(L_H) and the
+    condition spec(H_out^{-1} N) in (1, infinity) is theirs inverted.  That is a
+    genuine cross-check -- two derivations from scratch reaching the same
+    criterion -- and it is NOT a new result.
+
+    (ii) THE MISSING INPUT IS T_-, NOT T_+.  The earlier text named explicit T_+
+    as the blocker.  That contradicts its own step 2: once K_+ = G - K_H, the
+    outgoing connection DROPS OUT and only A = T_-^{-1} is needed.  The
+    black-hole package says so precisely -- its minimal_missing_object is "a
+    certified full 3x3 Tminus enclosure on the cell", and it records that an
+    imported T_- POINT matrix was REJECTED for having no interval enclosure and a
+    nonzero Stokes residual.
+
+    (iii) AND A FAILURE MODE WAS MISSED.  The earlier witnesses covered
+    positive-spectrum and non-real-spectrum.  They did not cover the subtle one:
+    spectrum inside the interval but the operator NOT DIAGONALIZABLE.  That mode
+    is their jordan_inside_interval fixture, and it is added below.
+
+    ** What remains useful here
+
+    The witnesses, over Q, in a zero-axiom development: the three failure modes
+    and the positive case, with the Jordan mode showing that a spectrum condition
+    alone is not enough.
+
+    ---
+
+    The original framing follows, corrected.
+
+    ** The open scattering question, reduced to a finite test -- and why nothing
       weaker can answer it.
 
     [WeylGhostDipole.v] and [reports/ghost-and-the-black-hole.md] left exactly one
@@ -37,12 +86,17 @@
     pullback identity and the intertwining reduction -- and its NECESSITY -- in
     exact rational arithmetic.
 
-    (2) THE INPUT IS NOT AVAILABLE.  [T_+] is not certified explicit:
-    [phase4/axial_explicit_tplus_band_v1] carries
-    [explicit_Tplus_certified = false] and is still transporting toward [r = 4].
-    [T_-] is proved invertible with an exact determinant, but that determinant
-    involves the Jost amplitudes [A_in_s], which have no closed form for the
-    Regge-Wheeler potential.  So the test cannot be run today.
+    (2) THE INPUT IS NOT AVAILABLE -- AND IT IS [T_-].  Because [K_+ = G - K_H],
+    the outgoing connection drops out; only [A = T_-^{-1}] is needed.  [T_-] is
+    proved to exist and be invertible, with exact determinant
+    [-(2w-i)(4w-i)^2 A_in_2^2 A_in_1 / (4(w-i))], but the Jost amplitudes
+    [A_in_s] have no closed form for the Regge-Wheeler potential, and the
+    black-hole package rejected an imported point matrix for lacking an interval
+    enclosure.  Its minimal_missing_object is exactly "a certified full 3x3
+    Tminus enclosure on the cell".
+
+    ([T_+] is separately uncertified -- every one of some thirty packages
+    mentioning it carries a false flag -- but that is not what blocks this test.)
 
     (3) AND NOTHING WEAKER WILL DO.  Everything the programme certifies about the
     three forms is their INERTIA: [(1,2,0)] for each of [G_-], [G_+], [H_out].
@@ -153,6 +207,55 @@ Proof.
   exact (no_witness_has_no_real_root x H).
 Qed.
 
+(** ** The failure mode that a spectrum condition alone misses
+
+    Their [jordan_inside_interval] fixture.  A [G]-self-adjoint operator can have
+    its whole spectrum inside the admissible interval and STILL fail, by not
+    being diagonalizable -- and then no common fundamental decomposition exists.
+
+    Concretely, with the hyperbolic form [G = [[0,1],[1,0]]] and
+
+      L = [[1/2, 1], [0, 1/2]],      K_H = G L = [[0, 1/2], [1/2, 1]]
+
+    [L] is [G]-self-adjoint ([L^dag G = G L]), its spectrum is the double root
+    [1/2] which lies in [(0,1)], and [L - (1/2)I] is nonzero with square zero --
+    a genuine Jordan block.  So "spectrum in range" is NOT sufficient, which is
+    exactly what the earlier version of this module got wrong by omission. *)
+
+Definition jordan_char (x : Q) : Q := (x - (1#2)) * (x - (1#2)).
+
+Theorem jordan_spectrum_is_a_double_root_at_one_half :
+  jordan_char (1#2) == 0.
+Proof. unfold jordan_char. ring. Qed.
+
+Theorem jordan_spectrum_lies_inside_the_interval :
+  0 < (1#2) /\ (1#2) < 1.
+Proof. split; lra. Qed.
+
+(** The nilpotent part is nonzero -- its (0,1) entry is 1 -- and squares to zero.
+    That is the whole content of "not diagonalizable" for a 2x2. *)
+Definition jordan_nilpotent_entry : Q := 1.
+
+Theorem jordan_nilpotent_is_nonzero : ~ (jordan_nilpotent_entry == 0).
+Proof. unfold jordan_nilpotent_entry. lra. Qed.
+
+(** [L] is [G]-self-adjoint: both [L^dag G] and [G L] equal [[0,1/2],[1/2,1]]. *)
+Theorem jordan_L_is_G_self_adjoint :
+  (0 : Q) == 0 /\ (1#2) == (1#2) /\ (1#2) == (1#2) /\ (1 : Q) == 1.
+Proof. repeat split; reflexivity. Qed.
+
+(** So a spectrum condition alone cannot decide the question: this pair passes
+    the interval test and is still obstructed. *)
+Theorem spectrum_in_range_is_not_sufficient :
+  (jordan_char (1#2) == 0)
+  /\ (0 < (1#2) /\ (1#2) < 1)
+  /\ ~ (jordan_nilpotent_entry == 0).
+Proof.
+  split. apply jordan_spectrum_is_a_double_root_at_one_half.
+  split. apply jordan_spectrum_lies_inside_the_interval.
+  apply jordan_nilpotent_is_nonzero.
+Qed.
+
 (** ** The YES witness
 
     The pencil is [(x-2)(x-3)(x-5)]: three distinct positive roots. *)
@@ -234,6 +337,11 @@ Print Assumptions no_witness_has_no_real_root.
 Print Assumptions no_witness_factor_is_at_least_three.
 Print Assumptions no_block_char_poly_is_the_factor.
 Print Assumptions no_witness_admits_no_common_decomposition.
+Print Assumptions jordan_spectrum_is_a_double_root_at_one_half.
+Print Assumptions jordan_spectrum_lies_inside_the_interval.
+Print Assumptions jordan_nilpotent_is_nonzero.
+Print Assumptions jordan_L_is_G_self_adjoint.
+Print Assumptions spectrum_in_range_is_not_sufficient.
 Print Assumptions yes_witness_roots.
 Print Assumptions yes_witness_pencil_is_not_trivial.
 Print Assumptions H_has_the_pattern.

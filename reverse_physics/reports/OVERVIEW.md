@@ -13,8 +13,10 @@ own open conjecture for general relativity. The eighth is the discipline turned
 on this document: an interpretation published here in §3.7 was **retracted**,
 with proof, after an audit found it backwards.
 
-The twelfth (§3.12) reduces the last open question about the ghost to a single
-3×3 eigenvalue test and proves nothing weaker can settle it.
+The twelfth (§3.12) is a **reproduction and a correction**: the criterion it
+derives was already `CLASSIFIED` in the black-hole corpus, the blocker is `T₋`
+rather than `T₊`, and a failure mode had been missed. Recorded because catching
+that is worth more than the derivation was.
 
 The eleventh (§3.11) is the one a reviewer should read first — it is where the
 reverse-physics line and the black-hole programme turn out to have proved the
@@ -495,7 +497,7 @@ hash, and the provenance record fails closed if any of those hashes drift.
 
 [Full report](ghost-and-the-black-hole.md).
 
-### 3.12 The one remaining question, reduced to a finite test
+### 3.12 …and the corpus already had the answer — a reproduction, and a correction
 
 §3.11 left exactly one thing open: does the compatible fundamental symmetry
 **factorise**, `C_out = C₊ ⊕ C_H`, over null infinity and the horizon? The
@@ -504,7 +506,30 @@ lattice says it is *the* question, because a `C` that factorises is a positivity
 statement one could plausibly call physical and one that does not is a formal
 device.
 
-It is now a 3×3 generalised eigenvalue problem.
+**It was already reduced.** `channel_factorized_c_pullback_test_v1` (lifecycle
+`CLASSIFIED`) states the criterion: *a channel-factorized positive fundamental
+symmetry exists iff `L_H = G⁻¹K_H` is diagonalizable with `spec(L_H) ⊂ (0,1)`*,
+where `K_H = A†H_H A` and `K₊ = R†G₊R = G − K_H`. Necessity, sufficiency, a
+determinant audit and **four** exact fixtures are all there.
+
+This stream re-derived the same criterion independently, in a `T₋`-congruent
+presentation — a genuine cross-check, and **not** a new result. Two further
+corrections came out of the comparison, and they are the useful part:
+
+- **The blocker is `T₋`, not `T₊`.** Once `K₊ = G − K_H`, the outgoing connection
+  drops out. Their `minimal_missing_object` is *"a certified full 3×3 `T₋`
+  enclosure on the cell"* — and they record **rejecting** an imported point
+  matrix for lacking an interval enclosure. (`T₊` is separately uncertified
+  across ~30 packages, but it is not what blocks this test.)
+- **A failure mode was missed.** The witnesses below cover positive and non-real
+  spectra. They missed the subtle one: spectrum *inside* the interval with the
+  operator **not diagonalizable** — their `jordan_inside_interval` fixture. With
+  `G = [[0,1],[1,0]]`, `L = [[½,1],[0,½]]`, the spectrum is the double root
+  `½ ∈ (0,1)` and `L − ½I` is nilpotent-nonzero. A spectrum condition alone is
+  not sufficient.
+
+The lesson is ordinary and worth stating: **search the corpus before deriving.**
+What follows is the independent derivation, which stands as a cross-check.
 
 **The two boundary symmetries are not independently choosable.** `C₊ ⊕ C_H`
 preserves `ran(S)` with a common `C₋` exactly when `C₊ = T₊C_H T₊⁻¹` — proved,
@@ -515,10 +540,9 @@ along with its *necessity* (a perturbed `C₊` provably fails to intertwine).
 `M := T₊†G₊T₊` carry a common fundamental decomposition — equivalently whether
 `det(M − λH_out)` has all roots real and positive.
 
-**The missing input is named.** `T₊` is not certified explicit
-(`explicit_Tplus_certified = false`; radial transport at `r = 487/16` heading for
-`r = 4`), and `T₋`'s determinant involves Jost amplitudes with no closed form.
-The *Grams are explicit* — it is the connection that is missing.
+**The missing input is `T₋`.** The Grams are explicit; the *incoming connection*
+is not, because its determinant involves Jost amplitudes with no closed form for
+Regge–Wheeler.
 
 **And nothing weaker will do.** Everything certified about these forms is their
 inertia `(1,2,0)`. Two witnesses — `diag(2,−3,−5)` and `[[1,2,0],[2,1,0],[0,0,−1]]`
@@ -527,9 +551,9 @@ against `H = diag(1,−1,−1)` — have *identical* leading-minor sign patterns
 roots `{2,3,5}` versus the non-real pair of `x²+3`. Explicit `T₊` is not a
 convenience; it is logically required.
 
-The certificate `--check` **fails closed on drift** in
-`axial_explicit_tplus_band_v1`, so the moment `T₊` lands this record breaks and
-says the test can be run.
+The certificate `--check` **fails closed on drift** in the black-hole
+certificates it reads — the mechanism that would have surfaced the prior work had
+it been wired before the derivation rather than after.
 
 [Full report](scattering-c-factorisation.md).
 
@@ -657,7 +681,7 @@ Stated plainly, because the certificates each carry their own version:
 | `..._EXPONENT_ADDITIVITY_ROCQ_V1` | products | and DOF-independence becomes additivity of that exponent |
 | `..._COPRIME_HIERARCHY_ROCQ_V1` | all coprime p:q | the programme's own conjecture: order law proved, even `p` unobstructed, four new instances |
 | `..._COPRIME_CHARGE_BOUND_ROCQ_V1` | all p,q > 0 | and the physics reading of it **retracted**: the obstruction conserves a positive charge, so it bounds rather than destabilises |
-| `..._SCATTERING_C_FACTORISATION_V1` | all Hermitian pairs of inertia (1,2) | **the last open question, reduced**: whether `C` factorises is a 3×3 pencil test; the one missing input is explicit `T₊`; and two witnesses with identical certified inertia answer oppositely, so nothing weaker decides it |
+| `..._SCATTERING_C_FACTORISATION_V1` | all Hermitian pairs of inertia (1,2) | **an independent reproduction, and a correction**: the pencil criterion was already `CLASSIFIED` in the black-hole corpus; the blocker is `T₋` not `T₊`; and a Jordan failure mode had been missed |
 | `..._WEYL_GHOST_DIPOLE_V1` | all rank-two Jordan blocks | **the degenerate case closed, and the cross-programme join**: the dipole admits no positive inner product — a computation the black-hole programme had already done on Schwarzschild, converging on `RP-LOCAL` from the opposite end |
 | `..._WEYL_GHOST_FORCED_V1` | all even dimensions | **the uniqueness theorem IS the ghost theorem**: one equation gives both, so the ghost cannot be tuned away — and dropping `RP-WEYL` or `RP-DIM4` provably does not help |
 | `..._WEYL_ACTION_V1` | all quadratic curvature actions, all dimensions | **the subject itself**: the Weyl action is *equivalent* to five assumptions on the action side and five on the field-equation side; the derivative order is derived, not assumed; parity is independent on actions and redundant on field equations; and odd dimensions admit no conformal curvature action at all |
@@ -721,12 +745,14 @@ The directions that would still yield something:
   such sector at all and `D = 6` selects the *cubic* one. Running the same exact
   linear algebra there tests whether the method scales and whether the parity
   result has an analogue. Declared as `WEYL_ACTION_SIX_DERIVATIVE_D6`.
-- **Explicit `T₊`.** §3.12 reduced the last open question to a 3×3 pencil test
-  and proved nothing weaker can answer it. The single missing input is the
-  outgoing trace map, already the declared objective of
-  `black_hole_programme/phase4/axial_explicit_tplus_band_v1` (radial transport at
-  `r = 487/16`, heading for `r = 4`). When it lands, the test is a few lines of
-  exact linear algebra and the ghost question closes either way.
+- **A certified `T₋` enclosure.** §3.12's comparison shows this is the single
+  missing input for the ghost question — a full 3×3 interval enclosure on the
+  cell in the basis map `(XH0a,XH0b,EH0) → (XI0,XI1,EI0)`. It is the black-hole
+  package's own stated `minimal_missing_object`. With it, `L_H` is assembled and
+  the criterion is a few lines of exact linear algebra.
+- **Search the corpus before deriving.** §3.12 re-derived a `CLASSIFIED` result.
+  The import gates fail closed on drift, but they only help once wired — which
+  should come before the derivation, not after.
 - **Someone reading this and disagreeing.** Three of the five findings are
   negative claims about a live research programme. They should be argued with —
   [`AOP-CONNECTION.md`](AOP-CONNECTION.md) puts two of them in front of that
