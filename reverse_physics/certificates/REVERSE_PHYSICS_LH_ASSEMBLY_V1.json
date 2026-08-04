@@ -30,6 +30,7 @@
   "exact_checks": {
     "C_modulus_squared_matches_report": true,
     "assembly_reproduces_committed_det_LH": true,
+    "coupled_operator_factorises_as_Lx_after_LRW": true,
     "det_ratio_of_grams_equals_C_modulus_squared": true,
     "endpoint_ratio_product_is_C": true,
     "horizon_gram_inertia_is_1_2_0": true,
@@ -58,13 +59,17 @@
     "incoming_gram": {
       "path": "black_hole_programme/phase3/axial_null_flux_gram/certificate.json",
       "sha256": "59fb9b443ce0b92ce016f53c376cb367bcf004e00d1b241ad22ec925e99deed2"
+    },
+    "triangular_preflight": {
+      "path": "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json",
+      "sha256": "1a6ac48dcc52659997cb0ed47709117308ef258c05e6996c559d9ad81f9ae579"
     }
   },
   "lifecycle": "CLASSIFIED",
   "missing_object_ledger": [
     {
       "object": "certified_strictly_triangular_block_of_typed_Tminus",
-      "route": "transport the coupled three-frame of the triangular module, not the two decoupled scalar RW factor equations",
+      "route": "transport the coupled three-frame of the triangular module, not the two decoupled scalar RW factor equations.  The system is the carrier's fourth-order scalar operator, exactly L4 = L_x o L_RW (verified here), whose exact sequence 0 -> M_RW -> M_A4 -> M_x -> 0 is what makes T_- triangular in the first place; the missing block is the coupling between the two factors.  The frame is two future-horizon-regular carrier solutions plus the Einstein-kernel mode EH0.",
       "why_decisive": "det L_H is independent of it, so the committed determinant bound could be derived without it; spec(L_H) is not, and both verdicts are attainable as N varies"
     }
   ],

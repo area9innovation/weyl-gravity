@@ -81,6 +81,9 @@ PINNED = {
     "incoming_connection_report": ROOT / (
         "reports/phase3-axial-incoming-connection-analytic-2026-07-23.md"
     ),
+    "triangular_preflight": ROOT / (
+        "black_hole_programme/phase3/axial_rw_lx_triangular_preflight/certificate.json"
+    ),
 }
 
 W = sp.symbols("omega", positive=True)
@@ -131,6 +134,40 @@ def endpoint_ratios(w=W):
     h_s, i_s = 4 * (w - I) * (2 * w - I), -2 * I * w
     h_e, i_e = -I * w * (4 * w - I) / (4 * (w - I)), -I * w
     return (h_r / i_r, h_s / i_s, h_e / i_e)
+
+
+def coupled_system_factorisation():
+    """The COUPLED system the missing off-diagonal block has to be transported through.
+
+    The triangular preflight certifies an exact factorisation of the carrier's
+    fourth-order scalar operator, L4 = L_x o L_RW, with the rightmost factor acting
+    first.  That factorisation IS the triangular module: the exact sequence
+    0 -> M_RW -> M_A4 -> M_x -> 0 is what makes T_- triangular, and the strictly
+    triangular block is the coupling between the two factors.
+
+    Checked here by composing the two second-order operators symbolically and
+    comparing against the fourth-order coefficients the certificate publishes --
+    independently, since a transport built on a mis-transcribed coefficient would
+    produce a confidently wrong answer.
+    """
+    r = sp.symbols("r")
+    a_rw = 2 / (r * (r - 2)) + 2 * I * W * r / (r - 2)
+    b_rw = -6 * (r - 1) / (r**2 * (r - 2))
+    a_x = 2 * I * (W * r**2 - 3 * I * r + 3 * I) / (r * (r - 2))
+    b_x = 2 * I * (3 * W * r**2 - 4 * W * r - I) / (r * (r - 2) ** 2)
+    d3 = 2 * I * (2 * W * r**2 - 3 * I * r + 2 * I) / (r * (r - 2))
+    d2 = -2 * (2 * W**2 * r**4 - 9 * I * W * r**3 + 12 * I * W * r**2
+               + 3 * r**2 - 12 * r + 8) / (r**2 * (r - 2) ** 2)
+    d1 = -4 * (3 * W**2 * r**4 + 3 * I * W * r**3 - I * W * r**2
+               + 3 * r**2 - 4) / (r**3 * (r - 2) ** 2)
+    d0 = -12 * I * (W * r**2 + 3 * I * r - 4 * I) / (r**3 * (r - 2) ** 2)
+
+    f = sp.Function("P")(r)
+    inner = sp.diff(f, r, 2) + a_rw * sp.diff(f, r) + b_rw * f
+    composed = sp.diff(inner, r, 2) + a_x * sp.diff(inner, r) + b_x * inner
+    target = (sp.diff(f, r, 4) + d3 * sp.diff(f, r, 3) + d2 * sp.diff(f, r, 2)
+              + d1 * sp.diff(f, r) + d0 * f)
+    return sp.simplify(sp.expand(composed - target)) == 0
 
 
 def leading_minors(m):
@@ -194,6 +231,8 @@ def exact_checks():
         # NECESSARY CONDITION for the criterion, and it holds.
         "incoming_gram_inertia_is_1_2_0": sign_pattern_plus_minus_plus(leading_minors(g)),
         "horizon_gram_inertia_is_1_2_0": sign_pattern_plus_minus_plus(leading_minors(h)),
+        # the coupled system the remaining work has to transport through
+        "coupled_operator_factorises_as_Lx_after_LRW": coupled_system_factorisation(),
     }
     return checks, {
         "det_incoming_gram": sp.srepr(det_g),
@@ -247,7 +286,13 @@ def build() -> dict:
                 ),
                 "route": (
                     "transport the coupled three-frame of the triangular module, not "
-                    "the two decoupled scalar RW factor equations"
+                    "the two decoupled scalar RW factor equations.  The system is the "
+                    "carrier's fourth-order scalar operator, exactly L4 = L_x o L_RW "
+                    "(verified here), whose exact sequence 0 -> M_RW -> M_A4 -> M_x -> 0 "
+                    "is what makes T_- triangular in the first place; the missing block "
+                    "is the coupling between the two factors.  The frame is two "
+                    "future-horizon-regular carrier solutions plus the Einstein-kernel "
+                    "mode EH0."
                 ),
             }
         ],
