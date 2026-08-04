@@ -1,0 +1,123 @@
+{
+  "G1_detail": [
+    {
+      "C2": "Mul(Integer(48), Pow(Symbol('M', positive=True), Integer(2)), Pow(Symbol('r', positive=True), Integer(-6)))",
+      "C2_is_nonzero": true,
+      "G1_C2_eq_E4_plus_2Ric2_minus_2R2_over_3": true,
+      "G1_C2_eq_Riem2_minus_2Ric2_plus_R2_over_3": true,
+      "R_is_nonzero": false,
+      "Ric2_is_nonzero": false,
+      "control_wrong_R2_coefficient_fails": false,
+      "control_wrong_Ric2_coefficient_fails": false,
+      "metric": "schwarzschild"
+    },
+    {
+      "C2": "Mul(Integer(48), Pow(Symbol('M', positive=True), Integer(2)), Pow(Symbol('r', positive=True), Integer(-6)))",
+      "C2_is_nonzero": true,
+      "G1_C2_eq_E4_plus_2Ric2_minus_2R2_over_3": true,
+      "G1_C2_eq_Riem2_minus_2Ric2_plus_R2_over_3": true,
+      "R_is_nonzero": true,
+      "Ric2_is_nonzero": true,
+      "control_wrong_R2_coefficient_fails": true,
+      "control_wrong_Ric2_coefficient_fails": true,
+      "metric": "schwarzschild_de_sitter"
+    },
+    {
+      "C2": "Mul(Rational(4, 3), Pow(Symbol('M', positive=True), Integer(2)), Pow(Symbol('r', positive=True), Integer(-6)), Pow(Add(Mul(Pow(Symbol('M', positive=True), Integer(4)), Pow(Symbol('r', positive=True), Integer(8))), Mul(Integer(4), Pow(Symbol('M', positive=True), Integer(3)), Pow(Symbol('r', positive=True), Integer(6))), Mul(Integer(6), Pow(Symbol('M', positive=True), Integer(2)), Pow(Symbol('r', positive=True), Integer(4))), Mul(Integer(4), Symbol('M', positive=True), Pow(Symbol('r', positive=True), Integer(2))), Integer(1)), Integer(-1)), Add(Mul(Pow(Symbol('M', positive=True), Integer(2)), Pow(Symbol('r', positive=True), Integer(10))), Mul(Integer(10), Pow(Symbol('M', positive=True), Integer(2)), Pow(Symbol('r', positive=True), Integer(7))), Mul(Integer(25), Pow(Symbol('M', positive=True), Integer(2)), Pow(Symbol('r', positive=True), Integer(4))), Mul(Integer(6), Symbol('M', positive=True), Pow(Symbol('r', positive=True), Integer(5))), Mul(Integer(30), Symbol('M', positive=True), Pow(Symbol('r', positive=True), Integer(2))), Integer(9)))",
+      "C2_is_nonzero": true,
+      "G1_C2_eq_E4_plus_2Ric2_minus_2R2_over_3": true,
+      "G1_C2_eq_Riem2_minus_2Ric2_plus_R2_over_3": true,
+      "R_is_nonzero": true,
+      "Ric2_is_nonzero": true,
+      "control_wrong_R2_coefficient_fails": true,
+      "control_wrong_Ric2_coefficient_fails": true,
+      "metric": "non_einstein_static"
+    }
+  ],
+  "G2_G3_detail": [
+    {
+      "G2_conformal_law_for_R": true,
+      "G2_control_wrong_coefficient_fails": true,
+      "G3_control_wrong_weight_fails": true,
+      "G3_weyl_has_conformal_weight_two": true,
+      "G3_weyl_is_not_identically_zero": true,
+      "metric": "schwarzschild",
+      "sigma": "r^2/8"
+    },
+    {
+      "G2_conformal_law_for_R": true,
+      "G2_control_wrong_coefficient_fails": true,
+      "G3_control_wrong_weight_fails": true,
+      "G3_weyl_has_conformal_weight_two": true,
+      "G3_weyl_is_not_identically_zero": true,
+      "metric": "schwarzschild",
+      "sigma": "log(r)/3"
+    }
+  ],
+  "G5_detail": {
+    "R": "Mul(Rational(4, 3), Pow(Symbol('t', positive=True), Integer(-2)))",
+    "R_matches_the_named_value_4_over_3tsq": true,
+    "box_R": "Mul(Integer(-1), Rational(8, 3), Pow(Symbol('t', positive=True), Integer(-4)))",
+    "box_R_is_nonzero": true,
+    "witness": "matter-dominated FRW, a(t) = t^(2/3)"
+  },
+  "G5_negative_control_detail": {
+    "R_is_identically_zero": true,
+    "metric": "schwarzschild",
+    "therefore_box_R_is_zero_and_it_cannot_witness_G5": true
+  },
+  "checks": {
+    "G1_E4_form_holds_on_every_metric": true,
+    "G1_holds_on_every_metric": true,
+    "G1_is_non_vacuous": true,
+    "G1_some_metric_can_see_the_R2_term": true,
+    "G1_some_metric_can_see_the_Ric2_term": true,
+    "G1_wrong_R2_coefficient_is_rejected_wherever_visible": true,
+    "G1_wrong_Ric2_coefficient_is_rejected_wherever_visible": true,
+    "G2_holds_for_every_sigma": true,
+    "G2_wrong_coefficient_is_rejected": true,
+    "G3_is_non_vacuous": true,
+    "G3_weyl_weight_two_for_every_sigma": true,
+    "G3_wrong_weight_is_rejected": true,
+    "G5_R_matches_named_value": true,
+    "G5_box_R_nonzero": true,
+    "G5_witness_is_a_real_choice": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "discharged": {
+    "G1": "C^2 = Riem^2 - 2Ric^2 + R^2/3, the coordinate vectors of the classification",
+    "G2": "the conformal law for R, which makes the R^2 component carry the anomaly",
+    "G3": "the Weyl tensor's conformal weight, which the DERIVED derivative order k = D/2 rests on",
+    "G5": "the non-degeneracy witness, previously NAMED and not formalised \u2014 the report's own sharpest self-identified attack"
+  },
+  "does_not_establish": [
+    "any of these identities FOR ALL METRICS \u2014 they are verified at three static metrics and one FRW metric",
+    "the R^2 or Ric^2 coefficients of G1 from a Ricci-flat metric alone: both terms VANISH there, so Schwarzschild cannot discriminate them and the certificate records which metric sees which term",
+    "G4, G6, G7, G8 or the Noether facts N1-N3, which remain imported",
+    "that the curvature engine's BH-0 conventions are the right ones; they are pinned by hash and adopted, not re-derived",
+    "anything about the quantum theory, the BV-BFV complex, or the residual classes"
+  ],
+  "lifecycle_ladder": "reverse-physics-v0",
+  "record_kind": "DISCHARGE \u2014 moves four facts from the GEOMETRY column (imported, unverified) toward the MATHEMATICS column, by computing them in this repository's own exact curvature engine",
+  "result_id": "REVERSE_PHYSICS_WEYL_GEOMETRY_DISCHARGE_V1",
+  "result_state": "IMPORTED_GEOMETRY_PARTIALLY_DISCHARGED",
+  "schema": "reverse-physics-weyl-geometry-discharge-v1",
+  "source_manifest": {
+    "black_hole_programme/weyl_geometry.py": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "rocq/WeylActionClassification.v": "9815c14aabe2b785500c10565f18b31a2328b692c31b6010060ba97f136ca7a5"
+  },
+  "status": "PASS",
+  "still_imported": {
+    "G4": "int sqrt(-g) E4 is topological in D = 4 \u2014 a global statement, not reachable pointwise",
+    "G6": "the parity-odd quadratic invariants are spanned by P; P = C.Cdual in D = 4 \u2014 the engine has no dual yet",
+    "G7": "int sqrt(-g) P is topological \u2014 global, as G4",
+    "G8": "W\u00b1^2 = (C^2 \u00b1 P)/2 \u2014 follows from G6 once the dual exists",
+    "N1_N2_N3": "the Noether facts \u2014 these need the metric VARIATION of the action, not curvature at a point"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m reverse_physics.weyl_geometry_discharge --check"
+  ],
+  "what_this_is": "each fact verified EXACTLY at specific metrics chosen to be non-vacuous. STRICTLY STRONGER than an unverified import and STRICTLY WEAKER than a theorem for all metrics. A discharge, not a proof."
+}

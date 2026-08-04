@@ -1,0 +1,103 @@
+# Four imported facts, discharged — and the search that should have come first
+
+**Certificate** `REVERSE_PHYSICS_WEYL_GEOMETRY_DISCHARGE_V1` — 15 exact checks
+**Engine** `black_hole_programme/weyl_geometry.py`, pinned by hash
+**Verifier** `PYTHONPATH=. python3 -m reverse_physics.weyl_geometry_discharge --check`
+
+---
+
+## The mistake this starts with
+
+[`PHYSICS-VS-MATH.md`](PHYSICS-VS-MATH.md) states its own sharpest weakness:
+
+> **Geometry is imported wholesale.** `G1`–`G8` are standard, but they are **the
+> bulk of the intellectual content** and none of them is machine-checked here.
+
+and ranks the sharpest objection to the whole programme first:
+
+> **Reject `G5`.** … What remains open is that the witness metric — matter-dominated
+> FRW, `a(t) = t^{2/3}`, `R = 4/3t²` — is **named, not formalised**. Formalising it
+> needs a Riemann tensor, **which this development does not have**.
+
+That last clause was true of the reverse-physics stream and **false of the
+repository.** `black_hole_programme/weyl_geometry.py` is an exact
+Christoffel → Riemann → Ricci → Weyl → **Bach** engine with frozen `BH-0`
+conventions, already consumed by a dozen black-hole modules. The Riemann tensor
+was here the whole time; the ledger had simply never been wired to it.
+
+The overview records this exact lesson from an earlier stream — *"search the
+corpus before deriving; the import gates only help once wired, which should come
+before the derivation, not after"* — and this is the second time it applies.
+
+## What is now discharged
+
+| | fact | why it matters |
+|---|---|---|
+| `G5` | matter-dominated FRW gives `R = 4/(3t²)` and `□R = −8/(3t⁴) ≠ 0` | **the sharpest self-identified attack.** Without some metric having `□R ≠ 0` the classification is vacuous — already a theorem — and the input was *named*, now *computed* |
+| `G1` | `C² = Riem² − 2Ric² + R²/3`, equivalently `C² = E₄ + 2Ric² − (2/3)R²` | the coordinate vectors of the entire classification |
+| `G2` | `R[e^{2σ}g] = e^{−2σ}(R − 6□σ − 6(∇σ)²)` | what makes the `R²` component carry the anomaly |
+| `G3` | `C_abcd[e^{2σ}g] = e^{2σ}C_abcd` | **the derived derivative order `k = D/2` rests on this** — the stream's best result about Weyl gravity itself |
+
+`R = 4/(3t²)` is exactly the value the report named. It is now output rather than
+input.
+
+## The control that found something
+
+The wrong-coefficient control initially **failed**, and it was right to.
+
+**Schwarzschild is Ricci-flat**, so `R = 0` *and* `Ric² = 0`. On it, `G1` collapses
+to `C² = Riem²` and holds for *any* coefficients whatsoever — the `R²/3` and the
+`−2Ric²` are simply invisible. A control aggregated over all test metrics would
+have reported a failure that was really a statement about coverage, and a control
+that merely averaged would have hidden it.
+
+So the certificate now records, per metric, **which term that metric can see**:
+
+| metric | `R ≠ 0` | `Ric² ≠ 0` |
+|---|---|---|
+| Schwarzschild | no | no |
+| Schwarzschild–de Sitter | yes | yes |
+| non-Einstein static | yes | yes |
+
+and applies each wrong-coefficient control only where it can discriminate, while
+separately asserting that *some* metric can. Without that pair of clauses the
+whole check would pass on vacuum solutions alone — which is what most of this
+repository computes with.
+
+The same point makes `G5`'s witness a real choice rather than a formality:
+Schwarzschild has `R ≡ 0`, hence `□R ≡ 0`, so **it cannot witness `G5`**. That is
+asserted as its own control.
+
+## What remains imported
+
+Honest, because the point of the middle column is that it is visible:
+
+- `G4`, `G7` — `∫√−g E₄` and `∫√−g P` are topological. **Global** statements; a
+  pointwise curvature engine cannot reach them.
+- `G6`, `G8` — `P = C·C̃` spans the parity-odd invariants, and `W±² = (C² ± P)/2`.
+  The engine has no dual yet; adding one makes both reachable.
+- `N1`–`N3` — the Noether facts. These need the **metric variation** of the
+  action, not curvature at a point. The engine computes the Bach tensor, so the
+  ingredient exists; connecting it to the variation is the next step and it is
+  the one that would turn the field-equation layer from a *definition* into a
+  calculation.
+
+## What this is, and is not
+
+Each fact is verified **exactly** — sympy rationals and symbols, no floating point
+— at specific metrics chosen to be non-vacuous. That is **strictly stronger than
+an unverified import and strictly weaker than a theorem for all metrics.**
+
+It is a discharge, not a proof, and the certificate says so in those words. What
+would make it a proof is a formalised Riemann tensor with the algebraic
+symmetries, which is a different and much larger build.
+
+## Verification
+
+```bash
+PYTHONPATH=. python3 -m reverse_physics.weyl_geometry_discharge --check
+# REVERSE_PHYSICS_WEYL_GEOMETRY_DISCHARGE_V1: PASS — 15 exact checks, engine pinned
+```
+
+Needs sympy; on this workstation that is the mise interpreter,
+`~/.local/share/mise/installs/python/3.12.13/bin/python3`. Runs in ~5 s.

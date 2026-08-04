@@ -279,6 +279,13 @@ Honest limits, because a separation ledger that claims to be clean is not one.
   bulk of the intellectual content and none of them is machine-checked here.
   Deriving even `G1` from a formalised Riemann tensor would move a large block
   from the middle column to the right one.
+  **Half done** ([report](weyl-geometry-discharge.md)): `G1`, `G2`, `G3` and `G5`
+  are now computed exactly against this repository's own curvature engine
+  (`black_hole_programme/weyl_geometry.py`) rather than imported. `G4`, `G6`, `G7`,
+  `G8` and the Noether facts remain — `G4`/`G7` are global and unreachable
+  pointwise, `G6`/`G8` need a dual, and `N1`–`N3` need the metric *variation*.
+  Note what the discharge is: exact verification **at specific metrics**, stronger
+  than an import and weaker than a theorem for all metrics.
 - **The Bach tensor is never computed.** "Same field equations" is *defined* as
   "differ by a topological term". That is `RP-TOPO-INERT`, not a variational
   calculation. §3.2b classifies the *space* of field equations and proves the two
@@ -296,15 +303,18 @@ Honest limits, because a separation ledger that claims to be clean is not one.
 
 The most efficient objections, in order of how much they would cost us:
 
-1. **Reject `G5`.** If `□R` vanished identically the classification would be
-   vacuous — and that is not rhetoric, it is a theorem: replace the input by
-   `False` and *every* action comes out invariant
-   (`without_non_degeneracy_the_classification_is_vacuous`). So the input is
-   load-bearing, visibly. What remains open is that the witness metric —
-   matter-dominated FRW, `a(t) = t^{2/3}`, `R = 4/3t²` — is **named, not
-   formalised**. Formalising it needs a Riemann tensor, which this development
-   does not have. This is the sharpest attack available, and it costs one
-   textbook line to check.
+1. **Reject `G5`.** ~~The witness metric is named, not formalised.~~
+   **This attack is closed** ([report](weyl-geometry-discharge.md)). If `□R`
+   vanished identically the classification would be vacuous — a theorem, not
+   rhetoric (`without_non_degeneracy_the_classification_is_vacuous`). The witness
+   is now **computed**: matter-dominated FRW gives `R = 4/(3t²)` — exactly the
+   value that used to be asserted — and `□R = −8/(3t⁴) ≠ 0`, in this repository's
+   own exact curvature engine. It is also shown to be a real CHOICE rather than a
+   formality: Schwarzschild has `R ≡ 0`, so `□R ≡ 0`, and the vacuum solutions
+   this repository mostly computes with **cannot** witness `G5`.
+   The claim that "this development does not have a Riemann tensor" was true of
+   this *stream* and false of the *repository* — the engine had a dozen consumers
+   already. Searching the corpus before deriving would have found it.
 2. **Deny `RP-TOPO-INERT`.** It is false quantum-mechanically, and the whole
    parity result is stated modulo it. Anyone working at the quantum level should
    reject §4.4's "redundant" and keep parity as a live assumption. We agree; the
