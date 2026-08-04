@@ -235,7 +235,11 @@ class TestTheAOPConnectionCitationsResolve(unittest.TestCase):
                             "AOP-CONNECTION.md cites missing %s" % name)
 
     def test_it_declares_which_of_their_sources_were_read(self):
-        self.assertIn("have **not** read the book", self.text)
+        """The note must say what was read.  It said "have not read the book"
+        until the book was read; the requirement is the DECLARATION, not any
+        particular state of it."""
+        self.assertIn("read directly", self.text)
+        self.assertIn("Assumptions of Physics*, Michigan Publishing", self.text)
 
     def test_it_does_not_claim_to_refute_them(self):
         self.assertIn("scope correction, not a refutation", self.text)

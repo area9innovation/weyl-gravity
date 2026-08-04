@@ -7,12 +7,13 @@ general relativity.
 Written to be readable by them. Everything asserted about our side is
 machine-checked with zero axioms; everything asserted about theirs is cited.
 
-**Sources for their side** are the published papers and the 2024 Summer School
-lecture slides, read directly. We have **not** read the book
-(*Assumptions of Physics*, Michigan Publishing, v2 2023), so where a slide is
-terse we say which of two readings we are responding to rather than assert one.
-§2.1b–2.1d were written against the slides' own labelled characterizations, and
-quote them.
+**Sources for their side** are the published papers, the 2024 Summer School
+lecture slides, and the book (*Assumptions of Physics*, Michigan Publishing,
+v2.0, 2023-10-01, freely available from the project site) — all read directly.
+§2.1b–2.1d were written against the slides' own labelled characterizations and
+§2.1e against the book's own assumption statements, quoted verbatim. Where a
+statement is terse we say which of two readings we are responding to rather than
+assert one.
 
 ---
 
@@ -274,6 +275,62 @@ rather than an objection.
 
 [ss2024]: https://assumptionsofphysics.org/presentations/2024SummerSchool/1-ClassicalMechanics.pdf
 
+### 2.1e The vacuity instrument, turned on the framework
+
+Certificate `REVERSE_PHYSICS_AOP_VACUITY_AUDIT_V1`.
+
+[`carrier-vacuity.md`](carrier-vacuity.md) built an instrument: an assumption is
+`VACUOUS`, `LIVE` or `EMPTY` on a carrier, and it **can be witnessed iff it is
+not vacuous**. Applied to our own ledger it found three assumptions vacuous.
+Pointed here, it mostly comes back clean — and that is the finding.
+
+**Three of the four assumptions are `LIVE`**, and in two cases *you supply the
+witness yourselves*:
+
+| assumption | | witness |
+|---|---|---|
+| Determinism and reversibility | `LIVE` | linear drag + linear acceleration — slide 40 |
+| Kinematic equivalence | `LIVE` | the photon, `H = c\|p\|`, `v = ∂H/∂p` not invertible — slide 13 |
+| Infinitesimal reducibility | `LIVE` | irreducibility, the stated alternative — book p. vii |
+
+That is better than our ledger managed before this session, where three
+assumptions were vacuous and unwitnessed. We report it that way because an
+instrument that only ever found faults in frameworks we disliked would be a
+rhetorical device.
+
+**What it does flag is not an assumption but a derived step.** From the book,
+p. vii, verbatim:
+
+> *"It will need to be a distribution whose value is invariant under coordinate
+> transformations. The state space of the infinitesimal parts, then, comes
+> equipped with an **invariant two-form** upon which we can define such a
+> distribution. The state space is **therefore a symplectic manifold**."*
+
+Symplectic needs the two-form **non-degenerate *and* closed**. The argument
+produces an invariant two-form; closedness is separate. And on the carrier where
+the twelve-fold equivalence is stated — a single degree of freedom, so a
+two-dimensional state space — closedness imposes **no condition at all**:
+
+| dof | `dim M` | 2-forms | `dω = 0` conditions |
+|---|---|---|---|
+| **1** | 2 | 1 | **0** |
+| 2 | 4 | 6 | 4 |
+| 3 | 6 | 15 | 20 |
+
+`d` maps two-forms to three-forms, and a three-form does not exist on a
+two-manifold. Every two-form there is closed for **dimensional reasons having
+nothing to do with reducibility**.
+
+So the closedness half of *"therefore a symplectic manifold"* is vacuous exactly
+where the twelve-fold equivalence lives, and live everywhere else. The step is
+not wrong — it does no work at one degree of freedom, so a reader checking the
+argument there cannot see whether it survives at two.
+
+This is the **same shape** as §2.1c's `H¹ = 0` point, and the same shape as our
+own three: a property attributed to an assumption that the arena supplies for
+free. The cure in every case is to enlarge the carrier until the property can
+fail.
+
 ### 2.2 The fourth desideratum: a parity obstruction
 
 The talk proposes counting degrees of freedom by a spatial volume. Under a
@@ -442,10 +499,11 @@ condition, so it is unaffected.
 ## 4. Reproducing our side
 
 ```bash
-cd rocq && ./run.sh     # 18 green (0 red); coqchk axiom section <none>
+cd rocq && ./run.sh     # 28 green (0 red); coqchk axiom section <none>
 ```
 
-Thirteen zero-axiom Rocq modules, thirteen fail-closed negative controls. The bridge
+Zero-axiom Rocq modules with fail-closed negative controls throughout:
+the gate submits false claims to `coqc` and requires them to be REJECTED. The bridge
 is `rocq/ReversePhysicsAOPBridge.v`, the parity obstruction
 `rocq/ReversePhysicsConformalCount.v`, the refutation
 `rocq/ReversePhysicsNoConformalCount.v`, the positive answer

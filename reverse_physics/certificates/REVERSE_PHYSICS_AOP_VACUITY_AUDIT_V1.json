@@ -1,0 +1,138 @@
+{
+  "certificate": "REVERSE_PHYSICS_AOP_VACUITY_AUDIT_V1",
+  "checks": {
+    "detail": {
+      "closedness_is_live_from_two_degrees_of_freedom": true,
+      "closedness_is_vacuous_exactly_at_one_degree_of_freedom": true,
+      "every_flag_says_where_it_becomes_live": true,
+      "every_live_assumption_names_its_witness": true,
+      "every_source_is_a_resolvable_url": true,
+      "most_of_their_assumptions_are_live": true,
+      "no_assumption_of_theirs_is_marked_vacuous": true,
+      "the_count_is_the_three_form_dimension": true,
+      "the_witnesses_are_credited_to_whoever_supplied_them": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 9,
+    "total": 9
+  },
+  "closedness_table": [
+    {
+      "closedness_conditions": 0,
+      "closedness_is_vacuous": true,
+      "degrees_of_freedom": 1,
+      "state_space_dimension": 2,
+      "two_forms": 1
+    },
+    {
+      "closedness_conditions": 4,
+      "closedness_is_vacuous": false,
+      "degrees_of_freedom": 2,
+      "state_space_dimension": 4,
+      "two_forms": 6
+    },
+    {
+      "closedness_conditions": 20,
+      "closedness_is_vacuous": false,
+      "degrees_of_freedom": 3,
+      "state_space_dimension": 6,
+      "two_forms": 15
+    },
+    {
+      "closedness_conditions": 56,
+      "closedness_is_vacuous": false,
+      "degrees_of_freedom": 4,
+      "state_space_dimension": 8,
+      "two_forms": 28
+    },
+    {
+      "closedness_conditions": 120,
+      "closedness_is_vacuous": false,
+      "degrees_of_freedom": 5,
+      "state_space_dimension": 10,
+      "two_forms": 45
+    }
+  ],
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "any error in their results.  This is a SCOPE observation: every one of the twelve characterizations is correct where it is stated, and the symplectic conclusion is correct wherever the state space is genuinely symplectic",
+    "that closedness FAILS anywhere they apply the framework.  The flag is that the step does no work at one degree of freedom, so a reader checking the argument there cannot see whether it survives at two",
+    "anything from a formalisation of their work.  These are a book and lecture slides read directly; where a statement is terse we say so rather than pick a reading",
+    "completeness.  Their framework has parts -- experimental verifiability, informational granularity, states and processes -- that are not audited here at all"
+  ],
+  "establishes": "The vacuity instrument applied to the Assumptions of Physics framework, from sources read directly.  THREE OF THEIR FOUR ASSUMPTIONS ARE LIVE on the carriers they are stated over, and in two cases the authors supply the witness themselves.  What the instrument flags is not an assumption but a DERIVED STEP with a component the carrier supplies free: the inference 'invariant two-form, therefore a symplectic manifold' needs the form to be CLOSED, and at ONE DEGREE OF FREEDOM closedness imposes ZERO conditions because a three-form does not exist on a two-manifold -- while at n degrees of freedom it imposes C(2n,3), which is 4 at n = 2.  A second flag, already written up, is that R^{2n} has H^1 = 0 so the DI-SYMP/HM-G distinction is not expressible there.",
+  "flags": [
+    {
+      "becomes_live_at": "two degrees of freedom, where closedness imposes C(4,3) = 4 equations per point",
+      "carrier": "a single degree of freedom, i.e. a two-dimensional state space, which is where the twelve-fold equivalence is stated",
+      "id": "CLOSEDNESS-AT-ONE-DOF",
+      "issue": "symplectic requires the two-form to be NON-DEGENERATE and CLOSED.  The argument produces an invariant two-form; closedness is a separate condition",
+      "step": "\"comes equipped with an invariant two-form ... the state space is THEREFORE a symplectic manifold\" (book p. vii)",
+      "verdict_on_their_carrier": "VACUOUS",
+      "why": "d maps two-forms to three-forms, and a three-form does not exist on a two-manifold.  Every two-form there is closed for dimensional reasons having nothing to do with reducibility"
+    },
+    {
+      "already_written_up": "reverse_physics/reports/AOP-CONNECTION.md section 2.1c",
+      "becomes_live_at": "any state space with b_1 != 0; on T^4 the gap is exactly b_1 = 4 at every Fourier truncation, with uniform translation as the explicit witness",
+      "carrier": "R^{2n}, where H^1 = 0",
+      "id": "EXACTNESS-ON-FLAT-PHASE-SPACE",
+      "issue": "preserving omega is CLOSEDNESS of the associated one-form; having a Hamiltonian is EXACTNESS.  They differ by H^1",
+      "step": "the twelve-fold list places HM-G (having a Hamiltonian) and DI-SYMP (preserving omega) in the same block",
+      "verdict_on_their_carrier": "VACUOUS",
+      "why": "on a state space with vanishing first cohomology closed and exact coincide, so the distinction is not expressible there at all"
+    }
+  ],
+  "framing": {
+    "headline": "mostly a credit to them",
+    "why": "three of four assumptions LIVE, two with witnesses the authors supply themselves, is better than our own ledger managed before this session -- where three assumptions were vacuous and unwitnessed",
+    "why_run_it_at_all": "if the instrument only ever found faults in frameworks we dislike it would be a rhetorical device rather than an instrument.  Both flags are the same shape as our own three: a property attributed to an assumption that the arena supplies for free"
+  },
+  "kind": "audit",
+  "report": "reverse_physics/reports/AOP-CONNECTION.md",
+  "sources": [
+    {
+      "url": "https://assumptionsofphysics.org/book/AssumptionsOfPhysicsV2.0.pdf",
+      "what": "the four assumption statements, verbatim",
+      "where": "Assumptions of Physics, Michigan Publishing, v2.0 (2023-10-01), Project Overview, pp. vii-viii"
+    },
+    {
+      "url": "https://assumptionsofphysics.org/presentations/2024SummerSchool/1-ClassicalMechanics.pdf",
+      "what": "the twelve labelled characterizations and the two-block diagram",
+      "where": "Assumptions of Physics Summer School 2024, Classical Mechanics"
+    },
+    {
+      "url": "https://link.springer.com/article/10.1007/s10701-022-00555-z",
+      "what": "the reverse-physics method",
+      "where": "Found. Phys. 52, 40 (2022)"
+    }
+  ],
+  "their_assumptions": [
+    {
+      "carrier": "vector fields S^a on the state space",
+      "name": "Determinism and reversibility",
+      "verbatim": "The system undergoes deterministic and reversible evolution.",
+      "verdict": "LIVE",
+      "witness": "linear drag on one degree of freedom plus linear acceleration on the other: div S = -b + b = 0 so the volume conditions hold, while the curl is -b so the symplectic ones fail.  No Hamiltonian",
+      "witness_supplied_by": "the authors, Summer School 2024 slide 40"
+    },
+    {
+      "carrier": "Hamiltonians on phase space",
+      "name": "Kinematic equivalence",
+      "verbatim": "Specifying the motion of the system is equivalent to specifying its state and evolution.",
+      "verdict": "LIVE",
+      "witness": "the photon treated as a point particle, H = c|p|: the map v = dH/dp is not invertible, so the kinematics does not reconstruct the dynamics",
+      "witness_supplied_by": "the authors, Summer School 2024 slide 13"
+    },
+    {
+      "carrier": "states of a system",
+      "name": "Infinitesimal reducibility",
+      "verbatim": "Specifying the state of the whole system is equivalent to specifying the state of all its infinitesimal parts.",
+      "verdict": "LIVE",
+      "witness": "irreducibility is the stated alternative and is what the programme uses to reach quantum mechanics: 'Specifying the state of the whole system tells us nothing about its infinitesimal parts'",
+      "witness_supplied_by": "the authors, book p. vii"
+    }
+  ]
+}
