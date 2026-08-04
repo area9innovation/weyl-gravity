@@ -1,7 +1,8 @@
 # Toward `T₋`: the transport engine and the horizon start, landed
 
-**Gates** tango `forge/examples/weyl_rw_factor_transport_gate.forge` — 20/20, and
-`forge/examples/weyl_horizon_frobenius_gate.forge` — 34/34.
+**Gates** tango: `weyl_rw_factor_transport_gate.forge` 20/20,
+`weyl_horizon_frobenius_gate.forge` 34/34, `weyl_jost_matching_gate.forge` 26/26,
+and the new library `math/ivtrans` with `ivtrans_gate.forge` 34/34.
 Both `verify -full`: **`c==native`, ASan-clean on both backends**
 **Engine** `math/ivlinode` (rigorous linear IVPs) + `math/interval`
 
@@ -140,14 +141,58 @@ independently of the reduced `V/f²` forms the solver uses.
 The numbers did not change — which is the point. The enclosures were right; the
 *argument* for them wasn't fully rigorous, and one advertised check was absent.
 
-## What remains, precisely
+## Infinity — the matching layer, and a Forge gap closed to reach it
 
-Two things, and they are the harder two:
+**The setup is better than expected.** Substituting `u = e^{−iωr*}ψ` turns the
+Regge–Wheeler form into the certificate's factor form, so `A_in` is simply the
+**constant part** of `u` at infinity. And setting `A_out′ = A_out·e^{−2iωR*}`
+absorbs the unknown phase — same modulus — so the tortoise coordinate drops out
+of the match entirely. The moduli are exactly what
+`det(L_H) = 1/(|A_in₂|⁴|A_in₁|²)` needs.
 
-1. **Infinity** — an *irregular* singular point. Needs a validated asymptotic
-   (Jost) remainder to read `A_in` off `u ~ A_in e^{+iωr*} + A_out e^{−iωr*}`.
-   Unlike the horizon there is no convergent series; the expansion is divergent
-   and needs Levinson/Olver-type error control.
+The corrections are *exactly* computable: the Jost Volterra kernel is bounded by
+`1/ω`, and both tails close in elementary form because `dr* = r dr/(r−2)` cancels
+the `(r−2)` in each potential:
+
+```
+∫_R^∞ V₁ dr* = ∫_R^∞ 6/r² dr           = 6/R
+∫_R^∞ V₂ dr* = ∫_R^∞ (6/r² − 6/r³) dr  = 6/R − 3/R²
+```
+
+with `e^t ≤ 1/(1−t)` giving a rigorous exponential bound and no transcendental at
+all. Both closed forms are checked against `math/ivode`'s validated quadrature.
+
+**But the transport didn't survive the trip — and that turned out to be a Forge
+gap, not a physics one.** Measured:
+
+| R | naive width | interaction picture |
+|---|---|---|
+| 30 | 7.3×10¹² | **1.32** |
+| 100 | 1.5×10⁴⁴ | **1.96** |
+| 400 | 4.0×10¹⁷⁴ | **2.21** |
+| 1500 | **refused** | **2.28** |
+| 6000 | — | **2.30** |
+
+The naive flow suffers Gronwall wrapping: `‖A‖ ~ 2ω/f ~ 1`, so the bound is `e^L`
+and grows without limit with range. In the **interaction picture**
+`u = a + b e^{−2iωr*}` the coefficient is `(V/f)/(2ω) = 3/(ωr²)`, so the Gronwall
+integral *converges* — `∫₃^∞ = 2`, bound `e² ≈ 7.4`, uniformly in `R`. Same
+equation, same solver, same arithmetic; different coordinates.
+
+That route needs `e^{±2iωr*}`, hence validated `log`, `sin`, `cos` — which
+`math/interval` did not have. **So the gap got closed rather than routed around:**
+`math/ivtrans` now supplies `iv_exp`, `iv_log`, `iv_sin`, `iv_cos`, with `π` and
+`ln 2` *derived* in exact rationals (Machin; alternating partial sums bracket the
+limit) rather than typed in. Its gate validates almost entirely by identities —
+`sin²+cos²=1`, double-angle, `exp∘log = id` both ways, `exp(a+b)=exp a·exp b` —
+and feeds the module's own `π` back through its own sine. 34/34, ASan-clean.
+
+## What remains
+
+1. **Tighten the enclosure.** The saturated width `~2.2` is bounded but not sharp,
+   and is dominated by the `[3,30]` leg where the coefficient is largest —
+   starting the interaction picture further out and refining steps is the lever.
+   Then feed the amplitudes through the matching layer, already validated.
 2. **The extension coefficient** coupling the two spin-two copies. The Wronskian
    does not constrain it — it is the one genuinely free transport integral, and
    the reason `det L_H` is known while `spec L_H` is not.
