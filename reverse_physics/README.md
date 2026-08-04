@@ -136,6 +136,9 @@ carrier_vacuity.py                     the VACUOUS / LIVE / EMPTY trichotomy, th
 carrier_enlargements.py                RP-METRIC and RP-LOCAL, the two the audit
                                        found still vacuous -- witnessed by the
                                        same operation
+einstein_classification.py             Lovelock in D = 4 at degree <= 2, from the
+                                       forced head plus divergence-freedom; the
+                                       Lanczos tensor derived, not imported
 
 schema/  certificates/  tests/  reports/
 
@@ -203,6 +206,8 @@ schema/  certificates/  tests/  reports/
 | `..._CARRIER_VACUITY_V1` | `D = 2,3,4`, order 0 | **the operation behind both carrier enlargements**, and the stream's oldest open problem given a shape: the carrier *is* the base, and an assumption vacuous on it is an axiom the base already proves. `RP-DIFF ∧ RP-WEYL` is shown **never simultaneously satisfiable at derivative order zero in any dimension**, which is the sharp form of why the derived order needs `RP-DIFF`. Audit: **three** ledger assumptions are vacuous, not one — [report](reports/carrier-vacuity.md) |
 
 | `..._CARRIER_ENLARGEMENTS_V1` | `D` general, order 0 | **the last two vacuous assumptions, witnessed.** `RP-METRIC`: a compensator gives `√−g φ^{2D/(D−2)}`, diff- *and* Weyl-invariant at derivative order **zero** — the exponent falls out and reproduces `φ⁶,φ⁴,φ³` in `D = 3,4,6`. `RP-LOCAL`: `k − j = D/2` has one solution locally and one per inverse box otherwise, so locality is what makes the classification **unique**. Jointly: the derived derivative order requires **all three** of `RP-DIFF`, `RP-METRIC`, `RP-LOCAL`, each failing differently — [report](reports/carrier-enlargements.md) |
+
+| `..._EINSTEIN_CLASSIFICATION_V1` | `D = 4`, degree ≤ 2 | **Lovelock computed in our own carrier**, closing the one citation the comparison ledger's central claim rested on. No field-equation formula imported: the forced head plus divergence-freedom (`N1`) leaves a two-parameter family, `RP-2ND-ORDER` picks out a unique tensor — **the Lanczos tensor, derived not looked up** — and it vanishes identically in `D = 4`, so degree two contributes nothing and the field equations are `aG_mn + bg_mn`. Also upgrades the Lanczos citation in the trace law — [report](reports/einstein-classification.md) |
 
 There is one further Forge-only result with **no certificate**, deliberately:
 [`c-factorisation-not-determined.md`](reports/c-factorisation-not-determined.md)

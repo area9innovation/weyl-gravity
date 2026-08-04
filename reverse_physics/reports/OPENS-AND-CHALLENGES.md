@@ -69,10 +69,13 @@ Weyl          + RP-WEYL (+ RP-TOPO-INERT)  →  D − 2k = 0 →  B_ab
 ```
 
 Both additions are uniqueness hypotheses, and both uniqueness theorems are
-stated over the same coordinate space. The Einstein one is an **import**
-(Lovelock 1971/72, filed GEOMETRY in the certificate's `swap` block, cited in
-place because the framing is unsupported without it). The Weyl one is **proved
-here**.
+stated over the same coordinate space. The Weyl one is **proved here**, and the
+Einstein one — ~~an import (Lovelock 1971/72, filed GEOMETRY)~~ — is **now
+computed here too** ([report](einstein-classification.md)), at curvature degree
+≤ 2 in `D = 4`, with no field-equation formula imported: divergence-freedom
+leaves a two-parameter family, `RP-2ND-ORDER` picks out the Lanczos tensor, and
+that vanishes identically in `D = 4`. **The swap rests on two computed
+uniqueness theorems.**
 
 **The swap is not a menu.** The conformal weight law `D − 2k = 0` admits a
 Weyl-invariant local curvature action of degree `k` only when `D = 2k`, and

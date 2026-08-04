@@ -212,10 +212,10 @@ SWAP = {
     "einstein_adds": sorted(EINSTEIN_ADDITION),
     "weyl_adds": sorted(WEYL_ADDITION),
     "jointly_unsatisfiable": ["RP-WEYL", "RP-2ND-ORDER"],
-    # The Einstein side's uniqueness theorem is an IMPORT.  It is not proved
-    # here and it is not a row -- it underpins the framing rather than being
-    # compared -- but the swap is unsupported without it, so it is cited in
-    # place with the column it belongs to.
+    # The Einstein side's uniqueness theorem WAS an import, and the asymmetry
+    # -- one computed theorem, one citation -- was exactly what the three-column
+    # discipline exists to make visible.  It is now computed in this stream's
+    # own carrier, at the scope stated below.
     "einstein_uniqueness": {
         "statement": "In D = 4 the only symmetric, divergence-free 2-tensor "
                      "built from the metric and at most its second "
@@ -223,10 +223,24 @@ SWAP = {
                      "a G_ab + b g_ab.  This is what makes RP-2ND-ORDER a "
                      "uniqueness hypothesis rather than a preference, and it "
                      "is the exact counterpart of D - 2k = 0 on the Weyl side.",
-        "column": "GEOMETRY",
-        "status": "CITED",
-        "literature": ["Lovelock, J. Math. Phys. 12 (1971) 498",
-                       "Lovelock, J. Math. Phys. 13 (1972) 874"],
+        "column": "MATHEMATICS",
+        "status": "DISCHARGED",
+        "scope": "curvature degree <= 2 and D = 4.  Full Lovelock is a "
+                 "statement at every degree and in every dimension; the higher "
+                 "Euler densities are not treated",
+        "how": "no field-equation formula is imported.  From the forced "
+               "algebraic head of the Riem^2 variation, divergence-freedom "
+               "(N1, already discharged) leaves a two-parameter family -- the "
+               "span of the Ric^2 and R^2 variations -- and RP-2ND-ORDER picks "
+               "out a unique tensor, which is the Lanczos tensor and vanishes "
+               "identically in D = 4.  So degree two contributes nothing and "
+               "RP-2ND-ORDER collapses the carrier to degree <= 1, where the "
+               "variation gives a G_mn + b g_mn directly",
+        "sources": ["reverse_physics/reports/einstein-classification.md",
+                    "reverse_physics/certificates/REVERSE_PHYSICS_EINSTEIN_CLASSIFICATION_V1.json"],
+        "previously": "CITED to Lovelock, J. Math. Phys. 12 (1971) 498 and "
+                      "13 (1972) 874, which remain the general theorem this "
+                      "reproduces a corner of",
     },
     "why": "The conformal weight law D - 2k = 0 admits a Weyl-invariant local "
            "curvature action of degree k only when D = 2k, and curvature "

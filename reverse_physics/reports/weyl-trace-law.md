@@ -111,8 +111,12 @@ density has identically vanishing variation, so
 E^(Riem²) = 4 E^(Ric²) − E^(R²)
 ```
 
-Same content as `G4`/`N3`, already cited to `EULER_TRANSGRESSION_CERTIFICATE`'s
-`delta_E4_minus_dTheta`. **It is not circular**: the `C²` combination built
+~~Same content as `G4`/`N3`, already cited to `EULER_TRANSGRESSION_CERTIFICATE`'s
+`delta_E4_minus_dTheta`.~~ **Now discharged** ([report](einstein-classification.md)):
+that identity is exactly *"the Lanczos tensor vanishes in `D = 4`"*, and the
+Lanczos tensor is there derived from the forced head plus divergence-freedom and
+checked to vanish identically. The citation is upgraded.
+It was in any case **not circular**: the `C²` combination built
 *through* this identity is what matches `4 B_mn` against an independently
 computed tensor, so the identity is cross-validated rather than assumed into the
 answer. And the trace law is separately checked on the `{Ric², R²}` subspace,

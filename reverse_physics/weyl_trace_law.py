@@ -80,9 +80,13 @@ vanishing variation, so
 
     E^{(Riem^2)} = 4 E^{(Ric^2)} - E^{(R^2)}.
 
-That is the same content as G4/N3, already cited to
-EULER_TRANSGRESSION_CERTIFICATE's `delta_E4_minus_dTheta`.  It is used, not
-re-derived, and the certificate says so.  It is not circular: the C^2
+That is the same content as G4/N3, and was cited to
+EULER_TRANSGRESSION_CERTIFICATE's `delta_E4_minus_dTheta`.  IT IS NOW
+DISCHARGED: REVERSE_PHYSICS_EINSTEIN_CLASSIFICATION_V1 derives the Lanczos
+tensor from the forced head of the Riem^2 variation plus divergence-freedom, and
+checks that it vanishes identically in D = 4 -- which is exactly this identity.
+The certificate's does_not_establish entry below is retained as a record of what
+the status was when this module was written.  It is not circular: the C^2
 combination built THROUGH this identity is what matches 4 B_mn against an
 independently computed tensor, so the identity is cross-validated rather than
 assumed into the answer.  The trace law is additionally checked on the

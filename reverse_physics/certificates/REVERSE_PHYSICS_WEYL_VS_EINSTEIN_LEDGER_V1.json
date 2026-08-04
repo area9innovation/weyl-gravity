@@ -528,13 +528,16 @@
       "RP-2ND-ORDER"
     ],
     "einstein_uniqueness": {
-      "column": "GEOMETRY",
-      "literature": [
-        "Lovelock, J. Math. Phys. 12 (1971) 498",
-        "Lovelock, J. Math. Phys. 13 (1972) 874"
+      "column": "MATHEMATICS",
+      "how": "no field-equation formula is imported.  From the forced algebraic head of the Riem^2 variation, divergence-freedom (N1, already discharged) leaves a two-parameter family -- the span of the Ric^2 and R^2 variations -- and RP-2ND-ORDER picks out a unique tensor, which is the Lanczos tensor and vanishes identically in D = 4.  So degree two contributes nothing and RP-2ND-ORDER collapses the carrier to degree <= 1, where the variation gives a G_mn + b g_mn directly",
+      "previously": "CITED to Lovelock, J. Math. Phys. 12 (1971) 498 and 13 (1972) 874, which remain the general theorem this reproduces a corner of",
+      "scope": "curvature degree <= 2 and D = 4.  Full Lovelock is a statement at every degree and in every dimension; the higher Euler densities are not treated",
+      "sources": [
+        "reverse_physics/reports/einstein-classification.md",
+        "reverse_physics/certificates/REVERSE_PHYSICS_EINSTEIN_CLASSIFICATION_V1.json"
       ],
       "statement": "In D = 4 the only symmetric, divergence-free 2-tensor built from the metric and at most its second derivatives, linear in the second derivatives, is a G_ab + b g_ab.  This is what makes RP-2ND-ORDER a uniqueness hypothesis rather than a preference, and it is the exact counterpart of D - 2k = 0 on the Weyl side.",
-      "status": "CITED"
+      "status": "DISCHARGED"
     },
     "jointly_unsatisfiable": [
       "RP-WEYL",

@@ -1,0 +1,123 @@
+{
+  "certificate": "REVERSE_PHYSICS_EINSTEIN_CLASSIFICATION_V1",
+  "checks": {
+    "detail": {
+      "checked_on_a_non_einstein_metric": true,
+      "checked_on_a_twisted_metric": true,
+      "cosmological_term_is_divergence_free": true,
+      "derived_tensor_is_the_lanczos_tensor": true,
+      "divergence_freedom_alone_leaves_a_two_parameter_family": true,
+      "einstein_tensor_is_divergence_free": true,
+      "einstein_tensor_is_nonzero_somewhere": true,
+      "enough_equations_to_overdetermine": true,
+      "lanczos_tensor_vanishes_identically_in_D4": true,
+      "schwarzschild_is_recovered_as_a_vacuum_solution": true,
+      "second_order_condition_gives_a_unique_tensor": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 11,
+    "total": 11
+  },
+  "closes": {
+    "now": "both sides are computed in the same carrier",
+    "what": "the comparison ledger's swap block listed the Einstein uniqueness theorem as GEOMETRY / CITED (Lovelock 1971/72) while the Weyl side was PROVED"
+  },
+  "degree_one_sector": [
+    {
+      "cosmological_term_is_divergence_free": true,
+      "einstein_tensor_is_divergence_free": true,
+      "einstein_tensor_is_nonzero": false,
+      "is_a_vacuum_solution": true,
+      "metric": "schwarzschild"
+    },
+    {
+      "cosmological_term_is_divergence_free": true,
+      "einstein_tensor_is_divergence_free": true,
+      "einstein_tensor_is_nonzero": true,
+      "is_a_vacuum_solution": false,
+      "metric": "non_einstein_static"
+    }
+  ],
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "derivation": {
+    "derivative_structures": [
+      "boxRmn",
+      "ddR",
+      "g_boxR"
+    ],
+    "derived_coefficients": {
+      "R_Rmn": "2",
+      "RmaRan": "-4",
+      "RmanbRab": "-4",
+      "boxRmn": "0",
+      "ddR": "0",
+      "g_R2": "-1/2",
+      "g_boxR": "0",
+      "g_ric2": "2"
+    },
+    "equations_from_identical_vanishing": 11,
+    "lanczos_reference_coefficients": {
+      "R_Rmn": "2",
+      "RmaRan": "-4",
+      "RmanbRab": "-4",
+      "boxRmn": "0",
+      "ddR": "0",
+      "g_R2": "-1/2",
+      "g_boxR": "0",
+      "g_ric2": "2"
+    },
+    "matches_lanczos": true,
+    "note": "the reference coefficients are used ONLY to compare against; they are never substituted into the computation",
+    "residual_family_dimension_without_second_order": 2,
+    "solutions_with_second_order": 1,
+    "unknown_structures": [
+      "RmanbRab",
+      "RmaRan",
+      "R_Rmn",
+      "g_ric2",
+      "g_R2",
+      "boxRmn",
+      "ddR",
+      "g_boxR"
+    ],
+    "why_two": "adding any multiple of the Ric^2 or R^2 field-equation tensors preserves both the forced head and divergence-freedom, so the residue is exactly their span"
+  },
+  "does_not_establish": [
+    "Lovelock's theorem in general.  This is curvature degree <= 2 and D = 4 only.  The higher Euler densities, which matter in D > 4 and vanish identically in D = 4, are not treated, and neither is any degree above two",
+    "the D > 4 Gauss-Bonnet dynamics.  The decisive fact used here is the IDENTICAL VANISHING of the Lanczos tensor in D = 4; in higher dimensions it does not vanish and the argument changes character",
+    "uniqueness among non-polynomial or nonlocal Lagrangians; the carrier is polynomial in curvature, and RP-LOCAL is a separate assumption with its own witness",
+    "anything about which of a G_mn + b g_mn is physically realised -- the values of a and b are not fixed by anything here"
+  ],
+  "establishes": "Lovelock's conclusion in D = 4 at curvature degree <= 2, computed in this stream's own carrier and exact rational arithmetic, with NO imported field-equation formula.  From the forced algebraic head of delta(sqrt(-g) Riem^2), divergence-freedom (N1, already discharged) leaves a two-parameter family -- the span of the Ric^2 and R^2 variations, as it must -- and imposing RP-2ND-ORDER picks out a unique tensor, which is the LANCZOS TENSOR and is checked to vanish identically in D = 4.  So a degree-two term contributes nothing to any second-order theory, RP-2ND-ORDER collapses degree <= 2 to degree <= 1, and there the variation gives a G_mn + b g_mn with both pieces divergence-free -- the Einstein case being the contracted Bianchi identity discharged rather than quoted.  The comparison ledger's forced swap therefore now rests on TWO computed uniqueness theorems instead of one computed and one cited.",
+  "inputs": {
+    "black_hole_programme/weyl_geometry.py": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c"
+  },
+  "inputs_assumed": [
+    "the forced head: -1/2 g_mn Riem^2 from delta sqrt(-g) and 2 R_mabc R_n^{abc} from lowering indices.  Not a choice",
+    "divergence-freedom of the metric variation of a local diff-invariant action -- N1, discharged in REVERSE_PHYSICS_WEYL_GEOMETRY_DISCHARGE_V1, not a new import",
+    "RP-2ND-ORDER itself, which is the assumption under test"
+  ],
+  "kind": "classification",
+  "report": "reverse_physics/reports/einstein-classification.md",
+  "upgrades": {
+    "how": "that identity is exactly 'the Lanczos tensor vanishes in D = 4', which is discharged here, so the citation is upgraded to a discharge",
+    "what": "weyl_trace_law.py used E^{(Riem^2)} = 4 E^{(Ric^2)} - E^{(R^2)} as a CITED input (the Lanczos/Gauss-Bonnet identity, flagged there as the same content as G4/N3)"
+  },
+  "vanishing_in_D4": [
+    {
+      "metric": "schwarzschild",
+      "vanishes_identically": true
+    },
+    {
+      "metric": "non_einstein_static",
+      "vanishes_identically": true
+    },
+    {
+      "metric": "taub_nut",
+      "vanishes_identically": true
+    }
+  ]
+}
