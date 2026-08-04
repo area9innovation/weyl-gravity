@@ -206,3 +206,40 @@ class TestCertificateBoundary(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestTheAOPConnectionCitationsResolve(unittest.TestCase):
+    """The AOP note asserts things about certificates in this stream.  A
+    dangling reference there is the same failure mode the comparison ledger's
+    C2 check exists to catch, and it fails silently in prose."""
+
+    NOTE = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(
+            os.path.abspath(__file__)))),
+        "reverse_physics", "reports", "AOP-CONNECTION.md")
+
+    def setUp(self):
+        with open(self.NOTE) as fh:
+            self.text = fh.read()
+
+    def test_every_named_certificate_exists(self):
+        import re
+        root = os.path.dirname(os.path.dirname(os.path.dirname(
+            os.path.abspath(__file__))))
+        certs = set(re.findall(r"REVERSE_PHYSICS_[A-Z0-9_]+_V\d", self.text))
+        self.assertTrue(certs, "the note cites no certificates at all")
+        for name in certs:
+            path = os.path.join(root, "reverse_physics", "certificates",
+                                name + ".json")
+            self.assertTrue(os.path.exists(path),
+                            "AOP-CONNECTION.md cites missing %s" % name)
+
+    def test_it_declares_which_of_their_sources_were_read(self):
+        self.assertIn("have **not** read the book", self.text)
+
+    def test_it_does_not_claim_to_refute_them(self):
+        self.assertIn("scope correction, not a refutation", self.text)
+
+    def test_the_ambiguous_reading_is_left_open(self):
+        """Where a slide is terse we must present both readings, not pick one."""
+        self.assertIn("we do not claim to know which is theirs", self.text)

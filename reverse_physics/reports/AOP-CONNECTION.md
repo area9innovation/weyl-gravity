@@ -7,6 +7,13 @@ general relativity.
 Written to be readable by them. Everything asserted about our side is
 machine-checked with zero axioms; everything asserted about theirs is cited.
 
+**Sources for their side** are the published papers and the 2024 Summer School
+lecture slides, read directly. We have **not** read the book
+(*Assumptions of Physics*, Michigan Publishing, v2 2023), so where a slide is
+terse we say which of two readings we are responding to rather than assert one.
+§2.1b–2.1d were written against the slides' own labelled characterizations, and
+quote them.
+
 ---
 
 ## 0. What we are responding to
@@ -147,6 +154,125 @@ right-hand side is satisfied by fields the left-hand side excludes. The
 conjecture needs a third ingredient — a cohomological condition — with no
 counterpart in the finite-dimensional theorem. Their slide asks
 `δ∫L dⁿs = ???`; whatever the answer, it must carry such a term.
+
+### 2.1b Where this sits in the twelve-fold diagram
+
+§2.1 was written against the GR conjecture. The 2024 Summer School lecture
+([*Classical Mechanics*][ss2024], slides 15–41) gives a sharper target: twelve
+labelled characterizations, stated as equivalent **for a single degree of
+freedom**, and a two-block diagram for multiple degrees of freedom.
+
+```text
+HM-G   ⟺  DI-CURL           DR-JAC  ⟺  DR-DIV
+  ⇕          ⇕        ⟹        ⇕          ⇕
+DI-POI ⟺  DI-SYMP           DR-DEN  ⟺  DR-VOL
+```
+
+*"For multiple DOFs, statements about areas are stronger than statements about
+volumes."* The strictness is witnessed on slide 40 by linear drag on one degree
+of freedom and linear acceleration on the other: `∂_a S^a = −b + b = 0`, so
+`DR-DIV` and `DR-VOL` hold, while the curl is `−b ≠ 0`, so `DI-CURL` and
+`DI-SYMP` fail. No Hamiltonian.
+
+Our chain refines that picture in two places.
+
+**A level between the blocks.** Our four-level chain is
+
+```text
+Hamiltonian ⊆ symplectic ⊆ marginal ⊆ volume-preserving
+```
+
+The left block is `symplectic`; the right block is `volume-preserving`. **Our
+`marginal` — each degree of freedom conserves its own information — lies
+strictly between them and has no label in the diagram.** It is not a
+reformulation of either side: on the linear carrier the separation threshold is
+exactly `n = 2` and the gap grows as `2n(n−1)`
+(`REVERSE_PHYSICS_HAMILTONIAN_PRIVILEGE_GENERAL_N_V1`), and on `T⁴` both local
+gaps `symp−marg` and `marg−vol` grow with resolution (table in §2.1). So the
+one-way arrow between the blocks factors through a third condition, and the
+factorisation is quantitative.
+
+**The left block itself is carrier-dependent.** `HM-G` and `DI-SYMP` sit in the
+same block, identified. That identification is correct on `ℝ^{2n}` and **false
+on a state space with `b₁ ≠ 0`**: preserving `ω` is closedness, having a
+Hamiltonian is exactness, and the two differ by `H¹`. On `T⁴` the gap is exactly
+`b₁(T⁴) = 4` at every Fourier truncation, with every nonzero mode contributing
+zero — proved in Rocq for all modes, with uniform translation `X = ∂_{q₁}` as
+the explicit witness.
+
+So the twelve-fold equivalence carries an **unstated hypothesis on the state
+space**, not merely the stated one on the number of degrees of freedom. Adding
+`H¹ = 0` to the single-DOF qualifier would make it exact.
+
+### 2.1c The same point in our own vacuity vocabulary
+
+This is worth stating in the language of
+[`carrier-vacuity.md`](carrier-vacuity.md), because it is the first time we have
+turned that instrument on someone else's assumption set rather than our own.
+
+An assumption is `VACUOUS` on a carrier when it holds on every element, and it
+**cannot be witnessed there** — "no witness found" and "no witness can exist
+here" are different findings. The reverse-mathematics reading is that the
+carrier is the base, and a vacuous assumption is an axiom the base already
+proves.
+
+`ℝ^{2n}` has `H¹ = 0`. On it, *closed* and *exact* coincide, so the distinction
+between `DI-SYMP` and `HM-G` is not merely hard to see — **it is not expressible
+there at all**. The carrier has the identification built in, exactly as our
+curvature-scalar carrier had diffeomorphism invariance built in until we enlarged
+it. Our `T⁴` carrier is the enlargement, and the gap it exposes is `b₁ = 4`.
+
+We found three such assumptions in our own ledger by this route, and the same
+audit run against the twelve-fold list flags one identification rather than an
+assumption. That is a weaker finding than ours were, and it is worth being clear
+that it is a **scope correction, not a refutation**: every one of the twelve
+characterizations is correct where it is stated.
+
+### 2.1d The `IND-*` characterizations are stated per degree of freedom
+
+Slide 41 gives four physical characterizations of degree-of-freedom
+independence:
+
+```text
+IND-DOF    the system is decomposable into independent DOFs
+IND-STAT   statistically independent distributions over each DOF
+IND-INFO   informationally independent distributions over each DOF
+IND-UNC    peaked distributions whose uncertainty is the product over each DOF
+```
+
+All four are stated **over each DOF**, which is the shape our split analysis
+bears on directly.
+
+Slide 37 supplies the natural defence: `ω` itself picks out what a degree of
+freedom is — `ω(dξ, dζ) ≠ 0` iff `{ξ, ζ} = {q^i, p_i}` for some `i`, so
+*"orthogonality represents independence"*. That fixes what counts as a
+**conjugate pair**. It does not fix **which set of conjugate pairs**, because a
+symplectic transformation mixing degrees of freedom produces another set that
+`ω` certifies equally.
+
+And that is exactly where our result bites
+(`REVERSE_PHYSICS_TORUS_SPLIT_ROCQ_V1`): **the same field is marginal for one
+degree-of-freedom split and not for a rotated one, with both splits genuinely
+symplectic.** A per-DOF property is therefore not an invariant of the system
+unless something beyond `ω` fixes the decomposition.
+
+Two readings, and we do not claim to know which is theirs:
+
+- If `IND-*` is meant as *"there exists a decomposition such that…"*, it is
+  well posed and our result is only a warning that the decomposition is part of
+  the claim and should be quantified over explicitly.
+- If it is meant as *"for the decomposition"*, it inherits the ambiguity, and
+  the question *what fixes the split?* is load-bearing rather than
+  presentational.
+
+The stream's own version of this finding is that `inter_dof_closed` looked
+physical and turned out to be the remainder of a bookkeeping choice — for
+**every** pairing `P`, `intra_P ∧ inter_P` is the same proposition, closedness,
+which mentions no split at all (§4.1 of the separation ledger). We were the ones
+who had to retract a reading there, which is why we raise it as a question
+rather than an objection.
+
+[ss2024]: https://assumptionsofphysics.org/presentations/2024SummerSchool/1-ClassicalMechanics.pdf
 
 ### 2.2 The fourth desideratum: a parity obstruction
 
