@@ -327,18 +327,66 @@ used where exactness is *structural* (`iv_sqr`, `iv_pow`, `iv_sqrt`), where it i
 Sign-dispatched multiplication was free at equal precision and cut `verify -full` on
 this gate from 4m10s to 3m23s.
 
-## What remains
+## det(L_H) ∈ [0.659, 0.883] — the budget was being spent in the wrong place
 
-Sharpening only, and the lever is named: `ivlin_affine_fundamental`'s
-exact-rational **reset frames**, which re-precondition periodically and exist for
-exactly this. Brute-force step count converges first order and will not get there
-economically. With a sharp `|A_in_s|`, `det(L_H) = 1/(|A_in₂|⁴|A_in₁|²)` becomes a
-number rather than the programme's `0 < det < 0.9787`, and then `spec(L_H)`
-against `(0,1)` closes the ghost question either way.
+The chain was right. Every one of its *resources* was misallocated, and the fix was
+three measurements, each of which moved the answer more than raising the step count
+ever did. The reset frames named above were never needed.
 
-With all three, `T₋` assembles, `L_H = G⁻¹T₋⁻†H_H T₋⁻¹` follows, and
-`ivmat`'s validated eigenvalue enclosures decide `spec(L_H) ⊂ (0,1)` — closing
-the ghost question either way.
+**The mesh.** `local_transition` encloses `exp(A_box·h)` where `A_box` is a **box**
+over the whole step, so its width goes like `|A'|·h` — the method is **first order
+regardless of the Peano–Baker order**. Cost is therefore governed by `∫|A'| dr`, and
+with `A = c(r)M(θ)`, `c = 6/r²`, `dθ/dr = r/(r−2)`:
+
+    |A'| ~ 6 / (r(r−2))
+
+**That `1/(r−2)` is the oscillation, not the potential** — invisible if you look only
+at `V`. Over `[2.125, 60]` the leg `[2.125, 3]` carries **62% of the weight in 1.5% of
+the length**, while `[10, 60]` absorbs 86% of a uniform mesh's steps to carry 6.8%.
+Grading by `h ∝ |A'|^{−1/2} ∝ √(r(r−2))` — equal steps per unit `arccosh(r−1)` — bought
+**16×** on `|A_in₁|²` at the *same* step count. More than the 4.4× the weight integral
+predicts, because an error made near the horizon is then amplified by the whole
+remaining transport.
+
+**The domain.** After grading, 16× more steps bought 10%. Saturated — and the floor was
+not the integrator. The tail bound is `6/R`, an **additive** error no step count can
+touch, and `4|a|(6/R)` at `R = 60` is 0.8, exactly the width that had stopped moving.
+Grading makes large `r` nearly free, so `R → 6000` took the floor with it.
+
+**The order.** 12 reproduces 4 to **nine significant digits** at 2.1× the cost:
+`αh ≈ 1e−4`, so the truncation tail was never binding — the coefficient box width was.
+
+| | before | after |
+|---|---|---|
+| `det(L_H)` | `≥ 0.0039`, no upper bound | **`[0.659, 0.883]`** |
+| `|A_in₁|²` | `[0, 24.33]` | `[1.172, 1.378]` |
+| `|A_in₂|²` | `[0.051, 3.231]` | `[0.983, 1.049]` |
+
+**Two results, both asserted now rather than printed.**
+
+`det(L_H) ∈ [0.659, 0.883]` lands strictly inside the programme's **independently
+derived** `0 < det(L_H) < 0.9787`. Two unrelated derivations of the same quantity that
+have to agree — and do.
+
+`|A_in₁|² ∈ [1.172, 1.378]`, whose strict lower bound above 1 *is* `|A_out₁|² > 0`:
+**certified nonzero reflection in the spin-one channel.** Spin two is **not** claimed —
+`[0.983, 1.049]` still straddles 1, and a straddle is not a result.
+
+Both checks fail at 20000 steps and both fail at `R = 60`, so they are falsifiable at
+this budget rather than decoration. The under-resolved reporting branch is kept: a run
+that cannot bound the reciprocal must still say so.
+
+## What this does not establish
+
+**The criterion is about eigenvalues.** `spec(L_H) ⊂ (0,1)` is not decided by a
+determinant. `det(L_H) ∈ (0,1)` is a necessary condition and a cross-check on the
+programme's own bound, nothing more. Closing the ghost question needs the spectrum —
+`T₋` assembled, `L_H = G⁻¹T₋⁻†H_H T₋⁻¹` formed, and `ivmat`'s validated eigenvalue
+enclosures applied — not a sharper `det`.
+
+Nearer term, `|A_in₂|²` still straddles 1, so spin-two reflection is undecided. Same
+lever again: the enclosure is now integration-limited rather than domain-limited, so
+step count buys it back at first order until the next floor appears.
 
 ## Verification
 
