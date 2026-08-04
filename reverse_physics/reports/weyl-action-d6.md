@@ -169,6 +169,34 @@ The unexpected part is the **uniform `+1`**: the derivative sector supplies exac
 one more invariant in *every* dimension examined, and the `D = 4` and `D = 5`
 counts — 2 and 2 — were not predicted at all.
 
+### The parity half is answered too — and the answer is yes
+
+**Done:** [`parity-conformal-count.md`](parity-conformal-count.md), certificate
+`REVERSE_PHYSICS_PARITY_CONFORMAL_COUNT_V1`, Forge rail 20/20.
+
+§5 above says the parity half *"is therefore not answered either — whether the
+`D = 4` parity result has a `D = 6` analogue needs the same missing basis."* It
+needed no basis; it needed an `ε`, which nothing in this stream had ever evaluated.
+
+| | | parity-odd invariants |
+|---|---|---|
+| `D = 4`, weight 4 | the Pontryagin density | **1** |
+| `D = 4`, weight 6 | | **2** |
+| `D = 6`, weight 6 | | **2** |
+| odd `D` | none exist, by index counting | **0** |
+
+**There is a `D = 6` analogue.** Both invariants are *exhibited*: the complete
+contractions of one `ε` with three **Weyl** tensors. The Riemann-built parity-odd
+candidates are mostly identically zero, and the ones that are not are not invariant
+on their own — so the parity-odd content is exactly what the Weyl tensor supplies.
+
+The `D = 4` weight-4 row is the known-answer control: it computes what the
+classification gate **asserts** when it calls `W±² = (C² ± P)/2` both Weyl invariant.
+
+**What is still not done**, and it is the sharper half of the original `D = 4`
+result: whether adjoining the parity-odd sector leaves the *field equations*
+unchanged in `D = 6`, as it does in `D = 4`. That is a different computation.
+
 ---
 
 ```bash

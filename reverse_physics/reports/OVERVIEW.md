@@ -855,7 +855,21 @@ The directions that would still yield something:
   one more invariant in every dimension**, which was not predicted, and the `D = 4`
   and `D = 5` values were not either. It remains a **lower bound** — `□²R` is not
   among the candidates — and **no basis is exhibited**, so the third invariant is
-  counted but not written down. The parity half is *still* untouched.
+  counted but not written down.
+- **And the parity half is answered — yes** ([report](parity-conformal-count.md),
+  certificate `REVERSE_PHYSICS_PARITY_CONFORMAL_COUNT_V1`, Forge rail 20/20). The
+  gate's second question needed no missing basis; it needed an `ε`, which nothing
+  in this stream had ever evaluated. Parity-odd pointwise conformal invariants at
+  weight 6: **2 in `D = 4`, 2 in `D = 6`**, and **none in odd dimensions** — that
+  last by index counting rather than computation, since one `ε` carries `D` indices
+  and every weight-6 curvature shape carries an even number. Both invariants are
+  **exhibited**: contractions of one `ε` with three **Weyl** tensors. The
+  Riemann-built candidates are mostly identically zero, so the parity-odd content
+  is exactly what the Weyl tensor supplies. The `D = 4` weight-4 row reproduces the
+  Pontryagin density that `weyl_action_classification_gate` only *asserts* to be
+  Weyl invariant. **Still not done:** whether adjoining the parity-odd sector leaves
+  the *field equations* unchanged in `D = 6`, which is the sharper half of the
+  original `D = 4` result.
 - **Six derivatives in six dimensions.** The weight argument in §3.9 says the
   conformally invariant curvature degree is `k = D/2`, so odd dimensions have no
   such sector at all and `D = 6` selects the *cubic* one. Running the same exact
