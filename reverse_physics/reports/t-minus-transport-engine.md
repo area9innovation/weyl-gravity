@@ -290,6 +290,43 @@ but blows that budget. **Validation and precision are separate axes**: the
 identity holds at this budget; precision is bought by step count, first order in
 step size (widths `31.0, 6.52, 1.34, 0.34` at `4e3, 2e4, 1e5, 4e5` steps).
 
+## The workarounds went back into the substrate
+
+The two bugs above were not really *our* bugs — they were two missing operations in
+`math/interval`, worked around by hand at the call site. Both are now named library
+operations (tango `e8379bb1e`):
+
+- **`iv_sqr`** — a true square. `iv_mul(a,a)` is the product of two *independent*
+  intervals, so `iv_mul([-1,2],[-1,2]) = [-2,4]` where the square is `[0,4]`. The
+  straddling lower bound is **exactly** zero: zero is attained, so there is nothing
+  to round outward.
+- **`iv_nonneg`** — intersect with `[0,∞)`, the sound way to say *this is a modulus*.
+  It **traps rather than clamps** when the enclosure is provably negative, so a
+  contradiction cannot be laundered into a plausible answer.
+- **`iv_pow`** — extremal endpoints by sign and parity, binary exponentiation:
+  `log₂(n)` roundings instead of `n`, with no compounded dependency.
+- **`iv_sqrt`** no longer returns a negative lower bound. `iv_sqrt([0,4])` was
+  `[-4.9e-324, 2.0000000000000004]` — sound as an enclosure, *outside the codomain*,
+  and the reason the next square root in the chain trapped.
+- **`rat_of_f64`** — exact `f64 → Rat`. Every finite float **is** a rational, and
+  without that bridge the module's only oracle widened by an ulp on each side — the
+  same size as the effects directed rounding must get right. The gate now checks
+  4096 interval pairs against true ranges computed in exact rational arithmetic.
+
+The gate drops both hand-written workarounds and reports `|A_in_1|² ∈ [0, 24.33]`
+instead of `[-5e-324, 24.33]`.
+
+**One negative result worth recording.** Exact-aware rounding (error-free
+transformations — the residual is computed exactly, so a bound is bumped only on the
+side it points to, and not at all when the operation is exact) was measured on
+`iv_add`/`iv_sub` and **rejected**: 7.7% slower for 1.5e-10 of width on 3.18. This
+enclosure is truncation-dominated — width falls first order in step count — so the
+same 7.7% spent on steps is worth ≈0.24 instead. The ulp floor is real (24000 exact
+additions accumulate 8.0e-12 out of nothing) but would take ~1e9 steps to bind. It is
+used where exactness is *structural* (`iv_sqr`, `iv_pow`, `iv_sqrt`), where it is free.
+Sign-dispatched multiplication was free at equal precision and cut `verify -full` on
+this gate from 4m10s to 3m23s.
+
 ## What remains
 
 Sharpening only, and the lever is named: `ivlin_affine_fundamental`'s
