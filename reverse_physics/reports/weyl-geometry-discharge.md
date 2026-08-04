@@ -123,8 +123,11 @@ Honest, because the point of the middle column is that it is visible:
   a point. `N1` is discharged above.
   **`N3` is now cited**: it is the *same content* as `G4`'s
   `delta_E4_minus_dTheta`, so the same certificate carries it.
-  **`N2` is the one entry still genuinely open**, and it is the bridge between
-  the action ledger and the field-equation ledger.
+  ~~**`N2` is the one entry still genuinely open**~~ **`N2` is now discharged**
+  ([report](weyl-trace-law.md)) as a trace law, `g^mn E_mn = 2(a + b + 3c)□R`.
+  The bridge between the two ledgers is therefore built: the multiple is `2`,
+  hence nonzero, and `□R ≠ 0` is `G5` above — **`N2` and `G5` need the same
+  witness.** The geometry column is closed.
 
 ## What this is, and is not
 

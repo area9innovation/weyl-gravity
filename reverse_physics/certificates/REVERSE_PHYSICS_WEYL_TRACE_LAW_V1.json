@@ -1,0 +1,150 @@
+{
+  "certificate": "REVERSE_PHYSICS_WEYL_TRACE_LAW_V1",
+  "checks": {
+    "failures": [],
+    "negative_controls_rejected": "4/4",
+    "ok": true,
+    "passed": 19,
+    "total": 19
+  },
+  "conventions": {
+    "E_R2": "2 R R_mn - (1/2) g_mn R^2 + 2 g_mn box R - 2 nabla_m nabla_n R",
+    "E_Ric2": "-(1/2) g_mn Ric^2 - nabla_m nabla_n R + box R_mn + (1/2) g_mn box R + 2 R_manb R^{ab}",
+    "E_Riem2": "4 E_Ric2 - E_R2  (CITED: Lanczos, E4 has vanishing variation in D = 4)",
+    "riemann_coupling_sign": "fixed by DIVERGENCE-FREEDOM, not by choosing a source: the opposite sign is carried as a negative control and fails",
+    "variation": "delta S = int sqrt(-g) E_mn delta g^{mn}"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "any of this FOR ALL METRICS -- it is a DISCHARGE, exact verification at specific metrics, strictly stronger than an unverified import and strictly weaker than a theorem",
+    "the closed forms of the two quadratic field-equation tensors, which are IMPORTED textbook expressions; they are validated here by divergence-freedom, by the Bach cross-check and by the trace law holding at metrics of different symmetry, but not derived",
+    "the Lanczos/Gauss-Bonnet identity E^{(Riem^2)} = 4 E^{(Ric^2)} - E^{(R^2)}, which is CITED (same content as G4/N3); the trace law restricted to the {Ric^2, R^2} subspace needs no Lanczos input and is reported separately",
+    "any quantum statement.  N2 is often phrased as being about the trace anomaly; what is established here is the CLASSICAL variational identity.  Determinants, literature coefficients, beta functions, background trace anomalies and BV master-equation breakings are distinct objects and none of them is this one."
+  ],
+  "establishes": "N2, sharpened.  For S = int sqrt(-g)(a Riem^2 + b Ric^2 + c R^2) the trace of the metric variation is g^{mn} E_mn = 2 (a + b + 3c) box R, where a + b + 3c = 0 is exactly the single linear equation the action classification proves cuts out the Weyl-invariant subspace.  The multiple is 2, hence nonzero, and box R != 0 by G5, so the kernel of the trace map is exactly span{C^2, E4}: this is the RP-WEYL <==> RP-TRACELESS equivalence with its reverse direction supplied.  Additionally the variational link E^{(C^2)}_mn = 4 B_mn is COMPUTED here against the repository's own independently calculated Bach tensor, rather than cited to the Nariai product-family check as before.",
+  "inputs": {
+    "black_hole_programme/weyl_geometry.py": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c"
+  },
+  "kind": "geometry-discharge",
+  "negative_controls": [
+    {
+      "control": "riemann_coupling_sign_flipped",
+      "note": "this is what FIXES the sign convention; it must discriminate",
+      "property": "div E_Ric2 == 0",
+      "rejected": true,
+      "still_holds": false
+    },
+    {
+      "control": "multiple_3_instead_of_2",
+      "property": "trace law",
+      "rejected": true,
+      "still_holds": false
+    },
+    {
+      "control": "weyl_functional_a_b_2c",
+      "note": "if this passed, the kernel of the trace map would not be the Weyl-invariant subspace",
+      "property": "trace law",
+      "rejected": true,
+      "still_holds": false
+    },
+    {
+      "control": "C2_direction_has_nonzero_trace",
+      "property": "tr E^{(C^2)} != 0",
+      "rejected": true,
+      "still_holds": false
+    }
+  ],
+  "non_degeneracy": {
+    "metrics_carrying_the_bach_cross_check": [
+      "non_einstein_static"
+    ],
+    "metrics_that_witness_nothing": [
+      "schwarzschild"
+    ],
+    "metrics_with_box_R_nonzero": [
+      "frw_matter",
+      "non_einstein_static"
+    ],
+    "note": "FRW is conformally flat so B = 0 and it cannot carry the Bach cross-check; Schwarzschild is Ricci-flat AND Einstein so it carries nothing at all and is included to make that visible."
+  },
+  "report": "reverse_physics/reports/weyl-trace-law.md",
+  "result": {
+    "bach_factor": 4,
+    "kernel_of_trace_map": "span{C^2, E4}",
+    "multiple": 2,
+    "multiple_is_nonzero": true,
+    "trace_law": "g^{mn} E_mn = 2 (a + b + 3c) box R",
+    "weyl_functional": "a + b + 3c"
+  },
+  "rows": [
+    {
+      "C2_direction_is_traceless": true,
+      "E4_direction_is_traceless": true,
+      "bach_cross_check_is_non_vacuous": false,
+      "bach_is_nonzero": false,
+      "box_R_is_nonzero": true,
+      "div_E_R2_vanishes": true,
+      "div_E_Ric2_vanishes": true,
+      "metric": "frw_matter",
+      "trace_law_by_probe": {
+        "C2": true,
+        "E4": true,
+        "R2": true,
+        "Ric2": true,
+        "generic": true
+      },
+      "trace_law_holds_on_all_probes": true,
+      "trace_law_holds_without_lanczos_input": true,
+      "weyl_is_nonzero": false,
+      "witnesses_nothing": false
+    },
+    {
+      "C2_direction_is_traceless": true,
+      "E4_direction_is_traceless": true,
+      "E_C2_equals_4_Bach": true,
+      "bach_cross_check_is_non_vacuous": true,
+      "bach_factor_computed": [
+        "4"
+      ],
+      "bach_is_nonzero": true,
+      "box_R_is_nonzero": true,
+      "div_E_R2_vanishes": true,
+      "div_E_Ric2_vanishes": true,
+      "metric": "non_einstein_static",
+      "trace_law_by_probe": {
+        "C2": true,
+        "E4": true,
+        "R2": true,
+        "Ric2": true,
+        "generic": true
+      },
+      "trace_law_holds_on_all_probes": true,
+      "trace_law_holds_without_lanczos_input": true,
+      "weyl_is_nonzero": true,
+      "witnesses_nothing": false
+    },
+    {
+      "C2_direction_is_traceless": true,
+      "E4_direction_is_traceless": true,
+      "bach_cross_check_is_non_vacuous": false,
+      "bach_is_nonzero": false,
+      "box_R_is_nonzero": false,
+      "div_E_R2_vanishes": true,
+      "div_E_Ric2_vanishes": true,
+      "metric": "schwarzschild",
+      "trace_law_by_probe": {
+        "C2": true,
+        "E4": true,
+        "R2": true,
+        "Ric2": true,
+        "generic": true
+      },
+      "trace_law_holds_on_all_probes": true,
+      "trace_law_holds_without_lanczos_input": true,
+      "weyl_is_nonzero": true,
+      "witnesses_nothing": true
+    }
+  ]
+}

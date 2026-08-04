@@ -121,7 +121,7 @@ having a column for it.
 | `G7` | `∫√−g P` is topological | the θ-angle direction |
 | `G8` | `W±² = (C² ± P)/2` | the link to the certified residual classes |
 | `N1` | Noether/diff: the metric variation of a local diff-invariant action is divergence-free | why `RP-DIVFREE` is not an assumption |
-| `N2` | Noether/Weyl: the trace of the variation is a **nonzero** multiple of the anomaly | the bridge between the two ledgers; the non-vanishing is proved load-bearing |
+| `N2` | Noether/Weyl: the trace of the variation is a **nonzero** multiple of the anomaly. **Discharged** ([report](weyl-trace-law.md)) and sharper than stated: `g^mn E_mn = 2(a + b + 3c)□R` | the bridge between the two ledgers; the non-vanishing is proved load-bearing, and the multiple is `2` |
 | `N3` | a topological term has identically vanishing variation | why `RP-TOPO-INERT` disappears on the field-equation side |
 
 `G5` deserves its place in the list. It is the assumption that keeps the theorem
@@ -305,20 +305,26 @@ Honest limits, because a separation ledger that claims to be clean is not one.
   bulk of the intellectual content and none of them is machine-checked here.
   Deriving even `G1` from a formalised Riemann tensor would move a large block
   from the middle column to the right one.
-  ~~**Half done**~~ **Now closed except for `N2`**
-  ([discharge](weyl-geometry-discharge.md), [dual](weyl-dual-discharge.md)):
-  `G1`, `G2`, `G3`, `G5` and `N1` are computed exactly against this
-  repository's own curvature engine (`black_hole_programme/weyl_geometry.py`);
-  `G6`'s computable clause and `G8` in **both signatures** are discharged
-  against `local_bv/hodge.py`'s conventions; `G4`, `G7`, `N3` and `G6`'s
-  spanning clause are **cited** to existing certificates, each carrying its
-  source's own boundary. **`N2` alone remains open** — it needs the metric
-  *variation*, and it is the bridge between the two ledgers.
-  Note what the discharge is: exact verification **at specific metrics**, stronger
-  than an import and weaker than a theorem for all metrics. And note what `G8`
-  turned out to be: **two** statements, not one. `W±² = (C² ± P)/2` is
-  *Euclidean*; the Lorentzian form is `W±² = (C² ∓ iP)/2` with complex
-  projectors, and the textbook form is checked **false** there.
+  ~~**Half done**~~ **Now closed**
+  ([discharge](weyl-geometry-discharge.md), [dual](weyl-dual-discharge.md),
+  [trace law](weyl-trace-law.md)): `G1`, `G2`, `G3`, `G5` and `N1` are computed
+  exactly against this repository's own curvature engine
+  (`black_hole_programme/weyl_geometry.py`); `G6`'s computable clause and `G8`
+  in **both signatures** are discharged against `local_bv/hodge.py`'s
+  conventions; **`N2` is discharged** as a trace law; `G4`, `G7`, `N3` and
+  `G6`'s spanning clause are **cited** to existing certificates, each carrying
+  its source's own boundary. Every entry is now discharged or explicitly cited.
+  Note what a discharge is: exact verification **at specific metrics**, stronger
+  than an import and weaker than a theorem for all metrics.
+  Two things turned out sharper than this document stated them. `G8` is **two**
+  statements, not one — `W±² = (C² ± P)/2` is *Euclidean*, the Lorentzian form
+  is `W±² = (C² ∓ iP)/2` with complex projectors, and the textbook form is
+  checked **false** there. And `N2`'s "nonzero multiple of the anomaly" is
+  `g^mn E_mn = 2(a + b + 3c)□R` — the multiple is `2`, and the anomaly
+  *factorises* into the Weyl-invariance functional `a + b + 3c` times `□R`, so
+  the kernel of the trace map is exactly `span{C², E₄}`. **`N2` and `G5` need
+  the same witness**, which is a concrete reason the middle column has to stay
+  visible.
 - **The Bach tensor is never computed *by this stream*.** "Same field equations" is
   *defined* as "differ by a topological term". That is `RP-TOPO-INERT`, not a
   variational calculation. §3.2b classifies the *space* of field equations and
@@ -329,11 +335,19 @@ Honest limits, because a separation ledger that claims to be clean is not one.
   tensor. Wiring the ledger to it discharges `N1` directly (`∇^a B_ab = 0`, the
   Noether/diff content, computed rather than imported) along with trace-freeness,
   conformal weight `−2`, and `B_ab = 0` on an Einstein metric — the last being why
-  Schwarzschild solves Weyl gravity at all. The **variational link itself**,
+  Schwarzschild solves Weyl gravity at all. ~~The **variational link itself**,
   `δ∫√−g C² = 4∫√−g B_mn δg^mn`, is still not re-derived here; it is checked
-  elsewhere in this repository on the Nariai product family
-  (`d_quotient_classical/reports/nariai-action-derived-bach-endpoint.md`) and is
-  cited rather than repeated.
+  elsewhere in this repository on the Nariai product family and is cited rather
+  than repeated.~~
+  **Now derived** ([report](weyl-trace-law.md)): the `C²` field-equation tensor
+  is assembled from the quadratic pieces and compared against this repository's
+  own independently computed Bach tensor, giving `E^(C²)_mn = 4 B_mn` exactly on
+  every nonzero component, at a metric that is neither Einstein nor conformally
+  flat. **The factor 4 is computed, not assumed**, and it agrees with the value
+  cited to the Nariai product-family check
+  (`d_quotient_classical/reports/nariai-action-derived-bach-endpoint.md`). So
+  "same field equations" no longer rests on `RP-TOPO-INERT` as a *definition*:
+  the field-equation side is now characterized by variation.
 - **No reversal over a weakenable base.** Reverse mathematics compares against a
   base theory one can weaken. Every equivalence here is over a *declared
   carrier*. This is the stream's oldest open problem and it is not closed.

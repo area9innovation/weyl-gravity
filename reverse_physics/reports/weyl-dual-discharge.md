@@ -185,12 +185,14 @@ the field-equation side of the ledger (§3.2b of the separation ledger).
 | `G7` | `∫√−g P` topological | **cited**, local transgression only |
 | `G8` | `W±² = (C² ± P)/2` | **discharged, both signatures** |
 | `N1` | `∇^a B_ab = 0` | discharged |
-| `N2` | trace of the variation is a nonzero multiple of the anomaly | **open** |
+| `N2` | trace of the variation is a nonzero multiple of the anomaly | **discharged** ([report](weyl-trace-law.md)) |
 | `N3` | topological ⟹ vanishing variation | **cited** |
 
-**`N2` is the one entry still genuinely open.** It is the bridge between the
-action ledger and the field-equation ledger, and it needs the metric
-*variation* rather than pointwise curvature algebra — the next thing to do.
+~~**`N2` is the one entry still genuinely open.**~~ **`N2` is now discharged**
+([`weyl-trace-law.md`](weyl-trace-law.md)) as a trace law,
+`g^mn E_mn = 2(a + b + 3c)□R`, closing the geometry column: every entry is
+discharged or explicitly cited to an existing certificate with a stated
+boundary.
 
 ## 7. What this is, and is not
 
