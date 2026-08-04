@@ -1,0 +1,163 @@
+{
+  "assumption_tags": {
+    "consumed": [
+      "RP-LOCAL",
+      "RP-METRIC",
+      "RP-DIFF",
+      "RP-WEYL",
+      "RP-DIM4"
+    ],
+    "namespace_note": "This is a NO-GO in the reverse-physics currency: the assumption set that makes the Weyl action unique is INCOMPATIBLE with RP-NO-GHOST. RP-NO-GHOST is under test in the sense that it is refuted relative to the others, not confirmed.",
+    "under_test": [
+      "RP-WEYL",
+      "RP-DIM4",
+      "RP-LOCAL",
+      "RP-METRIC",
+      "RP-NO-GHOST"
+    ]
+  },
+  "builds_on": "REVERSE_PHYSICS_WEYL_ACTION_V1",
+  "claim_boundary": "In a zero-axiom Rocq development over Q, and independently by exact rational residue evaluation in Forge: two or more distinct simple poles always include one with a negative residue; the conformal weight law D - 2k = 0 forces the pole count to be D/2; hence two or more poles for every even D >= 4, with D = 2 the unique single-pole case. Composed with the standard readings O1-O4, this says the assumption set that determines the Weyl action uniquely also forces an Ostrogradsky ghost in every dimension where the action is non-trivial. Dropping RP-WEYL leaves the curvature degree at two and dropping RP-DIM4 upward raises the pole count, so neither removes the ghost.",
+  "claim_flags": {
+    "DEGENERATE_DIPOLE_CASE_PROVED": false,
+    "DEGREE_OF_FREEDOM_COUNT_DERIVED": false,
+    "DROPPING_RP_DIM4_SHOWN_NOT_TO_HELP": true,
+    "DROPPING_RP_WEYL_SHOWN_NOT_TO_HELP": true,
+    "FORMALLY_VERIFIED_IN_A_PROOF_ASSISTANT": true,
+    "GHOST_FORCED_IN_EVERY_NONTRIVIAL_DIMENSION": true,
+    "LINEARISED_ANALYSIS_OF_WEYL_GRAVITY_PERFORMED": false,
+    "NONLOCAL_OR_MULTIFIELD_ESCAPE_ROUTES_TESTED": false,
+    "PROPAGATOR_COMPUTED": false,
+    "QUANTUM_CLAIM": false,
+    "UNIQUENESS_AND_GHOST_SHOWN_TO_SHARE_ONE_EQUATION": true,
+    "ZERO_AXIOM_DEVELOPMENT": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "any linearised analysis of Weyl gravity. No gauge fixing is performed, no propagator is computed, no degree-of-freedom count is derived. What is proved is a statement about pole counts and residue signs; everything connecting it to 'Weyl gravity has a ghost' is O1-O3, asserted",
+    "the DEGENERATE case, which is the one that actually occurs. Weyl gravity's kinetic operator is Box^2, a DOUBLE pole at k^2 = 0, not two distinct simple poles. That it is a dipole ghost and therefore no better is O3, cited to Riegert 1984, not proved here. The theorems cover the generic split of which it is the limit",
+    "that dropping RP-LOCAL or RP-METRIC actually removes the ghost. Those are citations to the nonlocal-gravity and compensator literature, recorded in escape_lattice.not_settled_here, and nothing in this development touches either class of action",
+    "novelty of the ingredients. That a fourth-order propagator has a ghost is Ostrogradsky and Stelle; that the Weyl action is unique is textbook. The composition, the sharp dimension threshold, and the arithmetic half of the escape lattice are what this record adds",
+    "anything about the BV-BFV complex, the residual classes, the physical spectrum, or the quantum theory. This is the LINEARISED CLASSICAL propagator. The programme's two scoped Lorentzian no-go theorems are neither used nor affected"
+  ],
+  "escape_lattice": {
+    "not_settled_here": {
+      "RP-DIFF": "not analysed. It is what makes the space of curvature scalars the right space at all, so it has no witness in this framework -- an acknowledged gap.",
+      "RP-LOCAL": "PLAUSIBLY YES, but this is a citation, not a theorem. Infinite-derivative (nonlocal) gravity with an entire-function form factor has no extra poles and is advertised as ghost-free -- Biswas, Mazumdar, Siegel and the subsequent literature. Nothing in this development touches nonlocal actions.",
+      "RP-METRIC": "PLAUSIBLY YES, same status. A conformal theory built with a compensator scalar can be second order, hence single-pole. Nothing here covers multi-field actions."
+    },
+    "question": "the ghost is forced by RP-LOCAL, RP-METRIC, RP-DIFF, RP-WEYL, RP-DIM4. Which of the five, if dropped, could remove it?",
+    "settled_here_by_arithmetic": {
+      "RP-DIM4": "NO, and worse. D = 6 forces curvature degree 3, sixth order, three poles.",
+      "RP-WEYL": "NO. Quadratic gravity keeps curvature degree 2, hence fourth order, hence the pole count and the ghost. Stelle 1977."
+    },
+    "the_point": "The interesting content is the NEGATIVE half. It is routine to hope that some variant of conformal gravity is ghost-free; the arithmetic says the two most natural variations -- weaken the symmetry, or change the dimension -- provably do not help. That narrows where to look to locality and field content, both of which leave the theory this repository is about."
+  },
+  "exact_checks": {
+    "exact_rational_arithmetic_upstream": true,
+    "kernel_rechecked_by_coqchk": true,
+    "no_floating_point": true,
+    "two_independent_methods": true,
+    "zero_axiom_development": true
+  },
+  "gate_negative_controls": [
+    "twenty-three inherited from the earlier modules, all rejected",
+    "a FALSE claim that two distinct simple poles can both have positive residues is REJECTED -- that impossibility IS the ghost, and without it a fourth-order propagator could be tuned ghost-free",
+    "a FALSE claim that a single pole has a negative residue is REJECTED -- otherwise the D = 2 case would not be genuinely different and the threshold at D = 4 would be meaningless",
+    "the Forge rail carries its own: the one-pole case is asserted to have NO negative residue, and the partial-fraction identity is checked at five rational points for every pole count -- which is what caught a sign error in the residue formula that the alternation checks alone had passed"
+  ],
+  "gate_result": "RESULT: 25 green (0 red) -- GATE: PASS",
+  "generality_level": "G4_ALL_EVEN_DIMENSIONS",
+  "ledger": {
+    "coqchk_axiom_section": "<none>",
+    "declared_assumptions_in_source": "none -- no Axiom, Parameter, Hypothesis, Conjecture, Admitted or admit",
+    "print_assumptions_closed": "14/14 in WeylGhostForced.v; 187/187 across the twenty modules the shared gate drives",
+    "rationals_not_reals": "the residue arithmetic is over Q and division-free. Coq's R is axiomatised and would put axioms in the ledger for statements that are rational-linear."
+  },
+  "lifecycle_ladder": "reverse-physics-v0",
+  "lifecycle_state": "NECESSITY_CERTIFIED",
+  "next_gate": "WEYL_GHOST_DEGENERATE_LIMIT: prove the dipole case directly rather than citing it. The object is 1/k^4 -- a double pole -- and the statement to prove is that the Jordan block admits no positive-definite inner product, which is exact linear algebra over Q on a 2x2 nilpotent block and is squarely in range. That would move O3 from the asserted column to the proved one, and O3 is currently the load-bearing citation for the case that actually occurs.",
+  "physics_asserted_not_derived": {
+    "O1": "a pole with negative residue in the propagator is a negative-norm state -- a ghost. Standard, and the whole physical reading rests on it.",
+    "O2": "a conformally invariant curvature-degree-k action has a linearised kinetic operator of order 2k, hence k poles in k^2. Standard power counting. Carried as the EXPLICIT hypothesis two_distinct_poles, so the dependency appears in the statement of the theorem rather than in prose.",
+    "O3": "Weyl gravity's own case is the DEGENERATE limit of the generic split: the kinetic operator is Box^2, the propagator 1/k^4, a double pole at k^2 = 0. That is a dipole ghost -- a Jordan block, not a diagonalisable pair -- which is WORSE than the generic case, not better. Riegert 1984; the 6 = 2 + 4 degree-of-freedom count.",
+    "O4": "in two dimensions sqrt(-g) R is the Euler density, hence topological. This is what makes the single-pole case empty rather than interesting."
+  },
+  "provenance": {
+    "gate_script_not_pinned": "rocq/run.sh is harness, deliberately not hash-pinned",
+    "source_manifest": {
+      "rocq/WeylActionClassification.v": "9815c14aabe2b785500c10565f18b31a2328b692c31b6010060ba97f136ca7a5",
+      "rocq/WeylGhostForced.v": "c5d582955d7dd586479f2dd3787cf4a9fd35a491e473a24b9d14928e06edf386"
+    },
+    "upstream_repo": "tango (forge/examples)"
+  },
+  "record_kind": "PROVENANCE_IMPORT -- the mathematics is in rocq/WeylGhostForced.v and tango forge/examples/weyl_ghost_forced_gate.forge; this file computes nothing",
+  "result_id": "REVERSE_PHYSICS_WEYL_GHOST_FORCED_V1",
+  "result_state": "UNIQUENESS_AND_GHOST_IDENTIFIED_AS_ONE_THEOREM",
+  "schema": "reverse-physics-weyl-ghost-forced-v1",
+  "theorems": [
+    {
+      "name": "two_poles_have_opposite_residues",
+      "role": "THE MECHANISM. A fourth-order propagator cannot be made ghost-free by tuning masses -- there is no choice of pole locations that avoids it. Division-free over Q.",
+      "statement": "two distinct simple poles always have residues of opposite sign, for EVERY placement"
+    },
+    {
+      "name": "three_poles_have_a_negative_middle_residue",
+      "role": "adding poles never rescues the situation; the signs alternate. This is the D = 6 case.",
+      "statement": "with three poles the middle residue is negative"
+    },
+    {
+      "name": "one_pole_has_a_positive_residue",
+      "role": "NON-VACUITY. Without it, 'a negative residue appears at two poles' would be a claim about a predicate that is negative everywhere, and the D = 2 case would not be genuinely different.",
+      "statement": "a single simple pole has a positive residue"
+    },
+    {
+      "name": "pole_count_is_half_the_dimension",
+      "role": "THE BRIDGE FROM THE CLASSIFICATION. The same equation that forces the derivative order forces the pole count. This is where the two results become one.",
+      "statement": "the conformal weight law D - 2k = 0 gives 2 * pole_count = D"
+    },
+    {
+      "name": "at_least_two_poles_above_dimension_two / single_pole_iff_dimension_two",
+      "role": "the threshold is sharp, and the ghost-free case is D = 2 alone -- where the action is sqrt(-g) R, topological by O4. The only ghost-free member of the family is empty.",
+      "statement": "two or more poles for every even D >= 4, and exactly one at D = 2"
+    },
+    {
+      "name": "the_uniqueness_theorem_is_the_ghost_theorem",
+      "role": "THE COMPOSITION, and it is a real one: D >= 4 plus the weight law give the pole count, the pole count discharges the O2 bridge, and the bridge feeds the residue lemma. Nothing is decoration.",
+      "statement": "if D >= 4 and the weight law holds, then a residue is negative"
+    },
+    {
+      "name": "at_dimension_two_the_bridge_is_vacuous",
+      "role": "the dimension hypothesis is doing work: the theorem does not secretly apply to everything.",
+      "statement": "at D = 2 the two-pole hypothesis cannot be satisfied"
+    },
+    {
+      "name": "raising_the_dimension_adds_poles",
+      "role": "ESCAPE LATTICE. Dropping RP-DIM4 upward makes the ghost WORSE, not better.",
+      "statement": "D >= 6 forces three or more poles"
+    },
+    {
+      "name": "dropping_weyl_invariance_leaves_the_pole_count_at_two",
+      "role": "ESCAPE LATTICE. Dropping RP-WEYL does not remove the ghost -- this is why Stelle gravity is renormalisable and still has one.",
+      "statement": "quadratic gravity is still curvature degree two, hence still fourth order"
+    }
+  ],
+  "upstream_gate": {
+    "not_verified_here": "the digest is recorded, not re-checked -- the file is in another repository. Re-derive it with sha256sum before trusting this line.",
+    "path": "tango forge/examples/weyl_ghost_forced_gate.forge",
+    "result": "exit 26, 26/26 checks; forge verify -full: c==native, ASan-clean on both backends",
+    "sha256": "1a35bf0aaed39202a2e4d5f1e49e3560bdabea8d87a2a341c68bf285130681d4",
+    "what_the_second_rail_caught": "The first version of the Forge residue used prod_{j != i} (r_j - r_i) instead of prod_{j != i} (r_i - r_j) -- off by (-1)^(n-1). The sign-alternation checks still passed; the partial-fraction identity check failed and located it. That is the difference between a check on the answer and a check on the object.",
+    "why_it_is_a_second_rail": "Different METHOD. The Rocq rail proves the residue signs from division-free sign lemmas over Q, never computing a residue. The Forge rail EVALUATES the residues as exact rationals for pole counts 1 through 6 and checks the partial-fraction identity itself by clearing denominators at five rational points. One argues about signs; the other computes the numbers."
+  },
+  "verification_commands": [
+    "cd rocq && ./run.sh",
+    "PYTHONPATH=. python3 -m reverse_physics.weyl_ghost_forced --check",
+    "cd forge && FORGE_LIB=$PWD/lib forge -run examples/weyl_ghost_forced_gate.forge   # exit 26",
+    "cd forge && FORGE_LIB=$PWD/lib forge verify -full examples/weyl_ghost_forced_gate.forge",
+    "sha256sum forge/examples/weyl_ghost_forced_gate.forge   # must match upstream_gate.sha256"
+  ],
+  "why_this_one_casts_new_light": "The classification alone is textbook and, honestly reported, told nobody anything they did not know -- the value there was the ledger, which is methodological. This is the composition the ledger pointed at, and it is a statement about the subject: the uniqueness theorem and the ghost theorem are the SAME theorem. Both follow from the single equation D - 2k = 0. Because the action is unique, the ghost cannot be tuned away by choosing a better conformal action; and because dropping RP-WEYL or RP-DIM4 provably does not help, the only places left to look are locality and field content."
+}

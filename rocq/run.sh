@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # run.sh — the reverse-physics torus GATE.
 #
-# Nineteen developments, all zero-axiom, in dependency order.  The first four are the
+# Twenty developments, all zero-axiom, in dependency order.  The first four are the
 # torus chain, the next four an INDEPENDENT stochastic carrier, and the last two
 # engage Carcassi-Aidala directly: a BRIDGE restating the torus results in their
 # notation, and a PARITY OBSTRUCTION on their degree-of-freedom counting.
@@ -100,6 +100,15 @@
 #                                  prediction: no conformally invariant local
 #                                  curvature action exists in ODD dimension, at
 #                                  any derivative order.
+#   WeylGhostForced.v              WHY THE CLASSIFICATION MATTERS: the same five
+#                                  assumptions that make the action unique also
+#                                  FORCE the Ostrogradsky ghost.  The conformal
+#                                  weight law pins the pole count at D/2, and two
+#                                  or more simple poles always have a negative
+#                                  residue.  Since the action is unique the ghost
+#                                  cannot be tuned away -- and dropping RP-WEYL
+#                                  or RP-DIM4 provably does not help, which
+#                                  leaves RP-LOCAL and RP-METRIC.
 #   CoprimeHierarchyChargeBound.v  an AUDIT of the physics gloss on those two:
 #                                  J = p n1 + q n2 has the resonant sector as its
 #                                  exact commutant, so EVERY possible obstruction
@@ -122,7 +131,7 @@ set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
 
-MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount ReversePhysicsNoConformalCount ReversePhysicsRelationalCount ReversePhysicsExponentAdditivity CoprimeHierarchyOrderLaw CoprimeHierarchyKernelParity CoprimeHierarchyChargeBound WeylActionClassification WeylParityAndTopology WeylFieldEquations)
+MODULES=(ReversePhysicsTorus ReversePhysicsTorusChain ReversePhysicsTorusReversal ReversePhysicsTorusSplit ReversePhysicsStochastic ReversePhysicsSecondLaw ReversePhysicsEntropyEquality ReversePhysicsEntropyConverse ReversePhysicsAOPBridge ReversePhysicsConformalCount ReversePhysicsNoConformalCount ReversePhysicsRelationalCount ReversePhysicsExponentAdditivity CoprimeHierarchyOrderLaw CoprimeHierarchyKernelParity CoprimeHierarchyChargeBound WeylActionClassification WeylParityAndTopology WeylFieldEquations WeylGhostForced)
 pass=0
 fail=0
 
@@ -549,8 +558,35 @@ Theorem bogus_conformal_action_in_three_dimensions :
 Proof. reflexivity. Qed.
 NEG
 
+# (x) Two simple poles must NOT be able to have residues of the same sign --
+#     that impossibility IS the ghost, and without it the module says nothing.
+cat > _neg_x.v <<'NEG'
+Require Import QArith.
+Require Import WeylGhostForced.
+Open Scope Q_scope.
+(* FALSE on purpose: the residues at two distinct simple poles always have
+   opposite signs.  If both could be positive, a fourth-order propagator could be
+   made ghost-free by tuning the masses, and the whole module collapses. *)
+Theorem bogus_both_residues_positive :
+  forall a b A B : Q, a < b -> A * (b - a) == 1 -> B * (a - b) == 1 -> 0 < B.
+Proof. intros a b A B Hab HA HB. apply (positive_residue (b - a)); lra. Qed.
+NEG
+
+# (y) A SINGLE pole must NOT have a negative residue -- otherwise "the ghost
+#     appears at two poles" is a claim about a predicate true of everything.
+cat > _neg_y.v <<'NEG'
+Require Import QArith.
+Require Import WeylGhostForced.
+Open Scope Q_scope.
+(* FALSE on purpose: one simple pole has residue 1 > 0.  This is the non-vacuity
+   control -- the D = 2 case must be genuinely different from D >= 4. *)
+Theorem bogus_single_pole_is_a_ghost :
+  forall d A : Q, 0 < d -> A * d == 1 -> A < 0.
+Proof. intros d A Hd HA. apply (negative_residue d); lra. Qed.
+NEG
+
 neg_ok=0
-for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _neg_k _neg_l _neg_m _neg_n _neg_o _neg_p _neg_q _neg_r _neg_s _neg_t _neg_u _neg_v _neg_w; do
+for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _neg_k _neg_l _neg_m _neg_n _neg_o _neg_p _neg_q _neg_r _neg_s _neg_t _neg_u _neg_v _neg_w _neg_x _neg_y; do
   if coqc "$n.v" >/tmp/rp_neg.log 2>&1; then
     echo "  $n: FALSE claim was ACCEPTED — REJECT"; neg_ok=1
   else
@@ -558,7 +594,7 @@ for n in _neg_a _neg_b _neg_c _neg_d _neg_e _neg_f _neg_g _neg_h _neg_i _neg_j _
   fi
 done
 if [ "$neg_ok" -eq 0 ]; then pass=$((pass+1)); else fail=$((fail+1)); fi
-rm -f _neg_[a-w].v _neg_[a-w].vo _neg_[a-w].vok _neg_[a-w].vos _neg_[a-w].glob ._neg_[a-w].aux
+rm -f _neg_[a-y].v _neg_[a-y].vo _neg_[a-y].vok _neg_[a-y].vos _neg_[a-y].glob ._neg_[a-y].aux
 
 echo
 if [ "$fail" -eq 0 ]; then

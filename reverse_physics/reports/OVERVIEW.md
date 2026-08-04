@@ -13,9 +13,16 @@ own open conjecture for general relativity. The eighth is the discipline turned
 on this document: an interpretation published here in §3.7 was **retracted**,
 with proof, after an audit found it backwards.
 
-The ninth (§3.9) is the one a reviewer should read first, because it answers the
-objection the other eight invite: **it does reverse physics on Weyl gravity
-itself**, not on a carrier. The action turns out to be *equivalent* to five
+The tenth (§3.10) is the one a reviewer should read first. §3.9 did reverse
+physics on Weyl gravity itself and honestly reported that the physics content was
+textbook — the value was the ledger. §3.10 is what the ledger then pointed at,
+and it *is* about the subject: **the uniqueness theorem and the ghost theorem are
+the same theorem**, both following from the single equation `D − 2k = 0`. Because
+the action is unique the ghost cannot be tuned away, and dropping conformal
+invariance or changing the dimension provably does not help.
+
+§3.9 answers the objection the first eight findings invite: **it does reverse
+physics on Weyl gravity itself**, not on a carrier. The action turns out to be *equivalent* to five
 assumptions rather than implied by six — one of the usual inputs is derivable —
 and one assumption is independent and redundant at the same time, depending on
 whether you are classifying actions or field equations. The separation of
@@ -377,6 +384,58 @@ different objects, the same shape.
 [Full report](weyl-action-reverse-physics.md) ·
 [separation ledger](PHYSICS-VS-MATH.md).
 
+### 3.10 …and the ledger pointed at the thing that actually matters
+
+§3.9 is honest that its physics is textbook. So: does the ledger buy anything
+about *gravity*, or only about method? It buys this.
+
+> **The same five assumptions that make the Weyl action unique also force the
+> Ostrogradsky ghost.**
+
+Both come from one equation. `D − 2k = 0` was used in §3.9 to show the derivative
+order is not an assumption. The same equation pins the **pole count** of the
+propagator at `D/2` — and two or more simple poles always include one with a
+negative residue, because partial-fraction residues alternate in sign. There is
+no placement of poles that avoids it.
+
+| `D` | curvature degree | derivative order | poles | ghost? |
+|---|---|---|---|---|
+| 2 | 1 | 2 | 1 | no — but `√−g R` is topological in 2d |
+| **4** | **2** | **4** | **2** | **yes** |
+| 6 | 3 | 6 | 3 | yes |
+
+**Conformal gravity has a ghost in every dimension in which it is non-trivial,
+and the only ghost-free member of the family is empty.**
+
+The consequence is the useful part. Because the action is *unique*, the ghost
+cannot be engineered away by choosing a better conformal action — there is no
+other conformal action. Every proposal of the form *"conformal gravity but with
+different curvature terms"* is dead, and dead for the same reason the theory is
+canonical. Escape requires dropping an assumption, and two of the five provably
+do not help:
+
+- **drop `RP-WEYL`** → quadratic gravity is still curvature degree 2, still
+  fourth order, ghost survives (Stelle: renormalisable *and* ghost-ridden);
+- **drop `RP-DIM4`** → `D = 6` gives three poles, worse.
+
+That leaves `RP-LOCAL` and `RP-METRIC` — nonlocal form factors and compensator
+scalars — both of which are *citations here, not theorems*, and both of which
+leave the theory. **The negative half is the content**: it is routine to hope
+some variant of conformal gravity is ghost-free, and the arithmetic closes the
+two most natural variations.
+
+Honest limit, and it is the sharp one: Weyl gravity's actual kinetic operator is
+`□²`, a **double** pole, not two distinct simple poles. That the dipole case is
+no better is cited (Riegert 1984), not proved. That citation is load-bearing for
+the case that actually occurs, and closing it is the declared next gate.
+
+The second rail earned its keep here too. The first Forge residue formula had the
+difference reversed — off by `(−1)^{n−1}` — and the sign-alternation checks
+*passed anyway*. The partial-fraction identity check caught it. Checking the
+answer is not checking the object.
+
+[Full report](weyl-ghost-forced.md).
+
 ---
 
 ## 4. The reversal
@@ -501,10 +560,11 @@ Stated plainly, because the certificates each carry their own version:
 | `..._EXPONENT_ADDITIVITY_ROCQ_V1` | products | and DOF-independence becomes additivity of that exponent |
 | `..._COPRIME_HIERARCHY_ROCQ_V1` | all coprime p:q | the programme's own conjecture: order law proved, even `p` unobstructed, four new instances |
 | `..._COPRIME_CHARGE_BOUND_ROCQ_V1` | all p,q > 0 | and the physics reading of it **retracted**: the obstruction conserves a positive charge, so it bounds rather than destabilises |
+| `..._WEYL_GHOST_FORCED_V1` | all even dimensions | **the uniqueness theorem IS the ghost theorem**: one equation gives both, so the ghost cannot be tuned away — and dropping `RP-WEYL` or `RP-DIM4` provably does not help |
 | `..._WEYL_ACTION_V1` | all quadratic curvature actions, all dimensions | **the subject itself**: the Weyl action is *equivalent* to five assumptions on the action side and five on the field-equation side; the derivative order is derived, not assumed; parity is independent on actions and redundant on field equations; and odd dimensions admit no conformal curvature action at all |
 
-Nineteen zero-axiom Rocq modules, `coqchk` axiom section `<none>`, twenty-three
-fail-closed negative controls, three Forge gates on both backends under ASan, two
+Twenty zero-axiom Rocq modules, `coqchk` axiom section `<none>`, twenty-five
+fail-closed negative controls, four Forge gates on both backends under ASan, two
 independent Python rails. `rocq/ReversePhysicsAOPBridge.v` additionally proves
 that the ω used throughout **is** their `J ⊗ Iₙ`, so the engagement in §3.6 is
 bridged rather than asserted.
@@ -559,6 +619,12 @@ The directions that would still yield something:
   such sector at all and `D = 6` selects the *cubic* one. Running the same exact
   linear algebra there tests whether the method scales and whether the parity
   result has an analogue. Declared as `WEYL_ACTION_SIX_DERIVATIVE_D6`.
+- **The degenerate dipole.** §3.10's load-bearing citation is that `1/k⁴` — a
+  double pole, which is the case that actually occurs — is no better than two
+  distinct poles. Proving it is exact linear algebra on a 2×2 nilpotent block
+  over ℚ: show the Jordan block admits no positive-definite inner product. In
+  range, and it converts the weakest link in that argument into a theorem.
+  Declared as `WEYL_GHOST_DEGENERATE_LIMIT`.
 - **Someone reading this and disagreeing.** Three of the five findings are
   negative claims about a live research programme. They should be argued with —
   [`AOP-CONNECTION.md`](AOP-CONNECTION.md) puts two of them in front of that

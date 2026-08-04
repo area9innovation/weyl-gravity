@@ -316,7 +316,16 @@ The most efficient objections, in order of how much they would cost us:
 4. **Point out the theorem is textbook.** True, and stated in the certificate's
    `does_not_establish`. The claim is about the ledger, the witnesses, the
    derived derivative order and the parity result — not about the classification.
-5. **Ask what any of this predicts.** The sharpest thing on offer is negative
+5. **Ask whether the ledger buys anything about gravity, or only about method.**
+   That was the right question, and it has an answer:
+   [`weyl-ghost-forced.md`](weyl-ghost-forced.md). The same equation `D − 2k = 0`
+   that makes the derivative order derivable also pins the propagator's pole
+   count at `D/2`, and two or more poles always include a negative residue — so
+   **the uniqueness theorem and the ghost theorem are the same theorem**, and the
+   ghost cannot be tuned away by picking a different conformal action. Dropping
+   `RP-WEYL` or `RP-DIM4` provably does not help. That is a statement about the
+   subject, not about the method, and the ledger is what surfaced it.
+6. **Ask what any of this predicts.** The sharpest thing on offer is negative
    and cheap to check: the conformally invariant curvature degree in `D`
    dimensions is `k = D/2`, so **odd dimensions have no conformally invariant
    local curvature action at all**, at any derivative order, and each even
@@ -339,7 +348,11 @@ implication, one assumption that is independent and redundant at the same time
 depending on what you are classifying — and the discovery that the *count itself*
 depends on whether you write the theory as an action or as a field equation.
 
-Applied to this stream's own earlier work, it retracted a published claim.
+Applied to this stream's own earlier work, it retracted a published claim. And
+applied to its own textbook result, it produced one that is not textbook: the
+assumption set that makes the Weyl action unique is *incompatible* with
+`RP-NO-GHOST`, which is a no-go in exactly the currency reverse physics deals
+in.
 
 ---
 
