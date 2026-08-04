@@ -94,6 +94,24 @@ quadratic. Until that exists the `D = 6` count is a **citation**, and is marked
 **The parity half of the gate is therefore not answered either** — whether the
 `D = 4` parity result has a `D = 6` analogue needs the same missing basis.
 
+### The blocker dissolves on inspection
+
+Written up separately as [`d6-forge-brief.md`](d6-forge-brief.md): the basis is
+needed only by the **symbolic** route. Evaluate candidate contractions at enough
+exact metrics and take the **rank over ℚ**, and every identity — Riemann
+symmetries, both Bianchis, dimension-dependent identities — makes the
+evaluations linearly dependent *automatically*. The rank quotients by all of them
+without any being written down.
+
+And the total-derivative quotient is not needed for *this* question: the three
+`D = 6` invariants are **type-B**, i.e. *pointwise* conformal invariants, while
+`E₆` is type-A and is not. So the pointwise route returns exactly the number
+wanted, with `E₆` correctly absent.
+
+What remains is one genuine substrate gap — Forge's curvature layer inverts only
+**diagonal** metrics, and diagonal metrics in `D = 6` are too special — plus the
+controls. The brief has both.
+
 ---
 
 ```bash
