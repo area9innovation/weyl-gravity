@@ -250,32 +250,45 @@ PYTHONPATH=. python3 -m unittest reverse_physics.tests.test_hamiltonian_privileg
 ## Independence from the Weyl programme
 
 ~~This directory imports nothing from the classical BV–BFV complex or from
-`quantum-weyl/`.~~ **That is no longer accurate, and the exact position is:**
+`quantum-weyl/`, and nothing here may be cited inside those chains or vice
+versa.~~ **That rule was over-broad and has been replaced by four conditions**,
+enforced by `reverse_physics/chain_imports.py`
+(`REVERSE_PHYSICS_CHAIN_IMPORTS_V1`).
 
-**What is imported, and why.** Discharging the GEOMETRY column meant computing
-against something. Three modules import
-`black_hole_programme/weyl_geometry.py` — the exact Christoffel / Riemann /
-Ricci / Weyl / Bach engine — **as a computational tool, pinned by SHA-256**, and
-fail closed on drift. `weyl_dual_discharge.py` additionally reproduces
-`quantum-weyl/local_bv/hodge.py`'s `star_square_sign` as a *checked row*, and
-**cites** `EULER_TRANSGRESSION_CERTIFICATE` and
-`symbolic/verify_conformal_dynamical_topological.py` for `G4`, `G7` and `N3`,
-each carrying its source's own declared boundary.
+The ban was protecting against three things. **Circular evidence** is the real
+one — if the chains cite this stream *and* this stream cites the chains, the two
+prop each other up and look like independent confirmation. But circularity needs
+a **cycle**, and the dependency has always been one-way: the scan finds **no
+certificate outside this stream citing it**, only `planning/` work items and
+events, which are coordination rather than evidence. A ban on citing *into* this
+stream forbids something that cannot close the loop.
 
-**Why that is the middle column working, not a leak.** `G1`–`G8` and `N1`–`N3`
-are *by construction* imported results — that is what the GEOMETRY column is
-for. Citing an in-repository certificate with a machine-readable boundary is
-strictly more auditable than citing a textbook, which is what the alternative
-was. Nothing imported is used to establish a PHYSICS-column claim.
+**Tag laundering** is also real, and sharpest where this stream is headed next —
+the ghost question is exactly where a Euclidean or reduced-mode result could get
+quoted as if it settled a Lorentzian one. But that is prevented by *carrying the
+boundary*, not by refusing to cite. **Staleness** is the weakest, and content
+hashes solve it.
 
-**What the `forbid` still buys, in the direction that matters.** No certificate
-in this stream is cited as evidence inside the classical or quantum Weyl chains.
-That is the load-bearing half: the chains do not lean on this stream, so nothing
-here can prop up a result over there. `diff_independence.py` and
-`weyl_vs_einstein_ledger.py` import nothing outside `reverse_physics/` at all.
+What the old clause did not state, and what is worth preserving: part of this
+stream's value is that it audits the programme **from outside** — it is how it
+could say *"your carrier has the answer baked in"* about this repository's own
+ledger and about an external programme's framework. An auditor that shares the
+auditee's *inputs* is weaker. That argues for keeping the **evidence direction**
+clean, not for refusing to read.
 
-**The tension is real and is recorded rather than resolved.** The work item's
-`forbid` says "or vice versa", and the `G4`/`G7`/`N3` citations are that
-direction. They are visible, hashed, and boundary-carrying — but a reader who
-reads the `forbid` strictly should know the stream now takes three imports from
-the quantum chain, and that they are all GEOMETRY-column entries.
+| | condition |
+|---|---|
+| **C1** | **No cycles.** No certificate in the Weyl chains may cite this stream as evidence. One-way only. |
+| **C2** | **Tags travel.** Every import declares its source's dependency tags, and no claim here may be stated at a tag its inputs do not support. The prohibition *"`REDUCED-MODE` and `EUCLIDEAN-SPECTRAL` are not evidence for `LORENTZIAN-CAUSAL`"* is mechanical. |
+| **C3** | **Pinned, fail-closed.** Content-hashed; drift fails. |
+| **C4** | **Middle column only.** Imports land in `GEOMETRY`, never establishing a `PHYSICS`-column claim. |
+
+Seven imports: two tools/conventions and five evidence. Two come from sources
+that **declare no dependency tag at all** — `symbolic/verify_conformal_dynamical_topological.py`
+and Paper 18. A tag that does not exist cannot be carried, so those are recorded
+`UNDECLARED` and nothing tagged may rest on them. Surfacing that beats silently
+assuming the weakest tag on the source's behalf.
+
+```bash
+PYTHONPATH=. python3 -m reverse_physics.chain_imports --check
+```

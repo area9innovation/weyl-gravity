@@ -1,0 +1,249 @@
+{
+  "certificate": "REVERSE_PHYSICS_CHAIN_IMPORTS_V1",
+  "checks": {
+    "detail": {
+      "C1_no_certificate_outside_this_stream_cites_it": true,
+      "C1_scan_actually_ran": true,
+      "C2_no_claim_exceeds_its_inputs": true,
+      "C2_tag_vocabulary_is_fixed": true,
+      "C3_every_import_resolves_and_is_pinned": true,
+      "C4_every_import_lands_in_the_middle_column": true,
+      "every_import_states_a_boundary": true,
+      "undeclared_sources_are_surfaced_not_assumed": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 8,
+    "total": 8
+  },
+  "conditions": {
+    "C1": "no cycles -- one-way only, planning/ excluded as coordination",
+    "C2": "tags travel -- no claim at a tag its inputs do not support",
+    "C3": "pinned and fail-closed on drift",
+    "C4": "middle column only -- never a PHYSICS-column claim"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "that the imported results are correct.  They are cited with their own boundaries; this rail checks the DISCIPLINE of the citation, not the content",
+    "that the one-way dependency will stay one-way.  C1 is a scan of the repository as it is now, and it is the check that must be re-run, not a theorem",
+    "a per-certificate account of which import feeds which claim.  C2 compares the UNION of tags claimed across the stream against the UNION of import tags, which is conservative rather than precise",
+    "anything about sources that declare no dependency tag.  Two imports are UNDECLARED; nothing tagged may rest on them, and recording that is the point rather than assuming a tag on the source's behalf"
+  ],
+  "establishes": "The four conditions that replace this stream's former blanket ban on citing the Weyl classical and quantum chains, and their mechanical enforcement.  NO CYCLES: the dependency is one-way and the scan confirms no certificate outside this stream cites it (planning/ excluded as coordination).  TAGS TRAVEL: every import declares its source's dependency tags, and the programme's explicit prohibition -- REDUCED-MODE and EUCLIDEAN-SPECTRAL are not evidence for LORENTZIAN-CAUSAL -- is enforced against every tag this stream's certificates claim.  PINNED: content-hashed, drift fails.  MIDDLE COLUMN ONLY: every import lands in GEOMETRY and none may establish a PHYSICS-column claim.",
+  "imports": [
+    {
+      "boundary": "a tool, not a claim.  Nothing is imported FROM it as evidence; it computes, and what it computes is checked here against controls and negative controls",
+      "column": "GEOMETRY",
+      "kind": "TOOL",
+      "path": "black_hole_programme/weyl_geometry.py",
+      "purpose": "the exact Christoffel / Riemann / Ricci / Weyl / Bach engine, used as a computational instrument by the geometry discharges, the trace law and the Einstein classification",
+      "source_tags": [
+        "LOCAL-ALGEBRAIC"
+      ]
+    },
+    {
+      "boundary": "reproduced as a CHECKED ROW, not assumed: the index placement is chosen so that it reproduces star_square_sign, and that reproduction is a row that can fail",
+      "column": "GEOMETRY",
+      "kind": "CONVENTION",
+      "path": "quantum-weyl/local_bv/hodge.py",
+      "purpose": "star_square_sign and the Hodge eigenvalues, which fix the signature convention for G6/G8",
+      "source_tags": [
+        "LOCAL-ALGEBRAIC"
+      ]
+    },
+    {
+      "boundary": "the VARIATIONAL content only.  NOT an index theorem and NOT a global triviality claim.  The source's own not_computed list includes the antifield/Koszul-Tate completion and relative cohomology nontriviality",
+      "column": "GEOMETRY",
+      "kind": "EVIDENCE",
+      "path": "quantum-weyl/local_bv/certificates/EULER_TRANSGRESSION_CERTIFICATE.json",
+      "purpose": "G4 and N3 -- the variational content, delta E4 = d Theta and the closed-manifold integrated variation",
+      "source_tags": [
+        "LOCAL-ALGEBRAIC"
+      ]
+    },
+    {
+      "boundary": "quoted verbatim from the source: \"Global triviality of the Pontryagin class is explicitly not claimed.\"  The transgression is LOCAL.  The source declares no dependency tag, so nothing tagged may rest on it",
+      "column": "GEOMETRY",
+      "kind": "EVIDENCE",
+      "path": "symbolic/verify_conformal_dynamical_topological.py",
+      "purpose": "G7 -- the Chern-Weil transgression Tr(R^R) = d Tr(Gamma dGamma + 2/3 Gamma^3)",
+      "source_tags": [
+        "UNDECLARED"
+      ]
+    },
+    {
+      "boundary": "a statement about EQUATIONS AND SOLUTION LOCI only.  It does not identify actions, symplectic forms, gauge quotients, observables or boundary-value problems -- and one of those identifications is separately REFUTED",
+      "column": "GEOMETRY",
+      "kind": "EVIDENCE",
+      "path": "bridge/certificates/einstein_sector_theorem.json",
+      "purpose": "the comparison ledger's O-EINSTEIN-SOLUTIONS -- every Einstein vacuum solution is a Weyl solution",
+      "source_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ]
+    },
+    {
+      "boundary": "the source's own: not a full metric BV theorem, not a null-infinity current, not a complete Einstein scattering no-go; leaves compensators, symmetry breaking, nonlocal/corner extensions, soft data and curved boundary-selected sectors open",
+      "column": "GEOMETRY",
+      "kind": "EVIDENCE",
+      "path": "reports/flat-einstein-symplectic-restriction.md",
+      "purpose": "the comparison ledger's C-NOT-A-SUBSYSTEM -- the Einstein symplectic embedding is refuted on the reduced flat TT sector",
+      "source_tags": [
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    {
+      "boundary": "an exact STATIC and LINEAR-SPHERICAL charge theorem, not a physical-process or radiative thermodynamics theorem.  It is the MATHEMATICS half of a pair whose PHYSICS half (rotation curves) is cited to the literature and is NOT established by it",
+      "column": "GEOMETRY",
+      "kind": "EVIDENCE",
+      "path": "paper/18-static-bach-flat-black-hole-thermodynamics.tex",
+      "purpose": "the comparison ledger's O-STATIC-FAMILY -- the Mannheim-Kazanas family with residual-basic charges and simultaneous horizon first laws",
+      "source_tags": [
+        "UNDECLARED"
+      ]
+    }
+  ],
+  "kind": "discipline",
+  "no_cycles": {
+    "coordination_references": 17,
+    "files_scanned_citing_this_stream": 122,
+    "note": "planning/ is excluded: work items and events are coordination artifacts, not evidence chains",
+    "ran": true,
+    "violations": []
+  },
+  "pins": {
+    "black_hole_programme/weyl_geometry.py": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "bridge/certificates/einstein_sector_theorem.json": "c4ed958ad7db67296039a573afbec5e5338d496bbbf1eecc43111a2d105b0896",
+    "paper/18-static-bach-flat-black-hole-thermodynamics.tex": "9f8ee2e2d25bef1731b1d33656a07f8218c7b0be2b94ff9701b572fe6f94fd10",
+    "quantum-weyl/local_bv/certificates/EULER_TRANSGRESSION_CERTIFICATE.json": "2c03b184f27d6f0054ed12029b052834ef08aa8bf4f2c42663f84617f0e63063",
+    "quantum-weyl/local_bv/hodge.py": "efe0d476154eb38f41c3857d4f5c69a97b723a8e8422df672332ac0fb5e2c247",
+    "reports/flat-einstein-symplectic-restriction.md": "9f718da66f6e74925f1c9080db18adc0b14c18ceaaa74527c03195e6193bfd8a",
+    "symbolic/verify_conformal_dynamical_topological.py": "7a22344206dc96906fc05503467abd9b053094f7cb8fad2abf65764001a3299b"
+  },
+  "replaces": {
+    "old_rule": "nothing here may be cited inside the Weyl classical or quantum chains OR VICE VERSA",
+    "what_is_preserved": "the evidence direction.  Part of this stream's value is that it audits the programme from outside, and an auditor that shares the auditee's INPUTS is weaker -- but that argues for keeping the direction clean, not for refusing to read",
+    "why_it_was_over_broad": "circularity requires a CYCLE, and the dependency has always been one-way; a ban on citing INTO this stream forbids something that cannot close the loop.  Tag laundering, the other real risk, is prevented by carrying the boundary rather than by refusing to cite"
+  },
+  "report": "reverse_physics/README.md#independence-from-the-weyl-programme",
+  "stream_certificate_tags": {
+    "REVERSE_PHYSICS_CARRIER_ENLARGEMENTS_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_CARRIER_VACUITY_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_CHAIN_IMPORTS_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_CONFORMAL_COUNT_ROCQ_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_COPRIME_CHARGE_BOUND_ROCQ_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_COPRIME_HIERARCHY_ROCQ_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_DIFF_INDEPENDENCE_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_EINSTEIN_CLASSIFICATION_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_ENTROPY_CONVERSE_ROCQ_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_ENTROPY_EQUALITY_ROCQ_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_EXPONENT_ADDITIVITY_ROCQ_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_GHOST_MODEL_OBSTRUCTION_ROCQ_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_HAMILTONIAN_PRIVILEGE_GENERAL_N_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_HAMILTONIAN_PRIVILEGE_LINEAR_G0_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_HAMILTONIAN_PRIVILEGE_TORUS_G1_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_LH_ASSEMBLY_V1.json": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE"
+    ],
+    "REVERSE_PHYSICS_NO_CONFORMAL_COUNT_ROCQ_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_RELATIONAL_COUNT_ROCQ_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_SCATTERING_C_FACTORISATION_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_SECOND_LAW_ROCQ_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_STOCHASTIC_ROCQ_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_TORUS_ALL_MODES_ROCQ_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_TORUS_FULL_CHAIN_ROCQ_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_TORUS_REVERSAL_ROCQ_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_TORUS_SPLIT_ROCQ_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_WEYL_ACTION_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_WEYL_DUAL_DISCHARGE_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_WEYL_GEOMETRY_DISCHARGE_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_WEYL_GHOST_DIPOLE_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_WEYL_GHOST_FORCED_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_WEYL_TRACE_LAW_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ],
+    "REVERSE_PHYSICS_WEYL_VS_EINSTEIN_LEDGER_V1.json": [
+      "LOCAL-ALGEBRAIC"
+    ]
+  },
+  "tags": {
+    "consumer_tags": [
+      "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE"
+    ],
+    "granularity": "stream-level union, not per-certificate",
+    "tags_available_from_imports": [
+      "LOCAL-ALGEBRAIC",
+      "LORENTZIAN-CAUSAL",
+      "REDUCED-MODE",
+      "UNDECLARED"
+    ],
+    "violations": []
+  },
+  "undeclared_sources": [
+    "symbolic/verify_conformal_dynamical_topological.py",
+    "paper/18-static-bach-flat-black-hole-thermodynamics.tex"
+  ]
+}
