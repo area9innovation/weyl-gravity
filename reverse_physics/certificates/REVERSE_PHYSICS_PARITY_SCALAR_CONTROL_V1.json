@@ -108,7 +108,8 @@
       "curvature_coord_scalar_control_gate": "19/19, ASan-clean under forge verify",
       "curvature_invariants_parity_gate": "22/22 after repair, including the per-candidate chart audit as checks 21 and 22",
       "curvature_invariants_d6_gate": "27/27, chart rail added, parity-even counts unaffected",
-      "curvature_invariants_deriv_gate": "40/40, chart rail added, derivative-sector counts unaffected"
+      "curvature_invariants_deriv_gate": "40/40, chart rail added, derivative-sector counts unaffected",
+      "curvature_parity_enumeration_gate": "12/12, 26m11s, peak RSS 134 MB -- the exhaustive sweep and the mechanism"
     }
   },
   "verification": {
@@ -118,15 +119,36 @@
       "forge verify examples/curvature_coord_scalar_control_gate.forge",
       "forge -run examples/curvature_invariants_parity_gate.forge",
       "forge -run examples/curvature_invariants_d6_gate.forge",
-      "forge -run examples/curvature_invariants_deriv_gate.forge   # 40/40, 11m12s"
+      "forge -run examples/curvature_invariants_deriv_gate.forge   # 40/40, 11m12s",
+      "forge -run examples/curvature_parity_enumeration_gate.forge   # 12/12, 26m11s"
     ]
   },
   "does_not_establish": [
-    "that no parity-odd conformal invariant exists in D = 6. This is a LOWER BOUND over the patterns evaluated, exactly as the counts always were. What is established is that THESE patterns vanish and that the published 2 was an artefact of malformed candidates.",
+    "that no parity-odd conformal invariant exists in D = 6. The enumeration is exhaustive over one epsilon and three UNDIFFERENTIATED curvature tensors. The DERIVATIVE patterns -- eps grad R grad R and eps R grad grad R -- are a different space and are NOT swept. The parity gate finds its own derivative candidates zero, but that is a hand-built list again, and hand-built lists are exactly what failed here.",
     "the claim that RP-PARITY is VACUOUS in D = 6. That is the reading the evidence favours, and it is the opposite direction from the retracted certificate's 'load-bearing'. It follows only if the candidate family is complete, which the line above says it is not. Recorded as a reading, not as a result.",
     "anything against REVERSE_PHYSICS_WEYL_ACTION_V1. The D = 4 weight-4 Pontryagin row is untouched and the gravitational theta-angle statement stands.",
     "anything against the parity-EVEN counts. Both REVERSE_PHYSICS_CUBIC_CONFORMAL_COUNT_V1 and REVERSE_PHYSICS_DERIVATIVE_CONFORMAL_COUNT_V1 now carry the same chart rail and pass it in D = 4, 5 and 6 -- 27/27 and 40/40. The defect was specific to the parity gate\u2019s slot-spec mechanism, where each operand\u2019s variance is implicit in which pre-raised array it is handed; the parity-even candidates are written with their up/down pairings explicit.",
     "an explanation for why the malformed D = 4 sw1 was chart-INVARIANT across all six comparisons despite not being covariantly formed -- presumably a four-dimensional identity. It is repaired regardless. Recorded as an observation, not a result.",
-    "anything global, anything about dynamics, the ghost, or anything quantum."
-  ]
+    "anything global, anything about dynamics, the ghost, or anything quantum.",
+    "that the CONTROL sweeps are as exhaustive as the curvature ones. The (2,2,2) restriction is justified BY the first Bianchi identity, so it is sound for Weyl and Riemann, which satisfy it, and NOT for the Bianchi-violating controls -- for those, patterns handing three or more slots to the epsilon are not swept. The control statements are about that subspace and are weaker than the curvature result."
+  ],
+  "the_d6_zero_is_now_a_count_not_a_lower_bound": {
+    "rail": "curvature_parity_enumeration_gate 12/12",
+    "what_changed": "the D = 6 zero was established over a HAND-BUILT candidate list, which is the same weakness that admitted the eight malformed candidates. It is now enumerated mechanically: 3240 patterns per metric, swept whole, over two fixtures.",
+    "the_space": "one epsilon (6 lower indices in D = 6) against three curvature tensors (12 slots): six slots feed the epsilon and six pair off, so C(12,6) x 15 = 13860 patterns. The FIRST BIANCHI IDENTITY -- verified in the gate as an exact componentwise identity rather than sampled -- forces the epsilon split to be exactly (2,2,2), because epsilon antisymmetrises everything it touches and C^{[abc]d} = 0 annihilates any tensor handing it three or more slots. That leaves 6^3 x 15 = 3240. All 15 matchings are swept, not only the 8 without self-pairs, so tracelessness is exercised rather than assumed.",
+    "variance_is_derived_not_chosen": "sixteen variance variants are precomputed by bitmask and each pattern selects its operands by raising exactly the slots it needs -- the epsilon slots, and one end of each contracted pair. Nothing is hand-written, which is precisely the discipline whose absence caused the defect this certificate corrects.",
+    "result": "every Weyl pattern and every Riemann pattern is exactly zero; rank of both families is 0"
+  },
+  "the_mechanism": {
+    "finding": "THE PAIR-EXCHANGE SYMMETRY C_{abcd} = C_{cdab} is what empties the sector.",
+    "the_evidence": {
+      "generic_no_symmetry": "3240 of 3240 nonzero",
+      "antisymmetric_within_pairs_only": "2208 of 3240 nonzero",
+      "plus_pair_exchange_symmetry": "0",
+      "weyl": "0",
+      "riemann": "0"
+    },
+    "what_it_is_not": "NOT the first Bianchi identity and NOT tracelessness. The pair-symmetric control violates Bianchi (verified in the gate) and is not traceless, and still vanishes on every pattern. And antisymmetry within each pair is not sufficient on its own -- 2208 patterns survive it.",
+    "a_hypothesis_that_was_wrong_twice": "Bianchi was asserted as the mechanism twice, once in the control design and once after the first run. Both were wrong. Neither reached a certificate because the control was built to be able to refute it -- which is the whole argument for a control that CAN fail."
+  }
 }

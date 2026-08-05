@@ -924,6 +924,25 @@ The directions that would still yield something:
   result — it follows only if the candidate family is complete, and these counts remain
   **lower bounds over the patterns evaluated**. The parity-even counts are untouched;
   `curvature_invariants_d6_gate` now carries the same chart rail and passes 27/27.
+- **And that zero is now a count with a mechanism**
+  ([report](parity-scalar-defect.md), rail `curvature_parity_enumeration_gate` 12/12).
+  The corrected `D = 6` zero rested on a **hand-built candidate list** — the same weakness
+  that admitted the eight defects — so it was a lower bound, not a count. Enumerated
+  mechanically instead: one `ε` against three curvature tensors is `C(12,6) × 15 = 13,860`
+  patterns, and the **first Bianchi identity** — verified as an exact componentwise identity
+  rather than sampled — forces the `ε` split to exactly `(2,2,2)`, since `ε` antisymmetrises
+  everything it touches and `C^{[abc]d} = 0` kills any tensor handing it three or more slots.
+  That leaves **3,240**, swept whole over two fixtures. Variance is **derived, not chosen**:
+  operands are built by raising exactly the slots each pattern needs, so nothing is
+  hand-written.
+  **The mechanism is the pair-exchange symmetry `C_{abcd} = C_{cdab}`.** A generic tensor
+  gives **3240 of 3240** nonzero; antisymmetry within each index pair leaves **2208** alive;
+  adding pair-exchange kills **every one**. So it is **not** Bianchi and **not**
+  tracelessness — the pair-symmetric control violates Bianchi (verified) and is not
+  traceless, and still vanishes everywhere. Bianchi was asserted as the mechanism *twice*
+  and was wrong both times; neither reached a certificate because the control was built so
+  that it could refute them. **Still bounded:** the sweep covers *undifferentiated* curvature
+  only — `ε ∇R ∇R` and `ε R ∇∇R` are a different space and are not swept.
 - **Six derivatives in six dimensions.** The weight argument in §3.9 says the
   conformally invariant curvature degree is `k = D/2`, so odd dimensions have no
   such sector at all and `D = 6` selects the *cubic* one. Running the same exact

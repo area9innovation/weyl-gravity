@@ -245,9 +245,14 @@ class TestTheBoundariesAreNoStrongerThanBefore(unittest.TestCase):
     def setUp(self):
         self.dne = " ".join(load()["does_not_establish"])
 
-    def test_it_is_still_only_a_lower_bound(self):
-        self.assertIn("LOWER BOUND", self.dne)
-        self.assertIn("THESE patterns vanish", self.dne)
+    def test_the_algebraic_sector_is_a_count_but_the_whole_sector_is_not(self):
+        """The upgrade is real and it is bounded: exhaustive over one epsilon
+        and three UNDIFFERENTIATED curvature tensors, and silent on the
+        derivative patterns.  Letting "exhaustive" travel unqualified would
+        overstate it exactly the way the retracted claim did."""
+        self.assertIn("undifferentiated", self.dne.lower())
+        self.assertIn("NOT swept", self.dne)
+        self.assertIn("hand-built list again", self.dne)
 
     def test_the_vacuous_reading_is_not_claimed(self):
         self.assertIn("Recorded as a reading, not as a result", self.dne)
@@ -266,6 +271,83 @@ class TestTheBoundariesAreNoStrongerThanBefore(unittest.TestCase):
 
     def test_it_carries_the_local_algebraic_tag_only(self):
         self.assertEqual(load()["dependency_tags"], ["LOCAL-ALGEBRAIC"])
+
+
+class TestTheEnumerationUpgrade(unittest.TestCase):
+    """The D = 6 zero started as a lower bound over a hand-built list -- the same
+    weakness that admitted the eight defects.  These guard that it is now a count,
+    and that the mechanism recorded with it is the one the computation found
+    rather than the one that was guessed twice."""
+
+    def setUp(self):
+        self.cert = load()
+        self.e = self.cert["the_d6_zero_is_now_a_count_not_a_lower_bound"]
+        self.m = self.cert["the_mechanism"]
+
+    def test_the_space_is_enumerated_not_hand_built(self):
+        self.assertIn("hand-built", self.e["what_changed"].lower())
+        self.assertIn("mechanically", self.e["what_changed"])
+
+    def test_the_collapse_from_13860_is_justified_by_a_verified_identity(self):
+        """(2,2,2) is what makes the sweep runnable, so it must rest on an
+        identity that was checked, not sampled."""
+        sp = self.e["the_space"]
+        self.assertIn("13860", sp)
+        self.assertIn("(2,2,2)", sp)
+        self.assertIn("exact componentwise identity rather than sampled", sp)
+
+    def test_all_15_matchings_are_swept_so_tracelessness_is_exercised(self):
+        self.assertIn("exercised rather than assumed", self.e["the_space"])
+
+    def test_variance_is_derived_not_hand_written(self):
+        v = self.e["variance_is_derived_not_chosen"]
+        self.assertIn("Nothing is hand-written", v)
+
+    def test_the_mechanism_is_pair_exchange(self):
+        self.assertIn("PAIR-EXCHANGE SYMMETRY", self.m["finding"])
+        self.assertIn("C_{abcd} = C_{cdab}", self.m["finding"])
+
+    def test_the_evidence_separates_the_two_halves_of_the_symmetry(self):
+        """Antisymmetry alone leaves 2208 alive; adding pair-exchange kills all
+        of them.  Without both numbers the mechanism is not pinned."""
+        ev = self.m["the_evidence"]
+        self.assertEqual(ev["generic_no_symmetry"], "3240 of 3240 nonzero")
+        self.assertEqual(ev["antisymmetric_within_pairs_only"], "2208 of 3240 nonzero")
+        self.assertEqual(ev["plus_pair_exchange_symmetry"], "0")
+
+    def test_the_generic_sweep_is_what_makes_the_zeros_meaningful(self):
+        """3240 of 3240 nonzero is the only thing separating 'the answer is
+        zero' from 'the loop never ran'."""
+        self.assertIn("3240 of 3240", self.m["the_evidence"]["generic_no_symmetry"])
+
+    def test_bianchi_and_tracelessness_are_explicitly_ruled_out(self):
+        n = self.m["what_it_is_not"]
+        self.assertIn("NOT the first Bianchi identity", n)
+        self.assertIn("NOT tracelessness", n)
+        self.assertIn("2208", n)
+
+    def test_the_wrong_hypothesis_is_recorded_rather_than_erased(self):
+        """Recording it is what makes the next control get built to fail."""
+        w = self.m["a_hypothesis_that_was_wrong_twice"]
+        self.assertIn("wrong", w.lower())
+        self.assertIn("refute", w)
+
+    def test_the_derivative_sector_is_excluded_from_the_claim(self):
+        dne = " ".join(self.cert["does_not_establish"])
+        self.assertIn("undifferentiated", dne.lower())
+        self.assertIn("NOT swept", dne)
+
+    def test_the_controls_are_flagged_as_less_exhaustive(self):
+        """The (2,2,2) cut is justified BY Bianchi, so it is not valid for the
+        Bianchi-violating controls.  Letting that read as equally exhaustive
+        would overstate them."""
+        dne = " ".join(self.cert["does_not_establish"])
+        self.assertIn("CONTROL sweeps are as exhaustive as the curvature ones", dne)
+        self.assertIn("justified BY the first Bianchi identity", dne)
+
+    def test_the_gate_is_in_the_check_ledger(self):
+        self.assertIn("curvature_parity_enumeration_gate",
+                      self.cert["checks"]["detail"])
 
 
 class TestTheReport(unittest.TestCase):

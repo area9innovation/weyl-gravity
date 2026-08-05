@@ -88,6 +88,54 @@ Weyl-built and Riemann-built — is identically zero. The sector is empty.
 **Riemann is not traceless**, so the covariant repairs vanishing for Riemann *as well as*
 Weyl means the index pattern itself is empty. No choice of curvature tensor rescues it.
 
+### That zero is now a count, and it has a mechanism
+
+**Rail** `curvature_parity_enumeration_gate` — 12/12, 26m11s.
+
+The zero above was established over a **hand-built candidate list**, which is the very
+weakness that admitted the eight defects. It is now enumerated mechanically.
+
+One `ε` (6 lower indices) against three curvature tensors (12 slots): six slots feed the
+`ε`, six pair off — `C(12,6) × 15 = 13,860`. The **first Bianchi identity**, verified in
+the gate as an exact componentwise identity rather than sampled, forces the `ε` split to be
+exactly `(2,2,2)`: `ε` antisymmetrises everything it touches and `C^{[abc]d} = 0` kills any
+tensor handing it three or more slots. That leaves `6³ × 15 = 3,240`, swept whole over two
+fixtures. All 15 matchings run, not just the 8 without self-pairs, so tracelessness is
+*exercised* rather than assumed.
+
+**Variance is derived, not chosen.** Sixteen variance variants are precomputed by bitmask,
+and each pattern selects operands by raising exactly the slots it needs — the `ε` slots and
+one end of each contracted pair. Nothing is hand-written. That is the discipline whose
+absence caused this whole correction.
+
+| sweep | nonzero of 3240 |
+|---|---|
+| generic, no symmetry | **3240** |
+| antisymmetric within pairs only | **2208** |
+| + pair-exchange symmetry | **0** |
+| Weyl | **0** |
+| Riemann | **0** |
+
+> **The pair-exchange symmetry `C_{abcd} = C_{cdab}` is what empties the sector.**
+
+Not Bianchi and not tracelessness — the pair-symmetric control violates Bianchi (verified)
+and is not traceless, and still vanishes everywhere. And antisymmetry within each pair is
+**not sufficient on its own**: 2208 patterns survive it. One identity does all the work.
+
+**Bianchi was asserted as the mechanism twice** — once in designing the control, once after
+the first run. Both wrong. Neither reached a certificate because the control was built so
+that it *could* refute them, which is the entire argument for a control that can fail.
+
+**Three attempts at that control, and the first two proved nothing.** Riemann was the
+obvious choice and is useless: a self-pair gives either zero or a Ricci-type object,
+symmetric in the two indices that feed the `ε`, so Riemann vanishes too. The second was a
+"generic" tensor that **wasn't generic** — `param(seed,a,b,c,d,a+b)` reduces to
+`seed·31 + 6a + 5d (mod 7)`, independent of `b` and `c`, so it factorises and the
+antisymmetrisation annihilates it. That control returned zero for a reason unrelated to what
+it tested, and cost two twenty-minute runs. Packing indices injectively
+(`a + 6b + 36c + 216d`) with a multiplier coprime to the modulus fixes it, and the generic
+sweep now fires on **all 3240** — which is what makes the zeros mean anything.
+
 ## 5. What replaces the retracted result
 
 The retracted certificate concluded that parity is **load-bearing** on the `D = 6` field
@@ -121,9 +169,16 @@ well-formed. Repairing it can turn a zero into a nonzero, so it had to be fixed 
 
 ## 7. What this does **not** establish
 
-- **Not that no parity-odd conformal invariant exists in `D = 6`.** This is a **lower
-  bound over the patterns evaluated**, exactly as the counts always were. What is
-  established is that *these* patterns vanish and that the published 2 was an artefact.
+- **Not that no parity-odd conformal invariant exists in `D = 6`.** The enumeration is
+  exhaustive over one `ε` and three **undifferentiated** curvature tensors. The
+  **derivative** patterns — `ε ∇R ∇R` and `ε R ∇∇R` — are a different space and are **not
+  swept**. The parity gate finds its own derivative candidates zero, but that is a
+  hand-built list again, and hand-built lists are exactly what failed here.
+- **The control sweeps are not as exhaustive as the curvature ones.** The `(2,2,2)`
+  restriction is justified *by* the first Bianchi identity, so it is sound for Weyl and
+  Riemann, which satisfy it, and **not** for the Bianchi-violating controls — for those,
+  patterns handing three or more slots to the `ε` are not swept. The control statements are
+  about that subspace and are weaker than the curvature result.
 - **The `D = 4` weight-4 Pontryagin row is untouched** — still 1, still nonzero, still
   conformally invariant, still chart-invariant. That is the row the ledger's `RP-PARITY`
   rests on, so `REVERSE_PHYSICS_WEYL_ACTION_V1` and the gravitational theta-angle are
