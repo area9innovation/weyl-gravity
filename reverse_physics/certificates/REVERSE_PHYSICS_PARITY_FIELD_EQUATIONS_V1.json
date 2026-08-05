@@ -1,0 +1,80 @@
+{
+  "certificate": "REVERSE_PHYSICS_PARITY_FIELD_EQUATIONS_V1",
+  "kind": "variational-classification",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "report": "reverse_physics/reports/parity-field-equations.md",
+  "completes": "REVERSE_PHYSICS_PARITY_CONFORMAL_COUNT_V1, which answered the EXISTENCE half of the D = 6 parity question by counting invariants and explicitly recorded the field-equation half as NOT DONE. This is that half.",
+
+  "establishes": "The D = 6 parity-odd conformal invariant CONTRIBUTES TO THE FIELD EQUATIONS. Its Euler-Lagrange expression is nonzero -- on two components and two independent metrics -- so it is not locally a total divergence. Therefore RP-PARITY is NOT redundant on the D = 6 field equations, and the D = 4 statement 'parity is independent on actions and redundant on field equations' is SPECIAL TO FOUR DIMENSIONS.",
+
+  "the_d4_statement_it_qualifies": {
+    "what_d4_says": "REVERSE_PHYSICS_WEYL_ACTION_V1: adjoining the parity-odd Pontryagin density P gives W_+^2 = (C^2 + P)/2 and W_-^2 = (C^2 - P)/2, both Weyl invariant -- a TWO-parameter family of ACTIONS but a ONE-parameter family of FIELD EQUATIONS, because P is topological. So RP-PARITY is independent on actions and redundant on field equations.",
+    "the_physical_reading": "a gravitational theta-angle: like the QCD theta-term, the parity-odd direction changes the action and not the classical equations of motion",
+    "what_changes_at_D6": "the parity-odd invariant is NOT locally trivial there, so the redundancy fails. Parity becomes load-bearing on the field equations: it cannot be dropped without changing the physics.",
+    "this_is_the_second_such_finding": "REVERSE_PHYSICS_WEYL_ACTION_D6_V1 already showed the UNIQUENESS of the Weyl action is special to D = 4 -- 'the method scales, the conclusion does not'. Parity-redundancy is the second structural fact in the ledger that does not travel.",
+    "consequence_for_the_assumption_count": "the ledger's headline is 'six assumptions written as an action, five written as field equations', and the difference turns on RP-PARITY and RP-TOPO-INERT dropping out on the field-equation side. If RP-PARITY does not drop out in D = 6, that COUNT IS DIMENSION-DEPENDENT. For reverse physics as a method, the assumption lattice is not a fixed object attached to a theory."
+  },
+
+  "results": [
+    {"metric": 1, "component": "E^00", "value": "-12614421113/320", "nonzero": true},
+    {"metric": 1, "component": "E^12", "value": "1224309325271/160", "nonzero": true},
+    {"metric": 2, "component": "E^00", "value": "1290109675603/640", "nonzero": true}
+  ],
+
+  "controls": {
+    "why_they_matter_here": "a NONZERO answer is the interesting direction, which is exactly where a bug masquerades as a discovery. Neither control below existed before this computation, and both were identified as missing BEFORE the result was claimed rather than after it was questioned.",
+    "control_1_the_operator_at_n_equals_6": {
+      "the_gap": "every one of REVERSE_PHYSICS_EULER_OPERATOR_V1's fourteen checks is D = 4. The degree budget, the coefficient promotion and the assembly are reused at n = 6 but were never exercised there, and a bug appearing only in six dimensions would produce a confident number with nothing to contradict it.",
+      "the_control": "L = d_0(sqrt(|det g|)) is d_a(delta^a_0 sqrt(|det g|)), a total divergence BY CONSTRUCTION, so its Euler-Lagrange expression vanishes in any dimension",
+      "result": "exactly zero on both components, with the Lagrangian itself checked nonzero first"
+    },
+    "control_2_conformal_invariance_of_this_implementation": {
+      "the_gap": "REVERSE_PHYSICS_PARITY_CONFORMAL_COUNT_V1 validated a Rat-level construction of the invariant. This is a separate jet-level rebuild, and a wrong D = 6 Weyl coefficient (1/4 and 1/20) would make it a DIFFERENT, non-invariant Lagrangian -- whose field equations are nonzero trivially, for a reason that is not the answer.",
+      "the_control": "evaluate the scalar at g and at e^{2 sigma} g with sigma vanishing at the base point, so the conformal weight factor is 1 there and invariance is plain equality",
+      "result": "L(g) = L(e^{2 sigma} g) = 6566972251/160 exactly"
+    },
+    "non_vacuity": "the parity-odd density is checked NONZERO on the fixture before any field equation is read from it -- a vanishing field equation from a vanishing density would say nothing",
+    "two_metrics": "the nonzero result is reproduced on a second, independent fixture, so it is not one metric being special",
+    "the_measure_rule": "the density is |det g| times the symbol contraction -- a DETERMINANT, not a square root -- because summing over permutations contracts with the epsilon SYMBOL while the scalar is built with the TENSOR. At a point, where the fixtures have |det g| = 1, the wrong choice is invisible; as a function it is not. Validated in D = 4 by curvature_euler_gate check 13, which assembles the same Pontryagin density both ways.",
+    "the_epsilon_collapse": "the permutation sum is collapsed 8x over the antisymmetry of the three index pairs fed to epsilon, checked EXACT against the full sum on a fixture where the result is NONZERO. A first attempt checked it where both sides vanished identically, which established nothing; three distinct operands were needed to make the check mean something."
+  },
+
+  "checks": {
+    "ok": true,
+    "passed": 6,
+    "total": 6,
+    "failures": [],
+    "detail": {
+      "the_divergence_lagrangian_is_nonzero": true,
+      "its_field_equations_vanish_at_n_equals_6": true,
+      "the_parity_odd_density_is_nonzero": true,
+      "the_scalar_is_conformally_invariant": true,
+      "the_field_equations_do_not_vanish": true,
+      "and_do_not_on_a_second_metric": true
+    }
+  },
+
+  "verification": {
+    "substrate": "Forge, in the tango repository.",
+    "commands": [
+      "cd tango/forge && export FORGE_LIB=$PWD/lib",
+      "forge verify examples/curvature_parity_field_equations_gate.forge   # 6/6, about nineteen minutes, parallel"
+    ],
+    "depends_on_rails": [
+      "curvature_euler_gate 14/14 -- the Euler operator, validated in D = 4 against Gauss-Bonnet, Pontryagin, and the trace law",
+      "curvature_invariants_parity_gate 20/20 -- the invariant this differentiates, exhibited as conformally invariant",
+      "curvature_covderiv_gate 23/23 and jet_mul_gate 14/14 underneath"
+    ]
+  },
+
+  "does_not_establish": [
+    "anything GLOBAL. The Euler operator tests LOCAL triviality: vanishing field equations means locally a total divergence. Topology is a different statement and is not reached. 'Not topological' is NOT what is shown; 'not locally trivial' is.",
+    "the same for the SECOND parity-odd invariant in D = 6. Two were counted; one is differentiated here. The other is not, and a claim about the whole parity-odd sector would need it.",
+    "that the D = 4 result is wrong. It is correct in D = 4 and is not touched. What is established is that it does not travel.",
+    "anything about ACTIONS modulo total derivatives. Two Lagrangians differing by a total derivative have the same field equations, and nothing here distinguishes them.",
+    "any statement about the trace anomaly. The type-B anomaly coefficients multiply these invariants, so the structure constrains what anomalies could exist, but this computation is classical and LOCAL-ALGEBRAIC and no quantum claim follows from it.",
+    "anything in dimensions other than 6 for the parity-odd sector, or about Weyl gravity's dynamics, its ghost, or any Lorentzian question."
+  ]
+}

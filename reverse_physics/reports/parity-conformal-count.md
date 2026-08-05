@@ -110,6 +110,12 @@ only the saturation check distinguished it.
   unchanged — as the parity-odd sector does in `D = 4`, which is the actual content
   of *"parity is independent on actions and redundant on field equations"* — is a
   **different computation and is not done.**
+  → **Now done** ([`parity-field-equations.md`](parity-field-equations.md),
+  `REVERSE_PHYSICS_PARITY_FIELD_EQUATIONS_V1`): the answer is **no**. The
+  Euler–Lagrange expression of the `D = 6` parity-odd invariant is **nonzero**, so
+  it is not locally a total divergence and the field equations *do* change. The
+  `D = 4` redundancy is special to four dimensions. Boundary unchanged in one
+  respect: that is a **local** statement, not a topological one.
 - **Nothing about `D > 6`,** other weights, dynamics, the ghost, or anything
   quantum.
 

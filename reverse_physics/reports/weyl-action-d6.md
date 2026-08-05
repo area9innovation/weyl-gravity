@@ -197,6 +197,37 @@ classification gate **asserts** when it calls `W±² = (C² ± P)/2` both Weyl i
 result: whether adjoining the parity-odd sector leaves the *field equations*
 unchanged in `D = 6`, as it does in `D = 4`. That is a different computation.
 
+### The sharper half is done too — and the answer is **no**
+
+**Done:** [`parity-field-equations.md`](parity-field-equations.md), certificate
+`REVERSE_PHYSICS_PARITY_FIELD_EQUATIONS_V1`, Forge rail 6/6.
+
+The paragraph above is right that it is a different computation — counting
+invariants is not a variational question — so it needed an **Euler operator**,
+built over the same jet ring. Applied to the `D = 6` parity-odd invariant:
+
+| metric | component | value |
+|---|---|---|
+| 1 | `E⁰⁰` | `−12614421113/320` |
+| 1 | `E¹²` | `1224309325271/160` |
+| 2 | `E⁰⁰` | `1290109675603/640` |
+
+**Nonzero.** The invariant is **not locally a total divergence**, so it does
+contribute to the field equations. In `D = 4` the parity-odd direction is a
+gravitational theta-angle — it changes the action and not the equations of motion.
+**In `D = 6` it does not.**
+
+Which makes this the **second** finding in this report of the same shape. §6 says
+of uniqueness that *"the method scales, the conclusion does not"*; parity
+redundancy is the other one. And it reaches further than uniqueness did: the
+ledger's *"six assumptions written as an action, five written as field equations"*
+turns on `RP-PARITY` dropping out on the field-equation side, so **that count is
+dimension-dependent**.
+
+**Local, not global.** A nonzero Euler–Lagrange expression means *not locally* a
+total divergence; "not topological" is a different statement and is not shown.
+Only **one** of the two `D = 6` parity-odd invariants is differentiated.
+
 ---
 
 ```bash

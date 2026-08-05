@@ -848,7 +848,7 @@ The directions that would still yield something:
   row above stays `CITED` at 3 — not contradicted, its **boundary located**. The
   derivative sector is the open edge; the parity half is still untouched.
 - **That open edge is now closed too** ([report](derivative-conformal-count.md),
-  certificate `REVERSE_PHYSICS_DERIVATIVE_CONFORMAL_COUNT_V1`, Forge rail 33/33).
+  certificate `REVERSE_PHYSICS_DERIVATIVE_CONFORMAL_COUNT_V1`, Forge rail 39/39).
   Adding the weight-6 shapes that carry derivatives — `∇R ∇R` and `R ∇∇R` — the
   counts become **2, 2, 3** across `D = 4, 5, 6`, so the cited `3` is **matched by
   computation** rather than referenced. The derivative sector supplies **exactly
@@ -870,6 +870,29 @@ The directions that would still yield something:
   Weyl invariant. **Still not done:** whether adjoining the parity-odd sector leaves
   the *field equations* unchanged in `D = 6`, which is the sharper half of the
   original `D = 4` result.
+- **That sharper half is now done, and the answer is no**
+  ([report](parity-field-equations.md), certificate
+  `REVERSE_PHYSICS_PARITY_FIELD_EQUATIONS_V1`, Forge rail 6/6). Counting invariants
+  is not a variational question, so this needed a different instrument: an **Euler
+  operator** over the jet ring, `E^{μν} = ∂L/∂g_{μν} − ∂_α[∂L/∂(∂_α g_{μν})] +
+  ∂_α∂_β[∂L/∂(∂_α∂_β g_{μν})]`, finite and algebraic. Applied to the `D = 6`
+  parity-odd invariant it returns **nonzero** — `E⁰⁰ = −12614421113/320`,
+  `E¹² = 1224309325271/160`, reproduced on a second metric — so the invariant is
+  **not locally a total divergence** and **contributes to the field equations**.
+  The `D = 4` statement that parity is *redundant on field equations* — the
+  gravitational theta-angle — is therefore **special to four dimensions**. That is
+  the **second** structural fact in the ledger that does not travel, after
+  uniqueness; and it reaches the headline, because *"six assumptions as an action,
+  five as field equations"* turns on `RP-PARITY` dropping out on the
+  field-equation side. **The assumption count is dimension-dependent.** Two
+  controls, both built because *nonzero* is the direction where a bug reads as a
+  discovery: the operator had never run at `n = 6`, so it is exercised there
+  against `L = ∂₀√|det g|` — a total divergence by construction — and returns
+  **exactly zero**; and this is a separate jet-level rebuild of the invariant, so
+  it is checked conformally invariant directly (`L(g) = L(e^{2σ}g) =
+  6566972251/160`). **Local, not global:** vanishing field equations means locally
+  a total divergence, and "not topological" is *not* what is shown. Only **one** of
+  the two `D = 6` parity-odd invariants is differentiated.
 - **Six derivatives in six dimensions.** The weight argument in §3.9 says the
   conformally invariant curvature degree is `k = D/2`, so odd dimensions have no
   such sector at all and `D = 6` selects the *cubic* one. Running the same exact
