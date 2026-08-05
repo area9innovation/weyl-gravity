@@ -1,11 +1,11 @@
 # The derivative sector, and the `D = 6` count reaching three
 
 **Certificate** `REVERSE_PHYSICS_DERIVATIVE_CONFORMAL_COUNT_V1`
-**Rail** Forge, `tango/forge/examples/curvature_invariants_deriv_gate.forge` — 33/33
+**Rail** Forge, `tango/forge/examples/curvature_invariants_deriv_gate.forge` — 39/39
 **Dependency tag** `LOCAL-ALGEBRAIC`
 
 > **This is a lower bound that equals the cited value**, not a proof of exactness.
-> §5 says where a fourth invariant could still hide.
+> §6 says where a fourth invariant could still hide.
 
 ---
 
@@ -52,7 +52,49 @@ everything that **wasn't** known in advance:
   to reproduce the separately committed certificate. It does, exactly. That is a
   cross-check between two implementations, not a restatement of one.
 
-## 4. The derivative layer is certified before it is used
+## 4. The invariants are exhibited, not only counted
+
+`rank(values) − rank(variations)` is a **dimension**. On its own it is a number with
+no witness. The gate now constructs the witnesses: take a basis of the variations'
+nullspace — every conformally invariant combination, including the identically-zero
+ones — and keep those whose **value** row is independent of the ones already kept.
+The number that survive **must** equal the rank difference, so the count becomes a
+construction that can fail. Each witness is then **re-verified independently** of the
+nullspace routine that produced it: variation recomputed and exactly zero on every
+sample, value nonzero somewhere.
+
+Candidate columns: `c0…c7` the eight standard cubic scalars, `c8, c9` the deliberate
+duplicates, `c10, c11` the cubic Weyl contractions, `c12…c17` the `∇R ∇R` shape,
+`c18…c24` the `R ∇∇R` shape.
+
+| | witness | support | shape |
+|---|---|---|---|
+| `D = 4` | 0 | `c0…c4, c6` | cubic only |
+| | 1 | `c0, c1, c2, c12, c14, c15, c16, c18, c19, c20` | **carries derivatives** |
+| `D = 5` | 0 | `c0…c6` | cubic only |
+| | 1 | `c0, c1, c2, c12, c14, c15, c16, c18, c19, c20` | **carries derivatives** |
+| `D = 6` | 0 | `c0…c6` | cubic only |
+| | 1 | `c0…c5, c7` | cubic only |
+| | 2 | `c0, c1, c2, c12, c15, c16, c18, c19, c20` | **carries derivatives** |
+
+**In every dimension exactly one witness carries derivative candidates**, and in
+`D = 6` that is the *third* invariant. Its support is explicit: three cubic terms,
+three `∇R ∇R` terms, three `R ∇∇R` terms. So the uniform `+1` is not only rank
+arithmetic — the extra invariant is written down, and it demonstrably could not have
+been found without the derivative candidates.
+
+The `D = 6` third witness, normalised on `c20`:
+
+```
+−1/5·c0 + 2·c1 − 2·c2 + 5·c12 + 5·c15 − 10·c16 + 10·c18 − 10·c19 + c20
+```
+
+**What this still does not do:** identify any witness with `I₁`, `I₂` or `I₃` by
+name, or put the basis in canonical form — the nullspace parameterisation picks
+representatives, and a different pivot order would give different ones spanning the
+same space.
+
+## 5. The derivative layer is certified before it is used
 
 `∇R` and `∇∇R` are new machinery, and there is no second implementation to compare
 against — so the layer is checked against identities it cannot satisfy by accident
@@ -85,7 +127,7 @@ Worth recording, because none of them showed up as a red exit code.
   **clean baseline** against it. Same class of trap as the `g(base) = δ` one in the previous
   report — found only by mutation testing, both times.
 
-## 5. What this does **not** establish
+## 6. What this does **not** establish
 
 - **Not that the count is exactly 3.** It is a **lower bound** that happens to equal the
   cited value. The weight-6 shape *linear* in the curvature with four derivatives — whose
@@ -107,7 +149,7 @@ Worth recording, because none of them showed up as a red exit code.
   `REVERSE_PHYSICS_WEYL_ACTION_D6_V1` records it.
 - **Nothing about `D > 6`, other weights, dynamics, the ghost, or anything quantum.**
 
-## 6. What it cost in substrate
+## 7. What it cost in substrate
 
 The blocker this time was arithmetic, not geometry.
 
@@ -130,7 +172,7 @@ The blocker this time was arithmetic, not geometry.
 
 ```bash
 cd tango/forge && export FORGE_LIB=$PWD/lib
-forge verify examples/curvature_invariants_deriv_gate.forge      # 33/33, ~15 min
+forge verify examples/curvature_invariants_deriv_gate.forge      # 39/39, ~15 min
 forge verify --full examples/curvature_covderiv_gate.forge       # 23/23, the derivative layer
 forge verify --full examples/jet_mul_gate.forge                  # 14/14, the jet arithmetic
 forge verify --full examples/curvature_invariants_d6_gate.forge  # 26/26, the cubic count

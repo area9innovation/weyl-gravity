@@ -6,15 +6,12 @@
   ],
   "report": "reverse_physics/reports/derivative-conformal-count.md",
   "extends": "REVERSE_PHYSICS_CUBIC_CONFORMAL_COUNT_V1, which counted the same invariants restricted to those CUBIC IN RIEMANN WITH NO DERIVATIVES and found 1, 1, 2 across D = 4, 5, 6. That certificate stands unedited; this one adds the derivative candidates it excluded and is a new event, not a repair.",
-
   "establishes": "The dimension of the space of POINTWISE CONFORMAL INVARIANTS of weight 6 built from the curvature AND its first two covariant derivatives, computed by exact rational rank over generated metrics. D = 4: 2. D = 5: 2. D = 6: 3. The derivative sector supplies EXACTLY ONE more invariant than the cubic sector alone in every dimension examined. In D = 6 the total reaches THREE, which is the count REVERSE_PHYSICS_WEYL_ACTION_D6_V1 carries as CITED to Bonora-Pasti-Bregola and Deser-Schwimmer -- so the cited value is now matched by an independent computation rather than merely referenced.",
-
   "the_gap_that_closed": {
     "what_was_missing": "REVERSE_PHYSICS_CUBIC_CONFORMAL_COUNT_V1 computed 2 in D = 6 against a cited 3, and located the boundary: two of the three cited type-B invariants are complete contractions of three Weyl tensors and the third is not in that class",
     "why_it_was_missing": "'type-B' means POINTWISE CONFORMAL INVARIANT; it does not mean 'carries no derivatives of the curvature'. The earlier count excluded every candidate carrying a derivative.",
     "what_closed_it": "adding the two derivative shapes at weight 6 -- grad R grad R and R grad grad R -- and counting again. The count goes 2 -> 3 in D = 6, and 1 -> 2 in D = 4 and D = 5."
   },
-
   "results": [
     {
       "dimension": 4,
@@ -47,13 +44,11 @@
       "status": "COMPUTED"
     }
   ],
-
   "it_is_a_lower_bound_and_why_that_is_sound": {
     "omitted_shape": "the weight-6 shape LINEAR in the curvature with four derivatives, whose only independent representative is box box R. Including it needs the metric carried at degree 6, where the jets hold 924 terms per component.",
     "why_omission_cannot_inflate": "the count is rank(VALUES) - rank(VARIATIONS). Adding a candidate that is NOT conformally invariant raises both ranks by one and leaves the difference alone; adding one that IS invariant raises only the first. So adding candidates can only increase or preserve the count, never decrease it -- what is reported is a LOWER BOUND.",
     "consequence": "the computed lower bound in D = 6 EQUALS the cited value of 3. If the true number were larger, the omitted shape is where it would hide."
   },
-
   "method": {
     "counting_identity": "invariant dim = rank(VALUES) - rank(VARIATIONS), which tolerates deliberately redundant candidates without any quotient being constructed by hand",
     "candidate_shapes": {
@@ -68,7 +63,6 @@
     "why_the_cubic_and_quartic_terms_matter": "with only a quadratic perturbation grad R vanishes identically at the base point and the entire derivative sector would be measured on zero",
     "arithmetic": "exact rational throughout -- jets over Q for the curvature, Taylor coefficient arrays over Q for the covariant derivatives, exact rational Gaussian elimination for every rank. No floating point anywhere, and no tolerance."
   },
-
   "the_derivative_layer_is_certified_separately": {
     "rail": "tango/forge/examples/curvature_covderiv_gate.forge, 23/23, in D = 4, 5 and 6",
     "checks": [
@@ -80,7 +74,6 @@
     ],
     "this_gate_does_not_re_derive_any_of_it": true
   },
-
   "controls": {
     "cross_check_against_a_separate_pipeline": "the cubic sub-span (6, 7, 8) and the cubic-only invariant count (1, 1, 2) reproduce REVERSE_PHYSICS_CUBIC_CONFORMAL_COUNT_V1 exactly, computed here through a different candidate pipeline",
     "positive_control": "both cubic Weyl contractions are conformally invariant on every sample, as they must be",
@@ -90,13 +83,11 @@
     "two_rank_rails": "rank(M) recomputed as rank(M^T), for both the value and the variation matrices",
     "both_signatures": "Euclidean and Lorentzian base metrics both appear among the fixtures"
   },
-
   "what_was_not_known_in_advance": "Matching a cited number is weak evidence when the number was known beforehand. The D = 4 and D = 5 counts were not: they came out 2 and 2. Neither was the uniform pattern -- the derivative sector contributing exactly one invariant in each of the three dimensions. Neither were the cubic sub-counts, which had to reproduce a separately computed result through a different pipeline.",
-
   "checks": {
     "ok": true,
-    "passed": 33,
-    "total": 33,
+    "passed": 39,
+    "total": 39,
     "failures": [],
     "detail": {
       "D6_invariant_count_is_three": true,
@@ -112,15 +103,16 @@
       "every_fixture_is_non_degenerate": true,
       "the_weyl_tensor_is_traceless_everywhere": true,
       "both_rank_rails_agree": true,
-      "both_ranks_saturate_strictly_early": true
+      "both_ranks_saturate_strictly_early": true,
+      "the_invariants_are_exhibited_not_only_counted": true,
+      "every_witness_independently_re_verifies": true
     }
   },
-
   "verification": {
     "substrate": "Forge, in the tango repository. No Python rail; this stream's new results are produced in Forge.",
     "commands": [
       "cd tango/forge && export FORGE_LIB=$PWD/lib",
-      "forge verify examples/curvature_invariants_deriv_gate.forge   # 33/33, the expensive rail, about 15 minutes",
+      "forge verify examples/curvature_invariants_deriv_gate.forge   # 39/39, the expensive rail, about fifteen minutes",
       "forge verify --full examples/curvature_covderiv_gate.forge    # 23/23, the derivative layer",
       "forge verify --full examples/jet_mul_gate.forge               # 14/14, the jet arithmetic",
       "forge verify --full examples/curvature_invariants_d6_gate.forge   # 26/26, the cubic count",
@@ -128,21 +120,77 @@
     ],
     "tier_note": "the derivative gate is deliberately NOT a per-commit rail. It runs the C backend only and takes about fifteen minutes; the fast rails are the other curvature gates."
   },
-
   "substrate_additions": [
     "math/jet jet_mul and jet_add now dispatch to HASHED accumulation. jet_accum finds the term to add into by linear scan, making both operations quadratic in the result size -- invisible at the degree-2 jets curvature normally uses, fatal at degree 4, where one Christoffel computation took 27 seconds. The exponent row packs into one i64 key in base (deg + 1) and accumulates through an open-addressed table. The reference implementations remain as jet_mul_ref and jet_add_ref and serve as the ORACLE, not as dead code.",
     "math/jet jet_truncate -- curvature at a point wants Gamma to degree 3, Riemann to 2, the first covariant derivative to 1, the second to 0, and carrying every stage at full degree squares a term count that is then discarded",
     "math/curvcov -- covariant derivatives of the curvature at a point, carried as Taylor coefficient arrays rather than jets. In D = 6 the first derivative of Riemann is a rank-5 object; as jets that is over a billion coefficient operations, nearly all of them computing Taylor coefficients no invariant at a point ever reads.",
     "math/curvcov cv_riemann_jets -- Riemann truncated to the degree that is actually read, so the quadratic Christoffel term does not multiply full-degree jets"
   ],
-
   "does_not_establish": [
     "that the count is EXACTLY 3 in D = 6. It is a LOWER BOUND that equals the cited value. The weight-6 shape linear in the curvature with four derivatives (box box R) is not among the candidates, and that is where a fourth invariant would hide.",
-    "the classification of the three invariants. The count is a dimension; no basis is exhibited, and no candidate is identified with I_1, I_2 or I_3 individually. In particular the two cubic Weyl contractions are exhibited as invariant, but the third invariant is not written down.",
+    "the classification of the three invariants BY NAME. The count is now realised by explicit witnesses (see /the_invariants_are_now_exhibited), so it is no longer a bare dimension -- but no witness is identified with I_1, I_2 or I_3, and the basis is not in any canonical form.",
     "the quotient by total derivatives. It is not needed for a pointwise count and it was not performed, so nothing here is a statement about LAGRANGIANS, about actions, or about the trace anomaly's coefficients.",
     "anything about the type-A Euler density E6, which is not constructed",
     "the PARITY-ODD sector in any dimension. No epsilon-carrying candidate is evaluated, so the D = 6 analogue of the D = 4 parity result remains open exactly as REVERSE_PHYSICS_WEYL_ACTION_D6_V1 records.",
     "any weight other than 6, and any dimension other than 4, 5 and 6",
     "anything about Weyl gravity's DYNAMICS, its ghost, or any quantum claim. This is a count of algebraic invariants at a point."
-  ]
+  ],
+  "the_invariants_are_now_exhibited": {
+    "what_changed": "the count was a RANK DIFFERENCE -- a dimension with no witness. It is now a construction: a basis of the variations' nullspace is computed, those whose VALUE row is independent of the ones already kept are retained, and the number that survive must equal rank(VALUES) - rank(VARIATIONS). A count that no construction realises would be a number without a witness, and that is now a check that can fail.",
+    "each_witness_is_re_verified_independently": "not trusting the nullspace routine that produced it: its variation is recomputed and must be exactly zero on every sample, and its value must be nonzero somewhere",
+    "candidate_index_key": {
+      "0..7": "the eight standard cubic curvature scalars",
+      "8,9": "two deliberate duplicates, reachable only through the first Bianchi identity and the pair symmetries",
+      "10,11": "the two cubic Weyl contractions",
+      "12..17": "grad R grad R",
+      "18..24": "R grad grad R"
+    },
+    "witnesses": [
+      {
+        "dimension": 4,
+        "witness": 0,
+        "support": "c0..c4, c6",
+        "shape": "cubic only"
+      },
+      {
+        "dimension": 4,
+        "witness": 1,
+        "support": "c0, c1, c2, c12, c14, c15, c16, c18, c19, c20",
+        "shape": "CARRIES DERIVATIVES"
+      },
+      {
+        "dimension": 5,
+        "witness": 0,
+        "support": "c0..c6",
+        "shape": "cubic only"
+      },
+      {
+        "dimension": 5,
+        "witness": 1,
+        "support": "c0, c1, c2, c12, c14, c15, c16, c18, c19, c20",
+        "shape": "CARRIES DERIVATIVES"
+      },
+      {
+        "dimension": 6,
+        "witness": 0,
+        "support": "c0..c6",
+        "shape": "cubic only"
+      },
+      {
+        "dimension": 6,
+        "witness": 1,
+        "support": "c0..c5, c7",
+        "shape": "cubic only"
+      },
+      {
+        "dimension": 6,
+        "witness": 2,
+        "support": "c0, c1, c2, c12, c15, c16, c18, c19, c20",
+        "shape": "CARRIES DERIVATIVES"
+      }
+    ],
+    "the_sharp_statement": "In every dimension examined, exactly ONE witness carries derivative candidates and the rest are purely cubic. In D = 6 that is the THIRD invariant, and its support is explicit: three cubic terms, three of the grad R grad R candidates, and three of the R grad grad R candidates. The uniform +1 from the derivative sector is therefore not only a rank arithmetic -- the extra invariant is exhibited, and it demonstrably could not have been found without derivative candidates.",
+    "an_example_coefficient_vector": "D = 6, witness 2, normalised on c20: c0 = -1/5, c1 = 2, c2 = -2, c12 = 5, c15 = 5, c16 = -10, c18 = 10, c19 = -10, c20 = 1",
+    "what_this_does_not_do": "it does not identify any witness with I_1, I_2 or I_3 by name, and it does not put the basis in any canonical form -- the nullspace parameterisation picks representatives, and a different pivot order would give different ones spanning the same space"
+  }
 }

@@ -114,9 +114,13 @@ class TestTheBoundStaysABound(unittest.TestCase):
         self.assertIn("both ranks", why)
         self.assertIn("never decrease", why)
 
-    def test_no_basis_is_claimed(self):
-        joined = " ".join(self.cert["does_not_establish"]).lower()
-        self.assertIn("no basis is exhibited", joined)
+    def test_the_basis_is_now_exhibited_but_not_named(self):
+        """The count is no longer a bare dimension -- witnesses are constructed --
+        but no witness is identified with I_1, I_2 or I_3, and the basis is not
+        canonical.  Both halves of that have to stay true."""
+        joined = " ".join(self.cert["does_not_establish"])
+        self.assertIn("BY NAME", joined)
+        self.assertIn("not in any canonical form", joined)
 
     def test_total_derivatives_still_not_quotiented(self):
         joined = " ".join(self.cert["does_not_establish"]).lower()
@@ -210,6 +214,50 @@ class TestTheControlsAreRecorded(unittest.TestCase):
         self.assertIn("weak evidence", s)
 
 
+class TestTheWitnesses(unittest.TestCase):
+    """A count that no construction realises is a number without a witness."""
+
+    def setUp(self):
+        self.ex = load()["the_invariants_are_now_exhibited"]
+        self.by_dim = {}
+        for w in self.ex["witnesses"]:
+            self.by_dim.setdefault(w["dimension"], []).append(w)
+
+    def test_the_witness_count_matches_the_invariant_count(self):
+        counts = {r["dimension"]: r["pointwise_conformal_invariants_weight_6"]
+                  for r in load()["results"]}
+        for d, ws in self.by_dim.items():
+            self.assertEqual(len(ws), counts[d], d)
+
+    def test_exactly_one_witness_per_dimension_carries_derivatives(self):
+        """The uniform +1 from the derivative sector, as a construction rather
+        than as rank arithmetic."""
+        for d, ws in self.by_dim.items():
+            carrying = [w for w in ws if "CARRIES DERIVATIVES" in w["shape"]]
+            self.assertEqual(len(carrying), 1, d)
+
+    def test_the_d6_third_witness_needs_derivative_candidates(self):
+        """If this ever became purely cubic, the whole story about the derivative
+        sector supplying the third invariant would be wrong."""
+        ws = self.by_dim[6]
+        self.assertEqual(len(ws), 3)
+        carrying = [w for w in ws if "CARRIES DERIVATIVES" in w["shape"]][0]
+        # c12.. are the grad R grad R columns, c18.. the R grad grad R ones
+        self.assertIn("c12", carrying["support"])
+        self.assertIn("c18", carrying["support"])
+
+    def test_each_witness_is_re_verified_independently(self):
+        s = self.ex["each_witness_is_re_verified_independently"].lower()
+        self.assertIn("not trusting", s)
+        self.assertIn("exactly zero", s)
+
+    def test_an_explicit_coefficient_vector_is_recorded(self):
+        self.assertIn("c20", self.ex["an_example_coefficient_vector"])
+
+    def test_the_non_canonicity_is_admitted(self):
+        self.assertIn("canonical", self.ex["what_this_does_not_do"])
+
+
 class TestTheReport(unittest.TestCase):
     def setUp(self):
         with open(REPORT) as fh:
@@ -223,6 +271,10 @@ class TestTheReport(unittest.TestCase):
         self.assertIn("factor of 2", low)
         self.assertIn("miscounted", low)
         self.assertIn("normal coordinates", low)
+
+    def test_the_report_exhibits_the_d6_third_witness(self):
+        self.assertIn("c20", self.text)
+        self.assertIn("carries derivatives", self.text.lower())
 
     def test_the_report_carries_the_verification_commands(self):
         self.assertIn("curvature_invariants_deriv_gate.forge", self.text)
