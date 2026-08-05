@@ -1,7 +1,7 @@
 # Cubic conformal invariants, counted — and where `D = 6` gets its second one
 
 **Certificate** `REVERSE_PHYSICS_CUBIC_CONFORMAL_COUNT_V1`
-**Rail** Forge, `tango/forge/examples/curvature_invariants_d6_gate.forge` — 26/26,
+**Rail** Forge, `tango/forge/examples/curvature_invariants_d6_gate.forge` — 27/27,
 `c == native`, ASan clean on both backends, ~20 s
 **Dependency tag** `LOCAL-ALGEBRAIC`
 
@@ -161,7 +161,7 @@ make distinct invariants coincide and **understate** every rank computed from th
 
 ```bash
 cd tango/forge && export FORGE_LIB=$PWD/lib
-forge verify --full examples/curvature_invariants_d6_gate.forge    # 26/26
+forge verify --full examples/curvature_invariants_d6_gate.forge    # 27/27
 forge verify --full examples/curvature_invariants_d4_gate.forge    # 25/25, the control
 forge verify --full examples/curvature_general_inverse_gate.forge  # 20/20
 forge verify --full examples/curvature_gate.forge                  # 18/18, unchanged

@@ -134,12 +134,27 @@ class TestTheBoundaryOnANonzeroAnswer(unittest.TestCase):
     def test_the_exact_distinction_is_spelled_out(self):
         self.assertIn("'Not topological' is NOT what is shown", self.dne)
 
-    def test_the_report_carries_the_same_boundary_up_front(self):
-        """Buried in a certificate's tail, a boundary is not a boundary."""
+    def test_the_retraction_is_what_is_up_front_now(self):
+        """This originally asserted that the local-versus-global boundary led the
+        report.  It did, and that was right at the time.  What has to lead it now
+        is the RETRACTION -- a boundary on a withdrawn claim is not the first
+        thing a reader needs.  The old boundary is still required to be present,
+        just no longer first."""
         with open(REPORT) as fh:
-            head = fh.read(700)
-        self.assertIn("locally", head.lower())
-        self.assertIn("not topological", head.lower())
+            text = fh.read()
+        head = text[:900]
+        self.assertIn("RETRACTED", head)
+        self.assertIn("not a scalar", head)
+        self.assertIn("locally", text.lower())
+        self.assertIn("not topological", text.lower())
+
+    def test_the_title_itself_no_longer_asserts_the_withdrawn_claim(self):
+        """The title read "Parity is not redundant on the D = 6 field equations".
+        A reader who gets no further than the first line must not come away with
+        the withdrawn result."""
+        with open(REPORT) as fh:
+            first = fh.readline()
+        self.assertIn("RETRACTED", first)
 
     def test_only_one_of_two_invariants_is_differentiated(self):
         self.assertIn("SECOND parity-odd invariant", self.dne)

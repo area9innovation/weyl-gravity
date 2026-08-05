@@ -870,7 +870,9 @@ The directions that would still yield something:
   Weyl invariant. **Still not done:** whether adjoining the parity-odd sector leaves
   the *field equations* unchanged in `D = 6`, which is the sharper half of the
   original `D = 4` result.
-- **That sharper half is now done, and the answer is no**
+- **~~That sharper half is now done, and the answer is no~~ — RETRACTED, see the bullet
+  below.** The Lagrangian differentiated is **not a scalar**; the claim is withdrawn and
+  the `D = 6` parity-odd sector is **empty**. Preserved as issued
   ([report](parity-field-equations.md), certificate
   `REVERSE_PHYSICS_PARITY_FIELD_EQUATIONS_V1`, Forge rail 6/6). Counting invariants
   is not a variational question, so this needed a different instrument: an **Euler

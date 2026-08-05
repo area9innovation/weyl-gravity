@@ -1,4 +1,29 @@
-# Parity is **not** redundant on the `D = 6` field equations
+# ~~Parity is **not** redundant on the `D = 6` field equations~~ — RETRACTED
+
+> ## ⛔ RETRACTED. The result below is wrong.
+>
+> The Lagrangian differentiated here is **not a scalar**. Its slot spec summed one
+> contracted index over two **lower** slots and another over two **upper** slots, with no
+> metric between either pair, so the value is **coordinate-dependent**: under `x = Ay` with
+> `A ∈ SL(6,ℤ)` it moves from `6566972251/160` to `−200078513393/160`. The first of those
+> is exactly the `L(g)` this report prints as its conformal-invariance control.
+>
+> So `E⁰⁰ = −12614421113/320` and `E¹² = 1224309325271/160` are the Euler–Lagrange
+> expression of a chart-dependent quantity and **mean nothing**. The conclusion — that
+> `RP-PARITY` is not redundant on the `D = 6` field equations — is **withdrawn**.
+>
+> **What is not wrong.** The **Euler operator** is untouched, including its `n = 6`
+> exercise: `L = ∂₀√|det g|` is a total divergence by construction and its field equations
+> still come back exactly zero. The instrument was right; the Lagrangian it was pointed at
+> was not. The measure rule is also unaffected.
+>
+> **What the answer actually is.** The `D = 6` parity-odd cubic sector is **empty** —
+> 3,240 patterns swept, all zero, with the **pair-exchange symmetry** `C_{abcd} = C_{cdab}`
+> as the mechanism. There is no invariant here to differentiate. See
+> [`parity-scalar-defect.md`](parity-scalar-defect.md), certificate
+> `REVERSE_PHYSICS_PARITY_SCALAR_CONTROL_V1`.
+>
+> The original text follows, preserved as issued.
 
 **Certificate** `REVERSE_PHYSICS_PARITY_FIELD_EQUATIONS_V1`
 **Rail** Forge, `tango/forge/examples/curvature_parity_field_equations_gate.forge` — 6/6
@@ -116,5 +141,10 @@ Resting on `curvature_euler_gate` 14/14 (the operator, validated in `D = 4` agai
 Gauss–Bonnet, Pontryagin and the trace law), `curvature_invariants_parity_gate` 20/20 (the
 invariant, exhibited as conformally invariant), and `curvature_covderiv_gate` 23/23 beneath
 those.
+
+> **Rail scores above are as issued.** Both gates have since gained checks —
+> `curvature_invariants_parity_gate` is now **22/22** (the per-candidate chart audit)
+> and `curvature_euler_gate` **15/15** (the Lagrangian chart rail). Running the
+> commands today gives the higher numbers; the historical figures are left as written.
 
 Exact rational arithmetic throughout. No floating point, no tolerance.

@@ -1,7 +1,7 @@
 # The derivative sector, and the `D = 6` count reaching three
 
 **Certificate** `REVERSE_PHYSICS_DERIVATIVE_CONFORMAL_COUNT_V1`
-**Rail** Forge, `tango/forge/examples/curvature_invariants_deriv_gate.forge` — 39/39
+**Rail** Forge, `tango/forge/examples/curvature_invariants_deriv_gate.forge` — 40/40
 **Dependency tag** `LOCAL-ALGEBRAIC`
 
 > **This is a lower bound that equals the cited value**, not a proof of exactness.
@@ -172,10 +172,10 @@ The blocker this time was arithmetic, not geometry.
 
 ```bash
 cd tango/forge && export FORGE_LIB=$PWD/lib
-forge verify examples/curvature_invariants_deriv_gate.forge      # 39/39, ~15 min
+forge verify examples/curvature_invariants_deriv_gate.forge      # 40/40, ~15 min
 forge verify --full examples/curvature_covderiv_gate.forge       # 23/23, the derivative layer
 forge verify --full examples/jet_mul_gate.forge                  # 14/14, the jet arithmetic
-forge verify --full examples/curvature_invariants_d6_gate.forge  # 26/26, the cubic count
+forge verify --full examples/curvature_invariants_d6_gate.forge  # 27/27, the cubic count
 ```
 
 The derivative gate is deliberately **not** a per-commit rail: C backend only, about

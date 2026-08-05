@@ -44,7 +44,7 @@
     {
       "bug": "the Levi-Civita SYMBOL was being used where the density needed the TENSOR. Summing over permutations contracts with the symbol; pointwise, where the fixtures have |det g| = 1, symbol and tensor agree and nothing notices. As JETS they differ by sqrt(|det g|(x)), which is not constant, so multiplying the Pontryagin term by sqrt(|det g|) again produced a weight-2 object that is not a Lagrangian density at all.",
       "fix": "the Pontryagin term is built as the symbol contraction [mu nu rho sigma] R_{mu nu}^{al be} R_{rho sigma al be}, which is already a density, with no measure factor",
-      "consequence_beyond_this_gate": "THE SAME SHORTCUT IS USED BY REVERSE_PHYSICS_PARITY_CONFORMAL_COUNT_V1. For counting invariants AT A POINT it is sound and stays sound -- that certificate is unaffected. For a FIELD-EQUATION question it is not, and the D = 6 parity-odd density must be assembled with the weights right. This would have been a silent wrong answer to the actual question, and it was found only because the D = 4 Pontryagin control exists."
+      "consequence_beyond_this_gate": "THE SAME SHORTCUT IS USED BY REVERSE_PHYSICS_PARITY_CONFORMAL_COUNT_V1. For counting invariants AT A POINT it is sound and stays sound -- that certificate is unaffected. For a FIELD-EQUATION question it is not, and the D = 6 parity-odd density must be assembled with the weights right. This would have been a silent wrong answer to the actual question, and it was found only because the D = 4 Pontryagin control exists. | NOTE ADDED LATER: 'that certificate is unaffected' was and remains true OF THIS ISSUE -- the symbol/tensor shortcut is sound for counting at a point. It should not be read as 'that certificate still stands as issued': REVERSE_PHYSICS_PARITY_CONFORMAL_COUNT_V1 was subsequently CORRECTED for an UNRELATED defect (eight of its candidates were not covariant contractions), and its weight-6 counts are now 1 in D = 4 and 0 in D = 6. See REVERSE_PHYSICS_PARITY_SCALAR_CONTROL_V1."
     }
   ],
   "checks": {
@@ -73,7 +73,7 @@
     "substrate": "Forge, in the tango repository.",
     "commands": [
       "cd tango/forge && export FORGE_LIB=$PWD/lib",
-      "forge verify examples/curvature_euler_gate.forge            # 14/14, about nine minutes on six workers",
+      "forge verify examples/curvature_euler_gate.forge            # 15/15, about nine minutes on six workers",
       "forge -run -sanitize-thread examples/curvature_euler_gate.forge   # the race gate"
     ],
     "tier_note": "parallel, six workers, about nine minutes. A one-component falsifier -- 45 runs and three minutes against 600 runs and thirty-five -- was what made the two bugs above findable in minutes rather than in half-hour cycles."
@@ -92,8 +92,9 @@
     "anything Lorentzian, dynamical, or quantum."
   ],
   "answered_since": {
+    "CORRECTION": "the entry below was written BEFORE the retraction and asserted the withdrawn result as fact. REVERSE_PHYSICS_PARITY_FIELD_EQUATIONS_V1 is RETRACTED: the Lagrangian it differentiated is not a scalar, and its Euler-Lagrange numbers mean nothing. THIS OPERATOR IS NOT IMPLICATED -- its n = 6 exercise still returns exactly zero for L = d_0(sqrt|det g|), so the instrument was right and the Lagrangian it was pointed at was not. The actual answer, from REVERSE_PHYSICS_PARITY_SCALAR_CONTROL_V1: the D = 6 parity-odd cubic sector is EMPTY (3240 patterns swept, all zero, mechanism = the pair-exchange symmetry C_{abcd} = C_{cdab}), so there is no invariant there to differentiate.",
     "note": "this is a forward pointer, not an amendment. The does_not_establish entries above record what THIS gate established and remain accurate as written.",
-    "the_question_it_was_built_for": "answered by REVERSE_PHYSICS_PARITY_FIELD_EQUATIONS_V1 (report reverse_physics/reports/parity-field-equations.md, Forge rail 6/6). The D = 6 parity-odd invariant's Euler-Lagrange expression is NONZERO, so parity is not redundant on the D = 6 field equations. That certificate carries its own n = 6 control for this operator, since every check here is D = 4.",
+    "the_question_it_was_built_for": "SUPERSEDED -- read CORRECTION above first. As originally written: \"answered by REVERSE_PHYSICS_PARITY_FIELD_EQUATIONS_V1 (report reverse_physics/reports/parity-field-equations.md, Forge rail 6/6). The D = 6 parity-odd invariant's Euler-Lagrange expression is NONZERO, so parity is not redundant on the D = 6 field equations. That certificate carries its own n = 6 control for this operator, since every check here is D = 4.\"",
     "the_symbol_versus_tensor_issue": "handled there, per the requirement stated above: the density is |det g| times the symbol contraction, and the rule is recorded in that certificate's controls."
   },
   "the_parity_odd_measure_rule": {

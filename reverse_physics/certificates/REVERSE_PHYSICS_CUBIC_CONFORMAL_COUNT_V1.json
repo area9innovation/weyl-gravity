@@ -6,16 +6,13 @@
   ],
   "report": "reverse_physics/reports/cubic-conformal-count.md",
   "supersedes_nothing": "REVERSE_PHYSICS_WEYL_ACTION_D6_V1 stands unedited. Its D = 6 row remains CITED for the count of THREE type-B invariants, which is a different and larger claim than the one computed here. This certificate is a new event, not a repair.",
-
   "establishes": "The dimension of the space of POINTWISE CONFORMAL INVARIANTS that are CUBIC IN RIEMANN WITH NO DERIVATIVES, computed by exact rational rank over generated metrics rather than cited. D = 4: 1. D = 5: 1. D = 6: 2. The span of cubic curvature scalars itself is 6, 7, 8 in those dimensions. So the second cubic conformal invariant appears exactly AT six dimensions -- it is not a generic feature that four dimensions happens to lose -- and the dimension-dependent identities that thin the span were never written down: the rank found them.",
-
   "the_blocker_that_dissolved": {
     "as_stated": "a basis of cubic curvature invariants modulo total derivatives and dimension-dependent identities",
     "recorded_in": "REVERSE_PHYSICS_WEYL_ACTION_D6_V1 /blocker/what",
     "why_it_dissolved": "that blocker is real only for the SYMBOLIC route. Evaluating candidate contractions at exact metrics and taking the rank over Q makes every identity -- Riemann symmetries, first and second Bianchi, the dimension-dependent ones -- show up as a linear DEPENDENCE among the evaluations. The rank quotients by all of them without any being constructed.",
     "what_it_cost_instead": "a general (non-diagonal) metric inverse over the jet ring, which did not exist; diagonal metrics in D = 6 are too special and would have understated every rank"
   },
-
   "results": [
     {
       "dimension": 4,
@@ -39,7 +36,6 @@
       "status": "COMPUTED"
     }
   ],
-
   "method": {
     "counting_identity": "invariant dim = rank(VALUES) - rank(VARIATIONS). With deliberately redundant candidates the kernel of the conformal variation also contains the identically-zero combinations, so the difference of ranks is the invariant count modulo them. No basis of identities is needed for this either.",
     "candidates": "ten cubic scalars built from Riemann -- the eight standard ones plus two deliberate duplicates reachable only through the first Bianchi identity and the pair symmetries -- and two complete contractions of three Weyl tensors. Nothing in the rail knows any identity.",
@@ -49,9 +45,7 @@
     "why_det_G_is_plus_or_minus_one": "G^{-1} is then an integer matrix. A general rational inverse puts a large common denominator into every downstream cubic invariant, and the ranks are exact rational elimination on those numbers.",
     "arithmetic": "exact rational throughout -- jets over Q for the curvature, exact rational Gaussian elimination for every rank. No floating point anywhere, and no tolerance."
   },
-
   "why_the_invariant_subspace_is_the_cubic_weyl_span": "C^a_bcd is conformally invariant, so C_abcd carries weight +2 and a complete contraction of three of them needs six inverse metrics: 3(+2) + 6(-2) = -6, a uniform weight. Every complete cubic Weyl contraction is therefore automatically a pointwise conformal invariant, and the question 'how many invariants' is exactly 'how many INDEPENDENT cubic Weyl contractions'. The rail checks both directions: the two Weyl candidates' variations vanish on every sample, and they raise the rank of the Riemann candidates by nothing.",
-
   "controls": {
     "known_answer_control_ran_first": "the same pipeline shape on the D = 4 QUADRATIC question, where the answer is known independently: coordinate span 3, invariant dimension 1, C^2 = (1, -2, 1/3) inside and Gauss-Bonnet E4 = (1, -4, 1) outside. Recorded separately as curvature_invariants_d4_gate, 25/25.",
     "both_signatures": "Euclidean and Lorentzian base metrics both appear among the fixtures. The count is algebraic and must not depend on signature; the rail would notice if it did.",
@@ -63,18 +57,28 @@
     "an_identity_that_must_hold": "R^ab R^cd R_abcd vanishes identically by Riemann's antisymmetry, on every fixture -- found, not assumed",
     "fast_path_pinned_to_slow_path": "every evaluation uses riemann_const, which computes Riemann AT the base point from the Christoffels' constant and linear coefficients. It is checked componentwise against riemann_full on real curved fixtures in D = 4, 5 and 6, and riemann_full's trace is checked against both of math/curvature's independent Ricci rails."
   },
-
   "mutation_battery": {
     "note": "each mutation is a deliberate defect introduced into a copy of the rail; the score is what the gate returned. A gate that scores its baseline under mutation is not testing what it claims to test.",
     "baseline": 26,
     "mutations": [
-      {"mutation": "sigma made constant, emptying the conformal test", "score": 21},
-      {"mutation": "both cubic pairings made the SAME pairing", "score": 23},
-      {"mutation": "a Weyl index raised with g instead of g^{-1}", "score": 21},
-      {"mutation": "the wrong scalar coefficient in the Weyl tensor", "score": 15}
+      {
+        "mutation": "sigma made constant, emptying the conformal test",
+        "score": 21
+      },
+      {
+        "mutation": "both cubic pairings made the SAME pairing",
+        "score": 23
+      },
+      {
+        "mutation": "a Weyl index raised with g instead of g^{-1}",
+        "score": 21
+      },
+      {
+        "mutation": "the wrong scalar coefficient in the Weyl tensor",
+        "score": 15
+      }
     ]
   },
-
   "checks": {
     "ok": true,
     "passed": 26,
@@ -100,12 +104,11 @@
       "the_fast_riemann_path_agrees_with_the_slow_one": true
     }
   },
-
   "verification": {
     "substrate": "Forge, in the tango repository. This result has no Python rail; the standing preference for this stream is that new results are produced in Forge.",
     "commands": [
       "cd tango/forge && export FORGE_LIB=$PWD/lib",
-      "forge verify --full examples/curvature_invariants_d6_gate.forge   # 26/26, c==native, ASan clean",
+      "forge verify --full examples/curvature_invariants_d6_gate.forge   # 27/27, c==native, ASan clean",
       "forge verify --full examples/curvature_invariants_d4_gate.forge   # 25/25, the known-answer control",
       "forge verify --full examples/curvature_general_inverse_gate.forge # 20/20, the general metric inverse",
       "forge verify --full examples/curvature_gate.forge                 # 18/18, unchanged"
@@ -120,7 +123,6 @@
       "tango/forge/lib/math/curvature.forge"
     ]
   },
-
   "substrate_additions": [
     "math/curvature metric_inverse -- Gauss-Jordan over the jet ring, pivoting on nonzero CONSTANT TERM. Taking the constant term is a ring homomorphism Jet<T> -> T, so such a pivot exists whenever g(0) is invertible and is a unit, making jet_inv exact on it. The refusal becomes the honest condition 'degenerate at the base point' rather than 'not diagonal'.",
     "math/curvature metric_inverse_diag -- its refusal tested only the off-diagonal CONSTANT term, which is not sufficient: a metric diagonal AT the base point but not near it got an inverse wrong in its derivatives, surfacing as spurious curvature in an exactly flat metric. It now tests the whole jet.",
@@ -128,7 +130,6 @@
     "math/curvature riemann_const, riemann_const_agrees -- Riemann AT the base point without rank-4 jets, and the check that pins it to riemann_full",
     "math/curvinv -- the exact tensor layer: index raising and lowering, Ricci, the Weyl tensor, tracelessness, component-square tests, and the pair-matrix cube that every cubic contraction reduces to"
   ],
-
   "does_not_establish": [
     "the CITED count of three type-B invariants in D = 6. That count is not contradicted; its boundary is located. Two of the three are complete contractions of three Weyl tensors, and this certificate computes that there are exactly two of those. The third is not in that class. Which invariant it is, and whether it lies in the derivative sector, is NOT established here and stays CITED to Bonora-Pasti-Bregola and Deser-Schwimmer.",
     "anything about invariants involving DERIVATIVES of the curvature. The class computed here is cubic in Riemann with no derivatives. Nothing rules out further pointwise conformal invariants at the same weight built from Riemann and its derivatives, and the cited third invariant is the reason to expect one.",
@@ -137,5 +138,6 @@
     "the PARITY-ODD sector in any dimension. No epsilon-carrying candidate is evaluated, so the D = 6 analogue of the D = 4 parity result remains open exactly as REVERSE_PHYSICS_WEYL_ACTION_D6_V1 records.",
     "any classification in D > 6.",
     "anything about Weyl gravity's DYNAMICS, its ghost, or any quantum claim. This is a count of algebraic invariants at a point."
-  ]
+  ],
+  "parity_half_no_longer_open": "FORWARD POINTER, ADDED LATER: the parity half is no longer open. It was answered by REVERSE_PHYSICS_PARITY_CONFORMAL_COUNT_V1, then CORRECTED by REVERSE_PHYSICS_PARITY_SCALAR_CONTROL_V1 -- eight of that gate's candidates were not tensor contractions. The corrected weight-6 parity-odd counts are 1 in D = 4 and 0 in D = 6, the D = 6 sector being EMPTY over an exhaustive 3240-pattern sweep with the pair-exchange symmetry C_{abcd} = C_{cdab} as the mechanism. THIS certificate is unaffected: it is parity-EVEN, its candidates are written with explicit up/down pairings, and its gate now carries the same chart rail and passes it."
 }

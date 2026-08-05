@@ -118,7 +118,10 @@ only the saturation check distinguished it.
   unchanged — as the parity-odd sector does in `D = 4`, which is the actual content
   of *"parity is independent on actions and redundant on field equations"* — is a
   **different computation and is not done.**
-  → **Now done** ([`parity-field-equations.md`](parity-field-equations.md),
+  → ~~**Now done**~~ **— that answer was RETRACTED.** The Lagrangian differentiated was
+  not a scalar. The sector is **empty**, so there is nothing to adjoin and nothing to
+  differentiate; see [`parity-scalar-defect.md`](parity-scalar-defect.md). Original text:
+  ([`parity-field-equations.md`](parity-field-equations.md),
   `REVERSE_PHYSICS_PARITY_FIELD_EQUATIONS_V1`): the answer is **no**. The
   Euler–Lagrange expression of the `D = 6` parity-odd invariant is **nonzero**, so
   it is not locally a total divergence and the field equations *do* change. The
@@ -144,5 +147,10 @@ that is 720 terms rather than 46656.
 cd tango/forge && export FORGE_LIB=$PWD/lib
 forge verify examples/curvature_invariants_parity_gate.forge   # 20/20, ~5 min
 ```
+
+> **Rail scores above are as issued.** Both gates have since gained checks —
+> `curvature_invariants_parity_gate` is now **22/22** (the per-candidate chart audit)
+> and `curvature_euler_gate` **15/15** (the Lagrangian chart rail). Running the
+> commands today gives the higher numbers; the historical figures are left as written.
 
 Exact rational arithmetic throughout. No floating point, no tolerance.

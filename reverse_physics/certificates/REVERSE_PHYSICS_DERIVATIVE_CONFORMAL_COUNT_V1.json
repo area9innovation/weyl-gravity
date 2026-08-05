@@ -112,10 +112,10 @@
     "substrate": "Forge, in the tango repository. No Python rail; this stream's new results are produced in Forge.",
     "commands": [
       "cd tango/forge && export FORGE_LIB=$PWD/lib",
-      "forge verify examples/curvature_invariants_deriv_gate.forge   # 39/39, the expensive rail, about fifteen minutes",
+      "forge verify examples/curvature_invariants_deriv_gate.forge   # 40/40, the expensive rail, about fifteen minutes",
       "forge verify --full examples/curvature_covderiv_gate.forge    # 23/23, the derivative layer",
       "forge verify --full examples/jet_mul_gate.forge               # 14/14, the jet arithmetic",
-      "forge verify --full examples/curvature_invariants_d6_gate.forge   # 26/26, the cubic count",
+      "forge verify --full examples/curvature_invariants_d6_gate.forge   # 27/27, the cubic count",
       "forge verify --full examples/curvature_invariants_d4_gate.forge   # 25/25, the known-answer control"
     ],
     "tier_note": "the derivative gate is deliberately NOT a per-commit rail. It runs the C backend only and takes about fifteen minutes; the fast rails are the other curvature gates."
@@ -192,5 +192,6 @@
     "the_sharp_statement": "In every dimension examined, exactly ONE witness carries derivative candidates and the rest are purely cubic. In D = 6 that is the THIRD invariant, and its support is explicit: three cubic terms, three of the grad R grad R candidates, and three of the R grad grad R candidates. The uniform +1 from the derivative sector is therefore not only a rank arithmetic -- the extra invariant is exhibited, and it demonstrably could not have been found without derivative candidates.",
     "an_example_coefficient_vector": "D = 6, witness 2, normalised on c20: c0 = -1/5, c1 = 2, c2 = -2, c12 = 5, c15 = 5, c16 = -10, c18 = 10, c19 = -10, c20 = 1",
     "what_this_does_not_do": "it does not identify any witness with I_1, I_2 or I_3 by name, and it does not put the basis in any canonical form -- the nullspace parameterisation picks representatives, and a different pivot order would give different ones spanning the same space"
-  }
+  },
+  "parity_half_no_longer_open": "FORWARD POINTER, ADDED LATER: the parity half is no longer open. It was answered by REVERSE_PHYSICS_PARITY_CONFORMAL_COUNT_V1, then CORRECTED by REVERSE_PHYSICS_PARITY_SCALAR_CONTROL_V1 -- eight of that gate's candidates were not tensor contractions. The corrected weight-6 parity-odd counts are 1 in D = 4 and 0 in D = 6, the D = 6 sector being EMPTY over an exhaustive 3240-pattern sweep with the pair-exchange symmetry C_{abcd} = C_{cdab} as the mechanism. THIS certificate is unaffected: it is parity-EVEN, its candidates are written with explicit up/down pairings, and its gate now carries the same chart rail and passes it."
 }
