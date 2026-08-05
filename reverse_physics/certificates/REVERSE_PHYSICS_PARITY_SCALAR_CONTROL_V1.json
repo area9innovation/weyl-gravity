@@ -150,5 +150,30 @@
     },
     "what_it_is_not": "NOT the first Bianchi identity and NOT tracelessness. The pair-symmetric control violates Bianchi (verified in the gate) and is not traceless, and still vanishes on every pattern. And antisymmetry within each pair is not sufficient on its own -- 2208 patterns survive it.",
     "a_hypothesis_that_was_wrong_twice": "Bianchi was asserted as the mechanism twice, once in the control design and once after the first run. Both were wrong. Neither reached a certificate because the control was built to be able to refute it -- which is the whole argument for a control that CAN fail."
+  },
+  "the_sweep_for_the_same_defect_class": {
+    "why": "eight malformed contractions in ONE gate is not a reason to assume the ninth does not exist. The defect is silent by construction: a wrong contraction type-checks, runs, returns a plausible number, and passes conformal and weight checks.",
+    "forge_is_swept_completely": {
+      "sites": "seven in forge/examples build tensor contractions by hand; all seven are now accounted for",
+      "curvature_invariants_parity_gate": "22/22 -- the ONE defective site: 8 malformed candidates, repaired",
+      "curvature_invariants_d6_gate": "27/27 clean",
+      "curvature_invariants_deriv_gate": "40/40 clean",
+      "curvature_euler_gate": "15/15 clean, rail added. It was already pinned by known answers -- Gauss-Bonnet vanishing, the trace-law ratios, Pontryagin assembled two ways -- which is strong evidence and is NOT this evidence: a contraction can be wrong and still reproduce a known ratio if the error cancels in the comparison.",
+      "curvature_parity_enumeration_gate": "12/12, variance derived mechanically rather than hand-specified",
+      "curvature_coord_scalar_control_gate": "19/19, is the rail",
+      "curvature_parity_field_equations_gate": "RETRACTED, labelled in place. It still exits 6 because every check in it is internally consistent, which is exactly why it needed a banner rather than being left: a withdrawn result whose gate reports 6/6 is a trap for the next reader.",
+      "finding": "the defect was LOCALISED to one gate, not endemic. Every other site writes its up/down pairings explicitly and survives the chart test. What made the parity gate different is the slot-spec mechanism, where an operand variance is implicit in which pre-raised array the spec is handed."
+    },
+    "python_is_NOT_swept": {
+      "scope": "over two thousand files mention curvature. ONE engine is audited: black_hole_programme/weyl_geometry.py, which the work item names as a pinned dependency.",
+      "what_was_verified": "the TRANSFORMATION LAW componentwise at the base point -- R'_{abcd}(0) = A^p_a A^q_b A^r_c A^s_d R_{pqrs}(0) -- for Riemann, Ricci and Weyl under three SL(4, Z) charts, plus invariance of the scalar curvature. 11 passed in 1153 s. That is cheaper AND SHARPER than scalar invariance: a scalar can come out right through cancelling errors, a tensor law cannot.",
+      "what_is_not_verified": "Geometry.invariants() is a separate contraction site and is NOT audited -- it is an O(N^8) symbolic contraction with simplify on top, and the first attempt TIMED OUT at 900 s inside it. A timeout is not a pass. The tensors it contracts are audited and its raises use the safe explicit-ginv idiom, but neither of those is a test of it.",
+      "the_honest_boundary": "the argument that the rest of the Python corpus uses the safe idiom -- explicit ginv at each raise, so variance is visible in the source -- is an ARGUMENT, not a sweep. \"Conformally invariant by construction\" was also true, and also missed the point.",
+      "how_to_run": "WEYL_SLOW_AUDIT=1 python -m pytest reverse_physics/tests/test_curvature_engine_chart_invariance.py -- opt-in because at 19 minutes it would otherwise be normalised away or skipped in a 35-second rail, and a skip is not a pass."
+    },
+    "two_incidental_findings": [
+      "a first draft of the Euler rail sat AFTER perms/signs were freed and indexed released memory. ManualVec bounds-checks, so it TRAPPED rather than quietly reading something that still looked like a permutation table and returning a confident wrong number -- which is the failure mode this sweep exists to remove. It was then mis-diagnosed as an allocator failure under a ulimit before the line was read; it is a bounds check.",
+      "the Python audit was first written against a generic 4x4 metric, whose symbolic inverse produces rational functions that every downstream stage inherits. g = L S L^T with L unit lower-triangular makes det g = -1 and keeps the inverse POLYNOMIAL -- the same trick the Forge fixtures use, and now asserted as a check rather than relied on."
+    ]
   }
 }

@@ -208,6 +208,75 @@ contracted norm can vanish on a nonzero tensor under an indefinite metric) are *
 scalars by design**, and only their *vanishing* is ever read. The rail compares candidates
 by **value** and those diagnostics by **vanishing**.
 
+## 9. The sweep for the same defect class
+
+Eight malformed contractions in one gate is not a reason to assume the ninth doesn't
+exist. The defect is silent by construction — a wrong contraction type-checks, runs,
+returns a plausible number, and passes conformal and weight checks.
+
+**Forge is swept completely.** Seven sites build contractions by hand; all seven are now
+accounted for.
+
+| site | verdict |
+|---|---|
+| `curvature_invariants_parity_gate` | 22/22 — **the one defective site**, 8 repaired |
+| `curvature_invariants_d6_gate` | 27/27 clean |
+| `curvature_invariants_deriv_gate` | 40/40 clean |
+| `curvature_euler_gate` | **15/15 clean**, rail added |
+| `curvature_parity_enumeration_gate` | 12/12, variance derived mechanically |
+| `curvature_coord_scalar_control_gate` | 19/19, is the rail |
+| `curvature_parity_field_equations_gate` | **retracted, labelled in place** |
+
+> **The defect was localised to one gate, not endemic.**
+
+Every other site writes its up/down pairings explicitly and survives the chart test. What
+made the parity gate different is the **slot-spec mechanism**, where an operand's variance
+is implicit in which pre-raised array the spec is handed.
+
+The Euler gate is worth naming: it was already pinned by known answers — Gauss–Bonnet
+vanishing, the trace-law ratios, Pontryagin assembled two ways. Strong evidence, and *not
+this evidence*: a contraction can be wrong and still reproduce a known ratio if the error
+cancels in the comparison. It passes the direct test too.
+
+The retracted gate still exits `6`, because every check in it is internally consistent —
+which is exactly why it needed a banner rather than being left alone. A withdrawn result
+whose gate reports 6/6 is a trap for the next reader.
+
+**Python is *not* swept, and that is the honest word.** Over two thousand files mention
+curvature. **One** engine is audited — `black_hole_programme/weyl_geometry.py`, the one the
+work item pins — by the **transformation law** componentwise:
+
+```
+R'_{abcd}(0) = A^p_a A^q_b A^r_c A^s_d R_{pqrs}(0)
+```
+
+for Riemann, Ricci and Weyl under three `SL(4,ℤ)` charts, plus invariance of `R`. **11
+passed in 1153 s.** That is cheaper *and sharper* than scalar invariance: a scalar can come
+out right through cancelling errors, a tensor law cannot.
+
+**`Geometry.invariants()` is not audited.** It is an `O(N⁸)` symbolic contraction with
+`simplify` on top, and the first attempt **timed out at 900 s** inside it. A timeout is not
+a pass. The tensors it contracts *are* audited and its raises use the safe explicit-`ginv`
+idiom — but neither of those is a test of it.
+
+And the argument that the rest of the corpus uses the safe idiom is an **argument, not a
+sweep**. *"Conformally invariant by construction"* was also true, and also missed the point.
+
+### Two incidental findings
+
+**A bounds check earned its keep.** A first draft of the Euler rail sat *after*
+`perms`/`signs` were freed and indexed released memory. `ManualVec` bounds-checks, so it
+**trapped** instead of quietly reading something that still looked like a permutation table
+and returning a confident wrong number — the exact failure mode this sweep exists to remove.
+I then mis-diagnosed it as an allocator failure under a `ulimit` before reading the line,
+which is a bounds check.
+
+**Fixtures need polynomial inverses.** The Python audit was first written against a generic
+`4×4` metric, whose symbolic inverse produces rational functions that every downstream stage
+inherits — that is what made it time out. `g = L S Lᵀ` with `L` unit lower-triangular gives
+`det g = −1` and keeps the inverse **polynomial**. Same trick the Forge fixtures use, now
+asserted as a check rather than relied on.
+
 ---
 
 ## Verification
