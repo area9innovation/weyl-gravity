@@ -197,7 +197,40 @@ classification gate **asserts** when it calls `W±² = (C² ± P)/2` both Weyl i
 result: whether adjoining the parity-odd sector leaves the *field equations*
 unchanged in `D = 6`, as it does in `D = 4`. That is a different computation.
 
-### The sharper half is done too — and the answer is **no**
+### RETRACTED — the object differentiated below is not a scalar
+
+See [`parity-scalar-defect.md`](parity-scalar-defect.md), certificate
+`REVERSE_PHYSICS_PARITY_SCALAR_CONTROL_V1`.
+
+The `D = 6` parity-odd "invariant" the section below differentiates is a
+**coordinate-dependent** expression: its slot spec transposed two free slots of the
+middle operand, summing one contracted index over two **lower** slots and another over
+two **upper** ones. Under `x = Ay` with `A ∈ SL(6,ℤ)` its value moves from
+`6566972251/160` to `−200078513393/160` — and that first number is exactly the `L(g)`
+the retracted certificate published as its conformal-invariance control.
+
+The **Euler operator is not implicated**. Its `n = 6` exercise still returns exactly
+zero on a construction-total-divergence. The instrument was right; the Lagrangian it
+was pointed at was not.
+
+Nor is the count above safe: the `D = 6` parity-odd count of **2** came entirely from
+two such candidates. Corrected, the weight-6 counts are **1 in `D = 4`** and **0 in
+`D = 6`** — every candidate there is identically zero, from **Riemann** as well as Weyl,
+so it is the index pattern that is empty and not the Weyl trace conditions.
+
+What replaces the conclusion below is its **opposite**, and it is deliberately weaker:
+with no parity-odd invariant to adjoin, `RP-PARITY` would be **vacuous** in `D = 6`
+rather than load-bearing. That is the reading the evidence favours, **not** a result —
+it holds only if the candidate family is complete, and these counts stay **lower bounds
+over the patterns evaluated**.
+
+The uniqueness finding in §6 — *"the method scales, the conclusion does not"* — is
+**untouched**, as is the `D = 4` weight-4 Pontryagin row that the ledger's `RP-PARITY`
+actually rests on.
+
+The original section follows, preserved as issued.
+
+### ~~The sharper half is done too — and the answer is **no**~~
 
 **Done:** [`parity-field-equations.md`](parity-field-equations.md), certificate
 `REVERSE_PHYSICS_PARITY_FIELD_EQUATIONS_V1`, Forge rail 6/6.

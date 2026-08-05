@@ -1,5 +1,13 @@
 # The parity half, answered — and yes, `D = 6` has an analogue
 
+> **CORRECTED.** The weight-6 counts below are wrong: **eight** of the candidates are
+> not covariant contractions, and the `D = 6` count of 2 came entirely from two of them.
+> Corrected they are **1 in `D = 4`** and **0 in `D = 6`**. The weight-4 Pontryagin row
+> and the odd-`D` row are unchanged. See [`parity-scalar-defect.md`](parity-scalar-defect.md),
+> certificate `REVERSE_PHYSICS_PARITY_SCALAR_CONTROL_V1`. The corrected counts remain a
+> **lower bound** over the patterns evaluated, exactly as these were. The original text
+> follows.
+
 **Certificate** `REVERSE_PHYSICS_PARITY_CONFORMAL_COUNT_V1`
 **Rail** Forge, `tango/forge/examples/curvature_invariants_parity_gate.forge` — 20/20
 **Answers** the second half of `WEYL_ACTION_SIX_DERIVATIVE_D6`

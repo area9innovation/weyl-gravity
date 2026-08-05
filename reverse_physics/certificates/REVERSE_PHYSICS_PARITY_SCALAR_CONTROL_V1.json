@@ -1,0 +1,132 @@
+{
+  "certificate": "REVERSE_PHYSICS_PARITY_SCALAR_CONTROL_V1",
+  "kind": "defect-and-correction",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "report": "reverse_physics/reports/parity-scalar-defect.md",
+  "establishes": "The parity-odd CANDIDATES of curvature_invariants_parity_gate were not all tensor contractions. Eight of them summed a repeated index over two LOWER or two UPPER slots with no metric between them, which makes the value COORDINATE-DEPENDENT. Under a change of chart x = A y with A in SL(n, Z) those candidates move. The published D = 6 count of 2 came entirely from two of them. With every candidate repaired the counts are 1 in D = 4 at weight 6 and 0 in D = 6, where rankV = 0 -- every candidate, algebraic and derivative, Weyl-built and Riemann-built, is identically zero.",
+  "retracts": "REVERSE_PHYSICS_PARITY_FIELD_EQUATIONS_V1 outright. The Lagrangian it differentiated is not a scalar.",
+  "corrects": "REVERSE_PHYSICS_PARITY_CONFORMAL_COUNT_V1, in two of its four rows.",
+  "why_no_existing_check_could_catch_it": {
+    "the_conformal_test_is_vacuous_on_weyl_built_candidates": "it compares g with e^{2 sigma} g where sigma vanishes at the base point. But C^{a}_{bcd} is conformally invariant with NO derivative-of-sigma terms at all, so ANY product of Weyl tensors, contracted in ANY index pattern, passes it automatically. The parity gate's own comment called these candidates 'conformally invariant by construction'. That was true, and it is exactly why the test could say nothing.",
+    "the_weight_count_cancels": "the two mismatched pairs were one down-down and one up-up, contributing -2 and +2. Total weight -6, precisely correct.",
+    "the_actual_gap": "nothing in the apparatus ever asked whether a candidate was a TENSOR. It tested conformal behaviour and never tested covariance.",
+    "where_the_defect_lives": "each operand is a SLOT SPEC -- which slots feed the epsilon, which take a contracted index -- and its VARIANCE is implicit in which pre-raised array the spec is handed. cu012 is C^{abc}_{d}; cu01 is C^{ab}_{cd}. Pass the wrong one, or transpose two free slots, and the spec still type-checks, still runs, and still returns a number."
+  },
+  "the_falsifier": {
+    "construction": "change chart by x = A y with A in SL(n, Z), so g'_{ab}(y) = A^k_a A^l_b g_{kl}(A y). A genuine scalar takes the same value at the base point in both charts.",
+    "why_SL_and_not_GL": "det A = 1 keeps the arithmetic exact and preserves |det g| = 1 at the base point -- which is what keeps the Levi-Civita SYMBOL equal to the TENSOR there, and the whole parity-odd sector rational.",
+    "three_charts": "unit lower-triangular, unit upper-triangular, and their PRODUCT, which is triangular in neither direction. Agreement across all three is agreement under a generic element rather than under a shear in one direction.",
+    "calibrated_in_both_directions": "R, C_{abcd}C^{abcd} and the PONTRYAGIN DENSITY must transport correctly and Pontryagin must be nonzero; a deliberately malformed sum_{ab} R_{ab} R_{ab} must MOVE. Without the negative half, 'everything passed' would mean the test is blind rather than the code correct.",
+    "the_witness": "sw0 as written is 6566972251/160 in one chart and -200078513393/160 in another. That first number is exactly the L(g) that REVERSE_PHYSICS_PARITY_FIELD_EQUATIONS_V1 published as its conformal-invariance control."
+  },
+  "corrected_counts": {
+    "D4_weight4_pontryagin": {
+      "published": 1,
+      "corrected": 1,
+      "note": "UNCHANGED. Still nonzero, still conformally invariant, still chart-invariant. This is the row the ledger's RP-PARITY assumption rests on."
+    },
+    "D4_weight6": {
+      "published": 2,
+      "corrected": 1,
+      "note": "rankV = 4, rankD = 3"
+    },
+    "D6_weight6": {
+      "published": 2,
+      "corrected": 0,
+      "note": "rankV = 0 and rankD = 0 -- every candidate is identically zero"
+    },
+    "odd_D_weight6": {
+      "published": 0,
+      "corrected": 0,
+      "note": "UNCHANGED. An index-parity argument that no computation touches."
+    }
+  },
+  "the_eight_defects": [
+    {
+      "dimension": 4,
+      "candidate": 2,
+      "defect": "middle operand u012 carries b3 UP, and rup carries it UP too"
+    },
+    {
+      "dimension": 4,
+      "candidate": 4,
+      "defect": "d1_012 carries b1 UP, and d1up carries it UP too"
+    },
+    {
+      "dimension": 4,
+      "candidate": 5,
+      "defect": "u01 carries b1 UP, and d2up carries it UP too"
+    },
+    {
+      "dimension": 4,
+      "candidate": 7,
+      "defect": "the Weyl-built copy of candidate 2"
+    },
+    {
+      "dimension": 6,
+      "candidate": 2,
+      "defect": "the middle operand's two free slots transposed: one index down-down, another up-up"
+    },
+    {
+      "dimension": 6,
+      "candidate": 7,
+      "defect": "middle rup carries b3 UP, and the third rup carries it UP too"
+    },
+    {
+      "dimension": 6,
+      "candidate": 8,
+      "defect": "ralt2 raised slot 2 of ralt, which was already UP; the raise belonged on slot 1"
+    },
+    {
+      "dimension": 6,
+      "candidate": 9,
+      "defect": "an EPSILON index on a DOWN slot, and b1 UP on both operands"
+    },
+    {
+      "dimension": 6,
+      "candidate": 10,
+      "defect": "the transposition, Weyl-built -- one of the two the published count of 2 rested on"
+    },
+    {
+      "dimension": 6,
+      "candidate": 11,
+      "defect": "the double raise, Weyl-built -- the other of the two the published count of 2 rested on"
+    }
+  ],
+  "the_one_worth_naming": "D = 6 candidate 9 was ZERO AS WRITTEN, so no wrong number ever pointed at it. It could only be found by asking whether the contraction was well formed -- never by watching output. Repairing it can turn a zero into a nonzero, so it had to be fixed BEFORE 'D = 6 is empty' meant anything.",
+  "why_the_D6_zero_is_structural": "the covariant repairs vanish for RIEMANN as well as for Weyl. Riemann is not traceless, so this is the index PATTERN vanishing rather than the Weyl trace conditions, and no choice of curvature tensor rescues it.",
+  "an_empty_sector_is_a_result": {
+    "the_problem": "with the D = 6 sector empty, three of the parity gate's checks could no longer pass: they demanded that the candidates be nonzero, that the Weyl-built candidates be nonzero, and that the ranks saturate. Every one of those is a PREMISE OF A NONZERO COUNT, and demanding them would be demanding the wrong answer.",
+    "the_fix": "checks 4, 5, 6 and 8 now branch on whether the sector is expected empty. Where it is, they require every candidate to be EXACTLY zero, both ranks to be zero (stronger than the count being zero, which is a difference and could vanish with both ranks positive), and a PARITY-EVEN witness to be nonzero.",
+    "the_parity_even_witness": "R_{abcd} R^{abcd}, computed on the same fixtures. Without it, 'every parity-odd candidate vanishes' is indistinguishable from a pipeline that returns zero for everything. It is a new diagnostic slot added for exactly this."
+  },
+  "checks": {
+    "ok": true,
+    "detail": {
+      "curvature_coord_scalar_control_gate": "19/19, ASan-clean under forge verify",
+      "curvature_invariants_parity_gate": "22/22 after repair, including the per-candidate chart audit as checks 21 and 22",
+      "curvature_invariants_d6_gate": "27/27, chart rail added, parity-even counts unaffected",
+      "curvature_invariants_deriv_gate": "40/40, chart rail added, derivative-sector counts unaffected"
+    }
+  },
+  "verification": {
+    "substrate": "Forge, in the tango repository.",
+    "commands": [
+      "cd tango/forge && export FORGE_LIB=$PWD/lib",
+      "forge verify examples/curvature_coord_scalar_control_gate.forge",
+      "forge -run examples/curvature_invariants_parity_gate.forge",
+      "forge -run examples/curvature_invariants_d6_gate.forge",
+      "forge -run examples/curvature_invariants_deriv_gate.forge   # 40/40, 11m12s"
+    ]
+  },
+  "does_not_establish": [
+    "that no parity-odd conformal invariant exists in D = 6. This is a LOWER BOUND over the patterns evaluated, exactly as the counts always were. What is established is that THESE patterns vanish and that the published 2 was an artefact of malformed candidates.",
+    "the claim that RP-PARITY is VACUOUS in D = 6. That is the reading the evidence favours, and it is the opposite direction from the retracted certificate's 'load-bearing'. It follows only if the candidate family is complete, which the line above says it is not. Recorded as a reading, not as a result.",
+    "anything against REVERSE_PHYSICS_WEYL_ACTION_V1. The D = 4 weight-4 Pontryagin row is untouched and the gravitational theta-angle statement stands.",
+    "anything against the parity-EVEN counts. Both REVERSE_PHYSICS_CUBIC_CONFORMAL_COUNT_V1 and REVERSE_PHYSICS_DERIVATIVE_CONFORMAL_COUNT_V1 now carry the same chart rail and pass it in D = 4, 5 and 6 -- 27/27 and 40/40. The defect was specific to the parity gate\u2019s slot-spec mechanism, where each operand\u2019s variance is implicit in which pre-raised array it is handed; the parity-even candidates are written with their up/down pairings explicit.",
+    "an explanation for why the malformed D = 4 sw1 was chart-INVARIANT across all six comparisons despite not being covariantly formed -- presumably a four-dimensional identity. It is repaired regardless. Recorded as an observation, not a result.",
+    "anything global, anything about dynamics, the ghost, or anything quantum."
+  ]
+}

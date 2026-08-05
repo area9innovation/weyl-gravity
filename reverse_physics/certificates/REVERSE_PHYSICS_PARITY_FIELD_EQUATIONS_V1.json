@@ -1,14 +1,24 @@
 {
   "certificate": "REVERSE_PHYSICS_PARITY_FIELD_EQUATIONS_V1",
+  "status": "RETRACTED",
+  "retraction": {
+    "date": "2026-08-05",
+    "by": "REVERSE_PHYSICS_PARITY_SCALAR_CONTROL_V1",
+    "report": "reverse_physics/reports/parity-scalar-defect.md",
+    "what_was_wrong": "The Lagrangian this certificate differentiated is NOT A SCALAR. Its density was built from the parity gate candidate sw0, whose slot spec transposed the two free slots of the middle operand -- putting one contracted index on two LOWER slots and another on two UPPER slots, with no metric between either pair. Under a change of chart x = A y with A in SL(6, Z) the value moves: 6566972251/160 in one chart, -200078513393/160 in another. That first number is exactly the L(g) this certificate published as its conformal-invariance control.",
+    "why_the_controls_did_not_catch_it": "Both controls were sound and both were blind to this. Control 1 exercised the EULER OPERATOR at n = 6 against a total divergence and is unaffected -- the operator is fine. Control 2 checked CONFORMAL invariance, which for a Weyl-built contraction is vacuous: C^{a}_{bcd} is conformally invariant with no derivative-of-sigma terms, so ANY product of Weyl tensors contracted in ANY index pattern passes it. And the weight count cancels, because one down-down pair and one up-up pair contribute -2 and +2. What was never tested was whether the contraction was COVARIANT.",
+    "what_survives": "The Euler operator itself (REVERSE_PHYSICS_EULER_OPERATOR_V1) is untouched, including its n = 6 exercise: L = d_0(sqrt|det g|) still returns exactly zero field equations in six dimensions. The machinery is correct; the Lagrangian it was pointed at was not.",
+    "what_is_withdrawn": "The claim that RP-PARITY is NOT redundant on the D = 6 field equations, and with it the claim that the ledger assumption count is dimension-dependent BY THAT ROUTE. The numbers E^00 = -12614421113/320, E^12 = 1224309325271/160 and E^00 = 1290109675603/640 are the Euler-Lagrange expression of a chart-dependent quantity and mean nothing.",
+    "what_the_evidence_now_says": "Every covariantly formed cubic parity-odd pattern in D = 6 is identically ZERO -- from Weyl and from Riemann alike. So the reading the evidence favours is the OPPOSITE: RP-PARITY is VACUOUS in D = 6 rather than load-bearing, because there is no parity-odd invariant to adjoin. That is recorded as a reading, not as a result: it follows only if the candidate family is complete, and it is a lower bound over the patterns evaluated.",
+    "the_original_certificate_follows_verbatim": "The entries below are preserved exactly as issued. They are the historical record of what was claimed and must not be read as current."
+  },
   "kind": "variational-classification",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC"
   ],
   "report": "reverse_physics/reports/parity-field-equations.md",
   "completes": "REVERSE_PHYSICS_PARITY_CONFORMAL_COUNT_V1, which answered the EXISTENCE half of the D = 6 parity question by counting invariants and explicitly recorded the field-equation half as NOT DONE. This is that half.",
-
   "establishes": "The D = 6 parity-odd conformal invariant CONTRIBUTES TO THE FIELD EQUATIONS. Its Euler-Lagrange expression is nonzero -- on two components and two independent metrics -- so it is not locally a total divergence. Therefore RP-PARITY is NOT redundant on the D = 6 field equations, and the D = 4 statement 'parity is independent on actions and redundant on field equations' is SPECIAL TO FOUR DIMENSIONS.",
-
   "the_d4_statement_it_qualifies": {
     "what_d4_says": "REVERSE_PHYSICS_WEYL_ACTION_V1: adjoining the parity-odd Pontryagin density P gives W_+^2 = (C^2 + P)/2 and W_-^2 = (C^2 - P)/2, both Weyl invariant -- a TWO-parameter family of ACTIONS but a ONE-parameter family of FIELD EQUATIONS, because P is topological. So RP-PARITY is independent on actions and redundant on field equations.",
     "the_physical_reading": "a gravitational theta-angle: like the QCD theta-term, the parity-odd direction changes the action and not the classical equations of motion",
@@ -16,13 +26,26 @@
     "this_is_the_second_such_finding": "REVERSE_PHYSICS_WEYL_ACTION_D6_V1 already showed the UNIQUENESS of the Weyl action is special to D = 4 -- 'the method scales, the conclusion does not'. Parity-redundancy is the second structural fact in the ledger that does not travel.",
     "consequence_for_the_assumption_count": "the ledger's headline is 'six assumptions written as an action, five written as field equations', and the difference turns on RP-PARITY and RP-TOPO-INERT dropping out on the field-equation side. If RP-PARITY does not drop out in D = 6, that COUNT IS DIMENSION-DEPENDENT. For reverse physics as a method, the assumption lattice is not a fixed object attached to a theory."
   },
-
   "results": [
-    {"metric": 1, "component": "E^00", "value": "-12614421113/320", "nonzero": true},
-    {"metric": 1, "component": "E^12", "value": "1224309325271/160", "nonzero": true},
-    {"metric": 2, "component": "E^00", "value": "1290109675603/640", "nonzero": true}
+    {
+      "metric": 1,
+      "component": "E^00",
+      "value": "-12614421113/320",
+      "nonzero": true
+    },
+    {
+      "metric": 1,
+      "component": "E^12",
+      "value": "1224309325271/160",
+      "nonzero": true
+    },
+    {
+      "metric": 2,
+      "component": "E^00",
+      "value": "1290109675603/640",
+      "nonzero": true
+    }
   ],
-
   "controls": {
     "why_they_matter_here": "a NONZERO answer is the interesting direction, which is exactly where a bug masquerades as a discovery. Neither control below existed before this computation, and both were identified as missing BEFORE the result was claimed rather than after it was questioned.",
     "control_1_the_operator_at_n_equals_6": {
@@ -40,7 +63,6 @@
     "the_measure_rule": "the density is |det g| times the symbol contraction -- a DETERMINANT, not a square root -- because summing over permutations contracts with the epsilon SYMBOL while the scalar is built with the TENSOR. At a point, where the fixtures have |det g| = 1, the wrong choice is invisible; as a function it is not. Validated in D = 4 by curvature_euler_gate check 13, which assembles the same Pontryagin density both ways.",
     "the_epsilon_collapse": "the permutation sum is collapsed 8x over the antisymmetry of the three index pairs fed to epsilon, checked EXACT against the full sum on a fixture where the result is NONZERO. A first attempt checked it where both sides vanished identically, which established nothing; three distinct operands were needed to make the check mean something."
   },
-
   "checks": {
     "ok": true,
     "passed": 6,
@@ -55,7 +77,6 @@
       "and_do_not_on_a_second_metric": true
     }
   },
-
   "verification": {
     "substrate": "Forge, in the tango repository.",
     "commands": [
@@ -68,7 +89,6 @@
       "curvature_covderiv_gate 23/23 and jet_mul_gate 14/14 underneath"
     ]
   },
-
   "does_not_establish": [
     "anything GLOBAL. The Euler operator tests LOCAL triviality: vanishing field equations means locally a total divergence. Topology is a different statement and is not reached. 'Not topological' is NOT what is shown; 'not locally trivial' is.",
     "the same for the SECOND parity-odd invariant in D = 6. Two were counted; one is differentiated here. The other is not, and a claim about the whole parity-odd sector would need it.",

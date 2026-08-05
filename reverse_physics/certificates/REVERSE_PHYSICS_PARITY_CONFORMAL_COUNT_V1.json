@@ -1,21 +1,36 @@
 {
   "certificate": "REVERSE_PHYSICS_PARITY_CONFORMAL_COUNT_V1",
+  "status": "CORRECTED",
+  "correction": {
+    "date": "2026-08-05",
+    "by": "REVERSE_PHYSICS_PARITY_SCALAR_CONTROL_V1",
+    "report": "reverse_physics/reports/parity-scalar-defect.md",
+    "what_was_wrong": "Eight of the parity-odd CANDIDATES were not covariant contractions. A contraction is covariant only when each repeated index appears once UP and once DOWN, and these summed a pair over two lower or two upper slots with no metric between them. The defect lives in how a candidate is specified: each operand is a slot spec, and its VARIANCE is implicit in which pre-raised array the spec is handed. cu012 is C^{abc}_{d}; cu01 is C^{ab}_{cd}. Pass the wrong one, or transpose two free slots, and the spec still runs and still returns a number.",
+    "why_no_check_caught_it": "The conformal test compares g with e^{2 sigma} g where sigma vanishes at the base point. For a WEYL-built candidate that test is VACUOUS: C^{a}_{bcd} is conformally invariant with no derivative-of-sigma terms, so any product of Weyl tensors contracted in any index pattern passes it automatically. This certificate called those candidates \"conformally invariant by construction\" -- true, and exactly why the test could say nothing. The weight count cancels too, one down-down pair and one up-up pair contributing -2 and +2. Nothing ever asked whether a candidate was a TENSOR.",
+    "corrected_counts": {
+      "D4_weight4_pontryagin": "1 -- UNCHANGED, and still nonzero, conformally invariant and chart-invariant",
+      "D4_weight6": "1, not 2",
+      "D6_weight6": "0, not 2. After repair rankV = 0: every candidate, algebraic and derivative, Weyl-built and Riemann-built, is identically zero",
+      "odd_D": "none -- UNCHANGED, an index-parity argument that no computation touches"
+    },
+    "what_the_published_2_in_D6_was": "entirely the two malformed Weyl-built candidates. Under a chart change x = A y with A in SL(6, Z) they move -- sw0 goes from 6566972251/160 to -200078513393/160 -- and their covariant repairs are exactly zero.",
+    "what_survives_unchanged": "The D = 4 weight-4 Pontryagin row, which is the row the ledger RP-PARITY assumption actually rests on. REVERSE_PHYSICS_WEYL_ACTION_V1 and the gravitational theta-angle statement are UNAFFECTED. The exact-arithmetic trick for the Levi-Civita tensor (evaluate where |det g| = 1, so the tensor IS the symbol) is unaffected and is still checked rather than assumed. The parity-EVEN counts are unaffected: curvature_invariants_d6_gate now carries the same chart rail and passes 27/27.",
+    "the_boundary_that_does_not_change": "the counts were always a LOWER BOUND over the candidate families evaluated, and the corrected ones still are. D = 6 = 0 means THESE patterns vanish, not that no parity-odd conformal invariant exists in six dimensions.",
+    "the_original_certificate_follows_verbatim": "The entries below are preserved exactly as issued. They are the historical record of what was claimed and must not be read as current."
+  },
   "kind": "pointwise-invariant-count",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC"
   ],
   "report": "reverse_physics/reports/parity-conformal-count.md",
   "answers": "the second half of the gate declared as WEYL_ACTION_SIX_DERIVATIVE_D6 in reverse_physics/reports/OVERVIEW.md section 8 -- 'whether the parity result has an analogue' in D = 6. REVERSE_PHYSICS_WEYL_ACTION_D6_V1 recorded that half as NOT ANSWERED, and it has stayed open through every subsequent certificate because no epsilon-carrying candidate had ever been evaluated in any dimension.",
-
   "establishes": "The PARITY-ODD pointwise conformal invariants of weight 6 -- those carrying one Levi-Civita tensor -- computed by exact rational rank over generated metrics. D = 4: 2. D = 6: 2. In ODD dimensions none exist, by index counting rather than by computation. The D = 4 parity result therefore DOES have a D = 6 analogue, and the gate's second question is answered YES. Both invariants in each dimension are EXHIBITED rather than merely counted: they are the complete contractions of one epsilon with three WEYL tensors, which carry conformal weight -6 uniformly and are therefore invariant by construction.",
-
   "the_answer_to_the_gate": {
     "asked": "whether the D = 4 parity result has a D = 6 analogue",
     "answered": "yes. There are parity-odd pointwise conformal invariants of weight 6 in D = 6, two of them are exhibited explicitly, and the D = 4 sector has two as well.",
     "what_the_d4_parity_result_was": "REVERSE_PHYSICS_WEYL_ACTION_V1: W_+^2 = (C^2 + P)/2 and W_-^2 = (C^2 - P)/2 are both Weyl invariant, span a two-parameter family of ACTIONS and a one-parameter family of FIELD EQUATIONS, so RP-PARITY is independent on actions and redundant on field equations. That gate ASSERTS P is a pointwise conformal invariant; this one COMPUTES it.",
     "the_shape_of_the_analogue": "in both dimensions the parity-odd invariant content is exactly what the WEYL tensor supplies. The Riemann-built parity-odd candidates are mostly identically zero, and the ones that are not are not invariant on their own."
   },
-
   "results": [
     {
       "dimension": 4,
@@ -50,7 +65,6 @@
       "status": "COUNTED, not computed -- there is nothing for a rank to evaluate"
     }
   ],
-
   "how_a_levi_civita_tensor_stays_in_exact_arithmetic": {
     "the_problem": "eps_{a_1..a_D} = sqrt(|det g|) [a_1..a_D], and that square root is not rational in general, which would put the entire parity-odd sector outside exact rational arithmetic",
     "the_resolution": "evaluate at a base point where |det g| = 1, and the tensor IS the symbol there, exactly",
@@ -58,7 +72,6 @@
     "it_is_checked_not_assumed": "check 1 in each dimension verifies |det g| = 1 on every fixture. A mutation making the base metric non-unimodular scores 18/20, failing exactly that check in both dimensions.",
     "the_other_thing_that_makes_it_work": "the Levi-Civita tensor is COVARIANTLY CONSTANT, so it passes straight through a covariant derivative and the derivative candidates need no extra machinery"
   },
-
   "method": {
     "counting_identity": "invariant dim = rank(VALUES) - rank(VARIATIONS)",
     "candidate_specification": "a parity-odd candidate is a SLOT SPEC: which of the operands' index slots feed the epsilon, and how the remainder pairs up. Nothing about which contraction is natural is built in; the caller writes patterns and the rank decides which are independent.",
@@ -67,7 +80,6 @@
     "up_and_down": "the epsilon is carried all-LOWER, so every slot feeding it must be UPPER and the free pairs must be one upper and one lower. Nothing checks that automatically, which is why the vanishing control and the known D = 4 answer are checks rather than commentary.",
     "arithmetic": "exact rational throughout. No floating point, no tolerance."
   },
-
   "controls": {
     "known_answer_control": "in D = 4 at weight 4 the Pontryagin density is nonzero on every fixture and its conformal variation vanishes on every sample -- reproducing by computation what weyl_action_classification_gate asserts when it calls W_+^2 and W_-^2 both Weyl invariant",
     "positive_control": "the Weyl-built candidates are NONZERO on every fixture and their variation vanishes on every sample. A complete contraction of one epsilon with three Weyl tensors carries weight -6 uniformly, so it must be invariant; if that failed, the epsilon bookkeeping would be wrong.",
@@ -78,18 +90,24 @@
     "two_rank_rails": "rank(M) recomputed as rank(M^T)",
     "both_signatures": "Euclidean and Lorentzian base metrics both appear"
   },
-
   "a_run_that_failed_its_own_saturation_check": "An earlier run at six metrics reported ONE FEWER invariant in D = 4 than the truth. Its saturation check failed -- both ranks were still climbing when the metrics ran out -- which is exactly what that check is for. Recorded because the wrong number was not obviously wrong; only the saturation check distinguished it.",
-
   "mutation_battery": {
     "baseline": 20,
     "mutations": [
-      {"mutation": "the Levi-Civita signs all set to +1", "score": 13},
-      {"mutation": "a wrong raised variant fed to a Weyl candidate", "score": 18},
-      {"mutation": "a non-unimodular base metric, breaking |det g| = 1", "score": 18}
+      {
+        "mutation": "the Levi-Civita signs all set to +1",
+        "score": 13
+      },
+      {
+        "mutation": "a wrong raised variant fed to a Weyl candidate",
+        "score": 18
+      },
+      {
+        "mutation": "a non-unimodular base metric, breaking |det g| = 1",
+        "score": 18
+      }
     ]
   },
-
   "checks": {
     "ok": true,
     "passed": 20,
@@ -110,7 +128,6 @@
       "both_ranks_saturate_strictly_early": true
     }
   },
-
   "verification": {
     "substrate": "Forge, in the tango repository.",
     "commands": [
@@ -118,11 +135,9 @@
       "forge verify examples/curvature_invariants_parity_gate.forge   # 20/20, about five minutes"
     ]
   },
-
   "substrate_additions": [
     "math/levicivita -- parity-odd curvature scalars carrying one Levi-Civita tensor. Permutations and their signs by Lehmer decoding (the digit sum IS the inversion count, so the sign comes free), and two contraction drivers taking a SLOT SPEC per operand."
   ],
-
   "does_not_establish": [
     "that these counts are exact. They are LOWER BOUNDS over the candidate families evaluated, exactly as the parity-even counts are. A candidate family not written down cannot be found by a rank.",
     "anything about candidates carrying TWO Levi-Civita tensors. Those are parity-EVEN and reduce into the sector already counted; none is evaluated here.",

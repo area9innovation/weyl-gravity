@@ -1,10 +1,23 @@
-"""Falsification tests for the D = 6 parity field-equation certificate.
+"""Falsification tests for the D = 6 parity field-equation certificate — which
+is RETRACTED.
 
-The computation lives in Forge (tango).  What these guard is the boundary
-around a NONZERO result, which is the direction where a bug reads as a
-discovery: that the two controls stay attached to it, that "not locally
-trivial" is never allowed to drift into "not topological", and that the D = 4
-statement it qualifies is not thereby reported as wrong.
+The result was wrong.  The Lagrangian differentiated is not a scalar: its slot
+spec summed one contracted index over two lower slots and another over two
+upper ones, and under a chart change in SL(6, Z) its value moves.  See
+REVERSE_PHYSICS_PARITY_SCALAR_CONTROL_V1.
+
+These tests are kept, and their job has changed.  They no longer certify the
+result; they certify that the retraction stays attached to it, that the
+original claims stay preserved rather than quietly deleted, and that the
+boundary discipline the certificate did get right — local versus global, one
+invariant of two, no quantum claim — is still on the record.  A retracted
+certificate whose tests were simply removed is a certificate that can be
+rediscovered and believed.
+
+The controls were not the weak point and are still worth reading: the n = 6
+exercise of the Euler operator was sound and the operator is untouched.  What
+was missing was a check nobody had thought to write — whether the contraction
+was covariant at all.
 """
 
 from __future__ import annotations
@@ -28,7 +41,42 @@ def load(path=CERT):
         return json.load(fh)
 
 
+class TestTheRetractionIsAttached(unittest.TestCase):
+    """First, and before anything below is read: this certificate is withdrawn."""
+
+    def setUp(self):
+        self.cert = load()
+
+    def test_the_status_is_retracted(self):
+        self.assertEqual(self.cert["status"], "RETRACTED")
+
+    def test_the_retraction_comes_before_the_claims(self):
+        keys = list(self.cert.keys())
+        self.assertLess(keys.index("retraction"), keys.index("establishes"))
+
+    def test_it_names_the_certificate_that_replaces_it(self):
+        self.assertEqual(self.cert["retraction"]["by"],
+                         "REVERSE_PHYSICS_PARITY_SCALAR_CONTROL_V1")
+
+    def test_the_replacement_exists_and_retracts_this_one(self):
+        import os as _os
+        with open(_os.path.join(CERTS,
+                  "REVERSE_PHYSICS_PARITY_SCALAR_CONTROL_V1.json")) as fh:
+            new = json.load(fh)
+        self.assertIn("REVERSE_PHYSICS_PARITY_FIELD_EQUATIONS_V1", new["retracts"])
+
+    def test_the_euler_operator_is_not_dragged_down_with_it(self):
+        """The instrument was correct.  Losing it would cost a working tool for
+        no reason."""
+        s = self.cert["retraction"]["what_survives"]
+        self.assertIn("untouched", s)
+        self.assertIn("exactly zero", s)
+
+
 class TestTheResultIsNonzeroAndExact(unittest.TestCase):
+    """Preserved as the historical record of what was claimed.  Every assertion
+    below describes the WITHDRAWN content and must not be read as current."""
+
     def setUp(self):
         self.cert = load()
 

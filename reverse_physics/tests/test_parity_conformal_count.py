@@ -44,17 +44,41 @@ class TestTheNumbers(unittest.TestCase):
                 self.assertEqual(r["value_rank"] - r["variation_rank"],
                                  r["parity_odd_invariants"], r)
 
-    def test_d6_weight6_has_two(self):
+    def test_d6_weight6_row_is_preserved_but_superseded(self):
+        """The row said 2.  It is preserved verbatim as the historical record,
+        and the certificate now carries a correction saying 0 — the 2 came
+        entirely from two candidates that were not covariant contractions.
+        Asserting the 2 alone would leave this suite guarding a withdrawn
+        claim; asserting only the 0 would erase what was published."""
         r = [x for x in self.rows if x["dimension"] == 6 and x["weight"] == 6]
         self.assertEqual(len(r), 1)
         self.assertEqual(r[0]["parity_odd_invariants"], 2)
+        self.assertEqual(self.cert["status"], "CORRECTED")
+        corrected = self.cert["correction"]["corrected_counts"]["D6_weight6"]
+        self.assertIn("0, not 2", corrected)
 
-    def test_d4_weight4_pontryagin_is_one(self):
+    def test_d4_weight6_row_is_preserved_but_superseded(self):
+        r = [x for x in self.rows if x["dimension"] == 4 and x["weight"] == 6]
+        self.assertEqual(len(r), 1)
+        self.assertEqual(r[0]["parity_odd_invariants"], 2)
+        corrected = self.cert["correction"]["corrected_counts"]["D4_weight6"]
+        self.assertIn("1, not 2", corrected)
+
+    def test_the_correction_names_what_supersedes_it(self):
+        self.assertEqual(self.cert["correction"]["by"],
+                         "REVERSE_PHYSICS_PARITY_SCALAR_CONTROL_V1")
+
+    def test_d4_weight4_pontryagin_is_one_and_survived_the_correction(self):
+        """This is the row the ledger's RP-PARITY actually rests on, and it is
+        the one the correction leaves alone.  If it ever stops being marked
+        UNCHANGED, REVERSE_PHYSICS_WEYL_ACTION_V1 is in scope too."""
         r = [x for x in self.rows
              if x["dimension"] == 4 and x["weight"] == 4]
         self.assertEqual(len(r), 1)
         self.assertEqual(r[0]["parity_odd_invariants"], 1)
         self.assertIn("Pontryagin", r[0]["exhibited_as"])
+        corrected = self.cert["correction"]["corrected_counts"]
+        self.assertIn("UNCHANGED", corrected["D4_weight4_pontryagin"])
 
     def test_odd_dimensions_are_counted_not_computed(self):
         """There is nothing for a rank to evaluate there, and saying otherwise
@@ -104,6 +128,15 @@ class TestTheBoundaryOfWhatWasAnswered(unittest.TestCase):
     def test_exactness_is_not_claimed(self):
         joined = " ".join(self.cert["does_not_establish"]).lower()
         self.assertIn("lower bound", joined)
+
+    def test_the_field_equation_half_was_answered_then_retracted(self):
+        """It was answered by REVERSE_PHYSICS_PARITY_FIELD_EQUATIONS_V1 and
+        that answer is withdrawn: the Lagrangian it differentiated is not a
+        scalar.  The original 'not done' text below is still accurate."""
+        import os as _os
+        fe = _os.path.join(CERTS, "REVERSE_PHYSICS_PARITY_FIELD_EQUATIONS_V1.json")
+        with open(fe) as fh:
+            self.assertEqual(json.load(fh)["status"], "RETRACTED")
 
     def test_the_field_equation_half_is_explicitly_not_done(self):
         """The D = 4 parity result is about ACTIONS versus FIELD EQUATIONS.  This

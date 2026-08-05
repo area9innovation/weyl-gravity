@@ -893,6 +893,37 @@ The directions that would still yield something:
   6566972251/160`). **Local, not global:** vanishing field equations means locally
   a total divergence, and "not topological" is *not* what is shown. Only **one** of
   the two `D = 6` parity-odd invariants is differentiated.
+- **RETRACTED, and the count corrected with it**
+  ([report](parity-scalar-defect.md), certificate
+  `REVERSE_PHYSICS_PARITY_SCALAR_CONTROL_V1`). The two bullets above rest on
+  candidates that are **not scalars**. A contraction is covariant only when each
+  repeated index appears once **up** and once **down**; **eight** of the parity-odd
+  candidates summed a repeated index over two lower or two upper slots with no metric
+  between them, and the `D = 6` count of 2 came **entirely** from two of them. Under a
+  chart change `x = Ay` with `A ∈ SL(6,ℤ)` the value moves — `6566972251/160` in one
+  chart, `−200078513393/160` in another — and that first number is exactly the `L(g)`
+  the field-equation certificate published as its conformal-invariance control.
+  **Why three separate guards all missed it:** the conformal test compares `g` with
+  `e^{2σ}g` at a base point where `σ` vanishes, and `C^a{}_{bcd}` is conformally
+  invariant with **no derivative-of-`σ` terms at all** — so *any* product of Weyl
+  tensors, contracted in *any* index pattern, passes it automatically. The gate's own
+  words were *"conformally invariant by construction"*: true, and exactly why the test
+  could say nothing. The weight count cancels too (one down-down pair and one up-up pair,
+  `−2` and `+2`). Nothing ever asked whether a candidate was a **tensor**.
+  **Corrected:** weight-6 parity-odd invariants number **1 in `D = 4`** and **0 in
+  `D = 6`**, where `rankV = 0` — every candidate, algebraic and derivative, Weyl-built
+  and Riemann-built, is identically zero. The `D = 4` weight-4 Pontryagin row (**1**) and
+  the odd-`D` row (**none**) are unchanged, and the Pontryagin row is the one the
+  ledger's `RP-PARITY` rests on, so `REVERSE_PHYSICS_WEYL_ACTION_V1` and the
+  gravitational theta-angle are **unaffected**. The `D = 6` zero is **structural**: the
+  covariant repairs vanish for **Riemann** as well as Weyl, and Riemann is not traceless,
+  so it is the index pattern that is empty rather than the Weyl trace conditions.
+  **What replaces the withdrawn conclusion** is its opposite and is *weaker*: with no
+  parity-odd invariant to adjoin, `RP-PARITY` would be **vacuous** in `D = 6` rather than
+  load-bearing. That is recorded as the reading the evidence favours, **not** as a
+  result — it follows only if the candidate family is complete, and these counts remain
+  **lower bounds over the patterns evaluated**. The parity-even counts are untouched;
+  `curvature_invariants_d6_gate` now carries the same chart rail and passes 27/27.
 - **Six derivatives in six dimensions.** The weight argument in §3.9 says the
   conformally invariant curvature degree is `k = D/2`, so odd dimensions have no
   such sector at all and `D = 6` selects the *cubic* one. Running the same exact
