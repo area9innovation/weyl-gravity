@@ -1,0 +1,108 @@
+{
+  "certificate": "REVERSE_PHYSICS_EULER_OPERATOR_V1",
+  "kind": "substrate-capability",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "report": "reverse_physics/reports/euler-operator.md",
+  "establishes": "An exact EULER OPERATOR over the jet ring: field equations from a curvature Lagrangian density, in exact rational arithmetic, with no floating point and no symbolic algebra system. Validated in D = 4 against two Lagrangians whose field equations must vanish identically (Gauss-Bonnet and Pontryagin) and against the trace law that this programme computed by an entirely different route. This is a CAPABILITY, not a physics result: it is what makes a FIELD-EQUATION question askable at all in a stream whose every previous curvature result was pointwise.",
+  "why_it_was_needed": {
+    "the_gap": "The D = 4 parity result is not 'parity-odd invariants exist' but 'RP-PARITY is independent on ACTIONS and redundant on FIELD EQUATIONS'. REVERSE_PHYSICS_PARITY_CONFORMAL_COUNT_V1 answered the first half in D = 6 by counting invariants; counting cannot touch the second half.",
+    "what_was_missing": "every curvature computation in this stream evaluates a scalar at a base point. A field equation is a variational object, and no pointwise evaluation produces one."
+  },
+  "how_it_works": {
+    "the_operator": "E^{mu nu} = dL/dg_{mu nu} - d_a [dL/d(d_a g_{mu nu})] + d_a d_b [dL/d(d_a d_b g_{mu nu})] -- a finite sum of partial derivatives of a function of finitely many jet coordinates. Finite and algebraic; no functional analysis.",
+    "the_trick": "carry the perturbation parameter as ONE MORE JET VARIABLE. Run the ordinary curvature pipeline on g + t*h and take the t-linear slice: the first variation is then computed by the same code that computes the unperturbed quantity. No linearised Christoffel symbol and no linearised Riemann tensor is ever derived, so neither can be got wrong.",
+    "extracting_the_coefficients": "with h = phi(x) E^{(rho sigma)}, dL = A phi + B^a d_a phi + C^{ab} d_a d_b phi. phi = 1 gives A, phi = x^g gives B, phi = x^g x^d gives C -- each as a JET, so the outer derivatives of the Euler operator are jet differentiation rather than further algebra.",
+    "linearity_does_the_rest": "the operator is linear in the Lagrangian, so three basis field equations (Riem^2, Ric^2, R^2) give the whole parity-even quadratic sector. Gauss-Bonnet then stops being a fourth computation and becomes a CONSTRAINT on the three.",
+    "the_measure": "the density is sqrt(|det g|) times a scalar, and the Euler operator differentiates it, so the determinant is needed as a JET rather than a number. metric_det computes it by the same pivoting elimination as metric_inverse; jet_sqrt_unit takes the square root by a terminating binomial series, exact because the fixtures are unimodular at the base point, and TRAPS rather than guessing if that stops holding."
+  },
+  "the_degree_budget": {
+    "rule": "the variation is read at x-degree d, so the Lagrangian jet must be right to TOTAL degree d + 1 -- the extra one being the perturbation parameter's own exponent -- which forces Riemann to d + 1, Gamma to d + 2 and the metric to d + 3",
+    "why_it_is_stated_as_a_rule": "getting it one short does not fail loudly. It silently discards the term the second-derivative coefficient C is read from, and the Euler operator comes back missing its last piece while still looking well-formed.",
+    "it_is_a_numbered_check": "check 12 requires the phi = x^g x^d variation to actually reach x-degree 2"
+  },
+  "controls": {
+    "gauss_bonnet_vanishes": "E4 = Riem^2 - 4 Ric^2 + R^2 is topological in D = 4, so its field equations vanish identically. Computed here as a linear combination of three separately computed, individually NONZERO field equations -- a cancellation, not three zeros adding up.",
+    "pontryagin_vanishes": "topological for an entirely unrelated reason, and checked to be a nonzero density before its field equations are required to vanish",
+    "the_trace_law_is_the_nonzero_anchor": "REVERSE_PHYSICS_WEYL_TRACE_LAW computed g^{mn} E_mn [a Riem^2 + b Ric^2 + c R^2] = 2 (a + b + 3c) box R by an entirely different route, in sympy. Every check derived from it here is a RATIO, so it holds whatever normalisation either side uses.",
+    "trace_checks": [
+      "trace(E[Riem^2]) is NONZERO (a + b + 3c = 1), so the ratios below are not about zero",
+      "trace(E[Ric^2]) EQUALS trace(E[Riem^2]) -- two structurally unrelated Lagrangians landing on the same number, both having a + b + 3c = 1",
+      "trace(E[R^2]) is EXACTLY THREE TIMES it (a + b + 3c = 3), which fixes the operator's normalisation",
+      "trace(E[C^2]) is ZERO while the tensor is NONZERO -- a nonzero field equation with vanishing trace, which is RP-WEYL <=> RP-TRACELESS computed from the variation"
+    ],
+    "why_a_nonzero_control_was_required": "Gauss-Bonnet and Pontryagin are both VANISHING controls, and a whole class of errors survives them: an operator missing a term that happens to vanish on topological densities, or wrong by an overall factor, passes both. The trace law is the only control here with a nonzero known answer."
+  },
+  "two_bugs_this_found_in_its_own_construction": [
+    {
+      "bug": "jet_mul caps the product at the FIRST operand's truncation degree. The coefficient A was taken from a cheaper low-degree run, so A(x) * x^g x^d silently lost its degree-2 term -- exactly what the second-derivative coefficient C is read from.",
+      "symptom": "every structural identity failed while every 'is the machinery alive' check passed",
+      "evidence_of_the_fix": "E[E4] went from nonzero to EXACTLY zero, a cancellation among three numbers of order 10^6",
+      "fix": "promote low-degree jets before they enter arithmetic"
+    },
+    {
+      "bug": "the Levi-Civita SYMBOL was being used where the density needed the TENSOR. Summing over permutations contracts with the symbol; pointwise, where the fixtures have |det g| = 1, symbol and tensor agree and nothing notices. As JETS they differ by sqrt(|det g|(x)), which is not constant, so multiplying the Pontryagin term by sqrt(|det g|) again produced a weight-2 object that is not a Lagrangian density at all.",
+      "fix": "the Pontryagin term is built as the symbol contraction [mu nu rho sigma] R_{mu nu}^{al be} R_{rho sigma al be}, which is already a density, with no measure factor",
+      "consequence_beyond_this_gate": "THE SAME SHORTCUT IS USED BY REVERSE_PHYSICS_PARITY_CONFORMAL_COUNT_V1. For counting invariants AT A POINT it is sound and stays sound -- that certificate is unaffected. For a FIELD-EQUATION question it is not, and the D = 6 parity-odd density must be assembled with the weights right. This would have been a silent wrong answer to the actual question, and it was found only because the D = 4 Pontryagin control exists."
+    }
+  ],
+  "checks": {
+    "ok": true,
+    "passed": 14,
+    "total": 14,
+    "failures": [],
+    "detail": {
+      "gauss_bonnet_field_equations_vanish": true,
+      "pontryagin_field_equations_vanish": true,
+      "the_three_basis_field_equations_are_individually_nonzero": true,
+      "C2_field_equations_are_nonzero": true,
+      "trace_of_Riem2_is_nonzero": true,
+      "trace_of_Ric2_equals_trace_of_Riem2": true,
+      "trace_of_R2_is_three_times_it": true,
+      "C2_field_equations_are_traceless": true,
+      "the_pontryagin_density_is_itself_nonzero": true,
+      "det_g_is_unit_and_non_constant": true,
+      "jet_sqrt_unit_squares_back": true,
+      "the_degree_budget_reaches_x_degree_two": true,
+      "the_parity_odd_measure_rule_reproduces_a_known_density": true,
+      "the_parallel_route_reproduces_the_serial_one": true
+    }
+  },
+  "verification": {
+    "substrate": "Forge, in the tango repository.",
+    "commands": [
+      "cd tango/forge && export FORGE_LIB=$PWD/lib",
+      "forge verify examples/curvature_euler_gate.forge            # 14/14, about nine minutes on six workers",
+      "forge -run -sanitize-thread examples/curvature_euler_gate.forge   # the race gate"
+    ],
+    "tier_note": "parallel, six workers, about nine minutes. A one-component falsifier -- 45 runs and three minutes against 600 runs and thirty-five -- was what made the two bugs above findable in minutes rather than in half-hour cycles."
+  },
+  "substrate_additions": [
+    "math/jet jet_var_slice -- the coefficient of one variable's k-th power, as a jet in the rest. This is what makes an exact variational calculation possible with no new arithmetic.",
+    "math/curvature metric_det -- the determinant as a JET, by the same pivoting elimination as metric_inverse, returning none rather than reporting a determinant it did not compute",
+    "math/curvature jet_sqrt_unit -- square root of a jet with constant term 1, by a terminating binomial series; traps otherwise",
+    "math/curvature no longer assumes the jets carry exactly n variables. Several routines built zero jets with n variables, which is correct only while nv equals the dimension -- true of every caller until a variational calculation adds a perturbation parameter. The nine gates that call the changed functions were all re-run unchanged."
+  ],
+  "does_not_establish": [
+    "any physics result. This is a capability certificate: it establishes that the operator is correct on Lagrangians whose field equations are known, and nothing about Weyl gravity that was not already known.",
+    "the D = 6 parity-odd field-equation question the operator was built for. That is a separate and much more expensive computation, and the symbol-versus-tensor issue recorded above must be handled in it.",
+    "anything in dimensions other than 4, or for Lagrangians of weight other than 4. The operator is written dimension-generally but is validated only in D = 4 on quadratic curvature Lagrangians.",
+    "any claim about actions modulo total derivatives. The operator computes field equations; two Lagrangians differing by a total derivative have the same field equations, and nothing here distinguishes them.",
+    "anything Lorentzian, dynamical, or quantum."
+  ],
+  "the_parity_odd_measure_rule": {
+    "the_rule": "a parity-odd scalar is built with the epsilon TENSOR against UPPER operands, while summing over permutations contracts with the SYMBOL, and eps_tensor = sqrt(|det g|) [.]. So the density of such a scalar is |det g| times the symbol contraction -- a DETERMINANT, not a square root, and no square root is needed at all since |det g| is polynomial in the metric.",
+    "why_it_needed_validating": "at a point, where the fixtures have |det g| = 1, the two are indistinguishable. Away from it they are not, and a field-equation computation would have been quietly wrong with no symptom.",
+    "how_it_is_validated": "the SAME Pontryagin density is assembled both ways -- as the known form [mu nu rho sigma] R_{mu nu}^{al be} R_{rho sigma al be}, and by the parity-odd rule -- and the two must agree. They agree up to a SIGN, which is the signature's, from raising four epsilon indices in a Lorentzian metric.",
+    "cost": "two Lagrangian evaluations, about eight seconds -- not a field-equation computation"
+  },
+  "it_runs_in_parallel": {
+    "why_it_is_sound": "the field-equation components share nothing: each is a pure function of its index pair writing one disjoint slot, and parallel_for visits every index exactly once, so the writes are race-free by construction",
+    "the_capture_discipline": "closures may capture scalars and pointers but not owned values, so the field identities and permutation tables are rebuilt per task rather than shared. That sidesteps the Send question entirely rather than relying on it.",
+    "measured": "27 minutes to 9 on six workers, user 37m against real 9m. Six rather than sixteen because the machine is shared.",
+    "the_rail": "check 14 recomputes one component sequentially and requires the same rational number. Scheduling must not be able to change an answer, and the only way to know that is to compute it twice.",
+    "independent_confirmation": "the serial 13-check build, a separately compiled binary with an entirely different execution order, returns 13/13. TSan reports no races on the parallel build.",
+    "it_was_probed_before_it_was_used": "a 64-task fixture doing real GMP and jet traffic was checked componentwise against its serial computation -- zero mismatches, TSan clean -- before the gate was touched"
+  }
+}
