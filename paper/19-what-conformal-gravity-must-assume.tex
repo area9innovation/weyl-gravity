@@ -1,0 +1,377 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,tabularx}
+\usepackage{microtype,xurl}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,
+            citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\dd}{\mathrm d}
+\newcommand{\cert}[1]{\nolinkurl{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{What Conformal Gravity Must Assume\\
+\large to Explain Galactic Rotation Curves}
+\author{Claude Opus 5\thanks{Anthropic model; computations and drafting.}
+\and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
+\date{Working draft, 6 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Conformal (Weyl) gravity admits a static spherically symmetric vacuum
+solution whose metric function carries a term linear in \(r\).  That term is
+the basis of a long-standing proposal to fit galactic rotation curves without
+dark matter.  We ask a reverse-physics question about it: not whether the
+fits succeed, but \emph{what must be assumed for them to mean anything}.
+
+Four results, each an exact symbolic computation with machine-checked
+controls.  (i) The linear term is not an ansatz: in the conformal gauge the
+Bach vacuum equation is exactly the \emph{biharmonic} equation
+\(\nabla^{4}B=0\), so \(\gamma r\) is the point-source response of the
+governing operator, on the same footing as the Newtonian \(1/r\).  (ii) If
+the baryonic Tully--Fisher relation holds, \(\gamma\) is forced to be a
+universal constant and is identified with the MOND acceleration scale,
+\(\gamma=a_{0}/2c^{2}\); a \(\gamma\) carrying a mass-proportional piece
+gives the wrong slope.  (iii) Conformal invariance forces the source to be
+trace-free, so a perfect fluid must satisfy \(p=\rho/3\) and pressureless
+baryons are excluded outright.  (iv) The standard repair---breaking the
+symmetry with a conformally coupled scalar---fails in its simplest form: a
+\emph{constant} vacuum expectation value pins the Ricci scalar and thereby
+forces \(\gamma=0\), removing the very term at issue.
+
+The conclusion is a trichotomy.  Exactly one branch survives, and on it the
+question ``is \(\gamma\) universal?'' becomes ``is the scalar profile
+universal across galaxies?''---a question about the matter sector rather than
+about gravity.  We do not adjudicate it.  We locate it.
+\end{abstract}
+
+\section{The question}
+
+Conformal gravity has been proposed as an explanation of galactic rotation
+curves without dark matter, on the strength of a term linear in \(r\) in its
+static spherically symmetric vacuum solution.  The literature on whether the
+fits succeed is substantial and we add nothing to it.
+
+We ask instead the reverse-physics question: \emph{what has to be true for
+the explanation to be an explanation?}  A fit with a per-galaxy free
+parameter is a description; a fit with a parameter forced by the theory is a
+prediction.  Which of these the proposal is depends on facts that can be
+settled by computation, and this paper settles four of them.
+
+Every statement below is an exact symbolic identity over \(\mathbb{Q}\),
+carried out with unspecified functions rather than sampled fixtures, with
+controls designed to fail if the claim were vacuous.  Certificates and
+verifier commands are listed in \S\ref{sec:verification}.
+
+\paragraph{Conventions.}
+We work in \(D=4\), signature \((-,+,+,+)\), with the static spherically
+symmetric ansatz
+\[
+  \dd s^{2} \;=\; -B(r)\,\dd t^{2} + \frac{\dd r^{2}}{B(r)}
+  + r^{2}\dd\Omega^{2},
+\]
+the conformal gauge \(g_{tt}g_{rr}=-1\).  \S\ref{sec:gauge} addresses what
+that gauge costs.  \(B_{ab}\) denotes the Bach tensor.
+
+\section{The linear term is forced, and it is a point-source response}
+\label{sec:forced}
+
+\begin{theorem}[Completeness without an ansatz]
+\label{thm:complete}
+Let \(B\) be any \(C^{4}\) function, nonvanishing on an interval.  Then
+\(B_{ab}=0\) identically if and only if
+\[
+  (rB)'''' = 0
+  \qquad\text{and}\qquad
+  c_{1}^{2}-3c_{0}c_{2}=1,
+\]
+where \(B=c_{0}/r+c_{1}+c_{2}r+c_{3}r^{2}\).
+\end{theorem}
+
+The proof is a decomposition.  With \(L:=(rB)''''\) and \(N\) the nonlinear
+remainder, the three independent Bach rows satisfy, as exact identities in
+\(B\) and its derivatives,
+\[
+  B_{\theta\theta}=\frac{N}{24r^{2}},\qquad
+  B_{tt}=\frac{B\,(N+2r^{3}BL)}{24r^{4}},\qquad
+  B_{rr}=\frac{-N+2r^{3}BL}{24r^{4}B},
+\]
+so all three lie in the span of \(\{N,\;r^{3}BL\}\), and both generators are
+recoverable from the rows.  Hence \(B_{ab}=0\) forces \(L=0\) and \(N=0\).
+
+The essential point is that \(L\) is \emph{linear}.  Substituting \(u=rB\)
+turns \(L=0\) into \(u''''=0\), whose solution space is the cubics by four
+integrations---no ansatz.  On that space \(N\) collapses to the constant
+\(4(1+3c_{0}c_{2}-c_{1}^{2})\), leaving one algebraic condition.
+
+\begin{theorem}[The vacuum equation is biharmonic]
+\label{thm:biharm}
+In spherical symmetry \(\nabla^{2}f=f''+2f'/r\), and for unspecified \(B\)
+\[
+  \nabla^{4}B \;=\; B''''+\frac{4B'''}{r} \;=\; \frac{1}{r}\,(rB)''''.
+\]
+\end{theorem}
+
+So Theorem~\ref{thm:complete}'s linear equation is \(\nabla^{4}B=0\): the
+Bach vacuum condition says \(B\) is \emph{biharmonic}.  The forced solution
+space \(\{1/r,\,1,\,r,\,r^{2}\}\) is the radial biharmonic kernel, and
+\(r^{3}\) and \(r^{-2}\)---its nearest neighbours---are verified not to lie
+in it.
+
+\begin{corollary}[\(\gamma r\) is a point-source response]
+For \(\nabla^{2}\) the point-source potential is \(1/r\) and its coefficient
+is the mass; this is Newton, and the origin of \(\beta=GM/c^{2}\).  For
+\(\nabla^{4}\) the corresponding object is \(r\), since \(\nabla^{2}r=2/r\)
+is harmonic away from the origin.
+\end{corollary}
+
+This is a stronger statement than ``\(\gamma r\) survives the equation''.  It
+is the term the equation \emph{produces} for a localised source, and it sits
+on the same footing as the Newtonian term rather than being appended to it.
+
+\begin{remark}
+That the general static spherically symmetric vacuum solution of conformal
+gravity has this form is classical.  What is contributed here is the removal
+of the ansatz and the identification of the operator, both computed for an
+unspecified function.
+\end{remark}
+
+\section{Tully--Fisher forces \(\gamma\) to be universal}
+\label{sec:tf}
+
+With \(\beta=GM/c^{2}\) the locally measured circular velocity is
+\(v^{2}/c^{2}=rB'/2B\), which at small field strength is
+\(\beta/r+\gamma r/2-kr^{2}\).  In the galactic regime this has a stationary
+point, and it is a minimum:
+\[
+  r_{*}=\sqrt{2\beta/\gamma},
+  \qquad
+  v^{4}=2GM\gamma c^{2}\Bigl(1-\tfrac{3}{2}\beta\gamma\Bigr).
+\]
+
+\begin{theorem}[The conditional]
+\label{thm:tf}
+To leading order in \(\beta\gamma\): if \(\gamma\) is universal then
+\(v^{4}\propto M\), the baryonic Tully--Fisher relation with slope \(4\) in
+\(v\).  If \(\gamma\) carries a piece proportional to \(M\) then
+\(v^{4}\propto M^{2}\).  Matching the observed \(v^{4}=GMa_{0}\) forces
+\[
+  \gamma \;=\; \frac{a_{0}}{2c^{2}}.
+\]
+\end{theorem}
+
+Read in the reverse-physics direction: the observed Tully--Fisher relation,
+combined with the forced metric, requires \(\gamma\) to be a universal
+constant of nature rather than a per-galaxy parameter, and identifies it with
+the MOND acceleration scale.  That is a prediction rather than a fit, and it
+is falsifiable in a specific way---a mass-dependent \(\gamma\) moves the
+slope.
+
+Two boundaries travel with it.  Identifying \(v_{\min}\) with the observed
+flat velocity is an interpretive step, not a theorem.  And the correction
+factor \(1-\tfrac{3}{2}\beta\gamma\) is itself mass-dependent, so the slope
+is exactly \(4\) only in the limit \(\beta\gamma\to0\); for a galaxy the
+departure is of order \(10^{-14}\) and unobservable, but ``exactly linear''
+would be too strong.
+
+\begin{remark}
+Conformal gravity and MOND are not the same theory and disagree away from
+\(r_{*}\): beyond it the conformal curve \emph{rises}
+(\(\dd v^{2}/\dd r|_{2r_{*}}=3\gamma/8>0\)) where MOND's are asymptotically
+flat.  Only the \(-kr^{2}\) term can bend it back.  The outer rotation curve
+is therefore a discriminant, not a detail.
+\end{remark}
+
+\section{What may source the theory}
+\label{sec:matter}
+
+\S\ref{sec:forced} and \S\ref{sec:tf} concern the vacuum.  \(\gamma\) is a
+free coefficient there; the explanatory claim needs it \emph{sourced}.
+
+A conformally invariant action satisfies
+\(g_{ab}\,\delta S/\delta g_{ab}=0\).  Applied to the gravitational action
+this is the Noether identity of the theory; applied to the matter action it
+reads \(T^{\mu}{}_{\mu}=0\).  It is one theorem used twice, and we take it as
+given.
+
+\begin{theorem}[Trace obstruction]
+\label{thm:trace}
+A perfect fluid has \(T^{\mu}{}_{\mu}=3p-\rho\), so it is trace-free if and
+only if \(p=\rho/3\).  Dust, \(p=0\), forces \(\rho=0\).
+\end{theorem}
+
+Radiation, uniquely, and pressureless matter not at all.  A galaxy's baryons
+are pressureless to excellent approximation, so on the conformally invariant
+branch a galaxy is not an admissible source.
+
+The standard repair is to break the symmetry with a conformally coupled
+scalar acquiring a vacuum expectation value, generating a scale so that
+ordinary matter can source the theory after all.  In its simplest form this
+fails, and it fails on the term at issue.
+
+\begin{theorem}[A constant vacuum expectation value forces \(\gamma=0\)]
+\label{thm:vev}
+For the conformally coupled scalar, \(\Box S+\tfrac{1}{6}RS+4\lambda S^{3}=0\)
+reduces for constant \(S=S_{0}\neq0\) to \(R=-24\lambda S_{0}^{2}\), a
+constant.  For the forced family,
+\[
+  R \;=\; 12k-\frac{6\gamma}{r}+\frac{2(1-w)}{r^{2}},
+\]
+which is constant in \(r\) if and only if \(\gamma=0\) and \(w=1\).
+\end{theorem}
+
+A constant vacuum expectation value does not merely supply a scale; it pins
+the Ricci scalar, and the forced family is compatible with a pinned \(R\)
+only where the linear term vanishes.  Note that \(u\), the Newtonian
+coefficient, drops out of \(R\) entirely: the obstruction is specific to
+\(\gamma\).
+
+\section{The trichotomy}
+\label{sec:trichotomy}
+
+Collecting \S\ref{sec:matter}, the possibilities are organised by one
+question---\emph{is there a scale, and is it constant or field-dependent?}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lYY@{}}
+\toprule
+& scale & consequence \\
+\midrule
+(A) conformal matter & none & source must be trace-free, hence radiation; a galaxy is excluded, so \(\gamma\) is not tied to \(M\) and Tully--Fisher is a coincidence \\
+(B1) constant \(\langle S\rangle\) & constant & \(R\) pinned, hence \(\gamma=0\); the linear term is removed \\
+(B2) non-constant \(S\) & field-dependent & \(\gamma\) tied to the scalar profile; open \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+(A) does not remove \(\gamma\); it decouples \(\gamma\) from mass, which
+destroys the explanation while leaving the term.  (B1) removes \(\gamma\)
+outright.  Exactly one branch survives, and it is the one the literature in
+fact uses.
+
+\begin{corollary}[Where the assumption lives]
+On branch (B2), \(\gamma\) is determined by the scalar profile, which is a
+property of each configuration.  Theorem~\ref{thm:tf} requires \(\gamma\) to
+be the same constant for every galaxy.  Therefore the requirement transfers:
+\emph{is the scalar profile universal across galaxies?}
+\end{corollary}
+
+That is a question about the symmetry-breaking sector rather than about
+gravity, and we know of no reason internal to the gravitational theory for it
+to answer yes.  This is the assumption a conformal-gravity rotation-curve fit
+is standing on.
+
+\section{What the conformal gauge costs}
+\label{sec:gauge}
+
+Sections \ref{sec:forced}--\ref{sec:trichotomy} work in the gauge
+\(g_{tt}g_{rr}=-1\).  Two things are needed to justify it.
+
+\begin{proposition}[Conformal covariance]
+In \(D=4\), \(B_{ab}[\Omega^{2}g]=\Omega^{-2}B_{ab}[g]\), verified for the
+Mannheim--Kazanas family with symbolic parameters and \emph{unspecified}
+\(\Omega\).  Hence Bach flatness is a property of the conformal class, and
+the classification of \S\ref{sec:forced} classifies classes.
+\end{proposition}
+
+\begin{proposition}[Reachability is a first-order ODE]
+Setting the new radius to \(\rho=\Omega r\) so the angular part remains
+\(\rho^{2}\), the gauge condition becomes
+\[
+  r\,\Omega' \;=\; \Omega\bigl(\Omega\sqrt{ab}-1\bigr),
+\]
+first order in \(\Omega\), hence locally solvable wherever \(ab>0\) and
+\(r\neq0\).
+\end{proposition}
+
+What remains assumed is only global continuation---whether \(\Omega\) stays
+positive and finite across the exterior.  That is strictly smaller than the
+original assumption and is a question of analysis rather than algebra.
+
+\section{What this paper does not establish}
+
+\begin{itemize}\itemsep2pt
+\item \textbf{No novelty in the physics.} The Mannheim--Kazanas solution, its
+  reduction to a fourth-order Poisson problem, and the trace-free condition
+  on conformal matter are all classical.  The contribution is that each is
+  computed here with the ansatz removed and the assumptions isolated, rather
+  than cited.
+\item \textbf{No fits.} No galaxy data enters anywhere.  The only
+  observational inputs are the \emph{shape} of the Tully--Fisher relation,
+  used as a premise in Theorem~\ref{thm:tf}, and that galaxies are
+  pressureless, used in \S\ref{sec:matter}.  Neither is our measurement.
+\item \textbf{No verdict on branch (B2).}  A non-constant scalar is not
+  analysed.  Theorem~\ref{thm:vev} shows the non-constancy is load-bearing
+  rather than incidental; it does not show the branch fails.
+\item \textbf{No resolution of the Flanagan--Mannheim dispute}
+  \cite{Flanagan2006,Mannheim2006} over the Newtonian limit under conformal
+  matter coupling.  Both positions choose branches of
+  \S\ref{sec:trichotomy}, and on either side the choice is an assumption.
+  We locate the disagreement; we do not settle it.
+\item \textbf{Nothing about the ghost.}  Conformal gravity's fourth-order
+  kinetic operator carries an Ostrogradsky ghost.  That is orthogonal to
+  everything here and is treated elsewhere in this programme.
+\item \textbf{No numerical value.}  \(a_{0}\) is not measured here and no
+  published \(\gamma\) is compared; \(\gamma=a_{0}/2c^{2}\) is an algebraic
+  consequence of a premise, not a numerical agreement.
+\end{itemize}
+
+\section{Verification}
+\label{sec:verification}
+
+Each result is a fail-closed certificate with a deterministic verifier.
+Controls are designed to fail if the claim were vacuous; several did so
+during development and are recorded in the certificates.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lYl@{}}
+\toprule
+result & certificate & checks \\
+\midrule
+Thm.~\ref{thm:complete} & \cert{BH0B\_GENERAL\_STATIC\_SPHERICAL\_COMPLETENESS} & 24 \\
+Thm.~\ref{thm:tf}       & \cert{BH0C\_TULLY\_FISHER\_SCALING}                   & 14 \\
+Thm.~\ref{thm:biharm}   & \cert{BH0D\_BACH\_VACUUM\_IS\_BIHARMONIC}             & 9 \\
+Thm.~\ref{thm:trace}    & \cert{BH0E\_MATTER\_TRACE\_DILEMMA}                   & 8 \\
+Thm.~\ref{thm:vev}      & \cert{BH0F\_CONSTANT\_VEV\_FORCES\_GAMMA\_ZERO}       & 12 \\
+\S\ref{sec:gauge}       & \cert{BH0G\_CONFORMAL\_CLASS\_INVARIANCE}             & 10 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Theorems~\ref{thm:complete} and \ref{thm:vev} and \S\ref{sec:gauge} are
+computed in \textsc{sympy}; Theorems~\ref{thm:biharm} and \ref{thm:trace} are
+computed in Forge over exact rationals with symbolic differentiation of
+unspecified functions.  Theorem~\ref{thm:complete}'s conclusion carries an
+independent Forge rail using a different arithmetic stack, representation and
+code path; that rail confirms which metrics are Bach-flat but not the row
+decomposition itself, which remains single-implementation.
+
+\begin{thebibliography}{9}
+\bibitem{MK1989} P.~D.~Mannheim and D.~Kazanas,
+  \emph{Exact vacuum solution to conformal Weyl gravity and galactic rotation
+  curves}, Astrophys.\ J.\ \textbf{342} (1989) 635.
+\bibitem{Riegert1984} R.~J.~Riegert,
+  \emph{Birkhoff's theorem in conformal gravity}, Phys.\ Rev.\ Lett.\
+  \textbf{53} (1984) 315.
+\bibitem{Flanagan2006} \'E.~\'E.~Flanagan,
+  \emph{Fourth order Weyl gravity}, Phys.\ Rev.\ D \textbf{74} (2006) 023002.
+\bibitem{Mannheim2006} P.~D.~Mannheim,
+  \emph{Alternatives to dark matter and dark energy}, Prog.\ Part.\ Nucl.\
+  Phys.\ \textbf{56} (2006) 340.
+\bibitem{Milgrom1983} M.~Milgrom,
+  \emph{A modification of the Newtonian dynamics as a possible alternative to
+  the hidden mass hypothesis}, Astrophys.\ J.\ \textbf{270} (1983) 365.
+\end{thebibliography}
+
+\end{document}
