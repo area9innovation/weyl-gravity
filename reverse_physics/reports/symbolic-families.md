@@ -1,6 +1,6 @@
 # Symbolic metric families are cheap, and that changes what is provable here
 
-**Rail** Forge, `tango/forge/examples/curvature_symbolic_family_gate.forge` — 9/9, 20.35 s
+**Rail** Forge, `tango/forge/examples/curvature_symbolic_family_gate.forge` — 9/9, 49.78 s
 **Substrate** `tango/forge/lib/math/jetfield.forge`
 **Dependency tag** `LOCAL-ALGEBRAIC`
 
@@ -47,7 +47,7 @@ lower-triangular. `jet_inv` still traps on a non-unit, which is the correct fail
 | 8 – 9 | 15 |
 | **10 — the full symmetric family** | **15** |
 
-Whole sweep: **20.35 s, 91 MB.**
+Whole sweep, all six identities: **49.78 s, 109 MB.**
 
 **`LDLᵀ` is the general symmetric matrix.** Six strictly-lower entries of `L` plus four
 diagonal entries of `S` is ten — exactly the number of independent components of a symmetric
@@ -119,17 +119,36 @@ Again no new tensor code: `ci_raise_slot`, `ci_raise2` and `ci_dot` used exactly
 rationals. **The contraction layer keeps turning out to be generic enough already** — what
 was missing was only ever a coefficient ring to hand it.
 
+### The third: `G3`, the conformal weight
+
+`C^a{}_{bcd}` is unchanged under `g → Ω²g`, now a **polynomial identity** over the
+ten-parameter family rather than a check at fixtures. `G3` is the load-bearing input to this
+stream's dimension and derivative-order arguments — *"√−g X of curvature degree k has
+constant weight D − 2k"* is `G3` plus counting — so samples were a thin footing for it.
+
+**The paired control is the point.** `R^a{}_{bcd}` under the *same* transformation must come
+back **changed**, and does on every row. Weyl and Riemann differ only by trace terms, so a
+comparison reporting both invariant would be comparing something to itself — which is how
+earlier drafts of this gate failed twice.
+
+`Ω² = 1 + a_c(x + x²)` carries its **own** parameter, which is why the variable count and the
+live-slot count had to be separated: the conformal factor must be a variable of the inner
+ring without becoming a metric component. Its constant term is 1, so it is a unit and `1/Ω²`
+exists in the truncated ring — the second place a genuine division is avoided by staying
+inside the units.
+
 ## 5. What this does **not** establish
 
-- **Two claims are upgraded, not the ledger.** Weyl tracelessness and `G1` are done; the
-  trace law `N2`, `N1` (`∇^a B_ab = 0`) and the Noether generator count are not.
+- **Three claims are upgraded, not the ledger.** Weyl tracelessness, `G1` and `G3` are done;
+  `N1` (`∇^a B_ab = 0`), the trace law `N2` and the Noether generator count are not.
 - **The family is now general in the metric, not in the coordinate dependence.** The
   unimodularity restriction is gone — ten parameters span every component of a symmetric
   `4×4`. What remains is that each slot carries a **fixed quadratic pattern** in `x` rather
   than a general function, so this is a generic metric *family* near flat, not every metric.
-- **Five identities are verified so far** — last-pair antisymmetry, the first Bianchi
-  identity, Weyl tracelessness, and the two `G1` forms. The first two exercise the pipeline
-  rather than settling anything in doubt; tracelessness and `G1` were standing ledger claims.
+- **Six identities are verified so far** — last-pair antisymmetry, the first Bianchi
+  identity, Weyl tracelessness, the two `G1` forms, and `G3`. The first two exercise the
+  pipeline rather than settling anything in doubt; tracelessness, `G1` and `G3` were standing
+  ledger claims.
 - **The Euler operator is not yet available over this ring**, so the Noether-identity result
   is still at sampled fixtures.
 
@@ -147,7 +166,7 @@ family"*, the actual reverse-physics statement about the gauge algebra.
 
 ```bash
 cd tango/forge && export FORGE_LIB=$PWD/lib
-forge -run examples/curvature_symbolic_family_gate.forge   # 9/9, 20.35 s, 91 MB
+forge -run examples/curvature_symbolic_family_gate.forge   # 9/9, 49.78 s, 109 MB
 ```
 
 Exact rational arithmetic throughout. No floating point, no tolerance.
