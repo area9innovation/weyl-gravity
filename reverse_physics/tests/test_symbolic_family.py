@@ -235,29 +235,66 @@ class TestN1(unittest.TestCase):
         self.assertIn("polynomial in the PARAMETERS", r)
 
 
-class TestTheEinsteinControlWasSubstitutedNotMet(unittest.TestCase):
-    """A control named in advance and then not built is the single easiest
-    thing in this programme to lose silently.  It must survive as a debt."""
+class TestTheEinsteinControlWasBuiltAndDoesNotWork(unittest.TestCase):
+    """The debt was discharged by BUILDING the control, and building it showed
+    the advice was wrong.  The finding is the vacuity, not the passing check --
+    so the record must not read as "Einstein control: passed"."""
 
-    def test_it_is_recorded_as_not_built(self):
-        s = load()["n1"]["a_control_named_in_advance_and_then_not_built"]
-        self.assertIn("NOT checked", s)
-        self.assertIn("SUBSTITUTION, not a discharge", s)
+    def setUp(self):
+        self.e = load()["the_einstein_control_was_built_and_is_nearly_vacuous"]
 
-    def test_the_substitutes_are_enumerated_rather_than_gestured_at(self):
-        s = load()["n1"]["a_control_named_in_advance_and_then_not_built"]
-        for known in ("traceless", "symmetric", "conformal weight -2",
-                      "two independent constructions"):
-            self.assertIn(known, s)
+    def test_the_old_debt_entry_points_at_the_finding_rather_than_being_deleted(self):
+        """Append-only: the superseded entry stays and forwards."""
+        old = load()["n1"]["a_control_named_in_advance_and_then_not_built"]
+        self.assertIn("SUPERSEDED", old)
+        self.assertIn("nearly_vacuous", old)
 
-    def test_it_appears_in_does_not_establish_not_only_in_prose(self):
+    def test_all_three_mutations_are_recorded_with_the_control_passing(self):
+        m = self.e["and_it_does_not_do_what_it_was_advertised_to_do"]
+        self.assertIn("PASSED ALL THREE", m)
+        self.assertIn("1/2 to 1/3", m)
+        self.assertIn("C_{acdb}", m)
+        self.assertIn("derivative indices swapped", m)
+
+    def test_the_reason_is_given_as_a_mechanism_not_an_apology(self):
+        """R^{cd} C_{acbd} = 0 on any Einstein metric by Weyl tracelessness, so
+        the coefficient is multiplied by zero.  A mechanism generalises; "it
+        turned out to be weak" does not."""
+        w = self.e["why_that_is_structural_and_should_have_been_predicted"]
+        self.assertIn("multiplied by zero", w)
+        self.assertIn("TRACELESSNESS", w)
+        self.assertIn("OVERDETERMINED", w)
+
+    def test_the_transferable_lesson_is_stated(self):
+        w = self.e["why_that_is_structural_and_should_have_been_predicted"]
+        self.assertIn("does not make the control discriminating", w)
+        self.assertIn("without checking that it could fail", w)
+
+    def test_the_check_that_actually_works_is_named(self):
+        self.assertIn("CONFORMAL WEIGHT", self.e["what_actually_constrains_bach_of"])
+
+    def test_it_is_kept_under_an_honest_label_not_discarded(self):
+        k = self.e["what_the_control_is_kept_for"]
+        self.assertIn("PIPELINE check", k)
+        self.assertIn("OUTSIDE the LDL^T family", k)
+
+    def test_the_undetermined_mutation_is_open_not_guessed(self):
+        u = self.e["one_mutation_is_undetermined"]
+        self.assertIn("NOT DETERMINED", u)
+        self.assertIn("caught by NOTHING", u)
+        self.assertIn("recorded open", u)
+
+    def test_does_not_establish_denies_the_coefficient_claim(self):
         dne = " ".join(load()["does_not_establish"])
-        self.assertIn("Einstein-metric known-answer control", dne)
-        self.assertIn("has NOT been built", dne)
+        self.assertIn("does not discriminate", dne)
+        self.assertIn("survived it", dne)
+        self.assertIn("semantic no-op or an untested degree of freedom", dne)
 
-    def test_the_debt_is_carried_forward_into_next(self):
-        self.assertIn("Einstein metric with nonvanishing Weyl",
-                      load()["next"])
+    def test_the_report_carries_the_mutation_table(self):
+        with open(REPORT) as fh:
+            text = fh.read()
+        self.assertIn("passed all three", text.lower())
+        self.assertIn("could fail", text)
 
 
 class TestNoNewTensorCodeIsTheHeadline(unittest.TestCase):

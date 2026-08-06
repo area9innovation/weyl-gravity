@@ -1,7 +1,7 @@
 # Symbolic metric families are cheap, and that changes what is provable here
 
 **Certificate** `REVERSE_PHYSICS_SYMBOLIC_FAMILY_V1`
-**Rail** Forge, `tango/forge/examples/curvature_symbolic_family_gate.forge` — 13/13, 106.17 s
+**Rail** Forge, `tango/forge/examples/curvature_symbolic_family_gate.forge` — 14/14, 105.97 s
 **Substrate** `tango/forge/lib/math/jetfield.forge`
 **Dependency tag** `LOCAL-ALGEBRAIC`
 
@@ -49,7 +49,7 @@ lower-triangular. `jet_inv` still traps on a non-unit, which is the correct fail
 | **10 — the full symmetric family** | **15** |
 
 Whole sweep, all six identities: **49.78 s, 109 MB.** With `N1` (§4) the gate is
-**13/13, 106.17 s, 100 MB** — `N1` alone is the whole of that increase.
+**14/14, 105.97 s, 109 MB** — `N1` alone is nearly the whole of that increase.
 
 **`LDLᵀ` is the general symmetric matrix.** Six strictly-lower entries of `L` plus four
 diagonal entries of `S` is ten — exactly the number of independent components of a symmetric
@@ -179,13 +179,44 @@ convenient.** Each covariant derivative costs one valid outer order: from `g` at
 Riemann and `C` are trustworthy to 3, `∇∇C` to 1, `∇B` to **0**. Reading a higher order would
 be reading truncation garbage.
 
-**A control that was named in advance and then *not* built.** The certificate said Bach should
-be checked to **vanish on Einstein metrics**. It is not checked here — an Einstein metric with
-nonvanishing Weyl (Schwarzschild) is not a member of this `LDLᵀ` family, and constructing one
-as a jet is a separate job. What stands in its place is four structural known-answers already
-on the Bach tensor — traceless, symmetric, conformal weight `−2`, and now agreement between
-two independent constructions. That is a substitution, not a discharge, and it is recorded as
-one.
+### The control I was told to build, built — and it doesn't work
+
+The certificate said Bach should be checked to **vanish on Einstein metrics** *"before it can
+be believed"*. That is now built: Schwarzschild (`M=1, r=4, x=cos θ=0`) as a jet in the **same
+nested ring** with one unused dummy parameter, so the *identical* `bach_of` runs on it rather
+than a re-derivation that could agree by sharing a mistake. Taking `x = cos θ` is what keeps
+the sphere factor rational — no sine anywhere, so the fixture is exact. It passes: `g g⁻¹ = I`,
+Ricci-flat, Weyl nonzero, Bach zero.
+
+**Then I mutated `bach_of` three times, and the control passed all three.**
+
+| mutation | Schwarzschild | what caught it |
+|---|---|---|
+| `½` → `⅓` on the `Ric·C` term | **passed** | conformal weight |
+| `C_{acbd}` contracted as `C_{acdb}` | **passed** | conformal weight |
+| the two derivative indices swapped | **passed** | **nothing** |
+
+**The reason is structural and I should have predicted it.** On *any* Einstein metric
+`R^{cd}C_{acbd} = (R/D)·g^{cd}C_{acbd} = 0` **by Weyl tracelessness** — so the `Ric·C` term is
+multiplied by zero and its coefficient cannot be probed there at all. Schwarzschild is
+Ricci-flat, so more strongly: `C = Riem`, and contractions of `∇∇Riem` vanish for reasons that
+survive getting the formula wrong. **Bach-flatness on an Einstein metric is overdetermined** —
+many wrong formulas produce it.
+
+**Naming a known-answer control in advance is good practice; it does not make the control
+discriminating.** This one was named without asking whether it *could fail*, which is the
+same defect the parity retraction was about, one level up: there the *candidates* weren't
+checked for well-formedness, here the *control* wasn't checked for discriminating power.
+
+What actually constrains `bach_of` is the **conformal weight** check, which was already in the
+gate. The Schwarzschild check is kept under an honest label as a **pipeline** check — the
+whole chain running on a metric from outside the `LDLᵀ` family, with a genuine `1/r` series
+instead of a polynomial. Narrower than advertised, still worth having.
+
+**One mutation is left open.** `∇^c∇^d` versus `∇^d∇^c` differ by a commutator, so the third
+mutation is either a semantic no-op or an untested degree of freedom. **Which one is not
+determined**, and guessing at a mechanism without a control that can refute it is precisely
+what produced the retraction.
 
 **`N1` holds over a smaller sub-family than the other three.** See §5.
 
@@ -194,6 +225,9 @@ one.
 - **Four claims are upgraded, not the ledger.** Weyl tracelessness, `G1`, `G3` and `N1` are
   done; the trace law `N2` and the Noether generator count are not, and both still wait on the
   Euler operator over this ring.
+- **that `bach_of`'s coefficients are verified by an Einstein metric.** The control was built
+  and mutation-tested and does **not** discriminate — three separate defects survived it. The
+  conformal-weight check is what constrains them.
 - **`N1` holds over a smaller sub-family, and the gate says which.** Three covariant
   derivatives mean rank-6 jet arrays at outer degree 5, and the cost climbs in the parameter
   count far faster than the undifferentiated identities do: twelve checks at the **full ten**
@@ -233,7 +267,7 @@ family"*, the actual reverse-physics statement about the gauge algebra.
 
 ```bash
 cd tango/forge && export FORGE_LIB=$PWD/lib
-forge -run examples/curvature_symbolic_family_gate.forge   # 13/13, 106.17 s, 100 MB
+forge -run examples/curvature_symbolic_family_gate.forge   # 14/14, 105.97 s, 109 MB
 ```
 
 Exact rational arithmetic throughout. No floating point, no tolerance.

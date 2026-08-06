@@ -45,7 +45,7 @@ GATE_SCORES = {
     "curvature_invariants_d4_gate": "25/25",
     "curvature_gate": "18/18",
     "jet_mul_gate": "14/14",
-    "curvature_symbolic_family_gate": "13/13",
+    "curvature_symbolic_family_gate": "14/14",
 }
 
 # Documents that preserve superseded text verbatim.  Their scores are as-issued
