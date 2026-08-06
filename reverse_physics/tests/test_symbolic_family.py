@@ -428,13 +428,15 @@ class TestTheNoetherIdentityVersusTheCount(unittest.TestCase):
         self.assertIn("from the DEFINITION", i)
         self.assertIn("INDEPENDENT CONFIRMATION", i)
 
-    def test_next_names_the_inherited_span_as_the_real_open_question(self):
-        """"One generator" is one generator among a list nobody derived.  That
-        is the boundary the count now sits on."""
+    def test_next_names_the_boundary_that_is_still_open(self):
+        """The inherited-span question has been CLOSED -- the list was
+        incomplete, was completed, and the count survived.  What remains is
+        degree 3 and the derivative candidates, and `next` must have moved on
+        rather than still pointing at the closed one."""
         nxt = load()["next"]
-        self.assertIn("INHERITED", nxt)
-        self.assertIn("AMONG THAT SPAN", nxt)
-        self.assertIn("rather than about a list", nxt)
+        self.assertIn("degree 3", nxt)
+        self.assertIn("derivative candidates", nxt)
+        self.assertNotIn("INHERITED", nxt)
 
 
 class TestTheGeneratorCount(unittest.TestCase):
@@ -442,11 +444,13 @@ class TestTheGeneratorCount(unittest.TestCase):
         self.c = [c for c in load()["claims_upgraded"]
                   if "GENERATOR COUNT" in c["claim"]][0]
 
-    def test_the_result_names_all_four_kernel_elements(self):
+    def test_the_result_is_over_the_COMPLETE_ten_not_the_inherited_seven(self):
         r = self.c["result"]
-        for t in ("R g", "R^2 g", "|Ric|^2 g"):
+        self.assertIn("TEN candidate tensors", r)
+        self.assertIn("not the inherited seven", r)
+        for t in ("R g", "R^2 g", "|Ric|^2 g", "|Riem|^2 g"):
             self.assertIn(t, r)
-        self.assertIn("ALL FOUR are f g", r)
+        self.assertIn("ALL FIVE are f g", r)
 
     def test_the_discriminating_half_is_identified_as_such(self):
         """Four vanishing is not the evidence.  Three NOT vanishing is."""
@@ -470,13 +474,57 @@ class TestTheGeneratorCount(unittest.TestCase):
         dne = " ".join(load()["does_not_establish"])
         self.assertIn("real restriction", dne)
 
-    def test_the_inherited_candidate_list_is_disclaimed(self):
-        """"One generator" is one generator among a span that was not derived
-        here.  That boundary is easy to lose."""
+    def test_the_remaining_completeness_boundary_is_named_precisely(self):
+        """Not a vague hedge: degree <= 2, and ALGEBRAIC only."""
         dne = " ".join(load()["does_not_establish"])
-        self.assertIn("SEVEN enumerated candidates", dne)
-        self.assertIn("inherited from", dne)
-        self.assertIn("would not be seen", dne)
+        self.assertIn("beyond curvature degree 2", dne)
+        self.assertIn("DERIVATIVES of curvature", dne)
+        self.assertIn("in that class", dne)
+
+
+class TestTheInheritedListWasIncomplete(unittest.TestCase):
+    """The count was right for an incomplete reason.  Finding that out is the
+    result here -- a survived challenge is worth more than an unchallenged
+    claim, but only if the challenge is recorded."""
+
+    def setUp(self):
+        self.i = load()["the_inherited_candidate_list_was_incomplete"]
+
+    def test_the_defect_in_the_inherited_list_is_stated_as_a_pattern(self):
+        w = self.i["what_was_inherited"]
+        self.assertIn("built from g and RICCI", w)
+        self.assertIn("beyond its Ricci trace", w)
+
+    def test_the_complete_enumeration_is_given_not_just_a_count(self):
+        m = self.i["what_was_missing"]
+        self.assertIn("TEN, not seven", m)
+        self.assertIn("R_{acde} R_b^{cde}", m)
+        self.assertIn("Ric^{cd} R_{acbd}", m)
+
+    def test_the_omission_is_argued_to_be_the_dangerous_one(self):
+        """Not "we found three more" -- "the three we found are precisely the
+        ones that could have changed the answer"."""
+        w = self.i["why_the_omission_was_exactly_the_dangerous_one"]
+        self.assertIn("IS the Bach tensor", w)
+        self.assertIn("SECOND generator", w)
+        self.assertIn("structurally could not have seen it", w)
+
+    def test_the_count_is_recorded_as_having_SURVIVED_the_challenge(self):
+        r = self.i["the_result"]
+        self.assertIn("SURVIVES", r)
+        self.assertIn("right for an incomplete reason", r)
+
+    def test_over_completeness_is_addressed_rather_than_ignored(self):
+        """Linear dependence among the ten would over-count the dimension, and
+        that is the harmless direction.  Saying so is what makes the spanning
+        claim honest."""
+        o = self.i["over_complete_is_the_safe_direction"]
+        self.assertIn("SPANNING set", o)
+        self.assertIn("cannot hide an identity", o)
+        self.assertIn("UNDER-completeness", o)
+
+    def test_the_marginal_cost_is_recorded(self):
+        self.assertIn("shared across every candidate", self.i["cost"])
 
 
 class TestTheDirectionalRouteFailedItsOwnControl(unittest.TestCase):

@@ -245,7 +245,7 @@ the ten-parameter run is the *result*, not something worth 123 s on every run.
 
 ## 4b. The Euler operator, and a blocker that was wrong twice
 
-**Rail** `tango/forge/examples/curvature_symbolic_euler_gate.forge` — 7/7, 716.92 s, 91 MB.
+**Rail** `tango/forge/examples/curvature_symbolic_euler_gate.forge` — 7/7, 876.76 s, 106 MB.
 
 This certificate said `N1`, `N2` and the generator count were *"one job — the Euler
 operator"*, and that the Euler operator was *"a port of roughly four hundred lines… because
@@ -329,13 +329,15 @@ on `√−g R`, which comes back **nonzero**.
 
 ### The sixth claim: the generator count
 
-Of the seven candidate tensors `T_ab`, exactly **four** lie in the kernel of `T_ab E^ab`:
+**The inherited seven-candidate list turned out to be incomplete**, and the omission was the
+dangerous one — §4d. Over the *complete* degree-≤2 list of **ten**, exactly **five** lie in
+the kernel of `T_ab E^ab`:
 
 | in the kernel | **not** identities |
 |---|---|
-| `g`, `R g`, `R² g`, `\|Ric\|² g` | `Ric`, `Ric²`, `R Ric` |
+| `g`, `R g`, `R² g`, `\|Ric\|² g`, `\|Riem\|² g` | `Ric`, `Ric²`, `R Ric`, `Ric^{cd}R_{acbd}`, `R_{acde}R_b{}^{cde}` |
 
-**All four kernel elements are `f·g`.** Gauge symmetries form a **module over functions**, not
+**All five kernel elements are `f·g`.** Gauge symmetries form a **module over functions**, not
 a vector space, so `R g_ab` is the Weyl generator multiplied by a function rather than a
 second symmetry — a naive kernel dimension overcounts four to one. **One generator**, now over
 a family rather than at three fixtures.
@@ -344,6 +346,36 @@ What makes that meaningful is not the four that vanish but the three that **don'
 `Ric²` and `R·Ric` are the candidates that are *not* multiples of `g`, and all three come back
 nonzero. They are the discriminating half; without them "everything vanishes" would fit
 equally well.
+
+### 4d. The inherited list was incomplete, and the gap was the dangerous one
+
+Every one of the inherited seven — `g`, `Ric`, `R g`, `Ric²`, `R² g`, `|Ric|² g`, `R Ric` — is
+built from `g` and **Ricci**. Nothing in the list uses Riemann beyond its Ricci trace.
+
+At curvature degree ≤ 2 the complete list is **ten**: `g` at degree 0; `Ric`, `R g` at degree
+1; and **seven** at degree 2 — three scalars times `g` (`R²`, `|Ric|²`, `|Riem|²`), one scalar
+times `Ric`, and three carrying both free indices on curvature (`Ric²`, `Ric^{cd}R_{acbd}`,
+`R_{acde}R_b{}^{cde}`).
+
+**The three omitted are exactly the ones that could have broken the count.** `E^{ab}` for the
+Weyl action *is* the Bach tensor, which involves the full Weyl tensor rather than only its
+traces — so a candidate contracting against **Riemann** is precisely the kind that might
+produce a second generator, and a Ricci-only list structurally could not have seen it.
+`|Riem|² g` is another `f·g` and joins the kernel for free; the other two are **not** multiples
+of `g` and were genuine candidate generators.
+
+**The count survives.** Both Riemann-built candidates come back **nonzero**. The previous
+answer was right for an incomplete reason and is now right for a complete one.
+
+**Over-complete is the safe direction.** If the ten carry linear dependences — plausible in
+`D = 4`, where Gauss–Bonnet relates the scalars — then ten *over*-counts the dimension. That
+is harmless: completeness needs a **spanning** set, and a spanning set that isn't a basis
+still cannot hide an identity. The risk was *under*-completeness, which is what the inherited
+list had.
+
+**And it was nearly free.** The component route's cost is the 150 Lagrangian runs producing
+`E^{rs}`, shared across every candidate — three more candidates is three more contractions
+against curvature already in hand. Seven to ten took the gate from 716.92 s to 876.76 s.
 
 ### The route that failed, and the control that caught it
 
@@ -388,9 +420,10 @@ every coordinate order. `NOETHNP = 2` is much the smallest sub-family of any cla
   tracelessness, `G1` and `G3` enjoy. `√−g C²` through 150 Lagrangian runs is expensive enough
   that this is a real restriction. The count was first run at one and **not left there** — a
   claim that could have been made over a wider family and wasn't is a cap, not a boundary.
-- **The count is one generator among the SEVEN enumerated candidates**, at derivative order
-  zero. That list is **inherited** from `REVERSE_PHYSICS_NOETHER_IDENTITIES_V1`, not derived
-  here, so an identity outside its span would not be seen.
+- **Completeness holds at curvature degree ≤ 2 and for ALGEBRAIC candidates only.** The ten
+  span symmetric rank-2 tensors built from `g`, `g⁻¹` and Riemann at degree ≤ 2. Degree 3 and
+  above, and anything involving **derivatives** of curvature (`∇∇R` and the like), are not
+  swept. "One generator" is one generator *in that class*.
 - **The general trace law `N2` is not computed.** What is verified is the Weyl case — the
   vanishing instance. `g^{mn}E_mn = 2(a + b + 3c)□R` over the whole quadratic family is not.
 - **The Noether identity holds over only two parameters**, smaller than `N1`'s three and far
@@ -441,7 +474,7 @@ family"*, the actual reverse-physics statement about the gauge algebra.
 ```bash
 cd tango/forge && export FORGE_LIB=$PWD/lib
 forge -run examples/curvature_symbolic_family_gate.forge   # 15/15, 89.53 s, 111 MB
-forge -run examples/curvature_symbolic_euler_gate.forge    # 7/7,   716.92 s,  91 MB
+forge -run examples/curvature_symbolic_euler_gate.forge    # 7/7,   876.76 s, 106 MB
 ```
 
 Exact rational arithmetic throughout. No floating point, no tolerance.
