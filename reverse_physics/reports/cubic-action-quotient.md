@@ -78,12 +78,34 @@ combinations verified to be total derivatives - which is not done here.
   conformally invariant subspace, so it does not by itself convert the published cubic conformal
   counts into action counts.
 
-## 6. Next
+## 6. The kernel, exhibited but not pinned
 
-**Exhibit the kernel.** Three explicit combinations whose Euler derivatives vanish would turn
-both bounds into equalities, and would be the cubic analogue of
-`E_4 = Riem^2 - 4 Ric^2 + R^2` - where exhibiting the combination is precisely what made the
-quadratic result sharp.
+Candidates come from augmenting the Euler matrix with an identity and reducing the `M` half; a
+row whose `M`-part vanishes carries the combination in its `I`-part. Each is then **verified
+identically** - the combination's Euler derivative must be the zero *polynomial*, not merely
+zero at the evaluation point.
+
+**3 candidates, 1 verified.** Two were artefacts of the point, which is exactly what the second
+pass exists to catch. A second evaluation point (free - the polynomial rows are already
+computed) also gives rank 5.
+
+**The tension is reported, not resolved.** If the generic kernel were the full 3-space, all
+three basis vectors would verify; one does. If the generic rank exceeded 5, a generic point
+should show it; two points both show 5. So either both points are special, or the kernel is
+sensitive to the basis the elimination happens to produce.
+
+What *is* established: **at least one genuine total derivative**, verified as a polynomial
+identity, and the kernel lies inside an explicit 3-space - so `dim(cubic actions)` is between
+**5 and 7**.
+
+## 7. Next
+
+**Pin the kernel.** Deciding whether the other two dimensions are real needs either a third
+evaluation point that separates them, or - better - solving for the identical nullspace
+*within* that 3-space directly, rather than testing whichever basis the elimination produced.
+The latter is a small linear problem over the polynomial coefficients. Pinning it would give
+the cubic analogue of `E_4 = Riem^2 - 4 Ric^2 + R^2`, where exhibiting the combination is
+precisely what made the quadratic result sharp.
 
 Then the conformally invariant subspace, which is what would actually convert the published
 cubic conformal counts from counts of *invariants* into counts of *actions*.
