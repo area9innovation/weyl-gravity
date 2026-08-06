@@ -1,0 +1,42 @@
+{
+  "certificate": "REVERSE_PHYSICS_GHOST_RESONANCE_JOIN_V1",
+  "kind": "structural-identification",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "report": "reverse_physics/reports/ghost-resonance-join.md",
+  "establishes": "that the ghost and the resonance are ONE OBJECT, as an identity rather than an analogy. For a rank-two Jordan block with nilpotent part N and eigenvector v (ker N = im N = span{v}): the residue of the SECOND-ORDER pole of the resolvent is exactly N, whose image is span{v}; and the condition that N be self-adjoint in a symmetric form eta -- which is what an invariant inner product means -- is IDENTICALLY the equation v^T eta v = 0. Nullity is not a CONSEQUENCE of self-adjointness; it is the SAME EQUATION. The direction in which the resonance pole is second order is the direction that carries no norm in every invariant form.",
+  "why_this_needed_writing": "two lines of this repository reached the same object and did not cite each other. REVERSE_PHYSICS_WEYL_GHOST_DIPOLE_V1 proves in zero-axiom Rocq that a rank-two Jordan block admits no positive-definite invariant inner product. black_hole_programme/phase4/axial_qnm_causal_laplace_bridge_v1 proves, LORENTZIAN_CERTIFIED, that the meromorphic continuation of an actual retarded causal transfer operator has a second-order resonance pole from the same non-split extension. A grep for REVERSE_PHYSICS inside black_hole_programme returns nothing, and the dipole certificate does not import the resonance-pole theorem. The dipole certificate records the situation as a CONVERGENCE -- 'evidence about where to look, not a theorem about the Lorentzian theory'. This is the theorem the convergence was pointing at.",
+  "the_identity": {
+    "setup": "N = t v u^T with u = (-v_1, v_0), the GENERAL 2x2 nilpotent: every nonzero 2x2 nilpotent has rank one and is v u^T with u annihilating the kernel, and nilpotency forces u perpendicular to v, which in two dimensions leaves exactly this one-parameter family. eta is the general symmetric form.",
+    "analytic_reading": "(sI - N)(sI + N) = s^2 I because N^2 = 0, so the resolvent is I/s + N/s^2 EXACTLY -- the Laurent expansion terminates. The coefficient of 1/s^2 is the value of (sI + N) at s = 0, which is N, nonzero. So the pole is genuinely second order and acts in the direction span{v} = im N.",
+    "metric_reading": "self-adjointness of N in eta is eta N = N^T eta. Computed on the general nilpotent and the general symmetric form, the commutator has vanishing diagonal, is antisymmetric, and its single independent entry is (eta N - N^T eta)_{01} = t * (v^T eta v).",
+    "the_join": "those are the same equation. t is a free scale, so 'N is self-adjoint in eta' holds exactly when 'v is null in eta' holds. Not one implying the other -- the same polynomial.",
+    "the_physical_reading": "the ghost is not a mode of negative energy one could weigh. It is a DIRECTION that simultaneously rings at second order and carries no norm, and those are not two properties of the direction but one property described twice."
+  },
+  "checks": {
+    "gate": "tango/forge/examples/ghost_resonance_join_gate.forge, 8/8, 1.80 s, peak RSS 76 MB",
+    "symbolic_not_sampled": "every identity is a polynomial identity in (v_0, v_1, t, e_0, e_1, e_2, s) over Q, so it holds for EVERY rank-two Jordan block and EVERY symmetric form at once rather than at a fixture.",
+    "the_negative_control_isolates_the_cause": "a repeated eigenvalue alone does NOT give a double pole. For the SEMISIMPLE matrix with the same repeated eigenvalue -- N replaced by zero -- the s^0 coefficient is the zero matrix and the pole is simple. So the pole order tracks DEFECTIVENESS, not degeneracy, and the residue claim is about the Jordan block rather than about having a repeated root.",
+    "non_vacuity": "N is required NONZERO, im N is required nontrivial, v^T eta v is required NOT identically zero as a polynomial (else 'v is null' would hold for every eta and carry nothing), and the commutator is required not identically zero (else self-adjointness would be automatic). The shared equation has to cut something out to be a join.",
+    "mutation_tested": "two mutations, each breaking exactly the checks it should. Taking the norm on u instead of v breaks ONLY check 7 -- precisely targeted. Making u non-perpendicular to v breaks checks 1, 3, 4 and 7 -- the nilpotency chain collapses. The gate discriminates."
+  },
+  "does_not_establish": [
+    "novelty of the MATHEMATICS. This is elementary 2x2 linear algebra over Q, and anyone who wrote it down would get the same identity. What is contributed is the IDENTIFICATION -- that the object the ghost line proves things about and the object the black-hole line proves things about are the same object, and that their two conclusions are therefore one conclusion. The algebra is the evidence, not the result.",
+    "that any particular Schwarzschild quasinormal mode IS defective. black_hole_programme/phase3/axial_qnm_local_smith_dichotomy explicitly does NOT evaluate its selector beta_n and says 'no actual QNM is promoted to a double pole'. The causal Laplace bridge certifies the double pole for ONE enclosed simple ell = 2 axial spin-two QNM. This certificate is conditional on defectiveness; it says what defectiveness MEANS, not where it occurs.",
+    "any LORENTZIAN-CAUSAL statement. This carries LOCAL-ALGEBRAIC. The black-hole certificates carry REDUCED-MODE and LORENTZIAN_CERTIFIED respectively and nothing is promoted by this record; per the programme's claim boundary a computation in one tag is never evidence for a claim in another.",
+    "the unstable-resonance reading of the ghost, and it points the other way. A DOUBLE pole's time-domain reading is t*exp(i*omega*t) -- SECULAR GROWTH, not decay -- so a second-order pole is not by itself a finite-lifetime mode. That time-domain reading is listed in does_not_establish across five separate black-hole certificates, along with time-domain stability. Donoghue-Menezes treat the ghost as an unstable resonance with a width; paper/06 places that prescription OUTSIDE this programme's assumptions, and nothing here changes that.",
+    "that the ghost is harmless. REVERSE_PHYSICS_WEYL_GHOST_DIPOLE_V1's reading stands unchanged: the ghost is unavoidable and locally incurable, and what it costs is that positivity becomes NONLOCAL. This says what the ghost IS, not that it is benign.",
+    "anything about lifetimes, widths, decay rates, detector signatures, or the quantum theory."
+  ],
+  "what_it_changes": "the dipole certificate asks 'whether the nonlocal C factorises over null infinity direct-sum the horizon' and says everything else about the ghost is settled. This adds one thing that was not settled and was not asked: WHAT the ghost is, structurally. The answer is that it is the defective direction, and defectiveness is simultaneously the pole-order statement and the nullity statement. That makes the ghost's signature an ORDER rather than a sign -- a second-order resonance pole where a healthy sector gives a simple one -- which is a different kind of observable to look for.",
+  "verification": {
+    "commands": [
+      "cd tango/forge && export FORGE_LIB=$PWD/lib",
+      "forge -run examples/ghost_resonance_join_gate.forge   # 8/8, 1.80 s",
+      "# mutation A: in norm_of_v swap v0<->v1 in the two products -- ONLY check 7 fails",
+      "# mutation B: in build_N set u1 = v1 instead of v0 -- checks 1, 3, 4, 7 fail"
+    ]
+  },
+  "next": "evaluate the Smith-dichotomy selector beta_n, which is what would turn 'conditional on defectiveness' into 'this QNM is defective'. black_hole_programme/phase3/axial_qnm_local_smith_dichotomy names exactly what is missing: a certified QNM germ, an adjoint cokernel germ, and a boundary-convergent or regularised pairing. Separately: the secular t*exp(i*omega*t) reading needs the branch-cut and contour control that five certificates list as not established, and until that is done the DYNAMICAL content of the second-order pole is open in both directions -- neither decay nor growth is established."
+}
