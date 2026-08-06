@@ -1,0 +1,42 @@
+{
+  "certificate": "BH0B_GENERAL_STATIC_SPHERICAL_COMPLETENESS",
+  "kind": "completeness-theorem",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "closes": {
+    "declared_in": "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json",
+    "what_it_was": "BH0's does_not_establish reads 'completeness beyond the Laurent class (Riegert's classification is a literature target, not a repository theorem)'. BH0 proved the Bach equations force c2 = c3 = 0 and w^2 + 3 u gamma = 1 WITHIN a six-term Laurent ansatz. This removes the ansatz."
+  },
+  "establishes": "that in the conformal gauge b = 1/B, for an ARBITRARY C^4 function B nonvanishing on an interval, the Bach tensor of diag(-B, 1/B, r^2, r^2 sin^2 th) vanishes identically if and only if (i) (r B)'''' = 0 and (ii) c1^2 - 3 c0 c2 = 1. Since (i) is LINEAR, substituting u = r B turns it into u'''' = 0, whose solution space is exactly the cubics -- by four integrations, with no ansatz. So B = c0/r + c1 + c2 r + c3 r^2 is the GENERAL solution, not a chosen family, and the remaining content is the single algebraic condition, which is BH0's w^2 + 3 u gamma = 1 under c1 = w, c0 = -u, c2 = gamma, c3 = -k.",
+  "the_structure_that_makes_it_closable": {
+    "the_two_generators": "L := (r B)'''' , LINEAR in B; and N := 2r^4(B B'''' + B'B''') - r^4 B''^2 + 4r^3(B B''' + B'B'') - 4r^2(B B'' + B'^2) + 8 r B B' - 4B^2 + 4, nonlinear and inhomogeneous.",
+    "the_rows_are_not_independent": "as exact identities in B and its derivatives: B_thth = N/(24 r^2); B_tt = B (N + 2 r^3 B L)/(24 r^4); B_rr = (-N + 2 r^3 B L)/(24 r^4 B). All three rows lie in the span of {N, r^3 B L}, which is why a four-dimensional-looking fourth-order system collapses to one linear equation plus one algebraic condition.",
+    "both_generators_are_recovered": "L and N are each recovered from the rows -- L from 24r^4(B_tt/B + B B_rr) = 4 r^3 B L, N from 24 r^2 B_thth -- so Bach = 0 forces BOTH, and the equivalence runs in both directions rather than only one.",
+    "why_the_linearity_is_the_whole_point": "a nonlinear fourth-order ODE would need an ansatz to solve and completeness would stay out of reach. The system is NOT nonlinear in the direction that matters: the part that determines the functional form is linear, and the nonlinearity is confined to a condition that becomes purely algebraic once the form is fixed."
+  },
+  "why_it_matters_beyond_tidiness": "gamma = c2 is the coefficient of the LINEAR POTENTIAL, the term conformal gravity is used to fit galactic rotation curves with. BH0's Einstein/extra split gives E_thth = -gamma (r - 3 beta)/2, so the family is Einstein exactly when gamma = 0. Combining: the linear potential is not a term appended to a solution to fit data -- it is one of the four coefficients of the general solution of a LINEAR fourth-order equation, and it is precisely the non-Einstein content. Conformal invariance plus vacuum plus staticity plus spherical symmetry FORCE the term to be available; they do not make it optional.",
+  "checks": {
+    "verifier": "black_hole_programme/bh0_general_completeness.py, 24 checks, all PASS, 4.03 s, peak RSS 68 MB",
+    "arbitrary_function_not_a_fixture": "B is sympy Function('B')(r) throughout the derivation. The row identities are verified as identities in B and its derivatives, so they hold for every C^4 function rather than at sampled coefficients.",
+    "controls_that_must_fail": "four non-solution probes -- log r, exp r, 1/r^2, r^3 -- are each required to have L != 0, so the linear equation genuinely excludes non-cubic behaviour rather than being satisfied by everything. Without them 'B must be a cubic over r' would be untested.",
+    "the_constraint_is_two_sided": "the algebraic condition is required BOTH to cut something out (c0 = c1 = c2 = 0 gives N = 4, nonzero, so not every cubic is a solution) and to admit solutions (c0 = 1, c1 = 2, c2 = 1 gives N = 0). A constraint that excluded everything or nothing would be equally useless.",
+    "linearity_is_checked_not_asserted": "L[lambda f + mu g] - lambda L[f] - mu L[g] = 0 is verified symbolically, and the Wronskian of {1/r, 1, r, r^2} is computed and found nonzero (12/r^4), so the four solutions are independent."
+  },
+  "does_not_establish": [
+    "the general TWO-FUNCTION ansatz. This is proved in the conformal gauge b = 1/B. That an arbitrary static spherically symmetric metric diag(-a, b, r^2, ...) can be brought to that gauge by a conformal transformation and a radial reparametrisation is the standard Mannheim-Kazanas argument and is ASSUMED here, not proved. BH0 computes the general two-function rows separately; joining the two is a further step.",
+    "anything where B vanishes. The row decomposition divides by B, so the equivalence holds on an interval where B is nonvanishing -- outside horizons. The horizon structure is BH0's separate exact fixture.",
+    "novelty. That the general static spherically symmetric vacuum solution of conformal gravity has this form is Mannheim-Kazanas 1989 and Riegert 1984. What is contributed is that it is now COMPUTED in this repository rather than cited, with the ansatz removed and the row decomposition exhibited -- the same currency as the rest of this programme, where the claimed novelty is the machine-checked derivation with inputs isolated.",
+    "that gamma is SOURCED by matter. The theorem says the linear term is one of four free coefficients of the vacuum solution. Whether a galaxy's baryonic mass determines gamma is a question about MATTER COUPLING, which conformal invariance makes delicate because it forbids a mass scale, and BH0 explicitly does not certify any physical matter or clock conformal frame. Until that is settled, fitting gamma per galaxy is fitting, not prediction. THIS IS THE CRUX FOR ANY PHENOMENOLOGICAL CLAIM AND IT IS UNTOUCHED.",
+    "anything about rotation curves, MOND, dark matter, the Tully-Fisher relation, or any comparison with observation. No phenomenology is computed here.",
+    "anything about the ghost, stability, quasinormal modes, or the quantum theory."
+  ],
+  "verification": {
+    "commands": [
+      "cd black_hole_programme",
+      "python3 bh0_general_completeness.py    # 24 checks, all PASS, 4.03 s",
+      "# needs the mise interpreter: ~/.local/share/mise/installs/python/3.12.13/bin/python3"
+    ]
+  },
+  "next": "the matter-coupling question, which is what decides whether any of this is physics. State precisely what must be assumed about how baryonic matter enters a conformally invariant action for gamma to be determined by mass rather than fitted. Flanagan's 2006 objection lives exactly here. Formalising the assumption is itself a result even if the answer is unwelcome -- and it is a reverse-physics question in the strict sense this programme means, which the rotation-curve literature does not ask. Separately and cheaply: the asymptotic scaling. Conformal gravity gives v^2 ~ gamma c^2 r / 2, which RISES, whereas MOND gives asymptotically flat curves and PREDICTS the baryonic Tully-Fisher relation v^4 proportional to M. Computing that tension honestly is the sharpest early falsifier."
+}
