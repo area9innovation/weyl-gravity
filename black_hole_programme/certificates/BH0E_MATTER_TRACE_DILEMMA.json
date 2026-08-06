@@ -1,0 +1,39 @@
+{
+  "certificate": "BH0E_MATTER_TRACE_DILEMMA",
+  "kind": "necessity-constraint",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "report": "black_hole_programme/reports/bh0e-matter-trace-dilemma.md",
+  "builds_on": [
+    "BH0B_GENERAL_STATIC_SPHERICAL_COMPLETENESS",
+    "BH0C_TULLY_FISHER_SCALING",
+    "BH0D_BACH_VACUUM_IS_BIHARMONIC",
+    "REVERSE_PHYSICS_SYMBOLIC_FAMILY_V1"
+  ],
+  "establishes": "what conformal invariance costs in the MATTER sector, and hence which sources can produce the linear potential gamma r. A conformally invariant action satisfies g_ab (delta S / delta g_ab) = 0 -- the Noether identity certified in REVERSE_PHYSICS_SYMBOLIC_FAMILY_V1 for sqrt(-g) C^2. Applied to the MATTER action rather than the gravitational one, the identical statement is T^mu_mu = 0: ONE THEOREM USED TWICE. Computing what that costs: a perfect fluid has trace 3p - rho, so it is traceless if and only if p = rho/3 -- RADIATION, uniquely. DUST (p = 0) forces rho = 0 and is excluded outright.",
+  "the_dilemma": "a galaxy's baryons are pressureless to excellent approximation, so on the conformal branch a galaxy is NOT an admissible source. BH0D established that gamma is the point-source response of the biharmonic operator and its coefficient tracks the total fourth-order source; BH0C established that Tully-Fisher forces gamma UNIVERSAL. Together the fork resolves into a dilemma with two costed branches: EITHER the matter sourcing gamma is not ordinary baryonic matter, in which case gamma is not sourced by the baryonic mass Tully-Fisher correlates against; OR the conformal symmetry is BROKEN in the matter sector -- the standard move, a conformally coupled scalar acquiring a vacuum expectation value -- which introduces exactly the mass scale conformal invariance was invoked to forbid, so the universality of gamma stops being a consequence and becomes an ASSUMPTION. Neither branch is fatal and neither is free. Naming which one a rotation-curve fit stands on is the contribution.",
+  "why_this_is_the_reverse_physics_form_of_a_known_dispute": "Flanagan 2006 argues conformal gravity's Newtonian limit does not come out right when matter is coupled conformally; Mannheim disputes it, and the disagreement has stood for about two decades. This does not adjudicate it. What it does is locate the disagreement: both sides are choosing branches of the dilemma above, and the choice is an assumption rather than a derivation on either side. That is what a reverse-physics treatment is for -- the assumption-isolation, not the verdict.",
+  "checks": {
+    "gate": "tango/forge/examples/weyl_matter_trace_gate.forge, 8/8",
+    "mixed_components_keep_it_ansatz_independent": "T^mu_nu is used rather than T^{mu nu}, so the trace is a plain diagonal sum and no metric enters. That keeps this independent of the static spherical ansatz everything else in this line assumes.",
+    "non_vacuity": "the trace is required NOT identically zero, or 'traceless' would constrain nothing and every fluid would qualify.",
+    "the_dilemma_is_kept_two_sided": "radiation is required to still SOURCE the fourth-order equation -- T^0_0 - T^r_r = -rho - p is nonzero -- otherwise the finding would collapse to 'nothing can source gamma' rather than the sharper 'ordinary matter cannot'. That control is what makes it a dilemma rather than a no-go.",
+    "the_equation_of_state_is_forced_not_chosen": "3p - rho = 0 is exhibited as having exactly the solution rho = 3p by computing the residual, rather than by asserting the standard result."
+  },
+  "does_not_establish": [
+    "that conformal invariance implies T^mu_mu = 0. That is IMPORTED from the Noether result in REVERSE_PHYSICS_SYMBOLIC_FAMILY_V1 and is not re-derived here. What is new is the cost of it in the matter sector.",
+    "that a galaxy is well modelled as pressureless baryons. That is an OBSERVATIONAL input and is not this repository's measurement. It is what makes the dilemma bite, and a reader who rejects it rejects the conclusion.",
+    "that conformal gravity is wrong, or that MOND is wrong. Neither branch of the dilemma is fatal. The second branch -- symmetry breaking in the matter sector -- is the standard construction in the literature and is not refuted here; what is established is that it CARRIES A COST that the vacuum-side results do not advertise.",
+    "anything about a conformally coupled scalar specifically. Its stress tensor being traceless on shell is not computed here; only the perfect-fluid case is.",
+    "any rotation-curve fit, any galaxy, any numerical comparison.",
+    "the resolution of the Flanagan-Mannheim dispute. This locates it; it does not adjudicate it."
+  ],
+  "verification": {
+    "commands": [
+      "cd tango/forge && export FORGE_LIB=$PWD/lib",
+      "forge -run examples/weyl_matter_trace_gate.forge    # 8/8"
+    ]
+  },
+  "next": "cost the second branch explicitly. If the conformal symmetry is broken by a scalar acquiring a vacuum expectation value, the scale it introduces is what sets gamma -- so the question 'is gamma universal?' becomes 'is that vacuum expectation value universal?', which is a question about the scalar sector rather than about gravity. Making that translation precise would turn BH0C's conditional into a statement about the symmetry-breaking sector, and would say exactly what a rotation-curve fit is assuming about it. That is the remaining step on this line."
+}
