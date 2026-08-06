@@ -1,0 +1,38 @@
+{
+  "certificate": "BH0F_CONSTANT_VEV_FORCES_GAMMA_ZERO",
+  "kind": "no-go-on-a-branch",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "report": "black_hole_programme/reports/bh0f-vev-forces-gamma-zero.md",
+  "builds_on": [
+    "BH0B_GENERAL_STATIC_SPHERICAL_COMPLETENESS",
+    "BH0E_MATTER_TRACE_DILEMMA"
+  ],
+  "establishes": "that the SYMMETRY-BREAKING branch of the BH0E dilemma, in its simplest form, kills the linear potential. Three computed steps. (1) For the conformally coupled scalar the field equation box S + (1/6) R S + 4 lambda S^3 = 0 reduces, for a CONSTANT vacuum expectation value S0 != 0, to R = -24 lambda S0^2 -- so a constant vev does not merely supply a scale, it PINS THE RICCI SCALAR to a constant. (2) For the forced Mannheim-Kazanas family the Ricci scalar is COMPUTED from the metric as R = 12 k - 6 gamma / r + 2 (1 - w) / r^2. (3) That is constant in r if and only if gamma = 0 and w = 1. Therefore A CONSTANT SCALAR VEV FORCES gamma = 0.",
+  "why_it_matters": "BH0E left two branches and branch two -- break the conformal symmetry with a scalar vacuum expectation value, so ordinary matter can source the theory -- is the standard construction. This shows that in its simplest form it is incompatible with the very thing conformal gravity is of interest for: the linear potential gamma r vanishes. The two features cannot both be had from a constant vev.",
+  "what_it_does_and_does_not_refute": "it does NOT refute the programme. A working construction can take the scalar NON-CONSTANT, and Mannheim's does. What is established is that it MUST -- constancy is not available -- and that this MOVES THE UNIVERSALITY QUESTION. With a position-dependent scalar the profile is a property of each configuration, so BH0C's requirement that gamma be universal becomes the question 'is the scalar PROFILE universal across galaxies?'. That is a question about the symmetry-breaking sector rather than about gravity, and there is no obvious reason for it to answer yes.",
+  "checks": {
+    "verifier": "black_hole_programme/bh0f_vev_forces_gamma_zero.py, 12 checks, all PASS",
+    "R_is_computed_not_asserted": "the Ricci scalar is taken from the metric through the curvature engine, not written down from a formula, and the target expression is then verified against it.",
+    "all_r_not_some_r": "dR/dr = 0 is solved as a POLYNOMIAL after clearing denominators, so the conclusion is 'constant for all r' rather than 'constant where sympy happened to simplify'.",
+    "the_implication_is_not_vacuous": "R is required NOT automatically constant, and with gamma != 0 it is required NOT constant. Without those, 'R constant implies gamma = 0' would be a statement about an R that was constant anyway.",
+    "u_drops_out": "R is verified independent of u, the Newtonian coefficient. So the obstruction is specific to the LINEAR term and does not touch the Newtonian one -- which is what makes it a statement about gamma rather than about the solution generally.",
+    "consistency_with_BH0": "at gamma = 0, w = 1 the constant value is 12k, the (A)dS curvature, matching BH0's Einstein locus. Two independent routes to the same sheet."
+  },
+  "does_not_establish": [
+    "anything about a NON-constant scalar. The whole content is about a constant vacuum expectation value. A position-dependent scalar is not analysed, and that is precisely where a working construction lives.",
+    "the specific form of the scalar action. box S + (1/6) R S + 4 lambda S^3 = 0 is the standard conformally coupled scalar in D = 4 and is entered as a premise, not derived. A different matter sector gives a different condition.",
+    "that Mannheim's construction is wrong. It uses a non-constant scalar, which is exactly the case this does not cover. What is shown is that the simple constant-vev reading is unavailable, so the non-constancy is load-bearing rather than incidental.",
+    "any statement about rotation curves, galaxies, or observation.",
+    "the resolution of BH0E's dilemma. Branch two is COSTED here, not eliminated."
+  ],
+  "verification": {
+    "commands": [
+      "cd black_hole_programme",
+      "python3 bh0f_vev_forces_gamma_zero.py    # 12 checks, all PASS",
+      "# needs the mise interpreter: ~/.local/share/mise/installs/python/3.12.13/bin/python3"
+    ]
+  },
+  "next": "the non-constant scalar, which is now the only place branch two can live. The question to pose is not whether a profile exists -- one does -- but what UNIVERSALITY it must have: BH0C requires gamma to be the same constant for every galaxy, and gamma is now tied to the scalar profile, so the requirement transfers to the profile. Making that transfer precise would say exactly what a rotation-curve fit assumes about the symmetry-breaking sector, which is the sharpest remaining question on this line."
+}
