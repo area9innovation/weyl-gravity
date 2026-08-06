@@ -1,0 +1,62 @@
+{
+  "certificate": "REVERSE_PHYSICS_SYMBOLIC_FAMILY_V1",
+  "kind": "substrate-capability-and-generalization",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "report": "reverse_physics/reports/symbolic-families.md",
+  "establishes": "Curvature over a metric family carrying SYMBOLIC PARAMETERS, so an identity that returns zero is zero AS A POLYNOMIAL -- true for every member of the family at once rather than at sampled fixtures. The family is g = L S L^T with L unit lower-triangular and S diagonal, both varying: LDL^T is the general symmetric matrix, so ten parameters span every independent component of a symmetric 4x4. THREE STANDING LEDGER CLAIMS are upgraded from sampled to polynomial: Weyl tracelessness, both G1 coordinate-vector identities, and G3 (the conformal weight of the Weyl tensor).",
+  "the_caveat_it_attacks": "every curvature result in this stream is computed AT SPECIFIC METRICS -- a dozen exact rational fixtures, ranks taken over them. Strictly stronger than an unverified citation, strictly weaker than a theorem. 'Zero at twelve fixtures' is not 'zero for all metrics', and G1 in particular -- the coordinate vectors the entire D = 4 classification is expressed in -- rested on ONE metric.",
+  "how": {
+    "the_observation": "a jet already IS a truncated polynomial over its coefficient type, so the moment Jet<Rat> satisfies the Field vocabulary that Jet<T> demands of its coefficients, jets nest: Jet<Jet<Rat>>, outer variables the coordinates and inner the symbolic parameters. No new polynomial type and no second arithmetic to keep in step.",
+    "no_new_tensor_code": "ci_lower_first, ci_ricci, ci_weyl, ci_raise_slot, ci_raise2, ci_dot and ci_trace_sq are used exactly as they are used on rationals, with T = Jet<Rat>. The contraction layer was already generic enough; it had simply never been handed anything but rationals. Taking the constant term in the COORDINATES first is what makes that work -- it leaves curvature at the base point, still polynomial in the parameters.",
+    "division_is_avoided_not_implemented": "Field demands finv and a polynomial ring inverts only units. christoffel takes `half` as an argument and ci_weyl takes 1/(D-2); metric_inverse -- the one routine that divides -- is replaced by building g and g^{-1} directly from L and S. The two genuine inversions that remain, 1/s_k for the LDL^T diagonal and 1/Omega^2 for the conformal factor, are division BY UNITS: both have constant term +-1, so jet_inv returns an exact truncated inverse rather than trapping.",
+    "L_inverse_is_exact": "L^{-1} = I - N + N^2 - N^3, since N^4 = 0 for a 4x4 strictly-lower matrix. An earlier draft used I - N, valid only when N^2 = 0 -- true for two non-chaining slots and WRONG for six, which chain through (2,1), (3,1), (3,2). The gate verifies g g^{-1} = I as a polynomial identity at every parameter count rather than trusting the series length."
+  },
+  "truncation_is_a_check_not_a_caveat": "the inner jet truncates, so a term above its degree is dropped SILENTLY -- and a dropped term is indistinguishable from one that was zero, which would turn 'the identity holds' into exactly the vacuous pass this programme keeps finding. The inner degree is DERIVED, not tuned: entries linear in the parameters give g^{-1} degree 6, Gamma degree 8, Riemann degree 16. Every row reports `unsat`, and the conclusions are void without it.",
+  "the_cost_and_two_wrong_predictions": {
+    "measured": "parameters 1..10, max terms in a Riemann coefficient 1 -> 15. Full sweep of six identities: 49.78 s, 109 MB.",
+    "prediction_at_six_parameters": "worst case C(22,6) = 74,613 monomials; actual 10. Wrong by four orders of magnitude.",
+    "prediction_at_ten_parameters": "worst case C(26,10) = 5,311,735; actual 15. Wrong by five.",
+    "the_lesson": "sparsity dominates worst-case counting here so completely that predicting the cost is not worth doing. Measure it -- and make the gate DEMAND the full family, so a prediction can never quietly become a cap. Had the six-parameter estimate been trusted, the sweep would have stopped at three and the ceiling would never have been found."
+  },
+  "claims_upgraded": [
+    {
+      "claim": "Weyl tracelessness, C^{a}_{bad} = 0",
+      "was": "ci_trace_sq at a dozen fixtures",
+      "control": "the SAME trace on RIEMANN gives Ricci and must come back NONZERO, so the machinery demonstrably detects a nonzero trace"
+    },
+    {
+      "claim": "G1: C^2 = Riem^2 - 2 Ric^2 + R^2/3, and the E_4 form",
+      "was": "ONE metric",
+      "control": "the same identity with R^2/4 in place of R^2/3 must FAIL, and the three scalars are separately required nonzero"
+    },
+    {
+      "claim": "G3: C^{a}_{bcd} is unchanged under g -> Omega^2 g",
+      "was": "fixtures",
+      "control": "R^{a}_{bcd} under the SAME transformation must come back CHANGED. Weyl and Riemann differ only by trace terms, so without this the check could be comparing something to itself -- which is how two earlier drafts failed"
+    }
+  ],
+  "checks": {
+    "ok": true,
+    "passed": 9,
+    "total": 9,
+    "gate": "curvature_symbolic_family_gate 9/9, 49.78 s, peak RSS 109 MB",
+    "substrate": "tango/forge/lib/math/jetfield.forge; jexp and jcoef made pub in math/jet, purely additive -- jet_nterms, jet_nv and jet_deg were already public, so a caller could see that a jet HAS terms but not what they are, which is what a nested coefficient ring must inspect to police its own truncation. All 13 dependent gates compile clean; jet_mul_gate 14/14 and curvature_covderiv_gate 23/23 re-run unchanged."
+  },
+  "verification": {
+    "substrate": "Forge, in the tango repository (1f1e3c16a).",
+    "commands": [
+      "cd tango/forge && export FORGE_LIB=$PWD/lib",
+      "forge -run examples/curvature_symbolic_family_gate.forge   # 9/9, 49.78 s"
+    ]
+  },
+  "does_not_establish": [
+    "'all metrics'. The family is general in the METRIC -- ten parameters span every component of a symmetric 4x4, and the unimodularity restriction of an earlier draft is gone -- but each slot carries a FIXED QUADRATIC PATTERN in x rather than a general function. This is a generic metric FAMILY near flat, not every metric.",
+    "the rest of the ledger. Three claims are upgraded. N1 (nabla^a B_ab = 0), the trace law N2 and the Noether generator count are NOT, and all three wait on the same missing piece -- the Euler operator over this ring -- because each is about the VARIATION rather than the curvature. That is one job, not three.",
+    "anything about the identities that were already certain. Last-pair antisymmetry and the first Bianchi identity are verified here because they exercise the pipeline, not because they were in doubt; only tracelessness, G1 and G3 were standing ledger claims.",
+    "a theorem for all metrics in the mathematician's sense. What is established is a polynomial identity over an explicitly parameterised family, which is a different and weaker object.",
+    "anything quantum, dynamical, or about the gauge algebra beyond what REVERSE_PHYSICS_NOETHER_IDENTITIES_V1 already records."
+  ],
+  "next": "THE BACH TENSOR over this family, which delivers N1 -- the Noether/diff content, and the gauge layer's own identity. It needs C as jets to enough degree plus cv_cov_val/cv_cov_grad, and it needs its OWN known-answer control before it can be believed: the Bach tensor VANISHES on Einstein metrics, which is the check that would catch a wrong index placement in exactly the way nothing caught the eight malformed contractions earlier in this stream."
+}

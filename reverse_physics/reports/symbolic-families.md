@@ -1,5 +1,6 @@
 # Symbolic metric families are cheap, and that changes what is provable here
 
+**Certificate** `REVERSE_PHYSICS_SYMBOLIC_FAMILY_V1`
 **Rail** Forge, `tango/forge/examples/curvature_symbolic_family_gate.forge` — 9/9, 49.78 s
 **Substrate** `tango/forge/lib/math/jetfield.forge`
 **Dependency tag** `LOCAL-ALGEBRAIC`
