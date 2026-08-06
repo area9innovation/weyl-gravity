@@ -245,7 +245,7 @@ the ten-parameter run is the *result*, not something worth 123 s on every run.
 
 ## 4b. The Euler operator, and a blocker that was wrong twice
 
-**Rail** `tango/forge/examples/curvature_symbolic_euler_gate.forge` — 4/4, 157.51 s, 98 MB.
+**Rail** `tango/forge/examples/curvature_symbolic_euler_gate.forge` — 6/6, 449.38 s, 99 MB.
 
 This certificate said `N1`, `N2` and the generator count were *"one job — the Euler
 operator"*, and that the Euler operator was *"a port of roughly four hundred lines… because
@@ -287,21 +287,69 @@ division either.
   The check had to measure **contributions**, not jets. **A control can be wrong by being too
   strong** — the opposite failure to the Einstein control two sections up.
 
+### The fifth claim: the Noether identity
+
+```
+g_ab E^ab = 0        for  L = sqrt(-g) C^2
+```
+
+`REVERSE_PHYSICS_NOETHER_IDENTITIES_V1` establishes this at **three sampled metrics**. It now
+holds as a polynomial identity over a family — the thing the whole Euler exercise was for.
+
+**A three-rung ladder, each rung a known answer the next one needs.**
+
+| Lagrangian | known answer | what only *it* can test |
+|---|---|---|
+| `√−g` | `½√−g g^{ab}` | derivative families must contribute **nothing** |
+| `√−g R` | `+√−g(½R g^{ab} − R^{ab})` | derivative families must be **nonzero** |
+| `√−g C²` | trace vanishes | the identity itself |
+
+Rung two is strictly stronger *in the way that matters*: a machine returning zero `B` and `C`
+passes rung one completely and fails rung two. **The sign is read off, not asserted** — the
+check requires a match up to an overall sign and reports which (`+1`), because the sign is a
+convention of the perturbation normalisation, and asserting conventions from memory is how
+two blocker predictions here went wrong.
+
+**The trace is taken along the conformal direction** `h_ab = tφ·g_ab`, which is both cheaper
+and sharper. Cheaper: **15** Lagrangian runs rather than the 150 needed to build all ten
+components and trace them — the component route did **not** finish in 580 s. Sharper: *"the
+action is stationary under conformal rescaling"* **is** Weyl invariance, and the trace
+identity is that fact written in components.
+
+**`C²` is computed from the definition, not from the certified `G1` identity.** Using
+`C² = Riem² − 2Ric² + R²/3` would be legitimate — it holds over the full ten — but it would
+couple this result to that one. Computing directly makes this an **independent confirmation**
+of `G1` rather than a consumer of it.
+
+**Mutation tested, and unlike the Einstein control it discriminates.** Changing `1/(D−2)` to
+`1/(D−1)` in the Weyl construction gives `WEYL-TRACE-VANISHES = 0`. That matters precisely
+because the last known-answer control built here survived three separate defects and turned
+out to be nearly vacuous. This one can fail. The negative control is the same conformal trace
+on `√−g R`, which comes back **nonzero**.
+
 **The parameter counts differ in kind, not just in size.** `ROOTNP = 8` is a **premise**:
 parameters 0–5 are the `L` slots and only 6–9 are the diagonal σ, so `det g` depends on
 nothing below 7 and check 3's symbolic premise is *unsatisfiable* there rather than false.
-`FULLNP = EULNP = 6` are **budgets**, measured — 3.2 s at 2, 14.3 s at 4, 175 s at 6, and 7
-does not finish in 500 s, because the leading `1` also makes every entry dense at every
-coordinate order.
+`FULLNP`, `EULNP` and `NOETHNP` are **budgets**, measured — 3.2 s at 2, 14.3 s at 4, 175 s at
+6, and 7 does not finish in 500 s, because the leading `1` also makes every entry dense at
+every coordinate order. `NOETHNP = 2` is much the smallest sub-family of any claim here:
+`√−g C²` rebuilds the Weyl tensor and raises all four of its slots on *every* Lagrangian run.
 
 ## 5. What this does **not** establish
 
-- **Four claims are upgraded, not the ledger.** Weyl tracelessness, `G1`, `G3` and `N1` are
-  done; the trace law `N2` and the Noether generator count are **not**.
-- **`N2` and the generator count have not moved.** The Euler operator now runs over the ring
-  (§4b), but the Lagrangians those claims need — `√−g R` and `√−g C²` — are not implemented.
-  The blocker is removed; the claims are not discharged. This report has now **twice** recorded
-  a predicted blocker that turned out not to be the real one.
+- **Five claims are upgraded, not the ledger.** Weyl tracelessness, `G1`, `G3`, `N1` and the
+  Noether **identity** are done.
+- **The generator COUNT has not moved.** That the identity holds is one thing; that it is the
+  **only** one is a statement about the *dimension* of the space of Noether identities, and it
+  needs the seven-candidate rank sweep run over the family. The original result established
+  both halves at fixtures; only the first has moved.
+- **The general trace law `N2` is not computed.** What is verified is the Weyl case — the
+  vanishing instance. `g^{mn}E_mn = 2(a + b + 3c)□R` over the whole quadratic family is not.
+- **The Noether identity holds over only two parameters**, smaller than `N1`'s three and far
+  smaller than the ten the other three enjoy. `√−g C²` is expensive enough that this is a real
+  restriction, not a formality.
+- This report has now **twice** recorded a predicted blocker that turned out not to be the
+  real one.
 - **that `bach_of`'s coefficients are verified by an Einstein metric.** The control was built
   and mutation-tested and does **not** discriminate — three separate defects survived it. The
   conformal-weight check is what constrains them.

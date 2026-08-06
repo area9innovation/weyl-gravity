@@ -48,9 +48,9 @@ class TestWhatIsActuallyClaimed(unittest.TestCase):
         self.assertIn("LDL^T is the general symmetric matrix", e)
         self.assertIn("ten parameters", e)
 
-    def test_exactly_four_ledger_claims_are_upgraded(self):
+    def test_exactly_five_ledger_claims_are_upgraded(self):
         claims = self.cert["claims_upgraded"]
-        self.assertEqual(len(claims), 4)
+        self.assertEqual(len(claims), 5)
         names = " ".join(c["claim"] for c in claims)
         self.assertIn("tracelessness", names)
         self.assertIn("G1", names)
@@ -373,32 +373,84 @@ class TestTheEulerOperatorOverTheNestedRing(unittest.TestCase):
         self.assertIn("split rather than normalised", self.e["gate"])
 
 
-class TestN2AndTheGeneratorCountHaveNotMoved(unittest.TestCase):
-    """The temptation: "the Euler operator works" reads like "N2 is done".
-    The blocker is removed; the claims are untouched."""
+class TestTheNoetherIdentityVersusTheCount(unittest.TestCase):
+    """The sharpest overstatement available here: "the Noether identity holds
+    over a family" reads like the generator COUNT moved.  It did not.  The
+    original result had two halves and only one has moved."""
 
-    def test_does_not_establish_says_so_explicitly(self):
+    def setUp(self):
+        self.claim = [c for c in load()["claims_upgraded"]
+                      if "Noether identity" in c["claim"]][0]
+
+    def test_the_identity_is_recorded_as_upgraded(self):
+        self.assertIn("SAMPLED FIXTURES", self.claim["was"])
+
+    def test_the_count_is_explicitly_NOT_upgraded(self):
         dne = " ".join(load()["does_not_establish"])
-        self.assertIn("N2 or the Noether generator count", dne)
-        self.assertIn("neither claim has moved", dne)
-        self.assertIn("blocker is removed; the claims are not discharged", dne)
+        self.assertIn("THE GENERATOR COUNT", dne)
+        self.assertIn("only the first half has moved", dne)
+        self.assertIn("DIMENSION of the space", dne)
 
-    def test_the_repeated_mispredicted_blocker_is_acknowledged_there_too(self):
+    def test_the_general_trace_law_is_also_disclaimed(self):
+        """The Weyl case is the VANISHING instance of N2, not N2."""
         dne = " ".join(load()["does_not_establish"])
-        self.assertIn("twice recorded a predicted blocker", dne)
+        self.assertIn("general trace law N2", dne)
+        self.assertIn("vanishing instance", dne)
 
-    def test_next_names_the_stronger_test_and_why_it_is_stronger(self):
-        """sqrt(-g) R is a better test than sqrt(-g) precisely because the
-        derivative families must be NONZERO -- the paired control the
-        derivative-free Lagrangian cannot provide."""
+    def test_the_small_family_is_stated_as_a_real_restriction(self):
+        self.assertIn("smallest sub-family", self.claim["family"])
+        dne = " ".join(load()["does_not_establish"])
+        self.assertIn("not a formality", dne)
+
+    def test_the_conformal_route_is_justified_on_both_counts(self):
+        """Cheaper AND sharper -- and the cheapness is load-bearing, since the
+        component route did not finish."""
+        h = self.claim["how"]
+        self.assertIn("did NOT finish in 580 s", h)
+        self.assertIn("IS Weyl invariance", h)
+
+    def test_the_control_discriminates_and_that_was_MEASURED(self):
+        """The previous known-answer control in this stream survived three
+        defects.  This one was mutation-tested before being believed."""
+        c = self.claim["control"]
+        self.assertIn("MUTATION TESTED", c)
+        self.assertIn("DISCRIMINATES", c)
+        self.assertIn("1/(D-1)", c)
+
+    def test_the_negative_control_is_present_too(self):
+        c = self.claim["control"]
+        self.assertIn("NONZERO", c)
+        self.assertIn("returns zero for everything", c)
+
+    def test_C_squared_is_independent_of_G1_rather_than_built_on_it(self):
+        """Using the certified G1 identity would have been legitimate and would
+        have coupled the two results.  It did not."""
+        i = self.claim["independence"]
+        self.assertIn("from the DEFINITION", i)
+        self.assertIn("INDEPENDENT CONFIRMATION", i)
+
+    def test_next_is_the_count_and_names_the_module_trap(self):
         nxt = load()["next"]
-        self.assertIn("Einstein tensor", nxt)
-        self.assertIn("must be NONZERO", nxt)
-        self.assertIn("cannot provide", nxt)
+        self.assertIn("THE GENERATOR COUNT", nxt)
+        self.assertIn("module over functions", nxt)
+        self.assertIn("overcounts", nxt)
 
-    def test_next_carries_the_measured_cost_forward(self):
-        self.assertIn("twelvefold per two parameters", load()["next"])
-        self.assertIn("measured and printed rather than assumed", load()["next"])
+
+class TestTheLadderOfKnownAnswers(unittest.TestCase):
+    def setUp(self):
+        self.e = load()["euler_operator_over_the_nested_ring"]
+
+    def test_each_rung_tests_something_the_previous_cannot(self):
+        l = self.e["the_ladder"]
+        self.assertIn("must contribute NOTHING", l)
+        self.assertIn("must be NONZERO", l)
+        self.assertIn("passes rung one completely and fails rung two", l)
+
+    def test_the_sign_is_read_off_rather_than_asserted(self):
+        s = self.e["the_sign_is_read_off_not_asserted"]
+        self.assertIn("up to an", s)
+        self.assertIn("OVERALL SIGN", s)
+        self.assertIn("asserting conventions from memory", s)
 
 
 class TestTheDerivativeOrderQuestionWasSettledByComputation(unittest.TestCase):
