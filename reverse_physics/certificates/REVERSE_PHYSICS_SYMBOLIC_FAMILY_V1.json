@@ -58,21 +58,26 @@
       "the_module_trap": "gauge symmetries form a MODULE OVER FUNCTIONS, not a vector space, so R g_ab is the Weyl generator reparameterised rather than a second symmetry and a naive kernel dimension overcounts four to one. What makes the count meaningful is not that four vanish but that the three which are NOT multiples of g -- Ric, Ric^2, R Ric -- are all nonzero. Those three are the discriminating half.",
       "control": "the three non-multiples must come back NONZERO, which is what stops 'everything vanishes' from being the answer. Plus a cross-check that turns an argument into a measurement -- see the_directional_route_failed_its_own_control.",
       "completeness": "the inherited seven-candidate list was INCOMPLETE and the omission was the dangerous one -- see the_inherited_candidate_list_was_incomplete. The count is now taken over a complete spanning list at curvature degree <= 2."
+    },
+    {
+      "claim": "G4's LOCAL content: the Euler derivative of sqrt(-g) E_4 vanishes identically",
+      "was": "IMPORTED. REVERSE_PHYSICS_WEYL_GEOMETRY_DISCHARGE_V1 lists G4 under still_imported as 'a global statement, not reachable pointwise'",
+      "family": "QUOTNP = 2 parameters",
+      "control": "each of E[Riem^2], E[Ric^2], E[R^2] separately required NONZERO, so the vanishing combination is not three zeros summing. The rank is pinned from both sides rather than reported from one."
     }
   ],
   "checks": {
     "ok": true,
-    "passed": 15,
-    "total": 15,
-    "gate": "curvature_symbolic_family_gate 15/15, 89.53 s, peak RSS 111 MB, with N1 at N1NP = 3 and the derivative-order regression rail at BOCHNP = 2. Checks 1-12 run at the full ten parameters, as does the derivative-order RESULT (229 s when run there).",
-    "substrate": "tango/forge/lib/math/jetfield.forge; jexp and jcoef made pub in math/jet, purely additive -- jet_nterms, jet_nv and jet_deg were already public, so a caller could see that a jet HAS terms but not what they are, which is what a nested coefficient ring must inspect to police its own truncation. All 13 dependent gates compile clean; jet_mul_gate 14/14 and curvature_covderiv_gate 23/23 re-run unchanged."
+    "passed": 8,
+    "total": 8,
+    "gate": "curvature_symbolic_euler_gate 8/8, 921.13 s, peak RSS 96 MB; curvature_symbolic_family_gate 15/15, 89.53 s, 111 MB"
   },
   "verification": {
     "substrate": "Forge, in the tango repository (1f1e3c16a).",
     "commands": [
       "cd tango/forge && export FORGE_LIB=$PWD/lib",
       "forge -run examples/curvature_symbolic_family_gate.forge   # 15/15, 89.53 s, 111 MB",
-      "forge -run examples/curvature_symbolic_euler_gate.forge    # 7/7, 716.92 s, 91 MB",
+      "forge -run examples/curvature_symbolic_euler_gate.forge    # 8/8, 921.13 s, 96 MB",
       "# derivative-order identity over the FULL family: set BOCHNP() to 10, expect 15/15 in ~229 s",
       "# N1 at four parameters: set N1NP() to 4, expect 15/15 in ~360 s",
       "# mutation testing: change rat(1, 2) in bach_of's `half` to rat(1, 3) -- check 14 still",
@@ -95,9 +100,11 @@
     "the generator count over a LARGE family. It holds at two parameters -- the same as the identity, and far short of the ten that tracelessness, G1 and G3 enjoy. sqrt(-g) C^2 through 150 Lagrangian runs is expensive enough that this is a real restriction.",
     "the general trace law N2. What is verified is the Weyl case, g_ab E^ab = 0 for L = sqrt(-g) C^2. The general statement g^{mn} E_mn = 2(a + b + 3c) box R over the whole quadratic family, of which the Weyl case is the vanishing instance, is not computed here.",
     "the Noether identity over a large family. NOETHNP = 2 is much the smallest sub-family of any claim in this certificate -- smaller than N1's three and far smaller than the ten that tracelessness, G1 and G3 hold over. sqrt(-g) C^2 is expensive enough that this is a real restriction, not a formality.",
-    "completeness beyond curvature degree 2, or beyond ALGEBRAIC candidates. The ten span symmetric rank-2 tensors built from g, g^{-1} and Riemann at degree <= 2. Candidates of degree 3 or higher, and any candidate involving DERIVATIVES of curvature (nabla nabla R and the like), are not swept. 'One generator' is one generator in that class."
+    "completeness beyond curvature degree 2, or beyond ALGEBRAIC candidates. The ten span symmetric rank-2 tensors built from g, g^{-1} and Riemann at degree <= 2. Candidates of degree 3 or higher, and any candidate involving DERIVATIVES of curvature (nabla nabla R and the like), are not swept. 'One generator' is one generator in that class.",
+    "the quotient for the WEIGHT-6 or CUBIC sectors. What is quotiented is the three-dimensional parity-even QUADRATIC carrier in D = 4. The cubic and derivative counts, where the certificates' 'was not performed' sentence actually sits, are not quotiented here -- the method is shown to work and is applied to the one sector whose answer is independently known.",
+    "the GLOBAL content of G4. What is computed is that the Euler derivative of sqrt(-g) E_4 vanishes pointwise. That int sqrt(-g) E_4 is a topological invariant -- the Gauss-Bonnet theorem itself -- is a global statement and remains imported."
   ],
-  "next": "degree 3 and the derivative candidates, which are what completeness at 'derivative order zero' still leaves out -- the ten span algebraic degree <= 2 only. Also raising the parameter counts, now purely a cost problem: the identity and the count both hold at two, against the ten that tracelessness, G1 and G3 enjoy, and the lever is that the component route recomputes the whole Lagrangian chain for each of its 150 runs rather than sharing it.",
+  "next": "apply the quotient to the sector the 'was not performed' sentence actually sits in: the cubic and weight-6 carriers, where it would convert pointwise counts into counts of ACTIONS and so give the first statement about Lagrangians beyond D = 4. The instrument is now demonstrated on a sector with a known answer. The obstacle is cost, not correctness -- weight 6 needs the metric at degree 6 where the jets hold 924 terms per component, and the Euler operator's 150 Lagrangian runs multiply that.",
   "n1": {
     "what_it_is": "nabla^a B_ab = 0 -- the gauge layer's own identity, the Noether/diffeomorphism content of the Weyl action.",
     "why_bach_of_could_not_deliver_it": "bach_of returns Bach at a POINT because it is built on cv_cov_val, and a point cannot be differentiated. N1 needs Bach as a FUNCTION, so the chain was rebuilt with the jet-level covariant derivative throughout: nabla on C^a_{bcd} twice, contract to B_ab, raise, nabla once more, contract rho = e.",
@@ -129,7 +136,7 @@
     "the_transferable_lesson": "a blocker asserted from memory of an interface is not a blocker. Both times the cost of checking was one file read, and both times the prediction deferred real work. Read the code before recording what it needs."
   },
   "euler_operator_over_the_nested_ring": {
-    "gate": "tango/forge/examples/curvature_symbolic_euler_gate.forge, 7/7, 716.92 s, peak RSS 91 MB. A SEPARATE gate: the family gate is already 15 checks and ~90 s, and this repository's own test-tier rule says a slow scoped rail should be split rather than normalised.",
+    "gate": "tango/forge/examples/curvature_symbolic_euler_gate.forge, 8/8, 921.13 s, peak RSS 96 MB. A SEPARATE gate: the family gate is already 15 checks and ~90 s, and this repository's own test-tier rule says a slow scoped rail should be split rather than normalised.",
     "what_is_established": "the Euler operator runs over Jet<Jet<Rat>> and reproduces a textbook variational answer as a POLYNOMIAL IDENTITY in the metric parameters. Validated on L = sqrt(-g), whose Euler derivative is (1/2) sqrt(-g) g^{ab} -- doubled off the diagonal by the perturbation convention, which moves both g_rs and g_sr.",
     "the_known_answer_is_not_assumed": "the density is exp((1/2) log(-det g)) of the honest Leibniz determinant of the perturbed matrix. It is emphatically NOT built from delta sqrt(-g) = (1/2) sqrt(-g) g^{ab} delta g_{ab} -- that is the answer under test, and assuming it would make the check circular. jet_log and jet_exp invert only INTEGER constants, which are units in the inner ring, so this needs no division either.",
     "three_conditions_not_one": "euler_matches is the coefficient comparison; B_and_C_zero requires a derivative-free Lagrangian to produce zero derivative-family CONTRIBUTIONS, which the comparison cannot check; answer_symbolic requires the expected answer to DEPEND on the parameters, without which the comparison is between two constants.",
@@ -152,5 +159,13 @@
     "the_result": "the count SURVIVES. Of the ten, exactly FIVE lie in the kernel -- g, R g, R^2 g, |Ric|^2 g and |Riem|^2 g -- and all five are f g. The five that are NOT multiples of g, INCLUDING BOTH RIEMANN-BUILT ONES, all come back nonzero. ONE GENERATOR, now over a complete degree <= 2 list rather than an inherited one. The previous answer was right for an incomplete reason and is now right for a complete one.",
     "over_complete_is_the_safe_direction": "if the ten carry linear dependences -- and in D = 4 the Gauss-Bonnet combination makes that plausible among the scalars -- then ten OVER-counts the dimension of the space. That is harmless here: completeness needs a SPANNING set, and a spanning set that is not a basis still cannot hide an identity. The risk was UNDER-completeness, which is what the inherited list had.",
     "cost": "nearly free. The component route's expense is the 150 Lagrangian runs producing E^{rs}, and those are shared across every candidate -- adding three more is three more contractions against curvature already in hand. Going from seven candidates to ten took the gate from 716.92 s to 876.76 s."
+  },
+  "the_total_derivative_quotient": {
+    "the_gap_it_closes": "REVERSE_PHYSICS_CUBIC_CONFORMAL_COUNT_V1 and REVERSE_PHYSICS_DERIVATIVE_CONFORMAL_COUNT_V1 both say verbatim: 'the quotient by total derivatives. It is not needed for a pointwise count and it was not performed, so nothing here is a statement about LAGRANGIANS, about actions, or about the trace anomaly's coefficients.' Every conformal count in this repository is a POINTWISE RANK, and two Lagrangians differing by a total derivative give the same ACTION -- so a count of invariants is not a count of actions until the quotient is taken.",
+    "why_the_euler_operator_is_the_instrument": "E[L] = 0 exactly when L is a total divergence, so the space of ACTIONS is the image of L -> E[L] and the total derivatives are its KERNEL. The quotient is therefore a rank, once the Euler operator runs over this ring. It was built for the Noether work and turns out to be the tool for a blocker recorded elsewhere as untouched.",
+    "what_is_computed": "E[sqrt(-g) E_4] = 0 IDENTICALLY, with E_4 = Riem^2 - 4 Ric^2 + R^2, as a polynomial identity in the metric parameters rather than at a sampled metric.",
+    "it_discharges_an_IMPORTED_input": "REVERSE_PHYSICS_WEYL_GEOMETRY_DISCHARGE_V1 lists G4 -- 'int sqrt(-g) E4 is topological in D = 4' -- under still_imported, described as 'a global statement, not reachable pointwise'. Its LOCAL content IS reachable pointwise and is now computed rather than cited. That matters in this programme's own currency: REVERSE_PHYSICS_WEYL_ACTION_V1 says its novelty is 'the machine-checked zero-axiom derivation with the geometric inputs ISOLATED', so converting a cited geometry input into a computed one is the kind of contribution it is built to accumulate.",
+    "the_rank_is_pinned_both_ways": "<= 2 because (1, -4, 1) lies in the kernel IDENTICALLY, as a polynomial. >= 2 from an explicit exact metric, a rank at a point being a lower bound on the generic rank. Hence exactly 2: the three-dimensional parity-even quadratic carrier modulo TOTAL DERIVATIVES is two-dimensional, and the D = 4 uniqueness theorem's final step -- 'the quotient by topological terms leaves exactly the one-dimensional span of the Weyl action' -- stops being asserted.",
+    "the_first_rank_was_wrong_and_the_gate_said_so": "it reported RANK = 0 beside each-nonzero = 1, a flat contradiction. The rank was evaluated at the inner CONSTANT TERM, which is all parameters zero -- and there the family degenerates to the FLAT metric, where every curvature scalar and hence every Euler tensor vanishes. The rows were nonzero as polynomials and zero at the point they were being read at. Same shape as the base-point degeneracy caught in check 4, one level down. Now evaluated at distinct small rationals 1/2, 1/3, ..., which is sound because a rank at a point can only UNDERSTATE a lower bound."
   }
 }

@@ -48,9 +48,9 @@ class TestWhatIsActuallyClaimed(unittest.TestCase):
         self.assertIn("LDL^T is the general symmetric matrix", e)
         self.assertIn("ten parameters", e)
 
-    def test_exactly_six_ledger_claims_are_upgraded(self):
+    def test_exactly_seven_ledger_claims_are_upgraded(self):
         claims = self.cert["claims_upgraded"]
-        self.assertEqual(len(claims), 6)
+        self.assertEqual(len(claims), 7)
         names = " ".join(c["claim"] for c in claims)
         self.assertIn("tracelessness", names)
         self.assertIn("G1", names)
@@ -428,15 +428,18 @@ class TestTheNoetherIdentityVersusTheCount(unittest.TestCase):
         self.assertIn("from the DEFINITION", i)
         self.assertIn("INDEPENDENT CONFIRMATION", i)
 
+    def test_next_points_at_the_sector_the_quotient_has_NOT_reached(self):
+        nxt = load()["next"]
+        self.assertIn("cubic", nxt)
+        self.assertIn("counts of ACTIONS", nxt)
+        self.assertIn("cost, not correctness", nxt)
+
     def test_next_names_the_boundary_that_is_still_open(self):
         """The inherited-span question has been CLOSED -- the list was
         incomplete, was completed, and the count survived.  What remains is
         degree 3 and the derivative candidates, and `next` must have moved on
         rather than still pointing at the closed one."""
-        nxt = load()["next"]
-        self.assertIn("degree 3", nxt)
-        self.assertIn("derivative candidates", nxt)
-        self.assertNotIn("INHERITED", nxt)
+        self.assertNotIn("INHERITED", load()["next"])
 
 
 class TestTheGeneratorCount(unittest.TestCase):
@@ -561,6 +564,62 @@ class TestTheDirectionalRouteFailedItsOwnControl(unittest.TestCase):
         w = self.d["why_the_component_route_was_taken_rather_than_more_degree"]
         self.assertIn("outer degree 7", w)
         self.assertIn("ALL SEVEN contractions", w)
+
+
+class TestTheTotalDerivativeQuotient(unittest.TestCase):
+    """The step two other certificates say was never performed.  The temptation
+    is to read "the quotient is taken" as applying to the counts it was quoted
+    from; it does not -- only the quadratic sector is done."""
+
+    def setUp(self):
+        self.q = load()["the_total_derivative_quotient"]
+
+    def test_the_gap_is_quoted_from_the_certificates_that_name_it(self):
+        g = self.q["the_gap_it_closes"]
+        self.assertIn("it was not performed", g)
+        self.assertIn("LAGRANGIANS", g)
+        self.assertIn("POINTWISE RANK", g)
+
+    def test_why_the_euler_operator_is_the_right_instrument(self):
+        """E[L] = 0 iff L is a total divergence -- so the quotient IS a rank."""
+        w = self.q["why_the_euler_operator_is_the_instrument"]
+        self.assertIn("total divergence", w)
+        self.assertIn("KERNEL", w)
+
+    def test_it_discharges_an_input_that_was_IMPORTED(self):
+        """This is the part that counts in the programme's own currency: a
+        cited geometry input becomes a computed one."""
+        d = self.q["it_discharges_an_IMPORTED_input"]
+        self.assertIn("still_imported", d)
+        self.assertIn("not reachable pointwise", d)
+        self.assertIn("ISOLATED", d)
+
+    def test_the_rank_is_pinned_from_BOTH_sides(self):
+        """A rank reported from one side is not a dimension."""
+        r = self.q["the_rank_is_pinned_both_ways"]
+        self.assertIn("IDENTICALLY", r)
+        self.assertIn("lower bound on the generic rank", r)
+        self.assertIn("stops being asserted", r)
+
+    def test_the_wrong_first_rank_is_recorded_with_its_cause(self):
+        """RANK = 0 beside each-nonzero = 1: read at the parameter origin,
+        where the family is FLAT.  A contradiction between two reported
+        numbers is what exposed it."""
+        f = self.q["the_first_rank_was_wrong_and_the_gate_said_so"]
+        self.assertIn("flat contradiction", f)
+        self.assertIn("FLAT metric", f)
+        self.assertIn("can only UNDERSTATE", f)
+
+    def test_the_quadratic_only_boundary_is_explicit(self):
+        dne = " ".join(load()["does_not_establish"])
+        self.assertIn("WEIGHT-6 or CUBIC sectors", dne)
+        self.assertIn("independently known", dne)
+
+    def test_G4s_global_content_is_still_disclaimed(self):
+        """Pointwise vanishing of the variation is not Gauss-Bonnet."""
+        dne = " ".join(load()["does_not_establish"])
+        self.assertIn("GLOBAL content of G4", dne)
+        self.assertIn("remains imported", dne)
 
 
 class TestTheLadderOfKnownAnswers(unittest.TestCase):

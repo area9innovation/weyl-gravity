@@ -245,7 +245,7 @@ the ten-parameter run is the *result*, not something worth 123 s on every run.
 
 ## 4b. The Euler operator, and a blocker that was wrong twice
 
-**Rail** `tango/forge/examples/curvature_symbolic_euler_gate.forge` — 7/7, 876.76 s, 106 MB.
+**Rail** `tango/forge/examples/curvature_symbolic_euler_gate.forge` — 8/8, 921.13 s, 96 MB.
 
 This certificate said `N1`, `N2` and the generator count were *"one job — the Euler
 operator"*, and that the Euler operator was *"a port of roughly four hundred lines… because
@@ -412,8 +412,60 @@ nothing below 7 and check 3's symbolic premise is *unsatisfiable* there rather t
 every coordinate order. `NOETHNP = 2` is much the smallest sub-family of any claim here:
 `√−g C²` rebuilds the Weyl tensor and raises all four of its slots on *every* Lagrangian run.
 
+## 4e. The total-derivative quotient — the step two certificates say was never taken
+
+Both the cubic and derivative conformal-count certificates say, verbatim:
+
+> *"the quotient by total derivatives. It is not needed for a pointwise count and **it was not
+> performed**, so nothing here is a statement about **LAGRANGIANS**, about actions, or about
+> the trace anomaly's coefficients."*
+
+Every conformal count in this repository is a **pointwise rank**. Two Lagrangians differing by
+a total derivative give the same *action*, so a count of invariants is not a count of actions
+until the quotient is taken.
+
+**The Euler operator is that quotient.** `E[L] = 0` exactly when `L` is a total divergence, so
+the space of actions is the **image** of `L ↦ E[L]` and the total derivatives are its
+**kernel**. Built for the Noether work, it turns out to be the instrument for a blocker
+recorded elsewhere as untouched.
+
+**And the known answer here is one the repository currently imports.**
+`REVERSE_PHYSICS_WEYL_GEOMETRY_DISCHARGE_V1` lists `G4` — *"∫√−g E₄ is topological in D = 4"* —
+under **still_imported**, as *"a global statement, not reachable pointwise."* Its **local**
+content is reachable pointwise, and is now computed:
+
+```
+E[√−g E₄] = 0   identically,    E₄ = Riem² − 4 Ric² + R²
+```
+
+as a polynomial identity in the metric parameters, not at a sampled metric. That matters in
+this programme's own currency: `REVERSE_PHYSICS_WEYL_ACTION_V1` states its novelty as *"the
+machine-checked zero-axiom derivation with the geometric inputs **isolated**"*, so converting a
+cited geometry input into a computed one is exactly the kind of contribution it accumulates.
+
+**The rank is pinned from both sides.** `≤ 2` because `(1, −4, 1)` is in the kernel
+*identically*; `≥ 2` from an explicit exact metric, a rank at a point being a lower bound on
+the generic rank. So the three-dimensional parity-even quadratic carrier modulo total
+derivatives is exactly **two**-dimensional — and the D = 4 uniqueness theorem's final step,
+*"the quotient by topological terms leaves exactly the one-dimensional span of the Weyl
+action"*, stops being asserted.
+
+**The first rank was wrong, and the gate said so.** It reported `RANK = 0` beside
+`each-nonzero = 1` — a flat contradiction. The rank was read at the inner **constant term**,
+which is all-parameters-zero, and there the family degenerates to the **flat** metric where
+every curvature scalar vanishes. The rows were nonzero as polynomials and zero at the point
+they were being read at: the same shape as the base-point degeneracy §4b caught, one level
+down. Now evaluated at distinct small rationals `1/2, 1/3, …`, which is sound because a rank
+at a point can only *understate* a lower bound.
+
 ## 5. What this does **not** establish
 
+- **The quotient is taken for the QUADRATIC sector only.** The "was not performed" sentence
+  sits in the *cubic* and *weight-6* certificates, and those are not quotiented here. The
+  method is demonstrated on the one sector whose answer is independently known.
+- **`G4`'s global content is still imported.** What is computed is that the Euler derivative
+  of `√−g E₄` vanishes *pointwise*. That `∫√−g E₄` is a topological invariant — Gauss–Bonnet
+  itself — is a global statement and remains cited.
 - **Six claims are upgraded, not the ledger.** Weyl tracelessness, `G1`, `G3`, `N1`, the
   Noether identity and the generator **count** are done.
 - **The identity and the count both hold at TWO parameters**, far short of the ten that
@@ -474,7 +526,7 @@ family"*, the actual reverse-physics statement about the gauge algebra.
 ```bash
 cd tango/forge && export FORGE_LIB=$PWD/lib
 forge -run examples/curvature_symbolic_family_gate.forge   # 15/15, 89.53 s, 111 MB
-forge -run examples/curvature_symbolic_euler_gate.forge    # 7/7,   876.76 s, 106 MB
+forge -run examples/curvature_symbolic_euler_gate.forge    # 8/8,   921.13 s,  96 MB
 ```
 
 Exact rational arithmetic throughout. No floating point, no tolerance.

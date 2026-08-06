@@ -46,7 +46,7 @@ GATE_SCORES = {
     "curvature_gate": "18/18",
     "jet_mul_gate": "14/14",
     "curvature_symbolic_family_gate": "15/15",
-    "curvature_symbolic_euler_gate": "7/7",
+    "curvature_symbolic_euler_gate": "8/8",
 }
 
 # Documents that preserve superseded text verbatim.  Their scores are as-issued
