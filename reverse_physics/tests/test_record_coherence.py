@@ -167,6 +167,49 @@ class TestTheParityHalfIsNotStillAdvertisedAsOpen(unittest.TestCase):
                           "it must also say THIS certificate is not implicated")
 
 
+class TestTheGaugeLayerIsNotAdvertisedAsUntouched(unittest.TestCase):
+    """The work item's objective said the gauge layer was UNTOUCHED with no
+    independence witness.  That was true once and has not been for a while, and
+    an agent starting from the objective would rebuild what exists -- the
+    stream's recorded failure mode.  This is the rail against that specific
+    staleness."""
+
+    def setUp(self):
+        import json as _j
+        with open(os.path.join(REPO_ROOT, "planning", "work-items",
+                  "reverse-physics-weyl-full-characterization.json")) as fh:
+            self.obj = _j.load(fh)["body"]["objective"]
+
+    def test_the_objective_no_longer_calls_it_untouched(self):
+        self.assertNotIn("is UNTOUCHED and is the largest genuine hole", self.obj)
+
+    def test_the_objective_records_that_the_witness_exists(self):
+        self.assertIn("RP-DIFF IS WITNESSED", self.obj)
+        self.assertIn("REVERSE_PHYSICS_DIFF_INDEPENDENCE_V1", self.obj)
+
+    def test_the_objective_points_at_the_existing_bv_corpus(self):
+        """Naming the directories is what stops the next agent rebuilding
+        them."""
+        self.assertIn("field_bv_identification", self.obj)
+
+    def test_the_ledger_grades_the_layer_witnessed(self):
+        with open(os.path.join(REPORTS, "WEYL-CHARACTERIZATION.md")) as fh:
+            rows = [l for l in fh if "gauge structure" in l.lower()]
+        self.assertTrue(rows)
+        self.assertIn("witnessed", rows[0].lower())
+
+    def test_the_brief_records_the_overcounting_trap(self):
+        """A count of gauge symmetries taken as a vector-space dimension rather
+        than a module rank overcounts, because g_{mu nu} R sigma is the Weyl
+        generator reparametrised, not a new one.  If that warning is lost the
+        computation returns a confident wrong number."""
+        with open(os.path.join(REPORTS, "gauge-layer-brief.md")) as fh:
+            text = fh.read()
+        self.assertIn("module over", text.lower())
+        self.assertIn("overcount", text.lower())
+        self.assertIn("must **fail**", text)
+
+
 class TestTheLedgerRestsOnTheRowThatSurvived(unittest.TestCase):
     """RP-PARITY's witness is the D = 4 weight-4 Pontryagin density, which the
     correction leaves alone.  If that ever changes, WEYL_ACTION_V1 is in scope."""
