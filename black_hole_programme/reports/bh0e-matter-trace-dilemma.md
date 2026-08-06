@@ -3,29 +3,32 @@
 **Certificate** `BH0E_MATTER_TRACE_DILEMMA`
 **Rail** Forge, `tango/forge/examples/weyl_matter_trace_gate.forge` - 8/8
 **Dependency tag** `LOCAL-ALGEBRAIC`
-**Builds on** `BH0B`, `BH0C`, `BH0D`, and the Noether identity in `REVERSE_PHYSICS_SYMBOLIC_FAMILY_V1`
+**Builds on** `BH0B`, `BH0C`, `BH0D`
 
 > This closes the crux the previous three left open. It does not close it with a yes or a no,
 > and section 5 is why that is the honest outcome rather than a dodge.
 
 ---
 
-## 1. One theorem, used twice
+## 1. One theorem, two roles
 
-The Noether work established that a conformally invariant action satisfies
+A conformally invariant action satisfies
 
 ```
 g_ab (delta S / delta g_ab) = 0
 ```
 
-which is what the Euler gate computes for `sqrt(-g) C^2`. Applied to the **matter** action
-rather than the gravitational one, the identical statement reads
+Applied to a *gravitational* action this is the theory's Noether identity; applied to the
+*matter* action the identical statement reads
 
 ```
 T^mu_mu = 0
 ```
 
-That is imported here, not re-derived. What this gate computes is what it **costs**.
+It is one theorem serving two roles. The statement is **classical** and is taken here as a
+**premise**, not derived - deliberately, since this package must not depend on streams that
+already import it, and doing so would close a dependency cycle. What this gate computes is
+what the premise **costs**.
 
 ## 2. The cost
 

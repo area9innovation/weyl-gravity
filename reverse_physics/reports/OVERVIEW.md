@@ -735,6 +735,35 @@ stream's centre of gravity rather than one result among many:
   of a symmetric `4×4`; `N1` reaches fewer, because three covariant derivatives
   cost rank-6 jet arrays. Still a metric **family** near flat, not every metric.
 - **`RP-DIFF` has a witness** ([report](diff-independence.md)) — see below.
+- **A rotation-curve line has opened, and it is the first phenomenology this stream
+  has touched** ([paper 19](../../paper/19-what-conformal-gravity-must-assume.tex)).
+  Conformal gravity's linear potential `γr` is the basis of a long-standing proposal to
+  fit galactic rotation curves without dark matter. The question asked here is not whether
+  the fits succeed but **what must be assumed for them to mean anything**.
+  - `γr` is **not an ansatz**: in the conformal gauge the Bach vacuum equation *is* the
+    **biharmonic** equation `∇⁴B = 0`, so `γr` is the point-source response of the governing
+    operator, on the same footing as the Newtonian `1/r`
+    ([`BH0B`](../../black_hole_programme/reports/bh0b-general-completeness.md),
+    [`BH0D`](../../black_hole_programme/reports/bh0d-biharmonic.md)).
+  - If Tully–Fisher holds, `γ` is **forced universal** and identified with the MOND scale,
+    `γ = a₀/2c²`; a mass-proportional piece gives the wrong slope
+    ([`BH0C`](../../black_hole_programme/reports/bh0c-tully-fisher-scaling.md)).
+  - But conformal invariance forces a **trace-free source**, so a perfect fluid must be
+    radiation and **pressureless baryons are excluded outright** — the same theorem as the
+    Noether identity, applied to the matter action
+    ([`BH0E`](../../black_hole_programme/reports/bh0e-matter-trace-dilemma.md)).
+  - And the standard repair fails in its simplest form: a **constant** scalar VEV pins `R`
+    and thereby forces **`γ = 0`**
+    ([`BH0F`](../../black_hole_programme/reports/bh0f-vev-forces-gamma-zero.md)).
+  - The result is a **trichotomy** — no scale / constant scale / field-dependent scale — of
+    which exactly one branch survives. On it, *"is γ universal?"* becomes *"is the scalar
+    **profile** universal across galaxies?"*: a question about the matter sector, not gravity.
+    This **locates** the twenty-year Flanagan–Mannheim disagreement rather than adjudicating
+    it.
+  - The gauge that all of it uses is itself accounted for: Bach flatness is a **conformal-class**
+    property, and reachability reduces to a first-order ODE
+    ([`BH0G`](../../black_hole_programme/reports/bh0g-gauge-reduction.md)). Only global
+    continuation remains assumed.
 - **A comparison ledger** ([report](OPENS-AND-CHALLENGES.md)) states what Weyl
   gravity opens and challenges relative to Einstein gravity as **one forced
   assumption swap**, with a level axis forced by this repository holding both
