@@ -118,6 +118,29 @@ phenomenological claim and this result does not touch it.
 - **Nothing about rotation curves, MOND, dark matter, or Tully–Fisher.** No phenomenology.
 - **Nothing about the ghost, stability, quasinormal modes, or the quantum theory.**
 
+## 6b. Independence — a gap this report originally had
+
+`verify_bh0_background.py` states the standard: a verifier must be *"structurally independent"*
+of its producer, recomputing curvature *"with separately written code"* so that *"a common-mode
+'always zero' failure of the tensor pipeline is detected here independently."*
+
+**This certificate did not meet it when first written.** The proof above computes Bach with
+`weyl_geometry.Geometry.bach()` — the same engine `BH0` uses. A common-mode bug there would
+have made the completeness theorem a theorem about the wrong tensor.
+
+**The rail**: `tango/forge/examples/bh0_bach_independent_gate.forge`, 6/6, 361.96 s. Different
+language (Forge), arithmetic (GMP rationals in jets), representation (Taylor jets about a base
+point), and code path (`lib/math/curvature`+`curvinv`+`curvcov`). With `β, γ, k` symbolic the
+MK family is Bach-flat as a polynomial identity; perturbing `w` off the constraint breaks it;
+and a `δ/r²` term breaks it — `BH0`'s `c₂ = 0`, reproduced from a stack sharing nothing with it.
+The two controls are *independent* deformations, so neither stands in for the other.
+
+**What the rail does not confirm.** It checks the *conclusion* — which metrics are Bach-flat —
+not the **row decomposition** itself. Those identities are statements about an *unspecified*
+function, and Forge's jets are truncated Taylor data. So the part that actually removes the
+ansatz still rests on one implementation. Closing that needs symbolic differentiation over
+Forge's expression IR, which does not exist yet.
+
 ## 7. What is next
 
 The **matter-coupling question**, which decides whether any of this is physics: state
