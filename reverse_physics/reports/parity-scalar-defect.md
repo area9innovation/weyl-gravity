@@ -222,7 +222,7 @@ accounted for.
 | `curvature_invariants_parity_gate` | 22/22 — **the one defective site**, 8 repaired |
 | `curvature_invariants_d6_gate` | 27/27 clean |
 | `curvature_invariants_deriv_gate` | 40/40 clean |
-| `curvature_euler_gate` | **15/15 clean**, rail added |
+| `curvature_euler_gate` | **19/19 clean**, rail added |
 | `curvature_parity_enumeration_gate` | 12/12, variance derived mechanically |
 | `curvature_coord_scalar_control_gate` | 19/19, is the rail |
 | `curvature_parity_field_equations_gate` | **retracted, labelled in place** |

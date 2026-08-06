@@ -1,7 +1,7 @@
 # An exact Euler operator — field equations over the jet ring
 
 **Certificate** `REVERSE_PHYSICS_EULER_OPERATOR_V1`
-**Rail** Forge, `tango/forge/examples/curvature_euler_gate.forge` — 15/15, TSan clean
+**Rail** Forge, `tango/forge/examples/curvature_euler_gate.forge` — 19/19, TSan clean
 **Dependency tag** `LOCAL-ALGEBRAIC`
 
 > **A capability, not a physics result.** It establishes that the operator is right on
@@ -189,7 +189,7 @@ the gate was touched.
 
 ```bash
 cd tango/forge && export FORGE_LIB=$PWD/lib
-forge verify examples/curvature_euler_gate.forge                  # 15/15, ~9 min on six workers
+forge verify examples/curvature_euler_gate.forge                  # 19/19, ~9 min on six workers
 forge -run -sanitize-thread examples/curvature_euler_gate.forge   # the race gate
 ```
 

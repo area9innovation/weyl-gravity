@@ -36,7 +36,7 @@ GATE_SCORES = {
     "curvature_invariants_parity_gate": "22/22",
     "curvature_invariants_d6_gate": "27/27",
     "curvature_invariants_deriv_gate": "40/40",
-    "curvature_euler_gate": "15/15",
+    "curvature_euler_gate": "19/19",
     "curvature_coord_scalar_control_gate": "19/19",
     "curvature_parity_enumeration_gate": "12/12",
     "curvature_parity_field_equations_gate": "6/6",
@@ -45,6 +45,7 @@ GATE_SCORES = {
     "curvature_invariants_d4_gate": "25/25",
     "curvature_gate": "18/18",
     "jet_mul_gate": "14/14",
+    "curvature_symbolic_family_gate": "9/9",
 }
 
 # Documents that preserve superseded text verbatim.  Their scores are as-issued

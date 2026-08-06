@@ -1,0 +1,72 @@
+{
+  "certificate": "REVERSE_PHYSICS_NOETHER_IDENTITIES_V1",
+  "kind": "gauge-structure-classification",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "report": "reverse_physics/reports/noether-identities.md",
+  "establishes": "At order zero in derivatives of the field equations, the SCALAR Noether identity space of the Weyl action has exactly ONE generator: g_{ab} E^{ab} = 0. No hidden scalar gauge symmetry at that order. Together with N1 (nabla^a B_ab = 0, already computed and certified against this repository's own Bach tensor), the gauge algebra Diff x Weyl is at this order what the ACTION FORCES rather than what the ledger assumes.",
+  "the_question_and_why_it_was_open": {
+    "noethers_second_theorem": "gauge symmetries and Noether identities are the same data",
+    "what_the_stream_did": "CITED that theorem in one direction -- RP-DIVFREE is free from RP-DIFF via N1",
+    "what_it_never_did": "computed the converse: are N1 and N2 all the identities there are?",
+    "why_it_matters": "for the action and the field equations the stream asked 'what is this EQUIVALENT to'. For the gauge layer it asked only 'is RP-DIFF independent', which is strictly weaker. If the identities are exactly the known ones, the gauge structure stops being a layer of assumptions and collapses the way the derivative order did."
+  },
+  "result": {
+    "raw_output": "NOETHER  candidates 7  identities 4  generators 1  reparametrisations 3  kernel(dim) 4",
+    "identities": [
+      "g",
+      "R*g",
+      "R^2*g",
+      "|Ric|^2*g"
+    ],
+    "not_identities": [
+      "Ric",
+      "Ric.Ric",
+      "R*Ric"
+    ],
+    "generators": 1,
+    "the_generator": "g_{ab} E^{ab} = 0 -- the Weyl identity"
+  },
+  "four_identities_one_symmetry": {
+    "the_trap": "gauge symmetries form a MODULE OVER FUNCTIONS OF THE FIELDS, not a vector space. R*g annihilates E for exactly the reason g does: it is the Weyl generator with the parameter rescaled, sigma -> R sigma. It is not a new symmetry.",
+    "the_cost_of_missing_it": "a naive kernel dimension reports FOUR gauge symmetries and is wrong by three",
+    "it_was_predicted_not_discovered": "the trap is written into reverse_physics/reports/gauge-layer-brief.md BEFORE the computation ran",
+    "how_it_is_enforced": "each candidate DECLARES in the source which generator it is a multiple of (cand_generator), so the module rank is a stated claim that can be read and disputed rather than a number inferred silently. Check 18 REQUIRES the vector-space dimension to EXCEED the generator count, so an enumeration that quietly narrowed would look like a failure rather than a cleaner answer."
+  },
+  "controls": {
+    "negative_and_it_is_what_makes_the_zeros_evidence": "three of seven candidates come back NONZERO. Ric_{ab}E^{ab} would require R_{ab}B^{ab} = 0, which is not an identity; sympy gives -57/16 on an independent fixture. Without a candidate that FAILS, 'the kernel is spanned by the known identities' is indistinguishable from an enumeration that never ran -- and this session produced three separate controls whose negative result was indistinguishable from the thing they were meant to detect.",
+    "non_vacuity": "E itself is checked nonzero on every fixture, or every candidate vanishes for a reason having nothing to do with identities",
+    "variance_is_structural_not_careful": "E^{ab} = dS/dg_{ab} carries UPPER indices, so the coefficients are all-LOWER and the contraction contains no raise at all. The one place variance could go wrong, inside Ric.Ric, has its inverse metric written out explicitly. After eight malformed contractions were found in this stream this week, the structure is built so the error cannot be made rather than so it can be checked for."
+  },
+  "checks": {
+    "ok": true,
+    "passed": 19,
+    "total": 19,
+    "gate": "curvature_euler_gate 19/19, 6m19s, peak RSS 180 MB",
+    "new_checks": [
+      "16 non-vacuity of E",
+      "17 the negative controls FAIL to be identities",
+      "18 the vector-space dimension exceeds the generator count",
+      "19 exactly one generator, and it is g"
+    ]
+  },
+  "verification": {
+    "substrate": "Forge, in the tango repository (42aef4121).",
+    "commands": [
+      "cd tango/forge && export FORGE_LIB=$PWD/lib",
+      "forge -run examples/curvature_euler_gate.forge   # 19/19, 6m19s"
+    ],
+    "independent_reimplementation": "reverse_physics/noether_identities.py computes the same seven candidates in sympy, on DIFFERENT fixtures and a different arithmetic stack. IT HAS NOT RUN TO COMPLETION: the scalar-only sweep TIMED OUT at 1500 s (rc=124). So the cross-check is UNAVAILABLE, NOT PASSED -- a timeout is never a pass. What IS corroborated is one datum: a direct sympy probe on an independent fixture gives trace(B) = 0 and Ric.B = -57/16, matching the Forge identity/non-identity split for those two candidates. The remaining five are unconfirmed outside Forge.",
+    "why_the_cross_check_is_slow": "not a like-for-like speed comparison: the sympy fixture carries symbolic entries in ALL six strictly-lower positions while the Forge run uses a lighter family, and sympy's cost here is symbolic expression swell rather than arithmetic. The honest reading is that the cross-check needs a cheaper fixture, not that Forge is 4x faster."
+  },
+  "does_not_establish": [
+    "anything beyond ORDER ZERO in derivatives of E. Identities involving grad E or grad grad E are not enumerated. A lower bound on completeness, in the same sense every count in this stream is a lower bound over the family evaluated.",
+    "the VECTOR sector. Its positive control is N1, already certified in the corpus; recomputing it costs more than the whole scalar sector and establishes nothing new, so it is SKIPPED, NOT PASSED. It needs E as a JET rather than at a point -- euler_component returns a Rat -- which is a degree-budget cost, not an architectural gap.",
+    "completeness over ALL candidates. The coefficient tensors are built from g, Ric and R; one built from the Weyl tensor or from derivatives of curvature is not tried. Adding candidates can only RAISE a count, so the direction is sound, but 'one generator' is one generator OVER THIS FAMILY.",
+    "anything about the gauge algebra's structure constants, its closure, or off-shell reducibility. The BV/BRST content in field_bv_identification/ and quantum-weyl/ is not touched, and this does not speak to it.",
+    "that the gauge layer is finished. It is the first result that goes past WITNESSED toward EQUIVALENT TO -- the shape the other three layers already have -- and it does not complete that shape.",
+    "anything quantum.",
+    "independent confirmation on a second arithmetic stack. The sympy reimplementation exists and did not finish; until it does, the seven-candidate result rests on ONE implementation."
+  ]
+}

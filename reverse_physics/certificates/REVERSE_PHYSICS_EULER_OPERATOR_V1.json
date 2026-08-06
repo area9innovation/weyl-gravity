@@ -73,7 +73,7 @@
     "substrate": "Forge, in the tango repository.",
     "commands": [
       "cd tango/forge && export FORGE_LIB=$PWD/lib",
-      "forge verify examples/curvature_euler_gate.forge            # 15/15, about nine minutes on six workers",
+      "forge verify examples/curvature_euler_gate.forge            # 19/19, about nine minutes on six workers",
       "forge -run -sanitize-thread examples/curvature_euler_gate.forge   # the race gate"
     ],
     "tier_note": "parallel, six workers, about nine minutes. A one-component falsifier -- 45 runs and three minutes against 600 runs and thirty-five -- was what made the two bugs above findable in minutes rather than in half-hour cycles."
