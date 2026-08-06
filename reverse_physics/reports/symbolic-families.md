@@ -1,6 +1,6 @@
 # Symbolic metric families are cheap, and that changes what is provable here
 
-**Rail** Forge, `tango/forge/examples/curvature_symbolic_family_gate.forge` — 9/9, 4.15 s
+**Rail** Forge, `tango/forge/examples/curvature_symbolic_family_gate.forge` — 9/9, 20.35 s
 **Substrate** `tango/forge/lib/math/jetfield.forge`
 **Dependency tag** `LOCAL-ALGEBRAIC`
 
@@ -42,23 +42,28 @@ lower-triangular. `jet_inv` still traps on a non-unit, which is the correct fail
 
 | parameters | max terms in a Riemann coefficient |
 |---|---|
-| 1 | 1 |
-| 2 | 3 |
-| 3 | 4 |
-| 4 | 7 |
-| 5 | 10 |
-| **6 — the full unit-lower-triangular family** | **10** |
+| 1 – 6 | 1 → 10 |
+| 7 | 10 |
+| 8 – 9 | 15 |
+| **10 — the full symmetric family** | **15** |
 
-Whole sweep, identities only: **2.75 s, 74 MB**; with Weyl tracelessness added, **3.85 s**.
+Whole sweep: **20.35 s, 91 MB.**
 
-**I predicted this was infeasible and was wrong by four orders of magnitude.** A worst-case
-monomial count gives `C(22,6) = 74,613` terms at degree 16 with six parameters. The actual
-maximum is **ten**, and growth *plateaus* at five — curvature polynomials are extremely
-sparse, and jets store only nonzero terms.
+**`LDLᵀ` is the general symmetric matrix.** Six strictly-lower entries of `L` plus four
+diagonal entries of `S` is ten — exactly the number of independent components of a symmetric
+`4×4`. Holding `S` at `diag(−1,1,1,1)` gives `det g = −1` identically, a **codimension-one
+slice**; letting it vary removes that restriction entirely.
 
-The gate demands the **full** six-parameter family for exactly this reason: a prediction must
-not be allowed to become a cap. Had I trusted my own arithmetic and stopped at three, the
-ceiling would never have been found.
+**I predicted infeasibility twice and was wrong twice.** At six parameters the worst-case
+count is `C(22,6) = 74,613` monomials against an actual **10** — wrong by four orders of
+magnitude. At ten it is `C(26,10) = 5,311,735` against an actual **15** — wrong by five.
+Sparsity dominates worst-case counting here so completely that predicting the cost is not
+worth doing. **Measure it, and make the gate demand the full family so a prediction can never
+quietly become a cap.**
+
+`s_k` has constant term `±1`, hence is a **unit**, so `1/s_k` exists in the truncated ring and
+`jet_inv` returns it rather than trapping. That is the only division in the gate, and it is
+division by a unit — which is exactly what the `Field` implementation is permitted to do.
 
 ### Three things that had to be right at six slots and were not at two
 
@@ -76,8 +81,8 @@ ceiling would never have been found.
 ## 4. The first claim actually upgraded
 
 **Weyl tracelessness.** `C^a{}_{bad} = 0` was established by `ci_trace_sq` at a dozen exact
-fixtures. It now holds as a **polynomial identity** over the full six-parameter family, at
-every parameter count from 1 to 6. Whole sweep with it included: **3.85 s**.
+fixtures. It now holds as a **polynomial identity** over the full **ten-parameter symmetric family**, at
+every parameter count from 1 to 10.
 
 **No new tensor code was written.** The `ci_*` layer works on *values* of type `T` with
 `Field<T>`, so taking the constant term in the **coordinates** first leaves
@@ -104,7 +109,7 @@ C² = E₄ + 2 Ric² − (2/3) R²,   E₄ = Riem² − 4 Ric² + R²
 
 These are the coordinate vectors **the entire `D = 4` classification is expressed in**, so
 one metric was a thin footing. Both now hold as polynomial identities over the full
-six-parameter family. Sweep with `G1` included: **4.15 s**.
+ten-parameter symmetric family.
 
 The negative control is the same identity with `R²/4` in place of `R²/3` — it must **fail**,
 and does on every row. Without it, "the identity holds" would be satisfied equally well by
@@ -118,10 +123,10 @@ was missing was only ever a coefficient ring to hand it.
 
 - **Two claims are upgraded, not the ledger.** Weyl tracelessness and `G1` are done; the
   trace law `N2`, `N1` (`∇^a B_ab = 0`) and the Noether generator count are not.
-- **"All metrics in the family" is not "all metrics".** `det g = −1` identically, so the
-  family is **unimodular** — a codimension-one restriction — and the coordinate dependence is
-  a fixed quadratic rather than general. An enormous step from twelve sampled points; still a
-  family.
+- **The family is now general in the metric, not in the coordinate dependence.** The
+  unimodularity restriction is gone — ten parameters span every component of a symmetric
+  `4×4`. What remains is that each slot carries a **fixed quadratic pattern** in `x` rather
+  than a general function, so this is a generic metric *family* near flat, not every metric.
 - **Five identities are verified so far** — last-pair antisymmetry, the first Bianchi
   identity, Weyl tracelessness, and the two `G1` forms. The first two exercise the pipeline
   rather than settling anything in doubt; tracelessness and `G1` were standing ledger claims.
@@ -142,7 +147,7 @@ family"*, the actual reverse-physics statement about the gauge algebra.
 
 ```bash
 cd tango/forge && export FORGE_LIB=$PWD/lib
-forge -run examples/curvature_symbolic_family_gate.forge   # 9/9, 4.15 s, 78 MB
+forge -run examples/curvature_symbolic_family_gate.forge   # 9/9, 20.35 s, 91 MB
 ```
 
 Exact rational arithmetic throughout. No floating point, no tolerance.
