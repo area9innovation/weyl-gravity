@@ -1,6 +1,6 @@
 # Symbolic metric families are cheap, and that changes what is provable here
 
-**Rail** Forge, `tango/forge/examples/curvature_symbolic_family_gate.forge` — 9/9, 3.85 s
+**Rail** Forge, `tango/forge/examples/curvature_symbolic_family_gate.forge` — 9/9, 4.15 s
 **Substrate** `tango/forge/lib/math/jetfield.forge`
 **Dependency tag** `LOCAL-ALGEBRAIC`
 
@@ -93,24 +93,46 @@ Weyl's vanishing is a fact about Weyl rather than about a routine that returns z
 everything. Weyl is separately required to be nonzero and to depend symbolically on the
 parameters, or the identity would hold for a family that is secretly one metric.
 
+### The second: `G1`, the coordinate vectors
+
+`REVERSE_PHYSICS_WEYL_GEOMETRY_DISCHARGE_V1` establishes `G1` **on a single metric**:
+
+```
+C² = Riem² − 2 Ric² + R²/3                        (D = 4)
+C² = E₄ + 2 Ric² − (2/3) R²,   E₄ = Riem² − 4 Ric² + R²
+```
+
+These are the coordinate vectors **the entire `D = 4` classification is expressed in**, so
+one metric was a thin footing. Both now hold as polynomial identities over the full
+six-parameter family. Sweep with `G1` included: **4.15 s**.
+
+The negative control is the same identity with `R²/4` in place of `R²/3` — it must **fail**,
+and does on every row. Without it, "the identity holds" would be satisfied equally well by
+three scalars that were all zero, which is why they are separately required to be nonzero.
+
+Again no new tensor code: `ci_raise_slot`, `ci_raise2` and `ci_dot` used exactly as on
+rationals. **The contraction layer keeps turning out to be generic enough already** — what
+was missing was only ever a coefficient ring to hand it.
+
 ## 5. What this does **not** establish
 
-- **One claim is upgraded, not the ledger.** Tracelessness is the cheapest target and it is
-  done; the trace law `N2` and the Noether generator count are not.
+- **Two claims are upgraded, not the ledger.** Weyl tracelessness and `G1` are done; the
+  trace law `N2`, `N1` (`∇^a B_ab = 0`) and the Noether generator count are not.
 - **"All metrics in the family" is not "all metrics".** `det g = −1` identically, so the
   family is **unimodular** — a codimension-one restriction — and the coordinate dependence is
   a fixed quadratic rather than general. An enormous step from twelve sampled points; still a
   family.
-- **Three identities are verified so far** — last-pair antisymmetry, the first Bianchi
-  identity, and Weyl tracelessness. The first two exercise the pipeline rather than settling
-  anything that was in doubt; only tracelessness was a standing ledger claim.
+- **Five identities are verified so far** — last-pair antisymmetry, the first Bianchi
+  identity, Weyl tracelessness, and the two `G1` forms. The first two exercise the pipeline
+  rather than settling anything in doubt; tracelessness and `G1` were standing ledger claims.
 - **The Euler operator is not yet available over this ring**, so the Noether-identity result
   is still at sampled fixtures.
 
 ## 6. What it opens
 
-The natural next targets, in order of cost: the trace law `N2`, then the Noether identity
-generator count — which
+The next targets all need the same missing piece — **the Euler operator over this ring** —
+because each is about the *variation* rather than the curvature: `N1` (`∇^a B_ab = 0`, which
+needs the Bach tensor), the trace law `N2`, and the Noether identity generator count — which
 would turn *"one generator at three fixtures"* into *"one generator for every metric in the
 family"*, the actual reverse-physics statement about the gauge algebra.
 
@@ -120,7 +142,7 @@ family"*, the actual reverse-physics statement about the gauge algebra.
 
 ```bash
 cd tango/forge && export FORGE_LIB=$PWD/lib
-forge -run examples/curvature_symbolic_family_gate.forge   # 9/9, 3.85 s, 70 MB
+forge -run examples/curvature_symbolic_family_gate.forge   # 9/9, 4.15 s, 78 MB
 ```
 
 Exact rational arithmetic throughout. No floating point, no tolerance.
