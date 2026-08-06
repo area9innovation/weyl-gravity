@@ -1,7 +1,7 @@
 # Symbolic metric families are cheap, and that changes what is provable here
 
 **Certificate** `REVERSE_PHYSICS_SYMBOLIC_FAMILY_V1`
-**Rail** Forge, `tango/forge/examples/curvature_symbolic_family_gate.forge` — 14/14, 105.97 s
+**Rail** Forge, `tango/forge/examples/curvature_symbolic_family_gate.forge` — 15/15, 89.53 s
 **Substrate** `tango/forge/lib/math/jetfield.forge`
 **Dependency tag** `LOCAL-ALGEBRAIC`
 
@@ -49,7 +49,7 @@ lower-triangular. `jet_inv` still traps on a non-unit, which is the correct fail
 | **10 — the full symmetric family** | **15** |
 
 Whole sweep, all six identities: **49.78 s, 109 MB.** With `N1` (§4) the gate is
-**14/14, 105.97 s, 109 MB** — `N1` alone is nearly the whole of that increase.
+**15/15, 89.53 s, 111 MB** — `N1` alone is nearly the whole of that increase.
 
 **`LDLᵀ` is the general symmetric matrix.** Six strictly-lower entries of `L` plus four
 diagonal entries of `S` is ten — exactly the number of independent components of a symmetric
@@ -213,10 +213,33 @@ gate. The Schwarzschild check is kept under an honest label as a **pipeline** ch
 whole chain running on a metric from outside the `LDLᵀ` family, with a genuine `1/r` series
 instead of a polynomial. Narrower than advertised, still worth having.
 
-**One mutation is left open.** `∇^c∇^d` versus `∇^d∇^c` differ by a commutator, so the third
-mutation is either a semantic no-op or an untested degree of freedom. **Which one is not
-determined**, and guessing at a mechanism without a control that can refute it is precisely
-what produced the retraction.
+### The mutation nothing caught, settled
+
+`∇^c∇^d` versus `∇^d∇^c` differ by a commutator, so the third mutation was either a semantic
+no-op or an **untested degree of freedom in a routine `N1` rests on**. That is not a
+difference worth guessing at, so it was carried open and then settled **by computation**:
+
+```
+nabla^c nabla^d C_{acbd}  =  nabla^d nabla^c C_{acbd}
+```
+
+a **polynomial identity over the full ten-parameter family** (`np = 10`, 229 s). The mutation
+was a semantic no-op. **Nothing caught it because nothing could**, and the gate has no
+untested freedom there.
+
+**How, and why that way.** The derivative order became a **parameter of the one `bach_of`
+implementation** rather than a second copy that could drift — so both orderings run through
+identical code and the only difference is the index pairing.
+
+**The comparator was itself mutation-tested.** Pointing the swapped branch at a genuinely
+different index gives `ORDERS-AGREE = 0`, so it demonstrably detects a difference. An
+agreement test that cannot report disagreement establishes nothing — and the check separately
+requires Bach to be **nonzero** and to depend **symbolically** on the parameters, so this is
+not two zeros or two constants agreeing.
+
+**It is now demanded rather than reported.** Check 15 fails if the identity breaks. The
+regression rail runs at **two** parameters — a break shows there as readily as at ten — while
+the ten-parameter run is the *result*, not something worth 123 s on every run.
 
 **`N1` holds over a smaller sub-family than the other three.** See §5.
 
@@ -267,7 +290,7 @@ family"*, the actual reverse-physics statement about the gauge algebra.
 
 ```bash
 cd tango/forge && export FORGE_LIB=$PWD/lib
-forge -run examples/curvature_symbolic_family_gate.forge   # 14/14, 105.97 s, 109 MB
+forge -run examples/curvature_symbolic_family_gate.forge   # 15/15, 89.53 s, 111 MB
 ```
 
 Exact rational arithmetic throughout. No floating point, no tolerance.

@@ -45,19 +45,21 @@
   ],
   "checks": {
     "ok": true,
-    "passed": 14,
-    "total": 14,
-    "gate": "curvature_symbolic_family_gate 14/14, 105.97 s, peak RSS 109 MB, with N1 at N1NP = 3 and the Schwarzschild pipeline check as 14. Checks 1-12 run at the full ten parameters; only N1 runs smaller.",
+    "passed": 15,
+    "total": 15,
+    "gate": "curvature_symbolic_family_gate 15/15, 89.53 s, peak RSS 111 MB, with N1 at N1NP = 3 and the derivative-order regression rail at BOCHNP = 2. Checks 1-12 run at the full ten parameters, as does the derivative-order RESULT (229 s when run there).",
     "substrate": "tango/forge/lib/math/jetfield.forge; jexp and jcoef made pub in math/jet, purely additive -- jet_nterms, jet_nv and jet_deg were already public, so a caller could see that a jet HAS terms but not what they are, which is what a nested coefficient ring must inspect to police its own truncation. All 13 dependent gates compile clean; jet_mul_gate 14/14 and curvature_covderiv_gate 23/23 re-run unchanged."
   },
   "verification": {
     "substrate": "Forge, in the tango repository (1f1e3c16a).",
     "commands": [
       "cd tango/forge && export FORGE_LIB=$PWD/lib",
-      "forge -run examples/curvature_symbolic_family_gate.forge   # 14/14, 105.97 s, 109 MB",
-      "# to reproduce the np = 4 result for N1: set N1NP() to 4, expect 14/14 in ~360 s",
-      "# to reproduce the mutation testing: change rat(1, 2) in bach_of's `half` to rat(1, 3);",
-      "#   check 14 still passes, check 11 (CONFORMAL-WEIGHT) fails"
+      "forge -run examples/curvature_symbolic_family_gate.forge   # 15/15, 89.53 s, 111 MB",
+      "# derivative-order identity over the FULL family: set BOCHNP() to 10, expect 15/15 in ~229 s",
+      "# N1 at four parameters: set N1NP() to 4, expect 15/15 in ~345 s",
+      "# mutation testing: change rat(1, 2) in bach_of's `half` to rat(1, 3) -- check 14 still",
+      "#   passes, check 11 (CONFORMAL-WEIGHT) fails.  Point the `swap` branch at e1 * n + e1 --",
+      "#   check 15 reports ORDERS-AGREE = 0, so the comparator is not blind."
     ]
   },
   "does_not_establish": [
@@ -68,9 +70,9 @@
     "anything quantum, dynamical, or about the gauge algebra beyond what REVERSE_PHYSICS_NOETHER_IDENTITIES_V1 already records.",
     "N1 over the full family. N1 is verified over N1NP parameters, a STRICTLY SMALLER sub-family than the ten over which tracelessness, G1 and G3 hold. The gate demands and prints that number rather than accepting whatever passed.",
     "that bach_of's COEFFICIENTS are verified by an Einstein metric. The Einstein control was built and mutation-tested and does not discriminate -- three separate defects in bach_of survived it. The conformal-weight check is what constrains the coefficients. See the_einstein_control_was_built_and_is_nearly_vacuous.",
-    "whether swapping the two covariant-derivative indices in bach_of is a semantic no-op or an untested degree of freedom. That mutation was caught by NOTHING in the gate and the question is left OPEN rather than guessed at."
+    "RESOLVED and kept for the record: the derivative-index swap in bach_of was open here; it is now settled as a semantic no-op, established as a polynomial identity over the full ten-parameter family. See the_undetermined_mutation_is_now_settled."
   ],
-  "next": "N2 (the trace law) and the Noether generator count, the two that genuinely need THE EULER OPERATOR over this nested ring -- a port of roughly four hundred lines, not a reuse, because the Euler operator manipulates jet indices directly rather than going through the Field vocabulary. The generator count is the one that matters: it would turn 'one generator at three fixtures' into 'one generator for every metric in the family', the actual reverse-physics statement about the gauge algebra. Also open and cheaper: settle whether the derivative-index swap in bach_of is a no-op, which needs a fixture on which the commutator term is demonstrably nonzero.",
+  "next": "N2 (the trace law) and the Noether generator count, the two that genuinely need THE EULER OPERATOR over this nested ring -- a port of roughly four hundred lines, not a reuse, because the Euler operator manipulates jet indices directly rather than going through the Field vocabulary. The generator count is the one that matters: it would turn 'one generator at three fixtures' into 'one generator for every metric in the family', the actual reverse-physics statement about the gauge algebra.",
   "n1": {
     "what_it_is": "nabla^a B_ab = 0 -- the gauge layer's own identity, the Noether/diffeomorphism content of the Weyl action.",
     "why_bach_of_could_not_deliver_it": "bach_of returns Bach at a POINT because it is built on cv_cov_val, and a point cannot be differentiated. N1 needs Bach as a FUNCTION, so the chain was rebuilt with the jet-level covariant derivative throughout: nabla on C^a_{bcd} twice, contract to B_ab, raise, nabla once more, contract rho = e.",
@@ -86,6 +88,13 @@
     "why_that_is_structural_and_should_have_been_predicted": "on ANY Einstein metric R^{cd} C_{acbd} = (R/D) g^{cd} C_{acbd} = 0 by Weyl TRACELESSNESS, so the Ric.C term is multiplied by zero and its coefficient cannot be probed there at all. Schwarzschild is Ricci-flat, so more strongly: C = Riem and contractions of nabla nabla Riem vanish for reasons that survive getting the formula wrong. Bach-flatness on an Einstein metric is OVERDETERMINED -- many wrong formulas produce it. Naming a known-answer control in advance is good practice; it does not make the control discriminating, and this one was named without checking that it could fail.",
     "what_actually_constrains_bach_of": "the CONFORMAL WEIGHT check caught mutations (1) and (2). That, not the Einstein metric, is the discriminating test, and it was already in the gate.",
     "what_the_control_is_kept_for": "a genuine PIPELINE check: the whole chain runs on a metric from OUTSIDE the LDL^T family, with a real 1/r series rather than a polynomial, and returns the right answer. Narrower than advertised and still worth having, kept under an honest label rather than as a known-answer.",
-    "one_mutation_is_undetermined": "mutation (3), swapping the two covariant-derivative indices, was caught by NOTHING in the gate. nabla^c nabla^d and nabla^d nabla^c differ by a commutator, so either that difference vanishes under this contraction -- making the mutation a semantic no-op -- or the gate has an untested degree of freedom. WHICH ONE IS NOT DETERMINED. Guessing at a mechanism without a control that can refute it is exactly what produced the parity retraction, so it is recorded open."
+    "one_mutation_is_undetermined": "SETTLED -- see the_undetermined_mutation_is_now_settled. It was a semantic no-op."
+  },
+  "the_undetermined_mutation_is_now_settled": {
+    "the_question": "a mutation swapping the two covariant-derivative indices in bach_of survived every check in the gate, leaving open whether it was a semantic no-op or an UNTESTED DEGREE OF FREEDOM in a routine N1 rests on.",
+    "the_answer": "nabla^c nabla^d C_{acbd} = nabla^d nabla^c C_{acbd}, as a POLYNOMIAL IDENTITY over the FULL TEN-PARAMETER general symmetric family (verified at np = 10, 229 s). The mutation was a semantic no-op. Nothing caught it because nothing could, and the gate has no untested degree of freedom there.",
+    "how_it_was_settled": "by computation, not argument. The derivative order became a PARAMETER of the one bach_of implementation rather than a second copy that could drift, so both orderings run through identical code and the only difference is the index pairing. The commutator [nabla^c, nabla^d] C_{acbd} vanishes under this contraction.",
+    "the_comparator_was_itself_mutation_tested": "pointing the swapped branch at a genuinely different index gives orders-agree = 0, so the comparator demonstrably detects a difference. 'They agree' is exactly the shape of vacuous pass this stream keeps hitting, and an agreement test that cannot report disagreement establishes nothing. The check additionally requires the Bach tensor to be NONZERO and to depend SYMBOLICALLY on the parameters, so the agreement is not the agreement of two zeros or two constants.",
+    "it_is_now_demanded_not_reported": "check 15 FAILS if the identity breaks, so a future change to bach_of that broke it would be caught. The regression rail runs at two parameters -- a break shows there as readily as at ten -- while the ten-parameter run is the RESULT rather than something worth 123 s on every run."
   }
 }

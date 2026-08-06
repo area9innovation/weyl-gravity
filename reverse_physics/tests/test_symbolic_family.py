@@ -278,17 +278,71 @@ class TestTheEinsteinControlWasBuiltAndDoesNotWork(unittest.TestCase):
         self.assertIn("PIPELINE check", k)
         self.assertIn("OUTSIDE the LDL^T family", k)
 
-    def test_the_undetermined_mutation_is_open_not_guessed(self):
+    def test_the_open_mutation_entry_forwards_rather_than_being_deleted(self):
+        """Append-only.  It was open, it is settled, and the settlement is a
+        new entry that the old one points at."""
         u = self.e["one_mutation_is_undetermined"]
-        self.assertIn("NOT DETERMINED", u)
-        self.assertIn("caught by NOTHING", u)
-        self.assertIn("recorded open", u)
+        self.assertIn("SETTLED", u)
+        self.assertIn("semantic no-op", u)
 
     def test_does_not_establish_denies_the_coefficient_claim(self):
         dne = " ".join(load()["does_not_establish"])
         self.assertIn("does not discriminate", dne)
         self.assertIn("survived it", dne)
-        self.assertIn("semantic no-op or an untested degree of freedom", dne)
+
+
+class TestTheDerivativeOrderQuestionWasSettledByComputation(unittest.TestCase):
+    """It was carried open for exactly one commit, then answered.  An open
+    question about a routine N1 rests on is not something to reason about --
+    the reasoning is what produced the retraction."""
+
+    def setUp(self):
+        self.s = load()["the_undetermined_mutation_is_now_settled"]
+
+    def test_the_answer_is_stated_as_an_identity_over_the_full_family(self):
+        a = self.s["the_answer"]
+        self.assertIn("POLYNOMIAL IDENTITY", a)
+        self.assertIn("FULL TEN-PARAMETER", a)
+        self.assertIn("semantic no-op", a)
+
+    def test_nothing_caught_it_because_nothing_could(self):
+        """The point that turns an alarming non-detection into a non-event."""
+        self.assertIn("nothing could", self.s["the_answer"])
+        self.assertIn("no untested degree of freedom", self.s["the_answer"])
+
+    def test_one_implementation_two_orderings_rather_than_a_copy(self):
+        h = self.s["how_it_was_settled"]
+        self.assertIn("by computation, not argument", h)
+        self.assertIn("second copy that could drift", h)
+
+    def test_the_comparator_can_report_disagreement(self):
+        """An agreement test that cannot disagree establishes nothing -- and
+        the premises stop it being two zeros agreeing."""
+        c = self.s["the_comparator_was_itself_mutation_tested"]
+        self.assertIn("orders-agree = 0", c)
+        self.assertIn("cannot report disagreement establishes nothing", c)
+        self.assertIn("NONZERO", c)
+        self.assertIn("SYMBOLICALLY", c)
+
+    def test_the_identity_is_demanded_not_merely_printed(self):
+        d = self.s["it_is_now_demanded_not_reported"]
+        self.assertIn("FAILS if the identity breaks", d)
+
+    def test_the_regression_rail_is_distinguished_from_the_result(self):
+        """Same budget-not-wall reasoning as N1, and it has to be visible or it
+        reads as a cap."""
+        d = self.s["it_is_now_demanded_not_reported"]
+        self.assertIn("regression rail", d)
+        self.assertIn("is the RESULT", d)
+
+    def test_the_resolution_is_reachable_from_does_not_establish(self):
+        dne = " ".join(load()["does_not_establish"])
+        self.assertIn("RESOLVED and kept for the record", dne)
+
+    def test_the_reproduction_command_for_the_full_family_is_given(self):
+        cmds = " ".join(load()["verification"]["commands"])
+        self.assertIn("BOCHNP", cmds)
+        self.assertIn("comparator is not blind", cmds)
 
     def test_the_report_carries_the_mutation_table(self):
         with open(REPORT) as fh:
