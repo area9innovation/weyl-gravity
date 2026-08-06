@@ -245,7 +245,7 @@ the ten-parameter run is the *result*, not something worth 123 s on every run.
 
 ## 4b. The Euler operator, and a blocker that was wrong twice
 
-**Rail** `tango/forge/examples/curvature_symbolic_euler_gate.forge` — 9/9, 963.56 s, 95 MB.
+**Rail** `tango/forge/examples/curvature_symbolic_euler_gate.forge` — 9/9, 992.62 s, 111 MB.
 
 This certificate said `N1`, `N2` and the generator count were *"one job — the Euler
 operator"*, and that the Euler operator was *"a port of roughly four hundred lines… because
@@ -526,7 +526,7 @@ family"*, the actual reverse-physics statement about the gauge algebra.
 ```bash
 cd tango/forge && export FORGE_LIB=$PWD/lib
 forge -run examples/curvature_symbolic_family_gate.forge   # 15/15, 89.53 s, 111 MB
-forge -run examples/curvature_symbolic_euler_gate.forge    # 9/9,   963.56 s,  95 MB
+forge -run examples/curvature_symbolic_euler_gate.forge    # 9/9,   992.62 s, 111 MB
 ```
 
 Exact rational arithmetic throughout. No floating point, no tolerance.

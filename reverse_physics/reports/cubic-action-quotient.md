@@ -30,7 +30,7 @@ Over the eight standard cubic scalars - `R^3`, `R|Ric|^2`, `R|Riem|^2`, `Ric^3`,
 `Ric.Ric.Riem`, `Ric.Riem^2`, and the two `Riem^3` contractions:
 
 ```
-rank(VALUES) = 8          rank(EULER) = 5
+rank(VALUES) = 8          rank(EULER) = 7
 ```
 
 **Two ranks, not one, and the second alone would mislead.** A linear relation among the
@@ -45,15 +45,29 @@ Here `rank(VALUES) = 8` saturates, so the eight are genuinely independent as fun
 **every element of the Euler kernel is a real total derivative**, not an identity among the
 scalars.
 
-## 3. The bounds, and why one-sided is sound
+So there is **exactly one** total-derivative combination among the eight, and **exactly seven**
+independent cubic actions. Both are equalities.
 
-A rank at a point is a **lower** bound on the generic rank.
+## 3. Why these are exact, and why the point method had to go
 
-- `rank(VALUES) = 8` is **exact** - 8 is the number of rows and cannot be exceeded.
-- `rank(EULER) >= 5`, hence `dim(kernel) <= 3` and `dim(actions) >= 5`.
+The Euler rank uses **no evaluation point**. Each entry is a *polynomial* in the metric
+parameters, and `sum_i c_i E_i = 0` *identically* is a linear condition on `c` over the
+polynomial **coefficients**. Flattening `(component, monomial)` into columns gives a rational
+matrix whose rank **is** the generic rank and whose nullspace **is** the space of total
+derivatives. The monomial list is the *union of exponent vectors actually present*, collected
+rather than enumerated, so it is complete without assuming a degree bound.
 
-Neither is claimed as an equality. Pinning them means exhibiting the kernel explicitly - three
-combinations verified to be total derivatives - which is not done here.
+The `VALUES` rank is taken at a point, and that is sound for a specific reason: it comes out
+**8**, the row count, and a rank cannot exceed it. A saturating point rank is exact.
+
+**And here is the finding that forced the change.** An earlier version evaluated the Euler
+matrix at a point and got rank **5** - "at least 5 actions, at most 3 total derivatives". Three
+null candidates appeared and only **one** verified identically. A second, independently chosen
+point *also* gave rank 5. Both were **non-generic**: the true rank is 7.
+
+So two independent point evaluations agreed with each other and were both wrong, and the only
+reason that was visible was the identical-verification pass reporting 1 of 3. Chasing the bound
+with more points would not have converged. The object had to become exact.
 
 ## 4. How the checks are built
 
@@ -67,7 +81,6 @@ combinations verified to be total derivatives - which is not done here.
 
 ## 5. What this does not establish
 
-- **Exact dimensions.** At least 5 actions, at most 3 total derivatives.
 - **Anything about D = 6 or the weight-6 derivative sector.** Only the cubic algebraic carrier
   in D = 4. Weight 6 needs the metric at degree 6, where the jets hold 924 terms per component,
   and remains the cost problem.
@@ -78,34 +91,24 @@ combinations verified to be total derivatives - which is not done here.
   conformally invariant subspace, so it does not by itself convert the published cubic conformal
   counts into action counts.
 
-## 6. The kernel, exhibited but not pinned
+## 6. The kernel
 
-Candidates come from augmenting the Euler matrix with an identity and reducing the `M` half; a
-row whose `M`-part vanishes carries the combination in its `I`-part. Each is then **verified
-identically** - the combination's Euler derivative must be the zero *polynomial*, not merely
-zero at the evaluation point.
+Candidates come from augmenting the coefficient matrix with an identity and reducing the `M`
+half; a row whose `M`-part vanishes carries the combination in its `I`-part. Each is then
+**re-verified as the zero polynomial**.
 
-**3 candidates, 1 verified.** Two were artefacts of the point, which is exactly what the second
-pass exists to catch. A second evaluation point (free - the polynomial rows are already
-computed) also gives rank 5.
-
-**The tension is reported, not resolved.** If the generic kernel were the full 3-space, all
-three basis vectors would verify; one does. If the generic rank exceeded 5, a generic point
-should show it; two points both show 5. So either both points are special, or the kernel is
-sensitive to the basis the elimination happens to produce.
-
-What *is* established: **at least one genuine total derivative**, verified as a polynomial
-identity, and the kernel lies inside an explicit 3-space - so `dim(cubic actions)` is between
-**5 and 7**.
+**1 candidate, 1 verified.** The kernel is one-dimensional and exhibited - the cubic analogue
+of `E_4 = Riem^2 - 4 Ric^2 + R^2`, where exhibiting the combination is precisely what made the
+quadratic result sharp.
 
 ## 7. Next
 
-**Pin the kernel.** Deciding whether the other two dimensions are real needs either a third
-evaluation point that separates them, or - better - solving for the identical nullspace
-*within* that 3-space directly, rather than testing whichever basis the elimination produced.
-The latter is a small linear problem over the polynomial coefficients. Pinning it would give
-the cubic analogue of `E_4 = Riem^2 - 4 Ric^2 + R^2`, where exhibiting the combination is
-precisely what made the quadratic result sharp.
+**The conformally invariant subspace.** The quotient here is over the *full* cubic carrier, so
+it does not by itself convert the published cubic conformal counts into action counts;
+restricting the Euler map to the conformally invariant subspace is what would.
+
+Then the **weight-6** sector, which is cost rather than method: the metric at degree 6 holds 924
+terms per component.
 
 Then the conformally invariant subspace, which is what would actually convert the published
 cubic conformal counts from counts of *invariants* into counts of *actions*.
