@@ -243,11 +243,65 @@ the ten-parameter run is the *result*, not something worth 123 s on every run.
 
 **`N1` holds over a smaller sub-family than the other three.** See §5.
 
+## 4b. The Euler operator, and a blocker that was wrong twice
+
+**Rail** `tango/forge/examples/curvature_symbolic_euler_gate.forge` — 4/4, 157.51 s, 98 MB.
+
+This certificate said `N1`, `N2` and the generator count were *"one job — the Euler
+operator"*, and that the Euler operator was *"a port of roughly four hundred lines… because
+it manipulates jet indices directly rather than going through the `Field` vocabulary"*.
+
+**Both halves were wrong.** `N1` needed only a covariant derivative (corrected earlier). And
+`euler_component` is built from `jet_var_slice`, `jet_diff` and `jet_const_term` — every one
+of them generic in `T`. Two blocker predictions, both wrong in the same direction, both made
+**without reading the code they were about**. The cost of checking was one file read, each
+time, and each time the prediction deferred real work.
+
+**The real obstructions were different, and both dissolve rather than port.**
+
+| obstruction | dissolved by |
+|---|---|
+| `metric_inverse` **divides** | `(g₀ + th)⁻¹ = g₀⁻¹ − t g₀⁻¹hg₀⁻¹ + O(t²)` — the Euler operator reads only the `t`-linear slice, so `O(t²)` is never looked at |
+| `√−det g` isn't polynomial | `S = diag(−σ₀², σ₁², σ₂², σ₃²)`, so `−det g` is a perfect square and the root is `σ₀σ₁σ₂σ₃` |
+
+The second costs **no generality**: `LDLᵀ` with a sign-definite diagonal is exactly the
+general symmetric matrix *of Lorentzian signature*, which is the only signature this
+programme is about. A third obstruction is purely mechanical — the perturbation parameter is
+an extra **outer** jet variable.
+
+**Validated against a textbook answer that is not assumed.** For `L = √−g`, the Euler
+derivative is `½√−g g^{ab}`. The density is computed as `exp(½ log(−det g))` of the honest
+Leibniz determinant — *not* from `δ√−g = ½√−g g^{ab}δg_{ab}`, which is the answer under test.
+`jet_log`/`jet_exp` invert only integer constants, units in the inner ring, so this needs no
+division either.
+
+**Two guards fired on the first run and both were right — in opposite directions.**
+
+- `answer-symbolic = 0` caught a **real degeneracy**. Every parameter entered through
+  `x + x²`, which **vanishes at the base point** — so the metric there was parameter-free and
+  every check in the gate was being read where the family collapses to a single metric. Fixed
+  to `1 + x + x²`: the quadratic still makes the family curved, the leading `1` makes it
+  symbolic *where it is read*.
+- `B-and-C-zero = 0` was **my premise being wrong**, not the code. For a derivative-free
+  Lagrangian `B^γ = (A(x) − A(0))x^γ` is a nonzero jet of order `x²` that contributes nothing.
+  The check had to measure **contributions**, not jets. **A control can be wrong by being too
+  strong** — the opposite failure to the Einstein control two sections up.
+
+**The parameter counts differ in kind, not just in size.** `ROOTNP = 8` is a **premise**:
+parameters 0–5 are the `L` slots and only 6–9 are the diagonal σ, so `det g` depends on
+nothing below 7 and check 3's symbolic premise is *unsatisfiable* there rather than false.
+`FULLNP = EULNP = 6` are **budgets**, measured — 3.2 s at 2, 14.3 s at 4, 175 s at 6, and 7
+does not finish in 500 s, because the leading `1` also makes every entry dense at every
+coordinate order.
+
 ## 5. What this does **not** establish
 
 - **Four claims are upgraded, not the ledger.** Weyl tracelessness, `G1`, `G3` and `N1` are
-  done; the trace law `N2` and the Noether generator count are not, and both still wait on the
-  Euler operator over this ring.
+  done; the trace law `N2` and the Noether generator count are **not**.
+- **`N2` and the generator count have not moved.** The Euler operator now runs over the ring
+  (§4b), but the Lagrangians those claims need — `√−g R` and `√−g C²` — are not implemented.
+  The blocker is removed; the claims are not discharged. This report has now **twice** recorded
+  a predicted blocker that turned out not to be the real one.
 - **that `bach_of`'s coefficients are verified by an Einstein metric.** The control was built
   and mutation-tested and does **not** discriminate — three separate defects survived it. The
   conformal-weight check is what constrains them.

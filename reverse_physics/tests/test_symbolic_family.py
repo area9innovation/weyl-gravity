@@ -291,6 +291,116 @@ class TestTheEinsteinControlWasBuiltAndDoesNotWork(unittest.TestCase):
         self.assertIn("survived it", dne)
 
 
+class TestTheEulerBlockerWasWrongTwice(unittest.TestCase):
+    """Two blocker predictions, both wrong in the same direction, both made
+    without reading the code.  The pattern is the finding -- a single instance
+    is an error, two is a habit worth naming."""
+
+    def setUp(self):
+        self.b = load()["the_euler_operator_blocker_was_wrong_twice"]
+
+    def test_both_wrong_predictions_are_quoted_not_paraphrased(self):
+        w = self.b["what_this_certificate_predicted"]
+        self.assertIn("one job, not three", w)
+        self.assertIn("four hundred lines", w)
+
+    def test_the_pattern_is_named_as_a_pattern(self):
+        h = self.b["both_halves_were_wrong"]
+        self.assertIn("TWO blocker predictions", h)
+        self.assertIn("same direction", h)
+        self.assertIn("without reading the code", h)
+
+    def test_the_lesson_is_actionable_not_just_regretful(self):
+        l = self.b["the_transferable_lesson"]
+        self.assertIn("one file read", l)
+        self.assertIn("Read the code before recording what it needs", l)
+
+    def test_the_real_obstructions_are_named_and_dissolved(self):
+        r = self.b["the_real_obstructions"]
+        self.assertIn("metric_inverse divides", r)
+        self.assertIn("O(t^2)", r)
+        self.assertIn("perfect square", r)
+
+    def test_the_signature_restriction_is_argued_not_asserted(self):
+        """sigma^2 sounds like a loss of generality and is not -- LDL^T with a
+        sign-definite diagonal IS the general symmetric matrix of Lorentzian
+        signature."""
+        r = self.b["the_real_obstructions"]
+        self.assertIn("NOT a loss of generality", r)
+        self.assertIn("LORENTZIAN SIGNATURE", r)
+
+
+class TestTheEulerOperatorOverTheNestedRing(unittest.TestCase):
+    def setUp(self):
+        self.e = load()["euler_operator_over_the_nested_ring"]
+
+    def test_the_known_answer_is_not_assumed(self):
+        """Building sqrt(-g) from its own variation law would make the check
+        circular.  It is built from the Leibniz determinant instead."""
+        k = self.e["the_known_answer_is_not_assumed"]
+        self.assertIn("Leibniz determinant", k)
+        self.assertIn("circular", k)
+
+    def test_three_conditions_and_each_catches_something_else(self):
+        c = self.e["three_conditions_not_one"]
+        self.assertIn("the comparison cannot check", c)
+        self.assertIn("between two constants", c)
+
+    def test_the_base_point_degeneracy_is_recorded(self):
+        """Every parameter entered through x + x^2, which vanishes where every
+        check is read.  That invalidated the whole gate, not one check."""
+        g = self.e["two_guards_fired_on_the_first_run_and_both_were_right"]
+        self.assertIn("VANISHES AT THE BASE POINT", g)
+        self.assertIn("collapses to one metric", g)
+
+    def test_a_control_can_be_wrong_by_being_too_strong(self):
+        """The opposite failure to the Einstein control, and worth naming
+        precisely because the stream has only ever recorded the other kind."""
+        g = self.e["two_guards_fired_on_the_first_run_and_both_were_right"]
+        self.assertIn("TOO STRONG", g)
+        self.assertIn("opposite failure", g)
+
+    def test_premise_and_budget_are_distinguished(self):
+        """ROOTNP is not a budget: below 7 the determinant depends on no
+        parameter at all, so the premise is unsatisfiable rather than false."""
+        p = self.e["parameter_counts_are_per_check_and_differ_in_kind"]
+        self.assertIn("is a PREMISE, not a budget", p)
+        self.assertIn("UNSATISFIABLE", p)
+        self.assertIn("BUDGETS, measured", p)
+
+    def test_it_is_a_separate_gate_and_the_reason_is_the_tier_rule(self):
+        self.assertIn("SEPARATE gate", self.e["gate"])
+        self.assertIn("split rather than normalised", self.e["gate"])
+
+
+class TestN2AndTheGeneratorCountHaveNotMoved(unittest.TestCase):
+    """The temptation: "the Euler operator works" reads like "N2 is done".
+    The blocker is removed; the claims are untouched."""
+
+    def test_does_not_establish_says_so_explicitly(self):
+        dne = " ".join(load()["does_not_establish"])
+        self.assertIn("N2 or the Noether generator count", dne)
+        self.assertIn("neither claim has moved", dne)
+        self.assertIn("blocker is removed; the claims are not discharged", dne)
+
+    def test_the_repeated_mispredicted_blocker_is_acknowledged_there_too(self):
+        dne = " ".join(load()["does_not_establish"])
+        self.assertIn("twice recorded a predicted blocker", dne)
+
+    def test_next_names_the_stronger_test_and_why_it_is_stronger(self):
+        """sqrt(-g) R is a better test than sqrt(-g) precisely because the
+        derivative families must be NONZERO -- the paired control the
+        derivative-free Lagrangian cannot provide."""
+        nxt = load()["next"]
+        self.assertIn("Einstein tensor", nxt)
+        self.assertIn("must be NONZERO", nxt)
+        self.assertIn("cannot provide", nxt)
+
+    def test_next_carries_the_measured_cost_forward(self):
+        self.assertIn("twelvefold per two parameters", load()["next"])
+        self.assertIn("measured and printed rather than assumed", load()["next"])
+
+
 class TestTheDerivativeOrderQuestionWasSettledByComputation(unittest.TestCase):
     """It was carried open for exactly one commit, then answered.  An open
     question about a routine N1 rests on is not something to reason about --
