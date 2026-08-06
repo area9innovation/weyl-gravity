@@ -1,6 +1,6 @@
 # Symbolic metric families are cheap, and that changes what is provable here
 
-**Rail** Forge, `tango/forge/examples/curvature_symbolic_family_gate.forge` — 9/9, 2.75 s
+**Rail** Forge, `tango/forge/examples/curvature_symbolic_family_gate.forge` — 9/9, 3.85 s
 **Substrate** `tango/forge/lib/math/jetfield.forge`
 **Dependency tag** `LOCAL-ALGEBRAIC`
 
@@ -49,7 +49,7 @@ lower-triangular. `jet_inv` still traps on a non-unit, which is the correct fail
 | 5 | 10 |
 | **6 — the full unit-lower-triangular family** | **10** |
 
-Whole sweep: **2.75 s, 74 MB.**
+Whole sweep, identities only: **2.75 s, 74 MB**; with Weyl tracelessness added, **3.85 s**.
 
 **I predicted this was infeasible and was wrong by four orders of magnitude.** A worst-case
 monomial count gives `C(22,6) = 74,613` terms at degree 16 with six parameters. The actual
@@ -73,23 +73,44 @@ ceiling would never have been found.
   instead of quietly returning zeros — the failure mode that turns "the identity holds" into
   a vacuous pass.
 
-## 4. What this does **not** establish
+## 4. The first claim actually upgraded
 
-- **No existing certificate has been upgraded.** This shows the caveat is removable cheaply.
-  Removing it from any particular claim is separate work.
+**Weyl tracelessness.** `C^a{}_{bad} = 0` was established by `ci_trace_sq` at a dozen exact
+fixtures. It now holds as a **polynomial identity** over the full six-parameter family, at
+every parameter count from 1 to 6. Whole sweep with it included: **3.85 s**.
+
+**No new tensor code was written.** The `ci_*` layer works on *values* of type `T` with
+`Field<T>`, so taking the constant term in the **coordinates** first leaves
+`ManualVec<Jet<Rat>>` — curvature at the base point, still polynomial in the parameters — and
+`ci_lower_first`, `ci_ricci`, `ci_weyl`, `ci_trace_sq` all apply unchanged with
+`T = Jet<Rat>`. The existing contraction layer was already generic enough; it just had never
+been handed anything but rationals.
+
+**The paired control is what makes the zero evidence.** The *same* trace operation applied to
+**Riemann** gives Ricci and is required to come back **nonzero** — reported as
+`riem-trace-nonzero` on every row. So the machinery demonstrably detects a nonzero trace, and
+Weyl's vanishing is a fact about Weyl rather than about a routine that returns zero for
+everything. Weyl is separately required to be nonzero and to depend symbolically on the
+parameters, or the identity would hold for a family that is secretly one metric.
+
+## 5. What this does **not** establish
+
+- **One claim is upgraded, not the ledger.** Tracelessness is the cheapest target and it is
+  done; the trace law `N2` and the Noether generator count are not.
 - **"All metrics in the family" is not "all metrics".** `det g = −1` identically, so the
   family is **unimodular** — a codimension-one restriction — and the coordinate dependence is
   a fixed quadratic rather than general. An enormous step from twelve sampled points; still a
   family.
-- **Only two identities are verified so far** — last-pair antisymmetry and the first Bianchi
-  identity — chosen because they exercise the pipeline, not because they were in doubt.
+- **Three identities are verified so far** — last-pair antisymmetry, the first Bianchi
+  identity, and Weyl tracelessness. The first two exercise the pipeline rather than settling
+  anything that was in doubt; only tracelessness was a standing ledger claim.
 - **The Euler operator is not yet available over this ring**, so the Noether-identity result
   is still at sampled fixtures.
 
-## 5. What it opens
+## 6. What it opens
 
-The natural next targets, in order of cost: Weyl tracelessness (currently sampled via
-`ci_trace_sq`), then the trace law `N2`, then the Noether identity generator count — which
+The natural next targets, in order of cost: the trace law `N2`, then the Noether identity
+generator count — which
 would turn *"one generator at three fixtures"* into *"one generator for every metric in the
 family"*, the actual reverse-physics statement about the gauge algebra.
 
@@ -99,7 +120,7 @@ family"*, the actual reverse-physics statement about the gauge algebra.
 
 ```bash
 cd tango/forge && export FORGE_LIB=$PWD/lib
-forge -run examples/curvature_symbolic_family_gate.forge   # 9/9, 2.75 s, 74 MB
+forge -run examples/curvature_symbolic_family_gate.forge   # 9/9, 3.85 s, 70 MB
 ```
 
 Exact rational arithmetic throughout. No floating point, no tolerance.
