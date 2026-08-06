@@ -245,7 +245,7 @@ the ten-parameter run is the *result*, not something worth 123 s on every run.
 
 ## 4b. The Euler operator, and a blocker that was wrong twice
 
-**Rail** `tango/forge/examples/curvature_symbolic_euler_gate.forge` — 6/6, 449.38 s, 99 MB.
+**Rail** `tango/forge/examples/curvature_symbolic_euler_gate.forge` — 7/7, 716.92 s, 91 MB.
 
 This certificate said `N1`, `N2` and the generator count were *"one job — the Euler
 operator"*, and that the Euler operator was *"a port of roughly four hundred lines… because
@@ -327,6 +327,51 @@ because the last known-answer control built here survived three separate defects
 out to be nearly vacuous. This one can fail. The negative control is the same conformal trace
 on `√−g R`, which comes back **nonzero**.
 
+### The sixth claim: the generator count
+
+Of the seven candidate tensors `T_ab`, exactly **four** lie in the kernel of `T_ab E^ab`:
+
+| in the kernel | **not** identities |
+|---|---|
+| `g`, `R g`, `R² g`, `\|Ric\|² g` | `Ric`, `Ric²`, `R Ric` |
+
+**All four kernel elements are `f·g`.** Gauge symmetries form a **module over functions**, not
+a vector space, so `R g_ab` is the Weyl generator multiplied by a function rather than a
+second symmetry — a naive kernel dimension overcounts four to one. **One generator**, now over
+a family rather than at three fixtures.
+
+What makes that meaningful is not the four that vanish but the three that **don't**. `Ric`,
+`Ric²` and `R·Ric` are the candidates that are *not* multiples of `g`, and all three come back
+nonzero. They are the discriminating half; without them "everything vanishes" would fit
+equally well.
+
+### The route that failed, and the control that caught it
+
+The obvious approach was directional — perturb along `h_ab = tφ T_ab`, 15 Lagrangian runs per
+candidate instead of 150. It reported **`FUNCTION-LINEAR = 0`**.
+
+**The control was right.** A directional perturbation folds `T` into the test function, so the
+extraction `A − ∂B + ∂∂C` picks up derivatives of `T` by Leibniz. That's fine in principle —
+the integration by parts still lands on `T_ab E^ab` — but it changes the **degree budget**.
+`gdeg = ldeg + 2` is derived for a **constant** direction. `Ric` costs two derivatives of the
+metric, so a curvature-valued direction needs `gdeg = ldeg + 4`, and building it at `ldeg + 2`
+silently truncates exactly the terms Leibniz produces.
+
+That control was deliberately run on a **nonzero** case. The same test on `R g` would have
+been `0 = R × 0` and proved nothing — the vacuous-control failure this programme keeps
+finding, here anticipated instead of discovered.
+
+**And check 6's conformal direction is *not* excused by argument.** `g` costs no derivatives,
+so it should be exact at `gdeg` — but that is an argument of *exactly the same form* as the
+one that just proved wrong for `Ric`. So the component route recomputes `g_ab E^ab`
+independently and is required to **agree** with check 6's directional value. It does. An
+argument that has already failed once in the same session is not evidence the second time.
+
+The component route was taken rather than raising the degree because `gdeg = ldeg + 4` puts
+the `C` family at outer degree 7, and cost climbs steeply in degree. It costs 150 runs against
+15 per candidate, has **no** degree subtlety, and yields **all seven** contractions from one
+computation.
+
 **The parameter counts differ in kind, not just in size.** `ROOTNP = 8` is a **premise**:
 parameters 0–5 are the `L` slots and only 6–9 are the diagonal σ, so `det g` depends on
 nothing below 7 and check 3's symbolic premise is *unsatisfiable* there rather than false.
@@ -337,12 +382,15 @@ every coordinate order. `NOETHNP = 2` is much the smallest sub-family of any cla
 
 ## 5. What this does **not** establish
 
-- **Five claims are upgraded, not the ledger.** Weyl tracelessness, `G1`, `G3`, `N1` and the
-  Noether **identity** are done.
-- **The generator COUNT has not moved.** That the identity holds is one thing; that it is the
-  **only** one is a statement about the *dimension* of the space of Noether identities, and it
-  needs the seven-candidate rank sweep run over the family. The original result established
-  both halves at fixtures; only the first has moved.
+- **Six claims are upgraded, not the ledger.** Weyl tracelessness, `G1`, `G3`, `N1`, the
+  Noether identity and the generator **count** are done.
+- **The identity and the count both hold at TWO parameters**, far short of the ten that
+  tracelessness, `G1` and `G3` enjoy. `√−g C²` through 150 Lagrangian runs is expensive enough
+  that this is a real restriction. The count was first run at one and **not left there** — a
+  claim that could have been made over a wider family and wasn't is a cap, not a boundary.
+- **The count is one generator among the SEVEN enumerated candidates**, at derivative order
+  zero. That list is **inherited** from `REVERSE_PHYSICS_NOETHER_IDENTITIES_V1`, not derived
+  here, so an identity outside its span would not be seen.
 - **The general trace law `N2` is not computed.** What is verified is the Weyl case — the
   vanishing instance. `g^{mn}E_mn = 2(a + b + 3c)□R` over the whole quadratic family is not.
 - **The Noether identity holds over only two parameters**, smaller than `N1`'s three and far
@@ -393,6 +441,7 @@ family"*, the actual reverse-physics statement about the gauge algebra.
 ```bash
 cd tango/forge && export FORGE_LIB=$PWD/lib
 forge -run examples/curvature_symbolic_family_gate.forge   # 15/15, 89.53 s, 111 MB
+forge -run examples/curvature_symbolic_euler_gate.forge    # 7/7,   716.92 s,  91 MB
 ```
 
 Exact rational arithmetic throughout. No floating point, no tolerance.

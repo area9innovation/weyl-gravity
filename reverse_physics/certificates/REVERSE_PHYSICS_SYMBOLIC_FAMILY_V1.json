@@ -49,6 +49,14 @@
       "how": "computed along the CONFORMAL direction h_ab = t phi g_ab, which is both cheaper and sharper. Cheaper: 15 Lagrangian runs instead of the 150 needed to build all ten components and trace them -- the component route did NOT finish in 580 s. Sharper: 'the action is stationary under conformal rescaling' IS Weyl invariance, and the trace identity is that fact written in components.",
       "control": "the NEGATIVE control is the same conformal trace of the same machinery on sqrt(-g) R, which must come back NONZERO -- and does. Without it, 'the trace vanishes' is indistinguishable from a routine that returns zero for everything. E^ab is separately required to be nonzero and to depend symbolically on the parameters. MUTATION TESTED and it DISCRIMINATES: changing 1/(D-2) to 1/(D-1) in the Weyl construction gives WEYL-TRACE-VANISHES = 0.",
       "independence": "C^2 is computed from the DEFINITION, not from the certified G1 identity C^2 = Riem^2 - 2 Ric^2 + R^2/3. Using G1 would be legitimate but would couple this result to that one; computing directly makes this an INDEPENDENT CONFIRMATION of G1 rather than a consumer of it."
+    },
+    {
+      "claim": "the Noether GENERATOR COUNT: one generator for the Weyl action",
+      "was": "REVERSE_PHYSICS_NOETHER_IDENTITIES_V1, at SAMPLED FIXTURES",
+      "family": "COUNTNP = 2 parameters, the SAME family the identity holds over. First run at 1 and not left there: a claim that could have been made over a wider family and was not is a cap, not a boundary. Measured at 716.92 s; the component route costs 150 Lagrangian runs of sqrt(-g) C^2.",
+      "result": "of the seven candidate tensors T_ab, exactly FOUR lie in the kernel of T_ab E^ab -- g, R g, R^2 g and |Ric|^2 g -- and ALL FOUR are f g. Ric, Ric^2 and R Ric all give NONZERO. So the four kernel elements are the Weyl generator multiplied by functions, and the generator count is ONE.",
+      "the_module_trap": "gauge symmetries form a MODULE OVER FUNCTIONS, not a vector space, so R g_ab is the Weyl generator reparameterised rather than a second symmetry and a naive kernel dimension overcounts four to one. What makes the count meaningful is not that four vanish but that the three which are NOT multiples of g -- Ric, Ric^2, R Ric -- are all nonzero. Those three are the discriminating half.",
+      "control": "the three non-multiples must come back NONZERO, which is what stops 'everything vanishes' from being the answer. Plus a cross-check that turns an argument into a measurement -- see the_directional_route_failed_its_own_control."
     }
   ],
   "checks": {
@@ -63,11 +71,15 @@
     "commands": [
       "cd tango/forge && export FORGE_LIB=$PWD/lib",
       "forge -run examples/curvature_symbolic_family_gate.forge   # 15/15, 89.53 s, 111 MB",
+      "forge -run examples/curvature_symbolic_euler_gate.forge    # 7/7, 716.92 s, 91 MB",
       "# derivative-order identity over the FULL family: set BOCHNP() to 10, expect 15/15 in ~229 s",
-      "# N1 at four parameters: set N1NP() to 4, expect 15/15 in ~345 s",
+      "# N1 at four parameters: set N1NP() to 4, expect 15/15 in ~360 s",
       "# mutation testing: change rat(1, 2) in bach_of's `half` to rat(1, 3) -- check 14 still",
       "#   passes, check 11 (CONFORMAL-WEIGHT) fails.  Point the `swap` branch at e1 * n + e1 --",
-      "#   check 15 reports ORDERS-AGREE = 0, so the comparator is not blind."
+      "#   check 15 reports ORDERS-AGREE = 0, so the comparator is not blind.",
+      "# euler gate mutation: change rat(1, n - 2) to rat(1, n - 1) in the Weyl construction --",
+      "#   check 6 reports WEYL-TRACE-VANISHES = 0, so the Noether identity is not robust to a",
+      "#   wrong Weyl tensor."
     ]
   },
   "does_not_establish": [
@@ -79,11 +91,12 @@
     "N1 over the full family. N1 is verified over N1NP parameters, a STRICTLY SMALLER sub-family than the ten over which tracelessness, G1 and G3 hold. The gate demands and prints that number rather than accepting whatever passed.",
     "that bach_of's COEFFICIENTS are verified by an Einstein metric. The Einstein control was built and mutation-tested and does not discriminate -- three separate defects in bach_of survived it. The conformal-weight check is what constrains the coefficients. See the_einstein_control_was_built_and_is_nearly_vacuous.",
     "RESOLVED and kept for the record: the derivative-index swap in bach_of was open here; it is now settled as a semantic no-op, established as a polynomial identity over the full ten-parameter family. See the_undetermined_mutation_is_now_settled.",
-    "THE GENERATOR COUNT. The Noether IDENTITY g_ab E^ab = 0 now holds over a family; the CLAIM THAT IT IS THE ONLY ONE does not. That is a statement about the DIMENSION of the space of Noether identities and needs the seven-candidate rank sweep run over the family, which has not been done. REVERSE_PHYSICS_NOETHER_IDENTITIES_V1 established both halves at fixtures -- the identity and the count -- and only the first half has moved.",
+    "the generator count over a LARGE family. It holds at two parameters -- the same as the identity, and far short of the ten that tracelessness, G1 and G3 enjoy. sqrt(-g) C^2 through 150 Lagrangian runs is expensive enough that this is a real restriction.",
     "the general trace law N2. What is verified is the Weyl case, g_ab E^ab = 0 for L = sqrt(-g) C^2. The general statement g^{mn} E_mn = 2(a + b + 3c) box R over the whole quadratic family, of which the Weyl case is the vanishing instance, is not computed here.",
-    "the Noether identity over a large family. NOETHNP = 2 is much the smallest sub-family of any claim in this certificate -- smaller than N1's three and far smaller than the ten that tracelessness, G1 and G3 hold over. sqrt(-g) C^2 is expensive enough that this is a real restriction, not a formality."
+    "the Noether identity over a large family. NOETHNP = 2 is much the smallest sub-family of any claim in this certificate -- smaller than N1's three and far smaller than the ten that tracelessness, G1 and G3 hold over. sqrt(-g) C^2 is expensive enough that this is a real restriction, not a formality.",
+    "the generator count for anything but the SEVEN enumerated candidates. The count is one generator AMONG THAT LIST, at derivative order zero. A Noether identity outside the seven-candidate span would not be seen, and the list is inherited from REVERSE_PHYSICS_NOETHER_IDENTITIES_V1 rather than derived here."
   ],
-  "next": "THE GENERATOR COUNT, which is now the only part of the original Noether result still at fixtures: run the seven-candidate sweep over the family and take the rank exactly, turning 'one generator at three fixtures' into 'one generator for every metric in the family'. The module trap applies -- gauge symmetries form a module over functions, not a vector space, so R g_ab is the Weyl generator reparameterised rather than a new symmetry, and a naive kernel dimension overcounts. That trap already has a gate check at fixtures and will need one over the family too. Separately: raising NOETHNP above 2, which is a cost problem rather than a correctness one.",
+  "next": "raising the parameter counts, now a pure cost problem rather than a correctness one: the identity and the count both hold at two, against the ten that tracelessness, G1 and G3 enjoy. The obvious lever is that the component route recomputes the whole Lagrangian chain for each of its 150 runs. More interesting, and the question the count now sits on: the seven-candidate list is INHERITED from REVERSE_PHYSICS_NOETHER_IDENTITIES_V1 rather than derived, so 'one generator' means one generator AMONG THAT SPAN. Deriving the span, or showing it is complete at derivative order zero, is what would turn the count into a theorem about the gauge algebra rather than about a list.",
   "n1": {
     "what_it_is": "nabla^a B_ab = 0 -- the gauge layer's own identity, the Noether/diffeomorphism content of the Weyl action.",
     "why_bach_of_could_not_deliver_it": "bach_of returns Bach at a POINT because it is built on cv_cov_val, and a point cannot be differentiated. N1 needs Bach as a FUNCTION, so the chain was rebuilt with the jet-level covariant derivative throughout: nabla on C^a_{bcd} twice, contract to B_ab, raise, nabla once more, contract rho = e.",
@@ -115,7 +128,7 @@
     "the_transferable_lesson": "a blocker asserted from memory of an interface is not a blocker. Both times the cost of checking was one file read, and both times the prediction deferred real work. Read the code before recording what it needs."
   },
   "euler_operator_over_the_nested_ring": {
-    "gate": "tango/forge/examples/curvature_symbolic_euler_gate.forge, 6/6, 449.38 s, peak RSS 99 MB. A SEPARATE gate: the family gate is already 15 checks and ~90 s, and this repository's own test-tier rule says a slow scoped rail should be split rather than normalised.",
+    "gate": "tango/forge/examples/curvature_symbolic_euler_gate.forge, 7/7, 716.92 s, peak RSS 91 MB. A SEPARATE gate: the family gate is already 15 checks and ~90 s, and this repository's own test-tier rule says a slow scoped rail should be split rather than normalised.",
     "what_is_established": "the Euler operator runs over Jet<Jet<Rat>> and reproduces a textbook variational answer as a POLYNOMIAL IDENTITY in the metric parameters. Validated on L = sqrt(-g), whose Euler derivative is (1/2) sqrt(-g) g^{ab} -- doubled off the diagonal by the perturbation convention, which moves both g_rs and g_sr.",
     "the_known_answer_is_not_assumed": "the density is exp((1/2) log(-det g)) of the honest Leibniz determinant of the perturbed matrix. It is emphatically NOT built from delta sqrt(-g) = (1/2) sqrt(-g) g^{ab} delta g_{ab} -- that is the answer under test, and assuming it would make the check circular. jet_log and jet_exp invert only INTEGER constants, which are units in the inner ring, so this needs no division either.",
     "three_conditions_not_one": "euler_matches is the coefficient comparison; B_and_C_zero requires a derivative-free Lagrangian to produce zero derivative-family CONTRIBUTIONS, which the comparison cannot check; answer_symbolic requires the expected answer to DEPEND on the parameters, without which the comparison is between two constants.",
@@ -123,5 +136,12 @@
     "parameter_counts_are_per_check_and_differ_in_kind": "ROOTNP = 8 is a PREMISE, not a budget: parameters 0-5 are the strictly-lower L slots and only 6-9 are the diagonal sigmas, so det g depends on no parameter below 7 and check 3's symbolic premise is UNSATISFIABLE there rather than false. FULLNP = EULNP = 6 are BUDGETS, measured: 3.2 s at np = 2, 14.3 s at 4, 175 s at 6, and np = 7 does not finish in 500 s -- the leading 1 that fixes the degeneracy also makes every entry dense in the parameters at every coordinate order.",
     "the_ladder": "three Lagrangians, each rung a known answer the next one needs. sqrt(-g): E^ab = (1/2) sqrt(-g) g^ab, textbook, and the derivative families must contribute NOTHING. sqrt(-g) R: E^ab = +sqrt(-g) ((1/2) R g^ab - R^ab), the Einstein tensor -- strictly stronger, because this Lagrangian carries two derivatives so the derivative families must be NONZERO, which is the paired control the derivative-free Lagrangian structurally cannot give. A machine returning zero B and C passes rung one completely and fails rung two. sqrt(-g) C^2: the Noether identity.",
     "the_sign_is_read_off_not_asserted": "check 5 requires E to match the Einstein tensor up to an OVERALL SIGN and reports which (it is +1). The sign is a convention of how the perturbation is normalised rather than physics, and asserting conventions from memory is exactly how two blocker predictions in this stream went wrong. The TENSOR STRUCTURE is the known answer, and it is what a wrong index or a wrong trace term would break."
+  },
+  "the_directional_route_failed_its_own_control": {
+    "what_was_tried": "computing each of the seven candidates as a DIRECTIONAL derivative along h_ab = t phi T_ab, the same trick that made the trace in check 6 affordable -- 15 Lagrangian runs per candidate instead of the 150 of building all ten components.",
+    "it_failed_and_the_control_that_caught_it": "FUNCTION-LINEAR = 0. The check required T_ab E^ab to be function-linear in T by demanding that direction R Ric give exactly R times direction Ric's value. It did not. That control was deliberately run on a NONZERO case: the same test on R g would have been 0 = R x 0 and proved nothing, which is the vacuous-control failure this programme keeps finding.",
+    "the_diagnosis": "a directional perturbation folds T into the test function, so the Euler extraction A - d B + d d C picks up derivatives of T by Leibniz. That is fine in principle -- the integration by parts still lands on T_ab E^ab -- but it changes the DEGREE BUDGET. gdeg = ldeg + 2 is derived for a CONSTANT direction. Ric costs two derivatives of the metric, so a curvature-valued direction needs gdeg = ldeg + 4, and building it at ldeg + 2 silently truncates exactly the terms Leibniz produces.",
+    "why_check_6_is_unaffected_and_how_that_was_established": "g costs NO derivatives, so the conformal direction of check 6 is exact at gdeg. That is an argument of exactly the same form as the one that was WRONG for Ric, so it is not left as an argument: the component route recomputes g_ab E^ab independently and is required to AGREE with check 6's directional value. It does. An argument that has already failed once in the same session is not evidence the second time.",
+    "why_the_component_route_was_taken_rather_than_more_degree": "gdeg = ldeg + 4 would raise the C family to outer degree 7, and cost climbs steeply in degree. The component route costs 150 runs against 15 per candidate but has NO degree subtlety and yields ALL SEVEN contractions from one computation rather than one each. Measured: 262.55 s at one parameter."
   }
 }

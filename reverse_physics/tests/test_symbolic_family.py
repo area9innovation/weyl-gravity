@@ -48,9 +48,9 @@ class TestWhatIsActuallyClaimed(unittest.TestCase):
         self.assertIn("LDL^T is the general symmetric matrix", e)
         self.assertIn("ten parameters", e)
 
-    def test_exactly_five_ledger_claims_are_upgraded(self):
+    def test_exactly_six_ledger_claims_are_upgraded(self):
         claims = self.cert["claims_upgraded"]
-        self.assertEqual(len(claims), 5)
+        self.assertEqual(len(claims), 6)
         names = " ".join(c["claim"] for c in claims)
         self.assertIn("tracelessness", names)
         self.assertIn("G1", names)
@@ -385,11 +385,10 @@ class TestTheNoetherIdentityVersusTheCount(unittest.TestCase):
     def test_the_identity_is_recorded_as_upgraded(self):
         self.assertIn("SAMPLED FIXTURES", self.claim["was"])
 
-    def test_the_count_is_explicitly_NOT_upgraded(self):
-        dne = " ".join(load()["does_not_establish"])
-        self.assertIn("THE GENERATOR COUNT", dne)
-        self.assertIn("only the first half has moved", dne)
-        self.assertIn("DIMENSION of the space", dne)
+    def test_the_count_has_its_own_claim_entry(self):
+        cnt = [c for c in load()["claims_upgraded"]
+               if "GENERATOR COUNT" in c["claim"]]
+        self.assertEqual(len(cnt), 1)
 
     def test_the_general_trace_law_is_also_disclaimed(self):
         """The Weyl case is the VANISHING instance of N2, not N2."""
@@ -429,11 +428,91 @@ class TestTheNoetherIdentityVersusTheCount(unittest.TestCase):
         self.assertIn("from the DEFINITION", i)
         self.assertIn("INDEPENDENT CONFIRMATION", i)
 
-    def test_next_is_the_count_and_names_the_module_trap(self):
+    def test_next_names_the_inherited_span_as_the_real_open_question(self):
+        """"One generator" is one generator among a list nobody derived.  That
+        is the boundary the count now sits on."""
         nxt = load()["next"]
-        self.assertIn("THE GENERATOR COUNT", nxt)
-        self.assertIn("module over functions", nxt)
-        self.assertIn("overcounts", nxt)
+        self.assertIn("INHERITED", nxt)
+        self.assertIn("AMONG THAT SPAN", nxt)
+        self.assertIn("rather than about a list", nxt)
+
+
+class TestTheGeneratorCount(unittest.TestCase):
+    def setUp(self):
+        self.c = [c for c in load()["claims_upgraded"]
+                  if "GENERATOR COUNT" in c["claim"]][0]
+
+    def test_the_result_names_all_four_kernel_elements(self):
+        r = self.c["result"]
+        for t in ("R g", "R^2 g", "|Ric|^2 g"):
+            self.assertIn(t, r)
+        self.assertIn("ALL FOUR are f g", r)
+
+    def test_the_discriminating_half_is_identified_as_such(self):
+        """Four vanishing is not the evidence.  Three NOT vanishing is."""
+        m = self.c["the_module_trap"]
+        self.assertIn("not that four vanish", m)
+        self.assertIn("discriminating half", m)
+
+    def test_the_module_trap_is_quantified(self):
+        m = self.c["the_module_trap"]
+        self.assertIn("MODULE OVER FUNCTIONS", m)
+        self.assertIn("overcounts four to one", m)
+
+    def test_the_count_was_not_left_at_the_first_number_that_worked(self):
+        """It ran at 1 and was pushed to 2, matching the identity.  A claim that
+        could have covered a wider family and did not is a cap."""
+        f = self.c["family"]
+        self.assertIn("First run at 1 and not", f)
+        self.assertIn("is a cap, not a boundary", f)
+
+    def test_the_small_family_is_still_called_a_real_restriction(self):
+        dne = " ".join(load()["does_not_establish"])
+        self.assertIn("real restriction", dne)
+
+    def test_the_inherited_candidate_list_is_disclaimed(self):
+        """"One generator" is one generator among a span that was not derived
+        here.  That boundary is easy to lose."""
+        dne = " ".join(load()["does_not_establish"])
+        self.assertIn("SEVEN enumerated candidates", dne)
+        self.assertIn("inherited from", dne)
+        self.assertIn("would not be seen", dne)
+
+
+class TestTheDirectionalRouteFailedItsOwnControl(unittest.TestCase):
+    """A wrong method caught by a control that was designed to be able to fail,
+    and then diagnosed rather than worked around."""
+
+    def setUp(self):
+        self.d = load()["the_directional_route_failed_its_own_control"]
+
+    def test_the_failure_is_recorded_not_just_the_working_method(self):
+        self.assertIn("FUNCTION-LINEAR = 0", self.d["it_failed_and_the_control_that_caught_it"])
+
+    def test_the_control_was_run_on_a_nonzero_case_deliberately(self):
+        """R g would have given 0 = R x 0 and proved nothing."""
+        c = self.d["it_failed_and_the_control_that_caught_it"]
+        self.assertIn("NONZERO case", c)
+        self.assertIn("proved nothing", c)
+
+    def test_the_diagnosis_is_a_mechanism(self):
+        g = self.d["the_diagnosis"]
+        self.assertIn("DEGREE BUDGET", g)
+        self.assertIn("ldeg + 4", g)
+        self.assertIn("silently truncates", g)
+
+    def test_the_same_form_of_argument_is_not_trusted_twice(self):
+        """"g costs no derivatives so check 6 is safe" has the same shape as
+        the argument that just failed, so it was measured instead."""
+        w = self.d["why_check_6_is_unaffected_and_how_that_was_established"]
+        self.assertIn("exactly the same form", w)
+        self.assertIn("required to AGREE", w)
+        self.assertIn("not evidence the second time", w)
+
+    def test_the_choice_of_fix_is_justified_by_cost_and_by_scope(self):
+        w = self.d["why_the_component_route_was_taken_rather_than_more_degree"]
+        self.assertIn("outer degree 7", w)
+        self.assertIn("ALL SEVEN contractions", w)
 
 
 class TestTheLadderOfKnownAnswers(unittest.TestCase):
